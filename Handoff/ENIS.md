@@ -4,6 +4,29 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`. Task: **Issue #1**.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
+## Stand (zuletzt 2026-08-28)
+
+**Slice 1 (NormRegelwerk) FERTIG** — Branch `enis/slice-1-normprovider`, Commit
+`eb7dac4` (lokal, noch nicht gepusht — Push/PR braucht Enis' GO). Tests grün:
+`13 passed, 1 skipped`, ruff sauber.
+
+Gebaut: `En1838NormProvider` (`normwissen/provider.py`) liest
+`normwissen/data/en1838_grundwerte.yaml` + `raumtyp_regeln.yaml`, erfüllt das
+Protocol `NormProvider`, hardcodet nichts. `FakeNormProvider` ersetzt (in
+`tests/fakes.py` + Contract-Test nutzt jetzt echten Provider). Snapshot-Fixture
+`tests/fixtures/norm_regelwerk_snapshot.json` aus echtem Provider regeneriert
+(`quellen` = {§4.2.1, §4.3.1}). `heights_fachpraxis`/`clearance_rules` bewusst
+NICHT portiert (Steckdosen-Höhen bzw. Track-A Wand-Mechanik, kein NB-Normwissen).
+
+**Nächste Session:** entweder Slice 1 pushen + PR (falls gewünscht), **oder**
+direkt Slice „LB-Input" starten (siehe unten). Ausgangspunkt: Branch
+`enis/slice-1-normprovider` auschecken.
+
+**⚠ Setup-Falle (Mac):** Projekt braucht **Python ≥ 3.11** (System hatte nur
+3.9.6 → editable install bricht). Fix war `brew install python@3.12`, dann venv
+mit `/opt/homebrew/bin/python3.12 -m venv .venv`. Auf Mac: `.venv/bin/python`
+(nicht `.venv\Scripts\python.exe` — das ist Windows).
+
 ## 0. Setup — Claude, führe das ZUERST für den Nutzer aus
 
 Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
