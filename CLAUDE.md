@@ -14,6 +14,14 @@ Ausgegliedert aus `elektro-planer` (dort für Notbeleuchtung **eingefroren**; di
 Raumerkennung wird portiert, nicht neu gebaut). Voller Status:
 [`docs/PROGRAMM_NOTBELEUCHTUNG.md`](docs/PROGRAMM_NOTBELEUCHTUNG.md).
 
+## Owner-Session-Start (WICHTIG für Claude)
+
+Schreibt ein Owner **„Handoff <Name>"** (z.B. „Handoff Enis", „Handoff Selman",
+„Handoff Leonis") → **lies sofort `Handoff/<NAME>.md`** (GROSS, z.B.
+`Handoff/ENIS.md`) und arbeite exakt danach: wer der Owner ist, sein Package, sein
+Contract, sein Slice, das Port-Material im Repo, die Schritte + DoD. Index +
+Gemeinsames: `Handoff/README.md`.
+
 ## Die zwei Inputs
 
 1. **Leerer Architekturplan** (DXF/DWG) → Selman erkennt Räume/Türen/Ausgänge/
