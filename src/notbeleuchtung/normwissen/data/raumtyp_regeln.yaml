@@ -1,0 +1,64 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# raumtyp_regeln.yaml — Raumtyp × Fluchtweg → NormAnforderung
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WELCHE Notbeleuchtung ein Raum/Fluchtweg-Abschnitt braucht (Klassifikation,
+# Lux, Stückzahl, Symbol-Keys). Kuratiert aus _port_source/rz_coverage_oenorm.yaml
+# (RZ-Pflicht-Zonen, Coverage) + emergency_lighting_en1838.yaml (§4.2/§4.3).
+#
+# `min_lux_ref` / `quelle_ref` verweisen auf en1838_grundwerte.yaml — keine
+# doppelten Zahlen, eine Wahrheit. montagehoehe_mm ist Fachpraxis-Montagehöhe
+# (RZ über Türsturz, ≥ Norm-Floor 2000); erkennungsweite wird aus der Formel
+# l = z·h berechnet, nicht hier hartkodiert.
+#
+# Hierarchie (CLAUDE.md): diese Norm-Defaults werden von LB-explizit übersteuert
+# (LBVorgabe, eigener Slice). Hier stehen nur die EN-1838/ÖNorm-Defaults.
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Greift, wenn kein spezifischer Eintrag matcht → Rettungsweg-Anforderung.
+default:
+  klassifikation: rz
+  min_lux_ref: rettungsweg
+  quelle_ref: rettungsweg
+  montagehoehe_mm: 2400
+  mindest_anzahl: 1
+  symbol_katalog_keys: [notlicht_ks_stiege]
+
+regeln:
+  # ── Fluchtwege (RZ-Pflicht GK3+, rz_coverage_oenorm::norm_pflicht) ──────────
+  - raum_typ: STIEGENHAUS
+    ist_fluchtweg: true
+    klassifikation: rz
+    min_lux_ref: rettungsweg
+    quelle_ref: rettungsweg
+    montagehoehe_mm: 2400
+    mindest_anzahl: 2            # oben + unten je Stiegenlauf
+    symbol_katalog_keys: [notlicht_ks_stiege, notlicht_ks_stiege_unten]
+
+  - raum_typ: GANG
+    ist_fluchtweg: true
+    klassifikation: rz
+    min_lux_ref: rettungsweg
+    quelle_ref: rettungsweg
+    montagehoehe_mm: 2400
+    mindest_anzahl: 1
+    symbol_katalog_keys: [notlicht_ks_stiege]
+
+  # ── Antipanik (§4.3.1 — große freie Bodenflächen, Sammelbereiche) ───────────
+  - raum_typ: SAAL
+    ist_fluchtweg: false
+    klassifikation: antipanik
+    min_lux_ref: antipanik
+    quelle_ref: antipanik
+    montagehoehe_mm: 2400
+    mindest_anzahl: 1
+    symbol_katalog_keys: [notlicht_antipanik]
+
+  - raum_typ: AUFENTHALTSRAUM
+    ist_fluchtweg: false
+    klassifikation: antipanik
+    min_lux_ref: antipanik
+    quelle_ref: antipanik
+    montagehoehe_mm: 2400
+    mindest_anzahl: 1
+    symbol_katalog_keys: [notlicht_antipanik]

@@ -2,11 +2,79 @@
   "contract": "NormRegelwerk",
   "contract_version": "1.0.0",
   "norm": "ÖNORM EN 1838:2013",
-  "_source": "Minimal-Snapshot für Slice 0. Enis' echter Provider (aus normwissen/data/*.yaml) ersetzt dies in Slice 1.",
-  "erkennungsweite": {"z_hinterleuchtet": 200.0, "z_beleuchtet": 100.0},
+  "erkennungsweite": {
+    "z_hinterleuchtet": 200.0,
+    "z_beleuchtet": 100.0
+  },
   "regeln": [
-    {"raum_typ": "STIEGENHAUS", "ist_fluchtweg": true, "anforderung": {"min_lux": 1.0, "klassifikation": "rz", "montagehoehe_mm": 2400, "erkennungsweite_m": 30.0, "symbol_katalog_keys": ["notlicht_ks_stiege", "notlicht_ks_stiege_unten"], "mindest_anzahl": 2, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.2.1"}},
-    {"raum_typ": "GANG", "ist_fluchtweg": true, "anforderung": {"min_lux": 1.0, "klassifikation": "rz", "montagehoehe_mm": 2400, "erkennungsweite_m": 30.0, "symbol_katalog_keys": ["notlicht_ks_stiege"], "mindest_anzahl": 1, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.2.1"}}
+    {
+      "raum_typ": "STIEGENHAUS",
+      "ist_fluchtweg": true,
+      "anforderung": {
+        "min_lux": 1.0,
+        "klassifikation": "rz",
+        "montagehoehe_mm": 2400,
+        "erkennungsweite_m": 30.0,
+        "symbol_katalog_keys": [
+          "notlicht_ks_stiege",
+          "notlicht_ks_stiege_unten"
+        ],
+        "mindest_anzahl": 2,
+        "dauer_min": 60,
+        "quelle": "ÖNORM EN 1838:2013 §4.2.1"
+      }
+    },
+    {
+      "raum_typ": "GANG",
+      "ist_fluchtweg": true,
+      "anforderung": {
+        "min_lux": 1.0,
+        "klassifikation": "rz",
+        "montagehoehe_mm": 2400,
+        "erkennungsweite_m": 30.0,
+        "symbol_katalog_keys": [
+          "notlicht_ks_stiege"
+        ],
+        "mindest_anzahl": 1,
+        "dauer_min": 60,
+        "quelle": "ÖNORM EN 1838:2013 §4.2.1"
+      }
+    },
+    {
+      "raum_typ": "SAAL",
+      "ist_fluchtweg": false,
+      "anforderung": {
+        "min_lux": 0.5,
+        "klassifikation": "antipanik",
+        "montagehoehe_mm": 2400,
+        "erkennungsweite_m": null,
+        "symbol_katalog_keys": [
+          "notlicht_antipanik"
+        ],
+        "mindest_anzahl": 1,
+        "dauer_min": 60,
+        "quelle": "ÖNORM EN 1838:2013 §4.3.1"
+      }
+    },
+    {
+      "raum_typ": "AUFENTHALTSRAUM",
+      "ist_fluchtweg": false,
+      "anforderung": {
+        "min_lux": 0.5,
+        "klassifikation": "antipanik",
+        "montagehoehe_mm": 2400,
+        "erkennungsweite_m": null,
+        "symbol_katalog_keys": [
+          "notlicht_antipanik"
+        ],
+        "mindest_anzahl": 1,
+        "dauer_min": 60,
+        "quelle": "ÖNORM EN 1838:2013 §4.3.1"
+      }
+    }
   ],
-  "quellen": ["ÖNORM EN 1838:2013 §4.2.1", "ÖNORM EN 1838:2013 §4.3.1"]
+  "quellen": [
+    "ÖNORM EN 1838:2013 §4.2.1",
+    "ÖNORM EN 1838:2013 §4.3.1"
+  ]
 }
