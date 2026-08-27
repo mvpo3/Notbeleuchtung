@@ -1,0 +1,208 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# rz_coverage_oenorm.yaml — Rettungszeichen Coverage-Logik
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Scope: Rettungszeichen-Platzierung (WO + WIEVIELE + WELCHER Schrack-Block).
+# NICHT-Scope: Lichttechnik-Werte (lx, cd, Dauer, Montagehoehe) — die stehen
+#              in emergency_lighting_en1838.yaml (Norm-Extraktion EN 1838).
+#
+# Komplementaer zu emergency_lighting_en1838.yaml:
+#   - en1838_luminaire_min_height  -> 2 m UK Montagehoehe (gilt unveraendert)
+#   - en1838_sign_recognition_distance -> l = z × h Formel (referenziert hier)
+#
+# Quellen (kombi-typed):
+#   - OENORM EN 1838:2013        (Lichttechnik, Erkennungsweite-Formel)
+#   - OVE E 8350                  (Sicherheitsbeleuchtungs-Anlagen)
+#   - TRVB E 102                  (Technische Richtlinie Vorbeugender Brandschutz)
+#   - OIB-Richtlinie 2            (Gebaeudeklassen GK3+ Pflicht)
+#   - Schrack Visio 50 Library    (Block-Naming *U58/*U84/*U85)
+#   - Enis-Fachpraxis 2026-06-04  (M-A1 RZ-Klassifikation)
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  source: "EN 1838 + OVE E 8350 + TRVB E 102 + OIB-RL 2 + Schrack Visio 50 + Enis M-A1"
+  last_reviewed: "2026-06-05"
+  confidence: "norm"
+  units: "m horizontale Sichtachse / Coverage-Distanz"
+  fields:
+    gebaeudeklasse: "OIB GK1-GK5 (RZ-Pflicht ab GK3)"
+    max_sichtachse_m: "Max. Distanz zwischen zwei aufeinanderfolgenden RZ"
+    schrack_block: "Block-Name aus Visio-50-Library (*U58/*U84/*U85)"
+    pfeilrichtung: "UNTEN | LINKS | RECHTS (am Schild dargestellt)"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sektion 1: Norm-Pflicht (Geltungsbereich GK3+)
+# ─────────────────────────────────────────────────────────────────────────
+norm_pflicht:
+
+  rz_geltungsbereich_gk3:
+    rule: >
+      Rettungszeichen-Pflicht in GK3+ Wohnhausanlagen: ALLE Fluchtwege,
+      Notausgaenge, Treppenhaeuser, Gang-Kreuzungen muessen mit RZ
+      ausgestattet werden.
+    gebaeudeklasse_min: "GK3"
+    pflicht_zonen:
+      - "Fluchtwege (alle)"
+      - "Notausgaenge"
+      - "Treppenhaeuser / Stiegenhaeuser"
+      - "Gang-Kreuzungen"
+    norm_ref:
+      - "OIB-Richtlinie 2 (Gebaeudeklassen)"
+      - "TRVB E 102 (Sicherheitskennzeichen)"
+      - "OVE E 8350 (Sicherheitsbeleuchtungs-Anlagen)"
+    confidence: "norm"
+    pflicht_oder_praxis: pflicht
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sektion 2: Coverage-Prioritaet (Platzierungs-Reihenfolge)
+# ─────────────────────────────────────────────────────────────────────────
+coverage_priority:
+
+  rz_coverage_reihenfolge:
+    rule: >
+      Platzierungs-Reihenfolge fuer die Coverage-Engine:
+        1. Notausgaenge (Tueren ins Freie + ins Treppenhaus)
+        2. Ecken / Gang-Kreuzungen / Richtungsaenderungen
+        3. Lange Strecken (auffuellen bis max. Sichtachse erreicht)
+    schritte:
+      - schritt: 1
+        was: "Notausgaenge"
+        bezug: "Jede Tuer ins Freie + jede Stiegenhaus-Tuer"
+      - schritt: 2
+        was: "Ecken + Gang-Kreuzungen + Richtungsaenderungen"
+        bezug: "Jeder Punkt wo Fluchtweg abbiegt"
+      - schritt: 3
+        was: "Lange Strecken auffuellen"
+        bezug: "RZ einfuegen bis max. Sichtachse <= max_sichtachse_m"
+    max_sichtachse_m_default: 30
+    notes: >
+      Hervorzuhebende Stellen aus EN 1838 §4.1.2 deckungsgleich
+      (siehe emergency_lighting_en1838.yaml::en1838_highlighted_positions).
+    quelle: "EN 1838 §4.1.2 + Enis-Fachpraxis 2026-06-04"
+    pflicht_oder_praxis: pflicht
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sektion 3: Schrack-Blocks + Pfeilrichtung-Map
+# ─────────────────────────────────────────────────────────────────────────
+schrack_blocks:
+  blocks:
+
+    - id: rz_block_u58
+      schrack_block: "*U58"
+      pfeilrichtung: "UNTEN"
+      use_case: >
+        Rettungszeichen mit Pfeil nach UNTEN. Typisch direkt ueber dem
+        Notausgang / der Tuer — zeigt 'hier ist die Tuer'.
+      confidence: "norm"
+
+    - id: rz_block_u84
+      schrack_block: "*U84"
+      pfeilrichtung: "LINKS"
+      use_case: >
+        Rettungszeichen mit Pfeil nach LINKS. An Gang-Kreuzungen oder
+        Wand-Montage, wenn der Fluchtweg nach links abgeht.
+      confidence: "norm"
+
+    - id: rz_block_u85
+      schrack_block: "*U85"
+      pfeilrichtung: "RECHTS"
+      use_case: >
+        Rettungszeichen mit Pfeil nach RECHTS. An Gang-Kreuzungen oder
+        Wand-Montage, wenn der Fluchtweg nach rechts abgeht.
+      confidence: "norm"
+
+  pfeilrichtung_logik:
+    rule: >
+      Block-Wahl nach Richtung am Schild:
+        - Fluchtweg nach UNTEN (z.B. Treppe abwaerts / direkt durch Tuer): *U58
+        - Fluchtweg nach LINKS:  *U84
+        - Fluchtweg nach RECHTS: *U85
+      Track-A muss aus der Geometrie (Fluchtweg-Richtung relativ zur
+      RZ-Position) die Pfeilrichtung ableiten.
+    handoff_a: >
+      Track-A: Coverage-Engine berechnet pro RZ-Position die
+      Fluchtweg-Richtung -> Block-Auswahl aus dieser Map.
+    quelle: "Schrack Visio 50 Library + Enis-Fachpraxis 2026-06-04"
+    pflicht_oder_praxis: pflicht
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sektion 4: Erkennungsweite (EN 1838 §5.5)
+# ─────────────────────────────────────────────────────────────────────────
+erkennungsweite:
+
+  rz_sichtachse_formel:
+    formula: "l = z * h"
+    parameters:
+      l: "Erkennungsweite [m]"
+      z: "Faktor (200 hinterleuchtet, 100 beleuchtet)"
+      h: "Piktogramm-Hoehe [m]"
+    z_backlit: 200
+    z_frontlit: 100
+    rule: >
+      Formel aus EN 1838 §5.5: max. Erkennungsweite eines RZ aus
+      Sicht-Position. Bei h=150 mm (0,15 m) + hinterleuchtet:
+      l = 200 * 0,15 = 30 m.
+    typischer_default:
+      h_piktogramm_mm: 150
+      typ: "hinterleuchtet"
+      max_sichtachse_m: 30
+    notes: >
+      30 m ist die Praxis-Obergrenze fuer Sichtachse zwischen zwei RZ
+      bei Standard-Piktogrammhoehe 150 mm + hinterleuchteter Variante.
+      Bei beleuchteter Variante (z=100, h=150) -> 15 m max.
+    norm_ref: "OENORM EN 1838:2013, §5.5, S.14"
+    confidence: "norm"
+    pflicht_oder_praxis: pflicht
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Sektion 5: DXF-Konvention (Layer)
+# ─────────────────────────────────────────────────────────────────────────
+dxf_konvention:
+
+  rz_layer:
+    layer: "E_Sicherheitsbeleuchtung"
+    rule: >
+      Alle Rettungszeichen werden auf Layer 'E_Sicherheitsbeleuchtung'
+      gezeichnet. Trennt RZ + Notbeleuchtung von Allgemein-Beleuchtung
+      (E_Beleuchtung) und Steckdosen (E_Steckdosen).
+    handoff_a: >
+      Track-A: DXF-Writer muss RZ-Blocks (*U58/*U84/*U85) auf diesen
+      Layer setzen — nicht auf E_Beleuchtung.
+    quelle: "Skill elektroplaner-dxf-conventions + Enis-Fachpraxis"
+    pflicht_oder_praxis: pflicht
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Cross-Reference
+# ─────────────────────────────────────────────────────────────────────────
+cross_reference:
+
+  - target: "emergency_lighting_en1838.yaml::en1838_luminaire_min_height"
+    scope: "Mindest-Montagehoehe 2 m UK fuer RZ-Leuchten"
+    rationale: "Hoehe bleibt in emergency_lighting_en1838.yaml (Norm-Pure). Diese YAML referenziert nur."
+
+  - target: "emergency_lighting_en1838.yaml::en1838_sign_recognition_distance"
+    scope: "Formel l = z × h (z_backlit=200, z_frontlit=100)"
+    rationale: "Originalformel-Eintrag dort; hier nochmal kontextualisiert mit Praxis-Default 30 m."
+
+  - target: "emergency_lighting_en1838.yaml::en1838_highlighted_positions"
+    scope: "EN 1838 §4.1.2 Hervorzuhebende Stellen"
+    rationale: "Coverage-Prioritaet (Sektion 2) deckungsgleich; Norm-Detail dort."
+
+  - target: "emergency_lighting_en1838.yaml::en1838_sign_min_luminance"
+    scope: "Mindest-Leuchtdichte 2 cd/m^2 + Verhaeltnisse"
+    rationale: "Lichttechnik-Detail bleibt in EN-1838-YAML."
+
+  - target: "ableiter_oenorm.yaml"
+    scope: "OIB-RL 2 Gebaeudeklassen (gleiche Quelle, anderer Use-Case)"
+    rationale: "RZ-Pflicht ab GK3 / Ableiter-Abstand pro GK — beide nutzen OIB-RL-2-Klassifikation."
+
+  - target: "Skill elektroplaner-dxf-conventions"
+    scope: "Schrack Visio 50 Block-Naming + Layer-Konvention"
+    rationale: "Block-IDs *U58/*U84/*U85 + Layer E_Sicherheitsbeleuchtung kommen aus dem Skill-Vokabular."

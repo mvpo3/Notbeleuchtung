@@ -1,0 +1,119 @@
+profile_id: mollgasse
+version: 1
+
+layout:
+  strategy: wrapper_or_direct
+  wrapper_detection:
+    role: walls
+    min_entities: 10
+
+scale:
+  strategy: existing_detect_scale
+
+roles:
+  walls:
+    strategy: lwpolyline_typed
+    layer_patterns:
+      - "^02-TWA-"
+      - "^02-ZWA-"
+      - "^02-WDA-"
+    entity_types:
+      - LINE
+      - LWPOLYLINE
+      - ARC
+      - CIRCLE
+      - ELLIPSE
+    type_from_layer:
+      "^02-TWA-": tragend
+      "^02-ZWA-": zwischen
+      "^02-WDA-": aussen
+
+  wall_material:
+    strategy: hatch_boundary_plus_thickness_annotation
+    layer_patterns:
+      - "^02-FIL-.*-(ORANGE|LILA|STB|PLATTENBELAG)$"
+      - "^01-FIL-.*-M0$"
+
+  rooms:
+    strategy: anchor_raycast
+    anchor_blocks:
+      - "01-SQM"
+    attributes:
+      name: ROOM
+      area_m2: AREA
+      floor: FLOOR
+      number: NR
+
+  doors:
+    strategy: blocks_by_name_pattern
+    block_patterns:
+      - TUR
+      - TUER
+      - SCHIEBETUR
+      - SCHIEBETUER
+      - WET
+    reject_block_patterns:
+      - TURACHSE
+      - TUERACHSE
+
+  windows:
+    strategy: blocks_by_name_pattern
+    block_patterns:
+      - FENSTER
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^07[_-](MOB|SAN)"
+
+  markers:
+    strategy: text_by_layer_pattern
+    layer_patterns:
+      - "^07-SYM"
+      - "^01-"
+      - "^02-.*SCHACHT"
+    classify_service: true
+    max_text_len: 80
+
+# Slice 1.0.0 — Wohnungs-Inventur aus TOP-Türschildern (00-top-INSERTs).
+# Soll-Werte aus der BAB S. 2: Green 1 = Anastasius-Grün-Gasse 26 = 28
+# Wohnungen, Green 2 = Mollgasse 15 = 20 Wohnungen (Korrektur 25.07.,
+# vorher vertauscht). Jeder Bauteil nummeriert eigenständig ab TOP 1.
+# Kombi-Stempel ("TOP 4 + 5") = EINE zusammengelegte Wohnung (Architekten-
+# Entscheid) → physische Wohnungszahl < Summe der TOP-IDs.
+# Slice N3 — KG-Rekonstruktions-Vokabular (parsers.keller_geometry).
+# BEWUSST breiter als roles.walls (Engine-Parser, Baseline-relevant):
+# die KG-Raumgrenzen brauchen alle 10 Struktur-Wand-Felder. Zone-Tokens =
+# Stempel OHNE eigene Wände auf KG-Ebene (Methodik R7, Slices K/L/M).
+keller:
+  wall_layer_patterns:
+    - "^[^-]+-(TWA|TWE|TWB|ZWA|ZWE|AWA|AWB|BWA|WDA|MWA)(-|$)"
+  hid_layer_patterns:
+    - "^[^-]+-HID(-|$)"
+  # AUFZUG: Schacht = Struktur, kein Nutzraum — Stempel ohne m²-Zeile
+  # (ratio nie bildbar) + Schiebetür-Öffnung ohne Tür-Bogen (Face leckt
+  # in den Gang). Elektro-Anker bleibt über den Stempel erhalten.
+  zone_tokens: [GARAGE, DOPPELPARKER, INNENHOF, GULLY, ER-GESAMT, AUFZUG]
+
+building_units:
+  stamp_blocks:
+    - "00-top"
+  stamp_attrib: TOP
+  # Wohnflächen-Summen-Stempel: 01-SQM-INSERT dessen ROOM-Attribut der
+  # TOP-Name ist ("TOP 24 (SONDERWUNSCH)") + AREA = offizielle Wohnfläche.
+  area_stamp_blocks:
+    - "01-SQM"
+  area_room_attrib: ROOM
+  area_attrib: AREA
+  bauteile:
+    - name: MOLL
+      soll_top_ids: 20
+    - name: AGG
+      soll_top_ids: 28
+
+# Slice N6 — Auto-Detection-Fingerprint (Feld-Code-Konvention NN-XXX-...-M0)
+detect:
+  layer_patterns:
+    - '^0\d[-_][A-Z]{3}-.*M0$'
+    - '^05-S(YM|TO)-+.*M0$'
+  min_matches: 2

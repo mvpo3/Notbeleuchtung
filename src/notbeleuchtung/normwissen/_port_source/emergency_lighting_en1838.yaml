@@ -1,0 +1,181 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# emergency_lighting_en1838.yaml — Notbeleuchtung ÖNORM EN 1838:2013
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Quelle: ÖNORM EN 1838:2013 (D)
+#         "Angewandte Lichttechnik — Notbeleuchtung"
+#         (Identisch EN 1838:2013, mit österreichischer nationaler Abweichung)
+# Relevanz: Mindestanforderungen für Rettungsweg-, Antipanik- und
+#           Sicherheitszeichen-Beleuchtung.
+# Extraktion: 2026-04-23, Seiten 10–16.
+#
+# ANWENDUNGSBEREICH: Gilt für Sicherheitsbeleuchtungsanlagen in Gebäuden
+# und Außenanlagen wo Sicherheitsbeleuchtung gefordert ist.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  source_norm:  "ÖNORM EN 1838:2013-01 (basiert auf EN 1838:2013)"
+  extracted:    "2026-04-23"
+  pages_scanned: "10–16"
+  confidence:   "norm"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# §4.1 — Allgemeine Anforderungen
+# ─────────────────────────────────────────────────────────────────────────
+general:
+  - id: en1838_luminaire_min_height
+    source: "ÖNORM EN 1838:2013, §4.1.1, S.10"
+    rule: "Leuchten für Sicherheitsbeleuchtung für Rettungswege und Sicherheitszeichen müssen mindestens 2 m über dem Boden installiert sein."
+    min_mounting_height_mm: 2000
+    applies_to: ["Notleuchten", "Rettungszeichenleuchten"]
+    confidence: "norm"
+
+  - id: en1838_highlighted_positions
+    source: "ÖNORM EN 1838:2013, §4.1.2, S.10–11"
+    rule: "Hervorzuhebende Stellen: Jeder Notausgang, Richtungsänderungen, Treppen, jede Kreuzung von Gängen, letzter Ausgang, Erste-Hilfe-Stellen, Brandbekämpfungs-/Meldeeinrichtungen."
+    max_horizontal_distance_to_special_point_mm: 2000
+    confidence: "norm"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# §4.2 — Sicherheitsbeleuchtung für Rettungswege
+# ─────────────────────────────────────────────────────────────────────────
+escape_route_lighting:
+  - id: en1838_escape_min_lux
+    source: "ÖNORM EN 1838:2013, §4.2.1, S.11"
+    rule: "Horizontale Beleuchtungsstärke auf dem Boden entlang der Mittellinie des Rettungsweges: mindestens 1 lx."
+    min_illuminance_lx: 1
+    measurement_point: "Bodenmitte Rettungsweg"
+    confidence: "norm"
+
+  - id: en1838_escape_uniformity
+    source: "ÖNORM EN 1838:2013, §4.2.2, S.11"
+    rule: "Ungleichmäßigkeit Ud (min:max Beleuchtungsstärke): nicht kleiner als 1:40 entlang der Mittellinie."
+    uniformity_min_ratio: "1:40"
+    confidence: "norm"
+
+  - id: en1838_escape_glare_limits
+    source: "ÖNORM EN 1838:2013, §4.2.3, Tabelle 1, S.12"
+    rule: "Maximale Lichtstärke (cd) für Sicherheitsleuchten je nach Montagehöhe."
+    glare_limits:
+      - mounting_height_range: "h < 2.5m"
+        max_luminous_intensity_cd: 500
+      - mounting_height_range: "2.5m ≤ h < 3.0m"
+        max_luminous_intensity_cd: 900
+      - mounting_height_range: "3.0m ≤ h < 3.5m"
+        max_luminous_intensity_cd: 1600
+      - mounting_height_range: "3.5m ≤ h < 4.0m"
+        max_luminous_intensity_cd: 2500
+      - mounting_height_range: "4.0m ≤ h < 4.5m"
+        max_luminous_intensity_cd: 3500
+      - mounting_height_range: "h ≥ 4.5m"
+        max_luminous_intensity_cd: 5000
+    confidence: "norm"
+
+  - id: en1838_escape_color_rendering
+    source: "ÖNORM EN 1838:2013, §4.2.4, S.12"
+    rule: "Farbwiedergabe-Index Ra der Lichtquelle: mindestens 40."
+    min_cri_ra: 40
+    confidence: "norm"
+
+  - id: en1838_escape_duration
+    source: "ÖNORM EN 1838:2013, §4.2.5, S.12"
+    rule: "Betriebsdauer der Sicherheitsbeleuchtung für Rettungswege: mindestens 1 Stunde."
+    min_duration_minutes: 60
+    confidence: "norm"
+
+  - id: en1838_escape_switch_on_time
+    source: "ÖNORM EN 1838:2013, §4.2.6, S.12"
+    rule: "Einschaltzeit: 50% der geforderten Beleuchtungsstärke innerhalb 5 s; 100% innerhalb 60 s."
+    pct_50_within_seconds: 5
+    pct_100_within_seconds: 60
+    confidence: "norm"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# §4.3 — Antipanikbeleuchtung
+# ─────────────────────────────────────────────────────────────────────────
+anti_panic_lighting:
+  - id: en1838_antipanic_min_lux
+    source: "ÖNORM EN 1838:2013, §4.3.1, S.12"
+    rule: "Horizontale Beleuchtungsstärke auf freier Bodenfläche im Kernbereich: mindestens 0,5 lx. Randbereiche von 0,5 m nicht berücksichtigt."
+    min_illuminance_lx: 0.5
+    confidence: "norm"
+
+  - id: en1838_antipanic_duration
+    source: "ÖNORM EN 1838:2013, §4.3.5, S.12"
+    rule: "Betriebsdauer für Rettungszwecke: mindestens 1 Stunde."
+    min_duration_minutes: 60
+    confidence: "norm"
+
+  - id: en1838_antipanic_switch_on_time
+    source: "ÖNORM EN 1838:2013, §4.3.6, S.12"
+    rule: "50% der Beleuchtungsstärke innerhalb 5 s; 100% innerhalb 60 s."
+    pct_50_within_seconds: 5
+    pct_100_within_seconds: 60
+    confidence: "norm"
+
+  - id: en1838_antipanic_disabled_toilets
+    source: "ÖNORM EN 1838:2013, §4.3.8, S.12"
+    rule: "Antipanikbeleuchtung ist in Toiletten für Menschen mit Behinderung erforderlich."
+    applies_to: ["Behindertentoiletten", "barrierefreie WC"]
+    confidence: "norm"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# §4.4 — Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung
+# ─────────────────────────────────────────────────────────────────────────
+hazardous_task_lighting:
+  - id: en1838_hazard_min_lux
+    source: "ÖNORM EN 1838:2013, §4.4.1, S.13"
+    rule: "Wartungswert der Beleuchtungsstärke: mindestens 10% des für die Aufgabe erforderlichen Wartungswertes, aber nicht unter 15 lx."
+    min_illuminance_lx: 15
+    min_pct_of_task_illuminance: 10
+    confidence: "norm"
+
+  - id: en1838_hazard_switch_on_time
+    source: "ÖNORM EN 1838:2013, §4.4.6, S.13"
+    rule: "Geforderte Beleuchtungsstärke dauernd vorhanden oder innerhalb 0,5 s erreichbar."
+    max_switch_on_seconds: 0.5
+    confidence: "norm"
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# §5 — Sicherheitszeichen (Rettungszeichenleuchten)
+# ─────────────────────────────────────────────────────────────────────────
+safety_signs:
+  - id: en1838_sign_min_luminance
+    source: "ÖNORM EN 1838:2013, §5.4.1, S.14"
+    rule: "Leuchtdichte der Sicherheitsfarbe: mindestens 2 cd/m² an jeder Stelle des Zeichens."
+    min_luminance_cd_m2: 2
+    confidence: "norm"
+
+  - id: en1838_sign_luminance_ratio
+    source: "ÖNORM EN 1838:2013, §5.4.2–5.4.3, S.14"
+    rules:
+      - "Verhältnis max:min Leuchtdichte innerhalb gleicher Farbe: ≤ 10:1"
+      - "Verhältnis Kontrastfarbe:Sicherheitsfarbe: mindestens 5:1, höchstens 15:1"
+    confidence: "norm"
+
+  - id: en1838_sign_duration
+    source: "ÖNORM EN 1838:2013, §5.4.5, S.14"
+    rule: "Beleuchtungsdauer Sicherheitszeichen: mindestens 1 Stunde."
+    min_duration_minutes: 60
+    confidence: "norm"
+
+  - id: en1838_sign_switch_on_time
+    source: "ÖNORM EN 1838:2013, §5.4.6, S.14"
+    rule: "50% der Leuchtdichte innerhalb 5 s; 100% innerhalb 60 s."
+    pct_50_within_seconds: 5
+    pct_100_within_seconds: 60
+    confidence: "norm"
+
+  - id: en1838_sign_recognition_distance
+    source: "ÖNORM EN 1838:2013, §5.5, S.14"
+    rule: "Maximale Erkennungsweite: l = z × h (hinterbeleuchtet: z=200; beleuchtet: z=100)."
+    formula: "l = z * h"
+    z_backlit:   200
+    z_frontlit:  100
+    note: "l = Erkennungsweite [m], h = Höhe des Piktogramms auf dem Zeichen [m]"
+    confidence: "norm"

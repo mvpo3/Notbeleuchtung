@@ -1,0 +1,1999 @@
+# circuit_rules_ove_8015.yaml
+# Stromkreis-Aufteilungs- und Verteiler-WIE-Regeln
+# nach OVE E 8015:2022 + OVE E 8101:2025 + LB Elektro 240718 (Mollgasse) + Fachpraxis.
+#
+# Architektur: ADR-0012 (WAS-vs-WIE Trennung).
+#   WAS (Mindestmengen, Pflichtwerte aus Norm-Tabellen) -> device_counts_*, heights_*, *_zones_*
+#   WIE (Aufteilungs-Logik, Mappings, Anwendungs-Regeln) -> circuit_rules_*, lb_standard_wishes
+# Bei WAS-Werten in dieser Datei: Verweis (ref:) statt Duplikation.
+#
+# Architektur-Regel: LB > Referenzplan > Fachpraxis > OVE-Verbote.
+#
+# Schema pro Eintrag (7 Pflichtfelder):
+#   rule, value (ODER ref), einheit, quelle, tier, confidence, pflicht_oder_praxis
+#   - Verweis-Eintraege haben "ref:" statt "value:", einheit "-"
+#   - tier ∈ {lb_explizit, oenorm, fachpraxis}
+
+# ============================================================
+# 1. META
+# ============================================================
+
+meta:
+  status: draft
+  version: 0.3.3
+  norm_basis:
+    - "OVE E 8015:2022 (Mindeststromkreise + Mindestausstattung Wohnungen)"
+    - "OVE E 8101:2025 §411/415/531/701 (Schutzmassnahmen)"
+    - "OVE E 8001:2010 (allgemeine elektrische Sicherheit)"
+  filename_legacy_note: "Dateiname '8015' ist historisch -- Inhalt deckt 8001/8101/8015 ab"
+  vorgaenger:
+    branch: "enis/circuit-rules-ove-8015 (abandoned)"
+    commit: "b02d50b"
+    note: "v0.1.0 Strukturer (Mai 2026), nie gemerged."
+  basis: "v0.1.0-Strukturer + H-11 LB-Substanz (Mollgasse 240718)"
+  created: "2026-06-07"
+  extract_ref: "docs/extracts/lb_elektro_240718_h11_extract.md"
+  architektur_adr: "docs/decisions/0012-track-b-was-vs-wie-trennung.md"
+  lb_quelle: |
+    LB Elektro 240718 (Mollgasse 15, 1180 Wien) - 48 Seiten, Juni 2024.
+    Kern-Sektionen: §5.1.5-5.1.14 (Technik + Verteiler), §5.1.15 (Raumbuch).
+  owner: "Enis (Track B - Domain & Normen)"
+  reviewer: "Leonis (Track A - Code)"
+  related_files:
+    - "OVE E 8015:2022 (Mindeststromkreise + Mindestausstattung Wohnungen)"
+    - "OVE E 8101:2025 §433 (Schutz bei Ueberlast)"
+    - "OVE E 8101:2025 §701 (Bad/Dusche - RCD 30mA)"
+    - "TAEV 2012 (Anschlusswert-Konvention - separate Quelle, NICHT OVE)"
+    - "OEVE EN 62305-3 (Blitzschutz, Schutzklasse III)"
+    - "EN 60439-3 (Unterverteiler-Bauform)"
+    - ".claude/skills/elektroplaner-dev/references/oenorm-wissen.md"
+    - ".claude/skills/elektroplaner-dev/references/leistungsbeschreibung.md"
+    - "backend/rules/device_counts_ove_e8015.yaml (WAS-Single-Source Mindestmengen)"
+    - "backend/rules/room_humidity_classes.yaml (RCD-Pflicht-Raumklassen)"
+    - "backend/rules/heights_fachpraxis.yaml (Komponenten-Vocabulary + LB-Hoehen-Override)"
+    - "backend/rules/dxf_layer_convention.yaml (Layer-Mapping)"
+    - "backend/rules/positioning_rules.yaml (Side-Effect Sprint #2 - existiert noch nicht)"
+  spec_einbindung: |
+    Schnellprueflist in oenorm-wissen.md (Compliance-Acceptance-Quelle) muss
+    durch Regeln in dieser YAML abgedeckt sein. Sektion 15 compliance_acceptance
+    mappt jeden Schnellpruef-Punkt auf die zugehoerige Regel.
+  vocab_disziplin: |
+    Komponenten-Bezeichner (geraeteanschluss_eherd, anschluss_wohnungsstation
+    etc.) und Conditional-Schema (wenn/dann/sonst_verschieben_in/sonst_dann)
+    sind aus leistungsbeschreibung.md uebernommen. KEINE Parallel-Vocabulary.
+    NEU in v0.2.0: comp.kind heizungssteuerung_wohnungsstation (SK-12) ist
+    Vocab-DEPENDENCY - Eintrag in heights_fachpraxis.yaml fehlt noch -> OQ-12.
+
+# ============================================================
+# 2. TECHNISCHE GRUNDDATEN (NEU H-11, §5.1.5-§5.1.10)
+# ============================================================
+# Netz, Schutzmassnahme, Spannungsabfall, Querschnitte, EMV-Trennung,
+# E30/E90-Funktionserhalt, E-Steignische.
+
+technische_grunddaten:
+
+  - rule: netz_mittelspannung
+    value: "20 kV, 50 Hz"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.5 S.24"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: netz_niederspannung
+    value: "3 x 400/230 V, 50 Hz"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.5 S.24"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: schutzmassnahme_zaehler_aufwaerts
+    value: "Nullung + FI-Schutzschaltung (TN-S-Netz), 5-Leiter-System"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.5 S.24 + Nullungsverordnung BGBl 322/1998"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: schutzmassnahme_ht_verteiler
+    value: "Nullung + FI (TN-S) 5-Leiter"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.5 S.24"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: schutzmassnahme_bereichsverteiler
+    value: "Nullung + FI (TN-S) 5-Leiter"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.5 S.24"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: spannungsabfall_uebergabe_zaehler_max
+    value: 1
+    einheit: "%"
+    quelle: "LB Elektro 240718 §5.1.6 S.25 (durch AN zu berechnen + nachweisen)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: spannungsabfall_endstromkreis_grenze_querschnitt_erhoehung
+    value: 3
+    einheit: "%"
+    quelle: "LB Elektro 240718 §5.1.7 S.25 (Querschnitt erhoehen wenn ueberschritten)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: nachzaehlerleitung_querschnitt_min
+    value: "5 x 10 mm² Cu"
+    einheit: "mm² Cu"
+    quelle: "LB Elektro 240718 §5.1.7 S.25 (zu Wohnungsverteilern)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: querschnitt_steckdose_16a_min
+    value: 2.5
+    einheit: "mm² Cu"
+    quelle: "LB Elektro 240718 §5.1.9 S.26 + OVE E 8101 §433"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: querschnitt_beleuchtung_230v_min
+    value: 1.5
+    einheit: "mm² Cu"
+    quelle: "LB Elektro 240718 §5.1.9 S.26 + OVE E 8101 §433"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: querschnitt_sicherheitsbeleuchtung_endstromkreis_min
+    value: 1.5
+    einheit: "mm² Cu"
+    quelle: "LB Elektro 240718 §5.1.9 S.26 (230V Endstromkreise)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: funktionserhalt_e30_e90_pflicht
+    value: "Pruefzeugnis + projektbezogener Nachweis erforderlich"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.9 S.26 + DIN 4102"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: emv_trennung_stark_schwach
+    value: "raeumlich getrennt nach EMV-Richtlinien"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.9 S.26"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: e_steignische_schuko_pro_etage
+    value: "1 x Schuko 16A P+N+PE 230V/50Hz fuer Wartung"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.10 S.28"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: e_steignische_cee_eg_zusatz
+    value: "1 x CEE 5x16A/3P+N+PE 400V/50Hz im EG zusaetzlich"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.10 S.28"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+# ============================================================
+# 3. LS-TYPEN VOKABULAR (v0.1.0 1:1)
+# ============================================================
+# Bezeichner exakt wie in Schrack-Library + LB-Konkretisierung.
+# Cross-Ref aus fi_mapping_regeln + stromkreis_aufteilung + allgemein_garage_verteiler.
+
+ls_typen:
+
+  ls_10a_1n_2te:
+    bezeichnung: "LS 10A 1+N (2TE)"
+    nennstrom_a: 10
+    polig: "1+N"
+    teilungseinheiten: 2
+    typischer_einsatz: "Beleuchtung kleinerer Raumgruppen (Mollgasse: Licht+Schuko-Kombi Kreis 1-4)"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (Wohnungsverteiler) + leistungsbeschreibung.md"
+
+  ls_13a_1n:
+    bezeichnung: "LS 13A 1+N"
+    nennstrom_a: 13
+    polig: "1+N"
+    teilungseinheiten: 2
+    typischer_einsatz: "Steckdosen ohne Geraete-Konzentration; Heizungssteuerung Wohnungsstation; Stiegenhaus-Licht; Tor-Sprechanlage"
+    quelle: "LB Elektro 240718 §5.1.12-5.1.14 + leistungsbeschreibung.md"
+
+  ls_16a_1n:
+    bezeichnung: "LS 16A 1+N"
+    nennstrom_a: 16
+    polig: "1+N"
+    teilungseinheiten: 2
+    typischer_einsatz: "Steckdosen mit Geraete-Last (Kueche, Bad); WaMa/Trockner/GS/Mikrowelle einzeln; Wohnungsstation 16A"
+    quelle: "LB Elektro 240718 §5.1.14 + leistungsbeschreibung.md"
+
+  ls_16a_1polig_3te:
+    bezeichnung: "LS 16A 1-polig (3TE)"
+    nennstrom_a: 16
+    polig: "1-polig"
+    teilungseinheiten: 3
+    typischer_einsatz: "Spezial-Anschluesse (Sonnenschutz, Klingel etc.) ohne N"
+    quelle: "leistungsbeschreibung.md"
+
+  ls_16a_1n_1te:
+    bezeichnung: "LS 16A 1-polig 1TE (ohne N, Drehstrom-Phase)"
+    nennstrom_a: 16
+    polig: "1-polig"
+    teilungseinheiten: 1
+    typischer_einsatz: |
+      Drehstrom-Phase als Multiplier (z.B. 3x fuer E-Herd nach LB §5.1.14).
+      NB: ID-Suffix _1n folgt Handoff-Wortlaut H-16 / Issue #135 trotz
+      Bezeichnung "ohne N" — bewusst beibehalten fuer Audit-Trail.
+    quelle: "LB Mollgasse §5.1.14 S.30 Wortlaut '3 Stk LS 16A 1-p 3TE'"
+
+  ls_16a_3n_5te:
+    bezeichnung: "LS 16A 3+N (5TE)"
+    nennstrom_a: 16
+    polig: "3+N"
+    teilungseinheiten: 5
+    typischer_einsatz: "E-Herd 3-phasig (Pflicht), grosse Backrohre, Kraftstromkreise Garage/Allgemein"
+    quelle: "LB Elektro 240718 §5.1.12-5.1.14 + OVE E 8101 §433"
+
+# ============================================================
+# 4. FI-TYPEN VOKABULAR (NEU H-11)
+# ============================================================
+# Bezeichner analog ls_typen, basierend auf LB Allgemein/Garagen-Mindest-SK-Listen.
+# Cross-Ref aus fi_mapping_regeln + allgemein_garage_verteiler.
+
+fi_typen:
+
+  fi_4_40_003_ga:
+    bezeichnung: "FI 4/40A 0,03A Type G/A (4TE)"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 30
+    typ_klasse: "G/A"
+    teilungseinheiten: 4
+    typischer_einsatz: "Wohnungsverteiler beide FI fuer gesamte Wohnung (Mollgasse Standard); Garagen-FI Licht+Sumpfpumpen+Tor"
+    quelle: "LB Elektro 240718 §5.1.13-5.1.14 + Nullungsverordnung"
+
+  fi_4_40_01_g:
+    bezeichnung: "FI 40A/4polig 0,1A G"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 100
+    typ_klasse: "G"
+    teilungseinheiten: 4
+    typischer_einsatz: "Allgemeinverteiler Lichtkreise (Selektivitaet gegenueber 30mA Steckdosen-FI)"
+    quelle: "LB Elektro 240718 §5.1.12 S.28"
+
+  fi_4_40_003_g:
+    bezeichnung: "FI 40A/4polig 0,03A G"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 30
+    typ_klasse: "G"
+    teilungseinheiten: 4
+    typischer_einsatz: "Allgemeinverteiler Schuko + Kraftstromkreise; Garagenverteiler Mindest-FI"
+    quelle: "LB Elektro 240718 §5.1.12-5.1.13 S.28-29"
+
+  fi_4_40_01_umrichterfest:
+    bezeichnung: "FI 40A/4polig 0,1A umrichterfest"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 100
+    typ_klasse: "B/umrichterfest"
+    teilungseinheiten: 4
+    typischer_einsatz: "Personen-Aufzug (Frequenzumrichter-Last)"
+    quelle: "LB Elektro 240718 §5.1.12 S.28"
+
+  fi_4_40_03_ga_uv:
+    bezeichnung: "FI 4/40A 0,03A Type G/A fuer UV"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 30
+    typ_klasse: "G/A"
+    teilungseinheiten: 4
+    typischer_einsatz: "Unterverteiler/Bereichsverteiler gemeinsame Steckdosen+Lichtkreise"
+    quelle: "LB Elektro 240718 §5.1.8 S.26 (Ausfuehrung FI + LS)"
+
+  rcd_b_universal:
+    bezeichnung: "RCD Typ B (universalstromsensitiv) 4/40A 0,03A 4TE"
+    nennstrom_a: 40
+    polig: "4-polig"
+    ausloesestrom_ma: 30
+    typ_klasse: "B"
+    teilungseinheiten: 4
+    typischer_einsatz: "PV-Wechselrichter mit DC-Anteilen; EV-Ladestation Typ-B (Mode 3/4)"
+    quelle: "OVE E 8101 §531.3.3 (RCD-Typen) + Marktstandard 4P 40A 30mA"
+    rcd_b_meta:
+      rcd_typ: "RCD-B"
+      tier: oenorm
+      confidence: 1.0
+      pflicht_oder_praxis: pflicht_bei_dc_quellen
+      bemerkung: "Schema-Migration Sprint #17b (PR folgt) -- Stub von Sprint #16 PR #125 auf gemeinsames fi_typen-Schema gebracht. PV/EV-Stromkreis-Pflicht-Regeln in Sprint #18 folgen."
+
+# ============================================================
+# 5. RCD-PFLICHT-BEREICHE (v0.1.0 + retroaktiv tier/confidence/fi_typ_ref)
+# ============================================================
+# Wo ist 30mA-FI zwingend nach Norm. Cross-Ref zu fi_typen.
+
+rcd_pflicht:
+
+  - id: RCD-01
+    bereich: "Bad-Stromkreise (alle)"
+    rcd_typ: "RCD 30mA"
+    fi_typ_ref: fi_4_40_003_ga
+    norm_ref: "OVE E 8101:2025 §701"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    raumklassen_verweis: "room_humidity_classes.yaml: feuchtraum_pflicht"
+    quelle: "oenorm-wissen.md (Schutzbereiche Bad) + OVE E 8101 §701"
+    rcd_aufteilung_pflicht_oder_praxis: praxis
+    rcd_trennung_licht_vs_steckdose: optional
+    rcd_trennung_begruendung_praxis: "Sturzgefahr bei FI-Ausfall (Licht + SD am gleichen RCD = Komplettausfall Bad)"
+    rcd_trennung_quelle: "Fachpraxis (Sturzgefahr-Argument); OVE schweigt explizit"
+    rcd_trennung_pflicht_oder_praxis: praxis
+    rcd_trennung_ref: "rcd_zuordnung_regeln.bad_rcd_aufteilung_licht_vs_steckdose (RZ-02)"
+
+  - id: RCD-02
+    bereich: "Steckdosen <=32A in Wohnraeumen"
+    rcd_typ: "RCD 30mA"
+    fi_typ_ref: fi_4_40_003_ga
+    norm_ref: "OVE E 8101:2025 + Nullungsverordnung"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: "Standard-Schuko-Steckdosen 16A fallen darunter."
+    quelle: "oenorm-wissen.md (FI-Pflicht-Sektion)"
+
+  - id: RCD-03
+    bereich: "Aussenbereich (Balkon, Terrasse, Garten, Carport)"
+    rcd_typ: "RCD 30mA"
+    fi_typ_ref: fi_4_40_003_ga
+    norm_ref: "OVE E 8101:2025"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    raumklassen_verweis: "room_humidity_classes.yaml: aussenbereich"
+    quelle: "oenorm-wissen.md"
+
+  - id: RCD-04
+    bereich: "Garage / Tiefgarage / Keller mit Spritzwasser-Risiko"
+    rcd_typ: "RCD 30mA"
+    fi_typ_ref: fi_4_40_003_g
+    norm_ref: "OVE E 8101:2025"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    raumklassen_verweis: "room_humidity_classes.yaml: garage_keller_feucht"
+    quelle: "oenorm-wissen.md + LB Elektro 240718 §5.1.13"
+
+# ============================================================
+# 5b. RCD-ZUORDNUNG (v0.3.0, Selektivitaets-Logik)
+# ============================================================
+# Strukturierte RCD-Zuordnungs-Logik (RZ-01..RZ-04). Konsumiert von Engine
+# (Sprint 18.45.x): Circuit.rcd_id + Circuit.rcd_typ + Circuit.fault_current_ma
+# werden aus diesen Regeln + stromkreis_aufteilung[].dann.rcd-Dict abgeleitet.
+
+rcd_zuordnung_regeln:
+
+  bad_rcd_pflicht:
+    rule_id: "RZ-01"
+    bedingung: "Stromkreis versorgt Bad/Nassraum-Anwendungsbereich ODER durchquert Zone 1/2"
+    rcd_pflicht: true
+    rcd_typ_ref: "fi_4_40_003_ga"
+    bemessungsdifferenzstrom_ma: 30
+    rcd_id_referenz: "RCD-01"
+    quelle: "OVE E 8101 §701.415.1.101 (bath_zones_ove.yaml::meta.rcd_requirement)"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  bad_rcd_aufteilung_licht_vs_steckdose:
+    rule_id: "RZ-02"
+    bedingung: "Bad-Steckdosen + Bad-Beleuchtung im gleichen Bad"
+    rcd_trennung_innerhalb_bad_pflicht: false
+    bemerkung: |
+      Norm-Mindestanforderung: 1 gemeinsamer Bad-RCD 30mA fuer alle Bad-Kreise reicht.
+      Sturzgefahr-Schutz erfolgt durch Kreis-Trennung (SK-02 vs Bad-Licht-SK), nicht durch RCD-Trennung.
+      Praxis-Empfehlung: 2 separate Bad-RCDs sind moeglich, nicht pflicht.
+    quelle: "OVE E 8101 §701 + Fachpraxis (Sturzgefahr-Argument, kein expliziter §)"
+    tier: fachpraxis
+    confidence: 0.85
+    pflicht_oder_praxis: praxis
+
+  schuko_32a_rcd_pflicht:
+    rule_id: "RZ-03"
+    bedingung: "Steckdose <=32A in Wohnbereich (seit OVE E 8101:2018)"
+    rcd_pflicht: true
+    rcd_typ_ref: "fi_4_40_003_ga"
+    rcd_id_referenz: "RCD-02"
+    quelle: "OVE E 8101 §411.3.3 (2018+)"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  aussen_rcd_pflicht:
+    rule_id: "RZ-04"
+    bedingung: "Aussensteckdose (witterungsexponiert)"
+    rcd_pflicht: true
+    rcd_typ_ref: "fi_4_40_003_ga"
+    rcd_id_referenz: "RCD-03"
+    quelle: "OVE E 8101 §411.3.3"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+# ============================================================
+# 6. FI-MAPPING-REGELN (NEU H-11, §5.1.12 S.28)
+# ============================================================
+# Max-Belegung pro FI. LB-Quelle primaer AGV, Anwendung auf WV+Garage+UV als
+# Fachpraxis-Erweiterung (siehe geltungsbereich + bemerkung).
+
+fi_mapping_regeln:
+
+  - rule: max_drehstromkreise_pro_fi
+    value: 2
+    einheit: "Drehstromkreise"
+    quelle: "LB Elektro 240718 §5.1.12 S.28 (Allgemeinverteiler)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    geltungsbereich: ["allgemeinverteiler", "garagenverteiler", "wohnungsverteiler", "unterverteiler"]
+    bemerkung: |
+      Quelle primaer AGV LB S.28 §5.1.12; Anwendung auf WV+Garage+UV als
+      Fachpraxis-Erweiterung (gleiche FI-Topologie, gleiche Selektivitaets-
+      Logik). Bei Einzelfall-Abweichung (z.B. Sonderwunsch-UV) Override
+      ueber lb_standard_wishes.yaml moeglich.
+      Zaehl-Semantik: 1 Drehstromkreis = 1 Belegung gegen dieses Limit,
+      unabhaengig wie viele physische Schaltgeraete der Drehstromkreis
+      hat (1x 3+N-Kombi-Gerät vs 3x 1-polig). Siehe Sektion 6d ZS-02.
+
+  - rule: max_230v_stromkreise_pro_fi
+    value: 6
+    einheit: "230V-Stromkreise"
+    quelle: "LB Elektro 240718 §5.1.12 S.28"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    geltungsbereich: ["allgemeinverteiler", "garagenverteiler", "wohnungsverteiler", "unterverteiler"]
+    bemerkung: |
+      LB-Wortlaut "Alternativ zu Drehstrom: 6x 230V ODER 2x Drehstrom pro FI"
+      ist als XOR (Spezialfall) zu lesen. Sprint #17 Track 2 (H-15) erweitert
+      die Semantik um Aequivalent-Konversion fuer Mischbelegung: 1 Drehstromkreis
+      ~ 3 230V-Aequivalente. Siehe Sektion 6d ZS-04a (XOR, lb_explizit) +
+      ZS-04b (Aequivalent-Konversion, fachpraxis, conf 0.85).
+
+  - rule: max_ls_pro_fi_230v
+    value: 9
+    einheit: "LS"
+    quelle: "LB Elektro 240718 §5.1.12 S.28 (bei 230V-Stromkreisen)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    geltungsbereich: ["allgemeinverteiler", "garagenverteiler", "wohnungsverteiler", "unterverteiler"]
+    bemerkung: |
+      Obergrenze LS-Anzahl je FI, gilt bei reiner 230V-Belegung. Zaehl-
+      Semantik: "LS" = physische Schaltgeraete (TE-getrennte LS-Geraete),
+      NICHT logische Stromkreise. 1+N-Kombi-Gerät = 1 LS-Einheit (egal ob
+      1TE oder 2TE physisch belegt); mehrpoliges Gerät = 1 LS-Einheit;
+      3x 1-polig (Drehstrom-Multiplier) = 3 LS-Einheiten. Siehe Sektion
+      6d ZS-03.
+
+  - rule: fi_gruppen_trennung_uv_pflicht
+    value:
+      - "Beleuchtung + Jalousien"
+      - "Schukosteckdosen Wohnbereiche"
+      - "Schukosteckdosen Reinigung/Allgemein"
+      - "Geraete und fix montierte Betriebsmittel"
+    einheit: "FI-Gruppen"
+    quelle: "LB Elektro 240718 §5.1.8 S.26 (Unterverteiler)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    geltungsbereich: ["unterverteiler"]
+    bemerkung: |
+      UV-spezifische FI-Gruppen-Trennung (Pflicht-Aufteilung): 4 Gruppen.
+      Wohnungsverteiler: siehe separater Eintrag fi_gruppen_trennung_wv_praxis (Tier: fachpraxis).
+
+  - rule: fi_gruppen_trennung_wv_praxis
+    value:
+      - "Beleuchtung + Jalousien"
+      - "Schukosteckdosen Wohnbereiche"
+      - "Schukosteckdosen Reinigung/Allgemein"
+      - "Geraete und fix montierte Betriebsmittel"
+    einheit: "FI-Gruppen"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 'beide FI fuer gesamte Wohnung' (implizit) + Fachpraxis"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    geltungsbereich: ["wohnungsverteiler"]
+    bemerkung: |
+      WV-spezifische FI-Gruppen-Trennung als Praxis-Empfehlung.
+      Norm-Pflicht nur fuer UV via §5.1.8; WV folgt analoger Logik.
+      Mindestens Bad-RCD (RZ-01) muss in WV separat sein -- gemeinsame Schuko-Wohn + Bad ist NICHT zulaessig.
+
+# ============================================================
+# 6b. FI-FUNKTIONSGRUPPEN (v0.3.0, 4 Gruppen pro UV/WV)
+# ============================================================
+# Strukturierte 4-Gruppen-Definition (FG-01..FG-04). Engine-Konsum:
+# Circuit.funktionsgruppe + FiGroup.funktionsgruppe.
+
+fi_funktionsgruppen:
+
+  fg_beleuchtung:
+    label: "Beleuchtung + Jalousie"
+    enthaelt: ["Licht-Kreise", "Jalousie/Markise", "Notlicht"]
+    rule_id: "FG-01"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "LB Elektro 240718 §5.1.8 S.26 (UV); §5.1.14 S.30 (WV)"
+
+  fg_schuko_wohn:
+    label: "Schuko Wohnbereiche"
+    enthaelt: ["Wohnzimmer-SD", "Schlafzimmer-SD", "Flur-SD", "Kinderzimmer-SD"]
+    rule_id: "FG-02"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+
+  fg_schuko_reinigung_allgemein:
+    label: "Schuko Reinigung + Allgemein"
+    enthaelt: ["Bad-SD", "WC-SD", "Aussen-SD", "Kellerraum-SD", "Abstellraum-SD"]
+    rule_id: "FG-03"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+
+  fg_geraete_fix:
+    label: "Geraete + fix montierte Betriebsmittel"
+    enthaelt: ["E-Herd", "WaMa", "GS", "Trockner", "Mikrowelle", "Boiler", "Waermepumpe", "Kueche-Arbeitsplatte-SD", "Wohnungsstation", "Heizungssteuerung"]
+    rule_id: "FG-04"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+    bemerkung: |
+      Kueche-Arbeitsplatten-Steckdosen sind hier (nicht fg_schuko_reinigung_allgemein),
+      obwohl physisch Schuko: Hochlast-Verbraucher + LB-Wortlaut subsumiert
+      Plug-and-Play-Geraete + funktionale Konsistenz mit E-Herd/WaMa/GS/Trockner/Mikro.
+
+# ============================================================
+# 6c. KREISTYP -> FI-FUNKTIONSGRUPPE (v0.3.0, SK-01..SK-12)
+# ============================================================
+# Mapping aller 12 stromkreis_aufteilung[].id auf die Funktionsgruppen
+# aus Sektion 6b. Engine-Konsum: lookup table fuer Circuit.funktionsgruppe.
+
+kreistyp_zu_fi_funktionsgruppe:
+
+  SK-01:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 + Fachpraxis (E-Herd Drehstrom)"
+
+  SK-02:
+    funktionsgruppe: fg_schuko_reinigung_allgemein
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Reinigung/Allgemein-Gruppe, Bad ist Nassraum)"
+
+  SK-03:
+    funktionsgruppe: fg_beleuchtung
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Beleuchtung-Gruppe; SK-03 = Beleuchtung Wohnung)"
+
+  SK-04:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (WaMa/GS = fix montierte Betriebsmittel)"
+
+  SK-05:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Trockner = fix montiertes Betriebsmittel)"
+
+  SK-06:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 0.95
+    quelle: "LB §5.1.8 + Fachpraxis (Mikro = Hochlast-Geraet)"
+
+  SK-07:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Backrohr 3-phasig = fix montiertes Betriebsmittel)"
+
+  SK-08:
+    funktionsgruppe: fg_schuko_wohn
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Wohnbereich-Schuko)"
+
+  SK-09:
+    funktionsgruppe: fg_schuko_wohn
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Wohnbereich-Schuko)"
+
+  SK-10:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 0.9
+    quelle: "LB §5.1.8 + Fachpraxis (Kueche-Hochlast, NICHT schuko_reinigung_allgemein)"
+    bemerkung: "OQ-13 entschieden 12.06.: Hochlast-Argument + funktionale Konsistenz mit E-Herd/WaMa/GS/Mikro praevaliert."
+
+  SK-11:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Wohnungsstation + Heizung-Kuehlung = fix montierte Betriebsmittel)"
+
+  SK-12:
+    funktionsgruppe: fg_geraete_fix
+    tier: lb_explizit
+    confidence: 1.0
+    quelle: "LB §5.1.8 (Heizungssteuerung Wohnungsstation)"
+
+# ============================================================
+# 6d. ZAEHL-SEMANTIK FI-GRUPPEN-LIMITS (v0.3.2, Sprint #17 Track 2 / H-15)
+# ============================================================
+# Beantwortet H-15 (Leonis, 13.06.): Wie zaehlt der Allocator
+# (`_assign_fi_groups` / `_fi_group_add`) Drehstrom / Multiplier /
+# Multi-LS gegen die fi_mapping_regeln.max_*-Caps?
+#
+# Engine-Konsum: Slice 18.46.x Multiplier-Slice -- jeder Circuit kriegt
+# `ls_einheiten` (int) + `drehstrom_belegung` (bool). FiGroup-Counter
+# `circuit_count_drehstrom` zaehlt Drehstrom-Kreise, `circuit_count_230v`
+# zaehlt 230V-Aequivalente (Aequivalent-Konversion ZS-04b), `ls_count`
+# summiert physische LS-Schaltgeraete (ZS-03).
+
+zaehl_semantik_fi_limits:
+
+  ZS-01:
+    rule: "drehstrom_kreis_belegung"
+    thema: "Drehstrom-Kreis-Belegung gegen max_drehstromkreise_pro_fi"
+    regel: "1 Drehstromkreis (3-phasig) = 1 Belegung gegen max_drehstromkreise_pro_fi, unabhaengig von Anzahl physischer Schaltgeraete."
+    beispiel: |
+      E-Herd Default per SK-01 (LB-Wortlaut-treu, Sprint H-16): 3x ls_16a_1n_1te
+      = 1 Drehstromkreis mit ls_einheiten: 3. Verbraucht 1 Slot von
+      max_drehstromkreise_pro_fi: 2 + 3 Einheiten gegen max_ls_pro_fi_230v: 9.
+    quelle: "LB §5.1.12 S.28 + Fachpraxis (FI-Selektivitaet ist kreis-basiert, nicht geraete-basiert)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  ZS-02:
+    rule: "multiplier_semantik_n_stk_ls"
+    thema: "Multiplier-Semantik 'N Stk LS' fuer EINEN Verbraucher"
+    regel: "'N Stk LS' in LB-Wortlaut fuer einen Verbraucher (z.B. E-Herd '3 Stk LS 16A 1-p 3TE') = 1 logischer Stromkreis mit N physischen Schaltgeraeten."
+    beispiel: |
+      LB-Wortlaut "3 Stk LS 16A 1-p (Drehstrom) 3TE - E-Herd (3-polig)" bedeutet:
+      1 funktionaler 3-phasiger Drehstromkreis, realisiert ueber 3 physische
+      1-polige LS-Schaltgeraete (3 TE gesamt). NICHT 3 getrennte Stromkreise.
+      Generelle Regel: gilt fuer alle 'N Stk LS' Multiplier-Faelle (Drehstrom,
+      Multi-Pol, Sub-LS-Belegung).
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (E-Herd Wortlaut) + Fachpraxis"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  ZS-03:
+    rule: "ls_zaehlung_physische_schaltgeraete"
+    thema: "'LS' in max_ls_pro_fi_230v zaehlt physische Schaltgeraete"
+    regel: "max_ls_pro_fi_230v: 9 = max 9 physische LS-Schaltgeraete (TE-getrennte Geraete), NICHT 9 logische Stromkreise."
+    beispiel: |
+      1+N-Kombi-Schuko-LS (z.B. ls_10a_1n_2te, 2TE) = 1 LS-Einheit.
+      1-poliges LS (z.B. Beleuchtung 1-polig 1TE) = 1 LS-Einheit.
+      Multi-pol Kombi-Gerät (3+N-Drehstrom, 5TE) = 1 LS-Einheit.
+      3x 1-polig Drehstrom-Multiplier (3x 1TE) = 3 LS-Einheiten.
+      Physische TE-Anzahl ist nicht relevant fuer Zaehlung, nur Schaltgerät-Anzahl.
+    quelle: "LB §5.1.12 S.28 + Fachpraxis (Verteiler-Bauform ist TE-Schaltgerät-basiert)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  ZS-04a:
+    rule: "mischbelegung_xor_lb_wortlaut"
+    thema: "Mischbelegung Drehstrom + 230V (XOR-Variante, LB-Wortlaut)"
+    regel: "Pro FI entweder bis 2 Drehstromkreise ODER bis 6 230V-Stromkreise (XOR). Keine Mischbelegung erlaubt."
+    beispiel: |
+      Variante A: 2x Drehstrom + 0x 230V (Cap erreicht)
+      Variante B: 0x Drehstrom + 6x 230V (Cap erreicht)
+      Variante AB (gemischt): NICHT erlaubt unter XOR-Variante.
+    quelle: "LB Elektro 240718 §5.1.12 S.28 (Wortlaut 'Alternativ zu Drehstrom')"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      LB-Wortlaut wortwoertlich gelesen. Strikteste Auslegung. Wenn der
+      Verteiler-Planer dies wahlt, ist es normgerecht und konvention-konform.
+
+  ZS-04b:
+    rule: "mischbelegung_aequivalent_konversion_praxis"
+    thema: "Mischbelegung Drehstrom + 230V (Aequivalent-Konversion, Fachpraxis)"
+    regel: "Mischbelegung erlaubt mit Aequivalent-Konversion: 1 Drehstromkreis ~ 3 230V-Aequivalente gegen max_230v-Cap. Gesamt-Cap = 6 Aequivalente."
+    beispiel: |
+      1 Drehstrom + 3 230V = 3+3 = 6 Aequivalente <= 6 max_230v ✓
+      0 Drehstrom + 6 230V = 0+6 = 6 Aequivalente <= 6 max_230v ✓ (=ZS-04a Variante B)
+      2 Drehstrom + 0 230V = 6+0 = 6 Aequivalente <= 6 max_230v ✓ (=ZS-04a Variante A)
+      1 Drehstrom + 4 230V = 3+4 = 7 > 6 -> NICHT erlaubt
+      Zusaetzlich: max_ls_pro_fi_230v: 9 als Hard-Cap auf physische LS-Anzahl.
+    quelle: "Fachpraxis-Enis (LB-Aequivalent-Logik aus XOR-Spezialfall generalisiert)"
+    tier: fachpraxis
+    confidence: 0.85
+    pflicht_oder_praxis: praxis
+    bemerkung: |
+      Aequivalent-Faktor 1 Drehstrom : 3 230V leitet sich aus XOR-Grenzwerten
+      ab (2 Drehstrom = 6 230V als Cap). ZS-04a ist Spezialfall hiervon
+      (Ecken des Loesungs-Polyeders). Verteiler-Planer kann ZS-04a (strikt)
+      ODER ZS-04b (flexibel) wahlen je nach LB-Auftrag-Praezision. Engine
+      sollte ZS-04b als Default verwenden (deckt mehr reale Verteiler-Topo
+      ab), aber ZS-04a-Validation als Strenge-Modus anbieten.
+
+# ============================================================
+# 7. UV-SPEC (NEU H-11, §5.1.8 S.26)
+# ============================================================
+# Unterverteiler / Bereichsverteiler nach EN 60439-3.
+
+uv_spec:
+
+  - rule: uv_bauform
+    value: "Mehrfeldrig nach EN 60439-3, Festeinbautechnik, Bedienung durch Laien"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.8 S.26 + EN 60439-3"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: uv_funktionen
+    value: "Schalt- + Schutzfunktionen + Stoermeldungs-Einbauten"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: uv_ueberspannungsschutz_klasse
+    value: "Klasse C nach OEVE E 8101"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: "In allen Schaltschraenken zwingend."
+
+  - rule: uv_platzreserve_min_prozent
+    value: 30
+    einheit: "%"
+    quelle: "LB Elektro 240718 §5.1.8 S.26"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: uv_fi_gruppen_trennung_ref
+    ref: "fi_mapping_regeln::fi_gruppen_trennung_uv_pflicht"
+    einheit: "-"
+    quelle: "Verweis auf fi_mapping_regeln Sektion 6 (vermeidet Duplikation)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: uv_schutzmassnahme_ref
+    ref: "technische_grunddaten::schutzmassnahme_bereichsverteiler"
+    einheit: "-"
+    quelle: "Verweis auf Sektion 2 technische_grunddaten"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+# ============================================================
+# 8. MINDESTSTROMKREISE - VERWEIS (kein YAML-Datum hier)
+# ============================================================
+# ARCHITEKTUR (ADR-0012): Mindestmengen sind WAS-Werte und liegen in
+#   backend/rules/device_counts_ove_e8015.yaml::circuits_by_floor_area
+# Diese Datei (circuit_rules_ove_8015.yaml) ist WIE-Datei und enthaelt
+# KEINE eigenen Mindestmengen, nur Aufteilungs-Logik (Sektion 10
+# stromkreis_aufteilung) und Verteiler-Spec (Sektionen 11-12).
+#
+# Norm-Schwellen aus OVE E 8015:2022 Tab. 1 (S.14):
+#   <= 50 m2     -> 4 Stromkreise (2 Steckdose + 2 Licht)
+#   50 - 80 m2   -> 5 Stromkreise (3 + 2)
+#   80 - 130 m2  -> 6 Stromkreise (4 + 2)
+#   > 130 m2     -> 8 Stromkreise (5 + 3)
+#
+# LB-Konkretisierung Mollgasse (§5.1.14 S.30): "bis 75 m2 -> 2x Licht/Schuko
+# Kreis 3,4 fuer 2 Zimmer; darueber zusaetzlich 2-4 Stk." (LB-Schwelle 75 m2
+# weicht von Norm-Schwellen 50/80/130 ab -> siehe OQ-08).
+#
+# Konflikt-Hinweis: device_counts_ove_e8015.yaml haelt Norm-Tabelle (50/80/
+# 130). LB-Schwelle 75 ist LB-Override-Anwendungs-Logik und gehoert NICHT
+# in device_counts. Validator-Pfad fuer "welche Tabelle gewinnt?" ist OQ-08.
+
+# ============================================================
+# 9. VARIANTE-DETECTION (v0.1.0 1:1)
+# ============================================================
+# Variante 1/2/3 nach OVE E 8015 (Grund/Standard/Komfort).
+# primary_source = oenorm-wissen.md (Trigger-Definition dort).
+
+variante_detection:
+
+  primary_source: ".claude/skills/elektroplaner-dev/references/oenorm-wissen.md"
+
+  case_sensitivity: insensitive
+  matching_strategie: "alle Strings auf lower-case bevor Trigger-Match"
+
+  trigger_woerter:
+    variante_2_standard:
+      keywords: ["backrohr", "backofen", "trockner", "mikrowelle"]
+      bemerkung: "Wenn LB einen dieser Begriffe enthaelt -> Variante 2"
+      quelle: "oenorm-wissen.md"
+
+    variante_3_komfort:
+      keywords: ["dampfgarer"]
+      bemerkung: "Dampfgarer triggert Variante 3"
+      quelle: "oenorm-wissen.md"
+
+  default:
+    variante: 1
+    bezeichnung: "Grundausstattung"
+    bemerkung: "Wenn keine Variante-2/3-Trigger im LB -> Variante 1 (Grund)"
+
+# ============================================================
+# 10. STROMKREIS-AUFTEILUNG (12 SK-Regeln SK-01..SK-12)
+# ============================================================
+# Pflicht-Trennungen + Praxis-Buendelungen + LB-Overrides.
+# Conditional-Schema aus leistungsbeschreibung.md (wenn/dann/sonst_*).
+
+stromkreis_aufteilung:
+
+  - id: SK-01
+    thema: "E-Herd 3-phasig: eigener LS"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "OVE E 8101 §433 + LB Elektro 240718 §5.1.14"
+    conditional:
+      wenn: "comp.kind == geraeteanschluss_eherd"
+      dann:
+        ls_typ_ref: ls_16a_1n_1te
+        ls_einheiten: 3
+        drehstrom_belegung: true
+        stromkreis_id_pattern: "eherd_<wohnung_id>"
+        rcd:
+          rcd_pflicht: false
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: praxis
+          quelle: "3-phasig direkt vom Hauptverteiler; kein 30mA-RCD-Pflicht"
+    bemerkung: |
+      E-Herd 3-phasig MUSS eigenen LS haben - niemals geteilt mit anderen
+      Verbrauchern. Begruendung: 3-phasige Symmetrie + Hochlast-Spitze beim
+      Aufheizen. LB Mollgasse bestaetigt: "3 Stk LS 16A 1-p (Drehstrom)
+      3TE - E-Herd (3-polig)".
+
+      H-16-Resolution (Sprint H-16, 2026-06-14): OQ-16 RESOLVED mit Option B.
+      SK-01 nutzt jetzt 3x ls_16a_1n_1te (LB-Wortlaut-treu) statt 1x ls_16a_3n_5te
+      (Kombi). Funktional 1 Drehstromkreis (ZS-01) mit 3 physischen LS-Einheiten
+      gegen max_ls_pro_fi_230v: 9 (ZS-03). drehstrom_belegung: true fuer ZS-04b
+      Aequivalent-Konversion (3 230V-Aequivalente).
+
+  - id: SK-02
+    thema: "Bad-Steckdosen: getrennt von Bad-Beleuchtung"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "OVE E 8101 §701 + Sicherheits-Praxis"
+    conditional:
+      wenn: "comp.kind in [schuko_einfach, schuko_zweifach] AND room.class == feuchtraum_pflicht"
+      dann:
+        # 18.08.2026 (User-GO Leonis, Slice 2.38.0): ls_16a_1n -> ls_13a_1n.
+        # Referenz-Autoritaet Verteiler-Schema Typ 1+2 (WHG_Verteiler-PDFs,
+        # Blatt 2): 2F4 Schuko Bad+VR+AR+WC = LS 13A/1P+N/B, 3x1,5 mm2 —
+        # der Generator wich mit 16A/2,5 systematisch auf allen 6 Boards ab.
+        ls_typ_ref: ls_13a_1n
+        stromkreis_id_pattern: "bad_steckdose_<bad_id>"
+        rcd:
+          rcd_id: "RCD-01"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_schuko_reinigung_allgemein
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §701.415.1.101"
+        nicht_zusammen_mit: "Bad-Beleuchtung (separater LS)"
+    bemerkung: |
+      Bad-Steckdosen separat von Bad-Beleuchtung, weil RCD-Aufloesung bei
+      Steckdosen-Fehler die Beleuchtung nicht ausschalten soll (Sturzgefahr
+      bei Dunkelheit).
+
+  - id: SK-03
+    thema: "Beleuchtung Wohnung: mindestens ein eigener Stromkreis"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "OVE E 8015:2022 (impliziert durch Mindeststromkreise Tab. 1)"
+    conditional:
+      wenn: "comp.kind in [deckenauslass, wandauslass, leuchte_decke, lampe_typ_*]"
+      dann:
+        ls_typ_ref: ls_10a_1n_2te
+        stromkreis_id_pattern: "beleuchtung_<wohnung_id>_<n>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_beleuchtung
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3 (RCD-Pflicht alle Endkreise <=32A Wohnraum, seit 2018)"
+        sonst_verschieben_in: "Bei Wohnung >100m² oder mehrgeschossig -> Splitting nach Wohnbereichen"
+    bemerkung: |
+      Mindestens ein Beleuchtungs-LS pro Wohnung. Bei groesseren Wohnungen
+      (>100m²) Aufteilung nach Wohnbereich (z.B. Wohnen/Kueche/Flur vs.
+      Schlafen/Bad). Splitting-Schwelle: OQ-05 geklaert (100m² Praxis).
+
+  - id: SK-04
+    thema: "Waschmaschine + Geschirrspueler: JE EIGENER LS (Override v0.1.0)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    je_geraet_eigener_ls: true
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (Mindeststromkreisaufteilung Wohnungsverteiler)"
+    conditional:
+      wenn: "comp.kind in [geraeteanschluss_waschmaschine, geraeteanschluss_geschirrspueler]"
+      dann:
+        ls_typ_ref: ls_16a_1n
+        stromkreis_id_pattern: "<comp.kind>_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      OVERRIDE gegenueber v0.1.0: v0.1.0 hatte WaMa+GS in Variante 1
+      gemeinsam, in Variante 2+ getrennt. LB Mollgasse §5.1.14 listet
+      explizit "1 LS 16A 1+N - Waschmaschine" UND "1 LS 16A 1+N -
+      Geschirrspueler" als getrennte Mindest-SKs - unabhaengig von der
+      Variante. -> je_geraet_eigener_ls Marker fuer Engine.
+      Konsolidierung-Hinweis OQ-10 (Audit-Trail v0.1.0 -> v0.2.0).
+
+  - id: SK-05
+    thema: "Trockner: eigener LS (V2+ hochgestuft auf Pflicht)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    je_geraet_eigener_ls: true
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (Mindeststromkreisaufteilung)"
+    conditional:
+      wenn: "comp.kind == geraeteanschluss_trockner AND variante >= 2"
+      dann:
+        ls_typ_ref: ls_16a_1n
+        stromkreis_id_pattern: "trockner_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      v0.1.0 war praxis/0.9; hochgestuft zu lb_explizit/1.0 weil LB
+      Mollgasse "1 LS 16A 1+N - Waeschetrockner" als Mindest-SK listet.
+
+  - id: SK-06
+    thema: "Mikrowelle: eigener LS (V2+ hochgestuft auf Pflicht)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    je_geraet_eigener_ls: true
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    conditional:
+      wenn: "comp.kind == geraeteanschluss_mikrowelle AND variante >= 2"
+      dann:
+        ls_typ_ref: ls_16a_1n
+        stromkreis_id_pattern: "mikrowelle_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      v0.1.0 war praxis/0.9; hochgestuft zu lb_explizit/1.0 (LB-Mindest-
+      Liste "1 LS 16A 1+N - Mikrowellenherd"). Stromspitzen Magnetron-
+      Start war Praxis-Begruendung, jetzt durch LB-Pflicht ueberlagert.
+
+  - id: SK-07
+    thema: "Backrohr separat: eigener LS"
+    tier: fachpraxis
+    confidence: 0.85
+    pflicht_oder_praxis: praxis
+    quelle: "Fachpraxis-Enis + LB-Variabilitaet"
+    conditional:
+      wenn: "comp.kind == geraeteanschluss_backrohr AND variante >= 2"
+      dann:
+        ls_typ_ref: ls_16a_3n_5te
+        stromkreis_id_pattern: "backrohr_<wohnung_id>"
+        rcd:
+          rcd_pflicht: false
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: praxis
+          quelle: "3-phasig (3+N); kein 30mA-RCD-Pflicht. Bei 1+N-Fallback (<50L) -> RCD-02 via RZ-03."
+        sonst_verschieben_in: "Bei Backrohr-Volumen <50L -> 1+N 16A statt 3+N"
+    bemerkung: "3-phasig wenn Backrohr-Volumen >50L. Schwellen-Diskussion OQ-06."
+
+  - id: SK-08
+    thema: "Wohnzimmer-Steckdosen: ein LS, max 8 Steckdosen"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    quelle: "Fachpraxis-Enis (LB-Default Mollgasse)"
+    conditional:
+      wenn: "comp.kind in [schuko_einfach, schuko_zweifach, schuko_dreifach, schuko_4fach] AND room.room_type == WOHNZIMMER"
+      dann:
+        ls_typ_ref: ls_13a_1n
+        stromkreis_id_pattern: "wohnzimmer_steckdose_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_schuko_wohn
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+        sonst_verschieben_in: "Bei >8 Steckdosen Splitting auf zweiten LS (_2)"
+
+  - id: SK-09
+    thema: "Schlafzimmer-Steckdosen: pro Schlafzimmer ein LS"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    quelle: "Fachpraxis-Enis"
+    conditional:
+      wenn: "comp.kind in [schuko_einfach, schuko_zweifach, schuko_dreifach, schuko_4fach] AND room.room_type == SCHLAFZIMMER"
+      dann:
+        ls_typ_ref: ls_13a_1n
+        stromkreis_id_pattern: "schlafzimmer_<schlafzimmer_id>_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_schuko_wohn
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+
+  - id: SK-10
+    thema: "Kueche-Arbeitsplatte: eigener LS (16A)"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    quelle: "Fachpraxis-Enis (Hochlast-Bereich)"
+    conditional:
+      wenn: "comp.kind == steckdose_arbeitsplatte AND room.room_type == KUECHE"
+      dann:
+        ls_typ_ref: ls_16a_1n
+        stromkreis_id_pattern: "kueche_arbeitsplatte_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      Arbeitsplatten-Steckdose hat Hochlast-Geraete (Wasserkocher, Toaster,
+      Mixer), separater LS empfohlen. Bezug: heights_fachpraxis.yaml
+      steckdose_arbeitsplatte als eigene Komponenten-Gruppe.
+
+  - id: SK-11
+    thema: "Wohnungsstation 16A + Heizung-Kuehlung 230V Anschluss"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    quelle: "LB Elektro 240718 §5.1.15 S.31-32 (Raumbuch WC/Bad/Zimmer)"
+    conditional:
+      wenn: "comp.kind in [anschluss_wohnungsstation, anschluss_heizung_kuehlung]"
+      dann:
+        ls_typ_ref: ls_16a_1n
+        stromkreis_id_pattern: "<comp.kind>_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      LB Mollgasse listet "1 Anschluss Wohnungsstation 230V" + "1 Anschluss
+      Heizungs-Kuehlungsverteiler 230V (in Decke)" als Raum-Mindest-
+      Ausstattung. Je eigener LS, weil dauerhaft eingeschaltet und
+      Stromausfall direkten Komfort-Verlust bedeutet.
+
+  - id: SK-12
+    thema: "Heizungssteuerung Wohnungsstation: eigener LS 13A (NEU H-11)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    vocab_dependency_flag: "comp.kind 'heizungssteuerung_wohnungsstation' fehlt in heights_fachpraxis.yaml -> siehe OQ-12 (Sprint #2 Companion-PR)"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (Mindeststromkreisaufteilung WV)"
+    conditional:
+      wenn: "comp.kind == heizungssteuerung_wohnungsstation"
+      dann:
+        ls_typ_ref: ls_13a_1n
+        stromkreis_id_pattern: "heizungssteuerung_<wohnung_id>"
+        rcd:
+          rcd_id: "RCD-02"
+          rcd_typ_ref: "fi_4_40_003_ga"
+          funktionsgruppe: fg_geraete_fix
+          pflicht_oder_praxis: pflicht
+          quelle: "OVE E 8101 §411.3.3"
+    bemerkung: |
+      LB Mollgasse §5.1.14 listet explizit "1 LS 13A 1+N (2TE) -
+      Heizungssteuerung (Wohnungsstation)". Trennung von SK-11 (Anschluss
+      Wohnungsstation 16A) weil andere Komponente: SK-11 = Anschluss-
+      Geraet, SK-12 = Steuerungseinheit. Engine-Test braucht Vocab-Eintrag
+      heizungssteuerung_wohnungsstation in heights_fachpraxis.yaml ->
+      BLOCKER OQ-12 fuer Sprint #2.
+
+# ============================================================
+# 11. VERTEILER-DEFAULTS (v0.1.0 -> 7-Feld-Schema, 14 Regeln)
+# ============================================================
+# Format: list-of-entries mit Schema rule/value/einheit/quelle/tier/
+# confidence/pflicht_oder_praxis (statt v0.1.0 Dict-Format).
+
+verteiler_defaults:
+
+  - rule: platzreserve_min_prozent_wv
+    value: 30
+    einheit: "%"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 + OVE E 8015"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      30% Platzreserve im Wohnungsverteiler war v0.1.0 als Praxis-Wert
+      eingestuft. LB Mollgasse listet explizit "1 Platzreserve 30%" als
+      Mindest-Bestandteil der WV-Aufteilung -> hochgestuft zu lb_explizit.
+
+  - rule: anschlusswert_pro_wohnung_kw
+    value: 18
+    einheit: "kW"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 + TAEV 2012"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      18 kW gleichzeitiger Anschlusswert pro Wohnung. LB Mollgasse zitiert
+      explizit "lt. TAEV 2012". v0.1.0 war praxis (TAEV-Default), durch
+      LB-Explizit-Nennung hochgestuft. EVU-spezifische Abweichungen (16-22
+      kW Spanne Wiener Netze/EVN/Salzburg AG) ueber lb_standard_wishes.yaml
+      override-bar (OQ-03 v0.3).
+
+  - rule: wv_bauform
+    value: "mind. 4-reihig UP-Kleinverteiler mit Tuer"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_material
+    value: "Kunststoff schutzisoliert"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_einbautiefe_mm
+    value: 99
+    einheit: "mm"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_farbe_ral
+    value: "RAL 9010 (weiss)"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_fabrikat
+    value: "Schrack oder gleichwertig"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_situierung
+    value: "nach Moeglichkeit im Vorraum"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: praxis
+    bemerkung: "LB-Wortlaut 'nach Moeglichkeit' = praxis, nicht harte Pflicht."
+
+  - rule: wv_anspeisung
+    value: "vom Normzaehlerverteiler bzw. Normzaehlergeruest"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_beschriftung
+    value: "Etikettendruck (Innen Stromkreis-Auflistung, haendisch untersagt)"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: wv_wand_mindeststaerke_ref
+    ref: "positioning_rules::wand_mindeststaerke_verteiler"
+    einheit: "-"
+    quelle: "Verweis auf positioning_rules.yaml (Side-Effect Sprint #2)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      LB Mollgasse §5.1.14 S.30: "Wand-Mindeststaerke 10 cm (ideal 12-15
+      cm)". Wert gehoert architektonisch in positioning_rules.yaml -> dort
+      neue Sektion wand_mindeststaerke_verteiler im Sprint #2 anlegen.
+      positioning_rules.yaml existiert noch nicht (OQ-09).
+
+  - rule: schwelle_wv_klein_te
+    value: 24
+    einheit: "TE"
+    quelle: "Fachpraxis-Enis (LB-Konkretisierung)"
+    tier: fachpraxis
+    confidence: 0.8
+    pflicht_oder_praxis: praxis
+    bemerkung: "Wohnungen <=75m² typisch 24 TE Verteiler."
+
+  - rule: schwelle_wv_mittel_te
+    value: 36
+    einheit: "TE"
+    quelle: "Fachpraxis-Enis (LB-Konkretisierung)"
+    tier: fachpraxis
+    confidence: 0.8
+    pflicht_oder_praxis: praxis
+    bemerkung: "Wohnungen 75-120m² typisch 36 TE Verteiler."
+
+  - rule: schwelle_wv_gross_te
+    value: 48
+    einheit: "TE"
+    quelle: "Fachpraxis-Enis (LB-Konkretisierung)"
+    tier: fachpraxis
+    confidence: 0.8
+    pflicht_oder_praxis: praxis
+    bemerkung: "Wohnungen >120m² typisch 48 TE Verteiler. Verfeinerung OQ-04 v0.3."
+
+# ============================================================
+# 12. ALLGEMEIN- + GARAGEN-VERTEILER (NEU H-11, §5.1.12+§5.1.13)
+# ============================================================
+# Nested-Dict-Struktur: allgemeinverteiler.spec + .mindest_stromkreise +
+# garagenverteiler.mindest_stromkreise. Cross-Refs zu fi_typen + ls_typen.
+
+allgemein_garage_verteiler:
+
+  allgemeinverteiler:
+    spec:
+      - rule: agv_bauform
+        value: "AP-Wand- oder Standverteiler"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_plantasche_legende
+        value: "Eigene Plantasche innen + Verteilerlegende aufgeklebt"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_platzreserve_prozent
+        value: 30
+        einheit: "%"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_ueberspannungsschutz
+        value: "nach OEVE E 8101 + OEVE EN 62305-3"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_anspeisung
+        value: "vom Zaehlerverteiler"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_hand_auto_schalter
+        value: "Hand/0/Automatik-Schalter fuer Daemmerung/Schaltuhren"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_situierung
+        value: "im Elektrozaehlerraum pro Bauteil"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - rule: agv_je_bauteil
+        value: "ein Allgemeinverteiler pro Bauteil"
+        einheit: "-"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+    mindest_stromkreise:
+      - id: AGV-01
+        stk: "1-2"
+        fi_typ_ref: fi_4_40_01_g
+        verbraucher: "Lichtkreise"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-02
+        stk: "1-2"
+        fi_typ_ref: fi_4_40_003_g
+        verbraucher: "Schuko + Kraftstromkreise"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-03
+        stk: "1-2"
+        fi_typ_ref: fi_4_40_01_umrichterfest
+        verbraucher: "Personen-Aufzug"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-04
+        stk: "2-5"
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Stiegenhaus-Allgemeinlicht"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-05
+        stk: "2-5"
+        ls_typ_ref: ls_16a_1n
+        verbraucher: "Schuko Gaenge"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-06
+        stk: 3
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Licht Keller Allgemeinraeume"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-07
+        stk: 2
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Licht Aussen/Zugangsbeleuchtung (ueber Daemmerungsschalter)"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-08
+        stk: 1
+        ls_typ_ref: ls_16a_1n
+        verbraucher: "Schuko Allgemeinraeume Keller"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-09
+        stk: 1
+        ls_typ_ref: ls_16a_3n_5te
+        verbraucher: "Kraftstrom Allgemeinraeume Keller"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-10
+        stk: 1
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Tor-Sprechanlage (Netzteil)"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-11
+        stk: "1-2"
+        ls_typ_ref: ls_16a_1n
+        verbraucher: "Aufzugschachtbeleuchtung + Schuko"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-12
+        stk: 1
+        ls_typ_ref: ls_16a_1n
+        verbraucher: "Ventilator Muellraum"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-13
+        stk: 2
+        ls_typ_ref: ls_16a_1n
+        verbraucher: "Reserve 16A"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-14
+        stk: 2
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Reserve 13A"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: AGV-15
+        stk: "div."
+        komponenten: "Schaltschuetze, Schaltuhren, Daemmerungsschalter"
+        quelle: "LB Elektro 240718 §5.1.12 S.28"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+        bemerkung: "Anzahl je nach Lichtkreis-Anzahl + Daemmerungs-/Zeitsteuerung."
+
+  garagenverteiler:
+    mindest_stromkreise:
+      - id: GAR-01
+        stk: 4
+        fi_typ_ref: fi_4_40_003_g
+        verbraucher: "FI Mindest-Anzahl Garage"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: GAR-02
+        stk: 4
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Licht Garage"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: GAR-03
+        stk: 1
+        ls_typ_ref: ls_16a_3n_5te
+        verbraucher: "Sicherheitsbeleuchtung (3-polig+N 16A)"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: GAR-04
+        stk: 2
+        ls_typ_ref: ls_13a_1n
+        verbraucher: "Sumpfpumpen"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: GAR-05
+        stk: 1
+        ls_typ_ref: ls_16a_3n_5te
+        verbraucher: "Garagentor (3-polig+N 16A)"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+      - id: GAR-06
+        stk: 4
+        komponenten: "Schaltschuetze Beleuchtung"
+        quelle: "LB Elektro 240718 §5.1.13 S.29"
+        tier: lb_explizit
+        confidence: 1.0
+        pflicht_oder_praxis: pflicht
+
+# ============================================================
+# 13. ANSCHLUSSWERTE (NEU H-11, §5.1.3-§5.1.4 + §1.6)
+# ============================================================
+# Projektbezogene Anschlusswerte + Zaehlerkonzept Mollgasse.
+
+anschlusswerte:
+
+  - rule: leistungsbedarf_ana
+    value: 147.49
+    einheit: "kW"
+    quelle: "LB Elektro 240718 §5.1.3 S.22 (Anastasius-Bauteil, gleichzeitiger Bedarf)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: leistungsbedarf_moll
+    value: 110.25
+    einheit: "kW"
+    quelle: "LB Elektro 240718 §5.1.3 S.22 (Mollgasse-Bauteil, gleichzeitiger Bedarf)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: diesel_notstrom
+    value: false
+    einheit: "-"
+    quelle: "LB Elektro 240718 §5.1.4 S.22 (kein Diesel-Notstrom vorgesehen)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - rule: zaehlerkonzept
+    value:
+      - "1 Zaehler je Wohneinheit (48 Wohneinheiten + 1 Geschaeftslokal)"
+      - "1 Zaehler fuer Garage"
+      - "1 Zaehler fuer Geschaeftseinheit"
+      - "1 Zaehler fuer Heizung"
+      - "1 Zaehler je Bauteil fuer Allgemeinanlagen, Stiegenhaeuser, Gaenge inkl. Aussenbeleuchtung"
+      - "je 1 Zaehler fuer Aufzug pro Bauteil"
+      - "2 Zaehler fuer Druckbelueftungen"
+    einheit: "-"
+    quelle: "LB Elektro 240718 §1.6 S.5"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+# ============================================================
+# 14. LB-EXPLIZITE HOEHEN (NEU H-11)
+# ============================================================
+# LB-Override-Werte fuer heights_fachpraxis.yaml.
+
+lb_explizite_hoehen:
+
+  - rule: wohnungsverteiler_ok_ffbok
+    value: 2050
+    einheit: "mm"
+    quelle: "LB Elektro 240718 §5.1.14 S.30 (OK = 205 cm FFBOK)"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    override_target: "heights_fachpraxis::verteiler_wohnung.ok_mm"
+    default_fachpraxis: 1600
+    bemerkung: |
+      Existing heights_fachpraxis.yaml verteiler_wohnung.ok_mm = 1600 mm
+      (Fachpraxis-Default). LB Mollgasse setzt explizit auf 2050 mm. Nach
+      Architektur-Regel "LB > Referenzplan > Fachpraxis" hat LB-Override
+      Vorrang. Engine muss bei Mollgasse-Projekten 2050 mm setzen, bei
+      anderen LBs ohne explizite Vorgabe bleibt 1600 mm. Sprint #2:
+      Hinweis-Eintrag in heights_fachpraxis.yaml verteiler_wohnung.notizen.
+
+# ============================================================
+# 15. COMPLIANCE-ACCEPTANCE (15 Pruefpunkte)
+# ============================================================
+# Schnellprueflist aus oenorm-wissen.md + H-11 LB-Pruefpunkte.
+
+compliance_acceptance:
+
+  schnellprueflist_mapping:
+
+    - pruefung: "Mindestanzahl Stromkreise erreicht (E 8015 Tab. 1)?"
+      abgedeckt_durch: "device_counts_ove_e8015.yaml::circuits_by_floor_area + Sektion 8 Verweis"
+      validator_pseudocode: |
+        actual_circuits = count(stromkreise_in_wohnung)
+        soll = lookup_norm_table(wohnungs_qm)  # 50/80/130 m2 -> 4/5/6/8
+        assert actual_circuits >= soll
+
+    - pruefung: "RCD 30mA fuer Bad/Aussen/Garage/Keller/Steckdosen <=32A?"
+      abgedeckt_durch: "Sektion 5 rcd_pflicht (RCD-01 bis RCD-04)"
+      validator_pseudocode: |
+        for sk in stromkreise:
+          if sk.bereich in [bad, aussen, garage, keller]: assert sk.rcd == "30mA"
+          if sk.bereich == steckdose and sk.nennstrom_a <= 32: assert sk.rcd == "30mA"
+
+    - pruefung: "E-Herd hat eigenen 3-phasigen LS?"
+      abgedeckt_durch: "Sektion 10 SK-01"
+      validator_pseudocode: |
+        eherd_circuits = filter(stromkreise, comp.kind == geraeteanschluss_eherd)
+        assert len(eherd_circuits) >= 1
+        for c in eherd_circuits: assert c.ls_typ_ref == ls_16a_3n_5te
+
+    - pruefung: "Bad-Steckdosen getrennt von Bad-Beleuchtung?"
+      abgedeckt_durch: "Sektion 10 SK-02"
+      validator_pseudocode: |
+        bad_steckdose_sks = filter_by_bereich(bad_steckdose)
+        bad_licht_sks = filter_by_bereich(bad_licht)
+        assert intersection(bad_steckdose_sks, bad_licht_sks) == empty
+
+    - pruefung: "WaMa + GS je eigener LS (LB-Override)?"
+      abgedeckt_durch: "Sektion 10 SK-04 (je_geraet_eigener_ls: true)"
+      validator_pseudocode: |
+        wama_sks = filter(stromkreise, comp.kind == geraeteanschluss_waschmaschine)
+        gs_sks   = filter(stromkreise, comp.kind == geraeteanschluss_geschirrspueler)
+        assert intersection(wama_sks, gs_sks) == empty
+
+    - pruefung: "Trockner + Mikrowelle bei V2+ je eigener LS?"
+      abgedeckt_durch: "Sektion 10 SK-05 + SK-06"
+      validator_pseudocode: |
+        if variante >= 2:
+          for kind in [geraeteanschluss_trockner, geraeteanschluss_mikrowelle]:
+            sks = filter(stromkreise, comp.kind == kind)
+            for sk in sks: assert sk.je_geraet_eigener_ls == True
+
+    - pruefung: "Verteiler-Platzreserve >= 30%?"
+      abgedeckt_durch: "Sektion 11 verteiler_defaults.platzreserve_min_prozent_wv + Sektion 12 agv_platzreserve_prozent"
+      validator_pseudocode: |
+        belegung = used_te / total_te
+        assert (1 - belegung) >= 0.30
+
+    - pruefung: "Variante-Detection korrekt aus LB-Text abgeleitet?"
+      abgedeckt_durch: "Sektion 9 variante_detection"
+      validator_pseudocode: |
+        lb_text_lower = lb_text.lower()
+        if any(kw in lb_text_lower for kw in ['dampfgarer']): variante = 3
+        elif any(kw in lb_text_lower for kw in ['backrohr', 'backofen', 'trockner', 'mikrowelle']): variante = 2
+        else: variante = 1
+
+    - pruefung: "FI-Mapping max 2 Drehstrom ODER 6 x 230V pro FI?"
+      abgedeckt_durch: "Sektion 6 fi_mapping_regeln.max_drehstromkreise_pro_fi + max_230v_stromkreise_pro_fi"
+      validator_pseudocode: |
+        for fi in verteiler.fi_liste:
+          drehstrom_count = count(fi.stromkreise where polig == "3+N")
+          v230_count = count(fi.stromkreise where polig in ["1+N", "1-polig"])
+          assert drehstrom_count <= 2 OR v230_count <= 6
+
+    - pruefung: "FI-Mapping max 9 LS pro FI bei 230V?"
+      abgedeckt_durch: "Sektion 6 fi_mapping_regeln.max_ls_pro_fi_230v"
+      validator_pseudocode: |
+        for fi in verteiler.fi_liste:
+          if all(sk.polig in ["1+N", "1-polig"] for sk in fi.stromkreise):
+            assert len(fi.ls_liste) <= 9
+
+    - pruefung: "UV-FI-Gruppen-Trennung (4 Gruppen) eingehalten?"
+      abgedeckt_durch: "Sektion 7 uv_spec.uv_fi_gruppen_trennung_ref -> Sektion 6 fi_gruppen_trennung_uv_pflicht"
+      validator_pseudocode: |
+        uv_fi_gruppen = group_fi_by_kind(uv)
+        assert "Beleuchtung+Jalousien" in uv_fi_gruppen
+        assert "Schuko_Wohn" in uv_fi_gruppen
+        assert "Schuko_Reinigung_Allgemein" in uv_fi_gruppen
+        assert "Geraete_Fix" in uv_fi_gruppen
+
+    - id: COMP-FIRCD-01
+      pruefung: "Jeder Circuit hat funktionsgruppe gesetzt?"
+      abgedeckt_durch: "Sektion 6c kreistyp_zu_fi_funktionsgruppe (SK-01..SK-12)"
+      validator_pseudocode: |
+        for c in circuits:
+          assert c.funktionsgruppe in [fg_beleuchtung, fg_schuko_wohn,
+                                       fg_schuko_reinigung_allgemein, fg_geraete_fix]
+
+    - id: COMP-FIRCD-02
+      pruefung: "Bad-Kreise haben RCD-01 zugewiesen?"
+      abgedeckt_durch: "Sektion 5 rcd_pflicht.RCD-01 + Sektion 5b rcd_zuordnung_regeln.bad_rcd_pflicht (RZ-01)"
+      validator_pseudocode: |
+        for c in circuits:
+          if c.room.class == feuchtraum_pflicht or c.sk_rule_id == "SK-02":
+            assert c.rcd_id == "RCD-01"
+            assert c.fault_current_ma == 30
+
+    - id: COMP-FIRCD-03
+      pruefung: "Schuko <=32A in Wohnraum haben RCD-02 zugewiesen (RZ-03)?"
+      abgedeckt_durch: "Sektion 5b rcd_zuordnung_regeln.schuko_32a_rcd_pflicht (RZ-03)"
+      validator_pseudocode: |
+        for c in circuits:
+          if c.consumer_class.startswith("schuko") and c.breaker_ampere <= 32 \
+             and c.room.class != feuchtraum_pflicht:
+            assert c.rcd_id == "RCD-02"
+
+    - id: COMP-FIRCD-04
+      pruefung: "WV hat mindestens Bad-RCD separat (RZ-01 enforces)?"
+      abgedeckt_durch: "Sektion 5b rcd_zuordnung_regeln.bad_rcd_pflicht (RZ-01) + Sektion 6 fi_gruppen_trennung_wv_praxis"
+      validator_pseudocode: |
+        for wv in projekt.wohnungsverteiler:
+          bad_fi_groups = [g for g in wv.fi_groups
+                           if any(c.sk_rule_id == "SK-02" for c in g.circuits)]
+          non_bad_fi_groups = [g for g in wv.fi_groups if g not in bad_fi_groups]
+          for bad_g in bad_fi_groups:
+            for nb_g in non_bad_fi_groups:
+              assert bad_g.fi_group_id != nb_g.fi_group_id
+
+    - pruefung: "Wohnungsverteiler-OK Hoehe = LB-Override (Mollgasse 2050 mm)?"
+      abgedeckt_durch: "Sektion 14 lb_explizite_hoehen.wohnungsverteiler_ok_ffbok"
+      validator_pseudocode: |
+        if projekt_kontext == "mollgasse_lb":
+          assert wv.ok_mm == 2050
+        else:
+          assert wv.ok_mm == lookup(heights_fachpraxis::verteiler_wohnung.ok_mm)  # 1600 Default
+
+    - pruefung: "TN-S 5-Leiter-Schutzmassnahme durchgaengig?"
+      abgedeckt_durch: "Sektion 2 technische_grunddaten.schutzmassnahme_*"
+      validator_pseudocode: |
+        for verteiler in [zaehler, ht, bereich, wv, uv]:
+          assert verteiler.schutzmassnahme == "Nullung + FI (TN-S) 5-Leiter"
+
+    - pruefung: "Endstrom-Querschnitte min eingehalten (Steckdose 2,5 mm² / Beleuchtung 1,5 mm² Cu)?"
+      abgedeckt_durch: "Sektion 2 technische_grunddaten.querschnitt_steckdose_16a_min + querschnitt_beleuchtung_230v_min"
+      validator_pseudocode: |
+        for sk in stromkreise:
+          if sk.last_typ == "steckdose_16a": assert sk.querschnitt_mm2 >= 2.5
+          if sk.last_typ == "beleuchtung_230v": assert sk.querschnitt_mm2 >= 1.5
+
+    - pruefung: "AGV-Mindest-SK-Liste H-11 erfuellt (15 SKs nach LB Mollgasse §5.1.12)?"
+      abgedeckt_durch: "Sektion 12 allgemein_garage_verteiler.allgemeinverteiler.mindest_stromkreise"
+      validator_pseudocode: |
+        for agv in projekt.allgemeinverteiler:
+          erwartet = ["lichtkreise", "schuko_kraft", "aufzug", "stiegenhaus_licht",
+                      "schuko_gaenge", "licht_keller_allgemein", "licht_aussen",
+                      "schuko_keller", "kraft_keller", "tor_sprechanlage",
+                      "aufzugschacht", "ventilator_muellraum",
+                      "reserve_16a", "reserve_13a", "schaltschuetze"]
+          for verbraucher in erwartet:
+            assert any(sk.verbraucher.contains(verbraucher) for sk in agv.stromkreise)
+
+    - id: COMP-ZS-01
+      pruefung: "Drehstrom-Kreis-Belegung korrekt gezaehlt (1 Belegung egal wie viele LS-Geraete)?"
+      abgedeckt_durch: "Sektion 6d zaehl_semantik_fi_limits.ZS-01"
+      validator_pseudocode: |
+        for fi in verteiler.fi_liste:
+          drehstrom_circuits = [c for c in fi.circuits if c.drehstrom_belegung]
+          assert len(drehstrom_circuits) <= 2  # max_drehstromkreise_pro_fi
+          # Jeder Drehstromkreis zaehlt 1, egal ob c.ls_einheiten == 1 (Kombi) oder 3 (Multiplier)
+
+    - id: COMP-ZS-02
+      pruefung: "Multiplier 'N Stk LS' als 1 logischer Kreis erkannt?"
+      abgedeckt_durch: "Sektion 6d zaehl_semantik_fi_limits.ZS-02"
+      validator_pseudocode: |
+        for sk in stromkreise:
+          if sk.lb_wortlaut.matches("N Stk LS"):
+            # ein Circuit mit ls_einheiten == N, NICHT N getrennte Circuits
+            assert sk.circuit_count == 1
+            assert sk.ls_einheiten >= 1
+
+    - id: COMP-ZS-03
+      pruefung: "LS-Zaehlung = physische Schaltgeraete (nicht TE, nicht Pole)?"
+      abgedeckt_durch: "Sektion 6d zaehl_semantik_fi_limits.ZS-03"
+      validator_pseudocode: |
+        for fi in verteiler.fi_liste:
+          total_ls = sum(c.ls_einheiten for c in fi.circuits)
+          assert total_ls <= 9  # max_ls_pro_fi_230v
+          # 1+N-Kombi-Gerät = 1 LS-Einheit (egal ob 1TE oder 2TE physisch)
+          # 3x 1-polig Drehstrom-Multiplier = 3 LS-Einheiten
+
+    - id: COMP-ZS-04
+      pruefung: "Mischbelegung Drehstrom + 230V via Aequivalent-Konversion (ZS-04b) ODER XOR (ZS-04a)?"
+      abgedeckt_durch: "Sektion 6d zaehl_semantik_fi_limits.ZS-04a (XOR, lb_explizit) + ZS-04b (Aequivalent, fachpraxis)"
+      validator_pseudocode: |
+        for fi in verteiler.fi_liste:
+          drehstrom_count = sum(1 for c in fi.circuits if c.drehstrom_belegung)
+          v230_count = sum(1 for c in fi.circuits if not c.drehstrom_belegung)
+          if engine_mode == "strict_xor":  # ZS-04a
+            assert (drehstrom_count == 0 and v230_count <= 6) or (drehstrom_count <= 2 and v230_count == 0)
+          else:  # ZS-04b Default
+            aequivalente = drehstrom_count * 3 + v230_count
+            assert aequivalente <= 6
+
+# ============================================================
+# 16. OPEN QUESTIONS / DECISIONS
+# ============================================================
+
+open_questions:
+
+    - id: SK-OQ-01
+      thema: "Variante-Detection: case-sensitive oder nicht?"
+      befund: |
+        LBs schreiben Begriffe gemischt: "Backrohr", "BACKROHR", "backrohr".
+      decision_enis: "Case-insensitive (alles lower-case vor Match)."
+      status: geklaert
+      impact: "Niedrig"
+      naechste_action: "Keine - in variante_detection.case_sensitivity verankert."
+
+    - id: SK-OQ-02
+      thema: "WaMa+GS getrennte LS: v0.1.0 'gemeinsam V1' vs v0.2.0 LB-Override 'je eigener LS'"
+      befund: |
+        v0.1.0 SK-04 hatte in Variante 1 WaMa+GS gemeinsam (Praxis, gtprojekt-LB).
+        LB Mollgasse §5.1.14 listet je eigener LS, unabhaengig von Variante.
+      decision_enis: |
+        v0.2.0: Default-Change zu je eigener LS via LB-Override (SK-04
+        je_geraet_eigener_ls: true). Audit-Trail via OQ-10 Konsolidierung.
+      status: geklaert
+      impact: "Mittel - betrifft alle Wohnungen ohne Trockner."
+      naechste_action: "Konsolidierung-Hinweis OQ-10 in PR-Body dokumentieren."
+
+    - id: SK-OQ-03
+      thema: "Anschlusswert 18 kW: TAEV-Default oder EVU-spezifisch?"
+      befund: |
+        TAEV 2012 nennt 18 kW Default. LB Mollgasse zitiert explizit TAEV.
+        Andere EVU (Wiener Netze/EVN/Salzburg AG) 16-22 kW Spanne moeglich.
+      status: parkiert
+      impact: "Mittel - betrifft Verteiler-Dimensionierung."
+      naechste_action: "v0.3: EVU-Override via lb_standard_wishes.yaml; Warning bei <18 kW geplant."
+
+    - id: SK-OQ-04
+      thema: "Wohnungsverteiler 24/36/48 TE: zu kleinteilig oder OK?"
+      befund: |
+        Drei Schwellen sind grobe Praxis-Regel. Markt hat 18/30/42 TE Varianten.
+      status: parkiert
+      impact: "Niedrig - Verteiler-Wahl ist letzter Schritt."
+      naechste_action: "v0.3: Verfeinerung wenn mehrere Bautraeger-LBs vorliegen."
+
+    - id: SK-OQ-05
+      thema: "Beleuchtung-Splitting bei groesseren Wohnungen: bei welchem qm?"
+      befund: |
+        SK-03 sagt 'bei groesseren Wohnungen Aufteilung nach Wohnbereich' ohne
+        konkrete qm-Schwelle.
+      decision_enis: |
+        Splitting bei >100m² oder >2 Geschosse. Praxis-Empfehlung, keine Norm-Pflicht.
+      status: geklaert
+      impact: "Niedrig - kosmetisch"
+      naechste_action: "Keine - SK-03 sonst_verschieben_in dokumentiert."
+
+    - id: SK-OQ-06
+      thema: "Backrohr-3-phasig-Schwelle: 50L Volumen ausreichend?"
+      befund: |
+        SK-07 nennt 50L als Schwelle. Markt: 60L+ Backrohre Standard, Kombi-
+        Geraete 25-40L.
+      status: parkiert
+      impact: "Niedrig"
+      naechste_action: "v0.3: Override im lb_standard_wishes.yaml bei <40L Backrohr."
+
+    - id: SK-OQ-07
+      thema: "Mindestanzahl Stromkreise: Norm-Tabelle vs LB-75m2-Heuristik"
+      befund: |
+        ADR-0012 verankert WAS-vs-WIE-Trennung. Mindestmengen liegen in
+        device_counts_ove_e8015.yaml (Norm 50/80/130 m2). LB-75m2-Heuristik
+        ist Anwendungs-Override-Logik fuer Mollgasse, kein Norm-Wert.
+      decision_enis: |
+        Sektion mindeststromkreise (8) bleibt Kommentar-Verweis. Validator-
+        Pfad fuer Norm vs LB siehe OQ-08.
+      status: geklaert
+      impact: "Architektur-Korrektur, keine Regel-Aenderung."
+      naechste_action: "Keine - ADR-0012 applied."
+
+    - id: SK-OQ-08
+      thema: "Validator-Pfad: Norm-Tab (50/80/130) vs LB-Tab (75 m2 Schwelle)"
+      befund: |
+        OVE E 8015 Tab. 1: 50/80/130 m2 -> 4/5/6/8 SKs.
+        LB Mollgasse §5.1.14: 75 m2 -> 2 Licht/Schuko-Kreise; darueber +2-4.
+        Beide Tabellen sind valide. Welche gewinnt im Validator?
+      status: open
+      impact: "Mittel - Validator-Korrektheit fuer Mollgasse-Projekt."
+      naechste_action: |
+        Track-A-Engine-Entscheidung (Sprint #2): max(norm_soll, lb_soll) als
+        konservative Defaultlogik vorschlagen; LB-Override nur wenn lb_soll
+        > norm_soll. Diskussion Mi 19:00 Sync.
+
+    - id: SK-OQ-09
+      thema: "Wand-Mindeststaerke 10cm: positioning_rules.yaml existiert noch nicht"
+      befund: |
+        wv_wand_mindeststaerke_ref verweist auf positioning_rules.yaml::
+        wand_mindeststaerke_verteiler. Die YAML existiert noch nicht (Side-
+        Effect aus H-11 Extract).
+      decision_enis: |
+        Sprint #2 Side-Effect: positioning_rules.yaml anlegen + Sektion
+        wand_mindeststaerke_verteiler mit Wert 100mm (ideal 120-150mm) aus
+        LB Mollgasse §5.1.14.
+      status: geklaert
+      impact: "Mittel - Forward-Reference im YAML, Engine-Auflocsung erst nach Sprint #2."
+      naechste_action: "Sprint #2 Companion-PR: positioning_rules.yaml v0.1."
+
+    - id: SK-OQ-10
+      thema: "Konsolidierung-Stub: v0.1.0 -> v0.2.0 SK-04 Default-Change"
+      befund: |
+        OQ-02 dokumentiert den Default-Change WaMa+GS. Dieser Stub dient als
+        Audit-Trail-Anker, falls Track-A oder QA spaeter den Grund fuer den
+        Default-Change sucht.
+      decision_enis: |
+        Audit-Trail-Pointer: siehe OQ-02 (Decision-Eintrag) + PR #101 Body
+        (Diff-Highlight gegen v0.1.0).
+      status: konsolidiert
+      impact: "Niedrig - Dokumentations-Anker."
+      naechste_action: "Keine - Stub bleibt fuer Trace-back."
+
+    - id: SK-OQ-11
+      thema: "uv_einbauten Detaillisten (Stoermelde-Module, Schaltuhren, etc.)"
+      befund: |
+        uv_spec.uv_funktionen ist als String "Schalt+Schutz+Stoermelde" gefasst.
+        Engine braucht spaeter feinere Liste pro UV-Topologie.
+      status: parkiert
+      impact: "Niedrig - v0.2.0 ausreichend fuer Verteiler-Kern."
+      naechste_action: "v0.3 Cleanup: uv_einbauten als Liste detaillieren."
+
+    - id: SK-OQ-12
+      thema: "Vocab-Dependency: comp.kind heizungssteuerung_wohnungsstation fehlt"
+      befund: |
+        SK-12 fuehrt comp.kind heizungssteuerung_wohnungsstation neu ein.
+        heights_fachpraxis.yaml hat diesen Komponenten-Bezeichner noch nicht.
+        Engine wuerde bei Mollgasse-Plan SK-12 nicht zuordnen koennen.
+      status: open
+      impact: "BLOCKER fuer Engine-Test Sprint #2 - ohne Vocab-Eintrag wirkt SK-12 nicht."
+      naechste_action: |
+        Sprint #2 Companion-PR (parallel oder direkt nach diesem PR): in
+        heights_fachpraxis.yaml neuen Eintrag heizungssteuerung_
+        wohnungsstation mit OK-Hoehe (Schaetz: 1500 mm UP-Schalter-typ.) +
+        Querverweis zu SK-12. PR kann gemergt werden, SK-12 wirkt erst
+        nach Companion-PR.
+
+    - id: SK-OQ-16
+      thema: "SK-01 ls_typ_ref Inkonsistenz: ls_16a_3n_5te (1 Geraet 5TE) vs LB-Wortlaut '3 Stk LS 16A 1-p 3TE'"
+      befund: |
+        SK-01 (E-Herd) verwendet aktuell ls_typ_ref: ls_16a_3n_5te
+        (Kombi-3+N-Schaltgerät 5TE = 1 LS-Einheit). LB Mollgasse §5.1.14 S.30
+        schreibt aber explizit "3 Stk LS 16A 1-p (Drehstrom) 3TE - E-Herd
+        (3-polig)" = 3 physische 1-polige Schaltgeräte mit 3TE gesamt = 3
+        LS-Einheiten. Funktional 1 Drehstromkreis (siehe ZS-01), aber LS-
+        Belegung gegen max_ls_pro_fi_230v: 9 unterschiedlich (1 vs 3).
+      status: RESOLVED
+      resolution_datum: 2026-06-14
+      pr_ref: "Sprint H-16 PR (folgt)"
+      resolution: |
+        Option B verbindlich (Multiplier). SK-01 nutzt 3x ls_16a_1n_1te (jeder
+        1-polig 1TE) statt 1x ls_16a_3n_5te (Kombi-Gerät). Begruendung:
+        1. LB Mollgasse §5.1.14 S.30 Wortlaut wortwoertlich "3 Stk LS 16A 1-p 3TE".
+        2. ZS-02/ZS-03/ZS-01-Beispiele implizieren bereits Multiplier-Semantik
+           (sonst Selbst-Widerspruch).
+        3. Track-A bekommt parametrisierbare Engine via ls_einheiten +
+           drehstrom_belegung Felder.
+      impact: |
+        Mittel - Multiplier-Slice (Track A) braucht Klarheit, ob SK-01-Default
+        bleibt ls_16a_3n_5te (1 LS) oder auf 3x ls_16a_1n_1te wechseln muss
+        (3 LS) zur LB-Konsistenz. Affects max_ls-Cap-Berechnung.
+      naechste_action: |
+        Sprint #18+: SK-01-Audit gegen LB Mollgasse Wortlaut. Optionen:
+        (A) SK-01 ls_typ_ref bleibt ls_16a_3n_5te (Kombi-Gerät), LB-Wortlaut
+            "3 Stk" wird als praktische Realisierungs-Variante interpretiert.
+        (B) SK-01 ls_typ_ref wechselt auf "3x ls_16a_1n_1te" (Multiplier-
+            Markierung), strikte LB-Wortlaut-Treue. Engine braucht
+            Multiplier-Field in stromkreis_aufteilung.dann.
+        Tier-Entscheidung mit Leonis abstimmen (Slice 18.46.x Multiplier-Slice).
+      bezug: "Sprint #17 Track 2 H-15 entdeckt; H-15 selbst nur ueber ZS-Regeln antwortbar, SK-01-Schema-Update separat noetig."

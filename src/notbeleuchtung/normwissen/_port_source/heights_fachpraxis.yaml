@@ -1,0 +1,780 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# heights_fachpraxis.yaml — Österreichische Fachpraxis-Einbauhöhen
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# LAYER 1 of the HeightResolver — project-independent static defaults.
+# These are Austrian trade convention heights used when no LB-specific
+# override (Layer 2) exists for the component.
+#
+# All heights are Unterkante (UK) or Oberkante (OK) above fertigem Fußboden
+# (FFB) in millimetres.
+#
+# Sources:
+#   - Österreichische TAEV (Technische Anschluss-Bedingungen EVN)
+#   - Allgemeine österreichische Elektro-Fachpraxis
+#   - OVE E 8015:2022 Anhang B.2.2 (S.24): NORMATIVE BESTÄTIGUNG der Höhen:
+#       • Schalter: Mitte oberste Schaltstelle ≤ 105cm über FFB (→ UK 1050mm)
+#       • Steckdosen Arbeitsplatte: BW-m Zone = 900–1100mm über FFB (UK 1050mm)
+#       • Standard-Steckdosen: BW-u Zone = 150–350mm über FFB (UK 300mm typisch)
+#     Vollständige Installationsbereichs-Definitionen in device_counts_ove_e8015.yaml.
+#   Note: OVE E 8101:2025 section 55N01 (pages 507-535) specifies NO mounting
+#   heights for sockets or switches. It covers socket type compliance
+#   (OVE E 8684-1), overload protection, and UP-installation mechanics only.
+#   Heights for residential installation come exclusively from Fachpraxis /
+#   TAEV and (for bathroom zones) from OVE E 8101:2025 Teil 7-701 spatial
+#   constraints, which are in bath_zones_ove.yaml.
+#
+# Sources v1.1.0 (Sprint #9a Aufstockung 2026-06-16):
+#   Hersteller-Kataloge fuer Praesenz-/Bewegungsmelder + Aussenleuchten-
+#   Wandhalter (keine Norm-Stuetzung -- Hersteller-Empfehlungen):
+#     - Schrack VISIO 50 Katalog (k-geb-at21.part1+4+6, k-v55-at23.part1):
+#         Bewegungs-/Praesenzmelder Decke 3000 mm + Wand 1100-2200 mm.
+#     - ESYLUX KNX-Praesenzmelder Katalog (k-esy-at20.part4):
+#         Querverifikation Decken-360-Grad-Hoehe (3000 mm hersteller-
+#         uebergreifend einheitlich).
+#     - Schrack-Sortiment 2020 (k-sort-a20.part20):
+#         Wandhalter Aluminium 250 mm fuer Aussenleuchten.
+#   570-Digest-Korpus lieferte fuer 8 von 10 anvisierten Domaenen KEINE
+#   konkreten Hoehen -- EN 1838 + OVE E 8101 geben nur anwendungsabhaengige
+#   Tabellen (Erkennungsweite l = z * h, Imax-Werte je Befestigungshoehe).
+#   Sprint #9b/c-Kandidaten norm-substanzieller: bath_zones (OVE E 8101
+#   Teil 7-701) + Kabelquerschnitte (OVE E 8001-6-61).
+#
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Quellen-Konvention (Audit-Schema):
+# - norm_ref: Primaer-Quelle (Norm-Paragraph) → pflicht_oder_praxis: pflicht
+# - quelle:   Sekundaer-Quelle (Fachpraxis, etc.) → pflicht_oder_praxis: praxis
+# Siehe: tracks/b_domain/audits/2026-05-10-yaml-norm-audit.md (Score-Schema)
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  source: "Österreichische Fachpraxis / TAEV Konvention"
+  status: stable
+  schema_version: "1.2.1"
+  curated_at: "2026-07-25"
+  last_reviewed: "2026-07-25"
+  changelog:
+    - "1.2.1 (2026-07-25): User-Direktive — neue Regel steckdose_fr_bad
+       (UK 1000 mm) fuer generische FR-Steckdosen im Bad ausserhalb der
+       purpose-spezifischen Faelle (Waschtisch/Waschmaschine/Handtuch-
+       heizung). Sprechstellen mitte_mm=1400 bestaetigt (bereits so)."
+    - "1.2.0 (2026-07-25 S-C): PDF-Aufriss-Kalibrierung Mollgasse 15 —
+       raumthermostat 1500→1400, steckdose_waschmaschine 1150→1300,
+       steckdose_dunstabzug 2100→1950; 9 neue Fachpraxis-Regeln
+       (bodennah_tuer/bett, kueche_oberschrank, waschtisch_spiegel,
+       balkon, wandauslass_bad_spiegel, wandauslass_balkon,
+       medien_bodennah, handtuchheizung)."
+  units: "mm above FFB (Fertigfußboden)"
+  fields:
+    uk_mm: "Unterkante in mm (lower edge of device box). XOR mit mitte_mm."
+    mitte_mm: "Geräte-Mitte in mm. XOR mit uk_mm. Engine kann via Symbol-Halbhöhe → uk_mm umrechnen."
+    ok_mm: "Oberkante in mm (upper edge of device box); null = not specified. Unabhängig von uk_mm/mitte_mm."
+    condition: "Optional Python-evaluable condition string. null = always applies."
+    components: "List of catalog entry IDs this rule matches"
+    tier: "ADR-0010 Tier (Sprint H-02 2026-06-14): oenorm | fachpraxis. Plus pflicht_oder_praxis parallel fuer Backward-Compat."
+    migration_note: "Sprint-Audit-Note (Sprint H-02 2026-06-14): tier added per ADR-0010 (rueckwaerts-trackbar)"
+    praxis_alternative_uk_mm: "Optionaler Hersteller-/Katalog-Alternativwert (NEU v1.1.0 Sprint #9a). Dokumentiert Hersteller-Empfehlung transparent wenn diese vom primaeren uk_mm abweicht. Engine-Prio niedrig -- uk_mm bleibt verbindlich."
+  schema_regel: |
+    Genau EINER von uk_mm oder mitte_mm muss gesetzt sein (XOR).
+    ok_mm ist unabhängig und kann zusätzlich gesetzt werden.
+    Bezugspunkt-Konvention:
+      - uk_mm: Drucktaster, Schalter, Steckdosen (Geräte-Unterkante)
+      - mitte_mm: Sprechstellen, Klingeltableaus (Geräte-Mitte, analog DIN 18015-3 OKFF)
+  schema_version_legacy: "0.2.0"
+
+
+heights:
+
+  steckdose_arbeitsplatte:
+    uk_mm: 1050
+    ok_mm: null
+    condition: "purpose_contains_arbeitsplatte"
+    components:
+      - schuko_zweifach
+      - schuko_einfach
+    notes: >
+      Nur wenn purpose 'Arbeitsplatte' enthält (Küche, Küchenzeile). Vor
+      steckdose_standard evaluiert. OVE-Wert primary (1050 mm, BW-m Mitte).
+      Diskrepanz zu DIN 18015-3 dokumentiert: deutsche Pendant-Norm
+      empfiehlt 1150 mm OKFF (Bild 6.37), 50 mm über OVE-BW-m-Max 1100.
+      Beide Normen koexistieren; OVE-Wert ist österreichische Pflicht.
+    norm_ref: "OVE E 8015:2022, Anhang B.1.1 BW-m (900–1100mm) + Anhang B.2.2 (S.24) primary; DIN 18015-3 Bild 6.37 empfiehlt 1150 OKFF (Cross-Reference, exceeds OVE BW-m max 1100 by 50mm)"
+    tier: oenorm
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (pflicht→oenorm)"
+    pflicht_oder_praxis: pflicht
+
+  steckdose_waschmaschine:
+    uk_mm: 1300
+    ok_mm: null
+    condition: "purpose_contains_waschmaschine_or_trockner"
+    components:
+      - schuko_einfach
+      - schuko_zweifach
+      - schuko_fr_einfach
+    notes: >
+      Waschmaschine/Trockner: UK 1300 mm (Direktanschluss über Gerät für
+      einfachen Zugriff, Spritzbereich-Konform). Kalibriert an PDF-Ref
+      Mollgasse 15 Blatt 3/3 — Bemaßung '130' neben WM-Symbol im Bad.
+      FR-Variante ergänzt (Feuchtraum-Steckdose).
+    quelle: "Fachpraxis-Enis + PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: uk_mm 1150→1300 nach PDF-Aufriss-Kalibrierung; schuko_fr_einfach in components ergänzt"
+    pflicht_oder_praxis: praxis
+
+  steckdose_dunstabzug:
+    uk_mm: 1950
+    ok_mm: null
+    condition: "purpose_contains_dunstabzug"
+    components:
+      - schuko_einfach
+    notes: >
+      Dunstabzug über E-Herd: UK 1950 mm (Küchenzeile-Oberschrank-Höhe).
+      Kalibriert an PDF-Ref Mollgasse 15 Blatt 3/3 — Bemaßung '195'
+      oberhalb Küchenzeile. Vorher Fachpraxis-Range 2000-2200; PDF-Wert
+      1950 am unteren Ende der Range, konsistent mit Standard-
+      Oberschrank-Unterkante 1950 mm.
+    quelle: "Fachpraxis-Enis + PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: uk_mm 2100→1950 nach PDF-Aufriss-Kalibrierung Mollgasse 15"
+    pflicht_oder_praxis: praxis
+
+  steckdose_mikrowelle:
+    uk_mm: 1400
+    ok_mm: null
+    condition: "purpose_contains_mikrowelle"
+    components:
+      - schuko_einfach
+    notes: "Mikrowelle im Oberschrank: UK 1350-1450mm (Fachpraxis)"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_kuehlschrank:
+    uk_mm: 150
+    ok_mm: null
+    condition: "purpose_contains_kuehl_or_gefrier"
+    components:
+      - schuko_einfach
+    notes: "Kühl/Gefrierschrank: UK 100-200mm (Gerät-Rückseite unten)"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_geschirrspueler:
+    uk_mm: 300
+    ok_mm: null
+    condition: "purpose_contains_geschirrspueler"
+    components:
+      - schuko_einfach
+    notes: "Geschirrspüler: UK 300mm (Standard-Höhe, spezifisch benannt)"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  # ── Spezifisch VOR steckdose_standard (Loop stoppt bei erstem Match) ──
+  # NEU S-C 2026-07-25: Purpose-spezifische Steckdosen-Regeln aus PDF-Ref
+  # Mollgasse 15 Blatt 3/3. Alle tier: fachpraxis, projekt-basiert.
+
+  steckdose_bodennah_tuer:
+    uk_mm: 120
+    ok_mm: null
+    condition: "purpose_contains_tuer"
+    components:
+      - schuko_einfach
+      - schuko_zweifach
+    notes: >
+      Bodennahe Steckdose neben Wohnungstür / Türeingang (Staubsauger-
+      Anschluss, Boden-Beleuchtung). PDF-Ref: '12' im Gangbereich.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '12' Gangbereich)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_bodennah_bett:
+    uk_mm: 100
+    ok_mm: null
+    condition: "purpose_contains_bett"
+    components:
+      - schuko_einfach
+      - schuko_zweifach
+    notes: >
+      Bodennahe Steckdose am Bett-Kopfteil (Ladegerät, Nachttischlampe).
+      PDF-Ref: '10' unter Bett-Symbol im Schlafzimmer.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '10' Bett)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_kueche_oberschrank:
+    uk_mm: 1950
+    ok_mm: null
+    condition: "purpose_contains_oberschrank"
+    components:
+      - schuko_einfach
+    notes: >
+      Steckdose oberhalb der Küchen-Oberschränke (Vorspann, Dunstabzug,
+      Kühlschrank oben). PDF-Ref: '195' oben in Küchenzeile.
+      Analog steckdose_dunstabzug, aber breiter (Oberschrank-generisch).
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '195' Küchenzeile-Oberschrank)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_waschtisch_spiegel:
+    uk_mm: 370
+    ok_mm: null
+    condition: "purpose_contains_waschtisch_or_spiegel"
+    components:
+      - schuko_einfach
+      - schuko_fr_einfach
+    notes: >
+      Niedrige Steckdose neben/unter Waschtisch oder Spiegel für Rasierer,
+      Zahnbürste, Föhn. PDF-Ref: '37' seitlich Waschtisch im Bad.
+      OVE-Bad-Zonen beachten — Zone 1 verboten, Zone 2 nur SELV/PELV
+      oder RCD-geschützt. FR-Variante bevorzugt.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '37' Bad-Waschtisch)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_balkon:
+    uk_mm: 500
+    ok_mm: null
+    condition: "room_type_is_balkon"
+    components:
+      - schuko_einfach
+      - schuko_fr_einfach
+    notes: >
+      Balkon-/Terrassen-Steckdose auf mittlerer Höhe (nicht bodennah,
+      nicht Schalter-Höhe). PDF-Ref: '50' neben Balkon-Steckdose-Symbol.
+      FR-Variante zwingend (Außenbereich, Feuchtraum-Regel).
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '50' Balkon)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_medien_bodennah:
+    uk_mm: 100
+    ok_mm: null
+    condition: "purpose_contains_medien_bodennah"
+    components:
+      - schuko_einfach
+      - schuko_zweifach
+      - schuko_dreifach
+      - mediendose
+      - tv_antennendose
+      - datendose_rj45
+    notes: >
+      Medien-Cluster (3-Fach-Steckdose + UPC + Glasfaser + RJ45) hinter
+      TV-Möbel, bodennah. PDF-Ref: '10 10 12' unter TV-Wand im Wohnzimmer.
+      Tiefer als kommunikation_standard (300 mm) weil hinter Möbel
+      versteckt und Kabel-Zug-Erleichterung.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '10 10 12' TV-Wand)"
+    pflicht_oder_praxis: praxis
+
+  anschluss_handtuchheizung:
+    uk_mm: 300
+    ok_mm: null
+    condition: "purpose_contains_handtuchheizung"
+    components:
+      - e_anschluss
+      - schuko_fr_einfach
+      - elektroauslass_230v
+    notes: >
+      Handtuchheizungs-/Trockner-Anschluss im Bad, unter dem Gerät.
+      PDF-Ref: '30' neben Handtuchheizungs-Symbol. FR-Steckdose oder
+      Direktanschluss je nach LB-Vorgabe. OVE-Bad-Zonen beachten.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '30' Handtuchheizung Bad)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_fr_bad:
+    uk_mm: 1000
+    ok_mm: null
+    condition: "room_type_is_bad"
+    components:
+      - schuko_fr_einfach
+      - schuko_fr_zweifach
+      - schuko_fr_dreifach
+    notes: >
+      Generische FR-Steckdose (Klappdeckel-Variante) im Bad, wenn kein
+      spezifischer Purpose wie Waschtisch/Waschmaschine/Handtuchheizung
+      greift. UK 1000 mm — Fachpraxis-Standard fuer Bad-Steckdosen ausser-
+      halb der Zonen 0/1, hoch genug fuer Zone 2 mit RCD-Schutz. Steht
+      NACH den purpose-spezifischen Bad-Regeln (waschtisch_spiegel 370,
+      waschmaschine 1300, handtuchheizung 300) und VOR steckdose_standard.
+    quelle: "Fachpraxis-Enis / User-Direktive 2026-07-25"
+    tier: fachpraxis
+    migration_note: "2026-07-25: neu (User-Direktive: FR-Steckdose Bad = 1000 mm generisch)"
+    pflicht_oder_praxis: praxis
+
+  steckdose_standard:
+    uk_mm: 300
+    ok_mm: null
+    condition: null
+    norm_ref: "OVE E 8015:2022, Anhang B.1.1 BW-u (150–350mm ab FFOK); DIN 18015-3 waagerechte Installationszone unten 150-450 mm (Cross-Reference, OVE-Wert 300mm liegt in beiden Zonen)"
+    tier: oenorm
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (pflicht→oenorm)"
+    components:
+      - schuko_einfach
+      - schuko_zweifach
+      - schuko_dreifach
+      - schuko_fr_einfach
+      - schuko_fr_zweifach
+      - schuko_fr_dreifach
+      - kraftsteckdose
+      - e_anschluss
+      - elektroauslass_230v
+      - elektroauslass_400v
+    notes: "Standard-Steckdosenhöhe UK 300 mm. Feuchtraum-Varianten gleiche Höhe. OVE BW-u (150-350) und DIN 18015-3 waagerechte Installationszone unten (150-450) sind konsistent; 300 mm in beiden Zonen."
+    pflicht_oder_praxis: pflicht
+
+  schalter_standard:
+    uk_mm: 1050
+    ok_mm: null
+    condition: null
+    components:
+      - ausschalter_einpolig
+      - ausschalter_zweipolig
+      - ausschalter_kontrolllicht
+      - serienschalter
+      - serienschalter_kontrollleuchte
+      - wechselschalter
+      - kreuzschalter
+      - taster
+      - taster_beleuchtet
+      - schluesselschalter
+      - dimmschalter
+    notes: "Standard-Schalterhöhe UK 1050 mm (Europäische Norm-Montagehöhe). DIN 18015-3 (deutsche Pendant-Norm) bestätigt 1050 mm einheitlich -- normübergreifend konsistent."
+    norm_ref: "OVE E 8015:2022, Anhang B.2.2 (S.24): Mitte oberste Schaltstelle ≤105cm über FFB; DIN 18015-3 S.410 bestaetigt 1050 mm einheitlich (Cross-Reference, identischer Wert)"
+    tier: oenorm
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (pflicht→oenorm)"
+    pflicht_oder_praxis: pflicht
+
+  schalter_alternativ:
+    uk_mm: 800
+    mitte_mm: null
+    ok_mm: null
+    condition: praxis_alternative
+    components:
+      - schalter_taster
+    notes: "Alternative Hoehe nach DIN 18015-3 'Hoehe der haengenden Hand' -- Praxis-Variante fuer Komfort/Ergonomie statt Standard 1050. Optionale Wahl bei modernen Installationen."
+    norm_ref: "DIN 18015-3 S.410 (80 cm 'haengende Hand'-Variante)"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, DIN-cited als Cross-Ref, aber Praxis-Variante)"
+    pflicht_oder_praxis: praxis
+
+  schalter_barrierefrei:
+    uk_mm: 700
+    mitte_mm: null
+    ok_mm: null
+    condition: barrierefrei
+    components:
+      - schalter_taster
+    notes: "Barrierefreie Hoehe nach DIN 18015-3 fuer Rollstuhl-Bedienung. Pflicht bei behindertengerechten Wohnungen + Hotels + oeffentlichen Gebaeuden."
+    norm_ref: "DIN 18015-3 S.410 (70 cm Rollstuhl-Hoehe); OENORM B 1600 (oesterreichische Pendant-Norm fuer Barrierefreiheit)"
+    tier: oenorm
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (pflicht→oenorm, OENORM B 1600 Barrierefreiheit)"
+    pflicht_oder_praxis: pflicht
+
+  raumthermostat:
+    uk_mm: 1400
+    ok_mm: null
+    condition: null
+    components:
+      - raumthermostat
+    notes: >
+      Ergonomische Ablese-/Bedienhöhe 1400 mm UK. Kalibriert an
+      PDF-Ref Mollgasse 15 Blatt 3/3 (RR Electro 02.06.2025) —
+      Aufriss Wohnzimmer bemaßt '140' neben RTH-Symbol.
+    quelle: "Fachpraxis-Enis + PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: uk_mm 1500→1400 nach PDF-Aufriss-Kalibrierung Mollgasse 15"
+    pflicht_oder_praxis: praxis
+
+  # Ehemals klingel_sprech (v0.1.x, UK 1500 mm für 3 Komponenten gemeinsam) —
+  # in Sprint #9 (H-06 Resolution) aufgesplittet in 3 separate Einträge mit
+  # korrekten Bezugspunkten (UK für Drucktaster, Mitte für Sprechstellen).
+
+  klingel_taster:
+    uk_mm: 1500
+    mitte_mm: null
+    ok_mm: null
+    condition: null
+    components:
+      - klingeltaster
+    notes: "Klingeldrucktaster Wohnungstür oder Hauseingang. Konvention UK-Bezug (Drucktaster) — analog Schalter-Höhen."
+    quelle: "Korpus session_01 + v2_vorraum (Track-B Fachpraxis), Aufsplittung aus ehemaligem klingel_sprech v0.1.x"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, H-06 Sprint #9 Korpus)"
+    pflicht_oder_praxis: praxis
+
+  sprechstelle_innen:
+    uk_mm: null
+    mitte_mm: 1400
+    ok_mm: null
+    condition: null
+    components:
+      - innensprechstelle
+      - hauskommunikation_innen
+    notes: "Sprechstelle der Hauskommunikation in Wohnung. Bezugspunkt Geräte-Mitte (analog DIN 18015-3 OKFF-Konvention für Geräte-Mitten in Wohninstallation)."
+    quelle: "Korpus session_01 + v2_vorraum (Track-B Fachpraxis). Bezugspunkt-Konvention Mitte gestützt durch Krimmling/Oberzig Haustechnik, Kap. 6.1.3, S. 367-374"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, H-06 Sprint #9 Korpus)"
+    pflicht_oder_praxis: praxis
+
+  sprechstelle_aussen:
+    uk_mm: null
+    mitte_mm: 1400
+    ok_mm: null
+    condition: null
+    components:
+      - aussensprechstelle
+      - hauskommunikation_aussen
+    notes: "Sprechstelle am Hauseingang/Außenbereich. Gleicher Bezugspunkt wie Innensprechstelle (Geräte-Mitte)."
+    quelle: "Korpus session_01 + v2_vorraum (Track-B Fachpraxis). Bezugspunkt analog sprechstelle_innen."
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, H-06 Sprint #9 Korpus)"
+    pflicht_oder_praxis: praxis
+
+  bewegungsmelder:
+    uk_mm: 2400
+    praxis_alternative_uk_mm: 3000
+    ok_mm: null
+    condition: null
+    components:
+      - bewegungsmelder
+    notes: >
+      Hochmontage nahe Decke (ca. 2400 mm UK) für optimalen PIR-Erfassungswinkel
+      als Fachpraxis-Default. Hersteller-Alternativwert: Schrack VISIO 50 +
+      ESYLUX KNX Decken-360-Grad-Melder empfehlen einheitlich 3000 mm
+      Montagehoehe fuer Oe8 m Reichweite (max. 5000 mm). Existing uk_mm 2400
+      bleibt Engine-Default; praxis_alternative_uk_mm 3000 als Hersteller-
+      Variante bei Smart-Home-/KNX-Setup oder Schrack-Produkten. Transparente
+      Diskrepanz-Dokumentation statt stiller Wert-Aenderung (Sprint #9a v1.1.0).
+    quelle: "Fachpraxis-Enis; Hersteller-Cross-Ref Schrack VISIO 50 Katalog (k-geb-at21.part1, k-v55-at23.part1) + ESYLUX KNX Praesenzmelder Katalog (k-esy-at20.part4)"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis). Sprint #9a 2026-06-16: praxis_alternative_uk_mm 3000 ergaenzt (Hersteller-Diskrepanz transparent dokumentiert)."
+    pflicht_oder_praxis: praxis
+
+  ventilator:
+    uk_mm: 2400
+    ok_mm: null
+    condition: null
+    components:
+      - luefter_bad_wc
+    notes: "Hochmontage nahe Decke. Oft durch Lichtschalter geschaltet."
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  verteiler_wohnung:
+    uk_mm: null
+    ok_mm: 1600
+    condition: null
+    components:
+      - e_verteiler
+      - schwachstrom_verteiler
+    notes: >
+      Fachpraxis-Default OK 1600 mm. Häufig im Vorraum/Abstellraum.
+      LB spezifiziert meist einen abweichenden OK-Wert — LB-Override
+      (Layer 2) hat immer Vorrang. Konkretes Beispiel: LB Mollgasse
+      240718 §5.1.14 S.30 setzt OK 2050 mm FFBOK (siehe circuit_rules_
+      ove_8015.yaml Sektion 14 lb_explizite_hoehen.wohnungsverteiler_
+      ok_ffbok).
+    quelle: "Projekt-spezifisch — kein Default"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, Projekt-spezifisch)"
+    pflicht_oder_praxis: praxis
+
+  # NEU S-C 2026-07-25: spezifisch VOR wandauslass_bad (Spiegel-Leuchte
+  # sitzt tiefer als generische Wandleuchte).
+
+  wandauslass_bad_spiegel:
+    uk_mm: 1800
+    ok_mm: null
+    condition: "purpose_contains_spiegel_and_room_bad"
+    components:
+      - wandauslass
+    notes: >
+      Wandleuchte direkt über Spiegel / Waschtisch im Bad. PDF-Ref: '180'
+      oberhalb Spiegel-Symbol. Schärfer als generisches wandauslass_bad —
+      Spiegel-Beleuchtung sitzt tiefer, damit Gesichtsbeleuchtung passt.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '180' Bad-Spiegel)"
+    pflicht_oder_praxis: praxis
+
+  wandauslass_bad:
+    uk_mm: 2000
+    ok_mm: null
+    condition: "room_type_is_bad"
+    components:
+      - wandauslass
+    notes: "Wandleuchte über Waschtisch ca. 2000 mm UK. Nur in Bad/WC."
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  kommunikation_standard:
+    uk_mm: 300
+    ok_mm: null
+    condition: null
+    components:
+      - mediendose
+      - tv_anschluss
+      - telefondose
+      - datendose_rj45
+    notes: "Nachrichtentechnik-Dosen auf Steckdosenhöhe 300 mm UK."
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  tae_dose_telefon:
+    uk_mm: 1600
+    mitte_mm: null
+    ok_mm: null
+    condition: null
+    components:
+      - tae_dose
+      - telefondose
+      - dsl_anschluss
+    notes: "TAE (Telekommunikations-Anschluss-Einheit) im Wohnungsbereich. Standard-Montagehöhe nach DIN 18015-2."
+    norm_ref: "DIN 18015-2 (zitiert in Krimmling/Oberzig Haustechnik, Kap. 6.2.2, S. 422)"
+    tier: oenorm
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (pflicht→oenorm, DIN 18015-2 generischer Norm-Tier)"
+    pflicht_oder_praxis: pflicht
+
+  leerrohr:
+    uk_mm: 300
+    ok_mm: null
+    condition: null
+    components:
+      - leerrohr
+      - leerverrohrung
+    notes: "Leerrohr-Endpunkt auf Steckdosenhöhe 300 mm UK (Unterputz)."
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  tueroeffner:
+    uk_mm: 1050
+    ok_mm: null
+    condition: null
+    components:
+      - tueroeffner
+    notes: >
+      Tueroeffner sitzt typischerweise auf Hoehe der Tuerklinke
+      (ca. 1050 mm UK), analog Standard-Klinkenhoehe im Wohnbau.
+      Fachpraxis-Default; projekt-abhaengig override-bar (LB-Vorgaben
+      gehen vor). Sprint #9a v1.1.0: Konkretisierung von null -> 1050 mm.
+    quelle: "Fachpraxis-Enis (analog Standard-Tuerklinkenhoehe); projekt-spezifischer LB-Override moeglich"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, Projekt-spezifisch). Sprint #9a 2026-06-16: uk_mm konkretisiert von null -> 1050 mm (Klinkenhoehe-Fachpraxis)."
+    pflicht_oder_praxis: praxis
+
+  deckenauslass:
+    uk_mm: null
+    ok_mm: null
+    condition: null
+    components:
+      - deckenauslass
+    notes: "Decke — kein UK/OK-Wert. Wird durch Deckenposition bestimmt."
+    quelle: "Projekt-spezifisch — kein Default"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, Projekt-spezifisch)"
+    pflicht_oder_praxis: praxis
+
+  # NEU S-C 2026-07-25: spezifisch VOR wandauslass_standard.
+
+  wandauslass_balkon:
+    uk_mm: 1950
+    ok_mm: null
+    condition: "room_type_is_balkon"
+    components:
+      - wandauslass
+    notes: >
+      Balkon-/Terrassen-Wandleuchte. PDF-Ref: '195' oberhalb Wandlicht-
+      Symbol im Balkon-Aufriss. Etwas tiefer als generisches
+      wandauslass_standard (2000 mm) — Balkon-Konvention.
+    quelle: "PDF-Aufriss Ref Mollgasse (S-C 2026-07-25)"
+    tier: fachpraxis
+    migration_note: "S-C 2026-07-25: neu (PDF-Bemaßung '195' Balkon)"
+    pflicht_oder_praxis: praxis
+
+  wandauslass_standard:
+    uk_mm: 2000
+    ok_mm: null
+    condition: null
+    components:
+      - wandauslass
+    notes: "Für Wandleuchten außerhalb Bad ca. 2000 mm UK als Default."
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  anschluss_heizung_kuehlung:
+    uk_mm: null
+    ok_mm: null
+    condition: null
+    components:
+      - anschluss_heizung_kuehlung
+    notes: "HVAC-Verteiler: Decke oder Technikbereich, keine feste UK/OK"
+    quelle: "Projekt-spezifisch — kein Default"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, Projekt-spezifisch)"
+    pflicht_oder_praxis: praxis
+
+  anschluss_wohnungsstation:
+    uk_mm: null
+    ok_mm: null
+    condition: null
+    components:
+      - anschluss_wohnungsstation
+    notes: "Wohnungsstation: meist Decke oder Technikbereich, keine feste UK/OK"
+    quelle: "Projekt-spezifisch — kein Default"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, Projekt-spezifisch)"
+    pflicht_oder_praxis: praxis
+
+  heizungssteuerung_wohnungsstation:
+    uk_mm: 1500
+    ok_mm: null
+    condition: null
+    components:
+      - heizungssteuerung_wohnungsstation
+    notes: >
+      Heizungssteuerung der Wohnungsstation als UP-Bedieneinheit.
+      LB Mollgasse §5.1.14 S.30 fordert eigenen LS 13A (siehe
+      circuit_rules_ove_8015.yaml SK-12). UK 1500 mm Fachpraxis-
+      Default analog raumthermostat (ergonomisch ablesbar). LB
+      gibt keine explizite Montagehoehe vor — Hoehe ist Fachpraxis.
+    quelle: "Fachpraxis-Enis (LB §5.1.14 spezifiziert nur LS-Typ, nicht Hoehe)"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis, LB-Hoehe-frei)"
+    pflicht_oder_praxis: praxis
+
+  anschluss_e_herd:
+    uk_mm: 150
+    ok_mm: null
+    condition: null
+    components:
+      - anschluss_e_herd
+      - elektroauslass_400v
+    notes: "E-Herd-Anschluss 400V: UK 100-200mm (Gerät-Rückseite)"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  anschluss_sonnenschutz:
+    uk_mm: 2200
+    ok_mm: null
+    condition: null
+    components:
+      - anschluss_sonnenschutz
+    notes: "Rollladen/Jalousie: oben am Fenster, UK 2100-2300mm"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  tv_anschluss_standard:
+    uk_mm: 300
+    ok_mm: null
+    condition: null
+    components:
+      - tv_antennendose
+      - medienauslass
+    notes: "TV/Antenne: UK 300mm (kombiniert mit Schuko)"
+    quelle: "Fachpraxis-Enis"
+    tier: fachpraxis
+    migration_note: "Sprint H-02 2026-06-14: tier added per ADR-0010 (praxis→fachpraxis)"
+    pflicht_oder_praxis: praxis
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # NEU v1.1.0 (Sprint #9a, 2026-06-16): Aufstockung aus 197-Digest-Bibliothek
+  # Strikt Hersteller-Katalog-belegt (Pfad alpha). Tiefenscan EN 1838 + OVE E
+  # 8101 lieferte keine konkreten Norm-Hoehen -- nur anwendungsabhaengige
+  # Tabellen (Erkennungsweite, Imax). Daher: 4 Eintraege aus Hersteller-
+  # Katalogen (Schrack VISIO 50, ESYLUX KNX, Schrack-Sortiment 2020).
+  # ═══════════════════════════════════════════════════════════════════════════
+
+  praesenzmelder_knx_decke_360:
+    uk_mm: 3000
+    ok_mm: null
+    condition: null
+    components:
+      - praesenzmelder_knx_decke_360
+    notes: >
+      Decken-Praesenzmelder 360-Grad fuer Smart-Home-/KNX-Setup
+      (z.B. Schrack VISIO 50 MD-C/PD-C 360i/8 + ESYLUX
+      PD-ATMO/BASIC/FLAT/COMPACT KNX). Empfohlene Montagehoehe
+      3000 mm fuer Oe8 m Reichweite, maximale Montagehoehe 5000 mm.
+      Hersteller-uebergreifend einheitlicher Wert (Schrack + ESYLUX).
+    quelle: "Schrack VISIO 50 Katalog (k-geb-at21.part1+4 S.183-186, k-v55-at23.part1) + ESYLUX KNX Praesenzmelder Katalog (k-esy-at20.part4)"
+    tier: fachpraxis
+    migration_note: "Sprint #9a 2026-06-16: neu eingefuegt (Hersteller-Katalog-belegt, hersteller-uebergreifend einheitlich)"
+    pflicht_oder_praxis: praxis
+
+  praesenzmelder_knx_wand_180:
+    uk_mm: 1650
+    ok_mm: null
+    condition: null
+    components:
+      - praesenzmelder_knx_wand_180
+    notes: >
+      Wand-Praesenzmelder 180-Grad fuer Smart-Home-/KNX-Setup
+      (z.B. Schrack COMPACT 180 + ESYLUX PD-C 180i KNX). Hersteller-
+      Empfehlung 1100-2200 mm (Bereichsangabe) -> Mittelwert 1650 mm
+      als Engine-Default. Eckmontage moeglich.
+    quelle: "Schrack VISIO 50 Katalog (k-geb-at21.part4 S.185) + ESYLUX KNX Praesenzmelder Katalog (k-esy-at20.part4)"
+    tier: fachpraxis
+    migration_note: "Sprint #9a 2026-06-16: neu eingefuegt (Hersteller-Katalog-belegt, Mittelwert aus 1,1-2,2 m Bereich)"
+    pflicht_oder_praxis: praxis
+
+  bewegungsmelder_aussen_wand:
+    uk_mm: 2200
+    ok_mm: null
+    condition: null
+    components:
+      - bewegungsmelder_aussen_wand
+    notes: >
+      Aussen-Bewegungsmelder fuer Wandmontage (Hauseingang, Carport,
+      Garagenzufahrt). Empfohlene Erfassungshoehe ca. 2000-3000 mm bei
+      Aussen-180-Grad-Meldern; 2200 mm als Default fuer ca. 12 m Reichweite.
+      IP44 oder hoeher zwingend (Aussenbereich).
+    quelle: "Schrack VISIO 50 Katalog (k-geb-at21.part1 Aussen-Bewegungsmelder-Sektion)"
+    tier: fachpraxis
+    migration_note: "Sprint #9a 2026-06-16: neu eingefuegt (Hersteller-Katalog-belegt)"
+    pflicht_oder_praxis: praxis
+
+  wandhalter_aussenleuchte_alu:
+    uk_mm: null
+    mitte_mm: 250
+    ok_mm: null
+    condition: null
+    components:
+      - wandhalter_aluminium
+      - wandhalter_aussenleuchte
+    notes: >
+      Wandhalter aus Aluminium zur Aufnahme von Aussenleuchten-Auslegern
+      (Rohr-DM 50 mm). Montagehoehe Bezugspunkt Mitte 250 mm. Schrack-
+      Sortiment 2020 explizit. mitte_mm-Konvention analog Sprechstellen-
+      und sonstigen Wand-Anschluss-Bauteilen.
+    quelle: "Schrack-Sortiment 2020 Katalog (k-sort-a20.part20 S.803, Wandhalter Aluminium Rohr-DM 50 mm)"
+    tier: fachpraxis
+    migration_note: "Sprint #9a 2026-06-16: neu eingefuegt (Schrack-Sortiment-Katalog-belegt). mitte_mm-Bezug analog Konvention fuer Wand-Anschluss-Bauteile."
+    pflicht_oder_praxis: praxis

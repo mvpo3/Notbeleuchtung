@@ -1,0 +1,132 @@
+# generic_kg — Fallback-Profil für UNBEKANNTE Projekte (Slice N12).
+#
+# Generalisierte Muster aus den 4 gelernten Projekt-Konventionen
+# (Mollgasse-Feld-Codes, Barawitzka-Klartext "<NNN> Wand …"/815-Polygone,
+# Fischamender "A_*", Rennweg "New_NNN …"/ArchiCAD-Zonen-Stempel).
+# BEWUSST ohne detect:-Sektion — nimmt nie am Fingerprint-Scoring teil,
+# wird nur als explizites Fallback gewählt (resolve_profile_id
+# allow_generic=True, wenn kein bekanntes Profil eindeutig matcht).
+#
+# Erwartung ist BEST-EFFORT: Projekte mit expliziten Raum-Polygonen
+# (Raumbegrenzung/Raumdefinitionen/A_Raeume) rekonstruieren gut; reine
+# Feld-Code-Projekte ohne Raum-Polygone (Mollgasse-Stil, anchor_raycast)
+# brauchen weiterhin ein echtes Profil. Messwerte: Leave-One-Out-Tabelle
+# in docs/KG_STUDIE_ALLE_PROJEKTE.md.
+profile_id: generic_kg
+version: 1
+
+layout:
+  strategy: direct_modelspace
+
+scale:
+  strategy: existing_detect_scale
+
+roles:
+  walls:
+    strategy: line_plus_hatch
+    layer_patterns:
+      # Klartext (Barawitzka/Rennweg/Fischamender + generisch Deutsch)
+      - "W.{0,2}nde"                # Wände / Waende / Aussenwände / Innenwände
+      - "(^|[ _\\-])Wand"           # "110 Wand Aussen", "Wand Innen tragend"
+      - "Mauer"
+      - "Schachtw"
+      # Mollgasse-artige Feld-Codes (2. Layer-Feld)
+      - "^\\d\\d-(TWA|TWE|TWB|ZWA|ZWE|AWA|AWB|BWA|WDA|MWA)(-|$)"
+    entity_types:
+      - LINE
+      - LWPOLYLINE
+      - HATCH
+      - ARC
+    default_type: unknown
+
+  wall_material:
+    strategy: disabled
+
+  rooms:
+    strategy: closed_polygons
+    polygon_layers:
+      # explizite Raum-Polygon-Layer der gelernten Konventionen + Plural-/
+      # Definitions-Formen; bewusst NICHT bloßes "Raum" (das ist bei
+      # Barawitzka der Label-Layer "810 Raum")
+      - "Raumbegrenzung"
+      - "Raumdefinition"
+      - "R.{0,2}ume"                # Raeume / Räume (A_Raeume, A_Raeume_)
+    label_layers:
+      - "Raum"                      # deckt 810 Raum + Raumdefinitionen + Raeume*
+      - "Beschriftung"
+    label_strategy: nearby_mtext_groups
+    # Bold-Namenszeile bevorzugen (Barawitzka-Lernen, Slice N5) — fällt
+    # ohne bold-Kandidaten lautlos aufs Legacy-Ranking zurück
+    label_prefer_bold: true
+    # Stempel ohne Polygon-Abdeckung → Anker-Räume (Barawitzka-Lernen,
+    # Slice R1) — bei Voll-Polygon-Projekten wirkungslos (alle Stempel
+    # liegen in Polygonen), sonst Wand-Rekonstruktions-Fallback.
+    anchor_fallback: text_groups
+    # ArchiCAD-Zonen-Stempel (Rennweg-Lernen, Slice N8)
+    label_insert_attrib_tags:
+      - ROOM_NAME
+    polygon_source: closed_polygon_profile
+    # Schacht-Kästchen-Filter (Fischamender-Lernen, Slice N7)
+    min_polygon_area_m2: 0.5
+    open_contour:
+      micro_gap_max_mm: 100.0
+      micro_gap_max_closing_area_m2: 0.01
+      min_room_area_m2: 0.5
+      large_gap_action: diagnostic_only
+
+  doors:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "T.{0,2}r"                  # Tür / Tuer / Tueren
+    # Slice N15 — Block-Detektor: Union der gelernten Konventionen
+    # (Fischamender Tür_/Tuer_-Präfixe, Rennweg Zargentür/Opening_N nested).
+    # block_layer_patterns ENGER als layer_patterns oben: "T.{0,2}r" matcht
+    # auch "A_Sanitaer" ("taer") — für Block-Matching zu breit.
+    block_layer_patterns:
+      - "T(ü|ue)r"
+    block_name_patterns:
+      - "T(ü|ue)r"
+      - "Zargent(ü|ue)r"
+      - "^Opening_\\d"
+    exclude_block_patterns:
+      - "^BS_"
+      - "T(ü|ue)rachse"             # Türlisten-Stempel (DOOR_LABEL_PATTERNS)
+    nested_max_depth: 2
+
+  windows:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "Fenster"
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "M.{0,2}bel"                # Möbel / Moebel
+      - "Einrichtung"
+      - "Sanit"
+
+  markers:
+    strategy: text_by_layer_pattern
+    layer_patterns:
+      - "Raum"
+      - "Beschriftung"
+      - "Text"
+    classify_service: true
+    max_text_len: 80
+
+# KG-Rekonstruktions-Vokabular: Union der gelernten Wand-Vokabulare;
+# Zone-Tokens = österreichisches Standard-Stempel-Vokabular.
+keller:
+  wall_layer_patterns:
+    - "W.{0,2}nde"
+    - "(^|[ _\\-])Wand"
+    - "Mauer"
+    - "Schachtw"
+    - "^\\d\\d-(TWA|TWE|TWB|ZWA|ZWE|AWA|AWB|BWA|WDA|MWA)(-|$)"
+  hid_layer_patterns: []
+  # R1-Erweiterung (Barawitzka-Lernen): Outdoor/offen + Summen-Stempel +
+  # Luftraum-Kennzeichen ("=L" exakt).
+  zone_tokens: [GARAGE, DOPPELPARKER, INNENHOF, GULLY, ER-GESAMT,
+                BALKON, LOGGIA, TERRASSE, EIGENGARTEN, SPIELPLATZ,
+                RAMPE, PODEST, VORBAU, GESAMT, VERSIEGELUNG, RETENTION,
+                AUFZUG, "=L"]

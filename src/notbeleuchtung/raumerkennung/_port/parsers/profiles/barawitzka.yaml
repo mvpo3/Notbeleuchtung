@@ -1,0 +1,98 @@
+profile_id: barawitzka
+version: 2
+
+layout:
+  strategy: direct_modelspace
+
+scale:
+  strategy: profile_override
+  factor_to_mm: 1000.0
+  source_unit: m
+
+roles:
+  walls:
+    strategy: line_plus_hatch
+    layer_patterns:
+      - "^(?:.*_)?(110 Wand Aussen|111 Wand Aussen.*|112 Wand Aussen.*|120 Wand Innen tragend|130 Wand Innen|135 Wand Vorsatzschale|170 Schachtw.*nde)$"
+      - "^.*Mauer.*$"
+    entity_types:
+      - LINE
+      - LWPOLYLINE
+      - HATCH
+      - ARC
+    default_type: unknown
+
+  wall_material:
+    strategy: disabled
+
+  rooms:
+    strategy: closed_polygons
+    polygon_layers:
+      - "^(?:.*_)?815 Raumbegrenzung$"
+    label_layers:
+      - "^(?:.*_)?810 Raum$"
+    label_strategy: nearby_mtext_groups
+    label_prefer_bold: true
+    # Slice R1: Regelgeschosse haben KEINE geschlossenen 815-Polygone
+    # (Konturen offen, Flächen 0) — Räume existieren als MTEXT-Stempel
+    # (Bold-Name + m²-Zeile OHNE Einheit). Stempel ohne Polygon-Abdeckung
+    # werden Anker-Räume → Wand-Rekonstruktion (KG-Fast-Path unberührt).
+    anchor_fallback: text_groups
+    polygon_source: closed_polygon_profile
+    open_contour:
+      micro_gap_max_mm: 100.0
+      micro_gap_max_closing_area_m2: 0.01
+      min_room_area_m2: 0.5
+      large_gap_action: diagnostic_only
+
+  doors:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^__NO_DOOR_INSERT_LAYER__$"
+
+  windows:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^(?:.*_)?325 Dachfenster$"
+      - "^(?:.*_)?320 Fenster.*$"
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^(?:.*_)?(530 K.*che|540 Sanit.*reinrichtung)$"
+
+  markers:
+    strategy: text_by_layer_pattern
+    layer_patterns:
+      - "^(?:.*_)?810 Raum$"
+      - "^(?:.*_)?815 Raumbegrenzung$"
+      - "^(?:.*_)?170 Schachtw.*nde$"
+      - "^(?:.*_)?570 Beschriftung 3D$"
+      - "^(?:.*_)?950 Polierplan Bema.*$"
+    classify_service: true
+    max_text_len: 80
+
+# Slice N3 — KG-Rekonstruktions-Vokabular (parsers.keller_geometry):
+# Wand-Layer wie roles.walls (Klartext-Namen statt Mollgasse-Feld-Codes);
+# kein HID-Äquivalent im Plan-Satz → leer; Zone-Tokens = Default
+# (österreichisches Stempel-Vokabular), explizit notiert.
+keller:
+  wall_layer_patterns:
+    - "(110 Wand Aussen|111 Wand Aussen|112 Wand Aussen|120 Wand Innen tragend|130 Wand Innen|135 Wand Vorsatzschale|170 Schachtw)"
+    - "Mauer"
+  hid_layer_patterns: []
+  # Slice R1 — Regelgeschoss-Zonen: Outdoor-/offene Bereiche ohne
+  # Wand-Einschluss (Balkon/Loggia/Terrasse/Eigengarten/Spielplatz/Rampe/
+  # Podest/TH-Vorbau), Summen-Stempel (…GESAMT) und Luftraum-Kennzeichen
+  # ("=L" exakt — Substring würde alles treffen).
+  zone_tokens: [GARAGE, DOPPELPARKER, INNENHOF, GULLY, ER-GESAMT,
+                BALKON, LOGGIA, TERRASSE, EIGENGARTEN, SPIELPLATZ,
+                RAMPE, PODEST, VORBAU, GESAMT, "=L"]
+
+# Slice N6 — Auto-Detection-Fingerprint (PP[_| STG<k>_]<n>_<NNN> <Klartext>;
+# Obergeschosse tragen die Stiegenhaus-Variante "PP STG1_3_520 ...")
+detect:
+  layer_patterns:
+    - 'PP( STG\d+)?_\d+_\d{3} '
+    - 'PP( STG\d+)?_\d+_110 Wand Aussen$'
+  min_matches: 1

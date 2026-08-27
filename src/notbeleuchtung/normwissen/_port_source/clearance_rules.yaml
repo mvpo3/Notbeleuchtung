@@ -1,0 +1,129 @@
+# ============================================================
+# CLEARANCE-RULES (H-13, Sprint 2026-06-14)
+# ============================================================
+# Beantwortet H-13 (Leonis Issue #86): Clearance-Werte fuer Slice 18.27.0
+# Clearance-Relocation-Pass + protected_tiers + Schema fuer per-Kind-Overrides.
+#
+# Konsumiert von: backend/engine/walls/clearance_relocate.py
+#   (ersetzt Platzhalter-Konstanten CLEARANCE_MIN_MM, RELOCATE_RADIUS_MM,
+#    OWNING_WALL_PERP_TOL_MM, _PROTECTED_TIERS).
+#
+# Architektur: ADR-0012 WIE-Datei (Anwendungs-/Positionierungs-Logik).
+# Tier-Konvention: heuristic:clearance -> rule:fachpraxis:clearance promotet
+# sobald Werte Track-B-bestaetigt.
+
+schema_version: 1
+stage: alpha
+purpose: |
+  Wand-Clearance + Relocation-Parameter fuer Slice 18.27.0 Track-A-Mechanik.
+  Loest Platzhalter-Konstanten in backend/engine/walls/clearance_relocate.py
+  durch Domain-bestaetigte Werte ab.
+
+source:
+  - "Oesterreichische Installations-Praxis (Schalter-Wandsegment-Mindestmass)"
+  - "TAEV / DIN VDE 0606 (Schalter-Greifradius)"
+  - "Slice 18.27.0 Live-Validierung (27 reloc / 24 no_spot / 0 forced_override)"
+
+curated_by: "track-b"
+curated_at: "2026-06-14"
+
+# ============================================================
+# GLOBAL DEFAULTS
+# ============================================================
+# Bestaetigt Slice 18.27.0 Platzhalter-Werte. Live-Run zeigt 130mm tragfaehig
+# (0 forced_override), 1500mm Radius erfasst typische Wand-Nachbarschaft.
+
+global_defaults:
+
+  clearance_min_mm: 130
+  # Minimale freie Wandsegment-Breite fuer wand-montiertes Symbol.
+  # Tier: fachpraxis. Konsistent mit Schalter-Standard-Doppelrahmen-Breite
+  # (Schrack Visio 50: 1-fach ~80mm, 2-fach ~150mm; 130mm deckt 1-fach + Toleranz).
+  # Slice-18.27-Live: 0 forced_override -> empirisch tragfaehig.
+
+  relocate_radius_mm: 1500
+  # Maximaler Versatz bei Clearance-Relocation.
+  # Tier: fachpraxis. Greifradius einer Schalter-Bedien-Position (~1.5m =
+  # akzeptabler Versatz ohne Plan-Aenderung). Slice-18.27-Live: 27/(27+24)=53%
+  # erfolgreiche Reloc innerhalb 1500mm.
+
+  owning_wall_perp_tol_mm: 60
+  # Owning-Wall-Guard: maximaler perpendikularer Abstand fuer Wand-Zugehoerigkeit.
+  # Tier: fachpraxis. Verhindert dass frei-driftendes Anker-Symbol auf
+  # geratene Wand gezwungen wird. Match Track-A Default Slice 18.27.0.
+
+# ============================================================
+# PER-KIND OVERRIDES (Schema; leer bis Bedarf belegbar)
+# ============================================================
+# Wenn ein Symbol einen anderen Clearance-Bedarf hat als der globale Default
+# (z.B. Mehrfach-Kombi-Steckdose breiter), hier ueberschreiben.
+# Schema: <catalog_entry_id>: {clearance_min_mm: <int>, begruendung: <text>}
+# Aktuell leer. Bei Bedarf erweitern (siehe CL-OQ-01).
+
+per_kind_overrides: {}
+
+# ============================================================
+# PROTECTED TIERS
+# ============================================================
+# Decision-Source-Tiers, die eine forced_wall NIE per Relocation verlassen darf.
+# Pflicht-Werte (OVE/LB) bleiben am Anker. Matcht Track-A _PROTECTED_TIERS.
+
+protected_tiers:
+  - "rule:ove"
+  - "rule:lb"
+
+# ============================================================
+# OPEN QUESTIONS
+# ============================================================
+
+open_questions:
+
+  - id: CL-OQ-01
+    status: open
+    thema: "Per-Kind-Clearance fuer breite Mehrfach-Kombi-Steckdosen + fehlende Catalog-Eintraege"
+    befund: |
+      Sprint H-13 (2026-06-14) hat per_kind_overrides leer geseedet. Offen:
+      (A) Brauchen Mehrfach-Kombi (schuko_dreifach, fr_schuko_klapp_3f,
+          schuko-Mehrfach-Kombi) ein groesseres clearance_min_mm (z.B. 200mm)?
+          Schrack Visio 50 3-fach-Rahmen ~230mm Breite -> 130mm reicht visuell,
+          aber Symbol-Mittel-Punkt-Anker laesst Rand mit nur 130-115=15mm Rest.
+      (B) symbol_catalog.yaml fehlen: 'rauchmelder' (nur rauchmelder_batt),
+          'bewegungsmelder_decke' (nicht im Katalog). Sobald addiert,
+          mount: ceiling setzen + ggf. clearance-Override.
+    naechste_action: |
+      Nach Slice-18.27.1+ Re-Run: per_kind_overrides fuer 3-fach-Schuko-Varianten
+      validieren (no_spot-Count messen); fehlende Catalog-Eintraege ergaenzen.
+    tier: fachpraxis
+    bezug: "Slice 18.27.0 Live-Validierung; symbol_catalog.yaml mount-Rollout Sprint H-13"
+
+# ============================================================
+# ENGINE-KONSUM (Cross-Track-Doku fuer Track A)
+# ============================================================
+
+engine_consumption:
+
+  loader_target: "backend/engine/walls/clearance_relocate.py"
+
+  current_state: |
+    Hardcoded Platzhalter-Konstanten (Stand Slice 18.27.0):
+      CLEARANCE_MIN_MM: float = 130.0           # line 37
+      RELOCATE_RADIUS_MM: float = 1500.0         # line 39
+      OWNING_WALL_PERP_TOL_MM: float = 60.0      # line 44
+      _PROTECTED_TIERS: tuple = ("rule:ove", "rule:lb")  # line 61
+      WALL_MOUNTED_KINDS: frozenset = {5 Kinds}   # line 52-58
+
+  proposed_change: |
+    1. Konstanten via load_clearance_rules() aus dieser YAML laden.
+    2. WALL_MOUNTED_KINDS ersetzen durch mount-Filter auf symbol_catalog.yaml
+       (mount: wall). Allowlist-Fallback bis Catalog-Coverage ausreichend.
+    3. Tier-Promotion: heuristic:clearance -> rule:fachpraxis:clearance
+       sobald YAML konsumiert.
+
+  symbol_catalog_mount_rollout:
+    description: |
+      Sprint H-13 Edit 2: 9 catalog-entries bekommen mount-Feld (Option A,
+      partial). Rest bleibt unmount-getaggt -> Track-A nutzt weiter Allowlist
+      als Default. Cross-Track-Folge-Arbeit: Catalog-Coverage schrittweise
+      erweitern (Track-A Slice 18.28.x+).
+    wall_mounted_added: 7   # ausschalter_einpolig, wechselschalter, taster, klingeltaster, schuko_einfach, schuko_zweifach, tv_anschluss
+    ceiling_mounted_added: 2  # rauchmelder_batt, deckenauslass

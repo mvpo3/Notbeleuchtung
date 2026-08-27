@@ -1,0 +1,60 @@
+profile_id: mvp_grundriss
+version: 1
+
+layout:
+  strategy: direct_modelspace
+
+scale:
+  strategy: existing_detect_scale
+
+roles:
+  walls:
+    strategy: line_plus_hatch
+    layer_patterns:
+      - "^0$"
+    entity_types:
+      - LINE
+      - HATCH
+    default_type: unknown
+
+  wall_material:
+    strategy: disabled
+
+  rooms:
+    strategy: closed_polygons
+    polygon_layers:
+      - "^0$"
+    label_layers:
+      - "^0$"
+    label_strategy: nearby_mtext_groups
+    polygon_source: closed_polygon_profile
+    open_contour:
+      micro_gap_max_mm: 100.0
+      micro_gap_max_closing_area_m2: 0.01
+      min_room_area_m2: 0.5
+      large_gap_action: diagnostic_only
+
+  doors:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^32-AB-Tür$"
+      - "^50-BL-Tür.*$"
+      - "^0$"
+
+  windows:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^__NO_WINDOW_LAYER__$"
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^0$"
+      - "^E_Muster$"
+
+# Slice N6 — Auto-Detection-Fingerprint (MVP-eigene Tür-Layer)
+detect:
+  layer_patterns:
+    - '^32-AB-Tür$'
+    - '^50-BL-Tür'
+  min_matches: 1

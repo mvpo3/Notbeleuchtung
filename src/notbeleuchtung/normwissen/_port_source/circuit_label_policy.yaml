@@ -1,0 +1,656 @@
+# circuit_label_policy.yaml
+# Stromkreis-Label-Policy: F-Nummer-Allokation, Format, Phasen-Verteilung,
+# Verteiler-Praefixe und semantisch->Label-Mapping.
+#
+# Architektur: ADR-0012 (WAS-vs-WIE Trennung) - WIE-File (Allokations- &
+# Naming-Logik). Keine Mengen/Pflichtwerte hier; nur Mappings + Regeln.
+#
+# WICHTIG - F-Symbol:
+#   "F" in "<V>F<N>.<S>" = Sicherungsautomat-Schaltzeichen nach IEC 60617.
+#   F ist NICHT Phase L1/L2/L3. Phasen siehe Sektion 8 (phasen_verteilung).
+#
+# Architektur-Regel: LB > Referenzplan > Fachpraxis > OVE-Verbote.
+#
+# Schema pro Eintrag (7 Pflichtfelder):
+#   rule, value (ODER ref), einheit, quelle, tier, confidence, pflicht_oder_praxis
+#   - Verweis-Eintraege haben "ref:" statt "value:", einheit "-"
+#   - tier ∈ {lb_explizit, oenorm, fachpraxis, referenzplan}
+#   - "referenzplan" ist NEUE 4. Stufe (zwischen fachpraxis und oenorm einsortiert
+#     in Praezedenz: LB > Referenzplan > Fachpraxis > OVE). ADR-0012-Update +
+#     plan-learning L24-Update als FOLGE-PR.
+
+# ============================================================
+# 1. META
+# ============================================================
+
+meta:
+  status: draft
+  version: "0.1.0"
+  vorgaenger:
+    branch: "N/A (Greenfield)"
+    note: "Erste Iteration der Label-Policy. Keine Vorgaenger-Datei."
+  basis: |
+    H-11 Punkt 5 (LB-Substanz Mollgasse §5.1.14 - FI/LS-Liste) +
+    LB Elektro 240718 Mollgasse §5.1.14 (13 LS-Stromkreise + 2 FI-Gruppen) +
+    plan-learning pattern-mining (L19 - "F6=Beleuchtung"-Pattern,
+    Mollgasse-Referenzplan-Konvention).
+  created: "2026-06-08"
+  architektur_adr: "docs/decisions/0012-track-b-was-vs-wie-trennung.md"
+  architektur_anmerkung: |
+    tier "referenzplan" als 4. Stufe ist NEU in dieser Datei. ADR-0012-Update
+    + plan-learning L24-Update folgen als separater PR (#108-FOLGE), nicht
+    Teil dieses PRs. Diese Datei verankert die Praezedenz formal.
+  extract_ref: "docs/extracts/lb_elektro_240718_h11_extract.md (§5.1.14)"
+  lb_quelle: |
+    LB Elektro 240718 (Mollgasse 15, 1180 Wien) §5.1.14 S.30 -
+    13 explizite LS-Stromkreise + 2 FI-Gruppen pro Wohnungsverteiler.
+  owner: "Enis (Track B - Domain & Normen)"
+  reviewer: "Leonis (Track A - Code)"
+  related_files:
+    - "backend/rules/circuit_rules_ove_8015.yaml (Stromkreis-Aufteilungs-Regeln, SK-01..12)"
+    - "backend/rules/positioning_rules.yaml (Wand-/Positionierungs-Regeln)"
+    - "backend/rules/gleichzeitigkeit_wohnungstypen.yaml (Gleichzeitigkeitsfaktoren)"
+    - "backend/rules/device_counts_ove_e8015.yaml (WAS-Mindestmengen)"
+    - "backend/rules/heights_fachpraxis.yaml (Komponenten-Vocabulary)"
+    - "backend/rules/lb_standard_wishes.yaml (LB-Schema + Fallback; Konsumer: Track-A Slice 18.44.0 VerteilerSpec rule:lb_override)"
+    - ".claude/skills/elektroplaner-dev/references/elektrosymbole.md:166 (F-Symbol IEC 60617)"
+    - ".claude/skills/elektroplaner-dev/references/cad-formate.md:179 (Label-Format)"
+    - ".claude/skills/plan-learning/pattern-mining.md (L19 F6=Beleuchtung)"
+    - "docs/TEAM_ONBOARDING.md:271-272 (1F6.1-Beispiel)"
+    - "CLAUDE.md (Stromkreis-Format-Block - mit F=Phase-Korrektur in Folge-PR)"
+
+# ============================================================
+# 2. FORMAT_DEFINITION
+# ============================================================
+
+format_definition:
+
+  - rule: label_format_template
+    value: "<V>F<N>.<S>"
+    einheit: "-"
+    quelle: "elektrosymbole.md:166 + cad-formate.md:179 + TEAM_ONBOARDING.md:271-272 + CLAUDE.md (Stromkreis-Format-Block, mit Phase-Korrektur in Folge-PR)"
+    tier: fachpraxis
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    komponenten:
+      V: "Verteiler-Index (z.B. '1' fuer Wohnung 1, 'AGV-' fuer Allgemein-Verteiler, 'GAR-' fuer Garage). Siehe Sektion 7."
+      F: "Sicherungsautomat-Schaltzeichen nach IEC 60617. F ist KEIN Phasenbezeichner."
+      N: "Laufende LS-Nummer im Verteiler (1, 2, 3, ...). Allocation siehe Sektion 5 + 6."
+      S: "Laufende Verbraucher-Nummer am LS (1, 2, ...). Mehrere Verbraucher an einem LS = .1, .2, .3 ..."
+    beispiele:
+      - "1F6.1"      # Wohnung 1, LS-Nr 6 (Beleuchtung Mollgasse), 1. Verbraucher
+      - "1F12.1"     # Wohnung 1, LS-Nr 12 (E-Herd Drehstrom), 1. Verbraucher
+      - "AGV-F3.2"   # Allgemein-Verteiler, LS-Nr 3, 2. Verbraucher
+    anti_pattern:
+      - "LS.6.1"     # FALSCH (CLAUDE.md-Verbot)
+      - "L1F6.1"     # FALSCH (L1 ist Phase, gehoert nicht in Label)
+
+# B-Charakteristik-Hinweis:
+# LS-Typ-Bezeichnungen in Sektion 5 fuehren B-Charakteristik (B10/B13/B16) als
+# Fachpraxis-Default fuer Wohnungs-Installationen. LB Mollgasse §5.1.14 nennt
+# nur Stromstaerke; B-Charakteristik ist impliziter Standard nach OVE E 8101
+# fuer Endstromkreise in Wohnbauten (Auslesecharakteristik fuer ohmsche/leicht
+# induktive Lasten).
+
+# ============================================================
+# 3. ALLOCATION_QUELLE
+# ============================================================
+
+allocation_quelle:
+
+  - rule: label_allocation_quelle
+    value: "lb_driven"
+    einheit: "-"
+    quelle: "PROJEKT_BACKLOG.md Z.31 + LB Mollgasse §5.1.14"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      F-Nummer-Allocation ist NICHT algorithmisch berechenbar. Quelle ist die
+      LB: LB-Parser extrahiert die FI-/LS-Liste (siehe lb_standard_wishes.yaml
+      Sektion fi_ls_kreisliste) und gibt sie als explizite Allokation an die
+      Engine. Bei LB-Schweigen Fallback auf mollgasse_referenz_mapping
+      (Sektion 5). Bei LB-Schweigen UND Nicht-Wohnbau Fallback auf
+      universal_fachpraxis_reihenfolge (Sektion 6).
+    fallback_kette:
+      1: "LB-explizite FI-/LS-Liste (lb_standard_wishes.yaml.fi_ls_kreisliste)"
+      2: "mollgasse_referenz_mapping (Sektion 5, F1-F13)"
+      3: "universal_fachpraxis_reihenfolge (Sektion 6, generische Kategorien)"
+
+# ============================================================
+# 4. FI_ODER_LS_ONLY_SICHT
+# ============================================================
+# Frage: Werden FI-Schutzschalter in die F-Nummerierung einbezogen oder
+# separat als FI1/FI2 nummeriert?
+
+fi_oder_ls_only_sicht:
+
+  - rule: fi_inclusion_in_f_numbering
+    value: "fi_included"
+    einheit: "-"
+    quelle: "Mollgasse-Plan-Konvention + pattern-mining.md L19 ('F6=Beleuchtung passt nur zu FI-included')"
+    tier: referenzplan
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    sichten:
+      sicht_a_fi_included:
+        beschreibung: "FI-Schutzschalter belegen F1, F2; LS-Stromkreise starten ab F3."
+        beispiel: "F1=FI-A, F2=FI-B, F3..F13=LS-Stromkreise"
+        verwendet_in: "Mollgasse-Referenzplan (Default)"
+      sicht_b_ls_only:
+        beschreibung: "F-Nummern nur fuer LS; FIs separat als FI1, FI2 nummeriert."
+        beispiel: "FI1, FI2 separat; F1..F11=LS-Stromkreise"
+        verwendet_in: "IEC-strenge Sicht (theoretisch)"
+    bemerkung: |
+      Default fi_included gemaess Mollgasse-Plan-Konvention. F6=Beleuchtung im
+      pattern-mining L19 passt NUR zur fi_included-Sicht (in ls_only waere F6
+      etwas anderes). LP-OQ-01 prueft, ob IEC-strenge ls_only-Sicht in
+      anderen Bueros Standard ist.
+
+# ============================================================
+# 5. MOLLGASSE_REFERENZ_MAPPING
+# ============================================================
+# 13 LS-Stromkreise + 2 FI-Gruppen aus LB Mollgasse §5.1.14 + Plan-Konvention.
+# Substanz: H-11 Punkt 5 LB-Extract. Cross-Ref: circuit_rules_ove_8015.yaml SK-01..12.
+
+mollgasse_referenz_mapping:
+
+  - f_nr: "F1"
+    funktion: "FI-Gruppe A (Schuko + Geraete)"
+    sk_ref: "circuit_rules_ove_8015.yaml.fi_mapping_regeln (Gruppe A)"
+    ls_typ_ref: "FI 4/40 0,03A G/A"
+    rule: f1_mollgasse
+    value: "fi_gruppe_a_schuko_geraete"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F2"
+    funktion: "FI-Gruppe B (Bad + Aussen + feuchte Raeume)"
+    sk_ref: "circuit_rules_ove_8015.yaml.fi_mapping_regeln (Gruppe B)"
+    ls_typ_ref: "FI 4/40 0,03A G/A"
+    rule: f2_mollgasse
+    value: "fi_gruppe_b_bad_aussen"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30 + OVE E 8101 §701"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F3"
+    funktion: "Licht/Schuko Wohnzimmer+Kueche Kreis 1"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-03 (Licht) + SK-08 (Schuko) + SK-10 (Kueche)"
+    ls_typ_ref: "LS B10 1+N"
+    rule: f3_mollgasse
+    value: "licht_schuko_wohnzimmer_kueche_kreis1"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F4"
+    funktion: "Licht/Schuko Wohnzimmer+Kueche Kreis 2"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-03 (Licht) + SK-08 (Schuko) + SK-10 (Kueche)"
+    ls_typ_ref: "LS B10 1+N"
+    rule: f4_mollgasse
+    value: "licht_schuko_wohnzimmer_kueche_kreis2"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F5"
+    funktion: "Licht/Schuko Zimmer 1 (Kreis 3)"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-09 (Zimmer) + SK-03 (Licht)"
+    ls_typ_ref: "LS B10 1+N"
+    rule: f5_mollgasse
+    value: "licht_schuko_zimmer1"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F6"
+    funktion: "Licht/Schuko Zimmer 2 (Kreis 4) - 'F6=Beleuchtung'-Pattern"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-09 (Zimmer) + SK-03 (Licht)"
+    ls_typ_ref: "LS B10 1+N"
+    rule: f6_mollgasse
+    value: "licht_schuko_zimmer2"
+    einheit: "-"
+    quelle: "Mollgasse-Plan-Konvention + pattern-mining.md L19"
+    tier: referenzplan
+    confidence: 0.85
+    pflicht_oder_praxis: praxis
+    bemerkung: |
+      Mollgasse-spezifisches 'F6=Beleuchtung'-Pattern aus pattern-mining.md L19.
+      Bei fi_included-Sicht (Sektion 4) landet die zweite Zimmer-Beleuchtung
+      konsistent auf F6. Generalisierung auf andere LBs/Wohnbauten pending
+      (LP-OQ-05). Tier referenzplan, da nicht aus LB-Text, sondern aus
+      Plan-Analyse abgeleitet.
+
+  - f_nr: "F7"
+    funktion: "Heizungssteuerung Wohnungsstation"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-12 (Heizungssteuerung)"
+    ls_typ_ref: "LS B13 1+N"
+    rule: f7_mollgasse
+    value: "heizungssteuerung_wohnungsstation"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F8"
+    funktion: "Waschmaschine"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-04 (Waschmaschine)"
+    ls_typ_ref: "LS B16 1+N"
+    rule: f8_mollgasse
+    value: "waschmaschine"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F9"
+    funktion: "Waeschetrockner"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-05 (Waeschetrockner)"
+    ls_typ_ref: "LS B16 1+N"
+    rule: f9_mollgasse
+    value: "waeschetrockner"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F10"
+    funktion: "Mikrowellenherd"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-06 (Mikrowelle)"
+    ls_typ_ref: "LS B16 1+N"
+    rule: f10_mollgasse
+    value: "mikrowellenherd"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F11"
+    funktion: "Geschirrspueler"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-04 (Geschirrspueler, gemeinsamer Kreis-Typ)"
+    ls_typ_ref: "LS B16 1+N"
+    rule: f11_mollgasse
+    value: "geschirrspueler"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+
+  - f_nr: "F12"
+    funktion: "E-Herd 3-phasig Drehstrom"
+    sk_ref: "circuit_rules_ove_8015.yaml SK-01 (E-Herd Drehstrom)"
+    ls_typ_ref: "LS B16 3+N (Drehstrom 400V)"
+    rule: f12_mollgasse
+    value: "eherd_drehstrom_3phasig"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: "Einziger Drehstrom-Kreis im Wohnungsverteiler. 3 Phasen + N."
+
+  - f_nr: "F13+"
+    funktion: "Platzreserve >= 30 Prozent"
+    sk_ref: "-"
+    ls_typ_ref: "LS B10 1+N (Reserveplatz, bestueckbar)"
+    rule: f13_plus_mollgasse_reserve
+    value: "platzreserve_min_30_prozent"
+    einheit: "-"
+    quelle: "LB Elektro 240718 Mollgasse §5.1.14 S.30 + Fachpraxis"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      Reserveplatz im Verteiler-Gehaeuse (>= 30 Prozent freie Module),
+      keine LS bestueckt. Erweiterbarkeit fuer Nachruestung.
+
+# ============================================================
+# 6. UNIVERSAL_FACHPRAXIS_REIHENFOLGE
+# ============================================================
+# Fallback wenn LB schweigt UND kein Mollgasse-aehnliches Mapping greift.
+
+universal_fachpraxis_reihenfolge:
+
+  - rule: f_allocation_reihenfolge
+    value:
+      - "fi"             # FI-Schutzschalter zuerst (bei fi_included-Sicht)
+      - "licht_schuko"   # Allgemeine Licht-/Schuko-Stromkreise
+      - "geraete_230v"   # 230V-Geraete-Stromkreise (Waschmaschine, GS, etc.)
+      - "drehstrom"      # 400V-Drehstrom-Verbraucher (E-Herd, Durchlauferhitzer)
+      - "reserve"        # Reserveplatz am Ende
+    einheit: "-"
+    quelle: "Fachpraxis WIE-Anwendung + Mollgasse-Plan-Reihenfolge"
+    tier: fachpraxis
+    confidence: 0.8
+    pflicht_oder_praxis: praxis
+    bemerkung: |
+      Reihenfolge spiegelt die Mollgasse-F1..F12-Sortierung wider und ist mit
+      Bueropraxis im Wohnbau Wien konsistent. Bei explizitem LB-Override
+      (lb_standard_wishes.yaml.fi_ls_kreisliste) gilt LB.
+
+# ============================================================
+# 7. VERTEILER_PREFIX_REGEL
+# ============================================================
+# <V>-Prefix-Regeln pro Verteilertyp (Wohnung, Allgemein, Garage).
+
+verteiler_prefix_regel:
+
+  - rule: wv_prefix_wohnungsverteiler
+    value: "<wohnung_id>F"
+    einheit: "-"
+    quelle: "TEAM_ONBOARDING.md:271-272 + Mollgasse-Plan-Konvention"
+    tier: fachpraxis
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    beispiele:
+      - "1F6.1"    # Wohnung 1, F6, 1. Verbraucher
+      - "2F8.1"    # Wohnung 2, F8 (Waschmaschine), 1. Verbraucher
+      - "48F12.1"  # Wohnung 48, F12 (E-Herd), 1. Verbraucher
+    bemerkung: |
+      <wohnung_id> = laufende Wohnungsnummer im Gebaeude (1, 2, ..., 48 fuer
+      Mollgasse). Keine Stockwerks-/Top-Codierung im Prefix.
+
+  - rule: agv_prefix_allgemeinverteiler
+    value: "AGV-F"
+    einheit: "-"
+    quelle: "Bueropraxis + Wohnhaus-Anlagen-Konvention"
+    tier: fachpraxis
+    confidence: 0.7
+    pflicht_oder_praxis: praxis
+    beispiele:
+      - "AGV-F3.2"  # Allgemein-Verteiler, F3, 2. Verbraucher
+    bemerkung: |
+      LP-OQ-04: AGV-Prefix-Konvention bei Multi-AGV im Gebaeude
+      (AGV-1-F3.2 oder AGV.A-F3.2?) noch offen.
+
+  - rule: gar_prefix_garagenverteiler
+    value: "GAR-F"
+    einheit: "-"
+    quelle: "Bueropraxis + Tiefgaragen-Stromkreis-Konvention"
+    tier: fachpraxis
+    confidence: 0.7
+    pflicht_oder_praxis: praxis
+    beispiele:
+      - "GAR-F5.1"  # Garagen-Verteiler, F5, 1. Verbraucher
+    bemerkung: |
+      Garagen-Stromkreise (Beleuchtung, CO-Lueftung, E-Ladesaeulen) separat.
+      LP-OQ-04 betrifft auch GAR-Prefix bei Multi-Garage.
+
+# ============================================================
+# 8. PHASEN_VERTEILUNG
+# ============================================================
+# Phasen-Zuordnung L1/L2/L3 zu LS-Stromkreisen. F = LS-Nummer; Phase ist
+# orthogonale Information am LS.
+
+phasen_verteilung:
+
+  - rule: phasen_default_rotational
+    value: "L1 -> L2 -> L3 -> L1 -> L2 -> L3 -> ..."
+    einheit: "-"
+    quelle: "Fachpraxis Wohnbau Wien + symmetrische Last-Verteilung"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    start_ab: "erste 230V-LS nach FIs (F3 bei fi_included; F1 bei ls_only)"
+    bemerkung: |
+      Rotationale Verteilung sorgt fuer Phasen-Symmetrie am Hausanschluss.
+      Drehstrom-Verbraucher (F12 Mollgasse) belegen alle 3 Phasen
+      gleichzeitig - rotational nur fuer 230V-LS.
+
+  - rule: drehstrom_alle_3_phasen
+    value: "L1 + L2 + L3 + N"
+    einheit: "-"
+    quelle: "OVE E 8101 §433"
+    tier: oenorm
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      Drehstrom-Verbraucher (E-Herd 400V, Durchlauferhitzer, Waermepumpe)
+      muessen alle 3 Phasen + Neutralleiter belegen. 3-poliger LS.
+
+  - rule: lb_override_phasenverteilung
+    value: "lb_override_if_present"
+    einheit: "-"
+    quelle: "Architektur-Regel: LB > Fachpraxis"
+    tier: lb_explizit
+    confidence: 1.0
+    pflicht_oder_praxis: pflicht
+    bemerkung: |
+      Falls LB explizite Phasen-Zuordnung pro LS vorgibt (z.B. TAEV-2020-
+      Mappingtabelle), uebersteuert diese die rotationale Default-Verteilung.
+      LP-OQ-03: TAEV 2020 Phasen-Verteilungs-Regelwerk noch zu beschaffen.
+
+# ============================================================
+# 9. SEMANTISCH_ZU_LABEL_MAPPING
+# ============================================================
+# Pipeline + Tabelle: wie wird aus einer semantischen Verbraucher-ID (z.B.
+# eherd_wohnung1) das finale Label (1F12.1)?
+
+semantisch_zu_label_mapping:
+
+  - rule: mapping_pipeline
+    value:
+      schritt_1: "semantisch_id eingehend (z.B. 'eherd_wohnung1', 'wama_wohnung2')"
+      schritt_2: "SK-Lookup: semantisch_id -> Verbraucher-Kategorie (eherd, wama, licht_zimmer, ...)"
+      schritt_3: "F-Nr-Resolution: (a) LB-Override aus lb_standard_wishes.fi_ls_kreisliste, sonst (b) mollgasse_referenz_mapping (Sektion 5), sonst (c) universal_fachpraxis_reihenfolge (Sektion 6)"
+      schritt_4: "Verteiler-Praefix anhaengen: <V>F<N> (Sektion 7 - wv/agv/gar)"
+      schritt_5: "S-laufende-Nr ermitteln: lfd. Verbraucher am LS (1, 2, ... bei Mehrfach-Belegung)"
+      schritt_6: "Label assemblieren: <V>F<N>.<S> (Sektion 2 Format)"
+    einheit: "-"
+    quelle: "Engine-Konvention + ADR-0012-Mapping-Layer"
+    tier: fachpraxis
+    confidence: 0.9
+    pflicht_oder_praxis: praxis
+    bemerkung: |
+      Pipeline ist deterministisch bei vollstaendiger LB. Schritt 5 (S-Nr)
+      braucht Engine-State (welche Verbraucher schon am LS haengen).
+
+  - rule: mapping_tabelle_mollgasse
+    value:
+      eherd_<wohnung_id>:      "<V>F12"
+      wama_<wohnung_id>:       "<V>F8"
+      trockner_<wohnung_id>:   "<V>F9"
+      mikrowelle_<wohnung_id>: "<V>F10"
+      gs_<wohnung_id>:         "<V>F11"
+      heizung_<wohnung_id>:    "<V>F7"
+      licht_wz_kreis1_<wohnung_id>: "<V>F3"
+      licht_wz_kreis2_<wohnung_id>: "<V>F4"
+      licht_zimmer1_<wohnung_id>:   "<V>F5"
+      licht_zimmer2_<wohnung_id>:   "<V>F6"
+      schuko_bad_<wohnung_id>:      "<V>F2"
+      schuko_aussen_<wohnung_id>:   "<V>F2"
+    einheit: "-"
+    quelle: "Abgeleitet aus Sektion 5 (Mollgasse-Referenz-Mapping)"
+    tier: referenzplan
+    confidence: 0.85
+    pflicht_oder_praxis: praxis
+    bemerkung: |
+      <wohnung_id> ist Token-Platzhalter; <V> wird aus wv_prefix-Regel
+      (Sektion 7) gefuellt. Bei Nicht-Mollgasse-LB: LB-Override hat Vorrang.
+
+# ============================================================
+# 10. COMPLIANCE_ACCEPTANCE
+# ============================================================
+# Pruefliste fuer Acceptance-Tests des Label-Outputs.
+
+compliance_acceptance:
+
+  schnellprueflist_mapping:
+
+    - id: CA-01
+      pruefung: "Jedes Label matcht das Format-Regex '^[A-Z0-9_-]+F[0-9]+\\.[0-9]+$'"
+      abgedeckt_durch: "Sektion 2 format_definition"
+      validator_pseudocode: |
+        import re
+        LABEL_RE = re.compile(r'^[A-Z0-9_-]+F[0-9]+\.[0-9]+$')
+        def validate_label_format(label: str) -> bool:
+            return bool(LABEL_RE.match(label))
+      severity: "error"
+      bemerkung: "Regex deckt 1F6.1, AGV-F3.2, GAR-F5.1, 48F12.1 ab. Lehnt LS.6.1 und L1F6.1 ab."
+
+    - id: CA-02
+      pruefung: "F-Nummer jedes Labels mappt auf eine bekannte Funktion (aus Sektion 5 oder LB-Override)."
+      abgedeckt_durch: "Sektion 5 mollgasse_referenz_mapping + lb_standard_wishes.fi_ls_kreisliste"
+      validator_pseudocode: |
+        def validate_f_nr_known(label: str, f_funktion_map: dict) -> bool:
+            f_nr = parse_f_nr(label)  # '1F6.1' -> 'F6'
+            return f_nr in f_funktion_map
+      severity: "warn"
+      bemerkung: "Bei LB-Override kann F-Nr ausserhalb F1-F13 liegen (z.B. F14 fuer Zusatzkreise). Warn statt error."
+
+    - id: CA-03
+      pruefung: "Phasen-Verteilung im Verteiler ist balanciert (max +/-2 LS Diff zwischen L1/L2/L3)."
+      abgedeckt_durch: "Sektion 8 phasen_default_rotational"
+      validator_pseudocode: |
+        from collections import Counter
+        def validate_phase_balance(circuits: list) -> bool:
+            phases = Counter(c['phase'] for c in circuits if c['phase'] in ['L1','L2','L3'])
+            if not phases: return True
+            return max(phases.values()) - min(phases.values()) <= 2
+      severity: "warn"
+      bemerkung: "Drehstrom-LS zaehlen pro Phase einmal (alle 3). Toleranz +/-2 deckt typische Asymmetrien ab."
+
+    - id: CA-04
+      pruefung: "Drehstrom-Verbraucher (eherd, durchlauferhitzer, waermepumpe) haben 3-poligen LS mit L1+L2+L3+N."
+      abgedeckt_durch: "Sektion 8 drehstrom_alle_3_phasen"
+      validator_pseudocode: |
+        DREHSTROM_VERBRAUCHER = {'eherd', 'durchlauferhitzer', 'waermepumpe'}
+        def validate_drehstrom_3pol(circuits: list) -> bool:
+            for c in circuits:
+                if c.get('kategorie') in DREHSTROM_VERBRAUCHER:
+                    if c.get('poligkeit') != 3 or 'N' not in c.get('leiter', []):
+                        return False
+            return True
+      severity: "error"
+      bemerkung: "OVE E 8101 §433 - hard requirement. Fail bei 1-pol LS fuer Drehstrom."
+
+    - id: CA-05
+      pruefung: "Verteiler-Praefix jedes Labels ist konsistent mit dem zugeordneten Verteiler-Typ."
+      abgedeckt_durch: "Sektion 7 verteiler_prefix_regel"
+      validator_pseudocode: |
+        def validate_prefix_consistency(label: str, verteiler_typ: str) -> bool:
+            prefix = label.split('F')[0]
+            if verteiler_typ == 'wohnungsverteiler':
+                return prefix.isdigit()  # '1', '48', ...
+            if verteiler_typ == 'allgemein':
+                return prefix == 'AGV-'
+            if verteiler_typ == 'garage':
+                return prefix == 'GAR-'
+            return False
+      severity: "error"
+      bemerkung: "Prefix-Mismatch (z.B. AGV-F3.1 in Wohnungsverteiler) ist Engine-Bug."
+
+# ============================================================
+# 11. OPEN_QUESTIONS
+# ============================================================
+
+open_questions:
+
+  - id: LP-OQ-01
+    thema: "FI-included vs LS-only IEC-strenge Sicht"
+    befund: |
+      Sektion 4 default fi_included nach Mollgasse-Plan-Konvention. IEC 60617
+      definiert F als Sicherungsautomat, nicht zwingend inklusive FI. Andere
+      Bueros (insb. ausserhalb Wien) koennten ls_only nutzen.
+    decision_status: "open"
+    impact: |
+      Bei Wechsel auf ls_only verschiebt sich die gesamte F-Nummerierung
+      (F1..F11 statt F3..F13). Mollgasse-Referenz-Mapping (Sektion 5)
+      muesste re-baselined werden.
+    naechste_action: |
+      Stichprobe in 3-5 nicht-Mollgasse-Wohnbauplaenen Wien/Niederoesterreich.
+      Bei Mehrheit ls_only -> Default umkehren + Migration-Pfad. Bei Mehrheit
+      fi_included -> Status quo bestaetigen + Sektion 4 confidence auf 0.95.
+
+  - id: LP-OQ-02
+    thema: "Zusatz-Stromkreise bei Wohnungen > 75 m^2 Position im Label"
+    befund: |
+      OVE E 8015 fordert Zusatz-Stromkreise ueber Mindestmenge bei groesseren
+      Wohnungen. Unklar: belegen diese F14, F15, ... oder werden sie als
+      F3.x/F4.x Sub-Nummern angehaengt?
+    decision_status: "open"
+    impact: |
+      Engine-Kollisionsrisiko: wenn LB Wohnung > 75 m^2 hat und Zusatzkreis
+      auf F14 will, der Mollgasse-Mapping aber nur bis F13 geht.
+    naechste_action: |
+      LB-Mollgasse re-lesen ob §5.1.14 fuer groessere Wohnungen Klarstellung
+      hat. Falls nicht -> Frage an Leonis ob Engine F14+ akzeptiert.
+
+  - id: LP-OQ-03
+    thema: "TAEV 2020 Phasen-Verteilungs-Regelwerk"
+    befund: |
+      Sektion 8 nutzt rotationale Default-Verteilung als Fachpraxis. TAEV 2020
+      (Technische Anschlussbedingungen) hat eigene Phasen-Mappingtabelle, die
+      EVU-spezifisch sein kann (Wien Energie vs Salzburg AG etc.).
+    decision_status: "pending_pdf"
+    impact: |
+      Bei explizitem TAEV-Mapping wird der lb_override-Tier in Sektion 8
+      aktiv. Engine muss TAEV-Tabelle als lb_standard_wishes-Erweiterung
+      verstehen.
+    naechste_action: |
+      TAEV 2020 PDF beschaffen (Wien Energie Website). Mapping-Tabelle in
+      lb_standard_wishes.yaml.phasenverteilung_taev_2020 nachreichen.
+
+  - id: LP-OQ-04
+    thema: "Multi-Wohnung-Verteiler-Praefix-Konventionen (AGV, GAR)"
+    befund: |
+      Sektion 7 definiert AGV-F und GAR-F. Bei Gebaeuden mit mehreren AGVs
+      (z.B. AGV pro Stiegenhaus) oder mehreren Tiefgaragen-Verteilern fehlt
+      Disambiguierung.
+    decision_status: "open"
+    impact: |
+      Label-Kollisionen moeglich (AGV-F3.1 in Stiege A und Stiege B). Engine
+      kann nicht zwischen den Verteilern unterscheiden.
+    naechste_action: |
+      Mollgasse-Plan re-checken ob Multi-AGV existiert. Falls ja -> Konvention
+      AGV-1-F3.1 oder AGV.A-F3.1 oder AGV_STG_A-F3.1 entscheiden + Sektion 7
+      ergaenzen.
+
+  - id: LP-OQ-05
+    thema: "Generalisierung Mollgasse-Mapping auf andere LBs"
+    befund: |
+      Sektion 5 ist Mollgasse-spezifisch (LB §5.1.14 von Juni 2024). Andere
+      LBs (anderer GU, anderes Buero) haben ggf. abweichende F-Allokation
+      (z.B. F6 = Geschirrspueler statt Beleuchtung).
+    decision_status: "parkiert"
+    impact: |
+      Aktuell nur Mollgasse als Referenz vorhanden. Bei Onboarding zweiter
+      Wohnbau-LB muss Mapping-Schicht generalisiert werden (LB-Profil pro
+      Bueropraxis).
+    naechste_action: |
+      Bei naechster Nicht-Mollgasse-LB: Diff-Analyse F-Allokation. Bei > 30
+      Prozent Abweichung -> lb_profile-Konzept einfuehren (Mollgasse-Profil,
+      Wien-Energie-Standard-Profil, ...).
+
+  - id: LP-OQ-06
+    thema: "Plan-Reihenfolge vs LB-Tabelle - Quellen-Konflikt"
+    befund: |
+      Bei Mollgasse stimmt LB-Tabelle (§5.1.14) mit Plan-Reihenfolge ueberein.
+      Falls bei anderer LB ein Konflikt entsteht (LB sagt F8=Trockner, Plan
+      zeigt F8=GS), unklar welche Quelle gewinnt.
+    decision_status: "open"
+    impact: |
+      Architektur-Regel sagt 'LB > Referenzplan'. Aber Referenzplan ist oft
+      der real ausgefuehrte Stand (mit Aenderungen ggue. LB). Bueropraxis
+      bevorzugt Plan, Norm-Sicht bevorzugt LB.
+    naechste_action: |
+      Devil's-Advocate-Grill mit Leonis + Selman: bei Konflikt Hard-Stop +
+      User-Entscheidung, oder Default 'LB gewinnt' mit Plan-Warning?
+      Entscheidung in ADR-0013 verankern.

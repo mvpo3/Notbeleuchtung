@@ -1,0 +1,91 @@
+profile_id: rennweg
+version: 1
+
+layout:
+  strategy: direct_modelspace
+
+# Slice R5.a: Zeichnung ist mm (GK-georeferenziert, INSUNITS=4). Der
+# bbox_span-Detektor (conf 0.5) hielt auf den Regelgeschossen nur 0.1 für
+# plausibel (320-m-Span) und überstimmte INSUNITS-mm (conf 0.3) → Flächen
+# ÷100. Projekt-Konvention ist eindeutig → Override (Barawitzka-Muster).
+scale:
+  strategy: profile_override
+  factor_to_mm: 1.0
+  source_unit: mm
+
+roles:
+  walls:
+    strategy: line_plus_hatch
+    layer_patterns:
+      - "^New_010 Aussenw.*nde.*$"
+      - "^New_015 Innenw.*nde.*$"
+    entity_types:
+      - LINE
+      - LWPOLYLINE
+      - HATCH
+      - ARC
+      - INSERT
+    default_type: unknown
+
+  wall_material:
+    strategy: disabled
+
+  rooms:
+    strategy: closed_polygons
+    polygon_layers:
+      - "^New_080 Raumdefinitionen$"
+    label_layers:
+      - "^New_080 Raumdefinitionen$"
+      - "^New_255 Plangrafiken.*$"
+    label_strategy: nearby_mtext_groups
+    # Slice N8: ArchiCAD-Zonen-Stempel — pro Raum ein INSERT auf dem
+    # Raum-Layer mit ROOM_NAME-Attribut (17/17 im UG verifiziert).
+    label_insert_attrib_tags:
+      - ROOM_NAME
+    polygon_source: closed_polygon_profile
+    open_contour:
+      micro_gap_max_mm: 100.0
+      micro_gap_max_closing_area_m2: 0.01
+      min_room_area_m2: 0.5
+      large_gap_action: diagnostic_only
+
+  doors:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^__NO_DOOR_INSERT_LAYER__$"
+    # Slice N15 — Block-Detektor (parsers.door_blocks): Türen liegen
+    # VERSCHACHTELT in Wall_N-Blöcken (Zargentür_1_Fl 10[N]) + 1× Opening_1
+    # top-level; 0 ARCs im Modelspace → N2-Detektor blind.
+    block_name_patterns:
+      - "Zargent(ü|ue)r"
+      - "^Opening_\\d"
+      - "^T(ü|ue)r_"
+      # Slice R6.a — Obergeschoss-Vokabular (UG kennt nur Zargentür/Opening_1):
+      - "Schiebet(ü|ue)r"
+      - "Rectangular Door Opening"
+    nested_max_depth: 2
+
+  windows:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^New_Archicad Windows.*$"
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^New_060 M.*bel Einbau.*$"
+      - "^New_065 M.*bel Einrichtung.*$"
+
+  markers:
+    strategy: text_by_layer_pattern
+    layer_patterns:
+      - "^New_080 Raumdefinitionen$"
+      - "^New_255 Plangrafiken.*$"
+    classify_service: true
+    max_text_len: 80
+
+# Slice N6 — Auto-Detection-Fingerprint (New_<NNN> <Klartext>-Konvention)
+detect:
+  layer_patterns:
+    - '^New_\d{3} '
+  min_matches: 1

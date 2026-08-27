@@ -1,0 +1,102 @@
+profile_id: fischamenderstrasse
+version: 1
+
+layout:
+  strategy: direct_modelspace
+
+scale:
+  strategy: existing_detect_scale
+
+roles:
+  walls:
+    strategy: line_plus_hatch
+    layer_patterns:
+      - "^A_Waende$"
+      - "^A_Waende_SHR$"
+    entity_types:
+      - LINE
+      - HATCH
+    default_type: unknown
+
+  wall_material:
+    strategy: disabled
+
+  rooms:
+    strategy: closed_polygons
+    polygon_layers:
+      - "^A_Raeume_$"
+      - "^A_Raeume$"
+    label_layers:
+      - "^A_Raeume_Beschriftung_$"
+    label_strategy: nearby_mtext_groups
+    # Slice R1: Stempel ohne Polygon (KiWa BT1, Außenanlagen) → Anker-
+    # Fallback; Outdoor-Klassifikation via keller.zone_tokens unten.
+    anchor_fallback: text_groups
+    polygon_source: closed_polygon_profile
+    # Slice N7: UG hat 13/18 Schacht-Kästchen (0,08-0,2 m²) auf A_Raeume_
+    min_polygon_area_m2: 0.5
+    open_contour:
+      micro_gap_max_mm: 100.0
+      micro_gap_max_closing_area_m2: 0.01
+      min_room_area_m2: 0.5
+      large_gap_action: diagnostic_only
+
+  doors:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^A_Tueren$"
+    # Slice N15 — Block-Detektor: Top-Level-Tür-Blöcke
+    # ("Tür_Blockzarge_1 Flügel - 90x200_RB …", "Tuer_S1_Aufzug…").
+    # BS_Tuer_PP-Beschriftungs-Stempel explizit raus (statt Umlaut-Zufall).
+    block_name_patterns:
+      - "^T(ü|ue)r_"
+      - "^Tuer_"
+    exclude_block_patterns:
+      - "^BS_"
+
+  windows:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^A_Fenster$"
+
+  furniture:
+    strategy: blocks_by_layer_pattern
+    layer_patterns:
+      - "^A_Moebel$"
+      - "^A_Sanitaer$"
+
+  markers:
+    strategy: text_by_layer_pattern
+    layer_patterns:
+      - "^A_Raeume_Beschriftung_$"
+      - "^A_Raeume_Beschriftung$"
+      - "^A_Beschriftung_?$"
+      - "^Text$"
+      - "^A_2D$"
+      - "^Q-SPCQ$"
+      - "^A_Waende_SHR$"
+    classify_service: true
+    max_text_len: 80
+
+  columns:
+    strategy: disabled
+
+# Slice R1 — Rekonstruktions-Vokabular für Anker-Fallback-Räume
+# (Stempel ohne Polygon brauchen Wand-Faces) + Outdoor-Zonen.
+keller:
+  wall_layer_patterns:
+    - "^A_Waende$"
+    - "^A_Waende_SHR$"
+  hid_layer_patterns: []
+  # R2: AUFZUG-Schacht (N10-Lernen Mollgasse) + Fahrrad-AUSSEN-Abstellfläche
+  zone_tokens: [GARAGE, DOPPELPARKER, INNENHOF, GULLY, ER-GESAMT,
+                BALKON, LOGGIA, TERRASSE, EIGENGARTEN, SPIELPLATZ,
+                RAMPE, PODEST, VORBAU, GESAMT, VERSIEGELUNG, RETENTION,
+                AUFZUG, FAHRRÄDER]
+
+# Slice N6 — Auto-Detection-Fingerprint (A_-Präfix-Konvention)
+detect:
+  layer_patterns:
+    - '^A_Waende$'
+    - '^A_Raeume$'
+  min_matches: 1
