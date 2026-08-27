@@ -37,13 +37,14 @@ OVE/EN-Verbote sind Hard Stops. Jede Platzierung trägt ihre Entscheidungs-Quell
 |-------|--------|---------|---------------|
 | **Selman** | `polatselman` | `src/notbeleuchtung/raumerkennung/` | Leerer Architekturplan (DXF) → RaumModell (Räume/Türen/Ausgänge/Zirkulation). Portierter Parser in `_port/`. |
 | **Leonis** | `mvpo3` | `src/notbeleuchtung/platzierung/` | Platzierungs-Logik: wie/wann/wo Notbeleuchtungs-Symbole. Konsumiert Raum + Norm + LB → PlatzierungsErgebnis. |
-| **Enis** | `EnisAMG` | `src/notbeleuchtung/normwissen/` | Normwissen (EN 1838/ÖNorm): Lux, Erkennungsweite l=z×h, Höhe, RZ-vs-Antipanik. Pflegt `normwissen/data/*.yaml`. |
+| **Enis** | `EnisAMG` | `src/notbeleuchtung/normwissen/` | Normwissen (EN 1838/ÖNorm): Lux, Erkennungsweite l=z×h, Höhe, RZ-vs-Antipanik (`data/*.yaml`) **+ LB-Parsing** (2. Input → Contract `LBVorgabe`, explizite Auftraggeber-Vorgaben). |
 | **gemeinsam** | alle 3 | `src/notbeleuchtung/hauptengine/` | Integration: **besitzt die Contracts** + Pipeline + Render + API. |
 
-**LB-Parsing (2. Input) — Owner noch offen.** Neues Modul (Kandidat `src/
-notbeleuchtung/lb/` mit Contract `LBVorgabe`), das die LB in explizite Vorgaben
-parst, die Leonis' Platzierung übersteuern. Zuordnung entscheiden, bevor Slice
-„LB-Input" startet (Kandidat: Enis, da fachnah — oder eigener Owner).
+**LB-Parsing (2. Input) = Enis.** Enis besitzt beide Wissens-Inputs für Leonis: das
+statische `NormRegelwerk` (EN 1838/ÖNorm) und die projektspezifische `LBVorgabe`
+(aus der LB geparste explizite Vorgaben, die Norm-Defaults übersteuern). Beide über
+`normwissen/` (z.B. `normwissen/lb/` für den LB-Parser). Neuer Contract `LBVorgabe`
+kommt im Slice „LB-Input".
 
 ## Architektur-Regel — Plugin-Modell (BINDEND)
 
@@ -55,7 +56,7 @@ ausschließlich über die Contract-Objekte, die durch `pipeline.run()` fließen:
 ```
                  Architekturplan (DXF)        LB (Spec)
                         │                         │
-Selman: RaumProvider ─► RaumModell ─┐     ┌─ LBVorgabe (Owner offen)
+Selman: RaumProvider ─► RaumModell ─┐     ┌─ Enis: LBVorgabe
                                      ├─────┤
 Enis:   NormProvider ─► NormRegelwerk┘     └─► Leonis: Platzierer(Raum, Norm, LB)
                                                      │
