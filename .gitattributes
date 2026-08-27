@@ -1,0 +1,10 @@
+# CAD/Binär-Assets NIE als Text behandeln (sonst CRLF-Korruption bei Checkout)
+*.dxf   binary
+*.dwg   binary
+*.dwl   binary
+*.dwl2  binary
+*.bak   binary
+*.shx   binary
+*.tif   binary
+*.tiff  binary
+*.pdf   binary
