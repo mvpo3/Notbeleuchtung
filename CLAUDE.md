@@ -9,7 +9,7 @@ Notbeleuchtung **eingefroren**; die Raumerkennung wurde portiert, nicht neu geba
 
 | Owner | GitHub | Package | Verantwortung |
 |-------|--------|---------|---------------|
-| **Selman** | `officialsmptrades-beep` | `src/notbeleuchtung/raumerkennung/` | Grundriss-DXF → RaumModell (Räume/Türen/Ausgänge/Zirkulation). Portierter Parser in `_port/`. |
+| **Selman** | `polatselman` | `src/notbeleuchtung/raumerkennung/` | Grundriss-DXF → RaumModell (Räume/Türen/Ausgänge/Zirkulation). Portierter Parser in `_port/`. |
 | **Leonis** | `mvpo3` | `src/notbeleuchtung/platzierung/` | Platzierungs-Logik: wie/wann/wo Notbeleuchtungs-Symbole. Konsumiert Raum + Norm → PlatzierungsErgebnis. |
 | **Enis** | `EnisAMG` | `src/notbeleuchtung/normwissen/` | Normwissen (EN 1838/ÖNorm): Lux, Erkennungsweite l=z×h, Höhe, RZ-vs-Antipanik. Pflegt `normwissen/data/*.yaml`. |
 | **gemeinsam** | alle 3 | `src/notbeleuchtung/hauptengine/` | Integration: **besitzt die Contracts** + Pipeline + Render. |
