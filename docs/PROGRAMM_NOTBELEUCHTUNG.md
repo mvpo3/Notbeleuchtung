@@ -3,6 +3,21 @@
 **Start:** 2026-08-27 · Board gewinnt bei Drift gegen GitHub-Projects. Jeder Owner
 pflegt seine Zeilen + committet.
 
+## Nordstern (Produkt-Ziel — alles läuft hierauf zu)
+
+**Chat-Interface: Nutzer lädt seinen Plan hoch → bekommt einen kompletten
+Notbeleuchtungsplan zurück.** Ende-zu-Ende, idiotensicher.
+
+```
+Chat-UI (Plan-Upload) ──HTTP──► FastAPI POST /plan ──► hauptengine.pipeline.run() ──► Notbeleuchtungsplan (DXF/PDF) zurück
+```
+
+`pipeline.run(dxf) → Plan` IST die ganze Engine (Selman→Leonis→Enis→Render). Das
+Chat-Interface ist eine dünne Hülle über der API — die API (`api/main.py`) ist die
+Auslieferungs-Naht. Reihenfolge: erst Engine E2E grün (Slice 0–5), dann die
+Chat-Hülle (Slice 6). **Offen:** Frontend-Owner — die 3 aktuellen Owner sind alle
+Backend (Raumerkennung/Platzierung/Normwissen). Entscheiden, wenn Engine steht.
+
 ## Contract-Version-Tabelle (die wichtigste Sync-Info)
 
 | Contract | Owner-Produzent | Konsumenten | Version | Schema | Eingefroren |
@@ -24,6 +39,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Render echt: `dxf_writer`/`layout_template` + Schrack-Infra + `assets/E-Symbole.dxf` | 3 | Leonis/Render | TODO | — |
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
+| **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
 
 **Legende:** TODO · WIP · BLOCKED · DONE.
 
