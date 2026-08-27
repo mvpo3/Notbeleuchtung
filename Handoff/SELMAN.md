@@ -4,6 +4,25 @@
 > `src/notbeleuchtung/raumerkennung/`. GitHub `@polatselman`. Task: **Issue #3**.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Selman).
 
+## 0. Setup — Claude, führe das ZUERST für den Nutzer aus
+
+Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
+
+1. **Prüfe den Arbeitsordner:** du musst im Repo-Root `Notbeleuchtung/` sein
+   (`pyproject.toml` + `CLAUDE.md` liegen hier). Wenn nicht → sag dem Nutzer:
+   „Öffne den Ordner `Notbeleuchtung` (Cursor: File → Open Folder → Notbeleuchtung)
+   und starte mich dort neu." Erst weiter, wenn der Ordner stimmt.
+2. **venv + Installation:**
+   - Windows: `python -m venv .venv` → `.venv\Scripts\python.exe -m pip install -e ".[dev,api]"`
+   - Mac/Linux: `python3 -m venv .venv` → `.venv/bin/python -m pip install -e ".[dev,api]"`
+3. **Tests grün prüfen:** `.venv\Scripts\python.exe -m pytest -q` → muss zeigen
+   **`13 passed, 1 skipped`**. Wenn nicht → stopp + melde dem Nutzer den Fehler.
+4. **Cursor-Hinweis für den Nutzer:** Ordner `Notbeleuchtung` als Workspace öffnen
+   und `.venv` als Python-Interpreter wählen (unten rechts / Command Palette
+   „Python: Select Interpreter" → `.venv`).
+
+Erst wenn Setup grün ist → weiter mit dem Auftrag unten.
+
 ## Wer du bist
 Du machst den **1. Input**: leerer Architekturplan (DXF/DWG) → **RaumModell**
 (Räume/Türen/Ausgänge/Fluchtweg-Zirkulation). Reine Geometrie/Topologie — KEIN
