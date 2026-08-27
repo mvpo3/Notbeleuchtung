@@ -1,0 +1,14 @@
+{
+  "contract": "PlatzierungsErgebnis",
+  "contract_version": "1.0.0",
+  "floor": "4OG",
+  "coordinate_system": "mm",
+  "_source": "Die 5 echten SV_RETTUNGSZEICHEN aus elektro-planer 4OG. Leonis' echter Platzierer erzeugt dies in Slice 2.",
+  "platzierungen": [
+    {"xy_mm": [-35749.0, 4587.0], "catalog_key": "notlicht_ks_stiege", "rotation_deg": 180.1, "mirror_x": true, "height_mm": 2400.0, "kind": "rz", "richtung": "rechts", "circuit_hint": "AGV-B-F13", "covers_segment": ["seg_stgh_b_1"], "norm_quelle": "ÖNORM EN 1838:2013 §4.2.1"},
+    {"xy_mm": [-41235.0, 6063.0], "catalog_key": "notlicht_ks_stiege", "rotation_deg": 359.7, "mirror_x": true, "height_mm": 2400.0, "kind": "rz", "richtung": "rechts", "circuit_hint": "AGV-B-F13", "covers_segment": ["seg_stgh_b_2"], "norm_quelle": "ÖNORM EN 1838:2013 §4.2.1"},
+    {"xy_mm": [-75868.0, 32396.0], "catalog_key": "notlicht_ks_stiege", "rotation_deg": 0.1, "mirror_x": true, "height_mm": 2400.0, "kind": "rz", "richtung": "rechts", "circuit_hint": "AGV-A-F13", "covers_segment": ["seg_stgh_a_1"], "norm_quelle": "ÖNORM EN 1838:2013 §4.2.1"},
+    {"xy_mm": [-71743.0, 34491.0], "catalog_key": "notlicht_ks_stiege", "rotation_deg": 360.0, "mirror_x": false, "height_mm": 2400.0, "kind": "rz", "richtung": "links", "circuit_hint": "AGV-A-F13", "covers_segment": ["seg_stgh_a_2"], "norm_quelle": "ÖNORM EN 1838:2013 §4.2.1"},
+    {"xy_mm": [-35341.0, 8589.0], "catalog_key": "notlicht_ks_stiege_unten", "rotation_deg": 359.7, "mirror_x": false, "height_mm": 2400.0, "kind": "rz", "richtung": "unten", "circuit_hint": "AGV-B-F13", "covers_segment": ["seg_stgh_b_3"], "norm_quelle": "ÖNORM EN 1838:2013 §4.2.1"}
+  ]
+}

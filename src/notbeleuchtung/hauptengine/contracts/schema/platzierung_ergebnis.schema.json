@@ -1,0 +1,129 @@
+{
+  "$defs": {
+    "Platzierung": {
+      "properties": {
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "catalog_key": {
+          "title": "Catalog Key",
+          "type": "string"
+        },
+        "rotation_deg": {
+          "default": 0.0,
+          "title": "Rotation Deg",
+          "type": "number"
+        },
+        "mirror_x": {
+          "default": false,
+          "title": "Mirror X",
+          "type": "boolean"
+        },
+        "height_mm": {
+          "default": 2400.0,
+          "title": "Height Mm",
+          "type": "number"
+        },
+        "kind": {
+          "enum": [
+            "rz",
+            "sicherheitsleuchte",
+            "antipanik"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "richtung": {
+          "anyOf": [
+            {
+              "enum": [
+                "links",
+                "rechts",
+                "gerade",
+                "oben",
+                "unten"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Richtung"
+        },
+        "circuit_hint": {
+          "default": "",
+          "title": "Circuit Hint",
+          "type": "string"
+        },
+        "covers_segment": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Covers Segment",
+          "type": "array"
+        },
+        "norm_quelle": {
+          "default": "",
+          "title": "Norm Quelle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "xy_mm",
+        "catalog_key",
+        "kind"
+      ],
+      "title": "Platzierung",
+      "type": "object"
+    }
+  },
+  "description": "Was Leonis produziert, was die Hauptengine rendert.",
+  "properties": {
+    "contract": {
+      "const": "PlatzierungsErgebnis",
+      "default": "PlatzierungsErgebnis",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "floor": {
+      "title": "Floor",
+      "type": "string"
+    },
+    "coordinate_system": {
+      "const": "mm",
+      "default": "mm",
+      "title": "Coordinate System",
+      "type": "string"
+    },
+    "platzierungen": {
+      "items": {
+        "$ref": "#/$defs/Platzierung"
+      },
+      "title": "Platzierungen",
+      "type": "array"
+    }
+  },
+  "required": [
+    "floor"
+  ],
+  "title": "PlatzierungsErgebnis",
+  "type": "object"
+}

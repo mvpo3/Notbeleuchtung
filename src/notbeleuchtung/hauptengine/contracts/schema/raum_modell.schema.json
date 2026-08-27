@@ -1,0 +1,407 @@
+{
+  "$defs": {
+    "Ausgang": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "typ": {
+          "enum": [
+            "final_exit",
+            "stair_exit",
+            "door"
+          ],
+          "title": "Typ",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "xy_mm",
+        "typ"
+      ],
+      "title": "Ausgang",
+      "type": "object"
+    },
+    "BBox": {
+      "properties": {
+        "min_xy": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Min Xy",
+          "type": "array"
+        },
+        "max_xy": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Max Xy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "min_xy",
+        "max_xy"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "Edge": {
+      "properties": {
+        "from": {
+          "title": "From",
+          "type": "string"
+        },
+        "to": {
+          "title": "To",
+          "type": "string"
+        },
+        "len_mm": {
+          "title": "Len Mm",
+          "type": "number"
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "len_mm"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "FluchtwegSegment": {
+      "properties": {
+        "segment_id": {
+          "title": "Segment Id",
+          "type": "string"
+        },
+        "polyline_mm": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Polyline Mm",
+          "type": "array"
+        },
+        "laenge_mm": {
+          "default": 0.0,
+          "title": "Laenge Mm",
+          "type": "number"
+        },
+        "reason": {
+          "enum": [
+            "exit",
+            "corner",
+            "long_run",
+            "direction_change"
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "segment_id",
+        "reason"
+      ],
+      "title": "FluchtwegSegment",
+      "type": "object"
+    },
+    "Node": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "typ": {
+          "enum": [
+            "room",
+            "door",
+            "exit",
+            "stair",
+            "junction"
+          ],
+          "title": "Typ",
+          "type": "string"
+        },
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "room_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Room Type"
+        }
+      },
+      "required": [
+        "id",
+        "typ",
+        "xy_mm"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "Raum": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "raum_typ": {
+          "title": "Raum Typ",
+          "type": "string"
+        },
+        "polygon_mm": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Polygon Mm",
+          "type": "array"
+        },
+        "flaeche_m2": {
+          "default": 0.0,
+          "title": "Flaeche M2",
+          "type": "number"
+        },
+        "ist_fluchtweg": {
+          "default": false,
+          "title": "Ist Fluchtweg",
+          "type": "boolean"
+        },
+        "ist_communal": {
+          "default": false,
+          "title": "Ist Communal",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "raum_typ"
+      ],
+      "title": "Raum",
+      "type": "object"
+    },
+    "Tuer": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "breite_mm": {
+          "default": 0.0,
+          "title": "Breite Mm",
+          "type": "number"
+        },
+        "von_raum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Von Raum"
+        },
+        "nach_raum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nach Raum"
+        },
+        "ist_notausgang": {
+          "default": false,
+          "title": "Ist Notausgang",
+          "type": "boolean"
+        },
+        "schwenk_richtung": {
+          "default": "unbekannt",
+          "enum": [
+            "links",
+            "rechts",
+            "unbekannt"
+          ],
+          "title": "Schwenk Richtung",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "xy_mm"
+      ],
+      "title": "Tuer",
+      "type": "object"
+    },
+    "ZirkulationsGraph": {
+      "properties": {
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "title": "Nodes",
+          "type": "array"
+        },
+        "edges": {
+          "items": {
+            "$ref": "#/$defs/Edge"
+          },
+          "title": "Edges",
+          "type": "array"
+        },
+        "segmente": {
+          "items": {
+            "$ref": "#/$defs/FluchtwegSegment"
+          },
+          "title": "Segmente",
+          "type": "array"
+        }
+      },
+      "title": "ZirkulationsGraph",
+      "type": "object"
+    }
+  },
+  "description": "Was Selman produziert, was Leonis + Render konsumieren.",
+  "properties": {
+    "contract": {
+      "const": "RaumModell",
+      "default": "RaumModell",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "floor": {
+      "title": "Floor",
+      "type": "string"
+    },
+    "coordinate_system": {
+      "const": "mm",
+      "default": "mm",
+      "title": "Coordinate System",
+      "type": "string"
+    },
+    "bounds_mm": {
+      "$ref": "#/$defs/BBox"
+    },
+    "raeume": {
+      "items": {
+        "$ref": "#/$defs/Raum"
+      },
+      "title": "Raeume",
+      "type": "array"
+    },
+    "tueren": {
+      "items": {
+        "$ref": "#/$defs/Tuer"
+      },
+      "title": "Tueren",
+      "type": "array"
+    },
+    "ausgaenge": {
+      "items": {
+        "$ref": "#/$defs/Ausgang"
+      },
+      "title": "Ausgaenge",
+      "type": "array"
+    },
+    "zirkulation": {
+      "$ref": "#/$defs/ZirkulationsGraph"
+    }
+  },
+  "required": [
+    "floor",
+    "bounds_mm"
+  ],
+  "title": "RaumModell",
+  "type": "object"
+}

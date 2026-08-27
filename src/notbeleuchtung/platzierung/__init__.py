@@ -1,0 +1,1 @@
+"""Platzierung (Leonis) — implementiert Platzierer."""

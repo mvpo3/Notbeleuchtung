@@ -1,0 +1,6 @@
+# Owner-Grenzen. Änderungen an contracts/** brauchen Approval ALLER DREI.
+/src/notbeleuchtung/raumerkennung/   @officialsmptrades-beep
+/src/notbeleuchtung/platzierung/     @mvpo3
+/src/notbeleuchtung/normwissen/      @EnisAMG
+/src/notbeleuchtung/hauptengine/contracts/  @mvpo3 @EnisAMG @officialsmptrades-beep
+/tests/fixtures/                     @mvpo3 @EnisAMG @officialsmptrades-beep

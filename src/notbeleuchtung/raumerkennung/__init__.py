@@ -1,0 +1,1 @@
+"""Raumerkennung (Selman) — implementiert RaumProvider."""

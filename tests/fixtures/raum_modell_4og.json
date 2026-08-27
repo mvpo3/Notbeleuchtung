@@ -1,0 +1,37 @@
+{
+  "contract": "RaumModell",
+  "contract_version": "1.0.0",
+  "floor": "4OG",
+  "coordinate_system": "mm",
+  "_source": "Handgesetztes 4OG-Beispiel (2 Stiegenhäuser A/B), Kandidaten an den 5 echten RZ-Stellen aus elektro-planer reference_symbols_mol_4og.json. Selmans echter Parser ersetzt dies in Slice 4.",
+  "bounds_mm": {"min_xy": [-78000.0, 3000.0], "max_xy": [-33000.0, 36000.0]},
+  "raeume": [
+    {"id": "stgh_b", "raum_typ": "STIEGENHAUS", "polygon_mm": [[-40000.0, 4000.0], [-35000.0, 4000.0], [-35000.0, 9000.0], [-40000.0, 9000.0]], "flaeche_m2": 25.0, "ist_fluchtweg": true, "ist_communal": true},
+    {"id": "stgh_a", "raum_typ": "STIEGENHAUS", "polygon_mm": [[-77000.0, 31000.0], [-71000.0, 31000.0], [-71000.0, 36000.0], [-77000.0, 36000.0]], "flaeche_m2": 30.0, "ist_fluchtweg": true, "ist_communal": true}
+  ],
+  "tueren": [
+    {"id": "door_b1", "xy_mm": [-35749.0, 4587.0], "breite_mm": 900.0, "von_raum": "stgh_b", "nach_raum": "gang_b", "ist_notausgang": false, "schwenk_richtung": "rechts"},
+    {"id": "door_a2", "xy_mm": [-71743.0, 34491.0], "breite_mm": 900.0, "von_raum": "stgh_a", "nach_raum": "gang_a", "ist_notausgang": false, "schwenk_richtung": "links"}
+  ],
+  "ausgaenge": [
+    {"id": "exit_b", "xy_mm": [-35341.0, 8589.0], "typ": "stair_exit"},
+    {"id": "exit_a", "xy_mm": [-71743.0, 34491.0], "typ": "stair_exit"}
+  ],
+  "zirkulation": {
+    "nodes": [
+      {"id": "stgh_b", "typ": "stair", "xy_mm": [-38000.0, 6500.0], "room_type": "STIEGENHAUS"},
+      {"id": "stgh_a", "typ": "stair", "xy_mm": [-73800.0, 33400.0], "room_type": "STIEGENHAUS"}
+    ],
+    "edges": [
+      {"from": "stgh_b", "to": "exit_b", "len_mm": 3300.0},
+      {"from": "stgh_a", "to": "exit_a", "len_mm": 2400.0}
+    ],
+    "segmente": [
+      {"segment_id": "seg_stgh_b_1", "polyline_mm": [[-38000.0, 6500.0], [-35749.0, 4587.0]], "laenge_mm": 2790.0, "reason": "direction_change"},
+      {"segment_id": "seg_stgh_b_2", "polyline_mm": [[-38000.0, 6500.0], [-41235.0, 6063.0]], "laenge_mm": 3300.0, "reason": "direction_change"},
+      {"segment_id": "seg_stgh_b_3", "polyline_mm": [[-38000.0, 6500.0], [-35341.0, 8589.0]], "laenge_mm": 3300.0, "reason": "exit"},
+      {"segment_id": "seg_stgh_a_1", "polyline_mm": [[-73800.0, 33400.0], [-75868.0, 32396.0]], "laenge_mm": 2300.0, "reason": "direction_change"},
+      {"segment_id": "seg_stgh_a_2", "polyline_mm": [[-73800.0, 33400.0], [-71743.0, 34491.0]], "laenge_mm": 2400.0, "reason": "exit"}
+    ]
+  }
+}

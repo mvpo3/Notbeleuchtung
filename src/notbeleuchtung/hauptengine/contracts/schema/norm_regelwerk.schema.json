@@ -1,0 +1,144 @@
+{
+  "$defs": {
+    "ErkennungsweiteParameter": {
+      "properties": {
+        "z_hinterleuchtet": {
+          "default": 200.0,
+          "title": "Z Hinterleuchtet",
+          "type": "number"
+        },
+        "z_beleuchtet": {
+          "default": 100.0,
+          "title": "Z Beleuchtet",
+          "type": "number"
+        }
+      },
+      "title": "ErkennungsweiteParameter",
+      "type": "object"
+    },
+    "NormAnforderung": {
+      "description": "Antwort der Norm-Query für einen Raum bzw. Fluchtweg-Abschnitt.",
+      "properties": {
+        "min_lux": {
+          "title": "Min Lux",
+          "type": "number"
+        },
+        "klassifikation": {
+          "enum": [
+            "rz",
+            "antipanik",
+            "sicherheitsleuchte"
+          ],
+          "title": "Klassifikation",
+          "type": "string"
+        },
+        "montagehoehe_mm": {
+          "default": 2000,
+          "title": "Montagehoehe Mm",
+          "type": "integer"
+        },
+        "erkennungsweite_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Erkennungsweite M"
+        },
+        "symbol_katalog_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Symbol Katalog Keys",
+          "type": "array"
+        },
+        "mindest_anzahl": {
+          "default": 1,
+          "title": "Mindest Anzahl",
+          "type": "integer"
+        },
+        "dauer_min": {
+          "default": 60,
+          "title": "Dauer Min",
+          "type": "integer"
+        },
+        "quelle": {
+          "default": "",
+          "title": "Quelle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "min_lux",
+        "klassifikation"
+      ],
+      "title": "NormAnforderung",
+      "type": "object"
+    },
+    "RaumRegel": {
+      "description": "Ein Eintrag im Regelwerk-Snapshot (pro Raumtyp/Fluchtweg-Klasse).",
+      "properties": {
+        "raum_typ": {
+          "title": "Raum Typ",
+          "type": "string"
+        },
+        "ist_fluchtweg": {
+          "title": "Ist Fluchtweg",
+          "type": "boolean"
+        },
+        "anforderung": {
+          "$ref": "#/$defs/NormAnforderung"
+        }
+      },
+      "required": [
+        "raum_typ",
+        "ist_fluchtweg",
+        "anforderung"
+      ],
+      "title": "RaumRegel",
+      "type": "object"
+    }
+  },
+  "description": "Serialisierbarer Voll-Dump für den Freeze-Snapshot-Test.\n\n`quellen` = die Menge aller Quellen-Strings, die der Provider je vergibt —\ndie Naht-Invariante prüft, dass jede Platzierung.norm_quelle hierin liegt.",
+  "properties": {
+    "contract": {
+      "const": "NormRegelwerk",
+      "default": "NormRegelwerk",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "norm": {
+      "default": "ÖNORM EN 1838:2013",
+      "title": "Norm",
+      "type": "string"
+    },
+    "erkennungsweite": {
+      "$ref": "#/$defs/ErkennungsweiteParameter"
+    },
+    "regeln": {
+      "items": {
+        "$ref": "#/$defs/RaumRegel"
+      },
+      "title": "Regeln",
+      "type": "array"
+    },
+    "quellen": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quellen",
+      "type": "array"
+    }
+  },
+  "title": "NormRegelwerk",
+  "type": "object"
+}
