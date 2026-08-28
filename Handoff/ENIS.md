@@ -4,23 +4,36 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`. Task: **Issue #1**.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (zuletzt 2026-08-28)
+## Stand (zuletzt 2026-08-28, Abend)
 
-**Slice 1 (NormRegelwerk) FERTIG** — Branch `enis/slice-1-normprovider`, Commit
-`eb7dac4` (lokal, noch nicht gepusht — Push/PR braucht Enis' GO). Tests grün:
-`13 passed, 1 skipped`, ruff sauber.
+**Slice 1 (NormRegelwerk) AUSGELIEFERT** — Branch `enis/slice-1-normprovider`
+gepusht, **PR #6 offen** (https://github.com/mvpo3/Notbeleuchtung/pull/6), CI
+`ci` + `contract` grün, mergeable. Wartet nur noch auf Reviews: der PR fasst
+`tests/fixtures/` an → CODEOWNERS verlangt **alle drei Owner** (@mvpo3,
+@polatselman), nicht nur Enis.
 
 Gebaut: `En1838NormProvider` (`normwissen/provider.py`) liest
 `normwissen/data/en1838_grundwerte.yaml` + `raumtyp_regeln.yaml`, erfüllt das
-Protocol `NormProvider`, hardcodet nichts. `FakeNormProvider` ersetzt (in
-`tests/fakes.py` + Contract-Test nutzt jetzt echten Provider). Snapshot-Fixture
+Protocol `NormProvider`, hardcodet nichts. Snapshot-Fixture
 `tests/fixtures/norm_regelwerk_snapshot.json` aus echtem Provider regeneriert
 (`quellen` = {§4.2.1, §4.3.1}). `heights_fachpraxis`/`clearance_rules` bewusst
 NICHT portiert (Steckdosen-Höhen bzw. Track-A Wand-Mechanik, kein NB-Normwissen).
 
-**Nächste Session:** entweder Slice 1 pushen + PR (falls gewünscht), **oder**
-direkt Slice „LB-Input" starten (siehe unten). Ausgangspunkt: Branch
-`enis/slice-1-normprovider` auschecken.
+**Main ist zwischenzeitlich weitergelaufen:** Leonis hat Slice 2 (PR #4,
+`NotlichtPlatzierer`) und Slice 3 (PR #5, `dxf_renderer` + Schrack-Infra)
+gemergt, dazu `knowledge/` (Norm-PDFs + Digests). Main wurde in den Branch
+gemergt (`000b68e`), Konflikte aufgelöst:
+`build_fake_bundle()` bindet jetzt **beide** echten Provider (Norm + Platzierer),
+nur der Raum bleibt Fake bis Slice 4. `FakeNormProvider` bleibt als Nachbar-Double
+für `tests/platzierung/` stehen. Tests nach Merge: **40 passed**, ruff sauber,
+Schema in sync.
+
+**Nächste Session:** PR #6 Reviews einsammeln + mergen, dann Slice „LB-Input"
+(siehe unten). Der LB-Parser braucht eine **echte Leistungsbeschreibung** — Enis
+legt sie ab (Vorschlag `Projekte/<Projekt>/LB/`); ohne echtes Dokument wird kein
+Format erfunden. Nützlich für den Slice: `knowledge/` (Norm-Digests aus Leonis'
+PR #5) — dort steht Referenz-Praxis-Material, das der LB-Hierarchie-Ebene
+„Referenz-Praxis" entspricht.
 
 **⚠ Setup-Falle (Mac):** Projekt braucht **Python ≥ 3.11** (System hatte nur
 3.9.6 → editable install bricht). Fix war `brew install python@3.12`, dann venv
