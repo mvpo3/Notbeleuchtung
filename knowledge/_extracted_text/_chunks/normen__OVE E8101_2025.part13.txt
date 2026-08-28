@@ -1,0 +1,2517 @@
+
+
+===== PAGE 521/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 3 
+560.5.3 Ist als Schutzmaßnahme gegen elektrischen Schlag eine Schutzmaßnahme ohne automatische 
+Abschaltung beim ersten Fehler erforderlich, so ist ein IT-System zu bevorzugen. 
+In IT-Systemen müssen Isolationsüberwachungsgeräte vorgesehen werden, die einen ersten Fehler akustisch 
+melden und optisch anzeigen. 
+560.5.4 Eine Störung im Steuerungs- oder Bussystem (Steuerungstechnik) der allgemeinen elektrischen 
+Anlage darf nicht die vorgesehene Funktion der Einrichtungen für Sicherheitszwecke beeinträchtigen. Dieses 
+gilt ebenfalls für Steuerungs- oder Bussysteme von Einrichtungen für Sicherheitszwecke. 
+ 
+560.6 
+Stromquellen für Sicherheitszwecke 
+ANMERKUNG AT 
+Anforderungen an die Räume und die Orte, in denen Stromquellen für Sicherheitszwecke errichtet 
+werden, siehe OVE-Richtlinie R 12-2. 
+560.6.1 Die folgenden Stromquellen für Sicherheitszwecke sind zulässig: 
+– 
+Batterien mit Sekundärzellen (wiederaufladbar); 
+– 
+Batterien mit Primärzellen (nicht wiederaufladbar); 
+– 
+Generatoren, die von der normalen (allgemeinen) Stromversorgung unabhängig sind; 
+– 
+eine separate Einspeisung aus dem Versorgungsnetz, die von der normalen Einspeisung unabhängig ist 
+(siehe 560.6.5). 
+ANMERKUNG AT 
+Für Sicherheitsleuchten mit Einzelbatterie gelten die Anforderungen gemäß OVE EN  
+IEC 60598-2-22. 
+Batterien mit Primärzellen dürfen für Sicherheitsbeleuchtungsanlagen nicht verwendet werden. 
+560.6.2 Stromquellen für Sicherheitszwecke müssen als fest angebrachte Betriebsmittel so installiert werden, 
+dass sie vom Ausfall der normalen Stromversorgung nicht beeinträchtigt werden können. 
+560.6.3 Stromquellen für Sicherheitszwecke müssen an einem geeigneten Standort angeordnet werden und 
+dürfen nur Elektrofachkräften (BA5) oder elektrotechnisch unterwiesenen Personen (BA4) zugänglich sein. 
+Stromquellen für Sicherheitszwecke sind von anderen Stromquellen zu trennen. 
+ANMERKUNG 
+Siehe dazu OVE-Richtlinie R 12-2. 
+Einrichtungen für Sicherheitszwecke und ihre Stromquellen sind so zu konzipieren und anzuordnen, dass 
+Risiken durch Brand, Überschwemmung, Vandalismus oder anderen nachteiligen Bedingungen minimiert 
+werden, die die Verfügbarkeit der Stromversorgung beeinträchtigen können. 
+560.6.4 Der Standort von Stromquellen für Sicherheitszwecke muss ordnungsgemäß und angemessen – in 
+Abhängigkeit des Typs der Stromquelle – be- und entlüftet sein. Sofern von der Stromquelle für Sicherheits-
+zwecke Gase, Rauch oder Dämpfe in gefahrbringender Menge ausgehen, dürfen diese nicht in die von 
+Personen genutzten Bereiche eindringen. 
+560.6.5 Separate voneinander unabhängige Einspeisungen aus dem Verteilernetz dürfen nur als Stromquelle 
+für Sicherheitszwecke verwendet werden, wenn eine Zusicherung vom Verteilernetzbetreiber besteht, sodass 
+ein gleichzeitiger Ausfall beider Einspeisungen unwahrscheinlich ist. 
+560.6.6 Die Stromquelle für Sicherheitszwecke muss für die Versorgung der zugehörigen Einrichtungen für 
+Sicherheitszwecke ausreichend bemessen sein. 
+560.6.7 Eine Stromquelle für Sicherheitszwecke darf nur dann zusätzlich für andere Zwecke als zur 
+Versorgung von Einrichtungen für Sicherheitszwecke verwendet werden, wenn die Verfügbarkeit für die 
+Versorgung der Einrichtungen für Sicherheitszwecke dadurch nicht beeinträchtigt wird. Ein Fehler, der in einem 
+Stromkreis auftritt, der anderen Zwecken als der Versorgung von Einrichtungen für Sicherheitszwecke dient, 
+darf zu keiner Unterbrechung irgendeines Stromkreises der Einrichtungen für Sicherheitszwecke führen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 522/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 4 
+560.6.8 
+Besondere Anforderungen für Stromquellen für Sicherheitszwecke, die zum Parallelbetrieb 
+nicht geeignet sind 
+Es sind geeignete Vorkehrungen zu treffen, um einen Parallelbetrieb der Stromquellen zu verhindern. 
+ANMERKUNG 
+Dies darf durch mechanische Verriegelung erreicht werden. 
+Der Schutz bei Kurzschluss und der Fehlerschutz müssen bei Versorgung aus jeder Stromquelle innerhalb der 
+elektrischen Anlage für Sicherheitszwecke sichergestellt werden. 
+560.6.9 
+Besondere Anforderungen für Stromquellen für Sicherheitszwecke, die zum Parallelbetrieb 
+geeignet sind 
+Für den Parallelbetrieb unabhängiger Stromquellen können spezielle Betriebsmittel erforderlich sein, z. B. um 
+die Rückeinspeisung von Energie zu verhindern. 
+ANMERKUNG 
+Für den Parallelbetrieb unabhängiger Stromquellen kann die Genehmigung des Verteilernetzbetreibers 
+erforderlich sein. 
+Der Schutz bei Kurzschluss und der Fehlerschutz müssen sichergestellt sein, unabhängig davon, ob die Anlage 
+von einer der beiden Stromquellen oder von beiden Stromquellen parallel versorgt wird. 
+Es müssen Vorkehrungen zur Begrenzung des Stromflusses in der Verbindung zwischen den Sternpunkten 
+der Stromquellen getroffen werden, insbesondere zur Begrenzung der Auswirkungen der 3. Oberschwingung 
+(siehe Teil 1 und Teil 4-41). 
+560.6.10 Zentrales Stromversorgungssystem 
+560.6.10.001.AT Zentrales 
+Sicherheitsstromversorgungssystem 
+(ohne 
+Leistungsbegrenzung;  
+CPS-System 
+Batterien müssen wartungsarm in geschlossener oder verschlossener Bauart eingesetzt werden und einer 
+Industrieausführung für hohe Beanspruchungen entsprechen, wie z. B. Batterien gemäß OVE EN 60623 oder 
+der Normenreihe ÖVE/ÖNORM EN 60896. Dies schließt anerkannt bewährte neue Technologien nicht aus. 
+ANMERKUNG AT 
+Gemäß OVE EN 50171 muss die bestätigte Brauchbarkeitsdauer der Batterien bei 20 °C 
+mindestens zehn Jahre betragen. 
+Zentrale Stromversorgungssysteme für die Sicherheitsbeleuchtung müssen den Anforderungen gemäß 
+OVE EN 50171 entsprechen. 
+560.6.10.002.AT Zentrales 
+Sicherheitsstromversorgungssystem 
+mit 
+Leistungsbegrenzung;  
+LPS-System 
+Die Ausgangsleistung eines Stromversorgungssystems mit Leistungsbegrenzung ist auf 500 W für eine Dauer 
+von 3 h und auf 1 500 W für eine Dauer von 1 h begrenzt. Batterien sind wartungsarm in verschlossener Bauart 
+auszuführen und müssen einer Industrieausführung für hohe Beanspruchungen entsprechen, wie z. B. 
+Batterien gemäß OVE EN 60623 oder der Normenreihe ÖVE/ÖNORM EN 60896. Dies schließt anerkannt 
+bewährte neue Technologien nicht aus. 
+ANMERKUNG AT 
+Gemäß OVE EN 50171 muss die bestätigte Brauchbarkeitsdauer der Batterien bei 20°C 
+mindestens fünf Jahre betragen. 
+Zentrale Stromversorgungssysteme für die Sicherheitsbeleuchtung müssen den Anforderungen gemäß 
+OVE EN 50171 entsprechen. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 523/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 5 
+560.6.11 Unterbrechungsfreies Stromversorgungssystem (USV) 
+Wird ein unterbrechungsfreies Stromversorgungssystem eingesetzt, so muss dieses 
+a) 
+in der Lage sein, die Schutzeinrichtungen der Stromkreise auf der Lastseite der USV auszulösen und 
+b) 
+in der Lage sein, die Einrichtungen für Sicherheitszwecke zu starten und zu betreiben, wenn es unter 
+Notbetriebsbedingungen betrieben wird und 
+c) 
+soweit zutreffend, den Anforderungen gemäß 560.6.10 entsprechen und 
+d) 
+soweit zutreffend, OVE EN IEC 62040-1 oder OVE EN IEC 62040-3 entsprechen und 
+e) 
+unabhängig von der Verfügbarkeit des vorgelagerten Versorgungssystems eingeschaltet werden können. 
+560.6.12 Stromerzeugungsaggregate für Sicherheitszwecke 
+Wird als Stromquelle für Sicherheitszwecke ein mit Diesel angetriebenes Stromerzeugungsaggregat 
+eingesetzt, muss dieses ISO 8528-12 bzw. DIN 6280-13 entsprechen. 
+560.6.13 Zustand der Stromquelle für Sicherheitszwecke 
+Der 
+Zustand 
+der 
+Stromquelle 
+für 
+Sicherheitszwecke 
+(betriebsbereit, 
+Störung, 
+Stromquelle 
+für 
+Sicherheitszwecke in Betrieb) muss angezeigt und gemeldet werden. 
+Dies gilt nicht für Sicherheitsbeleuchtungsanlagen mit Einzelbatterien für bis zu 20 Sicherheitsleuchten. 
+ANMERKUNG 1.AT 
+Eine akustische Meldung darf zusätzlich vorgesehen werden. 
+ANMERKUNG 2.AT 
+Die Meldung darf z. B. über ein Gebäudeleitsystem erfolgen. 
+560.6.001.AT 
+Batterieanlagen 
+Für Batterieanlagen gelten – je nach Batterietechnologie – die Anforderungen gemäß OVE EN IEC 62485-2 
+bzw. OVE EN IEC 62485-5. 
+560.7 
+Stromkreise für Sicherheitszwecke 
+560.7.1 Stromkreise für Sicherheitszwecke müssen von anderen Stromkreisen unabhängig sein. 
+Ein elektrischer Fehler oder ein Eingriff in ein System oder eine Änderung in einem System darf die 
+ordnungsgemäße Funktion des anderen Systems nicht beeinträchtigen. Dies kann eine Trennung durch 
+feuerwiderstandsfähiges Material oder getrennte Trassenführung oder Umhüllungen erforderlich machen 
+(siehe auch 560.8.5). 
+ 
+560.7.2 Stromkreise für Sicherheitszwecke dürfen nicht durch Bereiche geführt werden, in denen Brandrisiko 
+besteht (BE2 aufgrund der Art der dort verarbeiteten oder aufbewahrten Materialien), es sei denn, sie sind 
+entsprechend der geforderten Feuerwiderstandsfähigkeit gegen äußere Brandeinwirkung geschützt ausgeführt 
+(siehe auch 560.8.1). 
+In keinem Fall dürfen die Stromkreise für Sicherheitszwecke explosionsgefährdete Bereiche (BE3) 
+durchqueren. 
+Soweit möglich, sollten generell keine Stromkreise durch Räume oder Orte mit Brandrisiko geführt werden. 
+ 
+ANMERKUNG AT 
+Hinweise zu den äußeren Einflüssen siehe Tabelle 51.ZA.1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 524/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 6 
+560.7.3 Gemäß 433.3.3 darf auf einen Schutz bei Überlast verzichtet werden, sofern der Ausfall der 
+Stromversorgung eine größere Gefahr hervorrufen kann. Wird auf einen Schutz bei Überlast verzichtet, muss 
+das Vorhandensein einer Überlast überwacht, angezeigt und gemeldet werden. 
+560.7.4 Überstrom-Schutzeinrichtungen sind so auszuwählen und zu errichten, dass ein Überstrom in einem 
+Stromkreis die ordnungsgemäße Funktion anderer Stromkreise für Sicherheitszwecke nicht beeinträchtigt. 
+560.7.5 Schaltgeräte und Steuergeräte für Stromkreise für Sicherheitszwecke müssen eindeutig 
+gekennzeichnet sein und dürfen nur an solchen Standorten aufgestellt sein, die nur Elektrofachkräften (BA5) 
+oder elektrotechnisch unterwiesenen Personen (BA4) zugänglich sind. 
+ANMERKUNG AT 
+Wenn Schalt- und Steuergeräte in versperrbaren Gehäusen untergebracht sind, gilt diese 
+Anforderung als erfüllt. 
+560.7.6 Wird ein Betriebsmittel von zwei unabhängigen Stromkreisen versorgt, darf ein Fehler, der in einem 
+Stromkreis auftritt, weder den Schutz gegen elektrischen Schlag noch die ordnungsgemäße Funktion des 
+anderen Stromkreises beeinträchtigen. Wenn erforderlich, müssen solche Betriebsmittel mit den Schutzleitern 
+beider Stromkreise verbunden sein. 
+560.7.7 Mit Ausnahme von Versorgungskabeln/-leitungen für Feuerwehraufzüge und Kabel-/Leitungs-
+anlagen für Aufzüge mit besonderen Anforderungen dürfen Stromkreise für Sicherheitszwecke nicht in 
+Aufzugsschächten, Kaminen oder anderen ähnlichen Schächten verlegt werden. 
+Elektro-Steigschächte werden nicht als kaminähnliche Schächte bezeichnet. 
+560.7.8 Zusätzlich zum allgemeinen Prinzipschaltplan (ein einpoliger Schaltplan ist ausreichend) müssen 
+vollständige Angaben von allen Stromquellen für Sicherheitszwecke vorhanden sein.  
+560.7.9  
+Es müssen aktuelle Pläne des Stromversorgungssystems für Einrichtungen für Sicherheits-
+zwecke verfügbar sein, die die genauen Standorte zeigen von: 
+– 
+allen elektrischen Betriebsmitteln und elektrischen Verteilern mit Bezeichnung der Betriebsmittel; 
+– 
+Sicherheitseinrichtungen mit Kennzeichnung der Endstromkreise und Einzelheiten über den Zweck der 
+Einrichtungen; 
+– 
+besonderen Schalt- und Überwachungseinrichtungen für die Sicherheitsstromversorgung (z. B. 
+Bereichsschalter, optische oder akustische Warneinrichtungen). 
+560.7.10  
+Eine Liste der ständig an die Sicherheitsstromversorgung angeschlossenen elektrischen 
+Verbrauchsmittel mit Angabe von Nennleistung, Nenn- und Anlaufströmen sowie Anlaufzeit der elektrischen 
+Verbrauchsmittel muss verfügbar sein. 
+ANMERKUNG 
+Diese Angaben dürfen in den Plänen enthalten sein. 
+560.7.11  
+Betriebsanleitungen für Einrichtungen für Sicherheitszwecke müssen verfügbar sein. Sie müssen 
+alle Einzelheiten der elektrischen Anlagen berücksichtigen. 
+560.7.12  
+Der Stromkreis und die Überstrom-Schutzeinrichtungen sind so zu auszulegen, dass die 
+Zuverlässigkeit der Stromversorgung der Einrichtungen für Sicherheitszwecke im Brandfall sichergestellt ist.  
+560.7.13  
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+und 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) 
+dürfen nicht für den Schutz von Stromkreisen für Sicherheitszwecke verwendet werden. 
+ANMERKUNG 
+Bei den im Brandfall herrschenden erhöhten Temperaturen können Fehlerströme zwischen Leitern 
+auftreten, die zu ungewollter Auslösung und zum Ausfall der Einrichtungen für Sicherheitszwecke führen können. 
+560.8 
+Kabel- und Leitungsanlagen 
+Die nationale Notwendigkeit, Vorkehrungen für den Betrieb im Brandfall (Funktionserhalt) vorzusehen, und 
+deren Ausführung ist in den folgenden Abschnitten und in OVE-Richtlinie R 12-2 beschrieben bzw. muss der 
+Behördenvorschreibung bzw. kann den brandschutz-/bautechnischen Richtlinien entnommen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 525/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 7 
+ 
+560.8.1 Für Einrichtungen für Sicherheitszwecke mit Funktionserhalt im Brandfall müssen Kabel- und 
+Leitungsanlagen mit einer oder mehreren der folgenden Eigenschaften verwendet werden: 
+– 
+eine Kabel- und Leitungsanlage, die den erforderlichen Schutz gegen Feuer und mechanische 
+Beschädigung aufweist. Das sind z. B.: 
+ 
+• 
+Kabel- und Leitungsanlagen mit Funktionserhalt gemäß ÖNORM DIN 4102-12 oder gleichwertig 
+klassifiziert, oder 
+ 
+• 
+bauliche Umhüllungen der Kabel- und Leitungsanlage zum Schutz gegen Feuer und mechanische 
+Beschädigung, oder 
+ 
+• 
+Führung der Kabel- und Leitungsanlagen in getrennten Brandabschnitten, oder 
+ 
+• 
+Schienenverteiler, ausgeführt in einem Kanal bzw. in einem Schacht mit integriertem Funktionserhalt. 
+– 
+mineralisolierte Kabel und Leitungen gemäß ÖVE/ÖNORM EN 60702-1, ÖVE/ÖNORM EN 60702-2 und 
+OVE EN IEC 60332-1-2; 
+– 
+feuerbeständige Kabel und Leitungen mit Isolationserhalt gemäß OVE EN IEC 60331-1 und OVE EN 
+IEC 60332-1-2. 
+Kabel- und Leitungsanlagen müssen so befestigt und errichtet werden, dass die Funktion der Stromkreise im 
+Brandfall nicht beeinträchtigt wird. 
+Bei langen vertikalen Installationen müssen die Befestigungen der Kabel- und Leitungsanlagen so gegen 
+äußere Brandeinwirkung geschützt werden, dass die Kabel-/Leitungsbefestigungen im Brandfall nicht vorzeitig 
+versagen. 
+560.8.2 Die Anforderungen gemäß 560.8.1 gelten auch für Kabel- und Leitungsanlagen für Steuerungs- und 
+Bussysteme von Einrichtungen für Sicherheitszwecke. Dies gilt nicht für Stromkreise, die keinen nachteiligen 
+Einfluss auf den Betrieb der Sicherheitseinrichtungen haben. 
+Diese Anforderung gilt auch für Steuerungs- und Bussysteme von Einzelbatterieleuchten. Drahtlose 
+Steuerungs- und Bussysteme müssen in gleichwertiger Weise behandelt werden. 
+560.8.3 Stromkreise für Sicherheitszwecke, die mit Gleichstrom gespeist werden können, müssen mit 
+zweipoligen Überstrom-Schutzeinrichtungen ausgeführt sein. 
+560.8.4 Die Erhöhung des Leiterwiderstands aufgrund hoher Temperaturen durch Brandeinwirkung ist bei 
+der Bemessung des Kabel- bzw. Leiterquerschnitts zu berücksichtigen. 
+ANMERKUNG 
+Weitere Informationen zu Kabel und Leitungen mit Kupferleitern sind im Anhang 56.E enthalten. 
+560.8.5 Kabel und Leitungen von Stromkreisen für Sicherheitszwecke, die nicht den Anforderungen gemäß 
+560.8.1 und 560.8.2 entsprechen, müssen grundsätzlich zuverlässig durch Abstand oder räumliche Trennung 
+von anderen Kabeln und Leitungen getrennt werden. Beispiele für die Verlegung von Kabeln und Leitungen für 
+Einrichtungen für Sicherheitszwecke siehe Bild 56.D.1. 
+Das gemeinsame Verlegen von mehreren Kabeln und Leitungen verschiedener Stromkreise für Sicherheits-
+zwecke ist zulässig. 
+Innerhalb des letzten Brandabschnitts dürfen Kabel und Leitungen von Stromkreisen für Sicherheitszwecke 
+gemeinsam mit anderen Kabel und Leitungen auf einem gemeinsamen Tragsystem verlegt werden. 
+ANMERKUNG 
+Für Batteriekabel/-leitungen können besondere Anforderungen gelten. 
+560.8.6 Es sind Vorsichtsmaßnahmen zu ergreifen, um Schäden an erdverlegten Stromkreisen für 
+Sicherheitszwecke durch Erdarbeiten zu verhindern. 
+Dies wird im Allgemeinen dadurch erreicht, dass die Verlegung der Kabel/Leitungen der allgemeinen 
+Stromversorgung und Kabel/Leitungen für Einrichtungen für Sicherheitszwecke im Erdreich auf getrennten 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 526/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 8 
+Trassen mit einem Mindestabstand von 2 m (horizontal) oder in einer Stufenkünette mit einem 
+Höhenunterschied von mindestens 1 m erfolgt. Im Nahbereich einer Gebäudeeinführung dürfen 
+Kabeln/Leitungen den Abstand von 2 m unterschreiten, wenn besonderer mechanischer Schutz gegen 
+Beschädigungen bei Tiefbauarbeiten vorgesehen ist. 
+560.8.7 Schaltgeräte und Steuergeräte, die sowohl für Wechsel- als auch für Gleichstromquellen genutzt 
+werden, müssen sowohl für den Wechselstrom- als auch für den Gleichstrombetrieb geeignet sein. 
+560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+ANMERKUNG 1.AT 
+Die Bereiche, in Abhängigkeit von der Art der Nutzung und Größe, für die eine 
+Sicherheitsbeleuchtung erforderlich ist (z. B. Sicherheitsbeleuchtung nur für Fluchtwege), können der OVE-Richtlinie  
+R 12-2 entnommen werden. 
+ANMERKUNG 2.AT 
+In internationalen Dokumenten für Lichttechnik bzw. Elektrotechnik (ÖNORM EN 1838 bzw. 
+OVE EN 50172) wird der Begriff „Rettungsweg“ als Oberbegriff für Bereiche, die sowohl der „Selbstrettung“ als auch der 
+„Fremdrettung“ dienen, verwendet. 
+In nationalen arbeits- und baurechtlichen Bestimmungen, wie z. B. Arbeitsstättenverordnung, OIB-Richtlinie, wird jener Teil 
+des Rettungswegs, der der Selbstrettung dient, als „Fluchtweg“ bezeichnet. 
+Aus diesem Grund wird in den Dokumenten der OVE E 8101 zur Vereinheitlichung der international verwendete Begriff 
+„Rettungsweg“ durch den Begriff „Fluchtweg“ ersetzt. 
+ANMERKUNG 3.AT 
+Ist eine Sicherheitsbeleuchtung erforderlich, so ist diese nach OVE EN 50172 zu errichten, zu 
+prüfen, zu dokumentieren, zu überwachen und zu warten, und es sind die grundlegenden lichttechnischen Anforderungen 
+an die Sicherheitsbeleuchtung und zugehörige Messungen nach ÖNORM EN 1838 zu berücksichtigen. 
+ANMERKUNG 4.AT 
+Für besondere Anlagen, z. B. Sportstätten, können abweichende Anforderungen gegenüber 
+ÖNORM EN 1838 vorhanden sein (z. B. siehe ÖNORM EN 12193). Anforderungen bzw. die Notwendigkeit einer 
+Sicherheitsbeleuchtung bei Aufzugsanlagen (Fahrkorb, Schachtbeleuchtung, brandgeschützte Vorräume) siehe 
+ÖNORM EN 81-20, ÖNORM EN 81-72 bzw. TRVB 150 S. 
+ANMERKUNG 5.AT 
+Die für die Gebäudeerrichtung, für öffentliche Einrichtungen, für den Brandschutz (Brandschutz-
+konzept) usw. zuständigen Behörden können Anforderungen für die Auswahl von elektrischen Betriebsmitteln, die 
+Errichtung von elektrischen Anlagen und in Rettungswegen z. B. über Behördenvorschreibung festlegen. 
+560.9.1 Sicherheitsbeleuchtungsanlagen dürfen entweder von einem zentralen Stromversorgungssystem 
+versorgt oder durch Sicherheitsleuchten mit Einzelbatterie realisiert werden. Die Versorgung dieser 
+Sicherheitsleuchten mit Einzelbatterie ist von den Anforderungen von 560.9.2 und 560.9.3 ausgenommen. 
+560.9.2 Bei Kabel- und Leitungsanlagen für Sicherheitsbeleuchtungsanlagen muss die Versorgung von der 
+Sicherheitsstromquelle bis zu den Sicherheitsleuchten im Brandfall für eine angemessene Dauer erhalten 
+bleiben (siehe dazu auch OVE-Richtlinie R 12-2). Dies muss durch die Verwendung von Kabeln und Leitungen 
+gemäß 560.8.1 und 560.8.2 erreicht werden, um den Strom durch Brandabschnitte zu leiten. 
+Innerhalb des Brandabschnitts, in dem die Sicherheitsleuchten installiert sind, müssen die Kabel- und 
+Leitungsanlagen zwischen den Sicherheitsleuchten keine Anforderungen an den Funktionserhalt im Brandfall 
+erfüllen.  
+ANMERKUNG 1.AT 
+Siehe auch 527.1. 
+Die nationale Notwendigkeit, Vorkehrungen für den Betrieb im Brandfall (mit Funktionserhalt) für Einrichtungen 
+für Sicherheitszwecke vorzusehen, kann sich wie folgt ergeben: 
+– 
+durch die brandschutz-/bautechnischen Richtlinien bzw. die Behördenvorschreibungen, oder 
+– 
+bei erhöhten Anforderungen für Räume und Anlagen besonderer Art (Art der Nutzung) gemäß OVE-
+Richtlinie R 12-2. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 527/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 9 
+– 
+bei allgemeinen Anforderungen für Räume und Anlagen besonderer Art (Art der Nutzung) gemäß OVE-
+Richtlinie R 12-2, wenn die Räume nicht durch andere brandschutztechnische Maßnahmen geschützt 
+sind. 
+In Brandabschnitten mit mehr als einer Sicherheitsleuchte sind diese Leuchten abwechselnd auf mindestens 
+zwei verschiedene Stromkreise zu verteilen, sodass auch bei Ausfall eines Stromkreises eine 
+Grundbeleuchtung entlang des Fluchtwegs (siehe dazu Anmerkungen 1.AT und 2.AT) sichergestellt ist. 
+ 
+560.9.3 Werden Leuchten abwechselnd auf verschiedene Stromkreise aufgeteilt, so muss durch Überstrom-
+Schutzeinrichtungen sichergestellt sein, dass ein Kurzschluss in einem Stromkreis die Versorgung der 
+benachbarten Leuchten im Brandabschnitt oder der Leuchten in anderen Brandabschnitten nicht unterbrechen 
+kann. 
+Von einem Endstromkreis dürfen nicht mehr als 20 Leuchten mit einer Gesamtbelastung von nicht mehr als 
+60 % des Nennstroms der Überstrom-Schutzeinrichtung gespeist werden. 
+Stromkreisverteiler, Steuer- oder Schutzeinrichtungen dürfen die Funktionsfähigkeit des Stromkreises nicht 
+beeinträchtigen. 
+560.9.4 Für die Evakuierung eines Gebäudes sind die Beleuchtungsstärke und die Umschaltzeit gemäß 
+ÖNORM EN 1838 erforderlich. 
+Zusätzliche Anforderungen sind in Tabelle 56.A.1.AT enthalten.  
+ANMERKUNG AT 
+Für Arbeitsstätten gemäß ArbeitnehmerInnenschutzgesetz gelten die Anforderungen gemäß der 
+Arbeitsstättenverordnung (siehe auch Fachinformation E08 „Arbeitsstätten – Ausführung von Sicherheitsbeleuchtung und 
+nachleuchtenden Orientierungshilfen“). 
+560.9.5 Eine Sicherheitsbeleuchtung muss im Dauerbetrieb oder im Bereitschaftsbetrieb geschaltet sein. Die 
+Betriebsarten dürfen auch kombiniert werden. 
+560.9.6 Im Bereitschaftsbetrieb muss die Stromversorgung der allgemeinen Beleuchtung für den betroffenen 
+Bereich im Endstromkreis überwacht werden. Führt eine Unterbrechung der Stromversorgung für die 
+allgemeine Beleuchtung in einem Bereich zum Ausfall der allgemeinen Beleuchtung, so muss die 
+Sicherheitsbeleuchtung automatisch aktiviert werden. Es sind in jedem Fall Maßnahmen zu treffen, die 
+sicherstellen, dass bei Ausfall der allgemeinen Stromversorgung die örtliche Sicherheitsbeleuchtung des 
+betroffenen Bereichs aktiviert wird. 
+560.9.7 Werden Dauerbetrieb und Bereitschaftsbetrieb in Kombination genutzt, muss jede Umschalt-
+vorrichtung mit einer eigenen Überwachungseinrichtung ausgerüstet und gesondert schaltbar sein. 
+560.9.8 Die Sicherheitsbeleuchtung im Dauerbetrieb darf gleichzeitig mit der allgemeinen Beleuchtung 
+geschaltet werden in Bereichen, die entweder 
+– 
+während des Betriebs nicht verdunkelt werden können, oder 
+– 
+nicht ständig genutzt werden. 
+560.9.9 Die Funktion von Sicherheitsbeleuchtungsanlagen darf von keinem Steuerungssystem beeinträchtigt 
+werden. Auch Änderungen an den Steuerungssystemen müssen die Anforderungen der funktionalen 
+Sicherheit weiterhin erfüllen. 
+Im Falle eines Fehlers des Steuerungssystems und/oder im Endstromkreis der allgemeinen Beleuchtung 
+müssen alle Sicherheitsleuchten im betroffenen Bereich die erforderliche Beleuchtungsstärke erbringen. 
+ANMERKUNG 
+Für die Definition der funktionalen Sicherheit siehe ÖVE/ÖNORM EN 61508-4:2011, 3.1.12. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 528/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 10 
+560.9.10 Die Umschaltung vom Normalbetrieb zum Notbetrieb muss automatisch erfolgen, sobald die 
+Versorgungsspannung für länger als 0,5 s unter die 0,6-Fache Bemessungsversorgungsspannung fällt. Weist 
+die Versorgungsspannung wieder einen Wert größer als die 0,85-Fache Bemessungsversorgungsspannung 
+auf, so ist der Normalbetrieb wieder herzustellen. 
+ANMERKUNG 1  
+Die geforderte Zeit für die Umschaltung kann durch nationale Vorschriften geregelt sein. 
+ANMERKUNG 2  
+Der Wert der Versorgungsspannung, bei dem die Umschaltung erfolgt, hängt von den für die 
+Einrichtungen für Sicherheitszwecke verwendeten elektrischen Betriebsmitteln ab. 
+560.9.11  
+Ist die Versorgungsspannung im Verteiler oder im überwachten Stromkreis wieder hergestellt, so 
+muss sich die Sicherheitsbeleuchtung im Bereitschaftsbetrieb automatisch ausschalten. Berücksichtigt werden 
+muss die Zeit, die erforderlich ist, bis die Leuchten der allgemeinen Beleuchtung wieder ihre normale 
+Leuchtstärke erreichen. Berücksichtigt werden müssen außerdem Räume, welche vor Ausfall der 
+Versorgungsspannung betrieblich verdunkelt wurden; in diesen Fällen darf die Notbeleuchtung nicht 
+automatisch ausschalten. 
+ 
+560.9.12  
+In Sicherheitsbeleuchtungsanlagen müssen die Ausführung der Leuchten und die Umschaltzeit 
+aufeinander abgestimmt sein, um die vorgegebene Beleuchtungsstärke sicherzustellen. 
+560.9.13  
+Steuerschalter für die Sicherheitsbeleuchtung müssen an gekennzeichneten Stellen so 
+angeordnet und installiert werden, dass sie von unbefugten Personen nicht bedient werden können. 
+560.9.14  
+Der Zustand der Sicherheitsbeleuchtung muss für jede Stromquelle überwacht, angezeigt und 
+gemeldet werden. 
+560.9.15  
+Leuchten der Sicherheitsbeleuchtung und zugehörige Komponenten müssen durch ein gut 
+sichtbares und einfach lesbares rotes oder grünes Schild gekennzeichnet werden. 
+ 
+In der Nähe der Leuchten bzw. an der Leuchte müssen die Verteiler-, die Stromkreis- und die Leuchtennummer 
+angebracht sein. 
+560.9.16  
+Es darf eine Schalteinrichtung vorgesehen werden, um eine Entladung der Stromquelle für 
+Sicherheitszwecke in Betriebsruhezeiten zu verhindern. 
+560.9.17  
+Jeder Einphasen-Wechselstromkreis muss einen eigenen Neutralleiter haben. Ein gemeinsamer 
+Neutralleiter für mehr als einen Stromkreis ist nicht zulässig (siehe auch 521.8.2). 
+560.9.001.AT 
+Bei mehr als 20 Sicherheitsleuchten in einem zusammenhängenden Gebäudeteil ist eine 
+automatische Prüfeinrichtung mit zentraler Erfassung/Registrierung gemäß ÖVE/ÖNORM EN 62034 
+vorzusehen. 
+Dabei sind folgende Anforderungen mittels Prüfeinrichtungen sicherzustellen: 
+a) 
+Überwachung der Ladung (bei Batterieanlagen): kontinuierlich oder periodisch in Zeitabständen kürzer als 
+5 min; 
+b) 
+Überwachung der Funktionsfähigkeit der Sicherheitsleuchten, wobei die Fehleranzeige bereits beim 
+Ausfall einer Leuchte ansprechen muss; 
+ 
+– 
+Prüfzyklus: täglich; 
+ 
+– 
+Prüfdauer: höchstens 5 min. 
+c) 
+Überwachung des Übertragungsweges. 
+Das Ergebnis der Überwachung muss angezeigt, gemeldet und protokolliert werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 529/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 11 
+560.9.002.AT 
+Für bauliche Bereiche mit einer Brandmeldeanlage ist bei deren Ansprechen die Sicherheits-
+beleuchtung zu aktivieren. 
+560.10 Allgemeine Anforderungen an Einrichtungen für den Brandschutz 
+ANMERKUNG AT 
+Dazu zählen z. B. Anlagen zur Löschwasserversorgung, Feuerwehraufzüge, Einrichtungen zur 
+Alarmierung und Erteilung von Anweisungen, Evakuierungsanlagen, Mechanische Rauch- und Wärmeabzugsanlagen, 
+Druckbelüftungsanlagen, CO-Warnanlagen. 
+560.10.1 Kabel- und Leitungsanlagen für die Stromversorgung von brandschutztechnischen Einrichtungen 
+müssen von einem vorrangigen Stromkreis versorgt werden. 
+Von dieser Forderung darf abgewichen werden, wenn die Einrichtungen für Sicherheitszwecke in den 
+Anwendungsbereich anderer Normen und Richtlinien fallen und aufgrund dieser eigene unabhängige 
+Stromquellen haben. 
+560.10.2 Wenn vorrangige Stromkreise vorhanden sind, müssen diese direkt an der Einspeiseseite der 
+Trenneinrichtung der Hauptverteilung angeschlossen sein. 
+ANMERKUNG 
+Ein privates Verteilungsnetz wird als gleichwertig zum Verteilungsnetz eines Verteilernetzbetreibers 
+angesehen. 
+560.10.3 Geräte zur Alarmierung müssen eindeutig gekennzeichnet sein. 
+560.10.4 Die Einrichtungen für den Brandschutz aus Tabelle 56.B.1 müssen an ein Stromversorgungssystem 
+für Einrichtungen für Sicherheitszwecke angeschlossen werden, wenn dies aufgrund allgemein geltender oder 
+im Einzelfall erhobener behördlicher Anforderungen notwendig ist. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 530/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 12 
+Anhang 56.A 
+(normativ) 
+ 
+Anforderungen für Sicherheitsbeleuchtung 
+Die in ÖNORM EN 1838 angegebenen Werte werden berücksichtigt. Weiters enthält Tabelle 56.A.1.AT 
+zusätzliche Details. 
+ANMERKUNG AT 
+Anforderungen an die Sicherheitsbeleuchtung in medizinisch genutzten Bereichen sowie in 
+bestimmten baulichen Anlagen für öffentliche Einrichtungen und Arbeitsstätten siehe auch Teil 7-710 und Teil 7-718. 
+Tabelle 56.A.1.AT – Anforderungen für Sicherheitsbeleuchtung (1 von 3) 
+ 
+ 
+Anforderungen 
+ 
+Räume und Anlagen 
+besonderer Art  
+(Art der Nutzung) 
+Beleuchtungsstärke 
+Zeit bis zum Erreichen der 
+geforderten Beleuchtungsstärke 
+Bemessungsbetriebsdauer  
+der Stromquelle für 
+Sicherheitszwecke c 
+Be- oder hinterleuchtetes 
+Sicherheitszeichen in 
+Dauerbetrieb 
+Zentrales 
+Stromversorgungssystem ohne 
+Leistungsbegrenzung 
+Zentrales 
+Stromversorgungssystem mit 
+Leistungsbegrenzung 
+Einzelbatteriesystem b 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse A 
+(unterbrechungsfrei) 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse C  
+(≤ 0,5 s) 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse E  
+(≤ 15 s) 
+ 
+ 
+lx 
+s 
+h 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 
+Räume für eine größere 
+Personenzahl 
+(Versammlungsstätten; 
+stationär) wie z. B. Theater, 
+Kinos, Sportstätten, 
+Schwimmhallen, 
+Sitzungssäle, sowie 
+zugehörige Bühnen und 
+Szenenflächen 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+2 
+vorübergehend errichtete 
+Aufbauten 
+a 
+a 
+1 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+3 
+Ausstellungsstätten 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+4 
+Verkaufsstätten 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+5 
+Gaststätten 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+6 
+Beherbergungsstätten sowie 
+andere Gebäude mit 
+vergleichbarer Nutzung 
+a 
+a 
+8 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+7 
+Studentenheime, 
+Altersheime, 
+Altenwohnheime, Senioren-
+heime, Seniorenresidenzen 
+sowie andere Gebäude mit 
+vergleichbarer Nutzung 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+8 
+Schul- und Kindergarten-
+gebäude sowie andere 
+Gebäude mit vergleichbarer 
+Nutzung, wie z. B. 
+Universitäten/Hochschulen, 
+Fachhochschulen, 
+Volkshochschulen,  
+sonstige Bildungsstätten 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 531/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 13 
+Tabelle 56.A.1.AT – Anforderungen für Sicherheitsbeleuchtung (2 von 3) 
+ 
+ 
+Anforderungen 
+ 
+Räume und Anlagen 
+besonderer Art  
+(Art der Nutzung) 
+Beleuchtungsstärke 
+Zeit bis zum Erreichen der 
+geforderten Beleuchtungsstärke 
+Bemessungsbetriebsdauer  
+der Stromquelle für 
+Sicherheitszwecke c 
+Be- oder hinterleuchtetes 
+Sicherheitszeichen in 
+Dauerbetrieb 
+Zentrales 
+Stromversorgungssystem ohne 
+Leistungsbegrenzung 
+Zentrales 
+Stromversorgungssystem mit 
+Leistungsbegrenzung 
+Einzelbatteriesystem b 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse A 
+(unterbrechungsfrei) 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse C  
+(≤ 0,5 s) 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse E  
+(≤ 15 s) 
+ 
+ 
+lx 
+s 
+h 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+9 
+Garagen, überdachte 
+Stellplätze und Parkdecks 
+a 
+a 
+1 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+10 
+Öffentlich zugängliche  
+Bereiche in Gebäuden 
+verkehrstechnischer 
+Einrichtungen, wie z. B. 
+Flughäfen, Bahnhöfe 
+a 
+a 
+3 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+11 
+Gebäude mit einem Fluchtniveau (FLN) von nicht mehr als 22 m 
+11.1 
+Wohngebäude der 
+Gebäudeklasse GK 5 
+außerhalb von Wohnungen 
+a 
+a 
+a 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+11.2 
+Sonstige Gebäude der 
+Gebäudeklassen GK 4  
+und GK 5 
+a 
+a 
+a 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+12 
+Gebäude mit einem Fluchtniveau (FLN) von mehr als 22 m 
+12.1 
+Wohngebäude außerhalb 
+von Wohnungen mit einem  
+FLN > 22 m und ≤ 32 m 
+a 
+a 
+a 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+12.2 
+Wohngebäude außerhalb 
+von Wohnungen mit einem 
+FLN > 32 m 
+a 
+a 
+8 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+12.3 
+Sonstige Gebäude mit 
+einem FLN > 22 m 
+a 
+a 
+8 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+13 
+Betriebsbauten gemäß den 
+bautechnischen Richtlinien 
+in Österreich (OIB-
+Richtlinien) 
+a 
+a 
+1 c 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+14 
+Bereiche mit besonderer 
+Gefährdung 
+a 
+a 
+1 d 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+15 
+Krankenhäuser 
+a 
+a 
+e 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+16 
+Pflegeheime 
+a 
+a 
+e 
+■ 
+X 
+X 
+X 
+X 
+X 
+– 
+17 
+Arbeitsstätten gemäß 
+ArbeitnehmerInnen- 
+schutzgesetz  
+siehe Arbeitsstättenverordnung 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 532/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 14 
+Tabelle 56.A.1.AT – Anforderungen für Sicherheitsbeleuchtung (3 von 3) 
+a 
+Ausführung gemäß ÖNORM EN 1838:2025. 
+b 
+Bei der Verwendung von Einzelbatteriesystemen müssen die Herstellerangaben, insbesondere die zulässigen Umgebungs-
+temperaturen, berücksichtigt werden. 
+c 
+Die Bemessungsbetriebsdauer der Sicherheitsstromquelle muss für Anlagen mit erhöhten Anforderungen gemäß OVE-Richtline  
+R 12-2 mindestens den Anforderungen gemäß dieser Tabelle entsprechen. Die Nennbetriebsdauer von Batterien darf bei zusätzlichem 
+Einsatz von Sicherheitsstromaggregaten auf eine Stunde reduziert werden, wenn der Hauptverteiler des Sicherheitsstrom-
+versorgungssystems an das Sicherheitsstromaggregat angeschlossen ist und die zu versorgenden Sicherheitseinrichtungen über das 
+Aggregat mindestens für die geforderte Nennbetriebsdauer versorgt werden. 
+d 
+Eine Änderung der Bemessungsbetriebsdauer ist gemäß OVE EN 50172 entsprechend den Ergebnissen der Risikobeurteilung 
+möglich. 
+e 
+Siehe dazu Teil 7-710. 
+Legende 
+X 
+zulässig 
+– 
+nicht alleine zulässig, siehe Index c 
+■ 
+Erforderlich, während der betriebserforderlichen Zeit, für Fluchtwege und gesicherte Fluchtbereiche 
+FLN Fluchtniveau 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 533/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 15 
+Anhang 56.B 
+(informativ) 
+ 
+Ergänzende Anforderungen für Einrichtungen für den Brandschutz 
+Grundlegende Anforderungen an Einrichtungen für den Brandschutz siehe z. B. in der Reihe TRVB S. 
+Tabelle 56.B.1 – Ergänzende Anforderungen für Einrichtungen für den Brandschutz 
+Beispiele für  
+Einrichtungen für 
+Sicherheitszwecke 
+Anforderungen 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+Bemessungsbetriebsdauer  
+der Stromquelle (Stunden) 
+Umschaltzeit der Stromquelle 
+(Sekunden, maximal) 
+Zentrales Stromversorgungssystem  
+ohne Leistungsbegrenzung 
+Zentrales Stromversorgungssystem  
+mit Leistungsbegrenzung 
+Einzelbatteriesystem 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse A 
+(unterbrechungsfrei) 
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse C  
+(≤ 0,5 s)  
+Stromerzeugungsaggregat für 
+Sicherheitszwecke Klasse E  
+(≤ 15 s) 
+Separate voneinander unabhängige 
+Einspeisungen 
+Überwachung und Umschaltung  
+bei Ausfall der allgemeinen 
+Stromversorgung 
+Anlagen zur 
+Löschwasserversorgung b, c 
+12 
+15 
+ 
+ 
+ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+Feuerwehraufzüge 
+8 
+15 
+ 
+ 
+ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+Einrichtungen zur 
+Alarmierung und Erteilung 
+von Anweisungen, 
+Evakuierungsanlagen 
+3 
+15 
+✓ 
+✓ 
+ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ a 
+Mechanische Rauch- und 
+Wärmeabzugsanlagen, 
+Druckbelüftungsanlagen c 
+3 
+15 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ a 
+CO-Warnanlagen 
+1 
+15 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ 
+✓ a 
+a 
+Nur, sofern separate Stromquellen für Sicherheitszwecke nicht vorhanden sind. 
+b 
+Ausgenommen Sprinkleranlagen gemäß TRVB 127 S. 
+c 
+Für brandschutztechnische Einrichtungen, wie z. B. automatische Löschanlagen, Rauch- und Wärmeabzugsanlagen, 
+Druckbelüftungsanlagen, sind die Anforderungen der nationalen brandschutztechnischen Richtlinien zu beachten. 
+Legende 
+✓ 
+Kennzeichnet geeignete Systeme 
+ 
+ANMERKUNG 
+Anforderungen zu Energieversorgungseinrichtungen für Brandmeldeanlagen siehe ÖNORM EN 54-4. 
+ANMERKUNG AT 
+Anforderungen zu elektroakustischen Notfallwarnsystemen siehe OVE EN 50849. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 534/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 16 
+Anhang 56.C 
+(informativ) 
+ 
+Feuerwehrschalter 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+Anforderungen für die Ausführung derartiger Schalter und Konzepte sind über das Brandschutzkonzept zu 
+regeln. 
+ 
+ 
+Anhang 56.D 
+(informativ) 
+ 
+Beispiel für die Verlegung von Kabeln und Leitungen 
+für Einrichtungen für Sicherheitszwecke 
+unter Verwendung eines Kabelführungssystems 
+Einrichtungen für Sicherheitszwecke sind so von anderen Einrichtungen zu trennen und so zu errichten, dass 
+die Einrichtungen für Sicherheitszwecke von einem Fehler in der allgemeinen Stromversorgung nicht 
+beeinträchtigt werden können und die Auswirkungen eines Brandes gemindert werden. 
+Beispiele für die Verlegung von Kabeln für Einrichtungen für Sicherheitszwecke sind in Bild 56.D.1 gezeigt. 
+Ausführungsdetails siehe dazu auch OVE-Richtlinie R 12-2. 
+Für die Verlegung von Kabeln und Leitungen innerhalb des letzten Brandabschnitts siehe 560.8.5. 
+ 
+Bild 56.D.1 – Beispiele für die Verlegung von Kabeln und Leitungen  
+für Einrichtungen für Sicherheitszwecke 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 535/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 17 
+Anhang 56.E 
+(informativ) 
+ 
+Erhöhung des Leiterwiderstands bei Kabel- und Leitungsanlagen 
+56.E.1 
+Anstieg der Umgebungs-Prüftemperatur 
+Der Anstieg der Umgebungs-Prüftemperatur über die Zeit im Brandfall wird durch die Einheitstemperaturzeit-
+kurve nach ISO 834-1 bestimmt. 
+ 
+𝑇= 345 ∙ 𝑙𝑜𝑔10 (8 ∙𝑡 + 1) + 20 
+(F 56.E.1) 
+Dabei ist 
+T 
+Temperatur, in Grad Celsius (°C); 
+t 
+Zeit, in Minuten (min). 
+56.E.2 
+Dauer des Funktionserhalts bei Einrichtungen für Sicherheitszwecke 
+Anforderungen an die Funktion im Brandfall der Kabel- und Leitungsanlagen siehe 560.5.2 und OVE-
+Richtlinie R 12-2. 
+56.E.3 
+Erwarteter Widerstand von Versorgungsleitungen 
+Der erwartete Widerstand von Versorgungsleitungen von Brandschutzeinrichtungen, die im Brandfall 
+funktionieren sollen, sollte nach der Gleichung F 56.E.2 bestimmt werden (gilt nur für Versorgungsleitungen 
+mit Kupferleitern): 
+ 
+𝑅0 = 𝑅20 ∙ 𝑘𝑥 ∙(
+𝑇0
+293)
+1,16
+  
+(F 56.E.2) 
+Dabei ist 
+R20  
+Leiterwiderstand bei einer Temperatur von 20 °C, in Ohm (Ω); 
+R0  
+Leiterwiderstand bei erwarteter Brandtemperatur, in Ohm (Ω); 
+kx 
+Koeffizient, der den relativen Beitrag des Abschnitts lx der Gesamtlänge der Versorgungsleitung l, 
+der einer hohen Temperatur ausgesetzt ist, nach der Gleichung F 56.E.3 bestimmt, [dimensionslos]; 
+T0 
+erwartete Umgebungstemperatur von Versorgungsleitungen, die bei einem Brand auftreten kann,  
+in Kelvin [K]. 
+ 
+𝑘𝑥= 
+𝑙𝑥
+𝑙 
+(F 56.E.3) 
+Dabei ist 
+l 
+Länge der Versorgungsleitung, in Meter (m); 
+lx 
+Abschnitt der Versorgungsleitung, der einer hohen Temperatur ausgesetzt ist, in Meter (m). 
+Verläuft ein Leiter der Länge l in einem einzigen Brandabschnitt, so ist anzunehmen, dass die gesamte Länge 
+der Versorgungsleitung einer hohen Temperatur ausgesetzt sein kann. In diesem Fall ist kx = 1 anzunehmen. 
+Verläuft ein Leiter der Länge l durch mehrere Brandabschnitte, so ist der Koeffizient l unter der Annahme zu 
+bestimmen, dass der in Leiterabschnitt mit der Länge lx in dem Brandabschnitt mit der größten Länge 
+angeordnet ist. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 536/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 18 
+Nach rechnerischer Ermittlung des bei Brandtemperatur zu erwartenden Widerstands sind die Kriterien für den 
+zulässigen Spannungsabfall nach Teil 5-52 und die automatische Abschaltung bei einem einphasigen 
+Erdschluss nach Teil 4-41 im Hinblick auf die hohe Temperatur zu prüfen. 
+Handelt es sich bei der Stromquelle für Sicherheitszwecke um ein Stromerzeugungsaggregat, so darf die 
+Kurzschlussimpedanz bei einphasigem Erdschluss unter Berücksichtigung der Impedanz der Generator-
+wicklungen nach dieser Gleichung berechnet werden: 
+ 
+𝑋𝐺 = 
+1
+𝑛 ∙ 
+𝑈𝑛𝐺
+2
+𝑆𝑛𝐺 
+(F 56.E.4) 
+ 
+𝑅𝐺 =  0,03 ∙ 
+𝑈𝑛𝐺
+2
+𝑆𝑛𝐺 
+(F 56.E.5) 
+Dabei ist 
+XG  
+Induktiver Anteil der Kurzschlussimpedanz, Ohm (Ω); 
+RG  
+Ohmscher Anteil der Kurzschlussimpedanz, Ohm (Ω); 
+UnG  
+Generatornennspannung, in Kilovolt (kV); 
+SnG  
+Nenn-Scheinleistung des Generators, in Mega-Voltampere (MVA); 
+n 
+Vielfaches des Generator-Bemessungsstroms während eines Kurzschlusses an den Generator-
+klemmen, entsprechend der Betriebs- und Instandhaltungsanleitung des Generatorherstellers, 
+[dimensionslos]. 
+ANMERKUNG 
+Bei Leiterquerschnitten ≤25 mm2 kann die zur Berechnung der Kurzschlussimpedanz bei einphasigem 
+Erdschluss erforderliche Reaktanz außer Acht gelassen werden. 
+56.E.4 
+Schutz gegen elektrischen Schlag im Fehlerfall mittels Reduzierung der Berührungs-
+spannung 
+Die Anforderungen aus dem Harmonisierungsdokument wurden in Österreich nicht übernommen. 
+56.E.5 
+Leiterwiderstand im Brandfall 
+Die Erhöhung des Leiterwiderstands kann vernachlässigt werden, wenn die Leitungen oder Kabel in 
+zugelassenen feuerbeständigen Kabelkanälen verlegt sind. In diesem Fall muss vom Hersteller der 
+Kabelkanäle garantiert sein, dass die Temperatur im Inneren des Kabelkanals während der erforderlichen 
+Dauer des Funktionserhalts des versorgten elektrischen Betriebsmittels 70 °C nicht übersteigt. 
+Die erwartete Temperatur im Inneren des Kabelkanals sollte die dauernd zulässige Betriebstemperatur eines 
+Kabels oder Leiters nicht überschreiten. 
+56.E.6 
+Auswirkungen hoher Temperaturen 
+Unter Putz verlegte Leiter sind grundsätzlich nicht gegen die Einwirkung hoher Temperaturen geschützt. Die 
+bei einem Brand entstehende Hitze durchdringt raumteilende Elemente und führt zu einem erhöhten 
+Leiterwiderstand. 
+56.E.7 
+Versorgungsleitungen 
+Die Anforderungen aus dem Harmonisierungsdokument wurden in Österreich nicht übernommen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 537/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 19 
+Nationale Ergänzung 56.NE 
+(normativ) 
+ 
+Ergänzende Anforderungen für Einrichtungen für Sicherheitszwecke 
+Die folgenden Anforderungen ergänzen die allgemeinen Anforderungen von Teil 5-56. Die folgende 
+Nummerierung der Abschnitte und Unterabschnitte entspricht der Nummerierung der allgemeinen Teile 1  
+bis 6 von OVE E 8101. 
+56.NE.560.1 Allgemeine Grundsätze 
+ 
+56.NE.560.51 
+Allgemeine Bestimmungen 
+56.NE.560.514 
+Kennzeichen 
+56.NE.560.514.5  
+Dokumentation 
+Füge hinzu: 
+56.NE.560.514.5.1 
+ 
+Pläne und Betriebsanleitungen 
+Ein Übersichtsschaltplan der Sicherheitsbeleuchtungsanlage muss beim zugehörigen Hauptverteiler 
+vorhanden sein. 
+ 
+56.NE.560.6 
+Prüfungen 
+56.NE.560.600.4 Erstprüfung 
+Füge hinzu: 
+56.NE.560.600.4.1 
+ 
+Folgende Prüfungen müssen vor der ersten lnbetriebnahme in vollem Umfang und 
+nach Änderung oder Instandsetzung vor der Wiederinbetriebnahme im jeweils betroffenen Umfang 
+durchgeführt werden: 
+1) 
+Prüfung des Aufstellungsraums für stationäre Batterien gemäß OVE EN IEC 62485-2, bzw. 
+OVE EN IEC 62485-5 und OVE-Richtlinie R 12-2; 
+2) 
+Prüfung des Aufstellungsraums für Stromerzeugungsaggregate für Sicherheitszwecke gemäß  
+DIN 6280-13 und OVE-Richtlinie R 12-2; 
+3) 
+Prüfung der Bemessung und der ausreichenden Kapazität der Batterien; 
+4) 
+Prüfung der Bemessung der Stromerzeugungsaggregate für Sicherheitszwecke gemäß DIN 6280-13; 
+5) 
+Funktionsprüfung der Batterieanlage durch Unterbrechung der Netzzuleitung sowie der Weiterleitungen 
+von Stör- und Betriebsmeldungen; 
+6) 
+Funktionsprüfungen des Stromerzeugungsaggregats für Sicherheitszwecke gemäß DIN 6280-13; 
+7) 
+Prüfung der Anforderungen an die Sicherheitsbeleuchtung gemäß OVE EN 50172. 
+8) 
+Prüfung der lichttechnischen Anforderungen an die Sicherheitsbeleuchtung gemäß ÖNORM EN 1838 
+durch Messung der Beleuchtungsstärke. 
+ 
+Für Bereiche, in denen eine Messung der Beleuchtungsstärke infolge der baulichen und betrieblichen 
+Gegebenheiten nicht möglich ist (z. B. bei Einrichtungen mit 24-h-Dauerbetrieb und ständigem Lichteinfall 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 538/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-56 – Seite 20 
+von außen), können Berechnungen herangezogen oder Messwerte aus anderen Bereichen (d. h. Bereiche 
+mit gleichen Lichtquellen und mit gleicher Einbauhöhe) übertragen werden. 
+56.NE.560.600.5 Wiederkehrende Prüfung 
+Füge hinzu: 
+Die nachstehenden Anforderungen können sinngemäß auch für bestehende Anlagen angewendet werden. 
+56.NE.560.600.5.1 
+Sicherheitsbeleuchtungsanlagen ohne automatische Prüfeinrichtung sind gemäß 
+OVE EN 50172 zu überprüfen. 
+Für die jährliche Prüfung der Bemessungsdauer dieser Anlagen können auch andere dem Stand der Technik 
+entsprechende Prüfverfahren herangezogen werden. Dabei muss der Nachweis erbracht werden, dass die 
+Batterie die erforderliche Bemessungsbetriebsdauer erfüllt. 
+56.NE.560.600.5.2 
+Beim Einsatz einer automatischen Prüfeinrichtung gemäß ÖVE/ÖNORM EN 62034 
+genügt eine jährliche manuelle Prüfung der Gerätefunktion durch Trennung vom Versorgungsnetz. 
+ 
+56.NE.560.600.5.3 
+Grundsätzlich muss bei Stromerzeugungsaggregaten für Sicherheitszwecke der 
+monatliche Funktionstest bei mindestens 50 % der maximal erwarteten Verbraucherleistung (Bemessungs-
+leistung), die von diesem Aggregat zu übernehmen ist, durchgeführt werden. Abweichend davon kann der 
+monatliche Funktionstest mit einer Minimalleistung nach den Herstellerangaben durchgeführt werden. Die 
+Dauer des monatlichen Funktionstests hat mindestens 60 min zu betragen (siehe DIN 6280-13). 
+Im Zuge des monatlichen Probelaufs an Stromerzeugungsaggregaten für Sicherheitszwecke muss eine 
+Sichtprüfung auf Beschädigung bzw. Undichtheit durchgeführt werden. Der Kraftstoffvorrat ist entsprechend 
+der erforderlichen Mindestbetriebsdauer monatlich zu prüfen. 
+56.NE.560.600.5.4 
+Bei Stromerzeugungsaggregaten für Sicherheitszwecke muss mindestens jährlich eine 
+Funktionsprüfung durch Unterbrechung der Hauptzuleitung bzw. der Netzzuleitung an den überwachten 
+Verteilern möglichst mit der maximal zu versorgenden Verbraucherleistung durchgeführt werden. 
+56.NE.560.600.5.5 
+Beim Einsatz von separaten voneinander unabhängigen Einspeisungen muss die 
+Funktion der Umschalteinrichtung mindestens jährlich geprüft werden. 
+56.NE.560.600.5.6 
+Es muss jährlich ein Nachweis erbracht werden, dass die Bemessungsleistung der 
+Sicherheitsstromquelle noch dem erforderlichen Verbraucher-Leistungsbedarf entspricht. 
+56.NE.560.600.5.7 
+In Abständen von höchstens drei Jahren muss die Messung der Beleuchtungsstärke der 
+Sicherheitsbeleuchtung hinsichtlich der lichttechnischen Anforderungen gemäß ÖNORM EN 1838 erfolgen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 539/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 1 
+Teil 6 Prüfung 
+Inhalt Teil 6 
+600.1 
+Anwendungsbereich 
+600.2 
+Normative Verweisungen 
+600.3 
+Begriffe 
+600.4 
+Erstprüfung 
+600.5 
+Wiederkehrende Prüfung 
+Anhang 6.A (informativ)  Abschätzung des Widerstandswerts, der während der Prüfung der Durchgängigkeit 
+wahrscheinlich ermittelt wird 
+Anhang 6.B (informativ)  Verfahren zur Messung des Isolationswiderstands von Fußböden  und Wänden 
+gegen Erde oder gegen den Schutzleiter 
+Anhang 6.C (informativ)  Verfahren C1, C2 und C3 
+Anhang 6.D (informativ)  Leitfaden zur Anwendung der Anforderungen von  Abschnitt 600.4: Erstprüfung 
+Anhang 6.E (informativ)  Musterformular zur Erstellung des Prüfberichts 
+Anhang 6.F (informativ)  Musterliste für das Besichtigen elektrischer Anlagen 
+Anhang 6.G (informativ)  Musterverzeichnis von Stromkreisdetails und Prüfergebnisse 
+ 
+ 
+600.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Erstprüfung und die wiederkehrende Prüfung von elektrischen Anlagen. 
+Abschnitt 600.4 enthält Anforderungen an die Erstprüfung elektrischer Anlagen durch Besichtigen, Erproben 
+und Messen, mit denen – soweit sinnvoll durchführbar – festgestellt werden soll, ob die Anforderungen der 
+anderen Teile der OVE E 8101 erfüllt sind, sowie Anforderungen an die Erstellung eines Prüfberichts zur 
+Erstprüfung. 
+Die Erstprüfung wird sowohl im Zuge der Errichtung einer neuen Anlage als auch bei Erweiterungen oder 
+Änderungen bestehender Anlagen durchgeführt. 
+Abschnitt 600.5 enthält Anforderungen an die wiederkehrende Prüfung elektrischer Anlagen, mit denen – 
+soweit sinnvoll durchführbar – festgestellt werden soll, ob die Anlage und alle dazugehörenden elektrischen 
+Betriebsmittel sich in einem ordnungsgemäßen Zustand für den Anlagenbetrieb befinden. Abschnitt 600.5 
+enthält darüber hinaus Anforderungen an die Erstellung eines Prüfberichts zur wiederkehrenden Prüfung. 
+ANMERKUNG AT 
+Für Räume und Anlagen besonderer Art können Prüfanforderungen gelten, die die hier 
+beschriebenen Anforderungen ergänzen, ändern oder ersetzen. 
+600.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+600.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 540/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 2 
+600.4 
+Erstprüfung 
+600.4.1 
+Allgemeines 
+600.4.1.1 
+Jede elektrische Anlage muss, bevor sie erstmals verwendet wird, geprüft werden. Dies kann 
+auch für einzelne Anlagenabschnitte gesondert erfolgen. 
+Teile der Prüfung erfolgen zweckmäßigerweise bereits während der Errichtung (z. B. Messung des 
+Isolationswiderstandes der Leitungsanlage). 
+600.4.1.2 
+Der in Teil 1 Nationale Ergänzung 1.NE geforderte Mindestumfang der Dokumentation der 
+elektrischen Anlage und ggf. anderer für die Erstprüfung notwendiger Unterlagen (siehe auch Nationale 
+Ergänzung 1.NE) müssen den Personen, welche die Erstprüfung durchführen, zur Verfügung gestellt werden. 
+600.4.1.3 
+Zur Erstprüfung gehört der Vergleich der Ergebnisse mit den entsprechenden Vorgaben, um zu 
+bestätigen, dass die Anforderungen der OVE E 8101 erfüllt sind. 
+ANMERKUNG AT 
+Beim Prüfen wird auch die plangemäße Ausführung der elektrischen Anlage festgestellt z. B. 
+gemäß Ausführungsplan der elektrischen Anlage. 
+600.4.1.4 
+Es müssen Vorsichtsmaßnahmen ergriffen werden, um auch bei Fehlern im Stromkreis 
+sicherzustellen, dass durch die Prüfung keine Gefahr für Personen oder Nutztiere entsteht und Eigentum sowie 
+Betriebsmittel nicht beschädigt werden. 
+600.4.1.5 
+Bei Erweiterungen oder Änderungen einer bestehenden Anlage muss geprüft werden, ob 
+– 
+die Änderungen oder Erweiterungen der OVE E 8101 entsprechen und 
+– 
+die Sicherheit der Erweiterung oder Änderung durch die bestehende Anlage nicht beeinträchtigt ist. 
+600.4.1.6 
+Die Erstprüfung muss von einer Elektrofachkraft vorgenommen werden, die zur Durchführung 
+von solchen Prüfungen fachkundig ist. 
+ANMERKUNG 
+Die Festlegung von Anforderungen hinsichtlich der Qualifikation von Unternehmen und Personen ist eine 
+nationale Angelegenheit (siehe dazu ÖVE/ÖNORM EN 50110-1). 
+600.4.2 
+Besichtigen 
+600.4.2.1 
+Das Besichtigen muss im Allgemeinen vor dem Erproben und Messen durchgeführt werden und 
+bevor die Anlage erstmals unter Spannung gesetzt wird. 
+600.4.2.2 
+Das Besichtigen muss durchgeführt werden, um zu bestätigen, dass die elektrischen 
+Betriebsmittel der ortsfesten Anlage 
+– 
+den Sicherheitsanforderungen der zutreffenden Betriebsmittelnormen entsprechen; 
+ 
+ANMERKUNG 
+Dies kann durch Überprüfung der Informationen, Kennzeichnungen oder Zertifikate des 
+Herstellers erfolgen. 
+– 
+entsprechend der OVE E 8101 und den Herstellerangaben ausgewählt und eingebaut worden sind; 
+– 
+ohne erkennbare, die Sicherheit beeinträchtigende Beschädigungen sind. 
+600.4.2.3 
+Das Besichtigen muss mindestens folgende Überprüfungen, sofern zutreffend, umfassen: 
+a) 
+Schutzmaßnahme gegen elektrischen Schlag (siehe Teil 4-41); 
+b) 
+Vorhandensein von Brandabschottungen und anderen Vorkehrungen gegen die Ausbreitung von Feuer 
+sowie Maßnahmen zum Schutz gegen thermische Einflüsse (siehe Teil 4-42 und Abschnitt 527); 
+c) 
+Auswahl der Leiter hinsichtlich Strombelastbarkeit (siehe Teil 4-43 und Abschnitt 523); 
+d) 
+Auswahl, Einstellung und Selektivität/Koordination von Schutz- und Überwachungsgeräten (siehe 
+Abschnitt 536); 
+e) 
+Auswahl, Einbauort und Errichtung von Überspannungs-Schutzeinrichtungen (SPD) (siehe Abschnitt 534); 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 541/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 3 
+f) 
+Vorhandensein und richtige Anordnung von Trenn- und Schaltgeräten (siehe Abschnitt 537); 
+g) 
+Auswahl der elektrischen Betriebsmittel und der Schutzmaßnahmen unter Berücksichtigung der äußeren 
+Einflüsse (siehe Abschnitt 422, Unterabschnitt 512.2 und Abschnitt 522); 
+h) 
+Kennzeichnung von Neutral- und Schutzleiter (siehe Unterabschnitt 514.3); 
+i) 
+Vorhandensein von Schaltungsunterlagen, Warnhinweisen und anderen ähnlichen Informationen 
+(Nationale Ergänzung 1.NE); 
+j) 
+Kennzeichnung der Stromkreise, Überstrom-Schutzeinrichtungen, Schalter, Klemmen u. dgl. (siehe 
+Abschnitt 514); 
+k) 
+geeignete Anschlüsse und Verbindungen von Kabeln, Leitungen und Leitern (siehe Abschnitt 526); 
+l) 
+Auswahl und Errichtung von Erdungsanlagen, Schutzleitern sowie deren Verbindungen (siehe  
+Teil 5-54); 
+m) Zugänglichkeit und Zuordenbarkeit der elektrischen Betriebsmittel zur angemessenen Bedienbarkeit und 
+Instandhaltung (siehe Abschnitte 513 und 514); 
+n) 
+Maßnahmen gegen elektromagnetische Störungen (siehe Abschnitt 444); 
+o) 
+Verbindung der Körper (von elektrischen Betriebsmitteln) mit der Erdungsanlage (siehe Abschnitt 411); 
+p) 
+Auswahl und Errichtung der Kabel- und Leitungsanlage (siehe Abschnitte 521 und 522); 
+q) 
+Anordnung von einpoligen Schaltgeräten in den Außenleitern (siehe Abschnitt 537). 
+ 
+ANMERKUNG AT Dies kann auch durch Erproben und Messen am geschalteten Auslass festgestellt werden. 
+Das Besichtigen muss auch die besonderen Anforderungen für Anlagen oder Räume besonderer Art umfassen. 
+600.4.3 
+Erproben und Messen 
+600.4.3.1 
+Allgemeines 
+Die in diesem Abschnitt beschriebenen Prüfverfahren sind Referenzverfahren; andere Verfahren sind nicht 
+ausgeschlossen, wenn sie zu gleichwertigen Ergebnissen führen. 
+Messgeräte, Überwachungsgeräte und Verfahren müssen den zutreffenden Teilen der Normenreihe OVE 
+EN 61557 entsprechen, oder die Messeinrichtungen/Messanordnungen weisen zumindest gleichwertige 
+Leistungsmerkmale und Sicherheit auf. 
+ANMERKUNG AT Beim Einsatz von Messgeräten siehe Herstellerangaben hinsichtlich der Messunsicherheit. 
+Durch Erproben und Messen müssen die in diesem Abschnitt genannten Prüfungen, sofern relevant, 
+durchgeführt werden, vorzugsweise in der folgenden Reihenfolge: 
+a) 
+Durchgängigkeit der Leiter (siehe 600.4.3.2); 
+b) 
+Isolationswiderstand der elektrischen Anlage (siehe 600.4.3.3); 
+c) 
+Messung des Isolationswiderstands zum Nachweis der Wirksamkeit des Schutzes durch SELV, PELV 
+oder durch Schutztrennung (siehe 600.4.3.4); 
+d) 
+Messung des Isolationswiderstands zum Nachweis der Wirksamkeit von isolierenden Fußböden und 
+isolierenden Wänden (siehe 600.4.3.5); 
+e) 
+Spannungspolarität (siehe 600.4.3.6); 
+f) 
+Prüfung der Wirksamkeit des Schutzes durch automatische Abschaltung der Stromversorgung (siehe 
+600.4.3.7); 
+g) 
+Zusätzlicher Schutz (Zusatzschutz) (siehe 600.4.3.8); 
+h) 
+Prüfung der Phasenfolge der Außenleiter (siehe 600.4.3.9); 
+i) 
+Funktionsprüfungen (siehe 600.4.3.10); 
+j) 
+Spannungsabfall (siehe 600.4.3.11). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 542/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 4 
+Wenn beim Erproben und Messen ein Fehler festgestellt wird, ist nach Behebung des Fehlers diese Prüfung 
+und jede vorhergehende Prüfung, die durch den Fehler möglicherweise beeinflusst wurde, zu wiederholen. 
+ANMERKUNG AT 
+Wenn die Prüfung in möglicherweise explosionsfähigen Atmosphären durchgeführt wird, siehe 
+erforderliche Sicherheitsvorkehrungen gemäß ÖVE/ÖNORM EN 60079-17. 
+600.4.3.2 
+Durchgängigkeit der Leiter 
+Die Durchgängigkeit von Leitern und die Verbindung der Schutzleiter zu den Körpern von Betriebsmitteln muss 
+geprüft werden bei 
+a) 
+den Schutzleitern (einschließlich der Schutzpotentialausgleichsleiter); 
+b) 
+der Verbindung zu Körpern von Betriebsmitteln; 
+c) 
+den aktiven Leitern bei ringförmigen Endstromkreisen. 
+ANMERKUNG AT 
+Ein ringförmiger Endstromkreis ist ein Endstromkreis, der ringförmig verlegt ist und an einem 
+Punkt mit dem versorgenden Stromkreis verbunden ist. 
+600.4.3.3 
+Isolationswiderstand der elektrischen Anlage 
+Der Isolationswiderstand muss gemessen werden zwischen 
+a) 
+den aktiven Leitern und 
+b) 
+den aktiven Leitern und den mit der Erde verbundenen Schutzleitern. 
+Wo dies zweckmäßig ist, können bei dieser Messung die aktiven Leiter miteinander elektrisch verbunden 
+werden. 
+Um die Messung zu ermöglichen, muss der Neutralleiter von der Haupterdungsschiene getrennt werden. 
+In der Praxis kann es notwendig sein, diese Messung im Zuge der Errichtung der elektrischen Anlage 
+durchzuführen. 
+Falls der Stromkreis Betriebsmittel beinhaltet, die das Messergebnis beeinflussen oder die dabei zerstört 
+werden können, muss nur eine Messung zwischen den miteinander verbundenen aktiven Leitern und Erde 
+durchgeführt werden. 
+Der mit der Prüfspannung gemäß Tabelle 6.1 gemessene Isolationswiderstand ist ausreichend, wenn jeder 
+Verteilungsstromkreis sowie jeder Endstromkreis bzw. jede Gruppe von Endstromkreisen ohne 
+angeschlossene elektrische Verbrauchsmittel einen Isolationswiderstand aufweist, der nicht kleiner als der 
+zugehörige Wert in Tabelle 6.1 ist. 
+Tabelle 6.1 – Mindestwerte des Isolationswiderstands 
+Nennspannung des Stromkreises 
+V 
+DC-Prüfspannung 
+V 
+Isolationswiderstand 
+MΩ 
+SELV und PELV 
+250 
+≥ 0,5 
+bis einschließlich 500 V a,  
+sowie FELV 
+500 
+≥ 1,0 
+über 500 V a 
+1 000 
+≥ 1,0 
+a 
+FELV-Stromkreise müssen mit der Prüfspannung geprüft werden, die auf der Primärseite der Quelle angewendet 
+werden wird, FELV siehe 411.7. 
+ 
+Tabelle 6.1 muss bei der Prüfung des Isolationswiderstands zwischen bestimmungsgemäß nicht geerdeten 
+Schutzleitern und Erde ebenfalls angewendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 543/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 5 
+Wo Überspannungs-Schutzeinrichtungen (SPD) oder andere elektrische Betriebsmittel die Prüfung 
+beeinflussen oder bei der Prüfung beschädigt werden können, müssen diese elektrischen Betriebsmittel vor 
+der Durchführung der Messung des Isolationswiderstands abgetrennt werden. 
+Wo es aus praktischen Gründen nicht sinnvoll ist, solche elektrischen Betriebsmittel abzuklemmen (z. B. bei 
+Steckdosen mit eingebauter SPD), darf bei Nennspannungen bis 500 V die DC-Prüfspannung für den 
+betrachteten Stromkreis auf DC 250 V herabgesetzt werden, jedoch muss der Isolationswiderstand mindestens 
+1 MΩ betragen. 
+In TN-C-Systemen wird die Prüfung zwischen den aktiven Leitern und dem PEN-Leiter vorgenommen. 
+Die gemessenen Werte des Isolationswiderstands der einzelnen Stromkreise sind üblicherweise bedeutend 
+höher als die in Tabelle 6.1 angegebenen Werte. Bei offensichtlichen Abweichungen voneinander müssen 
+weitere Untersuchungen durchgeführt werden, um die Gründe hierfür zu ermitteln. 
+600.4.3.4 
+Isolationswiderstandsmessung zur Bestätigung des Schutzes durch SELV, PELV oder 
+durch Schutztrennung 
+Die Trennung der Stromkreise muss beim Schutz durch SELV gemäß 600.4.3.4.1, beim Schutz durch PELV 
+gemäß 600.4.3.4.2 und beim Schutz durch Schutztrennung gemäß 600.4.3.4.3 überprüft werden. 
+Der gemäß 600.4.3.4.1, 600.4.3.4.2 und 600.4.3.4.3 gemessene Widerstandswert muss mindestens so groß 
+sein wie der gemäß Tabelle 6.1 geforderte Wert für den Stromkreis mit der höchsten Spannung in der zu 
+prüfenden Anlage. 
+600.4.3.4.1 
+Schutz durch SELV 
+Die sichere Trennung der aktiven Teile von jenen anderer Stromkreise und von Erde, gemäß Abschnitt 414, 
+muss durch eine Messung des Isolationswiderstands bestätigt werden. 
+ANMERKUNG AT 
+Siehe dazu Tabelle 6.1 mit den einzuhaltenden Widerstandswerten. 
+600.4.3.4.2 
+Schutz durch PELV 
+Die sichere Trennung der aktiven Teile von jenen anderer Stromkreise, gemäß Abschnitt 414, muss durch eine 
+Messung des Isolationswiderstands bestätigt werden. 
+ANMERKUNG AT 
+Siehe dazu Tabelle 6.1 mit den einzuhaltenden Widerstandswerten. 
+600.4.3.4.3 
+Schutz durch Schutztrennung 
+Die sichere Trennung der aktiven Teile von aktiven Teilen anderer Stromkreise und von Erde, gemäß 
+Abschnitt 413, muss durch Messung des Isolationswiderstands bestätigt werden. 
+ANMERKUNG AT 
+Siehe dazu Tabelle 6.1 mit den einzuhaltenden Widerstandswerten. 
+Bei Schutztrennung mit mehr als einem elektrischen Verbrauchsmittel muss durch Messung der 
+Fehlerschleifenimpedanz nachgewiesen werden, dass bei zwei gleichzeitig auftretenden Fehlern mit 
+vernachlässigbarer Impedanz zwischen unterschiedlichen Außenleitern und dem Schutzpotential-
+ausgleichsleiter oder den an diesen angeschlossenen Körpern mindestens einer der fehlerhaften Stromkreise 
+abgeschaltet wird. Die Abschaltzeit muss dem für die Schutzmaßnahme automatische Abschaltung der 
+Stromversorgung im TN-System verlangten Wert entsprechen. 
+600.4.3.5 
+Widerstände von isolierenden Fußböden und isolierenden Wänden 
+Wenn die Einhaltung der Anforderungen gemäß Anhang 41.C.1 notwendig ist, müssen mindestens drei 
+Messungen in demselben Raum durchgeführt werden. Eine dieser Messungen hat ungefähr 1 m von 
+berührbaren fremden leitfähigen Teilen im Raum zu erfolgen. Die beiden anderen Messungen müssen in 
+größeren Abständen vorgenommen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 544/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 6 
+Die Messung der Widerstände von isolierenden Fußböden und isolierenden Wänden gegen Erde wird mit der 
+Nennspannung der elektrischen Anlage bei Nennfrequenz durchgeführt. 
+Die vorgenannte Messreihe muss für jede entsprechende Oberfläche in dem Raum wiederholt werden. 
+ANMERKUNG 
+Im Anhang 6.B sind Verfahren für die Messung der Widerstände von isolierenden Fußböden und 
+isolierenden Wänden beispielhaft angegeben. 
+600.4.3.6 
+Spannungspolarität 
+Die Spannungspolarität muss vor dem ersten Zuschalten am Speisepunkt der elektrischen Anlage kontrolliert 
+werden. 
+Wenn Regeln den Einbau von einpoligen Schalteinrichtungen im Neutralleiter verbieten, muss durch eine 
+Prüfung der Spannungspolarität festgestellt werden, dass diese Schalteinrichtungen nur in den Außenleitern 
+angeordnet sind. 
+Bei der Prüfung der Spannungspolarität sollte Folgendes kontrolliert werden: 
+a) 
+Jede Sicherung und jedes einpolige Schalt- oder Schutzgerät ist nur am Außenleiter angeschlossen. 
+b) 
+Die Leiter sind richtig an der Leuchte bzw. der Fassung des Leuchtmittels angeschlossen, bei denen die 
+Spannungs-polarität vorgegeben ist und 
+c) 
+die Leiter sind richtig an Steckdosen und ähnlichem Zubehör angeschlossen, bei denen die 
+Spannungspolarität vorgegeben ist (z. B. CEE-Steckdosen). 
+600.4.3.7 
+Schutz durch automatische Abschaltung der Stromversorgung 
+ANMERKUNG 
+Wenn Fehlerstrom-Schutzeinrichtungen (RCD) auch für den Brandschutz eingesetzt werden, dürfen die 
+Prüfungen zum Schutz durch automatische Abschaltung der Stromversorgung auch für die Einhaltung der Anforderungen 
+von Teil 4-42 herangezogen werden. 
+600.4.3.7.1 
+Allgemeines 
+Die Prüfung der Wirksamkeit der Maßnahmen für den Fehlerschutz durch automatische Abschaltung der 
+Stromversorgung ist wie folgt vorzunehmen: 
+a) 
+Für ein TN-System 
+ANMERKUNG 1.AT 
+Die Freigabe des Betreibers des Niederspannungsnetzes (Verteilernetzbetreiber) ist die 
+Voraussetzung für die Anwendung der Nullung. 
+Die Einhaltung der Anforderungen von 411.4.4 und 411.3.2 muss nachgewiesen werden durch: 
+1) 
+Messung der Fehlerschleifenimpedanz (siehe 600.4.3.7.3). 
+ 
+Wo die Messung der Fehlerschleifenimpedanz nicht möglich, jedoch die Berechnung der Fehlerschleifen-
+impedanz und des Leiterwiderstands der Schutzleiter verfügbar ist, ist die Kontrolle der elektrischen 
+Durchgängigkeit der Schutzleiter durch entsprechende Messungen (siehe 600.4.3.2) ausreichend. 
+2) 
+Überprüfen der Kenndaten und/oder der Wirksamkeit der zugeordneten Schutzeinrichtung. Dies muss 
+erfolgen 
+ 
+– 
+bei Überstrom-Schutzeinrichtungen durch Besichtigen (z. B. des kurzzeitverzögerten Kurzschluss-
+auslösers oder des eingestellten Auslösestroms der unverzögerten Auslösung von Leistungs-
+schaltern, des Bemessungsstroms und des Ausschaltbereichs und der Betriebsklasse bei 
+Sicherungen); 
+ 
+– 
+bei Fehlerstrom-Schutzeinrichtungen (RCD) durch Besichtigen und Messen. 
+ 
+ 
+Die Wirksamkeit der automatischen Abschaltung durch Fehlerstrom-Schutzeinrichtungen (RCD) 
+muss mit für den Typ der Fehlerstrom-Schutzeinrichtung geeigneten Messgeräten gemäß 
+OVE EN IEC 61557-6 geprüft werden, um nachzuweisen, dass die entsprechenden Anforderungen 
+von Teil 4-41 eingehalten werden. Die Wirksamkeit der Schutzmaßnahme ist nachgewiesen, wenn 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 545/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 7 
+die Abschaltung bei einem sinusförmigen Fehlerstrom erfolgt, der kleiner oder gleich dem 
+Bemessungsfehlerstrom IΔn ist und die höchste Ausschaltzeit gemäß Tabelle 6.001.AT eingehalten 
+ist. 
+ 
+ 
+ANMERKUNG 2.AT  
+Siehe 411.4.4.002.2.AT. 
+Die Einhaltung der gemäß Teil 4-41 geforderten Abschaltzeiten muss jedoch stets überprüft werden, wenn bei 
+Erweiterungen oder Änderungen in einer bestehenden Anlage bereits vorhandene Fehlerstrom-
+Schutzeinrichtungen (RCD) auch als Ausschalteinrichtung für die erweiterten oder geänderten Teile verwendet 
+werden. 
+b) Für ein TT-System 
+Die Einhaltung der Anforderungen gemäß 411.5.3 und 411.3.2 muss wie folgt geprüft werden: 
+1) 
+Messung der Fehlerschleifenimpedanz ZS (siehe 600.4.3.7.3). 
+2) 
+Prüfung der Kenndaten und/oder der Wirksamkeit der zugeordneten Schutzeinrichtung. Dies muss 
+erfolgen 
+ 
+– 
+bei Überstrom-Schutzeinrichtungen durch Besichtigen (z. B. des kurzzeitverzögerten Kurzschluss-
+auslösers oder des eingestellten Auslösestroms der unverzögerten Auslösung von Leistungs-
+schaltern, des Bemessungsstroms und des Ausschaltbereichs und der Betriebsklasse bei 
+Sicherungen); 
+ 
+– 
+bei Fehlerstrom-Schutzeinrichtungen (RCD) durch Besichtigen und Messen. 
+ 
+ 
+Die Wirksamkeit der automatischen Abschaltung durch Fehlerstrom-Schutzeinrichtungen (RCD) 
+muss mit für den Typ der Fehlerstrom-Schutzeinrichtung geeigneten Messgeräten gemäß OVE EN 
+IEC 61557-6 geprüft werden, um nachzuweisen, dass die entsprechenden Anforderungen von  
+Teil 4-41 eingehalten werden. Die Wirksamkeit der Schutzmaßnahme ist nachgewiesen, wenn die 
+Abschaltung bei einem Fehlerstrom erfolgt, der kleiner oder gleich dem Bemessungsfehlerstrom IΔn 
+ist. 
+ 
+ 
+ANMERKUNG 3.AT  
+Um 
+das 
+Ausschaltverhalten 
+von 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+im 
+ungünstigsten Fall zu ermitteln, werden die Ausschaltzeiten abweichend von Teil 4-41 bei einfachem Nenn-
+fehlerstrom und sinusförmiger Kurvenform gemessen. 
+ 
+ 
+Für Wechselstrom sind die höchsten Ausschaltzeiten für die Auslösecharakteristiken Allgemein, G 
+und S bei der Prüfung mit dem Wert des einfachen sinusförmigen Bemessungsfehlerstroms IΔn in 
+Tabelle 6.001.AT angegeben. 
+Tabelle 6.001.AT – Höchste Ausschaltzeiten abhängig von der  
+Auslösecharakteristik von Fehlerstrom-Schutzeinrichtungen (RCD) 
+Auslöse-
+charakteristik 
+Höchste Ausschaltzeit 
+s 
+bei 1 · IΔn 
+Allgemein 1 
+0,3 
+G 2 
+0,3 
+S 1 
+0,5 
+1 
+Werte gemäß OVE EN 61008-1; bei Typ S für In ≥ 25 A 
+2 
+Werte gemäß OVE E 8601 
+ 
+ 
+ 
+ANMERKUNG 4.AT  
+Die Auslösung der Fehlerstrom-Schutzeinrichtung (RCD) über die Prüftaste sollte erst 
+danach erfolgen. 
+Die Einhaltung der höchsten Ausschaltzeiten gemäß Tabelle 6.001.AT ist nachzuweisen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 546/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 8 
+ 
+ 
+Bei Fehlerstrom-Schutzeinrichtungen (RCD) des Typs B ist zusätzlich die Funktion der 
+Gleichfehlerstrom-Auslösung mit geeigneten Messgeräten gemäß OVE EN IEC 61557-6 (bei 
+langsam ansteigendem Gleichfehlerstrom) eine Auslösung zu erreichen und der Auslösewert ist zu 
+dokumentieren. RCD vom Typ B müssen bei stetig ansteigendem glattem Gleichfehlerstrom bei 
+höchstens 2 ∙ IΔn auslösen. 
+c) 
+Für ein IT-System 
+Durch Besichtigen ist festzustellen, ob 
+1) 
+gemäß 411.6.1 kein aktiver Leiter der Anlage direkt geerdet ist und 
+2) 
+gemäß 411.6.2 die Körper in ihrer Gesamtheit mit einem Schutzleiter verbunden sind. 
+Die Funktion der Isolationsüberwachungsgeräte ist durch Betätigen der Prüfeinrichtung zu erproben. 
+ANMERKUNG 5.AT 
+Als Ansprechwert der Isolationsüberwachungsgeräte wird üblicherweise 100 Ω/V der Netznenn-
+spannung eingestellt. 
+Die Einhaltung der Anforderungen gemäß 411.6.2 muss durch Berechnung oder Messung des Fehlerstroms Id 
+bei Auftreten eines ersten Fehlers (Erdschluss) im Außenleiter oder Neutralleiter nachgewiesen werden. 
+Die Messung wird nur durchgeführt, wenn die Berechnung nicht möglich ist, weil die Parameter nicht bekannt 
+sind. Bei der Durchführung der Messung sind Vorsichtsmaßnahmen zu ergreifen, um Gefahren zu vermeiden. 
+ANMERKUNG 6.AT 
+Im IT-System wird für die Messung des Fehlerstroms beim ersten Fehler (Erdschluss) ein 
+künstlicher Erdschluss hergestellt. 
+Da im Falle eines zweiten Fehlers (Doppelerdschluss) ähnliche Bedingungen wie im TN-System auftreten 
+(siehe 411.6.4 a)), ist der Nachweis wie im TN-System zu führen – siehe Punkt 1) dieses Unterabschnitts. 
+Für die Messung der Fehlerschleifenimpedanz ist ein aktiver Leiter (Außenleiter oder Neutralleiter) am 
+Speisepunkt der Anlage (beim speisenden Transformator) niederohmig mit Erde zu verbinden. Die Messung 
+erfolgt am Ende des jeweiligen Stromkreises zwischen einem anderen aktiven Leitern und dem 
+Schutzerdungsleiter. Der Nachweis ist erbracht, wenn der gemessene Wert nicht mehr als 50 % der höchsten 
+zulässigen Fehlerschleifenimpedanz beträgt. 
+600.4.3.7.2 
+Messung des Erderwiderstands 
+Wenn die Messung des Erderwiderstands der elektrischen Anlage verlangt ist, ist diese mittels eines 
+geeigneten Verfahrens durchzuführen. Der Erderwiderstand darf unter Zugrundelegung geeigneter Annahmen 
+auch berechnet werden, wenn eine Messung nicht möglich ist. 
+ANMERKUNG 1  
+In Unterabschnitt 6.C.1 wird mit dem Verfahren C1 beispielhaft ein Messverfahren unter 
+Verwendung von zwei Hilfserdern und die dabei zu erfüllenden Bedingungen beschrieben. 
+ANMERKUNG 2  
+Wenn die Örtlichkeit der Anlage (z. B. in Städten) so ist, dass es praktisch nicht möglich ist, zwei 
+Hilfserder vorzusehen, dann ergibt die Messung der Fehlerschleifenimpedanz nach 600.4.3.7.3 oder 6.C.3 das 
+Verfahren C3 in Anhang 6.C geeignete angenäherte Werte. 
+600.4.3.7.3 
+Messung der Fehlerschleifenimpedanz 
+Vor der Durchführung der Messung der Fehlerschleifenimpedanz ist eine elektrische Durchgangsprüfung 
+gemäß 600.4.3.2 durchzuführen. 
+ANMERKUNG 1.AT 
+Diese Durchgangsprüfung erfolgt bei einigen Messgeräten automatisch.  
+ANMERKUNG 2.AT 
+Die jeweils geforderte Fehlerschleifenimpedanz bestimmt die Auswahl des Messgerätes 
+hinsichtlich des Messbereichs. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 547/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 9 
+ANMERKUNG 3.AT 
+Unter anderem wird die Erwärmung des Stromkreises im Betrieb sowie im Fehlerfall bei der 
+Überprüfung der elektrischen Anlage mit einem Faktor, im Allgemeinen 2/3, berücksichtigt (siehe 6.D.600.4.3.7.3). 
+Die gemessene Fehlerschleifenimpedanz muss für TN-Systeme 411.4.4 und für IT-Systeme 411.6.4 erfüllen. 
+Wenn die Anforderungen dieses Unterabschnitts nicht erfüllt sind, oder wenn Zweifel bestehen und deshalb 
+ein zusätzlicher Schutzpotentialausgleich gemäß 415.2 durchgeführt wird, muss die Wirksamkeit dieses 
+Potentialausgleichs gemäß 415.2.2 überprüft werden. 
+ANMERKUNG 4.AT 
+Die Durchgängigkeit der Schutzerdungsleiter kann auch über das Messergebnis der 
+Fehlerschleifenimpedanz im Prüfbericht dokumentiert werden. 
+600.4.3.8 
+Zusätzlicher Schutz (Zusatzschutz) 
+Die Prüfung der Wirksamkeit der Maßnahmen zum zusätzlichen Schutz (Zusatzschutz) wird erfüllt durch 
+Besichtigen und Messen. 
+Wenn Fehlerstrom-Schutzeinrichtungen (RCD) für den zusätzlichen Schutz gefordert sind, muss deren 
+Wirksamkeit mit geeigneten Messgeräten gemäß OVE EN IEC 61557-6 geprüft werden, um die Erfüllung der 
+betreffenden Anforderungen gemäß Teil 4-41 zu bestätigen. Die Wirksamkeit der Schutzmaßnahme ist 
+nachgewiesen, wenn die Abschaltung bei einem sinusförmigen Fehlerstrom erfolgt, der kleiner oder gleich dem 
+Bemessungsfehlerstroms IΔn ist und die höchste Ausschaltzeit von 0,3 s eingehalten ist. 
+Wenn ein zusätzlicher Schutzpotentialausgleich gemäß 415.2.2 als zusätzlicher Schutz (Zusatzschutz) 
+ausgeführt wird, ist seine Wirksamkeit zu prüfen. 
+600.4.3.9 
+Prüfung der Phasenfolge 
+Im Falle von mehrphasigen Stromkreisen muss die Einhaltung der gleichen Reihenfolge der Phasen geprüft 
+werden. 
+ANMERKUNG AT 
+Bei elektrischen Anlagen, die an das öffentliche Niederspannungsverteilernetz angeschlossen 
+sind, liegt im Allgemeinen ein Rechtsdrehfeld vor. 
+600.4.3.10 Funktionsprüfungen 
+Betriebsmittel müssen einer Funktionsprüfung unterzogen werden, um nachzuweisen, dass sie entsprechend 
+den zutreffenden Anforderungen gemäß OVE E 8101 richtig montiert, eingestellt und installiert sind. 
+Beispiele für solche Betriebsmittel sind: 
+– 
+Schaltgerätekombinationen, Antriebe, Stelleinrichtungen und Verriegelungen; 
+– 
+Systeme für Not-Aus; 
+– 
+Isolationsüberwachung. 
+Insbesondere bei Schutzeinrichtungen muss, soweit erforderlich, eine Funktionsprüfung durchgeführt werden, 
+um festzustellen, dass sie bestimmungsgemäß errichtet und eingestellt sind. Falls Fehlerstrom-
+Schutzeinrichtungen für den Fehlerschutz oder zusätzlichen Schutz eingesetzt werden, muss die Wirksamkeit 
+jeder eingebauten Prüfeinrichtung kontrolliert werden. 
+ANMERKUNG 
+Diese Funktionsprüfung ersetzt nicht die in den zutreffenden Normen angegebenen Funktionsprüfungen. 
+600.4.3.11 Spannungsabfall 
+Die Erfüllung von Abschnitt 525 ergibt sich aus der Impedanz des Stromkreises. 
+Mögliche Messmethoden dafür sind: 
+– 
+Vergleich des Spannungsunterschieds mit und ohne angeschlossene definierte Last; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 548/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 10 
+– 
+Messung der Impedanz des Stromkreises. 
+600.4.4 
+Erstellen eines Prüfberichts über die Erstprüfung 
+600.4.4.1 
+Nach Abschluss der Erstprüfung einer neuen elektrischen Anlage oder von Erweiterungen oder 
+Änderungen in einer bestehenden Anlage muss darüber ein Prüfbericht erstellt werden. Dieser muss eine 
+Beschreibung des Anlagenumfangs, der durch den Bericht abgedeckt ist, zusammen mit einer Aufzeichnung 
+über das Besichtigen und die Ergebnisse des Erprobens und Messens einschließlich der ermittelten Messwerte 
+enthalten. 
+Alle Mängel, die während der Prüfung der Anlage erkannt werden, müssen behoben werden, bevor erklärt 
+werden kann, dass diese Anlage die Anforderungen gemäß OVE E 8101 erfüllt. 
+600.4.4.2 
+Bei Erstprüfungen von Erweiterungen oder Änderungen bestehender Anlagen darf der 
+Prüfbericht Empfehlungen für angemessene Reparaturen und Verbesserungen an dieser Anlage enthalten. 
+600.4.4.3 
+Der Prüfbericht der Erstprüfung muss mindestens enthalten: 
+– 
+Detaillierte Aufzeichnungen über die Besichtigung einschließlich der Beurteilung; 
+– 
+Detaillierte Aufzeichnungen über das Erproben und Messen einschließlich der Beurteilung; 
+– 
+die zusammenfassende Beurteilung. 
+Die Aufzeichnungen müssen jeden Stromkreis mit seinen Steckdosen und Auslässen einschließlich der 
+zugehörenden Schutzeinrichtung(en) umfassen. 
+ANMERKUNG AT 
+Es ist zweckmäßig, dass die einzelnen Aufzeichnungen den ausführenden Prüfern zugeordnet 
+werden können. 
+600.4.4.4 
+Der Prüfbericht der Erstprüfung, der die Aufzeichnungen gemäß 600.4.4.3 enthält, ist dem 
+Auftraggeber zu übergeben. Im Prüfbericht müssen die Verantwortlichen für Planung, Errichtung und Prüfung 
+der Anlage ersichtlich sein. 
+Der Prüfbericht der Erstprüfung muss eine Empfehlung für den Zeitraum zwischen der Erstprüfung und der 
+ersten wiederkehrenden Prüfung enthalten. 
+ANMERKUNG 1.AT 
+In Österreich ist der Zeitraum zwischen der Erstprüfung und der ersten wiederkehrenden Prüfung 
+für bestimmte Anlagen(-teile) gesetzlich geregelt (siehe z. B. Elektroschutzverordnung 2012). 
+ANMERKUNG 2.AT 
+Der Prüfbericht ist ein Bestandteil der Dokumentation (Anlagenbuch, siehe Nationale 
+Ergänzung 1.NE). 
+600.4.4.5 
+Der Prüfbericht muss von der für die Prüfung verantwortlichen Person händisch oder in anderer 
+Form unterschrieben werden. 
+600.5 
+Wiederkehrende Prüfung 
+600.5.1 
+Allgemeines 
+600.5.1.1 
+Wenn wiederkehrende Prüfungen von elektrischen Anlagen durchgeführt werden, so muss dies 
+gemäß 600.5.1.2 bis 600.5.1.5 erfolgen. 
+Dort, wo dies möglich ist, müssen die Prüfberichte und die Empfehlungen von vorhergehenden Prüfungen 
+(Erstprüfung bzw. wiederkehrende Prüfung) berücksichtigt werden. 
+Wo kein vorhergehender Prüfbericht verfügbar ist, sind zusätzliche vorbereitende Untersuchungen erforderlich, 
+z. B. eingehendere Besichtigung, zusätzliche Teildemontagen. 
+ANMERKUNG AT 
+Dies trifft auch zu, wenn der vorliegende Prüfbericht den Mindestanforderungen nach 600.4.4.3 
+nicht genügt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 549/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 11 
+Falls keine ausreichende Dokumentation zur Verfügung steht, muss der Betreiber für das Erstellen einer 
+geeigneten Dokumentation sorgen. Ansonst kann keine Prüfung durchgeführt werden. 
+600.5.1.2 
+Die wiederkehrende Prüfung muss je nach Anforderung entweder ohne Demontage oder mit 
+Teildemontage durchgeführt werden, je nach Bedarf ergänzt um geeignete Prüfungen gemäß Abschnitt 600.4. 
+ANMERKUNG 1.AT 
+Die wiederkehrende Prüfung kann durch die Erfassung des thermischen Zustands relevanter 
+elektrischer Betriebsmittel ergänzt werden. 
+Damit ist Folgendes zu erreichen: 
+a) 
+die Sicherheit von Personen und Nutztieren vor den Wirkungen des elektrischen Schlags und vor 
+Verbrennungen, 
+b) 
+der Schutz gegen Schäden am Eigentum durch Brand und Hitze, die durch Fehler in der elektrischen 
+Anlage entstehen, 
+c) 
+die Kontrolle der richtigen Bemessung und Einstellung der Schutzeinrichtungen, 
+d) 
+die Kontrolle der richtigen Bemessung und Einstellung von Überwachungseinrichtungen, 
+e) 
+die Bestätigung, dass die Anlage nicht so beschädigt ist oder sich derart verschlechtert hat, dass die 
+Sicherheit beeinträchtigt ist, 
+f) 
+das Erkennen von Anlagenfehlern und Abweichungen von den Anforderungen gemäß OVE E 8101, die 
+eine Gefahr darstellen können, 
+g) 
+die Bestätigung der korrekten Bewertung und Einstellung von Schutzeinrichtungen und 
+h) 
+die Bestätigung der korrekten Bewertung und Einstellung der Überwachungseinrichtungen. 
+ANMERKUNG 
+Bestehende Anlagen können in Übereinstimmung mit früheren Ausgaben der Normenreihe 
+ÖVE/ÖNORM E 8001 bzw. Vorgängernormen errichtet worden sein, die zur Zeit der Errichtung anzuwenden waren. Das 
+bedeutet nicht notwendigerweise, dass diese Anlagen unsicher sind. 
+ANMERKUNG 2.AT 
+Prüfungen werden unter Bezugnahme auf die erforderlichen Schaltpläne und technischen 
+Unterlagen nach 600.4.1.2 durchgeführt (siehe ÖVE/ÖNORM EN 50110-1). 
+Für Stromkreise, die mittels RCM gemäß OVE EN IEC 62020-1 oder IMD gemäß ÖVE/ÖNORM EN 61557-8 
+überwacht werden, muss deren Funktion kontrolliert werden. Wenn RCM oder IMD funktionieren, ist für diese 
+Stromkreise eine Messung des Isolationswiderstands nicht erforderlich. 
+600.5.1.3 
+Es müssen Vorsichtsmaßnahmen ergriffen werden, um sicherzustellen, dass durch die 
+wiederkehrende Prüfung keine Gefahr für Personen oder Nutztiere entsteht und Eigentum und Betriebsmittel 
+nicht beschädigt werden, auch bei Fehlern im Stromkreis. 
+Messgeräte und Überwachungsgeräte und Methoden müssen die Anforderungen der entsprechenden Teile 
+der OVE EN 61557 erfüllen. Wenn andere Messgeräte/Messeinrichtungen verwendet werden, so müssen 
+diese zumindest die gleichen Leistungsmerkmale und die gleiche Sicherheit aufweisen. 
+600.5.1.4 
+Schäden, Verschlechterungen, Fehler und gefährliche Zustände müssen aufgezeichnet werden. 
+Darüber hinaus müssen wesentliche Einschränkungen bei der wiederkehrenden Prüfung bezüglich der 
+Normanforderungen und deren Begründung im Prüfbericht festgehalten werden (siehe 600.5.3.2). 
+600.5.1.5 
+Die wiederkehrende Prüfung muss von einer Elektrofachkraft durchgeführt werden, die in der 
+Durchführung von solchen Prüfungen fachkundig ist. 
+ANMERKUNG 
+Die Festlegung von Anforderungen hinsichtlich der Qualifikation von Unternehmen und Personen ist eine 
+nationale Angelegenheit (siehe ÖVE/ÖNORM EN 50110-1). 
+600.5.2 
+Häufigkeit der wiederkehrenden Prüfung 
+600.5.2.1 
+Die Häufigkeit der wiederkehrenden Prüfung einer Anlage muss unter Berücksichtigung der Art 
+der Anlage und Betriebsmittel, der Verwendung und des Betriebs der Anlage, Häufigkeit und Qualität der 
+Anlagenwartung und der äußeren Einflüsse, denen die Anlage ausgesetzt ist, bestimmt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 550/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 12 
+Ergebnisse und Empfehlungen früherer Prüfberichte müssen, soweit sie verfügbar sind, berücksichtigt werden. 
+ANMERKUNG 1.AT 
+Die maximale Zeitspanne zwischen wiederkehrenden Prüfungen kann durch gesetzliche oder 
+andere nationale Bestimmungen festgelegt sein (siehe z. B. Elektroschutzverordnung 2012). 
+ANMERKUNG 2.AT 
+Die Zeitspanne kann einige Jahre betragen (z. B. fünf Jahre), außer z. B. für folgende Anlagen, 
+wo ein höheres Risiko bestehen kann und deshalb kürzere Zeitperioden erforderlich sein können: 
+– 
+Arbeitsstätten, Räume oder Orte (auch im Freien), wo aufgrund der Alterung besondere Risiken in Bezug auf 
+elektrischen Schlag, Brand oder Explosion bestehen; 
+– 
+Arbeitsstätten, Räume oder Orte (auch im Freien), wo sowohl Hochspannungs- als auch Niederspannungsanlagen 
+vorhanden sind; 
+– 
+öffentliche Einrichtungen; 
+– 
+Baustellen; 
+– 
+Anlagen mit Einrichtungen für Sicherheitszwecke (z. B. Notbeleuchtung). 
+Für Wohnungen oder Büros können längere Zeitspannen (z. B. zehn Jahre) angemessen sein. Bei einem Wechsel der 
+Bewohner ist eine Prüfung der elektrischen Anlage dringend empfohlen. 
+600.5.2.2 
+Bei Anlagen, die im bestimmungsgemäßen Betrieb einem Managementsystem für vorbeugende 
+Instandhaltung unterliegen, können die wiederkehrenden Prüfungen durch die angemessene Durchführung 
+einer dauernden Überwachung und Wartung der Anlage und deren Betriebsmittel durch Elektrofachkräfte 
+ersetzt werden. Geeignete Nachweise und Aufzeichnungen über die laufenden Instandhaltungsmaßnahmen 
+müssen zur Verfügung gehalten werden. 
+600.5.3 
+Erstellen eines Prüfberichts der wiederkehrenden Prüfung 
+600.5.3.1 
+Nach Abschluss der wiederkehrenden Prüfung einer bestehenden Anlage muss darüber ein 
+Prüfbericht erstellt werden.  
+600.5.3.2 
+Der Prüfbericht muss Folgendes enthalten: 
+– 
+Einzelheiten zu den Bereichen der elektrischen Anlage, die überprüft wurden, und die für diese Anlage 
+zutreffenden Errichtungsbestimmungen; 
+– 
+jede Einschränkung im Zuge der Besichtigung sowie des Erprobens und Messens; 
+– 
+jede Beschädigung, Alterung, Verschleiß, Funktionsdefekte oder mögliche gefährliche Umstände; 
+– 
+jede Abweichung von Anforderungen von OVE E 8101 bzw. der für diese Anlage zutreffenden Errichtungs-
+bestimmungen; 
+– 
+Ergebnisse des Besichtigens; 
+– 
+Ergebnisse (einschließlich der ermittelten Messwerte) der entsprechenden Prüfungen gemäß 600.4.3. 
+ANMERKUNG AT 
+Im Prüfbericht sollte auch ein Hinweis auf den Prüfbericht einer vorhergehenden Prüfung enthalten 
+sein. 
+600.5.3.3 
+Der Prüfbericht der wiederkehrenden Prüfung kann Empfehlungen für Reparaturen und 
+Verbesserungen enthalten, wie z. B. das Anpassen der Anlage an den Stand der aktuell gültigen Norm, soweit 
+dies angemessen ist. 
+Der Prüfbericht der wiederkehrenden Prüfung ist dem Auftraggeber zu übergeben. 
+600.5.3.4 
+Der Prüfbericht zur wiederkehrenden Prüfung muss eine Empfehlung für die Zeitspanne bis zur 
+nächsten wiederkehrenden Prüfung vorgeben. 
+600.5.3.5 
+Der Prüfbericht der wiederkehrenden Prüfung muss von der für die Prüfung verantwortlichen 
+Person händisch oder in anderer Form unterschrieben werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 551/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 13 
+Anhang 6.A 
+(informativ) 
+ 
+Abschätzung des Widerstandswerts, der während der Prüfung der 
+Durchgängigkeit wahrscheinlich ermittelt wird 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Anhang 6.B 
+(informativ) 
+ 
+Verfahren zur Messung des Isolationswiderstands von Fußböden  
+und Wänden gegen Erde oder gegen den Schutzleiter 
+6.B.1 
+Allgemeines 
+Die Messung des Isolationswiderstands von Fußböden und Wänden muss mit der Netzspannung gegen Erde 
+und mit Nennfrequenz oder mit einer niedrigeren Wechselspannung derselben Nennfrequenz zusammen mit 
+einer Messung des Isolationswiderstands durchgeführt werden. 
+Für die Isolationsprüfung sollten Messgeräte nach OVE EN IEC 61557-2 verwendet werden. 
+Dies darf z. B. entsprechend den folgenden Messmethoden durchgeführt werden: 
+1) 
+Wechselstromsysteme 
+ 
+ 
+– 
+durch Messung mit niedrigeren Wechselspannungen, mindestens jedoch 25 V, und zusätzlich durch 
+eine Isolationsprüfung unter Verwendung einer Prüfspannung von mindestens DC 500 V für Systeme 
+mit Nennspannungen höchstens 500 V und mindestens DC 1 000 V für Systeme mit Nenn-
+spannungen über 500 V. 
+ 
+ 
+Die folgenden Spannungsquellen dürfen wahlweise verwendet werden: 
+ 
+ 
+a) die geerdete Systemspannung (Spannung gegen Erde) am Messpunkt; 
+ 
+ 
+b) die Ausgangsspannung eines Isoliertransformators; 
+ 
+ 
+c) eine unabhängige Spannungsquelle mit der Nennfrequenz des Systems. 
+In den unter b) und c) angegebenen Fällen ist ein Punkt der Spannungsquelle für die Messung 
+geerdet. Aus Sicherheitsgründen ist im Fall von Prüfspannungen über 50 V der maximale 
+Ausgangsstrom auf 3,5 mA zu begrenzen. 
+2) 
+Gleichstromsysteme 
+ 
+– 
+Isolationsprüfung mit einer Prüfspannung von mindestens DC 500 V für Systeme mit Nenn-
+spannungen höchstens 500 V; 
+ 
+– 
+Isolationsprüfung mit einer Prüfspannung von mindestens DC 1 000 V für Systeme mit Nenn-
+spannungen über 500 V. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 552/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 14 
+6.B.2 
+Prüfmethode zur Messung der Impedanz von Fußböden und Wänden mit 
+Wechselspannung 
+Der grundsätzliche Messaufbau wird in Bild 6.B.2 wiedergegeben. 
+Der Strom I wird vom Ausgang der Stromquelle oder von einem Außenleiter L über ein Strommessgerät zur 
+Messelektrode eingespeist. Die Spannung Ux an der Prüfelektrode wird mit einem Spannungsmessgerät 
+gemessen.  
+Die Impedanz der Fußbodenisolierung Zx ergibt sich dann aus: 
+ 
+Zx = 
+𝑈x
+𝐼  
+(F 6.B.1) 
+Als Schutz bei Berühren muss der Strom bei Prüfspannungen über 50 V auf 3,5 mA begrenzt werden. 
+Zur Bestimmung der Impedanz ist die Messung an so vielen zufällig ausgewählten Punkten durchzuführen, die 
+als notwendig erachtet werden, mindestens aber an drei Punkten. 
+Als Messelektroden darf eine der folgenden Varianten (6.B.3 oder 6.B.4) verwendet werden. Im Zweifelsfall 
+(z. B. bei Messwerten unter 1 MΩ) gilt die Verwendung der Messelektrode Typ 1 als Referenzverfahren. 
+6.B.3 
+Messelektrode Typ 1 
+Die Messelektrode besteht aus einem Dreifuß, wobei die Teile, die auf dem Fußboden aufliegen, ein 
+gleichseitiges Dreieck bilden. Jeder Unterstützungspunkt ist mit einem leitfähigen flexiblen Teil (z. B. 
+Leitgummi) versehen. Ein einzelner Unterstützungspunkt hat bei Belastung einen engen Kontakt mit der zu 
+prüfenden Oberfläche über eine Fläche von annähernd 900 mm2, um einen Widerstand von höchstens 5 kΩ 
+sicherzustellen. Alle Unterstützungspunkte sind über die Grundplatte oder über Verbindungsleitungen mit der 
+Anschlussklemme zu verbinden. 
+Der Abstand der Unterstützungspunkte beträgt 180 mm. Bild 6.B.1 zeigt ein Beispiel einer solchen 
+Messelektrode. 
+Während der Messungen ist der Dreifuß mit einer Kraft von ungefähr 750 N bei Fußböden oder 250 N bei 
+Wänden anzudrücken. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 553/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 15 
+Maße in mm 
+ 
+Bild 6.B.1 – Beispiel für eine Messelektrode Typ 1 
+6.B.4 
+Messelektrode Typ 2 
+Die Elektrode besteht aus einer quadratischen Metallplatte mit 250 mm Seitenlänge und einem quadratischen, 
+wasseraufsaugenden Papier oder Tuch, aus dem überschüssiges Wasser entfernt wurde, mit einer 
+Seitenlänge von ungefähr 270 mm. Das Papier oder Tuch befindet sich zwischen der Metallplatte und der zu 
+prüfenden Oberfläche. Bild 6.B.2 zeigt ein Beispiel einer Messanordnung mit einer solchen Messelektrode. 
+Während der Messungen ist die Platte mit einer Kraft von ungefähr 750 N bei Fußböden oder ungefähr 250 N 
+bei Wänden anzudrücken. 
+ 
+Legende 
+* 
+Schutz gegen unabsichtliches Berühren durch Begrenzung des Stroms auf 3,5 mA. 
+Bild 6.B.2 – Beispiel einer Messanordnung mit einer Messelektrode Typ 2 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 554/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 16 
+Anhang 6.C 
+(informativ) 
+ 
+Verfahren C1, C2 und C3 
+6.C.1 
+Verfahren C1 – Messung des Erdungswiderstands 
+Das folgende Verfahren darf als Beispiel angewendet werden, wenn die Messung des Erdungswiderstands 
+durchzuführen ist (siehe Bild 6.C.1). 
+Zwischen dem Erder E und dem Hilfserder H, der so weit von E entfernt ist, dass sich die 
+Ausbreitungswiderstände der beiden Erder nicht gegenseitig beeinflussen, wird ein Wechselstrom mit 
+konstantem Wert zum Fließen gebracht. 
+Ein zweiter Hilfserder S wird im halben Abstand zwischen den Erdern E und H in die Erde eingebracht, und 
+der Spannungsabfall zwischen den Erdern E und S wird gemessen. In den meisten Fällen sollte S in einem 
+Abstand von ungefähr 20 m von E und H angeordnet sein. Die Erder dürfen unter Ausnutzen des verfügbaren 
+Raums in einer linearen Formation (siehe Bild 6.C.1) oder in einer dreieckigen Formation angeordnet sein. 
+Der Widerstand des Erders E ergibt sich aus der Spannung zwischen E und S, geteilt durch den Strom, der 
+zwischen E und H fließt, vorausgesetzt, es gibt keine gegenseitige Beeinflussung der Ausbreitungs-
+widerstände. 
+Zur Bestätigung, dass die Messanordnung hinsichtlich der Abstände geeignet ist, sind zwei weitere Messungen 
+mit dem zweiten Hilfserder S durchzuführen, einmal 6 m näher zum Erder E und einmal 6 m weiter vom Erder 
+E entfernt. 
+Wenn die drei Ergebnisse annähernd übereinstimmen, wird der Mittelwert der drei Messungen als Widerstand 
+des Erders E angenommen. Wenn es keine Übereinstimmung gibt, wird die Messung mit einem größeren 
+Abstand zwischen E und H wiederholt. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 555/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 17 
+ 
+ 
+Bild 6.C.1 – Messung des Erdungswiderstands 
+Legende zu Bild 6.C.1 
+E 
+Anschluss des Erders 
+H 
+Anschluss des Hilfserders 
+S 
+Anschluss der Sonde 
+RE Erderwiderstand 
+RS Sondenwiderstand (Spannungssonde) 
+RH Hilfserderwiderstand (Stromsonde) 
+6.C.2 
+Verfahren C2 – Messung der Fehlerschleifenimpedanz 
+Die Messung der Fehlerschleifenimpedanz ist gemäß den Anforderungen von 600.4.3.7.3 durchzuführen. Für 
+solche Messungen sind vorzugsweise Messgeräte gemäß OVE EN IEC 61557-3 einzusetzen (siehe 
+Bild 6.C.2). 
+Es darf z. B. auch das folgende Verfahren durch Messung der Spannungsabsenkung verwendet werden. 
+ANMERKUNG 1.AT 
+Das beispielhaft angeführte Verfahren durch Messung der Spannungsabsenkung liefert nur 
+Näherungswerte für die Fehlerschleifenimpedanz und berücksichtigt nicht die Phasenverschiebung der Spannung, die z. B. 
+während eines tatsächlichen Fehlers gegen Erde auftritt. Der Näherungswert kann jedoch akzeptiert werden, 
+vorausgesetzt, die Reaktanz des betreffenden Stromkreises ist vernachlässigbar. 
+ANMERKUNG 2.AT 
+Es wird empfohlen, eine elektrische Durchgängigkeitsprüfung zwischen dem Neutralpunkt und 
+den Körpern vor der Messung der Fehlerschleifenimpedanz durchzuführen. 
+ANMERKUNG 3.AT 
+Es wird darauf hingewiesen, dass es bei dem gezeigten Verfahren Schwierigkeiten bei dessen 
+Anwendung geben kann. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 556/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 18 
+Die Spannung des zu prüfenden Stromkreises wird mit und ohne Anschluss an eine variable Last gemessen, 
+und die Fehlerschleifenimpedanz wird berechnet mit der Gleichung: 
+ 
+𝑍 = 
+𝑈1 – 𝑈2
+𝐼R
+ 
+(F 6.C.1) 
+Dabei ist 
+Z 
+die Fehlerschleifenimpedanz, in Ohm (Ω); 
+U1 die gemessene Spannung, ohne Anschluss eines Lastwiderstands, in Volt (V); 
+U2 die gemessene Spannung, mit Anschluss eines Lastwiderstands, in Volt (V); 
+IR der Strom durch den Lastwiderstand, in Ampere (A). 
+ANMERKUNG 4.AT 
+Die Differenz zwischen den Werten von U1 und U2 sollte ausreichend groß sein. 
+ 
+Legende 
+RA  
+Erdungswiderstand der elektrischen Anlage 
+RB  
+Gesamtwiderstand des Betriebserders 
+R1 ... Rn parallele Erdungswiderstände, verbunden über einen Schutzpotentialausgleich oder einen  
+ 
+PEN-Leiter 
+HES 
+Haupterdungsschiene 
+Bild 6.C.2 – Messung der Fehlerschleifenimpedanz – Prinzip 
+6.C.3 
+Verfahren C3 – Messung des Erdschleifenwiderstands mit Stromzangen 
+ 
+Dieses Messverfahren funktioniert bei vorhandenen Erdverbindungen in einem System mit vermaschter 
+Mehrfacherdung, wie in Bild 6.C.3 dargestellt. 
+Über die erste Zange wird eine Messspannung U in die Schleife induziert, die zweite Zange misst den Strom I 
+in dieser Schleife. Der Erdschleifenwiderstand kann berechnet werden, indem die Spannung U durch den 
+Strom I geteilt wird. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 557/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 19 
+Die Spannungs- und Stromwicklungen können sich in zwei einzelnen Zangen befinden, die getrennt an ein 
+Messgerät angeschlossen werden, oder in einer einzelnen Zange kombiniert sein. 
+Da der Gesamtwiderstandswert von parallelen Erdungswiderständen R1 ... Rn in das Ergebnis eingeht, jedoch 
+normalerweise vernachlässigbar ist, ist der unbekannte Erdungswiderstand kleiner als der gemessene 
+Erdschleifenwiderstand. 
+ 
+Legende 
+RA  
+Erdungswiderstand der elektrischen Anlage 
+RB  
+Gesamtwiderstand des Betriebserders 
+R1 ... Rn parallele Erdungswiderstände, verbunden über einen Schutzpotentialausgleich oder einen  
+ 
+PEN-Leiter 
+HES 
+Haupterdungsschiene 
+Bild 6.C.3 – Messung des Erdschleifenwiderstands mit Stromzangen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 558/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 20 
+Anhang 6.D 
+(informativ) 
+ 
+Leitfaden zur Anwendung der Anforderungen von  
+Abschnitt 600.4: Erstprüfung 
+Die Nummerierung der Abschnitte dieses Anhangs entspricht der Nummerierung von Abschnitt 600.4. 
+Wenn ein Bezug auf Abschnitte oder Unterabschnitte nicht vorhanden ist, so bedeutet dies, dass hierzu keine 
+weiteren Erläuterungen gegeben werden. 
+Der Inhalt des informativen Anhangs des Harmonisierungsdokuments wurde in Österreich nur teilweise 
+übernommen. 
+6.D.600.4.3 Erproben und Messen 
+6.D.600.4.3.7 Schutz durch automatische Abschaltung der Stromversorgung 
+6.D.600.4.3.7.3 
+Messung der Fehlerschleifenimpedanz: Berücksichtigung des Anstiegs der 
+Leiterwiderstände bei steigender Temperatur 
+Das nachfolgend beschriebene Verfahren kann verwendet werden, um für TN-Systeme nachzuweisen, dass 
+der gemessene Wert der Fehlerschleifenimpedanz die Anforderungen von 411.4 im Betrieb erfüllt. 
+Da die Messungen im Allgemeinen bei der Leitertemperatur der unbelasteten Stromkreise durchgeführt 
+werden, berücksichtigt der Faktor 2/3 den ansteigenden Leiterwiderstand durch den Betriebsstrom und den 
+Fehlerstrom. 
+Die Anforderungen von 411.4 können jedenfalls als erfüllt angesehen werden, wenn der gemessene Wert der 
+Fehlerschleifenimpedanz die folgende Bedingung erfüllt: 
+ 
+ZS(m) ≤ 
+2
+3 ∙ 
+U0
+Ia  
+(F 6.D.1) 
+Dabei ist 
+Zs (m) 
+die gemessene Impedanz der Fehlerstromschleife beginnend und endend an der Fehlerstelle in  
+Ohm (Ω), z. B. im TN-System zwischen Außenleiter und Schutzerdungsleiter; 
+U0  
+die Spannung Außenleiter gegen Erde, in Volt (V); 
+Ia 
+der Strom, der die automatische Abschaltung der Schutzeinrichtung innerhalb der in Tabelle 41.1 
+angegebenen Zeit nach den in 411.4 festgelegten Bedingungen und Zeiten bewirkt, in Ampere (A). 
+ANMERKUNG 1.AT 
+Falls der gemessene Wert der Fehlerschleifenimpedanz eines Stromkreises größer ist als  
+2 U0/3 Ia, ist das im Allgemeinen auch im Ergebnis der Prüfung des Spannungsabfalles an diesem Stromkreis erkennbar. 
+ANMERKUNG 2.AT 
+Falls im Zuge der Messung festgestellt wird, dass die 2/3-Bedingung nicht eingehalten wird, ist im 
+Allgemeinen von einem Fehler im Bereich des betreffenden Stromkreises (z. B. schlechte Klemmstellen) auszugehen. 
+Wenn der gemessene Wert der Fehlerschleifenimpedanz größer ist als 
+2
+3 ∙ 
+U0
+Ia , kann eine genauere Bewertung 
+der Einhaltung von 411.4, erfolgen, indem man den Wert der Fehlerschleifenimpedanz nach dem folgenden 
+Verfahren bestimmt: 
+a) 
+Zuerst wird die Schleifenimpedanz Ze aus Außenleiter und geerdetem Neutralleiter des Versorgungs-
+stromkreises am Speisepunkt der Anlage gemessen; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 559/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 21 
+b) 
+anschließend werden die elektrischen Widerstände des Außenleiters und des Schutzleiters der 
+Verteilungsstromkreise gemessen; 
+c) 
+danach werden die elektrischen Widerstände des Außenleiters und des Schutzleiters des Endstrom-
+kreises gemessen; 
+d) 
+die Werte der nach a), b) und c) gemessenen elektrischen Widerstände erhöhen sich mit steigender 
+Temperatur, wobei im Fall von Fehlerströmen die durch die Schutzeinrichtung freigesetzte Energie zu 
+berücksichtigen ist; 
+e) 
+die entsprechend d) erhöhten Widerstandswerte werden schließlich zum Wert der Schleifenimpedanz Ze 
+aus Außenleiter und geerdetem Neutralleiter hinzugefügt, wodurch man einen realistischen Wert für Zs 
+unter Fehlerbedingungen erhält. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 560/852 =====
+OVE E 8101:2025-10-01 
+Teil 6 – Seite 22 
+Anhang 6.E 
+(informativ) 
+ 
+Musterformular zur Erstellung des Prüfberichts 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Anhang 6.F 
+(informativ) 
+ 
+Musterliste für das Besichtigen elektrischer Anlagen 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Anhang 6.G 
+(informativ) 
+ 
+Musterverzeichnis von Stromkreisdetails und Prüfergebnisse 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

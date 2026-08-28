@@ -1,0 +1,2422 @@
+
+
+===== PAGE 1/32 =====
+ARCHICAD 26. 
+IM TEAM 
+GEHT ALLES.
+BIM-
+MODELLIERUNGS-
+RICHTLINIEN
+
+
+===== PAGE 2/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Г
+Sie dürfen:
+Teilen - Das in jedwedem Format oder
+Medium vervielfältigen und weiterverbreiten.
+Bearbeiten - Das Material neu mischen,
+verändern und darauf auѲauen.
+Unter folgenden Bedingungen:
+Namensnennung - Sie müssen
+angemessene Urheber- und Rechteangaben
+machen, einen Link zur Lizenz beifügen und
+angeben, ob Änderungen vorgenommen
+wurden. Diese Angaben dürfen in jeder
+angemessenen Art und Weise gemacht
+werden, allerdings nicht so, dass der Eindruck
+entsteht, der Lizenzgeber unterstütze gerade
+Sie oder Ihre Nutzung besonders.
+Nicht kommerziell - Sie dürfen das Material
+nicht für kommerzielle Zwecke nutzen.
+Weitergabe unter gleichen Bedingungen -
+Wenn Sie das Material neu mischen,
+verändern oder anderweitig direkt darauf
+auѲauen, dürfen Sie Ihre Beiträge nur unter
+derselben Lizenz wie das Original verbreiten.
+Keine weiteren Einschränkungen - Sie
+dürfen keine zusätzlichen Klauseln oder
+technische Verfahren einsetzen, die anderen
+rechtlich irgendetwas untersagen, was die
+Lizenz erlaubt.
+Haftungsausschluss
+Die Inhalte dieser Modellierungsrichtlinien
+wurden mit größtmöglicher Sorgfalt und nach
+bestem Gewissen erstellt. Dennoch
+übernimmt die GRAPHISOFT Deutschland
+GmbH keine Gewähr für die Aktualität,
+Vollständigkeit und Richtigkeit der
+bereitgestellten Inhalte.
+Die BIM-Modellierungsrichtlinien der
+GRAPHISOFT Deutschland GmbH sind
+lizenziert unter der Creative Commons
+Namensnennung - Nicht-kommerziell -
+Weitergabe unter gleichen Bedingungen Е.Џ
+International License. Um eine Kopie dieser
+Lizenz zu sehen, besuchen Sie https://
+creativecommons.org/licenses/by-nc-sa/Е.Џ/
+© Copyright ГЏГГ
+Alle Inhalte dieses Dokumentes sind
+urheberrechtlich geschützt. Das Urheberrecht
+liegt, soweit nicht ausdrücklich anders
+gekennzeichnet, bei der GRAPHISOFT
+Deutschland GmbH.
+GRAPHISOFT Deutschland GmbH, ГЏГГ
+
+
+===== PAGE 3/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Д
+INHALT
+Е
+Ж
+З
+И
+Й
+К
+БЏ
+ББ
+БГ
+БД
+БЕ
+БЖ
+БЗ
+БИ
+БЙ
+БК
+ГЏ
+ГБ
+ГГ
+ГД
+ГЕ
+ГЖ
+ГЗ
+ГИ
+ГЙ
+ГК
+ДЏ
+ДБ
+Einleitung
+Projektlage und Vermessungspunkt
+Geschoss-Einstellung
+Raumstempel
+Gründung, Fundament, Außenwand
+Flachgründung, Außenwand, Sohlplatte
+Punktfundament
+Stütze, Träger, Fertigteil
+Außenwand, Rohdecke, FußbodenauѲau
+Fenster, Bodentiefes Fenster
+Balkon mit tragendem Dämmelement
+Abgehängte Decke und Sichtinstallation
+Abgehängte Decke, Variante
+Außenwand, Dämmstreifen
+Außenwand, Brandriegel
+Außenwand, Auskragung
+Innenwand
+Innenwand zwischen Stützen
+Vorwandinstallation
+Satteldach, Dachdeckung, Sparrenlage, Ringanker
+Satteldach, Datenaustausch mit Holzbausoftware
+Satteldach, Giebelwand, Ortgang, Ringanker
+Attika
+Flachdach mit Gefälle
+Deckendurchbruch
+Wanddurchbruch
+Körper für Flächen- und Volumenberechnung
+Grundﬂächen nach DIN ГИИ
+
+
+===== PAGE 4/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Е
+EINLEITUNG
+Um BIM (Building Information Modeling) in
+Ihren Projekten eﬀektiv verwenden zu
+können ist es elementar, entsprechend zu
+modellieren.
+In den nachfolgenden Ausschnitten möchten
+wir Ihnen aufzeigen, wie Sie beim
+Modellieren vorgehen sollten, um beim
+Datenaustausch mit AVA-Lösungen und
+anderen Programmen das bestmögliche
+Ergebnis zu erhalten.
+BIM in Archicad bedeutet, dass Sie nicht nur
+Ihre Pläne mit allen zugehörigen
+Informationen aus dem Modell ableiten
+können, sondern und gerade auch, dass Sie
+das Modell für die Generierung von Massen
+für die Ausschreibungen und für die
+Weitergabe an andere, fachplanende
+Disziplinen nutzen können.
+Hierfür sollte eine entsprechende Qualität
+Ihres Modells vorgehalten werden, um im
+gesamten Planungsprozess die gewünschten
+Ergebnisse zu erhalten. Dabei kann
+grundsätzlich die Aussage getroﬀen werden,
+dass das Modell der letztlichen Ausführung
+im Maßstab Б:ЖЏ entsprechen sollte. Für die
+nachstehenden Details kann es weitere
+Modellierungsarten geben, jedoch beziehen
+sich die folgenden Grundsätze weitgehend
+auf einen möglichst reibungslosen Daten-
+austausch mit den AVA-Programmen.
+Diese Modellierungsrichtlinien basieren auf
+Archicad ГЗ und werden im Zuge der kom-
+menden Entwicklungen fortgeschrieben.
+
+
+===== PAGE 5/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+Ж
+PROJEKTLAGE UND
+VERMESSUNGSPUNKT
+Das Archicad-Modell sollte auf oder in der
+Nähe des Projektursprungs (Џ,Џ,Џ) modelliert
+werden.
+Es ist wichtig, dass sich das gesamte
+Planungsteam auf eine genaue Modell-
+position einigt. Sie können diese Position mit
+dem Vermessungspunkt festlegen. Die exakte
+Position mit Koordinaten und Nordrichtung
+können Sie in den Lage-Einstellungen
+angeben. Diese ﬁnden Sie unter Optionen >
+Projektpräferenzen > Lage-Einstellungen.
+Beachten Sie beim Einstellen des
+Nordwinkels, dass der Wert Џ,ЏЏЏЏ° in
+Archicad auf der X-Achse liegt und der
+Winkel entgegen des Urzeigersinns
+angegeben wird. Norden hat den Wert
+КЏ,ЏЏЏЏ°.
+Nach der anfänglichen Einrichtung des
+Modells ist es empfehlenswert, eine einfache
+Koordinationsprüfung zwischen Archicad und
+anderen verwendeten Softwarelösungen
+durchzuführen.
+
+
+===== PAGE 6/32 =====
+Notizen
+З
+GESCHOSS-EINSTELLUNG
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Legen Sie zu Beginn die Geschoss-
+Einstellungen fest:
+Wo beﬁndet sich Џ,ЏЏ?
+Auf OKFF / FBOK oder auf OKRD / DOK?
+Dies ist nicht nur für Ihr Modell von
+Bedeutung, sondern auch im Austausch mit
+den Planungspartnern eine wichtige
+Komponente.
+Sie können die Archicad Beispielvorlagen als
+Basis für Ihre Vorlagendatei verwenden.
+Die österr. Beispiel-Vorlage „ЏБ ARCHICAD
+Vorlage" bezieht sich auf FBOK = ±Џ,ЏЏ.
+Die deutsche Projektvorlage „ЏБ ARCHICAD
+Beispiel-Vorlage - Geschoss OKFF" bezieht
+sich auf OKFF = ±Џ,ЏЏ.
+Die deutsche Projektvorlage „ЏГ ARCHICAD
+Beispiel-Vorlage - Geschoss OKRD" bezieht
+sich auf OKRD = ±Џ,ЏЏ.
+Legen Sie auch die Position fest, in der die
+Rohdecken zum Geschoss modelliert werden.
+Die Rohdecken-Position ist unabhängig von
+den Geschoss-Einstellungen. Es kann
+zwischen einer klassischen Architektursicht
+(Rohdecke unterhalb des Raums) und einer
+an die Tragwerksplanung angelehnten Sicht
+(Rohdecke oberhalb des Raums) gewählt
+werden.
+±Џ,ЏЏ
+±Џ,ЏЏ
+Geschoss-Einstellungen
+Geschoss-Einstellungen
+Geschoss-Zugehörigkeit
+Geschoss-Zugehörigkeit
+Rohdecke unter Geschoss
+OKFF / FBOK
+Rohdecke über Geschoss
+OKRD / DOK
+
+
+===== PAGE 7/32 =====
+Notizen
+И
+RAUMSTEMPEL
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Modellieren Sie bei Variante
+ЏБ Raumstempel den Raum von OK
+Rohdecke bis UK Rohdecke. Die abgehängte
+Decke und der Technikbereich darüber
+gehören so vollständig zum Raum.
+In Varinate ЏГ Raumstempel modellieren Sie
+den Raum von OK Rohdecke bis UK Abhang-
+decke. Der Bereich bis zur UK Rohdecke wird
+nun mit einer Luftschicht im mehrschichtigen
+Bauteil oder gesondert mit einem Morph
+gefüllt werden.
+Für den Raumstempel können Sie auf zwei
+Möglichkeiten der Modellierung
+zurückgreifen.
+Geben Sie in beiden Varianten die Stärke des
+BodenauѲaus an und denken Sie bei
+Änderungen daran, dass diese auch in den
+zugehörigen Räumen eingestellt werden
+muss!
+Wir empfehlen Ihnen bei der Erstellung von
+Räumen die Konstruktionsmethode
+Innenkante zu nutzen.
+ЏБ - Raumstempel
+Werkzeug:
+ 
+Raumﬂächen-Werkzeug
+Klassiﬁzierung:
+ 
+Raum
+Weitere  Besonderheiten:
+ 
+Von OK Rohdecke bis
+ 
+UK Rohdecke
+ 
+Stärke des BodenauѲaus
+ 
+angeben
+ЏГ - Raumstempel
+Werkzeug:
+ 
+Raumﬂächen-Werkzeug
+Klassiﬁzierung:
+ 
+Raum
+Weitere  Besonderheiten:
+ 
+Von OK Rohdecke bis
+ 
+UK Abhangdecke
+ 
+Stärke des BodenauѲaus
+ 
+angeben
+
+
+===== PAGE 8/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+Й
+GRÜNDUNG, FUNDAMENT,
+AUSSENWAND
+Für die Gründung und die Fundamente ist ein
+gesondertes Geschoss zu erstellen. Hierbei
+modellieren Sie das Streifenfundament bis
+OK Sohlplatte, damit korrekt ausgewertet und
+auch die richtige statische Höhe angegeben
+werden kann.
+Die ЏГ Sohlplatte ist bis zur Vorderkante
+Rohbauwand zu modellieren, um eine
+korrekte Grundrissdarstellung zu erhalten.
+Das ЏД Streifenfundament, wie auch einen
+ЏЕ Dämmkeil, erstellen Sie mit dem Wand-
+oder Träger-Werkzeug. Für komplexe
+geometrische Formen benutzen Sie den
+Proﬁl-Manager. Nach der Erstellung der
+gewünschten Gründung müssen Sie die
+richtige Klassiﬁzierung einstellen, damit die
+Bauteile später korrekt übergeben werden.
+Wir empfehlen Ihnen das ЏД Streifenfunda-
+ment und den ЏЕ Dämmkeil gesondert zu
+modellieren. Sie gewährleisten damit eine
+korrekte Klassiﬁzierung und können diese
+Geometrien einzeln auswerten.
+Notizen
+ЏГ - Sohlplatte
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke oder
+ 
+Fundament -
+ 
+Bodenplatte / Flachgründung
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+VK Sohlplatte =
+ 
+VK Rohbauwand
+ЏБ - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Von OK Sohlplatte bis
+ 
+OK Rohdecke
+ЏЕ - Dämmkeil
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung/Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏД - Streifenfundament
+Werkzeug:
+ 
+Wand-/Träger-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil /
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Fundament - Streifenfundament
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+OK Fundament =
+ 
+OK Sohlplatte
+ 
+Proﬁl-Wand/Träger bei
+ 
+komplexen geometrischen
+ 
+Formen
+ 
+Eigenes Geschoss für
+ 
+Fundamente/Gründung
+
+
+===== PAGE 9/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+К
+FLACHGRÜNDUNG,
+AUSSENWAND, SOHLPLATTE
+Die ЏГ Dämmung vor Sohlplatte wird mit
+dem Träger-Werkzeug modelliert, um
+Verschneidungsprobleme mit den
+Innenwänden zu vermeiden.
+Die UK der ЏБ Außenwand liegt auf der OK
+Rohdecke. So können im Fensterstempel die
+Brüstungshöhen in Bezug auf den Roh- oder
+Fertigfußboden anzeigt werden.
+Wenn Sie ЏЕ Dämmung unter Sohlplatte als
+tragend angeben möchten, dann modellieren
+Sie ЏД Sohlplatte und ЏЕ Dämmung unter
+Sohlplatte als ein mehrschichtiges Bauteil. So
+können Sie besser nach tragenden
+Elementen ﬁltern. In diesem Fall müssen Sie
+dann jedoch die ЏГ Dämmung vor Sohlplatte
+von UK ЏЕ Dämmung unter Sohlplatte bis
+OK ЏД Sohlplatte modellieren.
+ЏБ - Außenwand 
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+ 
+oder Proﬁl-Wand
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Referenzlinie auf
+ 
+Kern außen
+ 
+UK Wand = OK Rohdecke
+ 
+Verschneidung über
+ 
+Baustoﬀprioritäten
+ЏГ - Dämmung vor Sohlplatte
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Proﬁl-Träger
+ 
+von UK Sohlplatte bis  
+ 
+OK Sohlplatte
+ЏД - Sohlplatte
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke oder
+ 
+Fundament -
+ 
+Bodenplatte / Flachgründung
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЕ - Dämmung unter Sohlplatte
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 10/32 =====
+Notizen
+БЏ
+PUNKTFUNDAMENT
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Punkt- und Köcherfundamente erstellen Sie
+ähnlich wie Streifenfundamente. Benutzen Sie
+dazu jedoch besser das Stützen-Werkzeug,
+um die unterschiedlichen Geometrien
+konstruieren zu können.
+ЏБ - Punktfundament:
+Werkzeug:
+ 
+Stützen-/ Decken-/ Morph-
+ 
+Werkzeug
+Klassiﬁzierung:
+ 
+Fundament -
+ 
+Punktfundament
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏГ - Köcherfundament:
+Werkzeug:
+ 
+Stützen-/ Morph-Werkzeug
+Klassiﬁzierung:
+ 
+Fundament -
+ 
+Punktfundament
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 11/32 =====
+Notizen
+ББ
+STÜTZE, TRÄGER, FERTIGTEIL
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Klassiﬁzieren Sie immer entweder das
+Gesamtelement oder die einzelnen
+Unterelemente, jedoch nicht beides
+gleichzeitig. Dies könnte sonst zu
+fehlerhaften Massenermittlungen und
+Auswertungen führen.
+Träger oder Stützen modellieren Sie mit dem
+Träger- oder Stützen-Werkzeug. Trennen Sie
+das jeweilige Bauteil und passen Sie es an
+Ihre Anforderungen an. Sie sind so in der
+Lage, sich verändernde Geometrien, wie z.B.
+Bauteilanschlüsse, Auﬂager oder
+Verjüngungen, innerhalb eines Elements
+herstellen zu können.
+01 - Stütze
+Werkzeug:
+Stützen-Werkzeug
+Struktur:
+Stütze und Proﬁl-Stütze
+Klassiﬁzierung:
+Stütze / Pfeiler - Stütze
+Tragende Funktion:
+Tragend
+Lage:
+Innen oder Außen
+Weitere Besonderheiten:
+ 
+Segmente mit verschiedenen
+ 
+Geometrien
+ 
+Von OK Rohdecke bis
+ 
+UK Rohdecke
+02 - Träger / Unterzug
+Werkzeug:
+Träger-Werkzeug
+Struktur:
+Träger oder Proﬁl-Träger
+Klassiﬁzierung:
+Träger / Balken / Unterzug -
+ 
+Unterzug
+Tragende Funktion:
+Tragend
+Lage:
+Innen oder Außen
+Weitere Besonderheiten:
+ 
+Segmente mit verschiedenen
+ 
+Geometrien
+
+
+===== PAGE 12/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+БГ
+AUSSENWAND, ROHDECKE,
+FUSSBODENAUFBAU
+Die tragende ЏБ Außenwand beginnt auf OK
+ЏГ Rohdecke und geht bis zur OK Rohdecke
+im darüber liegenden Geschoss. So kann sich
+der Höhenbezug der Fenster ggf. auf OK Roh-
+oder OK Fertigfußboden zu beziehen.
+Sofern Sie die Referenzlinie der Wand auf
+Kern außen setzen, lässt sich unkompliziert
+auf Größenveränderungen (z.B. Wandstärke
+aufgrund von Statik, Dämmschichtdicke etc.)
+reagieren, ohne dass die Außenkante des
+Rohbaus verändert wird.
+Die tragende ЏГ Rohdecke wird als
+einschichtiges Bauteil nach den zu
+Projektbeginn festgelegten Geschoss-
+Einstellungen modelliert.
+Den ЏД FußbodenauѲau sollten Sie als
+gesondertes Element und raum- bzw.
+bereichsweise erstellen, da sich innerhalb
+eines Gebäudes vor allem die Bodenbeläge
+meistens unterscheiden.
+ЏБ - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Referenzlinie auf Kern außen
+ 
+UK Wand = OK Rohdecke
+ 
+OK Wand = OK Rohdecke im
+ 
+nächsten Geschoss
+ 
+Verschneidung über
+ 
+Baustoﬀprioritäten
+ЏГ - Rohdecke
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Innen
+ЏД - FußbodenauѲau
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+FußbodenauѲau
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Raum- oder bereichsweise
+ 
+Mehrschichtiges Bauteil
+ 
+ohne Kern
+
+
+===== PAGE 13/32 =====
+Notizen
+БД
+FENSTER, BODENTIEFES FENSTER
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Für die Darstellung der Aufdopplung im
+Bereich des FußbodenauѲaus wählen Sie in
+den Fenster-Einstellungen den Menüpunkt
+Fensterrahmen aus und aktivieren die
+unterschiedlichen Breiten. Addieren Sie nun
+bei Breite unten die Höhe des
+FußbodenauѲaus.
+Ein ЏБ Fenster / Bodentiefes Fenster
+erstellen Sie mit dem Fenster-Werkzeug.
+Legen Sie bei Fenstern in Außenwänden
+besonderes Augenmerk auf die Wandöﬀnung.
+Unter Anschlag lassen sich die Dämmungs-
+überstände festlegen, in Schichteinzug das
+Verhalten zwischen Wand und Fenster.
+ЏБ - Fenster / Bodentiefes Fenster
+Werkzeug:
+ 
+Fenster-Werkzeug
+Klassiﬁzierung:
+ 
+Fenster
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Unterschiedliche
+ 
+Rahmenbreiten aktivieren
+ 
+und zu Wert Breite Unten
+ 
+Stärke des FußbodenauѲaus
+ 
+hinzuzählen
+ЏЕ - Absturzsicherung 
+Werkzeug:
+ 
+Geländer-Werkzeug oder
+ 
+Wand-Werkzeug
+Klassiﬁzierung:
+ 
+Geländer
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏД - Sturz 
+ 
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Träger oder Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Träger / Balken / Unterzug -
+ 
+Sturz
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+automatisch über
+ 
+Baustoﬀprioritäten mit
+ 
+Wand verschnitten
+ЏГ - FußbodenauѲau
+Besonderheiten:
+ 
+In die Fensteröﬀnung
+ 
+modellieren, Stärke der
+ 
+Rahmentiefe aussparen
+
+
+===== PAGE 14/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+БЕ
+BALKON MIT TRAGENDEM
+DÄMMELEMENT
+Einen ЏБ Balkon erstellen Sie mit dem Träger-
+Werkzeug.
+Um den Balkon z.B. als Fertigteil auszubilden,
+legen Sie für Teilbereiche mit
+unterschiedlichen Querschnitten
+verschiedene Proﬁle im Proﬁl-Manager an.
+Diese Proﬁle weisen Sie dann einzelnen
+Träger-Segmenten zu. So lassen sich auch
+komplexere Balkone modellieren.
+Auch ЏГ Tragendes Dämmelement zwischen
+Balkon und tragender Decke wird mit dem
+Träger-Werkzeug erstellt. Sie sollten für das
+Dämmelement einen gesonderten Baustoﬀ
+mit einer höheren Baustoﬀpriorität
+verwenden bzw. anlegen, damit sich dieses
+automatisch richtig mit der Dämmung der
+Außenwand verschneidet.
+Die Außenwände werden von OK Rohdecke
+bis OK Rohdecke im darüber liegenden
+Geschoss modelliert.
+ЏБ - Balkon 
+Werkzeug:
+ 
+Träger-Werkzeug
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Unterschiedliche Segmente
+ 
+für verschiedene Querschnitte
+ 
+des Balkons verwenden
+ЏГ - Tragendes Dämmelement 
+Werkzeug:
+ 
+Träger-Werkzeug
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏД - Absturzsicherung 
+Werkzeug:
+ 
+Geländer-Werkzeug oder
+ 
+Wand-Werkzeug
+Klassiﬁzierung:
+ 
+Geländer
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 15/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+БЖ
+ABGEHÄNGTE DECKE UND
+SICHTINSTALLATION
+Für eine bessere Kommunikation und Über-
+sichtlichkeit sollten Sie ЏГ Bereich für Haus-
+technik gesondert erstellen. Ein für die
+Haustechnik vorgesehener Bereich ist so
+beim Datenaustausch für Fachplanende
+direkt ersichtlich.
+In Räumen mit Sichtinstallation wird aus-
+schließlich der ЏГ Bereich für Haustechnik
+modelliert.
+Da ЏГ Bereich für Haustechnik im späteren
+Planungsprozess meist wieder aus dem
+Modell entfernt wird, muss der zugehörige
+Raum bei diesen Varianten von OK Rohdecke
+bis UK Rohdecke modelliert werden.
+Die ЏБ Abgehängte Decke erstellen Sie mit
+dem Decken-Werkzeug. Hier wird ein
+mehrschichtiges Bauteil aus der eigentlichen
+Decke und einer Luftschicht für die
+Unterkonstruktion verwendet.
+Für die Unterkonstruktion sollten Sie einen
+neuen Baustoﬀ aus einer Luftschicht anlegen
+und die Funktion bei Kollisionsprüfungen
+berücksichtigen einschalten.
+Einen Gipskarton-Koﬀer modellieren Sie mit
+einem Proﬁl-Träger oder einer Kombination
+aus Wänden und Decken.
+ЏБ - Abgehängte Decke
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Abgehängte Decke
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+GK-Koﬀer mit Proﬁl-Träger
+ 
+oder mit Wand- / Decken-
+ 
+Werkzeug modellieren
+ 
+Raum- oder bereichsweise
+ЏГ - Bereich für Haustechnik
+Werkzeug:
+ 
+Morph-Werkzeug
+Struktur:
+ 
+Morph-Körper
+Klassiﬁzierung:
+ 
+Raumvorschlag
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+ЏГ - Bereich für Haustechnik
+Werkzeug:
+ 
+Morph-Werkzeug
+Struktur:
+ 
+Morph-Körper
+Klassiﬁzierung:
+ 
+Raumvorschlag
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+
+
+===== PAGE 16/32 =====
+Notizen
+БЗ
+ABGEHÄNGTE DECKE, VARIANTE
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Für die zweite Luftschicht verwenden Sie eine
+normale Luftschicht, welche bei Kollisionen
+nicht berücksichtigt wird. In dieser Schicht
+liegt später einmal das Haustechnik-Modell
+des Fachplanenden.
+Der zugehörige Raum wird hier von OK Roh-
+decke bis UK Abgehängte Decke modelliert.
+Einen Gipskarton-Koﬀer modellieren Sie mit
+einem Proﬁl-Träger oder einer Kombination
+aus Wänden und Decken.
+Die ЏБ Abgehängte Decke erstellen Sie mit
+dem Decken-Werkzeug. Diese wird als
+mehrschichtiges Bauteil mit der eigentlichen
+Decke, einer Luftschicht für die
+Unterkonstruktion und einer zweiten
+Luftschicht für den Bereich der Haustechnik
+bis zur UK Rohdecke erstellt.
+Für die Unterkonstruktion (Proﬁle) empfehlen
+wir einen neuen Baustoﬀ aus einer Luftschicht
+anzulegen, bei dem die Funktion bei
+Kollisionsprüfungen berücksichtigen
+eingeschaltet ist.
+ЏБ - Abgehängte Decke
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Abgehängte Decke
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+GK-Koﬀer mit Proﬁl-Träger
+ 
+oder mit Wand- / Decken-
+ 
+Werkzeug modellieren
+ 
+Raum- oder bereichsweise
+
+
+===== PAGE 17/32 =====
+Notizen
+БИ
+AUSSENWAND, DÄMMSTREIFEN
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Sollten Sie einen ЏБ Dämmstreifen vor einer
+Rohdecke benötigen, muss dieser als
+gesondertes Proﬁl-Element mit dem Träger-
+Werkzeug modelliert werden.
+Um bei einer Auswertung doppelte Mengen
+sicher ausschließen zu können, wird die ЏД
+Außenwand wird nur bis UK Rohdecke
+modelliert.
+ЏБ - Dämmstreifen
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏД - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Bis UK Rohdecke
+ЏГ - Rohdecke
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Innen
+
+
+===== PAGE 18/32 =====
+Notizen
+БЙ
+AUSSENWAND, BRANDRIEGEL
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Im Falle eines ЏБ Brandriegels vor einer
+Rohdecke, muss dieser von Ihnen als
+gesondertes Proﬁl-Element mit dem Träger-
+Werkzeug modelliert werden.
+Damit bei einer Auswertung doppelte
+Mengen sicher ausgeschlossen werden
+können, wird die ЏД Außenwand wird nur bis
+UK Rohdecke modelliert.
+ЏБ - Brandriegel
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏД - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Bis UK Rohdecke
+ЏГ - Rohdecke
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Innen
+
+
+===== PAGE 19/32 =====
+Notizen
+БК
+AUSSENWAND, AUSKRAGUNG
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Die UK der ЏБ Wand über Auskragung liegt
+auf OK Rohdecke, um im Fensterstempel die
+Brüstungshöhe im Bezug auf Roh- oder
+Fertigfußboden anzeigen zu können.
+In Archicad haben Sie auch die Möglichkeit,
+ЏГ Dämmstreifen und ЏД Dämmung unter
+Decke als ein Element mit einem Proﬁl-Träger
+herzustellen. Für eine bessere Auswertung
+empfehlen wir jedoch, diese aus zwei
+getrennten Elementen zu modellieren.
+Die Dämmung einer Auskragung erstellen Sie
+mit einer Kombination aus Decken- und
+Träger-Werkzeug. Dies bietet den Vorteil,
+dass Sie eine korrekte Grundrissdarstellung
+erhalten.
+Wir empfehlen Ihnen außerdem die Elemente
+auf eine eigene Ebene zu legen, welche nur
+in Schnitten, Ansichten und ДD sichtbar ist.
+ЏБ - Wand über Auskragung
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Von OK Rohdecke
+ 
+Referenzlinie Kern außen
+ЏЕ - Wand unter Auskragung:
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Von OK Rohdecke bis
+ 
+UK Rohdecke
+ 
+Referenzlinie Kern außen
+ЏГ - Dämmstreifen
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Eigene Ebene (nur  in
+ 
+Schnitt/Ansicht sichtbar)
+ЏД - Dämmung unter Decke:
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Im Geschoss der Rohdecke
+ 
+erstellen
+ 
+Eigene Ebene (nur in
+ 
+Schnitt/Ansicht sichtbar)
+
+
+===== PAGE 20/32 =====
+Notizen
+ГЏ
+INNENWAND
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+ЏГ Innenwand geht von OK Rohdecke bis UK
+Rohdecke.
+Der FußbodenauѲau wird raum- oder
+bereichsweise erstellt und kann so den
+Projekt-/ Raumanforderungen angepasst
+werden.
+Innenwände platzieren Sie im Geschoss mit
+Bezug auf die jeweilige Geschosshöhe.
+Hierbei kommt es auch auf die von Ihnen
+vorgesehene bauliche Ausführung an.
+Die ЏБ Innenwand steht auf dem Estrich und
+geht bis zur UK Rohdecke.
+Bei der Höhenangabe der Wand müssen Sie
+beachten, dass die Wand um die Höhe des
+Bodenbelags tiefer gesetzt werden muss.
+ЏБ - Innenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Von OK Estrich bis
+ 
+UK Rohdecke
+ЏГ - Innenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend / Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Von OK Rohdecke bis
+ 
+UK Rohdecke
+
+
+===== PAGE 21/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ГБ
+INNENWAND ZWISCHEN STÜTZEN
+Archicad erstellt über die automatische
+Verschneidung von Baustoﬀen die korrekte
+Darstellung von Innenwänden, die von
+Stützen durchdrungen werden.
+Sofern Sie jedoch die Anzahl von Anschluss-
+schienen etc. ermitteln möchten, müssen Sie
+diese Wände an der Stützenachse splitten.
+
+
+===== PAGE 22/32 =====
+Notizen
+ГГ
+VORWANDINSTALLATION
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Der ЏГ Bereich für Haustechnik wird mit dem
+Morph-Werkzeug modelliert. Wenn Sie diese
+Variante verwenden, empfehlen wir, alle
+Technikbereiche (z.B. in abgehängten
+Decken, Böden, Schlitzen, Technikräumen
+etc.) mit Morphs zu füllen. Sie erhalten so
+anschließend ein Modell aller TGA-Bereiche,
+das mit dem Modell der fachplanenden
+Disziplin abgeglichen werden kann.
+Für eine Vorwandinstallation erstellen Sie
+eine proﬁlierte Wand. Der leere Bereich der
+Vorwandinstallation sollte mit dem Baustoﬀ
+Luftschicht gefüllt sein. Den seitlichen
+Abschluss modellieren Sie mit einer
+mehrschichtigen Wand.
+Sie können im Eigenschaften-Manager die
+Funktion Berechnung für die OK-Vorwand-
+installation erstellen. Mit einem Etikett kann
+dieser Wert für die Plandokumentation
+dargestellt werden.
+ЏБ - Vorwandinstallation
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Proﬁlwand
+Klassiﬁzierung:
+ 
+Wand - Vorwand /
+ 
+Installationswand
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Einstellung "Auswirkung auf  
+Raum" auf "Von Raumﬂäche
+und -volumen abziehen"
+ЏБ - Vorwandinstallation
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Proﬁlwand
+Klassiﬁzierung:
+ 
+Wand - Vorwand /
+ 
+Installationswand
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Einstellung "Auswirkung auf  
+Raum" auf "Von Raumﬂäche
+und -volumen abziehen"
+ЏГ - Bereich für Haustechnik
+Werkzeug:
+ 
+Morph-Werkzeug
+Struktur:
+ 
+Morph-Körper
+Klassiﬁzierung:
+ 
+Raumvorschlag
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Innen
+Weitere Besonderheiten:
+ 
+Schnelle Übersicht, ob
+ 
+Haustechnik in dafür
+ 
+vorgesehenem Bereich
+
+
+===== PAGE 23/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ГД
+SATTELDACH, DACHDECKUNG,
+SPARRENLAGE, RINGANKER
+Den DachauѲau müssen Sie aus mehreren
+Bauteilen erstellen, um einen korrekten
+Anschluss im Bereich des Fußpunktes zu
+erhalten. Achten Sie dabei auf die jeweiligen
+Klassiﬁzierungen.
+Die ЏЗ Außenwand geht bis zur UK ЏЕ Ring-
+anker und wird aus einer mehrschichtigen
+Wand erstellt. Die ЏЖ Dämmung vor Ring-
+anker wird als Proﬁl-Wand erstellt und kann
+auch Sonderelemente enthalten. Die
+Auswirkungen auf Raumﬂäche des Elements
+setzen Sie auf Von Raumﬂäche und -volumen
+abziehen. Der ЏЕ Ringanker wird mit dem
+Träger-Werkzeug erstellt und kann so auch in
+den Giebelwänden modelliert werden.
+Bearbeiten Sie abschließend ЏГ Sparrenlage
+mit Dämmung, ЏД Fußpfette, ЏЕ Ringanker
+und ЏЖ Dämmung vor Ringanker mit dem
+Befehl Elemente verschmelzen. Die
+Darstellung dieser Elemente wird Ihnen nun
+korrekt nach Baustoﬀprioritäten sortiert
+angezeigt.
+Für die Modellübergabe an eine Holzbau-
+software empfehlen wir die Modellierungs-
+methode auf der nächsten Seite.
+Notizen
+ЏБ - Dachdeckung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dachdeckung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏГ - Sparrenlage mit Dämmung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏД - Fußpfette
+Werkzeug:
+ 
+Träger /
+ 
+Bibliothekselement
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЗ - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЕ - Ringanker
+Werkzeug:
+ 
+Träger
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЖ - Dämmung vor Ringanker
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Proﬁl-Wand
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Auswirkung auf Raumﬂäche:
+ 
+"Von Raumﬂäche und
+ 
+-volumen abziehen"
+
+
+===== PAGE 24/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ГЕ
+SATTELDACH, DATENAUSTAUSCH
+MIT HOLZBAUSOFTWARE
+Den DachauѲau müssen Sie aus einzelnen
+Bauteilen erstellen um einen korrekten An-
+schluss im Bereich des Fußpunktes zu erhal-
+ten. Achten Sie dabei auf die jeweiligen
+Klassiﬁzierungen.
+Die ЏЗ Außenwand mit Ringanker erstellen
+Sie aus einer mehrschichtigen Wand, welche
+bis UK des Ringankers geht. ЏЖ Dämmung
+vor Ringanker wird als Proﬁl-Wand erstellt
+und kann auch Sonderelemente enthalten.
+Die Auswirkungen auf Raumﬂäche des
+Elements setzen Sie auf Von Raumﬂäche und
+-volumen abziehen. Der ЏЕ Ringanker wird
+als Träger erstellt und kann so auch in den
+Giebelwänden modelliert werden.
+Bearbeiten Sie abschließend ЏГ Sparrenlage
+mit Dämmung, ЏД Fußpfette, ЏЕ Ringanker,
+ЏЖ Dämmung vor Ringanker und ЏИ Verklei-
+dung mit dem Befehl Elemente
+verschmelzen. Die Darstellung dieser
+Elemente wird Ihnen nun korrekt, nach
+Baustoﬀprioritäten sortiert, angezeigt.
+Notizen
+ЏБ - Dachdeckung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dachdeckung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏИ - Verkleidung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЗ - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЖ - Dämmung vor Ringanker
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Proﬁl-Wand
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Auswirkung auf Raumﬂäche:
+ 
+"Von Raumﬂäche und
+ 
+-volumen abziehen"
+ЏГ - Sparrenlage mit Dämmung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏД - Fußpfette
+Werkzeug:
+ 
+Träger /
+ 
+Bibliothekselement
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЕ - Ringanker
+Werkzeug:
+ 
+Träger
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 25/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ГЖ
+SATTELDACH, GIEBELWAND,
+ORTGANG, RINGANKER
+Die ЏД Außenwand erstellen Sie aus einer
+mehrschichtigen Wand. Sie sollte an jeder
+Stelle höher als ЏБ Dachdeckung sein.
+Der ЏЕ Ringanker wird als Träger oder Proﬁl-
+Träger erstellt. Er verschneidet sich über die
+Baustoﬀe selbstständig mit der Außenwand.
+Achten Sie darauf, dass der untere Träger-
+abschluss richtig modelliert ist und nicht in die
+traufseitige Außenwand übersteht.
+Verschneiden Sie nun ЏД Außenwand und ЏБ
+Dachdeckung mit Elemente mit Dach/Schale
+trimmen.
+Die unterste Bauteilschicht des Oberdachs
+sollte eine höhere Baustoﬀpriorität besitzten
+als alle in der Außenwand verwendeten
+Baustoﬀe.
+Aktivieren Sie im letzten Schritt ЏГ
+Sparrenlage mit Dämmung, ЏД Außenwand,
+ЏЕ Ringanker und sortieren Sie diese mit der
+Funktion Elemente verschmelzen für eine
+korrekte Darstellung nach Baustoﬀprioritäten.
+Um das Modell richtig an eine Holzbau-
+software zu übergeben wird ein dreiteiliger
+DachauѲau aus Oberdach, Dämmschicht
+(Sparrenlage) und Verkleidung empfohlen.
+Dieser wird im vorangegangenen Schaubild
+dargestellt.
+ЏБ - Dachdeckung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dachdeckung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏГ - Sparrenlage mit Dämmung
+Werkzeug:
+ 
+Dach-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏД - Außenwand
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏЕ - Ringanker
+Werkzeug:
+ 
+Träger
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Dach
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 26/32 =====
+Notizen
+ГЗ
+FLACHDACH MIT GEFÄLLE
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Ein Flachdach mit Gefälle erstellen Sie am
+besten mit einer Kombination aus Decken-
+und Dach-Werkzeug in mehreren Schichten.
+Modellieren Sie auf die ЏБ Rohdecke die
+erste Lage ЏГ Dämmung (Mindestdicke) mit
+dem Decken-Werkzeug. Die ЏД Gefälle-
+dämmung wird zusammen mit dem restlichen
+DachauѲau mit dem Dach-Werkzeug als
+mehrschichtiges Bauteil darüber modelliert.
+Ziehen Sie abschließend über die Funktion
+Solid-Element-Befehle die ЏГ Dämmung von
+der ЏД Gefälledämmung/Dachhaut mit
+Abzug mit Verlängerung nach unten ab.
+Wenn Sie die einzelnen Dämmlagen des
+Daches nicht so detailliert darstellen
+möchten, können Sie alles oberhalb der
+Rohdecke auch aus einem einzigen
+mehrschichtigen Dach modellieren. Ziehen
+Sie dann die Rohdecke vom Dach ab.
+ЏБ - Rohdecke:
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏГ - Dämmung:
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏД - Gefälledämmung/Dachhaut
+Werkzeug:
+ 
+Dach-Werkzeug -
+ 
+Einzeldachﬂächen, geneigt
+Struktur:
+ 
+Einschichtiges oder
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+ 
+Bekleidung / Belag -
+ 
+Dachdeckung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 27/32 =====
+Notizen
+ГИ
+ATTIKA
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Die ЏБ Attika modellieren Sie mit dem
+Wand-Werkzeug und platzieren Sie auf der
+OK-Rohdecke.
+Für eine bessere Auswertbarkeit (nach
+Gewerken) empfehlen wir, die ЏД Attika-
+Abdeckung als gesondertes Element zu
+erstellen. Verwenden Sie hier das Träger-
+Werkzeug für eine bessere Darstellung der
+Sichtbarkeit in Dachaufsichten.
+Ein Flachdach mit Gefälle wird aus einer
+Kombination von Decken- und Dachwerkzeug
+erstellt. Die Modellierung des Dachs wird
+unter Flachdach mit Gefälle auf der
+vorangegangen Seite beschrieben.
+ЏБ - Attika
+Werkzeug:
+ 
+Wand-Werkzeug
+Struktur:
+ 
+Proﬁl-Wand/
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Wand
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+Weitere Besonderheiten:
+ 
+Platzierung auf
+ 
+OK-Rohdecke
+ЏГ - Rohdecke/Flachdach:
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Rohbaudecke
+Tragende Funktion:
+ 
+Tragend
+Lage:
+ 
+Außen
+ЏД - Attika-Abdeckung:
+Werkzeug:
+ 
+Träger-Werkzeug
+Struktur:
+ 
+Proﬁl-Träger
+Klassiﬁzierung:
+ 
+Bekleidung / Belag
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏЕ - Gefälledämmung:
+Werkzeug:
+ 
+Geneigter AuѲau -
+ 
+Einzeldachﬂächen
+Struktur:
+ 
+Einschichtiges oder
+ 
+Mehrschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+ЏЖ - Dämmung:
+Werkzeug:
+ 
+Decken-Werkzeug
+Struktur:
+ 
+Einschichtiges Bauteil
+Klassiﬁzierung:
+ 
+Bekleidung / Belag -
+ 
+Dämmung
+Tragende Funktion:
+ 
+Nicht tragend
+Lage:
+ 
+Außen
+
+
+===== PAGE 28/32 =====
+Notizen
+ГЙ
+DECKENDURCHBRUCH
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Öﬀnungen und Durchbrüche in Decken
+erstellen Sie allgemein mit dem Öﬀnungs-
+Werkzeug.
+Für eine korrekte Auswertung und Übergabe
+erstellen Sie für jedes betroﬀene Bauteil
+einzeln eine Öﬀnung.
+In FußbodenauѲauten werden keine
+Öﬀnungen platziert. Da es sich nicht um
+Öﬀnungen oder Durchbrüche im eigentlichen
+Sinn, sondern um geometrische Löcher
+handelt, können diese Bereiche einfach mit
+dem Decken-Werkzeug ausgespart werden.
+Große Öﬀnungen wie z.B. Atrien, Innenhöfe
+etc. können als geometrisches Loch oder als
+Öﬀnung modelliert werden. Bitte bedenken
+Sie bei geometrischen Löchern, dass diese
+im Ifc-Export nicht separat als Ifc-Openings
+ausgegeben werden!
+Beachten Sie zusätzlich auch, dass eine
+Öﬀnung oder ein Durchbruch mit zugehöriger
+Grundrissdarstellung nur angezeigt wird,
+wenn auch das zugehörige Bauteil
+eingeblendet ist. Sie müssen sich für die
+richtige Darstellung einer Öﬀnung in einer
+Rohdecke diese daher immer im
+Ursprungsgeschoss und ein Geschoss
+darunter oder darüber anzeigen lassen.
+01 - Deckendurchbruch:
+Werkzeug:
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+Innen
+ЏД - Atrium, Innenhof, o.Ä.:
+Besonderheit:
+ 
+Durchbrüche mit Decken-
+ 
+Werkzeug schneiden oder das
+ 
+Öﬀnungs-Werkzeug
+ 
+verwenden
+ 
+Keine Solid-Element-
+ 
+Befehle verwenden
+ЏГ - Aufzugsschacht:
+Werkzeug:
+ 
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+ 
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+ 
+Innen
+ЏБ - Deckendurchbruch:
+Werkzeug:
+ 
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+ 
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+ 
+Innen
+ЏБ - Deckendurchbruch:
+Werkzeug:
+ 
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+ 
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+ 
+Innen
+
+
+===== PAGE 29/32 =====
+Notizen
+ГК
+WANDDURCHBRUCH
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Öﬀnungen und Durchbrüche in Wänden
+erstellen Sie allgemein mit dem Öﬀnungs-
+Werkzeug.
+Für die korrekte Auswertung und Übergabe
+müssen Sie jeweils eine gesonderte Öﬀnung
+für jedes Bauteil erstellen.
+Beachten Sie zusätzlich, dass ein Durchbruch
+mit zugehöriger Grundrissdarstellung nur
+angezeigt wird, wenn auch das zugehörige
+Bauteil eingeblendet ist.
+Leere Fenster- und Türöﬀnungen werden mit
+mit dem Fenster- oder Tür-Werkzeug erstellt.
+Klassiﬁzieren Sie diese auch als Fenster oder
+Tür. So können Sie den Fenster- / Türstempel
+einheitlich nutzen. Zudem werden die
+Elemente in den Listen und Auswertungen
+richtig aufgeführt.
+ЏГ - Wandschlitz:
+Werkzeug:
+ 
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+ 
+Durchbrüche / Schlitze -
+ 
+Nische
+Lage:
+ 
+Innen
+ЏД - Leere Fensteröﬀnung:
+Werkzeug:
+ 
+Fenster-Werkzeug
+Klassiﬁzierung:
+ 
+Fenster
+Lage:
+ 
+Außen / Innen
+ЏЕ - Leere Türöﬀnung:
+Werkzeug:
+ 
+Tür-Werkzeug
+Klassiﬁzierung:
+ 
+Tür
+Lage:
+ 
+Außen / Innen
+01 - Wanddurchbruch:
+Werkzeug:
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+Innen
+01 - Wanddurchbruch:
+Werkzeug:
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+Innen
+01 - Wanddurchbruch:
+Werkzeug:
+Öﬀnungs-Werkzeug
+Klassiﬁzierung:
+Durchbrüche / Schlitze -
+ 
+Öﬀnung
+Lage:
+Innen
+
+
+===== PAGE 30/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ДЏ
+KÖRPER FÜR FLÄCHEN-/
+VOLUMENBERECHNUNG
+Regelfall und Sonderfall müssen separate
+Morph-Körper modelliert werden. In den
+Einstellungen für die Morph-Auswahl muss
+jedem Morph-Körper eine Klassiﬁzierung
+nach DIN ГИИ zugewiesen werden.
+Aus diesen Morph-Körpern können nun in
+Verbindung mit den Räumen die
+verschiedenen Flächen- und Volumen-
+berechnungen durchgeführt werden.
+Die Morph-Körper können zusammen mit den
+Morph-Flächen der nächsten Seite auch als
+IFC-Datei exportiert werden und so für
+Kostenschätzungen, z.B. mit BKI, verwendet
+werden.
+Um Bruttorauminhalt und Bruttogrundﬂäche
+berechnen zu können, benötigt das Modell
+Räume. Diese sollten wie auf Seite И
+beschrieben modelliert und automatisch
+platziert werden.
+Anschließend müssen auf jedem Geschoss
+ЏБ Morph-Körper für Flächen-/
+Volumenberechnung erstellt werden, die
+gemeinsam die Aussenkubatur des
+Gebäudes abbilden. Die Unterkante eines
+Morphs muss auf der Geschosshöhe liegen.
+Für die Unterscheidung nach DIN ГИИ in
+ЏБ - Körper für Flächen-/
+ 
+Volumenberechnung
+Werkzeug:
+ 
+Morph-Werkzeug
+Klassiﬁzierung:
+ 
+Raum oder 
+ 
+Bauelement - beliebig
+Tragende Funktion:
+ 
+Nicht deﬁniert
+Lage:
+ 
+Nicht deﬁniert
+Weitere Besonderheiten:
+ 
+Klassiﬁzierung nach DIN ГИИ
+ 
+muss festgelegt werden
+ 
+Unterkante = Geschosshöhe
+
+
+===== PAGE 31/32 =====
+BIM Modellierungsrichtlinien für Archicad ГЗ
+Stand БД.ЏИ.ГЏГГ
+Notizen
+ДБ
+GRUNDFLÄCHEN NACH DIN ГИИ
+(GF, AF, BF, UF)
+Um die Grundstücksﬂäche, Aussenanlagen-
+ﬂäche, bebaute Fläche und unbebaute Fläche
+nach DIN ГИИ abbilden und als IFC-Datei
+übergeben zu können, müssen diese Flächen
+in ДD modelliert werden.
+Für die Modellierung einer ЏБ - Grundﬂäche
+nach DIN ГИИ wird das Morph-Werkzeug
+verwendet. Die Fläche wird entsprechend der
+Vorgaben in DIN ГИИ modelliert.
+Im Anschluss wird für ЏБ - Grundﬂäche nach
+DIN ГИИ über die Eigenschaft Flächenart
+nach DIN ГИИ der Flächentyp festgelegt.
+Nach dieser Methode werden alle benötigten
+Flächen modelliert. Diese Morph-Flächen
+können sich im Modell überlagern.
+Die Morph-Flächen können zusammen mit
+den Morph-Körpern der vorherigen Seite
+auch als IFC-Datei exportiert werden und so
+für Kostenschätzungen, z.B. mit BKI,
+verwendet werden.
+ЏБ - Grundﬂäche nach DIN ГИИ
+Werkzeug:
+ 
+Morph-Werkzeug
+Klassiﬁzierung:
+ 
+Raum oder
+ 
+Bauelement - beliebig
+Tragende Funktion:
+ 
+Nicht deﬁniert
+Lage:
+ 
+Nicht deﬁniert
+Weitere Besonderheiten:
+ 
+Die Eigenschaft
+ 
+Flächenart nach DIN ГИИ
+ 
+muss für jede Fläche
+ 
+festgelegt werden
+
+
+===== PAGE 32/32 =====
+Graphisoft.de
+Graphisoft.at
+GRAPHISOFT DEUTSCHLAND GMBH 
+Landaubogen 10 
+81373 München 
+Telefon +49 89 746 43 0
+Fax +49 89 746 43 299 
+E-Mail: mail@graphisoft.de  
+Stand: 07/2022 | GRA22254 | Änderungen und Irrtümer vorbehalten.
+Titelbild: The Independent 
+Architekten: Rhode:Partners Architects, USA 
+Foto: © Nick Simonite
+Titelbild: The Independent 
+Architekten: Rhode:Partners Architects, USA 
+Foto: © Nick Simonite

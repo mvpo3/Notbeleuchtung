@@ -1,0 +1,627 @@
+
+
+===== PAGE 1/12 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8001-4-95 
+ 
+Ausgabe: 2008-12-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis AC 1000 V und DC 1500 V –  
+Teil 4-95: Aufzüge 
+ 
+Erection of electrical installations with rated voltages up to AC 1000 V and  
+DC 1500 V – Part 4-95: Lifts 
+ 
+Réalisation des installations électriques de tension nominale jusqu’à AC 1000 V et 
+DC 1500 V – Partie 4-95: Ascenseurs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01; 91.140.90 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2008. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 2/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................3 
+1 
+Anwendungsbereich .............................................................................................................................4 
+2 
+Normative Verweisungen......................................................................................................................4 
+3 
+Begriffe ...................................................................................................................................................5 
+4 
+Zuleitung.................................................................................................................................................5 
+4.1 
+Energiezufuhr.........................................................................................................................................5 
+4.1.1 
+Triebwerk und davon abhängige Stromkreise....................................................................................5 
+4.1.2 
+Beleuchtungsstromkreis des Fahrkorbes und davon abhängige Stromkreise ..............................5 
+4.1.3 
+Andere Stromkreise...............................................................................................................................5 
+4.2 
+Querschnitt.............................................................................................................................................5 
+4.3 
+Ausführung der Zuleitung.....................................................................................................................6 
+4.4 
+Funktionserhalt......................................................................................................................................6 
+5 
+Elektrische Ausrüstung ........................................................................................................................6 
+5.1 
+Elektrische Betriebsmittel.....................................................................................................................6 
+5.2 
+Aufzug-Steigleitungsschalter...............................................................................................................6 
+5.3 
+Fehlerstrom-Schutzeinrichtungen.......................................................................................................6 
+Anhang A (informativ) Literaturhinweise .........................................................................................................7 
+Anhang B (informativ) Leitungsschema für Aufzüge – Ausführungsbeispiele ...........................................8 
+B.1 
+Ausführungsbeispiel bei der Maßnahme des Fehlerschutzes  
+Fehlerstrom-Schutzschaltung..............................................................................................................9 
+B.2 
+Ausführungsbeispiel bei der Maßnahme des Fehlerschutzes  
+Nullung..................................................................................................................................................10 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 3/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+3 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 
+1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt ÖVE-EN 1 Teil 4 § 95:1991 und ÖVE-EN 1 Teil 4 § 95a:1997, die technisch 
+überarbeitet 
+wurden. 
+Die 
+wesentlichen 
+Änderungen 
+sind 
+nachfolgend 
+angeführt, 
+wobei 
+diese 
+Zusammenstellung keinen Anspruch auf Vollständigkeit erhebt: 
+– 
+Anpassung an Anforderungen gemäß ÖNORM EN 81-1 und ÖNORM EN 81-2, 
+– 
+Begriffsdefinition Aufzug-Steigleitungsschalter, 
+– 
+Aktualisierung der normativen Verweisungen. 
+Da die zu ersetzenden Bestimmungen jedoch mit der ETV 2002/A1 verbindlich erklärt wurden, kann die 
+Zurückziehung dieser Bestimmungen erst mit Erscheinen einer neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 4/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+4 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für das Errichten von elektrischen Anlagen für Aufzüge bis zu den Eintrittsklemmen 
+des 
+– 
+Hauptschalters für die Stromversorgung des Triebwerkes und davon abhängigen Stromkreisen und 
+ANMERKUNG Diese Stromkreise dienen zB der Aufzugssteuerung und der Aufzugsbremse. 
+– 
+Schalters für den Beleuchtungsstromkreis des Fahrkorbes und davon abhängigen Stromkreisen. 
+ANMERKUNG Diese Stromkreise umfassen zB den Stromkreis für die Belüftung des Fahrkorbes, die Steckdosen 
+auf 
+dem 
+Fahrkorbdach. 
+Dabei 
+ist 
+insbesondere 
+auf 
+die 
+Anforderungen 
+des 
+Zusatzschutzes 
+für 
+Steckdosenstromkreise Bedacht zu nehmen. 
+Ab den Eintrittsklemmen gelten die Bestimmungen gemäß ÖNORM EN 81-1 bzw. ÖNORM EN 81-2. 
+Diese Anforderungen ergänzen die Bestimmungen gemäß ÖVE-EN 1 (alle Teile) bzw. ÖVE/ÖNORM E 8001 
+(alle Teile). 
+Für 
+besonders 
+genutzte 
+Bereiche 
+wie 
+zB 
+Starkstromanlagen 
+in 
+baulichen 
+Anlagen 
+für 
+Menschenansammlungen, Starkstromanlagen in Krankenhäusern und medizinisch genutzten Räumen 
+außerhalb 
+von 
+Krankenhäusern 
+u. dgl. 
+sind 
+zusätzliche 
+Maßnahmen 
+erforderlich 
+(siehe  
+zB ÖVE/ÖNORM E 8002 und ÖVE/ÖNORM E 8007). 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖNORM EN 81-1, Sicherheitsregeln für die Konstruktion und den Einbau von Aufzügen – Teil 1: Elektrisch 
+betriebene Personen- und Lastenaufzüge 
+ÖNORM EN 81-2, Sicherheitsregeln für die Konstruktion und den Einbau von Aufzügen – Teil 2: Hydraulisch 
+betriebene Personen- und Lastenaufzüge 
+ÖNORM DIN 4102-12, Brandverhalten von Baustoffen und Bauteilen – Teil 12: Funktionserhalt von 
+elektrischen Kabelanlagen – Anforderungen und Prüfungen 
+ÖVE/ÖNORM E 8001 Reihe, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V 
+ÖVE/ÖNORM E 8001-2-31, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 2-31: Freischalten, Trennen und Schalten – Anforderungen, Auswahl und Verwendung von 
+Geräten 
+ÖVE/ÖNORM E 8002 Reihe, Starkstromanlagen und Sicherheitsstromversorgung in baulichen Anlagen für 
+Menschenansammlungen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 5/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+5 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM E 8001 Reihe, ÖNORM 
+EN 81-1 und ÖNORM EN 81-2 sowie der folgende Begriff: 
+3.1 
+Aufzug-Steigleitungsschalter 
+Betätigungseinrichtung gemäß ÖVE/ÖNORM E 8001-2-31:2003, Abschnitt 31.7 und Abschnitt 31.8 zum 
+Ausschalten für mechanische Instandhaltung 
+ANMERKUNG 1 
+Der Aufzug-Steigleitungsschalter ist nicht ident mit dem Hauptschalter gemäß ÖNORM EN 81-1 und 
+ÖNORM EN 81-2. 
+ANMERKUNG 2 
+Der Aufzug-Steigleitungsschalter kann je nach Anlage zB in Form eines handbetätigten 
+Lastschalters, eines fernbetätigten Schützes oder eines fernbetätigten Leistungsschalters ausgeführt sein. 
+ANMERKUNG 3 
+Bei Einzel-Aufzügen sind Ausführungen mit Leistungs- bzw. Lastschalter üblich, bei Mehrfach-
+Aufzügen wird die Ausführung mit Schütz bevorzugt. 
+4 
+Zuleitung 
+4.1 Energiezufuhr 
+4.1.1 Triebwerk und davon abhängige Stromkreise 
+Die Stromversorgung des Triebwerkes und davon abhängige Stromkreise muss als eigene Zuleitung 
+(Aufzugs-Steigleitung) vom Hausanschlusskasten bzw. von einer Niederspannungshauptverteilung ausgeführt 
+werden (siehe Anhang B, Bild B.1 und Bild B.2). 
+Mit Ausnahme von Feuerwehraufzügen, kann bei einer Aufzugsgruppe mit einem gemeinsamen 
+Triebwerksraum eine gemeinsame Zuleitung ausgeführt werden. 
+4.1.2 Beleuchtungsstromkreis des Fahrkorbes und davon abhängige Stromkreise 
+Die Stromversorgung für den Beleuchtungsstromkreis des Fahrkorbes und die damit in Zusammenhang 
+stehenden Stromkreise für jeden Aufzug sind entweder als eigene Zuleitung vom Hausanschlusskasten bzw. 
+von einer Niederspannungshauptverteilung oder durch eine vor dem Hauptschalter des jeweiligen Aufzuges 
+abgezweigte Zuleitung auszuführen. 
+4.1.3 Andere Stromkreise 
+Unabhängig von 4.1.2 müssen eigene Stromkreise im Verteiler der Gemeinschaftseinrichtungen des Hauses 
+(zB Unterverteiler Stiegenhaus) vorgesehen werden, für  
+– 
+die Beleuchtung des Triebwerksraumes, des Rollenraumes, des Schachtes und des Bereiches der 
+Notbefreiungseinrichtungen, 
+– 
+Steckdosen im Bereich des Triebwerksraumes und des Schachtes. 
+Ist eine Orientierungsbeleuchtung im Beleuchtungsstromkreis für den Triebwerksraum, den Rollenraum und 
+den Schacht ausgeführt, so darf der Stromkreis für die Beleuchtung auch für die Versorgung von Steckdosen 
+und anderen Einrichtungen verwendet werden. 
+4.2 Querschnitt 
+Die Querschnitte der Zuleitungen müssen so gewählt werde, dass an diesen ein Spannungsabfall von 3 % bei 
+gleichzeitigem Anlauf sämtlicher Aufzugsmotoren, die an eine gemeinsame Zuleitung angeschlossen sind, 
+nicht überschritten wird. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 6/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+6 
+4.3 Ausführung der Zuleitung 
+Die Zuleitung zum Triebwerk ist fünfpolig auszuführen. 
+4.4 Funktionserhalt 
+Für Versorgungs- und Steuerleitungen von Feuerwehraufzügen muss der Funktionserhalt gemäß den 
+technischen Bestimmungen der ÖVE/ÖNORM E 8002-1 sowie ÖNORM DIN 4102-12 sichergestellt werden. 
+Für Hochhäuser gelten zusätzlich die technischen Bestimmungen gemäß ÖVE/ÖNORM E 8002-4. 
+5 
+Elektrische Ausrüstung 
+5.1 Elektrische Betriebsmittel 
+Informationen betreffend Mindestausstattung sind ÖNORM EN 81-1 und ÖNORM EN 81-2 zu entnehmen. 
+ANMERKUNG Ergänzende Anforderungen betreffend Notbeleuchtung für Feuerwehraufzüge sind in TRVB A 150 
+enthalten. 
+5.2 Aufzug-Steigleitungsschalter 
+Die Betätigungseinrichtung für den Aufzug-Steigleitungsschalter muss in unmittelbarer Nähe der Haltestelle in 
+der Hauptzugangsebene angeordnet und als Aufzug-Steigleitungsschalter gekennzeichnet werden. Diese 
+Betätigungseinrichtung muss gegen unbefugtes Betätigen geschützt sein (zB Schlüsselschalter) und die 
+Schaltstellung muss eindeutig erkennbar sein.  
+5.3 Fehlerstrom-Schutzeinrichtungen 
+Bei Anwendung der Fehlerstrom-Schutzschaltung als Maßnahme des Fehlerschutzes müssen Fehlerstrom-
+Schutzschalter in der Nähe des jeweiligen Hauptschalters für die Stromversorgung des Triebwerkes bzw. des 
+Schalters für den Beleuchtungsstromkreis des Fahrkorbes angeordnet werden. Diese dürfen nicht im 
+Aufzugsschacht montiert werden. 
+ANMERKUNG Bei Aufzügen mit Umrichtergespeisten Motoren ist auf die Auswahl geeigneter Fehlerstrom-
+Schutzeinrichtungen zu achten. 
+Sind diesen Fehlerstrom-Schutzeinrichtungen keine weiteren Fehlerstrom-Schutzeinrichtungen in der 
+Niederspannungshauptverteilung vorgeschaltet, so sind die Zuleitungen bis zu den Eintrittsklemmen der zuvor 
+genannten Fehlerstrom-Schutzschalter schutzisoliert auszuführen. 
+Allfällige Fehlerstrom-Schutzeinrichtungen für den Zusatzschutz müssen ebenfalls in der Nähe des jeweiligen 
+Hauptschalters für die Stromversorgung des Triebwerkes bzw. des Schalters für den Beleuchtungsstromkreis 
+des Fahrkorbes angeordnet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 7/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+7 
+Anhang A 
+(informativ) 
+Literaturhinweise 
+ÖNORM EN 81-3, Sicherheitsregeln für die Konstruktion und den Einbau von Aufzügen – Teil 3: Elektrisch 
+und hydraulisch betriebene Kleingüteraufzüge 
+ÖVE/ÖNORM EN 50110-1, Betrieb von elektrischen Anlagen – Teil 1: Europäische Norm 
+ÖVE/ÖNORM EN 60204-1, Elektrische Ausrüstung von Maschinen – Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 60529, Schutzarten von Gehäuse (IP-Code) 
+ÖVE/ÖNORM E 8007, Starkstromanlagen in Krankenhäusern und medizinisch genutzten Räumen außerhalb 
+von Krankenhäusern 
+TRVB A 150, Technische Richtlinien vorbeugender Brandschutz – Feuerwehraufzüge 
+Aufzüge-Sicherheitsverordnung 1996 – ASV 1996, BGBl. Nr. 780/1996 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 8/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+8 
+Anhang B 
+(informativ) 
+Leitungsschema für Aufzüge – Ausführungsbeispiele 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 9/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+9 
+B.1 
+Ausführungsbeispiel bei der Maßnahme des Fehlerschutzes Fehlerstrom-
+Schutzschaltung 
+Details der Absicherung und Selektivität sowie geeigneter Charakteristiken der verwendeten Schaltgeräte sind 
+bei der Ausführung zu berücksichtigen. 
+Es bedeutet: 
+a 
+Aufzugs-Steigleitungsschütz 
+Bild B.1 – Ausführungsbeispiel bei Fehlerstrom-Schutzschaltung 
+Hauptschalter
+Stromversorgung
+Triebwerk 1
+Schalter
+Beleuchtung
+Fahrkorb 1
+Beleuchtung
+Steckdosen
+Triebwerksraum,
+Rollenraum,
+Schacht und
+Bereich
+Notbefreiungs-
+einrichtung
+Triebwerksraum,
+Rollenraum
+und Schacht
+Verteiler Triebwerksraum
+Aufzugs-Steigleitung
+Hauptzugangsebene
+Unterverteiler Aufzug
+Verteiler der Gemeinschaftseinrichtungen
+zB Stiegenhaus
+Hauptverteiler
+FI
+FI
+FI/LS
+FI/LS
+FI/LS
+Aufzugs-
+Steigleitungsschalter
+zB mit Fernbetätigung
+Aufzugs-
+Steigleitungsschalter
+zB mit Fernbetätigung
+a
+a
+Zuleitung für
+andere Stromkreise
+FI
+FI/LS
+Hauptschalter
+Stromversorgung
+Triebwerk 2
+Schalter
+Beleuchtung
+Fahrkorb 2
+FI
+FI/LS
+a 
+a
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 10/12 =====
+ÖVE/ÖNORM E 8001-4-95:2008 
+10 
+B.2 
+Ausführungsbeispiel bei der Maßnahme des Fehlerschutzes Nullung 
+Details der Absicherung und Selektivität sowie geeigneter Charakteristiken der verwendeten Schaltgeräte sind 
+bei der Ausführung zu berücksichtigen. 
+Es bedeutet: 
+a 
+Aufzugs-Steigleitungsschütz 
+Bild B.2 – Ausführungsbeispiel bei Nullung 
+Hauptverteiler
+Unterverteiler Aufzug
+Verteiler der Gemeinschaftseinrichtungen
+zB Stiegenhaus
+Hauptzugangsebene
+Verteiler Triebwerksraum
+Aufzugs-
+Steigleitungsschalter
+zB mit Fernbetätigung
+Aufzugs-
+Steigleitungsschalter
+zB mit Fernbetätigung
+Aufzugs-Steigleitung
+Zuleitung für
+andere Stromkreise
+FI/LS
+FI/LS
+Hauptschalter
+Stromversorgung
+Triebwerk 1
+Hauptschalter
+Stromversorgung
+Triebwerk 2
+Schalter
+Beleuchtung
+Fahrkorb 1
+Schalter
+Beleuchtung
+Fahrkorb 2
+Triebwerksraum,
+Rollenraum,
+Schacht und
+Bereich
+Notbefreiungs-
+einrichtung
+Beleuchtung
+Triebwerksraum,
+Rollenraum
+und Schacht
+Steckdosen
+FI
+a
+a
+a 
+a
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 11/12 =====
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 12/12 =====
+Wichtige Informationen für Norm-Anwender
+ÖVE/ÖNORMEN  sind Regeln, die im Dialog und Konsens
+aller Betroffenen und Interessierten entwickelt werden. Sie legen im elektro-
+technischen Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen,
+Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser
+Anforderungen überprüft wird.
+Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit
+freiwillig, aber naheliegend, da Normen den aktuellen Stand der Technik do-
+kumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür
+bürgen das hohe Fachwissen und die Erfahrung der Experten und Expertin-
+nen in den zuständigen Komitees auf nationaler, europäischer und internatio-
+naler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elek-
+trotechnik (OVE) und seiner Referenten.
+Aktualität des Normenwerks. Analog zur technischen und
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierli-
+chen Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Ak-
+tualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig,
+immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu
+haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren
+bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen. Um zuverlässig über Änderungen
+in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils
+gültigen Fassungen zu haben, bietet „Austrian Standards plus Publishing“
+gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote.
+Das reicht von klassischen Fachgebiets-Abonnements bis hin zu innovativen
+kundenspezifischen Online-Lösungen und Update-Services.
+Ausländische Normen & Regelwerke: Über »AS+P« können auch
+Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Län-
+dern der Welt bezogen werden – ein besonders wichtiger Service für die
+exportorientierte Wirtschaft.
+Ebenso sind Dokumente anderer österreichischer Regelsetzer bei »AS+P«
+erhältlich.
+Die »Austrian Standards plus GmbH« ist ein
+Unternehmen des Österreichischen Normungsinstituts
+Austrian Standards plus Publishing
+(AS+P)
+Heinestraße 38, 1020 Wien
+E-Mail:
+sales@as-plus.at
+Internet: www.as-plus.at/shop
+Fax:
++43 1 213 00-818
+Tel.:
++43 1 213 00-805
+Informationen über Dienstleistungen und Angebote von
+Austrian Standards plus Publishing und OVE bei:
+OVE Normung
+OVE Österreichischer Verband für
+Elektrotechnik
+Eschenbachgasse 9, 1010 Wien
+E-Mail:
+ove@ove.at
+Internet: www.ove.at
+Fax:
++43 1 586 74 08
+Tel.:
++43 1 587 63 73
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 12
+www.ris.bka.gv.at

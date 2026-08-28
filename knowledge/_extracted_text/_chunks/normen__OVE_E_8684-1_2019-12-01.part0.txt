@@ -1,0 +1,2497 @@
+
+
+===== PAGE 1/138 =====
+OVE E 8684-1 
+Ausgabe: 2019-12-01 
+Stecker und Steckdosen für den Hausgebrauch 
+und ähnliche Zwecke 
+Teil 1: Allgemeine Anforderungen 
+Plugs and socket-outlets for household and similar purposes – 
+Part 1: General requirements 
+Fiches et prises de courant pour usages domestiques et analogues – 
+Partie 1: Règles générales 
+(IEC 60884-1:2013, Edition 3.2) 
+ICS 
+29.120.30 
+Gleichwertig (EQV) 
+IEC 60884-1:2013, Edition 3.2 (Übersetzung) 
+   Ersatz für    ÖVE/ÖNORM E 8684-1:2010 
+ zuständig 
+OVE/TK IS 
+Installationsmaterial und Schaltgeräte 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Copyright © OVE – 2019.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at
+Internet: http://www.ove.at
+Webshop: www.ove.at/webshop
+Tel.: +43 1 587 63 73
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 2/138 =====
+OVE E 8684-1:2019-12-01 
+2 
+Inhalt 
+Seite 
+Vorwort ............................................................................................................................................................... 4 
+1 
+Anwendungsbereich ............................................................................................................................... 5 
+2 
+Normative Verweisungen ....................................................................................................................... 6 
+3 
+Begriffe ................................................................................................................................................... 7 
+4 
+Allgemeine Anforderungen ................................................................................................................... 11 
+5 
+Allgemeine Anmerkungen zu den Prüfungen ...................................................................................... 11 
+6 
+Bemessungswerte ................................................................................................................................ 13 
+7 
+Einteilung .............................................................................................................................................. 13 
+8 
+Aufschriften .......................................................................................................................................... 15 
+9 
+Prüfung der Abmessungen .................................................................................................................. 18 
+10 
+Schutz gegen elektrischen Schlag ....................................................................................................... 20 
+11 
+Schutzleiteranschluss........................................................................................................................... 23 
+12 
+Anschlussklemmen und Anschlüsse .................................................................................................... 24 
+13 
+Aufbau ortsfester Steckdosen .............................................................................................................. 37 
+14 
+Aufbau von Steckern, Kupplungssteckdosen ...................................................................................... 43 
+15 
+Verriegelte Steckdosen ........................................................................................................................ 50 
+16 
+Alterungsbeständigkeit, Schutz durch Gehäuse und Beständigkeit gegen Feuchtigkeit ..................... 50 
+17 
+Isolationswiderstand und Spannungsfestigkeit .................................................................................... 54 
+18 
+Wirkungsweise der Schutzkontakte ..................................................................................................... 55 
+19 
+Temperaturerhöhung............................................................................................................................ 56 
+20 
+Schaltvermögen ................................................................................................................................... 59 
+21 
+Bestimmungsgemäßer Betrieb ............................................................................................................. 60 
+22 
+Stecker-Abzugskraft ............................................................................................................................. 62 
+23 
+Flexible Leitungen und ihr Anschluss................................................................................................... 65 
+24 
+Mechanische Festigkeit ........................................................................................................................ 70 
+25 
+Wärmebeständigkeit............................................................................................................................. 79 
+26 
+Schrauben, stromführende Teile und Verbindungen ........................................................................... 81 
+28 
+Beständigkeit von Isoliermaterial gegen übermäßige Wärme und Feuer und 
+Kriechstromfestigkeit ............................................................................................................................ 86 
+29 
+Rostschutz ............................................................................................................................................ 88 
+30 
+Zusätzliche Prüfungen an Stiften mit Isolierüberzügen ........................................................................ 89 
+31.101 Elektromagnetische Verträglichkeit (EMV) ............................................................................................... 90 
+32.101 Bilder..................................................................................................................................................... 91 
+Anhang A (normativ)  Stückprüfungen für in der Fabrik angeschlossene  mobile Steckvorrichtungen 
+in Bezug auf Sicherheit  (Schutz gegen elektrischen Schlag, richtige Polarität) ............................... 123 
+A.1 
+Allgemeine Anforderungen ................................................................................................................. 123 
+A.2 
+Polarisierte Systeme, Phase (L) und Neutralleiter (N) – richtige Verbindung .................................... 123 
+A.3 
+Schutzleiterkontinuität ........................................................................................................................ 124 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 3/138 =====
+OVE E 8684-1:2019-12-01 
+3 
+Seite 
+A.4 
+Kurzschluss/falsche Verbindung und Reduzierung der Kriech- und Luftstrecken zwischen 
+Phase (L) oder Neutralleiter (N) zum Schutzleiter (
+)...................................................................... 124 
+Anhang B (normativ)  Übersicht von erforderlichen Prüfmustern .................................................................. 125 
+Anhang C ....................................................................................................................................................... 126 
+Anhang D (normativ)  In mobilen Steckdosen integrierte Schalter ................................................................ 127 
+Anhang E ........................................................................................................................................................ 127 
+Literaturhinweise ............................................................................................................................................ 128 
+Nationaler Anhang NA (normativ)  Prüfvorrichtungen, Prüfstecker ................................................................... 130 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 4/138 =====
+4 
+OVE E 8684-1:2019-12-01 
+Vorwort 
+Diese Norm OVE E 8684-1:2019 hat den Status einer nationalen elektrotechnischen Norm gemäß ETG 
+1992. Bei ihrer Anwendung ist dieses Vorwort zu berücksichtigen. 
+Der Rechtsstatus dieser nationalen elektrotechnischen Norm ist den jeweils geltenden Gesetzen oder 
+Verordnungen zu entnehmen. 
+Für den Fall eines undatierten Verweises auf ein Dokument (zB Verweis auf eine Norm ohne Angabe des 
+Ausgabedatums) bezieht sich der Verweis auf die jeweils neueste Ausgabe dieses Dokuments. Für den Fall 
+eines datierten Verweises bezieht sich der Verweis immer auf die in Bezug genommene Ausgabe des 
+Dokuments. 
+Bei mittels Gesetz oder Verordnung verbindlich erklärten rein österreichischen elektrotechnischen Normen, 
+verbindlich erklärten elektrotechnischen Referenzdokumenten oder kundgemachten elektrotechnischen 
+Normen ist zu beachten: 
+–
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum
+Zeitpunkt der Herausgabe dieser Normen oder Referenzdokumente. Zum Zeitpunkt der Anwendung dieser
+Normen oder Referenzdokumente ist der durch Gesetz oder Verordnung oder gegebenenfalls auf andere
+Weise festgelegte aktuelle Stand zu berücksichtigen.
+–
+Die in diesen Normen enthaltenen Rechtsbelehrungen, Einleitungen, Fußnoten, Anhänge und Hinweise
+auf Fundstellen und andere Texte werden von der Verbindlicherklärung oder von kundgemachten Normen
+betreffenden Regelungen nicht erfasst.
+Textmarkierungen 
+In dieser OVE-Norm wurden folgende Zeichenformatierungen verwendet: 
+–
+Allgemeine Anforderungen: Schriftart Arial
+–
+Prüfanforderungen: Schriftstil kursiv
+Ersatzvermerk 
+Basisdokument für OVE E 8684-1:2019 ist die Internationale Norm IEC 60884-1:2013, Edition 3.2, wobei 
+einzelne Abschnitte der Internationale Norm vom zuständigen Technischen Komitee IS „Installationsmaterial 
+und Schaltgeräte“ und Technischen Subkomitee IS23BC „Schalter und Steckvorrichtungen“ an die 
+österreichischen Gegebenheiten angepasst wurden. 
+Diese Änderungen, Anpassungen und Ergänzungen sind am linken Seitenrand mit einer senkrechten Linie 
+gekennzeichnet. 
+Zusätzlich zu den seitlichen Linien gilt: 
+Neue nationale Abschnitte wurden in den jeweiligen Abschnitten zugeordnet und durch die Schriftart Times 
+New Roman gekennzeichnet. Die Nummerierung der nationalen Ergänzungen besteht aus der zutreffenden 
+Abschnittsnummer und einer zusätzlichen Zahl beginnend bei 101 (zB 13.24.101) bzw. findet sich im 
+Nummerierungsschema die Bezeichnung „AT“. 
+Diese Anpassung umfasst neben redaktionellen Korrekturen insbesondere folgende Punkte, wobei diese 
+Zusammenstellung keinen Anspruch auf Vollständigkeit erhebt: 
+–
+Wegfall von Schutzklasse 0-Steckvorrichtungen;
+–
+Anforderungen und Prüfungen an Steckvorrichtungen mit seitlichen Schutzkontakten;
+–
+Abmessungen von Leitungen gemäß ÖVE/ÖNORM EN 50525 Reihe;
+–
+Begrenzung von Bemessungsspannung auf 250 V bzw. 440 V;
+–
+Begrenzung von Bemessungsstrom auf 2,5 A bzw. 16 A und 25 A;
+–
+Anwendung von Prüfstecker.
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 5/138 =====
+OVE E 8684-1:2019-12-01 
+5 
+1 
+Anwendungsbereich 
+Diese OVE-Norm gilt für Stecker und ortsfeste Steckdosen oder Kupplungssteckdosen, nur für Wechselstrom 
+mit oder ohne Schutzkontakt, mit einer Bemessungsspannung von über 50 V jedoch nicht mehr als 440 V und 
+einem Bemessungsstrom der 32 A nicht überschreitet, die für den Hausgebrauch oder ähnliche Zwecke, 
+entweder in Innenräumen oder im Freien, vorgesehen sind. 
+Der Bemessungsstrom ist für ortsfeste Steckdosen, die mit schraubenlosen Anschlussklemmen ausgestattet 
+sind, auf 16 A begrenzt. 
+Diese OVE-Norm erstreckt sich nicht auf Anforderungen an Unterputz-Einbaudosen. Sie behandelt nur jene 
+Anforderungen für Aufputzdosen, Einbaudosen und Montagekästen, die für die Prüfungen an Steckdosen 
+notwendig sind. 
+ANMERKUNG 1  
+Allgemeine Anforderungen für Einbaudosen sind in ÖVE/ÖNORM EN 60670-1 angegeben. 
+Geräteanschlussleitungen werden in den technischen Bestimmungen ÖVE EN 60799 behandelt. 
+Diese OVE-Norm gilt auch für Stecker und Kupplungssteckdosen in Verlängerungsleitungen. Sie gilt auch für 
+Stecker und Steckdosen, die Bestandteil eines Gerätes sind, sofern in den technischen Bestimmungen für das 
+betreffende Gerät nicht anders angegeben. 
+Diese OVE-Norm gilt auch soweit anwendbar für Steckdosen in Verbindung mit Sicherungen, automatischen 
+Schaltern, Signallampen, Überspannungsableitern u. dgl. 
+Diese OVE-Norm gilt nicht für: 
+– 
+Stecker, Steckdosen und Gerätesteckvorrichtungen für industrielle Zwecke; 
+ 
+ANMERKUNG 1.AT 
+Diese Steckvorrichtungen werden in den technischen Bestimmungen ÖVE/ÖNORM  
+EN 60309 Reihe behandelt. 
+– 
+Gerätesteckvorrichtungen; 
+ 
+ANMERKUNG 2.AT 
+Diese Steckvorrichtungen werden in den technischen Bestimmungen ÖVE/ÖNORM  
+EN 60320 Reihe behandelt. 
+– 
+Stecker, ortsfeste Steckdosen und Kupplungssteckdosen für ELV; 
+ 
+ANMERKUNG 2 
+ELV-Werte sind in ÖVE/ÖNORM E 8001-1 bzw. OVE E 8101 festgelegt. 
+ANMERKUNG 3 Steckdosen mit Kontrolllampen sind zulässig, vorausgesetzt, dass die Kontrolllampen der zutreffenden 
+Norm entsprechen, falls vorhanden. 
+– 
+flache, nicht-wieder anschließbare, zweipolige Stecker, 2,5 A, 250 V, mit Leitung, für die Verbindung von 
+Schutzklasse-II-Geräten für Haushalt und ähnliche Zwecke; 
+ 
+ANMERKUNG 3.AT 
+Diese Steckvorrichtungen werden in den technischen Bestimmungen ÖVE IG/EN 50075 
+behandelt. 
+– 
+Leitungsroller für den Hausgebrauch und ähnliche Zwecke. 
+ 
+ANMERKUNG 4.AT 
+Diese Leitungsroller werden in den technischen Bestimmungen OVE EN 61242 
+behandelt. 
+Stecker, ortsfeste Steckdosen oder Kupplungssteckdosen, die dieser OVE-Norm entsprechen, sind zur 
+Verwendung bei Umgebungstemperaturen, die üblicherweise +40°C nicht überschreiten, und ihr Mittelwert 
+über eine Dauer von 24 h nicht höher als +35 °C beträgt. Die untere Grenze der Umgebungstemperatur ist  
+–5 °C. 
+ANMERKUNG 4  
+Steckdosen, die dieser OVE-Norm entsprechen, sind nur derart und an solchen Stellen zum 
+Einbau in Betriebsmittel geeignet, wo es unwahrscheinlich ist, dass die Umgebungstemperatur 35 °C überschreitet. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 6/138 =====
+OVE E 8684-1:2019-12-01 
+6 
+Für Stellen, bei denen besondere Bedingungen vorliegen, wie in Fahrzeugen oder an Bord von Schiffen oder 
+Flugzeugen und dergleichen und in gefährdeten Räumen, in denen zB Explosionsgefahr besteht, können 
+Sonderkonstruktionen erforderlich sein. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe 
+des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind immer in 
+der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8608 Reihe, Installationsdosen  
+ÖVE/ÖNORM E 8610, Dreipolige Steckdosen mit N- und mit Schutzkontakt; Hauptmaße; 16 A,  
+AC 220/380 V; 16 A, AC 230/400 V  
+ÖVE/ÖNORM E 8611, Dreipolige Stecker mit N- und mit Schutzkontakt; Hauptmaße; 16 A, AC 220/380 V;  
+16 A, AC 230/400 V  
+ÖVE/ÖNORM E 8612, Dreipolige Steckdosen mit N- und mit Schutzkontakt; Hauptmaße; 25 A,  
+AC 220/380 V; 25 A, AC 230/400 V   
+ÖVE/ÖNORM E 8613, Dreipolige Stecker mit N- und mit Schutzkontakt; Hauptmaße; 25 A, AC 220/380 V;  
+25 A, AC 230/400 V 
+ÖVE/ÖNORM E 8620 Reihe, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke: Dosen 
+ÖVE/ÖNORM E 8622 Reihe, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke: 
+Steckdosen 
+ÖVE/ÖNORM E 8626, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke – Lehren zur 
+Überprüfung der Funktionsmaße   
+ÖVE/ÖNORM E 8242, Starkstromleitungen mit Nennspannungen von 300/500 V bis 4000/8000 V (U0/U) – 
+Nationale Typen  
+ÖVE-IG/EN 50075, Flache, nicht wieder anschließbare, zweipolige Stecker, 2,5 A, 250 V, mit Leitung, für die 
+Verbindung von Klasse II-Geräten für Haushalt und ähnliche Zwecke  
+ÖVE/ÖNORM EN 50525 Reihe, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) 
+ÖVE/ÖNORM EN 60068-2-30, Umweltprüfungen – Teil 2-30: Prüfungen – Prüfung Db und Leitfaden: 
+Feuchte Wärme, zyklisch (12 + 12-Stunden-Zyklus)  
+ÖVE/ÖNORM EN 60068-2-31, Umgebungseinflüsse – Teil 2-31: Prüfverfahren – Prüfung Ec: Schocks durch 
+raue Handhabung, vornehmlich für Geräte 
+ÖVE/ÖNORM EN 60068-2-75, Umweltprüfungen – Teil 2: Prüfungen – Prüfung Eh: Hammerprüfungen 
+ÖVE/ÖNORM EN 60112, Verfahren zur Bestimmung der Prüfzahl und der Vergleichszahl der 
+Kriechwegbildung von festen, isolierenden Werkstoffen 
+ÖVE/ÖNORM EN 60228, Leiter für Kabel und isolierte Leitungen 
+ÖVE/ÖNORM IEC 60417 DB, Grafische Symbole für Betriebsmittel  
+ÖVE/ÖNORM EN 60529, Schutzarten durch Gehäuse (IP-Code) 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 7/138 =====
+OVE E 8684-1:2019-12-01 
+7 
+OVE EN 60669 Reihe, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen 
+ÖVE/ÖNORM EN 60695-2-10, Prüfungen zur Beurteilung der Brandgefahr – Teil 2-10: Prüfungen mit dem 
+Glühdraht – Glühdrahtprüfeinrichtungen und allgemeines Prüfverfahren 
+ÖVE/ÖNORM EN 60695-2-11, Prüfungen zur Beurteilung der Brandgefahr – Teil 2-11: Prüfungen mit dem 
+Glühdraht – Prüfung mit dem Glühdraht zur Entflammbarkeit von Enderzeugnissen 
+ÖVE/ÖNORM EN 61032, Schutz von Personen und Ausrüstung durch Gehäuse – Prüfsonden zum Nachweis 
+OVE EN 61058 Reihe, Geräteschalter  
+OVE EN 61140, Schutz gegen elektrischen Schlag – Gemeinsame Anforderungen für Anlagen und 
+Betriebsmittel 
+IEC 60050-151, International Electrotechnical Vocabulary (IEV) – Part 151: Electrical and magnetic devices 
+IEC/TR 60083, Plugs and socket-outlets for domestic and similar general use standardized in member 
+countries of IEC 
+IEC 60227 Serie, Polyvinyl chloride insulated cables of rated voltages up to and including 450/750 V 
+IEC 60245 Serie, Rubber insulated cables – Rated voltages up to and including 450/750 V 
+3 
+Begriffe 
+Für die Anwendung dieser OVE-Norm gelten Begriffe gemäß IEC 60050-151 sowie die folgenden: 
+ANMERKUNG 1  
+Soweit nicht anders angegeben, beziehen sich die im Folgenden verwendeten Ausdrücke 
+„Spannung“ und „Strom“ auf Effektivwerte. 
+ANMERKUNG 2  
+In dieser OVE-Norm wird das Wort „Erdung“ für „Schutzerdung“ verwendet. 
+ANMERKUNG 3  
+Der Ausdruck „Steckvorrichtung“ wird als allgemeine Bezeichnung für Stecker und Steckdosen 
+verwendet; Der Ausdruck „mobile Steckvorrichtung“ umfasst Stecker und Kupplungssteckdosen. Die Anwendung der 
+Steckvorrichtungen ist in Bild 1a dargestellt. 
+ANMERKUNG 4  
+In dieser OVE-Norm umfasst der Ausdruck „Steckdose“ sowohl ortsfeste Steckdosen als auch 
+Kupplungssteckdosen, ausgenommen dort, wo er sich speziell auf den einen oder anderen Typ bezieht. 
+3.1 
+Stecker 
+Steckvorrichtung für den häufigen Gebrauch durch Laien mit Stiften, die konstruiert ist, um mit den Kontakten 
+einer Steckdose in Verbindung zu kommen, und die auch Mittel zum elektrischen Anschluss und zum 
+mechanischen Festhalten von einer flexiblen Leitung enthält 
+Anmerkung 1.AT zum Begriff:  
+Für besondere Anwendungen wie zB Lichterketten (siehe auch ÖVE/ÖNORM 
+EN 60598-2-20) können zwei oder drei einadrige Kabel innerhalb des Steckers angeschlossen werden. 
+3.2 
+Steckdose 
+Steckvorrichtung für den häufigen Gebrauch durch Laien, die Steckkontakte hat und konstruiert ist, um mit den 
+Stiften eines Steckers in Verbindung zu kommen und die Klemmen zum Anschluss von Leitung(en) besitzt 
+3.3 
+Ortsfeste Steckdose 
+Steckdose, die dazu bestimmt ist, an ortsfeste Installationen angeschlossen zu werden 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 8/138 =====
+OVE E 8684-1:2019-12-01 
+8 
+3.4 
+Kupplungssteckdose 
+Steckdose, die dazu bestimmt ist, an einer flexiblen Leitung angeschlossen zu werden oder eine Baueinheit 
+mit dieser bildet und die leicht von einer Stelle zur anderen bewegt werden kann, während sie an das Netz 
+angeschlossen ist 
+3.5 
+Mehrfachsteckdose 
+Kombination von zwei oder mehr Steckdosen 
+Anmerkung 1.AT zum Begriff:  
+Ein Beispiel ist in Bild 1b dargestellt. 
+3.6 
+Einbausteckdose, Steckdose an Geräten 
+Steckdose, die dazu bestimmt ist, in Geräte eingebaut oder an diesen befestigt zu werden 
+Anmerkung 1.AT zum Begriff:  
+Prüfanforderung siehe ÖVE/ÖNORM E 8684-2-2. 
+3.7 
+wieder anschließbarer Stecker oder wieder anschließbare Kupplungssteckdose 
+Steckvorrichtung, die so gebaut ist, dass die flexible Leitung ersetzt werden kann 
+3.8 
+nicht-wieder anschließbarer Stecker oder nicht-wieder anschließbare Kupplungssteckdose 
+Steckvorrichtung, die so gebaut ist, dass sie eine bauliche Einheit mit der flexiblen Leitung nach Anschluss und 
+Montage durch den Hersteller der Steckvorrichtung bildet (siehe auch 14.1) 
+3.9 
+angeformte Steckvorrichtung 
+nicht-wieder anschließbare Steckvorrichtung, deren Herstellung durch das Formen von Isoliermaterial um 
+vorgefertigte Bauteile und den Anschluss der flexiblen Leitung vervollständigt wird  
+[QUELLE: IEV 442-01-14, modifiziert] 
+3.10 
+Einbaudose 
+Dose, die für die Montage in oder an einer Wand, Fußboden oder Decke u. dgl. vorgesehen ist und dazu 
+bestimmt ist, eine ortsfeste Steckdose aufzunehmen 
+3.11 
+Geräteanschlussleitung (cord set) 
+Zusammenbau einer flexiblen Leitung mit einem Stecker und einer Gerätesteckdose, die für den Anschluss 
+eines elektrischen Gerätes an die elektrische Stromversorgung bestimmt ist 
+3.12 
+Verlängerungsleitung (cord extension set) 
+Zusammenbau einer flexiblen Leitung mit einem Stecker und einer Einfach oder einer Mehrfach 
+Kupplungssteckdose 
+3.13 
+Klemme 
+isoliertes oder nicht- isoliertes Verbindungselement, das zum wieder verwendbaren Anschluss des äußeren 
+Leiters dient 
+3.14 
+Anschluss 
+isoliertes oder nicht- isoliertes Verbindungselement, das zum nicht-wieder verwendbaren Anschluss des 
+äußeren Leiters dient 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 9/138 =====
+OVE E 8684-1:2019-12-01 
+9 
+3.15 
+Klemmstelle 
+Teil oder Teile einer Klemme, der(die) zum mechanischen Klemmen und zum elektrischen Anschluss der (des) 
+Leiter(s) dienen (dient) 
+3.16 
+Schraubklemme 
+Klemme für den Anschluss und das spätere Lösen eines Leiters oder für die Weiterverbindung von zwei oder 
+mehreren Leitern. Die Verbindung der Leiter wird dabei direkt oder indirekt mit Schrauben oder Muttern 
+irgendwelcher Art ausgeführt 
+3.17 
+Buchsenklemme 
+Schraubklemme, bei der der Leiter in eine Bohrung oder einen Hohlraum eingeführt wird, wobei dieser unter 
+das Schaftende der Schraube(n) geklemmt wird. Der Klemmendruck kann direkt durch das Schaftende der 
+Schraube oder durch ein Zwischenstück, auf das der Druck des Schraubenschaftendes wirkt, ausgeübt werden 
+Anmerkung 1 zum Begriff: 
+Beispiele von Buchsenklemmen sind in Bild 2 dargestellt. 
+3.18 
+Kopfkontaktklemme 
+Schraubklemme, bei der der Leiter unter den Kopf der Schraube geklemmt wird.  
+Der Klemmdruck kann direkt durch den Kopf der Schraube oder durch ein Zwischenstück, wie eine 
+Unterlegscheibe, eine Klemmplatte oder eine Vorrichtung, die das Ausweichen verhindert, ausgeübt werden. 
+Anmerkung 1 zum Begriff: 
+Beispiele von Kopfkontaktklemmen sind in Bild 3 dargestellt. 
+3.19 
+Bolzenklemme 
+Schraubklemme, bei der der Leiter unter eine Mutter geklemmt wird 
+Der Klemmdruck kann direkt oder durch ein Zwischenstück, wie eine Unterlegscheibe, eine Klemmplatte oder 
+eine Vorrichtung, die das Ausweichen verhindert, ausgeübt werden. 
+Anmerkung 1 zum Begriff: 
+Beispiele von Bolzenklemmen sind in Bild 3 dargestellt. 
+3.20 
+Sattelklemme 
+Schraubklemme, bei der der Leiter mit zwei oder mehr Schrauben oder Muttern unter einen Sattel geklemmt 
+wird 
+Anmerkung 1 zum Begriff: 
+Beispiele von Sattelklemmen sind in Bild 4 dargestellt. 
+3.21 
+Mantelklemme 
+Schraubklemme, bei der der Leiter mit einer Mutter gegen den Grund eines Schlitzes in einem Gewindebolzen 
+geklemmt wird 
+Der Leiter wird durch eine geeignet geformte Unterlegscheibe unter der Mutter – bei Überwurfmuttern durch 
+einen Mittelstift – oder durch ein gleichermaßen wirksames Mittel zur Übertragung des Kontaktdrucks von der 
+Mutter auf den Leiter innerhalb des Schlitzes, gegen den Grund des Schlitzes geklemmt. 
+Anmerkung 1 zum Begriff: 
+Beispiele von Mantelklemmen sind in Bild 5 dargestellt. 
+3.22 
+schraubenlose Klemme 
+Verbindungselement zum lösbaren Anschluss eines starren (ein- oder mehrdrähtigen) oder flexiblen Leiters 
+oder für die Verbindung von zwei oder mehreren abisolierten Leitern 
+Die Verbindung wird direkt oder indirekt durch Federn, Keile, Exzenter oder Kegel u. dgl. ohne besonderes 
+Herrichten der Leiter, außer Entfernung der Isolierung, bewirkt. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+9 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 10/138 =====
+OVE E 8684-1:2019-12-01 
+10 
+3.23 
+gewindeformende Schraube 
+Schraube mit einem ununterbrochenem Gewinde, die beim Einschrauben ein Gewinde durch Verdrängen von 
+Material formt 
+Anmerkung 1 zum Begriff: 
+Ein Beispiel einer gewindeformenden Schraube ist in Bild 6 dargestellt. 
+3.24 
+gewindeschneidende Schraube 
+Schraube mit einem unterbrochenem Gewinde, die beim Einschrauben ein Gewinde durch Wegnahme von 
+Material formt 
+Anmerkung 1 zum Begriff: 
+Ein Beispiel einer gewindeschneidenden Schraube ist in Bild 7 dargestellt. 
+3.25 
+Bemessungsspannung 
+die vom Hersteller für den Stecker oder die Steckdose angegebene Spannung, die in dieser OVE-Norm 
+festgelegt ist 
+3.26 
+Bemessungsstrom 
+der vom Hersteller für den Stecker oder die Steckdose angegebene Strom, der in dieser OVE-Norm festgelegt 
+ist 
+3.27 
+Shutter 
+in der Steckdose enthaltenes bewegbares Teil, das automatisch zumindest die aktiven Teile der Steckdose 
+abdeckt, wenn der Stecker herausgezogen wird 
+3.28 
+Typprüfung 
+Prüfung eines oder mehrerer Geräte eines bestimmten Typs auf Übereinstimmung mit bestimmten Normen 
+3.29 
+Stückprüfung 
+Prüfung, der jedes Gerät während oder nach seiner Herstellung unterworfen wird, um sicherzustellen, dass es 
+bestimmten Kriterien entspricht 
+3.30 
+Sockel (base) 
+Teil der Steckdose der die Steckkontakte beinhaltetträgt 
+3.31 
+aktives Teil 
+jeder Leiter oder jedes leitfähige Teil, das dazu bestimmt ist, bei ungestörtem Betrieb unter Spannung zu 
+stehen, einschließlich des Neutralleiters, aber vereinbarungsmäßig nicht der PEN-Leiter  
+[QUELLE: IEV 826-03-01] 
+3.32 
+Zugentlastung 
+Fähigkeit zur Begrenzung der Verschiebung einer angeschlossenen flexibler Leitung gegen Zug und 
+Druckkräfte und Verdrehung. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+10 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 11/138 =====
+OVE E 8684-1:2019-12-01 
+11 
+3.33 
+Hauptteil (main part) 
+Baueinheit, bestehend aus dem Sockel und anderen Teilen. Diese Baueinheit ist nicht dafür vorgesehen, nach 
+der Fertigung jemals zerlegt zu werden 
+Anmerkung 1.AT zum Begriff:  
+Der Begriff Hauptteil wird in dieser Norm anstelle des Begriffes Sockel dann 
+verwendet, wenn offensichtlich die komplette Einheit bestehend aus Sockel, Kontakten und anderen Teilen gemeint ist. 
+3.34 
+Leitungsunterstützung (grommet) 
+Teil eines Bauelements oder Zubehör, das Leitungen an der Einführung hält und schützt und auch das 
+Eindringen von Feuchtigkeit oder Verunreinigungen verhindern kann 
+[QUELLE: IEV 581-27-19] 
+Anmerkung 1 AT zum Begriff:  
+Ein Beispiel für Leitungsunterstützungen siehe Bild 45.  
+3.35 
+Eingangsmembran (entry membrane) 
+Bauelement oder ein Bestandteil eines Gehäuses, das benutzt wird, um die Leitung zu schützen, und das benutzt 
+werden kann, um die Leitung oder das Elektroinstallationsrohr am Eingangspunkt zu halten 
+Anmerkung 1.AT zum Begriff:  
+Die Eingangsmembran darf auch gegen das Eindringen von Feuchtigkeit oder 
+Verunreinigungen schützen und kann Teil eines Steckstutzens sein (siehe Bild 45). 
+[QUELLE: ÖVE/ÖNORM EN 60670-1] 
+3.36 
+Schutzmembran (protecting membrane) 
+Bauelement oder ein Bestandteil eines Gehäuses, das nicht dafür vorgesehen ist, beim bestimmungsgemäßen 
+Gebrauch durchdrungen zu werden, sondern das dafür vorgesehen ist, Schutz gegen das Eindringen von Wasser 
+oder festen Fremdkörpern zu bieten, und/oder dass die Benutzung des Installationsgerätes ermöglicht (siehe 
+Bild 45) 
+[QUELLE: ÖVE/ÖNORM EN 60670-1] 
+4 
+Allgemeine Anforderungen 
+Steckvorrichtungen, Aufputzdosen, Einbaudosen und Montagekästen müssen so konstruiert und ausgeführt 
+sein, dass sie im bestimmungsgemäßen Gebrauch zuverlässig sind und keine Gefahr für den Benutzer oder 
+die Umgebung darstellen im Sinne dieser Bestimmung. 
+ANMERKUNG AT 
+ 
+Siehe auch ISO/IEC-Guide 51. 
+Dies wird durch das Erfüllen aller zutreffenden Anforderungen und das Bestehen aller zutreffenden Prüfungen 
+nachgewiesen. 
+5 
+Allgemeine Anmerkungen zu den Prüfungen 
+5.1 
+Die Prüfungen müssen durchgeführt werden, um den Nachweis mit den Anforderungen dieser OVE-
+Norm zu erbringen, soweit zutreffend.  
+Prüfungen sind wie folgt: 
+– 
+Typprüfungen; sie müssen an typischen Mustern jeder Steckvorrichtung durchgeführt werden. 
+– 
+Stückprüfungen; sie müssen an jeder Steckvorrichtung, die gemäß dieser OVE-Norm gefertigt wurde, 
+soweit zutreffend, durchgeführt werden.  
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+11 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 12/138 =====
+OVE E 8684-1:2019-12-01 
+12 
+Abschnitt 5.2 bis Abschnitt 5.5 gelten für Typprüfungen, Abschnitt 5.6 gilt für Stückprüfungen. 
+5.2 
+Wenn nicht anders festgelegt, werden die Prüflinge wie geliefert und unter bestimmungsgemäßen 
+Gebrauchsbedingungen geprüft. 
+Nicht-wieder anschließbare Steckvorrichtungen werden mit dem angelieferten Typ und der angelieferten Größe 
+der flexiblen Leitung geprüft. Steckvorrichtungen, die nicht Bestandteil einer Geräteanschlussleitung, einer 
+Verlängerungsleitung oder eines Gerätes sind, müssen zur Prüfung mit einer flexiblen Leitung von mindestens 
+1 m Länge vorgelegt werden. 
+Nicht wieder anschließbare Mehrfachsteckdosen werden mit flexiblen Leitungen wie angeliefert geprüft. 
+Steckdosen, bei denen eine Dose zur Vervollständigung des Gehäuses erforderlich ist, werden zusammen mit 
+ihren Dosen geprüft. 
+Befestigungsschrauben von Anschlussklemmen und Abdeckungen müssen mit zwei Drittel des 
+Anzugsdrehmomentes gemäß Tabelle 6 angezogen werden, sofern nicht anders angegeben. 
+5.3 
+Wenn nicht anders festgelegt, werden die Prüfungen in der Reihenfolge der Abschnitte bei einer 
+Umgebungstemperatur zwischen 15 °C und 35 °C durchgeführt. 
+Im Zweifelsfall erfolgt die Prüfung bei einer Umgebungstemperatur von (20 ± 5)°C. 
+Stecker und Steckdosen werden getrennt geprüft. 
+Ein vorhandener Neutralleiter wird wie ein Pol behandelt. 
+5.4 
+Drei Prüflinge werden allen relevanten Prüfungen unterworfen.  
+Für die Prüfungen gemäß 12.3.11 sind zusätzliche Prüflinge von Steckdosen erforderlich, die zusammen 
+mindestens fünf schraubenlose Anschlussklemmen aufweisen. 
+Für die Prüfungen gemäß 12.3.12 sind drei zusätzliche Prüflinge von Steckdosen erforderlich; bei jedem der 
+Prüflinge wird eine Klemmstelle geprüft. 
+Für jede der Prüfungen gemäß 13.22 und 13.23 sind drei zusätzliche Prüflinge von getrennten Membranen, 
+Leitungsunterstützungen oder von Steckvorrichtungen, in die Membrane, Leitungsunterstützungen eingebaut 
+sind, erforderlich. 
+Für nicht-wieder anschließbare Steckvorrichtungen sind für die Prüfungen gemäß 23.2 und 23.4 sechs 
+zusätzliche Prüflinge erforderlich. 
+Für die Prüfungen nach Abschnitt 20 und 21 können weitere Prüflinge erforderlich sein (siehe Bild 43). 
+Für die Prüfungen gemäß 10.6.1, 10.6.2 und 24.10 sind je drei weitere Prüflinge erforderlich. 
+Für die Prüfung gemäß Abschnitt 28 können drei weitere Prüflinge erforderlich sein. 
+ANMERKUNG 
+Eine Tabelle für die Anzahl der Prüflinge befindet sich im Anhang B. 
+5.5 
+Die Prüflinge werden allen entsprechenden Prüfungen unterzogen und die Anforderungen sind erfüllt, 
+wenn alle Prüfungen bestanden wurden. 
+Falls ein Prüfling aufgrund eines Zusammenbau- oder Herstellungsfehlers versagt, wird diese Prüfung und die 
+vorhergehende, die das Ergebnis der Prüfung beeinflusst haben könnte, wiederholt. Auch werden die 
+nachfolgenden Prüfungen mit einem weiteren Satz von Prüflingen in der festgelegten Reihenfolge ausgeführt. 
+Es müssen dann alle Prüflinge die Prüfungen bestehen. 
+ANMERKUNG 
+Der Antragsteller kann zusammen mit dem ersten Satz von Prüflingen gemäß 5.4 einen zusätzlichen 
+Satz einreichen der für den Fall des Versagens eines Prüflings notwendig ist. Die Prüfstelle wird dann ohne weitere 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+12 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 13/138 =====
+OVE E 8684-1:2019-12-01 
+13 
+Anforderung den zusätzlichen Satz prüfen und eine Ablehnung nur dann aussprechen, wenn nochmals ein Versagen 
+auftritt. Falls der zusätzliche Satz von Prüflingen nicht von vornherein mit eingereicht wird, hat das Versagen eines Prüflings 
+die Ablehnung zur Folge. 
+5.6 
+Stückprüfungen sind in Anhang A angegeben. 
+6 
+Bemessungswerte 
+6.1 
+Steckvorrichtungen müssen Bemessungsspannungen und Bemessungsströme gemäß Tabelle 1 
+aufweisen. 
+Tabelle 1 – Vorzugskombinationen von Typen und Bemessungswerten 
+ 
+1 
+2 
+3 
+Typ 
+Bemessungsspannung 
+Bemessungsstrom 
+V 
+A 
+1 
+2p a 
+250 
+2,5 
+2 
+2p b 
+250 
+16 
+3 
+2p + 
+ 
+250 
+16 
+4 
+3p + N + 
+ 
+440 
+16 
+5 
+440 
+25 
+a 
+Nur für nicht-wieder anschließbare Stecker, nicht-wieder anschließbare Kupplungssteckdosen, Steckdosenteile von 
+Zweifach- und Mehrfach-Zwischensteckvorrichtungen, 2,5 A Einbausteckdosen und 2,5 A-Steckdosenteil in mobilen 
+Kombinationssteckdosen. 
+b 
+Nur für nicht-wieder anschließbare Stecker. 
+ 
+6.2 
+Der Bemessungsstrom der Kupplungssteckdose in Verlängerungsleitungen darf nicht höher und die 
+Bemessungsspannung darf nicht kleiner sein als die des Steckers. 
+Prüfung: Besichtigen der Aufschriften 
+6.3 
+Steckvorrichtungen müssen einen Schutzgrad von mindestens IP20 aufweisen.  
+7 
+Einteilung 
+7.1 
+Einteilung von Steckvorrichtungen  
+7.1.1 
+Steckvorrichtungen werden nach dem Schutzgrad gegen den Zugang zu gefährlichen Teilen und 
+gegen schädliches Eindringen von festen Körpern gemäß ÖVE/ÖNORM EN 60529 eingeteilt. 
+7.1.2 
+Steckvorrichtungen werden nach dem Schutzgrad gegen schädliches Eindringen von Wasser gemäß 
+ÖVE/ÖNORM EN 60529 eingeteilt. 
+7.1.3 
+Einteilung nach den Vorkehrungen für den Anschluss eines Schutzleiters: 
+– 
+Steckvorrichtungen ohne Schutzkontakt, 
+– 
+Steckvorrichtungen mit Schutzkontakt. 
+7.1.4 
+Einteilung nach der Anschlussart der Leitung: 
+– 
+wieder anschließbare Steckvorrichtungen, 
+– 
+nicht-wieder anschließbare Steckvorrichtungen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+13 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 14/138 =====
+OVE E 8684-1:2019-12-01 
+14 
+7.1.5 
+Einteilung nach dem Typ der Klemmen: 
+– 
+Steckvorrichtungen mit Schraubklemmen, 
+– 
+Steckvorrichtungen mit schraubenlosen Klemmen nur für starre Leiter, 
+– 
+Steckvorrichtungen mit schraubenlosen Klemmen für starre und flexible Leiter. 
+7.2 
+Einteilung von Steckdosen 
+7.2.1 
+Einteilung nach dem Grad des Schutzes gegen elektrischen Schlag, wenn sie wie im 
+bestimmungsgemäßen Gebrauch eingebaut sind: 
+a)  mit normalen Schutz (siehe 10.1), 
+b)  mit erhöhtem Schutz (siehe 10.7). 
+ANMERKUNG 
+Steckdosen mit erhöhtem Schutz können Steckdosen mit oder ohne Shutter sein. 
+7.2.2 
+Einteilung nach dem Vorhandensein von Shutter: 
+a) 
+ohne Shutter, 
+b) 
+mit Shutter (siehe 10.5). 
+7.2.3 
+Einteilung nach der Art der Anwendung/Montage der Steckdose: 
+a) 
+Aufputzsteckdosen, 
+b) 
+Unterputzsteckdosen, 
+c) 
+Imputzsteckdosen, 
+d) 
+Schalttafel-Steckdosen 
+e) 
+Türrahmen-Steckdosen, 
+f) 
+Kupplungssteckdosen, 
+g) 
+Tischsteckdosen (einfach oder mehrfach), 
+h) 
+Unterflur-Steckdosen, 
+i) 
+Einbausteckdosen für Geräte, 
+j) 
+Steckdosen für Schienenmontage. 
+7.2.4 
+Einteilung nach der Art der Installation im Hinblick auf die Bauart: 
+a) 
+ortsfeste Steckdosen, bei denen die Kappe oder Abdeckplatte ohne Verlagerung der Leiter abgenommen 
+werden können (Bauart A); 
+b) 
+ortsfeste Steckdosen, bei denen die Kappe oder Abdeckplatte nicht ohne Verlagerung der Leiter 
+abgenommen werden können (Bauart B). 
+ANMERKUNG 
+Wenn eine ortsfeste Steckdose einen Sockel (Hauptteil) hat, der nicht von der Kappe oder Abdeckplatte 
+getrennt werden kann, und – um diese OVE-Norm zu erfüllen – eine zusätzliche Platte erfordert, die zum Zwecke der 
+Schönheitsreparatur der Wand, ohne Verlagern der Leiter, abgenommen werden kann, so gilt diese als Bauart A. 
+Vorausgesetzt ist, dass diese zusätzliche Platte die für Kappen und Abdeckplatten festgelegten Anforderungen erfüllt. 
+7.2.5 
+Einteilung nach dem bestimmungsgemäßen Gebrauch: 
+a) 
+Steckdosen in Stromkreisen, wo, wenn zutreffend, ein einziger Schutzleiterstromkreis die Schutzerdung 
+für die angeschlossenen Geräte und die abgesetzten leitfähigen Teile der Steckdose gewährleistet; 
+b) 
+Steckdosen in Stromkreisen wo Störfestigkeit gefordert wird. Hier ist der Schutzleiterstromkreis für die 
+angeschlossenen Geräte elektrisch getrennt von der Schutzerdung für die abgesetzten leitfähigen Teile 
+der Steckdose zu verlegen. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+14 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 15/138 =====
+OVE E 8684-1:2019-12-01 
+15 
+7.3 
+Einteilung von Steckern 
+Stecker werden, entsprechend den Betriebsmitteln, an die sie angeschlossen werden sollen, eingeteilt:  
+– 
+Stecker für Betriebsmittel der Schutzklasse I; 
+– 
+Stecker für Betriebsmittel der Schutzklasse II. 
+Für die Beschreibung der Schutzklassen von Betriebsmitteln siehe OVE EN 61140. 
+ANMERKUNG 
+Diese OVE-Norm gilt nicht für Stecker der Schutzklasse 0. 
+8 
+Aufschriften 
+8.1 
+Steckvorrichtungen müssen folgende Aufschriften tragen: 
+– 
+Bemessungsstrom in Ampere; 
+– 
+Bemessungsspannung in Volt; 
+– 
+Symbol für die Stromart; 
+– 
+entweder Name, Handelsmarke oder Ursprungszeichen des Herstellers oder des verantwortlichen 
+Händlers; 
+– 
+Typzeichen, das eine Katalognummer sein darf, 
+ 
+ANMERKUNG 1 
+Das Typzeichen darf auch eine Serienbezeichnung sein.  
+– 
+Symbol für den Schutzgrad gegen das Berühren gefährlicher Teile und gegen schädliches Eindringen von 
+festen Körpern, wenn er höher ist als IP2X. In diesem Fall muss das Symbol für den Schutzgrad gegen 
+schädliches Eindringen von Wasser angegeben werden; 
+– 
+Symbol für den Schutzgrad gegen schädliches Eindringen von Wasser, wenn er höher ist als IPX0. In 
+diesem Fall muss das Symbol für den Schutzgrad gegen das Eindringen von festen Fremdkörpern auch 
+dann angegeben werden, wenn er nicht höher als IP2X ist. 
+Wenn das System es zulässt, dass Stecker eines bestimmten IP-Schutzgrades in Steckdosen eines anderen 
+IP-Schutzgrades eingeführt werden können, sollte die Tatsache beachtet werden, dass die sich ergebende  
+IP-Schutzgrad der Kombination aus Stecker und Steckdose dem niedrigeren der beiden entspricht.  
+ANMERKUNG 2  
+IP-Schutzgrade gemäß ÖVE/ÖNORM EN 60529. 
+Bei Steckvorrichtungen die bei der Prüfung gemäß 16.2 ohne eingeführten Stecker eine höhere Schutzart als 
+die bei der Prüfung mit eingeführtem Stecker erreichen, kann diese zusätzlich an der Steckvorrichtung 
+angebracht werden. 
+Zusätzlich müssen Steckvorrichtungen mit schraubenlosen Klemmen gekennzeichnet sein mit 
+– 
+einer geeigneten Kennzeichnung, die die Länge der Isolierung angibt, die vor dem Einführen des Leiters 
+in die schraubenlose Klemme entfernt werden muss, 
+– 
+einer Angabe, dass die Steckdose nur für starre Leiter geeignet ist (gilt für Steckdosen mit dieser 
+Einschränkung). 
+ANMERKUNG 3  
+Die zusätzliche Kennzeichnung darf an der Steckvorrichtung oder der Verpackung angebracht 
+sein und/oder darf in einer Anleitung, die der Steckvorrichtung beigefügt ist, angegeben werden. 
+Zusätzlich müssen Mehrfach-Tischsteckdosen die Aufschrift der maximalen Leistung tragen (zB maximal 
+3 000 W). Der Wert von 3 680 W darf nicht überschritten werden und nicht in der Eingriffsfläche für einen 
+Stecker angebracht sein. 
+Stecker und/oder Steckdosen, die Bestandteil eines Betriebsmittels sind, brauchen die Aufschriften unter der 
+Voraussetzung nicht zu tragen, dass die Bemessungswerte, Herstellername und Typzeichen auf den 
+Betriebsmitteln angegeben sind. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+15 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 16/138 =====
+OVE E 8684-1:2019-12-01 
+16 
+8.2 
+Wenn Symbole verwendet werden, dann müssen es die folgenden sein: 
+Ampere ..................................................................................................................... A 
+Volt ............................................................................................................................ V 
+Wechselstrom ........................................................................................................... ~ 
+Neutralleiter ............................................................................................................... N 
+Schutzleiter ............................................................................................................. 
+ 
+Schutzgrad, falls zutreffend  ............................................................................... IPXX 
+Schutzgrad für ortsfeste Steckdosen für Montage  
+an rauen Oberflächen (Prüfwand siehe Bild 15) .........................................................  
+für schraublose Klemmen: nur für starre Leiter geeignet .......................................... r 
+ANMERKUNG 1  
+Einzelheiten der Symbole sind in den technischen Bestimmungen ÖVE/ÖNORM IEC 60417 DB 
+gegeben. 
+ANMERKUNG 2  
+Im IP-Code ist der Buchstabe „X“ durch die entsprechende Zahl zu ersetzen. 
+ANMERKUNG 3  
+Linien, die durch die Konstruktion des Werkzeuges verursacht sind, werden nicht als Teil der 
+Kennzeichnung verstanden.  
+Für die Bezeichnung mit Bemessungsstrom und Bemessungsspannung dürfen auch nur Zahlen verwendet 
+werden. Diese Zahlen müssen in einer Reihe, getrennt durch einen Schrägstrich, gesetzt werden oder die Zahl 
+für den Bemessungsstrom muss oberhalb der Zahl für die Bemessungsspannung, getrennt durch eine 
+waagerechte Linie, angeordnet werden.  
+Die Angabe für die Stromart muss neben den Angaben für die Bemessungsspannung und den 
+Bemessungsstrom stehen. 
+ANMERKUNG 4  
+Für die Angaben von Bemessungsstrom, Bemessungsspannung und Stromart ergeben sich 
+demnach folgende Beispiele:  
+16 A 250 V ~     oder     16/440 ~     oder      
+16
+440 ~ 
+8.3 
+Bei ortsfesten Steckdosen müssen sich folgende Aufschriften auf dem Hauptteil befinden: 
+– 
+Bemessungsstrom, Bemessungsspannung und Stromart; 
+– 
+entweder der Name, die Handelsmarke oder das Ursprungszeichen des Herstellers oder des 
+verantwortlichen Händlers; 
+– 
+die Länge der Isolierung, die vor der Einführung des Leiters in die schraubenlose Klemme entfernt werden 
+muss; 
+– 
+die Kennzeichnung „r“ bei schraublosen Klemmen, die nur für starre Leiter geeignet sind; 
+– 
+das Typzeichen, das eine Katalognummer sein darf. 
+ANMERKUNG 1  
+Das Typzeichen darf auch eine Serienbezeichnung sein. 
+Teile, zB Abdeckplatten, die für die Sicherheit notwendig sind und die für den getrennten Verkauf bestimmt 
+sind, müssen mit dem Namen, der Handelsmarke oder dem Ursprungszeichen des Herstellers oder des 
+verantwortlichen Händlers und dem Typzeichen gekennzeichnet sein. 
+ANMERKUNG 2  
+Zusätzliche Typzeichen dürfen am Hauptteil oder an der Außenseite oder Innenseite des 
+zugehörigen Gehäuses angebracht werden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+16 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 17/138 =====
+OVE E 8684-1:2019-12-01 
+17 
+Der IP-Code, soweit zutreffend, muss so angebracht sein, dass, wenn die Steckdose wie im bestimmungs-
+gemäßen Gebrauch montiert und verdrahtet ist leicht erkennbar ist. 
+Wenn ortsfeste Steckdosen gemäß 7.2.5 b) eine andere Konfiguration als von Steckdosen in normalen 
+Stromkreisen besitzen, sind diese durch ein nach der Installation erkennbares Dreieck zu kennzeichnen. 
+8.4 
+Bei Steckern und Kupplungssteckdosen müssen, wenn die Steckvorrichtung verdrahtet und 
+zusammengebaut ist, die Aufschriften gemäß 8.1, mit Ausnahme des Typzeichens, leicht erkennbar sein. 
+Stecker und Kupplungssteckdosen für Geräte der Schutzklasse II dürfen nicht mit dem Symbol für die 
+Schutzklasse II-Bauart gekennzeichnet sein. 
+Kupplungssteckdosen IPX4 und Einbausteckdosen IPX4 mit Dichtkragen nach ÖVE/ÖNORM E 8622-3 oder 
+ÖVE/ÖNORM E 8622-4 sind mit folgendem Symbol zu kennzeichnen: 
+ 
+ANMERKUNG 
+Das Typzeichen für wieder anschließbare Steckvorrichtungen darf auf der Innenseite des Gehäuses oder 
+der Kappe angebracht werden. 
+8.5 
+Klemmen, die ausschließlich für den Neutralleiter bestimmt sind, müssen mit dem Buchstaben N 
+gekennzeichnet sein. 
+Schutzleiter-Klemmen müssen mit dem Symbol 
+ gekennzeichnet sein. 
+Diese Kennzeichnungen dürfen nicht auf Schrauben oder anderen leicht entfernbaren Teilen angebracht sein. 
+ANMERKUNG 1  
+„Leicht entfernbare Teile“ sind Teile, die während der bestimmungsgemäßen Installation der 
+Steckdose oder dem Zusammenbau des Steckers entfernt werden können. 
+ANMERKUNG 2  
+Anschlüsse in nicht-wieder anschließbaren Steckvorrichtungen brauchen nicht gekennzeichnet 
+sein. 
+Klemmen zum Anschluss von Leitern, die nicht ein Teil der Hauptfunktion der Steckvorrichtungen bilden, 
+müssen klar gekennzeichnet sein, es sei denn, dass deren Zweck selbst eindeutig ist oder in einem 
+Schaltdiagramm angezeigt ist, welches an der Steckvorrichtung befestigt ist. 
+Die Kennzeichnung dieser Klemmen kann durch 
+– 
+deren Kennzeichnung durch Symbole gemäß ÖVE/ÖNORM IEC 60417 DB oder Farben und/oder 
+alphanumerischen System, oder 
+– 
+deren körperlichen Abmessung oder relative Anordnung  
+erfolgen. 
+Im Sinne dieses Abschnittes gelten Anschlussdrähte von Anzeigelampen nicht als Leiter. 
+8.6 
+Bei Aufputzdosen, Einbaudosen und Montagekästen, die einen integrierten Teil von Steckdosen mit 
+einem IP-Code höher als IP20 bilden, muss der IP-Code außen am zugehörigen Gehäuse so angebracht sein, 
+dass er leicht erkennbar ist, nachdem die Steckvorrichtung wie im normalen Gebrauch montiert und verdrahtet 
+ist. 
+Nur 
+IPX4 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+17 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 18/138 =====
+OVE E 8684-1:2019-12-01 
+18 
+Bei Aufputzdosen mit einem Schutzgrad IPX4 muss eindeutig gekennzeichnet sein, dass das Kondens-
+wasserloch in der niedrigsten Einbauposition zu öffnen ist. 
+8.7 
+Es muss entweder durch Aufschriften, in einem Herstellerkatalog oder Hinweisblatt angegeben sein, 
+in welcher Lage oder mit welchen besonderen Maßnahmen (zB Dose, Art der Befestigungsfläche, Stecker u. 
+dgl.) der erklärte Schutzgrad von ortsfesten Unterputz- oder Imputzsteckdosen mit einem IP-Code höher als 
+IPX0 sichergestellt ist.  
+Prüfung: Besichtigen. 
+8.8 
+Die Aufschriften müssen dauerhaft sein. Sie müssen eindeutig mit normalem oder korrigiertem Auge 
+ohne zusätzliche Vergrößerung lesbar sein. 
+Prüfung: Besichtigen und durch die folgende Prüfung. 
+Die Aufschrift wird von Hand 15 s mit einem in Wasser getauchten Lappen und anschließend 15 s mit einem 
+in Benzin (siehe Anmerkung AT) getauchten Lappen gerieben. 
+Aufschriften, die durch Prägung, Formgebung, Stanzen oder Gravieren angebracht wurden, werden dieser 
+Prüfung nicht unterworfen. 
+ANMERKUNG AT 
+95% n-Hexan (Chemical Abstracts Service Registry Number, CAS RN, 110-54-3) ist bei 
+zahlreichen chemischen Herstellern als ein Hochdruckflüssigkeitschromatographie (HPLC)-Lösungmittel erhältlich. 
+9 
+Prüfung der Abmessungen 
+9.1 
+Steckvorrichtungen müssen, je nach Zutreffen ÖVE/ÖNORM E 8610, ÖVE/ÖNORM E 8611, 
+ÖVE/ÖNORM E 8612, ÖVE/ÖNORM E 8613, ÖVE/ÖNORM E 8620 Reihe und ÖVE/ÖNORM E 8622 
+Reihe entsprechen. 
+Das Einführen von Steckern in ortsfeste Steckdosen oder Kupplungssteckdosen muss durch Übereinstimmung 
+mit den entsprechenden Normen sichergestellt sein. 
+Die Übereinstimmung wird wie folgt geprüft: 
+Bei Steckdosen wird vor der Prüfung ein Stecker, der der zutreffenden Norm entspricht und der die maximalen 
+Stiftabmessungen hat, je 10 mal eingesteckt und herausgezogen. 
+Prüfung: 
+Durch 
+Messen 
+und/oder 
+mit 
+Hilfe 
+von 
+Lehren 
+gemäß 
+ÖVE/ÖNORM E 8626. 
+Die 
+herstellungsbedingten Grenzabmaße dieser Lehren müssen Tabelle 2 entsprechen, falls dies nicht anders 
+festgelegt ist. Die ungünstigsten Abmessungen der Normblätter müssen für den Bau der Lehren verwendet 
+werden. 
+ANMERKUNG 
+In einigen Fällen (zB Abstände zwischen den Mittelachsen) kann es notwendig sein, die beiden extremen 
+Abmessungen zu prüfen. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+18 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 19/138 =====
+OVE E 8684-1:2019-12-01 
+19 
+Tabelle 2 – Grenzabmaße der Lehren 
+Lehre zum Prüfen der/des 
+Lehrenmaßtoleranz 
+mm 
+Stift-Durchmesser oder der Stift-Dicke 
+0 
+–0,01 
+Abmessungen der Einführöffnungen entsprechend dem Stift-Durchmesser und dem 
+Abstand zwischen den Kontaktflächen 
++0,01 
+0 
+Stift-Länge und Breite 
+0 
+–0,1 
+Stift-Abstand 
+0
+–0,02  oder   
++0,02
+0
+  (je nach Fall) 
+Abstand zwischen der Eingriffsfläche zum Punkt, an dem der Steckdosen-Kontakt zum 
+ersten Mal berührt wird 
+0
+–0,05  oder   
++0,05
+0
+  (je nach Fall) 
+Führungseinrichtungen 
+±0,03 
+ 
+9.2 
+Es darf innerhalb eines Systems nicht möglich sein, einen Stecker einzustecken in: 
+– 
+eine Steckdose mit einer höheren Bemessungsspannung oder einem kleineren Bemessungsstrom; 
+– 
+eine Steckdose mit einer unterschiedlichen Anzahl von aktiven Polen; Ausnahmen können genehmigt 
+werden bei Steckdosen, die speziell für den Zweck gebaut werden, das Einführen eines Steckers mit einer 
+kleineren Anzahl an Polen zu ermöglichen. Vorausgesetzt ist dabei, dass keine gefährliche Situation 
+entstehen kann, zB die Verbindung eines aktiven Pols mit dem Schutzleiterkontakt oder die Unterbrechung 
+des Schutzleiterstromkreises. 
+Es darf nicht möglich sein, einen Stecker für Geräte der Schutzklasse 0 oder Schutzklasse I in eine Steckdose 
+einzuführen, die ausschließlich zur Aufnahme von Steckern für Geräte der Schutzklasse II gebaut ist. 
+Prüfung: Besichtigen oder Handprobe mit Lehren, deren herstellungsbedingten Grenzmaße 9.1 entsprechen. 
+Im Zweifelsfall wird geprüft, ob das Einführen unmöglich ist, indem bei Steckvorrichtungen mit einem 
+Bemessungsstrom, der 16 A nicht überschreitet, Lehre C30 gemäß ÖVE/ÖNORM E 8626:2012 mit einer Kraft 
+von 150 N über die Dauer von 1 Minute angewendet wird. Bei anderen Steckvorrichtungen beträgt die Kraft 
+250 N. 
+Wenn die Verwendung von Elastomeren oder thermoplastischen Werkstoffen die Prüfergebnisse 
+möglicherweise beeinflussen, wird die Prüfung bei einer Umgebungstemperatur von (35 ± 2) °C durchgeführt. 
+Sowohl die Steckvorrichtungen als auch die Lehren müssen diese Temperatur haben. 
+ANMERKUNG 
+Bei Steckvorrichtungen aus starrem Werkstoff, wie selbsthärtendes Harz, keramische Werkstoffe oder 
+ähnliches, stellt die Übereinstimmung mit den entsprechenden Normen sicher, dass diese Anforderung erfüllt wird. 
+9.3 
+Um die Einhaltung der geforderten Normmaße der Steckdosen sicherzustellen dürfen Sockel nur mit 
+den dazugehörigen Abdeckungen in Verkehr gebracht werden. 
+Separate Geräte/Teile, die nicht Teil des Steckers oder Steckdose sind, dürfen nicht mit den Abmessungen der 
+Normblätter kollidieren. 
+ANMERKUNG AT 
+Zusätzliche Einrichtungen wie Kinderschutzplättchen sind in Einheit mit Steckdosen die dieser 
+OVE-Norm entsprechen zu prüfen.  
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+19 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 20/138 =====
+OVE E 8684-1:2019-12-01 
+20 
+10 Schutz gegen elektrischen Schlag 
+ANMERKUNG 
+Lack, Emaille oder aufgesprühte Isolierbeschichtungen gelten nicht als Isoliermaterialien. 
+10.1 
+Steckdosen müssen so konstruiert sein, dass nach Anschluss und Montage, wie im 
+bestimmungsgemäßen Gebrauch, aktive Teile, auch nach dem Entfernen von Teilen, die ohne Gebrauch von 
+Werkzeug entfernt werden können, nicht berührbar sind. 
+Aktive Teile von Steckern dürfen nicht berührbar sein, wenn der Stecker teilweise oder vollständig in die 
+Steckdose eingeführt ist. 
+Prüfung: Besichtigen und, falls notwendig, durch folgende Prüfung: 
+Der Prüfling wird wie im bestimmungsgemäßen Gebrauch montiert und es werden Leiter mit dem kleinsten 
+Querschnitt und in einer Wiederholungsprüfung Leiter mit dem größten Querschnitt, gemäß Tabelle 3 
+angeschlossen. 
+Bei Steckdosen wird die in Bild 2 gemäß ÖVE/ÖNORM EN 61032:1999 gezeigte Prüfsonde B in jeder 
+möglichen Stellung angewendet. 
+Bei Steckern wird der Normprüffinger in jeder möglichen Stellung angewendet, wenn der Stecker teilweise und 
+vollständig in eine Steckdose eingeführt ist. 
+Ein elektrisches Anzeigegerät, mit einer Spannung zwischen 40 V und 50 V, wird verwendet, um Berührung 
+mit dem entsprechenden Teil anzuzeigen. 
+Steckvorrichtungen, bei denen die Verwendung von thermoplastischen oder elastomeren Werkstoffen die 
+Anforderungen 
+möglicherweise 
+beeinflussen 
+könnte, 
+wird 
+eine 
+zusätzliche 
+Prüfung 
+bei 
+einer 
+Umgebungstemperatur von (35 ± 5) °C durchgeführt, wobei auch die Steckvorrichtungen diese Temperatur 
+haben. 
+Während dieser zusätzlichen Prüfung werden die Steckvorrichtungen einer Kraft von 75 N  1 Minute 
+ausgesetzt, die über die Spitze der Prüfsonde 11 (Bild 7 gemäß ÖVE/ÖNORM EN 61032:1999), ausgeübt 
+wird. Dieser Prüffinger, der ein elektrisches Anzeigegerät, wie oben beschrieben, aufweist, wird an allen Stellen 
+angelegt, an denen ein Nachgeben des Isoliermaterials die Sicherheit der Steckvorrichtung beeinflussen 
+könnte. Der Prüffinger wird aber nicht an Membranen, Leitungsunterstützungen oder ähnlichem angelegt und 
+bei dünnwandigen Ausbrechöffnungen nur mit einer Kraft von 10 N. 
+Während dieser Prüfung dürfen sich Steckvorrichtungen einschließlich zugehöriger Teile, die zur Montage 
+dienen, nicht so weit verformen, dass die der Sicherheit dienenden Abmessungen, wie in den Normen 
+angegeben, unzulässig verändert werden. Aktive Teile dürfen nicht berührbar sein. 
+Jeder Prüfling eines Steckers oder einer Kupplungssteckdose wird dann 5 Minuten zwischen zwei ebenen 
+Flächen mit einer Kraft von 150 N, gemäß Bild 8, gepresst. Der Prüfling wird 15 Minuten nach Entfernen aus 
+dem Prüfgerät untersucht und darf keine derartigen Verformungen aufweisen, die zu einer unzulässigen 
+Veränderung von sicherheitsrelevanten Abmessungen, wie in den Normen angegeben, führen. 
+10.2 
+Teile die berührbar sind, wenn die Steckvorrichtung, wie für den bestimmungsgemäßen Gebrauch, 
+angeschlossen und montiert ist, müssen aus Isoliermaterial bestehen. Ausgenommen sind kleine Schrauben 
+und ähnliches, die von aktiven Teilen isoliert sind und die zum Befestigen von Sockeln und Kappen oder 
+Abdeckplatten von Steckdosen dienen und Teilen des Schutzleiterkreises.  
+Kappen oder Abdeckplatten von ortsfesten Steckdosen und berührbare Teile von mobilen Steckdosen dürfen 
+aus Metall bestehen, wenn die Anforderungen gemäß 10.2.1 oder 10.2.2 erfüllt sind. 
+10.2.1 
+Berührbare Metallkappen oder Metallabdeckplatten müssen durch eine zusätzliche Isolierung, die 
+aus Isolierauskleidung oder Isolierwänden besteht, geschützt werden. Diese Isolierauskleidung oder 
+Isolierwände müssen an der Kappe oder der Abdeckplatte oder dem Körper der Steckvorrichtung so befestigt 
+sein, dass sie nicht entfernt werden können ohne dauerhaft beschädigt zu werden. Alternativ müssen sie so 
+konstruiert sein, dass sie nicht in falscher Lage wieder eingesetzt werden können und dass, wenn sie 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+20 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 21/138 =====
+OVE E 8684-1:2019-12-01 
+21 
+weggelassen werden, die Steckvorrichtung unbrauchbar oder offensichtlich unvollständig ist. In diesem Fall 
+darf keine Gefahr einer zufälligen Berührung zwischen aktiven Teilen und Kappen oder Abdeckplatten aus 
+Metall bestehen, zB durch ihre Befestigungsschrauben, auch dann nicht, wenn einer der Leiter sich aus seiner 
+Klemme gelöst haben sollte, und es müssen Vorkehrungen getroffen werden, um zu verhindern, dass Kriech- 
+oder Luftstrecken kleiner als die in Tabelle 24 festgelegten Werte werden. 
+Für das einpolige Einführen gilt die Anforderung gemäß 10.3. 
+Prüfung: Besichtigen. 
+Diese Auskleidungen oder Sperren müssen den Prüfungen von Abschnitt 17 und Abschnitt 27 genügen. 
+10.2.2 
+Die berührbaren Metallkappen oder Metallabdeckplatten sind durch eine niederohmige Verbindung 
+zuverlässig mit dem Schutzleiterkreis verbunden, wenn die Kappe oder die Abdeckplatte selbst befestigt wird. 
+Die Kriech- und Luftstrecken zwischen den aktiven Stiften eines vollständig eingeführten Steckers und der mit 
+dem Schutzleiter verbundenen Metallkappe einer Steckdose müssen Tabelle 24, Ziffer 2 und Ziffer 7 
+entsprechen; für das einpolige Einführen gilt zusätzlich die Anforderung in 10.3. 
+ANMERKUNG 1  
+Befestigungsschrauben oder andere Mittel sind erlaubt. 
+Prüfung: Besichtigen und durch die Prüfung gemäß 11.5. 
+10.3 
+Es darf nicht möglich sein, eine Verbindung zwischen einem Stift eines Steckers und einem aktiven 
+Kontakt einer Steckdose herzustellen während ein anderer Stift berührbar ist. 
+Prüfung: Handprobe und Verwendung der Lehren C18 und C19 gemäß ÖVE/ÖNORM E 8626:2012. 
+Bei Steckvorrichtungen mit Gehäusen oder Körpern aus thermoplastischen Werkstoffen wird die Prüfung bei 
+einer Umgebungstemperatur von (35  2) °C durchgeführt, wobei die Steckvorrichtung und die Lehre diese 
+Temperatur aufweisen müssen. 
+Bei Steckdosen mit Gehäusen oder Körpern aus Gummi oder PVC und ähnlichem wird die Lehre mit einer 
+Kraft von 75 N  1 Minute angewendet. 
+Für ortsfeste Steckdosen, die mit Metallkappen oder Metallabdeckplatten ausgestattet sind, wird zwischen 
+einem Stift und einem Steckkontakt eine Luftstrecke von mindestens 2 mm gefordert, wenn ein anderer Stift 
+oder andere Stifte in Berührung mit der Metallkappe oder der Metallabdeckplatte ist (sind). 
+ANMERKUNG 1  
+Einpoliges Einführen kann mit Hilfe von mindestens einem der folgenden Mittel verhindert werden: 
+– 
+eine ausreichend große Kappe oder Abdeckplatte; 
+– 
+andere Mittel (zB Shutter, dies jedoch nicht als einziges Mittel). 
+10.4 
+Äußere Teile von Steckern, mit Ausnahme von Montageschrauben und dgl., stromführenden Stiften 
+und Schutzleiterstiften, Schutzleiterbändern und Metallringen um die Stifte herum und berührbaren Metallteilen 
+die die Anforderungen gemäß 10.2.1 oder 10.2.2 erfüllen, müssen aus Isolierstoff bestehen 
+Die äußeren Abmessungen von Ringen, soweit vorhanden, die um die Stifte angebracht sind, dürfen 8 mm 
+konzentrisch in Bezug auf den Stift gemessen, nicht überschreiten. 
+Prüfung: Besichtigen gemäß 10.2.1 oder 10.2.2. 
+10.5 
+Steckdosen mit Shutter müssen zusätzlich so gebaut sein, dass aktive Teile bei nicht eingeführtem 
+Stecker mit den Lehren gemäß Bild 9 und Bild 10 nicht berührbar sind. 
+Die Lehren müssen ausschließlich auf die Eintrittslöcher der zugehörigen aktiven Kontakte angewendet werden 
+und dürfen aktive Teile nicht berühren. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+21 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 22/138 =====
+OVE E 8684-1:2019-12-01 
+22 
+Um diesen Schutz sicherzustellen, müssen Steckdosen so gebaut sein, dass aktive Kontakte selbsttätig 
+abgeschirmt werden, wenn der Stecker herausgezogen ist. 
+Shutter müssen so konstruiert sein, dass ein Stecker mit der gleichen Bewegung in eine Steckdose mit Shutter 
+eingeführt wird wie in eine Steckdose ohne Shutter. 
+Die Mittel hierfür müssen so beschaffen sein, dass sie nicht leicht mit etwas anderem als einem Stecker zu 
+betätigen sind, und sie dürfen nicht von Teilen abhängig sein, die verloren gehen können. 
+Eine elektrische Anzeigevorrichtung mit einer Spannung zwischen 40 V und 50 V wird, um den Kontakt mit 
+dem betreffenden Teil anzuzeigen, angewendet. 
+Prüfung: Besichtigen und für Steckdosen, bei vollständig herausgezogenem Stecker bei Anwendung der 
+folgenden Lehren. 
+Die Lehre gemäß Bild 9 ist mit einer Kraft von 20 N auf die Eintrittslöcher der zugehörigen aktiven Kontakte 
+anzuwenden.  
+Die Lehre ist an der ungünstigsten Position des Shutters in drei Richtungen für 5 s an dieselbe Stelle in jede 
+der drei Richtungen anzuwenden. 
+Während jeder Anwendung der Lehre darf diese nicht gedreht werden und es ist eine Kraft von 20 N 
+anzuwenden. Bei Bewegung der Lehre von der einen Richtung zur nächsten ist keine Kraft anzuwenden aber 
+die Lehre darf nicht zurückgezogen werden. 
+Anschließend ist die Lehre gemäß Bild 10 mit einer Kraft von 1 N in drei unabhängigen Bewegungen unter den 
+ungünstigsten Bedingungen für 5 s in jede Richtung anzuwenden. Die Lehre ist nach jeder Bewegung 
+zurückzuziehen. 
+Bei Steckdosen mit Gehäusen oder Körpern aus thermoplastischem Material wird die Prüfung bei einer 
+Umgebungstemperatur von (35 ± 2) °C durchgeführt, wobei sowohl die Steckdose als auch die Lehre diese 
+Temperatur aufweisen muss. 
+10.6 
+Etwaig vorhandene Schutzkontakte einer Steckdose müssen so gebaut sein, dass sie durch das 
+Einführen eines Steckers nicht in einem die Sicherheit beeinträchtigenden Maße verformt werden.  
+Prüfungen wie folgt: 
+10.6.1 
+Die Steckdose wird so angebracht, dass sich die Steckdosen-Kontakte in einer senkrechten Lage 
+befinden. Lehre C24 gemäß ÖVE/ÖNORM E 8626:2012 wird in die Steckdose eingeführt und mit einer Kraft 
+von 150 
+0
+–5 N  1 min belastet. 
+Nach dieser Prüfung muss die Steckdose den Anforderungen des Abschnitts 9 entsprechen. 
+10.6.2 
+Die beiden seitlichen Schutzkontakte werden nacheinander mit der Vorrichtung nach Bild NA 54 mit 
+einem Drehmoment von 100 
+0
+–5 Ncm  1 min belastet. 
+Nach dieser Prüfung muss die Lehre C4 gemäß ÖVE/ÖNORM E 8626 eingeführt werden können. 
+Diese Prüfungen werden an neuen Prüflingen durchgeführt.  
+10.7 
+Steckdosen mit erhöhtem Schutz (mit und ohne Deckel) müssen so gebaut sein, dass, wenn sie im 
+bestimmungsgemäßen Gebrauch montiert und angeschlossen sind, aktive Teile nicht berührbar sind. 
+Prüfung: Besichtigen und durch die Verwendung der Lehre gemäß Bild 10 mit einer Kraft von 1 N bei allen 
+berührbaren Oberflächen unter den ungünstigsten Bedingungen und ohne eingeführten Stecker. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+22 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 23/138 =====
+OVE E 8684-1:2019-12-01 
+23 
+Bei Steckdosen mit Gehäusen oder Körpern aus thermoplastischem Material wird die Prüfung bei ei¬ner 
+Umgebungstemperatur von (35 ± 2) °C durchgeführt, wobei sowohl die Steckdose als auch die Lehre diese 
+Temperatur aufweisen müssen. 
+Während dieser Prüfung dürfen aktive Teile mit der Lehre nicht berührt werden. Vorhandene Deckel sind zu 
+schließen. 
+Es muss eine elektrische Anzeigevorrichtung gemäß 10.1 verwendet werden. 
+11 Schutzleiteranschluss 
+11.1 
+Steckvorrichtungen mit Schutzkontakt müssen so gebaut sein, dass beim Einführen des Steckers die 
+Schutzkontaktverbindung hergestellt wird, bevor die stromführenden Stifte des Steckers Spannung annehmen 
+können. 
+Beim Herausziehen des Steckers müssen die stromführenden Stifte getrennt sein, bevor die 
+Schutzleiterverbindung unterbrochen ist. 
+Prüfung: Besichtigen der Konstruktionszeichnungen, wobei die Auswirkungen von Abmaßen berücksichtigt 
+werden, und durch Vergleich der Prüflinge mit diesen Zeichnungen. 
+ANMERKUNG 
+Übereinstimmung mit den zutreffenden Normen stellt eine Erfüllung dieser Anforderung sicher. 
+11.2 
+Schutzleiter-Anschlussklemmen von wieder anschließbaren Steckvorrichtungen müssen den 
+zutreffenden Anforderungen gemäß Abschnitt 12 entsprechen. 
+Diese müssen die gleiche Größe wie die zugehörigen Netzleiter-Anschlussklemmen haben.  
+Schutzleiter-Anschlussklemmen von wieder anschließbaren Steckvorrichtungen mit Schutzkontakt müssen 
+innen angebracht sein. 
+Bei ortsfesten Steckdosen kann eine zusätzliche Schutzleiterklemme außen am Gehäuse angebracht sein. Diese 
+muss für einen Leiter von mindestens 6 mm2 geeignet sein. 
+Schutzleiter-Anschlussklemmen von ortsfesten Steckdosen müssen am Sockel oder an einem zuverlässig mit 
+dem Sockel befestigten Teil befestigt sein. 
+Schutzleiter-Kontakte von ortsfesten Steckdosen müssen am Sockel oder der Abdeckung befestigt sein. Wenn 
+sie an der Abdeckung befestigt sind, dann müssen sie, wenn die Abdeckung angebracht ist, automatisch und 
+zuverlässig mit der Schutzleiter-Anschlussklemme verbunden sein. Die Kontaktteile müssen silberbeschichtet 
+sein oder dürfen nicht geringer widerstandsfähig gegen Korrosion und Abrieb geschützt sein. 
+Diese Verbindung muss unter allen Bedingungen sichergestellt sein, wie sie im bestimmungsgemäßen 
+Gebrauch auftreten können, einschließlich des Lockerns von Befestigungsschrauben, dem nachlässigen 
+Anbringen der Abdeckung, u. dgl. 
+Abgesehen von vorstehenden Ausnahmen, müssen die Teile des Schutzleiterkreises aus einem Teil bestehen 
+oder müssen zuverlässig durch Vernieten, Schweißen oder ähnlichem miteinander verbunden sein. 
+ANMERKUNG 1  
+Die Anforderung hinsichtlich der Verbindung zwischen einem an der Abdeckung befestigten 
+Schutzkontakt und der Schutzleiter-Anschlussklemme dürfen durch die Verwendung eines massiven Stiftes und einer 
+federnden Kontakthülse erfüllt werden. 
+ANMERKUNG 2  
+Für die Anforderungen in diesem Abschnitt werden Schrauben nicht als Teil der Kontaktteile 
+angesehen. 
+ANMERKUNG 3  
+Bei der Prüfung der Zuverlässigkeit der Verbindung zwischen Teilen des Schutzleiterkreises ist 
+die Auswirkung von möglicher Korrosion zu berücksichtigen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+23 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 24/138 =====
+OVE E 8684-1:2019-12-01 
+24 
+11.3 
+Berührbare Metallteile von ortsfesten Steckdosen mit Schutzkontakt, die im Falle eines 
+Isolationsfehlers aktiv werden könnten, müssen dauerhaft und zuverlässig mit der Schutzleiter-
+Anschlussklemme verbunden sein. 
+ANMERKUNG 1  
+Diese Anforderung gilt nicht für die berührbare Metallabdeckplatten aus 10.2.1. 
+ANMERKUNG 2  
+Im Sinne der Anforderung in diesem Abschnitt werden kleine Schrauben oder ähnliches, die von 
+aktiven Teilen isoliert sind und zur Befestigung von Sockeln, Kappen und Abdeckplatten dienen, nicht als berührbare Teile 
+angesehen die durch Isolationsfehler aktiv werden könnten. 
+ANMERKUNG 3  
+Diese Anforderung bedeutet, dass bei ortsfesten Steckdosen mit Metallgehäusen, die eine äußere 
+Schutzleiter-Anschlussklemme haben, diese Anschlussklemme mit der an dem Sockel befestigten Anschlussklemme 
+verbunden ist. 
+11.4 
+Steckdosen mit einem Schutzgrad höher IPX0, mit einem Gehäuse aus Isoliermaterial das mehr als 
+eine Einlassöffnung für Leitungen hat, müssen zusätzlich mit einer inneren befestigten Schutzleiter-
+Anschlussklemme oder mit ausreichend Raum für eine lose angeordnete Klemme ausgestattet sein. Diese 
+Anschlussklemme muss die Verbindung eines hinein geführten Leiters mit einem herausgeführten Leiter 
+ermöglichen, es sei denn, die Schutzleiter-Anschlussklemme der Steckdose selbst ist so konstruiert, dass sie 
+die Verbindung eines hinein geführten Schutzleiters mit einem herausgeführten Schutzleiter ermöglicht. 
+Im Falle einer lose angeordneten Klemme gelten die Anforderungen gemäß Abschnitt 12 nicht. 
+Prüfung der Anforderungen gemäß 11.2 bis 11.4: Besichtigen und Prüfungen gemäß Abschnitt 12, und 
+zusätzlich für lose angeordnete Klemmen durch eine Probeverbindung des Typs der Klemme, der vom 
+Hersteller angegeben wurde. 
+11.5 
+Die Verbindung zwischen Schutzleiter-Anschlussklemme und mit ihren verbundenen berührbaren 
+Metallteilen muss niederohmig sein. 
+Prüfung: Es wird ein Strom, der aus einer Wechselstromquelle mit einer Leerlaufspannung von höchstens 12 V 
+stammt und der 1,5-mal Bemessungsstrom beträgt oder 25 A, je nachdem welcher der größere ist, zwischen 
+der Schutzleiterklemme und jedem berührbaren Teil zum Fließen gebracht. 
+Der Spannungsabfall zwischen der Schutzleiterklemme und dem berührbaren Metallteil wird gemessen und 
+der Widerstand aus der Stromstärke und diesem Spannungsabfall berechnet. 
+In keinem Fall darf der Widerstand 0,05 Ω überschreiten. 
+ANMERKUNG 
+Es ist darauf zu achten, dass der Kontaktwiderstand zwischen der Spitze der Messsonde und dem zu 
+prüfenden Metallteil die Prüfergebnisse nicht beeinflusst. 
+12 Anschlussklemmen und Anschlüsse 
+12.1 Allgemeines 
+Alle Prüfungen an Anschlussklemmen, mit Ausnahme der Prüfung gemäß 12.3.11 und 12.3.12, müssen nach 
+der Prüfung in Abschnitt 16 durchgeführt werden. 
+12.1.1 
+Wieder anschließbare ortsfeste Steckdosen müssen mit Schraubklemmen oder mit schraubenlosen 
+Klemmen ausgerüstet sein. 
+Wieder anschließbare Stecker und wieder anschließbare Kupplungssteckdosen müssen mit Schraubklemmen 
+ausgerüstet sein. 
+Wenn vorverlötete flexible Leiter verwendet werden, muss dafür gesorgt werden, dass, wenn wie im 
+bestimmungsgemäßen Gebrauch angeschlossen wird, bei Schraubklemmen der vorverlötete Bereich 
+außerhalb des Klemmenbereichs liegt. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+24 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 25/138 =====
+OVE E 8684-1:2019-12-01 
+25 
+Die Mittel zum Anklemmen der Leiter in den Anschlussklemmen dürfen nicht dazu dienen andere Teile zu 
+befestigen. Sie dürfen jedoch die Klemmen in ihrer Lage halten oder ihr Verdrehen verhindern. 
+12.1.2 
+Nicht-wieder anschließbare Steckvorrichtungen müssen mit Löt-, Schweiß-, Crimp- oder 
+gleichermaßen dauerhaft wirksamen Verbindungen (Anschlüssen) ausgestattet sein. Schraub- oder 
+schraubenlose Klemmen und Steckverbindungen dürfen nicht verwendet werden. 
+Bei Crimpverbindungen sind vorverlötete flexible Leiter nicht erlaubt, es sei denn, der verlötete Bereich liegt 
+außerhalb des Crimpbereichs. 
+12.1.3 
+Prüfung: Besichtigen und durch die Prüfungen gemäß 12.2 oder 12.3, soweit anwendbar. 
+12.2 Anschlussklemmen mit Schraubklemmung für äußere Kupferleiter 
+12.2.1 
+Steckvorrichtungen müssen mit Anschlussklemmen ausgestattet sein, die den ordnungsgemäßen 
+Anschluss von Kupferleitern mit den Querschnitten gemäß Tabelle 3 gestatten. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+25 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 26/138 =====
+OVE E 8684-1:2019-12-01 
+26 
+Tabelle 3 – Beziehung zwischen Bemessungsstrom und anschließbaren  
+Nennquerschnitten von Kupferleitern 
+ 
+1 
+2 
+3 
+4 
+5 
+Bemessungsstrom 
+A 
+Starre (ein- oder mehrdrähtig)  
+Kupferleiter a 
+Flexible  
+Kupferleiter 
+ 
+Steckvorrichtung 
+ortsfest / mobil 
+Nennquerschnitte 
+Durchmesser des 
+größten Leiters 
+Nennquerschnitte 
+Durchmesser des 
+größten Leiters 
+mm2 
+mm b 
+mm2 
+mm b 
+1 
+2,5 
+2P 
+mobil 
+– 
+– 
+0,75 bis 1,5 
+1,8 
+(ÖVE/ÖNORM  
+EN 60228) 
+2 
+16 
+2P + 
+ 
+ortsfest 
+1,5 bis 2 x 2,5 
+2,13 
+(ÖVE/ÖNORM  
+EN 60228) 
+– 
+– 
+3 
+16 
+2P, 2P + 
+ 
+Stecker 
+– 
+– 
+0,75 bis 1,5 
+1,8 
+(ÖVE/ÖNORM  
+EN 60228) 
+4 
+16 
+2P + 
+ 
+Kupplungssteckdose 
+– 
+– 
+1 bis 1,5 
+1,8 
+(ÖVE/ÖNORM  
+EN 60228) 
+5 
+16 
+3P + N + 
+ 
+ortsfest 
+1,5 bis 4 
+2,7 
+(ÖVE/ÖNORM  
+EN 60228) 
+– 
+– 
+6 
+16 
+3P + N + 
+ 
+mobil 
+– 
+– 
+1 bis 2,5 
+2,2 
+(ÖVE/ÖNORM  
+EN 60228) 
+7 
+25 
+3P + N + 
+ 
+ortsfest 
+2,5 bis 6 
+3,3 
+(ÖVE/ÖNORM  
+EN 60228) 
+– 
+– 
+8 
+25 
+3P + N + 
+ 
+mobil 
+– 
+– 
+2,5 bis 4 
+3,0  
+(ÖVE/ÖNORM  
+EN 60228) 
+a 
+Der Gebrauch von flexiblen Leitern ist zulässig. 
+b 
+Diese Werte sind informativ. 
+ 
+Anforderungen an den Leiterraum werden im Bild 2, Bild 3, Bild 4 bzw. Bild 5 festgelegt. 
+Prüfung: Besichtigen, Messen und durch Anschließen von Leitern mit dem kleinsten und größten festgelegten 
+Querschnitt. 
+12.2.2 
+Anschlussklemmen mit Schraubklemmung müssen den Anschluss des Leiters ohne besondere 
+Vorbereitung gestatten. 
+Prüfung: Besichtigen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+26 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 27/138 =====
+OVE E 8684-1:2019-12-01 
+27 
+ANMERKUNG 
+Der Ausdruck „besondere Vorbereitung“ umfasst Verlöten der Drähte des Leiters, Verwenden von 
+Kabelschuhen, Biegen von Ösen u. dgl., aber nicht das Ausrichten des Leiters vor dem Einführen in die Anschlussklemme 
+oder das Verdrillen eines flexiblen Leiters, um das Ende zu festigen. 
+12.2.3 
+Anschlussklemmen mit Schraubklemmung müssen eine angemessene mechanische Festigkeit 
+aufweisen. 
+Schrauben und Muttern zum Anklemmen der Leiter müssen ein metrisches ISO-Gewinde oder ein in Steigung 
+und mechanischer Festigkeit vergleichbares Gewinde haben. 
+Schrauben dürfen nicht aus weichem oder zum Kriechen neigendem Metall bestehen, zB Zink oder Aluminium. 
+Prüfung: Besichtigen und durch die Prüfung gemäß 12.2.6 und 12.2.8. 
+ANMERKUNG 
+Vorläufig werden SI-, BA- und UN- Gewinde als in Steigung und mechanischer Festigkeit vergleichbar zu 
+ISO-Gewinden angenommen. 
+12.2.4 
+Anschlussklemmen mit Schraubklemmung müssen korrosionsbeständig sein. 
+Anschlussklemmen, deren Körper aus Kupfer oder einer Kupferlegierung gemäß 26.5 bestehen, werden als in 
+Übereinstimmung mit dieser Anforderung angesehen. 
+12.2.5 
+Anschlussklemmen mit Schraubklemmung müssen so konstruiert sein, dass sie den/die Leiter 
+festklemmen, ohne übermäßige Beschädigung des/der Leiter/s hervorzurufen. 
+Prüfung: Die in die Prüfvorrichtung gemäß Bild 11 angebrachte Anschlussklemme wird mit starren 
+eindrähtigen, mehrdrähtigen und/oder flexiblen Leiter(n) gemäß Tabelle 3 angeschlossen; zuerst mit dem 
+kleinsten und dann mit dem größten Querschnitt, wobei die Klemmschraube(n) oder Mutter(n) mit einem 
+Drehmoment gemäß Tabelle 6 angezogen wird (werden). 
+Die Länge des Prüfleiters muss um 75 mm größer sein als die in Tabelle 9 angegebene Höhe h. 
+Das Ende des Leiters wird durch eine Buchse von angemessener Größe in einer Platte geführt, die in einer 
+Höhe (h) unterhalb der Vorrichtung, gemäß Tabelle 9, angebracht ist. Die Buchse ist in waagerechter ihrer 
+Lage so befestigt, dass deren Mittellinie einen Kreis von 75 mm Durchmesser beschreibt, der konzentrisch zur 
+Mitte der Klemmvorrichtung in waagerechter ihrer Ebene liegt; die Platte wird dann mit (10 ± 2) Umdrehungen 
+je Minute gedreht. 
+Der Abstand zwischen der Öffnung der Klemmvorrichtung und der oberen Fläche der Buchse muss innerhalb 
+±15 mm der Höhe gemäß Tabelle 9 sein. Um ein Kleben, Verdrehen oder Drehen des isolierten Leiters zu 
+vermeiden darf die Buchse geschmiert sein. 
+Eine Masse gemäß Tabelle 9 wird an das Ende des Leiters aufgehängt. Die Prüfdauer beträgt ca. 15 Minuten. 
+Während der Prüfung darf der Leiter weder aus der Klemmvorrichtung herausrutschen noch in der Nähe der 
+Klemmvorrichtung brechen, und der Leiter darf nicht so beschädigt werden das er für eine weitere Verwendung 
+nicht mehr geeignet ist. 
+Die Prüfung ist mit starren eindrähtigen Leitern zu wiederholen, wenn die erste Prüfung mit starren 
+mehrdrähtigen Leitern durchgeführt wurde. Falls keine starren mehrdrähtigen Leiter gebräuchlich sind, darf 
+die Prüfung nur mit starren eindrähtigen Leitern durchgeführt werden. 
+Anschlussklemmen mit Schraubklemmung müssen so konstruiert sein, dass der Leiter zuverlässig zwischen 
+Metallflächen geklemmt wird. 
+Prüfung: Besichtigen und durch folgende Prüfung: 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+27 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 28/138 =====
+OVE E 8684-1:2019-12-01 
+28 
+Die Anschlussklemmen von ortsfesten Steckdosen werden mit starren, ein- oder mehrdrähtigen Leitern 
+angeschlossen, Stecker und Kupplungssteckdosen mit flexiblen Leitern. Der Anschluss erfolgt jeweils mit dem 
+kleinsten und dem größten Querschnitt gemäß Tabelle 3. Die Klemmschrauben werden mit einem 
+Drehmoment gleich zwei Drittel des Drehmoments der entsprechenden Spalte gemäß Tabelle 6 angezogen. 
+Wenn die Schraube einen Sechskantkopf mit einem Schlitz besitzt, dann ist ein Drehmoment gleich zwei Drittel 
+des Drehmoments gemäß Spalte 3 von Tabelle 6 zu verwenden. 
+Anschließend wird jeder Leiter einer gemäß Tabelle 4 festgelegten Zugkraft unterworfen, die 1 Minute ohne 
+Ruck ausgeführt wird und die in Richtung der Achse des Leiterraumes wirkt. 
+Tabelle 4 – Werte für die Zugprüfung an Schraubklemmen 
+Nennquerschnitt des Leiters, der von der 
+Klemme aufgenommen werden kann 
+Zugkraft 
+mm2 
+N 
+über 0,75 bis 1,5 
+40 
+über 1,5 bis 2,5 
+50 
+über 2,5 bis 4 
+50 
+über 4 bis 6 
+60 
+ 
+Wenn die Klemme für zwei oder für drei Leiter vorgesehen ist, dann wird die zutreffende Zugkraft nacheinander 
+auf jeden Leiter angewendet. 
+Während der Prüfung darf sich der Leiter nicht merklich in der Klemme bewegen. 
+12.2.7 
+Anschlussklemmen mit Schraubklemmung müssen so konstruiert oder angeordnet sein, dass, wenn 
+die Klemmschrauben oder Muttern angezogen werden, weder ein starrer, eindrähtiger Leiter noch ein Draht 
+eines mehrdrähtigen Leiters herausrutschen kann. 
+Prüfung: Die Anschlussklemmen werden mit Leitern mit dem größten gemäß Tabelle 3 festgelegten 
+Querschnitt angeschlossen. 
+Die Anschlussklemmen von ortsfesten Steckdosen werden sowohl mit starren eindrähtigen als auch mit starren 
+mehrdrähtigen Leitern geprüft. 
+Die Anschlussklemmen von Steckern und Kupplungssteckdosen werden mit flexiblen Leitern geprüft. 
+An Anschlussklemmen, die für das Durchschleifen von zwei oder drei Leitern vorgesehen sind, wird die 
+zulässige Anzahl von Leitern angeschlossen. 
+Anschlussklemmen werden mit Leitern mit der Zusammensetzung gemäß Tabelle 5 ausgestattet. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+28 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 29/138 =====
+OVE E 8684-1:2019-12-01 
+29 
+Tabelle 5 – Anzahl der Drähte und Nenndurchmesser von Leitern 
+Nennquerschnitt 
+Anzahl der Drähte (n) und Nenndurchmesser  
+mm2 
+n x mm 
+Flexibler  
+Leiter 
+Starrer eindrähtiger  
+Leiter 
+Starrer mehrdrähtiger 
+Leiter 
+0,75 
+24  0,20 
+– 
+– 
+1,0 
+32  0,20 
+1  1,13 
+7  0,42 
+1,5 
+30  0,25 
+1  1,38 
+7  0,52 
+2,5 
+50  0,25 
+1  1,78 
+7  0,67 
+4,0 
+56  0,30 
+1  2,25 
+7  0,86 
+6,0 
+84 x 0,30 
+1  2,76 
+7  1,05 
+ 
+Vor dem Einführen in die Klemmstelle der Anschlussklemme werden Drähte von starren ein- oder 
+mehrdrähtigen Leitern gerade gerichtet; starre mehrdrähtige Leiter dürfen außerdem verdrillt werden, um 
+ungefähr ihre ursprüngliche Form wiederherzustellen und flexible Leiter werden in einer Richtung so verdrillt, 
+dass es eine einheitliche Verdrillung von einer vollständigen Drehung auf einer Länge von etwa 20 mm gibt. 
+Der Leiter wird in die Klemmstelle der Anschlussklemme mit dem vorgeschriebenen Mindestabstand eingeführt 
+oder, wenn kein Abstand vorgeschrieben ist, bis er gerade aus der entgegen gesetzten Seite der Klemme 
+herausragt. Der Leiter wird in der für das Ausweichen des Drahtes günstigsten Lage eingeführt. 
+Anschließend wird die Klemmschraube mit einem Drehmoment gleich zwei Drittel des Drehmoments in der 
+zutreffenden Spalte gemäß Tabelle 6 angezogen. 
+Bei flexiblen Leitern wird die Prüfung mit einem neuen Leiter wiederholt, der wie oben angegeben verdrillt ist, 
+aber in die entgegen gesetzter Richtung. 
+Nach der Prüfung darf kein Einzeldraht aus der Klemmvorrichtung so herausgekommen sein, dass die Kriech- 
+und Luftstrecken auf kleinere Werte als in Tabelle 24 angegeben verringert wurden. 
+12.2.8 
+Anschlussklemmen mit Schraubklemmung müssen innerhalb der Steckvorrichtung so befestigt oder 
+angeordnet sein, dass die Anschlussklemmen sich beim Festziehen oder Lösen der Klemmschrauben nicht 
+von ihrer Befestigung an der Steckvorrichtung lockern können. 
+ANMERKUNG 1  
+Diese Anforderungen bedeuten nicht, dass die Klemmen so gebaut werden müssen, dass jegliche 
+Drehung oder Verschiebung verhindert wird. Jede Bewegung soll aber ausreichend begrenzt werden, dass die Nicht-
+Übereinstimmung mit dieser OVE-Norm ausgeschlossen ist. 
+ANMERKUNG 2  
+Die Verwendung von Vergussmasse oder Harz wird als ausreichend angesehen um das Lockern 
+einer Klemme zu verhindern, vorausgesetzt: 
+– 
+die Vergussmasse oder das Harz unterliegen während des bestimmungsgemäßen Gebrauchs keiner mechanischen 
+Beanspruchung, und 
+– 
+die Wirksamkeit der Vergussmasse oder des Harzes ist nicht beeinträchtigt durch Temperaturen, die sich durch die 
+Klemme unter den ungünstigsten in dieser OVE-Norm festgelegten Bedingungen ergeben. 
+Prüfung: Besichtigen, Messen und durch folgende Prüfung: 
+Ein starrer eindrähtiger Kupferleiter mit dem größten Querschnitt gemäß Tabelle 3 wird an die Anschluss-
+klemme angeschlossen. 
+Falls es keine starre eindrähtige Leiter gibt, ist die Prüfung mit starren mehrdrähtigen Leitern durchzuführen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+29 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 30/138 =====
+OVE E 8684-1:2019-12-01 
+30 
+Vor dem Einführen in die Klemmstelle der Anschlussklemme werden Drähte von starren ein- oder 
+mehrdrähtigen Leitern gerade gerichtet; starre mehrdrähtige Leiter dürfen, um ungefähr ihre ursprüngliche 
+Form wiederherzustellen, außerdem verdrillt werden. 
+Der Leiter wird in die Klemmstelle der Anschlussklemme mit dem vorgeschriebenen Mindestabstand eingeführt 
+oder wenn kein Abstand vorgeschrieben ist, bis er gerade aus der entgegen gesetzten Seite der Klemme 
+herausragt. Der Leiter wird in der für das Ausweichen des Drahtes günstigsten Lage eingeführt. 
+Schrauben und Muttern werden mit Hilfe eines geeigneten Prüfschraubendrehers oder eines Schlüssels 
+fünfmal angezogen und gelöst, wobei das Anzugsdrehmoment gleich dem in der zutreffenden Spalte gemäß 
+Tabelle 6 oder dem in der Tabelle der entsprechenden Bilder 2, 3 oder 4 ist, je nachdem welches höher ist. 
+Der Leiter wird jedes Mal, wenn die Schraube oder die Mutter gelöst wird, bewegt. 
+Wenn eine Schraube einen Sechskantkopf mit einem Schlitz hat, wird nur die Prüfung mit dem 
+Schraubendreher vorgenommen, und zwar mit dem Drehmoment gemäß Spalte 3. 
+Tabelle 6 – Anzugsdrehmomente zum Nachweis der mechanischen  
+Festigkeit vonSchraubklemmen 
+Gewinde-Nenndurchmesser 
+Drehmoment 
+mm 
+Nm 
+ 
+1 a 
+2 b 
+3 c 
+bis 2,8 
+0,2 
+0,4 
+– 
+über 2,8 bis 3,0 
+0,25 
+0,5 
+– 
+über 3,0 bis 3,2 
+0,3 
+0,6 
+– 
+über 3,2 bis 3,6 
+0,4 
+0,8 
+– 
+über 3,6 bis 4,1 
+0,7 
+1,2 
+1,2 
+über 4,1 bis 4,7 
+0,8 
+1,8 
+1,2 
+über 4,7 bis 5,3 
+0,8 
+2,0 
+1,4 
+a 
+Spalte 1 gilt für Schrauben ohne Kopf, wenn die Schraube, nachdem sie angezogen wurde, nicht aus dem Loch herausragt 
+und für andere Schrauben, die nicht mit einem Schraubendreher mit einer Schneide, breiter als der Durchmesser der 
+Schraube, angezogen werden können. 
+b 
+Spalte 2 gilt für andere Schrauben, die mit Hilfe eines Schraubendrehers angezogen werden und für Schrauben und Muttern, 
+die mit etwas anderem als einem Schraubendreher angezogen werden. 
+c 
+Spalte 3 gilt für Muttern von Mantelklemmen, die mit einem Schraubendreher angezogen werden. 
+ 
+Während der Prüfung dürfen sich die Anschlussklemmen nicht lockern und dürfen keine Beschädigung, 
+wodurch die weitere Verwendung der Anschlussklemme beeinträchtigt ist, aufweisen, zB Brechen der 
+Schrauben oder Beschädigung der Kopfschlitze (Verwendung des geeigneten Schraubendrehers ist nicht mehr 
+möglich), Beschädigung der Gewinde, der Unterlegscheiben oder Bügel. 
+ANMERKUNG 1  
+Bei Mantelklemmen ist der angegebene Nenndurchmesser der des geschlitzten Bolzens. 
+ANMERKUNG 2  
+Die Form der Schneide des Prüfschraubendrehers muss zum Kopf der zu prüfenden Schraube 
+passen. 
+ANMERKUNG 3  
+Die Schrauben und Muttern dürfen nicht ruckartig angezogen werden. 
+12.2.9 
+Klemmschrauben oder Muttern von Schutzleiterklemmen mit Schraubklemmung müssen 
+ausreichend gegen zufälliges Lösen gesichert sein und es darf nicht möglich sein, sie ohne Zuhilfenahme von 
+Werkzeug zu lösen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+30 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 31/138 =====
+OVE E 8684-1:2019-12-01 
+31 
+Prüfung: Handprobe. 
+ANMERKUNG 
+Im Allgemeinen haben die Konstruktionen von Klemmen, wie sie in den Bildern 2, 3, 4 und 5 gezeigt sind, 
+ausreichende Elastizität, um dieser Anforderung zu genügen. Für andere Konstruktionen können spezielle Maßnahmen, 
+zB die Verwendung eines ausreichend elastischen Teils, der nicht unbeabsichtigt entfernt werden kann, notwendig werden. 
+12.2.10 Schutzleiterklemmen 
+mit 
+Schraubklemmung 
+müssen 
+so 
+beschaffen 
+sein, 
+dass 
+keine 
+Korrosionsgefahr besteht, die aus dem Kontakt zwischen diesen Teilen und dem Kupfer des Schutzleiters oder 
+jedem anderen Metall in Kontakt mit diesen Teilen resultiert.  
+Der Körper der Schutzleiterklemme muss aus Messing oder einem anderen, nicht geringer 
+korrosionsbeständigen Metall sein, außer wenn er Teil des Metallrahmens oder Metallgehäuses ist. In diesem 
+Fall muss die Schraube oder Mutter aus Messing oder einem anderen, nicht geringer korrosionsbeständigen 
+Metall bestehen. 
+Wenn der Körper der Schutzleiterklemme ein Teil eines Rahmens oder eines Gehäuses aus einer 
+Aluminiumlegierung ist, müssen Vorkehrungen getroffen werden, um die Gefahr einer Korrosion, die sich aus 
+dem Kontakt zwischen Kupfer und Aluminium oder seinen Legierungen ergibt, zu vermeiden. 
+Prüfung: Besichtigen. 
+ANMERKUNG 
+Schrauben oder Muttern aus plattiertem Stahl, die die Korrosionsprüfung bestehen, werden als aus einem 
+Metall bestehend angesehen, das nicht geringer korrosionsbeständig ist als Messing. 
+12.2.11 Bei Buchsenklemmen muss, wenn der Leiter vollständig eingeführt ist, der Abstand zwischen der 
+Klemmschraube und dem Leiterende, mindestens mit dem in Bild 2 festgelegten Abstand sein. 
+ANMERKUNG 
+Der Mindestabstand zwischen der Klemmschraube und dem Leiterende gilt nur für Buchsenklemmen, 
+bei denen der Leiter nicht vollständig durchgesteckt werden kann. 
+Bei Mantelklemmen muss, wenn der Leiter vollständig eingeführt ist, der Abstand zwischen dem festen Teil 
+und dem Leiterende mindestens gleich dem in Bild 5 festgelegten Abstand sein. 
+Prüfung: Durch Messung, nachdem ein eindrähtiger Leiter mit dem größten gemäß Tabelle 3 festgelegten 
+Querschnitt vollständig eingeführt und angeklemmt wurde. 
+12.3 Schraubenlose Klemmen für äußere Kupferleiter 
+12.3.1 
+Schraubenlose Klemmen dürfen entweder nur für starre Kupferleiter geeignet sein oder sowohl für 
+starre als auch flexible Kupferleiter. 
+Bei Klemmen für starre und flexible Kupferleiter werden die Prüfungen zuerst mit starren Leitern durchgeführt 
+und dann mit flexiblen Leitern wiederholt. 
+ANMERKUNG 
+Abschnitt 12.3.1 gilt nicht für Steckdosen ausgerüstet mit 
+– 
+Klemmen, die die Anbringung besonderer Vorrichtungen an die Leiter erfordern, bevor diese in die schraubenlose 
+Klemme geklemmt werden, zB Flachsteckverbinder; 
+– 
+Schraubenlose Klemmen, die das Verdrehen der Leiter erfordern, zB solche mit Würgeverbindungen; 
+– 
+Schraubenlose Klemmen, die einen direkten Kontakt zu den Leitern mittels Schneiden oder Spitzen, die die Isolierung 
+durchdringen, herstellen. 
+12.3.2 
+Schraubenlose Klemmen müssen mit zwei Klemmstellen ausgestattet sein, wobei jede den 
+ordnungsgemäßen Anschluss von starren oder starren und flexiblen Leitern mit einem Nennquerschnitt gemäß 
+Tabelle 7 gestatten muss. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+31 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 32/138 =====
+OVE E 8684-1:2019-12-01 
+32 
+Tabelle 7 – Beziehung zwischen Bemessungsstrom und anschließbaren Nennquerschnitten  
+von Kupferleitern für schraubenlose Klemmen 
+ 
+Leiter 
+Bemessungsstrom 
+Nennquerschnitte 
+Durchmesser des größten 
+starren Leiters 
+Durchmesser des größten 
+flexiblen Leiters 
+A 
+mm2 
+mm 
+mm 
+16 
+1,5 bis 2,5 
+2,13 
+2,21 
+ 
+Wenn zwei Leiter anzuschließen sind, muss jeder Leiter in eine separate unabhängige Klemmstelle eingeführt 
+werden (nicht notwendigerweise in separate Löcher). 
+Prüfung: Besichtigen und Anschließen von Leitern des kleinsten und des größten festgelegten Querschnitts. 
+12.3.3 
+Schraubenlose Klemmen müssen das Anschließen von Leitern ohne besonderes Herrichten 
+ermöglichen. 
+Prüfung: Besichtigen. 
+ANMERKUNG 
+Der Ausdruck „besonderes Herrichten“ umfasst Verlöten der Drähte des Leiters, Verwendung von 
+Aderendhülsen u. dgl., aber nicht das Ausrichten des Leiters vor seinem Einführen in die Klemme oder das Verdrillen eines 
+flexiblen Leiters, um das Ende zu festigen. 
+12.3.4 
+Teile von schraubenlosen Klemmen, die hauptsächlich zum Stromführen bestimmt sind, müssen aus 
+einem wie in 26.5 festgelegten Werkstoff bestehen. 
+Prüfung: Besichtigen und erforderlichenfalls durch chemische Analyse. 
+ANMERKUNG 
+Federn, elastische Teile, Klemmplatten oder ähnliches werden nicht als Teile angesehen, die 
+hauptsächlich zum Stromführen gedacht sind.  
+12.3.5 
+Schraubenlose Klemmen müssen so konstruiert sein, dass diese die festgelegten Leiter mit 
+ausreichendem Kontaktdruck und ohne übermäßige Beschädigung des Leiters klemmen. 
+Der Leiter muss zwischen Metallflächen geklemmt werden. 
+ANMERKUNG 
+Leiter werden als übermäßig beschädigt angesehen, wenn sie merkliche tiefe oder scharfe Einkerbungen 
+aufweisen. 
+Prüfung: Besichtigen und durch die Prüfung gemäß 12.3.10. 
+12.3.6 
+Es muss klar ersichtlich sein, wie das Einführen und Lösen der Leiter bewirkt werden soll. 
+Das beabsichtigte Lösen eines Leiters muss durch eine andere Tätigkeit als das Ziehen an dem Leiter erfolgen, 
+sodass es manuell oder mit Hilfe eines allgemein gebräuchlichen Werkzeuges erfolgen kann. 
+Es darf nicht möglich sein, die Öffnungen für Werkzeuge, die zum Unterstützen des Anschließens oder Lösens 
+vorgesehen sind, mit den Löchern für die Leiter zu verwechseln. 
+Prüfung: Besichtigen und durch die Prüfung gemäß 12.3.10. 
+12.3.7 
+Schraubenlose Klemmen, die für die Verbindung von zwei oder mehr Leitern bestimmt sind, müssen 
+so konstruiert sein, dass 
+– 
+Jeder Leiter unabhängig von anderen Leitern geklemmt wird. 
+– 
+während des Anschließens oder Lösens die Leiter entweder gleichzeitig oder getrennt angeschlossen oder 
+gelöst werden können. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+32 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 33/138 =====
+OVE E 8684-1:2019-12-01 
+33 
+– 
+jeder Leiter in eine getrennte Klemmstelle (nicht notwendigerweise in separate Löcher) eingeführt werden 
+muss, 
+– 
+es muss möglich sein muss, jede Anzahl von Leitern bis zum vorgesehenen Maximum sicher zu klemmen. 
+Prüfung: Besichtigen und durch Prüfung mit geeigneten Leitern (Anzahl und Größe). 
+12.3.8 
+Schraubenlose Klemmen müssen so gebaut sein, dass ausreichendes Einführen gegeben ist und 
+dass übermäßiges Einführen der Leiter verhindert wird, wenn ein weiteres Einführen die Kriech- und 
+Luftstrecken gemäß Tabelle 24 verkleinern könnte oder die Arbeitsweise der Steckvorrichtung beeinträchtigen 
+könnte. 
+Prüfung: Besichtigen 
+12.3.9 
+Schraubenlose Klemmen müssen ordnungsgemäß an der Steckvorrichtung befestigt sein. 
+Sie dürfen sich nicht lockern, wenn die Leiter während des Installierens eingeführt oder gelöst werden. 
+Prüfung: Besichtigen und durch die Prüfung gemäß 12.3.10. 
+Das Abdecken mit Vergussmasse ohne andere Vorkehrungen zum Befestigen ist nicht ausreichend. 
+Selbsthärtendes Harz kann jedoch zum Befestigen von Anschlussklemmen, die im bestimmungsgemäßen 
+Gebrauch keiner mechanischen Beanspruchung unterliegen, verwendet werden. 
+12.3.10 Schraubenlose Klemmen müssen den im bestimmungsgemäßen Gebrauch auftretenden 
+mechanischen Beanspruchungen standhalten. 
+Prüfung: Durch folgende Prüfungen, die mit nicht isolierten Leitern an einer schraubenlosen Klemme jedes 
+Prüflings ausgeführt werden, wobei für jede Prüfung ein neuer Prüfling verwendet wird. 
+Die Prüfung wird mit starren, eindrähtigen Kupferleitern durchgeführt und zwar zunächst mit Leitern des 
+größten Querschnittes und dann mit Leitern des kleinsten Querschnittes, gemäß Tabelle 7. 
+Die Leiter werden fünfmal eingeführt und gelöst, wobei jedes Mal neue Leiter verwendet werden, außer beim 
+fünften Mal, bei dem die für das vierte Einführen benutzten Leiter an derselben Stelle geklemmt werden. Für 
+jede Verbindung werden die Leiter entweder soweit wie möglich in die Klemme gedrückt oder sie werden so 
+eingeführt, dass ausreichende Verbindung offensichtlich ist. 
+Nach jedem Einführen wird der Leiter einer Zugkraft gemäß Tabelle 8 angegeben unterworfen. Die Zugkraft 
+wird ohne Ruck 1 Minute in Richtung der Längsachse des Leiterraumes ausgeführt. 
+Tabelle 8 – Werte für die Zugprüfung an schraubenlosen Klemmen 
+Bemessungsstrom 
+Zugkraft 
+A 
+N 
+16 
+30 
+ 
+Während an dem Leiter gezogen wird, darf dieser nicht aus der schraubenlosen Klemme herauskommen. 
+Die Prüfung wird dann, mit starren, mehrdrähtigen Kupferleitern des größten und kleinsten Querschnitts, 
+gemäß 12.3.2 wiederholt; diese Leiter werden jedoch nur einmal eingeführt und gelöst. 
+Schraubenlose Klemmen, die sowohl für starre als auch für flexible Leiter bestimmt sind, müssen auch mit 
+flexiblen Leitern geprüft werden, wobei fünfmal eingeführt und gelöst wird. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+33 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 34/138 =====
+OVE E 8684-1:2019-12-01 
+34 
+Bei ortsfesten Steckdosen mit schraubenlosen Klemmen wird jeder Leiter einer 15-minütigen kreisförmigen 
+Bewegung mit (10  2) Umdrehungen pro Minute unterworfen, wobei eine Vorrichtung zum Beispiel gemäß 
+Bild 11 verwendet wird. Während dieser Prüfung ist eine Masse gemäß Tabelle 9, am Ende des Leiters 
+abzuhängen. 
+Tabelle 9 – Zugkräfte zur Prüfung der Beschädigung von Leitern 
+Nennleiter- 
+querschnitt  
+Durchmesser des  
+Durchführungsloches a 
+Höhe h 
+ 
+Masse 
+ 
+mm2 
+mm 
+mm 
+kg 
+0,75 
+6,5 
+260 
+0,4 
+1,0 
+1,5 
+6,5 
+6,5 
+260 
+260 
+0,4 
+0,4 
+2,5 
+4,0 
+9,5 
+9,5 
+280 
+280 
+0,7 
+0,9 
+6,0 
+9,5 
+280 
+1,4 
+a 
+Wenn das Durchführungsloch nicht groß genug ist, um den Leiter ohne Verdrehen zu führen, darf eine 
+Durchführung mit dem nächst größerem Loch verwendet werden. 
+ 
+Während der Prüfung dürfen sich die Leiter nicht merkbar in der Klemme bewegen.  
+Nach diesen Prüfungen dürfen weder die Anschlussklemmen noch die Klemmittel locker geworden sein und 
+die Leiter dürfen keine Beschädigung aufweisen, die ihre weitere Verwendung beeinträchtigt. 
+12.3.11 Schraubenlose Klemmen müssen den, die im bestimmungsgemäßen Gebrauch auftretenden, 
+elektrischen und thermischen Beanspruchungen standhalten. 
+Prüfung: Durch die folgenden Prüfungen a) und b), die an fünf schraubenlosen Anschlussklemmen von 
+Steckvorrichtungen durchgeführt werden, die noch nicht für eine andere Prüfung verwendet wurden. 
+Beide Prüfungen sind mit neuen Kupferleitern durchzuführen. 
+a) 
+Die Prüfung erfolgt, indem die schraubenlosen Klemmen 1 Stunde mit einem Wechselstrom gemäß 
+Tabelle 10 belastet werden und indem starre eindrähtige 1 m lange Leiter, die den in der gleichen Tabelle 
+festgelegten Querschnitt haben, angeschlossen werden.  
+ 
+Die Prüfung wird an jeder Klemmstelle ausgeführt. 
+Tabelle 10 – Prüfstrom zum Nachweis der elektrischen und thermischen Beanspruchung im 
+bestimmungsgemäßen Gebrauch bei schraubenlosen Klemmen 
+Bemessungsstrom 
+Prüfstrom 
+Nennquerschnitt des Leiters 
+A 
+A 
+mm2 
+16 
+22 
+2,5 
+ANMERKUNG 
+Bei Steckdosen mit einem Bemessungsstrom kleiner 10 A ist der Prüfstrom 
+entsprechend festzulegen und der Querschnitt des Leiters ist mit 1,5 mm2 festzulegen. 
+ 
+ 
+Während der Prüfung fließt kein Strom durch die Steckvorrichtung sondern nur durch die Klemmen. 
+ 
+Unmittelbar nach dieser Zeit wird der Spannungsabfall über jede schraubenlose Klemme mit 
+Bemessungsstrom gemessen. 
+ 
+In keinem Fall darf der Spannungsabfall 15 mV überschreiten. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+34 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 35/138 =====
+OVE E 8684-1:2019-12-01 
+35 
+ 
+Die Messungen erfolgen über jede schraubenlose Klemme und zwar so nahe wie möglich an der 
+Kontaktstelle. 
+ 
+Falls der Anschluss der Klemme nicht zugänglich ist, können die Prüflinge durch den Hersteller 
+entsprechend vorbereitet werden; dabei muss darauf geachtet werden, dass das Verhalten der Klemme 
+nicht beeinflusst wird. 
+ 
+Es muss darauf geachtet werden, dass während der Dauer der Prüfung, einschließlich der Messungen, 
+die Leiter und die Messvorrichtung nicht merklich bewegt werden. 
+b) 
+Die schraubenlosen Anschlussklemmen, die der Ermittlung des Spannungsabfalls gemäß der vorherigen 
+Prüfung a) schon unterzogen wurden, werden wie folgt geprüft: 
+ 
+Während der Prüfung fließt ein Strom gleich dem Prüfstrom gemäß Tabelle 10. Die gesamte 
+Prüfanordnung, einschließlich der Leiter, darf nicht bewegt werden, bis die Messungen des 
+Spannungsabfalls vollständig durchgeführt wurden. 
+ 
+Die Anschlussklemmen werden 192 Temperaturzyklen unterworfen, wobei jeder Zyklus ungefähr 
+60 Minuten dauert und wie folgt durchgeführt wird: 
+– 
+der Strom fließt ungefähr 30 Minuten, 
+– 
+für eine weitere Periode von ungefähr 30 Minuten fließt kein Strom. 
+– 
+Der Spannungsfall an jeder schraubenlosen Klemme wird, wie unter a) beschrieben, zu folgenden 
+Zeitpunkten ermittelt: 
+– 
+nach den ersten 24 Temperaturzyklen und nach Vollendung der 192 Temperaturzyklen; 
+– 
+Temperaturzykluszusätzliche Messungen sind nach drei beliebigen der folgenden Temperaturzyklen 
+durchzuführen: 48., 72., 96., 120., 144. oder 168. Temperaturzyklus. 
+ 
+In keinem Fall darf der Spannungsabfall 22,5 mV oder zweimal den nach dem 24. Zyklus gemessenen 
+Wert überschreiten, je nachdem welcher der kleinere Wert ist. 
+ 
+Nach dieser Prüfung darf ein Betrachten mit normalem oder korrigiertem Auge ohne zusätzliche 
+Vergrößerung 
+keine 
+Veränderungen 
+aufweisen, 
+die 
+offensichtlich 
+die 
+weitere 
+Verwendung 
+beeinträchtigen, zB Risse, Deformationen oder ähnliches. 
+ 
+Ferner wird die Prüfung der mechanischen Festigkeit gemäß 12.3.10 wiederholt und alle Prüflinge müssen 
+diese Prüfung bestehen. 
+12.3.12 Schraubenlose Klemmen müssen so konstruiert sein, dass der angeschlossene starre, eindrähtige 
+Leiter eingeklemmt bleibt, auch wenn er während einer bestimmungsgemäßen Installation gebogen wurde, zB 
+beim Einbau in einer Dose und wenn die Biegespannung auf die Klemmstelle übertragen wird. 
+Prüfung: Durch folgende Prüfung, die an drei Prüflingen von Steckdosen durchgeführt wird, die noch nicht für 
+eine andere Prüfung verwendet wurden. 
+Die Prüfvorrichtung, deren prinzipieller Aufbau in Bild 12a) dargestellt ist, muss so gebaut sein, dass 
+– 
+ein angegebener Leiter, der ordnungsgemäß in eine Klemme eingeführt wurde, in jede der 12 Richtungen, 
+die untereinander um (30 ± 5)° auseinander liegen, gebogen werden kann, 
+– 
+der Anfangspunkt um 10° und 20° vom ursprünglichen Punkt verschoben werden kann. 
+ANMERKUNG 1  
+Eine Bezugsrichtung muss nicht festgelegt werden. 
+Die Biegung des Leiters von seiner geraden Lage in die Prüflagen muss mit Hilfe eines geeigneten Gerätes 
+erfolgen, das eine festgelegte Kraft in einer bestimmten Entfernung von der Anschlussklemme auf den Leiter 
+ausübt. 
+Die Biegevorrichtung muss so konstruiert sein, dass 
+– 
+die Kraft in einer Richtung senkrecht zum ungebogenen Leiter wirkt; 
+– 
+die Biegung erreicht wird, ohne dass der Leiter in der Klemmstelle gedreht oder bewegt wird; 
+– 
+die Kraft während der beschriebenen Messung des Spannungsabfalls weiterhin einwirkt. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+35 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 36/138 =====
+OVE E 8684-1:2019-12-01 
+36 
+Es müssen Vorkehrungen getroffen werden, dass der Spannungsabfall an den geprüften Klemmstellen bei 
+angeschlossenem Leiter, wie zB in Bild 12b) dargestellt, gemessen werden kann. 
+Der Prüfling wird so an dem unbewegten Teil der Prüfvorrichtung befestigt, dass der ausgewählte Leiter, der 
+in die zu prüfenden Klemmstellen eingeführt wurde, gebogen werden kann. 
+Um Oxidation zu vermeiden, muss die Isolierung des Drahtes unmittelbar vor Beginn der Prüfung entfernt 
+werden. 
+ANMERKUNG 2  
+Falls notwendig, kann der eingeführte Leiter dauernd so um Hindernisse gebogen werden, dass 
+die Ergebnisse der Prüfung durch diese nicht beeinflusst werden. 
+ANMERKUNG 3  
+In einigen Fällen, mit Ausnahme der Führungseinrichtungen für den Leiter, kann es ratsam sein, 
+die Teile des Prüflings zu entfernen, die eine Biegung des Leiters in Abhängigkeit von der aufgebrachten Kraft verhindern. 
+Eine Klemmstelle wird wie für den bestimmungsgemäßen Gebrauch mit einem starren, eindrähtigen 
+Kupferleiter versehen, der den kleinsten Querschnitt gemäß Tabelle 11 hat und wird einer ersten Prüffolge 
+unterzogen; die selbe Klemmstelle wird einer zweiten Prüffolge mit dem Leiter mit dem größten Querschnitt 
+unterzogen, außer wenn die erste Prüffolge nicht bestanden wurde. 
+Die Biegekraft ist in Tabelle 12 festgelegt, wobei der Abstand von 100 mm vom Ende der Anschlussklemme, 
+einschließlich einer evtl. vorhandenen Führung für den Leiter, bis zum Angriffspunkt der Kraft auf dem Leiter 
+gemessen wird. 
+Die Prüfung wird bei ununterbrochenem Stromfluss durchgeführt (d.h. der Strom wird während der Prüfung 
+nicht ein- und ausgeschaltet). Eine geeignete Stromversorgung muss verwendet werden, und ein geeigneter 
+Widerstand muss so in den Stromkreis eingesetzt werden, dass Stromschwankungen innerhalb 5 % gehalten 
+werden. 
+Tabelle 11 – Nennquerschnitte von starren eindrähtigen Kupferleitern  
+für die Biegeprüfung von schraubenlosen Klemmen 
+Bemessungsstrom 
+der Steckdose 
+A 
+Nennquerschnitt des Prüfleiters 
+ 
+mm2 
+ 
+1. Prüffolge 
+2. Prüffolge 
+16 
+1,5 
+2,5 
+ 
+ 
+Tabelle 12 – Kräfte bei der Biegeprüfung von schraubenlosen Klemmen 
+Nennquerschnitt des Prüfleiters 
+Kraft für die Biegung des Prüfleiters a 
+mm2 
+N 
+1,5 
+0,5 
+2,5 
+1,0 
+a 
+Die Kräfte sind so gewählt, dass sie die Leiter bis dicht an die Elastizitätsgrenze belasten. 
+ 
+Ein Prüfstrom gleich dem Bemessungsstrom der Steckdose fließt durch die zu prüfende Klemmstelle. Eine 
+Kraft gemäß Tabelle 12 wirkt auf den in die zu prüfende Klemmvorrichtung eingeführten Leiter in eine der 
+12 Richtungen, die in Bild 12a) gezeigt sind, und der Spannungsabfall über die Klemmstelle wird gemessen. 
+Dann wird die Kraft weggenommen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+36 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 37/138 =====
+OVE E 8684-1:2019-12-01 
+37 
+Die Kraft wird dann nacheinander in jede der restlichen 11 Richtungen gemäß Bild 12a) angewendet und die 
+Prüfung wie oben wiederholt.  
+Falls in einer der 12 Richtungen der Spannungsabfall größer als 25 mV ist, bleibt die Kraft in dieser Richtung 
+bis der Spannungsabfall unter 25 mV gesunken ist, aber nicht länger als 1 Minute. Wenn der Spannungsabfall 
+einen Wert unter 25 mV erreicht hat, bleibt die Kraft für weitere 30 s in der gleichen Richtung bestehen. In 
+dieser Zeit darf der Spannungsabfall nicht ansteigen. 
+Die beiden anderen Prüflinge dieses Prüfsatzes werden in gleicher Weise geprüft. Dabei werden die 
+12 Richtungen, in denen die Kraft wirkt, jeweils um 10° bei jedem Prüfling versetzt. Wenn einer der Prüflinge 
+in einer der Wirkungsrichtungen der Prüfkraft versagt, dann werden die Prüfungen mit einem neuen Satz 
+Prüflinge wiederholt, die alle die wiederholten Prüfungen bestehen müssen. 
+13 Aufbau ortsfester Steckdosen 
+13.1 
+Kontaktbuchsen-Anordnungen müssen ausreichende Federung haben, um angemessenen 
+Kontaktdruck auf die Steckerstifte zu gewährleisten.  
+Teile der Kontaktbuchsen, welche bei eingeführtem Stecker mit dessen Stiften in Kontakt sind und den 
+elektrischen Kontakt herstellen, müssen aus Metall sein, und gegenüberstehende metallene Kontakte müssen 
+an mindestens zwei Seiten jedes Stiftes den Kontakt sicherstellen. 
+Diese Anforderung gilt auch für Steckdosen, bei denen der Kontaktdruck durch isolierte Teile erreicht wird, 
+die so beschaffen sind, dass sicherer und ständiger Kontakt im bestimmungsgemäßen Gebrauch sichergestellt 
+ist. 
+ANMERKUNG AT 
+Dies gilt besonders hinsichtlich Schrumpfen, Altern und Verschleiß. 
+Prüfung: Besichtigen und durch die Prüfungen gemäß Abschnitt 9, Abschnitt 21 und Abschnitt 22. 
+13.2 
+Kontaktbuchsen und Schutzkontakte von Steckdosen müssen korrosionsbeständig und abriebfest 
+sein. 
+Prüfung: Besichtigen und durch die Prüfungen gemäß Abschnitt 20, Abschnitt 21 und Abschnitt 26.5. 
+13.3 
+Isolierauskleidungen, Trennwände und dergleichen müssen ausreichende mechanische Festigkeit 
+haben. 
+Prüfung: Besichtigen und Prüfungen gemäß Abschnitt 24. 
+13.4 
+Steckdosen müssen so gebaut sein, dass folgendes gegeben ist: 
+– 
+leichtes Einführen und sicheres Verbinden der Leiter in den Anschlussklemmen, mit Ausnahme der 
+Anschlussleitungen von Kontrolllampen; 
+ANMERKUNG 1  
+Schraubklemmen nach den Bildern 2 bis 5 werden dafür als geeignet angesehen. 
+– 
+leichtes Anbringen des Sockels an eine Wand oder in eine Dose; 
+– 
+ordnungsgemäßes Anordnen der Leiter; 
+– 
+ausreichender Raum zwischen der Unterseite des Sockels und der Fläche, an der der Sockel montiert 
+wird oder zwischen den Seiten des Sockels und dem Gehäuse (Kappe oder Einbaudose), so dass nach 
+Installation der Steckdose die Isolierung der Leiter nicht notwendigerweise gegen aktive Teile 
+abweichender Polarität gepresst wird. 
+ANMERKUNG 2  
+Diese Anforderung bedeutet nicht, dass die Metallteile der Klemmen notwendigerweise durch 
+isolierende Trennwände oder isolierende Vorsprünge geschützt werden, um Kontakt mit der Isolierung der Leiter, 
+verursacht durch inkorrektes Installieren der Metallteile der Klemmen, zu vermeiden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+37 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 38/138 =====
+OVE E 8684-1:2019-12-01 
+38 
+Für Aufputzsteckdosen, die an eine Montageplatte zu montieren sind, kann zur Erfüllung dieser Anforderung 
+ein Verdrahtungskanal notwendig sein. 
+Steckdosen, die als Bauart A klassifiziert sind, müssen ein leichtes Anbringen und Entfernen der Kappe oder 
+der Abdeckplatte ohne Verschieben der Leiter ermöglichen 
+Prüfung: Besichtigen und durch die Installationsprüfung mit Leitern des größten Querschnitts gemäß Tabelle 3. 
+Zusätzlich müssen bei Steckdosen mit schraubenlosen Klemmen die Steckdosen so konstruiert sein, dass die 
+Vorrichtungen zum Lösen und/oder Anschließen des Leiters in den schraubenlosen Klemmen während und 
+nach der Installation der Steckdose durch Leitungen nicht aktiviert werden können. 
+ANMERKUNG 3  
+Eine Berührung der Vorrichtungen zum Lösen und/oder Anschließen des Leiters durch Leitungen 
+ist zulässig. 
+ANMERKUNG 4  
+Diese Anforderung kann durch die Anordnung der Vorrichtungen zum Lösen und/oder 
+Anschließen des Leiters und/oder die Verwendung von Schutzabdeckungen um die Vorrichtungen zum Lösen und/oder 
+Anschließen erfüllt werden. 
+Prüfung: Besichtigung und im Zweifelsfall durch Prüfung. 
+Die Prüfung wird mit einem starren eindrähtigen Leiter des kleinsten Querschnitts spezifiziert gemäß Abschnitt 
+12.3.2. durchgeführt. 
+Der Leiter ist entsprechend den Herstellerangaben abisoliert in die zu prüfende Anschluss Klemme 
+einzuführen. 
+Die Prüfsonde 1 gemäß ÖVE/ÖNORM EN 61032 wird bei der zu prüfenden Anschlussklemme gegen die 
+Vorrichtungen zum Lösen und/oder Anschließen des Leiters mit einer Kraft von 120 N gedrückt entgegen der 
+Montagerichtung wie in Bild 46a beschrieben. 
+Die Kraft von 120 N muss angewendet werden bevor der Leiter mit der Zugkraft von 30 N beaufschlagt wird.  
+Während der Anwendung der Zugkraft auf den Leiter, darf sich der Leiter nicht aus der Anschlussklemme 
+lösen. 
+Während die Kraft von 120 N angewendet wird, ist darauf zu achten, dass die Prüfsonde 1 den Leiter nicht 
+berührt. 
+Wenn der Winkel zwischen der Längsachse der Kraft von 120 N in Montagerichtung und der Achse der Kraft 
+zum Betätigen der Vorrichtungen zum Lösen und/oder Anschließen des Leiters in der Anschlussklemme größer 
+als 20° ist, kann die berechnete resultierende Kraft direkt auf die Vorrichtungen zum Lösen und/oder 
+Anschließen des Leiters angewendet werden. 
+Wenn der Winkel größer als 60° ist, ist keine Prüfung erforderlich. 
+Wenn es nicht möglich ist, eine Kraft auf die Vorrichtungen zum Lösen und/oder Anschließen des Leiters 
+auszuüben, ist keine Prüfung erforderlich. 
+13.5 
+Steckdosen müssen so gebaut sein, dass das vollständige Einführen der zugehörigen Stecker nicht 
+durch aus ihrer Eingriffsfläche herausragende Teile behindert wird. 
+Prüfung: Feststellen, dass der Abstand zwischen der Eingriffsfläche der Steckdose und dem Stecker 1 mm 
+nicht überschreitet, wenn der Stecker soweit wie möglich in die Steckdose eingeführt ist. 
+13.6 
+Wenn Kappen mit Einführungstüllen für die Stifte versehen sind, darf es nicht möglich sein, diese von 
+außen zu entfernen oder dass sie versehentlich von innen losgelöst werden, wenn die Kappe entfernt ist.  
+Prüfung: Besichtigen und falls erforderlich Handprobe. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+38 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 39/138 =====
+OVE E 8684-1:2019-12-01 
+39 
+13.7 
+Kappen oder Abdeckplatten oder Teile von diesen, die vorgesehen sind Schutz gegen elektrischen 
+Schlag sicherzustellen, müssen an zwei oder mehr Punkten durch wirksame Befestigungsmittel festgehalten 
+werden.  
+Kappen oder Abdeckplatten oder Teile von diesen dürfen mit Hilfe eines Befestigungsmittels, zB durch eine 
+Schraube, gehalten werden, wenn sie auf andere Weise (zB durch einen Vorsprung) in ihrer Lage gehalten 
+werden. 
+ANMERKUNG 1  
+Es wird empfohlen, dass Befestigungsschrauben von Kappen oder Abdeckplatten gegen Verlieren 
+gesichert sind. Die Verwendung von eng sitzenden Unterlegscheiben aus Pappe oder ähnlichem wird als eine 
+angemessene Maßnahme zum Sichern von Schrauben angesehen. 
+ANMERKUNG 2  
+Nicht mit dem Schutzleiter verbundene Metallteile, die von aktiven Teilen so getrennt sind, dass 
+die Kriechstrecken und Luftstrecken die in Tabelle 24 festgelegten Werte haben, werden als nicht berührbar angesehen, 
+wenn die Anforderungen dieses Abschnittes erfüllt sind. 
+Wenn die Befestigungen von Kappen oder Abdeckplatten von Steckdosen der Bauart A der Befestigung des 
+Sockels dienen, müssen Maßnahmen ergriffen sein, um den Sockel, auch nach Entfernen der Kappen oder 
+Abdeckplatten, in seiner Lage zu halten. 
+Prüfung: Besichtigen und durch die Prüfungen gemäß 13.7.1, 13.7.2 oder 13.7.3. 
+13.7.1 
+Bei Kappen oder Abdeckplatten für deren Befestigungen Schrauben verwendet sind.  
+Prüfung: Besichtigen. 
+13.7.2 
+Bei Kappen oder Abdeckplatten, deren Befestigungen nicht von Schrauben abhängen und deren 
+Entfernen durch Aufwendung einer Kraft, die ungefähr senkrecht zur Befestigungs- bzw. tragenden Fläche 
+wirkt, bewerkstelligt wird (siehe Tabelle 13): 
+– 
+wenn durch ihr Entfernen aktive Teile mit dem Normprüffinger zugänglich werden:  
+ 
+durch die Prüfungen gemäß 24.14; 
+– 
+wenn durch ihr Entfernen nicht mit dem Schutzleiter verbundene Metallteile mit dem Normprüffinger 
+zugänglich werden können, die von aktiven Teilen so getrennt sind, dass Kriech- und Luftstrecken die 
+Werte gemäß Tabelle 24 haben:  
+ 
+durch die Prüfungen gemäß 24.15; 
+– 
+wenn durch ihr Entfernen nur die folgenden Teile mit dem Normprüffinger zugänglich werden: 
+• 
+Isolierte Teile, oder 
+• 
+mit dem Schutzleiter verbundene Teile, oder 
+• 
+Metallteile, die von aktiven Teilen so getrennt sind, dass Kriech- und Luftstrecken die doppelten Werte 
+gemäß Tabelle 24 haben, oder 
+• 
+aktive Teile von SELV-Stromkreisen mit nicht mehr als 25 V Wechselstrom: 
+ 
+durch die Prüfungen gemäß 24.16. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+39 von 138
+www.ris.bka.gv.at
+
+
+===== PAGE 40/138 =====
+OVE E 8684-1:2019-12-01 
+40 
+Tabelle 13 – An Kappen oder Abdeckplatten, deren Befestigungen nicht  
+von Schrauben abhängen, anzuwendende Kräfte 
+Berührbarkeit mit dem Normprüffinger 
+nach dem Entfernen von Kappen, 
+Abdeckplatten oder Teilen von diesen 
+Prüfung 
+gemäß 
+Abschnitt 
+Anzuwendende Kraft 
+N 
+Steckdosen gemäß  
+24.17 und 24.18 
+Steckdosen nicht gemäß 
+24.17 und 24.18 
+darf nicht 
+abgehen 
+muss  
+abgehen 
+darf nicht 
+abgehen 
+muss 
+abgehen 
+von aktiven Teilen 
+24.14 
+40 
+120 
+80 
+120 
+von nicht- geerdeten Metallteilen, die von 
+aktiven Teilen durch Kriech- und Luftstrecken 
+gemäß Tabelle 24 getrennt sind 
+24.15 
+10 
+120 
+20 
+120 
+von isolierenden Teilen, geerdeten 
+Metallteilen, aktiven Teilen von SELV  25 V 
+Wechselstrom oder von Metallteilen, die von 
+aktiven Teilen durch Kriech- und Luftstrecken 
+mit doppelten Werten, wie in Tabelle 24, 
+getrennt sind 
+24.16 
+10 
+120 
+10 
+120 
+ 
+13.7.3 
+Bei Kappen oder Abdeckplatten, deren Befestigung nicht von Schrauben abhängt und deren 
+Entfernen durch ein Werkzeug nach der Anleitung des Herstellers in einer Gebrauchsanleitung oder einem 
+Katalog bewerkstelligt wird: 
+13.8 
+bleibt frei 
+13.9 
+Aufputzsteckdosen müssen so gebaut sein, dass, nachdem sie wie im bestimmungsgemäßen 
+Gebrauch montiert und verdrahtet sind, außer den Einführungsöffnungen für die Stifte des Steckers bzw. 
+andere Öffnungen für Kontakte (zB seitliche Schutzkontakte), keine freien Öffnungen in den Gehäusen 
+vorhanden sind. 
+Entwässerungslöcher, schmale Spalten zwischen dem Gehäuse und Installationsrohren oder Leitungen oder 
+zwischen Gehäusen und Schutzkontakten, falls vorhanden, werden vernachlässigt, sofern der IP-Schutzgrad 
+erhalten bleibt. 
+Prüfung: Besichtigen und Probeinstallation mit einer Leitung mit Leitern des kleinsten Querschnitts gemäß 
+Tabelle 14. 
+13.10 
+Schrauben oder andere Mittel zur Montage der Steckdose an einer Fläche oder in einer Dose oder 
+einem Gehäuse müssen leicht von vorne zugänglich sein. Diese Mittel dürfen keinem anderen 
+Befestigungszweck dienen. 
+13.11 
+Mehrfachsteckdosen mit einem gemeinsamen Sockel müssen mit fest angebrachten Verbindungen 
+für die Parallelverbindung der Kontakte ausgestattet sein. Die Befestigung dieser Verbindungen muss 
+unabhängig vom Anschluss der Netzleitungen sein. 
+13.12 
+Mehrfachsteckdosen mit getrennten Sockeln müssen so gebaut sein, dass die richtige Lage jedes 
+Sockels sichergestellt ist. Die Befestigung jedes Sockels muss unabhängig von der Befestigung der 
+Steckdoseneinheit an der Montagefläche sein. 
+Prüfung der Anforderungen gemäß 13.10 bis 13.12: Besichtigen. 
+13.13 
+Die Montageplatte von Aufputzsteckdosen muss ausreichende mechanische Festigkeit haben. 
+Prüfung: Besichtigen nach den Prüfungen nach 13.4 und durch die Prüfung gemäß 24.3. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+40 von 138
+www.ris.bka.gv.at

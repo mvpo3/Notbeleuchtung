@@ -1,0 +1,2170 @@
+
+
+===== PAGE 1/44 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+EN 60335-2-76 
+ 
+Ausgabe: 2008-10-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sicherheit elektrischer Geräte für den Hausgebrauch 
+und ähnliche Zwecke 
+Teil 2-76: Besondere Anforderungen für Elektrozaungeräte 
+(IEC 60335-2-76:2002 + A1:2006) 
+ 
+Household and similar electrical appliances – Safety – Part 2-76: Particular 
+requirements for electric fence energizers 
+(IEC 60335-2-76:2002 + A1:2006) 
+ 
+Appareils électrodomestiques et analogues – Sécurité – Partie 2-76: Règles 
+particulières pour les électrificateurs de clôtures 
+(CEI 60335-2-76:2002 + A1:2006) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+65.040.10 
+ 
+ 
+ 
+ 
+ 
+ 
+Ident (IDT) mit 
+IEC 60335-2-76:2002 + A1:2006 (Übersetzung) 
+ 
+Ident (IDT) mit 
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK G 
+ 
+Geräte 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2008. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 2/44 =====
+ÖVE/ÖNORM EN 60335-2-76:2008 
+2 
+Nationales Vorwort 
+ 
+Diese Europäische Norm EN 60335-2-76:2005 + A1:2006 + A11:2008 hat sowohl den Status von 
+ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den 
+einer ÖNORM gemäß NG 1971. Bei ihrer Anwendung ist dieses Nationale Vorwort zu berücksichtigen. 
+ 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des 
+Ausgabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die 
+Verweisung auf die jeweils neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug 
+genommene Ausgabe des Standards. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Europäische Normen (EN) werden gemäß den „Gemeinsamen Regeln“ von CEN/CENELEC durch 
+Veröffentlichung eines identen Titels und Textes in das Gesamtwerk der ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN übernommen, wobei der Nummerierung der 
+Zusatz ÖVE/ÖNORM bzw. ÖNORM vorangestellt wird.  
+ 
+In dieser Norm sind die gemeinsamen Abänderungen zu der Internationalen Norm durch eine senkrechte 
+Linie am linken Seitenrand des Textes gekennzeichnet. 
+Die Änderungen der A1 sind durch eine senkrechte Linie am linken Seitenrand mit A1 gekennzeichnet. 
+Die Änderungen der A11 sind durch eine senkrechte Linie am linken Seitenrand mit A11 gekennzeichnet. 
+ 
+Änderungen 
+Gegenüber ÖVE/ÖNORM EN 60335-2-76:2007-06-01 wurde folgende Änderung vorgenommen: 
+a)  Standardlast neu definiert. 
+ 
+Erläuterung zum Ersatzvermerk 
+Gemäß Vorwort zur EN wird das späteste Datum, zu dem nationale Normen, die der vorliegenden Norm 
+entgegenstehen, zurückgezogen werden müssen, mit dow (date of withdrawal) festgelegt. Bis zum 
+Zurückziehungsdatum (dow) 2010-09-01 ist somit die Anwendung folgender Norm(en) noch erlaubt: 
+ÖVE/ÖNORM EN 60335-2-76:2007-06-01. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 3/44 =====
+ 
+ 
+EUROPÄISCHE NORM 
+ 
+EUROPEAN STANDARD 
+ 
+NORME EUROPÉENNE 
+ 
+EN 60335-2-76 
+Februar 2005 
++ A1 
+Juni 2006 
++ A11 
+Januar 2008 
+ICS 65.040.10 
+ 
+Ersatz für EN 60335-2-76:2005 + A1:2006 
+Deutsche Fassung 
+ 
+Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke – 
+Teil 2-76: Besondere Anforderungen für Elektrozaungeräte 
+(IEC 60335-2-76:2002 + A1:2006) 
+ Household and similar electrical appliances –  
+Safety –  
+Part 2-76: Particular requirements for electric 
+fence energizers 
+(IEC 60335-2-76:2002 + A1:2006) 
+Appareils électrodomestiques et analogues –  
+Sécurité –  
+Partie 2-76: Règles particulières pour les 
+électrificateurs de clôtures 
+(CEI 60335-2-76:2002 + A1:2006) 
+Diese Europäische Norm wurde von CENELEC am 2004-11-01, die A1 am 2006-04-01 und die A11 am 
+2006-09-12 angenommen. Die CENELEC-Mitglieder sind gehalten, die CEN/CENELEC-Geschäfts-
+ordnung zu erfüllen, in der die Bedingungen festgelegt sind, unter denen dieser Europäischen Norm 
+ohne jede Änderung der Status einer nationalen Norm zu geben ist. 
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren bibliographischen Angaben 
+sind beim Zentralsekretariat oder bei jedem CENELEC-Mitglied auf Anfrage erhältlich. 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Französisch). Eine 
+Fassung in einer anderen Sprache, die von einem CENELEC-Mitglied in eigener Verantwortung durch 
+Übersetzung in seine Landessprache gemacht und dem Zentralsekretariat mitgeteilt worden ist, hat den 
+gleichen Status wie die offiziellen Fassungen. 
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, Bulgarien, 
+Dänemark, Deutschland, Estland, Finnland, Frankreich, Griechenland, Irland, Island, Italien, Lettland, 
+Litauen, Luxemburg, Malta, den Niederlanden, Norwegen, Österreich, Polen, Portugal, Rumänien, 
+Schweden, der Schweiz, der Slowakei, Slowenien, Spanien, der Tschechischen Republik, Ungarn, dem 
+Vereinigten Königreich und Zypern. 
+ 
+CENELEC 
+Europäisches Komitee für Elektrotechnische Normung 
+European Committee for Electrotechnical Standardization 
+Comité Européen de Normalisation Electrotechnique 
+Zentralsekretariat: rue de Stassart 35, B-1050 Brüssel 
+ © 2008 CENELEC –  Alle Rechte der Verwertung, gleich in welcher Form und in welchem Verfahren, 
+sind weltweit den Mitgliedern von CENELEC vorbehalten. 
+Ref. Nr. EN 60335-2-76:2005 + A1:2006 + A11:2008 D
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 4/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+2 
+Vorwort 
+Der Text des Schriftstücks 61H/173/FDIS, künftige 2. Ausgabe von IEC 60335-2-76, ausgearbeitet vom 
+SC 61H des Technischen Komitees 61 der IEC, wurde der IEC-CENELEC Parallelen Abstimmung unter-
+worfen. 
+Als Ergebnis der Sitzung des CENELEC/TC 61 in Kista im Mai 2002 wurde ein Änderungsentwurf prAA mit 
+den zutreffenden bestehenden gemeinsamen Abänderungen der formellen Abstimmung unterworfen. 
+Die Texte des FDIS und der prAA wurden von CENELEC am 2004-11-01 als eine neue Ausgabe der 
+EN 60335-2-76 angenommen. 
+Diese Europäische Norm ersetzt EN 60335-2-76:1999 + A1:2001. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die EN auf nationaler Ebene 
+durch Veröffentlichung einer identischen nationalen 
+Norm oder durch Anerkennung übernommen werden 
+muss 
+(dop): 
+2005-11-01 
+– 
+spätestes Datum, zu dem nationale Normen, die 
+der EN entgegenstehen, zurückgezogen werden 
+müssen 
+(dow): 
+2007-11-01 
+Dieser Teil 2 ist in Verbindung mit EN 60335-1, Sicherheit elektrischer Geräte für den Hausgebrauch und 
+ähnliche Zwecke, Teil 1: Allgemeine Anforderungen, zu verwenden. Sie wurde auf der Basis der Ausgabe 
+2002 dieser Norm erstellt. Änderungen und Überarbeitungen des Teils 1 sind ebenfalls zu berücksichtigen. 
+Die Daten, zu denen solche Änderungen gültig werden, werden in der betreffenden Änderung oder 
+Überarbeitung des Teils 1 angegeben. 
+Dieser Teil 2 ergänzt oder ändert die entsprechenden Abschnitte von EN 60335-1, um diese in die 
+Europäische Norm „Sicherheitsanforderungen für Elektrozaungeräte“ umzuwandeln. 
+Wenn ein besonderer Abschnitt von Teil 1 in diesem Teil 2 nicht erwähnt ist, gilt dieser Abschnitt, soweit 
+zutreffend. Wenn in dieser Norm „Ergänzung“, „Änderung“ oder „Ersatz“ steht, ist der entsprechende Text 
+von Teil 1 entsprechend anzugleichen. 
+ANMERKUNG 1 Das folgende Nummerierungssystem wird benutzt: 
+– 
+Unterabschnitte, Tabellen und Bilder, zusätzlich zu denen im Teil 1, sind mit 101 beginnend nummeriert; 
+– 
+Anmerkungen, einschließlich solcher in einem ersetzten Abschnitt oder Unterabschnitt, werden mit 101 beginnend 
+nummeriert, es sei denn, sie befinden sich in einem neuen Unterabschnitt oder betreffen Anmerkungen in Teil 1; 
+– 
+zusätzliche Anhänge werden mit den Buchstaben AA, BB usw. bezeichnet; 
+– 
+der Bezeichnung von Unterabschnitten, Anmerkungen und Anhängen, die zusätzlich zu denen in der IEC-Norm 
+sind, wird der Buchstabe Z vorangestellt. 
+ANMERKUNG 2 Es werden die folgenden Schriftarten verwendet: 
+– 
+Anforderungen: in Normalschrift; 
+– 
+Prüfungen: in Kursivschrift; 
+– 
+ANMERKUNGEN in Kleinschrift. 
+Wörter, die im Text in Fettdruck erscheinen, sind im Abschnitt 3 definiert. Wenn eine Definition ein Adjektiv 
+betrifft, erscheinen das Adjektiv und das zugehörige Substantiv ebenfalls in Fettdruck. 
+Es bestehen keine besonderen nationalen Bedingungen, die eine Abweichung von dieser Europäischen 
+Norm beinhalten, außer denen, die im Anhang ZA zu EN 60335-1 aufgeführt sind. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 5/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+3 
+Es bestehen keine nationalen Abweichungen von dieser Europäischen Norm, außer denen, die im 
+Anhang ZB zu EN 60335-1 aufgeführt sind. 
+Anerkennungsnotiz 
+Der Text der Internationalen Norm IEC 60335-2-76:2002 wurde von CENELEC als Europäische Norm mit 
+vereinbarten, gemeinsamen Abänderungen angenommen, die nachstehend mit einem senkrechten Strich am 
+Seitenrand angegeben sind. 
+Vorwort zu A1 
+Der Text des Schriftstücks 61H/229/FDIS, künftige Änderung A1 zu IEC 60335-2-76:2002, ausgearbeitet vom 
+SC 61H „Safety of electrically-operated farm appliances“ des Technischen Komitees 61 „Safety of household 
+and similar electrical appliances“ der IEC, wurde der IEC-CENELEC Parallelen Abstimmung unterworfen und 
+von CENELEC am 2006-04-01 als Änderung A1 zu EN 60335-2-76:2005 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen 
+nationalen Norm oder durch Anerkennung 
+übernommen werden muss 
+(dop): 
+2007-01-01 
+– 
+spätestes Datum, zu dem nationale Normen, die der 
+Änderung entgegenstehen, zurückgezogen werden 
+müssen 
+(dow): 
+2009-04-01 
+Diese Änderung ergänzt oder ändert die entsprechenden Abschnitte von EN 60335-2-76:2005. 
+Es gibt keine besonderen nationalen Bedingungen, die eine Abweichung von dieser Änderung bewirken. 
+Es gibt keine nationalen Abweichungen von dieser Änderung. 
+Anerkennungsnotiz zu A1 
+Der Text der Änderung A1:2006 der Internationalen Norm IEC 60335-2-76:2002 wurde von CENELEC als 
+Änderung zur Europäischen Norm ohne Abänderungen angenommen. 
+Vorwort zu A11 
+Ein Vorschlag zur Änderung der EN 60335-2-76:2005 wurde auf der Sitzung des CENELEC/TC 61 im 
+Juni 2005 in Brügge beraten und entschieden, einen Änderungsentwurf dem Einstufigen Annahmeverfahren 
+(UAP) zu unterwerfen. 
+Dieser Entwurf wurde im Dezember 2005 verteilt und von CENELEC am 2006-09-12 als Änderung A11 zur 
+EN 60335-2-76:2005 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen 
+nationalen Norm oder durch Anerkennung 
+übernommen werden muss 
+(dop): 
+2008-09-01 
+– 
+spätestes Datum, zu dem nationale Normen, die der 
+Änderung entgegenstehen, zurückgezogen werden 
+müssen 
+(dow): 
+2010-09-01
+A1 
+A11 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 6/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+4 
+ 
+Inhalt 
+Seite
+Vorwort............................................................................................................................................................... 2 
+Vorwort zu A1..................................................................................................................................................... 3 
+Vorwort zu A11................................................................................................................................................... 3 
+1 
+Anwendungsbereich .............................................................................................................................. 6 
+2 
+Normative Verweisungen....................................................................................................................... 6 
+3 
+Begriffe................................................................................................................................................... 6 
+4 
+Allgemeine Anforderung ...................................................................................................................... 10 
+5 
+Allgemeine Prüfbedingungen............................................................................................................... 10 
+6 
+Einteilung ............................................................................................................................................. 11 
+7 
+Aufschriften und Anweisungen ............................................................................................................ 11 
+8 
+Schutz gegen Zugang zu aktiven Teilen.............................................................................................. 13 
+9 
+Anlauf von Motor-Geräten ................................................................................................................... 13 
+10 
+Leistungs- und Stromaufnahme........................................................................................................... 13 
+11 
+Erwärmung........................................................................................................................................... 13 
+12 
+Frei....................................................................................................................................................... 15 
+13 
+Ableitstrom und Spannungsfestigkeit bei Betriebstemperatur............................................................. 15 
+14 
+Überspannungen ................................................................................................................................. 15 
+15 
+Feuchtigkeitsbeständigkeit .................................................................................................................. 16 
+16 
+Ableitstrom und Spannungsfestigkeit .................................................................................................. 16 
+17 
+Überlastschutz von Transformatoren und zugehörigen Stromkreisen ................................................ 17 
+18 
+Dauerhaftigkeit..................................................................................................................................... 17 
+19 
+Unsachgemäßer Betrieb...................................................................................................................... 18 
+20 
+Standfestigkeit und mechanische Sicherheit....................................................................................... 20 
+21 
+Mechanische Festigkeit ....................................................................................................................... 20 
+22 
+Aufbau.................................................................................................................................................. 21 
+23 
+Innere Leitungen.................................................................................................................................. 24 
+24 
+Einzelteile............................................................................................................................................. 24 
+25 
+Netzanschluss und äußere Leitungen ................................................................................................. 24 
+26 
+Anschlussklemmen für äußere Leiter .................................................................................................. 25 
+27 
+Schutzleiteranschluss .......................................................................................................................... 26 
+28 
+Schrauben und Verbindungen............................................................................................................. 26 
+29 
+Kriech- und Luftstrecken, Abstände durch die Isolierung.................................................................... 26 
+30 
+Wärme- und Feuerbeständigkeit, Kriechstromfestigkeit...................................................................... 26 
+31 
+Rostschutz ........................................................................................................................................... 26 
+32 
+Strahlung, Giftigkeit und ähnliche Gefährdungen................................................................................ 27 
+Anhänge........................................................................................................................................................... 29 
+Anhang A (informativ)  Routineprüfungen........................................................................................................ 29 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 7/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+5 
+Seite
+A.2 
+Prüfung der elektrischen Spannungsfestigkeit.................................................................................... 29 
+A.3 
+Funktionsprüfung................................................................................................................................. 29 
+Anhang B (normativ)  Geräte, die von wiederaufladbaren Batterien betrieben werden.................................. 29 
+Anhang AA (informativ)  Stromkreis zur unabhängigen Steuerung der Schaltgeschwindigkeit der 
+Hauptimpulsschalteinrichtung.............................................................................................................. 30 
+Anhang BB (normativ)  Anweisungen für die Montage und den Anschluss von Elektrozäunen..................... 31 
+BB.1 
+Anforderungen an Elektrotierzäune..................................................................................................... 31 
+BB.2 
+Anforderungen an Elektrosicherheitszäune ........................................................................................ 33 
+Anhang CC (informativ)  Installation von Elektrosicherheitszäunen................................................................ 36 
+CC.1 
+Allgemein............................................................................................................................................. 36 
+CC.2 
+Standort von Elektrosicherheitszäunen............................................................................................... 36 
+CC.3 
+Verbotszone für gepulste Leitungen.................................................................................................... 36 
+CC.4  Trennung zwischen Elektrozaun und physikalischer Barriere............................................................. 36 
+CC.5 
+Verbotene Montage ............................................................................................................................. 37 
+CC.6 
+Betrieb von Elektrosicherheitszäunen ................................................................................................. 37 
+Literaturhinweise.............................................................................................................................................. 39 
+Anhang ZC (normativ)  Normative Verweisungen auf internationale Publikationen mit ihren 
+entsprechenden europäischen Publikationen ..................................................................................... 40 
+ 
+Bild 101 – Blockschaltbilder der verschiedenen Arten batteriebetriebener Elektrozaungeräte, die für 
+den Anschluss an das Netz geeignet sind .......................................................................................... 28 
+Bild AA.1 – Stromkreis für die unabhängige Steuerung der Schaltgeschwindigkeit der 
+Hauptimpulsschalteinrichtung.............................................................................................................. 30 
+Bild BB.1 – Symbol für Warnschild .................................................................................................................. 35 
+Bild CC.1 – Verbotszone für gepulste Leitungen............................................................................................. 36 
+Bild CC.2 – Typische Konstruktionen, bei denen der Elektrosicherheitszaun der Öffentlichkeit 
+zugänglich ist....................................................................................................................................... 38 
+Bild CC.3 – Typische Zaunkonstruktion, bei der Elektrosicherheitszäune in Fenstern und 
+Oberlichtern installiert sind .................................................................................................................. 39 
+ 
+Tabelle 101 – Innenwiderstand der Batterie.................................................................................................... 14 
+Tabelle 102 – Zusätzliche Prüfspannungen .................................................................................................... 17 
+Tabelle BB.1 – Mindestabstände von Hochspannungsleitungen für Elektrotierzäune.................................... 32 
+Tabelle BB.2 – Mindestabstände von Hochspannungsleitungen für Elektrosicherheitszäune ....................... 34 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 8/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+6 
+ 
+1 
+Anwendungsbereich 
+Dieser Abschnitt des Teiles 1 wird ersetzt durch: 
+Diese Norm behandelt die Sicherheit von Elektrozaungeräten, deren Bemessungsspannung 250 V nicht 
+überschreitet und mit denen Zaundrähte in der Landwirtschaft und im häuslichen Bereich, Wildschutzzäune 
+und Sicherheitszäune unter Strom gesetzt oder kontrolliert werden können. 
+ANMERKUNG 101 Beispiele für Elektrozaungeräte, die zum Anwendungsbereich dieser Norm gehören, sind: 
+– 
+Elektrozaungeräte mit Netzanschluss, 
+– 
+batteriebetriebene Elektrozaungeräte, die zum Anschluss an das Versorgungsnetz geeignet sind, wie in Bild 101 
+dargestellt, 
+– 
+Elektrozaungeräte, die von nicht aufladbaren Batterien gespeist werden, die entweder eingebaut oder getrennt sind. 
+Diese Norm berücksichtigt im Allgemeinen nicht 
+– 
+die Benutzung von Geräten durch kleine Kinder oder gebrechliche Personen ohne Aufsicht, 
+– 
+das Spielen von Kindern mit den Geräten. 
+ANMERKUNG 102 Es wird darauf hingewiesen, dass 
+– 
+für Geräte, die zur Verwendung an Bord von Schiffen oder Flugzeugen bestimmt sind, zusätzliche Anforderungen 
+notwendig sein können, 
+– 
+in vielen Ländern zusätzliche Anforderungen durch die nationalen Gesundheits- und Arbeitsschutzbehörden, die 
+Wasserversorgungsbehörden und ähnliche Behörden erlassen werden. 
+ANMERKUNG 103 Diese Norm gilt nicht für 
+– 
+elektromagnetisch gekoppelte Trainer-Halsbänder für Tiere, 
+– 
+Geräte, die zur Verwendung an Orten vorgesehen sind, wo besondere Bedingungen vorherrschen, wie z. B. 
+korrosive oder explosionsfähige Atmosphäre (Staub, Dampf oder Gas), 
+– 
+getrennte Batterieladeeinrichtungen (IEC 60335-2-29), 
+– 
+elektrische Fischfanggeräte (IEC 60335-2-86), 
+– 
+elektrische Tierbetäubungsgeräte (IEC 60335-2-87), 
+– 
+Geräte für medizinische Zwecke (IEC 60601). 
+2 Normative Verweisungen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt: 
+IEC 60068-2-52, Environmental testing – Part 2: Tests – Test Kb: Salt mist, cyclic (sodium chloride solution). 
+3 
+Begriffe 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt: 
+3.1.1 
+Ergänzung: 
+Bei Typ-D-Elektrozaungeräten entspricht die Bemessungsspannung des Elektrozaungerätes der  
+Bemessungsspannung für Batterieversorgung. 
+A11 
+A1 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 9/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+7 
+3.1.6 
+Ergänzung: 
+Bei batteriebetriebenen Elektrozaungeräten, die nicht zum Anschluss an das Versorgungsnetz geeignet 
+sind, ist es der durchschnittliche Eingangsstrom, der dem Elektrozaungerät vom Hersteller zugeordnet ist. 
+3.1.9 
+Ersatz: 
+Normalbetrieb 
+Betrieb des Gerätes unter den folgenden Bedingungen: Das Elektrozaungerät wird wie im üblichen Gebrauch 
+betrieben, wenn es an die Versorgung angeschlossen ist und keine Last an die Ausgangsklemmen ange-
+schlossen ist. 
+3.6.3 
+Ergänzung: 
+ANMERKUNG 101 Es enthält auch Anschlussklemmen für den Anschluss der Batterie und anderer Metallteile in einem 
+Batterieraum, die beim Auswechseln der Batterie berührbar werden, auch bei Zuhilfenahme eines Werkzeugs. 
+3.6.4 
+Ersatz: 
+aktives Teil 
+leitendes Teil, das einen elektrischen Schlag verursachen kann 
+3.101 
+Elektrozaungerät 
+Gerät, das dazu bestimmt ist, einen an das Gerät angeschlossenen Zaun periodisch mit Spannungsimpulsen 
+zu versorgen 
+ANMERKUNG 
+Elektrozaungeräte werden nachstehend auch als Geräte bezeichnet. 
+3.102 
+Elektrozaungerät mit Netzanschluss 
+Elektrozaungerät, das für den direkten Anschluss an das Versorgungsnetz bestimmt ist 
+3.103 
+batteriebetriebenes Elektrozaungerät, das zum Anschluss an das Versorgungsnetz geeignet ist 
+Elektrozaungerät, 
+– 
+das mit Batterien betrieben wird und Einrichtungen besitzt oder zum Anschluss an diese gebaut ist, die 
+diese Batterien vom Netz laden, oder 
+– 
+das für den Betrieb mit dem Netz oder mit Batterien gebaut ist 
+3.104 
+Typ-A-Elektrozaungerät 
+batteriebetriebenes Elektrozaungerät, das zum Anschluss an das Versorgungsnetz geeignet ist, 
+bestehend aus einem Impulsgeber, einer Batterieladeeinrichtung und einer Batterie, wobei der Impulsgeber 
+mit dem Netz oder mit der Batterie verbunden ist, wenn das Elektrozaungerät in Betrieb ist 
+ANMERKUNG 
+Typ-A-Elektrozaungeräte sind in Bild 101 schematisch dargestellt. 
+3.105 
+Typ-B-Elektrozaungerät 
+batteriebetriebenes Elektrozaungerät, das zum Anschluss an das Versorgungsnetz geeignet ist, 
+bestehend aus einem Impulsgeber, einer Batterieladeeinrichtung und einer Batterie, wobei der Impulsgeber 
+mit der Batterie verbunden und von der Batterieladeeinrichtung und vom Netz getrennt ist, wenn das 
+Elektrozaungerät in Betrieb ist. Wenn die Batterie geladen wird, wird der Impulsgeber abgeklemmt und 
+stillgesetzt. 
+ANMERKUNG 
+Typ-B-Elektrozaungeräte sind in Bild 101 schematisch dargestellt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 10/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+8 
+3.106 
+Typ-C-Elektrozaungerät 
+batteriebetriebenes Elektrozaungerät, das zum Anschluss an das Versorgungsnetz geeignet ist, 
+bestehend aus einem Impulsgeber und einer Batterie, wobei der Impulsgeber mit dem Netz oder mit der 
+Batterie verbunden ist, wenn das Elektrozaungerät in Betrieb ist, und wo es erforderlich ist, die Batterie zu 
+entfernen, um sie unter Verwendung eines getrennten Batterieladegerätes aufzuladen, oder im Falle einer 
+nicht aufladbaren Batterie sie durch eine neue Batterie zu ersetzen 
+ANMERKUNG 
+Typ-C-Elektrozaungeräte sind in Bild 101 schematisch dargestellt. 
+3.107 
+Typ-D-Elektrozaungerät 
+batteriebetriebenes Elektrozaungerät, das zum Anschluss an das Versorgungsnetz geeignet ist, be-
+stehend aus einem Impulsgeber und einer Batterie, wobei der Impulsgeber mit der Batterie verbunden ist, 
+wenn das Elektrozaungerät in Betrieb ist und das Elektrozaungerät oder die Batterie mit einem getrennten 
+Batterieladegerät zum Aufladen der Batterie verbunden ist 
+ANMERKUNG 
+Typ-D-Elektrozaungeräte sind in Bild 101 schematisch dargestellt. 
+3.108 
+batteriebetriebenes Elektrozaungerät 
+Elektrozaungerät, das seine Energie allein von Batterien oder anderen Energiequellen erhält und nicht zum 
+Anschluss an das Netz vorgesehen ist 
+3.109 
+Batterieladegerät 
+Gerät, das an das Versorgungsnetz angeschlossen wird und zum Laden von einer oder mehreren Batterien 
+bestimmt ist 
+3.110 
+Zaun 
+Absperrung für Tiere oder für Sicherheitszwecke, die aus einem oder mehreren Leitern besteht, z. B. 
+Metalldrähte, Metallstäbe oder Metallschienen 
+3.111 
+Zaunstromkreis 
+alle leitenden Teile oder Einzelteile innerhalb eines Elektrozaungeräts, die galvanisch an die Ausgangs-
+klemmen angeschlossen sind oder angeschlossen werden können 
+3.112 
+Erdelektrode 
+Metallkonstruktion, die nahe dem Elektrozaungerät in den Boden getrieben wird und die elektrisch mit dem 
+Erdanschluss des Elektrozaungerätes verbunden und von anderen Erdungen unabhängig ist 
+3.113 
+zu erwartender Scheitelwert der Spannung 
+Scheitel-Ausgangsspannung des in Abschnitt 14 beschriebenen Impulsgenerators, die erreicht werden 
+würde, wenn das Elektrozaungerät nicht an den Prüfstromkreis angeschlossen ist 
+3.114 
+Bemessungsspannung der Batterieversorgung 
+Spannung der Batterieversorgung für Typ-A-, Typ-B-, Typ-C- und Typ-D-Elektrozaungeräte, die dem 
+Elektrozaungerät vom Hersteller zugeordnet wurde 
+3.115 
+Bemessungsspannungsbereich der Batterieversorgung 
+Spannungsbereich für Batterieversorgung für Typ-A-, Typ-B-, Typ-C- und Typ-D-Elektrozaungeräte, der 
+dem Elektrozaungerät vom Hersteller zugeordnet wurde, angegeben durch die untere und obere Grenze 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 11/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+9 
+3.116 
+Impulsdauer 
+Dauer des Teils des Impulses, der 95 % der gesamten Energie enthält und der das kürzeste Intervall der 
+Integration I2(t) ist, der 95 % der Integration I2(t) über den gesamten Impuls ergibt 
+ANMERKUNG 
+I(t) ist der Stoßstrom als eine Funktion der Zeit. 
+3.117 
+Ausgangsstrom 
+Effektivwert des Ausgangsstromes je Impuls, berechnet über die Impulsdauer 
+3.118 
+Standardlast 
+Last, die aus dem nicht-induktiven Widerstand R1 zwischen 50 Ω und 500 Ω, der die ungünstigste Bedingung 
+repräsentiert, und einem nicht-induktiven veränderbaren Widerstand R2 besteht, der so eingestellt wird, dass 
+die Energie je Impuls oder der Ausgangsstrom durch den nicht-induktiven Widerstand R1 ein Maximum er-
+reicht, je nachdem, was anwendbar ist. Der nicht-induktive veränderbare Widerstand R2 wird in Reihe oder 
+parallel zu dem nicht-induktiven Widerstand R1 geschaltet, je nachdem, was das ungünstigere Ergebnis 
+bringt 
+ 
+Legende 
+R1  
+nicht-induktiver Widerstand R1 zwischen 50 Ω und 500 Ω 
+R2 
+nicht-induktiver veränderbarer Widerstand 
+3.119 
+Elektrozaun 
+Absperrung, die aus einem oder mehreren von Erde isolierten Leitern besteht, auf die elektrische Pulse durch 
+ein Elektrozaungerät aufgebracht werden 
+3.120 
+Anschlussleitung 
+ein elektrischer Leiter, der verwendet wird, um das Elektrozaungerät mit dem Elektrozaun oder der 
+Erdelektrode zu verbinden 
+3.121 
+elektrischer Tierzaun 
+ein Elektrozaun, der verwendet wird, um Tiere innerhalb des Zauns zu halten oder um Tiere von einem 
+bestimmten Bereich fernzuhalten 
+3.122 
+elektrischer Sicherheitszaun 
+ein Zaun, der für Sicherheitszwecke verwendet wird und aus einem Elektrozaun und einer physischen 
+Barriere, die elektrisch vom Elektrozaun isoliert ist, besteht 
+3.123 
+physische Barriere 
+eine Barriere von nicht weniger als 1,5 m Höhe, die dafür vorgesehen ist, den unbeabsichtigten Kontakt mit 
+den gepulsten Leitern des Elektrozauns zu verhindern 
+A11 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 12/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+10 
+3.124 
+öffentlicher Zugangsbereich 
+jeder Bereich, in dem Personen vor dem unbeabsichtigten Kontakt mit den gepulsten Leitern geschützt sind 
+3.125 
+gepulste Leiter  
+Leiter, die durch das Elektrozaungerät mit Hochspannungsimpulsen beaufschlagt werden 
+3.126 
+Sicherheitsbereich 
+ein Bereich, in dem eine Person nicht von gepulsten Leitern unter 1,5 m durch eine physische Barriere 
+getrennt ist 
+4 
+Allgemeine Anforderung 
+Es gilt dieser Abschnitt des Teiles 1. 
+5 
+Allgemeine Prüfbedingungen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+5.2 
+Änderung: 
+Die Prüfvorschrift wird wie folgt ersetzt: 
+Zwei Elektrozaungeräte werden im Anlieferungszustand geprüft. Eines davon wird allen Prüfungen mit 
+Ausnahme der Prüfung nach Abschnitt 18 unterzogen, das andere den Prüfungen nach Abschnitt 5 und 
+Abschnitt 18. Die Prüfungen nach den Abschnitten 22 bis 28 können jedoch an getrennten Prüflingen 
+vorgenommen werden. 
+Für Typ-A- und Typ-C-Elektrozaungeräte ist ein zusätzlicher Prüfling für die Prüfung nach Abschnitt 18 
+erforderlich. 
+Ergänzung: 
+ANMERKUNG 101 Wo elektronische Schaltkreise, elektronische Bauteile oder andere Einrichtungen normalerweise 
+gekapselt sind, können besonders vorbereitete Prüflinge für die Prüfungen nach 19.11 und 19.101 benötigt werden. 
+5.3 
+Ergänzung: 
+Die Messungen nach 22.108 müssen vor den Prüfungen von Abschnitt 14 durchgeführt werden. Die in 
+14.101 festgelegten Prüfungen müssen an allen Geräten durchgeführt werden. 
+Wenn ein elektronisches Bauteil während der Prüfungen nach Abschnitt 14 beschädigt worden ist, werden 
+die Prüfungen nach Abschnitt 19 zweimal durchgeführt, und zwar einmal, bevor, und einmal, nachdem die 
+beschädigten elektronischen Bauteile durch neue elektronische Bauteile ersetzt worden sind. 
+5.5 
+Ergänzung: 
+Das Elektrozaungerät wird in einer sachgemäßen Lage so aufgestellt, dass die Abweichung von der Lage, 
+für die es bestimmt ist, weniger als 15° beträgt. Wenn jedoch das Elektrozaungerät Einrichtungen zur 
+Einstellung der sachgemäßen Lage besitzt, z. B. eine Nivellierlibelle, so muss das Elektrozaungerät mit 
+einer maximalen Abweichung von ± 2° in die sachgemäße Lage gebracht werden. 
+Die Erdanschlussklemme des Zaunstromkreises wird mit Erde verbunden. Falls die Erdanschlussklemme 
+nicht eindeutig bezeichnet ist, wird die Anschlussklemme geerdet, die das ungünstigste Ergebnis bringt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 13/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+11 
+5.8.1 
+Ergänzung: 
+Bei Typ-A-, -B-, -C- und -D-Elektrozaungeräten, wo die Anschlussklemmen der Batterie keine Angaben der 
+Polarität besitzen, wird die ungünstigere Polarität der Spannungsquelle, die die Batterie ersetzt, gewählt. 
+Bei batteriebetriebenen Elektrozaungeräten, wo die Anschlussklemmen der Batterie keine Angaben der 
+Polarität besitzen, wird die ungünstigere Polarität gewählt. 
+Bei netzbetriebenen Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten, die zum 
+Anschluss an das Netz geeignet sind, muss die Impedanz der Referenzstromquelle der Netzversorgung 
+0,4 Ω ± j 0,25 Ω betragen. 
+5.101 
+Wenn nicht anders festgelegt, werden alle Elektrozaungeräte wie Motor-Geräte geprüft. 
+6 
+Einteilung 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+6.1 
+Ersatz: 
+Netzbetriebene Elektrozaungeräte und batteriebetriebene Elektrozaungeräte, die zum Anschluss an 
+das Netz geeignet sind, müssen der Schutzklasse II in Bezug auf den Schutz gegen elektrischen Schlag 
+entsprechen. 
+Prüfung: Besichtigung und durch die entsprechenden Prüfungen. 
+6.2 
+Ergänzung: 
+Elektrozaungeräte müssen mindestens IPX4 entsprechen. 
+Elektrozaungeräte werden als energiebegrenzte Elektrozaungeräte oder als strombegrenzte Elektro-
+zaungeräte eingeteilt. 
+Prüfung: Besichtigung und durch die entsprechenden Prüfungen. 
+7 
+Aufschriften und Anweisungen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt: 
+7.1 
+Ergänzung: 
+Elektrozaungeräte müssen mit Bildzeichen 1641 von ISO 7000 gekennzeichnet sein. 
+Typ-A-, -B-, und -C-Elektrozaungeräte müssen mit der Bemessungsspannung für die Batterieversor-
+gung oder dem Bemessungsspannungsbereich für die Batterieversorgung in Volt gekennzeichnet sein. 
+Batteriebetriebene Elektrozaungeräte müssen mit der Aufschrift folgenden Inhalts gekennzeichnet sein: 
+„ACHTUNG – Nicht an netzbetriebene Versorgung anschließen“ 
+Elektrozaungeräte, die mit einer maximalen Energie je Impuls gekennzeichnet sind, welche 5 J übersteigt, 
+müssen auch mit dem zugehörigen Lastwiderstand gekennzeichnet sein, bei dem die maximale Energie je 
+Impuls erreicht wird. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 14/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+12 
+7.6 
+Ergänzung: 
+ 
+[Bildzeichen 5036 von IEC 60417] Gefährliche Spannung 
+ 
+[Bildzeichen 5017 von IEC 60417] Erde (Masse) 
+Die Bildzeichen für Ausgang (Elektrozaun) und Ausgang (Erde) müssen den Bildzeichen 5036 bzw. 5017 
+der IEC 60417 entsprechen. 
+7.12 
+Ergänzung: 
+Die Gebrauchsanweisungen für Typ-A-, -B- und -D-Elektrozaungeräte müssen 
+– 
+eine Warnung vor der Verwendung nicht aufladbarer Batterien enthalten; 
+– 
+den Hinweis enthalten, dass Bleibatterien während der Ladung in gut belüfteten Räumen aufzustellen 
+sind. 
+Die Gebrauchsanweisungen für batteriebetriebene Elektrozaungeräte müssen insbesondere auf die auf 
+dem Elektrozaungerät anzubringende Warnung hinweisen, die folgenden Inhalts sein muss:  
+„ACHTUNG – Nicht an netzbetriebene Versorgung anschließen“ 
+7.12.1 
+Ergänzung: 
+Die Installationsanweisungen für Energiequellen mit PVC-Leitungen müssen angeben, dass die Energie-
+quelle in einem geschützten Raum angeordnet werden muss und nicht bewegt werden darf, wenn die 
+Umgebungstemperatur unter + 5 °C ist. 
+7.101 
+Wenn die richtige Anschlussart nicht offensichtlich ist, müssen die Anschlussklemmen deutlich und 
+dauerhaft mit den Worten ERDE und ZAUN oder den Symbolen 5017 bzw. 5036 von IEC 60417 gekenn-
+zeichnet sein. 
+Wenn verschiedene Ausgangsklemmen vorhanden sind, müssen sie ähnlich gekennzeichnet oder mit den 
+entsprechenden Bezeichnungen VOLLE LEISTUNG, REDUZIERTE LEISTUNG oder REDUZIERTE 
+SPANNUNG beschriftet sein. 
+Wenn ein Schalter zur Einstellung der Ausgangswerte vorhanden ist, müssen die verschiedenen Stellungen 
+des Schalters mit den entsprechenden Symbolen oder den Bezeichnungen VOLLE LEISTUNG, 
+REDUZIERTE LEISTUNG oder REDUZIERTE SPANNUNG gekennzeichnet sein. 
+Die Buchstaben der Aufschriften müssen mindestens 3 mm und die Symbole 6 mm hoch sein. 
+Prüfung: Besichtigung und Messung. 
+7.102 
+Bei Typ-A-, -B-, -C- und -D-Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten 
+müssen die Anschlussklemmen für den Anschluss der Batterie deutlich durch das Zeichen „+“ oder die Farbe 
+Rot bei positiver Polarität und durch das Zeichen „–“ oder die Farbe Schwarz bei negativer Polarität ge-
+kennzeichnet sein, es sei denn, die Polarität ist nicht von Bedeutung. 
+Prüfung: Besichtigung. 
+7.103 
+Die Geräte müssen Anweisungen besitzen, die eine Information bezüglich  
+– 
+des Aufbaus von Elektrozäunen und  
+– 
+der Anschlussmittel des Gerätes an den Elektrozaun enthalten. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 15/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+13 
+Diese Information muss sinngemäß den in BB.1 (elektrische Tierzäune) bzw. den in BB.2 (elektrische 
+Sicherheitszäune) angegebenen Wortlaut besitzen. 
+ANMERKUNG  
+Es wird empfohlen, dass Elektrozaungeräten, die für den Gebrauch mit elektrischen Sicherheits-
+zäunen vorgesehen sind, auch die in Anhang CC wiedergegebene Information beigefügt wird. 
+Prüfung: Besichtigung. 
+8 
+Schutz gegen Zugang zu aktiven Teilen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+8.1.4 
+Ergänzung: 
+Das Anschlussmittel des Elektrozaunes gilt nicht als aktives Teil. 
+9 
+Anlauf von Motor-Geräten 
+Dieser Abschnitt des Teiles 1 gilt nicht. 
+10 Leistungs- und Stromaufnahme 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+10.101 
+Bei Elektrozaungeräten, bei denen eine maximale Energie je Impuls von mehr als 5 J angegeben 
+ist, darf dieser Wert nicht um mehr als ± 10 % von dem abgegebenen Wert abweichen, und der Lastwider-
+stand, bei dem dieser Wert erreicht wird, darf von dem auf dem Elektrozaungerät angegebenen Wert nicht 
+um mehr als ± 5 % abweichen. 
+Prüfung: wie folgt: 
+Das Elektrozaungerät wird mit Bemessungsspannung oder Bemessungsspannung für Batterieversor-
+gung, je nachdem, was zutrifft, unter den Bedingungen des Normalbetriebs, aber mit einer variablen 
+Widerstandslast, die zwischen den Ausgangsklemmen angeschlossen ist, betrieben. 
+Die in der Widerstandslast zwischen den Ausgangsklemmen des Elektrozaungerätes umgesetzte Energie je 
+Impuls wird gemessen, wobei die in 22.108 beschriebene Messanordnung verwendet wird. Der Wert der 
+Widerstandslast wird gemessen, nachdem die maximale Energie je Impuls eingestellt wurde. 
+11 Erwärmung 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+11.2 
+Ergänzung: 
+Bei Typ-A-Elektrozaungeräten, wenn sie an das Versorgungsnetz angeschlossen sind, bei Typ-D-Elektro-
+zaungeräten, wenn sie zur Versorgung mit dem Batterieladegerät, und bei Typ-B-Elektrozaungeräten, 
+wenn sie an das Versorgungsnetz mit Batterieladebetrieb angeschlossen sind, wird eine Batterie des größten 
+Typs, für den das Elektrozaungerät bemessen ist, an die Batterieanschlussklemmen angeschlossen. Vor 
+der Prüfung wird die Batterie so weit entladen, dass die von der Batterie gelieferte Spannung nicht das 
+0,75fache ihres Nennwertes übersteigt. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 16/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+14 
+11.5 
+Ersatz: 
+Das Elektrozaungerät wird im Normalbetrieb wie folgt betrieben: 
+– 
+Ein netzbetriebenes Elektrozaungerät wird mit der ungünstigsten Versorgungsspannung zwischen der 
+0,85fachen und der 1,1fachen Bemessungsspannung betrieben. 
+– 
+Typ-A- und Typ-C-Elektrozaungeräte, wenn sie für Netzbetrieb angeschlossen sind, werden mit der 
+ungünstigsten Versorgungsspannung zwischen der 0,85fachen und der 1,1fachen Bemessungsspan-
+nung betrieben. 
+– 
+Typ-B-Elektrozaungeräte, wenn sie für Netzbetrieb mit Batterieladebetrieb angeschlossen sind, werden 
+mit der ungünstigsten Versorgungsspannung zwischen der 0,85fachen und der 1,1fachen Bemessungs-
+spannung betrieben. 
+– 
+Bei Typ-A-, -B-, -C- und -D-Elektrozaungeräten, wenn sie an die Batterieversorgung angeschlossen 
+sind, und bei batteriebetriebenen Elektrozaungeräten Anlegen der ungünstigsten Versorgungsspan-
+nung an die Anschlussklemmen für die Batterie zwischen 
+• 
+der 0,55fachen und 1,1fachen Bemessungsspannung für Batterieversorgung, wenn das Elektro-
+zaungerät mit nicht aufladbaren Batterien betrieben werden kann, 
+• 
+der 0,75fachen und 1,1fachen Bemessungsspannung für Batterieversorgung, wenn das 
+Elektrozaungerät nur mit wiederaufladbaren Batterien betrieben werden kann. 
+Die in der Tabelle 101 für den Innenwiderstand je Zelle der Batterie festgelegten Werte müssen berück-
+sichtigt werden. 
+Tabelle 101 – Innenwiderstand der Batterie 
+Versorgungsspannung an den 
+Batterieanschlussklemmen 
+Innenwiderstand je Zelle 
+Ω 
+ 
+Nicht aufladbare Batterien 
+Wiederaufladbare Batterien 
+1,1fache Bemessungsspannung 
+für die Batterieversorgung 
+0,08 
+0,001 2 
+1,0fache Bemessungsspannung 
+für die Batterieversorgung 
+0,10 
+0,001 5 
+0,75fache Bemessungsspannung 
+für die Batterieversorgung 
+0,75 
+0,006 0 
+0,55fache Bemessungsspannung 
+für die Batterieversorgung 
+2,00 
+– 
+ANMERKUNG 
+Bei der Bestimmung des Innenwiderstands einer Batterie gelten zwei oder mehrere parallel 
+geschaltete Zellen als eine Zelle. 
+Typ-D-Elektrozaungeräte, wenn sie an die Versorgung mit einem Batterieladegerät angeschlossen sind, 
+werden von einer Spannungsquelle versorgt, die einen Serienwiderstand von 1 Ω hat und  
+– 
+die Form einer einweggleichgerichteten Sinuswelle mit einem Effektivwert gleich der Bemessungs-
+spannung der Batterieversorgung hat, 
+– 
+die Form einer zweiweggleichgerichteten Sinuswelle mit einem Effektivwert gleich der Bemessungs-
+spannung der Batterieversorgung hat, 
+je nachdem, was ungünstiger ist. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 17/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+15 
+11.7 
+Ersatz: 
+Das Elektrozaungerät wird bis zum Erreichen des Beharrungszustandes betrieben. 
+12 Frei 
+13 Ableitstrom und Spannungsfestigkeit bei Betriebstemperatur 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+13.1 
+Änderung: 
+Prüfung: nach 13.2 und 13.3 nur für netzbetriebene Elektrozaungeräte und batteriebetriebene Elektro-
+zaungeräte, die zum Anschluss an das Netz geeignet sind. 
+Ergänzung: 
+Das Elektrozaungerät wird im Normalbetrieb nach 11.5 für Netzversorgung betrieben. 
+14 Überspannungen 
+14.101 
+Elektrozaungeräte müssen atmosphärischen Überspannungen, die vom Zaun oder vom Netz 
+ausgehen, standhalten. 
+Prüfung: 
+– 
+nach 14.102 bis 14.105 für netzbetriebene Elektrozaungeräte und Typ-A-, Typ-B- und Typ-C-
+Elektrozaungeräte; 
+– 
+nach 14.102 bis 14.104 für Typ-D-Elektrozaungeräte; 
+– 
+nach 14.104 für batteriebetriebene Elektrozaungeräte mit einer Bemessungsspannung über 42,4 V. 
+ANMERKUNG 
+Der Wert U0 ist der Spitzenwert der Elektrozaungeräte-Ausgangsspannung, der während der Prüfung 
+von 5.104 erreicht wird. 
+Wenn nicht anders festgelegt, darf während der Prüfung kein Durchschlag erfolgen, Überspannungsschutz-
+einrichtungen dürfen ansprechen. 
+Netzbetriebene Elektrozaungeräte und Typ-A-, Typ-B-, Typ-C- und Typ-D-Elektrozaungeräte werden auf 
+einer Metallunterlage befestigt, deren Maße mindestens 150 mm größer sind als die der senkrechten Projek-
+tion der Elektrozaungeräte auf der Unterlage, und werden dann wie im sachgemäßen Gebrauch installiert. 
+Batteriebetriebene Elektrozaungeräte werden wie im sachgemäßen Gebrauch installiert. 
+Die Prüfungen werden mit Hilfe eines Impulsgenerators ausgeführt, der positive und negative volle Blitz-
+impulse mit einer Anstiegszeit von 1,2 μs und einer Halbwertzeit von 50 μs erzeugt, wobei folgende Grenz-
+abweichungen gelten 
+– 
+± 5 % für den Scheitelwert, 
+– 
+± 30 % für die Anstiegszeit, 
+– 
+± 20 % für die Halbwertzeit. 
+Geringe Schwingungen in den Impulsen sind zulässig, vorausgesetzt, dass deren Amplitude in der Nähe des 
+Scheitelwertes des Impulses kleiner ist als 5 % des Scheitelwertes. Bei Schwingungen während der ersten 
+Hälfte der Anstiegszeit sind Amplituden bis 10 % des Scheitelwertes erlaubt. 
+Die Form der Impulse wird mit dem an den Impulsgenerator angeschlossenen Elektrozaungerät eingestellt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 18/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+16 
+Die Einstellung muss bei ungefähr 50 % der festgelegten Prüfspannung erfolgen. Wenn es für die Prüfung 
+nach 14.104 nicht möglich ist, die richtige Form der Impulse zu erreichen, besteht nur die Notwendigkeit des 
+Nachweises, dass die Anstiegszeit den geforderten Wert bei etwa 50 % des zu erwartenden Scheitelwerts 
+der Spannung aufweist. 
+Der für die Prüfungen verwendete Impulsgenerator muss einen Energiegehalt von mindestens 125 J bei 
+Prüfspannung aufweisen. 
+ANMERKUNG 
+Weitere Angaben über das Prüfverfahren siehe IEC 60060-1 und IEC 60060-2. 
+14.102 
+Fünf positive und fünf negative Impulse, von denen jeder einen zu erwartenden Scheitelwert der 
+Spannung von 2 U0, aber nicht weniger als 25 kV hat, werden angewandt zwischen 
+– 
+den Ausgangsklemmen und Wechselstrom-Eingangsklemmen, die miteinander verschaltet sind, und der 
+Metallunterlage bei netzbetriebenen Elektrozaungeräten und Typ-A-, Typ-B- und Typ-C-Elektrozaun-
+geräten, 
+– 
+den Ausgangsklemmen und der Metallunterlage bei Typ-D-Elektrozaungeräten, 
+wobei der Zeitabstand zwischen aufeinanderfolgenden Impulsen mindestens 10 s betragen muss. 
+14.103 
+Fünf positive und fünf negative Impulse, von denen jeder einen zu erwartenden Scheitelwert der 
+Spannung von 2 U0, aber nicht weniger als 25 kV hat, werden angewandt zwischen den miteinander 
+verschalteten Ausgangsklemmen und 
+– 
+den Wechselstrom-Eingangsklemmen, die miteinander verschaltet sind, bei netzbetriebenen Elektro-
+zaungeräten und Typ-A-, Typ-B- und Typ-C-Elektrozaungeräten, 
+– 
+den Klemmen zum Anschluss eines externen Batterieladegerätes bei Typ-D-Elektrozaungeräten, 
+wobei der Zeitabstand zwischen aufeinanderfolgenden Impulsen mindestens 10 s betragen muss. 
+Wenn während dieser Prüfung eine Überspannungsschutzeinrichtung anspricht, wird die Prüfung wiederholt, 
+wobei die Überspannungsschutzeinrichtung unwirksam gemacht wird. Während dieser Wiederholungs-
+prüfung sind keine Durchschläge zulässig. 
+Wenn das Elektrozaungerät mehr als einen Zaunstromkreis hat, wird jeder Zaunstromkreis nacheinander 
+dieser Prüfung unterworfen, wobei die anderen Zaunstromkreise geöffnet sind. 
+14.104 
+Fünf positive und fünf negative Impulse, von denen jeder einen zu erwartenden Scheitelwert der 
+Spannung von 2 U0, aber nicht weniger als 25 kV hat, werden zwischen den Ausgangsklemmen angewandt, 
+wobei der Abstand zwischen den Impulsen mindestens 10 s betragen muss. Die Eingangsklemmen sind 
+geöffnet. 
+15 Feuchtigkeitsbeständigkeit 
+Es gilt dieser Abschnitt des Teiles 1. 
+16 Ableitstrom und Spannungsfestigkeit 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+16.1 
+Änderung: 
+Prüfung: 
+– 
+nach 16.2, 16.3 und 16.102 für netzbetriebene Elektrozaungeräte und batteriebetriebene Elektrozaun-
+geräte, die zum Anschluss an das Versorgungsnetz geeignet sind, 
+– 
+nach 16.101 und 16.102 für batteriebetriebene Elektrozaungeräte. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 19/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+17 
+16.2 
+Änderung: 
+Als Prüfspannung wird die obere Grenze der in 11.5 angegebenen Spannung verwendet. 
+16.3 
+Ergänzung: 
+Weitere Prüfspannungen und Messstellen sind in der Tabelle 102 aufgeführt. 
+Tabelle 102 – Zusätzliche Prüfspannungen 
+Messstellen 
+Prüfspannunga) 
+Zwischen dem Versorgungsstromkreis und berührbaren 
+Teilen bei metallumschlossenen Elektrozaungeräten der 
+Schutzklasse II 
+2 U0, aber nicht unter 10 000 V 
+Zwischen dem Zaunstromkreis und berührbaren Teilenb) 
+2 U0, aber nicht unter 10 000 V 
+Zwischen dem Versorgungsstromkreis und dem 
+Zaunstromkreis 
+2 U0, aber nicht unter 10 000 V 
+a) 
+Der Wert 2 U0 ist ein Scheitelwert, der dem doppelten maximalen Scheitelwert der Ausgangsspannung entspricht, 
+gemessen in 22.111. 
+b) 
+In der Metallfolie, die mit den berührbaren Teilen in Kontakt gebracht wird, muss eine Aussparung von 50 mm um 
+die Ausgangsklemme vorhanden sein. 
+16.101 
+Bei batteriebetriebenen Elektrozaungeräten werden die Anschlussklemmen 10 min an eine 
+Spannung zwischen der 1,1fachen und 1,5fachen Bemessungsspannung für Batterieversorgung ange-
+schlossen, die so gewählt wird, dass die Ausgangsspannung, ohne dass eine Last angeschlossen ist, den 
+Maximalwert besitzt, wobei eventuell vorhandene Schutzfunkenstrecken abgeklemmt werden. 
+Die Isolierung zwischen den Polen des Netzstromkreises wird dann 1 min mit einer Gleichspannung von 
+500 V geprüft. Vor der Durchführung dieser Prüfung werden Kondensatoren, Widerstände, Drosseln, 
+Transformatorenwicklungen und elektronische Einzelteile, die zwischen den Polen des Versorgungsstrom-
+kreises angeschlossen sind, abgetrennt. Wenn ein Kondensator zu einem integrierten Stromkreis gehört und 
+nicht allein abgetrennt werden kann, wird der Stromkreis als Ganzes abgeschaltet. 
+Es darf kein Durchschlag während der Prüfung auftreten. 
+16.102 
+Unmittelbar nach den Prüfungen von 16.3 und 16.101 werden die Ausgangswerte entsprechend 
+5.101 gemessen. 
+Die gemessenen Werte müssen innerhalb der in 22.108 festgelegten Grenzen liegen und dürfen im ungün-
+stigsten Fall nicht um mehr als 10 % von den bei den Prüfungen von 22.108 gemessenen Werten abweichen. 
+17 Überlastschutz von Transformatoren und zugehörigen Stromkreisen 
+Dieser Abschnitt des Teiles 1 gilt nicht. 
+18 Dauerhaftigkeit 
+Elektrozaungeräte müssen so gebaut sein, dass sie extremen Temperaturen, die im sachgemäßen Ge-
+brauch auftreten können, standhalten. Außerdem dürfen Überlastschutzvorrichtungen unter diesen Bedin-
+gungen nicht ansprechen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 20/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+18 
+Prüfung: wie folgt: 
+Netzbetriebene Elektrozaungeräte und Typ-A- und Typ-C-Elektrozaungeräte, wenn sie an Netzver-
+sorgung angeschlossen sind, werden unter den Bedingungen des Normalbetriebs betrieben. Es wird die 
+Bemessungsspannung angelegt. 
+Typ-D-Elektrozaungeräte, wenn sie an ein Batterieladegerät angeschlossen sind, werden unter den 
+Bedingungen des Normalbetriebs betrieben. Die angelegte Spannung entspricht der in 11.5 festgelegten. 
+Batteriebetriebene Elektrozaungeräte und Typ-B-Elektrozaungeräte, die für Batteriebetrieb angeschlos-
+sen sind, werden in ihre normale Lage gebracht und mit einer Batterie mit einer Nennspannung gleich der 
+Bemessungsspannung für Batterieversorgung des Elektrozaungerätes versehen. Die Batterie muss der 
+größte Typ sein, für den das Elektrozaungerät bestimmt ist. Die Batterie muss zu Beginn der Prüfung 
+vollgeladen sein und muss durch eine neue Batterie ersetzt werden, sobald die Batteriespannung während 
+der Prüfung auf den 0,75fachen Wert ihrer Nennspannung bei einer wiederaufladbaren Batterie oder auf den 
+0,55fachen Wert ihrer Nennspannung bei einer nicht aufladbaren Batterie absinkt. 
+Bei Typ-A- und Typ-D-Elektrozaungeräten wird eine Batterie des größten Typs, für den das Elektro-
+zaungerät bemessen ist, angeschlossen und in den Batterieraum eingesetzt. Vor der Prüfung wird die 
+Batterie so weit entladen, dass die abgegebene Spannung nicht das 0,75fache ihres Nennwerts übersteigt. 
+Der andere Prüfling wird bei Typ-A- und Typ-C-Elektrozaungeräten für Batterieversorgung angeschlossen 
+und von einer Batterie des größten Typs, für den das Elektrozaungerät bemessen ist, versorgt. Die Batterie 
+muss zu Beginn der Prüfung vollgeladen sein und muss durch eine neue Batterie ersetzt werden, sobald die 
+Batteriespannung während der Prüfung auf den 0,75fachen Wert ihrer Nennspannung bei einer wieder-
+aufladbaren Batterie oder auf den 0,55fachen Wert ihrer Nennspannung bei einer nicht aufladbaren Batterie 
+absinkt. 
+Das Elektrozaungerät wird 168 h (sieben Tage) ununterbrochen bei einer Umgebungstemperatur von  
+(–15 ± 2) °C und dann 168 h (sieben Tage) bei einer Umgebungstemperatur von (50 ± 2) °C betrieben. 
+Die Ausgangsklemmen werden während der ersten 84 h jeder Periode von 168 h mit einem induktionsarmen 
+Widerstand von (500 ± 2,5) Ω belastet. In der restlichen Zeit dieser Periode wird die Last entfernt. 
+Am Ende jeder Periode von 168 h werden die Ausgangswerte nach 5.101 gemessen, bei einer Umgebungs-
+temperatur, wie sie für die entsprechende Periode vorgeschrieben ist. 
+Die gemessenen Werte müssen innerhalb der in 22.108 festgelegten Grenzen liegen und dürfen im ungün-
+stigsten Fall nicht um mehr als 10 % von den während der Prüfung von 22.108 gemessenen Werten 
+abweichen. 
+Während der Prüfung darf das Elektrozaungerät keine Veränderungen aufweisen, die seinen späteren 
+Gebrauch beeinträchtigen. Dichtungsmasse, falls vorhanden, darf nicht in solchem Maße herausfließen, dass 
+aktive Teile freigelegt werden, und das Elektrozaungerät muss weiterhin den Anforderungen nach 
+Abschnitt 8 entsprechen. 
+19 Unsachgemäßer Betrieb 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+19.1 
+Änderung: 
+Anstelle der Angaben der Abschnitte, die für die verschiedenen Gerätetypen gelten, gilt Folgendes: 
+Elektrozaungeräte werden den Prüfungen nach 19.11, 19.12, 19.101, 19.102, 19.103, 19.104 und 19.105 
+unterworfen. 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 21/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+19 
+Ergänzung: 
+Das Elektrozaungerät wird nach 11.2 befestigt, außer dass die Batterie, sofern zutreffend, vollgeladen ist. 
+Während der Prüfung werden Sicherungen, die für den Benutzer zugänglich sind, kurzgeschlossen. 
+ 
+19.11.2 Änderung: 
+Der sechste Absatz der Prüfvorschrift für Geräte, die einen elektronischen Schaltkreis besitzen, der für die 
+Übereinstimmung mit Abschnitt 19 sorgt, gilt nicht. 
+ 
+19.12 
+Ergänzung: 
+Wenn bei einer der Fehlerbedingungen die Impulsfolge größer ist als 1 Hz und die Sicherheit des 
+Elektrozaungerätes vom Ansprechen einer nicht selbsttätig rückstellenden Schutzeinrichtung mit einge-
+bauter Sicherung abhängt, wird die Prüfung dreimal durchgeführt, um sicher zu sein, dass diese Sicherung 
+zuverlässig arbeitet und innere Teile bei der reduzierten Impulsfolge nicht beschädigt werden. 
+19.13 
+Ergänzung: 
+Während der Prüfungen müssen die Ausgangswerte den in 22.108 festgelegten entsprechen, ausgenommen 
+die Impulsfolge. 
+Bei Impulsfolgefrequenzen größer als 1,34 Hz darf die Entladeenergie in einem induktionsarmen Widerstand 
+von 500 Ω 2,5 J/s während einer Zeitdauer von mehr als 3 min nicht überschreiten, bevor das Elektro-
+zaungerät durch eine nicht selbsttätig rückstellende Schutzeinrichtung oder einen elektronischen 
+Schutzstromkreis außer Betrieb gesetzt wird. 
+Die Temperaturerhöhungen der Wicklungen dürfen die in Tabelle 8 angegebenen Werte nicht überschreiten. 
+19.101 
+Die Elektrozaungeräte werden jeder der folgenden Bedingungen nacheinander ausgesetzt, 
+während sie mit der in 11.5 festgelegten Spannung gespeist werden, einschließlich jener, die mit solchen 
+anderen Fehlerbedingungen verbunden sind, die eine tatsächliche Folge der gewählten Bedingung sind: 
+– 
+Das Elektrozaungerät wird in seine ungünstigste Lage gebracht, auch wenn es nicht wahrscheinlich ist, 
+dass es in dieser Lage im sachgemäßen Gebrauch aufgestellt wird; 
+– 
+Teile, die zum Einstellen des Elektrozaungerätes bestimmt sind, ausgenommen solche, die von außen 
+ohne Zuhilfenahme eines Werkzeugs einstellbar sind, werden in ihre ungünstigste Stellung eingestellt, 
+auch wenn diese Teile nicht zur Einstellung durch den Benutzer bestimmt sind, es sei denn, sie sind 
+wirksam gegen weitere Einstellungen verschlossen; 
+– 
+der Erdanschluss wird von der Erdungsklemme des Zaunstromkreises entfernt und an irgendeine 
+andere Ausgangsklemme angeschlossen; 
+– 
+die Ausgangsklemmen werden kurzgeschlossen; 
+– 
+Schalter, Relaiskontakte und dergleichen, die Bestandteil der Impulseinrichtung sind, werden kurz-
+geschlossen oder unterbrochen, je nachdem, was ungünstiger ist; 
+– 
+Sicherungen, die ohne Zuhilfenahme eines Werkzeugs berührbar sind, Vorschaltfunkenstrecken im 
+Zaunstromkreis, Entladeventile und Thermorelais werden kurzgeschlossen; 
+– 
+außer bei elektronischen Schaltkreisen wird jede Kriechstrecke oder Luftstrecke zwischen aktiven 
+Teilen unterschiedlichen Potentials, die kleiner als 5 mm ist bei Zaunstromkreisen oder 2 mm oder 
+geringer bei anderen Stromkreisen, kurzgeschlossen, und jede nicht befestigte Verbindung wird gelöst; 
+A1 
+A1 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 22/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+20 
+– 
+die Schaltgeschwindigkeit eines elektronischen Bauteils, das als die Hauptimpulsschalteinrichtung 
+verwendet wird, muss im Bereich 0,1 Hz bis zur doppelten Bemessungsfrequenz variiert werden, und 
+zwar in einer Folge von annähernd 1 : 2 : 5 über drei Dekaden, indem das Eingangssignal dieser 
+Einrichtung auf die anliegende Spannung bezogen wird und eine äußere unabhängige Ansteuerung 
+verwendet wird. 
+ANMERKUNG 
+Angaben eines einfachen Vergleichsstromkreises, der zur Steuerung der Schaltgeschwindigkeit der 
+Hauptimpulsschalteinrichtung als geeignet empfunden wurde, sind im Anhang AA enthalten. 
+19.102 
+Typ-A-, Typ-C- und Typ-D-Elektrozaungeräte werden nacheinander jeder der folgenden Bedin-
+gungen unterworfen, wobei sie mit der in 11.5 festgelegten Spannung betrieben werden: 
+– 
+Bei einem Elektrozaungerät, das für Batterieversorgung angeschlossen ist, werden die Anschluss-
+klemmen für die Batterie, die eine Polaritätskennzeichnung besitzen, an die entgegengesetzte Polarität 
+angeschlossen, es sei denn, ein solcher Anschluss wird im sachgemäßen Gebrauch wahrscheinlich 
+nicht auftreten; 
+– 
+bei einem Elektrozaungerät, das für Netzbetrieb angeschlossen ist, werden die Anschlussklemmen für 
+die Batterieversorgung an die ungünstigste Belastung angeschlossen, einschließlich eines Kurzschlus-
+ses. 
+19.103 
+Typ-B-Elektrozaungeräte, die für Netzversorgung mit Batterieladebetrieb angeschlossen sind, 
+werden nacheinander jeder der nachstehenden Prüfungen unterzogen, wobei sie mit der in 11.5 festgelegten 
+Spannung gespeist werden: 
+– 
+Die Anschlussklemmen für die Batterie mit Polaritätskennzeichnung werden an die entgegengesetzte 
+Polarität angeschlossen, es sei denn, ein solcher Anschluss wird im sachgemäßen Gebrauch 
+wahrscheinlich nicht auftreten; 
+– 
+die Anschlussklemmen für die Batterieversorgung werden an die ungünstigste Belastung angeschlossen, 
+einschließlich eines Kurzschlusses. 
+19.104 
+Batteriebetriebene Elektrozaungeräte und Typ-B-Elektrozaungeräte, die für Batterieversorgung 
+angeschlossen sind, werden mit der in 11.5 festgelegten Spannung versorgt. Die Anschlussklemmen mit 
+Polaritätskennzeichnung werden an die entgegengesetzte Polarität angeschlossen, es sei denn, ein solcher 
+Anschluss wird im sachgemäßen Gebrauch wahrscheinlich nicht auftreten. 
+19.105 
+Batteriebetriebene Elektrozaungeräte mit einer Bemessungsspannung von kleiner als 12 V und 
+Typ-A-, Typ-B-, Typ-C- und Typ-D-Elektrozaungeräte mit einer Bemessungsspannung der Batteriever-
+sorgung von kleiner als 12 V werden im Normalbetrieb betrieben, wenn sie mit einer Eingangsspannung 
+von DC 13,2 V versorgt werden. 
+Während der Prüfung muss das Elektrozaungerät über einem 1-Ω-Vorwiderstand an die Spannungsquelle 
+angeschlossen werden. 
+Diese Prüfung gilt nur, wenn das Elektrozaungerät unverändert an das Versorgungsnetz angeschlossen 
+werden kann. 
+20 Standfestigkeit und mechanische Sicherheit 
+Dieser Abschnitt des Teiles 1 gilt nicht. 
+21 Mechanische Festigkeit 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+21.101 
+Das Elektrozaungerät muss einer Fallbeanspruchung widerstehen. 
+Prüfung: wie folgt: 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 23/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+21 
+Das Elektrozaungerät wird in der Mitte eines Brettes von (1 000 ± 5) mm Länge und (225 ± 5) mm Breite 
+und ungefähr 25 mm Dicke angeschraubt. Das Brett wird an jedem Ende auf einem starren Tisch durch Kant-
+hölzer von solcher Größe gestützt, dass das Elektrozaungerät sicher auf der Tischoberfläche gehalten wird. 
+Ein Ende des Brettes wird über eine Strecke von (200 ± 5) mm angehoben und dann fallen gelassen. Die 
+Prüfung wird 20-mal wiederholt. Dann wird dieser Vorgang wiederholt, wobei das Brett abwechselnd auf jede 
+seiner Längskanten gestellt wird. 
+Nach der Prüfung darf das Elektrozaungerät keine Beschädigung im Sinne dieser Norm aufweisen. 
+22 Aufbau 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+22.31 
+Änderung: 
+Diese Anforderung gilt nur für netzbetriebene Elektrozaungeräte und batteriebetriebene Elektrozaun-
+geräte, die für Netzanschluss geeignet sind. 
+22.32 
+Änderung: 
+Diese Anforderung gilt nur für netzbetriebene Elektrozaungeräte und batteriebetriebene Elektrozaun-
+geräte, die für Netzanschluss geeignet sind. 
+22.101 
+Bei netzbetriebenen Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten, die für 
+Netzanschluss geeignet sind, müssen innere Verbindungen so befestigt oder geschützt sein und die 
+Elektrozaungeräte müssen so gebaut sein, dass, auch wenn sich Drähte lösen oder brechen, weder 
+leitende Verbindungen zwischen dem Netz- und dem Zaunstromkreis hergestellt werden noch irgendwelche 
+anderen gefährlichen Bedingungen entstehen können. 
+Die Primär- und Sekundärwicklungen von Transformatoren, die zur Trennung des Zaunstromkreises vom 
+Netzstromkreis verwendet werden, müssen durch eine Isolierschicht getrennt und so gebaut sein, dass 
+keinerlei Verbindung zwischen diesen Wicklungen, weder direkt noch indirekt, durch andere Metallteile 
+möglich ist. 
+Insbesondere müssen Vorkehrungen getroffen werden, um Folgendes zu verhindern: 
+– 
+Verschiebung der Primär- oder Sekundärwicklungen oder ihrer Windungen, 
+– 
+unangemessene Verschiebung von Wicklungsteilen oder inneren Leitungen durch Bruch oder Lockerung 
+von Verbindungen. 
+Prüfung: Besichtigung und Prüfungen nach den anderen Abschnitten dieser Norm. 
+ANMERKUNG 1 Die Trennung zwischen Netz- und Zaunstromkreis kann durch den Einbau eines Transformators mit 
+zwei Wicklungen erreicht werden, der entweder im Primärstromkreis oder im Zaunstromkreis angebracht ist. Wenn 
+solche Transformatoren in beide Stromkreise eingebaut werden, sollte wenigstens einer von ihnen den geforderten Grad 
+der Trennung sicherstellen. 
+ANMERKUNG 2 Stromkreise, die zwischen den Eingangsklemmen und der Primärseite des Transformators, der den 
+geforderten Grad der Trennung sicherstellt, angeschlossen sind, gelten als mit dem Netz verbunden und Stromkreise, die 
+zwischen den Ausgangsklemmen und der Sekundärseite dieses Transformators angeschlossen sind, werden als dem 
+Zaunstromkreis zugehörig betrachtet. 
+ANMERKUNG 3 Beispiele für die Wicklungstypen, die den Anforderungen dieses Abschnitts entsprechen, sind: 
+– 
+Wicklungen auf getrennten Spulenkörpern aus geeignetem Isolierstoff, die starr gegeneinander und gegen den Kern 
+des Transformators befestigt sind, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+23 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 24/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+22 
+– 
+Wicklungen auf einem einzelnen Spulenkörper mit einer Trennwand, beide aus geeignetem Isolierstoff, 
+vorausgesetzt, dass Spulenkörper und Trennwand in einem Stück gepresst oder gegossen sind oder dass es im 
+Falle einer aufgesteckten Trennwand einen dazwischenliegenden Mantel oder Abdeckung über der Fuge zwischen 
+Spulenkörper und Trennwand gibt, 
+– 
+konzentrische Wicklungen auf wandlosen Spulenkörpern, vorausgesetzt, dass 
+• 
+zwischen jeder Wicklungslage geeigneter Isolierstoff eingelegt ist, der über die Wicklungsköpfe hinausragt, 
+• 
+eine oder mehrere getrennte Lagen aus geeignetem Isolierstoff von entsprechender Dicke zwischen den Primär- 
+und Sekundärwicklungen eingelegt sind und 
+• 
+die Wicklungen mit einem ausgehärteten oder anderen geeigneten Werkstoff imprägniert sind, der vollständig in 
+die Zwischenräume eindringt und die Wicklungsköpfe wirksam versiegelt. 
+ANMERKUNG 4 Es ist nicht zu erwarten, dass sich zwei voneinander unabhängige Befestigungen gleichzeitig lösen. 
+22.102 
+Bei netzbetriebenen Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten, die für 
+den Anschluss an das Netz geeignet sind, müssen im Zaunstromkreis verwendete Transformatoren in 
+einem besonderen Gehäuseraum untergebracht sein. Dieser Gehäuseraum darf, mit Ausnahme der 
+Primärwicklung des Transformators, keine Teile enthalten, die mit dem Netz in Verbindung stehen oder mit 
+ihm in Verbindung kommen können. 
+Prüfung: Besichtigung und Prüfungen nach den anderen Abschnitten dieser Norm. 
+22.103 
+Bei metallumschlossenen Elektrozaungeräten der Schutzklasse II müssen die Ausgangs-
+klemmen so angeordnet sein, dass eine Berührung von Außenleitern, die zu diesen Klemmen führen, mit 
+dem Gehäuse so gut wie ausgeschlossen ist. 
+Prüfung: Besichtigung. 
+22.104 
+Elektrozaungeräte müssen so gebaut sein, dass 
+– 
+die Leiter für den Anschluss des Zaunes und der Erdelektrode leicht angeschlossen werden können, 
+– 
+es möglich ist, Schalter und andere Regel- oder Steuereinrichtungen zu betätigen, wenn das im 
+sachgemäßen Gebrauch notwendig ist, und zwar nachdem das Elektrozaungerät montiert und an das 
+Netz angeschlossen ist, ohne dabei ein Gehäuse öffnen oder entfernen zu müssen, das den Schutz 
+gegen das schädliche Eindringen von Wasser oder gegen ungewollten elektrischen Schlag sicherstellt. 
+Prüfung: Besichtigung. 
+22.105 
+Bei netzbetriebenen Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten, die für 
+den Anschluss an das Netz geeignet sind, dürfen weder Stoßfugen in der zusätzlichen Isolierung mit 
+solchen in der Basisisolierung zusammenfallen, noch darf eine solche Stoßfuge in verstärkter Isolierung 
+den direkten Zugang zu aktiven Teilen ermöglichen. 
+Prüfung: Besichtigung. 
+22.106 
+Bei Typ-A-, Typ-B- und Typ-C-Elektrozaungeräten müssen Anschlussklemmen für die Batterie 
+und andere Metallteile in einem Batterieraum, die beim Wechsel der Batterie berührbar werden, auch unter 
+Zuhilfenahme eines Werkzeugs, von aktiven Teilen durch doppelte Isolierung oder verstärkte Isolierung 
+getrennt sein. 
+Bei Typ-D-Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten dürfen Teile in einem 
+Batterieraum, die beim Batteriewechsel berührbar werden, auch unter Zuhilfenahme eines Werkzeugs, keine 
+aktiven Teile sein. 
+Prüfung: Besichtigung, Messung und durch die Prüfungen, wie sie für doppelte Isolierung oder verstärkte 
+Isolierung vorgesehen sind. 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+24 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 25/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+23 
+22.107 
+Batteriebetriebene Elektrozaungeräte und batteriebetriebene Elektrozaungeräte, die für den 
+Anschluss an das Netz geeignet sind, müssen mit geeigneten Mitteln ausgerüstet sein, die verhindern, 
+dass der Benutzer aufgrund der Ausgangsspannung des Elektrozaungerätes einen elektrischen Schlag 
+erhält, wenn eine Batterie an das Elektrozaungerät angeschlossen wird. 
+Prüfung: Besichtigung. 
+ANMERKUNG 
+Beispiele solcher Mittel sind: 
+– 
+ein Schalter, der die Klemmen für den Anschluss der Batterie trennt, 
+– 
+eine Einrichtung, die es ermöglicht, die Ausgangsspannung auf null zu reduzieren, 
+– 
+isolierte Krokodilklemmen oder ähnliche Einrichtungen. 
+22.108 
+Die folgenden Ausgangswerte der Geräte müssen eingehalten werden: 
+– 
+Die Impulsfolge darf nicht größer als 1 Hz sein; 
+– 
+die Impulsdauer in dem 500-Ω-Anteil der Standardlast darf 10 ms nicht überschreiten; 
+– 
+die Energie je Impuls darf in dem nicht-induktiven Widerstand R1 der Standardlast nicht größer als 5 J 
+sein und der Spitzenstrom in dem nicht-induktiven Widerstand R1 der Standardlast darf nicht größer als 
+20 A sein. 
+ANMERKUNG 
+Die Energie je Impuls ist die in dem Impuls gemessene Energie während der Impulsdauer. 
+Prüfung: durch Messung, wenn das Elektrozaungerät mit der in 11.5 angegebenen Spannung versorgt und 
+unter Bedingungen des Normalbetriebs betrieben wird, aber indem die Standardlast an die Ausgangs-
+klemmen angeschlossen ist. Beim Messen der Impulsfolge ist die Standardlast nicht angeschlossen. 
+Die Messungen werden mit einem Messgerät durchgeführt, dessen Eingangsimpedanz einen induktions-
+armen Widerstand von mindestens 1 MΩ besitzt, dem eine Kapazität von höchstens 100 pF parallel 
+geschaltet ist. 
+22.109 
+Ist das Elektrozaungerät mit mehr als einem Zaunstromkreis versehen, müssen die 
+Ausgangswerte innerhalb der Grenzen liegen, die in 22.108 für jeden möglichen Anschluss der Zaunstrom-
+kreise festgelegt sind. 
+Die Impulse der einzelnen Sätze von Ausgangsklemmen müssen synchronisiert sein und  
+– 
+die Impulsdauer darf den in 22.108 festgelegten Wert nicht überschreiten, 
+– 
+die Impulsfolge darf den in 22.108 festgelegten Wert nicht überschreiten. 
+Dies gilt für jede mögliche Kombination von einzelnen Impulsen. 
+Prüfung: Messungen, wie in 22.108 festgelegt. 
+22.110 
+Bei Typ-A- und Typ-B-Elektrozaungeräten, die Anschlussklemmen für den Anschluss der Batterie 
+besitzen, darf die Leerlauf-Ausgangsgleichspannung 42,4 V nicht übersteigen. 
+Prüfung: durch Messung der Leerlauf-Ausgangsgleichspannung, die an den Anschlussklemmen für den 
+Anschluss der Batterie entsteht, wenn das Elektrozaungerät an das Versorgungsnetz angeschlossen und 
+mit Bemessungsspannung gespeist wird. 
+22.111 
+Der Scheitelwert der Ausgangsspannung U0 soll gemessen und festgehalten werden, um die 
+Durchführung der Prüfungen und Messungen von 14.102, 14.103, 14.104 und 16.3 und 29.1 zu ermöglichen. 
+A11 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+25 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 26/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+24 
+Prüfung: wie folgt: 
+Der Scheitelwert der Ausgangsspannung wird mit der in 22.108 beschriebenen Messanordnung gemessen, 
+wobei das Elektrozaungerät mit der in 11.5 angegebenen Spannung unter den Bedingungen des Normal-
+betriebs versorgt wird, aber mit einer an die Ausgangsklemmen angeschlossenen Last, bestehend aus 
+einem Kondensator mit einer Kapazität, die in Stufen von etwa 10 nF zwischen 0 nF und 200 nF variiert 
+werden kann. 
+23 Innere Leitungen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+23.7 
+Ersatz: 
+Für netzbetriebene Elektrozaungeräte und batteriebetriebene Elektrozaungeräte, die für den An-
+schluss an das Netz geeignet sind, dürfen keine Leiter verwendet werden, die mit der Farbkombination 
+Grün/Gelb gekennzeichnet sind. 
+Prüfung: Besichtigung. 
+24 Einzelteile 
+Es gilt dieser Abschnitt des Teiles 1. 
+25 Netzanschluss und äußere Leitungen 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+25.1 
+Ergänzung: 
+Typ-D-Elektrozaungeräte müssen ausgerüstet sein mit einer nicht abnehmbaren biegsamen Anschluss-
+leitung mit Anschlussmitteln, die nicht für den Anschluss an das Netz geeignet sind, oder einem Geräte-
+stecker, der mindestens denselben Schutzgrad gegen Feuchtigkeit hat, wie für das Elektrozaungerät 
+gefordert, und der nicht mit Gerätesteckvorrichtungen kompatibel ist, die den Normblättern der IEC 60320 
+entsprechen. 
+Prüfung: Besichtigung. 
+25.5 
+Ergänzung: 
+Die zum Anschluss der Batterie in batteriebetriebenen Elektrozaungeräten verwendeten biegsamen 
+Anschlussleitungen müssen mit dem Elektrozaungerät in Anbringungsart X verbunden sein. 
+25.7 
+Ersatz: 
+Netzanschlussleitungen, ausgenommen biegsame Anschlussleitungen, die eine äußere Batterie oder einen 
+Batterieraum mit dem Elektrozaungerät verbinden, dürfen nicht leichter sein als: 
+– 
+mittlere PVC-Schlauchleitung (Kurzzeichen 60227 IEC 53), 
+– 
+mittlere polychloropren-ummantelte Leitung (Kurzzeichen 60245 IEC 57). 
+Die mittlere polychloropren-ummantelte Leitung muss verwendet werden, wenn aus klimatischen Gründen 
+die mittlere PVC-Schlauchleitung nicht geeignet ist. 
+Prüfung: Besichtigung. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+26 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 27/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+25 
+25.8 
+Ergänzung: 
+Die Leiter in biegsamen Leitungen, die zum Anschluss der Batterie in batteriebetriebenen Elektrozaun-
+geräten verwendet werden, müssen einen Nennquerschnitt von mindestens 0,75 mm2 haben. 
+25.13 
+Ergänzung: 
+Diese Anforderung gilt nicht für biegsame Leitungen, die eine äußere Batterie oder ein Batteriegehäuse mit 
+dem Elektrozaungerät verbinden. 
+25.23 
+Ergänzung: 
+Bei Typ-A-, Typ-B-, Typ-C- und Typ-D-Elektrozaungeräten und batteriebetriebenen Elektrozaungeräten 
+werden, falls die Batterie in einem getrennten Gehäuse untergebracht ist, die biegsamen Leitungen, die das 
+Gehäuse mit dem Elektrozaungerät verbinden, als Verbindungsleitungen betrachtet. 
+25.101 
+Batteriebetriebene Elektrozaungeräte müssen geeignete Mittel für den Anschluss der Batterie 
+haben. Wenn die Batterieart auf dem Elektrozaungerät angegeben ist, müssen die Anschlussmittel für diese 
+Batterieart geeignet sein. 
+Prüfung: Besichtigung. 
+26 Anschlussklemmen für äußere Leiter 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+26.1 
+Ergänzung: 
+Der zweite Satz der Anforderung gilt nicht für die Elektrozaungeräte-Ausgangsklemmen. 
+26.5 
+Ergänzung: 
+Anschlussstellen in einem Elektrozaungerät für den Anschluss biegsamer Leitungen mit Anbringungsart X, 
+die eine äußere Batterie oder Batteriegehäuse verbinden, müssen so angeordnet oder abgedeckt sein, dass 
+keine Gefahr einer zufälligen Verbindung zwischen Anschlussklemmen besteht. 
+26.9 
+Ergänzung: 
+Die Anforderung gilt nicht für die Elektrozaungeräte-Ausgangsklemmen. 
+26.101 
+Ausgangsklemmen müssen so ausgeführt oder angeordnet sein, dass es nicht möglich ist, den 
+Zaun oder die Erdelektrode mit einem Stecker an das Elektrozaungerät anzuschließen, der für den 
+Anschluss an eine Steckdose für Netzversorgung gebaut ist. 
+Prüfung: Besichtigung und Handprobe. 
+26.102 
+Ausgangsklemmen müssen so befestigt sein, dass sie sich nicht lösen, wenn äußere Leiter ange-
+schlossen oder getrennt werden. 
+Prüfung: Besichtigung und Handprobe. 
+26.103 
+Vorrichtungen zum Anklemmen der Leiter, die den Zaun oder die Erdelektrode an das Elektro-
+zaungerät anschließen, dürfen nicht zur Befestigung anderer Einzelteile dienen. 
+Prüfung: Besichtigung. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+27 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 28/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+26 
+27 Schutzleiteranschluss 
+Es gilt dieser Abschnitt der Teiles 1, ausgenommen wie folgt: 
+27.1 
+Ergänzung: 
+ANMERKUNG 
+In Geräten der Schutzklasse II kann dafür gesorgt werden, dass mindestens eine der Ausgangs-
+klemmen an die Erdelektrode angeschlossen wird. 
+28 Schrauben und Verbindungen 
+Es gilt dieser Abschnitt des Teiles 1. 
+29 Kriech- und Luftstrecken, Abstände durch die Isolierung 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+Ergänzung: 
+29.101 
+Luftstrecken zwischen 
+– 
+aktiven Teilen des Zaunstromkreises und anderen Metallteilen, 
+– 
+Metallgehäusen und anderen Metallteilen des Elektrozaungerätes, einschließlich der um die Netz-
+anschlussleitung innerhalb von Einführungsbuchsen, Biegeschutztüllen, Zugentlastungen und ähn-
+lichen Teilen gewickelten Metallfolie, 
+dürfen nicht kleiner sein als 25 mm. 
+Die Anforderung gilt nicht für eine Funkenstrecke oder ein ähnliches Bauteil, das für die ordnungsgemäße 
+Funktion des Gerätes notwendig ist.  
+Die Luftstrecken zwischen den Polen des Versorgungsstromkreises in batteriebetriebenen Elektrozaun-
+geräten dürfen nicht kleiner als 2 mm sein, wenn das Elektrozaungerät mit Leitern wie im sachgemäßen 
+Gebrauch ausgestattet ist. 
+Prüfung: Messung. 
+30 Wärme- und Feuerbeständigkeit, Kriechstromfestigkeit 
+Es gilt dieser Abschnitt des Teiles 1, ausgenommen wie folgt. 
+30.2.1 
+Änderung: 
+Die Glühdrahtprüfung wird bei einer Temperatur von 650 °C durchgeführt. 
+30.2.2 
+Gilt nicht. 
+31 Rostschutz 
+Ersatz: 
+Gehäuse metallumschlossener Elektrozaungeräte der Schutzklasse II müssen ausreichend gegen Korro-
+sion geschützt sein. 
+Prüfung: Salznebelprüfung nach IEC 60068-2-11, Schwierigkeitsgrad 2. 
+A1 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+28 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 29/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+27 
+Vor dieser Prüfung werden die mit einem Überzug versehenen Geräte mittels eines gehärteten Stahlstiftes 
+geritzt, dessen Ende die Form eines Konus mit einem Winkel am oberen Ende von 40° hat; seine Spitze ist 
+mit einem Radius von (0,25 ± 0,02) mm gerundet. Der Stift wird so belastet, dass die längs seiner Achse 
+angewandte Kraft (10 ± 0,5) N beträgt. Die Ritze werden erzeugt, indem man mit dem Stift mit einer 
+Geschwindigkeit von ungefähr 20 mm/s die Oberfläche des Überzugs entlangfährt. Fünf Ritze werden in 
+mindestens 5 mm Abstand voneinander und in einem Abstand von mindestens 5 mm von der Kante des 
+Überzugs erzeugt.  
+Nach der Prüfung darf das Gehäuse des Elektrozaungerätes keine Zeichen einer Schädigung aufweisen, 
+die die Übereinstimmung mit dieser Norm beeinträchtigen könnte. Der Überzug darf nicht gebrochen sein und 
+darf sich nicht von der Metalloberfläche gelöst haben. 
+32 Strahlung, Giftigkeit und ähnliche Gefährdungen 
+Es gilt dieser Abschnitt des Teiles 1. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+29 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 30/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+28 
+ 
+Legende 
+S 
+Versorgungsnetz 
+Ch 
+Stromkreis des Batterieladegerätes 
+IG 
+impulserzeugender Stromkreis 
+B.Ch 
+getrenntes Batterieladegerät 
+ 
+Batterie 
+F 
+Zaunanschluss 
+Bild 101 – Blockschaltbilder der verschiedenen Arten batteriebetriebener Elektrozaungeräte, die 
+für den Anschluss an das Netz geeignet sind 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+30 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 31/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+29 
+Anhänge 
+Es gelten die Anhänge des Teiles 1, ausgenommen wie folgt. 
+Anhang A 
+(informativ) 
+ 
+Routineprüfungen  
+Dieser Anhang von Teil 1 gilt mit folgender Ausnahme: 
+A.2 
+Prüfung der elektrischen Spannungsfestigkeit 
+Ergänzung: 
+Eine Prüfung der elektrischen Spannungsfestigkeit wird zwischen dem Versorgungsstromkreis und dem 
+Zaunstromkreis durchgeführt, wobei die Prüfspannung für 1 s AC 10 000 V, 50 Hz oder 60 Hz oder 
+DC 15 000 V ist. 
+A.3 
+Funktionsprüfung 
+Ergänzung: 
+Die Ausgangseigenschaften des Elektrozaungerätes müssen geprüft werden, indem das Elektrozaungerät 
+bei Bemessungsspannung mit einer 500-Ω-Last über den Zaunanschlüssen betrieben wird. 
+Die Ausgangseigenschaft des Elektrozaungerätes muss wie folgt sein: 
+– 
+Die Impulswiederholrate darf 1 Hz nicht überschreiten; 
+– 
+die Impulsdauer des Impulses darf 10 ms nicht überschreiten; 
+– 
+bei Elektrozaungeräten darf der Energieimpuls 5 J nicht überschreiten. 
+ 
+Anhang B 
+(normativ) 
+ 
+Geräte, die von wiederaufladbaren Batterien betrieben werden 
+Es gilt dieser Anhang des Teiles 1, ausgenommen wie folgt. 
+Ergänzung 
+Die Änderungen zu 3.19, 11.7, Abschnitt 19 und 30.2 gelten nicht. 
+A1 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+31 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 32/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+30 
+Anhang AA 
+(informativ) 
+ 
+Stromkreis zur unabhängigen Steuerung der Schaltgeschwindigkeit der 
+Hauptimpulsschalteinrichtung 
+Ein geeigneter Stromkreis zur äußeren unabhängigen Steuerung der Schaltgeschwindigkeit der Halbleiter-
+einrichtungen, die im Elektrozaungerät als Hauptimpulsschalteinrichtung nach dem achten Anstrich von 
+19.101 verwendet werden, ist in Bild AA.1 dargestellt. 
+Der Stromkreis wird dazu verwendet, das Steuersignal der Hauptimpulsschalteinrichtung über diese Einrich-
+tung auf die Spannung zu beziehen, so dass sie an der gleichen Stelle im Ladezyklus ausgelöst werden 
+kann. 
+Die Bezugsspannung sollte einen solchen Wert haben, dass der Komparator über den gesamten Bereich der 
+Ladespannung des Elektrozaungeräts einstellbar ist, wodurch es möglich ist, die Schaltgeschwindigkeit bei 
+jeder gewünschten Frequenz einzustellen. 
+Die Eingangsimpedanz des Stromkreises des Komparators sollte so beschaffen sein, dass sie die Ergebnis-
+se der Prüfung nicht beeinflusst. 
+ 
+Legende 
+Uc 
+Ladespannung 
+Ur 
+Referenzspannung 
+Sg 
+Steuersignal 
+Pot 
+Potentiometer zur Einstellung der Schaltgeschwindigkeit 
+Op 
+Komparator 
+Bild AA.1 – Stromkreis für die unabhängige Steuerung der Schaltgeschwindigkeit der 
+Hauptimpulsschalteinrichtung 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+32 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 33/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+31 
+Anhang BB 
+(normativ) 
+ 
+Anweisungen für die Montage und den Anschluss von Elektrozäunen 
+BB.1 
+Anforderungen an Elektrotierzäune 
+Elektrotierzäune und ihre Zusatzausrüstungen müssen in einer Weise aufgestellt, betrieben und gewartet 
+werden, die die Gefahren für Personen, Tiere und deren Umgebung minimiert.  
+Konstruktionen von Elektrotierzäunen, die wahrscheinlich zu Verwicklungen mit Personen führen, müssen 
+vermieden werden.  
+ 
+ACHTUNG: Das Berühren von Elektrozäunen ist zu vermeiden, insbesondere mit dem Kopf, Hals oder 
+Oberkörper. Nicht über den Zaun, durch den Zaun oder unter dem Zaun hindurchklettern. Zum 
+Passieren des Zauns ist ein Tor oder eine andere Übergangsstelle zu benutzen.  
+ 
+Ein Elektrotierzaun darf nicht aus zwei separaten Elektrozaungeräten oder von unabhängigen Zaun-
+stromkreisen des gleichen Elektrozaungeräts gespeist werden.  
+Im Falle von zwei separaten Elektrotierzäunen, von denen jeder durch ein separates unabhängig getaktetes 
+Elektrozaungerät gespeist wird, muss der Abstand zwischen den Drähten der beiden Elektrotierzäune 
+mindestens 2,5 m sein. Wenn diese Lücke geschlossen werden soll, muss dies mittels elektrisch nicht 
+leitenden Materials oder einer isolierten Metallbarriere erfolgen.  
+Stacheldraht oder Rasiermesserdraht darf nicht mit einem Elektrozaungerät elektrifiziert werden. 
+Ein nicht elektrifizierter Zaun mit Stacheldraht oder Rasiermesserdraht darf zur Unterstützung eines oder 
+mehrerer versetzt angeordneter elektrifizierter Drähte eines Elektrotierzauns verwendet werden. Die tragen-
+den Teile für die elektrifizierten Drähte müssen so gebaut sein, dass diese Drähte mindestens in einem 
+Abstand von 150 mm von der vertikalen Ebene der nicht elektrifizierten Drähte gehalten werden. Der Stachel-
+draht oder der Rasiermesserdraht muss in regelmäßigen Abständen geerdet werden. 
+Der Anleitung des Elektrozaungeräteherstellers für das Erden ist Folge zu leisten. 
+Ein Abstand von mindestens 10 m muss zwischen einer beliebigen Erdelektrode des Elektrozaungeräts 
+und anderen an Erdungssysteme angeschlossenen Teilen sein, wie beispielsweise die Schutzerde des 
+Energieversorgungssystems oder die Erde eines Telekommunikationssystems. 
+Anschlussleitungen, die innerhalb von Gebäuden geführt werden, müssen wirkungsvoll von den geerdeten 
+tragenden Teilen des Gebäudes isoliert sein. Dies kann durch Verwendung isolierter Hochspannungsleitun-
+gen erreicht werden. 
+Anschlussleitungen, die unterirdisch geführt werden, müssen in Elektroinstallationsrohren aus Isolierstoff 
+geführt werden oder anderenfalls muss isolierte Hochspannungsleitung verwendet werden. Es ist darauf zu 
+achten, dass die Anschlussleitungen nicht durch Tierhufe oder Traktorräder beschädigt werden, die in den 
+Boden einsinken. 
+Anschlussleitungen dürfen nicht in dem gleichen Elektroinstallationsrohr installiert werden wie die Netz-
+Versorgungsleitungen, Kommunikationsleitungen oder Datenleitungen. 
+Anschlussleitungen und Drähte von Elektrotierzäunen dürfen nicht über Hochspannungs- oder Kommuni-
+kationstrassen kreuzen. 
+Kreuzungen mit Hochspannungsleitungen müssen, soweit möglich, vermieden werden. Falls eine solche 
+Kreuzung nicht vermieden werden kann, muss sie unterhalb der Hochspannungsleitung durchgeführt werden 
+und so nah wie möglich im rechten Winkel dazu. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+33 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 34/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+32 
+Falls Anschlussleitungen und Drähte von Elektrotierzäunen in der Nähe von Hochspannungsleitungen 
+installiert sind, dürfen die Abstände nicht geringer sein als in Tabelle BB.1 dargestellt. 
+Tabelle BB.1 – Mindestabstände von Hochspannungsleitungen für Elektrotierzäune 
+Spannung der Hochspannungsleitung 
+V 
+Abstand 
+m 
+≤ 1 000 
+> 1 000 und ≤ 33 000 
+> 33 000 
+3 
+4 
+8 
+Falls Anschlussleitungen und Drähte von Elektrotierzäunen in der Nähe von Hochspannungsleitungen 
+installiert sind, darf deren Höhe über dem Boden 3 m nicht überschreiten. 
+Diese Höhe gilt für jede Seite der orthogonalen Projektion des äußeren Leiters der Hochspannungsleitungen 
+auf die Grundfläche für einen Abstand von 
+– 
+2 m bei Hochspannungsleitungen, die mit einer Nennspannung von bis zu 1 000 V betrieben werden, 
+– 
+15 m bei Hochspannungsleitungen, die mit einer Nennspannung über 1 000 V betrieben werden. 
+Elektrotierzäune, die zum Abschrecken von Vögeln, zum Einzäunen von Haustieren oder zum Trainieren 
+von Tieren wie Kühen (Kuhtrainer) bestimmt sind, sollten nur aus Elektrozaungeräten mit niedriger Leistung 
+versorgt werden, womit noch eine ausreichende und sichere Wirkung erzielt wird. 
+Bei Elektrotierzäunen, die dazu bestimmt sind, Vögel davon abzuhalten, sich auf Gebäuden niederzulassen, 
+darf kein Draht des Elektrozaunes geerdet sein. Ein Warnschild muss an allen Stellen angebracht sein, wo 
+Personen zu den Leitern freien Zugang erlangen können. 
+Wo ein Elektrotierzaun einen öffentlichen Fußweg kreuzt, muss in dem Elektrotierzaun an dieser Stelle ein 
+nicht elektrifiziertes Tor oder es muss ein Übergang mittels Zaunübertritt vorhanden sein. An jedem solchen 
+Übergang müssen die in der Nähe liegenden elektrifizierten Drähte Warnschilder tragen. 
+Jeder Teil eines Elektrotierzauns, der entlang einer öffentlichen Straße oder eines öffentlichen Weges 
+installiert ist, muss in häufigen Intervallen durch Warnzeichen gekennzeichnet sein, die sicher an den 
+Zaunpfosten befestigt sind oder fest an den Zaundrähten verklemmt sind. 
+Die Größe des Warnzeichens muss mindestens 100 mm × 200 mm sein. 
+Die Hintergrundfarbe auf beiden Seiten des Warnzeichens muss gelb sein. Die Aufschrift auf dem Warn-
+zeichen muss schwarz oder muss entweder 
+– 
+das Symbol von Bild BB.1 oder 
+– 
+der sinngemäße Inhalt von „Achtung: Elektrozaun“ 
+sein. Die Aufschrift darf nicht löschbar sein, sie muss auf beiden Seiten des Warnzeichens aufgebracht sein 
+und muss eine Höhe von mindestens 25 mm haben. 
+Es ist sicherzustellen, dass alle netzbetriebenen Hilfseinrichtungen, die an den Elektrotierzaunstromkreis 
+angeschlossen sind, einen Isolationsgrad bieten, der dem des Elektrozaungeräts entspricht. 
+ANMERKUNG 1 Bei Hilfseinrichtungen, die den Anforderungen an die Isolation zwischen dem Zaunstromkreis und dem 
+Versorgungsnetz in den Abschnitten 14, 16 und 29 dieser Norm für Elektrozaungeräte entsprechen, wird angenommen, 
+dass sie eine ausreichende Isolation besitzen. 
+Ein Wetterschutz muss für die Zusatzausrüstung zur Verfügung gestellt werden. Es sei denn, der Hersteller 
+hat eine Benutzung dieser Ausrüstung im Freien bescheinigt und sie hat einen minimalen Schutzgrad von 
+IPX4. 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+34 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 35/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+33 
+BB.2 
+Anforderungen an Elektrosicherheitszäune 
+Elektrosicherheitszäune und ihre Zusatzausrüstungen müssen in einer Weise aufgestellt, betrieben und 
+gewartet werden, die die Gefahren für Personen minimiert. Auch muss das Risiko für Personen, einen 
+elektrischen Schlag zu bekommen, reduziert werden, sofern diese nicht versuchen, die physikalische 
+Barriere zu durchbrechen, oder sich ohne Befugnis im Sicherheitsbereich aufhalten. 
+Konstruktionen von Elektrosicherheitszäunen, die wahrscheinlich zu Verwicklungen mit Personen führen, 
+müssen vermieden werden.  
+Tore in Elektrosicherheitszäunen müssen geöffnet werden können, ohne dass die Person einen elektrischen 
+Schlag erhält.  
+Ein Elektrosicherheitszaun darf nicht aus zwei separaten Elektrozaungeräten oder von unabhängigen 
+Zaunstromkreisen des gleichen Elektrozaungeräts gespeist werden.  
+Im Falle von zwei separaten Elektrosicherheitszäunen, von denen jeder durch ein separates unabhängig 
+getaktetes Elektrozaungerät gespeist wird, muss der Abstand zwischen den Drähten der beiden Elektro-
+sicherheitszäune mindestens 2,5 m sein. Wenn diese Lücke geschlossen werden soll, muss dies mittels 
+elektrisch nicht leitenden Materials oder einer isolierten Metallbarriere erfolgen.  
+Stacheldraht oder Rasiermesserdraht darf nicht mit einem Elektrozaungerät elektrifiziert werden. 
+Der Anleitung des Elektrozaungeräteherstellers für das Erden ist Folge zu leisten. 
+Der Abstand zwischen einer beliebigen Erdelektrode des Elektrosicherheitszauns und anderen Erdungs-
+systemen darf nicht geringer als 2 m sein, außer wenn eine graduierte Erdungsmatte dazugehört. 
+ANMERKUNG 1 Wenn möglich, sollte der Abstand zwischen einer beliebigen Erdelektrode des Elektrosicherheits-
+zauns und anderen Erdungssystemen vorzugsweise mindestens 10 m betragen.  
+Berührbare leitende Teile der physikalischen Barriere müssen wirkungsvoll geerdet werden. 
+Wo ein Elektrosicherheitszaun blanke Starkstromleitungen unterhalb durchläuft, muss das höchste metal-
+lische Element, für eine Distanz von 5 m von beiden Seiten des Kreuzungspunktes, wirkungsvoll geerdet 
+werden. 
+Anschlussleitungen, die innerhalb von Gebäuden geführt werden, müssen wirkungsvoll von den geerdeten 
+tragenden Teilen des Gebäudes isoliert sein. Dies kann durch Verwendung isolierter Hochspannungsleitun-
+gen erreicht werden. 
+Anschlussleitungen, die unterirdisch geführt werden, müssen in Elektroinstallationsrohren aus Isolierstoff 
+geführt werden oder anderenfalls muss isolierte Hochspannungsleitung verwendet werden. Es ist darauf zu 
+achten, dass die Anschlussleitungen nicht durch Fahrzeugräder beschädigt werden, die in den Boden ein-
+sinken. 
+Anschlussleitungen dürfen nicht in dem gleichen Elektroinstallationsrohr installiert werden wie die Netz-Ver-
+sorgungsleitungen, Kommunikationsleitungen oder Datenleitungen. 
+Anschlussleitungen und Drähte von Elektrosicherheitszäunen dürfen nicht über Hochspannungs- oder 
+Kommunikationstrassen kreuzen. 
+Kreuzungen mit Hochspannungsleitungen müssen, soweit möglich, vermieden werden. Falls eine solche 
+Kreuzung nicht vermieden werden kann, muss sie unterhalb der Hochspannungsleitung durchgeführt werden 
+und so nah wie möglich im rechten Winkel dazu. 
+Falls Anschlussleitungen und Drähte von Elektrosicherheitszäunen in der Nähe von Hochspannungs-
+leitungen installiert sind, dürfen die Abstände nicht geringer sein als in Tabelle BB.2 dargestellt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+35 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 36/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+34 
+Tabelle BB.2 – Mindestabstände von Hochspannungsleitungen für Elektrosicherheitszäune 
+Spannung der Hochspannungsleitung 
+V 
+Abstand 
+m 
+≤ 1 000 
+> 1 000 und ≤ 33 000 
+> 33 000 
+3 
+4 
+8 
+Falls Anschlussleitungen und Drähte von Elektrosicherheitszäunen in der Nähe von Hochspannungs-
+leitungen installiert sind, darf deren Höhe über dem Boden 3 m nicht überschreiten. 
+Diese Höhe gilt für jede Seite der orthogonalen Projektion des äußeren Leiters der Hochspannungsleitungen 
+auf die Grundfläche für einen Abstand von 
+– 
+2 m bei Hochspannungsleitungen, die mit einer Nennspannung von bis zu 1 000 V betrieben werden, 
+– 
+15 m bei Hochspannungsleitungen, die mit einer Nennspannung über 1 000 V betrieben werden. 
+Ein Abstand von 2,5 m muss zwischen unisolierten Leitern von Elektrosicherheitszäunen oder unisolierten 
+Anschlussleitungen beibehalten werden, die aus separaten Elektrozaungeräten gespeist werden. Dieser 
+Abstand darf weniger sein, wo Leiter oder Anschlussleitungen mit Isolierung versehen sind oder aus 
+isolierten Leitungen mit einer Bemessungsspannung von mindestens 10 kV bestehen. 
+Diese Anforderung braucht nicht gelten, wenn die einzeln versorgten Anschlüsse mit einer physikalischen 
+Barriere, welche keine Öffnung größer als 50 mm hat, abgetrennt voneinander sind. 
+Eine vertikale Trennung von nicht weniger als 2 m muss zwischen gepulsten Leitern, die aus separaten 
+Elektrozaungeräten gespeist werden, aufrechterhalten werden. 
+Die Elektrosicherheitszäune müssen durch ein deutlich sichtbar platziertes Warnzeichen identifiziert 
+werden. 
+Die Warnzeichen müssen vom Sicherheitsbereich und dem öffentlichen Zugangsbereich lesbar sein. 
+Jede Seite des Elektrosicherheitszauns muss wenigstens ein Warnzeichen haben. 
+Warnzeichen müssen platziert sein  
+– 
+an jedem Tor, 
+– 
+an jedem Zugangspunkt, 
+– 
+in Intervallen, die 10 m nicht überschreiten, 
+– 
+angrenzend zu allen Zeichen, weitere zu chemischen Gefahren als Information für den Not-/Hilfsdienst. 
+Jeder Teil eines Elektrosicherheitszauns, der entlang einer öffentlichen Straße oder eines öffentlichen 
+Weges installiert ist, muss in häufigen Intervallen durch Warnzeichen gekennzeichnet sein, die sicher an den 
+Zaunpfosten befestigt sind oder fest an den Zaundrähten verklemmt sind. 
+Die Größe des Warnzeichens muss mindestens 100 mm × 200 mm sein. 
+Die Hintergrundfarbe auf beiden Seiten des Warnzeichens muss gelb sein. Die Aufschrift auf dem Warn-
+zeichen muss schwarz oder muss entweder 
+– 
+das Symbol von Bild BB.1 oder 
+– 
+der sinngemäße Inhalt von „Achtung: Elektrozaun“ 
+sein. Die Aufschrift darf nicht löschbar sein, sie muss auf beiden Seiten des Warnzeichens aufgebracht sein 
+und muss eine Höhe von mindestens 25 mm haben. 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+36 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 37/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+35 
+Es ist sicherzustellen, dass alle netzbetriebenen Hilfseinrichtungen, die an den Elektrosicherheits-
+zaunstromkreis angeschlossen sind, einen Isolationsgrad bieten, der dem des Elektrozaungeräts 
+entspricht. 
+ANMERKUNG 2 Bei Hilfseinrichtungen, die den Anforderungen an die Isolation zwischen dem Zaunstromkreis und dem 
+Versorgungsnetz in den Abschnitten 14, 16 und 29 dieser Norm für Elektrozaungeräte entsprechen, wird angenommen, 
+dass sie eine ausreichende Isolation besitzen. 
+Netzversorgungsleitungen dürfen nicht im gleichen Elektroinstallationsrohr installiert werden wie Signal-
+leitungen, die zur Installation des Elektrozaungeräts gehören. 
+Ein Wetterschutz muss für die Zusatzausrüstung zur Verfügung gestellt werden. Es sei denn, der Hersteller 
+hat eine Benutzung dieser Ausrüstung im Freien bescheinigt und sie hat einen minimalen Schutzgrad von 
+IPX4. 
+ 
+ 
+Bild BB.1 – Symbol für Warnschild 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+37 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 38/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+36 
+Fügen Sie folgenden Anhang ein: 
+Anhang CC 
+(informativ) 
+ 
+Installation von Elektrosicherheitszäunen 
+CC.1 
+Allgemein 
+Ein Elektrosicherheitszaun sollte so konstruiert sein, dass unter üblichen Betriebsbedingungen Personen 
+vor ungewollter Berührung mit gepulsten Leitern geschützt sind. 
+ANMERKUNG 1 Diese Anforderung ist primär dafür vorgesehen, um nachzuweisen, dass ein wünschenswertes Niveau 
+von Sicherheit vorhanden ist oder durch die physikalische Barriere aufrechterhalten wird. 
+ANMERKUNG 2 Beim Auswählen des Typs der physikalischen Barriere sollte die wahrscheinliche Anwesenheit von 
+Kindern als Faktor bei der Größe der Öffnungen betrachtet werden. 
+CC.2 
+Standort von Elektrosicherheitszäunen 
+Die Elektrozäune sollten vom öffentlichen Zugangsbereich durch eine physikalische Barriere getrennt 
+sein. 
+Wenn ein Elektrozaun in einer erhöhten Position installiert ist, wie an der Innenseite eines Fensters oder 
+Oberlichtes, darf die physikalische Barriere weniger als 1,5 m hoch sein, wenn sie den gesamten Elektro-
+zaun mit abdeckt. Wenn die Unterkante des Fensters oder Oberlichtes sich in einem Abstand von bis zu 
+1,5 m Höhe über dem Boden oder der Zugangsebene befindet, braucht die physikalische Barriere nur bis 
+zu 1,5 m hoch über dem Boden oder der Zugangsebene sein.  
+CC.3 
+Verbotszone für gepulste Leitungen 
+Gepulste Leitungen dürfen nicht innerhalb der schattierten Zone, wie in Bild CC.1 gezeigt, installiert werden. 
+ANMERKUNG 1 Wenn geplant ist, einen Elektrosicherheitszaun dicht an einer Seitengrenze zu betreiben, sollte die 
+entsprechende Behörde vor Baubeginn konsultiert werden. 
+ANMERKUNG 2 Typische Konstruktionen von Elektrosicherheitszäunen sind in Bild CC.2 und Bild CC.3 gezeigt. 
+CC.4  
+Trennung zwischen Elektrozaun und physikalischer Barriere 
+Wenn eine physikalische Barriere unter Einhaltung von CC.3 installiert ist, sollte mindestens ein Maß der 
+Öffnungen nicht größer als 100 mm sein und die Trennung zwischen dem Elektrozaun und der physikali-
+schen Barriere sollte 
+– 
+innerhalb eines Bereichs von 100 mm bis 200 m oder größer als 1 000 mm, wo mindestens ein Maß in 
+jeder Öffnung der physikalischen Barriere nicht größer als 130 mm ist, sein, 
+– 
+größer als 1 000 mm, wo alle Maße einer Öffnung der physikalischen Barriere größer als 50 mm sind, 
+sein, 
+– 
+weniger als 200 mm oder größer als 1 000 mm, wo die physikalische Barriere keine Öffnung hat, sein. 
+ANMERKUNG 1 Diese Einschränkungen haben die Absicht, die Möglichkeiten einer ungewollten Berührung der 
+gepulsten Leitung durch Personen zu reduzieren sowie zu verhindern, dass sie sich zwischen dem Elektrozaun und 
+der physikalischen Barriere festklemmen und damit ungeschützt vor mehrfachen elektrischen Schlägen vom Elektro-
+zaungerät sind. 
+A1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+38 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 39/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+37 
+ANMERKUNG 2 Die Trennung ist der rechtwinklige Abstand zwischen dem Elektrozaun und der physikalischen 
+Barriere. 
+CC.5 
+Verbotene Montage 
+Leiter von Elektrozäunen sollten nicht an einer Stütze, die von einer Starkstromoberleitung benutzt wird, 
+montiert werden. 
+CC.6 
+Betrieb von Elektrosicherheitszäunen 
+Die Leiter von einem Elektrozaun sollten nicht unter Spannung gesetzt werden, wenn nicht alle berechtigten 
+Personen, die sich im Sicherheitsbereich aufhalten oder ihn betreten, über seine Lage informiert sind. 
+Wenn das Risiko einer Verletzung von Personen durch eine sekundäre Ursache besteht, sollten zusätzliche 
+Sicherheitsmaßnahmen durchgeführt werden. 
+ANMERKUNG 
+Ein Beispiel einer sekundären Ursache ist, wenn man erwarten kann, dass eine Person von einer 
+Oberfläche fällt, wenn sie Kontakt mit gepulsten Leitern hatte. 
+ 
+Legende 
+A 
+Sicherheitsbereich 
+B 
+öffentlicher Zugangsbereich 
+ 
+physikalische Barriere 
+ Verbotszone 
+ 
+elektrischer Sicherheitsbereich 
+Bild CC.1 – Verbotszone für gepulste Leitungen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+39 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 40/44 =====
+EN 60335-2-76:2005 + A1:2006 + A11:2008 
+38 
+ 
+Legende 
+A 
+Sicherheitsbereich 
+B 
+öffentlicher Zugangsbereich 
+C 
+Barriere, wo benötigt 
+1 
+Elektrosicherheitszaun 
+2 
+physikalische Barriere 
+Bild CC.2 – Typische Konstruktionen, bei denen der Elektrosicherheitszaun der Öffentlichkeit 
+zugänglich ist 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+40 von 44
+www.ris.bka.gv.at

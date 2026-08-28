@@ -1,0 +1,177 @@
+# Lehrbuch der Bauphysik — Teil 28
+> Quelle: Lehrbuch der Bauphysik (buecher) · Seiten 1121-1122.
+
+Dieser Teil umfasst ausschließlich das Stichwortverzeichnis (Buchstaben V–Z) des Lehrbuchs der Bauphysik. Es handelt sich um einen reinen Index mit Begriffen und zugehörigen Seitenzahlen — kein erklärender Fachtext ist enthalten. Die vollständige Stichwortliste wird nachfolgend als Wissensbasis-Referenz paraphrasiert wiedergegeben, damit Fachbegriffe und ihre Buchfundorte auffindbar bleiben.
+
+## Inhalt
+
+### Stichwortverzeichnis V (Fortsetzung)
+
+- **Verschmutzung** (Verglasung): behandelt auf Seiten 800 und 809; zugehöriger Faktor auf Seite 813
+- **Versprossung** (Verglasung): behandelt auf Seiten 800 und 809; zugehöriger Faktor auf Seite 813
+- **Versuchsanordnung zur Messung der Wasserdampf-Diffusionswiderstandszahl**: Seite 252
+- **Vertikalverformung verschiedener Mauerwerksarten**: Seite 364
+- **Vertraulichkeitsabstand**: Seite 620
+- **Vibration**: Seite 699
+- **Volumenkennzahl**: Seiten 615 und 623
+- **Vorsatzkonstruktion** (akustisch): Seiten 640, 641, 648 und 650
+- **Vorschaltgerät**:
+  - Elektronisches Vorschaltgerät (EVG): Seite 854
+  - Konventionelles Vorschaltgerät (KVG): Seite 854
+- **V(λ)-Kurve** (spektrale Hellempfindlichkeitskurve des Auges): Seiten 757 und 758
+
+### Stichwortverzeichnis W
+
+- **Wahre Ortszeit (WOZ)**: Seite 827
+- **Wahrnehmung** (visuell/akustisch): Seite 790
+- **Wandflutung** (Lichttechnik): Seite 874
+- **Wandimpedanz** (Akustik): Seite 589
+- **Wärme**: Seite 10
+- **Wärmeabgabe**: Seiten 485, 528 und 536
+  - Feuchte Wärmeabgabe: Seiten 472 und 473
+  - Trockene Wärmeabgabe: Seite 473
+- **Wärmeabgabegrad, sekundärer**: Seite 79
+- **Wärmeabsorptionsvermögen**: Seite 502
+- **Wärmebrücke**: Seite 43
+- **Wärmebrückenkorrekturwert**: Seite 96
+- **Wärmebrückenverlustkoeffizient**: Seite 50
+- **Wärmedämmung**: Seiten 528, 551, 554–556, 562 und 563
+- **Wärme-Differentialmelder** (Brandschutz): Seite 989
+- **Wärmediffusionsstrom**: Seite 471
+- **Wärmedurchgang**: Seite 562
+- **Wärmedurchgangskoeffizient** (U-Wert):
+  - Allgemein: Seiten 33, 35 und 562
+  - Äquivalenter Wärmedurchgangskoeffizient: Seite 83
+- **Wärmedurchgangswert**: Seiten 505–507
+  - Spezifischer Wärmedurchgangswert: Seiten 505–507 und 516
+- **Wärmedurchgangswiderstand**: Seiten 33, 35 und 506
+- **Wärmedurchlasswiderstand**: Seiten 33, 34, 505 und 507
+- **Wärmeenergiebedarf**: Seite 182
+- **Wärmegewinn**: Seite 5
+- **Wärmehaushalt**: Seite 472
+- **Wärmekapazität**: Seiten 9, 485 und 505–507
+  - Spezifische Wärmekapazität: Seiten 88, 120, 517 und 942
+- **Wärmelast, innere**: Seite 501
+- **Wärmeleitfähigkeit**: Seiten 12–14, 16, 942 und 966
+- **Wärmeleitung**: Seiten 11, 12 und 20
+- **Wärmemelder** (Brandschutz): Seite 989
+- **Wärmemenge**: Seite 120
+- **Wärmeproduktion**: Seite 495
+- **Wärmeproduktionsrate**: Seite 476
+- **Wärmequelle**:
+  - Allgemein: Seiten 139, 504, 506, 539 und 555
+  - Innere Wärmequelle: Seiten 504, 506–508, 527, 533, 535, 536, 538, 539 und 551
+- **Wärmeschutz**:
+  - Wärmeschutz des Bauteils: Seite 240
+  - Sommerlicher Wärmeschutz: Seiten 399 und 505
+- **Wärmeschutzbeschichtung**: Seite 818
+- **Wärmespeicher**: Seiten 505, 509, 556, 560 und 561
+- **Wärmespeicherfähigkeit**: Seiten 100, 162, 166, 509 und 557
+- **Wärmespeicherkapazität**: Seite 558
+- **Wärmespeicherung**: Seiten 120, 505, 507, 554, 560 und 563
+- **Wärmespeichervermögen**: Seite 502
+- **Wärmestrahlung**: Seiten 27, 29 und 440
+- **Wärmestrahlungsaustausch, langwelliger**: Seite 426
+- **Wärmestrahlungsbelastung**:
+  - Diffuse Wärmestrahlungsbelastung: Seite 399
+  - Kurzwellige direkte Wärmestrahlungsbelastung: Seite 399
+  - Kombinierte kurzwellige und langwellige Wärmestrahlungsbelastung: Seite 399
+- **Wärmestrom**: Seiten 505–507
+  - Transmittierter Wärmestrom: Seite 506
+- **Wärmestromabgabe, trockene**: Seite 472
+- **Wärmestrombilanz**: Seiten 502 und 505–507
+  - Wärmestrombilanz 1: Seite 508
+  - Wärmestrombilanz 2: Seite 508
+  - Wärmestrombilanz 3: Seite 508
+  - Wärmestrombilanz für die innere Raumumschließungsfläche: Seite 507
+- **Wärmestromdichte, langwellige**: Seite 431
+- **Wärmeübergang an der Wandoberfläche**: Seite 241
+- **Wärmeübergangskoeffizient**: Seiten 17, 21, 22, 24, 25, 27, 32, 33, 474, 505 und 507
+  - Konvektiver Wärmeübergangskoeffizient: Seite 530
+  - Konvektiver und radiativer Wärmeübergangskoeffizient: Seite 505
+- **Wärmeübergangswert**: Seite 516
+- **Wärmeübergangswiderstand**: Seiten 33, 506–508 und 516
+  - Konvektiver Wärmeübergangswiderstand: Seite 491
+- **Wärmeübertragungswert**: Seite 506
+- **Wärmeverlust**: Seiten 4, 551 und 562
+- **Wärmewiderstand**: Seiten 501 und 502
+- **Warmwasserwärmebedarf**: Seite 93
+- **Wasserableitung**: Seite 197
+- **Wasseraufnahme**:
+  - Typische Zeitverläufe beim Saugversuch: Seite 267
+  - Kapillare Wasseraufnahme: Seite 446
+- **Wasseraufnahmekoeffizient**: Seiten 264 und 267
+  - Benennung von Baustoffschichten nach Wasseraufnahmekoeffizient-Größe: Seite 269
+  - Wasseraufnahmekoeffizient von Baustoffen: Seite 266
+- **Wasserdampf**: Seiten 385, 432, 435, 478, 484, 485, 487, 512 und 530
+- **Wasserdampfabgabe verschiedener Feuchtequellen**: Seite 213
+- **Wasserdampfdiffusion**: Seite 218
+- **Wasserdampf-Diffusionswiderstandszahl** (μ-Wert):
+  - Messprinzip/Messung: Seite 252
+- **Wasserdampfdruck**: Seiten 432, 433, 435, 478, 481, 511, 513, 514, 530 und 531
+- **Wasserdampfgehalt**:
+  - Allgemein: Seite 484
+  - Wasserdampfgehalt der Luft: Seite 201
+- **Wasserdampfkonzentration**: Seite 202
+- **Wasserdampfleitfähigkeit**: Seiten 513 und 530
+- **Wasserdampfpartialdruck**: Seiten 238, 438 und 495
+- **Wasserdampfproduktion**: Seiten 211 und 212 sowie 239
+- **Wasserdampfsättigungsdruck**: Seiten 432–434, 513 und 529
+- **Wasserdampfspeicherung**: Seite 348
+  - Wasserdampfspeicherung in Baustoffoberflächen: Seite 347
+- **Wasserdampfstrom**: Seite 478
+- **Wasserdampfübergangskoeffizient**: Seite 299
+- **Wassereindringkoeffizient**: Seite 265
+- **Wassereinlagerung in einer Baustoffpore, fortschreitend**: Seite 219
+- **Wassergehalt**:
+  - Hygroskopischer Wassergehalt: Seite 220
+  - Kritischer Wassergehalt: Seite 217
+  - Überhygroskopischer Wassergehalt: Seite 226
+- **Wassergehaltsbereich**: Seite 214
+- **Wassergehaltsverteilung**: Seiten 352 und 354
+- **Wassermolekül, mittlere freie Weglänge**: Seite 247
+- **Wassersättigung**:
+  - Freie Wassersättigung: Seite 215
+  - Maximale Wassersättigung: Seite 217
+- **Wassertransport in ungesättigten Poren**: Seite 254
+- **Wasserverdunstung von Wasseroberflächen, Schätzung**: Seite 305
+- **Weber-Fechner-Gesetz** (Wahrnehmungspsychologie): Seiten 570 und 791
+- **Wellenlänge**: Seiten 568, 580, 752 und 758
+- **Wellenwiderstand** (Akustik): Seiten 574 und 593
+- **Wellenzahl**: Seite 594
+- **Wendekreis** (Sonne): Seiten 823 und 827
+- **Wert, charakteristischer der Baustoff-Feuchte**: Seite 214
+- **Wetterschutzkriterium**: Seite 446
+- **Wetterschutzschicht**: Seite 446
+- **Widerstandsbeiwert** (Feuchteschutz/Strömung): Seiten 447 und 448
+- **Wiensches Verschiebungsgesetz** (Strahlungsphysik): Seite 756
+- **Wind**: Seiten 449, 545 und 560
+- **Windenergie**: Seite 453
+- **Windfeld**: Seite 446
+- **Windgeschwindigkeit**: Seiten 438, 442–447, 451, 454, 458, 460, 465 und 519
+  - Windgeschwindigkeitsverteilung: Seite 270
+- **Windgeschwindigkeitsvektor**: Seite 458
+- **Windniederschlagsindex**: Seite 446
+- **Windkraft**: Seite 446
+- **Wind-Regenbeanspruchung**: Seite 446
+- **Windrichtung**: Seiten 438, 442–446, 449, 454, 458, 460, 464, 465 und 560
+- **Windturm**: Seite 559
+- **Winkelhilfsfunktion** (Strahlungsberechnung): Seiten 406, 410–413, 466, 522 und 523
+- **Wirkungsgradverfahren** (Lichttechnik): Seite 877
+- **Wirtschaftlichkeit**: Seite 151
+- **Witterung**: Seiten 402, 438, 502 und 509
+- **Wolkenbedeckungsgrad**: Seiten 393 und 428
+
+### Stichwortverzeichnis Z
+
+- **Zapfen** (Auge, Photorezeptoren): Seite 793
+- **Zeitgleichung** (Astronomie/Sonnenlauf): Seite 827
+- **Zeitumrechnung** (WOZ/MEZ): Seite 825
+- **Zenit**: Seiten 802, 803 und 844
+- **Zenitleuchtdichte**: Seiten 799 und 804
+- **Ziegel** (Baustoff): Seiten 231 und 233
+- **Ziel und Strategie des Feuchteschutzes**: Seite 195
+- **Zonenzeit**: Seite 828
+- **Zone, polare** (Klimazone): Seite 552
+- **Zu-/Abluftanlage** (Lüftung): Seiten 66 und 76
+- **Zuordnung von Wandbauarten und Beanspruchungsgruppen**: Seite 275

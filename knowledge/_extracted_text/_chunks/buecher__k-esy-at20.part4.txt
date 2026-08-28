@@ -1,0 +1,2788 @@
+
+
+===== PAGE 161/284 =====
+KNX Bewegungs- und Präsenzmelder
+161 
+w Vergleichstabelle Präsenzmelder Serie BASIC
+PD 360/8 KNX BASIC
+RC 230 KNX
+Ø 3 m
+Ø 3 m
+Ø 6 m
+Ø 6 m
+360°
+230° 
+3 m
+3 m
+1
+1
+JA (als MASTER oder SLAVE konfigurierbar)
+JA (Gerät als Master ode Slave konfigurierbar) 
+5 - 2000 lx
+5 - 2000 lx
+0
+1
+-
+0, 10 s, 1 - 60 Min
+NEIN
+NEIN
+29-31 V
+29-31 V
+0,2 W
+0,2 W
+5 °C...+35 °C
+5 °C...+35 °C
+IP40
+IP40
+ESB430442 / 89,00 €
+ESM015472 / 190,00 €
+-
+-
+ESM425929 / 10,00 €
+-
+-
+ESM016110 / 22,00 €
+-
+-
+-
+-
+
+
+===== PAGE 162/284 =====
+KNX Bewegungs- und Präsenzmelder
+162 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+w ESYLUX KNX Bewegungs- und Präsenzmelder 
+w KNX Innen-Präsenzmelder Serie ATMO PD-ATMO 360i/8 A,T
+ESP427206
+ESP427213
+w Schrack-Info
+ATMO T
+•	 KNX Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von bis zu 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3 m
+•	 Integrierter Akustiksensor für den optimalen Einsatz in unübersichtlichen und verwinkelten Räumen. 
+Schaltet der Melder die Beleuchtung nach Ablauf der Nachlaufzeit aus, kann danach sofort z. B. 
+durch einen Zuruf (Geräusch) innerhalb von max. 8 Sek. die Beleuchtung wieder aktiviert werden.
+•	 Zusätzliche Erfassung der Umgebungstemperatur
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-
+Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+ATMO A
+•	 Wie ATMO T, jedoch zusätzlich mit Erfassung der relativen Luftfeuchtigkeit
+ 
+w Erfassungsbereich
+3m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+Gehbereich / Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Arbeitsbereich ca. Ø4m
+w Maßskizze
+Ø 108 mm
+Ø 60 mm
+24 mm
+38 mm
+
+
+===== PAGE 163/284 =====
+KNX Bewegungs- und Präsenzmelder
+163 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+ 
+ 
+w Technische Tabelle
+ 
+PD-ATMO 360i/8 A KNX
+PD-ATMO 360i/8 T KNX
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als Master oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+35°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+w KNX Innen-Präsenzmelder Serie ATMO PD-ATMO 360i/8 A,T 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-ATMO 360i/8 A KNX, KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, IP20, weiß, 
+ATMO A
+ESP427206
+3400
+328,00
+PD-ATMO 360i/8 T KNX, KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, IP20, weiß, 
+ATMO T
+ESP427213
+3400
+284,00
+Zubehör
+Aufputzdose-C IP20 für PD-C360 und MD-C360, weiß
+ESM425370
+3400
+11,00
+Aufputzdose-C IP54 für viele der Decken-Bewegungsmelder der Serie MD-C und Decken-
+Präsenzmelder der Serie PD-C
+ESM425905
+3400
+13,00
+Deckeneinbauset für PD-C360 und MD-C360, weiß
+ESM425929
+3400
+10,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+
+
+===== PAGE 164/284 =====
+KNX Bewegungs- und Präsenzmelder
+164 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427220
+w Schrack-Info
+•	 KNX Design-Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von ca. 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m (maximale Montagehöhe 5m)
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Flache Optik mit Design-Abdeckungen aus Kunststoff: Rund, weiß - variabel austauschbar
+ 
+w Erfassungsbereich
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+ 
+w KNX Innen-Präsenzmelder Serie ATMO PD-ATMO 360i/8 O 
+w Maßskizze 
+Ø 108mm
+Ø 60mm
+24 mm
+51,7mm
+22,3 mm
+
+
+===== PAGE 165/284 =====
+KNX Bewegungs- und Präsenzmelder
+165 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-ATMO 360i/8 O KNX
+Betriebsspannung / Frequenz
+29-31V(KNX), 230V/50Hz (VOC Sensor) 
+Stromaufnahme
+10mA
+MASTER/SLAVE Kompatibilität
+JA (als Master oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Erfassungswinkel 
+360°
+Umgebungstemperatur
+5°C...+35°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-ATMO 360i/8 O KNX,KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, IP20, weiß
+ESP427220
+3400
+482,00
+Zubehör
+Abdeckung für Präsenz- und Rauchwarnmelder, quadratisch, weiß
+ESP007248
+3400
+8,00
+Abdeckung FLAT GLASS RO WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, rund
+ESP007255
+3400
+37,00
+Abdeckung FLAT GLASS SQ WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, 
+quadratisch
+ESP007262
+3400
+37,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, schwarz
+ESP428098
+3400
+9,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, weiß
+ESP428579
+3400
+9,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Deckeneinbau-Set für Präsenz- und Bewegungsmelder FLAT
+ESP426889
+3400
+11,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+ 
+w KNX Innen-Präsenzmelder Serie ATMO PD-ATMO 360i/8 O 
+
+
+===== PAGE 166/284 =====
+KNX Bewegungs- und Präsenzmelder
+166 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP451706
+ESP451768
+w Schrack-Info
+•	 KNX Design-Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von ca. 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m (maximale 
+Montagehöhe 5m)
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-
+Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Flache Optik mit Design-Abdeckungen aus Kunststoff: Rund, schwarz- variabel austauschbar
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 ROUND 
+w Erfassungsbereich 
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+w Maßskizze
+ Ø94mm
+30 mm
+Ø45mm
+24 mm
+
+
+===== PAGE 167/284 =====
+KNX Bewegungs- und Präsenzmelder
+167 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+ 
+ 
+w Technische Tabelle
+ 
+PD-FLAT 360i 8 ROUND KNX
+Erfassungswinkel 
+360°
+Betriebsspannung 
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als Master oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+3 - 1000lx
+Umgebungstemperatur
+5°C...+35°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 ROUND 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-FLAT 360i/8 ROUND WH KNX,KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, 
+IP20, weiß
+ESP451706
+3400
+126,00
+PD-FLAT 360i/8  ROUND BK KNX,KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, IP20 
+schwarz
+ESP451768
+3400
+126,00
+Zubehör
+Abdeckung für Präsenz- und Rauchwarnmelder, quadratisch, weiß
+ESP007248
+3400
+8,00
+Abdeckung FLAT GLASS RO WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, rund
+ESP007255
+3400
+37,00
+Abdeckung FLAT GLASS SQ WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, 
+quadratisch
+ESP007262
+3400
+37,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, schwarz
+ESP428098
+3400
+9,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, weiß
+ESP428579
+3400
+9,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Deckeneinbau-Set für Präsenz- und Bewegungsmelder FLAT
+ESP426889
+3400
+11,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+
+
+===== PAGE 168/284 =====
+KNX Bewegungs- und Präsenzmelder
+168 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP451713
+ESP451775
+w Schrack-Info
+•	 KNX Design-Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von ca. 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m (maximale 
+Montagehöhe 5m)
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-
+Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Flache Optik mit Design-Abdeckungen aus Kunststoff: Quadratisch - variabel austauschbar
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 SQUARE 
+w Erfassungsbereich 
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+w Maßskizze
+77mm
+77mm
+30 mm
+Ø45mm
+24 mm
+
+
+===== PAGE 169/284 =====
+KNX Bewegungs- und Präsenzmelder
+169 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+ 
+ 
+w Technische Tabelle
+ 
+PD-FLAT 360i 8 SQUARE KNX 
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (Geräte als Master oder Slave konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+3 - 1000lx
+Umgebungstemperatur
+5°C...+35°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 SQUARE 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-FLAT 360i/8 SQUARE WH KNX, KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, 
+IP20, weiß
+ESP451713
+3400
+126,00
+PD-FLAT 360i/8 SQUARE BK KNX,KNX-Präsenzmelder für Deckenmontage, 360°/Ø8m/
+IP20, schwarz
+ESP451775
+3400
+126,00
+Zubehör
+Abdeckung für Präsenz- und Rauchwarnmelder, rund, weiß
+ESP007231
+3400
+8,00
+Abdeckung FLAT GLASS RO WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, rund
+ESP007255
+3400
+37,00
+Abdeckung FLAT GLASS SQ WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, 
+quadratisch
+ESP007262
+3400
+37,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Deckeneinbau-Set für Präsenz- und Bewegungsmelder FLAT
+ESP426889
+3400
+11,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+
+
+===== PAGE 170/284 =====
+KNX Bewegungs- und Präsenzmelder
+170 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP428685
+w Schrack-Info
+•	 KNX Design-Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von ca. 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m (maximale Montagehöhe 5m)
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Flache Optik mit Design-Abdeckungen aus Kunststoff (Ø104mm): rund, weiß - variabel austauschbar
+ 
+w Erfassungsbereich
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 LARGE 
+w Maßskizze
+ Ø104 mm
+30 mm
+Ø60mm
+24 mm
+
+
+===== PAGE 171/284 =====
+KNX Bewegungs- und Präsenzmelder
+171 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+w Technische Tabelle
+ 
+PD-FLAT 360i/8 LARGE ROUND KNX
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (Geräte als Master oder Slave konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+3 - 1000lx
+Umgebungstemperatur
+5°C...+35°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-FLAT 360i/8 L ROUND WH KNX, Präsenzmelder für Deckenmontage, 360°, Ø8m, IP20, 
+weiß
+ESP428685
+3400
+131,00
+Zubehör
+Abeckung für Präsenz- und Bewegungsmelder, rund, schwarz
+ESP428098
+3400
+9,00
+Aufputzdose-C IP20 für PD-C360 und MD-C360, weiß
+ESM425370
+3400
+11,00
+Deckeneinbau-Set für Präsenz- und Bewegungsmelder FLAT
+ESP426889
+3400
+11,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+ 
+w KNX Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 LARGE 
+
+
+===== PAGE 172/284 =====
+KNX Bewegungs- und Präsenzmelder
+172 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP426155
+w Schrack-Info
+•	 KNX Mini-Präsenzmelder mit 360° Erfassungsbereich für die Deckeneinbaumontage
+•	 Reichweite von bis zu 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3 m
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+ 
+w Erfassungsbereich
+3m
+Ø 3 m
+360°
+Ø 5 m
+Ø 8 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø5m
+ 
+Arbeitsbereich ca. Ø3m
+ 
+w Maßskizze
+25mm
+45mm
+15mm
+33mm
+w KNX Innen-Präsenzmelder Serie COMPACT MINI PD-C 360i/8 
+
+
+===== PAGE 173/284 =====
+KNX Bewegungs- und Präsenzmelder
+173 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 360i/8 mini KNX
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+IP55
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+  
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C360i/8 mini KNX ws Deckeneinbau-Präsenzmelder IR 360°
+ESP426155
+3400
+146,00
+Zubehör
+Spot-Adapter 51/25 Adapter zum Einbau PD-C/MD-C360i/8-12 mini
+ESP426391
+3400
+15,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+ 
+w KNX Innen-Präsenzmelder Serie COMPACT MINI PD-C 360i/8 
+
+
+===== PAGE 174/284 =====
+KNX Bewegungs- und Präsenzmelder
+174 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP426162
+w Schrack-Info
+•	 KNX Mini-Präsenzmelder mit 360° Erfassungsbereich für die Deckeneinbaumontage.
+•	 Reichweite von bis zu 12m im Durchmesser bei einer empfohlenen Montagehöhe von 3 m
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+ 
+w Erfassungsbereich
+3m
+Ø 4 m
+360°
+Ø 6 m
+Ø 12 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø12m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Arbeitsbereich ca. Ø4m
+w KNX Innen-Präsenzmelder Serie COMPACT MINI PD-C 360i/12 
+w Maßskizze
+25mm
+45mm
+25mm
+58mm
+
+
+===== PAGE 175/284 =====
+KNX Bewegungs- und Präsenzmelder
+175 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 360i/12 mini KNX
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+IP55
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C360i/12 mini KNX ws Deckeneinbau-Präsenzmelder IR 360°
+ESP426162
+3400
+155,00
+Zubehör
+Spot-Adapter 51/25 Adapter zum Einbau PD-C/MD-C360i/8-12 mini
+ESP426391
+3400
+15,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+w KNX Innen-Präsenzmelder Serie COMPACT MINI PD-C 360i/12 
+
+
+===== PAGE 176/284 =====
+KNX Bewegungs- und Präsenzmelder
+176 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427404
+w Schrack-Info
+•	 KNX Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von bis zu 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m (maximale Montagehöhe 5m)
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+ 
+w Erfassungsbereich
+3m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Arbeitsbereich ca. Ø4m
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/8 UP 
+w Maßskizze 
+Ø 108mm
+Ø 60 mm
+24 mm
+38mm
+
+
+===== PAGE 177/284 =====
+KNX Bewegungs- und Präsenzmelder
+177 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 360i/8 KNX UP
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+w Legende
+A
+Standardbetrieb
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C360i/8 KNX weiß Decken-Präsenzmelder IR 360°, UP, Ø8m
+ESP427404
+3400
+145,00
+Zubehör
+Aufputzdose-C IP20 für PD-C360 und MD-C360, weiß
+ESM425370
+3400
+11,00
+Aufputzdose-C IP20 für PD-C360 und MD-C360, silber
+ESP425387
+3400
+20,00
+Aufputzdose-C IP54 für viele der Decken-Bewegungsmelder der Serie MD-C und Decken-
+Präsenzmelder der Serie PD-C
+ESM425905
+3400
+13,00
+Aufputzdose-C IP54 für PD-C360 und MD-C360, silber
+ESP425912
+3400
+20,00
+Abdeck-Set für PD-C360/8 und MD-C360/8, silber
+ESP425936
+3400
+18,00
+Deckeneinbauset für PD-C360 und MD-C360, weiß
+ESM425929
+3400
+10,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/8 UP 
+
+
+===== PAGE 178/284 =====
+KNX Bewegungs- und Präsenzmelder
+178 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427435
+w Schrack-Info
+PD-C 360i/24 KNX ECO UP
+•	 KNX Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von bis zu 24m im Durchmesser bei einer empfohlenen Montagehöhe von 3m für Komfort-Anwendungen
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Optimal mit der Funktion "Schalten" geeignet für die Installation in großen Höhen bis 10m z. B. Sport- und Lagerhallen
+PD-C 360i/24 KNX UP
+•	 Inklusive HLK-Kanal
+ 
+w Erfassungsbereich
+3m
+Ø 8 m
+360°
+Ø 11 m
+Ø 24 m
+ 
+ 
+Gehbereich / Quer zum Melder  Ø24m
+ 
+Frontal zum Melder Ø11m
+ 
+Präsenzbereich Ø8m
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/24 KNX UP 
+w Maßskizze 
+Ø 108 mm
+Ø 60 mm
+24 mm
+46 mm
+
+
+===== PAGE 179/284 =====
+KNX Bewegungs- und Präsenzmelder
+179 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 360i/24 KNX ECO UP
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5 °C...+50°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltpläne
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C360i/24 KNX ECO Deckenpräsenzmelder IR 360°, Ø24m
+ESP427435
+3400
+153,00
+PD-C360i/24 KNX weiß Decken-Präsenzmelder, IR 360° UP, Ø24m
+ESP427428
+3400
+170,00
+Zubehör
+Aufputzdose-C IP20 für PD-C360 und MD-C360, weiß
+ESM425370
+3400
+11,00
+Aufputzdose-C IP20 für PD-C360 und MD-C360, silber
+ESP425387
+3400
+20,00
+Aufputzdose-C IP54 für viele der Decken-Bewegungsmelder der Serie MD-C und Decken-
+Präsenzmelder der Serie PD-C
+ESM425905
+3400
+13,00
+Aufputzdose-C IP54 für PD-C360 und MD-C360, silber
+ESP425912
+3400
+20,00
+Abdeck-Set für PD-C360/24 und MD-C360/24, silber
+ESP425431
+3400
+18,00
+Deckeneinbauset für PD-C360 und MD-C360, weiß
+ESM425929
+3400
+10,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+ 
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/24 KNX UP 
+
+
+===== PAGE 180/284 =====
+KNX Bewegungs- und Präsenzmelder
+180 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427794
+w Schrack-Info
+•	 KNX Deckeneinbau-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von bis zu 32m im Durchmesser bei einer empfohlenen Montagehöhe von 3m für Komfort-Anwendungen
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+•	 Optimal mit der Funktion "Schalten" geeignet für die Installation in großen Höhen bis 10m z. B. Sport- und Lagerhallen
+ 
+w Erfassungsbereich
+3m
+Ø 8 m
+360°
+Ø 11 m
+Ø 32 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø32m
+ 
+Frontal zum Melder ca. Ø11m
+ 
+Arbeitsbereich ca. Ø8m
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/32 UP 
+w Maßskizze 
+Ø 108 mm
+Ø 60 mm
+24 mm
+46 mm
+
+
+===== PAGE 181/284 =====
+KNX Bewegungs- und Präsenzmelder
+181 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 360i/32 KNX UP
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C360i/32 KNX UP, Decken-Präsenzmelder, IR 360°, UP, Ø32m, weiß
+ESP427794
+3400
+190,00
+Zubehör
+Aufputzdose-C IP20 für PD-C360 und MD-C360, weiß
+ESM425370
+3400
+11,00
+Aufputzdose-C IP20 für PD-C360 und MD-C360, silber
+ESP425387
+3400
+20,00
+Aufputzdose-C IP54 für viele der Decken-Bewegungsmelder der Serie MD-C und Decken-
+Präsenzmelder der Serie PD-C
+ESM425905
+3400
+13,00
+Aufputzdose-C IP54 für PD-C360 und MD-C360, silber
+ESP425912
+3400
+20,00
+Abdeck-Set für PD-C360/24 und MD-C360/24, silber
+ESP425431
+3400
+18,00
+Deckeneinbauset für PD-C360 und MD-C360, weiß
+ESM425929
+3400
+10,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Mobil-PDi/MDi universale Service-Fernbedienung, silber
+ESM425509
+3400
+35,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 360i/32 UP 
+
+
+===== PAGE 182/284 =====
+KNX Bewegungs- und Präsenzmelder
+182 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Accessory
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP426452
+w Schrack-Info
+PD-C180i KNX ECO
+•	 KNX Präsenzmelder mit 180° Erfassungsbereich für die Wandmontage
+•	 Reichweite von bis zu 16m im Durchmesser bei einer empfohlenen Montagehöhe von 1,1 - 2,2m
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+PD-C 180i/16 Touch
+•	 Einfache Touch-Bedienung durch Berührung am Melder
+PD-C 180i KNX
+•	 Integrierter Akustiksensor für den optimalen Einsatz in unübersichtlichen und verwinkelten Räumen
+ 
+w Erfassungsbereich
+1,1m
+2,2m
+8 m
+6 m
+4 m
+180°
+16 m
+8 m
+12 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø16m
+ 
+Frontal zum Melder ca. Ø12m
+ 
+Arbeitsbereich ca. Ø8m
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 180i ECO 
+w Maßskizze 
+70mm
+63mm
+34mm
+61mm
+70mm
+
+
+===== PAGE 183/284 =====
+KNX Bewegungs- und Präsenzmelder
+183 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-C 180i KNX ECO
+Erfassungswinkel 
+180°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+IP20, IP44 je nach Abdeckung (optional)
+Einstellmöglichkeiten
+IR-Fernbedienung 
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-C180i KNX ECO, 1 Kanal, Präsenzmelder ohne Akustiksensor
+ESP426452
+3400
+132,00
+PD-C180i KNX, 2 Kanal, Präsenzmelder mit Akustiksensor
+ESP426445
+3400
+149,00
+PD-C 180i/16 Touch KNX, KNX-Präsenzmelder für Wandmontage, 180°, Ø16m, IP40, weiß
+ESP460104
+3400
+163,00
+Zubehör
+VISIO 50 Bewegungsmelder Abdeckung für MD180 mit Sonderrahmen 55x55mm
+ESM055270
+3400
+15,20
+Sonder-Rahmen 1-fach zur Integration von Produkten mit einem Zentralplattenmaß von 
+55x55mm
+EV105021
+3100
+2,49
+Abdeckung IP20 MD180i/R,MD180i/T,MD/PD180, weiß
+ESM055102
+3400
+13,00
+Abdeckung IP20 MD180i/R,MD180i/T,MD/PD180, signalweiß
+ESM055119
+3400
+13,00
+Abdeckung IP20 MD180i/R,MD180i/T,MD/PD180, cremeweiß
+ESM055126
+3400
+13,00
+Abdeckung IP20 MD180i/R,MD180i/T,MD/PD180, Edelstahloptik
+ESM055140
+3400
+16,00
+Mobil-PDi/User universale Endanwender-Fernbedienung, silber
+ESM425547
+3400
+35,00
+ESY-Pen
+ESP425356
+3400
+175,00
+ 
+w KNX Innen-Präsenzmelder Serie COMPACT PD-C 180i ECO 
+
+
+===== PAGE 184/284 =====
+KNX Bewegungs- und Präsenzmelder
+184 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESB430442
+w Schrack-Info
+•	 KNX Decken-Präsenzmelder mit 360° Erfassungsbereich
+•	 Reichweite von bis zu 8m im Durchmesser bei einer empfohlenen Montagehöhe von 3m für Komfort-Anwendungen
+•	 Verwendbar im Bussystem KNX (EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellung über die ETS (Engineering-Tool-Software)
+ 
+w Erfassungsbereich
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+w KNX Innen-Präsenzmelder Serie BASIC PD 360/8 
+w Maßskizze 
+Ø 101mm
+33mm
+
+
+===== PAGE 185/284 =====
+KNX Bewegungs- und Präsenzmelder
+185 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD 360/8 KNX BASIC
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+5 - 2000lx
+Umgebungstemperatur
+5°C...+50°C
+Schutzart
+ IP40
+Einstellmöglichkeiten
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD 360/8 KNX Basic, KNX-Präsenzmelder für Deckenmontage, 360°, Ø8m, IP40, weiß
+ESB430442
+3400
+89,00
+Zubehör
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Deckeneinbauset für PD-C360 und MD-C360, weiß
+ESM425929
+3400
+10,00
+ 
+w KNX Innen-Präsenzmelder Serie BASIC PD 360/8 
+
+
+===== PAGE 186/284 =====
+KNX Bewegungs- und Präsenzmelder
+186 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESM015472
+w Schrack-Info
+•	 KNX Bewegungsmelder mit 230° Erfassungsbereich und großer Reichweite
+•	 360° Unterkriechschutz für eine lückenlose Erfassung
+•	 Verwendbar im Bussystem KNX(EIB), TP (2-Draht-Bus) in Verbindung mit anderen KNX-Komponenten
+•	 Parameter- und Funktionseinstellungen über die ETS (Engineering-Tool-Software)
+ 
+w Erfassungsbereich
+2,5m
+20 m
+3 m8 m
+6 m
+40 m
+16 m
+230°
+ 
+ 
+360° Unterkriechschutz Ø40m
+ 
+Frontal zum Melder ca. Ø16m
+ 
+Gehbereich / Quer zum Melder ca. Ø6m
+w KNX Außen-Präsenzmelder Serie RC 230 
+w Maßskizze 
+135mm
+105mm
+78mm
+
+
+===== PAGE 187/284 =====
+KNX Bewegungs- und Präsenzmelder
+187 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+RC 230 KNX
+Erfassungswinkel 
+230°
+Betriebsspannung / Frequenz
+29 - 31V
+Stromaufnahme
+6mA
+MASTER/SLAVE Kompatibilität
+JA (als MASTER oder SLAVE konfigurierbar)
+Kanäle Licht 
+2
+Kanäle Präsenz / HLK 
+1
+Einstellbereich Helligkeit
+2 - 1000lx
+Umgebungstemperatur
+-25 °C...+55°C
+Schutzart
+IP54
+Einstellmöglichkeiten
+parametrierbar über ETS-Software
+w Schaltplan
+A
+ 
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+RC 230i KNX Bewegungsmelder Aufputz IP54, weiß
+ESM015472
+3400
+190,00
+Zubehör
+RC Ecksockel weiß für Bewegungsmelder der RCI Serie
+ESM016110
+3400
+22,00
+ 
+w KNX Außen-Präsenzmelder Serie RC 230 
+
+
+===== PAGE 188/284 =====
+DALI Präsenzmelder
+188 
+Schmuckseite
+DALI PRÄSENZMELDER
+
+
+===== PAGE 189/284 =====
+DALI Präsenzmelder
+189 
+w Auswahlhilfe für DALI Präsenzmelder nach Katalogseite 
+Montageart
+Erfassungs- 
+winkel
+Erfassungsbereich
+Fernbe- 
+dienbar
+Kanal 
+Licht/HLK
+Schutzart
+Typ
+Seite 
+Deckeneinbau
+360°
+Ø 8 m
+bis zu 50 m²
+✔
+1 / 2
+IP20
+PD-FLAT 360i/8 ROUND DALI
+196
+Deckeneinbau
+360°
+Ø 8 m
+bis zu 50 m²
+✔
+1 / 2
+IP20
+PD-FLAT 360i/8 SQUARE DALI
+198
+Deckeneinbau
+360°
+Ø 6 m
+bis zu 28 m²
+✔
+1 / 2
+IP55
+PD-FLAT 360i/6 mini DALI
+200
+Deckeneinbau
+360°
+Ø 8 m
+bis zu 50 m²
+✔
+1 / 2
+IP55
+PD-C 360i/8 mini DALI
+202
+Decke
+360°
+Ø 8 m
+bis zu 50 m²
+✔
+2 / 2 
+IP20/IP54
+PD-C 360i/8 DUO DALI
+204
+Decke
+360°
+Ø 24 m
+bis zu 453 m²
+✔
+2 / 2 
+IP20/IP54
+PD-C 360i/24 DUO DALI
+206
+Decke
+360°
+Ø 32 m
+bis zu 805 m²
+✔
+2 / 2 
+IP20/IP54
+PD-C 360i/32 DUO DALI
+208
+
+
+===== PAGE 190/284 =====
+DALI Präsenzmelder
+190 
+Merkmale
+PD-C 360i/8 DUO DALI
+Erfassungsbereich Präsenzbereich 
+Ø 4 m
+Erfassungsbereich Frontal
+Ø 6 m
+Erfassungswinkel
+360°
+Emphohlene Montagehöhe
+3 m
+Kanäle Licht
+2
+Kanäle Präsenz / HLK
+2
+Einstellbereich Helligkeit
+5 - 2000 lx
+Nachlaufzeit Präsenz
+ca. 1 Min. - 15 Min
+Fernbedienbar
+JA
+Betriebsspannung, Frequenz
+230 V / 50 Hz
+MASTER/SLAVE Kompatibilität
+JA
+Anzahl der parallel schaltbaren Melder
+0
+Leistungsaufnahme
+0,6 W
+Zulässige Umgebungstemperatur 
+-25 °C...+50 °C
+Schutzart in eingebautem Zustand  
+(optionale Aufputzdosen und Deckeneinbau-Sets sind separat bestellbar)
+IP20 als Unterputz-Version, IP20/IP54 mit Aufputzdose, IP20 als Deckeneinbau-Version 
+Artikelnummer
+ESP427442 / 147,00 €
+Optionales Zubehör
+Aufputzdose-C IP20 weiß
+ESM425370 / 11,00 €
+Aufputzdose-C IP54 weiß
+ESM425905 / 13,00 €
+Aufputzdose-C IP20 silber
+ESP425387 / 20,00 €
+Aufputzdose-C IP54 silber
+ESM425905 / 13,00 €
+Abdeck-Set-C360/8
+ESP425936 / 18,00 €
+Deckeneinbau-Set-C
+ESM425929 / 10,00 €
+Mobil-PDi/User
+ESM425547 / 35,00 €
+Mobil-PDi/Dali
+ESP425899 / 37,00 €
+ESY-Pen
+ESP425356 / 175,00 €
+w Vergleichstabelle Serie COMPACT
+
+
+===== PAGE 191/284 =====
+DALI Präsenzmelder
+191 
+w Vergleichstabelle Serie COMPACT
+PD-C 360i/24 DUO DALI
+PD-C 360i/32 DUO DALI
+Ø 8 m
+Ø 8 m
+Ø 11 m
+Ø 11 m
+360°
+360°
+3 m
+3 m
+2
+2
+2
+2
+5 - 2000 lx
+5 - 2000 lx
+ca. 1 Min. - 15 Min
+ca. 1 Min. - 15 Min
+JA
+JA
+230 V / 50 Hz
+230 V / 50 Hz
+JA
+JA
+0
+0
+0,6 W
+0,6 W
+-25 °C...+50 °C
+-25 °C...+50 °C
+IP20 als Unterputz-Version, IP20/IP54 mit Aufputzdose, IP20 als Deckeneinbau-Version  
+IP20 als Unterputz-Version, IP20/IP54 mit Aufputzdose, IP20 als Deckeneinbau-Version  
+ESP427459 / 172,00 €
+ESP427787 / 192,00 €
+ESM425370 / 11,00 €
+ESM425370 / 11,00 €
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+ESP425387 / 20,00 €
+ESP425387 / 20,00 €
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+ESP425936 / 18,00 €
+ESP425936 / 18,00 €
+ESM425929 / 10,00 €
+ESM425929 / 10,00 €
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+
+
+===== PAGE 192/284 =====
+DALI Präsenzmelder
+192 
+Merkmale
+PD-FLAT 360i/8 ROUND DALI
+PD-FLAT 360i/8 SQUARE DALI
+Erfassungsbereich Präsenz 
+Ø 4 m
+Ø 4 m
+Erfassungsbereich Frontal
+Ø 6 m
+Ø 6 m
+Erfassungswinkel
+360°
+360°
+Empfohlene Montagehöhe
+2,5 m
+2,5 m
+Kanäle Licht
+1
+1
+Kanäle Präsenz / HLK
+2
+2
+Einstellbereich Helligkeit
+3 - 1000 lx
+3 - 1000 lx
+Nachlaufzeit Präsenz
+deaktiviert/ca. 1 Min. - 240 Min.
+deaktiviert/ca. 1 Min. - 240 Min.
+Kontaktart
+Bus-System
+Bus-System
+MASTER/SLAVE Kompatibilität
+JA
+JA
+Anzahl der parallel schaltbaren Melder
+0
+0
+Fernbedienbar
+JA
+JA
+Betriebsspannung 
+9,5 - 22,5 V
+9,5 - 22,5 V
+Leistungsaufnahme (W)
+0,3 W
+0,3 W
+Zulässige Umgebungstemperatur 
+0 °C...+50 °C
+0 °C...+50 °C
+Schutzart in eingebautem Zustand 
+(optionale Aufputzdosen und Deckeneinbau-Sets sind 
+separat bestellbar)
+IP20
+IP20
+Artikelnummer
+ESP427541 / 108,00 €
+ESP427558 / 108,00 €
+Optionales Zubehör
+Deckeneinbau-Set für FLAT-Serie
+ESP426889 / 11,00 €
+-
+Mobil-PDi/User
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+Mobil-PDi/Dali
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESY-Pen
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+w Vergleichstabelle Serie FLAT
+
+
+===== PAGE 193/284 =====
+DALI Präsenzmelder
+193 
+w Vergleichstabelle Serie FLAT mini + COMPACT mini 
+PD-FLAT 360i/6 mini DALI
+PD-FLAT 360i/8 mini DALI
+Ø 2,5 m
+Ø 3 m
+Ø 6 m
+Ø 5 m
+360°
+360°
+3 m
+3 m
+1
+1
+2
+2
+10 - 2000 lx
+10 - 2000 lx
+deaktiviert/ca. 1 Min. - 240 Min.
+deaktiviert/ca. 1 Min. - 240 Min.
+Bus-System
+Bus-System
+JA
+JA
+0
+0
+JA
+JA
+9,5 - 22,5 V
+9,5 - 22,5 V
+0,3 W
+0,3 W
+0 °C...+50 °C
+-25°C…+50°C
+IP 55
+IP 55
+ESP427503 / 119,00 €
+ESP427510 / 123,00 €
+-
+-
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+
+
+===== PAGE 194/284 =====
+DALI Präsenzmelder
+194 
+w Vergleichstabelle Serie COMPACT
+Merkmale
+PD-C 360i/8 DUO DALI
+PD-C 360i/24 DUO DALI
+PD-C 360i/32 DUO DALI
+Erfassungsbereich Präsenzbereich 
+Ø 4 m
+Ø 8 m
+Ø 8 m
+Erfassungsbereich Frontal
+Ø 6 m
+Ø 11 m
+Ø 11 m
+Erfassungswinkel
+360°
+360°
+360°
+Emphohlene Montagehöhe
+3 m
+3 m
+3 m
+Kanäle Licht
+2
+2
+2
+Kanäle Präsenz / HLK
+2
+2
+2
+Einstellbereich Helligkeit
+5 - 2000 lx
+5 - 2000 lx
+5 - 2000 lx
+Nachlaufzeit Präsenz
+ca. 1 Min. - 15 Min
+ca. 1 Min. - 15 Min
+ca. 1 Min. - 15 Min
+Fernbedienbar
+JA
+JA
+JA
+Betriebsspannung, Frequenz
+230 V / 50 Hz
+230 V / 50 Hz
+230 V / 50 Hz
+MASTER/SLAVE Kompatibilität
+JA
+JA
+JA
+Anzahl der parallel schaltbaren Melder
+0
+0
+0
+Leistungsaufnahme
+0,6 W
+0,6 W
+0,6 W
+Zulässige Umgebungstemperatur 
+-25 °C...+50 °C
+-25 °C...+50 °C
+-25 °C...+50 °C
+Schutzart in eingebautem Zustand 
+(optionale Aufputzdosen und Deckeneinbau-Sets sind 
+separat bestellbar)
+IP20 als Unterputz-Version, 
+IP20/IP54 mit Aufputzdose, 
+IP20 als Deckeneinbau-Version 
+IP20 als Unterputz-Version, 
+IP20/IP54 mit Aufputzdose, 
+IP20 als Deckeneinbau-Version 
+IP20 als Unterputz-Version, 
+IP20/IP54 mit Aufputzdose, 
+IP20 als Deckeneinbau-Version
+Artikelnummer
+ESP427442 / 147,00 €
+ESP427459 / 172,00 €
+ESP427787 / 192,00 €
+Optionales Zubehör
+Aufputzdose-C IP20 weiß
+ESM425370 / 11,00 €
+ESM425370 / 11,00 €
+ESM425370 / 11,00 €
+Aufputzdose-C IP54 weiß
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+Aufputzdose-C IP20 silber
+ESP425387 / 20,00 €
+ESP425387 / 20,00 €
+ESP425387 / 20,00 €
+Aufputzdose-C IP54 silber
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+ESM425905 / 13,00 €
+Abdeck-Set-C360/8
+ESP425936 / 18,00 €
+ESP425936 / 18,00 €
+ESP425936 / 18,00 €
+Deckeneinbau-Set-C
+ESM425929 / 10,00 €
+ESM425929 / 10,00 €
+ESM425929 / 10,00 €
+Mobil-PDi/User
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+Mobil-PDi/Dali
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESY-Pen
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+
+
+===== PAGE 195/284 =====
+DALI Präsenzmelder
+195 
+w Vergleichstabelle Serie FLAT mini + COMPACT mini 
+PD-FLAT 360i/6 mini DALI
+PD-C 360i/8 mini DALI
+Ø 2,5 m
+Ø 3 m
+Ø 6 m
+Ø 5 m
+360°
+360°
+3 m
+3 m
+1
+1
+2
+2
+10 - 2000 lx
+10 - 2000 lx
+deaktiviert/ca. 1 Min. - 240 Min.
+ca. 1 Min. - 15 Min
+JA
+JA
+9,5 - 22,5 V
+9,5 - 22,5 V
+JA
+JA (über DALI)
+0
+0
+0,3 W
+0,3 W 
+0 °C...+50 °C
+-25 °C...+50 °C
+IP 55
+IP55
+ESP427503 / 119,00 €
+ESP427510 / 123,00 €
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ESM425547 / 35,00 €
+ESM425547 / 35,00 €
+ESP425899 / 37,00 €
+ESP425899 / 37,00 €
+ESP425356 / 175,00 €
+ESP425356 / 175,00 €
+
+
+===== PAGE 196/284 =====
+DALI Präsenzmelder
+196 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+w ESYLUX DALI Präsenzmelder 
+w DALI Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 ROUND
+ESP427541
+ESP427916
+w Schrack-Info
+•	 DALI-Design-Präsenzmelder mit ausgezeichneter Erfassung, mind. 8m im Durchmesser
+•	 Flache Optik mit Design-Abdeckungen in Kunststoff: Rund - Variabel austauschbar (Alternativ: 
+quadratisch, Glas, schwarz)
+ 
+w Erfassungsbereich
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+w Maßskizze
+ Ø94 mm
+30mm
+Ø60mm
+24 mm
+
+
+===== PAGE 197/284 =====
+DALI Präsenzmelder
+197 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+ 
+w Technische Tabelle
+ 
+PD-FLAT 360i 8 ROUND DALI
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+9.5 - 22.5V
+Leistungsaufnahme
+0,3W
+MASTER/SLAVE Kompatibilität
+JA (über DALI)
+Kanäle Licht
+1
+Kanäle Präsenz / HLK
+2
+Einstellbereich Helligkeit
+3 - 1000lx
+Nachlaufzeit Licht
+ca. 1min - 15min
+Umgebungstemperatur
+-25°C...+50°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung
+w Schaltpläne
+DA+
+S2
+S1
+DA-
+DA+
+DA-
+L
+N
+L N
+DALI Power
+Supply
+CU PS DALI
+EC10430008
+DA+ DA-
+DALI EVG
+DA+
+DA-
+L
+N
+L N
+DALI Power
+Supply
+CU PS DALI
+EC10430008
+DA+ DA-
+DALI EVG
+DA+
+DA-
+Master
+DA+
+DA-
+Slave
+S2
+S1
+ 
+ 
+A
+ 
+ 
+B
+ 
+w Legende
+A
+Standardbetrieb
+B
+Master\Slave mode
+w DALI Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 ROUND 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-FLAT 360i/8 ROUND WH DALI, DALI-Präsenzmelder für Deckenmontage, 360°, Ø8m, 
+IP20, weiß
+ESP427541
+3400
+108,00
+PD-FLAT 360i/8 ROUND BK DALI, DALI-Präsenzmelder für Deckenmontage, 360°, Ø8m, 
+IP20, schwarz
+ESP427916
+3400
+108,00
+Zubehör
+Abdeckung für Präsenz- und Rauchwarnmelder, quadratisch, weiß
+ESP007248
+3400
+8,00
+Abdeckung FLAT GLASS RO WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, rund
+ESP007255
+3400
+37,00
+Abdeckung FLAT GLASS SQ WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, 
+quadratisch
+ESP007262
+3400
+37,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, schwarz
+ESP428098
+3400
+9,00
+Abeckung für Präsenz- und Bewegungsmelder, rund, weiß
+ESP428579
+3400
+9,00
+SW DALI Full Automation, DALI-Schaltmodul für Unterputzmontage, IP20
+ESP427473
+3400
+43,00
+SW DALI Semi Automation, DALI-Schaltmodul für Unterputzmontage, IP20
+ESP427480
+3400
+43,00
+Deckeneinbau-Set für Präsenz- und Bewegungsmelder FLAT
+ESP426889
+3400
+11,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Mobil-PDi/Dali universale Service-Fernbedienung, silber
+ESP425899
+3400
+37,00
+CU PS DALI, Abmessungen: 48x45x25mm LxBxT  Ø68mm
+ESC430008
+3400
+55,00
+ESY-Pen
+ESP425356
+3400
+175,00
+
+
+===== PAGE 198/284 =====
+DALI Präsenzmelder
+198 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427558
+w Schrack-Info
+•	 DALI-Design-Präsenzmelder mit ausgezeichneter Erfassung, mind. 8m im Durchmesser
+•	 Flache Optik mit Design-Abdeckungen in Kunststoff: Quadratisch- Variabel austauschbar (Alternativ: rund, Glas, weiß, schwarz)
+ 
+w Erfassungsbereich
+2,5m
+Ø 4 m
+360°
+Ø 6 m
+Ø 8 m
+ 
+ 
+Quer zum Melder ca. Ø8m
+ 
+Frontal zum Melder ca. Ø6m
+ 
+Präsenzbereich ca. Ø4m
+ 
+ 
+ 
+w DALI Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 SQUARE 
+w Maßskizze 
+77 mm
+77 mm
+30 mm
+Ø60mm
+24 mm
+
+
+===== PAGE 199/284 =====
+DALI Präsenzmelder
+199 
+	
+   Best. Nr. blau: versandbereit am Bestelltag!    
+ Abholverfügbarkeit in jedem Schrack Store!
+w Technische Tabelle
+ 
+PD-FLAT 360i 8 SQUARE DALI
+Erfassungswinkel 
+360°
+Betriebsspannung / Frequenz
+9.5 - 22.5V
+Leistungsaufnahme
+0,3W
+MASTER/SLAVE Kompatibilität
+JA (über DALI)
+Kanäle Licht
+1
+Kanäle Präsenz / HLK
+2
+Einstellbereich Helligkeit
+3 - 1000lx
+Nachlaufzeit Licht
+ca. 1min. - 15min.
+Umgebungstemperatur
+-25°C...+50°C
+Schutzart
+IP20
+Einstellmöglichkeiten
+IR-Fernbedienung
+w Schaltpläne
+DA+
+S2
+S1
+DA-
+DA+
+DA-
+L
+N
+L N
+DALI Power
+Supply
+CU PS DALI
+EC10430008
+DA+ DA-
+DALI EVG
+DA+
+DA-
+L
+N
+L N
+DALI Power
+Supply
+CU PS DALI
+EC10430008
+DA+ DA-
+DALI EVG
+DA+
+DA-
+Master
+DA+
+DA-
+Slave
+S2
+S1
+ 
+A
+ 
+ 
+B
+ 
+w Legende
+A
+Standardbetrieb
+B
+Master\Slave mode
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+PREG
+UVP
+Präsenzmelder
+PD-FLAT 360i/8 SQUARE WH DALI, DALI-Präsenzmelder für Deckenmontage, 360°, Ø8m, 
+IP20, weiß
+ESP427558
+3400
+108,00
+PD-FLAT 360i/8 SQUARE BK DALI, DALI-Präsenzmelder für Deckenmontage, 360°/Ø8m/
+IP20, schwarz
+ESP427909
+3400
+108,00
+Zubehör
+Abdeckung für Präsenz- und Rauchwarnmelder, rund, weiß
+ESP007231
+3400
+8,00
+Abdeckung FLAT GLASS RO WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, rund
+ESP007255
+3400
+37,00
+Abdeckung FLAT GLASS SQ WH, Glas-Abdeckung für Präsenz- und Rauchwarnmelder, 
+quadratisch
+ESP007262
+3400
+37,00
+SW DALI Full Automation, DALI-Schaltmodul für Unterputzmontage, IP20
+ESP427473
+3400
+43,00
+SW DALI Semi Automation, DALI-Schaltmodul für Unterputzmontage, IP20
+ESP427480
+3400
+43,00
+Schutzkorb 165/70
+ESM425615
+3400
+32,00
+Schutzkorb 180/90
+ESM425608
+3400
+34,00
+Mobil-PDi/Dali universale Service-Fernbedienung, silber
+ESP425899
+3400
+37,00
+ESY-Pen
+ESP425356
+3400
+175,00
+w DALI Innen-Präsenzmelder Serie FLAT PD-FLAT 360i/8 SQUARE 
+
+
+===== PAGE 200/284 =====
+DALI Präsenzmelder
+200 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ESP427503
+w Schrack-Info
+•	 Präsenzmelder mit 360° Erfassungsbereich für die Deckenmontage
+•	 Reichweite von bis zu 6m im Durchmesser bei einer empfohlenen Montagehöhe von 3m
+•	 flache Linse mit nur 3mm Aufbauhöhe
+•	 Automatische Lichtsteuerung von DALI EVGs auf ein konstantes Helligkeitsniveau in Abhängigkeit von Anwesenheit und Tageslicht (mit DALI-
+Ausgang)
+•	 Kombinierbar mit DALI-Tastern
+•	 HLK und potentialfreier Kontakt möglich in Verbindung mit DALI Switch von ESYLUX
+ 
+w Erfassungsbereich
+3m
+360°
+Ø 2,5 m
+Ø 6 m
+ 
+ 
+Gehbereich / Quer zum Melder ca. Ø6m
+ 
+Arbeitsbereich ca. Ø2,5m
+ 
+w DALI Innen-Präsenzmelder Serie FLAT MINI PD-FLAT 360i/6 
+w Maßskizze 
+20 mm
+36 mm
+3 mm
+25 mm

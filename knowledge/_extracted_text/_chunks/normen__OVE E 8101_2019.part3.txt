@@ -1,0 +1,2371 @@
+
+
+===== PAGE 121/758 =====
+OVE E 8101:2019-01-01 
+Teil 3 – Seite 25 
+– 
+IT-System – Beispiel G4 
+ 
+ANMERKUNG 
+Zusätzliche Erdung des PE-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Legende 
+a 
+Das System darf mit Erde über eine ausreichend hohe Impedanz verbunden sein. 
+Bild 3.A.31G4 – IT-System mit einem künstlichen Mittelpunkt, in dem die Körper  
+in Gruppen oder einzeln geerdet sind 
+3.A.4 
+Weitere Beispiele für TN-Systeme (DC) 
+– 
+TN-S-DC-System 
+ 
+ANMERKUNG 
+Zusätzliche Erdung des PE-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Bild 3.A.31H2 – TN-S-DC-System mit geerdetem Mittelleiter und  
+getrennt geführtem Schutzleiter 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 122/758 =====
+OVE E 8101:2019-01-01 
+Teil 3 – Seite 26 
+– 
+TN-C-DC-System 
+ 
+ANMERKUNG 
+Zusätzliche Erdung des PEM-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Bild 3.A.31J2 – TN-C-DC-System mit geerdetem Mittelleiter mit Schutzleiterfunktion 
+ 
+– 
+TN-C-S-DC-System 
+ 
+ANMERKUNG 
+Zusätzliche Erdung des PE-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Bild 3.A.31K2 – TN-C-S-DC-System mit geerdetem Mittelleiter mit Schutzleiterfunktion  
+und teilweise getrennt geführtem Schutzleiter in der Anlage 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 123/758 =====
+OVE E 8101:2019-01-01 
+Teil 3 – Seite 27 
+3.A.5 
+Weiteres Beispiel für TT-Systeme für (DC) 
+ANMERKUNG 
+Zusätzliche Erdung des PE-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Bild 3.A.31L2 – TT-DC-System mit einem geerdeten Mittelpunktsleiter und  
+separat geerdetem getrennten Schutzleiter in der Anlage 
+3.A.6 
+Weiteres Beispiel für IT-Systeme (DC) 
+ANMERKUNG 
+Zusätzliche Erdung des PE-Leiters in der Anlage darf vorgesehen werden. 
+ 
+Legende 
+a 
+Das System darf mit Erde über eine ausreichend hohe Impedanz verbunden sein. 
+Bild 3.A.31M2 – IT-System für Gleichstrom mit zwei Außenleitern und einem Mittelpunktsleiter, in dem 
+alle Körper mit einem Schutzleiter verbunden sind, der gemeinsam geerdet ist 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 124/758 =====
+OVE E 8101:2019-01-01 
+Teil 3 – Seite 28 
+Anhang 3.B 
+(informativ) 
+ 
+Begriffe – Leitfaden und Erklärungen für ausgewählte Begriffe  
+von IEC 60050 826 (Internationales Elektronisches  
+Wörterbuch (IEV) 826 – Elektrische Anlagen) 
+Siehe Teil 2. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 125/758 =====
+OVE E 8101:2019-01-01 
+Teil 4 – Seite 1 
+Teil 4 Schutzmaßnahmen und Schutzvorkehrungen 
+Inhalt Teil 4 
+Teil 4-41  
+Schutz gegen elektrischen Schlag 
+Teil 4-42  
+Schutz gegen thermische Einflüsse 
+Teil 4-43  
+Schutz bei Überstrom 
+Teil 4-44  
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+Teil 4-45  
+Schutz gegen Unterspannung 
+Teil 4-46  
+Trennen und Schalten 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 126/758 =====
+OVE E 8101:2019-01-01 
+Teil 4 – Seite 2 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 127/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 1 
+Teil 4-41 Schutz gegen elektrischen Schlag 
+Inhalt Teil 4-41 
+410 
+Einleitung 
+410.1 
+Anwendungsbereich 
+410.3 
+Allgemeine Anforderungen 
+411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+411.1 
+Allgemeines 
+411.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) 
+411.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+411.5 
+TT-Systeme 
+411.6 
+IT-Systeme 
+411.7 
+FELV 
+412 
+Schutzmaßnahme: Doppelte oder verstärkte Isolierung (Schutzisolierung) 
+412.1 
+Allgemeines 
+412.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) und Fehlerschutz (Schutz bei 
+indirektem Berühren) 
+413 
+Schutzmaßnahme: Schutztrennung 
+413.1 
+Allgemeines 
+413.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) 
+413.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+414.1 
+Allgemeines 
+414.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) und den Fehlerschutz (Schutz 
+bei indirektem Berühren) 
+414.3 
+Stromquellen für SELV oder PELV 
+414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+415 
+Zusätzlicher Schutz (Zusatzschutz) 
+415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+415.2 
+Zusätzlicher Schutz: Zusätzlicher Schutzpotentialausgleich 
+Anhang 41.A (normativ)  Schutzvorkehrungen für den Basisschutz  (Schutz gegen direktes Berühren) 
+Anhang 41.B (normativ)  Schutzvorkehrung durch Hindernisse und Anordnung  außerhalb des Handbereichs 
+Anhang 41.C (normativ)  Schutzvorkehrungen, die nur unter der Voraussetzung  angewendet werden dürfen, 
+wenn die elektrische Anlage durch Elektrofachkräfte (BA 5) oder durch elektrotechnisch unterwiesene 
+Personen (BA 4) betrieben wird 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 128/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 2 
+410 Einleitung 
+Dieser Teil behandelt den Schutz gegen elektrischen Schlag, wie er in elektrischen Anlagen anzuwenden ist. 
+Er basiert auf OVE EN 61140 „Schutz gegen elektrischen Schlag – Gemeinsame Bestimmungen für Anlagen 
+und Betriebsmittel“, die eine Sicherheitsgrundnorm für den Schutz von Personen und Nutztieren ist. 
+OVE EN 61140 legt grundsätzliche Prinzipien und Anforderungen fest, die sowohl für elektrische Anlagen als 
+auch für elektrische Betriebsmittel gelten oder für deren Koordinierung notwendig sind. 
+Die Grundregel des Schutzes gegen elektrischen Schlag gemäß OVE EN 61140 ist, dass gefährliche aktive 
+Teile nicht berührbar sein dürfen und berührbare leitfähige Teile weder im Normalzustand noch unter 
+Einzelfehlerbedingungen für eine unzulässige Dauer zu gefährlichen aktiven Teilen werden dürfen. 
+Gemäß OVE EN 61140:2016 Abschnitt 4.2 wird der Schutz im Normalzustand durch Basisschutz-
+vorkehrungen und der Schutz unter Einzelfehlerbedingungen durch Fehlerschutzvorkehrungen erreicht. Im 
+Bedarfsfall wird dieser Schutz durch zusätzliche Schutzvorkehrungen ergänzt. 
+OVE EN 61140 hat gemäß IEC Guide 104 den Status einer Gruppensicherheitsnorm (GSP) für den Schutz 
+gegen elektrischen Schlag. 
+410.1 
+Anwendungsbereich 
+Teil 4-41 enthält wesentliche Anforderungen für den Schutz gegen elektrischen Schlag, bestehend aus 
+Basisschutz (Schutz gegen direktes Berühren), Fehlerschutz (Schutz bei indirektem Berühren) und 
+zusätzlichen Schutz (Zusatzschutz) von Personen und Nutztieren. 
+Dieser Teil behandelt auch die Anwendung und die Koordinierung dieser Anforderungen unter 
+Berücksichtigung der äußeren Einflüsse. 
+410.3 
+Allgemeine Anforderungen 
+410.3.1 In diesem Teil gelten – wenn nicht abweichend angegeben – die folgenden Festlegungen für 
+Spannungen: 
+– 
+Werte für Wechselspannungen (AC) sind Effektivwerte; 
+– 
+Werte für Gleichspannungen (DC) sind ohne nennenswerte Welligkeit. 
+Bei der Festlegung der Werte für Gleichspannung ist ein effektiver Welligkeitsanteil von 10 % der 
+Gleichspannungskomponente berücksichtigt. 
+410.3.2 Eine Schutzmaßnahme besteht in der Regel aus mehreren Schutzvorkehrungen und zwar: 
+– 
+aus einer geeigneten Kombination von zumindest zwei unabhängigen Schutzvorkehrungen, nämlich 
+einer 
+Basisschutzvorkehrung 
+und 
+einer 
+Fehlerschutzvorkehrung, 
+oder 
+einer 
+verstärkten 
+Schutzvorkehrung (für den Basisschutz und den Fehlerschutz); 
+– 
+wenn gefordert aus einer zusätzlichen Schutzvorkehrung gegen schädlichen elektrischen Schlag 
+(Zusatzschutz) in Abhängigkeit bestimmter Bedingungen und äußerer Einflüsse sowie in bestimmten 
+besonderen Räumen und Orten. 
+410.3.3 In jedem Teil einer elektrischen Anlage muss eine und dürfen mehrere Schutzmaßnahmen 
+angewendet werden, wobei die äußeren Einflüsse zu berücksichtigen sind. 
+Der Schutz gegen schädlichen elektrischen Schlag beruht auf einem dreistufigen System gemäß 
+Bild 41.001.AT. 
+Eine Übersicht der allgemein zulässigen Schutzmaßnahmen und der zugehörigen Schutzvorkehrungen ist in 
+Tabelle 41.001.AT dargestellt, wobei die Überstrom-Schutzerdung gemäß Tabelle 41.001.AT nur mehr 
+angewendet werden darf, wenn die Schutzmaßnahme Nullung aus Beeinflussungsgründen und die 
+Schutzmaßnahme Fehlerstrom-Schutzschaltung aus Verfügbarkeitsgründen im Bezug auf ungewollte 
+Auslösung nicht angewendet werden kann. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 129/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 3 
+Die in der elektrischen Anlage angewendeten Schutzmaßnahmen müssen bei Auswahl und Anschluss der 
+elektrischen Betriebsmittel berücksichtigt werden. 
+Für besondere Anlagen siehe 410.3.4 bis 410.3.9. 
+ANMERKUNG 
+Die am häufigsten angewendete Schutzmaßnahme in elektrischen Anlagen ist die Nullung. 
+410.3.001.AT 
+Der national vereinbarte Grenzwert der Fehlerspannung (Grenzfehlerspannung) UFL für die 
+Schutzmaßnahmen Nullung und Fehlerstrom-Schutzschaltung beträgt bei: 
+– 
+Wechselspannungen (15 Hz bis 1 000 Hz), UFL = 65 V; 
+– 
+Gleichspannungen bis 10 % Welligkeit mit Nennspannungen bis 400 V, UFL = 120 V. 
+Bei Auftreten eines Fehlers kann bis zur automatischen Abschaltung durch eine zugeordnete Schutz-
+einrichtung die Fehlerspannung über dem vereinbarten Grenzwert liegen. 
+ANMERKUNG 1.AT 
+Die internationalen Bestimmungen, die eine Berührungsspannungsgrenze von 50 V für 
+Wechselspannung nennen, werden damit bei vertretbarem Grenzrisiko erfüllt. Aus dieser Berührungsspannungsgrenze 
+von 50 V für Wechselspannung kann eine elektropathologisch gleichwertige Berührungsspannungsgrenze von 90 V für 
+Gleichspannung abgeleitet werden. 
+Bei Anwendung von SELV, PELV, der Schutztrennung, der doppelten oder verstärkten Isolierung (Schutzisolierung) und 
+des Isolations-Überwachungssystems ist die Festlegung eines Grenzwertes für die Fehlerspannung nicht erforderlich. 
+Bei Anwendung von FELV gilt, abhängig von der im Primärkreis angewandten Maßnahme des Fehlerschutzes, die 
+Festlegung hinsichtlich eines Grenzwertes für die Fehlerspannung auch für den Kleinspannungsstromkreis. 
+ANMERKUNG 2.AT 
+Für elektrische Anlagen die vor dem Inkrafttreten dieser Bestimmung mit der „Schutzerdung 
+(Überstrom-Schutzerdung)“ als Schutzmaßnahme errichtet wurden, gelten ebenfalls die oben genannten Grenzwerte. 
+ 
+Bild 41.001.AT – Drei-Stufiges Schutzkonzept für den Schutz  
+gegen schädlichen elektrischen Schlag 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 130/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 4 
+Tabelle 41.001.AT – Schutzmaßnahmen gegen elektrischen Schlag und  
+zugehörige Schutzvorkehrungen (1 von 3) 
+Schutzmaßnahmen 
+ 
+Schutzvorkehrungen 
+Nullung 
+Fehlerstrom-
+Schutzschaltung 
+Überstrom-
+Schutzerdung 
+Isolations-
+Überwachungs-
+system 
+Basisschutzvorkehrung 
+Basisisolierung 
+Basisisolierung 
+Basisisolierung 
+Basisisolierung 
+Fehlerschutzvorkehrung 
+automatische 
+Abschaltung der 
+Stromversorgung beim 
+ersten Fehler 
+ 
+i.A. durch Überstrom-
+Schutzeinrichtungen 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+schädlichen 
+elektrischen Schlag 
+durch zeitliche 
+Begrenzung der 
+Überschreitung des 
+vereinbarten 
+Grenzwertes der 
+zeitlich unbegrenzten 
+Fehlerspannung  
+automatische 
+Abschaltung der 
+Stromversorgung beim 
+ersten Fehler 
+ 
+durch Fehlerstrom-
+Schutzeinrichtungen. 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+schädlichen 
+elektrischen Schlag 
+durch zeitliche 
+Begrenzung der 
+Überschreitung des 
+vereinbarten 
+Grenzwertes der 
+zeitlich unbegrenzten 
+Fehlerspannung 
+automatische 
+Abschaltung der 
+Stromversorgung beim 
+ersten Fehler 
+ 
+i.A. durch Überstrom-
+Schutzeinrichtungen 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+schädlichen 
+elektrischen Schlag 
+durch zeitliche 
+Begrenzung der 
+Überschreitung des 
+vereinbarten 
+Grenzwertes der 
+zeitlich unbegrenzten 
+Fehlerspannung  
+– Warnung/Meldung 
+beim ersten Fehler 
+und automatische 
+Abschaltung der 
+Stromversorgung 
+beim zweiten Fehler 
+ 
+i.A. durch 
+Überstrom-
+Schutzeinrichtungen 
+oder 
+– in bestimmten 
+Räumen und 
+Anlagen besonderer 
+Art automatische 
+Abschaltung der 
+Stromversorgung 
+beim ersten Fehler 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+schädlichen 
+elektrischen Schlag 
+durch zeitliche 
+Begrenzung der 
+Überschreitung des 
+vereinbarten 
+Grenzwertes der 
+zeitlich unbegrenzten 
+Fehlerspannung 
+Schutzpotential-
+ausgleich 
+Schutzpotential-
+ausgleich 
+Schutzpotential-
+ausgleich 
+Schutzpotential-
+ausgleich 
+Zusätzliche 
+Schutzvorkehrungen 
+gegen schädlichen 
+elektrischen Schlag 
+(Zusatzschutz) 
+zusätzlicher Schutz 
+durch Fehlerstrom-
+Schutzeinrichtungen 
+mit einem 
+Bemessungsfehler-
+strom I∆n ≤ 0,03 A  
+zusätzlicher Schutz 
+durch Fehlerstrom-
+Schutzeinrichtungen 
+mit einem 
+Bemessungsfehler-
+strom I∆n ≤ 0,03 A 
+zusätzlicher Schutz 
+durch Fehlerstrom-
+Schutzeinrichtungen 
+mit einem 
+Bemessungsfehler-
+strom I∆n ≤ 0,03 A 
+ 
+zusätzlicher Schutz-
+potentialausgleich 
+zusätzlicher Schutz-
+potentialausgleich 
+zusätzlicher Schutz-
+potentialausgleich 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 131/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 5 
+Tabelle 41.001.AT – Schutzmaßnahmen gegen elektrischen Schlag und  
+zugehörige Schutzvorkehrungen (2 von 3) 
+Schutzmaßnahmen 
+ 
+ 
+Schutzvorkehrungen 
+Doppelte oder 
+verstärkte Isolierung 
+(Schutzisolierung) 
+Schutztrennung 
+SELV  
+(Kleinspannung ohne 
+Erdverbindung mit 
+sicherer Trennung) 
+PELV  
+(Kleinspannung mit 
+oder ohne 
+Erdverbindung mit 
+sicherer Trennung) 
+Basisschutzvorkehrung 
+Basisisolierung 
+Basisisolierung 
+– Basisisolierung der 
+aktiven Teile, oder 
+– Begrenzung der 
+Spannung zB für 
+trockene Umgebung 
+und wenn 
+großflächige 
+Berührung von 
+aktiven Teilen mit 
+dem menschlichen 
+Körper nicht zu 
+erwarten ist auf 
+AC 25 V Effektivwert  
+– Basisisolierung der 
+aktiven Teile, oder 
+– Begrenzung der 
+Spannung zB für 
+trockene Umgebung 
+und wenn 
+großflächige 
+Berührung von 
+aktiven Teilen mit 
+dem menschlichen 
+Körper nicht zu 
+erwarten ist auf 
+AC 25 V Effektivwert  
+Fehlerschutzvorkehrung 
+Isolation zwischen 
+aktiven Teilen mit 
+Basisisolierung und 
+berührbaren Teilen 
+ausgeführt als 
+– getrennte 
+zusätzliche 
+Isolierung, oder 
+– verstärkte Isolierung 
+(als untrennbare 
+Einheit mit der 
+Basisisolierung) 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+elektrischen Schlag 
+durch zusätzliche oder 
+verstärkte Isolierung 
+Isolation zwischen 
+aktiven Teilen 
+unterschiedlicher 
+Stromkreise 
+ausgeführt als 
+– getrennte 
+zusätzliche 
+Isolierung, oder 
+– verstärkte Isolierung 
+(als untrennbare 
+Einheit mit der 
+Basisisolierung) 
+sowie 
+Begrenzung der 
+Summe der Längen 
+der Kabel- und 
+Leitungsanlage gemäß 
+41.C.3.8 zur 
+Begrenzung des 
+kapazitiven 
+Erdschlussstromes 
+ 
+– – 
+ 
+d. h. Schutz gegen 
+elektrischen Schlag 
+durch zusätzliche oder 
+verstärkte Isolierung in 
+der Stromversorgung 
+Spannung liegt im 
+Normalbetrieb bei 
+Werten unterhalb des 
+Grenzwertes für 
+Kleinspannung 
+ 
+– Sichere Trennung 
+von den aktiven 
+Teilen anderer 
+Stromkreise, die 
+nicht SELV- oder 
+PELV-Stromkreise 
+sind, durch 
+1) doppelte oder 
+verstärkte 
+Isolierung für die 
+höchste 
+vorkommende 
+Spannung, oder 
+2) durch Basis-
+isolierung für die 
+höchste 
+vorkommende 
+Spannung und 
+Schutzschirmung 
+– Einfache Trennung 
+von anderen  
+SELV- oder PELV-
+Stromkreisen und  
+von Erde 
+Spannung liegt im 
+Normalbetrieb bei 
+Werten unterhalb des 
+Grenzwertes für 
+Kleinspannung 
+ 
+Sichere Trennung von 
+den aktiven Teilen 
+anderer Stromkreise, 
+die nicht SELV- oder 
+PELV-Stromkreise 
+sind, durch 
+– doppelter oder 
+verstärkter 
+Isolierung für die 
+höchste 
+vorkommende 
+Spannung, oder 
+– durch 
+Basisisolierung für 
+die höchste 
+vorkommende 
+Spannung und 
+Schutzschirmung 
+ 
+Schutzpotential-
+ausgleich für mehrere 
+elektrische 
+Betriebsmittel 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 132/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 6 
+Tabelle 41.001.AT – Schutzmaßnahmen gegen elektrischen Schlag und  
+zugehörige Schutzvorkehrungen (3 von 3) 
+Schutzmaßnahmen 
+ 
+ 
+Schutzvorkehrungen 
+Doppelte oder 
+verstärkte Isolierung 
+(Schutzisolierung) 
+Schutztrennung 
+SELV  
+(Kleinspannung ohne 
+Erdverbindung mit 
+sicherer Trennung) 
+PELV  
+(Kleinspannung mit 
+oder ohne 
+Erdverbindung mit 
+sicherer Trennung) 
+Zusätzliche 
+Schutzvorkehrungen 
+gegen schädlichen 
+elektrischen Schlag 
+(Zusatzschutz) 
+– 
+– 
+– 
+– 
+In OVE EN 61140 findet man zum Begriff SELV-System folgende Anmerkung: SELV ist die Abkürzung für Sicherheitskleinspannung. 
+In OVE EN 61140 findet man zum Begriff PELV-System folgende Anmerkung: PELV ist die Abkürzung für Funktionskleinspannung 
+mit elektrisch sicherer Trennung. 
+ 
+Zu FELV siehe 411.7. 
+410.3.4 Bestehen für Anlagen besonderer Art oder für Teile von Anlagen zusätzliche oder abweichende 
+Bestimmungen (siehe Teil 7), so haben diese Vorrang vor den allgemeinen Anforderungen dieses Teils. 
+410.3.5 Die im Anhang 41.B beschriebenen Schutzvorkehrungen 
+– 
+Schutz durch Hindernisse und 
+– 
+Schutz durch Anordnung außerhalb des Handbereichs 
+dürfen nur in Anlagen oder Teilen von elektrischen Anlagen angewendet werden, zu denen ausschließlich 
+folgende Personen Zugang haben: 
+– 
+Elektrofachkräfte (BA5) oder elektrotechnisch unterwiesene Personen (BA4), oder 
+– 
+Personen, die von Elektrofachkräften (BA5) oder elektrotechnisch unterwiesenen Personen (BA4) 
+beaufsichtigt werden. 
+ANMERKUNG AT 
+Hinweise und Anforderungen an die Qualifikation der Personen (zB BA5) siehe Teil 5-51 bzw. 
+ÖVE/ÖNORM EN 50110-1. 
+410.3.6 Die im Anhang 41.C festgelegten Schutzvorkehrungen 
+– 
+Schutz durch nicht leitende Umgebung (Standortisolierung); 
+– 
+Schutz durch erdfreien örtlichen Schutzpotentialausgleich; 
+– 
+Schutz durch Schutztrennung für die Versorgung mit mehr als einem Verbrauchsmittel 
+dürfen nur unter der Voraussetzung angewendet werden, dass die elektrische Anlage durch Elektrofachkräfte 
+(BA5) oder elektrotechnisch unterwiesene Personen (BA4) betrieben wird. 
+Jede Änderung, auch bauliche Änderungen, an solchen Anlagen dürfen nur nach Rücksprache mit einer 
+Elektrofachkraft (BA5) erfolgen. 
+410.3.7 Wenn bestimmte Bedingungen einer Schutzmaßnahme nicht erfüllt werden können, müssen 
+ergänzende Schutzvorkehrungen so angewendet werden, dass diese Vorkehrungen zusammen denselben 
+Grad an Sicherheit bewirken. 
+ANMERKUNG 
+Ein Beispiel für die Anwendung dieser Regel ist in 411.7 gegeben. 
+410.3.8 Unterschiedliche Schutzmaßnahmen, die in derselben Anlage oder einem Teil der Anlage oder in 
+Betriebsmitteln angewendet werden, dürfen keinen gegenseitigen derartigen Einfluss haben, sodass – wenn 
+eine Schutzmaßnahme fehlerbehaftet ist – die Wirkung der anderen Schutzmaßnahmen dadurch 
+beeinträchtigt sein könnte. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 133/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 7 
+410.3.9 Vorkehrungen für den Fehlerschutz (Schutz bei indirektem Berühren) dürfen bei den folgenden 
+Betriebsmitteln entfallen: 
+– 
+metallene Stützen von Freileitungsisolatoren, die am Gebäude befestigt sind und sich nicht im 
+Handbereich befinden; 
+– 
+Stahl- und Stahlbetonmaste in Verteilungsnetzen; 
+– 
+Berührbare Oberflächen von Körpern, die auf Grund ihrer kleinen Abmessungen (ungefähr 
+50 mm x 50 mm) oder ihrer Anordnung nicht mit der Hand umfasst werden oder in bedeutenden Kontakt 
+mit einem Teil des menschlichen Körpers kommen können, vorausgesetzt, die Verbindung mit einem 
+Schutzleiter könnte nur mit Schwierigkeit hergestellt werden oder sie wäre unzuverlässig. 
+ 
+ANMERKUNG 
+Diese Ausnahme gilt zum Beispiel für Nieten, Typschilder und Kabelbefestigungen. 
+– 
+Betriebsmittel der Stromversorgung zur Messung elektrischer Arbeit und Leistung, mit Nennspannungen 
+bis 250 V gegen Erde, zB Elektrizitätszähler, Tarifschaltgeräte, Hausanschlusskästen. Für diese 
+Betriebsmittel wird Schutzisolierung empfohlen. Sie sind so zu befestigen, dass zwischen ihren inaktiven 
+Teilen und den an einen PE-Leiter angeschlossenen Teilen anderer Betriebsmittel keine galvanische 
+Verbindung besteht. 
+– 
+Metallrohre und Metallschläuche mit isolierenden Auskleidungen, Metallrohre, metallene Kabelkanäle 
+und Kabeltassen in Verbindung mit Schlauchleitungen, Mantelleitungen oder Kabeln, Metalldosen mit 
+isolierenden Auskleidungen (Unterputzdosen, Verbindungs- und Abzweigdosen), Metallumhüllungen 
+oder Metallmäntel von Leitungen, Bewehrungen von Kabeln und Leitungen. 
+– 
+Metallrohre oder andere Metallgehäuse, die Betriebsmittel gemäß Abschnitt 412 schützen; 
+– 
+Dachständer und mit diesen leitend verbundene Metallteile in Verteilungsnetzen; 
+– 
+Informations- und Kommunikationstechnische Anlagen mit Gleichspannungen bis 120 V gegen Erde, 
+deren Errichtung in den auf sie zutreffenden nationalen oder europäischen Normen geregelt ist; 
+– 
+Kabelverteilsysteme für Ton- und Fernsehrundfunk-Signale, sofern sie ÖVE/ÖNORM EN 60728-11 
+entsprechen. 
+411 Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+411.1 
+Allgemeines 
+Die Schutzvorkehrung automatische Abschaltung der Stromversorgung wird bei Schutzmaßnahmen 
+eingesetzt, bei denen: 
+– 
+der Basisschutz (Schutz gegen direktes Berühren) vorgesehen ist durch eine Basisisolierung der aktiven 
+Teile oder durch Abdeckung oder Umhüllungen gemäß Anhang 41.A und 
+– 
+der Fehlerschutz (Schutz bei indirektem Berühren) vorgesehen ist durch Schutzpotentialausgleich und 
+automatische Abschaltung im Fehlerfall, gemäß 411.3 bis 411.6. 
+ANMERKUNG 1  
+Wo diese Schutzvorkehrungen angewendet werden, dürfen auch elektrische Betriebsmittel der 
+Schutzklasse II verwendet werden. 
+Wo ein zusätzlicher Schutz (Zusatzschutz) durch Fehlerstrom-Schutzeinrichtung (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A festgelegt ist, ist dieser gemäß 415.1 vorzusehen. 
+ANMERKUNG 2  
+Differenzstrom-Überwachungsgeräte (RCM) sind keine Schutzeinrichtungen, sie dürfen jedoch 
+verwendet werden, um Differenzströme in elektrischen Anlagen zu überwachen. Differenzstrom-Überwachungsgeräte 
+(RCM) lösen eine akustische oder eine optische und akustische Meldung aus, wenn der vorgewählte Wert des 
+Differenzstroms überschritten wird. 
+411.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) 
+Alle elektrischen Betriebsmittel müssen mit einer der im Anhang 41.A oder, wenn zutreffend, der im 
+Anhang 41.B beschriebenen Schutzvorkehrungen für den Basisschutz (Schutz gegen direktes Berühren) 
+übereinstimmen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 134/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 8 
+411.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+411.3.1.1 
+Schutzerdung 
+Körper müssen mit einem Schutzleiter verbunden werden, unter den vorgegebenen Bedingungen für jedes 
+System nach Art der Erdverbindungen, wie in den Unterabschnitten 411.4 bis 411.6 angegeben. 
+Gleichzeitig berührbare Körper müssen mit demselben Erdungssystem einzeln in Gruppen oder gemeinsam 
+verbunden werden. 
+Schutzerdungsleiter müssen den Anforderungen für Schutzleiter gemäß Teil 5-54 entsprechen. 
+Für jeden Stromkreis muss ein Schutzleiter vorhanden sein, der durch Anschluss an die diesem Stromkreis 
+zugeordnete Erdungsklemme oder Erdungsschiene geerdet ist. 
+411.3.1.2 
+Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Für jeden Hausanschluss oder jede gleichwertige Versorgungseinrichtung muss ein Schutzpotentialausgleich 
+ausgeführt werden. 
+Der Schutzpotentialausgleich ist herzustellen, indem an die Haupterdungsschiene folgende Leiter, falls 
+zutreffend, angeschlossen werden: 
+– 
+Erdungsleiter zum Anlagenerder; 
+– 
+Schutzleiter der Hauptleitung (PE- oder PEN-Leiter); 
+– 
+Schutzpotentialausgleichsleiter von Antennenanlagen; 
+– 
+Funktions- und Überspannungserdungsleiter der Informationstechnik (siehe ÖVE-F 1 Teil 2 und Teil 7); 
+– 
+Schutzpotentialausgleichsleiter zum Blitzschutzsystem (LPS); 
+– 
+Schutzpotentialausgleichsleiter zu leitfähigen Wasserverbrauchsleitungen; 
+– 
+Schutzpotentialausgleichsleiter zu leitfähigen Gasinnenleitungen; 
+– 
+Schutzpotentialausgleichsleiter zu anderen im Gebäude geführten metallenen Rohrsystemen, zB 
+zentrale Heizungs- und Klimaanlagen, Abgasfänge; 
+– 
+Schutzpotentialausgleichsleiter zu weiteren fremden leitfähigen Teilen sofern im üblichlichen 
+Gebrauchszustand berührbar; 
+– 
+Schutzpotentialausgleichsleiter zu leitfähigen Bewehrungen von Konstruktionen aus Beton, wo diese 
+berührbar und zuverlässig untereinander verbunden sind. 
+ANMERKUNG 1.AT 
+Ein Beispielbild für die Ausführung des Schutzpotentialausgleichs siehe Teil 5-54. 
+Wo derartige leitfähige Teile ihren Ausgangspunkt außerhalb des Gebäudes haben, müssen sie so nahe wie 
+möglich an ihrer Eintrittsstelle innerhalb des Gebäudes miteinander verbunden werden. 
+Schutzpotentialausgleichsleiter müssen den Anforderungen gemäß Teil 5-54 entsprechen. 
+Die Verbindung zu einem Blitzschutzsystem (LPS) hat möglichst nahe an dessen Erdungsanlage zu erfolgen. 
+Wenn sichergestellt ist, dass das LPS am Anlagenerder (zB Fundamenterder) angeschlossen ist, darf eine 
+gesonderte Verbindung entfallen. 
+Bei größeren Anlagen dürfen mehrere Haupterdungsschienen durch einen Schutzpotentialausgleichsleiter 
+gemäß Teil 5-54 verbunden werden. 
+ANMERKUNG 2.AT 
+Die Haupterdungsschiene kann auch die Funktion der Potentialausgleichsschiene erfüllen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 135/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 9 
+Es dürfen mehrere leitfähige Teile, die in den Schutzpotentialausgleich einbezogen werden müssen, über 
+einen Schutzpotentialausgleichsleiter miteinander und mit der Haupterdungsschiene/Potentialausgleichs-
+schiene verbunden werden. 
+411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+411.3.2.1 
+Eine Schutzeinrichtung muss im Falle eines Fehlers vernachlässigbarer Impedanz zwischen 
+dem Außenleiter und einem Körper oder einem Schutzleiter des Stromkreises oder einem Schutzleiter des 
+elektrischen Betriebsmittels die Stromversorgung zu dem Außenleiter eines Stromkreises oder dem 
+elektrischen Betriebsmittel in der gemäß 411.3.2.2, 411.3.2.3 oder 411.3.2.4 geforderten Ausschaltzeit 
+automatisch unterbrechen. Ausgenommen hiervon sind die Fälle gemäß 411.3.2.5 und 411.3.2.6. 
+ANMERKUNG 1  
+Größere Werte der Ausschaltzeit als die in diesem Abschnitt geforderten dürfen in Netzen der 
+öffentlichen Stromverteilung und den zugehörigen Stromerzeugungs- und Übertragungsanlagen zugelassen sein. 
+ANMERKUNG 2  
+Kleinere Werte der Ausschaltzeit dürfen für Räume und Anlagen besonderer Art in 
+Übereinstimmung mit Teil 7 gefordert sein. 
+ANMERKUNG 3  
+Bei IT-Systemen ist die automatische Abschaltung bei Auftreten des ersten Fehlers (siehe 
+411.6.1) üblicherweise nicht gefordert. Anforderungen zur Abschaltung nach Auftreten des ersten Fehlers siehe 411.6.4. 
+TT-Systeme mit Nennwechsel- und Nenngleichspannungen größer 230 V sind nicht zulässig. 
+411.3.2.2 
+Die in Tabelle 41.1 angegebene maximale Ausschaltzeit muss für Endstromkreise nicht größer 
+als 32 A angewendet werden. 
+Tabelle 41.1 – Maximale Ausschaltzeiten 
+System 
+50 V < U0  120 V 
+120 V < U0  230 V 
+230 V < U0  400 V 
+U0 > 400 V 
+AC 
+DC 
+AC 
+DC 
+AC 
+DC 
+AC 
+DC 
+TN 
+0,8 s 
+siehe  
+Anmerkung 1 
+0,4 s 
+5 s 
+0,2 s 
+0,4 s 
+0,1 s 
+0,1 s 
+TT 
+0,3 s 
+siehe  
+Anmerkung 1 
+0,2 s 
+0,4 s 
+In Österreich nicht zulässig. 
+Wenn in TT-Systemen die automatische Abschaltung durch eine Überstrom-Schutzeinrichtung erreicht wird und alle 
+fremden leitfähigen Teile in der Anlage an den Schutzpotentialausgleich angeschlossen sind, darf die für TN-Systeme 
+anwendbare Ausschaltzeit verwendet werden. 
+U0 
+Nennwechselspannung oder Nenngleichspannung Außenleiter gegen Erde. 
+ANMERKUNG 1 
+Eine automatische Abschaltung kann aus anderen Gründen als dem Schutz gegen elektrischen 
+Schlag erforderlich sein. 
+ANMERKUNG 2 
+Wenn für die automatische Abschaltung eine Fehlerstrom-Schutzeinrichtung (RCD) vorgesehen 
+wird, siehe 411.4.4.002.AT letzter Absatz, 411.5.3 letzter Absatz und in 411.6.4 b) vorletzter Absatz. 
+ 
+411.3.2.3 
+In TN-Systemen ist für Verteilungsstromkreise und für nicht unter 411.3.2.2 fallende 
+Stromkreise eine maximale Ausschaltzeit von 5 s zulässig. 
+411.3.2.4 
+In TT-Systemen ist für Verteilungsstromkreise eine maximale Ausschaltzeit von 0,4 s und für 
+nicht unter 411.3.2.2 fallende Stromkreise eine maximale Ausschaltzeit von 0,2 s zulässig. 
+411.3.2.5 
+Für Systeme mit einer Nennspannung U0 größer AC 50 V oder DC 90 V ist automatische 
+Abschaltung in der gemäß 411.3.2.2, 411.3.2.3 oder 411.3.2.4 geforderten Zeit – je nachdem was zutreffend 
+ist – nicht verlangt, wenn im Falle eines Fehlers gegen einen Schutzleiter oder gegen Erde die 
+Ausgangsspannung der Stromquelle in einer Zeit wie in Tabelle 41.1 bzw. 411.3.2.4 festgelegt oder innerhalb 
+von 5 s – je nachdem was zutreffend ist – auf AC 50 V oder DC 90 V oder weniger herabgesetzt wird. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 136/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 10 
+Generell ist zu berücksichtigen, ob eine automatische Abschaltung im Fehlerfall aus anderen Gründen, als 
+dem Schutz gegen elektrischen Schlag, notwendig ist. 
+Ergänzend ist eine Ausschaltung zumindest des fehlerbehafteten Stromkreises innerhalb einer Zeit von 5 s 
+nach Unterschreiten des Wertes AC 50 V oder DC 90 V erforderlich. 
+Die für die Ausschaltung eingesetze Einrichtung muss zum Trennen geeignet sein; davon ausgenommen 
+sind elektrische Anlagen, die durch elektrotechnisch unterwiesene Personen (BA4) oder Elektrofachkräfte 
+(BA5) betrieben oder überwacht werden und die nicht unter den Begriff Hausinstallationen fallen. 
+411.3.2.6 
+Wenn automatische Abschaltung gemäß 411.3.2.1 in der gemäß 411.3.2.2, 411.3.2.3 oder 
+411.3.2.4 geforderten Zeit oder gemäß 411.4 – je nachdem was zutreffend ist – nicht erreicht werden kann, 
+muss ein zusätzlicher Schutzpotentialausgleich gemäß 415.2 vorgesehen werden. Ergänzend ist eine 
+Ausschaltung zumindest des fehlerbehafteten Stromkreises innerhalb einer Zeit von 5 s erforderlich. 
+Die für die Ausschaltung eingesetze Einrichtung muss zum Trennen geeignet sein; davon ausgenommen 
+sind elektrische Anlagen, die durch elektrotechnisch unterwiesene Personen (BA4) oder Elektrofachkräfte 
+(BA5) betrieben oder überwacht werden und die nicht unter den Begriff Hausinstallationen fallen. 
+411.3.2.001.AT Bei Anwendung des Isolations-Überwachungssystems mit einer Isolationsüberwachungs-
+einrichtung (IMD) und automatischer Abschaltung der Stromversorgung beim ersten Fehler ist eine 
+Aussschaltung innerhalb von 5 s erforderlich. 
+ANMERKUNG AT 
+Dies kann in Räumen und Anlagen besonderer Art (Teil 7) zum Einsatz kommen, wenn mehrere 
+handgeführte elektrische Verbrauchsmittel über einen einzelnen Transformator versorgt werden sollen. 
+411.3.3 
+Zusätzlicher Schutz (Zusatzschutz) 
+In Wechselspannungssystemen muss ein zusätzlicher Schutz gemäß 415.1 vorgesehen werden. 
+411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+411.4.1 Eine Voraussetzung für die automatische Abschaltung im TN-System ist eine definierte, gut 
+leitfähige Verbindung (die Nullungsverbindung, siehe 411.4.6.001.1.2.AT) zwischen dem Schutzerdungsleiter 
+der Verbraucheranlage einerseits und dem PEN-Leiter des speisenden Netzes andererseits. Diese 
+Verbindung wird für alle Verbraucheranlagen im betreffenden Objekt gleichermaßen wirksam. 
+Ob diese Verbindung hergestellt werden darf, liegt in der Verantwortlichkeit des Verteilernetzbetreibers. 
+Wenn die Bedingungen gemäß 411.4.002.AT erfüllt sind, darf der Verteilernetzbetreiber diese Verbindung 
+zulassen. Dabei ist zB auch die elektrische Beeinflussung im Bereich von Erdungsanlagen von Hoch-
+spannungsanlagen, von elektrischen Bahnen oder von Anlagen des kathodischen Korrosionsschutzes zu 
+beachten. 
+ANMERKUNG AT 
+Die Nullungsverbindung kann auch in Form einer einzigen Mehrfachklemme ausgeführt sein. 
+411.4.001.AT 
+Elektromagnetische Verträglichkeit 
+Bei Verwendung eines PEN-Leiters in Verbraucheranlagen ist hinsichtlich der elektromagnetischen 
+Verträglichkeit zu beachten, dass wegen der mehrfachen Erdung dieses Leiters die Betriebsströme seiner 
+Neutralleiter-Funktion zum Teil auch über Erde fließen. Dadurch ist die Stromsumme einer Leitung mit PEN-
+Leiter nicht zwangsläufig gleich Null und verursacht ein elektromagnetisches Feld. 
+Maßnahmen zur Verringerung siehe zB Abschnitt 443, Abschnitt 444. 
+Die Bestimmungen gelten nicht für TN-S-Systeme. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 137/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 11 
+411.4.002.AT 
+Begrenzung der Fehlerspannung am geerdeten Systemleiter im TN-System 
+411.4.002.1.AT In Niederspannungsnetzen ist ein Systemleiter – bei Vorhandensein eines Sternpunktes ist 
+dies immer der PEN-Leiter – über den Betriebserder RB zu erden. 
+411.4.002.2.AT Dimensionierung des Betriebserders 
+411.4.002.2.1.AT  
+Allgemein 
+Der Erdungswiderstand der Gesamtheit aller Betriebserder des Niederspannungsnetzes muss ausreichend 
+niedrig sein. 
+Dazu zählen alle über den geerdeten Systemleiter zusammengeschlossenen Erder. Ein Wert von 2 Ω gilt im 
+Allgemeinen als ausreichend. 
+In Niederspannungsnetzen, in denen der geerdete Systemleiter aus Gründen des Netzbetriebes als sicher 
+geerdet gilt, muss folgende Bedingung erfüllt sein: 
+ 
+𝑅B
+𝑅E ≤ 
+𝑈FL
+𝑈0 − 𝑈FL  
+(F 41.1) 
+Dabei ist 
+RB der Gesamterdungswiderstand aller Betriebserder; 
+RE der kleinster abschätzbarer Erdausbreitungswiderstand der nicht mit einem Schutzerdungsleiter (oder 
+Schutzpotentialausgleichsleiter) verbundenen, fremden leitfähigen Teile, über die ein Erdschluss 
+entstehen kann; 
+U0 die Nennspannung Außenleiter gegen Erde; 
+UFL die Grenzfehlerspannung. 
+Diese Bedingung stellt sicher, dass der geerdete Systemleiter keine unzulässig hohe Fehlerspannung 
+annehmen kann. In Gebieten mit geschlossener Bebauung gilt diese Anforderung immer als erfüllt. Sie ist 
+auch dann erfüllt, wenn es sich ausschließlich um ein Kabelnetz handelt, weil in diesem Fall nur hochohmige 
+Erdfehler zu erwarten sind. 
+Zur Abschätzung des niedrigsten zu erwartenden RE wird ein Leitungsriss in einer Freileitung angenommen, 
+bei dem 10 m Leiterseil satt am Boden zu liegen kommt. Der Erdausbreitungswiderstand dieses 
+Leiterstückes wird gleich dem eines ebenso langen Oberflächenerders angenommen, womit die Abschätzung 
+auf der sicheren Seite liegt. Für U0 = 230 V können die höchstzulässigen Ausbreitungswiderstände der 
+Gesamtheit aller Betriebserder dem Bild 41.2.001.AT und Bild 41.2.002.AT entnommen werden. Für davon 
+abweichende Spannungswerte ist die Formel F 41.1 in Verbindung mit der Formel F 41.2 zur Ermittlung des 
+höchstzulässigen Erdungswiderstandes des Betriebserders heranzuziehen. 
+ 
+RE = 
+𝜌E
+π ∙  L ∙ln (
+2 ∙ L
+d ) 
+(F 41.2) 
+Dabei ist 
+RE der kleinster abschätzbarer Erdausbreitungswiderstand der nicht mit einem Schutzerdungsleiter (oder 
+Schutzpotentialausgleichsleiter) verbundenen, fremden leitfähigen Teile, über die ein Erdschluss 
+entstehen kann; 
+ρE der niedrigster zu erwartender, spezifischer Erdwiderstand; 
+L 
+die Länge des Leiterseiles ..... 10 m (Annahme); 
+d 
+der Durchmesser des Leiterseiles ..... 0,015 m (Annahme). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 138/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 12 
+Für die Abschätzung wird der niedrigste zu erwartende spezifische Widerstand in jenen Gebieten des 
+Niederspannungsnetzes gewählt, in denen Erdschlüsse zufolge Freileitungsrissen angenommen werden 
+können (kleinster zu erwartender Wert von RE). 
+Dabei bleiben Stellen mit im Vergleich zum ganzen Netzgebiet geringer örtlicher Ausdehnung, wie zB 
+Wasserläufe, Tümpel oder schmale Sumpfzonen, unberücksichtigt, da sie im Vergleich zur gesamten 
+Netzlänge ein vernachlässigbares Restrisiko darstellen. 
+ 
+Bild 41.2.001.AT – Bereich bis 5 000 Ω · m 
+ 
+Bild 41.2.002.AT – Detailbereich bis 500 Ω · m 
+Bild 41.2.AT – Maximal zulässiger Wert für den Gesamterdungswiderstand  
+aller Betriebserder RB in Abhängigkeit vom niedrigsten zu erwartenden  
+spezifischen Erdwiderstand ρE für U0 = 230 V 
+411.4.002.2.2.AT  
+In Niederspannungsnetzen hat der geerdete Systemleiter (das ist im Allgemeinen der 
+PEN-Leiter) auch die Funktion eines Schutzerdungsleiters und die Einhaltung der Bedingung gemäß 
+411.4.002.2.1.AT stellt sicher, dass dieser durch Erdschlüsse im Niederspannungsnetz keine unzulässig 
+hohe Fehlerspannung annehmen kann. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 139/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 13 
+Sind im Niederspannungsnetz gute Erder vorhanden, so ist der Betriebserder nach Möglichkeit mit diesen zu 
+verbinden. Dadurch, und zufolge des in jeder Verbraucheranlage an den PEN-Leiter angeschlossenen 
+Hauptpotentialausgleiches, ist die Erfüllung der Bedingung gemäß 411.4.002.2.1.AT immer sichergestellt. 
+411.4.2 Der Neutral- oder der Mittelpunkt des versorgenden Netzes muss geerdet werden. Wenn ein 
+Neutral- oder Mittelpunkt nicht verfügbar oder nicht zugänglich ist, muss ein Außenleiter geerdet werden. 
+Alle Körper der Betriebsmittel in der elektrischen Anlage müssen durch einen Schutzleiter mit der 
+Haupterdungsschiene der Anlage verbunden sein, die mit dem geerdeten Punkt des versorgenden Netzes 
+verbunden ist. 
+ANMERKUNG AT 
+Leitfähige Teile von Betriebsmitteln der Schutzklasse II werden grundsätzlich nicht mit dem 
+Schutzleiter verbunden. 
+Wenn andere wirksame Erdverbindungen bestehen, wird empfohlen, dass die Schutzleiter ebenfalls mit 
+diesen Punkten, wo immer möglich, verbunden werden. Dies gilt insbesondere in ausgedehnten  
+TN-S-Systemen. Eine Erdung an zusätzlichen, möglichst gleichmäßig verteilten Punkten kann notwendig 
+sein, um sicherzustellen, dass die Potentiale der Schutzleiter im Fehlerfall so wenig wie möglich vom 
+Erdpotential abweichen. In großen Gebäuden, wie Hochhäusern, hat ein Schutzpotentialausgleich zwischen 
+Schutzleitern und fremden leitfähigen Teilen eine vergleichbare Wirkung. 
+Schutzleiter oder PEN-Leiter sind im ersten dafür geeigneten Sicherungs- oder Verteilerkasten der 
+Verbraucheranlage zu erden. Diese Verbindung muss als Schutzerdungsleiter gemäß Teil 5-54 dimensioniert 
+werden, wobei im Falle des PEN-Leiters über Erde zurückfließende Neutralleiterströme berücksichtigt werden 
+sollten. 
+411.4.3 Für den PEN-Leiter gelten die Anforderungen gemäß 543.4. In den PEN-Leiter darf keine Schalt- 
+oder Trenneinrichtung eingesetzt werden. 
+411.4.4 
+Ausschaltbedingung 
+Fehlerbehaftete Stromkreise müssen bei Auftreten eines Kurz- oder Körperschlusses mit vernachlässigbarer 
+Impedanz innerhalb angemessener Zeiten ausgeschaltet werden. Dies erfolgt grundsätzlich mittels 
+Überstrom-Schutzeinrichtungen. 
+Hinsichtlich der zulässigen Ausschaltzeit bzw. entsprechender Ausschaltbedingungen werden die Anlagen 
+wie folgt unterschieden: 
+– 
+Verteilungsnetze unabhängig von ihrer Eigentumssituation bis zur ersten Überstrom-Schutzeinrichtung in 
+der ersten Verteilung bei bzw. nach der Nullungsverbindung des zu speisenden Objekts; 
+– 
+Verteilungsleitungen in Verbraucheranlagen, unabhängig von ihrem Nennstrom, sowie Endstromkreise  
+mit einem Nennstrom über 32 A; 
+– 
+Endstromkreise mit einem Nennstrom von höchstens 32 A. 
+411.4.4.001.AT Ausschaltbedingung in Verteilungsnetzen 
+Die Querschnitte und Längen der Leiter sowie der zugehörigen Überstrom-Schutzeinrichtungen müssen so 
+ausgelegt sein, dass bei Normalbetrieb des Netzes die folgende Bedingung erfüllt ist. 
+Für Verteilungsnetze mit Nennspannungen bis 400/230 V gilt: 
+ 
+ZS ∙1,6 ∙ IN ≤ U0 
+(F 41.3) 
+Für Verteilungsnetze mit höheren Nennspannungen gilt: 
+ 
+ZS ∙2,5 ∙ IN ≤ U0 
+(F 41.4) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 140/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 14 
+Dabei ist 
+ZS die Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung; 
+IN der Nennstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung; 
+U0 die Nennspannung Außenleiter gegen Erde. 
+Innerhalb von elektrisch versorgten Objekten muss, sofern nicht die Ausschaltbedingung gemäß 
+411.4.4.002.1.AT oder der Ausschaltstromfaktor gemäß 411.4.4.003.AT eingehalten wird, bis zur ersten 
+Überstrom-Schutzeinrichtung in der ersten Verteilung die Kabel- und Leitungsanlage kurz- und erdschluss-
+sicher (siehe nationale Ergänzung 52.NE) ausgeführt werden. 
+411.4.4.002.AT Ausschaltbedingung für Verteilungsleitungen und für Endstromkreise 
+Die Kennwerte der Schutzeinrichtungen (siehe 411.4.5) und die Stromkreisimpedanzen müssen die folgende 
+Anforderung erfüllen: 
+ 
+Z S ≤ 
+𝑈0
+𝐼A 
+(F 41.5) 
+Dabei ist 
+ZS die Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung; 
+IA 
+der Strom, der das automatische Abschalten der Abschalteinrichtung innerhalb der in 411.3.2.2 oder 
+411.3.2.3 angegebenen Zeit bewirkt. Wenn eine Fehlerstrom-Schutzeinrichtung (RCD) verwendet wird, 
+ist dieser Strom jener Fehlerstrom, der die Abschaltung innerhalb der in 411.3.2.2 oder der in 411.3.2.3 
+angegebenen Zeit bewirken soll; 
+U0 die Nennwechselspannung oder Nenngleichspannung Außenleiter gegen Erde. 
+Wenn zur Erfüllung der Anforderungen dieses Unterabschnitts eine Fehlerstrom-Schutzeinrichtung (RCD) 
+verwendet wird, stehen die Ausschaltzeiten gemäß Tabelle 41.1 in Beziehung zu im Fehlerfall erwarteten 
+Fehlerströmen, die bedeutend höher als der Bemessungsdifferenzstrom der RCD sind (typisch  
+größer 5 ∙ I∆n). 
+411.4.4.002.1.AT Ausschaltbedingung für Verteilungsleitungen in Verbraucheranlagen und  
+für Endstromkreise mit Überstrom-Schutzeinrichtungen mit einem Nennstrom  
+über 32 A 
+Für Verteilungsleitungen und für Endstromkreise mit einem Nennstrom über 32 A gilt eine zulässige 
+Ausschaltzeit von 5 s. 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Messung der 
+Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit muss durch Vergleich des 
+Ergebnisses mit der Charakteristik der Überstrom-Schutzeinrichtung nachgewiesen werden. 
+ANMERKUNG AT 
+Die Berechnung des Kurzschlussstroms kann auf Grundlage von ÖVE/ÖNORM EN 60909 Reihe 
+und OVE EN 61660 Reihe erfolgen. 
+Alternativ können für Nennspannungen bis 230 V die Ausschaltstromfaktoren gemäß 411.4.4.003.AT zur 
+Anwendung kommen. 
+411.4.4.002.2.AT  
+Ausschaltbedingung für Endstromkreise mit einem Nennstrom von höchstens 
+32 A 
+Für diese Stromkreise gilt eine zulässige Ausschaltzeit von 0,4 s für Nennspannungen bis 230 V gegen Erde 
+sowie von 0,2 s für Nennspannungen bis 400 V gegen Erde. 
+ANMERKUNG 1.AT 
+Für höhere Spannungen sind ergänzende Maßnahmen erforderlich. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 141/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 15 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Messung der 
+Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit muss durch Vergleich des 
+Ergebnisses mit der Charakteristik der Überstrom-Schutzeinrichtung nachgewiesen werden. 
+ANMERKUNG 2.AT 
+Die Berechnung des Kurzschlussstroms kann auf Grundlage von ÖVE/ÖNORM EN 60909 Reihe 
+und OVE EN 61660 Reihe erfolgen. 
+Alternativ können für Nennspannungen bis 230 V die Ausschaltstromfaktoren gemäß 411.4.4.003.AT zur 
+Anwendung kommen. 
+411.4.4.003.AT Ausschaltstromfaktor m 
+Alternativ zur Ausschaltbedingung gemäß 411.4.4.002.1.AT und 411.4.4.002.2.AT kann folgende Bedingung 
+zur Anwendung kommen: 
+ 
+ZS  ∙ IA ≤ U0 
+(F 41.6) 
+Dabei ist 
+ZS die Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung; 
+IA 
+der Ausschaltstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung; 
+U0 die Nennwechselspannung oder Nenngleichspannung Außenleiter gegen Erde. 
+Dabei wird der Ausschaltstrom IA mit Hilfe der Formel 
+ 
+IA = m ∙ IN  
+(F 41.7) 
+unter Verwendung der Werte für m aus Tabelle 41.002.AT errechnet. 
+Dabei ist 
+IN der Nennstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung; 
+m 
+der Ausschaltstromfaktor 
+ANMERKUNG AT 
+Unter anderem wird die Erwärmung des Stromkreises im Fehlerfall bei der Überprüfung der 
+elektrischen Anlage im Allgemeinen mit einem Faktor 2/3 berücksichtigt (siehe Teil 6 Anhang 6.D.600.4.3.7.2). 
+Tabelle 41.002.AT – Ausschaltstromfaktor m 
+ 
+1 
+2 
+3 
+1 
+Art der Überstrom-Schutzeinrichtung 
+Endstromkreise mit Nennstrom  
+höchstens 32 A gemäß 
+411.4.4.002.2.AT 
+Verteilungsleitungen und 
+Endstromkreise mit Nennstrom 
+über 32 A gemäß 411.4.4.002.1.AT 
+2 
+Schmelzsicherungen bis 125 A gG  
+gemäß ÖVE/ÖNORM EN 60269 Reihe 
+10 
+3,5 
+3 
+Leitungsschutzschalter B  
+gemäß ÖVE/ÖNORM EN 60898 Reihe 
+5 
+3,5 
+4 
+Leitungsschutzschalter C  
+gemäß ÖVE/ÖNORM EN 60898 Reihe 
+10 
+3,5 
+5 
+Leitungsschutzschalter D  
+gemäß ÖVE/ÖNORM EN 60898 Reihe 
+20 
+3,5 
+6 
+Leistungsschalter oder andere geeignete 
+Schaltgeräte a 
+Ausschaltstrom-Zeitverhalten 
+gemäß 411.4.4.002.1.AT bzw. 411.4.4.002.2.AT 
+a 
+Für von B, C und D abweichende Kennlinien ist m so zu wählen, dass die Magnetauslösung des Leitungsschutzschalters 
+anspricht. Ausschaltstrom-Zeitverhalten gemäß 411.4.4.002.1.AT bzw. 411.4.4.002.2.AT 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 142/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 16 
+411.4.5 In TN-Systemen dürfen die folgenden Schutzeinrichtungen für den Fehlerschutz (Schutz bei 
+indirektem Berühren) verwendet werden: 
+– 
+Überstrom-Schutzeinrichtungen; 
+– 
+Fehlerstrom-Schutzeinrichtungen (RCD). 
+In TN-C-Systemen darf keine Fehlerstrom-Schutzeinrichtung (RCD) verwendet werden. 
+Wenn in einem TN-C-S-System eine Fehlerstrom-Schutzeinrichtung verwendet wird, so darf auf der Lastseite 
+der Fehlerstrom-Schutzeinrichtung kein PEN-Leiter verwendet werden. Die Verbindung des Schutzleiters mit 
+dem PEN-Leiter muss auf der Versorgungsseite der Fehlerstrom-Schutzeinrichtung hergestellt werden. 
+ANMERKUNG 
+Bezüglich Selektivität zwischen Fehlerstrom-Schutzeinrichtungen siehe Abschnitt 536. 
+411.4.6.001.AT Schutzmaßnahme Nullung 
+411.4.6.001.1.AT Umsetzung der Maßnahmen für automatische Abschaltung im TN-System 
+Die Schutzmaßnahme Nullung erfordert die Herstellung eines TN-Systems gemäß 411.4. 
+Bei Anschluss eines elektrisch versorgten Objekts an ein Verteilungsnetz muss dieses vom zuständigen 
+Netzbetreiber für die Anwendung der Nullung als Schutzmaßnahme freigegeben sein. 
+Wird die Ausschaltbedingung gemäß 411.4.4.001.AT in einem Teil des Verteilungsnetzes nicht erfüllt, dann 
+ist in den an diesen Teil des Verteilungsnetzes angeschlossenen Verbraucheranlagen eine andere 
+Schutzmaßnahme, zB Fehlerstrom-Schutzschaltung, anzuwenden. 
+411.4.6.001.1.1.AT 
+Innerhalb eines elektrisch versorgten Objekts ist für Neuanlagen die Verwendung 
+eines PEN-Leiters ab dem Anschlusspunkt der Nullungsverbindung nicht mehr zulässig. Neutral und PE-
+Leiter müssen ab diesem Punkt als getrennte Leiter ausgeführt werden. Der PEN-Leiter endet am 
+Anschlusspunkt der Nullungsverbindung. 
+Für Systeme ohne PEN-Leiter, in denen ein geerdeter Außenleiter (PEL-Leiter) oder geerdeter 
+Mittelpunktsleiter (PEM-Leiter) vorhanden ist, gelten die Bestimmungen von 411.4.6.001.1.AT sinngemäß. 
+ANMERKUNG AT 
+Diese Festlegung schließt nicht aus, dass in bestehenden Anlagen ein PEN-Leiter über den 
+Anschlusspunkt der Nullungsverbindung hinaus ausgeführt ist. 
+411.4.6.001.1.2.AT 
+Die Nullungsverbindung muss gemäß Bild 41.004.AT ausgeführt und muss als 
+Schutzerdungsleiter gemäß Teil 5-54 Tabelle 54.2 dimensioniert werden. Aus EMV-Gründen wird eine 
+Dimensionierung mit einem Querschnitt entsprechend dem größten ankommenden Außenleiter empfohlen. 
+Die Lage des Anschlusspunktes der Nullungsverbindung an den PEN-Leiter muss auf einer Abdeckung der 
+betreffenden Verteilung und beim Anschlusspunkt selbst sichtbar und dauerhaft mit dem Symbol gemäß 
+Bild 41.003.AT gekennzeichnet werden. Für im Freien angeordnete Verteilungen darf die Kennzeichnung auf 
+der Außenabdeckung entfallen. 
+ 
+Bild 41.003.AT – Symbol zur Kennzeichnung des Anschlusspunktes der Nullungsverbindung 
+411.4.6.001.1.3.AT 
+Im Fall eines ausschließlichen TN-S-Systems ab der Stromquelle ist nur eine einzige 
+definierte Verbindung des Neutralleiters mit Erde herzustellen (Betriebserdung). Bei Vorhandensein mehrerer 
+Stromquellen erfolgt die Betriebserdung, indem der Sternpunkt-Verbindungs-Leiter (SVL) nur an einem Punkt 
+geerdet wird (siehe Abschnitt 444 Bild 444.7B). Dieser Betriebserder ist zugleich der Anlagenerder des 
+elektrisch versorgten Objekts, die Nullungsverbindung entfällt. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 143/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 17 
+ 
+Legende 
+1 
+erster geeigneter Sicherungs- oder Verteilerkasten in der Verbraucheranlage 
+2 
+Erdungsanlage der Verbraucheranlage 
+3 
+Haupterdungsschiene bzw. Potentialausgleichsschiene 
+4 
+Schutzpotentialausgleichsleiter 
+5 
+Erdungsleiter 
+6 
+Nullungsverbindung 
+7 
+zu kennzeichnender Anschlusspunkt der Nullungsverbindung 
+Bild 41.004.AT – Nullungsverbindung, PEN-Leiter auf kürzestem Weg mit dem  
+PE-Leiter verbunden (symbolische Darstellung) 
+411.4.6.001.2.AT Erdungsbedingung für die Schutzmaßnahme Nullung 
+411.4.6.001.2.1.AT 
+Erdungsbedingung für Verteilungsnetze 
+Für derartige (zB öffentliche) Verteilungsnetze müssen folgende Bedingungen eingehalten werden: 
+1) 
+Der PEN-Leiter muss in der Nähe der Stromquelle (des Transformators) und nahe den Enden der 
+Netzausläufer geerdet werden (Betriebserdung). Als Netzausläufer gelten dabei Abzweige mit einer 
+Länge von mehr als 100 m. In neu zu errichtenden Netzen, an die überwiegend Verbraucheranlagen mit 
+der Schutzmaßnahme Nullung angeschlossen werden, sind Erdungen an den Enden der Netzausläufer 
+nur dort erforderlich, wo netzseitig Überspannungs-Schutzeinrichtungen zum Einsatz kommen. 
+2) 
+Die Betriebserdungen müssen insgesamt den Anforderungen gemäß 411.4.002.AT für das TN-System 
+entsprechen. 
+3) 
+In bestehenden Verteilungsnetzen dieser Art kann bei ihrer Umstellung auf die Schutzmaßnahme 
+Nullung die Erdungsbedingung nahe den Enden der Netzausläufer auch dadurch erfüllt werden, dass in 
+diesem Bereich die Nullungsverbindung in mindestens einer Verbraucheranlage hergestellt wird, welche 
+eine Erdungsanlage gemäß 411.4.6.001.2.2.AT aufweist. 
+Unabhängig davon ist es zulässig, derartige Verteilungsnetze (zB Industrienetze) in ihrer Gesamtheit auch 
+als TN-S-System auszuführen. 
+411.4.6.001.2.2.AT 
+Erdungsbedingung in Verbraucheranlagen 
+Verbraucheranlagen in denen die Schutzmaßnahme Nullung angewandt wird, ausgenommen mobile 
+Anlagen und vorübergehend errichtete Aufbauten, müssen eine geeignete dauerhafte Anlagenerdung 
+aufweisen. Für neue Gebäude, in denen eine elektrische Anlage errichtet werden soll, ist dafür vorzugsweise 
+ein Fundamenterder gemäß Abschnitt 542 bzw. OVE E 8014 zu errichten. Ist ein Fundamenterder nicht 
+vorhanden oder kann dieser wegen einer geforderten Isolierung des Fundaments nicht wirksam werden, so 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 144/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 18 
+muss eine Erdungsanlage gemäß Abschnitt 542 in ausreichend korrosionsbeständiger Ausführung mit 
+folgendem Mindestausmaß errichtet werden: 
+– 
+Horizontalerder von mindestens 10 m Länge, oder 
+– 
+Vertikalerder von mindestens 4,5 m Länge, oder 
+– 
+gleichwertige Erderkombination. 
+411.4.6.001.3.AT Ergänzende Anforderungen bei Nennspannungen über 250 V gegen Erde 
+Wird die Schutzmaßnahme Nullung in Verbraucheranlagen angewandt, die mit Nennspannungen über 250 V 
+gegen Erde betrieben werden, dann ist ein zusätzlicher Schutzpotentialausgleich gemäß 415.2 auszuführen. 
+Diese Maßnahme ist auch für 3-Leiter-400-V-Anlagen mit einem PEL-Leiter erforderlich. 
+ANMERKUNG AT 
+Durch den zusätzlichen Schutzpotentialausgleich werden die unbeeinflussten Berührungs-
+spannungen auf ein vertretbares Restrisiko vermindert. 
+411.5 
+TT-Systeme 
+411.5.1 Alle Körper, die gemeinsam durch dieselbe Schutzeinrichtung geschützt werden, müssen durch 
+Schutzleiter an einem gemeinsamen Erder angeschlossen werden. 
+Der Neutralpunkt oder der Mittelpunkt des Versorgungssystems muss geerdet werden. Wenn ein 
+Neutralpunkt oder Mittelpunkt nicht verfügbar oder nicht zugänglich ist, muss ein Außenleiter geerdet werden. 
+411.5.2 In TT-Systemen sind im Allgemeinen Fehlerstrom-Schutzeinrichtungen (RCD) für den Fehlerschutz 
+(Schutz bei indirektem Berühren) zu verwenden (Schutzmaßnahme Fehlerstrom-Schutzschaltung). In 
+Ausnahmefällen dürfen Überstrom-Schutzeinrichtungen für den Fehlerschutz (Schutz bei indirektem 
+Berühren) unter der Voraussetzung verwendet werden, dass ein geeignet niedriger Wert der Impedanz der 
+Fehlerschreife ZS dauerhaft und zuverlässig sichergestellt ist (Schutzmaßnahme Überstrom-Schutzerdung). 
+Die Ausnahmefälle für die Anwendung von Überstrom-Schutzerdung sind elektrische Anlagen, in denen aus 
+Beeinflussungsgründen die Nullung und aus Verfügbarkeitsgründen die Fehlerstrom-Schutzschaltung nicht 
+angewendet werden kann. 
+411.5.001.AT 
+Begrenzung der Fehlerspannung am geerdeten Systemleiter im TT-System 
+In Niederspannungsnetzen ist ein Systemleiter – bei Vorhandensein eines Sternpunktes ist dies immer der 
+Neutralleiter – über den Betriebserder RB zu erden. 
+Hinsichtlich der Dimensionierung des Betriebserders siehe 411.4.002.2.1.AT. 
+411.5.001.1.AT In Niederspannungsnetzen, in denen ein Systemleiter (das ist im Allgemeinen der 
+Neutralleiter) aus Gründen des Netzbetriebes sicher geerdet sein muss (weil er im Netz gemäß 
+ÖVE/ÖNORM EN 50110-1 nicht geschaltet zu werden braucht), stellt die Einhaltung der Bedingung gemäß 
+411.4.002.2.1.AT sicher, dass der Neutralleiter durch Erdschlüsse keine unzulässig hohe Fehlerspannung 
+annehmen kann. 
+Sind im Niederspannungsnetz gute Erder vorhanden, so ist der Betriebserder nach Möglichkeit mit diesen zu 
+verbinden. Dies jedoch nur, soweit es sich dabei nicht um Anlagenerder (Hauptpotentialausgleich) einer 
+Verbraucheranlage oder mit diesen verbundene Erder (Blitzschutz-, Antennenerder u. dgl.) handelt. 
+411.5.001.2.AT In Niederspannungsnetzen, in denen ein Systemleiter (Neutralleiter) aus Gründen des 
+Netzbetriebes nicht sicher geerdet sein muss (weil der Neutralleiter im Netz als aktiver Teil betrachtet wird 
+und gemäß ÖVE/ÖNORM EN 50110-1 geschaltet wird), darf auf die Einhaltung der Bedingung gemäß 
+411.4.002.2.1.AT verzichtet werden, weil der Neutralleiter dann ohne Einschränkung als aktiver Teil gilt und 
+die Begrenzung der Fehlerspannung am Neutralleiter bei Erdschlüssen im Niederspannungsnetz nicht 
+erforderlich ist. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 145/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 19 
+411.5.3 Wenn eine Fehlerstrom-Schutzeinrichtung (RCD) für die automatische Abschaltung verwendet wird, 
+müssen die folgenden Bedingungen erfüllt sein: 
+i) 
+die Ausschaltzeit, wie in 411.3.2.2 oder 411.3.2.4 verlangt und 
+ii) 
+ZS ≤ 
+U0
+5 ∙ I∆n    und   ZS ≤ 100 Ω ; je nachdem, welcher Wert kleiner ist und 
+(F 41.8) 
+ 
+Dabei ist 
+ 
+I∆n der Bemessungsfehlerstrom der Fehlerstrom-Schutzeinrichtung (RCD). 
+ 
+ZS die Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung; 
+ 
+U0 die Nennwechselspannung oder Nenngleichspannung Außenleiter gegen Erde; 
+ 
+ANMERKUNG AT  
+Das bedeutet, dass bei Nennspannung 230 V zwischen Außenleiter und Neutralleiter für 
+Fehlerstrom-Schutzeinrichtungen mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A die Impedanz der Fehlerschleife 
+nicht mehr als 100 Ω betragen darf. 
+iii) alle zu schützenden Anlagenteile müssen eine geeignete dauerhafte Anlagenerdung aufweisen. 
+ 
+Dazu ist eine Erdungsanlage gemäß Teil 5-54, bei Gebäuden vorzugsweise ein Fundamenterder gemäß 
+OVE E 8014, zu errichten. Ist kein Fundamenterder vorhanden, ist eine Erdungsanlage in ausreichend 
+korrosionsbeständiger Ausführung mit folgendem Mindestausmaß zu errichten: 
+ 
+– 
+Horizontalerder von mindestens 10 m Länge, oder 
+ 
+– 
+Vertikalerder von mindestens 4,5 m Länge, oder 
+ 
+– 
+gleichwertige Erderkombination. 
+ANMERKUNG 1  
+Der Fehlerschutz (Schutz bei indirektem Berühren) ist in diesem Fall auch bei nicht 
+vernachlässigbarer Fehlerimpedanz gegeben. 
+ANMERKUNG 2  
+Wenn Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) notwendig ist, siehe 
+Abschnitt 536. 
+ANMERKUNG 3  
+In Österreich wird die Impedanz der Fehlerschleife ZS verwendet (siehe ii von 411.5.3)). 
+Die Ausschaltzeiten gemäß Tabelle 41.1 stehen in Beziehung zu im Fehlerfall erwarteten Fehlerströmen, die 
+bedeutend höher als der Bemessungsfehlerstrom der RCD sind (typisch größer 5 ∙ I∆n). 
+411.5.4 Wird eine Überstrom-Schutzeinrichtung für die automatische Abschaltung verwendet, müssen beide 
+Bedingungen erfüllt werden: 
+– 
+Alle zu schützenden Anlagenteile müssen eine geeignete dauerhafte und zuverlässige Anlagenerdung 
+aufweisen. Dazu ist eine Erdungsanlage gemäß Teil 5-54 zu errichten; 
+– 
+ZS ≤ 
+U0
+ Ia  
+ 
+(F 41.9) 
+ 
+Dabei ist 
+ 
+ZS die Impedanz der Fehlerschleife, bestehend aus 
+ 
+ 
+– 
+der Stromquelle; 
+ 
+ 
+– 
+dem Außenleiter bis zum Fehlerort; 
+ 
+ 
+– 
+dem Schutzleiter der Körper; 
+ 
+ 
+– 
+dem Erdungsleiter; 
+ 
+ 
+– 
+dem Anlagenerder; 
+ 
+ 
+– 
+dem Erder der Stromquelle. 
+ 
+U0 die Nennwechselspannung oder Nenngleichspannung Außenleiter gegen Erde; 
+ 
+IA 
+der Strom, der das automatische Abschalten der Abschalteinrichtung innerhalb der in 411.3.2.2 oder 
+der in 411.3.2.4 angegebenen Zeit oder entsprechend 411.4 Tabelle 41.002.AT bewirkt. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 146/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 20 
+411.6 
+IT-Systeme 
+411.6.1 In IT-Systemen müssen die aktiven Teile entweder gegen Erde isoliert sein oder über eine 
+ausreichend hohe Impedanz mit Erde verbunden werden. Diese Verbindung darf entweder am Neutralpunkt 
+oder Mittelpunkt des Versorgungssystems oder an einem künstlichen Neutralpunkt vorgesehen werden. Der 
+künstliche Neutralpunkt darf unmittelbar mit Erde verbunden werden, wenn die resultierende Nullimpedanz 
+bei der Frequenz des Versorgungssystems ausreichend groß ist. Wenn kein Neutralpunkt oder Mittelpunkt 
+ausgeführt ist, darf ein Außenleiter über eine hohe Impedanz mit Erde verbunden werden. 
+Der Fehlerstrom ist dann bei Auftreten eines Einzelfehlers gegen einen Körper oder gegen Erde niedrig und 
+die automatische Abschaltung gemäß 411.3.2 ist nicht gefordert, vorausgesetzt die Bedingung in 411.6.2 ist 
+erfüllt. Es müssen jedoch Vorkehrungen getroffen werden, um das Risiko gefährlicher pathophysiologischer 
+Einwirkungen auf eine Person, die in Verbindung mit gleichzeitig berührbaren Körpern steht, im Falle von 
+zwei gleichzeitig auftretenden Fehlern zu vermeiden. 
+ANMERKUNG 
+Um Überspannungen herabzusetzen oder Spannungsschwingungen zu dämpfen, kann es notwendig 
+sein, eine Erdung über Impedanzen oder künstliche Neutralpunkte vorzusehen, deren Merkmale geeignet zu den 
+Anforderungen der Anlage gewählt sind. 
+411.6.2 Die Körper der elektrischen Betriebsmittel müssen über Schutzerdungsleiter mit der gemeinsamen 
+Erdungsanlage verbunden sein und es muss folgende Bedingung erfüllt sein: 
+In Wechselstromsystemen 
+RA ∙  Id ≤ 50 V 
+(F 41.10) 
+Dabei ist 
+RA die Summe der Widerstände des Erders und des Schutzleiters zum jeweiligen Körper; 
+Id 
+der Fehlerstrom beim ersten Fehler mit vernachlässigbarer Impedanz zwischen einem Außenleiter und 
+einem Körper. Der Wert von Id berücksichtigt die Ableitströme und die Gesamtimpedanz der elektrischen 
+Anlage gegen Erde. 
+ANMERKUNG 1.AT 
+Für mobile Anwendungen des IT-Systems (siehe Teil 7-717) darf auf die Erdungsanlage 
+verzichtet werden, wenn in jeden Stromkreis ein Schutzleiter mitgeführt wird und die anzuschließende Leitungslänge 
+500 m nicht überschreitet. 
+ANMERKUNG 2.AT 
+Unter anderem wird die Erwärmung des Stromkreises im Fehlerfall bei der Überprüfung der 
+elektrischen Anlage im Allgemeinen mit einem Faktor 2/3 berücksichtigt (siehe Teil 6 Anhang 6.D.600.4.3.7.2). 
+411.6.3 In IT-Systemen dürfen die folgenden Überwachungs- und Schutzeinrichtungen verwendet werden: 
+– 
+Isolationsüberwachungseinrichtungen (IMD); 
+– 
+Differenzstrom-Überwachungseinrichtungen (RCM); 
+– 
+Isolationsfehler-Sucheinrichtungen (IFLS); 
+– 
+Überstrom-Schutzeinrichtungen; 
+– 
+Fehlerstrom-Schutzeinrichtungen (RCD). 
+ 
+ANMERKUNG 1 
+Wenn eine Fehlerstrom-Schutzeinrichtung (RCD) verwendet wird, kann beim Auftreten eines 
+ersten Fehlers ein Ausschalten der Fehlerstrom-Schutzeinrichtung (RCD) auf Grund von kapazitiven Ableitströmen 
+nicht ausgeschlossen werden. 
+ 
+ANMERKUNG 2 
+Bei je einem Fehler in zwei verschiedenen Verbrauchsmitteln in unterschiedlichen Außenleitern 
+ist eine Aussschaltung durch Fehlerstrom-Schutzeinrichtungen (RCD) nur sichergestellt, wenn für jedes 
+Verbrauchsmittel eine eigene Fehlerstrom-Schutzeinrichtung (RCD) vorgesehen wird. 
+ANMERKUNG AT 
+In Abhängigkeit der Isoliereigenschaften der verwendeten Betriebsmittel kann gemäß 512.1.1 
+bereits beim Auftreten des ersten Fehlers eine Ausschaltung innerhalb von 5 s erforderlich sein. 
+In IT-Systemen, die so geplant werden, dass beim ersten Isolationsfehler keine automatische Abschaltung 
+erfolgt, muss das Auftreten eines ersten Fehlers zwischen einem aktiven Teil und einem Körper oder gegen 
+Erde durch eine der folgenden Einrichtungen gemeldet werden: 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 147/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 21 
+– 
+eine Isolationsüberwachungseinrichtung (IMD), die mit einer Einrichtung zur Isolationsfehlersuche (IFLS) 
+kombiniert werden kann; 
+– 
+eine Differenzstrom-Überwachungseinrichtung (RCM), unter der Voraussetzung, dass der Differenzstrom 
+ausreichend groß ist, um entsprechend erfasst zu werden. 
+ 
+ANMERKUNG 3 
+RCM können keine symmetrischen Isolationsfehler erkennen. 
+Die Einrichtung muss ein hörbares und/oder sichtbares Signal erzeugen, das so lange andauert, wie der 
+Fehler besteht. Dieses Signal kann über einen Relaisausgang, einen elektronischen Schalter oder über ein 
+Kommunikationsprotokoll ausgelöst werden. 
+Wenn sowohl hörbare als auch sichtbare Signale vorhanden sind, ist es zulässig, das hörbare Signal 
+abzuschalten. Das sichtbare Signal muss jedoch bestehen bleiben, solange der Fehler besteht. 
+Die optische und/oder akustische Meldung muss an einer geeigneten Stelle so angeordnet werden, dass sie 
+von zuständigen Personen wahrgenommen wird. 
+Es ist erforderlich, dass ein erster Isolationsfehler so schnell wie praktisch möglich beseitigt wird. 
+Zusätzlich dürfen Einrichtungen zur Isolationsfehlersuche (IFLS) gemäß ÖVE/ÖNORM EN 61557-9 
+vorgesehen werden, um den Ort des ersten Fehlers von einem aktiven Teil zu Körpern elektrischer 
+Betriebsmittel, zur Erde oder zu einem anderen Bezugspunkt anzuzeigen. 
+Ist in bestimmten Räumen und Anlagen besonderer Art eines Teils 7 vorgesehen, die Stromversorgung für 
+ein IT-System oder Teile davon beim Auftreten des ersten Fehlers auszuschalten, so darf dafür das Signal 
+einer Isolationsüberwachungseinrichtung herangezogen werden, um eine geeignete Schalteinrichtung zu 
+betätigen. 
+411.6.4 Nach dem Auftreten eines ersten Fehlers müssen folgende Bedingungen für die automatische 
+Abschaltung der Stromversorgung im Falle eines zweiten Fehlers, der sich auf einem anderen Außenleiter 
+ereignet, erfüllt werden. 
+a) 
+Wenn die Körper durch Schutzleiter miteinander verbunden und gemeinsam über dieselbe 
+Erdungsanlage geerdet sind, gelten die Bedingungen vergleichbar zum TN-System und die folgenden 
+Bedingungen müssen erfüllt werden: 
+ 
+In Wechselstromsystemen ohne Neutralleiter und in Gleichstromsystemen ohne Mittelleiter: 
+ 
+ZS ≤ 
+U
+ 2 × Ia  
+(F 41.11) 
+ 
+oder wenn in solchen Systemen der Neutralleiter bzw. der Mittelleiter mitgeführt ist: 
+ 
+ZS
+′  ≤ 
+U0
+ 2 × Ia  
+(F 41.12) 
+ 
+Dabei ist 
+ 
+ZS die Impedanz der Fehlerschleife, bestehend aus dem Außenleiter und dem Schutzleiter des 
+Stromkreises; 
+ 
+Z´S die Impedanz der Fehlerschleife, bestehend aus dem Neutralleiter und dem Schutzleiter des 
+Stromkreises; 
+ 
+U0 die Nennwechselspannung oder Nenngleichspannung zwischen Außenleiter und dem Neutralleiter 
+oder dem Mittelleiter, je nach Zutreffen; 
+ 
+U 
+die Nennwechselspannung oder Nenngleichspannung zwischen Außenleitern; 
+ 
+Ia 
+der Strom, der die Funktion der Schutzeinrichtung innerhalb der in 411.3.2.2 für TN-Systeme oder 
+der in 411.3.2.3 geforderten Zeit bewirkt. 
+ANMERKUNG 1 
+Die in Tabelle 41.1 von 411.3.2.2 für TN-Systeme angegebene Zeit wird für IT-Systeme mit oder 
+ohne Verteilung von Neutralleiter oder Mittelleiter angewendet. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 148/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 22 
+ANMERKUNG 2 
+Der Faktor 2 in beiden Formeln berücksichtigt, dass beim gleichzeitigen Auftreten von zwei 
+Fehlern die Fehler in verschiedenen Stromkreisen bestehen können. 
+ANMERKUNG 3 
+Für die Impedanz der Fehlerschleife sollte der ungünstigste Fall berücksichtigt werden, zB ein 
+Fehler im Außenleiter an der Stromquelle und gleichzeitig ein anderer Fehler im Neutralleiter eines Verbrauchs-
+mittels des betrachteten Stromkreises. 
+b) 
+Wenn die Körper gruppenweise oder einzeln geerdet sind, gilt die folgende Bedingung: 
+ 
+RA ≤ 
+50 V
+ Ia   
+(F 41.13) 
+ 
+Dabei ist 
+ 
+RA die Summe der Widerstände des Erders und des Schutzleiters für die Körper; 
+ 
+Ia 
+der Strom, der die Funktion der Schutzeinrichtung innerhalb der in Tabelle 41.1 von 411.3.2.2 für  
+TT-Systeme geforderten Zeit oder innerhalb der in 411.3.2.4 geforderten Zeit bewirkt. 
+Wenn die Übereinstimmung mit den Anforderungen nach b) durch eine Fehlerstrom-Schutzeinrichtung 
+(RCD) vorgesehen wird, kann das Erfüllen der für TT-Systeme gemäß Tabelle 41.1 geforderten 
+Ausschaltzeiten Differenzströme erfordern, die bedeutend höher als der Bemessungsfehlerstrom der 
+verwendeten RCD sind (typisch 5 ∙ I∆n). 
+ 
+Die Ausführung des IT-Systems gemäß b) ist in Österreich bei Neuanlagen nicht zulässig. 
+411.7 
+FELV 
+411.7.1 
+Allgemeines 
+In Fällen, in denen aus Funktionsgründen eine Nennspannung, die 50 V Wechselspannung oder 90 V 
+Gleichspannung nicht überschreitet, angewendet wird, aber nicht alle Anforderungen von Abschnitt 414 
+bezüglich SELV oder PELV erfüllt sind, und in denen SELV oder PELV nicht notwendig ist, müssen die 
+ergänzenden Schutzvorkehrungen, die in 411.7.2 und 411.7.3 beschrieben sind, angewendet werden, um 
+den Basisschutz (Schutz gegen direktes Berühren) und Fehlerschutz (Schutz bei indirektem Berühren) 
+sicherzustellen. Diese Kombination von Vorkehrungen wird FELV genannt. 
+411.7.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) 
+Basisschutz (Schutz gegen direktes Berühren) muss vorgesehen werden: 
+– 
+entweder durch Basisisolierung gemäß 41.A.1 und entsprechend der Nennspannung des Primärstrom-
+kreises der Stromquelle, 
+– 
+oder durch Abdeckungen oder Umhüllungen gemäß 41.A.2. 
+411.7.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+Die Körper der elektrischen Betriebsmittel des FELV-Stromkreises müssen mit dem Schutzleiter des 
+Primärstromkreises der Stromquelle verbunden werden, vorausgesetzt der Primärstromkreis ist durch eine 
+der in 411.3 bis 411.6 beschriebenen Fehlerschutzvorkehrungen zur automatischer Abschaltung der 
+Stromversorgung geschützt. 
+411.7.4 
+Stromquellen 
+Die Stromquelle für das FELV-System muss entweder ein Transformator mit zumindest einfacher Trennung 
+zwischen den Wicklungen sein oder sie muss die Anforderungen in 414.3 erfüllen. 
+ANMERKUNG 
+Wenn die Versorgung aus einem System höherer Spannung durch elektrische Betriebsmittel erfolgt, die 
+nicht mindestens einfache Trennung zwischen diesem System und dem Kleinspannungssystem herstellen, wie 
+Spartransformatoren, Potentiometer, Halbleitereinrichtungen etc., dann wird der Ausgangsstromkreis als eine 
+Erweiterung des Primärstromkreises angesehen und sollte durch die im Eingangsstromkreis angewendete 
+Schutzmaßnahme geschützt sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 149/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 23 
+411.7.5 
+Stecker und Steckdosen 
+Stecker und Steckdosen für FELV-Systeme müssen mit allen folgenden Anforderungen übereinstimmen: 
+– 
+Stecker dürfen nicht in Steckdosen für andere Spannungssysteme eingeführt werden können; 
+– 
+In Steckdosen dürfen keine Stecker für andere Spannungssysteme eingeführt werden können; 
+– 
+Steckdosen müssen einen Schutzkontakt haben. 
+411.8.001.AT 
+Wird die automatische Abschaltung der Stromversorgung in bestimmten Räumen und 
+Anlagen besonderer Art, in denen weder das Stromversorgungssystem noch die Körper der elektrischen 
+Betriebsmittel geerdet sind, angewendet, dann muss eine automatische Abschaltung der Stromversorgung 
+beim ersten Fehler erfolgen. Dabei sind 411.3.2.001.AT und 411.6.4 a) zu berücksichtigen. 
+Für das Erkennen des ersten Fehlers ist eine Isolations-Überwachungseinrichtung (IMD) vorzusehen. 
+412 Schutzmaßnahme: Doppelte oder verstärkte Isolierung (Schutzisolierung) 
+412.1 
+Allgemeines 
+412.1.1 Doppelte oder verstärkte Isolierung ist eine Schutzmaßnahme in der: 
+– 
+der Basisschutz durch Basisisolierung vorgesehen ist und der Fehlerschutz durch eine zusätzliche 
+Isolierung vorgesehen ist, oder 
+– 
+der Basisschutz und der Fehlerschutz durch verstärkte Isolierung zwischen aktiven Teilen und 
+berührbaren Teilen vorgesehen ist. 
+ANMERKUNG 
+Diese Schutzmaßnahme ist vorgesehen, um bei Fehlern in der Basisisolierung das Auftreten einer 
+gefährlichen Spannung an berührbaren Teilen der elektrischen Betriebsmittel zu verhindern. 
+412.1.2 Die Schutzmaßnahme durch doppelte oder verstärkte Isolierung ist im Allgemeinen anwendbar, es 
+sei denn, es gibt Einschränkungen wie zB in Teilen 7 von OVE E 8101. 
+412.1.3 Wird diese Schutzmaßnahme als alleinige Schutzmaßnahme angewendet (zB wenn für einen 
+Stromkreis oder einen Teil einer Anlage vorgesehen ist, nur elektrische Betriebsmittel mit doppelter oder 
+verstärkter Isolierung zu errichten), muss nachgewiesen werden, dass sich dieser Stromkreis oder der Teil 
+der Anlage im normalen Betrieb unter wirksamer Überwachung befindet, sodass keine Änderung gemacht 
+werden kann, die die Wirksamkeit der Schutzmaßnahme beeinträchtigt. Diese Schutzmaßnahme darf nicht 
+angewendet werden für alle Stromkreise, die Steckdosen enthalten, oder wo ein Anwender ohne 
+Berechtigung Teile von elektrischen Betriebsmitteln auswechseln kann. 
+412.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) und Fehlerschutz 
+(Schutz bei indirektem Berühren) 
+412.2.1 
+Elektrische Betriebsmittel 
+In Fällen, wo die Schutzmaßnahme doppelte oder verstärkte Isolierung für die gesamte Anlage oder einen 
+Anlagenteil verwendet wird, müssen die elektrischen Betriebsmittel mit einem der folgenden Unterabschnitte 
+übereinstimmen: 
+– 
+412.2.1.1, oder 
+– 
+412.2.1.2 und 412.2.2, oder 
+– 
+412.2.1.3 und 412.2.2. 
+412.2.1.1 
+Elektrische Betriebsmittel müssen typgeprüft und nach den einschlägigen Normen 
+entsprechend hergestellt und gekennzeichnet sein und einer der folgenden Bauarten entsprechen: 
+– 
+elektrische Betriebsmittel mit doppelter oder verstärkter Isolierung (Betriebsmittel der Schutzklasse II); 
+– 
+elektrische Betriebsmittel, die in der relevanten Produktnorm als mit Schutzklasse II gleichwertig 
+deklariert sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 150/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 24 
+ANMERKUNG 
+Diese Betriebsmittel sind gekennzeichnet mit dem Symbol 
+ gemäß ÖVE/ÖNORM IEC 60617  
+DB-5172: Betriebsmittel der Schutzklasse II. 
+412.2.1.2 
+Elektrische Betriebsmittel, die nur eine Basisisolierung haben, müssen eine zusätzliche 
+Isolierung erhalten, die während der Installation angebracht wird und die einen gleichwertigen Grad an 
+Sicherheit zu elektrischen Betriebsmitteln in Übereinstimmung mit 412.2.1.1 erreicht und die 412.2.2.1 bis 
+412.2.2.3 erfüllt. 
+412.2.1.3 
+Elektrische Betriebsmittel, die nicht isolierte aktive Teile haben, müssen eine doppelte 
+Isolierung erhalten, die während der Installation angebracht wird und die einen gleichwertigen Grad an 
+Sicherheit zu Betriebsmitteln in Übereinstimmung mit 412.2.1.1 erreicht und die 412.2.2.2 und 412.2.2.3 
+erfüllt; in Fällen, wo die Konstruktionsmerkmale die Anbringung einer doppelten Isolierung nicht zulassen, ist 
+eine verstärkte Isolierung vorzusehen. 
+412.2.2 
+Umhüllungen 
+412.2.2.1 
+Alle leitfähigen Teile eines betriebsfertigen elektrischen Betriebsmittels, die von aktiven Teilen 
+nur durch Basisisolierung getrennt sind, müssen von einer isolierenden Umhüllung mit einer Schutzart von 
+mindestens IPXXB oder IP2X umschlossen sein oder durch Schutzzwischenisolierung gemäß ÖVE-IM 12 
+bzw. verstärkte Isolierung gegen aktive Teile zusätzlich isoliert sein. 
+ANMERKUNG AT 
+Gemäß ÖVE/ÖNORM EN 61439-3 wird für Installationsverteiler für die Bedienung durch Laien 
+eine Schutzart von wenigstens IP2XC gefordert. 
+Die Schutzisolierungen müssen den mechanischen, elektrischen und thermischen Beanspruchungen 
+standhalten, die üblicherweise auftreten können. 
+Überzüge aus Farbe, Anstrich und dergleichen genügen in der Regel diesen Anforderungen nicht. Diese 
+Anforderung schließt jedoch nicht die Verwendung von typgeprüften Überzügen aus, wenn die 
+entsprechenden technischen Bestimmungen ihren Gebrauch zulassen und wenn die isolierenden Überzüge 
+gemäß den entsprechenden Prüfbestimmungen geprüft sind. 
+412.2.2.2 
+Es gelten die folgenden Anforderungen: 
+– 
+durch die isolierende Umhüllung dürfen keine nicht isolierten Befestigungs- oder Konstruktionsteile 
+geführt werden, die ein Potential übertragen könnten und 
+– 
+die isolierende Umhüllung darf keine Schrauben oder andere Befestigungsmittel enthalten, 
+ 
+ 
+die während der Errichtung oder Instandhaltung notwendigerweise entfernt werden müssen oder 
+könnten und 
+ 
+ 
+deren Ersatz durch Metallschrauben oder andere Befestigungsmittel die durch die Umhüllung 
+vorgesehene Isolierung beeinträchtigen könnte. 
+Wenn mechanische Verbindungen oder Anschlüsse (zB für die Betätigungselemente eingebauter Geräte) 
+durch die isolierende Umhüllung geführt werden, müssen sie so angeordnet werden, dass der Schutz gegen 
+elektrischen Schlag im Fehlerfall nicht beeinträchtigt wird. 
+412.2.2.3 
+Wenn Deckel oder Türen in der isolierenden Umhüllung ohne Werkzeug oder Schlüssel 
+geöffnet werden können, müssen alle leitfähigen Teile, die bei geöffnetem Deckel oder geöffneter Tür 
+zugänglich sind, hinter einer isolierenden Abdeckung, die mindestens den Schutzgrad IPXXB oder IP2X 
+vorsieht, angeordnet sein, die verhindert, dass Personen mit diesen leitfähigen Teilen unbeabsichtigt in 
+Berührung kommen. Diese isolierende Abdeckung darf nur mit Hilfe eines Schlüssels oder Werkzeugs 
+abnehmbar sein. 
+412.2.2.4 
+Ist am Einbauort der Umhüllung die Schutzmaßnahme Nullung, Fehlerstrom-Schutzschaltung 
+oder Überstrom-Schutzerdung nicht wirksam, dann dürfen leitfähige Teile innerhalb der isolierenden 
+Umhüllung nicht an einen Schutzleiter angeschlossen sein. Dies schließt jedoch nicht aus, dass 
+Anschlussmöglichkeiten für Schutzleiter vorgesehen sind, die notwendigerweise durch die Umhüllung geführt 
+werden, weil sie für andere Betriebsmittel benötigt werden, deren Versorgungsstromkreis ebenfalls durch die 
+Umhüllung geführt ist. Innerhalb der Umhüllung müssen alle solchen Leiter und ihre Anschlussklemmen wie 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 151/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 25 
+aktive Teile isoliert sein, und ihre Anschlussklemmen müssen als Schutzleiter-Anschlussklemmen 
+gekennzeichnet sein. 
+Körper und dazwischen liegende Teile dürfen nicht an einen Schutzleiter angeschlossen sein, wenn dafür 
+nicht eine besondere Vorkehrung in den Normen für die betreffenden elektrischen Betriebsmittel vorgesehen 
+ist. 
+412.2.2.5 
+Beeinträchtigungen durch die Umhüllung sind bei der Auswahl und Bemessung der geschützten 
+Betriebsmittel zu berücksichtigen. 
+412.2.3 
+Errichtung 
+412.2.3.1 
+Das Installieren der in 412.2.1 genannten elektrischen Betriebsmittel (Befestigung, Anschluss 
+von Leitern usw.) muss so erfolgen, dass der nach der Betriebsmittelnorm geforderte Schutz nicht 
+beeinträchtigt ist. 
+412.2.3.2 
+Zu elektrischen Betriebsmitteln der Schutzklasse II muss ein Schutzleiter durchgehend leitend 
+geführt werden, es sei denn, die Anforderungen gemäß 412.1.3 sind erfüllt. 
+ANMERKUNG 
+Mit dieser Anforderung ist beabsichtigt, das Ersetzen von elektrischen Betriebsmitteln der  
+Schutzklasse II durch elektrische Betriebsmittel der Schutzklasse I durch den Benutzer zu berücksichtigen. 
+412.2.3.001.AT Verbrauchsmittel der Schutzklasse II werden im Allgemeinen mit einer Anschlussleitung 
+ohne Schutzleiter ausgeliefert. 
+Wird diese beim Instandsetzen durch eine dreiadrige Anschlussleitung mit Schutzerdungsleiter ersetzt, so 
+darf der Schutzleiter der Anschlussleitung nicht an das Verbrauchsmittel angeschlossen werden. Er ist so 
+abzusetzen, dass er nicht mit aktiven Teilen in Berührung kommen kann. Im Schutzkontaktstecker ist der 
+Schutzleiter anzuschließen. 
+412.2.4 
+Kabel- und Leitungsanlagen 
+412.2.4.1 
+Kabel- und Leitungsanlagen, die gemäß Teil 5-52 verlegt sind, erfüllen die Anforderungen von 
+412.2, wenn: 
+– 
+die Bemessungsspannung der Kabel und Leitungen nicht weniger als die Nennspannung des 
+Versorgungssystems und mindestens 300/500 V beträgt und 
+– 
+ein ausreichender mechanischer Schutz der Basisisolierung durch eine oder mehrere der folgenden 
+Maßnahmen vorgesehen ist: 
+ 
+a) 
+nicht-metallener Mantel des Kabels/der Leitung, oder 
+ 
+b) 
+nicht-metallene geschlossene oder zu öffnende Elektro-Installationskanäle gemäß ÖVE/ÖNORM 
+EN 50085 Reihe oder nicht-metallene Elektroinstallationsrohre gemäß ÖVE/ÖNORM EN 61386 
+Reihe. 
+ANMERKUNG 1  
+Kabel- und Leitungsnormen spezifizieren keine Überspannungsfestigkeit, jedoch wird 
+angenommen, dass die Isolierung der Kabel und Leitungen mindestens gleichwertig zu den Anforderungen für verstärkte 
+Isolierung gemäß OVE EN 61140 ist. 
+ANMERKUNG 2  
+Eine Kabel- und Leitungsanlage sollte weder mit dem Symbol 
+ gemäß ÖVE/ÖNORM 
+IEC 60417 DB-5172, noch mit dem Symbol 
+ gemäß ÖVE/ÖNORM IEC 60417 DB-6032 gekennzeichnet sein. 
+413 Schutzmaßnahme: Schutztrennung 
+413.1 
+Allgemeines 
+413.1.1 Schutztrennung ist eine Schutzmaßnahme, bei der 
+– 
+der Basisschutz (Schutz gegen direktes Berühren) durch Basisisolierung der aktiven Teile oder durch 
+Abdeckungen oder Umhüllungen gemäß Anhang 41.A vorgesehen ist und 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 152/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 26 
+– 
+der Fehlerschutz (Schutz bei indirektem Berühren) 
+als Isolation zwischen aktiven Teilen 
+unterschiedlicher Stromkreise ausgeführt ist, als 
+ 
+ 
+getrennte zusätzliche Isolierung, oder 
+ 
+ 
+verstärkte Isolierung (als untrennbare Einheit mit der Basisisolierung) sowie Begrenzung der 
+gesamten Kabel-/Leitungslängen gemäß 41.C.3.8. 
+413.1.2 Ausgenommen wie in 413.1.3 erlaubt, muss diese Schutzmaßnahme auf die Versorgung eines 
+elektrischen Verbrauchsmittels beschränkt werden. 
+ANMERKUNG 
+Bei 
+dieser 
+Schutzmaßnahme 
+ist 
+die 
+ordnungsgemäße 
+Basisisolierung 
+entsprechend 
+den 
+Anforderungen der Betriebsmittelnorm von besonderer Bedeutung. 
+413.1.3 Wenn mehr als ein elektrisches Verbrauchsmittel von einer ungeerdeten Stromquelle versorgt wird, 
+müssen die Anforderungen gemäß 41.C.3 erfüllt werden. 
+413.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) 
+413.2.1 An jedem elektrischen Betriebsmittel muss eine der Schutzvorkehrungen für den Basisschutz 
+(Schutz gegen direktes Berühren) gemäß Anhang 41.A oder die Schutzmaßnahme gemäß Abschnitt 412 
+vorhanden sein. 
+413.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+413.3.1 Der Schutz durch Schutztrennung muss sichergestellt werden durch Erfüllen von 413.3.2 bis 
+413.3.6. 
+413.3.2 Der Stromkreis muss von einem Trenntransformator gemäß ÖVE/ÖNORM EN 61558-2-4 oder 
+eines hinsichtlich der elektrischen Trennung gleichwertigen Niederspannungsstromversorgungseinrichtung 
+versorgt werden und die Spannung des Stromkreises mit Schutztrennung darf nicht größer als 500 V sein. 
+413.3.3 Aktive Teile des Stromkreises mit Schutztrennung dürfen an keinem Punkt mit einem anderen 
+Stromkreis oder mit Erde oder mit einem Schutzleiter verbunden werden. 
+Um die Schutztrennung sicherzustellen, müssen die Einrichtungen so ausgeführt sein, dass zwischen 
+Stromkreisen Basisisolierung erreicht ist. 
+413.3.4 Flexible Kabel und Leitungen müssen an Stellen, die mechanischen Beanspruchungen ausgesetzt 
+sind, über ihre gesamte Länge sichtbar sein. 
+413.3.5 Für Stromkreise mit Schutztrennung ist die Verwendung einer getrennten Kabel- und 
+Leitungsanlage empfohlen. Falls in derselben Kabel- und Leitungsanlage Stromkreise mit Schutztrennung 
+und andere Stromkreise vorgesehen werden, müssen mehradrige Kabel/Leitungen ohne metallene 
+Umhüllung oder isolierte Leiter in isolierenden Elektroinstallationsrohren oder isolierte Leiter in 
+geschlossenen oder zu öffnenden isolierenden Elektroinstallationskanälen verwendet werden, wobei 
+vorausgesetzt wird, dass 
+– 
+ihre Bemessungsspannung mindestens so groß wie die höchste Nennspannung ist und 
+– 
+jeder Stromkreis bei Überstrom geschützt ist. 
+413.3.6 Die Körper des Stromkreises mit Schutztrennung dürfen nicht mit dem Schutzleiter oder mit den 
+Körpern anderer Stromkreise oder mit Erde verbunden werden. 
+ANMERKUNG 
+Wenn die Körper des Stromkreises mit Schutztrennung zufällig mit Körpern anderer Stromkreise in 
+Berührung kommen können, hängt der Schutz gegen elektrischen Schlag nicht mehr allein von der Schutzmaßnahme 
+Schutztrennung, sondern auch von den Schutzvorkehrungen für die Körper der anderen Stromkreise ab. 
+413.3.001.AT 
+Flexible Leitungen müssen mindestens der Ausführung schwere Gummischlauchleitung 
+oder mittlere PVC-Schlauchleitung gemäß ÖVE/ÖNORM EN 50525 Reihe entsprechen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 153/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 27 
+414 Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+414.1 
+Allgemeines 
+414.1.1 Schutz durch Kleinspannung ist eine Schutzmaßnahme, die aus einer von zwei unterschiedlichen 
+Kleinspannungssystemen besteht: 
+– 
+SELV, oder 
+– 
+PELV. 
+Bei dieser Schutzmaßnahme ist gefordert: 
+– 
+Begrenzung der Spannung in dem SELV- oder PELV-System auf einen Wert von maximal AC 50 V oder 
+DC 90 V gemäß OVE EN 61140 und 
+– 
+sichere Trennung des SELV- oder PELV-Systems von allen anderen Stromkreisen, die nicht SELV- oder 
+PELV-Stromkreise sind, und Basisisolierung zwischen dem SELV- oder PELV-System und anderen 
+SELV- oder PELV-Systemen und 
+– 
+nur für SELV-Systeme: Basisisolierung zwischen dem SELV-System und Erde. 
+414.1.2 Die Verwendung von SELV oder PELV in Übereinstimmung mit Abschnitt 414 wird als eine 
+Schutzmaßnahme für alle Situationen angesehen. 
+ANMERKUNG 
+In bestimmten Fällen ist in Teilen 7 von OVE E 8101 der Wert der Kleinspannung auf einen Wert kleiner 
+als AC 50 V bzw. DC 90 V begrenzt. 
+414.2 
+Anforderungen an den Basisschutz (Schutz gegen direktes Berühren) und den Fehlerschutz 
+(Schutz bei indirektem Berühren) 
+Das Vorsehen von Basisschutz (Schutz gegen direktes Berühren) und Fehlerschutz (Schutz bei indirektem 
+Berühren) ist erreicht, wenn: 
+– 
+die Spannung AC 50 V oder DC 90 V nicht überschritten werden kann, 
+– 
+die Versorgung aus einer der in 414.3 aufgeführten Stromquellen erfolgt und 
+– 
+die Bedingungen von 414.4 erfüllt sind. 
+ANMERKUNG 1  
+Wenn das System von einem System höherer Spannung durch Betriebsmittel versorgt wird, bei 
+denen mindestens einfache Trennung zwischen diesem System und dem Kleinspannungssystem vorhanden ist, die aber 
+nicht die Anforderungen für SELV- oder PELV-Stromquellen in 414.3 erfüllen, dann dürfen die Anforderungen für FELV 
+angewendet werden, siehe 411.7. 
+ANMERKUNG 2  
+Gleichspannungen für Kleinspannungsstromkreise, die durch Gleichrichtergeräte (siehe 
+ÖVE/ÖNORM EN 60146-2) erzeugt werden, erfordern einen inneren Wechselspannungsstromkreis zur Versorgung des 
+Gleichrichters. Die innere Wechselspannung überschreitet die Gleichspannung aus physikalischen Gründen. Dieser 
+innere Wechselspannungsstromkreis wird nicht als Stromkreis höherer Spannung entsprechend diesem Abschnitt 
+angesehen. Zwischen inneren Stromkreisen und externen Stromkreisen höherer Spannung ist sichere Trennung 
+erforderlich. 
+ANMERKUNG 3  
+In Gleichspannungssystemen mit Batterien überschreiten die Lade- und Entladespannung 
+abhängig von der Bauart der Batterie die Nennspannung der Batterie. Dies erfordert keine zusätzlichen 
+Schutzvorkehrungen zu den in diesem Abschnitt spezifizierten. Die Ladespannung sollte abhängig von den äußeren 
+Einflüssen, die in IEC TS 61201:2007 Tabelle 1, enthalten sind, einen maximalen Wert von AC 75 V oder DC 150 V nicht 
+überschreiten. 
+414.3 
+Stromquellen für SELV oder PELV 
+Die folgenden Stromquellen dürfen für SELV- oder PELV-Systeme verwendet werden: 
+414.3.1 Ein Sicherheitstransformator gemäß ÖVE/ÖNORM EN 61558-2-6. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 154/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 28 
+414.3.2 Eine Stromquelle, die den gleichen Grad an Sicherheit erfüllt wie ein Sicherheitstransformator 
+gemäß 414.3.1 (zB ein Motorgenerator mit gleichwertig getrennten Wicklungen). 
+414.3.3 Eine elektrochemische Stromquelle (zB eine Batterie) oder eine andere Stromquelle, die 
+unabhängig von einem Stromkreis höherer Spannung ist (zB ein Generator, der von einer Verbrennungs-
+motor angetrieben wird). 
+414.3.4 Bestimmte elektronische Einrichtungen, die entsprechend den für sie geltenden Normen gebaut 
+sind und bei denen durch Vorkehrungen sichergestellt ist, dass auch bei Auftreten eines inneren Fehlers die 
+Spannung an den Ausgangsklemmen nicht über die in 414.1.1 festgelegten Werte ansteigen kann. Höhere 
+Spannungen an den Ausgangsklemmen sind jedoch zulässig, wenn sichergestellt ist, dass im Falle des 
+Berührens eines aktiven Teils oder im Fehlerfall zwischen einem aktiven Teil und einem Körper, die 
+Spannung an den Ausgangsklemmen unmittelbar auf diese oder auf niedrigere Werte herabgesetzt wird. 
+ANMERKUNG 1  
+Beispiele solcher Einrichtungen schließen Isolationsprüfgeräte und Isolationsüberwachungs-
+einrichtungen ein. 
+ANMERKUNG 2  
+Wenn an den Ausgangsklemmen höhere Spannungen auftreten, darf eine Übereinstimmung mit 
+diesem Abschnitt angenommen werden, wenn die mit einem Voltmeter mit einem inneren Widerstand von mindestens 
+3 000 Ω an den Ausgangsklemmen gemessene Spannung innerhalb der in 414.1.1 festgelegten Grenzen liegt. 
+414.3.5 Ortsveränderliche Stromquellen, die mit Niederspannung versorgt sind, zB Sicherheits-
+trenntransformatoren oder Motorgeneratoren, müssen in Übereinstimmung mit den Anforderungen der 
+Schutzmaßnahme doppelte oder verstärkte Isolierung (siehe Abschnitt 412) ausgewählt und errichtet werden. 
+414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+414.4.1 SELV- und PELV-Stromkreise müssen aufweisen: 
+– 
+Basisisolierung zwischen aktiven Teilen und anderen SELV- oder PELV-Stromkreisen und 
+– 
+sichere Trennung von den aktiven Teilen anderer Stromkreise, die nicht SELV- und PELV-Stromkreise 
+sind, durch das Vorsehen von doppelter oder verstärkter Isolierung oder durch Basisisolierung und 
+Schutzschirmung für die höchste vorkommende Spannung. 
+SELV-Stromkreise müssen Basisisolierung zwischen aktiven Teilen und Erde haben. 
+Die PELV-Stromkreise und/oder Körper der durch die PELV-Stromkreise versorgten elektrischen 
+Betriebsmittel dürfen geerdet werden. 
+ANMERKUNG 1  
+Insbesondere ist sichere Trennung notwendig zwischen den aktiven Teilen der elektrischen 
+Betriebsmittel wie Relais, Schütze, Hilfsschalter und allen Teilen eines Stromkreises höherer Spannung oder eines FELV-
+Stromkreises. 
+ANMERKUNG 2  
+Die Erdung von PELV-Stromkreisen kann durch eine Verbindung mit Erde oder mit einem 
+geerdeten Schutzleiter in der Stromquelle selbst erreicht werden. 
+414.4.2 Sichere Trennung der Kabel- und Leitungsanlagen von SELV- und PELV-Stromkreisen von den 
+aktiven Teilen anderer Stromkreise, die mindestens Basisisolierung haben müssen, darf durch eine der 
+folgenden Anordnungen erreicht werden: 
+– 
+Leiter von SELV- oder PELV-Stromkreisen müssen zusätzlich zur Basisisolierung von einem nicht 
+metallischen Mantel oder einer isolierenden Umhüllung umschlossen sein; 
+– 
+Leiter von SELV- oder PELV-Stromkreisen müssen von Leitern der Stromkreise mit einer höheren 
+Spannung als AC 50 V oder DC 90 V durch einen geerdeten metallenen Mantel oder durch eine 
+geerdete metallene Schirmung getrennt sein; 
+– 
+Leiter von Stromkreisen mit einer höheren Spannung als AC 50 V oder DC 90 V dürfen in einem 
+mehradrigen Kabel oder in einer anderen Gruppierung von Leitern enthalten sein, wenn die SELV- oder 
+PELV-Leiter für die höchste vorkommende Spannung isoliert sind; 
+– 
+die Kabel- und Leitungsanlagen der anderen Stromkreise müssen 412.2.4.1 entsprechen; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 155/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 29 
+– 
+räumliche Trennung. 
+414.4.3 Stecker und Steckdosen für SELV- oder PELV-Systeme müssen mit folgenden Anforderungen 
+übereinstimmen: 
+– 
+Stecker dürfen nicht in Steckdosen für andere Spannungssysteme eingeführt werden können; 
+– 
+in Steckdosen dürfen keine Stecker für andere Spannungssysteme eingeführt werden können; 
+– 
+Stecker und Steckdosen in SELV-Systemen dürfen keinen Schutzleiterkontakt haben. 
+414.4.4 Körper von SELV-Stromkreisen dürfen nicht mit Erde oder mit Schutzleitern oder mit Körpern eines 
+anderen Stromkreises verbunden werden. 
+ANMERKUNG 
+Wenn Körper von SELV-Stromkreisen mit den Körpern anderer Stromkreise zufällig in Berührung 
+kommen können, ist der Schutz gegen elektrischen Schlag nicht allein vom Schutz durch SELV sondern auch von den 
+Schutzvorkehrungen der Körper der anderen Stromkreise abhängig. 
+414.4.5 Wenn die Nennspannung AC 25 V oder DC 45 V überschreitet oder wenn elektrische Betriebsmittel 
+in Wasser eingetaucht sind, muss ein Basisschutz (Schutz gegen direktes Berühren) für SELV- und PELV-
+Stromkreise vorgesehen werden durch: 
+– 
+eine Isolierung gemäß 41.A.1, oder 
+– 
+Abdeckungen oder Umhüllungen gemäß 41.A.2. 
+Ein Basisschutz (Schutz gegen direktes Berühren) ist im Allgemeinen nicht notwendig bei normalen, 
+trockenen äußeren Einflüssen für: 
+– 
+SELV-Stromkreise, deren Nennspannung AC 25 V oder DC 45 V nicht überschreitet; 
+– 
+PELV-Stromkreise, deren Nennspannung AC 25 V oder DC 45 V nicht überschreitet und deren Körper 
+und/oder aktiven Teile durch einen Schutzleiter mit der Haupterdungsschiene verbunden sind. 
+In allen anderen Fällen ist ein Basisschutz (Schutz gegen direktes Berühren) nicht gefordert, wenn die 
+Nennspannung des SELV- oder PELV-Systems AC 12 V oder DC 30 V nicht überschreitet. 
+Für bestimmte elektrische Betriebsmittel können gemäß den einschlägigen Produktbestimmungen anstelle 
+von DC 45 V DC 60 V zulässig sein. 
+415 Zusätzlicher Schutz (Zusatzschutz) 
+Ein zusätzlicher Schutz (Zusatzschutz) ist zusammen mit den Schutzvorkehrungen für den Fehlerschutz 
+unter bestimmten Bedingungen und äußeren Einflüssen und in bestimmten besonderen Bereichen gefordert 
+(siehe auch Teile 7 von OVE E 8101). 
+415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Eine Fehlerstrom-Schutzeinrichtung (RCD) die dem zusätzlichen Schutz (Zusatzschutz) dient darf nicht auch 
+dem Fehlerschutz dienen. 
+415.1.001.AT 
+Stromkreise mit Steckdosen in Anlagen für Wechselspannung mit einem Bemessungs-
+strom von höchstens 20 A sind bei Anwendung der Schutzmaßnahmen Nullung, Fehlerstrom-
+Schutzschaltung oder Überstrom-Schutzerdung zusätzlich durch Fehlerstrom-Schutzeinrichtungen mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A zu schützen (siehe Bild 41.005.AT). 
+Dies gilt auch für Stromkreise für ortsveränderliche elektrische Betriebsmittel für die Verwendung im Freien 
+mit einem Bemessungsstrom von höchstens 32 A. 
+In Sonderfällen, ausgenommen Hausinstallationen und ähnliche Anwendungen, darf von der Anforderung 
+abgewichen werden, wenn beide nachfolgenden Bedingungen erfüllt sind:  
+– 
+die Steckdosen sind für Laien nicht frei zugängig, 
+– 
+an den Steckdosen sind ortsfeste oder fest angebrachte elektrische Betriebsmittel angeschlossen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 156/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 30 
+In diesen Sonderfällen sind die Steckdosen eindeutig und dauerhaft zu beschriften. 
+415.1.002.AT 
+Wenn eine automatische Abschaltung in der geforderten Zeit nicht erreicht werden kann 
+(siehe 411.3.2.5 oder 411.3.2.6) darf der zusätzliche Schutz (Zusatzschutz) mit Fehlerstrom-
+Schutzeinrichtungen (RCD) gemäß 415.1 entfallen, wenn geeignete Fehlerstrom-Schutzeinrichtungen (RCD) 
+mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A nicht verfügbar sind. 
+ 
+Bild 41.005.1.AT – Nullung mit zusätzlichen Schutz (Zusatzschutz) durch eine  
+Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A 
+ 
+Bild 41.005.2.AT – Fehlerstrom-Schutzschaltung mit zusätzlichen Schutz (Zusatzschutz) 
+durch eine zweite Fehlerstrom-Schutzeinrichtung (RCD)  
+mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A 
+Bild 41.005.AT – Beispielbilder für den zusätzlichen Schutz (Zusatzschutz) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 157/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 31 
+Legende zu Bild 41.005.AT 
+1 
+Fehlerstrom-Schutzeinrichtung (RCD) für den Fehlerschutz gemäß 411.5.3, gemäß der der 
+Erdungswiderstand der Verbraucheranlage RA bemessen wird 
+2 
+Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A für den 
+zusätzlichen Schutz (Zusatzschutz) 
+3 
+Überstrom-Schutzeinrichtung für den Fehlerschutz 
+4 
+Überstrom-Schutzeinrichtung 
+5 
+Haupterdungsschiene bzw. Potentialausgleichsschiene 
+415.1.1 Das Verwenden von Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A hat sich in Wechselstromsystemen als zusätzlicher Schutz (Zusatzschutz) bei nicht wirksam 
+werden von Basisschutzvorkehrungen (Schutz gegen direktes Berühren) und/oder von Fehlerschutz-
+vorkehrungen (Schutz bei indirektem Berühren) oder bei Sorglosigkeit durch Benutzer bewährt. 
+415.1.2 Das Verwenden solcher Einrichtungen als alleiniges Mittel des Schutzes ist nicht anerkannt und 
+schließt nicht die Notwendigkeit aus, eine der Schutzmaßnahmen gemäß den Abschnitten 411 bis 414 
+anzuwenden. 
+415.2 
+Zusätzlicher Schutz: Zusätzlicher Schutzpotentialausgleich 
+ANMERKUNG 1  
+Zusätzlicher Schutzpotentialausgleich wird als ein Zusatz zum Fehlerschutz (Schutz bei 
+indirektem Berühren) angesehen. 
+ANMERKUNG 2  
+Das Verwenden des zusätzlichen Schutzpotentialausgleichs schließt nicht die Notwendigkeit 
+aus, die Stromversorgung aus anderen Gründen abzuschalten, zB aus Gründen des Brandschutzes, der thermischen 
+Überbeanspruchung eines Betriebsmittels usw. 
+ANMERKUNG 3  
+Der zusätzliche Schutzpotentialausgleich darf die gesamte Anlage, einen Teil der Anlage, ein 
+Gerät oder einen Bereich einschließen. 
+ANMERKUNG 4  
+Zusätzliche Anforderungen können für Räume und Anlagen besonderer Art (siehe Teile 7 von 
+OVE E 8101) oder aus anderen Gründen notwendig sein. 
+415.2.1 Der zusätzliche Schutzpotentialausgleich muss alle gleichzeitig berührbaren Körper fest 
+angebrachter elektrischer Betriebsmittel und fremder leitfähiger Teile, einschließlich soweit praktikabel die 
+metallene Hauptbewehrung von Stahlbeton, einschließen. Die Potentialausgleichsanlage muss mit den 
+Schutzleitern aller elektrischer Betriebsmittel, eingeschlossen die Schutzleiter der Steckdosen, verbunden 
+werden. 
+415.2.001.AT 
+Kleinere Metallteile, metallene Tür- oder Fensterzargen etc. müssen aus Gründen des 
+Schutzes gegen elektrischen Schlag nicht in den zusätzlichen Potentialausgleich einbezogen werden, wenn 
+diese kein fremdes Potential in den Raum einbringen können. In besonderen Fällen zB bei Anforderungen 
+zur EMV kann dies erforderlich sein. 
+415.2.2 Der Widerstand R zwischen gleichzeitig berührbaren Körpern und fremden leitfähigen Teilen muss 
+die folgende Bedingung erfüllen: 
+– in Wechselspannungssystemen  
+R ≤ 
+50 V
+ Ia   
+(F 41.14) 
+– in Gleichspannungssystemen  
+R ≤ 
+120 V
+ Ia   
+(F 41.15) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 158/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 32 
+Es wird empfohlen in Gleichspannungssystemen die folgende Bedingung zu erfüllen (siehe OVE 
+EN 61140:2016 Abschnitt 4.2). 
+ 
+RA ≤ 
+90 V
+ Ia   
+(F 41.16) 
+Dabei ist 
+Ia 
+der Strom, der das Ausschalten der Schutzeinrichtung bewirkt: 
+ 
+– 
+für Fehlerstrom-Schutzeinrichtungen (RCD) der Bemessungsfehlerstrom IΔn; 
+ 
+– 
+für Überstrom-Schutzeinrichtungen der Strom, der eine Ausschaltung innerhalb von 5 s bewirkt. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 159/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 33 
+Anhang 41.A 
+(normativ) 
+ 
+Schutzvorkehrungen für den Basisschutz  
+(Schutz gegen direktes Berühren) 
+41.A.1 
+Basisisolierung aktiver Teile 
+ANMERKUNG 
+Die Isolierung ist dafür bestimmt, das Berühren aktiver Teile zu verhindern. 
+Aktive Teile müssen vollständig mit einer Isolierung abgedeckt sein, die nur durch Zerstörung entfernt werden 
+kann. 
+Für elektrische Betriebsmittel muss die Isolierung mit der entsprechenden Norm für das Betriebsmittel 
+übereinstimmen. 
+41.A.2 
+Abdeckungen oder Umhüllungen 
+ANMERKUNG 
+Abdeckungen oder Umhüllungen sind dafür bestimmt, das Berühren aktiver Teile zu verhindern. 
+41.A.2.1  
+Aktive Teile müssen sich im Inneren von Umhüllungen oder hinter Abdeckungen befinden, die 
+mindestens der Schutzart IPXXB oder IP2X entsprechen, ausgenommen jene Fälle, wo während des 
+Auswechselns von Teilen größere Öffnungen entstehen, wie zB bei Lampenfassungen oder Sicherungen, 
+oder wo größere Öffnungen notwendig sind, um den ordnungsgemäßen Betrieb des elektrischen 
+Betriebsmittels entsprechend den zutreffenden Anforderungen für das Betriebsmittel zu ermöglichen. In 
+diesen ausgenommenen Fällen: 
+– 
+müssen geeignete Vorsichtsmaßnahmen getroffen werden, um unbeabsichtigtes Berühren aktiver Teile 
+durch Personen oder Nutztiere zu verhindern und 
+– 
+muss so weit wie praktisch möglich sichergestellt werden, dass Personen bewusst wird, dass aktive 
+Teile durch die Öffnungen berührt werden können und nicht absichtlich berührt werden sollten und 
+– 
+muss die Öffnung möglichst klein sein, wie es im Zusammenhang mit der ordnungsgemäßen Funktion 
+und für das Auswechseln eines Teils erforderlich ist. 
+41.A.2.2  
+Horizontale Oberflächen von Abdeckungen oder Umhüllungen, die leicht zugänglich sind, 
+müssen mindestens der Schutzart IPXXD oder IP4X entsprechen. 
+41.A.2.3  
+Abdeckungen und Umhüllungen müssen am Ort des Anbringens fest gesichert sein und 
+ausreichende Stabilität und Dauerhaftigkeit haben, um die geforderten Schutzarten und eine geeignete 
+Trennung von aktiven Teilen bei den bekannten Bedingungen des normalen Betriebs aufrecht zu erhalten, 
+wobei zutreffende äußere Einflüsse zu berücksichtigen sind. 
+41.A.2.4  
+In Fällen, in denen es notwendig ist, Abdeckungen zu entfernen oder Umhüllungen zu öffnen 
+oder Teile der Umhüllungen zu entfernen, darf dieses nur möglich sein: 
+– 
+durch das Verwenden eines Schlüssels oder Werkzeugs, oder 
+– 
+nach dem Abschalten der Versorgung aktiver Teile, vor deren Berühren die Abdeckungen oder 
+Umhüllungen schützen; eine Wiederherstellung der Versorgung darf nur möglich sein, nachdem die 
+Abdeckungen oder Umhüllungen wieder angebracht oder geschlossen sind, oder 
+– 
+wo eine Zwischenabdeckung mit mindestens der Schutzart IPXXB oder IP2X das Berühren aktiver Teile 
+durch das Verwenden eines Schlüssels oder eines Werkzeugs zur Entfernung der Zwischenabdeckung 
+verhindert. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 160/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-41 – Seite 34 
+41.A.2.5  
+Wenn hinter einer Abdeckung oder in einer Umhüllung elektrische Betriebsmittel installiert sind, 
+die nach ihrem Abschalten gefährliche elektrische Ladungen behalten (zB Kapazitäten), ist eine 
+Warnaufschrift erforderlich. Kleine Kapazitäten wie sie zur Lichtbogenlöschung, zur Verlängerung der 
+Ansprechzeit von Relais usw. verwendet werden werden als nicht gefährlich angesehen. 
+ANMERKUNG 
+Unbeabsichtigtes Berühren wird als nicht gefährlich angesehen, wenn die Spannung statischer 
+Aufladungen auf DC 90 V innerhalb von 5 s nach dem Abschalten der Stromversorgung absinkt. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

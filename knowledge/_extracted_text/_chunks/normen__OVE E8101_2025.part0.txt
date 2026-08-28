@@ -1,0 +1,2420 @@
+
+
+===== PAGE 1/852 =====
+ 
+ 
+ 
+OVE E 8101 
+ 
+Ausgabe: 2025-10-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Low-voltage electrical installations 
+ 
+Installations électriques à basse tension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+13.260; 29.020; 29.100; 29.120; 29.130; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ 
+Copyright © OVE – 2025.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 
+Tel.: +43 1 587 63 73 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 2/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 2 
+Vorwort 
+Der OVE Österreichischer Verband für Elektrotechnik publizierte bereits 1888 – damals noch als 
+Elektrotechnischer Verein Wien – die ersten Sicherheitsvorschriften für elektrische Anlagen und war damit der 
+Vorreiter für normative Festlegungen für fachgerechte Elektroinstallationen. Über die Jahrzehnte wurden die 
+Vorschriften an den technischen Fortschritt und an eine erweiterte Schutzphilosophie angepasst. Zudem 
+verlagerten sich die Normungsaktivitäten von nationaler zunehmend auf internationale Ebene. Damit war eine 
+laufende Änderung und Umstrukturierung der historisch gewachsenen Sicherheitsvorschriften notwendig. 
+Um nun dem Normenanwender ein übersichtliches Kompendium der Sicherheitsvorschriften für elektrische 
+Niederspannungsanlagen anbieten zu können, und um in der Normungsarbeit aufwendige redaktionelle 
+Überarbeitungen und Doppelgleisigkeiten zu vermeiden, hat das zuständige Lenkungsgremium des OVE 
+(OEK-Aktionskomitee) im Jahr 2013 beschlossen, die Struktur der bisherigen Vorschriften (u. a. ÖVE-EN 1 
+Reihe, ÖVE/ÖNORM E 8001 Reihe) an die internationalen bzw. europäischen Vorgaben anzupassen und die 
+OVE E 8101 zu veröffentlichen. Diesem Grundsatz folgend entspricht die vorliegende nationale 
+elektrotechnische Norm OVE E 8101 sowohl strukturell als auch technisch gleichwertig dem von CENELEC 
+ratifizierten europäischen Harmonisierungsdokument HD 60364 (Reihe) „Errichten von Niederspannungs-
+anlagen“. 
+Gemäß 
+den 
+gemeinsamen 
+Regeln 
+für 
+die 
+Normungsarbeit 
+sind 
+europäische 
+Normen 
+(und 
+Harmonisierungsdokumente) turnusmäßig zu überprüfen, wobei dies mindestens alle fünf Jahre erfolgen muss. 
+Diesem Grundsatz folgend wurde auch die OVE E 8101:2019 + AC1:2020 einer Überprüfung und 
+Aktualisierung unterzogen. 
+Diese Norm OVE E 8101:2025 hat den Status einer nationalen elektrotechnischen Norm gemäß ETG 1992. 
+Bei ihrer Anwendung ist dieses Vorwort zu berücksichtigen. 
+Der Rechtsstatus dieser nationalen elektrotechnischen Norm ist den jeweils geltenden Gesetzen oder 
+Verordnungen zu entnehmen. 
+Für den Fall eines undatierten Verweises auf ein Dokument (z. B. Verweis auf eine Norm ohne Angabe des 
+Ausgabedatums) bezieht sich der Verweis auf die jeweils neueste Ausgabe dieses Dokuments. 
+Für den Fall eines datierten Verweises bezieht sich der Verweis immer auf die in Bezug genommene Ausgabe 
+des Dokuments. 
+Bei mittels Gesetz oder Verordnung verbindlich erklärten rein österreichischen elektrotechnischen Normen, 
+verbindlich erklärten elektrotechnischen Referenzdokumenten oder kundgemachten elektrotechnischen 
+Normen ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt der Herausgabe dieser Normen oder Referenzdokumente. Zum Zeitpunkt der Anwendung dieser 
+Normen oder Referenzdokumente ist der durch Gesetz oder Verordnung oder gegebenenfalls auf andere 
+Weise festgelegte aktuelle Stand zu berücksichtigen. 
+– 
+Die in diesen Normen enthaltenen Rechtsbelehrungen, Verweise auf andere Regelwerke, Einleitungen, 
+Fußnoten, Anmerkungen sowie informative Anhänge werden von der Verbindlicherklärung oder von 
+kundgemachten Normen betreffenden Regelungen nicht erfasst. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 3/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 3 
+Übersicht und Aufbau von OVE E 8101 
+Die Tabelle I.1 und Tabelle I.2 geben eine Übersicht, welche Harmonisierungsdokumente (HD) der Reihe HD 60364/HD 384 in dieser Ausgabe der OVE E 8101 
+berücksichtigt wurden. Weiters findet sich in den Tabellen der Hinweis, bei welchen Teilen/Abschnitten neue europäische HD gegenüber OVE E 8101:2019 + 
+AC1:2020 bis zum Redaktionsschluss veröffentlicht wurden. 
+Tabelle I.1 – Übersicht und Aufbau der Teile 1 bis 6 (1 von 2) 
+ 
+Teil und Titel a 
+Abschnittsnummer und Titel a, b 
+Basisdokument c 
+Neu d 
+Allgemeine Anforderungen 
+1 
+Allgemeine Grundsätze 
+HD 60364-1:2008 + A11:2017 
+ 
+2 
+Begriffe 
+IEV 826:2022 
+x 
+3 
+Bestimmungen allgemeiner Merkmale 
+HD 60364-1:2008 + A11:2017 
+ 
+4 
+Schutzmaßnahmen und 
+Schutzvorkehrungen 
+-41 
+Schutz gegen elektrischen Schlag 
+HD 60364-4-41:2017 + A11:2017  + 
+A12:2019 
+x 
+-42 
+Schutz gegen thermische Einflüsse 
+HD 60364-4-42:2011 + A1:2015 + 
+A11:2021 
+x 
+-43 
+Schutz bei Überstrom 
+HD 60364-4-43:2010 
+ 
+-44 
+Schutz bei Störspannungen und 
+elektromagnetischen Störgrößen 
+-442 
+Schutz von Niederspannungsanlagen bei 
+vorübergehenden Überspannungen infolge 
+von Erdschlüssen im Hochspannungssystem 
+und infolge von Fehlern im 
+Niederspannungssystem 
+HD 60364-4-442:2012 
+ 
+-443 
+Schutz bei Überspannungen infolge 
+atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+HD 60364-4-443:2016 
+ 
+-444 
+Maßnahmen gegen elektromagnetische 
+Einflüsse 
+HD 60364-4-444:2010 + corrig. Jul. 
+2010 + AC:2012 
+ 
+-45 
+Schutz gegen Unterspannung 
+HD 384.4.45 S1:1989 
+ 
+-46 
+Trennen und Schalten 
+HD 60364-4-46:2016 + A11:2017 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 4/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 4 
+Tabelle I.1 – Übersicht und Aufbau der Teile 1 bis 6 (2 von 2) 
+ 
+Teil und Titel a 
+Abschnittsnummer und Titel a, b 
+Basisdokument c 
+Neu d 
+Allgemeine Anforderungen 
+5 
+Auswahl, Montage und 
+Installation elektrischer 
+Betriebsmittel  
+-51 
+Allgemeine Bestimmungen 
+HD 60364-5-51:2009 + A11:2013 + 
+A12:2017 
+ 
+ 
+-52 
+Kabel und Leitungsanlagen 
+HD 60364-5-52:2011 + A11:2017 + 
+A12:2022  
+x 
+ 
+-53 
+Schalt- und Steuergeräte 
+HD 60364-5-53:2022 + AC:2022-08 
+x 
+ 
+ 
+-54 
+Erdungsanlagen und Schutzleiter 
+HD 60364-5-54:2011 + A11:2017 + 
+A1:2022 
+x 
+ 
+ 
+-55 
+Andere elektrische Betriebsmittel 
+-551 
+Stromerzeugungseinrichtungen 
+HD 60364-5-551:2010 +  
+corrig. Dec. 2010 + A11:2016 
+ 
+ 
+ 
+-557 
+Hilfsstromkreise 
+HD 60364-5-557:2013 + A11:2016 
+ 
+ 
+ 
+-559 
+Leuchten und Beleuchtungsanlagen 
+HD 60364-5-559:2012 + A11:2017 
+ 
+ 
+ 
+ 
+ 
+-55N01 
+Anforderungen für die Auswahl und Installation 
+von elektrischen Betriebsmitteln 
+OVE-Richtlinie R 2000-5-55N01:2022 
+x 
+ 
+ 
+ 
+ 
+-55N02 
+Aufstellen und Anschließen von Verteilern 
+OVE-Richtlinie R 2000-5-55N02:2022 
+x 
+ 
+ 
+-56 
+Einrichtungen für Sicherheitszwecke 
+HD 60364-5-56:2018 
+x 
+6 
+Prüfung 
+HD 60364-6:2016 + A11:2017 + 
+A12:2017 + AC:2017-11 
+ 
+a 
+Die im Nummernkreis fehlenden Nummerierungen sind derzeit von IEC/CENELEC nicht belegt. 
+b 
+Die in dieser Spalte aufgeführten Abschnitte wurden von CENELEC gegenüber IEC als separate Teile/Abschnitte publiziert. Die blau markierten Teile sind nationale Teile. 
+c 
+Basisdokument von CENELEC, IEC und national für die Erstellung des zughörigen Teils/Abschnitts von OVE E 8101:2025. 
+d 
+Neues Dokument gegenüber Ausgabe OVE E 8101:2019 + AC1:2020. 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 5/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 5 
+Tabelle I.2 – Übersicht und Aufbau von Teil 7 (1 von 2) 
+ 
+Teil und Titel a, b 
+Basisdokument c 
+Neu d 
+Besondere Anforderungen 
+7 
+Räume und Anlagen 
+besonderer Art 
+-701 
+Räume und Orte mit Badewanne oder Dusche 
+HD 60364-7-701:2007 + AC:2011 + A11:2011 + A12:2017;  
+IEC 60364-7-701:2019 (tlw.) 
+x 
+-702 
+Schwimmbecken und Springbrunnen 
+HD 60364-7-702:2010 
+ 
+-703 
+Räume und Kabinen mit Saunaheizgeräten 
+HD 60364-7-703:2005 
+ 
+-704 
+Baustellen 
+HD 60364-7-704:2018 
+x 
+-705 
+Elektrische Anlagen von landwirtschaftlichen und 
+gartenbaulichen Betriebsstätten 
+HD 60364-7-705:2007 + corrig. Apr. 2008 + A11:2012 + A12:2017 
+ 
+-706 
+Leitfähige Bereiche mit begrenzter Bewegungsfreiheit 
+HD 60364-7-706:2007 + A1:2020-11 
+x 
+-708 
+Caravanplätze, Campingplätze und ähnliche Bereiche 
+HD 60364-7-708:2017 + A11:2022 
+x 
+-709 
+Marinas und ähnliche Bereiche 
+HD 60364-7-709:2009 + A1:2012/AC:2012 + A1:2012  
++ corrigendum Mar. 2010 + A11:2017 + A12:2019 
+x 
+-710 
+Medizinisch genutzte Bereiche 
+HD 60364-7-710:2025 + A11:2025 
+x 
+-711 
+Ausstellungen, Shows und Stände 
+HD 60364-7-711:2019 
+x 
+-712 
+Photovoltaische Anlagen (PV-Anlagen) 
+HD 60364-7-712:2016 
+ 
+-713 
+Möbel 
+IEC 60364-7-713:2013 
+ 
+-714 
+Beleuchtungsanlagen im Freien 
+HD 60364-7-714:2012 
+ 
+-715 
+Kleinspannungsbeleuchtungsanlagen 
+HD 60364-7-715:2012 + HD 60364-7-715:2012/A11:2017 
+ 
+-716 
+Gleichstrom-Kleinspannungs-Energieverteilung  
+über Informations- und Kommunikationskabel  
+und Leitungen (IKT) 
+HD 60364-7-716:2023 
+x 
+-717 
+Ortsveränderliche oder transportable Baueinheiten 
+HD 60364-7-717:2010 + HD 60364-7-717:2010/AC:2014 
+ 
+-718 
+Öffentliche Einrichtungen und Arbeitsstätten 
+HD 60364-7-718:2013 + A11:2017 + A12:2017 
+ 
+-721 
+Elektrische Anlagen in Caravans und Motorcaravans 
+HD 60364-7-721:2019 
+x 
+-722 
+Stromversorgung von Elektrofahrzeugen 
+HD 60364-7-722:2018 
+x 
+-729 
+Bedienungsgänge und Instandhaltungsgänge sowie 
+Bereiche mit eingeschränkter Zugangsberechtigung 
+HD 60364-7-729:2009 + HD 60364-7-729:2009/A11:2017 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 6/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 6 
+Tabelle I.2 – Übersicht und Aufbau von Teil 7 (2 von 2) 
+ 
+Teil und Titel a, b 
+Basisdokument c 
+Neu d 
+Besondere Anforderungen 
+7 
+Räume und Anlagen 
+besonderer Art 
+-730 
+Elektrischer Landanschluss für Fahrzeuge der 
+Binnenschifffahrt 
+HD 60364-7-730:2015 
+ 
+-740 
+Vorübergehend errichtete elektrische Anlagen für 
+Aufbauten, Vergnügungseinrichtungen und Buden auf 
+Veranstaltungsplätzen und für Zirkusse 
+HD 60364-7-740:2006 + A11:2017 
+ 
+-753 
+Heizanlagen mit Heizleitungen und 
+Flächenheizelemente 
+HD 60364-7-753:2014 + AC:2014 
+ 
+ 
+ 
+-7N54 
+Stromversorgung von ortsfesten Experimentierständen 
+in Unterrichtsräumen 
+OVE-Richtlinie R 2000-7-7N54:2022 
+x 
+ 
+ 
+-7N90 
+Garagen, überdachte Stellplätze, Parkdecks sowie 
+Arbeitsgruben oder Unterfluranlagen 
+OVE-Richtlinie R 2000-7-7N90:2022 
+x 
+ 
+ 
+-7N95 
+Stromversorgung von Aufzügen 
+OVE-Richtlinie R 2000-7-7N95:2022 
+x 
+ 
+ 
+-7N96 
+Stromversorgung von Fahrtreppen und Fahrsteige 
+OVE-Richtlinie R 2000-7-7N96:2022 
+x 
+a 
+Die im Nummernkreis fehlenden Nummerierungen sind derzeit von IEC/CENELEC nicht belegt. 
+b 
+Die in dieser Spalte aufgeführten Abschnitte wurden von CENELEC gegenüber IEC als separate Teile/Abschnitte publiziert. Die blau markierten Teile sind nationale Teile. 
+c 
+Basisdokument von CENELEC, IEC und national für die Erstellung des zughörigen Teils/Abschnitts von OVE E 8101:2025. 
+d 
+Neues Dokument gegenüber Ausgabe OVE E 8101:2019 + AC1:2020. 
+ 
+Die Dokumente der HD 60364-8 Reihe (Funktionale Aspekte) wurden in der vorliegenden Ausgabe von OVE E 8101 nicht berücksichtigt, befinden sich aber in 
+Bearbeitung. Für diese Teile wird ein gesondertes Dokument unter einer anderen Dokumentennummer veröffentlicht. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 7/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 7 
+Hinweise zur Anwendung dieser Norm 
+In einigen Absätzen wurden – im Rahmen der CENELEC-Regeln für die Übernahme von Harmonisierungs-
+dokumenten (HD) in das nationale Normenwerk – nationale Änderungen und Ergänzungen gegenüber den in 
+Tabelle I.1 und Tabelle I.2 angeführten Basis-Harmonierungsdokumenten vorgenommen. Diese nationalen 
+Änderungen/ Ergänzungen wurden an der entsprechenden Stelle farblich (blau) gekennzeichnet bzw. im 
+Nummerierungsschema mit der Bezeichnung „AT“ bezeichnet. Der Originaltext kann dem jeweiligen 
+Harmonisierungsdokument (HD) entnommen werden. 
+Nummerierungsschema 
+Das Nummerierungsschema von OVE E 8101 folgt sinngemäß dem System von IEC 60364-1:2005,  
+Tabelle A.1 (siehe Tabelle I.3). 
+Tabelle I.3 – Benennungen und Nummerierungsbeispiele 
+Benennung 
+Beispiel 
+Teil 
+1 
+4 
+4-41 
+7-701 
+Abschnitt 
+413 
+Unterabschnitt 
+415.1 
+(weitere) Unterabschnitte 
+514.3.2 
+Absatz 
+[keine Nummer] 
+Tabelle 
+Tabelle 41.1 
+Anhang 
+A 
+Teil 4-43, Anhang A, 
+Abschnitt 3 
+43.A.3 
+Nationale Ergänzungen 
+im Normentext 
+131.2.001.AT 
+Nationale Ergänzungen 
+im Anhang 
+NE 
+ 
+Die Abschnitts- und Unterabschnittsnummerierung, insbesondere die der Teile 7, folgt der Struktur von OVE  
+E 8101 mit den Teilen 1, 2, 4, 5 und weiteren. Fehlende Verweise auf Teile, Abschnitte, Unterabschnitte oder 
+Abschnitte bedeuten, dass die entsprechenden allgemeinen Anforderungen unverändert anzuwenden sind. 
+Begriffe 
+Die Begriffe und Definitionen aller Teile von OVE E 8101 wurden in Teil 2 zusammengeführt. Sie setzen sich 
+zusammen aus 
+– 
+den Begriffen und Definitionen gemäß dem internationalen elektrotechnischen Wörterbuch (IEV) 
+Teil 826:2022; 
+– 
+den ergänzenden Begriffen aus den einzelnen Teilen und Abschnitten von OVE E 8101; 
+– 
+einem deutsch- und englischsprachigen Stichwortverzeichnis. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 8/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 8 
+Normative Verweisungen und Literaturhinweise 
+Abweichend vom Standardaufbau von Normen sind normative Verweisungen im letzten Abschnitt von 
+OVE E 8101 mit der Bezeichnung „Verweisungen“ angeführt. 
+Die Literaturhinweise sind im letzten Abschnitt von OVE E 8101 mit der Bezeichnung „Verweisungen“ 
+angeführt. 
+Indizes für Zeichen in Gleichungen 
+In OVE E 8101 sind Indizes für Zeichen in Gleichungen, z. B. In für den Bemessungsstrom, in unterschiedlichen 
+Ausführungen (Groß-/Kleinbuchstaben) enthalten. Dies ist durch die unterschiedliche Schreibweise in den 
+zugrundeliegenden internationalen bzw. europäischen Produktnormen begründet. 
+Änderungen 
+Gegenüber OVE E 8101:2019 + AC1:2020 wurden folgende wesentlichen Änderungen vorgenommen, wobei 
+diese Zusammenstellung keinen Anspruch auf Vollständigkeit erhebt: 
+– 
+Einarbeitung neuer europäischer Basisdokumente der Reihe HD 60364 bzw. der OVE-Richtlinie R 2000 
+Reihe (siehe Tabelle I.1 und I.2, gemeinsam mit Index d). 
+– 
+Vereinheitlichung von Begriffen und Formulierungen, wie z. B. Ausschaltung, Abschaltung, Schutzleiter, 
+Schutzleiter. 
+– 
+Redaktionelle Prüfung aller Teile und Abschnitte. 
+– 
+Aktualisierung der Normenverweise. 
+– 
+Die Nationale Ergänzung 1.NE wurde überarbeitet und mit Unterabschnitt 514.5 (Schaltpläne und 
+Dokumentation) zusammengeführt. 
+– 
+Im Teil 4-41 wurden zusätzlich zur Übernahme der neuen HD-Ausgabe die Abschnitte Schutzpotential-
+ausgleich (gemeinsam mit Teil 5-54) und zusätzlicher Schutz (Zusatzschutz) überarbeitet. Die Tabelle mit 
+den Abschaltstromfaktoren wurde präzisiert. 
+– 
+Im Teil 4-42 wurden Hinweise auf die EU-Bauprodukteverordnung aufgenommen. 
+– 
+Im Teil 4-43 wurde der Anhang 43.A (Schutz von parallel geschalteten Leitern bei Überstrom) überabeitet. 
+Gemeinsam mit Teil 5-52. 
+– 
+Der Abschnitt 444 wurde grundsätzlich überarbeitet. 
+– 
+Im Teil 5-51 wurden Anpassungen an den Nationale Ergänzung 1.NE vorgenommen. 
+– 
+Im Teil 5-52 wurde der Abschnitt 525 (Spannungsabfall) grundsätzlich überarbeitet. 
+– 
+Im Teil 5-53 wurde zusätzlich zur Übernahme der neuen HD-Ausgabe ein Verbot für die Verwendung von 
+Fehlerstrom-Schutzeinrichtungen (RCD) vom Typ AC für den Anwendungsbereich der OVE E 8101 
+aufgenommen. 
+ 
+Es wurden zusätzliche Hinweise zur Anwendung von Überspannungsschutzgeräten (SPD) in DC-
+Systemen aufgenommen. 
+– 
+Im Teil 5-54 wurden die Anforderungen an das Erfordernis einer Erdungsanlage bei neuen Gebäuden mit 
+Teil 4-41 abgestimmt. Der Abschnitt 545 (Funktionserdung und Funktionspotentialausgleich) wurde 
+ergänzt. 
+– 
+Der Abschnitt 551 wurde grundsätzlich überarbeitet. Die Anforderungen für Zapfwellengeneratoren aus 
+dem Teil 7-705 wurden eingearbeitet. Ebenso wurden die wesentlichsten Anforderungen aus ÖNORM  
+E 2700 und ÖNORM E 2701 eingearbeitet. 
+– 
+Im Teil 5-56 wurden zusätzlich zur Übernahme der neuen HD-Ausgabe die Tabellen in Anhang 56.A an 
+die OIB-Richtlinie 2 angepasst und aktualisiert. 
+– 
+Im Teil 7-701 wurden zusätzlich zur Übernahme der neuen HD-Ausgabe Anforderungen für neuartige 
+Duschformen aufgenommen. 
+– 
+Im Teil 7-702 wurden Anforderungen für die Aufstellung von Schwimmbecken an die Grundstückgrenze 
+aufgenommen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 9/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 9 
+– 
+Im Teil 7-704 wurden zusätzlich zur Übernahme der neuen HD-Ausgabe Anforderungen an die Erdung 
+und die Anordnung der ersten Fehlerstrom-Schutzeinrichtung (RCD) aufgenommen. 
+– 
+Im Teil 7-705 wurde die Potentialsteuerung im Abschnitt Zusätzlicher Schutzpotentialausgleich neu 
+formuliert. Die Maßnahmen für Verteileranspeisungen bei Brandrisiken in Räumen oder Orten mit 
+besonderem Brandrisiko aufgrund der hergestellten, bearbeiteten oder gelagerten Materialien wurden 
+eindeutiger beschrieben. 
+– 
+Die Anwendungsbereiche und Anforderungen der Teile 7-709 und 7-730 wurden eindeutiger aufeinander 
+abgestimmt. 
+– 
+Im Teil 7-709 wurde der Anhang 709.B.5 (Einpolige Stromversorgung mit landseitigem Trenntrans-
+formator) gestrichen. 
+– 
+Im Teil 7-710 wurden zusätzlich zur Übernahme der neuen HD-Ausgabe die Inhalte der nationalen 
+Ergänzung sowie die Beispielbilder überarbeitet. 
+– 
+Die Anwendungsbereiche und Anforderungen der Teile 7-711 und 7-740 wurden eindeutiger aufeinander 
+abgestimmt. 
+– 
+Im Teil 7-712 wurden insbesondere die Anforderungen an die Kabel- und Leitungsanlage bzw. an die 
+elektrischen Verbindungen überarbeitet. 
+– 
+Im Teil 7-729 wurden die Anforderungen an den Schutz bei Störlichtbögen gestrichen und die 
+Anforderungen innerhalb von Bedienungs- und Instandhaltungsgänge an die Mindestdurchgangsbreiten 
+an die Anforderungen des Arbeitnehmerschutzes angepasst. 
+ 
+Besondere Änderungen/Ergänzungen im Dokument sind am linken Rand durch einen senkrechten Strich 
+gekennzeichnet. 
+Bei leeren Zeilen mit einem senkrechten Strich am linken Rand hat sich eine Änderung (Streichung) gegenüber 
+OVE E 8101:2019 + AC1:2020 ergeben. 
+ 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt 
+OVE E 8101:2019-01-01, 
+OVE E 8101/AC1:2020-05-01, 
+OVE E 8101:2019-01-01 + OVE E 8101/AC1:2020-05-01, 
+OVE-Richtlinie R 2000-5-55N01:2022-08-01, 
+OVE-Richtlinie R 2000-5-55N02:2022-08-01, 
+OVE-Richtlinie R 2000-7-7N54:2022-08-01, 
+OVE-Richtlinie R 2000-7-7N90:2022-08-01, 
+OVE-Richtlinie R 2000-7-7N95:2022-08-01, 
+OVE-Richtlinie R 2000-7-7N96:2022-08-01. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 10/852 =====
+OVE E 8101:2025-10-01 
+Vorwort – Seite 10 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 11/852 =====
+OVE E 8101:2025-10-01 
+Inhalt – Seite 1 
+Inhalt 
+ 
+Vorwort 
+Inhalt 
+Teil 1 
+Allgemeine Grundsätze 
+11 
+Anwendungsbereich 
+12 
+Normative Verweisungen 
+13 
+Allgemeine Grundsätze 
+20 
+Begriffe 
+Teil 2 
+Begriffe 
+Teil 3 
+Bestimmung allgemeiner Merkmale 
+30 
+Allgemeines 
+31 
+Zweck, Stromversorgung und Aufbau 
+32 
+Klassifizierung äußerer Einflüsse 
+33 
+Verträglichkeit 
+34 
+Instandhaltbarkeit 
+35 
+Einrichtungen für Sicherheitszwecke 
+36 
+Verfügbarkeit der Versorgung 
+Teil 4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+Teil 4-41 
+Schutz gegen elektrischen Schlag 
+Teil 4-42 
+Schutz gegen thermische Einflüsse 
+Teil 4-43 
+Schutz bei Überstrom 
+Teil 4-44 
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+Teil 4-45 
+Schutz gegen Unterspannung 
+Teil 4-46 
+Trennen und Schalten 
+Teil 5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+Teil 5-51 
+Allgemeine Bestimmungen 
+Teil 5-52 
+Kabel- und Leitungsanlagen 
+Teil 5-53 
+Schalt- und Steuergeräte 
+Teil 5-54 
+Erdungsanlagen und Schutzleiter 
+Teil 5-55 
+Andere elektrische Betriebsmittel 
+Teil 5-56 
+Einrichtungen für Sicherheitszwecke 
+Teil 6 
+Prüfung 
+Teil 7 
+Räume und Anlagen besonderer Art 
+700 
+ 
+Einleitung 
+Teil 7-701 
+Räume und Orte mit Badewanne oder Dusche 
+Teil 7-702 
+Schwimmbecken und Springbrunnen 
+Teil 7-703 
+Räume und Kabinen mit Saunaheizgeräten 
+Teil 7-704 
+Baustellen 
+Teil 7-705 
+Elektrische Anlagen von landwirtschaftlichen und gartenbaulichen     Betriebsstätten 
+Teil 7-706 
+Leitfähige Bereiche mit begrenzter Bewegungsfreiheit 
+Teil 7-708 
+Caravanplätze, Campingplätze und ähnliche Bereiche 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 12/852 =====
+OVE E 8101:2025-10-01 
+Inhalt – Seite 2 
+ 
+Teil 7-709 
+Marinas und ähnliche Bereiche 
+Teil 7-710 
+Medizinisch genutzte Bereiche 
+Teil 7-711 
+Ausstellungen, Shows und Stände 
+Teil 7-712 
+Photovoltaische Anlagen (PV-Anlagen) 
+Teil 7-713 
+Möbel 
+Teil 7-714 
+Beleuchtungsanlagen im Freien 
+Teil 7-715 
+Kleinspannungsbeleuchtungsanlagen 
+Teil 7-716 
+Gleichstrom-Kleinspannungs-Energieverteilung über Informations- und Kommunikationskabel 
+und Leitungen (IKT) 
+Teil 7-717 
+Ortsveränderliche oder transportable Baueinheiten 
+Teil 7-718 
+Öffentliche Einrichtungen und Arbeitsstätten 
+Teil 7-721 
+Elektrische Anlagen in Caravans und Motorcaravans 
+Teil 7-722 
+Stromversorgung von Elektrofahrzeugen 
+Teil 7-729 
+Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit eingeschränkter 
+Zugangsberechtigung 
+Teil 7-730 
+Elektrischer Landanschluss für Fahrzeuge der Binnenschifffahrt 
+Teil 7-740 
+Vorübergehend errichtete elektrische Anlagen für Aufbauten, Vergnügungseinrichtungen und 
+Buden auf Veranstaltungsplätzen und für Zirkusse 
+Teil 7-753 
+Heizanlagen mit Heizleitungen und Flächenheizelementen 
+Teil 7-7N54 
+Stromversorgung von ortsfesten Experimentierständen in Unterrichtsräumen 
+Teil 7-7N90 
+Garagen, überdachte Stellplätze, Parkdecks sowie Arbeitsgruben oder Unterfluranlagen 
+Teil 7-7N95 
+Stromversorgung von Aufzügen 
+Teil 7-7N96 
+Stromversorgung von Fahrtreppen und Fahrsteige 
+Verweisungen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 13/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 1 
+Teil 1 Allgemeine Grundsätze 
+Inhalt Teil 1 
+11 
+Anwendungsbereich 
+12 
+Normative Verweisungen 
+13 
+Allgemeine Grundsätze 
+131 
+Schutzanforderungen 
+131.1 
+Allgemeines 
+131.2 
+Schutz gegen elektrischen Schlag 
+131.3 
+Schutz gegen thermische Einflüsse 
+131.4 
+Schutz bei Überstrom 
+131.5 
+Schutz bei Fehlerströmen 
+131.6 
+Schutz bei Überspannungen, Unterspannungen und Maßnahmen gegen elektromagnetische 
+Einflüsse 
+131.7 
+Schutz bei Unterbrechung der Stromversorgung 
+132 
+Planung 
+132.1 
+Allgemeines 
+132.2 
+Merkmale der zur Verfügung stehenden Stromversorgung(en) 
+132.3 
+Art des Bedarfs 
+132.4 
+Elektrische Anlagen für Sicherheitszwecke oder Ersatzstromversorgungsanlagen 
+132.5 
+Äußere Einflüsse (Umgebungseinflüsse) 
+132.6 
+Leiterquerschnitte 
+132.7 
+Bauart von Kabel und Leitungen und deren Verlegearten 
+132.8 
+Betriebsmittel für den Schutz (Schutzeinrichtungen) 
+132.9 
+Not-Ausschaltung 
+132.10 
+Einrichtungen zum Trennen 
+132.11 
+Vermeidung gegenseitiger Beeinflussung 
+132.12 
+Zugänglichkeit elektrischer Betriebsmittel 
+132.13 
+Dokumentation der elektrischen Anlage 
+133 
+Auswahl elektrischer Betriebsmittel 
+133.1 
+Allgemeines 
+133.2 
+Merkmale 
+133.3 
+Bedingungen der Anlage 
+133.4 
+Vermeiden schädlicher Einflüsse 
+134 
+Errichten und Prüfen elektrischer Anlagen 
+134.1 
+Errichten 
+134.2 
+Erstprüfung 
+134.3 
+Wiederkehrende Prüfung 
+20 
+Begriffe 
+Nationale Ergänzung 1.NE (normativ)  Ergänzung zu 132.13 – Dokumentation elektrischer Anlagen –  
+Mindestumfang gemäß OVE E 8101 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 14/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 2 
+11 Anwendungsbereich 
+OVE E 8101 enthält Anforderungen für die Planung, Errichtung und Prüfung von elektrischen 
+Niederspannungsanlagen. Diese Anforderungen dienen dem Schutz von Personen, Nutztieren und 
+Sachwerten vor Gefahren und Beschädigungen, die bei bestimmungsgemäßer Nutzung elektrischer 
+Niederspannungsanlagen entstehen können. Außerdem tragen diese Anforderungen zum Erhalt der 
+ordnungsgemäßen Funktion bei. 
+ANMERKUNG AT 
+Die in dieser Bestimmung enthaltenen Maßnahmen haben zum Ziel, das Risiko möglichst gering 
+zu halten; in jedem Fall kleiner als das höchste vertretbare Risiko. 
+11.1 
+Diese Anforderungen gelten z. B. für Wohnungen und Wohngebäude, Gewerbe und Industrie, 
+Bürogebäude, öffentliche Gebäude, landwirtschaftliche und gartenbauliche Anwesen, Fertigteilgebäude, 
+Caravans, Campingplätze und ähnliche Plätze, Baustellen, Ausstellungen, Messen und andere vorübergehend 
+errichtete Anlagen, Marinas, Beleuchtungsanlagen im Freien und ähnliche Anlagen (siehe jedoch 11.3 e)), 
+medizinisch genutzte Bereiche, bewegliche oder transportable elektrische Anlagen, Photovoltaische Anlagen 
+(PV-Anlagen), Stromerzeugungseinrichtungen sowie zugehörige elektrische Anlagen. 
+11.2 
+OVE E 8101 gilt grundsätzlich für: 
+a) 
+Stromkreise, die mit Nennspannungen bis einschließlich AC 1 000 V oder DC 1 500 V versorgt werden; 
+ 
+Für AC sind die bevorzugten Nennfrequenzen, die in dieser Norm berücksichtigt sind, 50 Hz und 60 Hz. 
+Die Verwendung anderer Frequenzen (z. B. 16,7 Hz, 400 Hz) für besondere Zwecke ist nicht 
+ausgeschlossen. 
+b) 
+Stromkreise, die mit einer Spannung über AC 1 000 V betrieben werden, die von einer Anlage mit einer 
+Spannung bis AC 1 000 V abgeleitet ist, z. B. Beleuchtungsanlagen mit Entladungslampen, elektro-
+statische Sprühanlagen, jedoch nicht für die innere Verdrahtung von Geräten; 
+c) 
+alle Verdrahtungen sowie Kabel- und Leitungsanlagen, die nicht von Gerätenormen abgedeckt sind; 
+d) 
+alle elektrische Anlagen außerhalb von Gebäuden; 
+e) 
+feste Kabel- und Leitungsanlagen für Meldung, Steuerung und Ähnliches (ausgenommen die innere 
+Verdrahtung von Geräten); 
+ 
+ANMERKUNG AT  
+Anforderungen an Kabel- und Leitungsanlagen für die Informations- und Kommunikations-
+technik siehe OVE EN 50173 Reihe, OVE EN 50310 bzw. ÖVE-F 1. 
+f) 
+Erweiterung oder Änderung von Anlagen und ebenso von Teilen bestehender Anlagen, die von einer 
+Erweiterung oder Änderung beeinflusst sind. 
+ANMERKUNG 
+Die Anforderungen von OVE E 8101 gelten allgemein für elektrische Anlagen, jedoch kann in bestimmten 
+Fällen die Notwendigkeit bestehen, dass sie um Anforderungen oder Empfehlungen z. B. anderer Regelwerke ergänzt 
+werden (z. B. bei Anlagen mit explosiven Gasen, bei anderen Frequenzen als die angeführten Nennfrequenzen). 
+11.3 
+OVE E 8101 gilt nicht für: 
+a) 
+elektrische Bahnenergieversorgungssysteme, einschließlich Fahrzeugpark (rolling stock) und Signal-
+systeme; 
+b) 
+elektrische Ausrüstungen von Kraftfahrzeugen, ausgenommen solche, die in Teil 7 behandelt sind; 
+c) 
+elektrische Anlagen an Bord von Schiffen, Wassersportfahrzeugen und Fahrzeugen der Binnenschifffahrt 
+sowie auf beweglichen und fest verankerten Bohr- und Förderplattformen; 
+d) 
+elektrische Anlagen von Flugzeugen; 
+e) 
+öffentliche Beleuchtungsanlagen, die unmittelbar einen elektrischen Leiter des Verteilernetzes 
+mitbenutzen; 
+f) 
+Bergbauanlagen; 
+ 
+ 
+ANMERKUNG 1.AT 
+Für die Errichtung elektrischer Anlagen im Bergbau wird auf OVE-Richtlinie R 36-1 bzw. 
+OVE-Richtlinie R 36-2 hingewiesen. 
+g) 
+Betriebsmittel zur Funkentstörung, ausgenommen solche, die die Sicherheit der elektrischen Anlage 
+beeinflussen; 
+h) 
+Elektrozaunanlagen, Elektrofischereianlagen, Fischscheuchanlagen (Fischsperren); 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 15/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 3 
+i) 
+das äußere Blitzschutzsystem von baulichen Anlagen; 
+ 
+ANMERKUNG 
+Ereignisse atmosphärischen Ursprungs fallen unter den Anwendungsbereich, wenn sie auf die 
+elektrischen Anlagen Einfluss nehmen (z. B. im Hinblick auf die Auswahl von Überspannungsschutzgeräten). 
+j) 
+elektrische Ausrüstung von Aufzugsanlagen; 
+k) 
+elektrische Ausrüstung von Maschinen. 
+ 
+ANMERKUNG 2.AT 
+Dies schließt die Anwendung dieser Bestimmungen für derartige Anlagen nicht aus, soweit 
+dies gemäß den jeweils zutreffenden technischen Bestimmungen zulässig ist. 
+11.4 
+OVE E 8101 gilt grundsätzlich auch für Niederspannungsanlagen öffentlicher Verteiler- und 
+Übertragungsnetze sowie von Stromerzeugungsanlagen. Erforderliche Ausnahmen werden in den einzelnen 
+Abschnitten oder im Anwendungsbereich normativ festgelegt. 
+Niederspannungs-Wechselstromsysteme und Niederspannungs-Gleichstromsysteme von Hilfseinrichtungen, 
+Steuerungs- und Schutzsystemen für Hochspannungsanlagen sind gemäß OVE EN IEC 61936-1 nach 
+OVE E 8101 auszulegen. 
+11.5 
+Elektrische Betriebsmittel werden nur insoweit behandelt, wie es für deren Auswahl und Verwendung 
+in der Anlage erforderlich ist. Dies gilt auch für Kombinationen elektrischer Betriebsmittel, die den zutreffenden 
+Normen entsprechen. 
+12 Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+13 Allgemeine Grundsätze 
+Diese allgemeinen Grundsätze können in anderen Teilen, Abschnitten und Unterabschnitten der OVE E 8101 
+ergänzt, geändert oder ersetzt werden. 
+131 Schutzanforderungen 
+131.1 
+Allgemeines 
+Die in 131.2 bis 131.7 enthaltenen Anforderungen dienen dem Schutz von Personen, Nutztieren und 
+Sachwerten vor Gefahren und Beschädigungen, die bei bestimmungsgemäßer Nutzung elektrischer 
+Niederspannungsanlagen entstehen können. Die Anforderungen für die Sicherheit von Nutztieren sind in den 
+für die Nutztiere zugänglichen Räumen und Bereichen anzuwenden. 
+Bei elektrischen Anlagen können Gefahren auftreten, z. B. durch: 
+– 
+Körperströme; 
+– 
+überhöhte Temperaturen, die Verbrennungen, Brände und andere schädliche Einflüsse verursachen 
+können; 
+– 
+Zündung explosionsfähiger Atmosphären; 
+– 
+Unterspannungen, Überspannungen und elektromagnetische Einflüsse; 
+– 
+Unterbrechungen von Stromversorgungen und/oder Ausfall elektrischer Anlagen für Einrichtungen für 
+Sicherheitszwecke; 
+– 
+Lichtbögen, die Blendeffekte, außergewöhnliche Drücke, und/oder giftige Gase verursachen können; 
+– 
+mechanische Bewegungen von elektrisch angetriebenen Betriebsmitteln. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 16/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 4 
+131.2 
+Schutz gegen elektrischen Schlag 
+131.2.1 
+Basisschutz 
+Personen und Nutztiere müssen vor Gefahren geschützt werden, die durch das Berühren aktiver Teile der 
+Anlage entstehen können. 
+Dieser Schutz kann durch die Anwendung einer der folgenden Methoden erreicht werden: 
+– 
+Verhindern, dass ein Strom durch den Körper einer Person oder eines Nutztiers fließt; 
+– 
+Begrenzen der Höhe des Stroms, der durch einen Körper fließt, auf einen ungefährlichen Wert. 
+ANMERKUNG 
+Bei Niederspannungsanlagen, Systemen und elektrischen Betriebsmitteln entspricht der Basisschutz im 
+Allgemeinen dem Schutz gegen direktes Berühren. 
+131.2.2 
+Fehlerschutz 
+Personen und Nutztiere müssen vor Gefahren geschützt werden, die im Fehlerfall beim Berühren von Körpern 
+oder fremden leitfähigen Teilen entstehen können. 
+Dieser Schutz kann durch die Anwendung einer der folgenden Methoden erreicht werden: 
+– 
+Verhindern, dass ein durch einen Fehler verursachter Strom durch den Körper einer Person oder eines 
+Nutztiers fließt; 
+– 
+Begrenzung der Höhe des durch einen Fehler verursachten Stroms, der durch einen Körper einer Person 
+oder eines Nutztiers fließt, auf einen ungefährlichen Wert; 
+– 
+Begrenzung der Dauer des durch einen Fehler verursachten Stroms, der durch einen Körper einer Person 
+oder eines Nutztiers fließen kann, auf eine ungefährliche Dauer. 
+ANMERKUNG 
+Bei Niederspannungsanlagen, Systemen und elektrischen Betriebsmitteln entspricht der Fehlerschutz im 
+Allgemeinen dem Schutz bei indirektem Berühren. 
+131.2.001.AT 
+Zusätzlicher Schutz (Zusatzschutz) 
+In bestimmten Fällen müssen Personen und Nutztiere zusätzlich vor Gefahren geschützt werden, die sich 
+ergeben können, wenn der Basisschutz oder der Fehlerschutz oder beides nicht wirksam ist. 
+Dieser Schutz kann durch die Anwendung einer der folgenden Methoden erreicht werden: 
+– 
+Begrenzung der Höhe des durch einen Fehler verursachten Stroms, der durch einen Körper einer Person 
+oder eines Nutztiers fließt, auf einen ungefährlichen Wert; 
+– 
+Begrenzung der Dauer des durch einen Fehler verursachten Stroms, der durch einen Körper einer Person 
+oder eines Nutztiers fließen kann, auf eine ungefährliche Dauer. 
+ANMERKUNG 1.AT 
+Bei Niederspannungsanlagen, Systemen und elektrischen Betriebsmitteln wird der zusätzliche 
+Schutz (Zusatzschutz) bei besonderen äußeren Einflüssen, besonderer Nutzung oder in Räumen besonderer Art zur 
+Erreichung eines gleichwertigen Schutzes im Vergleich zu normalen Bedingungen angewendet. 
+ANMERKUNG 2.AT 
+Zusätzlicher Schutz (Zusatzschutz) wird gemäß den jeweiligen Anforderungen durch den Einbau 
+von Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A und/oder durch zusätzlichen 
+Schutzpotentialausgleich erreicht. 
+131.3 
+Schutz gegen thermische Einflüsse 
+Die elektrische Anlage muss so errichtet werden, dass das Risiko der Beschädigung von Sachwerten oder der 
+Entzündung von Materialien infolge hoher Temperatur oder infolge eines elektrischen Lichtbogens möglichst 
+gering ist. Zusätzlich darf während der bestimmungsgemäßen Nutzung der elektrischen Betriebsmittel für 
+Personen und Nutztiere kein Risiko von Verbrennungen bestehen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 17/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 5 
+131.4 
+Schutz bei Überstrom 
+Bei jedem Überstrom, der in Kabeln und Leitungen zu erwarten ist, müssen Personen und Nutztiere vor 
+Verletzungen und Sachwerte vor Beschädigungen infolge zu hoher Temperaturen oder elektromechanischen 
+Beanspruchungen geschützt sein. 
+Der Schutz kann durch Begrenzung des Überstroms auf einen zulässigen Wert oder durch Begrenzung der 
+Dauer des Überstroms erreicht werden. 
+131.5 
+Schutz bei Fehlerströmen 
+Alle Leiter, außer aktive Leiter, und alle anderen Teile, die dafür vorgesehen sind, Fehlerströme zu führen, 
+müssen dafür geeignet sein, diese Fehlerströme zu führen, ohne dass sie eine unzulässig hohe Temperatur 
+annehmen. 
+Elektrische Betriebsmittel, einschließlich Leiter, müssen bei Bedarf einen mechanischen Schutz gegen die 
+elektromechanischen Beanspruchungen durch Fehlerströme haben, der Verletzungen oder Schäden für 
+Personen, Nutztiere und Sachwerte verhindert. 
+Aktive Leiter müssen gegen Überströme im Fehlerfall gemäß 131.4 geschützt sein. 
+ANMERKUNG 
+Ströme im Schutzleiter und Erdungsleiter sollten besonders beachtet werden. 
+131.6 
+Schutz bei Überspannungen, Unterspannungen und Maßnahmen gegen elektromagnetische 
+Einflüsse 
+131.6.1 Personen und Nutztiere müssen gegen Verletzungen, und Sachwerte gegen alle schädigenden 
+Einwirkungen geschützt sein, die Folge eines Fehlers zwischen aktiven Teilen von Stromkreisen 
+unterschiedlicher Spannungen sind. 
+131.6.2 Personen und Nutztiere müssen vor Verletzungen, und Sachwerte vor Beschädigung durch Über-
+spannungen geschützt sein, die Folge von atmosphärischen Einwirkungen oder von Schaltüberspannungen 
+sind. 
+ANMERKUNG 
+Für den Schutz bei Blitzeinschlägen siehe Normenreihe ÖVE/ÖNORM EN 62305. 
+131.6.3 Personen und Nutztiere müssen vor Verletzungen, und Sachwerte vor Beschädigung durch 
+Unterspannung und die nachfolgende Wiederkehr der Spannung geschützt sein. 
+131.6.4 Die Anlage muss eine angemessene Störfestigkeit (Immunität) gegen elektromagnetische Einflüsse 
+aufweisen, sodass sie in der spezifizierten Umgebung ordnungsgemäß funktioniert. Die Auslegung der 
+elektrischen Anlage muss die zu erwartenden elektromagnetischen Aussendungen, die durch die Anlage oder 
+durch installierte Betriebsmittel erzeugt werden, so berücksichtigen, dass die Anlage für die verwendeten oder 
+angeschlossenen elektrischen Verbrauchsmittel geeignet ist. 
+131.7 
+Schutz bei Unterbrechung der Stromversorgung 
+In Fällen, in denen eine Gefahr oder ein Schaden durch eine Unterbrechung der Stromversorgung zu erwarten 
+ist, müssen geeignete Vorkehrungen in der Anlage oder bei den installierten elektrischen Betriebsmitteln 
+getroffen werden. 
+132 Planung 
+132.1 
+Allgemeines 
+Bei der Planung der elektrischen Anlage müssen die folgenden Punkte berücksichtigt werden: 
+– 
+Schutz von Personen, Nutztieren und Sachwerten gemäß Abschnitt 131; 
+– 
+ordnungsgemäße Funktion der elektrischen Anlage bei bestimmungsgemäßer Nutzung. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 18/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 6 
+Informationen, die als Grundlage für die Planung erforderlich sind, werden in 132.2 bis 132.5 angeführt. 
+Anforderungen, denen die Planung entsprechen muss, sind in 132.6 bis 132.12 festgelegt. 
+ANMERKUNG AT 
+Aufgrund von bautechnischen Erfordernissen können bereits bei der Planung Maßnahmen zur 
+Sicherung der Luftdichtheit der thermischen Gebäudehülle durch die Elektroinstallation erforderlich sein (siehe  
+OVE-Richtlinie R 7). 
+132.2 
+Merkmale der zur Verfügung stehenden Stromversorgung(en) 
+Wenn elektrische Anlagen in Übereinstimmung mit OVE E 8101 geplant werden, ist es notwendig, die 
+relevanten Merkmale der Stromversorgung(en) zu kennen. Eine entsprechende Information durch den 
+Netzbetreiber ist notwendig, um eine sichere elektrische Anlage gemäß OVE E 8101 zu planen. Diese 
+Merkmale der Stromversorgung sind in die Dokumentation aufzunehmen. Dazu zählt auch die Angabe der 
+Richtung des Drehfeldes. 
+ANMERKUNG AT 
+Wenn der Netzbetreiber die Merkmale der Stromversorgung ändert, kann dies Auswirkungen auf 
+die Sicherheit der elektrischen Anlage haben. 
+132.2.1 
+Stromart: 
+Wechselstrom (AC) oder Gleichstrom (DC) 
+132.2.2 
+Funktion der Leiter: 
+– 
+Für AC:  
+Außenleiter 
+ 
+ 
+ 
+ 
+Neutralleiter 
+ 
+ 
+ 
+ 
+Schutzleiter. 
+– 
+Für DC:  
+Außenleiter 
+ 
+ 
+ 
+ 
+Mittelleiter 
+ 
+ 
+ 
+ 
+Schutzleiter. 
+ANMERKUNG 
+In einem Leiter können mehrere Funktionen kombiniert sein. 
+132.2.3 
+Werte und Toleranzen: 
+– 
+Spannung und Spannungstoleranzen; 
+– 
+Spannungsunterbrechungen, Spannungsänderungen und Spannungsabsenkungen; 
+– 
+Frequenz und Frequenztoleranzen; 
+– 
+höchstzulässiger Strom; 
+– 
+Fehlerschleifenimpedanz des Netzes vor dem Speisepunkt; 
+– 
+zu erwartende Kurzschlussströme. 
+Für Normspannungen und -frequenzen siehe ÖVE/ÖNORM EN 60038. 
+132.2.4 Schutzvorkehrungen, die durch die Stromversorgung gegeben sind (z. B. Systeme nach Art der 
+Erdverbindungen oder Mittelpunkterdung). 
+132.2.5 Besondere Anforderungen der Elektrizitätsunternehmen. 
+132.3 
+Art des Bedarfs 
+Die Anzahl und Art der Stromkreise, die erforderlich sind für Beleuchtung, Heizung, Antriebe, Steuerung, 
+Meldung, Kommunikations- und Informationstechnik usw. Diese sind bestimmt durch: 
+– 
+Orte, an denen Leistungsbedarf besteht; 
+– 
+Belastungen, die in den verschiedenen Stromkreisen zu erwarten sind; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 19/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 7 
+– 
+tägliche und jährliche Schwankungen des Bedarfs; 
+– 
+jegliche besonderen Bedingungen, wie z. B. Oberschwingungsströme; 
+– 
+Anforderungen für Steuerung, Meldung, Informations- und Kommunikationstechnik usw.; 
+– 
+den zu erwartenden zukünftigen Bedarf, soweit spezifiziert. 
+132.4 
+Elektrische Anlagen für Sicherheitszwecke oder Ersatzstromversorgungsanlagen 
+Bei der Planung der elektrischen Anlage ist Folgendes besonders zu berücksichtigen: 
+– 
+Stromquelle (Art, Kenngrößen); 
+– 
+Stromkreise, die durch Einrichtungen für Sicherheitszwecke oder Ersatzstromversorgungsanlagen zu 
+versorgen sind. 
+132.5 
+Äußere Einflüsse (Umgebungseinflüsse) 
+Bei der Planung der elektrischen Anlage sind die äußeren Einflüsse, denen die elektrische Anlage ausgesetzt 
+ist, zu berücksichtigen, siehe Teil 5-51. 
+ANMERKUNG AT 
+Weitere Informationen zur Klassifizierung der äußeren Einflüsse sind in der Normenreihe 
+OVE EN IEC 60721 enthalten. 
+132.6 
+Leiterquerschnitte 
+Die Leiterquerschnitte müssen für normale Betriebsbedingungen und für Fehlerbedingungen bestimmt werden, 
+unter Berücksichtigung von 
+a) 
+der zugelassenen maximalen Leitertemperatur; 
+b) 
+dem zulässigen Spannungsabfall; 
+c) 
+den elektromechanischen Beanspruchungen, die bei Kurzschluss oder bei Fehlern gegen Erde zu 
+erwarten sind; 
+d) 
+anderen mechanischen Beanspruchungen, denen die Leiter ausgesetzt sein können; 
+e) 
+der maximalen Impedanz für das Funktionieren des Fehlerschutzes; 
+f) 
+der Verlegeart. 
+ANMERKUNG 
+Die Punkte a) bis f) betreffen hauptsächlich die Sicherheit der elektrischen Anlage. Querschnitte, die 
+größer als die für die Sicherheit geforderten sind, können aus wirtschaftlichen Gründen sinnvoll sein. 
+132.7 
+Bauart von Kabel und Leitungen und deren Verlegearten 
+Bei der Auswahl der Kabel und Leitungsarten und deren Verlegeart ist Folgendes zu berücksichtigen: 
+– 
+Beschaffenheit der Verlegeorte; 
+– 
+Beschaffenheit der Wände oder anderer Teile des Gebäudes, an/in denen Kabel- und Leitungssysteme 
+befestigt werden; 
+– 
+Zugänglichkeit der Kabel und Leitungen durch Personen und Nutztiere; 
+– 
+Spannung; 
+– 
+elektromechanische Beanspruchungen, die bei Kurzschluss oder bei Fehlern gegen Erde entstehen 
+können; 
+– 
+elektromagnetische Beeinflussungen; 
+– 
+andere Beanspruchungen, denen die Kabel und Leitungen während der Errichtung oder im Betrieb der 
+elektrischen Anlage ausgesetzt sein können. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 20/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 8 
+132.8 
+Betriebsmittel für den Schutz (Schutzeinrichtungen) 
+Die Kenngrößen der elektrischen Betriebsmittel für den Schutz müssen entsprechend ihrer Funktion festgelegt 
+werden, z. B. für den Schutz gegen die Wirkung von: 
+– 
+Überstrom (Überlast, Kurzschluss); 
+– 
+Strom bei Fehlern gegen Erde; 
+– 
+Überspannung; 
+– 
+Unterspannung und Spannungsausfall. 
+Die Schutzeinrichtungen müssen bei Werten des Stroms, der Spannung und der Zeit wirksam werden, die den 
+Kenngrößen der Stromkreise und den möglichen Gefahren entsprechen. 
+132.9 
+Not-Ausschaltung 
+Wenn es im Falle einer Gefahr notwendig ist, sofort die Stromversorgung zu unterbrechen, muss eine 
+Einrichtung so installiert werden, dass sie leicht erkannt sowie wirksam und schnell bedient werden kann. 
+132.10 Einrichtungen zum Trennen 
+Einrichtungen zum Trennen müssen so vorgesehen werden, dass sich elektrische Anlagen, Stromkreise oder 
+einzelne Betriebsmittel so ausschalten und/oder trennen lassen, wie es für Betrieb, Besichtigung und 
+Fehlersuche, Erproben und Messen, Instandhaltung und Reparatur gefordert ist. 
+132.11 Vermeidung gegenseitiger Beeinflussung 
+Elektrische Anlagen müssen so aufgebaut werden, dass eine gegenseitige unzumutbare Beeinflussung von 
+elektrischen und nicht-elektrischen Anlagen vermieden wird. 
+132.12 Zugänglichkeit elektrischer Betriebsmittel 
+Die elektrischen Betriebsmittel müssen so angeordnet werden, dass, soweit notwendig, Folgendes erfüllt ist: 
+– 
+ausreichender Platz für die Installation und für das spätere Ersetzen einzelner elektrischer Betriebsmittel; 
+– 
+zugängig für Betrieb, Besichtigen, Erproben und Messen, Instandhaltung und Reparatur. 
+132.13 Dokumentation der elektrischen Anlage 
+Für jede elektrische Anlage muss eine Dokumentation mitgeliefert werden (siehe auch Nationale Ergänzung 
+1.NE). 
+133 Auswahl elektrischer Betriebsmittel 
+133.1 
+Allgemeines 
+Jedes elektrische Betriebsmittel muss mit den gesetzlichen Bestimmungen, unter vorzugsweiser Anwendung 
+der entsprechenden Europäischen Normen (EN) oder entsprechenden Harmonisierungsdokumenten (HD), 
+oder entsprechenden nationalen Normen, übereinstimmen. 
+Bestehen keine geeigneten europäischen oder nationalen Normen oder Harmonisierungsdokumente, können 
+IEC-Normen oder nationale Normen anderer Länder angewendet werden. 
+Wenn es für ein bestimmtes elektrisches Betriebsmittel keine anwendbaren Normen gibt, muss die Auswahl 
+auf Basis einer besonderen Vereinbarung zwischen dem Errichter und der Person, die die betreffende Anlage 
+geplant hat, erfolgen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 21/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 9 
+133.2 
+Merkmale 
+Jedes ausgewählte elektrische Betriebsmittel muss angemessene Merkmale haben, die für die Werte und 
+Bedingungen geeignet sind, auf denen die Planung der elektrischen Anlage (siehe Abschnitt 132) beruht. 
+Diese elektrischen Betriebsmittel müssen insbesondere die folgenden Anforderungen aus den Unter-
+abschnitten 133.2.1, 133.2.2, 133.2.3 und 133.2.4 erfüllen. 
+ANMERKUNG AT 
+Aufgrund von bautechnischen Erfordernissen können bei der Auswahl der elektrischen 
+Betriebsmittel Maßnahmen zur Sicherung der Luftdichtheit der thermischen Gebäudehülle erforderlich sein (siehe  
+OVE-Richtlinie R 7). 
+133.2.1 
+Spannung 
+Elektrische Betriebsmittel müssen für die maximale Spannung (d. h. bei Wechselspannung der Effektivwert), 
+die erwartungsgemäß dauernd auftreten kann, sowie auch für die zu erwartenden Überspannungen (siehe 
+Abschnitte 442 und 534) geeignet sein. 
+ANMERKUNG 
+Für bestimmte elektrische Betriebsmittel kann es notwendig sein, die niedrigste wahrscheinlich 
+auftretende Spannung zu berücksichtigen. 
+133.2.2 
+Strom 
+Alle elektrischen Betriebsmittel müssen bezüglich des maximalen Dauerstroms (bei Wechselstrom der 
+Effektivwert), den das Betriebsmittel im bestimmungsgemäßen Betrieb zu führen hat, ausgewählt werden. 
+Darüber hinaus muss der Strom berücksichtigt werden, der wahrscheinlich bei anomalen Bedingungen zu 
+führen ist, sowie die Dauer während der dieser Stromfluss erwartet werden kann (z. B. während der 
+Ansprechzeit der Schutzeinrichtungen, falls solche vorhanden sind). 
+133.2.3 
+Frequenz 
+Wenn die Frequenz einen Einfluss auf die Kenngrößen elektrischer Betriebsmittel hat, muss die Bemessungs-
+frequenz der Betriebsmittel der Frequenz entsprechen, die in dem Stromkreis zu erwarten ist. 
+133.2.4 
+Nutzungsfaktoren 
+Elektrische Betriebsmittel müssen für die im jeweiligen Anwendungsfall zu erwartenden Betriebsbedingungen 
+unter Berücksichtigung von Nutzungsfaktoren, wie z. B. Einschaltdauer, Gleichzeitigkeitsfaktor, Gebrauchs-
+kategorie, Betriebsart, geeignet sein. 
+133.3 
+Bedingungen der Anlage 
+Alle elektrischen Betriebsmittel müssen so ausgewählt werden, dass sie den äußeren Einflüssen (siehe 132.5), 
+die charakteristisch für ihren Aufstellungs- oder Anwendungsort sind, und den Beanspruchungen, denen sie 
+ausgesetzt sind, sicher standhalten. 
+Wenn ein elektrisches Betriebsmittel aufgrund seiner Ausführung den Bedingungen des Aufstellungs- oder 
+Anwendungsorts nicht entspricht, darf es dennoch verwendet werden, wenn ein für diese Bedingungen 
+geeigneter Schutz als Teil der fertig gestellten elektrischen Anlage vorgesehen wird. 
+133.4 
+Vermeiden schädlicher Einflüsse 
+Alle elektrischen Betriebsmittel müssen so ausgewählt werden, dass sie keine schädlichen Einflüsse auf 
+andere Betriebsmittel verursachen oder die Stromversorgung im bestimmungsgemäßen Betrieb (einschließlich 
+Schaltvorgänge) beeinträchtigen. In diesem Zusammenhang können folgende Kenngrößen einen Einfluss 
+haben: 
+– 
+Leistungsfaktor; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 22/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 10 
+– 
+Einschalt- oder Anlaufstrom; 
+– 
+unsymmetrische Last; 
+– 
+Oberschwingungsströme; 
+– 
+transiente Überspannungen, die durch Betriebsmittel in der Anlage erzeugt werden. 
+134 Errichten und Prüfen elektrischer Anlagen 
+134.1 
+Errichten 
+134.1.1 Elektrische Anlagen müssen fachgerecht von geeignetem und qualifiziertem Personal und unter 
+Verwendung von geeignetem Material errichtet werden. Elektrische Betriebsmittel müssen gemäß den 
+Herstellerangaben eingesetzt und installiert werden. 
+134.1.2 Die Eigenschaften der elektrischen Betriebsmittel, die gemäß Abschnitt 133 festgelegt sind, dürfen 
+im Zuge der Errichtung der elektrischen Anlage nicht beeinträchtigt werden. 
+134.1.3 Leiter müssen in Übereinstimmung mit 514.3 gekennzeichnet sein. In Fällen, in denen eine 
+Kennzeichnung von Anschlussstellen notwendig ist, müssen diese gemäß OVE EN IEC 60445 bzw. gemäß 
+der Nationalen Ergänzung 51.NE gekennzeichnet sein. 
+134.1.4 
+Elektrische Verbindungen müssen sicher, dauerhaft und zuverlässig sein. 
+134.1.5 Alle elektrischen Betriebsmittel müssen so eingesetzt werden, dass die vorgesehenen Bedingungen 
+für die Wärmeabfuhr nicht beeinträchtigt werden. 
+134.1.6 Alle elektrischen Betriebsmittel, die hohe Temperaturen oder elektrische Lichtbögen verursachen 
+können, müssen so angeordnet oder abgeschirmt werden, dass das Risiko der Entzündung von brennbaren 
+Materialien möglichst klein ist. 
+Wenn durch die Temperatur von berührbaren Teilen eines elektrischen Betriebsmittels Verletzungen bei 
+Personen verursacht werden können, müssen diese Teile so angeordnet oder abgeschirmt werden, dass ihr 
+zufälliges Berühren verhindert ist. 
+134.1.7 In Fällen, in denen es für Sicherheitszwecke notwendig ist, müssen geeignete Warnzeichen und/oder 
+Warnhinweise vorgesehen werden. 
+ANMERKUNG AT 
+Siehe dazu auch Kennzeichnungsverordnung bzw. ÖNORM EN ISO 7010. 
+134.1.8 In Fällen, in denen eine Anlage unter Verwendung von neuen Materialien, Erfindungen oder 
+Methoden errichtet wird, die eine Abweichung von den Bestimmungen von OVE E 8101 darstellen, darf der 
+resultierende Sicherheitsgrad der Anlage nicht geringer sein als die bei Erfüllen von OVE E 8101 erreichte 
+Sicherheit. 
+134.1.9 Im Falle einer Erweiterung oder Änderung in einer bestehenden elektrischen Anlage muss festgestellt 
+werden, ob die Eigenschaften und Betriebsbedingungen der bestehenden Betriebsmittel für die geänderten 
+Anforderungen geeignet sind. Darüber hinaus müssen vorhandene Erdungs- und Potentialausgleichsanlagen, 
+falls diese für die angewendete Schutzmaßnahme in der erweiterten oder geänderten Anlage notwendig sind, 
+beurteilt und erforderlichenfalls angepasst werden. 
+134.1.001.AT 
+Soweit die Anwendung nichts anderes erfordert, ist ein Rechtsdrehfeld auszuführen. 
+Drehstrom-Steckvorrichtungen müssen so angeschlossen werden, dass sich ein Rechtsdrehfeld ergibt, wenn 
+man die Steckbuchsen von vorne im Uhrzeigersinn betrachtet. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 23/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 11 
+134.2 
+Erstprüfung 
+Um die ordnungsgemäße Ausführung der Arbeit in Übereinstimmung mit den zutreffenden technischen 
+Bestimmungen zu bestätigen, sind elektrische Anlagen gemäß Teil 6 zu prüfen, bevor sie in bestimmungs-
+gemäßen Betrieb genommen werden. 
+Dasselbe gilt auch bei Änderungen, Ergänzungen und Tausch von elektrischen Betriebsmitteln in bestehenden 
+elektrischen Anlagen im jeweils erforderlichen Umfang. 
+134.3 
+Wiederkehrende Prüfung 
+Jede elektrische Anlage bedarf in festzulegenden, angemessenen Zeitabständen einer Prüfung 
+(Wiederkehrende Prüfung). 
+Kriterien für die Festlegung der Zeitabstände sind z. B. Errichtungsdatum, Anlagenzustand, Änderung der 
+Anlagennutzung, Vorgaben durch Behörden. 
+ANMERKUNG AT 
+Die Durchführung von wiederkehrenden Prüfungen unterstützt den Anlagenbetreiber bei der 
+Erfüllung von gesetzlichen Anforderungen. 
+20 Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 24/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 12 
+Nationale Ergänzung 1.NE 
+(normativ) 
+ 
+Ergänzung zu 132.13 – 
+Dokumentation der elektrischen Anlage –  
+Mindestumfang gemäß OVE E 8101 
+1.NE.1 Allgemeines 
+Entsprechend dem Umfang der Anlage muss eine angemessene Dokumentation, z. B. Zeichnungen, Pläne, 
+Diagramme oder Tabellen mitgeliefert werden, aus der insbesondere ersichtlich sind: 
+– 
+die Art und der Aufbau der Stromkreise; 
+– 
+die Merkmale und Parameter der Schutz-, Trenn- und Schalteinrichtungen; 
+– 
+die Einbauorte aller Betriebsmittel, auch die Einbauorte von nicht sichtbaren Betriebsmitteln (z. B. in 
+Unterputzdosen eingebaute Klemmen, Fernschalter, Aktoren, Überspannungs-Schutzeinrichtungen) 
+ausgenommen Kabel und Leitungen. 
+ 
+ANMERKUNG 1.AT 
+Bei einfachen Anlagen kann die Raumbezeichnung als Ortsangabe ausreichen. 
+ 
+ANMERKUNG 2.AT 
+Bei umfangreicheren Anlagen kann für Prüfungen, Fehlersuche und spätere 
+Veränderungen eine Einzelidentifikation von Steckdosen und Auslässen in der Dokumentation sowie eine 
+Einzelkennzeichnung vor Ort erforderlich sein. 
+Die genannten Anforderungen gelten nicht für elektrische Anlagen für öffentliche Verteilungsnetze 
+(Verteilernetze). 
+Die verwendeten grafischen Symbole für Schaltpläne sollen IEC 60617 DB entsprechen. 
+1.NE.2 Mindestumfang der Dokumentation einer elektrischen Anlage 
+ANMERKUNG AT 
+Das Führen eines Inhaltsverzeichnisses wird empfohlen. 
+1.NE.2.1 Allgemeine Angaben 
+Folgende allgemeine Angaben sind erforderlich: 
+– 
+Bezeichnung und Widmung; 
+– 
+Beschreibung des Umfangs hinsichtlich der Räume und Anlagen besonderer Art; 
+– 
+Bescheid(e); 
+– 
+Adresse; 
+– 
+Planer der elektrischen Anlage; 
+– 
+Errichter der elektrischen Anlage; 
+– 
+Zeitraum der Errichtung der elektrischen Anlage; 
+– 
+(Verteilungs-)Netzbetreiber. 
+1.NE.2.2 Technische Inhalte 
+Folgende technische Inhalte sind mindestens erforderlich: 
+– 
+Angaben zur Art der Stromversorgung, z. B. Netzanschluss (Netzsystem, Spannung, Frequenz, 
+Anschlussleistung/Leistungsbedarf) gemäß Vereinbarung mit dem (Verteilungs-)Netzbetreiber; 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 25/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 13 
+– 
+Angaben zur elektrischen Anlage, z. B. 
+ 
+• 
+zu Schutzmaßnahmen und Schutzvorkehrungen gemäß den Teilen 4, 
+ 
+• 
+zum Blitzschutzsystem (LPS); 
+– 
+Angabe der ggf. berücksichtigten Übergangsregelungen z. B. hinsichtlich der Errichtungsbestimmungen; 
+– 
+Vereinbarungen 
+als 
+Grundlagen 
+zur 
+Anlagendimensionierung, 
+z. B. 
+Gleichzeitigkeitsfaktoren, 
+Umgebungstemperaturen, äußere Einflüsse; 
+– 
+Prüfbericht(e) der elektrischen Anlage. 
+1.NE.2.3 Zeichnungen, Pläne und Diagramme 
+Folgende Dokumente sind mindestens erforderlich: 
+– 
+Bestandspläne z. B. hinsichtlich der Auslässe; 
+ 
+ANMERKUNG AT Als Erleichterung für die Durchführung der Erstprüfung und von wiederkehrenden Prüfungen wird 
+zusätzlich das Erstellen einer Auflistung aller Auslässe mit den dazugehörigen Verteiler-, Stromkreis- und 
+Zählnummern empfohlen. 
+– 
+Schemata von Hauptleitungen und Verteilungsstromkreisen der Verbraucheranlage unter Angabe des 
+verwendeten Leitermaterials, der Querschnitte und der Maßnahmen für den Kurzschluss- und 
+Überlastschutz; 
+– 
+Schemata der Schutzpotentialausgleichsanlage und Plan der Erdungsanlage samt Querschnittsangaben; 
+– 
+Verteilerpläne mit z. B. Ansicht (Anordnung), Einstellwerten von Schaltgeräten, Klemmenlisten, Zu- und 
+Ableitungen mit Querschnittsangabe und den Maßnahmen für den Kurzschluss- und Überlastschutz; 
+– 
+Stromlaufpläne und Funktionsbeschreibung zu Steuerungen, z. B. bei Motorsteuerungen, Bussystemen; 
+– 
+Installationsorte aller Überspannungs-Schutzeinrichtungen (SPD); 
+– 
+Fotografische Dokumentation später nicht mehr zugänglicher Verbindungen und Bereiche, sofern 
+zutreffend. 
+Bei einfachen Anlagen können o. a. Angaben z. B. auch in Form von Auslassplänen einschließlich 
+dazugehöriger Listen gemacht werden. 
+1.NE.3 
+Zusätzliche Informationen für den Betrieb und die Wartung der elektrischen 
+Anlage 
+Folgende Zusätze sind erforderlich: 
+– 
+Einstelldaten, sofern nicht in anderen Dokumentationen enthalten; 
+– 
+Bedienungs-, Wartungs- und Prüfanleitungen;  
+ 
+ANMERKUNG AT Dazu zählen z. B. auch die kennzeichnenden Merkmale der Schnittstellen (z. B. Bemessungs-
+strom der Schaltgerätekombination), die Angaben zu Installationsumgebung von Niederspannungs-Schaltgeräte-
+kombinationen (siehe auch Normenreihe OVE EN 61439), Wartung und Überprüfung von Klemm-Anschlüssen 
+insbesondere bei Aluminiumleitern. 
+– 
+Herstellerangaben für die Montage und den Anschluss von elektrischen Betriebsmitteln z. B. Leuchten; 
+– 
+Technische Beschreibungen samt Funktionsprüfungs- und Prüfnachweise für besondere Anlagen(teile), 
+falls erforderlich mit entsprechenden Unterlagen. 
+1.NE.4 
+Aufbewahrung der Dokumentation 
+Die Dokumentation ist für die Lebensdauer der elektrischen Anlage aufzubewahren und bildet die Grundlage 
+für den Betrieb und für künftige Prüfungen. Sie ist bei Änderungen und Erweiterungen entsprechend zu 
+aktualisieren. 
+Soweit zweckdienlich, sind Teile der Dokumentation zusätzlich beim jeweiligen Anlagenteil aufzubewahren 
+(z. B. Verteilerpläne). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 26/852 =====
+OVE E 8101:2025-10-01 
+Teil 1 – Seite 14 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 27/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 1 
+Teil 2 Begriffe 
+Inhalt Teil 2 
+201 
+Allgemeines 
+202 
+Begriffe und Definitionen aus IEV Teil 826 
+203 
+Ergänzende Begriffe aus den Teilen von OVE E 8101 
+204 
+Nationale Ergänzung NE – Nationale Begriffe 
+205 
+Stichwortverzeichnis 
+ 
+Für die Anwendung dieses Dokuments gelten die folgenden Begriffe. 
+ISO und IEC stellen terminologische Datenbanken für die Verwendung in der Normung unter den folgenden 
+Adressen bereit: 
+– 
+IEC Electropedia: verfügbar unter http://www.electropedia.org/ 
+– 
+ISO Online Browsing Platform: verfügbar unter https://www.iso.org/obp/ui 
+201 Allgemeines 
+Dieser Teil enthält die deutsche Übersetzung der IEC 60050-826:2022 mit Modifizierungen und Nationalen 
+Ergänzungen. 
+Der Titel von IEC 60050-826:2022 lautet: „International Electrotechnical Vocabulary (IEV) – Part 826: Electrical 
+installations“. 
+Die Begriffe in den Einträgen werden in Deutsch und in Englisch (Kurzzeichen „en“) angegeben. 
+202 Begriffe und Definitionen aus IEV Teil 826 
+826-10 Kenngrößen von elektrischen Anlagen (en: characteristics of electrical installations) 
+826-10-01 
+elektrische Anlage 
+en  electrical installation 
+Aufbau von elektrischen Betriebsmitteln zur Erfüllung bestimmter Zwecke 
+826-10-02 
+Speisepunkt der elektrischen Anlage 
+en  origin resum electrical installation 
+Punkt, an dem elektrische Energie in die elektrische Anlage eingespeist wird 
+826-10-03 
+Umgebungstemperatur, <für elektrische Anlagen> 
+en  ambient temperature, <for electrical installations> 
+Temperatur der Luft oder eines anderen Mediums in der Umgebung von elektrischen Betriebsmitteln 
+826-10-04 
+Elektrische Anlage für Sicherheitszwecke 
+en  electric supply system for safety services 
+elektrische Anlage, die dazu bestimmt ist, die Funktion von elektrischen Betriebsmitteln aufrechtzuerhalten, die 
+von wesentlicher Bedeutung sind: 
+– 
+für die Sicherheit und Gesundheit von Personen und Nutztieren und/oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 28/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 2 
+– 
+zur Vermeidung von Schäden an der Umgebung und an anderen Betriebsmitteln, wenn dies durch 
+nationale Rechtsvorschriften verlangt wird 
+Anmerkung 1 zum Begriff: 
+Die elektrische Anlage für Sicherheitszwecke schließt die Stromquelle und die Stromkreise 
+bis zu den Klemmen der elektrischen Betriebsmittel ein. In bestimmten Fällen kann sie auch die Betriebsmittel einschließen. 
+826-10-05 
+Stromquelle für Sicherheitszwecke 
+en  electric source for safety services 
+Stromquelle, die dazu bestimmt ist, als Teil einer elektrischen Anlage für Sicherheitszwecke verwendet zu 
+werden 
+Anmerkung 1 zum Begriff: 
+Die Definition zu „Einrichtung für Sicherheitszwecke“ siehe 560.3.16. 
+826-10-06 
+Stromkreis für Sicherheitszwecke 
+en  electric circuit for safety services 
+Stromkreis, der dazu bestimmt ist, als Teil einer elektrischen Anlage für Sicherheitszwecke verwendet zu 
+werden 
+826-10-07 
+Ersatzstromversorgungsanlage 
+en  standby electric supply system 
+elektrische Anlage, die dazu bestimmt ist, bei einer Unterbrechung der üblichen Stromversorgung die Funktion 
+einer elektrischen Anlage oder von einem Teil oder mehreren Teilen einer Anlage aus anderen Gründen als 
+für Sicherheitszwecke aufrechtzuerhalten 
+826-10-08 
+Ersatzstromquelle 
+en  standby electric source 
+Stromquelle, die dazu bestimmt ist, bei einer Unterbrechung der üblichen Stromversorgung die Versorgung 
+einer elektrischen Anlage oder von einem oder mehreren Teilen einer Anlage aus anderen Gründen als für 
+Sicherheitszwecke aufrechtzuerhalten 
+826-10-09 
+Bedienungsgang 
+en  operating gangway 
+Gang, der zum Bedienen, wie Schalten, Steuern, Einstellen oder Überwachen, von elektrischen Einrichtungen 
+benutzt wird 
+826-10-10 
+Instandhaltungsgang 
+en  maintenance gangway 
+Gang, der für den Zugang zu elektrischen Betriebsmitteln für deren Instandhaltung benutzt wird 
+826-10-11 
+kombinierte Erzeugungs-/Verbrauchsanlage 
+en  prosuming electrical installation, PEI 
+Elektrische Anlage, die in der Lage ist, elektrische Energie zu erzeugen und zu verbrauchen 
+826-11 Spannungen und Ströme (en  voltages and currents) 
+826-11-01 
+Nennspannung, <einer elektrischen Anlage> 
+en  nominal voltage, <of an electrical installation> 
+Spannungswert, der eine elektrische Anlage oder einen Teil davon bezeichnet 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 29/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 3 
+826-11-02 
+Fehlerspannung 
+en  fault voltage 
+Spannung zwischen einer gegebenen Fehlerstelle und der Bezugserde bei einem Isolationsfehler 
+826-11-03 
+unbeeinflusste Berührungsspannung 
+en  prospective touch voltage 
+Spannung zwischen gleichzeitig berührbaren leitfähigen Teilen, wenn solche leitfähigen Teile von einem 
+Menschen oder einem Nutztier nicht berührt werden 
+[QUELLE: IEV 195-05-09] 
+826-11-04 
+vereinbarter Grenzwert der unbeeinflussten Berührungsspannung 
+en  conventional prospective touch voltage limit 
+vereinbarter Höchstwert der unbeeinflussten Berührungsspannung, der bei festgelegten äußeren Einfluss-
+bedingungen zeitlich unbegrenzt bestehen bleiben darf 
+[QUELLE: IEV 195-05-10] 
+826-11-05 
+Berührungsspannung 
+en  touch voltage, <effective> 
+Spannung zwischen leitfähigen Teilen, wenn diese gleichzeitig von einem Menschen oder einem Nutztier 
+berührt werden 
+Anmerkung 1 zum Begriff: 
+Der Wert der Berührungsspannung kann durch die Impedanz des mit diesen leitfähigen 
+Teilen in elektrischem Kontakt stehenden Menschen oder Nutztiers merklich beeinflusst werden. 
+[QUELLE: IEV 195-05-11] 
+826-11-06 
+Spannung Außenleiter – Außenleiter 
+en  line-to-line voltage 
+Spannung zwischen zwei Außenleitern an einem gegebenen Punkt eines Stromkreises 
+[QUELLE: IEV 195-05-01] 
+826-11-07 
+Spannung Außenleiter – Neutralleiter 
+en  line-to-neutral voltage 
+Spannung zwischen einem Außenleiter und dem Neutralleiter an einem gegebenen Punkt eines 
+Wechselstromkreises 
+[QUELLE: IEV 195-05-02, mod.] 
+826-11-08 
+Spannung Außenleiter – Erde 
+en  line-to-earth voltage 
+Spannung zwischen einem Außenleiter und der Bezugserde an einem gegebenen Punkt eines Stromkreises 
+[QUELLE: IEV 195-05-03, mod.] 
+826-11-09 
+Erdoberflächenspannung, <zur Erde> 
+en  earth-surface voltage 
+Spannung zwischen einem festgelegten Punkt auf der Erdoberfläche und der Bezugserde 
+[QUELLE: IEV 195-05-08] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 30/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 4 
+826-11-10 
+vorgesehener Betriebsstrom, <eines Stromkreises> 
+en  design current, <of an electric circuit> 
+Strom, den ein Stromkreis im ungestörten Betrieb führen soll 
+826-11-11 
+Fehlerstrom 
+en  fault current 
+Strom, der über eine gegebene Fehlerstelle aufgrund eines Isolationsfehlers fließt 
+826-11-12 
+Berührungsstrom 
+en  touch current 
+Strom durch den Körper eines Menschen oder Nutztieres, wenn dieser Körper ein oder mehrere berührbare 
+Teile einer elektrischen Anlage oder eines elektrischen Betriebsmittels berührt 
+[QUELLE: IEV 195-05-21] 
+826-11-13 
+Dauerstrombelastbarkeit 
+en  current-carrying capacity 
+Höchstwert des Stroms, den ein Leiter, eine Einrichtung oder ein Gerät unter festgelegten Bedingungen 
+dauernd führen kann, ohne dass die Beharrungstemperatur des Leiters, der Einrichtung oder des Geräts einen 
+festgelegten Grenzwert überschreitet 
+826-11-14 
+Überstrom 
+en  overcurrent 
+Wert des Stroms, der den Bemessungswert übersteigt 
+[QUELLE: IEV 151-15-28] 
+826-11-15 
+Überlaststrom, <eines elektrischen Stromkreises> 
+en  overload current, <of an electric circuit> 
+Überstrom, der in einem Stromkreis auftritt und nicht durch einen Kurzschluss oder einen Erdschluss 
+hervorgerufen wird 
+826-11-16 
+Kurzschlussstrom 
+en  short-circuit current 
+Strom im Kurzschlussfall 
+[QUELLE: IEV 195-05-18] 
+826-11-17 
+vereinbarter Wert des Auslösestroms, <einer Schutzeinrichtung> 
+en  conventional operating current, <of a protective device> 
+festgelegter Wert des elektrischen Stroms, der zu einer Auslösung einer Schutzeinrichtung innerhalb einer 
+festgelegten Zeitspanne führt 
+826-11-18 
+vereinbarter Wert des Nichtauslösestroms, <einer Schutzeinrichtung> 
+en  conventional non-operating current, <of a protective device> 
+festgelegter Wert des elektrischen Stroms, den die Schutzeinrichtung über eine festgelegte Zeitdauer führen 
+kann, ohne auszulösen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 31/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 5 
+826-11-19 
+Differenzstrom, <in einer elektrischen Anlage> 
+en  residual current, <in an electrical installation> 
+vektorielle Summe der Ströme, die zur gleichen Zeit in allen aktiven Leitern an einem gegebenen Punkt eines 
+Stromkreises in einer elektrischen Anlage fließen 
+826-11-20 
+Ableitstrom 
+en  leakage current 
+Strom gegen Erde in einem unerwünschten Strompfad unter üblichen Betriebsbedingungen 
+[QUELLE: IEV 195-05-15] 
+826-11-21 
+Schutzleiterstrom 
+en  protective conductor current 
+Strom, der als Ableitstrom oder als elektrischer Strom infolge eines Isolationsfehlers im Schutzleiter auftritt 
+[QUELLE: IEV 195-05-22] 
+826-11-22 
+Steh-Stoßspannung 
+en  impulse withstand voltage 
+höchster Wert der Stoßspannung von festgelegter Form und Polarität, welche unter festgelegten Bedingungen 
+zu keinem Durchschlag der Isolierung führt 
+[QUELLE: OVE EN IEC 60664-1:2022, 3.1.15] 
+826-11-23 
+Erdfehlerstrom 
+en  earth fault current 
+Strom, der aufgrund eines Isolationsfehlers zur Erde fließt 
+[QUELLE: IEV 195-05-23] 
+826-12 Elektrischer Schlag und Schutzmaßnahmen (en  electric shock and protective measures) 
+826-12-01 
+elektrischer Schlag 
+en  electric shock 
+physiologische Wirkung, hervorgerufen von einem elektrischen Strom durch den Körper eines Menschen oder 
+Nutztieres 
+[QUELLE: IEV 195-01-04] 
+ 
+826-12-05 
+Basisschutz 
+en  basic protection 
+Schutz gegen elektrischen Schlag im normalen Zustand 
+[QUELLE: IEV 195-06-01] 
+826-12-06 
+Fehlerschutz 
+en  fault protection 
+Schutz gegen elektrischen Schlag im Zustand eines Einzelfehlers 
+[QUELLE: IEV 195-06-02] 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 32/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 6 
+826-12-07 
+zusätzlicher Schutz (Zusatzschutz) 
+en  additional protection 
+ergänzende Maßnahme zum Verringern der Gefahren für Personen und Nutztiere, die sich ergeben können, 
+wenn entweder der Schutz gegen direktes Berühren oder der Schutz bei indirektem Berühren oder beides nicht 
+wirksam sind 
+[QUELLE: ETV 2020, § 2 (2)] 
+826-12-08 
+Aktives Teil 
+en  live part 
+leitfähiges Teil, das dazu vorgesehen ist, im normalen Betrieb unter Spannung zu stehen; dazu zählen auch 
+Neutralleiter und Mittelpunktleiter. PEN-Leiter, PEM-Leiter und PEL-Leiter zählen jedoch nicht dazu 
+[QUELLE: IEV 195-02-19] 
+826-12-09 
+leitfähiges Teil 
+en  conductive part 
+Teil, das elektrischen Strom führen kann 
+[QUELLE: IEV 195-06-06] 
+826-12-10 
+Körper, <eines elektrischen Betriebsmittels> 
+en  exposed-conductive-part 
+leitfähiges Teil eines elektrischen Betriebsmittels, das berührt werden kann und unter normalen Bedingungen 
+nicht unter Spannung steht, aber unter Spannung geraten kann, wenn die Basisisolierung versagt 
+[QUELLE: IEV 195-06-10] 
+826-12-11 
+fremdes leitfähiges Teil 
+en  extraneous-conductive-part 
+leitfähiges Teil, das nicht zur elektrischen Anlage gehört, dass jedoch ein elektrisches Potential, im Allgemeinen 
+das einer örtlichen Erde, einführen kann 
+[QUELLE: IEV 195-06-11] 
+Anmerkung 1.AT zum Begriff:  
+Solche Teile können beispielsweise sein: 
+– 
+Metallkonstruktionen von Gebäuden; 
+– 
+Gas-, Wasser- und Heizungsrohre usw. aus Metall und mit diesen verbundenen nicht elektrischen Einrichtungen 
+(Heizkörper, Feuerungsanlagen, metallene Ausgüsse u. dgl.); 
+– 
+nichtisolierende Fußböden und Wände, wenn über diese ein elektrisches Potential eingeführt werden kann. 
+Metallene Badewannen mit Wasseranschlüssen und -abläufen aus Isolierstoffrohren sind keine fremden 
+leitfähigen Teile. 
+826-12-12 
+Gleichzeitig berührbare leitfähige Teile 
+en  simultaneously accessible parts 
+leitfähige Teile, welche gleichzeitig durch eine Person oder durch ein Nutztier berührt werden können 
+Anmerkung 1 zum Begriff: 
+Gleichzeitig berührbare leitfähige Teile können sein: 
+– 
+aktive Teile; 
+– 
+Körper; 
+– 
+fremde leitfähige Teile; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 33/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 7 
+– 
+Schutzleiter; 
+– 
+Erdreich oder leitfähiger Fußboden. 
+[QUELLE: IEV 195-06-32] 
+826-12-13 
+gefährliches aktives Teil 
+en  hazardous-live-part 
+aktives Teil, von dem unter bestimmten Bedingungen ein schädlicher elektrischer Schlag ausgehen kann 
+[QUELLE: IEV 195-06-05] 
+826-12-14 
+Basisisolierung 
+en  basic insulation 
+Isolierung, die den Basisschutz bildet 
+Anmerkung 1 zum Begriff: 
+Der Begriff „Basisisolierung“ gilt nicht für eine Isolierung, die ausschließlich 
+Funktionszwecken dient. 
+[QUELLE: IEV 195-06-06] 
+826-12-15 
+zusätzliche Isolierung 
+en  supplementary insulation 
+unabhängige Isolierung, die zusätzlich zur Basisisolierung den Fehlerschutz bildet 
+[QUELLE: IEV 195-06-07] 
+826-12-16 
+doppelte Isolierung 
+en  double insulation 
+Isolierung, die aus der Basisisolierung und der zusätzlichen Isolierung besteht 
+[QUELLE: IEV 195-06-08] 
+826-12-17 
+Verstärkte Isolierung 
+en  reinforced insulation 
+Isolierung, die im gleichen Maße Schutz gegen elektrischen Schlag bietet wie die doppelte Isolierung 
+Anmerkung 1 zum Begriff: 
+Die verstärkte Isolierung kann aus mehreren Schichten bestehen, die nicht einzeln als 
+Basisisolierung oder zusätzliche Isolierung geprüft werden können. 
+[QUELLE: IEV 195-06-09] 
+826-12-18 
+automatische Abschaltung der Stromversorgung 
+en  automatic disconnection of supply 
+Unterbrechung eines oder mehrerer Außenleiter durch selbsttätiges Ansprechen einer Schutzeinrichtung im 
+Falle eines Fehlers 
+[QUELLE: IEV 195-04-10] 
+826-12-19 
+Handbereich 
+en  arm‘s reach 
+der Berührung zugänglicher Bereich, der sich von Standflächen aus erstreckt, die üblicherweise betreten 
+werden, und dessen Grenzen eine Person in alle Richtungen ohne Hilfsmittel mit der Hand erreichen kann 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 34/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 8 
+[QUELLE: IEV 195-06-12] 
+Anmerkung 1.AT zum Begriff:  
+Die vereinbarte Begrenzung des Handbereichs ist in Teil 4-41 dargestellt. 
+826-12-20 
+Umhüllung 
+en  enclosure 
+Gehäuse, das die Schutzart sicherstellt, die für den vorgesehenen Verwendungszweck geeignet ist 
+[QUELLE: IEV 151-13-08] 
+826-12-21 
+elektrische Umhüllung 
+en  electrical enclosure 
+Umhüllung, die Schutz gegen vorhersehbare Gefahren durch Elektrizität bietet 
+[QUELLE: IEV 195-06-13] 
+826-12-22 
+elektrische Schutzumhüllung 
+en  protective enclosure, <electrically> 
+Umhüllung, die die inneren Teile eines elektrischen Betriebsmittels umgibt, um den Zugang zu oder Zugriff auf 
+gefährliche aktive Teile aus jeder Richtung zu verhindern 
+[QUELLE: IEV 195-06-14] 
+826-12-23 
+elektrische Schutzabdeckung 
+en  protective barrier, <electrically> 
+Teil, das Menschen oder Nutztieren Schutz vor Berühren von gefährlichen aktiven Teilen aus jeder üblichen 
+Zugangsrichtung bietet 
+[QUELLE: IEV 195-06-15] 
+826-12-24 
+elektrisches Schutzhindernis 
+en  protective obstacle, <electrically> 
+Teil, das Menschen oder Nutztiere Schutz vor unbeabsichtigter Berührung von gefährlichen aktiven Teilen 
+bietet, nicht aber bei Berührung bei einer absichtlichen Handlung 
+[QUELLE: IEV 195-06-16] 
+826-12-25 
+elektrischer Schutzschirm 
+en  protective screen, <electrically> 
+leitfähiger Schirm, der zum Auseinanderhalten eines Stromkreises und/oder elektrischer Leiter von 
+gefährlichen aktiven Teilen verwendet wird 
+[QUELLE: IEV 195-06-17] 
+826-12-26 
+elektrische Schutzschirmung 
+en  protective screening, <electrically> 
+Auseinanderhalten von Stromkreisen und/oder Leitern von gefährlichen aktiven Teilen mittels eines 
+elektrischen Schutzschirms, der mit der Schutzpotentialausgleichsanlage verbunden ist und für den Schutz 
+gegen elektrischen Schlag vorgesehen ist 
+[QUELLE: IEV 195-06-18] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 35/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 9 
+826-12-27 
+elektrische Schutztrennung 
+en  electrical seperation 
+Schutzmaßnahme, bei der gefährliche aktive Teile eines Stromkreises gegenüber allen anderen Stromkreisen 
+und Teilen gegen örtliche Erde und gegen Berührung isoliert sind 
+[QUELLE: IEV 195-06-31] 
+826-12-28 
+einfache elektrische Trennung 
+en  simple seperation 
+Trennung zwischen elektrischen Stromkreisen oder zwischen einem elektrischen Stromkreis und örtlicher Erde 
+durch Basisisolierung 
+[QUELLE: IEV 195-06-30] 
+826-12-29 
+elektrisch sichere Trennung, sichere Trennung 
+en  protective seperation, <electrically> 
+gegenseitige Trennung von Stromkreisen mittels: 
+– 
+doppelter Isolierung oder 
+– 
+Basisisolierung und elektrischer Schutzschirmung oder 
+– 
+verstärkter Isolierung 
+[QUELLE: IEV 195-06-19] 
+826-12-30 
+Kleinspannung, ELV 
+en  extra-low-voltage, ELV 
+Spannung, die den Maximalwert der unbeeinflussten Berührungsspannung nicht überschreitet, der unter 
+vorgegebenen Bedingungen externer Einflüsse für eine unbestimmte Dauer zulässig ist 
+[QUELLE: IEV 195-05-24] 
+826-12-31 
+SELV-System 
+en  SELV system 
+elektrisches System, in dem die Spannung die Grenzwerte für Kleinspannung (ELV) nicht überschreiten kann: 
+– 
+unter üblichen Bedingungen und 
+– 
+unter Einzelfehlerbedingungen, auch bei Erdschlüssen in anderen Stromkreisen 
+Anmerkung 1 zum Begriff: 
+SELV ist die Abkürzung für „safety extra low voltage”. 
+[QUELLE: IEV 195-06-28] 
+826-12-32 
+PELV-System 
+en  PELV system 
+elektrisches System, in dem die Spannung die Grenzwerte für Kleinspannung (ELV) nicht überschreiten kann: 
+– 
+unter üblichen Bedingungen und 
+– 
+unter Einzelfehlerbedingungen, ausgenommen bei Erdschlüssen in anderen elektrischen Stromkreisen 
+Anmerkung 1 zum Begriff: 
+PELV ist die Abkürzung für „protective extra low voltage“. 
+[QUELLE: IEV 195-06-29] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 36/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 10 
+826-12-33 
+Stromquelle mit begrenztem Strom 
+en  limited-current source 
+Einrichtung, die einen Stromkreis versorgt: 
+– 
+mit einem Beharrungsstrom und mit einer elektrischen Ladung, die auf ungefährliche Werte begrenzt sind 
+und 
+– 
+mit einer elektrisch sicheren Trennung zwischen dem Ausgang der Einrichtung und den gefährlichen 
+aktiven Teilen 
+[QUELLE: IEV 195-06-28] 
+826-12-34 
+Schutz durch Begrenzung des Beharrungsstroms und der Entladungsenergie 
+en  protection by limitation of steady-state current and electric charge 
+ 
+Die Definition aus dem IEV wurde in Österreich nicht übernommen. 
+826-12-35 
+Schutzimpedanz 
+en  protective impedance device 
+ 
+Die Definition aus dem IEV wurde in Österreich nicht übernommen. 
+826-12-36 
+nicht leitende Umgebung 
+en  non-conducting environment 
+Umgebung mit hoher Impedanz gegen Erde und ohne geerdete leitfähige Teile 
+Anmerkung 1 zum Begriff: 
+Isolierende Wände und Böden bieten eine hohe Impedanz gegen Erde. 
+[QUELLE: IEV 195-06-21] 
+826-12-37 
+Einzelfehlerbedingung (in einer elektrischen Anlage) 
+en  single fault condition 
+Zustand, in dem eine Vorkehrung für den Schutz gegen elektrischen Schlag fehlerhaft ist oder ein Fehler 
+vorhanden ist, der eine Gefahr darstellen könnte 
+Anmerkung 1 zum Begriff: 
+Wenn ein Einzelfehler zu einem oder mehreren anderen Einzelfehlern führt werden alle 
+zusammen als eine Einzelfehlerbedingung betrachtet. 
+826-12-38 
+Schutzvorkehrung 
+en  protective provision 
+unabhängige Vorkehrung zum Schutz gegen elektrischen Schlag unter bestimmten Bedingungen 
+826-12-39 
+Schutzmaßnahme 
+en  protective measure 
+geeignete Kombination von Schutzvorkehrungen 
+826-12-40 
+verstärkte Schutzvorkehrung 
+en  enhanced protective provision 
+Schutzvorkehrung, die eine Zuverlässigkeit des Schutzes bietet, die nicht geringer ist als die zweier 
+unabhängiger Schutzvorkehrungen 
+[QUELLE: IEV 195-06-27] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 37/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 11 
+826-13 Erdung und Verbindungen (en  earthing and bonding) 
+826-13-01 
+Bezugserde 
+en  reference earth 
+elektrisch leitfähig angesehener Teil der Erde, der außerhalb des Einflussbereichs von Erdungsanlagen liegt 
+und dessen elektrisches Potential vereinbarungsgemäß gleich null gesetzt wird 
+Anmerkung 1 zum Begriff: 
+Unter „Erde“ ist hier der Planet mit seiner gesamten Substanz zu verstehen. 
+[QUELLE: IEV 195-01-01] 
+826-13-02 
+örtliche Erde 
+en  local earth 
+Teil der Erde, der sich in elektrischem Kontakt mit einem Erder befindet und dessen elektrisches Potential nicht 
+notwendigerweise null ist 
+[QUELLE: IEV 195-01-03] 
+826-13-03 
+Erden 
+en  earth 
+Herstellen einer elektrischen Verbindung zwischen einem leitfähigen Teil und der örtlichen Erde 
+Anmerkung 1 zum Begriff: 
+Die Verbindung zur örtlichen Erde kann 
+– 
+beabsichtigt oder 
+– 
+unbeabsichtigt oder versehentlich 
+und kann dauerhaft oder zeitweilig sein. 
+[QUELLE: IEV 195-01-08] 
+826-13-04 
+Erdungsanlage 
+en  earthing arrangement 
+die Anordnung aller elektrischen Mittel, die für das Erden eines Systems, einer Anlage oder eines 
+Betriebsmittels verwendet werden 
+Anmerkung 1 zum Begriff: 
+Die elektrische Verbindung und die für die Erdung verwendeten Betriebsmittel sind 
+Beispiele für elektrische Mittel. 
+[QUELLE: IEV 195-02-20] 
+826-13-05 
+Erder 
+en  earth electrode 
+leitfähiges Teil, das direkt oder über ein leitendes Zwischenmedium in elektrischem Kontakt mit der örtlichen 
+Erde steht 
+[QUELLE: IEV 195-02-01] 
+826-13-06 
+Erdernetz 
+en  earth-electrode network 
+Teil einer Erdungsanlage, der nur die Erder und ihre elektrischen Verbindungen untereinander umfasst 
+[QUELLE: IEV 195-02-21] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 38/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 12 
+826-13-07 
+unabhängiger Erder 
+en  independent earth electrode 
+Erder, der sich in einem solchen Abstand von anderen Erdern befindet, dass sein elektrisches Potential nicht 
+nennenswert von Strömen zwischen der Erde und den anderen Erdern beeinflusst wird 
+[QUELLE: IEV 195-02-02] 
+826-13-08 
+Fundamenterder 
+en  foundation earth electrode 
+leitfähiges Teil, das unter einem Gebäudefundament in das Erdreich oder bevorzugt im Beton eines 
+Gebäudefundaments, im Allgemeinen als geschlossener Ring, eingebettet ist 
+826-13-09 
+Schutzerdung 
+en  protective earthing 
+Erdung zu Zwecken der elektrischen Sicherheit 
+[QUELLE: IEV 195-01-11] 
+826-13-10 
+Funktionserdung 
+en  functional earthing 
+Erdung zu anderen Zwecken als der elektrischen Sicherheit 
+[QUELLE: IEV 195-01-13] 
+826-13-11 
+Betriebserdung eines Netzes 
+en  system earthing, <power> 
+Funktionserdung und Schutzerdung in einem elektrischen Netz 
+[QUELLE: IEV 195-01-14] 
+826-13-12 
+Erdungsleiter 
+en  earthing conductor 
+Leiter, der eine leitfähige Verbindung zwischen einem leitfähigen Teil und einem Erder herstellt 
+BEISPIEL 
+Ein Leiter, der eine Haupterdungsklemme oder -schiene mit einem Erder verbindet. 
+[QUELLE: IEV 195-02-03] 
+826-13-13 
+paralleler Erdungsleiter 
+en  parallel-earthing-conductor 
+Leiter entlang einer Kabelstrecke, der dazu vorgesehen ist, eine Verbindung mit kleiner Impedanz zwischen 
+den Erdungsanlagen an den Enden der Kabelstrecke herzustellen 
+[QUELLE: IEV 195-02-29] 
+826-13-14 
+Erdrückpfad 
+en  earth-return path 
+elektrisch leitfähiger Pfad, der von der Erde zwischen den Erdungsanlagen bereitgestellt wird 
+[QUELLE: IEV 195-02-30] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 39/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 13 
+826-13-15 
+Haupterdungsschiene, Haupterdungsklemme 
+en  main earthing busbar, main earthing terminal 
+Schiene oder Klemme als Teil der Erdungsanlage einer Anlage, die das Anschließen von mehreren Leitern zu 
+Zwecken der Erdung oder des Potentialausgleichs ermöglicht 
+[QUELLE: IEV 195-02-33] 
+826-13-16 
+Impedanz gegen Bezugserde 
+en  impedance to earth 
+Impedanz zwischen einem gegebenen Punkt in einem Netz, in einer Anlage oder in einem Betriebsmittel und 
+Bezugserde bei gegebener Frequenz 
+[QUELLE: IEV 195-01-17] 
+826-13-17 
+Wirkwiderstand gegen Bezugserde 
+en  resistance to earth 
+ 
+Die Definition aus dem IEV wurde in Österreich nicht übernommen. 
+826-13-18 
+Potentialgleichheit 
+en  equipotentiality 
+Zustand, bei dem leitfähige Teile annähernd gleiches elektrisches Potential haben 
+[QUELLE: IEV 195-01-09] 
+826-13-19 
+Potentialausgleich 
+en  equipotential bonding 
+Elektrische Verbindungen, die dazu dienen, Potentialgleichheit zwischen leitenden Teilen herzustellen 
+[QUELLE: IEV 195-01-10] 
+826-13-20 
+Schutzpotentialausgleich 
+en  protective-equipotential-bonding 
+Potentialausgleich zum Zweck der elektrischen Sicherheit 
+[QUELLE: IEV 195-01-15] 
+826-13-21 
+Funktionspotentialausgleich 
+en  functional-equipotential-bonding 
+Potentialausgleich für andere Zwecke als der elektrischen Sicherheit 
+[QUELLE: IEV 195-01-16] 
+826-13-22 
+Schutzleiter 
+en  protective conductor 
+Leiter zum Zweck der elektrischen Sicherheit 
+[QUELLE: IEV 195-02-09] 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 40/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 14 
+826-13-23 
+Schutzerdungsleiter 
+en  protective earthing conductor 
+Schutzleiter zum Zweck der Schutzerdung 
+[QUELLE: IEV 195-02-11, mod.] 
+826-13-24 
+Schutzpotentialausgleichsleiter 
+en protective bonding conductor 
+Schutzleiter zur Herstellung des Schutzpotentialausgleichs 
+[QUELLE: IEV 195-02-10] 
+826-13-25 
+PEN-Leiter 
+en  PEN conductor 
+Leiter, der zugleich die Funktionen eines Schutzerdungsleiters und eines Neutralleiters erfüllt 
+[QUELLE: IEV 195-02-12] 
+826-13-26 
+PEM-Leiter 
+en  PEM conductor 
+Leiter, der zugleich die Funktionen eines Schutzerdungsleiters und eines Mittelleiters erfüllt 
+[QUELLE: IEV 195-02-13] 
+826-13-27 
+PEL-Leiter 
+en  PEL conductor 
+Leiter, der zugleich die Funktionen eines Schutzerdungsleiters und eines Außenleiters erfüllt 
+[QUELLE: IEV 195-02-14] 
+826-13-28 
+Funktionserdungsleiter 
+en  functional earthing conductor 
+Leiter zum Zweck der Funktionserdung 
+[QUELLE: IEV 195-02-15] 
+826-13-29 
+Funktionspotentialausgleichsleiter 
+en  functional bonding conductor 
+Leiter zum Zweck des Funktionspotentialausgleichs 
+[QUELLE: IEV 195-02-16] 
+826-13-30 
+Potentialausgleichsanlage 
+en  equipotential bonding system 
+Gesamtheit der Verbindungen zwischen leitfähigen Teilen, die den Potentialausgleich zwischen diesen Teilen 
+herstellt 
+[QUELLE: IEV 195-02-22] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

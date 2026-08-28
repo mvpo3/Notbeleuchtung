@@ -1,0 +1,767 @@
+
+
+===== PAGE 1/11 =====
+ÖVE/ÖNORM 
+ 
+E 8007/A2 
+Ausgabe: 2002-11-01 
+ 
+Auch Normengruppe 330 
+ 
+ 
+ICS  91.140.50 
+Starkstromanlagen in Krankenhäusern und 
+medizinisch genutzten Räumen außerhalb von 
+Krankenhäusern 
+(Änderung) 
+ 
+Electrical installations in hospitals and locations for medical use outside hospitals 
+(Amendment) 
+ 
+ 
+Installations électriques dans les hôpitaux et les lieux destines à l'usage médical hors 
+des hôpitaux 
+(Amendement) 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als  
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+Die vorliegende Änderung ÖVE/ÖNORM E 8007/A2 modifiziert das  
+Grunddokument ÖVE-EN 7:1991, geändert mit ÖVE-EN 7a:1994-06 und  
+ÖVE/ÖNORM E 8007/A1:2001 und ist mit diesen gemeinsam anzuwenden. 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8007/A2 Seiten 2 bis 11 
+Fach(normen)ausschuss 
+FA/FNA E 
+Elektrische Niederspannungsanlagen 
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2002. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 7 
+ 
+ 
+
+
+===== PAGE 2/11 =====
+Seite 2 
+ÖVE/ÖNORM E 8007/A2 
+Vorbemerkung 
+ 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischen Normungsinstitut werden künftig alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 
+1992 als auch den einer ÖNORM gemäß NG 1971. 
+ 
+ÖVE-EN 7 wird künftig als ÖVE/ÖNORM E 8007 erscheinen.  
+Die vorliegende Änderung ist gemeinsam mit ÖVE-EN 7:1991, ÖVE-EN 7a:1994-06 und ÖVE/ÖNORM 
+E 8007/A1:2001 anzuwenden. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Die Änderungen sind durch einen Strich am linken Rand gekennzeichnet. 
+ 
+Die Fachmeinung des FUA-E 04, veröffentlicht in e&i, Jg. 2001, H.12, ist in diese ÖVE/ÖNORM eingearbeitet. 
+
+
+===== PAGE 3/11 =====
+Seite 3 
+ÖVE/ÖNORM E 8007/A2 
+ 
+1  
+Anwendungsbereich 
+Diese 
+ÖVE/ÖNORM 
+ist 
+gemeinsam 
+mit 
+ÖVE-EN 7:1991, 
+ÖVE-EN 7a:1994-06 
+und 
+ÖVE/ÖNORM 
+E 8007/A1:2001 anzuwenden. 
+2 
+Normative Verweisungen  
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil 
+dieser ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen nicht. 
+Vertragspartner, die diese ÖVE/ÖNORM anwenden, werden jedoch aufgefordert, die Möglichkeit zu prüfen, die 
+jeweils neuesten Ausgaben der nachfolgend angegebenen normativen Dokumente anzuwenden. Bei undatierten 
+Verweisungen ist die letzte Ausgabe des in bezug genommenen normativen Dokumentes anzuwenden. 
+Rechtsvorschriften sind immer in der jeweils geltenden Fassung anzuwenden. 
+ 
+ 
+ÖVE-E 5 Teil 1 
+Betrieb von Starkstromanlagen – Teil 1: Grundsätzliche Bestimmungen 
+ 
+ÖVE-EN 1 Teil 3 § 42 
+Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 
+ 41500 V – Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und 
+Kabel § 42: Verlegung von Leitungen und Kabel 
+ 
+ÖVE EN 50110 
+Betrieb von elektrischen Anlagen  
+ 
+ÖVE EN 60601-1 
+Medizinische elektrische Geräte – Teil 1: Allgemeine Festlegungen für die 
+Sicherheit 
+ 
+ÖVE EN 60896-1 
+Ortsfeste Blei-Akkumulatoren – Allgemeine Anforderungen und Prüfungen – 
+Teil 1: Geschlossene Batterien 
+ÖVE EN 61557-8 
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC 1,5 kV – 
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 8: 
+Isolationsüberwachungsgeräte für IT-Netze 
+ 
+ÖVE/ÖNORM E 8001-1 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 
+ 41500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag 
+(Schutzmaßnahmen) 
+ 
+ÖVE/ÖNORM E 8001-6-61 Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 
+ 41500 V - Teil 6-61: Prüfungen – Erstprüfungen 
+ 
+ÖVE/ÖNORM E 8751 
+Wiederkehrende Prüfung und Prüfung nach Instandsetzung von medizinischen 
+elektrischen Geräten – Teil 1: Allgemeine Anforderungen 
+ 
+ÖVE/ÖNORM EN 61558-2-15 Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-15: 
+Besondere Anforderungen an Trenntransformatoren zur Versorgung 
+medizinischer Räume 
+ 
+ÖNORM B 3800-1 
+Brandverhalten von Baustoffen und Bauteilen – Baustoffe – Anforderungen und 
+Prüfungen 
+ 
+ÖNORM B 5220 
+Anforderungen an Bodenbeläge hinsichtlich elektrischer und elektrostatischer 
+Eigenschaften 
+ 
+ÖNORM EN 1838 
+Angewandte Lichttechnik – Notbeleuchtung 
+ 
+ÖNORM DIN 4102-12 
+Brandverhalten von Baustoffen und Bauteilen – Funktionserhalt von elektrischen 
+Kabelanlagen – Begriffe, Anforderungen und Prüfungen 
+3 
+Folgende Änderungen sind durchzuführen: 
+2.3.19 kommt neu hinzu: 
+ 
+2.3.19 
+IMCU (Intermediate care unit) 
+Bereich oder Raum für überwachungspflichtige Patienten, die lebenswichtige (z.B. Monitoring), jedoch keine 
+lebenserhaltenden (z.B. kontrollierte Beatmung) medizinische elektrische Geräte benötigen, die netzversorgt sind 
+– · – 
+Tabelle 2-1: Ergänzung: 
+zu Anwendungsgruppe 2: IMCU 
+– · – 
+
+
+===== PAGE 4/11 =====
+Seite 4 
+ÖVE/ÖNORM E 8007/A2 
+3.3.1 lautet neu: 
+3.3.1 
+Allgemeine Stromversorgung und Sicherheitsstromversorgung (inklusive zusätzlicher 
+Stromversorgung) 
+In Starkstromanlagen mit Nennspannungen bis 51000 V dürfen ab dem Hauptverteiler des Gebäudes keine 
+PEN-Leiter verwendet werden. 
+– · – 
+3.3.3.4  
+Entfällt. 
+– · – 
+3.3.3.6 lautet neu: 
+ 
+3.3.3.6 
+Es sind Transformatoren gemäß ÖVE/ÖNORM EN 61558-2-15 zu verwenden. 
+– · – 
+Fußnoten 13 und 14 lauten neu: 
+ 
+13) 
+Siehe ÖVE-EN 1 Teil 3 (§ 42). 
+14) 
+Siehe ÖVE-EN 1 Teil 1 bzw. ÖVE/ÖNORM E 8001-1. 
+– · – 
+3.3.3.8 (3) Entfällt. 
+– · – 
+3.3.3.11 kommt neu hinzu: 
+ 
+3.3.3.11 
+Verteiler der Anwendungsgruppe 2 
+Der Verteiler muss vom zugehörigen Raum der Anwendungsgruppe 2 leicht erreichbar sein. Die Leitungslängen 
+des IT-Systems sind möglichst kurz zu halten. 
+Dies wird im Allgemeinen erreicht, wenn der Verteiler, der Transformator und die erforderlichen Kabel- und 
+Leitungsanlagen sich im gleichen Geschoß und Brandabschnitt wie der zugehörige (zu versorgende) Raum der 
+Anwendungsgruppe 2 befinden. 
+– · – 
+3.4.1.2 lautet neu: 
+ 
+3.4.1.2 
+Ein Stromkreis im IT-System darf nur einem Patientenplatz zugeordnet sein. 
+Die Steckdosen an jedem Patientenplatz sind auf mindestens zwei Stromkreise im IT-System aufzuteilen. Jeder 
+Stromkreis im IT-System darf maximal 6 Steckdosen enthalten. 
+– · – 
+4.3.4.3 (6) kommt neu hinzu: 
+ 
+4.3.4.3 (6) Stromkreise für IMCU-Patientenplätzen, die nicht der Versorgung von lebenswichtigen elektrischen 
+medizinischen Geräten dienen. 
+– · – 
+4.3.5.1  lautet neu: 
+ 
+4.3.5.1 Jedes IT-System gemäß § 3.3.3.3 ist mit einem Isolationsüberwachungsgerät gemäß ÖVE EN 61557-8 
+auszurüsten, das folgenden zusätzlichen Anforderungen entsprechen muss: 
+(1) 
+der Wechselstrom-Innenwiderstand muss mindestens 100 kΩ betragen 
+(2) 
+die Messspannung darf nicht größer als 25 V Gleichspannung sein 
+(3) 
+der Messstrom darf auch im Fehlerfall nicht größer als 1 mA sein 
+(4) 
+die Anzeige muss spätestens bei Absinken des Isolationswiderstandes auf 50 kΩ erfolgen 
+(5) 
+die Zeit zwischen Fehlerauftritt und Meldung darf maximal 5 s betragen. Dies gilt analog auch für den 
+Wegfall des Fehlers. 
+– · – 
+4.4.3 (2) lautet neu: 
+ 
+4.4.3 (2) leitfähige Teile, die 
+– sich bei Behandlung oder Untersuchung des Patienten mit netzabhängigen, elektromedizinischen 
+Geräten in einem Bereich von 1,5 m um die Patientenposition befinden und deren 
+– 
+Widerstand gemessen zum Schutzleiter in Räumen der 
+* 
+Anwendungsgruppe 1 kleiner als 7 kΩ 
+* 
+Anwendungsgruppe 2 kleiner als 2,5 MΩ ist und  
+– 
+mit dem Schutzleiter nicht in Verbindung stehen 
+– · – 
+
+
+===== PAGE 5/11 =====
+Seite 5 
+ÖVE/ÖNORM E 8007/A2 
+ 
+4.4.4 (2) lautet neu: 
+ 
+4.4.4 (2) Innerhalb eines Bereiches von 1,5 m um die Patientenposition darf in Räumen, in denen 
+Untersuchungen oder Behandlungen im Herz oder am freigelegten Herz vorgenommen werden, die Spannung im 
+fehlerfreien Betrieb der elektrischen Anlage zwischen fremden leitfähigen Teilen, Schutzkontakten von 
+Steckdosen und Körpern fest angeschlossener elektrischer Betriebsmittel 10 mV nicht überschreiten. 
+ 
+ANMERKUNG: 
+Diese Anforderung ist in der Regel in Anlagen ohne PEN-Leiter gemäß § 3.3.1 erfüllt. 
+– · – 
+5.1 lautet neu: 
+5.1 
+Sicherheitsstromversorgung mit Umschaltzeiten von 0 s bis 15 s 
+Für Einrichtungen gemäß 5.1.1.1 gelten die Anforderungen gemäß ÖNORM EN 1838, wobei die 
+Mindestbetriebsdauer aus mindestens einer Sicherheitsstromquelle 24 Stunden betragen muss. Als Kriterium für 
+die Umschaltung auf die Sicherheitsstromquelle gilt das Absinken der Spannung im Stromkreis der 
+Allgemeinbeleuchtung des Rettungsweges über einen Zeitraum von mehr als 0,5 s unter den Wert von 75 % der 
+Netznennspannung. 
+Die Einrichtungen gemäß 5.1.1.2, 5.1.2 und 5.1.3 müssen innerhalb von 15 s aus mindestens einer 
+Sicherheitsstromquelle für die Dauer von mindestens 24 h weiter betrieben werden können, wenn die Spannung 
+eines oder mehrerer Außenleiter am Hauptverteiler des Gebäudes über einen Zeitraum von mehr als 0,5 s um 
+mehr als 10 % abgesunken ist. 
+5.1.1 
+Sicherheitsbeleuchtung 
+5.1.1.1 
+Sicherheitsbeleuchtung für:   
+(1) 
+Rettungswege  
+(2) 
+Beleuchtung bzw. Hinterleuchtung von Sicherheitszeichen 
+(3) 
+Arbeitsplätze mit besonderer Gefährdung. 
+5.1.1.2 
+Sicherheitsbeleuchtung für: 
+(1) 
+Räume für Schaltanlagen mit Nennspannungen über 1 kV, für Sicherheitsstromaggregate und für 
+Hauptverteiler der allgemeinen Stromversorgung, wobei die Mindestbeleuchtungsstärke 10 % der 
+Nennbeleuchtungsstärke, mindestens jedoch 15 lx auf dem Boden betragen muss. 
+(2) 
+Arbeitsräume, soweit diese nach arbeitnehmerschutzrechtlichen Bestimmungen erforderlich ist oder die 
+Räume unter (6) fallen. 
+(3) 
+Räume der Anwendungsgruppe 1, wobei in jedem Raum mindestens eine Leuchte der 
+Allgemeinbeleuchtung sowie vorhandene Untersuchungsleuchten von der Sicherheitsstromquelle 
+eingespeist  werden müssen, 
+(4) 
+Räume 
+der 
+Anwendungsgruppe 
+2, 
+wobei 
+mindestens 
+50 % 
+der 
+Beleuchtung 
+von 
+der 
+Sicherheitsstromquelle eingespeist werden muss, 
+(5) 
+Etagenbäder, Toiletten und Nasszellen, die auch von Patienten benutzt werden, 
+(6) 
+Räume, die zur Aufrechterhaltung des Krankenhausbetriebes notwendig sind, wobei in jedem Raum 
+mindestens eine Leuchte von der Sicherheitsstromquelle eingespeist werden muss. 
+5.1.2 
+Weitere notwendige Sicherheitseinrichtungen 
+(1) 
+Feuerwehraufzüge und notwendige Bettenaufzüge (mit Evakuierungsschaltung) 
+(2) 
+Notwendige Lüftungsanlagen zur Entrauchung und für Sicherheitsstromquellen und deren 
+Betriebsräume 
+(3) 
+Anlagen der Personenruftechnik und Telefonanlagen 
+(4) 
+Alarm- und Warnanlagen 
+(5) 
+Feuerlöscheinrichtungen. 
+5.1.3 
+Medizinisch-technische Einrichtungen 
+(1) 
+Notwendige medizinische Geräte 
+(2) 
+Elektrische 
+Einrichtungen 
+der 
+medizinischen 
+Gasversorgung 
+einschließlich 
+Druckluft, 
+Vakuumversorgung und Narkosegasabsaugung sowie deren Überwachungseinrichtungen. 
+
+
+===== PAGE 6/11 =====
+Seite 6 
+ÖVE/ÖNORM E 8007/A2 
+– · – 
+5.3.2 lautet neu: 
+5.3.2 
+Zusätzliche Sicherheitsstromversorgung mit einer Umschaltzeit bis 0,5 s 
+Operationsleuchten und vergleichbare Leuchten müssen zusätzlich zur Sicherheitsstromversorgung gemäß 5.1 
+aus einer Sicherheitsstromversorgung mit einer Umschaltzeit bis 0,5 selbstständig weiter betrieben werden 
+können, wenn die Spannung am Eingang des OP-Lichtes um mehr als 10 % der Nennspannung sinkt. Die 
+Sicherheitsstromquelle muss für eine Versorgung von drei Stunden bemessen sein. Sie darf jedoch für 
+mindestens eine Stunde bemessen werden, wenn eine weiter unabhängige Sicherheitsstromquelle die 
+Mindestbetriebsdauer der Operationsleuchte von drei Stunden sicherstellt. 
+ANMERKUNG 1: 
+Als vergleichbare Leuchten gelten auch die allgemeinen Raumleuchten oder Teile solcher, wenn sie die 
+Funktion einer OP- oder Untersuchungsleuchte ersetzen (z.B. in Herzkatheterräumen, Entbindungs-
+stationen). 
+Auf die Errichtung einer eigenen zusätzlichen Sicherheitsstromversorgung gemäß 5.3.1 darf verzichtet werden, 
+wenn die zusätzliche Sicherheitsstromversorgung den Anforderungen gemäß 5.3.2 entspricht und die Geräte 
+gemäß 5.3.1 aus dieser zusätzlichen Sicherheitsstromversorgung mitversorgt werden können. 
+ANMERKUNG 2: 
+Die Sicherheitsstromversorgung gemäß 5.1 oder 5.2 ist nicht als weitere unabhängige Sicherheitsstromquelle 
+anzusehen. Es ist vielmehr an eine  gerätebezogene Sicherheitsstromversorgung gedacht. 
+In Räumen, in denen lebenswichtige oder operative Geräte über eine ZSV-Anlage gemäß 5.3.1 versorgt werden, 
+ist auch eine ZSV-versorgte Beleuchtung vorzusehen. 
+– · – 
+5.3.5 kommt neu hinzu: 
+5.3.5 
+Sicherheitsstromquellen für die Zusätzliche Sicherheitsstromversorgung sind so zu bemessen, dass bei 
+der Zuschaltung und im dynamischen Betrieb keine größeren Abweichungen als 10 % von der Nennspannung 
+und 1 Hz von der Nennfrequenz auftreten. 
+– · – 
+5.4.2 lautet neu: 
+ 
+5.4.2 Eine Sicherheitsstromquelle muss die Versorgung selbstständig übernehmen, wenn die Spannung am 
+Gebäudehauptverteiler an einem oder mehreren Außenleitern um mehr als 10 % der Nennspannung abgesunken 
+ist. Die Übernahme der Versorgung muss mit Rücksicht auf Kurzzeitunterbrechung bei Berücksichtigung der 
+zulässigen Umschaltzeit verzögert erfolgen. 
+Nach Wiederkehr der allgemeinen Stromversorgung muss eine verzögerte, automatische Rückstellung erfolgen. 
+ANMERKUNG: 
+Die Rückschaltung nach Netzwiederkehr sollte synchronisiert erfolgen. 
+– · – 
+5.4.3 lautet neu: 
+ 
+5.4.3 Sicherheitsstromquellen sind so zu bemessen, dass sie mindestens 80 % der vorgesehenen 
+Verbraucherleistung innerhalb von 15 s übernehmen können. Die restlichen 20 % der Verbraucherleistung 
+müssen spätestens nach weiteren 5 s übernommen werden können. Dabei dürfen keine größeren Abweichungen 
+als 10 % von der Nennspannung und 5 Hz von der Nennfrequenz der Sicherheitsstromquelle auftreten. 
+Als Verbraucherleistung gilt die Summenleistung der zu versorgenden Verbraucher der 
+Sicherheitsstromversorgung unter Berücksichtigung des Gesamt-Gleichzeitigkeitsfaktors. 
+– · – 
+5.8.4 erster Satz lautet neu: 
+5.8.4 Bei Stromversorgung eines oder mehrerer Gebäude von einer zentralen Stelle aus gelten für die Zuleitung 
+zu den einzelnen Gebäuden die Anforderungen gemäß 5.8.4.1 bis 5.8.4.4 (Abb. A3-7). 
+– · – 
+5.8.5 lautet neu: 
+5.8.5 
+In 
+allen 
+Stromkreisen 
+der 
+Sicherheitsstromversorgung 
+müssen 
+die 
+Kennwerte 
+der 
+Sicherheitsstromquellen und der Schutzeinrichtungen sowie die Querschnitte der Leiter sowohl bei Versorgung 
+aus der allgemeinen Stromversorgung als auch aus der Sicherheitsstromquelle so ausgewählt werden, dass bei 
+Kurzschluss in einem Stromkreis der Ausfall der zugehörigen Verteilereinspeisung vermieden wird. 
+– · – 
+ 
+ 
+
+
+===== PAGE 7/11 =====
+Seite 7 
+ÖVE/ÖNORM E 8007/A2 
+ 
+6.2.3.1 lautet neu: 
+6.2.3.1 Leitungsanlagen 
+Die Betriebssicherheit notwendiger Sicherheitseinrichtungen ist sichergestellt, wenn die elektrischen 
+Leitungsanlagen so ausgeführt oder durch Bauteile umkleidet werden, dass sie bei äußerer Brandeinwirkung für 
+eine ausreichende Zeitdauer funktionsfähig bleiben. 
+Dies umfasst nicht nur die Leitungsanlage selbst, sondern auch die Leitungsträger und deren 
+Befestigungselemente (z.B. keine Kunststoffdübel). 
+Die Dauer des Funktionserhaltes wird gemäß ÖNORM DIN 4102-12 geprüft und muss mindestens betragen: 
+(1) 
+30 Minuten bei 
+– 
+Brandmeldeanlagen, wenn deren Leitungen durch nicht überwachte Bereiche führen 
+– 
+Anlagen zur Alarmierung und Erteilung von Anweisungen an Besucher und Beschäftigte 
+– Sicherheitsbeleuchtung in Rettungswegen, ausgenommen Endstromkreise, deren Ausfall zu keiner 
+Beeinträchtigung nachgelagerter Bereiche führt, 
+Endstromkreise, die in weitere Brandabschnitte führen, sind jedenfalls entsprechend zu schützen. 
+– 
+Personen Aufzugsanlagen mit Evakuierungsschaltung. 
+(2) 
+90 Minuten bei 
+– 
+Wasserdruckerhöhungsanlagen zur Löschwasserversorgung 
+– 
+Lüftungsanlagen von Sicherheitstreppenräumen, innen liegenden Treppenräumen, Fahrschächten, 
+Sicherheitsschleusen und Triebwerksräumen von Feuerwehraufzügen 
+– 
+Rauch- und Wärmeabzugsanlagen 
+– 
+Feuerwehraufzügen (Sicherheitsaufzügen) 
+– zusätzlicher Sicherheitsstromversorgung gemäß 5.3, ausgenommen Endstromkreise, deren Ausfall zu 
+keiner Beeinträchtigung nachgelagerter Bereiche führt, 
+Endstromkreise, die in weitere Brandabschnitte führen, sind jedenfalls entsprechend zu schützen. 
+Die Forderung nach Funktionserhalt gilt auch als erfüllt, wenn die beiden Leitungen von ZSV und SV vor 
+der örtlichen Umschalteinrichtung (siehe 3.3.3.2) in unterschiedlichen Brandabschnitten geführt werden. 
+Die Anforderung an den Funktionserhalt der Leitungsanlage für notwendige Sicherheitseinrichtungen richtet sich 
+primär an die starkstromseitige Anspeisung. Der Funktionserhalt kann auch für nachrichtentechnische Anlagen, 
+die nicht in den Anwendungsbereich dieser ÖVE/ÖNORM fallen (z.B. Anlage zur Alarmierung), notwendig sein. 
+Auf den Funktionserhalt der starkstromseitigen Anspeisung darf verzichtet werden, wenn die Anlage mit einer 
+eigenen Batterie ausgestattet ist, die den funktionellen Anforderungen der ÖVE-EN 7 entspricht und die gemäß 
+ÖVE EN 60896-1 gewartet wird. 
+Verteiler gelten als Bestandteil der Leitungsanlage.  
+Der Funktionserhalt der Verteiler ist sichergestellt, wenn die Verteiler in eigenen, nur für Sicherheitseinrichtungen 
+genutzten Räumen untergebracht werden, die gegenüber anderen Räumen durch Wände, Decken und Türen mit 
+einer Brandwiderstandsdauer entsprechend der für die Leitungsanlage geforderten Dauer des Funktionserhaltes 
+abgetrennt sind oder folgende Anforderungen erfüllt sind: 
+– 
+das Verteilergehäuse besitzt nur geringfügige Öffnungen für Lüftungsschlitze und 
+– 
+in einem Umkreis von 2,4 m um den Verteiler werden nur mindestens schwer brennbare und schwach 
+qualmende Materialien (Brennbarkeitsklasse B1 und Qualmbildungsklasse Q1 nach ÖNORM B 3800-1) 
+für Fußbodenbeläge bzw. Wandverkleidungen verwendet und 
+– 
+es wird sichergestellt, dass keinerlei Lagerung von Gegenständen in diesem Bereich erfolgt und 
+– 
+der Bereich vor der Messeinrichtung bzw. vor dem Verteiler wird durch eine automatische 
+Brandmeldeanlage überwacht und 
+– 
+der Verteiler(bereich) mit gefordertem Funktionserhalt ist von angrenzenden Verteilerfeldern oder 
+sonstigen 
+Bereichen 
+mit 
+erhöhter 
+Brandgefahr 
+entsprechend 
+der 
+geforderten 
+Dauer 
+des 
+Funktionserhaltes abgeschottet. 
+– · – 
+ 
+
+
+===== PAGE 8/11 =====
+Seite 8 
+ÖVE/ÖNORM E 8007/A2 
+6.3 lautet neu: 
+6.3 
+Vermeidung von elektrostatischer Aufladung 
+Zur Vermeidung der elektrostatischen Aufladung sind Fußböden der Klasse I gemäß ÖNORM B 5220 bzw. 
+gemäß den Brand- und Explosionsschutzrichtlinien (siehe Anhang A1) auszuführen, z.B. in folgenden Räumen: 
+– 
+Herzkatheterräume 
+– 
+Intensiv-Überwachungsräume 
+– 
+Intensiv-Untersuchungsräume 
+– 
+Operations-Gipsräume 
+– 
+Operationsräume 
+– 
+Operationsvorbereitungsräume 
+– 
+Aufwachräume 
+– 
+Chirurgische Ambulanzen 
+– 
+Notfall- und Akutdialyseräume 
+– 
+Entbindungsräume 
+– 
+EEG-Räume 
+– 
+EMG-Räume 
+– 
+Obduktionsräume 
+– 
+Räume für Lagerung oder Abfüllung von brennbaren Flüssigkeiten der Gefahrenklasse 1 
+– 
+Gaslagerräume 
+– 
+Chemielabors 
+– 
+Dunkelkammern 
+– 
+Rechner- bzw. EDV-Räume  
+– 
+IMCU-Räume 
+und 
+sofern 
+mit 
+Röntgenkassetten 
+gearbeitet 
+wird 
+(Verblitzungsgefahr) 
+oder 
+der 
+Errichter 
+der 
+Röntgeneinrichtung besondere Anforderungen stellt: 
+– 
+Räume für radiologische Diagnostik und Therapie 
+– 
+Röntgenräume. 
+– · – 
+101 (1) lautet neu: 
+ 
+10.1 (1) 
+Prüfung gemäß ÖVE/ÖNORM E 8001-6-61, 
+– · – 
+10.1 (6) lautet neu: 
+ 
+10.1 (6) 
+Messung der Spannung gemäß 4.4.4 (2) zwischen den Schutzkontakten von Steckdosen, Körpern fest 
+angeschlossener Verbrauchsmittel sowie fremden leitfähigen Teilen, die in Räumen der 
+Anwendungsgruppe 2 und in Räumen der Anwendungsgruppe 1, in denen Untersuchungen mit 
+Einschwemmkathetern vorgenommen werden, innerhalb eines Bereiches von 1,5 m um die zu 
+erwartende Position des Patienten vorhanden sind. 
+Diese Prüfung muss zu einem Zeitpunkt vorgenommen werden, zu dem die elektrische Anlage des 
+Gebäudes belastet ist. Die Messung erfolgt mit einem Spannungsmesser für Effektivwerte, dessen 
+Innenwiderstand, z.B. durch äußere Beschaltung, auf 1kΩ eingestellt ist (siehe ÖVE EN 60601-1, 
+Bild 15). Der Frequenzbereich des Spannungsmessers sollte 1 kHz nicht überschreiten. 
+– · – 
+10.2 lautet neu: 
+10.2  
+Wiederkehrende Prüfungen 
+10.2.1  Elektrische Anlagen für medizinisch genutzte Bereiche sind mindestens alle zwei Jahre zu prüfen. 
+Nicht medizinisch genutzte Funktionsbereiche im Geltungsbereich der Elektroschutzverordnung sind 
+entsprechend der darin angeführten Intervalle wiederkehrend zu prüfen. 
+Von Behörden anders lautende Prüffristen bleiben dadurch unberührt. 
+
+
+===== PAGE 9/11 =====
+Seite 9 
+ÖVE/ÖNORM E 8007/A2 
+ 
+Allgemeines: 
+Die angeführten Messungen sind Mindestanforderungen und haben keinen Anspruch auf Vollständigkeit. Sie sind 
+zusätzlich zu den notwendigen Besichtigungen und Erprobungen im Rahmen der wiederkehrenden Prüfung der 
+elektrischen Anlage durchzuführen  
+Für die Prüfungen sind grundsätzlich die Bestimmungen maßgebend, die zum Zeitpunkt der Errichtung der 
+Anlage gegolten haben. Angeschlossene Betriebsmittel und Anlage müssen zueinander kompatibel sein (z.B. 
+erfordern Geräte der Schutzklasse I Anlagen mit Schutzleiter). Die Nachrüstpflicht gemäß ÖVE-EN 7a/1990 und 
+die Nullungsverordnung sind zusätzlich zu beachten. 
+Tabelle 10-1 
+ 
+Prüfungen im 
+Intervall von 2 Jahren 
+Prüfumfang (Mindestanforderungen) und Bemerkungen 
+AG2-, AG1-, AG0-Räume und von selben Verteile
+versorgte Nebenräume  
+–  Schutzmaßnahmen (Steckdosen) 
+ 
+ 
+ 
+ 
+–  RPA/RPE  Messung 
+ 
+ 
+ 
+ 
+Überprüfung der Schutzmaßnahmen (indirektes Berühren) 
+bei allen Steckdosen 1). 
+Bei Steckdosen von IT-Systemen ist das Ansprechen der 
+Isolationsüberwachung (SV, ZSV) bei allen Steckdosen zu 
+überprüfen. 
+Alle leitfähigen Teile welche gemäß 4.4 in den 
+zusätzlichen Potententialausgleich einzubeziehen sind.  
+Messungen in Verteilern: 
+–  Schutzmaßnahme des Verteilers 
+–  Schutzmaßnahme der Verbraucheranlage 
+ 
+ 
+Bei begründetem Verdacht (z.B. wiederholtes 
+Auslösen von Schutzeinrichtungen): 
+Ableitstrom oder Isolationswiderstand  
+ 
+z.B. Fehlerschleifenimpedanz 
+z.B. Fehlerstrom-Schutzschalter mittels 
+Schutzmaßnahmen-Messgerät, sofern die Auslösung nicht 
+bereits durch eine Messung in der Verbraucheranlage 
+erfolgte 
+ 
+ 
+1)  Bei Anlagen, welche gemäß ÖVE/ÖNORM E 8001-1 errichtet wurden, sind Fehlerschutz und 
+Zusatzschutz zu prüfen. 
+ 
+Der Ableitwiderstand des Fußbodens ist in den unter 6.3 angeführten Räumen im Intervall von 4 Jahren, bzw. 
+nach Änderung des Reinigungsverfahrens zu messen. 
+ 
+
+
+===== PAGE 10/11 =====
+Seite 10 
+ÖVE/ÖNORM E 8007/A2 
+ 
+Tabelle 10-2 
+ 
+ 
+ 
+Im Handbereich 
+Außerhalb des Handbereiches 
+Medizinische elektrische Geräte 
+Überprüfungen und Intervalle gemäß Medizinproduktegesetz und gemäß 
+ÖVE/ÖNORM E 8751 
+Nicht medizinische elektrische 
+Geräte (Betriebsmittel) in 
+medizinisch genutzten Räumen,  
+nicht fest angeschlossen 
+Überprüfungen im Intervall von maximal 2 Jahren gemäß Bestimmungen  
+für wiederkehrende Überprüfungen von Geräten bzw. gemäß 
+Herstellerangaben 
+Überprüfungsintervalle gemäß 
+Elektroschutzverordnung, gemäß 
+Bestimmungen für wiederkehrende 
+Überprüfungen von Geräten bzw.  
+gemäß Herstellerangaben. 
+ 
+Messung der Durchgängigkeit des 
+Schutzerdungsleiters bei Geräten der 
+Schutzklasse I im Intervall von  
+5 Jahren.  
+Überprüfungen im Intervall von 
+max. 2 Jahren gemäß 
+Bestimmungen für 
+wiederkehrende Überprüfungen 
+von Geräten bzw. gemäß 
+Herstellerangaben 
+ 
+Messung der Durchgängigkeit der 
+Schutzerdungsleiters bei Leuchten im 
+Intervall von 10 Jahren. 
+ 
+ 
+ 
+ 
+Nicht medizinische elektrische 
+Geräte (Betriebsmittel) in 
+medizinisch genutzten Räumen,  
+fest angeschlossen 
+Bei Leuchten wird sich der Prüfumfang auf die Sichtprobe und die Messung 
+der Durchgängigkeit des Schutzerdungsleiters und dem Nachweis der 
+Funktion des Fehlerstrom-Schutzschalters beschränken. 
+Elektrische Geräte 
+(Betriebsmittel) außerhalb 
+medizinisch genutzter Räume 
+Überprüfungsintervalle 
+wie 
+in 
+der 
+Elektroschutzverordnung, 
+gemäß 
+Bestimmungen für wiederkehrende Überprüfungen von Geräten bzw. gemäß 
+Herstellerangaben. 
+ 
+ 
+10.2.2  Die Prüfungen gemäß (1) bis (9) sind zusätzlich zu den Prüfungen gemäß 10.2.1 durchzuführen:  
+ 
+(1) 
+Prüfung der Fehlerstrom-Schutzeinrichtungen und der Isolationsüberwachungseinrichtungen durch 
+Betätigen der Prüfeinrichtung mindestens alle sechs Monate durch eine Fachkraft oder eine 
+Unterwiesene Person (siehe ÖVE-E 5 Teil 1 bzw. ÖVE/ÖNORM EN 50110). 
+(2) 
+Messung 
+des 
+Isolationswiderstandes 
+von 
+Stromkreisen 
+der 
+Operationsleuchten, 
+die 
+mit 
+Funktionskleinspannung mit sicherer elektrischer Trennung ohne Isolationsüberwachungseinrichtung 
+betrieben werden, mindestens alle sechs Monate durch eine Fachkraft. 
+(3) 
+Funktionsprüfung der Sicherheitsstromversorgung monatlich zum Nachweis 
+– des Start- und Anlaufverhaltens 
+– der erforderlichen Lastübernahme 
+– der Schalt-, Regel- und Hilfseinrichtungen. 
+(4) 
+Funktionsprüfung des Lastverhaltens der Sicherheitsstromversorgung monatlich mit mindestens 50 % 
+der Nennlast für eine Betriebsdauer von 
+– 15 Minuten bei Sicherheitsstromquellen mit Batterien 
+– 60 Minuten bei Sicherheitsstromquellen mit Verbrennungsmotor; diese Funktionsprüfung. 
+Diese Funktionsprüfung darf entfallen bei Sicherheitsstromversorgung im Dauerbetrieb. 
+(5)  Prüfung der Funktion der Netzumschaltung und der Umschalteinrichtung in den Verteilern für Räume der 
+Anwendungsgruppe 2 halbjährlich. 
+(6)  Messung der Spannungen gemäß § 4.4.4(2), sofern zutreffend, jährlich. 
+(7)  Prüfung von Batterien hinsichtlich ausreichender Kapazität einmal jährlich außerhalb der zu erwartenden 
+Einsatzzeiten. 
+
+
+===== PAGE 11/11 =====
+Seite 11 
+ÖVE/ÖNORM E 8007/A2 
+ 
+(8)  Prüfung, ob die Leistungen der Sicherheitsstromquellen noch dem erforderlichen Leistungsbedarf der 
+versorgten Verbrauchsmittel entsprechen, jährlich. 
+(9)  Die Funktion der  
+– Sicherheitsbeleuchtung für Rettungswege 
+– Beleuchtung von Rettungszeichen  
+– Rettungszeichenleuchten 
+ist mindestens halbjährlich zu prüfen. 
+Der Anlagenbetreiber ist für die Veranlassung der Prüfungen verantwortlich. Die Prüfungen bzw. Erprobungen 
+sind gemäß ÖVE/ÖNORM EN 50110 in der Regel für 10.2.2 (3), (4), (7) und (9) von einer elektrotechnisch 
+unterwiesenen Person und für (5), (6) und (8) von einer Elektrofachkraft durchzuführen. 
+10.2.3  Über die regelmäßigen Prüfungen sind Prüfbücher zu führen. Diese Prüfbücher sind mindestens drei 
+Jahre nach Durchführung der darauf folgenden Prüfung aufzubewahren. 
+– · – 
+ 

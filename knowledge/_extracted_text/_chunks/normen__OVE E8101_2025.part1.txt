@@ -1,0 +1,2292 @@
+
+
+===== PAGE 41/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 15 
+826-13-31 
+Schutzpotentialausgleichsanlage 
+en  protective equipotential bonding system 
+Potentialausgleichsanlage, die Schutzpotentialausgleich herstellt 
+[QUELLE: IEV 195-02-23] 
+826-13-32 
+Funktionspotentialausgleichsanlage 
+en  functional equipotential bonding system 
+Potentialausgleichsanlage, die Funktionspotentialausgleich herstellt 
+[QUELLE: IEV 195-02-24] 
+826-13-33 
+kombinierte Potentialausgleichsanlage 
+en  common equipotential bonding system, common bonding network 
+Potentialausgleichsanlage, die sowohl Schutzpotentialausgleich als auch Funktionspotentialausgleich herstellt 
+[QUELLE: IEV 195-02-25] 
+826-13-34 
+Potentialausgleichsanschlusspunkt, Potentialausgleichsklemme 
+en  equipotential bonding terminal 
+Anschlusspunkt oder Klemme an einem Betriebsmittel, bestimmt für die elektrische Verbindung mit einer 
+Potentialausgleichsanlage 
+[QUELLE: IEV 195-02-32] 
+826-13-35 
+Potentialausgleichsschiene 
+en  equipotential bonding busbar 
+Schiene als Teil einer Potentialausgleichsanlage für den elektrischen Anschluss einer Anzahl von Leitern zum 
+Zweck des Potentialausgleichs 
+826-13-36 
+Erdung 
+en  earthing 
+elektrische Verbindungen zwischen leitfähigen Teilen und einer örtlichen Erde 
+[QUELLE: IEV 195-01-24] 
+Anmerkung 1.AT zum Begriff:  
+Siehe auch 826-13-02 (örtliche Erde) und 826-13-03 (erden). 
+826-13-37 
+elektrische Sicherheit 
+en  electrical safety 
+Freiheit von nicht tolerierbaren Risiken, welche durch Elektrizität hervorgerufen sind 
+[QUELLE: IEV 195-01-20] 
+826-13-38 
+System-Bezugsleiter 
+en  system-referencing-conductor 
+Leiter zwischen einem aktiven Teil und der Erdungsanlage, damit dieser aktive Teil im Wesentlichen das 
+gleiche Potential wie die Erde hat 
+Anmerkung 1.AT zum Begriff:  
+Der Begriff findet derzeit im Dokument keine Anwendung. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 42/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 16 
+826-14 Elektrische Stromkreise (en  electric circuits) 
+826-14-01 
+Stromkreis (einer elektrischen Anlage) 
+en  electric circuit, <of an electrical installation> 
+Anordnung von Einrichtungen oder Medien, durch die elektrischer Strom fließen kann 
+826-14-02 
+Verteilungsstromkreis 
+en  distribution circuit 
+Stromkreis, der einen oder mehrere Verteiler versorgt 
+826-14-03 
+Endstromkreis 
+en  final circuit 
+Stromkreis, der dafür vorgesehen ist, elektrische Verbrauchsmittel und/oder Steckdosen unmittelbar mit Strom 
+zu versorgen 
+Anmerkung 1.AT zum Begriff:  
+Im Allgemeinen versteht man darunter den Stromkreis ab der letzten Überstrom-
+Schutzeinrichtung. Spezielle Überstrom-Schutzeinrichtungen für den Schutz eines in diesem Stromkreis enthaltenen 
+besonderen Betriebsmittels (z. B. Dimmer) gelten dabei als Bestandteil des Endstromkreises. 
+826-14-04 
+Mittelpunkt 
+en  mid-point 
+gemeinsamer Punkt zwischen zwei zueinander symmetrischen Stromkreiselementen, deren andere Enden mit 
+zwei verschiedenen Außenleitern desselben Stromkreises elektrisch verbunden sind 
+[QUELLE: IEV 195-02-04] 
+826-14-05 
+Neutralpunkt 
+en  neutral point 
+gemeinsamer Punkt eines in Stern geschalteten Mehrphasensystems 
+[QUELLE: IEV 195-02-05] 
+826-14-06 
+Leiter 
+en  conductor 
+leitfähiges Teil, das dazu vorgesehen ist, einen elektrischen Strom zu führen 
+[QUELLE: IEV 195-01-07] 
+826-14-07 
+Neutralleiter 
+en  neutral conductor 
+Leiter, der mit dem Neutralpunkt elektrisch verbunden und in der Lage ist, zur Verteilung elektrischer Energie 
+beizutragen 
+[QUELLE: IEV 195-02-06] 
+826-14-08 
+Mittelleiter 
+en  mid-point conductor 
+Leiter, der mit dem Mittelpunkt elektrisch verbunden und in der Lage ist, zur Verteilung elektrischer Energie 
+beizutragen 
+[QUELLE: IEV 195-02-07] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 43/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 17 
+826-14-09 
+Außenleiter 
+en  line conductor 
+Leiter, der vorgesehen ist unter Spannung zu stehen und der in der Lage ist, zur Übertragung oder Verteilung 
+elektrischer Energie beizutragen, aber kein Neutralleiter oder Mittelpunktleiter ist 
+[QUELLE: IEV 195-02-08] 
+826-14-10 
+Kurzschluss 
+en  short-circuit 
+zufällig oder absichtlich entstandener Strompfad zwischen zwei oder mehr leitfähigen Teilen, durch den die 
+elektrischen Potentialdifferenzen zwischen diesen leitfähigen Teilen auf einen Wert gleich null oder nahezu null 
+abfallen 
+[QUELLE: IEV 151-12-04] 
+826-14-11 
+Kurzschluss zwischen Außenleiter und Erde 
+en  line-to-earth short-circuit 
+Kurzschluss zwischen einem Außenleiter und Erde in einem fest geerdeten Netz oder in einem über eine 
+Impedanz geerdeten Netz 
+[QUELLE: IEV 195-04-12] 
+826-14-12 
+Kurzschluss zwischen Außenleitern 
+en  line-to-line short-circuit 
+Kurzschluss zwischen zwei oder mehreren Außenleitern, der mit einem Kurzschluss zwischen Außenleiter und 
+Erde an derselben Stelle kombiniert sein kann, oder nicht 
+[QUELLE: IEV 195-04-16] 
+826-14-13 
+Erdschluss 
+en  earth fault 
+unbeabsichtigtes Auftreten einer leitfähigen Verbindung zwischen einem aktiven Teil und Erde 
+Anmerkung 1 zum Begriff: 
+Die leitfähige Verbindung kann durch eine fehlerhafte Isolierung, durch Aufbauten (z. B. 
+Masten, Gerüste, Kräne, Leitern) oder durch Vegetation (z. B. Bäume, Sträucher) führen und eine erhebliche Impedanz 
+aufweisen. 
+[QUELLE: IEV 195-04-14] 
+826-14-14 
+Überstrom-Schutzeinrichtung 
+en  overcurrent protective device 
+Einrichtung, die einen elektrischen Stromkreis unterbrechen soll, wenn der Strom im Leiter einen vorher 
+festgelegten Wert für eine bestimmte Zeitdauer überschreitet 
+826-14-15 
+kurzschluss- und erdschlusssicher 
+en  inherently short-circuit and earth fault proof 
+Beschaffenheit eines elektrischen Betriebsmittels oder einer Kombination davon, die gegen Kurzschlüsse und 
+Erdschlüsse durch angemessene Vorkehrungen bei der Ausführung und Errichtung geschützt sind 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 44/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 18 
+826-15 Kabel- und Leitungsanlagen (en  wiring systems) 
+826-15-01 
+Kabel- und Leitungsanlage 
+en  wiring system 
+Anlage, bestehend aus einem oder mehreren zusammengehörigen isolierten Leitern, Kabeln und Leitungen 
+oder Stromschienen, und deren Verbindungs- und Befestigungsmittel, sowie falls notwendig deren 
+mechanischer Schutz 
+826-15-02 
+Baulicher Hohlraum 
+en  building void 
+Zwischenraum in Gebäudebestandteilen, der nur an bestimmten Stellen zugänglich ist 
+Anmerkung 1 zum Begriff: 
+Beispiele sind Hohlräume in Trennwänden, unter Doppelböden, oberhalb von abgehängten 
+Decken und in bestimmten Typen von Fensterrahmen, Türrahmen und Formleisten. 
+Anmerkung 2 zum Begriff: 
+Ein speziell geformter baulicher Hohlraum in einem Gebäudeelement wird auch als Kanal 
+bezeichnet. 
+826-15-03 
+Elektroinstallationsrohr 
+en  conduit 
+geschlossenes Teil einer Kabel- und Leitungsanlage mit im Allgemeinen rundem Querschnitt für isolierte Leiter, 
+Kabel und/oder Leitungen in elektrischen oder informationstechnischen/kommunikationstechnischen Anlage, 
+das es ermöglicht, diese einzuziehen und/oder auszuwechseln 
+Anmerkung 1 zum Begriff 
+ Elektroinstallationsrohre sollten miteinander ausreichend so verbunden sein, dass die 
+isolierten Leiter und/oder Kabel nur eingezogen, nicht aber von der Längsseite her eingebracht werden können. 
+826-15-04 
+zu öffnender Elektroinstallationskanal 
+en  cable trunking system 
+Kombination mit geschlossenen Umhüllungen, mit im Allgemeinem nicht rundem Querschnitt, die aus einem 
+Unterteil mit einem abnehmbaren Deckel besteht und die zur Aufnahme für isolierte Leiter, Kabel, Leitungen, 
+Anschlussleitungen und/oder zur Aufnahme von anderen elektrischen Betriebsmitteln, einschließlich 
+Betriebsmittel der Informationstechnik, bestimmt ist 
+826-15-05 
+geschlossener Elektroinstallationskanal 
+en  cable ducting system 
+Kombination mit geschlossenen Umhüllungen, mit im Allgemeinen nicht rundem Querschnitt, die es ermöglicht, 
+isolierte Leiter, Kabel, Leitungen und/oder Anschlussleitungen in elektrischen Anlagen einzuziehen und 
+auszuwechseln 
+[QUELLE: IEV 442-02-35] 
+826-15-06 
+Kabelkanal 
+en  cable channel 
+Teil einer Kabel- und Leitungsanlage, offen, belüftet oder geschlossen, über oder unter der Erdoberfläche oder 
+dem Fußboden, mit Abmessungen, die Personen keinen Zutritt, aber den Zugang zu den 
+Elektroinstallationsrohren und/oder Kabeln und Leitungen auf der gesamten Länge während und nach der 
+Verlegung ermöglichen 
+Anmerkung 1 zum Begriff: 
+Ein Kabelkanal kann Teil einer Gebäudekonstruktion sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 45/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 19 
+826-15-07 
+Begehbarer Kabelkanal 
+en  cable tunnel 
+Gang, der Halterungen für Kabel und Verbindungselemente und/oder andere Teile der Kabel- und 
+Leitungsanlage enthält und dessen Abmessungen Personen die Möglichkeit geben, sich innerhalb des Gangs 
+auf seiner gesamten Länge frei zu bewegen 
+826-15-08 
+Kabelwanne 
+en  cable tray 
+Kabeltragsystem, das aus einer durchgehenden Trageplatte mit hochgezogenen Rändern besteht und keine 
+Abdeckung hat 
+Anmerkung 1 zum Begriff: 
+Eine Kabelwanne kann perforiert oder gelocht sein. 
+826-15-09 
+Kabelpritsche 
+en  cable ladder 
+Kabeltragesystem bestehend aus einer Reihe von Querträgerelementen, die fest an den Längsstützen 
+befestigt sind 
+826-15-10 
+Ausleger 
+en  cable brackets 
+Trageteile, nur an einem Ende befestigt und in Abständen im Allgemeinen waagrecht angebracht, auf denen 
+Kabel und/oder Leitungen verlegt sind 
+826-15-11 
+Kabelschelle, Rohrschelle 
+en  cleats, clamps 
+in Abständen angebrachte Trageteile, die ein Kabel und/oder eine Leitung oder ein Elektroinstallationsrohr 
+mechanisch halten 
+826-16 Andere Betriebsmittel (en  other equipment) 
+826-16-01 
+elektrisches Betriebsmittel 
+en  electric equipment 
+Produkt, das zur Erzeugung, Umwandlung, Übertragung, Verteilung oder Anwendung von elektrischer Energie 
+benutzt wird. 
+Anmerkung 1 zum Begriff: 
+Beispiele sind elektrische Maschinen, Transformatoren, Schaltgeräte und Steuergeräte, 
+Messgeräte, Schutzeinrichtungen, Kabel und Leitungen, elektrische Verbrauchsmittel. 
+826-16-02 
+elektrisches Verbrauchsmittel 
+en  current-using equipment 
+elektrisches Betriebsmittel, das dazu bestimmt ist elektrische Energie in eine andere Energieform 
+umzuwandeln 
+Anmerkung 1 zum Begriff: 
+Beispiele sind Licht, Wärme oder mechanische Energie. 
+826-16-03 
+Schaltgerät, Steuergerät 
+en  switchgear and controlgear 
+elektrisches Betriebsmittel, das in einem Stromkreis eingesetzt wird, um eine oder mehrere der folgenden 
+Funktionen zu erfüllen: Schützen, Steuern, Trennen, Schalten 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 46/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 20 
+826-16-04 
+ortsveränderliches elektrisches Betriebsmittel, ortsveränderliches Betriebsmittel 
+en  mobile equipment 
+elektrisches Betriebsmittel, das sich während des Betriebs bewegen kann oder bewegt wird oder von einem 
+Platz zu einem anderen gebracht werden kann, während es am Versorgungsstromkreis angeschlossen ist 
+826-16-05 
+elektrisches Handgerät, Handgerät 
+en  hand-held equipment 
+elektrisches Betriebsmittel, das dazu bestimmt ist, während des üblichen Gebrauchs in der Hand gehalten zu 
+werden 
+826-16-06 
+ortsfestes Betriebsmittel 
+en stationary equipment 
+fest angebrachtes Betriebsmittel oder ein Betriebsmittel das nicht leicht bewegt werden kann 
+826-16-07 
+fest angebrachtes elektrisches Betriebsmittel, fest angebrachtes Betriebsmittel 
+en  fixed equipment 
+elektrisches Betriebsmittel, das auf einer Haltevorrichtung angebracht oder in einer anderen Weise fest an 
+einer bestimmten Stelle montiert ist 
+826-16-08 
+elektrischer Verteiler, Verteiler 
+en  distribution board 
+Betriebsmittelkombination, die verschiedene Arten von Schaltgeräten und Steuergeräten enthält, an die ein 
+oder mehrere abgehende Stromkreise angeschlossen sind, die von einem oder mehreren ankommenden 
+Stromkreisen gespeist wird und gegebenenfalls auch die Anschlussstellen für Außenleiter, Neutralleiter, 
+Mittelleiter und Schutzleiter enthält 
+Anmerkung AT zum Begriff: 
+Dazu zählen z. B. auch Niederspannungs-Schaltgerätekombinationen, Hausanschluss-
+kästen, Sicherungskästen. 
+826-17 Trennen und Schalten (en  isolation and switching) 
+826-17-01 
+Trennen 
+en  isolation 
+Trennung mit ausreichender Isolierung zwischen elektrischen Geräten, einem System, einer Anlage oder 
+einem Teil einer Anlage und ihren Energiequellen 
+826-17-02 
+Ausschalten für nicht elektrische Instandhaltung 
+en  switching-off for mechanical maintenance 
+Öffnen der Kontaktstücke einer Schalteinrichtung, die dazu bestimmt ist, ein einzelnes oder mehrere 
+elektrische Betriebsmittel auszuschalten, um eine andere Gefahr als die durch elektrischen Schlag oder 
+Lichtbogen während nicht elektrischer Arbeiten an diesen Betriebsmitteln zu verhüten 
+826-17-03 
+Not-Ausschaltung 
+en  emergency switching-off 
+Öffnen der Kontaktstücke einer Schalteinrichtung, die dazu bestimmt ist, die elektrische Energieversorgung 
+einer elektrischen Anlage oder eines Teils der elektrischen Anlage auszuschalten, um eine gefährliche 
+Situation aufzuheben oder abzumildern 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 47/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 21 
+826-17-04 
+Not-Halt 
+en  emergency stopping 
+Handlung, die dazu bestimmt ist, eine Bewegung, die gefährlich geworden ist, so schnell wie möglich 
+anzuhalten 
+826-17-05 
+betriebsmäßiges Schalten 
+en  functional switching 
+Handlung, die dazu bestimmt ist, die elektrische Energieversorgung für eine elektrische Anlage oder für einen 
+Teil der Anlage im normalen Betrieb ein- oder auszuschalten oder zu verändern 
+826-18 Fähigkeit von Personen (en  capability of persons) 
+826-18-01 
+Elektrofachkraft 
+en  skilled person, <electrically> 
+ 
+siehe ÖVE/ÖNORM EN 50110-1 
+826-18-02 
+elektrotechnisch unterwiesene Person 
+en  instructed person, <electrically> 
+ 
+siehe ÖVE/ÖNORM EN 50110-1 
+826-18-03 
+Laie 
+en  ordinary person 
+ 
+siehe ÖVE/ÖNORM EN 50110-1 
+826-18-04 
+Bereich mit eingeschränkter Zugangsberechtigung 
+en  restricted access area 
+Bereich, der nur für Elektrofachkräfte und elektrotechnisch unterwiesene Personen, mit der entsprechenden 
+Berechtigung, zugänglich ist 
+[QUELLE: IEV 195-04-04] 
+203 Ergänzende Begriffe aus den Teilen von OVE E 8101 
+Teil 1 – Allgemein Grundsätze 
+ 
+Keine ergänzenden Begriffe. 
+Teil 3 – Bestimmungen allgemeiner Merkmale 
+ 
+Keine ergänzenden Begriffe. 
+Teil 4 – Schutzmaßnahmen und Schutzvorkehrungen 
+Teil 4-41 – Schutz gegen elektrischen Schlag 
+ 
+Keine ergänzenden Begriffe. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 48/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 22 
+Teil 4-42 – Schutz gegen thermische Einflüsse 
+420.3.1 
+brennbar 
+en  combustible 
+kann entzündet und verbrannt werden 
+[QUELLE: ÖNORM EN ISO 13943:2024, 3.59] 
+Anmerkung 1.AT zum Begriff:  
+Baustoffe (Bauprodukte) werden entsprechend der europäisch harmonisierten Norm 
+ÖNORM EN 13501-1 hinsichtlich ihres Brandverhaltens klassifiziert. Es sind sieben Brandverhaltensklassen: A1, A2, B, C, 
+D, E und F definiert, mit A1 als höchster Klasse und F als niedrigster. Die Einteilung erfolgt danach, welcher Beitrag vom 
+Bauprodukt zu einem Brandgeschehen zu erwarten ist. Bauprodukte der Klasse A1 leisten zu keinem Zeitpunkt eines 
+Brandes einen Beitrag zum Brandgeschehen, jene der Klasse A2 keinen wesentlichen. Bauprodukte der Klassen B, C und 
+D halten einem Angriff durch eine kleine Flamme (z. B. Feuerzeugflamme) ohne wesentliche Flammenausbreitung stand 
+und zusätzlich sind sie in der Lage, einem einzeln brennenden Gegenstand (z. B. brennender Papierkorb) mit begrenzter 
+Wärmefreisetzung standzuhalten. Je höher die Klasse, umso weniger Wärmefreisetzung ist zu erwarten. Bauprodukte der 
+Klasse E können grundsätzlich einer kleinen Flamme für kurze Zeit ohne wesentliche Flammenausbreitung standhalten. 
+Gemäß OVE EN IEC 60332-1-2 geprüfte Kabel/Leitung erfüllen die Anforderungen an die Klasse Eca. Bauprodukte der 
+Klasse F erfüllen kein Kriterium. 
+Die früheren nationalen Begriffe der Schwerbrennbarkeit, Normalbrennbarkeit und Leichtbrennbarkeit sind im europäischen 
+Klassifizierungssystem nicht mehr existent. Will man dennoch einen groben Vergleich anstellen, so sind leicht brennbare 
+Stoffe der Klasse F zuzuordnen (z. B. Papier), normal brennbare Stoffe der Klasse E (z. B. Polystyrol, Bauschäume ohne 
+flammhemmende Eigenschaften, dünne Holzschichten, Kunststoffprodukte), schwerbrennbare Stoffe den Klassen B bis D 
+(z. B. Holzwerkstoffe der Klasse D, Wärmedämmverbundsysteme der Klasse B, Gipsplatten mit hohem Kartonanteil der 
+Klasse B). Es handelt sich um keine Äquivalenz zwischen den nationalen Begriffen und den europäischen 
+Klassifizierungen, sodass es Bauprodukte geben kann, die dieser früheren Zuordnung nicht entsprechen. 
+420.3.2 
+Brand, Feuer 
+en  fire 
+<allgemein> Verbrennungsvorgang, der durch die Freisetzung von Wärme und flüchtigen Verbrennungs-
+produkten charakterisiert und gewöhnlich durch Rauch, Flammen, Glühen oder eine Kombination von diesen 
+begleitet wird 
+[QUELLE: ÖNORM EN ISO 13943:2024, 3.138, 3.139, 3.140; mod.] 
+Anmerkung 1.AT zum Begriff:  
+Feuer 
+gemäß 
+ÖNORM EN ISO 13943 
+ist 
+eine 
+<kontrollierte> 
+selbstständige 
+Verbrennung (3.62), die absichtlich in Gang gesetzt worden ist, um nützliche Effekte zu bewirken, und die in Bezug auf die 
+Dauer und Ausdehnung begrenzt ist. 
+Anmerkung 2.AT zum Begriff: Brand 
+gemäß 
+ÖNORM EN ISO 13943 
+ist 
+eine 
+<unkontrollierte> 
+selbstständige 
+Verbrennung (3.62), die nicht absichtlich in Gang gesetzt worden ist, um nützliche Effekte zu bewirken, und die in Bezug 
+auf die Dauer und Ausdehnung nicht begrenzt ist. 
+420.3.3 
+Brennbarkeit 
+en  flammability 
+Eigenschaft eines Werkstoffs oder Erzeugnisses, unter festgelegten Bedingungen mit Flammenbildung zu 
+brennen 
+[QUELLE: ÖNORM EN ISO 13943:2024, 3.200] 
+420.3.4 
+Entzündbarkeit 
+en  ignitability 
+Maß dafür, wie leicht ein Probekörper unter bestimmten Bedingungen entzündet werden kann 
+[QUELLE: ÖNORM EN ISO 13943:2024, 3.237, mod.] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 49/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 23 
+420.3.5 
+Entzündung 
+en  ignition 
+Einleitung der Verbrennung 
+Anmerkung 1 zum Begriff: 
+Für weitere Informationen siehe OVE EN IEC 60695-4 und ÖNORM EN ISO 13943. 
+[QUELLE: ÖNORM EN ISO 13943:2024, 3.242; mod.] 
+420.3.6 
+nicht flammausbreitendes Bauteil 
+en  non-flame propagating component 
+Bauteil, das sich beim Anlegen einer Flamme entzünden kann, aber die Flamme nicht weiterleitet und innerhalb 
+einer begrenzten Zeit nach dem Entfernen der Flamme von selbst erlischt 
+[QUELLE: IEV 442-01-12, mod.] 
+Teil 4-43 – Schutz bei Überstrom 
+ 
+Keine ergänzenden Begriffe. 
+Teil 4-44 Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+Abschnitt 442 – Schutz von Niederspannungsanlagen bei vorübergehenden Überspannungen infolge 
+von Erdschlüssen im Hochspannungssystem und infolge von Fehlern im 
+Niederspannungssystem 
+ 
+Keine ergänzenden Begriffe. 
+Abschnitt 443 – Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+443.3.1 
+städtisches Gebiet 
+en  urban environment 
+Fläche mit hoher Bebauungsdichte oder hoher Bevölkerungsdichte mit hohen Gebäuden 
+Anmerkung 1 zum Begriff: 
+Ein Stadtzentrum ist ein Beispiel für ein städtisches Gebiet. 
+443.3.2 
+vorstädtisches Gebiet 
+en  suburban environment 
+Fläche mit mittlerer Bebauungsdichte 
+Anmerkung 1 zum Begriff: 
+Stadtränder sind ein Beispiel für ein vorstädtisches Gebiet. 
+443.3.3 
+ländliches Gebiet 
+en  rural environment 
+Fläche mit geringer Bebauungsdichte 
+Anmerkung 1 zum Begriff: 
+Dörfer sind ein Beispiel für ein ländliches Gebiet. 
+443.3.4 
+Überspannungsschutzgerät, SPD 
+en  surge protective device, SPD 
+Gerät, dass mindestens eine nichtlineare Komponente enthält und dazu bestimmt ist, Überspannungen zu 
+begrenzen und Impulsströme abzuleiten 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 50/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 24 
+Anmerkung 1 zum Begriff: 
+Ein SPD ist eine komplette Baueinheit, die entsprechende Anschlussmöglichkeiten besitzt. 
+[QUELLE: OVE EN 61643-11:2019, 3.1.1] 
+Anmerkung 1.AT zum Begriff:  
+In anderen Normen werden für Überspannungs-Schutzeinrichtungen (SPD) auch noch 
+die Bezeichnungen „Überspannungsschutzgeräte“, „Überspannungs-Schutzeinrichtungen“ oder „Überspannungsableiter“ 
+verwendet. Verbreitet ist die Kurzbezeichnung „SPD“, die aus dem Englischen abgeleitet ist von „Surge Protective Device“. 
+443.3.5 
+berechneter Risikolevel 
+en  calculated risk level, CRL 
+ 
+Die Definition aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+443.3.6 
+Bemessungs-Stoßspannung 
+en  rated impulse voltage 
+Uw 
+ 
+siehe 534.3.32 
+Abschnitt 444 – Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+444.3.1 
+Potentialausgleichsanlage 
+en  equipotential bonding system 
+ 
+siehe 826-13-30 
+444.3.2 
+Potentialausgleichsringleiter 
+en  bonding ring conductor, BRC 
+Erdungssammelleiter in Form eines geschlossenen Rings 
+Anmerkung 1 zum Begriff: 
+Gewöhnlich hat ein Potentialausgleichsringleiter (BRC) mehrfach Verbindung mit der 
+gemeinsamen Potentialausgleichsanlage (CBN) und steigert damit deren Qualität. 
+444.3.3 
+gemeinsame Potentialausgleichsanlage 
+en  common bonding network (CBN) 
+miteinander verbundene leitfähige Konstruktionen, die die Funktion einer Schutzpotentialausgleichsanlage und 
+einer Telekommunikations-Potentialausgleichsanlage kombinieren 
+[QUELLE: OVE EN 50310:2020, 3.1.6] 
+444.3.4 
+Potentialausgleich 
+en  equipotential bonding 
+ 
+siehe 826-13-19 
+444.3.5 
+Erdernetz 
+en  earth-electrode network 
+ 
+siehe 826-13-06 
+444.3.6 
+vermaschte Potentialausgleichsanlage 
+en meshed bonding network, MESH-BN 
+Verbindungsnetzwerk, bei dem alle beteiligten Rahmen, Gestelle und Schränke der Betriebsmittel und 
+üblicherweise auch der Rückleiter der Gleichstromversorgung, sowohl miteinander als auch an vielen Stellen 
+mit der gemeinsamen Potentialausgleichsanlage (CBN) verbunden sind 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 51/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 25 
+Anmerkung 1 zum Begriff: 
+Die vermaschte Potentialausgleichsanlage (MESH-BN) verstärkt die gemeinsame 
+Potentialausgleichsanlage (CBN). 
+[QUELLE: ETSI EN 300 253:2015, 3.1.2; mod.] 
+444.3.7 
+paralleler Erdungsleiter 
+en  parallel-earthing-conductor, PEC 
+ 
+siehe 826-13-13 
+Anmerkung 1 zum Begriff: 
+Siehe Bild 444.1. 
+444.3.001.AT 
+Sternpunkt-Verbindungs-Leiter, SVL 
+isolierter Leiter, mit dem die Sternpunkte aller in einem lokalen Bereich parallel zu betreibenden Stromquellen 
+dauernd verbunden und an einem einzigen definierten Punkt geerdet werden 
+Der SVL erfüllt primär die Funktion eines Neutralleiters, führt jedoch im Fehlerfall auch die zu den Sternpunkten 
+zurückfließenden Fehlerströme. 
+Teil 4-45 – Schutz gegen Unterspannung 
+45.3.001.AT 
+Unterspannungsschutz 
+en  undervoltage protection 
+Schutz, der bestimmungsgemäß anspricht, wenn die Spannung den Einstellwert unterschreitet 
+[QUELLE: IEV 448-14-33] 
+45.3.002.AT 
+Unterspannung 
+en  under-voltage 
+elektrische Spannung, deren Wert kleiner als ein festgelegter Grenzwert ist 
+[QUELLE: IEV 151-15-29] 
+Teil 4-46 – Trennen und Schalten 
+ 
+Keine ergänzenden Begriffe. 
+Teil 5 – Auswahl und Installation elektrischer Betriebsmittel 
+Teil 5-51 – Allgemeine Bestimmungen 
+ 
+Keine ergänzenden Begriffe. 
+Teil 5-52 – Kabel- und Leitungsanlage 
+520.3.1 
+Kabel- und Leitungsanlage 
+en  wiring system 
+ 
+siehe 826-15-01 
+520.3.2 
+Stromschiene 
+en  busbar 
+Leiter mit geringer Impedanz, an den mehrere Stromkreise einzeln angeschlossen werden können 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 52/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 26 
+Teil 5-53 – Schalt- und Steuergeräte 
+530.3.1 
+Steuern 
+en  control 
+absichtliche Handlung, die zum Ansprechen einer Einrichtung führt 
+[QUELLE: IEV 821-01-28; mod.] 
+530.3.2 
+Steuerung 
+en  control 
+Einrichtung, die das Ansprechen einer Einrichtung einleitet 
+[QUELLE: IEV 821-01-28; mod.] 
+530.3.3 
+Trennen 
+en  isolation 
+ 
+siehe 826-17-01 
+530.3.4 
+Überwachen 
+en  monitor 
+ausgewählte variable Größen fortlaufend daraufhin überprüfen, ob sie sich innerhalb normaler Betriebsgrenzen 
+befinden und, wenn angebracht, die Überschreitung von Toleranzgrenzen melden 
+[QUELLE: IEV 351-43-03] 
+530.3.5 
+Schalten 
+en  switching 
+Funktion, dazu vorgesehen, in einem oder mehreren elektrischen Stromkreisen den Stromfluss einzuschalten 
+oder zu unterbrechen 
+530.3.6 
+Koordination elektrischer Betriebsmittel 
+en  co-ordination of electrical equipment 
+korrekte Methode zur Auswahl von elektrischen Einrichtungen in Reihe, um die Sicherheit und Versorgungs-
+sicherheit der Anlage sicherzustellen, wobei der Kurzschlussschutz und/oder der Überlastschutz und/oder die 
+Selektivität berücksichtigt werden 
+530.3.7 
+Sicherheit der elektrischen Anlage 
+en  safety of electrical installation 
+bezieht sich auf die Sicherheit von Menschen, Nutztieren und Sachen vor Gefahren und Schäden, die beim 
+sinnvollen Gebrauch von elektrischen Anlagen auftreten können und die durch Maßnahmen für die folgenden 
+Zwecke sichergestellt wird: 
+– 
+Schutz gegen elektrischen Schlag; 
+– 
+Schutz gegen thermische Auswirkungen; 
+– 
+Schutz gegen Überstrom; 
+– 
+Schutz gegen Fehlerströme; 
+– 
+Schutz gegen Spannungsstörungen und Maßnahmen gegen elektromagnetische Einflüsse; 
+– 
+Schutz gegen Unterbrechungen der Stromversorgung, durch welche Gefahren oder Schäden zu erwarten 
+sind. 
+Anmerkung 1 zum Begriff: 
+Für bestimmte Stromkreise kann die Aufrechterhaltung der Stromversorgung erforderlich 
+sein (z. B. Stromkreise an medizinischen Standorten, Stromkreise zur Versorgung von Notfallsystemen). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 53/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 27 
+530.3.8 
+Versorgungssicherheit 
+en  continuity of service 
+Eigenschaft einer Anlage, die durch das Ausmaß ausgedrückt wird, in dem der Betrieb einer elektrischen 
+Anlage dem idealen unterbrechungsfreien Zustand nahekommt, oder in dem beim Betrieb der elektrischen 
+Anlage Unterbrechungen aufgrund der Koordination der elektrischen Einrichtungen minimiert werden. 
+530.3.9 
+Back-up-Schutz 
+en  back-up protection 
+Zuordnung zweier Überstrom-Schutzeinrichtungen in Reihe, wobei die allgemeiner-, aber nicht 
+notwendigerweise, auf der Einspeiseseite befindliche Schutzeinrichtung mit oder ohne Hilfe der zweiten 
+Schutzeinrichtung den Schutz bewirkt und die übermäßige Beanspruchung der zweiten Schutzeinrichtung 
+verhindert 
+[QUELLE: OVE EN IEC 60947-1:2022, 3.7.24] 
+530.3.10 
+kombinierter Kurzschlussschutz 
+en  combined short-circuit protection 
+Überstromschutzkoordination unter Kurzschlussbedingungen mit zwei in Reihe geschalteten Überstrom-
+Schutzeinrichtungen (OCPD), wodurch eine höhere kombinierte Kurzschlussstromfestigkeit erreicht wird als 
+bei nur einer Überstrom-Schutzeinrichtung (OCPD) 
+530.3.11 
+kombinierte Kurzschlussfestigkeit 
+en  combined short-circuit capability 
+maximaler Kurzschlussstrom, der von zwei in Reihe geschalteten Kurzschluss-Schutzeinrichtung gehandhabt 
+werden kann 
+530.3.12 
+Selektivität 
+en  selectivity 
+Koordination zwischen den Ansprechkennlinien von zwei oder mehreren Schutzeinrichtungen in der Weise, 
+dass beim Auftreten von Überströmen oder Fehlerströmen zwischen vorgegebenen Grenzwerten die zum 
+Ausschalten innerhalb dieses Bereichs vorgesehene Einrichtung ausschaltet, während die anderen 
+Einrichtungen nicht ansprechen 
+Anmerkung 1 zum Begriff: 
+Es wird zwischen serieller Selektivität unterschieden, bei der unterschiedliche Überstrom-
+Schutzeinrichtungen beteiligt sind, durch die im Grunde der gleiche Überstrom fließt, und Netzwerk-Selektivität, bei der 
+Schutzeinrichtungen beteiligt sind, durch die unterschiedliche Anteile des Überstroms fließen. 
+[QUELLE: IEV 441-17-15; mod.] 
+530.3.13 
+volle Selektivität 
+en  total selectivity 
+Selektivität, bei der nur die Überstrom-Schutzeinrichtung (OCPD) auf der Lastseite bis zum maximalen 
+unbeeinflussten Kurzschlussstrom an deren Anschlusspunkt anspricht 
+530.3.14 
+Teilselektivität 
+en  partial selectivity 
+Selektivität, bei der die Überstrom-Schutzeinrichtung (OCPD) auf der Lastseite nur bis zu einem Fehlerstrom 
+(dem Selektivitäts-Grenzwertstrom) anspricht, der geringer ist als der maximale unbeeinflusste 
+Kurzschlussstrom an deren Anschlusspunkt 
+530.3.15 
+Überstrom-Schutzeinrichtung, OCPD 
+en  overcurrent protective device, OCPD 
+ 
+siehe 826-14-14 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 54/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 28 
+530.3.16 
+Kurzschluss-Schutzeinrichtung, SCPD 
+en  short-circuit protective device, SCPD 
+Gerät das einen Stromkreis oder Teile eines Stromkreises vor einem Kurzschlussstrom durch Ausschalten des 
+Kurzschlussstroms schützt 
+Anmerkung 1 zum Begriff: 
+Tabelle 536.2 gibt Informationen zu den unterschiedlichen Einrichtungen, die der 
+generischen Hauptfunktion entsprechen. 
+[QUELLE: OVE EN IEC 60947-1:2022, 3.4.21] 
+530.3.17 
+Leistungsschalter/Leitungsschutzschalter 
+en  circuit-breaker 
+mechanisches Schaltgerät, das Ströme unter Betriebsbedingungen im Stromkreis einschalten, führen und 
+ausschalten und auch unter festgelegten außergewöhnlichen Bedingungen, wie Kurzschluss, einschalten, 
+während einer festgelegten Dauer führen und ausschalten kann 
+Anmerkung 1 zum Begriff: 
+Tabelle 536.2 gibt Informationen zu den unterschiedlichen Einrichtungen an, die der 
+generischen Hauptfunktion entsprechen. 
+[QUELLE: IEV 441-14-20] 
+530.3.18 
+Schalter 
+en  switch 
+Einrichtung zum Ändern der elektrischen Verbindungen zwischen ihren Anschlüssen 
+[QUELLE: IEV 151-12-22] 
+530.3.19 
+Fehlerstrom-Schutzeinrichtung, RCD 
+en  residual current device, RCD 
+mechanisches Schaltgerät, das vorgesehen ist, unter bestimmungsgemäßen Betriebsbedingungen Strom 
+einzuschalten, zu führen und auszuschalten und die Schaltglieder zu öffnen, wenn der Fehlerstrom unter 
+festgelegten Bedingungen einen vorgegebenen Wert erreicht 
+Anmerkung 1 zum Begriff: 
+Eine Fehlerstrom-Schutzeinrichtung kann eine Kombination unterschiedlicher getrennter 
+Bauteile sein, die bestimmt sind, den Fehlerstrom nachzuweisen und zu bewerten bzw. den Strom ein- und auszuschalten. 
+Anmerkung 2 zum Begriff: 
+Die Fehlerstrom-Schutzeinrichtung (RCD) schließt Einrichtungen wie beispielsweise 
+Fehlerstrom-Schutzschalter (RCCB), Fehlerstrom-Schutzschalter mit Überstromauslöser (RCBO), Leistungsschalter mit 
+integriertem Fehlerstromschutz (CBR) und modulare Fehlerstrom-Schutzeinrichtungen (MRCD) ein. Tabelle 536.2 gibt 
+Informationen zu den unterschiedlichen Einrichtungen, die der generischen Hauptfunktion entsprechen. 
+[QUELLE: IEV 442-05-02; mod.] 
+530.3.20 
+Sicherung 
+en  fuse 
+Einrichtung, die durch Abschmelzen eines oder mehrerer ihrer hierfür bestimmten und ausgelegten Teile den 
+Stromkreis, in den sie eingefügt ist, öffnet, indem sie den Strom ausschaltet, wenn dieser über eine ausreichend 
+lange Zeit einen gegebenen Wert überschreitet. Der Begriff Sicherung umfasst alle Teile, die die vollständige 
+Einrichtung bilden 
+[QUELLE: IEV 441-08-01] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 55/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 29 
+530.3.21 
+Schütz 
+en  contactor 
+mechanisches Schaltgerät mit nur einer Ruhestellung, das nicht von Hand betätigt wird und Ströme unter 
+Betriebsbedingungen im Stromkreis einschließlich Überlast einschalten, führen und ausschalten kann 
+[QUELLE: IEV 441-14-33] 
+530.3.22 
+Überlastrelais oder -auslöser 
+en  overload relay or release 
+Überstromrelais oder -auslöser zum Schutz vor Überlastungen 
+[QUELLE: OVE EN IEC 60947-1:2022, 3.6.31] 
+530.3.23 
+Steuer- und Schutz-Schaltgerät (oder Einrichtung), CPS 
+en  control and protective switching device, CPS 
+mechanisches Schaltgerät mit einer Steuerungsfunktion, das nicht von Hand betätigt werden kann und in der 
+Lage ist 
+– 
+Ströme unter Betriebsbedingungen einzuschalten, zu führen und auszuschalten; 
+– 
+Ströme während einer festgelegten Zeit in Überlastbedingung einzuschalten und zu führen; 
+– 
+Ströme 
+unter 
+festgelegten, 
+außerordentlichen 
+Betriebsbedingungen, 
+wie 
+z. B. 
+Kurzschluss, 
+auszuschalten; 
+– 
+durchgehenden Betrieb sicherzustellen. 
+Anmerkung 1 zum Begriff: 
+Die Bezeichnung „mit einer Steuerungsfunktion nicht von Hand betätigt“ besagt, dass das 
+Gerät von einer oder mehreren Einspeisungen angesteuert und in der Einschaltstellung gehalten werden kann. 
+Anmerkung 2 zum Begriff: 
+Ein CPS kann aus einem einzelnen Gerät bestehen, ist aber immer als Einheit bemessen. 
+Die Zuordnung erfolgt naturgemäß oder wird durch richtige Auswahl von Auslösern entsprechend den Anweisungen des 
+Herstellers erreicht. 
+[QUELLE: OVE EN IEC 60947-6-2:2023, 3.2.1] 
+530.3.24 
+bedingter Kurzschlussstrom 
+en conditional short-circuit current 
+unbeeinflusster Strom, den der durch eine bestimmte Kurzschluss-Schutzeinrichtung geschützte Stromkreis 
+oder das Schaltgerät für die Gesamtausschaltzeit dieses Geräts aushalten kann 
+[QUELLE: OVE EN IEC 60947-1:2022, 3.7.29] 
+530.3.25 
+theoretische Beurteilung 
+en  desk study 
+ 
+Die Definition aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+534.3.26 
+SPD-Kombination 
+en  SPD assembly 
+ein oder mehrere Überspannungs-Schutzeinrichtungen (SPD), jeweils inklusive aller vom Hersteller der 
+Überspannungs-Schutzeinrichtung (SPD) vorgeschriebenen Abtrennvorrichtungen, die zur Erreichung des 
+geforderten Überspannungsschutzes für ein bestimmtes Netzsystem notwendig sind 
+534.3.27 
+SPD-Abtrennvorrichtung, Abtrennvorrichtung 
+en  SPD disconnector; disconnector 
+Vorrichtung, um ein SPD oder einen Teil eines SPD im Fall eines SPD-Versagens vom elektrischen Netz zu 
+schalten 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 56/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 30 
+Anmerkung 1 zum Begriff: 
+Von dieser Vorrichtung wird keine Trennfunktion gefordert. Sie soll einen dauerhaften 
+Fehler im System verhindern und wird verwendet, um eine Anzeige beim Versagen des SPD zu geben. Abtrenn-
+vorrichtungen können intern (integriert) oder extern (entsprechend der Herstellervorgabe) ausgeführt sein. Es kann mehr 
+als eine Abtrennvorrichtung vorhanden sein, z. B. eine Überstrom-Abtrennvorrichtung und eine thermische 
+Abtrennvorrichtung. Diese Funktionen können in einer Einheit oder in getrennten Einheiten realisiert sein. 
+[QUELLE: ÖVE EN 61643-11:2019, 3.1.28] 
+534.3.28 
+Schutzpfad 
+en  mode of protection of an SPD 
+vorgesehener Strompfad zwischen den Anschlussklemmen, der ein oder mehrere Schutzelemente enthält, 
+z. B. zwischen den Leitern, Leiter gegen Erde, Leiter gegen Neutral, Neutral gegen Erde 
+[QUELLE: ÖVE EN 61643-11:2019, 3.1.8] 
+534.3.29 
+Folgestromlöschfähigkeit 
+en  follow current interrupt rating 
+Ifi 
+unbeeinflusster Kurzschlussstrom, der von der Überspannungs-Schutzeinrichtung (SPD) selbstständig und 
+ohne Abtrennung unterbrochen werden kann 
+[QUELLE: ÖVE EN 61643-11:2019, 3.1.39; mod.] 
+534.3.30 
+Kurzschlussfestigkeit der Überspannungs-Schutzeinrichtung (SPD) 
+en  short-circuit current rating 
+ISCCR 
+höchster unbeeinflusster Kurzschlussstrom des elektrischen Netzes, für welches die Überspannungs-
+Schutzeinrichtung (SPD) in Verbindung mit seinen vorgegebenen Abtrennvorrichtungen bemessen ist 
+[QUELLE: ÖVE EN 61643-11:2019, 3.1.27; mod.] 
+534.3.31 
+Schutzpegel 
+en  voltage protection level 
+Up 
+maximale Spannung, die an den Anschlussklemmen der Überspannungs-Schutzeinrichtung (SPD) während 
+der Belastung mit einem Impuls festgelegter Spannungssteilheit und der Belastung mit einem Ableitstoßstrom 
+gegebener Amplitude und Wellenform auftreten kann 
+Anmerkung 1 zum Begriff: 
+Der Schutzpegel wird vom Hersteller angegeben und darf nicht überschritten werden durch 
+– 
+die gemessene Begrenzungsspannung, ermittelt aus der Stirn-Ansprechspannung (wenn anwendbar) und die 
+gemessene Begrenzungsspannung, bestimmt aus der Restspannungsmessung bei Impulsen entsprechend In 
+und/oder Iimp für Prüfklasse II und/oder Prüfklasse I; 
+– 
+die gemessene Begrenzungsspannung bei UOC, ermittelt mit einem Hybridimpuls für Prüfklasse III. 
+Anmerkung 2 zum Begriff: 
+Informationen zur Gegenüberstellung der SPD-Typen und Prüfklassen nach der 
+Produktnorm siehe Anhang 53.A. 
+[QUELLE: ÖVE EN 61643-11:2019, 3.1.14; mod.] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 57/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 31 
+534.3.32 
+Bemessungs-Stoßspannung 
+en  rated impulse voltage 
+UW 
+Wert einer Steh-Stoßspannung, der vom Hersteller für ein Betriebsmittel oder für einen Teil davon angegeben 
+wird und der das festgelegte Stehvermögen der zugehörigen Isolierung gegenüber transienten 
+Überspannungen angibt 
+[QUELLE: OVE EN IEC 60664-1:2022, 3.9.2; mod.] 
+534.3.33 
+höchste Dauerspannung 
+en  maximum continuous operating voltage 
+UC 
+höchster Effektivwert der Spannung, die dauernd an den Schutzpfaden der Überspannungs-Schutzeinrichtung 
+(SPD) angelegt werden darf 
+Anmerkung 1 zum Begriff: 
+Der Wert UC, der in den Bereich dieser Norm fällt, kann 1 000 V überschreiten. 
+[QUELLE: OVE EN 61643-11:2019, 3.1.11] 
+534.3.34 
+Nennableitstoßstrom für Prüfung der Klasse II 
+en  nominal discharge current for class II test 
+In 
+Scheitelwert des durch die Überspannungs-Schutzeinrichtung (SPD) fließenden Stroms mit der  
+Impulsform 8/20 
+Anmerkung 1 zum Begriff: 
+Informationen zur Gegenüberstellung der SPD-Typen und Prüfklassen nach der 
+Produktnorm siehe Anhang 53.A. 
+[QUELLE: OVE EN 61643-11:2019, 3.1.9; mod.] 
+534.3.35 
+Blitzstoßstrom für Prüfung der Klasse I 
+en  impulse discharge current for class I test 
+Iimp 
+Stromscheitelwert eines Ableitstoßstroms durch eine Überspannungs-Schutzeinrichtung (SPD) mit einer 
+festgelegten Ladung Q und einer festgelegten spezifischen Energie W/R in einer festgelegten Zeit 
+Anmerkung 1 zum Begriff: 
+Informationen zur Gegenüberstellung der SPD-Typen und Prüfklassen nach der 
+Produktnorm siehe Anhang 53.A. 
+[QUELLE: OVE EN 61643-11:2019, 3.1.10; mod.] 
+534.3.36 
+Leerlaufspannung 
+en  open circuit voltage 
+UOC 
+Leerlaufspannung des Hybridgenerators am Anschlusspunkt des Prüflings 
+[QUELLE: OVE EN 61643-11:2019, 3.1.23] 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 58/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 32 
+534.3.37 
+Two-Port-SPD 
+en  two-port-SPD 
+Überspannungs-Schutzeinrichtung (SPD), die eine bestimmte Reihenimpedanz zwischen den Eingangs- und 
+Ausgangsklemmen aufweist 
+[QUELLE: OVE EN 61643-11:2019, 3.1.3] 
+534.3.001.AT 
+One-Port-SPD 
+en  one-port-SPD 
+Überspannungs-Schutzeinrichtung (SPD), die keine bestimmungsgemäße Reihenimpedanz besitzt 
+Anmerkung 1 zum Begriff: 
+One-Port-SPD können getrennte Eingangs- und Ausgangsklemmen haben. 
+[QUELLE: OVE EN 61643-11:2019, 3.1.2] 
+534.3.002.AT 
+zeitweilige Überspannung 
+en  temporary overvoltage 
+netzfrequente Überspannung von relativ langer Dauer 
+Anmerkung 1 zum Begriff: 
+Eine zeitweilige Überspannung ist ungedämpft oder nur schwach gedämpft. In einigen 
+Fällen kann ihre Frequenz ein ganzzahliger Teiler oder ein ganzzahliges Vielfaches der Netzfrequenz sein. 
+[QUELLE: IEV 614-03-13] 
+534.3.003.AT 
+transiente Überspannung 
+en  transient overvoltage 
+schwingende oder nichtschwingende, in der Regel stark gedämpfte Überspannung mit einer Dauer von einigen 
+Millisekunden oder weniger 
+Anmerkung 1 zum Begriff: 
+Transienten 
+Überspannungen 
+können 
+zeitweilige 
+Überspannungen 
+unmittelbar 
+nachfolgen. In diesen Fällen werden beide Überspannungserscheinungen als getrennte Ereignisse betrachtet. 
+Anmerkung 2 zum Begriff: 
+IEC 60071-1 definiert drei Arten von transienten Überspannungen, die nach 
+Anstiegsdauer, Abklingdauer oder Gesamtdauer einschließlich möglicher überlagerter Schwingungen als langsam 
+ansteigende Überspannung, schnell ansteigende Überspannung und sehr schnell ansteigende Überspannung 
+unterschieden werden. 
+[QUELLE: IEV 614-03-14] 
+Teil 5-54 – Erdungsanlagen und Schutzleiter 
+541.3.1 
+Körper, <eines elektrischen Betriebsmittels> 
+en  exposed conductive part 
+ 
+siehe 826-12-10 
+541.3.2 
+fremdes leitfähiges Teil 
+en  extraneous conductive part 
+ 
+siehe 826-12-11 
+541.3.3 
+Erder 
+en  earth electrode 
+ 
+siehe 826-13-05 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 59/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 33 
+541.3.4 
+Fundamenterder, in Beton gebettet 
+en  concrete-embedded foundation earth electrode 
+Erder in Beton eines Gebäudefundaments gebettet, im Allgemeinen als geschlossener Ring 
+[QUELLE: IEV 826-13-08; mod.] 
+541.3.5 
+Fundamenterder, in Erde gebettet 
+en  soil-embedded foundation earth electrode 
+Erder erdfühlig unterhalb bzw. außerhalb eines Gebäudefundaments verlegt, im Allgemeinen als 
+geschlossener Ring 
+[QUELLE: IEV 826-13-08; mod.] 
+541.3.6 
+Schutzleiter 
+en  protective conductor 
+ 
+siehe 826-13-22 
+541.3.7 
+Schutzpotentialausgleichsleiter 
+en  protective bonding conductor 
+ 
+siehe 826-13-24 
+541.3.8 
+Erdungsleiter 
+en  earthing conductor 
+ 
+siehe 826-13-12 
+541.3.9 
+Haupterdungsschiene, Haupterdungsklemme 
+en  main earthing busbar, main earthing terminal 
+ 
+siehe 826-13-15 
+541.3.10 
+Schutzerdungsleiter 
+en  protective earthing conductor 
+ 
+siehe 826-13-23 
+541.3.11 
+Funktionserdung 
+en  functional earthing 
+ 
+siehe 826-13-10 
+541.3.12 
+Erdungsanlage 
+en  earthing arrangement 
+ 
+siehe 826-13-04 
+541.3.13 
+Funktionserdungsleiter 
+en  functional earthing conductor 
+ 
+siehe 826-13-28 
+541.3.14 
+Hauptfunktionserdungsschiene, Hauptfunktionserdungsklemme 
+en  main functional earthing terminal, main functional earthing busbar 
+Klemme oder Schiene, die Teil des Funktionserdungssystems einer elektrischen Anlage ist und den Anschluss 
+mehrerer Leiter zur Funktionserdung ermöglicht 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 60/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 34 
+541.3.15 
+Funktionspotentialausgleich 
+en  functional-equipotential-bonding 
+ 
+siehe 826-13-21 
+541.3.16 
+Schutzpotentialausgleich 
+en  protective-equipotential-bonding 
+ 
+siehe 826-13-20 
+541.3.17 
+Potentialausgleich 
+en  equipotential bonding 
+ 
+siehe 826-13-19 
+541.3.18 
+Schutzerdung 
+en  protective earthing 
+ 
+siehe 826-13-09 
+541.3.19 
+Funktionspotentialausgleichsleiter 
+en  functional bonding conductor 
+ 
+siehe 826-13-29 
+Teil 5-55 – Andere elektrische Betriebsmittel 
+Abschnitt 551 – Stromerzeugungseinrichtungen 
+ 
+Keine ergänzenden Begriffe. 
+Abschnitt 557 – Hilfsstromkreise 
+557.2.1 
+Hilfsstromkreis 
+en  auxiliary circuit 
+Stromkreis zum Übertragen von Signalen zur Steuerung, Erfassung, Überwachung oder Messung des 
+funktionalen Zustands eines Hauptstromkreises 
+557.2.2 
+Hauptstromkreis 
+en  main circuit 
+Stromkreis, der elektrische Betriebsmittel zum Erzeugen, Umwandeln, Verteilen von elektrischer Energie oder 
+zum Schalten von elektrischen Verbrauchsmitteln enthält 
+557.2.3 
+strombegrenzender Signalausgang 
+en  current-limiting signal output 
+Signalausgang mit einer Einrichtung zur Strombegrenzung 
+557.2.4 
+kurzschluss- und erdschlusssicher 
+en  inherently short-circuit and earth fault proof 
+ 
+siehe 826-14-15 
+557.2.001.AT 
+Querschluss 
+Kurzschluss zwischen sicherheitsrelevanten Eingangs-Kanälen 
+Ein Querschluss kann zum Versagen eines Ruhestrom-Auslösers (z. B. Not-Aus) führen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 61/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 35 
+Abschnitt 559 – Leuchten und Beleuchtungsanlagen 
+559.2.001.AT 
+Beleuchtungsanlage 
+ortsfeste betriebsmäßige Zusammenfassung einer oder mehrerer Leuchten mit allen Teilen, die als Halterung 
+und zur Befestigung benötigt werden, sowie mit allen Kabeln und Leitungen einschließlich der 
+Verbindungselemente zur Stromversorgung 
+559.2.1 
+Leuchte 
+en  luminaire 
+Gerät, durch welches das von einer oder mehreren Leuchtmittel erzeugte Licht verteilt, gefiltert oder 
+umgewandelt wird. Es umfasst alle Teile, die zur Befestigung und zum Schutz der Leuchtmittel erforderlich sind 
+– nicht aber die Leuchtmittel selbst – und, falls erforderlich, Schaltkreise sowie die Vorrichtungen zum 
+Anschluss an das elektrische Versorgungsnetz 
+[QUELLE: IEV 845-30-001] 
+559.2.002.AT 
+elektrische Lichtquelle 
+Leuchtmittel 
+en  electric light source 
+primäre Lichtquelle mit der Möglichkeit des Anschlusses an die Stromversorgung und üblicherweise zum 
+Einbau in eine Leuchte vorgesehen 
+Anmerkung 1 zum Begriff: 
+Eine elektrische Lichtquelle kann eine Lampe sein, die mit einem Lampensockel versehen 
+ist, oder ein LED-Modul, das so konstruiert ist, dass es durch Klemmen, Verbinder oder ähnliche Vorrichtungen verbunden 
+werden kann. 
+[QUELLE: IEV 845-27-004; mod.] 
+559.2.2 
+Ausstellungsbereich für Leuchten 
+en  display stands for luminaires 
+Bereich, der permanent zur Präsentation von Leuchten vorwiegend zum Zweck des Verkaufs und der 
+Vorführung dient 
+Anmerkung 1 zum Begriff: 
+Die folgenden Einrichtungen gelten nicht als Ausstellungsbereiche: 
+– 
+Messestände, bei denen die Leuchten für die Dauer der Messe angeschlossen bleiben; 
+– 
+vorübergehend aufgestellte Ausstellungstafeln mit fest angeschlossenen Leuchten; 
+– 
+Ausstellungstafeln mit mehreren Leuchten, die über eine Steckvorrichtung verbunden werden können. 
+Abschnitt 55N01 – Anforderungen für die Auswahl und Installation von elektrischen Betriebsmitteln  
+ 
+Keine ergänzenden Begriffe. 
+Abschnitt 55N02 – Aufstellen und Anschließen von Verteilern  
+ 
+Keine ergänzenden Begriffe. 
+Teil 5-56 – Einrichtungen für Sicherheitszwecke 
+560.3.1 
+Stromversorgungssystem für Einrichtungen für Sicherheitszwecke 
+en  electric supply system for safety services 
+elektrische Anlage, die dazu bestimmt ist, die Funktion von elektrischen Betriebsmitteln aufrechtzuerhalten, die 
+von wesentlicher Bedeutung sind: 
+– 
+für die Sicherheit und Gesundheit von Personen und Nutztieren und/oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 62/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 36 
+– 
+zur Vermeidung von Umweltschäden und Schäden an anderen Betriebsmitteln, wenn durch nationale 
+Vorschriften gefordert 
+Anmerkung 1 zum Begriff: 
+Das Stromversorgungssystem umfasst die Stromquelle und die Stromkreise bis zu den 
+Anschlüssen der elektrischen Betriebsmittel. 
+560.3.2 
+Stromquelle für Sicherheitszwecke 
+en  electrical source for safety services 
+ 
+siehe 826-10-05 
+560.3.3 
+Stromkreis für Sicherheitszwecke 
+en  electrical circuit for safety services 
+ 
+siehe 826-10-06 
+560.3.4 
+Ersatzstromversorgungsanlage 
+en  standby electrical supply system 
+ 
+siehe 826-10-07 
+560.3.5 
+Ersatzstromquelle 
+en  standby electrical source 
+ 
+siehe 826-10-08 
+560.3.6 
+Notbeleuchtung 
+en  emergency lighting 
+Beleuchtung, die bei Störung der Stromversorgung der allgemeinen künstlichen Beleuchtung wirksam wird 
+Anmerkung 1.AT zum Begriff:  
+Der Begriff schließt gemäß ÖNORM EN 1838 auch die Sicherheitsbeleuchtung für 
+Fluchtwege, die Antipanikbeleuchtung, die Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung und die 
+Ersatzbeleuchtung ein. 
+560.3.7 
+Notleuchte 
+en  emergency lighting luminaire 
+Leuchte, die mit oder ohne eigene Stromquelle für Sicherheitszwecke ausgerüstet sein darf und die für 
+Sicherheits- oder Notbeleuchtung eingesetzt wird 
+560.3.8.AT 
+beleuchtetes bzw. hinterleuchtetes Sicherheitszeichen 
+en  externally or internally illuminated safety sign 
+Zeichen, das, wenn es erforderlich ist, von einer externen bzw. einer internen Lichtquelle beleuchtet wird 
+560.3.9 
+Dauerbetrieb 
+en  maintained mode 
+Betriebszustand eines Beleuchtungssystems, in dem die Leuchten der Sicherheitsbeleuchtung ständig in 
+Betrieb sind, wenn eine allgemeine Beleuchtung oder Sicherheitsbeleuchtung erforderlich ist 
+560.3.10 
+Bereitschaftsbetrieb 
+en  non-maintained mode 
+Betriebszustand eines Beleuchtungssystems, in dem die Leuchten der Sicherheitsbeleuchtung nur nach 
+Ausfall der Versorgung der allgemeinen Beleuchtung in Betrieb sind 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 63/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 37 
+560.3.11 
+Umschaltzeit 
+en  response time 
+Zeitspanne zwischen dem Ausfall der allgemeinen Stromversorgung und der Übernahme der Versorgung der 
+Betriebsmittel durch eine Stromquelle für Sicherheitszwecke 
+560.3.12.001.AT 
+zentrales Sicherheitsstromversorgungssystem ohne Leistungsbegrenzung 
+CPS-System 
+en  central safety power supply system (unlimited power) 
+zentrales Stromversorgungssystem, das mit beliebiger Ausgangsleistung den geforderten Notstrom für die 
+notwendigen Sicherheitseinrichtungen liefert 
+[QUELLE: OVE EN 50171:2022, 3.18; mod.] 
+560.3.12.002.AT 
+zentrales Sicherheitsstromversorgungssystem mit Leistungsbegrenzung 
+LPS-System 
+en  low power safety supply system 
+zentrales Stromversorgungsystem mit Begrenzung der Ausgangsleistung auf 500 W für eine Dauer von 3 h 
+oder 1 500 W für eine Dauer von 1 h 
+[QUELLE: OVE EN 50171:2022, 3.19; mod.] 
+560.3.13.003.AT 
+Fluchtweg 
+en  escape route 
+Weg, der den Benützern eines Bauwerks im Gefahrenfall grundsätzlich ohne fremde Hilfe das Erreichen eines 
+sicheren Orts des angrenzenden Geländes im Freien – in der Regel eine Verkehrsfläche – ermöglicht 
+[QUELLE: OIB-Richtlinien – Begriffsbestimmungen:2023] 
+Anmerkung 1.AT zum Begriff:  
+In ÖNORM EN 1838 wird für den nationalen Begriff „sicherer Ort“ der Begriff „sicherer 
+Bereich“ verwendet. 
+560.3.14 
+vorrangiger Stromkreis 
+en  preferential circuit 
+Stromkreis, welcher unmittelbar von der Einspeisung des Gebäudes z. B. Niederspannungshauptverteilung 
+(NSHV) abzweigt und zur Versorgung von Einrichtungen für Sicherheitszwecke dient, die im Notfall so lange 
+wie möglich in Betrieb bleiben sollen 
+560.3.15 
+Mindestbeleuchtungsstärke 
+en  minimum illuminance 
+geforderte Beleuchtungsstärke einer Sicherheitsbeleuchtung während der gesamten Bemessungs-
+betriebsdauer 
+560.3.16 
+Einrichtung für Sicherheitszwecke 
+en  safety service 
+Elektrische Anlage und deren elektrische Betriebsmittel, welche Personen bei Gefahr schützt oder warnt oder 
+für das Evakuieren eines Orts erforderlich ist 
+BEISPIELE: 
+– 
+Sicherheitsbeleuchtungsanlagen; 
+– 
+Anlagen zur Löschwasserversorgung, ausgenommen Sprinkleranlagen gemäß TRVB 127 S; 
+– 
+Feuerwehraufzüge siehe ÖNORM EN 81-72 und TRVB 150 S; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 64/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 38 
+– 
+Einrichtungen 
+zur 
+Alarmierung 
+und 
+zur 
+Erteilung 
+von 
+Anweisungen, 
+Evakuierungsanlagen, 
+brandschutztechnische Einrichtungen, CO-Warnanlagen; 
+– 
+Mechanische Rauch- und Wärmeabzugsanlagen, Druckbelüftungsanlagen (siehe TRVB 112 S,  
+TRVB 125 S); 
+560.3.17 
+Brandfall 
+en  fire condition 
+Bedingung, die durch die Temperatur-Zeit-Kurve in ISO 834-1 oder durch nationale Gesetzgebung definiert ist 
+560.3.18 
+geeigneter Standort 
+en  suitable location 
+bauliche Umhüllung oder separater Brandabschnitt oder separater Raum zur Sicherstellung der normalen 
+Funktion von Betriebsmitteln im Brandfall 
+560.3.004.AT 
+Sicherheitsbeleuchtung 
+en  emergency escape lighting 
+Teil der Notbeleuchtung, der Personen das sichere Verlassen eines Raums oder Gebäudes ermöglicht, oder 
+der es Personen ermöglicht, vor dem Verlassen einen potenziell gefährlichen Arbeitsablauf zu beenden 
+560.3.005.AT 
+Sicherheitsleuchte 
+en  emergency escape luminaire, emergency luminaire 
+Notleuchte, die für die Sicherheitsbeleuchtung eingesetzt wird 
+560.3.006.AT 
+Sicherheitszeichen 
+en  safety sign 
+Zeichen, das mittels einer Kombination von Farbe und geometrischer Form eine allgemeine 
+Sicherheitsinformation vermittelt und das durch die Hinzufügung eines grafischen Symbols eine spezielle 
+Sicherheitsinformation vermittelt 
+Teil 6 – Prüfungen 
+600.3.1 
+Prüfung 
+en  verification 
+alle Maßnahmen, mit denen die Übereinstimmung der elektrischen Anlage mit den Anforderungen von OVE 
+E 8101 überprüft wird 
+Anmerkung 1 zum Begriff: 
+Die Prüfung besteht aus dem Besichtigen, Erproben und Messen sowie dem Erstellen 
+eines Prüfberichts. 
+600.3.2 
+Besichtigen 
+en  inspection 
+Untersuchung einer elektrischen Anlage mit den dafür geeigneten Sinneswahrnehmungen, um die richtige 
+Auswahl und die ordnungsgemäße Errichtung der elektrischen Betriebsmittel nachzuweisen 
+600.3.3 
+Erproben und Messen 
+en  testing 
+Durchführen von Maßnahmen zur Bewertung einer elektrischen Anlage, mit denen die ordnungsgemäße 
+Funktion nachgewiesen wird 
+Anmerkung 1 zum Begriff: 
+Hierzu gehört die Ermittlung von Werten mit geeigneten Messgeräten, die durch 
+Besichtigen nicht festgestellt werden können. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 65/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 39 
+600.3.4 
+Prüfbericht 
+en  reporting 
+Aufzeichnung der Ergebnisse aus Besichtigen, Erproben und Messen 
+600.3.5 
+Instandhaltung 
+en  maintenance 
+alle technischen und administrativen Tätigkeiten, einschließlich deren Überwachung, die dazu vorgesehen 
+sind, einen Teil in einem Zustand zu erhalten oder es wieder in einen Zustand zu bringen, mit dem es die 
+gewünschte Funktion erfüllen kann 
+Teil 7 – Räume und Anlagen besonderer Art 
+Teil 7-701 – Räume und Orte mit Badewanne oder Dusche 
+ 
+Keine ergänzenden Begriffe. 
+Teil 7-702 – Schwimmbecken und Springbrunnen 
+702.3.1 
+Springbrunnen 
+en  fountain 
+Anordnung, üblicherweise für dekorative Zwecke, bei der Wasser aus Zuflussöffnungen austritt und in oder 
+durch Becken unterschiedlicher Art fließt 
+702.3.2 
+Springbrunnenbecken 
+en  basin of fountain 
+Teil des Springbrunnens, in welchem das ausgetretene Wasser gesammelt wird 
+702.3.3 
+Schwimmbecken 
+en  swimming pool 
+Wasserbecken, bestimmt für Zwecke des Schwimmens, Tauchens oder Ähnlichem, jedoch nicht für die 
+Körperreinigung von Personen 
+702.3.4 
+Planschbecken 
+en  paddling pool 
+Wasserbecken mit geringer Wassertiefe, z. B. zum Spielen, Planschen oder Waten 
+Anmerkung 1.AT zum Begriff:  
+Hierzu gehört sinngemäß z. B. auch eine Wasserrutsche. 
+Teil 7-703 – Räume mit Kabinen mit Saunageräten 
+703.3.001.AT 
+Saunaheizgerät 
+en  sauna heating appliance 
+Gerät, das einen Saunaofen, Regel- und/oder Steuereinrichtungen, Schutzeinrichtungen und die Steuertafel 
+umfasst 
+[QUELLE: OVE EN 60335-2-53:2024, 3.102; mod.] 
+Anmerkung 1.AT zum Begriff:  
+Der Saunaofen wird in OVE EN 60335-2-53 als Saunaheizer bezeichnet. 
+Anmerkung 2.AT zum Begriff:  
+Die Regel-, Steuer-, und Schutzeinrichtungen können auch außerhalb der Saunakabine 
+angeordnet sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 66/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 40 
+703.3.002.AT 
+vorgefertigte Sauna 
+en  prefabricated sauna 
+Baugruppe, die aus einem Saunaraum und einem Sauna-Heizgerät besteht 
+[QUELLE: OVE EN 60335-2-53:2024, 3.106] 
+Anmerkung 1.AT zum Begriff:  
+Im Sprachgebrauch wird hierfür auch der Begriff Saunakabine verwendet. 
+703.3.003.AT 
+eigenständige multifunktionelle Duscheinrichtung 
+en  separate multifunctional shower unit 
+vorgefertigte Duscheinrichtung, in die mindestens eine andere Funktionseinheit, wie beispielsweise ein 
+Dampfbad, zusätzlich zur Duschfunktion eingebaut ist 
+[QUELLE: OVE EN IEC 60335-2-105:2023, 3.102; mod.] 
+Teil 7-704 – Baustellen 
+ 
+Keine ergänzenden Begriffe. 
+Teil 7-705 – Elektrische Anlagen von landwirtschaftlichen und gartenbaulichen Betriebsstätten 
+705.3.1 
+landwirtschaftliche und gartenbauliche Betriebsstätten 
+en  agricultural and horticultural premises 
+Räume, Orte oder Bereiche, in denen 
+– 
+Nutztiere z. B. Rinder, Schweine, Pferde, Schafe, Ziegen, Geflügel, gehalten werden; 
+– 
+Futtermittel, Düngemittel, pflanzliche und tierische Erzeugnisse produziert, gelagert, aufbereitet oder 
+weiterverarbeitet werden; 
+– 
+Pflanzen wachsen, wie z. B. in Gewächshäusern; 
+– 
+sowie alle weiteren Räume, Orte oder Bereiche, die den Zwecken der Landwirtschaft oder des Gartenbaus 
+dienen 
+Anmerkung 1 zum Begriff: 
+In landwirtschaftlichen und gartenbaulichen Betriebsstätten bestehen infolge besonderer 
+Umgebungsbedingungen, z. B. Einwirken von Feuchtigkeit, Staub, stark chemisch angreifenden Dämpfen, Säuren oder 
+Salzen auf die elektrischen Betriebsmittel, besondere Anforderungen an die Auswahl und die Errichtung elektrischer 
+Betriebsmittel. Zusätzlich kann durch das Vorhandensein leicht entzündlicher Stoffe ein Brandrisiko bestehen. 
+Anmerkung 2 zum Begriff:  
+Landwirtschaftliche und gartenbauliche Betriebsstätten sind z. B.: 
+– 
+Ställe für Nutztiere wie z. B. Rinder, Schweine, Pferde, Schafe, Ziegen und Geflügel, einschließlich deren Nebenräume 
+(z. B. Räume für Futterverarbeitung, Melkstände, Milchkammern); 
+– 
+Scheunen, Lagerhäuser, Lager- und Vorratsräume für Heu, Stroh, Futtermittel, Düngemittel, Getreide, Kartoffeln, 
+Rüben, Gemüse, Obstfrüchte, Zierpflanzen, Betriebsstoffe, Gewächshäuser; 
+– 
+Räume und Orte, wo landwirtschaftliche und gartenbauliche Erzeugnisse produziert, aufbereitet und weiterverarbeitet 
+werden (z. B. Trocknen, Dämpfen, Auspressen, Gären, Schlachten, Fleischverarbeitung); 
+– 
+Maschinenhallen und Garagen, die den Zwecken der Landwirtschaft oder des Gartenbaus dienen. 
+705.3.2 
+zu landwirtschaftlichen und gartenbaulichen Betriebsstätten gehörende Wohnungen und andere 
+Räumlichkeiten 
+en  residences and other locations belonging to agricultural and horticultural premises 
+Wohnungen und andere Räumlichkeiten, bei denen eine leitfähige Verbindung zu den landwirtschaftlichen und 
+gartenbaulichen Betriebsstätten entweder durch Schutzleiter derselben elektrischen Anlage oder durch fremde 
+leitfähige Teile besteht 
+Anmerkung 1 zum Begriff: 
+Beispiele für andere Räumlichkeiten sind Büros, Sozialräume und Verkaufsräume. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 67/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 41 
+Anmerkung 2 zum Begriff: 
+Fremde leitfähige Teile sind nicht Teil der elektrischen Anlage, sie können aber ein 
+gefährliches elektrisches Potential einführen. 
+Anmerkung 3 zum Begriff: 
+Beispiele leitfähiger Verbindungen sind metallene Rohrleitungssysteme, Schutzleiter oder 
+Metallmäntel derselben Kabel- und Leitungsanlage. 
+705.3.3 
+Intensivtierhaltung 
+en  high-density livestock rearing 
+Aufzucht und Haltung von Nutztieren, für deren Lebenserhaltung automatisch wirkende technische Systeme 
+notwendig sind 
+Anmerkung 1 zum Begriff: 
+Beispiele für automatisch wirkende technische Systeme zur Lebenserhaltung sind solche 
+zur Lüftung, Fütterung und Klimatisierung. 
+Anmerkung 2 zum Begriff: 
+Beispiele für Intensivtierhaltung sind Schweinemast, Geflügelställe und Teichwirtschaft. 
+705.3.4 
+Einrichtungen zur Nutztierhaltung 
+en  arrangements for livestock keeping 
+Gebäude und Räume (Ställe), Käfige, Ausläufe oder andere Behältnisse zur dauernden Unterbringung von 
+Nutztieren 
+Teil 7-706 – Leitfähige Bereiche mit beschränkter Bewegungsfreiheit 
+706.3.1 
+leitfähiger Bereich mit begrenzter Bewegungsfreiheit 
+en  conducting location with restricted movement 
+Bereich mit begrenzter Bewegungsfreiheit ist eine Umgebung, 
+– 
+die überwiegend aus metallenen oder anderen leitfähigen Teilen besteht und 
+– 
+in der anzunehmen ist, dass der Körper einer Person mit solchen metallenen oder anderen leitfähigen 
+Teilen großflächig in Berührung kommt und 
+– 
+in der die Möglichkeit der Unterbrechung einer Berührung eingeschränkt ist. 
+Anmerkung 1.AT zum Begriff:  
+Dies können z. B. Innenbereiche von metallenen Behältern, Rohrleitungen, Kesseln und 
+Tanks sein. 
+Anmerkung 2.AT zum Begriff:  
+Nasse und feuchte Baugruben gelten in der Regel nicht als begrenzte leitfähige Räume. 
+Teil 7-708 – Caravanplätze, Campingplätze und ähnliche Bereiche 
+708.3.1 
+bewohnbares Freizeitfahrzeug 
+en  leisure accommodation vehicle 
+Wohneinheit, die zeitweilig oder saisonbedingt genutzt wird und den Anforderungen an die Konstruktion und 
+an die Benutzung als Straßenfahrzeug entsprechen kann 
+[QUELLE: ÖNORM EN 13878:2023, 3.19] 
+708.3.1.1 
+Caravan 
+en  caravan 
+als Anhänger hergestelltes bewohnbares Freizeitfahrzeug, das die Anforderungen für die Konstruktion und die 
+Verwendung als Straßenfahrzeug erfüllt 
+[QUELLE: ÖNORM EN 13878:2023, 3.5; mod.] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 68/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 42 
+708.3.1.2 
+Motorcaravan 
+en  motor caravan 
+bewohnbares Freizeitfahrzeug mit eigenem Antrieb, dass die Anforderungen für die Konstruktion und die 
+Benutzung als Straßenfahrzeug erfüllt, mindestens Sitze und Tisch, aus den Sitzen wandelbares Schlafabteil, 
+Kochgeräte und Lagereinrichtungen umfasst 
+[QUELLE: ÖNORM EN 13878:2023, 3.24] 
+Anmerkung 1.AT zum Begriff:  
+Ein Motorcaravan ist entweder ein Serienprodukt oder entworfen und gebaut auf einen 
+vorhandenen Fahrzeugrahmen, mit Führerhaus; der Wohnteil kann entweder fest angebracht oder demontierbar sein. 
+ 
+708.3.1.3 
+Mobilheim 
+en  mobile home 
+transportierbares bewohnbares Freizeitfahrzeug, das nicht den Anforderungen für die Konstruktion und die 
+Nutzung als Straßenfahrzeug genügt, das jedoch über Mittel zur Beweglichkeit verfügt und für zeitweilige oder 
+saisonbedingte Benutzung vorgesehen ist 
+[QUELLE: ÖNORM EN 13878:2023, 3.6] 
+708.3.2 
+Caravan-/Zelt-Stellplatz 
+en  caravan/tent pitch 
+ein Grundstück, das vorgesehen ist, mit einem bewohnbaren Freizeitfahrzeug oder Zelt belegt zu werden 
+708.3.3 
+Caravanplatz/Campingplatz 
+en  caravan park/camping park 
+Teil eines Geländes, vorgesehen für zwei oder mehr Caravanstellplätze und/oder Zeltstellplätze 
+708.3.4 
+Parkwohnheim 
+en  residential park home 
+eine z. B. in der Fabrik vorgefertigte verschiebbare/bewegliche Unterkunft 
+708.3.001.AT 
+Stromsäule, Versorgungssäule 
+en  power pillar, supply pillar 
+ 
+siehe 709.3.7 
+Teil 7-709 – Marinas und ähnliche Bereiche 
+709.3.1 
+Schiff 
+en  ship 
+für administrative, gewerbliche, industrielle, Freizeit- oder Sportaktivitäten genutztes schwimmendes 
+Wasserfahrzeug (z. B. Boot, Yacht, Motorbarkasse, Wasserfahrzeug oder Hausboot) 
+709.3.2 
+Hafen 
+en  harbour 
+Einrichtung zum Festmachen und Versorgen von Schiffen mit festem Landeplatz, Anlegestellen, Piers oder 
+Pontonanordnung zum Anlegen von einem oder mehreren Schiff(en) 
+Anmerkung 1 zum Begriff: 
+Ein Hafen erfüllt industrielle und/oder gewerbliche Transit- und/oder Lagerfunktionen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 69/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 43 
+709.3.3 
+Marina 
+en  marina 
+Einrichtung zum Festmachen und Versorgen von Wassersportfahrzeugen mit festem Landeplatz, 
+Anlegestellen, Piers oder Pontonanordnung zum Anlegen von einem oder mehreren Wassersportfahrzeug(en) 
+709.3.4 
+Wassersportfahrzeug 
+en  pleasure craft 
+jedes Wasserfahrzeug, das ausschließlich für Sport oder Freizeit genutzt wird 
+709.3.5 
+Hausboot 
+en  houseboat 
+schwimmender Bau mit Deck, welcher zur Verwendung als ständiger Wohnsitz konstruiert oder gestaltet ist 
+709.3.6 
+Steckvorrichtung 
+en  accessory 
+Stecker, Steckdosen, Schiffskupplungen und Schiffsstecker 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.1; mod.] 
+709.3.6.1 
+Steckdose, landseitige Steckdose 
+en  socket-outlet, shore socket-outlet 
+Teil, der ortsfesten elektrischen Anlage (landseitig) 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.2; mod.] 
+709.3.6.2 
+Stecker, landseitiger Stecker 
+en  plug, shore plug 
+Teil, der direkt an einer flexiblen Leitung angebracht wird und für die Verbindung mit der landseitigen Steckdose 
+vorgesehen ist 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.3; mod.] 
+709.3.6.3 
+Schiffssteckvorrichtung 
+en  ship coupler 
+Vorrichtung, die die Verbindung zum Schiff mit einer flexiblen Leitung ermöglicht und aus zwei Teilen besteht, 
+der Schiffskupplung und dem Schiffsstecker 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.4] 
+709.3.6.3.1 
+Schiffskupplung 
+en  ship connector 
+Teil, der flexiblen Leitung, welche mit der Versorgung verbunden wird und der für die Verbindung mit dem 
+Schiffsstecker vorgesehen ist 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.5; mod.] 
+709.3.6.3.2 
+Schiffsstecker 
+en  ship inlet 
+Teil, der im oder am Schiff angebaut ist 
+[QUELLE: OVE EN IEC 62613-1:2018, 3.6] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 70/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 44 
+709.3.7 
+Stromsäule, Versorgungssäule 
+en  power pillar, supply pillar 
+ein für die Stromversorgung von mobilen Einheiten wie z. B. bewohnbare Freizeitfahrzeuge, Zelte oder 
+Parkwohnheime auf Caravanplätzen oder Campingplätzen sowie für Schiffe und Wassersportfahrzeugen in 
+Häfen und Marinas konstruiertes Gehäuse 
+709.3.8 
+ortsveränderliche Stromerzeugungseinrichtung 
+en  mobile power unit 
+für die Stromversorgung von Schiffen konstruierte ortsveränderliche Anlage 
+Anmerkung 1.AT zum Begriff:  
+Schematische Darstellung der Anwendung der Steckvorrichtungen siehe Bild 709.1. 
+ 
+Legende 
+1 
+Stromsäule 
+2 
+Landseitige Steckdose in der Stromsäule 
+3 
+Landseitiger Stecker 
+4 
+Schiffskupplung  
+5 
+Schiffsstecker 
+6 
+Schiffssteckvorrichtung 
+Bild 709.1 – Schematische Darstellung der Anwendung der Steckvorrichtungen 
+Teil 7-710 – Medizinisch genutzte Bereiche 
+710.3.1 
+medizinisch genutzter Bereich 
+en  medical location 
+Bereich, der für Zwecke der Diagnose, Behandlung (einschließlich medizinisch kosmetischer Behandlung), 
+Überwachung und Pflege von Patienten bestimmt ist 
+Anmerkung 1.AT zum Begriff:  
+Nicht zu den medizinisch genutzten Bereichen zählen z. B. Treppenhäuser, 
+Stationsdienstzimmer, Toiletten, NasszeIIen in Bettenräumen, Teeküchen, Aufenthaltsräume, Lager, Abstellräume, 
+Umkleideräume. 
+710.3.2 
+Patient 
+en  patient 
+Lebewesen (Mensch oder Tier), das einem medizinischen, chirurgischen oder zahnmedizinischen Verfahren 
+unterzogen wird 
+Anmerkung 1 zum Begriff: 
+Eine Person, in Behandlung für Schönheitszwecke, darf als Patient betrachtet werden, 
+soweit es diese Norm betrifft. 
+[QUELLE: ÖVE/ÖNORM EN 60601-1:2023, 3.76; mod.] 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 71/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 45 
+710.3.3 
+medizinisches elektrisches Gerät, ME-Gerät 
+en  medical electrical equipment, ME equipment 
+elektrisches Gerät, das ein Anwendungsteil hat oder das Energie zum oder vom Patienten überträgt bzw. eine 
+solche Energieübertragung zum oder vom Patienten anzeigt und für das folgendes gilt: 
+a) 
+ausgestattet mit nicht mehr als einem Anschluss an ein bestimmtes Versorgungsnetz und 
+b) 
+von seinem Hersteller zum Gebrauch bestimmt: 
+ 
+1) 
+in der Diagnose, Behandlung oder Überwachung eines Patienten oder 
+ 
+2) 
+zur Kompensation oder Linderung einer Krankheit, Verletzung oder Behinderung. 
+Anmerkung 1 zum Begriff: 
+Zum ME-Gerät gehört das Zubehör, das durch den Hersteller bestimmt wird und das 
+erforderlich ist, um den bestimmungsgemäßen Gebrauch des ME-Geräts zu ermöglichen. 
+[QUELLE: ÖVE/ÖNORM EN 60601-1:2023, 3.63; mod.] 
+710.3.4 
+Anwendungsteil 
+en  applied part 
+Teil des ME-Geräts, das bei bestimmungsgemäßem Gebrauch zwangsläufig in physischen Kontakt mit dem 
+Patienten kommt, damit das ME-Gerät oder ein ME-System seine Funktion erfüllen kann 
+[QUELLE: ÖVE/ÖNORM EN 60601-1:2023, 3.8; mod.] 
+710.3.5 
+medizinisches elektrisches System, ME-System 
+en  medical electrical system, ME system 
+Kombination von einzelnen Geräten, wie vom Hersteller festgelegt, von denen mindestens eines ein ME-Gerät 
+sein muss und die durch eine Funktionsverbindung oder durch den Gebrauch einer Mehrfachsteckdose 
+zusammengeschlossen sind 
+[QUELLE: ÖVE/ÖNORM EN 60601-1:2023, 3.64; mod.] 
+710.3.6 
+Patientenumgebung 
+en  patient environment 
+jeder Bereich, in dem beabsichtigt oder unbeabsichtigt eine Verbindung zustande kommen kann, und zwar 
+zwischen dem Patienten und Teilen des ME-Geräts oder des ME-Systems oder zwischen einem Patienten und 
+anderen Personen, die Teile des ME-Geräts oder des ME-Systems berühren 
+Anmerkung 1 zum Begriff: 
+Zur Veranschaulichung siehe Bild 710.1. 
+Anmerkung 2 zum Begriff: 
+Dies gilt, wenn die Position des Patienten vorher festgelegt wurde. 
+[QUELLE: ÖVE/ÖNORM EN 60601-1:2023, 3.79; mod.] 
+710.3.7 
+Gruppe 0 
+en  group 0 
+medizinisch genutzter Bereich, in dem keine ME-Geräte oder ME-Systeme zum Einsatz kommen und in dem 
+eine Unterbrechung (Fehler) der Stromversorgung keine Gefährdung für den Patienten darstellt 
+Anmerkung 1.AT zum Begriff:  
+Die Gruppe 0 trifft auch zu, wenn ME-Geräte in diesem Bereich verwendet werden, die 
+vom Hersteller für die Anwendung in nicht medizinisch genutzten Bereichen vorgesehen sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 72/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 46 
+710.3.8 
+Gruppe 1 
+en  group 1 
+medizinisch genutzter Bereich, in dem ME-Geräte oder ME-Systeme extern oder invasiv an irgendeinem Teil 
+des Patienten zur Anwendung vorgesehen sind und in dem eine Unterbrechung der Stromversorgung, wie z. B. 
+der Schutz gegen elektrischen Schlag, keine Gefährdung für den Patienten darstellt 
+710.3.9 
+Gruppe 2 
+en  group 2 
+medizinisch genutzter Bereich, in dem ME-Geräte oder ME-Systeme wie folgt zum Einsatz kommen 
+– 
+intrakardiale Verfahren oder 
+– 
+lebenswichtige Behandlungen oder 
+– 
+chirurgische Operationen, 
+wo eine Unterbrechung (Fehler) in der Stromversorgung eine Gefährdung des Patienten verursachen kann 
+Anmerkung 1.AT zum Begriff:   
+Ein intrakardiales Verfahren ist ein Verfahren, bei dem ein elektrischer Leiter in das Herz 
+eines Patienten eingeführt wird oder in Kontakt mit dem Herzen kommt. Dabei sind isolierte Leiter wie 
+Schrittmacherelektroden, EKG-Elektroden oder isolierte Schläuche, die mit leitender Flüssigkeit gefüllt sind, wie elektrische 
+Leiter zu betrachten. 
+710.3.001.AT 
+Raumgruppe 
+ein Raum mit seinen funktionsmäßig zugehörigen Nebenräumen oder Räume einer Intensivüberwachungs- 
+oder Intensivuntersuchungsstation, die von einem zentralen Stützpunkt aus überwacht werden 
+710.3.10 
+medizinisches IT-System 
+en  medical IT system 
+elektrisches IT-System, das die spezifischen Anforderungen für medizinische Anwendungen erfüllt 
+Anmerkung 1.AT zum Begriff:  
+Diese Stromversorgung ist auch als Isolations-Überwachungssystem bekannt. 
+710.3.11 
+Hauptverteiler 
+en  main distribution board 
+ 
+Die Definition aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+710.3.12 
+Stromquelle für Sicherheitszwecke 
+en  electric source for safety services 
+ 
+siehe 826-10-05 
+710.3.13 
+Isolationsüberwachungsgerät für medizinisch genutzte Bereiche, MED-IMD 
+en  medical insulation monitoring device, MED-IMD 
+spezielles Isolationsüberwachungsgerät (IMD), das geeignet ist, um medizinische IT-Systeme zu überwachen 
+[QUELLE: ÖVE/ÖNORM EN 61557-8:2016, 3.1.22; mod.] 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 73/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 47 
+710.3.14 
+Einrichtung zur Isolationsfehlersuche, IFLS 
+en  insulation fault location system, IFLS 
+Gerät oder Kombination von Geräten zur Isolationsfehlersuche in IT-Systemen. Die Einrichtung zur 
+Isolationsfehlersuche wird zusätzlich zu einem Isolationsüberwachungsgerät eingesetzt um Isolationsfehler zu 
+lokalisieren. 
+Anmerkung 1 zum Begriff:  
+Eine IFLS prägt einen Prüfstrom zwischen den spannungsführenden Leitern und Erde ein. 
+[QUELLE: ÖVE/ÖNORM EN 61557-9:2015, 3.1.1] 
+710.3.15 
+unterbrechungsfreies Stromversorgungssystem, USV 
+en  uninterruptible power system, UPS 
+Kombination von Stromrichtern, Schaltern und Energiespeichereinrichtungen (wie z. B. Batterien), die ein 
+Stromversorgungssystem bildet, das bei Ausfall der Eingangsversorgung eine beständige Versorgung der Last 
+sicherstellt 
+Anmerkung 1 zum Begriff:  
+Beständige Versorgung der Last liegt vor, wenn Spannung und Frequenz innerhalb der 
+Bemessungswerte für die statischen und dynamischen Grenzabweichungen liegen und Verzerrungen und 
+Unterbrechungen innerhalb der für den Ausgangsanschluss festgelegten Grenzen bleiben. Ein Ausfall der 
+Eingangsversorgung liegt vor, wenn Spannung und Frequenz außerhalb der Bemessungswerte für die statischen und 
+dynamischen Grenzabweichungen liegen oder wenn Verzerrungen oder Unterbrechungen außerhalb der Grenzwerte 
+liegen, die für die USV festgelegt sind. 
+[QUELLE: ÖVE/ÖNORM EN 62040-1:2020, 3.101] 
+Teil 7-711 – Ausstellungen, Shows und Stände 
+711.3.1 
+Ausstellung 
+en  exhibition 
+ein Ereignis zum Zwecke des Ausstellens und/oder Verkaufens von Produkten usw., welches an jedem 
+geeigneten Ort stattfinden kann, z. B. in einem Raum, einem Gebäude oder einem vorübergehend errichteten 
+Aufbau oder im Außenbereich 
+711.3.2 
+Show 
+en  show 
+Vorführung, Präsentation oder Darbietung, welche an jedem geeigneten Ort stattfinden kann, z. B. in einem 
+Raum, einem Gebäude oder einem vorübergehend errichteten Aufbau oder im Außenbereich 
+711.3.3 
+Stand 
+en  stand 
+Bereich oder vorübergehend errichteter Aufbau, welcher zum Ausstellen, Vermarkten, Verkauf, zur 
+Unterhaltung usw. genutzt wird 
+711.3.4 
+vorübergehend errichteter Aufbau 
+en  temporary structure 
+eine Einheit oder ein Teil einer Einheit einschließlich mobiler tragbarer Einheiten, innen oder außen befindlich, 
+entworfen und vorgesehen zum Auf- und Abbau 
+711.3.5 
+vorübergehend errichtete elektrische Anlage 
+en  temporary electrical installation 
+elektrische Anlage, die errichtet und wieder entfernt wird wie z. B. die Ausstellung oder der Stand, für die sie 
+vorgesehen ist 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 74/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 48 
+711.3.6 
+Speisepunkt für die vorübergehend errichtete elektrische Anlage 
+en  origin of the temporary electrical installation 
+Punkt an der ortsfesten elektrischen Anlage oder einer anderen Stromquelle, von dem elektrische Energie zur 
+vorübergehend errichteten elektrischen Anlage geliefert wird 
+Anmerkung 1.AT zum Begriff:  
+Der Speisepunkt stellt die Anwendungsgrenze der ortsfesten elektrischen Anlage oder 
+einer anderen Stromquelle dar, ab der die elektrische Energie für die vorübergehend errichtete elektrische Anlage geliefert 
+wird. Dies können z. B. Steckdosen oder Klemmen (an elektrischen Betriebsmitteln) sein. 
+Anmerkung 2.AT zum Begriff:  
+Wenn die speisende Verteilung zur ortsfesten elektrischen Anlage gehört, befindet sich 
+der Speisepunkt z. B. an den Abgangsklemmen, Steckdosen der Verteilung. Andernfalls befindet er sich an der Steckdose 
+oder Klemme (am elektrischen Betriebsmittel) des zu versorgenden Stromkreises. 
+Teil 7-712 – Photovoltaische Anlagen (PV-Anlagen) 
+712.3.1 
+PV-Modul 
+en  PV module 
+Kleinste, komplett gegen Umwelteinflüsse geschützte Kombination untereinander verbundener PV-Zellen 
+712.3.2 
+PV-Strang 
+en  PV string 
+Stromkreis mit einem oder mehreren in Reihe geschalteten PV-Modulen 
+712.3.3 
+PV-Generatorfeld 
+en  PV array 
+Kombination von elektrisch untereinander verbundenen PV-Modulen, PV-Strängen, PV-Teilgeneratorfeldern 
+und PV-Anschlussgehäusen 
+Anmerkung 1 zum Begriff:  
+Für den Zweck dieses Teils besteht ein PV-Generatorfeld aus allen Bauteilen bis zum  
+DC-Anschluss des PV-Wechselrichters oder von anderen elektrischen Betriebsmitteln zur Leistungsumwandlung oder zu 
+DC-Lasten. Ein PV-Generatorfeld umfasst nicht seine Unterkonstruktion, Einrichtungen zur Nachführung, thermischen 
+Steuerung und ähnliche Komponenten. 
+Anmerkung 2 zum Begriff:  
+Ein PV-Generatorfeld kann aus einem einzelnen PV-Modul, einem einzelnen PV-Strang, 
+oder mehreren parallel-verbundenen PV-Strängen oder mehreren parallel-verbundenen PV-Teilgeneratorfeldern und ihren 
+elektrischen Bauteilen bestehen. 
+712.3.4 
+PV-System 
+en  PV generator 
+ 
+Die Definition aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen, da 
+gleichbedeutend mit 712.3.2. 
+712.3.5 
+PV-Anschlussgehäuse 
+en  combiner box 
+Schaltgerätekombination, an der PV-Teilgeneratorfelder oder PV-Stränge angeschlossen sind, und die auch 
+andere elektrische Bauteile enthalten kann 
+Anmerkung 1.AT zum Begriff:   
+Eine andere Bezeichnung dafür ist Generatoranschlusskasten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 75/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 49 
+712.3.6 
+PV-Teilgeneratorfeld 
+en  PV sub-array 
+elektrische Teilmenge eines PV-Generatorfelds, gebildet aus parallel angeschlossenen PV-Strängen 
+[QUELLE: IEC 62548:2023, 3.1.31] 
+712.3.7 
+PV-Strangkabel/-leitung 
+en  PV string cable 
+zusätzliche, nicht mit den PV-Modulen gelieferte Kabel/Leitung innerhalb eines PV-Strangs 
+712.3.8 
+PV-Generatorfeldkabel/-leitung 
+en  PV d.c. main cable 
+Ausgangskabel/-leitung eines PV- Generatorfelds 
+Anmerkung 1.AT zum Begriff:  
+Eine andere Bezeichnung dafür ist DC-Hauptleitung. 
+712.3.9 
+PV-Wechselrichter 
+en  PV inverter 
+Einrichtung, die die Gleichspannung und den Gleichstrom des PV-Generatorfelds in Wechselspannung und 
+Wechselstrom umformt 
+712.3.10 
+PV-AC-Versorgungskabel/-leitung 
+en  PV a.c. supply cable 
+Kabel/Leitung zur Verbindung des AC-Anschlusses des PV-Wechselrichters mit einem Verteiler 
+712.3.11 
+PV-AC-Versorgungsstromkreis 
+en  PV a.c. supply circuit 
+Stromkreis, der den AC-Anschluss des PV-Wechselrichters mit einem Verteiler verbindet 
+712.3.12 
+PV-Anlage 
+en  PV installation 
+Gesamtheit der errichteten Betriebsmittel und Bauteile einer PV-Anlage 
+712.3.13 
+Standardprüfbedingungen 
+en  standard test conditions 
+STC 
+Prüfbedingungen die in OVE EN 60904-3 und CLC/TS 61836 für PV-Zellen und PV-Module festgelegt sind 
+712.3.14 
+Spannung des unbelasteten Stromkreises unter Standardprüfbedingungen 
+en  open-circuit voltage under standard test conditions 
+UOC STC 
+Spannung unter Standardprüfbedingungen an einem unbelasteten (offener Stromkreis) PV-Modul, PV-Strang, 
+PV-Teilgeneratorfeld, PV-Generatorfeld oder auf der DC-Seite des PV-Wechselrichters 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 76/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 50 
+712.3.15 
+Maximalspannung des unbelasteten Stromkreises 
+en  open-circuit maximum voltage 
+UOC MAX 
+Maximalspannung an einem unbelasteten (offenen Stromkreis) PV-Modul, PV-Strang, PV-Teilgeneratorfeld 
+oder PV-Generatorfeld oder auf der DC-Seite des PV-Wechselrichters 
+Anmerkung 1 zum Begriff:  
+Eine Methode zur Bestimmung von UOC MAX ist in Anhang 712.B angegeben. 
+712.3.16 
+Kurzschlussstrom unter Standardprüfbedingungen 
+en  short-circuit current under standard test conditions 
+ISC STC 
+Kurzschlussstrom eines PV-Moduls, PV-Strangs, PV-Teilgeneratorfelds, PV-Generatorfelds oder auf der  
+DC-Seite des PV-Wechselrichters unter Standardprüfbedingungen 
+712.3.17 
+Maximaler Kurzschlussstrom 
+en  maximum short-circuit current under standard test conditions 
+ISC MAX 
+Maximaler Kurzschlussstrom eines PV-Moduls, PV-Strangs, PV-Teilgeneratorfelds, PV-Generatorfelds oder 
+auf der DC-Seite des PV-Wechselrichters 
+Anmerkung 1 zum Begriff:  
+Die Methode zur Bestimmung von ISC MAX ist in Anhang 712.B angegeben. 
+712.3.18 
+Kurzschlussfestigkeit des SPD 
+en  SPD short-circuit current rating 
+ISCPV 
+ 
+Die Definition aus dem aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen 
+(siehe OVE-Richtlinie R 6-2-2). 
+712.3.19 
+DC-Seite 
+en  d.c. side 
+Teil einer PV-Anlage von den PV-Modulen bis zum DC-Anschluss des PV-Wechselrichters 
+712.3.20 
+AC-Seite 
+en  a.c. side 
+Teil 
+einer 
+PV-Anlage 
+vom 
+AC-Anschluss 
+des 
+PV-Wechselrichters 
+bis 
+zum 
+Anschluss 
+des  
+PV-AC-Versorgungskabels/-leitung an die elektrische Anlage 
+712.3.21 
+Maximum Power Point Tracking, MPPT 
+en  maximum power point tracking, MPPT 
+interne Regel- oder Steuermethode eines PV-Wechselrichters, mit der ein Betrieb mit maximaler Leistung 
+sichergestellt ist 
+712.3.22 
+IMOD_MAX_OCPR 
+en  module maximum overcurrent protection rating 
+höchster Bemessungswert für den Überstromschutz (Rückstrom) eines PV-Moduls 
+Anmerkung 1 zum Begriff: 
+Siehe dazu ÖVE/ÖNORM EN 61730-2. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 77/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 51 
+712.3.23 
+Blitzschutzsystem, LPS 
+en  lightning protection system, LPS 
+vollständiges System, das zur Verringerung physikalischer Schäden einer baulichen Anlage durch direkte 
+Blitzeinschläge eingesetzt wird 
+Anmerkung 1 zum Begriff: 
+Es besteht sowohl aus dem äußeren als auch aus dem inneren Blitzschutz. 
+[QUELLE: ÖVE/ÖNORM EN 62305-3] 
+Teil 7-713 – Möbel 
+713.3.1 
+Möbel 
+en  furniture 
+bewegliche oder unbewegliche Gegenstände, wie z. B. Betten, Schränke, Schreibtische, Shop-Vitrinen, Stühle, 
+Tische, Werkbänke, Regale 
+Anmerkung 1.AT zum Begriff:   
+In Möbel können Betriebsmittel wie z. B. Leuchten, Installationssteckverbinder gemäß 
+ÖVE/ÖNORM EN 61535, Steckdosen, Schaltgeräte, Kabel- und Leitungsanlagen installiert werden. 
+Teil 7-714 – Beleuchtungsanlagen im Freien  
+ 
+Keine ergänzenden Begriffe. 
+Teil 7-715 – Kleinspannungs-Beleuchtungsanlagen 
+ 
+Keine ergänzenden Begriffe. 
+Teil 7-716 – Gleichstrom-Kleinspannungs-Energieverteilung über Informations- und 
+Kommunikationskabel und Leitungen (IKT) 
+716.3.1 
+symmetrisches Kupferkabel 
+en  balanced cable 
+Kabel, das aus einem oder mehreren symmetrischen metallischen Verseilelementen (Paaren oder 
+Sternvierern) besteht 
+[QUELLE: OVE EN 50173-1:2018, 3.1.14] 
+716.3.2 
+Kernnetz 
+en  core network 
+Funktionselemente (Betriebsmittel und Infrastruktur), die die Kommunikation zwischen Betreiberstandorten 
+und/oder Netzwerkrechenzentren ermöglichen 
+716.3.3 
+Zugangsnetz 
+en  access network 
+Funktionselemente (Betriebsmittel und Infrastruktur), die die Kommunikation zwischen dem Kernnetz und 
+einem Kundennetzwerk ermöglichen 
+716.3.4 
+Verbindungstechnik 
+en  connecting hardware 
+Vorrichtung oder Kombination von Vorrichtungen zur Verbindung von Kabeln, Leitungen oder Kabel- und 
+Leitungselementen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 78/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 52 
+Teil 7-717 – Ortsveränderliche oder transportable Baueinheiten 
+ 
+Keine ergänzenden Begriffe. 
+Teil 7-718 – Öffentliche Einrichtungen und Arbeitsstätten 
+718.3.1 
+Öffentliche Einrichtung 
+en  communal facility 
+Standort, Gebäude oder Teil eines Gebäudes, der/das für die Öffentlichkeit zugänglich ist 
+718.3.2 
+Arbeitsstätte 
+en  workplace 
+Standort, Gebäude oder Teil eines Gebäudes, an bzw. in welchem Beschäftigte Aktivitäten ausführen, die in 
+Zusammenhang mit ihrer Arbeit stehen 
+Teil 7-721 – Elektrische Anlagen in Caravans und Motorcaravans 
+721.3.1 
+bewohnbares Freizeitfahrzeug 
+en  leisure accommodation vehicle 
+ 
+Siehe 708.3.1 
+721.3.1.1 
+Caravan 
+en  caravan 
+ 
+Siehe 708.3.1.1 
+721.3.1.2 
+Motorcaravan 
+en  motor caravan 
+ 
+Siehe 708.3.1.2 
+721.3.1.3 
+Mobilheim 
+en  mobile home 
+ 
+Siehe 708.3.1.3 
+721.3.1.4 
+Parkwohnheim 
+en  residential park home 
+ 
+Siehe 708.3.4 
+Teil 7-722 – Stromversorgung von Elektrofahrzeugen 
+722.3.1 
+Elektrofahrzeug, elektrisches Straßenfahrzeug, EV 
+en  electric vehicle, electric road vehicle 
+jedes Fahrzeug, das von einem Elektromotor mit Strom aus einem wieder aufladbaren Energiespeicher 
+angetrieben wird und hauptsächlich für den Einsatz auf öffentlichen Straßen bestimmt ist 
+[QUELLE: ISO 17409:2015, 3.19; mod.] 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 79/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 53 
+722.3.2 
+Anschlusspunkt für das Elektrofahrzeug 
+en  connecting point 
+Endpunkt einer ortsfesten Installation, über den Energie an ein einzelnes Elektrofahrzeug bzw. aus einem 
+einzelnen Elektrofahrzeug übertragen wird 
+BEISPIEL 
+Eine Steckdose, eine Fahrzeug-Kupplung oder eine Vorrichtung zur kontaktlosen Energie-
+übertragung. 
+Anmerkung 1 zum Begriff:  
+Der Anschlusspunkt für das Elektrofahrzeug kann ein Teil der fest installierten 
+Stromversorgungseinrichtung für das Elektrofahrzeug sein. 
+722.3.3 
+Elektrofahrzeug-Ladestation, EV-Ladestation 
+en  EV charging station 
+ortsfester Teil der mit dem Versorgungsnetz verbundenen Stromversorgungseinrichtung für Elektrofahrzeuge 
+[QUELLE: OVE EN IEC 61851-1:2020, 3.1.5; mod.] 
+722.3.4 
+Stromversorgungseinrichtung für das Elektrofahrzeug 
+en  EV supply equipment 
+Einrichtung oder eine Kombination aus Einrichtungen, die mit speziellen Funktionen ausgestattet ist, um ein 
+Elektrofahrzeug zum Zwecke des Ladens über eine ortsfeste elektrische Anlage oder ein Versorgungsnetz mit 
+elektrischer Energie zu versorgen 
+[QUELLE: OVE EN IEC 61851-1:2020, 3.1.1; mod.] 
+722.3.5 
+Lastregelung 
+en  load control 
+System zur Verwaltung von elektrischer Energie, mit dem sichergestellt wird, dass die Summe der Lastströme 
+von zugeordneten Stromkreisen einen festgelegten Wert nicht überschreitet 
+Teil 7-729 – Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit eingeschränkter 
+Zugangsberechtigung 
+729.3.001.AT 
+abgeschlossene elektrische Betriebsstätte 
+Bereich mit eingeschränkter Zugangsberechtigung, der ausschließlich dem Betrieb elektrischer Betriebsmittel 
+dient und aufgrund der Betriebseigenschaften derselben abgeschlossen gehalten wird 
+Anmerkung 1.AT zum Begriff:  
+Der Begriff Bereich beschreibt Räume und Orte (auch im Freien). 
+Anmerkung 2.AT zum Begriff:  
+Hierzu gehören z. B. Schalt- und Verteilungsanlagen, Transformatorenzellen, 
+Schaltzellen, Maststationen, Freileitungsmaste. 
+Anmerkung 3.AT zum Begriff:  
+Kennzeichnung, Art des Verschlusses und die Zutrittsberechtigung ist in den 
+vorliegenden Bestimmungen und in ÖVE/ÖNORM EN 50110-1:2014 Abschnitt 4.3 geregelt. 
+Teil 7-730 – Elektrischer Landanschluss für Fahrzeuge der Binnenschifffahrt 
+730.3.1 
+Binnenschiff 
+en  inland navigation vessel 
+Schiff, bestimmt für gewerbliche oder Verwaltungszwecke auf Binnengewässern 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 80/852 =====
+OVE E 8101:2025-10-01 
+Teil 2 – Seite 54 
+730.3.001.AT 
+Stromsäule, Versorgungssäule 
+en  power pillar, supply pillar 
+ 
+siehe 709.3.7 
+Teil 7-740 – Vorübergehend errichtete elektrische Anlagen für Aufbauten, Vergnügungseinrichtungen 
+und Buden auf Veranstaltungsplätzen und für Zirkusse 
+740.3.1 
+Veranstaltungsplatz 
+en  fairground 
+Bereich, wo eine oder mehrere Vergnügungseinrichtungen errichtet sind 
+740.3.2 
+Bude 
+en  booth 
+nicht stationäre Einheit, vorgesehen zur Unterbringung von Ausrüstung/Geräten, im Allgemeinen für 
+Vergnügungs- oder Vorführzwecke 
+740.3.3 
+Stand 
+en  stand 
+ 
+siehe 711.3.3 
+740.3.4 
+Vergnügungseinrichtung 
+en  amusement device 
+typische Beispiele dafür sind Fahrgeschäft, Stand, Textil- oder Traglufthalle, Kiosk, Showbühne, Zelt, Bude, 
+Haupttribüne vorgesehen für die Unterhaltung der Öffentlichkeit 
+740.3.Z1 
+vorübergehend errichtete elektrische Anlage 
+en  temporary electrical installation 
+ 
+siehe 711.3.5 
+Teil 7-753 – Heizanlagen mit Heizleitungen und Flächenheizelemente 
+753.3.1 
+Fußboden-Speicherheizanlage 
+en  thermal storage floor heating system 
+Heizanlage, bei der eine aufgrund einer definierten Aufladedauer zeitlich begrenzt verfügbare elektrische 
+Energie in Wärme umgewandelt und mit einer zeitlichen Verzögerung überwiegend über die Oberfläche des 
+Fußbodens an den zu beheizenden Raum abgegeben wird 
+Anmerkung 1.AT zum Begriff:  
+Die Speicherung und die zeitlich verzögerte Wärmeabgabe kann nur durch bauliche 
+Maßnahmen wie Stärke und Material des Fußbodenaufbaus und die Einbaulage der Heizelemente beeinflusst werden. 
+753.3.2 
+Direktheizanlage 
+en  direct heating system 
+Heizanlage, in der aus elektrischer Energie Wärme erzeugt und diese mit einer möglichst geringen zeitlichen 
+Verzögerung an den zu beheizenden Raum abgegeben wird 
+753.3.3 
+Fußboden-Ergänzungsheizanlage 
+en  complementary floor heating 
+in die Fußbodenkonstruktion einbezogene Direktheizanlage, z. B. in den an die Außenwände angrenzenden 
+Randzonen, um die Wärmeabgabe einer Fußboden-Speicherheizanlage zu ergänzen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

@@ -1,0 +1,2186 @@
+
+
+===== PAGE 641/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-709 – Seite 13 
+Anhang 709.C 
+(informativ) 
+ 
+Beispiel eines Hinweistextes für eine Marina 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Anhang 709.D 
+(informativ) 
+ 
+Beispiel eines Hinweistextes für den Hafenmeister 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 642/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-709 – Seite 14 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 643/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 1 
+Teil 7-710  
+Medizinisch genutzte Bereiche 
+710.0 
+Einleitung 
+In medizinisch genutzten Bereichen werden medizinische elektrische Geräte (ME) an Patienten der 
+Humanmedizin angewendet. Maßnahmen für die Sicherheit von Patienten und medizinischem Personal 
+müssen deshalb verstärkt werden, weil: 
+i) 
+der Körperwiderstand durch Beschädigung der Haut vermindert sein kann; 
+ii) 
+das Risiko eines Versorgungsausfalls, insbesondere für lebenserhaltende elektrische Betriebsmittel, 
+besteht; 
+iii) die erhöhte Gefahr eines elektrischen Schlags durch das Vorhandensein von Flüssigkeiten, wie Blut, 
+Kochsalzlösung und Wasser (z. B. zur Spülung), gegeben sein kann. 
+Die Punkte (i) und (ii) betreffen den Patienten, während Punkt (iii) den Patienten und das medizinische Personal 
+betrifft. 
+Für jede Tätigkeit und Funktion in einem medizinischen genutzten Bereich müssen die besonderen 
+Anforderungen an die Sicherheit, einschließlich des Schutzes gegen elektrischen Schlag und der 
+Versorgungssicherheit, berücksichtigt werden. 
+Die Sicherheit kann durch die Anforderungen dieses Teils, den sicheren Betrieb und die Instandhaltung von 
+ME-Geräten erreicht werden. 
+Abweichungen von diesem Teil zur weiteren Erhöhung der Sicherheit und Zuverlässigkeit sind zulässig. 
+Aufgrund der in Österreich gebräuchlichen Bezeichnungen „SV“ für die Sicherheitsstromversorgung und „ZSV“ 
+für zusätzliche Sicherheitsstromversorgung der medizinisch genutzten Bereiche, dürfen diese Bezeichnungen 
+auch weiterhin für die Sicherheitsstromversorgungen „SV ≤ 15 s“ bzw. „SV ≤ 0,5 s“ verwendet werden. Dies 
+betrifft insbesondere die Dokumentation und die Beschriftung von elektrischen Betriebsmitteln. 
+710.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in medizinisch genutzten Bereichen der Humanmedizin, um die 
+Sicherheit von Patienten und medizinischem Personal sicherzustellen. 
+Diese Anforderungen beziehen sich auf: 
+– 
+Krankenhäuser 
+und 
+Kliniken 
+oder 
+gleichwertige 
+Einrichtungen 
+(einschließlich 
+gleichwertiger 
+ortsveränderlicher oder transportabler Baueinheiten); 
+ 
+ANMERKUNG 1.AT 
+Baueinheiten sind entweder ortsveränderlich (mit Rädern), z. B. selbstfahrend oder 
+gezogen, oder transportabel, z. B. Container oder Kabine auf einem Grundgestell. 
+– 
+Sanatorien und Kuranstalten; 
+– 
+Senioren- und Pflegeheime; 
+– 
+Medizinische Zentren, Polikliniken und Ambulatorien, Unfallstationen; 
+– 
+sonstige ambulante Einrichtungen (physiotherapeutische Einrichtungen, Betriebs-, Sport- und andere 
+Ärzte); 
+– 
+Arztpraxen und Zahnarztpraxen; 
+– 
+entsprechend ausgestattete medizinische Räume am Arbeitsplatz; 
+– 
+andere Bereiche, in denen medizinische elektrische Betriebsmittel angewendet werden; 
+– 
+Bereiche in bestehenden Anlagen, in denen eine Nutzungsänderung für medizinische Anwendungen 
+erfolgt. 
+Diese Liste erhebt keinen Anspruch auf Vollständigkeit. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 644/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 2 
+Vorbehaltlich einer Bewertung (siehe 710.30.101), können die Anforderungen auch Veterinärkliniken 
+umfassen. 
+Für medizinische Einrichtungen außerhalb von Krankenhäusern, wie Kuranstalten, Pflegeheime, Arzt- und 
+Zahnarztpraxen, siehe die Nationale Ergänzung 710.NE1. Aufgrund von behördlichen Vorgaben können auch 
+andere Einrichtungen unter 710.NE1 fallen. 
+Die Anforderungen dieses Teils gelten nicht für: 
+– 
+ME-Geräte oder ME-Systeme; 
+ 
+ANMERKUNG 
+ME-Geräte und ME-Systeme siehe Normenreihe OVE EN 60601. 
+– 
+Krankenhäuser, die nur für Katastrophenfälle in Bereitschaft gehalten und nicht regelmäßig benützt 
+werden, so genannte Hilfskrankenhäuser und Notlazarette; 
+– 
+Altersheime, Altenwohnheime, Seniorenheime, Seniorenresidenzen sowie andere Gebäude mit 
+vergleichbarer Nutzung, wo der Wohnzweck im Vordergrund steht; 
+– 
+Krankenwagen (siehe ÖNORM EN 1789); 
+– 
+Luftfahrzeuge zum Patiententransport (siehe ÖNORM EN 13718). 
+ANMERKUNG 2.AT 
+Die Anwendung dieses Teils schließt nicht die Beachtung weiterer nationaler Regelungen aus 
+(z. B. Behörde, Anlagenbetreiber). 
+ANMERKUNG 3.AT 
+In der Nationalen Ergänzung 710.NE2 finden sich Beispielbilder. 
+710.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+710.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+710.3 
+Bestimmung allgemeiner Merkmale 
+Füge hinzu: 
+710.30.101 Allgemeines 
+Der Planer und der Errichter müssen in Zusammenarbeit mit der medizinischen Leitung und der/den für die 
+medizinische Sicherheit verantwortlichen Person(en) (z. B. in Krankenhäusern der/die Technische Sicherheits-
+beauftragte) berücksichtigen, welche Auswirkungen eine Unterbrechung der Stromversorgung auf die  
+ME-Geräte oder ME-Systeme haben kann, einschließlich: 
+– 
+der Dauer der Unterbrechung (Ausfall) der Stromversorgung; 
+– 
+der Auswirkung einer Unterbrechung der Stromversorgung auf das medizinische Verfahren (Diagnostik, 
+Therapie oder Pflege), auch im Hinblick auf mögliche Gefahren und die Wiederholbarkeit des 
+medizinischen Verfahrens. 
+Es muss eine Gesamtbewertung durchgeführt werden, um die Anforderungen an die ordnungsgemäße 
+Stromversorgung der für den Einsatz vorgesehenen ME-Geräte, ME-Systeme und unterstützenden 
+elektrischen Betriebsmittel zu ermitteln. 
+Nachdem diese Anforderungen ermittelt wurden, muss die geeignete Klassifizierung für den medizinischen 
+Bereich festgelegt werden. Um den Umfang eines medizinischen Bereichs zu bestimmen, müssen alle 
+möglichen Patientenpositionen berücksichtigt werden. 
+Wenn die Bewertung einen bestimmten Bereich zeigt, der sowohl in die Gruppe 1 als auch in die Gruppe 2 
+fällt, wird der Bereich als Gruppe 2 klassifiziert.  
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 645/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 3 
+ANMERKUNG 1  
+Für die Klassifizierung von Stromversorgungen für Sicherheitszwecke, siehe Teil 5-56 und 
+710.560.4.1. 
+ANMERKUNG 2  
+Leitlinien 
+über 
+die 
+Zuteilung 
+einer 
+Gruppennummer 
+und 
+zur 
+Klassifizierung 
+von 
+Stromversorgungen für Sicherheitszwecke für medizinische Bereiche sind in Anhang 710.A dargestellt. 
+710.31 
+Zweck, Stromversorgung und Aufbau 
+710.312 
+Leiterkonfiguration und Erdung der Systeme 
+710.312.2 
+Systeme nach Art der Erdverbindung (Netzsysteme) 
+Füge hinzu: 
+Ein TN-C-System ist ab dem Hauptverteiler eines Gebäudes nicht zulässig. 
+ANMERKUNG AT 
+Diese Forderung dient zur Verminderung elektromagnetischer Störbeeinflussung. Diese kann 
+z. B. mit TN-S-Systemen oder IT-Systemen erreicht werden. 
+710.313 
+Stromversorgungen 
+710.313.1 
+Allgemeines 
+Füge hinzu: 
+710.313.1.101 Stromversorgungen für Einrichtungen für Sicherheitszwecke 
+In medizinisch genutzten Bereichen der Gruppe 0, Gruppe 1 und Gruppe 2 muss das Verteilungsnetz so 
+geplant und ausgelegt werden, dass die automatische Umschaltung von der allgemeinen Stromversorgung auf 
+die Stromquelle für Sicherheitszwecke die Versorgung der wesentlichen medizinischen und nichtmedizinischen 
+Verbraucher sicherstellt (siehe Teil 5-56). 
+Berücksichtigt werden muss auch der Einschaltstrom aller angeschlossenen elektrischen Betriebsmittel.  
+ANMERKUNG 
+Dies kann auch für nicht medizinisch genutzte Bereiche gelten, die wesentlich sind für die 
+Aufrechterhaltung des Krankenhausbetriebs wie z. B. Stationsdienstzimmer, Verwaltungs- und Technikbereiche, Küche, 
+Ver- und Entsorgungsbereiche, Zentralsterilisation. 
+710.313.1.102 Stromversorgung für medizinisch genutzte Bereiche der Gruppe 2 
+Zur Gewährleistung der Betriebssicherheit der Stromversorgung für medizinische Bereiche der Gruppe 2 muss 
+jeder Abschnitt eines Verteilers der medizinischen IT-Systeme, der mit Stromquellen für Sicherheitszwecke 
+gemäß 710.560.6.103.1 versorgt wird, mit einer automatischen Umschalteinrichtung (ATSE) gemäß 
+710.537.101 über zwei unabhängige Versorgungsleitungen versorgt werden. Die bevorzugte Versorgungs-
+leitung muss über die Stromquelle für Sicherheitszwecke nach 710.560.6.103.1, die zweite Leitung über die 
+Stromquelle für Sicherheitszwecke nach 710.560.6.103.2 erfolgen. 
+710.314 
+Aufteilung der Anlage 
+Füge hinzu: 
+710.314.101 
+Endstromkreise für ME-Geräte und ME-Systeme müssen für die ausschließliche Verwendung dieser 
+elektrischen Betriebsmittel bestimmt sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 646/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 4 
+710.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+710.41 
+Schutz gegen elektrischen Schlag 
+710.410.3 
+Allgemeine Anforderungen 
+710.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+710.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahmen Schutz durch nicht leitende Umgebung, Schutz durch erdfreien örtlichen 
+Potentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem Verbrauchsmittel 
+gemäß Anhang 41.C dürfen nicht angewendet werden. 
+710.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+710.411.3 
+Anforderungen an den Fehlerschutz 
+Füge hinzu: 
+Für jeden Stromkreis ist ein eigener Schutzleiter vorzusehen. Die Auswahl und Bemessung hat gemäß  
+Teil 5-54 zu erfolgen. 
+710.411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+710.411.3.2.5 
+Ersetze die Anforderungen durch: 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2, in denen die automatische Abschaltung der 
+Stromversorgung weder durch eine Überstrom-Schutzeinrichtung gemäß 411.3.2 noch durch eine 
+Fehlerstrom-Schutzeinrichtung (RCD) erreicht werden kann, gilt Folgendes: 
+– 
+In IT-, TN- und TT-Systemen darf die dauernd zulässige Berührungsspannung AC UL 25 V (AC UL ≤ 25 V) 
+oder DC 60 V (DC UL ≤ 60 V) nicht überschreiten. 
+– 
+In TN-Systemen kann die dauernd zulässige Berührungsspannung AC UL 25 V (AC UL ≤ 25 V) oder 
+DC 60 V (DC UL ≤ 60 V) durch zusätzlichen Schutzpotentialausgleich sichergestellt werden. 
+Die in Anhang 41.D beschriebenen Maßnahmen dürfen nicht angewendet werden. 
+710.411.3.3 
+Zusätzliche Anforderungen für Steckdosen und für die Versorgung von 
+ortsveränderlichen Betriebsmitteln für den Außenbereich 
+Die Anforderungen des Harmonisierungsdokuments zu diesem Abschnitt finden sich in Österreich in 
+710.415.1.001.AT. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 647/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 5 
+710.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+710.411.4.5 
+Füge hinzu: 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2 muss der Schutz mit Fehlerstrom-
+Schutzeinrichtungen (RCD) für TN-Stromkreise gemäß 411.3.2 erfolgen. 
+710.411.5 
+TT-System 
+710.411.5.2 
+Füge hinzu: 
+In medizinisch genutzten Bereichen der Gruppe 1 oder Gruppe 2 muss der Schutz mit Fehlerstrom-
+Schutzeinrichtungen (RCD) für TT-Stromkreise gemäß 411.3.2 erfolgen.  
+710.411.6 
+IT-System 
+Füge hinzu: 
+710.411.6.1.101 Medizinisches IT-System 
+In medizinisch genutzten Bereichen der Gruppe 2 muss ein medizinisches IT-System (siehe auch 
+710.411.6.3.101 und 710.512.1.101) für Endstromkreise angewendet werden, die ME-Geräte und ME-Systeme 
+und andere elektrische Geräte versorgen oder in der „Patientenumgebung“ angeordnet sind.  
+Für jeden Raum oder jede Raumgruppe ist mindestens ein separates medizinisches IT-System gefordert. 
+Ausnahmen können gemacht werden für Endstromkreise zur Versorgung von: 
+– 
+elektrischen Betriebsmitteln mit einer Nennleistung von mehr als 5 kVA; 
+– 
+Röntgengeräten; 
+– 
+Motoren von fest angeschlossenen OP-Tischen; 
+– 
+elektrischen Verbrauchsmitteln (inklusive der allgemeinen Raumbeleuchtung) und Steckdosen, die weder 
+operativen Einrichtungen noch Maßnahmen dienen, die lebenswichtig sind. 
+Grundsätzlich ist für diese Bereiche das medizinische IT-System anzuwenden der Schutz durch automatische 
+Abschaltung der Stromversorgung mit einer Fehlerstrom-Schutzeinrichtung (RCD) (siehe 710.415.1) in 
+medizinisch genutzten Bereichen der Gruppe 2 muss eine Ausnahme darstellen. 
+Fehlerstrom-Schutzeinrichtung (RCD) oder Fehlerstrom-/Differenzstrom-Schutzschalter mit eingebautem 
+Überstromschutz (RCBO), die Stromkreise mit Steckdosen in einem Raum der Gruppe 2 schützen, dürfen nicht 
+auch Verbrauchern in anderen Räumen (auch nicht in anderen Räumen der Gruppe 2) zugeordnet sein. Diese 
+Steckdosen sind eindeutig zu kennzeichnen, und das Personal ist zu unterweisen. 
+In medizinisch genutzten Bereichen der Gruppe 2 darf die Versorgung der Endstromkreise von Steckdosen für  
+ME-Geräte und ME-Systeme, die der Lebenserhaltung des Patienten dienen, bei einem ersten Fehler nicht 
+automatisch abgeschaltet werden. 
+Füge hinzu: 
+710.411.6.3.101 Medizinische Isolationsüberwachungsgeräte 
+Das medizinische IT-System muss mit einem medizinischen Isolationsüberwachungsgerät (MED-IMD) gemäß 
+ÖVE/ÖNORM EN 61557-8:2016, Anhang A und Anhang B ausgestattet sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 648/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 6 
+ANMERKUNG 1  
+Zusätzlich zu den Isolationsfehlermeldungen, können die folgenden Betriebszustände vor Ort 
+dauerhaft angezeigt und an das technische Personal weitergeleitet werden: 
+– 
+Status der Stromversorgung der Leitungen für medizinische Bereiche der Gruppe 2; 
+– 
+Auslösung von Leitungsschutzschaltern; 
+– 
+andere Ausfälle, die für den Betrieb des medizinischen Bereichs wichtig sind; 
+– 
+Fehlfunktion von Kommunikationssystemen. 
+Im medizinischen Bereich muss eine nicht löschbare und leicht lesbare schriftliche Erläuterung vorhanden sein, 
+die die Bedeutung jeder Art von Signal, Warnung und die notwendigen Maßnahmen enthalten muss, die im 
+Falle eines ersten Fehlers erfolgen müssen. 
+Für Transformatoren nach ÖVE/ÖNORM EN 61558-2-15, die ein medizinisches IT-System versorgen, ist eine 
+Überwachung der Überlast- und Übertemperaturbedingungen gefordert. 
+In einem medizinischen IT-System wird der Einsatz einer Einrichtung zur Isolationsfehlersuche (IFLS) 
+empfohlen. 
+Wenn eine Einrichtung zur Isolationsfehlersuche installiert ist, muss diese ÖVE/ÖNORM EN 61557-9:2015, 
+Anhang A entsprechen. 
+ANMERKUNG 2  
+Ein IFLS erleichtert die Lokalisierung der Fehler, insbesondere bei intermittierenden Fehlern. 
+Bei Schutz durch Meldung mit Isolationsüberwachungsgeräten im IT-System darf aufgrund der örtlichen 
+Begrenztheit des Systems und durch den geforderten zusätzlichen Schutzpotentialausgleich für die 
+Berechnung die volle Nennwechselspannung oder Nenngleichspannung zwischen Außenleiter und 
+Neutralleiter oder Mittelleiter (siehe 411.6.4 a)) des Isolations-Überwachungssystems für die Einhaltung der 
+Abschaltbedingung bei Doppelerdschluss herangezogen werden. 
+Füge hinzu: 
+710.411.6.3.101.001.AT 
+Die Einspeisung eines medizinischen IT-Systems für einen Raum oder eine 
+Raumgruppe darf über einen einzigen medizinischen IT-Transformator erfolgen, wenn ein Ausfall durch Fehler 
+im medizinischen IT-Transformator, dessen Zuleitung vom Verteiler bis zu den Eingangsklemmen des 
+medizinischen IT-Transformators und dessen Ableitung zwischen den Ausgangsklemmen des medizinischen 
+IT-Transformators und dem Verteilerabschnitt des medizinischen IT-Systems, nicht zu erwarten ist. 
+Dies ist dann der Fall, wenn folgende Anforderungen erfüllt sind: 
+1) 
+Die Kabel oder Leitungen der medizinischen IT-Transformator-Zu- und Ableitung sind kurzschluss- und 
+erdschlusssicher zu verlegen und dürfen keine Schutzeinrichtungen enthalten. 
+2) 
+Für den medizinischen IT-Transformator ist zum Schutz bei indirektem Berühren einer der folgenden 
+Punkte anzuwenden: 
+ 
+– 
+Schutzmaßnahme: doppelte oder verstärkte Isolierung (Schutzisolierung) gemäß Abschnitt 412, 
+ 
+– 
+Schutz durch besondere Aufstellung, wie folgt: 
+ 
+ 
+a) Der IT-Transformator in der Ausführung Schutzklasse I ist isoliert aufgestellt und nicht mit dem 
+Schutzleiter verbunden. 
+ 
+ 
+b) Der IT-Transformator ist vom OP-Verteiler oder anderen Verteilern räumlich getrennt und hinter 
+einer nur mittels Werkzeug zu entfernenden Abdeckung zu situieren. 
+ 
+ 
+c) Der Zugang ist nur Elektrofachkräften (BA5) vorbehalten. 
+ 
+ 
+d) Auf der Abdeckung und dem medizinischen IT-Transformator ist gut sichtbar und unverlierbar ein 
+Warnhinweis (z. B. „Achtung! Vor dem Berühren des Transformators Spannungsprüfung 
+durchführen!“) anzubringen, der auf die mögliche Gefahr einer Fehlerspannung an den leitfähigen 
+Teilen des medizinischen IT-Transformators, z. B. bei Körperschluss, und die Notwendigkeit einer 
+Spannungsprüfung vor Berührung verweist.  
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 649/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 7 
+710.411.6.3.101.002.AT 
+Wenn die Anforderungen gemäß 710.411.6.3.101.001.AT nicht erfüllt sind, muss 
+bei Ausfall der Spannung am Ende des medizinischen IT-Transformatorstromkreises, der das IT-System bei 
+störungsfreiem Betrieb versorgt, die Stromversorgung selbsttätig auf den Stromkreis eines zweiten 
+medizinischen IT-Transformators umgeschaltet werden. 
+Anforderungen an die selbsttätige Umschalteinrichtung siehe 710.512.1.001.AT. 
+710.411.6.3.101.003.AT 
+In medizinisch genutzten Bereichen der Gruppe 2 kann bei Anschluss von nur 
+einem Verbrauchsmittel alternativ zum medizinischen IT-System auch die Schutzmaßnahme Schutztrennung 
+gemäß Abschnitt 413 angewendet werden. 
+710.411.7 
+FELV 
+In medizinisch genutzten Bereichen darf FELV nicht angewendet werden. 
+710.413 
+Schutzmaßnahme: Schutztrennung 
+710.413.1 
+Allgemeines 
+Füge hinzu: 
+710.413.1.001.AT 
+Die Steckdose ist eindeutig für das vorgesehene Verbrauchsmittel zu kennzeichnen, oder das Verbrauchsmittel 
+ist fest anzuschließen. 
+710.413.3 
+Anforderungen an den Fehlerschutz 
+Ersetze die Anforderungen durch: 
+710.413.3.2  
+Medizinisch genutzte Bereiche müssen mit einem Trenntransformator gemäß ÖVE/ÖNORM 
+EN 61558-2-15 versorgt werden. 
+Füge hinzu: 
+710.413.3.001.AT 
+Ein allfälliger Schutzleiteranschluss des Verbrauchmittels ist in den zusätzlichen Schutzpotentialausgleich 
+einzubinden. 
+710.414 
+Schutzmaßnahmen: Kleinspannung mittels SELV oder PELV 
+710.414.1 
+Allgemeines 
+Füge hinzu: 
+710.414.1.101  
+Wenn SELV- und/oder PELV-Stromkreise in medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2 
+verwendet werden, darf die an den elektrischen Betriebsmitteln angelegte Nennspannung einen Effektivwert 
+von AC 25 V oder DC 60 V oberschwingungsfrei nicht überschreiten. Es muss ein Schutz durch Basisisolierung 
+der stromführenden Teile gemäß Anhang 41.A.1 oder durch Abdeckungen oder Umhüllungen nach 
+Anhang 41.A.2 vorhanden sein. 
+ANMERKUNG 
+Oberschwingungsfrei ist konventionell definiert als eine RMS-Welligkeitsspannung von nicht mehr als 
+10 % des DC-Anteils. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 650/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 8 
+710.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+710.414.4.1 
+Füge hinzu: 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2, in denen PELV verwendet wird, müssen 
+Körper 
+(eines 
+elektrischen 
+Betriebsmittels) 
+über 
+einen 
+Schutzpotentialausgleichsleiter 
+mit 
+der 
+Potentialausgleichsschiene verbunden sein.  
+710.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+710.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+710.415.1.001.AT 
+Wo das medizinische IT-System als Schutzmaßnahme angewendet wird, ist 415.1 nicht 
+anwendbar. 
+710.415.1.002.AT 
+Bei Anwendung der Schutzmaßnahme Nullung sind in medizinisch genutzten Bereichen 
+der Gruppe 1 und 2 für Endstromkreise über 63 A Fehlerstrom-Schutzeinrichtungen (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,3 A zusätzlich zu verwenden. 
+Für alle Endstromkreise in Räumen der Gruppe 1 sowie Gruppe 2, bei denen Schutz durch automatische 
+Abschaltung im ersten Fehlerfall zulässig ist, sind für elektrische Betriebsmittel im Handbereich bis 63 A als 
+zusätzlicher 
+Schutz 
+(Zusatzschutz) 
+Fehlerstrom-Schutzeinrichtungen 
+(RCD) 
+mit 
+ausreichender 
+Stoßstromfestigkeit 
+(mindestens 
+3 kA), 
+einer 
+Kurzzeitverzögerung 
+(z. B. 
+Typ G) 
+und 
+einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A vorzusehen. 
+710.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+710.415.2.101 
+In jedem medizinischen Bereich der Gruppe 1 und Gruppe 2 muss ein zusätzlicher Schutzpotentialausgleich 
+installiert werden. Die zusätzlichen Schutzpotentialausgleichsleiter müssen mit der Potentialausgleichsschiene 
+verbunden sein, um Potentialunterschiede zwischen den folgenden Teilen, die sich innerhalb der 
+Patientenumgebung befinden, auszugleichen: 
+– 
+fremde leitfähige Teile, es sei denn, sie sind zur Trennung von der Erde vorgesehen, die in der 
+Patientenumgebung angeordnet oder in diese eingebracht werden können; 
+– 
+Abschirmungen gegen elektrische Störfelder, sofern vorhanden; 
+– 
+Verbindung zu leitfähigen Bodengittern, Bodennetzen und Bodenbändern, einschließlich solcher zum 
+Schutz vor statischer Aufladung, sofern vorhanden;  
+– 
+Operationsleuchten und vergleichbare Leuchten; 
+Weiters sind folgende Anlagenteile in den zusätzlichen Schutzpotentialausgleich einzubeziehen: 
+– 
+die Schutzleiter(schiene) des zugehörenden Versorgungsbereichs; 
+– 
+Potentialausgleichsschiene des zugeordneten LAN-Verteilers; 
+– 
+Metallschirme von Trenntransformatoren, Kabelabschirmungen usw. über den direkten Weg zum 
+Schutzerdungsleiter.  
+Leitfähige Teile, die von der Erde getrennt werden sollen, dürfen nicht an den zusätzlichen Schutzpotential-
+ausgleich angeschlossen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 651/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 9 
+In Räumen der Gruppe 2 ist für den zusätzlichen Schutzpotentialausgleich in der Nähe der Patientenumgebung 
+eine ausreichende Zahl von Anschlussbuchsen zum Anschluss von ME-Geräten erforderlich. Für Räume der 
+Gruppe 1 wird dies empfohlen. 
+ANMERKUNG 1.AT 
+Für fremde leitfähige Teile, die kein Fremdpotential einbringen können (weil sie z. B. isoliert 
+montiert sind), besteht keine Notwendigkeit für den Anschluss an den zusätzlichen Schutzpotentialausgleich. Dies trifft für 
+Teile zu, deren Widerstand gemessen zum Schutzleiter in Räumen der Gruppe 1 größer als 650 kΩ bzw. in Räumen der 
+Gruppe 2 größer als 6,5 MΩ ist, oder die mit dem Schutzleiter in Verbindung stehen. Die Grenzwerte ergeben sich aus den 
+maximal zulässigen Ableitströmen von medizinischen elektrischen Geräten. 
+ANMERKUNG 2.AT 
+Die Einbindung von elektrisch leitenden Fensterkonstruktionen in das Blitzschutzsystem ist mit 
+dem Blitzschutzkonzept abzustimmen. 
+710.415.2.102 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2 muss der Widerstand zwischen gleichzeitig 
+berührbaren zugänglichen leitfähigen Teilen, einschließlich der Klemmen für den Schutzleiter von Steckdosen 
+und ortsfesten Betriebsmitteln, fremden leitfähigen Teilen und den Potentialausgleichspunkten so groß sein, 
+dass er den Anforderungen von 710.411.3.2.5 entspricht, und darf 0,2 Ω nicht überschreiten. 
+ANMERKUNG 
+Der Grenzwert von 0,2 Ω basiert auf der Verwendung eines Leitungsschutzschalters vom Typ B mit 
+einem Nennstrom von 25 A, um die übliche Berührungsspannung von AC 25 V zu erreichen. 
+710.415.2.103 
+Die Potentialausgleichsschiene muss sich innerhalb oder in der Nähe jedes medizinisch genutzten Bereichs 
+der Gruppe 1 und Gruppe 2 befinden. Die Anschlüsse müssen so ausgeführt sein, dass sie sowohl zugänglich 
+als auch gekennzeichnet, klar erkennbar und leicht einzeln trennbar sind. 
+ANMERKUNG AT 
+Es wird empfohlen, eine stern- oder baumförmige Verdrahtung anzuwenden und „Erdschleifen“ 
+zu vermeiden. 
+Innerhalb der Patientenumgebung darf in Räumen, in denen intrakardiale Untersuchungen oder Behandlungen 
+vorgenommen werden, die Spannung im fehlerfreien Betrieb der elektrischen Anlage zwischen fremden 
+leitfähigen Teilen, Schutzkontakten von Steckdosen und Körpern fest angeschlossener elektrischer 
+Betriebsmittel 10 mV nicht überschreiten. 
+710.42 
+Schutz gegen thermische Auswirkungen 
+710.421 
+Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+710.421.7 
+Schutz gegen die Auswirkungen von Fehlerlichtbögen 
+Füge hinzu: 
+710.421.7.101 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) dürfen nicht in Stromkreisen verwendet werden, die von  
+IT-Systemen versorgt werden, die in 710.411.6 als medizinische IT-Systeme festgelegt sind. 
+In Stromkreisen, die nicht von medizinischen IT-Systemen versorgt werden, muss jeder Einsatz einer 
+Fehlerlichtbogen-Schutzeinrichtung (AFDD) einer Risikoanalyse unterzogen werden. 
+ANMERKUNG 
+Risikoanalysen können die Beteiligung von Brandinspektoren, Errichtern, Architekten und Interessen-
+vertretern einschließen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 652/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 10 
+710.44 
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+710.444 
+Maßnahmen gegen elektromagnetische Einflüsse 
+710.444.1 
+Anwendungsbereich 
+Füge hinzu: 
+Bezüglich elektromagnetischer Störungen und elektromagnetischer Verträglichkeit müssen besondere 
+Überlegungen getroffen werden. Weitere Informationen werden in Anhang 710.B gegeben. 
+ANMERKUNG 
+Informationen zur elektrostatischen Kontrolle im Gesundheitswesen siehe Normenreihe OVE EN 61340. 
+710.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+710.51 
+Allgemeine Bestimmungen 
+Füge hinzu: 
+710.51.101 
+Niederspannungs-Schaltgerätekombinationen (Verteiler) 
+710.51.101.1 Allgemeines 
+Verteiler müssen der Normenreihe OVE EN 61439 entsprechen. 
+Für Verteiler und Rangierverteiler nach dem (Gebäude-)Hauptverteiler sind die nachstehend angeführten 
+Stromversorgungen bzw. Anlagenbereiche in eigenen, entsprechend voneinander getrennten Verteilern 
+vorzusehen: 
+– 
+allgemeine Stromversorgung; 
+– 
+mit SV < 15 s versorgte Anlagenbereiche, die keine Einrichtungen für Sicherheitszwecke sind; 
+– 
+mit SV < 15 s versorgte Anlagenbereiche, die Einrichtungen für Sicherheitszwecke sind; 
+ 
+Die Trennung muss entsprechend dem geforderten Funktionserhalt der Einrichtungen für Sicherheits-
+zwecke ausgeführt sein. 
+– 
+alle von einer rotierenden SV ≤ 0,5 s versorgten Anlagenbereiche, die keine Einrichtungen für Sicherheits-
+zwecke sind; 
+– 
+alle von einer rotierenden SV ≤ 0,5 s versorgten Anlagenbereiche, die Einrichtungen für Sicherheits-
+zwecke sind; 
+ 
+Die Trennung muss entsprechend dem geforderten Funktionserhalt der Einrichtungen für Sicherheits-
+zwecke ausgeführt sein. 
+– 
+alle von einer SV ≤ 0,5 s in der Ausführung als batteriegestütztes zentrales Stromversorgungssystem 
+versorgten Anlagenbereiche; 
+ 
+Die Trennung muss entsprechend dem geforderten Funktionserhalt der Einrichtungen für Sicherheits-
+zwecke ausgeführt sein. 
+– 
+alle von einer SV ≤ 0,5 s in der Ausführung als batteriegestütztes zentrales Stromversorgungssystem 
+mitversorgten Geräte; 
+– 
+SV ≤ 0,5 s in der Ausführung als batteriegestütztes zentrales Stromversorgungssystem. 
+ 
+Die Trennung muss entsprechend dem geforderten Funktionserhalt der Einrichtungen für Sicherheits-
+zwecke ausgeführt sein. 
+Die Endstromkreise zu den mit SV ≤ 0,5 s versorgten allgemeinen Raumbeleuchtungen dürfen aus jedem von 
+einer SV ≤ 0,5 s-Quelle versorgten Verteilerbereich kommen. 
+Die Verteiler sind so auszuführen, dass eine einfache Messung des Isolationswiderstands aller Leiter gegen 
+Erde jedes einzelnen abgehenden Endstromkreises möglich ist. Bei Stromkreisen mit Leiter-
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 653/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 11 
+querschnitten ≤ 10 mm2 muss diese Messung ohne Abklemmen des Neutralleiters möglich sein, z. B. durch 
+eine Schalteinrichtung die alle Außenleiter und den Neutralleiter trennt. 
+Verteiler müssen außerhalb der medizinisch genutzten Räume platziert und gegen den Zugriff Unbefugter 
+gesichert werden. 
+710.51.101.2 Medizinische Bereiche der Gruppe 2 
+Für medizinisch genutzte Bereiche der Gruppe 2 sind eigene Verteiler erforderlich. Von diesen Verteilern 
+dürfen auch funktionell dazugehörende, einzelne nicht medizinisch genutzte Bereiche oder medizinisch 
+genutzte Bereiche der Gruppe 0 oder Gruppe 1 in diesem Bereich mitversorgt werden. 
+Zu den funktionell dazugehörenden Bereichen zählen z. B. Geräteräume, OP-Waschräume, OP-Nebenräume, 
+Schalträume u. dgl.. 
+Verteiler für medizinische Bereiche der Gruppe 2 sind in unmittelbarer Nähe der zu versorgenden Bereiche zu 
+installieren, leicht erreichbar sein und deutlich zu kennzeichnen.  
+Empfehlungen für die Mindestabstände von den Trenntransformatoren des medizinischen IT-Systems zu den 
+in der Patientenumgebung verwendeten elektrischen Betriebsmitteln sind im informativen Anhang 710.B 
+dargestellt. 
+Der Verteiler sollte für Instandhaltungszwecke leicht zugänglich sein und sich auf derselben Etage und in 
+demselben Brandabschnitt wie die Verbraucher befinden, die er versorgt. 
+710.510.102 
+Elektrische Betriebsstätten 
+Für die Gestaltung der elektrischen Betriebsstätten gelten die Anforderungen gemäß Teil 7-729 und  
+OVE-Richtlinie R 12-2. 
+Bei der Unterbringung der Hauptverteiler der allgemeinen Stromversorgung (AV) und der Sicherheits-
+stromversorgung (SV) in getrennten abgeschlossenen elektrischen Betriebsstätten kann es erforderlich sein, 
+im AV-Teil zusätzlich einen Leistungsschalter vorzusehen. Dieser schützt die Verbindungsleitung und die  
+SV-Schiene im AV-Betrieb. Im SV-Teil ist es in diesem Fall ausreichend, den Kuppelschalter als Lasttrenn-
+schalter auszuführen.  
+710.512 
+Betriebsbedingungen und äußere Einflüsse 
+710.512.1 
+Betriebsbedingungen 
+Füge hinzu: 
+710.512.1.101 Transformatoren für medizinische IT-Systeme (medizinischer IT-Transformator) 
+Trenntransformatoren müssen mit ÖVE/ÖNORM EN 61558-2-15 übereinstimmen und die folgenden 
+Anforderungen erfüllen. 
+Der Trenntransformator im medizinischen IT-Verteiler sollte sich in einer Entfernung von 25 m vom 
+Versorgungsbereich befinden. Ableitströme sollten berücksichtigt werden. 
+ANMERKUNG 1.AT 
+Die 25 m beziehen sich auf einen möglichen kapazitiven Ableitstrom. 
+Für jedes medizinische IT-System muss mindestens ein einphasiger Transformator zur Versorgung der 
+elektrischen Betriebsmittel verwendet werden. Die Nennausgangsleistung darf nicht kleiner als 0,5 kVA sein 
+und muss auf 10 kVA begrenzt werden. Werden mehrere Transformatoren zur Versorgung von elektrischen 
+Betriebsmitteln in einem medizinischen Bereich benötigt, dürfen diese nicht parallel geschaltet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 654/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 12 
+Ist auch die Versorgung von dreiphasigen Verbrauchern über ein IT-System gefordert, muss für diesen Zweck 
+ein separater Drehstromtransformator vorgesehen werden. Die Versorgung von einphasigen Verbrauchern 
+mittels Dreiphasen-Transformator ist nicht zulässig. 
+Zur Überwachung siehe 710.411.6.3.101. 
+Füge hinzu: 
+710.512.1.001.AT 
+Stromversorgung für medizinisch genutzte Bereiche der Gruppe 2 
+Beim Auftreten eines ersten Fehlers muss in medizinisch genutzten Bereichen der Gruppe 2 ein Totalausfall 
+der Stromversorgung verhindert werden. 
+Um diese Betriebssicherheit zu gewährleisten, muss jeder Verteilerabschnitt der mit SV ≤ 0,5 s versorgten 
+medizinischen IT-Systeme über zwei voneinander unabhängige Zuleitungen mit einer selbsttätigen 
+Umschalteinrichtung gemäß 710.537.101 versorgt werden. Die bevorzugte Zuleitung muss über die 
+Sicherheitsstromversorgung SV < 0,5 s erfolgen, die zweite Leitung über die Sicherheitsstromversorgung 
+SV < 15 s. 
+Die/das in Reservestellung befindliche Leitung/Kabel ist zu überwachen. 
+Wird zusätzlich zu dem über eine SV ≤ 0,5 s versorgten medizinischen IT-System ein über eine SV ≤ 15 s 
+versorgtes IT-System errichtet, ist für dieses System eine Zuleitung ausreichend. Im Übrigen gelten dieselben 
+Anforderungen wie für das über eine SV ≤ 0,5 s versorgte medizinische IT-System. 
+710.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+710.512.2.101 Explosionsgefahr 
+Wenn mit dem Auftreten von Explosionsgefahren zu rechnen ist, sind zusätzliche Vorsichtsmaßnahmen zu 
+treffen. 
+ANMERKUNG 1.AT 
+Siehe dazu z. B. Verordnung explosionsfähige Atmosphären, OVE EN 60079 Reihe. 
+Elektrische Betriebsmittel (z. B. Steckdosen und Schalter), die in der Umgebung medizinischer Gasanschlüsse 
+für brandfördernde oder entzündliche Gase angebracht sind, müssen in einem Abstand von mindestens 0,2 m 
+von der Steckdose (von Mittelpunkt zu Mittelpunkt) errichtet sein, um das Risiko einer Entzündung dieser Gase 
+zu minimieren. 
+ANMERKUNG 
+ 
+Für medizinische Versorgungseinheiten siehe ÖNORM EN ISO 11197. 
+ANMERKUNG 2.AT 
+In Räumen mit einer dem Stand der Technik (ÖNORM H 6020 mit einem Außenluftvolumenstrom 
+je Quadratmeter (m2) Bodenfläche von mindestens 20 m3/h bzw. 1 200 m3/h Außenluftvolumenstrom bei TAV-Schirmen in 
+Operationsräumen) ausgeführten raumlufttechnischen Anlage ist in der Regel keine explosionsgefährdete Atmosphäre in 
+gefahrbringender Menge zu erwarten. 
+Füge hinzu: 
+710.512.2.001.AT 
+Elektrostatische Entladungen 
+Zur Vermeidung der elektrostatischen Aufladung sind Fußböden mit einem Erdableitwiderstand ≤ 1 × 108 Ω in 
+folgenden Räumen auszuführen: 
+– 
+Räume der Gruppe 2; 
+– 
+EEG- und EMG-Räume; 
+– 
+Obduktionsräume (sofern aus Gründen des Explosionsschutzes erforderlich); 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 655/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 13 
+– 
+Labors, wenn aus Gründen des Explosionsschutzes erforderlich oder der Hersteller eines Gerätes dies 
+verlangt; 
+– 
+EDV-Räume, wenn der Hersteller oder Errichter der Geräte diesbezügliche Anforderungen stellt; 
+– 
+Bereiche für radiologische Diagnostik oder Therapie, sofern der Hersteller oder Errichter der Anlage dies-
+bezügliche Anforderungen stellt. 
+ 
+710.514 
+Kennzeichen 
+710.514.3 
+Kennzeichnung von Leitern 
+Füge hinzu: 
+710.514.3.101 
+Schutzpotentialausgleichsleiter für den zusätzlichen Schutzpotentialausgleich müssen 
+mindestens an den Anschlusspunkten durch die zweifarbige Kombination grün-gelb gekennzeichnet sein. 
+ANMERKUNG 
+Siehe OVE EN IEC 60445:2023, 6 und 51.NE.2 zur Kennzeichnung von Schutzleitern durch Farben. 
+710.514.5 
+Dokumentation 
+Füge hinzu: 
+710.514.5.101  
+Allgemeines 
+Pläne der elektrischen Anlage sind zusammen mit Protokollen, Zeichnungen, Schaltplänen und Änderungen 
+dem Anlagenbetreiber zur Verfügung zu stellen. 
+Bei der Erstellung der Dokumentation gemäß Teil 6 und der nationalen Ergänzung 1.NE sind folgende 
+Unterlagen zusätzlich aufzunehmen: 
+– 
+Übersichtspläne, die die Verteilungsstromkreise der allgemeinen (Haupt-)Stromversorgung und 
+Stromversorgung für Sicherheitszwecke in einpoliger Darstellung zeigen. Diese Diagramme müssen 
+Informationen über die Lage aller Verteiler enthalten; 
+– 
+alle Blockschaltbilder der Hauptverteiler mit Schalt- und Steueranlagen und Verteilern in einpoliger 
+Darstellung; 
+ 
+Bei jedem Verteiler muss der zugehörende Verteilerplan vorhanden sein. 
+ 
+ANMERKUNG AT Zur schnellen Identifizierung der den Schaltgeräten zugeordneten Verbraucher wird eine 
+Stromkreisliste an der Verteilertüre oder in Verteilernähe empfohlen. 
+– 
+Bauzeichnungen; 
+– 
+Schaltpläne von Steuerungen; 
+– 
+Dokumentation zum Nachweis der Einhaltung der Anforderungen von Normen (z. B. mit 710.411); 
+– 
+Liste der dauerhaft an die Stromversorgung für Sicherheitszwecke angeschlossenen Verbraucher mit 
+Angabe der Betriebsströme und der Anlaufströme bei motorbetriebenen Verbrauchern; 
+– 
+Liste der Einstellungen für Leistungsschalter; 
+– 
+Funktionsbeschreibung für den Betrieb der Stromquellen für Sicherheitszwecke und der Stromversorgung 
+für Sicherheitszwecke; 
+– 
+Dokumentation der Maßnahmen zur Einhaltung der EMV-Anforderungen (bei Vorliegen eines EMV-
+Konzepts); 
+– 
+Festlegungen der medizinisch genutzten Bereiche gemäß 710.3. 
+710.514.5.102  
+Betriebsanleitung 
+Anleitungen für den Betrieb und die Instandhaltung der elektrischen Anlage müssen bereitgestellt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 656/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 14 
+Die Dokumente sollten enthalten: 
+– 
+Anleitungen für den Betrieb, die Überprüfung, die Prüfung und die Instandhaltung von Batterien und der 
+Stromversorgung 
+für 
+Sicherheitszwecke, 
+einschließlich 
+der 
+Funktionsweise 
+für 
+selbsttätige 
+Umschalteinrichtungen; 
+– 
+ein Prüfbuch mit einer Aufzeichnung aller Funktions- und Sichtprüfungen; 
+– 
+Informationen über die Sichtprüfung(en). 
+710.52 
+Kabel- und Leitungsanlagen 
+710.520.4 
+Allgemeine Anforderungen 
+Füge hinzu: 
+Alle Kabel- und Leitungsanlagen innerhalb medizinischer Bereiche der Gruppe 2 müssen ausschließlich für die 
+Verwendung von elektrischen Betriebsmitteln und Zubehör in diesen Bereichen verwendet werden. 
+710.53 
+Schalt- und Steuergeräte 
+710.531 
+Einrichtungen zum Schutz gegen elektrischen Schlag 
+710.531.2 
+Überstrom-Schutzeinrichtungen für den Fehlerschutz 
+710.531.2.4 
+IT-System 
+Füge hinzu: 
+710.531.2.4.101 Medizinisches IT-System 
+Überstrom-Schutzeinrichtungen dürfen auf der Primärseite des Trenntransformators für medizinische  
+IT-Systeme nur zum Kurzschlussschutz eingesetzt werden. 
+Im Sekundärkreis des Trenntransformators für medizinische IT-Systeme darf kein Überlastschutz errichtet 
+werden. 
+Für jeden Endstromkreis muss ein Schutz gegen Überlast und bei Kurzschluss vorgesehen werden. 
+Für jeden Endstromkreis muss bei einphasiger Einspeisung ein zweipoliger Leitungsschutzschalter 
+vorgesehen werden. 
+Für den Schutz von Kabeln und Leitungen gegen zu hohe Erwärmung dürfen nur Leitungsschutzschalter 
+gemäß OVE EN 60898-1 oder Leistungsschalter gemäß OVE EN 60947-2 verwendet werden, die in allen 
+Polen einen Auslöser besitzen. Sie müssen kurzschlussselektiv gegenüber den vorgeschalteten 
+Schutzeinrichtungen wirken. 
+710.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+710.531.3.3 
+Typen von Fehlerstrom-Schutzeinrichtungen (RCD) für AC-Anlagen 
+Füge hinzu: 
+710.531.3.3.101 Auswahl von Fehlerstrom-Schutzeinrichtungen (RCD) in medizinisch genutzten 
+Bereichen 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2, in denen Fehlerstrom-Schutzeinrichtungen 
+(RCD) erforderlich sind, müssen Fehlerstrom-Schutzeinrichtungen (RCD) entsprechend dem möglicherweise 
+auftretenden Fehlerstrom ausgewählt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 657/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 15 
+Die Anzahl der Steckdosen an einem Endstromkreis sollte begrenzt sein, um die Möglichkeit einer 
+unerwünschten Auslösung der Fehlerstrom-Schutzeinrichtung (RCD) durch die gleichzeitige Verwendung 
+mehrerer elektrischer Betriebsmittel zu verringern. 
+Die einfache Handhabung und das Verfahren zur Rücksetzung jeder Fehlerstrom-Schutzeinrichtung (RCD) 
+muss beachtet und dokumentiert werden. 
+710.536 
+Koordination von Schutz-, Trenn-, Schalt- und Steuereinrichtungen 
+710.536.4 
+Anforderungen an die Koordination 
+710.536.4.2 
+Anforderungen für die Selektivität 
+Füge hinzu: 
+710.536.4.2.2 Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) unter 
+Überlastbedingungen 
+710.536.4.2.2.1 Allgemeine Anforderungen 
+Füge hinzu: 
+Um die Anforderungen an die Versorgungssicherheit medizinischer Bereiche der Gruppe 2 im medizinischen 
+IT-System zu erfüllen, muss die volle Selektivität für jeden potentiellen Überstrom sichergestellt sein. Im Falle 
+eines Kurzschlusses in einem Endstromkreis darf nur die der Fehlerstelle unmittelbar vorgeschaltete 
+Schutzeinrichtung ansprechen. 
+In der Kabel- und Leitungsanlage der SV ≤ 15 s und SV ≤ 0,5 s müssen die Schutzeinrichtungen so ausgewählt 
+werden, dass sowohl bei Versorgung aus der allgemeinen Stromversorgung als auch bei Versorgung über die 
+Stromquelle für Sicherheitszwecke, bei einem Kurzschluss an beliebiger Stelle, ausschließlich jene 
+Schutzeinrichtung auslöst, welche der Fehlerstelle unmittelbar vorgeschaltet ist. 
+Davon ausgenommen sind Vorsicherungen von Fehlerstrom-Schutzeinrichtungen (RCD) und deren 
+nachgeschaltete Überstrom-Schutzeinrichtungen von Endstromkreisen. 
+ 
+710.537 
+Geräte zum Trennen und Schalten 
+Füge hinzu: 
+710.537.101 
+Automatische Umschalteinrichtungen 
+Für automatische Umschalteinrichtungen für die Stromversorgung für medizinisch genutzte Bereiche der 
+Gruppe 2 gilt Folgendes: 
+– 
+Die automatische Umschalteinrichtung muss mit OVE EN IEC 60947-6-1 übereinstimmen. 
+– 
+Die Kabel- und Leitungsanlagen zwischen der automatischen Umschalteinrichtung und der 
+nachgeschalteten Überstrom-Schutzeinrichtung muss grundsätzlich kurzschluss- und erdschlussfest 
+errichtet werden.  
+– 
+Die automatische Umschalteinrichtung muss eine sichere Trennung zwischen den Versorgungsleitungen 
+herstellen. 
+– 
+Zusätzlich zur automatischen Umschalteinrichtung ist eine manuelle Umgehungsschaltung vorzusehen. 
+ 
+Diese Umgehungsschaltung muss ein unterbrechungsfreies Prüfen der automatischen Umschalt-
+einrichtung ermöglichen. Im By-Pass-Betrieb hat die Versorgung des medizinischen IT-Systems über die 
+bevorzugte Zuleitung zu erfolgen. Der By-Pass-Betrieb ist dem medizinischen Personal optisch und 
+akustisch (quittierbar) zu melden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 658/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 16 
+– 
+Die höchstens auftretende Gesamtausschaltzeit (vom Fehlereintritt bis zur Löschung des Lichtbogens in 
+der Überstrom-Schutzeinrichtung) muss kleiner sein als die minimale Umschaltverzögerungszeit der 
+selbsttätigen Umschalteinrichtung. 
+– 
+Zur Spannungsüberwachung ist eine eigenständige Überwachungseinrichtung erforderlich, die alle 
+Außenleiter überwacht. 
+– 
+Die Schaltgeräte der Umschalteinrichtung sind für das 1,5-Fache des Bemessungsstroms auszulegen. Bei 
+Schützen gemäß OVE EN IEC 60947-4-1 sind für das Nennschaltvermögen die Gebrauchskategorie AC 3 
+und für den Kurzschlussschutz die Anforderung „verschweißfrei“ zugrunde zu legen. Halbleiterschütze 
+sind nicht zulässig. 
+– 
+Zur Erhöhung der Verriegelungs- und Umschalt-Sicherheit sind pro Schaltgerät jeweils zwei Hilfskontakte 
+zusammenzuschalten. Mechanisch verriegelte Schütze oder Umschaltschütze sind elektrisch verriegelten 
+Schützen vorzuziehen. 
+– 
+Die Umschaltung auf die in Reserve stehende Leitung (siehe 710.512.1.001.AT) hat als Störmeldung an 
+das technische Personal als Alarm hoher Priorität zu erfolgen. 
+– 
+Zur Funktionsprüfung der Umschalteinrichtung ist im Verteiler ein Schalter oder Taster vorzusehen. Dieser 
+ist als Testeinrichtung zu kennzeichnen. 
+– 
+Die Rückschaltung auf die bevorzugte Zuleitung bei Spannungswiederkehr muss zeitverzögert erfolgen. 
+ANMERKUNG 
+Zu Umschaltzeiten siehe 710.560.4.1. 
+710.538 
+Einrichtungen zur Überwachung 
+710.538.1 
+Isolationsüberwachungsgeräte (IMD) für IT-Systeme 
+710.538.1.1 
+Allgemeines 
+Füge hinzu: 
+In medizinischen IT-Systemen muss die Isolation mit einem medizinischen Isolationsüberwachungsgerät 
+(MED-IMD) gemäß ÖVE/ÖNORM EN 61557-8:2016, Anhang A und Anhang B, überwacht werden. Das  
+MED-IMD muss in den Verteiler des medizinischen IT-Systems eingebaut werden. 
+710.538.4 
+Differenzstrom-Überwachungsgeräte (RCM) 
+Füge hinzu: 
+710.538.4.101 Auswahl von Differenzstrom-Überwachungsgeräten (RCM) in medizinisch genutzten 
+Bereichen der Gruppe 1 und Gruppe 2 
+In medizinisch genutzten Bereichen der Gruppe 1 oder Gruppe 2 wird der Einsatz von Differenzstrom-
+Überwachungsgeräten (RCM) gemäß OVE EN IEC 62020-1 empfohlen. Jede signifikante Verringerung der 
+Isolierung sollte den Anwendern und dem technischen Personal gemeldet werden. Die akustischen und 
+optischen Alarmanforderungen von 710.411.6.3.101 werden bei Verwendung in medizinisch genutzten 
+Bereichen der Gruppe 2 empfohlen. 
+ANMERKUNG AT 
+Diese Empfehlung richtet sich an Großgeräte (z. B. MRT, CT, Angiographie). 
+Bei Verwendung eines Differenzstrom-Überwachungsgeräts (RCM) ist der RCM-Typ entsprechend dem 
+möglicherweise auftretenden Fehlerstrom zu wählen, z. B. Typ A oder Typ B. 
+710.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 659/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 17 
+710.55.101 Steckdosen in medizinisch genutzten Bereichen der Gruppe 2 
+710.55.101.1 Steckdosen in medizinischen IT-Systemen 
+In medizinischen IT-Systemen muss eine Signalleuchte oder ein Display angebracht sein, um für jeden 
+Endstromkreis die Verfügbarkeit der Steckdosen anzuzeigen, die zur Versorgung für ME-Geräte bestimmt sind. 
+ANMERKUNG 
+Für Signalleuchten der Spannungsanzeige ist grünes Licht zu bevorzugen. 
+Endstromkreise dürfen jeweils nur einem Patientenplatz zugeordnet sein. 
+Geschaltete Steckdosen dürfen nicht in medizinischen IT-Systemen verwendet werden. 
+Für Steckdosen an einem Patientenplatz gelten folgende Vorgaben: 
+– 
+eine einzelne Steckdose wird von einem eigenen Endstromkreis versorgt, oder 
+– 
+mehrere Steckdosen werden von mindestens zwei Endstromkreisen versorgt, dabei darf die Anzahl von 
+maximal sechs Steckdosen pro Endstromkreis nicht überschritten werden. 
+710.55.101.2 TN-S- oder TT-Systeme 
+Steckdosen für TN-S- oder TT-Systeme müssen entweder 
+– 
+nicht kompatibel mit den für medizinische IT-Systeme verwendeten Systemen sein, oder 
+– 
+deutlich und dauerhaft gekennzeichnet sein, z. B. durch farbliche Kennzeichnung. 
+ 
+Bei der Kennzeichnung ist auch auf die Eindeutigkeit in Hinblick auf die Versorgungsnetze zu achten (siehe 
+710.560.6.102). 
+710.559 
+Leuchten und Beleuchtungsanlagen 
+Füge hinzu: 
+710.559.101 
+Beleuchtungsstromkreise 
+In medizinisch genutzten Bereichen der Gruppe 1 und Gruppe 2 müssen mindestens zwei Beleuchtungs-
+stromkreise vorgesehen werden, die aus mindestens zwei verschiedenen Stromquellen versorgt werden. 
+ANMERKUNG AT 
+Siehe dazu auch 710.560.9.101. 
+Füge hinzu: 
+710.559.001.AT Operationsleuchten und unentbehrliche Leuchten 
+Operationsleuchten und unentbehrliche Leuchten (siehe 710.560.6.103.1) müssen fest angeschlossen sein. 
+710.56 
+Einrichtungen für Sicherheitszwecke 
+710.560.4 
+Klassifizierung 
+710.560.4.1 
+Ersetze durch: 
+Die Klassifizierung einer Stromversorgung für Sicherheitszwecke für medizinische Bereiche ist wie folgt: 
+– 
+Klasse A: unterbrechungsfrei: automatisches Stromversorgungssystem, das während der Umschaltung 
+eine fortlaufende Versorgung innerhalb festgelegter Bedingungen sicherstellen kann; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 660/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 18 
+– 
+Klasse C: kurze Unterbrechung: automatisches Stromversorgungssystem, das innerhalb von 0,5 s 
+verfügbar ist; 
+– 
+Klasse E: mittlere Unterbrechung: automatisches Stromversorgungssystem, das innerhalb von 15 s 
+verfügbar ist; 
+– 
+Klasse F: lange Unterbrechung: automatisches Stromversorgungssystem, das in mehr als 15 s verfügbar 
+ist. 
+Die Stromversorgung für Sicherheitszwecke, die für medizinische Bereiche mit unterschiedlichen 
+Klassifizierungen 
+bereitgestellt 
+wird, 
+muss 
+der 
+Klassifizierung 
+entsprechen, 
+die 
+die 
+höchste 
+Versorgungssicherheit bietet. 
+710.560.5 
+Allgemein 
+Füge hinzu: 
+710.560.5.101 
+In medizinisch genutzten Bereichen ist eine Stromversorgung für Sicherheitszwecke 
+erforderlich, die nach Maßgaben dieses Teils bei Störung der allgemeinen Stromversorgung die für den 
+Weiterbetrieb notwendigen Einrichtungen für einen bestimmten Zeitraum und innerhalb einer bestimmten 
+Umschaltzeit mit elektrischer Energie versorgen muss. 
+Die Stromquelle für Sicherheitszwecke muss die Versorgung automatisch übernehmen, wenn die Spannung 
+an mindestens einem Außenleiter des Hauptverteilers der allgemeinen Stromversorgung des Gebäudes über 
+mehr als 0,5 s auf weniger als 85 % der Nennspannung abfällt. 
+Es sollten Verfahren zur wiederkehrenden Prüfung bei geplanter Instandhaltung und auch für eventuelle 
+Notausfälle der Stromquelle für Sicherheitszwecke und der Stromversorgung für Sicherheitszwecke vorhanden 
+sein. Dafür ist beispielsweise eine Anschlussmöglichkeit für eine externe Stromquelle für Sicherheitszwecke 
+vorzusehen. 
+Füge hinzu: 
+710.560.5.001.AT 
+In medizinisch genutzten Bereichen zählen zu den Einrichtungen für Sicherheitszwecke 
+gemäß Teil 5-56 zusätzlich auch: 
+– 
+notwendige Bettenaufzüge; 
+ 
+ANMERKUNG AT Dies sind Bettenaufzüge, die bei Ausfall der allgemeinen Stromversorgung weiterbetrieben 
+werden müssen. 
+– 
+Lüftungsanlagen für Betriebsräume von Stromquellen für Sicherheitszwecke; 
+– 
+Anlagen der Personenruftechnik (z. B. Lichtrufzentralen) und Telefonanlagen; 
+– 
+notwendige medizinische elektrische Geräte; 
+– 
+Verbrauchsmittel und Geräte gemäß 710.560.6.103.1; 
+– 
+elektrische Einrichtungen der medizinischen Gasversorgung einschließlich Druckluft, Vakuumversorgung 
+und Narkosegasabsaugung sowie deren Überwachungseinrichtungen. 
+710.560.6 
+Stromquellen für Sicherheitszwecke 
+Füge hinzu: 
+710.560.6.101 
+ 
+Im Falle eines Fehlers der allgemeinen Stromversorgungsquelle muss die Stromquelle für Sicherheitszwecke 
+die Betriebsmittel nach 710.560.6.103.1, 710.560.6.103.2 und 710.560.6.103.3 mit elektrischer Energie über 
+einen bestimmten Zeitraum und innerhalb einer vorgeschriebenen Umschaltzeit versorgen. 
+Der Kraftstoffvorrat für Verbrennungsmotoren ist zumindest so auszulegen, dass die Nennleistung der 
+Stromquelle für die erforderliche Versorgungsdauer dauerhaft abgegeben werden kann. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 661/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 19 
+Nach Wiederkehr der allgemeinen Stromversorgung muss eine verzögerte, automatische Rückschaltung 
+erfolgen. 
+710.560.6.001.AT 
+ 
+Für eine externe Einspeisung ist ein Einspeisepunkt (z. B. Anschlusskasten) für eine mobile 
+Stromerzeugungseinrichtung im Nahbereich des vorgesehenen Aufstellungsortes vorzusehen. 
+ANMERKUNG AT 
+Diese Einspeisung dient für die bestimmungsmäße Aufrechterhaltung der Sicherheitsstrom-
+versorgung z. B. während Reparaturarbeiten. 
+710.560.6.102 
+ 
+Steckdosen und gegebenenfalls Schalter, die von einer Stromquelle für Sicherheitszwecke versorgt werden, 
+müssen leicht erkennbar sein, auch bezüglich ihrer Klassifizierung, zum Beispiel durch Farbcodierung oder 
+Kennzeichnung. 
+ANMERKUNG 
+Es können zusätzliche nationale Anforderungen gelten. 
+ANMERKUNG AT 
+Bei farblicher Kennzeichnung ist die Farbe „grün“ für Bereiche der SV ≤ 15 s und die Farbe „gelb“ 
+oder „orange“ für Bereiche der SV ≤ 0,5 s vorzuziehen, jedoch kann eine einheitliche andersartige Kennzeichnung 
+innerhalb einer Anlage, insbesondere bei einer Erweiterung, zweckmäßig sein. 
+710.560.6.103 Detaillierte Anforderungen an die Stromquelle für Sicherheitszwecke 
+710.560.6.103.1 Umschaltzeit von kleiner oder gleich 0,5 s 
+Fällt die Spannung am Verteiler unter 85 % der Nennspannung, muss eine Stromquelle für Sicherheitszwecke 
+die Stromversorgung für einen minimalen Zeitraum von mindestens 3 h aufrecht erhalten für: 
+– 
+Operationsleuchten und unentbehrliche Leuchten; 
+ 
+ANMERKUNG AT.1 
+Als unentbehrliche Leuchten gelten auch die allgemeine Raumbeleuchtung oder Teile 
+davon, wenn sie die Funktion einer OP- oder Untersuchungsleuchte ersetzen (z. B. in Herzkatheterräumen), sowie 
+Lichtquellen für die endoskopische chirurgische Feldbeleuchtung. 
+– 
+ME-Geräte und ME-Systeme, die Lichtquellen oder für das Verfahren wesentliche Geräte enthalten; als 
+Beispiel können diese Geräte Endoskope und wesentliche Geräte wie Bildschirme umfassen; 
+– 
+lebenserhaltende ME-Geräte und ME-Systeme sowie lebenswichtige chirurgische ME-Geräte (z. B. 
+Hochfrequenz-Chirurgie-Geräte zur Blutstillung); 
+– 
+lebenswichtige Überwachungsgeräte und -systeme sowie jene Teile davon, die sich nicht in medizinisch 
+genutzten Bereichen (z. B. Stützpunkt) befinden. 
+ANMERKUNG 1  
+Eine Einschätzung (siehe 710.3) kann andere Geräte identifizieren, die einen Anschluss an eine 
+Stromquelle für Sicherheitszwecke mit den oben genannten Anforderungen benötigen. 
+Die Stromversorgung muss automatisch innerhalb einer Umschaltzeit von höchstens 0,5 s wiederhergestellt 
+werden. 
+Diese SV ≤ 0,5 s ist neben der SV ≤ 15 s gemäß 710.560.6.103.2 und unabhängig von dieser vorzusehen. 
+Die Dauer darf von 3 h auf 1 h reduziert werden, wenn eine weitere unabhängige Sicherheitsstromquelle die 
+Mindestbetriebsdauer von 3 h sicherstellt. Die Sicherheitsstromversorgung gemäß 710.560.6.103.2 oder 
+710.560.6.103.3 ist nicht als weitere unabhängige Stromquelle für Sicherheitszwecke anzusehen. 
+710.560.6.103.1.001.AT 
+Informationstechnische Geräte (z. B. Server, Hubs, Switches, Router), die für 
+operative oder lebenserhaltende Maßnahmen erforderlich sind, müssen aus zwei unabhängigen 
+Stromversorgungsnetzen versorgt werden, wobei mindestens eines davon unterbrechungsfrei sein muss. 
+710.560.6.103.1.002.AT 
+Bei Ausführung der SV ≤ 0,5 s als Batterie- bzw. Batterie-Wechselrichteranlage ist 
+diese als batteriegestütztes zentrales Stromversorgungssystem (BSV) für Sicherheitszwecke zur Versorgung 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 662/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 20 
+medizinisch genutzter Bereiche auszuführen, mit folgenden Einschränkungen hinsichtlich des Anschlusses von 
+Verbrauchern. 
+ANMERKUNG AT 
+Anforderungen an batteriegestützte zentrale Stromversorgungssysteme (BSV) für Sicherheits-
+zwecke zur Versorgung medizinisch genutzter Bereiche siehe DIN VDE 0558-507. 
+Bei ausreichender Versorgungsleistung der BSV-Anlage dürfen auch andere ME-Geräte, wichtige Laborgeräte 
+und für die Untersuchung oder Behandlung wichtige EDV-Geräte (z. B. Patientendatenmanagementsysteme – 
+PDMS) angeschlossen werden, wenn dadurch die Versorgungssicherheit, insbesondere auch die Kurzschluss-
+selektivität der notwendigen Sicherheitseinrichtungen, nicht beeinträchtigt wird. 
+710.560.6.103.1.003.AT 
+Bei Ausführung der SV ≤ 0,5 s als unterbrechungsfreie, rotierende Sicherheits-
+stromquelle dürfen alle Einrichtungen für Sicherheitszwecke, wichtige elektromedizinische Geräte, 
+Laborgeräte, EDV-Anlagen sowie sonstige Anlagen der Informationstechnik, welche eine kurze Umschaltzeit 
+benötigen, unter folgenden Voraussetzungen mitversorgt werden: 
+1) 
+Das Stromerzeugungsaggregat für Sicherheitszwecke muss ausreichend bemessen sein, sodass der 
+Betrieb und die zulässige Umschaltzeit der Einrichtungen für Sicherheitszwecke nicht gefährdet werden. 
+2) 
+Es ist sicherzustellen, dass durch die Mitversorgung der nicht zu den Einrichtungen für Sicherheitszwecke 
+gehörenden Verbraucher keine unzulässigen Beeinträchtigungen (Überlastungen, Netzrückwirkungen) 
+auftreten. 
+3) 
+Verbraucher, die nicht zu den Einrichtungen für Sicherheitszwecke gehören, sind über eine eigene  
+Kabel-/Leitungsanlage ab dem Gebäudehauptverteiler zu versorgen, wobei die Kurzschlussselektivität der 
+Einrichtungen für Sicherheitszwecke nicht beeinträchtigt werden darf. 
+4) 
+Stromquellen für Sicherheitszwecke für die SV ≤ 0,5 s sind so zu bemessen, dass bei der Zuschaltung 
+und im dynamischen Betrieb keine größeren Abweichungen als 10 % von der Nennspannung und 1 Hz 
+von der Nennfrequenz auftreten. 
+5) 
+Die Verfügbarkeit des SV ≤ 0,5 s-Aggregats muss unabhängig von anderen Anlagen sein. 
+710.560.6.103.1.004.AT 
+Der SV ≤ 0,5 s-Notbetrieb ist mit hoher Priorität an die Haus-/Betriebstechnik zu 
+melden. 
+Darüber hinaus muss eine automatische Meldung des SV ≤ 0,5 s-Notbetriebs akustisch (quittierbar) und 
+optisch so erfolgen, dass sie vom medizinischen Personal des betroffenen Bereichs wahrgenommen werden 
+kann. Diese Meldung an das medizinische Personal darf entfallen, wenn der Tankinhalt einer rotierenden 
+Stromquelle für Sicherheitszwecke für einen Notbetrieb von mindestens 12 h garantiert ist und eine kurzfristige 
+Information des medizinischen Personals durch eine andere Maßnahme sichergestellt wird. 
+710.560.6.103.1.005.AT 
+Bei Verwendung eines gemeinsamen Vorratstanks für SV ≤ 0,5 s und SV ≤ 15 s ist 
+ein eigener Betriebstank bei der SV ≤ 0,5 s für eine Mindestbetriebszeit von 3 h vorzusehen. 
+710.560.6.103.2 Umschaltzeit ist kleiner als oder gleich 15 s 
+ME-Geräte und ME-Systeme, die nicht an die Stromversorgung für Sicherheitszwecke gemäß 710.560.6.103.1 
+und Anwendungen gemäß 710.560.9 sowie die Einrichtungen für Sicherheitszwecke gemäß 710.560.5.101 
+angeschlossen sind, müssen automatisch und innerhalb von 15 s mit einer Stromquelle für Sicherheitszwecke 
+verbunden werden, die die Versorgung für einen Zeitraum von mindestens 24 h aufrechterhalten kann, wenn 
+die Spannung mindestens eines Außenleiters im Hauptverteiler für die Stromquelle für Sicherheitszwecke auf 
+weniger als 85 % der Nennspannung für mehr als 3 s abfällt. 
+Die Dauer von 24 h darf auf mindestens 3 h verkürzt werden, wenn die medizinischen Anforderungen und die 
+Nutzung des medizinischen Bereichs, einschließlich jeglicher medizinischen Verfahren, dies zulassen und 
+wenn 
+das 
+Gebäude 
+in 
+einer 
+Zeit 
+evakuiert 
+werden 
+kann, 
+die 
+deutlich 
+innerhalb 
+der  
+Drei-Stunden-Frist liegen kann (dies kann z. B. bei Ambulatorien für physikalische Therapie oder Röntgen-
+institute zutreffen). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 663/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 21 
+710.560.6.103.3 Umschaltzeit ist länger als 15 s 
+Andere elektrische Betriebsmittel als in 710.560.6.103.1 und 710.560.6.103.2 aufgeführt, die für die 
+Aufrechterhaltung des medizinischen Betriebs oder gleichwertiger Dienste unerlässlich sind, müssen 
+automatisch (oder manuell) von einer Stromquelle für Sicherheitszwecke übernommen werden, die die 
+Versorgung für eine Mindestdauer von 24 h aufrechterhalten kann. 
+Zu diesen elektrischen Verbrauchsmitteln können z. B. gehören: 
+– 
+Betriebsmittel für die Sterilisation; 
+– 
+Technische 
+Gebäudeanlagen, 
+insbesondere 
+Klimaanlagen, 
+Heizungs- 
+und 
+Lüftungsanlagen, 
+Gebäudetechnik und Müllentsorgungssysteme; 
+– 
+Kühleinrichtungen; 
+– 
+Kücheneinrichtungen; 
+– 
+Ladeeinrichtung für Batterien mit Sekundärzellen, z. B. für die SV ≤ 0,5 s, USV für informationstechnische 
+Geräte; 
+– 
+Bettenaufzüge. 
+Die Dauer von 24 h darf auf mindestens 3 h verkürzt werden, wenn die medizinischen Anforderungen und die 
+Nutzung des medizinischen Bereichs, einschließlich jeglicher medizinischen Verfahren, dies zulassen und 
+wenn das Gebäude in einer Zeit evakuiert werden kann, die deutlich innerhalb der 3 h-Frist liegen kann (dies 
+kann z. B. bei Ambulatorien für physikalische Therapie oder Röntgeninstitute zutreffen). 
+710.560.6.104 Zusätzliche Anforderungen an elektrische Stromquellen für Sicherheitszwecke von 
+medizinischen Einrichtungen der Gruppe 1 und Gruppe 2 
+Eine zusätzliche Netzeinspeisung, beispielsweise eine unabhängige allgemeine Stromversorgung, wird nicht 
+als Stromquelle für Sicherheitszwecke anerkannt. 
+Für Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren als Stromquelle für Sicherheitszwecke 
+gelten für die Ausführung und Errichtung der Aggregate je nach Zutreffen die Anforderungen gemäß  
+DIN 6280-13, ISO 8528 Series und ÖNORM EN ISO 8528-13, soweit in diesen Bestimmungen keine anderen 
+Anforderungen enthalten sind. 
+Eine batteriegestützte Anlage SV ≤ 0,5 s muss aus dem Erhaltungsladebetrieb mindestens für die Dauer von 
+3 h mit Nennleistung, bei Wechsel- bzw. Drehstrom mit Nennleistung bei cos φ  0,8 induktiv betrieben werden 
+können. Die Batterie muss nach einer Ladedauer von höchstens 6 h wieder die gleiche Entnahme ermöglichen. 
+Diese Bedingungen gelten bei einer Umgebungstemperatur von +20 ºC. Es dürfen nur ortsfeste Batterien 
+gemäß Teil 5-56 für zentrale Stromversorgungssysteme verwendet werden. Der einwandfreie Ladezustand 
+muss durch selbsttätiges Laden und Erhaltungsladen sichergestellt sein. 
+Die Verfügbarkeit (Betriebsbereitschaft) von Stromquellen für Sicherheitszwecke ist zu überwachen und an 
+einer geeigneten Stelle anzuzeigen. 
+710.560.6.1 
+Füge hinzu: 
+Batterien mit Primärzellen dürfen nicht als Stromquelle für Sicherheitszwecke verwendet werden. 
+710.560.6.11 
+ANMERKUNG AT 
+Die Anforderungen des Harmonisierungsdokuments finden sich in 560.6.11 e). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 664/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 22 
+710.560.6.13 
+Füge hinzu: 
+ANMERKUNG AT 
+Die Anforderungen des Harmonisierungsdokuments finden sich in 560.6.13. 
+710.560.8 
+Kabel- und Leitungsanlagen 
+Füge hinzu: 
+710.560.8.001.AT 
+Besondere Anforderungen an die Kabel und Leitungen der Sicherheitsstrom-
+versorgungen SV ≤ 0,5 s und SV ≤ 15 s 
+710.560.8.001.1.AT 
+Kabel und Leitungen zwischen Stromquellen für Sicherheitszwecke und der 
+zugehörigen ersten Überstrom-Schutzeinrichtung sowie zwischen Batterie und Ladegerät müssen kurzschluss- 
+und erdschlusssicher verlegt sein. Sie dürfen sich nicht in der Nähe brennbarer Materialien befinden. 
+710.560.8.001.2.AT 
+In einem mehradrigen Kabel oder einer mehradrigen Leitung der Sicherheitsstrom-
+versorgung darf ein Stromkreis nur mit einem zugehörigen Hilfsstromkreis zusammengefasst werden. Das 
+Zusammenfassen von mehreren Hauptstromkreisen in einem Kabel oder einer Leitung (z. B. auch 
+Beleuchtungsstromkreise mit gemeinsamem Neutralleiter) ist nicht zulässig. 
+710.560.8.001.3.AT 
+Bei Stromversorgung eines oder mehrerer Gebäude von einer zentralen Stelle aus 
+gelten für die Zuleitungen zu den einzelnen Gebäuden die nachstehenden Anforderungen: 
+– 
+Einrichtungen, die bei Störung der allgemeinen Stromversorgung das Inbetriebsetzen der Stromquelle für 
+Sicherheitszwecke und die Umschaltung der Sicherheitsstromversorgung auf die Stromquelle für 
+Sicherheitszwecke bewirken, müssen sich im Hauptverteiler der zentralen Versorgungsanlage befinden. 
+– 
+In jedem Gebäudehauptverteiler muss sich eine Einrichtung befinden, die bei Ausfall mindestens eines 
+Außenleiters an der Einspeisestelle der SV-Schiene SV ≤ 15 s die Versorgung über die zweite 
+Einspeisestelle automatisch sicherstellt. Für den Fall, dass mit einer SV ≤ 0,5 s Einrichtungen für 
+Sicherheitszwecke gemäß 710.56 und 710.560.9 versorgt werden, ist eine Einrichtung vorzusehen, die 
+bei Ausfall der Zuleitung eine automatische Umschaltung auf die Einspeisestelle der SV ≤ 15 s sicherstellt. 
+Die Zuleitungen zu Bereichen der Gruppe 2 dürfen von dieser Umschaltung nicht betroffen sein. 
+ 
+ANMERKUNG AT Beispiel siehe Bild 710.NE2.004.AT Gebäudehauptverteiler Beispiel 3. 
+– 
+Bei Verlegung der Kabel und Leitungen der allgemeinen Stromversorgung, der Sicherheits-
+stromversorgung SV ≤ 15 s und der Sicherheitsstromversorgung SV ≤ 0,5 s im Erdreich sind 
+Vorkehrungen zu treffen, dass ein gleichzeitiger Ausfall mehrerer dieser Stromversorgungen – z. B. 
+verursacht durch Erdarbeiten – verhindert wird. Dies kann z. B. durch Verlegung im Erdreich auf 
+getrennten Trassen mit einem Mindestabstand von 2 m oder in einer Stufenkünette mit einem 
+Höhenunterschied von mindestens 1 m erreicht werden. Im Nahbereich einer Gebäudeeinführung dürfen 
+Kabel und Leitungen den Abstand von 2 m unterschreiten, wenn besonderer mechanischer Schutz gegen 
+Beschädigungen bei Tiefbauarbeiten vorgesehen ist. Zum Schutz der Kabel- und Leitungsanlage der 
+Sicherheitsstromversorgungen ist bei gemeinsamer Verlegung mit der allgemeinen Stromversorgung in 
+einer Stufenkünette die Kabel- und Leitungsanlage der allgemeinen Stromversorgung an oberster Stelle 
+anzuordnen. 
+– 
+Bei Kabel- und Leitungsanlagen außerhalb des Erdreiches, z. B. im Kollektor, darf die Kabel- und 
+Leitungsanlage der Sicherheitsstromversorgungen auf der gleichen Kabeltrasse wie die Kabel- und 
+Leitungsanlage der allgemeinen Stromversorgung geführt werden, wenn die Kabel- und Leitungsanlage 
+der Sicherheitsstromversorgungen so vor äußerer Brandeinwirkung geschützt ist, dass sie im Brandfall für 
+die Dauer des geforderten Funktionserhalts funktionsfähig bleibt. 
+710.560.9 
+Allgemeine Anforderungen für die Not-/Sicherheitsbeleuchtungsanlagen 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 665/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 23 
+710.560.9.101 Ersatzbeleuchtung 
+Bei einem Netzausfall darf die Umschaltzeit der Stromquelle für Sicherheitszwecke 15 s nicht überschreiten. 
+Die notwendige Mindestbeleuchtungsstärke muss in folgenden Bereichen zur Verfügung stehen: 
+– 
+Standorte für Schaltanlagen und Steuergeräte für Stromquellen für Sicherheitszwecke und für 
+Hauptverteiler der allgemeinen Stromversorgung und der Stromversorgung für Sicherheitszwecke; 
+– 
+Bereiche, inkl. Gänge, die zur Aufrechterhaltung des Betriebs vorgesehen sind. In diesen Bereichen muss 
+mindestens eine Leuchte von der Stromquelle für Sicherheitszwecke versorgt werden; 
+– 
+Standorte von Brandmelde- und Überwachungszentralen; 
+– 
+Etagenbäder, Toiletten und Nasszellen, die auch von Patienten benutzt werden; 
+– 
+Räume in medizinisch genutzten Bereichen der Gruppe 1: In jedem dieser Räume muss mindestens eine 
+Leuchte sowie vorhandene Untersuchungsleuchten von der Stromquelle für Sicherheitszwecke versorgt 
+werden; 
+– 
+Räume in medizinisch genutzten Bereichen der Gruppe 2: Die allgemeine Raumbeleuchtung muss sowohl 
+aus der SV ≤ 0,5 s als auch aus der SV ≤ 15 s gespeist werden. Mindestens 50 % der Raumbeleuchtung 
+müssen dabei von der SV ≤ 15 s versorgt werden. 
+ANMERKUNG 
+Nationale Vorschriften können kürzere Umschaltzeiten erfordern. 
+710.6 
+Prüfungen 
+710.600.4 
+Erstprüfung 
+Füge hinzu: 
+710.600.4.101 
+Die Prüfungen, nachstehend spezifiziert unter den Aufzählungen a) bis l) und in Ergänzung zu den 
+Anforderungen von Teil 6, müssen sowohl vor der Inbetriebnahme als auch nach Änderungen oder 
+Instandsetzungen vor der Wiederinbetriebnahme durchgeführt und protokolliert werden: 
+a) 
+Funktionsprüfung von Umschalteinrichtungen unter Berücksichtigung von Herstellerangaben; 
+b) 
+Funktionsprüfung des MED-IMD und der Überlast-Überwachungseinrichtungen von medizinischen  
+IT-Systemen 
+sowie 
+deren 
+akustischen/visuellen 
+Alarmsystemen 
+unter 
+Berücksichtigung 
+von 
+Herstellerangaben; 
+c) 
+Messungen zum Nachweis des zusätzlichen Schutzpotentialausgleichs gemäß den Anforderungen von 
+710.415.2.102; 
+d) 
+Überprüfung auf Übereinstimmung mit den Anforderungen an den zusätzlichen Schutzpotentialausgleich 
+gemäß 710.415.2.101; 
+e) 
+Überprüfung auf Übereinstimmung mit den Anforderungen zum Anschluss von Einrichtungen an die 
+Stromversorgung für Sicherheitszwecke gemäß 710.56; 
+ 
+Hinsichtlich der Stromerzeugungsaggregate gilt jedenfalls: 
+ 
+– 
+Bei der Prüfung der Bemessung des Stromerzeugungsaggregats sind die statische Belastung und 
+das dynamische Anlaufverhalten zu berücksichtigen. Dabei kann das Werksprüfungsprotokoll des 
+Aggregats herangezogen werden. 
+ 
+– 
+Im Falle des Zusammenwirkens von mehreren Stromerzeugungsaggregaten ist die dynamische 
+Lastübernahme bzw. Lastverteilung inklusive der zugehörigen übergeordneten Steuerung durch 
+Prüfung vor Ort nachzuweisen. Werksprüfungsprotokolle der einzelnen Aggregate sind in diesem Fall 
+nicht ausreichend. 
+ 
+– 
+Die Funktionstests von Stromerzeugungsaggregaten sind am Einbauort über die Dauer von 
+mindestens einer Stunde mit 100 % der Nennleistung der Aggregate durchzuführen. 
+f) 
+Prüfung der Einhaltung der Selektivität der Stromversorgung für Sicherheitszwecke entsprechend den 
+Planungsunterlagen und Berechnung; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 666/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 24 
+g) 
+Prüfung der angewendeten Schutzmaßnahmen auf Übereinstimmung mit den Anforderungen für 
+medizinisch genutzte Bereiche der Gruppe 1 oder Gruppe 2; 
+h) 
+Sichtprüfung, ob die Kennzeichnung der Leistung des Trenntransformators gemäß 710.512.1.101 den 
+Planungsunterlagen entspricht; 
+i) 
+Prüfung der Funktion der Stromquellen für Sicherheitszwecke SV ≤ 15 s und SV ≤ 0,5 s durch 
+Unterbrechung der Netzzuleitung am Verteiler der zu versorgenden Verbraucher; 
+j) 
+Messungen zum Nachweis, dass die in 710.415.2.103 angeführte Spannung im fehlerfreien Betrieb nicht 
+überschritten wird. Diese Prüfung muss zu einem Zeitpunkt vorgenommen werden, zu dem die elektrische 
+Anlage des Gebäudes belastet ist. Die Messung hat mit einem Spannungsmesser für Effektivwerte, 
+dessen Innenwiderstand, z. B. durch äußere Beschaltung, auf 1 kΩ eingestellt ist (siehe OVE  
+EN 60601-1:2023, Bild 12), zu erfolgen. Der Frequenzbereich des Spannungsmessers sollte 1 kHz nicht 
+überschreiten; 
+k) 
+Messung des Erdableitwiderstandes des Fußbodens in den unter 710.512.2.001.AT angeführten Räumen 
+gemäß ÖNORM EN 1081; 
+l) 
+Ergänzende Anforderungen zur Prüfung für Einrichtungen für Sicherheitszwecke siehe Nationale 
+Ergänzung 56.NE. 
+710.600.5 
+Wiederkehrende Prüfungen 
+Füge hinzu: 
+710.600.5.101 
+ANMERKUNG 
+Die Verfahren für die wiederkehrende Prüfung werden in der Regel in enger Zusammenarbeit mit dem 
+medizinischen Personal durchgeführt, sodass das Risiko für die Patienten auf ein Minimum reduziert wird. 
+Elektrische Anlagen medizinisch genutzter Bereiche (dazu gehören auch die Niederspannungs-Hauptverteiler 
+und das Verteilungsnetz der Verbraucheranlage) sind mindestens alle drei Jahre wiederkehrend zu prüfen. 
+Nicht medizinisch genutzte Funktionsbereiche im Geltungsbereich der Elektroschutzverordnung 2012 sind 
+entsprechend den darin angeführten Intervallen wiederkehrend zu prüfen. 
+Die Prüfintervalle und der Umfang der Prüfungen der elektrischen Anlage und elektrischen Betriebsmittel 
+müssen mindestens den Anforderungen gemäß Tabelle 710.001.AT und Tabelle 710.002.AT entsprechen. Die 
+angeführten Messungen sind Mindestanforderungen und sind zusätzlich zu den notwendigen Besichtigungen 
+und Erprobungen im Rahmen der wiederkehrenden Prüfung der elektrischen Anlage durchzuführen. 
+Der Erdableitwiderstand des Fußbodens in den unter 710.512.2.001.AT angeführten Räumen ist zumindest 
+alle drei Jahre sowie nach Änderung des Reinigungsverfahrens oder -mittels gemäß ÖNORM EN 1081 zu 
+messen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 667/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 25 
+Tabelle 710.001.AT – Prüfung der elektrischen Anlage 
+Prüfungen im Intervall von drei Jahren 
+Prüfumfang (Mindestanforderungen) und 
+Bemerkungen 
+Bereiche der Gruppe 0, Gruppe 1, Gruppe 2 und von  
+denselben Verteilern versorgte Nebenräume: 
+Schutzmaßnahme (Steckdosen) 
+ 
+ 
+RPA/RPE-Messung 
+Prüfung der Schutzmaßnahme bei allen Steckdosen 
+ 
+Bei Steckdosen von medizinischen IT-Systemen ist  
+das Ansprechen der Isolationsüberwachung bei allen 
+Steckdosen zu prüfen 
+Messungen zur Prüfung des zusätzlichen 
+Schutzpotentialausgleichs 
+Vollständigkeit der in den Schutzpotentialausgleich 
+einzubeziehenden Einrichtungen 
+Messungen in Verteilern: 
+Schutzmaßnahme des Verteilers 
+Schutzmaßnahme der Verbraucheranlage 
+ 
+z. B. Fehlerschleifenimpedanz 
+z. B. Fehlerstrom-Schutzeinrichtungen (RCD) mittels 
+Schutzmaßnahmen-Messgerät, sofern die Auslösung nicht 
+bereits durch eine Messung in der Verbraucheranlage 
+erfolgte 
+Tabelle 710.002.AT – Prüfung von elektrischen Geräten (elektrischen Verbrauchsmitteln) 
+Betriebsmittel 
+Im Handbereich 
+Außerhalb des Handbereichs 
+Medizinische elektrische Geräte 
+Intervall und Umfang gemäß Medizinproduktebetreiberverordnung und  
+ÖVE/ÖNORM EN 62353 
+Nicht medizinische 
+elektrische Geräte 
+(elektrische 
+Verbrauchsmittel) 
+in medizinisch 
+genutzten 
+Bereichen 
+nicht fest 
+angeschlossen 
+Prüfungen im Intervall von höchstens drei Jahren gemäß den Bestimmungen für 
+wiederkehrende Prüfungen von elektrischen Geräten bzw. gemäß den Herstellerangaben 
+fest 
+angeschlossen 
+Prüfungen im Intervall 
+von höchstens drei 
+Jahren gemäß den 
+Bestimmungen für 
+wiederkehrende 
+Prüfungen von 
+elektrischen Geräten 
+bzw. gemäß 
+Herstellerangaben  
+Intervall gemäß Elektroschutzverordnung 2012 bzw. den 
+Herstellerangaben 
+Umfang gemäß den Bestimmungen für wiederkehrende 
+Prüfungen von elektrischen Geräten bzw. den 
+Herstellerangaben 
+Besichtigung auf offensichtliche Mängel und Messung der 
+Durchgängigkeit des Schutzerdungsleiters im Intervall von 
+höchstens zehn Jahren 
+Elektrische Geräte (elektrische 
+Verbrauchsmittel) außerhalb 
+medizinisch genutzter Bereiche 
+Prüfungsintervalle gemäß Elektroschutzverordnung 2012 und gemäß den Bestimmungen 
+für wiederkehrende Prüfungen von elektrischen Geräten (siehe OVE EN 50699, 
+ÖVE/ÖNORM EN 62353 oder ÖVE/ÖNORM E 8701 Reihe) bzw. nach 
+Herstellerangaben 
+Das medizinische Personal, das in Bereichen der Gruppe 2 tätig ist, ist einmal jährlich über die Bedeutung der 
+unterschiedlichen Kennzeichnung der Steckdosen und der Alarmmeldungen nachweislich zu unterweisen. 
+Folgende Prüfungen gemäß a) bis m) sind zusätzlich zu den Prüfungen gemäß Tabelle 710.001.AT und 
+Tabelle 710.002.AT durchzuführen: 
+a) 
+Funktionsprüfung von Umschalteinrichtungen in den Verteilern für Bereiche der Gruppe 2 gemäß 
+Herstellerangaben und längstens in Abständen von 12 Monaten; 
+b) 
+Funktionsprüfung des MED-IMD und der Überlast-Überwachungseinrichtungen von medizinischen  
+IT-Systemen sowie deren akustischen/visuellen Alarmsystemen gemäß den Herstellerangaben und 
+längstens in Abständen von 12 Monaten; 
+c) 
+Messung zum Nachweis des zusätzlichen Schutzpotentialausgleichs: längstens in Abständen von 
+36 Monaten; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 668/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 26 
+d) 
+Überprüfung auf Übereinstimmung von Einrichtungen, die für den Schutzpotentialausgleich erforderlich 
+sind: längstens in Abständen von 36 Monaten; 
+e) 
+monatlicher Funktionstest der 
+ 
+– 
+SV ≤ 0,5 s in der Ausführung als batteriegestütztes zentrales Stromversorgungssystem: Mit 
+mindestens 50 % der maximal erwarteten Verbraucherleistung (Bemessungsleistung), die von diesem 
+batteriegestützten zentralen Stromversorgungssystem zu übernehmen ist. Abweichend davon kann 
+der monatliche Funktionstest mit einer Minimalleistung nach den Herstellerangaben durchgeführt 
+werden für mindestens 15 min; 
+ 
+– 
+Stromversorgung für Sicherheitszwecke mit Verbrennungsmotoren: siehe 56.NE.560.600.5.3; 
+f) 
+Jährlicher Funktionstest der Stromversorgung für Sicherheitszwecke nach den Herstellerangaben durch 
+Unterbrechung der Hauptzuleitung bzw. der Netzzuleitung: siehe 56.NE.560.600.5.4. 
+ 
+ANMERKUNG AT Der simulierte Test der Umschalteinrichtungen kann entfallen, wenn die ordnungsgemäße 
+Funktion im Zuge eines unvorhergesehenen Ausfalls des öffentlichen Netzes festgestellt und dokumentiert wurde. 
+g) 
+Prüfen des Auslösens von Fehlerstrom-Schutzeinrichtungen (RCD) bei IΔn durch Betätigung der Prüftaste, 
+gemäß den Herstellerangaben, aber längstens in Abständen von 12 Monaten durch eine Elektrofachkraft 
+(BA5) oder eine elektrotechnisch unterwiesene Person (BA4); 
+h) 
+Messung des Isolationswiderstands von Sekundärstromkreisen der Schutzmaßnahme Schutztrennung 
+(mit einem Verbrauchsmittel), alle drei Jahre. 
+i) 
+Prüfung, ob die Leistungen der Stromquelle für Sicherheitszwecke noch dem erforderlichen 
+Leistungsbedarf der versorgten Verbrauchsmittel entsprechen: 12 Monate. 
+j) 
+Messung der Spannungen gemäß 710.415.2.103, sofern zutreffend: jährlich. 
+Die Dokumentationen der Prüfungen sind mindestens drei Jahre nach der darauffolgenden Prüfung 
+aufzubewahren. Die Dokumentation kann auch elektronisch erfolgen. 
+ 
+ANMERKUNG 
+Die Abmessungen im Bild zeigen die Minimalausdehnung einer Patientenumgebung in einer freien 
+Umgebung. 
+Bild 710.1 – Beispiel einer Patientenumgebung (Quelle: OVE EN 60601-1) 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 669/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 27 
+Anhang 710.A 
+(informativ) 
+ 
+Beispiele für die Zuordnung von Gruppennummern und  
+die Klassifizierung der Stromversorgung für Sicherheitszwecke  
+von medizinisch genutzten Bereichen 
+Eine Auflistung der medizinischen Bereiche nach ihrer Gruppe und Klassifizierung ist etwas unpraktisch, da 
+sich die Funktion der einzelnen Räume von Land zu Land und auch innerhalb eines Landes unterscheiden 
+kann. Die in Tabelle 710.A.1 aufgeführten Beispiele sind nur eine Richtlinie. Die genaue Festlegung hat gemäß 
+710.30.101 zu erfolgen. 
+Tabelle 710.A.1 – Liste mit Beispielen von medizinisch genutzten Bereichen  
+und ihre Gruppe und Klassifizierung (Leitfaden) (1 von 2) 
+Medizinisch genutzter Bereich 
+Gruppe 
+Klassifizierung 
+0 c 
+1 
+2 
+Klasse 
+≤ 0,5 s a 
+Klasse E 
+> 0,5 s 
+≤ 15 s 
+1 
+Massageraum 
+x 
+x 
+ 
+ 
+x 
+2 
+Bettenraum 
+ 
+x 
+ 
+ 
+x 
+3 
+Entbindungsraum 
+ 
+x 
+ 
+ 
+x 
+3.AT 
+Klinischer Entbindungsraum 
+ 
+ 
+x 
+x 
+x 
+4 
+EKG-, EEG- und EMG-Raum 
+ 
+x 
+ 
+ 
+x 
+5 
+Endoskopieraum 
+ 
+x b 
+x 
+x 
+x b 
+6 
+Untersuchungs- oder Behandlungsraum 
+ 
+x 
+ 
+x 
+x 
+7 
+Urologieraum 
+ 
+x b 
+x 
+x 
+x b 
+8 
+Radiologischer Diagnostik- und 
+ 
+Behandlungsraum 
+ 
+x 
+x 
+x 
+x 
+9 
+Hydrotherapieraum 
+ 
+x 
+ 
+ 
+x 
+10 
+Physiotherapieraum 
+ 
+x 
+ 
+ 
+x 
+11 
+Anästhesiebereich 
+ 
+ 
+x 
+x 
+x 
+12 
+Operationssaal 
+ 
+ 
+x 
+x 
+x 
+13 
+Operationsvorbereitungsraum 
+ 
+ 
+x 
+x 
+x 
+14 
+Operationsgipsraum 
+ 
+ 
+x 
+x 
+x 
+15 
+Aufwachraum 
+ 
+ 
+x 
+x 
+x 
+16 
+Herzkatheterraum 
+ 
+ 
+x 
+x 
+x 
+17 
+Intensivpflegeraum 
+ 
+ 
+x 
+x 
+x 
+18 
+Angiographieuntersuchungsraum 
+ 
+ 
+x 
+x 
+x 
+19 
+Hämo-Dialyseraum 
+ 
+x 
+ 
+ 
+x 
+19.AT Akut-Hämo-Dialyseraum 
+ 
+ 
+x 
+x 
+x 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 670/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 28 
+Tabelle 710.A.1 – Liste mit Beispielen von medizinisch genutzten Bereichen  
+und ihre Gruppe und Klassifizierung (Leitfaden) (2 von 2) 
+Medizinisch genutzter Bereich 
+Gruppe 
+Klassifizierung 
+0 c 
+1 
+2 
+Klasse 
+≤ 0,5 s a 
+Klasse E 
+> 0,5 s 
+≤ 15 s 
+20 
+Magnetresonanzbildgebungsraum (MRI) 
+ 
+x 
+x 
+x 
+x 
+21 
+Nuklearmedizinischer Raum 
+ 
+x 
+ 
+ 
+x 
+22 
+Neonatologie 
+ 
+ 
+x 
+x 
+x 
+23 
+Intermediate Care Unit (IMCU) 
+ 
+ 
+x 
+x 
+x 
+24.AT Intensiv-Erstversorgung (Schockraum) 
+ 
+ 
+x 
+x 
+x 
+a 
+Beleuchtungs- und lebenswichtige medizinische elektrische Einrichtungen, die eine Stromversorgung innerhalb  
+von 0,5 s oder schneller benötigen. 
+b 
+Wenn keine chirurgischen Eingriffe vorgenommen werden. 
+c 
+Bei der Planung von elektrischen Anlagen in Krankenhäusern oder Pflegeheimen ist der zu erwartende bestimmungsgemäße 
+Gebrauch elektromedizinischer Geräte, z. B. in Bettenräumen, meist nicht vorhersehbar. Im Zweifelsfall sollte deshalb von 
+der Gruppe 0 kein Gebrauch gemacht werden. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 671/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 29 
+Anhang 710.B 
+(informativ) 
+ 
+Leitfaden zu elektromagnetischen Störungen (EMI) 
+Mit Hinweis auf die Elektromagnetische Verträglichkeitsverordnung 2015 ist das Gebäude nach einem 
+erstellten EMV-, Erdungs-, Potentialausgleichs-, Blitzschutz- und Überspannungsschutz-Konzept zu errichten, 
+in welchem die anzuwendenden Regeln der Technik zu dokumentieren sind. 
+ANMERKUNG 1.AT 
+Die folgenden Werte können überholt sein und sollten mit den entsprechenden Teilen der 
+Normenreihe OVE EN 61000 aktualisiert werden. Einige elektrische Betriebsmittel werden empfindlicher gegenüber 
+elektromagnetischen Störungen (EMI) sein. Daher sollten die EMI-Grenzwerte der medizinischen Geräte die vom Hersteller 
+empfohlenen Werte sein. 
+Störungen sind nicht zu erwarten, wenn die magnetische Induktion B bei 50 Hz die folgenden Werte am 
+Patientenplatz nicht überschreitet: 
+– 
+Bss = 0,1 µT für Elektromyogramm (EMG); 
+– 
+Bss = 0,2 µT für Elektroenzephalogramm (EEG); 
+– 
+Bss = 0,4 µT für Elektrokardiogramm (EKG). 
+ANMERKUNG 2.AT 
+Die mit den Indizes „ss“ angegebenen Werte sind als „Spitze-Spitze-Werte“ und nicht als 
+Effektivwerte zu verstehen. 
+Diese Grenzwerte werden im Allgemeinen nicht überschritten, wenn zwischen elektrischen Betriebsmitteln, die 
+magnetische Störungen hervorrufen können, und den für die Untersuchung von Patienten vorgesehenen 
+Plätzen folgende Mindestabstände in alle Richtungen eingehalten werden: 
+a) 
+Bei Verwendung vorwiegend induktiver Betriebsmittel mit großer Leistung ist in der Regel ein Abstand von 
+6 m ausreichend; 
+ 
+Solche induktiven Betriebsmittel sind z. B.: 
+ 
+– 
+Transformatoren der elektrischen Anlagen, z. B. des medizinischen IT-Systems; 
+ 
+– 
+ortsfeste Elektromotoren, insbesondere Motoren mit einer Nennleistung von mehr als 3 kW. 
+b) 
+zwischen mehradrigen Kabeln und Leitungen der elektrischen Anlage und den zu schützenden 
+Patientenplätzen gemäß Tabelle 710.B.1. 
+Tabelle 710.B.1 – Mindestabstände 
+Leiter-Nennquerschnitt 
+Mindestabstand 
+10 mm2 bis 70 mm2 
+3 m 
+95 mm2 bis 185 mm2 
+6 m 
+größer 185 mm2 
+9 m 
+ 
+Bei einadrigen Kabeln und Leitungen können größere Abstände erforderlich sein. Besteht die Anforderung zur 
+Überprüfung der Einhaltung der Grenzwerte, werden Messungen durch Sachverständige empfohlen. 
+Die in a) und b) genannten Abstände können durch magnetische Abschirmungen vermindert werden. 
+Es wird auf die mögliche Beeinflussung von elektromedizinischen Messeinrichtungen durch 16,7 Hz-
+Wechselstrom-Bahnanlagen in Gebäudenähe hingewiesen. 
+Es wird auf mögliche Störungen durch Netzrückwirkungen der betriebseigenen Anlagen hingewiesen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 672/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 30 
+Weitere schadenmindernde Maßnahmen dürfen sein: 
+– 
+passive (elektrische) Schutzabschirmung der Ursachen von elektromagnetischen Feldern; 
+– 
+passive (elektrische) Schutzabschirmung der medizinischen Bereiche mit besonderen Anforderungen an 
+die elektromagnetische Verträglichkeit (EMV); 
+– 
+Anwendung von aktiven Entschädigungssystemen;  
+– 
+Anwendung von elektrischen Betriebsmitteln mit geringerer Empfindlichkeit gegenüber externen 
+elektromagnetischen Feldern. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 673/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 31 
+Nationale Ergänzung 710.NE1 
+(informativ) 
+ 
+Ergänzende Anforderungen für medizinische Einrichtungen  
+außerhalb von Krankenhäusern 
+710.NE1.1 Praxisräume der Human- und Dentalmedizin, Ambulatorien 
+710.NE1.1.1 Zuordnung der Räume zu den Gruppen 
+Die richtige Zuordnung der Räume zu den Gruppen ergibt sich aus dem Abschnitt Begriffe. 
+ANMERKUNG AT 
+Die der Untersuchung oder Behandlung von Patienten dienenden Räume in ärztlichen Praxen der 
+Human- oder Dentalmedizin sowie Ambulatorien sind in der Regel medizinisch genutzte Räume der Gruppe 1. 
+710.NE1.1.2 Anforderungen an Verteiler 
+Verteiler müssen leicht zugänglich, allseitig verkleidet und vor dem Zugriff Unbefugter gesichert sein.  
+Bei Endstromkreisen muss eine einfache Messung des Isolationswiderstands möglich sein (z. B. durch eine 
+Schalteinrichtung die alle Außenleiter und den Neutralleiter trennt). 
+Für medizinisch genutzte Bereiche der Gruppe 2 sind eigene Verteiler erforderlich. 
+ANMERKUNG AT 
+Verteiler sind vorzugsweise außerhalb der medizinisch genutzten Bereiche der Gruppe 2 zu 
+installieren. 
+710.NE1.1.3 Schutz gegen elektrischen Schlag und zusätzlicher Schutzpotentialausgleich 
+Es sind die Maßnahmen gemäß 710.41 auszuführen. Abweichend zur selbsttätigen Umschaltung gemäß 
+Abschnitt 710.512.1.001.AT zwischen SV ≤ 0,5 s und SV ≤ 15 s kann die Umschaltung zwischen der 
+SV ≤ 0,5 s und der allgemeinen Stromversorgung (AV) erfolgen. 
+710.NE1.1.4 Sicherheitsstromversorgung und Ersatzbeleuchtung für medizinisch genutzte Bereiche 
+In Bereichen der Gruppe 1 ist eine Ersatzbeleuchtung für die Dauer von 1 h mit einer Umschaltzeit von 
+höchstens 15 s vorzusehen. 
+Für Bereiche der Gruppe 2 müssen bei Störung der allgemeinen Stromversorgung folgende Einrichtungen aus 
+einer SV ≤ 0,5 s gemäß dieser Bestimmung für die Dauer von mindestens 3 h weiter betrieben werden können: 
+– 
+Operationsleuchten und unentbehrliche Leuchten; 
+ 
+ANMERKUNG 1.AT 
+Als unentbehrliche Leuchten gelten auch die allgemeinen Raumleuchten oder Teile 
+solcher, wenn keine OP- oder Untersuchungsleuchte vorhanden ist. Ebenso zählen Lichtquellen für die endoskopische 
+chirurgische Feldbeleuchtung zu den unentbehrlichen Leuchten. 
+– 
+lebenswichtige elektromedizinische Geräte. 
+Bei entsprechender Auslegung kann diese Anlage auch die Funktion der Sicherheitsstromversorgung für 
+weitere Einrichtungen für Sicherheitszwecke und wichtige medizinische Geräte übernehmen. 
+ANMERKUNG 2.AT 
+Die Sicherheitsbeleuchtung für Fluchtwege wird davon nicht geregelt. 
+710.NE1.1.5 Steckdosenstromkreise im IT-System von Räumen der Gruppe 2 
+Für Steckdosenstromkreise im IT-System von Bereichen der Gruppe 2 ist 710.55.101.1 einzuhalten. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 674/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 32 
+710.NE1.1.6 Prüfungen 
+Prüfungen sind gemäß 710.6 durchzuführen. 
+ 
+710.NE1.2 Pflegeheime und Kuranstalten 
+Für Pflegeheime und Kuranstalten gilt dieser Teil mit folgenden Abweichungen: 
+710.NE1.2.1 Stromquelle für Sicherheitszwecke 
+Abweichend von 710.559.101 ist es für Räume in medizinisch genutzten Bereichen der Gruppe 1 nicht 
+erforderlich, eine Stromquelle für Sicherheitszwecke einzurichten, wenn der Ausfall der Versorgung die 
+Beendigung der medizinischen Behandlung und die Evakuierung des medizinischen Bereichs nicht gefährdet. 
+In diesem Fall muss die Aufteilung der Beleuchtungsstromkreise so erfolgen, dass bei Auslösen einer 
+Fehlerstrom-Schutzeinrichtung (RCD) nicht die gesamte Beleuchtung des Raums ausfällt.  
+710.NE1.2.2 Sicherheitsstromversorgung für Pflegeheime und Kuranstalten 
+710.NE1.2.2.1 
+Es gelten die Anforderungen an die Sicherheitsstromversorgung gemäß 710.56. Für 
+Pflegeheime und Kuranstalten dürfen folgende Abweichungen vorgenommen werden: 
+– 
+Ist gemäß 710.NE1.2.1 ein Stromerzeugungsaggregat erforderlich, so ist dieses als stationäres Aggregat 
+mit einer Betriebsdauer von mindestens 24 h auszuführen. 
+– 
+Die Sicherheitsbeleuchtung in Fluchtwegen gemäß Teil 5-56 ist mit einer Mindestbetriebsdauer von 8 h 
+auszuführen. 
+ 
+ANMERKUNG 
+Die 8 h Mindestbetriebsdauer kann sich zusammensetzen aus der Batteriekapazität der 
+Sicherheitsbeleuchtungsanlage und der Betriebsdauer des stationären Notstromaggregats. 
+– 
+In den Patienten- und Bewohnerzimmern sowie den zugänglichen Sanitärräumen ist eine 
+Ersatzbeleuchtung auszuführen. 
+710.NE1.2.2.2 
+Sicherheitsstromversorgung für Räume der Gruppe 2 gemäß 710.560.6.104.1 
+Für Operationsleuchten und unentbehrliche Leuchten sowie für lebenswichtige elektromedizinische Geräte ist 
+eine Sicherheitsstromversorgung SV ≤ 0,5 s gemäß 710.560.6.103.1 vorzusehen. In diesem Fall ist auch eine 
+SV ≤ 15 s (stationäres Aggregat) vorzusehen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 675/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 33 
+Nationale Ergänzung 710.NE2 
+(informativ) 
+ 
+Beispielbilder 
+Legende zu den Bildern aus der Nationalen Ergänzung 710.NE2 
+1 
+Siehe 710.560.8.001.AT 
+2 
+Umschaltmöglichkeit (Notschaltung) von Hand 
+3 
+Trennung gemäß OVE-Richtlinie R 12-2:2019 Abschnitt 3.4 bzw. 710.51.101 
+4 
+Spannungsüberwachung 
+5 
+Verbraucher gemäß 710.560.6.103.3 mit einer Umschaltzeit länger 15 s (z. B. Lüftung) 
+6 
+Unterverteiler für medizinisch genutzte Bereiche der Gruppe 2 
+7 
+Für Einrichtungen für Sicherheitszwecke, ausgenommen Unterverteiler für medizinisch genutzte Bereiche 
+der Gruppe 2 
+8 
+Raumbeleuchtung aus allgemeiner Stromversorgung 
+9 
+Ersatzbeleuchtung gemäß 710.560.9.101 
+10 Verbraucher gemäß 710.560.6.103.1.002.AT, die nicht lebenswichtigen Maßnahmen dienen, z. B. 
+Laborgeräte, EDV-Anlagen 
+11 Sicherheitsbeleuchtung gemäß 560.9 
+12 Sicherheitsbeleuchtung gemäß 560.9 (mehr als 20 Sicherheitsleuchten in einem zusammenhängenden 
+Gebäudeteil) 
+13 Automatische Prüfeinrichtung gemäß 560.9.001.AT 
+14 Stromkreise in medizinisch genutzten Bereichen der Gruppe 2 für die keine Sicherheitsstromversorgung 
+gefordert ist z. B. Reinigungssteckdose, Teile der allgemeinen Raumbeleuchtung 
+15 Stromkreise in medizinisch genutzten Bereichen der Gruppe 2 gemäß 710.411.6.1.101 
+16 Absicherung des medizinischen IT-Transformators für den Kurzschlussfall 
+17 Kurzschluss- und erdschlusssichere Verlegung 
+18 Medizinischer IT-Transformator gemäß 710.512.1.101 
+19 Meldetableau 
+20 Isolationsüberwachungsgerät 
+21 Stromkreis aus IT-System gemäß 710.512.1.001.AT 
+22 Umschalteinrichtung 
+23 Kabel/Leitung in Reservestellung 
+24 Manuelle Umgehungsschaltung (By-Pass) gemäß 710.537.101 
+25 Bevorzugte Leitung gemäß 710.512.1.001.AT 
+26 Teile der allgemeinen Raumbeleuchtung aus der SV ≤ 0,5 s (siehe 710.560.9.101) 
+27 ZSV-IT-Steckdose für lebenswichtige medizinische technische Geräte 
+28 OP-Leuchte 
+ANMERKUNG AT 
+Die 
+in 
+den 
+Bildern 
+der 
+nationalen 
+Ergänzung 710.NE2 
+dargestellten 
+Schaltgeräte 
+(Kennbuchstabe F) enthalten keine Angabe über deren konkrete Auswahl. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 676/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 34 
+ 
+Bild 710.NE2.001.AT – Beispiel für einen Hauptverteiler (HV) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 677/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 35 
+ 
+Bild 710.NE2.002.AT – Gebäudehauptverteiler – Beispiel 1 (GHV1) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 678/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 36 
+ 
+Bild 710.NE2.003.AT – Gebäudehauptverteiler – Beispiel 2 (GHV2) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 679/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 37 
+ 
+Bild 710.NE2.004.AT – Gebäudehauptverteiler – Beispiel 3 (GHV3) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 680/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 38 
+ 
+Bild 710.NE2.005.AT – Gebäudehauptverteiler – Beispiel 4 (GHV4) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

@@ -1,0 +1,1708 @@
+
+
+===== PAGE 41/348 =====
+40
+Grundlagen
+ Abbildung 1: BIM-Level und Einsatzformen53 
+53	 Weiterentwickelt nach Sundermeier/Beidersandwisch/Theuring, Ökonomische Potenziale von Building 
+Information Modeling (BIM) im Spannungsfeld von Branchenstruktur und Beschaffungspraxis (2021) S. 597.
+
+
+===== PAGE 42/348 =====
+41
+Was ist BIM eigentlich? Wie ist BIM zu verstehen?
+Neben der Definition der Level tauchen 
+immer wieder die Begriffe „geschlossene und 
+offene Lösungen“ (closed- und openBIM) sowie 
+„little und big BIM“ auf. Dabei handelt es sich  
+um unterschiedliche Einsatzformen:
+little BIM:	
+Anwender:innen arbeiten in ihrer Fachdisziplin 
+mit ihrer Software.
+big BIM:	
+Mehrere Anwender:Innen unterschiedlicher Fach-
+disziplinen arbeiten in ihrer Software.
+closedBIM: 	
+Es werden herstellerspezifische Formate verwen-
+det bzw. wird eine bestimmte technologische 
+Plattform (z.B. BIM-Software oder Software­
+familie) eingesetzt.
+openBIM: 	
+Es werden unterschiedliche Softwareprodukte 
+verwendet, wobei für den Austausch und die In-
+tegration auf offene Schnittstellen bzw. neutrale 
+Austauschformate zurückgegriffen wird.
+Wie in Abbildung 1 ersichtlich ist, lassen sich die 
+Einsatzformen nicht 1 : 1 den Leveln zu­ordnen, 
+hier gibt es je nach Projekt und Konstellation 
+fließende Übergänge (siehe Abbildung 1).
+Wichtig für Einsteiger:innen sind die ersten 
+„Gehversuche“ in little closedBIM, um sich  
+später in Richtung von „open“ und „big“ weiter-
+zuentwickeln.
+„BIM ist eine über alle Planungs-, Bau- und Lifecycle-Prozesse über-
+greifende Managementmethode zur digitalen Transformation des zu-
+künftigen Gebäudebestandes.“
+„BIM ist ein Managementprozess zur digitalen Transformation der 
+Planungs- und Bauwirtschaft.“
+ARCH. DI HEINZ PLÖDERL
+„Es muss nicht immer „big fat BIM“ – BIM über alle Leistungsphasen –  
+sein, auch aus einzelnen BIM-Teilmodellen können bereits wertvolle  
+Benefits gezogen werden.“
+ARCH. DI CHRISTINE HORNER
+
+
+===== PAGE 43/348 =====
+42
+Grundlagen
+Eine inhaltlich ähnliche Darstellung verwen-
+det auch die ÖBB-Infrastruktur AG, um anhand 
+des „BIM-Reifegradwürfels“ drei Dimensionen zu 
+unterscheiden. Es geht dabei um die Funktiona­
+lität bzw. den Umfang (Little/Big), die Standar­
+disierung (open/closed) und die Prozessphasen 
+(Planen/Bauen/Betreiben) – siehe Abbildung 2. 
+Der Hintergrund für die Präferenz von big open-
+BIM ist aus Sicht eines Infrastrukturbetreibers das 
+Managen und Organisieren von Informationen zu 
+einer Anlage über den gesamten Lebenszyklus. 
+Die Daten müssen auch nach mehr als 80 Jahren 
+noch lesbar und verarbeitbar sein. Diese Voraus-
+setzung erfüllen Dateiformate einzelner Soft-
+warehersteller meist nicht, weshalb ein offenes
+und möglichst standardisiertes Dateiformat 
+(openBIM) unerlässlich ist.55
+Auch die ASFINAG sowie die Bundes­
+immobiliengesellschaft m.b.H. (BIG) setzen bei 
+ihren Projekten auf openBIM.
+ Abbildung 2: ÖBB BIM-Reifegradwürfel54 
+54	 Fleischmann/Peer, Ganzheitlicher Einsatz von  
+BIG-Open-BIM bei der ÖBB-Infrastruktur AG als 
+öffentlicher Auftraggeber, in Hofstadler/Motzko, 
+(2021) S. 246.
+55	 Vgl. Fleischmann/Peer, Ganzheitlicher Einsatz von 
+BIG-Open-BIM bei der ÖBB-Infrastruktur AG als 
+öffent­licher Auftraggeber, in Hofstadler/Motzko, 
+(2021) S. 243  ff.
+
+
+===== PAGE 44/348 =====
+43
+Was ist BIM eigentlich? Wie ist BIM zu verstehen?
+„Um hier für die Zukunft gerüstet zu sein, setzt die ASFINAG auf  
+,Open BIM‘, also die Bereitstellung von Daten unabhängig von einem spe-
+zifischen Softwareprodukt. So kann auch auf technische (Neu-)  
+Entwicklungen rasch und flexibel reagiert werden.“ 
+ING. SABINE HRUSCHKA56 
+„Aus Sicht der BIG kann die Planungsmethode BIM nur erfolgreich 
+umgesetzt werden, wenn es keine ,Einschränkungen‘ im Zuge  
+der Planung gibt, d.h. es muss in ,open BIM‘ gedacht und gelebt  
+werden.“
+BUNDESIMMOBILIENGESELLSCHAFT M.B.H. (BIG)57 
+„In der berufspolitischen Arbeit setze ich mich sowohl auf nationaler, 
+als auch auf EU-Ebene für einen offenen und leistbaren BIM-Zugang ein. 
+Jeder Planende sollte frei in der Wahl seiner BIM-Software sein und so die 
+eigenen Arbeitsprozesse optimieren können. openBIM bringt außerdem 
+die Förderung und Intensivierung des Netzwerkgedankens mit sich.  
+Bei dem schnellen Entwicklungsprozess, der derzeit stattfindet, hat man 
+als Einzelkämpfer wenig Chancen. Es ist unumgänglich, zu kooperieren 
+und sich intensiv auszutauschen.“
+BR H.C. DI KLAUS THÜRRIEDL
+„Mit BIM anfangen, ist vergleichbar mit Laufen lernen.  
+Man fängt mit ersten wackeligen Schritten an und lernt dann mit jedem 
+nächsten Schritt weiter, bis man wirklich laufen kann. Die Motivation ist 
+bei beiden Prozessen die gleiche: die Freude an der persönlichen Weiter-
+entwicklung.“
+ARCH. DI MICHAEL STROBL, MA
+56 	 Hruschka et al., Digitalisierung im Baubetrieb – neue Herausforderungen und Chancen  
+für die Bauherrenrolle, in Hofstadler/Motzko, (2021) S. 206.
+57	 Bundesimmobiliengesellschaft m.b.H., Wettbewerbsunterlage, (2020) S. 7.
+
+
+===== PAGE 45/348 =====
+44
+Grundlagen
+„openBIM ist für mich wertvoll als transparenter, kooperativer 
+Planungsprozess mit dem Benefit einer übersichtlichen flexiblen Daten-
+sammlung für Projektteam und Auftraggeber. In keinem Fall aber darf 
+sich BIM zu einem von der Industrie gesteuerten Produkt mit teuren 
+Softwareabhängigkeiten für die User entwickeln.“
+ARCH. DI MICHAEL STROBL, MA
+„Ein sauberes Open-BIM-Modell, welches an die Projektanforderun-
+gen angepasst wurde, unterstützt jene Leistungen, die Architekt:innen, 
+neben der Gestaltung und Vision, schon immer abgedeckt haben. Das 
+Koordinieren und Abstimmen von Inhalten und Zielen, die Sicherung von 
+Qualitäten und die verständliche Vermittlung von komplexen Inhalten 
+über Teilmodelle an Dritte zur Entscheidungsfindung, waren seit jeher Teil 
+des holistischen Leistungsbildes von Architekturschaffenden. 
+Wir sollten die nun laufende Implementierung der BIM-Methode nut-
+zen, um diese Aufgaben, die – bei erfolgreicher Umsetzung – in Form eines 
+abgestimmten digitalen (Daten-)Modells sichtbar werden, einer 
+entsprechenden Wertschätzung und Honorierung zuzuführen. BIM sollte 
+aber auch als eine Chance gesehen werden, die Wertschöpfungskette im 
+eigenen Büro zu verlängern und sich so verlorene Marktsegmente zurück-
+zuerobern.“ 
+ARCH. DI THOMAS HOPPE
+
+
+===== PAGE 46/348 =====
+45
+Was bedeutet das „I“ in BIM?
+Auf keinen Fall dürfen wir das „I“ nur als  
+dreidimensionale geometrische Information  
+verstehen. Es steckt so viel mehr dahinter. Das „I“ 
+steht für all die Informationen, die beim Einsatz 
+von BIM klassifiziert und zugeordnet und somit 
+strukturiert in Datenbanken ablegbar sind. Auch 
+ohne BIM waren diese Informationen teilweise 
+schon in Umlauf, aber sie waren separat abge-
+legt, nicht verknüpft und meist digital nicht  
+(oder nur erschwert) weiter verwertbar. 
+Im Gegensatz zu „flacher“ CAD-Planung 
+besitzen die Daten beim BIM parametrische 
+Faktoren bzw. auslesbare Attribute, die über die 
+reinen geometrischen Informationen hinaus­
+gehen. In 2D-Zeichnungen besteht eine Wand 
+aus einfachen Linien und Flächen, die einzelnen 
+Elemente wissen aber nicht, dass sie gemeinsam 
+eine Wand bilden, geschweige denn, welchen 
+U-Wert, welche Feuerwiderstandsklasse oder 
+welchen Schallschutz sie haben.58 Diese Informa-
+tionen existieren zwar im Projekt, sind aber nicht 
+digital verknüpft. Zu beachten gilt jedoch, dass 
+das jeweilige Fachwissen vorhanden sein muss, 
+um die entsprechenden Werte überhaupt einem 
+Element zuordnen zu können. Das Wissen aus 
+unterschiedlichen Disziplinen kann insofern auch 
+nur durch in seinem Fachbereich qualifiziertes 
+und erfahrenes Personal eingetragen werden. 
+Falsche oder mangelhafte Information erfährt 
+durch die bloße Anwendung der BIM-Methode 
+keine Aufwertung gegenüber konventioneller 
+Planung. Im Idealfall ermöglicht die Verknüpfung 
+mit anderen Daten aber, schneller auf fehlerhafte 
+Informationen aufmerksam zu werden bzw. wer-
+den diese von automatisierten Prüfroutinen als 
+unschlüssig deklariert. 
+BIM liefert die Möglichkeit, diese Daten (auch 
+unterschiedlicher Fachdisziplinen) zu verknüpfen. 
+Die Daten sind nun strukturiert, klassifiziert und 
+bestenfalls standardisiert. Dies ermöglicht eine 
+saubere Ablage in Datenbanken. Die Daten 
+können in weiterer Folge von anderen Projekt­
+beteiligten ausgelesen und weiterverwendet 
+werden. Andere Programme können automatisch 
+auf die Daten zugreifen, mit diesen weiterarbei-
+ten und/oder Auswertungen erstellen (vgl. 
+schematische Gegenüberstellung von 2D-Zeich-
+nungen und dem 3D-BIM-Modell in Abbildung 3).
+Was bedeutet das „I“ in BIM?
+58	 Vgl. Wiese (2019), BIM-Prozess kompakt: Abwick-
+lung eines Bauvorhabens mit der Planungsmethode 
+BIM, S. 32.
+
+
+===== PAGE 47/348 =====
+46
+Grundlagen
+ Abbildung 3: Schematischer Vergleich einer Planung mit und ohne BIM
+Das „I“ bildet die Grundlage für all die neuen 
+Arbeitsweisen und Chancen, die durch die Ver-
+knüpfung von Daten möglich werden. Erst diese 
+strukturierten Informationen ermöglichen es der 
+Baubranche, eine ganz neue Methodik zum Ein-
+satz zu bringen. Durch die Ablage in einer zentra-
+len Datenbank59 ist es nun jederzeit möglich, die 
+aktuelle Planung abzurufen. Es ist die Qualität, in 
+welcher die Daten beim Einsatz von BIM zur Ver-
+fügung stehen, die den Unterschied zur CAD- 
+Planung ausmacht. Die Daten sind nun para­
+metrisch, dynamisch, attribuiert und strukturiert.
+59	 Common Data Environment (CDE).
+
+
+===== PAGE 48/348 =====
+47
+Wird BIM schon gefordert?
+Ja, inzwischen existieren – speziell im inter-
+nationalen Umfeld – bereits einige Projekte, die 
+ohne BIM nicht mehr zu bewältigen wären bzw. 
+bei denen BIM explizit gefordert wird. Zu Beginn 
+waren es US-Institutionen (beispielsweise die 
+General Services Administration GSA), die BIM 
+vorangetrieben haben. 
+Besonders Vorgaben von Gesetzgebern und/
+oder öffentlichen Auftraggebern tragen hier zu 
+einer schnelleren Entwicklung bei. So bekam BIM 
+einen weiteren großen Schub, als Großbritannien 
+2016 die verpflichtende Anwendung eingeführt 
+hat. In Europa sind einige Regierungen diesem 
+Beispiel gefolgt und haben BIM zumindest für 
+öffentliche Projekte verpflichtend vorgeschrie-
+ben.60 
+In Österreich gibt es derzeit noch keine ge-
+setzlichen Verpflichtungen, aber bei öffentlichen 
+bzw. halböffentlichen Projekten wird BIM in­
+zwischen meist gefordert oder führt zumindest 
+zu einer besseren Reihung in den Vergabe­
+verfahren. Das heißt, in gewisser Weise wird auch 
+in Österreich bei öffentlichen Ausschreibungen 
+schon eine entsprechende Qualifizierung 
+bezüglich BIM in Erwartung gestellt. 
+Besonders bei Mitarbeiter:innenprofilen ist 
+zunehmend zumindest ein entsprechendes 
+Basis-Know-how im BIM-Bereich nachzuweisen. 
+Wird BIM schon gefordert?
+60	 Dabei gilt lt. RL 2014/24/EU DES EUROPÄISCHEN 
+PARLAMENTS UND DES RATES vom 26. Februar 
+2014, Abs. 1: 
+	
+„Die Vergabe öffentlicher Aufträge durch oder im 
+Namen von Behörden der Mitgliedstaaten hat im 
+Einklang mit den im Vertrag über die Arbeitsweise 
+der Europäischen Union (AEUV) niedergelegten 
+Grundsätzen zu erfolgen, insbesondere den Grund-
+sätzen des freien Warenverkehrs, der Nieder­
+lassungsfreiheit und der Dienstleistungsfreiheit 
+sowie den sich daraus ableitenden Grundsätzen wie 
+Gleichbehandlung, Nichtdiskriminierung, gegen­
+seitige Anerkennung, Verhältnismäßigkeit und 
+Transparenz. Für über einen bestimmten Wert hin-
+ausgehende öffentliche Aufträge sollten Vorschrif-
+ten zur Koordinierung der nationalen Vergabe­
+verfahren festgelegt werden, um zu gewährleisten, 
+dass diese Grundsätze praktische Geltung erlangen 
+und dass das öffentliche Auftragswesen für den 
+Wettbewerb geöffnet wird.“
+
+
+===== PAGE 49/348 =====
+48
+Grundlagen
+Rechtstipp
+In Österreich stellt sich vermehrt die 
+Frage, ob und unter welchen rechtlichen 
+Rahmen­bedingungen der Einsatz von BIM für 
+öffentliche Auftraggeber im Rahmen von 
+Ausschreibungen (nach dem BVergG 2018) 
+zulässig ist.
+In Mitgliedsstaaten der EU – und damit  
+auch in Österreich – ist gemäß Art 2 Abs 4 
+Vergabe-RL 2014/24/EU für öffentliche Bau­
+aufträge und Wettbewerbe die Nutzung 
+spezifischer elektronischer Instrumente zuläs­
+sigerweise zwingend vorschreibbar. Selbst,  
+wenn es in Österreich nicht zur verpflichtenden 
+Verwendung von BIM bei öffentlichen Aufträgen 
+(zumindest bis dato) gekommen ist, steht die 
+Vorschreibung von BIM europarechtlich offen.  
+Es kann aber (leider) angenommen werden, dass 
+die fehlenden BIM-spezifischen vergaberecht-
+lichen Grundlagen in Österreich (noch) einen 
+Hemmschuh von BIM bei öffentlichen Infra­
+strukturprojekten darstellen. Von der Bundes­
+regierung wird aber betont, dass es öffentlichen 
+Auftraggebern freistehe, die Verwendung von 
+BIM vorzusehen.61  
+Damit BIM in der Praxis bei öffentlichen 
+Bauprojekten ankommt, bedarf es also „mutiger“ 
+Auftraggeber, die BIM-Pilot­projekte erfolgreich 
+umsetzen.
+DR. GEORG SEEBACHER UND MAG. LUKAS ANDRIEU, LL.M. (COLUMBIA), BSC. 
+zu BIM und öffentlichen Auftraggebern (Vergaberecht)
+	
+Abs. 2: „Die öffentliche Auftragsvergabe spielt […] eine Schlüsselrolle als eines der marktwirtschaftlichen Instru-
+mente, die zur Erzielung eines intelligenten, nachhaltigen und integrativen Wachstums bei gleichzeitiger Ge-
+währleistung eines möglichst effizienten Einsatzes öffentlicher Gelder genutzt werden sollen. Zu diesem Zweck 
+müssen die Vorschriften für die öffentliche Auftragsvergabe […] überarbeitet und modernisiert werden, damit 
+die Effizienz der öffentlichen Ausgaben gesteigert, die Teilnahme insbesondere kleiner und mittlerer Unterneh-
+men (KMU) an öffentlichen Vergabeverfahren erleichtert und es den Vergabestellen ermöglicht wird, die öffentli-
+che Auftragsvergabe in stärkerem Maße zur Unterstützung gemeinsamer gesellschaftlicher Ziele zu nutzen. […]“
+61	 Neuhauser, BIM: Neue Technik im alten Rechtsgewand, RdU-UT, 2020/16, S. 77 unter Verweis auf die Beant­
+wortung einer parlamentarischen Anfrage an das Justizministerium 2049/AB 27. GP.
+
+
+===== PAGE 50/348 =====
+49
+Welche Standards gibt es bereits?
+Welche Standards gibt es bereits?
+Eindeutige und gemeinsame Standards sind 
+mit das Wichtigste für das Gelingen eines BIM-
+Projektes. Bei BIM geht es ganz besonders um 
+das Miteinander – die Kollaboration. Daten wer-
+den zwischen verschiedenen Beteiligten ausge-
+tauscht (zunächst nur im eigenen Büro, später 
+auch mit anderen Akteuren). Wenn Elemente 
+nicht exakt in jener Ausgestaltung ankommen, in 
+der sie auch exportiert wurden (also gleiche Kate-
+gorie, gleiche Eigenschaften, gleiche Menge, glei-
+cher Entwicklungsstand usw.), funktioniert BIM 
+schlichtweg nicht. In einem Projekt muss nach 
+klar definierten Standards gearbeitet werden. 
+Es gibt verschiedene Ebenen, in denen eine 
+Standardisierung unumgänglich ist. Diese Be­
+reiche, in denen Standards und Richtlinien eine 
+zentrale Rolle spielen, können dabei in vier 
+Ebenen unterteilt werden (siehe Abbildung 4) 
+und reichen von der Software über das Modell 
+und die Methode bis hin zum übergeordneten 
+BIM-Management, das die Organisation sowie die 
+Schnittstellen eines BIM-Projekts regelt.
+ Abbildung 4: Wirkungsebenen, Bedeutung und Kategorie von BIM-Standards inkl. wesentlicher Fragestellungen
+
+
+===== PAGE 51/348 =====
+50
+Grundlagen
+Im Idealfall sollten alle Richtlinien und 
+Normen auf offenen Standards beruhen. Diesem 
+Ziel hat sich openBIM verschrieben. Es soll sicher-
+stellen, dass alle Planenden und Umsetzenden 
+für eine Beteiligung in einem BIM-Projekt in 
+Frage kommen. Zudem stellen offene Standards 
+auch die Grundlage für produktneutrale Aus-
+schreibungen dar. 
+Die meisten Standards haben ihren Ur-
+sprung in Arbeitsgruppen, Vereinen und der­
+gleichen. Ein wichtiger und weltweit agierender 
+Entwickler für Standards im openBIM-Bereich ist 
+buildingSMART, ein unabhängiger internationaler 
+Verein. Damit ein Standard auch Rechtssicherheit 
+bietet, sollte er irgendwann zur Norm erhoben 
+werden. So entwickelten sich Standards von  
+buildingSMART inzwischen zu internationalen 
+Normen (ISO-Normen62). 
+Aber auch in Österreich ist schon viel in diese 
+Richtung passiert. Unter dem Titel freeBIM hat 
+eine Forschungsgruppe an der Universität Inns-
+bruck mit dem Austrian Standards International 
+(ASI) einen Merkmalserver entwickelt.63
+Das Klassifizierungsmodell des ASI-Merkmal­
+servers war eine entscheidende Grundlage für 
+die nationale BIM-Norm (ÖNORM A 6241-2).  
+Aktuell wird an der Weiterentwicklung des ASI-
+Merkmalservers gearbeitet, der wiederum zur 
+Normvorlage werden könnte.
+Mittlerweile existiert ein breites Spektrum  
+an nationalen und internationalen Normen für 
+BIM, das sich laufend erweitert. Abbildung 5  
+bietet eine Übersicht der wichtigsten inter­
+nationalen und nationalen Normen und Richt­
+linien für BIM. 
+62	 Z.B. die ISO 16739:2013 bzw. ISO 16739-1:2018 als 
+Standard für die Industry Foundation Classes (IFC).
+	
+Das buildingSMART Datenmodell, auch bekannt 
+unter der Bezeichnung Industry Foundation Classes 
+(IFC), stellt ein allgemeines Datenschema dar, das 
+einen Austausch von Informationen zwischen ver-
+schiedenen proprietären Software-Anwendungen 
+ermöglicht. Die IFC ist das primäre Datenmodell für 
+Bauwerksmodelle des buildingSMART. Vgl. https://
+www.buildingsmart.de/bim-knowhow/standards-
+standardisierung, Datum des Zugriffs: 21. 10. 2021.
+63	 Vgl. https://www.freebim.at/, Datum des Zugriffs: 
+21. 10. 2021.
+
+
+===== PAGE 52/348 =====
+51
+Welche Standards gibt es bereits?
+ Abbildung 5: Standards und Normen – Auswahl
+
+
+===== PAGE 53/348 =====
+52
+Grundlagen
+Zugegeben, die Umstellung auf BIM ist  
+kein einfacher Prozess, der nebenbei passiert. 
+Vielmehr muss die eigene Arbeitsmethode  
+komplett umgestellt werden. 
+Der Einsatz von BIM erfordert zu Beginn 
+einen spürbaren Aufwand. Wenn man sich aber 
+zur Umstellung entschlossen hat und BIM 
+step-by-step implementiert, kann man von den 
+vielen Vorteilen der BIM-Methode bereits mit  
+den ersten kleinen Änderungen profitieren  
+(Quick-Wins). 
+Einige der sich bietenden Vorteile mani­
+festieren sich einfach nur durch Zeitersparnisse 
+bei der Erbringung bereits bekannter Leistungen, 
+andere verhelfen z.B. zu einer höheren Qualität. 
+Mit Blick auf zukünftige Anforderungen kann 
+man einige Vorteile und Mehrwerte von BIM  
+aber sogar als Notwendigkeiten verstehen.  
+Zudem entstehen zusätzliche Werte, für welche 
+kaum ein Aufwand nötig ist, und es eröffnen sich 
+neue Möglichkeiten. 
+Bei Betrachtung der Beteiligten ist festzu­
+stellen, dass es kaum Verlierer gibt, weil BIM für 
+alle am Prozess beteiligten Akteure Vorteile bie-
+tet oder zumindest bieten kann. Auftraggeber, 
+Auftragnehmer und Behörden, sie alle profitieren 
+von BIM. Nachfolgend sind lediglich einige über-
+zeugende Vorteile exemplarisch (ohne Reihung) 
+aufgelistet:
+	 besseres Projektverständnis  
+(z.B. entstehen Massen- und Visua­
+lisierungsmodelle quasi nebenbei)
+	 detailliertere Entscheidungsgrundlage
+	 Teilautomatisierung von Prozessen
+	 weniger Fehler und Versäumnisse  
+(geometrische Fehler sind z.B. 
+augen­scheinlicher als in 2D)
+	 verbesserte Zusammenarbeit Bauherr/ 
+Planende
+	 Imagesteigerung
+	 weniger Nacharbeiten
+	 Steigerung der Qualität der Daten
+	 Vermeidung von Mehrfachangaben
+	 bessere Kostenkontrolle/-sicherheit
+	 Vermarktung neuer Geschäftsmodelle
+	 Angebot neuer Leistungen
+	 Sicherung von Folgeaufträgen
+(Erwartete) Vorteile  
+durch den Einsatz von BIM 
+	
+
+
+===== PAGE 54/348 =====
+53
+(Erwartete) Vorteile durch den Einsatz von BIM
+„Unbestreitbar bietet die Einführung von BIM in der Bauwirtschaft 
+Chancen. Allein durch die Ausweitung der Planungsphase sowie die 
+Integration von Wissen der Bauunternehmen in die Planung können 
+Bauprojekte verlässlicher durchgeführt werden. BIM-Modelle schaffen 
+zusätzliche potenzielle Agilität, da Auftraggeber, Planer und Bau-
+unternehmen enger zusammenrücken. Die Stärken aller Beteiligten 
+können in diesem Zusammenhang gebündelt werden. Je ausgedehnter 
+die Planungsphase ist bzw. je intensiver somit Bauprojekte durchdacht 
+werden, umso mehr Störeffekte können identifiziert und im Vorfeld 
+ausgeräumt werden.“
+DIPL.-KFM. SASCHA WIEHAGER, CISA64 
+„Die Anwendung der BIM-Methode ermöglicht die Integration 
+einzelner Fachdisziplinen und erzeugt ein Verständnis zum geplanten 
+Bauwerk durch Visualisierungen und eine hohe Informationsverfüg-
+barkeit.“
+UNIV.-PROF. DR.-ING. KATHARINA KLEMT-ALBERT ET AL.65 
+64	 Wiehager (2021), Datenqualität und Datenmanagement in der Bauwirtschaft, in Hofstadler/Motzko (2021) S. 85.
+65	 Klemt-Albert (2021), Silos aufbrechen – Vernetzt, flexibel und produktiv, in Hofstadler/Motzko (2021) S. 551.
+
+
+===== PAGE 55/348 =====
+54
+Grundlagen
+Fehlervermeidung 
+Fehler kosten Geld. Mit der BIM-Methode 
+kann eine große Zahl an Fehlern vermieden 
+werden. Das fängt bereits bei den Plänen an. 
+Bei traditionell gezeichneten 2D-Plänen verliert 
+man schon einmal den Überblick. Liegt der aktu-
+ellste Planungsstand vor? Hat man die Änderung 
+in allen Details nachgezogen? Diese Prüfung der 
+Pläne (Grundrisse, Ansichten, Schnitte, Details, 
+Listen etc.) auf Konsistenz ist zudem auch noch 
+sehr zeitaufwändig. Bei BIM basieren die jewei­
+ligen Ansichten und Listen immer auf dem 
+aktuellen 3D-Modell. Somit ist sichergestellt, 
+dass es zu keinen widersprüchlichen Angaben 
+zwischen den Plänen kommt. Dieser Mehrwert ist 
+bereits bei der Umstellung auf 3D-Modelle in 
+Bezug auf die daraus generierten Pläne zu er­
+reichen und stellt einen der „schnellen Gewinne“ 
+aus dem Einstieg in BIM dar.66
+Auf der anderen Seite ist die Nachvoll­
+ziehbarkeit von Änderungen in BIM genauso ein 
+Problem wie in konventioneller 2D-Planung. 
+Wenn nur ein neues Dokument mit dem neuen 
+Planungsstand verschickt wird, ohne Markierung 
+der vorgenommenen Änderungen, ist dies 
+ebenso wenig hilfreich wie bei klassischen PDFs. 
+Was in der 2D-Planung gilt, ist mit BIM damit 
+noch lange nicht hinfällig.
+Mit entsprechender Prüfsoftware lassen sich 
+BIM-Modelle routinemäßig auf definierte Fehler 
+durchsuchen. So kann mit einem einzigen Befehl 
+bei allen Fenstern und Türen überprüft werden, 
+ob sie z.B. 90° aufschlagen können oder beispiels-
+weise eine Stütze vor dem Fenster steht. Es kann 
+geprüft werden, ob die Feuerwiderstandsklasse 
+einer Tür mit der ihrer Wand übereinstimmt, ob 
+Brüstungen die geforderte Absturzhöhe erfüllen, 
+oder ob Elemente doppelt übereinanderliegen. 
+Für die meisten möglichen Fehler kann man 
+Prüfregeln erstellen. Entscheidend ist dabei, dass 
+Prüfroutinen auf das jeweilige Projekt und die 
+Fragestellungen angepasst und auch aktuelle 
+ortsspezifische und normentechnische Ansprü-
+che eingepflegt werden. Nur wer sich mit der je-
+weiligen Fragestellung auskennt, kann auch eine 
+entsprechende Prüfregel, bei der die Ergebnisse 
+richtig gefiltert und gedeutet werden können, 
+definieren. 
+66	 Die Umstellung von 2D auf 3D ist zwar noch lange 
+nicht BIM, aber es ist ein erster wichtiger Schritt für 
+Neueinsteiger:innen.
+
+
+===== PAGE 56/348 =====
+55
+(Erwartete) Vorteile durch den Einsatz von BIM
+Kollaboration 
+Mit CAD plant fast jede:r vorwiegend für 
+sich. BIM bietet hier als Werkzeug und Methode 
+die Möglichkeit, die spezifischen Bedürfnisse der 
+Fachplaner:innen bereits in frühen Planungs­
+phasen zu berücksichtigen und in die Planung zu 
+integrieren. Damit besteht die Chance, Kollisio-
+nen bereits frühzeitig erkennen und planerische 
+Herausforderungen früher diskutieren und lösen 
+zu können. Die integrale Planungsmethode hat 
+das Potenzial, das Miteinander im Planungs­
+prozess zu stärken und letztlich idealerweise 
+gemeinsam das Ziel einer qualitativ hoch­
+wertigen Planung zu verfolgen.
+Darüber hinaus kann gleichzeitig gearbei-
+tet werden, und es können nicht nur mehrere 
+Planer:innen am eigenen zentralen Fachmodell 
+arbeiten, sondern auch für die Zusammenarbeit 
+ein Gesamtmodell (Koordinationsmodell) erstellt 
+werden. 
+Diese frühzeitige Interaktion und Abstim-
+mung zwischen unterschiedlichen Fachplaner:in-
+nen wirkt sich positiv auf die Planungszeiten 
+sowie den -aufwand aus und ist auch im weiteren 
+Projektverlauf immer wieder positiv zu bemer-
+ken. Durch das frühzeitige Einbinden aller kann 
+„Bei der Planung von Bauwerken mittels BIM wird momentan ein 
+wesentliches Ziel von Planungsprozessen aus den Augen verloren:  
+die einfache Verständlichkeit und Handhabbarkeit der eingesetzten Werk-
+zeuge. BIM als Selbstzweck für Entwickler der Schnittstellen und Filter hat 
+aus Planersicht keinen Sinn und erhöht nur die Fehleranfälligkeit und den 
+Frust aller Baubeteiligten. Die Software versucht mittels Schnittstellen den 
+grundsätzlichen Fehler der Inkompatibilität der einzelnen Produkte zuein-
+ander auszugleichen. In allen anderen Bereichen wird höchste Zusam-
+menarbeit eingefordert, warum nicht auch hier?“ 
+ARCH. BMSTR. DI WOLFGANG KURZ
+rechtzeitig auf die fachspezifischen Bedürfnisse 
+aufmerksam gemacht werden. 
+Weiters bietet BIM neue Möglichkeiten der 
+kollaborativen Zusammenarbeit. Über ein eige-
+nes Format (BCF) wird beispielsweise geregelt, 
+wie bei der Abarbeitung von Mängeln kommuni-
+ziert wird. Es besteht außerdem die Möglichkeit, 
+einen Blickwinkel im Modell (Point of View) 
+anzugeben und Screenshots zu erstellen. Dieser 
+hilft dem Gegenüber, sofort zur betreffenden 
+Position im Modell zu wechseln, um erforderliche 
+Anpassungen durchführen zu können. Außerdem 
+kann auch die Meldung solcher Mängel (auch 
+Issues) die Zuständigkeit und die Nachvollzieh-
+barkeit der gesetzten Handlungen dokumen­
+tieren (Issue-Management).
+Visualisierung 
+In einem BIM-Projekt kann man den aktuel-
+len Planungsstand jederzeit visualisieren. Die 
+Fachplaner:innen haben somit ständig die Mög-
+lichkeit, ihre aktuelle Planung visuell zu über­
+prüfen. Aber auch für Bauherren und zukünftige 
+Nutzer:innen ergeben sich neue Möglichkeiten. 
+So versteht der Bauherr das Projekt viel besser 
+und die Besprechungen laufen in der Regel pro-
+
+
+===== PAGE 57/348 =====
+56
+Grundlagen
+duktiver ab. Falsche Interpretationen und Miss-
+verständnisse können damit verhindert werden. 
+Zukünftige Nutzer:innen können zudem in-
+tensiver in den Planungsprozess eingebunden 
+werden. Ein Pächter aus der Gastronomie kann 
+beispielsweise die räumliche Aufteilung in Hin-
+blick auf seine Arbeitsabläufe noch rechtzeitig 
+optimieren. Zur Überprüfung der Funktionalität 
+der Beschilderung des Wiener Hauptbahnhofes 
+wurden vorab Testpersonen mit VR-Brillen ins 
+BIM-Modell geschickt, um zu sehen, ob sie ihren 
+Weg finden. Zusätzlich stellen 3D-Visualisierun-
+gen ein sehr gutes Werkzeug für Planer:innen dar, 
+um ihre Überlegungen und Ideen den Kundinnen 
+und Kunden bzw. dem Auftraggeber besser zu-
+gänglich zu machen und leichter zu transpor­
+tieren.
+Gerade Bauherren, die nicht mit dem Lesen 
+von Plänen vertraut sind, bieten die bei der BIM-
+Bearbeitung von Projekten entstehenden 3D-
+Modelle eine gute Möglichkeit, um schon in 
+früheren Phasen Änderungswünsche äußern zu 
+können, die im konventionellen Planungsprozess 
+vielleicht erst während der Bauphase realisiert 
+worden wären.
+Weiters werden von Anfang an die verschie-
+denen Fachmodelle stetig ausgetauscht und 
+überlagert bzw. kombiniert. Vor allem in den 3D-
+Ansichten werden damit Problemzonen, kritische 
+Knoten, Konflikte u.Ä. frühzeitig erkennbar. 
+Man kann diesen Bereichen dann die nötige 
+Aufmerksamkeit in der weiteren Planung wid-
+men, zeitnah Lösungen finden und spätere teure 
+Umplanungen oder gar Umbauten vermeiden 
+und so zur Kostenreduktion, Zeiteinsparung und 
+Ressourcenschonung beitragen.
+Kollisionskontrolle 
+Die Kollisionskontrolle ist eine der ganz 
+entscheidenden neuen Möglichkeiten, die BIM 
+bietet. Durch automatisierte Prüfungsroutinen 
+werden die überlagerten Fachmodelle auf 
+Kollisionen geprüft. Wenn beispielsweise ein 
+Lüftungskanal einen tragenden Unterzug 
+schneidet, wird dies erkannt und gemeldet. 
+Es können Listen der Konflikte/Kollisionen er-
+stellt und zielgerichtet abgearbeitet werden. 
+Im Zentrum steht dabei der Mensch, der mit 
+Fachwissen die Ergebnisse der angewendeten 
+Prüfregeln beurteilen und dabei mögliche Falsch-
+
+
+===== PAGE 58/348 =====
+57
+(Erwartete) Vorteile durch den Einsatz von BIM
+meldungen von relevanten Themen unterschei-
+den muss. Mit Fortdauer des Projekts sollte die 
+Zahl der Kollisionen immer geringer und erfor-
+derliche (mitunter teure) Improvisationen auf der 
+Baustelle weitestgehend vermieden werden.
+Verfügbarkeit 
+Wenn man will, sind die Informationen bei 
+BIM jederzeit und überall verfügbar (obwohl der 
+Zugriff auf ein gesamtes BIM-Modell von „unter-
+wegs“ wohl meist im Hinblick auf Darstellbarkeit, 
+Übersicht und Editierbarkeit nicht sinnvoll sein 
+wird). Die meisten Informationen können aber 
+(bei entsprechender Infrastruktur; also vom Büro 
+aus) in Echtzeit abgerufen werden, womit ge-
+währleistet wird, dass immer der letzte Stand des 
+Dokuments bearbeitet wird. Auf diese Weise wird 
+grundsätzlich ein ortsunabhängiges Planen mög-
+lich. Über ein Rollen- und Berechtigungssystem 
+ist es möglich einzuschränken, wer auf welche In-
+formationen Zugriff bzw. Lese- und/oder Schreib-
+rechte hat. Damit werden beispielsweise auch 
+visuelle SOLL-IST-Vergleiche direkt auf der Bau-
+stelle denkbar und möglich, indem über ein 
+Tablet die entsprechende Position und Perspek­
+tive im 3D-Modell eingestellt wird und so die 
+Planung direkt mit dem Gebauten verglichen 
+werden kann.67
+Arbeits- und Zeitersparnisse
+Eine „saubere“ Modellierung in früheren 
+Planungsphasen bietet spätestens bei Änderun-
+gen und in der Finalisierung der Planung ent­
+sprechende Vorteile. BIM-Softwarelösungen 
+verfügen über viele Werkzeuge, um in den Pla-
+nungsprozessen effizienter zu arbeiten. So ist 
+eine nötige Verschiebung der Geschossdecke 
+mitten in der Planung leichter möglich – sofern 
+die Modellierung entsprechend darauf ausgelegt 
+ist. Spezifischen geschossübergreifenden Bau­
+teilen wie Treppen, Rampen, Geländer, Schächte 
+etc. ist aber auch mit der BIM-Methode erhöhte 
+Aufmerksamkeit zu schenken. Eine Änderung in 
+der z-Koordinate kann sich (z.B. durch eine zu-
+sätzliche Stufe) auch auf die x- und y-Koordinaten 
+von Bauteilen auswirken (mit allen Konsequenzen: 
+67	 Auch gilt, dass die entsprechende Infrastruktur auf 
+der Baustelle vorhanden sein muss (z.B leistungs-
+fähiges WLAN auf der Baustelle).
+
+
+===== PAGE 59/348 =====
+58
+Grundlagen
+z.B. Verschiebung von Wänden, verringerte 
+Fluchtwegsbreiten, Unterschreitung erforder­
+licher Abstände). Die Schwierigkeiten und grund-
+legenden Zusammenhänge aus der 2D-Planung 
+gelten auch mit BIM.
+Durch dynamische Modellierung sind die 
+Oberkanten der Wände an die Geschossdecke 
+geknüpft und ändern sich dadurch automatisch 
+mit. Durch grafische Überschreibung kann aus 
+einem normalen Grundriss schnell der zuge­
+hörige Brandschutzplan erstellt werden. Ändert 
+sich der Grundriss später, fließt diese Änderung 
+gleichzeitig in den Brandschutzplan ein. 
+Weiters lassen sich Kategorien bilden und 
+auswählen, um später mit nur einem Befehl eine 
+entsprechende Änderung an allen ausgewählten 
+Elementen vorzunehmen. Man kann aber bei-
+spielsweise auch eine Kategorie an Elementen 
+auswählen, um sie für eine Besprechung farblich 
+hervorzuheben. So könnte man etwa alle Steck-
+dosen rot einfärben, um sie in einer Besprechung 
+mit dem Bauherren einzeln durchzugehen. 
+BIM bietet für nachfolgende Fachplaner:in-
+nen eine bessere Planungsgrundlage und ver­
+ringert einen Großteil redundanter Tätigkeiten 
+wie das Nachzeichnen von Wänden und anderen 
+Bauteilen von 2D-Plänen. Wird beispielsweise das 
+Architekturmodell aktualisiert, müssen die Bau-
+teile des Haustechnikmodells an das neue 
+Architekturmodell angepasst werden. Es entfällt 
+jedoch für die Fachplanung Haustechnik die 
+Anpassung des Architekturmodells bzw. die 
+Nachführung von Änderungen. Die eigene Fach-
+planung muss aber natürlich weiterhin adaptiert 
+werden.
+Ziel (und aktuell sicherlich noch nicht durch-
+gängig möglich) ist es, die Daten eines BIM-
+Projekts von einer Projektphase in die nächste zu 
+übergeben und im Idealfall über den gesamten 
+Lebenszyklus eines Bauwerks weiterzuführen. 
+Dies ermöglicht beispielsweise, auch bei Sanie-
+rungen und/oder Umbauten später auf diese 
+Datenbasis zurückgreifen zu können. 
+Auswertungen und  
+Simulationen
+Ein kleiner Teil der Auswertungen von BIM-
+Modellen lässt sich bereits jetzt automatisiert 
+erstellen – muss aber trotzdem noch mit ent­
+sprechendem Fachwissen auf Plausibilität und 
+
+
+===== PAGE 60/348 =====
+59
+(Erwartete) Vorteile durch den Einsatz von BIM
+Vollständigkeit geprüft werden. Die Auswertun-
+gen haben Echtzeitqualität, das heißt, die letzten 
+Änderungen sind bei entsprechender Aktualisie-
+rung auch schon in der Auswertung enthalten. 
+Die mitunter wichtigsten und häufigsten Aus­
+wertungen dürften die Mengenauswertungen 
+sein. Ohne BIM müssen alle Bauteile aus den 
+CAD-Plänen herausgemessen werden, man muss 
+sich konzentrieren, kein Bauteil zu vergessen und 
+keines zweimal zu berechnen, und bei ausge­
+fallenen Geometrien gestaltet sich die Ermittlung 
+der Mengen entsprechend schwierig. Kommen 
+dann auch noch Änderungen zum Tragen, müs-
+sen diese in den Berechnungen und Tabellen ent-
+sprechend aktualisiert werden. Dieser (sich oft 
+wiederholende) Aufwand ist bei BIM-Modellen 
+nicht mehr erforderlich. Besonderes Augenmerk 
+ist aber auf die korrekte Modellierung zu legen, 
+damit die entsprechenden Mengen auch zum 
+richtigen Bauteil gezählt werden (z.B. Bereiche, in 
+denen Decken und Wände aufeinandertreffen 
+oder Berücksichtigung von Durchbrüchen und 
+Öffnungen). Tritt hier ein Fehler auf, kann die 
+Fehlersuche je nach Modell auch einige Zeit in 
+Anspruch nehmen. 
+Simulationen bieten weitere Möglichkeiten, 
+die ohne BIM nicht möglich wären. Unter einer 
+Simulation wird dabei das rechnerische Nach­
+ahmen realer und/oder geplanter Situationen mit 
+Hilfe eines computerbasierten Rechenmodells 
+verstanden.68 So kann beispielsweise für schlanke 
+hohe Bauwerke mit Windsimulationen die Form 
+optimiert werden. Beleuchtungssimulationen 
+helfen, vorab genug Einbauleuchten zu planen, 
+und die Fluchtwegsituation für öffentliche Ge-
+bäude (z.B. Stadien, Veranstaltungsräume) kann 
+vorab mittels Simulationen sowie anhand von 
+Sensitivitätsanalysen erprobt werden. Den An-
+wendungsfällen bei den neuen Möglichkeiten 
+mit BIM sind kaum Grenzen gesetzt. Zu beachten 
+ist aber, dass teilweise länderspezifische Unter-
+schiede durch die Berechnungen der Simula­
+tionen abgebildet werden müssen. Wie bei jeder 
+Simulation gilt jedoch auch hier der Grundsatz 
+„garbage in = garbage out“.
+68	 Vgl. Hofstadler/Kummer (2017). Chancen- und  
+Risikomanagement in der Bauwirtschaft.  
+S. 195.
+
+
+===== PAGE 61/348 =====
+60
+Grundlagen
+Kosten
+Die bereits erläuterten Aspekte der mög­
+lichen Vorteile, die BIM liefert oder liefern kann, 
+schlagen sich in den Kosten, sowohl bei der Pla-
+nung als auch im späteren Bau sowie letztlich in 
+der Nutzung der Bauobjekte nieder. BIM hat das 
+Potenzial, Fehler zu reduzieren, Ausführungs­
+varianten zu untersuchen, die Ausschreibung und 
+Abrechnung zu erleichtern und die Unsicher­
+heiten in Bezug auf Mengen und Qualitäten 
+durch frühzeitige integrale Planung zu redu­
+zieren. Mittel- und langfristig ist auch davon 
+auszugehen, dass Kostenschätzung, Kosten­
+berechnung und Kostenanschlag verlässlichere 
+Werte liefern können. 
+Sundermeier et al. sehen aktuell besonders 
+bei standardisierbaren Bauvorhaben (z.B. Fertig-
+häusern, Einzelhandelsobjekten im Lebensmittel- 
+oder im Fachmarktsegment, Produktions- und 
+Logistikobjekten oder Bürobauten) sowie bei 
+komplexen Großprojekten wirtschaftliche
+Gesamtvorteile des BIM-Einsatzes, die sich einer-
+seits aus Skaleneffekten und andererseits durch 
+Verbundeffekte69 ergeben. Mittelfristig wird 
+erwartet, dass auch bei konventionellen Bau­
+vorhaben aufgrund des Marktstrukturwandels 
+(z.B. Partnerschaftsmodelle und Projektallianzen) 
+und der Steigerung des Verbundeffekts, aber 
+auch des Skaleneffekts (Marktdurchdringung mit 
+Standards oder Systemlösungen z.B. System- 
+bzw. Modulbauanbietern) BIM immer wirt­
+schaftlicher eingesetzt werden kann (siehe 
+Abbildung 6).70 
+69	 Aus Abhängigkeiten unterschiedlicher Entschei-
+dungsbereiche, die sich auf den Gesamterfolg 
+auswirken.
+70	 Vgl. Sundermeier et al, Ökonomische Potenziale  
+von Building Information Modeling (BIM) im Span-
+nungsfeld von Branchenstruktur und Be­schaf- 
+fungspraxis, in Hofstadler/Motzko (2021) S. 599  ff.
+
+
+===== PAGE 62/348 =====
+61
+(Erwartete) Vorteile durch den Einsatz von BIM
+Transparenz 
+Zuletzt ist auch noch die größere Transpa-
+renz in BIM-Projekten zu nennen. Durch die BIM-
+Methode ist klar definiert, wer, was, wann und in 
+welcher Qualität liefert bzw. zu liefern hat. Zu-
+dem sind klare Schnittstellen definiert. Über eine 
+gemeinsame Plattform sind bei Bedarf alle Daten 
+verfügbar und die Vorgänge auf der Plattform 
+werden dokumentiert. Damit lässt sich der Pro-
+jektfortschritt anhand von Auswertungen und 
+Berichten jederzeit abrufen und kontrollieren. 
+Weitere Funktionen wie z.B. ein Versionsvergleich 
+bieten die Möglichkeit, zielgerichtet Neuerungen 
+und Änderungen im Modell nachzuverfolgen,   
+um so den Fokus auf noch offene Punkte bzw. 
+neu entstandene Fragestellungen innerhalb des 
+Planungsprozesses zu lenken.
+Die Aspekte der Transparenz und des 
+Schnittstellenmanagements sind entsprechend 
+zu definieren und festzulegen. Dazu dienen die 
+Auftraggeberinformationsanforderungen (AIA) 
+und der BIM-Abwicklungsplan (BAP).
+71	 Vgl. Sundermeier et al (2021), Ökonomische Poten-
+ziale von Building Information Modeling (BIM) im 
+Spannungsfeld von Branchenstruktur und Beschaf-
+fungspraxis, in Hofstadler/Motzko (2021) S. 599  ff.
+ Abbildung 6: BIM-Anwendungsfelder und ökonomische Effekte71 
+ Kapitel 5, S. 234
+AIA BAP
+
+
+===== PAGE 63/348 =====
+62
+Grundlagen
+BIM einführen	
+Ist die Entscheidung für den BIM-Einstieg 
+getroffen, gilt es zunächst die eigene aktuelle 
+Situation des Büros zu analysieren. Hier sollten 
+zumindest folgende Fragen beantwortet  
+werden:
+	
+Welche Software und Hardware hat man, 
+und welche Funktionen bieten diese? 
+	
+Hat mein Personal die erforderlichen BIM-
+Kompetenzen?
+	
+Welche Anforderungen haben meine  
+Kunden?
+	
+Reicht meine aktuelle Internetverbindung 
+aus?72
+Es gibt vor allem im Bereich der Modellier-
+software einige Produkte, die vor Jahren als  
+CAD-Software auf den Markt gekommen sind 
+und sich langsam über 3D-CAD zur BIM-fähigen 
+Software entwickelt haben. Ist eine solche Soft-
+ware bereits in Verwendung, wäre zumindest 
+für das Modellieren keine neue Software er­
+forderlich. Allerdings ist für den offenen Daten-
+austausch eine entsprechende Zertifizierung 
+(Austausch im IFC-Format) notwendig. 
+Sind die Mitarbeiter:innen mit den CAD-
+Funktionen einer solchen Software vertraut, ist 
+der Umstieg auf die BIM-Arbeitsweise und der 
+Umstieg auf BIM-Funktionen der Software ein 
+Prozess, der durch Schulungen zu unterstützen 
+ist. Umgekehrt kann der Einstieg in BIM auch 
+für den Umstieg auf andere Softwareprodukte 
+genutzt werden. 
+Es empfiehlt sich jedoch, vor der kompletten 
+Umstellung erste Erfahrungen mit der BIM-
+Methodik zu sammeln, um definieren zu können, 
+was die Softwarelösung können soll und/oder 
+muss.
+Leider ist es oft mit einem Softwareprodukt 
+pro Arbeitsplatz nicht getan. Es sind meist 
+mehrere Softwarelizenzen nötig. So benötigt 
+man beispielsweise neben der Modelliersoftware 
+eine andere Lizenz für die Zusammenarbeit 
+und eventuell auch noch eine Prüfsoftware im 
+Unternehmen.73 Zusätzlich ist mit engeren Up-
+datezyklen zu rechnen, da sich die BIM-Software 
+aktuell in ständiger Weiterentwicklung befindet.
+Bei der Hardware kann die bestehende Aus-
+stattung an den Arbeitsplätzen oft schon aus­
+reichend sein. Bei den Servern ist allerdings zu-
+72 	 Da in BIM viele Daten zwischen den einzelnen 
+Beteiligten ausgetauscht werden, dies meist auch 
+über eine cloudbasierte Plattform geschieht und  
+oft auch die Daten auf der Baustelle benötigt 
+werden.
+73	 Eine Prüfsoftware bzw. eine Kollaborationssoftware 
+ist dabei nicht unbedingt für jeden Arbeitsplatz 
+erforderlich – speziell bei einem schrittweisen 
+Umstieg auf BIM.
+
+
+===== PAGE 64/348 =====
+63
+BIM einführen
+meist ein Upgrade nötig. Welche Anforderungen 
+konkret erforderlich sind, ergibt sich aus den 
+Mindestanforderungen der jeweiligen Software-
+produkte. Für eine gute BIM-Performance ist 
+jedenfalls eine SSD-Festplatte zu empfehlen. 
+Weiters spielen die Grafikkarte und der Arbeits-
+speicher eine wesentliche Rolle. Zudem bildet ein 
+zweiter Bildschirm eine wesentliche Erleichterung 
+in der Bearbeitung von BIM-Modellen. 
+Auf gar keinen Fall sollte man bei der Aus- 
+und Weiterbildung der Mitarbeiter:innen sparen, 
+denn die eingesetzte Software ist immer nur so 
+gut wie deren Anwender:innen. Wichtig ist hier-
+bei die Möglichkeit, das Erlernte zwischen den 
+Schulungseinheiten praxisgerecht (am besten in 
+einem Projekt) zu erproben und durch wieder­
+holende Anwendungen zu üben und zu festigen.
+Sind im eigenen Team keine Mitarbeiter:in-
+nen mit BIM-Erfahrung vorhanden, wird die Ein-
+führung von BIM ohne externe Hilfe nur schwer 
+möglich sein. Besonders unerfahrene Mitarbei-
+ter:innen brauchen am Beginn konstante Unter-
+stützung oder zumindest eine Ansprechperson 
+(z.B. externe Berater:innen), an die sie sich für 
+konkrete Problem- und Fragestellungen wenden 
+können. 
+Insgesamt kann festgehalten werden, dass 
+die Einführung von BIM für kleinere Büros oft 
+leichter ist als für größere. Kleine Büros sind 
+häufig flexibler und können rascher auf geänder-
+te Umstände reagieren. In größeren Büros ist die 
+Koordination zwischen unterschiedlichen Abtei-
+lungen mit u.U. abweichenden BIM-Kenntnissen 
+und -Kompetenzen durchaus herausfordernd. 
+Hier empfiehlt es sich, regelmäßige Möglich­
+keiten für einen Erfahrungsaustausch und gegen-
+seitige Updates zu schaffen, um gemeinsam beim 
+Einstieg in das Thema BIM zu unterstützen.
+Für die BIM-Einführung gilt es, sich unbedingt 
+auch kurz- und mittelfristige Ziele zu setzen. 
+Das richtige Modellieren, der korrekte Daten­
+austausch oder die Durchführung von Modell-
+prüfungen wären solche beispielhaften Ziele. 
+Entscheidend ist aber, dass die Einführung 
+schrittweise erfolgt, die Mitarbeiter:innen „mit-
+genommen“ und nicht überfordert werden. Die 
+Ziele müssen vorab klar definiert werden, für die 
+Mitarbeiter:innen gut erreichbar und für die Ge-
+schäftsführung messbar sein. Wichtig ist hierbei 
+auch, bestehende Workflows der 2D-Planung 
+aufzuwerten und in die 3D-Planung überzufüh-
+ren. Nach dem Minimalprinzip ist zu ergründen, 
+wo mit dem geringsten Aufwand der größte Nut-
+zen erzielbar ist, um dann nach und nach andere 
+Arbeitsschritte zu adaptieren.
+Die schrittweise Umsetzung von BIM und die 
+Erreichung der gesteckten Ziele erfolgt idealer-
+weise anhand eines geeigneten Pilotprojekts. 
+Dies kann ein laufendes Projekt sein, bei dem 
+man BIM-Funktionalitäten selbständig aus­
+probiert, ohne dass dies vom Auftraggeber ge-
+fordert wird. Man hat aber auch die Möglichkeit, 
+gemeinsam mit einem Auftraggeber ein BIM-
+Projekt als gemeinsames Pilotprojekt auszufüh-
+ren – denn nicht nur Planende und Ausführende 
+sind gerade dabei, BIM zu lernen und einzufüh-
+ren, auch die Auftraggeber sind mit neuen Frage-
+stellungen und der neuen BIM-Methode konfron-
+tiert. Beide Seiten sollten sich dabei unbedingt 
+bewusst sein, dass der Einstieg in BIM keine Klei-
+nigkeit ist und natürlich (wie bei jeder Neuerung) 
+das Erlernen und Festigen einer neuen Arbeits-
+weise eine gewisse Einarbeitungszeit erfordert. 
+In den meisten Fällen wird sich für Planende eine 
+little closedBIM Anwendung in der Einführungs-
+phase anbieten, d.h. man nutzt BIM intern zum 
+eigenen Vorteil und nicht, weil es beauftragt 
+wurde oder gar Vertragsbestandteil ist. 
+
+
+===== PAGE 65/348 =====
+64
+Grundlagen
+geber, in Agile Digitalisierung im Baubetrieb. 
+Hofstadler, Christian und Motzko, Christoph 
+(Hrsg.) S. 241–250. Wiesbaden. Springer Vieweg. 
+(ISBN 978-3-658-34106-0)
+	
+Hofstadler, Christian (2021), Multisystemische 
+Hybridpyramide für den agilen Baubetrieb, in 
+Agile Digitalisierung im Baubetrieb. Hofstadler, 
+Christian und Motzko, Christoph (Hrsg.) S. 3–46. 
+Wiesbaden. Springer Vieweg. (ISBN 978-3-658-
+34106-0)
+	
+Hofstadler, Christian; Kummer, Markus (2017), 
+Chancen- und Risikomanagement in der Bau­
+wirtschaft. Berlin, Heidelberg. Springer-Verlag. 
+(ISBN 978-3-662-54318-4)
+	
+Hruschka, Sabine et al. (2021), Digitalisierung 
+im Baubetrieb – neue Herausforderungen und 
+Chancen für die Bauherrenrolle, in Agile Digitali-
+sierung im Baubetrieb. Hofstadler, Christian und 
+Motzko, Christoph (Hrsg.) S. 199–218. Wiesbaden. 
+Springer Vieweg. (ISBN 978-3-658-34106-0)
+	
+https://www.bimpedia.eu/artikel/1006- 
+bim-definition-und-prinzip, Datum des Zugriffs: 
+21. 10. 2021
+	
+https://www.buildingsmart.de/bim- 
+knowhow/standards-standardisierung, 
+Datum des Zugriffs: 21. 10. 2021
+	
+BIM-Leitfaden für Deutschland (2013).	
+https://www.akbw.de/fileadmin/download/
+Freie_Dokumente/Kammer/BIM_Leitfaden_für_
+Deutschland_Endbericht.pdf,  
+Datum des Zugriffs: 21. 10. 2021
+	
+Borrmann, André; König, Markus; Koch, 
+Christian; Beetz, Jakob (Hrsg.) (2015), Building In-
+formation Modeling. Technologische Grundlagen 
+und industrielle Praxis. Berlin, Heidelberg. 
+Springer-Verlag. (ISBN 978-3-658-05605-6)
+	
+Bundesimmobiliengesellschaft m.b.H. (2020), 
+Wettbewerbsunterlage (online unter: http://
+www.gat.st/sites/default/files/auslobung_7.pdf, 
+Datum des Zugriffs: 24. 11. 2021
+	
+Das National Building Information Model 
+Standard Project Committee (NBIMS), https://
+www.nationalbimstandard.org/faqs#faq1,  
+Datum des Zugriffs: 21. 10. 2021
+	
+Deutscher Beton- und Bautechnik-Verein E.V. 
+(2021), DVB-Merkblatt – BIM-Prozessqualität. 
+Berlin, Eigenverlag 
+	
+EYGM Limited (2021). Hochbauprognose 
+2021
+	
+Fleischmann, Gregor; Peer, Franz Josef (2021), 
+Ganzheitlicher Einsatz von BIG-Open-BIM bei der 
+ÖBB-Infrastruktur AG als öffentlicher Auftrag­
+Literaturverzeichnis
+
+
+===== PAGE 66/348 =====
+65
+Literaturverzeichnis
+	
+https://www.freebim.at/, Datum des Zugriffs: 
+21. 10. 2021
+	
+Klemt-Albert (2021), Silos aufbrechen – 
+Vernetzt, flexibel und produktiv, in Agile 
+Digitalisierung im Baubetrieb. Hofstadler, 
+Christian und Motzko, Christoph (Hrsg.)  
+S. 541–562. Wiesbaden. Springer Vieweg.  
+(ISBN 978-3-658-34106-0)
+	
+McKinsey & Company (2017), Reinventing 
+Construction: A Route to higher Productivity.  
+Online unter: https://www.mckinsey.com/de/~/
+media/mckinsey/locations/europe%20and%20
+middle%20east/deutschland/news/presse/ 
+2017/2017-02-28/170228_mgi_construction.pdf, 
+Datum des Zugriffs: 27. 10. 2021
+	
+ÖNORM A 6241-2:2015. Digitale Bauwerks­
+dokumentation – Teil 2: Building Information 
+Modeling (BIM) – Level 3-iBIM
+	
+RL 2014/24/EU DES EUROPÄISCHEN 
+PARLAMENTS UND DES RATES vom 26. Februar 
+2014 (online unter: https://eur-lex.europa.eu/
+legal-content/DE-SL/ALL/?uri=CELEX:32014L0024 
+&from=DE, Datum des Zugriffs: 2. 11. 2021)
+	
+ROLAND BERGER GMBH (2016), Digi­
+talisierung der Baubranche. Online unter:  
+https://www.rolandberger.com/de/Media/Digita-
+lisierung-der-Baubranche.html, Datum des 
+Zugriffs: 27. 10. 2021
+	
+Sundermeier, Matthias; Beidersandwisch, 
+Philipp; Theuring, Felix (2021), Ökonomische 
+Potenziale von Building Information Modeling 
+(BIM) im Spannungsfeld von Branchenstruktur 
+und Beschaffungspraxis, in Agile Digitalisierung 
+im Baubetrieb. Hofstadler, Christian und Motzko, 
+Christoph (Hrsg.) S. 589–620. Wiesbaden. 
+Springer Vieweg. (ISBN 978-3-658-34106-0)
+	
+Wiehager, Sascha (2021), Leitfaden zur EU-
+Taxonomie – Nachhaltigkeit mess- und vergleich-
+bar gestalten. Hauptverband der Deutschen 
+Bauindustrie e.V. (Hrsg.). Berlin, Eigenverlag
+	
+Wiehager, Sascha (2021), Datenqualität und 
+Datenmanagement in der Bauwirtschaft – Grund-
+lagen für valide und prüfbare Multidimensions-
+Modelle, in Agile Digitalisierung im Baubetrieb. 
+Hofstadler, Christian und Motzko, Christoph 
+(Hrsg.) S. 79–106. Wiesbaden. Springer Vieweg. 
+(ISBN 978-3-658-34106-0)
+	
+Wiese, Marion (2019). BIM-Prozess kompakt – 
+Abwicklung eines Bauvorhabens mit der 
+Planungsmethode BIM. Köln. Verlagsgesellschaft 
+Rudolf Müller GmbH & Co. KG. (ISBN 978-3-481-
+03840-3)
+
+
+===== PAGE 67/348 =====
+66
+Vorbild IFC-basierter BIM Standard Österreich
+Vorbild IFC-basierter  
+BIM-Standard Österreich	
+Wie die Bestimmungen der ÖN 19650-1 
+darlegen, ist Building Information Modeling – 
+kurz BIM – eine Methodik, um aus Sicht des 
+Bestellenden den Informationskreislauf rund um 
+die Anforderungen an eine Planung in Inputs und 
+Outputs festzulegen. Die ÖN 29481 beinhaltet 
+die Grundlage für ein Information Delivery 
+Manual – kurz IDM –, eine im Kontext von 
+Lebenszyklusprozessen an IFC orientierte 
+standardisierte Beschreibung von Informations-
+anforderungen. Die Modellierung von Bauwerks-
+informationen umfasst digitale Informationen, 
+die für die Planung, den Entwurf, den Bau, den 
+Betrieb und den Rückbau eines Bauwerks ge-
+nutzt werden können. 
+Die digitale Modellierung integriert Infor­
+mationen und Daten, die für diese Lebensphasen 
+eines Gebäudes relevant sind. Der ASI Merkmal-
+server unterstützt bei der Erstellung das IDM 
+(Information Delivery Manual). Mit der ÖN 6241-2 
+wurde in Österreich eine nationale Systematik 
+begründet, welche in einem Phasenmodell die 
+geometrischen und alphanumerischen Inhalte 
+von virtuellen Gebäudemodellen regelt. Auch die 
+hierfür benötigten Merkmale (Modellelemente, 
+etwa bauphysikalische Kennwerte, statische 
+Eigenschaften, Materialien usw.) wurden in  
+enger Abstimmung mit IFC entwickelt. 
+Der ASI-Merkmalserver bildet dieses Phasen-
+modell in eine öffentlich zugängliche Datenbank 
+ab. Dafür werden die „Elemente“ eines BIM-
+Modells beschrieben (z.B. Wände, Decken, 
+Stützen etc.) und dazu „Merkmale“ hinterlegt  
+(bei Wänden z.B. Länge, Höhe, Stärke etc.). 
+Die „Merkmale sämtlicher Elemente“ können 
+daraufhin einer Leistungsphase zugeordnet 
+werden. Damit ist 
+1.  klargestellt, in welcher Art und Weise ein 
+bestimmtes Merkmal definiert ist, und es wird 
+2.  die Verantwortlichkeit unmiss­verständlich 
+zuordenbar. Im Ergebnis liegt damit 
+3.  ein international anschlussfähiger IFC-
+basierter BIM-Standard Österreich vor. 
+Indem sich die EN 17412-1 mit der Qualität 
+der bereitzustellenden Daten/der Datentiefe 
+befasst, liegt für BIM auch eine Minimalanforde-
+rung und eine minimale Datenqualität vor, die 
+mit einem Vergütungsmodell kombinierbar ist. 
+Die Entscheidung über die geometrische Qualität 
+wird nicht vorweggenommen. 
+Der mit der ÖN 6241-2 etablierte Normungsansatz erregte als BIM-Standard Österreich inter­nationale Aufmerk-
+samkeit und beeinflusst die VDI- und CEN-Norm. Seine Systematik und internationale Anschlussfähigkeit machen 
+ihn zum Vorbild.
+BERNHARD L. WIELAND; BUNDESKAMMER DER ZIVILTECHNIKER:INNEN,  
+PROJEKTLEITUNG DIGITALISIERUNG UND ZT:ARCHIV
+
+
+===== PAGE 68/348 =====
+67
+Bernhard L. Wieland, Bundeskammer der Ziviltechniker:innen
+Dieser Hinweis ist wichtig, weil damit auch 
+klargestellt ist: Planende entscheiden auch in 
+Zukunft selbst, in welcher Informationsdichte sie 
+Daten bereitstellen! Diese Informationsdichte 
+kann weiterhin projektbezogen vereinbart 
+werden. 
+Kurzum: Es existiert für Planende durch BIM 
+kein Zwang, mehr Daten zu liefern, als ihnen be-
+zahlt wird! 
+Aber es ist für Planende auch bei einem 
+Projekt mit BIM wichtig, projektbezogen eindeu-
+tig gültige Datenmodelle vertraglich festzulegen. 
+Wird eine tiefergehende Datendichte beauftragt 
+bzw. ergibt sich eine solche nach Projekt- und 
+Bauwerkszweck, ist diese gesondert zu definie-
+ren, zu beauftragen und abzugelten. Unser Hin-
+weis dazu: Nutzen Sie die Expertise Ihrer gesetz-
+lichen Berufsvertretung. 
+Informations-Box
+BuildingSMART ist eine internationale 
+Nonprofit-Organisation, die das Austauschformat 
+Industry Foundation Classes – kurz IFC – beim 
+BIM-Datenaustausch im Bauwesen definiert. 
+Das Information Delivery Manual – kurz IDM 
+ist eine ISO-Standard zertifizierte (ISO 29481-1  
+und -2) BuildingSMART-Methode, um Informa-
+tionsanforderungen im Kontext von Lebens­
+zyklusprozessen definiert zu beschreiben. Ein 
+solches IDM umfasst Ausmaß und Spezifikationen 
+jener Informationen, die ein einzelner Akteur zu 
+einem bestimmten Zeitpunkt bzw. Arbeitsprozess 
+in einem BIM-Projekt bereitstellen muss bzw. 
+benötigt werden. 
+Die ebenfalls von BuildingSMART koordi­
+nierte IDM-Methodik setzt sich in der Erstellung 
+technischer Spezifikationen in Form einer Model 
+View Definition – kurz MVD – fort. Diese MVD, 
+welche in Bezug zu einer definierten IFC-Version 
+steht, ist ihrerseits die Grundlage, damit IFC 
+Import- und Exportfunktionen möglich sind.  
+Der mit ihr abgestimmte Prozess soll sicherstellen, 
+dass der Datendialog technisch funktioniert. 
+Es wird die benötigte Teilmenge des IFC-Daten-
+modells festgelegt, um fachspezifische Austausch-
+anforderungen (Exchange Requirements) zu 
+erfüllen. Datenaustausch kann damit auch in 
+Teilmodellen erfolgen.  
+MVD bezeichnet ein Dateiformat (*.mvdxml, 
+die Datei für den Datenaustausch im XML-Format) 
+und ein Informationsmodell für die Strukturierung 
+von MVD-Dateien als XML-Schema-Definition. 
+Beispiele sind: IFC2x3 Coordination View 2.0, 
+IFC2x3 FM Handover View, IFC2x3 Structural 
+Analysis, ViewFC4 Reference View, IFC4 Design 
+Transfer View.
+Das Zusammenwirken von Information Delivery Manual (kurz IDM) und  
+Model View Defintion (MVD) – eine Methodik von BuildingSMART
+
+
+===== PAGE 69/348 =====
+68
+Richtig Modellieren
+Im Begriff „Building Information Modeling“ steckt schon eine der wichtigsten 
+Voraussetzungen für BIM-konformes Arbeiten. Das Modellieren ist der grund­
+sätzliche Unterschied zur traditionellen CAD-Arbeitsweise. 
+Im Gegensatz zu CAD wird nicht mehr in 2D-Ansichten gezeichnet, sondern 
+mittels Bauteilen aus Bauteilkatalogen ein 3D-Modell erstellt, aus welchem sich 
+neben vielen anderen Vorteilen die 2D-Pläne automatisch generieren lassen. 
+Zudem verfügen die einzelnen Bauteile auch über verschiedenste Attribute 
+(Daten), die ganz unterschiedlich genutzt werden können. 
+Gewissenhaftes und möglichst fehlerfreies Modellieren ist die Grund­
+voraussetzung für BIM, ohne korrekte Modelle funktioniert BIM nicht!
+Richtig Modellieren
+Kapitel 2
+MARCUS WALLNER
+
+
+===== PAGE 70/348 =====
+Zeichnung versus Modell  . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+70
+Attribute  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+74
+Geometrische Grundlagen   . . . . . . . . . . . . . . . . . . . . . . . . . .	
+76
+Knotenausbildung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+79
+Positionierung des Modells . . . . . . . . . . . . . . . . . . . . . . . . . .	
+80
+Nullpunkte Projektbasispunkt  . . . . . . . . . . . . . . . . . . . . . . . .	
+80
+Normalnull  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+80
+Nordung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+82
+Vertikale Gliederung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+84
+Einteilung nach Geschossen   . . . . . . . . . . . . . . . . . . . . . . . . .	
+84
+Umgang mit uneinheitlichen Geschossen   . . . . . . . . . . . .	
+89
+Verortung im Infrastruktur­bereich   . . . . . . . . . . . . . . . . . . .	
+90
+Modelliertechniken  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+92
+Bezüge  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+92
+Objekt als Bezug  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+93
+Raster . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+93
+Dynamisches Modellieren  . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+94
+Modellierregeln  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+94
+Arbeiten mit Platzhaltern  . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+95
+Detaillierungsgrad  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+96
+LOD – Level of Development  . . . . . . . . . . . . . . . . . . . . . . . . .	
+96
+LoX  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+97
+LOD 100 – 500  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+98
+LoG – Level of Geometry  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+99
+LoI – Level of Information . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+100
+LoC – Level of Coordination  . . . . . . . . . . . . . . . . . . . . . . . . . .	
+101
+Objektbibliotheken  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+102
+Bürostandard  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+102
+Nomenklatur . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+104
+Allgemeine Bibliotheken  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+104
+Herstellerbibliotheken . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+105
+Literaturverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+106
+69
+Richtig Modellieren
+
+
+===== PAGE 71/348 =====
+70
+Richtig Modellieren
+Zeichnung versus Modell
+2D-Pläne müssen nun nicht mehr jeweils 
+einzeln gezeichnet und abgestimmt werden, 
+sondern sie sind nichts anderes als aus dem BIM-
+Modell abrufbare Echtzeit-Projektionen. Durch 
+die automatisch generierten Pläne spart man 
+nicht nur Zeit ein, es verschwindet auch eine der 
+häufigsten Fehlerquellen in der Planung: sich 
+widersprechende Grundrisse, Ansichten, Schnitte 
+oder Details, beispielsweise weil einer dieser 
+ Abbildung 7: Traditionelle und BIM-fähige Planung74 
+Pläne bei der Aktualisierung vergessen wurde. 
+Wenn zwei Plansätze gleichzeitig generiert 
+werden, passen die Maße aller einzelnen Pläne 
+immer genau zueinander.
+74	 Horner (2021), S. 6.
+
+
+===== PAGE 72/348 =====
+71
+Zeichnung versus Modell
+Das 3D-Modell ist die Ausgangsbasis für alle 
+weiteren Pläne, Listen etc. Allerdings werden nur 
+die dreidimensionalen Bauelemente für den 
+jeweiligen Plan generiert, somit sind die Pläne 
+dann noch „nackt“, also ohne Beschriftungs­
+elemente. Ein nicht bemaßter und nicht beschrif-
+teter Plan (Schnitt, Grundriss, Ansicht, Detail, …) 
+ist de facto wertlos. Aber auch beim Beschriften 
+bietet BIM uns einen Vorteil. Durch automatische 
+Beschriftungsblöcke (Raumstempel, Durch-
+bruchsbeschriftung, Brüstungshöhe, Höhen­ 
+koten usw.) spart man nicht nur Zeit, weil der 
+Wert automatisch aus der Parametrik des Modells 
+ausgelesen wird, es wird auch ein großes Fehler-
+potential vermieden. Im Laufe eines BIM-Prozes-
+ses werden verschiedene BIM-Softwareprodukte 
+benötigt. Zu Beginn dieses Prozesses erarbeiten 
+die unterschiedlichen Planer:innen erst einmal 
+erste Entwürfe ihrer jeweiligen Modelle. Diese 
+Fachmodelle können nur mit entsprechenden 
+BIM-fähigen Softwareanwendungen erstellt 
+werden. Die zur Modellierung nötigen Software-
+funktionalitäten bieten Produkte aus dem 
+Bereich Modelliersoftware.
+ Abbildung 8: In der BIM-fähigen Planung ist der 2D-Plan mit dem BIM-Modell verknüpft75 
+ Kapitel 3, S. 136 
+Modelliersoftware
+75	 Horner (2021), S. 9.
+
+
+===== PAGE 73/348 =====
+72
+Richtig Modellieren
+puter lesbar. Gemeinsam bilden Sie ein komple-
+xes Datenmodell, ein BIM-Modell. Jedes einzelne 
+Objekt verfügt neben seiner Geometrie über eine 
+Menge semantischer Informationen, so sind den 
+Objekten Attribute, Mengen, Parameter und oft 
+auch gewisse intelligente Verhaltensregeln zuge-
+ordnet.
+Wir zeichnen nicht mehr, wir modellieren! 
+Was bedeutet das nun? Bauteile werden nicht 
+mehr mit Linien in verschiedenen Ansichten 
+gezeichnet, sie werden von Anfang an nur noch 
+als dreidimensionale Objekte erstellt. 
+Diese Objekte sind zudem nicht nur dumme 
+Volumen; ganz im Gegenteil, sie besitzen eine ge-
+wisse Intelligenz, sind strukturiert und vom Com-
+ Abbildung 9: Die BIM-Software erkennt anhand der Hierarchie der einzelnen Schichten,  
+wie sich diese an der Ecke verschneiden 
+
+
+===== PAGE 74/348 =====
+73
+Zeichnung versus Modell
+Wir zeichnen nicht mehr, wir modellieren!
+Modelliert und interagiert werden soll – für eine effiziente Ent-
+wicklung über den Gebäudelebenszyklus – in einem offenen, klar struktu-
+rierten, integralen Prozess, der den erhöhten Anforderungen entsprechend 
+honoriert wird. In diesem offenen Prozess soll durch geeignete und opti-
+mierte Software die Erstellung, Bearbeitung und Interaktion der Daten-
+modelle ermöglicht werden.
+Wir modellieren, aber es gibt noch einiges zu tun!
+ ARCH. PROF. DI SIEGFRIED DIESENBERGER
+„Es ist wichtig, sich eine Herangehensweise zu erarbeiten, die in 
+einem frühen Projektstadium die Modellierung auf ein notwendiges 
+Minimum reduziert. Dies verringert den Arbeitsaufwand immens, da be-
+sonders in dieser Phase mit erhöhtem Änderungsaufwand zu rechnen ist.
+Eine mögliche Strategie ist es, für die Entwurfsphase eigene Bauteile 
+zu entwickeln, die nur mit der nötigsten Information versehen sind und 
+diese dann im Zuge der Bearbeitung durch detailliertere Bauteile aus-
+zutauschen. Hierdurch ist auch gewährleistet, dass zu früh eingesetzte, 
+detaillierte Bauteile nicht irrtümlich mit falschen Objektinformationen 
+behaftet sind, die aber in der weiteren Planung als gegeben angesehen 
+werden. Dies kann unter anderem auch eine Haftungsthematik mit sich 
+bringen.“ 
+ARCH. DI MARTIN GRUBER
+
+
+===== PAGE 75/348 =====
+74
+Richtig Modellieren
+Attribute 
+Ein BIM-Objekt kennzeichnet sich haupt-
+sächlich durch seine Geometrie und seine 
+sogenannten alphanumerischen Attribute. Es 
+herrscht eine leichte Verwirrung um den Begriff 
+„alphanumerische Attribute“. Synonym zum 
+Begriff Attribut werden des Öfteren auch die 
+Begriffe Merkmal und Eigenschaft verwendet. Im 
+Umfeld bzw. Zusammenhang mit buildingSMART 
+und dem bSDD (building smart data directory) 
+wird normalerweise immer der Begriff Attribut 
+verwendet. Bezogen auf Software oder Datei­
+formate wird oft von Eigenschaften und nicht zu-
+letzt wegen des Merkmalservers speziell in 
+Österreich häufig von Merkmalen statt Attributen 
+gesprochen. Gemeint ist aber in allen Fällen mehr 
+oder weniger das Gleiche. Auch der in der Praxis 
+Praxistipp
+Im IFC-Schema werden Attribute durch Property Sets ausgetauscht.
+geläufige Begriff „alphanumerisch“ ist, wortwört-
+lich gesehen, nicht gerade ideal gewählt. Streng 
+genommen, würde er maximal nur einen Code 
+aus Buch­staben, Ziffern und Sonderzeichen er-
+lauben. 
+Bei BIM bezeichnet man mit alphanumerisch 
+die möglichen Datentypen, die der Wert des 
+Attributes annehmen kann. 
+Der Datentyp kann aber nicht nur alpha­
+numerische Werte im klassischen Sinn für das 
+jeweilig Attribut annehmen, sondern es gibt bei-
+spielsweise auch den „alphanumerischen“ Wert 
+„wahr/falsch“ für das Attribut „tragend“ oder 
+auch vordefinierte Feuerwiderstandsklassen.
+Die alphanumerischen Attribute bilden die 
+Grundlage für Simulationen, Bauteillisten und 
+„Man sollte dem österreichischen Beispiel folgen und standardisierte 
+Attributsstrukturen von offiziellen Standardisierungsorganisationen  
+(ASI, DIN, CEN , ISO ) vorgeben und diesen wesentlichen Punkt nicht 
+Lobbyingorganisationen überlassen, auch wenn diese sich heftig drum 
+bemühen.“
+OTTO HANDLE
+ 
+ Kapitel 4, S. 186
+buildingSMART bSDD
+ 
+ Kapitel 4, S. 181 
+BIM-Objekt
+ 
+ Kapitel 3, S. 188 
+Merkmalserver
+
+
+===== PAGE 76/348 =====
+75
+Zeichnung versus Modell
+andere Auswertungen. In der Modelliersoftware 
+wird jeder Objektinstanz ein sogenannter GUID 
+(Globally Unique Identifier) zugewiesen. Durch 
+diesen GUID können Eigenschaften weltweit 
+eindeutig zugeordnet werden. Somit ist es 
+möglich, Attribute aus verschiedenen Modellen 
+gleichen Klassen zuzuordnen und diese in struk-
+turierten Listen und Tabellen (Datenbanken) 
+weiter zu verarbeiten. Beispielsweise können  
+so die Mengen der Wände aus den einzelnen  
+Teilmodellen der jeweiligen Fachplaner:innen 
+oder Bau­abschnitte, ohne ein Teilmodell bear-
+beiten zu müssen, addiert und ausgewertet 
+werden. 
+Ein Attribut beschreibt also jeweils eine 
+Eigenschaft eines BIM-Objektes. Es hat einen 
+Namen (Bezeichnung) und seinen Datentyp mit 
+entsprechend gültigem Wertebereich. Innerhalb 
+eines Projektes können die Attribute aus ver-
+schiedenen Quellen stammen. Da könnte das 
+gleiche Attribut schon einmal mit anderem 
+Namen auftauchen, was allerdings nicht sein darf. 
+Es muss eine eindeutige Attributsliste für das Pro-
+jekt geben, nur dann werden die Auswertungen 
+funktionieren. 
+ Abbildung 10:  Durch Anklicken eines Elements (Wand) können (in den Eigenschaftsfenstern für Element 
+und Typ) automatisch die zum Objekt gehörigen Attribute abgerufen werden und müssen 
+nicht mehr mühselig zusammengesucht werden76
+Kapitel 4, S. 183  
+Datentyp
+76	 Autodesk screen shots reprinted courtesy of Auto-
+desk, Inc.
+
+
+===== PAGE 77/348 =====
+76
+Richtig Modellieren
+Geometrische Grundlagen  
+Keine Sorge, wir wollen hier nicht tief in die 
+Informatik vordringen. Es geht lediglich um ein 
+Minimum an Know-how, wie die Geometrie in 
+der verwendeten Software zustande kommt, um 
+besser zu verstehen, was zu Fehlern führen kann 
+bzw. was erst gar nicht funktionieren wird. 
+Grundsätzlich gibt es zwei unterschiedliche Ver-
+fahren, wie eine Geometrie zustande kommt.
+Ein explizites Verfahren (Flächenmodell) 
+beschreibt ein Volumen in Bezug auf seine Ober-
+flächen, die durch eine Hierarchie der Grenz­
+beziehungen zwischen Körper, Fläche, Kante und 
+Vertex modelliert wird. Es beschreibt also die 
+Oberfläche des Körpers. Vereinfacht stellen wir 
+uns hier ein Volumen, das beim Zusammensetzen 
+von Flächen entsteht, vor. Dieses Verfahren wird 
+oft auch als Boundary Representation (Brep)  
+bezeichnet.
+ Abbildung 11: Boundary Representation (Brep)77 
+ Abbildung 12: Geländeoberfläche als typische 
+Brep78 
+77	 Vgl. Borrmann et al., BIM, Springer, 2015.
+78	 DI Peter Skalicki-Weixelberger.
+
+
+===== PAGE 78/348 =====
+77
+Zeichnung versus Modell
+Im Gegensatz dazu ist das implizite Ver­
+fahren (Körpermodell) als eine Abfolge von 
+Kon­struktionsschritten, um einen volumetrischen 
+Körper zu beschreiben, zu verstehen. Es ist also 
+ein prozeduraler Ansatz, der die Geschichte der 
+Erstellung des modellierten Körpers beschreibt. 
+Bei diesem Verfahren handelt es sich im Normal-
+fall um Constructive Solid Geometry (CSG).  
+Bei dieser wird aus mehreren primitiven Grund-
+körpern (Quader, Zylinder, Prisma, Pyramide, 
+Kugel, Kegel, …) über Boolesche Operationen 
+(Vereinigung, Differenz, Schnittmenge) ein 
+komplexer Körper erzeugt. Erzeugungsverfahren 
+mittels Extrusion, Rotation, Sweep und Loft zäh-
+len auch zu CSG.  
+ Abbildung 13: Körper über Boolesche Operationen79 
+79	 Raphael Wieser.
+
+
+===== PAGE 79/348 =====
+78
+Richtig Modellieren
+Implizite Verfahren benötigen zwar mehr 
+Rechenleistung, haben dafür aber geringere 
+Datenmengen beim Austausch als explizite Ver-
+fahren. Einzelne Konstruktionsschritte im CSG-
+Verfahren können jederzeit rückgängig gemacht 
+bzw. neu konstruiert werden. Allerdings kann, 
+wenn bei einem Objekt Konstruktionsschritte 
+rückgängig gemacht werden und schon Folge-
+schritte mit einem anderen Objekt eingegeben 
+wurden, dies schnell zu Fehlern führen. 
+Die meisten Fehler im Zusammenhang mit 
+CSG-Objekten treten auf, wenn das Zielsystem 
+nicht alle vom Ausgangssystem verwendeten 
+Operationen zur Geometrieerzeugung und 
+-bearbeitung unterstützt und in gleicher Weise 
+ausführt.81
+ Abbildung 14: Extrusion, Sweep, Rotation und Lofting80 
+80	 Raphael Wieser.
+81	 Vgl. Borrmann (2015), S. 30.
+
+
+===== PAGE 80/348 =====
+79
+Zeichnung versus Modell
+Knotenausbildung 
+Die automatische Knotenberechnung ist 
+eine der vielen neuen Möglichkeiten, die BIM 
+bietet. Bei der Knotenausbildung kommen die 
+in der Geometrie des BIM-Objekts liegenden Pro- 
+bleme leider doch immer wieder zum Vorschein. 
+Wenn sich also mindestens zwei Wände 
+(oder Decken) in einem Knoten verschneiden, 
+muss jedes Mal berechnet werden, wie die 
+Geometrie dieser Knoten letztendlich aussieht.
+Im einfachsten Fall trifft eine Wand T-förmig 
+auf eine zweite. Wenn alles funktioniert, werden 
+beide überlagert. Die Software rechnet im Hinter-
+grund eine Boolesche Differenz und legt – falls 
+nötig – einen unsichtbaren Subtraktionskörper 
+an.
+Verständlicherweise wird bei komplexeren 
+Knoten mit vielen Wänden und Decken das 
+Ganze schon schwieriger und somit auch fehler-
+anfälliger. Als Erstes stellt sich die Frage der 
+Hierarchie, also welche Wand welche verdrängt. 
+So wird Beton die Wärmedämmung verdrängen 
+und diese wiederum den Putz. 
+Treffen am Knoten aber unterschiedliche 
+Betonqualitäten aufeinander, kann die auto­
+matische Knotengenerierung schon einmal nicht 
+passen. Dann bietet eine gute Modelliersoftware 
+die Möglichkeit, manuell nachzuarbeiten. Dabei 
+passiert dann im Hintergrund eigentlich nichts 
+anderes, als dass die Reihenfolge der CSG-
+Verfahren geändert wird.
+ Abbildung 15:  T-Stoß mit richtiger und falsch berechneter Geometrie

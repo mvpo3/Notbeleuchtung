@@ -1,0 +1,3688 @@
+
+
+===== PAGE 1/50 =====
+OVE Richtlinie R 1000-3 
+Ausgabe: 2019-01-01 
+Wesentliche Anforderungen an elektrische Anlagen 
+Teil 3: Hochspannungsanlagen 
+Essential requirements for electric installations – 
+Part 3: High voltage power installations 
+Exigences essentielles d'installations électriques – 
+Partie 3: installations électriques haute tension  
+ICS  
+29.020; 29.080.01; 29.240.01 
+  zuständig 
+OVE/TK H 
+Elektrische Hochspannungsanlagen 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Copyright © OVE – 2019.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at
+Internet: http://www.ove.at
+Webshop: www.ove.at/webshop
+Tel.: +43 1 587 63 73
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+1 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 2/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................4 
+ 
+Anwendungsbereich .............................................................................................................................5 
+1
+ 
+Begriffe ...................................................................................................................................................6 
+2
+2.1 
+Allgemeine Begriffe .............................................................................................................................. 6 
+2.2 
+Begriffe bezüglich Anlagen ................................................................................................................. 7 
+2.3 
+Begriffe bezüglich Anlagenarten ......................................................................................................... 7 
+2.4 
+Begriffe bezüglich Schutzmaßnahmen gegen elektrischen Schlag ................................................ 8 
+2.5 
+Begriffe bezüglich Abständen ............................................................................................................. 8 
+2.6 
+Begriffe bezüglich Steuerung und Schutz ......................................................................................... 9 
+2.7 
+Begriffe bezüglich Erdung ................................................................................................................... 9 
+ 
+Grundlegende Anforderungen .......................................................................................................... 11 
+3
+3.1 
+Allgemeine Anforderungen ................................................................................................................ 12 
+3.2 
+Spezifische Anforderungen ............................................................................................................... 12 
+3.3 
+Systematische Anforderungen .......................................................................................................... 13 
+ 
+Isolation ............................................................................................................................................... 14 
+4
+ 
+Betriebsmittel ...................................................................................................................................... 14 
+5
+5.1 
+Schaltgeräte ........................................................................................................................................ 14 
+5.2 
+Transformatoren und Drosselspulen................................................................................................ 14 
+5.3 
+Messwandler ....................................................................................................................................... 14 
+5.4 
+Überspannungsableiter ...................................................................................................................... 15 
+5.5 
+Kondensatoren .................................................................................................................................... 15 
+5.6 
+Isolatoren ............................................................................................................................................. 15 
+5.7 
+Kabel/Leitungen .................................................................................................................................. 15 
+5.8 
+Sicherungen ........................................................................................................................................ 15 
+5.9 
+Elektrische und mechanische Verriegelungen ................................................................................ 15 
+ 
+Anlagen ................................................................................................................................................ 16 
+6
+6.1 
+Allgemeine Anforderungen ................................................................................................................ 16 
+6.2 
+Freiluftanlagen .................................................................................................................................... 18 
+6.3 
+Innenraumanlagen in offener Bauweise ........................................................................................... 25 
+6.4 
+Aufstellung von fabrikgefertigten Schaltanlagen ............................................................................ 28 
+6.5 
+Anforderungen an Gebäude .............................................................................................................. 28 
+6.6 
+Fabrikfertige Stationen für Hochspannung/Niederspannung ........................................................ 31 
+6.7 
+Mast- und Turmstationen ................................................................................................................... 31 
+ 
+Schutzmaßnahmen ............................................................................................................................. 39 
+7
+7.1 
+Schutz gegen direktes Berühren ....................................................................................................... 39 
+7.2 
+Schutz bei Arbeiten an elektrischen Anlagen .................................................................................. 39 
+7.3 
+Schutz vor Gefährdung durch Störlichtbogen ................................................................................ 39 
+7.4 
+Schutz gegen direkte Blitzeinschläge .............................................................................................. 39 
+7.5 
+Brandschutz ........................................................................................................................................ 40 
+7.6 
+Schutz gegen Leckverlust an Isolierflüssigkeiten und SF6 (nicht oxidierende Gase) ................ 40 
+7.7 
+Kennzeichnung und Beschriftung .................................................................................................... 41 
+ 
+Hilfseinrichtungen, Steuerungs- und Schutzsysteme .................................................................... 41 
+8
+8.1 
+Überwachungs- und Steuerungseinrichtungen .............................................................................. 41 
+8.2 
+Gleichstrom- 
+und 
+Wechselstrom-Hilfsstromkreise 
+und 
+alternative 
+Antriebsmittel 
+(Federspeicher u. dgl.) ....................................................................................................................... 41 
+8.3 
+SF6-Gas-Wartungsgeräte ................................................................................................................... 41 
+8.4 
+Grundregeln zur elektromagnetischen Verträglichkeit von Steuersystemen .............................. 41 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+2 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 3/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+3 
+ 
+ 
+Erdungsanlagen .................................................................................................................................. 42 
+9
+9.1 
+Potentialverschleppungen ................................................................................................................. 43 
+9.2 
+Errichtung von Erdungsanlagen ........................................................................................................ 43 
+9.3 
+Messungen an Erdungsanlagen ........................................................................................................ 43 
+9.4 
+Instandhaltbarkeit von Erdungsanlagen ........................................................................................... 44 
+9.5 
+Globales Erdungssystem ................................................................................................................... 44 
+ 
+Inspektionen und Prüfungen .............................................................................................................. 44 
+10
+Anhang A ........................................................................................................................................................... 46 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+3 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 4/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+4 
+ 
+Vorwort 
+Diese OVE-Richtlinie R 1000-3 wurde vom Technischen Komitee H (Elektrische Hochspannungsanlagen) des 
+OVE erarbeitet. 
+Die Erarbeitung dieser OVE-Richtlinie wurde vom OEK-Aktionskomitee mit Beschluss OEK‐AK/2017/C06 
+genehmigt. Diese OVE-Richtlinie hat den Status eines elektrotechnischen Referenzdokuments gemäß 
+Elektrotechnikgesetz ETG 1992. 
+Diese OVE-Richtlinie basiert auf  
+– 
+ÖVE/ÖNORM EN 61936-1 – Starkstromanlagen mit Nennwechselspannungen über 1 kV (siehe 
+Anhang A) und 
+– 
+ÖVE/ÖNORM EN 50522 – Erdung von Starkstromanlagen mit Nennwechselspannungen über 1 kV (siehe 
+Anhang A).  
+In dieser Richtlinie werden folgende Gesichtspunkte berücksichtigt: 
+− 
+Personenschutz: die Sicherheit des Betriebspersonals (inkludiert alle Personen, die sich innerhalb der 
+Hochspannungs-Starkstromanlagen aufhalten) und der Allgemeinbevölkerung; 
+− 
+Sachschutz; 
+− 
+Umgebungsbedingungen; 
+− 
+zu berücksichtigende Anforderungen des Betreibers, wie Instandhaltung und etwaige Möglichkeiten für 
+Erweiterungen. 
+Allgemeiner Hinweis zur OVE-Richtlinienreihe R 1000 
+Ziel der OVE-Richtlinienreihe R 1000 ist es, die Sicherheit elektrischer Anlagen durch die Berücksichtigung 
+von wesentlichen Anforderungen gemäß dieser OVE-Richtlinien ohne starren Verweis auf Normen 
+sicherzustellen. Die wesentlichen Anforderungen können durch Normen konkretisiert werden, wobei die 
+Anwendung dieser Normen empfohlen wird, aber grundsätzlich freiwillig ist. Dies entspricht der schon seit 
+langem auf europäischer Ebene im Rahmen von EU-Richtlinien im Produktbereich praktizierten Methode 
+(New Approach). 
+Der Rechtsstatus dieses elektrotechnischen Referenzdokumentes ist den jeweils geltenden Verordnungen 
+zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Gesetz oder Verordnung verbindlich erklärten rein österreichischen elektrotechnischen Normen, 
+verbindlich erklärten elektrotechnischen Referenzdokumenten oder kundgemachten elektrotechnischen 
+Normen ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt der Herausgabe dieser Normen oder Referenzdokumente. Zum Zeitpunkt der Anwendung 
+dieser Normen oder Referenzdokumente ist der durch die Verordnungen zum Elektrotechnikgesetz oder 
+gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen. 
+– 
+Die in diesen Normen enthaltenen Rechtsbelehrungen, Einleitungen, Fußnoten, Anhänge und Hinweise 
+auf Fundstellen und andere Texte werden von der Verbindlicherklärung oder von kundgemachten Normen 
+betreffenden Regelungen nicht erfasst. 
+Hinweis zur Anwendung von OVE-Richtlinie R 1000-3 
+Analog zu EU-Richtlinien wird das Element der Konformitätsvermutung bei Anwendung besonders benannter 
+elektrotechnischen Normen und elektrotechnischer Referenzdokumente verwendet. Dies bedeutet, dass die 
+Konformität mit den wesentlichen Anforderungen der vorliegenden OVE-Richtlinie bei der Errichtung von 
+Hochspannungsanlagen vermutet wird, wenn sie mit den elektrotechnischen Normen und elektrotechnischen 
+Referenzdokumenten gemäß Anhang A (Literaturhinweise) übereinstimmen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+4 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 5/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+5 
+ 
+ 
+Anwendungsbereich  
+1
+Diese OVE-Richtlinie R 1000-3 legt die wesentlichen Anforderungen für die Projektierung und Errichtung von 
+Hochspannungs-Starkstromanlagen in Netzen mit einer Nennwechselspannung über 1 kV und Nennfrequenz 
+bis 50 Hz fest. 
+ANMERKUNG 
+Im Zuge der Instandhaltung sind die bei der Projektierung und Errichtung von Hochspannungs-
+Starkstromanlagen geltenden wesentlichen Anforderungen einzuhalten. 
+Im Sinne dieser Richtlinie gilt als eine Starkstromanlage eine der folgenden:  
+a) Schalt- und Umspannanlagen, einschließlich Schaltanlagen zur Speisung von Bahnanlagen. 
+b) Elektrische Anlagen auf Masten oder in Türmen. 
+Schaltgeräte 
+und/oder 
+Transformatoren 
+außerhalb 
+abgeschlossener 
+elektrischer 
+Betriebsstätten. 
+c) Eine (oder mehrere) Stromerzeugungsanlage(n) an einem räumlich begrenzten Ort. 
+Die Anlage enthält Generatoren und Transformatoren mit zugehörigen Schaltgeräten und 
+elektrischen Hilfseinrichtungen. 
+d) Das elektrische Netz einer Fabrik, Industrieanlage oder anderer industrieller, landwirtschaftlicher, 
+gewerblicher oder öffentlicher Räumlichkeiten. 
+Dies umfasst:  
+− 
+Schalt- und Umspannungsanlagen, unabhängig von der Nutzung der Anlage wie: 
+− 
+öffentliche Netze; 
+− 
+Industrie; 
+− 
+Gewerbe; 
+− 
+Landwirtschaft; 
+− 
+Produktion; 
+− 
+einschließlich Schaltanlagen zur Speisung von Bahnanlagen; 
+− 
+Anlagen auf Masten; 
+− 
+in Türmen wie z. B. Windkraftanlagen; 
+− 
+Schaltgeräte. 
+− 
+Stromerzeugungsanlage(n) an einem räumlich begrenzten Ort mit den zugehörigen Generatoren, 
+Transformatoren, Schaltgeräten und elektrischen Hilfseinrichtungen; 
+− 
+Verbindungen zwischen elektrischen Anlagen, bis zu 120 m räumlicher Abstand zwischen den 
+Anschlusspunkten in den Anlagen; 
+− 
+Aufstellung von fabrikfertigen Schaltanlagen und fabrikfertigen Stationen mit Hochspannung. 
+Sie ist nicht anzuwenden auf:  
+− 
+Verbindungen zwischen getrennten Anlagen, wie Freileitungen, Kabeln, gasisolierte Leitungen (GIL) 
+u.dgl.;  
+− 
+Verbindungen zwischen Stromerzeugungsanlagen an unterschiedlichen Orten;  
+− 
+Elektrische Bahnen; 
+− 
+Bergwerksanlagen; 
+− 
+Leuchtstoffröhrenanlagen; 
+− 
+Anlagen auf Schiffen und Anlagen auf Offshore-Plattformen der Offshore-Öl-Wirtschaft; 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+5 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 6/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+6 
+ 
+− 
+Elektrostatische Einrichtungen (z. B. Elektrofilter, Pulverbeschichtungsanlagen); 
+− 
+Prüffelder; 
+− 
+Medizinische Einrichtungen (z. B. Röntgeneinrichtungen);  
+− 
+Ausführung von fabrikfertigen, Schaltanlagen und fabrikfertigen Stationen mit Hochspannung; 
+− 
+Anforderungen zur Durchführung von Arbeiten an elektrischen Anlagen unter Spannung.  
+ 
+Begriffe 
+2
+Für die Anwendung dieser OVE-Richtlinie gelten die folgenden Begriffe: 
+2.1 Allgemeine Begriffe 
+ 
+ 
+2.1.1
+elektrisches Betriebsmittel 
+Produkt, das zum Zweck der Erzeugung, Umwandlung, Übertragung, Verteilung oder Anwendung von 
+elektrischer Energie benutzt wird, zum Beispiel Maschinen, Transformatoren, Schaltgeräte und Steuergeräte, 
+Messgeräte, Schutzeinrichtungen, Kabel und Leitungen, elektrische Verbrauchsmittel 
+ 
+ 
+2.1.2
+Nennwert 
+Wert einer Größe, der zur Bezeichnung und Identifizierung eines Bauelements, eines Geräts, einer 
+Ausrüstung oder eines Systems verwendet wird 
+ 
+ 
+2.1.3
+Bemessungswert 
+Wert einer Größe, der für Spezifikationszwecke verwendet wird und für festgelegte Betriebsbedingungen 
+eines Bauelements, eines Geräts, einer Ausrüstung oder eines Systems gilt 
+ 
+ 
+2.1.4
+höchste Spannung der Anlage 
+höchster Effektivwert der Spannung (Phase-Phase), für die die Isolation der Anlage ausgelegt ist 
+ 
+ 
+2.1.5
+aktives Teil 
+Leiter oder leitfähiges Teil, der/das dazu vorgesehen ist, im normalen Betrieb unter Spannung zu stehen, 
+einschließlich eines Neutralleiters, vereinbarungsgemäß jedoch nicht ein PEN-Leiter, PEM-Leiter oder ein 
+PEL-Leiter 
+Anmerkung 1 zum Begriff 
+Dieser Begriff besagt nicht unbedingt, dass das Risiko eines elektrischen Schlags besteht. 
+ 
+ 
+2.1.6
+Hochspannung 
+Wechselspannung größer 1 000 V 
+ 
+ 
+2.1.7
+Niederspannung 
+Wechselspannung kleiner oder gleich 1 000 V 
+ 
+ 
+2.1.8
+Betrieb 
+alle Arbeiten, sowohl elektrische als auch nicht elektrische Arbeiten, die zur Funktion der Starkstromanlage 
+notwendig sind 
+Anmerkung 1 zum Begriff 
+Diese Arbeiten beinhalten Schalten, Steuern, Überwachen und Instandhalten. 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+6 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 7/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+7 
+ 
+ 
+ 
+2.1.9
+elektrotechnische Arbeiten 
+Arbeiten an, mit oder in der Nähe einer Starkstromanlage, z. B. Erproben und Messen, Instandsetzen, 
+Auswechseln, Ändern, Erweitern, Errichten und Prüfen 
+ 
+ 
+2.1.10
+Kurzschluss 
+zufällig oder absichtlich entstandener Strompfad zwischen zwei oder mehr leitfähigen Teilen, durch den die 
+elektrischen Potentialdifferenzen zwischen diesen leitfähigen Teilen auf einen Wert gleich null oder nahezu 
+null abfallen 
+2.2 Begriffe bezüglich Anlagen 
+ 
+ 
+2.2.1
+abgeschlossene elektrische Betriebsstätte 
+Raum oder Ort für den Betrieb elektrischer Anlagen und Betriebsmittel, der unter Verschluss gehalten wird 
+und eindeutig durch geeignete Warnschilder gekennzeichnet ist. Zutritt haben Elektrofachkräfte und 
+elektrotechnisch unterwiesene Personen oder Laien, letztere jedoch nur in Begleitung von Elektrofachkräften 
+oder elektrotechnisch unterwiesenen Personen. Der Zugang kann z. B. durch Öffnen einer Tür oder Entfernen 
+einer Schutzabdeckung mit Hilfe eines Schlüssels oder eines Werkzeugs erfolgen 
+ 
+ 
+2.2.2
+Sammelschiene 
+Leiter mit zugehörigen Anschlüssen, Verbindungen und isolierten Stützen, der eine galvanische Verbindung 
+zwischen einer Anzahl von Stromkreisen oder einzelnen Geräten herstellt 
+2.3 Begriffe bezüglich Anlagenarten 
+ 
+ 
+2.3.1
+Station 
+Teil eines elektrischen Netzes, der an einem bestimmten Ort hauptsächlich die Enden der Übertragungs- oder 
+Verteilungsleitungen, Schaltanlagen, Gebäude und möglicherweise Transformatoren umfasst. Eine Station 
+enthält im Allgemeinen Einrichtungen für Zwecke der Netzsicherheit und -führung (z. B. Schutzeinrichtungen) 
+Anmerkung 1 zum Begriff:  Die Station kann entsprechend der Art des Netzes näher gekennzeichnet werden. 
+BEISPIEL 1 
+Übertragungsstation (eines Übertragungsnetzes), Verteilungsstation, 400-kV-Station, 20-kV-Station. 
+ 
+ 
+2.3.2
+Anlage in offener Bauweise 
+Anlagen, deren Betriebsmittel keinen Schutz gegen direktes Berühren haben 
+ 
+ 
+2.3.3
+Anlage in gekapselter Bauweise 
+Anlagen, deren Betriebsmittel einen Schutz gegen direktes Berühren haben 
+ 
+ 
+2.3.4
+Schaltfeld oder Schaltzelle 
+jeder Abgang von einer Sammelschiene in einer Anlage 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+7 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 8/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+8 
+ 
+2.4 Begriffe bezüglich Schutzmaßnahmen gegen elektrischen Schlag 
+ 
+ 
+2.4.1
+Schutz gegen direktes Berühren 
+Maßnahmen, die verhüten, dass Personen mit ihren Körperteilen oder Gegenständen in gefährliche Nähe von 
+aktiven Teilen (Erreichen der Gefahrenzone) oder von solchen Teilen gelangen, die eine gefährliche 
+Spannung führen können 
+ 
+ 
+2.4.2
+Schutz bei indirektem Berühren 
+Schutz von Personen vor Gefahren, die im Fehlerfall beim Berühren zugänglicher leitfähiger Teile elektrischer 
+Betriebsmittel oder fremder leitfähiger Teile entstehen können 
+ 
+ 
+2.4.3
+Umhüllung (Kapselung) 
+Teil, das Betriebsmittel gegen bestimmte äußere Einflüsse schützt und durch das Schutz gegen direktes 
+Berühren in allen Richtungen gewährt wird 
+ 
+ 
+2.4.4
+Schutzabdeckung 
+Teil, das Schutz gegen direktes Berühren aus allen üblichen Zugriffsrichtungen bietet  
+ 
+ 
+2.4.5
+Schutzhindernis 
+Teil, das unabsichtliches direktes Berühren, nicht aber direktes Berühren durch eine absichtliche Handlung 
+verhindert 
+2.5 Begriffe bezüglich Abständen 
+ 
+ 
+2.5.1
+Luftstrecke 
+Abstand zwischen zwei leitfähigen Teilen längs eines Fadens, der auf dem kürzesten Weg zwischen diesen 
+Teilen gespannt ist 
+ 
+ 
+2.5.2
+Mindestabstand 
+N 
+kleinste zulässige Luftstrecke zwischen aktiven Teilen oder zwischen aktiven Teilen und Erde 
+ 
+ 
+2.5.3
+Schutzvorrichtungsabstand für Abdeckungen 
+kleinste zulässige Luftstrecke zwischen Schutzabdeckung und aktiven Teilen oder solchen Teilen, die eine 
+gefährliche Spannung annehmen können 
+ 
+ 
+2.5.4
+Schutzvorrichtungsabstand für Hindernisse 
+kleinste zulässige Luftstrecke zwischen Schutzhindernis und aktiven Teilen oder solchen Teilen, die eine 
+gefährliche Spannung annehmen können 
+ 
+ 
+2.5.5
+Gefahrenzone 
+DL 
+Bereich ohne vollständigen Schutz gegen direktes Berühren, der durch den Mindestabstand (DL) um aktive 
+Teile begrenzt ist (siehe Bild 4) 
+Anmerkung 1 zum Begriff: Das Erreichen der Gefahrenzone wird dem Berühren spannungsführender Teile 
+gleichgesetzt. 
+Anmerkung 2 zum Begriff: Eine zusätzliche Definition der Gefahrenzone (DL) ist im allgemein anerkannten Stand der 
+Technik für den Betrieb elektrischer Anlagen enthalten. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+8 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 9/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+9 
+ 
+ 
+ 
+2.5.6
+Annäherungszone 
+DV 
+Bereich, der die Gefahrenzone umgibt und dessen äußere Grenze durch den Abstand DV festgelegt ist (siehe 
+Bild 4) 
+Anmerkung 1 zum Begriff: Die äußere Grenze der Annäherungszone hängt von der Spannung der aktiven Teile ab. 
+Anmerkung 2 zum Begriff: Arbeiten in der Annäherungszone umfasst alle Tätigkeiten, bei denen der Arbeitende sich 
+entweder in diesem Bereich aufhält oder mit Körperteilen, Werkzeugen, Ausrüstungen oder Geräten in diesen Bereich 
+eindringt, die Gefahrenzone jedoch nicht erreicht. 
+Anmerkung 3 zum Begriff: Eine zusätzliche Definition der Annäherungszone (DV) ist im allgemein anerkannten Stand 
+der Technik für den Betrieb elektrischer Anlagen enthalten. 
+ 
+ 
+2.5.7
+Mindesthöhe 
+H  
+kleinste zulässige vertikale Luftstrecke zwischen begehbaren Flächen und aktiven Teilen ohne 
+Schutzvorrichtungen oder solchen Teilen, die eine gefährliche Spannung annehmen können (siehe Bild 4) 
+2.6 Begriffe bezüglich Steuerung und Schutz 
+ 
+ 
+2.6.1
+Verriegelungseinrichtung 
+Einrichtung, die die Betätigung eines Schaltgeräts von der Stellung oder der Betätigung eines oder mehrerer 
+anderer Betriebsmittel abhängig macht 
+ 
+ 
+2.6.2
+automatische Wiedereinschaltung (Kurzunterbrechung) 
+von einer automatischen Einrichtung gesteuerte Wiedereinschaltung des einem fehlerbehafteten Teil des 
+Netzes zugeordneten Leistungsschalters nach einer Dauer, innerhalb der das Verschwinden eines 
+vorhergegangenen Fehlers zu erwarten ist 
+2.7 Begriffe bezüglich Erdung 
+ 
+ 
+2.7.1
+(örtliche) Erde 
+Teil der Erde, der sich im elektrischen Kontakt mit einem Erder befindet und dessen elektrisches Potential 
+nicht notwendigerweise null ist 
+Anmerkung 1 zum Begriff: Das elektrische Potential von leitfähigem Erdreich wird an jedem Punkt vereinbarungsgemäß 
+gleich null gesetzt. 
+ 
+ 
+2.7.2
+Bezugserde (ferne Erde) 
+Teil der Erde, der als elektrisch leitfähig angesehen wird, außerhalb des Einflussbereichs von relevanten 
+Erdungsanlagen liegt und dessen elektrisches Potential durch Vereinbarung gleich null gesetzt wird 
+Anmerkung 1 zum Begriff: Unter „Erde“ ist hier der Planet mit seiner gesamten Substanz zu verstehen. 
+ 
+ 
+2.7.3
+Erder 
+leitfähiges Teil, das in ein bestimmtes leitfähiges Medium, zum Beispiel Beton oder Koks, eingebettet sein 
+kann und in elektrischem Kontakt mit Erde steht 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+9 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 10/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+10 
+ 
+ 
+ 
+2.7.4
+Erdungsleiter 
+Leiter, der einen Strompfad oder einen Teil des Strompfads zwischen einem gegebenen Punkt in einem Netz, 
+in einer Anlage oder in einem Betriebsmittel und einem Erder herstellt 
+Anmerkung 1 zum Begriff: Wenn die Verbindung zwischen einem Anlagenteil und dem Erder über eine Trennlasche, 
+einen Trennschalter, eine Zähl- oder Kontrollfunkenstrecke für Überspannungsableiter usw. vorgenommen wird, dann ist 
+nur der Teil der Verbindung ein Erdungsleiter, der ständig an den Erder angeschlossen ist. 
+ 
+ 
+2.7.5
+Potentialausgleichsleiter 
+Schutzleiter zum Sicherstellen des Potentialausgleiches 
+ 
+ 
+2.7.6
+Erdungsanlage 
+Gesamtheit der zum einzelnen oder gemeinsamen Erden eines Betriebsmittels oder einer Anlage 
+erforderlichen Verbindungen und Erder 
+ 
+ 
+2.7.7
+Erdungsspannung (EPR) 
+UE 
+Spannung zwischen einer Erdungsanlage und der Bezugserde 
+ 
+ 
+2.7.8
+Potential 
+Spannung zwischen einem Betrachtungspunkt und der Bezugserde 
+ 
+ 
+2.7.9
+Berührungsspannung 
+UT 
+Spannung zwischen leitfähigen Teilen, wenn diese gleichzeitig berührt werden 
+Anmerkung 1 zum Begriff: Der Wert der Berührungsspannung kann durch die Impedanz des mit diesen leitfähigen 
+Teilen in elektrischem Kontakt stehenden Menschen erheblich beeinflusst werden. 
+ 
+ 
+2.7.10
+Schrittspannung 
+US 
+Spannung zwischen zwei Punkten auf der Erdoberfläche, die 1 m voneinander entfernt sind, was als 
+Schrittlänge eines Menschen angenommen wird 
+ 
+ 
+2.7.11
+Potentialverschleppung 
+Verschleppung des Potentials einer Erdungsanlage durch einen mit dieser verbundenen Leiter (z. B. 
+Kabelschirm, PEN-Leiter, Rohrleitung, Gleise) in Gebiete mit geringer oder keiner Potentialanhebung 
+gegenüber der Bezugserde, so dass an diesem Leiter ein Potentialunterschied gegen die Umgebung 
+abgreifbar ist 
+Anmerkung 1 zum Begriff: Das gilt auch für einen Leiter, der aus dem Bereich der Bezugserde kommt und in den 
+Bereich des angehobenen Erdpotentials führt. 
+ 
+ 
+2.7.12
+globales Erdungssystem 
+ein durch die Verbindung von örtlichen Erdungsanlagen hergestelltes Erdungssystem, das sicherstellt, dass 
+durch 
+den 
+geringen 
+gegenseitigen 
+Abstand 
+dieser 
+Erdungsanlagen 
+keine 
+gefährlichen 
+Berührungsspannungen auftreten 
+Anmerkung 1 zum Begriff: Solche Systeme bewirken eine Verteilung der Erdfehlerströme in der Weise, dass die 
+Erdungsspannung der örtlichen Erdungsanlage reduziert wird. Solch ein System bildet eine Quasiäquipotentialfläche. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+10 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 11/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+11 
+ 
+Anmerkung 2 zum Begriff: Das Bestehen eines globalen Erdungssystems kann durch Muster-Messungen oder 
+Berechnungen für typische Anordnungen nachgewiesen werden. Typisch für globale Erdungssysteme sind Stadtzentren, 
+städtische oder industrielle Bereiche mit verteilten Nieder- und Hochspannungserdungen. 
+ 
+ 
+2.7.13
+Körper (eines elektrischen Betriebsmittels) 
+leitfähiges Teil eines Betriebsmittels, das berührt werden kann und üblicherweise nicht unter Spannung steht, 
+aber unter Spannung geraten kann, wenn die Basisisolierung versagt 
+ 
+ 
+2.7.14
+PEN-Leiter 
+Leiter, der zugleich die Funktionen eines Schutzerdungsleiters und eines Neutralleiters erfüllt 
+ 
+ 
+2.7.15
+Erdfehler  
+Erdschluss  
+Fehler, der dadurch verursacht wird, dass ein Leiter mit Erde verbunden wird oder dass der 
+Isolationswiderstand zur Erde kleiner wird gegenüber dem spezifizierten Wert 
+Anmerkung 1 zum Begriff: Erdfehler, an denen zwei oder mehrere Außenleiter desselben Netzes an unterschiedlichen 
+Stellen beteiligt sind, werden als Doppel- oder Mehrfacherdschluss bezeichnet. 
+ 
+Grundlegende Anforderungen  
+3
+Grundsätzlich müssen Hochspannungs-Starkstromanlagen so errichtet, betrieben und instandgesetzt werden, 
+dass sie unter den zu erwartenden Umgebungsbedingungen geeignet sind den Personen und Sachschutz zu 
+gewährleisten. Sie müssen so geplant, errichtet, geprüft und instandgehalten werden, dass sie die an sie 
+gestellten elektrischen, mechanischen, chemischen, und klimatischen Anforderungen erfüllen und deren 
+Einwirkungen sicher standhalten.  
+Im Rahmen von Konzeption, Ausführung, Instandhaltung und Betrieb von Hochspannungs-Starkstromanlagen 
+müssen die nachstehenden Gesichtspunkte berücksichtigt und gewährleistet sein: 
+− 
+Personenschutz: die Sicherheit des Betriebspersonals (inkludiert alle Personen, die sich innerhalb der 
+Hochspannungs-Starkstromanlagen aufhalten) und der Allgemeinbevölkerung; 
+− 
+Sachschutz; 
+− 
+Umgebungsbedingungen; 
+− 
+die vereinbarten Anforderungen des Betreibers, wie Instandhaltung und etwaige Möglichkeiten für 
+Erweiterungen. 
+Im Hinblick auf die grundsätzlichen Anforderungen an Starkstromanlagen, die am Einsatzort zu erwartenden 
+elektrischen, mechanischen, klimatischen und Umgebungseinflüssen standzuhalten, sind für die Auslegung 
+(Konzeption, Ausführung, Instandhaltung und Betrieb) nachfolgende  
+− 
+Allgemeine Anforderungen, 
+− 
+Spezifische Anforderungen und 
+− 
+Systematische Anforderungen 
+zu berücksichtigen/einzuhalten/zu gewährleisten und mit dem Lieferanten/Hersteller zu vereinbaren. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+11 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 12/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+12 
+ 
+3.1 Allgemeine Anforderungen  
+Allgemeine Anforderungen wie: 
+− 
+Art und Zweck der Anlage, wie: 
+− 
+Schaltanlage; 
+Freiluft-, Innenraum-Schaltanlagen 
+− 
+luftisolierte Schaltanlagen (AIS); 
+− 
+gasisolierte Schaltanlagen (GIS); 
+− 
+flüssigisolierte Schaltanlagen; 
+− 
+feststoffisolierte Schaltanlagen. 
+− 
+Umspannanlage; 
+− 
+Stromerzeugungsanlage; 
+− 
+Industrieanlage; 
+− 
+Anlage zum Zweck der öffentlichen Stromversorgung. 
+− 
+Anforderungen des Betreibers, wie: 
+− 
+Spannungskriterien; 
+− 
+Zuverlässigkeit; 
+− 
+Verfügbarkeit und Fähigkeit des elektrischen Netzes, den Einflüssen von vorübergehenden 
+Beanspruchungen standzuhalten, wie: 
+− 
+Anlauf von großen Motoren; 
+− 
+kurze Leistungsausfälle und Wiederherstellung der Versorgung; 
+− 
+besondere Betriebsanforderungen. 
+− 
+Bei Erzeugungsanlagen die am Netzanschlusspunkt einzuhaltenden Netzanschlussbedingungen. 
+− 
+Sicherheit 
+für 
+das 
+Betriebspersonal 
+(inkludiert 
+alle 
+Personen, 
+die 
+sich 
+innerhalb 
+der 
+Hochspannungsanlagen-Starkstromanlagen aufhalten) und für die Allgemeine Bevölkerung; 
+− 
+Klimaeinfluss; 
+− 
+Möglichkeit für Erweiterungen (soweit vom Betreiber gefordert) und für Instandhaltung. 
+3.2 Spezifische Anforderungen 
+ Elektrische Anforderungen 
+3.2.1
+Elektrische Anforderungen wie: 
+− 
+Art der Sternpunkterdung; 
+− 
+Bemessungs-Spannungen, (Bemessungs-Blitzstoßspannung, Bemessungs-Kurzzeit-Wechselspannung, 
+Bemessungs-Schaltstoßspannungen), höchste Spannung der Anlage, Betriebs-Spannung; 
+− 
+Bemessungs-Betriebsstrom; 
+− 
+Bemessungs-Kurzschlussstrom; 
+− 
+Bemessungsfrequenz; 
+− 
+Korona; 
+− 
+Elektrische und magnetische Felder; 
+− 
+Überspannungen; 
+− 
+Oberschwingungen; 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+12 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 13/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+13 
+ 
+− 
+Automatische Wiedereinschaltung. 
+ Mechanische Anforderungen 
+3.2.2
+Mechanische Anforderungen für Betriebsmittel und Tragkonstruktionen inklusive Fundamentierungen. 
+Bemessungs-Beanspruchungen von Betriebsmitteln (inkl. Hauptleitern) und Tragkonstruktionen wie: 
+− 
+Lasten im Normallastfall bzw. Ausnahmelastfall; 
+− 
+Zuglast; 
+− 
+Montagelast; 
+− 
+Eislast; 
+− 
+Windlast; 
+− 
+Schaltkräfte; 
+− 
+Kurzschlusskräfte; 
+− 
+Wegfall eines Leiterzuges; 
+− 
+Schwingungen; 
+− 
+Erdbebenkräfte. 
+ Klima- und Umweltbedingungen 
+3.2.3
+Klima- und Umweltbedingungen wie: 
+− 
+Temperaturbereich; 
+− 
+Windgeschwindigkeit; 
+− 
+Luftfeuchtigkeit; 
+− 
+Verschmutzung (z. B. Salznebel, Staubbelastung, chemische Einflüsse u. dgl.); 
+− 
+Schnee und Eis; 
+− 
+Hochwasser; 
+− 
+Sonneneinstrahlung; 
+− 
+UV-Einstrahlung; 
+− 
+Aufstellungshöhe (Luftdruck). 
+3.3 Systematische Anforderungen 
+Systematische Anforderungen wie: 
+− 
+Isolation; 
+− 
+Betriebsmittel; 
+− 
+Struktur und Aufbau der Anlage; 
+− 
+Schutzmaßnahmen; 
+− 
+Hilfseinrichtungen, Steuerungs- und Schutzsysteme; 
+− 
+Erdungsanlagen; 
+− 
+Inspektion und Prüfung; 
+− 
+Betriebs- und Wartungsanleitungen (z. B. Revisionsintervalle). 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+13 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 14/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+14 
+ 
+ 
+Isolation 
+4
+Die Isolation hat alle Anforderungen im Kontext der Isolationskoordination für Personen- und Anlagenschutz 
+zu erfüllen. Bei Einhaltung der erforderlichen Mindestabstände, die als Basiswerte für Schutzeinrichtungen, 
+Abständen zu Gebäuden, Mindesthöhen, u. dgl. gelten, ist eine dielektrische Prüfung zum Nachweis der 
+Spannungsfestigkeit nicht erforderlich. 
+Die Mindestabstände sind aus Abschnitt 6.2.3, Tabelle 1 und Tabelle 2 sowie Abschnitt 6.3.1, Tabelle 3 
+ersichtlich. 
+Hinsichtlich der Wahl des Isolationspegels müssen alle Typen von Hochspannungsanlagen in Bezug auf 
+Mindestabstände zwischen den Phasen bzw. Phase/Erde sowie dem Isolationspegel der höchsten Spannung 
+der Anlage (Um) bzw. der Stehstoßspannung entsprechen. 
+Bei der Auswahl bzw. Auslegung des zutreffenden Isolationspegels sind die entsprechende Netzkonfiguration, 
+die geforderte Betriebssicherheit und die Betriebszustände des Anlagenbetreibers zu Grunde zu legen. 
+Im Fall von galvanisch verbundenen Netzen unterschiedlicher Betreiber, hat eine Koordination hinsichtlich 
+Isolationspegel zu erfolgen.  
+Abweichende Mindestabstände unter besonderen Bedingungen (wie Phasenopposition, unterschiedliche 
+Isolationspegel, Einfluss von Kurzschlusskräften, Windausschwingen, Kettenbruch u. dgl.), sind bei der 
+Planung und Errichtung besonders zu berücksichtigen. 
+ 
+Betriebsmittel 
+5
+Die in Hochspannungsanlagen eingesetzten Betriebsmittel müssen so konstruiert sein, dass sie unter allen 
+am Einbauort zu erwartenden Umwelteinflüssen, entsprechend ihrer Spezifikation funktionssicher und 
+zuverlässig sind sowie den Personenschutz während der Montage, des Betriebes und der Instandhaltung 
+gewährleisten. 
+Die eingesetzten Betriebsmittel sind gemäß dem allgemein anerkannten Stand der Technik herzustellen, und 
+müssen den spezifizierten Anlagenerfordernissen entsprechend einzel- oder typgeprüft sein. 
+ANMERKUNG 
+Für Betriebsmittel bestehen gesonderte Technische Bestimmungen 
+5.1 Schaltgeräte 
+Die Bemessungsdaten von Schaltgeräten, die die jeweiligen Produktnormen darstellen, müssen dem 
+allgemein anerkannten Stand der Technik entsprechen. Besondere Belastungsfälle, wie z. B. das Schalten 
+von kapazitiven und induktiven Strömen, wie etwa beim Schalten von z. B. Abgängen mit Kondensatorbänken 
+oder großen Transformatoren und Generatoren, sind entsprechend zu berücksichtigen. 
+5.2 Transformatoren und Drosselspulen 
+Bei der Aufstellung von Transformatoren und Drosselspulen sind u.a. folgende Anforderungen einzuhalten: 
+− 
+ausreichende Kühlung; 
+− 
+Brandschutz (inkl. Evaluierung von Brandgefahr und Brandrisiko); 
+− 
+Gewässerschutz. 
+5.3 Messwandler  
+Messwandler sind so einzubauen, dass die Zugänglichkeit der Sekundäranschlüsse gewährleistet ist. Die 
+Sekundärkreise von Messwandlern sind zu erden, die Wahl des Erdungspunktes muss unter der Prämisse 
+der Vermeidung von elektrischer Beeinflussung erfolgen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+14 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 15/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+15 
+ 
+5.4 Überspannungsableiter  
+Überspannungsableiter sind so einzubauen, dass von ihnen keine Personengefährdung ausgeht. 
+5.5 Kondensatoren  
+Beim Einsatz von Kondensatoren sind Oberschwingungen, die zu gefährlichen Resonanzen und 
+Überspannungen führen können, zu berücksichtigen. Gegebenenfalls sind Vorkehrungen, zur Abwendung der 
+Gefährdung zu ergreifen (z. B. durch Einbau von Bauteilen mit dämpfender Wirkung). 
+5.6 Isolatoren  
+Die Ausführung von Isolatoren (Isolatorprofile) kann vom Betreiber festgelegt werden. 
+Wenn keine Festlegungen getroffen wurden, ist für den Mindestkriechweg der allgemein anerkannte 
+internationale Stand der Technik heranzuziehen. 
+Alle Freiluftisolatoren müssen eine Beregnungsprüfung nach dem allgemein anerkannten internationalen 
+Stand der Technik bestehen. 
+5.7 Kabel/Leitungen 
+Die zu verlegenden Kabel müssen dem Verwendungszweck und der Verlegungsart entsprechen. 
+Kabel/Leitungen sind für alle vorhersehbaren und vereinbarten Betriebsbedingungen im zulässigen 
+Temperaturbereich auszulegen. Auch der Anschluss an Betriebsmitteln darf keine unzulässig hohen 
+Temperaturen erfahren. 
+5.8 Sicherungen  
+Sicherungen sind so anzuordnen, dass im Betrieb, beim Auswechseln und bei Arbeiten in der Nähe, keine 
+Gefahr für Personen entsteht. 
+5.9 Elektrische und mechanische Verriegelungen  
+Es sind Verriegelungen derart vorzusehen, dass Auswirkungen von Fehlbedienungen möglichst 
+ausgeschlossen werden können. 
+Verriegelungen können auf mechanischer und/oder elektrischer/elektronischer Basis erfolgen. 
+Verriegelungen müssen nach dem dokumentierten allgemein anerkannten Stand der Technik fehlersicher 
+ausgeführt sein. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+15 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 16/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+16 
+ 
+ 
+Anlagen 
+6
+6.1 Allgemeine Anforderungen 
+Dieser Abschnitt enthält nur allgemeine Anforderungen an Anlagen im Hinblick auf die Schaltung, 
+Schaltungsdokumentation, Transportwege, Beleuchtung, Betriebssicherheit und Bezeichnungen. 
+Die angegebenen Abstände, Luftstrecken und Maße sind die kleinsten zulässigen Werte für sicheren Betrieb. 
+Sie beruhen im Allgemeinen auf den kleinsten Werten die in den Normen enthalten sind. Jeder Betreiber darf 
+größere Werte festlegen. 
+ANMERKUNG  
+Die Mindestabstände (N) von spannungsführenden Teilen beziehen sich auf Abschnitt 6.2.3, Tabelle 1 
+und Tabelle 2 sowie Abschnitt 6.3.1, Tabelle 3 
+Bei Erweiterungen von bestehenden Anlagen dürfen die zum Zeitpunkt der Auslegung und Errichtung der zu 
+erweiternden Anlage gültigen Anforderungen angewendet werden, wenn die Schutzziele hinsichtlich des 
+Personenschutzes erfüllt werden. 
+ Schaltung – elektrische und konstruktive Anlagenkonfiguration 
+6.1.1
+Die elektrische und konstruktive Konfiguration der jeweiligen Anlage muss so ausgelegt werden, dass 
+folgenden Anforderungen entsprochen wird: 
+− 
+Gewährleistung der zu erwartenden Betriebserfordernisse; 
+− 
+Gewährleistung der Sicherheitsanforderungen hinsichtlich dem Schutz gegen direktes Berühren und bei 
+indirektem Berühren;  
+− 
+Gewährleistung der Weiterführung des Betriebs unter Fehler- und Instandhaltungsbedingungen unter 
+Beachtung der Netzkonfiguration; 
+− 
+Gewährleistung sicher, schnell und zuverlässig durchführbarer Schalthandlungen. 
+Jedes galvanisch verbundene elektrische Netz muss mit einer Erdschlussüberwachung ausgerüstet sein. Es 
+muss möglich sein, Erdschlüsse zu erfassen und abzuschalten. Die Zeitdauer vom Eintreten des 
+Erdschlusses bis zur Abschaltung hängt von der Art der Sternpunkterdung ab und liegt in der Verantwortung 
+des jeweiligen Netzbetreibers. 
+Die Anlagenkonfiguration ist so zu gestalten, dass freigeschaltete Anlagenabschnitte nicht unbeabsichtigt 
+über Betriebsmittel, wie z. B. Wandler, Transformatoren, unter Spannung gesetzt werden können. 
+Schalteinrichtungen müssen für das Bedienpersonal sicher bedienbar sein. Wenn diese allgemein zugänglich 
+sind, sind sie gegen unbefugtes Betätigen zu sichern. 
+Jede Anlage bzw. alle Anlagenteile sind so auszulegen, dass sie den am jeweiligen Netzpunkt der Anlage 
+maximal möglichen thermischen und mechanischen Beanspruchungen durch Kurzschlussströme standhalten, 
+wobei zusätzlich höhere Anforderungen durch den Betreiber der Anlage in Hinblick auf zukünftige Ausbauten 
+im Netz zu berücksichtigen sind. 
+Die Anlagenkonfiguration darf ein kurzzeitiges Zusammenschalten von normalerweise getrennt betriebenen 
+Anlagenteilen während Schalthandlungen ermöglichen, auch wenn dabei der Kurzschlussstrom die 
+Nennwerte der Anlage überschreitet. Für diese Fälle müssen geeignete Schutzmaßnahmen und/oder 
+Betriebsanweisungen vorgesehen werden, um Personen nicht zu gefährden. 
+ Dokumentation 
+6.1.2
+Die Dokumentation der Anlage muss den Letztstand abbilden, ist entsprechend dem vereinbarten Umfang, 
+unter Einhaltung der Normen und Vorschiften, in deutscher Sprache bereitzustellen. 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+16 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 17/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+17 
+ 
+Sie umfasst unter anderem: 
+− 
+Einpolige Schaltbilder; 
+− 
+Betriebsmittellisten; 
+− 
+Lage- und Dispositionspläne; 
+− 
+Erdungspläne; 
+− 
+Verdrahtungs- und Klemmenpläne; 
+− 
+Detailpläne; 
+− 
+Wartungs- und Betriebsvorschriften; 
+− 
+Prüfprotokolle. 
+ Transportwege innerhalb elektrischer Anlagen 
+6.1.3
+Die erforderlichen Transportwege müssen ausreichend dimensioniert sein, dabei sind Höhe, Breite, 
+Kurvenradien und die Tragfähigkeit von Transportwegen und eventuell zu befahrenden Bauwerken, wie z. B. 
+Kabelkollektoren, Brücken zu beachten. Diese sind zwischen dem Betreiber und dem Hersteller der Anlage zu 
+vereinbaren. 
+Vom Betreiber ist das Durchfahrts-/Transportprofil (Breite, Höhe) unterhalb von spannungsführenden Teilen 
+(ohne Schutzvorrichtungen) oder in deren Nähe, auch unter dem Gesichtspunkt späterer Wartungen, 
+vorzugeben. 
+Innerhalb abgeschlossener elektrischer Betriebsstätten ist die Durchfahrt von Fahrzeugen oder anderen 
+mobilen Einrichtungen unterhalb von spannungsführenden Teilen (ohne Schutzvorrichtungen) oder in deren 
+Nähe zulässig, wenn folgende Bedingungen erfüllt sind (siehe Bild 6): 
+− 
+Der Mindest-Transportabstand wird für das Fahrzeug, auch mit geöffneten Türen, und seine 
+Ladung eingehalten (siehe Bild 6). 
+Unter diesen Umständen dürfen Personen nur dann auf den Fahrzeugen oder mobilen 
+Einrichtungen 
+bleiben, 
+wenn 
+angemessene 
+Schutzvorrichtungen 
+(z. B. 
+das 
+Dach 
+des 
+Fahrerhauses) auf dem Fahrzeug oder mobilen Einrichtungen vorhanden sind, um sicherzustellen, 
+dass die Mindest-Transportabstände nicht unterschritten werden. 
+Für die seitlichen Abstände zwischen Transporteinheiten und spannungsführenden Teilen gelten 
+die gleichen Grundsätze. 
+− 
+Die Mindesthöhe H von spannungsführenden Teilen über begehbaren Flächen wird eingehalten 
+(siehe Abschnitt 6.2.3 – Tabelle 1 und Tabelle 2 sowie Abschnitt 6.3.1 – Tabelle 3 und Bild 1 bis 
+Bild 3). 
+− 
+Als begehbare Flächen gelten z. B.: 
+− 
+Transportwege, Verkehrswege, nicht befestigtes Gelände in einer abgeschlossenen 
+elektrischen Betriebsstätte; 
+− 
+Kronen von Einfassungen, Stütz-/Begrenzungsmauern, soweit ohne Hilfsmittel von 
+angrenzendem Gelände aus begehbar; 
+− 
+Trafofundamente; 
+− 
+Kabelkanäle, Kabelkanalabdeckungen. 
+− 
+Als nicht begehbare Flächen gelten z. B.: 
+− 
+Fundamentköpfe; 
+− 
+Steherfundamente; 
+− 
+Portalfundamente; 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+17 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 18/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+18 
+ 
+− 
+Flächen (Terrassen, Podeste, Dächer u. dgl.) können als nicht begehbar betrachtet werden 
+wenn Sie als solche gekennzeichnet sind und gegen unbeabsichtigtes Betreten geschützt sind. 
+ Wege und Zugangsbereiche 
+6.1.4
+Die 
+Breite 
+von 
+Wegen 
+und 
+Zugangsbereichen 
+muss 
+ausreichend 
+für 
+Arbeiten, 
+Bedienen, 
+Rettungsmaßnahmen und Noträumungen sowie für den Transport von Betriebsmitteln sein. 
+ANMERKUNG  
+Bereiche für Instandhalten und Bedienen in Gebäuden siehe 6.5.2.2. 
+ Beleuchtung 
+6.1.5
+Verkehrswege in Freiluftanlagen und begehbare Innenraumanlagen müssen für den normalen Betrieb mit 
+geeigneter Beleuchtung ausgerüstet sein.  
+In Freiluftanlagen mit geringer Ausdehnung und in nicht begehbaren Anlagen (z. B. fabrikfertige Anlagen) 
+kann auf eine Beleuchtung verzichtet werden. 
+ Betriebssicherheit 
+6.1.6
+Betriebliche Einrichtungen müssen so gestaltet sein, dass die Flucht- und Rettungswege sowie Notausgänge 
+im Gefahrenfall (z. B. eines Brandes) sicher benutzt werden können.  
+Die Anlagen selbst sind, soweit erforderlich und möglich, gegen Brandgefahr, Überschwemmung, 
+Verschmutzung und Auswirkungen des Straßenverkehrs zu schützen. 
+ Bezeichnungen 
+6.1.7
+Um Bedienungsfehler und Unfälle zu vermeiden, müssen entsprechende Kennzeichnungen und 
+Beschriftungen an der Anlage angebracht werden. 
+Alle wichtigen Anlagenteile, wie z. B. Sammelschienensysteme, Schaltgeräte, Schaltfelder und Leiter, sind 
+nach Vorgabe des Betreibers eindeutig zu bezeichnen und gut lesbar und dauerhaft zu beschriften. 
+Sicherheitsschilder (wie z. B. Warnschilder, Verbotsschilder, Hinweisschilder) sind entsprechend dem 
+Erfordernis für den sicheren Betrieb der Anlage, bzw. nach den Vorgaben des Betreibers, in deutscher 
+Sprache, an geeigneten Stellen in der Anlage dauerhaft anzubringen. 
+6.2 Freiluftanlagen 
+ Freiluftanlagen innerhalb abgeschlossener elektrischen Betriebsstätten 
+6.2.1
+Bei Freiluftanlagen sind die Mindestabstände einzuhalten (gemäß 6.2.3, Tabelle 1 und Tabelle 2, sowie Bild 1 
+bis Bild 5). 
+Der Zugang zu elektrischen Betriebsstätten und deren Gefahrenzonen durch Unbefugte muss verhindert 
+werden. Das bedeutet, dass äußere Umzäunungen oder vergleichbare bauliche Maßnahmen mit 
+absperrbaren Zugangstoren vorhanden sein müssen. 
+Dabei ist zu beachten, dass für Bedienung, Instandhaltung, Prüfung sowie für Montagen der erforderliche 
+Zugang für Befugte gegeben sein muss. 
+Anlagenfelder oder Anlagenabschnitte sind zu trennen. Dies kann z. B. erfolgen mittels: 
+− 
+geeigneter Abstände; 
+− 
+schützenden Abdeckungen; 
+− 
+schützenden Hindernissen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+18 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 19/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+19 
+ 
+ Mast- und Turmstationen 
+6.2.2
+Bei Mast- und Turmstationen müssen die geforderten Schutzabstände eingehalten werden (siehe auch 
+Abschnitt 6.7). Betreffend der Schnittstelle Starkstromfreileitung und Starkstromanlage Maststation ist 
+Nachstehendes zu berücksichtigen. 
+Der Starkstromfreileitung sind als aktive Teile zuzuzählen: 
+− 
+die Leiterseile samt Abspannklemmen sowie 
+− 
+die Verbindungsschlaufen von der Freileitung zum ersten Anschlusspunkt an der Maststation 
+(Trennschalter, Unterteil der HH-Sicherung sowie deren freileitungsseitigen Anschlüsse, Stützer, 
+Überspannungsableiter, u.dgl.). 
+Der Starkstromanlage Maststation sind als aktive Teile zuzuzählen: 
+− 
+die Anschlussklemmen der Hochspannungsdurchführungen des Transformators; 
+− 
+die Verbindungen zum Trennschalter bzw. zu den HH-Sicherungen; 
+− 
+die trafoseitigen Anschlüsse des Trennschalters samt den Trennmessern bzw. 
+− 
+die trafoseitigen Anschlüsse der HH-Sicherungsunterteile samt den HH-Sicherungseinsätzen. 
+ANMERKUNG 
+In inhaltlicher Übereinstimmung mit der Fachmeinung des OVE TK L mit Bezug auf die 
+60. Sitzung FA-L, 1990-05-03. 
+ Mindestabstände für Freiluftanlagen in offener Bauweise 
+6.2.3
+Im Folgenden verwendete Größen: 
+B  
+Schutzvorrichtungsabstand für Abdeckung 
+C 
+Mindestabstand für feste Wände 
+Dv 
+Annäherungszone 
+ 
+ANMERKUNG 
+im Rahmen der Errichtung der Anlage nicht zu verwechseln mit den Angaben für den 
+Betrieb elektrischer Anlagen. 
+E 
+Mindestabstand für Zäune und Gitter 
+H, H0, H´ Mindesthöhe 
+N 
+Mindestabstand 
+O  
+Schutzvorrichtungsabstand für Hindernis 
+Um 
+Bemessungsspannung der Anlage (Effektivwert der höchsten Spannung der Anlage) 
+Up 
+Bemessungs-Blitzstoßspannung der Anlage (Scheitelwert der Blitzstoßspannung – 1,2/50 µs) 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+19 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 20/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+20 
+ 
+Tabelle 1 – Mindestabstände für Freiluftanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs
+-Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Mindesthöhen über begehbaren Flächen d  
+ohne Schneehöhe a  
+Schutzvorrichtungsabstände innerhalb der Anlage 
+Schutzvorrichtungsabstände an der äußeren 
+Umzäunung 
+H 
+Mindesthöhe von 
+aktiven Teilen b  
+über  
+begehbaren Flächen 
+H0 
+Mindesthöhe des untersten 
+Teils jeder Isolation  
+über  
+einer begehbaren Fläche c 
+B1  
+bei Vollwänden oder 
+Vollwandtüren d 
+B2 
+Maschendraht, Gitter 
+oder feste Wände mit 
+Öffnungen und einer 
+Schutzart von IPXXB d 
+O2  
+bei Vollwänden oder 
+Gittern mit einer Höhe 
+von weniger als 
+1 800 mm sowie Leisten, 
+Ketten oder Seilen e 
+H '  
+ 
+C  
+bei 
+Vollwänden 
+E  
+bei Gittern 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Für aktive Teile ohne 
+Schutzvorrichtung 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H0 ≥ 2 250 mm 
+B1 = N  
+B2 = N + 80 mm 
+(Mindestabstand + 
+Länge des Prüffingers) 
+O2 = N + 300 mm,  
+mindestens 600 mm 
+Um ≤ 52 kV 
+H ' = 4 300 mm 
+Um > 52 kV 
+H ' = N + 4 500 mm 
+mind. 6 000 mm 
+C = N + 1 000  
+E = N + 1 500 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+I 
+12 
+60 
+150 
+2 500 
+2 250 
+150 
+230 
+450 
+4 300 
+1 150 
+1 650 
+I 
+12 
+75 
+150 
+2 500 
+2 250 
+150 
+230 
+450 
+4 300 
+1 150 
+1 650 
+I 
+12 
+95 
+160 
+2 500 
+2 250 
+160 
+240 
+460 
+4 300 
+1 160 
+1 660 
+I 
+24 
+95 
+160 
+2 500 
+2 250 
+160 
+240 
+460 
+4 300 
+1 160 
+1 660 
+I 
+24 
+125 
+220 
+2 500 
+2 250 
+220 
+300 
+520 
+4 300 
+1 220 
+1 720 
+I 
+24 
+145 
+270 
+2 520 
+2 250 
+270 
+350 
+570 
+4 300 
+1 270 
+1 770 
+I 
+36 
+145 
+270 
+2 520 
+2 250 
+270 
+350 
+570 
+4 300 
+1 270 
+1 770 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+20 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 21/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+21 
+ 
+Tabelle 1 – Mindestabstände für Freiluftanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs
+-Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Mindesthöhen über begehbaren Flächen d  
+ohne Schneehöhe a  
+Schutzvorrichtungsabstände innerhalb der Anlage 
+Schutzvorrichtungsabstände an der äußeren 
+Umzäunung 
+H 
+Mindesthöhe von 
+aktiven Teilen b  
+über  
+begehbaren Flächen 
+H0 
+Mindesthöhe des untersten 
+Teils jeder Isolation  
+über  
+einer begehbaren Fläche c 
+B1  
+bei Vollwänden oder 
+Vollwandtüren d 
+B2 
+Maschendraht, Gitter 
+oder feste Wände mit 
+Öffnungen und einer 
+Schutzart von IPXXB d 
+O2  
+bei Vollwänden oder 
+Gittern mit einer Höhe 
+von weniger als 
+1 800 mm sowie Leisten, 
+Ketten oder Seilen e 
+H '  
+ 
+C  
+bei 
+Vollwänden 
+E  
+bei Gittern 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Für aktive Teile ohne 
+Schutzvorrichtung 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H0 ≥ 2 250 mm 
+B1 = N  
+B2 = N + 80 mm 
+(Mindestabstand + 
+Länge des Prüffingers) 
+O2 = N + 300 mm,  
+mindestens 600 mm 
+Um ≤ 52 kV 
+H ' = 4 300 mm 
+Um > 52 kV 
+H ' = N + 4 500 mm 
+mind. 6 000 mm 
+C = N + 1 000  
+E = N + 1 500 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+I 
+36 
+170 
+320 
+2 570 
+2 250 
+320 
+400 
+620 
+4 300 
+1 320 
+1 820 
+I 
+52 
+250 
+480 
+2 730 
+2 250 
+480 
+560 
+780 
+4 300 
+1 480 
+1 980 
+I 
+72,5 
+325 
+630 
+2 880 
+2 250 
+630 
+710 
+930 
+6 000 
+1 630 
+2 130 
+I 
+123 
+450 
+900 
+3 150 
+2 250 
+900 
+980 
+1 200 
+6 000 
+1 900 
+2 400 
+I 
+123 
+550 
+1 100 
+3 350 
+2 250 
+1 100 
+1 180 
+1 400 
+6 000 
+2 100 
+2 600 
+I 
+245 
+950 
+1 900 
+4 150 
+2 250 
+1 900 
+1 980 
+2 200 
+6 400 
+2 900 
+3 400 
+I 
+245 
+1 050 
+2 100 
+4 350 
+2 250 
+2 100 
+2 180 
+2 400 
+6 600 
+3 100 
+3 600 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+21 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 22/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+22 
+ 
+Tabelle 1 – Mindestabstände für Freiluftanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs
+-Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Mindesthöhen über begehbaren Flächen d  
+ohne Schneehöhe a  
+Schutzvorrichtungsabstände innerhalb der Anlage 
+Schutzvorrichtungsabstände an der äußeren 
+Umzäunung 
+H 
+Mindesthöhe von 
+aktiven Teilen b  
+über  
+begehbaren Flächen 
+H0 
+Mindesthöhe des untersten 
+Teils jeder Isolation  
+über  
+einer begehbaren Fläche c 
+B1  
+bei Vollwänden oder 
+Vollwandtüren d 
+B2 
+Maschendraht, Gitter 
+oder feste Wände mit 
+Öffnungen und einer 
+Schutzart von IPXXB d 
+O2  
+bei Vollwänden oder 
+Gittern mit einer Höhe 
+von weniger als 
+1 800 mm sowie Leisten, 
+Ketten oder Seilen e 
+H '  
+ 
+C  
+bei 
+Vollwänden 
+E  
+bei Gittern 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Für aktive Teile ohne 
+Schutzvorrichtung 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+ 
+mit einer Mindesthöhe von 1 800 mm 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H0 ≥ 2 250 mm 
+B1 = N  
+B2 = N + 80 mm 
+(Mindestabstand + 
+Länge des Prüffingers) 
+O2 = N + 300 mm,  
+mindestens 600 mm 
+Um ≤ 52 kV 
+H ' = 4 300 mm 
+Um > 52 kV 
+H ' = N + 4 500 mm 
+mind. 6 000 mm 
+C = N + 1 000  
+E = N + 1 500 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+II 
+420 
+1 050/1 175 
+2 400 
+4 650 
+2 250 
+2 400 
+2 480 
+2 700 
+6 900 
+3 400 
+3 900 
+II 
+420 
+1 175/1 300 
+2 900 
+5 150 
+2 250 
+2 900 
+2 980 
+3 200 
+7 400 
+3 900 
+4 400 
+II 
+420 
+1 300/1 425 
+3 400 
+5 650 
+2 250 
+3 400 
+3 480 
+3 700 
+7 900 
+4 400 
+4 900 
+a 
+Bei der Einhaltung der Mindestabstände sind Niveauerhöhungen durch vorhersehbare Umwelteinflüsse, z. B durch Schneeauflage, entsprechend zu berücksichtigen. (Bauhöhe, Schneeräumung, u. dgl. ) 
+b 
+H gilt für den größten Leiterdurchhang (i.a. bei höchster Leitertemperatur oder bei -5 °C und Ausnahmezusatzlast); 
+c 
+z. B. die obere Kante eines geerdeten Isolatorsockels; 
+d 
+Bei nicht biegesteifen Abdeckungen und Maschendrähten muss der Abstand vergrößert werden um die mögliche Durchbiegung zu berücksichtigen. 
+e 
+Für Ketten und Seile muss der Mindestabstand auch unter Berücksichtigung der maximal möglichen Auslenkung gewährleistet sein. Die Anbringungshöhe von Hindernissen muss zwischen 1 200 mm und 1 400 mm liegen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+22 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 23/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+23 
+ 
+Tabelle 2 – Mindestabstände für Freiluftanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs-
+Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Abstände zu Gebäuden innerhalb einer abgeschlossenen elektrischen Betriebsstätte 
+Äußere Umzäunung/feste 
+Wände/Zugangstüren 
+Mindestabstände wenn blanke Leiter Gebäude kreuzen. 
+Mindestabstände bei Näherung blanker Leiter zu Gebäuden  
+H 
+Mindesthöhe H von aktiven Teilen über 
+Dachflächen ohne Schneehöhe a, b 
+O2  
+in seitlicher Richtung 
+vom Dachende c 
+N  
+für Außenwände ohne 
+Fenster c 
+B2 
+Außenwand mit 
+vergitterten Fenstern 
+Schutzart von IPXXB c 
+DV 
+Außenwand mit 
+unvergitterten 
+Fenstern c 
+Die Höhe von äußeren 
+Umzäunungen/festen Wänden 
+muss vom überklettern abhalten. 
+d 
+ 
+ 
+ 
+ 
+ 
+ 
+Dach bei 
+spannungsführenden 
+Leitern begehbar 
+Dach bei 
+spannungsführenden 
+Teilen nicht begehbar 
+Dach bei 
+spannungsführenden 
+Leitern begehbar 
+ 
+ 
+ 
+Mindesthöhe, 
+mit Abstand der Unterkante zum 
+Erdboden nicht größer als 
+50 mm 
+ 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H ≥ N + 500 mm 
+O2 = N + 300 mm,  
+mindestens 600 mm 
+N  
+B2 = N + 80 mm 
+(Mindestabstand + 
+Länge des Prüffingers) 
+Um ≤ 110 kV 
+DV =N +  1 000 mm 
+Um > 110 kV 
+DV = N + 2 000 mm 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+I 
+12 
+60 
+150 
+2 500 
+650 
+450 
+150 
+230 
+1 150 
+1 800 
+I 
+12 
+75 
+150 
+2 500 
+650 
+450 
+150 
+230 
+1 150 
+1 800 
+I 
+12 
+95 
+160 
+2 500 
+660 
+460 
+160 
+240 
+1 160 
+1 800 
+I 
+24 
+95 
+160 
+2 500 
+660 
+460 
+160 
+240 
+1 160 
+1 800 
+I 
+24 
+125 
+220 
+2 500 
+720 
+520 
+220 
+300 
+1 220 
+1 800 
+I 
+24 
+145 
+270 
+2 520 
+770 
+570 
+270 
+350 
+1 270 
+1 800 
+I 
+36 
+145 
+270 
+2 520 
+770 
+570 
+270 
+350 
+1 270 
+1 800 
+I 
+36 
+170 
+320 
+2 570 
+820 
+620 
+320 
+400 
+1 320 
+1 800 
+I 
+52 
+250 
+480 
+2 730 
+980 
+780 
+480 
+560 
+1 480 
+1 800 
+I 
+72,5 
+325 
+630 
+2 880 
+1 130 
+930 
+630 
+710 
+1 630 
+1 800 
+I 
+123 
+450 
+900 
+3 150 
+1 400 
+1 200 
+900 
+980 
+2 900 
+1 800 
+I 
+123 
+550 
+1 100 
+3 350 
+1 600 
+1 400 
+1 100 
+1 180 
+3 100 
+1 800 
+I 
+245 
+950 
+1 900 
+4 150 
+2 400 
+2 200 
+1 900 
+1 980 
+3 900 
+1 800 
+I 
+245 
+1 050 
+2 100 
+4 350 
+2 600 
+2 400 
+2 100 
+2 180 
+4 100 
+1 800 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+23 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 24/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+24 
+ 
+Tabelle 2 – Mindestabstände für Freiluftanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs-
+Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Abstände zu Gebäuden innerhalb einer abgeschlossenen elektrischen Betriebsstätte 
+Äußere Umzäunung/feste 
+Wände/Zugangstüren 
+Mindestabstände wenn blanke Leiter Gebäude kreuzen. 
+Mindestabstände bei Näherung blanker Leiter zu Gebäuden  
+H 
+Mindesthöhe H von aktiven Teilen über 
+Dachflächen ohne Schneehöhe a, b 
+O2  
+in seitlicher Richtung 
+vom Dachende c 
+N  
+für Außenwände ohne 
+Fenster c 
+B2 
+Außenwand mit 
+vergitterten Fenstern 
+Schutzart von IPXXB c 
+DV 
+Außenwand mit 
+unvergitterten 
+Fenstern c 
+Die Höhe von äußeren 
+Umzäunungen/festen Wänden 
+muss vom überklettern abhalten. 
+d 
+ 
+ 
+ 
+ 
+ 
+ 
+Dach bei 
+spannungsführenden 
+Leitern begehbar 
+Dach bei 
+spannungsführenden 
+Teilen nicht begehbar 
+Dach bei 
+spannungsführenden 
+Leitern begehbar 
+ 
+ 
+ 
+Mindesthöhe, 
+mit Abstand der Unterkante zum 
+Erdboden nicht größer als 
+50 mm 
+ 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H ≥ N + 500 mm 
+O2 = N + 300 mm,  
+mindestens 600 mm 
+N  
+B2 = N + 80 mm 
+(Mindestabstand + 
+Länge des Prüffingers) 
+Um ≤ 110 kV 
+DV =N +  1 000 mm 
+Um > 110 kV 
+DV = N + 2 000 mm 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+II 
+420 
+1 050/1 175 
+2 400 
+4 650 
+2 900 
+2 700 
+2 400 
+2 480 
+4 400 
+1 800 
+II 
+420 
+1 175/1 300 
+2 900 
+5 150 
+3 400 
+3 200 
+2 900 
+2 080 
+4 900 
+1 800 
+II 
+420 
+1 300/1 425 
+3 400 
+5 650 
+3 900 
+3 700 
+3 400 
+3 480 
+5 400 
+1 800 
+a 
+Wenn die Mindesthöhe durch Umwelteinflüsse verringert werden kann, z. B. durch Niveauerhöhung durch Schneeauflage ist dies entsprechend zu berücksichtigen. (Bauhöhe, Schneeräumung, u. dgl. ) 
+b 
+H gilt für den größten Leiterdurchhang; (i. a. bei höchster Leitertemperatur oder bei -5 °C und Ausnahmezusatzlast); 
+c 
+Bei den Mindestabständen ist der größte Durchhang und das Ausschwingen von Leiterseilen zu berücksichtigen 
+d 
+Zugangstüren in äußeren Umzäunungen/festen Wänden müssen mit Sicherheitsschloss ausgestattet sein. 
+Die Schutzart muss IP1x betragen, Sicherheitsschilder sind an den äußeren Umzäunungen/festen Wänden anzubringen. 
+Die Verwendung von Metallgitterzäunen mit einer Maschenweite von 50 mm x 200 mm (Breite x Höhe) ist zulässig. Die Höhe und die Ausführung müssen vom Überklettern abhalten. 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+24 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 25/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+25 
+ 
+6.3 Innenraumanlagen in offener Bauweise 
+Bei Innenraumanlagen sind die Mindestabstände einzuhalten. 
+Der Zugang zu elektrischen Betriebsstätten und deren Gefahrenzonen durch Unbefugte muss verhindert 
+werden. 
+Das bedeutet, dass absperrbare Zugangstüren vorhanden sein müssen. 
+Dabei ist zu beachten, dass für Bedienung, Instandhaltung, Prüfung sowie für Montagen der erforderliche 
+Zugang für Befugte gegeben sein muss. 
+Anlagenfelder oder Anlagenabschnitte sind zu trennen. Dies kann z. B. erfolgen mittels: 
+− 
+geeigneter Abstände; 
+− 
+schützenden Abdeckungen; 
+− 
+schützenden Hindernissen. 
+ Mindestabstände für Innenraumanlagen in offener Bauweise 
+6.3.1
+Im Folgenden verwendete Größen: 
+B  
+Schutzvorrichtungsabstand für Abdeckung 
+C 
+Mindestabstand für feste Wände 
+Dv 
+Annäherungszone 
+ 
+ANMERKUNG 
+im Rahmen der Errichtung der Anlage nicht zu verwechseln mit den Angaben für 
+den Betrieb elektrischer Anlagen. 
+E 
+Mindestabstand für Zäune und Gitter 
+H, H0 
+Mindesthöhe 
+N 
+Mindestabstand 
+O  
+Schutzvorrichtungsabstand für Hindernis 
+Um 
+Bemessungsspannung der Anlage (Effektivwert der höchsten Spannung der Anlage) 
+Up 
+Bemessungs-Blitzstoßspannung der Anlage (Scheitelwert der Blitzstoßspannung – 1,2/50 µs) 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+25 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 26/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+26 
+ 
+ 
+Tabelle 3 – Mindestabstände für Innenraumanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs
+-Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Mindesthöhe über begehbaren Flächen a 
+Schutzvorrichtungsabstände 
+H 
+Mindesthöhe von  
+aktiven Teilen  
+über  
+begehbaren Flächen 
+H0 
+Mindesthöhe des 
+untersten Teils jeder 
+Isolation über einer 
+begehbaren Fläche b 
+B1  
+bei Vollwänden oder 
+Vollwandtüren c 
+B2 
+Maschendraht, Gitter oder feste 
+Wände mit Öffnungen und einer 
+Schutzart von IPXXB c 
+O1  
+bei Vollwänden oder Gittern mit einer 
+Höhe von weniger als 1 800 mm sowie 
+Leisten, Ketten oder Seilen d 
+ 
+ 
+ 
+Für aktive Teile ohne 
+Schutzvorrichtung 
+ 
+mit einer Mindesthöhe von 1800 mm 
+ 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H0 ≥ 2 250 mm 
+B1 = N   c 
+B2 = N + 80 mm c 
+(Mindestabstand + Länge des 
+Prüffingers) 
+O1 = N + 200 mm d,  
+mindestens 500 mm 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+I 
+3,6 
+20 
+120 
+2 500 
+2 250 
+120 
+200 
+320 
+I 
+3,6 
+40 
+120 
+2 500 
+2 250 
+120 
+200 
+320 
+I 
+7,2 
+40 
+120 
+2 500 
+2 250 
+120 
+200 
+320 
+I 
+7,2 
+60 
+120 
+2 500 
+2 250 
+120 
+200 
+320 
+I 
+12 
+60 
+150 
+2 500 
+2 250 
+150 
+230 
+350 
+I 
+12 
+75 
+150 
+2 500 
+2 250 
+150 
+230 
+350 
+I 
+12 
+95 
+160 
+2 500 
+2 250 
+160 
+240 
+360 
+I 
+24 
+95 
+160 
+2 500 
+2 250 
+160 
+240 
+360 
+I 
+24 
+125 
+220 
+2 500 
+2 250 
+220 
+300 
+420 
+I 
+24 
+145 
+270 
+2 520 
+2 250 
+270 
+350 
+470 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+26 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 27/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+27 
+ 
+Tabelle 3 – Mindestabstände für Innenraumanlagen in offener Bauweise (fortgesetzt) 
+Spannungsbereich 
+Höchste 
+Spannung 
+für 
+Betriebs-
+mittel 
+ 
+ 
+Um 
+Bemessungs
+-Blitzstoß-
+spannung 
+ 
+1,2/50 µs  
+(Scheitelwert) 
+ 
+Up 
+Mindest-
+abstand  
+ 
+ 
+ 
+ 
+ 
+N 
+Mindesthöhe über begehbaren Flächen a 
+Schutzvorrichtungsabstände 
+H 
+Mindesthöhe von  
+aktiven Teilen  
+über  
+begehbaren Flächen 
+H0 
+Mindesthöhe des 
+untersten Teils jeder 
+Isolation über einer 
+begehbaren Fläche b 
+B1  
+bei Vollwänden oder 
+Vollwandtüren c 
+B2 
+Maschendraht, Gitter oder feste 
+Wände mit Öffnungen und einer 
+Schutzart von IPXXB c 
+O1  
+bei Vollwänden oder Gittern mit einer 
+Höhe von weniger als 1 800 mm sowie 
+Leisten, Ketten oder Seilen d 
+ 
+ 
+ 
+Für aktive Teile ohne 
+Schutzvorrichtung 
+ 
+mit einer Mindesthöhe von 1800 mm 
+ 
+H ≥ N + 2 250 mm, 
+mindestens 
+2 500 mm 
+H0 ≥ 2 250 mm 
+B1 = N   c 
+B2 = N + 80 mm c 
+(Mindestabstand + Länge des 
+Prüffingers) 
+O1 = N + 200 mm d,  
+mindestens 500 mm 
+kV 
+kV 
+mm 
+mm 
+mm 
+mm 
+mm 
+mm 
+I 
+36 
+145 
+270 
+2 520 
+2 250 
+270 
+350 
+470 
+I 
+36 
+170 
+320 
+2 570 
+2 250 
+320 
+400 
+520 
+I 
+52 
+250 
+480 
+2 730 
+2 250 
+480 
+560 
+680 
+I 
+72,5 
+325 
+630 
+2 880 
+2 250 
+630 
+710 
+830 
+I 
+123 
+450 
+900 
+3 150 
+2 250 
+900 
+980 
+1 100 
+I 
+123 
+550 
+1 100 
+3 350 
+2 250 
+1 100 
+1 180 
+1 300 
+a 
+H gilt für den größten Leiterdurchhang; (i. a. bei höchster Leitertemperatur oder bei -5 °C und Ausnahmezusatzlast); 
+b 
+z. B. die obere Kante eines geerdeten Isolatorsockels; 
+c 
+Bei nicht biegesteifen Abdeckungen und Maschendrähten muss der Abstand vergrößert werden um die mögliche Durchbiegung zu berücksichtigen. 
+d 
+Für Ketten und Seile muss der Mindestabstand auch unter Berücksichtigung der maximal möglichen Auslenkung gewährleistet sein. 
+Die Anbringungshöhe von Hindernissen muss zwischen 1 200 mm und 1 400 mm liegen. 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+27 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 28/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+28 
+ 
+6.4 Aufstellung von fabrikfertigen Schaltanlagen 
+ Allgemeines 
+6.4.1
+Fabrikfertige Schaltanlagen müssen entsprechend dem Einsatzort ausgewählt werden, wobei auf die 
+Druckentlastung bei Störlichtbögen besonderes Augenmerk zu legen ist.  
+Die fabrikfertigen Schaltanlagen sind entsprechend der Herstellerangaben aufzustellen.  
+Die Druckentlastung im Störlichtbogenfall ist sicherzustellen, damit eine unmittelbare Gefährdung von 
+Personen vermieden wird, beispielsweise 
+− 
+nach unten über den Kabelkeller, 
+− 
+nach oben über Leitbleche,  
+− 
+über Absorber, 
+− 
+ins Freie. 
+ Zusätzliche Anforderungen an gasisolierte metallgekapselte Schaltanlagen (GIS) 
+6.4.2
+6.4.2.1 
+Ausführung 
+Isoliergas gefüllte Schaltanlagen sind mit einer Drucküberwachung/-anzeige je Schottraum 
+auszustatten. Druckverlust muss durch eine entsprechende Situierung der Druckanzeige, bzw. 
+Meldeeinrichtung deutlich erkennbar sein. 
+Abhängig vom im größten Schottraum der Schaltanlage enthaltenen Isolier-Gasvolumens, der 
+Aufstellung und dem Raumvolumen des Aufstellungsraumes sind Maßnahmen zu berücksichtigen. 
+6.4.2.2 
+Aufstellung am Einsatzort 
+Die Umgebungsbedingungen sind bei der Auswahl von Schaltanlagen zu berücksichtigen. 
+6.4.2.3 
+Überspannungsschutz  
+Vor Inbetriebnahme der Anlage ist der Nachweis zu erbringen, dass für die Anlage und die daran 
+angeschlossenen Betriebsmittel eine entsprechende Isolationskoordination durchgeführt wurde. 
+6.4.2.4 
+Erdung 
+An die Erdungsanlage von gekapselten Schaltanlagen werden hinsichtlich EMV erhöhte 
+Anforderungen gestellt, diese sind z. B.: 
+− 
+ausreichende Anzahl von Erdungsverbindungen; 
+− 
+ausreichend niedere Impedanz der Erdungsverbindungen; 
+− 
+Eignung für Frequenzen bis in den GHz-Bereich, jedenfalls für Anlagen mit Um ≥ 123 kV. 
+6.5 Anforderungen an Gebäude 
+Bereiche und Örtlichkeiten in einem Gebäude, in/an denen elektrische Betriebsmittel für 
+Hochspannungsanlagen errichtet werden, unterliegen nachfolgenden Anforderungen. 
+ANMERKUNG 
+Betreffend die Begriffsdefinition Bauwerk und Gebäude wird auf die entsprechend 
+anzuwendende Bauordnung verwiesen. 
+ Einführung 
+6.5.1
+Gebäude müssen den jeweiligen Bauvorschriften sowie Brandschutzbestimmungen und behördlichen 
+Auflagen entsprechen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+28 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 29/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+29 
+ 
+Die statisch relevante Konstruktion des Gebäudes, insbesondere die tragenden Wände und Decken, 
+müssen den zu erwartenden Druckbelastungen, verursacht durch einen Störlichtbogen, standhalten. 
+Druckausgleichsöffnungen müssen so ausgeführt und angeordnet sein, dass während des 
+Ansprechens die Gefährdung von Personen und die Beschädigung von Sachgütern möglichst minimal 
+sind. 
+Eine Möglichkeit ist, die Druckentlastungsströmung von gefährlich heißen Gasen in die Richtung zu 
+leiten, in der sich bestimmungsgemäß keine Personen aufhalten. 
+Die Auslegung der Druckentlastungsmaßnahmen muss auf den maximal zu erwartenden 
+Kurzschlussstrom abgestimmt sein. 
+ Baubestimmungen 
+6.5.2
+6.5.2.1 
+Allgemeines 
+Tragende Bauteile, Trennwände, Verkleidungen, Gehäuse usw. müssen nach der zu erwartenden 
+Brandlast und den Umweltbedingungen ausgewählt werden. 
+Elektrische Betriebsräume müssen so ausgeführt sein, dass Wasser möglichst nicht eindringen kann 
+und Kondensation auf ein Minimum beschränkt wird. 
+Allgemein zugängliche Öffnungen in Begrenzungsbauteilen von elektrischen Betriebsräumen sind 
+gegen unzulässiges Eindringen abzusichern, so dass eine gefährliche Annäherung an aktive Teile 
+auch mit Hilfsmitteln (wie z. B. Draht) verhindert wird. 
+6.5.2.2 
+Mindestanforderungen an Betriebs und Instandhaltungsbereiche 
+Betriebs und Instandhaltungsbereiche umfassen: 
+− 
+Gänge; 
+− 
+Zugangsbereiche; 
+− 
+Transport- und Fluchtwege. 
+Tabelle 4 – Mindestens erforderliche Abmessungen 
+ 
+Abmessungen 
+in m 
+Bemerkung 
+Mindestbreite der Gänge 
+0,80 
+Keine Einschränkung durch in die Gänge hineinragenden 
+Betriebsmittel z. B. Schaltwagen in Trennstellung 
+Mindestbreite der 
+Fluchtwege  
+0,50 
+Mindestmaß auch bei voll geöffneten Schaltschranktüren  
+Mindestbreite von 
+Montage- und 
+Instandhaltungsgängen 
+0,50 
+z. B. hinter gekapselten Anlagen mit Vollwänden 
+Mindesthöhe unter 
+Decken, Abdeckungen 
+oder Umhüllungen 
+2,00 
+ausgenommen Kabelkeller 
+Maximale 
+Fluchtweglänge bei 
+Anlagen mit Um > 52 kV 
+40 
+ 
+Maximale 
+Fluchtweglänge bei 
+Anlagen mit Um ≤ 52 kV 
+20 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+29 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 30/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+30 
+ 
+zu berücksichtigen ist weiters: 
+− 
+Gewährleistung der gefahrlosen Zugänglichkeit der Anlage für das Personal; 
+− 
+Berücksichtigung der Gefährdung durch Störlichtbögen; 
+− 
+Aufschlagrichtung der Notausgangstüren in Fluchtwegrichtung; 
+− 
+Notausgangstüren von innen ohne Hilfsmittel zu öffnen; 
+− 
+Wird bei einer Mindestgangbreite von 80 cm der Fluchtweg durch in Gänge ragende 
+Schaltschranktüren eingeengt, so muss der Beschlag der Schaltschranktüre ein Schwenken der 
+Tür in Fluchtrichtung zur Einhaltung einer Breite von 80 cm ermöglichen, unabhängig davon ist die 
+Mindestfluchtwegbreite (Lichte Weite von 50 cm) auf jeden Fall einzuhalten; 
+− 
+fest eingebaute Leitern sind als Bestandteil des Fluchtweges zulässig. 
+6.5.2.3 
+Fenster 
+Die Ausführung von Fenstern muss das Eindringen Unbefugter verhindern. Geeignete Maßnahmen 
+sind z. B.: 
+− 
+Fenster aus bruchsicheren Baustoffen; 
+− 
+vergitterte Fenster; 
+− 
+Fensterunterkante mindestens 1,8 m über der Zugangsebene; 
+− 
+Fenster innerhalb einer mindestens 1,8 m hohen Umzäunung. 
+6.5.2.4 
+Türen 
+Türen zu und in Hochspannungsanlagen müssen folgende Mindestanforderungen erfüllen: 
+− 
+Außentüren, die von allgemein zugänglichen Bereichen in einen elektrischen Betriebsraum führen, 
+müssen derart ausgeführt sein, dass sie im Brandfall die Funktion als Barriere aufrecht erhalten, 
+z. B. Ausführung aus nicht brennbarem Werkstoff (Baustoffklasse A1 oder A2); 
+− 
+Öffnungsrichtung von Zugangstüren nach außen; 
+− 
+Ausrüstung von Zugangstüren von außen mit Sicherheitsschlössern; 
+Verbindungstüren von Räumen innerhalb einer abgeschlossenen elektrischen Betriebsstätte 
+müssen nicht absperrbar sein. 
+− 
+Kennzeichnung von Zugangstüren mit Sicherheitsschildern (siehe 6.1.7); 
+− 
+Mindestdurchgangslichte von Notausgangstüren – Höhe 2 m, Breite 0,75 m; 
+6.5.2.5 
+Klimatisierung und Lüftung 
+Es ist Vorsorge zu treffen, dass die von den Anlagen und Betriebsmitteln abgegebene Verlustleistung 
+derart abgeführt werden kann, dass die zulässigen Betriebsbedingungen (wie Temperatur, 
+Luftfeuchtigkeit, u. dgl.) eingehalten werden. 
+Die erforderliche Be- und Entlüftung von Batterieräumen ist zu berücksichtigen. 
+6.5.2.6 
+Gebäude, die besondere Überlegungen erfordern 
+Für die Errichtung von Hochspannungsanlagen in Räumen und Anlagen besonderer Art wie 
+− 
+Hochhäusern, 
+− 
+Krankenhäusern, 
+− 
+Schulen, 
+− 
+Versammlungsstätten, 
+sind die einschlägigen Bestimmungen und Vorschriften zu berücksichtigen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+30 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 31/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+31 
+ 
+6.6 Fabrikfertige Stationen für Hochspannung/Niederspannung 
+Im Sinne dieser OVE-Richtlinie gelten fabrikfertige Stationen für Hochspannung/Niederspannung nicht 
+als Gebäude. 
+Fabrikfertige Stationen sind so zu schützen bzw. anzuordnen, dass eine Beschädigung durch 
+Fahrzeuge möglichst ausgeschlossen wird. 
+Der Zugang für Bedienung und Instandhaltung muss unter Beachtung der Arbeits- und 
+Personensicherheit vorhanden sein. 
+6.7 Mast- und Turmstationen 
+ 
+Bild 1 – Mindestabstände für Mast- und Turmstationen 
+Bei 
+der 
+Einhaltung 
+der 
+Mindestabstände 
+sind 
+Niveauerhöhungen 
+durch 
+vorhersehbare 
+Umwelteinflüsse, z. B. durch Schneeauflage, entsprechend zu berücksichtigen (Bauhöhe, u. dgl.). 
+Seitliche Abstände sind gemäß OVE-Richtlinie R 1 einzuhalten. 
+Schalteinrichtungen 
+müssen 
+für 
+das 
+Bedienpersonal 
+sicher 
+bedienbar 
+sein. 
+Wenn 
+die 
+Schalteinrichtungen allgemein zugänglich sind, sind diese gegen unbefugtes Betätigen zu sichern. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+31 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 32/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+32 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild 2a – Schutz gegen direktes Berühren durch Hindernisse in abgeschlossenen 
+elektrischen Betriebsstätten 
+Es bedeutet: 
+H 
+Mindesthöhe von aktiven Teilen über begehbaren Flächen 
+N 
+Mindestabstand 
+O1  
+Schutzvorrichtungsabstand für Hindernis in Innenraumanlagen 
+O2  
+Schutzvorrichtungsabstand für Hindernis in Freiluftanlagen 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+32 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 33/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+33 
+ 
+ 
+ 
+ 
+Bild 2b – Schutz gegen direktes Berühren durch Abdeckungen in abgeschlossenen 
+elektrischen Betriebsstätten 
+Es bedeutet: 
+H 
+Mindesthöhe von aktiven Teilen über begehbaren Flächen 
+N 
+Mindestabstand 
+B1  
+Schutzvorrichtungsabstand für Abdeckung ohne Öffnung (feste Wände) 
+B2  
+Schutzvorrichtungsabstand für Abdeckung mit Öffnungen (Maschendraht/Gitter – IPXXB) 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+33 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 34/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+34 
+ 
+ 
+ 
+   
+Bild 3 – Schutzvorrichtungsabstände und Mindesthöhen an der äußeren Umzäunung 
+Es bedeutet: 
+N 
+Mindestabstand 
+H ' 
+Mindesthöhe aktiver Teile über begehbarer Fläche an der äußeren Umzäunung 
+a 
+Wenn der Abstand zu aktiven Teilen weniger als H beträgt, ist Schutz durch Abdeckung oder 
+Hindernis erforderlich. 
+b  
+Wenn dieser Abstand kleiner als 2 250 mm ist, ist Schutz durch Abdeckung oder Hindernis 
+erforderlich. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+34 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 35/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+35 
+ 
+ 
+ 
+ 
+  
+Bild 4 – Mindesthöhen und Mindestarbeitsabstände in abgeschlossenen elektrischen 
+Betriebsstätten 
+Es bedeutet: 
+DL 
+DL = N 
+DV  
+Annäherungszone:  
+DV = N + 1 000 mm bei Un ≤ 110 kV 
+ 
+DV = N + 2 000 mm bei Un > 110 kV 
+N  
+Mindestabstand 
+H  
+Mindesthöhe 
+ANMERKUNG 
+Abweichende Festlegungen für die Gefahrenzone (DL) und die Annäherungszone (DV) sind im 
+allgemein anerkannten Stand der Technik für den Betrieb elektrischer Anlagen enthalten. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+35 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 36/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+36 
+ 
+ 
+ 
+   
+Bild 5a – Annäherungen an Gebäude (in abgeschlossenen elektrischen Betriebsstätten) 
+Es bedeutet: 
+DV  
+Annäherungszone:  
+DV = N + 1 000 mm bei Un ≤ 110 kV 
+ 
+DV = N + 2 000 mm bei Un > 110 kV 
+N  
+Mindestabstand 
+H  
+Mindesthöhe 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+36 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 37/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+37 
+ 
+ 
+ 
+  
+Bild 5b – Annäherungen an Gebäude (in abgeschlossenen elektrischen Betriebsstätten) 
+Es bedeutet: 
+N  
+Mindestabstand 
+H  
+Mindesthöhe 
+B2  
+Schutzvorrichtungsabstand für Abdeckung mit Öffnungen: B2 ≥ N + 100 mm 
+O2  
+Schutzvorrichtungsabstand für Hindernis in Freiluftanlagen: O2 ≥ N + 300 mm (mind. 600 mm) 
+ANMERKUNG 1  
+Wenn Arbeiten auf dem Dach ausgeführt werden, während die Leiter Spannung führen, sind 
+die Mindestabstände gemäß Bild 4 einzuhalten. 
+ANMERKUNG 2  
+Abweichende Festlegungen für die Annäherungszone (DV) sind im allgemein anerkannten 
+Stand der Technik für den Betrieb elektrischer Anlagen enthalten. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+37 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 38/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+38 
+ 
+ 
+ 
+Innenraumanlage 
+ 
+ 
+Bild 6 – Transportwege innerhalb von elektrischen Anlagen 
+Es bedeutet: 
+T 
+Transport-Mindestabstand, T = N + 100 mm (mind. 500 mm)  
+N 
+Mindestabstand gemäß Abschnitt 6.2.3, Tabelle 1 und Tabelle 2 bzw. Abschnitt 6.3.1,  
+Tabelle 3 
+H  
+Mindesthöhe gemäß Abschnitt 6.2.1, Tabelle 1 und Tabelle 2 bzw. Abschnitt 6.3.1, Tabelle 3 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+38 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 39/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+39 
+ 
+ 
+Schutzmaßnahmen 
+7
+7.1 Schutz gegen direktes Berühren 
+Zum Schutz gegen direktes Berühren sind Maßnahmen anzuwenden, die verhindern, dass Personen 
+aktive Teile unbeabsichtigt berühren bzw. die Gefahrenzone um spannungsführende Teile 
+unbeabsichtigt erreichen können. 
+Der Schutz ist vorzusehen für aktive Teile, Teile die nur eine Betriebsisolierung aufweisen und Teile 
+die gefährliche Spannung annehmen können. 
+Der Schutz ist auf eine der folgende Arten herzustellen: 
+Schutz durch: 
+− 
+Umhüllung, (z. B. sichtbar geerdetes leitfähiges Schutzrohr); 
+ANMERKUNG 
+Kunststoffumhüllungen gelten als blanke Leiter hinsichtlich des Schutzes gegen 
+direktes Berühren. 
+− 
+Abdeckung (z. B. Isoliertafeln); 
+− 
+Hindernis (z. B. Abschrankung, Absperrketten, Zaun); 
+− 
+Abstand (Mindesthöhe, seitlicher Mindestabstand, Gefahrenzone). 
+7.2 Schutz bei Arbeiten an elektrischen Anlagen 
+Die Anlagen müssen so errichtet werden, dass die Sicherheitsregeln für Arbeiten an elektrischen 
+Anlagen eingehalten werden können. 
+7.3 Schutz vor Gefährdung durch Störlichtbogen 
+Die Anlage ist so auszulegen und zu errichten, dass das Bedienpersonal und die Anlage gegen das 
+Auftreten sowie die Auswirkungen von Störlichtbögen entsprechend geschützt werden. Die 
+Maßnahmen sind mit dem Anlagenbetreiber abzustimmen. 
+Störlichtbogenschutz kann z. B erreicht werden durch:  
+− 
+Schutz gegen Bedienfehler (z. B. Verriegelungseinrichtungen, u. dgl.); 
+− 
+Wahl der Betriebsmittel; 
+− 
+Gestaltung der Bediengänge; 
+− 
+Bevorzugung von geprüften gekapselten Anlagen gegenüber offenen Anlagen; 
+− 
+Auswahl der Schutzgeräte (Strombegrenzung, kurze Auslösezeit, Lichtbogenüberwachung, 
+u. dgl.). 
+7.4 Schutz gegen direkte Blitzeinschläge 
+Hochspannungsschaltanlagen müssen mit einem Blitzschutzsystem (äußerer und innerer Blitzschutz) 
+ausgestattet werden. Dabei kann zwischen Gebäuden und Freiluftschaltanlagen unterschieden 
+werden. 
+Für die Planung und Prüfung des Blitzschutzsystems muss eine Dokumentation nach dem Stand der 
+Technik vorhanden sein. In dieser Dokumentation sind die Grenzen der Gefahrenzone an 
+spannungsführende Teile (Hochspannung) einzuzeichnen. 
+Bei der Errichtung von Blitzschutzsystemen in Hochspannungsschaltanlagen ist die Mindest-
+Blitzschutzklasse II gemäß OVE-Richtlinie R 1000-2 anzuwenden. 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+39 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 40/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+40 
+ 
+Gebäude: 
+Gebäude sind bauliche Anlagen und mit einem Blitzschutzsystem nach dem Stand der Technik 
+auszurüsten. 
+Freiluftschaltanlagen: 
+Freiluftschaltanlagen sind mit Blitzschutzsystemen nach dem Stand der Technik auszustatten. Die 
+Fangeinrichtungen sind so zu positionieren, dass ein Eindringen des Blitzkanals in die Gefahrenzone 
+verhindert wird. In Freiluftschaltanlagen sind Abweichungen der Anforderungen aus der Mindest-
+Blitzschutzklasse II in Bezug auf den Blitzkugelradius = 30 · (1 + 0,15) m zulässig, wenn dies aus der 
+Lage der hochspannungsführenden Anlagenteile begründbar ist. 
+Ableitungseinrichtungen sind so auszuführen und in das Erdungssystem einzuführen, dass ein 
+sicheres Ableiten von Blitzströmen gewährleistet wird. 
+In Freiluftschaltanlagen wird der Einsatz von Blitzschutz-Fangstangen empfohlen. Ebenso können 
+leitende Konstruktionsteile mit Erderwirkung (z. B. Gerüste, Portale) als natürliche Fangeinrichtungen 
+verwendet werden. 
+Auf die Trennungsabstände zur Gefahrenzone von hochspannungsführenden Teilen ist zu achten. 
+Bei der Situierung von Fangeinrichtungen der Blitzschutzanlage sind auch Wartung und Betrieb zu 
+berücksichtigen. 
+7.5 Brandschutz 
+Die für den Errichtungsort der Anlage geltenden Brandschutzvorschriften, sowie die Vorgaben des 
+Betreibers sind einzuhalten. Hinsichtlich Brandschutz ist auf die entsprechende Auswahl der 
+Betriebsmittel und Werkstoffe, speziell bei Isolierstoffen zu achten. 
+Verhütung der Brandentstehung und Begrenzung der Brandauswirkungen: 
+Wenn der in der Anlagenerrichtungsvorschrift angegebene Mindestabstand zu Gebäudeflächen oder 
+angrenzenden Transformatoren nicht eingehalten werden kann, sind Ersatzmaßnahmen zu treffen, 
+z. B. Installation einer automatische Feuerlöschanlage. 
+Schutzziele: 
+− 
+Verhinderung der Brandentstehung; 
+− 
+Personenschutz: Fluchtwege, Fluchtwegkennzeichnung, Alarmierung (z. B. Sirenen) u. dgl.; 
+− 
+Sachschutz: Abstand, Schottungen, Brandmeldeanlagen, automatische Feuerlöscheinrichtungen 
+u. dgl.; 
+− 
+Begrenzung der Brandauswirkungen; 
+7.6 Schutz gegen Leckverlust an Isolierflüssigkeiten und SF6 (nicht oxidierende 
+Gase) 
+ Verlust von Isolier-/Kühlflüssigkeiten 
+7.6.1
+Die für den Betrieb von flüssigkeitsgefüllten Betriebsmitteln geltenden Anforderungen wie 
+− 
+örtliche Gegebenheiten, 
+− 
+Gewässerschutz, 
+− 
+Umgebungsbedingungen sowie 
+− 
+Vorgaben des Betreibers 
+sind zu beachten und einzuhalten. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+40 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 41/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+41 
+ 
+7.7 Kennzeichnung und Beschriftung 
+Für die Beschriftungen und Kennzeichnungen sind die geltenden Vorschriften für Fluchtwege, 
+Brandschutz, Gefahren sowie die Vorgaben des Betreibers zu beachten und einzuhalten. 
+ 
+Hilfseinrichtungen, Steuerungs- und Schutzsysteme 
+8
+8.1 Überwachungs- und Steuerungseinrichtungen 
+Für den sicheren Betrieb von Hochspannungsanlagen sind geeignete Überwachungs-, Schutz-, 
+Regelungs- und Steuerungseinrichtungen vorzusehen. 
+Reservefunktionen für Versagen von diesen Einheiten sind vorzusehen. 
+Insbesondere sind folgende Ereignisse zu berücksichtigen: 
+− 
+Überstrom, Überlast und thermische Wirkung, Überspannung, Unterspannung und 
+Unterfrequenz. 
+− 
+Redundante Systeme sind aufzubauen oder Vorkehrungen zu treffen,  
+− 
+um an den Betriebsmitteln Instandhaltungen, Revisionen, Reparaturen und Prüfungen 
+ohne Gefährdung von Personen durchführen zu können; 
+− 
+um in begründeten Fällen bei Versagen/Ausfällen die Anlagensicherheit zu 
+gewährleisten. 
+− 
+Ein unbeabsichtigtes Betätigen oder ein gleichzeitiges Betätigen von Betriebsmitteln von 
+verschiedenen Steuerstellen ist zu verhindern. 
+− 
+Es sind Vorkehrungen zu treffen, um eine Funktionsbeeinflussung durch physikalische 
+Einflüsse (wie in Abschnitt 3.2 beschrieben) an Steuerversorgungssystemen, Schutz-, 
+Steuerungs-, Signal- und Messstromkreisen zu verhindern. 
+8.2 Gleichstrom- und Wechselstrom-Hilfsstromkreise und alternative Antriebsmittel 
+(Federspeicher u. dgl.) 
+Sämtliche Hilfsstromkreise von Betriebsmitteln sind in ihren wichtigen Funktionen aufzuteilen und 
+durch geeignete Schutzeinrichtungen zu sichern. 
+Niederspannungssysteme sind entsprechend den nationalen Bestimmungen für die Errichtung von 
+elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und DC 1 500 V auszulegen. 
+Speicher unterstütze Hilfsstromanlagen müssen so ausgelegt werden, dass sie einen vom Betreiber 
+definierten Zeitraum überbrücken und der unterbrechungsfreie Betrieb einer Anlage ermöglicht wird. 
+Notversorgungseinrichtung 
+und 
+die 
+Maßnahmen 
+des 
+Personenschutzes 
+sind 
+aufeinander 
+abzustimmen (Abhängigkeit des kleinsten Kurzschlussstroms von der Art der Quelle, z. B. 
+umrichterbasiert oder leistungsschwach). 
+Die Ausführung von Batterieanlagen und von Antriebssystemen (elektrisch und nicht elektrisch wie 
+z. B. Federspeicher u. dgl.) muss den sicheren Betrieb, die Instandhaltung, die Revisionen und die 
+Reparatur ohne die Gefährdung von Personen gewährleisten. 
+8.3 SF6-Gas-Wartungsgeräte 
+SF6-Gas-Wartungs, -Füll, -Revisions- oder -Reparaturgeräte müssen den sicheren und verlustarmen 
+Arbeitsumgang mit SF6-Gas gewährleisten. Eine Entweichung in die Umgebungsluft muss verhindert 
+werden. 
+8.4 Grundregeln zur elektromagnetischen Verträglichkeit von Steuersystemen 
+Hilfsstromkreise für den Betrieb von Hochspannungsanlagen sind gegen elektromagnetische 
+Störbeeinflussungen zu schützen. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+41 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 42/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+42 
+ 
+Um Hochspannungsanlagen vor hochfrequenten und niederfrequenten Störbeeinflussungen zu 
+schützen sind geeignete Maßnahmen zu setzen. 
+ 
+Erdungsanlagen 
+9
+Erdungsanlagen müssen als Teil von Hochspannungs-Starkstromanlagen während ihrer gesamten 
+vorgesehenen Einsatzdauer unter den zu erwartenden Umweltbedingungen den Personen- und 
+Sachschutz gewährleisten. Sie müssen so geplant, errichtet, geprüft und instandgehalten werden, 
+dass sie die an sie gestellten elektrischen und mechanischen Anforderungen erfüllen und deren 
+Einwirkungen bei bestimmungsgemäßem Betrieb sicher standhalten. 
+Im Rahmen von Konzeption, Ausführung, Instandhaltung und Betrieb von Erdungsanlagen müssen 
+zumindest die nachstehenden Aspekte berücksichtigt und sichergestellt werden: 
+− 
+Personenschutz:  
+die Sicherheit des Betriebspersonals und betriebsfremder Personen; 
+− 
+Sachschutz:  
+Schutz von angeschlossenen und auch angrenzenden Anlagenteilen vor thermischen Wirkungen 
+und/oder Einkopplungen; 
+− 
+Funktionstüchtigkeit der Erdungsanlage:  
+Berücksichtigung von Betriebs- und Umgebungsbedingungen (z. B. chemische und klimatische 
+Anforderungen). 
+ANMERKUNG 
+Es können zusätzliche Anforderungen des Betreibers der Hochspannungs-Starkstromanlage 
+gefordert werden (z. B. Maschenweite, Erderwerkstoff, erhöhte Querschnitte). 
+In diesem Zusammenhang sind zu beachten: 
+− 
+Netzform (Sternpunktbehandlung); 
+− 
+Korrosion und mechanische Beanspruchung, 
+wobei die Querschnitte der Erder und Erdungsleiter (einschließlich von Potentialausgleichsleitern) 
+festgelegte Mindestwerte nicht unterschreiten dürfen; 
+− 
+thermische Beanspruchung;  
+Die zu berücksichtigende Einwirkdauer und Höhe von Erdfehlerströmen ist vom Betreiber 
+vorzugeben. Hinsichtlich der thermischen Beanspruchung muss eine Erdungsanlage, den, 
+abhängig von der Sternpunkterdung des Netzes in dem sich die Erdungsanlage befindet, zu 
+erwartenden Strömen während deren Einwirkdauer standhalten. 
+− 
+Einhaltung der zulässigen Berührungs- und Schrittspannung; 
+Die zu berücksichtigende Einwirkdauer und Höhe von Erdungsströmen ist vom Betreiber 
+vorzugeben. Bei ordnungsgemäßer Funktion der Schutzeinrichtungen und Schaltgeräte muss die 
+für die betreffende Einwirkdauer geltende zulässige Berührungsspannung eingehalten werden. 
+ 
+Hinsichtlich des Nachweises der Einhaltung der zulässigen Berührungsspannung gilt folgendes: 
+− 
+Für Erdungsanlagen, die Teil eines sog. Globalen Erdungssystems sind, ist kein Nachweis der 
+Einhaltung von Berührungsspannungen erforderlich. 
+− 
+Bleibt die zu erwartende Erdungsspannung unter dem doppelten Wert der zulässigen 
+Berührungsspannung, so können weitere Nachweise entfallen. 
+− 
+Bis zum vierfachen Wert der zulässigen Berührungsspannung ist die Anwendung sog. aner-
+kannter festgelegter Maßnahmen ausreichend (siehe auch Anhang A). 
+− 
+In allen anderen Fällen ist die Einhaltung der zulässigen Berührungsspannung durch Rech-
+nung oder Messung nachzuweisen. 
+Der Fehlerfall Doppelerdschluss, bei Erdungsanlagen in Netzen mit isoliertem Sternpunkt oder in 
+Netzen mit Erdschlusskompensation, kann hinsichtlich der zu erwartenden Berührungs- und 
+Schrittspannungen bei entsprechender Betriebserfahrung unberücksichtigt bleiben. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+42 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 43/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+43 
+ 
+ 
+Tabelle 5 – zulässige Berührungsspannung in Abhängigkeit von der Fehlerdauer 
+Fehlerdauer 
+in s 
+Effektivwert der zulässige 
+Berührungsspannung 
+in V (AC 50 Hz) 
+0,1 
+650 
+0,4 
+310 
+0,7 
+150 
+1 
+115 
+10 
+80 
+ 
+9.1 Potentialverschleppungen 
+Potentialverschleppungen sind im Hinblick auf dadurch mögliche Berührungsspannungen getrennt zu 
+berücksichtigen. 
+Zusammenschluss von Nieder- und Hochspannungs-Erdungsanlagen: 
+Folgende Fälle sind möglich: 
+− 
+Bei Niederspannungsanlagen, die ausschließlich innerhalb des Bereiches der Hochspannungs-
+Erdungsanlage bestehen, wird immer eine gemeinsame Erdungsanlage verwendet. 
+− 
+Ansonsten können gemeinsame Erdungsanlagen ausgeführt werden, wenn die zu erwartende 
+Erdungsspannung den doppelten Wert der zulässigen Berührungsspannung bzw. die Grenze der 
+Spannungsfestigkeit der Niederspannungsbetriebsmittel nicht überschritten wird. 
+− 
+Falls getrennte Erdungsanlagen erforderlich sind, sind entsprechende Abstände zwischen Hoch-
+spannungs-Erdungsanlage und Niederspannungs-Erdungsanlage einzuhalten. 
+9.2 Errichtung von Erdungsanlagen 
+Die Körper von Hochspannungsbetriebsmitteln sind an den dafür vorgesehenen Anschlüssen mit der 
+Erdungsanlage zu verbinden. 
+Metallteile, die im Fehlerfall unzulässige Spannungen annehmen können sind mit der Erdungsanlage 
+zu verbinden. 
+ANMERKUNG 
+Miteinander verschraubte Teile von Metallkonstruktionen müssen eine dauerhafte und 
+ausreichend stromtragfähige Verbindung gewährleisten.  
+9.3 Messungen an Erdungsanlagen 
+Wo es erforderlich ist müssen nach Errichtung einer Erdungsanlage Messungen zum Nachweis ihrer 
+Eignung hinsichtlich von Berührungs- und Schrittspannungen und von Spannungsverschleppungen 
+durchgeführt werden. 
+Bei der messtechnischen Ermittlung von Berührungsspannungen nach der Strom-/Spannungs-
+Methode ist der menschliche Körper mit einem 1 kΩ-Widerstand zu berücksichtigen. Bei Messungen 
+von Hand-Füße-Berührungsspannungen sind die Standflächen der Füße in einem Abstand von 1 m 
+zum berührten Teil entweder durch eine Plattenelektrode mit einer Fläche von 400 cm2 oder durch 
+einen zumindest 20 cm tief eingeschlagenen Erdspieß nachzubilden. 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+43 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 44/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+44 
+ 
+9.4 Instandhaltbarkeit von Erdungsanlagen 
+Zu jeder Erdungsanlage muss ein Erdungsplan vorliegen, in dem die Lage und das Material der Erder, 
+ihre Verbindungsstellen und ihre Verlegetiefe sowie die Anschlüsse der Erdungsleiter angegeben sind. 
+Falls sogenannte anerkannte festgelegte Maßnahmen zur Einhaltung von Berührungsspannungen 
+angewendet werden, müssen diese ebenfalls im Erdungsplan geeignet dargestellt und in der 
+Anlagendokumentation enthalten sein. 
+Erdungsanlagen sind so zu errichten, dass ihr Zustand in regelmäßigen Abstand visuell (z. B. durch 
+Besichtigen an geeignet ausgewählten Stellen) und messtechnisch überprüft werden kann. 
+9.5 Globales Erdungssystem 
+Von einem globalen Erdungssystem spricht man, wenn aufgrund des Zusammenschlusses von 
+Erdungsanlagen (z. B. über Kabelschirme oder über PEN-Leiter) einerseits bei Erdfehlern keine 
+nennenswerten Spannungsdifferenzen innerhalb des Bereiches der miteinander verbundenen 
+Erdungsanlagen auftreten, und andererseits die zu erwartende Erdungsspannung vergleichsweise 
+klein ist (z. B. häufig kleiner als die für die jeweilige Einwirkdauer zulässige Berührungsspannung). 
+ Inspektionen und Prüfungen  
+10
+Inspektionen und Prüfungen sind wesentliche Bestandteile zur Sicherstellung eines störungsfreien und 
+sicheren Betriebes von elektrischen Anlagen und deren Betriebsmitteln und sind daher zwingend 
+durchzuführen und zu dokumentieren. 
+Durch diese Inspektionen und Prüfungen können sowohl die Einhaltung der relevanten geltenden 
+Vorschriften und Normen, als auch die Einhaltung der vom Anlagenbetreiber festgelegten technischen 
+Spezifikationen nachgewiesen werden. 
+Für die Anlagenerrichtung sind zwischen Anlagenbetreiber und Anlagenerrichter und/oder Hersteller 
+der Betriebsmittel zumindest folgende Punkte zu vereinbaren und schriftlich zu dokumentieren: 
+- 
+Art 
+und 
+Umfang 
+der 
+Kontrollen/Prüfungen, 
+die 
+vom 
+Anlagenerrrichter 
+und/oder 
+Betriebsmittelhersteller vor und im Zuge der Inbetriebnahme der Anlage/des Betriebsmittels 
+durchzuführen und zu dokumentieren sind; 
+- 
+Spezifikationen/Normen, die bei der Errichtung der Anlage zu Grunde liegen; 
+- 
+Umfang und Inhalt, der vom Anlagenerrichter und/oder Betriebsmittelhersteller an den 
+Anlagenbetreiber 
+zu 
+übergebenden 
+Dokumentation 
+(betriebs- 
+und 
+sicherheitsrelevante 
+Dokumente sind zwingend in deutscher Sprache zu erstellen); 
+- 
+Inspektions- und Wartungsplan für alle Betriebsmittel. 
+Für die Zeitpunkte von Lieferungen und/oder den Abschluss der Anlagenerrichtung, sind zwischen 
+Anlagenbetreiber und Anlagenerrichter und/oder Hersteller der Betriebsmittel, Inspektionen und 
+Prüfungen der gesamten Anlage, einzelner Anlagenabschnitte und/oder ausgewählter Betriebsmittel 
+festzulegen und schriftlich zu dokumentieren. 
+Umfang der Prüfmaßnahmen im Zuge der Anlagenerrichtung (in der Aufzählung sind die wesentlichen 
+Punkte aufgelistet): 
+- 
+Überprüfung der elektrischen und mechanischen Kennwerte der Betriebsmittel in Relation zu den 
+Bemessungswerten und/oder Betriebsbedingungen; 
+- 
+Überprüfung der in den zum Errichtungszeitpunkt geltenden relevanten Anlagenerrichtungs-
+normen vorgegebenen Mindestabstände, Mindesthöhen und Schutzvorrichtungsabstände auf 
+Basis der Bemessungsspannungen; 
+- 
+Überprüfung der Einhaltung der vom Auftraggeber/Anlagenbetreiber spezifizierten Leistungs-
+merkmale; 
+- 
+Spannungsprüfungen von Schaltgeräten und/oder Kabelanlagen; 
+- 
+Überprüfung der Erdungsanlagen; 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+44 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 45/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+45 
+ 
+- 
+Überprüfen der Kennwerte der Betriebsmittel (einschließlich der Bemessungswerte) für die 
+vorgegebenen Betriebsbedingungen; 
+- 
+Überprüfen der Einhaltung der Mindestabstände zwischen aktiven Teilen und zwischen aktiven 
+Teilen und Erde (Ausnahme: Anlagen und Anlagenabschnitte bei denen durch eine Spannungs- 
+oder Typprüfung die Spannungsfestigkeit nachgewiesen wurde); 
+- 
+Wechselspannungsprüfung für Schaltgeräte und typgeprüfte Schaltanlagen; 
+- 
+Funktionsprüfungen und/oder Messungen an Schutz-, Überwachungs-, Mess- und Steuer-
+einrichtungen; 
+- 
+Inspektion von Kennzeichnungen, Sicherheitsschildern und Sicherheitseinrichtungen; 
+- 
+Überprüfung der zutreffenden Feuerwiderstandsklassen; 
+- 
+Überprüfung der Funktionstüchtigkeit von Notausgängen. 
+Sonstige vom Anlagenerrichter und/oder Betriebsmittelhersteller an den Anlagenbetreiber zu 
+übergebende Dokumentation: 
+- 
+Betriebs- und Wartungsanleitungen in deutscher Sprache.  
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+45 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 46/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+46 
+ 
+Anhang A 
+Literaturhinweise 
+Literatur: 
+ 
+ 
+Bezugnahme in  
+OVE-Richtlinie R 1000-3 
+ÖVE/ÖNORM EN 61936-1, Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV – Teil 1: Allgemeine 
+Bestimmungen 
+generell und 
+insbesondere Abschnitte 
+3 u. 4 
+ÖVE/ÖNORM EN 61936-1, Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV – Teil 1: Allgemeine 
+Bestimmungen, Abschnitt 8.8.2 
+Abschnitt 6.4.2.1 
+ÖVE/ÖNORM EN 61936-1, Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV – Teil 1: Allgemeine 
+Bestimmungen, Anhang E 
+Abschnitt 7.4 
+ÖVE/ÖNORM EN 50522, Erdung von Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV  
+generell und 
+insbesondere Abschnitte 
+3 u.9 
+ÖVE/ÖNORM EN 50522, Erdung von Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV, Abschnitte 5.5.2 und 5.2.3  
+Abschnitt 9 
+ÖVE/ÖNORM EN 50522, Erdung von Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV, Anhang O  
+Abschnitt 9.5 
+ÖVE/ÖNORM EN 62305-3, Blitzschutz – Teil 3: Schutz von baulichen 
+Anlagen und Personen (einschließlich Beiblatt 2) 
+generell und 
+insbesondere Abschnitte 
+3 u. 7.4 
+ 
+ergänzende Literatur: 
+ 
+Bezugnahme in  
+OVE-Richtlinie R 1000-3 
+ÖVE/ÖNORM E 8001 (alle Teile), Errichtung von elektrischen Anlagen 
+mit Nennspannungen bis AC 1 000 V und DC 1 500 V 
+Abschnitt 8.2 
+ÖVE/ÖNORM E 8002 (alle Teile), Starkstromanlagen und 
+Sicherheitsstromversorgung in baulichen Anlagen für 
+Menschenansammlungen 
+Abschnitt 6.5.2.6 
+ÖVE/ÖNORM E 8007, Starkstromanlagen in Krankenhäusern und 
+medizinisch genutzten Räumen außerhalb von Krankenhäusern 
+Abschnitt 6.5.2.6 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+46 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 47/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+47 
+ 
+ÖVE/ÖNORM E 8120, Verlegung von Energie-, Steuer- und 
+Messkabeln 
+Abschnitt 5.7 
+ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet), Betrieb von 
+elektrischen Anlagen – Teil 1: Allgemeine Anforderungen – Teil 2-100: 
+Nationale Ergänzungen 
+Abschnitte 6.1.7, 6.2.3, 
+6.3.1, 7.1, 7.2, Bild 4 u. 
+Bild 5b 
+ÖVE/ÖNORM EN 60071 (alle Teile), Isolationskoordination 
+Abschnitt 5 
+ÖVE/ÖNORM EN 60099 (alle Teile), Überspannungsableiter 
+Abschnitt 5.4 
+ÖVE/ÖNORM EN 60255 (alle Teile), Messrelais und 
+Schutzeinrichtungen 
+Abschnitt 8.1 
+ÖVE/ÖNORM EN 60282 (alle Teile), Hochspannungssicherungen 
+Abschnitt 5.8 
+ÖVE/ÖNORM EN 60433, Isolatoren für Freileitungen mit einer 
+Nennspannung über 1 kV – Keramik-Isolatoren für 
+Wechselspannungssysteme – Kenngrößen von Kettenisolatoren in 
+Langstabausführung 
+Abschnitt 5.6 
+ÖVE/ÖNORM EN 61869 (alle Teile), Messwandler 
+Abschnitt 5.3 
+ÖVE/ÖNORM EN 62271 (alle Teile), Hochspannungs-Schaltgeräte und 
+–Schaltanlagen 
+Abschnitte 5.1 u. 5.6 
+ÖVE/ÖNORM EN 62271-1, Hochspannungs-Schaltgeräte und –
+Schaltanlagen – Teil 1: Gemeinsame Bestimmungen für Wechselstrom-
+Schaltgeräte und -Schaltanlagen 
+Abschnitt 5.6 
+ÖVE/ÖNORM EN 62271-202, Hochspannungs-Schaltgeräte und –
+Schaltanlagen – Teil 202: Fabrikfertige Stationen für 
+Hochspannung/Niederspannung 
+Abschnitt 6.6 
+OVE-Richtlinie R 1, Freileitungen über AC 1 kV 
+Abschnitt 6.7 
+OVE-Richtlinie R 12, Brandschutz in elektrischen Anlagen  
+Abschnitte 5.2, 6.5.1 u. 
+7.5 
+OVE-Richtlinie R 23, Elektrische, magnetische und elektromagnetische 
+Felder im Frequenzbereich von 0 Hz bis 300 GHz 
+Abschnitt 3.2.1 
+IEC/TS 60815 (alle Teile), Selection and dimensioning of high-voltage 
+insulators intended for use in polluted conditions 
+Abschnitt 5.6 
+VdS 2108, Schaum-Löschanlagen, Planung und Einbau 
+Abschnitt 7.5 
+VdS 2109, Sprühwasser-Löschanlagen, Planung und Einbau 
+Abschnitt 7.5 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+47 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 48/50 =====
+OVE-Richtlinie R 1000-3:2109-01-01 
+48 
+ 
+ 
+Literatur zu Begriffen: 
+ 
+Bezugnahme in  
+OVE-Richtlinie R 1000-3 
+ÖVE/ÖNORM EN 61936-1, Starkstromanlagen mit 
+Nennwechselspannungen über 1 kV – Teil 1: Allgemeine 
+Bestimmungen  
+Abschnitte 2.1.4, 2.1.6, 
+2.1.7, 2.1.8, 2.1.9, 2.2.1, 
+2.2.2, 2.3.2, 2.3.3, 2.3.4, 
+2.4.1, 2.4.2, 2.4.3, 2.5.2, 
+2.5.3, 2.5.4, 2.5.5, 2.5.6, 
+2.5.7, 2.7.5, 2.7.7, 2.7.8, 
+2.7.11 und 2.7.12 
+IEC 60050 – Internationales Elektrotechnisches Wörterbuch 
+ 
+Teil 151 – Elektrische und magnetische Geräte und Einrichtungen 
+ 
+Teil 151:1978, 151-03-40  
+Abschnitt 2.7.15 
+Teil 151:2001, 151-16-08  
+Abschnitt 2.1.3 
+Teil 151:2001, 151-16-09  
+Abschnitt 2.1.2 
+Teil 195 – Erdung und Schutz gegen elektrischen Schlag 
+ 
+Teil 195:1998, 195-01-01(modifiziert)  
+Abschnitt 2.7.2 
+Teil 195:1998, 195-01-03(modifiziert)  
+Abschnitt 2.7.1  
+Teil 195:1998, 195-02-01  
+Abschnitt 2.7.3 
+Teil 195:1998, 195-02-03  
+Abschnitt 2.7.4 
+Teil 195:1998, 195-02-19  
+Abschnitt 2.1.5 
+Teil 195, 195-04-11  
+Abschnitt 2.1.10 
+Teil 195:1998, 195-05-11(modifiziert)  
+Abschnitt 2.7.9 
+Teil 195:1998, 195-05-12  
+Abschnitt 2.7.10 
+Teil 195:1998, 195-06-15  
+Abschnitt 2.4.4 
+Teil 195:1998, 195-06-16  
+Abschnitt 2.4.5 
+Teil 441 – Schaltanlagen, Schaltgeräte und Sicherungen 
+ 
+Teil 441:1984, 441-16-49  
+Abschnitt 2.6.1 
+Teil 441:1984, 441-17-31  
+Abschnitt 2.5.1 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+48 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 49/50 =====
+OVE-Richtlinie R 1000-3:2019-01-01 
+49 
+ 
+Teil 604 – Erzeugung, Übertragung und Verteilung elektrischer Energie 
+– Betrieb 
+ 
+Teil 604:1987, 604-02-32  
+Abschnitt 2.6.2 
+Teil 604:1987, 604-04-02  
+Abschnitt 2.7.6 
+Teil 605 – Erzeugung, Übertragung und Verteilung elektrischer Energie 
+– Stationen 
+ 
+Teil 605:1983, 605-01-01  
+Abschnitt 2.3.1 
+Teil 826 – Elektrische Anlagen 
+ 
+Teil 826:2004, 826-12-10  
+Abschnitt 2.7.13 
+Teil 826:2004, 826-13-25  
+Abschnitt 2.7.14 
+Teil 826:2004, 826-16-01  
+Abschnitt 2.1.1 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+49 von 50
+www.ris.bka.gv.at
+
+
+===== PAGE 50/50 =====
+ 
+BGBl. II - Ausgegeben am 8. Jui 2020 - Nr. 308
+50 von 50
+www.ris.bka.gv.at
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:17:25+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

@@ -1,0 +1,1521 @@
+
+
+===== PAGE 1/23 =====
+ 
+ÖVE/ÖNORM
+ 
+E 8001-1/A2
+Ausgabe: 2003-11-01
+ 
+Auch Normengruppe 330 
+ 
+ 
+ICS  29.240.01 
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis 51000 V und 41500 V 
+Teil 1: Begriffe und Schutz gegen elektrischen Schlag 
+(Schutzmaßnahmen) 
+(Änderung) 
+ 
+Erection of electrical installations with rated voltages up to 51000 V and 41500 V – 
+Part 1: Definitions and measures against electric shock 
+(Amendment) 
+ 
+Erection des installations électriques à courant fort jusqu' a 51000 V et 41500 V – 
+Partie 1: Définitions et mesures de protection contre le choc électrique 
+(Amendement) 
+ 
+ 
+Die vorliegende Änderung modifiziert das Grunddokument  
+ÖVE/ÖNORM E 8001-1:2000-03 und ist mit diesem gemeinsam anzuwenden. 
+ 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8001-1/A2 Seiten 2 bis 23 
+Fach(normen)ausschuss
+FA/FNA E
+Elektrische Niederspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2003. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 11
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+1 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 2/23 =====
+Seite 2 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+Vorbemerkung 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den einer 
+ÖNORM gemäß NG 1971. 
+Die Reihe ÖVE-EN 1 wird künftig als Reihe ÖVE/ÖNORM E 8001 erscheinen. In der Übergangsfrist werden Teile der ÖVE-
+EN 1 und Teile von ÖVE/ÖNORM E 8001 bestehen, die gegebenenfalls gemeinsam angewendet werden müssen.  
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den jeweils 
+geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum Zeitpunkt 
+der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK /ÖNORM ist der durch 
+die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu be-
+rücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+2 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 3/23 =====
+Seite 3 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+Änderung A2 zu ÖVE/ÖNORM E 8001-1:2000 
+ 
+Folgende Änderungen bzw. Ergänzungen sind durchzuführen: 
+Abschnitt 2 wird ergänzt mit: 
+ 
+ÖVE-EX 65 
+Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen 
+ÖVE/ÖNORM E 8001-4-50 
+Errichtung elektrischer Anlagen mit Nennspannungen bis 51000 V und 4 1500 V –  
+Teil 4-50: Brandgefährdete Räume 
+ 
+ÖVE/ÖNORM E 8049-1 
+Blitzschutz baulicher Anlagen – Teil 1: Allgemeine Grundsätze 
+ 
+ÖVE/ÖNORM EN 61312-1 
+Schutz gegen elektromagnetischen Blitzimpuls – Teil 1: Allgemeine Grundsätze  
+ 
+ 
+(in Vorbereitung) 
+ 
+ÖVE/ÖNORM EN 61643-11 
+Überspannungsschutzgeräte für Niederspannung – Teil 11: Überspannungsschutzgeräte 
+für den Einsatz in Niederspannungsanlagen – Anforderungen und Prüfungen  
+ 
+ÖNORM B 3800-2 
+Brandverhalten von Baustoffen und Bauteilen – Bauteile – Begriffsbestimmungen, 
+Anforderungen, Prüfungen 
+– ⋅ – 
+ 
+Abschnitt 3  
+Definitionen  
+3.1.10.1 lautet neu: 
+3.1.10.1 
+Einzelverbraucheranlage (Betreiberanlage) 
+Teil der Verbraucheranlage bestehend aus der Gesamtheit aller elektrischen Betriebsmittel ab den Zugangsklemmen der 
+Vorzählersicherungen bis zu den festen oder steckbaren Anschlussstellen der elektrischen Verbrauchsmittel 
+Unterteilt sich eine Verbraucheranlage nicht in mehrere Einzelverbraucheranlagen, so ist die Einzelverbraucheranlage gleich 
+der Verbraucheranlage. 
+ANMERKUNG: 
+Vorzählersicherungen können mit Hausanschlusssicherungen zusammenfallen. 
+ 
+3.10.6 bis 3.10.8 kommen neu hinzu: 
+3.10.6 
+Überspannungsschutzgerät; SPD 
+Gerät, das dazu bestimmt ist, transiente Überspannungen zu begrenzen und Stoßströme abzuleiten  
+Es enthält mindestens ein nichtlineares Bauelement. 
+3.10.7 
+Schutzpfad eines Überspannungsschutzgerätes 
+Schaltungsarten von Bauteilen der Überspannungsschutzgeräte 
+Die Bauteile eines Überspannungsschutzgerätes können Außenleiter gegen Außenleiter, Außenleiter gegen Neutralleiter, 
+Außenleiter gegen Schutzleiter oder Neutralleiter gegen Schutzleiter geschaltet sein, oder auch eine Kombination dieser 
+Möglichkeiten. 
+ANMERKUNG: 
+Weisen Überspannungsschutzgeräte mit mehr als zwei Anschlüssen nur eine Angabe des Ableitstoßstromes und/oder 
+des Schutzpegels auf, so gelten diese Werte für jede beliebige Kombination von zwei Klemmen. 
+3.10.8 
+temporäre Überspannung; TOV 
+mit der Netzfrequenz oszillierende Überspannung von relativ langer Dauer, die nicht oder nur schwach gedämpft wird 
+– ⋅ – 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+3 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 4/23 =====
+Seite 4 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+Abschnitt 18 lautet neu: 
+18 
+Schutz elektrischer Anlagen gegen transiente Überspannungen – Überspannungs-
+Schutzmaßnahmen 
+18.1 
+Allgemeines 
+Dieser Abschnitt enthält die Bestimmungen zur Auswahl und Errichtung von: 
+– Überspannungsschutzgeräten (SPDs) im Verteilungsnetz, 
+– Überspannungsschutzgeräten (SPDs) für elektrische Installationen von Gebäuden zum Schutz gegen indirekte 
+Blitzeinwirkungen, d.h. zur Begrenzung transienter Überspannungen infolge atmosphärischer Entladungen, die über 
+das Niederspannungs-Verteilungsnetz in die Verbraucheranlage gelangen, und gegen Schaltüberspannungen, 
+– Überspannungsschutzgeräten 
+(SPDs) 
+für 
+den 
+Schutz 
+gegen 
+direkte 
+Blitzeinwirkungen, 
+d.h. 
+transiente 
+Überspannungen, die durch direkte Blitzschläge in Gebäude oder Blitzschläge in unmittelbarer Nähe von Gebäuden 
+mit Blitzschutzanlage erzeugt werden. 
+Die Anforderungen dieses Abschnittes sind als Mindestanforderungen zu betrachten. 
+Für den Schutz von informationstechnischen Anlagen wird auf ÖVE-F 1 Teil 7 hingewiesen.  
+Ergänzend wird darauf hingewiesen, dass der Hauptpotentialausgleich und soweit erforderlich der zusätzliche 
+Potentialausgleich gemäß Abschnitt 15 wichtige Voraussetzungen bei der Realisierung eines wirkungsvollen Schutzes gegen 
+transiente Überspannungen darstellen. 
+Die Anforderungen dieses Abschnittes gelten für Wechselspannungsanlagen und sinngemäß für Gleichspannungsanlagen. 
+18.2 
+Verwendung von Überspannungsschutzgeräten (SPDs; Ableitern) 
+18.2.1 
+Beschreibung der Überspannungsschutzgeräte – Type 1, Type 2 und Type 3 gemäß ÖVE/ÖNORM EN 61643-11 – 
+siehe Anhang C. 
+18.2.2 
+Schutz gegen Blitzeinwirkungen 
+18.2.2.1 
+Der Schutz gegen indirekte Blitzeinwirkungen wird mit Überspannungsschutzgeräten der Type 2 realisiert. 
+18.2.2.1.1 
+Überspannungsschutzgeräte gegen indirekte Blitzeinwirkungen sind in folgenden Niederspannungs-
+Verteilungsnetzen zu installieren: 
+ 
+– 
+Freileitungsnetze 
+ 
+– 
+gemischte Freileitungs- / Kabelnetze (im Freileitungsabschnitt bzw. im Bereich des Überganges Freileitung – 
+Kabel). 
+In gemischten Netzen, in denen der Kabelanteil überwiegt, bleiben dabei kurze Freileitungsabschnitte bis 
+maximal 250 m Länge unberücksichtigt. 
+18.2.2.1.2 
+Überspannungsschutzgeräte gegen indirekte Blitzeinwirkungen sind in jeder Verbraucheranlage zu installieren. 
+Sind in der Verbraucheranlage bereits zentrale Überspannungsschutzgeräte installiert, so ist die Installation von 
+Überspannungsschutzgeräten in jeder Einzelverbraucheranlage nicht gefordert, wird aber in Gegenden mit erhöhter und 
+hoher Blitzdichte (siehe Anhang A) empfohlen. 
+18.2.2.1.3 
+Überspannungsschutzgeräte der Type 2 sind in Verbraucheranlagen so nahe wie möglich bei der 
+Hauptleitungsklemme oder bei der PE-Schiene oder der Haupterdungsschiene (PAS) einzubauen. 
+Im Einflussbereich elektrischer Bahnen und von Hochspannungsanlagen können zusätzliche oder abweichende Maßnahmen 
+für den Überspannungsschutz erforderlich sein. 
+In Abhängigkeit der zu schützenden Anlagen und Geräte und anderer Einflussfaktoren kann in Anlagen die Installation 
+zusätzlicher Überspannungsschutzgeräte sinnvoll oder notwendig sein. Bei der Installation solcher zusätzlicher 
+Überspannungsschutzgeräte ist auf die Koordination mit den vorgeschalteten Überspannungsschutzgeräten zu achten. Für 
+solche zusätzlichen Überspannungsschutzgeräte gelten die Anforderungen dieses Abschnittes soweit anwendbar 
+unverändert, in allen anderen Fällen jedenfalls sinngemäß. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+4 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 5/23 =====
+Seite 5 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.2.2.2 
+Der Schutz gegen direkte Blitzeinwirkungen, wenn gefordert, ist mit Überspannungsschutzgeräten der Type 1, 
+und wenn erforderlich ergänzend mit Überspannungsschutzgeräten der Typen 2 und/oder 3 zu realisieren. 
+18.2.2.2.1 
+Der Schutz von Gebäuden gegen direkte Blitzeinwirkungen und die Notwendigkeit des Schutzes der 
+Verbraucheranlage gegen direkte Blitzeinwirkungen ist in den einschlägigen Bestimmungen und der jeweils gültigen 
+Bauordnung geregelt. 
+18.2.2.2.2 
+Überspannungsschutzgeräte der Type 1 sind so nahe wie möglich am Eintritt der elektrischen Versorgung in das 
+Gebäude, vorzugsweise bei der Hauptleitungsklemme, oder bei der PE-Schiene oder der Haupterdungsschiene (PAS) 
+einzubauen. 
+18.3 
+Installation von Überspannungsschutzgeräten 
+18.3.1 
+Überspannungsschutzgeräte der Typen 1 und/oder 2 müssen mindestens zwischen den Punkten gemäß 
+Tabelle 18-1 installiert werden. 
+18.3.2 
+Wenn ein Außenleiter geerdet ist, so wird er für die Anwendung dieses Abschnittes wie ein Neutralleiter behandelt. 
+18.3.3 
+Überspannungsschutzgeräte der Typen 1 oder 2 sind gemäß Tabelle 18-2 und wie in den Bildern 18-1 bis 18-8 
+gezeigt, zu installieren. 
+18.3.4 
+Überspannungsschutzgeräte dürfen ohne zusätzliche Maßnahmen nicht in brand- oder explosionsgefährdeten 
+Räumen (siehe ÖVE/ÖNORM E 8001-4-50 und ÖVE-EX 65 etc.) eingebaut werden. Sie sind von leicht oder normal 
+brennbaren Materialien mindestens brandhemmend (Brandwiderstandsklasse F30 gemäß ÖNORM B 3800-2) zu trennen. 
+ 
+Tabelle 18-1 – Installation der Überspannungsschutzgeräte 
+ 
+Verbindung N-Leiter und PE-Leiter bzw. kein  
+N-Leiter vorhanden 
+Anschlussarten 
+(a) 
+Wenn eine Verbindung zwischen Neutralleiter und 
+PE-Leiter (Nullungsverbindung) am Einbauort 
+vorhanden ist (Bild 18-1) oder in unmittelbarer 
+Nähe (Abstand ≤ 10 m) vorhanden ist (Bild 18-2) 
+oder wenn kein Neutralleiter vorhanden ist  
+(Bild 18-3). 
+Jeweils zwischen jeden Außenleiter und dem  
+PEN-Leiter, der PE-Schiene oder der 
+Haupterdungsschiene, je nachdem welche 
+Verbindung am kürzesten ist –  
+Anschlussart 1 (Bilder 18-1 bis 18-3) 
+ 
+1 
+Jeweils zwischen jeden Außenleiter und dem PE-
+Leiter, der PE-Schiene oder der 
+Haupterdungsschiene und zwischen dem 
+Neutralleiter und dem PE-Leiter, der PE-Schiene 
+oder der Haupterdungsschiene, je nachdem welche 
+Verbindung am kürzesten ist –  
+Anschlussart 2 (Bilder 18-4 bis 18-6)  
+---- 
+ ----------------------------oder  --------------------------------
+(b) 
+2 
+Wenn keine Verbindung zwischen 
+Neutralleiter und PE-Leiter am Einbauort 
+oder in unmittelbarer Nähe vorhanden ist. 
+ 
+Jeweils zwischen jeden Außenleiter und den 
+Neutralleiter und zwischen dem Neutralleiter und 
+dem PE-Leiter, der PE-Schiene oder der 
+Haupterdungsschiene, je nachdem welche 
+Verbindung am kürzesten ist – 
+Anschlussart 3 (Bilder 18-7 und 18-8) 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+5 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 6/23 =====
+Seite 6 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+Bild 18-1 – Anordnung der Überspannungsschutzgeräte wenn ein PEN-Leiter am Einbauort vorhanden ist – 
+TN-C-System an der Einbaustelle (Nullung mit PEN-Leiter) – Anschlussart 1 
+ 
+ 
+ 
+ 
+ 
+Bild 18-2 – Anordnung der Überspannungsschutzgeräte wenn eine Verbindung zwischen  
+Neutralleiter und PE-Leiter in unmittelbarer Nähe des Einbauortes (Abstand ≤ 10 m) 
+ vorhanden ist – TN-S-System an der Einbaustelle (Nullung mit getrennt geführtem  
+Neutralleiter und Schutzleiter) – Anschlussart 1 
+ 
+L1 
+L2 
+L3 
+ 
+PEN 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+L1 
+L2 
+L3 
+PEN 
+L1 
+L2 
+L3 
+PEN 
+F1 
+F2 
+RA 
+PEN-Schiene 
+oder PAS 
+PEN-Schiene 
+oder PAS 
+PE-Schiene 
+RA 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+6 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 7/23 =====
+Seite 7 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+ 
+Bild 18-3 – Anordnung der Überspannungsschutzgeräte wenn kein Neutralleiter vorhanden ist –  
+IT-System ohne Neutralleiter – Anschlussart 1 
+ 
+ 
+ 
+Bild 18-4 – Anordnung der Überspannungsschutzgeräte wenn keine Verbindung zwischen  
+Neutralleiter und PE-Leiter am Einbauort oder in unmittelbarer Nähe vorhanden ist –  
+TN-S-System an der Einbaustelle (Nullung mit getrennt geführtem  
+Neutralleiter und Schutzleiter) – Anschlussart 2 
+L1 
+L2 
+L3 
+N 
+PE 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+L1 
+L2 
+L3 
+ 
+L1 
+L2 
+L3 
+PE 
+F1 
+F2 
+PE-Schiene 
+PAS 
+1)
+1) siehe Tabelle 18-1 
+RA 
+PE-Schiene 
+PAS 
+1)
+1) siehe Tabelle 18-1 
+RA 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+7 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 8/23 =====
+Seite 8 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+Bild 18-5 – Anordnung der Überspannungsschutzgeräte im TT-System  
+(Fehlerstrom-Schutzschaltung) – Anschlussart 2 
+ 
+ 
+ 
+Bild 18-6 – Anordnung der Überspannungsschutzgeräte im IT-System mit verteiltem  
+Neutralleiter – Anschlussart 2 
+L1 
+L2 
+L3 
+N 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+L1 
+L2 
+L3 
+N 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+ I∆
+Ableitertrennschalter ATS
+1)
+1) siehe Tabelle 18-1 
+RA 
+PE-Schiene 
+PAS 
+1)
+1) siehe Tabelle 18-1 
+PE-Schiene 
+PAS 
+RA 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+8 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 9/23 =====
+Seite 9 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+Bild 18-7 – Anordnung der Überspannungsschutzgeräte wenn keine Verbindung zwischen Neutralleiter und 
+PE-Leiter am Einbauort oder in unmittelbarer Nähe vorhanden ist –  
+TN-S-System an der Einbaustelle (Nullung mit getrennt geführtem Neutralleiter und Schutzleiter) – Anschlussart 3 
+ 
+ 
+ 
+ 
+Bild 18-8 – Anordnung der Überspannungsschutzgeräte im TT-System  
+(Fehlerstrom-Schutzschaltung) – Anschlussart 3 
+ 
+ 
+L1 
+L2 
+L3 
+N 
+PE 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+1)
+1) siehe Tabelle 18-1 
+PAS 
+PE-Schiene 
+L1 
+L2 
+L3 
+N 
+PE 
+L1 
+L2 
+L3 
+N 
+PE 
+F1 
+F2 
+1)
+1) siehe Tabelle 18-1 
+PAS 
+PE-Schiene 
+RA 
+RA 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+9 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 10/23 =====
+Seite 10 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+Tabelle 18-2 – Installation von SPDs in Verbraucheranlagen in Abhängigkeit des Netzsystems 
+Netzsystem am Installationspunkt der SPDs 
+IT 
+(Isolationsüber-
+wachungssystem)
+ 
+TT 
+(Fehlerstrom-
+Schutzschaltung) 
+TN-C 
+(Nullung)
+TN-S 
+(Nullung) 
+mit 
+verteiltem 
+Neutral-
+leiter 
+ohne 
+Neutral-
+leiter 
+Installation gemäß Anschlussart 
+SPDs 
+installiert zwischen: 
+2 
+(Bild 18-5) 
+3 
+(Bild 18-8) 
+1 
+(Bild 18-1)
+1 
+(Bild 18-2)
+2 
+(Bild 18-4)
+3 
+(Bild 18-7)
+2 
+(Bild 18-6) 
+1 
+(Bild 18-3)
+Jedem Außenleiter und 
+dem Neutralleiter 
++ 
+• 
+n.a. 
+n.a. 
++ 
+• 
++ 
+n.a. 
+Jedem Außenleiter und 
+PE-Schiene oder 
+Haupterdungsschiene 
+• 
+n.a. 
+n.a. 
+n.a. 
+• 
+n.a. 
+• 
+• 
+Neutralleiter und  
+PE-Schiene oder 
+Haupterdungsschiene 
+• 
+• 
+n.a. 
+n.a. 
+• 
+• 
+• 
+n.a. 
+Jedem Außenleiter und 
+dem PEN-Leiter 
+n.a. 
+n.a. 
+• 
+• 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+Außenleitern 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+• 
+verpflichtend 
+n.a. nicht anwendbar 
++ 
+optional, ergänzend 
+ 
+18.4 
+Auswahl von Überspannungsschutzgeräten in Verbraucheranlagen 
+ 
+18.4.1 
+Allgemeines 
+Die nachstehenden Auswahlkriterien beziehen sich auf Überspannungsschutzgeräte gemäß ÖVE/ÖNORM EN 61643-11. Bei 
+Anwendung anderer Überspannungsschutzgeräte sind die entsprechenden Nachweise zu führen. 
+18.4.2 
+Auswahl des Schutzpegels (Up) 
+ 
+Die Auswahl des Schutzpegels für den Schutz gegen indirekte Blitzeinwirkungen erfolgt gemäß Tabelle 18-3. 
+ 
+Tabelle 18-3 – Maximaler Schutzpegel Up in Abhängigkeit der Nennspannung 
+ 
+Nennspannung der 
+Verbraucheranlage in V 
+Außenleiter-Neutralleiter-Spannung 
+V 
+Maximaler Schutzpegel 
+V 
+ 
+≤ 50 
+500 
+ 
+≤ 100 
+800 
+ 
+≤150 
+1 500 
+230/400 
+≤ 300 
+2 500 
+400/690 
+≤ 600 
+4 000 
+1000 
+≤ 1000 
+6 000 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+10 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 11/23 =====
+Seite 11 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+ANMERKUNG: 
+Tabelle 18-3 entspricht „IEC 60364-4-443:1995, table 44B“, Auswahl entsprechend Überspannungskategorie II 
+gemäß ÖVE HD 625.1 S1 (IEC 60664-1). 
+Für Gleichspannungsnetze siehe ÖVE HD 625.1 S1 (IEC 60664-1), Werte für Überspannungskategorie II. 
+Bei Anwendung der Anschlussart 3 gemäß Tabelle 18-1, Zeile (b)2 gilt die Anforderung gemäß Tabelle 18-3 auch für den 
+Schutzpegel zwischen Außenleiter und PE-Leiter. Diese Anforderung bedeutet, dass die Serienschaltung der SPDs zwischen 
+Außenleiter und Neutralleiter sowie zwischen Neutralleiter und PA- oder PE-Schiene den Schutzpegel gemäß Tabelle 18-3 
+erfüllen muss. Wird vom Hersteller für die Kombination der Überspannungsschutzgeräte (Überspannungsschutzgerät 
+zwischen Außenleiter und Neutralleiter und Überspannungsschutzgerät zwischen Neutralleiter und PA- oder PE-Schiene) 
+kein Schutzpegel angegeben, sind die für die einzelnen Überspannungsschutzgeräte angegebenen Schutzpegel zu addieren. 
+Die Auswahl des Schutzpegels für den Schutz gegen direkte Blitzeinwirkungen erfolgt ebenfalls gemäß Tabelle 18-3. 
+Wenn der geforderte Schutzpegel mit einem Überspannungsschutzgerät bzw. einem Satz von Überspannungsschutzgeräten 
+nicht erfüllt werden kann, ist die Installation zusätzlicher, aufeinander abgestimmter Überspannungsschutzgeräte erforderlich. 
+18.4.3 
+Auswahl der höchsten Dauerspannung (Uc) 
+ 
+18.4.3.1 
+Allgemeines 
+Die höchste Dauerspannung der Überspannungsschutzgeräte muss mindestens den Werten gemäß Tabelle 18-4 
+entsprechen. 
+18.4.3.2 
+Für Verbraucheranlagen in unmittelbarer Nähe von Erdern für Hochspannungsanlagen oder in der Nähe von 
+elektrischen Bahnanlagen (einschließlich der elektrischen Schienenanlagen) können höhere als die genannten 
+Dauerspannungen sowie ergänzende Maßnahmen erforderlich sein. In solchen Fällen ist das Einvernehmen mit den 
+jeweiligen Anlagenbetreibern herzustellen und es sind geeignete Überspannungsschutzgeräte auszuwählen. 
+Tabelle 18-4 – Höchste Dauerspannung Uc in Abhängigkeit des Netzsystems 
+ 
+Netzsystem am Installationspunkt der SPDs 
+IT 
+(Isolationsüberwachungssystem) 
+SPDs installiert 
+zwischen: 
+TT 
+(Fehlerstrom-
+Schutzschaltung)
+TN-C 
+(Nullung) 
+TN-S 
+(Nullung) 
+mit verteiltem 
+Neutralleiter 
+ohne 
+Neutralleiter 
+Jedem Außenleiter und 
+dem Neutralleiter 
+≥ 1,1 × U0 
+n.a. 
+≥ 1,1 × Uo 
+≥ 1,1 × U0 
+n.a. 
+Jedem Außenleiter und 
+PE-Schiene oder 
+Haupterdungsschiene 
+≥ 1,1 × U0 
+n.a. 
+≥ 1,1 × Uo 
+≥ 
+3  × U0 1) 
+Außenleiter-
+Spannung 1) 
+Neutralleiter und  
+PE-Schiene oder 
+Haupterdungsschiene 
+≥ U0 1) 
+n.a. 
+≥ U0 1) 
+≥ U0 1) 
+n.a. 
+Jedem Außenleiter und 
+dem PEN-Leiter 
+n.a. 
+≥ 1,1 × Uo 
+n.a. 
+n.a. 
+n.a. 
+Außenleitern 
+≥ 1,1fache 
+Außenleiter-
+Spannung 
+≥ 1,1fache 
+Außenleiter-
+Spannung 
+≥ 1,1fache 
+Außenleiter-
+Spannung 
+≥ 1,1fache 
+Außenleiter-
+Spannung 
+≥ 1,1fache 
+Außenleiter-
+Spannung 
+n.a. 
+nicht anwendbar 
+U0  
+Außenleiter-Neutralleiterspannung des Niederspannungssystems  
+1) 
+Diese Werte geben die ungünstigsten Fehlerbedingungen wieder, daher wurde die Netzspannungstoleranz 
+von 10 % nicht berücksichtigt. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+11 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 12/23 =====
+Seite 12 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.4.4 
+Auswahl in Bezug auf zeitweilige (temporäre) Überspannungen (TOVs) 
+ 
+Die Erfüllung der Anforderungen dieses Unterabschnittes wird vom Hersteller durch die Angabe der zulässigen 
+Schaltungsart(en) gemäß 18.3 in Abhängigkeit des Netzsystems und der zugehörigen Nennspannung in der 
+Installationsanleitung bestätigt. 
+ANMERKUNG: 
+TOVs durch Neutralleiterunterbrechung sind durch diese Anforderung derzeit nicht abgedeckt. Aufgrund der gemäß 
+ÖVE/ÖNORM EN 61643-11 durchzuführenden TOV-Prüfungen kann jedoch ein Ausfall der SPDs ohne Gefährdung 
+von Menschen, Nutztieren oder Sachen erwartet werden. 
+18.4.4.1 
+Allgemeines 
+Überspannungsschutzgeräte müssen zeitweiligen Überspannungen, die durch Kurz-, Erd- oder Körperschlüsse im 
+Niederspannungssystem entstehen, ohne Beschädigung standhalten. 
+Diese Anforderung wird durch die Verwendung von Überspannungsschutzgeräten mit ausgewiesener TOV-Festigkeit gemäß 
+ÖVE/ÖNORM EN 61643-11:2003, Abschnitt 7.7.6 erfüllt. 
+18.4.4.2 
+Überspannungsschutzgeräte der Typen 1 oder 2, die gemäß Tabelle 18-1, Zeile (b)2, Anschlussart 3 in TT-
+Systemen (bei Fehlerstrom-Schutzschaltung) zwischen Neutralleiter und PE-Leiter installiert werden, müssen zeitweiligen 
+Überspannungen, die durch Fehler im Mittelspannungsnetz entstehen, ohne Beschädigung standhalten. 
+Diese Anforderung wird durch die Verwendung von Überspannungsschutzgeräten mit ausgewiesener TOV-Festigkeit gemäß 
+ÖVE/ÖNORM EN 61643-11:2003, Abschnitt 7.7.4 erfüllt. 
+Alle anderen Überspannungsschutzgeräte die in TT-Systemen (bei Fehlerstrom-Schutzschaltung) zwischen Außenleitern und 
+PE-Leiter oder zwischen Neutralleiter und PE-Leiter installiert werden, dürfen durch zeitweilige Überspannungen, die durch 
+Fehler im Mittelspannungsnetz entstehen, defekt werden, jedoch dürfen dadurch Menschen, Nutztiere oder Sachen nicht 
+gefährdet werden. 
+Diese Anforderung wird durch die Verwendung von Überspannungsschutzgeräten mit ausgewiesener TOV-Prüfung gemäß 
+ÖVE/ÖNORM EN 61643-11:2003, Abschnitt 7.7.4 erfüllt. 
+18.4.5 
+Auswahl des Nennableitstoßstromes (In) und des Blitzstoßstromes (IImp)  
+ 
+18.4.5.1 
+Für den Schutz gegen indirekte Blitzeinwirkungen muss der Nennableitstoßstrom der Überspannungsschutzgeräte 
+mindestens 5 kA 8/20 µs je Schutzpfad (z.B. L-N, L-PE) betragen. 
+Bei Anwendung der Anschlussart 3 gemäß Tabelle 18-1, Zeile (b)2 muss der Nennableitstoßstrom des Überspannungs-
+schutzgerätes zwischen Neutralleiter und PE-Leiter 
+– 
+für 3-phasige Anspeisungen mindestens 20 kA 8/20 µs und 
+– 
+für 1-phasige Anspeisungen mindestens 10 kA 8/20 µs 
+betragen. 
+Diese Mindestanforderung (10 kA bzw. 20 kA) für Überspannungsschutzgeräte zwischen Neutralleiter und Haupterdungs-
+schiene 
+(PAS) 
+oder 
+PE-Schiene 
+bleibt 
+unverändert, 
+auch 
+wenn 
+Überspannungsschutzgeräte 
+mit 
+höheren 
+Nennableitstoßströmen (z.B. 15 kA) zwischen den Außenleitern und dem Neutralleiter eingesetzt werden. 
+18.4.5.2 
+Für 
+den 
+Schutz 
+gegen 
+direkte 
+Blitzeinwirkungen 
+sollte 
+der 
+erforderliche 
+Blitzstoßstrom 
+der 
+Überspannungsschutzgeräte gemäß ÖVE/ÖNORM EN 61312-1 berechnet werden, oder er muss, wenn keine Berechnung 
+durchgeführt wird, mindestens 12,5 kA je Schutzpfad (z.B. L-N, L-PE) betragen. 
+Bei Anwendung der Anschlussart 3 gemäß Tabelle 18-1, Zeile (b)2 sollte der erforderliche Blitzstoßstrom des 
+Überspannungsschutzgerätes zwischen Neutralleiter und PE-Leiter ebenfalls gemäß ÖVE/ÖNORM EN 61312-1 berechnet 
+werden. Wenn keine Berechnung durchgeführt wird muss er  
+– 
+für 3-phasige Anspeisungen mindestens 50 kA und 
+– 
+für 1-phasige Anspeisungen mindestens 25 kA  
+betragen. 
+Diese Mindestanforderungen entsprechen den Blitzschutzklassen III und IV gemäß ÖVE/ÖNORM E 8049-1. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+12 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 13/23 =====
+Seite 13 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.4.5.3 
+Wenn ein Überspannungsschutzgerät bzw. ein Satz von Überspannungsschutzgeräten für den Schutz gegen 
+direkte und indirekte Blitzeinwirkungen verwendet wird, dann müssen diese Überspannungsschutzgeräte beide 
+Anforderungen, die für den Nennableitstoßstrom In und die für den Blitzstoßstrom IImp, erfüllen. 
+18.4.6 
+Auswahl der Kurzschlussfestigkeit und der Folgestromlöschfähigkeit 
+ 
+18.4.6.1 
+Die Kurzschlussfestigkeit der Überspannungsschutzgeräte muss, unter Berücksichtigung des maximal zulässigen 
+Überstromschutzes gemäß Herstellerangabe, mindestens dem Kurzschlussstrom an der Einbaustelle entsprechen. 
+Gibt der Hersteller eine Folgestromlöschfähigkeit der Überspannungsschutzgeräte an, so muss diese ebenfalls mindestens 
+dem Kurzschlussstrom an der Einbaustelle entsprechen. 
+Gibt der Hersteller keine Folgestromlöschfähigkeit an, so ist diese entweder gleich der Kurzschlussfestigkeit oder das 
+Überspannungsschutzgerät verursacht keine Folgeströme (z.B. Varistorableiter) – siehe ÖVE/ÖNORM EN 61643-11. 
+18.4.6.2 
+Überspannungsschutzgeräte die im TT-System (Fehlerstrom-Schutzschaltung) oder im TN-S-System (Nullung) 
+zwischen Neutralleiter und PE-Leiter installiert werden, müssen mindestens eine Folgestromlöschfähigkeit von 100 A 
+besitzen.  
+18.5 
+Koordination von Überspannungsschutzgeräten 
+ 
+Bei der Installation von mehr als einem Satz Überspannungsschutzgeräten ist auf die erforderliche Koordination zu achten. 
+Der Hersteller muss in der Installationsanleitung bzw. Dokumentation ausreichende Informationen zur richtigen Koordination 
+innerhalb seiner Produkte bereitstellen. 
+18.6 
+Schutz bei Überstrom  
+18.6.1 
+Der Kurzschlussschutz wird durch die richtige Auswahl der Überstrom-Schutzeinrichtungen F2 (siehe Bilder 18-1 bis 
+18-8) sichergestellt. Diese Überstrom-Schutzeinrichtungen sind kleiner oder gleich dem maximal zulässigen Überstromschutz 
+laut Herstellerangabe zu wählen. 
+18.6.2 
+Wenn die Überstrom-Schutzeinrichtungen F1 (die fester Bestandteil der Installation sind, z.B. Vorzähler- oder 
+Nachzählersicherungen, siehe Bilder 18-1 bis 18-8) einen Nennstrom kleiner oder gleich dem maximal zulässigen 
+Überstromschutz laut Herstellerangabe aufweisen, so darf auf die Überstrom-Schutzeinrichtungen F2 verzichtet werden. 
+18.6.3 
+Der Querschnitt der Anschlussleitungen zu den Überstrom-Schutzeinrichtungen F2 sowie von den Überstrom-
+Schutzeinrichtungen F2 zu den Überspannungsschutzgeräten und zwischen den Überspannungsschutzgeräten 
+(Anschlussart 3) ist entsprechend dem maximalen Kurzschlussstrom an der Einbaustelle auszuwählen. 
+18.6.4 
+Überlastströme können bei Überspannungsschutzgeräten gemäß ÖVE/ÖNORM EN 61643-11 normalerweise nicht 
+auftreten und ein Schutz gegen Überlast ist daher nicht erforderlich. 
+18.6.5 
+Im Fehlerfall ist zu beachten, dass in Abhängigkeit der Anordnung der Schutzeinrichtungen für die 
+Überspannungsschutzgeräte wahlweise entweder der Versorgungssicherheit oder dem Überspannungsschutz Priorität 
+eingeräumt wird. 
+Bei der Auswahl des Ableitvermögens von Überspannungsschutzgeräten (Nennableitstoßstrom, Blitzstoßstrom) ist zu 
+beachten, dass die maximale Stoßstromtragfähigkeit der vorgeschalteten Überstrom-Schutzeinrichtungen unter Umständen 
+die Stoßstrombelastbarkeit der Gesamtschaltung einschränken kann. 
+18.6.5.1 
+Wenn die Schutzeinrichtungen die laut Herstellerangabe erforderlich sind (z.B. Überstrom-Schutzeinrichtungen) im 
+Strompfad der Überspannungsschutzgeräte angeordnet werden (siehe Bild 18-9), ist nach einem Fehler des 
+Überspannungsschutzgerätes die Versorgungssicherheit sichergestellt, aber die Installation und angeschlossene Geräte sind 
+nicht mehr vor Überspannungen geschützt. 
+Dabei ist auf die Selektivität zwischen den Überstrom-Schutzeinrichtungen F1 und F2 zu achten. 
+18.6.5.2 
+Wenn die Schutzeinrichtungen die laut Herstellerangabe erforderlich sind (z.B. Überstrom-Schutzeinrichtungen) in 
+der Speiseleitung angeordnet werden (siehe Bild 18-10), ist nach einem Fehler des Überspannungsschutzgerätes die 
+Spannungsversorgung unterbrochen bis das fehlerhafte Überspannungsschutzgerät getauscht wird. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+13 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 14/23 =====
+Seite 14 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+Bild 18-9 – Anordnung der Überstrom-Schutzeinrichtungen, die gemäß Herstellerangabe  
+erforderlich sind (z.B. Überstrom-Schutzeinrichtungen F2), im Strompfad des Überspannungsschutzgeräts 
+ 
+ 
+ 
+Bild 18-10 – Anordnung der Überstrom-Schutzeinrichtungen, die gemäß Herstellerangabe  
+erforderlich sind, in der Speiseleitung (Nennstrom von F1 kleiner oder gleich dem maximal  
+zulässigen Überstromschutz laut Herstellerangabe) 
+L1 
+L2 
+L3 
+PEN 
+L1 
+L2 
+L3 
+PEN 
+F1 
+F2 
+L1 
+L2 
+L3 
+PEN 
+L1 
+L2 
+L3 
+PEN 
+F1 
+F2 
+PEN-Schiene 
+oder PAS 
+RA 
+PEN-Schiene 
+oder PAS 
+RA 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+14 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 15/23 =====
+Seite 15 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.7 
+Fehlerschutz (Schutz bei indirektem Berühren) 
+ 
+18.7.1 
+Der Fehlerschutz darf durch defekte Überspannungsschutzgeräte nicht beeinträchtigt werden. 
+18.7.2 
+Bei Anwendung des Fehlerschutzes Nullung (TN-System) ist die Anforderung von 18.7.1 generell durch richtige 
+Auswahl 
+der 
+vorgeschalteten 
+Überstrom-Schutzeinrichtung 
+gemäß 
+18.6 
+unter 
+Einhaltung 
+der 
+Anforderungen  
+des Abschnittes 10 erfüllt (siehe Bilder 18-1, 18-2, 18-4 und 18-7). 
+18.7.3 
+Bei Anwendung des Fehlerschutzes Fehlerstrom-Schutzschaltung (TT-System) kann die Anforderung gemäß 18.7.1 
+durch eine der folgenden Maßnahmen erfüllt werden: 
+(a) 
+Installation der Überspannungsschutzgeräte gemäß Bild 18-8 entsprechend Tabelle 18-1, Zeile (b)2 Anschlussart 3, 
+in Netzen, in denen die Einhaltung der Bedingung gemäß 14.2.1 sichergestellt ist. 
+(b) 
+Installation der Überspannungsschutzgeräte gemäß Bild 18-5 mit einem Ableitertrennschalter. 
+Dieser Ableitertrennschalter muss bei einphasigen Verbraucheranlagen mindestens eine Stoßstromfestigkeit von 
+10 kA 8/20 µs und bei 3-phasigen Verbraucheranlagen mindestens eine Stoßstromfestigkeit von 20 kA 8/20 µs 
+aufweisen. 
+Diese Mindestanforderung (10 kA bzw. 20 kA) für den Ableitertrennschalter bleibt unverändert, auch wenn 
+Überspannungsschutzgeräte 
+mit 
+höheren 
+Nennableitstoßströmen 
+(z.B. 15 kA) 
+als 
+entsprechend 
+der 
+Mindestanforderung gemäß 18.4.5 eingesetzt werden. 
+Bei Ableitvorgängen mit Stoßströmen über der Stoßstromfestigkeit des Ableitertrennschalters kann es zu 
+Fehlauslösungen des Ableitertrennschalters kommen. 
+Für den Erdungswiderstand RA gelten: 
+FN
+FL
+A
+I
+U
+R ≤
+ 
+ 
+RA .......... Erdungswiderstand des Anlagenerders 
+UFL ........ vereinbarter Grenzwert der Fehlerspannung (65 V) 
+IFN.......... Auslösenennstrom des Ableitertrennschalters 
+ 
+und  
+RA ≤ 100 Ω, 
+je nachdem, welcher Wert kleiner ist. 
+ 
+ 
+(c) 
+Installation der Überspannungsschutzgeräte sinngemäß gemäß Bild 18-4 oder Bild 18-7 unter Einhaltung der 
+Bedingung 
+A
+FL
+A
+I
+U
+R ≤
+ 
+IA .............Ausschaltstrom der vorgeschalteten oder im Überspannungsschutzgerät integrierten Überstrom-
+Schutzeinrichtung (siehe Herstellerangaben und Tabelle 10-1) 
+ 
+Die Einhaltung dieser Bedingung im TT-System (Fehlerstrom-Schutzschaltung) ist nur schwer erfüllbar und daher 
+für die Praxis kaum von Bedeutung. 
+ 
+(d) 
+Installation der Überspannungsschutzgeräte nach einer Fehlerstrom-Schutzeinrichtung  
+(siehe Einschränkungen in 18.8). 
+18.7.4 
+Bei Anwendung des Isolationsüberwachungssystems sind keine zusätzlichen Maßnahmen erforderlich. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+15 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 16/23 =====
+Seite 16 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.8 
+Installation in Verbindung mit Fehlerstrom-Schutzeinrichtungen 
+18.8.1 
+Die Installation von Überspannungsschutzgeräten der Type 1 nach Fehlerstrom-Schutzeinrichtungen ist nicht 
+zulässig, ausgenommen die Überspannungen sind von der Lastseite der Fehlerstrom-Schutzeinrichtung zu erwarten. 
+18.8.2 
+Die Installation von Überspannungsschutzgeräten der Type 2 nach Fehlerstrom-Schutzeinrichtungen ist nur 
+zulässig, wenn vor der Fehlerstrom-Schutzeinrichtung bereits Überspannungsschutzgeräte der Type 2 entsprechend 18.4.5 
+installiert sind, oder wenn die Überspannungen von der Lastseite der Fehlerstrom-Schutzeinrichtung zu erwarten sind (siehe 
+Bild 18-11). 
+18.8.3 
+Werden Überspannungsschutzgeräte nach einer Fehlerstrom-Schutzeinrichtung eingebaut, so sind verzögerte 
+Fehlerstrom-Schutzeinrichtungen z.B. der Bauart S oder Bauart G zu installieren. 
+Bei Ableitvorgängen mit Stoßströmen über 3 kA kann es zu Fehlauslösungen der Fehlerstrom-Schutzeinrichtung kommen. 
+Bei einem Defekt des Überspannungsschutzgerätes kann ebenfalls eine Auslösung der Fehlerstrom-Schutzeinrichtung 
+erfolgen. 
+ 
+ 
+ 
+Bild 18-11 – Beispiel für die zulässige Anordnung von Überspannungsschutzgeräten  
+der Type 2 in Anschlussart 2 sowohl im Hauptverteiler, wie auch nach einer  
+Fehlerstrom-Schutzeinrichtung der Bauart S im Unterverteiler 
+Darin bedeuten: 
+ATS .........Ableitertrennschalter 
+FI .............Fehlerstrom-Schutzschalter 
+F1 ............Sicherung 
+F1’ ...........Sicherung 
+F2 ............Sicherung 
+PAS..........Potentialausgleichsschiene 
+PE ............Schutzleiter(schiene) 
+T2.............Überspannungsschutzgerät der Type 2 
+LS.............Leitungsschutzschalter 
+ 
+Hauptverteiler 
+Unterverteiler
+I∆ 
+I∆
+G
+I∆ 
+S 
+FI 
+FI 
+T2 
+T2 
+F1 
+F1’
+F2 
+PE 
+PE 
+PAS 
+ATS 
+LS 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+16 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 17/23 =====
+Seite 17 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+18.9 
+Messung des Isolationswiderstandes 
+18.9.1 
+Werden Überspannungsschutzgeräte der Typen 1 oder 2 in einer Verbraucheranlage in Verteilern installiert und ist 
+die Messung des Isolationswiderstandes der Niederspannungsanlage gemäß ÖVE/ÖNORM E 8001-6-61 ohne Abklemmen 
+der Überspannungsschutzgeräte nicht möglich, so ist ein Hinweisschild mit eindeutigen Anweisungen, z.B. der Aufschrift „Bei 
+Isolationswiderstands-Messungen Überspannungsschutzgeräte abklemmen!“ deutlich sichtbar im Verteiler anzubringen. 
+18.9.2 
+Werden Überspannungsschutzgeräte der Typen 2 oder 3 außerhalb von Verteilern (z.B. in Verbindung mit 
+Steckdosen) installiert, so müssen alle Schutzpfade gegen den Schutzleiter der Prüfspannung zur Messung des 
+Isolationswiderstandes gemäß ÖVE/ÖNORM E 8001-6-61 standhalten ohne die Messung unzulässig zu beeinflussen. 
+18.10 Überwachung von Überspannungsschutzgeräten 
+18.10.1 
+Ein Defekt eines Überspannungsschutzgerätes muss entweder 
+– 
+durch einen eingebauten Kennmelder angezeigt oder 
+– 
+durch eine zugeordnete Schutzeinrichtung in geeigneter Weise gemeldet werden. 
+18.10.2 
+Überspannungsschutzgeräte in Verteilern sind so einzubauen, dass vorhandene Kennmelder kontrolliert werden 
+können. 
+18.11 Anschlussleitungen 
+Überspannungsschutzgeräte sind so anzuordnen, dass die SPD-Zuleitungen und SPD-Ableitungen möglichst kurz 
+(vorzugsweise ≤ 0,5 m) sind und möglichst keine Schleifen beinhalten (impedanzarme Verlegung), um zusätzliche 
+Spannungsabfälle an den Anschlussleitungen und damit eine Verschlechterung des Schutzpegels so gering wie möglich zu 
+halten (siehe Bild 18-12). 
+Ist eine solche Verlegung nicht möglich, so sollte der Anschluss V-förmig erfolgen, wobei darauf zu achten ist, dass Hin- und 
+Weiterleitung mit möglichst großem Abstand verlegt werden (siehe Bild 18-13). 
+ 
+Bild 18-12 – Impedanzarme, kurze SPD-Zuleitungen und SPD-Ableitungen 
+PAS oder 
+PE-Schiene 
+RA 
+vorzugsweise  
+≤ 0,5 m 
+F1 
+vorzugsweise  
+≤ 0,5 m 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+17 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 18/23 =====
+Seite 18 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+ 
+Bild 18-13 – V-förmiger Anschluss der Hin- und Weiterleitung 
+ 
+ 
+18.12 Querschnitt der SPD-Ableitungen 
+Der Mindestquerschnitt der SPD-Ableitung für Überspannungsschutzgeräte der Type 2 beträgt 4 mm² Kupfer oder 
+leitwertgleiche Querschnitte anderer Materialien. 
+Der Mindestquerschnitt der SPD-Ableitung für Überspannungsschutzgeräte der Type 1 beträgt 16 mm² Kupfer oder 
+leitwertgleiche Querschnitte anderer Materialien. 
+– ⋅ – 
+ 
+Abschnitt 19 lautet neu: 
+19 
+Isolationswiderstand 
+Der Isolationswiderstand der Anlagenteile ohne Verbrauchsgeräte zwischen zwei Überstrom-Schutzeinrichtungen oder nach 
+der letzten Überstrom-Schutzeinrichtung muss mindesten den Werten der Tabelle 19-1 entsprechen. 
+ 
+Tabelle 19-1 – Mindestwerte des Isolationswiderstandes 
+ 
+Stromkreis-Nennspannung 
+V 
+Prüfgleichspannung 
+V 
+Isolationswiderstand 
+MΩ 
+Schutzkleinspannung und 
+Funktionskleinspannung 
+250 
+≥ 0,25 
+bis einschließlich 500 V  
+(ausgenommen Kleinspannung) 
+5001) 
+≥ 0,5 
+über 500 V 
+1 000 
+≥ 1,0 
+1)  Wenn die Abtrennung von Überspannungsschutzgeräten praktisch nicht möglich ist (z.B. eingebaute 
+Überspannungsschutzgeräte in Steckdosen), darf die Prüfspannung bis auf 250 V reduziert werden. 
+PAS oder 
+PE-Schiene 
+RA 
+vorzugsweise  
+≤ 0,5 m 
+F1 
+möglichst groß 
+möglichst kurz 
+PAS oder 
+PE-Schiene 
+RA 
+vorzugsweise  
+≤ 0,5 m 
+F1 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+18 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 19/23 =====
+Seite 19 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+Anhänge C und D kommen neu hinzu: 
+ANHANG C (informativ): Gegenüberstellung der Ableiterklassifikationen 
+Gegenüberstellung der Ableiterklassifikation gemäß ÖVE-SN 60, Teil 1 mit den Überspannungsschutzgeräte-Typen nach der 
+Test-Klassifikation gemäß ÖVE/ÖNORM EN 61643-11. 
+ 
+Tabelle C-1 – Klassifikation gemäß ÖVE-SN 60, Teil 1:1990 
+ 
+Ableiterklasse A 
+Überspannungsableiter zum Einsatz in Freileitungen 
+Ableiterklasse B 
+Blitzstromableiter für die Montage in Gebäuden 
+Ableiterklasse C 
+Überspannungsableiter für die Montage in Gebäuden 
+Ableiterklasse D 
+Ortsveränderliche Überspannungsschutzgeräte 
+Ableiterklasse E 
+Überspannungs-Feinschutzelemente 
+ 
+Tabelle C-2 – Überspannungsschutzgeräte-Typen gemäß ÖVE/ÖNORM EN 61643-11:2003 
+Type 1 
+1 
+Prüfstrom IImp  definiert durch Amplitude, Ladung und spezifische 
+Energie (10/350 µs) 
+entspricht etwa 
+Ableiterklasse B  
+gemäß ÖVE-SN 60 
+Type 2 
+ 
+Prüfstrom In  mit Wellenform 8/20 µs 
+Diese Type ist nur für SPDs ohne Reihenimpedanzen  
+geeignet –  
+sogenannte One-Port-SPDs. 
+entspricht etwa 
+Ableiterklasse A, C, D 
+gemäß ÖVE-SN 60 
+Type 3 
+ 
+Prüfung mit Hybridgenerator 
+Leerlaufspannung Uoc  1,2/50 µs, Kurzschlussstrom Isc 8/20 µs, 
+wobei die Leerlaufspannung vorgegeben ist und die Stromform 
+sich je nach Prüflingsimpedanz einstellt.  
+Diese Type ist vorwiegend für SPDs mit Reihenimpedanzen 
+gedacht –  
+sogenannte Two-Port-SPDs. 
+entspricht etwa 
+Ableiterklasse D und E 
+gemäß ÖVE-SN 60 
+ 
+T1 
+T3 
+T2 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+19 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 20/23 =====
+Seite 20 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ANHANG D (informativ): Beispielhafte Darstellung von Standardinstallationen 
+Zusammenfassende beispielhafte Darstellung von Standardinstallationen und Angabe der wichtigsten Auswahlparameter von 
+Überspannungsschutzgeräten in 230/400-V-Netzen für den Schutz gegen indirekte Blitzeinwirkungen. 
+Die Anordnung der Zähleinrichtung kann je nach Netzbetreiber unterschiedlich sein. 
+D.1 
+Genullte Verbraucheranlage mit PEN-Leiter – Anschlussart 1 
+ 
+ 
+ 
+①... Überspannungsschutzgerät geeignet für TN-Systeme (Nullung) für die Installation zwischen Außenleiter und  
+PEN-/Neutralleiter, Dauerspannung Uc ≥ 253 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+③... kWh-Zähler, Anordnung nur beispielhaft 
+④... selektive Fehlerstrom-Schutzeinrichtung für den zusätzlichen Brandschutz 
+⑤... Fehlerstrom-Schutzeinrichtung für den Zusatzschutz von Steckdosenstromkreisen etc. 
+ 
+Bild D.1 
+L1 
+L2 
+L3 
+PEN 
+ 
+L1 
+L2 
+L3 
+N 
+PE 
+PE 
+N 
+L3 
+L2 
+L1 
+F1 
+5 230/400 V 
+1) 
+1) siehe Tabelle 18-1 
+RA 
+kWh
+L1 
+L2 
+L3 
+N 
+PE 
+S 
+G 
+I∆ 
+I∆ 
+③
+① 
+④ 
+⑤ 
+PAS 
+F2 
+PEN 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+20 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 21/23 =====
+Seite 21 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+D.2 
+Genullte Verbraucheranlage mit getrennt geführtem Schutzleiter – Anschlussart 3 
+ 
+ 
+ 
+①...Überspannungsschutzgerät geeignet für TN-Systeme (Nullung) für die Installation zwischen Außenleiter und 
+Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom In ≥ 5 kA 
+②...Überspannungsschutzgerät geeignet für TN-Systeme (Nullung) für die Installation zwischen Neutralleiter und 
+PE-Leiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom In ≥ 20 kA 
+①+②.........Schutzpegel Up ≤ 2 500 V 
+③...kWh-Zähler, Anordnung nur beispielhaft 
+④...selektive Fehlerstrom-Schutzeinrichtung für den zusätzlichen Brandschutz 
+⑤...Fehlerstrom-Schutzeinrichtung für den Zusatzschutz von Steckdosenstromkreisen etc. 
+Bild D.2 
+L1 
+L2 
+L3 
+N 
+PE 
+L1 
+L2 
+L3 
+N 
+PE 
+PE 
+N 
+L3 
+L2 
+L1 
+F1 
+5 230/400 V 
+1)
+RA 
+kWh
+L1 
+L2 
+L3 
+N 
+PE 
+S 
+G 
+I∆ 
+I∆ 
+③
+① 
+④
+⑤
+F2 
+② 
+1) siehe Tabelle 18-1 
+PAS 
+PE 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+21 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 22/23 =====
+Seite 22 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+D.3 
+Verbraucheranlage mit Fehlerstrom-Schutzschaltung – Anschlussart 3 
+ 
+ 
+①... Überspannungsschutzgerät geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für die Installation zwischen 
+Außenleiter und Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom In ≥ 5 kA 
+②... Überspannungsschutzgerät geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für die Installation zwischen 
+Neutralleiter und PE-Leiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom In ≥ 20 kA 
+①+②........ Schutzpegel Up ≤ 2 500 V 
+③... kWh-Zähler, Anordnung nur beispielhaft 
+④... selektive Fehlerstrom-Schutzeinrichtung für den Fehlerschutz 
+⑤... Fehlerstrom-Schutzeinrichtung für den Zusatzschutz von Steckdosenstromkreisen etc. 
+Bild D.3 
+ 
+L1 
+L2 
+L3 
+N 
+ 
+L1 
+L2 
+L3 
+N 
+PE 
+PE 
+N 
+L3 
+L2 
+L1 
+F1 
+5 230/400 V 
+1) 
+RA 
+kWh 
+L1 
+L2 
+L3 
+N 
+PE 
+S
+G 
+I∆ 
+I∆ 
+③ 
+① 
+④
+⑤ 
+F2 
+② 
+1) siehe Tabelle 18-1 
+PAS 
+PE 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+22 von 23
+www.ris.bka.gv.at
+
+
+===== PAGE 23/23 =====
+Seite 23 
+ÖVE/ÖNORM E 8001-1/A2 
+ 
+ 
+D.4 
+Verbraucheranlage mit Isolationsüberwachungssystem – Anschlussart 2 
+ 
+ 
+①...Überspannungsschutzgerät geeignet für IT-Systeme für die Installation zwischen Außenleiter und PE-Leiter, 
+Dauerspannung Uc ≥ 440 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+②...Überspannungsschutzgerät geeignet für IT-Systeme für die Installation zwischen Neutralleiter und PE-Leiter, 
+Dauerspannung UC ≥ 230 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+ 
+ 
+Bild D.4 
+ 
+L1 
+L2 
+L3 
+N 
+ 
+L1 
+L2 
+L3 
+N 
+PE 
+5 230/400 V 
+1)
+RA 
+①
+② 
+1) siehe Tabelle 18-1 
+PAS 
+Isolations- 
+überwachungsgerät 
+F1 
+F2
+PE 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+23 von 23
+www.ris.bka.gv.at

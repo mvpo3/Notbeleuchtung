@@ -1,0 +1,3094 @@
+
+
+===== PAGE 281/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 15 
+Tabelle 51.ZA.1 (4 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+ 
+Luft-
+temperatur 
+Relative 
+Luftfeuchte 
+Absolute 
+Luftfeuchte 
+ 
+ 
+ 
+°C 
+% 
+g/m3 
+ 
+ 
+ 
+niedrig 
+hoch 
+niedrig 
+hoch 
+niedrig 
+hoch 
+ 
+ 
+AB5 
++5 
++40 
+5 
+85 
+1 
+25 
+Wettergeschützte 
+Orte/Räume mit 
+Temperaturregelung 
+Normal  
+Identisch mit dem 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K3. 
+AB6 
++5 
++60 
+10 
+100 
+1 
+35 
+Innenräume und 
+Außenbereiche mit 
+extrem hohen 
+Umgebungs-
+temperaturen; der 
+Einfluss von niedrigen 
+Umgebungstemperaturen 
+ist verhindert. Auftreten 
+von Sonnen- und 
+Wärmestrahlung 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K7, 
+begrenzt auf einen unteren Wert  
+der Lufttemperatur von +5 °C und 
+einen oberen Wert von +60 °C.  
+Er schließt den Temperaturbereich  
+der OVE EN IEC 60721-3-4, 
+Klasse 4K4, ein; der untere Wert 
+der Lufttemperatur ist auf +5 °C 
+begrenzt. 
+AB7 
+–25 
++55 
+10 
+100 
+0,5 
+29 
+Wettergeschützte 
+Innenräume, die weder 
+Temperatur- noch 
+Luftfeuchteregelung 
+haben. Die Räume 
+können Öffnungen  
+direkt zur Freiluft-
+umgebung haben und 
+Sonnenstrahlung  
+ausgesetzt sein 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Identisch mit dem 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K6. 
+AB8 
+–50 
++40 
+15 
+100 
+0,04 
+36 
+Außenbereiche und  
+nicht wettergeschützte 
+Orte/Räume mit hohen 
+und niedrigen 
+Temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Identisch mit dem 
+Temperaturbereich der OVE EN 
+IEC 60721-3-4, Klasse 4K3. 
+ANMERKUNG 1 
+Alle festgelegten Werte sind Maximal- oder Grenzwerte mit der geringen Möglichkeit des Überschreitens. 
+ANMERKUNG 2 
+Die untere und die obere relative Luftfeuchte ist begrenzt durch die untere und obere absolute Luftfeuchte, sodass 
+z. B. für die äußeren Einflüsse die angegebenen Grenzwerte der Lufttemperatur und der relativen Luftfeuchte nicht gleichzeitig auftreten 
+können. 
+b 
+Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, z. B. zwischen dem Planer der Anlage 
+und dem Hersteller der Betriebsmittel, wie z. B. speziell entworfene Betriebsmittel. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 282/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 16 
+Tabelle 51.ZA.1 (5 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AC 
+Seehöhe 
+AC1 
+2 000 m 
+Normal  
+ 
+AC2 
+2 000 m 
+Spezielle Vorkehrungen können erforderlich 
+sein, z. B. die Anwendung von 
+Reduktionsfaktoren 
+ANMERKUNG 
+Für einige Betriebsmittel 
+können spezielle Maßnahmen bereits für 
+Höhen ab 1 000 m erforderlich sein. 
+ 
+AD 
+Auftreten von Wasser 
+AD1 
+Vernachlässigbar 
+Die Wahrscheinlichkeit für das Auftreten  
+von Wasser ist vernachlässigbar 
+Orte/Räume, in denen an Wänden im 
+Allgemeinen keine Spuren von Wasser 
+vorhanden sind, aber für kurze Zeit auftreten 
+können, z. B. in Form von Dunst, wenn eine  
+gute Lüftung diese schnell trocknet 
+OVE EN IEC 60721-3-4,  
+Klasse 4Z6 
+ 
+ 
+IPX0 
+ÖVE/ÖNORM EN 60529 
+AD2 
+Tropfwasser 
+Möglichkeit von senkrecht fallenden Tropfen 
+Orte/Räume, wo Wasserdampf gelegentlich  
+zu Tropfen kondensiert oder wo gelegentlich 
+Dampf vorhanden ist 
+OVE EN IEC 60721-3-3,  
+Klasse 3Z7 
+ 
+ 
+IPX1 oder IPX2 
+ÖVE/ÖNORM EN 60529 
+AD3 
+Sprühwasser 
+Möglichkeit, dass Sprühwasser in einem  
+Winkel von 60 ° zur Senkrechten auftritt 
+Orte/Räume, wo Sprühwasser einen 
+geschlossenen Wasserfilm auf Böden  
+und/oder Wänden bildet 
+OVE EN IEC 60721-3-3,  
+Klasse 3Z8 
+OVE EN IEC 60721-3-4,  
+Klasse 4Z7 
+ 
+ 
+IPX3 
+ÖVE/ÖNORM EN 60529 
+AD4 
+Spritzwasser 
+Möglichkeit von Spritzwasser aus allen 
+Richtungen 
+Orte/Räume, wo Betriebsmittel Spritzwasser 
+ausgesetzt sein können; dies trifft z. B. für 
+bestimmte Außenleuchten, Baustellen-
+ausrüstung zu 
+OVE EN IEC 60721-3-3,  
+Klasse 3Z9 
+OVE EN IEC 60721-3-4,  
+Klasse 4Z7 
+ 
+ 
+IPX4 
+ÖVE/ÖNORMEN 60529 
+AD5 
+Strahlwasser 
+Möglichkeit von Strahlwasser aus allen 
+Richtungen 
+Orte/Räume, die regelmäßig mit einem 
+Schlauch abgespritzt werden, z. B. Höfe, 
+Lagerplätze, Autowaschplätze 
+OVE EN IEC 60721-3-3, 
+Klasse 3Z10 
+OVE EN IEC 60721-3-4,  
+Klasse 4Z8 
+ 
+ 
+IPX5 
+ÖVE/ÖNORM EN 60529 
+AD6 
+Schwallwasser 
+Möglichkeit von Schwallwasser 
+Orte/Räume an der Küste, wie Piers, Strände, 
+Kais, Stege u. dgl. 
+OVE EN IEC 60721-3-4,  
+Klasse 4Z9 
+ 
+ 
+IPX6 
+ÖVE/ÖNORM EN 60529 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 283/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 17 
+Tabelle 51.ZA.1 (6 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AD7 
+Eintauchen 
+Mögliches Eintauchen mit teilweiser oder 
+vollständiger Bedeckung mit Wasser 
+Orte/Räume, die überflutet werden können 
+und/oder wo die Betriebsmittel wie 
+nachfolgend beschrieben eingetaucht  
+werden können: 
+– 
+Betriebsmittel mit einer Höhe kleiner 
+850 mm, die so angeordnet sind, dass  
+ihr tiefster Punkt nicht mehr als 1 000 mm 
+unterhalb der Wasseroberfläche liegt; 
+– 
+Betriebsmittel mit einer Höhe gleich oder 
+größer 850 mm, die so angeordnet sind, 
+dass ihr höchster Punkt nicht mehr als 
+150 mm unterhalb der Wasseroberfläche 
+liegt. 
+ 
+ 
+ 
+IPX7 
+ÖVE/ÖNORM EN 60529 
+AD8 
+Untertauchen 
+Möglichkeit der dauernden und vollständigen 
+Bedeckung mit Wasser 
+Orte/Räume wie Schwimmbecken, wo 
+elektrische Betriebsmittel ständig und 
+vollständig unter Wasser sind 
+ 
+ 
+ 
+IPX8 
+ÖVE/ÖNORM EN 60529 
+AE 
+Auftreten von festen Fremdkörpern 
+AE1 
+Vernachlässigbar 
+Menge oder Art von Staub oder festen 
+Fremdkörpern ist vernachlässigbar 
+ 
+ 
+IP0X 
+OVE EN IEC 60721-3-3, 
+Klasse 3S1 
+OVE EN IEC 60721-3-4, 
+Klasse 4S1 
+ÖVE/ÖNORM EN 60529 
+AE2 
+Kleine Gegenstände 
+(2,5 mm) 
+Auftreten von festen Fremdkörpern, deren 
+kleinste Abmessung mindestens 2,5 mm ist 
+ 
+ 
+IP3X 
+Werkzeuge und kleine Gegenstände sind 
+Beispiele von festen Fremdkörpern, deren 
+kleinste Abmessung nicht kleiner als 2,5 mm 
+ist 
+OVE EN IEC 60721-3-3, 
+Klasse 3S2 
+OVE EN IEC 60721-3-4, 
+Klasse 4S2 
+ÖVE/ÖNORM EN 60529 
+ 
+AE3 
+Sehr kleine Gegenstände 
+(1 mm) 
+Auftreten von festen Fremdkörpern, deren 
+kleinste Abmessung nicht kleiner als 1 mm ist 
+ 
+ 
+IP4X 
+Drähte sind ein Beispiel für Fremdkörper, 
+deren kleinste Abmessung nicht kleiner als 
+1 mm ist 
+OVE EN IEC 60721-3-3,  
+Klasse 3S3 
+OVE EN IEC 60721-3-4,  
+Klasse 4S3 
+ÖVE/ÖNORM EN 60529 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 284/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 18 
+Tabelle 51.ZA.1 (7 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AE4 
+Kleine Staubmenge 
+Auftreten von Staub 
+ 
+Das Eindringen von Staub ist nicht schädlich 
+für die Funktion des Betriebsmittels 
+IP5X 
+OVE EN IEC 60721-3-3,  
+Klasse 3S2 
+OVE EN IEC 60721-3-4,  
+Klasse 4S2 
+ÖVE/ÖNORM EN 60529 
+AE5 
+Mittlere Staubmenge 
+Auftreten von Staub 
+ 
+Das Eindringen von Staub ist schädlich für  
+die Funktion des Betriebsmittels 
+IP6X 
+OVE EN IEC 60721-3-3, 
+Klasse 3S3 
+OVE EN IEC 60721-3-4, 
+Klasse 4S3 
+ÖVE/ÖNORM EN 60529 
+AE6 
+Bedeutende Staubmenge 
+Auftreten von Staub 
+ 
+Staub darf nicht in das Betriebsmittel 
+eindringen 
+IP6X 
+OVE EN IEC 60721-3-3, 
+Klasse 3S4 
+OVE EN IEC 60721-3-4, 
+Klasse 4S4 
+ÖVE/ÖNORM EN 60529 
+AF 
+Auftreten von korrosiven oder verunreinigenden Substanzen 
+AF1 
+Vernachlässigbar 
+Menge oder Art von korrosiven oder 
+verunreinigten Substanzen ist 
+vernachlässigbar 
+Normal  
+OVE EN IEC 60721-3-3, 
+Klasse 3C1 
+OVE EN IEC 60721-3-4, 
+Klasse 4C1 
+AF2 
+Atmosphärisch 
+Menge von korrosiven oder verunreinigenden 
+Substanzen atmosphärischen Ursprungs  
+ist bedeutend 
+Anlagen, errichtet in Meeresnähe oder in  
+der Nähe von Industrien, die eine große 
+Luftverschmutzung produzieren, wie 
+chemische Industrie, Zementwerke; diese 
+Industrien verursachen scheuernde, 
+isolierende oder leitfähige Stäube. 
+Entsprechend der Art der Substanzen  
+(z. B. Bestehen des Salz-Nebel-Tests nach 
+OVE EN IEC 60068-2-11) 
+OVE EN IEC 60721-3-3, 
+Klasse 3C2 
+OVE EN IEC 60721-3-4, 
+Klasse 4C2 
+AF3 
+Zeitweise oder zufällig 
+Zeitweises oder zufälliges Auftreten von 
+korrosiven oder verschmutzten chemischen 
+Substanzen, die verwendet oder produziert 
+werden 
+Orte/Räume, wo mit einigen Chemikalien  
+in kleinen Mengen umgegangen wird und  
+wo diese nur zufällig in Berührung mit 
+elektrischen Betriebsmitteln kommen können; 
+solche Bedingungen gibt es in Fabriklabors, 
+anderen Laboratorien oder in Bereichen, in 
+denen Kohlenwasserstoffe zur Anwendung 
+kommen (Kesselräume, Garagen usw.) 
+Schutz gegen Korrosion entsprechend der 
+Betriebsmittelspezifikation 
+OVE EN IEC 60721-3-3, 
+Klasse 3C3 
+OVE EN IEC 60721-3-4, 
+Klasse 4C3 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 285/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 19 
+Tabelle 51.ZA.1 (8 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AF4 
+Dauernd 
+Dauerndes Auftreten von korrosiven oder 
+verschmutzten chemischen Substanzen in 
+beträchtlichen Mengen, z. B. chemische Werke 
+Speziell ausgeführte Betriebsmittel, 
+entsprechend der Art der Substanzen 
+OVE EN IEC 60721-3-3, 
+Klasse 3C4 
+OVE EN IEC 60721-3-4, 
+Klasse 4C4 
+AG 
+Mechanische Beanspruchung: z. B. Schlag 
+AG1 
+Niedrige Beanspruchung 
+Normal 
+z. B. Haushaltsgeräte und ähnliche 
+Betriebsmittel 
+≥ IK02 
+OVE EN 62262 
+AG2 
+Mittlere Beanspruchung 
+Verstärkter Schutz gegenüber AG1 
+z. B. für Betriebsmittel für den gewerblichen 
+und den industriellen Einsatz oder wenn 
+erhöhte Belastungen zu erwarten sind 
+≥ IK07 
+OVE EN 62262 
+AG3 
+Hohe Beanspruchung 
+Verstärkter Schutz gegenüber AG2 
+z. B. für erschwerte industrielle Bedingungen 
+oder wenn besonders hohe Belastungen zu 
+erwarten sind 
+≥ IK10 
+OVE EN 62262 
+AH 
+Beanspruchung durch Schwingungen  
+AH1 
+Niedrige Beanspruchung 
+Bedingungen wie im Haushalt und  
+ähnlichen Bereichen, wo die Auswirkungen 
+von Schwingungen im Allgemeinen 
+vernachlässigbar sind 
+Normal 
+OVE EN IEC 60721-3-3, 
+Klassen 3M1/3M2/3M3 
+OVE EN IEC 60721-3-4, 
+Klassen 4M1/4M2/4M3 
+AH2 
+Mittlere Beanspruchung 
+Gewöhnlich industrielle Bedingungen 
+Speziell ausgeführte Betriebsmittel oder 
+spezielle Vorkehrungen 
+OVE EN IEC 60721-3-3, 
+Klassen 3M4/3M5/3M6 
+OVE EN IEC 60721-3-4, 
+Klassen 4M4/4M5/4M6 
+AH3 
+Hohe Beanspruchung 
+Industrieanlagen mit hoher Beanspruchung 
+Speziell ausgeführte Betriebsmittel oder 
+spezielle Vorkehrungen 
+OVE EN IEC 60721-3-3, 
+Klassen 3M7/3M8 
+OVE EN IEC 60721-3-4, 
+Klassen 4M7/4M8 
+AJ 
+Andere mechanische Beanspruchungen: In Bearbeitung 
+AK 
+Vorhandensein von Pflanzen- und/oder Schimmelwachstum 
+AK1 
+Nicht gefährlich 
+Keine schädigende Gefahr durch Pflanzen 
+und/oder Schimmelwachstum 
+Normal  
+OVE EN IEC 60721-3-3, 
+Klasse 3B1 
+OVE EN IEC 60721-3-4, 
+Klasse 4B1 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 286/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 20 
+Tabelle 51.ZA.1 (9 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AK2 
+Gefährlich 
+Schädigende Gefahr durch Pflanzen-  
+und/oder Schimmelwachstum 
+Die Gefährlichkeit hängt von den örtlichen 
+Bedingungen ab und von der Art der  
+Pflanzen. Es sollte unterschieden werden 
+zwischen schädlichem Wachstum der 
+Vegetation und Bedingungen, die das 
+Wachstum von Schimmel begünstigen. 
+Spezielle Vorkehrungen wie z. B.: 
+– 
+erhöhte Schutzarten (siehe AE); 
+– 
+spezielles Material oder spezieller 
+Schutzanstrich der Umhüllung; 
+– 
+Vorkehrungen, die die Pflanzen vom 
+Ort/Raum fernhalten. 
+OVE EN IEC 60721-3-3, 
+Klasse 3B2 
+OVE EN IEC 60721-3-4, 
+Klasse 4B2 
+AL 
+Anwesenheit von Tieren (Fauna) 
+AL1 
+Nicht gefährlich 
+Keine schädigende Gefahr durch Tiere 
+Normal  
+OVE EN IEC 60721-3-3,  
+Klasse 3B1 
+OVE EN IEC 60721-3-4, 
+Klasse 4B1 
+AL2 
+Gefährlich 
+Schädigende Gefahr durch Tiere (Insekten, 
+Vögel, kleine Tiere) 
+Die Gefahr ist abhängig von der Art der Tiere 
+Es sollte unterschieden werden zwischen: 
+– 
+Vorhandensein von Insekten in 
+gefährlichen Mengen oder mit großer 
+Aggressivität; 
+– 
+Vorhandensein von kleinen Tieren  
+oder Vögeln in gefährlichen Mengen  
+oder mit großer Aggressivität. 
+Der Schutz kann einschließen: 
+– 
+eine geeignete Schutzart gegen 
+Eindringen von festen Fremdkörpern 
+(siehe AE); 
+– 
+ausreichend mechanischen Widerstand 
+(siehe AG); 
+– 
+Vorkehrungen, die die Tiere vom 
+Ort/Raum fernhalten (z. B. Sauberkeit, 
+Anwendung von 
+Schädlingsbekämpfungsmitteln); 
+– 
+spezielle Betriebsmittel oder spezieller 
+Schutzanstrich der Umhüllungen. 
+OVE EN IEC 60721-3-3,  
+Klasse 3B1 
+OVE EN IEC 60721-3-4,  
+Klasse 4B1 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 287/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 21 
+Tabelle 51.ZA.1 (10 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AM 
+Elektromagnetische, elektrostatische oder ionisierende Einflüsse 
+ 
+Niederfrequente elektromagnetische Störgrößen (leitungsgebunden oder gestrahlt) 
+ 
+Oberschwingungen, Zwischenharmonische  
+AM-1-1 
+Kontrollierter Pegel 
+Es sollte darauf geachtet werden, dass sich 
+die kontrollierte Situation nicht verschlechtert. 
+Niedriger als Tabelle 1 von 
+OVE EN 61000-2-2 
+AM-1-2 
+Normaler Pegel 
+ 
+Spezielle Maßnahmen in der Ausführung  
+der elektrischen Anlage, z. B. Filter 
+Übereinstimmung mit Tabelle 1  
+von OVE EN 61000-2-2 
+AM-1-3 
+Hoher Pegel 
+Örtlich höher als Tabelle 1  
+von OVE EN 61000-2-2 
+ 
+Signalspannungen 
+AM-2-1 
+Kontrollierter Pegel 
+z. B. abgeschirmte Stromkreise 
+Niedriger als nachfolgend festgelegt 
+AM-2-2 
+Mittlerer Pegel 
+Keine zusätzliche Anforderung 
+IEC TR 61000-2-1 und 
+OVE EN 61000-2-2 
+AM-2-3 
+Hoher Pegel 
+Geeignete Maßnahmen 
+ 
+ 
+Schwankungen der Spannungsamplitude (Amplitudenänderungen) 
+ 
+AM-3-1 
+Kontrollierter Pegel 
+z. B. überwacht durch USV 
+ 
+AM-3-2 
+Normaler Pegel 
+Übereinstimmung mit Abschnitt 444 
+ 
+AM-4 
+Spannungsunsymmetrie 
+Übereinstimmung mit 
+OVE EN 61000-2-2 
+AM-5 
+Schwankungen der Netzfrequenz 
+±1 Hz entsprechend 
+OVE EN 61000-2-2 
+AM-6 
+Induzierte niederfrequente Spannungen  
+ 
+ 
+Keine Klassifizierung 
+Siehe Abschnitt 444 
+Hohe Widerstandsfähigkeit von Melde- und 
+Steuersystemen der Schalt- und Steuergeräte 
+ITU-T (International 
+Telecommunication Union) 
+AM-7 
+Gleichströme in Wechselstromnetzen 
+ 
+Keine Klassifizierung 
+Maßnahmen zur Begrenzung des 
+Gleichstromanteils bezüglich Pegel und Zeit  
+im Verbrauchsmittel oder ihrer Nähe 
+ 
+ 
+Gestrahlte Magnetfelder 
+AM-8-1 
+Mittlerer Pegel 
+Normal  
+Pegel 2 von 
+ÖVE/ÖNORM EN 61000-4-8 
+AM-8-2 
+Hoher Pegel 
+Schutz durch geeignete Maßnahmen, z. B. 
+Schirmung und/oder Trennung 
+Pegel 4 von 
+ÖVE/ÖNORM EN 61000-4-8 
+ 
+Elektrische Felder 
+AM-9-1 
+Vernachlässigbarer Pegel 
+Normal  
+ 
+AM-9-2 
+Mittlerer Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+AM-9-3 
+Hoher Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+AM-9-4 
+Sehr hoher Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 288/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 22 
+Tabelle 51.ZA.1 (11 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AM-21 
+Hochfrequente elektromagnetische Störgrößen, leitungsgebunden, induziert oder gestrahlt (dauernd oder kurzzeitig) 
+ 
+Induzierte schwingende Spannungen oder Ströme (Oszillierende Störgrößen) 
+ 
+ 
+Keine Klassifizierung 
+Normal  
+ÖVE/ÖNORM EN 61000-4-6 
+ 
+Einseitige leitungsgebundene gerichtete transiente Vorgänge im 
+Nanosekundenbereich 
+ÖVE/ÖNORM EN 61000-4-4 
+AM-22-1 
+Vernachlässigbarer Pegel 
+Maßnahmen zum Schutz sind notwendig 
+Pegel 1 
+AM-22-2 
+Mittlerer Pegel 
+Maßnahmen zum Schutz sind notwendig 
+Pegel 2 
+AM-22-3 
+Hoher Pegel 
+Normale Betriebsmittel 
+Pegel 3 
+AM-22-4 
+Sehr hoher Pegel 
+Betriebsmittel mit hoher Störfestigkeit 
+Pegel 4 
+ 
+Einseitige leitungsgebundene gerichtete transiente Vorgänge im Milli- bis Mikrosekundenbereich 
+AM-23-1 
+Kontrollierter Pegel 
+ 
+Die Überspannungsfestigkeit der 
+Betriebsmittel und die Mittel für den Schutz  
+bei Überspannungen müssen berücksichtigt 
+werden entsprechend der Nennversorgungs-
+spannung und Überspannungskategorie nach 
+Abschnitt 443 
+Abschnitt 443 
+ 
+AM-23-2 
+Mittlerer Pegel 
+AM-23-3 
+Hoher Pegel 
+ 
+Leitungsgebundene oszillierende transiente Vorgänge 
+AM-24-1 
+Mittlerer Pegel 
+Verweis auf OVE EN 61000-4-12 
+OVE EN 61000-4-12 
+AM-24-2 
+Hoher Pegel 
+Verweis auf ÖVE/ÖNORM EN 60255-26 
+ÖVE/ÖNORM EN 60255-26 
+ 
+Gestrahlte hochfrequente elektromagnetische Störgrößen 
+OVE EN IEC 61000-4-3 
+AM-25-1 
+Vernachlässigbarer Pegel 
+ 
+Pegel 1 
+AM-25-2 
+Mittlerer Pegel 
+Normal 
+Pegel 2 
+AM-25-3 
+Hoher Pegel 
+verstärkter Pegel 
+Pegel 3 
+ 
+Elektrostatische Entladungen 
+ÖVE/ÖNORM EN 61000-4-2 
+AM-31-1 
+Kleiner Pegel 
+Normal 
+Pegel 1 
+AM-31-2 
+Mittlerer Pegel 
+Normal 
+Pegel 2 
+AM-31-3 
+Hoher Pegel 
+Normal 
+Pegel 3 
+AM-31-4 
+Sehr hoher Pegel 
+Verstärkt 
+Pegel 4 
+ 
+Ionisierung 
+ 
+AM-41-1 
+Keine Klassifizierung 
+Spezieller Schutz wie: 
+– 
+Abstand zur Quelle; 
+– 
+Einfügen von Abschirmungen,  
+Umhüllung aus speziellen Materialien 
+ 
+AN 
+Sonnenstrahlung 
+AN1 
+Niedrig 
+Intensität ≤ 500 W/m2 
+Normal 
+OVE EN IEC 60721-3-3 
+Klasse 3K1 
+AN2 
+Mittel 
+500 W/m2 < Intensität ≤ 700 W/m2 
+Geeignete Anordnungen sind zu wählen b 
+OVE EN IEC 60721-3-3 
+Klassen 3K2 bis 3K5 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, z. B. zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie z. B. speziell entworfene Betriebsmittel. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 289/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 23 
+Tabelle 51.ZA.1 (12 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AN3 
+Hoch 
+700 W/m2 < Intensität ≤ 1120 W/m2 
+Geeignete Anordnungen sind zu wählen b 
+Solche Anordnungen können sein: 
+– 
+ultraviolettbeständiges Material; 
+– 
+spezieller Farbanstrich; 
+– 
+einfügen von Schirmungen. 
+OVE EN IEC 60721-3-3 
+höher als Klasse 3K5 
+OVE EN IEC 60721-3-4 
+AP 
+Auswirkungen von Erdbeben (Seismik) 
+AP1 
+Vernachlässigbar 
+Beschleunigung ≤ 30 Gal (1 Gal ist 1 cm/s2) 
+Normal 
+ 
+AP2 
+Geringe Auswirkung 
+30 Gal < Beschleunigung ≤ 300 Gal 
+In Beratung 
+ 
+AP3 
+Mittlere Auswirkung 
+300 Gal < Beschleunigung ≤ 600 Gal 
+In Beratung 
+ 
+AP4 
+Hohe Auswirkung 
+Beschleunigung > 600 Gal 
+In Beratung 
+Schwingungen, die eine Zerstörung des 
+Gebäudes bewirken können, sind von dieser 
+Klassifikation nicht erfasst 
+Die Frequenz ist bei der Klassifizierung  
+nicht berücksichtigt. Wenn jedoch Gebäude-
+bewegungen mit der Erdbebenbeschleunigung 
+in Resonanz geraten, müssen die Erdbeben-
+auswirkungen besonders betrachtet werden. Im 
+Allgemeinen liegt die Frequenz von Erdbeben-
+beschleunigungen zwischen 0 Hz und 10 Hz 
+ 
+AQ 
+Blitze; Blitztage (Nk) c und Häufigkeit der Blitze (Ng) (siehe Abschnitt 443) 
+AQ1 
+Vernachlässigbar 
+Ng ≤ 2,5 und Nk ≤ 25 Tage im Jahr oder  
+das Ergebnis einer Risikobewertung in 
+Übereinstimmung mit Abschnitt 443 
+Normal  
+ 
+AQ2 
+Indirekte Wirkung 
+Ng > 2,5 und Nk > 25 Tage im Jahr oder  
+das Ergebnis einer Risikobewertung in 
+Übereinstimmung mit Abschnitt 443 
+Normal 
+ 
+AQ3 
+Direkte Wirkung 
+Risiko durch die Anordnung der Betriebsmittel 
+Bezüglich Anforderungen an den Blitzschutz 
+siehe ÖVE/ÖNORM EN 62305 Reihe 
+Teile der Anlage befinden sich außerhalb von 
+Gebäuden 
+ 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, z. B. zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie z. B. speziell entworfene Betriebsmittel. 
+c 
+ Blitztage kommen in Österreich nicht zur Anwendung. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 290/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 24 
+Tabelle 51.ZA.1 (13 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AR 
+Beanspruchung durch Luftbewegung 
+AR1 
+Niedrig 
+Geschwindigkeit ≤ 1 m/s 
+Normal 
+ 
+AR2 
+Mittel 
+1 m/s < Geschwindigkeit ≤ 5 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+AR3 
+Hoch 
+5 m/s < Geschwindigkeit ≤ 10 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+AS 
+Wind 
+AS1 
+Niedrig 
+Geschwindigkeit ≤ 20 m/s 
+Normal  
+ 
+AS2 
+Mittel 
+20 m/s < Geschwindigkeit ≤ 30 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+AS3 
+Hoch 
+30 m/s < Geschwindigkeit ≤ 50 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+B 
+Verwendung 
+BA 
+Personen, die Zutritt haben 
+BA1 
+Laien 
+Person, die weder Elektrofachkraft noch 
+elektrotechnisch unterwiesene Person ist 
+ÖVE/ÖNORM EN 50110-1 
+BA2 
+Kinder 
+Orte, die für die Betreuung von Kindern, z. B. 
+Kinderkrippen, Kindergarten, vorgesehen sind 
+Betriebsmittel mit einer Schutzart gleich oder 
+größer als IP2XC 
+Keine elektrischen Betriebsmittel mit einer 
+äußeren Oberflächentemperatur über 60 ºC d 
+ 
+ 
+BA3 
+Menschen mit einer  
+Beeinträchtigung 
+Personen, mit eingeschränkten physischen 
+oder intellektuellen Fähigkeiten (z. B. 
+behinderte, kranke und alte Menschen) 
+Entsprechend der Behinderung 
+BA4 
+Elektrotechnisch unterwiesene 
+Personen 
+Person, die durch eine Elektrofachkraft 
+ausreichend unterrichtet wurde, sodass sie 
+Gefahren vermeiden kann, die von der 
+Elektrizität ausgehen können 
+ÖVE/ÖNORM EN 50110-1 
+BA5 
+Elektrofachkräfte 
+Person mit geeigneter fachlicher Ausbildung, 
+Kenntnissen und Erfahrung, sodass sie 
+Gefahren erkennen und vermeiden kann, die 
+von der Elektrizität ausgehen können 
+ÖVE/ÖNORM EN 50110-1 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, z. B. zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie z. B. speziell entworfene Betriebsmittel. 
+d 
+ Siehe auch CEN-CENELEC Guide 29. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 291/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 25 
+Tabelle 51.ZA.1 (14 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+BB 
+Elektrischer Widerstand des menschlichen Körpers (in Beratung) 
+BC 
+Verbindung von Personen mit Erdpotential 
+ 
+ 
+Schutzklasse des Betriebsmittels gemäß 
+OVE EN 61140 
+ 
+ 
+ 
+ 
+I          II          III 
+ 
+BC1 
+Keine 
+Personen in nicht leitfähigen Bereichen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+Teil 4-41 
+BC2 
+Selten 
+Personen, die unter allgemeinen Bedingungen 
+keinen Kontakt mit fremden leitfähigen Teilen 
+bekommen und nicht auf leitfähigen 
+Oberflächen stehen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+ 
+BC3 
+Häufig 
+Personen, die häufig in Kontakt mit fremden 
+leitfähigen Teilen kommen oder auf leitfähigen 
+Oberflächen stehen 
+Bereiche mit fremden leitfähigen Teilen in 
+großer Anzahl oder in ausgedehnten 
+Bereichen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+ 
+BC4 
+Dauernd 
+Personen, die in Wasser eingetaucht sind oder 
+lange Zeit dauernden Kontakt mit metallischer 
+Umgebung haben und für die die Möglichkeit, 
+diesen Kontakt zu unterbrechen, begrenzt ist 
+Metallene Umgebung wie Boiler und Tanks 
+(Merkmale in Beratung) 
+ 
+BD 
+Räumungsmöglichkeit bei Gefahr (bzw. Evakuierungsmöglichkeit im Notfall) 
+BD1 
+Niedrige Personendichte/ 
+einfaches Verlassen 
+Geringe Personendichte, einfache 
+Bedingungen für die Evakuierung 
+Normal 
+ 
+BD2 
+Niedrige Personendichte/  
+schwieriges Verlassen 
+Geringe Personendichte, schwierige 
+Bedingungen für die Evakuierung 
+Hochhäuser 
+ 
+BD3 
+Hohe Personendichte/  
+einfaches Verlassen 
+Große Personendichte, einfache Bedingungen 
+für die Evakuierung 
+Orte, die der Öffentlichkeit zugänglich sind  
+(z. B. Theater, Kinos, Kaufhäuser) 
+ 
+BD4 
+Hohe Personendichte/  
+schwieriges Verlassen 
+Große Personendichte, schwierige 
+Bedingungen für die Evakuierung 
+Hochhäuser, die der Öffentlichkeit zugänglich 
+sind (z. B. Hotels, Krankenhäuser) 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 292/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 26 
+Tabelle 51.ZA.1 (15 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+BE 
+Art der bearbeiteten oder gelagerten Stoffe 
+BE1 
+Kein besonderes Risiko 
+Wohn- und Büronutzung 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+BE2 
+Besonderes Brandrisiko  
+Herstellung, Bearbeitung oder Lagerung von 
+brennbarem Material einschließlich 
+Vorhandensein/Auftreten von Staub 
+Scheunen, Werkstätten für Holzbearbeitung 
+bzw. Holzverarbeitung, Papier- und 
+Textilfabriken 
+Verwendung von Betriebsmitteln aus einem 
+Material, das eine Flammenausbreitung 
+verzögert 
+Anordnung so, dass eine deutliche 
+Temperaturerhöhung oder ein Funken in 
+einem elektrischen Betriebsmittel nicht einen 
+Brand außerhalb des Betriebsmittels auslösen 
+kann 
+Teil 4-42 
+BE3 
+Explosionsrisiko 
+Bearbeitung oder Lagerung von explosivem 
+Material oder Material mit niedriger Zünd-
+temperatur; Auftreten von explosivem Staub 
+Raffinerien, Lager für Kohlenwasserstoffe 
+Anforderungen für Betriebsmittel für 
+explosionsgefährliche Atmosphäre (siehe 
+OVE EN 60079 Reihe) 
+In Beratung 
+BE4 
+Risiko durch Verunreinigung 
+(Kontamination) 
+Vorhandensein von ungeschützten Nahrungs-
+mitteln, Arzneimitteln und ähnlichen Produkten 
+ohne Schutz 
+Nahrungsmittelindustrie und Küchen 
+Spezielle Maßnahmen können notwendig sein, 
+um die Verunreinigung von verarbeiteten 
+Materialien durch elektrische Betriebsmittel 
+bei Fehlern zu verhindern, z. B. gebrochene 
+Leuchtmittel 
+Geeignete Anordnung, wie z. B. 
+– 
+Schutz gegen herausfallende Teile 
+zerbrochener Leuchtmittel und anderer 
+zerbrechlicher Teile; 
+– 
+Abschirmung schädlicher Strahlung wie 
+Infrarotstrahlung oder ultraviolette 
+Strahlung 
+In Beratung 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 293/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 27 
+Tabelle 51.ZA.1 (16 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+C 
+Bauweise von Bauwerken, Gebäudekonstruktion 
+CA 
+Baustoffe 
+ 
+CA1 
+Nichtbrennbar 
+Gebäude hauptsächlich aus nichtbrennbaren 
+Baustoffen hergestellt 
+Massiv- und Stahlbauweise 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+CA2 
+Brennbar 
+Gebäude hauptsächlich aus brennbaren 
+Baustoffen hergestellt 
+(In Beratung) 
+ 
+ 
+Teil 4-42 
+CB 
+Gebäudestruktur 
+ 
+CB1 
+Vernachlässigbare Gefährdung 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+CB2 
+Gefährdung durch Brandausbreitung 
+Bauten, deren Form und Ausdehnung die 
+Ausbreitung eines Brandes erleichtert  
+(z. B. Kamineffekt) 
+Hochhäuser, Lüftungsanlage 
+Betriebsmittel aus Materialien, die die 
+Ausbreitung eines Brandes verzögern,  
+auch bei Bränden, die nicht durch die 
+elektrische Anlage verursacht sind 
+Brandschottungen e 
+ 
+ 
+ 
+ 
+Teil 4-42 
+ 
+ 
+ 
+Teil 5-52 
+CB3 
+Gefährdung durch 
+Gebäudebewegung 
+Gefährdung durch Gebäudebewegungen  
+(z. B. Verschiebung zwischen 
+unterschiedlichen Teilen des Gebäudes oder 
+zwischen dem Gebäude und dem Grund oder 
+dem Fundament) 
+Gebäude mit beträchtlicher Länge oder auf 
+unstabilem Grund errichtet 
+Schwindfugen oder Ausdehnungsfugen für 
+Kabel- und Leitungsanlagen 
+Schwindfugen oder 
+Ausdehnungsfugen (in Beratung) 
+ 
+ 
+ 
+ 
+ 
+Teil 5-52 
+CB4 
+Elastische oder instabile Bauweise 
+Strukturen, die empfindlich oder Bewegungen 
+ausgesetzt sind (z. B. Schwingung) 
+Zelte, Traglufthallen, abgehängte Decken, 
+veränderbare Wände 
+Selbsttragende Konstruktionen 
+(In Beratung) 
+Flexible Verdrahtung  
+(in Beratung) 
+ 
+ 
+ 
+Teil 5-52 
+e 
+Brandmelder dürfen vorgesehen werden. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 294/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 28 
+Anhang 51.ZB 
+(informativ) 
+ 
+Kennzeichnung von PEN-Leitern in verschiedenen Ländern 
+Land 
+Grün-Gelb im gesamten Verlauf mit  
+blauer Markierung an den Leiterenden 
+Blau im gesamten Verlauf mit grün-
+gelber Markierung an den Leiterenden 
+Belgien 
+ 
+Ja c 
+Nicht zugelassen 
+Dänemark 
+ 
+Ja 
+Ja 
+Deutschland 
+ 
+Ja 
+Nicht zugelassen b 
+Finnland 
+ 
+Ja 
+Nicht zugelassen 
+Frankreich 
+ 
+Ja c 
+Nicht zugelassen 
+Irland 
+ 
+Ja 
+Ja 
+Italien 
+ 
+Ja 
+Ja 
+Niederlande 
+ 
+Ja 
+Nicht zugelassen 
+Norwegen 
+ 
+Ja 
+Nicht zugelassen 
+Österreich 
+ 
+Ja a 
+Ja b 
+Polen 
+ 
+Ja 
+Ja 
+Schweden 
+ 
+Ja 
+Nicht zugelassen 
+Schweiz 
+ 
+Ja 
+Nicht zugelassen 
+Slowakei 
+ 
+Ja 
+Nicht zugelassen 
+Slowenien 
+ 
+Ja 
+Nicht zugelassen 
+Spanien 
+ 
+Ja 
+Nicht zugelassen 
+Tschechien 
+ 
+Ja 
+Nicht zugelassen 
+Vereinigtes Königreich 
+ 
+Ja 
+Ja 
+a 
+Blaue Markierungen an den Leiterenden sind nicht gefordert, sind aber erlaubt. 
+b 
+Nur erlaubt, wenn ein früher vorhandener Neutralleiter als PEN-Leiter verwendet wird. 
+c 
+Ohne blaue Markierungen an den Leiterenden. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 295/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 29 
+Anhang 51.ZC 
+(informativ) 
+ 
+Kennzeichnung von Adern 
+ANMERKUNG AT 
+Die Tabelle 51.ZC.1 und Tabelle 51.ZC.2 stimmen mit Tabelle 1 und Tabelle 2 von 
+ÖVE/ÖNORM E 8003:2002 überein. 
+Tabelle 51.ZC.1 – Kabel und Leitungen mit grün-gelber Ader 
+Anzahl der 
+Adern 
+Farben der Adern b 
+Schutzleiter 
+Aktive Leiter 
+3 
+Grün-Gelb 
+Blau 
+Braun 
+– 
+– 
+4 
+Grün-Gelb 
+– 
+Braun 
+Schwarz 
+Grau 
+4 a 
+Grün-Gelb 
+Blau 
+Braun 
+Schwarz 
+– 
+5 
+Grün-Gelb 
+Blau 
+Braun 
+Schwarz 
+Grau 
+a 
+Nur für bestimmte Anwendungen. 
+b 
+Blanke, konzentrische Leiter, wie metallene Mäntel, Armierungen oder Schirme, werden in dieser Tabelle nicht 
+als Leiter betrachtet. Ein konzentrischer Leiter ist bereits durch seine Anordnung hinlänglich gekennzeichnet und 
+braucht deshalb nicht noch zusätzlich durch Farben gekennzeichnet zu werden. 
+ 
+Tabelle 51.ZC.2 – Kabel und Leitungen ohne grün-gelbe Ader 
+Anzahl der Adern 
+Farben der Adern b 
+2 
+Blau 
+Braun 
+– 
+– 
+– 
+3 
+– 
+Braun 
+Schwarz 
+Grau 
+– 
+3 a 
+Blau 
+Braun 
+Schwarz 
+ 
+– 
+4 
+Blau 
+Braun 
+Schwarz 
+Grau 
+– 
+5 
+Blau 
+Braun 
+Schwarz 
+Grau 
+Schwarz 
+a 
+Nur für bestimmte Anwendungen. 
+b 
+Blanke konzentrische Leiter wie metallene Mäntel, Armierungen oder Schirme werden in dieser Tabelle nicht als 
+Leiter betrachtet. Ein konzentrischer Leiter ist durch seine Anordnung hinlänglich gekennzeichnet und braucht 
+daher nicht durch Farben gekennzeichnet zu werden. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 296/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 30 
+Nationale Ergänzung 51.NE 
+(normativ) 
+ 
+Kennzeichnung von Leitern – 
+Ergänzende Anforderungen zu 514.3 
+sowie ergänzende nationale Anforderungen 
+51.NE.1 Anwendung der Kennzeichnungsverfahren 
+Die Farbkennzeichnung, das grafische Symbol oder das alphanumerische Zeichen muss auf der Isolierung des 
+entsprechenden Leiters angebracht sein. 
+Wenn mehr als eines der Kennzeichnungsverfahren angewendet wird und Verwechslungsgefahr möglich ist, 
+muss der Zusammenhang zwischen den Kennzeichnungsverfahren aus der zugehörigen Dokumentation klar 
+hervorgehen. 
+Wenn keine Verwechslungsgefahr besteht, dürfen numerische und alphanumerische Bezeichnungen 
+nebeneinander angewendet werden. 
+Die für eine Erdung genutzten Anschlüsse/Leiter sind hinsichtlich ihres Zwecks der Erdung in die zwei 
+grundlegenden Konzepte der „Schutzerdung“ und der „Funktionserdung“ aufgegliedert. 
+– 
+Falls ein Anschluss oder ein Leiter die Anforderungen sowohl für eine Schutzerdung als auch für die 
+Funktionserdung erfüllt, muss er als Schutzerdungsleiter bzw. als Anschluss für einen Schutzerdungs-
+leiter gekennzeichnet werden. 
+– 
+Falls die Anforderungen für eine Schutzerdung von dem Funktionserdungsleiter bzw. dem Anschluss 
+hierfür nicht erfüllt sind, darf dieser nicht mit der Kennzeichnung eines Schutzerdungsleiters bzw. der für 
+den Anschluss eines Schutzerdungsleiters gekennzeichnet werden. 
+– 
+Die Anforderungen an eine Funktionserdung sind vom Hersteller oder dem zuständigen Produktkomitee 
+festzulegen und sollten in der Dokumentation des elektrischen Betriebsmittels spezifiziert sein. 
+ANMERKUNG AT 
+Zum Beispiel Anforderungen zur Handhabung der Belange der elektromagnetischen 
+Verträglichkeit. 
+51.NE.2 Kennzeichnung durch Farben 
+51.NE.2.1 
+Allgemeines 
+Für die Kennzeichnung von Leitern sind folgende Farben zulässig: 
+– 
+Schwarz, Braun, Rot, Orange, Gelb, Grün, Blau, Violett, Grau, Weiß, Rosa, Türkis. 
+ANMERKUNG AT 
+Diese Zusammenstellung der Farben ist von OVE EN IEC 60757 abgeleitet. 
+Die Farbkennzeichnung muss an den Anschlüssen und vorzugsweise durchgehend über die gesamte 
+Leiterlänge entweder durch die Farbe der Isolierung oder durch dauerhafte Farbmarken erfolgen. 
+Ausgenommen sind blanke Leiter, bei denen eine Kennzeichnung an den Enden und allen Anschlusspunkten 
+vorhanden sein muss. 
+Zusätzliche Kennzeichnungen, z. B. alphanumerische, sind zulässig, vorausgesetzt, dass die Farbkenn-
+zeichnung eindeutig bleibt. 
+ANMERKUNG AT 
+Um einer Verwechslung mit anderen dunklen Farben vorzubeugen, wird unter der 
+Farbbezeichnung „Blau“ ein helles Blau verstanden. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 297/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 31 
+51.NE.2.2 
+Zwei-Farben-Kombinationen 
+Andere Zwei-Farben-Kombinationen als Grün-Gelb sind in besonderen Fällen zulässig, vorausgesetzt, dass 
+keine Verwechslungsgefahr besteht. Dabei dürfen die Farbe Grün und die Farbe Gelb in solchen 
+Farbkombinationen nicht verwendet werden. 
+ANMERKUNG AT 
+Bei gemäß ÖVE-F 1 Teil 2 errichteten Erdungen für Fernmeldeanlagen wird für den 
+Funktionserdungsleiter teilweise die Zwei-Farben-Kombination Schwarz-Gelb verwendet. 
+51.NE.2.3 
+Farbkennzeichnung bestimmter Leiter 
+Wo in dieser Norm eine durchgehende Farbkennzeichnung über die gesamte Leiterlänge gefordert wird, gilt 
+diese nicht für Leitungen und Kabel, die nicht mit der geforderten Farbkennzeichnung hergestellt werden (z. B. 
+mineralisolierte Leitungen, Dachständereinführungsleitungen und isolierte Freileitungen). 
+Solche Leitungen und Kabel sind mit einer entsprechenden Markierung gemäß 514.3.Z6.001.AT an den 
+Leiterenden zu versehen. 
+51.NE.2.3.1 
+Blanke Leiter und Schienen 
+Bei Anwendung der Farbkennzeichnung müssen blanke Leiter und Schienen entweder mit einer 15 mm bis 
+100 mm breiten dauerhaften Kennzeichnung in jeder Einheit oder jedem Gehäuse oder an jeder zugänglichen 
+Stelle versehen oder über die ganze Länge gefärbt sein. 
+51.NE.2.3.2 
+Außenleiter in AC-Systemen 
+Gemäß 514.3.Z1 sind für Außenleiter in Verbraucheranlagen die Farben Schwarz, Braun und Grau zu 
+verwenden. 
+In neu zu errichtenden Verbraucheranlagen wird eine bestimmte, frei wählbare Zuordnung dieser Farben zu 
+den Außenleitern und deren Einhaltung über die gesamte Anlage empfohlen. Diese Farbzuordnung zu den 
+Außenleitern gilt nicht für einphasige Stromkreise. 
+51.NE.2.3.3 
+Außenleiter in DC-Systemen 
+Für Leiter in DC-Systemen sind in ungeerdeten DC-Systemen vorzugsweise folgende Farben zu verwenden: 
+– 
+Rot für den positiven Außenleiter (nicht geerdet); 
+– 
+Weiß für den negativen Außenleiter (nicht geerdet); 
+– 
+Blau für den Mittelleiter, wenn vorhanden, sonst für den geerdeten Systemleiter. 
+51.NE.2.3.4 
+Funktionserdungsleiter 
+Für Funktionserdungsleiter ist vorzugsweise die Farbe Rosa zu verwenden. 
+51.NE.3 Kennzeichnung durch alphanumerische Zeichen 
+51.NE.3.1 
+Allgemeines 
+Falls Buchstaben und/oder Ziffern zur Kennzeichnung angewendet werden, müssen die Buchstaben 
+lateinische Großbuchstaben sein, die Ziffern müssen arabische Ziffern sein. 
+ANMERKUNG 1.AT 
+Es wird empfohlen, Buchstaben für Gleichstromelemente aus der ersten Hälfte des Alphabets und 
+Buchstaben für Wechselstromelemente aus der zweiten Hälfte des Alphabets zu wählen. 
+Um Verwechslungen mit den Ziffern „1“ und „0“ zu vermeiden, dürfen die Buchstaben „l“ und „O“ nicht 
+verwendet werden; die Symbole „+“ und „–“ dürfen verwendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 298/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 32 
+Zur Vermeidung von Verwechslungen müssen die einzeln stehenden Ziffern „6“ und „9“ unterstrichen 
+dargestellt werden. 
+Alle alphanumerischen Zeichen müssen einen starken Kontrast zur Farbe der Isolierung aufweisen. 
+Die Kennzeichnung muss eindeutig unterscheidbar und dauerhaft sein. 
+ANMERKUNG 2.AT 
+Aussagen zur Dauerhaftigkeit enthält IEC 63294. 
+Das System der Kennzeichnung durch alphanumerische Zeichen wird zur Kennzeichnung von einzelnen 
+Leitern und von Leitern innerhalb einer Leitergruppe verwendet. 
+Die in 51.NE.3.2 spezifizierte Kennzeichnung durch alphanumerische Zeichen darf nicht für andere Zwecke 
+als den spezifizierten verwendet werden. 
+Falls keine Verwechslungsgefahr besteht, dürfen Teile der in den nachfolgenden Kennzeichnungsgrundsätzen 
+festgelegten vollständigen alphanumerischen Bezeichnung ausgelassen werden. 
+51.NE.3.2 
+Kennzeichnung bestimmter Leiter 
+51.NE.3.2.1 
+Allgemeines 
+Die Enden bestimmter Leiter müssen gemäß Tabelle 51.NE.001.AT mit Buchstaben oder grafischen Symbolen 
+oder beidem gekennzeichnet sein. 
+51.NE.3.2.2 
+Neutralleiter 
+Die Kennzeichnung eines Neutralleiters durch alphanumerische Zeichen muss „N“ sein. 
+51.NE.3.2.3 
+Schutzleiter 
+Die Kennzeichnung eines Schutzleiters durch alphanumerische Zeichen muss „PE“ sein. Diese Kennzeichnung 
+findet ebenfalls für den Schutzerdungsleiter Anwendung. 
+51.NE.3.2.4 
+PEN-Leiter 
+Die Kennzeichnung eines PEN-Leiters durch alphanumerische Zeichen muss „PEN“ sein. 
+51.NE.3.2.5 
+Sternpunkt-Verbindungs-Leiter (SVL) 
+Die Kennzeichnung eines Sternpunkt-Verbindungs-Leiters durch alphanumerische Zeichen muss „SVL“ sein, 
+wobei zusätzlich eine Farbkennzeichnung gemäß 514.3.1.Z1 an den Leiterenden anzubringen ist, wenn der 
+Leiter nicht über die gesamte Länge durch die Farbe Blau gekennzeichnet ist. 
+Bei mehr als einer Stromquelle ist der SVL zusätzlich mit einer Zielkennzeichnung (z. B. „Transformator 1“) zu 
+versehen. 
+51.NE.3.2.6 
+PEL-Leiter 
+Die Kennzeichnung eines PEL-Leiters durch alphanumerische Zeichen muss „PEL“ sein. 
+51.NE.3.2.7 
+PEM-Leiter 
+Die Kennzeichnung eines PEM-Leiters durch alphanumerische Zeichen muss „PEM“ sein. 
+51.NE.3.2.8 
+Schutzpotentialausgleichsleiter 
+Die Kennzeichnung eines Schutzpotentialausgleichsleiters durch alphanumerische Zeichen muss „PB“ sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 299/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 33 
+51.NE.3.2.9 
+Schutzpotentialausgleichsleiter, geerdet 
+Falls die Notwendigkeit einer Unterscheidung zwischen einem geerdeten Schutzpotentialausgleichsleiter und 
+einem ungeerdeten Schutzpotentialausgleichsleiter besteht, muss die Kennzeichnung eines geerdeten 
+Schutzpotentialausgleichsleiters durch alphanumerische Zeichen „PBE“ sein. 
+51.NE.3.2.10 Schutzpotentialausgleichsleiter, ungeerdet 
+Falls die Notwendigkeit einer Unterscheidung zwischen einem geerdeten Schutzpotentialausgleichsleiter und 
+einem ungeerdeten Schutzpotentialausgleichsleiter besteht, muss die Kennzeichnung eines ungeerdeten 
+Schutzpotentialausgleichsleiters durch alphanumerische Zeichen „PBU“ sein. 
+51.NE.3.2.11 Funktionserdungsleiter 
+Die Kennzeichnung eines Funktionserdungsleiters durch alphanumerische Zeichen muss „FE“ sein. 
+51.NE.3.2.12 Funktionspotentialausgleichsleiter 
+Die Kennzeichnung eines Funktionspotentialausgleichsleiters durch alphanumerische Zeichen muss „FB“ sein. 
+51.NE.3.2.13 Mittelleiter 
+Die Kennzeichnung eines Mittelleiters durch alphanumerische Zeichen muss „M“ sein. 
+51.NE.3.2.14 Außenleiter 
+Die Kennzeichnung eines Außenleiters durch alphanumerische Zeichen muss mit „L“ beginnen, gefolgt von: 
+– 
+für Wechselstromkreise, einer laufenden Nummer der Außenleiter, beginnend mit der Zahl Eins „1“; 
+– 
+für Gleichstromkreise, dem Zeichen „+“ für den positiven Außenleiter und dem Zeichen „–“ für den 
+negativen Außenleiter. 
+Falls nur ein Außenleiter genutzt wird, darf das Suffix entfallen. 
+51.NE.4 Maßnahmen in bestehenden Anlagen 
+51.NE.4.1 
+Werden in bestehenden Anlagen mit abweichender Farbkennzeichnung abschnittsweise neue 
+Leitungen verlegt oder vorhandene Kabel/Leitungen gegen neue ausgetauscht, so sind für diese neuen 
+Kabel/Leitungen die Anforderungen gemäß 514.3 anzuwenden. 
+Es wird empfohlen, an den Übergangsstellen die Leiterenden der vorhandenen Kabel/Leitungen mit 
+abweichender Farbkennzeichnung gemäß 514.3 zu kennzeichnen. 
+51.NE.4.2 
+Hinsichtlich der Farbkennzeichnung von Leitern in elektrischen Anlagen, die auf das  
+TN-S-System umgestellt werden, sind die Anforderungen gemäß 514.3.2.001.AT zu beachten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 300/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 34 
+Tabelle 51.NE.001.AT – Farben, alphanumerische Zeichen und graphische Symbole  
+zur Kennzeichnung von Leitern/Anschlüssen (1 von 2) 
+Bestimmte Leiter/Anschlüsse 
+Kennzeichnung von Leitern/Anschlüssen durch 
+Alphanumerische Zeichen a 
+Farben 
+Grafische 
+Symbole b 
+Leiter 
+Anschlüsse 
+Wechselstromleiter 
+AC 
+AC 
+ 
+ 
+–
+Außenleiter 1 
+L1 
+U 
+ SCHWARZ d oder 
+–
+Außenleiter 2 
+L2 c 
+V 
+ BRAUN d   oder 
+–
+Außenleiter 3 
+L3 c 
+W 
+ GRAU d 
+–
+Mittelleiter 
+M 
+M 
+ BLAU e 
+keine  
+Empfehlung 
+–
+Neutralleiter 
+N 
+N 
+Gleichstromleiter 
+DC 
+DC 
+ 
+ 
+–
+Positiv 
+L+ 
++ 
+ ROT 
+ 
+–
+Negativ 
+L– 
+– 
+ 
+WEISS 
+ 
+–
+Mittelpunktleiter oder geerdeter 
+Systemleiter 
+M 
+M 
+ BLAU e 
+keine  
+Empfehlung 
+Schutzleiter 
+PE 
+PE 
+ GRÜN-GELB 
+ 
+–
+PEN-Leiter 
+PEN 
+PEN 
+ 
+ 
+ 
+GRÜN-GELB f 
+ 
+BLAU f 
+keine  
+Empfehlung 
+–
+PEL-Leiter 
+PEL 
+PEL 
+–
+PEM-Leiter 
+PEM 
+PEM 
+Schutzpotentialausgleichsleiter g 
+PB 
+PB 
+ GRÜN-GELB 
+ 
+–
+Geeredet 
+PBE 
+PBE 
+keine  
+Empfehlung 
+–
+Ungeerdet 
+PBU 
+PBU 
+Funktionserdungsleiter h 
+FE 
+FE 
+ ROSA 
+ 
+Funktionspotentialausgleichsleiter 
+FB 
+FB 
+keine Empfehlung 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 301/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 35 
+Tabelle 51.NE.001.AT – Farben, alphanumerische Zeichen und grafische Symbole  
+zur Kennzeichnung von Leitern/Anschlüssen (2 von 2) 
+a 
+Siehe 51.NE.3. 
+b 
+Die wiedergegebenen Symbole haben folgende Symbolnummern gemäß ÖVE/ÖNORM IEC 60417 DB. 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5032 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5019 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5031 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5018 
+ 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5005 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5020 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5006 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5021 
+c 
+Nur in Systemen mit mehr als einer Phase notwendig. 
+d 
+Diese Reihenfolge der Farbkennzeichnung ist nur eine alphabetische Reihenfolge. Sie beinhaltet keine empfohlene 
+Reihenfolge für die Phasen bzw. den Drehsinn. 
+e 
+Siehe 51.NE.2.1. 
+f 
+Siehe 514.3.2 und OVE EN IEC 60445:2023, 6.3.3 bis 6.3.5. 
+g 
+Ein Schutzpotentialausgleichsleiter wird in den meisten Fällen ein geerdeter Schutzpotentialausgleichsleiter sein. Es ist 
+nicht notwendig, diesen mit PBE zu kennzeichnen. In den Fällen, in denen eine Unterscheidung zwischen einem 
+geerdeten und einem ungeerdeten Schutzpotentialausgleichsleiter Anwendung findet, müssen diese deutlich 
+unterschieden werden (z. B. Installationen in der Elektromedizin), und die Kennzeichnungen PBE und PBU sollten 
+verwendet werden. 
+h 
+Für Leiter oder Anschlüsse mit Schutzfunktion darf weder die Kennzeichnung „FE“ noch das grafische Symbol 5018 aus 
+ÖVE/ÖNORM IEC 60417 DB angewandt werden. Die Zwei-Farben-Kombination Grün-Gelb darf nicht für Leiter ohne 
+Schutzfunktion verwendet werden (z. B. für andere Leiter als PE, PEN, PEL, PEM, PB, PBE, PBU). Siehe Nationale 
+Ergänzung 51.NE.1. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 302/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 36 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 303/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 1 
+Teil 5-52 Kabel- und Leitungsanlagen 
+Inhalt Teil 5-52 
+520.1 
+ Anwendungsbereich 
+521 
+Arten von Kabel- und Leitungsanlagen 
+522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+523 
+Strombelastbarkeit 
+524 
+Querschnitte von Leitern 
+525 
+Spannungsabfall in Verbraucheranlagen 
+526 
+Elektrische Verbindungen 
+527 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen zur Begrenzung der Ausbreitung von 
+Bränden 
+528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+529 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen im Hinblick auf Instandhaltung einschließlich 
+Reinigung 
+Anhang 52.A (normativ)  Verlegearten 
+Anhang 52.B (informativ)  Strombelastbarkeiten 
+Anhang 52.C (informativ)  Beispiel für eine vereinfachte Darstellung einer Strombelastbarkeitstabelle 
+Anhang 52.D (informativ)  Gleichung zur Bestimmung von Strombelastbarkeiten 
+Anhang 52.E (normativ)  Auswirkungen von Oberschwingungsströmen auf  symmetrisch belastete 
+Drehstromsysteme 
+Anhang 52.F (informativ)  Auswahl von Elektroinstallationsrohrsystemen 
+Anhang 52.G (informativ)  Spannungsabfall in Verbraucheranlagen 
+Anhang 52.H (informativ)  Beispiele für die Anordnung paralleler Kabel und Leitungen 
+Nationale Ergänzung 52.NE (informativ)  Kurzschluss- und erdschlusssichere Verlegung 
+ 
+ 
+520.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl und die Errichtung von Kabel- und Leitungsanlagen. 
+ANMERKUNG 1  
+Im Allgemeinen gilt dieser Teil auch für den Schutzleiter, wobei Teil 5-54 noch weitere 
+Anforderungen für diese Leiter enthält. 
+Außerdem werden Anforderungen für die Auswahl von Kabeln und Leitungen im Hinblick auf die in ÖNORM 
+EN 13501-1 vorgesehene Klassifizierung des Brandverhaltens zur Einhaltung der EU-Bauprodukteverordnung 
+(CPR; en: construction products regulation) gestellt. 
+ANMERKUNG 2  
+Während die CPR fordert, dass der Hersteller das Brandverhalten von Kabeln und Leitungen nach 
+den für die gesamte EU geltenden Verfahren und Klassifikationen deklariert, fällt die Klärung der Frage, welche 
+Klassifikation für eine bestimmte Anwendung oder Anlage gefordert ist, in den Zuständigkeitsbereich der einzelnen 
+Mitgliedsstaaten. Nationale gesetzliche Regelungen können deshalb das in diesem Dokument aufgeführte 
+Anforderungsniveau aufheben. 
+520.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 304/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 2 
+520.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+520.4 
+Allgemeine Anforderungen 
+Bei der Auswahl und der Errichtung von Kabel- und Leitungsanlagen müssen die allgemeinen Grundsätze von 
+Teil 1 für Kabel, Leitungen und Leiter, ihre Anschlüsse und/oder Verbindungen, die zugehörigen Befestigungs- 
+oder Abhängemittel und ihre Umhüllungen oder Maßnahmen zum Schutz gegen äußere Einflüsse 
+berücksichtigt werden. 
+ANMERKUNG 1.AT 
+In einem AC-System muss nach OVE EN 50525-1 und ÖVE/ÖNORM E 8200-603 die 
+Nennspannung der Leitung/des Kabels mindestens gleich der Nennspannung des Systems sein, in dem sie/es eingesetzt 
+wird. Diese Bedingung gilt sowohl für den Wert U0 als auch für den Wert U. 
+Die Nennspannung einer Leitung/eines Kabels ist die Spannung, für die die Leitung/das Kabel ausgelegt ist und wird in 
+einem AC-Systeme durch die Angabe von zwei Spannungswerten für U0/U in Volt ausgedrückt, wobei 
+a) 
+U0 der Effektivwert zwischen einem Außenleiter und „Erde“ (metallene Umhüllungen der Leitungen oder das 
+umgebende Medium) ist; 
+b) 
+U der Effektivwert zwischen zwei Außenleitern einer mehradrigen Leitung oder eines Systems von einadrigen 
+Leitungen ist. 
+ANMERKUNG 2.AT 
+Das System für Typkurzzeichen von isolierten Leitungen siehe OVE E 8200-361. 
+521 Arten von Kabel- und Leitungsanlagen 
+521.1 
+Die Verlegeart von Kabel- und Leitungsanlagen (außer von Schienenverteilern und Stromschienen-
+systemen gemäß 521.4) muss, in Abhängigkeit von der Bauart der Kabel oder Leitungen, Tabelle 52.A.1 
+entsprechen, wobei die äußeren Einflüsse gemäß Abschnitt 522 zu berücksichtigen sind. 
+521.2 
+Dieser Absatz wurde in Österreich gestrichen, da der zugehörige Anhang A.52.2 durch CENELEC 
+nicht übernommen wurde. 
+521.3 
+Beispiele zur Ermittlung der Strombelastbarkeit für Kabel- und Leitungsanlagen, mit Verweis auf die 
+Referenzverlegeart, sind in Tabelle 52.A.3 angegeben. Schienenverteiler- und Stromschienensysteme gemäß 
+521.4 sind bei den Beispielen nicht berücksichtigt. 
+ANMERKUNG 
+Tabelle 52.A.3 macht Angaben zur Referenzverlegeart, bei der die gleiche Strombelastbarkeit sicher 
+angewendet werden kann. Das bedeutet nicht, dass alle Verlegearten notwendigerweise in den Errichtungsbestimmungen 
+aller Länder anerkannt sind oder dass andere Verlegearten unzulässig sind. 
+521.4 
+Schienenverteiler- und Stromschienensysteme 
+Schienenverteilersysteme müssen ÖVE/ÖNORM EN 61439-6 und Stromschienensysteme müssen der 
+Normenreihe OVE EN 61534 entsprechen. Schienenverteiler und Stromschienensysteme müssen nach den 
+Angaben des Herstellers unter Berücksichtigung der äußeren Einflüsse errichtet werden. 
+ANMERKUNG AT 
+Anforderungen an elektrische Stromschienensysteme für Leuchten siehe OVE EN 60570. 
+521.5 
+Wechselstromkreise – Elektromagnetische Beeinflussung (Vermeidung von Wirbelströmen) 
+521.5.1 Leiter und einadrige Kabel oder Leitungen in Wechselstromkreisen, die in Umhüllungen aus 
+ferromagnetischen Werkstoffen verlegt werden, müssen so angeordnet werden, dass sich alle Leiter eines 
+Stromkreises einschließlich des Schutzleiters in derselben Umhüllung befinden. Kabel und Leitungen müssen 
+an der Einführungsstelle in einer Umhüllung aus ferromagnetischem Werkstoff derart angeordnet sein, dass 
+die Leiter nur gemeinsam von eisenhaltigem magnetischem Metall umschlossen werden. 
+521.5.2 Einadrige Kabel und Leitungen mit Armierung aus Stahldraht oder metallener Ummantelung dürfen 
+nicht in Wechselstromkreisen eingesetzt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 305/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 3 
+ANMERKUNG 
+Der Stahldraht oder die metallene Ummantelung eines einadrigen Kabels/einer einadrigen Leitung wird 
+als Umhüllung aus ferromagnetischem Material angesehen. Im Fall von einadrigen armierten Kabeln/einadrigen armierten 
+Leitungen wird der Einsatz einer Armierung aus Aluminium empfohlen. 
+521.6 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme, zu öffnende 
+Elektroinstallationskanalsysteme, Kabelträgersysteme 
+Mehrere Stromkreise in einem Elektroinstallationsrohrsystem oder in abgetrennten Bereichen eines 
+geschlossenen bzw. zu öffnenden Elektroinstallationskanalsystems sind zulässig, wenn alle Leiter für die 
+höchste vorkommende Nennspannung isoliert sind. 
+Elektroinstallationsrohrsysteme müssen der Normenreihe OVE EN 61386, geschlossene oder zu öffnende 
+Elektroinstallationskanalsysteme müssen der Normenreihe ÖVE/ÖNORM EN 50085 und Kabelträgersysteme 
+(Kabelführungssysteme) müssen ÖVE/ÖNORM EN 61537 entsprechen. 
+ANMERKUNG 
+Hinweise zur Auswahl von Elektroinstallationsrohrsystemen siehe OVE-Richtlinie R 14. 
+ANMERKUNG AT 
+Ein Kabelträgersystem ist ein System, bestehend aus Kabelträgern und anderen Systembauteilen 
+(Formteile, Träger- und Montageelemente, Systemzubehör). Bauformen von Kabelträgern sind Kabelwannen 
+(ungelocht/nicht perforiert, gelocht/perforiert) und Kabelpritschen. Es werden dafür auch die Begriffe Kabelrinne, 
+Kabelleiter, Kabelgitter, Gitterrinne oder Kabeltrasse verwendet. 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme und zu öffnende Elektro-
+installationskanalsysteme mit der Klassifizierung „flammenausbreitend“ dürfen in und an Gebäuden nicht 
+verwendet werden. 
+521.7 
+Mehrere Stromkreise in einem Kabel/einer Leitung 
+Mehrere Stromkreise in einem Kabel/einer Leitung sind zulässig, wenn alle Leiter für die höchste vorkommende 
+Nennspannung isoliert sind. 
+521.8 
+Anordnung von Stromkreisen 
+521.8.1 Leiter eines Stromkreises dürfen nicht auf verschiedene mehradrige Kabel oder Leitungen, 
+Elektroinstallationsrohre, 
+zu 
+öffnende 
+Elektroinstallationskanalsysteme 
+oder 
+geschlossene 
+Elektro-
+installationskanalsysteme verteilt werden. 
+Dies gilt nicht, wenn mehrere mehradrige Kabel oder Leitungen, die einen Stromkreis bilden, parallel verlegt 
+sind. Wenn mehradrige Kabel oder Leitungen parallel verlegt sind, muss jedes Kabel/jede Leitung einen Leiter 
+jeder Phase und den Neutralleiter, falls vorhanden, führen. 
+521.8.2 Die Zuordnung eines gemeinsamen Neutralleiters für mehrere Hauptstromkreise ist nicht zulässig. 
+Aus einem Drehstromkreis mit einem Neutralleiter dürfen jedoch Einphasen-Wechselstromkreise aus je einem 
+Außenleiter und dem Neutralleiter gebildet werden, wenn die Anordnung der Stromkreise erkennbar bleibt. 
+Dieser Drehstromkreis muss durch eine Einrichtung zum Trennen gemäß 537.2 getrennt werden können, die 
+alle Außenleiter trennt. 
+ANMERKUNG AT 
+Das Trennen muss nicht zum gleichzeitigen Ausschalten aller Außenleiter führen. Das 
+Ausschalten jenes Außenleiters, in dem ein Überstrom auftritt, muss nicht unbedingt das Ausschalten der übrigen 
+Außenleiter bewirken. Wenn das Ausschalten eines einzelnen Außenleiters eine Gefahr verursachen kann, z. B. bei 
+Drehstrommotoren, 
+müssen 
+geeignete 
+Vorkehrungen 
+getroffen 
+werden, 
+z. B. 
+Motorschutzschalter 
+mit 
+Phasenausfallschutz. 
+ANMERKUNG 
+Für die Zuordnung eines gemeinsamen Schutzleiters für mehrere Stromkreise siehe Teil 5-54. 
+521.8.3 Wenn mehrere Stromkreise in einer Verbindungsdose geklemmt werden, müssen die Klemmen für 
+jeden Stromkreis durch isolierende Trennwände abgeteilt werden, außer bei Verbindungsmaterial gemäß der 
+Normenreihe ÖVE/ÖNORM EN 60998 und Reihenklemmen gemäß der Normenreihe ÖVE/ÖNORM 
+EN 60947-7. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 306/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 4 
+ANMERKUNG AT 
+ÖVE/ÖNORM EN 60998 
+gilt 
+für 
+Verbindungsmaterial 
+als 
+selbstständiges 
+elektrisches 
+Betriebsmittel für das Verbinden von zwei oder mehr elektrischen Kupferleitern, wie z. B. Schraubklemmstellen, 
+schraubenlosen Klemmstellen, Durchdringklemmstellen. 
+Die Enden von Kabel/Leitungen an der Klemmstelle sind mit einer dauerhaften Kennzeichnung zu versehen, 
+die eine Zuordnung zum entsprechenden Stromkreis eindeutig erkennen lässt. Falls die Kabel/Leitungen 
+ungeschnitten durchgeführt werden, brauchen sie nicht gekennzeichnet zu werden. 
+521.9 
+Verwendung flexibler Kabel/Leitungen 
+521.9.1 Flexible Kabel/Leitungen dürfen für das feste Verlegen nur verwendet werden, wenn die 
+Bestimmungen dieses Teils berücksichtigt werden bzw. wenn sie mechanisch geschützt sind. 
+ANMERKUNG 
+Isolierte flexible Leiter (Adern) nach der Normenreihe ÖVE/ÖNORM EN 50565 dürfen ebenfalls fest 
+verlegt werden. 
+521.9.2 Betriebsmittel, die bei bestimmungsgemäßem Gebrauch Bewegungen ausgesetzt sind, müssen mit 
+flexiblen Kabeln/Leitungen angeschlossen werden. Dies gilt nicht für Betriebsmittel, die über Schleifleitungen 
+versorgt werden. 
+521.9.3 Ortsfeste Betriebsmittel, deren Standort zum Zwecke des Anschließens, Reinigens oder dergleichen 
+vorübergehend geändert wird, z. B. Herde, Waschmaschinen oder Einbaueinheiten von Unterflur-Installationen 
+in Doppelböden, müssen mit flexiblen Kabeln/Leitungen mit mindestens mittlerer Beanspruchung 
+angeschlossen werden. 
+521.9.4 Flexible Elektroinstallationsrohrsysteme dürfen zum Schutz flexibler isolierter Leiter verwendet 
+werden. 
+521.10 Verlegung von Kabeln/Leitungen 
+Aderleitungen für die feste Verlegung dürfen nur in Elektroinstallationsrohren, geschlossenen Elektro-
+installationskanälen oder zu öffnenden Elektroinstallationskanälen, deren Zugangsabdeckung bestimmungs-
+gemäß nur mit Werkzeug zu öffnen ist, verlegt werden. 
+Diese Anforderungen gelten nicht für Schutzleiter gemäß Teil 5-54. 
+521.10.001.AT 
+Freigespannte Kabel und Leitungen bis 20 m Stützpunktentfernung 
+521.10.001.1.AT Ausreichende Zugentlastung ist vorzusehen. Diese ist sichergestellt bei Verwendung von frei 
+gespannten Tragelementen mit geeigneten Stützpunkten, PVC-Mantelleitungen mit Tragseil (AT-N05VVD7-U 
+bzw. -R), PE-isolierten Freileitungsleitern (E-A2Y) und Ähnlichem. 
+521.10.001.2.AT Frei gespannte Kabel und Leitungen müssen außerhalb des Handbereichs mit dem tiefsten 
+Punkt mindestens 3 m über der Standfläche liegen. Vom Rand lichter Fensteröffnungen müssen sie 
+mindestens nach oben 0,3 m, seitlich und nach unten 1 m, von Balkonen und Terrassen mindestens 3 m über 
+und 0,5 m unter der Standfläche sowie 1,5 m seitlich von Brüstungen entfernt sein. 
+Kleinere Abstände sind nur in Ausnahmefällen bei Verwendung von Kabeln, Mantelleitungen und wetterfest 
+isolierten Leitungen zulässig. Die Höhe von 3 m über der Standfläche ist in jedem Fall einzuhalten. Auf 
+ausreichende Entfernung zu Bäumen und Sträuchern ist zu achten. 
+Über befahrbaren Flächen müssen die Kabel und Leitungen mit ihrem tiefsten Punkt mindestens 5 m von der 
+Fahrbahn entfernt sein. 
+ANMERKUNG 1.AT 
+Anforderungen an die Errichtung von Freileitungen ≤1 kV siehe OVE E 8110. 
+ANMERKUNG 2.AT 
+In besonderen Anlagen können abweichende Höhen erforderlich sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 307/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 5 
+521.10.002.AT 
+Stegleitungen 
+Anforderungen für die Verwendung von Stegleitungen AT-N05VVH-U: 
+a) 
+Stegleitungen dürfen nur in trockenen Räumen und nur in oder unter Putz verlegt werden; 
+b) 
+Stegleitungen müssen in ihrem ganzen Verlauf von Putz bedeckt sein, ausgenommen in Hohlräumen von 
+Decken und Wänden, die aus Beton, Stein oder ähnlichen nichtbrennbaren Baustoffen bestehen; 
+c) 
+Stegleitungen dürfen auch bei Putzabdeckung nicht auf brennbaren Baustoffen, z. B. Holz, verlegt werden; 
+d) 
+Anhäufung durch Bündelung von Stegleitungen ist unzulässig; 
+ 
+ANMERKUNG 1.AT 
+ 
+Die Zusammenfassung von Stegleitungen an EinführungssteIlen von elektrischen 
+Betriebsmitteln (z. B. Dosen, Kästen und Verteiler) gilt nicht als Bündelung. 
+e) 
+Nicht zulässig ist die Verlegung von Stegleitungen 
+ 
+– 
+in Holzhäusern (auch dann nicht, wenn deren Innenwände mit Putz bedeckt sind); 
+ 
+– 
+in Hohlräumen von Holzbalkendecken; 
+ 
+– 
+unter Gipskartonplatten, es sei denn, diese werden ausschließlich mit Gipspflaster befestigt; 
+ 
+– 
+unmittelbar auf oder unter Drahtgeweben, Streckmetallen u. dgl.. 
+f) 
+Zur Befestigung von Stegleitungen dürfen nur solche Mittel und Verfahren angewendet werden, die eine 
+Formänderung oder Beschädigung der Isolierung ausschließen; 
+g) 
+Verbindungen von Stegleitungen dürfen nur in Installationsdosen gemäß OVE EN IEC 60670-1 aus 
+Isolierstoff vorgenommen werden. 
+ANMERKUNG 2.AT 
+Prüfanforderungen an Stegleitungen AT-N05VVH-U siehe ÖVE/ÖNORM E 8242. 
+521.10.003.AT 
+Verlegen in Beton 
+521.10.003.1.AT Kabel und Leitungen 
+Die in den Aufzählungen a) bis c) angegebenen Kabel und Leitungen sind zulässig: 
+a) 
+Aderleitungen (z. B. H07V) in Elektroinstallationsrohren; 
+ 
+Bei der Verlegung von Aderleitungen in Elektroinstallationsrohren müssen die Rohre in isolierende Dosen 
+oder Gehäuse gemäß der Normenreihe ÖVE/ÖNORM EN 60670 eingeführt werden. 
+ 
+Bei Verwenden von Aderleitungen ist sicherzustellen, dass Rohre, Dosen und Gehäuse ein lückenlos 
+geschlossenes System bilden. 
+b) 
+Mantelleitungen (z. B. PVC-Mantelleitung Typ AT-N05VV), ausgenommen der Beton wird einem  
+Schüttel-, Rüttel- oder Stampfprozess unterzogen; 
+c) 
+Kabel, z. B. E-YY gemäß ÖVE/ÖNORM E 8200-603, ausgenommen der Beton wird einem Schüttel-, 
+Rüttel- oder Stampfprozess unterzogen. 
+ANMERKUNG AT 
+Anforderungen an Elektroinstallationsrohrsysteme siehe 521.6. 
+Kabel und Leitungen sind an den Übergängen zwischen Bauelementen, z. B. an Dehnungsfugen, vor 
+mechanischer Beschädigung zu schützen. 
+521.10.003.2.AT Zubehör 
+Gerätedosen, Geräteverbindungsdosen, Leuchten-Anschlussdosen sowie Verbindungsdosen und -kästen 
+müssen für die Installation in Beton geeignet sein. Sie müssen OVE EN IEC 60670-1 entsprechen und das 
+Symbol 90 °C aufweisen (Information zur maximalen Temperatur während des Abbinde-Prozesses). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 308/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 6 
+522 Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+Die Verlegeart muss so ausgewählt werden, dass der Schutz gegen die zu erwartenden äußeren Einflüsse in 
+allen zugehörigen Teilen der Kabel- und Leitungsanlage sichergestellt ist. Dabei sind Richtungsänderungen 
+(Biegungen) sowie Einführungen von Kabeln und Leitungen in Betriebsmittel besonders zu beachten. 
+ANMERKUNG 
+In diesem Abschnitt werden nur die nach Tabelle 51.ZA.1 kategorisierten äußeren Einflüsse behandelt, 
+die für Kabel- und Leitungsanlagen von Bedeutung sind. 
+522.1 
+Umgebungstemperatur (AA) 
+522.1.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass sie für jede 
+Temperatur zwischen der höchsten und niedrigsten örtlichen Umgebungstemperatur geeignet sind und 
+sichergestellt ist, dass die zulässige Grenztemperatur im bestimmungsgemäßen Gebrauch (siehe 
+Tabelle 52.1) und die höchst zulässige Temperatur im Fehlerfall nicht überschritten werden. 
+ANMERKUNG 
+„Grenztemperatur“ bedeutet die andauernde höchstzulässige Betriebstemperatur. 
+522.1.2 Kabel- und Leitungsanlagen einschließlich Zubehör dürfen nur bei Umgebungstemperaturen 
+installiert oder bewegt werden, die innerhalb der in der entsprechenden Produktnorm oder vom Hersteller 
+angegebenen Grenzwerte liegen. 
+522.2 
+Äußere Wärmequellen 
+522.2.1 Zum Schutz gegen schädliche thermische Einwirkungen äußerer Wärmequellen muss eine oder 
+müssen mehrere der folgenden oder eine gleichermaßen wirksame Maßnahme zum Schutz der Kabel- und 
+Leitungsanlage ergriffen werden: 
+– 
+Abschirmung gegenüber Wärmequellen; 
+– 
+Anordnung in ausreichendem Abstand zur Wärmequelle; 
+– 
+Auswahl der Teile der Kabel- und Leitungsanlage unter Berücksichtigung der zu erwartenden Temperatur-
+erhöhung; 
+– 
+örtliche Verstärkung des Isoliermaterials, z. B. durch Verwendung von hitzebeständigen Isolierschläuchen. 
+ANMERKUNG 
+Wärmeeinwirkung kann durch Strahlung, Konvektion oder Ableitung erfolgen, z. B. 
+– 
+von Warmwasser-Versorgungsanlagen; 
+– 
+von Fertigungseinrichtungen, Betriebs- und Verbrauchsmitteln; 
+– 
+von Verarbeitungsprozessen; 
+– 
+durch wärmeleitende Materialien; 
+– 
+durch Sonneneinwirkung entweder auf die Kabel- und Leitungsanlagen oder das umgebende Medium. 
+522.3 
+Auftreten von Wasser (AD) oder hoher Feuchtigkeit (AB) 
+522.3.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass ein Schaden durch 
+Kondensation oder Eindringen von Wasser nicht hervorgerufen wird. Die Kabel- und Leitungsanlagen müssen 
+im errichteten Zustand die IP-Schutzart erfüllen, die für den jeweiligen Ort erforderlich ist. 
+ANMERKUNG 
+Im Allgemeinen dürfen Ummantelung und Isolierung von Kabeln und Leitungen für feste Verlegung im 
+unbeschädigten Zustand als beständig gegen das Eindringen von Feuchtigkeit angesehen werden. Besonders zu 
+betrachten sind Kabel und Leitungen, die häufig Spritzwasser ausgesetzt sind bzw. die häufig ein- oder untergetaucht 
+werden. 
+522.3.2 Wenn sich innerhalb von Kabel- und Leitungsanlagen Wasser ansammeln oder Kondensation von 
+Wasser auftreten kann, müssen Vorkehrungen für die Wasserabführung getroffen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 309/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 7 
+522.3.3 Wenn Kabel- und Leitungsanlagen Bewegungen durch Wellen (AD6) ausgesetzt sein können, sind 
+sie gegen mechanische Beschädigung durch eine oder mehrere der Maßnahmen gemäß 522.6, 522.7 oder 
+522.8 zu schützen. 
+ 522.4 Auftreten von festen Fremdkörpern (AE) 
+522.4.1 Kabel- und Leitungsanlagen sind so auszuwählen und zu errichten, dass die Gefahr, die von der 
+Beschädigung durch feste Fremdkörper verursacht wird, auf ein Minimum reduziert wird. Die Kabel- und 
+Leitungsanlagen müssen im errichteten Zustand die IP-Schutzart erfüllen, die für den jeweiligen Ort erforderlich 
+ist. 
+Bei Hohlwandinstallationen müssen Dosen und Gehäuse mit einem IP-Schutzgrad von mindestens IP30 
+verwendet werden. 
+522.4.2 An Orten, an denen sich Staub oder ähnliche Stoffe in solch großer Menge ansammeln können, die 
+die Wärmeableitung der Kabel- und Leitungsanlage verringert, müssen Maßnahmen gegen das Ansammeln 
+von Staub oder ähnlichen Stoffen getroffen werden. 
+ANMERKUNG 
+Gegebenenfalls kann eine Verlegeart, die die Entfernung von Staub erleichtert, erforderlich sein (siehe 
+Abschnitt 529). 
+522.5 
+Auftreten von korrosiven oder verschmutzenden Substanzen (AF) 
+522.5.1 Beim Auftreten von korrosiven oder verschmutzenden Substanzen, einschließlich Wasser, die die 
+Korrosion oder Alterung begünstigen, müssen die der Schädigung ausgesetzten Teile der Kabel- und 
+Leitungsanlagen geeignet geschützt werden oder aus einem korrosions- bzw. alterungsbeständigen Werkstoff 
+bestehen. 
+ANMERKUNG 
+Geeignete Schutzmaßnahmen zur Anwendung während der Errichtung können schützende Bänder, 
+Anstriche oder Fett sein. Diese Maßnahmen sollten mit dem Hersteller abgestimmt werden. 
+522.5.2 Unterschiedliche Metalle, die bei gegenseitiger Berührung elektrolytisch reagieren können, dürfen 
+keinen Kontakt zueinander haben, es sei denn, es werden besondere Maßnahmen zur Vermeidung der 
+Reaktionen getroffen. 
+522.5.3 Werkstoffe, die wechselseitig oder individuell eine Verschlechterung ihrer Eigenschaften oder eine 
+gefährliche Reduzierung ihrer Güte verursachen, dürfen keinen Kontakt zueinander haben. 
+522.6 
+Mechanische Beanspruchung: z. B. Schlag (AG) 
+522.6.1 Kabel- und Leitungsanlagen sind so auszuwählen und zu errichten, dass der Schaden, der durch 
+mechanische Beanspruchung, z. B. durch Schlag, Eindringen oder Druck während der Errichtung, der Nutzung 
+oder der Instandhaltung verursacht wird, auf ein Minimum reduziert wird. 
+522.6.2 Bei ortsfest errichteten Kabel- und Leitungsanlagen, bei denen eine mittlere (AG2) oder hohe (AG3) 
+Beanspruchung auftreten kann, muss der Schutz sichergestellt werden durch: 
+– 
+die mechanischen Eigenschaften der Kabel- und Leitungsanlagen, oder 
+– 
+die Auswahl des Errichtungsorts, oder 
+– 
+zusätzlichen lokalen oder umfassenden mechanischen Schutz, oder 
+– 
+durch eine Kombination dieser Maßnahmen. 
+ANMERKUNG 1  
+Beispiele sind Bereiche mit Fußboden-Durchführungen und Bereiche mit Gabelstaplerverkehr. 
+ANMERKUNG 2  
+Zusätzlicher mechanischer Schutz kann durch Verwendung geeigneter zu öffnender 
+Elektroinstallationskanalsysteme, geschlossener Elektroinstallationskanalsysteme oder Elektroinstallationsrohrsysteme 
+erreicht werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 310/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 8 
+522.6.3 Kabel oder Leitungen, welche unter einem Fußboden (Doppelboden) oder oberhalb einer 
+abgehängten Decke verlegt sind, müssen so verlegt werden, dass die Gefahr einer Beschädigung durch den 
+Boden oder die Decke oder deren Befestigungsmittel auf ein Minimum reduziert wird. 
+ANMERKUNG AT 
+Allenfalls vorhandene brandschutztechnische Maßnahmen sollten dabei berücksichtigt werden. 
+522.6.4 Die Schutzart der elektrischen Betriebsmittel muss nach dem Einführen der Kabel oder Leitungen 
+erhalten bleiben. 
+522.7 
+Beanspruchung durch Schwingungen (AH) 
+522.7.1 Kabel- und Leitungsanlagen, getragen von oder befestigt an Konstruktionsteilen von Betriebs- und 
+Verbrauchsmitteln, die Schwingungen von mittlerer (AH2) oder von hoher (AH3) Beanspruchung ausgesetzt 
+sind, müssen für diese Bedingungen geeignet sein. Dies gilt besonders für einzelne Kabel/Leitungen sowie für 
+die Kabel- und Leitungsverbindungen. 
+ANMERKUNG 
+Besonders ist der Anschluss von schwingenden Betriebs- und Verbrauchsmitteln zu beachten. 
+Besondere lokale Maßnahmen, wie z. B. flexible Kabel/Leitungen, können erforderlich sein. 
+522.7.2 Der feste Anschluss von abgehängten elektrischen Verbrauchsmitteln, z. B. Leuchten, muss durch 
+flexible Kabel und Leitungen erfolgen. Wenn keine Schwingungen oder Bewegungen erwartet werden können, 
+dürfen Kabel und Leitungen mit starren Leitern verwendet werden. 
+522.8 
+Andere mechanische Beanspruchungen (AJ) 
+522.8.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass während der 
+Errichtung, dem Betrieb und der Instandhaltung eine Schädigung von Kabeln und Leitungen und ihren 
+Anschlüssen vermieden wird. 
+Die Verwendung von Schmiermitteln, die Silikonöl enthalten, zum Einziehen von Kabeln und Leitungen in 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme, zu öffnende Elektro-
+installationskanalsysteme oder Kabelträgersysteme ist nicht zulässig. 
+522.8.2 Elektroinstallationsrohrsysteme oder geschlossene Elektroinstallationskanalsysteme innerhalb von 
+Gebäudeteilen müssen zwischen den Zugangspunkten vollständig verlegt sein, bevor Kabel oder Leitungen 
+eingezogen werden. 
+Dies gilt nicht für vorgefertigte Baueinheiten, bestehend aus einem Elektroinstallationsrohr mit eingezogenen 
+Kabel/Leitungen, die speziell für diesen Zweck entwickelt wurden. 
+ANMERKUNG AT 
+Bei solchen vorgefertigten Baueinheiten kann die Auswechselbarkeit der Kabel/Leitungen 
+beeinträchtigt sein. 
+522.8.3 Der Biegeradius muss so gewählt werden, dass Leiter oder Kabel und Leitungen nicht beschädigt 
+werden und Anschlüsse nicht übermäßig beansprucht werden. 
+ANMERKUNG AT 
+Weitere Informationen zum kleinsten empfohlenen Biegeradius siehe in ÖVE/ÖNORM  
+EN 50565-1 bzw. OVE E 8120. 
+522.8.4 An den Stellen, an denen Kabel oder Leitungen aufgrund ihrer Verlegeart nicht durchgehend gestützt 
+werden, müssen sie durch geeignete Maßnahmen in Abständen befestigt werden, sodass eine Beschädigung 
+durch ihr Eigengewicht oder durch dynamische Beanspruchungen (elektromechanische Beanspruchungen) 
+aufgrund eines Kurzschlusses vermieden wird. 
+ANMERKUNG 
+Vorkehrungen in Bezug auf dynamische Beanspruchungen aufgrund eines Kurzschlusses brauchen nur 
+bei einadrigen Kabeln/Leitungen mit einem Querschnitt über 50 mm2 berücksichtigt werden. 
+522.8.5 Wenn die Kabel- und Leitungsanlage einer andauernden Zugbeanspruchung unterworfen ist  
+(z. B. durch deren eigene Masse bei senkrechter Verlegung), müssen Kabel- oder Leitungsbauart, Querschnitt 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 311/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 9 
+und Befestigungsart dafür geeignet sein, eine Beschädigung der Leitungen oder Kabel durch übermäßige 
+Zugbeanspruchung zu vermeiden. 
+ANMERKUNG AT 
+Weitere Informationen zur Zugbeanspruchung siehe in ÖVE/ÖNORM EN 50565-1. 
+522.8.6 Für das Ein- oder Ausziehen von Kabeln und Leitungen muss ausreichender Zugang zum Ausführen 
+dieser Tätigkeiten vorhanden sein. 
+522.8.7 Im Fußboden verlegte Kabel- und Leitungsanlagen müssen, um Schäden zu verhindern, 
+entsprechend der vorgesehenen Nutzung des Fußbodens ausreichend geschützt sein. 
+ 
+522.8.8 Fest in Wänden verlegte Kabel- und Leitungsanlagen müssen waagrecht, senkrecht oder parallel zu 
+den Raumkanten geführt werden. 
+Kabel- und Leitungsanlagen in der Decke oder im Fußboden dürfen dem kürzest geeigneten Weg folgen. 
+ANMERKUNG 1.AT 
+Weitere Informationen hinsichtlich der Kabel-/Leitungsführung und Anordnung von elektrischen 
+Betriebsmitteln in Wohngebäuden siehe OVE E 8015 bzw. für barrierefreies Bauen siehe ÖNORM B 1600. 
+ANMERKUNG 2.AT 
+Bei der Herstellung der baulichen Maßnahmen für die Verlegung von Kabeln und Leitungen in 
+Wänden siehe ergänzende Anforderung nach ÖNORM B 2204, ÖNORM B 3358-1, ÖNORM B 1996-3 und ÖNORM 
+EN 1996-1-1, ÖNORM B 8115-4 und ÖNORM B 3415. 
+522.8.9 Kabel- und Leitungsanlagen müssen so verlegt werden, dass eine mechanische Überbeanspruchung 
+der Leiter und Verbindungen vermieden wird. 
+Bei Hohlwandinstallationen müssen Dosen und Gehäuse mit Rückhaltung der Leitung oder des Kabels 
+verwendet werden. 
+522.8.10 Erdverlegte Kabel und Leitungen, Elektroinstallationsrohre oder Elektroinstallationskanäle müssen 
+entweder gegen mechanische Beschädigung geschützt sein oder in einer Tiefe verlegt sein, die die Gefahr der 
+Beschädigung minimiert. Erdverlegte Kabel/Leitungen müssen durch eine Kabelabdeckung oder ein 
+brauchbares Markierungsband gekennzeichnet werden. Im Erdreich verlegte Rohre und Kanäle müssen 
+geeignet gekennzeichnet sein. 
+ANMERKUNG 1  
+Für erdverlegte Elektroinstallationsrohre gilt OVE EN 50626-1. 
+ANMERKUNG 2  
+Mechanischer Schutz kann erreicht werden durch die Verwendung von erdverlegten 
+Elektroinstallationsrohrsystemen nach OVE EN 50626-1 oder armierten Kabeln oder anderen geeigneten Methoden wie 
+Abdeckplatten. 
+ANMERKUNG 1.AT 
+Anforderungen für die Verlegung von Energie-, Steuer- und Messkabeln siehe OVE E 8120. 
+ANMERKUNG 2.AT 
+Elektroinstallationsrohre gemäß OVE EN IEC 61386-22 können auch in Erde verlegt werden, 
+wenn die Materialien für die Erdverlegung geeignet sind und mindestens Druckfestigkeit „mittel“ (750 N) aufweisen. 
+522.8.11 Kabel- und Leitungszubehör und Umhüllungen dürfen keine scharfen Kanten haben, die 
+Kabel/Leitungen oder isolierte Leiter beschädigen können. 
+522.8.12 Kabel und Leitungen dürfen durch das Befestigungsmaterial nicht beschädigt werden. 
+522.8.13 Kabel und Leitungen, Stromschienen und andere elektrische Leiter, welche Dehnungsfugen kreuzen, 
+sind derart auszuwählen und zu verlegen, dass die zu erwartenden Bewegungen keine Beschädigungen der 
+elektrischen Betriebsmittel verursachen, z. B. durch die Verwendung flexibler Kabel- und Leitungsanlagen. 
+ANMERKUNG AT 
+Siehe dazu auch OVE E 8120. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 312/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 10 
+522.8.14 Kabel und Leitungen, die durch feste Unterteilungen (z. B. metallene Trennwände, Profile für 
+Ständerwände) verlaufen, sind gegen mechanische Beschädigung zu schützen, z. B. durch die Verwendung 
+von metallummantelten oder armierten Kabeln und Leitungen oder durch die Verwendung von 
+Elektroinstallationsrohren oder Steckstutzen. 
+ANMERKUNG 
+Kabel- und Leitungsanlagen sollten nicht durch Elemente der Gebäudestruktur geführt werden, welche 
+als tragende Elemente vorgesehen sind, es sei denn, die Funktion des tragenden Elements kann nach der Durchführung 
+sichergestellt werden. 
+522.9 
+Vorhandensein von Pflanzen- und/oder Schimmelbewuchs (AK) 
+522.9.1 Wo erfahrungs- oder erwartungsgemäß Pflanzen- und/oder Schimmelbewuchs (AK2) Schäden 
+hervorrufen können, muss die Kabel- und Leitungsanlage entsprechend ausgewählt oder es müssen 
+besondere Schutzmaßnahmen vorgesehen werden. 
+ANMERKUNG 1  
+Um eine entsprechende Entfernung eines solchen Bewuchses zu ermöglichen, kann es notwendig 
+sein, eine entsprechende Verlegeart zu wählen (siehe Abschnitt 529). 
+ANMERKUNG 2  
+Mögliche Maßnahmen zur Vorbeugung sind geschlossene Verlegearten (Elektroinstallationsrohre 
+oder geschlossene Elektroinstallationskanäle oder zu öffnende Elektroinstallationskanäle) oder die Einhaltung von 
+Abständen zu Pflanzen sowie regelmäßige Reinigung der betroffenen Kabel- und Leitungsanlage. 
+522.10 Anwesenheit von Tieren (Fauna) (AL) 
+Wo erfahrungs- oder erwartungsgemäß Tiere Schäden hervorrufen können, muss die Kabel- und 
+Leitungsanlage entsprechend ausgewählt oder es müssen besondere Schutzmaßnahmen vorgesehen 
+werden, z. B. durch die Auswahl: 
+– 
+der Kabel- und Leitungsanlage mit erhöhten mechanischen Eigenschaften, oder 
+– 
+des Verlegeorts, oder 
+– 
+eines zusätzlichen lokalen oder umfassenden mechanischen Schutzes, oder 
+– 
+durch eine Kombination dieser Maßnahmen. 
+522.11 Sonnenstrahlung (AN) und ultraviolette Strahlung 
+Wenn erhebliche Sonneneinwirkung (AN2, AN3) oder ultraviolette Strahlung zu erwarten ist, muss eine 
+geeignete Kabel- und Leitungsanlage ausgewählt und errichtet werden, oder es ist ein entsprechender Schutz 
+gegen diese Sonneneinwirkung vorzusehen. Für elektrische Betriebsmittel, die ionisierender Strahlung 
+ausgesetzt sind, können besondere Vorkehrungen notwendig sein. 
+ANMERKUNG 
+Siehe auch 522.2.1. 
+522.12 Auswirkungen von Erdbeben (AP) 
+522.12.1 Wenn am Errichtungsort eine Gefährdung der Kabel- und Leitungsanlage durch Erdbeben zu 
+erwarten ist, muss dies bei der Auswahl und Errichtung der Kabel- und Leitungsanlage berücksichtigt werden. 
+522.12.2 Wo erfahrungsgemäß die Erdbebengefährdung von geringer Stärke (AP2) oder höher sein kann, 
+muss Folgendes besonders betrachtet werden: 
+– 
+die Befestigung der Kabel- und Leitungsanlage am Gebäude; 
+– 
+die Verbindungen zwischen den fest verlegten Kabeln und Leitungen und allen wesentlichen elektrischen 
+Betriebsmitteln, z. B. Einrichtungen für Sicherheitszwecke, müssen ausreichend beweglich sein. 
+522.13 Beanspruchung durch Luftbewegung (AR) 
+522.13.1 Bei Zutreffen sind 522.7 „Schwingungen“ (AH) und 522.8 „Andere mechanische Beanspruchungen“ 
+(AJ) zu berücksichtigen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 313/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 11 
+522.14 Art der bearbeiteten oder gelagerten Stoffe (BE) 
+Bei Zutreffen ist Abschnitt 422 „Maßnahmen bei Brandrisiken“ und Abschnitt 527 „Auswahl und Errichtung von 
+Kabel- und Leitungsanlagen zur Begrenzung von Bränden“ zu berücksichtigen. 
+522.15 Gebäudestruktur (CB) 
+522.15.1 Wo Gefahren infolge baulicher Bewegungen (CB3) bestehen, müssen die vorgesehenen Kabel- und 
+Leitungsbefestigungen und Schutzmaßnahmen sich diesen Bewegungen anpassen können, sodass die Leiter 
+nicht außergewöhnlichen mechanischen Beanspruchungen ausgesetzt werden. 
+522.15.2 Für elastische oder für Bewegung (CB4) vorgesehene Bauweisen müssen flexible Kabel- und 
+Leitungsanlagen verwendet werden. 
+523 Strombelastbarkeit 
+523.1 
+Der Strom, der dauernd von einem Leiter unter normalen Bedingungen geführt wird, darf nur so groß 
+sein, dass die durch ihn hervorgerufene Temperatur die höchstzulässige Betriebstemperatur der Isolierung 
+gemäß Tabelle 52.1 nicht überschreitet. Die Größe des Stroms muss gemäß 523.2 ausgewählt oder gemäß 
+523.3 bestimmt werden. 
+Tabelle 52.1 – Höchstzulässige Betriebstemperaturen für Isolierstoffe 
+Isolierstoff 
+Höchstzulässige 
+Betriebstemperatur a, d 
+Polyvinylchlorid (PVC) 
+Vernetztes Polyethylen (VPE), Ethylen-Propylen-Kautschuk (EPR) 
+Mineral (mit PVC-Schutzhülle oder blank im Handbereich) 
+Mineral (blank, nicht im Handbereich und nicht in Kontakt mit brennbaren Stoffen) 
+70 °C am Leiter 
+90 °C am Leiter 
+70 °C am Mantel 
+105 °C am Mantel b, c 
+a 
+Die höchstzulässigen Betriebstemperaturen der Tabelle 52.1, auf welcher die Strombelastbarkeitstabellen in 
+Anhang 52.B basieren, wurden IEC 60502 und ÖVE/ÖNORM EN 60702 Reihe entnommen. 
+b 
+Wenn ein Leiter mit einer Betriebstemperatur über 70 °C betrieben wird, muss sichergestellt werden, dass die 
+Anschlussstelle des elektrischen Betriebsmittels für diese Temperatur geeignet ist. 
+c 
+Bei mineralisolierten Kabeln dürfen höhere Betriebstemperaturen zugelassen werden, die von der 
+Bemessungstemperatur des Kabels/der Leitung, seinen Anschlussstellen und anderen äußeren Einflüssen 
+abhängen. 
+d 
+Bestätigt der Hersteller eine höhere zulässige Betriebstemperatur für Drähte und Kabel/Leitungen, kann diese 
+angewendet werden. 
+ANMERKUNG 1 
+Diese Tabelle enthält nicht alle Arten von Kabeln und Leitungen. 
+ANMERKUNG 2 
+Diese Tabelle gilt nicht für Schienenverteilersysteme, Stromschienensysteme oder Strom-
+schienensysteme für Leuchten, für welche die Stromtragfähigkeit vom Hersteller gemäß ÖVE/ÖNORM EN 61439-6, 
+OVE EN 61534-1 bzw. OVE EN 60570 zur Verfügung gestellt werden sollte. 
+ANMERKUNG 3 
+Betriebstemperaturen von anderen Isolierstoffen sind der Kabel-/Leitungs-Spezifikation oder den 
+Herstellerangaben zu entnehmen. 
+ 
+523.2 
+Die Anforderung gemäß 523.1 gilt als erfüllt, wenn der Strom von isolierten Kabeln und Leitungen 
+ohne Bewehrung die jeweils zutreffende Strombelastbarkeit gemäß den Tabellen in Anhang 52.B, unter 
+Bezugnahme auf Tabelle 52.A.3 und unter Berücksichtigung der erforderlichen Umrechnungsfaktoren in 
+Anhang 52.B, nicht überschreitet. 
+ANMERKUNG 1  
+In Abhängigkeit von den äußeren Einflüssen und dem genauen Aufbau der Kabel und Leitungen 
+kann es Toleranzen bei den Strombelastbarkeitswerten geben. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 314/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 12 
+523.3 
+Die entsprechenden Werte der Strombelastbarkeit dürfen auch 
+– 
+gemäß IEC 60287 Series, oder 
+– 
+durch Versuch, oder 
+– 
+durch Rechnung, wobei eine anerkannte Berechnungsmethode zu verwenden ist, 
+bestimmt werden. 
+Gegebenenfalls sind die Lastverläufe, und für in Erde verlegte Kabel der effektive Wärmewiderstand des 
+Bodens, zu berücksichtigen. 
+523.4 
+Die Umgebungstemperatur ist die Temperatur des umgebenden Mediums, wenn die betrachteten 
+Kabel/Leitungen oder isolierten Leiter nicht belastet werden (siehe Anhang 52.B). 
+523.5 
+Umrechnungsfaktoren für Häufung 
+Umrechnungsfaktoren für Häufungen (siehe Tabelle 52.B.17 bis Tabelle 52.B.21) sind anzuwenden für 
+Häufungen (Gruppen) isolierter Leiter oder Kabel/Leitungen mit gleicher maximaler Betriebstemperatur. 
+Bei Häufungen von Kabeln/Leitungen oder isolierten Leitern mit unterschiedlichen maximalen Betriebs-
+temperaturen muss die Strombelastbarkeit aller Kabel/Leitungen oder isolierter Leiter in der Häufung auf der 
+niedrigsten maximalen Betriebstemperatur aller Kabel oder Leitungen in der gemeinsamen Häufung und dem 
+entsprechenden Umrechnungsfaktor für Häufung basieren. 
+Falls ein Leiter mit einem Strom von höchstens 30 % seiner Strombelastbarkeit bei Häufung belastet wird, ist 
+es zulässig, diesen bei der Bestimmung des Umrechnungsfaktors für die restlichen Kabel oder Leitungen dieser 
+Häufung zu vernachlässigen. 
+ANMERKUNG AT 
+Weitere Hinweise zu Umrechnungsfaktoren für Häufungen in Abhängigkeit der Referenz-
+verlegearten siehe Anhang 52.B.4. 
+523.6 
+Anzahl der belasteten Leiter 
+523.6.1 Bei der Ermittlung der Anzahl der belasteten Leiter in einem Stromkreis sind nur jene Leiter zu 
+berücksichtigen, die einen Belastungsstrom führen. Wenn in einem Mehrphasen-Stromkreis eine 
+symmetrische Belastung angenommen werden kann, braucht der zugehörige Neutralleiter nicht berücksichtigt 
+zu werden. 
+Daher gilt für Vier- und Fünfleiter-Kabel/-Leitungen die gleiche Strombelastbarkeit wie für ein Dreileiter-Kabel/-
+Leitung mit dem gleichen Leiternennquerschnitt für jeden Außenleiter. Vier- und Fünfleiter-Kabel/-Leitungen 
+können höhere Strombelastbarkeiten aufweisen, wenn nur drei Leiter belastet werden. Diese Annahmen gelten 
+nicht, wenn der Oberschwingungsstrom der 3. Ordnung und dessen Vielfache, größer als 15 % sind. 
+Bei Oberschwingungsbelastung müssen gegebenenfalls alle Leiter als stromdurchflossen angesehen werden. 
+523.6.2 Wo der Neutralleiter in einem mehr- oder vieladrigem Kabel/Leitung aufgrund einer unsymmetrischen 
+Belastung der Außenleiter einen Strom führt, wird der Temperaturanstieg im Neutralleiter durch die reduzierte 
+Wärmeentwicklung in einem oder mehreren Außenleitern ausgeglichen. In diesem Fall ist der Querschnitt des 
+Neutralleiters auf Basis des höchsten Außenleiterstroms zu wählen. 
+Auf alle Fälle ist der Querschnitt des Neutralleiters in Übereinstimmung mit 523.1 zu bestimmen. 
+523.6.3 Wenn der Neutralleiter belastet wird, ohne dass die Außenleiter entsprechend entlastet werden, muss 
+der Neutralleiter bei der Festlegung der Strombelastbarkeit des Stromkreises mitberücksichtigt werden. Solche 
+Ströme können beispielsweise durch ausgeprägte Oberschwingungsströme in Drehstromkreisen verursacht 
+werden. Wenn der Anteil der Oberschwingungsströme größer als 15 % ist, darf der Nennquerschnitt des 
+Neutralleiters nicht kleiner als der des Außenleiters sein. Die zusätzliche Erwärmung durch das Vorhandensein 
+von Oberschwingungsströmen der 3. Ordnung oder deren Vielfachen und die entsprechenden Umrechnungs-
+faktoren für größere Oberschwingungsströme werden im Anhang 52.E behandelt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 315/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 13 
+523.6.4 Leiter, die nur Schutzleiterfunktion haben, werden nicht berücksichtigt. PEN-Leiter müssen in der 
+gleichen Weise wie Neutralleiter behandelt werden. 
+523.7 
+Parallel geschaltete Leiter 
+Wenn zwei oder mehr aktive Leiter oder PEN-Leiter parallel geschaltet sind, müssen 
+a) 
+Maßnahmen zur gleichmäßigen Aufteilung des Belastungsstroms auf die Leiter getroffen werden. 
+ 
+Diese Forderung gilt als erfüllt, wenn die Leiter einer Leitung/eines Kabels aus demselben Werkstoff 
+bestehen, den gleichen Nennquerschnitt, etwa die gleiche Länge und keine Verzweigungen auf der 
+gesamten Stromkreislänge aufweisen, und entweder 
+ 
+– 
+die parallel geschalteten Leiter in mehradrigen oder verseilten einadrigen Kabeln oder Leitungen 
+enthalten sind, oder 
+ 
+– 
+die parallel geschalteten Leiter in einadrigen Kabeln oder Leitungen bei gebündelter oder ebener 
+Anordnung einen Nennquerschnitt von höchstens 50 mm2 Kupfer oder von höchstens 70 mm2 
+Aluminium aufweisen, oder 
+ 
+– 
+die parallel geschalteten Leiter in einadrigen Kabeln oder Leitungen in gebündelter oder ebener 
+Anordnung sind und einen Nennquerschnitt über 50 mm2 Kupfer oder über 70 mm2 Aluminium 
+aufweisen und gleichzeitig besondere Verlegemaßnahmen getroffen sind. Diese Verlegemaßnahmen 
+bestehen aus einer geeigneten Phasenfolge und räumlichen Anordnung der unterschiedlichen 
+Außenleiter oder Pole (siehe Anhang 52.H), 
+oder 
+b) 
+es muss der Belastungsstrom zur Erfüllung der Anforderungen von 523.1 besonders beachtet werden. 
+Wo keine entsprechende Stromaufteilung erreicht werden kann, oder wo vier oder mehr Leiter parallel 
+geschaltet werden müssten, ist die Verwendung von Stromschienensystemen in Betracht zu ziehen. 
+523.8 
+Änderung der Verlegebedingungen im Verlauf einer Verlegestrecke 
+Wenn im Verlauf einer Verlegestrecke eines Kabels oder der Leitung die Wärmeableitung differiert, ist die 
+Strombelastbarkeit nach den ungünstigsten Verlegebedingungen zu ermitteln. 
+ANMERKUNG 
+Diese Anforderung kann für gewöhnlich vernachlässigt werden, wenn sich die Wärmeableitung nur 
+dadurch unterscheidet, dass die Verkabelung durch eine Wand mit einer Dicke kleiner 0,35 m geführt wird. 
+523.9 
+Einleiter-Kabel/-Leitungen mit Metallmantel 
+Metallmäntel und/oder nicht magnetische Bewehrungen von einadrigen Kabeln und Leitungen innerhalb des 
+gleichen Stromkreises müssen entweder an beiden Kabel-/Leitungsenden miteinander verbunden werden, 
+oder es dürfen alternativ zur Verbesserung der Strombelastbarkeit die Mäntel und Bewehrungen dieser 
+Kabel/Leitungen bei Leiternennquerschnitten über 50 mm2 und einem nicht leitenden äußeren Mantel an einem 
+Kabel-/Leitungsende verbunden werden, wobei an den nicht verbundenen Enden eine geeignete Isolierung 
+vorzusehen ist. In diesem Fall muss die Länge der Kabel/Leitungen vom Verbindungspunkt gemessen derart 
+begrenzt werden, dass Spannungen vom Mantel und/oder von der Bewehrung zur Erde 
+a) 
+keine Korrosion verursachen, wenn die Kabel/Leitungen mit voller Last betrieben werden, z. B. durch 
+Begrenzung der Spannung auf 25 V und 
+b) 
+keine Gefahr oder Schäden an Eigentum verursachen, wenn die Kabel/Leitungen den Kurzschlussstrom 
+führen. 
+524 Querschnitte von Leitern 
+524.1 
+Die Querschnitte von Außenleitern in Wechselstromkreisen und von aktiven Leitern in 
+Gleichstromkreisen dürfen aus mechanischen Gründen nicht kleiner sein als die in Tabelle 52.2 angegebenen 
+Werte. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 316/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 14 
+Tabelle 52.2 – Mindestquerschnitt von Leitern aus mechanischen Gründen 
+Arten von Kabel- und 
+Leitungsanlagen 
+Anwendung des Stromkreises 
+Leiter 
+Werkstoff 
+Mindestquerschnitt 
+mm2 
+Feste 
+Verlegung 
+Kabel und 
+Leitungen 
+Leistungs- und 
+Beleuchtungsstromkreise 
+Cu 
+1,5 
+Al 
+in Übereinstimmung mit 
+OVE EN IEC 60228 
+(10 mm2) 
+(siehe Anmerkung 1) 
+Hilfsstromkreise 
+Cu 
+0,5 
+(siehe Anmerkung 2) 
+Blanke Leiter 
+Leistungsstromkreise 
+Cu 
+10 
+Al 
+16 
+Hilfsstromkreise 
+Cu 
+4 
+Verbindungen mit flexiblen Kabeln 
+und Leitungen 
+für ein besonderes 
+Betriebsmittel 
+Cu 
+wie in der entsprechenden 
+Betriebsmittelnorm 
+angegeben 
+für andere Anwendungen 
+0,75 a 
+Kleinspannung für besondere 
+Anwendung 
+0,75 
+ANMERKUNG 1 
+Verbinder zum Anschluss von Aluminiumleitern sollten für diesen Werkstoff geprüft und 
+zugelassen sein. 
+ANMERKUNG 2 
+In Hilfsstromkreisen für elektronische Betriebsmittel ist ein Mindestquerschnitt von 0,1 mm2 
+zulässig. 
+ANMERKUNG 3 
+Besondere Anforderungen an Beleuchtungsstromkreise mit Kleinspannung siehe Teil 7-715. 
+a 
+Für vieladrige flexible Leitungen mit 7 oder mehr Adern gilt Anmerkung 2. 
+ 
+524.2 
+Querschnitt des Neutralleiters 
+Falls detaillierte Angaben nicht vorliegen, gelten folgende Unterabschnitte. 
+524.2.1 Der Neutralleiter, soweit vorhanden, muss mindestens den gleichen Querschnitt haben wie die 
+Außenleiter: 
+– 
+in einphasigen Wechselstromkreisen mit zwei Leitern, unabhängig vom Querschnitt des Leiters; 
+– 
+in mehrphasigen Wechselstromkreisen, wenn der Außenleiterquerschnitt höchstens 16 mm2 für Kupfer 
+oder 25 mm2 für Aluminium ist; 
+– 
+in dreiphasigen Wechselstromkreisen, wenn voraussichtlich Oberschwingungen 3. Ordnung und ungerade 
+Vielfache 3. Ordnung zum Fließen kommen und die Gesamt-Oberschwingungsverzerrung zwischen 15 % 
+und 33 % liegt. 
+ANMERKUNG 
+Die genannten Oberschwingungsanteile sind z. B. zu erwarten, wenn Verteilungsstromkreise 
+Endstromkreise versorgen, die nicht lineare Verbraucher (z. B. elektronische Schaltnetzteile, elektronische 
+Vorschaltgeräte) enthalten. 
+524.2.2 Wenn die Oberschwingung 3. Ordnung und ungerade Vielfache der Oberschwingung 3. Ordnung 
+mehr als 33 % Gesamt-Oberschwingungsverzerrung betragen, kann es notwendig sein, den Querschnitt des 
+Neutralleiters zu vergrößern (523.6.3 und Anhang 52.E). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 317/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 15 
+ANMERKUNG 1  
+Derartige Oberschwingungsanteile treten z. B. in Stromkreisen auf, die nicht lineare Verbraucher 
+enthalten oder für IT-Komponenten bestimmt sind. 
+a) 
+Bei Mehrleiterkabeln/-leitungen ist der Querschnitt der Außenleiter gleich dem Querschnitt des 
+Neutralleiters, wobei der für den Neutralleiter gewählte Querschnitt 1,45 · IB des Außenleiters führen 
+können muss. 
+b) 
+Bei Einleiterkabeln/-leitungen darf der Querschnitt der Außenleiter kleiner als der Querschnitt des 
+Neutralleiters sein. Die Berechnung wird unter folgenden Bedingungen durchgeführt: 
+ 
+– 
+für den Außenleiter: bei IB; 
+ 
+– 
+für den Neutralleiter: bei einem Strom, der 1,45 · IB beträgt. 
+ANMERKUNG 2  
+Für eine Erläuterung von IB (Betriebsstrom für diesen Stromkreis) siehe 433.1. 
+524.2.3 Bei mehrphasigen Stromkreisen, in denen der Querschnitt der Außenleiter über 16 mm2 für Kupfer 
+oder 25 mm2 für Aluminium ist, darf der Neutralleiter einen kleineren Querschnitt als die Außenleiter haben, 
+wenn die folgenden Bedingungen gleichzeitig erfüllt sind: 
+– 
+Der im bestimmungsgemäßen Betrieb zu erwartende Strom im Stromkreis ist auf die Außenleiter 
+symmetrisch verteilt, und die Oberschwingung 3. Ordnung sowie ungerade Vielfache der Oberschwingung 
+3. Ordnung sind nicht größer als 15 % des Außenleiterstroms. 
+ 
+ANMERKUNG 
+Üblicherweise ist der reduzierte Neutralleiterquerschnitt nicht kleiner als 50 % des Außenleiter-
+querschnitts. 
+– 
+Der Neutralleiter ist bei Überstrom durch Maßnahmen gemäß 431.2 geschützt. 
+– 
+Der Querschnitt des Neutralleiters ist mindestens 16 mm2 für Kupfer oder 25 mm2 für Aluminium. 
+525 Spannungsabfall in Verbraucheranlagen 
+525.001.AT Der Spannungsabfall zwischen der Niederspannungs-Messeinrichtung des Verteilernetz-
+betreibers und dem Anschlusspunkt der elektrischen Verbrauchsmittel (Steckdose oder Geräteanschluss-
+klemme) ist mit 3 % der Nennspannung begrenzt. 
+Für Verbraucheranlagen ohne Niederspannungs-Messeinrichtung bzw. ohne vorgelagertes Niederspannungs-
+Verteilernetz sind unter Berücksichtigung der o. a. Anforderungen weitergehende Überlegungen zu treffen. 
+Für den Bereich vor der Messeinrichtung sind die Vorgaben des Verteilernetzbetreibers einzuhalten. 
+525.002.AT Grundsätzlich ist für die Berechnung des Spannungsabfalls der Bemessungsstrom (In) der 
+vorgeschalteten Überstrom-Schutzeinrichtung unter Berücksichtigung eines Belastungsfaktors von 0,8 
+zugrunde zu legen. 
+Bei einstellbaren Schutzeinrichtungen ist für die Berechnung des Spannungsabfalls der eingestellte Strom zu 
+verwenden. 
+525.003.AT Es gibt jedoch auch ausgedehnte elektrische Anlagen, welche z. B. eine erhöhte 
+Betriebssicherheit (z. B. Selektivität von Überstromschutzorganen) benötigen und für die die Betriebsströme 
+der Verbrauchsmittel bekannt sind. Darunter fallen z. B. Gesundheitseinrichtungen, Industrieanlagen, Tunnel, 
+Straßenbeleuchtung mit Verkehrssicherungspflicht. 
+Bei diesen Anlagen kann für die Berechnung des Spannungsabfalls der vorgesehene Betriebsstrom zugrunde 
+gelegt werden. Diese vorgesehenen Betriebsströme sind bereits bei der Planung zu berücksichtigen und zu 
+dokumentieren. Bei Änderungen ist vom Anlagenbetreiber eine Evaluierung des Betriebsstroms zu 
+veranlassen und ggf. der betreffende Stromkreis neu zu bewerten. Bei nicht fest angeschlossenen 
+Verbrauchsmitteln ist regelmäßig zu evaluieren, ob der dokumentierte vorgesehene Betriebsstrom des 
+Stromkreises zum Evaluierungszeitpunkt nicht überschritten ist. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 318/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 16 
+525.004.AT Spannungsabfälle für Stromkreise mit Leitungsquerschnitten bis 50 mm² Kupfer bzw. 70 mm² 
+Aluminium für Leiter in gemeinsamer Umhüllung oder Rohren können üblicherweise mittels der nachstehenden 
+Gleichungen näherungsweise bestimmt werden: 
+Bei einphasigem Wechselstrom: 
+∆𝑈 ≤ 
+I ∙ 2 ∙ 𝑙
+𝜅 ∙ 𝐴 
+(F 52.1.AT) 
+Bei Drehstrom: 
+∆𝑈 ≤ 
+I  ∙ √3 ∙ 𝑙
+𝜅  ∙ 𝐴 
+(F 52.2.AT) 
+ANMERKUNG AT 
+Bei der Anwendung der Gleichungen F 52.1.AT und F 52.2.AT wird ein Leistungsfaktor cos   
+mit 1 vorausgesetzt. 
+Der Spannungsabfall in Prozent (∆u) ergibt sich nach der Gleichung 
+ 
+∆𝑢 = 100 ∙ 
+∆U
+U   
+(F 52.3.AT) 
+Dabei ist für die Gleichungen F 52.1.AT bis F 52.3.AT 
+∆U der in der Leitung auftretende Spannungsabfall; 
+I 
+der gemäß Abschnitt 525.002.AT festgelegte Strom, in Ampere (A); 
+ 
+Für Anlagen gemäß 525.003.AT wird anstelle von I der vorgesehene Betriebsstrom IB verwendet. 
+l 
+die installierte Länge des Kabels/der Leitung, in Meter (m); 
+κ 
+die (elektrische) Leitfähigkeit 
+ 
+für Kupfer = 57 Sm/mm2 (bei 20 °C, Mittelwert); 
+ 
+für Aluminium = 35,4 Sm/mm2 (bei 20 °C, Mittelwert); 
+A 
+der Querschnitt der Leiter, in Quadratmillimeter (mm2); 
+U 
+bei Wechselstrom die Spannung Außenleiter gegen Neutralleiter bzw. bei Drehstrom die Spannung 
+Außenleiter gegen Außenleiter, in Volt (V). 
+Für die Berechnung von Spannungsabfällen in Stromkreisen mit Leitungsquerschnitten über 50 mm² Kupfer 
+bzw. 70 mm² Aluminium sind darüber hinaus Berechnungen entsprechend der Fachliteratur und unter 
+Berücksichtigung der Herstellerangaben z. B. Wirk- und Blindwiderstände, Resistanz- und Reaktanzbelag, 
+erforderlich. 
+525.005.AT Ein höherer Spannungsabfall ist zulässig 
+– 
+beim Anlauf von Motoren; 
+– 
+für andere Verbrauchsmittel mit hohen Einschaltströmen 
+vorausgesetzt, dass sichergestellt ist, dass sich in beiden Fällen die Spannungsschwankungen innerhalb der 
+in der jeweiligen Betriebsmittelnorm genannten Grenzen bewegen. 
+Die folgenden zeitbegrenzten Fälle sind ausgeschlossen: 
+– 
+transiente Überspannungen; 
+– 
+Spannungsschwankungen durch gestörten Betrieb. 
+525.006.AT Bei Sanierung oder Erweiterungen von bestehenden Anlagen, die in Übereinstimmung, mit der 
+zum Zeitpunkt der Errichtung geltenden Errichtungsbestimmung errichtet worden sind, kann sich aufgrund 
+einer bestehenden Zuleitung ein höherer Spannungsabfall für den sanierten/erweiterten Bereich ergeben. 
+Diese Überschreitung des zulässigen Gesamtspannungsabfalls gemäß 525.001.AT ist zu begründen und zu 
+dokumentieren. 
+525.007.AT In Kleinspannungsstromkreisen, ausgenommen Beleuchtungsstromkreisen, müssen die in 
+525.001.AT genannten Grenzwerte für den Spannungsabfall bei Anwendungen wie z. B. Klingel, Steuerung, 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 319/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 17 
+Türöffner nicht eingehalten werden, vorausgesetzt, dass die ordnungsgemäße Funktion dieser Betriebsmittel 
+überprüft wird. 
+526 Elektrische Verbindungen 
+526.1 
+Verbindungen zwischen Leitern sowie zwischen Leitern und Anschlussstellen an elektrischen 
+Betriebsmitteln müssen für dauerhafte Stromübertragung und angemessene mechanische Festigkeit und 
+Schutz bemessen sein. 
+526.2 
+Bei der Auswahl der Verbindungsmittel ist, soweit zutreffend, zu berücksichtigen 
+– 
+der Werkstoff des Leiters und seiner Isolierung; 
+– 
+die Anzahl und Form der Drähte, die den Leiter bilden; 
+– 
+der Querschnitt des Leiters; 
+– 
+die Anzahl der Leiter, die miteinander zu verbinden sind. 
+ANMERKUNG 1  
+Lötverbindungen sollten vermieden werden, ausgenommen in Kommunikations-Stromkreisen. 
+Werden sie angewendet, müssen die Verbindungen so gestaltet sein, dass das Fließen des Lötmittels, mechanische 
+Belastungen und Temperaturerhöhung im Fehlerfall berücksichtigt sind (siehe 522.6, 522.7 und 522.8). 
+ANMERKUNG 2  
+Normen für Verbindungsmaterial sind z. B. OVE EN IEC 61535 und ÖVE/ÖNORM EN 60998 
+Reihe, ÖVE/ÖNORM EN 60999 Reihe, ÖVE/ÖNORM EN 60947-7 Reihe. 
+ANMERKUNG 3  
+Klemmen ohne die Aufschriften „r“ (nur starre Leiter), „f“ (nur flexible Leiter), „s“ oder „sol“ (nur 
+massive Leiter) können zur Verbindung aller Leiterarten eingesetzt werden. 
+526.3 
+Alle Verbindungen müssen zur Besichtigung, Prüfung und Wartung zugänglich sein, ausgenommen 
+– 
+Muffen zur Verlegung im Erdreich; 
+– 
+mit Isoliermasse gefüllte oder gekapselte Muffen; 
+– 
+Verbindungen zwischen der Anschlussleitung und dem Heizelement für Deckenheizsysteme, Fußboden-
+heizsysteme und Rohrheizsysteme; 
+– 
+Schweiß-, Löt-, Hartlöt- oder mit einem geeigneten Werkzeug hergestellte Crimpverbindungen; 
+– 
+Verbindungen, die Teil eines einer Produktnorm entsprechenden Betriebsmittels sind. 
+ANMERKUNG 
+Eine mit Isoliermasse gefüllte Muffe ist z. B. eine mit Gießharz gefüllte Muffe. 
+526.4 
+Falls erforderlich, müssen Vorkehrungen getroffen werden, dass im bestimmungsgemäßen Betrieb 
+auftretende Temperaturen an den Klemmen nicht die Wirksamkeit der Isolierung der angeschlossenen Leiter 
+oder der Befestigungsmittel mindern. 
+526.5 
+Elektrische Verbindungen (Betriebsmittelanschlüsse und Leiterverbindungen) müssen in geeigneten 
+Umhüllungen erfolgen, z. B. in Verbindungsdosen, Gehäusen, Geräteanschlussdosen. 
+ANMERKUNG AT 
+Anforderungen an Dosen und Gehäuse für Installationsgeräte, z. B. Verbindungsdosen zur 
+Unterbringung von Klemmen, Steckdosen oder Schaltern, siehe Normenreihe ÖVE/ÖNORM EN 60670. 
+Verbindungen dürfen auch, falls vom Hersteller zu diesem Zweck Raum vorgesehen wurde, an Klemmen von 
+elektrischen Betriebsmitteln (z. B. Steckdosen, Schaltern) erstellt werden, sofern die Übersichtlichkeit der 
+elektrischen Anlagen und die Sicherheit der Verbindungsstellen der Leiter gewahrt bleiben. In diesem Fall 
+müssen Betriebsmittel mit fest montiertem Verbindungsmaterial oder mit Möglichkeiten zur Befestigung von 
+Verbindungsmaterial verwendet werden. Die Leiter von Endstromkreisen müssen in einer Umhüllung enden. 
+526.6 
+Anschluss- und Verbindungsstellen von Kabeln und Leitungen sind von mechanischer 
+Beanspruchung zu entlasten. Zugentlastungsmittel müssen derart gestaltet sein, dass jegliche mechanische 
+Beschädigung der Kabel, Leitungen oder Leiter vermieden wird. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 320/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-52 – Seite 18 
+526.7 
+Wenn eine Verbindung in einer Umhüllung hergestellt wurde, muss die Umhüllung einen 
+ausreichenden mechanischen Schutz und Schutz gegen äußere Einflüsse sicherstellen. 
+526.001.AT Dosen/Gehäuse sind mit Werkzeug öffenbaren Deckeln, Abdeckungen oder Abdeckplatten 
+auszuführen. 
+526.8 
+Anschluss von mehr-, fein- und feinstdrähtigen Leitern 
+526.8.1 Zum Schutz gegen Abspleißen und Abquetschen einzelner Drähte von mehr-, fein- und 
+feinstdrähtigen Leitern müssen geeignete Klemmen verwendet oder die Leiterenden besonders vorbereitet 
+werden. 
+ANMERKUNG AT 
+Als geeignete Behandlung von Leiterenden gilt z. B. das Verwenden von Kabelschuhen und 
+Aderendhülsen. 
+526.8.2 Das Verlöten des gesamten Leiterendes von mehr-, fein- und feinstdrähtigen Leitern ist nur dann 
+zulässig, wenn für den Anschluss der Leiter Klemmen verwendet werden, die vom Hersteller dafür vorgesehen 
+sind. 
+526.8.3 Verlötete (verzinnte) Leiterenden von fein- und feinstdrähtigen Leitern sind bei Anschluss- und 
+Verbindungsstellen, die betrieblichen relativen Bewegungen zwischen verlötetem und nicht verlötetem 
+Leiterteil ausgesetzt sind, nicht zulässig. 
+ANMERKUNG 
+Fein- und feinstdrähtig entspricht OVE EN IEC 60228, Klasse 5 und Klasse 6. 
+526.9 
+Adern ummantelter Kabel/Leitungen, von denen der Mantel entfernt wurde, und nicht ummantelte 
+Kabel/Leitungen am Endpunkt eines Elektroinstallationsrohrs, geschlossenen Elektroinstallationskanals oder 
+zu öffnenden Elektroinstallationskanals müssen in Umhüllungen, wie in 526.5 gefordert, enden. 
+527 Auswahl und Errichtung von Kabel- und Leitungsanlagen zur Begrenzung der 
+Ausbreitung von Bränden 
+527.1 
+Vorkehrungen innerhalb eines Brandabschnitts 
+ANMERKUNG AT 
+Auch brandschutztechnisch getrennte Bereiche (z. B. durch Trennbauteile) sind wie 
+Brandabschnitte zu betrachten. 
+527.1.1 Die Ausdehnung eines Brands muss durch die Auswahl geeigneter Materialien und durch die 
+Berücksichtigung der Anforderungen gemäß 527.1.2 bis 527.1.6 bei der Errichtung minimiert werden. 
+ANMERKUNG 
+Brandgefahren können durch eine geeignete Auswahl von isolierten Leitungen und Kabeln, die ein 
+verbessertes Verhalten im Brandfall aufweisen, begrenzt werden. Solche Produkte können die Brandausbreitung 
+einschränken, eine geringere Rauchentwicklung aufweisen und im Brandfall sogar wichtige Funktionen für eine gewisse 
+Zeit aufrechterhalten. 
+527.1.2 Kabel- und Leitungsanlagen müssen so errichtet werden, dass die allgemeine Nutzungssicherheit 
+und der Brandschutz des Gebäudes/der Bauwerke nicht verringert wird. 
+527.1.3 Kabel und Leitungen, die mindestens OVE EN IEC 60332-1-2 entsprechen, und Betriebsmittel, die 
+als nicht flammenausbreitend klassifiziert sind, dürfen ohne besondere Maßnahmen verlegt werden. 
+ANMERKUNG AT 
+Kabel und Leitungen mit der Klassifikation Eca bis Bca erfüllen diese Anforderungen von OVE EN 
+IEC 60332-1-2. 
+ANMERKUNG 
+Bei Anlagen, in denen ein erhöhtes Brandriskio zu erwarten ist, können Kabel und Leitungen erforderlich 
+sein, die den erhöhten Anforderungen für gebündelt verlegte Kabel nach OVE EN IEC 60332-3 Reihe bzw. OVE EN 50399 
+entsprechen. Diese Festlegung wird durch das Brandschutzkonzept und in Abstimmung mit der zuständigen Behörde 
+getroffen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

@@ -1,0 +1,647 @@
+
+
+===== PAGE 1/17 =====
+ÖVE/ÖNORM 
+E 8622-4
+Ausgabe: 2014-06-01 
+Stecker und Steckdosen für den Hausgebrauch und 
+ähnliche Zwecke 
+Teil 4: Mobile Steckdosen und Zwischensteckvorrichtungen  
+Plugs and socket-outlets for household and similar purposes – 
+Part 4: Portable socket-outlets and intermediate adaptor 
+Fiches et prises de courant pour usages domestiques et analogues –  
+Partie 4: Socle mobiles et adaptateur intermédiaire 
+ICS  
+29.120.30 
+Ersatz für      siehe nationales Vorwort 
+ zuständig 
+OVE/Komitee 
+ 
+ 
+TK IS 
+Installationsmaterial und Schaltgeräte 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Austrian Standards Institute 
+Copyright © OVE/Austrian Standards Institute – 2014. 
+Alle Rechte vorbehalten! Nachdruck oder 
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch 
+Austrian Standards Institute 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@austrian-standards.at
+Internet: www.austrian-standards.at
+Webshop: www.austrian-standards.at/webshop
+Tel.: +43 1 213 00-300
+Fax: +43 1 213 00-818
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at
+Internet: www.ove.at
+Webshop: www.ove.at/webshop
+Tel.: +43 1 587 63 73
+Fax: +43 1 587 63 73 - 99
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 2/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................ 3 
+1 
+Anwendungsbereich ............................................................................................................................. 4 
+2 
+Normative Verweisungen ...................................................................................................................... 4 
+3 
+Begriffe ................................................................................................................................................... 5 
+4 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten mit Schutzart .......................................... 5 
+4.1 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V,  Schutzart IPX4 .......... 5 
+4.1.1 
+Ausführung ............................................................................................................................................ 5 
+4.2 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V,  Schutzart IPX6/IPX8 . 7 
+5 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten ohne Schutzart ....................................... 8 
+6 
+Mobile Mehrfach-Steckdose ................................................................................................................. 8 
+6.1 
+Mobile Mehrfach-Steckdose (MF) für zweipolige Stecker für Geräte der  Schutzklasse II, 2,5 A, 
+AC 250 V ................................................................................................................................................. 8 
+6.2 
+Mobile Kombinationssteckdose (MK) für zweipolige Stecker mit Schutzkontakt;  16 A, AC 250 
+V und Stecker für Geräte der Schutzklasse II, 2,5 A, AC 250 V ........................................................ 8 
+6.3 
+Mobile Mehrfach-Schutzkontaktsteckdosen .................................................................................... 10 
+7 
+Zwischensteckvorrichtung mit bis zu vier Steckdosen für Stecker (Flachstecker) für Geräte 
+der Schutzklasse II, 2,5 A, AC 250 V .................................................................................................. 12 
+8 
+Zwischensteckvorrichtung mit bis zu drei Steckdosen für Stecker (Flachstecker) für Geräte 
+der Schutzklasse II, 2,5 A, AC 250 V .................................................................................................. 13 
+9 
+Zwischensteckvorrichtung mit zwei Steckdosen für Stecker (Flachstecker) für Geräte der 
+Schutzklasse II, 2,5 A, AC 250 V und einer Schutzkontakt-Steckdose mit zusätzlicher 
+Einführungsmöglichkeit für Stecker (Flachstecker) für Geräte der Schutzklasse II, 2,5A, AC 
+250V ...................................................................................................................................................... 14 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 3/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+3 
+Vorwort 
+Auf Grund der Vereinbarung zwischen dem OVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß 
+ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in 
+anderen, nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Änderungen 
+Diese vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8622-4:2012, da eine redaktionellen Überarbeitung 
+sowie eine technische Ergänzung um Anforderungen für die Schutzart IPX6 und IPX8 erforderlich war. Die in 
+dieser ÖVE/ÖNORM enthaltenen Änderungen wurden nach einem formellen Verfahren als ENTWURF 
+ÖVE/ÖNORM E 8622-4/A1:2013 zur Stellungnahme durch die Öffentlichkeit herausgegeben. 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8622-4:2012. 
+In der ETV 2002/A2 sind ÖNORM E 6622-3:1996, ÖNORM E 6622-4:1996, ÖNORM E 6622-5:1996, und 
+ÖNORM E 6622-8:1996 verbindlich erklärt. Die Zurückziehung dieser Bestimmung kann erst mit Erscheinen 
+einer neuen ETV erfolgen. 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 4/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+4 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für 
+–  
+zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V, Schutzart IPX4, 
+–  
+zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V, Schutzart IPX6/IPX8, 
+– 
+zweipolige Kupplungssteckdosen mit Schutzkontakten, 
+–  
+mobile Mehrfach-Steckdosen, 
+–  
+Zwischensteckvorrichtung, welche die Aufnahme von Steckern für Geräte der Schutzklasse II, 2,5 A, 
+AC 250 V (Flachstecker) gemäß ÖVE-IG/EN 50075 in eine Steckdose für den Hausgebrauch und 
+ähnliche Zwecke 16 A, AC 250 V, ermöglichen. 
+Sie enthält die zur einwandfreien Funktion erforderlichen Abmessungen mit deren Toleranzen. Sie ist 
+gemeinsam mit ÖVE/ÖNORM E 8684-1, ÖVE/ÖNORM E 8622-1 und ÖVE/ÖNORM E 8622-2 anzuwenden.  
+Diese Normenreihe ÖVE/ÖNORM E 8622 besteht aus folgenden Teilen: 
+Teil 1: 
+Grundausführung zweipolige Steckdosen mit Schutzkontakten, 16 A, AC 250 V 
+Teil 2: 
+Grundausführung zweipolige Steckdosen 2,5 A, AC 250 V 
+Teil 3: 
+Ortsfeste Steckdosen 
+Teil 4: 
+Mobile Steckdosen und Zwischensteckvorrichtungen 
+Nur solche Steckdosen, die der vorliegenden ÖVE/ÖNORM und auch ÖVE/ÖNORM E 8684-1 entsprechen, 
+sind normgerecht. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8620 Reihe, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke 
+ÖVE/ÖNORM E 8622-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Grundausführung zweipolige Steckdosen mit Schutzkontakten 16 A, AC 250 V 
+ÖVE/ÖNORM E 8622-2, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2:Grundausführung zweipolige Steckdosen 2,5 A, AC 250 V  
+ÖVE/ÖNORM E 8622-3, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 3: Ortsfeste Steckdosen  
+ÖVE/ÖNORM E 8626, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Lehren zur Überprüfung der Funktionsmaße 
+ÖVE/ÖNORM E 8684-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE-IG/EN 50075, Flache, nicht-wieder anschließbare zweipolige Stecker, 2,5 A, AC 250 V,  
+mit Leitung, für die Verbindung von Klasse-II-Geräten für Haushalt und ähnliche Zwecke 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 5/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+5 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe nach ÖVE/ÖNORM E 8684-1 und die folgenden 
+Begriffe: 
+3.1 
+Kupplungssteckdose  
+Steckdose die dazu bestimmt ist, an flexible Leitung angeschlossen zu werden oder eine Baueinheit mit 
+dieser bildet und die leicht von einer Stelle zur anderen bewegt werden kann, während sie an das Netz 
+angeschlossen ist 
+3.2 
+mobile Mehrfach-Steckdose (MF); Tischsteckdose 
+mobile Kombination von zwei oder mehr Steckdosen (Flachsteckdosen) 
+3.3 
+mobile Kombinationssteckdose (MK) 
+mobile Kombination von Schutzkontaktsteckdosen und Flachsteckdosen im Anzahlverhältnis höchstens 1:2 
+3.4 
+mobile Mehrfach-Schutzkontaktsteckdose (MM) 
+mobile Kombination von zwei oder mehr Schutzkontaktsteckdosen 
+3.5 
+mobile Mehrfach-Schutzkontaktsteckdose (MD) 
+mobile Kombination von zwei oder mehr Schutzkontaktsteckdosen mit zusätzlicher Einführungsmöglichkeit 
+für Stecker für Geräte der Schutzklasse II, 2,5 A 
+3.6 
+Zwischensteckvorrichtung 
+mobile Steckvorrichtung bestehend aus einer integrierten Einheit mit einem Steckerteil und einem oder 
+mehreren Steckdosenteilen 
+4 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten mit Schutzart 
+4.1 Zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V,  
+Schutzart IPX4 
+4.1.1 Ausführung 
+Abmessungen für zweipolige Kupplungssteckdosen mit Schutzkontakten, Schutzart IPX4 gemäß Bild 1. 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1. 
+ANMERKUNG In Bild 1 sind einige Maße ohne direkte Festlegung mit der Fußnotea gekennzeichnet. Diese indirekte 
+Bemaßung ist erforderlich, weil einige Parameter, wie zB Wanddicke, Härte des Werkstoffes und Reibungswert, bei den 
+verschiedenen Konstruktionen voneinander abweichen und dadurch unterschiedlich einwirken können. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 6/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+6 
+Maße in mm 
+Es bedeutet: 
+a 
+Da die Maße a, d1, d2, d3 material- und geometrieabhängig sind, können sie nicht festgelegt werden. Sie 
+bleiben daher der Wahl des Herstellers überlassen, sind aber so zu wählen, dass die Prüfungen sowohl 
+mit der Maßlehre als auch mit der Dichtlehre bestanden werden. 
+b 
+Dieser Durchmesser darf innerhalb eines Abstandes von 52 mm, von der Stirnfläche der 
+Kupplungssteckdose aus gemessen, nicht überschritten werden. Diese Forderung gilt nicht, wenn keine 
+Kontaktgabe mit dem Anbaustecker – Ausführung mit Schutzkragen – gemäß ÖVE/ÖNORM E 8620-5 
+mit dem Innendurchmesser von 60 mm und einer Höhe von 40 mm möglich ist, zB bei 
+Kupplungssteckdosen mit Deckelscharnier und/oder bei Mehrfachsteckdosen. 
+Bild 1 – Ausführung von zweipoligen Kupplungssteckdosen mit Schutzkontakten, Schutzart IPX4 
+4.1.2 Prüfung 
+Prüfungen gemäß ÖVE/ÖNORM E 8684-1. In Kupplungssteckdosen der Schutzart IPX4 muss sich die 
+Maßlehre L1 gemäß ÖVE/ÖNORM E 8626:2012 einführen lassen. 
+Bei der Gebrauchsprüfung, der Schaltleistungsprüfung und der Prüfung der Steckerabzugskräfte gemäß  
+ÖVE/ÖNORM E 8684-1 wird der Dichtkragen abgetrennt. 
+Die Prüfung gemäß Schutzart IPX4 wird mit und ohne eingeführten Stecker durchgeführt. Als Stecker wird 
+dabei die Dichtlehre L2 gemäß ÖVE/ÖNORM E 8626:2012 verwendet. Während dieser Prüfung liegt die 
+Kupplungssteckdose auf einer waagrechten, ebenen Unterlage. 
+ANMERKUNG Die Schutzart IPX4 ohne eingeführten Stecker kann durch einen unverlierbaren Deckel erreicht werden. 
+4.1.3 Kennzeichnung 
+Bei Kupplungssteckdosen der Schutzart IPX4 muss die Kennzeichnung IPX4 angebracht sein. 
+ANMERKUNG Der Buchstabe „X“ muss durch die entsprechende Kennziffer für den Schutz gegen den Zugang zu 
+gefährlichen Teilen und Schutz gegen das Eindringen fester Fremdkörper ersetzt werden. 
+ 
+ 
+b
+a
+a
+a
+a 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 7/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+7 
+4.2  Zweipolige Kupplungssteckdosen mit Schutzkontakten, 16 A, AC 250 V,  
+Schutzart IPX6/IPX8  
+4.2.1 
+Ausführung 
+Abmessungen für zweipolige Kupplungssteckdosen mit Schutzkontakten, Schutzart IPX6/IPX8 gemäß  
+Bild 2. 
+Nicht angegebene Abmessungen und Angaben wie Steckdose gemäß ÖVE/ÖNORM E 8622-3. 
+Maße in mm 
+ 
+Bild 2 – Zweipolige Kupplungsdose mit Schutzkontakten, 16 A, AC 250 V, Schutzart IPX6/IPX8 
+ 
+ 
+Ø 85  Größtmaß
+A 
+A 
+Schnitt A-A
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 8/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+8 
+4.2.2 Prüfung 
+Prüfungen gemäß ÖVE/ÖNORM E 8684-1. 
+Bei der Gebrauchsprüfung, der Schaltleistungsprüfung und der Prüfung der Steckerabzugskräfte gemäß  
+ÖVE/ÖNORM E 8684-1 wird der Dichtkragen abgetrennt. 
+Die Prüfung gemäß Schutzart IPX6 / IPX8 wird mit und ohne eingeführten Stecker durchgeführt. Während 
+dieser Prüfung liegt die Kupplungssteckdose auf einer waagrechten, ebenen Unterlage. 
+ANMERKUNG Die Schutzart IPX6 / IPX8 ohne eingeführten Stecker kann durch einen unverlierbaren Deckel erreicht 
+werden. 
+4.2.3 Kennzeichnung 
+Bei Kupplungssteckdosen der Schutzart IPX6/IPX8 muss die Kennzeichnung IPX6 bzw. IPX8 angebracht 
+sein. 
+ANMERKUNG Der Buchstabe „X“ muss durch die entsprechende Kennziffer für den Schutz gegen den Zugang zu 
+gefährlichen Teilen und Schutz gegen das Eindringen fester Fremdkörper ersetzt werden. 
+5 
+Zweipolige Kupplungssteckdosen mit Schutzkontakten ohne Schutzart 
+Für zweipolige Kupplungssteckdosen mit Schutzkontakten gelten die Anforderung gemäß ÖVE/ÖNORM  
+E 8622-1. 
+6 
+Mobile Mehrfach-Steckdose 
+6.1 Mobile Mehrfach-Steckdose (MF) für zweipolige Stecker für Geräte der  
+Schutzklasse II, 2,5 A, AC 250 V 
+6.1.1 Mehrfach-Steckdosen dürfen nur als mobile Mehrfach-Steckdosen in den Verkehr gebracht werden. 
+6.1.2 Mobile Mehrfach-Steckdosen müssen nicht abklemmbar ausgeführt sein und dürfen nur mit einer an 
+der Leitung angeschlossenen Stecker gemäß ÖVE/ÖNORM E 8620-2 in Verkehr gebracht werden. 
+6.1.3 Die Steckdosen müssen ÖVE/ÖNORM E 8622-2 entsprechen. Die Stecker-Eingriffsflächen dürfen 
+nur die in Bild 2 dargestellten Einführungsöffnungen für Flachstecker aufweisen. 
+6.2 Mobile Kombinationssteckdose (MK) für zweipolige Stecker mit Schutzkontakt;  
+16 A, AC 250 V und Stecker für Geräte der Schutzklasse II, 2,5 A, AC 250 V 
+6.2.1 Kombinationssteckdosen dürfen nur als mobile Kombinationssteckdosen in den Verkehr gebracht 
+werden. 
+6.2.2 Mobile Kombinationssteckdosen müssen nicht abklemmbar ausgeführt sein und dürfen nur mit einer 
+an der Leitung angeschlossenen Stecker gemäß ÖVE/ÖNORM E 8620-3 in Verkehr gebracht werden. 
+6.2.3 Die Stecker-Eingriffsflächen müssen die in Bild 3 dargestellten Einführungsöffnungen aufweisen. 
+6.2.4 In mobilen Kombinationssteckdosen sind Steckdosen gemäß ÖVE/ÖNORM E 8622-1 und solche 
+gemäß ÖVE/ÖNORM E 8622-2 nur im Anzahl-Verhältnis bis 1:2 zulässig. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 9/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+9 
+6.2.5 Abmessungen 
+Abmessungen für mobile Kombinationssteckdose gemäß Bild 3. 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Die Umrisslinien begrenzen Freiräume, die für das leichte Einführen und Abziehen der Stecker 
+erforderlich sind. 
+Bild 3 – Mobile Mehrfach-Steckdose (MF, MK) 
+ 
+Steckdosen gemäß 
+ÖVE/ÖNORM 8622-1 
+Steckdosen gemäß 
+ÖVE/ÖNORM 8622-2 
+a
+a 
+a
+a 
+a 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+9 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 10/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+10 
+6.3 Mobile Mehrfach-Schutzkontaktsteckdosen 
+6.3.1 Mobile Mehrfach-Schutzkontaktsteckdose (MM) 
+Die Steckdosen müssen ÖVE/ÖNORM E 8622-1 entsprechen. 
+Die Anordnung der Kontaktbuchsen darf verdreht sein. 
+Abmessungen für mobile Mehrfach-Schutzkontaktsteckdose (MM) gemäß Bild 4. 
+Maße in mm 
+Bild 4 – Mobile Mehrfach-Schutzkontaktsteckdose (MM) 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+10 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 11/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+11 
+6.3.2 Mobile Mehrfach-Schutzkontaktsteckdose mit zusätzlicher Einführungsmöglichkeit für 
+Stecker (Flachstecker) für Geräte der Schutzklasse II, 2,5 A, AC 250 V (MD) 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1 und ÖVE/ÖNORM E 8622-2. 
+Abmessungen für Mobile Mehrfach-Schutzkontaktsteckdose (MD) gemäß Bild 5. 
+Ausführung nur mit Shutter gemäß ÖVE/ÖNORM E 8622-1:2010, Bild 1 zulässig. 
+Die Anordnung der Kontaktbuchsen darf verdreht sein. 
+Maße in mm 
+
+b
+
+Schutzkontakt
+5,5 
+0
+-0,5
+
+43 min.
+
+22 min,
+
+4 min.
+45°
+4,2+0,3
+  0
+5,2+0,3
+  0
+18,5
+
+±0,4
+
+Shutter
+
+c
+
+20 min.
+  
+
+a
+
+ø39,5
+
+±0,5
+16 
+0
+-1
+
+Kanten gerundet mit R0,6 max.
+ 
+Es bedeutet: 
+a 
+Abstand 8  1 mm oder 10,5  1 mm, je nach Ausführung, zwischen der Eingriffsfläche und der Stelle 
+des ersten Kontaktes. Prüfung mit Lehre CF7A oder CF7B gemäß ÖVE/ÖNORM E 8626:2012. 
+b 
+Länge des zylindrischen Teiles der Einführungsöffnung für Steckerstifte 
+c 
+Optionale Markierung der Flachsteckerposition 
+Bild 5 – Mehrfach-Schutzkontaktsteckdose mit zusätzlicher Einführungsmöglichkeit  
+für Stecker für Geräte der Schutzklasse II, 2,5 A (MD) 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+11 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 12/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+12 
+Zusätzliche Anforderung zur Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22. 
+Für die Prüfung wird ein Flachstecker in eine Flachsteckerposition eingesteckt und anschließend (mit 
+eingestecktem Stecker) müssen an der zweiten Flachsteckerposition die kleinsten und der größten 
+Abzugskräfte eingehalten werden und umgekehrt. 
+Prüfung der kleinsten Abzugskraft mit Lehre ÖVE/ÖNORM E 8626:2012, Lehre C2A. 
+7 
+Zwischensteckvorrichtung mit bis zu vier Steckdosen für Stecker (Flachstecker) 
+für Geräte der Schutzklasse II, 2,5 A, AC 250 V 
+Die dem Flachstecker zugeordneten Eingriffsflächen dürfen nur die dargestellten Einführungsöffnungen 
+aufweisen. 
+Abmessungen für Zwischensteckvorrichtung mit zwei Steckdosen gemäß Bild 6. 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-2. 
+Maße in mm 
+Es bedeutet: 
+a 
+Dieses Maß kann bei drei bzw. vier Steckdosen für Stecker (Flachstecker) für Geräte der  
+Schutzklasse II, 2,5 A, AC 250 V abweichen. 
+Bild 6 – Zwischensteckvorrichtung mit zwei Steckdosen für Stecker für Geräte der  
+Schutzklasse II, 2,5 A, AC 250 V 
+Steckdosenteil gemäß 
+ÖVE/ÖNORM 8622-2 
+Steckerteil gemäß 
+ÖVE/ÖNORM 8620-2 
+42 max.
+a 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+12 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 13/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+13 
+8 
+Zwischensteckvorrichtung mit bis zu drei Steckdosen für Stecker (Flachstecker) 
+für Geräte der Schutzklasse II, 2,5 A, AC 250 V  
+Die dem Flachstecker zugeordneten Eingriffsflächen dürfen nur die dargestellten Einführungsöffnungen 
+aufweisen. 
+Es muss sichergestellt sein, dass keine anderen als die vorgesehenen Einsteckmöglichkeiten gegeben sind. 
+Abmessungen für Zwischensteckvorrichtung mit drei Steckdosen gemäß Bild 7. 
+Maße in mm 
+ 
+Es bedeutet: 
+1 
+Länge des zylindrischen Teiles der Einführungsöffnung für Steckerstifte 
+2 
+Kontaktbuchsen zwischen 3,5 mm und 4,3 mm federnd 
+3 
+Die Außenkontur ist so zu wählen, dass ein einpoliges Einführen eines Steckers nicht möglich ist. 
+4 
+Die Fläche ist so zu wählen, dass die Aufnahme von drei bzw. zwei Steckern (Flachstecker) für Geräte 
+der Schutzklasse II, 2,5 A, AC 250 V gemäß ÖVE-IG/EN 50075 möglich ist. 
+Bild 7 – Zwischensteckvorrichtung mit drei Steckdosen für Geräte der Schutzklasse II 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+13 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 14/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+ 
+14 
+9 
+Zwischensteckvorrichtung mit zwei Steckdosen für Stecker (Flachstecker) für 
+Geräte der Schutzklasse II, 2,5 A, AC 250 V und einer Schutzkontakt-Steckdose 
+mit zusätzlicher Einführungsmöglichkeit für Stecker (Flachstecker) für Geräte 
+der Schutzklasse II, 2,5A, AC 250V  
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1, ÖVE/ÖNORM E 8622-2, ÖVE/ÖNORM  
+E 8622-3, ÖVE/ÖNORM E 8622-4:2012, Bild 5 und ÖVE/ÖNORM E 8620-3. 
+Abmessungen für Zwischensteckvorrichtung mit zwei Steckdosen für Stecker für Geräte der 
+Schutzklasse II, 2,5 A, AC 250 V (Flachstecker) und einer Schutzkontakt-Steckdose mit zusätzlicher 
+Einführungsmöglichkeit für Stecker (Flachstecker) für Geräte der Schutzklasse II, 2,5A, AC 250 V gemäß  
+Bild 6. 
+Ausführung der Schutzkontaktsteckdosen mit zusätzlicher Einführungsmöglichkeit für Stecker (Flachstecker) 
+für Geräte der Schutzklasse II, 2,5A, AC 250V nur mit Shutter gemäß ÖVE/ÖNORM E 8622-1:2012, Bild 1 
+zulässig. 
+Zusätzliche Anforderung zur Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22. 
+Für die Prüfung wird ein Flachstecker wird in eine Flachsteckerposition eingesteckt und anschließend (mit 
+eingestecktem Stecker) müssen an der zweiten Flachsteckerposition die kleinsten und der größten 
+Abzugskräfte eingehalten werden und umgekehrt. 
+Prüfung der kleinsten Abzugskraft mit der Lehre C2A gemäß ÖVE/ÖNORM E 8626:2012. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+14 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 15/17 =====
+ÖVE/ÖNORM E 8622-4:2014 
+15 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Diese Umrisslinien begrenzen Freiräume, die für das leichte Einführen und Abziehen der Stecker 
+erforderlich sind. 
+Bild 8 – Zwischensteckvorrichtung mit zwei Steckdosen für Geräte der Schutzklasse II,  
+2,5 A, AC 250 V (Flachstecker) und einer Schutzkontakt-Steckdose mit zusätzlicher 
+Einführungsmöglichkeit für Stecker für Geräte der Schutzklasse II, 2,5A, AC 250V (Flachstecker) 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+15 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 16/17 =====
+WICHTIGE INFORMATIONEN FÜR NORM-ANWENDER
+ÖVE/ÖNORMEN sind Regeln
+ÖVE/ÖNORMEN werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen Bereich 
+Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser An­
+forderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig (ausgenommen gesetz-
+lich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der Technik dokumentieren: das, was in einem bestimmten 
+Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Expertinnen und Experten in den zuständigen 
+Komitees auf nationaler, europäischer und internationaler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik 
+(OVE) und seiner Referenten. 
+Aktualität des Normenwerks
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie werden vom 
+zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. Für 
+den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu haben,
+um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen Fassungen zu 
+haben, bietet Austrian Standards plus GmbH gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-Anwen­
+dern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian Standards plus Gmbh ist ein hundertprozentiges 
+Tochterunternehmen von Austrian Standards Institute.
+Ausländische Normen und Regelwerke
+Über Austrian Standards plus Publishing können auch Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Ländern 
+der Welt bezogen werden – ein besonders wichtiger Service für die exportorientierte Wirtschaft. Ebenso sind Dokumente anderer 
+österreichischer Regelsetzer bei Austrian Standards plus Publishing  erhältlich.
+Kontakt
+Weitere Informationen über Dienstleistungen und Angebote von Austrian Standards und OVE bieten Ihnen:
+Austrian Standards 
+Heinestraße 38
+1020 Wien
+E-Mail: sales@austrian-standards.at
+Internet: www.austrian-standards.at
+Tel.: +43 1 213 00-300 
+Fax: +43 1 213 00-818
+OVE Normung
+OVE Österreichischer Verband für Elektrotechnik
+Eschenbachgasse 9
+1010 Wien
+E-Mail: ove@ove.at
+Internet: www.ove.at
+Tel.: +43 1 587 63 73 
+Fax: +43 1 587 63 73-99
+ISO 9001:2008 certified by SQS
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+16 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 17/17 =====
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:14:00+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

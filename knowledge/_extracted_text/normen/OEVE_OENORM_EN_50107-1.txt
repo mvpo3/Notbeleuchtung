@@ -1,0 +1,1339 @@
+
+
+===== PAGE 1/28 =====
+ 
+ÖVE/ÖNORM
+ 
+EN 50107-1
+Ausgabe: 2003-10-01
+ 
+Normengruppen 330 und E 
+ 
+Ident (IDT) mit EN 50107-1:2002 
+ 
+Ersatz für siehe nationales Vorwort 
+ 
+ICS  29.140.30 
+Leuchtröhrengeräte und Leuchtröhrenanlagen  
+mit einer Leerlaufspannung über 1 kV, aber nicht 
+über 10 kV 
+Teil 1: Allgemeine Anforderungen 
+ 
+Signs and luminous-discharge-tube installations operating from a no-load rated output 
+voltage exceeding 1 kV but not exceeding 10 kV – Part 1: General requirements 
+ 
+Installations d'enseignes et de tubes lumineux à décharge fonctionnant à une tension 
+de sortie à vide assignée supérieure à 1 kV mais ne dépassant pas 10 kV – Partie 1: 
+Prescriptions générales 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+Die ÖVE/ÖNORM EN 50107-1 besteht aus 
+• 
+diesem nationalen Deckblatt sowie 
+• 
+der offiziellen deutschsprachigen Fassung der EN 50107-1:2002. 
+ 
+Fortsetzung 
+ÖVE/ÖNORM EN 50107-1 Seite 2 und  
+EN 50107-1 Seiten 1 bis 26 
+Fach(normen)ausschuss
+FA/FNA H
+Elektrische Hochspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2003. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 11
+ 
+ 
+
+
+===== PAGE 2/28 =====
+Seite 2 
+ÖVE/ÖNORM EN 50107-1 
+Nationales Vorwort 
+ 
+Diese Europäische Norm EN 50107-1:2002 hat sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. Bei ihrer Anwendung ist dieses 
+Nationale Vorwort zu berücksichtigen. 
+ 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des Ausgabedatums 
+und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die Verweisung auf die jeweils 
+neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug genommene 
+Ausgabe des Standards. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den jeweils 
+geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum Zeitpunkt 
+der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch 
+die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu be-
+rücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Europäische Normen (EN) werden gemäß den „Gemeinsamen Regeln“ von CEN/CENELEC durch Veröffentlichung eines 
+identen 
+Titels 
+und 
+Textes 
+in 
+das 
+Gesamtwerk 
+der 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORMEN übernommen, wobei der Nummerierung der Zusatz ÖVE/ÖNORM bzw. ÖNORM 
+vorangestellt wird. Die nachstehende Tabelle listet jene ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK/ÖNORMEN auf, die in Titel, Nummerierung und/oder Inhalt (nicht ident) von den zitierten 
+internationalen bzw. europäischen Standards abweichen.  
+ 
+ 
+Europäische Norm 
+ 
+Internationale Norm 
+ÖSTERREICHISCHE BESTIMMUNGEN 
+FÜR DIE ELEKTROTECHNIK bzw. 
+ÖNORM 
+HD 384 (alle Teile) 
+IEC 60364 (alle Teile) 
+ÖVE-EN 1 bzw.  
+ÖVE/ÖNORM E 8001 (nicht ident) 
+(alle Teile) 
+ 
+ 
+ÖVE-EN 1 
+ 
+Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 41500 V 
+ÖVE/ÖNORM E 8001 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 41500 V 
+ 
+ 
+Erläuterung zum Ersatzvermerk 
+ 
+Gemäß Vorwort zur EN wird das späteste Datum, zu dem nationale Normen, die der vorliegenden Norm entgegenstehen, 
+zurückgezogen werden müssen, mit dow (date of withdrawal) festgelegt. Bis zum Zurückziehungsdatum (dow) 2005-01-01 
+ist somit die Anwendung folgender Norm(en) noch erlaubt: 
+ 
+ÖVE EN 50107:1998-11. 
+ 
+ 
+
+
+===== PAGE 3/28 =====
+ 
+ 
+EUROPÄISCHE NORM 
+ 
+EUROPEAN STANDARD 
+ 
+NORME EUROPÉENNE 
+ 
+EN 50107-1  
+ 
+ 
+Oktober 2002 
+ICS 29.140.30 
+Ersatz für EN 50107:1998 
+Deutsche Fassung 
+ 
+Leuchtröhrengeräte und Leuchtröhrenanlagen mit einer  
+Leerlaufspannung über 1 kV, aber nicht über 10 kV 
+Teil 1: Allgemeine Anforderungen 
+ Signs and luminous-discharge-tube installations 
+operating from a no-load rated output voltage 
+exceeding 1 kV but not exceeding 10 kV 
+Part 1: General requirements 
+Installation d’enseignes et de tubes lumineux à 
+décharge fonctionnant à une tension de sortie à 
+vide assignée supérieure à 1 kV mais ne 
+dépassant pas 10 kV 
+Partie 1: Prescriptions générales 
+Diese Europäische Norm wurde von CENELEC am 2002-01-04 angenommen. Die 
+CENELEC-Mitglieder sind gehalten, die CEN/CENELEC-Geschäftsordnung zu 
+erfüllen, in der die Bedingungen festgelegt sind, unter denen dieser Europäischen 
+Norm ohne jede Änderung der Status einer nationalen Norm zu geben ist. 
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren biblio-
+graphischen Angaben sind beim Zentralsekretariat oder bei jedem CENELEC-Mit-
+glied auf Anfrage erhältlich. 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, 
+Französisch). Eine Fassung in einer anderen Sprache, die von einem CENELEC-
+Mitglied in eigener Verantwortung durch Übersetzung in seine Landessprache ge-
+macht und dem Zentralsekretariat mitgeteilt worden ist, hat den gleichen Status wie 
+die offiziellen Fassungen. 
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, 
+Dänemark, Deutschland, Finnland, Frankreich, Griechenland, Irland, Island, Italien, 
+Luxemburg, Malta, den Niederlanden, Norwegen, Österreich, Portugal, Schweden, 
+der Schweiz, der Slowakei, Spanien, der Tschechischen Republik, Ungarn und dem 
+Vereinigten Königreich. 
+ 
+CENELEC 
+Europäisches Komitee für Elektrotechnische Normung 
+European Committee for Electrotechnical Standardization 
+Comité Européen de Normalisation Electrotechnique 
+Zentralsekretariat: rue de Stassart 35, B-1050 Brüssel 
+© 2002 CENELEC –  Alle Rechte der Verwertung, gleich in welcher Form und in welchem Verfahren, 
+sind weltweit den Mitgliedern von CENELEC vorbehalten. 
+Ref. Nr. EN 50107-1:2002 D 
+
+
+===== PAGE 4/28 =====
+ 
+EN 50107-1:2002 
+2 
+Vorwort 
+Diese Europäische Norm wurde von CENELEC BTTF 60-2 „Elektrische Leuchtröhrenanlagen“ ausgearbeitet. 
+Der Text des Entwurfs wurde dem Einstufigen Annahmeverfahren unterworfen und von CENELEC am 
+2001-12-04 als EN 50107-1 angenommen. 
+Diese Europäische Norm ersetzt EN 50107:1998. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die EN auf nationaler Ebene 
+durch Veröffentlichung einer identischen nationalen 
+Norm oder durch Anerkennung übernommen werden 
+muss 
+(dop): 
+2003-05-01 
+– 
+spätestes Datum, zu dem nationale Normen, die 
+der EN entgegenstehen, zurückgezogen werden 
+müssen 
+(dow): 
+2005-01-01 
+Anhänge, die als „normativ“ bezeichnet sind, gehören zum Norm-Inhalt. 
+Anhänge, die als „informativ“ bezeichnet sind, enthalten nur Informationen. 
+In dieser Norm ist Anhang B normativ, die Anhänge A und C sind informativ. 
+
+
+===== PAGE 5/28 =====
+ 
+EN 50107-1:2002 
+3 
+Inhalt 
+Seite 
+Vorwort ............................................................................................................................................................... 2 
+1 
+Anwendungsbereich ................................................................................................................................ 4 
+2 
+Normative Verweisungen......................................................................................................................... 4 
+3 
+Begriffe..................................................................................................................................................... 4 
+4 
+Befestigungsmittel für Leuchtröhrenanlagen ........................................................................................... 7 
+5 
+Abflusslöcher............................................................................................................................................ 7 
+6 
+Stromversorgungsanlage......................................................................................................................... 7 
+7 
+Umhüllungen und Schutz gegen direktes Berühren ................................................................................ 7 
+8 
+Schutz bei indirektem Berühren............................................................................................................. 11 
+9 
+Transformatoren..................................................................................................................................... 11 
+10 
+Erdschluss- und Leerlaufschutz............................................................................................................. 11 
+11 
+Wechselrichter und Umrichter................................................................................................................ 12 
+12 
+Zubehör.................................................................................................................................................. 12 
+13 
+Isoliermuffen........................................................................................................................................... 13 
+14 
+Auswahl und Verlegen von Hochspannungsleitungen .......................................................................... 13 
+15 
+Hochspannungsanschlüsse................................................................................................................... 15 
+16 
+Leuchtröhrenhalter................................................................................................................................. 15 
+17 
+Elektromagnetische Verträglichkeit........................................................................................................ 16 
+18 
+Inspektion und Prüfungen der Anlagen ................................................................................................. 16 
+19 
+Aufschriften ............................................................................................................................................ 17 
+20 
+Dokumentation....................................................................................................................................... 17 
+21 
+Instandhaltung........................................................................................................................................ 17 
+Anhang A (informativ)  Liste der in EN 50143 beschriebenen Leuchtröhrenleitungen.................................... 24 
+Anhang B (normativ)  Besondere nationale Bedingungen............................................................................... 25 
+Anhang C (informativ)  A-Abweichungen......................................................................................................... 26 
+ 
+ 
+
+
+===== PAGE 6/28 =====
+ 
+EN 50107-1:2002 
+4 
+1 
+Anwendungsbereich 
+Diese Europäische Norm legt Anforderungen für die Planung und Errichtung von Leuchtröhrengeräten und 
+Leuchtröhrenanlagen mit einer Bemessungs-Ausgangs-Leerlaufspannung von über 1 000 V bis 10 000 V, 
+einschließlich der elektrischen Bauteile und Verdrahtungen fest. 
+Die Norm gilt für Anlagen, die der Lichtwerbung, der Dekoration oder der Beleuchtung dienen und für den 
+Außen- oder Innenbereich bestimmt sind. Solche Leuchtröhrengeräte oder -anlagen können ortsfest oder 
+ortsveränderlich, von einer Niederspannungs- bzw. Kleinspannungsstromquelle in Form eines Trans-
+formators, Wechselrichters oder Umrichters versorgt sein. 
+2 
+Normative Verweisungen 
+Diese Europäische Norm enthält durch datierte bzw. undatierte Verweisungen Festlegungen aus anderen 
+Publikationen. Diese normativen Verweisungen sind an den jeweiligen Stellen im Text zitiert, und die 
+Publikationen sind nachstehend aufgeführt. Bei datierten Verweisungen gehören spätere Änderungen oder 
+Überarbeitungen dieser Publikation nur zu dieser Europäischen Norm, falls sie durch Änderung oder 
+Überarbeitung eingearbeitet sind. Bei undatierten Verweisungen gilt die letzte Ausgabe der in Bezug 
+genommenen Publikation. 
+EN 50107-21), Leuchtröhrengeräte und Leuchtröhrenanlagen mit einer Bemessungs-Ausgangs-Leerlauf-
+spannung über 1 kV, aber nicht über 10 kV – Teil 2: Anforderungen an Erdschlussschutz- und Leerlauf-
+schutzeinrichtungen 
+EN 50143:1997 + A1:200X1), Leitungen für Leuchtröhrengeräte und Leuchtröhren-Anlagen mit einer Leerlauf-
+spannung von über 1 kV, aber nicht über 10 kV 
+EN 60529:1992, Schutzarten durch Gehäuse (IP-Code) 
+EN 60598-1:2000, Leuchten: Teil 1: Allgemeine Anforderungen und Prüfungen (IEC 60598-1:2000, mod.) 
+EN 61347-2-10, Geräte für Lampen – Besondere Anforderungen an elektronische Wechselrichter und Um-
+richter für Hochfrequenzbetrieb von röhrenförmigen Kaltstart-Entladungslampen (Neonröhren) 
+(IEC 61347-2-10) 
+EN 61050, Transformatoren mit einer Leerspannung über 1 kV für Leuchtröhren (allgemein Neontransfor-
+matoren genannt) – Allgemeine und Sicherheitsanforderungen 
+HD 384, Elektrische Anlagen von Gebäuden (Reihe IEC 60364, mod.) 
+IEC 60050, International Electrotechnical Vocabulary 
+ISO 3864:1984, Safety colours and safety signs 
+3 
+Begriffe 
+Für die Anwendung dieser Europäischen Norm gelten die Begriffe aus IEC 60050 (IEV), zusammen mit den 
+folgenden Begriffen. 
+ANMERKUNG 1 Die Hauptabschnitte 602 bis 605 in IEC 60050 enthalten Begriffe zur Erzeugung, Übertragung und Ver-
+teilung von Elektrizität.  
+ANMERKUNG 2 Werden die Begriffe „Spannung“ und „Strom“ verwendet, so sind Effektivwerte gemeint, soweit nicht 
+anders angegeben. 
+                                                     
+1) Veröffentlichung in Vorbereitung. 
+
+
+===== PAGE 7/28 =====
+ 
+EN 50107-1:2002 
+5 
+3.1 
+Leuchtröhre 
+aus lichtdurchlässigem Material bestehendes hermetisch verschlossenes gasgefülltes Rohr, Gefäß oder 
+Gerät, das zur Ausstrahlung von Licht bestimmt ist. Das Licht wird durch einen elektrischen Strom erzeugt, 
+der in diesem Gefäß oder Gerät durch Gas oder Dampf fließt 
+ANMERKUNG 
+Die Leuchtröhre kann an der Innenseite mit einer Beschichtung aus fluoreszierenden Materialien 
+versehen sein. 
+3.2 
+Bemessungs-Ausgangs-Leerlaufspannung  
+höchste Bemessungsspannung zwischen den Klemmen der Ausgangswicklung(en) eines Transformators, 
+Umrichters oder Wechselrichters, der an Bemessungsspannung bei Bemessungsfrequenz angeschlossen ist 
+und keine Last im Ausgangskreis aufweist 
+ANMERKUNG 1 Für Ausgangskreise, die durch Transformatoren versorgt werden, entspricht die Ausgangsspannung 
+dem Scheitelwert dividiert durch die 
+2  (siehe EN 61050). 
+ANMERKUNG 2 Für Ausgangskreise, die von Wechselrichtern oder Umrichtern versorgt werden, entspricht die 
+Ausgangsspannung dem Effektivwert oder dem Scheitelwert dividiert durch 2, je nachdem welcher der größere ist (siehe 
+EN 61347-2-10). 
+3.3 
+Kriechstrecke 
+kürzeste Entfernung entlang der Oberfläche eines Isolierstoffs zwischen zwei leitenden Teilen oder zwischen 
+einem leitenden Teil und der berührbaren Oberfläche der Umhüllung, geerdeten Metallteilen oder brennbaren 
+Materialien, gemessen entlang der Oberfläche des Isolierstoffes 
+3.4 
+Luftstrecke 
+kürzeste Entfernung in Luft zwischen zwei leitenden Teilen oder zwischen einem leitenden Teil und der 
+berührbaren Oberfläche der Umhüllung, geerdeten Metallteilen oder brennbaren Materialien, gemessen 
+durch die Luft 
+3.5 
+Transformator 
+statisches Gerät mit zwei oder mehr Wicklungen, das durch elektromagnetische Induktion ein System von 
+Wechselspannung und Wechselstrom in ein anderes System von Wechselspannung und Wechselstrom, 
+gewöhnlich mit verschiedenen Werten bei derselben Frequenz, zum Zwecke der Übertragung elektrischer 
+Energie umwandelt. 
+[IEV 421-01-01] 
+ANMERKUNG 
+Die große Ausgangsimpedanz der meisten Transformatoren für Leuchtröhren erlaubt die Kombination 
+von Transformator und strombegrenzenden Komponenten in einem Gerät. 
+3.6 
+Wechselrichter 
+elektrischer Energiewandler, der Gleichstrom in Wechselstrom umwandelt 
+3.7 
+Umrichter 
+Einrichtung zur Umwandlung elektrischer Energie von Wechselstrom einer Frequenz in Wechselstrom einer 
+anderen Frequenz 
+ANMERKUNG 
+Die Spannung darf bei der Umwandlung verändert werden oder auch nicht. 
+3.8 
+Isoliermuffe 
+Bauteil aus Isolierstoff, das die sonst freiliegenden Elektrodenanschlüsse und/oder die Endverschlüsse von 
+Leuchtröhrenleitungen abdeckt 
+
+
+===== PAGE 8/28 =====
+ 
+EN 50107-1:2002 
+6 
+3.9 
+Errichter 
+Person, die für die Errichtung von Leuchtröhrenanlagen ausgebildet ist und die die Verantwortung für die 
+Anlage und deren Prüfung nach dieser Norm trägt 
+3.10 
+Erdschluss-Schutzeinrichtung 
+Einrichtung, die den Ausgang eines oder mehrerer Transformatoren, Umrichter(s) oder Wechselrichter(s) 
+spannungsfrei macht, sobald zwischen Ausgangsstromkreis und Erde ein Kurzschluss auftritt 
+3.11 
+Leerlauf-Schutzeinrichtung 
+Einrichtung, die den Ausgang eines oder mehrerer Transformatoren, Umrichter(s) oder Wechselrichter(s) 
+spannungsfrei macht, sobald im Ausgangs-Hochspannungsstromkreis eine Unterbrechung auftritt 
+3.12 
+aktives Teil  
+Leiter oder leitfähiges Teil, der/das dazu vorgesehen ist, im üblichen Betrieb unter Spannung zu stehen, 
+einschließlich eines Neutralleiters, vereinbarungsgemäß jedoch nicht eines PEN-Leiters, PEM-Leiters oder 
+PEL-Leiters 
+ANMERKUNG 
+Dies bedeutet nicht unbedingt, dass das Risiko eines elektrischen Schlags besteht. 
+3.13 
+Eingangsstromkreis 
+Teil des Geräts oder der Anlage zwischen dem Punkt, an dem elektrische Energie in eine Anlage eingespeist 
+wird (Speisepunkt), und den Eingangsklemmen des Transformators, des Wechselrichters oder des Umrich-
+ters 
+ANMERKUNG 
+Auch bekannt als „Stromversorgung“. 
+3.14 
+Ausgangsstromkreis 
+Teil des Geräts oder der Anlage zwischen den Ausgangsklemmen des Transformators, des Wechselrichters 
+oder des Umrichters einschließlich der Leuchtröhren und Leuchtröhrenleitungen 
+ANMERKUNG 
+Auch bekannt als „Leuchtröhrenstromkreis“. 
+3.15 
+Handbereich 
+Bereich, der sich von Standflächen aus erstreckt, die üblicherweise betreten werden, und dessen Grenzen 
+eine Person in allen Richtungen ohne Hilfsmittel mit der Hand erreichen kann 
+ANMERKUNG 
+Dieser zugängliche Bereich ist in Bild 1 dargestellt, wobei sich die Maße auf die bloßen Hände ohne 
+Hilfsmittel wie z. B. Werkzeuge oder eine Leiter beziehen. 
+3.16 
+Außenbereich 
+Bereich, in dem sich alle Teile eines Leuchtröhrengerätes, einer Leuchtröhrenanlage oder ihre Komponenten 
+im Freien befinden und dabei den Witterungseinflüssen ausgesetzt sind 
+3.17 
+trockener Raum; trockener Ort  
+Raum oder Ort, in dem üblicherweise kein Kondenswasser auftritt oder in dem die Luft nicht mit Feuchtigkeit 
+gesättigt ist 
+3.18 
+feuchter und nasser Raum 
+Raum, in dem die Sicherheit des Leuchtröhrengeräts oder der Leuchtröhrenanlage durch Feuchtigkeit, 
+Kondenswasser, chemische oder ähnliche Einflüsse beeinträchtigt werden kann 
+
+
+===== PAGE 9/28 =====
+ 
+EN 50107-1:2002 
+7 
+3.19 
+kleine ortsveränderliche Leuchtröhrengeräte  
+kleine Leuchtröhrengeräte, die leicht von einem Ort zu einem anderen Ort bewegt werden können, deren 
+Versorgung über einen eingebauten Transformator, Wechselrichter oder Umrichter zusammen mit einer 
+flexiblen Netzanschlussleitung und einem Stecker erfolgt, und welche dazu bestimmt sind, vom Kunden 
+aufgestellt und über eine Steckdose an das Versorgungsnetz angeschlossen zu werden 
+3.20 
+Blinkgerät 
+Gerät zum ständigen automatischen Ein- und Ausschalten von einem oder mehreren Leuchtröhrenstrom-
+kreisen 
+ANMERKUNG 
+Die Schaltfolge der verschiedenen Leuchtröhrenstromkreise darf so eingestellt werden, dass der 
+Eindruck einer Bewegung oder anderer Trickeffekte entsteht. 
+4 
+Befestigungsmittel für Leuchtröhrenanlagen 
+Elektrische Leitungen dürfen nicht zur Aufhängung bzw. Befestigung von Leuchtröhrengeräten verwendet 
+werden. 
+5 
+Abflusslöcher 
+In Gehäusen von Anlagen im Außenbereich müssen geeignete Öffnungen vorgesehen werden, damit 
+Wasser abfließen kann. Abflusslöcher bzw. ähnliche Öffnungen, die für diesem Zweck bestimmt sind, 
+müssen ausreichend groß sein, um sicherzustellen, dass sie zwischen den Wartungen nicht mit Schmutz 
+oder Schlamm verstopft werden. 
+6 
+Stromversorgungsanlage 
+Die Stromversorgungsanlage für Leuchtröhrengeräte und Leuchtröhrenanlagen muss in Übereinstimmung 
+mit HD 384 ausgeführt werden. 
+ANMERKUNG 
+Es wird darauf hingewiesen, dass die Errichtungsnormen für elektrische Anlagen in den 
+Mitgliedsländern der CENELEC nicht vollständig harmonisiert sind und aus diesem Grund noch die nationalen Normen 
+Anwendung finden dürfen. 
+7 
+Umhüllungen und Schutz gegen direktes Berühren 
+7.1 
+Alle Hochspannungs-Leuchtröhrenanschlüsse müssen durch Isoliermuffen entsprechend Ab-
+schnitt 13 geschützt sein. 
+7.2 
+Hochspannungs-Leuchtröhrenanschlüsse innerhalb des Handbereichs (siehe 3.15) müssen mit 
+zusätzlichen Schutzeinrichtungen nach 7.4 und 7.5 versehen sein.  
+7.3 
+Hochspannungs-Leuchtröhrenanschlüsse außerhalb des Handbereichs müssen mit zusätzlichen 
+Schutzeinrichtungen nach 7.4 oder 7.6 versehen sein. 
+7.4 
+Zusätzliche Schutzmaßnahmen müssen aus einer Umhüllung oder einer anderen Schutzeinrichtung 
+bestehen und folgende Bedingungen erfüllen: 
+a) 
+Sie muss eine Schutzart von mindestens IP2X nach EN 60529, Tabelle 1 haben. 
+ANMERKUNG 1 Die Anforderungen bezüglich des Schutzes gegen das Eindringen von festen Fremdkörpern nach 
+EN 60529, Tabelle 2 werden hier nicht angewendet. 
+ANMERKUNG 2 Siehe Anhang C, A-Abweichungen. 
+b) 
+Sollte sie aus metallenen Teilen hergestellt sein, müssen diese entsprechend Abschnitt 8 geerdet sein. 
+
+
+===== PAGE 10/28 =====
+ 
+EN 50107-1:2002 
+8 
+c) 
+Ist sie aus anderen Materialien gefertigt, muss der Hersteller bestätigen, dass diese für die Verwendung 
+in der Nähe der Röhrenelektroden geeignet sind. Der Hersteller muss die Materialeigenschaften für die 
+gesamte zu erwartende Lebensdauer der Anlage zusichern. 
+ANMERKUNG 3 Die Lieferanten solcher Materialien sollten über die Temperatur, die UV-Strahlungen, das Vorhan-
+densein von Ozon und andere Umgebungsbedingungen in der Nähe der Röhrenelektroden informiert werden. Sie 
+sollten außerdem informiert werden, dass solche Materialien im Außenbereich eingesetzt werden. 
+d) 
+Der Zugang zum Inneren einer Umhüllung darf nur mit Hilfe eines Werkzeugs, z. B. eines Schrauben-
+drehers möglich sein. 
+ANMERKUNG 4 Auch andere Arten von zusätzlichen Schutzeinrichtungen dürfen dauerhaft angebracht sein; es ist 
+z. B. auch zulässig, sie mit einem Messer zu entfernen. 
+ANMERKUNG 5 Ein vollständig geschlossenes Buchstaben-/Zeichengehäuse oder Leuchtröhrengerät wird als eine 
+für diesen Zweck ausreichende Umhüllung angesehen. 
+7.5 
+Zusätzlicher Schutz muss bestehen aus: 
+a) 
+einer Umhüllung nach 7.4, bei der die Schutzart (IP2X) erhalten bleibt, selbst wenn irgendein äußeres 
+Teil der Röhre bricht; oder 
+b) 
+einer Umhüllung nach 7.4 plus Leerlauf-Schutzeinrichtung, die den Anforderungen nach EN 50107-2 
+entspricht. 
+ANMERKUNG 
+Die Anforderung in 7.5 a) bedeutet, dass es nicht möglich sein darf, einen Prüffinger in das 
+zerbrochene Ende einer Röhre zu stecken und die spannungsführende Elektrode zu berühren. 
+7.6 
+Die zusätzliche Schutzmaßnahme muss aus einer Leerlauf-Schutzeinrichtung bestehen, die den 
+Anforderungen nach EN 50107-2 entspricht. 
+7.7 
+An allen Zugangsstellen zu Leuchtröhrengeräten und Leuchtröhrenanlagen oder auf Umhüllungen 
+von Hochspannungs-Transformatoren, Wechselrichtern oder Umrichtern müssen Warnschilder „Hoch-
+spannung – Lebensgefahr“ nach ISO 3864:1984, B.3.6 angebracht werden.  
+ANMERKUNG 
+Bei kleinen Anlagen mit geringen Abmessungen ist üblicherweise ein solches Warnschild ausreichend. 
+Für größere Anlagen müssen mehrere Warnschilder verwendet werden; diese sind so anzubringen, dass mindestens 
+eines davon aus jeder möglichen Richtung der Annäherung zu sehen ist. 
+7.8 
+Ein Leiter, der an einer Hochspannungs-Leuchtröhre angeschlossen ist, darf nicht mit Leitern der 
+Stromversorgung oder mit der Primärwicklung des Transformators verbunden sein (ausgenommen sind 
+Verbindungen zur Erde). 
+7.9 
+Kriech- und Luftstrecken (in Millimetern) zwischen folgenden Teilen müssen wie in den Tabellen 1, 
+2, 3 oder 4 bemessen sein: 
+a) 
+zwischen aktiven Teilen mit verschiedenen Spannungsquellen, 
+b) 
+zwischen aktiven Teilen und geerdeten metallenen Teilen, 
+c) 
+zwischen aktiven Teilen und Teilen, die entzündbar sind, oder  
+d) 
+zwischen aktiven Teilen und Teilen, die mit dem Prüffinger berührt werden können. 
+ANMERKUNG 1 Die Spannungen, die in den Tabellen 1 bis 4 genannt sind, sind entweder die Bemessungs-Ausgangs-
+Leerlaufspannung zwischen den Anschlüssen oder die Bemessungs-Ausgangs-Leerlaufspannung zwischen den 
+Anschlüssen und Erde, des Transformators, Wechselrichters oder Umrichters, der den Stromkreis speist. 
+ANMERKUNG 2 Wenn man die Kriech- oder Luftstrecke eines Elektrodenanschlusses z. B. zu geerdetem Metall 
+betrachtet, muss die zusätzliche Entfernung einer elektrischen Entladung um die Elektrodenmuffe beachtet werden (siehe 
+7.10). Voraussetzung ist, dass die Entfernung 7.11 entspricht. 
+
+
+===== PAGE 11/28 =====
+ 
+EN 50107-1:2002 
+9 
+ANMERKUNG 3 In den meisten Fällen muss der Errichter bei der Ermittlung der Kriech- und Luftstrecken zwischen 
+aktiven Teilen und Erde beachten, dass die Spannung in den Tabellen 1 bis 4 die Bemessungs-Ausgangs-Leerlauf-
+spannung gegen Erde ist. Die volle Bemessungs-Ausgangs-Leerlaufspannung muss nur bei den seltenen Fällen 
+angewandt werden, bei welchen Kriech- und Luftstrecken zwischen aktiven Anschlüssen in Betracht gezogen werden. Ist 
+z. B. ein Transformator mit 5 kV – E – 5 kV bemessen, so müssen die Kriech- und Luftstrecken für eine Spannung von 
+5 kV (nicht 10 kV) aus den Tabellen 1 bis 4 entnommen werden.  
+ANMERKUNG 4 Eine Darstellung der Kriech- und Luftstrecken zeigen die Bilder 5 und 6. Bild 6 stellt die Entfernungen 
+bei Verwendung einer Elektrodenmuffe dar. 
+Tabelle 1 – Kriech- und Luftstrecken für Betriebsmittel, die bei üblichen Frequenzen betrieben 
+werden und die in trockenen Räumen und ähnlichen geschützten Situationen errichtet sind 
+Bemessungs-Ausgangs-
+Leerlaufspannung 
+(siehe vorstehende Anmerkung 3) 
+Kürzeste Kriechstrecke 
+Kürzeste Luftstrecke 
+kV 
+mm 
+mm 
+größer als 1,0 bis 1,75 
+11 
+8 
+größer als 1,75 bis 2,25 
+13 
+9 
+größer als 2,25 bis 3,0 
+16 
+11 
+größer als 3,0 bis 4,0 
+19 
+13 
+größer als 4,0 bis 5,0 
+23 
+15 
+größer als 5,0 bis 6,0 
+27 
+17 
+größer als 6,0 bis 8,0 
+32 
+20 
+größer als 8,0 bis 10,0 
+40 
+25 
+ 
+Tabelle 2 – Kriech- und Luftstrecken für Betriebsmittel, die bei Frequenzen über 1 kHz betrieben 
+werden und die in trockenen Räumen und ähnlichen geschützten Situationen errichtet sind 
+Bemessungs-Ausgangs-
+Leerlaufspannung 
+(siehe vorstehende Anmerkung 3) 
+Kürzeste Kriechstrecke 
+Kürzeste Luftstrecke 
+kV 
+mm 
+mm 
+größer als 1,0 bis 1,75 
+13 
+10 
+größer als 1,75 bis 2,25 
+16 
+11 
+größer als 2,25 bis 3,0 
+19 
+13 
+größer als 3,0 bis 4,0 
+23 
+16 
+größer als 4,0 bis 5,0 
+28 
+18 
+größer als 5,0 bis 6,0 
+32 
+20 
+größer als 6,0 bis 8,0 
+38 
+24 
+größer als 8,0 bis 10,0 
+48 
+30 
+
+
+===== PAGE 12/28 =====
+ 
+EN 50107-1:2002 
+10 
+Tabelle 3 – Kriech- und Luftstrecken für Betriebsmittel, die bei üblichen Frequenzen betrieben 
+werden und die im Außenbereich oder in feuchten oder nassen Räumen errichtet sind 
+Bemessungs-Ausgangs-
+Leerlaufspannung 
+(siehe vorstehende Anmerkung 3) 
+Kürzeste Kriechstrecke 
+Kürzeste Luftstrecke 
+kV 
+mm 
+mm 
+größer als 1,0 bis 1,75 
+17 
+11 
+größer als 1,75 bis 2,25 
+21 
+13 
+größer als 2,25 bis 3,0 
+25 
+15 
+größer als 3,0 bis 4,0 
+31 
+18 
+größer als 4,0 bis 5,0 
+37 
+21 
+größer als 5,0 bis 6,0 
+44 
+24 
+größer als 6,0 bis 8,0 
+53 
+28 
+größer als 8,0 bis 10,0 
+65 
+34 
+ 
+Tabelle 4 – Kriech- und Luftstrecken für Betriebsmittel, die bei Frequenzen über 1 kHz betrieben 
+werden und die im Außenbereich oder in feuchten oder nassen Räumen errichtet sind 
+Bemessungs-Ausgangs-
+Leerlaufspannung 
+(siehe vorstehende Anmerkung 3) 
+Kürzeste Kriechstrecke 
+Kürzeste Luftstrecke 
+kV 
+mm 
+mm 
+größer als 1,0 bis 1,75 
+20 
+13 
+größer als 1,75 bis 2,25 
+25 
+16 
+größer als 2,25 bis 3,0 
+30 
+18 
+größer als 3,0 bis 4,0 
+37 
+22 
+größer als 4,0 bis 5,0 
+44 
+25 
+größer als 5,0 bis 6,0 
+53 
+29 
+größer als 6,0 bis 8,0 
+64 
+34 
+größer als 8,0 bis 10,0 
+78 
+41 
+7.10 
+Wenn eine mögliche Entladungsstrecke sowohl aus Kriech- als auch Luftstrecken besteht (siehe 
+Beispiel in Bild 6), darf die komplette Streckenlänge nicht kürzer sein als die kürzeste Luftstrecke, die in den 
+Tabellen 1 bis 4 genannt ist. 
+ANMERKUNG 
+Ein Beispiel wäre ein Leuchtröhrengerät, das im Außenbereich (Tabelle 3) mit einem Transformator 
+betrieben wird, der eine Bemessungs-Ausgangs-Leerlaufspannung von 10 kV (5 kV gegen Erde) hat. Addiert man alle 
+Kriech- und Luftstrecken gegen Erde muss die totale Entfernung zwischen den Elektrodenverbindungen und Erde, wie 
+z. B. in Bild 6 gezeigt, mindestens 21 mm sein. 
+7.11 
+Der Mindestabstand zwischen der äußeren Oberfläche einer Elektrodenmuffe und Erde oder ent-
+flammbaren Materialien darf nicht weniger als die Hälfte der relevanten Luftstreckenwerte aus den Tabellen 1 
+bis 4 sein (siehe das Beispiel in Bild 6). 
+
+
+===== PAGE 13/28 =====
+ 
+EN 50107-1:2002 
+11 
+8 
+Schutz bei indirektem Berühren 
+8.1 
+Als Schutz bei indirektem Berühren muss ein Potentialausgleich vorgenommen werden, der alle 
+metallenen Teile untereinander und mit der Erde verbindet. 
+8.2 
+Alle berührbaren metallenen Teile, mit Ausnahme von Kabelschellen und Leuchtröhrenhaltern, 
+müssen untereinander durch einen Schutzleiter und, sofern diese metallenen Teile nicht auf andere Weise 
+geerdet sind, mit einer Schutzleiterklemme versehen sein. 
+8.3 
+Als Schutzleiter muss einer der folgenden verwendet werden: 
+a) 
+eine getrennte Leitung in den Farben grün-gelb, mit einem Mindestquerschnitt wie folgt: 
+i) 
+4 mm2, in Situationen, in denen eine mechanische Beanspruchung auftreten kann, 
+ii) 
+2,5 mm2, in allen anderen Situationen, oder 
+b) 
+ein ein- oder mehrdrähtiger Kupferleiter mit einem Mindestquerschnitt von 1,5 mm2, als Teil einer Leucht-
+röhrenleitung mit Mantel und geschützt durch deren Außenmantel, oder  
+c) 
+die Abschirmung aus metallenem Geflecht einer Hochspannungsleitung, vorausgesetzt, dass der 
+Gesamtquerschnitt aller Einzeldrähte mindestens 1,5 mm2 ist. Anschlüsse an den Schirm müssen durch 
+Entflechten und Verdrillen der Einzeldrähte hergestellt werden, so dass ein genügend langer Leiter 
+entsteht, der an eine Schutzleiterklemme angeschlossen werden kann. Anschlüsse mittels einer um das 
+Geflecht gelegten metallenen Schelle sind nicht zulässig. 
+8.4 
+Wo metallene Teile miteinander verbunden werden, müssen zusätzliche Mittel eingesetzt werden, 
+die eine dauerhafte Erdverbindung über die Verbindungsstelle sicherstellen. 
+ANMERKUNG 
+Dies ist besonders wichtig, wenn die metallenen Teile lackiert oder diese durch einen Kleber 
+miteinander verbunden werden. 
+8.5 
+Potentialausgleichsleiter dürfen nicht mit dem Neutralleiter der Stromversorgung des Leuchtröhren-
+geräts oder der Leuchtröhrenanlage verbunden werden. Ausgenommen davon sind die in HD 384 
+beschriebenen Erdverbindungen in TN-C-Systemen. 
+9 
+Transformatoren 
+Transformatoren müssen EN 61050 entsprechen. 
+10 Erdschluss- und Leerlaufschutz 
+10.1 
+Die Sicherheits- und Leistungsanforderungen für Erdschluss- und Leerlauf-Schutzeinrichtungen 
+sind in EN 50107-2 festgelegt.  
+10.2 
+Alle Hochspannungs-Stromkreise, die durch Transformatoren, Wechselrichter oder Umrichter 
+gespeist werden, müssen nach 10.3 durch eine Erdschluss-Schutzeinrichtung geschützt sein, davon 
+ausgenommen sind Umrichter des Typs A wie in EN 61347-2-10 festgelegt. Der Errichter muss sicherstellen, 
+dass der Hersteller der Erdschluss-Schutzeinrichtung deren Leistungsmerkmale nach EN 50107-2 
+bescheinigt hat. 
+10.3 
+Im Falle eines Erdschlusses im Leuchtröhrenstromkreis muss die Erdschluss-Schutzeinrichtung 
+entweder die Stromversorgung auf der Eingangsseite oder auf andere Weise den Erdschlussstrom ab-
+schalten. 
+ANMERKUNG 
+Eine normenkonforme Fehlerstrom-Schutzeinrichtung (RCD) ist keine geeignete Schutzeinrichtung für 
+diesen Anwendungsfall; wenn sich diese auf der Primärseite eines Transformators, Wechselrichters oder Umrichters 
+befindet, bietet sie keinen Schutz bei Erdschlüssen auf der Sekundärseite. 
+
+
+===== PAGE 14/28 =====
+ 
+EN 50107-1:2002 
+12 
+10.4 
+Wie in 7.4 und 7.6 festgelegt, müssen Hochspannungs-Stromkreise, die von Transformatoren, 
+Wechselrichtern oder Umrichtern gespeist werden, nach 10.5 durch eine Leerlauf-Schutzeinrichtung ge-
+schützt sein. Ausgenommen davon sind Umrichter wie in EN 61347-2-10 festgelegt. Der Errichter muss 
+sicherstellen, dass der Hersteller der Leerlauf-Schutzeinrichtung deren Leistungsmerkmale nach EN 50107-2 
+bescheinigt hat. 
+10.5 
+Im Falle eines Leerlaufs im Leuchtröhrenstromkreis muss die Leerlauf-Schutzeinrichtung entweder 
+die Stromversorgung auf der Eingangsseite oder auf andere Weise die Ausgangsspannung abschalten.  
+10.6 
+Wenn in einem Stromkreis ein Blinkgerät vorhanden ist, müssen alle Schutzschalter und Rück-
+stelleinrichtungen auf der Eingangsseite des Blinkgeräts angeordnet sein. 
+ANMERKUNG 
+Wenn der Schutzschalter auf der Ausgangsseite des Blinkgeräts angeordnet wäre, würde er im Falle 
+eines Fehlers ständig auslösen und wieder einschalten. 
+10.7 
+Wenn in einem Stromkreis ein Blinkgerät vorhanden ist und sich das Schutzgerät/die Schutzgeräte 
+zum sekundärseitigen Abschalten auf der Ausgangsseite im Gehäuse des Transformators/der Transforma-
+toren, des/der Wechselrichter(s) oder Umrichter(s) befindet(n), muss entweder ein zusätzlicher Schutzschal-
+ter auf der Stromversorgungsseite des Blinkgeräts angeordnet werden und dieser muss vom eingebauten 
+Signalgeber angesteuert werden können; oder es müssen andere Vorrichtungen vorgesehen werden um 
+sicherzustellen, dass die Schutzeinrichtung im Fehlerfall nicht jedes Mal wieder einschaltet, wenn das 
+Blinkgerät die Stromversorgung aus und wieder einschaltet. 
+11 Wechselrichter und Umrichter 
+11.1 
+Wechselrichter und Umrichter müssen EN 61347-2-10 entsprechen. 
+11.2 
+Der Errichter muss sicherstellen, dass Wechselrichter und Umrichter für die beabsichtigte An-
+wendung in folgender Hinsicht geeignet sind: 
+a) 
+Versorgungsspannung oder Spannungsbereich; 
+b) 
+Eingangsstrom oder Eingangsleistung; 
+c) 
+Eingangs- und Ausgangsfrequenzen; 
+d) 
+Bemessungs-Ausgangs-Leerlaufspannung und deren Grenzabweichungen; 
+e) 
+Bemessungs-Ausgangsstrom und Strombereich; 
+f) 
+Erdungsanschlüsse im Ausgangskreis. 
+ANMERKUNG 
+Wechselrichter und Umrichter liefern eine hochfrequente Ausgangs-Hochspannung. Die Auswirkungen 
+von hohen Frequenzen auf die Isolierung und den Betrieb der Stromkreise und der Bauteile sollten eingehend 
+berücksichtigt werden. 
+11.3 
+Wechselrichter und Umrichter müssen entsprechend den Anweisungen des Herstellers installiert 
+werden. 
+11.4 
+Die Länge und Bauart einer Leitung zwischen dem Hochspannungsanschluss eines Wechsel-
+richters oder Umrichters und einer Leuchtröhre darf den vom Hersteller angegebenen Wert nicht 
+überschreiten. 
+12 Zubehör 
+Unabhängige Zubehörteile für Leuchtröhrengeräte und Leuchtröhrenanlagen, die mit Hochspannung 
+betrieben werden, wie Drosseln, Kondensatoren und Widerstände, müssen durch eine Umhüllung nach 
+Abschnitt 7 geschützt werden. 
+
+
+===== PAGE 15/28 =====
+ 
+EN 50107-1:2002 
+13 
+13 Isoliermuffen 
+Isoliermuffen, die zum Schutz der Elektroden oder deren Anschlüsse dienen, müssen aus folgendem Material 
+bestehen: 
+a) 
+Glas mit einer Wandstärke von mindestens 1 mm oder 
+b) 
+Silikongummi mit einer vom Lieferanten bescheinigten Sperrspannung von mindestens der doppelten 
+Bemessungs-Ausgangs-Leerlaufspannung gegen Erde des Transformators, Wechselrichters oder 
+Umrichters, der den Stromkreis speist; sie muss eine Wandstärke von mindestens 1 mm aufweisen 
+sowie einer Betriebstemperatur von mindestens 180 °C standhalten; oder 
+c) 
+aus einem Werkstoff mit mindestens den gleichen Eigenschaften bezüglich Isolierung und UV-, Ozon- 
+und Wärmebeständigkeit wie nach b). 
+ANMERKUNG 
+Der Wert von 180 °C, genannt in 13 b), ist in Beratung. 
+14 Auswahl und Verlegen von Hochspannungsleitungen 
+14.1 
+Hochspannungsleitungen müssen aus der Liste in Anhang A ausgewählt werden und mit 
+EN 50143:1997 + A1:200X übereinstimmen. 
+14.2 
+Alle Leitungen müssen für die in den Leuchtröhrengeräten und Leuchtröhrenanlagen zu erwar-
+tenden Umgebungsbedingungen geeignet sein. 
+14.3 
+Die Leitungsbauart „K“ darf nur für Dauerbetrieb bei Spannungen bis 2,5 kV gegen Erde verwendet 
+werden. 
+ANMERKUNG 
+Die Leitungsbauarten „A“ bis „H“ dürfen für Dauerbetrieb bei Spannungen bis 5 kV gegen Erde 
+verwendet werden. 
+14.4 
+Vorausgesetzt, dass eine mechanische Beschädigung unwahrscheinlich ist, dürfen Leitungen ohne 
+weiteren mechanischen Schutz bei Übereinstimmung mit den Anforderungen von Tabelle 5 verlegt werden. 
+Tabelle 5 – Anforderungen an die Verlegung von Leitungen nach EN 50143 
+ 
+Verlegungsart 
+ 
+Leitungs-
+bauart 
+Innerhalb von  
+Schutzumhüllungen 
+Überall, außer in  
+oder unter Material 
+In oder unter Material 
+A 
+X 
+X 
+X 
+B 
+X 
+ 
+ 
+C 
+X 
+X 
+ 
+D 
+X 
+X 
+X 
+E 
+X 
+X 
+X 
+F 
+X 
+X 
+ 
+G 
+X 
+ 
+ 
+H 
+X 
+X 
+ 
+K 
+X 
+X 
+ 
+ANMERKUNG 1 Die Leitungsisolierung darf dabei mit geerdeten metallenen Teilen oder mit anderen Werkstoffen 
+innerhalb der Umhüllung in Berührung kommen. 
+ANMERKUNG 2 Beispiele für Schutzumhüllungen sind Leuchtröhrengeräte, geschlossene Buchstaben, Kabelkanäle, 
+Stahlrohre sowie flexible bewehrte Elektroinstallationskanäle. 
+ANMERKUNG 3 Siehe Anhang B, Besondere nationale Bedingungen. 
+
+
+===== PAGE 16/28 =====
+ 
+EN 50107-1:2002 
+14 
+14.5 
+Wenn die Möglichkeit einer mechanischen Beschädigung von Leitungen besteht, müssen diese in 
+Elektroinstallationskanäle oder ähnliche Schutzeinrichtungen verlegt werden, die entweder aus geerdetem 
+Metall oder aus schwer entflammbaren, selbstverlöschenden Materialien nach EN 60598-1:2000, 13.3, be-
+stehen müssen. 
+14.6 
+Die Leitungsbauart „A“ darf nicht in Elektroinstallationsrohre oder andere enge Umhüllungen verlegt 
+werden, ausgenommen auf kurzen Strecken, wie durch Wände und Fußböden. Wenn diese kurzen 
+Elektroinstallationsrohrstücke aus Metall sind, müssen sie geerdet werden. 
+14.7 
+Außer bei vorübergehenden Verbindungen zur Schließung eines Hochspannungsstromkreises für 
+den Fall, dass eine Leuchtröhre zwecks Reparatur entfernt wurde, müssen Hochspannungsleitungen 
+durchgehend sein, wobei Verbindungen nicht zulässig sind. 
+14.8 
+Hochspannungsleitungen müssen so kurz wie möglich sein. 
+ANMERKUNG 1 Diese Anforderung ist besonders wichtig bei Leitungen mit geerdeter, metallischer Abschirmung. Die 
+Eigenkapazität zwischen dem Leiter und der metallischen Abschirmung kann kurzzeitige hohe Stromspitzen in der 
+Leuchtröhre zur Folge haben. Solche Spitzen sind besonders störend bei mit Neon gefüllten Leuchtröhren. Sie können 
+Funkstörungen und Flimmern hervorrufen und die Lebensdauer der Leuchtröhren verkürzen. In Tabelle 6 sind die 
+empfohlenen maximalen Leitungslängen der abgeschirmten oder ungeschirmten Leitungen angegeben, die die Leucht-
+röhren, die mit Neon oder mit etwas Quecksilber gefüllt sind, mit den mit 50 Hz betriebenen Transformatoren verbinden. 
+Die Maximallängen beziehen sich auf die Ausgangs-Leerlaufspannung des Transformators gegen Erde. 
+ACHTUNG Tabelle 6 dient nur als Richtlinie und bietet keine Gewähr dafür, dass ein einwandfreier Betrieb 
+bei allen Betriebsströmen und Rohrdurchmessern sichergestellt ist. 
+ANMERKUNG 2 Die in Tabelle 6 aufgelisteten Leitungslängen sind Gesamtlängen innerhalb eines Stromkreises. 
+Beachtet werden sollte Bild 7, hier sind die Gesamtleitungslängen definiert. 
+Tabelle 6 – Empfohlene Grenzwerte für die komplette Leitungslänge zwischen den 
+Leuchtröhren und dem Transformator 
+Spannung gegen Erde 
+1 kV 
+2 kV  
+3 kV 
+4 kV 
+5 kV 
+Gasart in der Röhre 
+Hg 
+Ne Hg 
+Ne Hg 
+Ne Hg 
+Ne Hg 
+Ne 
+Leitungsbauarten B, C, F, G, H  
+(Länge in m) 
+40 
+20 30 
+15 20 
+10 15 
+7 10 
+5 
+Leitungsbauart K 
+(Länge in m) 
+40 
+20 30 
+15 
+siehe Anmerkung 
+Leitungsbauarten A, D, E 
+(Länge in m) 
+24 
+12 16 
+8 12 
+6 9 
+4 6 
+3 
+ANMERKUNG 
+Leitungsbauart K darf nicht bei Spannungen über 2,5 kV gegen Erde eingesetzt werden (siehe 14.3).  
+14.9 
+Die Leitungsbauart, die zwischen der Ausgangseite eines Wechselrichters oder Umrichters und 
+der/den Leuchtröhre(n) verlegt wird, muss vom Hersteller angegeben werden. Sie muss geeignet sein für: 
+a) 
+den Betrieb mit Hochfrequenz und 
+b) 
+den Betrieb bei der entsprechenden Ausgangsspannung des Wechselrichters und Umrichters. 
+14.10 
+Für den Fall, dass Transformatoren, Wechselrichter oder Umrichter nur eine Hochspannungs-
+klemme haben, muss die Leitung zwischen Leuchtröhre und Erde, oder die Rückleitung zum Transformator, 
+Wechselrichter oder Umrichter 14.1 bis 14.9 entsprechen. 
+14.11 
+Leitungen müssen nach 14.12 bis 14.14 befestigt werden. 
+14.12 
+Leitungshalterungen müssen aus Metall oder feuchtigkeitsabweisendem, selbstverlöschendem 
+Material, wie in EN 60598-1:2000, 13.3 spezifiziert, hergestellt sein. 
+
+
+===== PAGE 17/28 =====
+ 
+EN 50107-1:2002 
+15 
+14.13 
+Der Abstand zwischen den Leitungshalterungen darf nicht größer als die in Tabelle 7 angegebenen 
+Werte sein. 
+Tabelle 7 – Abstand zwischen den Leitungshalterungen 
+Abstand zwischen Leitungshalterungen bei schräg verlegten 
+Leitungen mit einem Winkel zur Horizontalen von 
+Leitungsart 
+bis zu 45° 
+über 45° 
+Leitungen mit feindrähtigem Leiter 
+500 mm 
+800 mm 
+Leitungen mit eindrähtigem Leiter 
+800 mm 
+1 250 mm 
+14.14 
+Die erste Leitungshalterung darf nicht weiter als 150 mm vom Elektrodenanschluss entfernt sein. 
+14.15 
+Bei Leitungen mit metallener Abschirmung muss der Biegeradius mindestens das Achtfache des 
+Leitungsdurchmessers betragen.  
+14.16 
+Leitungen müssen so verlegt oder geschützt sein, dass sie nicht durch scharfe Kanten, Nieten, 
+Schrauben, ähnliche Komponenten oder sich bewegende Teile beschädigt werden können. 
+15 Hochspannungsanschlüsse 
+15.1 
+Die Elektrodenanschlüsse müssen mit Klemmen oder anderen geeigneten Mitteln entsprechend 
+15.2 und 15.3 ausgeführt werden. 
+ANMERKUNG 
+Siehe Anhang B, Besondere nationale Bedingungen. 
+15.2 
+Anschlüsse müssen vor Rost und anderer Korrosion geschützt werden. 
+15.3 
+Die mechanische Festigkeit der Hochspannungsanschlüsse muss den Beanspruchungen im 
+üblichen Betrieb gewachsen sein. 
+15.4 
+Wo die Leitungsisolierung oder die metallene Abschirmung durch das Entfernen des Kunststoff-
+mantels freiliegt, müssen diese, wo notwendig, vor Wettereinflüssen, UV-Strahlen oder Ozon geschützt 
+werden. 
+ANMERKUNG 
+Typische Beispiele für Hochspannungsanschlüsse sind in den Bildern 2, 3 und 4 dargestellt. 
+16 Leuchtröhrenhalter 
+16.1 
+Leuchtröhrenhalter müssen so gegen Erde isoliert sein, dass sie der Bemessungs-Ausgangs-
+Leerlaufspannung des Transformators, Wechselrichters oder Umrichters, der die Leuchtröhren speist, 
+standhalten.  
+ANMERKUNG 
+Sie dürfen aus Metall, das auf einem Isolator montiert ist, oder vollständig aus isolierendem Material 
+hergestellt sein. 
+16.2 
+Die Kriech- und Luftstrecken zwischen der Glasrohrwand der Leuchtröhre oder einer am Rohr 
+anliegenden metallenen Klammer und geerdeten metallenen Teilen müssen mindestens folgende Werte 
+in mm haben: 
+ 
+Kriechstrecke: 
+D = U 
+ 
+Luftstrecke: C = 0,75 × U  
+Dabei ist U die Bemessungs-Ausgangs-Leerlaufspannung (in Kilovolt) des die Anlagen speisenden Trans-
+formators, Wechselrichters oder Umrichters.  
+
+
+===== PAGE 18/28 =====
+ 
+EN 50107-1:2002 
+16 
+16.3 
+Der Isolierwerkstoff darf nicht zerstört werden, wenn in der Nähe der Leuchtröhre UV-Strahlung und 
+Ozon auftritt. Außerdem muss er die Eigenschaften des Selbsterlöschens von Flamme oder Glühen nach 
+EN 60598-1:2000, 13.3 haben. 
+ANMERKUNG 
+Beispiele für geeignete Werkstoffe sind: Glas, glasierte Keramik und Polycarbonate. 
+16.4 
+Leuchtröhrenhalter müssen die Leuchtröhren unter üblichen Betriebsbedingungen sicher halten, 
+ohne dass diese mechanisch überbeansprucht oder beschädigt werden. 
+ANMERKUNG 
+Leuchtröhrenhalter sollten verstellbar sein, um Fertigungstoleranzen zwischen der Leuchtröhre und 
+deren Montagefläche ausgleichen zu können. 
+17 Elektromagnetische Verträglichkeit 
+17.1 
+Die zur Einhaltung der Richtlinie der Elektromagnetischen Verträglichkeit in die Leuchtröhrengeräte 
+oder Leuchtröhrenanlagen eingesetzten Bauteile müssen für die Spannungen und Frequenzen bemessen 
+sein, denen sie ausgesetzt werden. 
+18 Inspektion und Prüfungen der Anlagen 
+18.1 
+Mit Ausnahme von kleinen ortsveränderlichen Geräten, für die der Hersteller eine Bescheinigung 
+vorlegt, die die Übereinstimmung dieser Norm bestätigt, müssen Leuchtröhrengeräte und Leuchtröhren-
+anlagen nach 18.2 inspiziert und nach 18.3 geprüft werden. 
+18.2 
+Nach Beendigung der Montage muss der Errichter kontrollieren, ob das Leuchtröhrengerät oder die 
+Leuchtröhrenanlage dieser Norm entspricht. 
+ANMERKUNG 
+Insbesondere sollte darauf geachtet werden, dass 
+a) 
+die Bauart der Hochspannungsleitungen und deren Verlegung, 
+b) 
+die Hochspannungsanschlüsse, 
+c) 
+die Kriech- und Luftstrecken, 
+d) 
+die Erdungsverbindungen, 
+e) 
+die mechanischen Bauelemente des Leuchtröhrengeräts oder der Leuchtröhrenanlage  
+mit dieser Norm übereinstimmen. 
+18.3 
+Die folgenden elektrischen Prüfungen müssen an der kompletten Anlage durchgeführt werden. Vor 
+Ort muss zuerst die Besichtigung wie in 18.2 und danach die Prüfung wie in 18.3 a) beschrieben durchgeführt 
+werden. Die Prüfung in 18.3 b) kann vor Ort oder in den Räumlichkeiten, in denen die Anlage hergestellt 
+wurde, je nachdem was bequemer ist, durchgeführt werden. 
+a) 
+Erdschlussschutz- und Leerlaufschutzeinrichtung müssen entsprechend den Anweisungen des 
+Herstellers dieser Geräte geprüft werden. Solche Prüfungen müssen sicherstellen, dass diese Geräte 
+richtig funktionieren und auch richtig montiert sind. 
+ANMERKUNG 1 Die Anforderungen, die der Hersteller der Geräte als Information zur Verfügung stellen muss, sind 
+in EN 50107-2, 7.3 und in 10.2 in dieser Norm beschrieben. 
+ANMERKUNG 2 Solche Prüfungen dienen nicht zur Kontrolle der Leistungsmerkmale der Geräte, da diese vom 
+Hersteller bescheinigt werden müssen (siehe 10.2). 
+b) 
+Werden die Leuchtröhren nicht mit einem Konstantstrom-Transformator, -Wechselrichter oder -Umrichter 
+betrieben, muss der Röhrenstrom in jedem Stromkreis gemessen werden. Dies geschieht, um 
+sicherzustellen, dass der Betriebsstrom innerhalb der vom Hersteller des Transformators, Wechsel-
+richters oder Umrichters angegebenen Toleranzen liegt. 
+
+
+===== PAGE 19/28 =====
+ 
+EN 50107-1:2002 
+17 
+19 Aufschriften 
+19.1 
+Folgende Aufschriften müssen dauerhaft und gut lesbar in Form eines Schilds oder Etiketts, 
+entweder direkt am Leuchtröhrengerät oder an der Leuchtröhrenanlage oder in deren Nähe, an einer gut 
+sichtbaren Stelle, angebracht sein: 
+a) 
+Name und Anschrift des Herstellers oder des Errichters der Anlage; 
+b) 
+Jahr der Montage. 
+20 Dokumentation 
+20.1 
+Um die Instandhaltung der Leuchtröhrengeräte und Leuchtröhrenanlagen zu erleichtern, muss der 
+Errichter dem Eigentümer oder Betreiber einen vereinfachten Schaltplan, ein Datenblatt oder ähnliche 
+Unterlagen aushändigen, woraus ersichtlich ist, welche(r) Transformator(en), Wechselrichter oder Umrichter 
+welche Leuchtröhre(n) betreiben.  
+20.2 
+Der Errichter der Anlage muss den Eigentümer oder Betreiber der Anlage darauf hinweisen, dass 
+die in Abschnitt 19N1) genannten Unterlagen nach jeder Instandhaltungsarbeit, die zu Änderungen in den 
+Stromkreisen der Leuchtröhrengeräte bzw. Leuchtröhrenanlagen geführt haben, geändert werden. 
+21 Instandhaltung 
+Der Errichter der Anlage muss den Eigentümer oder Betreiber der Anlage auf die Notwendigkeit einer 
+regelmäßigen Instandhaltung und Sicherheitskontrolle und auf die empfohlenen maximalen Abstände 
+zwischen den Instandhaltungsbesuchen bei der Anlage hinweisen. 
+ANMERKUNG 1 Die langfristige Sicherheit und Unversehrtheit von Leuchtröhrengeräten und Leuchtröhrenanlagen hängt 
+von deren regelmäßiger Prüfung und Instandhaltung durch kompetente Personen ab. Dem Eigentümer der Anlage wird 
+empfohlen, die Anlage in den Intervallen instand halten zu lassen, die ihm der Hersteller der Anlage empfiehlt. 
+ANMERKUNG 2 Jeder Instandhaltungsvertrag sollte die Arbeit, die bei jedem Besuch ausgeführt werden sollte, fest-
+legen. Zusätzlich zur normalen Reinigung, Lackausbesserungsarbeiten und dem Austausch von defekten Bauteilen 
+sollten auch die Inspektionen und Prüfungen nach Abschnitt 18 durchgeführt werden. 
+                                                     
+N1) Nationale Fußnote: Die Verweisung muss richtig auf 20.1 erfolgen. Eine Berichtigung ist bei CENELEC in 
+Vorbereitung. 
+
+
+===== PAGE 20/28 =====
+ 
+EN 50107-1:2002 
+18 
+ 
+Bild 1 – Reichweite innerhalb des „Handbereichs“ 
+
+
+===== PAGE 21/28 =====
+ 
+EN 50107-1:2002 
+19 
+ 
+Bild 2 – Beispiel eines von innen ausgeleuchteten Buchstaben-/Zeichengehäuses 
+
+
+===== PAGE 22/28 =====
+ 
+EN 50107-1:2002 
+20 
+ 
+Bild 3 – Beispiel eines Elektrodengehäuses, das durch eine Frontseite geführt wird 
+
+
+===== PAGE 23/28 =====
+ 
+EN 50107-1:2002 
+21 
+ 
+Bild 4 – Beispiel für eine typische Leuchtröhre, deren Elektroden durch eine Metallwand geführt 
+werden 
+ 
+
+
+===== PAGE 24/28 =====
+ 
+EN 50107-1:2002 
+22 
+ 
+ANMERKUNG 
+Die Elektrodenisoliermuffe wurde der Klarheit wegen entfernt. Das Bild ist eine Darstellung der Kriech- 
+und Luftstrecken, zeigt aber keine repräsentative Installation. 
+Bild 5 – Beispiel eines Leuchtröhrengeräts mit Kriech- und Luftstrecken 
+ 
+ANMERKUNG 
+Wenn z. B. eine Anlage im Außenbereich montiert ist (siehe 7.9 und Tabelle 3) und mit einem 
+Transformator, der eine Bemessungs-Ausgangs-Leerlaufspannung von 10 kV (5 kV gegen Erde) betrieben wird, muss die 
+komplette Strecke wie oben gezeigt mindestens 21 mm sein. 
+Bild 6 – Auswirkung einer vorhandenen Elektrodenmuffe auf die Kriech- und Luftstrecken 
+ 
+
+
+===== PAGE 25/28 =====
+ 
+EN 50107-1:2002 
+23 
+ 
+Wenn die Längen der Hochspannungsleitungen von den Transformatorenklemmen zu den entsprechenden Leucht-
+röhrenelektroden „X“ und „Y“ Meter betragen, ergibt sich im Hinblick auf Tabelle 6 eine komplette Länge von (X + Y) m. 
+Bild 7 – Längen von Hochspannungsleitungen 
+
+
+===== PAGE 26/28 =====
+ 
+EN 50107-1:2002 
+24 
+Anhang A 
+(informativ) 
+ 
+Liste der in EN 50143 beschriebenen Leuchtröhrenleitungen 
+Leitungsbauart „A“:  Eine eindrähtige, einadrige, bis 85 °C beständige, gummiisolierte Leitung mit Bleischirm 
+ohne Mantel. 
+Leitungsbauart „B“: Eine feindrähtige, einadrige, bis 150 °C beständige, mit Silikongummi isolierte Leitung. 
+Leitungsbauart „C“: Eine feindrähtige, einadrige, bis 150 °C beständige, mit Silikongummi isolierte Leitung, 
+mit einem Mantel entweder aus PVC oder einem polymeren Kunststoff mit geringer Entwicklung von Rauch 
+und giftigen Gasen im Brandfall. 
+Leitungsbauart „D“: Eine feindrähtige, einadrige, bis 150 °C beständige, mit Silikongummi isolierte Leitung, 
+mit einer Drahtumflechtung und einem Mantel, entweder aus PVC oder einem polymeren Kunststoff mit 
+geringer Entwicklung von Rauch und giftigen Gasen im Brandfall. 
+Leitungsbauart „E“: Eine feindrähtige, einadrige, PVC-isolierte Leitung, mit einem Mantel aus Zinkband und 
+einem mehrdrähtigen Schutzleiter. Die Leitung hat einen Außenmantel aus PVC. 
+Leitungsbauart „F“: Eine feindrähtige, einadrige PVC-isolierte Leitung mit einem mehrdrähtigen Schutzleiter 
+und einem Außenmantel aus PVC. 
+Leitungsbauart „G“: Eine feindrähtige, einadrige, PVC-isolierte Leitung. 
+Leitungsbauart „H“: Eine feindrähtige, einadrige, PE-isolierte Leitung mit einem Außenmantel aus PVC. Die 
+Wanddicke (Nennwert) der Polyethylenisolierung beträgt 3 mm. 
+Leitungsbauart „K“: Eine feindrähtige, einadrige, PE-isolierte Leitung mit einem Außenmantel aus PVC. Die 
+Wanddicke (Nennwert) der Polyethylenisolierung beträgt 1,5 mm. 
+
+
+===== PAGE 27/28 =====
+ 
+EN 50107-1:2002 
+25 
+Anhang B 
+(normativ) 
+ 
+Besondere nationale Bedingungen 
+Besondere nationale Bedingung: Nationale Eigenschaft oder Praxis, die nicht – selbst nach einem länge-
+ren Zeitraum – geändert werden kann, z. B. klimatische Bedingungen, elektrische Erdungsbedingungen. 
+Wenn sie die Harmonisierung beeinflusst, ist sie Teil der Europäischen Norm oder des Harmonisierungs-
+dokumentes. Für Länder, für die die nationalen Bedingungen gelten, sind diese Bestimmungen normativ, für 
+andere Länder hat diese Angabe informativen Charakter. 
+Abschnitt 
+Besondere nationale Bedingung 
+14.4 
+Frankreich 
+Für die Montage in oder unter Oberflächen ist nach Spalte 4 in Tabelle 5 ein zusätzlicher 
+Schutz erforderlich. 
+15.1 
+Frankreich 
+Leuchtröhrenanschlüsse müssen mit Anschlüssen nach EN 60999-1 ausgeführt werden. 
+ 
+
+
+===== PAGE 28/28 =====
+ 
+EN 50107-1:2002 
+26 
+Anhang C 
+(informativ) 
+ 
+A-Abweichungen 
+A-Abweichung: Nationale Abweichung, die auf Vorschriften beruht, deren Veränderungen zum gegen-
+wärtigen Zeitpunkt außerhalb der Kompetenz des CEN/CENELEC Mitglieds liegt. 
+Diese Europäische Norm fällt nicht unter eine EG-Richtlinie. 
+In den betreffenden CENELEC Ländern gelten diese A-Abweichungen anstelle der Festlegungen der 
+Europäischen Norm so lange, bis sie zurückgezogen sind. 
+Abschnitt 
+Abweichung 
+7.4 
+Frankreich 
+(Erlass vom 8. Dezember 1988): 
+Die Schutzart muss mindestens IP3X oder IPXXC betragen. 
+ 

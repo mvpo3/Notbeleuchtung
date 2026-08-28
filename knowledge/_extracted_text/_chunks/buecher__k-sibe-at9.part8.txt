@@ -1,0 +1,2132 @@
+
+
+===== PAGE 321/400 =====
+Seite 
+321
+MaxiControl
+Zentralbatterieanlagen (CPS)
+
+
+===== PAGE 322/400 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+w Schrack-Info
+Die MaxiControl ist ein modulares 19“-Zentralbatteriesystem mit zusatzleitungsloser Einzelleuchtenüberwachung, frei programmierbaren 
+Stromkreisen und 5-Jahres-Speicher (Prüfbuch) zum Anschluss von Not- und Sicherheitsbeleuchtung mit LED-, Leuchtstoff- oder Halogen-
+Leuchtmitteln.
+Durch das eingebaute Webinterface mit integrierter Visualisierungssoftware können auch große Projekte übersichtlich auf einem 
+Gebäudeplan dargestellt werden. Darüber hinaus können die Testergebnisse und Störungen eines bestimmten Datums, sowie alle relevanten 
+Betriebsparameter abgefragt und angezeigt werden. So wird der Wartungsaufwand minimiert.
+Die Konfiguration der Anlage kann per Tastatur am Gerät selbst oder über eine TCP/IP Netzwerkverbindung zu einem entfernten PC erfolgen. 
+Durch die 19“ Rack-Technik können einzelne Module nach- oder umgerüstet werden.
+Das Stromkreismodul versorgt an die Anlage angeschlossene Sicherheits- und Rettungszeichenleuchten mit Strom. Jeder Abgang kann für 
+stromkreisüberwachte Anlagen als auch für Einzelleuchtenüberwachung programmiert werden. Ein kombinierter Betrieb ist ebenfalls möglich. In 
+einem Gehäuse finden im Maximalausbau bis zu 30 Stromkreismodule für bis zu 60 Stromkreise Platz.
+Jedes Stromkreismodul ist für 2 Abgangskreise mit jeweils bis zu 20 Leuchten ausgelegt. Jeder Kreis kann als Dauerlicht, Bereitschaftslicht, 
+geschaltetes Dauerlicht oder als Treppen licht programmiert werden. Bereitschafts- und Rettungszeichenleuchten lassen sich kombiniert 
+betreiben. Bei Verwendung der Stromkreismodule DCM12E (2x1,1A/2x250VA) in Verbindung mit "EL" Leuchten können diese Notleuchten 
+zentral einzeln geschaltet werden (für Details siehe S.294 „Einzelleuchtenschaltbarkeit“).
+Die MaxiControl besitzt ein geräumiges Batteriefach und ermöglicht es somit, in einem Schrank sowohl die Stromkreise anzusteuern als auch 
+Front Terminal Batterien bis zu 150Ah(!) unterzubringen. Mit einem Schrank lassen sich einstündige Anlagen bis ca. 20,5kW (abzüglich 25% 
+Alterungsreserve) realisieren.
+Seite 
+322
+NLMCX360 + 14x NLDCM42 + NLBAS150FT
+NLMCX360 + 14x NLDCM42 + 
+NLBAS150FT
+NLBAS100FT
+ 
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MaxiControl MCX 
+
+
+===== PAGE 323/400 =====
+ 
+w Achtung
+Bei Anbindung von Unterstationen / Unterverteilern bzw. dem Einbau von optionalen Baugruppen (SAM24M, SAM08M und IOM01M) muss 
+die technische Fertigung vorab geklärt werden (ggf. zusätzlicher Platzbedarf im Schrank notwendig)! Hierbei kann es zu einer Reduzierung der 
+max. Stromkreisanzahl bzw. der Anzahl der Ladeteile kommen!
+ 
+w Eigenschaften
+•	 Zentrales Stromversorgungssystem nach ÖVE/ÖNORM EN50171 für Sicherheitsbeleuchtungsanlagen nach ÖVE/ÖNORM EN50172, 
+ÖVE/ÖNORM E 8002-1 und OVE E 8101
+•	 Mit Automatischer Prüfeinrichtung gemäß ÖVE/ÖNORM EN 62034 zur regelmäßigen Prüfung jeder angeschlossenen Leuchte
+•	 Mikroprozessorgesteuertes Funktionskontrollsystem
+•	 Prüfergebnisse von 5 Jahren abrufbar
+•	 Hinterleuchtetes großes LCD-Display mit Klartextanzeige
+•	 Mehrsprachig umschaltbar
+•	 Passwortgeschützt
+•	 Serviceadresse vorprogrammiert
+•	 Leichte und verständliche Programmierung über 8 Tasten
+•	 Externe PC-Tastatur zur schnellen Konfiguration der Anlage (USB) anschließbar
+•	 Speicherkarte (MultiMediaCard) für Softwareupdates
+•	 Ethernet-Schnittstelle
+•	 Steuerung und Überwachung über Internet-Browser
+•	 Anzeige der Leuchtenposition und Zustand auf einem Gebäudegrundriss möglich
+•	 Frei programmierbare Abgangskreise
+•	 Endstromkreismodule DCM mit 3A, 4A und 6A Nennstrom verfügbar
+•	 Anlage kompatibel zu Stromkreiseinschüben NLDCM12E (1A Nennstrom) für zentral einzelschaltbare Leuchten
+•	 Frei programmierbare Abgangskreise
+•	 Einzelleuchtenüberwachung ohne zusätzliche Leitung
+•	 Adaptive Stromüberwachung jedes Endstromkreises
+•	 Selektive Isolationsprüfung der Endstromkreise
+•	 Bis zu 60 Endstromkreise pro 19“-Schrank
+•	 Batterieladung durch IUTQ-Kennlinienfeld maximiert Lebensdauer der Batterie
+•	 Externe Bausteine, wie Netzwächter etc. sind über ein Bussystem anschließbar und programmierbar
+Seite 
+323
+ 
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MaxiControl MCX 
+
+
+===== PAGE 324/400 =====
+Seite 
+324
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+w Technische Daten
+Montageart:
+Wand / Stand
+Gehäusematerial:
+Stahlblech RAL 7035
+Abmessungen:
+1850x800x600 mm (HxBxT)
+ 
+(50 mm Sockel enthalten)
+Schutzart / Schutzklasse:
+IP20 / I
+Kabeleinführung:
+Dacheinführung
+Netzanschluss:
+3x230V AC ± 10% 50/60 Hz
+Ausgangsspannung:
+230V AC  / 216V DC
+Abgangskreise:
+Max. 60 Kreise mit Umschaltung auf Dauer- oder Bereitschaft je Kreis
+Max. Lader:
+10 A
+Batterie (nicht enthalten):
+Wartungsfreie, verschlossene Bleibatterie
+ 
+Front Terminal OGiV, OGiV, OGI, OPzV
+ 
+oder wartungsarme NiCd-Batterien
+Max. Anschlussleistung DC *
+1h
+3h
+8h
+mit 55Ah Batterie (FT) 27,1A / 5,86kW
+11,4A / 2,47kW
+5,3A / 1,15kW
+mit 80Ah Batterie (FT) 36,6A / 7,91kW
+15,3A / 3,3kW
+7,2A / 1,56kW
+mit 100Ah Batterie (FT) 51,8A / 11,18kW
+21,8A / 4,71kW
+9,6A / 2,07kW
+mit 150Ah Batterie (FT) 78,8A / 17,0kW
+34,2A / 7,38kW
+13,8A / 2,97kW
+Zulässige Umgebungstemp.:
+10° bis 35° C
+Gewicht:
+NLMCX148: 200kg, NLMCX448: 225kg (ohne Batterien)
+ 
+Batteriesatz 216V DC 
+(18x 12V / 55Ah):
+ 
+346kg
+ 
+Batteriesatz 216V DC 
+(18x 12V / 80Ah):
+ 
+468kg
+ 
+Batteriesatz 216V DC 
+(18x 12V / 100Ah):
+ 
+585kg
+ 
+Batteriesatz 216V DC 
+(18x 12V / 150Ah):
+ 
+819kg
+*) Summe aller Endstromkreise, inkl. 25% Batteriealterungsreserve
+ 
+w Stromkreismodule
+Typ:
+Absicherung:
+max. Belastung pro Modul:
+DCM12E
+4 x F5A
+1A / 2 x 300VA
+DCM32
+4 x F5A
+3A / 2 x 650VA
+DCM42
+4 x F6,3A
+4A / 2 x 860VA
+DCM62
+4 x F10A
+6A / 2 x 1300VA
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Zentralbatterieanlagen
+Zentralbatterieanlage MaxiControl Lader: 2,5A max. 48 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX148
+Zentralbatterieanlage MaxiControl Lader: 5A max. 48 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX248
+Zentralbatterieanlage MaxiControl Lader: 7,5A max. 48 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX348
+Zentralbatterieanlage MaxiControl Lader: 10A max. 48 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX448
+Zentralbatterieanlage MaxiControl Lader: 5A max. 60 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX260
+Zentralbatterieanlage MaxiControl Lader: 7,5A max. 60 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX360
+Zentralbatterieanlage MaxiControl Lader: 5A max. 0 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX200
+Zentralbatterieanlage MaxiControl Lader: 5A max. 12 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX212
+Zentralbatterieanlage MaxiControl Lader: 5A max. 24 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX224
+Zentralbatterieanlage MaxiControl Lader: 5A max. 36 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX236
+Zentralbatterieanlage MaxiControl Lader: 7,5A max. 36 Stromkreise (ohne Stromkreiseinschübe und Batterien) mit 
+Batteriefach für Frontterminalbatterien bis 150Ah, H1850 x B800 x T600mm
+NLMCX336
+Notwendiges Zubehör
+Stromkreiseinschubmodul 19“  2 x 1A/300VA – Absicherung 4xF5A , für zentral einzelschaltbare Notleuchten NL…EL, 
+NL...E
+NLDCM12E
+Stromkreiseinschubmodul 19“ 2 x 4A/860VA – Absicherung 6,3A Mischbetrieb DS/BS
+NLDCM42
+Stromkreiseinschubmodul 19“ 2 x 4A/1300VA – Absicherung 10A Mischbetrieb DS/BS
+NLDCM62
+CPS Basisausstattung - beinhaltet: Kritische Stromkreisüberwachung CCIF, Servicesteckdose SSD, Türfeststeller TFST, 
+Schranksockel BASO, Lüfterkontakt LUAN1, Lichtschalterabfragemodul SAM24
+NLMCPAKET
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MaxiControl MCX 
+
+
+===== PAGE 325/400 =====
+Seite 
+325
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Notwendiges Zubehör
+Batteriesatz 216V 18 Stk. Longlife Front Terminal OGiV 12V/80Ah (C20) inkl. Verbinder
+NLBAS080FT
+Batteriesatz 216V 18 Stk. Longlife Front Terminal OGiV 12V/110Ah (C20) inkl. Verbinder
+NLBAS100FT
+Batteriesatz 216V 18 Stk. Longlife Front Terminal OGiV 12V/159Ah (C20) inkl. Verbinder
+NLBAS150FT
+Optionales Zubehör
+Polycarbonat Sichttür (B x H = 480 x 530mm) für Schrank H=1850mm
+NLPLX185
+Dreiphasen Netzüberwachung mit Busanbindung
+NLMCLM
+Dreiphasennetzüberwachung PC230
+NLPC2300
+Meldetableau mit LCD Klartextanzeige und Busanbindung
+NLMCT15
+Meldetableau mit LCD Klartextanzeige, Busanbindung und Schlüsselschalter
+NLMCT15S
+Lichtschalterabfragemodul 8 Eingänge inkl. Netzwächter, lose
+NLSAM24
+Lichtschalterabfragemodul 8 Eingänge inkl. Netzwächter eingebaut inkl. Anschlussklemmen
+NLSAM24M
+Lichtschalterabfragemodul 8 Eingänge, lose
+NLSAM08
+Einbaudrucker für Midi- Maxi- und MultiControl
+NLMCBD04
+Abgang für Unterstation
+NLMCABUS
+Abgang für Unterverteilung (nur gemeinsam mit NLUVKOP)
+NLMCABUV
+Bus Konverter zur Vernetzung von Unterverteilern
+NLUVKOP
+GLT Modbus Gateway inkl. Software für die MC-Zentrale
+NLMCMODBUS
+XML Datenschnittstelle
+NLMCXML
+Switch 852 - 111 - 5-Port 10/100BASE-TX für Montage auf DIN Schiene
+NLWES852
+Switch 882 - 112 - 8-Port 10/100BASE-TX für Montage auf DIN Schiene
+NLWES882
+Aufzahlung Panel / Tablet PC mit Touchscreen zum Fronteinbau
+NLPANPC1
+Einzelblockbatterieüberwachung in Neuanlage CPS Maxi-/MultiControl für 18 Batterien 65Ah bis 260Ah, Bat-Logg® 
+Interface in Anlage eingebaut, Batterien max. 2,5m von Batterieanschlussklemme entfernt
+NLBTLMC181
+Einzelblockbatterieüberwachung in Neuanlage CPS Maxi-/MultiControl für 18 Batterien 65Ah bis 260Ah, Bat-Logg® 
+Interface in externem batterieseitigen Schrank, Batterien max. 8m von Batterieanschlussklemme entfernt
+NLBTSMC181
+Einzelblockbatterieüberwachung in Neuanlage CPS Maxi-/MultiControl für 18 Batterien 17Ah bis 60Ah, Bat-Logg® 
+Interface in Anlage eingebaut, Batterien max. 5m von Batterieanschlussklemme entfernt
+NLBTLMC184
+Einzelblockbatterieüberwachung in Neuanlage CPS Maxi-/MultiControl für 18 Batterien 17Ah bis 60Ah, Bat-Logg® 
+Interface in externem batterieseitigen Schrank, Batterien max. 8m von Batterieanschlussklemme entfernt
+NLBTSMC184
+Ersatzsensor bei Einzelblockbatterieüberwachung Bat-Logg® für Austauschbatterie bei NLBT.MC181
+NLBTLSENS1
+Ersatzsensor bei Einzelblockbatterieüberwachung Bat-Logg® für Austauschbatterie bei NLBT.M.184
+NLBTLSENS4
+ 
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MaxiControl MCX 
+
+
+===== PAGE 326/400 =====
+Seite 
+326
+MultiControl
+Zentralbatterieanlagen (CPS)
+
+
+===== PAGE 327/400 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+w Schrack-Info
+Die MultiControl ist ein modulares 19“-Zentralbatteriesystem mit zusatzleitungsloser Einzelleuchtenüberwachung, frei programmierbaren 
+Stromkreisen und 5-Jahres-Speicher (Prüfbuch). Die Anlage ist in verschiedenen Gehäusevarianten mit integriertem oder externem Batteriefach 
+erhältlich.
+Durch das eingebaute Webinterface mit integrierter Visualisierungssoftware können auch große Projekte übersichtlich auf einem 
+Gebäudeplan dargestellt werden. Darüber hinaus können die Testergebnisse und Störungen eines bestimmten Datums, sowie alle relevanten 
+Betriebsparameter abgefragt und angezeigt werden. So wird der Wartungsaufwand minimiert.
+Die Konfiguration der Anlage kann per Tastatur am Gerät selbst oder über eine TCP/IP Netzwerkverbindung zu einem entfernten PC erfolgen. 
+Durch die 19“ Rack-Technik können einzelne Module nach- oder umgerüstet werden.
+Das Stromkreismodul versorgt an die Anlage angeschlossene Sicherheits- und Rettungszeichenleuchten mit Strom. Jeder Abgang kann für 
+stromkreisüberwachte Anlagen als auch für Einzelleuchtenüberwachung programmiert werden. Ein kombinierter Betrieb ist ebenfalls möglich. In 
+einem Gehäuse finden im Maximalausbau bis zu 48 Stromkreismodule für bis zu 96 Stromkreise Platz.
+Jedes Stromkreismodul ist für 2 Abgangskreise mit jeweils bis zu 20 Leuchten ausgelegt. Jeder Kreis kann als Dauerlicht, Bereitschaftslicht, 
+geschaltetes Dauerlicht oder als Treppen licht programmiert werden. Bereitschafts- und Rettungs zeichen leuchten lassen sich kombiniert 
+betreiben. Bei Verwendung der Stromkreismodule DCM12E (2x1,1A/2x250VA) in Verbindung mit "EL" Leuchten können diese Notleuchten 
+zentral einzeln geschaltet werden (für Details siehe S.294 „Einzelleuchtenschaltbarkeit“).
+Die MultiControl ermöglicht den Anschluss von LEDLeuchten, Leuchtstofflampen oder Halogen-Niedervoltlampen. Bis zu 32 Anlagen oder 
+Unterstationen können über eine serielle oder eine TCP/IP-Verbindung vernetzt werden. Maximal können somit bis zu 3072 Stromkreise bzw. 
+61440 Leuchten angeschlossen und überwacht werden. Auch mit zertifiziertem E30-Schrank erhältlich.
+ 
+Seite 
+327
+MultiControl MC...
+ 
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MultiControl MC 
+
+
+===== PAGE 328/400 =====
+Seite 
+328
+W Beispiel Notbeleuchtungssystem
+Gruppen- und Zentralbatterieanlagen
+
+
+===== PAGE 329/400 =====
+Seite 
+329
+Gruppen- und Zentralbatterieanlagen
+
+
+===== PAGE 330/400 =====
+w Eigenschaften
+•	 Zentrales Stromversorgungssystem nach ÖVE/ÖNORM EN50171 für Sicherheitsbeleuchtungsanlagen nach ÖVE/ÖNORM EN50172, 
+ÖVE/ÖNORM E 8002-1 und OVE E 8101
+•	 Mit Automatischer Prüfeinrichtung gemäß ÖVE/ÖNORM EN 62034 zur regelmäßigen Prüfung jeder angeschlossenen Leuchte
+•	 Prüfergebnisse von 5 Jahren abrufbar
+•	 Hinterleuchtetes großes LCD-Display mit Klartextanzeige
+•	 Mehrsprachig umschaltbar
+•	 Passwortgeschützt
+•	 Serviceadresse vorprogrammiert
+•	 Leichte und verständliche Programmierung über 8 Tasten
+•	 Externe PC-Tastatur zur schnellen Konfiguration der Anlage (PS2)
+•	 Speicherkarte (MultiMediaCard) für Softwareupdates
+•	 Optional integrierter Drucker
+•	 Ethernet-Schnittstelle
+•	 Steuerung und Überwachung über Internet-Browser
+•	 Anzeige der Leuchtenposition und Zustand auf einem Gebäudegrundriss möglich
+•	 Endstromkreismodule DCM mit 3A, 4A und 6A Nennstrom
+•	 Anlage kompatibel zu Stromkreiseinschüben NLDCM12E (1A Nennstrom) für zentral einzel-schaltbare Leuchten
+•	 Frei programmierbare Abgangskreise
+•	 Einzelleuchtenüberwachung ohne zusätzliche Leitung
+•	 Adaptive Stromüberwachung jedes Endstromkreises
+•	 Selektive Isolationsprüfung der Endstromkreise
+•	 Bis zu 96 Endstromkreise pro 19“-Schrank
+•	 Batterieladung durch IUTQ-Kennlinienfeld maximiert Lebensdauer der Batterie
+•	 Externe Bausteine, wie Netzwächter etc. sind über ein Bussystem anschließbar und programmierbar
+Seite 
+330
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MultiControl MC 
+w Technische Daten
+Montageart:
+Wand / Stand
+Gehäuse:
+Stahlblech RAL 7035
+Optional:
+Brandschutzgehäuse E30 (für ausgewählte Typen auf Anfrage)
+Abmessungen (HxBxT):
+900 x 600 x 450mm (ohne Batterieschrank)
+ 
+1800 x 600 x 450mm (Kombischrank bis 45Ah)
+ 
+1500 x 600 x 450mm
+Schutzart / Schutzklasse:
+IP20 / I
+Kabeleinführung:
+Dacheinführung
+Netzanschluss:
+3x230V AC ± 10% 50/60 Hz
+Umschaltbetrieb
+230V AC  / 216V DC ±15%
+Abgangskreise:
+Max. 96 Kreise mit Umschaltung auf Dauer- oder Bereitschaft je Kreis
+Max. Lader:
+25 A
+Batterie (nicht enthalten):
+Wartungsfreie, verschlossene Bleibatterie Front Terminal OGiV, OGiV, 
+OGI, OPzS oder wartungsarme NiCd-Batterien
+Max. Anschlussleistung DC
+Abhängig von individueller Projektierung
+Zulässige Umgebungstemp.:
+10° bis 35° C
+ 
+ 
+ 
+ 
+ 
+w Stromkreismodule
+Typ:
+Absicherung:
+max. Belastung pro Modul:
+DCM12E
+4 x F5A
+1A / 2 x 300VA
+DCM32
+4 x F5A
+3A / 2 x 650VA
+DCM42
+4 x F6,3A
+4A / 2 x 860VA
+DCM62
+4 x F10A
+6A / 2 x 1300VA
+
+
+===== PAGE 331/400 =====
+Seite 
+331
+w Auszug aus der Anlagenliste - Weitere Konfigurationen sind möglich
+ 
+Ausführung
+Lader
+Gehäuse
+Max. 
+Kreise *
+Max. 
+DCM
+ 
+Kombigerät inkl. Ladeeinrichtung, Batteriefach bis 17Ah, AC-Einspeisung 1x, 2x oder 3 x 230V/50Hz
+MultiControl 12/2,5A Kombi 1000
+2,5A
+1000 x 600 x 400
+12
+6
+MultiControl 24/2,5A Kombi 1000
+2,5A
+1000 x 600 x 400
+24
+12
+MultiControl 36/2,5A Kombi 1000
+2,5A
+1000 x 600 x 400
+36
+18
+ 
+Kombigerät inkl. Ladeeinrichtung, Batteriefach bis 45Ah, AC-Einspeisung 1x, 2x oder 3x 230V/50Hz
+MultiControl 12/2,5A Kombi 1500
+2,5A
+1500 x 600 x 450
+12
+6
+MultiControl 24/2,5A Kombi 1500
+2,5A
+1500 x 600 x 450
+24
+12
+MultiControl 36/2,5A Kombi 1500
+2,5A
+1500 x 600 x 450
+36
+18
+ 
+Grundgerät inkl. Ladeeinrichtung, AC-Einspeisung 3x 230V/50Hz
+Multi-Control 900 12/2,5A
+2,5A
+900 x 600 x 450
+12
+6
+Multi-Control 900 24/2,5A
+2,5A
+900 x 600 x 450
+24
+12
+Multi-Control 900 36/5,0A
+5,0A
+900 x 600 x 450
+36
+18
+Multi-Control 900 36/7,5A
+7,5A
+900 x 600 x 450
+36
+18
+Multi-Control 900 48/7,5A
+7,5A
+900 x 600 x 450
+48
+24
+ 
+ 
+  
+Grundgerät inkl. Ladeeinrichtung, AC-Einspeisung 3X 230V/50Hz
+Multi-Control 1800 12/7,5A
+7,5A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/10,0A
+10,0A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/12,5A
+12,5A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/15,0A
+15,0A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/17,5A
+17,5A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/20,0A
+20,0A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/22,5A
+22,5A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 12/25,0A
+25,0A
+1800 x 600 x 450
+12
+6
+Multi-Control 1800 24/20,0A
+20,0A
+1800 x 600 x 450
+24
+12
+Multi-Control 1800 24/25,0A
+25,0A
+1800 x 600 x 450
+24
+12
+Multi-Control 1800 36/10,0A
+10,0A
+1800 x 600 x 450
+36
+18
+Multi-Control 1800 36/20,0A
+20,0A
+1800 x 600 x 450
+36
+18
+Multi-Control 1800 36/25,0A
+25,0A
+1800 x 600 x 450
+36
+18
+Multi-Control 1800 48/12,5A
+12,5A
+1800 x 600 x 450
+48
+24
+Multi-Control 1800 48/25,0A
+25,0A
+1800 x 600 x 450
+48
+24
+Multi-Control 1800 60/20,0A
+20,0A
+1800 x 600 x 450
+60
+30
+Multi-Control 1800 72/15,0A
+15,0A
+1800 x 600 x 450
+72
+36
+Multi-Control 1800 72/25,0A
+25,0A
+1800 x 600 x 450
+72
+36
+Multi-Control 1800 96/15,0A
+15,0A
+1800 x 600 x 450
+96
+48
+ 
+ 
+ 
+ 
+ 
+Weitere Anlagekonfigurationen auf Anfrage (z.B. größere Lader)
+Achtung: Bei Anbindung von Unterstationen / Unterverteilern bzw. dem Einbau von optionalen Baugruppen (SAM08M und IOM01M) muss die technische Fertigung vorab geklärt 
+werden (ggf. zusätzlicher Platzbedarf im Schrank notwendig)!
+Hierbei kann es zu einer Reduzierung der max. Stromkreisanzahl bzw. der Anzahl der Ladeteile kommen!
+* Ein zusätzlicher Stromkreis ist als Standard immer integriert
+ 
+AUF ANFRAGE
+ 
+w Zentralbatterieanlagen Serie MultiControl MC 
+Gruppen- und Zentralbatterieanlagen
+
+
+===== PAGE 332/400 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+w Schrack-Info
+Unterstationen bieten die gleichen Funktionen, wie die MultiControl Zentrale. Die mikroprozessorgesteuerten Unterstationen arbeiten bei Ausfall 
+des Hauptrechners autark weiter. An einer Unterstation stehen alle Programmiermöglichkeiten und Schnittstellen zur Verfügung, die auch die 
+Zentrale bietet. Unterstationen ermöglichen zusatzleitungslose Einzelleuchtenüberwachung und frei programmierbare Stromkreise. Auch in 
+zertifizierter E30- Ausführung erhältlich.Bei Verwendung der Stromkreismodule DCM12E (2x1,1A/2x250VA) in Verbindung mit "EL" Leuchten 
+können diese Notleuchten zentral einzeln geschaltet werden (Details siehe Kapitel "Zentrale Einzelschaltbarkeit").
+ 
+ 
+w Kompakte MicroControl Unterstation
+Die kompakte günstige Unterstation für MultiControl Systeme auf Basis des MicroControl Steuerungsrechners für 2, 4 oder 6 Hauptstromkreise. 
+Die Abmessungen sind HxBxT 430x350x230mm.
+Sie ist komplett ausgestattet mit I/O-Modul, SAM08-Modul, einer überwachten Ruhestromschleife CCIF, dem Webinterface der MicroControl 
+Baureihe und per Ethernet vernetzbar. Die maximale Anschlussleistung dieser Unterstation beträgt 2.000 VA.
+Seite 
+332
+NLUCW
+NLUCW..E30
+MicroControl Unterstation auf Anfrage
+ 
+w Technische Daten
+Gehäusematerial:
+Stahlblech, grau RAL 7035
+Schutzart:
+IP21 (opt. IP54, E30, E90)
+Schutzklasse:
+I
+Kabeleinführung:
+Von oben bzw. unten bei 900er-Schrank
+Netzanschluss:
+1 oder 3 x 230 V 50 Hz
+ 
+Gruppen- und Zentralbatterieanlagen
+w Unterstationen 
+
+
+===== PAGE 333/400 =====
+Seite 
+333
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+w Stromkreismodule
+Typ:
+Absicherung:
+max. Belastung pro Modul:
+DCM12E
+4 x F5A
+1A / 2 x 300VA
+DCM32
+4 x F5A
+3A / 2 x 650VA
+DCM42
+4 x F6,3A
+4A / 2 x 860VA
+DCM62
+4 x F10A
+6A / 2 x 1300VA
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Unterstationen
+Unterstation inkl. Prozessor für MultiControl für max. 6 DCM / 12 Stromkreise,  H550 x B600 x T450mm
+NLUCW12
+Unterstation inkl. Prozessor für MultiControl für max. 6 DCM / 12 Stromkreise, eingebaut in E30 Schrank H1050 x B650 
+x T341mm
+NLUCW12E30
+Unterstation inkl. Prozessor für MultiControl für max. 12 DCM / 24 Stromkreise, H550 x B600 x T450mm
+NLUCW24
+Unterstation inkl. Prozessor für MultiControl für max. 12 DCM / 24 Stromkreise, eingebaut in E30 Schrank H1050 x B650 
+x T341mm
+NLUCW24E30
+Unterstation inkl. Prozessor für MultiControl für max. 18 DCM / 18 Stromkreise,  H900 x B600 x T450mm
+NLUCW36
+Unterstation inkl. Prozessor für MultiControl für max. 18 DCM / 36 Stromkreise, eingebaut in E30 Schrank H1150 x B760 
+x T575mm
+NLUCW36E30
+Notwendiges Zubehör
+Stromkreiseinschubmodul 19“  2 x 1A/300VA – Absicherung 4xF5A , für zentral einzelschaltbare Notleuchten NL…EL, 
+NL...E
+NLDCM12E
+Stromkreiseinschubmodul 19“ 2 x 3A/650VA – Absicherung 5A Mischbetrieb DS/BS
+NLDCM32
+Stromkreiseinschubmodul 19“ 2 x 4A/860VA – Absicherung 6,3A Mischbetrieb DS/BS
+NLDCM42
+Stromkreiseinschubmodul 19“ 2 x 4A/1300VA – Absicherung 10A Mischbetrieb DS/BS
+NLDCM62
+ 
+Gruppen- und Zentralbatterieanlagen
+w Unterstationen 
+
+
+===== PAGE 334/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+Seite 
+334
+NLMCUV...
+NLTSCUV
+NLTSM32
+w Schrack-Info
+Der MCUV-E stellt die neuste Serie von Unterverteilern für Geräte vom Typ MaxiControl oder MultiControl dar. Er bietet die Möglichkeit 
+einzelne Stromkreismodule (Tragschienenmodul TSM32) der MaxiControl oder MultiControl in einem eigenen Gehäuse auszulagern. Dies 
+bietet bei großen Objekten die Möglichkeit Kabelwege und damit Installationsmaterial einzusparen.
+Die Energieversorgung erfolgt in Einleitertechnik durch eine AC/DC-Umschaltung im Maxi-/ MultiControl Hauptgerät. Das bedeutet, dass der 
+MCUV-E mit AC-Spannung versorgt wird, solange das Hauptgerät selbst im Netzbetrieb arbeitet. Bei Netzausfall oder Testbetrieb erfolgt die 
+Versorgung des MCUV-E mit DC-Spannung. Damit ist im Gegensatz zu herkömmlichen Systemen mit zwei Versorgungsleitungen (AC-Leitung 
+und DC-Leitung) nur eine Versorgungsleitung (AC/DC-Leitung) nötig, womit sich eine weitere Einsparung von Installationsmaterial erzielen 
+lässt. Jeder Unterverteiler verfügt über 4 separate CCIF, womit sich 4 Ruhestromschleifen an jedem MCUV-E einzeln überwachen lassen.
+Als weitere Option steht eine zusätzliche Einspeisung zur Energieversorgung aus einem lokalen Allgemeinlichtverteiler zur Verfügung. Damit 
+kann eine mieterbezogene Energieversorgung der an dem MCUV-E angeschlossenen Leuchten realisiert werden. Im betriebsbereiten Zustand 
+des Systems erfolgt die Versorgung der Leuchten durch die Einspeisung des lokalen Allgemeinlichtverteilers. Erst bei Ausfall der Spannung aus 
+dem Allgemeinlichtverteiler bzw. vorrangigem Not- oder Testbetrieb durch das Hauptgerät werden die Leuchten über die Einleiterversorgung 
+aus dem Hauptgerät versorgt.
+Der integrierte Tragschienen Controller – TSC-UV – ist das Kontroll- und Schaltmodul des Unterverteilers MCUV-E. Er überwacht bis zu 4 
+Ruhestromschleifen sowie die optionale Energieversorgung aus dem Allgemeinlichtverteiler und schaltet die im MCUV-E verbauten TSM32 in 
+die entsprechenden Betriebszustände.
+Das TragschienenStromkreisModul – TSM32 ist ein Stromkreismodul für Sicherheitsbeleuchtungsanlagen der Maxi- /MultiControl. Die 
+Energieversorgung der Stromkreise des TSM32 erfolgt über eine im Hauptgerät verbaute AC/DC-Umschaltung. Jedes Stromkreismodul 
+versorgt und überwacht zwei Stromkreise mit jeweils maximal 20 Sicherheits- und/oder Rettungszeichenleuchten.
+Gruppen- und Zentralbatterieanlagen
+w Unterverteiler - Einleitertechnik MCUV-E für Maxi- und MultiControl 
+
+
+===== PAGE 335/400 =====
+Seite 
+335
+Das Stromkreismodul ist in der Lage eine Einzelleuchtenabfrage, sowie eine selbstkalibrierende Stromüberwachung zu realisieren. Der 
+Mischbetrieb von Sicherheits- und Rettungszeichenleuchten in einem Stromkreis in den Schaltungsarten Bereitschaftslicht, Dauerlicht und 
+geschaltetes Dauerlicht ohne die Installation einer separaten Datenleitung ist möglich.
+Beide Stromkreise des TSM32 können mit Schaltkommandos über ein SchalterAbfrageModul (SAM) geschaltet werden. Hier sind folgende 
+Schaltungsarten vorgesehen: Dauerlicht (DS), modifi zierte Bereitschaft (MB) und geschaltete modifi zierte Bereitschaft (gMB).
+Die Anbindung der Stromkreismodule an die Zentralbatterieanlage erfolgt über den RS485 BUS. Sämtliche Programmierungen werden am 
+Zentralrechner für jeden Stromkreis separat vorgenommen. An der Front des Stromkreismoduls ist jeder Stromkreis mit 5 AT abgesichert.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Beispiel für den Betrieb mit lokaler Einspeisung
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Beispiel für den Betrieb ohne lokaler Einspeisung
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Stromversorgung AC / DC
+w Unterverteiler-Betrieb mit bzw. ohne lokaler Einspeisung
+ 
+w Technische Daten NLAKE3016
+Abmessungen:
+314 x 314 x 168mm
+Absicherung:
+2 x Neozed D 02 / 25A
+Klemmenquerschnitte:
+Max. 16 mm²
+Max. Anschlussleistung (AC/DC): 4300VA / 4000W
+w E30-Kabelabzweigkasten NLAKE3016
+ 
+Gruppen- und Zentralbatterieanlagen
+w Unterverteiler - Einleitertechnik MCUV-E für Maxi- und MultiControl 
+
+
+===== PAGE 336/400 =====
+Seite 
+336
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+w Installation mit Funktionserhalt E30: Kabelabzweigkasten NLAKE3016
+ 
+* Kabel ohne Funktionserhalt NYM
+ 
+Gruppen- und Zentralbatterieanlagen
+w Unterverteiler - Einleitertechnik MCUV-E für Maxi- und MultiControl 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Unterstationen
+Unterverteiler, TSC-UV, 1xTSM32, SAM, IP20, 3Reihen, 515x305x99mm (HxBxT)
+NLMCUV02S
+Unterverteiler, TSC-UV, 2xTSM32, SAM, IP20, 3Reihen, 515x305x99mm (HxBxT)
+NLMCUV04S
+Unterverteiler, TSC-UV, 3xTSM32, SAM, IP20, 4Reihen, 640x305x99mm (HxBxT)
+NLMCUV06S
+Unterverteiler, TSC-UV, 4xTSM32, SAM, IP20, 4Reihen, 640x305x99mm (HxBxT)
+NLMCUV08S
+Unterverteiler, TSC-UV, 5xTSM32, SAM, IP20, 5Reihen, 800x300x165mm (HxBxT)
+NLMCUV10S
+Unterverteiler, TSC-UV, 6xTSM32, SAM, IP20, 5Reihen, 800x300x165mm (HxBxT)
+NLMCUV12S
+Zubehör
+Controler für NLMCUVXX  inklusive 4 x CCIF, Schützansteuerung und Überwachung
+NLTSCUV
+Stromkreisbaugruppe 2 Kreise 3A (T5A), mit kombinierter Schaltungsart DS/BS/gDS
+NLTSM32
+E30 Kabelabzweigkasten mit 16mm² Durchgangsklemmen, max. 4kW, 314x314x168mm (HxBxT)
+NLAKE30-16
+
+
+===== PAGE 337/400 =====
+Seite 
+337
+MDC
+Zentralbatterieanlagen (CPS)
+
+
+===== PAGE 338/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+Seite 
+338
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLBZV2200
+w Schrack-Info
+Die MDC ist eine Ableitung aus der MultiControl - Serie und besitzt die Eigenschaften eines zentralen Stromversorgungssystems ohne 
+Leistungsbegrenzung (CBS) nach EN 50171 bzw. DIN VDE 0100–718 und EN 50172. Der elektronische Aufbau beruht auf den 
+Komponenten der MultiControl, wie dem Notlichtsteuerrechner Typ NLSR mit integriertem Web-Interface inklusive Visualisierungssoftware 
+und 5-Jahresspeicher für Testergebnisse und Betriebsparameter, den Ladeeinheiten Typ LDM25, mindestens einem Relaisinterface- 
+Modul Typ IO sowie den RS-Modulen zum Schalten der angeschlossenen Schützgruppen, welche wahlweise in Dauerlicht- (DS) bzw. 
+Bereitschaftslichtschaltung (BS) programmiert werden können.
+Dabei können jeder Schützgruppe (DS/BS) bis zu 6 Schaltbefehle (ds) bzw. Ruhestromschleifen (mb) über die an den MultiBus RS485 
+angeschlossene Schalterabfragemodule Typ SAM24 sowie Netzwächterbaugruppen Typ MC-LM zugeordnet werden. Weiterhin können 
+Meldetableaus vom Typ MCT angeschlossen werden.
+Über die Schützgruppen können angeschlossene Sicherungsautomaten (Allstrom) oder Sicherungselemente (NEOZED D01/D02) für die 
+Absicherung der Endstromkreise mit Spannung im Netz- und Batteriebetrieb (230 VAC/216 VDC) versorgt werden. Die MDC besitzt eine 
+selbstkalibrierende Gesamtstromüberwachung, die prozentuale Abweichungen (5%; 10%; 20% und 50%) des Batterie - Entladestroms 
+auswertet und signalisiert.
+An einer MDC-Hauptstation können bis zu 32 MDC-Unterstationen mittels Ethernet-Netzwerkverbindung verbunden werden. Mehrere MDC-
+Unterverteiler können mittels RS422-Bus angeschlossen und überwacht werden. Die Konfiguration der Anlage kann ebenfalls über Ethernet 
+erfolgen.
+Die MDC ermöglicht den Anschluss von LED-Leuchten, Leuchtstofflampen und Halogenlampen.
+ 
+w Technische Daten
+Gehäusematerial:
+Stahlblech RAL 7035
+Schutzart:
+IP20 (opt. IP54, E30, E90)
+Schutzklasse:
+I
+Abmessungen (HxBxT):
+Ohne Batterieschrank: 900x600x450mm
+ 
+1800x600x450mm
+ 
+Kombischrank (bis 33Ah): 1500x600x450mm
+Kabeleinführung:
+Von oben bzw. unten bei 900er-Schrank
+Netzanschluss:
+3 x 230V 50Hz
+Batterie:
+Wartungsfreie, verschlossene Bleibatterie OGiV, OGi, OPzS oder wartungsarme NiCd-Batterien
+Ausgangsspannung:
+230V AC / 216V DC
+Zulässige Umgebungstemperatur:
+10°C bis 35°C
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+CPS Anlage BZV 220 -DC 2x10 Kreise 10kW/ ohne Batt. MDC 0
+NLBZV2200
+CPS Anlage BZV 220 -DC 20 Kreise 15kW/1h Batt. 120Ah MDC I
+NLBZV2201
+CPS Anlage BZV 220 -DC 20 Kreise 19kW/1h Batt. 150Ah MDC II
+NLBZV2202
+ 
+Gruppen- und Zentralbatterieanlagen
+w Zentralbatterieanlagen Serie MDC 
+
+
+===== PAGE 339/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+Seite 
+339
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLWKE304
+w Schrack-Info
+Verbindungskasten nach E DIN IEC 60998-2-5, IP 66 Ui=450V, mit echtem Funktionserhalt E 30 nach DIN 4102 Teil 12, zu verwenden 
+als Abzweigkasten mit doppelt abgesichertem Zweig, LxBxH=160x160x110 mm. Mit Spezial-Duroplast-Reihenklemmen auf 
+Normschiene, 3-polig im Durchgang, Klemmvermögen pro Pol 2 mal 0,5 bis 4mm², 3-polig im doppelt abgesichertem Abzweig, 2 x 
+Sicherungsreihenklemme max. 6,3A (5x20mm) Klemmvermögen pro Pol 1 mal 0,5 bis 4mm², mit Dübelset, 3 Stück Kabelverschraubungen 
+M25 (Dichtbereich 6-15 mm).
+ 
+w Maßbild
+M25
+M25
+M25
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+E30 Abzweigdose 3-polig für CPS mit Selektivsicherung 2-polig
+NLWKE304
+ 
+Gruppen- und Zentralbatterieanlagen
+w E30 Abzweigdose doppelt gesichert 
+
+
+===== PAGE 340/400 =====
+Seite 
+340
+Systemkomponenten für Gruppen- und Zentralbatterieanlagen
+Seite 
+345
+Seite 
+345
+Seite 
+346
+Seite 
+346
+Seite 
+347
+Seite 
+347
+W Stromkreisbaugruppe DCM
+W Stromkreisbaugruppe ACM
+W Ladeteilbaugruppe LDM
+W Schalteingangs- und
+Ausgangsmodul IOM01
+W GLT Modbus Gateway
+W Lichtschalterabfragemodul
+	
+SAM08
+W Lichtschalterabfragemodul
+	
+SAM24
+W Fernmeldetableau MCT15
+W Panel PC für CPS
+Seite 
+343
+Seite 
+344
+Seite 
+344
+
+
+===== PAGE 341/400 =====
+Seite 
+341
+Systemkomponenten für Gruppen- und Zentralbatterieanlagen
+Seite 	
+349
+Seite 	
+349
+Seite 	
+348
+Seite 	
+349
+W CCIF-Modul
+W WLAN Modul
+W Switch 5-Port 10/100 Base TX
+	
+für Schaltschrankeinbau
+W Switch 8-Port 10/100 Base TX
+	
+für Schaltschrankeinbau
+Seite 	
+348
+Seite 	
+348
+W Busfähige Dreiphasenüberwachung
+	
+MC-LM
+W Dreiphasen-Netzüberwachung
+	
+PC230
+
+
+===== PAGE 342/400 =====
+Seite 
+342
+Systemkomponenten für  
+Gruppen- und Zentralbatterieanlagen
+
+
+===== PAGE 343/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+343
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLDCM32
+w Schrack-Info
+Das Stromkreismodul DCM ist eine elektronische Baugruppe in servicefreundlicher 19“-Einschubtechnik und dient der Spannungsversorgung 
+von Sicherheits- und Rettungszeichenleuchten in Stromkreisen der Sicherheitsbeleuchtung. Die Stromkreismodule sind mit je zwei 
+Stromkreisen (bis zu 20 Leuchten pro Stromkreis, jeder Stromkreis mit 2 Sicherungen abgesichert) ausgestattet. Geeignet für Gruppen- und 
+Zentralbatterieanlagen Micro-, Mini-, Midi-, Maxi- oder MultiControl.
+Jeder Abgang am DCM Modul kann für stromkreisüberwachte Anlagen als auch für Einzelleuchtenüberwachung programmiert werden. Ein 
+kombinierter Betrieb ist ebenfalls möglich. Jeder Kreis kann als Dauerlicht, Bereitschaftslicht, geschaltetes Dauerlicht oder als Treppenlicht 
+programmiert werden. Bereitschafts- und Rettungszeichenleuchten lassen sich kombiniert betreiben.
+Stromkreismodule des Typs DCM12E verfügen zusätzlich über die Funktion der Einzelleuchtenschaltbarkeit. Damit ist es möglich, ohne 
+zusätzliche Leitung kompatible Leuchten (Artikelnummer endet mit EL oder E) zentral einzeln zu schalten. Kompatible Leuchten können über das 
+Web-Interface auf Dauer- oder Bereitschaftsschaltung programmiert werden. Auch eine Zuordnung von Stromkreisen zu Schaltkontakten an 
+SAM24 ist möglich.
+Abmessungen: 128x35x173 mm (HxBxT)
+ 
+w Technische Daten
+Typ:
+Absicherung:
+max. Belastung pro Modul
+DCM 12E
+4 x F5A
+3A / 2 x 650VA
+DCM 32
+4 x F6,3A
+4A / 2 x 860VA
+DCM 42
+4 x F10A
+6A / 2 x 1300VA
+DCM 62
+4 x F5A
+1A / 2 x 300VA
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Stromkreiseinschubmodul 19“ 2 x 3A/650VA – Absicherung 5A Mischbetrieb DS/BS
+NLDCM32
+Stromkreiseinschubmodul 19“ 2 x 4A/860VA – Absicherung 6,3A Mischbetrieb DS/BS
+NLDCM42
+Stromkreiseinschubmodul 19“ 2 x 4A/1300VA – Absicherung 10A Mischbetrieb DS/BS
+NLDCM62
+Stromkreiseinschubmodul 19“  2 x 1A/300VA – Absicherung 4xF5A , für zentral einzelschaltbare Notleuchten NL…EL, 
+NL...E
+NLDCM12E
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Stromkreisbaugruppe DCM 
+
+
+===== PAGE 344/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+344
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLACM
+w Schrack-Info
+Das Stromkreismodul ACM ist eine elektronische Baugruppe in servicefreundlicher 19“-Einschubtechnik 
+und dient der Spannungsversorgung (Wechselspannung) von Sicherheits- und Rettungszeichenleuchten in 
+Stromkreisen der Sicherheitsbeleuchtung der Serien Micro-, Mini-, Midi-, Maxi- oder MultiControl. Es ist 
+mit einem Stromkreis für eine maximale Ausgangsleistung von 500 VA ausgestattet.
+Das ACM arbeitet im Umschaltbetrieb. Das heißt im Normalbetrieb liegen 230V AC 50/60Hz an, im 
+Notbetrieb wird die Batteriespannung in eine 230V 50Hz Rechteckspannung umgewandelt.
+Des Weiteren ist eine Erdschlussüberwachung implementiert, die durch eine rote LED signalisiert wird. 
+Ein integrierter Überlastschutz gewährleistet die Abschaltung der Endstromkreise sowie eine optische 
+Anzeige bei Anschluss einer zu großen Verbraucherleistung im Batteriebetrieb.
+Abmessungen: 128x35x173 mm (HxBxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Stromkreiseinschub ACM 19" 230VAC 500VA
+NLACM
+ 
+w Ladeteilbaugruppe LDM
+NLLDM25
+w Schrack-Info
+Das Lademodul LDM25 ist eine elektronische Baugruppe in servicefreundlicher 19“-Einschubtechnik und 
+dient der Aufladung von Batteriesätzen in Stromversorgungssystemen Micro-, Mini-, Midi-, Maxi- oder 
+MultiControl nach den geltenden europäischen und nationalen Normen.
+Das Lademodul LDM25 arbeitet im Zusammenhang mit einem, zur galvanischen Trennung notwendigen 
+und der jeweiligen Ausgangsleistung angepassten, Trenntransformator nach IUP(TS) - Kennlinie gemäß 
+EN 50272-2.
+Das LDM25 arbeitet, je nach Systemanforderungen, ausgangsseitig im Strom auf 0,5A; 1,0A oder 2,5A 
+begrenzt. Zur Erhöhung des Ausgangsladestromes werden mehrere Lademodule parallel verschaltet. 
+Des Weiteren können die Ladekennlinien verschiedener Batterien programmiert werden. Hierbei stehen 
+die vorprogrammierten Ladekennlinien für die Batterietypen NICd; OGI/OPzS/ OPzV oder OGIV zur 
+Auswahl. Ein integrierter, redundanter Batteriespannungswächter (BSW) schützt die Batterie nochmals 
+vor Überladung.
+Abmessungen: 128x70x173 mm (HxBxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Ladeteil 2,5A für Micro-, Mini-, Midi-, Maxi- oder MultiControl
+NLLDM25
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Stromkreisbaugruppe ACM 
+
+
+===== PAGE 345/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+345
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLIOM01
+w Schrack-Info
+Das Schalteingangs- und Ausgangsmodul IO verfügt über 7 Relaisausgänge mit potentialfreien 
+Wechselkontakten (max. 6A /250V AC1, 6A/30V DC),  welche der Signalisierung diverser 
+Gerätezustände, wie z.B. Batteriebetrieb, Störung und Tiefentladung, dienen. Desweiteren sind 4 
+galvanisch getrennte Schalteingänge vorhanden (185-255V  50/60Hz AC, 18-250VDC), um 
+Steuersignale und Sensorsignale, wie externen Betriebsartenwahlschalter oder Luftstromwächter 
+einzubinden. Es ist zu beachten, dass diese Eingänge mit einer externen Spannung betrieben werden 
+müssen.
+Im Bedarfsfall können bis zu 5 IO-Module in eine Zentralbatterieanlage integriert werden, um 
+weitere Zustände, beispielsweise zu einer Gebäudeleittechnik oder einem umfangreichen Melde- / 
+Steuertableau, zu übermitteln. Das IO-Modul ist für den Einsatz in Sicherheitslichtgeräten der Serien 
+Micro-, Mini-, Midi-, Maxi- oder MultiControl vorgesehen.  Gehäuse zur Montage auf DIN-Tragschiene 
+TS35.
+Abmessungen: 105x85x65 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Schalteingangs- und Ausgangsmodul IO
+NLIOM01
+ 
+w GLT Modbus Gateway
+NLMCMODBUS
+w Schrack-Info
+Zur Anbindung an ein Gebäudeleitsystem unterstützt das GLT Gateway die Protokolle Modbus oder 
+BACnet.
+Der Zugriff der GLT auf die Anlagendaten der Micro-, Mini-, Midi-, Maxi oder Multi-Control erfolgt über 
+Modbus/TCP oder OPC (KNX auf Anfrage).
+Alle typischen BACnet-Merkmale, wie etwa das BBC-Profil für standardisierte BACnet- Building-
+Controller, werden unterstützt. Je nach gewünschter Tiefe können die Informationen aus der LPS/CPS 
+hinab bis auf Leuchtenebene programmiert werden. Ausgelesen werden z.B. Leuchtenfehler für jede 
+Leuchte, Stromkreisfehler für jeden Stromkreis (Isolation, Sicherung, Stromüberwachung), Zustand der 
+Anlage (BAS, Sammelstörung, usw.), Fehlermeldungen der Station (Fehlerspeicher), Messwerte (Netz, 
+Batterie, usw.).
+Bei Vernetzung mehrerer Anlagen ist es ebenfalls möglich, nur das Master System mit einem 
+vollständigem GLT Gateway auszustatten und parallel die Unterstationen mit eingeschränkter 
+Informationstiefe abzufragen.
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+GLT Modbus Gateway inkl. Software für die MC-Zentrale
+NLMCMODBUS
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Schalteingangs- und Ausgangsmodul IOM01 
+
+
+===== PAGE 346/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+346
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLSAM08
+w Schrack-Info
+Das Lichtschalter-Abfragemodul SAM08 kann wahlweise zum gemeinsamen Schalten von 
+Sicherheitsleuchten mit der Allgemeinbeleuchtung, oder als Treppenhauslichtsteuerung, zum Schalten 
+von Sicherheitsleuchten während des Batteriebetriebs verwendet werden. Geeignet für Gruppen- und 
+Zentralbatterieanlagen Micro-, Mini-, Midi-, Maxi- oder MultiControl. Das Modul besitzt 8 galvanisch 
+getrennte Eingänge, an die Lichtschalter oder Stromkreise der Allgemeinbeleuchtung angeschlossen 
+werden können und die durch eine Spannung von 230V geschaltet werden.
+Bei Verwendung der Treppenhauslichtsteuerung können an zwei der Eingänge bis zu 12 beleuchtete 
+Taster angeschlossen werden, über die Notbeleuchtung in Treppenhäusern zeitlich begrenzt aktiviert 
+wird. Um die Treppenhausschaltung zu  verwenden, muss das SAM08 vom Stromkreiseinschubmodul 
+ACM versorgt werden. Gehäuse zur Montage auf DIN-Tragschiene TS35.
+Abmessungen: 105x85x65 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Lichtschalterabfragemodul 8 Eingänge, lose
+NLSAM08
+ 
+w Lichtschalterabfragemodul SAM 24
+NLSAM24
+w Schrack-Info
+Das SAM24 dient der Abfrage von Lichtschaltern der Allgemeinbeleuchtung und dem damit 
+verbundenen gemeinsamen Schalten von Sicherheitsleuchten mit der Allgemeinbeleuchtung im 
+Netzbetrieb. Das Gerät besitzt hierfür 8 Schalteingänge, welche wahlweise mit 185-255V AC und/
+oder 24-255V DC beschaltet werden können. Es können sowohl Schließer als auch Öffnerkontakte als 
+Schalter verwendet werden. Geeignet für Gruppen- und Zentralbatterieanlagen Micro-, Mini-, Midi-, 
+Maxi- oder MultiControl. Zudem besitzt das SAM24 einen integrierten, aktivierbaren Dreiphasenwächter 
+zur Überwachung der Versorgungsspannung der Allgemeinbeleuchtung.
+Das Gerät hat zwei RS 485 Bus-Anschlüsse für eine Durchgangs- und/oder sternförmige Verdrahtung 
+weiterer SAM oder MC-LM Module. Die Adressierung erfolgt über einen Drehcodierschalter. Die 
+farbigen LEDs zeigen  Störung, Schaltzustand der Eingänge aktiv und Betrieb an. Gehäuse zur Montage 
+auf DIN-Tragschiene TS35.
+Abmessungen: 105x85x65 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Lichtschalterabfragemodul 8 Eingänge inkl. Netzwächter, lose
+NLSAM24
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Lichtschalterabfragemodul SAM08 
+
+
+===== PAGE 347/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+347
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLMCT15S
+w Schrack-Info
+Das MCT15 ist eine Fernanzeige, welche auch bei Netzausfall die Anzeigen der wichtigsten 
+Anlagenfunktionen sicherstellt. Dieses Fernmeldetableau ist wahlweise mit einem Taster oder 
+Schlüsselschalter (MCT15S) als Betriebsartenwahlschalter erhältlich.
+Mit Hilfe dieses Tasters/Schlüsselschalters ist die Blockierung des Notlichtbetriebes während 
+Betriebsruhezeiten möglich. Durch den Schlüsselschalter wird zusätzlich ein unbefugtes Bedienen 
+des Fernmeldetableaus verhindert. Die Blockierung des Notbetriebes beeinflusst nicht die 
+Batterieerhaltungsladung im Netzbetrieb.
+Das dreizeilige Display mit 16 Zeichen pro Zeile gibt im Klartext Auskunft über folgende Statusinformation 
+des Sicherheitslichtsystems: Batteriespannung, Netzspannung, Batterie- und Umgebungstemperatur und 
+Systemfehler.
+Eine integrierte Busleitungsüberwachung führt bei Kurzschluss- oder Drahtbrucherkennung zur 
+Betriebsbereitschaft und dem sofortigen Einschalten aller Stromkreise des Systems.
+Über drei weitere LED-Anzeigen kann ausgegeben werden, ob die Anlage betriebsbereit ist, sich im 
+Netz- oder Batteriebetrieb befindet oder ob ein Systemfehler vorliegt. Im Fehlerfall ertönt ein akustisches 
+Signal.
+Abmessungen: 116x116x24 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Fernmeldetableau MCT15
+Meldetableau mit LCD Klartextanzeige und Busanbindung
+NLMCT15
+Meldetableau mit LCD Klartextanzeige, Busanbindung und Schlüsselschalter
+NLMCT15S
+ 
+w Panel PC für CPS
+NLPANPC1
+w Schrack-Info
+Die Zentralbatterieanlage MultiControl kann optional mit einem PanelPC ausgerüstet werden. Dadurch 
+kann das komfortable Webinterface direkt an der Anlage bedient werden.
+Der PanelPC ist in 12“ oder 15“ erhältlich. Die 12“-Version belegt im Gehäuse der MultiControl zwei 
+Höheneinheiten, die 15“ Version drei Höheneinheiten. Dadurch reduziert sich die Gesamtzahl der im 
+gleichen Gehäuse installierbaren Stromkreismodule. Die Möglichkeit zum Anschluss von Unterverteilern 
+und Unterstationen bleibt unverändert vorhanden.
+Der PanelPC verfügt über ein 12 bzw. 15“ Multitouch Display und wird mit Microsoft® Windows 8/10 
+betrieben. Auf dem Rechner können ebenfalls Gebäudeplane zur Visualisierung im Webinterface 
+abgelegt werden. Der Vorteil hierbei ist die wesentlich höhere Speicherkapazität im Vergleich zum 
+internen Speicher der MultiControl und der schnellere Zugriff zum Webinterface.
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Aufzahlung Panel / Tablet PC mit Touchscreen zum Fronteinbau
+NLPANPC1
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Fernmeldetableau MCT15 
+
+
+===== PAGE 348/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+348
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLMCLM
+w Schrack-Info
+Der MC-LM (Multi-Control - Line Monitor) dient vorrangig zur Überwachung von AV-Netzen 
+(Spannungsversorgung der Allgemeinbeleuchtung).
+Die MC-Linemonitore sind Netzwächter zum Anschluss an das Multicontrol-
+Sicherheitsbeleuchtungssystem. Mit dem MC-LM können drei Phasen, z.B. einer Netz-
+Allgemeinverteilung, überwacht werden. Sollen weniger als 3 Phasen überwacht werden, so sind 
+nicht benutzte Phaseneingänge mit belegten Anschlüssen am MC-LM zu brücken. Die Schaltschwelle 
+für die Erkennung eines Netzausfalles bzw. einer starken Netzschwankung liegt bei 85% der Netz-
+Nennspannung (230V AC), also bei ca. 195V AC.
+Das MC-LM wird über eine überwachte BUS-Leitung mit der Anlage verbunden. Dadurch kann auf die 
+Verlegung von feuerbeständigen E30-Leitungen verzichtet werden. 
+Es können insgesamt bis zu 16 MC-LM pro SIBE Gerät angeschlossen werden. Gehäuse zur Montage 
+auf DIN-Tragschiene TS35.
+Abmessungen: 54x96x54 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Dreiphasen Netzüberwachung mit Busanbindung
+NLMCLM
+ 
+w Dreiphasennetzüberwachung PC230
+NLPC2300
+w Schrack-Info
+Die Dreiphasennetzüberwachung PC230 dient zur Überwachung von AV-Netzen 
+(Spannungsversorgung der Allgemeinbeleuchtung). Es werden 3 Phasen, die eine Wechselspannung von 
+230V gegen den Nulleiter führen, überwacht. Werden weniger Phasen überwacht, so sind nicht benutzte 
+Überwachungsanschlüsse mit belegten Anschlüssen zu überbrücken.
+Die Schaltschwelle für die Erkennung eines Netzausfalles bzw. einer starken Netzschwankung liegt 
+bei 85% der Netz-Nennspannung (230V AC), also bei ca. 195V AC. Zur Auswertung dienen zwei 
+Wechslerkontakte mit einer maximalen Schaltleistung von 2A bei 30V DC oder 230V AC . Die 
+Rückschaltung erfolgt selbsttätig. Gehäuse zur Montage auf DIN-Tragschiene TS35.
+Abmessungen: 54x96x54 mm (BxHxT).
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Dreiphasennetzüberwachung PC230
+NLPC2300
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+w Busfähige Dreiphasenüberwachung MC-LM 
+NLCCIF
+w Schrack-Info
+Das CCIF-Modul (Kritisches Stromkreis Überwachungs Modul) ist für den Einsatz in Geräten vom Typ 
+Midi- bzw. MultiControl konzipiert. Das Modul gewährleistet die Überwachung einer Ruhestromschleife 
+(Netzwächterschleife) in Verbindung mit Dreiphasennetzüberwachung (PC230). Die eingesetzten 
+Netzwächter müssen mit einem potentialfreien Kontakt (Kontakt muss bei angelegter zu überwachender 
+Spannung geschlossen sein) ausgestattet sein. Die Auslösung des modifizierten Bereitschaftsbetriebes 
+(Mod. BS) erfolgt bei Unterbrechung der Leitungen der Ruhestromschleife bzw. Verklumpung (Kurzschluss). 
+Durch den modularen Aufbau ist ein Nachrüsten des CCIF-Moduls in viele vorhandene Systeme von oben 
+genannten Sicherheitsbeleuchtungsanlagen möglich. Eine aufwändige brandbeständige Ausführung der 
+Ruhestromschleife ist aufgrund der Überwachung durch das CCIF nicht erforderlich.
+ 
+AUF ANFRAGE
+w CCIF-Modul (Kritisches Stromkreis Überwachungs Modul) 
+
+
+===== PAGE 349/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+349
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+w WLAN Modul
+NLWLAN
+w Schrack-Info
+Mit dem WLAN Modul ausgestattet bietet die Gruppen- oder Zentralbatterieanlage einen
+WLAN-Hotspot. Es ermöglicht Ihnen somit eine einfache Verbindung zu Ihrer Zentralbatterieanlage
+ohne zusätzliche Leitungsverlegung.
+Ideal für den hausinternen Fernzugriff zur Visualisierung oder Wartung. Mit einfachen Schritten können 
+Sie sich per Smartphone, Tablet oder PC auf die Weboberfläche (Webserver) der Anlage einwählen.
+Abmessungen: 57x57x18 mm (BxHxT)
+Eigenschaften
+•	 WLAN -Geschwindigkeit bis zu 150 Mbits/s
+•	 Gemeinsame Nutzung einer 3G-Verbindung, kompatibel zu über 120 UMTS/HSPA/EVDO-3G-
+USB-Modems
+•	 Betriebsarten: 3G/4G-Router, Travel-Router (Acesspoint) WISP-Client
+ 
+ 
+Systemkomponenten  für Gruppen- und Zentralbatterieanlagen
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Aufzahlung für WLAN Modul eingebaut in Micro-, Mini-, Midi-, Maxi- oder MultiControl
+NLMIWLAN
+NLWES852
+w Schrack-Info
+Der Industrial Ethernet Switch ist ein industrieller Switch mit fünf 10/100 Base-TXPorts, Auto-Negotiation 
+und Auto-MDI/ MDI-X-Erkennung an allen Ports zur Vernetzung von Stromversorgungsanlagen und zur 
+Anbindung an die Gebäudeleittechnik.
+Durch die Spannungsversorgung von der Zentralbatterieanlage ist eine Kommunikation zwischen den 
+Anlagen, einer zentralen Stelle oder Fernwartung auch bei Netzausfall möglich. Gehäuse zur Montage 
+auf DIN-Tragschiene TS35.
+Abmessungen: 24x74x109 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Switch 852 - 111 - 5-Port 10/100BASE-TX für Montage auf DIN Schiene
+NLWES852
+ w Switch 8-Port 10/100 Base TX für Schaltschrankeinbau
+NLWES882
+w Schrack-Info
+Der Industrial Ethernet Switch ist ein industrieller Switch mit acht 10/100 Base-TXPorts, Auto-Negotiation 
+und Auto-MDI/ MDI-X-Erkennung an allen Ports zur Vernetzung von Stromversorgungsanlagen und zur 
+Anbindung an die Gebäudeleittechnik.
+Durch die Versorgung durch die Zentralbatterieanlage ist eine Kommunikation zwischen den Anlagen, 
+einer zentralen Stelle oder Fernwartung auch bei Netzausfall möglich.
+Abmessungen: 109x32x74 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Switch 882 - 112 - 8-Port 10/100BASE-TX für Montage auf DIN Schiene
+NLWES882
+ 
+w Switch 5-Port 10/100 Base TX für Schaltschrankeinbau 
+
+
+===== PAGE 350/400 =====
+Seite 
+350
+Seite 
+350
+Leuchtenmodule, Netzteile und EVGs
+Seite 
+353
+Seite 
+354
+Seite 
+353
+Seite 
+355
+Seite 
+354
+Seite 
+355
+W Schaltnetzteil für LED-Leuchten
+	
+W Schaltnetzteil für LED-Leuchten
+mit Überwachung RLED100
+W Schaltnetzteil für LED Leuchten
+bis 5W - NT24
+W Leuchtenüberwachung
+	
+DCBLU05
+W Mischbetriebs-Leuchtenmanager
+Baustein MU05
+W Elektronikbox
+Baustein MU05
+
+
+===== PAGE 351/400 =====
+Seite 
+351
+Leuchtenmodule, Netzteile und EVGs
+Seite 	
+357
+Seite 	
+358
+Seite 	
+357
+Seite 	
+359
+Seite 	
+356
+Seite 	
+356
+W Leuchtenüberwachung
+	
+DCBLU05
+W Mischbetriebs-Leuchtenmanager
+	
+Baustein MU05
+W Elektronikbox
+	
+Baustein MU05
+W Mischbetriebs-Leuchtenmanager
+	
+Baustein MT400
+W Prozessorgesteuerter Notlichteinsatz
+	
+für LED-Leuchten - LPU
+W Umschaltweiche
+	
+UW220 / UW500
+
+
+===== PAGE 352/400 =====
+Seite 
+352
+Leuchtenmodule, Netzteile und EVGs
+
+
+===== PAGE 353/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+353
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLMLED500E
+w Schrack-Info
+Das MLED500 ist ein elektronisches Schaltnetzteil zum Betrieb von LED-Leuchtmitteln bis
+8W mit integrierter Einzelleuchtenüberwachung, Leuchtencontroller, Netzüberwachung,
+Dimm- sowie Blinkfunktion. Der Netzwächter erlaubt den Betrieb angeschlossener Leuchten
+in Bereitschaftsschaltung an einem Dauerlichtstromkreis: Im Falle einer Störung der Allgemeinbeleuchtung
+werden sie automatisch aktiv.
+Das MLED500 ist geeignet für den Einsatz an Sicherheitsbeleuchtungsanlagen vom Typ: My-, Micro-,
+Mini-, Midi-, Maxi- und MultiControl sowie Altanlagen BK, BX, ZX und ZDCL (mit Stromkreiseinschub
+SKMT).
+Eigenschaften:
+•	 Einstellung verschiedener Ausgangsspannungen (4,3V, 12V, 24V)
+•	 Einstellung verschiedener Ausgangsströme (150mA, 300mA, 400mA)
+•	 Integrierte Einzelleuchtenüberwachung
+•	 Zentral einzeln schaltbar ohne zusätzliche Leitung bei Verwendung von Stromkreiseinschüben 
+NLDCM12E (gilt für My- bis MultiControl)
+•	 Integrierte Netzüberwachung
+•	 Integrierte Blinkfunktion (Notbetrieb)
+•	 Anschlussklemmen Eingang: 0,5 - 2,5mm2starr
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Netzteil mit Überwachungsfunktion für LED-Notleuchten, mit Stromkreiseinschub NLDCM12E zentral einzelschaltbar
+NLMLED500E
+ w Schaltnetzteil für LED-Leuchten mit Überwachung RLED100
+NLRLED100
+w Schrack-Info
+Elektronisches Schaltnetzteil mit integrierter Einzelleuchtenüberwachung. Geeignet für den Einsatz an
+Stromversorgungssystemen vom Typ: My-, Micro-, Mini-, Midi-, Maxi- und MultiControl.
+Abmessungen: 55x51x32 mm (BxHxT)
+Eigenschaften
+•	 Nennspannung: 230V AC 50Hz ± 20%; 230V DC ± 20%
+•	 Ausgangsspannung / -strom: 12V DC / 300mA (begrenzt)
+•	 Dauer-, Bereitschaftsschaltung
+•	 Zentral einzeln schaltbar ohne zusätzliche Leitung bei Verwendung von Stromkreiseinschüben 
+NLDCM12E (gilt für My- bis MultiControl)
+•	 Einzelleuchtenüberwachung an Schrack Gruppen- und Zentralbatterieanlagen nach EN50171
+•	 Versorgungsspannung und Eingänge verpolungstolerant
+•	 Anschlussklemmen: 0,5 - 2,5mm2starr
+ 
+Leuchtenmodule, Netzteile und EVGs
+w Schaltnetzteil für LED-Leuchten mit Überwachung MLED500 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Netzteil mit Überwachungsfunktion für LED-Notleuchten
+NLRLED100
+ 
+
+
+===== PAGE 354/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+354
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLNT24
+w Schrack-Info
+Schaltnetzteil für LED-Leuchten bis 5W.
+Abmessungen: 78 x 30 x 20 mm (LxBxH)
+Eigenschaften:
+•	 Nennspannung: 230V AC 50Hz ± 20%; 230V DC ± 20%
+•	 Einstellung verschiedener Ausgangsspannungen (3,3V/5V/12V/24V)
+•	 Einstellung verschiedener Ströme (150mA, 300mA)
+•	 Anschlussquerschnitt: max 1,5mm2starr
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Schaltnetzteil LED Leuchten bis 5W (3,3/5/12/24V, 150/200mA)
+NLNT24
+ 
+w Leuchtenüberwachung DCBLU05
+NLDCBLU05
+w Schrack-Info
+Der Leuchtenüberwachungsbaustein DCBLU05 ist für den Einsatz an den Notlichtanlagen vom
+Typ: MicroControl, MiniControl, MidiControl, MaxiControl und Multi-Control vorgesehen. Er ermöglicht
+eine Einzelleuchtenabfrage an Notbeleuchtungsanlagen (gefertigt nach EN50171, DIN VDE 0108 bzw. 
+ÖVE E8002 und OVE E 8101) der oben aufgeführten Typen. Der DCBLU05 ist in der Lage,
+gleichspannungstaugliche Vorschaltgeräte bzw. Leuchtmittel mit Leistungen von 3 – 200VA zu
+überwachen.
+Abmessungen: 70 x 30 x 20 mm (LxBxH)
+Eigenschaften:
+•	 Nennspannung: 230V AC 50Hz ± 20%; 230V DC ± 20%
+•	 Verbraucherleistungen 3 bis 200 VA
+•	 Anschlussklemmen: max. 1,5mm² starr
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Einzelleuchtenüberwachungsbaustein für Zentralbatterieanlagen
+NLDCBLU05
+ 
+Leuchtenmodule, Netzteile und EVGs
+w Schaltnetzteil für LED Leuchten bis 5W - NT24 
+
+
+===== PAGE 355/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+355
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLMU05
+w Schrack-Info
+Der MU05 ist ein adressierbarer Controller zum Einbau in einer Sicherheitsleuchte. Mit diesem Controller
+sind alle Schaltarten möglich und er kann ohne zusätzliche Leitung eine Einzelleuchtenüberwachung
+durchführen.
+Der integrierte Netzwächter erlaubt den Betrieb angeschlossener Leuchten in Bereitschaftsschaltung an
+einem Dauerlichtstromkreis: im Falle einer Störung der Allgemeinbeleuchtung werden sie automatisch
+aktiv. Der Controller MU05 ist für den Einsatz an den Anlagen vom Typ MicroControl, MiniControl,
+MidiControl, MaxiControl und MultiControl vorgesehen.
+Abmessungen: 142 x 29 x 22 mm (LxBxH)
+Eigenschaften:
+•	 Kompaktes Gehäuse
+•	 Nennspannung: 230V AC 50Hz ± 20%; 230V DC ± 20%
+•	 Verbraucherleistungen 4 bis 200 VA
+•	 2,5mm² Anschlussklemmen mit Durchgangsverdrahtung
+•	 lokaler Netzwächter und Schalteingang
+•	 Dauer- und Bereitschaftsbetrieb einstellbar
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Leuchtenmanager für Überwachung und Mischbetrieb 4-200VA
+NLMU05
+ 
+w Elektronikbox Baustein MU05
+NLMU05BOX
+w Schrack-Info
+Die MU05-Box ist ein Kunststoffgehäuse mit eingebautem Leuchtenüberwachungsbausteins MU05. Das 
+Gehäuse ist in der Schutzart IP65 ausgeführt und enthält neben dem Leuchtenbaustein auch die nötigen 
+Anschlussklemmen. Somit wird ein Einsatz des Leuchtenüberwachungsbausteins MU05 auch in feuchten 
+Einbausituationen oder abgesetzt von der zu überwachenden Leuchte möglich.
+Abmessungen: 176x125x82mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Box IP65 mit Montageplatte und MU05 für Leuchten 4 bis 200VA; 176x125x82mm (LxHxT)
+NLMU05BOX
+ 
+Leuchtenmodule, Netzteile und EVGs
+w Mischbetriebs-Leuchtenmanager Baustein MU05 
+
+
+===== PAGE 356/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+356
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLMT400
+w Schrack-Info
+MT400 ist ein elektronisches Vorschaltgerät für Leuchtstoffröhren mit integrierter 
+Einzelleuchtenüberwachung. Mit einem Leistungsbereich von 4-14W können als Leuchtmittel die 
+Bauformen 4, 6, 8, 14 Watt LL und Kompaktleuchtstofflampen 5, 7, 9, 11 und 13 Watt CFL eingesetzt 
+werden. Die Anpassung an die Leuchtstoffröhre erfolgt automatisch. Durch die Softstart-Eigenschaft 
+des EVG’s wird eine optimale Versorgung und hohe Lebensdauer des Leuchtmittels gewährleistet. 
+Das MT400 besitzt zudem integriert die Leuchtencontrollerfunktionen des MU05, Netzwächter und 
+Schalteingang, womit alle Schaltarten möglich sind. Das MT400 ist geeignet für den Einsatz an 
+Notlichtanlagen vom Typ: microControl, miniControl, MidiControl und MultiControl.
+Abmessungen: 143x38x27 mm (LxBxH)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+EVG Einzelleuchtenüberw. MB 4-14W für ZDCL mit SKB - für Service
+NLMT400V
+EVG mit Einzelleuchtenüberwachung, Mischbetrieb und Einphasennetzüberwachung 4-14W
+NLMT400
+ 
+w Prozessorgesteuerter Notlichteinsatz für LED-Leuchten - LPU
+NLLPUV5
+w Schrack-Info
+Prozessorgesteuerter Notlichteinsatz für LED-Leuchten geeignet für 1W-5W ERT, 5-11-fach Low Power
+Streifen und 12V LED Module nach EN 60598-2-22, DIN VDE 0108, ÖVE E8002.
+Abmessungen: 142x29x22 mm (LxBxH)
+•	 Schaltungsarten: DS, BS, geschaltetes DS
+•	 Integrierte Dimmfunktion
+•	 Einstellbare Notbetriebszeit 1h, 3h, 8h; Blinkbetrieb
+•	 Integrierte Notlichtblockierung (F+f)
+•	 Integrierte Batterieladeeinrichtung mit Ladekontroll-LED
+•	 Integrierte Fernausschaltvorrichtung für Notbetrieb (Notlichtblockierung)
+•	 Funktionstest über externen Prüftaster
+•	 Integrierte SELF-Control Überwachung (SC)
+•	 Anschluss für einen 4,8V bzw. 9,6V NiMh Akku
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Prozessorgesteuerter Notlichteinsatz für LED-Leuchten, geeignet für 1W-5W ERT-LED, 5-11 fach Low Power LED-Streifen 
+und 12V LED Module
+NLLPUV5
+ 
+Leuchtenmodule, Netzteile und EVGs
+w Mischbetriebs-Leuchtenmanager Baustein MT400 
+
+
+===== PAGE 357/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+357
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+NLUW2200
+w Schrack-Info
+Umschaltweiche UW220 bzw. UW500 zum Betrieb von WR-Geräten (EVG mit 1 Einspeisung 
+AC/DC) an Zentralbatterieanlagen über 2 Zuleitungen. Max. Umschaltleistung 250 bzw. 500VA. 
+Wechselspannung kann über den Lichtschalter der Raumbeleuchtung sowie die AC/DC-Spannung über 
+die Zentralbatterieanlage geschaltet werden. Zeitverzögerter Noteingang mit vorheriger Abschaltung 
+des Netzeinganges. UW500: Montage auf DIN-Tragschiene TS35.
+Abmessungen UW220: 100x44x32mm (BxHxT)
+Abmessungen UW500: 54x90x59mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Umschaltweiche 250VA
+NLUW2200
+Umschaltweiche 500VA
+NLUW5000
+ 
+w Umschaltweiche BEPUE1
+NLBEPUE1
+w Schrack-Info
+Das BEPUE1 ist eine Umschaltweiche mit integrierter Einphasen-Netzüberwachung. Dabei können 
+die Sicherheitsleuchten bei Netzbetrieb zusammen mit den Leuchten der Allgemeinbeleuchtung 
+über gemeinsame Lichtschalter geschaltet werden. Bei Ausfall der Allgemeinbeleuchtung oder 
+Unterschreitung der Netzspannung unter 85% schaltet das Gerät selbsttätig auf den Dauerlichtkreis der 
+Sicherheitsbeleuchtung um. Montage auf DIN-Tragschiene TS35.
+Abmessungen: 55x97x58 mm (BxHxT)
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Umschaltweiche BEPUE1
+NLBEPUE1
+ 
+Leuchtenmodule, Netzteile und EVGs
+w Umschaltweiche UW220 / UW500 
+
+
+===== PAGE 358/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+358
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store!     
+NLUHBOX
+w Schrack-Info
+Das Einbaugehäuse NLUHBOX ist ein Universal - Kunststoffgehäuse zur Aufnahme der Leuchtenbausteine 
+LPU, MLED500, MU05 sowie NT24. NLUHBOX lasst sich durch einen Standard- Deckenausschnitt mit 
+74mm bequem in einer Hohlraumdecke installieren. Die minimal benötigte Installationstiefe beträgt dabei 
+nur 100mm, da der hintere Teil des Gehäuses bis zu einem Winkel von 45° abgeknickt werden kann. In 
+NLUHBOX lässt sich eine Netzklemme zum Anschluss mit 2,5mm2 Leitungen installieren. Zugentlastungen 
+sind an beiden Enden des Gehäuses vorhanden.
+Abmessungen: 250 x 55 x 38 mm (LxBxH)
+Für Betoneinbau empfehlen wir die Dosen HaloX-0 + HaloX-40 der Firma Kaiser.
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Umhausung für EVG, PC+ABS, UV-Schutz, schwer entflammbar: 250x55x38mm (LxBxH)
+NLUHBOX
+ 
+Leuchtenmodule, Netzteile und EVGs
+w UH - Elektronikbox 
+
+
+===== PAGE 359/400 =====
+ 
+Mobil Code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Seite 
+359
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!          Zusätzliche Abholverfügbarkeit in jedem Schrack Store! 
+w Ersatzprüftaster für Einzelbatterienotleuchten
+NLTEST
+w Schrack-Info
+Ersatz-Folienprüftaster für Einzelbatterienotleuchten von Schrack Technik. Verfügbar für Einzelbatterie-
+notleuchten ohne Autotest, mit Autotest (SelfControl SC) sowie WirelessControl Professional (WL).
+ 
+BEZEICHNUNG
+VERFÜGBAR
+STORE
+BEST. NR.
+Prüftaster für Einzelbatterieleuchten Autotest
+NLTESTSC
+Prüftaster für Einzelbatterieleuchten Standard
+NLTEST
+Prüftaster für Einzelbatterieleuchten WirelessControl Professional
+NLTESTWL
+ 
+Leuchtenmodule, Netzteile und EVGs
+
+
+===== PAGE 360/400 =====
+Seite 
+360
+Batterien und Zubehör
+Seite 
+363
+Seite 
+370
+Seite 
+372
+W RPOWER Gerätebatterien
+OGIV Longlife 10-12 Jahre	
+W RPOWER Panzerplatten Batterien
+OPzV Longlife 20 Jahre
+W Batteriegestelle und Zubehör

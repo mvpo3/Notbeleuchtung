@@ -1,0 +1,1232 @@
+
+
+===== PAGE 1/22 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8001-1/A4 
+ 
+Ausgabe: 2009-04-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis AC 1000 V und DC 1500 V 
+Teil 1: Begriffe und Schutz gegen elektrischen Schlag 
+(Schutzmaßnahmen) 
+ (Änderung + Berichtigung 1) 
+ 
+Erection of electrical installations with rated voltages up to AC 1000 V and  
+DC 1500 V – Part 1: Definitions and measures against electric shock 
+(Amendment + Corrigendum 1) 
+ 
+Erection des installations électriques à courant fort jusqu' a AC 1000 V et  
+DC 1500 V – Partie 1: Définitions et mesures de protection contre le choc 
+électrique 
+(Amendement + Corrigendum 1) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                       
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2008. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+                      Ersatz für      ÖVE/ÖNORM E 8001-1/A4:2008-12 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 2/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+2 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig 
+alle elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben 
+daher sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK 
+gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterung zur Berichtigung 1 
+Die vorliegende Ausgabe berichtigt ÖVE/ÖNORM E 8001-1/A4:2008-12-01 und wurde ohne formelles 
+Verfahren neu herausgegeben. Die Berichtigung 1 wurde eingearbeitet und die entsprechende Änderung 
+wurde mit einem Strich am linken Seitenrand markiert. 
+Berichtigung 1 bezieht sich auf Bild 10-6 auf Seite 17. In Ausgabe 2008-12-01 ist in diesem Bild bei 
+Stromquelle 2 eine zweite Nullungsverbindung vorhanden. Diese wurde entfernt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 3/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+3 
+Änderung A4 zu ÖVE/ÖNORM E 8001-1:2000-03 – Abschnitte 2, 3, 10 und 20 
+Folgende Änderungen bzw. Ergänzungen sind durchzuführen: 
+Abschnitt 2 
+Abschnitt 2 wird ergänzt/geändert: 
+Ergänzung von: 
+ÖVE/ÖNORM E 8014 Reihe, Errichtung von Erdungsanlagen für elektrische Anlagen mit Nennspannungen 
+bis AC 1000 V und DC 1500 V 
+ÖVE/ÖNORM EN 50310, Anwendung von Maßnahmen für Potentialausgleich und Erdung in Gebäuden mit 
+Einrichtungen der Informationstechnik  
+Streichung von: 
+ÖNORM E 2790, Elektroinstallationen – Erdungsanlagen – Fundamenterder 
+Abschnitt 3 
+Abschnitt 3.1.2.1 wird ergänzt:  
+ANMERKUNG Obwohl diese Systembezeichnungen ursprünglich nur für das jeweilige Gesamtsystem gelten, hat sich im 
+allgemeinen Sprachgebrauch eingebürgert, in einem TN-C-S-System zur Unterscheidung auch den Teil mit PEN-Leiter 
+mit „als TN-C-System ausgeführt“ und den Teil mit getrenntem PE- und N-Leiter mit „als TN-S-System ausgeführt“ zu 
+bezeichnen. 
+Abschnitt 3.1.3 wird ergänzt: 
+ANMERKUNG Der öffentliche Bereich eines solchen Verteilungsnetzes bis zur Eigentumsgrenze wird auch als 
+Verteilernetz bezeichnet. 
+Überschrift Bild 3.1 wird geändert: 
+Bild 3-1 – TN-S-System (PE-Leiter und Neutralleiter getrennt) 
+Überschrift Bild 3.2 wird geändert: 
+Bild 3-2 – TN-C-System (PE-Leiter und Neutralleiter als PEN-Leiter zusammengefasst) 
+Überschrift Bild 3.3 wird geändert: 
+Bild 3-3 – TN-C-S-System (PE-Leiter und Neutralleiter in einem Teil des Systems zusammengefasst und in 
+einem weiteren Teil des Systems getrennt) 
+Abschnitt 3.1.7 lautet neu: 
+3.1.7 
+(elektrisch versorgtes) Objekt 
+Bauwerk einschließlich zugehöriger Außenanlagen mit gemeinsamer Versorgungseinrichtung für elektrische 
+Energie (Hausanschluss, Transformator, Generator) und Hauptpotenzialausgleich 
+Als Objekt im Sinne dieser Bestimmungen gelten auch Gebäudekomplexe, bestehend aus mehreren 
+Bauteilen, die sowohl gemeinsam mit elektrischer Energie versorgt werden als auch ein gemeinsames 
+System für den Hauptpotentialausgleich aufweisen. Auch elektrische Verbraucheranlagen ohne Gebäude, 
+jedoch mit einem gemeinsamen Anschluss gelten als ein elektrisch versorgtes Objekt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 4/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+4 
+Abschnitt 3.1.9 lautet neu: 
+3.1.9 
+Verteilungsleitungen 
+Leitungen innerhalb eines elektrisch versorgten Objektes einschließlich aller elektrischen Betriebsmittel im 
+Zuge dieser Leitungen zwischen den Abgangsklemmen der Überstrom-Schutzeinrichtungen des  Verteilers 
+mit dem Anschlusspunkt der Nullungsverbindung (siehe 3.3.3.3.1) und den Eingangsklemmen der Überstrom-
+Schutzeinrichtungen der Endstromkreise 
+ANMERKUNG Auch Hauptleitungen gemäß 3.1.9.1 sind Verteilungsleitungen. 
+Abschnitt 3.1.9.1 lautet neu: 
+3.1.9.1 
+Hauptleitungen 
+Verteilungsleitungen einschließlich aller zugehörigen elektrischen Betriebsmittel ab dem Hausanschluss bis 
+zu den Messeinrichtungen (Zähler) 
+Abschnitt 3.1.10 lautet neu: 
+3.1.10 
+Verbraucheranlage  
+Gesamtheit aller elektrischen Betriebsmittel innerhalb eines elektrisch versorgten Objekts ab der technischen 
+Grenze des Verteilungsnetzes (gemäß Bild 3-6), ausgenommen die technisch dem Verteilungsnetz 
+zuzurechnenden Teile des Hausanschlusses 
+Im Objekt allfällig vorhandene Stromquellen gehören nicht zur Verbraucheranlage in diesem Sinne. 
+Abschnitt 3.1.11.3 lautet neu: 
+3.1.11.3 
+Endstromkreis  
+Stromkreis zu den Verbrauchsmitteln ab der letzten Überstrom-Schutzeinrichtung 
+Spezielle Überstrom-Schutzeinrichtungen für den Schutz eines in diesem Stromkreis enthaltenen besonderen 
+Betriebsmittels (zB Dimmer) gelten dabei als Bestandteil des Endstromkreises. 
+Abschnitt 3.3.3.3 lautet neu: 
+Nullungsverbindung 
+möglichst kurze, elektrisch gut leitfähige Verbindung, mit welcher der PEN-Leiter des Verteilungsnetzes im 
+ersten dafür geeigneten Sicherungs- oder Verteilerkasten der Verbraucheranlage direkt oder über den 
+Hauptpotenzialausgleich mit dem Schutzerdungsleiter der Anlage verbunden wird 
+ANMERKUNG Die Nullungsverbindung kann auch in Form einer einzigen Mehrfachklemme ausgeführt sein. 
+Abschnitt 3.3.3.3.1 lautet neu:  
+3.3.3.3.1 
+Anschlusspunkt der Nullungsverbindung 
+Stelle, an der die Nullungsverbindung an den aus dem Verteilungsnetz kommenden PEN-Leiter 
+angeschlossen wird (siehe Bild 10-2) 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 5/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+5 
+Abschnitt 3.3.3.7 lautet neu:  
+3.3.3.7 
+Sternpunkt-Verbindungs-Leiter (SVL) 
+isolierter Leiter, mit dem die Sternpunkte aller in einem lokalen Bereich parallel zu betreibenden Stromquellen 
+dauernd verbunden und an einem einzigen definierten Punkt geerdet werden 
+Der SVL erfüllt primär die Funktion eines N-Leiters, führt jedoch im Fehlerfall auch die zu den Sternpunkten 
+zurückfließenden Fehlerströme. Bei IT-Systemen darf ein allfällig erforderlicher SVL systembedingt nicht 
+geerdet werden. 
+Bild 3-6 lautet neu: 
+ 
+Bild 3-6a – Abgrenzung zwischen Verteilungsnetz und elektrischen Anlagen in Objekten –  
+Situation mit einem öffentlichen Verteilernetz 
+1
+2
+4
+Objekt mit Speisung aus dem Niederspannungs-Verteilungsnetz
+(zB Wohnobjekt)
+Objekt mit Speisung aus dem Niederspannungs-Verteilungsnetz
+(zB gewerbliches Objekt)
+15
+6
+6
+6
+3
+11
+13
+13
+14
+7
+10
+10
+10
+11
+12
+13
+11
+12
+9
+9
+9
+8
+14
+6
+6
+7
+16
+16
+12
+14
+3
+17
+17
+12
+14
+13
+9
+Z
+9
+Z
+Z
+6
+6
+Z
+Z
+8
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 6/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+6 
+ 
+Bild 3-6b – Abgrenzung zwischen Verteilungsnetz und elektrischen Anlagen in Objekten –  
+Situation mit einem betrieblichen Verteilungsnetz 
+1
+Eigenes Objekt mit Speisung aus dem 
+betrieblichen Verteilungsnetz;
+die Hauptpotenzialausgleiche der Objekte sind nicht verbunden
+Bauteil 
+Bauteil
+6
+3
+14
+11
+12
+11
+11
+7
+8
+9
+10
+9
+12
+9
+10
+10
+12
+14
+11
+13
+13
+13
+3
+6
+2
+11
+13
+10
+9
+10
+9
+9
+9
+9
+10
+10
+13
+14
+10
+13
+13
+11
+11
+12
+12
+14
+14
+5
+7
+~
+5
+Z
+Objekt (Gebäudekomplex) mit Speisung aus dem Hochspannungsnetz;
+mit  gemeinsamem Hauptpotenzialausgleich
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 7/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+7 
+Im Bild 3-6a und Bild 3-6b bedeuten: 
+1 
+Hochspannungsanschluss  
+2 
+Stromquelle (Transformator, Generator) 
+3 
+elektrisch versorgtes Objekt (gemäß 3.1.7 und 3.1.10) 
+4 
+Hauptverteilung des Verteilungsnetzes (gemäß 3.1.3), mit Betriebserdung 
+5 
+betriebliche Hauptverteilung (mit Anlagenerder und Hauptpotenzialausgleich) in einem Objekt mit 
+Hochspannungsanschluss  
+6 
+Niederspannungs-Verteilungsnetz (gemäß 3.1.3), öffentlich oder betrieblich 
+7 
+Verteilung mit Anschlusspunkt der Nullungsverbindung (gemäß 3.3.3.3 und 3.3.3.3.1), mit Anlagenerder 
+und Hauptpotenzialausgleich  
+8 
+technische Grenze des Verteilungsnetzes (gemäß 3.1.3) zur Verbraucheranlage (gemäß 3.1.10), 
+unabhängig vom Eigentum an den Anlagen und unabhängig von der örtlichen Situierung 
+9 
+Verteilungsleitung (gemäß 3.1.9) 
+10 
+Unterverteilung der Verbraucheranlage  
+11 
+Endstromkreis (gemäß 3.1.11.3) mit Nennstromstärke > 32 A 
+12 
+Endstromkreis (gemäß 3.1.11.3) mit Nennstromstärke ≤ 32 A 
+13 
+elektrisches Verbrauchsmittel (gemäß 3.2.2) mit Überstromschutz mit Nennstromstärke > 32 A 
+14 
+elektrisches Verbrauchsmittel (gemäß 3.2.2) mit Überstromschutz mit Nennstromstärke ≤ 32 A 
+15 
+Hauptleitung (gemäß 3.1.9.1) 
+16 
+Einzelverbraucheranlage (gemäß 3.1.10.1) 
+17 
+zB Wohnungsverteiler 
+ANMERKUNG Eigentumsgrenzen werden von dieser schematischen Darstellung nicht berührt. 
+Bild 3-6 – Abgrenzung zwischen Verteilungsnetz und elektrischen Anlagen in Objekten 
+Abschnitt 3.8.11 lautet neu: 
+3.8.11 
+Nullung 
+Maßnahme des Fehlerschutzes durch Ausschaltung im TN-System, bei der es durch eine gut leitfähige 
+Verbindung des PE-Leiters der Anlage mit dem geerdeten Punkt der Stromquelle zu einem kurzschlussartigen 
+Fehlerstrom kommt, wodurch der betroffene Stromkreis üblicherweise durch Überstrom-Schutzeinrichtungen, 
+unter bestimmten Bedingungen auch durch Fehlerstrom-Schutzeinrichtungen, innerhalb festgelegter Zeit 
+ausgeschaltet wird 
+Abschnitt 10 lautet neu: 
+10.1 Ausführung 
+Nullung als Maßnahme des Fehlerschutzes erfordert die Herstellung eines TN-Systems. 
+Bei Anschluss eines Objektes an ein Verteilungsnetz muss dieses vom zuständigen Netzbetreiber für die 
+Anwendung der Nullung als Maßnahme des Fehlerschutzes freigegeben sein. 
+Wird die Ausschaltbedingung gemäß 10.2.1.1 in einem Teil des Verteilungsnetzes nicht erfüllt, dann ist in den 
+an diesen Teil des Verteilungsnetzes angeschlossenen Verbraucheranlagen eine andere Maßnahme des 
+Fehlerschutzes, zB Fehlerstrom-Schutzschaltung, anzuwenden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 8/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+8 
+10.1.1 Eine Voraussetzung für die Nullung ist eine definierte, gut leitfähige Verbindung (die 
+Nullungsverbindung, siehe 3.3.3.3 und 10.1.2) zwischen dem Schutzerdungsleiter im Objekt einerseits und 
+dem PEN-Leiter des das Objekt speisenden Netzes andererseits. Diese Verbindung wird für alle 
+Verbraucheranlagen im betreffenden Objekt gleichermaßen wirksam. 
+Innerhalb eines elektrisch versorgten Objekts ist für Neuanlagen die Verwendung eines PEN-Leiters ab dem 
+Anschlusspunkt der Nullungsverbindung nicht mehr zulässig. N- und PE-Leiter müssen ab diesem Punkt als 
+getrennte Leiter ausgeführt werden. Der PEN-Leiter endet am Anschlusspunkt der Nullungsverbindung (siehe 
+Bild 3-6). 
+Für Systeme ohne PEN-Leiter, in denen ein geerdeter Außenleiter (PEL) oder geerdeter Mittelpunktsleiter 
+(PEM) vorhanden ist, gelten die Bestimmungen von Abschnitt 10 sinngemäß. 
+ANMERKUNG Diese Festlegung schließt nicht aus, dass in bestehenden Anlagen ein PEN-Leiter über den 
+Anschlusspunkt der Nullungsverbindung hinaus ausgeführt ist. 
+10.1.2 Die Nullungsverbindung muss gemäß Bild 10-2a ausgeführt und muss als Schutzerdungsleiter gemäß 
+Tabelle 21-2 dimensioniert werden. Aus EMV-Gründen wird eine Dimensionierung mit einem Querschnitt 
+entsprechend dem größten ankommenden Außenleiter empfohlen. Die Lage des Anschlusspunktes der 
+Nullungsverbindung (siehe 3.3.3.3.1) an den PEN-Leiter muss auf einer Abdeckung der betreffenden 
+Verteilung und beim Anschlusspunkt selbst sichtbar und dauerhaft mit dem Symbol gemäß Bild 10-1 
+gekennzeichnet werden. Für im Freien angeordnete Verteilungen darf die Kennzeichnung auf der 
+Außenabdeckung entfallen. 
+ANMERKUNG Für die Umstellung von vorhandenen Anlagen ist auch eine Ausführung gemäß Bild 10-2b noch 
+gebräuchlich. 
+ 
+Bild 10-1 – Symbol zur Kennzeichnung des Anschlusspunktes der Nullungsverbindung 
+10.1.3 Im Fall eines ausschließlichen TN-S-Systems ab der Stromquelle ist nur eine einzige definierte 
+Verbindung des N-Leiters mit Erde herzustellen (Betriebserdung). Bei Vorhandensein mehrerer Stromquellen 
+erfolgt die Betriebserdung, indem der Sternpunkt-Verbindungs-Leiter (SVL) nur an einem Punkt geerdet wird 
+(siehe Bild 10-4 und Bild 10-5). Dieser Betriebserder ist zugleich der Anlagenerder des elektrisch versorgten 
+Objekts, die Nullungsverbindung entfällt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 9/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+9 
+Bild 10-2a – PEN-Leiter direkt oder auf kürzestem Weg mit der PE-Leiter-Schiene oder  
+PE-Leiter-Klemme verbunden (symbolische Darstellung) 
+Bild 10-2b – PEN-Leiter über die Haupterdungsschiene (Potenzialausgleichsschiene) oder 
+Haupterdungsklemme mit der PE-Leiter-Schiene oder PE-Leiter-Klemme verbunden 
+(symbolische Darstellung) 
+ 
+L1 L2 L3 N PE
+PEN
+7
+6
+PAS
+4
+1
+3
+5
+2
+L1 L2 L3 N PE
+PEN
+6
+PAS
+1
+3
+5
+2
+7
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 10/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+10 
+Bild 10-2c – Ausführungsbeispiel für eine Anlage gemäß Bild 10-2a im Detail 
+Es bedeutet: 
+1 
+erster geeigneter Sicherungs- oder Verteilerkasten in der Verbraucheranlage 
+2 
+Erdungsanlage der Verbraucheranlage  
+3 
+Haupterdungsschiene (Potenzialausgleichsschiene PAS) 
+4 
+Potenzialausgleichsleiter 
+5 
+Erdungsleiter 
+6 
+Nullungsverbindung (hier in Form einer Verbindung zwischen Mehrfachklemmen ausgeführt) 
+7 
+zu kennzeichnender Anschlusspunkt der Nullungsverbindung 
+8 
+Überspannungs-Schutzeinrichtung 
+Bild 10-2 –Beispiele für die Anordnung der Nullungsverbindung 
+10.2 Bedingungen für die Nullung 
+10.2.1 Ausschaltbedingung 
+Fehlerbehaftete Stromkreise müssen bei Auftreten eines Kurz- oder Körperschlusses mit vernachlässigbarer 
+Impedanz innerhalb angemessener Zeiten ausgeschaltet werden. Dies erfolgt vorzugsweise mittels 
+Überstrom-Schutzeinrichtungen. 
+Hinsichtlich der zulässigen Ausschaltzeit bzw. entsprechender Ausschaltbedingungen werden die Anlagen 
+wie folgt unterschieden: 
+– 
+Verteilungsnetze unabhängig ihrer Eigentumssituation bis zur ersten Überstrom-Schutzeinrichtung in der 
+ersten Verteilung bei bzw. nach der Nullungsverbindung des zu speisenden Objektes,  
+– 
+Verteilungsleitungen in Verbraucheranlagen, unabhängig von ihrem Nennstrom, sowie Endstromkreise 
+mit mehr als 32 A Nennstrom, 
+– 
+Endstromkreise bis einschließlich 32 A Nennstrom. 
+L1
+zu den Verrechungsmesseinrichtungen
+8
+L2 L3 PEN
+7
+L1 L2 L3
+PE
+N
+3
+5
+2
+PAS
+1
+6
+4
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 11/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+11 
+10.2.1.1 
+Ausschaltbedingung in Verteilungsnetzen 
+Die Querschnitte und Längen der Leiter sowie der zugehörigen Überstrom-Schutzeinrichtungen müssen so 
+ausgelegt sein, dass bei Normalbetrieb des Netzes die folgende Bedingung erfüllt ist. 
+Für Verteilungsnetze mit Nennspannungen bis 400/230 V gilt: 
+Für Verteilungsnetze mit höheren Nennspannungen gilt: 
+Es bedeutet: 
+ZS Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung 
+IN 
+Nennstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung  
+UN Nennspannung gegen Erde 
+Innerhalb von elektrisch versorgten Objekten muss, sofern nicht die Ausschaltbedingung gemäß 10.2.1.2 oder 
+der Ausschaltstromfaktor gemäß 10.2.1.4 eingehalten wird, bis zur ersten Überstrom-Schutzeinrichtung in der 
+ersten Verteilung die Anlage kurz- und erdschlusssicher ausgeführt werden. 
+10.2.1.2 
+Ausschaltbedingung 
+für 
+Verteilungsleitungen 
+in 
+Verbraucheranlagen 
+und 
+für 
+Endstromkreise mit Überstrom-Schutzeinrichtungen mit einem Nennstrom über 32 A 
+Für Verteilungsleitungen und für Endstromkreise mit einem Nennstrom über 32 A gilt eine zulässige 
+Ausschaltzeit von 5 s. 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Messung der 
+Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit muss durch Vergleich des 
+Ergebnisses mit der Charakteristik der Überstrom-Schutzeinrichtung nachgewiesen werden. 
+Alternativ können zur Erfüllung dieser Forderung Ausschaltstromfaktoren gemäß 10.2.1.4 zur Anwendung 
+kommen. 
+10.2.1.3 
+Ausschaltbedingung für Endstromkreise bis einschließlich 32 A Nennstrom 
+Für diese Stromkreise gilt eine zulässige Ausschaltzeit von 0,4 s für Nennspannungen bis 230 V gegen Erde 
+sowie von 0,2 s für Nennspannungen bis 400 V gegen Erde.  
+ANMERKUNG Für höhere Spannungen sind ergänzende Maßnahmen erforderlich. 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Messung der 
+Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit muss durch Vergleich des 
+Ergebnisses mit der Charakteristik der Überstrom-Schutzeinrichtung nachgewiesen werden. 
+Alternativ können zur Erfüllung dieser Forderung Ausschaltstromfaktoren gemäß 10.2.1.4 zur Anwendung 
+kommen. 
+10.2.1.4 
+Ausschaltstromfaktor m 
+Alternativ zur Ausschaltbedingung gemäß 10.2.1.2 und 10.2.1.3 kann folgende Bedingung zur Anwendung 
+kommen: 
+N
+A
+S
+U
+I
+Z
+≤
+⋅
+N
+N
+S
+6,1
+U
+I
+Z
+≤
+⋅
+⋅
+N
+N
+S 2,5
+U
+I
+Z
+≤
+⋅
+⋅
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 12/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+12 
+Es bedeutet: 
+ZS Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung 
+IA 
+Ausschaltstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung  
+UN Nennspannung gegen Erde 
+Dabei wird der Ausschaltstrom IA mit Hilfe der Beziehung 
+unter Verwendung der Werte für m aus Tabelle 10-1 errechnet. 
+Es bedeutet: 
+IN 
+Nennstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung  
+m 
+Ausschaltstromfaktor  
+Tabelle 10-1 – Ausschaltstromfaktor m 
+ 
+1 
+2 
+3 
+1 
+Art der Überstrom-Schutzeinrichtung 
+Endstromkreise mit 
+Nennstrom ≤ 32 A 
+gemäß 10.2.1.3 
+Verteilungsleitungen 
+und Endstromkreise 
+> 32 A gemäß 10.2.1.2 
+2 
+Schmelzsicherungen bis 125 A gG gemäß 
+ÖVE/ÖNORM EN 60269 Reihe 
+10 
+3,5 
+3 
+Leitungsschutzschalter B gemäß 
+ÖVE/ÖNORM EN 60898 Reihe  
+5 
+3,5 
+4 
+Leitungsschutzschalter C gemäß 
+ÖVE/ÖNORM EN 60898 Reihe 
+10 
+3,5 
+5 
+Leitungsschutzschalter D gemäß 
+ÖVE/ÖNORM EN 60898 Reihe 
+20 
+3,5 
+Leistungsschalter oder andere geeignete 
+Schaltgeräte 
+Ausschaltstrom-Zeitverhalten gemäß  
+10.2.1.2 bzw. 10.2.1.3 
+6 
+ANMERKUNG Für von B, C und D abweichende Kennlinien ist m so zu wählen, dass die Magnet-
+auslösung des Leitungsschutzschalters anspricht. Ausschaltstrom-Zeitverhalten gemäß 10.2.1.2 bzw. 
+10.2.1.3 
+ 
+N
+A
+I
+m
+I
+⋅
+=
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 13/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+13 
+10.2.1.5 
+Ausschaltung mittels Fehlerstrom-Schutzeinrichtungen 
+Kann in einer Verbraucheranlage in langen Stromkreisen die zutreffende Ausschaltbedingung gemäß 10.2.1.2 
+bzw. 10.2.1.3 und der Ausschaltstromfaktor gemäß 10.2.1.4 wegen einer zu hohen Impedanz der 
+Fehlerschleifen im Verhältnis zum Nennstrom der Überstrom-Schutzeinrichtungen nicht eingehalten werden, 
+dann darf, für den Fehlerschutz solcher Stromkreise eine Fehlerstrom-Schutzeinrichtung gemäß 12.1.1 unter 
+Einhaltung der Bedingungen gemäß Abschnitt 12.1 verwendet werden, wenn für den betroffenen Stromkreis 
+abweichend von Tabelle 10.1 mindestens ein Ausschaltstromfaktor  
+ 
+m = 2,5 
+bezogen auf die jeweils vorgelagerte Überstrom-Schutzeinrichtung wirksam ist (siehe Bild 10-3). 
+Ein allfällig notwendiger Zusatzschutz ist durch eine weitere Fehlerstrom-Schutzeinrichtung mit einem 
+Nennfehlerstrom von I∆N ≤ 30 mA zu realisieren. 
+ANMERKUNG Der geforderte Ausschaltstromfaktor m ≥ 2,5 ist notwendig, um auch bei einem Fehler zwischen 
+Außenleiter und Neutralleiter eine zeitgerechte automatische Ausschaltung zu bewirken.  
+Es bedeutet: 
+1 
+Fehlerstrom-Schutzschalter zur Erfüllung der Ausschaltbedingung für die Stromkreise 4 und 5 
+2 
+Fehlerstrom-Schutzschalter für den Zusatzschutz  
+3 
+Stromkreise, 
+bei 
+denen 
+die 
+Ausschaltbedingung 
+durch 
+die 
+vorgeschalteten 
+Überstrom-
+Schutzeinrichtungen erfüllt ist 
+4 
+Stromkreis ohne Steckdosen, bei dem die Ausschaltbedingung aufgrund der Leitungslänge nicht erfüllt 
+ist, jedoch mindestens ein Ausschaltstromfaktor m = 2,5 eingehalten wird. 
+5 
+Stromkreis mit Steckdosen, bei dem die Ausschaltbedingung aufgrund der Leitungslänge nicht erfüllt ist, 
+jedoch mindestens ein Ausschaltstromfaktor m = 2,5 eingehalten wird. 
+6 
+Das strichpunktierte Rechteck symbolisiert den Bereich innerhalb dessen die Ausschaltbedingung auf 
+Grund der Leitungslänge erfüllt ist. 
+Bild 10-3 – Beispiel für die zusätzliche Anwendung einer Fehlerstrom-Schutzeinrichtung  
+als Ausschalteinrichtung  
+3
+3
+3
+6
+4
+5
+1
+2
+FI
+I
+L1
+L2
+L3
+N
+PE
+3
+FI/LS
+I
+FI
+ 
+S
+L1
+L2
+L3
+N
+PE
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 14/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+14 
+10.2.1.6 
+Maßnahmen bei Nichteinhaltung der Ausschaltbedingungen 
+Kann 
+in 
+einer 
+mit 
+der 
+Schutzmaßnahme 
+Nullung 
+betriebenen 
+Verbraucheranlage 
+weder 
+die 
+Ausschaltbedingung gemäß 10.2.1.2 bzw. 10.2.1.3 noch der Ausschaltstromfaktor gemäß 10.2.1.4 oder 
+10.2.1.5 wegen einer zu hohen Impedanz der Fehlerschleife im Verhältnis zum Nennstrom der Überstrom-
+Schutzeinrichtungen eingehalten werden, so muss ein zusätzlicher Potenzialausgleich gemäß Abschnitt 15.2 
+hergestellt werden, bei dem die Querschnitte der Potenzialausgleichsleiter so für die maximal auftretenden 
+Fehlerströme bemessen sein müssen, dass die Berührungsspannung auf ungefährliche Werte reduziert wird. 
+In diesem Fall muss mindestens ein Ausschaltstromfaktor m = 1,6 bezogen auf die jeweils vorgelagerte 
+Überstrom-Schutzeinrichtung eingehalten werden. 
+ANMERKUNG 
+Der jedenfalls erforderliche Leitungsschutz wird von dieser Maßnahme nicht berührt und muss 
+unabhängig davon sichergestellt sein (siehe ÖVE-EN 1 Teil 3:1995 § 41). 
+10.2.2 Erdungsbedingung 
+10.2.2.1 
+Erdungsbedingung für Verteilungsnetze  
+Für derartige (zB öffentliche) Verteilungsnetze müssen folgende Bedingungen eingehalten werden: 
+1) 
+Der PEN-Leiter muss in der Nähe der Stromquelle (des Transformators) und nahe den Enden der 
+Netzausläufer geerdet werden (Betriebserdung). Als Netzausläufer gelten dabei Abzweige mit einer 
+Länge von mehr als 100 m. In neu zu errichtenden Netzen, an die überwiegend Verbraucheranlagen mit 
+Nullung als Maßnahme des Fehlerschutzes angeschlossen werden, sind Erdungen an den Enden der 
+Netzausläufer nur dort erforderlich, wo netzseitig Überspannungs-Schutzeinrichtungen zum Einsatz 
+kommen. 
+2) 
+Die Betriebserdungen müssen insgesamt den Anforderungen gemäß Abschnitt 14 für das TN–System 
+entsprechen. 
+3) 
+In bestehenden Verteilungsnetzen dieser Art kann bei ihrer Umstellung auf die Nullung die 
+Erdungsbedingung nahe den Enden der Netzausläufer auch dadurch erfüllt werden, dass in diesem 
+Bereich die Nullungsverbindung in mindestens einer Verbraucheranlage hergestellt wird, welche eine 
+Erdungsanlage gemäß 10.2.2.2, 1) aufweist. 
+Unabhängig davon ist es zulässig, derartige Verteilungsnetze (zB Industrienetze) in Ihrer Gesamtheit auch als 
+TN-S-System auszuführen (siehe 10.2.2.3).  
+10.2.2.2 
+Erdungsbedingung in Verbraucheranlagen, die von Verteilungsnetzen, gespeist werden 
+Verbraucheranlagen in denen die Nullung angewandt wird, ausgenommen mobile Anlagen und fliegende 
+Bauten, müssen eine geeignete dauerhafte Anlagenerdung aufweisen. Für bauliche Neuanlagen ist dafür 
+vorzugsweise ein Fundamenterder gemäß 20.5.4 zu errichten. Ist ein Fundamenterder nicht vorhanden oder 
+kann dieser wegen einer geforderten Isolierung des Fundaments nicht wirksam werden, so muss eine 
+Erdungsanlage in ausreichend korrosionsbeständiger Ausführung mit folgendem Mindestausmaß errichtet 
+werden: 
+– 
+Horizontalerder von mindestens 10 m Länge oder 
+– 
+Vertikalerder von mindesten 4,5 m Länge oder 
+– 
+gleichwertige Erderkombination. 
+10.2.2.3 
+Erdungsbedingung in Verbraucheranlagen mit eigener Stromquelle 
+In Verbraucheranlagen mit einer einzigen Stromquelle (Transformator oder Generator), darf der Sternpunkt 
+nur an einem Punkt geerdet werden (Betriebserdung). Innerhalb des Objektes sind N-Leiter und PE-Leiter 
+getrennt zu führen (TN-S-System).  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 15/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+15 
+10.2.2.4 
+Erdungsbedingungen in Verbraucheranlagen mit mehreren Stromquellen 
+ANMERKUNG 
+Physikalische Grundsätze für den Parallelbetrieb mehrerer Stromquellen innerhalb eines elektrisch 
+versorgten Objektes siehe Anhang D. 
+10.2.2.4.1 Ausführung mit Sternpunkt-Verbindungs-Leiter (SVL)  
+Werden innerhalb eines elektrisch versorgten Objektes mehrere Stromquellen (zB Transformatoren, 
+Generatoren), einzeln oder parallel betrieben, so sind die Sternpunkte dieser Stromquellen vorzugsweise 
+mittels eines Sternpunkt-Verbindungs-Leiters (SVL) (siehe 3.3.3.7) zu verbinden. Dieser Sternpunkt-
+Verbindungs-Leiter (SVL) muss an einem einzigen Punkt geerdet werden. Ab diesem Punkt muss die Anlage 
+als TN-S-System errichtet werden (symbolische Darstellung siehe Bild 10-4). Der PE-Leiter darf beliebig oft 
+zusätzlich geerdet oder mit dem Potenzialausgleich verbunden werden. 
+ANMERKUNG Diese Lösung setzt voraus, dass die Entfernung zwischen den verschiedenen Stromquellen nicht zu groß 
+ist. Andernfalls kann die Ausschaltbedingung im Fehlerfall wegen zu hoher Schleifenwiderstände nicht oder nur mit hohem 
+Aufwand erfüllbar sein.  
+Es bedeutet: 
+1 
+Anschluss des SVL an den Sternpunkt jeder Stromquelle 
+2 
+isoliert geführter SVL 
+3 
+gemeinsame Betriebserdung der Stromquellen, zugleich Aufteilungspunkt PE- und N-Leiter 
+4 
+zusätzliche Erdungsverbindungen des PE-Leiters, auch zum Potenzialausgleich 
+Bild 10-4 – Beispiel für ein TN-S-System mit mehreren Stromquellen und SVL 
+Betriebserdung der
+Stromquellen
+leitfähige Teile
+Stromquelle 1
+zB Transformator
+Stromquelle 2
+zB Generator
+Stromquelle n
+Zusätzliche 
+Erdungs-
+verbindungen
+L1
+L2
+L3
+N
+PE
+1
+1
+1
+4
+2
+3
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 16/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+16 
+Der Sternpunkt-Verbindungs-Leiter (SVL) darf in der Hauptverteilung, an welche alle beteiligten Stromquellen 
+unmittelbar angeschlossen sind, einen Teil der N-Leiterschiene bilden (siehe Bild 10-5). Entscheidend dabei 
+ist, dass die Erdungsverbindung entsprechend 10.2.2.1 auch bei teilweiser Außerbetriebnahme der Schiene 
+für alle verbleibenden Stromquellen bestehen bleibt. Daher müssen Kuppelschalter zwischen den 
+Sammelschienenabschnitten der Schaltanlage dreipolig ausgeführt sein. Die Einspeiseschalter können 
+dreipolig oder vierpolig ausgeführt werden, wobei eine vierpolige Ausführung zum Zwecke der Freischaltung 
+erforderlich sein kann. Diese Ausführungen müssen ausdrücklich in der Dokumentation der Anlage angeführt 
+sein. 
+Es bedeutet: 
+1 
+Teil der N-Leiter-Schiene, die gleichzeitig den Sternpunkt-Verbindungs-Leiter bildet 
+2 
+gemeinsame Betriebserdung der Stromquellen, zugleich Aufteilungspunkt PE- und N-Leiter 
+3 
+zusätzliche Erdungsverbindungen des PE-Leiters, auch zum Potenzialausgleich 
+Q2 und Q4  
+Dreipolige Kuppelschalter 
+Q1 und Q3  
+Beispiel für dreipolige Einspeiseschalter 
+Q1.1  
+optional vorhandener Generatorschalter 
+Q5  
+Beispiel für einen vierpoligen Einspeiseschalter 
+Bild 10-5 – Beispiel für ein TN-S-System mit mehreren Stromquellen, bei dem ein Teil der  
+N-Leiter-Schiene gleichzeitig den SVL bildet 
+10.2.2.4.2 Alternative Ausführung 
+Ist aus technischen Gründen eine Ausführung gemäß 10.2.2.4.1 nicht sinnvoll realisierbar, so darf die 
+Speisung des elektrisch versorgten Objektes auf mehrere einzelne Stromquellen oder mehrere Gruppen von 
+Stromquellen mit jeweils separatem SVL aufgeteilt werden, deren Sternpunkte bzw. Sternpunkt-Verbindungs-
+Leiter jeder für sich geerdet sind. Eine Zusammenschaltung dieser Gruppen sollte vermieden werden. 
+Trafo 1
+Trafo 2
+Q2
+Q4
+Einspeisung
+Trafo 2 
+Einspeisung
+Generator
+SVL
+PE
+1
+2
+PE
+SVL
+SVL
+Kupplung
+T1 zu T2
+3-polig
+Kupplung
+zu Generator
+3-polig
+L1 L2  L3                     PE
+GEN
+3~
+3
+3
+Q1
+Einspeisung
+Trafo 1
+L1
+L2
+L3
+N
+PE
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 17/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+17 
+Werden Verbraucher oder Verbrauchergruppen zwischen einzelnen Stromquellen oder Gruppen von 
+Stromquellen umgeschaltet, so dürfen die N-Leiter der Anspeisungen nicht miteinander verbunden werden, 
+um ein unkontrolliertes Fließen von Teilströmen über verschiedene Zweige der Anlage und/oder über 
+unterschiedliche Erdungen der Stromquellen zu vermeiden. Dies erfordert jedenfalls Umschaltungen mit 
+Unterbrechung („break before make“). Für diese Umschaltung sind gemäß Bild 10-6 vierpolige Schaltgeräte 
+erforderlich. 
+ANMERKUNG 1 
+Bild 10-7 zeigt zur Verdeutlichung eine unzulässige Anordnung mit dreipoligen Schaltgeräten. 
+ANMERKUNG 2 
+„Break before make“ bedeutet, dass der öffnende Kontakt den Stromkreis unterbricht (mit  
+Lichtbogenlöschung) bevor der schließende Kontakt den Stromkreis schließt. 
+ 
+Die Schaltgeräte Q1 und Q2 müssen aus EMV-Gründen gegeneinander verriegelt werden. 
+Es bedeutet: 
+Q1 und Q2  
+vierpoliger Einspeiseschalter 
+Bild 10-6 – Ordnungsgemäße Umschaltung von Verbrauchsmitteln oder Gruppen von 
+Verbrauchsmitteln zwischen zwei verschiedenen Stromquellen 
+L1
+L2
+L3
+PE
+N
+Stromquelle 1
+Stromquelle 2
+Verbrauchsmittel
+L1
+L2
+L3
+PE
+PE
+N
+Q1
+Q2
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 18/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+18 
+Bild 10-7 – Zu vermeidende dreipolige Umschaltung von Verbrauchsmitteln oder Gruppen von 
+Verbrauchsmitteln zwischen zwei verschiedenen Anspeisungen 
+10.2.3 Verlegungsbedingung  
+Anforderungen betreffend Ausführung, Dimensionierung und Kennzeichnung von PEN-Leitern siehe Abschnitt 
+21.4 und Abschnitt ÖVE-EN 1 Teil 3:1998 § 40.2. 
+10.3 Ergänzende Anforderungen bei Nennspannungen über 250 V gegen Erde 
+Wird die Nullung in Verbraucheranlagen angewandt, die mit Nennspannungen über 250 V gegen Erde 
+betrieben werden, dann ist ein zusätzlicher Potenzialausgleich gemäß 15.2 auszuführen. Diese Maßnahme ist 
+auch für 3-Leiter-400-V-Anlagen mit einem PEL-Leiter erforderlich. 
+ANMERKUNG Durch den zusätzlichen Potenzialausgleich werden die unbeeinflussten Berührungsspannungen auf ein 
+vertretbares Restrisiko vermindert. 
+10.4 Prüfung der Nullung  
+Die Wirksamkeit der Nullung muss vor Inbetriebnahme der Anlage gemäß ÖVE/ÖNORM E 8001-6-61 geprüft 
+und dokumentiert werden. 
+L1
+L2
+L3
+PE
+N
+L1
+L2
+L3
+PE
+PE
+N
+Q1
+Q2
+L1
+L2
+L3
+PE
+N
+Verbrauchsmittel
+Stromquelle 1
+Stromquelle 2
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 19/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+19 
+Abschnitt 20 
+Abschnitt 20.5.4, Absatz 4 lautet neu: 
+Fundamenterder müssen gemäß ÖVE/ÖNORM E 8014 Reihe und ÖNORM B 5432 ausgeführt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 20/22 =====
+ÖVE/ÖNORM E 8001-1/A4:2009 
+20 
+Anhang E wird ergänzt: 
+Anhang E 
+(informativ) 
+Physikalische Grundsätze für den Parallelbetrieb mehrerer Stromquellen 
+innerhalb eines elektrisch versorgten Objektes 
+Werden innerhalb eines elektrisch versorgten Objektes mehrerer Stromquellen, deren Sternpunkte einzeln 
+geerdet sind, parallel betrieben, so kommt es aus physikalischen Gründen zu Ausgleichsströmen über den 
+Potenzialausgleich und über elektrisch leitfähige Gebäudestrukturen, welche für informationstechnische 
+Anlagen zu Problemen durch elektromagnetische Felder führen können. Die Anforderungen in 10.2.2.4 
+dienen der Vermeidung solcher Probleme bei gleichzeitiger Beherrschung der schutztechnischen 
+Erfordernisse.  
+Entscheidend bei der Auslegung derartiger Anlagen ist, welche und wie viele Stromquellen parallel betrieben 
+werden sollen. Die Begrenzung ist hier durch den von den Stromquellen aufgebrachten Kurzschlussstrom und 
+die Leitungslängen zwischen den Stromquellen und den zugehörigen Abnahme-Schwerpunkten gegeben.  
+Diese Probleme lassen sich bei Parallelbetrieb nur dann vermeiden, wenn der N-Leiter aller beteiligten 
+Stromquellen nur an einer einzigen Stelle, geerdet, d. h. mit dem Potenzialausgleich und mit den elektrisch 
+leitfähigen Gebäudestrukturen verbunden ist. Diese Stromquellen können dabei sowohl parallel, als auch 
+einzeln betrieben werden, vorausgesetzt der N-Leiter ist entsprechend verbunden. Da über diesen 
+Erdungspunkt der Rückfluss aller Fehlerströme erfolgt, ergibt sich je nach räumlicher Anordnung dieses 
+Punktes eine Erhöhung der Leitungslänge und somit der Impedanz der Fehlerschleife, die für die Abschaltung 
+im Fehlerfall nachteilig ist und die Anwendung einer solchen Lösung räumlich begrenzt.  
+Als Alternative Lösung (zB bei Überschreitung der für die Anlagen zulässigen Kurzschlussströme oder bei zu 
+hohen Trassenentfernungen der verschiedenen Versorgungsbereiche) bleibt nur, die Anlage in mehrere 
+getrennt betriebene Versorgungsgruppen aufzuteilen, die jeweils wie oben angeführt an einer Stelle geerdet 
+sind. Eine Umschaltung einzelner Verbrauchergruppen zwischen diesen Versorgungsgruppen muss dabei 
+vierpolig in der Weise erfolgen, dass die N-Leiter der betroffenen Versorgungsgruppen nicht miteinander 
+verbunden sind, aber stets eine Erdungsverbindung des Neutralleiters gegeben ist. Ist dagegen eine 
+Umschaltung ohne Unterbrechung (mit vorheriger Synchronisierung) unverzichtbar, so muss man während 
+der Zeitdauer des Parallelbetriebes mit Problemen rechnen, es sei denn man entscheidet sich zusätzlich für 
+eine automatisierte Umschaltung des Erdungspunktes, was jedoch wegen der geforderten Zuverlässigkeit der 
+Schutzmaßnahme technisch nicht unproblematisch ist.  
+Wird eine Verbraucheranlage mit Nullung als Maßnahme des Fehlerschutzes vom Verteilungsnetz gespeist, 
+so ist ein in dieser Anlage vorhandener Generator parallel mit dem Netz ohne unmittelbare Erdung des 
+Generatorsternpunktes betreibbar, weil der N-Leiter der Anlage ohnehin über die Nullungsverbindung geerdet 
+und mit dem Schutzleiter der Anlage verbunden ist. Im Inselbetrieb (zB bei Ausfall des Netzes) muss dann 
+jedoch sichergestellt sein, dass entweder der Generator stillgesetzt wird oder aber eine Trennung vom Netz 
+erfolgt, bei der die Verbindung des Neutralleiters zur Nullungsverbindung der Anlage bestehen bleibt und eine 
+entsprechende Maßnahme des Fehlerschutzes für die betriebene Anlage in geeigneter Weise gegeben ist.  
+Entsprechend diesen Grundsätzen ergeben sich die in 10.2.2.4 angeführten Detailbestimmungen zur 
+Vermeidung von Problemen in der zunehmend zum Einsatz kommenden Informationstechnik.  
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 21/22 =====
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 22
+www.ris.bka.gv.at
+
+
+===== PAGE 22/22 =====
+Wichtige Informationen für Norm-Anwender
+ÖVE/ÖNORMEN  sind Regeln, die im Dialog und Konsens
+aller Betroffenen und Interessierten entwickelt werden. Sie legen im elektro-
+technischen Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen,
+Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser
+Anforderungen überprüft wird.
+Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit
+freiwillig, aber naheliegend, da Normen den aktuellen Stand der Technik do-
+kumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür
+bürgen das hohe Fachwissen und die Erfahrung der Experten und Expertin-
+nen in den zuständigen Komitees auf nationaler, europäischer und internatio-
+naler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elek-
+trotechnik (OVE) und seiner Referenten.
+Aktualität des Normenwerks. Analog zur technischen und
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierli-
+chen Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Ak-
+tualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig,
+immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu
+haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren
+bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen. Um zuverlässig über Änderungen
+in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils
+gültigen Fassungen zu haben, bietet „Austrian Standards plus Publishing“
+gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote.
+Das reicht von klassischen Fachgebiets-Abonnements bis hin zu innovativen
+kundenspezifischen Online-Lösungen und Update-Services.
+Ausländische Normen & Regelwerke: Über »AS+P« können auch
+Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Län-
+dern der Welt bezogen werden – ein besonders wichtiger Service für die
+exportorientierte Wirtschaft.
+Ebenso sind Dokumente anderer österreichischer Regelsetzer bei »AS+P«
+erhältlich.
+Die »Austrian Standards plus GmbH« ist ein
+Unternehmen des Österreichischen Normungsinstituts
+Austrian Standards plus Publishing
+(AS+P)
+Heinestraße 38, 1020 Wien
+E-Mail:
+sales@as-plus.at
+Internet: www.as-plus.at/shop
+Fax:
++43 1 213 00-818
+Tel.:
++43 1 213 00-805
+Informationen über Dienstleistungen und Angebote von
+Austrian Standards plus Publishing und OVE bei:
+OVE Normung
+OVE Österreichischer Verband für
+Elektrotechnik
+Eschenbachgasse 9, 1010 Wien
+E-Mail:
+ove@ove.at
+Internet: www.ove.at
+Fax:
++43 1 586 74 08
+Tel.:
++43 1 587 63 73
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 22
+www.ris.bka.gv.at

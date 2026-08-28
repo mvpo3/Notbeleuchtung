@@ -1,0 +1,4463 @@
+
+
+===== PAGE 201/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 197 
+ 
+Es ist häufig notwendig, eine gegebene klimatische Größe, die einer Wiederkehrdauer von 50 Jahren ent-
+spricht, in eine Größe entsprechend 3, 150 oder 500 Jahren umzurechnen. Solche Umrechnungsfaktoren 
+können mit den gleichen, vorher genannten Formeln berechnet werden. Ein solcher Faktor ist: 
+)
+,
+,
+(
+)
+,
+,
+(
+)
+,
+,
+(
+50
+conv
+n
+v
+K
+n
+v
+T
+K
+n
+v
+T
+K
+=
+, 
+(D.17) 
+der auch eine Funktion der Wiederkehrdauer, des Variationskoeffizienten und der Länge der Messreihen n 
+ist.  
+Tabelle D.4 zeigt die Umrechnungsfaktoren für Extremwerte mit einer Wiederkehrdauer von 50 Jahren in 
+Extremwerte mit Wiederkehrdauern von 3, 150 und 500 Jahren abhängig von den Variationskoeffizienten 
+und von der Länge der Messreihe. 
+D.3 Beispiel für die Verwendung von C1 und C2 
+Ein Beispiel für die Verwendung von C1 und C2 kann nützlich sein. Windgeschwindigkeiten wurden während 
+einer Dauer von 35 Jahren gemessen. Der Mittelwert der jährlichen Extremwerte wurde zu 33 m/s gefunden 
+und der Variationskoeffizient zu v = 0,12. Für die Wiederkehrperiode T = 50 Jahre führt Tabelle D.2 zu 
+y = 3,9019. Weiterhin gibt Tabelle D.1 C1 = 1,1285 und C2 = 0,54030, da n = 35 gilt. Gleichung (D.14) ergibt 
+dann die Bemessungswindgeschwindigkeit: 
+)
+(
+1,1285
+0,5403
+3,9019
+0,12
+1
+33
+−
++
+⋅
+=
+x
+ = 44,8 (m/s) 
+Die sogenannte ideale Gumbel-Verteilung mit C1 = 1,2825 und C2 = 0,5772 (mit einer unendlich langen 
+Messdauer) würde ergeben: 
+)
+(
+1,12825
+0,5772
+3,9019
+0,12
+1
+33
+−
++
+⋅
+=
+x
+ = 43,3 (m/s) 
+Die der Wirklichkeit besser entsprechende Verteilung gibt einen Bemessungswert, der 3,5 % höher ist als 
+derjenige aus der „idealen“ Verteilung. 
+D.4 Berechnung von C1 und C2 
+Mit einer Länge der Messungen über n Jahre können n Werte der Variablen zi berechnet und mit 1 bis n be-
+zeichnet werden: 
+)
+1
+ln
+ln(
++
+−
+−
+=
+n
+i
+zi
+ 
+(D.18) 
+wobei i Werte von 1 bis n annimmt. 
+Der Mittelwert dieser z-Werte wird erhalten aus 
+∑
+=
+=
+n
+i z
+n
+z
+1
+i
+1
+ 
+(D.19) 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+201 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 202/273 =====
+Seite 198 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle D.3 – Faktoren für die Berechnung von Auslegungswerten auf der Grundlage von  
+Mittelwerten jährlicher Extremwerte 
+Wieder-
+kehrdauer 
+T 
+ 
+Dauer der 
+Messungen
+n 
+ 
+Variationskoeffizient 
+v 
+Jahre 
+Jahre 
+0,10 
+0,12 
+0,14 
+0,16 
+0,18 
+0,20 
+0,30 
+0,40 
+0,50 
+0,60 
+0,70 
+ 
+ 
+ 
+3 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,04 
+1,04 
+1,04 
+1,03 
+1,03 
+1,03 
+1,03 
+1,03 
+1,05 
+1,05 
+1,04 
+1,04 
+1,04 
+1,04 
+1,04 
+1,03 
+1,06
+1,05
+1,05
+1,05
+1,05
+1,04
+1,04
+1,04 
+1,07
+1,06
+1,06
+1,05
+1,05
+1,05
+1,05
+1,04 
+1,08
+1,07
+1,06
+1,06
+1,06
+1,06
+1,06
+1,05 
+1,09
+1,08
+1,07
+1,07
+1,07
+1,06
+1,06
+1,05 
+1,13
+1,11
+1,11
+1,10
+1,10
+1,10
+1,09
+1,08 
+1,17 
+1,15 
+1,14 
+1,14 
+1,13 
+1,13 
+1,13 
+1,10 
+1,21 
+1,19 
+1,18 
+1,17 
+1,16 
+1,16 
+1,16 
+1,13 
+1,26
+1,23
+1,21
+1,20
+1,20
+1,19
+1,19
+1,15 
+1,30
+1,27
+1,24
+1,23
+1,23
+1,22
+1,22
+1,18 
+ 
+ 
+ 
+50 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,36 
+1,33 
+1,32 
+1,31 
+1,30 
+1,30 
+1,29 
+1,26 
+1,43 
+1,40 
+1,38 
+1,37 
+1,36 
+1,36 
+1,35 
+1,31 
+1,50
+1,46
+1,45
+1,43
+1,42
+1,42
+1,41
+1,36 
+1,57
+1,53
+1,51
+1,49
+1,48
+1,48
+1,47
+1,42 
+1,65
+1,60
+1,57
+1,56
+1,54
+1,54
+1,53
+1,47 
+1,72
+1,66
+1,64
+1,62
+1,61
+1,60
+1,59
+1,52 
+2,08
+2,00
+1,95
+1,93
+1,91
+1,89
+1,88
+1,78 
+2,43 
+2,33 
+2,27 
+2,24 
+2,21 
+2,19 
+2,18 
+2,04 
+2,79 
+2,66 
+2,59 
+2,54 
+2,51 
+2,49 
+2,47 
+2,30 
+3,15
+2,99
+2,91
+2,85
+2,82
+2,79
+2,77
+2,56 
+3,51
+3,32
+3,23
+3,16
+3,12
+3,09
+3,06
+2,82 
+ 
+ 
+ 
+150 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,48 
+1,44 
+1,42 
+1,41 
+1,40 
+1,40 
+1,39 
+1,35 
+1,57 
+1,53 
+1,51 
+1,49 
+1,48 
+1,48 
+1,47 
+1,42 
+1,67
+1,62
+1,59
+1,57
+1,56
+1,55
+1,55
+1,48 
+1,76
+1,70
+1,67
+1,66
+1,64
+1,63
+1,63
+1,55 
+1,86
+1,79
+1,76
+1,74
+1,72
+1,71
+1,70
+1,62 
+1,95
+1,88
+1,84
+1,82
+1,80
+1,79
+1,78
+1,69 
+2,43
+2,32
+2,27
+2,23
+2,21
+2,19
+2,17
+2,04 
+2,90 
+2,76 
+2,69 
+2,64 
+2,61 
+2,58 
+2,56 
+2,38 
+3,304) 
+3,20 
+3,11 
+3,05 
+3,01 
+2,98 
+2,96 
+2,73 
+3,85
+3,64
+3,53
+3,46
+3,41
+3,38
+3,35
+3,08 
+4,33
+4,08
+3,95
+3,87
+3,81
+3,77
+3,74
+3,42 
+ 
+ 
+ 
+500 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,60 
+1,56 
+1,54 
+1,52 
+1,51 
+1,50 
+1,50 
+1,44 
+1,72 
+1,67 
+1,64 
+1,62 
+1,61 
+1,60 
+1,60 
+1,53 
+1,84
+1,78
+1,75
+1,73
+1,71
+1,70
+1,70
+1,62 
+1,96
+1,89
+1,86
+1,83
+1,82
+1,80
+1,79
+1,70 
+2,08
+2,01
+1,96
+1,94
+1,92
+1,90
+1,89
+1,79 
+2,20
+2,12
+2,07
+2,04
+2,02
+2,01
+1,99
+1,88 
+2,81
+2,68
+2,61
+2,56
+2,53
+2,51
+2,49
+2,32 
+3,41 
+3,23 
+3,14 
+3,08 
+3,04 
+3,01 
+2,99 
+2,76 
+4,01 
+3,79 
+3,68 
+3,60 
+3,55 
+3,51 
+3,48 
+3,20 
+4,61
+4,35
+4,21
+4,12
+4,06
+4,02
+3,98
+3,64 
+5,22
+4,91
+4,75
+4,64
+4,57
+4,52
+4,48
+4,08 
+ 
+                                                
+4) Nationale Fußnote: in EN 50341-1, englische Fassung, irrtümlich mit 2,28 angegeben. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+202 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 203/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 199 
+ 
+Tabelle D.4 – Faktoren für die Berechnung von Bemessungswerten auf der Grundlage  
+entsprechender Werte mit 50 Jahren Wiederkehrdauer 
+Wieder-
+kehrdauer 
+T 
+ 
+Dauer der 
+Messungen
+n 
+ 
+Variationskoeffizient  
+v 
+Jahre 
+Jahre 
+0,10 
+0,12 
+0,14 
+0,16 
+0,18 
+0,20 
+0,30 
+0,40 
+0,50 
+0,60 
+0,70 
+ 
+ 
+ 
+3 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+0,77 
+0,78 
+0,79 
+0,79 
+0,79 
+0,80 
+0,80 
+0,81 
+0,74 
+0,75 
+0,75 
+0,76 
+0,76 
+0,77 
+0,77 
+0,79 
+0,71
+0,72
+0,73
+0,73
+0,73
+0,74
+0,74
+0,76 
+0,68
+0,69
+0,70
+0,71
+0,71
+0,71
+0,71
+0,74 
+0,65
+0,67
+0,68
+0,68
+0,69
+0,69
+0,69
+0,71 
+0,63
+0,65
+0,65
+0,66
+0,66
+0,67
+0,67
+0,69 
+0,54
+0,56
+0,57
+0,57
+0,58
+0,58
+0,58
+0,60 
+0,48 
+0,50 
+0,50 
+0,51 
+0,51 
+0,51 
+0,52 
+0,54 
+0,43 
+0,45 
+0,46 
+0,46 
+0,46 
+0,47 
+0,47 
+0,49 
+0,40
+0,41
+0,42
+0,42
+0,43
+0,43
+0,43
+0,45 
+0,37
+0,38
+0,39
+0,39
+0,39
+0,40
+0,40
+0,42 
+50 
+alle 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+1,00 
+ 
+ 
+ 
+150 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,09 
+1,08 
+1,08 
+1,08 
+1,08 
+1,08 
+1,07 
+1,07 
+1,10 
+1,09 
+1,09 
+1,09 
+1,09 
+1,09 
+1,09 
+1,08 
+1,11
+1,10
+1,10
+1,10
+1,10
+1,10
+1,10
+1,09 
+1,12
+1,11
+1,11
+1,11
+1,11
+1,11
+1,11
+1,10 
+1,13
+1,12
+1,12
+1,12
+1,12
+1,11
+1,11
+1,11 
+1,14
+1,13
+1,13
+1,13
+1,12
+1,125)
+1,12
+1,11 
+1,17
+1,16
+1,16
+1,16
+1,16
+1,16
+1,15
+1,15 
+1,19 
+1,19 
+1,18 
+1,18 
+1,18 
+1,18 
+1,18 
+1,17 
+1,21 
+1,20 
+1,20 
+1,20 
+1,20 
+1,20 
+1,20 
+1,19 
+1,22
+1,22
+1,21
+1,21
+1,21
+1,21
+1,21
+1,20 
+1,23
+1,23
+1,23
+1,22
+1,22
+1,22
+1,22
+1,21 
+ 
+ 
+ 
+500 
+10 
+15 
+20 
+25 
+30 
+35 
+40 
+∞ 
+1,18 
+1,17 
+1,17 
+1,16 
+1,16 
+1,16 
+1,16 
+1,14 
+1,20 
+1,19 
+1,19 
+1,19 
+1,18 
+1,18 
+1,18 
+1,17 
+1,23
+1,22
+1,21
+1,21
+1,20
+1,20
+1,20
+1,19 
+1,25
+1,24
+1,23
+1,23
+1,22
+1,22
+1,22
+1,20 
+1,27
+1,26
+1,25
+1,25
+1,24
+1,24
+1,24
+1,22 
+1,28
+1,27
+1,27
+1,26
+1,26
+1,26
+1,26
+1,24 
+1,35
+1,34
+1,33
+1,33
+1,33
+1,32
+1,32
+1,30 
+1,40 
+1,39 
+1,38 
+1,38 
+1,38 
+1,37 
+1,37 
+1,35 
+1,44 
+1,43 
+1,42 
+1,42 
+1,41 
+1,41 
+1,41 
+1,39 
+1,46
+1,45
+1,45
+1,45
+1,44
+1,44
+1,44
+1,42 
+1,49
+1,48
+1,47
+1,47
+1,47
+1,46
+1,46
+1,45 
+ 
+Der Parameter C2 ist gleich diesem Mittelwert: 
+z
+C =
+2
+ 
+(D.20) 
+Die Varianz der Werte zi wird dann erhalten zu: 
+(
+)
+∑
+=
+−
+=
+n
+i
+i
+z
+z
+n
+1
+2
+2
+z
+1
+σ
+  
+(D.21) 
+wobei σz die Standardabweichung von zi darstellt. Der Parameter C1 ist gleich dieser Standardabweichung: 
+zσ
+C =
+1
+ 
+(D.22) 
+                                                
+5) Nationale Fußnote: in EN 50341-1, englische Fassung, irrtümlich mit 1,17 angegeben. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+203 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 204/273 =====
+Seite 200 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Mit einigen Umstellungen kann die Varianz wie folgt ausgedrückt werden: 
+∑
+=
+−
+=
+n
+i
+i
+z
+z
+n
+σ
+1
+2
+2
+1
+2
+z
+ 
+(D.23) 
+Dies vereinfacht die Berechnung, da die Summierung ausgeführt werden kann, bevor z  bekannt ist. 
+Ein Beispiel zeigt, wie C1 und C2 für n = 10 berechnet werden. 
+Tabelle D.5 – Berechnung und Summierung von z und z2 
+i 
+z 
+z² 
+1 
+- 0,8746 
+0,7649 
+2 
+- 0,5334 
+0,2845 
+3 
+- 0,2618 
+0,0685 
+4 
+- 0,0115 
+0,0001 
+5 
+0,2377 
+0,0565 
+6 
+0,5007 
+0,2507 
+7 
+0,7941 
+0,6306 
+8 
+1,1443 
+1,3094 
+9 
+1,6061 
+2,5795 
+10 
+2,3506 
+5,5254 
+Σ 
+4,9521 
+11,4702 
+ 
+Aus der Summe der Tabelle D.5 ergibt sich  
+0,49521
+10
+1
+10
+1
+=
+=
+∑
+=
+i
+iz
+z
+ 
+und dann daraus folgend 
+0,90179
+0,24523
+1,14702
+10
+1
+10
+1
+2
+z
+=
+−
+=
+−
+=
+∑
+=
+2
+2
+z
+z
+i
+i
+σ
+ 
+0,9496
+z =
+σ
+ 
+0,9496
+z
+1
+=
+= σ
+C
+ 
+und 
+0,4952
+2
+=
+= z
+C
+ 
+Es kann gezeigt werden, dass für n→∞ C1 gegen 
+6
+π
+ = 1,282549 und C2 gegen 0,577216 gehen. Die  
+Größe C2 wird Euler-Zahl genannt. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+204 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 205/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 201 
+ 
+Anhang E 
+(normativ) 
+ 
+Elektrische Anforderungen 
+E.1 Definition der in diesem Anhang verwendeten Symbole 
+Symbol 
+Bedeutung 
+Del 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen Leitern und geer-
+deten Bauteilen während einer schnell oder langsam ansteigenden Überspannung zu verhin-
+dern 
+Dpp 
+Mindestabstand in Luft, der erforderlich ist, um Durchschläge zwischen den Außenleitern wäh-
+rend schnell oder langsam ansteigender Überspannung zu verhindern 
+D50Hz_p_p 
+Mindestabstand in Luft, der erforderlich ist, um Durchschläge zwischen Leitern bei betriebsfre-
+quenter Spannung zu verhindern 
+D50Hz_p_e 
+Mindestabstand in Luft, der erforderlich ist, um Durchschläge zwischen einem Leiter und geer-
+deten Bauteilen bei betriebsfrequenter Spannung zu verhindern 
+d 
+Länge der Funkenstrecke 
+dis 
+Abstand zwischen den Endpunkten einer Isolatorkette 
+Ka 
+Höhenbeiwert 
+Kcs 
+statistischer Koordinationsbeiwert 
+Kg 
+Funkenstreckenfaktor. Für jede Art der Spannungsbeanspruchung kann der Funkenstrecken-
+faktor durch den Funkenstreckenfaktor für Schaltstöße ausgedrückt werden. 
+Kg_ff 
+Blitzstoß-Funkenstreckenfaktor der Luftstrecke ausgedrückt durch den Funkenstreckenbeiwert 
+für Schaltstöße Kg, Kg_ff = 0,74 + 0,26 ⋅ Kg 
+Kg_ff_is 
+Blitzstoß-Funkenstreckenfaktor für die Isolatorketten 
+Kg_pf 
+Funkenstreckenfaktor der Luftstrecke bei Betriebsfrequenz ausgedrückt durch den Schaltstoß-
+Funkenstreckenfaktor Kg, Kg_pf = 1,35 ⋅ Kg - 0,35 ⋅ Kg² 
+Kg_sf 
+Schaltstoß-Funkenstreckenfaktor für die Luftstrecke 
+Kz 
+Abweichungsfaktor 
+Kz_ff 
+Abweichungsfaktor für die Luftstrecken-Stehspannungsverteilung für schnell ansteigende Über-
+spannungen, Kz_ff = 0,691 
+Kz_pf 
+Abweichungsfaktor für die Funkenstrecken-Stehspannungsverteilung für betriebsfrequente 
+Spannungen, Kz_pf = 0,91 
+Kz_sf 
+Abweichungsfaktor für die Funkenstrecken-Stehspannungsverteilung für langsam ansteigende 
+Überspannungen, Kz_sf = 0,922 
+N 
+Anzahl der Urw zugeordneten Standardabweichungen 
+P(U) 
+Überschlagswahrscheinlichkeitsfunktion 
+U2%_sf 
+langsam ansteigende 2-%-Überspannung, welche die Funkenstrecke beansprucht (d.h. eine 
+langsam ansteigende Überspannung mit einer Überschreitenswahrscheinlichkeit von 2 %). 
+Ue2%_sf 
+langsam ansteigende 2-%-Überspannung zwischen Außenleitern und Erde 
+Up2%_sf 
+langsam ansteigende 2-%-Überspannung zwischen Außenleitern 
+U100% 
+100-%-Stehspannung der Funkenstrecke 
+U50% 
+50-%-Stehspannung der Funkenstrecke 
+U50rp 
+50-%-Stehspannung einer Spitze-Platte-Funkenstrecke 
+U50rp_sf 
+50-%-Stehspannung einer Spitze-Platte-Funkenstrecke für langsam ansteigende Überspan-
+nungen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+205 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 206/273 =====
+Seite 202 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+U50rp_ff 
+50-%-Stehspannung einer Spitze-Platte-Funkenstrecke für schnell ansteigende Überspannun-
+gen 
+U50rp_50Hz 
+50-%-Stehspannung einer Spitze-Platte-Funkenstrecke für betriebsfrequente Überspannungen 
+U90% 
+90-%-Stehspannung der Funkenstrecke 
+U90%_ff_is 
+90-%-Blitzstehstoßspannung der in der Leitung eingebauten Isolatorketten 
+Ucw 
+Koordinationsstehspannung 
+Urp 
+repräsentative Überspannung 
+Urw 
+erforderliche Stehspannung der Funkenstrecke 
+Us 
+höchste effektive Betriebsspannung (kV eff) 
+Z 
+Standardabweichung 
+z 
+Variationskoeffizient z = Z/U50%. 
+E.2 Isolationskoordination 
+E.2.1 Entwicklung theoretischer Formeln für die Berechnung elektrischer Abstände 
+Die in diesem Anhang enthaltene Methode ist diejenige, die benutzt wurde, um die elektrischen Abstände 
+festzulegen, die in den Tabellen für Del, Dpp, D50Hz_p_e und D50Hz_p_p in 5.3 über Isolationskoordination enthalten 
+sind. Sie geht zurück auf die Arbeit von ENV 50196 unterstützt durch Unterlagen von EN 60071-1, 
+EN 60071-2 und durch den CIGRE-Bericht 72 „Richtlinien für die Ermittlung der dielektrischen Festigkeit von 
+äußeren Isolationen“. 
+E.2.2 Erforderliche Stehspannung in Luft Urw 
+Die Fähigkeit selbstregenerierender Isolation, den elektrischen Beanspruchungen durch einen Spannungs-
+stoß gegebener Form zu widerstehen, kann mit statistischen Begriffen beschrieben werden. Für eine gege-
+bene Isolation und für Stöße gegebener Form und sich ändernder Spitzenwerte kann eine Durchschlags-
+wahrscheinlichkeit P jedem möglichen Wert der Spannung zugeordnet werden. Die Funktion P ist üblicher-
+weise durch eine mathematische Funktion gegeben, die insgesamt durch die Parameter U50, Z und N be-
+schrieben wird. EN 60071-2 empfiehlt die Verwendung einer modifizierten Weibull-Verteilungsfunktion, de-
+ren Parameter so bestimmt werden, dass sie der Gauss-Funktion für 50 % und 16 % Überschlagswahr-
+scheinlichkeit entsprechen und die Verteilung bei U50% - 3⋅Z abbrechen. 
+Die erforderliche Stehspannung einer Funkenstrecke kann ausgedrückt werden als Funktion der 50-%-Steh-
+spannung der Funkenstrecke: 
+Z
+N
+U
+U
+U
+⋅
+−
+=
+=
+50%
+90%
+rw
+ 
+Dabei ist 
+U50% die 50-%-Stehspannung der Funkenstrecke, 
+Z 
+die Standardabweichung und 
+N 
+die Anzahl der Standardabweichungen ist, die dem Wert Urw entspricht. 
+Für transiente Beanspruchungen (schnell und langsam ansteigende Überspannungen) ist die erforderliche 
+statistische Stehspannung die 90-%-Stehspannung der Luftstrecke. Als Funktion der 50-%-Stehspannung 
+der Funkenstrecke wird sie durch folgende Beziehung wiedergegeben: 
+Z
+,
+U
+U
+U
+⋅
+−
+=
+=
+3
+1
+50%
+rw
+90%
+  
+In Bezug auf betriebsfrequente Spannungen wird die erforderliche Stehspannung als deterministisch be-
+trachtet: 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+206 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 207/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 203 
+ 
+Z
+U
+U
+U
+%
+%
+⋅
+−
+=
+=
+3
+50
+100
+rw
+ 
+Faktoren für die Standardabweichung 
+Die Anzahl der Standardabweichungen kann durch die 50-%-Stehspannung ausgedrückt werden: 
+50%
+U
+z
+Z
+⋅
+=
+ 
+Die folgenden Standardabweichungen werden üblicherweise verwendet: 
+- 
+für Blitzstöße: 
+z = 0,03 und Z = 0,03⋅U50%; 
+- 
+für Schaltstöße: 
+z = 0,06 und Z = 0,06⋅U50%;  
+- 
+für betriebsfrequente Spannungen: z = 0,03 und Z = 0,03⋅U50%. 
+Der Einfluss der atmosphärischen Bedingungen ist in den obigen Werten der Standardabweichung berück-
+sichtigt. 
+Die erforderliche Stehspannung kann mit Verwendung des Abweichungsfaktors Kz ausgedrückt werden 
+durch: 
+50%
+U
+K
+U
+⋅
+=
+z
+rw
+ 
+Die sich ergebenden Abweichungsfaktoren Kz sind in Tabelle E.1 gegeben: 
+Tabelle E.1 – Abweichungsfaktoren 
+Belastungsart 
+Erforderliche Stehspannung Urw 
+der Funkenstrecke 
+Standard-
+abweichung Z 
+Abweichungs-
+faktor Kz 
+Blitz 
+Urw = U90% = U50%-1,3⋅Z 
+0,03⋅U50% 
+Kz_ff = 0,961 
+Schaltvorgänge 
+Urw = U90% = U50%-1,3⋅Z 
+0,06⋅U50% 
+Kz_sf = 0,922 
+Betriebsfrequenz 
+Urw = U100% = U50%-3⋅Z  
+0,03⋅U50% 
+Kz_pf = 0,910 
+Funkenstreckenfaktoren 
+Im Allgemeinen hat die Ausführung der Funkenstrecke eine Auswirkung auf ihre dielektrische Festigkeit. Für 
+eine gegebene Anordnung kann die 50-%-Stehspannung der Funkenstrecke als eine Funktion der 50-%-
+Stehspannung einer Spitze-Platte (RP)-Funkenstrecke ausgedrückt werden: 
+rp
+50
+g U
+K
+U
+⋅
+=
+50%
+ 
+wobei Kg den Funkenstreckenfaktor darstellt. 
+Für jede Art von Spannungsbeanspruchung kann der Funkenstreckenfaktor ausgedrückt werden durch den 
+Funkenstreckenfaktor für Schaltstöße 
+- 
+langsam ansteigende Überspannungen: 
+Kg_sf = Kg; 
+- 
+schnell ansteigende Überspannungen: 
+Kg_ff = 0,74 + 0,26⋅Kg; 
+- 
+betriebsfrequente Spannungen: 
+Kg_pf = 1,35⋅Kg - 0,35⋅Kg
+2. 
+Die erforderliche Stehspannung kann unter Verwendung des Funkenstreckenfaktors Kg ausgedrückt werden 
+durch 
+rp
+50
+g
+z
+rw
+U
+K
+K
+U
+⋅
+⋅
+=
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+207 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 208/273 =====
+Seite 204 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Die Werte von Funkenstreckenfaktoren, die für langsam ansteigende Überspannungen verwendet werden, 
+hängen von der Anordnung der Funkenstrecke ab. Vier Arten werden in dieser Norm berücksichtigt: 
+Tabelle E.2 – Funkenstreckenfaktoren 
+Art des Abstandes  
+in Luft 
+Anordnung 
+Funkenstrecken-
+faktor für langsam 
+ansteigende Über-
+spannungen 
+Kg_sf = Kg 
+Äußere Abstände 
+Leiter-Hindernis (Sicherheitsabstand) 
+1,30 
+Leiter-Mastfenster, d.h. Funkenstreckenanordnung zwis-
+chen einem Leiter innerhalb eines Mastfensters und der 
+Mastkonstruktion. 
+• 
+Tragkette oder V-Kette innerhalb des Fensters 
+1,25 
+Leiter – Mastkonstruktion, d.h. Funkenstreckenabstand zwi-
+schen einem an einem freischwingenden Isolatorketten- 
+strang außen am Querträger befestigten Leiter und der 
+Mastkonstruktion. 
+• 
+Tragkette am Ende des Querträgers 
+• 
+V-Ketten 
+1,45 
+Innere Abstände 
+Leiter-Leiter 
+1,60 
+ 
+Die Funkenstreckenfaktoren in Tabelle E.2 stellen nur beispielhafte Werte dar. In der Praxis können andere 
+durch Versuche belegte Werte verwendet werden. Typische Werte für Funkenstreckenfaktoren können aus 
+EN 60071-2, Anhang G, erhalten werden. 
+Isolationsverhalten bei Überspannungen 
+Das Verhalten äußerer Isolationen kann genauer bei einer Versuchsanordnung für die positive Polarität als 
+für negative Polarität bestimmt werden. Formeln für die Beschreibung des Verhaltens von Spitze-Platte-Fun-
+kenstrecken bei negativer Polarität finden sich in der Literatur, sind aber nicht ausreichend durch Versuche 
+belegt. Sie haben nur beschränkte Gültigkeit. Folglich wird die vorgeschlagene Auslegung für positive Pola-
+rität durchgeführt. EN 60071-2 enthält Formeln, die die Reaktion einer Spitze-Platte-Funkenstrecke auf Ü-
+berspannungen beschreibt, wobei die 50-%-Stehspannung einer Spitze-Platte-Funkenstrecke U50rp abhängig 
+von der Schlagweite d der Funkenstrecke angegeben wird: 
+)
+(d
+f
+U
+=
+rp
+50
+ 
+Folglich kann die erforderliche Stehspannung der Funkenstrecke ausgedrückt werden in Abhängigkeit von 
+der Schlagweite d der Funkenstrecke als: 
+)
+(
+g
+z
+rw
+d
+f
+K
+K
+U
+⋅
+⋅
+=
+ 
+Langsam ansteigende Überspannungen 
+Bei langsam ansteigenden Überspannungen zeigt eine gegebene selbstregenerierende Isolation eine deut-
+lich niedrigere Stehspannung als unter schnell ansteigenden Stößen der gleichen Polarität. In der Praxis ist 
+die Stehspannung mit positiver Polarität für die kritische Stirnzeit und für eine Spitze-Platte-Funkenstrecke 
+bis 25 m Schlagweite gegeben durch: 
+)
+1
+0,46
+ln
+1080
+(
++
+⋅
+=
+d
+U
+rp_sf
+50
+ [kV Scheitel]; d (m) 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+208 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 209/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 205 
+ 
+Schnell ansteigende Überspannungen 
+Für genormte Blitzstöße, die an einer Spitze-Platte-Funkenstrecke bis zu 10 m Schlagweite wirken, ist die  
+Überschlagsspannung bei positiver Polarität gegeben durch: 
+d
+U
+⋅
+= 530
+rp_ff
+50
+ [kV Scheitel]; d (m) 
+Betriebsfrequente Spannungen 
+Die 50-%-Überschlagspannung für eine Spitze-Platte-Funkenstrecke kann durch die folgende Gleichung an-
+genähert werden: 
+)
+0,55
+ln(1
+2
+750
+1,2
+d
+U
++
+⋅
+=
+Hz
+50
+rp_
+50
+ 
+[kV Scheitel]; d (m) 
+E.2.3 Zu berücksichtigende Überspannungen 
+Schnell ansteigende Überspannungen verursacht durch Blitze müssen für die Berechnung der Abstände in 
+Netzen der Bereiche I und II nach EN 60071-1 berücksichtigt werden. 
+Langsam ansteigende Überspannungen verursacht durch Schalthandlungen müssen für die Berechnung der 
+Abstände in Netzen im Bereich II entsprechend EN 60071-1 berücksichtigt werden. 
+Entsprechend 5.3.3 sind die zu berücksichtigenden repräsentativen Überspannungen die folgenden: 
+Schnell ansteigende Überspannungen 
+Zum Zweck der Bestimmung der Funkenstrecken ist die zu berücksichtigende repräsentative Überspannung 
+diejenige, die sich ausgehend vom Einschlagsort der Blitze über einige wenige Maste hinaus ausbreiten 
+kann. Für die Abstände zwischen Leitern und geerdeten Teilen müssen diese gleich der 90-%-Blitzsteh-
+spannung U90%_ff_is der auf der Leitung eingebauten Isolatorketten gesetzt werden. Für die Leiter-Leiter-Ab-
+stände gilt als repräsentative Überspannung 1,20⋅U90%_ff_is. 
+Langsam ansteigende Überspannungen 
+Eine vereinfachte statistische, für die Isolationskoordination bei Freileitungen geeignete Methode kann für 
+langsam ansteigende Überspannungen verwendet werden, wenn vorausgesetzt wird, dass man die Vertei-
+lungen der Überspannung und der Isolationsfestigkeit durch einen Punkt auf jeder dieser Kurven definieren 
+kann.  
+Die Verteilung der Überspannung ist gekennzeichnet durch die statistische Überspannung U2%_sf, die die 
+Spannung mit einer 2-prozentigen Wahrscheinlichkeit des Überschreitens darstellt. Die Isolationsfestigkeit 
+ist gekennzeichnet durch die statistische Stehspannung, die die Spannung darstellt, der die Isolation mit 
+einer 90-prozentigen Wahrscheinlichkeit standhält. Die repräsentative Überspannung Urp wird durch Multipli-
+kation der statistischen Überspannung mit einem statistischen Koordinationsfaktor Kcs erhalten: 
+- 
+Außenleiter-Erde 
+_sf
+2%
+e
+cs U
+K ⋅
+; 
+- 
+Außenleiter-Außenleiter 
+_sf
+2%
+e
+c
+_sf
+2%
+p
+cs
+U
+K
+U
+K
+⋅
+⋅
+=
+⋅
+s
+1,4
+. 
+Das Fehlerrisiko ist dem statistischen Koordinationsfaktor Kcs zugeordnet. Für die Zwecke der Bestimmung 
+der elektrischen Abstände kann Kcs gleich 1,05 gesetzt werden, was einem Überschlagsrisiko der Größen-
+ordnung 1×10-3 entspricht. 
+Betriebsfrequente Spannungen 
+Für die Zwecke der Isolationsauslegung und -koordination sollten die repräsentativen dauernden Spannun-
+gen als konstant und gleich der höchsten Betriebsspannung angesetzt werden: 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+209 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 210/273 =====
+Seite 206 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+- 
+Außenleiter-Erde 
+ 
+s
+3
+2 U
+⋅
+ (Scheitelwert) 
+- 
+Außenleiter-Außenleiter 
+s
+U
+⋅
+2
+ (Scheitelwert) 
+Tabelle E.3 – Repräsentative Überspannungen 
+ 
+Repräsentative Überspannungen 
+Urp 
+ 
+Außenleiter-Erde 
+Außenleiter-Außenleiter 
+Blitz 
+U90%_ff_is 
+1,2 · U90%_ff_is 
+Schaltvorgänge 
+Kcs · Ue2%_sf 
+1,4 · Kcs · Ue2%_sf 
+Betriebsfrequenz 
+ 
+2 · Us 
+ 
+U90%_ff_is Größtwert der 90-%-Blitzstoßstehspannung der Isolatorketten einer Leitung*); 
+U2%_sf 
+langsam ansteigende 2-%-Überspannung, die die Luftstrecke beansprucht (d.h. langsam 
+ansteigende Überspannung mit einer Überschreitenswahrscheinlichkeit von 2 %); 
+Us 
+höchste Betriebsspannung (kV eff). 
+*)  
+Der Wert U90%_ff_is kann einigen EVU nicht bekannt sein. In diesem Fall kann U90%_ff_is aus 
+den Schlagweiten der Isolatorketten und der Funkenstreckenfaktoren abgeleitet werden. 
+U90%_ff_is = Kz_ff · Kg_ff_is · 530 · dis 
+Dabei ist  
+Kz_ff 
+der Abweichungsfaktor (Kz = 0,961); 
+Kg_ff_is 
+der Blitzstoß-Funkenstreckenfaktor der Isolatorketten; 
+dis 
+die Schlagweite zwischen den äußeren Punkten der Isolatorkette. 
+ 
+E.2.4 Berechnungsformeln 
+Für jede Art der Spannungsbeanspruchung sollte die Koordinationsstehspannung der Funkenstrecke höher 
+als die oder gleich der repräsentativen Überspannung sein, so dass die Fehlerrate annehmbar ist. 
+
+
+
+
+
+
+
+⋅
+⋅
+=
+=
+≥
+)
+(d
+f
+K
+K
+U
+K
+U
+U
+U
+U
+g
+z
+rw
+a
+cw
+rw
+rp
+cw
+ 
+Unter Beachtung des Höhenfaktors, der für die Korrektur der Koordinationsstehspannung (siehe 5.3 und 
+E.2.5) beachtet werden muss, und der Formulierung der erforderlichen Stehspannungen entsprechend E.2.2 
+gilt: 
+Die in Tabelle E.5 für die elektrischen Abstände angegebenen Formeln können hieraus abgeleitet werden. 
+3
+·
+2
+s
+U
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+210 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 211/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 207 
+ 
+E.2.5 Höhenfaktor 
+Die Werte in 5.3 wurden für Höhen bis 1000 m erhalten. Die elektrischen Abstände in Freileitungen größerer 
+Höhen oder für ein Land mit geringer Höhe über NN können durch Verwenden eines anderen Höhenfaktors 
+korrigiert werden, wie er in Tabelle E.4 angegeben ist. 
+Tabelle E.4 – Höhenfaktor Ka abhängig von der berücksichtigten Koordinationsstehspannung 
+Höhe 
+Höhenfaktor Ka 
+(m) 
+bis 200 kV 
+von 201 kV bis 
+400 kV 
+von 401 kV bis 
+700 kV 
+von 701 kV bis 
+1100 kV 
+über 
+1100 kV 
+0 
+1,000 
+1,000 
+1,000 
+1,000 
+1,000 
+100 
+0,994 
+0,995 
+0,997 
+0,998 
+0,999 
+300 
+0,982 
+0,985 
+0,990 
+0,993 
+0,996 
+500 
+0,970 
+0,975 
+0,982 
+0,987 
+0,992 
+1000 
+0,938 
+0,946 
+0,959 
+0,970 
+0,978 
+1500 
+0,904 
+0,915 
+0,934 
+0,948 
+0,960 
+2000 
+0,870 
+0,883 
+0,906 
+0,923 
+0,938 
+2500 
+0,834 
+0,849 
+0,875 
+0,896 
+0,913 
+3000 
+0,798 
+0,815 
+0,844 
+0,867 
+0,885 
+ANMERKUNG: Die Werte Ka sind dem Schriftstück IEC 61472 „Arbeiten unter Spannung – Kleinste Abstände für 
+die Annäherung“ entnommen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+211 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 212/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001  
+Seite 208  
+ 
+Tabelle E.5 – Formeln für die Berechnung von Del, Dpp, D50Hz_p_e, D50Hz_p_p 
+ 
+Del 
+Dpp 
+Schnell ansteigende  
+Überspannungen 
+is
+g_f
+g_ff_is
+a
+g_ff
+z_ff
+a
+_ff_is
+90%
+el
+d
+K
+K
+K
+K
+K
+K
+U
+D
+⋅
+⋅
+=
+⋅
+⋅
+⋅
+=
+f
+1
+530
+ 
+g_ff
+z_ff
+a
+_ff_is
+90%
+pp
+K
+K
+K
+U
+D
+⋅
+⋅
+⋅
+⋅
+= 530
+1,2
+ 
+dis 
+Abstand zwischen den äußeren Teilen der Isolatorketten;  
+Ka 
+Höhenfaktor nach Tabelle E.4; 
+Kg_ff 
+Blitzstoß-Funkenstreckenbeiwert ausgedrückt durch den Schaltstoß-Funkenstreckenfaktor Kg, Kg_ff = 0,74 + 0,26 · Kg; 
+Kg_ff_is 
+Blitzstoß-Funkenstreckenfaktor der Isolatorkette; 
+Kz_ff 
+Abweichungsfaktor der Funkenstrecken-Stehspannungsverteilung für schnell ansteigende Überspannungen, KZ_ff = 0,961; 
+U90%_ff_is 
+Größtwert der 90-%-Blitzstoßspannung der Isolatorketten der Leitung. 
+Langsam ansteigende  
+Überspannungen  
+(hauptsächlich über 245 kV) 
+
+
+
+
+
+
+
+
+−
+⋅
+=
+⋅
+⋅
+⋅
+⋅
+1
+46
+,0
+1
+g_sf
+Z_sf
+a
+_sf
+2%
+e
+cs
+el
+K
+K
+K
+U
+K
+e
+D
+1080
+ 
+
+
+
+
+
+
+
+
+−
+⋅
+=
+⋅
+⋅
+⋅
+⋅
+⋅
+1
+e
+1080
+1,4
+f
+s
+g_sf
+Z_sf
+a
+_s
+2%
+e
+c
+46
+,0
+1
+pp
+K
+K
+K
+U
+K
+D
+ 
+Ka 
+Höhenfaktor nach Tabelle E.4; 
+Kcs 
+statistischer Koordinationsbeiwert; 
+Kg_sf 
+Schaltstoß-Funkenstreckenfaktor, Kg_sf = Kg, nach Tabelle E.2; 
+Kz_sf 
+Abweichungsfaktor der Luftstrecken-Stehspannungsverteilung für langsam ansteigende Überspannungen, KZ_sf = 0,922; 
+Ue2%_sf 
+langsam ansteigende 2-%-Überspannung Außenleiter - Erde, die die Funkenstrecke beansprucht (d.h. langsam ansteigende Überspannung mit einer 
+2-%-igen Überschreitenswahrscheinlichkeit. 
+Betriebsfrequente  
+Überspannungen 
+83
+,0
+55
+,0
+1
+e
+g_pf
+f
+z_p
+a
+s
+Hz_p_e
+50
+
+
+
+
+
+
+
+
+
+
+−
+=
+⋅
+⋅
+⋅
+⋅
+K
+K
+K
+U
+D
+3
+750
+ 
+83
+,0
+55
+,0
+1
+e
+g_pf
+z_pf
+a
+s
+Hz_p_p
+50
+
+
+
+
+
+
+
+
+
+
+−
+=
+⋅
+⋅
+⋅
+⋅
+K
+K
+K
+U
+D
+3
+750
+ 
+e 
+Zahl 2,718; 
+Ka 
+Höhenbeiwert nach Tabelle E.4; 
+Kg_pf 
+betriebsfrequenter Funkenstreckenfaktor ausgedrückt durch den Schaltstoß-Funkenstreckenfaktor Kg, Kg_pf = 1,35 Kg – 0,35 Kg²; 
+Kz_pf 
+Abweichungsfaktor der Funkenstrecken-Stehspannungsverteilung für betriebsfrequente Spannungen, Kz_pf = 0,91; 
+Us 
+höchste effektive Betriebsspannung im Netz (kV eff). 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+212 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 213/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 209 
+ 
+Anhang F 
+(informativ) 
+ 
+Elektrische Anforderungen 
+F.1 Definition der in diesem Anhang verwendeten Symbole 
+Symbol 
+Bedeutung 
+D50Hz 
+kleinste erforderliche Schlagweite, um einen Durchschlag bei der betriebsfrequenten Spannung 
+zu vermeiden 
+Del 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen Leitern und geer-
+deten Bauteilen während einer schnell oder langsam ansteigenden Überspannung zu verhin-
+dern 
+Dpp 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen den Außenleitern 
+während einer schnell oder langsam ansteigenden Überspannung zu verhindern 
+Ka 
+Höhenbeiwert 
+Kcs 
+statistischer Koordinationsbeiwert 
+Kg_sf 
+Schaltstoß-Funkenstreckenfaktor der Luftstrecke 
+Kz_ff 
+Abweichungsfaktor für die Luftstrecken-Stehspannungsverteilung für schnell ansteigende Über-
+spannungen, Kz_ff = 0,691 
+Kz_pf 
+Abweichungsfaktor für die Funkenstrecken-Stehspannungsverteilung für betriebsfrequente 
+Spannungen, Kz_pf = 0,91 
+Kz_sf 
+Abweichungsfaktor für die Funkenstrecken-Stehspannungsverteilung für langsam ansteigende 
+Überspannungen, Kz_sf = 0,922 
+U2%_sf 
+langsam ansteigende 2-%-Überspannung zwischen Außenleitern und Erde 
+U90%_ff_is 
+90-%-Blitzstehstoßspannung der in der Leitung eingebauten Isolatorketten 
+Us 
+höchste effektive Betriebsspannung (kV eff) 
+F.2 Isolationskoordination. Beispiele für die Berechnung von Del, Dpp und D50Hz für 
+unterschiedliche Netzspannungen 
+F.2.1 Bereich I: 90-kV-Stromkreis ausgerüstet mit Isolatorketten aus 6 Kappenisolatoren 
+Das folgende Beispiel beschreibt die Berechnung des elektrischen Abstandes für einen 90-kV-Stromkreis, 
+der mit Isolatorketten aus 6 Kappenisolatoren ausgerüstet ist, für eine Leitung in einer NN-Höhe von 
+1000 m. 
+- 
+Die höchste Betriebsspannung: Us = 100 kV. 
+- 
+Für diese Netzspannung ist es nicht erforderlich, irgendwelche Schaltüberspannungen zu betrachten. 
+- 
+Für dieses Beispiel wird vorausgesetzt, dass für eine Isolatorkette aus 6 Kappenisolatoren der Wert der 
+zu berücksichtigenden schnell ansteigenden Überspannungen 
+- 
+Außenleiter gegen Erde: U90%_ff_is = 385 kV 
+ 
+beträgt. 
+- 
+Entsprechend der oben erwähnten Überspannung und der Tabelle E.4 wird der zu verwendende Hö-
+henbeiwert in einer Höhe von 1000 Meter über NN dann: 
+- 
+schnell ansteigende Überspannungen: 
+ 
+Außenleiter-Erde: 
+Ka = 0,946; 
+ 
+Außenleiter-Außenleiter: 
+Ka = 0,959. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+213 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 214/273 =====
+Seite 210  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+- 
+betriebsfrequente Spannung: 
+ 
+Außenleiter-Erde und Außenleiter-Außenleiter: 
+Ka = 0,938. 
+- 
+Die zu berücksichtigenden Abweichungsfaktoren sind die folgenden: 
+- 
+schnell ansteigende Überspannungen: 
+Kz_ff = 0,961; 
+- 
+betriebsfrequente Spannung: 
+Kz_pf = 0,910. 
+- 
+Für die in dieser Norm zu berücksichtigenden vier Funkenstreckenanordnungen sind die in Tabelle E.2 
+für langsam ansteigende Überspannungen festgelegten Funkenstreckenfaktoren (Kg_sf) folgende: 
+- 
+Außenleiter-Außenleiter 
+1,60; 
+- 
+Außenleiter-Mastfenster 
+1,25; 
+- 
+Außenleiter-Mastkonstruktion 
+1,45; 
+- 
+Außenleiter-Hindernis 
+1,30. 
+- 
+Die Werte der elektrischen Abstände werden dann mit Verwendung der in E.2, Tabelle E.5 festgelegten 
+Formeln berechnet. 
+Außenleiter-Mastfenster-Anordnung (Kg_sf = 1,25): 
+- 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+0,75
+1,25
+0,26
+0,74
+0,961
+0,946
+530
+385
+el
+=
+×
++
+×
+×
+×
+=
+D
+ 
+- 
+für betriebsfrequente Überspannungen: 
+m
+0,21
+55
+0
+e
+0,83
+1
+2
+25
+1
+35
+0
+25
+1
+35
+1
+910
+0
+938
+0
+3
+750
+100
+=
+
+
+
+
+
+
+
+
+
+
+
+
+=
+−
+
+
+
+
+×
+−
+×
+×
+×
+×
+×
+,
+D
+,
+,
+,
+,
+,
+,
+50Hz_p_e
+ 
+Für die Leiter-Mastkonstruktion- und Leiter-Hindernis-Anordnungen ist die Berechnung die gleiche, ausge-
+nommen die Werte für den Funkenstreckenfaktor. Die Abstandswerte sind in der Tabelle F.1 angegeben. 
+Außenleiter-Außenleiter-Anordnung (Kg_sf = 1,60): 
+- 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+0,82
+1,60
+0,26
+0,74
+0,961
+0,959
+530
+385
+1,2
+pp
+=
+×
++
+×
+×
+×
+×
+=
+D
+ 
+- 
+für betriebsfrequente Überspannungen: 
+m
+0,30
+55
+0
+e
+0,83
+1
+2
+60
+1
+35
+0
+60
+1
+35
+1
+910
+0
+938
+0
+750
+100
+Hz_p_p
+50
+=
+
+
+
+
+
+
+
+
+
+
+
+
+=
+−
+
+
+
+
+×
+−
+×
+×
+×
+×
+,
+D
+,
+,
+,
+,
+,
+,
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+214 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 215/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 211 
+ 
+Tabelle F.1 – Abstände, 90-kV-Stromkreis ausgerüstet mit 
+Isolatorketten aus 6 Kappenisolatoren 
+ 
+Außenleiter-
+Mastfenster 
+(Kg_sf = 1,25) 
+Außenleiter-
+Mastkonstruktion
+(Kg_sf = 1,45) 
+Außenleiter-
+Hindernis 
+(Kg_sf = 1,30) 
+Außenleiter- 
+Außenleiter 
+(Kg_sf = 1,60) 
+Del und Dpp 
+Del = 0,75 m 
+Del = 0,71 m 
+Del = 0,74 m 
+Dpp = 0,82 m 
+D50Hz 
+D50Hz_p_e = 0,21 m 
+D50Hz_p_e = 0,19 m 
+--- 
+D50Hz_p_p = 0,30 m 
+ 
+F.2.2 Bereich I: 90-kV-Stromkreis ausgerüstet mit Isolatorketten aus 9 Kappenisolatoren 
+Das folgende Beispiel zeigt die Berechnung des elektrischen Abstandes für einen 90-kV-Stromkreis, der mit 
+Isolatorketten aus 9 Kappenisolatoren ausgerüstet ist, für eine Leitung in einer Höhe von 1000 m über NN. 
+- 
+Die höchste Betriebsspannung ist die gleiche wie in dem vorhergehenden Beispiel. Die Funkenstrecken, 
+die im Hinblick auf die betriebsfrequente Spannung notwendig sind, sind dann auch die gleichen. 
+- 
+Die 90-%-Stehspannung der Leitungsisolation ist für schnell ansteigende Überspannungen viel höher, 
+wenn die Isolatorketten aus 9 Kappenisolatoren bestehen als bei 6 Kappenisolatoren. Für dieses Bei-
+spiel mit Isolatorketten aus 9 Einzelisolatoren wird der Wert der zu berücksichtigenden schnell anstei-
+genden Überspannung: 
+- 
+Außenleiter gegen Erde: 
+U90%_ff_is = 557 kV 
+- 
+Entsprechend der oben erwähnten Überspannung wird der zu verwendende Höhenfaktor für eine Höhe 
+von 1000  m über NN dann: 
+- 
+Außenleiter-Erde und Außenleiter-Außenleiter:  
+Ka = 0,959 
+- 
+Die anderen Faktoren sind die gleichen wie in dem vorhergehenden Beispiel. Die elektrischen Abstände 
+werden dann unter Benützung der in E.2, Tabelle E.5 angegebenen Formeln berechnet. 
+Außenleiter-Mastfenster-Anordnung (Kg_sf = 1,25): 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+1,07
+1,25
+0,26
+0,74
+0,961
+0,959
+530
+557
+el
+=
+×
++
+×
+×
+×
+=
+D
+ 
+Für die Leiter-Mastkonstruktion- und Leiter-Hindernis-Anordnungen ist die Berechnung die gleiche, ausge-
+nommen der Wert für den Funkenstreckenfaktor. Die Abstandswerte sind in Tabelle F.2 angegeben. 
+Außenleiter-Außenleiter-Anordnung (Kg_sf = 1,60): 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+1,18
+1,60
+0,26
+0,74
+0,961
+0,959
+530
+557
+1,2
+=
+×
++
+×
+×
+×
+×
+=
+pp
+D
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+215 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 216/273 =====
+Seite 212  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle F.2 – Abstände, 90-kV-Stromkreis ausgerüstet mit  
+Isolatorketten aus 9 Kappenisolatoren 
+ 
+Außenleiter-
+Mastfenster 
+(Kg_sf = 1,25) 
+Außenleiter-
+Mastkonstruktion
+(Kg_sf = 1,45) 
+Außenleiter-
+Hindernis 
+(Kg_sf = 1,30) 
+Außenleiter-
+Außenleiter 
+(Kg_sf = 1,60) 
+Del und Dpp 
+Del = 1,07 m 
+Del = 1,02 m 
+Del = 1,06 m 
+Dpp = 1,18 m 
+ANMERKUNG: Die in diesen zwei Beispielen erhaltenen Abstandswerte zeigen, dass die elektrischen Abstände 
+für eine gegebene Nennspannung abhängig von der Leitungsisolation in zwei Netzen sehr unterschiedlich sein 
+können. Dies begründet, dass die Tabelle 5.2 Abstandswerte für jede Blitzsteh-Stoßspannung enthält. Bei der 
+Verwendung der Tabelle 5.5, die einen einzigen beispielhaften, von der genormten Blitzstehstoßspannung ab-
+hängigen Abstandswert wiedergibt, ist dann Vorsicht geboten. 
+F.2.3 Bereich II: 400-kV-Stromkreis 
+Das folgende Beispiel stellt die Berechnung der elektrischen Abstände für einen 400-kV-Stromkreis in einer 
+Höhe von 1000 m über NN dar. 
+- 
+Die höchste Betriebsspannung: Us = 420 kV. 
+- 
+Für dieses Beispiel wird berücksichtigt, dass der für Isolatorketten aus 19 Kappenisolatoren in Rech-
+nung zu setzende Wert bei schnell ansteigenden Überspannungen beträgt: 
+- 
+Außenleiter-Erde: U90%_ff_is = 1550 kV. 
+- 
+Für dieses Beispiel wird der Wert der zu berücksichtigenden langsam ansteigenden Überspannung an-
+genommen als: 
+- 
+Außenleiter-Erde: 
+Kcs · U2%_sf = 1,05×1050 = 1103 kV; 
+- 
+Außenleiter-Außenleiter: 
+1,40 · Kcs ⋅ U2%_sf = 1,40×1,05×1050 = 1544 kV. 
+- 
+Entsprechend der oben erwähnten Überspannungen beträgt der bei einer Höhe von 1000 Meter über 
+NN zu verwendende Höhenfaktor dann: 
+- 
+Langsam und schnell ansteigende Überspannungen: 
+ 
+Außenleiter-Erde und Außenleiter-Außenleiter 
+Ka = 0,978. 
+- 
+Betriebsfrequente Spannung: 
+ 
+Außenleiter-Erde 
+Ka = 0,946; 
+ 
+Außenleiter-Außenleiter 
+Ka = 0,959. 
+- 
+Die zu berücksichtigenden Abweichungsfaktoren sind die folgenden: 
+- 
+schnell ansteigende Überspannungen 
+Kz_ff = 0,961; 
+- 
+langsam ansteigende Überspannungen 
+Kz_sf = 0,922; 
+- 
+betriebsfrequente Spannung 
+Kz_pf = 0,910. 
+- 
+Die Werte der elektrischen Abstände werden dann mit Hilfe der in E.2, Tabelle E.5 festgelegten Formeln 
+berechnet: 
+Außenleiter-Mastfenster-Anordnung (Kg_sf = 1,25): 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+2,92
+1,25
+0,26
+0,74
+0,961
+0,978
+530
+1550
+el
+=
+×
++
+×
+×
+×
+=
+D
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+216 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 217/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 213 
+ 
+für langsam ansteigende Überspannungen: 
+m
+3,20
+1
+e
+46
+,0
+1
+1,25
+0,922
+0,978
+1080
+1050
+1,05
+el
+=
+
+
+
+
+
+
+
+
+−
+=
+×
+×
+×
+×
+D
+ 
+für betriebsfrequente Überspannungen: 
+m
+0,75
+0,55
+e
+0,83
+1
+Hz_p_e
+50
+=
+
+
+
+
+
+
+
+
+
+
+
+
+=
+−
+
+
+
+
+×
+−
+×
+×
+×
+×
+×
+2
+1,25
+0,35
+1,25
+1,35
+0,910
+0,946
+3
+750
+420
+D
+ 
+Für Anordnungen Außenleiter-Tragwerk und Außenleiter-Hindernis verläuft die Berechnung mit Ausnahme 
+des Funkenstreckenfaktors in gleicher Form. Die Abstandswerte sind in Tabelle F.3 angegeben. 
+Außenleiter-Außenleiter-Anordnung (Kg_sf = 1,60): 
+für schnell ansteigende Überspannungen: 
+(
+)
+m
+3,23
+1,60
+0,26
+0,74
+0,961
+0,978
+530
+1550
+1,2
+pp
+=
+×
++
+×
+×
+×
+×
+=
+D
+ 
+für langsam ansteigende Überspannungen: 
+m
+3,68
+1
+e
+46
+,0
+1
+60
+1
+922
+0
+978
+0
+1080
+1050
+05
+1
+4
+1
+pp
+=
+
+
+
+
+
+
+
+
+−
+=
+×
+×
+×
+×
+×
+,
+,
+,
+,
+,
+D
+ 
+für betriebsfrequente Überspannungen: 
+m
+1,17
+55
+0
+e
+0,83
+1
+2
+60
+1
+35
+0
+60
+1
+35
+1
+910
+0
+959
+0
+750
+420
+Hz_p_p
+50
+=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=
+−
+
+
+
+
+
+
+×
+−
+×
+×
+×
+×
+,
+D
+,
+,
+,
+,
+,
+,
+ 
+Tabelle F.3 – Abstände, 400-kV-Stromkreis 
+ 
+Außenleiter-
+Mastfenster 
+(Kg_sf = 1,25) 
+Außenleiter-
+Mastkonstruktion
+(Kg_sf = 1,45) 
+Außenleiter-
+Hindernis 
+(Kg_sf = 1,30) 
+Außenleiter-
+Außenleiter 
+(Kg_sf = 1,60) 
+schnell ansteigende 
+Überspannung 
+Del und Dpp 
+ 
+Del = 2,92 m 
+ 
+Del = 2,78 m 
+ 
+Del = 2,89 m 
+ 
+Dpp = 3,23 m 
+Langsam ansteigende 
+Überspannung 
+Del und Dpp 
+ 
+Del = 3,20 m 
+ 
+Del = 2,57 m 
+ 
+Del = 3,02 m 
+ 
+Dpp = 3,68 m 
+D50Hz 
+D50Hz_p_e = 0,75 m 
+D50Hz_p_e = 0,70 m 
+–  
+D50Hz_p_p = 1,17 m 
+ 
+Die größten Abstände ergeben sich für Schaltüberspannungen ausgenommen der innere Abstand Del mit 
+Kg_sf = 1,45, der durch Blitzüberspannung bestimmt ist. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+217 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 218/273 =====
+Seite 214  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+Anhang G 
+(normativ) 
+ 
+Erdungsanlagen 
+ 
+G.1 Definition der in diesem Anhang verwendeten Symbole 
+Symbol 
+Bedeutung 
+A 
+Querschnitt des Erdungsleiters oder des Erders in mm² 
+G 
+Kurzschlussstromdichte für den Erdungsleiter 
+I 
+Leiterstrom in A (Effektivwert) 
+IB 
+Körperstrom 
+Id 
+Dauerstrom in einem Erdungsleiter 
+IE 
+Erdrückstrom 
+IEW 
+Strom im Erdseil (im ausgeglichenen Zustand) 
+K 
+Konstante, die vom Material der stromführenden Komponente abhängt 
+Ra 
+zusätzlicher elektrischer Widerstand (Ra = Ra1 + Ra2) 
+Ra1 
+z.B. Widerstand des Schuhwerks 
+Ra2 
+Ausbreitungswiderstand des Standortes 
+r 
+Reduktionsfaktor der Erdseile. Auch „Schirmfaktor der Erdseile“ genannt. 
+s 
+Profilumfang eines Leiters mit rechteckigem Querschnitt 
+tF 
+Fehlerdauer in s 
+UD 
+Potentialdifferenz bei der, wenn sie als Spannungsquelle in einem Berührungsspannkreis wirkt, 
+die Personensicherheit sichergestellt ist, wenn zusätzliche bekannte Widerstände (z.B. Schuh-
+werk, Standortisolierung) einbezogen werden. 
+UT 
+Berührungsspannung in V 
+UTp 
+zulässige Berührungsspannung, d.h. die Spannung längs des menschlichen Körpers 
+ZB 
+gesamte Körperimpedanz in Ω 
+ZEW-E 
+Eigenimpedanz des Erdseiles 
+ZML-EW 
+Gegenimpedanz zwischen Leitern und Erdseilen 
+β 
+Reziprokwert des Widerstands-Temperaturkoeffizienten der stromführenden Komponenten bei 
+0 °C 
+θi 
+Anfangstemperatur des Erders in °C 
+θf 
+Endtemperatur des Erders in °C 
+ρE 
+spezifischer Erdwiderstand nahe der Oberfläche in Ω⋅m 
+3I0 
+Summe der Nullströme 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+218 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 219/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 215 
+ 
+G.2 Mindestmaße von Erdern und Schutzüberzügen, um mechanische Festigkeit 
+und Korrosionsbeständigkeit sicherzustellen. 
+Tabelle G.1 – Mindestabmessungen von Erdern und Schutzüberzügen 
+Mindestmaße 
+Kern 
+Beschichtung/ 
+Mantel 
+Material 
+Art des Erders 
+Durch-
+messer
+Quer-
+schnitt 
+Dicke 
+Einzel-
+wert 
+Mittel-
+werte 
+ 
+ 
+ 
+(mm) 
+(mm²) 
+(mm) 
+(µm) 
+(µm) 
+Band b) 
+ 
+90 
+3 
+63 
+70 
+Profile  
+(einschl. Platten) 
+ 
+90 
+3 
+63 
+70 
+Rohr 
+25 
+ 
+2 
+47 
+55 
+Rundstab als  
+Tiefenerder 
+16 
+ 
+ 
+63 
+70 
+feuerverzinkt 
+Rundstab als  
+Oberflächenerder 
+10 
+ 
+ 
+ 
+50 
+mit Bleimantel a) 
+Runddraht für  
+Oberflächenerder 
+8 
+ 
+ 
+1000 
+ 
+mit extrudiertem 
+Kupferüberzug 
+Rundstab für  
+Tiefenerder 
+15 
+ 
+ 
+2000 
+ 
+Stahl 
+mit elektrolytischem 
+Kupferüberzug 
+Rundstab für  
+Erdungsstäbe 
+14,2 
+ 
+ 
+90 
+100 
+Band 
+ 
+50 
+2 
+ 
+ 
+Runddrähte für  
+Oberflächenerder 
+ 
+25 c) 
+ 
+ 
+ 
+verseiltes Kabel 
+1,8 d) 
+25 
+ 
+ 
+ 
+blank 
+Rohr 
+20 
+ 
+2 
+ 
+ 
+verzinnt 
+Seil 
+1,8 d) 
+25 
+ 
+1 
+5 
+verzinkt 
+Band b) 
+ 
+50 
+2 
+20 
+40 
+Seil 
+1,8 d) 
+25 
+ 
+1000 
+ 
+Kupfer 
+mit Bleimantel a) 
+Runddraht 
+ 
+25 
+ 
+1000 
+ 
+a) 
+zum direkten Einbetten in Beton nicht geeignet. 
+b) 
+Band, gewalzt oder geschnitten mit abgerundeten Kanten. 
+c) 
+Unter extremen Bedingungen, wenn die Erfahrung gezeigt hat, dass die Gefahr von Korrosion und  
+mechanischen Beschädigungen sehr gering ist, darf 16 mm2 verwendet werden. 
+d) 
+Durchmesser des Einzeldrahtes. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+219 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 220/273 =====
+Seite 216  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+G.3 Berechnung der Stromtragfähigkeit 
+Für Fehlerströme, die in weniger als 5 s unterbrochen werden, muss der Querschnitt der Erdungsleitung 
+oder des Erders mit der folgenden Formel berechnet werden (siehe IEC 60724): 
+β
+θ
+β
+θ
++
++
+=
+i
+f
+F
+ln
+t
+K
+I
+A
+ 
+Dabei ist 
+A 
+Querschnitt in mm²; 
+I 
+Leiterstrom in A (Effektiv-Wert); 
+tF 
+Dauer des Fehlerstroms in s; 
+K 
+Konstante, die vom Werkstoff der stromführenden Komponente abhängt. Tabelle G.2 enthält Werte 
+für die gängigsten Werkstoffe; 
+β 
+Kehrwert des Widerstands-Temperaturkoeffizienten der stromführenden Komponenten bei 0 °C (siehe 
+Tabelle G.2); 
+θi 
+Anfangstemperatur in °C. Werte können dem Anhang A von IEC 60287-3-1 entnommen werden. 
+Wenn in NNA oder der Projektspezifikation keine Werte enthalten sind, sollte 20 °C als Bodenumge-
+bungstemperatur in einer Tiefe von 1 m verwendet werden; 
+θf 
+Endtemperatur in °C. 
+Tabelle G.2 – Werkstoff-Konstanten 
+Werkstoff 
+β in °C 
+K in As1/2/mm² 
+Kupfer 
+234,5 
+226 
+Aluminium 
+228,0 
+148 
+Stahl 
+202,0 
+78 
+ 
+Unter üblichen Bedingungen für Erdungsleiter in Luft und Erder im Boden kann die Kurzschlussstromdichte 
+G für Anfangstemperaturen von 20 °C und für Endtemperaturen bis 300 °C dem Bild G.4 entnommen wer-
+den. 
+Für länger andauernde Fehlerströme (wie sie in Anlagen mit isoliertem oder erdschluss-kompensiertem 
+Sternpunkt auftreten) sind die empfohlenen Querschnitte in Bild G.5 dargestellt. Wenn eine andere Endtem-
+peratur als 300 °C gewählt wird (siehe Bild G.4, Kurven 1, 3 und 4), kann der Strom mit Hilfe eines aus der 
+Tabelle G.3 gewählten Faktors berechnet werden. 
+Für isolierte Leiter und Leiter in Beton werden zum Beispiel geringere Endtemperaturen empfohlen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+220 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 221/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 217 
+ 
+Tabelle G.3 – Faktoren für die Umrechnung von Dauerströmen für 300 °C Endtemperatur auf  
+eine andere Endtemperatur 
+Endtemperatur in °C 
+Umrechnungsfaktor 
+400 
+1,20 
+350 
+1,10 
+300 
+1,00 
+250 
+0,90 
+200 
+0,80 
+150 
+0,70 
+100 
+0,60 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 Kupfer, blank oder verzinkt; 
+2 Kupfer, verzinnt oder mit Bleimantel; 
+3 Aluminium, nur für Erdungsleiter; 
+4 feuerverzinkter Stahl. 
+Die Kurven 1, 3 und 4 gelten für eine Endtemperatur von 300 °C, die Kurve 2 gilt für 150 °C. Tabelle G.3 ent-
+hält Umrechnungsfaktoren für die Kurzschlussstromdichte in Bezug auf andere Endtemperaturen. 
+Bild G.4 – Kurzschlussstromdichte G für Erdungsleitungen und Erder 
+abhängig von der Fehlerstromdauer tF 
+ 
+ 
+1
+2
+3
+4
+2 0 0 0 
+1  0 0 0 
+8 0 0 
+6 0 0 
+4 0 0 
+3 0 0 
+2 0 0 
+1 5 0 
+1 0 0 
+8 0 
+6 0 
+4 0 
+2 0 
+1 0 
+1 0 
+0 , 0 2 0 , 0 4 0,0 6 0 , 0 8 0 , 1 
+0 ,2
+0,4
+0,6 0,8 1
+2
+4
+6
+s 
+A / m m 2 
+tF
+G 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+221 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 222/273 =====
+Seite 218  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A ⋅ s: Produkt  aus Querschnittsfläche und Umfang eines rechteckigen Leiters 
+ 
+1 Kupfer, blank oder verzinkt; 
+2 Kupfer, verzinnt oder mit Bleimantel; 
+3 Aluminium; 
+4 feuerverzinkter Stahl. 
+Die Kurven 1, 3 und 4 gelten für eine Endtemperatur von 300 °C, die Kurve 2 gilt für 150 °C. Tabelle G.3 ent-
+hält Umrechnungsfaktoren für die Kurzschlussstromdichte in Bezug auf andere Endtemperaturen. 
+Bild G.5 – Dauerstrom Id für Erdungsleiter mit kreisrundem  
+und rechteckigem Querschnitt  
+ 
+2 0 0 0 
+4 0 
+2000
+4000
+1 0 0 
+6000
+1000
+1 0 0 0 
+1 0 0 
+2 0 0
+2 0 0 
+3 0 0 
+1 5 0 
+4 0 0 
+6 0 0 
+8 0 0 
+4 0 0 6 00 800
+6 0 
+8 0 
+2 0 0 00
+m m 2   .   m m 
+A 
+A
+1 6 
+35
+50
+70
+95 120 150 m m 2 
+1
+3
+2
+4
+I d 
+A ⋅ s
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+222 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 223/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 219 
+ 
+G.4 Berührungsspannung und Körperstrom 
+G.4.1 Zusammenhang zwischen Berührungsspannung und Körperstrom 
+Für die Berechnung der zulässigen Berührungsspannungen in Hochspannungsanlagen werden die folgen-
+den Annahmen getroffen: 
+- 
+der Strompfad läuft von einer Hand zu den Füßen; 
+- 
+50-%-Wahrscheinlichkeit für die angenommenen Wert der Körperimpedanz; 
+- 
+5-%-Wahrscheinlichkeit für das Auftreten von Herzkammerflimmern; 
+- 
+keine zusätzlichen Widerstände. 
+ANMERKUNG: Diese Annahmen führen zu einer Berührungsspannungskurve mit einem geschätzten annehm-
+baren Risiko, wobei das seltene Auftreten von Erdfehlern in Hochspannungsanlagen und die geringe Wahr-
+scheinlichkeit der gleichzeitigen Anwesenheit von Personen berücksichtigt sind. 
+Unter der Voraussetzung der Grundlagen für die Körperstromberechnung nach IEC 60479-1, Überarbei-
+tung 2 des Abschnittes 2, und der Berücksichtigung der Kurve c2 von Bild 5 (Wahrscheinlichkeit von Herz-
+kammerflimmern kleiner als 5 %, Strompfad von der linken Hand zu beiden Füßen) ergibt sich die folgende 
+Tabelle G.6: 
+Tabelle G.6 – Zulässiger Körperstrom IB abhängig von der Fehlerdauer tF 
+tF Fehlerdauer  
+(s) 
+IB Körperstrom  
+(mA) 
+0,05 
+900 
+0,10 
+750 
+0,20 
+600 
+0,50 
+200 
+1,00 
+80 
+2,00 
+60 
+5,00 
+51 
+10,00 
+50 
+Um die zugehörige zulässige Berührungsspannung zu erhalten, ist es notwendig, die gesamte Körperimpe-
+danz zu bestimmen. Diese Impedanz hängt von den Berührungsspannungen und dem Stromweg ab. Werte 
+für Ströme von Hand zu Hand oder von Hand zum Fuß sind in IEC 60479-1 angegeben, woraus die fol-
+gende Tabelle G.7 abgeleitet ist (Wahrscheinlichkeit von 50 % dafür, dass die Körperimpedanzen kleiner 
+oder gleich den angenommenen Werten sind). 
+Tabelle G.7 – Gesamte Körperimpedanz ZB abhängig von der Berührungsspannung UT für ei-
+nen Stromweg Hand zu Hand oder Hand zum Fuß 
+Berührungsspannung UT  
+(V) 
+Gesamte Körperimpedanz ZB  
+(Ω) 
+25 
+3250 
+50 
+2625 
+75 
+2200 
+100 
+1875 
+125 
+1625 
+220 
+1350 
+700 
+1100 
+1000 
+1050 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+223 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 224/273 =====
+Seite 220  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Für die Berücksichtigung eines Stromweges von einer Hand zu den Füßen ist ein Korrekturfaktor von 0,75 
+für die Körperimpedanz anzuwenden. Durch Kombination der beiden Tabellen G.6 und G.7 ist es unter Be-
+rücksichtigung dieses Korrekturfaktors möglich, in einem Iterationsverfahren eine Berührungsspannungs-
+grenze für jeden Wert der Fehlerdauer zu berechnen. 
+Tabelle G.8 – Zusammenhang zwischen Fehlerdauer tF und 
+zulässiger Berührungsspannung UTp 
+Fehlerdauer tF (s) 
+Zulässige Berührungsspannung UTp (V) 
+0,05 
+735 
+0,10 
+633 
+0,20 
+528 
+0,50 
+204 
+1,00 
+107 
+2,00 
+90 
+5,00 
+81 
+10,00 
+80 
+ 
+G.4.2 Berechnung mit Berücksichtigung zusätzlicher Widerstände 
+ 
+ 
+Ra 
+UD
+ZB 
+UTp
+IB 
+ 
+ 
+UTp 
+zulässige Berührungsspannung, das ist die Spannung über den menschlichen Körper; 
+ZB 
+Körperimpedanz; 
+IB 
+durch den Körper fließender Strom; 
+UD 
+Potentialunterschied, der als Spannungsquelle im Berührungsstromkreis mit einem Grenzwert wirkt, 
+der die Personensicherheit sichergestellt, wenn zusätzliche, bekannte Widerstände (z.B. Schuhwerk, 
+Standortisolierung) einbezogen werden; 
+Ra 
+zusätzlicher Widerstand (Ra = Ra1+Ra2); 
+Ra1 
+z.B. Widerstand des Schuhwerks; 
+Ra2 
+Erdausbreitungswiderstand des Standortes. 
+Bild G.9 – Ersatzschaltbild zur Berechnung der Berührungsspannungen  
+und Körperströme 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+224 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 225/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 221 
+ 
+Tabelle G.10 – Werte für die Berechnung 
+Art der Berührung 
+Linke Hand - beide Füße 
+Wahrscheinlichkeit, dass ZB nicht überschritten wird 
+50 % 
+Kurve IB = f (t) 
+c2 in Bild 14 von IEC 60479-1 
+Stromkreisimpedanz 
+ZB (50 %) + Ra 
+Zusätzlicher Widerstand 
+Ra = Ra1 + Ra2 = Ra1 + 1,5 ρE
+ *) 
+*) ρE ist der spezifische Erdwiderstand nahe der Oberfläche in Ω⋅m. 
+ 
+Berechnungsmethode 
+Ft  
+Fehlerdauer 
+⇓ 
+)
+( F
+Tp
+t
+f
+U
+=
+ 
+entsprechend Tabelle G.6 und Tabelle G.8 mit Verwendung der Interpolation oder 
+direkt aus der Kurve UD1 in Bild 6-2. 
+⇓ 
+)
+(
+Tp
+B
+U
+f
+Z =
+ 
+entsprechend Tabelle G.6 und Tabelle G.7 mit Interpolation 
+IB   = UTp / ZB 
+gemäß Definition 
+⇓ 
+UD(tF) = UTp(tF) + (Ra1 + Ra2)·IB = UTp(tF) + Ra·UTp(tF)/ZB = UTp(tF)·(1 + Ra/ZB) 
+Das Diagramm in Bild 6-2 zeigt Kurven UD = f(tF) für vier Werte von Ra: 
+Ra = 0 Ω; 
+Ra = 1750 Ω, Ra1 = 1000 Ω, ρE =   500 Ω⋅m; 
+Ra = 4000 Ω, Ra1 = 1000 Ω, ρE = 2000 Ω⋅m; 
+Ra = 7000 Ω, Ra1 = 1000 Ω, ρE = 4000 Ω⋅m. 
+G.5 Messung von Berührungsspannungen 
+Für Berührungsspannungsmessungen muss eine Strom-Sonden-Methode verwendet werden (siehe H.4): 
+Es gibt die folgenden zwei annehmbaren alternativen Methoden: 
+1) 
+Die Berührungsspannung wird unter Berücksichtigung des menschlichen Körpers mit einem Widerstand 
+von 1 kΩ bestimmt. 
+ 
+Die Messelektroden für die Simulation der Füße müssen eine Gesamtfläche von 400 cm2 haben und auf 
+der Erde mit einer Mindestkraft von mindestens 500 N aufliegen. Alternativ kann eine mindestens 20 cm 
+in den Boden getriebene Sonde als Messelektrode verwendet werden. Zur Messung der Berüh-
+rungsspannung in irgendeinem Teil der Anlage muss die Messelektrode in einem Abstand von 1 m vom 
+berührbaren Teil der Anlage angeordnet werden: bei Beton oder trockenem Boden sollte sie sich auf ei-
+nem feuchten Tuch oder einem Wasserfilm befinden. Die Spitzenelektrode für die Simulation der Hand 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+225 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 226/273 =====
+Seite 222  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+muss in der Lage sein, eine Farbschicht (die nicht als Isolierschicht wirkt) zuverlässig zu durchdringen. 
+Eine Klemme des Voltmeters wird mit der Handelektrode verbunden, die andere Klemme mit der Fuß-
+elektrode. Es genügt, solche Messungen als Stichprobenprüfung durchzuführen.  
+ANMERKUNG: Um einen schnellen Überblick über die oberen Grenzen der Berührungsspannungen zu erhal-
+ten, reichen oft eine Messung mit einem Voltmeter mit einem hohen inneren Widerstand und eine 10 cm in den 
+Boden getriebene Sonde aus. 
+2) 
+Die Berührungsspannung wird durch Messung der treibenden Quellspannung UD (Bild G.9) gemessen, 
+wobei ein Voltmeter mit hoher Impedanz verwendet wird und die Berührungsspannung, wie in G.4.2 be-
+schrieben, berechnet wird. Zur Messung der treibenden Quellspannung in irgendeinem Teil der Anlage 
+muss die Elektrode in einem Abstand von 1 m vom ausgesetzten Teil der Anlage angeordnet werden. 
+Eine Klemme des Voltmeters wird mit dem ausgesetzten Teil und die andere Klemme mit der Fußelekt-
+rode, einer mindestens 20 cm in die Erde getriebenen Sonde, verbunden. 
+G.6 Reduktionsfaktor durch Erdseile auf Freileitungen 
+G.6.1 Allgemeines 
+Erdseile auf Freileitungen beteiligen sich an der Rückführung von Fehlerströmen zur Erde. Sie übernehmen 
+einen Teil des Erdfehlerstromes des entsprechenden Stromkreises. Dadurch wird die Erdungsanlage einer 
+durch einen Erdfehler behafteten Hochspannungsanlage in Bezug auf die Ableitung des Erdfehlerstroms 
+wesentlich wirksamer. Das Maß dieser Entlastung wird durch den Reduktionsfaktor beschrieben. 
+Der Reduktionsfaktor r für ein Erdseil einer Drehstromfreileitung ist das Verhältnis des Rückstroms in der 
+Erde zur Summe der Nullströme des Drehstromkreises. 
+r = IE/3I0 = (3I0 – IEW)/3I0 
+Dabei ist 
+IEW 
+Strom im Erdseil (im ausgeglichenen Zustand); 
+IE 
+Erdrückstrom; 
+3I0 
+Summe der Nullströme. 
+Für eine ausgeglichene Stromverteilung einer Freileitung kann der Reduktionsfaktor eines Erdseiles auf der 
+Basis der Eigenimpedanz der Erdseile ZEW-E und der Gegenimpedanz zwischen Leitern und Erdseilen ZML-EW 
+mit 
+r = (ZEW-E - ZML-EW)/ZEW-E = 1 - (ZML-EW/ZEW-E) 
+berechnet werden. 
+Den größten Einfluss auf ZML-EW hat der mittlere Abstand zwischen Leiter und Erdseil und auf ZEW-E der  
+Widerstand des Erdseiles. Dadurch nimmt die Reduktionswirkung eines Erdseiles in Bezug auf den Erd-
+strom mit geringeren Abständen zwischen Leitern und Erdseilen und mit einem niedrigeren Widerstand des 
+Erdseiles zu (r wird kleiner). 
+G.6.2 Werte für den Reduktionsfaktor von Freileitungen 
+Die Werte der Reduktionsfaktoren schwanken im Bereich 0,2 bis 1 und hängen von mehreren Parametern 
+ab, z.B.: Leitungsgeometrie, Anordnung der Erdseile relativ zu den Leitern, Erdwiderstand, Anzahl der Erd-
+seile und deren Widerstand. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+226 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 227/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 223 
+ 
+Anhang H 
+(informativ) 
+ 
+Erdungsanlagen 
+H.1 Definition der in diesem Anhang verwendeten Symbole 
+Symbol 
+Bedeutung 
+D 
+L/π Durchmesser des Ringerders 
+d 
+Durchmesser des verseilten Erders oder halbe Breite eines Erdbandes / Durchmesser des  
+Tiefenerders 
+I0 
+Null-Strom während des Fehlers 
+IE 
+Erdfehlerstrom während eines Fehlers 
+Im 
+Gemessener Prüfstrom 
+L 
+Länge des Erdbandes / Länge des Tiefenerders 
+RE 
+Erdausbreitungswiderstand 
+RER 
+Ausbreitungswiderstand eines Ringerders 
+RES 
+Ausbreitungswiderstand eines Banderders 
+Rt 
+Mastfußausbreitungswiderstand 
+r 
+Reduktionsfaktor der Erdseile. Auch „Schirmfaktor der Erdseile“ genannt. 
+UE 
+Erdungsspannung 
+Uem 
+gemessene Spannung zwischen der Erdungsanlage und einer Sonde in der Bezugserde 
+ZE 
+Erdimpedanz, z.B. erhalten durch eine Messung oder Berechnung 
+ZS 
+Erdseilimpedanz eines Spannfeldes 
+ρE 
+spezifischer Erdwiderstand in Ω⋅m 
+H.2 Grundlagen für den Nachweis 
+H.2.1 Spezifischer Erdwiderstand 
+Der spezifische Erdwiderstand ρE ändert sich an den unterschiedlichen Standorten beträchtlich mit der Bo-
+denart, Korngröße, Dichte und Feuchtigkeit (siehe Tabelle H.1) der unterschiedlichen Standorte. 
+Tabelle H.1 – Spezifischer Erdwiderstand für Frequenzen technischer Wechselströme  
+(Bereich von Werten, die häufig gemessen werden) 
+Bodenart 
+Bodenwiderstand ρE in Ω⋅m 
+Sumpfboden 
+Lehm, Ton, Humus 
+Sand 
+Kies 
+ 
+Verwitterter Fels 
+Sandstein 
+Granit 
+ 
+Moräne 
+5 bis 40 
+20 bis 200 
+200 bis 2500 
+2000 bis 3000 
+ 
+meist unter 1000 
+2000 bis 3000 
+bis zu 50 000 
+ 
+bis zu 30 000 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+227 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 228/273 =====
+Seite 224  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Bis in einigen Metern Tiefe können Feuchtigkeitsänderungen zeitliche Schwankungen des spezifischen Erd-
+widerstandes verursachen. Weiter ist zu berücksichtigen, dass der Bodenwiderstand sich beträchtlich mit 
+der Tiefe ändern kann, da meist wesentlich unterschiedliche Bodenarten vorhanden sind. 
+H.2.2 Erdausbreitungswiderstand 
+Der Erdausbreitungswiderstand RE eines Erders hängt von dem spezifischen Erdwiderstand ebenso ab wie 
+von den Maßen und der Anordnung des Erders. Er hängt hauptsächlich von der Länge des Erders, weniger 
+von seinem Querschnitt ab. Bilder H.2 und H.3 zeigen Werte für den Ausbreitungswiderstand für Oberflä-
+chenerder bzw. Tiefenerder bezogen auf die Gesamtlänge. 
+Im Falle sehr langer Oberflächenerder (z.B. Kabel mit Erderwirkung) nimmt der Ausbreitungswiderstand mit 
+der Länge ab, nähert sich aber einem Grenzwert. Fundamenterder können als im umgebenden Boden ein-
+gegrabene Erder betrachtet werden. 
+Der Erdausbreitungswiderstand eines vermaschten Erders ist ungefähr 
+D
+R
+2
+E
+E
+ρ
+=
+ 
+D 
+ist der Durchmesser eines Kreises mit der gleichen Fläche wie der des vermaschten Erders. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild H.2 – Erdausbreitungswiderstand RE von Oberflächenerdern 
+(aus Bändern, Rundmaterial oder Seilen) für lineare oder 
+Ringanordnung in homogenem Erdreich 
+100
+60
+6 
+8 
+1 0 1 2
+15
+20
+30
+40
+80 m
+4 
+L
+4 
+6 
+8 
+1 0 
+1 2 
+1 5 
+2 0 
+3 0 
+4 0 
+6 0 
+8 0 
+1 0 0 
+1 2 0 
+1 5 0 
+2 0 0 
+3 0 0 
+4 0 0 
+6 0 0 
+4
+6
+8
+10 12 15
+20 m
+30
+R E 
+Ω 
+D
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+228 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 229/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 225 
+ 
+Die Werte wurden nach folgenden Beziehungen berechnet: 
+- 
+Banderder: 
+RES = (ρE/πL)⋅ln(2L/d) 
+- 
+Ringerder: 
+RER = (ρE/π2D)⋅ln(2πD/d) 
+Dabei ist 
+L 
+Länge des Banderders; 
+D 
+Durchmesser des Ringerders = L/π; 
+d 
+Durchmesser des Seiles oder halbe Breite eines Erdbandes (hier wurden 15 mm angenommen); 
+ρE 
+spezifischer Erdwiderstand in Ω⋅m; 
+π 
+Zahl 3,1416. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild H.3 – Erdausbreitungswiderstand RE von Tiefenerdern, 
+die senkrecht im homogenen Boden eingebracht sind 
+Die Werte wurden entsprechend der Beziehung 
+RE = (ρE/2πL)⋅ln(4L/d) 
+berechnet. 
+Dabei ist 
+L 
+Länge des Tiefenerders; 
+d 
+Durchmesser des Tiefenerders (hier wurden 20 mm angenommen); 
+4 
+3 
+2 
+6
+8
+10 12
+15
+20
+30
+4 0   m   5 0 
+2 
+3 
+4 
+6 
+8 
+1 0 
+1 2 
+1 5 
+2 0 
+3 0 
+4 0 
+6 0 
+8 0 
+1 0 0 
+1 2 0 
+1 5 0 
+2 0 0 
+3 0 0 
+L
+R E 
+Ω 
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+229 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 230/273 =====
+Seite 226  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ρE 
+spezifischer Erdwiderstand in Ω⋅m; 
+π 
+Zahl 3,1416. 
+H.3 Einbau von Erdern und Erdungsleitern 
+H.3.1 Einbau von Erdern 
+H.3.1.1 
+Oberflächenerder 
+Oberflächenerder werden üblicherweise in der Sohle eines Grabens oder einer Baugrube verlegt. 
+Es wird empfohlen, dass 
+- 
+sie mit leicht gestampftem Boden umgeben werden; 
+- 
+Steine oder Kies nicht direkt mit dem eingegrabenen Erder in Kontakt sein sollen; 
+- 
+der vorgefundene Boden durch geeignetes Verfüllmaterial ersetzt werden sollte, falls er korrodierend für 
+das verwendete Erdermaterial ist. 
+H.3.1.2 
+Lotrecht oder schräg eingetriebene Tiefenerder 
+Lotrechte oder schräge eingetriebene Tiefenerder werden in den Boden mit Kraft getrieben und sollten von-
+einander einen Abstand besitzen, der nicht geringer als die Erderlänge ist. 
+Geeignete Werkzeuge sollten verwendet werden, um während des Eintreibens irgendwelche Schäden an 
+den Erdern zu vermeiden. 
+H.3.1.3 
+Verbindung der Erder 
+Die Verbindungen, die zum Zusammenschalten der leitenden Teile eines Erdungsnetzes untereinander die-
+nen, sollten ausreichend bemessen sein, um sicherzustellen, dass die elektrische Leitfähigkeit und die me-
+chanische und thermische Festigkeit mit den Erdern gleichwertig sind. 
+Die Erder sollten korrosionsbeständig sein und sollten nicht zur Bildung eines galvanischen Elementes füh-
+ren. 
+Die zum Zusammenfügen von Erdern verwendeten Verbindungen sollten die gleiche mechanische Festigkeit 
+wie die Stäbe selbst haben, und sollten den mechanischen Beanspruchungen während des Eintreibens wi-
+derstehen können. Wenn unterschiedliche Metalle zu verbinden sind, die ein galvanisches, zu Kontaktkor-
+rosion führendes Element bilden können, sollten die Verbindungen dauerhaft vor Kontakt mit Elektrolyten in 
+ihrer Umgebung geschützt werden. 
+H.3.2 Einbau von Erdungsleitern 
+H.3.2.1 
+Verlegen von Erdungsleitern 
+Im Allgemeinen sollten Erdungsleiter so kurz wie möglich sein. 
+Die folgenden Einbaumethoden kommen in Betracht: 
+- 
+eingegrabene, isolierte Erdungsleiter: Es ist nur ein Schutz gegen mechanische Schäden erforderlich, 
+- 
+zugänglich verlegte Erdungsleiter: Außerhalb des Bodens sollten die Erdungsleiter so eingebaut wer-
+den, dass sie zugänglich bleiben. Wenn eine Gefahr für mechanische Schäden gegeben ist, sollten die 
+Erdungsleiter in geeigneter Weise geschützt werden, 
+- 
+in Beton eingebettete Erdungsleiter: Erdungsleiter dürfen auch in Beton eingebettet werden. Leicht zu-
+gängliche Klemmen sollten an beiden Enden vorhanden sein. 
+Besondere Aufmerksamkeit sollte auf das Vermeiden von Korrosion an Stellen verwendet werden, wo die 
+blanke Erdungsleitung in den Boden oder in den Beton eingeführt wird. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+230 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 231/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 227 
+ 
+H.3.2.2 
+Verbinden von Erdungsleiter 
+Die Verbindungen sollten eine gute elektrische Leitfähigkeit aufweisen, um irgendwelche nicht annehmbaren 
+Temperaturerhöhungen unter Fehlerstrombedingungen zu verhindern. 
+Verbindungen dürfen nicht locker werden und sollten gegen Korrosion geschützt sein. Wenn unterschied-
+liche Metalle zu verbinden sind, die ein galvanisches Element bilden, das zu einer Kontaktkorrosion führen 
+kann, sollten die Verbindungen durch dauerhafte Maßnahmen gegen irgendwelchen Kontakt mit Elektrolyten 
+in ihrer Umgebung geschützt werden. 
+Es sollten geeignete Verbindungen verwendet werden, um die Erdungsleiter mit den Erdern, den Erdan-
+schlusspunkten und irgendwelchen anderen Metallteilen zu verbinden. 
+Es sollte unmöglich sein, Verbindungen ohne Werkzeuge zu lösen. 
+H.4 Messungen für und an Erdungsanlagen 
+H.4.1 Messung der spezifischen Erdwiderstände 
+Messungen des spezifischen Erdwiderstandes zum Vorherbestimmen des Erdausbreitungswiderstandes  
+oder der Erdausbreitungsimpedanz sollten mit einer Vier-Sonden-Methode (z.B. Wenner-Methode) durch-
+geführt werden, womit der spezifische Erdwiderstand für unterschiedliche Tiefen bestimmt werden kann. 
+H.4.2 Messung von Ausbreitungswiderständen und Erdungsimpedanzen 
+Diese Widerstände und Impedanzen können auf unterschiedlicher Art bestimmt werden. Welche Methode 
+geeignet ist, hängt von der Ausdehnung der Erdungsanlage und der Höhe beeinflussenden und störenden 
+Spannungen ab. 
+ANMERKUNG: Es ist zu beachten, dass während der Vorbereitungen und der Messungen, auch im abgeschal-
+teten Zustand, aber ganz besonders während der Messungen an und zwischen geerdeten Teilen (z.B. zwischen 
+Mast und abgehobenem Erdseil) gefährliche Berührungsspannungen auftreten können. 
+Beispiele für geeignete Messverfahren und Instrumentenarten sind: 
+(a) Erdungsmessbrücke 
+Dieses Instrument wird verwendet für Erder und Erdungsanlagen kleiner oder mittlerer Ausdehnung, 
+z.B. Einzelstaberder, Banderder, Erder von Freileitungsmasten mit abgehobenem oder verbundenem 
+Erdseil, Hochspannungserdungsanlagen bei Trennung von Niederspannungserdungsanlagen. Die Fre-
+quenz der verwendeten Wechselspannung sollte 150 Hz nicht übersteigen. 
+Der geprüfte Erder, die Sonde und die Hilfselektroden sollten auf einer geraden Linie soweit wie möglich 
+voneinander entfernt liegen. Der Abstand der Sonde von dem geprüften Erder sollte wenigstens das 
+2,5fache der größten Ausdehnung des geprüften Erders (betrachtet in Messrichtung), aber nicht weni-
+ger als 20 m betragen; der Abstand der Hilfselektrode wenigstens das Vierfache, aber nicht weniger als 
+4 m. 
+(b) Hochfrequenz-Erdungs-Messgerät 
+Dieses Instrument ermöglicht die Messung des Erdwiderstandes eines einzelnen Mastes, ohne das 
+Erdseil abzuheben. Die Frequenz des Messstroms sollte so groß sein, dass die Kettenimpedanz des 
+Erdseils und der benachbarten Maste hoch wird und so einen praktisch vernachlässigbaren Parallel-
+kreis bezüglich des einzelnen Freileitungsmastes darstellt. 
+(c) Stromspannungs-Methode 
+Diese Methode wird insbesondere für Messungen der Erdimpedanz großer Erdungsanlagen verwendet, 
+aber auch bei Potentialverschleppung (z.B. Metallrohre). Es sind daher große Entfernungen zwischen 
+der Erdungsanlage des geprüften Mastes und dem entfernten Erder notwendig. 
+Durch Anlegen einer Wechselspannung mit ungefährer Netzfrequenz zwischen den Erdungsanlagen 
+und einem weit entfernten Erder wird ein Versuchsstrom Im in die Erdungsanlagen eingeleitet, der zu ei-
+ner messbaren Potentialanhebung der Erdungsanlage führt. 
+Erdseile und Kabelmäntel mit Erderwirkung, die betriebsmäßig mit der Erdungsanlage verbunden sind, 
+sollten während der Messung nicht getrennt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+231 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 232/273 =====
+Seite 228  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Der Betrag der Erdimpedanz ZE ist 
+r
+I
+U
+Z
+⋅
+=
+m
+em
+E
+ 
+Dabei ist 
+Uem 
+die gemessene Spannung zwischen der Erdungsanlage und einer Sonde in der Bezugserde (fer-
+ne Erde) in Volt; 
+Im 
+der gemessene Versuchsstrom in Ampere; 
+r 
+der Reduktionsfaktor der Leitung zur Bezugserde. 
+Der Reduktionsfaktor kann durch Rechnung oder durch Messung bestimmt werden. 
+Für Freileitungen ohne Erdseile gilt r = 1. 
+Erdseile einer getrennten, parallel zur geprüften Leitung zwischen Erdungsanlage und einem fernen Er-
+der verlaufenden Leitung sollten berücksichtigt werden, wenn sie mit der geprüften Erdungsanlage ver-
+bunden sind.  
+Der Abstand zwischen der geprüften Erdungsanlage und dem fernen Erder sollte so groß wie möglich 
+sein, aber 5 km nicht unterschreiten. Der Prüfstrom sollte nach Möglichkeit mindestens so hoch gewählt 
+werden, dass die gemessenen Spannungen größer sind als die möglichen Beeinflussungs- und Stör-
+spannungen. Dies ist für Versuchsströme über 50 A im Allgemeinen sichergestellt. Der innere Wider-
+stand des Voltmeters sollte wenigstens das 10fache des Erdausbreitungswiderstands der Sonde betra-
+gen. 
+ANMERKUNG: Für kleine Erdungsanlagen können kürzere Abstände und kleinere Versuchsströme ausreichend 
+sein. Mögliche Beeinflussungs- und Störspannungen sollten berücksichtigt werden. 
+H.4.3 Bestimmung der Erdungsspannung 
+Die Erdungsspannung UE beträgt: 
+E
+E
+E
+I
+Z
+U
+⋅
+=
+ 
+Dabei ist 
+IE 
+der Erdungsstrom; 
+ZE 
+die Erdimpedanz, z.B. erhalten aus einer Messung oder einer Berechnung. Eine näherungsweise Be-
+rechnung mit Berücksichtigung der Erdseile und der Auswirkungen benachbarter Maste kann mit der 
+Gleichung 
+))
+4
+(
+(
+25
+,0
+S
+t
+S
+S
+E
+Z
+R
+Z
+Z
+Z
++
+×
+×
++
+×
+=
+ 
+erfolgen, dabei ist 
+Zs 
+die Impedanz der Erdseile in einem Spannfeld; 
+Rt 
+den Masterdausbreitungswiderstand. 
+Der Erdstrom während eines Fehlers ist gegeben durch: 
+0
+E
+I
+r
+I
+⋅
+⋅
+=
+3
+ 
+Dabei ist 
+r 
+den Reduktionsfaktor der Erdseile; 
+I0 
+den Strom im Nullsystem während eines Fehlers. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+232 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 233/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 229 
+ 
+Anhang J 
+(normativ) 
+ 
+Stahlgittermaste 
+In den folgenden Abschnitten wird in Klammern auf die entsprechenden Abschnitte von ENV 1993-1-1 ver-
+wiesen. 
+J.1 Definition von im Anhang J verwendeten Symbolen 
+Symbol 
+Bedeutung 
+A 
+Querschnittsfläche, Bruttoquerschnittsfläche 
+Aeff 
+Nutz-Querschnittsfläche von Schrauben 
+Anet 
+Nettoquerschnitt beim Vorhandensein von Bohrungen 
+AS 
+Zugquerschnittsfläche von Schrauben 
+b 
+Nennbreite 
+beff 
+wirksame Breite eines Winkelschenkels 
+c 
+Abstand zwischen Bindeblechen 
+d 
+Schraubendurchmesser 
+d0 
+Bohrungsdurchmesser 
+E 
+Elastizitätsmodul 
+e1 
+Endabstand zwischen Bohrungsmitte und nächstem Profilende 
+e2 
+Endabstand zwischen Bohrungsmitte und nächstem Profilrand 
+F 
+horizontale Einzellast 
+fu 
+Zugfestigkeit 
+fub 
+Zugfestigkeit von Schrauben 
+fy 
+Streckgrenze 
+fyd 
+Auslegungsstreckgrenze 
+i 
+Trägheitsradius um die Bezugsachse 
+L 
+Netzlänge 
+m 
+Anzahl der Winkelprofile 
+McRd 
+Bemessungsbiegemoment 
+Msd 
+Biegemoment im Querschnitt 
+N 
+axiale Kraft 
+Nd 
+Druckkraft, Kraft im Druckstab 
+NR,d 
+Bemessungswert der Knickbeanspruchbarkeit 
+Nsd 
+Bemessungswert der Zug- oder Druckkraft im Querschnitt 
+P1 
+Abstand von zwei Bohrungen in Lastrichtung 
+P 
+Abstand von zwei Bohrungen, gemessen rechtwinklig zur Stabachse 
+Sd 
+Zugkraft; Kraft im Stützstab (Zug oder Druck) 
+s 
+versetzter Abstand, Abstand der Mittelpunkte zweier aufeinanderfolgender Bohrungen 
+t 
+Dicke 
+Weff 
+wirksames Widerstandsmoment 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+233 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 234/273 =====
+Seite 230  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+1
+M
+γ
+ 
+Teilsicherheitsbeiwert für die Beanspruchbarkeit von Stäben bei Biegung, Zug oder Knickung 
+2
+M
+γ
+ 
+Teilsicherheitsbeiwert für die Beanspruchbarkeit des Nettoquerschnittes an Schraubenbohrun-
+gen 
+Mb
+γ
+ 
+Teilsicherheitsbeiwert für die Beanspruchbarkeit von Schraubverbindungen 
+λ  
+Schlankheitsgrad für die maßgebende Knicklast 
+eff
+λ
+ 
+wirksamer Schlankheitsgrad 
+λ  
+dimensionslose Schlankheit für die maßgebende Knicklast 
+λp 
+Verhältnis der Breite zur Dicke (b/t) 
+ρ  
+Reduktionsbeiwert 
+χ  
+Reduktionsfaktor 
+J.2 Einstufung in Querschnittsklassen (Abschnitt 5.3) 
+J.2.1 
+Grundlagen 
+Für Freileitungsmaste können unterschiedliche Stabarten angewandt werden; jedoch sind Winkelstähle die 
+allgemein am meisten angewendete Form. Dieser normative Anhang behandelt nur diese Stabart - entweder 
+warm gewalzt oder kalt geformt.  
+J.2.2 
+Einstufung 
+Alle Querschnitte werden als den Klassen 3 oder 4 nach ENV 1993-1-1, 5.3.2 zugehörig betrachtet. 
+J.2.3 
+Wirksame Querschnittswerte für druckbeanspruchte Stäbe (Abschnitt 5.3.5) 
+Die wirksamen Querschnittswerte müssen auf der Grundlage der wirksamen Schenkelbreite beff bestimmt 
+werden. 
+Bei ungleichschenkligen Winkelstählen sind beide Schenkel zu betrachten. Der wirksame Querschnitt wird 
+berechnet aus dem Bruttoquerschnitt abzüglich der Querschnittsminderung eines jeden Schenkels. 
+Bei einem nur mit einem Schenkel angeschlossenen Winkelstahl gilt die Abminderung nur für den ange-
+schlossenen Schenkel, da der freie Schenkel teilweise unter Zugbeanspruchung steht. 
+Die wirksame Breite ist aus der Nennbreite b des Schenkels unter der Annahme einer gleichförmigen Span-
+nungsverteilung wie folgt zu erhalten: 
+λp 
+= b/t  
+λ p = λp / (
+)
+σ
+ε
+K
+4,
+28
+  
+mit 
+Kσ = 0,43 und ε = 
+)
+/
+235
+(
+yf
+,   fy in MPa 
+beff = ρ · b 
+Dabei ist 
+t 
+Dicke; 
+b 
+Nennbreite; 
+ρ 
+Abminderungssfaktor. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+234 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 235/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 231 
+ 
+Für gewalzte Winkelstähle gilt: 
+wenn 
+λ p ≤ 0,91  
+ 
+ρ = 1 
+ 
+0,91  < λ p ≤ 1,213 
+ρ = 2 - λ p/0,91
+ 
+ 
+λ p >1,213 
+ρ = 0,98/λ p
+2 
+Für kalt geformte Winkelstähle gilt: 
+wenn 
+λ p ≤ 0,809 
+ 
+ρ = 1 
+ 
+0,809 < λ p ≤ 1,213 
+ρ = (5 - λ p/0,404)/3 
+ 
+λ p > 1,213 
+ρ = 0,98/λ p
+2 
+Der Wert beff wird für die Berechnung der wirksamen Querschnittsfläche Aeff und des wirksamen Wider-
+standsmoments Weff verwendet. Die Vorgaben betreffend kaltverformte Winkelstähle können durch die An-
+forderungen nach ENV 1993-1-3 ersetzt werden, wenn diese Norm verfügbar sein wird. 
+Die wirksamen Querschnitte brauchen allgemein bei der elastischen globalen Tragwerksberechnung (Be-
+rechnung der Schnittgrößen) nicht anstelle der Bruttoquerschnitte verwendet zu werden. 
+J.3 Querschnitt (Abschnitt 5.4.2) 
+J.3.1 
+Bruttoquerschnitt (Abschnitt 5.4.2.1) 
+Die Bruttoquerschnittswerte sind mit den Nennwerten der Abmessungen zu bestimmen. Lochschwächungen 
+für Befestigungen müssen nicht abgezogen werden. Stoßmaterial darf nicht mitgerechnet werden. 
+J.3.2 
+Nettofläche (Abschnitt 5.4.2.2) 
+(1) Die Nettofläche einer mit beiden Schenkeln angeschlossenen Winkelverbindung ist als Summe der Net-
+toflächen der beiden Schenkel anzunehmen. 
+(2) Die Nettofläche ist aus der Bruttofläche durch angemessenen Abzug aller Bohrungen zu ermitteln. 
+Wenn die Bohrungen versetzt angeordnet sind, werden zwei Werte für die Nettofläche berechnet, von 
+denen der kleinere maßgebend ist. 
+- 
+Der erste Wert ergibt sich, indem alle Bohrungen, die sich in einem senkrecht zur Stabachse ge-
+führten Schnitt befinden, von der Bruttofläche abgezogen werden. 
+- 
+Der zweite Wert wird errechnet, indem alle Bohrungen, die sich längs einer beliebigen Zick-Zack- 
+oder Schräglinie befinden, von der Bruttofläche abgezogen werden und für jeden Schrägabstand 
+(s ≠ 0, siehe Bild J.1) der Wert s²t /(4p) wieder hinzuaddiert wird. 
+ 
+ 
+Bild J.1 – Versetzte Bohrungen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+235 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 236/273 =====
+Seite 232  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Dabei ist 
+s 
+Abstand der Mittelpunkte zweier aufeinander folgender, versetzter Bohrungen, gemessen in der 
+Stablängsachse; 
+P 
+Abstand der gleichen Bohrungen, gemessen rechtwinklig zur Stablängsachse; 
+t 
+Werkstoffdicke. 
+(3) Die Nettoquerschnittsfläche eines nur mit einem Schenkel am Stabende angeschlossenen Winkelstahls 
+ist als Nettofläche des angeschlossenen Schenkels zuzüglich der Hälfte der Fläche des nicht ange-
+schlossenen Schenkels anzunehmen. 
+(4) Bei Anschluss mit nur einer Schraube ist die Nettofläche des angeschlossenen Schenkels als Nettoflä-
+che anzunehmen. 
+J.4 Nachweis der Querschnittsbeanspruchbarkeit 
+J.4.1 
+Zugbelastung 
+Für zugbeanspruchte Stäbe muss die Bemessungszugkraft Nsd folgende Grenzen einhalten: 
+(1) bei zwei angeschlossenen Schenkeln 
+Nsd ≤ 0,9  Anet  fu / γM2 
+(2) bei einem angeschlossenen Schenkel, nach Bild J.2 
+ 
+Bild J.2 – Winkel mit einem angeschlossen Schenkel 
+mit einer Schraube  
+Nsd  =  (b1 - d0)  t fu / γM2 
+mit zwei oder mehr Schrauben 
+Nsd  =  
+
+
+
+
+
+
++
+−
+2
+2
+0
+1
+b
+d
+b
+ t fu / γM2   
+Für Schweißverbindungen wird auf ENV 1993-1-1, Abschnitt 6.6.10, verwiesen. 
+J.4.2 
+Druckbelastung (Abschnitt 5.4.4) 
+Die Bemessungsdruckkraft Nsd muss in jedem Querschnitt die folgende Bedingung  
+Nsd ≤ Aeff  fy / γM1 
+erfüllen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+236 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 237/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 233 
+ 
+J.4.3 
+Biegemoment (Abschnitt 5.4.5) 
+Die Bemessungsbeanspruchbarkeit eines Querschnittes ohne Bohrungen ist wie folgt zu bestimmen: 
+McRd = Weff  fy / γM1 
+wobei Weff das wirksame Widerstandsmoment entsprechend der wirksamen Fläche Aeff bedeutet. 
+J.4.4 
+Biegung und axiale Kräfte (Abschnitt 5.4.8.3) 
+Der Querschnitt ohne Bohrungen ist ausreichend, wenn das folgende Kriterium erfüllt ist: 
+1
+≤
++
++
+yd
+effzz
+sdzz
+yd
+effyy
+sdyy
+yd
+eff
+sd
+f
+W
+M
+f
+W
+M
+f
+A
+N
+ 
+Dabei ist 
+- 
+Aeff und Weff für Winkelstähle in J.2.3 definiert;  
+- 
+für Aeff und Weff anderer Querschnitte wird auf ENV 1993-1-1, Abschnitte 5.3 und 5.4.5, verwiesen; 
+- 
+fyd = fy/γM1. 
+Bei der Ermittlung der wirksamen Querschnittswerte Aeff und Weff müssen nur abmindernde Einflüsse für 
+Querschnittsteile unter Druckbeanspruchung berücksichtigt werden. 
+J.5 Nachweis der Knickbeanspruchbarkeit von Stäben (Abschnitt 5.5) 
+J.5.1 
+Druckbeanspruchte Stäbe (Abschnitt 5.5.1) 
+J.5.1.1 
+Biegeknicken 
+Für Stäbe mit axialer Druckbeanspruchung muss für die Bemessungsdruckkraft Nd geteilt durch die Bemes-
+sungsknickbeanspruchbarkeit NR,d die Bedingung: 
+1
+d
+R,
+d ≤
+N
+N
+ 
+erfüllt werden. 
+Die Bemessungsknickbeanspruchbarkeit ist gegeben durch 
+NR,d = χ Aeff fy/γM1 
+Der Abminderungsbeiwert χ ergibt sich aus ENV 1993-1-1, Formel 5.46, und hängt ab von 
+- 
+dem Schlankheitsgrad λ; 
+- 
+den Werkstoffwerten E und fy; 
+- 
+der Knickspannungslinie. 
+Die Mastbemessung ist auszuführen durch: 
+- 
+nur Berechnung oder 
+- 
+Berechnung, die durch eine Belastungsprüfung im Originalmaßstab bestätigt wird. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+237 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 238/273 =====
+Seite 234  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Falls die Bemessung nur durch Berechnung durchgeführt wird, muss das folgende Bemessungsverfahren 
+angewandt werden: 
+- 
+Die geeignete Knickkurve ist diejenige nach ENV 1993-1-1, Abschnitt 5.5.1, mit dem Imperfektionsbei-
+wert α =  0,49 . 
+- 
+Die anzusetzende Schlankheit λ ist nach J.6 und J.7 dieses normativen Anhangs zu bestimmen, wobei 
+die eingerahmten Werte durch in den NNA festgelegte Werte ersetzt werden können. 
+- 
+Der Abminderungsbeiwert χ wird dann mit ENV 1993-1-1, Formel 5.46, berechnet, wobei λ  wie folgt 
+anzusetzen ist: 
+A
+A
+E
+f
+eff
+y
+π
+λ
+λ =
+ 
+Falls die Bemessung durch Berechnung vorgenommen wird, die mit dokumentierten Belastungsprüfungen 
+im Originalmaßstab bestätigt wird, ist das folgende Bemessungsverfahren anzuwenden: 
+- 
+Die geeignete Knickkurve ist die Kurve b aus ENV 1993-1-1, Abschnitt 5.5.1. 
+- 
+Die anzusetzende Schlankheit λ muss nach J.6 und J.7 bestimmt werden, ohne dass die eingerahmten 
+Werte geändert werden. 
+- 
+Die bezogene Schlankheit λ  für die einschlägige Knicklast in ENV 1993-1-1, Gleichung 5.4.6, wird er-
+setzt durch die wirksame Schlankheit 
+eff
+λ
+, die nach J.8 und J.9 dieses normativen Anhangs bestimmt 
+wird. 
+- 
+Der Abminderungsbeiwert χ wird dann unter Verwendung von ENV 1993-1-1, Formel 5.46, berechnet. 
+NNA oder Projektspezifikation müssen festlegen, in welchem Umfang Belastungsversuche im Originalmaß-
+stab erforderlich sind. 
+Diese Abschnitte ersetzen ENV 1993-1-1, Abschnitt 5.8. 
+J.5.1.2 
+Biegedrillknicken 
+Der Schlankheitsgrad λ für das Biegedrillknicken muss mit einer anerkannten Formel berechnet und dann 
+bei der Berechnung des Abminderungsbeiwertes χ, wie in J.5.1.1 erläutert, verwendet werden. 
+Für gleichschenklige Winkel kann der Schlankheitsgrad für Biegedrillknicken näherungsweise aus der For-
+mel  
+A
+A
+E
+t
+b
+eff
+y
+p
+f
+5
+π
+λ =
+ 
+berechnet werden. 
+J.5.2 
+Biegedrillknicken von Biegeträgern (Abschnitt 5.5.2) 
+Die Bemessungskippbeanspruchbarkeit eines seitlich ungestützten Trägers ist nach den Vorgaben in 
+ENV 1993-1-1, Abschnitt 5.5.2, zu bestimmen, wobei J.5.1 entsprechend zu berücksichtigen ist. 
+J.5.3 
+Biegung und axiale Zugkraft (Abschnitt 5.5.3) 
+Den Vorgaben nach ENV 1993-1-1, Abschnitt 5.5.3, ist zu folgen. 
+J.5.4 
+Biegung und axiale Druckkraft (Abschnitt 5.5.4) 
+Den Vorgaben nach ENV 1993-1-1, Abschnitt 5.5.4, ist zu folgen, wobei J.5.1 zu berücksichtigen ist. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+238 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 239/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 235 
+ 
+J.6 Knicklänge von Stäben 
+J.6.1 
+Allgemeines 
+(1) Es gibt eine Anzahl unterschiedlicher Anordnungen, die üblicherweise für Gittermasten verwendet wer-
+den und jeweils getrennte Überlegungen erfordern. 
+(2) Die Knicklänge und daraus folgend die Tragfähigkeit eines Stabes hängt von der Art der Ausfachung 
+ab, die zur Stabilisierung des Stabes verwendet wird. 
+(3) Die zutreffende Schlankheit λ muss für die zutreffende Knickform nach J.6.2 und J.6.3 bestimmt wer-
+den. 
+J.6.2 
+Eckstiele und Gurte 
+J.6.2.1 
+Allgemeines 
+- 
+Es wird empfohlen, einen größten Schlankheitsgrad von  120  für Eckstiele und Gurte nicht zu über-
+schreiten. 
+- 
+Der Querschnitt von Stäben besteht gewöhnlich aus einem Profil. Für zusammengesetzte Stäbe wird 
+auf J.6.4 verwiesen. 
+J.6.2.2 
+Einfache Stäbe 
+Mehrere Fälle müssen nach Bild J.3 betrachtet werden; der Schlankheitsgrad ist anzunehmen für: 
+ 
+Eckstiele mit symmetrischer Ausfachung (a) (b) zu 
+λ =  1,0  L/ivv; 
+ 
+Eckstiele mit Zwischenausfachungen (c) zu 
+λ =  1,0  L/iyy; 
+ 
+Eckstiele mit versetzten Ausfachungen (d) zu 
+λ =  1,0  L/iyy. 
+ 
+Bild J.3 – Symmetrische und versetzte Ausfachung für Eckstiele 
+J.6.3 
+Ausfachungsarten 
+J.6.3.1 
+Allgemeines 
+(1) Typische primäre Diagonal-Ausfachungsarten sind in Bild J.4 dargestellt. Sekundäre Ausfachungen 
+können verwendet werden, um die primäre Ausfachung oder die Eckstiele zu unterteilen, wie in Bild J.5 
+gezeigt. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+239 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 240/273 =====
+Seite 236  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(2) Es ist bewährte Praxis, den Schlankheitsgrad von primären Diagonalstäben auf  200  und von sekundä-
+ren Ausfachungsstäben auf  240  zu begrenzen. 
+ 
+Andere Schlankheitsgrade werden für besondere Fälle in J.6.3.4 (2), J.6.3.5(3), J.6.3.7(2) und J.7.2(5) 
+vorgegeben. 
+(3) Die Diagonalstäbe bestehen üblicherweise aus einem Profil. Für mehrteilige Stäbe wird auf J.6.4 ver-
+wiesen. 
+(4) Bei langen Stäben ist es angebracht, die Biegespannungen infolge von Windeinwirkungen auf Stäbe 
+selbst zusätzlich zu den axialen Lasten zu berücksichtigen. 
+(5) Der Schlankheitsgrad λ von Diagonalstäben hängt unter anderem von den Endanschlüssen ab, die 
+durch Zwängungen und Exzentrizitäten charakterisiert sind. 
+ 
+Im Folgenden wird der Einfluss dieser Endanschlüsse vernachlässigt, wenn der eingerahmte Wert  1,0  
+in den λ-Formeln verwendet wird. Bei der Berechnung ohne Bestätigung durch Belastungsversuche 
+(siehe J.5.1.1) können andere Werte, die den genannten Einflüssen Rechnung tragen, in den NNA an-
+gegeben werden. 
+(6) Der Winkel zwischen den Eckstielen und den Diagonalen soll nicht kleiner als 15° sein. 
+J.6.3.2 
+Einfache Diagonalen 
+Einfache Diagonalausfachung wird üblicherweise verwendet, wenn die Last klein und die Längen relativ kurz 
+sind, z.B. an der Mastspitze (siehe Bild J.4(a)). Der Schlankheitsgrad folgt dann aus: λ =  1,0  ⋅ L/ivv 
+Im Falle des Bildes J.4(b) gilt für Winkelprofile λ =  1,0  L1/ivv und λ =  1,0  L2/iyy. 
+ 
+Bild J.4 – Übliche Diagonalausfachungen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+240 von 273
+www.ris.bka.gv.at

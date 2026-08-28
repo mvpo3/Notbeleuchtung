@@ -1,0 +1,422 @@
+
+
+===== PAGE 1/7 =====
+Herausgeber:
+OVE – Österreichischer Verband für Elektrotechnik 
+1010 Wien,  Eschenbachgasse 9
+Tel.: +43 1 587 63 73 - 0 n Fax: +43 1 586 74 08 
+E-Mail: ove@ove.at n www.ove.at
+Fachinformation
+des Österreichischen Elektrotechnischen Komitees – OEK
+Gemeinsame Fachinterpretation des TK E und TK IS und des Österreichischen Verbandes für Elektrotechnik
+Inhalt
+1	
+Ausgangssituation.........................................................................	2
+2	
+Einleitung........................................................................................	2
+3	
+Schutzisolierung.............................................................................	2
+4	
+Verteiler und Schaltgerätekombinationen...................................	3
+4.1	 Ausführung und Kennzeichnung.................................................	3
+4.2	 Verteilerblenden aus Metall..........................................................	5
+5	
+Schutzzwischenisolierte Verteiler und Netzsystem.....................	 5
+5.1	 Anwendung von schutzzwischenisolierten Verteilern................	 5
+5.2	 Einsatz von schutzzwischenisolierten Verteilern bei Nullung......	5
+6	
+Schlussbemerkung........................................................................	6
+Anhang – Ausführungsbeispiele der Schutzisolierung......................	 7
+Schutzzwischenisolierung
+Schutzzwischenisolierung als Schutzmaßnahme des Fehlerschutzes von betriebsfertigen Verteilern 
+und Schaltgerätekombinationen mit Nennspannungen bis 250 V AC gegen Erde
+
+
+===== PAGE 2/7 =====
+
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+1. Ausgangssituation
+In einer Stellungnahme des Technischen Komitees 
+IS1) wurden Aussagen zur Anwendung der Schutz-
+maßnahme Schutzzwischenisolierung als Maß-
+nahme des Fehlerschutzes für Zähler- und Installa-
+tionsverteiler getroffen, die auf die Ausführung von 
+Zählerschränken und Zählerverteilerschränken2) 
+fokussiert waren.
+Ausgelöst durch Fachdiskussionen und Publika-
+tionen, inwieweit die Bestimmungen von ÖVE-
+IM 
+12:1980 
+auch 
+auf 
+„Nicht-Zählerverteiler“, 
+d. h. Schaltanlagen, (Installations-) Verteiler, Kabel-
+verteilschränke anzuwenden sind, ist der Bedarf an 
+einer klaren zusammenfassenden Darstellung ent-
+standen.
+Diese Fachinterpretation soll Klarstellung zur An-
+wendung der Schutzzwischenisolierung liefern.
+2. Einleitung
+Nach dem international3) und in Österreich4) gel-
+tenden, anerkannten Stand des technischen 
+Regelwerkes im Bereich der Errichtung von Nie-
+derspannungsanlagen bildet die so genannte 
+1)	 Stellungnahme des TK IS – Installationsmaterial und Schaltgeräte zum Thema Schutzmaßnahmen bei Zähler und Installationsver-
+teilern, veröffentlicht in e&i 112 Jg.(1995), H 5, S 235-236
+2)	 im allgemeinen auch als Zählerverteiler bezeichnet
+3)	 IEC 60364-4-41:2005, Abschnitt 412.2.1.1 – Class II equipment or equivalent insulation
+4)	 ÖVE/ÖNORM E 8001-1:2000, Abschnitt 7.2.3
+Schutzzwischenisolierung („Insulation equivalent to 
+Class II“) als eine der möglichen Ausführungen der 
+Schutzmaßnahme Schutzisolierung eine der zu-
+lässigen Maßnahmen des Fehlerschutzes. Weitere 
+Ausführungen der Schutzisolierung sind die Schutz-
+isolierumhüllung und die Standortisolierung.
+Im Laufe der letzten Jahrzehnte hat sich die Schutz-
+zwischenisolierung bei einer Reihe von Betriebsmit-
+teln als wirksamer Schutz bei indirektem Berühren 
+bewährt. Zu diesen Betriebsmitteln zählen vor allem 
+Schaltanlagen, Verteiler, Schaltgerätekombinati-
+onen und als besondere Ausführung von Verteilern 
+Zählerschränke und Zählerverteilerschränke.
+3. Schutzisolierung
+In der internationalen Normung (IEC 60364-4-41) 
+wird für schutzisolierte Betriebsmittel der Begriff 
+„Class II equipment or equivalent insulation“ ver-
+wendet. 
+„Class II equipment“ bzw. Betriebsmittel der Schutz-
+klasse II müssen mit dem Doppelquadrat 
+ gekenn-
+zeichnet werden. 
+Das trifft im Verteilerbereich nur auf schutzisolier-
+Bild 1 – Übersicht Schutzisolierung
+
+
+===== PAGE 3/7 =====
+
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+umhüllte Verteiler zu, da für diese Verteiler die Ein-
+haltung der Anforderungen an die Schutzisolierung 
+nicht von der Anordnung und Verdrahtung der ein-
+gebauten Betriebsmittel abhängt.
+Betriebsmittel oder Teile von Betriebsmitteln mit 
+„Class II equivalent insulation“ bzw. der Schutz-
+klasse II entsprechender Isolierung (zB Schutz-
+zwischenisolierung gemäß ÖVE-IM 12, Schutz-
+klasse 
+II 
+Anordnung 
+gemäß 
+ÖVE/ÖNORM 
+EN 60335-1) dürfen nicht mit dem Doppelquadrat 
+gekennzeichnet werden.
+Das trifft auf jene Verteiler und Anordnungen zu, 
+bei denen die Einhaltung der Anforderungen an die 
+Schutzisolierung auch wesentlich: 
+–	 von der Anordnung der eingebauten Betriebs-
+mittel, 
+–	 von der Ausführung der internen Verdrahtung 
+und 
+–	 vom ordnungsgemäßen Anschluss 
+abhängt.
+Beispiele dafür sind schutzzwischenisolierte Vertei-
+ler gemäß ÖVE-IM 12, aber auch die schutzisolier-
+te Ausführung der Anspeisung von FI-Schaltern in 
+nicht schutzisolierten Verteilern, die zur Realisierung 
+der Schutzmaßnahme Fehlerstrom-Schutzschal-
+tung (TT-System) dienen (siehe auch TAEV 2004, 
+Teil II, Abschnitt 3.4.3 (3)).
+Die Schutzisolierung (siehe Bild 1) von Betriebsmit-
+teln der Schutzklasse II und von Betriebsmitteln mit 
+der Schutzklasse II entsprechender Isolierung kann 
+als doppelte Isolierung oder als verstärkte Isolie-
+rung ausgeführt sein.
+Doppelte Isolierung:
+Isolationssystem, bestehend aus Basisisolierung 
+und zusätzlicher Isolierung.
+–	 Basisisolierung: Isolierung aktiver Teile, um 
+den Basisschutz gegen elektrischen Schlag 
+sicherzustellen (ÖVE/ÖNORM E 8001-1:2000, 
+Abschnitt 3.8.4)
+–	 Zusätzliche Isolierung: Unabhängige Isolierung 
+zusätzlich zur Basisisolierung die im Falle des 
+Versagens der Basisisolierung den Schutz ge-
+gen elektrischen Schlag sicherstellt
+Verstärkte Isolierung:
+Eine einzige Isolierung aktiver Teile die unter fest-
+gelegten Bedingungen einen gleichwertigen Schutz 
+gegen elektrischen Schlag gewährleistet wie die 
+doppelte Isolierung.
+ANMERKUNG Das bedeutet nicht, dass die Isolie-
+rung ein homogenes Teil sein muss. Die Isolierung 
+darf aus mehreren Schichten bestehen, die einzeln 
+nicht wie eine zusätzliche Isolierung oder Basisiso-
+lierung geprüft werden können. Sowohl die Basisi-
+solierung, wie auch die zusätzliche oder verstärkte 
+Isolierung bestehen üblicherweise aus Feststoffen 
+(Isolierstoffen) oder aus Abständen in Luft oder aus 
+Kombinationen von beiden.
+Dies ist auch in ÖVE-IM 12:1980, § 6.2.5.1 klar aus-
+geführt: „Schutzisolierte Schränke können schutz-
+zwischenisoliert oder schutzisolierumhüllt sein“.
+Wichtig ist dabei, dass ein schutzzwischenisolierter 
+Verteiler einem Schutzklasse II - Verteiler gleichwer-
+tig betrachtet wird.
+4. Verteiler und 
+Schaltgerätekombinationen
+4.1 Ausführung und Kennzeichnung
+Schaltanlagen und Verteiler sind gemäß ÖVE-EN 1 
+Teil 2:1993-04, § 30 und ÖVE-EN 1 Teil 2a:1996-03, 
+§ 30a herzustellen.
+Diese Abschnitte spezifizieren auch die not-
+wendigen Prüfungen, wobei in ÖVE-EN 1 Teil 2: 
+1993-04, § 30.2.7 auch auf die anzuwendenden 
+Betriebsmittelbestimmungen verwiesen wird.
+Für die Ausführung von nicht fabriksfertigen 
+Schaltanlagen, das sind vor Ort zu errichten-
+de Schaltanlagen und Verteiler, sind die tech-
+nischen Bestimmungen5) sinngemäß und ÖVE-EN 1 
+5)	 Siehe ÖVE-IM 12, ÖVE-IM 22, ÖVE/ÖNORM EN 60439-1, ÖVE/
+ÖNORM EN 60439-2, ÖVE/ÖNORM EN 60439-3, ÖVE/ÖNORM 
+EN 60439-4 und CLC/TR 60890:2002
+
+
+===== PAGE 4/7 =====
+
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+Teil 2: 1993-04, § 30.2 sowie ÖVE-EN 1 Teil 2a: 
+1996-03, § 30a einzuhalten.
+Herstellung des Betriebsmittels (zB Verteiler) vor Ort 
+kann natürlich auch bedeuten, dass die Herstel-
+lung/Bestückung/Anpassung nach/an die anla-
+genspezifischen Anforderungen in den Werkstätten 
+der Elektrotechniker, Verteilerbauer bzw. der Indus-
+trie erfolgt.
+In der Stellungnahme des TK IS (siehe Abschnitt 1, 
+Fußnote 1), ist neben anderen Bestimmungen auch 
+ÖVE-IM 12 genannt. Dies bedeutet, dass auch 
+Schutzmaßnahmen für den Fehlerschutz, wie sie in 
+ÖVE-IM 12 beschrieben sind, und damit auch die 
+Schutzzwischenisolierung, für vor Ort errichtete Ver-
+teiler angewendet werden dürfen.
+Für schutzzwischenisolierte Zählerverteiler wird ge-
+mäß ÖVE-IM 12:1980, § 4.4 verlangt, im Verteiler 
+(zB auf der Innenseite der Türe) folgenden Hinweis 
+anzubringen: 
+„Schutzisolierter Zählerverteiler nach ÖVE-IM 12. 
+Bei der Bestückung und Verdrahtung Schutzmaß-
+nahmen beachten.“
+Unter Schutzmaßnahmen sind hier die konstrukti-
+ven Ausführungsbestimmungen betreffend Bestü-
+ckung und Verdrahtung entsprechend ÖVE-IM 12 
+zu verstehen.
+Für schutzzwischenisolierte Verteiler ohne Zähler, 
+sowie für schutzzwischenisolierte Verteiler, die so-
+wohl als Zählerverteilerschränke wie auch als Ver-
+teiler ohne Zähler verwendet werden können, ist 
+sinngemäß folgender Hinweis6) anzubringen:
+„Schutzisolierter Verteiler. Ausführung mit Schutz-
+zwischenisolierung nach ÖVE-IM 12. Bei der Be-
+stückung und Verdrahtung Schutzmaßnahmen be-
+achten.“
+Auf diesen Verteilern ist die Anbringung der Kenn-
+zeichnung
+nicht zulässig.
+ACHTUNG:
+Das Vorhandensein eines Schutzleiter-Anschluss-
+bolzens an einem metallenen Verteilergehäuse 
+sagt noch nichts darüber aus, mit welcher Schutz-
+maßnahme der Verteiler ausgeführt wurde. 
+Wird der Verteiler als schutzzwischenisolierter 
+Verteiler ausgeführt, so darf dieser Anschlussbol-
+zen nicht mit dem Schutzleiter verbunden werden 
+und das Verteilergehäuse bleibt isoliert! 
+Wird der Verteiler in eine Schutzmaßnahme mit 
+Schutzleiter eingebunden, so ist das Verteilerge-
+häuse mittels dieses Anschlussbolzens mit dem 
+Schutzleiter zu verbinden. 
+Bei Errichtung von Zähler- und Installationsverteilern 
+in Anlagen mit Schutzmaßnahme Nullung wird die 
+Ausführung von schutzzwischenisolierten Verteilern 
+nicht empfohlen. 
+Die Produktbezeichnung „schutzzwischenisolier-
+ter Verteiler“ schließt, sofern dieser Verteiler einen 
+Schutzleiter-Anschlussbolzen aufweist, die Verwen-
+dung desselben als Betriebsmittel der Schutzklasse I 
+nicht aus; d. h. viele als „schutzzwischenisolierte 
+Verteiler“ deklarierte Produkte können ohne Pro-
+bleme auch in Maßnahmen des Fehlerschutzes 
+mit Schutzleiter (Nullung oder Fehlerstrom-Schutz-
+schaltung) eingebunden werden, wenn die An-
+lagengegebenheiten dies erlauben (siehe auch 
+Abschnitt 5).
+Umgekehrt kann nicht jeder „normale“ Verteiler mit 
+Metallgehäuse automatisch als schutzzwischeni-
+solierter Verteiler ausgeführt werden, da hier die 
+nötigen Vorkehrungen in der Verteilerkonstruktion 
+nicht getroffen wurden.
+Darüber hinaus müssen die Hersteller von Gehäu-
+sen detaillierte Anweisungen für den Zusammen-
+bau und den korrekten Anschluss derselben liefern, 
+wofür die Hersteller im Rahmen ihrer Instruktions-
+pflicht nach österreichischen Produkthaftungsge-
+setz7) (PHG) haften.
+Die für die Isolierung einzuhaltenden Kriech- und 
+Luftstrecken sind in den technischen Bestimmun-
+gen8) festgelegt. 
+Nach Fertigstellung des Verteilers bzw. nach Ab-
+schluss der Montagearbeiten vor Ort sind Prü-
+fungen nach ÖVE-EN 1 Teil 2a:1996-03, § 30a.4, 
+unter Berücksichtigung von ÖVE-IM 12:1980, 
+§ 9.3 durchzuführen.
+6)	 Dieser Hinweis dient der in ÖVE-EN 1 
+	
+Teil 2a:1996-03, § 30.2.8 geforderten eindeutigen tech-
+nischen Kennung der Verteiler (hier: der Bezeichnung der 
+angewandten Schutzmaßnahme).
+7) 	 Produkthaftungsgesetz BGBl. Nr. 99/1988, i.d.g.F. 
+8) 	 zB ÖVE/ÖNORM EN 60439 Reihe
+
+
+===== PAGE 5/7 =====
+
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+4.2 Verteilerblenden aus Metall
+In schutzisolierten Verteilern müssen Verteilerblen-
+den aus Metall entsprechend mit Kunststoff über-
+zogen sein. Die Eignung von Kunststoffüberzügen 
+als Isolierung auf Verteilerblenden aus Metall wird 
+durch die Prüfungen gemäß ÖVE-IM 12:1980, § 15 
+nachgewiesen.
+Diese Isolierung stellt im Sinne der Schutzisolierung 
+die zusätzliche Isolierung dar (siehe Abschnitt 3). Die 
+Basisisolierung wird entweder durch die hinter den 
+Verteilerblenden angeordneten Einbaugeräte, oder 
+für blanke aktive Teile durch Isolierstoffbarrieren oder 
+durch Einhaltung entsprechender Abstände gemäß 
+ÖVE-IM 12:1980, § 6 (in Luft) sichergestellt. Daraus 
+folgt, dass nach Abnehmen der Verteilerblende(n) 
+blanke aktive Teile berührbar sein können.
+Werden derartige Überzüge auf Verteilerblenden 
+zB durch Bohren und/oder Ausschneiden unter-
+brochen, so muss das „Isoliersystem“ an diesen 
+Stellen durch geeignete Maßnahmen (zB Isolier-
+rahmen oder dergleichen) wieder ordnungsgemäß 
+geschlossen werden.
+Ausbesserungssprays und Lacke dienen nur dem 
+Korrosionsschutz, erfüllen aber diese Anforde-
+rungen nicht.
+Die in ÖVE-IM 12 für Verteilerblenden enthaltenen 
+Bestimmungen hinsichtlich der Prüfung isolierender 
+Beschichtungen entsprechen der Grundphilosophie 
+von IEC 60364-4-41:2005, Unterabschnitt 413.2.3, die 
+für isolierende Beschichtungen ein eigenes Prüfver-
+fahren fordert. Die in Österreich über einen Zeitraum 
+von mehreren Jahrzehnten gesammelten Erfah-
+rungen zeigen, dass das in ÖVE-IM 12 angegebene 
+Prüfverfahren als geeignetes Verfahren im Sinne von 
+IEC 60364 anzusehen ist.
+5. Schutzzwischenisolierte Verteiler und 
+Netzsystem
+5.1 Anwendung von schutzzwischenisolierten 
+Verteilern
+Schutzzwischenisolierte Verteiler dürfen grundsätz-
+lich in allen Netzsystemen und unabhängig von 
+der angewandten Schutzmaßnahme gegen elek-
+trischen Schlag eingesetzt werden.
+5.2 Einsatz von schutzzwischenisolierten Ver-
+teilern bei Nullung
+Bei Anwendung der Schutzmaßnahme Nullung ist 
+in Verbraucheranlagen beim Einsatz von genullten 
+Verteilern aus Metall gegenüber schutzzwischeni-
+solierten Verteilern aus Metall mit einem geringe-
+ren Restrisiko zu rechnen.
+Der Umbau bestehender schutzzwischenisolierter 
+Verteilergehäuse auf in den Schutzleiterkreis einge-
+bundene Verteiler wird daher im Rahmen einer Um-
+stellung der Schutzmaßnahme auf Nullung emp-
+fohlen. Dabei werden alle dem elektrotechnischen 
+Laien zugänglichen Metallteile in den Schutzleiter-
+kreis einbezogen.
+Kunststoffüberzogene Verteilerblenden aus Metall 
+gemäß ÖVE-IM 12:1980, § 15 werden dabei nicht in 
+den Schutzleiterkreis einbezogen.
+6. Schlussbemerkung
+Schutzzwischenisolierte Schaltanlagen und Ver-
+teiler mit Metallgehäusen, wie sie in Österreich in 
+großen Stückzahlen vom ausführenden Elektro-
+techniker, Verteilerbauer oder der Industrie herge-
+stellt und installiert werden, entsprechen hinsicht-
+lich der einzuhaltenden Schutzmaßnahmen den 
+in Österreich geltenden gesetzlich verbindlichen 
+und anerkannten Regeln der Technik und den Be-
+stimmungen der internationalen Errichtungsnorm 
+IEC 60364-4-41.
+ 
+Durch die Anwendung der zutreffenden  Teile 
+der Normenreihe ÖVE/ÖNORM E 8001-1 und 
+ÖVE EN 1 sind die Anforderungen des öster-
+reichischen 
+Elektrotechnikgesetzes 
+(ETG 
+1992 
+§ 3 (1)) für schutzzwischen-isolierte Schaltanla-
+gen und Verteiler erfüllt; die Bestimmungen in 
+ÖVE-IM 12 sind dazu geeignet, ein entsprechendes 
+Sicherheitsniveau zu gewährleisten.
+Die in ÖVE-IM 12 für Verteilerblenden enthaltenen 
+Bestimmungen hinsichtlich der Prüfung isolierender 
+Beschichtungen entsprechen der Grundphilosophie 
+von IEC 60364-4-41:2005, Unterabschnitt 413.2.3., 
+die für isolierende Beschichtungen ein eigenes 
+Prüfverfahren fordert. Die in Österreich über einen 
+Zeitraum von mehreren Jahrzehnten gesammelten 
+Erfahrungen zeigen, dass das in ÖVE-IM 12 ange-
+
+
+===== PAGE 6/7 =====
+
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+gebene Prüfverfahren als geeignetes Verfahren im 
+Sinne von IEC 60364 anzusehen ist.
+Für die anzubringenden zusätzlichen Isolierungen 
+(zB Montageeinsatz gegen äußere Metallteile) sind 
+vor allem die nach den technischen Bestimmun-
+gen einzuhaltenden Kriech- und Luftstrecken, die 
+Bestimmungen für die Leitungsführung im Verteiler 
+und die Prüfbestimmungen nach Fertigstellung zu 
+beachten.
+
+
+===== PAGE 7/7 =====
+7
+Ausgabe Oktober 2007                       
+                                                              
+www.ove.at
+ Anhang A 
+Ausführungsbeispiele der Schutzisolierung
+A.1 Schutzisolierumhüllung
+ 
+Ausführungsbeispiel A1.1 
+Ausführungsbeispiel A1.2 
+Ausführungsbeispiel A1.3 
+A.2 Schutzzwischenisolierung 
+ 
+Ausführungsbeispiel A2.1 
+Ausführungsbeispiel A2.2
+Legende 
+Bild A.1 – Ausführungsbeispiele für Schutzisolierumhüllung
+	
+Ausführungsbeispiel A1.1                        Ausführungsbeispiel A1.2                       Ausführungsbeispiel A1.3
+Ausführungsbeispiel A2.1                            Ausführungsbeispiel A2.2
+Bild A.2 – Ausführungsbeispiele für Schutzzwischenisolierung

@@ -1,0 +1,321 @@
+
+
+===== PAGE 1/2 =====
+„kleines“ 
+Nachschlagewerk 
+KFE  
+Empfehlung  
+ET: 06.2023
+ 
+www.kfe.at
+ⓒ Kuratorium für Elektrotechnik
+1220 Wien, Rautenweg 15
+Niederohmigkeit von Leitern 
+Vereinfachte Berechnung von Widerständen zum Nachweis der 
+Niederohmigkeit (RLO): Dieser Wert ist normativ nicht festgelegt, 
+es sollte annähernd der zu erwartende Wert erreicht werden. 
+R=Widerstand 𝒍=Länge 𝛋=(Kupfer 57/Alu 35,4) A=Querschnitt 
+Beispiel: 50 m Yf 10mm2 => ca. 0,0877 Ω
+Einfacher Leitungsweg (z.B: für 
+den Potentialausgleich) 
+R =
+l
+κ × A
+Doppelter Leitungsweg 
+(z.B: für ZS/ZI) 
+R = 2 × l
+κ × A
+Nullung 
+Endstromkreise bis 32 A
+Endstromkreise über 32 A / 
+Verteilungsstromkreise 
+Maximaler ZS mit 2/3 Regel
+Maximaler ZS mit 2/3 Regel 
+LS 6 A/B
+5,11 Ω
+gG 6 A 
+7,30 Ω
+LS 10 A/B
+3,07 Ω
+gG 10 A 
+4,38 Ω
+LS 13 A/B
+2,36 Ω
+gG 13 A 
+3,36 Ω
+LS 16 A/B
+1,92 Ω
+gG 16 A 
+2,73 Ω
+LS 6 A/C
+2,56 Ω
+gG 20 A 
+2,19 Ω
+LS 10 A/C
+1,53 Ω
+gG 25 A 
+1,75 Ω
+LS 13 A/C
+1,18 Ω
+gG 32 A 
+1,36 Ω
+LS 16 A/C
+0,96 Ω
+gG 35 A
+1,25 Ω
+LS 20 A/C
+0,76 Ω
+gG 40 A 
+1,09 Ω
+LS 32 A/C
+0,48 Ω
+gG 50 A 
+0,87 Ω
+gG 13 A 
+1,18 Ω
+gG 63 A 
+0,69 Ω
+gG 16 A 
+0,96 Ω
+gG 80 A 
+0,54 Ω
+gG 20 A 
+0,76 Ω
+gG 100 A
+0,43 Ω
+gG 25 A 
+0,61 Ω
+gG 125 A
+0,35 Ω
+gG 32 A 
+0,48 Ω
+Berechnungsgrundlage:
+Zsmax = U0 ×  2 
+IA ×  3 
+Fehlerstrom-Schutzschalter
+Auslösezeiten 
+Auslösestrom
+Bauart
+Auslösezeitm (ms)
+Stromart
+Bereich % 
+von IΔN
+Standard 
+0-300
+AC
+50 bis 100
+G
+10-300
+        A 0 Grad
+35 bis 140
+S
+40-500  
+B
+50 bis 200 
+Fehlerstrom-Schutzschaltung 
+Die höchstzulässige Auslösezeit für Fehlerstromschutz-Schalter welche 
+die Schutzmaßnahme Fehlerstrom-Schutzschaltung in einem TT-System 
+realisieren beträgt 200 ms
+Die zulässige Schleifenimpedanz (ZS) beträgt  
+Ω       oder       
+ 
+Der jeweils kleinere Wert ist anzuwenden
+Zsmax ≤ 100
+Zsmax ≤
+U0
+ 5  × IΔN
+Ausschaltfaktoren „m“ 
+Art der 
+Überstromschutzeinrichtung 
+Endstromkreise mit 
+Nennstrom 
+höchstens 32A
+Verteilungs-
+leitungen und 
+Endstromkreise mit 
+Nennstrom über 
+32 A 
+Schmelzsicherungen 
+bis 125A (gG)
+10
+3,5
+Leitungsschutzschalter B 
+5
+3,5
+Leitungsschutzschalter C 
+10
+3,5
+Leitungsschutzschalter D 
+20
+3,5
+Quelle: OVE E 8101-4-41-411.4.4.003.AT Tabelle 41.002.AT
+Nullung
+Grundlegende Anforderung hinsichtlich der Auslösezeit:
+Ausschaltbedingung für Verteilungsleitungen in Verbraucheranlagen und 
+für Endstromkreise mit einem Nennstrom von über 32A maximal 5 
+Sekunden 
+Ausschaltbedingung für Endstromkreise mit einem Nennstrom von 
+höchstens 32A maximal  0,4 Sekunden
+Verteilungsstromkreis: Stromkreis, der einen oder mehrere Verteiler 
+versorgt 
+Endstromkreis: Stromkreis, der dafür vorgesehen ist, elektrische 
+Verbrauchsmittel oder Steckdosen unmittelbar mit Strom zu versorgen. 
+In diesem Dokument wurden die Meinungen und Interpretation der Normen durch das KFE angeführt. Die Elektrofachkraft trifft die Entscheidung über die Anwendung der jeweils zutreffenden Normen. 
+Trotz sorgfältiger Recherchen sind Änderungen, Irrtümer, Satz- und Druckfehler vorbehalten. 
+Isolationswiderstand 
+Nennspannung der 
+Stromkreise (V)
+Prüfspannung 
+DC (V)
+Isolationswiderstand 
+MΩ
+SELV und PELV
+250
+≥ 0,5
+bis einschließlich 500 V 
+sowie FELV
+500
+≥ 1,0
+über 500 V
+1000
+≥ 1,0
+Achtung bei Überspannungsableitern (Reduktion der Prüfspannung kann erforderlich sein)
+Quelle: OVE E 8101-6-600.4.3.3 Tabelle 6.1
+
+
+===== PAGE 2/2 =====
+„kleines“ 
+Nachschlagewerk 
+KFE  
+Empfehlung  
+ET: 06.2023
+  
+www.kfe.at
+ⓒ Kuratorium für Elektrotechnik
+1220 Wien, Rautenweg 15
+Schutzarten 
+Erste Kennziffer:
+Schutz gegen das Eindringen fester 
+Fremdkörper
+Zweite Kennziffer: 
+Schutz gegen das Eindringen von Wasser 
+X oder 0
+Keine Anforderungen 
+X oder 0
+Keine Anforderungen
+1
+geschützt gegen Eindringen von 
+festen Fremdkörpern ≥ 50mm 
+und gegen Zugang mit dem 
+Handrücken 
+1
+geschützt gegen senkrecht 
+fallendes Tropfwasser 
+2
+geschützt gegen Eindringen von 
+festen Fremdkörpern ≥ 12,5mm 
+und gegen Zugang mit dem 
+Finger 
+2
+geschützt gegen Tropfwasser,  
+wenn das Gehäuse bis zu 15° 
+geneigt ist
+3
+geschützt gegen Sprühwasser
+3
+geschützt gegen Eindringen von 
+festen Fremdkörpern ≥ 2,5mm 
+und gegen Zugang mit 
+Werkzeug 
+4
+geschützt gegen Spritzwasser  
+5
+geschützt gegen Strahlwasser
+4
+geschützt gegen Eindringen von 
+festen Fremdkörpern ≥ 1,0mm 
+und gegen Zugang mit Draht 
+6
+geschützt gegen starkes 
+Strahlwasser 
+7
+geschützt gegen zeitweiliges 
+Untertauchen 
+5
+staubgeschützt und gegen 
+Zugang mit Draht 
+8
+geschützt gegen dauerndes 
+Untertauchen
+6
+staubdicht und gegen Zugang 
+mit Draht 
+9
+geschützt gegen Hochdruck und 
+hohe Strahlwassertemperatur 
+Herstellerangaben bezüglich der Schutzart sind einzuhalten 
+Verteiler müssen eine Mindestschutzart von IP2XC aufweisen  
+(Ausnahmen in abgeschlossenen elektrischen Betriebsstätten)
+Betriebsmittel in Hohlwänden müssen zumindest der Schutzart IP30 entsprechen
+Schutzarten durch Gehäuse ÖVE/ÖNORM EN 60529
+Kennbuchstaben für die dritte Stelle des  
+IP-Codes 
+A
+Geschützt gegen Zugang mit dem 
+Handrücken: Sonde 50mm Durchmesser, 
+ausreichend Abstand zu gefährlichen 
+Teilen. 
+B
+Geschützt gegen den Zugang mit dem 
+Finger: Durchmesser 12mm Länge 
+80mm, ausreichend Abstand zu 
+gefährlichen Teilen. 
+C
+Geschützt gegen den Zugang mit 
+Werkzeug: Sonde 2,5mm Durchmesser, 
+100mm Länge ausreichend Abstand zu 
+gefährlichen Teilen. 
+D
+Geschützt gegen Zugang mit Draht: 
+Sonde 1mm Durchmesser, Länge 
+100mm, ausreichend Abstand zu 
+gefährlichen Teilen. 
+Schutzarten durch Gehäuse ÖVE/ÖNORM EN 60529
+Tiefenerder (Vertikalerder) 
+Um Messergebnisse bei Erdern beurteilen zu können 
+ist es notwendig die gemessenen Werte mit den 
+erwarteten Werten zu vergleichen, welche direkt mit 
+dem spezifischem Erdwiderstand zusammenhängen 
+Vereinfachte Berechnung für den zu erwartenden 
+Widerstand eines Tiefenerders bis 10m Länge:
+RA= Widerstand 𝜌E = Spezifischer Bodenwiderstand 𝒍= Länge 
+RA = ρE
+l
+In diesem Dokument wurden die Meinungen und Interpretation der Normen durch das KFE angeführt. Die Elektrofachkraft trifft die Entscheidung über die Anwendung der jeweils zutreffenden Normen. 
+Trotz sorgfältiger Recherchen sind Änderungen, Irrtümer, Satz- und Druckfehler vorbehalten. 
+Spannungsabfall 
+Der Gesamtspannungsabfall für den Bereich von der Übergabestelle des Netzbetreibers bis zum letzen Verbrauchsgerät ist mit 4 % der Nennspannung 
+begrenzt. Von diesen 4% ist 1% für den Bereich von der Übergabestelle des Netzbetreibers bis zur Messeinrichtung reserviert.
+Für die Berechnung des Spannungsabfalls ist der Nennstrom der vorgeschalteten Überstrom-Schutzeinrichtung zu Grunde zu legen. 
+Bei einphasigem Wechselstrom:
+Bei Drehstrom:
+Spannungsabfall in Prozent:
+IB = Betriebsstrom IN = Nennstrom der vorgeschalteten Sicherung 
+(IB nur in Ausnahmefällen wenn dieser bekannt ist, ansonsten IN) 𝒍 = Länge 
+𝛋= (57 Kupfer/ 35,4 Alu) A = Querschnitt
+Quelle: OVE E 8101-5-52-525
+Bei ausgedehnten Anlagen die erhöhte Betriebssicherheit erfordern (zB.: Gesundheitseinrichtungen, Industrieanlagen, Tunnel, Straßenbeleuchtungen 
+mit Verkehrssicherungspflich) kann der Betriebsstrom für die Berechnung herangezogen werden, sofern dieser bekannt ist. 
+Bei einer Erstprüfung nach OVE E 8101 kann die Beurteilung des Spannungsabfalles sowohl durch Messung als auch durch rechnerischen Nachweis 
+erfolgen (siehe Fachinformation). Bei einer wiederkehrenden Prüfung gemäß OVE E 8101:2019 Unterabschnitt 600.5, sowie bei Prüfung einer 
+Bestandsanlage, die entsprechend den Vorgängernormen (ÖVE/ÖNORM E 8001, ÖVE-EN 1) errichtet wurde, ist eine Beurteilung des 
+Spannungsabfalls nicht erforderlich, ausgenommen es wurde eine den Betriebsstrom beeinflussende Änderung vorgenommen. 
+OVE-Fachinformation E10 Ausgabe: 2023-01-13
+Siehe auch KFE-Empfehlung ET 100-5 2023 (www.kfe.at - Medien - KFE Empfehlungen) Grenzlängen Spannungsabfall 
+ΔU ≤IB ×
+3 × l × cos ϕ
+κ ×  A 
+ΔU ≤IN ×  2  × l × cos ϕ
+κ ×  A 
+Δu = 100 * ΔU
+U0

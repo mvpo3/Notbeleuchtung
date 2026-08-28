@@ -1,0 +1,545 @@
+
+
+===== PAGE 1/8 =====
+ÖVE-EN 1, Teil 4(§ 65)/1985
+OSTERREICHISCHE BESTIMMUNGEN
+FUR DIE ELEKTROTECHNIK
+
+Errichtung
+
+von Starkstromanlagen
+mit Nennspannungen
+
+bis ~1000V und ... 1500 V
+
+Teil 4:
+Besondere Anlagen.
+§ 65. Begrenzte, leitfahige Räume
+
+DK 621.31.027 .4
+
+OSTERREICHISCHER VERBAND FUR ELEKTROTECHNK
+FachausschuB EN
+,Elektrische Niederspannungsanlagen”
+
+Eschenbachgasse 9, A-1010 Wien -
+
+OVE-EN 1, Teil 4(§ 65)/1985 Einleitung
+
+a)
+
+(2)
+
+3
+
+(4)
+
+(5)
+
+(6)
+
+Einleitung
+
+Diese Österreichischen Bestimmungen für die Elektrotech-
+nik wurden vom Lenkungsausschuß der Sektion „Elektro-
+technische Bestimmungen“ des Österreichischen Verban-
+des für Elektrotechnik zum Druck und zur Anwendung frei-
+gegeben.
+
+Die Inkraftsetzung dieser Österreichischen Bestimmungen
+
+für die Elektrotechnik mit der nächsten Elektrotechnikver-
+ordnung wurde vom Bundesministerium für Bauten und
+Technik in Aussicht genommen.
+
+Der Rechtsstatus dieser Österreichischen Bestimmungen
+für die Elektrotechnik kann darüber hinaus mit später er-
+scheinenden Elektrotechnikverordnungen weiter festgelegt
+werden. Insbesondere ist diesbezüglich jeweils die zuletzt
+erschienene Elektrotechnikverordnung zu beachlen.
+
+Als Grundlage fir diese Bestimmungen wurde die [EC-Publi-
+kation 364-7-706, Section 706, Restrictive conducting loca-
+tions, verwendet.
+
+In diesem Heft sind Erlauterungen durch Kleindruck ge-
+kennzeichnet.
+
+Die in diesem Heft angefihrten Osterreichischen Bestim-
+mungen fir die Elektrotechnik, ONORMEN der Elektrotech-
+nik und sonstigen technischen Veroffentlichungen können
+vom OVE, Eschenbachgasse 9, A-1010 Wien, bezogen wer-
+den,
+
+Rechtsbelehrungen, Einleitungen, FuBnoten, Hinweise auf
+Fundstellen in anderen Texten — sofern es sich nicht um
+andere Teile dieser Osterreichischen Bestimmungen für die
+Elekirotechnik handelt — und Anhange gelten nicht als Be-
+
+standteil der Osterreichischen Bestimmungen für die Elek--
+
+trotechnik, wohi aber Vorworte und Kleingedrucktes.
+
+L¥ "IN — ¥661 3ouuE( 07 we uaqadadsny — 4OMIS /]
+
+SZI1
+
+
+===== PAGE 2/8 =====
+OVE-EN 1, Teil 4(§ 65)/1985 ; Vorwort
+Vorwort
+
+Die Bestimmungen ÖVE-EN 1 werden folgende Teile umfassen:
+
+Teil 1: Begriffe und Schutzmaßnatimen
+
+Teil 2: Elektrische Betriebsmittel
+
+Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und
+Kabeln
+
+Teil 4: Besondere Anlagen
+
+OVE-EN 1, Teil 4(§ 65)/1985 §65
+
+65.1
+
+65.2
+
+65.3
+
+654
+65.4.1
+65.4.1.1
+
+65.4.1.2
+
+§ 65. Begrenzte, leitfähige Raume
+
+Geltung
+
+Diese Bestimmungen gelten für das Errichten elekirischer
+Anlagen in begrenzten, leitfthigen Raumen und fir die Spei-
+sung ortsveranderlicher Betriebsmittel in diesen Riumen.
+
+Begriffe
+Ein begrenzter, leitfahiger Raum ist ein Raum, dessen
+Wande im wesentlichen aus Melaliteilen oder entsprechend
+leitfahigen Tellen bestehen, und dessen räumliche Ausdeh-
+nung so gering ist, daB eine groBfiachige BerGhrung zwi-
+schen dem menschiichen Körper und den leitfahigen Teilen
+in der Regel unvermeidlich ist.
+Dies können 2. 8. sein:
+Behälter, Rohrtellungen, Kesse! und Tanks, feuchte Kandle und Stollen.
+Telelonzeflen, Schelt- und Verteiteranispen, Büro- und Aulenthaltacontainer,
+nasse und feuchte Baugruben geften im sitgemeinen nicht als .begrenzte, leit-
+fählge Riume".
+
+Als flexible AnschiuBleitungen dirfen weder PVC-Schlauch-
+leitungen noch leichte Gummischlauchleitungen verwendet
+werden. Kupplungssteckvorrichtungen müssen Gehause
+aus Isolierstoff besitzen. Schatier dürfen in Verldngerungs-
+leitungen nicht eingebaut sein.
+
+Schutzmaßnahmen
+Schutzgegen direktes Berühren
+
+Schutzmaßnahmen gegen direktes Berühren durch Anbrin-
+gen von Hindernissen und durch Abstand sind nicht zuläs-
+sig. .
+
+Bei Verwendung von Schutzkleinspannung muB der Schutz
+
+gegen direktes Berilhren ungeachtet der Nennspannung
+
+— entweder durch Abdeckungen oder Umhüllungen von
+mindestens der Schutzart IP2.
+
+911
+
+LY IN — 9661 JoUuugf -0z we uaqedadsny — HMS /|
+
+
+===== PAGE 3/8 =====
+ÖVE-EN 1, Teil 4(§ 65)/1985 $ 65
+
+65.4.2
+
+654.2.1
+
+65.4.3
+
+— oder durch eine Isolierung, die eine Prüfspannung von
+500 V eine Minute lang aushalt,
+gewdhrieistet sein.
+
+Schutz bei indirektem Berühren
+
+Es dirfen lediglich folgende SchutzmaBnahmen verwendet
+werden:
+(1) Bei der Speisung von ortsfesten Betriebsmittein:
+— Schutz durch automatische Abschaltung gemäß § 9,
+§ 10, § 11 und § 13 der hier vorliegenden Bestimmun-
+gen, wobei ein zusétzlicher Potentialausgleich die
+Korper der orisfesten Geräte mit den leitfähigen Tei-
+len des Raumes verbinden mu8
+— Schutzkleinspannung
+— Schutztrennung
+(2) Bei der Speisung von tragbaren Elektrowerkzeugen und
+MeBgeréten:
+— Schutzkleingpannung
+— Schutztrennung
+— Schutzleitungssystem mit automatischer Abschal-
+tung im Fehlerfall
+Ein Trenntransformator kann mehrere Sekundarwick-
+lungen haben.
+Es wird empfohlen, Gerate zu verwenden, deren Hand-
+
+griffe aus Isolierstoff bestehen oder einen Isolierstoff- -
+
+Oberzug besitzen.
+(3) Bei der Speisung von Handleuchten:
+— Schutzkleinspannung ;
+— Schutztrennung
+— Schutzleitungssystem mit aulomatuscher Abschal-
+tung im Fehlerfall
+
+Leuchtstofflampen-Leuchten mil eingebaulem Zweiwicklungsiransforma-
+tor, der mit Schulzkleinspannung gespeisi wird, sind ebenfalls zulässig.
+
+Die zur Erzeugung der Schutzkleinspannung oder der
+Schutztrennung verwendeten Einrichtungen müssen sich
+auBerhalb des begrenzten leitfähigen Raumes befinden.
+
+ist bei bestimmten ortsfesten Geraten, z. B. bei MeBgeraten
+und Steuereinrichtungen, eine Betriebserdung erforderlich,
+missen alle Korper, alle leitfahigen Teile innerhalb des be-
+grenzten leitfahigen Raumes und der Betriebserder in einen
+Potentialausgleich einbezogen sein.
+
+/b IN — +661 J2uugf 07 we uaqadslsny — MS /]
+
+ZZ11
+
+
+===== PAGE 4/8 =====
+ÖVE-EN 1, Teil 4 (§ 90)/1983
+ÖSTERREICHISCHE BESTIMMUNGEN
+FÜR DIE ELEKTROTECHNIK
+
+Errichtung
+von Starkstromanlagen
+mit Nennspannungen
+
+bis . 1000 V und -1500V
+
+Teil 4:
+
+Besondere Anlagen.
+
+§ 90. Garagen, Arbeitsgruben und
+Unterfluranlagen für Kraftfahrzeuge
+
+DK 621.31.027.4
+
+OSTERREICHISCHER VERBAND FUR ELEKTROTECHNIK
+FachausschuB EN
+
+LElektrische Niederspannungsanlagen*
+
+Eschenbachgasse 9, A-1010 Wien
+
+ÖVE-EN 1, Teil 4/1983 ; Inhaitsübersicht
+Inhaltsübersicht
+Seite
+Einleitung . . . . . . . . . . . . oL L, 3
+Vorwort. . . .. 4
+§90 Garagen, Arbeitsgruben und Unterﬂuranlagen für
+Kraftfahrzeuge . .
+§90.1 Garagen . . . . 5
+§90.2 Arbeitsgruben und Unterﬂuranlagen ﬂlr Kraftfahr-
+zeuge . 6
+8 90.2.1 Arbeitsgruben für Kraftfahrzeuge .0 6
+§90.2.2 Unterfluraniagen für Kraftfahrzeuge . . . . . . 6
+
+8¢t
+
+ZY IN — ¥661 3euug( 07 we usqalelsny — yoms ]
+
+
+===== PAGE 5/8 =====
+ÖVE-EN 1, Teil 4/1983 Einleitung
+
+(1)
+
+(2)
+
+©
+
+Einleitung
+
+Diese Osterreichischen Bestimmungen für die Elektrotech-
+nik wurden vom LenkungsausschuB der Sektion ,Elektro-
+technische Bestimmungen* des Osterreichischen Verban-
+des für Elektrotechnik zum Druck und zur Anwendung frei-
+gegeben.
+
+Die Inkraftsetzung dieser Osterreichischen Bestimmungen
+für die Elektrotechnik mit der 2. Durchfihrungsverordnung
+(1983) zum Elektrotechnikgesetz wurde vom Bundesmini-
+sterium für Bauten und Technik mit Wirkung vom 1984 01 01
+in Aussicht genommen.
+
+Der Rechtsstatus dieser Osterreichischen Bestimmungen
+für die Elektrotechnik kann dariiber hinaus mit spéter
+erscheinenden DurchfGhrungsverordnungen zum Elektro-
+technikgesetz weiter festgelegt werden. Insbesondere ist
+diesbezlglich jeweils die zuletzt erschienene Durchfith-
+rungsverordnung zu beachten. ;
+
+In diesem Heft wird auf folgende Österreichische Bestim-
+mungen für die Elektrotechnik Bezug genommen:
+
+ÖVE-EN1, Teil1, Errichtung von Starkstromanlagen mit
+Nennspannungen bis 1000V und
+=1500V, Teil 1: Begriffe und Schutz-
+maBnahmen
+
+ÖVE-EN1, Teil2, Errichtung von Starkstromanlagen mit
+Nennspannungen bis 1000V und
+==1500V, Teil 2: Elektrische Betriebs-
+mittel
+
+OVE-ENT, Teil 3, Errichtung von Starkstromanlagen mit
+Nennspannungen bis ~1000V und
+— 1500V, Teil 3: Beschaffenheit, Bemes-
+sung und Verlegung von Leitungen und
+Kabeln
+
+OVE-EN1, Teil4, Errichtung von Starkstromanlagen mit
+Nennspannungen bis ~1000V und
+= 1500V, Teil 4: Besondere Anlagen
+
+Errichtung und Betrieb von Starkstrom-
+anlagen in Versammiungsstatten,
+Waren- und Geschaftshausern, Hoch-
+
+OVE-EN2,
+
+3
+
+OVE-EN 1, Teit 4/1983
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+Einteitung, Vorwort
+
+häusern, Beherbergungsstätten, Kran-
+kenhäusern und geschlossenen GroB-
+garagen
+
+OVE-EX 65, Errichtung elektrischer Anlagen in
+explosionsgefahrdeten Bereichen
+OVE-K 40, Energieleitungen mit einer Isolierung
+
+aus Gummi
+
+Die Hinweise auf andere Verdffentlichungen in den FuBnoten
+beziehen sich, sofern nicht anders angegeben, auf den
+Stand zum Zeitpunk! der Herausgabe dieses Heftes. Zum
+Zeitpunkt der Anwendung dieses Heftes ist der durch
+Durchfdhrungsverordnungen zum Elektrotechnikgesetz
+oder gegebenenfalls auf andere Weise festgelegte aktuelle
+Stand zu beriicksichtigen.
+
+In diesem Heft sind Begriffserkidrungen, Bestimmungen und
+Prifbestimmungen durch Normaltdruck, Prifbestimmungen
+Oberdies durch ein vorgesetztes „Prüf.:“ sowie Erläuterun-
+gen durch Kleindruck gekennzeichnet.
+
+Die in diesem Heft angefohrten Osterreichischen Bestim-
+mungen für die Elektrotechnik, ONORMEN der Elektrotech-
+nik und sonstigen technischen Verodffentlichungen kdnnen
+vom OVE, Eschenbachgasse 9, A-1010 Wien, bezogen wer-
+den.
+
+Rechtsbelehrungen, Einleitungen, FuBnoten, Hinweise auf
+Fundstellen in anderen Texten — sofern es sich nicht um
+andere Teile dieser Osterreichischen Bestimmungen für die
+Elektrotechnik handelt — und Anhange gelten nicht als
+Bestandteil der Osterreichischen Bestimmungen fir die
+Elektrotechnik, woht aber Vorworte und Kleipgedmcktes.
+
+Voiwort
+
+Die Bestimmungen OVE-EN 1 werden folgende Teile umfassen:
+
+Teil 1: Begriffe und Schutzmaßnahmen.
+Teil 2: Elektrische Betriebsmittel.
+Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen
+
+und Kabeln.
+
+Teil 4: Besondere Anfagen.
+
+4
+
+¥ IN — %661 1ouugf 07 we uaqaSelsny — SpPmg /|
+
+6211
+
+
+===== PAGE 6/8 =====
+ÖVE-EN 1, Teil 4/1983 . §90
+
+90.1
+
+1
+
+$ 90. Garagen, Arbeitsgruben und Unterfluranlagen
+fur Kraftfahrzeuge
+
+Garagen
+
+Garagen sind bauliche Anlagen oder Raume, die zum Ein-
+stellen von Kraftfahrzeugen bestimmt sind. Für geschlosse-
+ne GroBgaragen bestehen zusatzliche technische Bestim-
+mungen'). .
+Garagen sind brandgefährdete Räume?). Sie können zusätz-
+lich auch feuchte und nasse Räume sein’).
+In Garagen für flossiggas- oder hochdruckgasbetriebene
+Kraftfahrzeuge bestehen für die explosionsgefdhrdeten Be-
+reiche besondere technische Bestimmungen?).
+Wo die Gefahr der mechanischen Beschadigung elektri-
+scher Betriebsmittel durch Kraftfahrzeuge besteht, sind be-
+sondere MaBnahmen gegen diese Beschadigung (z. B. ver-
+senkte Anordnung) zu treffen.
+Funkenbildende elektrische Betriebsmittel wie Schalter
+u. dgl. sind mindestens 1m über dem FuBboden anzubrin-
+gen. Dies gilt nicht for Steuerorgans in gut gel(fteten
+Garagenein- und -ausfahrtbereichen.
+Steckdosen sind soweit als moglich zu vermeiden, wo nicht
+anders moglich, sind sie mindestens 1m über dem FuB-
+boden zu installieren,
+Far die ortsfeste Verlegung von Leitungen bestehen geson-
+derte technische Bestimmungen®).
+Ungeschiitzt und beweglich verlegte Leitungen missen
+mindestens dem Typ HO7RN-F (GMSud)®) entsprechen.
+PVC-isolierte Leitungen sind nicht zutassig.
+For Elektrowerkzeuge und Handleuchten sind mindestens
+Leitungen des Typs HOSRN-F (GMLud)%) oder gleichwertige
+zu verwenden.
+PVC-isolierte Leitungen sind nicht zulassig.
+
+Siehe OVE-EN 2.
+
+Siehe OVE-EN1, Tell 4.
+Siehe QVE-EN 1, Teil!.
+
+Siehe OVE-EN1, Teil 3.
+Siehe OVEK 40.
+
+3
+4 Siehe GVE-EX 65
+g
+
+OVE-EN1, Teil 411983 §90
+
+90.2.1
+
+90.2.2
+
+Elektrische Heizkorper darfen nur installiert werden, wenn
+sie explosionsgeschitzt!) ausgeführt sind oder so ausgebil-
+det sind, daß ihre der umgebenden Luft zugangliche Ober-
+flache an keiner Stelle die Temperatur von 200°C Gber-
+steigt.
+
+Elektrische FuBbodenheizungen’) sind so auszulegen, daB
+Fahrzeugreifen an keiner Stelle mit Tellen in Beriihrung kom-
+men können, die heiBer als 40 °C sind. Dies gilt auch bei Ver-
+
+sagen der Regelorgane.
+
+Arbeitsgruben und Unterfluraniagen filr Krafttahrzeuge
+
+Arbeitsgruben und Unterfluranlagen fiir Kraftfahrzeuge sind
+unter Bodenniveau gelegene Anlagen, von denen aus Arbei-
+ten an der Unterseite von Fahrzeugen durchgefiihrt werden
+kénnen.
+
+Arbeitsgruben und Unterfluranlagen gelten als feuchte und
+nasse Riaume. ;
+
+Arbeitsgruben für Kraftfahrzeuge
+Arbeitsgruben sind Vertiefungen, deren Breite elwa der
+Arbeitsöffnung entspricht. Schalter dürfen in Arbeitsgruben
+nicht angeordnet werden. Steckdosen sind bis maximal
+0,5m unter der Oberkante der Arbeitsgrube anzuordnen
+und müssen mindestens spritzwassergeschützt A (IP.4)
+ausgeführt und ausreichend gegen mechanische Beschä-
+digung geschützt sein. Leuchien sind mit Ihrer Unterkante
+bis maximal 0,5 m unter der Oberkante der Arbeitsgrube an-
+zuordnen und müssen mindestens in Schutzart IP54 ausge-
+führt und ausreichend gegen mechanische Beschädigung
+geschützt sein (z. B. vertiefte Anordnung, Schutzkorb). Für
+die Installation von Leuchten im darunteriegenden Bereich
+bestehen besondere technische Bestimmungen?).
+
+Die im Abluftstrom gelegenen Teile einer mechanischen Ent-
+laftung müssen explosionsgeschitzt ausgefiihrt sein.
+
+Unterfluranlagen farKraftfahrzeuge
+Unterfluraniagen sind Raume mit einer oder mehreren
+Arbeitsoffnungen, deren Breite wesentlich groBer ist als die
+
+: Arbeitsbreite und deren Grundfliche in der Ragel mit der
+
+des dartberliegenden Raumes vergleichbar ist bzw. deren
+
+4) FuBinote siehe Seite 5.
+7) Siehe OVE-EN1, Teil 2.
+
+6
+
+o¢ll
+
+Ly IN — #661 Iouug{ ‘07 we uaqaSelsny — yoms /|-
+
+
+===== PAGE 7/8 =====
+ÖVE-EN 1, Teil 4/1983 §90
+
+umbauter Raum ein Vietfaches jenes einer Arbeitsgrube be-
+tragt.
+
+Schaiter und Steckdosen sind mindestens 1 m Gber dem
+Boden der Unterfluraniage anzuordnen und missen minde-
+stens spritzwassergeschiitzt A (IP . 4) sein.
+
+Leuchten sind mindestens 1 m über dem Boden der Unter-
+flurantagen anzuordnen und müssen mindestens in der
+Schutzart IP54 ausgeführt und ausreichend gegen mecha-
+nische Beschédigung geschitzt sein (z. B. vertiefte Anord-
+nung, Schutzkorb).
+
+Für die Installation im darunterliegenden Bereich bestehen
+besondere technische Bestimmungen®).
+
+Die im Abluftstrom gelegenen Teile einer mechanischen Ent-
+lüftung missen explosionsgeschitzt ausgeführt sein.
+
+4) FuBnote siehe Seite 5.
+
+2 "IN — %661 1ouuy[ -0z ure uaqedelsny — omg /1
+
+TEL
+
+
+===== PAGE 8/8 =====

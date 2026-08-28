@@ -1,0 +1,1722 @@
+
+
+===== PAGE 641/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 11 
+712.54 
+Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+ANMERKUNG AT 
+Weitere Anforderungen zum Potentialausgleich siehe OVE-Richtlinie R 6-2-2. 
+712.542 
+Erdungsanlagen 
+712.542.101 
+Potentialausgleich von Metallkonstruktionen der PV-Anlage 
+Die metallischen, betriebsmäßig nicht stromführenden Teile der PV-Anlage (Montagegestell, Tragsysteme 
+u. dgl.) müssen mit Schutzpotentialausgleichsleitern untereinander und auf möglichst kurzem Weg mit der 
+Hauptpotentialausgleichsschiene verbunden werden. 
+Die Verbindungspunkte der Konstruktionen müssen so ausgeführt sein, dass ein dauerhafter 
+Potentialausgleich aller Metallteile sichergestellt ist. 
+ANMERKUNG AT 
+Dies gilt auch hinsichtlich der verwendeten Materialien. 
+ANMERKUNG 
+Dieser Potentialausgleich begrenzt die Wirkungen der Entladung elektrostatischer Aufladungen. 
+712.542.102 
+Funktionspotentialausgleich auf der DC-Seite 
+Ein aktiver Leiter auf der DC-Seite des PCE darf nur dann einbezogen werden, wenn zwischen der AC-Seite 
+und der DC-Seite eine galvanische Trennung durch einen Transformator mit elektrisch getrennten 
+Wicklungen besteht. 
+Der Transformator darf entweder im PCE oder außerhalb davon sein. Die Transformatorwicklung, die an das 
+PCE angeschlossen ist, darf nicht geerdet werden, und das PCE muss dafür geeignet sein. 
+Die Verbindung muss an einem einzelnen Punkt auf der DC-Seite des PCE ausgeführt sein. 
+Die Verbindung muss zwischen der Trenneinrichtung und dem DC-Anschluss des PCE angeordnet sein. 
+712.542.103 
+Funktionspotentialausgleichsleiter 
+Dieser Potentialausgleichsleiter (isoliert oder blank) muss einen Mindestquerschnitt von 4 mm2 Cu oder 
+gleichwertig haben. 
+712.6 
+Prüfung 
+712.600.101  
+Die 
+zusätzlichen 
+Anforderungen 
+der 
+OVE EN 62446 
+für 
+Systemdokumentation, 
+Inbetriebnahme, Prüfungen und Besichtigen sind zu beachten. 
+712.6.001.AT 
+Vor Inbetriebnahme der PV-Anlage sowie nach Änderungen und Instandsetzungen müssen 
+die Prüfungen gemäß Teil 6 Abschnitt 600.4 durchgeführt werden. 
+712.6.002.AT 
+PV-Anlagen müssen regelmäßig, je nach Zutreffen, gemäß Teil 6 Abschnitt 600.5 oder 
+ÖVE/ÖNORM EN 50110-1 geprüft werden. 
+712.6.003.AT 
+Der Errichter der PV-Anlage hat dem Betreiber eine Dokumentation zur Verfügung zu 
+stellen 
+(inkl. 
+Prüfprotokoll, 
+Planungsunterlagen, 
+Datenblättern, 
+Bedienungsanleitungen, 
+Wartungs-
+instruktionen u. dgl.). 
+712.6.004.AT 
+Änderungen und Ergänzungen an der PV-Anlage bei Netzparallelbetrieb 
+Technische Änderungen und Ergänzungen an einer PV-Anlage oder geplante Veränderungen der 
+Betriebsweise sind dem Netzbetreiber in Hinblick auf eine erneute Beurteilung des Netzanschlusses, der zu 
+erwartenden Beeinflussung des umgebenden Netzes und der Auswirkungen auf den Netzbetrieb mitzuteilen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 642/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 12 
+Anhang 712.A 
+(informativ) 
+ 
+Beispiele für PV-Array 
+ 
+Bild 712.A.1.AT – PV-Generatorfeld – mehrere parallele PV-Stränge 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 643/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 13 
+ 
+Bild 712.A.001.AT – PV-Generatorfeld – mehrere PV-Teilgeneratorfelder 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 644/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 14 
+ 
+Bild 712.A.002.AT – PV-Generatorfeld – mehrere PV-Teilgeneratorfelder an unabhängigen MPPT 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 645/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 15 
+Anhang 712.B 
+(normativ) 
+ 
+Berechnung von UOC MAX und ISC MAX 
+712.B.1 
+Berechnung von UOC MAX 
+UOC MAX ist die maximale Leerlaufspannung (offener Stromkreis) an einem PV-Modul oder PV-Strang oder 
+PV-Teilgeneratorfeld oder PV-Generatorfeld, berechnet nach der folgenden Formel: 
+ 
+UOC MAX = KU  ∙ UOC STC 
+(F 712.B.1) 
+Der Korrekturfaktor KU berücksichtigt den Anstieg der Leerlaufspannung von PV-Modulen, wobei Tmin als 
+niedrigste Umgebungstemperatur der PV-Anlage und αUOC als Temperaturvariationskoeffizient der vom 
+Hersteller des PV-Moduls vorgegebenen Spannung UOC angesehen wird: 
+ 
+KU = 1 + (
+αUOC
+100 ) ∙ (Tmin −25) 
+(F 712.B.2) 
+Dabei ist 
+αUoc 
+der Temperaturvariationskoeffizient der Uoc PV-Modulspannung, in %/°C; 
+Tmin  
+die niedrigste Umgebungstemperatur der PV-Anlage, in °C; 
+αUoc 
+ein negativer Faktor, der entweder in mV/°C oder in %/°C vom PV-Modulhersteller angegeben 
+ 
+werden kann. Wenn αUoc in mV/°C zum Ausdruck gebracht ist, kann der Ausdruck in %/°C erfolgen 
+ 
+durch Verwenden der Formel: 
+ 
+αUOC (
+%
+°C) = 0,1 ∙ 
+αUOC (mV
+°C)
+UOC STC_Module(V) 
+(F 712.B.3) 
+ANMERKUNG 
+Modulbeispiel mit αUoc ausgedrückt in mV/°C. Die folgende Berechnung ist ein Beispiel: 
+– 
+multikristallines Modul, UOC STC _Module = 38,3 V und αUoc = –133 mV/°C 
+ 
+→ αUOC = 0,1 ∙ 
+(−133)
+38,3  = −0,35 
+%
+°C 
+– 
+Tmin = −15 °C → (Tmin −25) = −40 °C 
+ 
+KU = 1 + 
+(−0,35
+100 )
+−40 = 1,14 
+ 
+UOC MAX = KU  ∙ UOC STC = 1,14 ∙ 38,3 V = 43,7 V 
+ANMERKUNG AT 
+αUoc ist von der Technologie der PV-Module abhängig. 
+Insbesondere für amorphe Silizium-Module sind die elektrischen Kennwerte während der ersten 
+Betriebswochen höher als die spezifizierten Kennwerte. Dieses Verhalten gibt der PV-Modulhersteller an und 
+ist bei der Berechnung von UOC MAX in Betracht zu ziehen. 
+Ohne Information über die zu erwartende minimale Umgebungstemperatur oder ohne Information über den 
+Temperaturkoeffizienten des PV-Moduls muss UOC MAX gleich wie 1,2 ∙ UOC STC gewählt werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 646/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 16 
+712.B.2 
+Berechnung von ISC MAX 
+Der 
+maximale 
+Kurzschlussstrom 
+eines 
+PV-Moduls 
+oder 
+eines 
+PV-Stranges 
+oder 
+eines  
+PV-Teilgeneratorfeldes oder eines PV-Generatorfeldes wird nach der folgenden Formel berechnet: 
+ 
+ISC MAX = Kl  ∙ ISC STC 
+(F 712.B.4) 
+Der Mindestwert für KI ist 1,25. 
+Ist eine erhöhte Einstrahlung zB aufgrund von Reflexionen, Sonnenintensität gegenüber den Werten der STC 
+zu erwarten, ist der Korrekturfaktor KI dementsprechend direkt proportional zu erhöhen. 
+ 
+ 
+Anhang 712.C 
+(informativ) 
+ 
+Beispiele für die Installation von SPD 
+Siehe dazu OVE-Richtlinie R 6-2-2. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 647/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-713 – Seite 1 
+Teil 7-713  
+Möbel 
+713.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen für Möbel und für deren Anschlussleitung an die ortsfeste elektrische 
+Anlage mit einer Nennspannung U0 von höchstens 230 V AC und einem Bemessungsstrom von höchstens 
+32 A. 
+Beispiele dafür sind Betten, Schränke, Schreibtische und Shop-Vitrinen, in denen elektrische Betriebsmittel 
+wie zB Leuchten, Installationssteckverbinder, Steckdosen, Schaltgeräte sowie Kabel- und Leitungsanlagen 
+installiert sind. 
+Die Anforderungen dieses Teils gelten für alle Arten von Möbel, unabhängig vom Anschluss an die ortsfeste 
+elektrische Anlage des Gebäudes, ausgenommen für folgende Möbel und Betriebsmittel: 
+– 
+Möbel, die zusammen mit ihrer elektrischen Anlage Gegenstand einer eigenen Produktbestimmung sind, 
+– 
+elektrische Betriebsmittel und Geräte, die speziell für den Einbau in Möbel gebaut oder Teil von anderen 
+Betriebsmittel- und Gerätenormen sind, 
+ 
+ANMERKUNG AT  
+Dazu zählen zB Radios, TV-Geräte, Kühlschränke, Labortische die über Stecker und 
+Steckdosen mit der festen elektrischen Anlage verbunden werden. 
+– 
+Lifte und ähnliche Geräte für in und am Möbel und Bestandteilen davon (zB Schubladen) installierte 
+elektrische Betriebsmittel bzw. Geräte (siehe ÖVE/ÖNORM EN 60335 Reihe). 
+In Räumen und Bereichen besonderer Art können für das Möbel noch zusätzliche Anforderungen gelten, zB 
+für Räume und Orte mit Badewanne oder Dusche siehe Teil 7-701. 
+Für die Installation von Leuchten in und am Möbel gelten ergänzend die Anforderungen 
+– 
+für Leuchten und Beleuchtungsanlagen siehe Abschnitt 559, 
+– 
+für Kleinspannungsbeleuchtungsanlagen siehe Teil 7-715. 
+713.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+713.41 
+Schutz gegen elektrischen Schlag 
+713.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+713.414.1.2 
+Füge hinzu: 
+Konstruktionsbauteile von Möbeln oder ähnlichen Einrichtungsgegenständen, die dafür bestimmt sind, 
+Betriebsströme zu führen, sind fest mit Spannungsquellen zu verbinden, die die Anforderungen der 
+Schutzmaßnahme Schutz durch Kleinspannung mittels SELV oder PELV gemäß 414.4.1 erfüllen. Die 
+maximale Spannung darf AC 25 V oder DC 60 V nicht überschreiten. Die zu übertragende Leistung ist auf 
+50 VA begrenzt. 
+713.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+713.415.1 
+Zusätzlicher Schutz: Fehlerstrom-Schutzeinrichtungen (RCD) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 648/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-713 – Seite 2 
+713.415.1.1 
+Füge hinzu: 
+Für die elektrische Anlage für Möbel ist eine Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungs-
+fehlerstrom IΔn ≤ 0,03 A vorzusehen. 
+713.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+713.52 
+Kabel- und Leitungsanlagen 
+713.52.101 Kabel- und Leitungsanlagen für Möbel 
+Folgende Kabel und Leitungen dürfen für die Verbindung des Möbels mit der ortsfesten elektrischen Anlage 
+verwendet werden: 
+– 
+bei Verbindung des Möbels mit Hilfe von Steckern und Steckdosen oder mit Installationssteckverbindern 
+gemäß ÖVE/ÖNORM EN 61535: Gummischlauchleitungen gemäß ÖVE/ÖNORM EN 50525-2-21 oder 
+PVC-isolierte 
+flexible 
+Leitungen 
+gemäß 
+ÖVE/ÖNORM EN 50525-2-71 
+bzw. 
+ÖVE/ÖNORM 
+EN 50525-2-11 in normaler oder schwerer Ausführung; 
+– 
+bei Möbel, die verstellt (bewegt) werden können, sind flexible Kabel und Leitungen gemäß 
+ÖVE/ÖNORM EN 50525-2-21, 
+ÖVE/ÖNORM EN 50525-2-71, 
+ÖVE/ÖNORM EN 50525-2-11 
+oder 
+ÖVE/ÖNORM E 8242 zu verwenden; 
+– 
+bei Verbindung des nicht verstellbaren Möbels durch eine permanente Verbindung oder mit 
+Installationverbindern: Starre Ader- und Verdrahtungsleitungen mit thermoplastischer PVC-Isolierung 
+gemäß ÖVE/ÖNORM EN 50525-2-31 bzw. PVC-isolierte Leitungen gemäß ÖVE/ÖNORM E 8242 in 
+normaler oder schwerer Ausführung. 
+Kabel und Leitungen müssen mindestens die Anforderungen gemäß OVE EN 60332-1-2 Reihe erfüllen. 
+Leitungen für elektrische Betriebsmittel und Geräte für Möbel müssen, ausgenommen bei fester Verlegung, 
+an den Anschlussstellen von Zug und Schub entlastet sein. 
+Kabel und Leitungen müssen in geeigneter Weise gegen Beschädigung geschützt und so verlegt sein, dass 
+sie nicht gequetscht und durch scharfe Kanten oder bewegliche Teile beschädigt werden können. 
+Kabel und Leitungen müssen sicher, mit geeigneten Befestigungsmitteln, am Möbel befestigt oder in 
+Elektroinstallationsrohrsystemen, geschlossenen Elektroinstallationskanalsystemen, zu öffnenden Elektro-
+installationskanalsystemen, gelenkigen oder flexiblen Systemen für die Kabel-/Leitungsführung gemäß 
+ÖVE/ÖNORM EN 62549 oder in einer dafür beim Bau der Möbel vorgesehenen Aussparung verlegt werden. 
+ANMERKUNG AT 
+Bei eventueller Verwendung von Bestandteilen des Möbels (zB Führungsschienen) als 
+stromführende Teile für Leuchten gelten für diese Teile die Anforderungen gemäß ÖVE/ÖNORM EN 60598-1. 
+713.55 
+Andere elektrische Betriebsmittel 
+713.553.101 
+Auswahl und Installation elektrischer Betriebsmittel 
+Es dürfen nur geeignete Dosen und Gehäuse gemäß ÖVE/ÖNORM EN 60670 Reihe verwendet werden (zB 
+Dosen und Gehäuse geeignet für Hohlwände). 
+Elektrische Installationsgeräte müssen in Dosen und Gehäuse gemäß ÖVE/ÖNORM EN 60670-24 eingebaut 
+und dürfen nicht mit Krallen befestigt werden. 
+Installationsgeräte müssen so angebracht oder geschützt sein, dass die elektrische Gefährdung durch 
+eventuell verschüttete Flüssigkeit weitgehend verhindert wird. 
+Anschluss- und Verbindungsstellen (zB Steckdosen, Geräteanschlussdosen, Verbindungsdosen) müssen 
+ohne Schwierigkeiten zugänglich sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 649/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-713 – Seite 3 
+ANMERKUNG AT 
+Als ohne Schwierigkeiten zugänglich gilt auch eine Anschlussstelle hinter einem Möbel, wenn 
+dieses von einer Person verstellt (bewegt) werden kann oder wenn die Anschlussstelle durch eine Öffnung in der 
+Rückwand zugänglich ist. 
+Beim Einbau oder beim Aufstellen von elektrischen Verbrauchsmitteln in oder an Möbeln sind die 
+Montageanweisungen der Hersteller zu beachten. 
+ANMERKUNG AT 
+Um die Anforderungen von Teil 4-42 zu erfüllen, kann es erforderlich sein, eingebaute 
+elektrische Verbrauchsmittel automatisch auszuschalten (zB automatisches Ausschalten der Beleuchtung beim Schließen 
+des Klappbettes). 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 650/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-713 – Seite 4 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 651/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-714 – Seite 1 
+Teil 7-714  
+Beleuchtungsanlagen im Freien 
+714.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl von Leuchten und die Errichtung von Beleuchtungsanlagen, die Teil einer 
+ortsfesten elektrischen Anlage im Freien sind. 
+Die Anforderungen gelten zB für Beleuchtungsanlagen für Straßen, Parks, Gärten, Plätze mit öffentlichem 
+Zugang, Sportplätze, Beleuchtung von Denkmälern, Flutlicht, Telefonzellen, Wartehäuschen, Werbeschilder, 
+Leuchtkästen (zB für Stadtpläne) und Verkehrszeichen. 
+Dieser Teil gilt nicht für: 
+– 
+öffentliche Beleuchtungsanlagen, die unmittelbar einen elektrischen Leiter des Verteilernetzes 
+mitbenutzen, 
+– 
+vorübergehende Festbeleuchtungen (zB Weihnachtsbeleuchtung, Girlanden, Partylichter), 
+– 
+Verkehrslichtsignalanlagen, 
+– 
+außen an einem Gebäude fest angebrachte Leuchten, die vom inneren Leitungssystem dieser baulichen 
+Anlage versorgt werden. 
+Für Beleuchtungsanlagen von Schwimmbädern und Springbrunnen siehe Teil 7-702. 
+714.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+714.41 
+Schutz gegen elektrischen Schlag 
+714.410.3 
+Allgemeine Anforderungen 
+714.410.3.6 
+Füge hinzu: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung) und Schutz durch 
+erdfreien örtlichen Schutzpotentialausgleich gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+714.411 
+Schutzmaßnahme mit automatischer Abschaltung der Stromversorgung 
+714.411.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+714.411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+714.411.3.1.2 Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Metallteile (zB Zäune, Gitter), die nicht Körper (eines elektrischen Betriebsmittels) sind und die nicht Teil der 
+Beleuchtungsanlage im Freien sind, brauchen nicht in einen Potentialausgleich einbezogen werden. 
+714.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 652/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-714 – Seite 2 
+714.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Einrichtungen in Telefonzellen, Wartehäuschen, Werbeschilder, Leuchtkästen (zB für Stadtpläne) und 
+ähnliche Anlagen mit integrierter Beleuchtung müssen durch eine Fehlerstrom-Schutzeinrichtung (RCD) mit 
+einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt werden. 
+714.41 Anhang 41.A Vorkehrungen für den Basisschutz (Schutz gegen direktes Berühren) 
+Füge hinzu: 
+Gehäuse von Leuchten und Beleuchtungsanlagen müssen ein direktes Berühren aktiver Teile ohne 
+Werkzeug oder Schlüssel verhindern, es sei denn, sie befinden sich in einem Raum, zu dem nur 
+Elektrofachkräfte (BA5) oder elektrotechnisch unterwiesene Personen (BA4) Zutritt haben. 
+Türen, die den Zugang zu elektrischen Betriebsmitteln ermöglichen und die weniger als 2,5 m über der 
+Grundfläche angebracht sind, dürfen nur mit einem Schlüssel oder Werkzeug zu öffnen sein. Zusätzlich 
+muss, wenn die Tür geöffnet ist, Schutz gegen direktes Berühren vorgesehen werden, entweder durch 
+Verwendung von elektrischen Betriebsmitteln, die durch Konstruktion oder durch die Errichtung mindestens 
+dem Schutzgrad IPXXB oder IP2X entsprechen, oder durch Anbringen einer Abdeckung oder Umhüllung, die 
+den gleichen Schutzgrad bietet. 
+Bei Leuchten in einer Höhe von weniger als 2,8 m über der Grundfläche darf der Zugang zu der Lichtquelle 
+nur nach Entfernen einer Abdeckung oder Umhüllung mittels Werkzeug möglich sein. 
+714.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+714.51 
+Allgemeine Bestimmungen 
+714.512 
+Betriebsbedingungen und äußere Einflüsse 
+714.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Die Klassen für äußere Einflüsse hängen von den örtlichen Bedingungen ab. 
+Die folgenden Klassen gemäß Teil 5-51 Anhang 51.ZA werden grundsätzlich empfohlen: 
+– 
+Umgebungstemperatur: AA2 (von –40 °C bis +5 °C) und AA4 (von –5 °C bis +40 °C); 
+– 
+Atmosphärische Luftfeuchte: AB2 (von 10 % bis 100 %) und AB4 (von 5 % bis 95 %). 
+Die nachfolgenden Klassen der äußeren Einflüsse sind Mindestanforderungen: 
+– 
+Auftreten von Wasser: AD3 (Sprühwasser; erfordert mindestens Schutzart IPX3); 
+– 
+Auftreten von festen Fremdkörpern: AE2 (kleine Gegenstände; erfordert mindestens Schutzart IP3X). 
+ANMERKUNG 
+Andere Klassen von äußeren Einflüssen, zB korrosive Substanzen, mechanische Beanspruchung, 
+Sonnenstrahlung, dürfen unter bestimmten Bedingungen zur Anwendung kommen (siehe Teil 5-51). 
+714.512.2.101 
+Elektrische Betriebsmittel müssen durch Konstruktion oder Installation mindestens eine 
+Schutzart von IP33 besitzen. 
+ANMERKUNG 1  
+Es kann in einigen Fällen auf Grund von Betriebs- oder Reinigungsbedingungen notwendig sein, 
+einen höheren Schutzgrad zu fordern. 
+ANMERKUNG 2  
+Konstruktions- und Sicherheitsanforderungen für Leuchten enthalten die Normen der 
+ÖVE/ÖNORM EN 60598 Reihe. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 653/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-714 – Seite 3 
+714.537 
+Geräte zum Trennen und Schalten 
+714.537.2 
+Einrichtungen zum Trennen 
+714.537.2.101 
+Jeder Stromkreis muss einzeln von den aktiven Leitern der Versorgungsleitung getrennt 
+werden können, außer wie in 461.2 angegeben. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 654/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-714 – Seite 4 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 655/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 1 
+Teil 7-715  
+Kleinspannungsbeleuchtungsanlagen 
+715.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl und Errichtung von Kleinspannungsbeleuchtungsanlagen, die von einer 
+Stromquelle mit einer maximalen Bemessungsspannung von AC 50 V oder DC 90 V gemäß OVE EN 61140 
+versorgt werden. 
+ANMERKUNG 1  
+Zur Definition von Kleinspannungsbeleuchtungssystemen siehe ÖVE/ÖNORM EN 60598-2-23. 
+ANMERKUNG 2  
+Angegebene Werte für Wechselspannungen sind Effektivwerte. 
+715.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+715.41 
+Schutz gegen elektrischen Schlag 
+715.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+Füge hinzu: 
+Für Kleinspannungsbeleuchtungsanlagen ist nur die Schutzmaßnahme Schutz durch Kleinspannung mittels 
+SELV zulässig. Wenn blanke Leiter verwendet werden, darf die Spannung gemäß 414.4.5, höchstens 
+AC 25 V oder DC 45 V betragen. 
+Gemäß 414.4.5 können für bestimmte elektrische Betriebsmittel gemäß den einschlägigen Produkt-
+bestimmungen anstelle von DC 45 V DC 60 V zulässig sein. 
+Als Versorgung für die Kleinspannungsbeleuchtungsanlage kann verwendet werden: 
+– 
+ein Sicherheitstransformator gemäß ÖVE/ÖNORM EN 61558-2-6; 
+ 
+Parallelschaltung von Transformatoren auf der Sekundärseite ist nur zulässig, wenn sie auch auf der 
+Primärseite parallel geschaltet sind und die Transformatoren gleiche elektrische Eigenschaften besitzen. 
+– 
+ein elektronischer Konverter mit sicherer Trennung gemäß ÖVE/ÖNORM EN 61347-2-2:2012 Anhang I, 
+für Glühlampen oder gemäß OVE EN 61347-2-13:2017 Anhang I, für LED. 
+ 
+ANMERKUNG AT OVE EN 61347-2-2:2012 Anhang I und OVE EN 61347-2-13:2017 Anhang I verweisen dabei auf 
+OVE EN 61347-1:2009 Anhang L. 
+ 
+Die Parallelschaltung von Konvertern ist nicht zulässig, ausgenommen es ist in den Herstellerangaben 
+ausdrücklich als zulässig angeführt. 
+715.42 
+Schutz gegen thermische Einflüsse 
+715.422.3 
+Räume oder Orte mit besonderem Brandrisiko 
+Füge hinzu: 
+Die Montageanleitung des Herstellers muss bei der Installation eingehalten werden, besonders die Angaben, 
+die sich auf die Installation auf entflammbaren oder nicht entflammbaren Oberflächen beziehen. 
+Leuchten und ihr Zubehör müssen derart ausgewählt und angeordnet werden, dass eine schädigende 
+Erwärmung von Materialien und Umgebungen vermieden wird. 
+ANMERKUNG 
+Siehe auch Abschnitt 559. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 656/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 2 
+715.422.106 
+Brandgefahr durch Transformatoren/Konverter 
+Transformatoren müssen entweder 
+– 
+auf der Primärseite durch Schutzeinrichtungen geschützt sein, wie in 715.422.107.2 gefordert, oder 
+– 
+es müssen kurzschlussfeste Transformatoren (bedingt oder unbedingt kurzschlussfest) verwendet 
+werden. Kennzeichnung siehe Anhang 559.A. 
+Elektronische Konverter für Glühlampen müssen ÖVE/ÖNORM EN 61347-2-2:2012 Anhang I und für LED-
+Module müssen OVE EN 61347-2-13:2017 Anhang I entsprechen. 
+ANMERKUNG 
+Es wird empfohlen, Konverter mit der Kennzeichnung 
+ zu verwenden. Der Temperatur-
+begrenzungswert (des Konverters) innerhalb des Dreiecks ist nur ein Beispiel. 
+ANMERKUNG AT 
+ÖVE/ÖNORM EN 61347-2-2:2012 Anhang I und OVE EN 61347-2-13:2017 Anhang I verweisen 
+dabei auf OVE EN 61347-1:2009 Anhang L. 
+715.422.107 
+Brandgefahr durch Kurzschluss 
+715.422.107.1 
+Wenn beide Leiter blank sind, muss entweder 
+– 
+eine besondere Schutzeinrichtung in Übereinstimmung mit den Anforderungen gemäß 715.422.107.2 
+vorgesehen werden, oder 
+– 
+die Versorgung mittels eines Transformators oder eines Konverters erfolgen, dessen Leistung 200 VA 
+nicht übersteigt, oder 
+– 
+ein Kleinspannungsbeleuchtungssystem gemäß ÖVE/ÖNORM EN 60598-2-23 verwendet werden. 
+715.422.107.2 
+Die besondere Schutzeinrichtung gegen Brandgefahr muss folgende Anforderungen 
+erfüllen: 
+– 
+dauernde Überwachung des Leistungsbedarfs der Leuchten, 
+– 
+automatische Abschaltung der Stromversorgung innerhalb von 0,3 s im Falle eines Kurzschlusses oder 
+eines Fehlers, der eine Leistungsanhebung von mehr als 60 W verursacht, 
+– 
+automatische Abschaltung, während der Versorgungsstromkreis mit verminderter Leistung in Betrieb ist 
+(zB bei Anschnittsteuerung oder Regelungen oder einem Lampenfehler), falls ein Fehler eine Leistungs-
+anhebung von mehr als 60 W verursacht, 
+– 
+automatische Abschaltung beim Einschalten des Versorgungsstromkreises, falls ein Fehler eine 
+Leistungsanhebung von mehr als 60 W verursacht, 
+– 
+die besondere Schutzeinrichtung muss sich bei Ausfall sicher verhalten. 
+ANMERKUNG 
+Einschaltströme sind zu berücksichtigen. 
+715.43 
+Schutz bei Überstrom 
+715.430.104 
+Schutz bei Überstrom in Kleinspannungsbeleuchtungsanlagen 
+Überstrom-Schutzeinrichtungen, die sich selbst zurücksetzen, sind nur für Transformatoren bis 50 VA 
+zulässig. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 657/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 3 
+715.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+715.52 
+Kabel- und Leitungsanlagen 
+715.521 
+Arten von Kabel- und Leitungsanlagen 
+715.521.1 
+Ersetze die Anforderungen durch: 
+Es dürfen nur folgende Kabel/Leitungen bzw. Kabel- und Leitungsanlagen verwendet werden: 
+– 
+Aderleitungen im Elektroinstallationsrohrsystem gemäß ÖVE/ÖNORM EN 61386 Reihe oder im zu 
+öffnenden/geschlossenen Elektroinstallationskanal gemäß ÖVE/ÖNORM EN 50085 Reihe, 
+– 
+Kabel und Mantelleitungen, 
+– 
+flexible Kabel und Leitungen, 
+– 
+Trägerleiter eines Kleinspannungsbeleuchtungssystems gemäß ÖVE/ÖNORM EN 60598-2-23, 
+– 
+Stromschienensysteme gemäß ÖVE/ÖNORM EN 60570, 
+– 
+blanke Leiter (siehe 715.521.106). 
+Für zugängliche Teile von Kleinspannungsbeleuchtungsanlagen sind auch die Anforderungen gemäß 
+Abschnitt 423 anzuwenden. 
+Metallene Konstruktionsteile von Gebäuden, zB Rohrsysteme oder Teile von Möbeln, dürfen nicht als aktive 
+Leiter verwendet werden (Ausnahme siehe 713.414.1.2). 
+715.521.106 
+Blanke Leiter 
+Wenn die Nennspannung AC 25 V oder DC 45 V nicht überschreitet, dürfen blanke Leiter vorgesehen 
+werden, vorausgesetzt, die Kleinspannungsbeleuchtungsanlage erfüllt die folgenden Anforderungen: 
+– 
+Die Beleuchtungsanlage ist so ausgeführt, errichtet oder umhüllt, dass die Gefahr eines Kurzschlusses 
+auf ein Minimum begrenzt ist und 
+– 
+die verwendeten Leiter besitzen einen Mindestquerschnitt gemäß Abschnitt 715.524 und 
+– 
+die Leiter oder Adern sind nicht direkt auf brennbaren Materialien angeordnet. 
+Für freihängende blanke Leiter müssen für den Teil des Stromkreises zwischen dem Transformator und der 
+Schutzeinrichtung mindestens ein Leiter und seine Anschlussstellen isoliert sein, um Kurzschlüsse zu 
+vermeiden. 
+ANMERKUNG 
+Beim Einsatz blanker Leiter sollte in Betracht gezogen werden, dass möglicherweise brennbares 
+Material vorhanden sein kann. 
+715.521.107 
+Hängende Systeme 
+Befestigungsmittel für Leuchten einschließlich tragende Leiter müssen mindestens die Masse der 
+angeschlossenen Leuchten (einschließlich ihrer Leuchtmittel), jedoch nicht weniger als 5 kg, tragen können. 
+ANMERKUNG AT 
+Hinweis zum Begriff Leuchtmittel siehe Begriff Leuchte. 
+Anschlüsse und Verbindungen der Leiter müssen als Schraubklemmen oder schraubenlose Verbindungen in 
+Übereinstimmung mit ÖVE/ÖNORM EN 60998-2-1 oder ÖVE/ÖNORM EN 60998-2-2 ausgeführt sein. 
+Die Anforderungen in Bezug auf die zu erwartenden Belastungen in den Leitern/Leitungen sind in 559.5.2 
+beschrieben. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 658/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 4 
+Anschlussseile mit Gegengewichten, die über freihängende Leiter gelegt werden, dürfen nicht verwendet 
+werden. Die Verwendung von Schneidklemmen bei freihängenden Leitern ist nicht zulässig. 
+Ein hängendes System mit blanken Leitern muss an Wänden oder Decken durch isolierende Befestigungs-
+mittel befestigt werden und muss im gesamten Verlauf zugänglich sein. 
+715.523 
+Strombelastbarkeit 
+Füge hinzu: 
+ANMERKUNG 
+Anforderungen an die Strombelastbarkeit siehe Teil 5-52. 
+715.524 
+Querschnitte von Leitern 
+Ersetze die Anforderungen durch: 
+Der Mindestquerschnitt von Leitern für Kleinspannungsstromkreise, die an der Sekundärseite von 
+Transformatoren/Konvertern angeschlossen sind, müssen entsprechend dem Laststrom ausgewählt werden. 
+Bei Systemen mit Leuchten, die von den Leitern abgehängt werden, muss der Mindestquerschnitt des Leiters 
+der 
+Kleinspannungsstromkreise, 
+die 
+an 
+die 
+Ausgangsklemmen/Ausgangsverbindung 
+von 
+Transformatoren/Konvertern angeschlossen sind, aus mechanischen Gründen 4 mm2 betragen. 
+715.525 
+Spannungsabfall in Verbraucheranlagen 
+Füge hinzu: 
+In Kleinspannungsbeleuchtungsanlagen darf der Spannungsabfall zwischen dem Transformator/Konverter 
+und der in der größten Entfernung installierten Leuchte 5 % der Nennspannung der Kleinspannungsanlage 
+nicht überschreiten. 
+715.53 
+Schalt- und Steuergeräte 
+715.530.4 
+Allgemeine und gemeinsame Anforderungen 
+715.530.4.104 
+Schutzeinrichtungen müssen leicht zugänglich sein. 
+Schutzeinrichtungen dürfen oberhalb abgehängter Decken installiert werden, die abnehmbar oder leicht 
+zugänglich sind, vorausgesetzt, ein Hinweis auf das Vorhandensein und die Anordnung der Einrichtungen ist 
+vorhanden. 
+Wenn die Identifizierung einer Schutzeinrichtung eines Stromkreises nicht klar ersichtlich ist, müssen aus 
+einem Schild oder Schaltplan (Aufkleber) in der Nähe der Schutzeinrichtung der Stromkreis und sein Zweck 
+erkennbar sein. 
+Stromquellen für SELV, Schutzeinrichtungen oder ähnliche elektrische Betriebsmittel, die oberhalb von 
+abgehängten Decken oder ähnlichen Plätzen montiert sind, müssen fest angeschlossen sein. 
+Stromquellen für SELV und ihre Schutzeinrichtungen müssen derart installiert sein, dass: 
+– 
+eine mechanische Belastung ihrer elektrischen Anschlussstellen verhindert wird und 
+– 
+sie angemessen mechanisch abgestützt werden und 
+– 
+Überhitzung der elektrischen Betriebsmittel aufgrund thermischer Isolierung vermieden wird. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 659/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 5 
+715.537 
+Geräte zum Trennen und Schalten 
+715.537.1 
+Allgemeines 
+715.537.1.1 
+Füge hinzu: 
+Wo Transformatoren/Konverter parallel betrieben werden, muss der Primärstromkreis dauerhaft mit einer 
+gemeinsamen Trennvorrichtung verbunden sein. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 660/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-715 – Seite 6 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 661/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 1 
+Teil 7-717  
+Ortsveränderliche oder transportable Baueinheiten 
+717.1 
+Anwendungsbereich 
+Dieser Teil legt Anforderungen an elektrische AC- und DC-Anlagen von ortsveränderlichen oder 
+transportablen Baueinheiten fest. 
+ANMERKUNG AT 
+In diesem Teil werden Beispiele für die sinngemäße Anwendung der allgemeinen Anforderungen 
+von OVE E 8101 Reihe bei ortsveränderlichen oder transportablen Baueinheiten gezeigt. 
+Im Sinne dieses Teils bedeutet „Baueinheit“ ein Fahrzeug und/oder eine ortsveränderliche oder transportable 
+Konstruktion, in der alle Teile oder nur einige Teile einer elektrischen Anlage enthalten sind. 
+Baueinheiten sind entweder ortsveränderlich (mit Rädern), zB selbstfahrend oder gezogen, oder 
+transportabel, zB Container oder Kabine auf einem Grundgestell. 
+Beispiele sind Baueinheiten für Fernsehen und Rundfunk, medizinische Bereiche, Werbung, Feuerwehr, die 
+Verwendung spezieller Informationstechniken, Katastrophenhilfe, Verpflegungseinheiten, Bürocontainer und 
+Ähnliches. 
+Die Anforderungen aus diesem Teil sind auch anzuwenden, wenn zwei oder mehr Baueinheiten miteinander 
+verbunden sind, um eine einzige elektrische Anlage zu bilden (siehe 717.551.6 und 717.551.7). 
+Dieser Teil gilt nicht für: 
+– 
+Stromkreise und Betriebsmittel für den Fahrbetrieb; 
+– 
+Stromerzeugungseinrichtungen, zB Generatoren samt Antrieb und Generatorschutz oder Batterie samt 
+Wechselrichter; 
+– 
+Baueinheiten, die durch andere Teile 7 abgedeckt sind (zB Caravan und Motorcaravan); 
+– 
+Wassersportfahrzeuge (siehe ÖVE/ÖNORM EN 60092-507); 
+– 
+ortsveränderliche Maschinen in Übereinstimmung mit ÖVE/ÖNORM EN 60204-1; 
+– 
+Antriebseinrichtungen von elektrischen Fahrzeugen; 
+– 
+ortsveränderliche oder transportable Mobilheime, Büros und Ähnliches für längerfristige Nutzung am 
+selben Ort (siehe allgemein gültige Anforderungen von OVE E 8101). 
+Wo zutreffend, müssen zusätzliche Anforderungen berücksichtigt werden, wie sie in den anderen Teilen 7 
+festgelegt sind, zB für Duschen, für medizinische Bereiche. 
+717.3 
+Bestimmungen allgemeiner Merkmale 
+717.31 
+Zweck, Stromversorgung und Aufbau 
+717.312 
+Leiterkonfiguration und Erdung der Systeme 
+717.312.2 
+Systeme nach Art der Erdverbindung (Netzsysteme) 
+Füge hinzu: 
+ANMERKUNG 
+Wo die Bezeichnung TN oder TT oder IT in diesem Teil verwendet wird, bedeutet das, dass nur die 
+Schutzprinzipien dieser Systeme anzuwenden sind. Wenn eine Verbindung mit einem Erder nicht vorgesehen wird, darf 
+die Verbindung mit dem leitfähigen Gehäuse oder mit der Hauptschutzverbindung der Baueinheit als ausreichend 
+betrachtet werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 662/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 2 
+717.312.2.1 
+TN-Systeme 
+Füge hinzu: 
+Ein TN-C-System innerhalb der Baueinheit ist nicht zulässig. 
+717.313 
+Stromversorgungen 
+Füge hinzu: 
+Eine oder mehrere der folgenden Stromversorgungsarten dürfen bei Baueinheiten angewendet werden: 
+a) 
+Verbindung mit einer Niederspannungsstromerzeugungseinrichtung gemäß Abschnitt 551 (Beispiele 
+siehe Bild 717.1 und Bild 717.2); 
+b) 
+Verbindung mit einer ortsfesten elektrischen Anlage, die ein TT- oder TN-System bildet und eine 
+wirksame Schutzmaßnahme bis zu den Schutzeinrichtungen innerhalb der Baueinheit, die für den 
+Schutz durch automatische Abschaltung der Stromversorgung vorgesehen sind, gewährleistet (Beispiel 
+siehe Bild 717.3); 
+c) 
+Verbindung mit einer ortsfesten elektrischen Anlage über einen Trenntransformator. Innerhalb der 
+Baueinheit wird als Schutzmaßnahme automatische Abschaltung der Stromversorgung angewendet 
+(Beispiele siehe Bilder 717.5, 717.6 und 717.7); 
+d) 
+Verbindung mit einer ortsfesten elektrischen Anlage, wobei ab dem Trenntransformator die 
+Schutzmaßnahmen 
+Schutztrennung 
+oder 
+Isolations-Überwachungssystem 
+mit 
+automatischer 
+Abschaltung der Stromversorgung beim ersten Fehler angewendet wird (siehe 411.3.2.001.AT) (Beispiel 
+siehe Bild 717.8). 
+ANMERKUNG 1  
+In den Fällen a), b) und c) darf ein Erder vorgesehen werden. 
+ANMERKUNG 2  
+Die Verfahren c) oder d) sind zweckdienlich, zB wenn informationstechnische Betriebsmittel in 
+der Baueinheit zur Anwendung kommen oder wenn eine Reduzierung der elektromagnetischen Beeinflussung notwendig 
+ist oder wenn hohe Ableitströme zu erwarten sind (Anwendung von Frequenzumformern) und/oder wenn die 
+Stromversorgung der Baueinheit von einer Stromquelle mit nicht ausreichend bekannten Schutzeigenschaften erfolgt (wie 
+es beim Katastrophenmanagement der Fall sein kann). 
+Die Stromquelle, die Einrichtung für die Verbindung oder für die Trennung können in der Baueinheit sein. 
+ANMERKUNG 3  
+Wenn es eine potenzielle Gefahr durch die Bewegung der Baueinheit gibt, während diese an 
+eine externe Anlage bzw. Stromerzeugungseinrichtung angeschlossen ist, ist es zu empfehlen, die Baueinheit mit einer 
+elektrischen Verriegelung, mit Warnung, Alarm oder anderen geeigneten Maßnahmen auszurüsten, um das Risiko von 
+Personen- und Sachschäden zu verringern. 
+ANMERKUNG 4  
+Für den Zweck dieses Teils sind Umrichter oder Frequenzumrichter, die durch die 
+Niederspannungsfahrzeugelektrik oder durch Hilfsantriebssysteme den Verbrennungsmotor des Fahrzeugs versorgt 
+werden, als Stromerzeugungseinrichtungen zu betrachten. 
+Beim Einsatz von Umrichtern oder Frequenzumrichtern, bei denen sowohl das DC-System als auch das  
+AC-System geerdet ist, müssen die Umrichter mindestens mit sicherer Trennung ausgeführt sein. 
+717.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+717.41 
+Schutz gegen elektrischen Schlag 
+717.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+Füge hinzu: 
+a) 
+Für die Stromversorgung in Übereinstimmung mit 717.313 a) sind nur TN- und IT-Systeme zulässig. Der 
+Schutz muss durch automatische Abschaltung der Stromversorgung vorgesehen werden und 
+ 
+1) 
+in einem TN-System ist Abschnitt 717.411.4.1 anzuwenden; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 663/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 3 
+ 
+2) 
+in einem IT-System ist Abschnitt 717.411.6.2 anzuwenden. 
+b) 
+Für eine Stromversorgung in Übereinstimmung mit 717.313 b) muss die automatische Abschaltung der 
+Stromversorgung mit Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A vorgesehen werden. 
+c) 
+In den Fällen 717.313 a) bis d) muss innerhalb der Baueinheit jedes elektrische Betriebsmittel zwischen 
+der Stromquelle und den ersten Schutzeinrichtungen, die für den Schutz durch automatische 
+Abschaltung der Stromversorgung vorgesehen sind, einschließlich dieser Schutzeinrichtungen selbst, 
+durch Verwendung von elektrischen Betriebsmitteln der Schutzklasse II (zB Kunststoffgehäuse) oder mit 
+gleichwertiger Isolierung (zB Generatorwicklungen mit doppelter Isolierung) geschützt sein. 
+ANMERKUNG AT 
+Beispiel dafür siehe in der Legende zu Bildern in Unterabschnitt 717.001.AT Index 2. 
+717.411.3 
+Anforderungen für den Fehlerschutz (Schutz bei indirektem Berühren) 
+717.411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+717.411.3.1.2 Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Zugängliche leitfähige Teile der Baueinheit, wie zB Fahrgestell, Aufbauten, müssen durch Schutzpotential-
+ausgleichsleiter mit der Haupterdungsschiene der Baueinheit verbunden werden. 
+Schutzpotentialausgleichsleiter müssen feindrähtig sein. 
+ANMERKUNG 
+Ein Beispiel dafür ist der Typ H07V-K nach ÖVE/ÖNORM EN 50525-2-31. 
+717.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+717.411.4.1 
+Füge hinzu: 
+Erfolgt die Stromversorgung gemäß 717.313 a) oder c), so ist in Fällen, in denen in einer Baueinheit mit 
+leitfähiger Umhüllung ein TN-System zur Anwendung kommt, diese Umhüllung über Schutzleiter mit dem 
+Neutralpunkt (siehe Bilder 717.1, 717.2 und 717.6) oder, wo dieser nicht verfügbar ist, mit einem Außenleiter 
+zu verbinden. 
+Erfolgt die Stromversorgung gemäß 717.313 a) oder c), so sind in Fällen, in denen in einer Baueinheit ohne 
+leitfähige Umhüllung ein TN-System zur Anwendung kommt, die Körper der elektrischen Betriebsmittel 
+innerhalb der Baueinheit über Schutzleiter mit dem Neutralpunkt oder, wo dieser nicht verfügbar ist, mit 
+einem Außenleiter zu verbinden. 
+717.411.6 
+IT-System 
+717.411.6.2 
+Füge hinzu: 
+Erfolgt die Stromversorgung gemäß 717.313 a) oder c), so sind in Fällen, in denen in einer Baueinheit mit 
+leitfähiger Umhüllung ein IT-System zur Anwendung kommt, die Körper der elektrischen Betriebsmittel mit 
+der leitfähigen Umhüllung zu verbinden. 
+Erfolgt die Stromversorgung gemäß 717.313 a) oder c), so sind in Fällen, in denen in einer Baueinheit ohne 
+leitfähige Umhüllung ein IT-System zur Anwendung kommt, die Körper der elektrischen Betriebsmittel 
+innerhalb der Baueinheit mit der Haupterdungsschiene zu verbinden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 664/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 4 
+Ein IT-System muss mit einem Trenntransformator oder einer Niederspannungsstromerzeugungseinrichtung 
+errichtet werden (717.313 a) oder c)), der/die mit einer Isolationsüberwachungseinrichtung (IMD) in 
+Übereinstimmung mit ÖVE/ÖNORM EN 61557-8 oder einer Isolationsfehler-Sucheinrichtung (IFLS) in 
+Übereinstimmung mit ÖVE/ÖNORM EN 61557-9 überwacht wird. In beiden Fällen erfolgt keine automatische 
+Abschaltung der Stromversorgung bei einem ersten Fehler, und es muss keine Verbindung zu einer 
+Erdungsanlage vorhanden sein (siehe Bild 717.7). Im Falle eines zweiten Fehlers an verschiedenen 
+Außenleitern müssen die Anforderungen an die Abschaltung der Stromversorgung gemäß 411.6.4 
+eingehalten werden. 
+717.413 
+Schutzmaßnahme: Schutztrennung 
+Dieser Abschnitt wurde in Österreich nicht übernommen. 
+ANMERKUNG AT 
+Da eine automatische Abschaltung im Prinzip der Schutzmaßnahme Schutztrennung nicht 
+vorgesehen ist, wird beim Einsatz einer Isolationsüberwachungseinrichtung (IMD) mit vorsorglicher automatischer 
+Abschaltung der Stromversorgung beim ersten Fehler diese Schutzmaßnahme unter Isolations-Überwachungssystem mit 
+einem IMD und automatischer Abschaltung der Stromversorgung beim ersten Fehler beschrieben, siehe 411.3.2.001.AT. 
+717.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+717.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+717.415.1.001.AT 
+Ersetze die Anforderungen im Absatz 2 durch: 
+Alle Stromkreise in Anlagen für Wechselspannung unabhängig vom Bemessungsstrom, die der Versorgung 
+von elektrischen Verbrauchsmitteln außerhalb der Baueinheit dienen, sind bei Anwendung der 
+Schutzmaßnahmen 
+Nullung 
+oder 
+Fehlerstrom-Schutzschaltung 
+zusätzlich 
+durch 
+Fehlerstrom-
+Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A zu schützen. 
+717.43 
+Schutz bei Überstrom 
+717.431 
+Anforderungen entsprechend der Art der Stromkreise 
+717.431.1 
+Schutz der Außenleiter 
+Ersetze die Anforderungen in Absatz 1 im 1. Satz durch: 
+In Fällen, in denen die Stromversorgung in Übereinstimmung mit 717.313 a) oder c) erfolgt und wo ein 
+Außenleiter mit der leitfähigen Umhüllung der Baueinheit verbunden ist, ist in diesem Außenleiter eine 
+Überstrom-Schutzeinrichtung nicht erforderlich. 
+717.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+717.51 
+Allgemeine Bestimmungen 
+717.514 
+Kennzeichen 
+Füge hinzu: 
+An einer gut sichtbaren Stelle an der Baueinheit, vorzugsweise nahe an der Stromversorgungseinführung, 
+muss ein dauerhafter Hinweis vorhanden sein. Der Hinweis sollte folgendes beinhalten: 
+– 
+Art der Stromversorgung für die Baueinheit; 
+– 
+Bemessungsspannung der Baueinheit; 
+– 
+Anzahl der Außenleiter und ihre Konfiguration (siehe 312.1.1); 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 665/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 5 
+– 
+Angaben zur Erdungsanlage der Baueinheit; 
+– 
+maximale Anschlussleistung der Baueinheit. 
+Steckdosen, bei denen die Schutzmaßnahme Schutztrennung für ein einzelnes Verbrauchsmittel (siehe 
+413.1.2) angewendet wird, müssen mit einer dauerhaften Kennzeichnung in unmittelbarer Nähe dieser 
+Steckdosen versehen werden, mit dem Hinweis, dass jeweils nur ein einziges elektrisches Verbrauchsmittel 
+an diesen Steckdosen angeschlossen werden darf. 
+717.52 
+Kabel- und Leitungsanlagen 
+717.52.101  
+Für die Verbindung der Baueinheit mit einer Niederspannungsstromerzeugungs-einrichtung 
+oder einer ortsfesten elektrischen Anlage müssen Kabel/Leitungen vom Typ H07RN-F gemäß 
+ÖVE/ÖNORM EN 50525-2-21 oder zumindest in gleichwertiger Ausführung verwendet werden. Die 
+Verbindung muss einen Mindestquerschnitt von 2,5 mm2 Cu aufweisen. 
+Diese flexiblen Kabel/Leitungen müssen so in die Baueinheit eingeführt werden, dass die Möglichkeit einer 
+Beschädigung der Isolierung oder eines Isolationsfehlers, der die Körper der Baueinheit unter Spannung 
+setzen könnte, minimiert wird. Der Bereich um die Einführungsöffnung muss isoliert ausgeführt werden. 
+Die Mäntel der Kabel/Leitungen müssen durch Kabelverschraubungen oder durch eine andere Form der 
+Zugentlastung sicher an der Baueinheit befestigt werden, um während des Betriebes Beanspruchungen an 
+den Anschlüssen zu vermeiden. 
+717.52.102  
+Für die Kabel-/Leitungsanlage der Baueinheit dürfen folgende Arten von Kabeln/Leitungen 
+verwendet werden: 
+a) 
+isolierte einadrige Kabel/Leitungen mit flexiblen oder mit mehrdrähtigen Leitern (mindestens 7 Drähte) in 
+ 
+– 
+nichtmetallenen Kabelkanälen, oder 
+ 
+– 
+nichtmetallenen Elektroinstallationsrohren, oder 
+ 
+– 
+nichtmetallenen Kabelschutzsystemen. 
+b) 
+flexible Kabel/Leitungen mit Mantel. 
+Alle Kabel/Leitungen müssen mindestens die Anforderungen von ÖVE/ÖNORM EN 50525-2-31 und OVE 
+EN 60332-1-2 erfüllen. 
+Elektroinstallationsrohre müssen mit ÖVE/ÖNORM EN 61386-21, ÖVE/ÖNORM EN 61386-22, ÖVE/ÖNORM 
+EN 61386-23 übereinstimmen. 
+Zu öffnende oder geschlossene Elektroinstallationskanäle müssen mit ÖVE/ÖNORM EN 50085 Reihe 
+übereinstimmen. 
+717.55 
+Andere elektrische Betriebsmittel 
+717.551 
+Niederspannungsstromerzeugungseinrichtungen 
+717.551.6 
+Zusätzliche Anforderungen für Anlagen, in denen die Stromerzeugungseinrichtung  
+als umschaltbare Stromversorgung alternativ zur öffentlichen Stromversorgung 
+vorgesehen ist 
+Füge hinzu: 
+717.551.6.001.AT 
+ 
+Baueinheiten, die unterschiedliche Stromversorgungen und unterschiedliche 
+Erdungsanlagen haben, dürfen nicht miteinander verbunden werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 666/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 6 
+717.551.7 
+Zusätzliche Anforderungen für Anlagen, in denen die Stromerzeugungseinrichtung 
+parallel zu anderen Stromquellen einschließlich der öffentlichen Stromversorgung 
+vorgesehen ist 
+Füge hinzu: 
+717.551.7.001.AT 
+Baueinheiten, 
+die 
+unterschiedliche 
+Stromversorgungen 
+und 
+unterschiedliche 
+Erdungsanlagen haben, dürfen nicht miteinander verbunden werden. 
+717.55.1  
+Stecker und Steckdosen müssen mit ÖVE/ÖNORM EN 60309-1, ÖVE/ÖNORM EN 60309-2 
+oder ÖVE/ÖNORM E 8684-1 übereinstimmen, ausgenommen solche, die für spezielle elektrische 
+Betriebsmittel vorgesehen sind, zB für Rundfunkbetriebsmittel, für die gemeinsame Stecker für die 
+Informationssignale und für die Stromversorgung verwendet werden. 
+Einrichtungen zur Verbindung der Baueinheit mit der Stromversorgung müssen folgende Anforderungen 
+erfüllen: 
+– 
+Stecker müssen ein Gehäuse aus Isoliermaterial haben; 
+– 
+Stecker und Steckdosen müssen mindestens die Schutzart IP44 aufweisen, wenn sie außerhalb der 
+Baueinheit angeordnet sind; 
+– 
+Geräteeinlässe mit ihren Gehäusen (Umhüllungen) müssen mindestens die Schutzart IP55 aufweisen; 
+– 
+der Steckerteil (mit „Stift“-Kontakten) muss an der Baueinheit angeordnet sein. 
+Wenn Austauschbarkeit für diese Verbindungseinrichtungen gefordert ist, müssen Steckdosen zusätzlich den 
+Anforderungen gemäß ÖVE/ÖNORM EN 60309-1 oder ÖVE/ÖNORM EN 60309-2 entsprechen. 
+717.6 
+Prüfungen 
+717.600.5 
+Wiederkehrende Prüfung 
+717.600.5.2 
+Häufigkeit der wiederkehrenden Prüfung 
+717.600.5.2.1 
+Füge hinzu: 
+Für ortsveränderliche Baueinheiten wird empfohlen, die Baueinheit mindestens alle 12 Monate zu überprüfen. 
+Für transportable Baueinheiten wird empfohlen, die Baueinheit mindestens alle 2 Jahre zu überprüfen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 667/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 7 
+717.001.AT Beispielbilder 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Stromversorgung über eine Niederspannungsstromerzeugungseinrichtung (717.313 a)). 
+– 
+TN-System; Baueinheit mit leitfähiger Umhüllung (717.411.4.1). 
+ANMERKUNG 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt durch 
+Fehlerstrom-Schutzeinrichtungen (RCD), die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung 
+angeordnet sind. 
+ANMERKUNG 2.AT 
+Für Steckdosen im Inneren der Baueinheit kann ein Zusatzschutz gemäß 415.1 erforderlich sein. 
+Für Steckdosen, die der Versorgung von elektrischen Verbrauchsmitteln außerhalb der Baueinheit dienen, siehe 
+717.415.1. 
+ANMERKUNG 3.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.1 – Beispiel einer Verbindung zu einer Niederspannungsstromerzeugungseinrichtung der 
+Schutzklasse I oder Schutzklasse II, in der Baueinheit angeordnet 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 668/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 8 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Stromversorgung über eine Niederspannungsstromerzeugungseinrichtung (717.313 a)). 
+– 
+TN-System; Baueinheit mit leitfähiger Umhüllung (717.411.4.1). 
+ANMERKUNG 2.AT 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt durch 
+Fehlerstrom-Schutzeinrichtungen (RCD), die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung 
+angeordnet sind. 
+ANMERKUNG 3.AT 
+Für Steckdosen im Inneren der Baueinheit kann ein Zusatzschutz gemäß 415.1 erforderlich sein. 
+Für Steckdosen, die der Versorgung von elektrischen Verbrauchsmitteln außerhalb der Baueinheit dienen, siehe 
+717.415.1. 
+ANMERKUNG 4.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.2 – Beispiel einer Verbindung mit einer Niederspannungsstromerzeugungsanlage  
+der Schutzklasse II außerhalb der Baueinheit angeordnet 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 669/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 9 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Verbindung mit einer ortsfesten elektrischen Anlage (717.313 b)). 
+– 
+Keine Festlegung zum Netzsystem; Baueinheit mit leitfähiger Umhüllung (717.411.4.1). 
+ANMERKUNG 2.AT 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt durch 
+Fehlerstrom-Schutzeinrichtungen (RCD), die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung 
+angeordnet sind. Der Schutz durch automatische Abschaltung der Stromversorgung bis zu diesem Gehäuse erfolgt durch 
+die ortsfeste elektrische Anlage. 
+ANMERKUNG 3.AT 
+Für Steckdosen im Inneren der Baueinheit kann ein Zusatzschutz gemäß 415.1 erforderlich sein, 
+zB für Stromkreise bis 16 A mit Steckdosen gemäß ÖVE/ÖNORM E 8684-1. Für Steckdosen, die der Versorgung von 
+elektrischen Verbrauchsmitteln außerhalb der Baueinheit dienen, ist immer ein Zusatzschutz gemäß 717.415.1 
+erforderlich. 
+ANMERKUNG 4.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.3 – Beispiel einer Verbindung zur ortsfesten elektrischen Anlage,  
+die ein TT- oder TN-System bildet, mit automatischer Abschaltung der  
+Stromversorgung durch Fehlerstrom-Schutzeinrichtungen (RCD) 
+ 
+ 
+Das Bild 717.4 – Beispiel einer Verbindung zu einer festen elektrischen Anlage unabhängig vom System 
+nach Art der Erdverbindung unter Verwendung eines Transformators mit einfacher Trennung und einem  
+IT-System mit einem Erder wurde in Österreich nicht übernommen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 670/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 10 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Verbindung mit einer ortsfesten elektrischen Anlage über einen Trenntransformator (717.313 c)). 
+– 
+IT-System; Baueinheit mit leitfähiger Umhüllung. 
+ANMERKUNG 2.AT 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt mit einer 
+Isolationsüberwachungseinrichtung (siehe 717.413), die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger 
+Isolierung angeordnet ist. Der Schutz durch automatische Abschaltung der Stromversorgung bis zum Trenntransformator 
+erfolgt durch die ortsfeste elektrische Anlage. 
+ANMERKUNG 3.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.5 – Beispiel mit einem Trenntransformator sowie Isolationsüberwachungseinrichtung und 
+automatischer Abschaltung nach dem ersten Fehler 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 671/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 11 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Verbindung mit einer ortsfesten elektrischen Anlage über einen Trenntransformator (717.313 c)). 
+– 
+TN-System; Baueinheit mit leitfähiger Umhüllung (717.411.4.1). 
+ANMERKUNG 2.AT 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt durch 
+Fehlerstrom-Schutzeinrichtungen (RCD), die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung 
+angeordnet sind. Der Schutz durch automatische Abschaltung der Stromversorgung bis zum Trenntransformator erfolgt 
+durch die ortsfeste elektrische Anlage. 
+ANMERKUNG 3.AT 
+Für Steckdosen im Inneren der Baueinheit kann ein Zusatzschutz gemäß 415.1 erforderlich sein. 
+Für Steckdosen, die der Versorgung von elektrischen Verbrauchsmitteln außerhalb der Baueinheit dienen, siehe 
+717.415.1. 
+ANMERKUNG 4.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.6 – Beispiel einer Verbindung mit einem Trenntransformator und einem TN-System 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 672/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 12 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Verbindung mit einer ortsfesten elektrischen Anlage über einen Trenntransformator (717.313 c)). 
+– 
+IT-System; Baueinheit mit leitfähiger Umhüllung (717.411.6.2). 
+ANMERKUNG 2.AT 
+Schutz durch automatische Abschaltung der Stromversorgung für die Baueinheit erfolgt durch 
+Überstrom-Schutzeinrichtungen, die in einem Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung angeordnet 
+sind, in Ergänzung mit einer Isolationsüberwachungseinrichtung in der Baueinheit. Der Schutz durch automatische 
+Abschaltung der Stromversorgung bis zum Trenntransformator erfolgt durch die ortsfeste elektrische Anlage. Es erfolgt 
+keine automatische Abschaltung der Stromversorgung bei einem ersten Fehler. 
+ANMERKUNG 3.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.7 – Beispiel einer Verbindung zu einer ortsfesten elektrischen Anlage  
+unabhängig vom System nach Art der Erdverbindungen, unter Verwendung eines  
+IT-Systems ohne automatische Abschaltung beim ersten Fehler 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 673/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 13 
+ 
+ANMERKUNG 1.AT 
+Aufbau der Baueinheit: 
+– 
+Verbindung mit einer ortfesten elektrischen Anlage über einen Trenntransformator (717.313 d)). 
+– 
+Isolations-Überwachungssystem mit einer Isolationsüberwachungseinrichtung (IMD) und automatischer Abschaltung 
+der Stromversorgung beim ersten Fehler mit einer Ausschaltung innerhalb von 5 s. 
+ANMERKUNG 2.AT 
+Ein ggfs. erforderlicher Überspannungsschutz ist im Beispiel nicht dargestellt. 
+Bild 717.8 – Beispiel einer Verbindung zu einer ortsfesten elektrischen Anlage unabhängig  
+vom System nach Art der Erdverbindung, Schutz durch Isolations-Überwachungssystem mit 
+Ausschaltung beim Auftreten des ersten Fehlers 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 674/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-717 – Seite 14 
+Legende zu den Bildern 717.1 bis 717.8 
+1a Verbindung der Baueinheit zu einer Versorgung über einen Trenntransformator gemäß 717.313 c) 
+1b Verbindung der Baueinheit zu einer Stromversorgung, in der die Schutzmaßnahmen wirksam sind 
+1c Verbindung zu einer Niederspannungsstromerzeugungseinrichtung gemäß Teil 5-551 
+2 
+Gehäuse der Schutzklasse II oder mit gleichwertiger Isolierung bis zur ersten Schutzeinrichtung, die für 
+die automatische Abschaltung der Stromversorgung vorgesehen ist (siehe 717.411 c)) 
+4 
+Leitfähige Treppe, falls vorhanden 
+5 
+Verbindung des Neutralpunkts (oder, falls nicht verfügbar, eines Außenleiters) zu den leitfähigen Teilen 
+der Baueinheit oder zur Haupterdungsklemme oder -schiene (Index 18 dieser Legende) 
+5a Verbindung der Haupterdungsklemme oder -schiene (Schutzleiterschiene) mit der leitfähigen Umhüllung 
+der Baueinheit 
+6 
+Steckdosen für elektrische Verbrauchsmittel ausschließlich für Verwendung innerhalb der Baueinheit 
+7 
+Schutzpotentialausgleichsleiter für die Verbindung zur Haupterdungsschiene gemäß 717.411.3.1.2 
+7a zu einer Antenne, falls vorhanden 
+7b zu einer externen leitfähigen Treppe in Verbindung mit Erde, falls vorhanden 
+7c für den Anschluss eines Erders der Funktionserdung (falls gefordert) 
+7d zum leitfähigen Gehäuse der Baueinheit 
+7e für den Anschluss eines Erders für Schutzzwecke, falls ein geeigneter Erder vorhanden ist oder einfach 
+errichtet werden kann 
+8 
+Schutzeinrichtungen, falls gefordert, für den Schutz bei Überstrom und/oder für den Schutz durch 
+automatische Abschaltung der Stromversorgung im Falle eines zweiten Fehlers 
+9 
+Schutzeinrichtungen für den Schutz bei Überstrom und/oder für den Schutz durch automatische 
+Abschaltung der Stromversorgung im Falle eines zweiten Fehlers 
+10 Steckdosen für elektrische Verbrauchsmittel außerhalb der Baueinheit 
+13 elektrische Verbrauchsmittel für die Verwendung ausschließlich innerhalb der Baueinheit 
+14 Überstrom-Schutzeinrichtung (falls gefordert) 
+15 Überstrom-Schutzeinrichtung (zB Leitungsschutzschalter) 
+16a Fehlerstrom-Schutzeinrichtung (RCD) 
+mit 
+einem 
+Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A 
+für 
+den 
+zusätzlichen Schutz (Zusatzschutz) für Stromkreise von elektrischen Betriebsmitteln zur Verwendung 
+außerhalb der Baueinheit (siehe 717.415.1) 
+16b Fehlerstrom-Schutzeinrichtung (RCD) für den Fehlerschutz beim Schutz durch automatische 
+Abschaltung der Stromversorgung für Stromkreise von elektrischen Betriebsmitteln zur Verwendung 
+innerhalb oder außerhalb der Baueinheit (siehe 717.411 a), 1)) 
+16c Fehlerstrom-Schutzeinrichtung mit eingebautem Überstromschutz zur Verwendung als Zusatzschutz 
+gemäß 415.1 
+18 Haupterdungsklemme oder -schiene 
+21 Transformator, zB für elektrische 230 V-Verbrauchsmittel 
+25 Isolationsüberwachungseinrichtung 
+(IMD) 
+oder 
+Einrichtung 
+zur 
+Isolationsfehlersuche (IFLS) 
+einschließlich des Neutralleiters, falls mitverteilt 
+N1 Antennenanlage, falls vorhanden; Einbindung gemäß ÖVE/ÖNORM EN 62305-3:2012 Anhang 
+E.5.2.4.2.6 und ÖVE/ÖNORM EN 60728-11 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 675/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 1 
+Teil 7-718  
+Öffentliche Einrichtungen und Arbeitsstätten 
+718.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in Räumen oder Gebäuden, die der Öffentlichkeit oder Arbeitnehmern 
+zugänglich sind. 
+Typische Beispiele sind: 
+– 
+Räume für eine größere Personenzahl wie zB Versammlungsstätten, Theater, Kinos, Sportstätten, 
+Schwimmhallen, sowie zugehörige Bühnen und Szenenflächen; 
+– 
+Ausstellungsstätten; 
+– 
+Verkaufsstätten; 
+– 
+Gaststätten; 
+– 
+Beherbergungsstätten sowie andere Gebäude mit vergleichbarer Nutzung; 
+– 
+Studentenheime, Altersheime, Altenwohnheime, Seniorenheime, Seniorenresidenzen sowie andere 
+Gebäude mit vergleichbarer Nutzung; 
+– 
+Schul- und Kindergartengebäude sowie andere Gebäude mit vergleichbarer Nutzung wie zB 
+Universitäten/Hochschulen, Fachhochschulen, Volkshochschulen, sonstige Bildungsstätten; 
+– 
+Garagen, überdachte Stellplätze und Parkdecks; 
+– 
+öffentlich zugängliche Bereiche in Gebäuden verkehrstechnischer Einrichtungen wie zB Flughäfen, 
+Bahnhöfe; 
+– 
+Gebäude mit einem Fluchtniveau über 22 m gemäß den bautechnischen Richtlinien in Österreich (OIB-
+Richtlinien); 
+– 
+Betriebsbauten gemäß den bautechnischen Richtlinien in Österreich (OIB-Richtlinien); 
+– 
+Arbeitsstätten gemäß ArbeitnehmerInnenschutzgesetz – ASchG. 
+ 
+ANMERKUNG AT  
+Siehe dazu ArbeitnehmerInnenschutzgesetz – ASchG § 19. 
+Zugänge sowie Fluchtwege gehören mit zu den oben genannten Beispielen. 
+Die Zuordnung in eine der beschriebenen Einrichtungen erfolgt in den meisten Fällen gemäß den 
+zutreffenden gesetzlichen Bestimmungen, zB Bauordnung, Veranstaltungsgesetz, Gewerbeordnung. 
+Ergänzende Anforderungen für besondere Ausführungen von Räumen oder Gebäuden, die der Öffentlichkeit 
+oder Arbeitnehmern zugänglich sind, siehe nationale Ergänzung 718.NE. 
+Ist im Einzelfall eine bauliche Anlage oder sind Teile davon hinsichtlich ihrer Ausführung oder Nutzung 
+mehreren Einrichtungen zuzuordnen, so sind dafür die jeweils höheren Sicherheitsanforderungen 
+maßgebend. Bei zutreffen können auch noch ergänzende Anforderungen aus anderen Normen der Teile 7 
+zur Anwendung kommen, zB Nutzung von Versammlungsstätten, die nur vorübergehend errichtet werden 
+(siehe Teile 7-711 und 7-740). 
+ANMERKUNG 
+Anforderungen für Einrichtungen für Sicherheitszwecke, wie zB die Sicherheitsbeleuchtung, siehe 
+Teil 5-56. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 676/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 2 
+718.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+718.42 
+Schutz gegen thermische Auswirkungen 
+718.422 
+Maßnahmen bei besonderen Brandrisiken 
+718.422.2 
+Bedingungen für die Evakuierung im Notfall 
+718.422.2.101 
+Für Räume oder Gebäude, die der Öffentlichkeit oder Arbeitnehmern zugänglich sind, 
+müssen die entsprechenden Bedingungen für die Evakuierung im Notfall (BD2, BD3 oder BD4 gemäß  
+Teil 5-51 Tabelle 51.ZA) festgelegt werden, und es müssen die entsprechenden Abschnitte von Teil 4-42 
+beachtet werden. 
+ANMERKUNG AT 
+Die nationale Notwendigkeit der Anwendung von 422.2 ist OVE-Richtlinie R 12-2 bzw. den 
+brandschutz-/bautechnischen Richtlinien bzw. der Behördenvorschreibungen zu entnehmen. 
+718.422.3 
+Räume oder Orte mit besonderem Brandrisiko 
+718.422.3.7.101 Motoren, die nicht dauernd beaufsichtigt sind, müssen durch eine temperaturabhängige 
+Überlast-Schutzeinrichtung geschützt werden, es sei denn, sie sind von sich aus temperaturbegrenzend 
+ausgelegt. Diese Anforderung gilt nicht für 
+– 
+Motoren in Arbeitsstätten mit einer Bemessungsleistung von weniger als 500 W, 
+– 
+Motoren, die auch bei Blockierung nicht überhitzen. 
+Füge hinzu: 
+718.422.Z1 
+Es müssen Einrichtungen vorhanden sein, um die elektrische Anlage für nicht-benötigte Betriebsmittel in 
+unbesetzten Bereichen der Gebäude ausschalten zu können. 
+ANMERKUNG 
+Dazu zählen zB die elektrischen Anlagen für 
+– 
+Pausenräume; 
+– 
+Kantinen; 
+– 
+Umkleideräume; 
+– 
+Verkaufsräume; 
+– 
+Ausstellungsräume. 
+718.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+718.51 
+Allgemeine Bestimmungen 
+718.512 
+Betriebsbedingungen und äußere Einflüsse 
+718.512.2.001.AT 
+ 
+In Bereichen, die der Öffentlichkeit zugänglich sind, sind Hausanschlusskästen 
+und Hauptverteiler in eigenen Räumen oder Nischen unterzubringen. 
+Diese Räume oder Nischen müssen 
+a) 
+von anderen Räumen durch Wände und Decken mit einer Feuerwiderstandsklasse mindestens REI30 
+bzw. EI30 gemäß ÖNORM EN 13501-2 abgetrennt sein. Türen zu diesen Räumen oder Nischen müssen 
+mit Feuerschutzabschlüssen abgeschlossen sein, die eine Feuerwiderstandsklasse von mindestens EI30 
+gemäß ÖNORM EN 13501-2 aufweisen. 
+b) 
+im Gefahrenfall leicht und sicher erreichbar sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 677/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 3 
+718.512.Z1  
+Freihängende fest montierte elektrische Betriebsmittel mit einer Masse über 5 kg müssen 
+mit einem zusätzlichen unabhängigen Befestigungsmittel gesichert sein. 
+Jede unabhängige Befestigung muss so konstruiert sein, dass diese für sich die Gesamtmasse mit 5-facher 
+Sicherheit tragen kann. 
+Diese Anforderungen gelten nicht für Leuchten und Beleuchtungsanlagen, die durch 718.559 berücksichtigt 
+sind. 
+ANMERKUNG 
+Sicherungsseile oder Sicherungsketten sind als zusätzliche Befestigungsmittel zulässig. 
+718.53 
+Schalt- und Steuergeräte 
+718.537 
+Geräte zum Trennen und Schalten 
+718.537.2 
+Einrichtungen zum Trennen 
+718.537.101  
+Die Entfernung zwischen den Ausschaltvorrichtungen für die elektrischen Anlagen und den 
+Stellen, an welche die zugehörigen Einspeisekabel in das Gebäude eingeführt werden, muss so kurz wie 
+möglich sein. 
+ANMERKUNG 
+Nationale Vorschriften können vorschreiben, dass für elektrische Anlagen eine Ausschaltvorrichtung 
+vorzusehen ist. Solche Vorschriften können auch den Anbringungsort der Ausschaltvorrichtung vorschreiben und dass 
+diese entweder an einer für Unbefugte unzugänglichen Stelle in der Nähe des Gebäudeeingangs oder an einer nur für 
+befugte Personen von außen direkt zugänglichen Stelle zu errichten ist. 
+718.537.102  
+Sind in Gebäuden bzw. in Teilen davon Betriebsmittel vorhanden, die auch dann unter 
+Spannung stehen müssen, wenn das Gebäude ungenutzt ist, so muss die elektrische Anlage entsprechend 
+dafür ausgelegt sein. 
+ANMERKUNG 
+Die Bereitstellung getrennter Stromkreise für solche Betriebsmittel sollte berücksichtigt werden. 
+718.55 
+Andere elektrische Betriebsmittel 
+718.559 
+Leuchten und Beleuchtungsanlagen 
+718.559.101 
+Verfügbarkeit von Beleuchtungsstromkreisen 
+718.559.101.1 
+Die Aufrechterhaltung ausreichender Beleuchtungsstärke muss im Rahmen einer 
+Risikobeurteilung der Räumlichkeiten erfolgen, wobei die Einteilung der äußeren Einflüsse gemäß Teil 5-51 
+Anhang 51.ZA berücksichtigt werden muss. 
+Folgende Möglichkeiten in Abhängigkeit der Räumungsmöglichkeit bei Gefahr bestehen: 
+– 
+Räume und Orte mit geringem Risiko: ein Endstromkreis für die Allgemeinbeleuchtung. 
+ 
+ANMERKUNG 1 
+Das gilt für die Räumungsmöglichkeit bei Gefahr BD1 gemäß Teil 5-51 Anhang 51.ZA. 
+– 
+Andere Räume und Orte: zwei oder mehr Endstromkreise für die Allgemeinbeleuchtung, wobei die 
+Leuchten so versorgt werden, dass ein Fehler eines Endstromkreises nicht zu einer unzureichenden 
+Beleuchtung eines dieser Räume oder Orte führt. 
+Werden Fehlerstrom-Schutzeinrichtungen (RCD) verwendet, darf eine Fehlerstrom-Schutzeinrichtung 
+(RCD) nicht mehr als einen Endstromkreis versorgen. 
+ANMERKUNG 2  
+Das gilt für die Räumungsmöglichkeit BD2 bis BD4 gemäß Teil 5-51 Anhang 51.ZA. 
+ANMERKUNG 3  
+Anforderungen und Hinweise an eine Sicherheitsbeleuchtung siehe Teil 5-56 bzw. 718.56. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 678/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 4 
+718.559.101.2 
+Kann die Allgemeinbeleuchtung eines öffentlich zugänglichen Bereichs gedimmt werden, 
+so muss von einer geeigneten Stelle aus die volle Beleuchtungsstärke wieder hergestellt werden können. 
+ANMERKUNG 
+In Bereichen, wo zB Veranstaltungen durchgeführt werden, kann es erforderlich sein, die Schaltstellen 
+für die Beleuchtung gegen unbefugtes Bedienen zu schützen. 
+718.56 
+Einrichtungen für Sicherheitszwecke 
+718.560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+718.560.9.001.AT 
+ 
+Für Räume, Anlagen oder Gebäude, an die erhöhte Anforderungen nach der Art 
+der Nutzung (siehe OVE-Richtlinie R 12-2 bzw. OIB-Richtlinie 2) gestellt werden, ist in folgenden Bereichen 
+zusätzlich eine Sicherheitsbeleuchtung erforderlich: 
+1) 
+bei Fahrtreppen, in Sanitärbereichen ab 8 m2 Größe und in barrierefreien WC-Anlagen; 
+ 
+ANMERKUNG 1.AT 
+Die Anforderungen betreffend Sicherheitsbeleuchtung bei Aufzügen (Fahrkorb, Schacht-
+beleuchtung, brandgeschützte Vorräume) siehe ÖNORM EN 81-20, ÖNORM EN 81-72 bzw. TRVB 150 S. 
+2) 
+in Räumen für Sicherheits- und Ersatzstromaggregate, für Hauptverteiler der Sicherheits- und Ersatz-
+stromversorgung und der allgemeinen Stromversorgung und für Schaltanlagen mit Nennspannungen 
+über 1 kV und in Räumen zur Bedienung zentraler brandschutztechnischer Einrichtungen (zB 
+Sprinklerzentrale, Brandmeldezentrale); 
+3) 
+in verkehrstechnischen Einrichtungen wie zB Flughäfen und Bahnhöfen ist zusätzlich zu den 
+Einrichtungen gemäß 1) und 2): 
+ 
+– 
+in Wartezonen, Abfertigungshallen, Geschäftsflächen über 60 m2, 
+ 
+– 
+in Arbeitsräumen und Räumen über 60 m2 Fläche, die zur Aufrechterhaltung des Betriebes 
+notwendig sind, 
+ 
+eine Sicherheitsbeleuchtung (Antipanikbeleuchtung) zu errichten (siehe auch ÖVE/ÖNORM EN 50172). 
+ANMERKUNG 2.AT 
+Wenn eine Risikobewertung für eine bauliche Anlage zusätzlich zu den von einer 
+Sicherheitsbeleuchtungsanlage beherrschten Fehlerereignissen (Störung oder Ausfall der allgemeinen Stromversorgung) 
+weitere Gefahrenmomente aufzeigt, kann ein elektrisch betriebenes (adaptives) dynamisches Sicherheitsleitsystem 
+erforderlich sein. Optische Sicherheitsleitsysteme sind kein Ersatz für eine gegebenenfalls erforderliche Sicherheits-
+beleuchtung. 
+718.560.9.002.AT 
+ 
+Für Arbeitsstätten gemäß ArbeitnehmerInnenschutzgesetz gelten für die 
+Sicherheitsbeleuchtung grundsätzlich die Anforderungen gemäß Arbeitsstättenverordnung. 
+ANMERKUNG AT 
+Eine Zusammenfassung von technischen Anforderungen für die Planung, Errichtung, Prüfung 
+und Wartung einer Sicherheitsbeleuchtung und von nachleuchtenden Orientierungshilfen gemäß den Anforderungen des 
+Arbeitnehmerschutzes ist im Speziellen den Bestimmungen der Arbeitsstättenverordnung bzw. ÖNORM EN 1838 zu 
+entnehmen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 679/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 5 
+Nationale Ergänzung 718.NE 
+(normativ) 
+ 
+Ergänzende Anforderungen für besondere öffentliche Einrichtungen 
+718.NE.1 Versammlungsstätten 
+718.NE.1.1 Anwendungsbereich 
+Füge hinzu: 
+Diese Anforderungen gelten ergänzend für  
+– 
+Versammlungsstätten innerhalb von Gebäuden, Versammlungsräume und sonstige Räume, wenn diese 
+Räume einzeln oder zusammen mehr als 400 Personen (gemäß den bautechnischen Richtlinien) fassen, 
+– 
+Versammlungsstätten und zugehörige Bühnen und Szenenflächen sowie Sportstätten außerhalb von 
+Gebäuden, wenn sie mehr als 5 000 Personen (gemäß den bautechnischen Richtlinien) fassen. 
+ANMERKUNG AT 
+Bühnen und Szenenflächen im Sinne dieser Ergänzung sind Spielflächen für schauspielerische 
+oder für ähnliche künstlerische Darbietungen. 
+718.NE.1.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+Füge hinzu: 
+718.NE.1.415.1 Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Leuchten im Handbereich in Umkleideräumen für Darsteller, in Friseur- und Maskenbildnerräumen, in 
+Dekorationsarbeitsräumen und in Lagerräumen sind durch eine Fehlerstrom-Schutzeinrichtung (RCD) mit 
+einem Bemessungsfehlerstrom IΔn ≤ 0,03 A zu schützen. 
+718.NE.1.415.2 Zusatzschutz: Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+Leitfähige Teile von Bühneneinrichtungen, zB Beleuchtungsbrücken, Beleuchtungstürme, Leuchten, Züge, 
+Aufhängeseile, Spannseile, Bühnenversenkeinrichtungen, großflächige Aufbauten, Traversensysteme und 
+Rohrleitungen sind durch zusätzlichen Schutzpotentialausgleich in die Maßnahmen zum Schutz bei 
+indirektem Berühren mit einzubeziehen. Hierzu sind die leitfähigen Teile über den Schutzpotential-
+ausgleichsleiter untereinander und mit dem Schutzleiter zu verbinden. 
+Als Mindestquerschnitt für den Schutzpotentialausgleichsleiter ist bei geschützter Verlegung 10 mm2 Kupfer, 
+bei ungeschützter Verlegung 16 mm2 Kupfer oder verzinkter Bandstahl von 50 mm2 und mindestens 2,5 mm 
+Dicke zu verwenden. 
+Die Verbindung mit dem Schutzleiter muss an geeigneter Stelle, zB an der Schutzleiterschiene, in 
+mindestens einem Verteiler vorgenommen werden. 
+718.NE.1.52 
+Kabel- und Leitungsanlage 
+Füge hinzu: 
+Für nicht fest verlegte Leitungen müssen Gummischlauchleitungen H07RN gemäß ÖVE/ÖNORM  
+EN 50525-2-21 oder gleichwertige Bauarten verwendet werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 680/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 6 
+Als Zuleitungen für beweglich aufgehängte Bühnenleuchten müssen Gummischlauchleitungen H07RN 
+gemäß ÖVE/ÖNORM EN 50525-1 oder Leitungen gleichwertiger Bauart verwendet werden. 
+718.NE.1.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+718.NE.1.55.1.AT 
+Steckdosen 
+Für einphasige Verbraucher bis 16 A Nennstrom, die über Steckdosen angeschlossen werden, dürfen 
+Schutzkontaktsteckdosen gemäß ÖVE/ÖNORM E 8684-1 verwendet werden. 
+Für sonstige Verbraucherstromkreise sind Steckdosen gemäß ÖVE/ÖNORM EN 60309 Reihe zu verwenden. 
+Andere Steckvorrichtungen mit vergleichbaren Sicherheitsanforderungen können angewendet werden. 
+718.NE.1.559 
+Leuchten und Beleuchtungsanlagen 
+Füge hinzu: 
+Leuchten für Bühnenbeleuchtung müssen ÖVE/ÖNORM EN 60598-2-17 entsprechen. 
+In Umkleideräumen für Darsteller, in Friseur- und Maskenbildnerräumen, in Dekorationsarbeitsräumen und 
+Lagerräumen dürfen nur fest montierte und fest angeschlossene Leuchten verwendet werden. 
+ANMERKUNG AT 
+Zusätzlicher Schutz (Zusatzschutz) für Leuchten im Handbereich siehe 718.NE.1.415.1. 
+Das Ablegen brennbarer Stoffe auf Leuchten muss durch Anbringung oder Formgebung erschwert sein. 
+718.NE.1.56 
+Einrichtungen für Sicherheitszwecke 
+718.NE.1.560.6 Sicherheitsstromquellen und zugehörige Einrichtungen 
+Füge hinzu: 
+In Versammlungsstätten mit nicht überdachten Spielflächen sind unter der folgenden Bedingung andere 
+Stromquellen als Stromquellen für Sicherheitszwecke zulässig: 
+Das Stromerzeugungsaggregat und der Kraftstoffbehälter sind so aufzustellen, dass sie dem Zugriff 
+Unbefugter entzogen sind. Der Aufstellungsort und die Umwehrung sind so zu wählen, dass auch im Panik- 
+oder Brandfall die Sicherheitsbeleuchtung versorgt werden kann und der Betrieb des Aggregates nicht 
+beeinträchtigt wird. Die Abgase der Antriebsmaschine sind so zu leiten, dass Personen weder gefährdet noch 
+belästigt werden. 
+718.NE.1.560.9 Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+Füge hinzu: 
+In Versammlungsstätten, in Bühnenbetriebsräumen über 20 m2, zB Probebühnen, Chor- und Ballettübungs-
+räumen, Orchesterübungsräumen, Stimmzimmern, Aufenthaltsräumen für Mitwirkende, in Bildwerferräumen, 
+in Manegen, in Sportrennbahnen sowie in Stehplatzbereichen von Versammlungsstätten mit nicht 
+überdachten Spielflächen ist eine Antipanikbeleuchtung gemäß ÖNORM EN 1838 zu errichten. 
+In Theatern und Versammlungsstätten für Filmvorführungen sowie für Bild- und Tonwiedergabe oder 
+gleichwertigen Einrichtungen für höchstens 400 Personen (gemäß den bautechnischen Richtlinien) ist es 
+zulässig in Versammlungsstätten, deren Fußböden nicht mehr als 1 m über oder unter den als Fluchtwege 
+dienenden Verkehrsflächen liegen, die Sicherheitsbeleuchtung nur so zu bemessen, dass bei Verdunklung 
+und auch bei Ausfall des Netzes der allgemeinen Beleuchtung mindestens Türen, Gänge und Stufen 
+erkennbar sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

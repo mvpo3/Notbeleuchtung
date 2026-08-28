@@ -1,0 +1,1261 @@
+
+
+===== PAGE 41/64 =====
+ÖVE/ÖNORM E 8007:2007 
+41 
+9.3.1.1.2 Die Sicherheitsbeleuchtung von Rettungswegen für Treppen ist gemäß ÖVE/ÖNORM E 8002-1 in 
+Dauerschaltung oder Bereitschaftsschaltung mit einer Mindestbetriebsdauer von 8 Stunden oder 3 Stunden 
+mit einer sichergestellten externen Einspeisung binnen 3 Stunden auszuführen. Im Falle der Bereitschafts-
+schaltung ist sicherzustellen, dass durch das Tageslicht bzw. die allgemeine Beleuchtung dauernd eine 
+ausreichende Sichtbarkeit der Treppen gegeben ist bzw. die Beleuchtung über Bewegungsmelder 
+sichergestellt ist. 
+9.3.1.1.3 Die Sicherheitsbeleuchtung von Rettungswegen, ausgenommen Treppen, ist gemäß ÖVE/ÖNORM 
+E 8002-1 in Dauerschaltung gemäß 9.3.1.1.2 oder in Bereitschaftsschaltung nach ÖVE/ÖNORM E 8002-5 
+und einer maximalen Umschaltzeit von 15 s errichtet werden. 
+9.3.1.1.4 Rettungszeichenleuchten müssen ÖVE/ÖNORM EN 60598-2-22 entsprechen.  
+Sie 
+sind 
+in 
+Dauerschaltung 
+mit 
+einer 
+Mindestbetriebsdauer 
+von 
+8 Stunden 
+auszulegen. 
+Eine 
+Mindestbetriebsdauer von 3 Stunden ist ausreichend, wenn eine Weiterversorgung durch eine externe 
+Einspeisung sichergestellt ist, oder wenn das Sicherheitszeichen durch die übrige Sicherheitsbeleuchtung 
+entsprechend ÖNORM EN 1838 angestrahlt wird. 
+Es ist auch Bereitschaftsschaltung zulässig, wenn durch die Allgemeinbeleuchtung bzw. das Tageslicht eine 
+ausreichende Sichtbarkeit der Rettungszeichen gegeben ist. 
+9.3.1.1.5 In für Heimbewohner zugänglichen Sanitärräumen sind Maßnahmen zu treffen, die bei 
+Stromausfall ein gefahrloses Verlassen gewährleisten (zB Sicherheitsleuchte, beleuchteter Notruftaster, 
+Leuchtfolie, u. dgl.). 
+9.3.1.1.6 Arbeitsplätze mit besonderer Gefährdung sind gemäß ÖVE/ÖNORM E 8002-1 auszuführen. 
+9.3.1.2 
+Zusätzliche Sicherheitsstromversorgung gemäß 6.4 
+Für Operationsleuchten und vergleichbare Leuchten sowie für lebenswichtige elektromedizinische Geräte ist 
+eine zusätzliche Sicherheitsstromversorgung gemäß 6.4 vorzusehen, unabhängig vom Vorhandensein einer 
+Sicherheitsstromversorgung für medizinisch technische Einrichtungen (siehe 6.2.3). 
+10 Pläne, Unterlagen und Betriebsanleitungen 
+10.1 Unterlagen 
+Für den sicheren Betrieb sind Schaltungsunterlagen sowie Bedienungs- und Wartungsanweisungen 
+erforderlich. 
+Insbesondere sind dies: 
+– 
+Übersichtsschaltpläne 
+des 
+Verteilungsnetzes 
+der 
+allgemeinen 
+Stromversorgung 
+und 
+der 
+Sicherheitsstromversorgung in einpoliger Darstellung. Diese Pläne müssen Angaben über die Lage der 
+Unterverteiler im Gebäude enthalten, 
+– 
+Übersichtsschaltpläne der Schaltanlagen und Verteiler (vorzugsweise einpolige Darstellung), 
+– 
+Auslasspläne mit Situierung der (Rangier)-Verteiler, 
+– 
+Stromlaufpläne von Steuerungen, 
+– 
+Bedienungs- und Wartungsanweisungen für die Sicherheitsstromquellen, 
+– 
+rechnerischer Nachweis der Erfüllung der Anforderungen gemäß 5.2 und 6.9.5, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+41 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 42/64 =====
+ÖVE/ÖNORM E 8007:2007 
+42 
+– 
+Liste der an die Sicherheitsstromversorgung fest angeschlossenen Verbraucher mit Angabe der 
+Nennströme und bei motorischen Verbrauchern der Anlaufströme, 
+– 
+Prüfbuch bzw. Prüfberichte mit den Ergebnissen über alle vor der Inbetriebnahme erforderlichen 
+Prüfungen. 
+10.2 Verteiler 
+Bei jedem Verteiler muss der zugehörende Übersichtsschaltplan vorhanden sein. 
+10.3 Übersichtsschaltpläne 
+Aus den Übersichtsschaltplänen muss erkennbar sein: 
+– 
+Stromart und Nennspannung, 
+– 
+Anzahl und Leistung der Transformatoren und der Sicherheitsstromquellen, 
+– 
+Bezeichnung der Stromkreise, Nennstrom der Überstrom-Schutzeinrichtungen der angeschlossenen 
+Stromkreise, 
+– 
+Leiterquerschnitte und -werkstoffe. 
+10.4 Anlagenbuch 
+Es muss ein Anlagenbuch gemäß ÖVE/ÖNORM E 8001-6-63 erstellt werden. Dieses muss jedenfalls die 
+Unterlagen von 10.1 enthalten. 
+11 Prüfungen 
+11.1 Erstprüfungen 
+Die Prüfungen gemäß 1) bis 15), die Aufschluss über die elektrische Sicherheit der Anlage entsprechend den 
+Anforderungen dieser Bestimmungen sowie über die Funktion und das Verhalten von Sicherheits-
+einrichtungen geben, sind vor Inbetriebnahme sowie nach Änderungen oder lnstandsetzungen vor der 
+Wiederinbetriebnahme durchzuführen und zu dokumentieren. 
+1) 
+Prüfung gemäß ÖVE/ÖNORM E 8001-6-61, 
+2) 
+Funktionsprüfung der Umschalteinrichtungen, 
+3) 
+Funktionsprüfung 
+der 
+Isolationsüberwachungseinrichtungen 
+der 
+IT-Systeme 
+und 
+der 
+Melde-
+kombinationen. 
+4) 
+Prüfung der richtigen Auswahl der Betriebsmittel zur Einhaltung der Kurzschlussselektivität der 
+Sicherheitsstromversorgungen 
+(SV, ZSV) 
+entsprechend 
+den 
+Planungsunterlagen 
+und 
+den 
+Berechnungen, 
+5) 
+Messungen zum Nachweis, dass die in 5.4.3 und, soweit zutreffend, in 9.1.3, 9.2.1, 4) und 9.2.2, 6) 
+angeführten fremden leitfähigen Teile in den Potenzialausgleich einbezogen sind, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+42 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 43/64 =====
+ÖVE/ÖNORM E 8007:2007 
+43 
+6) 
+Messungen zum Nachweis, dass die in 5.4.4, 2) angeführte Spannung im fehlerfreien Betrieb nicht 
+überschritten wird, 
+ 
+Diese Prüfung muss zu einem Zeitpunkt vorgenommen werden, zu dem die elektrische Anlage des 
+Gebäudes belastet ist. Die Messung erfolgt mit einem Spannungsmesser für Effektivwerte, dessen 
+Innenwiderstand, zB durch äußere Beschaltung, auf 1 kΩ eingestellt ist (siehe ÖVE/ÖNORM  
+EN 60601-1:2007, Bild 12). 
+Der 
+Frequenzbereich 
+des 
+Spannungsmessers 
+sollte 
+1 kHz 
+nicht 
+überschreiten, 
+7) 
+Prüfung der Belüftung des Aufstellraumes von Sicherheitsstromquellen gemäß ÖVE/ÖNORM 
+EN 50272-2, 
+8) 
+Prüfung der Batterien hinsichtlich ausreichender Kapazität, 
+9) 
+Prüfung der Funktion der Sicherheitsstromversorgung (SV, ZSV) durch Unterbrechung der Netzzuleitung 
+am Verteiler der zu versorgenden Verbraucher, 
+10) Prüfung der Aufstellungsräume für Stromerzeugungsaggregate der Sicherheitsstromversorgung (SV, 
+ZSV) hinsichtlich Brandschutz, möglicher Überflutung, Belüftung, Abgasführung, Ausstattung und 
+Einrichtungen, 
+11) Prüfung der Bemessung des Stromerzeugungsaggregates unter Berücksichtigung des Verzeichnisses 
+über die statische Belastung und eventuell auftretender Anlaufströme (zB bei Lüfter-, Pumpen- oder 
+Aufzugsmotoren), 
+12) Prüfung der Aggregateschutzeinrichtungen, dazu gehört insbesondere die Abstimmung der Selektivität 
+von Schutzeinrichtungen, 
+13) Funktionsprüfungen der Sicherheitsstromversorgung (SV, ZSV) mit Verbrennungsmotoren, bestehend 
+aus Prüfung des Start- und Anlaufverhaltens, der Funktion der Hilfseinrichtungen, der Schalt- und 
+Regelungseinrichtungen, 
+Durchführung 
+eines 
+Lastlaufs 
+mit 
+Nennlast 
+sowie 
+Prüfung 
+des 
+Betriebsverhaltens im Aggregatbetrieb. Dabei sind die dynamischen Spannungs- und Drehzahl-
+abweichungen besonders zu beachten. 
+ 
+Weiters sind zu erwartende Revisionsfälle (zB ausgefahrener Kuppelschalter) in die Prüfungen mit ein zu 
+beziehen. 
+14) Prüfung der Einhaltung des Brandschutzes gemäß Abschnitt 7 und Anhang A.1, 
+15) Die Sicherheitsbeleuchtung ist nach den Vorgaben der ÖVE/ÖNORM E 8002-1 zu prüfen. 
+11.2 Wiederkehrende Prüfungen 
+11.2.1 Allgemeines 
+Elektrische Anlagen für medizinisch genutzte Bereiche sind mindestens alle drei Jahre auf Basis des 
+Anlagenbuches bzw. Ersatzanlagenbuches zu prüfen. 
+Nicht medizinisch genutzte Funktionsbereiche im Geltungsbereich der Elektroschutzverordnung 2003 sind 
+entsprechend der darin angeführten Intervalle wiederkehrend zu prüfen. 
+Die Prüffristen und der Umfang der Prüfungen von Installation und Betriebsmitteln müssen mindestens den 
+Anforderungen gemäß Tabelle 3 und Tabelle 4 entsprechen. 
+Von Behörden anders lautend festgelegte Prüffristen bleiben dadurch unberührt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+43 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 44/64 =====
+ÖVE/ÖNORM E 8007:2007 
+44 
+11.2.2 Die angeführten Messungen sind Mindestanforderungen und haben keinen Anspruch auf 
+Vollständigkeit. Sie sind zusätzlich zu den notwendigen Besichtigungen und Erprobungen im Rahmen der 
+wiederkehrenden Prüfung der elektrischen Anlage durchzuführen. 
+Für Prüfungen sind grundsätzlich jene Bestimmungen maßgebend, welche zum Zeitpunkt der Errichtung der 
+Anlage gegolten haben. Angeschlossene Betriebsmittel und Anlage müssen zueinander kompatibel sein  
+(zB erfordern Geräte der Schutzklasse I Anlagen mit Schutzleiter). Auf die Nullungsverordnung 1998 wird 
+hingewiesen. Bei Anlagen, die der Nachrüstpflicht gemäß ÖVE-EN 7a:1990 unterliegen, ist diese zu 
+beachten. 
+Tabelle 3 – Überprüfung der Installation 
+Prüfungen im Intervall von 3 Jahren 
+Prüfumfang 
+(Mindestanforderungen) und Bemerkungen 
+AG 2-, AG 1-, AG 0-Räume und von den selben 
+Verteilern versorgte Nebenräume: 
+– 
+Schutzmaßnahmen (Steckdosen) 
+ 
+ 
+ 
+– 
+RPA/RPE Messung 
+ 
+ 
+Überprüfung der Schutzmaßnahmen (indirektes Berühren) bei 
+allen Steckdosen 
+a 
+Bei Steckdosen von IT-Systemen ist das Ansprechen der 
+Isolationsüberwachung (SV, ZSV) bei allen Steckdosen zu 
+überprüfen 
+Alle leitfähigen Teile welche gemäß 5.4 in den zusätzlichen 
+Potenzialausgleich einzubeziehen sind 
+Messungen in Verteilern: 
+– 
+Schutzmaßnahme des Verteilers 
+– 
+Schutzmaßnahme der Verbraucheranlage 
+ 
+Bei begründetem Verdacht (zB wiederholtes Auslösen von 
+Schutzeinrichtungen): Ableitstrom oder Isolationswiderstand 
+ 
+zB Fehlerschleifenimpedanz 
+zB Fehlerstrom-Schutzschalter mittels Schutzmaßnahmen-
+Messgerät, sofern die Auslösung nicht bereits durch eine Messung 
+in der Verbraucheranlage erfolgte 
+a Bei Anlagen, welche gemäß ÖVE/ÖNORM E 8001-1 errichtet wurden, sind Fehlerschutz und Zusatzschutz zu prüfen. 
+ 
+Der Ableitwiderstand des Fußbodens ist in den unter 7.3 angeführten Räumen im Intervall von 3 Jahren, bzw. 
+nach Änderung des Reinigungsverfahrens zu messen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+44 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 45/64 =====
+ÖVE/ÖNORM E 8007:2007 
+45 
+Tabelle 4 – Überprüfung von Betriebsmitteln 
+Betriebsmittel 
+Im Handbereich 
+Außerhalb des Handbereiches 
+Medizinische elektrische Geräte 
+Überprüfungen und Intervalle gemäß Medizinproduktegesetz 1996 und gemäß 
+ÖVE/ÖNORM E 8751-1 
+Nicht medizinische elektrische Geräte 
+(Betriebsmittel) in medizinisch genutzten 
+Räumen, nicht fest angeschlossen 
+Überprüfungen im Intervall von maximal 3 Jahren gemäß Bestimmungen für 
+wiederkehrende Überprüfungen von Geräten bzw. gemäß Herstellerangaben 
+Überprüfungsintervalle gemäß 
+Elektroschutzverordnung 2003, gemäß 
+Bestimmungen für wiederkehrende 
+Überprüfungen von Geräten bzw. gemäß 
+Herstellerangaben 
+Messung der Durchgängigkeit des 
+Schutzerdungsleiters bei Geräten der 
+Schutzklasse I im Intervall von 5 Jahren 
+Überprüfungen im Intervall von max. 
+3 Jahren gemäß Bestimmungen für 
+wiederkehrende Überprüfungen von 
+Geräten bzw. gemäß Herstellerangaben 
+Messung der Durchgängigkeit der 
+Schutzerdungsleiter bei Leuchten im 
+Intervall von 10 Jahren 
+Nicht medizinische elektrische Geräte 
+(Betriebsmittel) in medizinisch genutzten 
+Räumen, fest angeschlossen 
+Bei Leuchten wird sich der Prüfumfang auf die Sichtprüfung und die Messung der 
+Durchgängigkeit des Schutzerdungsleiters und dem Nachweis der Funktion des 
+Fehlerstrom-Schutzschalters beschränken 
+Elektrische Geräte (Betriebsmittel) 
+außerhalb medizinisch genutzter Räume 
+Überprüfungsintervalle wie in der Elektroschutzverordnung 2003, gemäß Bestimmungen 
+für wiederkehrende Überprüfungen von Geräten bzw. gemäß Herstellerangaben 
+ 
+11.2.3 Die Prüfungen gemäß 1) bis 10) sind zusätzlich zu den Prüfungen gemäß 11.2.1 und 11.2.2 
+durchzuführen: 
+1) 
+Prüfung der Fehlerstrom-Schutzeinrichtungen und der lsolationsüberwachungseinrichtungen durch 
+Betätigen der Prüfeinrichtung mindestens alle sechs Monate durch eine Fachkraft oder eine 
+unterwiesene Person gemäß ÖVE/ÖNORM EN 50110-1, 
+2) 
+Messung des Isolationswiderstandes von Stromkreisen der Operations-Leuchten, die mit Funktions-
+kleinspannung mit sicherer elektrischer Trennung ohne Isolationsüberwachungseinrichtung betrieben 
+werden, mindestens alle 12 Monate durch eine Fachkraft, 
+3) 
+Funktionsprüfung der Sicherheitsstromversorgung (SV, ZSV) monatlich zum Nachweis, 
+– 
+des Start- und Anlaufverhaltens, 
+– 
+der erforderlichen Lastübernahme, 
+– 
+der Schalt-, Regel- und Hilfseinrichtungen. 
+4) 
+Funktionsprüfung des Lastverhaltens der Sicherheitsstromversorgungen (SV, ZSV) monatlich mit 
+mindestens 50 % der Nennlast für eine Betriebsdauer von 
+– 
+15 Minuten bei Sicherheitsstromquellen mit Batterien, 
+– 
+60 Minuten bei Sicherheitsstromquellen mit Verbrennungsmotor; diese Funktionsprüfung darf 
+entfallen bei Sicherheitsstromversorgung im Dauerbetrieb, 
+5) 
+zur Überprüfung der Umschalteinrichtungen der Sicherheitsstromquellen muss mindestens alle 
+12 Monate ein Test durch Trennung vom Versorgungsnetz durchgeführt werden, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+45 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 46/64 =====
+ÖVE/ÖNORM E 8007:2007 
+46 
+6) 
+Prüfung der Funktion der Netzumschaltung und der Umschalteinrichtung in den Verteilern für Räume der 
+Anwendungsgruppe 2 halbjährlich, 
+7) 
+Messung der Spannungen gemäß 5.4.4, 2), sofern zutreffend, jährlich, 
+8) 
+Prüfung von Batterien hinsichtlich ausreichender Kapazität einmal jährlich außerhalb der zu erwartenden 
+Einsatzzeiten, 
+9) 
+Prüfung, ob die Leistungen der Sicherheitsstromquellen noch dem erforderlichen Leistungsbedarf der 
+versorgten Verbrauchsmittel entsprechen, jährlich, 
+10) Prüfung der Funktion der Sicherheitsbeleuchtung gemäß ÖVE/ÖNORM E 8002-1. 
+11.2.4 Über die regelmäßigen Prüfungen sind Prüfbücher zu führen. Diese Prüfbücher sind mindestens drei 
+Jahre nach der darauf folgenden Prüfung aufzubewahren. 
+11.3 Erhalten des ordnungsgemäßen Zustandes 
+Für das Erhalten des ordnungsgemäßen Zustandes gelten die Anforderungen gemäß ÖVE/ÖNORM 
+EN 50110-1. 
+Ausfälle im Bereich der notwendigen Sicherheitseinrichtungen sind unverzüglich zu beheben. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+46 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 47/64 =====
+ÖVE/ÖNORM E 8007:2007 
+47 
+Anhang A 
+(informativ) 
+Brandschutz und Explosionsschutz 
+Die baulichen brandschutztechnischen Belange sind durch österreichische landesrechtliche Vorschriften (zB 
+Bautechnikverordnung), bundesrechtliche Bestimmungen (zB AAV, AMGSV ua) geregelt. Im Übrigen wird auf 
+Technische Richtlinien für vorbeugenden Brandschutz hingewiesen. 
+A.1 Brand- und Explosionsschutz in medizinisch genutzten Räumen 
+A.1.1 Allgemeine Hinweise 
+Im 
+medizinischen 
+Bereich 
+gelangen 
+als 
+Hautreinigungs- 
+und 
+Hautentfettungsmittel 
+sowie 
+als 
+Desinfektionsmittel brennbare Flüssigkeiten zum Einsatz. Werden diese Stoffe offen verwendet, so besteht 
+aufgrund der Vermischung ihrer Dämpfe mit Luft erhöhte Brand- und Explosionsgefahr. 
+Auch bei der Verabreichung von Anästhesiemitteln, die mit Luft explosionsfähige Atmosphären oder mit 
+Sauerstoff bzw. Lachgas explosionsfähige Gemische bilden können, kann Explosionsgefahr entstehen. 
+In den letzten Jahren konnte jedoch eine erhebliche Gefahrenreduzierung dadurch erreicht werden, dass 
+– 
+in ihrer Anwendungskonzentration zündfähige Anästhesiemittel kaum noch Verwendung finden, 
+– 
+Anästhesiemittel aus den Anwendungsräumen abgeleitet werden, 
+– 
+mittels technischer Lüftungsmaßnahmen für eine jederzeit gute Raumdurchlüftung gesorgt wird, 
+– 
+brennbare, leicht verdampfende Hautreinigungs- und Hautdesinfektionsmittel nur noch in geringen 
+Mengen zum Einsatz gelangen. 
+Zwar hat die Verwendung zündfähiger Anästhesie- sowie Hautreinigungs- und Desinfektionsmittel 
+beträchtlich abgenommen, deren Anwendung kann jedoch nicht generell ausgeschlossen werden. Somit 
+kann auf Explosionsschutzmaßnahmen in medizinisch genutzten Räumen entsprechend den Anforderungen 
+in gesetzlichen und arbeitsschutz-rechtlichen Regelwerken weiterhin nicht verzichtet werden. Die Verordnung 
+explosionsfähige Atmosphären gibt Schutzziele und Schutzmaßnahmen vor. 
+Zum Unterschied zur VEXAT sind in den neuesten Regelwerken der EU (zB nach neuem Recht ElexV 1996 
+in Deutschland) keine Zonen M und G angeführt.  
+In Räumen mit einer dem Stand der Technik (ÖNORM H 6020 mit einem Außenluftvolumenstrom je m2 
+Bodenfläche von mindestens 20 m3 · h-1 bzw. 1 200 m3 · h-1 Außenluftvolumenstrom bei TAV-Schirmen in 
+Operationsräumen) ausgeführten raumlufttechnischen Anlage ist in der Regel keine explosionsgefährdete 
+Atmosphäre in gefahrbringender Menge zu erwarten. In diesem Fall ist somit keine Zone M gegeben. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+47 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 48/64 =====
+ÖVE/ÖNORM E 8007:2007 
+48 
+A.1.2 Adaptierter Auszug aus den Richtlinien für die Vermeidung von Zündgefahren infolge 
+elektrostatischer Aufladungen – Richtlinien „Statische Elektrizität“ – BGR 132 
+A.1.2.1 Begriffsbestimmungen 
+Stoffe sind Gase, Flüssigkeiten oder Feststoffe, mit denen im Betrieb umgegangen wird. Zu den Stoffen 
+gehören zB Abluft, Treibstoffe und Lösemittel, Stäube. 
+Durchgangswiderstand ist der elektrische Widerstand eines Stoffes oder Materials ohne den Oberflächen-
+widerstand. Der Durchgangswiderstand und der spezifische Widerstand werden in Ω bzw. Ω · m gemessen. 
+Spezifischer Widerstand ist der elektrische Widerstand eines Stoffes oder Materials gemessen an einer Probe 
+der Einheitslänge und der Einheitsquerschnittsfläche. Der spezifische Widerstand wird oft auch spezifischer 
+Durchgangswiderstand genannt und in Ω · m gemessen. 
+Oberflächenwiderstand ist der elektrische Widerstand gemessen auf der Oberfläche eines Gegenstandes. Er 
+wird zwischen zwei parallelen Elektroden geringer Breite und jeweils 100 mm Länge, die 10 mm auseinander 
+liegen und mit der zu messenden Oberfläche Kontakt haben, gemessen. Der Oberflächenwiderstand wird in 
+Ω angegeben. 
+Spezifischer Oberflächenwiderstand ist der elektrische Widerstand gemessen auf der Oberfläche eines 
+Gegenstandes. Die Messung erfolgt zwischen zwei parallelen Elektroden geringer Breite und der Länge L. 
+Der Abstand A der Elektroden ist gleich ihrer Länge L (A = L). Der Messwert wird in Ω ausgedrückt. 
+Ableitwiderstand eines Gegenstandes ist sein elektrischer Widerstand gegen Erdpotenzial, oft auch Erde 
+genannt. Der Ableitwiderstand wird in Ω gemessen. Der Ableitwiderstand hängt unter anderem vom 
+spezifischen Widerstand, vom – gegebenenfalls spezifischen – Oberflächenwiderstand der Materialien sowie 
+vom Abstand zwischen den gewählten Messpunkten und Erde ab. Dieser Widerstand wird häufig auch 
+Erdableitwiderstand RE genannt. 
+Leitfähigkeit ist der Kehrwert des spezifischen Widerstandes. Die Leitfähigkeit wird in S/m gemessen. 
+Leitfähig ist ein Stoff oder Material mit einem spezifischen Widerstand höchstens 104 Ω · m. Leitfähig ist ein 
+Stoff oder Material auch, wenn sein Oberflächenwiderstand höchstens 104 Ω beträgt. Leitfähige Materialien 
+können nicht gefährlich aufgeladen werden, wenn sie geerdet sind. Für Flüssigkeiten, Schüttgüter oder 
+bestimmte Gegenstände werden in den entsprechenden Abschnitten spezielle Festlegungen getroffen. Der 
+Oberflächenwiderstand leitfähig gemachter Kunststoffe weist oft einen großen Streubereich auf. Der 
+Höchstwert darf 105 Ω und der Mittelwert 104 Ω nicht überschreiten. Als leitfähig werden auch Gegenstände 
+und Einrichtungen bezeichnet, wenn sie aus leitfähigem Material bestehen. 
+Leiter sind Gegenstände oder Einrichtungen aus leitfähigen Materialien. 
+Ableitfähig ist ein Stoff oder ein Material mit einem spezifischen Widerstand von über 104 Ω · m und unter 
+109 Ω · m oder ein Gegenstand oder eine Einrichtung mit einem Oberflächenwiderstand zwischen 104 Ω und 
+109 Ω gemessen bei 23 °C und 50 % relativer Luftfeuchte oder mit einem Oberflächenwiderstand zwischen 
+104 Ω und 1011 Ω gemessen bei 23 °C und 30 % relativer Luftfeuchte. Mit sinkender Luftfeuchte nimmt der 
+Oberflächenwiderstand in der Regel beträchtlich zu.  
+Ableitfähige Stoffe oder Gegenstände und Einrichtungen aus ableitfähigen Materialien speichern keine 
+gefährliche elektrostatische Ladung, wenn sie mit Erde in Kontakt stehen.  
+Antistatisch wird außerhalb dieser Regel auch zur Beschreibung einer Aufladungsvermindernden Eigenschaft 
+verwendet, zB bei Schuhwerk oder bei Zusatzstoffen für den Umgang mit Flüssigkeiten, und liegt in diesen 
+Fällen meist zwischen 108 Ω und 1011 Ω.  
+Als ableitfähig werden auch Gegenstände und Einrichtungen bezeichnet, wenn sie aus ableitfähigen 
+Materialien bestehen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+48 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 49/64 =====
+ÖVE/ÖNORM E 8007:2007 
+49 
+Isolierend ist ein Stoff oder Material, das weder leitfähig noch ableitfähig ist. 
+Als isolierend werden auch Gegenstände oder Einrichtungen aus isolierenden Materialien bezeichnet.  
+Isolierende Stoffe sowie Gegenstände und Einrichtungen aus isolierenden Materialien werden mit Rücksicht 
+auf ihre elektrostatischen Eigenschaften auch als „aufladbar“ bezeichnet. Zu diesen Materialien gehören viele 
+Kunststoffe, zB Polymere. 
+Geerdet im elektrostatischen Sinne sind leitfähige Gegenstände, Flüssigkeiten und Schüttgüter mit einem 
+Ableitwiderstand unter 106 Ω und Personen mit einem Ableitwiderstand unter 108 Ω.  
+Personen und kleine Gegenstände sind auch geerdet, wenn ihre Relaxationszeit unter 10-2 s ist. 
+Relaxationszeit ist die Zeitspanne, in der eine elektrostatische Ladung, zB auf einer festen Oberfläche, im 
+Innern einer Flüssigkeit, in einer Schüttung oder in einer Nebel- oder Staubwolke, auf 1/e (d. h. ungefähr 
+37 %) ihres ursprünglichen Wertes abnimmt.  
+Die Relaxationszeit τ bei Entladung eines Kondensators der Kapazität C über einen Entladewiderstand R 
+beträgt: τ = R × C. 
+Aufladbar sind isolierende Stoffe sowie Gegenstände und Einrichtungen aus isolierenden Materialien. 
+Aufladbar sind auch nicht mit Erde verbundene leitfähige oder ableitfähige Gegenstände und Einrichtungen. 
+Leitfähiges Schuhwerk ist Schuhwerk mit einem Ableitwiderstand gegen Erde unter 105 Ω. 
+Gefährliche explosionsfähige Atmosphäre ist ein Gemisch brennbarer Gase, Dämpfe, Nebel oder Stäube mit 
+Luft in gefahrdrohender Menge unter atmosphärischen Bedingungen. 
+Explosionsgefährdeter Bereich ist ein räumlicher Bereich, in dem auf Grund der örtlichen und betrieblichen 
+Verhältnisse gefährliche explosionsfähige Atmosphäre auftreten kann. Diese Bereiche werden in Zonen 
+unterteilt. 
+Gefährliche Aufladung ist eine elektrostatische Aufladung, die bei ihrer Entladung die zu erwartende 
+explosionsfähige Atmosphäre entzünden kann. 
+A.1.2.2 Erdung und Potenzialausgleich in medizinisch genutzten Räumen 
+Liegen in medizinisch genutzten Räumen explosionsgefährdete Bereiche vor oder fallen die Räume in die 
+Aufzählung gemäß 7.3, sind Maßnahmen gegen elektrostatische Aufladungen erforderlich. Hierbei ist zu 
+berücksichtigen, dass die Zündempfindlichkeit von Stoffen durch Sauerstoffanreicherung der Umgebungsluft 
+stark erhöht wird. 
+Explosionsgefährdete Bereiche können zB durch brennbare Reinigungs- oder Desinfektionsmittel gebildet 
+werden. 
+Zur Vermeidung von Aufladungen soll der Oberflächenwiderstand von Arbeitskleidung, Decken und Tüchern 
+unter den betriebsgemäß anzunehmenden Bedingungen ableitfähig sein. Kleidung, Tücher und Decken aus 
+Mischgeweben mit mindestens 30 % Anteil an Naturbelassener Baumwolle bzw. Viskose (ohne 
+Kunstharzausrüstung) sind im Allgemeinen ableitfähig. 
+Wolldecken, Plastiktücher und solche Gewebe und Gewirke, die nicht den vorgenannten Bedingungen 
+entsprechen, sind auszuschließen, da sie bei Reibungs- und Trennungsvorgängen zu hohen Aufladungen 
+führen können. 
+Auch für typische Gegenstände und Einrichtungen in medizinischen Räumen, zB Gummitücher, -matratzen,  
+-kopfkissen oder gepolsterte Sitze dürfen nicht gefährlich aufgeladen werden. 
+Ableitfähige Überzüge isolierender Gegenstände haben diese vollständig zu umschließen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+49 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 50/64 =====
+ÖVE/ÖNORM E 8007:2007 
+50 
+Abdeckungen des Operationstisches und fahrbarer Krankentragen sowie der Sitzflächen von Hockern 
+müssen aus ableitfähigem Gummi oder Kunststoff mit Oberflächenwiderständen zwischen 5 × 104 Ω und 
+106 Ω bestehen. 
+Der Ableitwiderstand des Fußbodens darf höchstens 108 Ω betragen. Bei Bodenbelägen, bei denen eine 
+Erhöhung des Ableitwiderstandes während des Gebrauches nicht ausgeschlossen ist, darf der 
+Ableitwiderstand im Neuzustand höchstens 107 Ω und nach vier Jahren höchstens 108 Ω betragen. 
+Die Erdverbindung darf an keiner Stelle unterbrochen sein, zB durch isolierende Lackierung.  
+Der Durchgangswiderstand von Reifen oder Rollen soll 104 Ω nicht überschreiten. 
+Hocker, Tritte, fahrbare Krankentragen und Ähnliches müssen durch Rollen bzw. Fußkappen aus leitfähigem 
+Werkstoff mit dem Fußboden verbunden sein. 
+In medizinisch genutzten Räumen ist ableitfähiges Schuhwerk – einschließlich der Überschuhe – zu tragen. 
+Jedoch soll ein Ableitwiderstand von mindestens 5 × 104 Ω eingehalten werden. 
+ANMERKUNG Anforderungen an elektrostatisch ableitfähiges Schuhwerk siehe ÖVE/ÖNORM EN 61340-4-3 und 
+Anforderungen an antistatische Schuhe siehe ÖNORM EN ISO 20345. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+50 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 51/64 =====
+ÖVE/ÖNORM E 8007:2007 
+51 
+Anhang B 
+(informativ) 
+Ausführungsbeispiele 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+51 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 52/64 =====
+ÖVE/ÖNORM E 8007:2007 
+52 
+Es bedeutet: 
+1 
+Siehe 6.9.4.4 
+2 
+Siehe 6.9.4.2 (Einspeisestelle von AV-Schiene dargestellt) 
+3 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+Bild B.1 – Stromversorgung mehrerer Gebäude von einer Stelle aus bei Verlegung außerhalb des Erdreiches gemäß 6.9.4.4 
+ 
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+(1)
+GEBÄUDEHAUPTVERTEILER 1
+HAUPTVERTEILER
+GEBÄUDEHAUPTVERTEILER 2
+GEBÄUDEHAUPTVERTEILER 3
+E 90
+UNTERBRINGUNG gemäß 4.1
+ZSV mit internem Bypass
+(2)
+Start
+Automatik
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+(1)
+(1)
+(2)
+(2)
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+(3)
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+52 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 53/64 =====
+ÖVE/ÖNORM E 8007:2007 
+53 
+ 
+Es bedeutet: 
+1 
+Sicherheitsbeleuchtung gemäß 6.2.1.1, 1), 3) und 4) 
+2 
+Beleuchtung bzw. Hinterleuchtung von Rettungszeichen gemäß 6.2.1.1, 2) 
+3 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+4 
+Ersatzbeleuchtung gemäß 6.2.1.2 (ausgenommen 6.2.1.2, 3)) 
+5 
+Verbraucher gemäß 6.4.4, die nicht lebenswichtigen Maßnahmen dienen 
+6 
+Notwendige Personenaufzüge und Bettenaufzüge ohne Funktionserhalt gemäß 7.2.3.1, 1) 
+7 
+Feuerwehraufzüge E 90 gemäß 7.2.3.1, 2) 
+8 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+9 
+Die Versorgung der rotierenden ZSV-Anlage kann auch über die AV erfolgen 
+10 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+11 
+bei Querung von Brandabschnitten 
+Bild B.2 – Beispiel für die Stromversorgung eines Verteilers der Anwendungsgruppe 1, 
+bei rotierender ZSV-Anlage 
+ZSV
+AV
+SV
+ZSV
+t < 15s
+(5)
+E 30
+(3)
+(4)
+(1)
+(2)
+weitere Verteiler
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+t < 0,5s
+t > 15s
+E 90
+Unterverteiler AWG 1
+(6)
+(7)
+E 90
+Zwischenwand gemäß 4.2.4
+Zwischenwand gemäß 4.2.4
+Abschottung 30 Minuten gemäß 7.2.3.1
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+(9)
+(10)
+(11)
+(8)
+(8)
+(8)
+(8)
+(8)
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+53 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 54/64 =====
+ÖVE/ÖNORM E 8007:2007 
+54 
+Es bedeutet: 
+1 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 1) 
+2 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 2) 
+3 
+Sicherheitsbeleuchtung gemäß 6.2.1.1, 1) 
+4 
+Ersatzbeleuchtung gemäß 6.2.1.2 
+5 
+Raumbeleuchtung aus zusätzlicher Stromversorgung (siehe 6.2.1.2, 3)) 
+6 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+7 
+Verbraucher gemäß 6.4.4, 3) die keine notwendigen Sicherheitseinrichtungen sind  
+8 
+Beleuchtung bzw. Hinterleuchtung von Rettungszeichen gemäß 6.2.1.1, 2) 
+9 
+IT-System gemäß 4.3.3.2 
+10 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+11 
+Kurzschluss- und erdschlusssichere Verlegung 
+12 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+13 
+Die Versorgung der rotierenden ZSV-Anlage kann auch über die AV erfolgen 
+14 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+15 
+bei Querung von Brandabschnitten 
+Bild B.3 – Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler,  
+rotierender ZSV-Anlage mit einer Umschaltzeit höchstens 0,5 s
+t < 15s
+ZSV
+(7)
+(2)
+(1)
+E 90
+Zweite Leitung
+Erste Leitung
+Unterverteiler AWG 2
+ϑ>
+OP-Leuchte
+k?
+(4)
+(3)
+AV
+(10)
+(8)
+(5)
+t < 0,5s
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+ Ausführung gemäß 4.3.3.7
+E 90
+Ι >
+(6)
+(9)
+ Ausführung gemäß 4.3.3.2
+Ι >
+gemäß 4.3.3.6
+k?
+ϑ >
+(14)
+Zwischenwand gemäß 4.2.4
+E 90
+(12)
+(13)
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+Zwischenwand gemäß 4.2.4
+Abschottung 90 Minuten gemäß 7.2.3.1
+(11)
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+(15)
+(12)
+(12)
+(12)
+(12)
+(11)
+(11)
+(11)
+gemäß 4.3.3.6
+(5)
+AV
+SV
+ZSV
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+54 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 55/64 =====
+ÖVE/ÖNORM E 8007:2007 
+55 
+ 
+Es bedeutet: 
+1 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 1) 
+2 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 2) 
+3 
+Ersatzbeleuchtung gemäß 6.2.1.2  
+4 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+5 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+6 
+Verbraucher gemäß 6.4.3 die keine notwendigen Sicherheitseinrichtungen sind 
+7 
+IT-System gemäß 4.3.3.2 
+8 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+9 
+Kurzschluss- und erdschlusssichere Verlegung 
+10 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+11 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+12 
+bei Querung von Brandabschnitten 
+Bild B.4 – Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV-Anlage mit einer 
+Umschaltzeit höchstens 0,5 s und zwei Trenntransformatoren 
+(ohne Darstellung der Sicherheitsbeleuchtung gemäß 6.2.1.1) 
+ZSV
+AV
+SV
+ZSV
+t < 15s
+(2) (1)
+E 90
+Unterverteiler AWG 2
+k?
+AV
+(8)
+t < 0,5s
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+E 90
+(5)
+OP-Leuchte
+ Ausführung gemäß 4.3.3.8
+ϑ >
+Ι >
+(3)
+(7)
+ Ausführung gemäß 4.3.3.7
+k?
+ϑ >
+Ι >
+ϑ >
+Ι >
+(5)
+(6)
+E 90
+Zweite Leitung
+Erste Leitung
+Start
+Automatik
+Lichtbogensicher
+gemäß 4.1.3
+Abschottung 90 Minuten gemäß 7.2.3.1
+Zwischenwand gemäß 4.2.4
+Zwischenwand gemäß 4.2.4
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+gemäß 4.3.3.6
+ gemäß 4.3.3.6
+ gemäß 4.3.3.6
+(9)
+(9)
+(10)
+(10)
+(10)
+(10)
+(10)
+(12)
+(11)
+(4)
+(6)
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+55 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 56/64 =====
+ÖVE/ÖNORM E 8007:2007 
+56 
+Es bedeutet: 
+1 
+ZSV- versorgte Beleuchtung gemäß 6.4.2 
+2 
+Ersatzbeleuchtung gemäß 6.2.1.2 (ausgenommen 6.2.1.2, 3)) 
+3 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+4 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+5 
+Beleuchtung von Rettungswegen gemäß 6.2.1.1, 1) und Beleuchtung bzw. Hinterleuchtung von 
+ 
+Rettungszeichen gemäß 6.2.1.1, 2) 
+6 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+7 
+Ersatzbeleuchtung aus SV gemäß 6.2.1.2, 3) 
+8 
+bei Querung von Brandabschnitten 
+Bild B.5 – Beispiel für die Stromversorgung eines Verteilers der AWG 2 mit dezentraler ZSV-Anlage 
+mit einer Umschaltzeit höchstens 0,5 s 
+ZSV
+AV
+SV
+t < 15s
+Unterverteiler AWG 2
+k?
+AV
+(6)
+(3)
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+(4)
+(1)
+(5)
+(2)
+(7)
+Versorgung von Zentralbatterie
+t < 0,5s
+E 90
+M
+M
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+Zwischenwand gemäß 4.2.4
+Abschottung 90 Minuten gemäß 7.2.3.1
+Abschottung 90 Minuten gemäß 7.2.3.1 und 4.2.4
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+(8)
+ gemäß 4.3.3.6
+gemäß 4.3.3.6
+ Ausführung gemäß 4.3.3.8
+ϑ>
+Ι >
+ϑ>
+Ι >
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+56 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 57/64 =====
+ÖVE/ÖNORM E 8007:2007 
+57 
+ANHANG C 
+(normativ) 
+Patientenumgebung 
+Bild C.1 – Patientenumgebung 
+ 
+1,5 m
+1,5 m 
+1,5 m
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+57 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 58/64 =====
+ÖVE/ÖNORM E 8007:2007 
+58 
+ANHANG D 
+(informativ) 
+Empfehlungen für Maßnahmen gegen die Beeinflussung von elektro-
+medizinischen Messeinrichtungen durch Starkstromanlagen 
+D.1 Beeinflussungen und Anwendung der Maßnahmen 
+Elektrische oder magnetische Felder elektrischer Anlagen können medizinische Messeinrichtungen, 
+insbesondere solche für Körperaktionsspannungen, bis zur Funktionsunfähigkeit stören. Die im Folgenden 
+beschriebenen Maßnahmen sind als Schutz gegen Störungen geeignet, die durch Starkstromanlagen in oder 
+in der Nähe medizinisch genutzter Räume hervorgerufen werden. Ihre Anwendung ermöglicht den 
+bestimmungsgemäßen Betrieb medizinischer Messeinrichtungen. Sie reichen nicht gegen Störungen, die 
+durch Hochfrequenzquellen aller Art für die Nachrichtentechnik oder Therapie erzeugt werden aus. 
+Maßnahmen gegen die Störungen sind nicht Gegenstand dieser Errichtungsbestimmung. 
+In Räumen und in der Umgebung von Räumen, in denen bestimmungsgemäß Messungen von Körperaktions-
+Spannungen, zB EEG, EKG oder EMG, durchgeführt werden, sollten die Maßnahmen gemäß D.2 und D.3 
+angewandt werden, wenn nach örtlichen Gegebenheiten mit dem Auftreten von Störungen gerechnet werden 
+kann. Gegebenenfalls kann es notwendig werden, diese Maßnahmen zur Sicherstellung des 
+bestimmungsgemäßen Gebrauches nachträglich durchzuführen. 
+ANMERKUNG Zu den Räumen die gegen Störungen geschützt werden sollen, gehören insbesondere: 
+– 
+EEG-Räume, EKG-Räume und EMG-Räume, 
+– 
+Intensiv-Untersuchungsräume, 
+– 
+Intensiv-Überwachungsräume, 
+– 
+Herzkatheterräume, 
+– 
+Operationsräume. 
+D.2 Maßnahmen gegen Störungen durch elektrische Felder 
+D.2.1 Die Kabel und Leitungen der Starkstromanlage sollen mit leitfähigen, abschirmenden Umhüllungen 
+verlegt werden. Empfohlen wird diese Maßnahme an allen Kabeln und Leitungen, die im zu schützenden 
+Raum, in dessen Wänden, Decke und Fußboden sowie auf deren Außenseiten verlegt sind. 
+D.2.2 Die leitfähigen Umhüllungen von Kabeln und Leitungen (zB abgeschirmte Leitungen mit Metallmantel, 
+Stahlpanzerrohr oder ähnliche Installationsrohre und -kanäle) sollten untereinander und mit dem 
+Potenzialausgleichsleiter gut leitend verbunden werden (Schweißpunkte, gelötete Drahtbrücken). Dabei 
+sollen die Abschirmungen (zB die metallische Umhüllung der abgeschirmten Leitungen bzw. das 
+Stahlpanzerrohr) keine geschlossenen Ringverbindungen (Maschen) bilden. 
+D.2.3 Alternativ zu D.2.1 und D.2.2 können die zu schützenden Einrichtungen auf andere Weise wirksam 
+gegen Störungen geschützt werden. Dies kann durch Einlegen eines Abschirmgewebes oder einer Metallfolie 
+in den Fußboden, die Decke oder die Wände der zu entstörenden Räume geschehen. Diese Abschirmung ist 
+von Rohrleitungen und leitfähigen Gebäudeteilen uÄ isoliert zu verlegen und über einen eigenen 
+Potenzialausgleichsleiter mit der Potenzialausgleich-Sammelschiene zu verbinden. 
+D.2.4 Festangeschlossene elektrische Verbrauchsmittel sollen in Schutzklasse I ausgeführt sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+58 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 59/64 =====
+ÖVE/ÖNORM E 8007:2007 
+59 
+D.3 Maßnahmen gegen Störungen durch netzfrequente magnetische Felder 
+Störungen sind nicht zu erwarten, wenn an der Patientenposition (Kopf, Becken, Fuß) die Induktion Bss bei 
+50 Hz folgende Werte nicht überschreitet: 
+Bss = 400 nT für EKG 
+Bss = 200 nT für EEG 
+Bss = 100 nT für EMG 
+ANMERKUNG 
+1) 
+Diese Grenzwerte werden im allgemeinen nicht überschritten, wenn zwischen Anlagenteilen und Betriebsmitteln, die 
+magnetische Störungen hervorrufen können, und den für die Untersuchung von Patienten vorgesehenen Plätzen 
+folgende Abstände in allen Richtungen eingehalten werden: 
+1.1) Bei Verwendung einer Leuchte mit einem Vorschaltgerät (Drossel) ist ein Abstand in alle Richtungen von 0,75 m 
+ausreichend. Bei Verwendung mehrerer Vorschaltgeräte mit höheren Arbeitsfrequenzen, die nicht in den 
+Übertragungsbereich der elektromedizinischen Messeinrichtung fallen, sind kleinere Abstände erlaubt. 
+1.2) Bei Verwendung vorwiegend induktiver Betriebsmittel großer Leistung ist ein Abstand in alle Richtungen von 6 m 
+ausreichend. Solche Betriebsmittel sind zB: 
+– Transformatoren der Starkstromanlage, zB des IT-Systemes, 
+– ortsfeste Motoren, insbesondere solche über 3 kW. 
+1.3) Zwischen mehradrigen Kabeln und Leitungen der Starkstromanlage und den zu schützenden Patientenplätzen 
+werden folgende Mindestabstände in Abhängigkeit vom Leiterquerschnitt empfohlen: 
+– Leiterquerschnitt (Cu) zwischen 10 mm2 und 70 mm2 – empfohlener Mindestabstand 3 m, 
+– Leiterquerschnitt (Cu) zwischen 95 mm2 und 185 mm2 – empfohlener Mindestabstand 6 m, 
+– Leiterquerschnitt (Cu) über 185 mm2 – empfohlener Mindestabstand 9 m. 
+Bei einadrigen Kabeln und Leitungen sowie Stromschienensystemen können größere Abstände notwendig 
+werden. 
+1.4) Die in 1.1) bis 1.3) genannten Abstände können durch magnetische Abschirmungen vermindert werden. 
+2) 
+Es wird auf die mögliche Beeinflussung von elektromedizinischen Messeinrichtungen durch 16 ⅔ Hz Wechselstrom-
+Bahnanlagen in Gebäudenähe hingewiesen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+59 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 60/64 =====
+ÖVE/ÖNORM E 8007:2007 
+60 
+Literaturhinweise 
+ÖNORM B 3800-12), Brandverhalten von Baustoffen und Bauteilen; Baustoffe: Anforderungen und Prüfungen 
+ÖNORM E 6610, Dreipolige Steckdosen mit N- und mit Schutzkontakt – Hauptmaße – 16 A, Wechselstrom 
+220/380 V – 16 A, Wechselstrom 230/400 V 
+ÖNORM H 6020, Lüftungstechnische Anlagen für medizinisch genutzte Räume – Projektierung, Errichtung, 
+Betrieb, Instandhaltung, technische und hygienische Kontrollen 
+ÖNORM EN ISO 20345, Persönliche Schutzausrüstung – Sicherheitsschuhe 
+ÖNORM EN 739, Niederdruck-Schlauchleitungssysteme zur Verwendung mit medizinischen Gasen 
+ÖNORM EN 962, Ortsbewegliche Gasflaschen – Ventilschutzkappen und Ventilschutzvorrichtungen für 
+Gasflaschen in industriellem und medizinischem Einsatz – Gestaltung, Konstruktion und Prüfungen 
+ÖNORM ISO 554, Normklimate für die Konditionierung und/oder Prüfung – Zahlenangaben 
+ÖVE/ÖNORM E 8065, Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen 
+ÖVE/ÖNORM E 8241 Reihe, Starkstromfreileitungen mit thermoplastischer Isolierhülle für Nennspannungen 
+bis 450/750 V 
+ÖVE/ÖNORM EN 55014-1, Elektromagnetische Verträglichkeit – Anforderungen an Haushaltsgeräte, 
+Elektrowerkzeuge und ähnliche Elektrogeräte – Teil 1: Störaussendung 
+ÖVE/ÖNORM EN 55014-2, Elektromagnetische 
+Verträglichkeit 
+– 
+Anforderungen 
+an 
+Haushaltgeräte, 
+Elektrowerkzeuge und ähnliche Elektrogeräte – Teil 2: Störfestigkeit 
+ÖVE/ÖNORM EN 60079-7, Elektrische Betriebsmittel für explosionsgefährdete Bereiche – Teil 7: Erhöhte 
+Sicherheit „e“ 
+ÖVE/ÖNORM EN 60247, Isolierflüssigkeiten 
+– 
+Messung 
+der 
+Permittivitätszahl, 
+des 
+dielektrischen 
+Verlustfaktors (tan δ) und des spezifischen Gleichstrom-Widerstandes 
+ÖVE/ÖNORM EN 60439-1, Niederspannungs-Schaltgerätekombinationen – Teil 1: Typgeprüfte und partiell 
+typgeprüfte Kombinationen 
+ÖVE/ÖNORM EN 61558-2-5, Sicherheit 
+von 
+Transformatoren, 
+Netzgeräten 
+und 
+dergleichen 
+–  
+Teil 2-5: Besondere Anforderungen an Rasiersteckdosen- Transformatoren und Rasiersteckdosen-Einheiten  
+ÖVE/ÖNORM EN 62034, Automatische Prüfsysteme für batteriebetriebene Sicherheitsbeleuchtung für 
+Rettungswege 
+ÖVE-EN 1 Reihe, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und DC 1 500 V 
+ÖVE-EN 1 Teil 4 § 53, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V 
+– 
+Teil 4: 
+Besondere 
+Anlagen 
+– 
+§ 53 
+Ersatzstromversorgungsanlagen 
+und 
+andere 
+Stromversorgungsanlagen für den vorübergehenden Betrieb 
+                                                          
+2) mit 2004-01-01 zurückgezogen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+60 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 61/64 =====
+ÖVE/ÖNORM E 8007:2007 
+61 
+ÖVE EN 7a:19903), Nachtrag a zu ÖVE-EN 7/1981; Errichtung von elektrischen Anlagen in medizinisch 
+genutzten Räumen 
+ÖVE EN 61008-1, Fehlerstrom-/Differenzstrom-Schutzschalter 
+ohne 
+eingebauten 
+Überstromschutz 
+für 
+Hausinstallationen und ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+ÖVE EN 61558-2-4, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-4: Besondere 
+Anforderungen an Trenntransformatoren für allgemeine Anwendungen 
+ÖVE EN 61558-2-6, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-6: Besondere 
+Anforderungen an Sicherheitstransformatoren für allgemeine Anwendungen  
+ÖVE EN 61558-2-7, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-7: Besondere 
+Anforderungen an Transformatoren für Spielzeuge  
+ÖVE/ÖNORM EN 61340-4-3, Elektrostatik – Teil 4-3: Standard-Prüfverfahren für spezielle Anwendungen – 
+Schuhwerk 
+ÖVE-K 41 Reihe, PVC-isolierte Leitungen für Nennspannungen bis einschließlich 450/750 V 
+DIN 41773-1, Stromrichter – Halbleiter-Gleichrichtergeräte mit IU-Kennlinie für das Laden von Bleibatterien, 
+Richtlinien 
+DIN 41773-2, Stromrichter 
+– 
+Halbleiter-Gleichrichtergeräte 
+mit 
+IU-Kennlinie 
+für 
+das 
+Laden 
+von 
+Nickel/Cadmium-Batterien – Anforderungen 
+DIN 49400, Elektrisches Installationsmaterial – Haushalt- und Kragensteckvorrichtungen – Übersicht 
+DIN 51412-1, Prüfung von Mineralölerzeugnissen – Bestimmung der elektrischen Leitfähigkeit –  
+Teil 1: Laborverfahren 
+DIN 51412-2, Prüfung von Mineralölerzeugnissen – Bestimmung der elektrischen Leitfähigkeit –  
+Teil 2: Feldverfahren 
+DIN VDE 0303-8, VDE-Bestimmungen für elektrische Prüfungen von Isolierstoffen; Beurteilung des 
+elektrostatischen Verhaltens 
+DIN VDE 0558-1, Halbleiter-Stromrichter – Allgemeine Bestimmungen und besondere Bestimmungen für 
+netzgeführte Stromrichter 
+VDE 0303-30, Prüfverfahren für Elektroisolierstoffe – Spezifischer Durchgangswiderstand und spezifischer 
+Oberflächenwiderstand von festen, elektrisch isolierenden Werkstoffen 
+VDE 0413-2, Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Isolationswiderstand 
+VDE 0558-2, Halbleiter-Stromrichter – Selbstgeführte Halbleiter-Stromrichter einschließlich Gleichstrom-
+Direktumrichter 
+VDE 0558-11, Halbleiter-Stromrichter – Allgemeine Anforderungen und netzgeführte Stromrichter – 
+Festlegung der Grundanforderungen 
+BGBl. Nr. 218/1983, Allgemeine Arbeitnehmerschutzverordnung – AAV 
+BGBl. Nr. 219/1983, Allgemeine Maschinen- und Geräte- Sicherheitsverordnung – AMGSV 
+BGBl. Nr. 45/1994, Elektro-Ex-Verordnung 1993 – ElExV 1993 
+                                                          
+3) mit 1996-05-01 zurückgezogen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+61 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 62/64 =====
+ÖVE/ÖNORM E 8007:2007 
+62 
+BGBl. II Nr. 309/2004, Verordnung explosionsfähige Atmosphären – VEXAT 
+BGBl. II Nr. 33/2006, Änderung der Elektrotechnikverordnung 2002 (Elektrotechnikverordnung 2002/A1 – 
+ETV 2002/A1) 
+Landesrechtliche Bautechnikverordnung i.d.g.F. 
+BGR 132, Richtlinien für die Vermeidung von Zündgefahren infolge elektrostatischer Aufladungen 
+(Berufsgenossenschaftliche Regeln für Sicherheit und Gesundheit bei der Arbeit – BGR) 
+Richtlinie für die Vermeidung von Gefahren durch explosionsfähige Atmosphäre – mit Beispielsammlung, 
+Explosionsschutz-Richtlinien – (EX-RL). Bezugsquelle: Carl Heymanns Verlag, Luxemburger Straße 449, 
+50939 Köln 
+Vermeidung von Zündgefahren infolge elektrostatischer Aufladungen. Bezugsquelle: Carl Heymanns Verlag, 
+Luxemburger Straße 449, 50939 Köln 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+62 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 63/64 =====
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+63 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 64/64 =====
+ 
+ 
+ 
+Wichtige Informationen für Normen-Anwender 
+ÖVE/ÖNORMEN sind Regeln, die im Dialog und Konsens aller 
+Betroffenen und Interessierten entwickelt werden. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und 
+Qualifikationen fest und definieren, wie die Einhaltung dieser Anforderungen überprüft 
+wird. 
+Von ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig 
+(ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den 
+aktuellen Stand der Technik dokumentieren, das was in einem bestimmten Fachgebiet 
+„Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Experten 
+und Expertinnen in den zuständigen Komitees auf nationaler, europäischer und 
+internationaler Ebene - sowie die Kompetenz des Österreichischen Verbandes für 
+Elektrotechnik und seiner Referenten. 
+ 
+Aktualität des Normenwerks. Analog zur technischen und 
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen 
+Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Aktualität 
+überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. 
+Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten 
+Ausgaben der Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine 
+Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen 
+entsprechen. 
+ 
+Wissen um Veränderungen. Das Österreichische Normungsinstitut 
+bietet gemeinsam mit dem Österreichischen Verband für Elektrotechnik 
+Normanwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote, die 
+dafür sorgen, dass Normanwender zuverlässig über die neusten Versionen von 
+Normen verfügen und über Änderungen – Neuausgaben und/oder Zurückziehungen – 
+informiert werden. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen. 
+Informationen über Angebote und Dienstleistungen des ON und des OVE bei 
+ 
+ON Sales & Service 
+OVE Normung 
+ON Österreichisches Normungsinstitut 
+OVE Österreichischer Verband 
+Austrian Standards Institute 
+für Elektrotechnik 
+Heinestraße 38, 1020 Wien 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: sales@on-norm.at 
+E-Mail: ove@ove.at 
+Internet: www.on-norm.at/shop 
+Internet: www.ove.at 
+Fax: +43 1 213 00-818 
+Fax: +43 1 586 74 08 
+Tel.: +43 1 213 00-805 
+Tel.: +43 1 587 63 73 
+ 
+ 
+ 
+ 
+ISO 9001:2000 
+zertifiziert│certified by SQS 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+64 von 64
+www.ris.bka.gv.at

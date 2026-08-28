@@ -1,0 +1,138 @@
+
+
+===== PAGE 1/2 =====
+ 
+ 
+Seite 1 von 2 
+ 
+ 
+ 
+OVE-Fachinformation E06 
+ 
+Ausgabe: 2021-01-01 
+ 
+ 
+ 
+ 
+Sicherheitsbeleuchtungsanlagen mit kombinierten Bussystemen 
+ 
+Ersatz für 
+– 
+Zuständig 
+OVE/TSK E04 Sonderanlagen 
+ICS 
+13.260; 29.020 
+ 
+ 
+Fachinformation vom Jänner 2009 
+ 
+1. 
+Einleitung 
+Kombinierte Bussysteme gemäß ÖVE/ÖNORM E 8002-1:2007, Abschnitt 7.8.3 sind Bussysteme, die nicht 
+ausschließlich zur Steuerung und Überwachung von Sicherheitsbeleuchtungsanlagen dienen. D. h. neben den 
+Sicherheitsbeleuchtungsfunktionen werden über einen Bus auch andere gebäudetechnische Komponenten wie 
+z. B. die Allgemeinbeleuchtung gesteuert und/oder überwacht. 
+Beim ungeprüften Einsatz von kombinierten Bussystemen kann es dazu kommen, dass Sicherheitsleuchten im 
+Fehlerfall ihre notwendigen Funktionen nicht mehr richtig ausführen und damit das angestrebte Schutzziel 
+gemäß ÖVE/ÖNORM E 8002-1:2007, Abschnitt 4.1.1 nicht mehr erreicht werden kann. 
+Zur Vermeidung dieser Probleme werden nachfolgende Empfehlungen gegeben, die bei der Errichtung, 
+Prüfung, Wartung sowie Dokumentation von Sicherheitsbeleuchtungsanlagen zu beachten sind. 
+Für die Sicherheitsbeleuchtung ist aus sicherheitstechnischer Sicht ein getrenntes Bussystem zu bevorzugen. 
+2. 
+Empfehlungen für die Planung, Errichtung, Prüfung und Wartung 
+2.1 
+Planung, Errichtung und Dokumentation 
+2.1.1 
+Vor der Ausführung ist die Einhaltung der Umschaltzeit von maximal 0,5 s bei vorgesehener Bestückung 
+mit allen Buskomponenten (z. B. EVG) und die Kompatibilität des Systems Bus-EVG-Leuchte schriftlich vom 
+Hersteller des Bussystems zu bestätigen. 
+2.1.2  Vom Hersteller des Bussystems ist schriftlich zu bestätigen, dass es bei Störungen (z. B. bei 
+Kurzschluss, bei Brand an der Leitungsanlage bzw. am Buscontroller) keine Rückwirkungen auf die Funktion 
+der Sicherheitsbeleuchtung geben kann. 
+2.1.3  Die 
+Bestückung 
+mit 
+allen 
+Buskomponenten 
+und 
+eine 
+allfällige 
+spätere 
+Änderung 
+von 
+Anlagenparametern sind zu dokumentieren. 
+2.1.4  Änderungen an voreingestellten Betriebszuständen der Buskomponenten der Sicherheitsbeleuchtung 
+dürfen über die Bussteuerung nur willentlich erfolgen (z. B. durch Passwort oder durch befugte Personen) und 
+sind zu dokumentieren. 
+2.1.5  Jede in die Allgemeinbeleuchtung integrierte Sicherheitsleuchte (inkl. dazugehöriger Betriebsgeräte) ist 
+als solche zu kennzeichnen, wobei auch die maßgeblichen Parameter (z. B. Art der Programmierung, Adresse, 
+Dimmwerte) anzugeben sind. 
+
+
+===== PAGE 2/2 =====
+OVE-Fachinformation E06:2021-01-01 
+Seite 2 von 2 
+2.1.6  Alle Schalteinrichtungen, die für die Überprüfung der Sicherheitsbeleuchtung zu betätigen sind 
+(Simulation für den Netzausfall und Netzausfall der Unterverteiler, Abschaltung der Bussteuerung), sind zu 
+kennzeichnen und zu dokumentieren. 
+2.2 
+Erstprüfung 
+2.2.1 
+Prüfung der einwandfreien Funktion der Sicherheitsbeleuchtung bei ausgeschalteter Bussteuerung 
+(Netztrennung der Bussteuereinheit). 
+2.2.2 
+Prüfung der einwandfreien Funktion der Sicherheitsbeleuchtung bei Störung im Bussystem (Simulation 
+einer Störung z. B. durch Kurzschluss der Busleitungen, Unterbrechung der Busleitung bzw. Ausfall der 
+Steuerung). 
+Prüfung, ob die Buskomponenten (z. B. EVGs) sämtlicher Sicherheitsleuchten bzw. die Leuchten selbst 
+entsprechend gekennzeichnet sind. 
+2.2.3 
+Es muss sichergestellt werden, dass bei aktivierter Sicherheitsbeleuchtung die Buskomponenten (z. B. 
+EVGs) weder im AC-Betrieb noch DC-Betrieb geschaltet oder gedimmt werden können. 
+2.2.4 
+Die Vollständigkeit der Anlagendokumentation (Bestückung, Betriebszustände der Betriebsgeräte, Art 
+der Programmierung, Adresse, Dimmwerte) ist zu überprüfen. 
+2.2.5 
+Sollte der Errichter nicht selbst die Erstprüfung der gesamten Sicherheitsbeleuchtungsanlage 
+durchführen (z. B. aus Haftungsgründen), so ist diese Prüfung durch eine befugte Fachkraft (z. B. akkreditierte 
+Prüfstelle, Ziviltechniker für Elektrotechnik) vorzunehmen. 
+2.3 
+Wiederholungsüberprüfung 
+2.3.1 
+Prüfung der einwandfreien Funktion der Sicherheitsbeleuchtung bei ausgeschalteter Bussteuerung 
+(Netztrennung der Bussteuereinheit). 
+2.3.2 
+Prüfung der einwandfreien Funktion der Sicherheitsbeleuchtung bei Störung im Bussystem (Simulation 
+einer Störung z. B. durch Kurzschluss der Busleitungen, Unterbrechung der Busleitung bzw. Ausfall der 
+Steuerung). 
+2.3.3 
+Sicherstellung, dass bei aktivierter Sicherheitsbeleuchtung die Betriebsgeräte (EVGs) weder im  
+AC-Betrieb noch DC-Betrieb geschaltet oder gedimmt werden können. 
+2.3.4 
+Überprüfung 
+der 
+Vollständigkeit 
+und 
+Aktualität 
+der 
+Anlagendokumentation 
+(Bestückung, 
+Betriebszustände der Betriebsgeräte (z. B. EVGs), Art der Programmierung, Adresse, Dimmwerte). 
+ 
+----------- 
+ 
+Aktualitätsprüfung: 2020-12 
+Der Inhalt dieser Fachinformation ist nur gemeinsam mit ÖVE/ÖNORM E 8002-1 anwendbar. 
+ 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2020. Alle Rechte vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu  
+und ohne Auslassung oder Zusatz wiedergegeben werden. 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

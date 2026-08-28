@@ -1,0 +1,415 @@
+
+
+===== PAGE 41/46 =====
+ÖVE EN 50110-1+ÖVE EN 50110-2-100 (eingearbeitet): 1997-06
+
+A4
+
+33
+
+Ergonomische Komponente
+
+Zu dem elektrischen Abstand ist ein Zuschlag, die ergonomische Komponente, zu addieren, um die folgen-
+den Einfliisse zu berlicksichtigen:
+
+Unbeabsichtigte Bewegungen des Arbeitenden,
+
+das Unvermögen, den geforderten Abstand richtig abzuschatzen, besonders bei großen Abstanden,
+wie sie fir Hochspannung geiten,
+
+die Schwierigkeit, den richtigen Abstand einzuhalten, besonders bei geringen Abstanden, wie sie fur
+Niederspannung gelten,
+
+die zufalligen Bewegungen leitender Gegenstinde, die der Arbeitende transportiert oder handhabt
+oder die sich in seiner Nahe befinden.
+
+Die Werte fiir diesen zusatzlichen Abstand héngen auch von der Person des Arbeitenden und der Art der
+auszuflihrenden Arbeit ab. Die ergonomische Komponente liegt iiblicherweise im Bereich von 200 mm bis
+1000 mm. Für Anlagen mit Spannungen bis 72,5 kV überwiegt diese Komponente gegeniiber dem elektri-
+schen Abstand.
+
+
+===== PAGE 42/46 =====
+ÖVE EN 50110-1+ÖVE EN 50110-2-100 (eingearbeitet): 1997-06
+
+Tabelle A.1: Richtwerte für Abstände D_ und Dy nach prEN 50179
+
+Höchste Spannung Höchste Äußere Grenze der | Äußere Grenze der
+
+Nennspannung für Betriebsmittel Stoßspannung Gefahrenzone Annäherungszone
+Dy D,
+
+U, (Effektivwert) Un (Effektivwert) | Uimp (Scheitelwert) | (Abstand in Luft) (Abstand in Luft)
+
+mm mm
+
+[ <1 |1 [ 4  [keineBerbhrung| 500 |
+
+3 40 [ 120 | 1120 |
+
+6 60 [ 120 [ 1120 |
+
+10 | 75 [ 150 | 1150 |
+
+95 |
+
+1160
+
+kV
+4
+40
+75
+95
+
+KV
+<1
+3
+10
+41,5
+[ 45 | 52 [ 250 | 480 | 1480 |
+| 60 |
+| 110 |
+132 |
+
+| 36 |
+72 |
+12
+__ 24 |
+__ 36 |
+415 |
+
+110
+132
+
+ANMERKUNG 1: Für U, -Werte von 3 kV bis 220 kV wird für die Ermittlung der D,_-Werte die Blitz-
+stoßspannung verwendet, für U,-Werte von 275 kV bis 700 kV die Schaltstoß-
+spannung.
+
+ANMERKUNG 2: Abstandswerte für niedrigere Bemessungs-Stoßspannungen können aus
+prEN 50179, Tabellen 4.1 bis 4.3 entnommen werden.
+
+ANMERKUNG 3: Die Abstandswerte D, sind berechnet auf der Basis von Spannungen Leiter gegen
+Erde.
+
+ANMERKUNG 4: Zwischenwerte für D_konnen durch lineare Interpolation gewonnen werden.
+
+ANMERKUNG 5: Für Gleichspannungsanlagen können dieselben Abstände, bezogen auf die Netz-
+Nennspannung, gewahlt werden.
+
+kv
+1
+36
+72
+12
+24
+36
+52
+
+
+
+===== PAGE 43/46 =====
+ÖVE EN 50110-1+ÖVE EN 50110-2-100 (eingearbeitet): 1997-06 35
+Tabelle A.2: Richtwerte für Abstände D¢ und Dy nach ENV 50196
+
+Äußere
+Netz-Nenn- Höchste Elektrischer Mindest- Grenze
+spannung | Spannung für Stoß- Abstand nomische Arbeits- | der Annähe-
+Betriebs- spannung D," Kom- abstand | rungszone
+Un mittel Un Ugore ponente DE Dy
+(Effektivwert) | (Effektivwert) | (Scheitel- g} (Abstand in
+wert) Luft)
+kV kV
+
+<1
+
+3
+
+kv
+41,5
+| 52 | 126° | 228 | 400 [ 630 | 1630 |
+70 | 85 [ 200" [ 372 [ 500 | 900 | 1900 |
+110
+132
+150
+220
+275
+700
+
+Der Wert der relativen statistischen Uberspannung V.. beträgt hier 2,7 p.u.
+Der Wert der relativen statistischen Uberspannung V,g betrégt hier 2,3 p.u.
+Der Wert der relativen statistischen Uberspannung V., betragt hier 2,2 p.u.
+In der Formel zur Berechnung von Dy, wurden folgende Faktoren eingesetzt:
+ky=0,90; ka = 0,94; k = 0,936, k= k. =1, k=12
+
+Ubliche Praxiswerte
+
+Gerundete Werte für D, =Dy + E
+
+20
+30
+
+1
+[ 36 |
+[ 72 |
+[ 12 |
+[ 24
+36 |
+_ 45 |
+
+1
+3,6
+7.2
+12
+24
+36
+52
+
+D olw _
+&o | 60
+
+—
+[ 6
+| 8
+_9
+| 19 |
+
+ANMERKUNG 1: Die Abstandswerte D, sind berechnet auf der Basis von Spannungen Leiter gegen
+Erde.
+
+ANMERKUNG 2: Zwischenwerte fiir D, kénnen durch lineare Interpolation gewonnen werden.
+
+ANMERKUNG 3: Fir Gleichspannungsanlagen kénnen dieselben Abstände, bezogen auf die Netz-
+Nennspannung, gewahlt werden.
+
+
+
+===== PAGE 44/46 =====
+38
+
+EN 292-1:1992
+
+EN 60071-1:1995
+
+EN 60743-1:1995
+
+EN 60900:1993
+
+EN 60903:1992
+
+EN 60984:1992
+EN 61057:1993
+
+EN 61219:1993
+
+EN 61229:1995
+
+EN 61230:1995
+
+EN 61235:1995
+
+EN 61236:1995
+
+EN 61243-1:1997
+
+prEN 50179:1994
+HD 496 S1:1988
+
+HD 540.2 51:1991
+HD 540.3 S$1:1991
+
+HD 542 $1:1990
+
+HD 547 S1:1990
+
+IEC 1111:1992
+IEC 1112:1992
+
+OVE EN 50110-1+OVE EN 50110-2-100 (eingearbeitet):1997-06
+
+Anhang C (informativ)
+Literaturhinweise
+
+Sicherheit von Maschinen - Grundbegriffe, allgemeine Gestaliungsleitsatze -
+Grundséatzliche Terminologie, Methodik
+
+Isolationskoordination - Teil 1: Begriffe, Grundsatze und Anforderungen
+(IEC 71-1:1993)
+
+Terminologie für Gerate und Ausriistungen zum Arbeiten unter Spannung
+(IEC 743:1983 + A1:1995)
+
+Handwerkzeuge zum Arbeiten an unter Spannung stehenden Teilen bis
+1000 V a.c. und 1500 V d.c. (IEC 900:1987 modifiziert)
+
+Norm für Handschuhe aus isolierendem Material zum Arbeiten an unter
+Spannung stehenden Teilen (IEC 903:1988 modifiziert)
+
+Isolierende Armel zum Arbeiten unter Spannung (IEC 984:1992 modifiziert)
+
+Hubarbeitsbühnen mit isolierender Hubeinrichtung zum Arbeiten unter
+Spannung Uber 1 kV a.c. (IEC 1057:1991 modifiziert)
+
+Arbeiten unter Spannung - Erdungs- oder Erdungs- und KurzschlieBvorrichtung
+mit Stäben als kurzschlieRendes Gerat - Staberdung (IEC 1219:1993)
+
+Starre Schutzabdeckungen zum Arbeiten unter Spannung in
+Wechselspannungsanlagen (IEC 1229:1893 modifiziert)
+
+Arbeiten unter Spannung - Ortsveranderliche Gerate zum Erden oder
+Erden und KurzschlieRen (IEC 1230:1993 maodifiziert)
+
+Arbeiten unter Spannung - Isolierte hohle Rohre für elekirotechnische Zwecke
+(IEC 1235:1993 modifiziert)
+
+Mastséattel, Stangenschellen und Zubehör zum Arbeiten unter Spannung
+(IEC 1236:1993 modifiziert)
+
+Arbeiten unter Spannung - Spannungsprifer - Teil 1: Kapazitive Ausflhrung für
+Wechselspannungen über 1 kV (IEC 1243-1:1997 modifiziert)
+
+Starkstromanlagen mit Nennwechselspannungen über 1 kV
+
+Isolierende schaumgefiillte Rohre und massive Stébe zum Arbeiten an unter
+Spannung stehenden Teilen (IEC 855:1985 modifiziert)
+
+Isolationskoordination - Teil 2: Anwendungsrichtlinien (IEC 71-2:1976)
+
+Isolationskoordination - Teil 3: Leiter-Leiter-1solationskoordination - Grundlegende
+Bestimmungen und Anwendungsrichtlinie (IEC 71-3:1982)
+
+Isolierende Arbeitsstangen und zugehorige Arbeitskdpfe zum Arbeiten unter
+Spannung (IEC 832:1988)
+
+Leitende Schutzbekleidung zum Arbeiten an unter Spannung stehenden
+Teilen fiir eine Nennwechselspannung bis 800 kV (IEC 895:1987)
+
+Matting of insulating material for electrical purposes
+
+Blankets of insulating material for electrical purposes
+
+
+===== PAGE 45/46 =====
+36 ÖVE EN 50110-1+ÖVE EN 50110-2-100 (eingearbeitet): 1997-06
+
+Anhang B (informativ)
+Zusätzliche Informationen zum sicheren Arbeiten
+B.1 Anwendungsbeispiel bei Arbeiten unter Spannung
+B.1.1 Uberpriifung der Genehmigung fir Arbeiten unter Spannung
+
+Wenn die Genehmigung für Arbeiten unter Spannung durch Vorschrift oder Praxis gefordert wird, sollte ihre
+Gilltigkeit mindestens in den folgenden Féllen überprüft werden:
+
+- Versetzung oder Wechsel der Flhrungsstruktur,
+
+- Aufgabenwechsel,
+
+- langanhaltende Unterbrechung dieser Tatigkeiten,
+
+- arztliche Einschrankungen,
+
+- gemeldete Nichteinhaltung von Arbeitsanweisungen oder Nichteignung,
+
+- bei wesentlichen Anderungen an den Anlagen (Anderungen an Betriebsmitteln oder am Aufbau),
+- bei Anderungen der Arbeits- oder Instandhaltungsverfahren.
+
+Unabhangig davon sollte die Genehmigung zum Arbeiten unter Spannung jahrlich überprüft werden.
+B1.2 Umgebungsbedingungen
+
+Die folgenden Witterungsbedingungen sind bei der Beurteilung der Umgebungsbedingungen zu berlick-
+sichtigen:
+
+B.1.2.1 Niederschlag
+Niederschlag umfaßt Regen, Schnee, Hagel, Nieselregen, Spriihregen oder Rauhreif.
+
+Niederschlag wird als unbedeutend bezeichnet, wenn er die Sicht der Arbeitenden nicht behindert. Je nach
+Spannungspegel, Anlagenart und angewendeter Arbeitsmethode solite die Arbeit eingestelit werden, wenn
+der Niederschlag nicht unbedeutend ist.
+
+B.1.2.2 Dichter Nebel
+
+Nebel wird als dicht angesehen, wenn die Sicht so weit beeintrachtigt ist, daß die Sicherheit gefahrdet ist,
+besonders dann, wenn der Arbeitsverantwortliche die Arbeitenden und die unter Spannung stehenden Tei-
+le, an denen oder in deren Nahe sie arbeiten sollten, nicht mehr sehen kann. In diesem Fall sollte die Arbeit
+eingestellt werden.
+
+B.1.2.3 Gewitter
+
+Gewitter bestehen aus Blitz und Donner. Wenn einer der Arbeitenden Blitz oder Donner wahrnimmt, sollte
+die Arbeit eingestellt werden, wenn an blanken Leitern, Freileitungen oder daran angeschlossenen Schalt-
+anlagen gearbeitet wird.
+
+B.1.2.4 Heftiger Wind
+
+Wind wird als heftig angesehen, wenn er verhindert, daß der Arbeitende seine Werkzeuge und Geréate mit
+ausreichender Genauigkeit handhaben kann; in diesem Fall sollte die Arbeit eingestellt werden.
+
+B.1.2.5 Salzsturm
+Dies sind starke Winde, die salzhaltige feuchte Luft von der See zum Land tragen. Der Isolationspegel wird
+
+verringert, oder es kommt zu Uberschlagen, wenn spater Nebel oder Nieselregen auftritt oder die Luft-
+feuchte stark ansteigt. Bei Salzsturm sollte die Arbeit eingestellt werden.
+
+
+===== PAGE 46/46 =====
+ÖVE EN 50110-1+ÖVE EN 50110-2-100 (eingearbeitet):1997-06 37
+
+B.1.2.6 Extrem tiefe Temperatur
+
+Temperaturen werden als extrem tief angesehen, wenn durch die Kälte der Gebrauch von Werkzeugen er-
+schwert und die Belastbarkeit von Materialien verringert ist. In diesem Fall sollte die Arbeit eingestellt wer-
+den.
+
+B.1.3 Berechnung des festgelegten Arbeitsabstandes
+
+Eine Grundlage für diese Berechnung ist in ENV 50196 “Arbeiten unter Spannung - Erforderliche Isolati-
+onspegel und zugehörige Luftabstände - Berechnungsverfahren” enthalten.
+
+B.2 Brandschutz, Brandbekämpfung
+Beim Betrieb von elektrischen Anlagen ist die Möglichkeit eines Brandes nicht auszuschließen.
+
+Bei Ausbruch eines Brandes sollten gefahrbringende oder gefährdete Teile der elektrischen Anlage ausge-
+schaltet werden, soweit sie nicht für die Brandbekämpfung unter Spannung gehalten werden müssen oder
+die Ausschaltung andere Gefahren verursacht.
+
+Zum Ldschen von Branden in elektrischen Anlagen sollten der Brandklasse entsprechende Feuerldscher
+oder Feuerléscheinrichtungen an geeigneter Stelle bereitgehalten werden, die der Art und Größe der Anla-
+ge angepaldt sind.
+
+Für die Brandbekadmpfung sind Arbeitskrafte in der Bedienung der Löschgeräte zu unterweisen, insbeson-
+dere bei der Anwendung an unter Spannung stehenden Betriebsmitteln. Diese Unterweisung sollte in an-
+gemessenen Abstanden wiederholt werden.
+
+Bei der Anwendung von Feuerléschern in unter Spannung stehenden Anlagen sollte der erforderliche Ab-
+stand eingehalten werden.
+
+Personen sollten damit rechnen, daß von heißen und brennenden Materialien giftige Substanzen freige-
+setzt werden kdnnen.
+
+Leicht entzindliche Stoffe und Gegenstéande sollten so angeordnet oder gelagert werden, daß sie sich nicht
+entzinden kdnnen.
+
+B. 2. 101 Néhere Festlegungen zu dieser Thematik kbnnen der OVE-E32/1984 “Bekémpfung von Brén-
+den in elektrischen Anlagen und in deren Nahe” entnommen werden.
+
+B.3 Explosionsgefiahrdete Arbeitsbereiche
+
+Wenn elektrotechnische Arbeiten in explosionsgeféhrdeten Bereichen auszufiihren sind, sollten folgende
+Empfehlungen befolgt werden:
+
+a) Entweder sind alle Arbeiten zu verbieten oder einzustellen, bis geeignete Maßnahmen durchgefiihrt
+sind, um die Explosionsgefahr zu beseitigen, z. B. Verhindern des Austretens brennbarer Gase,
+Luftung, oder
+
+b) es sind geeignete, auf die Art der Explosionsgefahr abgestimmte Maßnahmen zu ergreifen, das Risi-
+ko zu beherrschen, wie z. B.:
+
+1) standige Uberwachung der umgebenden Luft und Verbot jeder Energiequelle, die das explo-
+sive Gemisch zünden kénnte,
+
+2) standige Luftung und Uberwachung der umgebenden Luft,
+
+3) Begrenzung der Arbeiten auf den bestimmungsgemaRen Umgang mit eigensicheren Gerä-
+ten und Anlagenteilen.
+
+B. 3. 101 siehe dazu auch OVE-ES5 Teil 9 “Sonderbestimmungen fiir den Betrieb elekirischer Anlagen in
+explosionsgeféhrdeten Betriebsstéiten”.

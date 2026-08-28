@@ -1,0 +1,512 @@
+
+
+===== PAGE 1/7 =====
+OVE-EN 1, Teil 4(8 60)/1983
+USTERREICHISCHE BESTIMMUNGEN
+FOR DIE ELEKTROTECHNIK
+
+Errichtung
+
+von Starkstromanlagen mit
+Nennspannungen bis ~1000V
+und -1500V
+
+Teil 4: Besondere Anlagen
+8 60. Hilfsstromkreise
+
+DK 621.31.027.4
+
+OSTERREICHISCHER VERBAND FÜR ELEKTROTECHNIK
+_ FachausschuB EN
+
+„Elektrische Niederspannungsanlagen*“
+
+Eschenbachgasse 9, A-1010 Wien
+
+OVE-EN 1, Teil 4(§ 60)/1983 Inhaltsübersicht
+Inhaltsübersicht
+
+Seite
+Einleitung. . . . . . . . . . ... ... L. 4
+Vorwort . . . . . . ... L 0L oL 6
+§ 60 Hiltsstromkreise . . . . . . . . . . . ., . . 7
+§60.1 Nenn- und Betriebsspannungen . . . . . . . . . 7
+§60.10 KurzschiuBschutz . . . . . . . . . . . . ., 10
+
+811l
+
+L¥ IN — V661 Jouug( ‘07 WE uaqeBadsny — HIMS /]
+
+
+===== PAGE 2/7 =====
+UVE-EN 1, Tell 4(§60)/1983 Einleitung
+
+m
+
+(2)
+
+(&)
+
+(4)
+
+S)
+
+Einleitung
+
+Diese Usterreichischen Bestimmungen für die Elektro-
+technik wurden vom LenkungsausschuB der Sektion „Elek-
+trotechnische Bestimmungen” des Usterreichischen Ver-
+bandes für Elektrotechnik zum Druck und zur Anwendung
+freigegeben,
+
+Die Inkraftsetzung dieser Usterreichischen Bestimmungen
+fir die Elektrotechnik mit der 2. Durchfiihrungsverordnung
+(1983) zum Elektrotechnikgeseliz wurde vom Bundes-
+ministerium fir Bauten und Technik mit Wirkung vom
+19830701 in Aussicht genommen.
+
+Der Rechtsstatus dieser Usterreichischen Bestimmungen
+für die Elektrotechnik kann dariiber hinaus mit später
+erscheinenden Durchfiihrungsverordnungen zum Elektro-
+technikgesetz weiter festgelegt werden. Insbesondere ist
+diesbeziiglich jewells die zuletzt erschienene Durchfilh-
+rungsverordnung zu beachten.
+
+In diesem Heft wird auf folgende Usterreichische Bestim-
+
+mungen fiir die Elektrotechnik Bezug genommen:
+
+OVE-EN 1, Teil 1, Errichtung von Starkstromanlagen mit
+Nennspannungen bis „ 1000 V und
+= 1500 V. Teil 1: Begriffe und Schutz-
+maBnahmen .
+
+OVE-EN1, Teil 3, Errichtung von Starkstromaniagen mit
+Nennspannungen bis ..1000 V und
+= 1500 V. Teil 3: Beschatfenheit, Bemes-
+sung und Verlegung von Leitungen und
+Kabeln
+
+OVE-R 255, Elektrische Relais
+
+Die Hinweise auf andere Verdffentlichungen in den FuB-
+noten beziehen sich, sofern nicht anders angegeben, auf
+den Stand zum Zeitpunkt der Herausgabe dieses Heftes.
+Zum Zeitpunkt der Anwendung dieses Heftes ist der durch
+Durchfiihrungsverordnungen zum Elektrotechnikgesetz oder
+gegebenentalls auf andere Weise festgelegte aktuelle
+Stand zu beriicksichtigen.
+
+In diesem Heft sind Begriffserkidrungen, Bestimmungen
+und Prifbestimmungen durch Normalidruck, Priifbestim-
+
+OVE-EN 1, Teil 4(§ 60)/1983 Einleitung
+
+(6)
+
+M
+
+mungen überdies durch ein vorgesetztes „Prüf.:“ sowie
+Erläuterungen durch Kleindruck gekennzeichnet.
+
+- Die in diesem Heft angeführten Österreichischen Bestim-
+
+mungen für die Elektrotechnik, ONORMEN der Elektro-
+technik und sonstigen technischen Veröffentlichungen kön-
+nen vom OVE, Eschenbachgasse 9, A-1010 Wien, bezogen
+werden.
+
+Rechtsbelehrungen, Einleitungen, FuBnoten, Hinweise auf
+Fundstellen in anderen Texten — sofern es sich nicht um
+andere Teile dieser Usterreichischen Bestimmungen fiir die
+Elektrotechnik handelt — und Anhédnge gelten nicht als
+Bestandteil der Usterreichischen Bestimmungen für die
+Elektrotechnik, wahl aber Vorworte und Kieingedrucktes.
+
+¥ IN — %661 UUg "oz we usqeSolsny — spmg /1
+
+6111
+
+
+===== PAGE 3/7 =====
+OVE-EN 1, Teil 4($ 60)/1983 Vorwort
+
+Vorwort
+
+Die Bestimmungen OVE-EN 1 werden folgende Teile umfassen:
+
+Teil 1:
+Teil 2:
+Teil 3:
+
+Teil 4:
+
+Begriffe und Schutzmaßnahmen.
+Elektrische Betriebsmittel.
+
+Beschaffenheit, Bemessung und Verlegung von Leitungen
+und Kabeln.
+
+Besondere Anlagen.
+
+OVE-EN 1, Teil 4(§ 60)/1983 §60
+
+60.1
+60.1.1
+
+60.2
+
+60.3
+
+60.4
+
+§60. Hilfsstromkreise
+
+Nenn- und Betriebsspannungen
+
+Hilfsstromkreise dirfen mit den Hauptstromkreisen gal-
+vanisch oder iiber Transformatoren verbunden oder von
+den Hauptstromkreisen unabhéingig sein. Die Betriebs-
+spannung dart 660 V Wechselspannung bzw. 750 V Gleich-
+spannung nicht (berschreiten.
+in Stromkreisen, in denen Handsteuergerite angewendet
+werden, sind nur Spannungen bis maximal 250 V zulässig.
+
+Die Verwsndung folgender Nennspannungen wird smpiohien:
+
+24V, 42 V. 48V, 110 V, 220 V Wechselspannung,
+
+24 V, 48 V, 60 V, 110V, 20V, 250 V Gleichspannung.
+
+Für elekironische Bauteile werden auch kleinere Betriebsspannungen ver-
+wendet.
+
+Die Querschnitte der Hilfsstromkreise sowie allfällige
+Transformatoren sind so auszulegen, daß die Spannung in
+beliebigen Betriebszuständen um nicht mehr als + 5%
+von der Nennspannung abweicht.
+Dabei ist vorausgesetzt, daß die Speisespannung ihrem Nennwert ent-
+spricht.
+Diese Grenzen dirfen iiberschritten werden, wenn nach-
+gewiesen wird, daB die Spannungstoleranzen der Be-
+triebsmittel nicht Gberschritten werden.
+
+SchutzmaBnahmen geméB Teil 1, §4'), §5') und $ 6') sind
+auch fiir Hilfsstromkreise erforderllch (siehe z. B. Abb. 60-1).
+
+Es dürfen auch von den Hauptstromkreisen abweichende SchuizmaBnah-
+men angewendet werden, wenn hierdurch keine nachteilige gegenseitige
+Besinfluasung auttritt.
+
+Für die Schutzleiter in Hilfsstromkreisen Qilt Teil 1, §6.2.21).
+
+Für die Verlegung der Leitungen von Hilfsstromkreisen gilt
+abweichend von Teil 3, § 422) folgendes:
+
+') Sishe OVE-EN 1, Teil 1.
+1) Siehe OVE-EN 1, Tell 3.
+
+oIt
+
+¥ IN — ¥661 Fduug( ‘g7 we uagaSafsny — joms /1
+
+
+===== PAGE 4/7 =====
+DVE-EN 1, Teil 4(8 60)/1983 860
+
+60.4.1
+60.4.2
+
+60.4.3
+
+60.5.1
+
+60.5.2
+
+60.6.1
+
+60.6.2
+
+Die Bestimmungen in $ 60.10.2.3 sind einzuhalten.
+
+In geerdeten Hilfsstromkreisen darf der PEN-Leiter des
+Hauptstromkreises bei Querschnitten > 10 mm? Cu auch
+als Rickleiter fir den zugehdrigen Hilfsstromkreis benutzt
+werden (siehe Abb. 60-1, Beispiel 1).
+
+In besonderen Fällen darf bei geerdeten Hilfsstromkreisen
+der Riickleiter entfallen, z. B. bei Magnetkupplungen. Teil 1,
+$ 4') ist jedoch zu beachten.
+
+Für die Rickleitungsstrombahnen gelten dann die gleichen
+Bedingungen wie fiir Schutzleiter gemäß Teil 1, § 6.2.2(4)").
+Die Erde darf nicht als alleiniger Riickleiter benutzt werden.
+
+Fiir Hillsstromkreise, die der Sicherheit dienen (z. B. mit
+Nothaltschaltern, Notendschaltern) und die ohne gaivani-
+sche Trennung vom Netz betrieben werden, gilt folgendes:
+
+Die Spannung für die Hiltsstromkreise darf nur dann zwi-
+schen zwei AuBenleitern abgenommen werden, wenn die
+der Sicherheit dienenden Hilfsschalter die Hilfsstromkreise
+zweipolig schalten,
+
+Einpolig schaitende, der Sicherheit dienende Hilfsschaiter
+sind nur in dem Leiter eines Hilfsstromkreises zulässig,
+der vom AuBenleiter des Netzes ausgeht. In diesem Fall
+muB der zweite Leiter des Hilfsstromkreises vom geerdeten
+neutralen Leiter des Netzes ausgehen (siehe Abb.60-1,
+Beispiel 1).
+
+Wenn das Netz nicht geerdet ist, sind einpolig schaltende, der Sicherheit
+
+dienende Hilfsschalter unzulfissig.
+
+Für Hilfsstromkreise, die über Steuertransformatoren oder
+Umformer, aus Batterien oder anderen unabhingigen
+Spannungsquellen gespeist werden, giit folgendes:
+Die Verbindung geerdeter Hilfsstromkreise zur Betriebs-
+erde muB gut zugénglich und auftrennbar sein, damit der
+Isolationswiderstand aller Leitungen und der mit ihnen
+verbundenen Einrichtungen gemessen werden kann.
+Diese Verbindung solite mdglichst in der Nihe der Spannungsquelle,
+z. B. des Transformators, liegen (siehe Abb. 60-2, Belsple! 4).
+
+Wenn durch zwei Körpef— oder Erdschlüsse in einem
+
+Außenleiter oder neutralen Leiter eines ungeerdeten Hilfs- .
+
+') FuBnote auf Seite 7.
+
+OVE-EN 1, Teil 4(§ 60)/1983 $00
+
+60.7
+
+stromkreises Vorgänge ausgelöst werden können, die zu
+Gefahrdungen fiihren, z. B. unbeabsichtigtes Inbetrieb-
+setzen einer Maschine, muB eine lsolationsiiberwachungs-
+einrichtung vorhanden sein, Je nach den betrieblichen Ver-
+héitnissen ist zu entscheiden, ob diese Oberwachungs-
+einrichtung nur meiden soll oder abschaiten muB. Der
+Wechselstrominnenwiderstand der Isolationsiiberwachungs-
+einrichtung muB mindestens 15 kQ betragen (siehe auch
+Abb. 60-2, Beispiel 5 und Beispiel 6).
+
+Wenn durch Zusammentreffen von zwel Kdrper- oder Erd-
+schlüssen in einem AuBenleiter oder neutralen Leiter eines
+Hilfsstromkreises Vorgange ausgeltst werden kdnnen, die
+zu Gefahrdungen, z. B. unbeabsichtigtem Inbetriebsetzen
+einer Maschine, fithren, miissen auch bei Nennspannungen
+unter 65V folgende Teile leilend miteinander verbunden
+werden:
+(1) in geerdeten Hilfsstromkreisen alle Metaliteile, die nicht
+aktive Teile sind, mit dem geerdeten neutralen Punkt,
+
+(2) in ungeerdeten Hilfsstromkreisen alle Metaliteile, die
+nicht aktive Teile sind, mit der Isolationsiiberwachungs-
+einrichtung (siehe Abb. 60-2, Beispiel 5).
+
+Die elektrischen Wirkglieder, z. B. Betatigungs- und Halte-
+spulen. Leuchimeider, elektromagnetische Absperrorgane,
+museen unmittelbear mit folgenden Leitern verbunden sein:
+
+(1) in geerdeten Hiifssiromkreisen mit dem geerdeten Lei-
+ter. ausgenommen, wenn das Schaltorgan keine sicher-
+heitstechnische Bedeutung hat oder die Funktions-
+sicherheit auf andere Weise gewährleistet ist,
+
+(2) In ungeerdeten, einpolig geschalteten Hilfsstromkreisen
+alle mit demselben Leiter (dieser Leiter wird im Fall
+einer eventuellen spéteren Erdung zum geerdeten
+Leiter).
+
+In Hilfsstromkreisen muB die Summe aus Ableitstrdmen
+und kapazitiven Strbmen, weiche nach dem Abschaiten
+noch iiber die Betédtigungsspule eines Schaltgerites fließt,
+kleiner sein als der Riickfallwert?) des Stromes für das
+Schaitgerat.
+
+) Siehe OVE-R 255.
+
+¥ IN — 661 I9uugf 07 we uaqelelsny — IMS /]
+
+1Z11 0
+
+
+===== PAGE 5/7 =====
+OVE-EN 1, Teil 4($ 60)/1983 §60
+
+60.10  KurzschiuBschutz
+
+60.10.1 KurzschluBschutz der Betriebsmittel
+
+Beim Auswahlen der KurzschluBschutzeinrichtungen für die
+in den Hilisstromkreisen verwendeten Betriebsmittel, z. B.
+Schaltglieder, sind die Angaben der Hersteller zu beachten.
+
+60.10.2 KurzschluBschutz der Leitungen
+
+60.10.2.1 Leitungen in Hilfsstromkreisen miissen gegen zu hohe
+Erwérmung durch KurzschluBstréme gemäß $ 412) geschiitzt
+werden.
+
+Bel Hiifastromkreisen, die über Steusrtranslormatoren gespeist werden,
+ist zu beachten, daß dersn Iimpedanz die HOhe des KurzachiuBatromes
+wesentlich beeinflussen kann. Zur Bestimmung der Kurzschiulschutzein-
+richtungen ist es deshald notwendiy. daß der Kurzschiuleliom unter
+Berdcksichtigung der Impedanz des Bleueriansliormaters ermitteit wird
+(impedanz bei FiieBen des Kurzschivletromes)
+
+60.10.2.2 Wenn in besonderen Fällen (siehe z. B. Tl 3, $ 41.2.2.4.3)})
+dieser Schutz entfallen kann oder aus Funktionsgrinden
+entfallen muB, sind die Leitungen kurzschiuB- und erd-
+schluBsicher zu veriegen.
+
+60.10.2.3 Für mehrere Hilfsstromkreise darf ein gemeinsamer Riick-
+leiter verwendet werden, sofern sie an demselben AuBen-
+leiter angeschlossen sind. Bei ungeerdeten Hilfsstromkreisen
+ist eine gemeinsame KurzschluBschutzeinrichtung in die-
+sem Rickieiter unter folgenden Bedingungen zulässig
+
+(siehe Abb. 80-1, Beispiel 3):
+
+(1) der Querschnitt des gemeinsamen Riickleiters und
+gegebenenfalls der Nennstrom der zugehdrigen Kurz-
+schluBschutzeinrichtung (F5) ist fir die Summe der
+Stréme bemessen, und
+
+(2) die Querschnitte der übrigen Leiter und die Nenn-
+stréme der zugehorigen KurzschluBschutzeinrichtungen
+(F 2) und (F 4) sind gleich.
+
+60.10.2.4 Ungeerdet betriebene Hilfsstromkreise diirfen auf der
+Sekundirseite von Steuertransformatoren einpolig ab-
+gesichert werden, wenn alle Stromkreise den gleichen
+Querschnitt und die gleiche Nennstromstirke der Kurz-
+schluBschutzeinrichtungen aufweisen.
+
+1} FuBnote auf Seite 7.
+
+10
+
+OVE-EN 1, Teil 4(§ 60)/1983 §60
+
+60.10.2.5 Bei Hilfssiromkreisen, die über Steuertransformatoren ge-
+speist werden, brauchen auf der Sekundérseite des Steuer-
+transformators keine KurzschiuBschutzeinrichtungen ange-
+ordnet zu werden, wenn die KurzschluBschutzeinrichtungen
+auf der Primédrseite den KurzschluBschutz der Sekundir-
+seite gewdhrleisten (siehe Abb.60-2, Beispiel 5 und Bei-
+spiel 8).
+Diese L3sung ist jedoch nur zu emplehlen, wenn sichergestellt ist. daß
+nicht durch den StromstoB beim Einschalten des lesriaufenden Steuer-
+
+transformators Fehisusidsungen der KurzschiuBschutzelinrichtungen be-
+wirkt werden.
+
+11
+
+Tz
+
+¥ IN — *661 39uug( ‘o7 we usqaSelSsny — oms /]
+
+
+===== PAGE 6/7 =====
+OVE-EN 1, Teil 4($ 60)/1983 . §60
+
+Anhang
+
+Hilfsstromkreis gaivanisch mit Hilfsstromkrais galvanisch mit
+Haupistromkreis verbunden Hauptstromkreis verbunden
+2. B. TN-C-8 z. B. TN-C-S
+
+L=l E _ —_ ( _ _ _ J
+*) Der LS-Schalter ist ein- oder zweipolig auszuführen.
+Beispiel 1 Beispiel 2
+Beachte auch: $ 60.4.2, § 60.5.2
+Beispiel 1, 2:
+
+SchutzmaBnahme: Nullung gemiB Teil 1, § 10.1(1)").
+Abb. 60-1. Beispiele für Hilfsstromkreise
+') FuBnote auf Seite 7.
+
+12
+
+UVE-EN 1, Teil 4(§ 60)/1983
+
+Mehrere Hilfsstromkreise galvanisch mit
+Hauptstromkreis verbunden
+z B TNS
+
+*) Nur bei ungeerdetem Hilfsstromkreis unter Beachtung von §00.10.23
+
+Beispiel 3
+Beachte: §00,10,2,3
+
+Beispiel 3:
+Qemeinsame Rickieitung gemäß $ 60.10.2.3.
+SchutzmaBnahme: Nullung gemäß Teil 1, § 10.1(1)%).
+
+Abb. 60-1. Beisplele für Hilfsstromkreise
+
+'} FuBnote auf Seite 7.
+
+13
+
+2% "IN — %661 1ouue( -0z ure uagadalsny — yomg /1
+
+€211
+
+
+===== PAGE 7/7 =====
+OVE-EN 1, Teil 4(§ 60)/1983 §60
+Hiltsstromkreis galvanisch vom Hilfsstromkreis galvanisch vom
+Hauptstromkreis getrennt Hauptstromkreis getrennt
+
+z. B. TN-S z.B. TT
+
+L
+L2
+3
+
+Beachte auch: §60.5.1, § 60.6.1 Beachte: $ 60.561 ég ;%6.2‚ §60.10.2.5,
+
+Beispiel 4:
+SchutzmaBnahme: Nutiung gemäß Teil 1, $ 10.1(1)') im Haupt- und Hilfsstrom-
+kreis.
+
+Beispiel 5:
+Schutzmaßnahme: Hauptstromkreis Schutzerdung gemäß Teil 1, § 9.1,
+
+Abb. 9-1'). .
+Ungeerdeter Hilfsstromkreis mit Funktionsiberwachung gemas $ 60.6.2.
+
+Abb. 60-2. Beispiele für Hilfsstromkreise
+
+1) FuBnote aut Seite 7.
+
+14
+
+ÖVE-EN 1, Teil 4(§ 60)/1982
+
+Hilfsstromkreis galvanisch vom
+Hauptstromkreis getrennt
+z.B. IT
+
+Beispiel 8
+Beachte: § 60.6.2, $ 60.10.25
+
+Beispiel 6:
+SchutzmaBnahme: Schutzleitungssystem gemäß $ 111).
+
+Abb. 60-2, Beispiele fiir Hilisstromkreise
+
+1) FuBnote auf Seite 7.
+
+§60
+
+15
+
++ZIT
+
+¥ IN — #661 JQUug[ ‘07 we udqaSadsny — IMS /|

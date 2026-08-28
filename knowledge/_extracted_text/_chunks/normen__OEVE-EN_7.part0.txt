@@ -1,0 +1,4298 @@
+
+
+===== PAGE 1/43 =====
+
+
+===== PAGE 2/43 =====
+ÖVE
+
+Einle
+§ 1
+§ 2
+§ 3
+§ 4
+§ 5
+§ 6
+§ 7
+
+-EN 7/1991 3
+
+Inhaltsiibersicht
+
+Seite Seite
+UNG - 3 $ 8 Medizinische Einrichtungen auBerhalb von
+Anwendungsbereich . ..... ... ... ... ... 7 Krankenhdausern .......... ... ... ..... 21
+Begriffe .......... ... ... ... 7 $ 9 Plane, Unterlagen und Betriebsanleitungen 22
+Allgemeine Anforderungen . .. ........... 9 § 10 Prifungen ... . ... ... .. 22
+Schutz gegen geféhrliche Kérperstrome ... 13
+Sicherheitsstromversorgung .. ... ... .. .. 15 Anhénge:
+MafBnahmen für Explosions- und Brand-
+schutz, Schutz vor elektrostatischer A1  Beiblattzu OVE-EN7 ... ... ... ... ... 24
+Aufladung ı... 19 A2 Zusammenstellung der Anforderungen an die
+Empfehiungen für MaBnahmen gegen die zulassigen Netzformen, SchutzmaBnahmen
+Beeinflussung von elektromedizinischen und Versorgungsarten ................. 33
+MeBeinrichtungen durch Starkstromaniagen 20 A3 Abbildungen ........ ... ... .. ... . ... .. 34
+Einleitung
+
+Diese Osterreichischen Bestimmungen für die Elektrotechnik wurden vom Lenkungsaqssohuß der Sektion
+Bestimmungen im ÖVE bei der 31. Sitzung am 5. Juni 1991 verabschiedet. Sie ersetzen ÖVE-EN 7/1981.
+
+Der Rechtsstatus dieser Österreichischen Bestimmungen für die Elektrotechnik ist der jeweils geltenden
+Elektrotechnikverordnung zu entnehmen.
+
+Diese Bestimmungen wurden vom FachausschuB EN ,Elektrische Niederspannungsanlagen” in Anlehnung an
+die DIN VDE 0107 ausgearbeitet.
+
+In diesem Heft wird auf folgende Osterreichische Bestimmungen für die Elektrotechnik Bezug gencmmen:
+
+OVE-C 10 Teil 2 Akkumulateren und Akkumulatorenaniagen. Teil 2: Ortsfeste Batterien
+
+OVE-E 5 Teil 1 Betrieb von Starkstromanlagen. Teil 1: Grundsétzliche Bestimmungen
+OVE-EH 1 Errichtung von Starkstromanlagen mit Nennspannungen über 1 kV
+OVE-EN 1 Errichtung von Starkstromanlagen mit Nennspannungen bis ~ 1 000 V und = 1 500 V
+
+OVE-EN 1 Teil 1 Errichtung von Starkstromaniagen mit Nennspannungen bis ~ 1 000 V und = 1 500 V
+Teil 1: Begriffe und Schutz gegen geféhrliche Kérperstréme (SchutzmaBnahmen)
+
+OVE-EN 1 Teil 3 Errichtung von Starkstromanlagen mit Nennspannungen bis ~ 1 000 V und = 1 500 V
+Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und Kabeln
+
+OVE-EN 1 Teil 4 (§ 53) Errichtung von Starkstromaniagen mit Nennspannungenbis ~ 1 000V und = 1 500 V
+Teil 4: Besondere Anlagen. $ 53. Ersatzstromversorgungsanlagen und andere Stromver-
+sorgungsanlagen für den voribergehenden Betrieb
+
+OVE-EN 1 Teil 4 (§ 57) Errichtung von Starkstromaniagen mit Nennspannungen bis ~1 000 V und = 1 500 V
+Teil 4: Besondere Anlagen. $ 57. Elekirische Anlagen für Sicherheitszwecke
+
+OVE-EN 2 Teil1 bis Tell 8 Starkstromanlagen und Sicherheitsstromversorgung in baulichen Anlagen für Men-
+schenansammiungen
+
+OVE-EX 65 Errichtung elektrischer Anlagen in explosionsgefdhrdeten Bereichen
+
+OVE-EX/EN 50 014 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche — Allgemeine Bestimmungen
+OVE-EX/EN 50 015 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche ~ Olkapselung „o“
+OVE-EX/EN 50 016 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche — Uberdruckkapselung „p“
+OVE-EX/EN 50 017 Elektrische Betriebsmittel fiir explosionsgeféhrdete Bereiche — Sandkapselung „q“
+OVE-EX/EN 50 018 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche — Druckfeste Kapselung „d“
+
+
+===== PAGE 3/43 =====
+OVE-EN 7/1991
+
+OVE-EX/EN 50 019 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche — Erhöhte Sicherheit „e“
+OVE-EX/EN 50 020 Elektrische Betriebsmittel für explosionsgefahrdete Bereiche — Eigensicherheit „i”
+OVE-EX/EN 50 028 Elektrische Betriebsmitte! für explosionsgefahrdete Bereiche — Vergußkapselung ,m*
+
+OVE-IM/EN 60 439-1 Niederspannungs-Schaltgeratekombinationen, Anforderungen an typgepriifte und par-
+tiell typgepriifte Kombinationen
+
+OVE-K 41 Energieleitungen mit einer Isolierung aus PVC
+
+OVE-M/EN 60 742 Trenntransformatoren und Sicherheitstransformatoren. Anforderungen
+OVE-MG/IEC 601 Teil 1 Sicherheit elektromedizinischer Geréte. Teil 1: Allgemeine Bestimmungen
+OVE-MG/EN 60 601-1 Medizinische elektrische Gerate. Allgemeine Festlegungen für die Sicherheit
+OVE-SN 50 Fehlerstromschutzschalter
+
+OVE-SN 52 Leitungsschutzschalter bis 63 A Nennstrom, 415 V, 50 Hz
+
+OVE-SN/EN 60 898 Leitungsschutzschalter fur Wechselstrom
+
+OVE-W 7 Teil 3 Isolieröle. Teil 3: Bestimmung des dielektrischen Verlustfaktors, der Dielektrizititszah! und
+des spezifischen Widerstandes von Isolierdlen
+
+OVE-W/IEC 707 Prifverfahren zur Ermittiung der Entflammbarkeit fester Elektroisolierstoffe bei Einwirkung
+von Zundquellen
+
+In diesem Heft wird auf die folgenden ONORMEN Bezug genommen:
+
+ONORM B 3800 Teil 1 Brandverhalten von Baustoffen und Bauteilen. Baustoffe: Anforderungen und
+Prafungen
+
+ONORM B 3800 Teil 3 Brandverhalten von Baustoifen und Bauteilen. Sonderbauteile: Begriffsbestimmungen,
+Anforderungen, Prifungen
+
+ONORM B 3800 Teil 4 Brandverhalten von Baustoffen und Bauteilen. Bauteile: Einreihung in die Brandwider-
+standsklassen
+
+ONORM B 3850 Brandschutztiren
+ONORM B 5211 Organische Fußbodenbeläge; Priifung des elektrischen Widerstandes
+ONORM B 5213 Organische FuBbodenbeldge; Prifung des elektrostatischen Verhaltens; Begehversuch
+
+ONORM B 5220 Anforderungen an Bodenbelage hinsichtlich elektrischer und elektrostatischer
+Eigenschaften
+
+ONORM DIN 4102 Teil 12 Brandverhalten von Baustoffen und Bauteilen; Funktionserhalt von elektrischen ,
+
+Kabelanlagen; Begriffe, Anforderungen und Prüfungen
+ONORM E 6610 Dreipolige Steckdosen mit N- und mit Schutzkentakt; HauptmaBe; 16 A, 220/380 V
+ONORM F 5300 Sicherheitsschuhe; Anforderungen, Prifung und Kennzeichnung
+ONORM H 6020 Liftungstechnische Anlagen in Krankenanstalten
+ONORM K 3010 Gasflaschen, Druckregler und Schlauche für die Medizintechnik
+ONORM M 7610 Normklimate
+ONORM S 1419 Teile 1 bis 4 Textile FuBbodenbeldge, Prüfung des elektrostatischen Verhaltens
+
+In diesem Heft wird auf die folgenden internationalen, regionalen, nationalen bzw. auslandischen Veréffentli-
+chungen Bezug genommen:
+
+AAV Allgemeine Arbeitnehmerschutz-Verordnung — AAV Bundesgesetzblatt vom 7. 4. 1983
+218. Verordnung
+
+AMGSV Aligemeine Maschinen- und Gerate-Sicherheitsverordnung — AMGSV Bundesgesetzblatt
+vom 7. 4. 1983 218. Verordnung
+
+HD 419.1 S1 (IEC Publ. 158-1) Niederspannungsschaltgerate; Schiitze
+
+
+
+===== PAGE 4/43 =====
+ÖVE-EN 7/1991 5
+
+DIN 6280 Teil 2 Hubkolben-Verbrennungsmotoren; Stromerzeugungsaggregate mit Hubkolben-Verbren-
+nungsmotoren; Leistungsausiegung und Leistungsschilder
+
+DIN 41 773 Teil 1 Stromrichter; Halbleiter-Gleichrichtergeräte mit IU-Kennlinie für das Laden von Bleibatte-
+rien; Richtlinien
+
+DIN 41 773 Teil 2 Stromrichter; Halbleiter-Gleichrichtergerate mit !U-Kennlinie für das Laden von Nik-
+kel/Cadmium-Batterien; Anforderungen
+
+DIN 42 801 AnschluBboelzen fir Potentialausgleichsieitungen
+
+DIN 49 462 Mehrpolige Kragensteckvarrichtung mit Schutzkontakt, 16 und 32 A, über 42 bis 750 V;
+Steckdosen, abgedeckt, spritzwassergeschitzt, wasserdicht; HauptmaBe
+
+DIN 51 412 Teil 1 und Teil 2  Prifung von Mineraldl-Erzeugnissen; Bestimmung der elektrischen Leitfahigkeit
+
+DIN 51 953 Prüfung von crganischen Bodenbeldgen; Prifung der Ableitfahigkeit für elektrostatische
+Ladungen für Bodenbeldge in explosionsgefahrdeten Raumen
+
+DIN VDE 0100 Teil 520 Bestimmungen fur das Errichten von Starkstromanlagen mit Nennspannungen bis
+1000 V. Teil 520: Auswahi und Errichtung elektrischer Betriebsmittel; Kabel, Leitungen
+und Stromschienen
+
+DIN VDE 0303 Teil 3 Prüfung von Werkstoffen für die Elektrotechnik; Messung des elektrischen Widerstandes
+von nichtmetallenen Werkstoffen
+
+DIN VDE 0303 Teil 8 VDE-Bestimmungen für elektrische Priifungen von Isolierstoffen; Beurteitung des elektro-
+statischen Verhaitens
+
+DIN VDE 0413 Teil 2 Isolationsiiberwachungsgerite zum Uberwachen von Wechselspannungsnetzen mittels
+unterlagerter Gleichspannung
+
+DIN VDE 0558 Teil 1 Halbleiter-Stromrichter. Allgemeine Anforderungen und netzgefiihrte Stromrichter; Festle-
+gung der Grundanforderungen
+
+DIN VDE 0558 Teil 2 Halbleiter-Stromrichter. Besondere Bestimmungen für seibstgefiihrte Stramrichter
+DIN VDE 0558 Teil 5 Halbleiter-Stromrichter. Unterbrechungsfreie Stromversorgung (USV)
+DIN VDE 0875 Teil 3 Funkentstdrung von elektrischen Betriebsmittein und Anlagen
+
+EN 60 947-2 Niederspannungsschaltgerate; Leistungsschalter
+
+EN 60 947-4-1 Niederspannungsschaltgerate; Elektromechanische Schiitze und Motorstarter
+TRVB A 150 Sicherheitsaufzlge (Aufzlge fur die Feuerwehr)
+
+TRVB E 102 Fluchtweg-Orientierungsbeleuchtung
+
+TRVB F 124 Erste und erweiterte Löschhilfe
+
+TRVB F 128 Steigleitungen und Hydranten
+
+TRVB F 134 Flächen für die Feuerwehr auf Grundstücken
+
+TRVB N 132 Krankenanstalten, Pflege- und Altenwohnheime. Teil 1: Bauliche MaBnahmen
+TRVB N 133 Krankenanstalten, Pflege- und Altenwohnheime. Teil 2: Betriebliche MaBnahmen
+TRVB O 121 Brandschutzplane
+
+TRVB S 123 Brandmeldeanlagen
+
+Bezugsqguelle: Zentralstelle für Brandverhiitung, Siebenbrunnengasse 21, A-1050 Wien.
+
+— Richtlinien für die Vermeidung der Gefahren durch explosionstahige Atmosphare mit Beispielsammlung —
+Explosionsschutz — Richtlinien — (EX-RL)
+(Bezugsquelle: Carl Heymanns Verlag KG, Luxemburger StraBe 449, D-5000 Köln 41)
+
+— Richtlinien fur die Vermeidung von Ziindgefahren infolge elektrostatischer Aufladungen
+(Bezugsquelle: Carl Heymanns Verlag KG, Luxemburger Straße 4439, D-5000 Köln 41}
+
+
+===== PAGE 5/43 =====
+(7)
+
+(8)
+
+ÖVE-EN 7/1991
+
+— Merkblatt Brand- und Explosionsschutz im Gesundheitsdienst
+(Bezugsqueile: Merkblatt M 639, Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege, Pappel-
+allee 35/37, D-2000 Hamburg)
+
+— Richtlinie über brandschutztechnische Anforderungen an Leitungsanlagen
+(Bezugsquelle: Baubehörden einzelner Länder in der BRD)
+
+— Merkblatt über die Berechnung von Brandlasten
+(Bezugsquelle: Form 3319 VdS 12/83; Verband der Sachversicherer e. V., D-5000 Köln 1}
+
+Die Hinweise auf Veröffentlichungen in den Fußnoten beziehen sich, sofern nicht anders angegeben, auf den
+Stand zum Zeitpunkt der Herausgabe dieses Heftes. Zum Zeitpunkt der Anwendung dieses Heftes ist der durch
+Elektrotechnikverordnung oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen.
+
+Bei mittels Elektrotechnikverordnung verbindlich erklärten Österreichischen Bestimmungen für die Elektrotech-
+nik ist zu beachten:
+
+(8.1) Vorworte, Ergänzungen, Erläuterungen (im Kleindruck) und Hinweise auf Fundstellen in anderen, verbindlich
+
+erklärten Österreichischen Bestimmungen für die Elektrotechnik werden auch von der Verbindlicherklarung
+erfaßt.
+
+(8.2) Einleitungen, Rechtsbelehrungen, Anhänge, FuBnoten und Hinweise auf Fundstellen in anderen Texten werden
+
+(9)
+
+von der Verbindlicherklärung nicht erfaßt.
+
+Die in diesem Heft angeführten Österreichischen Bestimmungen für die Elektrotechnik, ÖNORMEN der Elektro-
+technik und sonstige technische Veröffentlichungen können vom ÖVE, Eschenbachgasse 9, A-1010 Wien,
+bezogen werden.
+
+
+===== PAGE 6/43 =====
+ÖVE-EN 7/1991
+
+§1 Anwendungsbereich
+
+1.1 Diese Bestimmungen gelten für das Errichten und
+Prüfen von Starkstromanlagen in
+
+— Krankenhdusern und Ambulatorien der Human- und
+Dentalmedizin sowie anderen baulichen Anlagen mit
+entsprechender Zweckbestimmung,
+
+— medizinisch genutzten Raumen der Human- und
+Qentalmedizin außerhalb von Krankenhausern ge-
+mäß $ 8.1,
+
+— Räumen für Heimdialysen gemäß 8 8.2.
+
+1.2 Die in diesen Bestimmungen genannten Anforde-
+rungen berücksichtigen je nach Art oder Nutzung der
+baulichen Anlagen die mögliche Gefährdung von Per-
+sonen, insbesondere Patienten, durch gefährliche Kör-
+perströme, bei Brand oder Ausfall der allgemeinen
+Stramversargung,.
+
+Die Anforderungen dieser Bestimmungen sind deshalb
+zusätzlich zu den Anforderungen gemäß den techni-
+schen Bestimmungen') 2) ° *) zu erfüllen.
+
+1.3 Diese Bestimmungen gelten nicht für
+
+— Krankenhäuser, die nur für Katastrophenfälle in Be-
+reitschaft gehalten und nicht regelmäßig benützt
+werden, sogenannte Hilfskrankenhäuser und Notla-
+zarette,
+
+— elektromedizinische Geräte und Gerätekombinatio-
+nen sowie für elektromedizinische Einrichtungen ge-
+mäß den technischen Bestimmungen®).
+
+82 Begriffe
+
+2.1 Bauliche Anlagen
+
+2.1.1. Krankenhäuser sind bauliche Anlagen mit Ein-
+richtungen, in denen durch arztiiche und pflegerische
+Hilfeleistung Krankheiten, Leiden oder Korperschaden
+festgestelit, geheilt oder gelindert werden, Geburtshilfe
+geleistet wird und in denen die zu versorgenden Perso-
+nen untergebracht und verpflegt werden.
+
+2.1.2 Ambulatorien sind bauliche Anlagen oder Teile
+baulicher Anlagen, in denen Personen untersucht und
+behandelt, nicht jedoch untergebracht, verpfiegt und
+gepflegt werden.
+
+2.1.3 Pflegeheime und Kuranstalten sind bauliche
+Anlagen, in denen unter drztlicher Aufsicht Personen
+gepfiegt, Krankheiten und Leiden vorwiegend mit phy-
+sikalischer Therapie behandelt werden.
+
+'} Siehe QVE-EN 1.
+
+%) Siehe OVE-EH 1.
+
+2 Siehe OVE-C 40 Teil 2.
+
+*) Siehe ONORM B 3800 Teii 4. .
+
+5) Siehe OVE-MG/IEC 601 Teil 1 bzw, OVE-MG/EN 60 801-1.
+
+In diesen Anlagen ist der Wohn- und Aufenthaltsbereich
+vom Behandlungsbereich getrennt.
+
+2.1.4 Rettungswege (Fluchtwege) sind Verkehrswe-
+ge auf Grundstucken und Bereiche in baulichen Anla-
+gen, die dem sicheren Verlassen, der Rettung von
+Menschen und für Léscharbeiten dienen, wie Treppen-
+raume notwendiger Treppen und deren Verbindungs-
+wege ins Freie, aligemein zugédngliche Fiure, Rampen,
+Ausgénge, Sicherheitsschleusen, Laubengange, Ret-
+tungsbalkone, Rettungstunnel sowie Wege aulBerhalb
+der baulichen Anlagen, die bis zu 6ffentlichen Verkehrs-
+flachen führen.
+
+Zu den Verkehrsflachen auf Grundsticken gehören
+auch die__\ferkehrswege zu Wohnungen und Unterkünf-
+ten von Arzten und Pflegepersonal im Krankenhausbe-
+reich.
+
+2.2 Anwendungsgruppen medizinisch genutzter
+Raume
+
+Medizinisch genutzte Räume sind Raume der Human-
+und Dentalmedizin, die bestimmungsgemäß bei der
+Untersuchung oder Behandiung von Menschen benutzt
+werden. Hierzu zählen auch die hydrotherapeutischen
+und physikalisch-therapeutischen Behandlungsraume
+sowie die Massagerdume. In medizinischen Bereichen
+gehören hierzu nicht z. B. Fiure, Treppenhauser, Sta-
+tionsdienstzimmer, Etagenbader, Toiletten, Naßzellen
+in Bettenrdumen, Tee-Kichen, Aufenthaltsraume, La-
+ger, Abstellrdume, Umkleiderdume.
+
+Medizinisch genutzte Räume werden hinsichtlich der
+zum Schutz gegen Gefahren im Fehlerfall notwendigen
+Maßnahmen in die Anwendungsgruppen geman
+§ 2.2.1 bis $ 2.2.3 eingeteilt.
+
+2.2.1 Räume der Anwendungsgruppe 0 sind medi-
+zinisch genutzte Räume, in denen bei bestimungsge-
+mäßem Gebrauch sichergestellt ist, daß
+
+— elektromedizinische Geräte nicht verwendet werden,
+oder
+
+— elektromedizinische Geräte verwendet werden, die
+zur Anwendung auch außerhalb von medizinisch ge-
+nutzten Räumen gemäß Angaben in den Begleitpa-
+pieren gemäß den technischen Bestimmungen5) ZU-
+gelassen sind, oder
+
+— elektromedizinische Geräte betrieben werden, die
+ausschlieBlich aus in die Geräte eingebauten Strom-
+quellen versorgt werden.
+
+2.2.2 Räume der Anwendungsgruppe 1 sind medi-
+zinisch genutzte Räume, in denen netzabhängige elek-
+tromedizinische Geräte verwendet werden, mit denen
+oder mit deren Anwendungsteilen Patienten bei der
+Untersuchung oder Behandiung bestimmungsgemäß in
+Berührung kommen.
+
+* Siehe OVE-MG/IEC 601 Teil 1 bzw. OVE-MG/EN 60 601-1.
+
+
+===== PAGE 7/43 =====
+Bei Auftreten eines ersten Körperschlusses oder bei
+Ausfall der allgemeinen Stromversorgung kann deren
+Abschaltung hingenommen werden, ohne daß hier-
+durch Patienten gefährdet werden. Untersuchungen
+und Behandlungen von Patienten können abgebrochen
+und wiederholt werden.
+
+2.2.3 Räume der Anwendungsgruppe 2 sind medi-
+zinisch genutzte Räume, in denen netzabhängige elek-
+tromedizinische Geräte betrieben werden, die operati-
+ven und/oder anderen MaBnahmen, die lebensnotwen-
+dig sind, dienen.
+
+Bei Auftreten eines ersten Korperschlusses oder bei
+Ausfall der allgemeinen Stromversorgung mussen die-
+se Gerate weiterbetrieben werden kénnen, weil Unter-
+suchungen oder Behandlungen nicht ohne Gefahr für
+den Patienten abgebrochen und wiederholt werden
+können.
+
+2.3 Raumarten und Ex-Zonen
+
+2.3.1 Aufwachräume sind Räume, in denen die
+Anästhesie des Patienten unter Beobachtung abklingt.
+
+2.3.2 Bettenräume sind Räume, in denen Patienten
+während der Dauer ihres Aufenthaltes in Krankenhäu-
+sern, Sanatorien, Kliniken o. dgl. stationär unterge-
+bracht sind und gegebenenfalls mit elektromedizini-
+schen Geraten untersucht und behandelt werden.
+
+2.3.3 Chirurgische Ambulanzen sind Raume, in de-
+nen unter anderem auch kleine operative Eingriffe am-
+bulant durchgefiihrt werden.
+
+2.3.4 Dialyserdume sind Räume, in denen Patienten
+bestimmungsgemaBs der Blutwasche unterzogen wer-
+den.
+
+2.3.5 Endoskopierdume sind Raume, in denen zur
+Beobachtung von Organen im Kérperinneren Endosko-
+pe durch natirliche oder klnstliche Kérperéffnungen
+des Patienten eingefuhrt und gegebenenfalls kleine
+Eingriffe durchgefuhrt werden.
+
+Zur Endoskopie gehdren z. B. Bronchoskopie, Laryngoskepie, Zystoskopie,
+Gastroskopie, Laparoskopie, Rektoskopie.
+
+2.3.6 Herzkatheterrdume sind Räume, in denen Ka-
+theter in das Herz eingebracht werden.
+
+2.3.7 Intensiv-Uberwachungsrdume  {-Behand-
+lungsrdume) sind Rdume, in denen stationdr behan-
+delte Patienten über langere Zeit an elektromedizini-
+sche Geräte zur Uberwachung, gegebenenfalis auch
+zum Anreiz der Korperaktionen, angeschlossen wer-
+den.
+
+2.3.8 Intensiv-Untersuchungsraume sind Räume,
+in denen Personen an eine oder mehrere elektromedi-
+zinische MeB- oder Uberwachungseinrichtungen ange-
+schlossen werden.
+
+2.3.9 Operations-Gipsraume sind Raume, in denen
+
+OVE-EN 7/1991
+
+Tab. 2-1: Beispiele für die Zuordnung der Raumarten zu den Anwendungs-
+gruppen gemäß § 2.2.1 bis §2.2.3
+
+Art der Raumart bezogen auf
+medizinischen den bestimmungs-
+Nutzung gemäßen Gebrauch
+
+Keine Anwendung Bettenrdume,
+
+elektromedizini- OP-Sterilisations-
+
+scher Geréte oder raume,
+
+Anwendung elektro- | OP-Waschraume,
+
+medizinischer Ge- Praxisrdume der
+
+räte gemäß § 2.2.1. | Human- und Dental-
+medizin.
+
+Anwendung elekiro- | Bettenraume, Rdume
+medizinischer Gerä- | für physikalische The-
+te am oder im Kor- | rapie, Räume für Hy-
+per Uber nattirliche | dro-Therapie, Massa-
+i Körperöffnungen; geräume, Praxisräu-
+
+i oder kleinere opera- | me der Human- und
+tive Eingriffe. Dentalmedizin.
+
+Räume für radiologi-
+sche Diagnostik und
+Therapie, Endoskopie-
+räume.
+
+Dialyseräume, Inten-
+siv-Untersuchungsräu-
+me, Entbindungsräu-
+me, Chirurgische Am-
+bulanzen.
+
+Herzkatheter-Raume
+für Diagnostik.
+
+Untersuchungen
+mit Schwemm-
+katheter
+
+Crganoperationen Operations-Vorberei-
+jeder Art, Einbrin- tungsrdume, Opera-
+gen von Herzkathe- | tionsrdume, Aufwach-
+tern, chirurgisches raume, Operations-
+Einbringen von Ge- | Gipsraume,
+rateteilen, Operatio- | Intensiv-Untersu-
+
+nen jeder Art {au- chungsrdaume, Inten-
+Ber jene gemäß An- | siv-Uberwachungs-
+wendungsgruppe raume.
+
+1), Erhalten der Le-
+bensfunktion mit
+elektromedizini-
+schen Geraten, Ein-
+griffe am offenen
+Herzen.
+
+Räume für radiologi-
+sche Diagnostik und
+Therapie, Endoskopie-
+Räume, Herzkatheter-
+Räume für Therapie
+und Diagnostik, aus-
+genommen diejeni-
+gen, in denen aus-
+schließlich Schwemm-
+katheter angewandt
+werden, klinische Ent-
+bindungsräume, Not-
+fall- bzw. Akutdialyse.
+
+Die Zuordnung von Raumarten (Spalte 3) 2u den Anwendungsgruppen
+bestimmt sich aus der Art ihrer vorgesehenen medizinischen Nutzung (Spaite
+2) und medizinischen Einrichtungen. Aus diesem Grunde kénnen bestimmte
+Raumarten mehreren Anwendungsgruppen zugeordnet sein.
+
+Bei Planung von Starkstromanlagen in Krankenhausern isl der zu erwartende
+bestimmungsgemaBe Gebrauch elektromedizinischar Gerate, z. B. in
+Bellenrdumen, meist nicht vorhersehbar. im Zweilelstall sollte dohaib von der
+Anwendungsgruppe 0 kein Gebrauch gemacht werden
+
+
+
+===== PAGE 8/43 =====
+ÖVE-EN 7/1991
+
+Gipsverbände unter Aufrechterhaltung der Anästhesie
+angelegt werden.
+
+2.3.10 Operationsräume sind Räume, in denen
+chirurgische Eingriffe vorgenommen werden. Dabei
+werden Analgesien (Aufhebung der Schmerzempfind-
+lichkeit) oder Anasthesien (Teil- oder Vollnarkosen) vor-
+genommen, bzw. Uberwachungs- und Wiederbele-
+bungsgerate, Hochfrequenz-Chirurgiegeréte, Réntgen-
+apparate oder andere medizinische Einrichtungen
+eingesetzt.
+
+2.3.11 Operations-Vorbereitungsrdume sind Räu-
+me, in denen Patienten für Operationen vorbereitet wer-
+den, z. B. durch Einleitung der Anasthesie.
+
+2.3.12 Praxisrdume der Human- und Dentalmedi-
+zin sind alle Räume in Arztpraxen zur Untersuchung
+und Behandiung von Menschen.
+
+2.3.13 Räume für Heimdialyse sind Wohnraume, in
+denen Patienten an Dialysegerate angeschlossen wer-
+
+> den durfen.
+
+2.3.14 Räume für Hydrotherapie sind Räume, in
+denen Patienten medizinisch mit Wasser behandelt
+werden.
+
+2.3.15 Räume für physikalische Therapie sind Räu-
+me, in denen Patienten mit Hilfe von Geräten mit elek-
+trischer, mechanischer oder thermischer Energie be-
+handelt werden.
+
+2.3.16 Räume für radiologische Diagnostik und
+Therapie sind Raume, in denen ionisierende Strahlen
+zur Darstellung des Körperinneren und zur Erzielung
+therapeutischer Effekte an der Oberfläche und im Inne-
+ren des Körpers angewandt werden.
+
+2.3.17 Explosionsgefährdete Zonen von medizi-
+nisch genutzten Räumen sind Bereiche, in denen mit
+dem Vorhandensein von Stoffen in gefahrbringender
+Menge gerechnet werden muß, die in Gemischen mit
+z. B. Luft, Sauerstoff oder Lachgas explosionsfähig
+sind. Man unterscheidet im allgemeinen die Zonen G
+und M.
+
+Zone G, auch als „umschlossenes medizinisches Gas-
+System“ bezeichnet, umfaßt nicht unbedingt allseitig
+umschlossene Hohlräume, in denen dauernd oder zeit-
+weise explosionsfähige Gemische (ausgenommen ex-
+plosionsfähige Atmosphäre) in geringen Mengen er-
+zeugt, geführt oder angewandt werden.
+
+Zone M, auch als „medizinische Umgebung“ bezeich-
+net, umfaBt jenen Teil eines Raumes, in dem explo-
+sionsfahige Atmosphare durch Anwendung von Anal-
+gesiemitteln, medizinischen Hautreinigungs- oder Des-
+infektionsmitteln, jedoch nur in geringen Mengen und
+nur fur kurze Zeit, vorkommen kann.
+
+2.3.18 Raumgruppe ist ein Raum mit seinen funk-
+tionsméBig zugehörigen Nebenraumen.
+
+2.4 Elektrotechnik
+
+2.4.1 Sicherheitsstromversorgung (SV)
+
+Die elektrische Anlage der Sicherheitsstromversorgung
+im Sinne dieser Bestimmungen besteht aus den Sicher-
+heitsstromquellen, zugehörigen Schalteinrichtungen,
+Verteilern, Verteilungs- und Verbraucherstromkreisen
+bis zu den AnschiuBklemmen der zu versorgenden Ein-
+richtungen. Sie versorgt bei Stérung der allgemeinen
+Stromversorgung für eine begrenzte Zeit notwendige
+Sicherheitseinrichtungen, medizinisch-technische Ein-
+richtungen und Einrichtungen, die zur Aufrechterhal-
+tung des Krankenhausbetriebes uneriaflich sind.
+
+2.4.2 Zusatzliche Sicherheitsstromversorgung
+(ZSV) im Sinne dieser Bestimmungen ist eine Kombina-
+tion von Betriebsmittein, die bei Ausfall der allgemeinen
+Stromversorgung und der Sicherheitsstromversorgung
+bestimmte medizinisch-technische Einrichtungen fir ei-
+ne begrenzte Zeit mit elektrischer Energie versorgt.
+
+2.4.3 Notwendige Sicherheitseinrichtungen sind
+Einrichtungen, die im Gefahrenfall (insbesondere im
+Brandfall) der Sicherheit der Personen dienen und auf-
+grund allgemein geltender oder im Einzelfall erhobener
+bauordnungsrechtlicher Anforderungen vorzusehen
+sind und einer Sicherheitsstromversorgung bediirfen.
+
+2.4.4 Sicherheitsbeleuchtung ist eine Beleuchtung,
+die bei Störung der aligemeinen Stromversorgung Ret-
+tungswege, medizinisch genutzte Raume und Raume,
+die zur Aufrechterhaltung des Krankenhausbetriebes
+notwendig sind, mit einer vorgeschriebenen Mindestbe-
+leuchtungsstarke ausieuchtet.
+
+2.4.5 Umschaltzeit im Sinne dieser Bestimmungen
+ist die Zeitspanne, die zwischen dem Beginn der Stö-
+rung der aligemeinen Stromversorgung und dem Wirk-
+samwerden der Sicherheitsstromversorgung vergeht.
+
+83 Aligemeine Anforderungen
+
+3.1 Elektrische Betriebsraume
+
+3.1.1 In baulichen Anlagen gemaB diesen Bestim-
+mungen mussen folgende Anlagen in eigenen brandbe-
+stdndigen (F 90 und T 90) abgeschlossenen elektri-
+schen Betriebsrdumen untergebracht werden:
+
+— Transformatoren oder Schaltanlagen mit Nennspan-
+nungen Uber 1 kV,
+
+— ortsfeste Stromerzeugungsaggregate,
+
+— Zentralbatterien der Sicherheitsstromversorgung,
+
+— zentrale Einrichtungen der ZSV.
+
+Diese Anforderungen gelten nicht für eicktrische Betriebsraume in Ireiste-
+henden Gebäuden oder durch Brandschutzwinde abgetrennte Gebaudetei-
+le, wenn diese nur die eleklrischen Betriebsraume enthalten. Für diese
+elektrischen Betriebsraume bestehen technische Bestimmungen') ?) %).
+
+Die Anforderung T 90 gilt nicht fir ins Freie fihrende Türen.
+
+'} Siehe OVE-EN 1,
+% Siehe QVE-EH 1,
+% Siehe OVE-C 10 Teil 2.
+
+
+
+===== PAGE 9/43 =====
+10
+
+3.1.2 Für Transformatoren mit Nennspannungen über
+1 kV sind selbsttatige Schutzeinrichtungen gegen die
+Auswirkungen von Überlastungen sowie von inneren
+und äußeren Fehlern vorzusehen.
+
+3.1.3 Hauptverteiler der allgemeinen Stromversor-
+gung müssen in Räumen untergebracht werden, die
+den Anforderungen für abgeschlossene elektrische Be-
+triebsstätten entsprechen. Diese Räume müssen von
+Räumen mit erhöhter Brandgefahr durch brandbestän-
+dige Wände und Decken (Brandwiderstandsklasse
+F 90) gemäß den technischen Bestimmungen®) von an-
+deren Räumen durch mindestens brandhemmende
+Wände und Decken (Brandwiderstandsklasse F 30)
+gemäß den technischen Bestimmungen®) abgetrennt
+sein. Zugangsttren missen in brandhemmenden Wän-
+den mindestens brandhemmend {Brandwiderstands-
+klasse T 30) gemäß den technischen Bestimmungen’)
+sein und in brandbestiandigen Wanden zusatzlich aus
+nichtbrennbaren Baustoffen (Brennbarkeitsklasse A)
+gemaB den technischen Bestimmungen®) bestehen.
+
+3.1.4 Hauptverteiler der Sicherheitsstromversorgung
+müssen in eigenen Raumen untergebracht werden, die
+den Anforderungen für abgeschiossene elektrische Be-
+triebsstatten entsprechen. Diese Raume missen
+brandbestandige Wénde und Decken (Brandwider-
+standsklasse F 90) gemäß den technischen Bestim-
+mungen®) haben. Zugangstiren missen mindestens
+brandhemmend (Brandwiderstandsklasse T 30) gemäß
+den technischen Bestimmungen’) sein und zusatzlich
+aus nichtbrennbaren Baustoffen (Brennbarkeitsklasse
+A) gemäß den technischen Bestimmungen®) bestehen.
+
+Die Unterbringung der Hauptverteiler der Sicherheits-
+stromversorgung ausgenommen ZSVdarfauch gemein-
+sam mit dem Hauptverteiler der allgemeinen Stromver-
+sorgung in einem Raum mit brandbestandigen Wanden
+und Decken (Brandwiderstandsklasse F 90) gemäß den
+technischen Bestimmungen®) erfolgen, wenn dieser für
+andere Zwecke nicht genutzt wird. Die beiden Haupt-
+verteiter sind voneinander lichtbogensicher gemäß den
+technischen Bestimmungen®) (z. B. Trennwand aus
+Metall oder 20 mm dickem Fasersilikat) zu trennen.
+
+3.2 Verteiler
+
+3.2.1 Verteiler sind außerhalb medizinisch genutzter
+Räume unterzubringen.
+
+3.2.2 Verteiler müssen leicht zugéanglich und gegen
+den Zugritf Unbefugter gesichert sein.
+
+3.2.3 Die Verteiler müssen eine allseitige Verkleidung
+aus Blech oder stoßfestem, flammwidrigem Isolierstoff
+haben').
+
+3.2.4 Die Verteiler sind so auszufihren, daB eine ein-
+
+‘) Siehe ONORM B 3800 Teil 4.
+
+'} Siehe ONORM B 3800 Teil 3 und ONORM 8 3850.
+*) Siehe ONORM B 3800 Teil 1.
+
+) Siehe ÖVE-IM/EN 60 439-1, Abschnitt 7.7
+
+') Siehe OVE-W/IEC 707 Stufe BH1.
+
+OVE-EN 7/1991
+
+fache Messung des Isolationswiderstandes aller Leiter
+gegen Erde jedes einzelnen abgehenden Stromkreises
+möglich ist. Bei Stromkreisen mit Leiterquerschnitten
+unter 10 mm” muB diese Messung ohne Abklemmen
+des Neutralleiters möglich sein, z. B. durch den Einbau
+von Neutralleiter-Trennklemmen oder allpolig trennen-
+de Schalteinrichtungen.
+
+3.2.5 Für medizinisch genutzte Raume der Anwen-
+dungsgruppe 2 sind eigene Verteiler erforderlich. Sie
+dürfen in einem gemeinsamen Gehause mit Verteilern
+für nicht medizinisch genutzte Raume oder für Raume
+anderer Anwendungsgruppen untergebracht werden,
+wenn sie von diesen durch eine Zwischenwand ge-
+trennt und mit einer eigenen Abdeckung versehen sind.
+Trennung und eigene Abdeckung sind nicht erforderlich
+für funktionell dazugehorende, einzelne nicht medizi-
+nisch genutzte Räume oder medizinisch genutzte Räu-
+me der Anwendungsgruppe 0 oder 1 in diesem Bereich,
+wie z. B. Gerateraume, OP-Waschraume, OP-Sterilisa-
+tionsrdume, Aufenthaltsraume, Nachbehandlungsriu-
+me, Toiletten, Flure, Umkleiderdume etc.
+
+3.2.6 Verteiler sind Ubersichtlich aufzubauen, wobei
+darauf zu achten ist, daB die Einrichtungen der allge-
+meinen Stromversorgung, der Sicherheitsstromversor-
+gung und der zuséatzlichen Sicherheitsstromversorgung
+in getrennten Abschnitten aufgebaut werden.
+
+3.3 Stromversorgung von Krankenhidusern, Am-
+bulatorien und anderen baulichen Anlagen mit
+entsprechender Zweckbestimmung
+
+3.3.1 Aligemeine Stromversorgung
+
+In  Starkstromaniagen mit Nennspannungen bis
+- 1000 V dirfen ab dem Hauptverteiler des Gebiudes
+keine PEN-Leiter verwendet werden.
+
+3.3.2 Sicherheitsstromversorgung
+
+In  Starkstromanlagen mit Nennspannungen bis
+~ 1 000 V gelten die Anforderungen gemäß § 4.2 und
+§ 5 zusatzlich zu den Anforderungen gemäß den tech-
+nischen Bestimmungen'').
+
+3.33 Stromversorgung von Raumen der
+Anwendungsgruppe 2
+
+3.3.3.1 Jeder Verteiler oder mindestens der Verteiler-
+abschnitt zur Versorgung der IT-Systeme muB (ber
+zwei Zuleitungen versorgt werden kénnen.
+
+Die erste Leitung muB von jener Schiene des Hauptver-
+teilers des Gebaudes, die der Sicherheitsstromversor-
+gung dient, abzweigen (siehe Abb. A3-1 bis Abb. A3-8).
+
+3.3.3.2 Je nach Art der installierten zusétzlichen
+
+Sicherheitsstromversorgung sind zwei Schaltungsva-
+
+rianten moglich:
+
+(1) ZSV mit nicht unterbrechungsloser Versorgung.
+Die SV-Schiene und die ZSV-Schiene des zu ver-
+
+"'} Siehe OVE-EN 1 Teil 4 (§ 57).
+
+
+
+===== PAGE 10/43 =====
+ÖVE-EN 7/1991
+
+sorgenden Verteilers werden bei ungestörtem Be-
+trieb von der ersten Leitung versorgt. Bei Ausfall
+der Spannung am Ende der ersten Leitung bleibt
+die SV-Schiene spannungslos, während die ZSV-
+Schiene auf die zweite Leitung umgeschaltet wird.
+(2) ZSV für unterbrechungslose Versorgung.
+Bei ungestörtem Betrieb wird die ZSV-Schiene
+von der ZSV-Anspeisung (zweite Leitung) und die
+SV-Schiene von der ersten Leitung versorgt.
+Bei Ausfall der Spannung am Ende der ersten
+Leitung bleibt die SV-Schiene spannungslos, die
+ZSV-Schiene wird von der zweiten Leitung weiter
+aus der ZSV-Anlage versorgt.
+Bei Ausfall der Spannung am Ende der zweiten
+Leitung wird die ZSV-Schiene auf die SV-Schiene
+(auf die erste Leitung) umgeschaltet.
+
+Es wird empfohlen, die jeweils in Reservesteliung befindliche Leitung
+zu Uberwachen.
+
+3.3.3.3 Für jeden Raum oder jede Raumgruppe der
+Anwendungsgruppe 2 ist für Stromkreise, die der Ver-
+sorgung elektromedizinischer Gerate für operative Ein-
+griffe oder MaBnahmen dienen, die lebenswichtig sind,
+mindestens ein eigenes iT-System zu errichten.
+
+3.3.3.4 Für die Dauer der Sicherheitsstromversor-
+gung durfen die iT-Systeme mehrerer Raume oder
+Raumgruppen zu einem gemeinsamen IT-System mit
+Isolationstberwachungseinrichtung zusammenge-
+schaltet werden, wenn dieses bei Ausfall der allgemei-
+nen Stromversorgung aus einer zusatzlichen Sicher-
+heitsstromversorgung versergt wird.
+
+3.3.3.5 Als Transformatoren der [T-Systeme sind Ein-
+phasen-Transformatoren vorzusehen. Sie sind außer-
+halb der medizinisch genutzten Räume unterzubringen
+{(z. B. im OP-Verteiler).
+
+Ist ein IT-System für die Versorgung von Drehstromver-
+brauchern erforderlich, ist hierflr ein getrennter Dreh-
+strom-Transformator vorzusehen.
+
+Mit Rucksicht auf die variable Nutzung bei Steckdosen-Stromkreisen solite
+die Nennleistung der Einphasen-Translormatoren nicht kieiner als 3,15 kVA
+und nicht größer als 8 kVA sein,
+
+3.3.3.6 Es sind Trenntransformatoren gemaB den
+technischen Bestimmungen'?) mit doppelter oder ver-
+starkter Isolierung zu verwenden. Sie mlssen eine sta-
+tische Abschirmung zwischen Primar- und Sekundér-
+wicklung haben. Der AnschiuB muB isoliert herausge-
+führt sein. Für den Isolationswiderstand und die
+Spannungsfestigkeit der Trenntransformatoren gelten
+die Anforderungen gemäß den technischen Bestim-
+mungen'?) für Transformatoren mit verstarkter Isolie-
+rung und der Ausfihrung Schutzklasse il.
+
+Mit Rücksicht auf Stéreinflisse und Ableitstrame sollte der AnschluB für die
+Isolations-Uberwachungseinrichtung symmetrisch sein.
+
+Zusatzlich gilt für die Transformatoren:
+— die Nennspannung auf der Sekundarseite darf
+
+') Siehe OVE-M/EN 60 742,
+
+11
+
+230 V, bei Drehstromtransformatoren auch zwischen
+den Außenleitern, nicht überschreiten,
+
+— die Kurzschlußspannung u« und der Leerlaufstrom i
+dürfen 3% nicht überschreiten,
+
+— der Einschaltstrom im Leerlauf /g darf das Achtfache
+des Nennstromes nicht (iberschreiten.
+
+3.3.3.7 Fur den IT-System-Transformator, seine pri-
+marseitigen Zuleitungenund seine sekundarseitigen Ab-
+leitungen sind Schutzeinrichtungen mit automatischer
+Abschaltung nur zum Schutz bei Kurzschluß zulassig.
+Für den Schutz des Transformators bei Uberlast sind
+Überwachungseinrichiungen vorzusehen, die eine hohe
+Erwärmung, z. B. infolge zu hoher Last, akustisch (quit-
+tierbar) und optisch melden. Die Meldung muß so erfol-
+gen, daß sie vom medizinischen Personal des betroffe-
+
+nen Bereiches wahrgenommen werden kann.
+Dies wird dadurch erreicht, daB die KurzschluB-Schutzeinrichtungen für die
+primér- und sekundarseitigen Leitungen erst beim 1,5fachen Wert des jewei-
+ligen Nennstromes des Trenntranstormators ansprechen
+Die Leitungen sind hinsichtlich ihres Querschnittes auf diesen erhöhten
+Stromwert auszulegen. _
+Es wird empfohlen, den Uberlastschutz des Transformators mit einer vorzö-
+gert ansprechenden Stromuberwachung auszuslatten, um Leistungsénde-
+rungen rasch zu erkennen
+3.3.3.8 Die Einspeisung eines |T-Systems eines Rau-
+mes oder einer Raumgruppe darf Uber einen einzigen
+Trenntransformator erfolgen, wenn ein Ausfall durch
+Fehler im Transformator, dessen Zuleitung vom Vertei-
+ler zu den Eingangsklemmen des Transformators und
+dessen Ableitung zwischen den Ausgangsklemmen
+des Transformators und dem Verteilerabschnitt des IT-
+Systems nicht zu erwarten ist. Dies ist dann der Fall,
+wenn folgende Anforderungen erfüllt sind (siehe Abb.
+
+A3-2 und Abb. A3-3):
+
+(1) Die Kabel oder Leitungen der Transformator-Zu-
+und Ableitung sind kurzschiuB3- und erdschluBsi-
+cher gemäß den technischen Bestimmungen'?)
+verlegt. Sie dürfen keine Schutzeinrichtungen ent-
+halten.
+
+Die selektive Abschaltung der Zuleitung zu den einzelnen OP-Vertei-
+
+lern muB sichergestellt sein.
+(2) Für den Trenntransformator ist zum Schutz bei
+indirektem Berühren eine der folgenden MaBnah-
+men anzuwenden:;
+
+— Schutzisolierung gemäß den technischen Be-
+stimmungen'®),
+
+— Schutz durch nichtleitende Raume (Standort-
+isolierung) gemäß den technischen Bestim-
+mungen'?),
+
+— Schutz durch besondere Aufstellung folgender-
+maßen:
+
+Der Transformator in der Ausführung Schutzktas-
+se | ist isoliert aufgestellt und nicht mit dem
+Schutzleiter verbunden. Der Transformator ist
+vom OP-Verteiler oder anderen Verteilern raum-
+
+%) Siehe OVE-EN 1 Teif 1 bzw, DIN VDE 0100 Teil 520.
+"} Siehe OVE-EN 1 Teil 1
+
+
+
+===== PAGE 11/43 =====
+lich getrennt oder geschottet hinter einer nur mit-
+tels Werkzeug oder besonderem Schlüssel zu 6ff-
+nenden Abdeckung aufgestellt. Der Zugang ist nur
+Fachkräften gemäß den technischen Bestimmun-
+gen'°) vorbehalten.
+
+Auf der Abdeckung und dem Transformator ist gut
+sichtbar und unverlierbar ein Warnhinweis anzu-
+bringen, der auf die mogliche Getfahr einer Fehler-
+spannung an den leitfahigen Teilen des Transfor-
+mators, z. B. bei KdrperschiuB, und die Notwen-
+digkeit einer Spannungsprifung vor Beriihrung
+verweist.
+
+{3) Der OP-Verteiler, der Transtormator und die erfor-
+derlichen Kabel- oder Leitungsverbindungen miis-
+sen sich im gleichen GeschoB und Brandabschnitt
+wie der zugehdrige Raum der Anwendungsgrup-
+pe 2 oder in unmittelbar dariiber- oder darunterlie-
+genden Raumen befinden.
+
+3.3.3.9 Wenn die Anforderungen gemäß $ 3.3.3.8
+nicht erfüllt sind, muß bei Ausfall der Spannung am
+Ende des Transtormatorstromkreises, der das IT-Sy-
+stem bei storungsfreiem Betrieb versorgt, die Stromver-
+sorgung selbsttétig auf den Stromkreis eines zweiten
+Transformators  (siehe Abb. A3-5) oder einer
+zusatzlichen Sicherheitsstromversorgung ohne geerde-
+ten Netzpunkt (siehe Abb. 3-4) umgeschaltet werden.
+
+3.3.3.10 Für die selbsttatige Umschalteinrichtung ge-
+mäß $ 3.3.3.1 und § 3.3.3.9 gelten folgende Anforde-
+rungen:
+
+(1) Zur Spannungslberwachung ist eine allpolige, ei-
+genstandige Uberwachungseinrichtung erforder-
+lich.
+
+(2) Die Schaltgerate der Umschalteinrichtung sind für
+die Nenndaten der IT-System-Transformatoren
+auszulegen. Bei Schitzen gemaB den techni-
+schen Bestimmungen'®) ist für das Nennschaltver-
+mögen die Gebrauchskategorie AC 3 und für den
+KurzschluBischutz die Anforderung ,verschweif3-
+frei® zugrunde zu legen. Halbleiterschitze sind
+nicht zuldssig.
+
+(3) Zur Erhéhung der Verriegelungs- und Umschalt-
+sicherheit sind pro Schaltgeréat jeweils zwei Hilfs-
+kontakte zusammenzuschalten. Mechanisch ver-
+riegelte Schitze oder Umschaltschiitze sind elek-
+trisch verriegelten Schiitzen vorzuziehen.
+
+(4) Die Umschaltung auf die in Reserve stehende
+Leitung (siehe $ 3.3.3.2) ist als Stormeldung hoher
+Prioritat zu melden.
+
+(5) Zur Funktionstberprifung der Umschalteinrich-
+tung ist im Verteiler ein Schalter oder Taster vor-
+zusehen.
+
+(6) Die Rickschaltung auf die bevorzugte Zuleitung
+
+'%) Siehe OVE-E 5 Teil 1,
+') Siehe HD 419.1 S1 bzw. EN 60 947-4-1.
+
+OVE-EN 7/1991
+
+bei Spannungswiederkehr muB zeitverzégert er-
+folgen.
+
+3.4 Verbraucheranlage
+
+3.41 Steckdosenstromkreise im IT-Sy-
+stem von Raumen der Anwen-
+dungsgruppe 2
+
+3.4.11 Stromkreise mit zweipoligen Steckvorrichtun-
+gen mit Schutzkontakt, die den Patientenplatzen zuge-
+ordnet sind, müssen aus dem IT-System versorgt wer-
+den. Für andere Stromkreise mit zweipoligen Steckvor-
+richtungen mit Schutzkontakt wird die Versorgung aus
+dem IT-System empfohlen.
+
+3.4.1.2 Die Steckdosen an jedem Patientenplatz sind
+auf mindestens zwei Stromkreise aufzuteilen. Jeder
+Stromkreis sollte nicht mehr als sechs Steckdosen ent-
+halten.
+
+3.4.1.3 Die Steckdosen im IT-System gemaB
+§ 3.3.3.3 sind eindeutig zu kennzeichnen, wennim glei-
+chen Raum Steckvorrichtungen an Stromkreise ange-
+schlossen sind, die aus anderen Systemen versorgt
+werden. Diese Kennzeichnung kann entfallen, wenn die
+aus dem anderen System versorgten Steckdosen un-
+verwechselbar ausgeführt werden.
+
+3.4.1.4 Für den Schutz von Kabeln und ieitungen
+gegen zu hohe Erwärmung dürfen nur Leitungsschutz-
+schalter gemaB den technischen Bestimmungen'’)
+oder Leistungsschalter gemäß den technischen Be-
+stimmungen'®) verwendet werden, die allpolig schalten.
+Sie müssen kurzschiuB-selektiv gegenuber den vorge-
+schalteten Schutzeinrichtungen wirken.
+
+3.42 Beleuchtungsstromkreise
+
+In Rettungswegen und Raumen der Anwendungsgrup-
+pen 1 und 2 mit mehr als einer Leuchte sind die Leuch-
+ten auf mindestens zwei Stromkreise aufzuteilen. Wenn
+die SchutzmaBnahme Fehlerstrom-Schutzschaltung
+angewandt wird, sind diese den Stromkreisen so zuzu-
+ordnen, daB bei Ansprechen einer Schutzeinrichtung
+nicht alle Beleuchtungsstromkreise eines Raumes oder
+Rettungsweges ausfallen. Die Leuchten in den Ret-
+tungswegen müssen den Stromkreisen abwechselnd
+zugeordnet sein.
+
+3.43 Motorstromkreise
+
+Motoren, die selbsttätig geschaltet, ferngeschaltet oder
+nicht sténdig beaufsichtigt werden, müssen durch Mo-
+torschutzschalter gemäß den technischen Bestimmun-
+gen'®) oder durch gleichwertige Einrichtungen ge-
+schitzt werden,
+
+Nach Ansprechen der Schutzeinrichtungen muB ein
+selbsttdtiges Wiedereinschalten der Motoren verhindert
+sein. Motorschutzschalter oder gleichwertige Einrich-
+tungen sind nicht erforderlich für Kihi-, Gefrier- und
+Klimagerdte mit blockierungssicheren Motoren, wenn
+
+'} Siehe OVE-SN 52 bzw. ÖVE-SN/EN 60 898,
+") Siehe EN 60 947-2.
+™} Siehe EN 60 947-4-1,
+
+
+===== PAGE 12/43 =====
+ÖVE-EN 7/1991
+
+dies auf dem Gerät oder in der Gebrauchsanleitung
+bestätigt ist.
+
+3.4.4 Zuleitung zu Feuerlöscheinrich-
+
+tungen
+
+Die elektrische Anlage von Feuerlöscheinrichtungen
+muß mit einer eigenen Zuleitung direkt vom Hauptver-
+teiler der Sicherheitsstromversorgung gespeist werden.
+Die Zuleitung ist so zu verlegen, daß sie bei auBerer
+Brandeinwirkung für die Dauer von mindestens 90 Mi-
+nuten funktionsfahig bleibt.
+
+3.4.5 Wenn bei einer Stromversorgung eines Raumes
+aus verschiedenen Systemen (Netz, SV, ZSV) eine
+Verwechslungsmdglichkeit besteht, sind Steckdosen,
+gegebenenfalls Schalter oder Betriebsmittel (z. B.
+Leuchten) besondes zu kennzeichnen, um eine eindeu-
+tige Zuordnung fur den Benutzer sicherzustellen.
+
+Bei farblicher Kennzeichnung ist die Farbe „grün“ für Bereiche der Sicher-
+heitsstromversorgung und die Farbe ,gelb" oder „orange“ für Bereiche der
+ZSV vorzuziehen, jedoch kann eine einheitliche andersartige Kennzeichnung
+innerhalb einer Antage. insbesondere bei einer Erweiterung, zweckmäßig
+sein.
+
+§ 4 Schutz gegen gefdhrliche
+Kérperstrome
+
+4.1 Schutz gegen direktes Berühren
+
+41.1 AuBerhalb medizinisch genutzter Raume und in
+Raumen der Anwendungsgruppe 0 sind SchutzmaB-
+nahmen gemaR den technischen Bestimmungen'?) an-
+zuwenden.
+
+4.1.2 In Raumen der Anwendungsgruppen 1 und 2 ist
+bei Anwendung der Schutzkieinspannung und Funk-
+tionskleinspannung der Schutz durch isolierung, Ab-
+deckung oder Umhüllung aktiver Teile geman den tech-
+nischen Bestimmungen') auch bei weniger als 25 V
+Wechselspannung oder 60 V Gleichspannung erforder-
+lich.
+
+4.2 Schutz bei indirektem Berühren auBerhalb
+medizinisch genutzter Rdume und in Räumen
+der Anwendungsgruppe 0
+
+4.2.1 Bei Einspeisung aus dem allgemeinen Netz sind
+fürdie allgemeine Stromversorgung SchutzmaBnahmen
+gemaBdentechnischen Bestimmungen'¥) anzuwenden.
+
+4.2.2 Bei Einspeisung aus der Sicherheitsstromquelle
+sind für die Sicherheitsstromversorgung Schutzmaf-
+nahmen gemäß $ 4.2.2.1 und $ 4.2.2.2 anzuwenden.
+
+4.2.2.1 Folgende SchutzmaBnahmen sind bevorzugt
+anzuwenden:
+
+— Schutz durch Meldung mit !solationsüberwachungs-
+einrichtung im IT-System,
+
+— Schutzisolierung,
+
+— Schutzkleinspannung (SELV),
+
+%} Siehe OVE-EN 1 Teil 1.
+
+13
+
+— Funktionskleinspannung (PELV und FELV),
+— Schutztrennung.
+
+Bei Schutz durch Meldung mit Isolationstiberwachungs-
+einrichtung im IT-System dart auf den zusétzlichen Po-
+tentialausglieich oder die Erflllung der Abschaltbedin-
+gungen bei zwei Kérperschlissen geman den techni-
+schen Bestimmungen®) verzichtet werden.
+
+4.2.2.2 Folgende SchutzmaBnahmen dürfen ange-
+wandt werden:
+
+— Fl-Schutzschaltung gemäß den technischen Bestim-
+mungen'),
+
+— Schutzerdung geman den technischen Bestimmun-
+gen™),
+
+— Nullung gemaB den technischen Bestimmungen™).
+
+Die SchutzmaBnahmen Schutzerdung oder Nullung
+dirfen nur angewandt werden, wenn der rechnerische
+Nachweis erbracht ist, daß bei einem Fehler mit ver-
+nachlassigbarer Impedanz an beliebiger Stelle zwi-
+schen AufBenleiter und einem Schutzleiter oder damit
+verbundenem Karper die der Fehlerstelle vorgeschalte-
+te Schutzeinrichtung innerhalb der festgelegten Zeit
+selbsttatig und selektiv abschaltet.
+
+4.3 Schutz bei indirektem Berühren in Räumen der
+Anwendungsgruppen 1 und 2
+
+Zum Schutz gegen gefihrliche Körperströme dirfen
+nur SchutzmaBnahmen gemäß $ 4.3.1 bis $ 4.3.6 an-
+gewandt werden, wobei die für die Räume der Anwen-
+dungsgruppe 2 geltenden Einschrankungen zu beach-
+ten sind. '
+
+AuBlerdem ist ein zusatzlicher Potentialausgleich ge-
+mäß $ 4.4 erforderlich.
+
+431 Schutzisolierung
+
+Elektrische Betriebsmittel erflllen die Anforderungen
+der Schutzisolierung, wenn sie der Schutzklasse Il ent-
+sprechen oder gleichwertige Isolierungen gemäß den
+technischen Bestimmungen'!) aufweisen.
+
+4.3.2 Schutzkleinspannung (SELV)
+
+Es gelten die Anforderungen gemäß den technischen
+Bestimmungen'®) mit der Abweichung, daB die Nenn-
+spannung der Stromkreise 25 V Wechselspannung oder
+60 V Gleichspannung nicht iberschreiten darf.
+
+4.3.3 Funktionskieinspannung
+und FELV)
+
+(PELV
+
+Es gelten die Anforderungen geman den technischen
+Bestimmungen') mit der Abweichung, daß die Nenn-
+spannung der Stromkreise 25 V Wechselspannung
+oder 60 V Gleichspannung nicht Uberschreiten darf.
+
+Für OP-Leuchten darf die Funktionskleinspannung oh-
+ne sichere Trennung (FELV) nicht angewandt werden.
+
+"} Siehe QVE-EN 1 Teil 1
+) Siehe OVE-EN 1 und OVE-EN 1 Teil 4 {§ 53).
+
+
+===== PAGE 13/43 =====
+14
+
+434 Schutz durch Abschaltung
+
+4.3.4.1 Als Schutzeinrichtungen dürfen nur Fehler-
+strom-Schutzeinrichtungen in stoBstromfester Ausfüh-
+rung gemäß den technischen Bestimmungen®') mit fol-
+genden Nennfehlerstromen verwendet werden:
+
+(1) An< 0,03 A für Stromkreise mit Uberstrom-
+Schutzeinrichtungen bis 63 A, es sei denn, sie
+fallen unter Aufzahlung (2),
+
+(2) Ans< 0,3 A für Stromkreise, die
+
+— Betriebsmittel auBerhalb des Handbereiches
+gemäß den technischen Bestimmungen') ver-
+sorgen, z. B. Deckenbeleuchtung,
+
+— mit Uberstrom-Schutzeinrichtungen über 63 A
+geschützt werden.
+
+4.3.4.2 In TT-Systemen muB der Erdungswiderstand
+R, des Erders, mit dem die Korper der elekirischen
+Betriebsmittel Gber Schutzleiter verbunden sind, folgen-
+den Bedingungen genlgen:
+
+4.3.4.3 Schutz durch Abschaltung mit Fehlerstrom-
+schutzeinrichtungdarfin Räumen der Anwendungsgrup-
+pe 2 nur für folgende Stromkreise angewandt werden:
+
+(1) Stromkreise für Rontgenapparate,
+
+(2) Stromkreise für GroBgerate mit einer Leistung
+über 5 kW,
+
+(3) Stromkreise, auch Steckdosenstromkreise fiir Ge-
+rate, die nicht der unmittelbaren medizinischen
+Anwendung am Patienten dienen,
+
+(4} Stromkreise fir die Raumbeleuchtung,
+
+(5) Stromkreise fur die elektrische AusrUstung von
+Operationstischen, Betten und dgi.
+
+435 Schutz durch Meldung im IT-Sy-
+stem
+
+4.3.5.1 Jedes IT-System gemäß $ 3.3.3.3 ist mit ei-
+nem [solationstiberwachungsgerét gemäß den techni-
+schen Bestimmungen®) auszurlsten, das folgenden
+zusatzlichen Anforderungen entsprechen muß:
+
+(1} der Wechseistrom-Innenwiderstand muß minde-
+stens 100 k{2 betragen,
+
+(2) die MeBspannung darf nicht gréBer als 25 V
+Gleichspannung sein,
+
+{3) der MeBstrom dart auch im Fehlerfall nicht groBer
+als 1 mA sein,
+
+(4) die Anzeige muB spétestens bei Absinken des
+Isolationswiderstandes auf 50 k2 erfolgen.
+
+4.3.5.2 Für jedes IT-System ist an geeigneter, wah-
+rend des Betriebes von medizinisch zustandigem Per-
+
+) Siehe ÖVE-EN 1 Teil 1.
+21y Sighe ÖVE-SN 50.
+) Sighe DIN VDE 0413 Teil 2
+
+OVE-EN 7/1991
+
+sonal standig tiberwachbarer (oder sichtbarer/hérbarer)
+Stelle, eine Meldekombination anzuordnen, die folgen-
+de Einrichtungen enthalt:
+
+(1) eine grine Meldeleuchte als Betriebsanzeige,
+
+(2) eine gelbe Meldeleuchte, die bei Erreichen des
+eingestellten Isolationswiderstandes aufleuchtet.
+Sie darf nicht Idschbar und nicht abschaltbar sein,
+
+(3) eine akustische Meldung, die bei Erreichen des
+eingestellten Isolationswiderstandes ertönt. Sie
+darf löschbar, aber nicht abschaltbar sein,
+
+(4) eine Pruftaste zur Funktionspriifung, bei deren Be-
+tatigung ein Widerstand von 42 kQ zwischen ei-
+nen Auflenleiter und den Schutzleiter geschaltet
+wird.
+
+4.3.5.3 In Raumen der Anwendungsgruppe 2 darf
+beim ersten Fehler keine Abschaltung, sondern nur
+eine Meldung erfolgen, weil Untersuchungen oder Be-
+handlungen nicht ohne Gefahr für Patienten unterbro-
+chenwerden können. Deshalb ist in diesen Raumen die
+SchutzmaBnahme ,Meldung durch Isolationsiiberwa-
+chungseinrichtung im IT-System" mindestens für fol-
+gende Stromkreise anzuwenden:
+
+(1} Stromkreise mit zweipoligen Steckvorrichtungen,
+an die elektromedizinische Einrichtungen ange-
+schlossen werden, die operativen Eingriffen oder
+MaBnahmen dienen, die lebenswichtig sind,
+
+(2) Stromkreise für Operaticnsleuchten und vergleich-
+bare Leuchien, die mit Nennspannungen Uber
+25 V Wechselspannung oder 60 V Gleichspan-
+nung betrieben werden.
+
+436 Schutztrennung
+
+Es ist nur der Anschluß eines Verbrauchsmittels zuläs-
+sig. Im übrigen gelten die Anforderungen gemäß den
+technischen Bestimmungen').
+
+4.4 Zusatzlicher Potentialausgleich in Räumen der
+Anwendungsgruppen 1 und 2
+
+4.41 Zum Ausgleich von Potentialunterschieden zwi-
+schen den Kérpern der elektrischen Betriebsmittel und
+fest eingebauten fremden leitfahigen Teilen ist ein zu-
+satzlicher Potentialausgleich zu errichten.
+
+4.4.2 In jedem Verteiler oder in dessen Nähe ist eine
+Potentialausgleichs-Sammelschiene anzubringen, an
+die die Potentialausgleichsleiter {ibersichtlich und ein-
+zeln 16sbar anzuschlieBen sind.
+
+4.4.3 Folgende Teile sind mittels Potentialausgleichs-
+leiter mit der Potentialausgleichs-Sammelschiene zu
+verbinden:
+
+(1) die Schutzleiter-Sammelschiene,
+(2) leitfahige Teile, die
+
+— sich bei Behandiung oder Untersuchung des
+
+**) Siehe OVE-EN 1 Teil 1.
+
+
+===== PAGE 14/43 =====
+OVE-EN 7/1991
+
+Patienten mit netzabhéngigen, elektromedizini-
+schen Geraten in einem Bereich von 1,25 m um
+die Patientenposition befinden
+
+und deren
+
+— Widerstand gemessen zum Schutzleiter in Räu-
+men der
+Anwendungsgruppe 1 Kleiner als 7 kQ,
+Anwendungsgruppe 2 kleiner als 2,5 MQ ist,
+
+und
+
+— mit dem Schutzleiter nicht in Verbindung ste-
+hen,
+
+(8) Abschirmung gegen elektrische Stérfelder,
+
+(4) Ableitnetze elektrostatisch leitfähiger FuBbdden,
+(5) ortsfeste nicht elektrisch betriebene Operations-
+tische, die nicht mit dem Schutzleiter verbunden
+sind,
+Ortsveranderliche Operationstische siehe § 4.4.4(1).
+
+(6) Operationsleuchten bei Anwendung der Funk-
+tionskleinspannung mit sicherer elektrischer Tren-
+nung (PELV).
+
+Elektrisch leitende Fensterkonstruktionen, die mit der Blitzschutzan-
+lage verbunden sind, miissen nicht an den zusétzlichen Potentialaus-
+gleich angeschlossen werden.
+
+4.4.4 In Raumen, in denen intrakardiale Eingriffe vor-
+genommen werden, sind folgende MafBnahmen erfor-
+derlich:
+
+(1) !In der Nahe der Patientenposition sind AnschluB-
+bolzen für Potentialausgleichsleitungen geman
+den technischen Bestimmungen®) anzubringen,
+Uber die ortsveranderliche elektromedizinische
+Geräte bei intrakardialen Eingriffen und ortsveran-
+derliche Operationstische bei Anwendung der HF-
+Chirurgie in den Potentialausgleich einbezogen
+werden kénnen.
+
+(2) Innerhalb eines Bereiches von 1,25 m um die
+Patientenposition darf in Räumen, in denen Un-
+tersuchungen oder Behandlungen im Herz oder
+am freigelegten Herz vorgenommen werden, die
+Spannung im fehlerfreien Betrieb der elektri-
+schen Anlage zwischen fremden leitfahigen Tei-
+len, Schutzkontakten von Steckdosen und Kor-
+pern festangeschlossener elektrischer Betriebs-
+mittel 10 mV nicht Uberschreiten.
+
+Diese Anforderung ist in der Regel in Anlagen ohne PEN-Leiter
+gemas § 3.3.1 erfüllt.
+
+4.4.5 Die Installation von AnschiuBbolzen für Poten-
+tialausgleichsleitungen wird in allen Raumen der An-
+wendungsgruppe 1 und 2 empfohlen (z. B. fir den
+Einsatz von Geraten mit erhdhtem Ableitstrom).
+
+4.4.6 Zwischen den Potentialausgleichs-Sammel-
+schienen von Räumen oder Raumgruppen mit funk-
+tionsméBig gemeinsamen MeB- oder Uberwachungs-
+
+2 Siehe DIN 42 801.
+
+15
+
+einrichtungen (z. B. für Kérperfunktionen oder Kérper-
+aktionsspannungen) sind Potentialausgleichsleiter zu
+verlegen.
+
+4.5 Schutzleiter und Potentialausgleichsleiter
+
+4.5.1 Die Auswahl und Bemessung der Leiter erfolgt
+geman den technischen Bestimmungen?®?).
+
+4.5.2 Potentialausgleichsleiter müssen isoliert und
+griin-gelb gekennzeichnet sein. Dies gilt nicht für den
+Potentialausgleichsleiter zum AnschluB elektrisch lei-
+tender TUrzargen.
+
+4.5.3 Für jeden Stromkreis ist ein eigener Schutzleiter
+notwendig.
+
+§ 5 Sicherheitsstromversorgung
+
+In Krankenhdusern, Ambulatorien und anderen bauli-
+chen Anlagen mit entsprechender Zweckbestimmung
+ist eine Sicherheitsstromversorgung erforderlich, die
+bei Stérung der allgemeinen Stromversorgung die Ein-
+richtungen gemäß 8 5.1 und 8 5.2 nach einer zuldssi-
+gen Umschalizeit Gber eine bestimmte Zeit mit elektri-
+scher Energie versorgt.
+
+Dartiberhinaus kann es notwendig sein, bestimmte An-
+lagen und Geréate durch eine Sicherheitsstromversor-
+gung weiter zu betreiben, wenn bei Ausfall der allgemei-
+nen Stromversorgung eine Gefahrdung auftritt oder die
+Aufrechterhaltung des Krankenhausbetriebes nicht si-
+chergestellt ist.
+
+5.1 Sicherheitsstromversorgung mit einer Um-
+schaltzeit biszu 15 s
+
+Die Einrichtungen gemäß $ 5.1.1 bis § 5.1.3(2) müssen
+innerhalb von 15 s aus mindestens einer Ersatzstrom-
+quelte für die Dauer von mindestens 24 h weiterbetrie-
+ben werden kdnnen, wenn die Spannung eines oder
+mehrerer AuBenleiter am Hauptverteiler des Gebaudes
+Ober einen Zeitraum von mehr als 0,5 s um mehr als
+10% abgesunken ist.
+
+511 Sicherheitsbeleuchtung für
+
+(1) Rettungswege, wobei die Mindestbeleuchtungs-
+stärke auf der Mittellinie in 0,2 m Héhe über dem
+FuBboden oder Uber Treppenstufen 1 Ix betragen
+muhB,
+
+(2) Beleuchtung von Rettungszeichen und Rettungs-
+zeichenleuchten,
+
+(3) Raume für Schaltanlagen mit Nennspannungen
+Gber 1 kV, für Ersatzstromaggregate und fiir
+Hauptverteiler der allgemeinen Stromversorgung
+und der Sicherheitsstromversorgung, wobei die
+Mindestbeleuchtungsstarke 10% der Nennbe-
+leuchtungsstidrke, jedoch mindestens 15 Ix in
+0,2 m Héhe über dem FuBboden betragen muß.
+
+(4) Arbeitsraume über 50 m® Flache, z. B. Werkstat-
+
+*1 Sighe OVE-EN 1 Teil t und Teil 3.
+
+
+===== PAGE 15/43 =====
+16
+
+ten, Küchen, Wäschereien, Laboratorien, wobei
+die Mindestbeleuchtungsstärke in 0,2 m Höhe
+über dem Fußboden 1 Ix betragen muß,
+
+(5) Räume der Anwendungsgruppe 1, wobei in jedem
+Raum mindestens eine Leuchte sowie vorhande-
+ne Untersuchungsleuchten aus der Sicherheits-
+stromversorgung weiterbetrieben werden müs-
+sen,
+
+(6) Räume der Anwendungsgruppe 2, wobei die ge-
+samte Raumbeleuchtung aus der Sicherheits-
+stromversorgung weiterbetrieben werden muß,
+
+(7) Räume, die zur Aufrechterhaltung des Kranken-
+hausbetriebes notwendig sind, wobei in jedem
+Raum mindestens eine Leuchte aus der Sicher-
+heitsstromversorgung weiterbetrieben werden
+muß.
+
+5.1.2 Weitere notwendige Sicherheits-
+einrichtungen
+
+(1) Feuerwehraufzüge und notwendige Bettenauf-
+züge (mit Evakuierungsschaltung),
+
+(2) notwendige Lüftungsanlagen zur Entrauchung
+und für Sicherheitsstromquelien und deren Be-
+triebsräume,
+
+(3) Anlagen der Personenruftechnik und Telefonanla-
+gen,
+
+(4) Aiarm- und Warnanlagen,
+
+(5) Feuerlöscheinrichtungen.
+
+5.1.3 Medizinisch-technische Einrich-
+
+tungen
+
+(1} Notwendige medizinische Geräte,
+
+(2) Elektrische Einrichtungen der medizinischen Gas-
+versargung einschlieBlich Drucklutt, Vakuumver-
+sorgung und Narkosegasabsaugung sowie deren
+Überwachungseinrichtungen,
+
+(3) Verbrauchsgeräte in Räumen der Anwendungs-
+gruppe 2.
+
+5.2 Sicherheitsstromversorgung mit einer Um-
+schaltzeit von mehrals 15 s
+
+Nach gesichertem Betrieb der Einrichtungen gemäß
+§ 5.1 muB die Stromversorgung für weitere zur Auf-
+rechterhaltung des Krankenhausbetriebes unerläßliche
+Einrichtungen von der Sicherheitsstromquelie über-
+nommen werden. Die jeweilige Umschaitzeit richtet sich
+nach den betrieblichen Notwendigkeiten. Zu diesen
+Einrichtungen gehéren z. B.:
+
+(1} Sterilisationseinrichtungen,
+
+(2) Haustechnische Anlagen, insbesondere Hei-
+zungs-, Luftungs- (ohne Kaltemaschinen), Versor-
+gungs- und Entsorgungsanlagen,
+
+(3} Kuhlanlagen,
+
+(4) Kocheinrichtungen,
+
+(5) Ladeeinrichtungen für Akkumulatoren, z. B. von
+zusatzlichen Sicherheitsstromversorgungen,
+
+OVE-EN 7/1991
+
+(6) Sonstige Aufziige.
+
+Bei ausreichender Versorgung durfen auch wei-
+tere Verbraucher zugeschaltet werden.
+
+5.3 Zusétziiche Sicherheitsstromversorgung
+(ZSV)
+
+5.3.1 Zuséatzliche Sicherheitssiromver-
+sorgung mit einer Umschaltzeit
+bis 15 s
+
+Elektromedizinische Gerate in Raumen der Anwen-
+dungsgruppe 2, die operativen Eingriffen oder MaBnah-
+men dienen, die lebenswichtig sind, müssen zusatzlich
+innerhalb von 15 s nach Ausfall der Spannung am Ver-
+teiler des IT-Systemes selbsttatig aus einer zusétzli-
+chen Sicherheitsstromversorgung (ZSV) fur die Dauer
+von mindestens drei Stunden versorgt werden kénnen.
+
+Sie darf jedoch für mindestens eine Stunde bemessen
+sein, wenn eine weitere unabhangige Sicherheitsstrom-
+quelie die Mindestbetriebsdauer von drei Stunden si-
+cherstellt.
+
+Für die selbsttatige Umschalteinrichtung gilt $ 3.3.3.10.
+Jede Umschaltung ist im medizinisch genutzten Raum
+optisch und akustisch (quittierbar) zu melden.
+
+Bei Erweiterung, Anderung oder Umbau eleklrischer Aniagen der Anwen-
+dungsgruppe 2 kann es aus lechnischen und wirtschaftlichen Gründen emp-
+fehlenswert sein, die elektiromedizinischen Gerate bei Ausfall der Netzspan-
+nung an der IT-Schiene aus einer zugeordneten zusétzlichen Sicherheits-
+stromversorgung (ZSV) zu versorgen.
+
+Für Frohgeborenen-Stationen und akut gefahrdete Patienten kann es erfor-
+derlich sein, auBer den OP-Leuchten auch andere Gerate, z. B. Beatmungs-
+und Uberwachungsgerate, bei Ausfall der Netzspannung innerhalb von 0,5 s
+oder kirzer, weiter zu versorgen.
+
+Die Sicherheitsstromversorgung geman § 5.1 oder § 5.2 ist nicht als weitere
+unabhangige Sicherheitsstromquelle anzusehen. Es ist vielmehr an eine
+geratebezogene Sicherheitssiromversorgung gedacht.
+
+5.3.2 Zusatzliche Sicherheitsstromver-
+sorgung mit einer Umschaltzeit
+bis 0,5 s
+
+OperationsleuchtenundvergleichbarelLeuchtenmissen
+zusétzlich zur Sicherheitsstromversorgung gemäß $ 5.1
+aus einer Sicherheitsstromversorgung mit einer Um-
+schaltzeit bis 0,5 s selbsttatig weiterbetrieben werden
+kénnen, wenndie SpannungamEingangdes OP-Lichtes
+mehr als 10% der Nennspannung sinkt. Die Sicherheits-
+stromquelle muB fir eine Versorgung von drei Stunden
+bemessensein. Siedarfjedoch flirmindestens eine Stun-
+de bemessen werden, wenn eine weitere unabhéangige
+Sicherheitsstromquelle die Mindestbetriebsdauer der
+Operationsleuchte vondrei Stundensicherstelit.
+
+Für die selbsttatige Umschalteinrichtung gilt § 3.3.3.10.
+Jede Umschaltung ist im medizinisch genutzten Raum
+optisch und akustisch (quittierbar) zu melden.
+
+Als vergleichbare Leuchten gelten auch die allgemeinen Raumleuchten oder
+Teile solcher, wenn sie die Funktion einer OP- oder Untersuchungsleuchte
+ersetzen (z. B. in Herzkatheterraumen, Entbindungsrdumen).
+
+Auf die Errichtung einer zusatzlichen Sicherheitsstrom-
+versorgung gemäß § 5.3.1 kann verzichtet werden,
+wenn die zuséatzliche Sicherheitsstromversorgung den
+
+
+
+===== PAGE 16/43 =====
+ÖVE-EN 7/1991
+
+Anforderungen gemäß $ 5.3.2 entspricht und die Gerä-
+te gemäß $ 5.3.1 aus dieser zusätzlichen Sicherheits-
+stromversorgung mitversorgt werden können.
+
+5.3.3 Bei ausreichender Versorgungsleistung der
+ZSV-Anlage dürfen auch andere elektromedizinische
+Geräte (z. B. Dialysegeräte) und wichtige Laborgeräte
+(z. B. Blutgasanalysatoren) angeschlossen werden,
+wenn dadurch die Versorgungssicherheit der Gesamt-
+anlage nicht beeintrachtigt wird. Ein gesonderter Selek-
+tivitatsnachweis ist für diesen Anlagenteil zu erbringen.
+
+Um zu verhindern, daß Gerate allgemeiner Art an die ZSV-Anlage ange-
+schlossen werden und dadurch die Versorgungssichetheit verringert wird,
+sind diese für die ZSV-Versorgung bestimmten Geréte entweder lest oder
+mittels Sondersteckvorsichtungen anzuschlieBen oder in eigenen Raumen
+(z. B. Dialyse) zu betreiben.
+
+5.4 Allgemeine Anforderungen an Sicherheits-
+
+stromquellen
+
+5.4.1 Für Stromquellen der Sicherheitsstromversor-
+gung bestehen technische Bestimmungen'?).
+
+- 95.4.2 Eine Sicherheitsstromquelle muB die Versor-
+gung selbsttatig Ubernehmen, wenn die Spannung am
+Gebaudehauptverteiler an einem oder mehreren AuB-
+enleitern mehr als 10% der Nennspannung abgesun-
+ken ist. Die Ubernahme der Versorgung muß mit Rück-
+sicht auf Kurzzeitunterbrechung bei Beriicksichtigung
+der zuldssigen Umschaltzeit verzégert erfolgen.
+
+NachWiederkehrderallgemeinenStromversorgungmuf
+eineverzdgerte, automatische Ruckstellungerfolgen.
+
+5.4.3 Sicherheitsstromqguellen sind so zu bemessen,
+daB sie 80% ihrer Nennleistung sofort nach Umschal-
+tung und 100% innerhalb von 5 s übernehmen kdnnen.
+Spatestens 4 s nach Zuschaltung auf 80% der Nennlei-
+stung oder nach Lastwechsel von 0% auf 80% darf die
+Spannung nicht mehr als + 10% von der Nennspan-
+nung und die Frequenz nicht mehr als 5 Hz von der
+Nennfrequenz abweichen.
+
+5.4.4 Im statischen Betrieb darf die Abweichung von
+der Nennspannung an den Ausgangsklemmen der Si-
+cherheitsstromquelle nicht mehr als + 1% und von der
+Nennfrequenz nicht mehr als 1 Hz betragen.
+
+5.4.5 Der Oberschwingungsanteil an den Ausgangs-
+klemmen der Sicherheitsstromquelie darf unter Nenn-
+bedingungen, bei Verbrauchern mit linearem Strom-
+Spannungsverhaitnis, bis zur Nennleistung nicht mehr
+als 5% betragen. Dies gilt sowoh! für die verkettete
+Spannung als auch fur die Strangspannung.
+
+5.4.6 Für die Funkentstérung wird Grad N gemäß den
+technischen Bestimmungen®) gefordert.
+
+5.4.7 Die Verbindungsieitungen zwischen einzelnen
+Bauteilen oder Baugruppen der Sicherheitsstromguel-
+len missen kurzschluB- und erdschluBsicher gemäß
+den technischen Bestimmungen'?®) ausgefihrt sein.
+
+"'y Siehe QVE-EN 1 Teil 4 (§ 57).
+"} Siehe OVE-EN 1 Teil 1 bzw. VDE 0100 Teil 520
+%) Siehe DIN VDE 0875 Teil 3.
+
+17
+
+5.4.8 Eine Sicherheitsstromquelle mit dreiphasigem
+Ausgang muß bei einer Schieflast von 100% Phasen-
+strom die Versorgung der ihr zugeordneten Verbrau-
+cher der Sicherheitsstromversorgung sicherstellen.
+
+5.4.9 Eine Sicherheitsstromquelle muß mit 10% der
+Nennleistung für die Dauer einer Stunde (berlastbar
+sein. Die Uberlast muB nach zwölf Stunden wiederholt
+werden konnen.
+
+5.4.10 Der Nennstrom der Sicherheitsstromquelle
+muB mindestens zehnmal so groB wie die Summe der
+Leerlaufstromealler TransformatorenimT-Systemsein.
+
+5.4.11 Die Betatigungseinrichtungen der Sicherheits-
+stromquelle missen mindestens folgende Betriebszu-
+stände ermaglichen:
+
+— Automatischer Betrieb,
+
+— Probebetrieb zur Uberpriifung aller automatisch ab-
+laufenden Vorgänge; bei einem Netzausfall wahrend
+der Probe muB die Lastibernahme in jedem Fall
+selbsttatig stattfinden,
+
+— Handbetatigung für
+
+„Start“
+
+„Stop“
+
+„Sicherheitsstromauelle Ein/Aus“
+„Netz Ein/Aus“
+
+— Sperrung jeglichen Betriebes, z. B. bei Wartungsar-
+beiten,
+— Not-Aus.
+
+5.4.12 Sicherheitsstromquellen müssen folgende
+MeB- und Uberwachungseinrichtungen haben:
+
+— Spannungs- und Strommesser in jedem Außenteiter,
+
+— Frequenzmesser bei Sicherheitsstromquellen mit
+Wechsel- bzw. Drehstromausgang,
+
+— Batterieladekreisliberwachung.
+
+Folgende Betriebszustande sind optisch anzuzeigen:
+
+|
+
+Netz-Betrieb,
+Sicherheitsstromquellen-Betrieb,
+Stérung der Sicherheitsstromquelie,
+Probebetrieb.
+
+Die Weiterleitung dieser Meldungen muB méglich sein.
+Die Meldung ,Stérung der Sicherheitsstromquelle* muß
+auBerdem an geeigneter Stelle optisch und akustisch
+erfolgen. Die akustische Meldung muß Iéschbar sein. Die
+Funktionsfahigkeit von Meldelampen muB priifbar sein.
+
+5.5 Zusatzliche Anforderungen an Stromerzeu-
+gungsaggregaten mit Hubkolben-Verbren-
+nungsmotoren als Sicherheitsstromquelle
+
+5.5.1 Soweit in diesen Bestimmungen keine anderen
+Anforderungen enthalten sind, gelten fir die Ausfüh-
+rung und Errichtung der Aggregate die Anforderungen
+gemäß den technischen Bestimmungen?®).
+
+%) Sieha ÖVE-EN 1 Teil 4 (& 53) und OVE-EN 2.
+
+
+===== PAGE 17/43 =====
+18
+
+Es sind luftgekühlte Kraftmaschinen oder wassergekühl-
+te Kraftmaschinen mit Luftrückkühlung zu verwenden.
+
+Bei Blockheizkraftwerken muß ein Notkühler und eine
+Kraftmaschine mit der vollen Leistung als Reserve vor-
+handen sein.
+
+5.5.2 Die Ladeeinrichtung für die Starteinrichtung ist
+S0 zu bemessen, daß der entladene Energiespeicher
+(Batterie oder Druckbehälter) in maximal sechs Stun-
+den wieder so geladen wird, daß damit bestimmungs-
+geman gestartet werden kann.
+
+5.5.3 Aufdem Leistungsschild des Stromerzeugungs-
+aggregates gemäß den technischen Bestimmungen®’)
+ist zusatzlich die Differenz zwischen Nennleistung und
+der Leistung aller elektrisch angetriebenen Hilfseinrich-
+tungen anzugeben.
+
+5.5.4 Die Liftungsjalousien müssen auch von Hand
+betatigt werden kénnen.
+
+5.5.5 Für die Sicherheitsstromversorgung ist ein Wirk-
+leistungsmesser vorzusehen, der sowohl die Leistung
+bei Versorgung aus dem Netz als auch aus der Sicher-
+heitsstromquelle anzeigt.
+
+5.6 Zusatzliche Anforderungen an batteriegestiitz-
+ten Anlagen mit oder ohne Umrichter als Si-
+cherheitsstromquelle
+
+5.6.1 Fur die Aufstellung, Prifung und Wartung der
+Akkumulatoren bestehen technische Bestimmungen®).
+
+Für die Ladeeinrichtung bestehen technische Bestim-
+mungen®) 28) 29,
+
+Für Stromrichter/Umrichter bestehen technische Be-
+stimmungen®®).
+
+5.6.2 Eine batteriegestitzte Aniage muB aus dem Er-
+haltungsiadebetrieb mindestens für die Dauer von drei
+Stunden mit Nennleistung, bei Wechsel- bzw. Dreh-
+strom mit Nennleistung bei cos ¢ = 0,8 ind., betrieben
+werden konnen. Sie darf für die Dauer von einer Stunde
+bemessen sein, wenn eine weitere unabhingige Si-
+cherheitsstromquelle die Mindestdauer von drei Stun-
+den sicherstellt. Die Batterie muß nach einer Ladedauer
+von maximal sechs Stunden wieder die gleiche Entnah-
+me ermdglichen. Diese Bedingungen gelten bei einer
+Umgebungstemperatur von +20 °C.
+
+Die Sicherheitsstromversorgung gemäß § 5.1 oder § 5.2 ist nicht als weitere
+unabhangige Sicherheitsstromquelie anzusehen. Es ist hier vielmehr an eine
+geratebezogene Sicherheitsstromversorgung gedacht.
+
+5.6.3 Es dürfen nur ortsfeste Nickel-Cadmium-Akku-
+mulatoren oder ortsfeste Bleiakkumulatoren verwendet
+werden. Werden andere als die gemaB den techni-
+schen Bestimmungen®) (Tab. A1-1) verwendet (z. B. im
+Normungsverfahren stehende Typen), missen diese
+
+%) Siehe OVE-C 10 Teil 2.
+
+1y Siehe DIN 8280 Teil 2.
+
+) Siehe DIN VDE 0558 Teil 1 und Teil 5.
+#) Sighe DIN 41 773 Teil 1 und Teil 2.
+
+*) Sighe DIN VDE 0558 Teit 2.
+
+OVE-EN 7/1991
+
+hinsichtlich ihrer Betriebseigenschaften (Haltbarkeit,
+Eignung für Erhaltungs- und Schnelladung etc.) minde-
+stens den geeigneten Bauarten gemäß den techni-
+schen Bestimmungen®) (Tab. A1-1) entsprechen. KFZ-
+Starterbatterien sind nicht zulassig.
+
+5.6.4 Der einwandfreie Ladezustand der Akkumulato-
+ren muB durch selbsttatiges Laden und Erhaltungsla-
+den sichergestellt sein.
+
+5.6.5 Der Spannungsabfall auf der Lade-/Entladelei-
+tung, zwischen Batterie und Stromrichter/Umrichter,
+darf bei Nennstrom 1% der Nennspannung nicht über-
+schreiten.
+
+5.6.6 Eine Meldung des ZSV-Notbetriebes muB so
+erfolgen, daß sie vom medizinischen Personal des be-
+troffenen Bereiches wahrgenommen werden kann.
+
+5.7 Zusatzliche Anforderungen an die Stromver-
+sorgung von OP-Leuchten
+
+Bei OP-Leuchten oder vergleichbaren Leuchten muB
+die Spannung um + 5% der Nennspannung in Schritten
+von < 2% der Nennspannung angepaft werden kon-
+nen, um anlagebedingte Spannungsabfélle auszuglei-
+chen. Bei Leistungsanderungen von 100% der Nennlei-
+stung mussen die Grenzwerte der Abweichungen von
+der Nennausgangsspannung nach 0,5 s wieder einge-
+halten werden.
+
+5.8 Besondere Anforderungen an das Leitungs-
+netz der Sicherheitsstromversorgung
+
+5.8.1 Kabel oder Leitungen zwischen Sicherheits-
+stromquelle und der zugehdérigen ersten Uberstrom-
+Schutzeinrichtung sowie zwischen Batterie und Ladege-
+ratmissenkurzschluB- und erdschluBsicher gemäß den
+technischen Bestimmungen') verlegt sein. Sie dürfen
+sich nichtinder Nahe brennbarer Materialien befinden.
+
+5.8.2 Für die Versorgung der Verbraucher der not-
+wendigen Sicherheitseinrichtungen ist ein eigenes Ver-
+teilungs- und Verbrauchernetz getrennt vom Netz der
+Verbraucher der aligemeinen Stromversorgung ab der
+Netzumschaltung erforderlich.
+
+5.8.3 Soll eine Sicherheitsstromquelle über die not-
+wendigen Sicherheitseinrichtungen hinaus alle Ver-
+braucher eines Gebäudes versorgen (Vollversorgung),
+so sind ab der Netzumschaitung bis zum Hauptverteiler
+des Gebdudes zwei unabhéngige Einspeisungen erfor-
+derlich. Ab dem Hauptverteiler ist ein eigenes Vertei-
+lungs- und Verbrauchernetz fur die notwendigen Si-
+cherheitseinrichtungen erforderlich.
+
+5.8.4 Bei Stromversorgung mehrerer Gebaude von
+einer zentralen Stelle aus gelten fur die Zuleitungen zu
+den einzelnen Gebauden die Anforderungen gemäß
+$ 5.8.4.1 bis $ 5.8.4.4 (Abb. A3-7).
+
+¥ Siehe OVE-C 10 Teil 2.
+%) Siehe OVE-EN 1 Teil 1 bzw. DIN VDE 0100 Teil 520.
+
+©
+
+
+===== PAGE 18/43 =====
+ÖVE-EN 7/1991
+
+5.8.4.1 Einrichtungen, die bei Absinken der Spannung
+der allgemeinen Stromversorgung um mehr als 10% das
+Inbetriebsetzen der Sicherheitsstromquelle und die Um-
+schaltung der Sicherheitsstromversorgung auf die Si-
+cherheitsstromquelle bewirken, müssen sich im Haupt-
+verteiler der zentralen Versorgungsanlage befinden.
+
+5.8.4.2 In jedem Hauptverteiler muß sich eine Einrich-
+tungbefinden, die bei Ausfall mindestens eines AuBenlei-
+ters ander Einspeisestelle der Zuleitung der aligemeinen
+Stromversorgung die Umschaltung auf die Zuleitung der
+Sicherheitsstromversorgung bewirkt{sieche Abb. A3-7).
+
+5.8.4.3 Kabel der allgemeinen Stromversorgung und
+die der Sicherheitsstromversorgung sind bei Verlegung
+im Erdreich auf getrennten Trassen mit einem Mindest-
+abstand von 2 m oder in einer Stufenkinette mit einem
+Héhenunterschied von mindestens 1 m zu verlegen. Im
+Nahbereich einer Gebaudeeinflhrung dirfen Kabel
+den Abstand von 2 m unterschreiten, wenn besconderer
+mechanischer Schutz gegen Beschadigungen bei Tief-
+bauarbeiten vorgesehen ist.
+
+5.8.4.4 BeiVerlegungder Kabel auBerhalb des Erdrei-
+ches, z. B. im Kabelkanal, dirfen Kabel der Sicherheits-
+stromversorgung auf der gleichen Trasse (Kabelkanal,
+Kollektor) wie die Kabel der allgemeinen Stromversor-
+gung gefihrt werden, wenn sie so vor äußerer Brandein-
+wirkung geschitztsind, daß sieim Brandfall für die Dauer
+von mindestens 90 min®') funktionsfahig bleiben.
+
+5.8.5 In allen Stromkreisen der Sicherheitsstromver-
+sorgung müssen die Kennwerte der Sicherheitsstrom-
+guellen und der Schutzeinrichtungen sowie die Quer-
+schnitte der Leiter so ausgewahit werden, daß ein Kurz-
+schiuB an beliebiger Stelle der Anlage sowohl bei
+Versorgung aus der allgemeinen Stromversorgung als
+auch aus der Sicherheitsstromguelle gemäß den techni-
+schen Bestimmungen®!), jedenfalls aber innerhalb von
+5 s abgeschaltet wird. Die dem Fehler vorgeschaltete
+Schutzeinrichtung muß gegenuberdenihrvorgeschalte-
+ten Schutzeinrichtungen seiektiv auslösen.
+
+5.8.6 Ineinem mehradrigen Kabe! oder einer mehrad-
+rigen Leitung der Sicherheitsstromversorgung darf ein
+Stromkreis nur mit einem zugehérigen Hilfsstromkreis
+zusammengefaBt werden. Das Zusammenfassen von
+mehreren Hauptstromkreisen in einem Kabe! oder einer
+Leitung (z. B. auch Beleuchtungsstromkreise mit ge-
+meinsamem Neutralleiter) ist nicht zulassig.
+
+5.9 Steuerstromkreise
+
+Steuerstromkreise der Sicherheitsstromversorgung
+sind so zu errichten, daß ein einziger Fehler im Steu-
+erstromkreis, mit dessen Auftreten gerechnet werden
+muB, nicht zum gleichzeitigen Ausfall der Sicherheits-
+stromversorgung und der allgemeinen Stromversor-
+gung führt.
+
+%y Siehe QVE-EN 1 Teil 1 und Teil 3
+) Siehe ONORM DIN 4102 Teil 12
+
+19
+
+Solche Fehler sind z. B.: Ausfall der Steuerspannung, Ansprechen einer
+Schutzeinrichtung. Körper- oder Erdschluß im Steuerstromkreis, Leitungsun-
+terbrechung im Steuerstromkreis.
+
+§ 6 MaBnahmen flir Explosions- und
+Brandschutz, Schutz vor elektrostatischer
+Aufladung
+
+6.1 Explosionsschutz
+
+6.1.1 Innerhalb der explosiocnsgefahrdeten Zonen
+(siehe § 2.3.17) von medizinisch genutzten Raumen
+durfen nur angebracht sein:
+
+(1) elektromedizinische Gerate in „AP-G“- bzw.
+„AP-M“-Ausführung (Gerate mit , Anasthesiemittel-
+Prüfung“),
+
+(2) in der Zone M auch andere, geeignete elektrische
+Betriebsmittel.
+
+Welche Bereiche von elektromedizinisch genutzten Räumen als ex-
+plosionsgefahrdetim Sinne von $ 6.1 gelten, kann gemäß den Brand-
+und Explosionsschutzrichtlinien (siehe Anhang A1)} feslgestelit wer-
+den.
+
+Hinsichtlich der Beurteilung der Vermeidung von Ziindgefahren infol-
+ge elekirischer Aufladung sind die Brand- und Explesionsschutzricht-
+linien (siehe Anhang A1) zu beachten.
+
+6.1.2 Soweit in besonderen Fallen in medizinisch ge-
+nutzten Raumen, entsprechend ihrer bestimmungsge-
+mäßen Nutzung, explosionsgefahrdete Zonen anderer
+Art als ,G" und „M“ entstehen kdnnen, gelten bezüglich
+der dort zulassigen elektrischen Betriebsmittel die An-
+forderungen gemaB den technischen Bestimmun-
+gen’?).
+
+6.1.3 Elektrische Betriebsmittel, die bei bestimmungs-
+gemäßem Gebrauch oder im Fehlerfall Zindungen
+ausliösen kénnen, missen von Auslassen für brennbare
+Gase mindestens 20 cm entfernt sein und dirfen nicht
+in Richtung des Gasstrcmes angeordnet sein.
+
+6.2 Brandschutz
+
+Soweit Anlagenteile Leitungen flr verbrennungsfér-
+dernde Gase, z. B. Sauerstoff, Lachgas, enthalten gilt:
+
+6.2.1 Gasaustrittstellen missen von elektrischen Tei-
+len, die bei bestimmungsgemaBem Gebrauch oder im
+Fehlerfall Funken erzeugen kénnen, mindestens 20 cm
+entfernt sein. Elektrische Betriebsmittel dürfen nicht in
+Richtung des Gasstromes angeordnet sein.
+
+6.2.2 Wenn betriebsmaBig stromfihrende elektrische
+Leitungen gemeinsam mit Leitungen für verbrennungs-
+férdernde Gase (z. B. Sauerstoff, Lachgas) in Kandlen,
+Rohren oder Gehdusen verlegt sind, missen die elek-
+trischen Leitungen mindestens mittlerer PVC-Schlauch-
+leitung entsprechen. Fur Fernmeldeleitungen sind ent-
+sprechende Mafinahmen nur dann erforderlich, wenn
+das Produkt aus Leerlaufspannung und KurzschluB-
+strom den Wert von 10 VA Ulbersteigt.
+
+°) Siehe OVE-EX/EN 50 014, OVE-EX/EN 50 015, OVE-EX/EN 50 016, OVE-
+EX/EN 50 017, OVE-EX/EN 50 018, OVE-EX/EN 50 019, OVE-EX/EN 50 020
+und OVE-EX/EN 50 028.
+
+
+
+===== PAGE 19/43 =====
+20
+
+6.2.3 Brandschutz für elektrische Lei-
+tungsanlagen von notwendigen
+Sicherheitseinrichtungen
+
+Die elektrischen Leitungsanlagen von notwendigen Si-
+cherheitseinrichtungen müssen so beschaffen sein,
+daB diese Sicherheitseinrichtungen im Falle eines
+Brandes nicht vorzeitig ausfalien.
+
+6.2.3.1 Leitungsanlagen
+
+Die Betriebssicherheit notwendiger Sicherheitseinrich-
+tungen ist sichergestellt, wenn die elekirischen Lei-
+tungsanlagen so ausgefithrt oder durch Bauteile um-
+kleidet werden, daB sie bei duBerer Brandeinwirkung
+für eine ausreichende Zeitdauer funktionsfahig bleiben.
+
+Dies umfaßt nicht nur die Leitungsantagen selbst, sandern auch die Leitungs-
+trager und deren Befestigungselemente (z. B. keine Kunststoffdiibel).
+
+Die Dauer des Funktionserhaltes wird gemäß den tech-
+nischen Bestimmungen®') gepriift und muB mindestens
+betragen:
+
+(1} 30 Minuten bei
+
+— Brandmeldeanlagen, wenn deren Leitungen
+durch nichtiberwachte Bereiche führen,
+
+— Anlagen zur Alarmierung und Erteilung von An-
+weisungen an Besucher und Beschéftigte,
+
+— Sicherheitsbeleuchtungen, ausgenommen
+Endstromkreise,
+
+— Personenaufzugsanlagen mit Evakuierungs-
+schaltung,
+
+(2) 90 Minuten bei
+
+— WasserdruckerhGhungsaniagen zur Léschwas-
+serversorgung,
+
+— Loftungsanlagen von Sicherheitstreppenréu-
+men, innenliegenden Treppenrdumen, Fahr-
+schéchten, Sicherheitsschieusen und Trieb-
+werksrdumen von Feuerwehraufziigen,
+
+— Rauch- und Warmeabzugsanlagen,
+
+— Feuerwehraufziigen (Sicherheitsaufziigen),
+
+— zusatzlicher Sicherheitsstromversorgung ge-
+mäß $ 5.3, ausgenommen Endstromkreise.
+
+6.3 Vermeidung von elektrostatischer Aufladung
+
+Zur Vermeidung der elektrostatischen Aufladung sind
+Fußböden der Klasse | gemäß den technischen Be-
+stimmungen®) bzw. gemäß den Brand- und Explo-
+sionsschutzrichtlinien (siehe Anhang A1) auszuflihren,
+. B. in folgenden Raumen:
+
+N
+
+Herzkatheterrdume,
+Intensiv-Uberwachungsraume,
+Intensiv-Untersuchungsraume,
+Operations-Gipsraume,
+Operationsraume,
+Operationsvorbereitungsréaume
+
+>
+
+'} Siehe ÖNORM DIN 4102 Teil 12,
+) Siehe ONORM B 5220
+
+w
+8
+
+ÖVE-EN 7/1991
+
+— Räume für radiologische Diagnostik und Therapie,
+
+— Aufwachräume,
+
+— Chirurgische Ambulanzen,
+
+— Notfall- und Akutdialyseräume,
+
+— Entbindungsräume,
+
+— EEG-Räume,
+
+— EMG-Räume,
+
+— Röntgenräume,
+
+— Obduktionsräume,
+
+— Räume für Lagerung oder Abtüllung von brennbaren
+Flüssigkeiten der Gefahrenklasse 1,
+
+— Gaslagerräume,
+
+— Chemielabors,
+
+— Dunkelkammern,
+
+— Rechner- bzw. EDV-Räume.
+
+§ 7 Empfehlungen für MaBnahmen gegen
+die Beeinflussung von
+elektromedizinischen MeBeinrichtungen
+durch Starkstromanlagen
+
+Eleklrische oder magnetische Felder elektrischer Antagen kénnen medizini-
+sche Me Beinrichtungen, insbesondere solche fir Kérperaktionsspannungen,
+bis zur Funktionsuniahigkeit stéren. Die im lolgenden beschriebenen MaR-
+nahmen sind als Schutz gegen Stérungen geeignet, die durch Starkstroman-
+lagen in oder in der Nahe medizinisch genulzter Raume hervorgeruten
+werden. Ihre Anwendung ermoglicht den bestimmungsgemaBen Betrieb
+medizinischer Me Beinrichlungen. Sie reichen nicht aus gegen Stérungen, die
+durch Hochfrequenzquellen aller Art für die Nachrichientochnik oder Thera-
+pie erzeugt werden. Mafinahmen gegen die Stérungen sind nicht Gegen-
+stand dieser Errichtungsbeslimmungen.
+
+7.1 Anwendung der MaBnahmen
+
+In Räumen und in der Umgebung von Raumen, in denen
+bestimmungsgem&B Messungen von Kdrperaktions-
+spannungen, z. B. EEG, EKG oder EMG, durchgeflhrt
+werden, sollten die MaBnahmen gemäß § 7.2 und 8 7.3
+angewandtwerden, wennnach értlichen Gegebenheiten
+mit dem Auftreten von Stérungen gerechnet werden
+kann. Gegebenenfalls kann es notwendig werden, diese
+MafBnahmen zur Herstellung des bestimmungsge-
+mäßen Gebrauches nachtraglich durchzutihren.
+
+Zu den Raumen die gegen Stérungen geschiitzt werden sollen, gehoren
+inshesondere
+
+— EEG-Raume, EKG-Raume und EMG-Réume,
+
+— Intensiv-Untersuchungsrédume,
+
+intensiv-Uberwachungsraume,
+
+Herzkatheterraume,
+
+Operationsraume.
+
+(I
+
+7.2 MaBnahmen gegen Stérungen durch elektri-
+sche Feider
+
+7.2.1 Die Kabel und Leitungen der Starkstromanlage
+sollen mit leitfahigen, abschirmenden Umhüllungen ver-
+legt werden. Diese Maßnahme ist an allen Kabeln und
+Leitungen durchzufihren, die im zu schitzenden
+Raum, in dessen Winden, Decke und FuBboden sowie
+auf deren AuBenseiten veriegt sind.
+
+7.2.2 Dieleitfahigen Umhillungen von Kabeln und Lei-
+tungen (z. B. abgeschirmte Leitungen mit Metalimantel,
+Stahlpanzerrohr oder ahnliche Installationsrohre und
+-kanéle) sollten untereinander und mitdem Potentialaus-
+gleichsleiter gut leitend verbunden werden (SchweiB-
+
+
+===== PAGE 20/43 =====
+OVE-EN 7/1991
+
+5.8.4.1 Einrichtungen, die bei Absinken der Spannung
+der allgemeinen Stromversorgung um mehrals 10% das
+Inbetriebsetzen der Sicherheitsstromquelle und die Um-
+schaltung der Sicherheitsstromversorgung auf die Si-
+cherheitsstromquelle bewirken, müssen sich im Haupt-
+verteiler der zentralen Versorgungsanlage befinden.
+
+5.8.4.2 Injedem Hauptverteiler muß sich eine Einrich-
+tung befinden, die bei Ausfallmindestens eines AuBenlei-
+tersander Einspeisestelle der Zuleitung derallgemeinen
+Stromversorgung die Umschaltung auf die Zuleitung der
+Sicherheitsstromversorgungbewirkt (siehe Abb. A3-7).
+
+5.8.4.3 Kabel der allgemeinen Stromversorgung und
+die der Sicherheitsstromversorgung sind bei Verlegung
+im Erdreich auf getrennten Trassen mit einem Mindest-
+abstand von 2 m oder in einer Stufenkiinette mit einem
+Hohenunterschied von mindestens 1 m zu verlegen. Im
+Nahbereich einer Gebdudeeinfihrung dirfen Kabel
+den Abstand von 2 m unterschreiten, wenn besonderer
+mechanischer Schutz gegen Beschadigungen bei Tief-
+bauarbeiten vorgesehen ist.
+
+5.8.4.4 BeiVeriegung der Kabel auBerhalb des Erdrei-
+ches, z. B. im Kabelkanal, durfen Kabel der Sicherheits-
+stromversorgung auf der gleichen Trasse (Kabelkanal,
+Kollektor) wie die Kabel der allgemeinen Stromversor-
+gung geführt werden, wenn sie so vor äußerer Brandein-
+wirkunggeschutztsind, daB sieim Brandfall für die Dauer
+von mindestens 90 min®') funktionsfahig bleiben.
+
+5.8.5 In allen Stromkreisen der Sicherheitsstromver-
+sorgung mussen die Kennwerte der Sicherheitsstrom-
+quellen und der Schutzeinrichtungen sowie die Quer-
+schnitte der Leiter so ausgewählt werden, daß ein Kurz-
+schiuB an beliebiger Stelle der Anlage sowohl bei
+Versorgung aus der allgemeinen Stromversorgung als
+auch aus der Sicherheitsstromquelle gemäß den techni-
+schen Bestimmungen®), jedenfalls aber innerhalb von
+5 s abgeschaltet wird. Die dem Fehler vorgeschaltete
+Schutzeinrichtung muß gegenuber denihrvorgeschalte-
+ten Schutzeinrichtungen selektiv auslésen.
+
+5.8.6 In einem mehradrigen Kabel cder einer mehrad-
+rigen Leitung der Sicherheitsstromversorgung darf ein
+Stromkreis nur mit einem zugehdrigen Hilisstromkreis
+zusammengefaBt werden. Das Zusammenfassen von
+mehreren Hauptstromkreisen in einem Kabel oder einer
+Leitung (z. B. auch Beleuchtungsstromkreise mit ge-
+meinsamem Neutralleiter) ist nicht zulassig.
+
+5.9 Steuerstromkreise
+
+Steuerstromkreise der Sicherheitsstromversorgung
+sind so zu errichten, daß ein einziger Fehler im Steu-
+erstromkreis, mit dessen Auftreten gerechnet werden
+muB, nicht zum gleichzeitigen Ausfali der Sicherheits-
+stromversorgung und der allgemeinen Stromversor-
+gung führt.
+
+2y Siehe QVE-EN 1 Teil 1 und Teil 3.
+") Siehe ONORM DIN 4102 Teil 12.
+
+19
+
+Solche Fehler sind z. B.: Ausfall der Steuerspannung, Ansprechen einer
+Schutzeinrichtung, Körper- oder Erdschluß im Steuersiromkreis, Leitungsun-
+terbrechung inı Steuersiromkreis.
+
+§ 6 MaBnahmen für Explosions- und
+Brandschutz, Schutz vor elektrostatischer
+Aufladung
+
+6.1 Explosionsschutz
+
+6.1.1 Innerhalb der explosionsgefdhrdeten Zonen
+(siehe $ 2.3.17) von medizinisch genutzten Räumen
+dürfen nur angebracht sein:
+
+(1) elektromedizinische Gerate in „AP-G“- bzw.
+„AP-M“-Ausführung (Gerate mit ,Andsthesiemittel-
+Pratung®,
+
+(2) inder Zone M auch andere, geeignete elektrische
+Betriebsmittel.
+
+Welche Bereiche von elektromedizinisch genutzten Rdumen als ex-
+plosionsgefahrdetim Sinne von $ 6.1 gelten, kann gemäß den Brand-
+und Explosionsschutzrichtiinien (siehe Anhang A1) festgestelit wer-
+den.
+
+Hinsichtlich der Beurteilung der Vermeidung von Zindgefahren infol-
+ge elektrischer Aufladung sind die Brand- und Explosionsschulzricht-
+linien (siche Anhang A1) zu beachten
+
+6.1.2 Soweit in besonderen Fallen in medizinisch ge-
+nutzten Raumen, entsprechend ihrer bestimmungsge-
+mäßen Nutzung, explosionsgefahrdete Zonen anderer
+Art als „G“ und „M“ entstehen können, gelten bezlglich
+der dort zuldssigen elektrischen Betriebsmittel die An-
+forderungen gemäß den technischen Bestimmun-
+gen™).
+
+6.1.3 Elektrische Betriebsmittel, die bei bestimmungs-
+gemäßem Gebrauch oder im Fehlerfall Zindungen
+auslosen können, müssen von Auslassen fur brennbare
+Gase mindestens 20 cm entfernt sein und dürfen nicht
+in Richtung des Gasstromes angeordnet sein.
+
+6.2 Brandschutz
+
+Soweit Anlagenteile Leitungen für verbrennungsfor-
+dernde Gase, z. B. Sauerstoff, Lachgas, enthalten gilt:
+
+6.2.1 Gasaustrittstelien missen von elektrischen Tei-
+len, die bel bestimmungsgeméaBem Gebrauch oder im
+Fehlerfall Funken erzeugen kénnen, mindestens 20 cm
+entfernt sein. Elektrische Betriebsmittel dürfen nicht in
+Richtung des Gasstromes angeordnet sein.
+
+6.2.2 Wenn betriebsmaBig stromfihrende elektrische
+Leitungen gemeinsam mit Leitungen für verbrennungs-
+fordernde Gase (z. B. Sauerstoff, Lachgas) in Kanalen,
+Rohren oder Gehausen verlegt sind, müssen die elek-
+trischen Leitungen mindestens mittlerer PVC-Schlauch-
+leitung entsprechen. Für Fernmeldeleitungen sind ent-
+sprechende MaBnahmen nur dann erforderlich, wenn
+das Produkt aus Leerlaufspannung und Kurzschluß-
+strom den Wert von 10 VA Obersteigt.
+
+¥} Siehe OVE-EX/EN 50 014, OVE-EX/EN 50 015, OVE-EX/EN 50 016, OVE-
+EX/EN 50 017, OVE-EX/EN 50 018, OVE-EX/EN 50 019, OVE-EX/EN 50 020
+und ÖVE-EX/EN 50 028.
+
+
+===== PAGE 21/43 =====
+20
+
+6.2.3 Brandschutz für elektrische Lei-
+tungsaniagen von notwendigen
+Sicherheitseinrichtungen
+
+Die elektrischen Leitungsanlagen von notwendigen Si-
+cherheitseinrichtungen müssen so beschaffen sein,
+daß diese Sicherheitseinrichtungen im Falle eines
+Brandes nicht vorzeitig ausfallen,
+
+6.2.3.1 Leitungsanlagen
+
+Die Betriebssicherheit notwendiger Sicherheitseinrich-
+tungen ist sichergestellt, wenn die elektrischen Lei-
+tungsanlagen so ausgeführt oder durch Bauteile um-
+kieidet werden, daß sie bei äußerer Brandeinwirkung
+für eine ausreichende Zeitdauer funktionsfähig bleiben.
+
+Dies umfaßI nicht nur die Leitungsaniagen selbst, sondern auch die Leitungs-
+trager und deren Befestigungselemente (z. B. keine Kunststoffdübel).
+
+Die Dauer des Funktionserhaltes wird gemäß den tech-
+nischen Bestimmungen®') geprüft und muB mindestens
+betragen:
+
+(1) 30 Minuten bei
+
+— Brandmeldeanlagen, wenn deren Leitungen
+durch nichtiiberwachte Bereiche führen,
+
+— Anlagen zur Alarmierung und Erteilung von An-
+weisungen an Besucher und Beschaftigte,
+
+— Sicherheitsbeleuchtungen, ausgenommen
+Endstromkreise,
+
+— Personenaufzugsanlagen mit Evakuierungs-
+schaltung,
+
+(2) 90 Minuten bei
+
+— Wasserdruckerhéhungsanlagen zur Léschwas-
+serversorgung,
+
+— Lüftungsanlagen von Sicherheitstreppenréu-
+men, innenliegenden Treppenrdumen, Fahr-
+schéchten, Sicherheitsschleusen und Trieb-
+werksraumen ven Feuerwehraufzigen,
+
+— Rauch- und Warmeabzugsantagen,
+
+— Feuerwehraufziigen (Sicherheitsaufziigen),
+
+— zusétzlicher Sicherheitsstromversorgung ge-
+mäß § 5.3, ausgenommen Endstromkreise.
+
+6.3 Vermeidung von elektrostatischer Aufladung
+
+Zur Vermeidung der elektrostatischen Auftadung sind
+FuBbdden der Klasse | gemäß den technischen Be-
+stimmungen®) bzw. gemäß den Brand- und Explo-
+sionsschutzrichtlinien (siehe Anhang A1) auszufuhren,
+z. B. in folgenden Raumen:
+
+Herzkatheterraume,
+Intensiv-Uberwachungsraume,
+Intensiv-Untersuchungsraume,
+Operations-Gipsraume,
+Operationsraume,
+
+— Operationsvorbereitungsraume,
+
+w
+
+') Siehe ONORM DIN 4102 Teil 12.
+) Siehe ONORM 8 5220.
+
+w
+g
+
+OVE-EN 7/1991
+
+— Raume für radiologische Diagnostik und Therapie,
+
+— Aufwachraume,
+
+— Chirurgische Ambulanzen,
+
+— Notfall- und Akutdialyseraume,
+
+— Entbindungsraume,
+
+— EEG-R&ume,
+
+— EMG-Raume,
+
+— Réntgenraume,
+
+— Obduktionsraume,
+
+— Räume für Lagerung oder Abfüliung von brennbaren
+Flussigkeiten der Gefahrenklasse 1,
+
+— Gaslagerraume,
+
+— Chemielabors,
+
+— Dunkelkammern,
+
+— Rechner- bzw. EDV-R&ume.
+
+§ 7 Empfehlungen für MaBnahmen gegen
+die Beeinflussung von
+elektromedizinischen MeBeinrichtungen
+durch Starkstromanlagen
+
+Elektrische oder magnetische Felder elektrischer Anlagen kénnen medizini-
+sche MeBeinrichtungen, insbesondere solche für Karperaktionsspannungen,
+bis zur Funktionsunfahigkeit stéren. Die im folgenden beschriebenen Maß-
+nahmen sind als Schutz gegen Storungen geeignet, die durch Starkstroman-
+lagen in oder in der Nahe medizinisch genutzter Raume hervorgerufen
+werden. Ihre Anwendung ermoglicht den bestimmungsgemiBen Betricb
+
+. medizinischer MeBeinrichtungen. Sie reichen nicht aus gegen Stérungen, die
+durch Hochfrequenzqueilen aller Arl für die Nachrichtentechnik oder Thera-
+pie erzeugt werden. Mafinahmen gegen die Stérungen sind nicht Gegen-
+stand dieser Errichtungsbestimmungen.
+
+7.1  Anwendung der MaBnahmen
+
+In Raumen und in der Umgebung von Räumen, indenen
+bestimmungsgemäß Messungen von Kérperaktions-
+spannungen, z. B. EEG, EKG oder EMG, durchgefiihrt
+werden, sollten die MaBnahmen gemäß 8 7.2 und $ 7.3
+angewandtwerden, wennnach értlichen Gegebenheiten
+mit dem Auftreten von Stérungen gerechnet werden
+kann. Gegebenenfalls kann es notwendig werden, diese
+MaBnahmen zur Herstellung des bestimmungsge-
+mäßen Gebrauches nachtraglich durchzufihren.,
+
+Zu den Raumen die gegen Stdrungen geschitzt werden sollen, geharen
+insbesondere
+
+— EEG-Raume, EKG-Réume und EMG-Raume,
+
+— Intensiv-Untersuchungsraume,
+
+— Intensiv-Uberwachungsraume,
+
+— Herzkatheterraume,
+
+— QOperationsraume.
+
+7.2 MaBnahmen gegen Storungen durch elektri-
+sche Felder
+
+7.2.1 Die Kabel und Leitungen der Starkstromanlage
+sollen mit leitfähigen, abschirmenden Umhüllungen ver-
+legt werden. Diese Maßnahme ist an allen Kabeln und
+Leitungen durchzufihren, die im zu schiitzenden
+Raum, in dessen Wänden, Decke und FuBboden sowie
+auf deren AuBenseiten verlegt sind.
+
+7.2.2 Dieleitfahigen Umhtllungen von Kabeln und Lei-
+tungen (z. B. abgeschirmte Leitungen mit Metallmantel,
+Stahlpanzerrohr oder ahnliche Installationsrohre und
+-kanale) solltenuntereinander und mitdem Potentialaus-
+gleichsleiter gut leitend verbunden werden (SchweiB-
+
+
+===== PAGE 22/43 =====
+ÖVE-EN 7/1991
+
+punkte,gelötete Drahtbrücken). Dabeisollendie Abschir-
+mungen(z.B.die metallische Umhüllungderabgeschirm-
+tenLeitungenbzw. das Stahlpanzerrohr) keine geschlos-
+senen Ringverbindungen (Maschen} bilden.
+
+7.2.3 Die Maßnahmen gemäß 8 7.2.1 und 8 7.2.2 kön-
+nen entfallen, wenn die zu schützenden Einrichtungen
+auf andere Weise wirksam gegen Störungen geschützt
+werden. Dies kann durch Einlegen eines Abschirmgewe-
+bes oder einer Metallfolie in den Fußboden, die Decke
+oderdie Wände der zu entstörenden Räume geschehen.
+Diese Abschirmungistvon Rohrleitungen und leitfähigen
+Gebäudeteilen usw. isoliert zu verlegen und über einen
+eigenen Potentialausgleichsleiter mit der Potentialaus-
+gleich-Sammelschiene zu verbinden.
+
+7.2.4 Festangeschlossene elektrische Verbrauchs-
+mittel sollen in Schutzklasse | ausgeführt sein.
+
+7.3 Maßnahmen gegen Störungen durch netzfre-
+quente magnetische Felder
+
+Am Patientenplatz darf die Induktion bei 50 Hz folgende
+Werte nicht Uberschreiten:
+
+Bsg =4 - 107 Tesla für EKG
+Bss =2 - 107 Tesla für EEG und EMG
+
+{1} Zur Prüfung dient z. B. ein Elektrokardiograph, dessen Patientenleitungen
+an eine standardisierte Prüfspule (siehe Abb, A3-8) angeschlossen werden.
+Bei der Empfindiichkeit des Elektrokardiographen von 10 mm/mV dar! der
+registrierte Störausschlag bei EKG 4 mm, bei EEG und EMG 2 mm nicht
+ubersteigen. Bei der Prifung ist die Spule in alle maglichen Lagen zu
+drehen. Der höchste dabei registrierte Stérausschlag ist maBgebend.
+
+(2} Diese Grenzwerte werden im allgemeinen nicht Gberschritten, wenn zwi-
+schen Anlagenteilen und Betriebsmitteln, die magnetische Stérungen her-
+vorrufen kénnen, und den für die Untersuchung von Patienten vorgesehe-
+nen Platzen folgende Absténde in allen Richtungen eingehalten werden:
+
+(2.1} Bei Verwendung einer Leuchte mit einem Vorschaltgerét (Drossel) sind in
+der Regel 0,75 m ausreichend. Bei Verwendung mehrerer Vorschaltgerte
+mit höheren Arbeitsirequenzen, die nicht in den Ubertragungsbereich der
+elektromedizinischen MeBeinrichtung fallen, sind kleinere Abstande erlaubt.
+
+(2.2) Bei Verwendung vorwiegend induktiver Betriebsmittel groBer Leistung sind
+in der Regel 6 m Abstand ausreichend. Solche Betriebsmittel sind z. B.:
+
+— Transformatoren der Starkstromanlage, z. B. des IT-Systemes,
+— orisfeste Motoren — insbesondere solche über 3 kW.
+
+{2.3) Zwischen mehradrigen Kabeln und Leitungen der Starkstromaniage und
+
+den zu schiitzenden Patientenplétzen:
+
+Leiternennquerschnitt (Cu) . ......, . ... Mindestabstand
+10 mm® bis 70mm? ... .. ... 3m
+95 mm“ bis 185 mm® .. e 6m
+über 185 mm® ... .. ... ... 9m
+
+Bei einadrigen Kabeln und Leitungen sowie Stromschienensystemen kön-
+nen größere Abstände notwendig werden.
+
+(2.4) Die in (2.1) bis (2.3) genannten Abstände können durch magnetische
+Abschirmungen vermindert werden,
+
+(3) In diesem Zusammenhamg wird auf die mögliche Beeinflussung von elektro-
+medizinischen MeRBeinrichtungen durch 16 2/3 Hz-Wechselstrom-Bahnan-
+lagen in Gebäudenähe hingewiesen.
+
+§ 8 Medizinische Einrichtungen auBerhalb
+von Krankenhéusern
+
+8.1 Praxisrdume der Human- und Dentalmedizin
+
+8.11 Zuordnung der Raume zu den An-
+wendungsgruppen
+
+Die richtige Zuordnung der Raume zu den Anwen-
+dungsgruppen ergibt sich aus den Anforderungen ge-
+mäß $ 2.2.1 bis $ 2.2.3 in Verbindung mit den Beispie-
+len gemäß Tab. 2-1.
+
+21
+
+81.2 SchutzmaBnahmen bei indirektem
+Berühren
+
+8.1.2.1 In Räumen der Anwendungsgruppe 0 sind
+Schutzmaßnahmen gemäß den technischen Bestim-
+mungen'*) anzuwenden
+
+8.1.2.2. In Räumen der Anwendungsgruppe 1 dürfen
+nur SchutzmaBnahmen gemäß § 4.3. angewandt wer-
+den.
+
+Die der Untersuchung oder Behandlung von Patienten dienenden Räume in
+arztlichen Praxen der Human- oder Dentalmedizin sind in der Regel Raume
+der Anwendungsguppe 1.
+
+8.1.2.3 In Räumen der Anwendungsgruppe 2 muB die
+SchutzmafBnahme ,Meldung durch Isolationsiiberwa-
+chungseinrichtung im !T-System“ gemäß § 4.3.5 ange-
+wandt werden für Stromkreise der Operationsleuchten
+und für Stromkreise mit zweipoligen Steckdosen, an die
+lebenswichtige elektromedizinische Geräte ange-
+schlossen werden, die beim ersten KérperschluB nicht
+ausfallen dirfen.
+
+8.1.3 Zusétzlicher Potentialausgleich
+
+In Räumen der Anwendungsgruppe 1 und 2 ist ein
+zuséatzlicher Potentialausgleich vorzusehen, in den die
+fremden leitfahigen Teile im Sinne von § 4.4 und § 4.5
+einbezogen werden mussen, die der Patient bei Be-
+handiung oder Untersuchung mit netzabhéngigen elek-
+tromedizinischen Geréaten beriihren kann.
+
+814 Sicherheitsstromversorgung
+
+Bei Störung der allgemeinen Stromversorgung missen
+
+folgende Einrichtungen in Raumen der Anwendungs-
+
+gruppe 2 aus einer geeigneten Sicherheitsstromversor-
+
+gung fur die Dauer von mindestens drei Stunden weiter
+
+betrieben werden kénnen:
+
+— Operationsleuchten und vergleichbare Leuchten mit
+einer Umschaltzeit von héchstens 0,5 s,
+
+— lebenswichtige elektromedizinische Geräte mit einer
+Umschaltzeit von héchstens 15 s.
+
+8.2 Versorgung von Geriten der Heimdialyse
+
+Fir die regelméaBige Versorgung von Geraten für die
+Heimdialyse in Rdumen von Wohnungen sind MaBnah-
+men gemäß $ 8.2.1 oder eine AnschluBeinrichtung ge-
+mäß $ 8.2.2 vorzusehen.
+
+8.21 MaBnahmen in der elektrischen
+Anlage
+
+(1) Es ist ein eigener Stromkreis, beginnend am Un-
+terverteiler der Wohnung, zu errichten.
+
+(2) Der Stromkreis ist mit einer Fehlerstrom-Schutz-
+einrichtung mit /an < 0,03 A gemäß den techni-
+schen Bestimmungen') zu schiitzen.
+
+(3) Für den AnschluB des Gerdtes der Heimdialyse
+sind Steckvorrichtungen vorzusehen, die mit den
+Ubrigen Steckdosen unverwechselbar sind; z. B.
+
+") Siehe OVE-EN 1 Teil 1.
+
+
+===== PAGE 23/43 =====
+22
+
+Steckvorrichtungen gemäß den technischen Be-
+stimmungen®).
+
+(4) Es ist ein zusätzlicher Potentialausgleich erforder-
+lich, in den alle fremden leitfähigen Teile einbezo-
+gen werden müssen, die der Patient während der
+Dialyse berühren kann (mindestens im Umkreis
+von 1,25 m).
+
+8.2.2 Anschlußeinrichtung zwischen
+Steckdose der Hausinstallation
+und Dialysegerät
+
+Den Geräten für die Heimdialyse ist eine Anschlußein-
+richtung vorzuschalten, die die Anforderungen gemäß
+(1) bis (6) erfüllt.
+
+(1) Die Isolierstoffumhüliung der Anschlußeinrichtung
+muB die Anforderungen der Schutzisolierung er-
+füllen.
+
+(2) Die Anschlußleitung muß zweiadrig ohne Schutz-
+leiter ausgeführt sein. Sie muß der Bauart HO5VV
+gemäß den technischen Bestimmungen®) oder
+gleichwertigen entsprechen.
+
+(3) Eingangs- und Ausgangsseite der Anschlußein-
+richtung sind sicher elektrisch zu trennen durch
+einen Trenntransformator gemäß den technischen
+Bestimmungen'?). Eine Einschaltstrombegren-
+zung ist vorzusehen.
+
+(4) Es sind auf der Ausgangsseite Steckdosen vorzu-
+
+sehen, die mit den Steckdosen der Hausinstalla-
+tion unverwechselbar sind, z. B. Steckvorrichtun-
+gen gemäß den technischen Bestimmungen®).
+
+(5) Zwischen den Ausgangsklemmen des Trenntrans-
+formators und den ausgangsseitigen Steckdosen
+ist entweder
+
+— jede Steckdose mit einer eigenen Fehlerstrom-
+Schutzeinrichtung mit /An < 30 mA zu verse-
+hen oder
+
+— eine Isolationsiiberwachung gegen den unge-
+erdeten Potentialausgleichsleiter gemäß (6)
+vorzusehen.
+
+Bei Anwendung der Isolationsiiberwachung ist ei-
+ne Abschaltung beim zweiten Fehler nicht erfor-
+derlich, wenn sich bei der Meldeanzeige der deut-
+liche Hinweis befindet, daß bei Ansprechen der
+Meldung die Dialyse beendet werden darf, aber
+eine erneute Dialyse erst nach Beseitigung des
+Fehlers zulassig ist.
+
+(6) Die Schutzkontakte der ausgangsseitigen Steck-
+dosen sind untereinander durch einen ungeerde-
+ten isolierten Potentialausgleichsleiter zu verbin-
+den.
+
+”) Siehe QVE-M/EN 60 742.
+™) Siehe ONORM E 6610 oder DiN 49 462.
+*} Siehe OVE-K 41.
+
+OVE-EN 7/1991
+
+89 Plane, Unterlagen und Betriebs-
+anleitungen
+
+9.1 Für den sicheren Betrieb sind Schaltungsunterla-
+gen sowie Bedienungs- und Wartungsanweisungen er-
+forderlich.
+
+Insbesondere sind dies:
+
+— Ubersichtsschaltplane des Verteilungsnetzes der all-
+gemeinen Stromversorgung und der Sicherheits-
+stromversorgung in einpoliger Darstellung. Diese
+Plane müssen Angaben Uber die Lage der Unterver-
+teiler im Gebaude enthalten,
+
+— Ubersichtsschaltpldne der Schaltanlagen und Vertei-
+ler (vorzugsweise einpolige Darstellung),
+
+— Elektroinstallationsplane,
+— Stromlaufpldne von Steuerungen,
+
+— Bedienungs- und Wartungsanweisungen für die
+Sicherheitsstromquelien,
+
+— Rechnerischer Nachweis der Erfiillung der Anforde-
+rungen gemäß $ 4.2.2.2 und $ 5.8.5,
+
+— Liste der an die Sicherheitsstromversorgung fest an-
+geschiossenen Verbraucher mit Angabe der Nenn-
+stréme und bei motorischen Verbrauchern der An-
+laufstréme,
+
+— Prafbuch bzw. Prifberichte mit den Ergebnissen
+über alle vor der Inbetriebnahme erforderlichen Prü-
+fungen.
+
+9.2 Bei jedem Verteiler muB der zugehérende Uber-
+sichtsschaltplan vorhanden sein.
+
+9.3 Aus den Ubersichtsschaltpidnen muß erkennbar
+sein:
+
+— Stromart, Nennspannung,
+
+— Anzahl und Leistung der Transformatoren und der
+Sicherheitsstromquellen,
+
+— Bezeichnung der Stromkreise, Nennstrom der Uber-
+strom-Schutzeinrichtungen der angeschlossenen
+Stromkreise,
+
+— Leiterguerschnitte und -werkstoffe.
+
+§ 10 Prufungen
+
+10.1 Erstpriifungen
+
+Die Prafungen gemäß (1) bis (14), die AufschiuB über
+die elektrische Sicherheit der Anlage entsprechend den
+Anforderungen dieser Bestimmungen sowie Uber die
+Funktion und das Verhalten von Sicherheitseinrichtun-
+gen geben, sind vor Inbetriebnahme sowie nach Ande-
+rungen oder Instandsetzungen vor der Wiederinbetrieb-
+nahme durchzuflhren.
+
+
+===== PAGE 24/43 =====
+ÖVE-EN 7/1991
+
+(1) Prüfungen gemäß den technischen Bestimmun-
+
+gen'?),
+
+(2) Funktionsprifung der Umschalteinrichtungen in
+den beiden Zuleitungen der Verteiler für Raume
+der Anwendungsgruppe 2 gemäß 8 3.3.3.3 und
+
+§3.3.3.9,
+
+(3) Funktionspriifung der isolationsiiberwachungsein-
+richtungen der IT-Systeme und der Meldekombi-
+
+nationen,
+
+(4) Prüfung der richtigen Auswahl der Betriebsmittel
+zur Einhaltung der Selektivitdt der Sicherheits-
+stromversorgung entsprechend den Planungsun-
+
+terlagen und der Berechnung,
+
+{8) Messungen zum Nachweis, daß die in $ 4.4.3 und,
+soweit zutreffend, in S 8.1.3, $ 8.2.1(4) und
+$ 8.2.2(6) angefuhrten fremden leitfahigen Teile in
+
+den Potentialausgleich einbezogen sind,
+
+. (6) Messung der Spannungen gemäß § 4.4.4(2) zwi-
+schen den Schutzkontakten von Steckdosen, Kér-
+pern festangeschlossener Verbrauchsmittel sowie
+fremden leitfahigen Teilen, die in R&umen der
+Anwendungsgruppe 2 und in Räumen der Anwen-
+dungsgruppe 1, in denen Untersuchungen mit
+Einschwemmkathetern vorgenommen werden, in-
+nerhalb eines Bereiches von 1,25 m um die zu
+erwartende Position des Patienten vorhanden
+
+sind.
+
+Diese Prüfung muB zu einem Zeitpunkt vorgenom-
+men werden, zu dem die elektrische Anlage des
+Gebäudes belastet ist. Die Messung erfolgt mit
+einem Spannungsmesser für Effektivwerte, des-
+sen Innenwiderstand, z. B. durch duBere Beschal-
+tung, auf 1 kQ eingestellt ist (sieche technische
+Bestimmungen®)). Der Frequenzbereich des
+Spannungsmessers sollte 1 kHz nicht (iberschrei-
+
+ten.
+
+Diese Messung ist nicht erforderlich in Gebäuden, in denen ab dem
+
+Hauptverteiler die Netzform TN-S-System angewandt wird.
+
+(7) Prüfung der BelUftung des Aufstellraumes von Si-
+cherheitsstromquellen gemäß den technischen
+
+Bestimmungen®),
+
+(8) Prüfung der Batterien hinsichtlich ausreichender
+
+Kapazitat,
+
+(9) Prifung der Funktion der Sicherheitsstromversor-
+gung durch Unterbrechung der Netzzuleitung am
+
+Verteiler der zu versorgenden Verbraucher,
+(10
+
+—
+
+richtungen,
+
+% Siehe ÖVE-C 10 Teil 2.
+") Siehe OVE-EN 1 Teil 1. .
+*) Siehe OVE-MG/IEC 601 Abb. 19-6 bzw. OVE-MG/EN 60 601-1 Bild 15,
+
+Prifung der Aufstellungsraume für Stromerzeu-
+gungsaggregate der Sicherheitsstromversorgung
+hinsichtlich Brandschutz, méglicher Überﬂutung‚
+Belüftung, Abgasführung, Ausstattung und Ein-
+
+(11)
+
+(12
+
+—
+
+(13
+
+~
+
+(14
+
+23
+
+Prüfung der Bemessung des Stromerzeugungs-
+aggregates unter Berlicksichtigung des Verzeich-
+nisses über die statische Belastung und eventuell
+auftretender Anlaufstréme (z. B. bei Lifter-, Pum-
+pen- oder Aufzugsmotoren),
+
+Prüfung der Aggregateschutzeinrichtungen, dazu
+gehort insbesondere die Abstimmung der Selekti-
+vitat von Schutzeinrichtungen,
+
+Funktionsprufungen der Sicherheitsstromversor-
+gung mit Verbrennungsmotoren, bestehend aus
+Prifung des Start- und Anlaufverhaltens, der
+Funktion der Hilfseinrichtungen, der Schalt- und
+Regelungseinrichtungen, Durchführung  eines
+Lastlaufs mit Nennlast sowie Prifung des Be-
+triebsverhaltens im Aggregatbetrieb. Dabei sind
+die dynamischen Spannungs- und Drehzahlab-
+weichungen besonders zu beachten.
+
+Prifung der Einhaltung des Brandschutzes ge-
+mäß $ 6 und Anhang AT,
+
+10.2 Wiederkehrende Prifungen
+
+10.2.1
+
+Elektrische Anlagen sind mindestens alle zwei
+
+Jahre zu prifen.
+
+Von Behörden anderslautende Prifirislen bleiben dadurch unberührt.
+
+10.2.2 Die Prifungen gemäß (1) bis (8) sind zusétz-
+lich zu den Prüfungen gemäß 8 10.2.1 durchzufihren:
+
+1
+
+Prafung der Fehlerstrom-Schutzeinrichtungen und
+der Isolationsiberwachungseinrichtungen durch
+Betätigen der Prifeinrichtung mindestens alle
+sechs Monate durch eine Fachkraft oder eine Un-
+terwiesene Person'®),
+
+Messung des Isolationswiderstandes von Strom-
+kreisen der Operations-Leuchten, die mit Funk-
+tionskleinspannung mit sicherer elektrischer Tren-
+nung ohne Isolationsiberwachungseinrichtung
+betrieben werden, mindestens alle sechs Monate
+durch eine Fachkraft,
+
+Funktionsprifung der Sicherheitsstromversor-
+gung monatlich zum Nachweis
+
+— des Start- und Anlaufverhaltens,
+— der erforderlichen Lastibernahme,
+— der Schalt-, Regel- und Hilfseinrichtungen,
+
+Funktionsprlfung des Lastverhaltens der Sicher-
+heitsstromversorgung monatlich mit mindestens
+50% der Nennlast für eine Betriebsdauer von
+
+— 15 Minuten bei Sicherheitsstromquelien mit
+Batterien,
+
+— 60 Minuten bei Sicherheitsstromquellen mit
+Verbrennungsmotor; diese Funktionspriifung
+dart entfallen bei Sicherheitsstromversorgung
+im Dauerbetrieb,
+
+
+===== PAGE 25/43 =====
+24
+
+(5) Prüfung der Funktion der Netzumschaltung und
+der Umschalteinrichtung in den Verteilern für Räu-
+me der Anwendungsgruppe 2 halbjährlich,
+
+(6) Messung der Spannungen gemäß § 4.4.4(2), so-
+fern zutreffend, jahrlich,
+
+(7) Prüfung von Batterien hinsichtlich ausreichender
+Kapazitat einmal jahrlich auBerhalb der zu erwar-
+tenden Einsatzzeiten,
+
+(8) Prilfung, ob die Leistungen der Sicherheitsstrom-
+quellen noch dem erforderlichen Leistungsbedart
+der versorgten Verbrauchsmittel entsprechen,
+jahrtich.
+
+10.2.3  Uber die regelmaBigen Prifungen sind Prüfbü-
+cher zu fihren. Diese Prüfbücher sind mindestens drei
+Jahre nach Durchfiihrung der darauffolgenden Priifung
+aufzubewahren.
+
+ANHANG
+
+A1 Beiblatt zu OVE-EN 7
+
+Die baulichen brandschutztechnischen Belange sind
+durch &sterreichische landesrechtliche Vorschriften
+(z. B. Bauordnung, Garagenordnung u. a.), bundes-
+rechtliche Bestimmungen (z. B. AAV, AMGSV u. a.)
+oder Technische Richtlinien fur vorbeugenden
+Brandschutz®) geregeit.
+
+BRANDSCHUTZ UND EXPLOSIONS-
+SCHUTZ
+
+A1.1 Brand- und Explosionsschutz in medizinisch
+genutzten Rdumen
+
+A1.11 Aligemeine Hinweise
+
+Im medizinischen Bereich gelangen als Hautreini-
+gungs- und Hautentfettungsmittel sowie als Desinfek-
+tionsmittel brennbare Flissigkeiten zum Einsatz. Wer-
+den diese Stoffe offen verwendet, so besteht aufgrund
+der Vermischung ihrer Dampfe mit der Luft erhéhte
+Brand- und Explosionsgefahr.
+
+Auch bei der Verabreichung von Anasthesiemittein, die
+mit der Luft explosionsfahige Atmosphére oder mit Sau-
+erstoff bzw. Lachgas explosionstahige Gemische bil-
+den kénnen, kann Explosionsgefahr entstehen.
+
+In den letzten Jahren konnte jedoch eine erhebliche
+Getfahrenreduzierung dadurch erreicht werden, daß
+
+— in ihrer Anwendungskonzentration ziindfahige Anäs-
+thesiemittel kaum noch Verwendung finden,
+
+— Anästhesiemitte! aus den Anwendungsräumen ab-
+geleitet werden,
+
+) Siehe TRVB A 150, TRVB E 102, TRVB F 124, TRVB F 128, TRVB F 134,
+TRVB N 132, TRVB N 133, TRVB O 121 und TRVB S 123.
+
+OVE-EN 7/1981
+
+— mittels technischer LiftungsmaBnahmen für eine je-
+derzeit gute Raumdurchitftung gesorgt wird,
+
+— brennbare, leicht verdampfende Hautreinigungs- und
+Hautdesinfekticnsmitte! nur noch in geringen Men-
+gen zum Einsatz gelangen.
+
+Zwar hat die Verwendung zOndfahiger Anasthesie- so-
+wie Hautreinigungs- und Desinfektionsmittel betracht-
+lich abgenommen, deren Anwendung kann jedoch nicht
+generell ausgeschiossen werden. Somit kann auf Ex-
+plosionsschutzmaBnahmen in medizinisch genutzten
+Räumen entsprechend den Anforderungen in gesetzli-
+chen und arbeitsschutzrechtlichen Regelwerken weiter-
+hin nicht verzichtet werden.
+
+Auf technische Bestimmungen®®) wird verwiesen.
+Dabei gibt die
+
+— .Verordnung Uber elektrische Anlagen in explosions-
+gefahrdeten Räumen“ (ElexV-BRD)
+
+als staatliches Vorschriftenwerk mit eigenstandiger
+Rechtsverbindlichkeit in der BRD den Schutzzielrah-
+men vor. Die Bestimmungen dieser Verordnung ver-
+pflichten zur Einhaltung der allgemein anerkannten Re-
+geln der Sicherheitstechnik. Als solche gelten insbe-
+sondere die
+
+— „Richtlinien für die Vermeidung der Gefahren durch
+explosionstéhige Atmosphéare* (EX-RL) sowie die
+
+— L Richtlinien für die Vermeidung von Zindgefahren
+infolge elektrostatischer Aufladungen“ (Richtlinien
+.Statische Elektrizitat"),
+
+deren einschlagige Anforderungen für medizinisch ge-
+nutzte Räume nachstehend wiedergegeben werden.
+
+Das Merkblatt
+
+— ,Brand- und Explosionsschutz im Gesundheits- _
+
+dienst"
+
+gibt zusammenfassend in praxisnaher und anschauli-
+cher Form Hinweise und Erlauterungen für notwendige
+SchutzmaBnahmen in OP-Raumen.
+
+A1.2 Auszug aus den Richtlinien für die Vermei-
+dung der Gefahren durch explosionsfahige
+Atmosphére mit Beispielsammlung Explo-
+sionsschutz-Richtlinien (EX-RL) (Bundesre-
+publik Deutschiand)
+
+A Geltungsbereich
+
+1. Die Richtlinien fur die Vermeidung der Gefahren
+durch explosicnsfahige Atmosphäre mit Beispielsamm-
+lung gelten für die Beurteilung der Explosionsgefahren
+beim Umgang mit Stoffen, die gefahrliche explosionsfa-
+hige Atmosphaére bilden kénnen, sowie für die Auswahl
+
+*) Siehe 2. B, OVE-EX 65
+
+
+===== PAGE 26/43 =====
+ÖVE-EN 7/1991
+
+und Durchführung von Schutzmaßnahmen zur Vermei-
+dung dieser Gefahren.
+
+Zum Umgang gehören Herstellung, Verarbeitung, Ver-
+nichtung, Lagerung und Umschlag sowie Beförderung
+mit Fahrzeugen, in Rohrleitungen oder mit anderen
+Hilfsmitteln.
+
+2. Für eine Beurteilung der MaBnahmen zur Vermei-
+dung von Gefahren durch explosible Gemische unter
+anderen als atmosphérischen Bedingungen (erhöhter
+Druck, erhdhte Temperatur) oder mit anderem Reak-
+tionspartner als Luft sowie durch chemisch instabile
+Stoffe sind diese Richtlinien allein nicht ausreichend.
+Vergleiche hierzu z. B. Acetylen-Verordnung.
+
+3. Vorschriften, in denen bestimmte Bereiche als ex-
+plosionsgefahrdet festgelegt sind, bleiben unberiihrt.
+
+B Begriffe
+
+1. Explosionsfdhiges Gemisch ist ein Gemisch aus
+Gasen oder Dämpfen miteinander oder mit Nebein oder
+Stauben, in dem sich nach erfolgter Zindung eine Re-
+aktion selbstandig fortpflanzt.
+
+2. Explosionsfdhige Atmosphére ist ein aus Luft
+und brennbaren Gasen, Dampfen, Nebeln oder Stau-
+ben bestehendes Gemisch unter atmosphérischen Be-
+dingungen, in dem sich nach Ziindung von der Zind-
+quelle aus eine Verbrennung selbstandig fortpflanzt
+(Explosion).
+
+Als atmospharische Bedingungen gelten hier Gesamt-
+drücke von 0,8 bar bis 1,1 bar und Gemischtemperatu-
+ren von — 20 °C bis + 60 °C.
+
+5. Zonen: Explosionsgefahrdete Bereiche werden
+nach der Wahrscheinlichkeit des Auftretens gefährli-
+cher explosionsfahiger Atmosphare in Zonen einge-
+teilt.
+
+Anmerkung: Für medizinisch genutzte Raume
+kommen die Zonen G und M in Betracht; daher
+sind in diesem Auszug die Ubrigen Zonen nicht ge-
+nannt.
+
+C Anwendung der Richtlinien
+
+4. Die MaBnahmen des Explosionsschutzes sind in
+diesen Richtlinien aufgeteilt in
+
+a) MaBnahmen, welche die Bildung gefahrlicher ex-
+plosibler Atmosphére verhindern oder einschran-
+ken (primérer Explosionsschutz) (siehe E1),
+
+b) MaBnahmen, welche die Entziindung gefahrlicher
+explosibler Atmosphare verhindern (siehe E2),
+
+¢) Maßnahmen, welche die Auswirkungen einer Ex-
+plosion auf ein unbedenkliches MaB beschranken
+(siehe E3).
+
+25
+
+5. Inder Regelist den MaBnahmen gemäß (a) sicher-
+heitstechnisch Vorrang zu geben. Es ist deshalb zu-
+néchst zu Uberlegen, ob und wieweit diese MaBnahmen
+sinnvoll angewandt werden kénnen. Führt diese Uber-
+legung nicht zu einer befriedigenden Lösung, so sind
+nach sachkundigem Ermessen Maßnahmen gemäß (b)
+und/oder (c) oder gegebenenfalls geeignete Kombina-
+tionen von MaBnahmen geman (a), (b) oder (c) anzu-
+wenden. Fir die Festlegung von MaBnahmen geman
+{b) sind die explosionsgefdhrdeten Bereiche in Zonen
+gemäß E2.1 einzuteilen.
+
+7. Um die Anwendung der Richtlinien zu erleichtern,
+sind in der Beispielsammlung SchutzmaBnahmen für in
+der Praxis vorkommende Falle genannt.
+
+E SchutzmaBnahmen
+
+Der Unternehmer hat daflr zu sorgen, daB die Beschaf-
+tigten Uber die mdglichen Explosionsgefahren und die
+gemäß diesen Richtlinien ausgewahiten SchutzmaB-
+nahmen belehrt und die für die Sicherheit erforderlichen
+Betriebsanweisungen schriftlich festgelegt werden. Die
+Belehrungen sind in angemessenen Zeitabstanden zu
+wiederholen®).
+
+E1 MaBnahmen, welche eine Bildung geféhriicher
+explosionsfahiger Atmosphére verhindern
+oder einschrédnken (primarer Explosions-
+schutz)
+
+Der Begriff „Einschränkung“ kann eine raumliche, zeitli-
+che und mengenméBige Begrenzung erfassen.
+
+Diese ExplosionsschutzmafBnahmen werden aufgeglie-
+dert in
+
+(1) Vermeidung oder Einschränkung von Stoffen, die
+explosible Gemische zu bilden vermégen,
+
+{2) Verhinderung oder Einschrankung der Bildung ex-
+plosionsfahiger Gemische innerhaib von Appara-
+turen,
+
+(3) Verhinderung oder Einschrankung der Bildung ge-
+fahrlicher explosionsfahiger Atmosphare in der
+Umgebung von Apparaturen,
+
+(4) Uberwachung der Konzentration.
+
+E1.1 Vermeidung bzw. Einschridnkung von Stof-
+fen, die explosionsfahige Gemische zu bil-
+den vermodgen
+
+Zuerst ist zu prifen, ob brennbare Stoffe durch soiche
+ersetzbar sind, die keine explosionsfahigen Gemische
+zu bilden vermogen.
+
+E1.3.2 Konstruktion
+
+Bei der Konstruktion von Apparaturen für die Handha-
+bung gréBerer Mengen von brennbaren Gasen, Flis-
+
+) Siehe AAV.
+
+
+
+===== PAGE 27/43 =====
+26
+
+sigkeiten und Stäuben sollen die Werkstoffe so ausge-
+wählt werden, daß Gefahren durch Reaktionen des
+Wandmaterials mit den brennbaren Stoffen nicht még-
+lich sind. Das Korrosionsverhalten der Werkstoffe ist
+gesondert zu prifen.
+
+Bei flachenhafter Abtragung sind bei der Berechnung
+der Wanddicke Zuschlage zu berlcksichtigen; gegen
+LochtraBkorrosion sind besondere SchutzmafBnahmen
+zu treffen.
+
+Zur Vermeidung oder Einschrénkung geféhrlicher ex-
+plosionsfidhiger Atmosphédre außerhalb der Apparatur
+ist ein dichter Abschluß der Apparaturen auch an jenen
+Stellen anzustreben, an denen die Stoffe eingegeben
+oder entnommen werden.
+
+E1.3.4.2 Technische Lüftung
+
+Technische Liftung ermoglicht in der Regel im Ver-
+gleich zur natürlichen Liftung den Durchsatz gréBerer,
+auf das Volumen des Raumes bezogener Luftmengen
+(Luftwechsel) und eine gezieltere Luftfihrung in um-
+schlossenen Raumen oder an den Apparaturen.
+
+Objektabsaugung
+
+Ist der Ort des Austrittes brennbarer Gase, Dampfe
+oder Stdube aus einer Apparatur bekannt (z. B. Ent-
+lüftungs- und Beschickungsofinungen), so kann die
+Lüftung durch Objektabsaugung (z. B. Randabsau-
+gung an offenen Behaltern) gezielt gefuhrt werden.
+Bei der Auslegung einer derartigen Absaugung mis-
+sen die in der Rege! hohere Dichte der Gase und
+Déampfe, die konstruktiven und betrieblichen Gegeben-
+heiten (z. B. Schwankungen der Ausdampfraten bei
+Flussigkeiten), als auch mögliche Stérungen berück-
+sichtigt werden.
+
+Prifung
+
+Die der Vermeidung oder Einschrankung von gefahrii-
+cher explosionsfahiger Atmosphaére dienenden Einrich-
+tungen für die technische Liftung und die zugehorigen
+Uberwachungseinrichtungen miissen von einer sach-
+kundigen Person im Hinblick auf die beabsichtigte Wirk-
+samkeit vor der erstmaligen Inbetriebnahme und in re-
+gelméaBigen Zeitabstanden mindestens j&hrlich gepriift
+werden (siehe AAV). Bei LOftungsanlagen mit versteli-
+baren Einrichtungen (z. B. Drosselklappen, Leitbleche,
+drehzahlverandertiche Ventilatoren) muß die Prifung
+bei jeder Neueinstellung erfolgen. Bei automatisch ver-
+stellbaren Liftungseinrichtungen muB die Prifung für
+den gesamten Einstellbereich erfolgen.
+
+Stichprobenhafte Uberpriifungen der bei unglnstigen
+Betriebsverhaitnissen sich einstellenden értlichen und
+unter Umständen zeitabhéngigen Konzentrationen wer-
+den empfohlen.
+
+OVE-EN 7/1991
+
+E2.1 Zoneneinteilung explosionsgefahrdeter Be-
+reiche
+
+Als Grundlage für die Beurteilung des Umfanges der
+SchutzmaBnahmen sind verbleibende explosionsge-
+fahrdete Bereiche nach der Wahrscheinlichkeit des Auf-
+tretens gefahrlicher explosionsfahiger Atmosphére in
+Zonen zu unterteilen.
+
+Zone G, auch als ,umschlossene medizinische Gas-Sy-
+steme" bezeichnet, umfaBt — nicht unbedingt allseitig
+umschiossene — Hohirdume, in denen dauernd oder
+zeitweise explosionsfahige Gemische (ausgenommen
+explosionsfahige Atmosphare) in geringen Mengen er-
+zeugt, geführt oder angewandt werden.
+
+Zusatziich gilt:
+
+(1) Die Hohirdume der Beatmungsseite, z. B. Ver-
+dampfer, Mischkopf des Anasthesiegerates, der
+zum Patienten führende Beatmungsschiauch (und
+der Mund sowie Atmungsorgane des Patienten)
+gelten, bei Anwendung explosionsféahiger Inhala-
+tions-Anasthesiemittel-Gemische, als ,umschlos-
+sene medizinische Systeme”.
+
+(2) Im Kopfbereich des Patienten entsteht auBerhalb
+des ,umschlossenen medizinischen Gas-Sy-
+stems" (bet Anwendung der Intubation oder einer
+Atemmaske) beim ,geschlossenen® Anéasthesie-
+system keine ,medizinische Umgebung®.
+
+(3) Im Bereich der Ausatemseite aller Anasthesie-
+Systeme entsteht keine ,medizinische Umge-
+bung®, da die ausgeatmeten Inhalations-Anasthe-
+siemittel-Gemische mit Rücksicht auf Gesund-
+heits-, Brand- und Explosionsgefahren auf-
+gefangen und ins Freie abgeleitet werden
+missen, das gleiche gilt mit Ricksicht auf Ge-
+sundheits- und Brandgefahren auch fur Sauer-
+stoff/lLachgas-Gemische.
+
+Zone M, auch als ,medizinische Umgebung* bezeich-
+net, umfaBt den Teil eines Raumes, in dem explosions-
+fahige Atmosphéare durch Anwendung von Analgesie-
+mitteln oder medizinischen Hautreinigungs- oder Des-
+infektionsmitteln, jedoch nur in geringen Mengen und
+nur für kurze Zeit, vorkommen kann.
+
+Zusatzlich gilt:
+
+(1) Wahrend Analgesiemittel oder Hautreinigungs-
+oder Desinfektionsmittel, deren Dampfe mit Luft
+explosible Atmosphare bilden kénnen, verwendet
+werden muissen, entsteht unter der Platte des
+Operationstisches mit einem Winkel von 30° ge-
+gen die Lotrechte auswdérts gerichtet eine ,medi-
+zinische Umgebung®, wenn die Luftwechseizahl
+der Klimaanlage unter n=15h" bleibt; die Kli-
+maanlage darf nicht mit einem Umiuftanteil ge-
+fahren werden, um eine Anreicherung explosibler
+Atmosphare auszuschlieBen.
+
+
+===== PAGE 28/43 =====
+ÖVE-EN 7/1991
+
+Wenn keine Analgesiemittel und keine brennba-
+ren Hautreinigungs- oder Desinfektionsmittel, de-
+ren Dämpfe mit Luft explosible Atmosphäre bilden
+kénnen, verwendet werden, entsteht zu keiner Zeit
+~medizinische Umgebung".
+
+(2) Uberschreitet die Luftwechselzahl 60 h‘', so darf
+bis zu 80% der Luft im Umiuftveriahren genützt
+werden. Unter dieser Voraussetzung entsteht an
+keiner Stelle auBerhalb des Anésthesie-Systems
+eine ,medizinische Umgebung®, auch nicht bei
+Anwendung brennbarer Inhalations-Anasthesie-
+mittel im „offenen“ System ohne Absaugung.
+
+E2.3.4 Elektrische Anlagen, Ziindvorgang
+
+Bei elektrischen Betriebsmitteln können — selbst bei
+geringen Spannungen — elektrische Funken (z. B. beim
+Offnen und SchiieBen elektrischer Stromkreise und bei
+Ausgleichsstrémen) und heiße Oberflachen als Ziind-
+quellen auftreten.
+
+Es wird ausdriicklich darauf hingewiesen, daB die
+Schutzkleinspannung keine MaBnahme des Explo-
+sionsschutzes ist, da auch bei kleineren Spannungen
+
+27
+
+die Zindung geféhrlicher explosibler Atmosphare mög-
+lich ist. AuBerdem ist zu beachten, daß bei elektrischen
+Betriebsmitteln auch mit anderen Zindquelten gerech-
+net werden muB, z. B. mit mechanisch erzeugten Fun-
+ken.
+
+SchutzmaBnahmen
+
+C Für medizinisch genutzte Raume:
+
+In der Zone G dürfen nur bauartzugelassene elektro-
+medizinische Gerate mit ,Anasthesiemittel-Prifung der
+Klasse G“ verwendet werden, sie müssen den Anforde-
+rungen gemäß den technischen Bestimmungen®®) ent-
+sprechen.
+
+In der Zone M dürfen nur elektromedizinische Gerate
+und Gerdte der medizinischen Technik mit „Anästhesie-
+mittel-Prifung der Klasse M“ verwendet werden, sie
+müssen den Anforderungen gemäß den technischen
+Bestimmungen®') entsprechen.
+
+) Siehe QVE-MG/IEC 601 Teil 1§ 41 bzw. OVE-MG/EN 60 601-1 Abschnitt 41.
+“) Siehe OVE-MG/IEC 601 Teil 1 § 40 bzw. OVE-MG/EN 60 601-1 Abschnitt 40.
+
+
+===== PAGE 29/43 =====
+28 ÖVE-EN 7/1991
+
+Tab. E-1: Auszug aus der Beispieisammiung zu den EX-Richtlinien
+
+SchutzmaBnahmen gemäß
+
+Beispiel Merkmale/Bemerkungen/Voraussetzungen E2
+
+in den nachstehend angeführ-
+ten (verbleibenden) Zonen
+
+Medizinisch genutzte Räume Räume, die bestimmungsgemäß direkt oder
+indirekt bei Untersuchung, Behandlung oder
+Pflege von Menschen benutzt werden (siehe
+
+82).
+
+Räume für Aimungsanästhesie | Räume, in denen bestimmungsgemäß At-
+mungsanästhesien ausgeführt werden, Aus-
+geatmete und freiwerdende Inhalations-An-
+asthesiemittel-Gemische werden erfaßt und
+ins Freie abgeleitet, um Gesundheitsgefahren
+für die Beschäftigten auszuschließen.
+
+Bei Durchführung von Atmungsanästhesien,
+bei denen nicht durch Wahl des Mittels oder
+des Verfahrens sichergestellt ist, daß sich
+auch bei Fehlbedienung keine explosions-
+fähigen Gemische bilden kénnen.
+
+Im „umschlossenen medizinischen Gas-Sy-
+stem“ (G); Anwendung von Geräten der Ge-
+räteschutzart AP-G
+
+(1) bei nicht leicht zerbrechlichen Geräte- 3. Zone G: im umschiossenen
+teilen .3.4. Kreislauf
+Zone M: keine
+
+(2) bei leicht zerbrechlichen Geréteteilen 3. Zone G: im umschlossenen
+Kreislauf und 50 mm
+auflerhalb
+
+Zone M: weitere 200 mm
+außerhalb
+
+Bei ausschlie Blicher Verwendung von Inhala-
+tionsanästhesiemitteln, die keine explosions-
+fähigen Gemische bilden können
+
+oder
+
+bei Anwendung von Verfahren, bei denen
+durch konstruktive Maßnahmen das Entste-
+hen explosionsfähiger Gemische verhindert
+ist.
+
+Räume für chirurgische Eingriffe | z. B. OP-Räume, Angiografieräume, Herz-
+katheterräume
+
+Bei Anwendung von Chlorethyi als Analgesie- 250 mm um den
+mittel: Sprühstrahl während
+In der „medizinischen Umgebung“ (M} An- des Sprühens und
+wendung von Geräten der Geräteschutzart der Zeit des Ver-
+AP-M. dampfens (ca. 10 s)
+
+Bei Anwendung von brennbaren FlUssig- Zone M: Unterhalb des Be-
+keiten als Hautreinigungs- und Hautdesinfek- handlungsplatzes
+tionsmittel: (OP-Tisch) ein Pyra-
+midenstumpf, 30°
+.medizinische Umgebung” (M), solange mit gegen die Lotrechte
+diesen Mitteln gearbeitet wird: Anwendung auswarts gerichtet
+von Gerdten der Geréteschutzart AP-M wahrend der Anwen-
+dung und der Zeit
+des Verdampfens
+
+Fur fest ein- oder angebaute Geräte jedoch
+standig vorzusehen. (ca. 10 s)
+
+Bei zuverlassigem, dokumentiertem Verzicht
+auf brennbare FllUssigkeiten als Hautreini-
+gungs- und Hautdesinfektionsmittel: Keine
+.medizinische Umgebung®
+
+
+
+===== PAGE 30/43 =====
+OVE-EN 7/1991
+
+A1.3 Auszug aus den Richtlinien für die Vermei-
+dung von Zündgefahren infolge elektrostati-
+scher Aufladungen — Richtlinien „Statische
+Elektrizität“ (sinngemäß)
+
+Vorbemerkung
+
+Unter den vielen möglichen Zindquelien, die eine ex-
+plosionsfahige Atmosphére zur Entziindung bringen
+kénnen, sind Entladungen statischer Elektrizitat inso-
+fern von Bedeutung, als einerseits durch viele betriebli-
+che Vorgange ungewollt solche Entladungen ausgelést
+werden kénnen und andererseits die Bedingungen für
+ihr Auftreten bzw. ihre Vermeidung flr den Laien
+schwer Uberschaubar sind. Es ist daher sinnvoli, dieses
+Teilgebiet des Explosionsschutzes in einer eigenen
+Richtlinie gescndert zu behandeln.
+
+Die Hauptgefahr der elektrostatischen Aufladung liegt
+in dem Auftreten zundfahiger Entladungen, die explo-
+sionsfahige Gemische von Gasen, Dampfen, Nebeln
+oder Stauben mit Luft (explosionsfahige Atmosphare)
+entziinden kénnen. Daher ist die sicherste Schutzmaß-
+nahme, das Auftreten explosionsfahiger Atmosphäre in
+gefahrdrohender Menge zu verhindern. SchutzmaB-
+nahmen zur Vermeidung oder Einschrankung explo-
+sionsfahiger Atmosphéare sind in Abschnitt E1 ,Schutz-
+maßnahmen“ der ,Richtlinien für die Vermeidung der
+Gefahren durch explosionsfahige Atmosphére — Explo-
+sionsschutz-Richtlinien (EX-RL)" angefthrt.
+
+Für den Menschen selbst stellen diese Entiadungen im
+allgemeinen keine Gefahr dar. Es besteht jedoch die
+Mdglichkeit des Erschrackens und dadurch ausgeloster
+Fehlhandlungen. Ferner kdnnen Meß- und Regelgeréte
+gestört sowie Fertigungsabldufe behindert werden.
+
+Abschnitt 1 Anwendungsbereich
+
+Diese Richtlinien finden Anwendung für die Beurteilung
+und die Vermeidung von Ziindgefahren infolge elektro-
+statischer Aufladungen in expiosionsgefahrdeten Berei-
+chen und beim Umgang mit explosionsgeféhrlichen Ar-
+beitsstoffen. Sie lassen sich sinngemal auch anwen-
+den für die Beurteilung und die Vermeidung von
+Zindgefahren unter anderen als atmospharischen Be-
+dingungen (erhéhter Druck, erhéhte Temperatur) oder
+mit anderen Reaktionspartnern als Luft sowie in ande-
+ren reaktionsfahigen Systemen (z. B. chemisch instabi-
+le Stoffe wie Peroxide, Athylenoxid).
+
+Abschnitt 2 Begriffsbestimmungen
+
+2.1 Elektrostatische Aufladungen (im folgenden
+auch kurz Aufladungen genannt) sind elekirische La-
+dungen, die sich durch mechanische Trennung gleich-
+artiger oder verschiedener Stoffe auf den getrennten
+Teilen ansammeln oder auf anderen leitfahigen Gegen-
+
+29
+
+standen oder auf Personen infolge Influenz auftreten.
+Die mechanische Trennung kann z. B. erfolgen beim
+Abheben, Reiben, Zerkleinern und Ausschltten von
+festen Stoffen; ferner beim Stromen von Gasen und
+Dampfen, die geringe Mengen von feinverteilter Figs-
+sigkeit oder feinverteilten Feststoffen enthalten.
+
+2.2 Gefährliche Aufladung ist eine elektrostatische
+Aufladung, die bei Entladung innerhalb explosionsfahi-
+ger Atmosphdre diese entzlinden kann.
+
+2.3 Spezifischer elektrischer Widerstand (im fol-
+genden auch spezifischer Widerstand genannt) eines
+Stoffes ist der elektrische Widerstand eines Probekör-
+pers von 1 m Lange und 1 m* Querschnitt; Einheit: Ohm
+mal Meter (SI-Einheit Qm). (Messung gemäß den tech-
+nischen Bestimmungen®?).)
+
+2.4 Eiektrische Leitfahigkeit (im folgenden auch
+Leitfahigkeit genannt) eines Stoffes ist der reziproke
+Wert seines spezifischen elektrischen Widerstandes;
+Einheit: Siemens durch Meter (Si-Einheit S/m gleich
+Q m.
+
+2.5 Leitfahige Stoffe sind feste oder flüssige Stoffe,
+deren spezifischer Widerstand nicht mehr als 10* Qm
+beträgt.
+
+2.6 Nichtleitende Stoffe sind Stoffe, deren spezifi-
+scher Widerstand mehr als 10* m betrégt.
+
+2.7 Oberflaichenwiderstand ist der elektrische Wi-
+derstand zwischen zwei auf die Oberflache des Stoffes
+gesetzten Elektroden. Er hangt vom MeBverfahren ab
+und wird bei nichtleitfahigen festen Stoffen gemäß den
+technischen Bestimmungen®) gemessen mit Elektro-
+denanordnung A oder E gem&B den technischen Be-
+stimmungen*®). Bei Textilien erfolgt die Messung ge-
+mäß den technischen Bestimmungen®), jedoch bei
+Normkiima 23/50 gemäß den technischen Bestimmun-
+gen®s).
+
+2.8 Ableitwiderstand eines Gegenstandes ist der
+elektrische Widerstand, der zwischen einer an den Ge-
+genstand angelegten Elektrode und Erde gemessen
+wird. Die Berthrungsflache der MeBelektrode mit dem
+Gegenstand darf 20 cm® nicht (ibersteigen (Messung in
+Anlehnung an die technischen Bestimmungen®®), Meß-
+spannung ca. 100 Voit Gleichspannung, kreisférmige
+Elektrodenflache von 20 cm?). Bei porösen Böden kann
+eine trockene Elektrode, z. B. aus leitfahigem Gummi,
+verwendet werden. Bei nichtieitfahigen Stoffen kann
+der Ableitwiderstand stark vom MeBort abhängen.
+
+2.9 Elektrostatisch geerdet (im folgenden auch kurz
+geerdet genannt) sind Gegenstdnde aus leitfahigen
+Stoffen, deren Ableitwiderstand gegen Erde nicht groB-
+er als 10° Q ist, sowie Personen und Gegenstande mit
+
+*) Siehe DIN VDE 0303 Teil 3.
+
+) Siehe DIN VDE 0303 Tei! 8
+
+*) Siehe ONORM S 1419 Teil 1 bis Teil 4.
+%) Siehe ONORM M 7610. _
+
+*) Siehe DIN 51 953 bzw. ONORM B 5213.
+
+
+===== PAGE 31/43 =====
+30
+
+Kapazitäten, wenn ihre Entladezeitkonstante (Ableitwi-
+derstand mal Kapazität) kleiner als ca. 102 Sekunden
+ist (siehe auch § 6.3).
+
+210 Isoliert sind im allgemeinen Gegenstande aus
+leitfahigen Stoffen, die nicht (elektrostatisch) geerdet
+sind.
+
+2.11 Aufladbar sind
+
+(1) feste Stoffe, deren Oberflichenwiderstand mehr
+als 10° Q betréagt,
+
+(2) Flussigkeiten, deren Leitfdhigkeit gemessen ge-
+mäß den technischen Bestimmungen®?) /) *} we-
+niger als 10 S/m (10 000 pS/m) bzw. deren spe-
+zifischer Widerstand mehr als 10° Qm betragt,
+
+(3) nicht geerdete Gegenstande aus leitfahigen Stof-
+fen.
+
+2.12 Nicht aufladbar sind
+
+(1) feste und flissige Stoffe, für die die in Abschnitt
+2.11 genannten Grenzen der Widerstande unter-
+schritten werden,
+
+(2) geerdete Gegenstinde aus leitfihigen Stoffen.
+
+Der Begrift Stoffe" ist hier als Oberbegriff für Arbeitsstofte, Werkstof-
+fe u. dgl., aber nicht für Stofle im Sinne von Textilien zu verstehen.
+
+213 Zonen
+Die Einteilung erfolgt gemäß Ex-Schutz-Richtlinien.
+
+Abschnitt 3 bis Abschnitt 6 sind in diesem Anhang nicht
+wiedergegeben.
+
+Abschnitt 7 (Auszug)
+
+711 Allgemeines {Auszug)
+
+Ist der Oberflachenwiderstand im Normklima 23/50 ge-
+mäß den technischen Bestimmungen®) kleiner oder
+gleich 10° Q, kénnen im aligemeinen SchutzmaBnah-
+men entfallen. Ausgenommen hiervon sind Einrichtun-
+gen mit hohen Trenngeschwindigkeiten, z. B. Antriebs-
+riemen.
+
+Ist der Oberflachenwiderstand im Normklima 23/50
+groBer als 10° Q, aber unter zu erwartenden ungunsti-
+gen Bedingungen, z. B. niedrigere relative Feuchte, An-
+derung der Stoffeigenschaften, kleiner als 10" Q und
+ist der explosionsgetahrdete Bereich nicht Zone 0, kön-
+nen im allgemeinen SchutzmaBnahmen entfallen.
+
+Ist keine der in den beiden vorhergehenden Abschnit-
+ten angetiihrten Bedingungen grflllt, sind in den Zo-
+nen 0 und 1 SchutzmaBnahmen durchzufiihren. In Zo-
+ne 2 sind SchutzmaBnahmen in der Regel nur erforder-
+lich, wenn zlindfahige Entladungen ständig auftreten
+würden.
+
+*) Siehe DIN VDE 0303 Teil 3.
+
+) Siehe ONORM M 7610,
+
+‘") Siehe DIN 51 412 Teil 1 und Teil 2.
+*) Siehe QVE-W 7 Teil 3.
+
+OVE-EN 7/1991
+
+742 Medizinisch genutzte Rdume
+
+In medizinisch genutzten Raumen können explosions-
+gefahrdete Zonen vorhanden sein. Diese bestehen bei
+Anwendung
+
+— von Inhalations-Anésthesiemitteln, die mit Sauerstoff
+explosionsfahige Gemische bilden können,
+
+— von Chlorathyl als Analgesiemittel,
+
+— von brennbaren Flissigkeiten als Hautreinigungs-
+und Hautdesinfektionsmittel (siehe Beispielsamm-
+lung der ,Richtlinien für die Vermeidung der Gefah-
+ren durch explosionsfahige Atmosphéare Explosions-
+schutz-Richtlinien (EX-RL)").
+
+In medizinisch genutzten Raumen, deren normale Ver-
+wendung das Entstehen explosionsgeféhrdeter Berei-
+che nicht ausschlieBt, sind die unter Abschnitt 7.4.2.2
+angefthrten MaBnahmen gegen das Auftreten zündfä-
+higer Entladungen erforderlich.
+
+7421 Aufladungsvorgang
+
+In medizinisch genutzten Rdumen können Aufladungen
+auftreten bei
+
+— Vorgéngen mit Reibung und Trennung unter Beteili-
+gung aufladbarer Stoffe,
+
+— Verwendung nicht geerdeter Geréte sowie elektro-
+medizinischer Gerate durch Influenz.
+
+7422 SchutzmafBnahmen
+
+7.4.2.2.1 In medizinisch genutzten Räumen muB der
+Oberfldchenwiderstand gemäß Abschnitt 2.7 von Ar-
+beitskleidung, Decken und Tlchern unter den betriebs-
+gemäß anzunehmenden Bedingungen (siehe techni-
+sche Bestimmungen®®)) dem Abschnitt 7.1.1 entspre-
+chen. Kleidung, Tücher und Decken aus Mischgewebe
+mit mindestens 30% Anteil an naturbelassener Baum-
+wolle bzw. Viskose (ohne Kunstharzausriistung) sind
+im allgemeinen geeignet. Bei Vorwärmung darf ihnen
+ihre nattirliche Feuchtigkeit nicht entzogen werden; da-
+her soll in den Warmeschrank eine gefüllte Wasser-
+schale gestellt werden.
+
+Wolldecken, Plastiktiicher und solche Gewebe und Ge-
+wirke, die nicht den vorgenannten Bedingungen ent-
+sprechen, sind auszuschlieen, da sie bei Reibungs-
+und TFrennungsvorgdngen zu hohen Aufladungen füh-
+ren kénnen.
+
+Gummitlicher, -matratzen und -kopfkissen miissen aus
+leitfahigem Gummi bestehen oder damit Uberzogen
+sein. Überzüge aus leittahigem Gummi missen die
+betreffenden Gegensténde vollig umschlieBen. Das gilt
+auch fur die Polsterung von Sitzen.
+
+7.4.2.2.2 Da insbesondere bei Operationen für die
+beteiligten Personen keine Sturzgefahren geschaffen
+werden dirfen, sind Kabelverbindungen fir die Erdung
+von Mensch und Gerét (z. B. bei Horton-Intercoupler)
+
+*) Siche ONORM H 6020.
+
+
+===== PAGE 32/43 =====
+ÖVE-EN 7/1991
+
+ungeeignet. Die Erdung muß vielmehr über den Fußbo-
+denbelag sichergestellt sein. Der Ableitwiderstand des
+Fußbodens darf bei frischverlegten Fußböden höch-
+stens 107 Q und nach vier Jahren Standzeit 108 Q be-
+tragen. Ein Ableitwiderstand von 50 kQ sollte jedoch
+nicht unterschritten werden, um Schleifenbildung für
+vagabundierende Stréme bei HF-Chirurgie zu vermei-
+den.
+
+Es wird hier insbesonderes auf die Ausfihrung antistatischer FuBbodenbe-
+läge Klasse | gemäß den technischen Bestimmungen®} hingewiesen.
+
+7.4.2.2.3 Alleleitfahigen berlhrbaren Teile von ortsfe-
+sten und beweglichen Einrichtungsgegenstanden mis-
+sen miteinander und mit dem FuBboden leitfahig ver-
+bunden und geerdet sein. Ein Mindestableitwiderstand
+wird dabei nicht gefordert. Die Erdverbindung darf an
+keiner Stelle (z. B. durch nichtleitfahige Lackierung) un-
+terbrochen sein. Narkosegeréate, Hocker, Tritte, fahrba-
+re Krankenwagen u. & müssen durch Rollen bzw. FuB-
+kappen aus leitfahigem Werkstoff mit dem FuBboden
+verbunden sein. Der Durchgangswiderstand der Reifen
+von Rollen sollte 10 kQ nicht Uberschreiten.
+
+) Siehe ONORM B 5220.
+
+31
+
+7.42.2.4 Als Abdeckung des Operationstisches und
+fahrbarer Krankentragen sowie der Sitzflichen von
+Hockern durfen nur Gummi oder Kunststoffe mit Ober-
+flachenwiderstanden zwischen 5 k© und 1 MQ verwen-
+det werden.
+
+Bei Einsatz der HF-Chirurgie darf der Widerstand 50 k£ nicht unterschreiten.
+
+7.4.225 Es muß leitfahige FuBbekleidung — ein-
+schlieBlich der Uberschuhe — getragen werden. Jedoch
+soll ein Ableitwiderstand von mindestens 50 kQ einge-
+halten werden®®).
+
+7.4.2.2.6 Schiduche für die Fortleitung von Gasen,
+auch von Sauerstoff, Lachgas, Anasthesiegasen, dür-
+fen aus nichtleitfahigen Stoffen bestehen®'). Sind sie
+aus leitfahigen Stoffen hergestellt, dürfen sie nur auf
+metallische Schlauchtlllen ohne leitfahige Lackierung
+aufgezogen sein. Im Verlaufe der Gasfiihrungen, auch
+innerhalb von Geraten, dirfen keine isolierten leitfähi-
+gen Teile vorhanden sein. Für Atembeute! und Bälge
+von Anésthesiegeraten und Sauerstoffbeatmungsgera-
+ten dirfen ausschlieBlich leitfahige Werkstoffe verwen-
+det werden.
+
+%} Siehe ONORM F 5300.
+) Siehe auch ONORM K 3010.
+
+
+===== PAGE 33/43 =====
+32 ÖVE-EN 7/1991
+
+Tab. 7-1: Widerstand von Fußbodenbelägen‘)
+
+Ableitwiderstand
+
+Material in Ohm
+
+PVC Fliesen und Bahnen 10° bis 10!
+PVC leitfahig (Sonderaustihrung) 10 bis 10°
+Linoleum 10° bis 10'2
+Spachtelmassen 108 bis 10°
+leitfiahiger Gummibelag 10 bis 10°
+gebrannte Fliesen 10° bis 10'?
+Kunststeinfliesen 10? bis 10°
+Normaibeton 3 cm dick 107
+Spezialbeton 3 cm (je nach Austrock-
+nung) 10* bis 107
+leitfahiger Schaumbeton 104
+Terrazzoplatien 107 bis 10°
+leitfahiger Terrazzo (je nach Aus-
+trocknung) 10° bis
+Asphalt 10"
+
+107
+
+EinfluB der Trocknung:
+
+(1) leitfähige Terrazzoplatten bei An- | 9 - 10°
+lieferung
+nach 240 h Trocknung bei 70°C {1 -10°
+
+(2) Terrazzoplatten, die nach Anga-
+be des Herstellers leitfahig sein
+sollen
+
+bei Anlieferung
+
+nach 24 h Trocknung
+nach 72 h Trocknung
+nach 96 h Trocknung
+nach 144 h Trocknung
+
+(3) Beispiele für die Austrocknung
+von leitfahigen Terrazzo-FuBbo-
+den in OP-R&umen:
+
+Normale Heizung:
+
+3 Monate nach Verlegung
+nach 2 Jahren
+
+nach 4 Jahren
+
+FuBbodenheizung:
+
+3 Monate nach Verlegung
+nach 2 Jahren
+
+nach 4 Jahren
+
+nach 6 Jahren keine merkliche
+Anderung
+
+1} Gemäß Angaben der Physikalisch-Technischen Bundesanstalt, Institut
+Berlin; MeBmethode gemäß DIN 51953 ,Prifung von organischen
+Bodenbelägen; Prifung der Ableitfahigkeit für elektrostatische Ladungen fiir
+Bodenbelage in explosionsgelahrdeten Räumen".
+
+
+
+===== PAGE 34/43 =====
+OVE-EN 7/1991
+
+33
+
+A2 Zusammenstellung der Anforderungen an die zulässigen Netzformen, Schutz-
+
+Zulässige
+Netzformen und
+Schutzmaßnahmen
+für
+
+maßnahmen und Versorgungsarten
+
+nicht
+medizinisch
+genutzt
+
+Verbraucher  der
+allgemeinen Strom-
+versorgung
+
+Verbraucher  der
+Sicherheitsstrom-
+versorgung
+
+Raumarten
+
+medizinisch genutzt
+
+LJAnwendungsgruppe”
+
+1
+
+— Netzformen:
+TN-S-System
+TT -System
+IT -System
+
+— SchutzmaBnahmen:
+alle gemäß
+OVE-EN 1 Teil 1
+
+bei Einspeisung aus der ali-
+gemeinen Stromversor-
+
+gung
+
+— Netzformen:
+TN-S-System
+TT -System
+IT -System
+
+— SchutzmaBnahmen:
+alle geman
+OVE-EN 1 Teil 1
+
+bei Einspeisung aus der
+Sicherheitsstrom-
+
+| versorgung
+
+— Netzformen:
+TN-S-System
+TT -System
+IT -System
+
+— SchutzmaBnahmen:
+Schutzisolierung
+Schutzklein-
+spannung
+Funktionsklein-
+spannung
+Schutztrennung
+Schutzleitungs-
+system
+Fl-Schutzschaltung
+
+Nullung mit Einschréan-
+
+kung
+(siehe 8 4.2.2.2)
+
+— Netzformen:
+
+TN-S-System
+TT -System
+IT -System
+(siehe $ 4.3)
+
+— SchutzmaBnahmen:
+
+Schutzisolierung
+{siehe $ 4.3.1)
+
+Schutzkleinspannung
+mit Einschrankung
+(siehe § 4.3.2)
+
+Funktionskleinspan-
+nung mit Ein-
+schrankung
+
+(siehe $ 4.3.3)
+
+FI-Schutzschaltung
+Nullung mit Fehler-
+strom-Schutzeinrich-
+tungen und Einschrén-
+kungen (siehe § 4.3.4)
+
+IT-System mit Meldung
+(siehe § 4.3.5)
+
+Schutztrennung mit
+Einschrankungen
+(siehe $ 4.3.6)
+
+— erfordertich ist:
+
+zusatzlicher Potential-
+ausgleich gemäß § 4.4
+
+2
+
+für alle Verbraucher außer den le-
+benswichtigen Einrichtungen sind
+die Anforderungen wie für die An-
+wendungsgruppe 1 zuldssig;
+
+fir die lebenswichtigen Einrich-
+tungen sind erforderlich:
+
+— Netzform:
+IT-System (siehe § 4.3.5)
+
+— SchutzmafBnahmen:
+IT-System mit Meldung
+(siehe § 4.3.5)
+
+— Zweifach-Einspeisung
+gemäß $ 3.3.3
+
+— Steckdosenstromkreise
+gemäß § 3.4.1
+
+— Versorgung der OP-
+Leuchten gemäß $ 5.3.2
+
+— Versorgung der lebenswichtigen
+medizinischen Geräte gemäß
+8 5.3.1
+
+
+
+===== PAGE 35/43 =====
+34 ÖVE-EN 7/1991
+
+A3 Abbildungen
+
+Netz 158 SV
+
+t<0,5s | ZSV
+
+OP—Leuchte
+
+1 Abgriff der Spannungsiiberwachung bei Versorgung geman $ 3.3.3.2(1)
+2 Abgriff der Spannungsiberwachung bei Versorgung gemäß $ 3.3.3.2(2)
+Abb. A3-1: Beispiel für die Stromversorgung eines OP-Verteilers mit dezentraler ZSV < 15 s, dezentraler ZSV < 0,5 s für die OP-Leuchte und einem Trenntransformator
+
+
+===== PAGE 36/43 =====
+ÖVE-EN 7/1991 35
+
+Netz J t<15s SV t=0.5s ZSV
+
+___r___.._____J
+L
+—
+|
+
+weitere OP’s
+
+OP
+
+OP—Leuchte
+
+1 Abgriff der Spannungsiberwachung bei Versorgung gemäß $ 3.3.3.2(1)
+2 Abgriff der Spannungsiberwachung bei Versorgung gemäß $ 3.3.3.2(2)
+# ... KurzschluB- und erdschiuBsichere Verlegung
+
+Abb. A3-2: Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV < 0,5 s und einem Trenntransformalor
+
+
+===== PAGE 37/43 =====
+36 ÖVE-EN 7/1991
+
+OP—LeuchteJ(
+
+1 Abgriff der SpannungsOberwachung bei Versorgung gemäß $ 3.3.3.2(1)
+
+2 Abgriff der Spannungsiiberwachung bei Versorgung gemäß $ 3.3.3.2(2)
+# ... Kurzschlu3- und erdschlufisichere Verlegung
+
+Abb. A3-3: Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV < 15 s, dezentraler ZSV < 0,5 s für die OP-Leuchte und einem Trenntransiormator
+
+
+
+===== PAGE 38/43 =====
+ÖVE-EN 7/1991
+
+OP
+
+220/24V
+
+™ X
+
+OP—Leuchte
+
+1 Abgriff der Spannungsiberwachung bei Versorgung geman $ 3.3.3.2(1)
+
+2 Abgriff der Spannungsiuberwachung bei Versorgung gemäß § 3.3.3.2(2)
+
+Abb. A3-4: Beispie! fir die Stromversorgung eines OP-Verteilers mit dezentraler ZSV < 0,5 s und einem Trenntranstormator
+
+
+
+===== PAGE 39/43 =====
+38 ÖVE-EN 7/1991
+
+Netz ; t=15s SV . t=0.5s ZSV _I
+
+}
+}
+i V
+]
+]
+Start -
+Automatik["7777777
+
+LU L
+
+OP—Leuchte
+
+1 Abgriff der Spannungsiberwachung bei Versorgung gemäß $ 3.3.3.2(1)
+
+2 Abgriff der Spannungsiiberwachung bei Versorgung gemäß $ 3.3.3.2(2)
+Abb. A3-5:  Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV < 0,5 s und zwei Trenntransformatoren
+
+
+===== PAGE 40/43 =====
+ÖVE-EN 7/1991 39
+
+OP—Leuchte
+
+1 Abgriff der Spannungstberwachung bei Versorgung gemäß § 3.3.3.2(1)
+2 Abgriff der Spannungstberwachung bei Versorgung gemäß § 3.3.3.2(2)
+Abb. A3-8: Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV < 15 s, dezentraler ZSV < 0,5 s fur die OP-Leuchte und zwei Trenntransformatoren

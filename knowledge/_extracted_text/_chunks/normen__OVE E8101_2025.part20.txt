@@ -1,0 +1,1807 @@
+
+
+===== PAGE 801/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 1 
+Teil 7-753  
+Heizanlagen mit Heizleitungen und Flächenheizelementen 
+753.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Flächenheizanlagen zur Beheizung von Oberflächen. Er gilt auch für elektrische 
+Heizanlagen zum Frostschutz und für ähnliche Anwendungen. Sowohl Innenraumanlagen als auch Anlagen 
+im Freien werden berücksichtigt. 
+ANMERKUNG AT 
+Eine Enteisung, z. B. von Dachrinnen oder Freiflächen, ist mit den üblichen Anordnungen der 
+Heizleitungen nicht möglich. Dafür sind Sonderlösungen mit vergleichsweise hohem Energieaufwand erforderlich. 
+Dieser Teil gilt nicht für besondere Heizanlagen für industrielle und gewerbliche Anwendungen gemäß den 
+jeweils zutreffenden Teilen von OVE EN IEC 60519 (Elektrowärmeanlagen), ÖVE/ÖNORM EN 62395-1 
+(Elektrische Begleitheizungen) und OVE EN 60079 Reihe (Explosionsschutz; insbesondere die Teile 30 – 
+Elektrische Widerstands-Begleitheizungen). 
+ANMERKUNG 
+Beispiele für Heizanlagen, die in den Anwendungsbereich dieses Teils fallen, sind Heizanlagen für 
+Wände, Decken, Böden, Dächer, Ablaufrohre, -rinnen, Rohre, Behälter, Treppen, Fahrbahnen, Auffahrten oder auch für 
+nicht versiegelte Flächen (z. B. Fußballfelder, Rasenflächen und Pflanzenbeete). 
+ 
+753.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+753.3 
+Begriffe 
+Für die Anwendung dieses Tels gelten die Begriffe gemäß Teil 2. 
+753.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+753.41 
+Schutz gegen elektrischen Schlag 
+753.410.3 
+Allgemeine Anforderungen 
+753.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+753.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich, Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+753.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 802/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 2 
+753.411.1 
+Allgemeines 
+Füge hinzu: 
+Heizeinheiten ohne fabrikmäßig gefertigten Schirm benötigen eine geeignete leitfähige Abdeckung, z. B. ein 
+Metallgitter mit einer Maschenweite nicht größer als 30 mm bei Decken und Fußböden und 3 mm bei Wänden, 
+die mit dem Schutzleiter verbunden werden muss. 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen derart ausgewählt und elektrische Stromkreise derart 
+unterteilt werden, dass eine Auslösung der Fehlerstrom-Schutzeinrichtungen (RCD) durch zu erwartende 
+Ableitströme unter üblichen Betriebsbedingungen der angeschlossenen Heizelemente unwahrscheinlich ist. 
+753.413 
+Schutzmaßnahme: Schutztrennung 
+Füge hinzu: 
+Die Schutzmaßnahme Schutztrennung ist für elektrische Wandheizanlagen nicht zulässig. 
+753.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+753.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+753.415.1.1 
+Füge hinzu: 
+Für Stromkreise, die Heizeinheiten speisen, sind Fehlerstrom-Schutzeinrichtungen (RCD) mit einem 
+Bemessungsfehlerstrom I∆n  0,03 A als zusätzlichen Schutz (Zusatzschutz) zu verwenden. 
+ 
+753.42 
+Schutz gegen thermische Einflüsse 
+753.423 
+Schutz gegen Verbrennungen 
+Füge hinzu: 
+In Bereichen von beheizten Oberflächen, wo eine Berührung über Haut oder Schuhwerk möglich ist, muss die 
+Oberflächentemperatur auf geeignete Werte begrenzt werden. 
+ANMERKUNG 
+Hinweise über die Begrenzung der Temperatur sind im IEC Guide 117 bzw. auch in OVE EN  
+IEC 60335-2-96:2022, 11.8 enthalten. 
+753.424 
+Schutz gegen Überhitzung 
+Füge hinzu: 
+753.424.101 
+Wandheizanlagen 
+Bei Wandheizanlagen müssen die Heizeinheiten mit einem metallenen Schirm, einer metallenen Umhüllung 
+oder einem feinmaschigen Metallgitter ausgeführt sein, die mit dem Schutzleiter zu verbinden sind. 
+ANMERKUNG 
+Diese Anforderung soll vor Überhitzung durch Kurzschluss zwischen aktiven Leitern schützen, der durch 
+das Anbohren einer verlegten Heizeinheit entsteht. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 803/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 3 
+753.424.102 
+ 
+Es ist besonderes Augenmerk darauf zu legen, zu verhindern, dass Heizeinheiten zu hohe Temperaturen im 
+umgebenden Material erzeugen. Das kann z. B. durch die Verwendung von Heizeinheiten mit 
+selbstbegrenzender Eigenschaft oder durch Trennung mit hitzebeständigem Material erreicht werden. 
+ANMERKUNG AT 
+Das Letztere kann erreicht werden durch Verlegung auf einer Metallfolie, in einem metallenen 
+Elektroinstallationsrohr oder durch Einhaltung eines Abstandes von mindestens 10 mm in Luft zu dem entzündbaren 
+Material. 
+753.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+753.51 
+Allgemeine Bestimmungen 
+753.511 
+Übereinstimmung mit Normen 
+Füge hinzu: 
+Flächenheizelemente müssen OVE EN IEC 60335-2-96 entsprechen. 
+Elektrische Widerstands-Begleitheizungen für industrielle und gewerbliche Zwecke müssen ÖVE/ÖNORM 
+EN 62395-1 entsprechen. 
+Heizleitungen müssen IEC 60800 entsprechen. 
+753.514 
+Kennzeichen 
+753.514.5 
+Dokumentation 
+Füge hinzu: 
+753.514.5.001.AT 
+ 
+Für jede Heizanlage muss eine geeignete Dokumentation erstellt werden, die – soweit zutreffend – folgende 
+Informationen enthält: 
+– 
+Hersteller und Typenbezeichnung der Heizeinheiten; 
+– 
+Produktinformationen des Herstellers der Heizeinheiten über Vorgaben zu den zulässigen Materialien in 
+der unmittelbaren Umgebung der Heizeinheiten sowie die erforderlichen Verlegeanweisungen. Falls 
+andere als die zulässigen Materialien verwendet werden, muss dies mit dem Hersteller abgestimmt sein; 
+– 
+Zahl der errichteten Heizeinheiten; 
+– 
+spezifische Heizleistungen; 
+– 
+Bemessungswiderstand (kalt) der einzelnen Heizeinheiten; 
+– 
+Verlegeanordnung der Heizeinheiten in Form von Skizzen, Zeichnungen oder Bildern; 
+– 
+Verlegetiefe der Heizeinheiten, einschließlich Fußbodenaufbau; 
+– 
+Lage der Verbindungsdosen; 
+– 
+Angaben zu den Leitern, Abschirmungen u. dgl.; 
+– 
+beheizte Bereiche; 
+– 
+Bemessungsspannung; 
+– 
+Bemessungsaufnahmeleistung; 
+– 
+Bemessungsstrom der Überstrom-Schutzeinrichtung; 
+– 
+Bemessungsfehlerstrom der Fehlerstrom-Schutzeinrichtung (RCD); 
+– 
+Isolationswiderstände der Heizeinheiten sowie die verwendete Prüfspannung; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 804/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 4 
+– 
+Ableitkapazität; 
+– 
+Betriebsanleitung. 
+ 
+Diese Dokumentation muss in die Gesamt-Dokumentation der elektrischen Anlage aufgenommen werden. 
+Darüber hinaus sind die Anforderungen von Anhang 753.A zu beachten. 
+ 
+753.515 
+Vermeidung gegenseitiger nachteiliger Beeinflussung 
+753.515.1 
+Ersetze die Anforderungen durch: 
+Elektrische Heizanlagen müssen so ausgewählt und errichtet werden, dass jede schädliche Beeinflussung 
+zwischen der Heizanlage und anderen in Frage kommenden elektrischen oder nicht elektrischen Einrichtungen 
+vermieden wird. 
+ANMERKUNG 
+Beispielsweise kann eine elektrische Heizanlage andere der elektrischen Anlagen beeinträchtigen, indem 
+die Stromtragfähigkeit von Kabeln anderer Stromkreise wegen der hohen örtlichen Umgebungstemperatur, verursacht 
+durch die Heizanlage, verringert wird. 
+Füge hinzu: 
+753.515.101 
+ 
+Heizeinheiten dürfen Dehnungsfugen von Gebäuden oder von Aufbauten nicht queren. 
+753.52 
+Kabel- und Leitungsanlagen 
+753.520 
+Einleitung 
+753.520.4 
+Allgemeine Anforderungen 
+Füge hinzu: 
+753.520.4.101  
+Heizungsfreie Flächen 
+Heizungsfreie Flächen sind abhängig von der geplanten Raumausstattung derart festzulegen, dass es bei 
+dieser Ausstattung zu keiner Beeinträchtigung der Wärmeabgabe kommt. 
+753.522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+753.522.1 
+Umgebungstemperatur (AA) 
+Füge hinzu: 
+753.522.1.3 Bei der Auswahl von Kalt- und Steuerleitungen, die im Bereich von beheizten Flächen errichtet 
+werden, muss die Erhöhung der Umgebungstemperatur berücksichtigt werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 805/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 5 
+753.522.4 
+Auftreten von festen Fremdkörpern (AE) 
+Füge hinzu: 
+753.522.4.3 Für das Anbringen von Befestigungsmitteln (z. B. mittels Dübel) für Gegenstände aller Art oder 
+bei Durchdringungen (z. B. Rohrleitungen) sind in den dafür vorgegebenen Bereichen heizungsfreie Flächen 
+festzulegen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 806/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-753 – Seite 6 
+Anhang 753.A 
+(normativ) 
+ 
+Informationen für den Benutzer der Heizanlage 
+Dem Auftraggeber muss eine Beschreibung der Heizanlage übergeben werden, die zur Weitergabe an den 
+Benutzer vorgesehen ist. 
+Die Beschreibung muss mindestens die folgenden Informationen enthalten: 
+a) 
+eine Beschreibung über den Aufbau der Heizanlage, insbesondere in welcher Tiefe die Heizeinheiten 
+eingebaut sind; 
+b) 
+einen Verlegeplan mit folgenden Informationen: 
+ 
+– 
+die Aufteilung der Heizstromkreise und ihre Bemessungsleistung; 
+ 
+– 
+die Anordnung der Heizeinheiten in jedem Raum; 
+ 
+– 
+Besonderheiten, die bei der Verlegung der Heizeinheiten berücksichtigt wurden, z. B. heizungsfreie 
+Flächen, Bereiche mit Ergänzungsheizung, ausgesparte unbeheizte Flächen für in diese eindringende 
+Befestigungsmittel. 
+c) 
+Angaben über die eingesetzten Regel- und Steuergeräte mit entsprechenden Schaltplänen und über die 
+vermasste Lage von Bodentemperatur- und Witterungsfühlern, sofern solche vorhanden sind; 
+d) 
+Angaben über die Bauart der Heizeinheiten und ihre maximale Betriebstemperatur. 
+Der Errichter muss den Auftraggeber informieren, dass die Beschreibung der Heizanlage alle notwendigen 
+Informationen, z. B. für Reparaturarbeiten, enthält. 
+Der Errichter der Heizanlage muss eine vereinbarte Anzahl von Gebrauchsanweisungen an den Auftraggeber 
+u. a. zur Weitergabe an den Benutzer übergeben. Ein Duplikat der Gebrauchsanweisung ist dafür bestimmt, 
+dass sie im zutreffenden Verteiler der Heizanlage oder in dessen Nähe dauerhaft angebracht wird. 
+Die Gebrauchsanweisung muss mindestens folgende Angaben enthalten: 
+– 
+Beschreibung der Heizanlage und ihrer Funktion; 
+– 
+Betrieb der Heizanlage in der Trocknungsphase z. B. des Fußbodenaufbaus; 
+– 
+Bedienung der Regel- und Steuereinrichtungen der Heizanlage, und falls vorhanden, auch der 
+Ergänzungsheizung; 
+– 
+Informationen über das eingeschränkte Aufstellen von Möbeln oder Ähnlichem: 
+ 
+• 
+Zusätzliche Abdeckungen des Bodens, z. B. nicht geeignete Teppiche, können zu höheren 
+Temperaturen im Fußboden führen und damit die Wirksamkeit der Heizanlage beeinträchtigen. 
+ 
+• 
+Möbelstücke mit vollflächiger Abdeckung des Fußbodens und/oder Einbauschränke dürfen nur auf 
+heizungsfreie Flächen gestellt werden. 
+ 
+• 
+Falls Bereiche mit Ergänzungsheizung vorhanden sind, dürfen hier selbst nur teilweise vollflächig 
+aufstehende Einrichtungsstücke, wie Teppiche, Sitz- und Liegemöbel mit Schabracken, nicht 
+aufgestellt werden. 
+– 
+Bei Decken-Flächenheizungen etwaige Einschränkungen bei der Möbelhöhe; Raumhohe Schränke dürfen 
+unter Decken nur in jenem Bereich angebracht werden, in dem keine Heizelemente vorhanden sind; 
+– 
+Bemaßte Lage von Bereichen mit Ergänzungsheizung und von heizungsfreien Flächen; 
+– 
+Hinweis, dass bei Fußboden-Flächenheizungen im Fußboden und bei Decken-Flächenheizungen in die 
+Decke eindringende Befestigungsmittel nicht angebracht werden dürfen. Von dieser Anforderung 
+ausgenommen sind heizungsfreie Flächen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 807/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 1 
+Teil 7-7N54 
+Stromversorgung von ortsfesten Experimentierständen in 
+Unterrichtsräumen 
+7N54.1.AT 
+Anwendungsbereich 
+Dieser Teil gilt für die Stromversorgung von ortsfesten Experimentierständen für das Experimentieren mit 
+elektrischer Energie in Unterrichtsräumen. 
+Diese Anforderungen gelten nicht für die Experimentierstände selbst. 
+ANMERKUNG 1.AT 
+Zu Unterrichtsräumen im Sinne dieser Richtlinie zählen alle Räume, in denen praktische Übungen 
+mit elektrischer Energie an Experimentierständen durchgeführt werden können. 
+ANMERKUNG 2.AT 
+Für das Errichten und Betreiben stationärer und nichtstationärer elektrischer Prüfanlagen ist 
+ÖVE/ÖNORM EN 50191 anzuwenden. 
+7N54.2.AT 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+7N54.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+7N54.3 Bestimmung allgemeiner Merkmale 
+7N54.31 Zweck, Stromversorgung und Aufbau 
+7N54.313 
+Stromversorgungen 
+Füge hinzu: 
+7N54.313.001.AT 
+Diese Stromversorgung zum Hauptverteiler für Experimentierstände oder dem Experimentierstand selbst muss 
+über eine eigene Zuleitung von der Gebäudehauptverteilung erfolgen. 
+ANMERKUNG AT 
+Diese Anforderung ist erforderlich, da ein Fehler in der Hauptversorgung für die Experimentier-
+stände nicht zum Ausfall der allgemeinen Stromversorgung der Anlage führen darf. 
+7N54.4 Schutzmaßnahmen und Schutzvorkehrungen 
+7N54.41 Schutz gegen elektrischen Schlag 
+7N54.410 
+Einleitung 
+7N54.410.3 Allgemeine Anforderungen 
+7N54.410.3.3 
+Füge hinzu: 
+Folgende Schutzmaßnahmen für die elektrische Versorgung von Hauptverteilern für Experimentierstände mit 
+Wechselstrom gemäß OVE E 8101 dürfen nicht angewendet werden: 
+– 
+Überstrom-Schutzerdung; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 808/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 2 
+– 
+Schutztrennung; 
+– 
+Doppelte oder verstärkte Isolierung (Schutzisolierung) als alleinige Schutzmaßnahme (siehe 412.1.3); 
+– 
+FELV; 
+– 
+PELV; 
+– 
+SELV für mehr als einen an der gleichen Quelle angeschlossen Experimentierstand. 
+Für Experimentierstände, die nicht über einen Hauptverteiler für Experimentierstände versorgt werden, gilt die 
+o.a. Anforderung sinngemäß. 
+Folgende Schutzmaßnahmen für die elektrische Versorgung von Experimentierständen mit Gleichstrom dürfen 
+nicht angewendet werden: 
+– 
+Nullung; 
+– 
+Fehlerstrom-Schutzschaltung. 
+ANMERKUNG AT 
+Diese Anforderungen beziehen sich auf die Schutzmaßnahme der elektrischen Versorgung und 
+nicht auf die am jeweiligen Experimentierstand wirksame(n) Schutzmaßnahme(n) sowie dessen Betriebsmittel und Geräte. 
+701.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+7N54.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+7N54.411.6 
+IT-Systeme 
+7N54.411.6.3 
+Füge hinzu: 
+Bei Anwendung des IT-Systems muss beim Auftreten eines ersten Fehlers eine automatische Abschaltung 
+innerhalb einer Zeit gemäß 411.6.3.2.001.AT erfolgen. 
+7N54.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV und/oder PELV 
+7N54.414.1 
+Allgemeines 
+7N54.414.1.1 
+Ersetze bei Absatz 2 den Aufzählungsstrich 1:  
+– 
+Begrenzung der Spannung im SELV-System auf einen Wert von maximal AC 25 V oder DC 60 V. 
+7N54.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+7N54.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+7N54.415.1.001.AT 
+Füge hinzu: 
+Bei Anwendung der Schutzmaßnahmen Nullung oder Fehlerstrom-Schutzschaltung müssen die Stromkreise 
+zur Versorgung von Experimentierständen mit mindestens einer Fehlerstrom-Schutzeinrichtung (RCD) mit 
+einem Bemessungsfehlerstrom I∆n  0,03 A geschützt sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 809/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 3 
+7N54.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+Im Handbereich von Experimentierständen ist ein zusätzlicher Schutzpotentialausgleich zu errichten. 
+Ergänzend sind alle großflächig berührbaren leitfähigen Teile im Handbereich in diesen zusätzlichen 
+Schutzpotentialausgleich einzubeziehen. 
+Die Verbindung mit dem Schutzerdungsleiter ist im nächstgelegenen Stromkreisverteiler oder an der nächst-
+gelegenen Potentialausgleichsschiene herzustellen. 
+ANMERKUNG 1.AT 
+Das gilt jedenfalls für berührbare leitfähige Teile mit einer Länge über 500 mm. 
+ANMERKUNG 2.AT 
+Eine Pulverbeschichtung, die die Anforderungen nach ÖVE-IM 12 nicht erfüllt, gilt nicht als 
+Isolierung. 
+7N54.46 Trennen und Schalten 
+7N54.462 
+Trennen 
+Füge hinzu: 
+Alle Experimentierstände innerhalb eines Unterrichtsraums müssen von geeigneter Stelle einzeln freigegeben 
+und ausgeschaltet werden können. 
+Die Schaltgeräte müssen Trennfunktion gemäß 537.2 aufweisen und müssen gegen irrtümliches oder 
+unbefugtes Einschalten gesichert werden können, z. B. Schlüsselschalter. Die Zuordnung der Schaltgeräte zu 
+den Experimentierständen sowie die Schaltstellungen der Betätigungsorgane müssen eindeutig erkennbar 
+sein. 
+Fehlerstrom-Schutzeinrichtungen (RCD) sind für diesen Zweck nicht geeignet. 
+ANMERKUNG 1.AT 
+Erläuterungen zum Freischalten siehe ÖVE/ÖNORM EN 50110-1. 
+ANMERKUNG 2.AT 
+Die geeignete Stelle kann z. B. ein Pult, der Leitstand der Aufsichtsperson oder ein Verteiler sein. 
+7N54.465 
+Not-Ausschaltung (Ausschaltung im Notfall) 
+Füge hinzu: 
+In einem Unterrichtsraum mit Experimentierständen muss mindestens eine Einrichtung für die Not-
+Ausschaltung gemäß 537.3.3 vorhanden sein. Durch die Betätigung einer Einrichtung für die Not-Ausschaltung 
+müssen sämtliche Stromkreise zur Versorgung von allen Experimentierständen des betreffenden 
+Unterrichtsraums gleichzeitig freigeschaltet werden (Geräte für die Not-Ausschaltung siehe 7N54.537.3.3). 
+Ausgenommen davon sind Stromkreise die zur Verhinderung von Folgegefahren nicht ausgeschaltet werden 
+dürfen, wie z. B. Stromkreise für Bremseinrichtungen von Maschinen, allgemeine Raumbeleuchtung. 
+Das Wiedereinschalten der elektrischen Versorgung der einzelnen Experimentierstände darf erst nach dem 
+Rücksetzen der Einrichtung möglich sein. 
+ANMERKUNG AT 
+Das bedeutet, vor dem Wiedereinschalten müssen alle Betätigungseinrichtungen („Pilztaster“) für 
+die Not-Ausschaltung rückgesetzt werden und durch je eine weitere bewusste Handlung jeder Experimentierstand einzeln 
+wieder eingeschalten werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 810/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 4 
+7N54.5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+7N54.53 Schalt- und Steuergeräte 
+7N54.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag 
+7N54.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+7N54.531.3.1 Allgemeine Anforderungen 
+Füge hinzu: 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen für alle vorhersehbaren Anwendungen des Experimentier-
+betriebs geeignet sein. 
+Können die vorhersehbaren Anwendungen nicht definiert eingegrenzt werden, so sind bei Wechselstrom für 
+die Versorgung der Experimentierstände mindestens Fehlerstrom-Schutzeinrichtungen (RCD) vom Typ B zu 
+verwenden. 
+7N54.537 
+Geräte zum Trennen und Schalten 
+7N54.537.3 
+Geräte zum Schalten 
+7N54.537.3.3 Geräte für die Not-Ausschaltung 
+Füge hinzu: 
+7N54.537.3.3.001.AT  
+Die Einrichtung für die Not-Ausschaltung muss nach dem Ruhestromprinzip arbeiten und verbindungsorientiert 
+verdrahtet sein. Die zugehörigen Bedienelemente müssen manuell zu betätigen sein. 
+Die Einrichtungen für die Not-Ausschaltung müssen so angeordnet werden, dass sie gut sichtbar sowie leicht 
+und gefahrlos erreichbar sind. 
+Für das Auslösen der Einrichtung für die Not-Ausschaltung dürfen nur „Pilztaster“ gemäß OVE EN 60947-5-5 
+verwendet werden. Der Bedienteil muss ROT und der Hintergrund muss GELB sein. Sie müssen nach 
+Betätigung mechanisch verriegeln und gegen selbsttätiges, unbeabsichtigtes oder unbefugtes Rücksetzen 
+gesichert sein.  
+ANMERKUNG AT 
+Beispiele für Sichern gegen unbefugtes oder unbeabsichtigtes Betätigen sind Schlüsseltaster oder 
+versperrbare Gehäuse. 
+Für die Not-Ausschaltung sind Pilztaster zu installieren: 
+– 
+bei jedem Experimentierstand; 
+– 
+bei jedem Ausgang des betreffenden Unterrichtsraums; 
+– 
+am Pult oder Leitstand der Aufsichtsperson im Unterrichtsraum; 
+– 
+am Verteiler für die Versorgung von Experimentierständen im Unterrichtsraum. 
+Ergänzend können innerhalb und außerhalb des Unterrichtsraums, z. B. in Abhängigkeit der Größe und 
+Komplexität der Anlage, weitere Pilztaster erforderlich sein. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 811/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 5 
+7N54.537.3.3.002.AT  
+Bei der Auswahl der Einrichtung für die Not-Ausschaltung sind folgende Parameter besonders zu 
+berücksichtigen: 
+– 
+Gesamtanzahl der erwarteten Schaltspiele und Schalthäufigkeit; 
+– 
+Einschalt-, Ausschalt- und Kurzschlussströme; 
+– 
+Art der Lasten und deren Einschaltströme (kapazitiv, induktiv). 
+ANMERKUNG AT 
+Ergänzend ist auf die funktionale Sicherheit der Einrichtung für die Not-Ausschaltung zu achten, 
+z. B. durch angemessene Überdimensionierung der Schaltgeräte, Verwendung von Schalteinrichtungen mit 
+zwangsgeführten Hilfskontakten und die sichere Trennung von Stromkreisen. 
+7N54.6 Prüfung 
+7N54.600.4 
+Erstprüfung 
+Füge hinzu: 
+Zusätzlich ist Folgendes durchzuführen: 
+– 
+Überprüfung der Not-Ausschaltung durch Betätigung jedes einzelnen Pilztasters; 
+– 
+Kontrolle des korrekten Schaltzustands aller zugehörigen Einrichtungen für die Not-Ausschaltung. 
+ANMERKUNG AT 
+Bei der Überprüfung der Experimentierstände sind die Herstellerangaben zu beachten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 812/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N54 – Seite 6 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 813/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N90 – Seite 1 
+Teil 7-7N90 
+Garagen, überdachte Stellplätze, Parkdecks sowie Arbeitsgruben oder 
+Unterfluranlagen 
+7N90.1.AT 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in Garagen, überdachten Stellplätzen, Parkdecks für Kraftfahrzeuge 
+sowie in Arbeitsgruben oder Unterfluranlagen zum Arbeiten an Kraftfahrzeugen. 
+Dieser Teil gilt nicht für explosionsgefährdete Bereiche. 
+ANMERKUNG 1.AT 
+Für bautechnische Anforderungen siehe OIB-Richtlinien. 
+ANMERKUNG 2.AT 
+Für Großgaragen gelten zusätzliche Bestimmungen wie z. B. Teil 7-718. 
+ANMERKUNG 3.AT 
+Für brandgefährdete Räume und Bereiche gelten zusätzliche Bestimmungen wie z. B. Teil 4-42, 
+OIB-Richtlinien, Technische Richtlinien vorbeugender Brandschutz. 
+ANMERKUNG 4.AT 
+Durch baurechtliche Bestimmungen, z. B. Garagengesetz, können weitere Anforderungen 
+erforderlich werden. 
+7N90.2.AT 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+7N90.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+7N90.5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+7N90.55 Andere elektrische Betriebsmittel 
+Füge hinzu: 
+7N90.55.001.AT Garagen, überdachte Stellplätze, Parkdecks  
+Elektrische Betriebsmittel müssen mindestens der Schutzart IP44 entsprechen. In Fällen, in denen 
+Betriebsmittel der Schutzart IP44 nicht verfügbar sind, müssen die elektrischen Betriebsmittel in einem 
+Gehäuse mit mindestens der Schutzart IP44 eingebaut sein. 
+Schalter und Steckdosen sind mindestens 1 m über dem Boden anzuordnen. 
+In Fällen, in denen die Bedingungen der äußeren Einflüsse größer AD4, größer AE3 und/oder größer AG1 
+gegeben sind (siehe 512.2), müssen die elektrischen Betriebsmittel mit einem geeigneten Schutz versehen 
+sein. Dies kann z. B. durch Verwenden zusätzlicher Gehäuse, Anfahrschutz oder durch Anbringen in 
+Gebäudenischen erreicht werden. 
+7N90.55.002.AT Arbeitsgruben und Unterfluranlagen 
+Für Arbeitsgruben und Unterfluranlagen gilt ergänzend zu den Anforderungen von 7N90.55.001.AT Folgendes: 
+– 
+Anbringung von Leuchten, Schaltern und Steckdosen: 
+ 
+• 
+bei Arbeitsgruben höchstens 0,5 m unter der Oberkante; 
+ 
+• 
+bei Unterfluranlagen mindestens 1 m über dem Boden. 
+– 
+Schutzart für Leuchten mindestens IP54; 
+– 
+In Arbeitsgruben sind elektrische Verteiler nicht zulässig. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 814/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N90 – Seite 2 
+7N90.753 Heizanlagen mit Heizleitungen und Flächenheizelementen 
+Füge hinzu: 
+7N90.753.001.AT 
+Heizanlagen in Garagen, überdachten Stellplätzen, Parkdecks sowie 
+Arbeitsgruben oder Unterfluranlagen 
+Für elektrische Fußboden-Flächenheizungen dürfen nur Heizleitungen oder Flächenheizelemente, die den 
+relevanten Betriebsmittelnormen entsprechen, errichtet werden, vorausgesetzt, sie haben entweder einen 
+metallenen Schirm oder eine metallene Umhüllung, oder sie sind durch ein feinmaschiges Metallgitter 
+abgedeckt. 
+Das feinmaschige Metallgitter, die metallene Ummantelung oder die metallene Umhüllung muss mit dem 
+Schutzleiter des speisenden Stromkreises verbunden werden. Diese Verbindung mit dem Schutzleiter ist nicht 
+gefordert, wenn die Schutzmaßnahme SELV für die Fußboden-Flächenheizungen vorgesehen ist. 
+Für elektrische Fußboden-Flächenheizungen ist die Schutzmaßnahme Schutztrennung gemäß Abschnitt 413 
+nicht zulässig. 
+Bei Anwendung der Schutzmaßnahmen Nullung, Fehlerstrom-Schutzschaltung und Überstrom-Schutzerdung 
+ist für Stromkreise, die Heizeinheiten speisen, ein zusätzlicher Schutz (Zusatzschutz) mit Fehlerstrom-
+Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom I∆n  0,03 A auszuführen. Dies gilt auch, wenn 
+Stromkreise für Heizeinheiten in ihrer Gesamtheit doppelt oder verstärkt isoliert bzw. schutzisoliert ausgeführt 
+sind. 
+ANMERKUNG AT 
+Beim Betrieb von elektrischen Heizungen ist auf eine Begrenzung der Oberflächentemperatur im 
+Bereich der Stellflächen für das Kraftfahrzeug zu achten. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 815/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 1 
+Teil 7-7N95 
+Stromversorgung von Aufzügen 
+7N95.1.AT 
+Anwendungsbereich 
+Dieser Teil gilt für die elektrische Anlage von Aufzügen für den Personen- und Gütertransport für  
+a) 
+die Stromversorgung bis zu den Eintrittsklemmen des Hauptschalters des Hauptstromkreises und den 
+davon abhängigen Stromkreisen; 
+ 
+ANMERKUNG 1.AT 
+Diese abhängigen Stromkreise dienen z. B. der Aufzugssteuerung. 
+b) 
+die Stromversorgung bis zu den Eintrittsklemmen des Schalters des Beleuchtungsstromkreises des 
+Fahrkorbs und den davon abhängigen Schaltkreisen; 
+ 
+ANMERKUNG 2.AT 
+Diese abhängigen Schaltkreise umfassen z. B. die Belüftung des Fahrkorbes, die 
+Steckdosen auf dem Fahrkorbdach. Dabei ist insbesondere auf die Anforderungen des Zusatzschutzes Bedacht zu 
+nehmen. 
+c) 
+die Stromversorgung bis zum Übergabepunkt des Stromkreises für die Aufzugsschachtbeleuchtung; 
+d)  die Steckdose in der Schachtgrube; 
+e)  die Beleuchtung im Triebwerksraum und im Rollenraum; 
+f)  
+die Steckdose im Triebwerksraum und im Rollenraum; 
+g)  den Schutzpotentialausgleich in der Schachtgrube. 
+ANMERKUNG 3.AT 
+Dieser Teil gilt sinngemäß auch für spezielle Aufzüge gemäß ÖNORM EN 81 Reihe. 
+ANMERKUNG 4.AT 
+Die Anwendungsgrenze zum Aufzug kann 
+– 
+in einer Baumusterprüfbescheinigung für den Aufzug nach der EU-Richtlinie 2014/33/EU (EU-Aufzugsrichtlinie), 
+– 
+deren nationale Umsetzung Aufzüge-Sicherheitsverordnung 2015, bzw. 
+– 
+in 
+der 
+Baumusterprüfbescheinigung 
+für 
+den 
+Aufzug 
+bzw. 
+Hebeeinrichtung 
+für 
+Personen 
+nach 
+der  
+EU-Richtlinie 2006/42/EG (EU-Maschinenrichtlinie) und 
+– 
+deren nationale Umsetzung in der Maschinen-Sicherheitsverordnung 2010 anders definiert sein. 
+Im Bereich des Aufzugs bzw. ab den beschriebenen Eintrittsklemmen gelten die Anforderungen gemäß 
+ÖNORM EN 81 Reihe. Diese Anforderungen fallen nicht in den Anwendungsbereich dieses Teils. 
+Für besonders genutzte Bereiche, wie z. B. öffentliche Einrichtungen und Arbeitsstätten, medizinisch genutzte 
+Bereiche u. dgl. bzw. besondere Aufzugsanlagen wie z. B. Feuerwehraufzüge, können zusätzliche 
+Maßnahmen erforderlich sein.  
+ANMERKUNG 5.AT 
+Anforderungen für Feuerwehraufzüge siehe ÖNORM EN 81-72 und TRVB 150 S. 
+ANMERKUNG 6.AT 
+Anforderungen 
+für 
+die 
+Errichtung 
+von 
+Kommunikationsanlagen 
+siehe 
+Normenreihe 
+OVE EN 50174. 
+ANMERKUNG 7.AT 
+Anforderungen an das Zusammenwirken im Baustellenbereich, insbesondere die Abstimmung mit 
+anderen Auftragnehmern, siehe ÖNORM B 2110 bzw. Bauarbeitenkoordinationsgesetz. 
+7N95.2.AT 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+7N95.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 816/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 2 
+7N95.3 Bestimmung allgemeiner Merkmale 
+7N95.31 Zweck, Stromversorgung und Aufbau 
+7N95.313  
+Stromversorgungen 
+Füge hinzu: 
+7N95.313.001.AT 
+Stromversorgung des Hauptstromkreises und den davon abhängigen 
+Stromkreisen 
+7N95.313.001.1.AT 
+Diese Stromversorgung muss als eigene Zuleitung von einem Bereich oder Anlagenteil 
+der elektrischen Anlage ausgeführt werden, der nur Elektrofachkräften oder elektrotechnisch unterwiesenen 
+Personen gemäß ÖVE/ÖNORM EN 50110-1 zugänglich ist, wie z. B. Hauptverteilerraum, Hauptsicherungs-
+kasten. 
+ANMERKUNG AT 
+Für diese Zuleitung kann ein eigener Zähler erforderlich sein. 
+Bei einer notwendigen Querschnittsreduzierung siehe 7N95.314. 
+7N95.313.001.2.AT 
+Mit Ausnahme von Feuerwehraufzügen können mehrere Aufzüge mit einer 
+gemeinsamen Zuleitung ausgeführt werden. 
+ANMERKUNG AT 
+Anforderungen für Feuerwehrzüge siehe ÖNORM EN 81-72 und TRVB 150 S. 
+7N95.313.001.3.AT 
+Die Kabel/Leitungen der Stromversorgungen sind für deren Anschluss im 
+Aufzugsbereich mit entsprechenden Überlängen auszuführen. 
+7N95.313.002.AT 
+Stromversorgung des Beleuchtungsstromkreises des Fahrkorbs und den davon 
+abhängigen Schaltkreisen 
+Diese Stromversorgung ist entweder  
+– 
+als eigene Zuleitung von einem Bereich oder Anlagenteil der elektrischen Anlage auszuführen, der nur 
+Elektrofachkräften oder elektrotechnisch unterwiesenen Personen gemäß ÖVE/ÖNORM EN 50110-1 
+zugänglich ist, oder  
+– 
+von der Stromversorgung gemäß 7N95.313.001.AT abzuzweigen (Beispiel siehe Bild 7N95.NE.1.AT und 
+Bild 7N95.NE.2.AT). 
+Bei notwendigen Querschnittsreduzierungen siehe 7N95.314. 
+Die Kabel/Leitungen der Stromversorgung sind für deren Anschluss im Aufzugsbereich mit entsprechenden 
+Überlängen auszuführen. 
+7N95.313.003.AT 
+Stromversorgung für andere Stromkreise 
+Die Stromversorgungen für die unter 7N95.1 c) bis f) angeführten Betriebsmittel sind jeweils als eigene 
+Stromkreise auszuführen. Diese Stromkreise sind von Bereichen und Anlagenteilen der elektrischen Anlage, 
+die auch elektrotechnischen Laien zugänglich sind (z. B. Zählerverteiler, Verteiler für Gemeinschafts-
+einrichtungen), zu versorgen. 
+Der zusätzliche Schutz (Zusatzschutz) für jeden dieser Stromkreise ist durch eine eigene Fehlerstrom-
+Schutzeinrichtung (RCD) auszuführen. 
+Die Kabel/Leitungen der Stromversorgung sind für deren Anschluss im Aufzugsbereich mit entsprechenden 
+Überlängen auszuführen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 817/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 3 
+7N95.314  
+Aufteilung der Anlage 
+Füge hinzu: 
+7N95.314.001.AT 
+Verteilung für Aufzugsstromversorgungen 
+Im Nahbereich des Schaltschranks des Aufzugs ist eine Verteilung (z. B. Gehäuse gemäß OVE EN 60670-24) 
+für die Aufzugsstromversorgungen gemäß 7N95.313.001.AT bzw. 7N95.313.002.AT vorzusehen, wenn 
+– 
+aufgrund des Kabel-/Leitungsquerschnitts bei langen Leitungslängen der Stromversorgung gemäß 
+7N95.313.001.AT 
+eine 
+Querschnittsreduzierung 
+der 
+Einführungsleitung 
+notwendig 
+ist 
+(siehe 
+Bild 7N95.NE.2.AT), oder 
+– 
+für die Stromversorgungen gemäß 7N95.313.001.AT und 7N95.313.002.AT eine gemeinsame Zuleitung 
+ausgeführt wird (siehe Bild 7N95.NE.1.AT). 
+ 
+ANMERKUNG AT  
+Die Möglichkeit zur gemeinsamen Zuleitung wird in ÖNORM EN 81-20 beschrieben. 
+In dieser Verteilung sind, wenn erforderlich, jeweils eigene Überstrom-Schutzeinrichtungen gemäß Teil 4-43 
+vorzusehen, für  
+– 
+die Stromversorgung des Hauptstromkreises und den davon abhängigen Stromkreisen; 
+– 
+die Stromversorgung des Beleuchtungsstromkreises des Fahrkorbs und den davon abhängigen 
+Schaltkreisen. 
+Beispiel siehe Bild 7N95.NE.1.AT. 
+Bei Vorhandsein eines Triebwerkraums ist dieses Gehäuse für den Aufzug innerhalb des Triebwerkraums im 
+Eingangsbereich anzuordnen. 
+7N95.4 Schutzmaßnahmen und Schutzvorkehrungen 
+7N95.41 Schutz gegen elektrischen Schlag 
+7N95.411 Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+7N95.411.3 
+Anforderungen an den Fehlerschutz 
+7N95.411.3.1 Schutzerdung und Schutzpotentialausgleich 
+7N95.411.3.1.2 
+Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Der Aufzug ist in den Schutzpotentialausgleich einzubeziehen, z. B. die Führungsschienen. 
+ANMERKUNG AT 
+Sind Maßnahmen für den Blitzschutz erforderlich, siehe die Anforderungen gemäß ÖVE/ÖNORM 
+EN 62305-3 bzw. ÖVE/ÖNORM EN 62305-4. 
+7N95.46 Trennen und Schalten 
+7N95.464 Ausschalten für mechanische Instandhaltung 
+Füge hinzu: 
+7N95.464.001.AT 
+ 
+Um die mechanische Instandhaltung der Zuleitungen gemäß 7N95.313.001.AT bzw. 7N95.313.002.AT zu 
+ermöglichen, sind Geräte zum Ausschalten gemäß 537.3 (z. B. Sicherungslasttrennschalter) vorzusehen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 818/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 4 
+Diese sind in Bereichen oder Anlagenteilen zu installieren, die nur für Elektrofachkräfte oder elektrotechnisch 
+unterwiesene Personen zugänglich sind (z. B. Hauptverteilerraum, Hauptsicherungskasten). 
+7N95.464.002.AT 
+ 
+Alternativ können die Geräte zum Ausschalten gemäß 537.3 (z. B. Sicherungslasttrennschalter) auch in 
+Bereichen oder in Anlagenteilen der elektrischen Anlage, die auch elektrotechnischen Laien zugänglich ist, 
+installiert werden. In diesem Fall sind diese gegen das unbefugte Betätigen durch eine Sperre zu schützen 
+(z. B. Plombierung) und auffällig zu kennzeichnen. 
+7N95.464.003.AT 
+ 
+Sind Arbeiten an Kabel/Leitungen gemäß 7N95.313.001.AT bzw. 7N95.313.002.AT erforderlich, muss zuerst 
+der Hauptschalter des Hauptstromkreises im Bereich des Schaltschranks für den Aufzug abgeschaltet werden, 
+um einer allenfalls vorgesehenen automatischen Evakuierungsfahrt vorzubeugen.  
+Eine diesbezügliche Information ist in der Dokumentation der elektrischen Anlage und auch bei allen 
+Schaltgeräten für mechanische Instandhaltung dauerhaft anzubringen. 
+ANMERKUNG AT 
+Bei Ausfall der Stromversorgung kann, sofern vorgesehen, die Steuerung des Aufzugs eine 
+Evakuierungsfahrt automatisch starten (z. B. in das nächste Geschoß, die Evakuierungshaltestelle). 
+7N95.5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+7N95.52 Kabel- und Leitungsanlagen 
+7N95.525 
+Spannungsabfall in Verbraucheranlagen 
+Ersetze: 
+Die Querschnitte der Kabel/Leitungen für die Stromversorgungen müssen so gewählt werden, dass an diesen 
+ein Spannungsabfall von 3 % ab Hauptverteilung bei gleichzeitigem Anlauf sämtlicher Antriebsmotoren, die an 
+eine gemeinsame Zuleitung angeschlossen sind, nicht überschritten wird. 
+7N95.528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+7N95.528.3 
+Nähe zu nicht elektrischen Anlagen 
+7N95.528.3.5 
+Kabel- und Leitungsanlagen dürfen nicht in Aufzugsschächten verlegt werden, es sei denn, 
+sie sind Bestandteil der Aufzugsanlage. 
+Füge hinzu: 
+Neben den für die Sicherheit und den Betrieb des Aufzugs erforderlichen Kabeln/Leitungen oder Einrichtungen 
+dürfen keine weiteren Kabel/Leitungen oder Einrichtungen im Aufzugsschacht, Triebwerk- und Rollenraum 
+verlegt oder installiert werden (siehe z. B. ÖNORM EN 81-20). 
+7N95.55 Andere elektrische Betriebsmittel 
+Füge hinzu: 
+7N95.55.001.AT Steckdosen 
+In folgenden Bereichen ist eine Steckdose, versorgt von einem Verteiler der Gemeinschaftseinrichtungen, 
+erforderlich: 
+– 
+in Aufstellungsorten für Triebwerk und Steuerung sowie in Rollenräumen; 
+– 
+in der Schachtgrube. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 819/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 5 
+ 
+ANMERKUNG AT Ergänzende Anforderungen dazu betreffend Feuerwehraufzüge siehe ÖNORM EN 81-72. 
+7N95.559 
+Leuchten und Beleuchtungsanlagen 
+Füge hinzu: 
+In folgenden Bereichen ist eine Beleuchtungsanlage, versorgt von einem Verteiler der Gemeinschafts-
+einrichtungen, erforderlich: 
+– 
+in Aufstellungsorten für Triebwerk und Steuerung sowie in Rollenräumen; 
+– 
+bei den Zugängen zum Aufzugsschacht in der Nähe der Schachttüren. 
+In den Aufstellungsorten für Triebwerk und Steuerung müssen in der Nähe des Zugangs/der Zugänge Schalter 
+für deren Beleuchtung vorhanden sein.  
+ANMERKUNG 1.AT 
+Anforderungen an die entsprechende Beleuchtungsstärke siehe Normenreihe ÖNORM EN 81. 
+ANMERKUNG 2.AT 
+Ergänzende Anforderungen betreffend Beleuchtung der brandgeschützten Vorräume für 
+Feuerwehraufzüge siehe TRVB 150 S. 
+7N95.56 Einrichtungen für Sicherheitszwecke 
+7N95.560.8 
+Kabel- und Leitungsanlagen 
+Füge hinzu: 
+Für die Stromversorgung von Feuerwehraufzügen muss gemäß TRVB 150 S ein Funktionserhalt von 90 min 
+sichergestellt werden. Die Ausführung hat gemäß dieser Norm und OVE-Richtlinie R 12-2 zu erfolgen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 820/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 6 
+Anhang 7N95.NE 
+(informativ) 
+ 
+Kabel-/Leitungsschema für Aufzüge – Ausführungsbeispiele 
+Details zur Auswahl (z. B. Absicherung, Selektivität, geeignete Charakteristiken) der Schalt- und Steuergeräte 
+sowie der Schutzeinrichtungen sind bei der Ausführung zu berücksichtigen (siehe dazu auch allgemeine Teile 
+dieser Norm, ÖNORM EN 81-20). 
+Bild 7N95.NE.1.AT und Bild 7N95.NE.2.AT zeigen Beispiele für die Verteilung der Stromversorgung für 
+Aufzüge. 
+ 
+Legende zu Bild 7N95.NE.1.AT und Bild 7N95.NE.2.AT 
+Farbe Schwarz: Anwendungsbereich der OVE E 8101 
+Farbe Grün bzw. kursiv: Anwendungsbereich Aufzug 
+ 
+1 
+Beleuchtung Stiegenhaus 
+2 
+Stromkreis Triebwerk 
+3 
+Stromkreis Steuerung, Aufzugsbremse (nachgeschaltete Stromkreise) 
+4 
+Stromkreis Beleuchtung und Steckdose Fahrkorb 
+5 
+Stromkreis Beleuchtung Triebwerkraum 
+6 
+Stromkreis Beleuchtung Aufzugsschacht (Dieser Stromkreis kann sich je nach Aufzugsanlage auch im 
+Schaltschrank Aufzug befinden.) 
+7 
+Stromkreis Steckdose Triebwerkraum (kann gemeinsam mit 8 ausgeführt werden) 
+8 
+Stromkreis Steckdose Schachtgrube (kann gemeinsam mit 7 ausgeführt werden) 
+9 
+Schutzeinrichtung 
+ 
+  Versperrbar 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 821/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 7 
+ 
+Bild 7N95.NE.1.AT – Beispiel 1 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 822/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N95 – Seite 8 
+ 
+Bild 7N95.NE.2.AT – Beispiel 2 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 823/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 1 
+Teil 7-7N96 
+Stromversorgung von Fahrtreppen und Fahrsteige 
+7N96.1.AT 
+Anwendungsbereich 
+Dieser Teil gilt für die elektrische Anlage von Fahrtreppen und Fahrsteigen für  
+a) 
+die Stromversorgung bis zu den Eintrittsklemmen des Hauptschalters des Hauptstromkreises und den 
+davon abhängigen Stromkreisen; 
+ 
+ANMERKUNG 1.AT 
+Diese abhängigen Stromkreise dienen z. B. der Steuerung. 
+b) 
+die Stromversorgung bis zu den Eintrittsklemmen des Schalters des Beleuchtungsstromkreises der 
+Fahrtreppe oder des Fahrsteigs und den davon abhängigen Schaltkreisen; 
+ 
+ANMERKUNG 2.AT 
+Diese abhängigen Stromkreise/Schaltkreise umfassen z. B. die Beleuchtung und 
+Steckdosen für Wartungszwecke in den Antriebs- und Umkehrstationen und in den Betriebsräumen innerhalb der 
+Tragkonstruktion. Dabei ist insbesondere auf die Anforderungen des Zusatzschutzes Bedacht zu nehmen. 
+c) 
+die Stromversorgung bis zum Übergabepunkt des Stromkreises für zusätzliche Stromkreise wie z. B. für 
+Heizung, Balustradenbeleuchtung; 
+d)  die Beleuchtung im Betriebsraum außerhalb der Tragkonstruktion; 
+e)  die Steckdose im Betriebsraum außerhalb der Tragkonstruktion; 
+f)  
+den Schutzpotentialausgleich. 
+ANMERKUNG 3.AT 
+Die 
+Anwendungsgrenze 
+kann 
+in 
+einer 
+Baumusterprüfbescheinigung 
+nach 
+der 
+EU-
+Richtlinie 2006/42/EG 
+(Maschinenrichtlinie) 
+und 
+deren 
+nationaler 
+Umsetzung 
+in 
+der 
+Maschinen-Sicherheits-
+verordnung 2010 anders definiert sein. 
+Im Bereich der Fahrtreppen und Fahrsteige bzw. ab den beschriebenen Eintrittsklemmen gelten die 
+Anforderungen gemäß ÖNORM EN 115-1. Diese Anforderungen fallen nicht in den Anwendungsbereich 
+dieses Teils. 
+ANMERKUNG 4.AT 
+Anforderungen an das Zusammenwirken im Baustellenbereich, insbesondere die Abstimmung mit 
+anderen Auftragnehmern, siehe ÖNORM B 2110 bzw. Bauarbeitenkoordinationsgesetz. 
+7N96.2.AT 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+7N96.3.AT 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+7N96.3  Bestimmung allgemeiner Merkmale 
+7N96.31 Zweck, Stromversorgung und Aufbau 
+7N96.313  
+Stromversorgungen 
+Füge hinzu: 
+7N96.313.001.AT 
+Stromversorgung des Hauptstromkreises und den davon abhängigen 
+Stromkreisen 
+7N96.313.001.1.AT 
+Diese Stromversorgung muss als eigene Zuleitung von einem Bereich oder Anlagenteil 
+der elektrischen Anlage ausgeführt werden, der nur Elektrofachkräften oder elektrotechnisch unterwiesenen 
+Personen gemäß ÖVE/ÖNORM EN 50110-1 zugänglich ist, wie z. B. Hauptverteilerraum, Hauptsicherungs-
+kasten. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 824/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 2 
+ANMERKUNG AT 
+Für diese Zuleitung kann ein eigener Zähler erforderlich sein. 
+Bei einer notwendigen Querschnittsreduzierung siehe 7N96.314. 
+7N96.313.001.2.AT 
+Für jede Fahrtreppe bzw. jeden Fahrsteig ist grundsätzlich eine eigene Zuleitung 
+auszuführen. Bei Vorhandensein eines Betriebsraums außerhalb der Tragkonstruktion für mehrere 
+Fahrtreppen bzw. Fahrsteige kann eine gemeinsame Zuleitung vorgesehen werden. 
+7N96.313.001.3.AT 
+Die Zuleitung zum Antrieb ist fünfpolig auszuführen. 
+7N96.313.002.AT 
+Stromversorgung des Beleuchtungsstromkreises der Fahrtreppe oder des 
+Fahrsteigs und den davon abhängigen Schaltkreisen 
+Diese Stromversorgung ist entweder  
+– 
+als eigene Zuleitung von einem Bereich oder Anlagenteil der elektrischen Anlage auszuführen, der nur 
+Elektrofachkräften oder elektrotechnisch unterwiesenen Personen gemäß ÖVE/ÖNORM EN 50110-1 
+zugänglich ist, oder  
+– 
+von der Stromversorgung gemäß 7N96.313.001.AT abzuzweigen (Beispiel siehe Bild 7N96.NE.1.AT). 
+Bei notwendigen Querschnittsreduzierungen siehe 7N96.314. 
+Die Kabel/Leitungen der Stromversorgung sind für deren Anschluss mit entsprechenden Überlängen 
+auszuführen. 
+7N96.313.003.AT 
+Stromversorgung für andere Stromkreise 
+Die Stromversorgungen für die unter 7N96.1 c) bis e) angeführten Betriebsmittel sind jeweils als eigene 
+Stromkreise auszuführen. Diese Stromkreise sind von Bereichen und Anlagenteilen der elektrischen Anlage, 
+die auch elektrotechnischen Laien zugänglich sind (z. B. Zählerverteiler, Verteiler für Gemeinschafts-
+einrichtungen), zu versorgen. 
+Die Kabel/Leitungen der Stromversorgung sind für deren Anschluss mit entsprechenden Überlängen 
+auszuführen. 
+7N96.314  
+Aufteilung der Anlage 
+Füge hinzu: 
+7N96.314.001.AT 
+Verteilung der Stromversorgungen für Fahrtreppen und Fahrsteige 
+Im Nahbereich des Schaltschranks für Fahrtreppen und Fahrsteige ist eine Verteilung (z. B. Gehäuse gemäß 
+OVE EN 60670-24) für die Stromversorgungen gemäß 7N96.313.001.AT bzw. 7N96.313.002.AT vorzusehen, 
+wenn 
+– 
+aufgrund langer Kabel-/Leitungslängen der Stromversorgung gemäß 7N96.313.001.AT eine Querschnitts-
+reduzierung notwendig ist, oder 
+– 
+für die Stromversorgungen gemäß 7N96.313.001.AT und 7N96.313.002.AT eine gemeinsame Zuleitung 
+ausgeführt wird (siehe z. B. ÖNORM EN 115-1). 
+In dieser Verteilung sind, wenn erforderlich, jeweils eigene Überstrom-Schutzeinrichtungen gemäß Teil 4-43 
+vorzusehen, für 
+– 
+die Stromversorgung des Hauptstromkreises und den davon abhängigen Stromkreisen; 
+– 
+die Stromversorgung des Beleuchtungsstromkreises und den davon abhängigen Schaltkreisen. 
+Beispiele siehe Bild 7N96.NE.1.AT. 
+Bei Vorhandsein eines Betriebsraumes ist dieses Gehäuse für die Fahrtreppen und Fahrsteige innerhalb des 
+Betriebsraums anzuordnen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 825/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 3 
+7N96.4 Schutzmaßnahmen und Schutzvorkehrungen 
+7N96.41 Schutz gegen elektrischen Schlag 
+7N96.411  
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+7N96.411.3 
+Anforderungen an den Fehlerschutz 
+7N96.411.3.1 Schutzerdung und Schutzpotentialausgleich 
+7N96.411.3.1.2 
+Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Die Fahrtreppe/der Fahrsteig ist in den Schutzpotentialausgleich einzubeziehen, z. B. die Tragkonstruktion. 
+ANMERKUNG AT 
+Sind Maßnahmen für den Blitzschutz erforderlich, siehe die Anforderungen gemäß ÖVE/ÖNORM 
+EN 62305-3 bzw. ÖVE/ÖNORM EN 62305-4. 
+7N96.46 Trennen und Schalten 
+7N96.464  
+Ausschalten für mechanische Instandhaltung 
+Füge hinzu: 
+7N96.464.001.AT 
+ 
+Um die mechanische Instandhaltung der Zuleitung für das Triebwerk und nachgeschalteter Stromkreise gemäß 
+7N96.313.001.AT bzw. 7N96.313.002.AT zu ermöglichen, sind Geräte zum Ausschalten gemäß 537.3 (z. B. 
+Sicherungslasttrennschalter) vorzusehen. 
+Diese sind in Bereichen oder Anlagenteilen zu installieren, die nur für Elektrofachkräfte oder elektrotechnisch 
+unterwiesene Personen zugänglich sind (z. B. Hauptverteilerraum, Hauptsicherungskasten). 
+7N96.464.002.AT 
+ 
+Alternativ können die Geräte zum Ausschalten gemäß 537.3 (z. B. Sicherungslasttrennschalter) auch in 
+Bereichen oder in Anlagenteilen der elektrischen Anlage, die auch elektrotechnischen Laien zugänglich ist, 
+installiert werden. In diesem Fall sind diese gegen das unbefugte Betätigen durch eine Sperre zu schützen 
+(z. B. Plombierung) und auffällig zu kennzeichnen. 
+7N96.5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+7N96.52 Kabel- und Leitungsanlagen 
+7N96.528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+7N96.528.3 
+Nähe zu nicht elektrischen Anlagen 
+Füge hinzu: 
+Kabel- und Leitungsanlagen dürfen nicht in der Tragkonstruktion verlegt werden, es sei denn, sie sind 
+Bestandteil der Fahrtreppe bzw. der Fahrsteige. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 826/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 4 
+7N96.55 Andere elektrische Betriebsmittel 
+Füge hinzu: 
+7N96.55.001.AT Steckdosen 
+Im Betriebsraum außerhalb der Tragkonstruktion ist eine Steckdose, versorgt von einem Verteiler der 
+Gemeinschaftseinrichtungen, erforderlich. 
+7N96.559 
+Leuchten und Beleuchtungsanlagen 
+Füge hinzu: 
+Im Betriebsraum außerhalb der Tragkonstruktion ist eine Beleuchtungsanlage, versorgt von einem Verteiler 
+der Gemeinschaftseinrichtungen, erforderlich. 
+In der Nähe des Zugangs/der Zugänge müssen Schalter für die Beleuchtung vorhanden sein.  
+ANMERKUNG AT 
+Anforderungen an die entsprechende Beleuchtungsstärke siehe ÖNORM EN 115-1. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 827/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 5 
+Anhang 7N96.NE 
+(informativ) 
+ 
+Kabel-/Leitungsschema für  
+Fahrtreppen bzw. Fahrsteige – Ausführungsbeispiel 
+Details zur Auswahl (z. B. Absicherung, Selektivität, geeignete Charakteristiken) der Schalt- und Steuergeräte 
+sowie der Schutzeinrichtungen sind bei der Ausführung zu berücksichtigen (siehe dazu auch allgemeine Teile 
+dieser Norm, ÖNORM EN 115-1). 
+Bild 7N96.NE.1.AT zeigt ein Beispiel für die Verteilung der Stromversorgung für Fahrtreppen und Fahrsteige. 
+ 
+Legende zu Bild 7N96.NE.1.AT 
+Farbe Schwarz: Anwendungsbereich der OVE E 8101 
+Farbe Grün bzw. kursiv: Anwendungsbereich Fahrtreppe bzw. Fahrsteig 
+ 
+1 
+Beleuchtung Stiegenhaus/Allgemeinbereich 
+2 
+Stromkreis Triebwerk 
+3 
+Stromkreis Steuerung (nachgeschaltete Stromkreise) 
+4 
+Stromkreis Beleuchtung Fahrtreppe bzw. Fahrsteig und Steckdosen 
+5 
+Stromkreis Beleuchtung Betriebsraum außerhalb der Tragkonstruktion 
+6 
+Stromkreis Balustradenbeleuchtung (Dieser Stromkreis kann sich je nach Anlage auch im Schaltschrank 
+der Fahrtreppe bzw. des Fahrsteigs befinden.) 
+7 
+Stromkreis Steckdose Betriebsraum außerhalb der Tragkonstruktion 
+8 
+Schutzeinrichtung 
+ 
+  Versperrbar 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 828/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-7N96 – Seite 6 
+ 
+Bild 7N96.NE.1.AT – Beispiel 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 829/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 1 
+Verweisungen 
+Normative Verweisungen 
+Die folgenden Dokumente werden im Text in solcher Weise in Bezug genommen, dass einige Teile davon oder 
+ihr gesamter Inhalt Anforderungen des vorliegenden Dokuments darstellen. Bei datierten Verweisungen gilt 
+nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe des in Bezug 
+genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind immer in der jeweils 
+geltenden Fassung anzuwenden. 
+ÖVE-IM 12, Fabriksfertige Zählerschränke und Zählerverteilerschränke bis 250 V gegen Erde 
+ÖVE/ÖNORM E 8003, Kennzeichnung von Adern in Kabel/Leitungen und flexiblen Leitungen 
+OVE E 8014, Fundamenterder und ergänzende Maßnahmen mit Erdung und Potentialausgleich für 
+Einrichtungen der Informationstechnik 
+OVE E 8120, Verlegung von Energie-, Steuer- und Messkabeln 
+ÖVE/ÖNORM E 8200-603, Energieverteilungskabel mit Nennspannungen 0,6/1 kV 
+ÖVE/ÖNORM E 8200-604, Starkstromkabel mit besonderen Eigenschaften im Falle eines Brandes für 
+Kraftwerke und einer Nennspannung von 0,6/1 kV und 1,9/3,3 kV 
+ÖVE/ÖNORM E 8242, Starkstromleitungen mit Nennspannungen von 300/500 V bis 4000/8000 V (U0/U) – 
+Nationale Typen 
+ÖVE/ÖNORM E 8620-2, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2: Zweipolige Stecker ohne Schutzkontakte für Geräte der Schutzklasse II; 16 A, AC 250 V 
+ÖVE/ÖNORM E 8620-3 
+Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 3: Zweipolige Stecker mit Schutzkontakten für Geräte der Schutzklasse I; 16 A, AC 250 V 
+ÖVE/ÖNORM E 8620-5 
+Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 5: Zweipolige Stecker mit Schutzkontakten für Geräte der Schutzklasse I, IPX4; 16 A, AC 250 V 
+ÖVE/ÖNORM E 8669 Reihe, Niederspannungssicherungen 
+ÖVE/ÖNORM E 8669-2, Niederspannungssicherungen – Teil 2: Zusätzliche Anforderungen an Sicherungen 
+zum Gebrauch durch Elektrofachkräfte bzw. elektrotechnisch unterwiesene Personen (Sicherungen 
+überwiegend für den industriellen Gebrauch) –- Beispiele für genormte Sicherungssysteme A bis K 
+ÖVE/ÖNORM E 8669-3 
+Niederspannungssicherungen – Teil 3: Zusätzliche Anforderungen an 
+Sicherungen zum Gebrauch durch Laien (Sicherungen überwiegend für Hausinstallationen und ähnliche 
+Anwendungen) – Beispiele für genormte Sicherungssysteme A bis F 
+OVE E 8684-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke – Teil 1: Allgemeine 
+Anforderungen 
+ÖVE/ÖNORM E 8701, Prüfung nach Instandsetzung und Änderung und wiederkehrende Prüfung elektrischer 
+Geräte 
+ÖVE-IG/EN 50075, Flache, nichtwiederanschließbare, zweipolige Stecker, 2,5 A 250 V, mit Leitung, für die 
+Verbindung von Klasse-II-Geräten für Haushalt und ähnliche Zwecke 
+ÖVE/ÖNORM EN 50085 Reihe, Elektroinstallationskanalsysteme für elektrische Installationen 
+ÖVE/ÖNORM EN 50085-2-1, Elektroinstallationskanalsysteme für elektrische Installationen –  
+Teil 2-1: Besondere Anforderungen für Elektroinstallationskanalsysteme für Wand und Decke 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 830/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 2 
+ÖVE/ÖNORM EN 50110-1, Betrieb von elektrischen Anlagen – Teil 1: Allgemeine Anforderungen  
+(Teil 2-100: Nationale Ergänzungen eingearbeitet) 
+ÖVE/ÖNORM EN 50162, Schutz gegen Korrosion durch Streuströme aus Gleichstromanlagen 
+OVE EN 50171, Zentrale Sicherheitsstromversorgungssysteme 
+OVE EN 50172, Sicherheitsbeleuchtungsanlagen 
+OVE EN 50173 Reihe, Informationstechnik – Anwendungsneutrale Kommunikationskabelanlagen 
+OVE EN 50173-1, Informationstechnik – Anwendungsneutrale Kommunikationskabelanlagen –  
+Teil 1: Allgemeine Anforderungen 
+OVE EN 50174 Reihe, Informationstechnik – Installation von Kommunikationsverkabelung 
+OVE EN 50174-2, Informationstechnik – Installation von Kommunikationsverkabelung – Teil 2: Installations-
+planung und Installationspraktiken in Gebäuden 
+ÖVE/ÖNORM EN 50274, Niederspannungs-Schaltgerätekombinationen – Schutz gegen elektrischen Schlag 
+– Schutz gegen unabsichtliches direktes Berühren gefährlicher aktiver Teile 
+OVE EN 50310, Telekommunikationstechnische Potentialausgleichsanlagen für Gebäude und andere 
+Strukturen 
+ÖVE/ÖNORM EN 50521, Steckverbinder für Photovoltaik-Systeme – Sicherheitsanforderungen und 
+Prüfungen 
+OVE EN 50522, Erdung von Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+ÖVE/ÖNORM EN 50525 Reihe, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) 
+OVE EN 50525-1, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 450/750 V (U0/U) – 
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 50525-2-11, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-11: Starkstromleitungen für allgemeine Anwendungen – Flexible Leitungen mit 
+thermoplastischer PVC-Isolierung 
+ÖVE/ÖNORM EN 50525-2-21, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-21: Starkstromleitungen für allgemeine Anwendungen – Flexible Leitungen mit 
+vernetzter Elastomer-Isolierung 
+ÖVE/ÖNORM EN 50525-2-31, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-31: Starkstromleitungen für allgemeine Anwendungen – Ader- und 
+Verdrahtungsleitungen mit thermoplastischer PVC-Isolierung 
+ÖVE/ÖNORM EN 50525-2-41, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-41: Starkstromleitungen für allgemeine Anwendungen – Einadrige Leitungen mit 
+vernetzter Silikon-Isolierung 
+ÖVE/ÖNORM EN 50525-2-71, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-71: Starkstromleitungen für allgemeine Anwendungen – Lahnlitzen-Leitungen mit 
+thermoplastischer PVC-Isolierung 
+ÖVE/ÖNORM EN 50525-2-82, Kabel und Leitungen – Starkstromleitungen mit Nennspannungen bis 
+450/750 V (U0/U) – Teil 2-82: Starkstromleitungen für allgemeine Anwendungen - Leitungen für Lichterketten 
+mit vernetzter Elastomer-Isolierung 
+ÖVE/ÖNORM EN 50565-1, Kabel und Leitungen – Leitfaden für die Verwendung von Kabeln und isolierten 
+Leitungen mit einer Nennspannung nicht über 450/750 V (U0/U) – Teil 1: Allgemeiner Leitfaden 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 831/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 3 
+ÖVE/ÖNORM EN 60038, CENELEC-Normspannungen 
+ÖVE/ÖNORM EN 60073, Grund- und Sicherheitsregeln für die Mensch-Maschine-Schnittstelle, 
+Kennzeichnung - Codierungsgrundsätze für Anzeigengeräte und Bedienteile 
+OVE EN 60204-1, Sicherheit von Maschinen – Elektrische Ausrüstung von Maschinen – Teil 1: Allgemeine 
+Anforderungen 
+ÖVE/ÖNORM EN 60269 Reihe, Niederspannungssicherungen 
+ÖVE/ÖNORM EN 60269-1, Niederspannungssicherungen – Teil 1: Allgemeine Anforderungen 
+OVE EN 60269-4, Niederspannungssicherungen – Teil 4: Zusätzliche Anforderungen an Sicherungseinsätze 
+zum Schutz von Halbleiter-Bauelementen 
+OVE EN 60269-6, Niederspannungssicherungen – Teil 6: Zusätzliche Anforderungen an Sicherungseinsätze 
+für den Schutz von solaren photovoltaischen Energieerzeugungssystemen 
+OVE EN IEC 60309 Reihe, Stecker, ortsfeste oder ortsveränderliche Steckdosen und Gerätestecker für 
+industrielle Anwendungen 
+OVE EN IEC 60309-1, Stecker, ortsfeste oder ortsveränderliche Steckdosen und Gerätestecker für 
+industrielle Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 60309-2, Stecker, ortsfeste oder ortsveränderliche Steckdosen und Gerätestecker für 
+industrielle Anwendungen – Teil 2: Anforderungen an die maßliche Kompatibilität von Stift- und 
+Buchsensteckvorrichtungen 
+OVE EN IEC 60309-4, Stecker, ortsfeste oder ortsveränderliche Steckdosen und Gerätestecker für 
+industrielle Anwendungen – Teil 4: Abschaltbare Steckdosen mit oder ohne Verriegelung 
+OVE EN IEC 60331-1, Prüfungen an Kabeln und isolierten Leitungen im Brandfall – Isolationserhalt –  
+Teil 1: Prüfverfahren für Brand mit Erschütterung bei einer Temperatur von mindestens 830 °C für Kabel und 
+isolierte Leitungen mit einer Nennspannung bis einschließlich 0,6/1,0 kV und einem Außendurchmesser 
+größer 20 mm 
+OVE EN 60332-1-2, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall –  
+Teil 1-2: Prüfung der vertikalen Flammenausbreitung an einer Ader, einer isolierten Leitung oder  
+einem Kabel – Prüfverfahren mit 1 kW-Flamme mit Gas-/Luft-Gemisch 
+OVE EN IEC 60332-3 Reihe, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im  
+Brandfall – Teil 3: Prüfung der vertikalen Flammenausbreitung von vertikal angeordneten Bündeln  
+von Kabeln und isolierten Leitungen 
+OVE EN IEC 60335-2-41, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2-41: Besondere Anforderungen für Pumpen 
+OVE EN IEC 60335-2-71, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2-71: Besondere Anforderungen für Elektrowärmegeräte für Tieraufzucht und Tierhaltung 
+OVE EN IEC 60335-2-96, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2-96: Besondere Anforderungen an Flächenheizelemente 
+OVE EN IEC 60445, Grund- und Sicherheitsregeln für die Mensch-Maschine-Schnittstelle –  
+Kennzeichnung von Anschlüssen elektrischer Betriebsmittel, angeschlossenen Leiterenden und Leitern 
+ÖVE/ÖNORM EN 60447, Grund- und Sicherungsregeln für die Mensch-Maschine-Schnittstelle, – 
+Kennzeichnung – Bedienungsgrundsätze 
+ÖVE/ÖNORM EN 60529, Schutzarten durch Gehäuse (IP-Code) 
+ÖVE/ÖNORM EN 61558-2-6, Sicherheit von Transformatoren, Drosseln, Netzgeräten und dergleichen  
+für Versorgungsspannungen bis 1 100 V – Teil 2-6: Besondere Anforderungen und Prüfungen an 
+Sicherheitstransformatoren und Netzgeräte, die Sicherheitstransformatoren enthalten 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 832/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 4 
+OVE EN 60570, Elektrische Stromschienensysteme für Leuchten 
+OVE EN 60598 Reihe, Leuchten 
+OVE EN IEC 60598-1, Leuchten – Teil 1: Allgemeine Anforderungen und Prüfungen 
+OVE EN 60598-2-13, Leuchten – Teil 2-13: Besondere Anforderungen – Bodeneinbauleuchten 
+OVE EN IEC 60598-2-17, Leuchten – Teil 2-17: Besondere Anforderungen – Leuchten für 
+Bühnenbeleuchtung, Fernseh- und Film-Studios (außen und innen) 
+OVE EN IEC 60598-2-18, Leuchten – Teil 2-18: Besondere Anforderungen – Leuchten für Schwimmbecken 
+und ähnliche Anwendungen 
+OVE EN IEC 60598-2-22, Leuchten – Teil 2-22: Besondere Anforderungen – Leuchten für Notbeleuchtung 
+OVE EN IEC 60598-2-23, Leuchten – Teil 2-23: Besondere Anforderungen – Kleinspannungs-
+beleuchtungssysteme für ELV-Lichtquellen 
+ÖVE/ÖNORM EN 60598-2-24, Leuchten – Teil 2-24: Besondere Anforderungen – Leuchten mit begrenzter 
+Oberflächentemperatur 
+OVE EN 60601-1, Medizinische elektrische Geräte – Teil 1: Allgemeine Festlegungen für die Sicherheit 
+einschließlich der wesentlichen Leistungsmerkmale 
+OVE EN 60664 Reihe, Isolationskoordination für Betriebsmittel in Niederspannungs-Stromversorgungs-
+systemen 
+OVE EN IEC 60664-1, Isolationskoordination für Betriebsmittel in Niederspannungs-Stromversorgungs-
+systemen – Teil 1: Grundsätze, Anforderungen und Prüfungen 
+OVE EN 60669-1, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen – Teil 1: Allgemeine 
+Anforderungen 
+OVE EN IEC 60669-2-1, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen –  
+Teil 2-1: Besondere Anforderungen – Elektronische Schalter 
+ÖVE/ÖNORM EN 60669-2-2, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen –  
+Teil 2-2: Besondere Anforderungen – Fernschalter 
+ÖVE/ÖNORM EN 60669-2-3, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen –  
+Teil 2-3: Besondere Anforderungen – Zeitschalter 
+ÖVE/ÖNORM EN 60669-2-4, Schalter für Haushalt und ähnliche ortsfeste elektrische Installationen –  
+Teil 2-4: Besondere Anforderungen – Trennschalter 
+ÖVE/ÖNORM EN 60670 Reihe, Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche 
+ortsfeste elektrische Installationen 
+OVE EN IEC 60670-1, Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche ortsfeste 
+elektrische Installationen – Teil 1: Allgemeine Anforderungen 
+OVE EN 60670-24, Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche ortsfeste 
+elektrische Installationen – Teil 24: Besondere Anforderungen für Gehäuse zur Aufnahme von Schutzgeräten 
+und ähnlichen energieverbrauchenden Geräten 
+OVE EN IEC 60695 Reihe, Prüfungen zur Beurteilung der Brandgefahr 
+ÖVE/ÖNORM EN 60702 Reihe, Mineralisolierte Leitungen mit einer Nennspannung bis 750 V 
+ÖVE/ÖNORM EN 60702-1, Mineralisolierte Leitungen mit einer Bemessungsspannung bis 750 V –  
+Teil 1: Leitungen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 833/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 5 
+ÖVE/ÖNORM EN 60702-2, Mineralisolierte Leitungen mit einer Nennspannung bis 750 V –  
+Teil 2: Endverschlüsse 
+OVE EN IEC 60721-3-3, Klassifizierung von Umgebungsbedingungen – Teil 3-3: Klassen von Einflussgrößen 
+und deren Grenzwerte – Ortsfester Einsatz, wettergeschützt 
+OVE EN IEC 60721-3-4, Klassifizierung von Umgebungsbedingungen – Teil 3-4: Klassen von Einflussgrößen 
+und deren Grenzwerte – Ortsfester Einsatz, nicht wettergeschützt 
+OVE EN IEC 60728-11, Kabelnetze für Fernsehsignale, Tonsignale und interaktive Dienste –  
+Teil 11: Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 60896 Reihe, Ortsfeste Blei-Akkumulatoren 
+OVE EN 60898 Reihe, Elektrisches Installationsmaterial – Leitungsschutzschalter für Hausinstallationen und 
+ähnliche Zwecke 
+OVE EN 60898-1, Elektrisches Installationsmaterial – Leitungsschutzschalter für Hausinstallationen und 
+ähnliche Zwecke – Teil 1: Leitungsschutzschalter für Wechselstrom (AC) 
+OVE EN 60898-2, Elektrisches Installationsmaterial – Leitungsschutzschalter für Hausinstallationen und 
+ähnliche Zwecke – Teil 2: Leitungsschutzschalter für Wechsel- und Gleichstrom (AC und DC) 
+EN 60898-3, Electrical accessories – Circuit-breakers for overcurrent protection for household and similar 
+installations – Part 3: Circuit-breakers for DC operation (in preparation) 
+OVE EN 60947-2, Niederspannungsschaltgeräte – Teil 2: Leistungsschalter 
+OVE EN IEC 60947-3, Niederspannungsschaltgeräte – Teil 3: Lastschalter, Trennschalter, Lasttrennschalter 
+und Schalter-Sicherungs-Einheiten 
+OVE EN IEC 60947-4 Reihe, Niederspannungsschaltgeräte – Teil 4: Schütze und Motorstarter 
+OVE EN IEC 60947-4-1, Niederspannungsschaltgeräte – Teil 4-1: Schütze und Motorstarter - 
+Elektromechanische Schütze und Motorstarter 
+OVE EN IEC 60947-4-2 
+Niederspannungsschaltgeräte – Teil 4-2: Schütze und Motorstarter –  
+Halbleiter-Motor-Steuergeräte, Starter und Sanftstarter 
+ÖVE/ÖNORM EN 60947-4-3, Niederspannungsschaltgeräte – Teil 4-3: Schütze und Motorstarter –  
+Halbleiter-Steuergeräte und -Schütze für nichtmotorische Lasten für Wechselspannung 
+OVE EN 60947-5-1, Niederspannungsschaltgeräte – Teil 5-1: Steuergeräte und Schaltelemente – 
+Elektromechanische Steuergeräte 
+OVE EN 60947-5-5, Niederspannungsschaltgeräte – Teil 5-5: Steuergeräte und Schaltelemente - 
+Elektrisches Not-Halt-Gerät mit mechanischer Verrastfunktion 
+OVE EN IEC 60947-6-1, Niederspannungsschaltgeräte – Teil 6-1: Mehrfunktionsschaltgeräte – 
+Netzumschalter 
+OVE EN IEC 60947-6-2, Niederspannungsschaltgeräte – Teil 6-2: Mehrfunktions-Schaltgeräte – Steuer-  
+und Schutz-Schaltgeräte (CPS) 
+ÖVE/ÖNORM EN 60947-7 Reihe, Niederspannungsschaltgeräte – Teil 7: Hilfseinrichtungen 
+ÖVE/ÖNORM EN 60947-7-1, Niederspannungsschaltgeräte – Teil 7-1: Hilfseinrichtungen – Reihenklemmen 
+für Kupferleiter 
+ÖVE/ÖNORM EN 60998 Reihe, Verbindungsmaterial für Niederspannungs-Stromkreise für Haushalt und 
+ähnliche Zwecke 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 834/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 6 
+ÖVE/ÖNORM EN 60998-2-1, Verbindungsmaterial für Niederspannungs-Stromkreise für Haushalt und 
+ähnliche Zwecke – Teil 2-1: Besondere Anforderungen für Verbindungsmaterial als selbständige 
+Betriebsmittel mit Schraubklemmen 
+ÖVE/ÖNORM EN 60998-2-2, Verbindungsmaterial für Niederspannungs-Stromkreise für Haushalt und 
+ähnliche Zwecke – Teil 2-2: Besondere Anforderungen für Verbindungsmaterial als selbständige 
+Betriebsmittel mit schraubenlosen Klemmstellen 
+OVE EN 61000 Reihe, Elektromagnetische Verträglichkeit (EMV) 
+OVE EN 61000-2-2, Elektromagnetische Verträglichkeit (EMV) – Teil 2-2: Umgebungsbedingungen – 
+Verträglichkeitspegel für niederfrequente leitungsgeführte Störgrößen und Signalübertragung in öffentlichen 
+Niederspannungsnetzen 
+OVE EN 61000-4-12, Elektromagnetische Verträglichkeit (EMV) – Teil 4-12: Prüf- und Messverfahren – 
+Prüfung der Störfestigkeit gegen gedämpfte Sinusschwingungen (Ring wave) 
+ÖVE/ÖNORM EN 61000-4-2, Elektromagnetische Verträglichkeit (EMV) – Teil 4-2: Prüf- und Messverfahren 
+– Prüfung der Störfestigkeit gegen die Entladung statischer Elektrizität 
+OVE EN IEC 61000-4-3, Elektromagnetische Verträglichkeit (EMV) – Teil 4-3: Prüf- und Messverfahren – 
+Prüfung der Störfestigkeit gegen hochfrequente elektromagnetische Felder 
+ÖVE/ÖNORM EN 61000-4-4, Elektromagnetische Verträglichkeit (EMV) – Teil 4-4: Prüf- und Messverfahren 
+– Prüfung der Störfestigkeit gegen schnelle transiente elektrische Störgrößen/Burst 
+ÖVE/ÖNORM EN 61000-4-6, Elektromagnetische Verträglichkeit (EMV) – Teil 4-6: Prüf- und Messverfahren 
+– Störfestigkeit gegen leitungsgeführte Störgrößen, induziert durch hochfrequente Felder 
+ÖVE/ÖNORM EN 61000-4-8, Elektromagnetische Verträglichkeit (EMV) – Teil 4-8: Prüf- und Meßverfahren – 
+Prüfung der Störfestigkeit gegen Magnetfelder mit energietechnischen Frequenzen 
+ÖVE/ÖNORM EN 61000-6 Reihe, Elektromagnetische Verträglichkeit (EMV) – Teil 6: Fachgrundnormen 
+OVE EN 61008 Reihe, Fehlerstrom-/Differenzstrom-Schutzschalter ohne eingebauten Überstromschutz 
+(RCCBs) für Hausinstallationen und für ähnliche Anwendungen 
+OVE EN 61008-1, Fehlerstrom-/Differenzstrom-Schutzschalter ohne eingebauten Überstromschutz (RCCBs) 
+für Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN 61009 Reihe, Fehlerstrom-/Differenzstrom-Schutzschalter mit eingebautem Überstromschutz 
+(RCBOs) für Hausinstallationen und für ähnliche Anwendungen 
+OVE EN 61009-1, Fehlerstrom-/Differenzstrom-Schutzschalter mit eingebautem Überstromschutz (RCBOs) 
+für Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN 61034, Messung der Rauchdichte von Kabeln und isolierten Leitungen beim Brennen unter 
+definierten Bedingungen 
+ÖVE/ÖNORM EN 61082-1, Dokumente der Elektrotechnik – Teil 1: Regeln 
+ÖVE/ÖNORM EN 61095, Elektromechanische Schütze für Hausinstallationen und ähnliche Zwecke 
+OVE EN 61140, Schutz gegen elektrischen Schlag – Gemeinsame Anforderungen für Anlagen und 
+Betriebsmittel 
+OVE EN 61347 Reihe, Geräte für Lampen 
+OVE EN IEC 61347-2-2, Geräte für elektrische Lichtquellen – Sicherheit – Teil 2-2: Besondere 
+Anforderungen – Elektronische Konverter für Glühlampen 
+OVE EN 61347-2-13, Geräte für Lampen – Teil 2-13: Besondere Anforderungen an gleich- oder 
+wechselstromversorgte elektronische Betriebsgeräte für LED-Module 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 835/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 7 
+OVE EN 61386 Reihe, Elektroinstallationsrohrsysteme für die Kabel- und Leitungsverlegung 
+OVE EN 61386-1, Elektroinstallationsrohrsysteme für elektrische Energie und für Informationen –  
+Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 61386-21, Elektroinstallationsrohrsysteme für die Kabel- und Leitungsverlegung –  
+Teil 21: Besondere Anforderungen – Starre Elektroinstallationsrohrsysteme 
+OVE EN IEC 61386-22, Elektroinstallationsrohrsysteme für die Kabel- und Leitungsverlegung –  
+Teil 22: Besondere Anforderungen – Biegsame Elektroinstallationsrohrsysteme 
+OVE EN IEC 61386-23, Elektroinstallationsrohrsysteme für die Kabel- und Leitungsverlegung –  
+Teil 23: Besondere Anforderungen – Flexible Elektroinstallationsrohrsysteme 
+OVE EN IEC 61439, Niederspannungs-Schaltgerätekombinationen 
+OVE EN IEC 61439-1, Niederspannungs-Schaltgerätekombinationen – Teil 1: Allgemeine Festlegungen 
+OVE EN IEC 61439-2:2021-11-01, Niederspannungs-Schaltgerätekombinationen – Teil 2: Energie-
+Schaltgerätekombinationen 
+ÖVE/ÖNORM EN 61439-4, Niederspannungs-Schaltgerätekombinationen – Teil 4: Besondere 
+Anforderungen für Baustromverteiler (BV) 
+ÖVE/ÖNORM EN 61439-6, Niederspannungs-Schaltgerätekombinationen – Teil 6: Schienenverteilersysteme 
+(busways) 
+OVE EN 61534 Reihe, Stromschienensysteme 
+OVE EN 61534-1, Stromschienensysteme – Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 61535, Installationssteckverbinder für dauernde Verbindung in festen Installationen 
+ÖVE/ÖNORM EN 61537, Führungssysteme für Kabel und Leitungen – Kabelträgersysteme für elektrische 
+Installationen 
+OVE EN IEC 61557 Reihe, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und DC 1 500 V 
+– Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen 
+OVE EN IEC 61557-2, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und DC 1 500 V – 
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 2: Isolationswiderstand 
+OVE EN IEC 61557-3, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1000 V und DC 1500 V – 
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen - Teil 3: Schleifenwiderstand 
+OVE EN IEC 61557-6, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und DC 1 500 V – 
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 6: Wirksamkeit von 
+Fehlerstrom-Schutzeinrichtungen (RCD) in TT-, TN- und IT-Systemen 
+ÖVE/ÖNORM EN 61557-8, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und  
+DC 1 500 V – Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen –  
+Teil 8: Isolationsüberwachungsgeräte für IT-Systeme 
+ÖVE/ÖNORM EN 61557-9, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und  
+DC 1 500 V – Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 9: Einrichtungen 
+zur Isolationsfehlersuche in IT-Systemen 
+OVE EN IEC 61558-1, Sicherheit von Transformatoren, Netzgeräten, Drosseln und entsprechenden 
+Kombinationen – Teil 1: Allgemeine Anforderungen und Prüfungen 
+ÖVE/ÖNORM EN 61558-2-1, Sicherheit von Transformatoren, Netzgeräten, Drosseln und dergleichen –  
+Teil 2-1: Besondere Anforderungen und Prüfungen an Netztransformatoren und Netzgeräten, die 
+Netztransformatoren enthalten, für allgemeine Anwendungen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 836/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 8 
+ÖVE/ÖNORM EN 61558-2-15, Sicherheit von Transformatoren, Drosseln, Netzgeräten und entsprechenden 
+Kombinationen – Teil 2-15: Besondere Anforderungen und Prüfungen an Trenntransformatoren zur 
+Versorgung medizinischer Räume 
+ÖVE/ÖNORM EN 61558-2-16, Sicherheit von Transformatoren, Drosseln, Netzgeräten und dergleichen für 
+Versorgungsspannungen bis 1 100 V – Teil 2-16: Besondere Anforderungen und Prüfungen an 
+Schaltnetzteilen (SMPS) und Transformatoren für Schaltnetzteile 
+ÖVE/ÖNORM EN 61558-2-4, Sicherheit von Transformatoren, Drosseln, Netzgeräten und dergleichen für 
+Versorgungsspannungen bis 1 100 V – Teil 2-4: Besondere Anforderungen und Prüfungen an 
+Trenntransformatoren und Netzgeräte die Trenntransformatoren enthalten 
+ÖVE/ÖNORM EN 61558-2-5, Sicherheit von Transformatoren, Drosseln, Netzgeräten und entsprechende 
+Kombinationen – Teil 2-5: Besondere Anforderungen und Prüfungen an Transformatoren für Rasierer, 
+Netzgeräte für Rasierer und Rasiersteckdosen-Einheiten 
+ÖVE/ÖNORM EN 61558-2-6, Sicherheit von Transformatoren, Drosseln, Netzgeräten und dergleichen für 
+Versorgungsspannungen bis 1 100 V – Teil 2-6: Besondere Anforderungen und Prüfungen an 
+Sicherheitstransformatoren und Netzgeräte, die Sicherheitstransformatoren enthalten 
+OVE EN 61643-11, Überspannungsschutzgeräte für Niederspannung – Teil 11: Überspannungsschutzgeräte 
+für den Einsatz in Niederspannungsanlagen - Anforderungen und Prüfungen 
+OVE EN IEC 61730-1, Photovoltaik (PV) Module – Sicherheitsqualifikation – Teil 1: Anforderungen an den 
+Aufbau 
+OVE EN 61810, Elektromechanische Elementarrelais 
+OVE EN IEC 61851 Reihe, Konduktive Ladesysteme für Elektrofahrzeuge 
+OVE EN IEC 61851-1, Konduktive Ladesysteme für Elektrofahrzeuge – Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 61936-1, Starkstromanlagen mit Nennwechselspannungen über 1 kV AC und 1,5 kV DC –  
+Teil 1: Wechselstrom 
+OVE EN IEC 61980, Kontaktlose Energieübertragungssysteme (WPT) für Elektrofahrzeuge 
+ÖVE/ÖNORM EN 61984, Steckverbinder – Sicherheitsanforderungen und Prüfungen 
+OVE EN 61995 Reihe, Betriebsmittel für den Anschluss von Leuchten für Haushalt und ähnliche Zwecke 
+OVE EN 61995-1, Betriebsmittel für den Anschluss von Leuchten für Haushalt und ähnliche Zwecke –  
+Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 62020-1, Elektrisches Installationsmaterial – Differenzstrom-Überwachungsgeräte (RCMs) – 
+Teil 1: RCMs für Hausinstallationen und ähnliche Verwendungen 
+ÖVE/ÖNORM EN 62034, Automatische Prüfsysteme für batteriebetriebene Sicherheitsbeleuchtung für 
+Rettungswege 
+OVE EN IEC 62040-1, Unterbrechungsfreie Stromversorgungssysteme (USV) –  
+Teil 1: Sicherheitsanforderungen 
+OVE EN IEC 62040-3, Unterbrechungsfreie Stromversorgungssysteme (USV) – Teil 3: Methoden zum 
+Festlegen der Leistungs- und Prüfungsanforderungen 
+ÖVE/ÖNORM EN 62109-1, Sicherheit von Wechselrichtern zur Anwendung in photovoltaischen 
+Energiesystemen – Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 62109-2, Sicherheit von Leistungsumrichtern zur Anwendung in photovoltaischen 
+Energiesystemen – Teil 2: Besondere Anforderungen an Wechselrichter 
+OVE EN IEC 62196 Reihe, Stecker, Steckdosen, Fahrzeugkupplungen und Fahrzeugstecker – Konduktives 
+Laden von Elektrofahrzeugen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 837/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 9 
+OVE EN IEC 62196-1, Stecker, Steckdosen, Fahrzeugkupplungen und Fahrzeugstecker – Konduktives 
+Laden von Elektrofahrzeugen – Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 62196-2, Stecker, Steckdosen, Fahrzeugkupplungen und Fahrzeugstecker – Konduktives 
+Laden von Elektrofahrzeugen – Teil 2: Maßliche Kompatibilitätsanforderungen an Wechselspannungs-
+steckvorrichtungen mit Stiften und Buchsen 
+OVE EN IEC 62196-3, Stecker, Steckdosen, Fahrzeugkupplungen und Fahrzeugstecker – Konduktives 
+Laden von Elektrofahrzeugen – Teil 3: Maßliche Kompatibilitätsanforderungen an Fahrzeugsteck-
+vorrichtungen mit Stiften und Buchsen für Gleichstrom und kombiniert für Gleich- und Wechselstrom 
+OVE EN IEC 62208, Leergehäuse für Niederspannungs-Schaltgerätekombinationen – Allgemeine 
+Anforderungen 
+OVE EN 62262, Schutzarten durch Gehäuse für elektrische Betriebsmittel (Ausrüstung) gegen äußere 
+mechanische Beanspruchungen (IK-Code) 
+ÖVE/ÖNORM EN 62305, Blitzschutz 
+ÖVE/ÖNORM EN 62305-2, Blitzschutz – Teil 2: Risiko-Management 
+ÖVE/ÖNORM EN 62305-3, Blitzschutz – Teil 3: Schutz von baulichen Anlagen und Personen 
+ÖVE/ÖNORM EN 62305-4, Blitzschutz – Teil 4: Elektrische und elektronische Systeme in baulichen Anlagen 
+ÖVE/ÖNORM EN 62353, Medizinische elektrische Geräte – Wiederholungsprüfungen und Prüfung nach 
+Instandsetzung von medizinischen elektrischen Geräten 
+OVE EN IEC 62368-3, Einrichtungen für Audio/Video, Informations- und Kommunikationstechnik –  
+Teil 3: Sicherheitsaspekte für Gleichstrom-Leistungsübertragung über Kommunikations-Kabel und 
+Anschlüssen 
+ÖVE/ÖNORM EN 62395-1, Elektrische Widerstands-Begleitheizungen für industrielle und gewerbliche 
+Zwecke – Teil 1: Allgemeine Anforderungen und Prüfanforderungen 
+OVE EN 62423, Fehlerstrom-/Differenzstrom-Schutzschalter Typ F und Typ B mit und ohne eingebautem 
+Überstromschutz für Hausinstallationen und für ähnliche Anwendungen 
+OVE EN 62446-1, Photovoltaik (PV) Systeme - Anforderungen an Prüfung, Dokumentation und 
+Instandhaltung – Teil 1: Netzgekoppelte Systeme – Dokumentation, Inbetriebnahmeprüfung und 
+Prüfanforderungen 
+OVE EN IEC 62485-2, Sicherheitsanforderungen an Sekundär-Batterien und Batterieanlagen –  
+Teil 2: Stationäre Batterien 
+OVE EN IEC 62485-5, Sicherheitsanforderungen an sekundäre Batterien und Batterieanlagen –  
+Teil 5: Sicherer Betrieb von stationären Lithium-Ionen-Batterien 
+ÖVE/ÖNORM EN 62549, Gelenkige Systeme und flexible Systeme für die Leitungsführung 
+OVE EN IEC 62561-1, Blitzschutzsystembauteile (LPSC) – Teil 1: Anforderungen an Verbindungsbauteile 
+OVE EN IEC 62561-2, Blitzschutzsystembauteile (LPSC) – Teil 2: Anforderungen an Leiter und Erder 
+ÖVE/ÖNORM EN 62606, Allgemeine Anforderungen an Fehlerlichtbogen-Schutzeinrichtungen 
+ÖVE/ÖNORM EN 62626-1, Gekapselte Niederspannungsschaltgeräte – Teil 1: Gekapselte Lasttrennschalter 
+außerhalb des Anwendungsbereiches von IEC 60947-3, zum Trennen während der Reparatur- und 
+Wartungsarbeit 
+OVE EN 62852, Steckverbinder für Gleichspannungsanwendungen in Photovoltaik-Systemen – 
+Sicherheitsanforderungen und Prüfungen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 838/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 10 
+OVE EN 63024, Anforderungen an automatische Wiedereinschalteinrichtungen für Leitungsschutzschalter, 
+RCBOs, RCCBs für Hausinstallationen und ähnliche Zwecke 
+OVE EN IEC 81346-1, Industrielle Systeme, Anlagen und Ausrüstungen und Industrieprodukte – 
+Strukturierungsprinzipien und Referenzkennzeichnung – Teil 1: Allgemeine Regeln 
+ÖVE/ÖNORM E 8684-2-2, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2-2: Besondere Anforderungen für Einbausteckdosen und Steckdosen an Geräten 
+OVE E 8601, Kurzzeitverzögerte Fehlerstrom-Schutzschalter des Typs G ohne und mit eingebautem 
+Überstromschutz 
+ÖVE/ÖNORM EN 62116, Photovoltaik-Wechselrichter für den Anschluss an das Stromversorgungsnetz – 
+Prüfverfahren für Maßnahmen zur Verhinderung der Inselbildung 
+OVE EN 50288, Mehradrige metallische Daten- und Kontrollkabel für analoge und digitale Übertragung 
+EN IEC 61643-41, Low-voltage surge protective devices – Part 41: Surge protective devices connected to  
+DC low-voltage power systems – Requirements and test methods 
+OVE EN IEC 61730 Reihe, Photovoltaik (PV) Module – Sicherheitsqualifikation 
+OVE EN IEC 60332 Reihe, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall 
+ÖVE/ÖNORM EN 61508 Reihe, Funktionale Sicherheit sicherheitsbezogener elektrischer/elektronischer/ 
+programmierbarer elektronischer Systeme 
+OVE-Richtlinie R 6-2-2, Blitz- und Überspannungsschutz – Teil 2-2: Photovoltaikanlagen - Auswahl und 
+Anwendungsgrundsätze an Überspannungsschutzgeräte 
+OVE-Richtlinie R 12-2, Brandschutz in elektrischen Anlagen – Teil 2: Ergänzende brandschutztechnische 
+Anforderungen an elektrische Betriebsstätten und an elektrische Kabel- und Leitungsanlagen in elektrischen 
+Niederspannungsanlagen 
+OVE-Richtlinie R 17, Isolationskoordination für Niederspannungsbetriebsmittel – Anwendungsrichtlinie – 
+Erläuterungen zur Anwendung der Normenreihe IEC 60664, Bemessungsbeispiele und Isolationsprüfungen 
+OVE-Richtlinie R 25, Prüfanforderungen an Erzeugungseinheiten (Generatoren) vorgesehen zum Anschluss 
+und Parallelbetrieb an Niederspannungs-Verteilernetzen 
+ÖNORM EN 81 Reihe, Sicherheitsregeln für die Konstruktion und den Einbau von Aufzügen – Aufzüge für 
+den Personen- und Gütertransport 
+ÖNORM EN 115-1, Sicherheit von Fahrtreppen und Fahrsteigen – Teil 1: Konstruktion und Einbau 
+ÖNORM EN 1081, Elastische, Laminat- und modulare mehrschichtige Bodenbeläge – Bestimmung des 
+elektrischen Widerstandes 
+ÖNORM EN 1648-2, Bewohnbare Freizeitfahrzeuge – Elektrische Anlagen für DC 12 V –  
+Teil 2: Motorcaravans 
+ÖNORM EN 1838, Angewandte Lichttechnik – Notbeleuchtung für bauliche Anlagen 
+ÖNORM DIN 4102-12, Brandverhalten von Baustoffen und Bauteilen – Teil 12: Funktionserhalt von 
+elektrischen Kabelanlagen - Anforderungen und Prüfungen 
+ÖNORM EN ISO 7010, Graphische Symbole – Sicherheitsfarben und Sicherheitszeichen – Registrierte 
+Sicherheitszeichen 
+ÖNORM EN ISO 8528-13, Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotor –  
+Teil 13: Sicherheit 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 839/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 11 
+DIN 6280-13, Stromerzeugungsaggregate – Stromerzeugungsaggregate mit Hubkolben-Verbrennungs-
+motoren – Teil 13: Für Sicherheitsstromversorgung in Krankenhäusern und in baulichen Anlagen für 
+Menschenansammlungen 
+DIN 15767, Veranstaltungstechnik – Energieversorgung in der Veranstaltungs- und Produktionstechnik 
+ISO 8528, Reciprocating internal combustion engine driven alternating current generating sets 
+ISO 8528-12, Reciprocating internal combustion engine driven alternating current generating sets —  
+Part 12: Emergency power supply to safety services 
+ISO 19642 Serie, Road vehicles — Automotive cables 
+ISO/IEC 30129, Information technology — Telecommunications bonding networks for buildings and other 
+structures 
+IEC TR 60083, Plugs and socket-outlets for domestic and similar general use standardized in member 
+countries of IEC 
+IEC 60287 Series, Electric cables 
+IEC 60287-1-3, Electric cables – Calculation of the current rating – Part 1-3: Current rating equations (100 % 
+load factor) and calculation of losses – Current sharing between parallel single-core cables and calculation  
+of circulating current losses 
+IEC 60502, Power cables with extruded insulation and their accessories for rated voltages from 1 kV  
+(Um = 1,2 kV) up to 30 kV (Um = 36 kV) 
+IEC TR 60664-2-1, Insulation coordination for equipment within low-voltage systems – Part 2-1: Application 
+guide – Explanation of the application of the IEC 60664 series, dimensioning examples and dielectric testing 
+IEC 60800, Heating cables with a rated voltage up to and including 300/500 V for comfort heating and 
+prevention of ice formation 
+IEC 60906 Series, IEC system of plugs and socket-outlets for household and similar purposes 
+IEC 60949, Calculation of thermally permissible short-circuit currents, taking into account non-adiabatic 
+heating effects 
+IEC TR 61000-2-1, Electromagnetic compatibility (EMC) – Part 2: Environment – Section 1: Description of  
+the environment – Electromagnetic environment for low-frequency conducted disturbances and signalling in 
+public power supply systems 
+IEC TR 61000-2-3, Electromagnetic compatibility (EMC) – Part 2: Environment – Section 3: Description of  
+the environment – Radiated and non-network-frequency-related conducted phenomena 
+IEC TR 61000-2-5, Electromagnetic compatibility (EMC) – Part 2-5: Environment – Description and 
+classification of electromagnetic environments 
+CLC/TS 61643-12, Low-voltage surge protective devices – Part 12: Surge protective devices connected to 
+low-voltage power distribution systems – Selection and application principles 
+IEC TS 62196-4, Plugs, socket-outlets, vehicle connectors and vehicle inlets – Conductive charging of 
+electric vehicles – Part 4: Dimensional compatibility and interchangeability requirements for DC pin and 
+contact-tube accessories for Class II or Class III applications 
+IEC 62548, Photovoltaic (PV) arrays 
+HD 62640, Residual current devices with or without overcurrent protection for socket-outlets for household 
+and similar uses 
+IEC 62955, Residual direct current detecting device (RDC-DD) to be used for mode 3 charging of electric 
+vehicles 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 840/852 =====
+OVE E 8101:2025-10-01 
+Verweisungen – Seite 12 
+IEEE 802.3, Ethernet Working Group 
+TRVB 150 S, Ergänzende Bestimmungen zur ÖNORM EN 81-72: 2015 – Feuerwehraufzüge 
+TOR Netzrückwirkungen Niederspannung, Technische und organisatorische Regeln für Betreiber und 
+Benutzer von Netzen – TOR Netzrückwirkungen: Niederspannung 
+TOR Stromerzeugungsanlagen Typ A, Anschluss und Parallelbetrieb von Stromerzeugungsanlagen des  
+Typs A und von Kleinsterzeugungsanlagen (Maximalkapazität < 250 kW und Nennspannung < 110 kV) 
+BGBl. Nr. 450/1994 idF, Bundesgesetz über Sicherheit und Gesundheitsschutz bei der Arbeit 
+(ArbeitnehmerInnenschutzgesetz – ASchG) 
+BGBl. II Nr. 33/2012, Verordnung über den Schutz der Arbeitnehmer/innen vor Gefahren durch den 
+elektrischen Strom (Elektroschutzverordnung 2012 – ESV 2012) 
+BGBl. II Nr. 22/2016, Verordnung des Bundesministers für Wissenschaft, Forschung und Wirtschaft über 
+elektromagnetische Verträglichkeit (Elektromagnetische Verträglichkeitsverordnung 2015 – EMVV 2015) 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

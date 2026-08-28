@@ -1,0 +1,462 @@
+
+
+===== PAGE 1/8 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8001-1/A3 
+ 
+Ausgabe: 2007-10-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis AC 1 000 V und DC 1 500 V 
+Teil 1: Begriffe und Schutz gegen elektrischen Schlag 
+(Schutzmaßnahmen)  
+(Änderung) 
+ 
+ 
+Erection of electrical installations with rated voltages up to AC 1 000 V and  
+DC 1 500 V – Part 1: Definitions and measures against electric shock 
+(Amendment) 
+ 
+Erection des installations électriques à courant fort jusqu' a AC 1 000 V et  
+DC 1 500 V – Partie 1: Définitions et mesures de protection contre le choc 
+électrique  
+(Amendement) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2007. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@on-norm.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 2/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+2 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem OVE und dem Österreichischem Normungsinstitut werden künftig 
+alle elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben 
+daher sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK 
+gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 3/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+3 
+Änderung zu ÖVE/ÖNORM E 8001-1:2000-03 
+Folgende Änderungen bzw. Ergänzungen sind durchzuführen: 
+Fehlerkorrektur in Abschnitt 2 – Bezeichnung von ÖVE B 5: 
+ÖVE B 5/1969, Maßnahmen zum Schutze von Rohrleitungen und Kabeln gegen Korrosion durch Streuströme 
+aus Gleichstromanlagen 
+Abschnitt 5.3 lautet neu: 
+5.3 
+Der national vereinbarte Grenzwert der zeitlich unbegrenzten Fehlerspannung UFL für die Nullung und 
+die Fehlerstrom-Schutzschaltung beträgt bei: 
+– 
+Wechselspannungen (15 Hz bis 1 000 Hz), UFL = 65 V, 
+– 
+Gleichspannungen bis 10 % Welligkeit mit Nennspannungen bis 400 V, UFL = 120 V. 
+Bei Auftreten eines Fehlers kann bis zur automatischen Ausschaltung durch eine zugeordnete 
+Schutzeinrichtung die Fehlerspannung über dem vereinbarten Grenzwert liegen. 
+ANMERKUNG 1 
+Die internationalen Bestimmungen, die eine Berührungsspannungsgrenze von 50 V für 
+Wechselspannung nennen, werden damit bei vertretbarem Grenzrisiko erfüllt. Aus dieser Berührungsspannungsgrenze 
+von 50 V für Wechselspannung kann eine elektropathologisch gleichwertige Berührungsspannungsgrenze von 90 V für 
+Gleichspannung abgeleitet werden. 
+Bei Anwendung der Schutzkleinspannung (SELV), der Funktionskleinspannung mit sicherer Trennung (PELV), der 
+Schutztrennung, der Schutzisolierung und des Isolationsüberwachungssystems ist die Festlegung eines Grenzwertes für 
+die Fehlerspannung nicht erforderlich. 
+Bei Anwendung der Funktionskleinspannung ohne sichere Trennung (FELV) gilt, abhängig von der im Primärkreis 
+angewandten Maßnahme des Fehlerschutzes, die Festlegung hinsichtlich eines Grenzwertes für die Fehlerspannung 
+auch für den Kleinspannungsstromkreis. 
+ANMERKUNG 2 
+Für elektrische Anlagen die vor dem Inkrafttreten dieser Bestimmung mit der Schutzerdung als 
+Maßnahme des Fehlerschutzes errichtet wurden gelten ebenfalls die oben genannten Grenzwerte. 
+Abschnitt 5.4.2 lautet neu: 
+Maßnahmen bei Fehlerschutz mit PE-Leiter sind: 
+1) 
+Nullung gemäß Abschnitt 10, 
+2) 
+Fehlerstrom-Schutzschaltung gemäß 12.2, für elektrische Anlagen mit Spannungen gegen Erde bis 
+250 V (für höhere Nennspannungen sind ergänzende Maßnahmen erforderlich), 
+3) 
+Isolationsüberwachungssystem gemäß Abschnitt 11, 
+4) 
+Schutzerdung (Überstrom-Schutzerdung) gemäß Abschnitt 9 für elektrische Anlagen in denen aus 
+Beeinflussungsgründen die Nullung und aus Verfügbarkeitsgründen die Fehlerstrom-Schutzschaltung 
+nicht angewendet werden kann. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 4/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+4 
+Abschnitt 5.5.1 (1) lautet neu: 
+1) 
+In allen Anlagen und für alle Betriebsmittel, mit Ausnahme der unter 5.5.2 genannten, ist eine der unter 
+5.4 angeführten Maßnahmen des Fehlerschutzes anzuwenden. 
+Abschnitt 5.5.2 lautet neu: 
+5.5.2 Fehlerschutz ist nicht gefordert für: 
+1) 
+Betriebsmittel der Stromversorgung zur Messung elektrischer Arbeit und Leistung, mit Nennspannungen 
+bis 250 V gegen Erde, zB Elektrizitätszähler, Tarifschaltgeräte, Hausanschlusskästen. Für diese 
+Betriebsmittel wird Schutzisolierung empfohlen. Sie sind so zu befestigen, dass zwischen ihren inaktiven 
+Teilen und den an einen PE-Leiter angeschlossenen Teilen anderer Betriebsmittel keine galvanische 
+Verbindung besteht. 
+2) 
+Metallrohre und Metallschläuche mit isolierenden Auskleidungen, 
+Metallrohre, metallene Kabelkanäle und Kabeltassen in Verbindung mit Schlauchleitungen, 
+Mantelleitungen oder Kabeln, 
+Metalldosen mit isolierenden Auskleidungen (Unterputzdosen, Verbindungs- und Abzweigdosen), 
+Metallumhüllungen oder Metallmäntel von Leitungen, 
+Bewehrungen von Leitungen und Kabeln. 
+3) 
+Stahl- und Stahlbetonmaste in Verteilungsnetzen, 
+4) 
+Dachständer und mit diesen leitend verbundene Metallteile in Verteilungsnetzen. 
+5) 
+Kabelverteilsysteme für Ton- und Fernsehrundfunk-Signale, sofern sie ÖVE/ÖNORM EN 60728-11 
+entsprechen. 
+Abschnitt 9 lautet neu: 
+9 
+Schutzerdung 
+Die Schutzerdung ist in neuen Anlagen im Allgemeinen nicht mehr anwendbar. 
+Bei wesentlichen Erweiterungen oder wesentlichen Änderungen von alten Anlagen muss die genannte 
+Bedingung auch ohne Verbindung mit dem Wasserrohrnetz erfüllt sein. Ist dies nicht der Fall, dann ist auf eine 
+andere Maßnahme des Fehlerschutzes umzustellen. 
+9.1 
+Die Schleifenimpedanz Zs muss folgender Bedingung entsprechen: 
+Es bedeutet: 
+ZS Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung 
+IA 
+Ausschaltstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung  
+UN Nennspannung gegen Erde  
+N
+A
+S
+U
+I
+Z
+≤
+⋅
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 5/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+5 
+N
+N
+S
+5
+Δ
+⋅
+≤
+I
+U
+Z
+Dabei wird der Ausschaltstrom IA mit Hilfe der Beziehung 
+unter Verwendung der Werte für m aus Tabelle 10-1 errechnet. 
+Es bedeutet: 
+IN 
+Nennstrom der jeweils vorgelagerten Überstrom-Schutzeinrichtung  
+m 
+Ausschaltstromfaktor  
+9.2 Prüfung der Schutzerdung 
+Die Wirksamkeit der Schutzerdung ist vor Inbetriebnahme der Anlage zu prüfen und zu dokumentieren (siehe 
+Abschnitt 22). 
+Fehlerkorrektur in Abschnitt 10.2.1.3 – 2. Satz: 
+Um dabei auch bei Auftreten eines Fehlers zwischen Außenleiter und Neutralleiter eine automatische 
+Ausschaltung zu bewirken, muss an den Enden der geschützten Stromkreise der Mindestkurzschlussstrom 
+(Ausschaltstrom) der nächsten dem Stromkreis vorgeschalteten Überstrom-Schutzeinrichtung, abweichend 
+von Tabelle 10-1, mindestens das 2,5-fache ihres Nennstromes IN betragen. 
+Abschnitt 12.2.1.1 lautet neu: 
+12.2.1.1 
+Alle zu schützenden Anlagenteile müssen eine geeignete dauerhafte Anlagenerdung aufweisen. 
+Für Neuanlagen ist dazu vorzugsweise ein Fundamenterder gemäß Abschnitt 20.5.4 zu errichten. Ist ein 
+Fundamenterder nicht vorhanden, ist eine Erdungsanlage in ausreichend korrosionsbeständiger Ausführung 
+mit folgendem Mindestausmaß zu errichten: 
+– 
+Horizontalerder von mindestens 10 m Länge oder 
+– 
+Vertikalerder von mindestens 4,5 m Länge oder 
+– 
+gleichwertige Erderkombination. 
+Für die Schleifenimpedanz im Fehlerfall gilt: 
+ 
+ 
+und  
+ZS ≤ 100 Ω 
+ 
+je nachdem, welcher Wert kleiner ist. 
+Es bedeutet: 
+ZS Schleifenimpedanz im Fehlerfall (Erdfehler), ermittelt durch Rechnung oder Messung 
+UN Nennspannung zwischen Außenleiter und Neutralleiter 
+IΔN Nennwert des Auslösefehlerstromes (Nennfehlerstrom) der Fehlerstrom-Schutzeinrichtung 
+ANMERKUNG Das bedeutet, dass bei Nennspannung 230 V zwischen Außenleiter und Neutralleiter für Fehlerstrom-
+Schutzeinrichtungen mit Nennwerten des Auslösefehlerstromes bis einschließlich 300 mA die Schleifenimpedanz nicht 
+mehr als 100 Ω betragen darf. 
+N
+A
+I
+m
+I
+⋅
+=
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 6/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+6 
+Fehlerkorrektur in Abschnitt 12.2.2.2 – Normenverweis: 
+12.2.2.2 
+Für Fehlerstrom-Schutzeinrichtungen für Nennstromstärken über 63 A, bei denen die Bauteile für 
+die Erfassung und Ausschaltung des Fehlerstromes in getrennten Gehäusen angeordnet sind  
+(zB Leistungsschalter mit Fehlerstromrelais), wird das Ausschalten des Neutralleiters im Allgemeinen nicht 
+gefordert, ausgenommen jedoch in TT-Systemen gemäß 14.2.3.2. 
+Fehlerkorrektur in Abschnitt 12.2.5: 
+12.2.5 Eine Fehlerstrom-Schutzeinrichtung darf nicht gleichzeitig für Fehler- und Zusatzschutz verwendet 
+werden. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 7/8 =====
+ÖVE/ÖNORM E 8001-1/A3:2007 
+7 
+Fehlerkorrekturen zu ÖVE/ÖNORM E 8001-1/A2:2003-11 
+Generelle Änderung: 
+ÖVE/ÖNORM EN 61312-1 wird durch IEC 62305-4 ersetzt. 
+Anhang D.4: 
+D.4 Verbraucheranlage mit Isolationsüberwachungssystem – Anschlussart 2 
+ 
+Es bedeutet: 
+a 
+siehe Tabelle 18-1 
+① Überspannungsschutzgerät geeignet für IT-Systeme für die Installation zwischen Außenleiter und  
+PE-Leiter, Dauerspannung UC ≥ 400 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+② Überspannungsschutzgerät geeignet für IT-Systeme für die Installation zwischen Neutralleiter und  
+PE-Leiter, Dauerspannung UC ≥ 230 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+Bild D.4 – Verbraucheranlage mit Isolationsüberwachungssystem – Anschlussart 2 
+ 
+L1
+L2
+L3
+N
+L1 
+L2 
+L3 
+N 
+PE 
+AC 230/400 V 
+a
+RA 
+①
+②
+PAS
+Isolations- 
+überwachungsgerät 
+F1 
+F2
+PE
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 8/8 =====
+ 
+ 
+ 
+Wichtige Informationen für Normen-Anwender 
+ÖVE/ÖNORMEN sind Regeln, die im Dialog und Konsens aller 
+Betroffenen und Interessierten entwickelt werden. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und 
+Qualifikationen fest und definieren, wie die Einhaltung dieser Anforderungen überprüft 
+wird. 
+Von ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig 
+(ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den 
+aktuellen Stand der Technik dokumentieren, das was in einem bestimmten Fachgebiet 
+„Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Experten 
+und Expertinnen in den zuständigen Komitees auf nationaler, europäischer und 
+internationaler Ebene - sowie die Kompetenz des Österreichischen Verbandes für 
+Elektrotechnik und seiner Referenten. 
+ 
+Aktualität des Normenwerks. Analog zur technischen und 
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen 
+Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Aktualität 
+überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. 
+Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten 
+Ausgaben der Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine 
+Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen 
+entsprechen. 
+ 
+Wissen um Veränderungen. Das Österreichische Normungsinstitut 
+bietet gemeinsam mit dem Österreichischen Verband für Elektrotechnik 
+Normanwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote, die 
+dafür sorgen, dass Normanwender zuverlässig über die neusten Versionen von 
+Normen verfügen und über Änderungen – Neuausgaben und/oder Zurückziehungen – 
+informiert werden. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen. 
+Informationen über Angebote und Dienstleistungen des ON und des OVE bei 
+ 
+ON Sales & Service 
+OVE Normung 
+ON Österreichisches Normungsinstitut 
+OVE Österreichischer Verband 
+Austrian Standards Institute 
+für Elektrotechnik 
+Heinestraße 38, 1020 Wien 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: sales@on-norm.at 
+E-Mail: ove@ove.at 
+Internet: www.on-norm.at/shop 
+Internet: www.ove.at 
+Fax: (+43 1) 213 00-818 
+Fax: (+43 1) 586 74 08 
+Tel.: (+43 1) 213 00-805 
+Tel.: (+43 1) 587 63 73 
+ 
+ 
+ 
+ 
+ISO 9001:2000 
+zertifiziert│certified by SQS 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 8
+www.ris.bka.gv.at

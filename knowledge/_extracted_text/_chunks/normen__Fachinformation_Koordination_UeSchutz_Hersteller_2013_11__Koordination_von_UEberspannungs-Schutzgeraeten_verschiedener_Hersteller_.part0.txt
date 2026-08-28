@@ -1,0 +1,194 @@
+
+
+===== PAGE 1/2 =====
+ 
+Herausgeber: 
+ 
+ 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+ 
+ 
+ 
+ 
+Eschenbachgasse 9, 1010 Wien  Tel.: +43 1 587 63 73  Fax: +43 1 587 63 73-99 
+ 
+ 
+ 
+E-Mail: ove@ove.at  Internet: www.ove.at  ZVR: 327279890  
+ 
+ 
+ 
+ 
+ATU36808601  Banken: BA-CA Kto.-Nr. 0043-28423/00  PSK Kto.-Nr. 1.935.655 
+Fachinformation  
+des Österreichischen Elektrotechnischen Komitees – OEK  
+Koordination von Überspannungs-Schutzgeräten verschiedener Hersteller  
+Ausgearbeitet im Technischen Komitee Blitzschutz (TK BL) und dem Technischen Subkomitee Überspannungsableiter für 
+Niederspannung (TSK IS 37A) des OVE mit Genehmigung des Ausschuss für Blitzschutz und Blitzforschung des VDE (ABB). 
+ 
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu und ohne Auslassung oder Zusatz wiedergegeben werden.  
+Ausgabe: November 2013 
+ 
+ 
+1. Problemstellung 
+Bei Neuinstallationen sowie bei Änderungen oder 
+Erweiterungen in elektrischen Installationen tritt häufig 
+die Situation auf, dass Überspannungsschutzgeräte 
+(SPDs) von unterschiedlichen Herstellern eingebaut 
+werden (sollen). 
+Es stellt sich die Frage, wie die Koordination zwischen 
+diesen SPDs sichergestellt werden kann. Letztendlich 
+liegt die Verantwortung beim Planer/Errichter, der die 
+Installation vornimmt. 
+ANMERKUNG 
+ In 
+ÖVE/ÖNORM E 8001-1/A2:2003, 
+Abschnitt 18.2.2.1.3, 
+dritter 
+Absatz 
+wird 
+auf 
+die 
+Notwendigkeit der Koordinierung der einzelnen SPD-
+Schutzstufen hingewiesen.  
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.2.4, 
+letzter Absatz und 6.2.5, letzter Absatz (ÖVE/ÖNORM 
+EN 62305-3:2012, Abschnitt 6.2.4, letzter Absatz und 6.2.5, 
+letzter Absatz) muss bei Ausführung von mehreren  
+SPD-Schutzstufen die Koordinierung erfüllt werden. 
+Häufig stellen Anwender Anfragen an die Hersteller 
+der SPDs, ob und unter welchen Randbedingungen 
+eine Koordination der verschiedenen SPDs gegeben 
+ist. 
+Ohne aufwändige Untersuchungen können Hersteller 
+diese Anfragen in der Regel nicht beantworten. Bei 
+der Vielzahl der am Markt befindlichen SPDs 
+weltweiter Hersteller kann nicht erwartet werden, dass 
+für 
+beliebige 
+Kombinationen 
+von 
+SPDs 
+die 
+Koordination durch Versuche oder Berechnungen 
+nachgewiesen wird. Die Frage, inwieweit generelle 
+Aussagen zur Koordination von SPDs verschiedenster 
+Herkunft möglich sind, wurde eingehend diskutiert und 
+die nachfolgenden Lösungsmöglichkeiten zusammen 
+mit Vertretern der SPD-Hersteller erarbeitet. 
+2. Lösungsmöglichkeiten 
+Den grundsätzlichen Aufbau einer Installation mit 
+mehreren Überspannungs-Schutzgeräten zeigt Bild 1. 
+Im Allgemeinen befindet sich das erste SPD (SPD1) in 
+unmittelbarer Nähe der Einspeisung. Hier kommen 
+SPDs vom Typ 1 (Blitzstrom-Ableiter) zum Einsatz. 
+Die nächste Stufe (SPD2) ist typischerweise in einer 
+Haupt- oder Unterverteilung lokalisiert. Weitere SPDs 
+(SPD3) können sich dann in einer Unterverteilung oder 
+im Steckdosenbereich befinden. 
+Die 
+einzelnen 
+Stufen 
+des 
+zu 
+koordinierenden 
+Überspannungsschutzes sind durch Impedanzen (Z1, 
+Z2) entkoppelt. 
+Diese können durch die Impedanz der zwischen den 
+SPDs liegenden Leitung oder auch durch diskrete 
+Impedanzen realisiert sein. 
+Koordination SPD1 – SPD2 
+Eine generelle Koordination von SPD1 und SPD2 ist 
+nur bei „klassischen“ Funkenstrecken als SPD1 
+möglich. 
+Unter „klassischen“ Funkenstrecken sind SPDs zu 
+verstehen, die keine speziellen Maßnahmen (zB zur 
+internen 
+Triggerung 
+oder 
+zur 
+Netzfolgestrom-
+Begrenzung) aufweisen. Eine Koordination ist dann 
+gegeben, wenn die Vorgaben des Herstellers von 
+SPD1 
+(Mindestentkopplung 
+Z1 
+und 
+Mindest-
+Nennstrom In für SPD2) eingehalten sind. 
+
+
+===== PAGE 2/2 =====
+2 
+ 
+Koordination von Überspannungs-Schutzgeräten verschiedener Hersteller 
+ 
+Ausgabe November 2013 
+www.ove.at 
+In allen anderen Fällen kann eine Koordination ohne 
+spezielle Berechnungen oder einen Labortest nicht 
+angenommen werden: Bei spannungsschaltenden 
+SPD1 sind heute die Technologien der einzelnen 
+Hersteller zu unterschiedlich, um eine generelle 
+Koordination garantieren zu können. Beim Einsatz 
+von spannungsbegrenzenden Komponenten in SPD1 
+(zB Varistoren) ist die Koordination extrem von 
+diversen Parametern der Komponenten in SPD1 und 
+SPD2 abhängig, was eine generelle Koordination 
+praktisch ausschließt. 
+Im Prinzip besteht die Möglichkeit, die ordnungs-
+gemäße 
+Koordination 
+von 
+SPDs 
+verschiedener 
+Hersteller 
+durch 
+Laborexperimente 
+oder 
+durch 
+Berechnungen mit Netzwerkanalyse-Programmen zu 
+verifizieren. 
+Koordinationsverfahren 
+sind 
+in 
+CLC/TS 61643-12 und ÖVE/ÖNORM EN 62305-4 
+beschrieben. In der Praxis kommen in vielen Fällen 
+Kombinationen von SPD1 und SPD2 eines Herstellers 
+zum Einsatz, der Vorgaben für die richtige Installation 
+gibt und die Koordination der SPDs garantiert. 
+Koordination SPD2 – SPD3 
+Wird eine ausreichende Entkopplung Z2 zu SPD3 
+eingehalten (typisch 10 μH oder 10 m Leitungslänge), 
+kann von einer ordnungsgemäßen Koordination zu 
+beliebigen SPD3 ausgegangen werden. In der Regel 
+wird nach einem SPD2 eine Verzweigung auf mehrere 
+Leitungen vorliegen und somit eine Stromaufteilung 
+auf mehrere SPD3 erfolgen. 
+Hauptaufgabe der SPDs3 ist nicht die Übernahme von 
+Blitzteilströmen, sondern die Begrenzung relativ 
+energieschwacher Überspannungen, die nach SPD2 
+in die Installation induziert werden. 
+Elektroinstallation mit mehreren Abzweigen 
+In diesem Fall (siehe Bild 2) muss die Koordination 
+von SPD1 (meist ein SPD Typ 1 nahe der 
+Hauseinführung oder in der Hauptverteilung) mit dem 
+ersten SPD2 jedes Abzweigs (meist SPD Typ 2 zB in 
+einer Unterverteilung) gegeben sein. Bei allen 
+weiteren SPDs3 (Typ 2 oder Typ 3) muss die 
+Bemessungsspannung Uc größer oder gleich der 
+Bemessungsspannung des vorangehenden SPDs 
+sein, um eine Überlastung sicher auszuschließen. 
+Diese 
+SPD3 
+können 
+dann 
+praxisgerecht 
+von 
+unterschiedlichen Herstellern sein. 
+ 
+ 
+Bild 1 – Grundsätzlicher Aufbau eines gestaffelten Überspannungsschutzes 
+ 
+Bild 2 – Koordination von SPDs Typ 1, Typ 2 und Typ 3 

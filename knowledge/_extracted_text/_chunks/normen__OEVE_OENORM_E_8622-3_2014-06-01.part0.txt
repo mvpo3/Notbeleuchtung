@@ -1,0 +1,433 @@
+
+
+===== PAGE 1/13 =====
+ÖVE/ÖNORM 
+E 8622-3
+Ausgabe: 2014-06-01 
+Stecker und Steckdosen für den Hausgebrauch und 
+ähnliche Zwecke 
+Teil 3: Ortsfeste Steckdosen 
+Plugs and socket-outlets for household and similar purposes – 
+Part 3: Fixed socket-outlets 
+Fiches et prises de courant pour usages domestiques et analogues –  
+Partie 3: Socle fixe 
+ICS  
+29.120.30 
+Ersatz für      siehe nationales Vorwort 
+ zuständig 
+OVE/Komitee 
+ 
+ 
+TK IS 
+Installationsmaterial und Schaltgeräte 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Austrian Standards Institute 
+Copyright © OVE/Austrian Standards Institute – 2014. 
+Alle Rechte vorbehalten! Nachdruck oder 
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch 
+Austrian Standards Institute 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@austrian-standards.at
+Internet: www.austrian-standards.at
+Webshop: www.austrian-standards.at/webshop
+Tel.: +43 1 213 00-300
+Fax: +43 1 213 00-818
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at
+Internet: www.ove.at
+Webshop: www.ove.at/webshop
+Tel.: +43 1 587 63 73
+Fax: +43 1 587 63 73 - 99 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+1 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 2/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................ 3 
+1 
+Anwendungsbereich ............................................................................................................................. 4 
+2 
+Normative Verweisungen ...................................................................................................................... 4 
+3 
+Begriffe ................................................................................................................................................... 4 
+4 
+Ausführung ............................................................................................................................................ 4 
+4.1 
+Allgemein ................................................................................................................................................ 4 
+4.2 
+Unterputz-Steckdose (UP) .................................................................................................................... 4 
+4.2.1 
+Unterputz-Steckdose mit seitlichen Schutzkontakten – Bauart A ................................................... 4 
+4.2.2 
+Unterputz-Steckdosen mit seitlichen Schutzkontakten – Bauart B ................................................. 6 
+4.2.3 
+Einbau-Steckdose mit seitlichen Schutzkontakten ........................................................................... 7 
+4.3 
+Aufputz-Steckdose mit seitlichen Schutzkontakten .......................................................................... 8 
+4.4 
+Zweipolige Steckdosen mit Schutzkontakten, Schutzart IPX4 ......................................................... 9 
+4.4.1 
+Abmessungen ........................................................................................................................................ 9 
+4.4.2 
+Kennzeichnung ...................................................................................................................................... 9 
+4.5 
+Zweipolige Steckdosen mit Schutzkontakt IPX6 / IPX8 16 A 250 V~ .............................................. 10 
+4.5.1 
+Abmessungen ...................................................................................................................................... 10 
+4.5.2 
+Kennzeichnung .................................................................................................................................... 10 
+Literaturhinweise .............................................................................................................................................. 11 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+2 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 3/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+3 
+Vorwort 
+Auf Grund der Vereinbarung zwischen dem OVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß 
+ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in 
+anderen, nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Änderungen 
+Diese vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8622-3:2012, da eine redaktionellen Überarbeitung 
+sowie eine technische Ergänzung um Anforderungen für die Schutzart IPX6 und IPX8 erforderlich war. Die in 
+dieser ÖVE/ÖNORM enthaltenen Änderungen wurden nach einem formellen Verfahren als ENTWURF 
+ÖVE/ÖNORM E 8622-3/A1:2013 zur Stellungnahme durch die Öffentlichkeit herausgegeben. 
+Erläuterungen zum Ersatzvermerk 
+Diese vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8622-3:2012. 
+In der ETV 2002/A2 sind ÖNORM E 6622-1:1996 und ÖNORM E 6622-2:1996 verbindlich erklärt. Die 
+Zurückziehung dieser Bestimmung kann erst mit Erscheinen einer neuen ETV erfolgen. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+3 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 4/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+4 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für zweipolige Steckdosen mit Schutzkontakten 16 A, AC 250 V. 
+Sie enthält die zur einwandfreien Funktion erforderlichen Abmessungen mit deren Toleranzen. Sie ist 
+gemeinsam mit ÖVE/ÖNORM E 8684-1, ÖVE/ÖNORM E 8622-1 und ÖVE/ÖNORM E 8622-2 anzuwenden.  
+Diese Normenreihe ÖVE/ÖNORM E 8622 besteht aus folgenden Teilen: 
+Teil 1: 
+Grundausführung zweipolige Steckdosen mit Schutzkontakten 16 A, AC 250 V 
+Teil 2: 
+Grundausführung zweipolige Steckdosen 2,5 A, AC 250 V 
+Teil 3: 
+Ortsfeste Steckdosen 
+Teil 4: 
+Mobile Steckdosen und Zwischensteckvorrichtungen 
+Nur solche Steckdosen, die der vorliegenden ÖVE/ÖNORM und auch ÖVE/ÖNORM E 8684-1 entsprechen, 
+sind normgerecht. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8608 Reihe, Installationsdosen 
+ÖVE/ÖNORM E 8622-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Grundausführung zweipolige Steckdosen mit Schutzkontakten 16 A, AC 250 V 
+ÖVE/ÖNORM E 8622-2, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2:Grundausführung zweipolige Steckdosen 2,5 A, AC 250 V 
+ÖVE/ÖNORM E 8626, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Lehren zur Überprüfung der Funktionsmaße 
+ÖVE/ÖNORM E 8684-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Allgemeine Anforderungen 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe nach ÖVE/ÖNORM E 8684-1. 
+4 
+Ausführung 
+4.1 Allgemein 
+Der Versatz der Mittellinien der Kontaktbuchsen und der Befestigungslöcher bzw. Befestigungsschlitze darf 
+höchstens 1 mm sein. Wahlweise dürfen die Kontaktbuchsen so angeordnet sein, dass ihre Mittellinie 
+senkrecht zur Mittellinie der Befestigungslöcher bzw. Befestigungsschlitze steht. 
+4.2 Unterputz-Steckdose (UP) 
+4.2.1 Unterputz-Steckdose mit seitlichen Schutzkontakten – Bauart A 
+Abmessungen für die Unterputz-Steckdose mit seitlichen Schutzkontakten der Bauart A gemäß Bild 1. 
+Nicht angegebene Maße und Angaben gemäß ÖVE/ÖNORM E 8622-1. 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+4 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 5/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+5 
+Die Befestigungslöcher im Tragelement müssen das Befestigen der Steckdose in Unterputzdosen mit 
+Schraubbefestigung gemäß ÖVE/ÖNORM E 8608-1 gestatten. 
+Die Unterputzdose kann für Spreizkrallenbefestigung oder Schraubenbefestigung oder als Kombination 
+beider ausgeführt sein. 
+Maße in mm 
+ 
+Ansicht von unten 
+Es bedeutet: 
+a 
+Dieses Maß gilt für die äußerste Krallenspitzen, wenn sie von der Achse der Steckdose 30 mm entfernt 
+sind. 
+Bild 1 – Unterputz-Steckdose mit seitlichen Schutzkontakten – Bauart A 
+32 max. 
+32 max.a 
+2 min. 
+58 max. 
+65 min. 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+5 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 6/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+6 
+4.2.2 Unterputz-Steckdosen mit seitlichen Schutzkontakten – Bauart B 
+Abmessungen für die Unterputz-Steckdosen mit seitlichen Schutzkontakten der Bauart B gemäß Bild 2. 
+Nicht angegebene Maße und Angaben gemäß ÖVE/ÖNORM E 8622-1. 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Dieses Maß gilt für die Krallenspitzen, wenn sie von der Achse der Steckdose 30 mm entfernt sind. 
+b 
+Bei alternativer Ausführung mit Schraubbefestigung müssen die Befestigungslöcher im Tragelement das 
+Befestigen der Steckdose in Unterputzdosen mit Schraubbefestigung gemäß ÖVE/ÖNORM E 8608-1 
+gestatten.  
+Bild 2 – Unterputz-Steckdose mit seitlichen Schutzkontakten – Bauart B 
+b
+a 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+6 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 7/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+7 
+4.2.3 Einbau-Steckdose mit seitlichen Schutzkontakten 
+Abmessungen für die Einbau-Steckdose mit seitlichen Schutzkontakten gemäß Bild 3. 
+Nicht angegebene Maße und Angaben gemäß ÖVE/ÖNORM E 8622-1. 
+Maße in mm 
+Bild 3 – Einbau-Steckdose mit seitlichen Schutzkontakten 
+Kontaktbuchse 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+7 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 8/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+8 
+4.3 Aufputz-Steckdose mit seitlichen Schutzkontakten 
+Abmessungen für die Aufputz-Steckdose mit seitlichen Schutzkontakten gemäß Bild 4. 
+Bei Mehrfach-Aufputz-Steckdosen darf der Abstand der Befestigungslöcher frei gewählt werden. 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1. 
+Maße in mm 
+ 
+ 
+Dabei bedeutet: 
+a 
+Diese Maße sind mit Lehren gemäß ÖVE/ÖNORM E 8626 zu prüfen. 
+b 
+Der Leitungskanal ist bei Aufputzausführung nicht erforderlich, wenn für jeden angeschlossenen Leiter 
+ausreichender Raum zwischen der Seite des Sockels und der Abdeckung oder dem Gehäuse 
+vorhanden ist. 
+Bild 4 – Aufputz-Steckdose mit seitlichen Schutzkontakten 
+Befestigungsschlitz alternativ 
+a 
+a
+a
+Befestigungsloch alternativ 
+b 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+8 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 9/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+9 
+4.4 Zweipolige Steckdosen mit Schutzkontakten, Schutzart IPX4 
+4.4.1 Abmessungen 
+Abmessungen für zweipolige Steckdosen mit Schutzkontakten, Schutzart IPX4 gemäß Bild 5. 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1. 
+Maße in mm 
+ 
+ 
+Es bedeutet: 
+a 
+Dieser Bereich ist so zu wählen, dass die Schutzartprüfung mit einem eingeführten Stecker gleicher 
+Schutzart und ohne Stecker mit geschlossenem Deckel bestanden wird. 
+Die Lehre C20 gemäß ÖVE/ÖNORM E 8626:2012 muss sich in die Steckdose einführen lassen. 
+Bild 5 – Abmessungen von zweipoligen Steckdosen mit Schutzkontakten, Schutzart IPX4 
+4.4.2 Kennzeichnung 
+Bei zweipoligen Steckdosen mit Schutzkontakt der Schutzart IPX4 muss die Kennzeichnung IPX4 
+angebracht sein. 
+ANMERKUNG Der Buchstabe „X“ muss durch die entsprechende Kennziffer für den Schutz gegen den Zugang zu 
+gefährlichen Teilen und Schutz gegen das Eindringen fester Fremdkörper ersetzt werden. 
+ 
+ 
+ 
+5,0
+0
+5,
+17 
+
+Deckel 
+Dichtbereicha 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+9 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 10/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+10 
+4.5 Zweipolige Steckdosen mit Schutzkontakt IPX6/IPX8 16 A 250 V~ 
+4.5.1 Abmessungen 
+Abmessungen für zweipolige Steckdosen mit Schutzkontakt IPX6/IPX8 16 A 250 V~ gemäß Bild 6. 
+Nicht angegebene Abmessungen gemäß ÖVE/ÖNORM E 8622-1. 
+Maße in mm 
+ 
+Bild 6 – Zweipolige Steckdosen mit Schutzkontakt IPX6/IPX8 16 A 250 V~ 
+4.5.2 Kennzeichnung 
+Bei zweipoligen Steckdosen mit Schutzkontakt der Schutzart IPX6/IPX8 muss die Kennzeichnung IPX6 bzw. 
+IPX8 angebracht sein. 
+ANMERKUNG Der Buchstabe „X“ muss durch die entsprechende Kennziffer für den Schutz gegen den Zugang zu 
+gefährlichen Teilen und Schutz gegen das Eindringen fester Fremdkörper ersetzt werden. 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+10 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 11/13 =====
+ÖVE/ÖNORM E 8622-3:2014 
+ 
+11 
+Literaturhinweise 
+ÖVE/ÖNORM E 8608 Reihe, Installationsdosen 
+ÖVE/ÖNORM E 8620 Reihe, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke 
+ÖVE/ÖNORM E 8622-4, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 4: Mobile Steckdosen und Zwischensteckvorrichtungen 
+ÖVE-IG/EN 50075, Flache, nicht-wieder anschließbare zweipolige Stecker, 2,5 A, AC 250 V,  
+mit Leitung, für die Verbindung von Klasse-II-Geräten für Haushalt und ähnliche Zwecke 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+11 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 12/13 =====
+WICHTIGE INFORMATIONEN FÜR NORM-ANWENDER
+ÖVE/ÖNORMEN sind Regeln
+ÖVE/ÖNORMEN werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen Bereich 
+Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser An­
+forderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig (ausgenommen gesetz-
+lich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der Technik dokumentieren: das, was in einem bestimmten 
+Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Expertinnen und Experten in den zuständigen 
+Komitees auf nationaler, europäischer und internationaler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik 
+(OVE) und seiner Referenten. 
+Aktualität des Normenwerks
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie werden vom 
+zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. Für 
+den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu haben,
+um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen Fassungen zu 
+haben, bietet Austrian Standards plus GmbH gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-Anwen­
+dern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian Standards plus Gmbh ist ein hundertprozentiges 
+Tochterunternehmen von Austrian Standards Institute.
+Ausländische Normen und Regelwerke
+Über Austrian Standards plus Publishing können auch Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Ländern 
+der Welt bezogen werden – ein besonders wichtiger Service für die exportorientierte Wirtschaft. Ebenso sind Dokumente anderer 
+österreichischer Regelsetzer bei Austrian Standards plus Publishing  erhältlich.
+Kontakt
+Weitere Informationen über Dienstleistungen und Angebote von Austrian Standards und OVE bieten Ihnen:
+Austrian Standards 
+Heinestraße 38
+1020 Wien
+E-Mail: sales@austrian-standards.at
+Internet: www.austrian-standards.at
+Tel.: +43 1 213 00-300 
+Fax: +43 1 213 00-818
+OVE Normung
+OVE Österreichischer Verband für Elektrotechnik
+Eschenbachgasse 9
+1010 Wien
+E-Mail: ove@ove.at
+Internet: www.ove.at
+Tel.: +43 1 587 63 73 
+Fax: +43 1 587 63 73-99
+ISO 9001:2008 certified by SQS
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+12 von 12
+www.ris.bka.gv.at
+
+
+===== PAGE 13/13 =====
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:13:48+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

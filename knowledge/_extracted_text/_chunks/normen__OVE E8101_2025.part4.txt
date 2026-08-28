@@ -1,0 +1,2269 @@
+
+
+===== PAGE 161/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 21 
+Dabei ist 
+RA die Summe der Widerstände des Erders und des Schutzleiters zum jeweiligen Körper, in Ohm (Ω); 
+Id 
+der Fehlerstrom beim ersten Fehler mit vernachlässigbarer Impedanz zwischen einem Außenleiter und 
+einem Körper, in Ampere (A). Der Wert von Id berücksichtigt die Ableitströme und die Gesamtimpedanz 
+der elektrischen Anlage gegen Erde. 
+ANMERKUNG 
+ 
+In Gleichstromsystemen wird der Wert von Id als vernachlässigbar klein angesehen. 
+ANMERKUNG 1.AT 
+Für mobile Anwendungen des IT-Systems (siehe Teil 7-717) darf auf die Erdungsanlage verzichtet 
+werden, wenn in jeden Stromkreis ein Schutzleiter mitgeführt wird und die anzuschließende Leitungslänge 500 m nicht 
+überschreitet. 
+ANMERKUNG 2.AT 
+Unter anderem wird die Erwärmung des Stromkreises im Betrieb sowie im Fehlerfall bei der 
+Überprüfung der elektrischen Anlage mit einem Faktor, im Allgemeinen 2/3, berücksichtigt (siehe Teil 6 Anhang 
+6.D.600.4.3.7.3). 
+411.6.3 In IT-Systemen dürfen die folgenden Überwachungs- und Schutzeinrichtungen verwendet werden: 
+– 
+Isolationsüberwachungsgeräte (IMD); 
+– 
+Differenzstrom-Überwachungsgeräte (RCM); 
+– 
+Isolationsfehler-Sucheinrichtungen (IFLS); 
+– 
+Überstrom-Schutzeinrichtungen; 
+– 
+Fehlerstrom-Schutzeinrichtungen (RCD). 
+ 
+ANMERKUNG 1 
+Wenn eine Fehlerstrom-Schutzeinrichtung (RCD) verwendet wird, kann beim Auftreten eines 
+ersten Fehlers ein ausschalten der Fehlerstrom-Schutzeinrichtung (RCD) aufgrund von kapazitiven Ableitströmen 
+nicht ausgeschlossen werden. 
+ 
+ANMERKUNG AT Bei je einem Fehler in zwei verschiedenen Verbrauchsmitteln in unterschiedlichen Außenleitern 
+ist eine Ausschaltung durch Fehlerstrom-Schutzeinrichtungen (RCD) nur sichergestellt, wenn für jedes 
+Verbrauchsmittel eine eigene Fehlerstrom-Schutzeinrichtung (RCD) vorgesehen wird. 
+ 
+ANMERKUNG 2 
+Im Fall von Fehlern in zwei unterschiedlichen elektrischen Verbrauchsmitteln der Schutzklasse I, 
+die von unterschiedlichen Außenleitern versorgt werden, wird die automatische Abschaltung durch Fehlerstrom-
+Schutzeinrichtungen (RCD) wahrscheinlich nur erreicht, wenn jedes elektrische Verbrauchsmittel einzeln durch eine 
+individuelle Fehlerstrom-Schutzeinrichtung (RCD) geschützt wird. In diesen Fällen ist die Verwendung von Überstrom-
+Schutzeinrichtungen geeigneter. 
+ 
+411.6.3.1 
+In IT-Systemen, in denen beim ersten Isolationsfehler keine automatische Abschaltung erfolgt, 
+muss das Auftreten eines ersten Fehlers durch eine der folgenden Einrichtungen gemeldet werden: 
+– 
+ein Isolationsüberwachungsgerät (IMD), die mit einer Einrichtung zur Isolationsfehlersuche (IFLS) 
+kombiniert werden kann; 
+– 
+ein Differenzstrom-Überwachungsgerät (RCM), unter der Voraussetzung, dass der Differenzstrom 
+ausreichend groß ist, um entsprechend erfasst zu werden. 
+ 
+ANMERKUNG 
+RCM können keine symmetrischen Isolationsfehler erkennen. 
+Die Einrichtung muss ein hörbares und/oder sichtbares Signal erzeugen, das so lange andauert, wie der Fehler 
+besteht. Dieses Signal kann über einen Relaisausgang, einen elektronischen Schalter oder über ein 
+Kommunikationsprotokoll ausgelöst werden. 
+Wenn sowohl hörbare als auch sichtbare Signale vorhanden sind, ist es zulässig, das hörbare Signal 
+abzuschalten. Das sichtbare Signal muss jedoch bestehen bleiben, solange der Fehler besteht. 
+Die optische und/oder akustische Meldung muss an einer geeigneten Stelle so angeordnet werden, dass sie 
+von zuständigen Personen wahrgenommen wird. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 162/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 22 
+Es ist erforderlich, dass ein erster Isolationsfehler so schnell wie praktisch möglich beseitigt wird. 
+Zusätzlich dürfen Einrichtungen zur Isolationsfehlersuche (IFLS) gemäß ÖVE/ÖNORM EN 61557-9 
+vorgesehen werden, um den Ort des ersten Fehlers von einem aktiven Teil zu Körpern elektrischer 
+Betriebsmittel, zur Erde oder zu einem anderen Bezugspunkt anzuzeigen. 
+Ist in bestimmten Räumen und Anlagen besonderer Art eines Teils 7 vorgesehen, die Stromversorgung für ein 
+IT-System oder Teile davon beim Auftreten des ersten Fehlers auszuschalten, so darf dafür das Signal eines 
+Isolationsüberwachungsgeräts herangezogen werden, um eine geeignete Schalteinrichtung zu betätigen. 
+411.6.3.2.001.AT  
+Bei 
+Anwendung 
+des 
+Isolations-Überwachungssystems 
+mit 
+einer 
+Isolations-
+überwachungseinrichtung (IMD) und automatischer Abschaltung der Stromversorgung beim ersten Fehler ist, 
+ergänzend zu 411.6.4, eine Abschaltung innerhalb von 15 s erforderlich. 
+ANMERKUNG AT 
+Die maximal zulässige Ansprechzeit eines Typ AC IMD von 10 s gemäß ÖVE/ÖNORM  
+EN 61557-8 ist in diesen 15 s inkludiert. 
+Eine solche automatische Abschaltung der Stromversorgung beim ersten Fehler kann z. B. erforderlich sein: 
+– 
+für Räume und Anlagen besonderer Art (Teil 7) wenn gefordert; 
+– 
+wenn die verwendeten Betriebsmittel nicht die erforderliche Isoliereigenschaften gemäß 512.1.1 
+aufweisen. 
+411.6.4 Nach dem Auftreten eines ersten Fehlers müssen folgende Bedingungen für die automatische 
+Abschaltung der Stromversorgung im Falle eines zweiten Fehlers, der sich auf einem anderen aktiven Leiter 
+ereignet, erfüllt werden: 
+a) 
+Wenn die Körper durch Schutzleiter miteinander verbunden und gemeinsam über dieselbe Erdungsanlage 
+geerdet sind, gelten die Bedingungen vergleichbar zum TN-System, und die folgenden Bedingungen 
+müssen erfüllt werden: 
+ 
+In Wechselstromsystemen ohne Neutralleiter und in Gleichstromsystemen ohne Mittelleiter: 
+ 
+ZS ≤ 
+U
+ 2 ∙ Ia  
+(F 41.11) 
+ 
+oder wenn in solchen Systemen der Neutralleiter bzw. der Mittelleiter mitgeführt ist: 
+ 
+ZS
+′  ≤ 
+U0
+ 2 ∙ Ia  
+(F 41.12) 
+ 
+Dabei ist 
+ 
+ZS die Impedanz der Fehlerschleife, bestehend aus dem Außenleiter und dem Schutzleiter des 
+Stromkreises, in Ohm (Ω); 
+ 
+Z´S die Impedanz der Fehlerschleife, bestehend aus dem Neutralleiter und dem Schutzleiter des 
+Stromkreises, in Ohm (Ω); 
+ 
+U 
+die Nennwechselspannung oder Nenngleichspannung zwischen Außenleitern, in Volt (V); 
+ 
+U0 die Nennwechselspannung oder Nenngleichspannung zwischen Außenleiter und dem Neutralleiter 
+oder dem Mittelleiter, je nach Zutreffen, in Volt (V); 
+ 
+Ia 
+der Strom, der die Funktion der Schutzeinrichtung innerhalb der in 411.3.2.2 für TN-Systeme oder der 
+in 411.3.2.3 geforderten Zeit bewirkt, in Ampere (A). 
+ANMERKUNG 1 
+Die in Tabelle 41.1 für TN-Systeme angegebene Zeit wird für IT-Systeme mit oder ohne Verteilung 
+von Neutralleiter oder Mittelleiter angewendet. 
+ANMERKUNG 2 
+Der Faktor 2 in beiden Gleichungen berücksichtigt, dass beim gleichzeitigen Auftreten von zwei 
+Fehlern die Fehler in verschiedenen Stromkreisen bestehen können. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 163/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 23 
+ANMERKUNG 3 
+Für die Impedanz der Fehlerschleife sollte der ungünstigste Fall berücksichtigt werden, z. B. ein 
+Fehler im Außenleiter an der Stromquelle und gleichzeitig ein anderer Fehler im Neutralleiter eines Verbrauchmittels 
+des betrachteten Stromkreises. 
+ 
+ANMERKUNG AT Siehe dazu Spannungsabfall nach Abschnitt 525. 
+b) 
+Die Ausführung des IT-Systems mit Einzel- oder Gruppenerdung der Körper ist bei Neuanlagen in 
+Österreich nicht zulässig. 
+411.7 
+FELV 
+411.7.1 
+Allgemeines 
+In Fällen, in denen aus Funktionsgründen eine Nennspannung, die AC 50 V oder DC 120 V nicht überschreitet, 
+angewendet wird, aber nicht alle Anforderungen von Abschnitt 414 bezüglich SELV oder PELV erfüllt sind, und 
+in denen SELV oder PELV nicht notwendig ist, müssen die ergänzenden Vorkehrungen, die in 411.7.2 und 
+411.7.3 beschrieben sind, angewendet werden, um den Basisschutz und Fehlerschutz sicherzustellen. Diese 
+Kombination von Vorkehrungen gemäß 411.7.2 bis 411.7.5 wird FELV genannt. 
+Bei der Auswahl von FELV-Systemen wird empfohlen, die Spannung auf DC 90 V zu begrenzen. 
+ANMERKUNG AT 
+In den meisten Anwendungsfällen von FELV ist die sichere Trennung vom Primärstromkreis nicht 
+gegeben. Die Schutzvorkehrung des Fehlerschutzes wird dann durch die automatische Abschaltung im Primärstromkreis 
+sichergestellt. 
+411.7.2 
+Anforderungen an den Basisschutz 
+Basisschutz muss vorgesehen werden 
+– 
+entweder durch Basisisolierung in Übereinstimmung mit Anhang 41.A.1 und entsprechend der 
+Nennspannung des Primärstromkreises der Stromquelle, oder 
+– 
+durch Abdeckungen oder Umhüllungen in Übereinstimmung mit Anhang 41.A.2. 
+411.7.3 
+Anforderungen an den Fehlerschutz 
+Die Körper der Betriebsmittel des FELV-Stromkreises müssen mit dem Schutzleiter des Primärstromkreises 
+der Stromquelle verbunden werden, vorausgesetzt, der Primärstromkreis ist geschützt durch die in 411.3 und 
+eine der in 411.4 bis 411.6 beschriebenen Schutzmaßnahmen zur automatischer Abschaltung der 
+Stromversorgung. 
+411.7.4 
+Stromquellen 
+Die Stromquelle für das FELV-System muss entweder ein Transformator mit zumindest einfacher Trennung 
+zwischen den Wicklungen sein, oder sie muss die Anforderungen in 414.3 erfüllen. 
+ANMERKUNG 
+Wenn das FELV-System von einem Versorgungssystem höherer Spannung durch Betriebsmittel versorgt 
+wird, die nicht mindestens einfache Trennung zwischen diesem System und dem Kleinspannungssystem herstellen, wie 
+Spartransformatoren, Potentiometer, Halbleitereinrichtungen usw., dann wird der Ausgangsstromkreis als eine Erweiterung 
+des Primärstromkreises angesehen und sollte durch die im Eingangsstromkreis angewendete Schutzmaßnahme geschützt 
+sein. 
+411.7.5 
+Stecker und Steckdosen 
+Stecker und Steckdosen für FELV-Systeme müssen mit allen folgenden Anforderungen übereinstimmen: 
+– 
+Stecker dürfen nicht in Steckdosen für andere Spannungssysteme eingeführt werden können; 
+– 
+In Steckdosen dürfen keine Stecker für andere Spannungssysteme eingeführt werden können; 
+– 
+Steckdosen müssen einen Schutzkontakt haben. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 164/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 24 
+411.8.001.AT 
+ 
+Wird die automatische Abschaltung der Stromversorgung in bestimmten Räumen und Anlagen besonderer Art, 
+in denen weder das Stromversorgungssystem noch die Körper der elektrischen Betriebsmittel geerdet sind, 
+angewendet, dann muss eine automatische Abschaltung der Stromversorgung beim ersten Fehler erfolgen. 
+Dabei sind 411.6.3.2.001.AT und 411.6.4 a) zu berücksichtigen. 
+Für das Erkennen des ersten Fehlers ist eine Isolations-Überwachungseinrichtung (IMD) vorzusehen. 
+412 Schutzmaßnahme: Doppelte oder verstärkte Isolierung (Schutzisolierung) 
+412.1 
+Allgemeines 
+412.1.1 Doppelte oder verstärkte Isolierung ist eine Schutzmaßnahme in der 
+– 
+der Basisschutz durch eine Basisisolierung und der Fehlerschutz durch eine zusätzliche Isolierung bewirkt 
+wird, oder 
+– 
+der Basisschutz und der Fehlerschutz durch verstärkte Isolierung zwischen aktiven Teilen und berührbaren 
+Teilen bewirkt wird. 
+ANMERKUNG 
+Diese Schutzmaßnahme ist vorgesehen, um bei Fehlern in der Basisisolierung das Auftreten einer 
+gefährlichen Spannung an berührbaren Teilen der elektrischen Betriebsmittel zu verhindern. 
+Die Schutzmaßnahme durch doppelte oder verstärkte Isolierung ist im Allgemeinen anwendbar, es sei denn, 
+es gibt Einschränkungen wie z. B. in Teilen 7 von OVE E 8101. 
+412.1.2 Wird diese Schutzmaßnahme als alleinige Schutzmaßnahme angewendet (z. B. wenn für einen 
+Stromkreis oder einen Teil einer Anlage vorgesehen ist, nur elektrische Betriebsmittel mit doppelter oder 
+verstärkter Isolierung zu errichten), muss nachgewiesen werden, dass sich dieser Stromkreis oder der Teil der 
+Anlage im normalen Betrieb unter wirksamer Überwachung befindet, sodass keine Änderung gemacht werden 
+kann, die die Wirksamkeit der Schutzmaßnahme beeinträchtigt. Diese Schutzmaßnahme darf nicht 
+angewendet werden für alle Stromkreise, die Steckdosen enthalten, oder wo ein Anwender ohne Berechtigung 
+Teile von elektrischen Betriebsmitteln auswechseln kann. 
+412.2 
+Anforderungen an den Basisschutz und Fehlerschutz 
+412.2.1 
+Elektrische Betriebsmittel 
+In Fällen, in denen die Schutzmaßnahme doppelte oder verstärkte Isolierung für die gesamte Anlage oder 
+einen Anlagenteil verwendet wird, müssen die elektrischen Betriebsmittel mit einem der folgenden 
+Unterabschnitte übereinstimmen: 
+– 
+412.2.1.1, oder 
+– 
+412.2.1.2 und 412.2.2, oder 
+– 
+412.2.1.3 und 412.2.2. 
+412.2.1.1 
+Elektrische Betriebsmittel müssen typgeprüft und nach den einschlägigen Normen entsprechend 
+hergestellt und gekennzeichnet sein und einer der folgenden Bauarten entsprechen: 
+– 
+elektrische Betriebsmittel mit doppelter oder verstärkter Isolierung (Betriebsmittel der Schutzklasse II); 
+– 
+elektrische Betriebsmittel, die in der relevanten Produktnorm als mit Schutzklasse II gleichwertig deklariert 
+sind. 
+ANMERKUNG 
+Diese Betriebsmittel sind gekennzeichnet mit dem Symbol 
+ gemäß ÖVE/ÖNORM IEC 60417  
+DB-5172: Betriebsmittel der Schutzklasse II. 
+412.2.1.2 
+Elektrische Betriebsmittel, die nur eine Basisisolierung haben, müssen eine zusätzliche Isolierung 
+erhalten, die während der Installation angebracht wird und die einen gleichwertigen Grad an Sicherheit zu 
+elektrischen Betriebsmitteln in Übereinstimmung mit 412.2.1.1 erreicht und die 412.2.2.1 bis 412.2.2.3 erfüllt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 165/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 25 
+412.2.1.3 
+Elektrische Betriebsmittel, die nichtisolierte aktive Teile haben, müssen eine doppelte Isolierung 
+erhalten, die während der Installation angebracht wird und die einen gleichwertigen Grad an Sicherheit zu 
+Betriebsmitteln in Übereinstimmung mit 412.2.1.1 erreicht und die 412.2.2.2 und 412.2.2.3 erfüllt. In Fällen, wo 
+die Konstruktionsmerkmale die Anbringung einer doppelten Isolierung nicht zulassen, ist eine verstärkte 
+Isolierung vorzusehen. 
+412.2.2 
+Umhüllungen 
+412.2.2.1 
+Alle leitfähigen Teile eines betriebsfertigen elektrischen Betriebsmittels, die von aktiven Teilen 
+nur durch Basisisolierung getrennt sind, müssen von einer isolierenden Umhüllung mit einer Schutzart von 
+mindestens IPXXB oder IP2X umschlossen sein oder durch Schutzzwischenisolierung gemäß ÖVE-IM 12 bzw. 
+verstärkte Isolierung gegen aktive Teile zusätzlich isoliert sein. 
+ANMERKUNG AT 
+Gemäß OVE EN IEC 61439-3 wird für Installationsverteiler für die Bedienung durch Laien eine 
+Schutzart von wenigstens IP2XC gefordert. 
+Die Schutzisolierungen müssen den mechanischen, elektrischen und thermischen Beanspruchungen 
+standhalten, die üblicherweise auftreten können. 
+Überzüge aus Farbe, Anstrich u. dgl. genügen in der Regel diesen Anforderungen nicht. Diese Anforderung 
+schließt jedoch nicht die Verwendung von typgeprüften Überzügen aus, wenn die entsprechenden technischen 
+Bestimmungen ihren Gebrauch zulassen und wenn die isolierenden Überzüge gemäß den entsprechenden 
+Prüfbestimmungen geprüft sind. 
+412.2.2.2 
+Es gelten die folgenden Anforderungen: 
+– 
+Durch die isolierende Umhüllung dürfen keine nichtisolierten Befestigungs- oder Konstruktionsteile geführt 
+werden, die ein Potential übertragen könnten und 
+– 
+die isolierende Umhüllung darf keine Schrauben oder andere Befestigungsmittel enthalten, 
+ 
+• 
+die während der Errichtung oder Instandhaltung notwendigerweise entfernt werden müssen oder 
+könnten und 
+ 
+• 
+deren Ersatz durch Metallschrauben oder andere Befestigungsmittel die durch die Umhüllung 
+vorgesehene Isolierung beeinträchtigen könnte. 
+Wenn mechanische Verbindungen oder Anschlüsse (z. B. für die Betätigungselemente eingebauter Geräte) 
+durch die isolierende Umhüllung geführt werden, müssen sie so angeordnet werden, dass der Schutz gegen 
+elektrischen Schlag im Fehlerfall nicht beeinträchtigt wird. 
+412.2.2.3 
+Wenn Deckel oder Türen in der isolierenden Umhüllung ohne Werkzeug oder Schlüssel geöffnet 
+werden können, müssen alle leitfähigen Teile, die bei geöffnetem Deckel oder geöffneter Tür zugänglich sind, 
+hinter einer isolierenden Abdeckung, die mindestens den Schutzgrad IPXXB oder IP2X vorsieht, angeordnet 
+sein, die verhindert, dass Personen mit diesen leitfähigen Teilen unbeabsichtigt in Berührung kommen. Diese 
+isolierende Abdeckung darf nur mithilfe eines Schlüssels oder Werkzeugs abnehmbar sein. 
+412.2.2.4 
+Ist am Einbauort der Umhüllung die Schutzmaßnahme Nullung, Fehlerstrom-Schutzschaltung 
+oder Überstrom-Schutzerdung nicht wirksam, dann dürfen leitfähige Teile innerhalb der isolierenden 
+Umhüllung nicht an einen Schutzleiter angeschlossen sein. Dies schließt jedoch nicht aus, dass 
+Anschlussmöglichkeiten für Schutzleiter vorgesehen sind, die notwendigerweise durch die Umhüllung geführt 
+werden, weil sie für andere Betriebsmittel benötigt werden, deren Versorgungsstromkreis ebenfalls durch die 
+Umhüllung geführt ist. Innerhalb der Umhüllung müssen alle solchen Leiter und ihre Anschlussklemmen wie 
+aktive Teile isoliert sein, und ihre Anschlussklemmen müssen als Schutzleiter-Anschlussklemmen 
+gekennzeichnet sein. 
+Körper und dazwischenliegende Teile dürfen nicht an einen Schutzleiter angeschlossen sein, wenn dafür nicht 
+eine besondere Vorkehrung in den Normen für die betreffenden elektrischen Betriebsmittel vorgesehen ist. 
+412.2.2.5 
+Beeinträchtigungen durch die Umhüllung sind bei der Auswahl und Bemessung der geschützten 
+Betriebsmittel zu berücksichtigen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 166/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 26 
+412.2.3 
+Errichtung 
+412.2.3.1 
+Das Installieren der in 412.2.1 genannten elektrischen Betriebsmittel (Befestigung, Anschluss von 
+Leitern usw.) muss so erfolgen, dass der nach der Betriebsmittelnorm geforderte Schutz nicht beeinträchtigt 
+ist. 
+412.2.3.2 
+Zu elektrischen Betriebsmitteln der Schutzklasse II muss ein Schutzleiter durchgehend leitend 
+geführt werden, es sei denn, die Anforderungen gemäß 412.1.2 sind erfüllt. 
+ANMERKUNG 
+Mit dieser Anforderung ist beabsichtigt, das Ersetzen von elektrischen Betriebsmitteln der Schutzklasse II 
+durch elektrische Betriebsmittel der Schutzklasse I durch den Benutzer zu berücksichtigen. 
+412.2.3.001.AT Verbrauchsmittel der Schutzklasse II werden im Allgemeinen mit einer Anschlussleitung 
+ohne Schutzleiter ausgeliefert. 
+Wird diese beim Instandsetzen durch eine dreiadrige Anschlussleitung mit Schutzerdungsleiter ersetzt, so darf 
+der Schutzleiter der Anschlussleitung nicht an das Verbrauchsmittel angeschlossen werden. Er ist so 
+abzusetzen, dass er nicht mit aktiven Teilen in Berührung kommen kann. Im Schutzkontaktstecker ist der 
+Schutzleiter anzuschließen. 
+412.2.4 
+Kabel- und Leitungsanlagen 
+412.2.4.1 
+Kabel- und Leitungsanlagen, die gemäß Teil 5-52 verlegt sind, erfüllen die Anforderungen von 
+412.2, wenn sie aus: 
+a) 
+isolierten Leitern mit einer Bemessungsspannung, die nicht kleiner ist als die Nennspannung des 
+Versorgungssystems und mindestens 300 V/500 V (U0/U) beträgt, verlegt in geschlossenen oder zu 
+öffnenden Installationskanälen mit einer elektrischen Isoliereigenschaft gemäß der Normenreihe 
+ÖVE/ÖNORM EN 50085 oder in Elektroinstallationsrohren mit einer elektrischen Isoliereigenschaft gemäß 
+der Normenreihe OVE EN 61386, oder  
+b) 
+Kabeln und Leitungen bestehen, deren Widerstandsfähigkeit gegen elektrische, thermische, mechanische 
+Beanspruchungen und umgebungsbedingte Einwirkungen mit der gleichen Zuverlässigkeit gegeben ist, 
+wie sie durch doppelte Isolierung sichergestellt wird. 
+ 
+ANMERKUNG AT Eine solche gleiche Zuverlässigkeit darf für Kabel und Leitungen, die in Bezug auf diese 
+Eigenschaften zumindest einer mittelschweren Schlauch- oder Mantelleitung entsprechen, bei bestimmungsgemäßem 
+Einsatz angenommen werden. 
+ANMERKUNG 
+Eine Kabel- und Leitungsanlage sollte weder mit dem Symbol 
+ gemäß ÖVE/ÖNORM  
+IEC 60417 DB-5172 noch mit dem Symbol 
+ gemäß ÖVE/ÖNORM IEC 60417 DB-6032 gekennzeichnet sein. 
+413 Schutzmaßnahme: Schutztrennung 
+413.1 
+Allgemeines 
+413.1.1 Schutztrennung ist eine Schutzmaßnahme, bei der 
+– 
+der Basisschutz durch Basisisolation der aktiven Teile oder durch Abdeckungen oder Umhüllungen gemäß 
+Anhang 41.A vorgesehen ist und 
+– 
+der Fehlerschutz als Isolation zwischen aktiven Teilen unterschiedlicher Stromkreise ausgeführt ist, als 
+ 
+• 
+getrennte zusätzliche Isolierung, oder 
+ 
+• 
+verstärkte Isolierung (als untrennbare Einheit mit der Basisisolierung). 
+ 
+Die gesamten Kabel- und Leitungslängen sind gemäß 41.C.3.8 zu begrenzen. 
+413.1.2 Ausgenommen wie in 413.1.3 erlaubt, muss diese Schutzmaßnahme auf die Versorgung eines 
+elektrischen Verbrauchmittels beschränkt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 167/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 27 
+ANMERKUNG 
+Bei dieser Schutzmaßnahme ist die ordnungsgemäße Basisisolierung entsprechend den Anforderungen 
+der Betriebsmittelnorm von besonderer Bedeutung. 
+413.1.3 Wenn mehr als ein elektrisches Verbrauchsmittel von einer ungeerdeten Stromquelle versorgt wird, 
+müssen die Anforderungen gemäß 41.C.3 erfüllt werden. 
+413.2 
+Anforderungen an den Basisschutz 
+An jedem elektrischen Betriebsmittel muss eine der Schutzvorkehrungen für den Basisschutz gemäß 
+Anhang 41.A oder die Schutzmaßnahme gemäß Abschnitt 412 vorhanden sein. 
+413.3 
+Anforderungen an den Fehlerschutz 
+413.3.1 Der Schutz durch Schutztrennung muss sichergestellt werden durch Erfüllen von 413.3.2 bis 413.3.6. 
+413.3.2 Der Stromkreis muss von einem Trenntransformator gemäß ÖVE/ÖNORM EN 61558-2-4 oder einer 
+hinsichtlich der elektrischen Trennung gleichwertigen Stromversorgungseinrichtung versorgt werden und die 
+Spannung des Stromkreises mit Schutztrennung darf nicht größer als 500 V sein. 
+413.3.3 Aktive Teile des Stromkreises mit Schutztrennung dürfen an keinem Punkt mit einem anderen 
+Stromkreis oder mit Erde oder mit einem Schutzleiter verbunden werden. 
+Um die Schutztrennung sicherzustellen, müssen die Einrichtungen so ausgeführt sein, dass zwischen 
+Stromkreisen doppelte oder verstärkte Isolierung erreicht ist. 
+413.3.4 Flexible Kabel und Leitungen müssen an Stellen, die mechanischen Beanspruchungen ausgesetzt 
+sind, über ihre gesamte Länge sichtbar sein. 
+413.3.5 Für Stromkreise mit Schutztrennung ist die Verwendung einer getrennten Kabel- und Leitungsanlage 
+empfohlen. Falls in derselben Kabel- und Leitungsanlage Stromkreise mit Schutztrennung und andere 
+Stromkreise vorgesehen werden, müssen mehradrige Kabel/Leitungen ohne metallene Umhüllung oder 
+isolierte Leiter in isolierenden Elektroinstallationsrohren oder isolierte Leiter in geschlossenen oder zu 
+öffnenden isolierenden Elektroinstallationskanälen verwendet werden, wobei vorausgesetzt wird, dass 
+– 
+ihre Bemessungsspannung mindestens so groß wie die höchste Nennspannung ist und 
+– 
+jeder Stromkreis bei Überstrom geschützt ist. 
+413.3.6 Die Körper des Stromkreises mit Schutztrennung dürfen nicht mit dem Schutzleiter oder mit den 
+Körpern anderer Stromkreise oder mit Erde verbunden werden. 
+ANMERKUNG 
+Wenn die Körper des Stromkreises mit Schutztrennung zufällig mit Körpern anderer Stromkreise in 
+Berührung kommen können, hängt der Schutz gegen elektrischen Schlag nicht mehr allein von der Schutzmaßnahme 
+Schutztrennung, sondern auch von den Schutzvorkehrungen für die Körper der anderen Stromkreise ab. 
+413.3.001.AT 
+Flexible Leitungen müssen mindestens der Ausführung schwere Gummischlauchleitung oder 
+mittlere PVC-Schlauchleitung gemäß der Normenreihe ÖVE/ÖNORM EN 50525 entsprechen. 
+414 Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+414.1 
+Allgemeines 
+414.1.1 Schutz durch Kleinspannung ist eine Schutzmaßnahme, die aus einer von zwei unterschiedlichen 
+Kleinspannungssystemen besteht: 
+– 
+SELV, oder 
+– 
+PELV. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 168/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 28 
+Bei dieser Schutzmaßnahme ist gefordert: 
+– 
+Begrenzung der Spannung in dem SELV- oder PELV-System auf einen Wert von maximal AC 50 V oder 
+DC 120 V; 
+ 
+Bei der Auswahl von SELV- oder PELV-Systemen wird empfohlen, die Spannung auf DC 90 V zu 
+begrenzen. 
+ 
+ANMERKUNG AT Diese Empfehlung erfolgt unter Bezugnahme auf 410.3.001.AT ANMERKUNG 1.AT. Der Wert 
+von DC 90 V ist jedoch aufgrund der Festlegungen in europäischen Produktstandards derzeit in der Praxis nicht immer 
+umsetzbar. 
+– 
+sichere Trennung des SELV- oder PELV-Systems von allen anderen Stromkreisen, die nicht SELV- oder 
+PELV-Stromkreise sind, und Basisisolierung zwischen dem SELV- oder PELV-System und anderen SELV- 
+oder PELV-Systemen; 
+– 
+nur für SELV-Systeme: Basisisolierung zwischen dem SELV-System und Erde. 
+414.1.2 Die Verwendung von SELV oder PELV in Übereinstimmung mit Abschnitt 414 wird als eine 
+Schutzmaßnahme für alle Situationen angesehen. 
+ANMERKUNG 
+In bestimmten Fällen ist in Teilen 7 von OVE E 8101 der Wert der Kleinspannung auf einen Wert kleiner 
+als AC 50 V bzw. DC 120 V begrenzt. 
+414.2 
+Anforderungen an den Basisschutz und den Fehlerschutz 
+Basisschutz und Fehlerschutz gelten als erfüllt, wenn 
+– 
+die Spannung AC 50 V oder DC 120 V nicht überschritten werden kann, 
+– 
+die Versorgung aus einer der in 414.3 aufgeführten Stromquellen erfolgt und 
+– 
+die Bedingungen von 414.4 erfüllt sind. 
+ANMERKUNG 1  
+Wenn das System von einem System höherer Spannung durch Betriebsmittel versorgt wird, bei 
+denen mindestens einfache Trennung zwischen diesem System und dem Kleinspannungssystem vorhanden ist, die aber 
+nicht die Anforderungen für SELV- oder PELV-Stromquellen in 414.3 erfüllen, dann dürfen die Anforderungen für FELV 
+angewendet werden, siehe 411.7. 
+ANMERKUNG 2  
+Gleichspannungen für Kleinspannungsstromkreise, die durch Gleichrichtergeräte (siehe 
+ÖVE/ÖNORM EN 60146-2) erzeugt werden, erfordern einen inneren Wechselspannungsstromkreis zur Versorgung des 
+Gleichrichters. Die innere Wechselspannung überschreitet die Gleichspannung aus physikalischen Gründen. Dieser innere 
+Wechselspannungsstromkreis wird nicht als Stromkreis höherer Spannung entsprechend diesem Abschnitt angesehen. 
+Zwischen inneren Stromkreisen und externen Stromkreisen höherer Spannung ist sichere Trennung erforderlich. 
+ANMERKUNG 3  
+In DC-Systemen mit Batterien überschreiten die Lade- und Entladespannung abhängig von der 
+Bauart der Batterie die Nennspannung der Batterie. Dies erfordert keine zusätzlichen Schutzvorkehrungen zu den in diesem 
+Abschnitt spezifizierten. Die Ladespannung sollte abhängig von den äußeren Einflüssen, die in IEC TS 61201:2007 
+Table 1, enthalten sind, einen maximalen Wert von AC 75 V oder DC 150 V nicht überschreiten. 
+414.3 
+Stromquellen für SELV oder PELV 
+Die folgenden Stromquellen dürfen für SELV- oder PELV-Systeme verwendet werden: 
+414.3.1 Ein Sicherheitstransformator gemäß ÖVE/ÖNORM EN 61558-2-6. 
+414.3.2 Eine Stromquelle, die den gleichen Grad an Sicherheit erfüllt wie ein Sicherheitstransformator gemäß 
+414.3.1 (z. B. ein Motorgenerator mit gleichwertig getrennten Wicklungen). 
+414.3.3 Eine elektrochemische Stromquelle (z. B. eine Batterie) oder eine andere Stromquelle, die 
+unabhängig von einem Stromkreis höherer Spannung ist (z. B. ein Generator, der von einer 
+Verbrennungsmotor angetrieben wird). 
+414.3.4 Bestimmte elektronische Einrichtungen, die entsprechend den für sie geltenden Normen gebaut sind 
+und bei denen durch Vorkehrungen sichergestellt ist, dass auch bei Auftreten eines inneren Fehlers die 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 169/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 29 
+Spannung an den Ausgangsklemmen nicht über die in 414.1.1 festgelegten Werte ansteigen kann. Höhere 
+Spannungen an den Ausgangsklemmen sind jedoch zulässig, wenn sichergestellt ist, dass im Falle des 
+Berührens eines aktiven Teils oder im Fehlerfall zwischen einem aktiven Teil und einem Körper, die Spannung 
+an den Ausgangsklemmen unmittelbar auf diese oder auf niedrigere Werte herabgesetzt wird. 
+ANMERKUNG 1  
+Beispiele solcher Einrichtungen schließen Isolationsprüfgeräte und Isolationsüberwachungs-
+einrichtungen ein. 
+ANMERKUNG 2  
+Wenn an den Ausgangsklemmen höhere Spannungen auftreten, darf eine Übereinstimmung mit 
+diesem Abschnitt angenommen werden, wenn die mit einem Voltmeter mit einem inneren Widerstand von mindestens 
+3 000 Ω an den Ausgangsklemmen gemessene Spannung innerhalb der in 414.1.1 festgelegten Grenzen liegt. 
+414.3.5 Ortsveränderliche Stromquellen, die mit Niederspannung versorgt sind, z. B. Sicherheitstrenn-
+transformatoren oder Motorgeneratoren, müssen in Übereinstimmung mit den Anforderungen der 
+Schutzmaßnahme doppelte oder verstärkte Isolierung (siehe Abschnitt 412) ausgewählt und errichtet werden. 
+414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+414.4.1 SELV- und PELV-Stromkreise müssen aufweisen: 
+– 
+Basisisolierung zwischen aktiven Teilen und anderen SELV- oder PELV-Stromkreisen und 
+– 
+sichere Trennung von den aktiven Teilen anderer Stromkreise, die nicht SELV- und PELV-Stromkreise 
+sind, durch das Vorsehen von doppelter oder verstärkter Isolierung für die höchste vorkommende 
+Spannung oder durch Basisisolierung und Schutzschirmung. 
+SELV-Stromkreise müssen Basisisolierung zwischen aktiven Teilen und Erde haben. 
+Die PELV-Stromkreise und/oder Körper der durch die PELV-Stromkreise versorgten elektrischen Betriebsmittel 
+dürfen geerdet werden. 
+ANMERKUNG 1  
+Insbesondere ist sichere Trennung notwendig zwischen den aktiven Teilen von SELV- und PELV-
+Stromkreisen in elektrischen Betriebsmitteln, wie z. B. Relais, Schützen, Hilfsschaltern, und allen aktiven Teilen eines 
+Stromkreises höherer Spannung oder eines FELV-Stromkreises. 
+ANMERKUNG 2  
+Die Erdung von PELV-Stromkreisen kann durch eine Verbindung mit Erde oder mit einem 
+geerdeten Schutzleiter in der Stromquelle selbst erreicht werden. 
+414.4.2 Sichere Trennung der Kabel- und Leitungsanlagen von SELV- und PELV-Stromkreisen von den 
+aktiven Teilen anderer Stromkreise, die mindestens Basisisolierung haben müssen, darf durch eine der 
+folgenden Anordnungen erreicht werden: 
+– 
+Leiter von SELV- oder PELV-Stromkreisen müssen zusätzlich zur Basisisolierung von einem 
+nichtmetallenen Mantel oder einer isolierenden Umhüllung umschlossen sein; 
+– 
+Leiter von SELV- oder PELV-Stromkreisen müssen von Leitern der Stromkreise mit einer höheren 
+Spannung als AC 50 V oder DC 120 V durch einen geerdeten metallenen Mantel oder durch eine geerdete 
+metallene Schirmung getrennt sein; 
+– 
+Leiter von Stromkreisen mit einer höheren Spannung als AC 50 V oder DC 120 V dürfen in einem 
+mehradrigen Kabel oder in einer anderen Gruppierung von Leitern enthalten sein, wenn die SELV- oder 
+PELV-Leiter für die höchste vorkommende Spannung isoliert sind; 
+– 
+die Kabel- und Leitungsanlagen der anderen Stromkreise müssen 412.2.4.1 entsprechen; 
+– 
+räumliche Trennung. 
+414.4.3 Stecker und Steckdosen für SELV- oder PELV-Systeme müssen mit folgenden Anforderungen 
+übereinstimmen: 
+– 
+Stecker dürfen nicht in Steckdosen für andere Spannungssysteme eingeführt werden können; 
+– 
+in Steckdosen dürfen keine Stecker für andere Spannungssysteme eingeführt werden können; 
+– 
+Stecker und Steckdosen in SELV-Systemen dürfen keinen Schutzleiterkontakt haben. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 170/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 30 
+414.4.4 Körper von SELV-Stromkreisen dürfen nicht mit Erde oder mit Schutzleitern oder mit Körpern eines 
+anderen Stromkreises verbunden werden. 
+ANMERKUNG 
+Wenn Körper von SELV-Stromkreisen mit den Körpern anderer Stromkreise zufällig in Berührung 
+kommen können, ist der Schutz gegen elektrischen Schlag nicht allein vom Schutz durch SELV, sondern auch von den 
+Schutzvorkehrungen der Körper der anderen Stromkreise, abhängig. 
+414.4.5 Wenn die Nennspannung AC 25 V oder DC 60 V überschreitet oder wenn elektrische Betriebsmittel 
+in Flüssigkeiten eingetaucht sind, muss eine Basisschutzvorkehrung für SELV- und PELV-Stromkreise 
+vorgesehen werden durch: 
+– 
+eine Isolierung gemäß 41.A.1, oder 
+– 
+Abdeckungen oder Umhüllungen gemäß 41.A.2. 
+Bei trockenen Umgebungsbedingungen gilt für 
+– 
+SELV-Stromkreise, deren Nennspannung AC 25 V oder DC 60 V nicht überschreitet, 
+– 
+PELV-Stromkreise, deren Nennspannung AC 25 V oder DC 60 V nicht überschreitet und deren Körper 
+und/oder aktiven Teile durch einen Schutzleiter mit der Haupterdungsschiene verbunden sind 
+die Begrenzung der Spannung als Basisschutzvorkehrung. 
+In allen anderen Fällen ist ein Basisschutz nicht gefordert, wenn die Nennspannung des SELV- oder PELV-
+Systems AC 12 V oder DC 30 V nicht überschreitet. 
+Anstelle einer Nennspannungsgrenze von DC 60 V ist in den oben genannten Anforderungen einer Grenze 
+von DC 45 V der Vorzug zu geben. 
+ANMERKUNG AT 
+Unter Bezugnahme auf 410.3.001.AT Anmerkung 1.AT wäre der Wert DC 60 V durch DC 45 V zu 
+ersetzen. Dies ist jedoch aufgrund der Festlegungen in europäischen Produktstandards derzeit in der Praxis nicht 
+umsetzbar. 
+415 Zusätzlicher Schutz (Zusatzschutz) 
+Ein zusätzlicher Schutz (Zusatzschutz) ist zusammen mit den Schutzvorkehrungen für den Fehlerschutz unter 
+bestimmten Bedingungen und äußeren Einflüssen und in bestimmten besonderen Bereichen als Fehlerstrom-
+Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A und/oder als zusätzlicher 
+Schutzpotentialausgleich gefordert (siehe z. B. Teile 7 von OVE E 8101). 
+415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Eine Fehlerstrom-Schutzeinrichtung (RCD), die dem zusätzlichen Schutz (Zusatzschutz) dient, darf nicht auch 
+dem Fehlerschutz dienen. 
+415.1.001.AT 
+Stromkreise mit Steckdosen in Anlagen für Wechselspannung mit einem Bemessungsstrom 
+von höchstens 32 A sind bei Anwendung der Schutzmaßnahmen Nullung, Fehlerstrom-Schutzschaltung oder 
+Überstrom-Schutzerdung zusätzlich durch Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungs-
+fehlerstrom IΔn ≤ 0,03 A zu schützen (siehe Bild 41.005.AT). 
+In Sonderfällen, ausgenommen Hausinstallationen, kann von der Anforderung abgewichen werden, wenn die 
+nachfolgenden Bedingungen erfüllt sind: 
+– 
+die Steckdosen sind für Laien nicht frei zugängig; 
+– 
+an diese Steckdosen werden ohne zusätzliche Maßnahmen ausschließlich ortsfeste oder fest angebrachte 
+elektrische Betriebsmittel angesteckt; 
+– 
+die Steckdosen sind eindeutig und dauerhaft gekennzeichnet. 
+ANMERKUNG AT 
+In den gesetzlichen Arbeitnehmerschutzbestimmungen können abweichende Anforderungen 
+bestehen (siehe z. B. Elektroschutzverordnung 2012 sowie land- und forstwirtschaftliche Elektroschutzverordnung). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 171/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 31 
+415.1.002.AT 
+Stromkreise für Wechselspannung für fest angeschlossene ortsveränderliche elektrische 
+Betriebsmittel für die Verwendung im Freien mit einem Bemessungsstrom von höchstens 32 A sind bei 
+Anwendung der Schutzmaßnahmen Nullung, Fehlerstrom-Schutzschaltung oder Überstrom-Schutzerdung 
+zusätzlich durch Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A zu 
+schützen. 
+415.1.003.AT 
+Endstromkreise mit Leuchten in Räumlichkeiten, die für Wohnzwecke bestimmt sind, sind 
+bei Anwendung der Schutzmaßnahmen Nullung, Fehlerstrom-Schutzschaltung oder Überstrom-Schutzerdung 
+zusätzlich durch Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A zu 
+schützen. 
+ANMERKUNG AT 
+Unter den Begriff „Räumlichkeiten für Wohnzwecke“ fallen z. B. Wohnungen, Hotelzimmer, 
+Wohnbereiche in Arbeitsstätten, Appartements sowie die allgemeinen Teile des Objekts, in denen die Räumlichkeiten für 
+Wohnzwecke untergebracht sind, und die dem Objekt zugeordneten Gemeinschaftsanlagen und -einrichtungen. 
+415.1.004.AT 
+Wenn eine automatische Abschaltung in der geforderten Zeit nicht erreicht werden kann 
+(siehe 411.3.2.5 oder 411.3.2.6), darf der zusätzliche Schutz (Zusatzschutz) mit Fehlerstrom-
+Schutzeinrichtungen (RCD) gemäß 415.1 entfallen, wenn geeignete Fehlerstrom-Schutzeinrichtungen (RCD) 
+mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A nicht verfügbar sind. 
+ 
+Bild 41.005.1.AT – Nullung mit zusätzlichem Schutz (Zusatzschutz) durch eine  
+Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 172/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 32 
+ 
+Bild 41.005.2.AT – Fehlerstrom-Schutzschaltung mit zusätzlichem Schutz (Zusatzschutz) 
+durch eine zweite Fehlerstrom-Schutzeinrichtung (RCD)  
+mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A 
+Bild 41.005.AT – Beispielbilder für den zusätzlichen Schutz (Zusatzschutz) 
+Legende zu Bild 41.005.1.AT und Bild 41.005.2.AT 
+1 
+Fehlerstrom-Schutzeinrichtung (RCD) für den Fehlerschutz gemäß 411.5.3, gemäß der der Erdungs-
+widerstand der Verbraucheranlage bemessen wird 
+2 
+Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A für den 
+zusätzlichen Schutz (Zusatzschutz) 
+3 
+Überstrom-Schutzeinrichtung für den Fehlerschutz 
+4 
+Überstrom-Schutzeinrichtung 
+5 
+Haupterdungsschiene 
+6 
+Erdungsanlage der Verbraucheranlage 
+7 
+Nullungsverbindung 
+415.1.1 Das Verwenden von Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A 
+hat 
+sich 
+in 
+Wechselstromsystemen 
+als 
+zusätzlicher 
+Schutz 
+(Zusatzschutz) 
+bei 
+Nichtwirksamwerden von Basisschutzvorkehrungen und/oder von Fehlerschutzvorkehrungen oder bei 
+Sorglosigkeit durch Benutzer bewährt. 
+415.1.2 Das Verwenden solcher Einrichtungen als alleiniges Mittel des Schutzes ist nicht anerkannt und 
+schließt nicht die Notwendigkeit aus, eine der Schutzmaßnahmen gemäß den Abschnitten 411 bis 414 
+anzuwenden. 
+415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+ANMERKUNG 1  
+Zusätzlicher Schutzpotentialausgleich wird als ein Zusatz zum Fehlerschutz angesehen. 
+ANMERKUNG 2  
+Das Verwenden des zusätzlichen Schutzpotentialausgleichs schließt nicht die Notwendigkeit aus, 
+die Stromversorgung aus anderen Gründen abzuschalten, z. B. aus Gründen des Brandschutzes, der thermischen 
+Überbeanspruchung eines Betriebsmittels. 
+ANMERKUNG 3  
+Der zusätzliche Schutzpotentialausgleich darf die gesamte Anlage, einen Teil der Anlage, ein 
+Gerät oder einen Bereich einschließen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 173/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 33 
+ANMERKUNG 4  
+Zusätzliche Anforderungen können für Räume und Anlagen besonderer Art (siehe Teile 7 von 
+OVE E 8101) oder aus anderen Gründen notwendig sein. 
+415.2.1 Der zusätzliche Schutzpotentialausgleich muss alle gleichzeitig berührbaren Körper fest 
+angebrachter elektrischer Betriebsmittel und fremde leitfähige Teile, einschließlich die metallene 
+Hauptbewehrung von Stahlbeton, soweit praktikabel, umfassen. Die Potentialausgleichsanlage muss mit den 
+Schutzleitern aller elektrischer Betriebsmittel, miteingeschlossen die Schutzleiter der Steckdosen, verbunden 
+werden. 
+415.2.001.AT 
+Kleinere Metallteile, metallene Tür- oder Fensterzargen etc. müssen aus Gründen des 
+Schutzes gegen elektrischen Schlag nicht in den zusätzlichen Schutzpotentialausgleich einbezogen werden, 
+wenn diese kein fremdes Potential in den Raum einbringen können. In besonderen Fällen, z. B. bei 
+Anforderungen zur EMV, kann dies erforderlich sein. 
+415.2.2 Der Widerstand R zwischen gleichzeitig berührbaren Körpern und fremden leitfähigen Teilen muss 
+die folgende Bedingung erfüllen: 
+– in AC-Systemen: 
+R ≤ 
+50 V
+ Ia   
+(F 41.13) 
+– in DC-Systemen: 
+R ≤ 
+120 V
+ Ia   
+(F 41.14) 
+Es wird empfohlen, in DC-Systemen die folgende Bedingung zu erfüllen (siehe OVE EN 61140:2016, 4.2 bzw. 
+410.3.001.AT Anmerkung 1.AT). 
+ 
+R ≤ 
+90 V
+ Ia   
+(F 41.15) 
+Dabei ist 
+R 
+Widerstand zwischen gleichzeitig berührbaren Körpern und fremden leitfähigen Teilen, in Ohm (Ω); 
+Ia 
+der Strom, in Ampere (A), der das Ausschalten der Schutzeinrichtung bewirkt: 
+ 
+– 
+für Fehlerstrom-Schutzeinrichtungen (RCD) der Bemessungsfehlerstrom IΔn; 
+ 
+– 
+für Überstrom-Schutzeinrichtungen der Strom, der eine Ausschaltung innerhalb von 5 s bewirkt. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 174/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 34 
+Anhang 41.A 
+(normativ) 
+ 
+Schutzvorkehrungen für den Basisschutz 
+41.A.1 
+Basisisolierung aktiver Teile 
+ANMERKUNG 
+Die Isolierung ist dafür bestimmt, das Berühren aktiver Teile zu verhindern. 
+Aktive Teile müssen vollständig mit einer Isolierung abgedeckt sein, die nur durch Zerstörung entfernt werden 
+kann. 
+Für elektrische Betriebsmittel muss die Isolierung mit der entsprechenden Norm für das Betriebsmittel 
+übereinstimmen. 
+41.A.2 
+Abdeckungen oder Umhüllungen 
+ANMERKUNG 
+Abdeckungen oder Umhüllungen sind dafür bestimmt, das Berühren aktiver Teile zu verhindern. 
+41.A.2.1  
+Aktive Teile müssen sich im Inneren von Umhüllungen oder hinter Abdeckungen befinden, die 
+mindestens der Schutzart IPXXB oder IP2X entsprechen, ausgenommen jene Fälle, wo während des 
+Auswechselns von Teilen größere Öffnungen entstehen, wie z. B. bei Fassungen von Leuchtmitteln oder 
+Sicherungen, oder wo größere Öffnungen notwendig sind, um den ordnungsgemäßen Betrieb des elektrischen 
+Betriebsmittels entsprechend den zutreffenden Anforderungen für das Betriebsmittel zu ermöglichen. In diesen 
+ausgenommenen Fällen 
+– 
+müssen geeignete Vorsichtsmaßnahmen getroffen werden, um unbeabsichtigtes Berühren aktiver Teile 
+durch Personen oder Nutztiere zu verhindern und 
+– 
+muss so weit wie praktisch möglich sichergestellt werden, dass Personen bewusst wird, dass aktive Teile 
+durch die Öffnungen berührt werden können und nicht absichtlich berührt werden sollten und 
+– 
+muss die Öffnung möglichst klein sein, wie es im Zusammenhang mit der ordnungsgemäßen Funktion und 
+für das Auswechseln eines Teils erforderlich ist. 
+41.A.2.2  
+Horizontale Oberflächen von Abdeckungen oder Umhüllungen, die leicht zugänglich sind, 
+müssen mindestens der Schutzart IPXXD oder IP4X entsprechen. 
+41.A.2.3  
+Abdeckungen und Umhüllungen müssen am Ort des Anbringens fest gesichert sein und 
+ausreichende Stabilität und Dauerhaftigkeit haben, um die geforderten Schutzarten und eine geeignete 
+Trennung von aktiven Teilen bei den bekannten Bedingungen des normalen Betriebs aufrechtzuerhalten, 
+wobei zutreffende äußere Einflüsse zu berücksichtigen sind. 
+41.A.2.4  
+In Fällen, in denen es notwendig ist, Abdeckungen zu entfernen oder Umhüllungen zu öffnen oder 
+Teile der Umhüllungen zu entfernen, darf dieses nur möglich sein: 
+– 
+durch das Verwenden eines Schlüssels oder Werkzeugs, oder 
+– 
+nach dem Ausschalten der Versorgung aktiver Teile, vor deren Berühren die Abdeckungen oder 
+Umhüllungen schützen; eine Wiederherstellung der Versorgung darf nur möglich sein, nachdem die 
+Abdeckungen oder Umhüllungen wieder angebracht oder geschlossen sind, oder 
+– 
+wo eine Zwischenabdeckung mit mindestens der Schutzart IPXXB oder IP2X das Berühren aktiver Teile 
+durch das Verwenden eines Schlüssels oder eines Werkzeugs zur Entfernung der Zwischenabdeckung 
+verhindert. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 175/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 35 
+41.A.2.5  
+Wenn hinter einer Abdeckung oder in einer Umhüllung elektrische Betriebsmittel installiert sind, 
+die nach ihrem Ausschalten gefährliche elektrische Ladungen behalten (z. B. Kapazitäten), ist eine 
+Warnaufschrift erforderlich. Kleine Kapazitäten, wie sie zur Lichtbogenlöschung, zur Verlängerung der 
+Ansprechzeit von Relais usw. verwendet werden, werden als nicht gefährlich angesehen. 
+ANMERKUNG 
+Unbeabsichtigtes Berühren wird als nicht gefährlich angesehen, wenn die Spannung statischer 
+Aufladungen auf DC 120 V innerhalb von 5 s nach dem Abschalten der Stromversorgung absinkt. Bei der Auswahl von 
+SELV- oder PELV-Systemen wird empfohlen, die Spannung auf DC 90 V zu begrenzen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 176/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 36 
+Anhang 41.B 
+(normativ) 
+ 
+Schutzvorkehrung durch Hindernisse und Anordnung  
+außerhalb des Handbereichs 
+41.B.1 
+Anwendung 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gewährleisten nur den Basisschutz. Sie sind ausschließlich zur Anwendung in elektrischen Anlagen oder Teilen 
+von elektrischen Anlagen vorgesehen, zu denen nur Elektrofachkräfte (BA5) oder elektrotechnisch 
+unterwiesene Personen (BA4) Zugang haben. 
+Die Bedingungen der Überwachung, bei der die Schutzvorkehrungen für den Basisschutz gemäß Anhang 41.B 
+als Teil der Schutzmaßnahme angewendet werden dürfen, sind in 410.3.5 angegeben. 
+41.B.2 
+Hindernisse 
+ANMERKUNG 
+Hindernisse sind Vorkehrungen, um unabsichtliches Berühren aktiver Teile zu verhindern. Sie schützen 
+jedoch nicht vor absichtlichem Berühren aktiver Teile, wenn sie bewusst umgangen werden. 
+41.B.2.1  
+Hindernisse müssen verhindern: 
+– 
+unbeabsichtigte körperliche Näherung zu aktiven Teilen und 
+– 
+unbeabsichtigtes Berühren von aktiven Teilen während des Bedienens von im normalen Betrieb unter 
+Spannung stehenden elektrischen Betriebsmitteln. 
+41.B.2.2  
+Hindernisse dürfen ohne Verwendung eines Schlüssels oder Werkzeugs entfernbar sein; sie 
+müssen jedoch so gesichert sein, dass unbeabsichtigtes Entfernen verhindert ist. 
+41.B.3 
+Anordnung außerhalb des Handbereichs 
+ANMERKUNG 
+Schutz durch Anordnen außerhalb des Handbereichs ist nur dafür vorgesehen, ein unbeabsichtigtes 
+Berühren aktiver Teile zu verhindern. 
+41.B.3.1  
+Gleichzeitig berührbare Teile unterschiedlichen Potentials dürfen nicht innerhalb des 
+Handbereichs angeordnet sein. 
+ANMERKUNG 
+Zwei Teile werden als gleichzeitig berührbar angesehen, wenn sie nicht mehr als 2,5 m auseinander 
+angeordnet sind (siehe Bild 41.B.1). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 177/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 37 
+ 
+Legende 
+S 
+Standfläche, deren Benutzung durch Personen zu erwarten ist 
+Bild 41.B.1 – Handbereich 
+41.B.3.2  
+Wenn eine normalerweise eingenommene Standfläche in horizontaler Richtung durch ein 
+Hindernis (z. B. Geländer, Maschengitter) mit einer Schutzart weniger als IPXXB oder IP2X begrenzt ist, dann 
+muss der Beginn des Handbereichs ab diesem Hindernis gerechnet werden. 
+In vertikaler Richtung reicht der Handbereich von der Standfläche S bis in 2,5 m Höhe. Eine Begrenzung dieses 
+Handbereichs kann nur durch ein Hindernis mit einer Schutzart von mindestens IPXXB oder IP2X erfolgen. 
+ANMERKUNG 
+Die Werte des Handbereichs gelten für Berühren unmittelbar mit bloßen Händen ohne Hilfsmittel  
+(z. B. Werkzeuge oder Leiter). 
+41.B.3.3  
+An Stellen, wo üblicherweise sperrige oder lange leitfähige Gegenstände gehandhabt werden, 
+müssen die in 41.B.3.1 und 41.B.3.2 geforderten Abstände unter Berücksichtigung der anwendbaren 
+Abmessungen solcher Gegenstände vergrößert werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 178/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 38 
+Anhang 41.C 
+(normativ) 
+ 
+Schutzvorkehrungen, die nur unter der Voraussetzung  
+angewendet werden dürfen, wenn die elektrische Anlage  
+durch Elektrofachkräfte (BA5) oder durch 
+elektrotechnisch unterwiesene Personen (BA4) betrieben wird 
+ANMERKUNG AT 
+Der Begriff „Betrieb“ gemäß ÖVE/ÖNORM EN 50110-1 umfasst auch das Überwachen. 
+ANMERKUNG 
+Die Bedingungen der Überwachung, bei der die Schutzvorkehrungen für den Fehlerschutz gemäß 
+Anhang 41.C als Teil der Schutzmaßnahme angewendet werden dürfen, sind in 410.3.6 angegeben. 
+41.C.1 
+Nicht leitende Umgebung 
+ANMERKUNG 
+Diese Schutzvorkehrung ist dafür vorgesehen, ein gleichzeitiges Berühren von Teilen, die durch Fehler 
+der Basisisolierung aktiver Teile ein unterschiedliches Potential haben, zu verhindern. 
+41.C.1.1  
+Alle elektrischen Betriebsmittel müssen mit einer der in Anhang 41.A beschriebenen 
+Schutzvorkehrungen für den Basisschutz ausgestattet sein. 
+41.C.1.2  
+Elektrische Betriebsmittel müssen so angeordnet werden, dass Personen unter normalen 
+Umständen nicht mit 
+– 
+zwei Körpern, oder 
+– 
+einem Körper und irgendeinem fremden leitfähigen Teil, 
+in gleichzeitige Berührung kommen können. Dies gilt für Teile, die im Falle eines Fehlers der Basisisolierung 
+ein unterschiedliches Potential annehmen können. 
+41.C.1.3  
+In einer nicht leitenden Umgebung darf kein Schutzleiter vorhanden sein. 
+41.C.1.4  
+Die Festlegungen in 41.C.1.2 sind erfüllt, wenn die Umgebung einen isolierenden Fußboden und 
+isolierende Wände hat und eine oder mehrere der folgenden Ausführungen angewendet ist/sind: 
+a) 
+den Verhältnissen entsprechender Abstand zwischen Körpern und fremden leitfähigen Teilen, wie auch 
+zwischen Körpern. Der Abstand ist ausreichend, wenn die Entfernung zwischen zwei Teilen nicht kleiner 
+als 2,5 m ist; dieser Abstand darf außerhalb des Handbereichs auf 1,25 m verkleinert werden. 
+b) 
+Anbringen wirksamer Hindernisse zwischen Körpern und fremden leitfähigen Teilen. Solche Hindernisse 
+sind ausreichend wirksam, wenn sie die überbrückbaren Entfernungen auf die in a) genannten Werte 
+vergrößern. Sie dürfen nicht mit Erde oder Körpern verbunden werden. Diese Hindernisse sollten aus 
+elektrisch nicht leitendem Material bestehen. 
+c) 
+Isolierung oder isolierte Anordnung fremder leitfähiger Teile. Die Isolierung muss ausreichende 
+mechanische Festigkeit haben und einer Prüfspannung von mindestens AC 2 000 V standhalten können. 
+Der Ableitstrom darf unter den Bedingungen normaler Verwendung 1 mA nicht überschreiten. 
+41.C.1.5  
+Der Widerstand von isolierenden Fußböden und Wänden darf unter den in Teil 6 festgelegten 
+Bedingungen an keinem Messpunkt kleiner sein als: 
+– 
+50 kΩ, wenn die Nennspannung der Anlage 500 V nicht überschreitet; 
+– 
+100 kΩ, wenn die Nennspannung der Anlage 500 V überschreitet. 
+ANMERKUNG 
+Wenn der Widerstand an irgendeinem Punkt unter dem festgelegten Wert liegt, gelten die Fußböden und 
+Wände für die Zwecke des Schutzes gegen elektrischen Schlag als fremde leitfähige Teile. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 179/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 39 
+41.C.1.6  
+Die getroffenen Anordnungen müssen dauerhaft sein, und es darf nicht möglich sein, sie 
+unwirksam zu machen. Sie müssen den Schutz ebenfalls sicherstellen, wenn die Verwendung beweglicher 
+oder tragbarer elektrischer Betriebsmittel beabsichtigt ist. 
+ANMERKUNG 1  
+Es wird auf das Risiko hingewiesen, dass in Fällen, in denen die elektrische Anlage nicht unter 
+einer Überwachung steht, zu einem späteren Zeitpunkt weitere leitfähige Teile (z. B. bewegliche oder tragbare elektrische 
+Betriebsmittel der Schutzklasse I oder fremde leitfähige Teile wie metallene Wasserrohre) eingebracht werden könnten, 
+welche die Erfüllung der Anforderungen in 41.C.1.6 aufheben. 
+ANMERKUNG 2  
+Es ist wichtig sicherzustellen, dass die Isolierung von Fußböden und Wänden nicht durch 
+Feuchtigkeit beeinträchtigt werden kann. 
+41.C.1.7  
+Es müssen Vorsichtsmaßnahmen getroffen werden, um sicherzustellen, dass durch fremde 
+leitfähige Teile keine Spannungen aus dem betreffenden Raum nach außen verschleppt werden können. 
+41.C.2 
+Schutz durch erdfreien örtlichen Schutzpotentialausgleich 
+ANMERKUNG 
+Der erdfreie örtliche Schutzpotentialausgleich ist dafür vorgesehen, das Auftreten einer gefährlichen 
+Berührungsspannung zu verhindern. 
+41.C.2.1  
+Alle elektrischen Betriebsmittel müssen mit einer der in Anhang 41.A beschriebenen Schutz-
+vorkehrungen für den Basisschutz ausgestattet sein. 
+41.C.2.2  
+Alle gleichzeitig berührbaren Körper und fremde leitfähige Teile müssen durch Schutz-
+potentialausgleichsleiter miteinander verbunden sein. 
+41.C.2.3  
+Die örtliche Schutzpotentialausgleichanlage darf weder direkt noch durch Körper noch durch 
+fremde leitfähige Teile mit Erde elektrisch verbunden sein. 
+41.C.2.4  
+Es müssen Vorsichtsmaßnahmen getroffen werden, um sicherzustellen, dass Personen, die den 
+potentialgleichen Raum betreten, nicht einem gefährlichen Potentialunterschied ausgesetzt werden können, 
+insbesondere in Fällen, in denen ein leitender, gegen Erde isolierter Fußboden an das erdfreie örtliche 
+Schutzpotentialausgleichsystem angeschlossen ist. 
+41.C.3 
+Schutztrennung zur Versorgung von mehr als einem Verbrauchsmittel  
+ANMERKUNG 
+Schutztrennung eines einzelnen Stromkreises ist dafür vorgesehen, Ströme zu verhindern, die einen 
+elektrischen Schlag bei Berühren von Körpern verursachen, die durch einen Fehler der Basisisolierung des Stromkreises 
+unter Spannung stehen können. 
+41.C.3.1  
+Alle elektrischen Betriebsmittel müssen mit einer der in Anhang 41.A beschriebenen 
+Schutzvorkehrungen für den Basisschutz ausgestattet sein. 
+41.C.3.2  
+Schutz durch Schutztrennung zur Versorgung von mehr als einem Verbrauchsmittel muss 
+sichergestellt werden durch Erfüllen aller Anforderungen von Abschnitt 413, ausgenommen 413.1.2, und der 
+folgenden Anforderungen. 
+41.C.3.3  
+Es müssen Vorsichtsmaßnahmen getroffen werden, um den getrennten Stromkreis vor 
+Beschädigung und Isolationsfehlern zu schützen. 
+41.C.3.4  
+Die Körper des getrennten Stromkreises müssen miteinander durch isoliert geführte 
+Schutzpotentialausgleichsleiter verbunden werden. Solche Leiter dürfen nicht mit den Schutzleitern oder 
+Körpern anderer Stromkreise sowie mit fremden leitfähigen Teilen verbunden werden. 
+ANMERKUNG 
+Siehe dazu Anmerkung zu 413.3.6. 
+41.C.3.5  
+Alle Steckdosen müssen mit Schutzkontakten ausgestattet sein, die mit der Schutzpotential-
+ausgleichsanlage gemäß 41.C.3.4 verbunden werden müssen (siehe Bild 41.C.001.AT). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 180/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 40 
+41.C.3.6  
+Alle flexiblen Anschlussleitungen, ausgenommen solche, die elektrische Betriebsmittel mit 
+doppelter oder verstärkter Isolierung versorgen, müssen einen Schutzleiter enthalten, der als Schutzpotential-
+ausgleichsleiter gemäß 41.C.3.4 verwendet wird. 
+41.C.3.7  
+Es muss sichergestellt werden, dass beim Auftreten von je einem Fehler in zwei verschiedenen 
+elektrischen Betriebsmitteln in unterschiedlichen Außenleitern eine Schutzeinrichtung die Stromversorgung in 
+einer Zeit abschaltet, die den Festlegungen in Tabelle 41.1 entspricht. 
+41.C.3.8  
+Es wird empfohlen, dass das Produkt aus der Nennspannung in Volt und der Summe der Längen 
+der Kabel- und Leitungsanlage in Meter den Wert 100 000 nicht überschreitet und dass die Summe der Längen 
+der Kabel- und Leitungsanlage 500 m nicht überschreitet. 
+ 
+Bild 41.C.001.AT – Schutztrennung mit mehreren angeschlossenen elektrischen Betriebsmitteln 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 181/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 41 
+Anhang 41.D 
+(normativ) 
+ 
+Vorkehrungen, wenn automatische Abschaltung in der geforderten Zeit 
+nach 411.3.2 nicht erreicht werden kann 
+Die Anforderungen des Harmonisierungsdokuments zu diesem Anhang finden sich in Österreich in 411.3.2.5 
+und 411.3.2.6. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 182/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-41 – Seite 42 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 183/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 1 
+Teil 4-42 Schutz gegen thermische Einflüsse 
+Inhalt Teil 4-42 
+420.1 
+Anwendungsbereich 
+420.2 
+Normative Verweisungen 
+420.3 
+Begriffe 
+421 
+Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+421.1 
+Allgemeine Anforderungen 
+421.7 
+Schutz gegen die Auswirkungen von Fehlerlichtbögen 
+422 
+Maßnahmen bei Brandrisiken 
+422.1 
+Allgemeines 
+422.2 
+Bedingungen für die Evakuierung im Notfall 
+422.3 
+Räume oder Orte mit besonderem Brandrisiko aufgrund der hergestellten, bearbeiteten oder 
+gelagerten Materialien 
+422.4 
+Räume oder Orte hauptsächlich aus brennbaren Baustoffen 
+422.5 
+Brandausbreitende Gebäudestrukturen 
+422.6 
+Räume oder Orte mit Gefährdungen für unersetzbare Güter 
+423 
+Schutz gegen Verbrennungen 
+424 
+Schutz gegen Überhitzung 
+424.1 
+Gebläse-Heizsysteme 
+424.2 
+Anwendung von Heißwasser- oder Dampferzeugern 
+424.3 
+Anwendung von Raumheizgeräten 
+Anhang 42.A (informativ)  Fehlerlichtbogen-Schutzeinrichtungen (AFDD) 
+ 
+ 
+420.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in Bezug auf Maßnahmen zum Schutz von Personen, Nutztieren und 
+Sachen 
+– 
+gegen thermische Einflüsse, Verbrennung oder Zersetzung von Materialien sowie Brandriskio, ausgehend 
+von elektrischen Betriebsmitteln, 
+– 
+im Brandfall gegen die Ausbreitung von Flammen durch elektrische Anlagen in benachbarte 
+Brandabschnitte und 
+– 
+gegen die Beeinträchtigung der sicheren Funktion elektrischer Einrichtungen einschließlich der für 
+Sicherheitszwecke. 
+ANMERKUNG 1  
+Für den Schutz gegen thermische Einflüsse können nationale gesetzliche Regelungen 
+maßgeblich sein. 
+ANMERKUNG 2  
+Der Schutz bei Überstrom wird in Teil 4-43 behandelt. 
+In Bezug auf Kabel und Leitungen und deren Brandverhalten werden diese Schutzmaßnahmen nun mittels 
+Verweisung auf die EU-Bauprodukteverordnung (CPR, en: construction products regulation) und die relevanten 
+Euroklassen nach ÖNORM EN 13501-6 ausgedrückt. 
+ANMERKUNG 3  
+Während die CPR fordert, dass der Hersteller das Brandverhalten von Kabeln und Leitungen nach 
+den für die gesamte EU geltenden Verfahren und Klassifikationen deklariert, fällt die Klärung der Frage, welche 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 184/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 2 
+Klassifikation für eine bestimmte Anwendung oder Anlage gefordert ist, in den Zuständigkeitsbereich der einzelnen 
+Mitgliedsstaaten. Nationale gesetzliche Regelungen können deshalb das in dieser Norm aufgeführte Anforderungsniveau 
+aufheben. 
+420.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+420.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+421 Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+421.1 
+Allgemeine Anforderungen 
+Personen, Nutztiere und Sachen sind vor Schädigungen oder Verletzungen durch Wärme oder Brand, die von 
+elektrischen Anlagen verursacht oder dadurch verbreitet werden können, zu schützen, indem die 
+Anforderungen dieses Teils und die Hinweise des Herstellers des Betriebsmittels berücksichtigt werden. 
+Die Wärme, die von elektrischen Betriebsmitteln erzeugt wird, darf keine Gefahr oder schädliche Auswirkungen 
+auf benachbartes festes Material oder auf Material, welches sich vorhersehbar in der Nähe dieser 
+Betriebsmittel befinden kann, hervorrufen. Elektrische Betriebsmittel dürfen keine Brandgefahr für 
+benachbartes Material darstellen. 
+ANMERKUNG 
+Schädigungen, Verletzungen oder Entzündungen können verursacht werden durch: 
+– 
+Wärmestau, Wärmestrahlung, heiße Teile; 
+– 
+Beeinträchtigung der sicheren Funktion elektrischer Betriebsmittel, z. B. Schutzeinrichtungen wie Schutzschalter, 
+Thermostate, Temperaturbegrenzer, Kabelabschottungen und Kabel- und Leitungsanlagen; 
+– 
+Überstrom; 
+– 
+Isolationsfehler und/oder Störlichtbögen; 
+– 
+Oberschwingungsströme; 
+– 
+Blitzschlag, siehe Normenreihe ÖVE/ÖNORM EN 62305; 
+– 
+Überspannungen, siehe Abschnitt 443; 
+– 
+ungeeignete Auswahl oder Errichtung von Betriebsmitteln. 
+Zusätzlich zu den Anforderungen von OVE E 8101 müssen die für die Errichtung relevanten Hinweise des 
+Herstellers des elektrischen Betriebsmittels berücksichtigt werden. 
+421.2 
+Wenn festeingebaute Betriebsmittel Oberflächentemperaturen annehmen können, die für 
+benachbarte Teile eine Brandgefahr darstellen, müssen die Betriebsmittel 
+– 
+auf oder innerhalb von Werk- oder Baustoffen niedriger Wärmeleitfähigkeit, die der auftretenden 
+Erwärmung/Temperatur widerstehen können, errichtet werden, oder 
+– 
+durch Werk- oder Baustoffe niedriger Wärmeleitfähigkeit, die solchen Erwärmungen/Temperaturen 
+widerstehen können, von Teilen der Gebäudekonstruktion abgetrennt werden, oder 
+– 
+in einem ausreichenden Abstand von Teilen, deren Beständigkeit durch zu hohe Erwärmung/Temperatur 
+gefährdet wäre, so errichtet werden, dass eine ausreichende Ableitung der Wärme möglich ist, wobei jeder 
+Träger oder jede Unterlage eine möglichst geringe Wärmeleitfähigkeit hat. 
+421.3 
+Können bei bestimmungsgemäßem Betrieb Lichtbögen oder Funken aus fest installierten 
+elektrischen Betriebsmitteln austreten, müssen diese entweder 
+– 
+völlig in lichtbogenbeständigen Werk- oder Baustoffen eingeschlossen sein, oder 
+– 
+durch lichtbogenbeständige Werk- oder Baustoffe von Materialien abgetrennt werden, auf welche die 
+Lichtbögen schädigende Einwirkungen haben können, oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 185/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 3 
+– 
+so errichtet werden, dass eine sichere Löschung von Lichtbögen und Funken in einem ausreichenden 
+Abstand von den Materialien möglich ist, ohne dass schädigende Einwirkungen entstehen. 
+Lichtbogenbeständige Werk- und Baustoffe, die für diesen Schutz verwendet werden, dürfen nicht entzündbar 
+sein, müssen eine möglichst niedrige Wärmeleitfähigkeit besitzen und eine angemessene Dicke haben, welche 
+die mechanische Festigkeit sicherstellt. 
+ANMERKUNG 
+Als lichtbogenbeständig kann z. B. eine 20 mm dicke Fiber-Silikatplatte angesehen werden. 
+421.4 
+Fest installierte elektrische Betriebsmittel, die eine Konzentration von Wärme verursachen, müssen 
+einen ausreichenden Abstand von festen Einrichtungen oder Gebäudeteilen haben, um bei normalen 
+Betriebsbedingungen eine gefährliche Temperatureinwirkung auf diese zu verhindern. Dies ist z. B. eine 
+Temperatur, die höher ist als die Zündtemperatur. 
+ANMERKUNG 
+Alle Informationen des Herstellers zum Betriebsmittel sollten berücksichtigt werden. 
+421.5 
+Enthalten in einem einzelnen Bereich installierte elektrische Betriebsmittel entzündliche Flüssigkeiten 
+in bedeutender Menge (z. B. Transformator, Kondensator, Batterie), müssen angemessene Vorkehrungen 
+getroffen werden, um zu verhindern, dass sich Flüssigkeiten, Flammen und Verbrennungsprodukte ausbreiten. 
+ANMERKUNG 1  
+Beispiele solcher Vorkehrungen sind: 
+– 
+eine Auffanggrube, um auslaufende Flüssigkeiten zu sammeln und ihre Löschung im Brandfall zu sichern, oder 
+– 
+Installation der elektrischen Betriebsmittel in entsprechend brandschutztechnisch abgetrennten Räumen (z. B. Räume 
+mit erhöhter Brandgefahr, siehe OVE-Richtlinie R 12-2 bzw. OIB-Richtlinie 2), die nur ins Freie belüftet sind, und das 
+Vorsehen von Türschwellen oder anderer Maßnahmen, um zu verhindern, dass sich Flüssigkeiten auf andere 
+Gebäudeteile ausbreiten. 
+ANMERKUNG 2  
+Als untere Grenze für die bedeutende Menge werden üblicherweise 25 l angesehen. 
+ANMERKUNG 3  
+Bei Mengen von weniger als 25 l reichen Vorkehrungen aus, die ein Entweichen der Flüssigkeit 
+verhindern. 
+ANMERKUNG 4  
+Verbrennungsprodukte von Flüssigkeiten sind Flammen, Rauch und Gas. 
+ANMERKUNG 5  
+Es ist anzustreben, bei Ausbruch eines Brands die Versorgung des vom Brand betroffenen 
+Betriebsmittels abzuschalten. 
+421.6 
+Materialien (Bauteile, Werk- oder Baustoffe) der Umhüllungen, mit denen die elektrischen 
+Betriebsmittel bei ihrer Installation verkleidet werden, müssen den zu erwartenden höchsten Temperaturen 
+standhalten, die von den elektrischen Betriebsmitteln hervorgerufen werden. 
+Brennbare Materialien sind für den Aufbau dieser Umhüllungen nicht geeignet, es sei denn, vorbeugende 
+Maßnahmen gegen eine Entzündung werden ergriffen, wie z. B. durch das Verwenden von nichtbrennbaren 
+oder schwer brennbaren Werkstoffen geringer Wärmeleitfähigkeit. 
+ANMERKUNG 
+Ein Material/Stoff wird als nichtbrennbar angesehen, wenn es nach ÖNORM EN ISO 1182 und 
+ÖNORM EN ISO 1716 feuerhemmend ist. Siehe auch ÖNORM EN ISO 13943. 
+421.7 
+Schutz gegen die Auswirkungen von Fehlerlichtbögen 
+ANMERKUNG 
+Eine Fehlerlichtbogen-Schutzeinrichtung (AFDD) ist dazu vorgesehen, die Auswirkungen von Lichtbögen 
+zu reduzieren, indem ein Lichtbogen erkannt und eine Ausschaltung des Stromkreises eingeleitet wird. Siehe Anhang 42.A. 
+ANMERKUNG 1.AT 
+Der Einsatz von Einrichtungen zur Erkennung und Ausschaltung von Lichtbögen kann bei 
+Endstromkreisen das Brandrisiko, verursacht durch einen Kriechweg oder einen Fehlerlichtbogen, reduzieren. 
+Fehlerlichtbögen entstehen z. B. durch: 
+– 
+defekte Isolation zwischen aktiven Leitern, die einen Strom zur Folge haben (parallele Lichtbögen), oder 
+– 
+gebrochene oder beschädigte (verringerter Leiterquerschnitt) Leiter bei Strombelastung (serielle Lichtbögen), oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 186/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 4 
+– 
+Verbindungs- oder Anschlussklemmen mit ungewollt erhöhtem Widerstand. 
+Für Hausinstallationen und ähnliche Anwendungen sind besondere Maßnahmen zum Schutz gegen die 
+Auswirkungen von Lichtbögen in einzelnen Endstromkreisen wie folgt zu berücksichtigen: 
+a) 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) sind in Wechselstromkreisen mit einem Nennstrom nicht 
+größer als 16 A zu installieren: 
+ 
+– 
+in Schlafräumen von Heimen für behinderte oder alte Menschen (z. B. Senioren- oder Pensionisten-
+heime) oder Schlafräumen von Kindergärten und Krippen; 
+ 
+– 
+in Räumen oder Orten mit einem Brandrisiko durch hergestellte, bearbeitete oder gelagerte 
+Materialien, z. B. BE2 gemäß Teil 5-51; 
+ 
+b) 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) sind empfohlen in Wechselstromkreisen mit einem 
+Nennstrom nicht größer als 16 A in: 
+ 
+– 
+Schlafräumen in Wohngebäuden (insbesondere bei Nutzung durch in ihrer Mobilität dauerhaft 
+eingeschränkten Personen infolge körperlicher oder geistiger Beeinträchtigung); 
+ 
+– 
+Räumen oder Orten mit Gefährdungen für unersetzbare Güter. 
+Wenn Fehlerlichtbogen-Schutzeinrichtungen (AFDD) verwendet werden, müssen sie den Anforderungen von 
+ÖVE/ÖNORM EN 62606 entsprechen und am Anfang des zu schützenden Stromkreises installiert werden. 
+Der Einsatz einer Fehlerlichtbogen-Schutzeinrichtung (AFDD) schließt die Notwendigkeit weiterer Maßnahmen 
+gemäß Teil 4-42 nicht aus. 
+422 Maßnahmen bei Brandrisiken 
+422.1 
+Allgemeines 
+422.1.1 Elektrische Betriebsmittel müssen auf solche Betriebsmittel beschränkt werden, die für die 
+Anwendung in diesen Betriebsstätten notwendig sind, ausgenommen Kabel- und Leitungsanlage gemäß 
+422.3.5. 
+422.1.2 Elektrische Betriebsmittel müssen so ausgewählt und installiert werden, dass ihre Temperatur im 
+bestimmungsgemäßen Gebrauch und die vorhersehbare Temperaturerhöhung im Fehlerfall keinen Brand 
+verursachen können. 
+Dieses darf durch die Bauart der Betriebsmittel oder durch Maßnahmen bei der Errichtung erreicht werden. 
+Besondere Maßnahmen sind nicht notwendig, wenn es unwahrscheinlich ist, dass durch die Oberflächen-
+temperatur eine Entzündung benachbarter Materialien verursacht werden kann. 
+422.1.3 Geräte mit Temperaturbegrenzer dürfen nur eine manuelle Rückstellung haben. 
+422.2 
+Bedingungen für die Evakuierung im Notfall 
+ANMERKUNG 1.AT 
+Wenn durch die zuständigen Behörden auch Anforderungen an die elektrische Anlage in 
+Fluchtwegen grundsätzlich gestellt werden, können die folgenden Anforderungen sinngemäß angewendet werden. 
+ANMERKUNG 2.AT 
+Die im folgenden Abschnitt verwendete Formulierung „gesicherter Fluchtbereich“ bezieht sich 
+immer auf den gesicherten Fluchtbereich gemäß Arbeitsstättenverordnung. Dieser gesicherte Fluchtbereich kennzeichnet 
+einen Bereich, der einen brandschutztechnisch höherwertigen Schutz gewährt und direkt in das sichere Freie führt, z. B. 
+entsprechendes Treppenhaus, Fluchttunnel. 
+ANMERKUNG 3.AT 
+Die im folgenden Abschnitt verwendete Formulierung „notwendiges Treppenhaus“ bezieht sich 
+immer auf die in OIB-Richtlinie 2:2023, 5.1.1 angeführten Treppenhäuser. 
+ANMERKUNG 4.AT 
+Anforderungen an die elektrische Anlage innerhalb eines Brandabschnitts siehe 527.1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 187/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 5 
+Für die Auswahl von Kabel- und Leitungsanlagen in Fluchtwegen gelten die Anforderungen gemäß den 
+bautechnischen Richtlinien (OIB-Richtlinien). 
+Unterabschnitt 422.2 sowie die Anforderungen zum Schutz gegen thermische Einflüsse gemäß  
+OVE-Richtlinie R 12-2 ergänzen diese bautechnischen Brandschutzanforderungen für die elektrische Anlage 
+in notwendigen Treppenhäusern bzw. in gesicherten Fluchtbereichen. 
+ANMERKUNG 
+Die für die Gebäudeerrichtung, für öffentliche Einrichtungen, für den Brandschutz (Brandschutzkonzept) 
+usw. zuständigen Behörden können Anforderungen für die Auswahl von elektrischen Betriebsmitteln und die Errichtung 
+von elektrischen Anlagen festlegen (z. B. über Behördenvorschreibung). 
+Grundsätzliche Merkmale gemäß Tabelle 51.A für die Evakuierungsmöglichkeit sind: 
+– 
+BD2: geringe Personendichte, schwierige Bedingungen für die Evakuierung; 
+– 
+BD3: große Personendichte, einfache Bedingungen für die Evakuierung; 
+– 
+BD4: große Personendichte, schwierige Bedingungen für die Evakuierung. 
+422.2.1 Kabel- und Leitungsanlagen dürfen grundsätzlich nicht in notwendige Treppenhäuser bzw. in 
+gesicherte Fluchtbereiche hineinführen oder hindurchführen, es sei denn, die Kabel und Leitungen der Kabel- 
+und Leitungsanlagen sind brandschutztechnisch ummantelt oder umhüllt, entweder durch das Kabelführungs-
+system oder durch andere brandschutztechnische Maßnahmen. 
+ANMERKUNG AT 
+Ergänzungen und Erläuterungen dazu siehe z. B. OVE-Richtlinie R 12-2. 
+Kabel- und Leitungsanlagen, die in notwendige Treppenhäuser bzw. in gesicherte Fluchtbereiche hineinführen 
+oder hindurchführen, dürfen sich nicht im Handbereich befinden, es sei denn, sie sind mit einem Schutz gegen 
+mechanische Beschädigung, die während eines Rettungsvorgangs entstehen kann, versehen. 
+Kabel- und Leitungsanlagen in notwendigen Treppenhäusern bzw. in gesicherten Fluchtbereichen müssen auf 
+kürzesten Wegen verlegt und dürfen nicht flammenausbreitend sein, oder müssen hierzu europäisch 
+gleichwertig klassifiziert sein. 
+Kabel- und Leitungsanlagen, die Stromkreise für Sicherheitszwecke versorgen, müssen eine Feuer-
+widerstandsdauer entweder nach den Anforderungen gemäß OVE-Richtlinie R 12-2, den Brandschutz-
+bestimmungen der zuständigen Behörden oder, wenn es solche Bestimmungen nicht gibt, von 1 h besitzen. 
+ANMERKUNG 
+Anforderungen betreffend Funktionserhalt von Kabel- und Leitungsanlagen für Sicherheitszwecke im 
+Brandfall siehe Teil 5-56 und OVE-Richtlinie R 12-2. 
+Kabel- und Leitungsanlagen in notwendigen Treppenhäusern bzw. in gesicherten Fluchtbereichen dürfen nur 
+eine geringe Rauchentwicklung aufweisen oder müssen hierzu europäisch gleichwertig klassifiziert sein. 
+422.2.2 Schalt- und Steuergeräte in notwendigen Treppenhäusern bzw. in gesicherten Fluchtbereichen mit 
+Ausnahme solcher Geräte, welche die Flucht erleichtern, dürfen nur den dafür zugelassenen Personen 
+zugänglich sein. Wenn sie in Gängen angeordnet sind, müssen sie in Schränken oder Gehäusen aus 
+nichtbrennbarem Material untergebracht sein. 
+422.2.3 In notwendigen Treppenhäusern bzw. in gesicherten Fluchtbereichen ist die Verwendung elektrischer 
+Betriebsmittel, die entzündliche Flüssigkeiten enthalten, verboten. 
+ANMERKUNG 
+Für einzelne in elektrischen Betriebsmitteln eingebaute Kondensatoren gilt diese Anforderung nicht. 
+Diese Ausnahme betrifft vornehmlich Entladungsleuchten und Kondensatoren für den Motoranlauf. 
+422.3 
+Räume oder Orte mit besonderem Brandrisiko aufgrund der hergestellten, bearbeiteten oder 
+gelagerten Materialien 
+Merkmal BE2: Besonderes Brandrisiko (gemäß Tabelle 51.A). 
+Besondere Brandrisiken (feuergefährdete Betriebsstätten) sind z. B. solche, bei denen das Brandrisiko durch 
+die Herstellung, die Bearbeitung oder die Lagerung von entflammbarem brennbarem Material einschließlich 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 188/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 6 
+Vorhandensein/Auftreten verursacht wird, wie z. B. in Werkstätten für Holzbearbeitung bzw. Holzverarbeitung, 
+in Papier- und Textilfabriken, der Staub in Scheunen. 
+Die Einstufung als feuergefährdete Betriebsstätte ist vom Betreiber/Nutzer der elektrischen Anlage 
+vorzunehmen. 
+ANMERKUNG 1  
+Die Menge von brennbaren Materialien und die Fläche oder das Volumen von Betriebsstätten 
+dürfen durch Behörden festgelegt sein. 
+ANMERKUNG 2  
+Für Explosionsgefahren siehe ÖVE/ÖNORM EN 60079-14. 
+ANMERKUNG 3  
+Andere Betriebsstätten mit einem vergleichbaren Brandrisiko, wie in Tabelle 51.ZA.1, BE2 
+genannt, sollten ebenfalls berücksichtigt werden, z. B. gewerbliche Küchen. 
+422.3.1 Leuchten müssen einen ausreichenden Abstand von brennbaren Materialien haben. Wenn andere 
+Herstellerangaben nicht gemacht werden, müssen kleine Scheinwerfer und Projektoren von brennbaren 
+Materialien folgenden Mindestabstand haben: 
+≤ 100 W:  
+0,5 m; 
+> 100 W bis 300 W: 
+0,8 m; 
+> 300 W bis 500 W: 
+1,0 m; 
+> 500 W:  
+größere Abstände können notwendig sein. 
+ANMERKUNG 1  
+Falls Herstellerangaben nicht vorhanden sind, gelten die oben genannten Abstände in alle 
+Richtungen. 
+Leuchtmitteln und andere Bestandteile/Komponenten von Leuchten müssen gegen die zu erwartenden 
+mechanischen Beanspruchungen geschützt sein. Solche Schutzeinrichtungen dürfen nicht an der Fassung 
+befestigt sein, es sei denn, sie sind ein fester Bestandteil der Leuchte. Veränderungen an Leuchten sind nicht 
+zulässig. 
+ANMERKUNG 2  
+Leuchten, die nach ÖVE/ÖNORM EN 60598-1:2007 noch mit 
+ gekennzeichnet sind, dürfen 
+auf normal entflammbaren Oberflächen befestigt werden. Mit der Veröffentlichung von ÖVE/ÖNORM EN 60598-1:2009 
+werden Leuchten, die zur direkten Befestigung geeignet sind, nicht mehr mit einem besonderen Symbol gekennzeichnet. 
+Lediglich Leuchten, die nicht zur direkten Befestigung auf normal entflammbaren Oberflächen geeignet sind, werden mit 
+den Symbolen 
+ und/oder 
+ gekennzeichnet (siehe ÖVE/ÖNORM EN 60598-1:2015, N.4 für weitere 
+Erläuterungen). 
+ANMERKUNG AT 
+Gemäß OVE EN IEC 60598-1:2022, Begriff 1.2.38 ist ein normal entflammbarer Werkstoff 
+(normally flammable material) ein Werkstoff, der eine Entzündungstemperatur von mindestens 200 °C aufweist und sich 
+bei dieser Temperatur weder verformt noch erweicht. BEISPIEL dazu ist Holz und Werkstoffe auf Holzbasis mit mehr als 
+2 mm Dicke. 
+Anmerkung 1 zum Begriff 1.2.38: Die Entzündungstemperatur und die Widerstandsfähigkeit von normal entflammbaren 
+Werkstoffen gegen Verformung oder Erweichung beruhen auf weitgehend anerkannten Werten, die während einer 
+Prüfdauer von mindestens 15 min bestimmt wurden. 
+422.3.2 Es müssen Maßnahmen ergriffen werden, damit das Gehäuse eines elektrischen Betriebsmittels wie 
+ein Heizgerät oder ein Widerstand die nachfolgend genannten Temperaturen nicht überschreitet: 
+– 
+90 °C unter normalen Bedingungen und 
+– 
+115 °C unter Fehlerbedingungen. 
+Wenn sich Materialien wie Staub oder Fasern auf Umhüllungen von elektrischen Betriebsmitteln in 
+feuergefährlichen Mengen ablagern und eine Brandgefahr darstellen können, müssen geeignete Maßnahmen 
+getroffen werden, um zu verhindern, dass die Umhüllungen die oben genannten Temperaturen überschreiten. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 189/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 7 
+ANMERKUNG 
+Leuchten nach ÖVE/ÖNORM EN 60598-2-24, die mit 
+gekennzeichnet sind, sind Leuchten mit 
+begrenzter Oberflächentemperatur. 
+422.3.3 Schaltgeräte für Schutz, Steuerung und Trennung müssen außerhalb von Räumen oder Orten mit 
+besonderem Brandrisiko (BE2) angeordnet werden, es sei denn, sie befinden sich in einer Umhüllung mit einer 
+für einen solchen Ort geeigneten Schutzart von mindestens IP4X oder im Falle von Staubablagerungen von 
+IP5X oder im Falle von Ablagerungen leitfähigen Staubes von IP6X, außer wenn 422.3.11 gilt. 
+422.3.4 Wenn Kabel/Leitungen und Kabel- und Leitungsanlagen in brennbarem Material eingebettet sind, 
+dürfen Kabel- und Leitungsanlagen mit folgenden Mindestanforderungen verwendet werden: 
+ 
+– 
+Kabel/Leitungen müssen mindestens den Prüfungen unter Brandbedingungen der Klasse Eca, wie in 
+ÖNORM EN 13501-6 spezifiziert, entsprechen; 
+– 
+Elektroinstallationsrohrsysteme müssen die Prüfung zum Widerstand gegen Flammenausbreitung, wie in 
+Normenreihe OVE EN 61386 spezifiziert, bestehen; 
+– 
+Elektroinstallationskanalsysteme müssen die Prüfung zum Widerstand gegen Flammenausbreitung, wie 
+in Normenreihe ÖVE/ÖNORM EN 50085 spezifiziert, bestehen; 
+– 
+Kabelwannensysteme und Kabelpritschensysteme müssen die Prüfung zum Widerstand gegen 
+Flammenausbreitung wie in Normenreihe ÖVE/ÖNORM EN 61537 spezifiziert, bestehen; 
+– 
+Stromschienensysteme müssen die Prüfung zum Widerstand gegen Flammenausbreitung, wie in 
+Normenreihe OVE EN 61534 spezifiziert, bestehen. 
+ANMERKUNG AT 
+Siehe auch 527.1. 
+422.3.5 Kabel- und Leitungsanlagen, die solche Räume und Orte durchqueren, aber für die elektrische 
+Versorgung innerhalb dieser Räume nicht notwendig sind, müssen folgende Bedingungen einhalten: 
+– 
+die Kabel- und Leitungsanlagen müssen die Anforderungen gemäß 422.3.4 erfüllen; 
+– 
+sie haben in ihrem Verlauf innerhalb solcher Räume und Orte keine Verbindungen oder Klemmen, es sei 
+denn, die Verbindungen oder Klemmen sind feuerwiderstandsfähig oder befinden sich in einer 
+feuerwiderstandsfähigen Umhüllung (z. B. „E30-Dose“ gemäß OVE-Richtlinie R 12-2); 
+– 
+sie sind durch Einrichtungen zum Schutz bei Überstrom gemäß 422.3.10 geschützt; 
+– 
+blanke Leiter dürfen nicht verwendet werden. 
+422.3.6 Bei Gebläse-Heizungsanlagen muss der Lufteinlass außerhalb von Räumen und Orten sein, in denen 
+mit brennbarem Staub gerechnet werden muss. 
+Die Temperatur der austretenden Luft darf nicht so hoch sein, dass durch sie ein Brand in der Betriebsstätte 
+verursacht wird. 
+422.3.7 Motoren, die automatisch gesteuert oder fernbedient oder nicht dauernd beaufsichtigt sind, müssen 
+gegen unangemessen hohen Temperaturanstieg durch eine temperaturabhängige Überlast-Schutzeinrichtung 
+geschützt werden, es sei denn, sie sind von sich aus temperaturbegrenzend ausgelegt. 
+422.3.8 Leuchten müssen 
+– 
+für solche Räume und Orte geeignet sein und 
+– 
+eine Umhüllung haben, die mindestens dem Schutzgrad IP4X, oder im Falle von Staubablagerungen IP5X, 
+oder im Falle von Ablagerungen leitfähigen Staubes IP6X entspricht und 
+– 
+eine begrenzte Oberflächentemperatur gemäß ÖVE/ÖNORM EN 60598-2-24 besitzen und 
+– 
+derart konstruiert sein, dass Komponenten nicht aus der Leuchte fallen können. 
+In Räumen und Orten, in denen Brandgefahr ausgelöst durch Staub oder Fasern besteht, müssen Leuchten in 
+einer Weise installiert werden, dass sich Staub und Fasern nicht in einer gefahrbringenden Menge ansammeln 
+können. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 190/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 8 
+ANMERKUNG 
+Leuchten sollten die anwendbaren Teile der Normenreihe OVE EN 60598 erfüllen. Siehe auch 
+Abschnitt 559. 
+422.3.9 Endstromkreise in solchen Räumen und Orten, die elektrische Betriebsmittel versorgen oder 
+durchqueren, müssen wie nachfolgend beschrieben geschützt werden: 
+a) 
+In TN- und TT-Systemen müssen Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungs-
+fehlerstrom IΔn ≤ 0,3 A eingesetzt werden. Wo widerstandsbehaftete Fehler einen Brand entzünden 
+können, z. B. bei Deckenheizungen mit Flächenheizelementen, muss der Bemessungsfehlerstrom der 
+Fehlerstrom-Schutzeinrichtung (RCD) IΔn ≤ 0,03 A betragen. 
+ 
+Wenn bei bestimmten Anwendungsfällen eine Fehlerstrom-Schutzeinrichtung (RCD) gemäß Teil 5-53 aus 
+technischen Gründen nicht eingesetzt werden kann, z. B. weil der Betriebsstrom des zu schützenden 
+Stromkreises größer ist als der größte Bemessungsstrom der Fehlerstrom-Schutzeinrichtung (RCD), wird 
+empfohlen, eine der nachfolgenden Maßnahmen anzuwenden: 
+ 
+– 
+Verwendung von Leistungsschaltern mit zugeordneten Fehlerstrom-Auslösern (CBR) gemäß  
+Teil 5-53, OVE EN 60947-2:2020, Anhang B, oder modulare Fehlerstrom-Schutzeinrichtungen 
+(MRCD) nach OVE EN 60947-2:2020, Anhang M, die Außenleiter und Neutralleiter vom Netz trennen. 
+ 
+– 
+Verwendung von Differenzstrom-Überwachungsgeräten (RCM) gemäß Teil 5-53. 
+ 
+ 
+ANMERKUNG 1.AT  
+Diese Anforderung ist im Allgemeinen erfüllt, wenn die Abschaltung in einer Zeitspanne 
+bis einschließlich 5 s erfolgt. In elektrischen Anlagen mit einer Bemessungsspannung AC 230/400 V werden für 
+diesen Zweck Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn > 0,3 A 
+eingesetzt. 
+ 
+– 
+Kurzschluss- und erdschlusssicheres Verlegen von Kabeln und Leitungen gemäß Teil 5-52. 
+b) 
+In IT-Systemen müssen Isolationsüberwachungsgeräte (IMD), die die gesamte elektrische Anlage 
+überwachen, oder Differenzstrom-Überwachungsgeräte (RCM) in Endstromkreisen vorgesehen werden, 
+beide mit optischer und akustischer Meldung. Alternativ dürfen auch Fehlerstrom-Schutzeinrichtungen 
+(RCD) mit einem Bemessungsfehlerstrom wie in a) festgelegt verwendet werden. Beim Auftreten des 
+zweiten Fehlers siehe für die Abschaltzeiten Teil 4-41. 
+c) 
+Ausgenommen bei kurzschluss- und erdschlusssicherer Verlegung muss ein Schutzleiter in allen 
+Stromkreisen in gemeinsamer Umhüllung mit den aktiven Leitern verlegt und in ortsfesten elektrischen 
+Betriebsmitteln der Schutzklasse II eingeführt werden. 
+ 
+ANMERKUNG 2.AT 
+Das Mitführen des Schutzleiters dient dem zusätzlichen Isolationsfehlerschutz des 
+elektrischen Betriebsmittels „Kabel bzw. Leitung“ und hat eine Überwachungsfunktion. 
+ANMERKUNG 3.AT 
+Kabel- und Leitungsanlagen von Verteilungsstromkreisen stellen in Räumen oder Orten mit einem 
+mit besonderem Brandrisiko (BE2) zusätzlich zu den in a), b) und c) aufgeführten Endstromkreisen ein Brandrisiko dar. 
+Deshalb sollten auch diese Stromkreise geschützt werden. 
+Mineralisolierte Leitungen und Schienenverteiler müssen nicht geschützt werden, da es als nicht 
+wahrscheinlich angesehen wird, dass diese – bedingt durch einen Isolationsfehler – einen Brand auslösen. 
+ANMERKUNG 
+Kabel und Leitungen mit metallener Umhüllung werden empfohlen. Die metallene Umhüllung sollte an 
+den Schutzleiter angeschlossen werden. 
+422.3.10  
+Stromkreise, die elektrische Betriebsmittel in solchen Räumen und Orten gemäß 422.3 versorgen 
+oder diese durchqueren, müssen durch Einrichtungen zum Schutz bei Überlast und zum Schutz bei 
+Kurzschluss geschützt sein, die außerhalb solcher Räume und Orte und an ihrem Speisepunkt angeordnet 
+sind. Befindet sich der Speisepunkt des Stromkreises innerhalb dieser Räume und Orte, müssen die 
+Einrichtungen zum Schutz bei Überlast am Speisepunkt dieses Stromkreises angeordnet sein. 
+422.3.11  
+In Stromkreisen, die durch SELV oder PELV geschützt werden, müssen aktive Teile 
+– 
+Umhüllungen, die mindestens der Schutzart IP2X oder IPXXB entsprechen, besitzen, oder 
+– 
+mit einer Isolierung, die einer Prüfspannung von DC 500 V über die Zeit von 1 min standhält, versehen 
+sein, 
+unabhängig von der Nennspannung des Stromkreises. Dieses gilt zusätzlich zu den Anforderungen von 
+414.4.5. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 191/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 9 
+422.3.12  
+PEN-Leiter sind in solchen Räumen und Orten gemäß 422.3 nicht zugelassen mit Ausnahme in 
+Stromkreisen, die solche Räume durchqueren. Eine Verbindung zwischen dem durchquerenden PEN-Leiter 
+und leitfähigen Teilen in den Betriebsstätten ist nicht zulässig. Sie müssen derart verlegt werden, dass das 
+Risiko eines Fehlers zwischen dem PEN-Leiter und leitfähigen Teilen in der Betriebsstätte auf ein Minimum 
+reduziert wird. 
+422.3.13  
+Stromkreise, die elektrische Betriebsmittel in solchen Räumen und Orten versorgen, müssen mit 
+einer Trenneinrichtung versehen sein, die alle aktiven Versorgungsleiter derart ausschaltet, dass kein aktiver 
+Versorgungsleiter verbunden bleibt, wenn einer oder mehrere andere unterbrochen sind. Dies kann z. B. durch 
+Verwendung 
+eines 
+mechanisch 
+verbundenen 
+Schalters 
+oder 
+eines 
+mechanisch 
+verbundenen 
+Leistungsschalters erreicht werden. 
+ANMERKUNG 
+Die Trennung einer Gruppe von Stromkreisen ist erlaubt, wenn die Betriebsbedingungen es zulassen. 
+422.4 
+Räume oder Orte hauptsächlich aus brennbaren Baustoffen 
+Merkmal CA2: brennbare Baustoffe (gemäß Tabelle 51.A). 
+422.4.1 Es ist sicherzustellen, dass elektrische Betriebsmittel brennbare Wände, Fußböden und Decken nicht 
+entzünden können. Dies kann erreicht werden durch geeignete Planung, Auswahl und Installation der 
+elektrischen Betriebsmittel. 
+Um das Eindringen fester Fremdkörper zu vermeiden, müssen in vorgefertigten Hohlwänden installierte Dosen 
+und Gehäuse einen Schutzgrad von mindestens IP3X besitzen. 
+422.4.2 Leuchten müssen einen ausreichenden Abstand von brennbaren Materialien haben. Wenn andere 
+Herstellerangaben nicht gemacht werden, müssen kleine Scheinwerfer und Projektoren von brennbaren 
+Materialien folgenden Mindestabstand haben: 
+≤ 100 W:  
+0,5 m; 
+> 100 W bis 300 W: 
+0,8 m; 
+> 300 W bis 500 W: 
+1,0 m; 
+> 500 W:  
+Größere Abstände können notwendig sein. 
+ANMERKUNG 
+Falls Herstellerangaben nicht vorhanden sind, gelten die oben genannten Abstände in alle Richtungen. 
+Leuchtmittel und andere Bestandteile/Komponenten von Leuchten müssen gegen die zu erwartenden 
+mechanischen Beanspruchungen geschützt sein. Solche Schutzeinrichtungen dürfen nicht an der Fassung 
+befestigt sein, es sei denn, sie sind ein fester Bestandteil der Leuchte. Veränderungen an Leuchten sind nicht 
+zulässig. 
+422.5 
+Brandausbreitende Gebäudestrukturen 
+Merkmal CB2: Gefährdung durch Brandausbreitung (gemäß Tabelle 51.A). 
+ANMERKUNG 1.AT 
+Merkmale für die Ausbreitung von Bränden in Gebäuden nach Teil 5-51 können sein: 
+– 
+Bauten, bei denen die Form und Ausdehnung die Ausbreitung von Bränden erleichtert (z. B. Kaminwirkung bei 
+Hochhäusern); 
+– 
+anlagentechnische Einrichtungen, z. B. Lüftungsanlagen. 
+ANMERKUNG 2.AT 
+Anforderungen an die Auswahl und Errichtung von Kabel- und Leitungsanlagen zur Begrenzung 
+von Bränden siehe auch Teil 5-52. 
+ANMERKUNG 3.AT 
+Nähere Anforderungen siehe OIB-Richtlinien. 
+422.5.1 In Bauten, deren Form und Abmessungen die Ausbreitung eines Brandes erleichtern, müssen 
+Vorkehrungen getroffen werden, um sicherzustellen, dass die elektrische Anlage nicht zur Ausbreitung eines 
+Brandes beiträgt (z. B. Kaminwirkung). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 192/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 10 
+Brandmelder dürfen vorgesehen werden, um die Wirksamkeit der Maßnahmen zum Verhindern der 
+Ausbreitung von Feuer sicherzustellen, z. B. das Schließen von Brandabschottungen/Brandabschlüssen in 
+Kanälen, baulichen Hohlräumen und Ähnlichem. Dosen und Gehäuse gemäß OVE EN 60670-21 für 
+Hohlwände können verwendet werden.  
+422.6 
+Räume oder Orte mit Gefährdungen für unersetzbare Güter 
+Die Anforderungen gemäß 422.1.2 müssen erfüllt werden. 
+ANMERKUNG 1  
+Diese Räume oder Orte schließen Räume und Orte mit Gütern von hohem Wert ein. 
+Beispiele können sein: Nationaldenkmäler, Museen und andere öffentliche Gebäude, wie z. B. Gebäude wie Bahnhöfe und 
+Flughäfen, Gebäude oder Einrichtungen wie Laboratorien, Rechenzentren und bestimmte industrielle Einrichtungen sowie 
+Einrichtungen zum Lagern. 
+ANMERKUNG 2  
+Die folgenden Maßnahmen dürfen angewendet werden. Verlegen von: 
+– 
+mineralisolierten Kabeln/Leitungen nach ÖVE/ÖNORM EN 60702-1; 
+– 
+Kabeln/Leitungen mit verbessertem Verhalten im Brandfall und Übereinstimmung mit ÖVE/ÖNORM EN 60702-1, 
+ÖVE/ÖNORM EN 60702-2 und OVE EN IEC 60332-1-2 oder Ähnlichem; 
+– 
+Kabeln/Leitungen in nichtbrennbaren festen Wänden, Decken und Fußböden; 
+– 
+Kabeln/Leitungen in Bereichen mit konstruktionsbedingten Abschnitten, die eine Feuerwiderstandsdauer von 30 min 
+oder 90 min besitzen, letztere in Betriebsstätten mit Treppen, die im Notfall benutzt werden. 
+Wenn diese Maßnahmen nicht anwendbar sind, dürfen als erweiterter Brandschutz reaktive Brandschutzmaßnahmen 
+angewendet werden. 
+423 Schutz gegen Verbrennungen 
+Im Handbereich zugängliche Teile elektrischer Betriebsmittel dürfen keine Temperatur erreichen, die bei 
+Personen Verbrennungen verursachen können. Sie müssen die angegebenen Temperaturgrenzwerte gemäß 
+Tabelle 42.1 einhalten. Alle Teile der Anlage, die im normalen Betrieb, wenn auch nur für kurze Zeit, die in 
+Tabelle 42.1 aufgeführten Temperaturen überschreiten können, müssen gegen zufälliges Berühren gesichert 
+sein. Die Werte von Tabelle 42.1 sind jedoch nicht auf elektrische Betriebsmittel anwendbar, die den für diese 
+Betriebsmittel geltenden Normen entsprechen. 
+ANMERKUNG 
+Bei Berührung von heißen Oberflächen durch Kinder können niedrigere Temperaturen erforderlich 
+werden. 
+Tabelle 42.1 – Temperaturgrenzen für berührbare Teile von Oberflächen elektrischer  
+Betriebsmittel im Handbereich bei bestimmungsgemäßem Betrieb 
+Zugängliche Teile 
+Material der zugänglichen  
+Oberflächen 
+Maximale Temperatur 
+ºC 
+Teile, die beim Betrieb in der Hand 
+gehalten werden 
+metallen 
+nicht metallen 
+55 
+65 
+Teile, die berührt werden müssen, aber 
+nicht in der Hand gehalten werden 
+metallen 
+nicht metallen 
+70 
+80 
+Teile, die bei normalem Betrieb nicht 
+berührt werden müssen 
+metallen 
+nicht metallen 
+80 
+90 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 193/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 11 
+424 Schutz gegen Überhitzung 
+424.1 
+Gebläse-Heizsysteme 
+Gebläse-Heizsysteme müssen so errichtet werden, dass ihre Heizelemente, außer bei elektrischen 
+Speicherheizgeräten, nicht in Betrieb gesetzt werden können, bis der vorgesehene Luftdurchsatz erreicht ist. 
+Die Heizelemente müssen außer Betrieb gesetzt werden, wenn der Luftdurchsatz den vorgesehenen Wert 
+unterschreitet. Zusätzlich sind zwei voneinander unabhängige temperaturbegrenzende Einrichtungen 
+vorzusehen, mit denen die Überschreitung der zulässigen Temperatur in Luftkanälen verhindert wird. 
+Tragende Teile, Rahmen und Umhüllungen von elektrischen Heizelementen müssen aus nichtbrennbaren 
+Werk- oder Baustoffen bestehen. 
+424.2 
+Anwendung von Heißwasser- oder Dampferzeugern 
+Alle Geräte zum Erzeugen von heißem Wasser oder Dampf müssen unter allen Betriebsbedingungen durch 
+ihre Auslegung oder bei der Errichtung gegen Überhitzung geschützt werden. Wenn die Geräte nicht als 
+Ganzes den geltenden Normen entsprechen, ist der Schutz durch einen geeigneten, nicht selbsttätig wieder 
+einschaltenden Temperaturbegrenzer, der unabhängig von der Temperaturregelung arbeitet, sicherzustellen. 
+Wenn ein Gerät keine freie Wasseraustrittsöffnung hat, muss es mit einer Einrichtung zur Begrenzung des 
+Wasserdrucks im Geräteinneren ausgestattet sein. 
+424.3 
+Anwendung von Raumheizgeräten 
+Der Rahmen und die Gehäuse von Raumheizgeräten müssen aus nichtbrennbaren Materialien bestehen. 
+ANMERKUNG 
+In Betriebsstätten mit Brandrisiko dürfen Raumheizgeräte nicht betrieben werden, wenn die Luft dieser 
+Bereiche über diese Geräte geführt wird. 
+Die Seitenwände von Heizstrahlern, die nicht von der Wärmeausstrahlung berührt sind, müssen einen ausreichenden 
+Abstand von entflammbaren Teilen besitzen. Bei Reduzierung des Abstands durch eine nichtentflammbare Abtrennung 
+sollte diese Abtrennung einen Mindestabstand von 1 cm zum Gehäuse des Heizstrahlers und zu entflammbaren Teilen 
+haben. 
+Wenn nicht anders vom Hersteller angegeben, sollten Heizstrahler so montiert sein, dass in Richtung der Ausstrahlung ein 
+Sicherheitsabstand von mindestens 2 m von entflammbaren Teilen sichergestellt ist. 
+ANMERKUNG AT 
+Siehe auch OVE EN 60335-2-30. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 194/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-42 – Seite 12 
+Anhang 42.A 
+(informativ) 
+ 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) 
+Brände, die durch elektrische Anlagen verursacht werden, haben ihren Ursprung oft in Fehlerlichtbögen. 
+Parallele und serielle Lichtbögen entstehen durch fehlerhafte Isolierung aktiver Leiter oder durch lose 
+elektrische Verbindungen. 
+Bei einem seriellen Lichtbogen ist kein Ableitstrom zur Erde vorhanden, daher können Fehlerstrom-
+Schutzeinrichtungen (RCD) diese Fehler nicht erkennen. Zudem reduziert die Impedanz des seriellen 
+Lichtbogens den Laststrom, wodurch der Strom unter dem Auslösegrenzwert von Leitungsschutzschaltern, 
+Leistungsschaltern oder Sicherungen bleibt. 
+Im Fall eines parallelen Lichtbogens zwischen zwei Außenleitern oder Außenleiter und Neutralleiter ist der 
+Strom durch die Impedanz der Installation und durch den Lichtbogen selbst begrenzt. Deshalb kann der 
+resultierende Strom unter dem Auslösegrenzwert von Leitungsschutzschaltern, Leistungsschaltern oder 
+Sicherungen liegen. 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) erkennen die beschriebenen Fehlerzustände (serielle und 
+parallele Lichtbögen). 
+In Wechselstromkreisen (AC) reduziert der Einsatz von Fehlerlichtbogen-Schutzeinrichtungen (AFDD) nach 
+ÖVE/ÖNORM EN 62606 das Risiko für Personen, Nutztiere und Eigentum durch Brände, die durch elektrische 
+Installationen und Geräte verursacht werden. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 195/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 1 
+Teil 4-43 Schutz bei Überstrom 
+Inhalt Teil 4-43 
+430.1 
+Anwendungsbereich 
+430.2 
+Normative Verweisungen 
+430.3 
+Allgemeine Anforderungen 
+431 
+Anforderungen entsprechend der Art der Stromkreise 
+431.1 
+Schutz der Außenleiter 
+431.2 
+Schutz des Neutralleiters 
+431.3 
+Ausschalten und Wiedereinschalten des Neutralleiters in Drehstromsystemen 
+432 
+Art der Schutzeinrichtungen 
+432.1 
+Einrichtungen die den Schutz sowohl bei Überlast als auch bei Kurzschluss sicherstellen 
+432.2 
+Einrichtungen die nur den Schutz bei Überlast sicherstellen 
+432.3 
+Einrichtungen die nur den Schutz bei Kurzschluss sicherstellen 
+432.4 
+Kenngrößen von Schutzeinrichtungen 
+433 
+Schutz bei Überlastströmen 
+433.1 
+Koordination von Leitern und Einrichtungen zum Schutz bei Überlast 
+433.2 
+Anordnung von Einrichtungen zum Schutz bei Überlast 
+433.3 
+Verzicht auf Einrichtungen zum Schutz bei Überlast 
+433.4 
+Schutz bei Überlast von parallel geschalteten Leitern 
+434 
+Schutz bei Kurzschlussströmen 
+434.1 
+Bestimmung von unbeeinflussten Kurzschlussströmen 
+434.2 
+Anordnung der Einrichtungen zum Schutz bei Kurzschluss 
+434.3 
+Verzicht auf Einrichtungen zum Schutz bei Kurzschluss 
+434.4 
+Schutz bei Kurzschluss von parallel geschalteten Leitern 
+434.5 
+Kenngrößen von Schutzeinrichtungen zum Schutz bei Kurzschluss 
+435 
+Koordination des Schutzes bei Überlast und Kurzschluss 
+435.1 
+Schutz durch eine gemeinsame Einrichtung 
+435.2 
+Schutz durch getrennte Schutzeinrichtungen 
+436 
+Überstrombegrenzung durch die Art der Stromquelle 
+Anhang 43.A (informativ)  Schutz von parallel geschalteten Leitern bei Überstrom 
+Anhang 43.B (informativ)  Bedingungen F 43.1 und F 43.2 von Unterabschnitt 433.1 
+Anhang 43.C (informativ)  Anordnung von oder Verzicht auf Einrichtungen  zum Schutz bei Überlast 
+Anhang 43.D (informativ)  Anordnung von oder Verzicht auf Einrichtungen  zum Schutz bei Kurzschluss 
+Nationale Ergänzung 43.NE (informativ)  Ergänzungen zu Abschnitt 433 gemäß OVE EN IEC 61439-1 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 196/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 2 
+430.1 
+Anwendungsbereich 
+Dieser Teil enthält Anforderungen zum Schutz von aktiven Leitern bezüglich der Auswirkungen bei 
+Überströmen. 
+Dieser Teil beschreibt, wie aktive Leiter in Fällen von Überlast (Abschnitt 433) und Kurzschluss (Abschnitt 434) 
+durch eine oder mehrere Einrichtungen für die automatische Abschaltung der Stromversorgung zu schützen 
+sind. 
+Ausgenommen sind Fälle, bei denen der Überstrom gemäß Abschnitt 436 begrenzt ist, oder wo die 
+Bedingungen, die in 433.3 (Verzicht auf Einrichtungen zum Schutz bei Überlast) oder 434.3 (Verzicht auf 
+Einrichtungen zum Schutz bei Kurzschluss) beschrieben sind, eingehalten werden. 
+Die Koordination des Schutzes bei Überlast und bei Kurzschluss wird ebenfalls behandelt (siehe 
+Abschnitt 435). 
+ANMERKUNG 1  
+Aktive Leiter, die in Übereinstimmung mit Abschnitt 433 bei Überlast geschützt sind, werden auch 
+bei Fehlern, die Überströme erzeugen, deren Größe ähnlich ist wie bei Überlastströmen, als geschützt betrachtet. 
+ANMERKUNG 2  
+Die Anforderungen dieses Teils berücksichtigen nicht die äußeren Einflüsse. 
+ANMERKUNG 3  
+Durch den Schutz von Leitern nach diesem Teil ist nicht notwendigerweise das an diese Leiter 
+angeschlossene elektrische Betriebsmittel geschützt. 
+ANMERKUNG 4  
+Flexible Kabel und Leitungen, die elektrischen Betriebsmittel über Stecker und Steckdosen mit 
+der ortsfesten elektrischen Anlage verbinden, gehören nicht zum Anwendungsbereich dieses Abschnitts. Aus diesem 
+Grund sind sie nicht notwendigerweise bei Überstrom geschützt. 
+ANMERKUNG 5  
+Ausschalten bedeutet in diesem Teil nicht Trennen. 
+430.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+430.3 
+Allgemeine Anforderungen 
+Schutzeinrichtungen müssen vorgesehen werden, um jegliche Überströme in den Leitern des Stromkreises zu 
+unterbrechen, bevor eine Gefahr durch schädliche thermische oder mechanische Auswirkungen auf die 
+Isolierung, Verbindungen, Anschlüsse oder Umgebung der Leiter hervorgerufen werden kann. 
+431 Anforderungen entsprechend der Art der Stromkreise 
+431.1 
+Schutz der Außenleiter 
+431.1.1 Eine Erfassung des Überstroms muss für alle Außenleiter vorgesehen werden. Diese Erfassung 
+muss die Ausschaltung des Leiters, in dem der Überstrom auftritt, bewirken, nicht jedoch unbedingt die 
+Ausschaltung der anderen aktiven Leiter. 
+Falls die Ausschaltung eines einzelnen Außenleiters eine Gefahr hervorruft, z. B. bei einem Dreiphasen-Motor, 
+müssen entsprechende Vorkehrungen getroffen werden. 
+431.2 
+Schutz des Neutralleiters 
+431.2.1 
+TT- oder TN-Systeme 
+Ist der Querschnitt des Neutralleiters mindestens gleichwertig zum Querschnitt der Außenleiter, und ist zu 
+erwarten, dass der Strom im Neutralleiter nicht den Wert in den Außenleitern übersteigt, ist weder eine 
+Überstromerfassung im Neutralleiter noch eine Ausschalteinrichtung für diesen Leiter gefordert. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 197/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 3 
+Ist der Querschnitt des Neutralleiters geringer als der Querschnitt der Außenleiter, ist gefordert, eine dem 
+Neutralleiterquerschnitt entsprechende Überstromerfassung im Neutralleiter vorzusehen. Diese Erfassung 
+muss die Ausschaltung der Außenleiter, jedoch nicht unbedingt die des Neutralleiters bewirken. 
+In beiden Fällen muss der Neutralleiter bei Kurzschlussströmen geschützt sein. 
+ANMERKUNG 
+Dieser Schutz kann erreicht werden durch die Überstrom-Schutzeinrichtungen in den Außenleitern. In 
+diesem Falle ist nicht gefordert, im Neutralleiter ein Überstromschutz oder eine Abschalteinrichtung für diesen Leiter 
+vorzusehen. 
+Wenn zu erwarten ist, dass der Strom im Neutralleiter den Wert in den Außenleitern übersteigt, ist 431.2.3 zu 
+beachten. 
+Mit Ausnahme der Ausschaltung gelten die Anforderungen für Neutralleiter auch für PEN-Leiter. 
+431.2.2 
+IT-Systeme 
+Wenn der Neutralleiter mitgeführt wird, ist gefordert, im Neutralleiter jedes Stromkreises eine 
+Überstromerfassung vorzusehen. Die Überstromerfassung muss die Ausschaltung aller aktiven Leiter des 
+entsprechenden Stromkreises einschließlich des Neutralleiters bewirken. Diese Maßnahme ist nicht gefordert, 
+wenn 
+– 
+der betrachtete Neutralleiter durch eine Schutzeinrichtung auf der Versorgungsseite, z. B. an der 
+Einspeisung der Anlage, wirksam bei Überstrom geschützt ist, oder wenn 
+– 
+der betrachtete Stromkreis durch eine Fehlerstrom-Schutzeinrichtung (RCD) geschützt ist, deren 
+Bemessungsfehlerstrom höchstens das 0,2-Fache der Strombelastbarkeit des betreffenden Neutralleiters 
+beträgt. Diese Einrichtung muss alle aktiven Leiter des betreffenden Stromkreises einschließlich des 
+Neutralleiters abschalten. Die Einrichtung muss ein ausreichendes Ausschaltvermögen für alle Pole 
+haben. 
+ANMERKUNG 
+In IT-Systemen wird dringend empfohlen, den Neutralleiter nicht mitzuführen. 
+431.2.3 
+Oberschwingungsströme 
+Eine Überlasterfassung muss für den Neutralleiter in einem Drehstromkreis vorgesehen werden, wenn der 
+Anteil der Oberschwingungen des Außenleiterstroms so groß ist, dass zu erwarten ist, dass der Strom im 
+Neutralleiter die Dauerstrombelastbarkeit dieses Leiters übersteigt. Diese Überlasterfassung muss mit der Art 
+des Stroms durch den Neutralleiter übereinstimmen und die Ausschaltung der Außenleiter, aber nicht 
+unbedingt des Neutralleiters, bewirken. Wenn der Neutralleiter abgeschaltet wird, gelten die Anforderungen 
+von 431.3. 
+ANMERKUNG 
+Weitere Anforderungen bezüglich des Schutzes von Neutralleitern sind in Teil 5-52 enthalten. 
+431.3 
+Ausschalten und Wiedereinschalten des Neutralleiters in Drehstromsystemen 
+Wenn die Ausschaltung des Neutralleiters gefordert ist, darf er weder vor den Außenleitern ausgeschaltet noch 
+nach den Außenleitern eingeschaltet werden. 
+432 Art der Schutzeinrichtungen 
+Schutzeinrichtungen müssen einer geeigneten Bauart gemäß 432.1 bis 432.3 entsprechen. 
+432.1 
+Einrichtungen die den Schutz sowohl bei Überlast als auch bei Kurzschluss sicherstellen 
+Unter Berücksichtigung der Ausnahme gemäß 434.5.1 muss eine Einrichtung, die sowohl zum Schutz bei 
+Überlast, als auch bei Kurzschluss vorgesehen ist, jeden Überstrom bis einschließlich des unbeeinflussten 
+Kurzschlussstroms an der Einbaustelle der Schutzeinrichtung unterbrechen und bei Leistungs-
+schaltern/Leitungsschutzschaltern auch einschalten können. Sie muss die Anforderungen gemäß 433.1 und 
+434.5 erfüllen. Solche Einrichtungen dürfen sein: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 198/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 4 
+– 
+Leistungsschalter/Leitungsschutzschalter mit integriertem Überlast- und Kurzschlussauslöser; 
+– 
+Leistungsschalter in Zusammenwirken mit Sicherungen; 
+– 
+Sicherungen mit Sicherungseinsätzen der Charakteristik gG. 
+ANMERKUNG 1  
+Die Sicherung beinhaltet alle Teile einer kompletten Schutzeinrichtung. 
+ANMERKUNG 2  
+Dieser Unterabschnitt schließt die Verwendung anderer Schutzeinrichtungen nicht aus, wenn die 
+Anforderungen von 433.1 und 434.5 erfüllt sind. 
+432.2 
+Einrichtungen die nur den Schutz bei Überlast sicherstellen 
+Diese Schutzeinrichtungen müssen die Anforderungen gemäß Abschnitt 433 erfüllen und dürfen ein 
+Ausschaltvermögen haben, das unter den Werten des zu erwartenden Kurzschlussstroms an der Einbaustelle 
+dieser Einrichtungen liegt. 
+ANMERKUNG 1  
+Solche Einrichtungen sind im Allgemeinen stromabhängig verzögerte Schutzeinrichtungen. 
+ANMERKUNG 2  
+Sicherungen vom Typ aM Schützen nicht bei Überlast. 
+432.3 
+Einrichtungen die nur den Schutz bei Kurzschluss sicherstellen 
+Eine Einrichtung, die nur den Schutz bei Kurzschlussströmen sicherstellt, muss dort errichtet werden, wo der 
+Schutz bei Überlast durch andere Maßnahmen erreicht wird oder wo gemäß Abschnitt 433 auf den Schutz bei 
+Überlast verzichtet werden darf. Diese Einrichtung muss in der Lage sein, den Kurzschlussstrom bis 
+einschließlich des zu erwartenden Kurzschlussstroms auszuschalten. Ein Leistungsschalter muss diese 
+Ströme auch einschalten können. Diese Einrichtung muss die Anforderungen gemäß Abschnitt 434 erfüllen. 
+Geeignete Einrichtungen können sein: 
+– 
+Leistungsschalter nur mit Kurzschlussauslösung; 
+– 
+Sicherungen mit gM und aM Sicherungseinsätzen. 
+432.4 
+Kenngrößen von Schutzeinrichtungen 
+Das Auslöseverhalten von Überstrom-Schutzeinrichtungen muss übereinstimmen mit den Anforderungen von 
+z. B. den Normen der OVE EN 60898 Reihe, OVE EN 60947-2, OVE EN IEC 60947-6-2, OVE EN 61009 
+Reihe, ÖVE/ÖNORM E 8669-2, ÖVE/ÖNORM E 8669-3, OVE EN 60269-4 oder OVE EN IEC 60947-3. 
+ANMERKUNG 
+Die Verwendung anderer Einrichtungen ist nicht ausgeschlossen, vorausgesetzt, dass ihre Zeit-/Strom-
+Kennlinien einen zu diesem Abschnitt gleichwertigen Schutz bieten. 
+433 Schutz bei Überlastströmen 
+433.1 
+Koordination von Leitern und Einrichtungen zum Schutz bei Überlast 
+Das Auslöseverhalten einer Einrichtung, die ein Kabel oder eine Leitung bei Überlast schützt, muss folgende 
+zwei Bedingungen erfüllen: 
+ 
+𝐼B  ≤𝐼n  ≤ 𝐼Z 
+(F 43.1) 
+ 
+𝐼2  ≤1,45 ∙ 𝐼Z 
+(F 43.2) 
+Dabei ist 
+IB 
+der Betriebsstrom für diesen Stromkreis, in Ampere (A); 
+IZ 
+die zulässige Dauerstrombelastbarkeit des Kabels/der Leitung (siehe Abschnitt 523), in Ampere (A); 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 199/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 5 
+In 
+der Bemessungsstrom der Schutzeinrichtung, in Ampere (A); 
+ 
+ANMERKUNG 1 
+Bei einstellbaren Schutzeinrichtungen ist der Bemessungsstrom In der eingestellte Strom. 
+I2 
+der Strom, der eine wirksame Ausschaltung in der für die Schutzeinrichtung festgelegten Zeit sicherstellt, 
+in Ampere (A). 
+Der Strom I2, der eine wirksame Ausschaltung sicherstellt, muss entweder vom Hersteller angegeben werden 
+oder in den Produktnormen festgelegt sein. 
+Der Schutz in Übereinstimmung mit diesem Abschnitt kann den Schutz in bestimmten Fällen nicht sicherstellen, 
+z. B. wenn lang andauernde Überströme kleiner als I2 auftreten. In solchen Fällen sollte die Auswahl eines 
+Kabels/einer Leitung mit größerem Querschnitt geprüft werden. 
+ANMERKUNG 2  
+IB ist der Betriebsstrom durch die Außenleiter oder im Falle der dritten Oberschwingung der Strom 
+durch den Neutralleiter, wenn dieser größer ist als der Außenleiterstrom. 
+ANMERKUNG 1.AT 
+Der Betriebsstrom eines Stromkreises IB entspricht dem thermisch äquivalenten Effektivwert des 
+Stroms eines Stromkreises. Dieser Wert ist der Ausgangswert für die thermische Bemessung von Kabeln und Leitungen 
+hinsichtlich Überlastschutz. 
+ANMERKUNG 3  
+Der Strom, der in der festgelegten Zeit das wirksame Ansprechen der Schutzeinrichtung 
+sicherstellt, kann entsprechend der Produktnorm auch als It oder If bezeichnet sein. It und If sind ein Vielfaches von In; die 
+richtige Verwendung von Werten und Indizes sollte beachtet werden. 
+ANMERKUNG 4  
+Siehe Anhang 43.B für die Darstellung der Bedingungen (F 43.1) und (F 43.2) von 433.1. 
+ANMERKUNG 5  
+Der Betriebsstrom IB kann nach Anwendung der Gleichzeitigkeitsfaktoren (siehe Abschnitt 311) 
+als tatsächlicher Strom Ia betrachtet werden. 
+ANMERKUNG 2.AT 
+Weitere Informationen dazu siehe Nationale Ergänzung 43.NE. 
+433.2 
+Anordnung von Einrichtungen zum Schutz bei Überlast 
+433.2.1 Eine Einrichtung zum Schutz bei Überlast muss an der Stelle angeordnet werden, an der die 
+Strombelastbarkeit reduziert wird, wie z. B. durch eine Änderung des Leiterquerschnitts, der Bauart, der 
+Verlegeart oder Anordnung der Kabel oder Leitungen. Ausgenommen sind die in 433.2.2 und 433.3 
+aufgeführten Fälle. 
+433.2.2 Die Einrichtung zum Schutz der Leiter bei Überlast darf im Zuge des Leiters angeordnet werden, 
+wenn der Abschnitt zwischen der Änderung (wie Leiterquerschnitt, Bauart, Verlegeart oder Anordnung) und 
+der Stelle, an der die Schutzeinrichtung angeordnet ist, weder Abzweige noch Steckvorrichtungen enthält und 
+mindestens eine der beiden folgenden Bedingungen erfüllt wird: 
+a) 
+das Kabel oder die Leitung ist entsprechend den Anforderungen von Abschnitt 434 bei Kurzschluss-
+strömen geschützt; 
+b) 
+die Länge beträgt nicht mehr als 3 m, der Leitungsabschnitt ist so ausgeführt, dass die Gefahr eines 
+Kurzschlusses auf ein Minimum begrenzt wird, und die Kabel/Leitungen sind derart errichtet, dass das 
+Brandrisiko oder die Gefahr für Personen auf ein Minimum begrenzt wird (siehe auch 434.2.1). 
+433.3 
+Verzicht auf Einrichtungen zum Schutz bei Überlast 
+Die verschiedenen Fälle dieses Abschnitts dürfen nicht angewendet werden für Anlagen in brand- und 
+explosionsgefährdeten Räumen und Orten, oder wenn in den Anforderungen für besondere Anlagen und 
+Räume und Orte abweichende Bedingungen festgelegt sind. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 200/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 6 
+433.3.1 
+Allgemeines 
+Einrichtungen zum Schutz bei Überlast müssen nicht vorgesehen werden: 
+a) 
+für einen Leiter auf der Lastseite hinter einer Änderung des Leiterquerschnitts, der Bauart der Leitungen 
+oder des Kabels oder der Verlegeart, wenn der Leiter wirksam durch eine Schutzeinrichtung, angeordnet 
+an der Versorgungsseite, bei Überlast geschützt ist; 
+b) 
+für einen Leiter, der üblicherweise Überlastströme nicht führt, vorausgesetzt dieser Leiter ist entsprechend 
+den Anforderungen von Abschnitt 434 bei Kurzschluss geschützt und weist weder Abzweige noch 
+Steckvorrichtungen auf; 
+c) 
+an der Einspeisung einer Anlage, wenn der Netzbetreiber eine Überlast-Schutzeinrichtung vorsieht und 
+zustimmt, dass sie den Schutz des Teils der Anlage zwischen der Einspeisung und dem Haupt-
+verteilungspunkt der Anlage, wo ein weiterer Schutz bei Überlast vorgesehen ist, sicherstellt; 
+d) 
+für Anlagen in Fernmelde-, Steuer-, Signalanlagen u. dgl.; 
+e) 
+für Verteilungsstromkreise bestehend aus Kabeln in Erde oder Freileitungen, in denen die Überlastung der 
+Stromkreise keine Gefahr hervorruft. 
+433.3.2 
+Anordnung von oder Verzicht auf Einrichtungen zum Schutz bei Überlast in IT-Systemen 
+433.3.2.1 
+Die Vorkehrungen in 433.2.2 und 433.3.1 für eine alternative Anordnung von oder den Verzicht 
+auf Einrichtungen zum Schutz bei Überlast sind in IT-Systemen nicht anwendbar, es sei denn, jeder nicht bei 
+Überlast geschützte Stromkreis ist durch eine der folgenden Maßnahmen geschützt: 
+a) 
+das Anwenden von Schutzmaßnahmen wie in Abschnitt 412 beschrieben; 
+b) 
+nur für dauernd überwachte Anlagen: die Verwendung eines Isolationsüberwachungsgeräts, die entweder 
+ 
+– 
+eine Ausschaltung des Stromkreises bewirkt, wenn der erste Fehler auftritt oder 
+ 
+– 
+ein Signal beim Auftreten eines Fehlers erzeugt. Der Fehler muss entsprechend den betrieblichen 
+Anforderungen und dem Risiko eines zweiten Fehlers beseitigt werden. 
+ANMERKUNG 
+Es wird empfohlen, eine Einrichtung zur Isolationsfehlersuche nach ÖVE/ÖNORM EN 61557-9 zu 
+errichten. Durch die Anwendung eines solchen Systems ist es möglich, Isolationsfehler ohne Unterbrechung der 
+Stromversorgung zu erkennen und zu lokalisieren. 
+433.3.2.2 
+In IT-Systemen ohne Neutralleiter darf der Schutz bei Überlast in einem der Außenleiter entfallen, 
+wenn eine Fehlerstrom-Schutzeinrichtung (RCD) in jedem Stromkreis errichtet ist. 
+433.3.3 
+Fälle, in denen der Verzicht auf Einrichtungen zum Schutz bei Überlast aus Sicherheits-
+gründen in Betracht gezogen werden muss 
+Der Verzicht auf Einrichtungen zum Schutz bei Überlast ist für Stromkreise zulässig, die elektrische 
+Verbrauchsmittel versorgen, bei denen eine unvorhergesehene Unterbrechung des Stromkreises eine Gefahr 
+oder einen Schaden verursachen kann. 
+Beispiele für solche Fälle sind: 
+– 
+Erregerstromkreise von drehenden Maschinen; 
+– 
+Speisestromkreise von Hubmagneten; 
+– 
+Sekundärstromkreise von Stromwandlern; 
+– 
+Speisestromkreise von Feuerlöscheinrichtungen; 
+– 
+Stromkreise zur Versorgung von Sicherheitseinrichtungen (Gefahrenmelde- und Alarmanlagen usw.). 
+ANMERKUNG 
+In diesen Fällen sollte eine Überlast-Meldeeinrichtung vorgesehen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

@@ -1,0 +1,170 @@
+
+
+===== PAGE 1/5 =====
+ 
+ 
+ 
+OVE-Fachinformation E07 
+ 
+Ausgabe: 2021-01-01 
+ 
+ 
+ 
+ 
+Sicherheitsbeleuchtung 
+Funktionserhalt für Leitungsanlagen der Sicherheitsbeleuchtung 
+ 
+Ersatz für 
+– 
+Zuständig 
+OVE/TSK E04 Sonderanlagen 
+ICS 
+13.260; 29.020 
+ 
+ 
+Fachinformation vom April 2006 
+ 
+Zufolge der ÖVE/ÖNORM E 8002-1:2002, Abschnitt 5.4 (1) müssen elektrische Leitungsanlagen von 
+Sicherheitsbeleuchtungen über einen Funktionserhalt von mindestens 30 Minuten verfügen. Ausgenommen 
+davon sind jedoch jene Teile der Endstromkreise, deren Ausfall zu keiner Beeinträchtigung anderer (ÖVE- 
+EN 2: nachgelagerter) Bereiche führt. 
+Die praktische Anwendung dieser Forderung lässt jedoch einen relativ großen Interpretationsspielraum zu. So 
+stellt sich grundsätzlich die Frage, was unter einer Beeinträchtigung der Sicherheitsbeleuchtung im Brandfall 
+zu verstehen ist und ob andere bzw. nachgelagerte Bereiche immer gleichbedeutend mit Brandabschnitten 
+sind. 
+Die gegenständliche Fachinterpretation dient zur Klärung dieser Fragen und zur Realisierung von sicherheits-
+technisch, aber auch wirtschaftlich vertretbaren Lösungen. 
+Dazu werden, ausgehend vom Schutzziel des Funktionserhaltes bei Sicherheitsbeleuchtungsanlagen, anhand 
+mehrerer Beispiele mögliche Ausführungsvarianten aufgezeigt, wobei für Brandabschnitte über 1600 m² weiter 
+gehende Überlegungen anzustellen sind. 
+1. 
+Schutzziele für den Funktionserhalt von Leitungsanlagen der Sicherheits-
+beleuchtung 
+Bei einem lokalen Brand darf es zu keiner Beeinträchtigung der Funktion der Sicherheitsbeleuchtung in 
+Rettungswegen (Fluchtwegen) anderer Brandabschnitte kommen. 
+Auf den Funktionserhalt der Sicherheitsbeleuchtung in Unterbrandabschnitten (im Sinne der TRVB B 108, 
+ausgenommen Fluchtstiegenhäuser) des betrachteten Brandabschnittes kann verzichtet werden, wenn in 
+diesen Bereichen je Unterbrandabschnitt nicht mehr als zwei Sicherheitsleuchten (mit oder ohne Piktogramm) 
+vorhanden sind und keine Sicherheitsleuchten der Rettungswege unzulässig beeinträchtigt werden. Dies ist 
+dann erfüllt, wenn ca. 50 % der Sicherheitsbeleuchtung in den Rettungswegen (z. B. durch eine alternierende 
+Stromkreisaufteilung der Sicherheitsleuchten) funktionsfähig bleibt. 
+2. 
+Beispiele 
+2.1. 
+Brandabschnitte (bis zu 1600 m²) 
+Für den Fall, dass eine bauliche Anlage aus mehreren großen Brandabschnitten besteht, müssen 
+Leitungsanlagen 
+der 
+Sicherheitsbeleuchtung, 
+die 
+Brandabschnitte 
+queren, 
+jedenfalls 
+über 
+einen 
+Funktionserhalt von 30 Minuten verfügen. Innerhalb eines Brandabschnittes kann für die entsprechenden Teile 
+der Endstromkreise auf den Funktionserhalt verzichtet werden. 
+
+
+===== PAGE 2/5 =====
+OVE-Fachinformation E07:2021-01-01 
+Seite 2 von 5 
+Zur Gewährleistung, dass es bei einem lokalen Brand zu keiner unzulässigen Beeinträchtigung der 
+Sicherheitsbeleuchtung in anderen Brandabschnitten kommt, gibt es neben einer entsprechenden 
+alternierenden Stromkreisaufteilung auch die Möglichkeit E 30 Dosen mit Abzweigsicherungen zusätzlich zu 
+verwenden.  
+Im Bild 1 ist eine Ausführungsvariante prinzipiell dargestellt. 
+ 
+Bild 1 – Ausführungsvariante für die Verwendung von E 30-Dosen mit Abzweigsicherungen 
+In diesem und den weiteren Bildern werden folgende Symbole verwendet: 
+ 
+Bei der Verwendung von E 30-Dosen mit Abzweigsicherungen sind noch folgende Punkte zu beachten: 
+■ 
+In Der Endstromkreis beginnt im Haupt- bzw. Unterverteiler und nicht in den E 30-Dosen. 
+■ 
+Die Abzweigsicherungen in den E 30-Dosen dienen nicht dem Leitungsschutz, sondern lediglich dem 
+Kurzschlussschutz bei einem Brandfall. Sie müssen daher zeitselektiv zur Stromkreissicherung des 
+Endstromkreises im Haupt- bzw. Unterverteiler sein. 
+■ 
+Zur raschen Auffindung der E 30-Dosen mit integrierten Abzweigsicherungen sind sowohl der Einbauort 
+(bei Montage z. B. im Zwischendeckenbereich) als auch die Dosen dauerhaft und sichtbar zu 
+
+
+===== PAGE 3/5 =====
+OVE-Fachinformation E07:2021-01-01 
+ 
+ 
+Seite 3 von 5 
+kennzeichnen. In der Dokumentation sind diese Dosen einzutragen. Die leichte Zugänglichkeit ist zu 
+gewährleisten. 
+■ 
+Die Abzweigsicherungen in den E 30-Dosen sind entweder einpolig in der Phasenleitung im AC-Betrieb 
+(bzw. + im DC-Betrieb) oder zweipolig auszuführen. 
+In diesem Zusammenhang wurde vom zuständigen Fachunterausschuss ÖVE-FUA-E04 festgehalten, dass 
+unter einem Schalter oder Schaltelement gemäß ÖVE/ÖNORM E 8002-1:2002, Abschnitt 7.7.14 nur manuell 
+schaltbare Einrichtungen zu verstehen sind. Überstromschutz- oder Kurzschlussschutzeinrichtungen (z. B. 
+einmal auslösende Sicherungen) sind nicht als Schalteinrichtungen im Sinne der Bestimmung des Abschnittes 
+7.7.14 dieser Norm anzusehen. 
+2.2 
+Unterbrandabschnitte (im Sinne der TRVB B 108) 
+Für den Fall, dass ein Brandabschnitt aus mehreren Unterbrandabschnitten besteht, sind in den Bildern 2 bis 4 
+mögliche Ausführungsvarianten dargestellt. 
+ 
+Bild 2 – Grundriss mit mehreren Unterbrandabschnitten – Ausführungsvariante 1 
+ 
+
+
+===== PAGE 4/5 =====
+OVE-Fachinformation E07:2021-01-01 
+Seite 4 von 5 
+Bild 3 – Grundriss mit mehreren Unterbrandabschnitten – Ausführungsvariante 2 
+ 
+Bild 4 – Grundriss mit mehreren Unterbrandabschnitten und baulichen Trennungen 
+2.3 
+Bauliche Vorkehrungen 
+Für ein Gebäude, welches über entsprechende bauliche Vorkehrungen verfügt (z. B. ein als eigener 
+Brandabschnitt ausgebildetes Stiegenhaus), sind in den Bildern 5 und 6 mögliche Ausführungsvarianten 
+dargestellt. 
+ 
+Bild 5 – Bauliche Vorkehrungen – Ausführungsvariante 1 
+* Bei Verlegung in einem eigenen 
+Steigschacht (F 30) kann die 
+Leitungsanlage der Sicherheits- 
+beleuchtung 
+ohne 
+Funktions-
+erhalt („E 0“) ausgeführt werden, 
+wenn sichergestellt wird, dass es 
+durch allfällige Einbauten zu 
+keiner 
+Beeinträchtigung 
+der 
+Sicherheitsbeleuchtung kommen 
+kann. 
+
+
+===== PAGE 5/5 =====
+OVE-Fachinformation E07:2021-01-01 
+ 
+ 
+Seite 5 von 5 
+ 
+Bild 6 – Bauliche Vorkehrungen – Ausführungsvariante 2 
+ 
+----------- 
+ 
+Aktualitätsprüfung: 2020-12 
+Der Inhalt dieser Fachinformation ist nur gemeinsam mit ÖVE/ÖNORM E 8002-1 anwendbar. 
+ 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2020. Alle Rechte vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu  
+und ohne Auslassung oder Zusatz wiedergegeben werden. 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

@@ -1,0 +1,1621 @@
+
+
+===== PAGE 41/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+41/137 
+Bodenaufbauten hinzufügen 
+Im nächsten Schritt fügen wir in allen Geschos-
+sen Bodenaufbauten hinzu. Wir beginnen im 
+Erdgeschoss. 
+1. 
+Aktiviere das Deckenwerkzeug und öffne 
+die Grundeinstellungen. 
+2. 
+Ändere die Deckenstärke auf 0,10 und 
+den Abstand zum Ursprungsgeschoss auf 
+0,00. 
+3. 
+Wähle als Baustoff BODENAUFBAU. 
+4. 
+Ändere die Ebene zu 20 Bodenaufbau... 
+5. 
+... und bestätige die Einstellungen mit OK. 
+ 
+Nutze nun den Zauberstab (Leertaste), um in allen Räumen des Erdgeschosses einen Bodenaufbau zu modellieren. 
+ 
+ 
+ 
+Wechsle anschließend ins Obergeschoss und ins Dachgeschoss und erstelle auf die gleiche Art Bodenaufbauten in 
+allen anderen Räumen. Füge auch einen Bodenaufbau auf der Terrasse im OG hinzu! Auch das funktioniert am 
+schnellsten im Grundriss mit dem Zauberstab. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 42/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+42/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.3 
+Schnitte und Ansichten 
+Schnitte erstellen 
+Um einen Schnitt zu erstellen, wechsle in den Grundriss des Erdgeschosses und gehe folgendermaßen vor: 
+1. 
+Rufe zuerst die Schnitt-Werkzeugein-
+stellungen durch Doppelklick auf das 
+Schnitt-Werkzeug auf. (Das Schnitt-
+Werkzeug befindet sich unter der Kate-
+gorie Sichten im Werkzeugkasten).  
+In den Einstellungen kannst du u.a. Fol-
+gendes einstellen:  
+2. 
+Menü Allgemein: Hier kannst du dem 
+Schnitt eine Referenz-ID und einen Na-
+men geben.  
+Tipp: Schnitte werden traditionell mit 
+Großbuchstaben benannt. Vergib für 
+den ersten Schnitt A-A als Referenz-ID 
+den Buchstaben A, damit der Schnitt-
+marker mit der korrekten Bezeichnung 
+dargestellt wird. Wähle für den nächs-
+ten Schnitt B-B die Referenz-ID B usw. 
+Bestätige mit OK, wenn du mit den Einstel-
+lungen fertig bist.  
+ 
+ 
+1. 
+Klicke auf einen beliebigen Punkt links 
+vom Grundriss, um den Startpunkt der 
+Schnittlinie zu bestimmen. 
+2. 
+Klicke rechts vom Gebäude, um den 
+Endpunkt der Schnittlinie festzulegen. 
+Achte darauf, dass die Schnittlinie exakt 
+gerade verläuft. Halte dazu die Um-
+schalt-Taste gedrückt, nachdem du den 
+Startpunkt angeklickt hast, und lasse 
+sie erst wieder los, wenn du den End-
+punkt der Schnittlinie angeklickt hast. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 43/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+43/137 
+Jetzt erscheint ein Augencursor, mit dem 
+du die Blickrichtung (Ausrichtung) des 
+Schnittes definierst. Klicke also auf die 
+Seite der Schnittlinie, in deren Richtung du 
+im Schnitt blicken möchtest. Neben dem 
+Augencursor zeigt auch ein kleines Drei-
+eck an der Schnittlinie in die Blickrichtung 
+an. 
+ 
+Der Schnitt ist jetzt fertig. 
+ 
+ 
+Du kannst du ihn mit einem Doppelklick über den Na-
+vigator aufrufen. 
+ 
+ 
+Erstelle jetzt selbständig einen zweiten Schnitt B-B, 
+so dass du einen Längs- und einen Querschnitt des 
+Gebäudes hast. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 44/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+44/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Ansichten erstellen 
+Ansichten funktionieren analog zum Schnitt, sie werden in der Regel aber außerhalb des Gebäudes platziert. Du 
+nutzt hierzu das Ansichts-Werkzeug.  
+Du erstellst eine Ansicht genauso wie einen 
+Schnitt: 
+1. 
+Klicke auf einen beliebigen Punkt links 
+über dem Grundriss, um den Startpunkt 
+der Ansichtslinie zu bestimmen. 
+2. 
+Ziehe die Ansichtslinie waagrecht nach 
+rechts, um den Endpunkt zu bestimmen. 
+ 
+ 
+Jetzt erscheint, wie beim Schnitt, der Augencur-
+sor, mit dem du die Blickrichtung (Ausrichtung) 
+der Ansicht definieren kannst. Klicke also auf 
+die Seite der Ansichtslinie, in deren Richtung du 
+blicken möchtest. 
+ 
+ 
+Die Ansicht rufst du dann über den Navigator auf. 
+ 
+Erstelle jetzt selbstständig die restlichen drei Ansichten, sodass du eine Nord-, Süd-, West- und Ostansicht des Ge-
+bäudes hast. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 45/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+45/137 
+Das Kontextmenü für Schnitte und Ansichten 
+Über das Kontextmenü (Rechtsklick auf Schnitt oder Ansicht im Grundriss oder Navigator) kannst du auch diverse 
+Einstellungen für die Schnitte und Ansichten vornehmen. 
+Wenn du z. B. mit der rechten Maus-
+taste auf die jeweiligen Schnitt- bzw. 
+Ansichtslinien im Grundriss klickst, 
+kannst du das Einstellungsfenster des 
+Schnitts bzw. der Ansicht öffnen. Hier 
+kannst du dann die Einstellungen 
+nachträglich anpassen. 
+Alternativ kannst du die Einstellungen 
+durch einen Rechtsklick auf den 
+Schnitt/die Ansicht im Navigator öff-
+nen. 
+ 
+ 
+Im Grundriss kannst du auch über das 
+Kontextmenü die gewählte An-
+sicht/den Schnitt öffnen. 
+ 
+Wenn dich die Schnitt-/Ansichtslinien 
+im Grundriss beim Zeichnen stören, 
+kannst du diese Objekte einfach aus-
+blenden. Klicke dazu mit der rechten 
+Maustaste auf die entsprechende Li-
+nie und wähle den Befehl Ebenen > 
+Ebene ausblenden. 
+Wenn du alle Objekte wieder einblen-
+den möchtest, wähle im Menü Doku-
+mentation den Befehl Ebenen > Alle 
+Ebenen sichtbar. 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 46/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+46/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.4 
+Dach 
+Das richtige Werkzeug 
+Dächer werden je nach Form mit unterschiedlichen Werkzeugen erstellt. 
+Um geneigte Dächer zu erstellen, gibt es in Archicad das 
+Dachflächen-Werkzeug. 
+ 
+ 
+Flachdächer werden normalerweise mit dem Decken-Werk-
+zeug gezeichnet. 
+ 
+ 
+Geschwungene Dachformen und Freiformen kannst du mit 
+dem Schalen-Werkzeug modellieren. 
+ 
+ 
+Grundlegendes zur Dach-Aufsetzlinie 
+Eine wichtige Komponente des Dachflächen-Werkzeuges ist die Aufsetzlinie. Ist das Dach ausgewählt, so wird sie 
+blau dargestellt. 
+Die Aufsetzlinie dient als Konstruktionsachse, an der die Neigung der Dachfläche ausgerichtet .... 
+ 
+... und die Höhe des Daches festgelegt wird. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 47/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+47/137 
+Pultdach erstellen 
+Nun wirst du mithilfe des Dachflächen-Werkzeuges ein Pultdach für dein Gebäude erstellen. 
+Stelle sicher, dass du dich im Dachgeschoss befindest, bevor du fortfährst. 
+1. 
+Aktiviere das Dachflächen-Werkzeug im 
+Werkzeugkasten und öffne die Werkzeug-
+Grundeinstellungen.  
+2. 
+Der Abstand der Aufsetzlinie zum Ur-
+sprungsgeschoss (DG) soll 2,40 betragen.  
+3. 
+Wähle eine einfache Struktur aus dem Bau-
+stoff DACHAUFBAU mit einer Dicke von 
+0,345.  
+4. 
+Stelle die Geometriemethode auf Einzel-
+dach und die Dachneigung auf 3,00°. 
+Wähle außerdem den Vertikalen Abschluss 
+für die Dachkanten.  
+5. 
+Stelle sicher, dass das Dach auf der Ebene 
+30 Dachaufbau gezeichnet wird und über-
+nimm die Einstellungen mit OK. 
+ 
+6. 
+Stelle nun die Konstruktionsmethode auf 
+Rechteckig.  
+7. 
+Zuerst musst du die Dachaufsetzlinie defi-
+nieren. Klicke zuerst die Gebäudeecke 
+links oben..  
+8. 
+... und anschließend rechts oben an, um 
+das Dach an der oberen Außenkante des 
+Gebäudes auszurichten. 
+ 
+ 
+9. 
+Als Nächstes legst du fest, in welche Rich-
+tung das Dach ansteigen soll. Klicke hierzu 
+mit dem Augen-Cursor unterhalb der ge-
+rade erstellten Aufsetzlinie, um das Dach 
+nach unten hin ansteigen zu lassen. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 48/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+48/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+10. Nun musst du nur die Dachfläche einzeich-
+nen. Klicke dazu zuerst auf die Gebäudeau-
+ßenecke links oben...  
+11. 
+... und anschließend auf die Gebäudeau-
+ßenecke rechts unten. 
+ 
+ 
+Das Pultdach ist nun fertig! Wechsle über den 
+Tab oder den Shortcut Cmd+3 (Mac) bzw. Strg+3 
+(WIN) ins 3D-Fenster, um dir das Ergebnis anzu-
+sehen. 
+Wie du siehst, stehen die Wände im Moment 
+noch über das Dach hinaus. Wie das angepasst 
+wird, erfährst du im nächsten Schritt. 
+ 
+Wände an Dach anpassen 
+Um die Wände des obersten Geschosses an das Dach anzupassen, müssen zunächst alle Wände im Obergeschoss 
+sowie das Dach aktiviert werden. Für die Wandauswahl gibt es verschiedene Möglichkeiten. So kannst du die 
+Wände beispielsweise einzeln nacheinander auswählen, während du die Shift-Taste gedrückt hältst. Schneller geht 
+es aber mit dem Befehl Suchen & Aktivieren. 
+Suchen & Aktivieren 
+Mit dem Befehl Suchen & Aktivieren kannst du kriterienbasiert und somit ganz gezielt bestimmte Bauteile suchen 
+und auswählen. 
+Gehe dazu in das Menü Bearbeiten > Suchen & aktivieren... 
+Im folgenden Menü nimmst du diese Ein-
+stellungen vor: 
+1. 
+Klicke auf das Pfeil-Symbol und 
+stelle den Element-Typ auf Wand. 
+2. 
+Klicke unten auf Hinzufügen. 
+3. 
+Tippe das Wort „Ursprungsge-
+schoss“ in das Suchfeld ein. 
+4. 
+Die ersten Buchstaben rufen schon 
+eine Vorauswahl auf. Wähle hier 
+Positionierung Ursprungsgeschoss. 
+5. 
+Klicke unten rechts auf Hinzufügen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 49/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+49/137 
+6. 
+Klicke auf das Pfeil-Symbol hinter EG 
+und wähle das DG aus.  
+7. 
+Mit einem Klick auf Plus-Symbol werden 
+dann alle Dachgeschosswände ausge-
+wählt. 
+Anschließend kannst du das Suchen & Akti-
+vieren-Fenster wieder schließen. 
+ 
+Wände trimmen 
+1. 
+Füge nun das Dach zur Auswahl hinzu. Halte 
+dazu die Shift-Taste gedrückt und klicke mit 
+der linken Maustaste auf das Dach.  
+2. 
+Wähle dann in der Symbolleiste den Befehl 
+Elemente mit Dach/Schale trimmen.  
+ 
+ 
+ 
+Im folgenden Menü wählst du die Option Dä-
+cher/Schalen aus der aktuellen Auswahl benutzen 
+und klickst auf Trimmen. 
+ 
+ 
+So sollte dein Gebäude jetzt aussehen. (Die Aus-
+wahl hebst du über Esc oder einen Linksklick in ei-
+nen leeren Bereich auf.) 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 50/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+50/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.5 
+Fenster, Türen und Fassade 
+Wir wollen unser Projekt jetzt um Fenster und Türen ergänzen. 
+Fenster-Einstellungen 
+Die ersten Fenster, die wir platzieren wollen, sind einflügelige Fenster. Wähle das Fenster-Werkzeug aus und öffne 
+die Grundeinstellungen. 
+1. 
+Wähle im Bibliotheken-Browser den 
+Fensterkatalog 2.01 Rechteckfenster 
+aus. 
+2. 
+Wähle das 1-Flügelfenster aus. 
+3. 
+Stelle folgende Fenster-Dimensio-
+nen unter Vorschau und Positionie-
+rung ein:  
+- Fensterbreite: 1,00 
+- Fensterhöhe: 2,135 
+- Stelle den Anker auf Brüs-
+tung/Schwelle zu Geschoss 0... 
+- ...und gib hier den Wert 0,00 ein. 
+- Stelle den Anschlag zu Wandflä-
+che auf 0,075. 
+4. 
+Wechsle jetzt im Bereich Fenster 
+Einstellungen zu Öffnungstyp und 
+Winkel und stelle den Öffnungstyp 
+des Hauptflügels auf Festverglast. 
+ 
+ 
+5. 
+Der Fensterrahmen soll aus Holz 
+bestehen. Wechsle dazu in den Rei-
+ter Modelleigenschaften (unter 
+Fenstereinstellungen und Öffnun-
+gen), ändere den Konstruktionstyp 
+auf Holz und stelle alle Rahmen-
+oberflächen auf Holz Lärche. 
+(Der Konstruktionstyp ändert sich 
+hierdurch auf Frei definierbar 1.) 
+ 
+Deine Vorschau-Grafik sollte jetzt wie auf 
+dem Bild unten aussehen. Wenn du alles 
+richtig gemacht hast, bestätige die Ein-
+stellungen mit OK. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 51/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+51/137 
+Fenster im Grundriss platzieren 
+Nun können wir das Fenster im Grundriss platzieren. Gehe dazu ins Erdgeschoss. 
+Beim Platzieren wird es häufig vor-
+kommen, dass du ein Fenster in die 
+Nähe einer Gebäudeecke setzen 
+willst. Wenn du den Cursor mit akti-
+viertem Fenster-Werkzeug auf eine 
+Gebäudeecke hältst, wird das Fens-
+ter auf eine der beiden Wände plat-
+ziert. Wenn das Fenster in der ande-
+ren Wand liegen soll, drücke einfach 
+die Tab-Taste. 
+ 
+ 
+ 
+Setze den Ankerpunkt auf Seite 2 (siehe Grafik) 
+und lege den Cursor auf den Schnittpunkt der hori-
+zontalen Innenwand mit der rechten Außenwand. 
+Drücke ggf. die Tab-Taste, um das Fenster in die 
+Außenwand zu legen. Ein kleines Sonnensymbol 
+zeigt dabei die Außenseite des Fensters an. 
+ 
+ 
+Klicke nun, um den Einfügepunkt festzusetzen. 
+Achte darauf, dass das Sonnensymbol auf der Au-
+ßenseite deines Gebäudes liegt. Sollte das Son-
+nensymbol jetzt noch auf der falschen Seite liegen 
+(innen), kannst du es, indem du die Tab-Taste 
+drückst, noch nachträglich auf die richtige Außen-
+seite legen. 
+Der Cursor verwandelt sich nun in ein Türsymbol, 
+welches die Öffnungsrichtung des Fensters an-
+zeigt. Ziehe den Cursor in die gewünschte Rich-
+tung und bestätige dann die Öffnungsrichtung mit 
+einem Mausklick. 
+ 
+Das Fenster befindet sich jetzt an seiner endgülti-
+gen Position. Überprüfe das Ergebnis im 3D-Fens-
+ter. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 52/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+52/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Fenster-Favorit auswählen 
+Das Gebäude wird nun um weitere Fenster ergänzt. Um dir die Arbeit zu erleichtern, haben wir alle weiteren Fenster 
+als Favoriten vorbereitet, die du nur noch platzieren musst. 
+1. 
+Aktiviere das Fenster-
+Werkzeug und öffne 
+die Grundeinstellun-
+gen. 
+2. 
+Wechsle auf der linken 
+Seite in den Reiter Fa-
+voriten. 
+3. 
+Navigiere hier zum 
+Ordner RICHTIG-KON-
+STRUIEREN... 
+4. 
+... und wähle den Fens-
+ter-Favorit 01_Kombi-
+Fenster_Nord-EG aus. 
+5. 
+Bestätige die Auswahl 
+mit einem Klick auf OK. 
+ 
+Ergänzung weiterer Fenster 
+Nun weißt du, wie man Fenster einstellt und platziert. Erstelle nun selbstständig die restlichen Fenster mithilfe der 
+folgenden Schaubilder. Du kannst dazu die vorangelegten Favoriten verwenden. 
+ 
+Erdgeschoss 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 53/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+53/137 
+Obergeschoss 
+Dachgeschoss 
+ 
+ 
+3D-Darstellung der Fenster anpassen 
+Sieh dir nun die erstellten Fenster in 3D an. 
+Auf der Nordseite des Gebäudes siehst du, dass die 
+Modelldarstellung sehr vereinfacht ist. Die Rahmen wer-
+den flach dargestellt und die opake Füllung im Brüs-
+tungsbereich wird nicht angezeigt. 
+Dies liegt an den Einstellungen in der Modelldarstellung. 
+ 
+Die Modelldarstellung ist eine Darstellungseinstellung in 
+den Schnelloptionen. Du findest sie am unteren Bild-
+schirmrand. 
+Hiermit wird geregelt, wie detailliert Konstruktionsele-
+mente oder Objekte im Fenster (Grundriss, Schnitt, 3D-
+Fenster etc.) dargestellt werden. 
+ 
+Nun passen wir die 3D-Darstellung der Fenster und Türen in 3D an. 
+Öffne dazu die Modelldarstellungseinstellungen unter Menü Dokumentation > Modelldarstellung > Modelldarstellung 
+erstellen... oder klicke in der Schnelloptionenleiste am unteren Bildschirmrand auf die beiden konzentrischen Recht-
+ecke. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 54/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+54/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Es öffnet sich ein neues Fenster. 
+1. 
+Wähle in der Liste links die Modelldarstel-
+lung 04 Beispiel Genehmigungsplanung 
+aus. 
+2. 
+Möchtest du eine der vorangelegten Mo-
+delldarstellungen ändern, solltest du diese 
+zunächst duplizieren. Klicke dafür auf Neu... 
+3. 
+...und vergebe im Fenster Neue Modelldar-
+stellung einen passenden Namen, zum Bei-
+spiel 04 Fenster 3D detailliert. Bestätige mit 
+OK. 
+ 
+4. 
+Stelle sicher, dass du dich in der gerade er-
+stellten Modelldarstellung 04 Fenster 3D 
+detailliert befindest.  
+5. 
+Öffne den Reiter Detaillierung für Tür-, 
+Fenster- und Dachfenstersymbole...  
+6. 
+... und stelle im Bereich Tür und Fenster je-
+weils die 3D-Darstellung Komplett ein.  
+7. 
+Schließe die Einstellungen mit OK. 
+ 
+Die Darstellung der Fenster in 3D hat sich nun 
+angepasst: 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 55/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+55/137 
+Fassadenlattung ergänzen 
+Vor den gerade erstellten Fenstern sollen Lattungen als Sichtschutz und gestalterisches Element platziert werden. 
+Dazu nutzen wir das Fassaden-Werkzeug. 
+Lattung im EG 
+Zur Erstellung der Lattung kannst du wieder Favoriten nutzen. Wir beginnen im Erdgeschoss. 
+1. 
+Aktiviere das Fassadenwerkzeug und öffne die Grundeinstellungen. 
+2. 
+Öffne das Favoriten-Fenster über das Stern-Symbol links oben. 
+3. 
+Wähle hier den Favoriten 01_Lattung-vertikal im Ordner RICHTIG-KONSTRUIEREN aus ... 
+4. 
+... und klicke auf Anwenden. 
+ 
+ 
+5. 
+Übernimm die Einstellungen mit einem 
+Klick auf OK.  
+6. 
+Nun können wir die Fassade konstruie-
+ren. Wir beginnen mit dem Fenster links 
+unten. Wähle die Geometriemethode 
+Einfach. Klicke auf den linken Eckpunkt 
+des Fensters und bewege den Mauszei-
+ger waagrecht nach rechts. Gib über 
+deine Tastatur den Wert „1,2“ als Abstand 
+ein und drücke Enter.  
+Wird die Lattung nicht wie in diesem Bild 
+von der Konstruktionslinie nach unten 
+abgetragen, sodass die Lattung über die 
+Fassade übersteht, so klicke in der Info-
+leiste auf Spiegeln. 
+ 
+Die Lattung vor dem Fenster wurde nun fertiggestellt. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 56/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+56/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Auf dieselbe Art kannst du nun vertikale Lattungen vor nördlichen Fenstern im EG erstellen (blau markiert). Nutze 
+auch hier bei Bedarf den Befehl Spiegeln, um die Lattung nach außen zu klappen. 
+Wähle anschließend den Favorit 02_Lattung-horizontal aus und erstelle eine horizontale Lattung vor der Brüstung 
+des südlichen Fensters (grün markiert). 
+ 
+ 
+ 
+EG Süd in 3D 
+ 
+EG Nord in 3D 
+ 
+Lattung in OG und DG 
+In den Obergeschossen müssen die Favoriten 
+etwas in der Höhe angepasst werden. Dazu 
+wechselst du zunächst ins Obergeschoss. 
+1. 
+Wähle erneut den Fassaden-Favoriten 
+01_Lattung-vertikal aus. 
+2. 
+Passe nun die Höhe des Fassadensys-
+tems im Bereich Geometrie und Positionie-
+rung auf 5,06 an. 
+3. 
+Übernimm die Einstellungen mit OK. 
+4. 
+Ergänze mit diesen Einstellungen die bei-
+den im Bild grün markierten Fassaden: 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 57/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+57/137 
+Ergänze nun auch die noch fehlenden vertikalen bzw. horizontalen Lattungen im Brüstungsbereich der verbliebenen 
+Fenster: 
+Obergeschoss 
+Nutze den Favoriten 01_Lattung-vertikal mit den folgen-
+den Änderungen:  
+Dachgeschoss 
+Nutze den Favoriten 02_Lattung-horizontal mit den  
+folgenden Änderungen: 
+ 
+ 
+Ergebnis 
+Dein Gebäude sollte nun so aussehen: 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 58/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+58/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Fassadenfarbe überschreiben  
+Als Nächstes möchten wir die Fassadenfarbe ändern. 
+Das Oberflächenmaterial 
+eines Bauteiles hängt 
+mit dem zugewiesenen 
+Baustoff zusammen. Un-
+sere Wände aus dem 
+Baustoff TRAGENDE 
+BAUTEILE werden mit 
+dem Oberflächenmate-
+rial Farbe weiß darge-
+stellt. 
+ 
+ 
+Wird der Baustoff der 
+Wand hingegen bei-
+spielsweise zu MW 
+Kalksandstein geändert, 
+so passt sich auch das 
+Oberflächenmaterial an 
+und die Wand wird mit 
+einer Mauerwerkstextur 
+dargestellt: 
+ 
+ 
+Wie kann ich die Fassadenfarbe einfach ändern? 
+Bist du dir noch unsicher, aus welchem Baustoff dein Gebäude sein soll und willst erst einmal verschiedene Fassa-
+denfarben oder -texturen ausprobieren, so kannst du das Oberflächenmaterial der Wandaußenseite ganz einfach 
+überschreiben. Diese Änderung hat keine Auswirkungen auf die Konstruktion oder den Baustoff der Elemente. 
+1. 
+Wähle alle Außenwände aus. Nutze dazu beispielsweise 
+den Befehl Suchen & Aktivieren. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 59/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+59/137 
+2. 
+Öffne nun die Wand-Einstel-
+lungen.  
+3. 
+Klicke das Symbol Oberflä-
+chenmaterial außen im Be-
+reich Modell an und wähle 
+dort das Oberflächenmate-
+rial Verputz, Lehmputz, 
+braun.  
+4. 
+Bestätige mit OK. 
+ 
+5. 
+Die Oberflächenfarbe der 
+Wandaußenseiten wurde nun 
+überschrieben. 
+ 
+Überschreibe auf dieselbe Art und Weise auch die Oberflächenmaterialien der Decken-Stirnseiten, des Daches, des 
+Trägers und der Terrasse. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 60/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+60/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Türen in Grundrisse einfügen 
+Türen werden analog zu Fenstern eingestellt und platziert.  
+Innentüren – Einstellungen 
+Um die Innentüren zu konstru-
+ieren... 
+1. 
+...aktivierte das Tür-Werk-
+zeug im Werkzeugkasten 
+und öffne die Grundein-
+stellungen. 
+2. 
+Wähle die Zargentür 1-fl 
+im Ordner 3.02 Innentü-
+ren (Deutschland) bzw. 
+3.1 Innentüren (Öster-
+reich) aus. 
+3. 
+Passe die Türbreite auf 
+0,76 und die Türhöhe auf 
+2,135 an. 
+4. 
+Bestätige die Einstellun-
+gen mit OK. 
+ 
+Füge nun anhand der Schaubilder alle Türen hinzu. 
+• 
+Nutze die gerade getätigten Einstellungen für die grün markierten Innentüren. 
+• 
+Nutze für die rot markierten Außentüren die vorangelegten Favoriten. 
+• 
+Die Position der Türen erkennst du an den Bemaßungen in den Schaubildern. 
+ 
+Erdgeschoss 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 61/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+61/137 
+Obergeschoss 
+Dachgeschoss 
+ 
+ 
+Bodenaufbauten an bodentiefe Fenster und Türen anpassen 
+Im Bereich von bodentiefen Fenstern und Türen müssen wir nun noch den Bodenaufbau bis an das Fenster heran-
+führen. 
+Das machst du am besten im Grundriss. Wechsle in 
+den Grundriss des Erdgeschosses. 
+1. 
+Zoome näher an ein Fenster heran und wähle 
+den Bodenaufbau aus. Nutze ggf. die Tab-Taste, 
+um zwischen hintereinanderliegenden Bauteilen 
+zu wechseln. 
+2. 
+Klicke auf die Kante des Bodenaufbaus. Es öffnet 
+sich die Pet-Palette. 
+3. 
+Wähle in der Pet-Palette den Befehl Zum Poly-
+gon hinzufügen. 
+ 
+4. 
+Wähle die Geometriemethode Rechteckig und 
+ziehe im Bereich der Fensterlaibung ein Recht-
+eck auf, wie im Bild gezeigt. Achte darauf, dass 
+das Rechteck an den ausgewählten Bodenauf-
+bau angrenzt. 
+Der Bereich wird dann zum Bodenaufbau hinzugefügt. 
+ 
+Wiederhole die Schritte dieses Abschnitts bei allen bodentiefen Fenstern und Türen, auch bei Innentüren. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 62/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+62/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.6 
+Treppe und Geländer 
+Als nächstes werden wir dem Gebäude zwei Treppen hinzufügen. Im zweiten Schritt erstellen wir den Treppen-
+durchbruch und abschließend fügen wir Geländer hinzu. 
+Treppen einsetzen 
+Das Treppen-Werkzeug 
+Mit dem Treppen-Werkzeug kannst du typische oder spezielle Treppen in einem beliebigen Entwurfsmaßstab ent-
+werfen, erstellen und effizient dokumentieren. Der Schwerpunkt des Treppen-Werkzeugs liegt auf einem intuitiven 
+und flexiblen Entwurfsprozess mit grafischer Eingabe und Bearbeitung. 
+Treppe vom OG in das DG 
+Gehe in den Grundriss des Dachgeschosses. 
+1. 
+Aktiviere das Treppenwerkzeug und öffne die Treppen-Einstellungen. 
+2. 
+Wähle den Favorit 01_interne-Treppe... 
+3. 
+...und klicke auf Anwenden. 
+4. 
+Passe die Treppenlaufbreite auf 0,80 und die Anzahl der Stufen auf 14 an. 
+5. 
+Wähle als Ursprungsgeschoss das 1. OG und verknüpfe dann die Oberkante der Treppe mit dem 2. DG. 
+6. 
+Übernimm die Einstellungen mit OK. 
+ 
+Jetzt kannst du die Treppe zeichnen. 
+1. 
+Stelle die Eingabemethode in der Infoleiste 
+auf Abwärts. 
+ 
+2. 
+Nutze die Koordinateneingabe, um den 
+Startpunkt der Treppe festzulegen. Die 
+Treppe soll 0,90m links des gezeigten Eck-
+punktes beginnen. 
+ 
+(Lege deinen Mauszeiger in die rechte 
+Ecke der Zwischenwand (nicht klicken) und 
+gib über deine Tastatur X 0,9 – Enter ein.) 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 63/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+63/137 
+3. 
+Stelle die Konstruktionsmethode in der Pet-
+Palette auf Wendelung mit gleichen Auftrit-
+ten und ziehe den Cursor entlang der 
+blauen Fanghilfe nach links, bis du die In-
+nenkante der Außenwand erreichst. 
+ 
+ 
+4. 
+Klicke an diesem Punkt und fahre anschlie-
+ßend mit dem Cursor senkrecht nach un-
+ten. 
+5. 
+Mache nun einen Doppelklick, um die 
+Treppe fertigzustellen. 
+ 
+Die interne Treppe ist nun erstellt. Sieh dir das Ergebnis in Ober- und Dachgeschoss an: 
+Obergeschoss: 
+ 
+Dachgeschoss: 
+ 
+Wie du siehst, ist die Grundrissdarstellung geschossabhängig. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 64/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+64/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Außentreppe 
+Gehe nun ins Obergeschoss und erstelle mit Hilfe des Favoriten 02_Außentreppe eine Außentreppe ins EG. Wähle 
+dabei als Ursprungsgeschoss das EG und als Oberkante das OG. 
+ 
+ 
+Treppendurchbruch erstellen 
+Öffne nun per Navigator oder per Kontextmenü 
+den Schnitt A-A. 
+Hier sieht man deutlich, dass die Decke (Rohde-
+cke und Bodenaufbau) durchbrochen werden 
+muss (siehe Grafik). 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 65/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+65/137 
+Zoome im Dachgeschossgrundriss etwas an die 
+Treppe heran. 
+1. 
+Achte darauf, dass die Schnellauswahl (das 
+Magnet-Symbol) aktiviert ist. 
+2. 
+Halte den Cursor an eine leere Stelle im 
+Grundriss. Klicke jetzt mit der Tab-Taste 
+durch, bis die Rohdecke ausgewählt ist (du 
+siehst, dass du die Rohdecke ausgewählt 
+hast, wenn in dem blauen Vorschaufenster 
+Struktur: TRAGENDE BAUTEILE steht). Kli-
+cke, um die Auswahl der Rohdecke zu be-
+stätigen. 
+ 
+3. 
+Klicke auf eine Kante der Rohdecke, um die 
+Pet-Palette zu öffnen.  
+4. 
+Wähle in der Pet-Palette den Befehl Vom 
+Polygon abziehen. 
+ 
+5. 
+Aktiviere die Geometriemethode Polygon...  
+6. 
+...und klicke nacheinander alle Eckpunkte 
+der Treppe an, um den Bereich der Treppe 
+von der Decke abzuziehen. 
+ 
+Der Treppendurchbruch in der Rohdecke ist jetzt 
+fertig. 
+Wiederhole die Schritte, um einen Treppen-
+durchbruch im Bodenaufbau zu erstellen. Du 
+siehst, dass du den Bodenaufbau ausgewählt 
+hast, wenn in dem blauen Vorschaufenster Struk-
+tur: BODENAUFBAU steht. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 66/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+66/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Wenn du den Schnitt A-A erneut öffnest, siehst 
+du, wie die Treppe nun frei durch die Decke 
+läuft. 
+ 
+Geländer erstellen 
+Das Geländer-Werkzeug 
+Mit dem Geländer-Werkzeug kannst du ein universelles oder spezielles Geländer, also ein 3D-Gebäudeelement, er-
+stellen. Ein Geländer kann zu den folgenden 3D-Elementen assoziativ sein: Treppen, Decken, Wände, Dächer und 
+Freiflächen. Das bedeutet, dass das Geländer automatisch auf Höhe des 3D-Elements platziert wird und sich bei Än-
+derungen mit anpasst. So sparst du viel Arbeit. 
+Geländer für die interne Treppe 
+Gehe ins Obergeschoss. Öffne als Erstes mit einem Doppelklick das Einstellungsfenster des Geländer-Werkzeuges. 
+Natürlich kannst du hier jetzt ein eigenes Geländer erstellen und anschließend platzieren. In unserem Fall nutzen wir 
+die vorangelegten Favoriten.  
+Markiere zuerst den Abschnitt Geländer 
+auf der linken Seite des Fensters. Klicke 
+nun, um einen Geländer-Favoriten auszu-
+wählen, oben links auf des Geländersym-
+bol mit dem Stern daneben (1). Es öffnet 
+sich das Favoriten-Fenster. Wähle hier 
+den Favorit Glas, eingespannt mit Ab-
+stand im Ordner Geländer aus (2). 
+Klicke auf Anwenden (3) und bestätige 
+mit OK. (4)  
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 67/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+67/137 
+Nun kann das Geländer platziert werden. 
+1. 
+Ändere die Segment Assoziativität 
+auf Statisch. 
+2. 
+Ändere die Referenzlinie auf ver-
+setzt (siehe Bild) mit einem Abstand 
+von 0,04. 
+3. 
+Klicke an den unteren rechten Punkt 
+der Treppe, um den Anfang des Ge-
+länders festzulegen. 
+4. 
+Klicke dann auf den zweiten Punkt, 
+um das Geländer fortzuführen. 
+Achte darauf, dass die Treppe je-
+weils blau erscheint, um das Gelän-
+der assoziativ zur Treppe zu erstel-
+len.  
+Tipp: Hast du dich verklickt, so drü-
+cke die Backspace-Taste, um den 
+letzten Punkt zu lösen. 
+5. 
+Mit einem Doppelklick am Ende der 
+Treppe stellst du das Geländer fer-
+tig. 
+ 
+Gehe anschließend ins Dachgeschoss, 
+um ein Geländer rund um den Treppen-
+ausschnitt zu erstellen. Nutze dazu die 
+gleichen Einstellungen. Achte diesmal da-
+rauf, dass der Bodenaufbau blau ange-
+zeigt wird. Drücke dazu ggf. die Tab-
+Taste. 
+Beginne mit der Eingabe des Geländers 
+oben rechts an der Kante der Austritts-
+stufe. 
+ 
+ 
+Das Geländer der Innentreppe ist fertig. So sieht das Ergebnis im Grundriss aus:  
+Grundriss OG 
+Grundriss DG 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 68/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+68/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+In der Kursdatei werden die Geländer im 
+3D-Fenster, Schnitt und Ansicht schema-
+tisch dargestellt. Diese Einstellung kannst 
+du in den Modelldarstellungen anpassen. 
+Gehe dazu unter Dokumentation > Modell-
+darstellung > Modelldarstellung erstellen... 
+und markiere die Modelldarstellung 04 
+Fenster 3D detailliert (1). Wähle Geländer-
+Optionen (2) und stelle die Option Gelän-
+der 3D und Schnitt/Ansicht auf Komplett ein 
+(3).  
+ 
+ 
+Damit du die in deinem Projekt und den 
+Einstellungen gut zurecht findest, ändere 
+den Namen der Modelldarstellung gleich 
+passend in 04 Fenster und Geländer 3D 
+detailliert (4). Bestätige dann mit OK (5). 
+ 
+ 
+Die Geländer werden nun auch im 3D 
+Fenster, Schnitt und Ansicht detailliert dar-
+gestellt: 
+ 
+Geländer an Terrasse und Außentreppe 
+Erstelle nun selbstständig Geländer an der Terrasse und der Au-
+ßentreppe des Gebäudes. Nutze dazu den Favoriten 01_Gelaen-
+der-Aussen im Ordner RICHTIG-KONSTRUIEREN. Achte auch hier 
+darauf, das Geländer assoziativ zu Treppe bzw. Bodenaufbau zu 
+platzieren.  
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 69/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+69/137 
+4.7 
+Möblierung 
+Das Projekt soll um Sanitär- und Einrichtungsgegenstände erweitert werden. 
+Das Objekt-Werkzeug 
+Objekte werden mit 
+dem Objekt-Werk-
+zeug (1) eingefügt. 
+Dieses Werkzeug 
+funktioniert im Prinzip 
+wie das Fenster- und 
+Tür-Werkzeug.  
+ 
+Im Bibliotheken-Browser (2) wählst du eine Kategorie (Ordner) aus der verfügbaren Bibliothek aus. Wenn du nicht 
+suchen möchtest, tippe einfach den Namen des gesuchten Objektes oder Teile davon oben neben der Lupe ein (3). 
+Archicad sucht dann in der Bibliothek und, wenn du mit dem Internet verbunden bist, auch gleichzeitig auf dem On-
+line-Portal www.bimcomponents.com von GRAPHISOFT nach passenden Objekten. 
+Wähle das gewünschte Element aus dem Elementauswahlbereich (4) aus und stelle auf der rechten Seite die Einstel-
+lungen für das Objekt ein (5). Überprüfe, ob du auf der passenden Ebene arbeitest (6) und bestätige danach die Ein-
+stellungen mit OK (7). 
+Schwerkraft 
+Bevor du das Objekt platzierst, aktiviere 
+die Schwerkraft-Funktion in der Stan-
+dard-Symbolleiste. Damit kannst du das 
+Objekt automatisch auf die tatsächliche 
+Höhe der darunterliegenden Decke, 
+Dach, Schale oder Freifläche platzieren, 
+ohne dass du die Höhenlage manuell 
+anpassen musst. 
+Die Schwerkraft wirkt sich nur auf neu 
+erstellte Elemente aus; sie kann nicht 
+zum Bearbeiten vorhandener Elemente 
+verwendet werden. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 70/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+70/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Über den kleinen Pfeil neben dem Schwer-
+kraft-Symbol öffnet sich ein Untermenü, in 
+dem du festlegen kannst, zu welcher Bauteil-
+Art die Schwerkraft wirken soll: 
+ 
+ 
+Objekt platzieren 
+Im Grundriss siehst du, dass die 
+Draufsicht des Objektes quasi am 
+Cursor "hängt". Bewege den Cur-
+sor nun an die gewünschte Stelle 
+und klicke diese an, um das Objekt 
+dort zu platzieren. 
+ 
+ 
+Du kannst selbst wählen, mit welchem Punkt das 
+Objekt am Cursor hängt. Diese Einstellung triffst 
+du im Grundriss-Vorschaufenster der Objekt-
+Grundeinstellungen. Du siehst hier mehrere X-
+Symbole, die die Fixpunkte des Objektes darstel-
+len. Einer der Fixpunkte ist mit einem Rahmen 
+versehen (siehe Pfeil). Hierbei handelt es sich um 
+den Einfüge- und Ankerpunkt des Objektes. 
+Möchtest du einen anderen Fixpunkt als Einfüge- 
+und Ankerpunkt für das Objekt festlegen, so kli-
+cke einfach den gewünschten Fixpunkt im 
+Grundriss-Vorschaufenster an. 
+ 
+ 
+Objekt bearbeiten 
+Wenn du auf den Knotenpunkt eines aktivierten 
+Objekts klickst, öffnet sich die Pet-Palette. Auf 
+der Pet-Palette gibt es eine Vielzahl von Befeh-
+len, die du auf das Objekt anwenden kannst. So 
+kannst du den hier im Beispiel gewählten 
+Schrank mit dem Befehl Knotenpunkt verschie-
+ben in seiner Dimension ändern. 
+Die Objekte lassen sich mit der Pet-Palette auf 
+sehr einfache und schnelle Weise verschieben, 
+drehen oder multiplizieren. Jedes Objekt kann 
+natürlich auch mit den üblichen Befehlen der Me-
+nüleiste Bearbeiten beeinflusst werden. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 71/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+71/137 
+Editierbare Hotspots 
+Die Objekte kannst du auch im 3D-Fens-
+ter bearbeiten.  
+Wenn du ins 3D-Fenster wechselst, siehst 
+du, dass der markierte Schrank an seinen 
+Ecken einige pinke Punkte hat. Das sind 
+die sogenannten editierbaren Hotspots 
+Klicke z. B. auf den äußeren Hotspot in 
+der Mitte der Schranktüren. Ziehe dann 
+den Cursor nach außen. Auf diesem 
+Wege können die Schranktüren im 3D-
+Fenster geöffnet werden.. 
+ 
+ 
+Grundriss möblieren 
+Ergänze jetzt die fehlenden Objekte in den Grundrissen. Hier ein Einrichtungsvorschlag für alle Geschosse. 
+Erdgeschoss 
+Obergeschoss 
+ 
+ 
+Dachgeschoss 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 72/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+72/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.8 
+Räume 
+Das Projekt wird nun um Räume ergänzt. Das Raumflächen-Werkzeug kann sowohl für normale Räume, als auch für 
+offene Räume ohne begrenzende Wände genutzt werden. 
+Normale Räume 
+Öffne das Einstellungsmenü des Raumflächen-Werkzeuges (1). 
+Hier kannst du Raumname, Raumnummer, Höhe, Unterkante 
+und viele weitere Optionen, die im Raum angezeigt werden 
+sollen, definieren (2). Stelle das Fenster wie in dem Bild ge-
+zeigt ein. 
+Der Raumstempel (3) wird maßstabsabhängig ein-
+gestellt. Du kannst dabei angeben, welche Informa-
+tionen in welchem Maßstab dargestellt werden sol-
+len (4). 
+ 
+ 
+Klicke jetzt auf Inhalt 1:100 (5) und passe die 
+Einstellungen entsprechend der Grafik an (6). 
+Bestätige mit OK (7). 
+ 
+Zum Erstellen von Räumen gibt es manuelle Konstruktionsmethoden (Polygon, Rechteck, gedrehtes Rechteck) und 
+automatische Konstruktionsmethoden (Innenkante, Referenzlinie). Wähle die automatische Konstruktionsmethode 
+Innenkante. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 73/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+73/137 
+Klicke innerhalb eines Bereiches, der von Wänden umschlossen ist, z. B. im Badezimmer unseres Projektes (Erdge-
+schoss). Der Cursor ändert sich dadurch zu einem Hammer-Symbol, damit kannst du die Position des Raumstempels 
+festlegen. Der Raum findet automatisch seine Grenzen. 
+ 
+ 
+Die Größe und Darstellung des Raumstempels 
+kann für jeden Maßstab unterschiedlich einge-
+stellt werden. Aktiviere dazu den entsprechen-
+den Raum und öffne dann das Einstellungsfens-
+ter des Raumes. In der Kategorie Einstellungen 
+findest du den Bereich Erscheinungsbild 1:100. 
+Hier kannst du beispielsweise den Rahmen-Stil 
+ändern. 
+ 
+Stört dich die Bezeichnung "NGF" im Raumstem-
+pel, so kannst du diese im Bereich Fläche, Volu-
+men 1:100 herausnehmen. Wenn du mit allen Ein-
+stellungen fertig bist, bestätige mit OK. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 74/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+74/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Das Textfeld des Raumstempels kannst du nach-
+träglich verschieben, indem du auf den pinken 
+Punkt in der Textfeldmitte klickst (1). Ziehe dann 
+das Textfeld mit dem Cursor auf die gewünschte 
+Position (2). Achte darauf, dass in der Pet-Palette 
+der Befehl Unterelement bewegen aktiviert ist 
+(3). 
+ 
+Räume ohne begrenzende Wände 
+Manche Raumbereiche werden nicht allseitig von Wänden begrenzt. Hier kannst du entweder die Raumgrenze mit 
+einer Linie definieren oder die Räume manuell zeichnen. 
+Linie als Raumgrenze 
+In unserem Erdgeschoss möchten wir Wohn- und Eingangsbereich als separate Räume konstruieren. 
+1. 
+Aktiviere das Linien-Werk-
+zeug und öffne das Einstel-
+lungsfenster. 
+2. 
+In den Einstellungen der Li-
+nien musst du die Funk-
+tion Raumflächen-Begren-
+zung aktivieren. 
+3. 
+Lege die Linie auf eine sepa-
+rate Ebene (z.B. 00 Hilfskon-
+struktion), die du später aus-
+blenden kannst, und über-
+nimm die Einstellungen mit 
+OK. 
+4. 
+Stelle die Geometriemethode 
+auf Einzeln.  
+5. 
+Zeichne nun eine Linie an 
+der markierten Stelle. 
+ 
+ 
+Nun kannst du das Raumflächen-
+Werkzeug wie gewohnt nutzen. 
+ 
+Anschließend kannst du die 
+Ebene, auf der die Linie liegt, über 
+das Kontextmenü (Rechtsklick auf 
+Linie) ausblenden. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 75/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+75/137 
+Räume manuell zeichnen 
+Alternativ kannst du die Umrisse von Räu-
+men auch manuell zeichnen. Versuche das 
+im Obergeschoss. 
+1. 
+Aktiviere das Raumwerkzeug und 
+passe die Einstellungen an. 
+2. 
+Wähle die Konstruktionsmethode In-
+dividuell (Polylinie). 
+3. 
+Klicke nacheinander alle Raumecken 
+an, um den Umriss festzulegen. 
+ 
+ 
+4. 
+Mit Klick auf den ersten Punkt erscheint ein 
+Hammer-Symbol, mit dem du durch Klicken 
+die Position des Raumstempels festlegst. 
+Das Ergebnis sieht so aus: 
+ 
+Hinweis: Manuell erstellte Räume können nicht, 
+wie im nächsten Abschnitt beschrieben, automa-
+tisch angepasst werden. Du musst sie manuell 
+anpassen. Nutze dazu die Befehle in der Pet-Pa-
+lette, die sich bei einem Klick auf Kante oder Eck-
+punkt des Raumes öffnet. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 76/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+76/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Räume vervollständigen 
+Ergänze jetzt selbstständig alle noch fehlenden Räume. 
+Erdgeschoss 
+Obergeschoss 
+ 
+ 
+Dachgeschoss 
+ 
+ 
+ 
+Räume nachträglich ändern 
+Räume, die mit der Konstruktionsmethode Innenkante oder 
+Referenzlinie erstellt wurden, können automatisch an Ände-
+rungen angepasst werden. 
+Um das auszuprobieren, gehe ins Dachgeschoss und mar-
+kiere die Trennwand zwischen Wohnzimmer und Bad. Än-
+dere die Wandstärke auf 0,25. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 77/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+77/137 
+Durch die Aufdickung der Wand ist das Bad kleiner gewor-
+den. Der Raum muss aktualisiert werden. 
+ 
+Verwende hierfür den Befehl Räume aktualisieren aus dem 
+Menü Planung. 
+Wähle im erscheinenden Dialogfenster die Option Raum-
+stempel-Positionen bei Aktualisierung behalten und klicke 
+auf die Schaltfläche Alle Raumflächen aktualisieren. 
+ 
+Danach erfolgt die Aktualisie-
+rung der Raumstempel. Zusätz-
+lich erscheint ein Ergebnispro-
+tokoll. Dieses Fenster kannst du 
+dann wieder schließen. 
+ 
+ Mache die beiden Änderungen des Raumes und der Wand anschließend wieder rückgängig. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 78/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+78/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4.9 
+Bemaßung 
+In Archicad gibt es mehrere Bemaßungs-Werkzeuge, die sich bei Änderungen automatisch anpassen. Wir wollen die 
+Einzelbemaßung und die Automatische Bemaßung vorstellen. 
+Einzelbemaßung 
+Um einzelne Objekte zu bemaßen, kannst du die 
+Einzelbemaßung nutzen. Öffne die Bemaßungs-
+Grundeinstellung. Hier kannst du dich für einen 
+Markertyp entscheiden und die Schriftart, den 
+Schriftstil, die Maßhilfslinie etc. festlegen. 
+ 
+ 
+Klicke auf die entsprechenden Punkte, die be-
+maßt werden sollen. Nutze ggf. die Tab-Taste. 
+An jedem Punkt, der angeklickt wurde, wird eine 
+kleine Markierung hinterlassen (runde Markie-
+rung = am Element gebundener Bemaßungs-
+punkt, eckige Markierung = freier Bemaßungs-
+punkt). Um die Bemaßung abzuschließen, führst 
+du einen Doppelklick aus. Der Cursor wird zum 
+Hammersymbol. An der Stelle, wo du mit dem 
+Hammersymbol hinklickst, wird die Bemaßung 
+gesetzt. 
+ 
+Fenster und Türen erhalten ein Höhen- und Brei-
+tenmaß, sofern diese Option bei den Bema-
+ßungsdetails aktiviert wurde. 
+ 
+Nimmst du Änderungen an deinem Modell vor, 
+so passen sich an Elemente gebundene Bema-
+ßungspunkte automatisch an: 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 79/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+79/137 
+Automatische Bemaßung 
+Es gibt in Archicad auch eine automatische Bemaßung (im Grundriss für Wände, im Schnitt für Decken). Hierfür müs-
+sen zuerst alle Wände, die bemaßt werden sollen, ausgewählt werden. 
+Wähle dann im Menü Dokumentation > Beschriftung > 
+Automatische Bemaßung den Befehl Außenbemaßung. 
+Du kannst diesen Befehl auch direkt in der Symbolleiste 
+über einen Klick auf das zugehörige Symbol aufrufen (3). 
+ 
+Jetzt öffnet sich ein Menü, in dem du festlegst, wie die 
+Elemente bemaßt werden. Außerdem wird hier der Ab-
+stand zwischen den Maßlinien definiert. Bestätige die 
+Einstellungen mit OK. 
+ 
+Jetzt musst du auf eine Kante einer Au-
+ßenwand des Gebäudes klicken. Damit 
+richtest du die Bemaßung aus. Wenn du 
+den Cursor auf eine Außenseite der 
+Wand legst, ändert sich die Cursorform 
+in einen dicken Mercedesstern. Klicke 
+jetzt einmal. 
+ 
+Der Cursor wird zu einem Hammersym-
+bol (A) oder - innerhalb des Freiflächen-
+bereiches - zu einem Stiftsymbol (B). Kli-
+cke noch einmal, um die Bemaßung an 
+der gewünschten Stelle zu platzieren. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 80/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+80/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Diese Maßketten der Automatischen 
+Bemaßung können natürlich auch im 
+Nachhinein noch verändert (Bema-
+ßungspunkte hinzufügen oder entfer-
+nen), gelöscht (z.B. im Fall von doppel-
+ten Maßketten) oder verschoben wer-
+den. 
+ 
+Erstelle auf diesem Wege die Bemaßung für alle Geschosse. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!

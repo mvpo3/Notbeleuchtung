@@ -1,0 +1,2922 @@
+
+
+===== PAGE 121/298 =====
+Exercise 5 Mechanical
+The PUNE showing the break in the shaft will be the hardest part
+to draw in this example.
+1--------------16'--------------f
+-i 1/2¢r
+t----+-
++--~Dllte'
+Dr"", cchl
+1--+-----f---+--lcoI'\P().~b.rrlnton Inc
+UNSPECIFIED TOLERANCE
+ProJ
+T tle
+10"
+I
+~r
+1/4 3/4
+L...-_+--
+-+-_-.I
+11; L
+~~:~
+SHAFT END
+DETAIL
+NTS
+2 3/4
+1 1/2 =-_1
+1
+o
+\VELD
+-------7----·
+PEDIT
+PLINE
+AND
+Rl/2
+6,0
+6,0
+I
+50,0L'
+~~
+MiG
+X 1.0
+THREAD
+2
+X 0 + 1/4 UP
+TO
+6//
+2
+X 0 + 1/2
+OVER 6/
+1
+JC
+104 CHAPTER FIVE
+
+
+===== PAGE 122/298 =====
+Exercise 5 Wood
+These clock pieces have reverse sections to show how the clock is constructed.
+The break lines show that the body of the clock is longer than is shown.
+Draw the clock at a scale of 1= 1.
+SIDE SECTION
+r~
+,
+; ~~
+RONT SECTION
+2~
+-3~-J-.r~
+[I
+,
+===J-r
+1
+5§
+I
+I
+I
+I
+I
+I
+I
+I
+I
+9
+~~
+-
+L
+===:J
+I
+5~
+~J
+I
+4
+~,-6~-
+I
+I
+3~- ---
+--j
+I
+I
+I
+"'--5~-
+I
+I
+I
+9!
+I
+I
+F
+-
+f.--
+1-3
+M
+34 1/4
+4
+I
+I
+I
+--_.-
+I
+I
+I
+I
+I
+I
+I
+I
+1.-=:l
+~~ 7~
+'Ij
+2~
+::
+t
+I
+I 1
+I
+2
+L 1..
+1-..1.
+CLOCK SIDE
+R6r
+R5~
+1~3l
+/R4~
+---~
+I
+I,.../'''
+1
+/
+~
+54
+:J"
++
+\7-~
+lO~
+11~
+~
+I
+2~
+I
+I
+I
+,
+I
+)
+~- -!
+I
+I
+I
+I
+j
+I
+I
+10~
+I
+!
+--1 1--- 1
+I
+4
+~3~
+I
+I
+f--.j I-l~
+I
+~
+I
+13~
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+~.
+I
+~
+I
+T
+I
+I
+4
+I
+I
+~
+f'~ _.
+I
+19
+I
+~
+CLOCK FRONT
+59
+II
+11
+II
+I ~~
+I
+I
+I
+I
+I
+~-
+~-----"--21~---------l
+I
+I
+I
+:2§
+I
+1
+I
+IL-
+2]
+_
+u.l..
+1
+BASE DETAIL
+Entity Commands with Width
+105
+
+
+===== PAGE 123/298 =====
+Exercise 5 Challenger
+Profiles of wood and stone molding are often shown with
+section lines as in this 13th century church doorway in Italy.
+E
+c
+.~~...
+B
+.~,,;
+"
+""'.: .
+.:..~ .
+~~.~~ '". 8 3i4:""
+'-..:
+,,41
+."
+.1Ii-.
+'~'~:~~~"':/" .~/~~.~.
+A
+.....
+.'':, ... I.
+.
+~~...
+E
+Profiles: Church of Madonna Scorsa in Aquila
+106 CHAPTER FIVE
+
+
+===== PAGE 124/298 =====
+Entity Properties: Layers,
+Colors, and Linetypes
+chapter, you should be able to:
+creote geometry on them
+........
+and use the COLOR command
+or obiects
+of objects
+on/off fhe LAYER
+About LAYERs
+The LAYER command allows you to control the drawing by
+means of visible entities, much like transparencies, as
+shown in Figure 6.1. Different colors and linetypes can be
+associated with different layers. To help complete the
+drawing,
+these
+layers
+can
+be
+either
+displayed
+or
+undisplayed, active or inactive, accessible or inaccessible.
+The number of layers you can use is unlimited.
+Figure 6.1
+The command line equivalent is LAYER.
+Il' '-"-
+Gil_All
+i
+?;:
+,-.~ All Used Layers
+I
+-I
+BLOCK
+V
+~
+t\t
+•
+whilB CON_GUS -
+O.-m
+Color_I
+~ BRiCKARCH V
+Q
+fb
+•
+white CON_OUS -
+O....m
+C;:4or_7
+... CENTER
+V
+(Wl
+."
+•
+red
+CENTER
+-O.-m
+CclOf_1
+... DEFPOINTS
+'~
+~
+~
+•
+white CON_OUS -
+O...m
+Coloc_
+... DIM
+(;)
+a 'i
+•
+white CON_OUS -
+O.Jn
+(oh,,3
+... DIMEN
+9
+(j
+flt
+•
+red
+CON_OUS -
+O.-m
+ColOf_1
+... HATCH
+Q
+Ci!!
+~
+•
+red
+CON-OUS -
+O....m
+Cclcr_)
+.. HIDDEN
+.;)
+@I
+~ •
+red
+HIDDEN
+-O...m
+CCkcf_1
+...-rilO lNORDING
+{~
+GJ
+0l'J
+•
+Mtite CON_OUS -
+O.-m
+'C<:~k>f_7
+Layers can only be set up and modified with the Layer Properties Manager, but the
+layer can be can be set with the Layer toolbar.
+Entity Properties: Layers, Colors, and Linetypes
+107
+
+
+===== PAGE 125/298 =====
+The Layer Properties Manager dialog box will help you to view the layers, change the
+colors, tum layers off, freeze and thaw them, and lock or unlock them.
+Current
+Name
+Off or On
+Freeze
+Lock
+Color
+Linetype
+Lineweight
+New
+Delete
+OK
+Show Details
+Cancel
+Help
+sets the highlighted layer to current - the one you are
+working on
+the name ofthe layer; no spaces or dots allowed
+sets the selected layers offor on, which makes the layer
+invisible or visible
+freezes selected layers, making them invisible and not
+regenerated, or thaws (unfreezes) them. Freeze is for model
+space layers
+locks selected layers, making them visible but not
+accessible, or unlocks them
+the color set to that layer. All of the choices along the top so
+far have been toggle switches, on or off; this allows you to
+choose a color
+the linetype ofthe layer
+the lineweight of the layer
+allows you to enter a new layer starting with the layer name
+allows you to delete a layer if there are no objects in it
+exits from the layer dialog box while saving changes
+offers more information on the status of the highlighted
+layer
+cancels the layer changes or additions you have made
+provides help files on the layer functions
+.~ ~..
+.....
+<V
+0
+'li'
+&1J
+...
+I
+Creating a New
+Layer
+108
+CHAPTER SIX
+Pick the button for New on the top left side of
+the layer dialog box, highlighted in Figure 6.2,
+and you will see a new layer appear in the list
+Type in the name for the layer to override
+Layerl, the default name.
+Once the name is entered the layer will be
+added to the layerlist. The next time you enter
+the dialog box the layers will be listed alpha-
+Figure 6.2
+betically.
+When typing layer names, add no spaces, slashes or periods.
+Activating Layers for Changes
+In order to change the name, state, color, linetype, or lock value ofthe layer, it must be
+identified or selected. Move the cursor to the layer name and pick it. The layer's line
+should be highlighted.
+When selecting more than one layer for changes, use the regular Windows method for
+identifying multiple objects: use the Shift key to highlight all layers between the top
+and bottom ones that you choose, and the CtrI key to highlight multiple layers indi-
+vidually. The selected layers will be highlighted and modified.
+
+
+===== PAGE 126/298 =====
+hidden
+Color and Linetype options will affect all highlighted objects, as shown in Figure 6.3.
+Figure 6.3
+Changing a Layer 1Vame
+Ifyou should type in the name incorrectly, double-click on the name. The area now ac-
+tivated will turn blue. Move your cursor away from the line, andthe name itselfshould
+be highlighted. Type in a new name or revise the current name. The new name will re-
+place the old.
+Making a LAYER Current
+In order to draw on a layer you must make it current. The easiest way to do this is
+through the Layer Properties Manager shown in Figure 6.4. Highlight the layer that
+you would like to have current, and pick the word Current.
+Figure 6.4
+The Layers toolbar shown on Figure 6.5 is possibly quicker, if that toolbar is dis-
+played. Pick the down arrow and select the name ofthe layer that you would like to be
+current. To place objects on a different layer, highlight them, then using the down ar-
+row, place them in the desired layer.
+.0
+!Jl:ilIi.] center
+B
+J1~10
+objects
+Figure 6.5
+The Layer toolbar will show which layer is current. If this toolbar is not displayed,
+right-click the end of another toolbar, then pick layers from the menu.
+Changing Layer Color
+In the Layer Properties Manager se-
+lect the the colored box under the let-
+ter C that corresponds to the layer you
+would like to change,
+as shown in
+Figure 6.6.
+This will invoke the Select Color dia-
+log box. Pick the color that you would
+like, then click OK.
+Figure 6.6
+Entity Properties: Layers, Colors, and Linetypes
+109
+
+
+===== PAGE 127/298 =====
+•
+ByBlock
+II Red
+DYeUow
+o Green
+o C.Yan
+.6.!11j:~'ed Layers
+•
+B,YLayer
+•
+~_AII
+I····~
+l····~ Group Filter'
+L...
+Group Filter2
+Figure 6.8
+Figure 6.7
+Setting Color Independent of
+Layer
+You can set a color using the COLOR
+command. This will override your layer
+color setting. To do this, type in the word
+COLOR at the command prompt, orpick
+the color button on the Object Properties
+toolbar shown in Figure 6.8, which is
+generally just to the right of the Layer
+toolbar.
+Problem Shooting
+If your layers suddenly disappear, you
+have chosen the New Group Filter by
+mistake. In the Layer Properties Man-
+ager choose All Used Layers as shown in
+Figure 6.7 and your layers will reappear.
+If your objects are being entered
+in a color different than your
+layer setting,
+you
+have
+set
+a
+color in the COLOR command.
+Set the COLOR setting back to
+Bylayer.
+Command:COLOR
+All subsequent objects will be drawn in this color. This may cause some confusion if
+your colors have been set to a particular layer because the color setting overrides the
+layer color. Keep the COLOR command set to Bylayer and you should have no prob-
+lem.
+Loading LINETYPEs
+In addition to colors, you can also have linetypes associated with each layer. Load line-
+types within the Layer Property Manager dialog box in the same way that you would
+load them in the Graphics area, see page 56.
+Once you have set a color or a linetype outside the Layer dialog box, all future geome-
+try added to this layer will use this color or linetype. Until you are sure ofwhat you
+are doing, both the Color setting and the Linetype setting should be ByLayer.
+Changing
+LTSCALE
+Depending on the size ofthe object, the hidden lines may not show up as hidden. Ifthis
+is the case, either the objects that you thought were on that layer are not, or the scale of
+the drawing is too large or too small for the linetype to show. You will need to change
+the linetype scale relative to the current drawing.
+Command:LTSCALE
+Enter new linetype scale factor<1.OO>:12
+Match Properties
+and CHPROP
+The Match Properties command will take the linetype, color, and linetype scale ofa
+selected object and apply these properties to any other objects that you choose.
+Command:
+'_matchprop
+Select source object: (Pick an object)
+Current active settings:
+Color Layer Ltype Ltscale
+Lineweight Thickness
+PlotStyle Dim Text Hatch Polyline Viewport Table Material
+Shadow display
+Select destination object(s)
+or [Settings]: (Pick other
+objects)
+The last objects will have the properties i.e. color, linetype, dimension style, etc. of
+the first object chosen.
+110
+CHAPTER SIX
+
+
+===== PAGE 128/298 =====
+Layer Filtering
+The CHPROP connnand cycles through the properties. With the dialog box you are
+prompted to pick the objects you would like modified; then you can choose Layer,
+Color, Linetype, Thickness, etc. and type in the new value. Ifyou use the command
+line, here is the sequence:
+Command:CHPROP
+Select objects: (pick an object)
+Select
+objects:~
+Enter property to
+change [Color/LAyer/LType!LtScale/Thickness] :c
+Enter new color <bylayer>:Red
+Enter property to change
+[Color/LAyer/LType/LtScale/ThicknessJ :LT
+Enter new linetype <hidden>:Center
+Enter property to change
+[Color/LAyer/LType/LtScale/ThicknessJ :~
+Sometimes you Inay want only certain layers to be listed in the Layer Control dialog
+box. The Filter option allows you to limit which layers are listed. You can filter on the
+basis of:
+•
+layer names, colors, and linetypes
+•
+whether layers are on or off
+•
+whether layers are frozen or thawed
+•
+whether layers are locked or unlocked
+•
+whether layers have plot or don't plot status
+•
+whether layers contain objects or not
+•
+whether or not layers are part of externally referenced (xref) drawings.
+Layer filtering is used on very
+large files, or files that belong to
+someone else or where you don't
+need to use many of the layers.
+To Filter a Layer
+In the Layer Properties Manager,
+pick
+the
+New
+Property
+Filter
+button. Create a new filter bJTOUP
+as shown. In Figure 6.9, all layers
+that are red have been filtered.
+Figure 6.9
+Layer Management
+The default layer is O. Ifyou enter any dimensions, you will also create a layer called
+Defpoints. Neither of these layers is renamable. The Defpoints layer does not plot.
+While creating a model in AutoCAD, layers should be named in a logical, straightfor-
+ward manner. Also, keep your LlNETYPE and COLOR commands set to ByLayer.
+Many industries have developed layering standards so that there is no question about
+where objects will be located. Ifyou are starting work with a company, make sure that
+you know what the layering standards for the company are, and find out whether there
+are any standards outside of the company that you should be aware of.
+Freezing layers when you are not using them will save a great deal oftime with larger
+models. Until they are regenerated, layers that have been frozen will not display when
+they are thawed.
+Entity Properties: Layers, Colors, and Linetypes
+111
+
+
+===== PAGE 129/298 =====
+In this example we will make an adjustable bearing
+with hidden lines and center lines.
+Jt
+---
+-
+--
+____ a.._ ....
+.:_-=~---
+-
+-
+--
+Step 1
+First set up your layers.
+Pick the New Layer button to add new layers. Add Centre, Hidden, and Object.
+Step 2
+Once the names are loaded, change the color of each layer by picking the layer name
+and then picking the Set color button. An overlay menu will offer you a selection of
+colors.
+Choose a color for that layer. The nine base colors
+are the best to choose.
+•
+objects
+•
+hidden
+•
+center
+White
+Yellow
+Red
+Index cofor: 1
+Red, Green,
+Choose
+Load
+to
+load
+new
+linetypes.
+Choose
+CENTER,
+hold the Ctrl key down on your
+keyboard
+and
+then
+pick
+HIDDEN
+from
+the
+list
+of
+linetypes to load them both.
+Pick OK. Then choose CEN-
+TER under the Select Linetype
+menu shown to make your cen-
+ter lines 'center' lines.
+Now load and set the linetypes. Pick the word Continuous under the linetype column
+across from the CENTER layer
+to load the Linetype manager.
+Step 3
+112
+CHAPTER SIX
+
+
+===== PAGE 130/298 =====
+Step 4
+Now that the linetypes have been loaded, return to the Layer Properties Manager and
+load the hidden line type to the Hidden layer.
+Activate the Hidden layer, choose the word Continuous under the Linetype column,
+then choose the hidden linetype from the list. Press OK. Use OK to exit from the Set
+Linetype dialog box, then OK again to exit from the Layer Control dialog box.
+Step 5
+Now that the layers are ready, use the same menu to make the Objects layer current.
+Your screen should look like this:
+~
+•
+white Continuous -
+Default Cok
+~
+•
+red
+CENTER
+-
+I.Jefau1t Cok
+o y...w
+HIDDEN
+-
+Default [Dk
+•
+R1.00
+RO.SO
+1-----6.00---....
+Mirror these through the center line, and
+use LINE and TRIM to fmish the part.
+Draw two more circles on at a centerof6,2.
+The radii will be .5 and 1.
+Draw a circle with a center ofO,O. ZOOM to
+the Extents of your geometry, and then
+zoom down.
+Now with the Objects layer current, draw in the front view ofthe adjustable bearing as
+shown. Do not draw in the dimensions.
+Step 6
+If you set
+0
+color or UNETYPE
+under the COLOR or LlNETYPE
+commands,
+they
+will
+override
+your layer setting.
+Step 7
+Now return to the pull-down menu and make the Centre layer current.
+o
+1f!J. 0
+D12,.
+Jl;JO Hidden
+Jl2J. Objects
+Draw in the lines as shown. They should
+be a different color as well as a different
+linetype.
+Try changing the LTSCALE to see ifthere
+is any noticeable difference in the center
+lines.
+Command:LTSCALE
+New scale factor<1.OO>:1.5
+Entity Properties: Layers, Colors, and Unetypes
+113
+
+
+===== PAGE 131/298 =====
+Step 8
+Return to the pull-down menu and make the Objects layer current to draw in the side
+view as shown by picking the word Objects.
+Again, do not put in the dimensions, simply put in
+the lines. Using OFFSET will probably prove the
+easiest way of doing this.
+/-'4 nuets .25R
+~---r
+2.00
+~-+
+2.00
+~-+
+~l.ooh25 ~ 1+
+~3.50Y
+Step 9
+Now return to your pull-down menu and make the Hidden layer current to place the
+hidden lines as shown.
+En ~~ rr:lt. 0bjects
+Hidden
+Make sure POLAR, OSNAP and OTRACK modes
+are on to line the hidden lines up with the front
+view of the object.
+-- i---
+0.50,
+--L
+- ____ 1- __ 0.50
+I
+T
+I
+--7--r---
+-- 1---
+Step 10
+Now make the Center layer current and add the center lines as shown. Again, SNAP set
+to .25 would be of use in this view.
+-----1---
+--:-
+--r--
++
+Step 11
+114
+CHAPTER SIX
+Return to the Layer pull-down menu and change the colors ofthe layers to see ifyou
+can make it look nicer. Ifthe colors remain the same as you change the layer color, it is
+because the current color of an object is overriding the layer color. Set color back to
+ByLayer, then use CHPROP to change all ofthe objects to be colored by layer.
+
+
+===== PAGE 132/298 =====
+Step 12
+If you lose your Layer
+toolbar, right-dick any
+toolbar at the parolIe! bars
+and bring it back.
+Step 13
+We are now going to play with the Lock/Unlock facility to see how it works. It may be
+time to save the file just in case.
+Command: SAVE
+(enter a name in the dialog box)
+In the pull-down menu lock the Centre and Hidden layers. Once the layers are locked,
+you will be able to see them, but you will no longer be able to edit them. Make sure the
+Objects layer is current before you start.
+Hidden
+Now back in the drawing or model, use a Window pick to highlight all ofthe objects on
+screen. Then from the Modify menu pick Properties and change the color to blue.
+This canalso be done on the command line as follows.
+Command: CHPROP
+Select objects:ALL
+40 objects on locked layers
+Select objects:...]
+Enter property to change
+[Color/LAyer
+/LType/ltScale/Thickness] :C
+Enter new color <varies>:blue
+Enter property to change
+[Color/LAyer/
+LType/LtScale/Thickness] :.J
+Step 14
+Notice that only the objects on the Objects layer were
+changed because the other layers were locked.
+Try turning the Layers Offand On, and Freezing and Thawing them. The data for the
+layers are still on file, but the information is not displayed.
+*
+Freeze/Thaw
+<it0i
+.·
+.•
+.>.'.·.·
+'~jf:
+...................,
+On/Off
+Entity Properties: Layers, Colors, and Linetypes
+115
+
+
+===== PAGE 133/298 =====
+Exercise 6 Practice
+Use different layers for the Hidden lines and Centre lines.
+These are practice parts, not drawn to any scale. Draw at 1= 1.
+COUPLING
+1
+2.50
+I
+R1.oo
+r- 1•5O-j
+1----3•00
+07/8 2 holes
+ROCKER ARM
+34
+58.0
+82.0
+~~J
+011.0 ---J
+4 HOLES
+12.01-------112.0
+1--------136.0--------j
+SWIVEL HAMMER
+01.00
+t
+1~
+L....I-..J--I-----=r-----""'-t---~
+Top Plate
+LINK
+116 CHAPTER SIX
+
+
+===== PAGE 134/298 =====
+-.
+.....
+CDn.....ca
+m
+~.,
+n
+iii-
+CD
+0'
+».,
+n::r
+w
+:'J
+-i -i
+::::r2:"
+CD
+[II
+::::r th'
+o _
+:::!, :r
+N
+CD
+o
+Vl
+a.
+CD
+Q
+n
+o..g
+Vi'
+:::J
+-to-+,
+a
+0
+:::J
+"""I
+n
+_
+CD
+::::r
+C/)
+(Tl
+Q
+"""I
+"""I
+(Tl
+CD
+[II
+-0.:.
+o
+(Tl
+C
+::::l
+~g
+o ;;:
+:::J
+C
+"'0::;.
+a
+a..
+(Q
+_.
+CDc.6
+(X)-+,
+UlO
+a §
+:::J
+a..
+0..
+0
+......
+:::J
+W-o
+:'Sa
+co
+(\)
+III
+ex>
+O'l
+a
+:::Ja..
+cARADr:
+.-
++--EAvt5fROUCiH ALUMINUM \M1lff
+50fflf ALUMINUM V'Mllf
+ACeeNf fRlM 10' ALUMINUM IM1llf
+Pk£A BOARD 10' PLUMINJM \M1ilf
+2" X6" 50lf FtA1f5
+~ tlUPJBONtJ fXitRlOR 511tCO
+IN5fALl fO MANUrK1UfRr'5 iN5fRX1l0N5
+rt
+2" '16" fXltRiQR SfVS
+@ 24" Of.
+Cl-OSff
+l-IVING ROOM
+718" PlY 5UB-fWORiNCi
+6" COMPACreO CiRAW~ fl~l
+UN~R 1-.N?
+1/2' rpyw.
+2" X10" WOOt? J5fS@' 12" O.c.
+2" X12" WOOD JSf5 @ 12" o,e
+2" xBli SILl
+:?IIJO 5flCOl
+BEDROOM
+1'1-WlootJ 5ll3F1.0Cl(
+~" X10" IfADeR
+~ I· IXlfxJ
+d<l
+~ ,moolXIclarxllXJIXlI
+2 - 2'1 X6'1 DOU~t fOP PLAit
+J
+1I[X1
+00
+IX)
+IXlIX1
+.
+4'1 CONC~it 5!.-AB
+WI 616
+10/10
+Section
+rOUBlE foP PlA1t5
+~ A5PWif 5HINGiU;5
+121~'
+/
+§lJl"gl~'V:N1lw %A1HINU
+2" X8" RNlfR5
+@ 12 Oc.
+C0
+"fJp "ra tv ftGIJRW ~Ji~rr~~~e fOR WNfilAfiO<l OII'R eAW5
+tV~RY RNlfR 2" X6" CCA1ARS
+I'I K~l' 5fRA1?PINCi fOR atiNU J:):5f5
+2
+11 '16" CflUNUJOl5f
+~
+@24" Of
+6
+11
+1/2'1 DRY'I'VPLl
+INitRIOR 5fJD54'1
+L-
+8" !?An
+IN5Ul&J10N
+Btfv\fvN
+KNffW~l
+ANt? OUl5lDf
+Wlil
+//~
+-I:E-I W (/)
+:r: » :r:
+C m
+(f)
+mrAJr O
+3: r go -I m
+l>l>G)ZO
+(')
+-IenIG)Z
+-I
+men
+-
+~~~u;~
+0
+l>mmnl>
+Z
+f;;Cn~~
+cmmU>Z
+0
+(J)-
+Z-IG)
+m
+-1:::oC/):U
+O~~Cl> l>
+Z
+nAJ
+:ioorri m ~
+::oO"OC
+-
+o:E-I'
+C/)
+Z
+§»I-{m
+G)
+IZ mIO
+Oowm-l
+(J)
+CO~(/)O
+~ormen
+OonI
+:0 z::::! °
+J:G)O~
+w
+Z
+m
+I
+(;)(1)-0
+II(/)~
+-10-1
+(/)~»-1
+-
+Z
+A
+I
+l>G)mm
+Z
+Z
+0
+......'I
+()
+o
+5""
+~
+a
+::Ja..
+r-
+5"f
+m
+::J
+$
+-0a
+~:+
+ffi"
+r-
+an;
+?
+
+
+===== PAGE 135/298 =====
+Exercise 6 Mechanical
+Draw 6A using different layers for hidden and center lines.
+Draw the same iwo views - Front and Top - for 6B, 6C, and 6D.
+R1.25
+0.75
+I -, r.....---l-_+___'_-----,
+4.00
+2.50
+1.00
+LU= ~---_~-----Lo.75~-4-'25~-r----
+1---- ---6,75---------l
+¢1.50
+¢1.00
+6A
+0.75
+~
+--...&.::~::;t"~~~~- r075
+1
+n
+2,50
+4.00
+5,50
+~----.----I--.----.l
+itl1.00
+¢1.50
+¢2.00
+R1.20
+FILLETS AND ROUNDS R.25
+PICTORIAL VIEWS
+6C
+PICTORIAL VIEWS, AS SHOWN BELOW,
+ARE 3 DIMENSIONAL
+VIEWS USED TO
+ILLUSTRATE APART.
+CREATE WORKING DRAWINGS, AS SHOWN ABOVE, FROM THE
+PICTORIAL VIEWS BELOW.
+118 CHAPTER SIX
+
+
+===== PAGE 136/298 =====
+Exercise 6 Challenger
+Here are 40 different arches found in architecture.
+Set PDMODE to 34, then use DIVIDE to section plines and arcs.
+DEPRESSED
+Q)
+CINQUEFOIL
+CORBELLED
+CD
+BYZANTINE
+®
+DROP
+@
+ELLIPTICAL
+CD
+EQUILATERAL
+o
+FLAT
+@
+FLORENTINE
+®
+HORSESHOE
+®
+ITALIAN POINTED
+MULTIFOIL
+@ MOORISH MULTIFOIL
+LANCET
+@
+@
+OGEE
+@
+ORIENTAL
+®
+PARABOLIC
+@ POINTED HORSESHOE
+Entity properties, Layers, Colours, and Linetypes
+119
+
+
+===== PAGE 137/298 =====
+Exercise 6 Challenger (continued)
+You can never get too much practice.
+\
+\
+\
+\
+\
+\
+\
+V
+A
+r
+\
+I
+\
+I
+\
+-------~
+® POINTED SARACENIC
+@ POINTED SEGMENTAL
+@
+POINTED TREFOIL
+@ POINTED TRIFOLIATED
+PSEUDO
+@
+FOUR CENTERED
+@
+RAMPANT
+@ ROUND HORSESHOE
+SEGMENTAL
+SCALLOPED
+®
+ROUND
+TRIFOLIATED
+ROUND
+TREFOIL
+SEMI-CIRCULAR
+SEMI-CIRCULAR
+®
+STILTED
+@
+SHOULDERED
+TANGENTAL
+@
+VENETIAN GOTHIC
+VENETIAN
+TRIANGULAR
+®
+THREE CENTERED
+120 CHAPTER SIX
+
+
+===== PAGE 138/298 =====
+About
+Dimensioning
+Dimensioning
+COrrlj:lletloCI.ot this chapter, you should be able to:
+up 0 <:Hrrlensiontf1lg style r using the dialog box
+and aligned dimensions
+)......... ))( •••••..~•..<S'~q t>()~tlinl~ .•• ~lnd continuous dimensions
+it ):.
+·.(".·.~·.·~ .••••~leJj:ijqmE~telraind radius dimensions
+••·•••·••••·•••<••• ••••·••••~••••~Ii·~r't~~~i~irtu:m~;iOIlS once they are in.
+While the objects are being created, the size of the object is being programmed with
+each part's geometry. Lines, circles, arcs, etc. should be createdperfectly every time. If
+you get into the habit ofcreating data in a lazy or slapdash manner, it will catch up with
+you later when dimensioning the drawing.
+Dimensioning shows the measurements, the locations, and the angles ofobjects. The
+dimensioning commands are designed to extract the sizes that are already pro-
+grammed with the part, and display them in accepted formats. Every discipline has a
+different set of drawing protocols. The dimensioning variables and dimension styles
+are used to set the dimensions to the required parameters.
+AutoCAD offers a wide variety ofways to produce linear, baseline, radial, diameter,
+and angular dimensions. Figure 7.1 shows some of the basic dimension types.
+F
+IWII!UNI!r
+VERTICAL
+Figure 7.1
++
+lH:AR (VERTICAl..)
+Dimensioning Components
+Every dimension has several components. The dimension text states how big the ob-
+jectis. The dimension line holds the dimension text. The dimension text shouldbe off-
+set from the dimension line by .625 mm or 1/16 inch. The extension line extends from
+the object to the dimension line. The extension line is offset by .625mm or 1/16 inch
+from the part itself and should extend 1.25mm or 1/8 inch past the dimension line.
+These measurements are universal drafting standards and must be maintained in
+computer-aided drafting as well as in manual drafting.
+Dimensioning
+121
+
+
+===== PAGE 139/298 =====
+Figure 7.2 shows the components ofa di-
+mension.
+The point at which you start your dimen-
+sion is the reference point or definition
+point. AutoCAD automatically puts a gap
+between this point and the start ofthe ex-
+tension line. AutoCAD also creates a layer
+for this point called Defpoints that does
+not plot.
+/ ;
+EXTENSION LINE OVERSHOOT
+~
+DIHENSION LINE
+~ DII1ENSJON TEXT
+~
+!,..- ARRowHEAD
+4.00 ~-:=EXTENSIONLINE
+I
+rEXmGl~~
+Figure 7.2
+Accessing Dimensions
+The Dimension toolbar, shown in Figure 7.3, can be accessed by right-clicking an-
+other toolbar at the parallel lines. Once in, move the toolbar until it is docked.
+Dimension
+a
+STANDARD
+Entering
+Dimensions
+Figure 7.3
+The pull-down menu shown in Figure 7.4 is also useful.
+Typing in the dimensioning commands is not recommended.
+You may want to lock the objects layer before dimensioning.
+This way the objects cannot be altered when using STRETCH or
+another Modify command.
+Dimensions should be placed on the dimensioning layer and
+this should be a different color. The lineweight of the dimen-
+sions when plotted should be significantly smaller than that of
+the object lines. Having the layers in different colors helps to
+make sure that the dimensions will have the same lineweight.
+Horizontal and Vertical Dimensions
+Figure 7.5 illustrates linear dimensions. Use OSNAPs.
+-~,~~~~~!!'!
+~ Quk:k Dimension
+.
+H binear
+'\. Aligned
+If Arc Lengtb.
+~~ Qrdinate·-----1
+i.9 !3.adius
+1; Jogged
+~ Qiameter
+~ [l.ngular
+H Basoline
+rH Continue
+------j
+~ L~ader
+~ lolerance" ,
+e Center t1,ark
+H ObJigue
+Align Te~t
+~ Dimension 2tyle,,,
+~ O?{erride
+~ l,!pdate
+Reassociate Dime!lsions
+Figure 7.4
+2
+122
+CHAPTER SEVEN
+Figure 7.5
+Command:
+(D~ension pull-down menu, Linear)
+Specify first extension line origin or <select object>:.J
+Select object to dimension: (pick 1)
+Specify dimension line location
+[Mtext/Text/Angle/Horizontal/Vertical/RotatedJ : (pick 2)
+Dimension text
+= 4.00
+
+
+===== PAGE 140/298 =====
+In the fITst example in Figure 7.5 the dimension is based on the line or object chosen.
+In the next two examples, the first extension line is picked, then the second, and finally
+the dimension line is placed. Use SNAP and OSNAP for accuracy.
+Before specifying the dimension line location, you are prompted to change the dimen-
+sion text (Text), the text angle (Angle), the dimension direction (Horizontal or Verti-
+cal), or the dimension line angle (Rotated).
+In the third illustration in Figure 7.6, either the horizontal or the verticallength could
+be taken. Move your cursor to the position the dimension should be in, then pick the
+spot.
+Figure 7.6
+Aligned Dimensions
+Linear dimensions give vertical or horizontal lengths. Aligned dimensions, as shown
+in Figure 7.7, give the dimension aligned to an angled surface.
+Command: (Dimension pull-down menu,
+Aligned)
+Specify first extension line orlgln
+or <select object>: (pick 1)
+Specify second extension line
+origin: (pick 2)
+Specify dimension line location
+or
+[Mtext/Text/Angle]: (pick 3)
+Dimension text = 2.8284
+Figure 7.7
+3
+2.8284
+2
+Like the vertical and horizontal, you can also simply choose the line itselfto be dimen-
+sioned as in Figure 7.8.
+Command:
+DlMALIGNED
+Specify first extension line orlgln or RETURN to
+select:~
+Select object to dimension: (pick 1)
+Specify dimension line location or
+[Mtext/Text/Angle]: (pick
+2)
+Dimension text
+=
+2.8284
+The distance between circle centers can also be
+dimensioned with either a linear dimension, ifa
+vertical or horizontal is required, or with an
+aligned dimension.
+To change the unit readout, change the dimen-
+sion style (see page 126).
+Figure 7.8
+Dimensioning
+123
+
+
+===== PAGE 141/298 =====
+124
+CHAPTER SEVEN
+Continued Dimensions
+Once you have a horizontal, a vertical, or an aligned dimension,
+you can create dimensions that continue at regular intervals along the same edge as
+shown in Figure 7.9.
+Sx
+I 13.5000~4.5000
+I
+3.000°1
+i
+=
+~
+~=f---..........c==:X:5<4==::J'---f
+:3
+rZ.IOOOI1.900013.0000~Z.ZOOO~t~80001
+*I
+!.
+2
+)(1 4
+.
+I
+l:
+I
+7ll:.
+I--
+-.;)~( 5
+L
+x
+7
+Figure 7.9
+Command:
+DIMLINEAR
+Specify first extension line origin or <select object>: (pick
+1)
+Specify second extension line origin: (pick 2)
+Specify dimension line location
+[M/T /A/H/V/R]: (pick 3)
+Cornrnand:_DIMCONTlNUE
+(pull-down menu)
+Specify a second extension line origin or
+[Undo/Select]
+<Select>: (pick 4)
+Dimension text = 4.5000
+Specify a second extension line origin or
+[Undo/Select]
+<Select>: (pick 5)
+Baseline Dimensions
+Similarly, for baseline dimensions, create the first dimension and continue from there.
+6-lt------------.L
+Figure 7.10
+Command:
+DIMLINEAR
+Specify first extension line
+origin or <select object>: (pick 1)
+Specify second extension line origin: (pick 2)
+Specify dimension line location
+[Mtext/Text
+IAngle/Horizontal/Vertical/Rotated] : (pick 3)
+Dimension text
+=
+1
+Command:
+DIMBASELlNE
+Specify a second extension line origin or
+[Undo/SelectJ<select>: (pick 4)
+Specify a second extension line origin or
+[Undo/Select] <select>: (pick 5)
+Specify a second extension line origin or
+[Undo/Select]<select>:~
+
+
+===== PAGE 142/298 =====
+Radial Dimensions
+A radialdimension measures the radius ofan arc or circle. The dimension appearance
+is determined by the Fit tab options, as shown in Figure 7.11.
+~
+/
+Figure 7.11
+Command:
+(Dimension menu,
+Radius)
+Select arc or circle: (pick 1 -
+the arc)
+Specify dimension line location or
+[Mtext!
+Text/Angle] : (pick 2)
+Diameter Dimensions
+Diameter dimensions are affected by the same dimension variables as the radius di-
+mensions as seen in Figure 7.12.
+Figure 7.12
+Command:
+DIMDIAMETER
+Select arc or circle: (pick 1)
+Specify dimension line location
+[Mtext!(Text!Angle]: (pick 2)
+Aswith the linear commands, the text and the text angle can both be changed. These
+are under the Text tab of the Dimension Styles dialog box.
+Angular Dimensions
+The angular dimension command
+measures the angle between two non-
+parallel lines or three points. It can
+also measure the angle around a por-
+tion ofa circle or the angle subtended
+by an arc, as shown in Figure 7.13.
+The dimension line for the angular
+measurement is an arc that spans the
+measured angle and passes through
+the measured point.
+Figure 7.13
+Command: DlMANGULAR
+Select are, circle, line,
+or <specify vertex>: (pick 1)
+Select second line: (pick 2)
+Specify dimension arc line location or
+[Mtext/Text/
+Angle] : (pick 3)
+Dimensioning
+125
+
+
+===== PAGE 143/298 =====
+Dimension Styles
+Controlling Dimension Style
+~
+~
+I O"""id"_H j
+I Comp4le,.. I
+Stando!lfd .. PteCi~on a 2, T01 pleci>ion ~ 2_
+Fit 1Ell(1 mO'iemenl ~ 2
+Always make a new one as
+shown in Figure 7.14. You will
+regret it if you don't.
+To create a new style, enter a
+style name in the Name box and
+pick Save. Changes that you
+make with the Modify Dimen-
+sion Style menu will be filed with
+the saved natTIe.
+There are many variables in the
+Figure 7.14
+Lines,
+Symbols
+and
+Arrows
+menu. Pick the style you want,
+but don't change any ofthe default sizes because that will affect your dimensions un-
+less you really know what you are doing. Change the sizes in the Fit menu. See
+Tutorial 7a and 7b for how to do this.
+A dimension style is a named group of settings that determines the appearance ofthe
+dimension. Every dimension has an associated dimension style. Ifno style is applied
+before dimensioning, the Standard (imperial) or180-25 (metric) default style is used.
+The style controls the unit readout, the text style, the color, the linetype scale, and
+many other factors.
+If you remember nothing else
+about dimensioning, remember
+NEVER CHANGE THE STAN-
+Ct-rrentDim$ly!e:Stand""d
+DARD DIMENSION STYLE.
+I SetCurrenl )
+The Text Tab
+The Text menu allows you to set the size andposition oftext on your dimension lines.
+~0It
+1\
+15'..,r
+.1
+5'-6"
+:1
+Figure 7.15
+Mechanical drawings generally have the dimension text horizontally within the di-
+mension line. Architectural drawings generally have the text above the dimension line
+and aligned with the dimension line. These alignments are changed using the vertical
+and horizontal text placement, as shown in Figure 7.15.
+Again, do not change the text height here, change it in the Fit dialog box. Along with
+the text height and the arrowhead size there are gap distances, overshoot distances, ex-
+tension line distances, and distances between the text and the dimension line itself.
+You must change ALL ofthese to make the dimensions work properly. It is easier to
+change them in the Fit dialog box.
+A different text style can also be chosen for the printing of text. Keep the text style
+fairly simple for best results. In mechanical drawings Arial is generally the preferred
+textstyle. In architectural drawings, City Blueprint is often used. In eithercase none of
+the serif or script text fonts are appropriate for dimension text.
+126
+CHAPTER SEVEN
+
+
+===== PAGE 144/298 =====
+The Fit Tab
+The Fit menu allows you to set the size ofyour dimensions and have everything printed
+at the correct scale.
+"'\:r=
+~.:..~~I_O.
+~I.sf~vws
+I
+AIlRDW
+lAP
+I
+I~... ~I
+I
+Figure 7.16
+The overall size ofthe dimensions is
+detennined in the Fit tab ofthe Mod-
+ify Dimension Style dialog box. If
+you change the overall scale, you will
+change the arrowhead size, the exten-
+sion line gap, the extension line over-
+shoot, and the
+gap between the
+dimension and the dimension line. It
+is a much better idea to change the
+overall scale than to change each size
+individually. Figure 7.16 illustrates
+all the different preset elements.
+190'
+333'-'"
+1..3'-4'
+1720
+2280
+2S;;.,'t---lf-=-+--=80='~
+25'
+20'-1 •
+67'-6'
+I
+300
+960
+300
+2SO
+alO
+Ifyou change the overall scale, all ofthese factors will change. Ifyou change just the
+text size orjustthe arrowhead size, all ofthe otherparameters will remain the same.
+Paper space dimensions are dealt with in Chapter 11.
+"000
+figure 7.17
+When you dimension a drawing and plot it, the final drawing is a fraction ofthe origi-
+nal size ofthe object.
+Metric
+Imperial
+1:50
+1/50 ofthe original size
+1:100 =
+I/I00oftheoriginalsize
+1:25
+1/25 ofthe original size
+112"= I'_ON = 1/240fthe original size
+1/4"= 1/-0" = 1/48 ofthe original size
+1/8" = l'_ON
+= 1/96 ofthe original size
+Changing the overall scale under the Fit menu shown in Figure 7.17 will expand the di-
+mensions to fit the drawing so that when printed the dimensions are the correct size.
+The dimensions are plotted at the same fraction as the drawing itself.
+Metric
+Imperial
+1:25
+1:50
+1:100
+overall scale 25
+overall scale 50
+overall scale 100
+1/2'1 = l'_On
+1/4'1 = I'_On
+1/8'1=]'_0'1
+overall scale 24
+overall scale 48
+overall scale 96
+Dimensioning
+127
+
+
+===== PAGE 145/298 =====
+The Primary
+Units Tab
+The Primary Units menu allows you to choose the units print-out. This does not change
+the size of the object, just the text units on the dimension line.
+FRACTIONAL
+DECIMAL
+1:5·~~M
+SCIENTIFIC
+U"ll"""-'l
+I
+;jJ
+P'ec"",n
+~_----,it!J
+F,~tion ~ormet
+~uRzDnl~I__".~:~·", __~
+,~fil
+Declrr4! sepaH~tof:
+~Y~~L
+Rwndo~
+c=\;~
+Prefix
+~
+Sulloc
+c===:=-~
+SCilleioctor
+C=~
+OAjipJyio~<!mt;n,ioo",.,Jjr
+-'·Zecoaup.pre;:ttClfl
+-·L."d"g
+fidoi<oel
+T'oiliOli
+00ircll'"
+UnltsJOImal
+ZlMr;~~on
+o Loadirg
+OT,.iIn~
+Figure 7.18
+The Alternate
+Units Tab
+The Symbols and
+Arrows Tab
+Choose the primary units that you would like the objects dimensioned in, then choose
+the precision that you would like to have. Angle measurements can also be pro-
+grammed. The Measurement scale (known as DIMLFAC in previous releases) allows
+you to provide detailed drawings. This is an alternative to the paper space layouts.
+Note: In Figure 7.18 the text placement has also been changed to reflect discipline
+standards.
+On rare occassions you may need to show both metric and imperial measurements on a
+drawing. These can bothbe displayed on the dimension line ifthey are set up under the
+Alternate Units tab.
+The major criticism of the teaching of AutoCAD over the past 10 years is that the
+instructors concentrate on teaching AutoCAD, and ignore drafting conventions. Your
+final AutoCAD plots must be recognizable as drawings and employ the basic drafting
+protocols of your discipline. Here are some ofthe protocols.
+Center Marks
+The centers ofcircles must have center marks showing that the circle has a constant ra-
+dius. The three styles of center mark are shown in Figure 7.19.
+OEBO
+MARK
+Figure 7.19
+LINE
+NONE
+128
+CHAPTER SEVEN
+Also under the Symbols and Arrows tab
+you can choose which type of arrowhead
+you would like.
+Mechanical operations use dots, architec-
+tural use ticks.
+Make sure you have chosen an appropri-
+ate style.
+III Closed filled
+
+
+===== PAGE 146/298 =====
+Saving
+Dimension Styles
+Once you have created a dimension style that has all the correct settings for your appli-
+cation, it is automatically saved with your file and can be transferred to other files.
+Variations on that dimension style can also be saved. For example, you can create a di-
+mension style in metric with two decimal places ofaccuracy. On some drawings you
+may want to have the diameter lines forced inside, on others not. You can create differ-
+ent dimension styles to accomodate the different styles illustrated in Figure 7.20.
+~ cr
+SI
+•
+26
+BEST FIT
+a
+l1ll
+•
+61
+~I'OO
+~I'OO
+Figure 7.20
+o
+FORCE lINE INSIDE
+II
+Once you have opened the Dimension Style dialog box, pick the New button and cre-
+ate a new dimension style. Add the name for your new dimension style, use 'Copy of
+Standard' to start, then pick Continue to set the parameters for your new style for your
+dimensions. Use OK to save. Figure 7.21 illustrates some of the variables you may
+want to set.
+Texr AND ARRowS
+Texr ONLy
+Figure 7.21
+ARRows ONLy
+LEADER
+Editing
+Dimensions
+You will notice that once you have started dimensioning, a new layer called
+'defpoints' will be part ofyour layer listing. This layer will notprint, and is used to de-
+fine the point to which your ditnension is pointing.
+Ifyou pick Properties from the Modify pull-down menu and select a dimension, you
+are given the Modify Dimension dialog box. Pick the box that offers what you would
+like to change. If you would like to change just the text, select DDEDITJ just as in
+modifying text.
+Adding PrefIXes
+Under the Primary Units dialog box is the heading Prefix. You can add the prefix
+0/0%c for the diameter sign to add diameter signs to all of the dimensions shown.
+Stretch
+You can also stretch the object and have the dimensions automatically updated. The
+STRETCH command can be used in the same way that DIMEDIT is used to move the text
+across the dimension line.
+EXTEND and TRIM can also be used to ensure dimensions show up exactly correctly.
+Dimensioning
+129
+
+
+===== PAGE 147/298 =====
+Step 1
+Step 2
+Quickly draw the part shown in metric units by
+selecting acadiso.dwt, or use STARTUP to make
+sure that you are starting with a metric file. The
+dimensioning defaults are set up differently in
+imperial and metric. It is VERY important to
+start with the correct units or this tutorial will
+not work.
+The
+dimensions
+are
+shown
+for
+your
+convenience in this illustration. Do not try to
+add them yet. Starting with the lower left arc at
+0,0 and a SNAP set to .25 is the easiest way to do
+this.
+Once the part is drawn in, let's see what a
+dimension would look like using the standard
+dimensioning format.
+Before starting dimensioning, create a layer called
+Dims, make it red, and make it current.
+Now set your object snap to ENDpoint and CEN-
+ter. The object snap dialog box is hidden in the
+Drafting Settings box under Tools.
+RO.75
+1.50
+3
+1'·ooo0r=x
+2
+Step 3
+130
+CHAPTER SEVEN
+Comrnand:LlNEAR
+Specify first extension line origin or <select object>:END
+of
+(pick 1)
+Specify second extension line origin:END of
+(pick 2)
+Specify dimension line location or
+[Mtext/Text/Angle/Horizontal/Vertical/RotatedJ : (pick 3)
+Dimension text
+=
+1.0000
+The dimension line should be 1/2 inch away from the object line. With SNAP set at .25,
+this should be easy to place.
+Four decimal points of accuracy are not needed, and the scale of the dimensions is
+larger than needed. The next step is to make a dimension styIe that will incorporate the
+changes.
+First,
+access
+the Dimension
+Style
+dialog
+box,
+create
+a
+style
+called
+Mechanical, and click Continue to
+change the precision.
+Note that the default style here is an
+IS0-25.
+If
+you
+were
+using
+imperial
+measurements
+with
+your
+STARTUP
+command in
+imperial,
+the
+default
+would be called Standard. Ifyou have started this drawing in the wrong measurements,
+close this file and start again in metric.
+
+
+===== PAGE 148/298 =====
+Having set up your mechanical style, now set the precision to two decimal places un-
+der the Primary Units tab.
+'-<S New Dimemion Slyle. qllilllpf
+···~~·fs;;;i;~~i;;;;;i'i~~~C:ij).;"·C:·FfJ~,;lfr.1fl~';~;"'tf~
+j
+Linear tfmen:slon::.
+Umtfo,mat
+PrecisiM
+FractionlOlmlll"
+DeClm<llsepi>lato,
+J
+Round oft
+Suffo<
+NOW pick the Fittab, and change the overall scale to .75 as shown onthe rightbelow.
+Pick OK to return to the Dimension Style
+dialog box.
+Make sure that your new dimension styIe is
+current by choosing the Set Current button
+on the Dimension Style Manager menu, then
+close the dialog box.
+rScale for dimension leatures
+f!)Use averaH scale of:
+eScaledimen$l9f'\Stokl,Ypul
+1°,075 I
+Now erase the first dimension and add the new
+one made with the right parameters as shown
+on the right. Make sure that your dimensions
+are going on to the Dims layer.
+Command: LINEAR
+Specify first extension line
+origin ... >:END of (pick 1)
+Specify second extension line
+origin:CEN of
+(pick 2)
+Specify dimension line location
+or
+J: (pick 3)
+x......t--_--jko6
+x---+--
+5
+Specify first extension line
+origin or ... >:CEN of
+(pick 1)
+Specify second extension line
+origin:CEN of (pick 2)
+Specify dimension line location
+or
+[Mtext ..... J: (pick 3)
+Command:.J
+Specify first extension line origin or <select object>:CEN
+of
+(pick 4)
+Specify second extension line origin:CEN of
+(pick 5)
+Specify dimension line location or
+[Mtext/Text/Angle/Horizontal/Vertical/Rotated] : (pick 6)
+Now that the style has been set, add the linear
+dimensions.
+First
+create
+the
+horizontal
+dimension between the centers of the two arcs
+on the top, then create the vertical dimension on
+the right.
+Command:LINEAR
+Step 4
+If you are not getting the two
+I zeros, make sure that there are
+no zeros suppressed in Primary
+Dimensioning
+131
+
+
+===== PAGE 149/298 =====
+Step 5
+Now add the other vertical and horizontal dimensions in the same manner. Don't
+worry if the dimensioning defaults are different on your system.
+5
+1.50
+6
+4
+Specify first extension line
+origin .... >:END of
+(piok 1)
+Specify second extension line
+origin:CEN of (pick 2)
+Specify dimension line location or
+[ .... Rotated]: (pick 3)
+Command:.J
+Specify first extension line
+origin or ... >:CEN of
+(piok 4)
+Specify second extension line
+origin:CEN of (pick 5)
+Specify dimension line location or
+[Mtext/Text/Angle/Horizontal/Verticall
+Rotated]:
+(pick 6)
+Command:LlNEAR
+Step 6
+Now add the radial dimensions. When you pick radial for the dimensions, you can
+move the leader line either inside oroutside the radius. Place the radii outside the object
+as shown.
+Command:RADIUS
+Select arc or circle: (pick 1)
+Specify dimension line location or
+[Mtext/Text/Angle] : (pick 2)
+Command:RADIUS
+Select arc or circle: (pick 3)
+Specify dimension line location or
+[Mtext/(Text/Angle]: (pick 4)
+lfthe radii do not respond in the way that you want,
+return to the Dimension Style Manager and make
+sure you are working in the correct dimension style,
+then use Modify to change the parameters. The lines
+of the radius dimension are under the Fit tab.
+2
+RO.75
+Step 7
+Your dimensions are fine, so now add center marks. From
+either the pull-down menu or the toolbar, choose Center
+Mark.
++
++
+Command:CENTER
+Select arc or circle: (pick the radii)
++
++
++
+The lines associated with the center mark are determined
+under the Lines tab.
+Save your drawing now if you have not done so already.
+Step 8
+The dimensions added are associative dimensions. This means that the dimensions are
+entered relative to the points that you have identified. These are called defpoints, and
+there is a special layer created for them under your Layer menu. This layer does not
+plot, so be careful not to make it current.
+132
+CHAPTER SEVEN
+
+
+===== PAGE 150/298 =====
+This means that you can STRETCH the part and
+the dimensions will automatically update.
+Command: STRETCH
+Select objects to stretch by
+window ...
+Select objects:C
+First corner: (pick 1)
+Other corner: (pick 2)
+Select objects:.J
+Base point: (pick 3)
+New point:@1<90
+(or pick 4)
+1.50
+1.50
+The resulting object should look like this.
+Your objects should stretch and the vertical di-
+mension should change. If only the dimensions
+stretch and notthe part itself, it is because the Ob-
+jects layer, or whatever layer you have placed the
+objects on, is locked. Under the Layer toolbar,
+unlock the Objects layer.
+RO.75
+1.50
+Step 9
+Finally, if you have entered all the dimensions and then find that they are the wrong
+scale or the wrong units, that the arrowheads should be ticks, or some other problem,
+you can edit the dimensions singly or in groups by changing the options in the
+Dimension Style dialog box. What if the dimensions should really be in fractional
+rather than decimal? You can change the dimension style and apply it to the current
+drawing.
+First, save the drawing under a different name by using the 'Save as' function under
+the File pull-down menu. Now you have two copies, one with fractions and one with
+decimals.
+The next step is to make a new dimension style that incorporates the necessary
+changes. Access the Dimension Style dialog box.
+From the main dialog box, pick New and create a style called Fractional using Me-
+chanical as the base.
+Once this is entered, pick Continue and go to the Primary Units tab to change the units
+to fractions. Pick OK and you will return to the Dimension Style Manager.
+Use the Set Current button to set the current style to Fractional and close the dialog
+box.
+21
+i'--f---+-i-
+Command:DIM
+Dim:UPD
+Select objects: (pick all the
+objects with crossing or window)
+Select objects:..J
+Make a dimension anywhere on the screen. Pick
+the Matchproperties icon. Pick the new dimen-
+sion, then all the other dimensions. They will up-
+date.
+To use update, change the mode to dimensioning
+mode, then use UPD.
+To update all ofyour dimensions to fractional, use Matchproperties or the UPDate
+command.
+Dimensioning
+133
+
+
+===== PAGE 151/298 =====
+Step 1
+Open a floor plan drawn in architectural units.
+Ifyou don't have one, open a new file in itnperial units
+using acad.dwt, change your units to architectural, and
+draw in a few lines for a small house, 25.1 by 35' with a
+simple window and door.
+I
+I
+L
+.l
+Step 2
+The Standard dimensioning is set up to be
+printed at 1- 1. For a floor plan, you will be
+printing at 1/4"= 1.1_0" or 1/2" = l'_Of?
+You will need to set up a dimension styIe
+right away_
+DO NOT CHANGE THE STANDARD
+DEFAULTS!
+Create a new dimension style and call it
+Quarter for 1/4"= I? _ON.
+Step 3
+You will need to change three
+things right away.
+New Dimension Style: quarter
+i,-A_rCh_it_ec_IUI_at~__~
+r
+1'[
+Yii-!~
+IHorizontal
+1"
+L---..---:-:-==~'
+~l_
+(~
+\~)
+Rl~~
+,-------------,
+Angular dimensions
+5ufliK
+Prefi:<:
+Decimal separator:
+Round off:
+fu;;;-] Symbols and AIJows~ Te><l ~!l Fit . J~p;;;';~;lTnit;'fAit;f~t;~rr~
+:
+linear dimensions
+! Unitlorma\:
+'Ii
+Precision
+Fraction formal:
+The rounding-off factor is also
+important.
+In this case do not
+change it. By changing this you can
+sometimes have drawings where
+the smaller dimensions add up to
+more than the overall dimension.
+First, set your primary units to
+architectural with a precision of 1".
+Having a
+1/8'.1 or even a
+1/2.'.'
+precision
+on
+a
+floor
+plan
+is
+unrealistic. These are for details.
+Now set your text position to be above the dimension line and aligned with it. This is
+under the Text tab.
+Vertical:
+Horlzontat
+Offset from dim line:
+Above
+ICentered
+1°,0900
+o Horizontat
+@) Atigned w~h c!lmenslon line
+o ISO standard
+Architectural and construction applications generally have the text placed above the
+dimension line. This is a standard discipline protocol. In a set ofdrawings, it is not un-
+usual to find that those prepared by the designers and architects have different proto-
+cols to the structural and mechanical drawings in the same set.
+134
+CHAPTER SEVEN
+
+
+===== PAGE 152/298 =====
+Now pick the Fit tab, and change the overall scale to 48 as shown onthe right below.
+If there isn't enough room to place both lext and
+arrol"ls inside e~temion ~n~, the first thing to
+move outside the extension lines is:
+@ Either teK! Of aHOWS (best fitl
+o ArIOWS
+OTe~t
+o Both te~t and arrows
+o Always keep text between ext !ires
+[] Suppte~s arlOWS if they don't fil inside
+extension lines
+Often architectural drawings have ticks
+rather than arrowheads. Under the Symbols
+and Arrows tab, change the arrows to archi-
+tectural ticks.
+First:
+III Architectural tick
+Second:
+IliMa".
+I
+I
+Your dimension style should be set and ready to use.
+Pick OK at the bottomofthe dialog box, then choose Set
+Current from the Dimension Styles dialog box.
+Setup a new layer calledDims, and start dimensioning.
+Step 4
+Yau will want to set your OSNAP to ENDpoint and MIDpoint.
+The dimensions on a frame building are set up for the carpenter, so the outside ofthe
+frame is used as the definition point, not the outside ofthe veneer. Since the window
+position is known, but the exact size of the window is not always known until it is
+shipped to the site (due to changes in orders, etc.) the windows and doors are generally
+dimensioned to the center point.
+The interior walls are dimensioned to the outer edge of the wall to give the interior
+dimension, or sometimes to the wall center.
+11~1 t
+I~'~II
+t
+1
+1...... 1
+1
+~ D
+1-
+i\
+T
+~
+"-0'
+1I 1.-B"
+b
+q..
+ib
+6·...f'
+~
+Q
+11'-0'
+"
+~
+B'~II
+\to.
+~
+•
+If the building is insulated with concrete or other masonry, these dimensions are
+usually measured from the outer edges.
+Save your file when you are done. Don't forget to use STRETCH to place the text where
+you want it.
+Dimensioning
+135
+
+
+===== PAGE 153/298 =====
+Exercise 7
+Practice
+This reinforced concrete footing is used in Tutorial 14c page 276.
+»L
+ljoczo
+~
+oz
+1'230
+2000
+230'1
+2300
+920
+fTlC
+.
+..
+530
+1770
+1"-,.
+VI~
+Ul
+VlO
+-
+-" fTl
+fTl0
+a
+0
+1:;:0
+3::
+o~
+VJE;
+3:
+(/)
+~
+I'VfTl
+Cl
+fTl
+AI
+0
+-~
+-0
+-l
+w~
+00
+--t
+I
+1
+gru
+C
+Z
+---
+-l
+fTI
+a
+,-~
+r-- ---
+-- ---,
+t~
+1
+::::=J
+~~-
+•
+-)...j::>.
+L __
+»
+---
+-- -- -l
+0
+.......
+---
+I'V
+0
+IN
+<;)
+~~
+;.0
+:;:0
+0
+:>
+\0
+:E
+0
+fTl
+(J'.
+fTl
+()1
+a
+rn
+L
+R"
+~
+f::===:1
+•
+~~
+ru
+L
+ru
+~
+OJ
+0
+~
+fTl""T'1
+II
+.~
+0
+C
+0-l0
+I'VAi
+"-J
+-....J
+~
+0
+t---
+.........
+<f.
+LINE 21
+TO 28
+fTl
+I
+(.,.j
+0
+OJ
+~
+0
+~
+aaa
+...p..
+?
+OJ
+0
+~
+~
+?'
+OJ
+:::
+()1
+~s::
+0
+j>
+~
+1350
+"-.l
+W
+100
+Ul
+(Xl
+I
+0
+GIRT LINE
+~
+(j)
+fTlo-1
+CD
+I
+OJ
+0
+0r-
+AJa
+~
+t
+t
+fTl
+~
+CD
+OJ
+c...
+(j)
+f1l
+()
+-1
+rA
+»
+r
+I
+Z
+»
+fTl
+(J)
+~
+-1
+0
+Nco
+;0
+fIl
+(Xl
+N
+FOOTING AND FOUNDATION DRAWINGS
+FOOTING AND FOUNDATION DRAWINGS ILLUSTRATE THE SIZE OF THE FOUNDATION AND WHAT FASTENERS ARE USED
+TO ATTACH IT TO THE STRUCTURAL MEMBERS. THESE DRAWINGS ARE GENERALLY PREPARED BY CIVIL
+OR STRUCTURAL ENGINEERS AS OPPOSED TO ARCHITECTS.
+136 CHAPTER SEVEN
+
+
+===== PAGE 154/298 =====
+Exercise 7 Architectural
+This is the first floor of the house shown on page 85.
+Open the second floor plan shown on page 85. Use Save as and call it First Floor.
+Erase what you don't need, and use STRETCH to adjust the windows.
+Add the interior walls and fireplace, then dimension. Add the section arrow last.
+A
+2 '-Oil
+12
+1-6
+11
+Q
+I
+.~---
+~
+I
+~
+U
+0
+~,
+~ B
+I"""
+-
+f- ,...--
+~
+~
+rr
+~
+~
+co
+,,-
+\
+~
+I
+0
+~
+Q
+00
+\
+~
+co
+00
+12 '-6
+11
+12'- ~)il
+t J
+1
+I----
+-~
+/1'-0" 'iN
+~
+rr~
+I:
+-
+~ !--
+I
+"?'_I
+II
+I
+T
+_L...-
+"-----I
+~
+B'-B"
+~~
+~i<--
+Q
+~
+~
+I "
+Q
+0
+~--"
+CD
+I
+l.-
+I
+t-
+I-4R
+I"-
+«
+II'-B'
+~'-6"
+up
+~
+---
+\
+-
+~
+/ rL
+0
+\
+::IV
+b1
+\0-
+6'-0"
+9'-0"
+9' b"
+~O'-Qi'
+A
+THE DIMENSIONS ON A FRAME BUILDING ARE SET UP FOR
+THE CARPENTER, SO THE OUTSIDE OF
+THE FRAME IS USED AS THE DEFINITION POINT, NOT THE OUTSIDE OF THE VENEER. SINCE THE
+WINDOW POSITION IS KNOWN, BUT THE EXACT SIZE OF THE WINDOW IS NOT ALWAYS KNOWN UNTIL
+IT IS SHIPPED TO THE SITE (DUE TO CHANGES IN ORDERS, ETC.) THE WINDOWS AND DOORS ARE
+GENERALLY DIMENSIONED TO THE CENTER POINT.
+~ Q
+\
+\t\
+~
+~
+0'-10"
+~-ti
+-
+C?
+-,
+N
+~ :I
+-'~~
+O'-211 1f
+~
+0
+Dimensioning
+137
+
+
+===== PAGE 155/298 =====
+Exercise 7 Mechanical
+With multiple views you must make sure all the views line up.
+16
+10
+_ 011.00 X THRU
+020.00 SFACE
+2 HOLESX2 DP
+038
+022.00 +_g.g~
+TOP
+'----- 58 ---~
+~
+58
+~~1
+I~....-82-.-----·1
+R12.0
+FRONT
+Axle Support
+ORTHOGRAPHIC PROJECTION
+THE PURPOSE OF SIMPLE ORTHOGRAPHIC PROJECTION IS TO SHOW THREE OR MORE VIEWS
+OF AN OBJECT IN 2D IN ORDER TO COMPLETELY DESCRIBE IT. THE VIEWS ARE SHOWN
+AT RIGHT ANGLES TO ONE ANOTHER, THE VIEWER IS LOOKING FROM A POINT
+PERPENDICULAR TO THE MAIN FACE.
+COMMON DIMENSIONS ARE FOUND ON ONE VIEW ONLY.
+THIS SYMBOL MEANS THE SURFACE IS CUT RATHER THAN CASTE .
+____________________
+- - - ' - ' = - _ ~ " - - - - - . 1 -
+.25 DIA x 45 0 CSK
+--------Developed length 4.50 ---------;
+.0625 x 45"
+--\
+20"
+.375 - 24 UNF - 2A
+HANDLE
+138 CHAPTER SEVEN
+
+
+===== PAGE 156/298 =====
+Exercise 7 Wood
+This is the top or bonnet for the dock base found on page 105.
+To create the numbers use ARRAY then DDEDIT or ED.
+The design for the top is created with PLINE.
+RIl/4
+RI
+R1/2
+IA
+R4
+R6
+I
+R12
+I~16
+Capital
+finial
+Dimensioning
+139
+
+
+===== PAGE 157/298 =====
+CRANE HOOK
+DETAIL ASSEMBLY
+1,80~
+1
+.21+= L..----L...I
+Tl-18 ---t-t:t:t+---'ttl==J:--=t-t-r-
+~ -+-W"I--I
+R056
+.375 DIA
+6 holes
+IT 0.56
+f-O.94
+FILLETS AND
+ROUNDS
+.12R
+UNLESS OTHER'vIISE
+SPECIFIED
+f--.-----5.26 ------I
+CAST
+IRON 1 REQD
+1.125 DIA
+2.062 CBORE
+FROM REAR
+CONNECTOR
+140 CHAPTER SEVEN
+
+
+===== PAGE 158/298 =====
+Text and Pictorial Views
+G)fl~~brhpteti()n,ot this chapter, you should be able to:
+},1'lrtr/:> Hn.::oru· tt:>vt in any size at any rotation angle
+••.••••• ·'2:,t'IQ<:;e~)() oagf"oph text
+}}i/
+••·
+T •..•·•.···•• ··•· 3, C,'eQtel::Irl<:! CnOlnq(~oDlh~ctions of formats to make a text style
+text
+.••..•••·•.t>•• :>j~t ••.~)pi$2rnetrlc text and pictorial drawings.
+AutoCAD provides two basic ways to create text. Linear text places simple entries of
+one or two lines. For longer entries paragraph text is used. Text is entered in the cur-
+rent text style, which incorporates the current format and font settings. Use the Text
+toolbar for Inany text entries.
+Text
+E3
+W~I
+,_,.,,,',_,,,::1:
+Linear Text
+As stated in Chapter 5, the commands TEXT and DTEXT will place strings ofcharacters
+on your drawing. When entering text, AutoCAD will prompt you to choose a height
+for each character, a rotation angle for the string, and a point at which to place the text
+string on the model or drawing. Many people prefer TEXT or Single Line Text from the
+pull-down menu for titles and filling in title blocks, as with it you can see the style and
+placement of the text as it is entered.
+The TEXT or DTEXT Command
+In Releases 2008 and 2007, the TEXT command functions in the way that the DTEXT
+command functioned in releases prior to 2005. Release 2006 has only the TEXT com-
+mand without the multiple line capabilities. This command is very useful for filling in
+title blocks and adding data at a standard size and style in several spots on a drawing at
+once. Multiline text is very useful for paragraphs and for importing ASCII data, but the
+TEXT command is still the best for annotating drawings.
+The command line equivalent is TEXT.
+The TEXT command is as follows:
+Cornrnand:TEXT
+Specify start point of text or
+[Justify/Style]:J
+Enter an option
+Align/Center/Fit/Middle/Right/TL/TC/TR/ML/MC/MR/BL/BC/BR:
+Text and Pictorial Views
+141
+
+
+===== PAGE 159/298 =====
+Where: Justify
+Style
+Align
+Center
+Fit
+Middle
+Right
+the placelnent of the text
+controls the style of the letters; the styles must be loaded
+in AutoCAD to be accessible
+an alignment by the end points ofthe baseline; the aspect
+ratio (X vs. Y) will correspond to the preset distance
+the center point of the baseline; this option will fit the
+text through the center point indicated
+an adjustment of width only of the characters that are to
+be fit or 'stretched' between the indicated points
+a placement of the text around the point, i.e. the top and
+bottom of the text are centered as well as the sides
+an alignment with the right side of the text
+The examples in Figure 8.1 demonstrate
+the standard justifications. The default
+is left justification at the baseline ofthe
+text string.
+Height can be chosen by picking a point
+to indicate the height, or by typing in a
+number.
+The double-initialed justification op-
+tions illustrated in Figure 8.2 are as fol-
+lows:
+Default
+)\\\9\\80:
+III
+x F
+~
+Figure 8.1
+Centered
+x
+Mid>dle
+t
+Right
+TL
+top left
+Te
+top center
+TR
+top right
+ML
+middle left
+Me
+middle center
+MR
+middle right
+BL
+bottom left
+Be
+bottom center
+-trop LEFT
+TOptENTER
+Top RIGH-F
+Figure 8.2
+-MIDDLE l.EFT
+~OTTOM LEfT
+MIDDLE-tCENTER BOTTOM..rCENTE
+MIDDLE RIGHT+
+BOTTOM R1GHlt
+BR
+bottom right
+Once you have chosen a point at which to place your text~ the command will prompt
+you for the height ofthe letters, the rotation angle, and the text or string ofcharacters it-
+self.
+A text string is one line oftext.
+Front ffevQ tion
+142
+CHAPTER EIGHT
+Command: TEXT
+(or DTEXT)
+Figure 8.3
+Specify Start point or [Justify/
+Style] :c
+Specify center point: (pick 1)
+Specify height<.2000>:.S
+Specify rotation angle
+<O>:~ (to accept the default)
+Enter text:Front
+Elevation~
+In Figure 8.3, the justify option Center was chosen, so the other options for placement
+were bypassed. If Justify had been chosen, the following line would have been of-
+fered:
+Align/Center/Fit/Middle/Right/TL/TC/TR/ML/MC/MR/BL/BC/BR:
+
+
+===== PAGE 160/298 =====
+Degrees
+PIus/Minus
+Diameter
+O/o%.d
+°/oo/op
+%%c
+If TEXT was the last command entered, pressing .J at the Specify start point [Jus-
+tify/Style]: prompt skips the prompts for height and rotation angle, and immediately
+displays the Enter text: prompt.
+The text is placed directly beneath the previous line oftext.
+Special Character Fonts
+You can underscore, overscore, or include a special character by including control in-
+formation in the text string. In MTEXT, the special characters are found under the @
+symboL
+Almost Equal
+Angle
+Bound(lry Line
+Center Line
+Delta
+Electrical Phase
+Flow Line
+Identity
+Initial Length
+Monument Line
+Not Equal
+Ohm
+Omega
+Property Line
+Subscript 2
+Squared
+Cubed
+\U+2248
+\'U+2220
+\U+EI00
+\U+2104
+\U+0394
+W+0278
+W+EI01
+\U+Z261
+\U+E200
+\U+E102
+\U+2260
+\U+2126
+\U+03A9
+\U+214A
+\U+2082
+\U+OOB2
+\U+OOB3
+%%u
+%%0
+%%d
+%%p
+%%c
+%%nnn
+underscore
+overscore
+degree symbol
+plus/minus tolerance symbol
+diameter symbol
+ASCII characters: %%123 'ro%125 =
+{ }
+Non-breal<jng Space
+Ctrl+Shift+Space
+Other."
+Whenusing special character fonts with the TEXT command, the special characters will
+he displayed as you type, i.e., %%uFront Elevation%%u. The entry will be up-
+dated to the desired text once the command is finished, as shown in Figure 8.4.
+Comrnand:TEXT
+Specify start point or [Justify/Style]:R
+Right side: (pick 1)
+Specify
+height<.2500>:~
+Specify rotation
+angle<O>:~
+Enter text:%%u%%c25 4 holes
+Enter text:.J
+Multiline Text
+~25
+Figure 8.4
+4
+A new text string will line up with the previously entered text string, if there are no
+changes in the base point or justification options in both the TEXT and DTEXT com-
+mands. IfCenter is chosen, all ofthe text will be centered (see Figure 8.5b); ifno op-
+tion is chosen, all strings will be left-justified (see Figure 8.5a). Your last string oftext
+will be highlighted to show where the next line will be lined up.
+Ifyou do not want your text to line up with the last string entered, simply identify a new
+start point. In TEXT use .J to reenter the command after the first text string, then press .J
+again to accept the default position, size, and rotation.
+If you use ESCape to quit the
+DTEXT command, you will
+loose aII th e text you entered.
+Always use .J to exit from the
+DTEXT or TEXT commands.
+ALL F~LL!ETS ARE
+RAlD~US .5
+BOTH SHOES
+a
+Figure 8.5
+MOHAWK COLLEGE
+FENNEL AND WeST F~FTH
+HAMILTON! ON
+b
+Once your text has been entered, it is accepted as one item and can be edited using any
+ofthe edit commands, such as COPYI MOVE, ERASE, ROTATE, andARRAY. To edit the
+text itself, use DDEDIT, ED, DDMODIFY, or CHANGE.
+Text and Pictorial Views
+143

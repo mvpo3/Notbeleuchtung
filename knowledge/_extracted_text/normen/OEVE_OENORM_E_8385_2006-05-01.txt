@@ -1,0 +1,856 @@
+
+
+===== PAGE 1/13 =====
+ÖVE/ÖNORM
+E 8385
+Ausgabe: 2006-05-01
+Auch Normengruppe 330 
+Ersatz für ÖVE-E 15:1985 
+ICS  29.240.01 
+Betrieb von elektrischen Anlagen – 
+Besondere Festlegungen für landwirtschaftliche und 
+gartenbauliche Betriebsstätten 
+Operation of electrical installations – Particular requirements for agricultural and 
+horticultural plants 
+Opération d'installation électriques – Prescriptions particuliéres pour les 
+établissementes agricoles et horticoles 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+Fortsetzung 
+ÖVE/ÖNORM E 8385 Seiten 2 bis 13  
+Fach(normen)ausschuss
+FA/FNA H
+Elektrische 
+Hochspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © OVE/ON - 2006. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des OVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, 1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (OVE), Eschenbachgasse 9, 1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 15
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 2/13 =====
+Seite 2 
+ÖVE/ÖNORM E 8385  
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den 
+einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den 
+jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+–
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der
+ Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum
+Zeitpunk 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTRO-
+ TECHNIK/ÖNORM ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere
+Weise festgelegte aktuelle Stand zu berücksichtigen.
+–
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst.
+Inhaltsverzeichnis 
+Seite 
+Vorbemerkung................................................................................................................................................................... 3 
+1 
+Anwendungsbereich .......................................................................................................................................... 3 
+2 
+Normative Verweisungen.................................................................................................................................... 3 
+3 
+Begriffe ................................................................................................................................................................ 3 
+4 
+Allgemeine Grundsätze....................................................................................................................................... 4 
+4.1 
+Sicherer Betrieb..................................................................................................................................................... 4 
+4.2 
+Brandschutz, Brandbekämpfung............................................................................................................................ 4 
+4.3 
+Verhindern unzulässiger Erwärmungen................................................................................................................. 5 
+4.4 
+Maßnahmen beim Erkennen eines Mangels.......................................................................................................... 5 
+4.5 
+Gegen Wiedereinschalten sichern ......................................................................................................................... 5 
+4.6 
+Gänge und Bedienungsräume............................................................................................................................... 5 
+4.7 
+Befestigen von Gegenständen............................................................................................................................... 5 
+4.8 
+Tiefbauarbeiten...................................................................................................................................................... 5 
+5 
+Auswahl und Benutzung von elektrischen Betriebsmitteln............................................................................. 5 
+5.1 
+Allgemeines ........................................................................................................................................................... 5 
+5.2 
+Hausanschluss, Verteiler, Zählerplatz, Hauptschalter............................................................................................ 6 
+5.3 
+Metallene Rohrleitungen........................................................................................................................................ 6 
+5.4 
+Steckvorrichtungen................................................................................................................................................ 6 
+5.5 
+Bewegliche Leitungen............................................................................................................................................ 6 
+5.6 
+Leuchten................................................................................................................................................................ 7 
+5.7 
+Elektrowärmegeräte zur Tieraufzucht und Tierhaltung .......................................................................................... 7 
+5.8 
+Tierpflegegeräte..................................................................................................................................................... 8 
+5.9 
+Batterien (Akkumulatoren) und Ladeeinrichtungen................................................................................................ 8 
+6 
+Elektrozaunanlagen............................................................................................................................................. 8 
+7 
+Intensivtierhaltung............................................................................................................................................. 10 
+8 
+Elektrofischereianlagen .................................................................................................................................... 11 
+9  
+Schweißeinrichtungen ...................................................................................................................................... 11 
+10 
+Erhalten des ordnungsgemäßen Zustandes ................................................................................................... 11 
+11 
+Arbeiten in der Nähe unter Spannung stehender Teile .................................................................................. 12 
+12 
+Wiederkehrende Prüfungen.............................................................................................................................. 12 
+Anhang A (informativ): Literaturhinweise..................................................................................................................... 13 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 3/13 =====
+Seite 3 
+ÖVE/ÖNORM E 8385 
+Vorbemerkung 
+Die vorliegende Norm ist das Ergebnis einer redaktionellen Überarbeitung der ÖVE-E 15:1985, wobei auch die 
+normativen und informativen Verweisungen aktualisiert wurden.  
+Diese Überarbeitung war erforderlich, nachdem ÖVE-E 5 Teil 1:1989 durch ÖVE EN 50110-1 ersetzt wurde.  
+Die Änderungen und Ergänzungen durch die ÖVE/ÖNORM E 8001-4-56 wurden berücksichtigt. 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für den Betrieb von elektrischen Anlagen in landwirtschaftlichen und gartenbaulichen 
+Betriebsstätten1) und ist auch beim Errichten und Verändern von derartigen elektrischen Anlagen zu beachten. 
+Sie gilt auch für nichtelektrotechnische Arbeiten im Bereich elektrischer Anlagen, zB bei Bau-, Montage-, Transport-, 
+Anstrich- und Ausbesserungsarbeiten sowie beim Unterfahren von Freileitungen. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten Verweisungen 
+gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe des in Bezug 
+genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind immer in der jeweils geltenden 
+Fassung anzuwenden. 
+ÖVE-E 36 
+Errichtung und Betrieb von Elektrofischereianlagen 
+ÖVE/ÖNORM E 8001-2-31 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51 000 V und 
+41 500 V – Teil 2-31: Freischalten, Trennen und Schalten – Anforderungen, Auswahl 
+und Verwendung von Geräten 
+ÖVE/ÖNORM E 8001-4-56 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51 000 V und  
+41 500 V – Teil 4-56: Elektrische Anlagen in landwirtschaftlichen und 
+gartenbaulichen Betriebsstätten 
+ÖVE/ÖNORM E 8240 (Reihe) 
+Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 450/750 V  
+ÖVE-EN 1 Teil 2 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51 000 V und 
+41 500 V – Teil 2: Elektrische Betriebsmittel 
+ÖVE-EN 31 
+Errichtung von Elektrozaunanlagen 
+ÖVE-EN 50110-1  
+Betrieb von elektrischen Anlagen – Teil 1: Europäische Norm 
+(EN 50110-2-100 eingearbeitet) 
+Teil 2-100: Nationale Ergänzungen 
+ÖVE/ÖNORM EN 60309-1 
+Stecker, Steckdosen und Kupplungen für industrielle Anwendungen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 60529 
+Schutzarten durch Gehäuse (IP-Code) 
+ÖVE/ÖNORM EN 61242 
+Elektrisches Installationsmaterial – Leitungsroller für den Hausgebrauch und ähnliche 
+Zwecke 
+ÖVE/ÖNORM EN 61316 
+Leitungsroller für industrielle Anwendung 
+ÖVE EN 61558-2-6 
+Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-6: Besondere 
+Anforderungen an Sicherheitstransformatoren für allgemeine Anwendungen 
+ÖVE-M 13 Teil 1 
+Sicherheitsbestimmungen für die Anwendung von Schweißeinrichtungen –  
+Teil 1: Allgemeine Bestimmungen 
+3 
+Begriffe 
+Für die Anwendung dieser Norm gelten die Begriffe gemäß ÖVE-EN 50110-1 (EN 50110-2-100 eingearbeitet) und 
+ÖVE/ÖNORM E 8001-4-56 sowie die folgenden Begriffe: 
+3.1 
+Betrieb 
+alle Tätigkeiten, die erforderlich sind, damit die elektrische Anlage sicher betrieben werden kann  
+Dies umfasst das Bedienen, bestimmte elektrotechnische Arbeiten gemäß 3.4 und nichtelektrotechnische Arbeiten. 
+1) Siehe ÖVE/ÖNORM E 8001-4-56; ÖVE-EN 1, Teil 4 (§ 56):1993-05; ÖVE-EN 1, Teil 4 (§ 56a):1996-03
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 4/13 =====
+Seite 4 
+ÖVE/ÖNORM E 8385  
+3.2 
+elektrische Anlage 
+Anlage mit elektrischen Betriebsmitteln zur Erzeugung, Übertragung, Umwandlung, Verteilung und Anwendung 
+elektrischer Energie 
+Dies schließt Energiequellen ein wie, Batterien, Kondensatoren und alle anderen Quellen gespeicherter elektrischer 
+Energie. 
+3.3 
+Bedienen elektrischer Anlagen durch den Laien (zB Landwirt, Gärtner) 
+als Bedienen elektrischer Betriebsmittel gilt das Beobachten, Schalten, Steuern und Regeln 
+Hierzu gehört auch das Betätigen von Prüfeinrichtungen, das Einsetzen und Auswechseln von Leuchtmittel zB Lampen 
+sowie von Schraubsicherungen und das Besichtigen auf äußerlich erkennbare Schäden. 
+3.4 
+Arbeiten an elektrischen Anlagen 
+als Arbeiten an elektrischen Anlagen durch Laien (zB Landwirt, Gärtner) gelten: 
+−
+Reinigen,
+Hierzu gehört zB das Sauberhalten von Oberflächen elektrischer Betriebsmittel.
+−
+Instandhalten,
+Instandhalten umfasst Arbeiten zum Vermeiden von Störungen. Hierzu gehören zB das Pflegen (Schmieren,
+Anstreichen) Prüfen, Instandsetzen und Auswechseln von Teilen, die dafür vorgesehen sind.
+−
+Beseitigen von Störungen, soweit es sich nicht um elektrotechnische Arbeiten handelt.
+ANMERKUNG: 
+Elektrotechnische Arbeiten gemäß ÖVE EN 50110-1 sind Elektrofachkräften bzw. elektrotechnisch 
+unterwiesenen Personen vorbehalten. 
+3.5 
+Freischalten 
+als Freischalten in elektrischen Anlagen gilt das allpolige und allseitige Abschalten einer Anlage, eines Teiles einer 
+Anlage oder eines Betriebsmittels von Teilen, die betriebsmäßig unter Spannung stehen oder stehen können 
+3.6 
+Elektrofachkraft 
+eine Person mit geeigneter fachlicher Ausbildung, Kenntnissen und Erfahrung, so dass sie Gefahren erkennen und 
+vermeiden kann, die von der Elektrizität ausgehen können 
+3.7 
+elektrotechnisch unterwiesene Person 
+eine Person, die durch Elektrofachkräfte ausreichend unterrichtet wurde, so dass sie Gefahren vermeiden kann, die von 
+der Elektrizität ausgehen können 
+3.8 
+Laie 
+eine Person, die weder Elektrofachkraft noch elektrotechnisch unterwiesene Person ist 
+4 
+Allgemeine Grundsätze 
+4.1 
+Sicherer Betrieb 
+4.1.1 
+Es dürfen nur elektrische Betriebsmittel betrieben werden, die Personen, Nutztiere und Sachen nicht gefährden. 
+Im Allgemeinen sind dies Betriebsmittel, die nach den allgemein anerkannten Regeln der Technik hergestellt und für den 
+vorgesehenen Verwendungszweck geeignet sind. Die Betriebsmittel sind bestimmungsgemäß zu verwenden. Dabei sind 
+die Herstellerangaben (Betriebsanleitung) zu beachten. 
+4.1.2 
+Elektrische Anlagen sind den Errichtungsnormen entsprechend in ordnungsgemäßem Zustand zu erhalten. 
+4.1.3 
+Bei Änderungen der Betriebsbedingungen, zB Änderung der Raumnutzung, müssen die bestehenden Anlagen 
+den jeweils gültigen Errichtungsnormen angepasst werden. 
+ANMERKUNG:  
+Eine Änderung der Raumnutzung liegt zB vor, wenn aus einem bisher trockenen Raum ein Feuchtraum wird oder 
+wenn ein Raum zu einer feuergefährdeten Betriebsstätte wird, weil darin leichtentzündliche oder schwelfähige Stoffe, 
+zB Düngemittel, gelagert werden. 
+4.2 
+Brandschutz, Brandbekämpfung 
+4.2.1 
+Bei Ausbruch eines Brandes sollten gefahrbringende oder gefährdende Teile der elektrischen Anlage 
+ausgeschaltet werden, soweit sie nicht für die Brandbekämpfung unter Spannung gehalten werden müssen oder die 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 5/13 =====
+Seite 5 
+ÖVE/ÖNORM E 8385 
+Ausschaltung andere Gefahren verursacht. Für die Brandbekämpfung sind geeignete Arbeitskräfte in der Bedienung der 
+Löschgeräte zu unterweisen. 
+4.2.2 
+Leicht entzündliche Stoffe und Gegenstände, wie Stroh, Heu, Verpackungsmaterial, Dünge- und 
+Pflanzenbehandlungsmittel, müssen, damit sie sich nicht entzünden können, von elektrischen Betriebsmitteln, wie 
+Wärmegeräten, elektrischen Maschinen, Schalt- und Verteilungsanlagen, Leuchten, Schaltern und Steckvorrichtungen, 
+ausreichenden Abstand haben. Ausreichender Abstand ist gegeben, wenn brennbares Material mit elektrischen Anlagen 
+nicht in Berührung kommt oder der vom Hersteller eines elektrischen Betriebsmittels angegebene Mindestabstand 
+eingehalten wird. 
+4.3 
+Verhindern unzulässiger Erwärmungen 
+4.3.1 
+Elektrische Geräte, insbesondere Wärmegeräte, sind unter Beachtung der Gebrauchs- bzw. Betriebsanleitung 
+so aufzustellen und zu betreiben, dass sie keinen Brand verursachen können. 
+4.3.2 
+Temperaturregler von Wärmegeräten dürfen nur entsprechend der Gebrauchs- bzw. Betriebsanleitung 
+eingestellt werden. Die Einstellung an Sicherheitstemperaturbegrenzern darf nur durch den Hersteller oder eine 
+Elektrofachkraft vorgenommen werden. Die durch den Hersteller vorgegebenen Grenzwerte sind einzuhalten. 
+4.3.3 
+Elektrische Betriebsmittel, wie Leuchten, Motoren, Wärmegeräte, dürfen nicht abgedeckt werden, zB durch Heu 
+oder Stroh u. dgl. 
+4.4 
+Maßnahmen beim Erkennen eines Mangels 
+4.4.1 
+Wird an elektrischen Anlagen ein Mangel beobachtet, der eine Gefahr für Personen, Nutztiere oder Sachen zur 
+Folge haben könnte, so sind unverzüglich Maßnahmen zur Abwendung der Gefahren zu treffen. 
+Dies kann geschehen, zB durch: 
+−
+Abschalten der Anlage oder eines Anlagenteiles zB mit Hauptschalter, Fehlerstromschutzeinrichtung – „FI“,
+Sicherungen u. dgl. (siehe 5.2.3),
+−
+Absperren des Gefahrenbereiches,
+−
+Kenntlichmachen (zB Anbringen von Hinweisschildern).
+4.4.2 
+Mit der Mängelbeseitigung ist umgehend eine Elektrofachkraft zu beauftragen. 
+4.5 
+Gegen Wiedereinschalten sichern 
+Betriebsmittel, zB Leitungsschutzschalter, Sicherungen u. dgl. mit denen zur Vermeidung von Gefahren abgeschaltet 
+worden ist, sind gegen Wiedereinschalten zu sichern. Beispiele hierfür sind das Anbringen von Warnhinweisen, 
+Klebefolien oder mechanische Verriegelungseinrichtungen. 
+4.6 
+Gänge und Bedienungsräume 
+Die Zugänge zur Verteilungsanlage, zu Schaltern (insbesondere Hauptschaltern), zu Betriebsmitteln mit Anzeige- oder 
+Schaltvorrichtungen sowie der zum Bedienen, Überwachen und Warten erforderliche Raum müssen ständig frei bleiben 
+(siehe auch 5.2.1). 
+4.7 
+Befestigen von Gegenständen 
+An elektrischen Betriebsmitteln, zB Schaltern, Kabeln oder Leitungen, Betätigungsorganen, Gehäusen von 
+Betriebsmitteln dürfen keine Gegenstände aufgehängt oder befestigt werden. Dies gilt nicht für Teile wie 
+Kennzeichnungs- und Sicherheitsschilder, Schutzabdeckungen und Sperrvorrichtungen. 
+4.8 
+Tiefbauarbeiten 
+Vor Beginn von Tiefbauarbeiten muss die für diese Arbeiten verantwortliche Person Auskunft über Kabel- und 
+Leitungstrassen einholen. 
+5 
+Auswahl und Benutzung von elektrischen Betriebsmitteln 
+5.1 
+Allgemeines 
+5.1.1 
+Bei der Auswahl und Benutzung elektrischer Betriebsmittel, ist darauf zu achten, dass sie den jeweiligen 
+örtlichen und betrieblichen Anforderungen genügen. 
+5.1.2 
+Ortsveränderliche elektrische Betriebsmittel (zB Elektrowerkzeuge, Heizgeräte) sind nach Gebrauch 
+abzuschalten und durch Ziehen des Netzsteckers vom Netz zu trennen wenn sie längere Zeit nicht mehr eingesetzt 
+werden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 6/13 =====
+Seite 6 
+ÖVE/ÖNORM E 8385  
+5.1.3 
+Ergibt sich aus dem Betrieb eine erhöhte Gefahr mechanischer Beschädigungen, sind elektrische Leitungen und 
+Betriebsmittel zusätzlich zu schützen. 
+5.1.4 
+Ortsveränderliche Tauchheizgeräte (Tauchsieder) dürfen nur in nicht brennbaren Gefäßen auf nicht brennbaren 
+Unterlagen unter Aufsicht betrieben werden. 
+5.1.5 
+Elektrische Betriebsmittel, die mittels Steckvorrichtungen mit dem Netz verbunden werden, müssen unter 
+Berücksichtigung der äußeren Einflüsse, denen sie ausgesetzt sein können, so ausgewählt werden, dass ihr 
+ordnungsgemäßer Betrieb und die Wirksamkeit der Schutzarten gegen Eindringen von festen Fremdkörpern (zB Staub) 
+und/oder gegen das Eindringen von Wasser (oder sonstigen Flüssigkeiten) sichergestellt ist. 
+5.1.6 
+Änderungen an Anschlüssen elektrischer Betriebsmittel (zB Umklemmen zur Änderung der Drehrichtung von 
+Elektromotoren) dürfen von Laien nicht durchgeführt werden. 
+ANMERKUNG:  
+In bestehenden Anlagen wird die Überprüfung der Drehfeldrichtung (Rechtsdrehfeld) durch eine Elektrofachkraft 
+empfohlen. 
+5.1.7 
+Ortsveränderliche elektrische Betriebsmittel dürfen nicht durch Ziehen an der beweglichen Anschlussleitung 
+fortbewegt werden. 
+5.1.8 
+Müssen Leitungen, zB als Bauprovisorium, über öffentliche Straßen, Wege oder Plätze geführt werden, so ist 
+dies von einer Elektrofachkraft durchzuführen. 
+An Stellen, an denen die Leitungen mechanisch besonders beansprucht werden könnten, sind sie durch geeignete 
+Maßnahmen, zB durch Hochlegen oder Abdecken, zu schützen. 
+Auf erforderliche Durchfahrtshöhen ist zu achten. 
+5.2 
+Hausanschluss, Verteiler, Zählerplatz, Hauptschalter 
+5.2.1 
+Hausanschlusskästen, Verteiler, Zählerplätze und Hauptschalter müssen jederzeit leicht zugänglich sein. 
+5.2.2 
+Auf Putz verlegte Hauseinführungsleitungen in Gebäuden sind bis einschließlich Hausanschluss-
+sicherungskasten von brennbaren Stoffen wie Heu, Stroh, Verpackungsmaterial, Dünge- und Pflanzenbehandlungsmittel 
+ständig freizuhalten. 
+5.2.3 
+Das Ersetzen von NH-Sicherungen unter Spannung darf nicht von Laien durchgeführt werden, ausgenommen 
+solche in Sicherungslasttrennschaltern bis 125 A. Schraubsicherungen dürfen unter Spannung von Laien nur bis 63 A 
+ersetzt werden. 
+5.3 
+Metallene Rohrleitungen 
+Vor dem Ersetzten von metallenen Rohrleitungen durch Rohre aus elektrisch nicht leitendem Material oder dem 
+Entfernen ist wegen der möglichen Unterbrechung des Potentialausgleichsleiters oder Schutzleiters eine Elektrofachkraft 
+hinzuzuziehen 
+5.4 
+Steckvorrichtungen 
+5.4.1 
+Es wird empfohlen, eine genügende Anzahl von Steckdosen räumlich verteilt anbringen zu lassen, so dass sich 
+lange Verlängerungsleitungen weitgehend erübrigen.  
+Als Stecker und Kupplung für Drehstrom dürfen nur Industriesteckvorrichtungen mit Isoliergehäuse gemäß ÖVE/ÖNORM 
+EN 60309-1 (CEE-Rundsteckvorrichtungen) verwendet werden. 
+5.4.2 
+Elektrische Verbindungen zwischen Steckvorrichtungsteilen, von denen Stecker und Steckdosen verschiedenen 
+Systemen angehören, dürfen über Adapter hergestellt werden (siehe ÖVE-EN 1 Teil 2:1993-04 § 31, bzw. 
+ÖVE/ÖNORM E 8001-2-31). 
+5.4.3 
+Steckvorrichtungen und Kupplungssteckvorrichtungen sind gegen Nässe und Beschädigungen zu schützen. 
+5.4.4 
+Beschädigte Steckvorrichtungen dürfen nicht weiter verwendet werden. 
+5.4.5 
+Steckvorrichtungen in Verbindung mit Lampensockeln (so genannte Schraubsteckdosen) dürfen nicht 
+verwendet werden. 
+5.4.6 
+Stecker dürfen nicht an der beweglichen Leitung aus der Steckdose gezogen werden. 
+5.5 
+Bewegliche Leitungen 
+5.5.1 
+Die Bauart einer beweglichen Anschluss- bzw. Verlängerungsleitung muss dem Verwendungszweck 
+entsprechen. Im Zweifelsfall ist eine Elektrofachkraft hinzuzuziehen.  
+Bewegliche Leitungen (Anschlussleitungen, Verlängerungsleitungen) dürfen keine Dauereinrichtung werden und etwa 
+erforderliche feste Installationen ersetzen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 7/13 =====
+Seite 7 
+ÖVE/ÖNORM E 8385 
+5.5.2 
+Als 
+Verlängerungsleitung 
+muss 
+mindestens 
+eine 
+mittlere 
+Gummischlauchleitung 
+H07RN-F 
+gemäß 
+ÖVE/ÖNORM E 8240 
+oder 
+gleichwertige 
+Leitungen 
+benutzt 
+werden. 
+In 
+trockenen, 
+staubfreien 
+Räumen 
+(zB Verkaufsräume) können Leitungen für geringere mechanische Belastungen verwendet werden. Im Zweifelsfall ist 
+eine Elektrofachkraft hinzuzuziehen. 
+5.5.3 
+Vor dem Benutzen sind bewegliche Leitungen auf erkennbare Schäden zu besichtigen. Beschädigte Leitungen 
+dürfen nicht verwendet werden. 
+5.5.4 
+Bewegliche Leitungen sind so auszulegen oder zu führen, dass sie gegen mechanische Beschädigungen, wie 
+durch Zerren, Zerbeißen, Durchscheuern, Überfahren, Einklemmen, Knicken, wirksam geschützt sind und dass sie mit 
+sich bewegenden Maschinenteilen, zB Riemenscheiben, Rüttelsieben, nicht in Berührung kommen können und keine 
+Stolpergefahr bilden. 
+5.5.5 
+Bewegliche Leitungen sind vor schädigenden Einflüssen, zB übermäßiger Wärme durch Heizgeräte oder heiße 
+Maschinenteile, Frost, Kunstdünger oder Feuchtigkeit (insbesondere Jauche, Öl) zu schützen.  
+5.5.6 
+Es dürfen nur Leitungsroller gemäß ÖVE/ÖNORM EN 61242 und ÖVE/ÖNORM EN 61316 mit Leitungen 
+gemäß 5.5.2 verwendet werden. 
+5.5.7 
+Über befahrbaren Bereichen von landwirtschaftlichen Anwesen verlegte bewegliche Leitungen müssen in 
+mindestens 5 m Höhe aufgehängt werden. 
+5.6 
+Leuchten 
+5.6.1 
+Leuchtstofflampen, die flackern oder nur an den Enden glühen, sind wegen der unmittelbaren Brandgefahr 
+durch Überhitzung des Vorschaltgerätes unverzüglich auszuschalten. Die Lampe und/oder der Starter ist auszuwechseln. 
+ANMERKUNG: 
+Es wird empfohlen, Starter mit Abschalteinrichtung (Sicherheitsstarter) einzusetzen. 
+5.6.2 
+Es ist darauf zu achten, dass beim Auswechseln von Glühlampen nicht Glühlampen mit zu hoher Nennleistung 
+eingesetzt werden. Die höchstzulässige Nennleistung der Lampe ist auf der Leuchte angegeben. 
+Nach dem Einsetzen von Lampen sind die Leuchten wieder in ordnungsgemäßen Zustand zu versetzen (Schutzglas, 
+Schutzkorb). Beschädigte Schutzgläser und Schutzkörbe von Leuchten sind stets unverzüglich zu erneuern.  
+5.6.3 
+Für Leuchten in brandgefährdeten Räumen, bei denen vom Schalter aus nicht beobachtet werden kann, ob 
+diese eingeschaltet sind, muss der Schaltzustand, zB durch eine Signallampe im Schalter oder deutliche Kennzeichnung 
+der Schaltstellung „Ein/Aus“, erkennbar sein. 
+5.6.4 
+Handleuchten müssen schutzisoliert oder mit Schutzkleinspannung betrieben werden und zumindest 
+spritzwassergeschützt (IPX4) gemäß ÖVE/ÖNORM EN 60529 sein und dürfen nur mit Schutzglas und Schutzkorb 
+verwendet werden. 
+Folgende Symbole werden verwendet: 
+−
+für Schutzisolierung
+E
+−
+für Schutzkleinspannung
+G
+Handleuchten dürfen nicht an der Anschlussleitung aufgehängt werden. 
+5.7 
+Elektrowärmegeräte zur Tieraufzucht und Tierhaltung 
+5.7.1 
+Bei der Verwendung sind die Gebrauchsanweisungen und die Geräteaufschriften zu beachten. 
+ANMERKUNG: 
+Die Aufschriften können folgende Angaben enthalten: 
+−Wärmestrahler für Tiere,
+−
+Leistung der Strahler in Watt,
+−
+Mindestabstand zu Tieren und brennbaren Stoffen, zB Einstreu,
+−
+Hinweis auf sichere Befestigung der Geräte,
+−
+Warnung vor Entfernung des Schutzkorbes,
+−
+Warnung, das Gerät nicht zuzudecken,
+−
+Warnung, Wärmestrahler nicht auf den Boden zu legen.
+5.7.2 
+Für Wärmestrahlgeräte dürfen beim Strahleraustausch nur solche Typen verwendet werden, die ausdrücklich in 
+der Gebrauchsanweisung genannt sind. 
+Die Verwendung von Wärmestrahlgeräten mit offenen Heizdrähten ist verboten. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 8/13 =====
+Seite 8 
+ÖVE/ÖNORM E 8385  
+5.7.3 
+Für Wärmestrahlgeräte sind nur die zugehörigen Aufhängevorrichtungen, wie zB geschlossene Deckenhaken, 
+Ketten, Karabinerhaken, zu verwenden. 
+5.7.4 
+Der vom Hersteller in der Gebrauchsanweisung vorgeschriebene Mindestabstand zwischen dem 
+Wärmestrahlgerät und den Tieren und zwischen dem Wärmestrahlgerät und brennbaren Stoffen (zB Einstreu) darf 
+keinesfalls unterschritten werden. Die Anschlussleitung muss so geführt und die Aufhängehöhe des Wärmestrahlgerätes 
+so gewählt werden, dass weder die Anschlussleitung noch das Strahlgerät von Tieren erreicht werden kann. 
+Gegebenenfalls ist das Muttertier dem Bestrahlungsraum fernzuhalten. Keinesfalls darf das Wärmestrahlgerät an der 
+Anschlussleitung aufgehängt werden. 
+5.7.5 
+Bei Verwendung von Dunkelstrahlern, zB Keramikheizkörpern, Rohrheizkörpern, darf als Einstreu nur Torfmull, 
+Sand oder Kurzstreu verwendet werden. 
+5.8 
+Tierpflegegeräte 
+Werden zur Pflege von Tieren elektrisch betriebene Geräte eingesetzt, wie Staubsauger, Schermaschinen u. Ä., so 
+müssen 
+sie 
+schutzisoliert 
+sein 
+oder 
+mit 
+Schutzkleinspannung 
+und 
+mit 
+Sicherheitstransformator 
+gemäß 
+ÖVE EN 61558-2-6, bis 25 V Wechselspannung oder mit Batterie oder Akku bis 60 V Gleichspannung betrieben werden. 
+Folgende Symbole werden verwendet: 
+−
+für Schutzisolierung
+E
+−
+für Schutzkleinspannung
+G
+−
+für Sicherheitstransformator     :
+5.9 
+Batterien (Akkumulatoren) und Ladeeinrichtungen 
+5.9.1 
+Beim Handhaben, Laden und Betreiben von Batterien sind Maßnahmen zu treffen, um Kurzschlüsse zwischen 
+den Polen zu vermeiden, zB durch eine isolierende Abdeckung der Pole. 
+Beim Ausbau von Batterien ist zuerst die Verbindung zwischen Minuspol und der die Batterie umgebenden 
+Metallkonstruktion zu trennen; erst dann darf die Verbindung zum Pluspol unterbrochen werden. Der Einbau muss in 
+umgekehrter Reihenfolge erfolgen. 
+5.9.2 
+Batterie und Ladegerät müssen bezüglich der Ladespannung und des Ladestromes aufeinander abgestimmt 
+sein. Die Aufschriften sowie die Hinweise in den Betriebsanleitungen sind zu beachten. 
+5.9.3 
+Zum Laden von Batterien ist ein Bereich zu wählen, der gut be- und entlüftet, trocken und nicht brandgefährdet 
+ist. Er darf nicht als Aufenthaltsraum benutzt werden. Der Umgang mit offenem Feuer und Rauchen sind verboten. 
+6 
+Elektrozaunanlagen 
+6.1 
+Für die Errichtung von Elektrozaunanlagen ist ÖVE-EN 31 anzuwenden.  
+6.2 
+Elektrozaungeräte für Elektroweidezäune dürfen nicht in brandgefährdeten Räumen, zB Scheunen, Tennen, 
+Stallungen u. dgl. angebracht werden. Dies gilt nicht für Elektrozaunanlagen, die innerhalb eines Gebäudes betrieben 
+werden. 
+ANMERKUNG:  
+Damit wird eine zusätzliche Gefahr bei atmosphärischen Entladungen (Blitz) in brandgefährdeten Räumen vermieden. 
+6.3 
+Bei Wegführung einer Zaunzuleitung von einem Gebäude ist eine Überspannungsschutzeinrichtung (Ableiter mit 
+Erder) auf nicht brennbarer Unterlage außerhalb des Gebäudes anzubringen.  
+Auf sichere Ableitung von atmosphärischen Entladungen gemäß ÖVE-EN 31 ist zu achten.  
+6.4 
+Elektrozäune und die Zaunzuleitungen dürfen nicht an Freileitungsmasten aller Art befestigt werden. 
+6.5 
+Werden Zaundrähte in der Nähe von Freileitungen entlanggeführt oder kreuzen sie dieselben, so darf die 
+Bauhöhe von 2 m nicht überschritten werden.  
+In der Nähe von Freileitungen mit Betriebsspannungen bis 1 000 V (siehe Bild 1) darf im Schutzstreifen von 2 m 
+beiderseits der äußeren Leiter und bei Freileitungen mit Betriebsspannungen über 1 000 V (siehe Bild 2) innerhalb eines 
+Schutzstreifens von 15 m beiderseits der äußeren Leiter eine Bauhöhe von 2 m nicht überschritten werden.  
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 9/13 =====
+Seite 9 
+ÖVE/ÖNORM E 8385 
+Bild 1 – Beispiel eines Schutzbereiches bei Niederspannungsleitungen 
+Bild 2 – Beispiel eines Schutzbereiches bei Hochspannungsleitungen 
+In diesem Bereich wird die Verwendung einer Weidezaunlitze bzw. eines Weidezaunbandes an Stelle von starren 
+Eisendrähten empfohlen. Kreuzungen mit Freileitungen sind möglichst zu vermeiden, andernfalls ist die Freileitung 
+möglichst im rechten Winkel zu unterkreuzen. 
+Bei Annäherung an Fernmeldefreileitungen durch Elektrozäune oder Zaunzuleitungen darf ein Abstand von 2 m nach 
+allen Seiten nicht unterschritten werden (siehe Bild 3). 
+2 m 
+2 m
+2 m
+maximale Bauhöhe 
+der Zaunleitung 
+Schutzbereich 
+Schutzbereich 
+Schutzbereich 
+min. 15 m 
+Schutzbereich 
+min. 15 m 
+maximale Bauhöhe
+der Zaunleitung 
+2 m 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+9 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 10/13 =====
+Seite 10 
+ÖVE/ÖNORM E 8385  
+Bild 3 – Beispiel eines Schutzbereiches bei Fernmeldeleitungen 
+6.6 
+Bei Annäherung von Elektrozäunen an Verkehrswege (siehe Bild 4) sind an gut sichtbarer Stelle dauerhafte 
+Warnschilder, Blitzpfeil mit der Aufschrift „Vorsicht Elektrozaun!“ gemäß ÖVE-EN 31, anzubringen.  
+Bild 4 – Beispiel einer Kreuzung von Zaunzuleitungen mit öffentlichen Wegen und Straßen 
+6.7 
+Die Funktionstüchtigkeit der Elektrozaunanlagen muss regelmäßig durch die in den Elektrozaungeräten 
+eingebauten Kontrollgeräte und die Kontrolle (Besichtigung) der gesamten Elektrozaunanlage durch den Betreiber 
+gewährleistet sein. 
+6.8 
+Zaunleitungen und Zaunzuleitungen sind von Pflanzenwuchs, zB Zweigen, Grashalmen oder dergleichen, 
+freizuhalten. 
+7 
+Intensivtierhaltung 
+7.1 
+Die Funktionsfähigkeit der Meldeeinrichtung für Störungen lebenserhaltender Systeme ist mindestens einmal 
+wöchentlich und außerdem nach jedem Gewitter zu prüfen. Treten bei der optischen und akustischen Signalisierung von 
+Fehlern oder Störungen Mängel auf, so ist unverzüglich die Instandsetzung der Meldeeinrichtung zu veranlassen. 
+7.2 
+Ist eine Ersatzstromversorgung notwendig, so ist diese in angemessenen Zeitabständen, mindestens einmal im 
+Monat, auf ihre Funktionsfähigkeit zu prüfen. 
+min. 5,5 m*) 
+*) nähere Angaben 
+siehe ÖVE-L 1 
+2 m 
+2 m 
+2 m
+2 m
+Mindestabstand nach  
+allen Seiten 2 m 
+Schutzbereich 
+Schutzbereich 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+10 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 11/13 =====
+Seite 11 
+ÖVE/ÖNORM E 8385 
+8 
+Elektrofischereianlagen 
+Für die Errichtung und den Betrieb von Elektrofischereianlagen bestehen gesonderte technische Bestimmungen. Sie 
+müssen ÖVE-E 36 entsprechen. 
+9 
+Elektro-Schweißeinrichtungen 
+Für die Anwendung von Elektro-Schweißeinrichtungen bestehen gesonderte technische Bestimmungen. Sie sollten 
+ÖVE-M 13 Teil 1 entsprechen. 
+10 Erhalten des ordnungsgemäßen Zustandes 
+10.1 Allgemein 
+Elektrische Anlagen sind den zum Zeitpunkt der Errichtung gültig gewesenen Errichtungsbestimmungen entsprechend in 
+ordnungsgemäßem Zustand zu erhalten. 
+Bei Änderung der Betriebsbedingungen, zB Art der Betriebsstätte (trocken, feucht oder explosionsgefährdet), müssen die 
+bestehenden Anlagen den jeweils gültigen Errichtungsbestimmungen angepasst werden. 
+Fehlerstromschutzeinrichtungen (FI-Schutzschalter) sind monatlich und nach jedem Gewitter durch Betätigen der 
+Prüftaste auf ihre Funktionsfähigkeit zu überprüfen. 
+Schutzleiter und Erdungs- und Potentialausgleichsleitungen dürfen weder unterbrochen noch beschädigt oder entfernt 
+werden, da von ihrem ordnungsgemäßen Zustand die Wirksamkeit der Schutzmaßnahmen entscheidend abhängt. 
+10.2 Überstromschutzeinrichtungen (Schmelzsicherungen, Leitungsschutzschalter) 
+Überstromschutzeinrichtungen dürfen nicht überbrückt oder geflickt werden. Schraubkappen ohne Gläser dürfen nicht 
+verwendet werden. 
+Die von der Elektrofachkraft eingesetzten Passeinsätze, die zur Begrenzung der Sicherungsnennstromstärke dienen, 
+dürfen nicht entfernt, geändert oder zerstört werden. 
+Schmelzsicherungen der richtigen Nennstromstärke sind in genügender Anzahl und erreichbar vorrätig zu halten. 
+Die Überstromschutzeinrichtungen sind so zu kennzeichnen, dass die Zugehörigkeit zu den einzelnen Stromkreisen 
+eindeutig erkennbar ist. 
+Vor dem Auswechseln von Schmelzsicherungen sind die jeweils angeschlossenen Verbrauchsmittel auszuschalten. 
+Lösen Überstromschutzeinrichtungen mehrmals hintereinander aus, so ist die Anlage entweder fehlerhaft oder 
+überlastet. Keinesfalls dürfen wiederholt neue Sicherungen eingesetzt oder Leitungsschutzschalter immer wieder 
+eingeschaltet werden. Mit der Feststellung und der Behebung des Fehlers ist eine Elektrofachkraft zu beauftragen. 
+Die für die Sicherheit erforderlichen Schutz- und Überwachungseinrichtungen, zB Motorschutzschalter oder 
+Temperaturbegrenzer, dürfen weder unwirksam gemacht, noch unzulässig verstellt werden. 
+10.3 Betriebsmittel 
+Vor der Benützung von: 
+−
+ortsveränderlichen Geräten,
+−
+ortsfesten Geräten, wenn die beweglichen Anschlussleitungen besonderen Beanspruchungen ausgesetzt sind,
+−
+Geräten, die nach Art und üblicher Verwendung unter Spannung stehend in der Hand gehalten oder von Hand
+bewegt werden,
+sind die beweglichen Leitungen auf erkennbare Schäden zu besichtigen. 
+Elektrische Betriebsmittel, zB Leuchten, Motore, Wärmegeräte, dürfen nicht mit brennbaren Stoffen, wie Heu, Stroh, 
+Verpackungsmaterial oder ähnlichem abgedeckt werden und sind in angemessenen Zeitabständen zu reinigen. 
+Schadhafte elektrische Betriebsmittel dürfen bis zu ihrer Instandsetzung nicht weiter benutzt werden. 
+Betriebs- und Gebrauchsanweisungen sind zur Einsichtnahme aufzubewahren. 
+10.4 Sicherheitszeichen und Aufschriften  
+Sicherheitszeichen, Aufschriften und Aushänge müssen deutlich erkennbar an leicht sichtbaren Stellen angebracht sein 
+und in gutem Zustand erhalten werden. Nicht mehr zutreffende Sicherheitszeichen, Aufschriften, Bezeichnungen und 
+Aushänge sind zu entfernen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+11 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 12/13 =====
+Seite 12 
+ÖVE/ÖNORM E 8385  
+11 Arbeiten in der Nähe unter Spannung stehender Teile 
+11.1 
+Bei Arbeiten an Giebeln, Dächern und Bäumen, beim Versetzten von Arbeitsmaschinen, beim Hantieren mit 
+Leitern, Gerüstteilen sowie beim Arbeiten mit Hebezeugen, Fördereinrichtungen u. dgl. ist ein Schutzabstand, größer als 
+in Tabelle 1 angegeben, einzuhalten. 
+Bei diesen Arbeiten müssen die genannten Schutzabstände auch beim Ausschwingen von Lasten, Trag- und 
+Lastaufnahmemitteln, beim Handhaben von Leitern, Werkzeugen und Hilfsmitteln sowie beim Ausschwingen von 
+Freileitungsseilen eingehalten werden. 
+Kann dies nicht gewährleistet werden, sind allenfalls erforderliche Maßnahmen zeitgerecht vor Beginn der Arbeiten mit 
+dem Betreiber der Freileitung abzustimmen. Die vom Betreiber angeordneten Sicherheitsmaßnahmen sind unbedingt zu 
+befolgen. 
+Tabelle 1 – Schutzabstände in Abhängigkeit von der Nennspannung gemäß Abschnitt 11 
+Netz 
+Nennspannung 
+Un (Effektivwert) 
+Äußere Grenze der Annäherungszone  
+ (Abstand in Luft von ungeschützten unter Spannung 
+stehenden Teilen) 
+kV 
+m 
+bis 1 
+> 0,5 
+über 1 bis 30 
+> 1,5 
+über 30 bis 110 
+> 2,0 
+über 110 bis 220 
+> 3,0 
+über 220 bis 380 
+> 4,0 
+bei unbekannter 
+Nennspannung 
+> 4,0 
+ 
+11.2 
+Wenn beim Betrieb von beweglichen Arbeitsmaschinen und Fahrzeugen einschließlich darauf befindlicher 
+Personen eine Gesamthöhe von 4 m überschritten wird und bei deren Verwendung, zB beim Transport von Erntegut, 
+Freileitungen unterquert werden müssen, hat sich der Landwirt bezüglich der Nennspannung sowie der Mindesthöhe der 
+Freileitungen beim Betreiber der Freileitungen zu informieren. Die Schutzabstände nach Tabelle 1 dürfen in keinem Fall 
+unterschritten werden 
+11.3 
+Drahtzäune, Elektrozäune, metallene Gitter, Antennen, u. dgl. dürfen nicht an Freileitungsmasten, 
+Dachständern, Auslegern sowie den zugehörigen Streben, Ankern oder dergleichen befestigt werden. 
+11.4 
+Werden Beregnungsanlagen für Wasser und Jauche oder andere Spritzanlagen, zB zur Schädlingsbekämpfung, 
+in der Nähe von Freileitungen betrieben, so sind Sicherheitsabstände zwischen Düse und Freileitung einzuhalten. Diese 
+sind beim Betreiber der Freileitung zu erfragen. 
+11.5 
+Soll in der Nähe von Freileitungen zum Lastentransport an Berghängen ein Seilzug oder eine 
+Bodenseilzugsanlage errichtet bzw. verwendet werden, ist der Betreiber der Freileitung zu verständigen. Die 
+Sicherheitsmaßnahmen sind mit dem Betreiber festzulegen. 
+12 Wiederkehrende Prüfungen 
+Elektrische Anlagen müssen in geeigneten Zeitabständen geprüft werden. Wiederkehrende Prüfungen sollen Mängel 
+aufdecken, die nach der Inbetriebnahme aufgetreten sind und den Betrieb behindern oder Gefährdungen hervorrufen 
+können. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+12 von 13
+www.ris.bka.gv.at
+
+
+===== PAGE 13/13 =====
+Seite 13 
+ÖVE/ÖNORM E 8385 
+Anhang A (informativ): Literaturhinweise 
+ÖVE-E 5 Teil 1 
+Betrieb von Starkstromanlagen – Teil 1: Grundsätzliche Bestimmungen 
+ÖVE-E 15 
+Betrieb von Starkstromanlagen in landwirtschaftlichen Anwesen 
+ÖVE/ÖNORM E 8001-1 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51 000 V und  
+41 500 
+– 
+V 
+Teil 
+1: 
+Begriffe 
+und 
+Schutz 
+gegenelektrischen 
+Schlag 
+(Schutzmaßnahmen) 
+ÖVE-EN 1 Teil 4 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51 000 V und  
+41 500 V – Teil 4: Besondere Anlagen 
+ÖVE/ÖNORM EN 60335-2-76 
+Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke –  
+Teil 2-76: Besondere Anforderungen an Elektrozaungeräte 
+ÖVE-L 1 
+Errichtung von Starkstromfreileitungen bis 1 000 V 
+BGBl. Nr. 106/1993 
+Elektrotechnikgesetz 1992 – ETG 1992, idgF 
+BGBl. II Nr. 222/2002 
+Elektrotechnikverordnung 2002 – ETV 2002 
+BGBl. II Nr. 33/2006 
+ 
+Elektrotechnikverordnung 2002/A1 – ETV 2002/A1 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+13 von 13
+www.ris.bka.gv.at
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:12:07+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

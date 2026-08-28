@@ -1,0 +1,484 @@
+
+
+===== PAGE 1/8 =====
+Seite 1 von 8 
+ 
+ 
+ 
+OVE-Fachinformation IS03 
+ 
+Ausgabe: 2023-12-01 
+ 
+ 
+ 
+ 
+Überblick über die Funktion und Anwendung von Fehlerlichtbogen-
+Schutzeinrichtungen (AFDD) in Niederspannungsanlagen gemäß den  
+in Österreich geltenden anerkannten Regeln der Technik 
+ 
+Ersatz für 
+– 
+Zuständig 
+OVE/TSK IS23E – Schutzschalter 
+ICS 
+13.260; 29.020; 29.100; 29.120; 29.120.50; 29.130; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+Inhalt 
+Seite 
+1 
+Ausgangssituation ................................................................................................................................ 2 
+2 
+Grundlagen ............................................................................................................................................ 2 
+2.1 
+Einleitung ............................................................................................................................................... 2 
+2.2 
+Arten von Lichtbögen ........................................................................................................................... 2 
+2.3 
+Ursachen für elektrisch gezündete Brände ........................................................................................ 2 
+2.4 
+Lichtbogen-Fehlersituationen .............................................................................................................. 3 
+3 
+Funktionsweise von Fehlerlichtbogen-Schutzeinrichtungen (AFDD) ............................................. 4 
+3.1 
+Charakteristische Eigenschaften eines Fehlerlichtbogens .............................................................. 4 
+3.2 
+Prinzipieller Aufbau ............................................................................................................................... 4 
+3.3 
+Vermeidung unerwünschter Auslösungen und Maskierung der Schutzfunktion .......................... 4 
+3.4 
+Grenzwerte der Betriebskriterien gemäß OVE EN 62606 .................................................................. 5 
+3.5 
+Prüffunktion ........................................................................................................................................... 5 
+3.6 
+Überspannungen ................................................................................................................................... 5 
+3.7 
+Bedienbarkeit, Trennfunktion, Netzsysteme ...................................................................................... 5 
+3.8 
+Einsatzbedingungen ............................................................................................................................. 5 
+3.9 
+Bauformen .............................................................................................................................................. 6 
+4 
+Anwendung von Fehlerlichtbogen-Schutzeinrichtungen ................................................................. 6 
+4.1 
+Schutz gegen die Auswirkungen von Fehlerlichtbögen ................................................................... 6 
+4.2 
+Installationsbeispiel .............................................................................................................................. 7 
+Literaturhinweise ................................................................................................................................................ 8 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 2 von 8 
+1 
+Ausgangssituation 
+Diese Fachinformation wurde mit dem Ziel zusammengestellt, dem Praktiker die grundlegende Funktion und die 
+charakteristischen Eigenschaften von Fehlerlichtbogen-Schutzeinrichtungen AFDD (en: Arc Fault Detection 
+Device) gemäß der Produktnorm OVE EN 62606 näher zu bringen, sowie einen Überblick für die Anwendung 
+gemäß den anerkannten Regeln der Technik, insbesondere der OVE E 8101 zu geben. 
+Gemäß dem österreichischen Elektrotechnikgesetz 1992 – ETG 1992 sind elektrische Anlagen und Betriebsmittel 
+so zu errichten, herzustellen, instand zu halten und zu betreiben, dass ihre Betriebssicherheit, die Sicherheit von 
+Personen und Sachen, sowie der ungestörte und sichere Betrieb anderer in ihrem Gefährdungs- und 
+Störungsbereich liegender Anlagen gewährleistet ist. 
+Dazu zählt auch der Schutz vor elektrisch gezündeten Bränden durch Lichtbögen. Laut der Brandschadenstatistik 
+der österreichischen Brandverhütungsstellen 2021 war die Zündquelle „Elektrische Energie“ mit 1 313 Bränden 
+eine der häufigsten Brandursachen mit einer Schadenssumme von über 90 Millionen Euro. 
+2 
+Grundlagen 
+2.1 Einleitung  
+Brände, die durch elektrische Anlagen verursacht werden, können ihren Ursprung in Fehlerlichtbögen haben. 
+Parallele und serielle Lichtbögen entstehen durch fehlerhafte Isolierung aktiver Leiter oder durch lose elektrische 
+Verbindungen. 
+Bei einem seriellen Lichtbogen ist kein Ableitstrom zur Erde vorhanden, daher können Fehlerstrom-
+Schutzeinrichtungen (RCD) diese Fehler nicht erkennen. Zudem reduziert die Impedanz des seriellen Lichtbogens 
+den Laststrom, wodurch der Strom unter dem Auslösegrenzwert von Leitungsschutzschaltern oder Sicherungen 
+bleibt. 
+Im Fall eines parallelen Lichtbogens zwischen zwei Außenleitern oder Außenleiter und Neutralleiter ist der Strom 
+durch die Impedanz der Installation und durch den Lichtbogen selbst begrenzt. Deshalb kann der resultierende 
+Strom unter dem Auslösegrenzwert von Leitungsschutzschaltern, Leistungsschaltern oder Sicherungen liegen. 
+Für die Verminderung des Brandrisikos durch einen Lichtbogen in Folge eines Fehlerstroms zur Erde wird ein 
+Fehlerstromschutzschalter (RCCB) als wirksam angesehen. Es hat sich jedoch gezeigt, dass der Effektivwert eines 
+vom Fehlerlichtbogen verursachten Erdschlussstroms nicht auf die Bemessungsfrequenz von 50/60 Hz begrenzt 
+ist, sondern ein viel höheres Frequenzspektrum enthalten kann, welches von Fehlerstromschutzschaltern unter 
+Umständen nicht erkannt wird. 
+2.2 Arten von Lichtbögen 
+Ein Lichtbogen ist eine elektrische Entladung zwischen zwei Elektroden, die bei entsprechender Spannung und 
+Stromdichte durch Ionisation entsteht. Aufgrund der Gasentladung bildet sich ein Plasma, in dem die Teilchen 
+zumindest teilweise ionisiert sind und dadurch kontinuierlich Strom fließen kann. 
+Man unterscheidet zwischen betriebsbedingten Lichtbögen (zB Schaltlichtbögen, Bürstenfeuer einer 
+Bohrmaschine) und Fehler- bzw. Störlichtbögen. 
+Der Begriff Störlichtbogen („arc flash“) beschreibt üblicherweise Fehler in Anlagen größerer Leistung (zB 
+Kurzschluss in Industrie-Schaltanlagen), welche explosionsartig auftreten und unmittelbare Auswirkungen auf die 
+Einrichtungen hervorrufen. Bei hohen Anforderungen an die Verfügbarkeit kommen Störlichtbogen-Schutzsysteme 
+zum Einsatz, welche die Lichtleistung des Lichtbogens und den Anstieg des Stromes erkennen, den Lichtbogen 
+innerhalb von 5 ms löschen und die elektrische Anlage von der Versorgung trennen um größeren Schaden zu 
+vermeiden. 
+Unter Fehlerlichtbögen beschreibt man hingegen Fehler geringerer Leistung (zB in Folge von beschädigter 
+Isolation in Hausinstallationen, aber auch in Betriebsmitteln), welche unter Umständen auch lange unerkannt 
+bleiben. Die damit einhergehenden thermischen Auswirkungen können zu elektrisch gezündeten Bränden führen. 
+Für diese Art von Lichtbögen ist der AFDD konzipiert. 
+2.3 Ursachen für elektrisch gezündete Brände 
+Durch mechanische, thermische oder chemische Alterung von Isoliermaterial oder durch Kontaminierung mit 
+Schmutz oder Feuchtigkeit können Entladungen zwischen elektrischen Leitern entstehen, welche zur Erhitzung 
+und Verkohlung von Kunststoff führen. In weiterer Folge kann daraus ein stabiler Fehlerlichtbogen entstehen, 
+welcher einen Brand verursacht. 
+
+
+===== PAGE 3/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 3 von 8 
+Nachstehend finden sich einige häufig erkannte Fehlerquellen in der elektrischen Installation oder an den daran 
+angeschlossenen elektrischen Betriebsmitteln: 
+– 
+beschädigte Isolierungen von Kabel bzw. Leitungen, zB durch Nägel, Schrauben, Bohrungen oder 
+Nagetierverbiss; 
+– 
+gequetschte oder abgeknickte Kabel bzw. Leitungen, zB durch Aderbrüchen bei zu engem Biegeradius oder 
+durch Quetschen von Kabeln beim Schließen von Türen oder Fenstern; 
+– 
+hoher Kontaktübergangswiderstand durch schlechte Kontaktierung, zB lose Kontaktstellen in Steckdosen oder 
+bei Schraubverbindungen; 
+– 
+nicht sachgerecht ausgeführte Kabel-/Leitungsverlegung, zB durch Krallenbefestigung beschädigte Kabel 
+bzw. Leitungen in Steckdosen oder Schaltern; 
+– 
+Schädigung/Alterung der Isolation durch Umwelteinflüsse wie UV-Strahlen, Temperatur, oder leitende 
+Verschmutzung zwischen aktiven Leitern; 
+– 
+Beschädigte Elektrogeräte. 
+2.4 Lichtbogen-Fehlersituationen 
+Der AFDD erweitert das aus Fehlerstrom-Schutzeinrichtung (RCD) und Überstrom-Schutzeinrichtung (OCPD) 
+bestehende Schutzkonzept und schließt die bisher vorhandene Schutzlücke, insbesondere bei seriellen 
+Fehlerlichtbögen. 
+Tabelle 1 verdeutlicht die Fehlersituationen und die Funktion von Schutzschaltgeräten. 
+Tabelle 1 – Darstellung der Fehlersituationen und der Funktion von Schutzschaltgeräten 
+Fehlerlichtbogen 
+Anmerkung 
+Schutzfunktion 
+Fehlerlichtbogen gegen Erde 
+(Phase gegen Schutzleiter) 
+ 
+Fehlerlichtbogen, bei dem der 
+Strom vom aktiven Leiter gegen 
+Erde fließt.  
+In diesem Fall kann auch RCD mit 
+Bemessungsfehlerstrom 
+IΔn ≤ 300 mA die Anforderungen 
+an den Brandschutz erfüllen. 
+RCD 
+OCPDa 
+AFDD 
+Paralleler Fehlerlichtbogen 
+(Phase gegen Neutralleiter/Phase gegen 
+Phase) 
+ 
+Fehlerlichtbogen, bei dem der 
+Lichtbogenstrom zwischen aktiven 
+Leitern parallel zur Last des 
+Stromkreises fließt.  
+Leitungsschutzschalter (OCPD) 
+können hier nur bedingt schützen, 
+abhängig von der Impedanz des 
+Fehlerkreises und dem daraus 
+folgenden Überstrom. 
+OCPDa 
+AFDD 
+Serieller Fehlerlichtbogen 
+(kleine Unterbrechung der Phase oder des 
+Neutralleiters) 
+ 
+Fehlerlichtbogen, bei dem der 
+Strom durch die Last(en) eines 
+Verbraucherstromkreises fließt, 
+der mit einer AFDD geschützt ist. 
+WederOCPD noch RCD können 
+diese Art von Fehlerlichtbogen 
+erkennen.  
+AFDD 
+a 
+Schutz abhängig von der Impedanz des Fehlerkreises 
+
+
+===== PAGE 4/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 4 von 8 
+Für das Auslösen des AFDD ist es grundsätzlich unerheblich, ob die Fehlstelle in der elektrischen Anlage, der 
+Anschlussleitung eines Betriebsmittels oder in einem, mit Netzspannung betriebenen, elektrischen Gerät vorliegt. 
+3 
+Funktionsweise von Fehlerlichtbogen-Schutzeinrichtungen (AFDD) 
+3.1 Charakteristische Eigenschaften eines Fehlerlichtbogens  
+Fehlerlichtbögen weisen charakteristische Merkmale auf wie  
+– 
+hochfrequentes Rauschen und  
+– 
+Zusammenbruch des Lichtbogenstroms nahe dem Nulldurchgang der treibenden Spannung. 
+Zur Detektierung eines Fehlerlichtbogens wird daher Spannungs- und Stromverlauf über die Zeit gemessen und 
+mittels digitaler Signalverarbeitung bewertet. 
+3.2 Prinzipieller Aufbau 
+Bild 1 zeigt den prinzipiellen Aufbau einer Fehlerlichtbogen-Schutzeinrichtung (AFDD). 
+ 
+Es bedeutet: 
+RSSI (Received Signal Strength Indication) 
+Entspricht der Leistung des Lichtbogens bei einer definierten 
+Frequenz und Bandbreite 
+Bild 1 – Aufbau einer Fehlerlichtbogen-Schutzeinrichtung 
+Der Strom wird über zwei getrennte Sensoren permanent erfasst, verstärkt, aufbereitet und in einem Mikrocontroller 
+ausgewertet. Wenn die Kriterien für einen Fehlerlichtbogen erfüllt sind, löst der Schalter aus. 
+3.3 Vermeidung unerwünschter Auslösungen und Maskierung der Schutzfunktion 
+Bei betriebsbedingten Lichtbögen wie zB dem Bürstenfeuer einer Bohrmaschine oder beim Einschaltvorgang einer 
+Leuchtstofflampe darf keine Auslösung der Fehlerlichtbogen-Schutzeinrichtung (AFDD) erfolgen. Dazu werden 
+spezielle Algorithmen verwendet, die durch Vergleich mit vorgespeicherten Signalmustern zwischen 
+Fehlerlichtbögen und sogenannten Betriebslichtbögen unterschieden werden.  
+Es muss gewährleistet sein, dass Fehlerlichtbogen-Schutzeinrichtungen (AFDD) zuverlässig auslösen, auch wenn 
+andere betriebsbedingte Lichtbögen die Signatur des Fehlerlichtbogens überlagern. Dies wird bei den 
+Typenprüfungen nach OVE EN 62606 mit sogenannten „Maskierungstests“ überprüft.  
+Da die Signatur eines Lichtbogens mit zunehmender Entfernung gedämpft wird, ist die Kabel-/Leitungslänge des 
+zu schützenden Stromkreises zu beachten. 
+ 
+ 
+
+
+===== PAGE 5/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 5 von 8 
+3.4 Grenzwerte der Betriebskriterien gemäß OVE EN 62606 
+Die Brandgefahr hängt von der Höhe und Dauer des Lichtbogenstroms ab und wurde in OVE EN 62606 wie folgt 
+limitiert (siehe Tabelle 2 und Tabelle 3): 
+Tabelle 2 – Grenzwerte von AFDD bei niedrigen Lichtbogenströmen bis 63 A (Serielle Lichtbögen) 
+Prüflichtbogenstrom 
+(Effektivwerte) 
+2,5 A 
+5 A 
+10 A 
+16 A 
+32 A 
+63 A 
+Höchstzulässige 
+Ausschaltzeit 
+1 s 
+0,5 s 
+0,25 s 
+0,15 s 
+0,12 s 
+0,12 s 
+ 
+Tabelle 3 – Grenzwerte von AFDD bei hohen Lichtbogenströmen über 63 A (Parallele Lichtbögen) 
+Prüflichtbogenstrom a 
+(Effektivwerte) 
+75 A 
+100 A 
+150 A 
+200 A 
+300 A 
+500 A 
+N b 
+12 
+10 
+8 
+8 
+8 
+8 
+a 
+Dieser Prüfstrom ist der unbeeinflusste Strom vor der Lichtbogenbildung im Prüfkreis. 
+b 
+N ist die Anzahl der Halbperioden bei Bemessungsfrequenz. 
+ 
+3.5 Prüffunktion 
+Bei einer Fehlerlichtbogen-Schutzeinrichtung (AFDD) muss eine von Hand oder automatisch ausgelöste 
+Prüffunktion, oder beide, vorgesehen sein, mit welcher der Lichtbogenerfassungskreis geprüft wird.  
+– 
+Prüfung bei der händisch betätigbaren Prüftaste: Der AFDD muss auslösen. 
+– 
+Prüfung bei der automatischen Prüffunktion: Prüfung bei jedem Einschalten und in Intervallen von mindestens 
+einmal täglich, wobei der AFDD nicht abschalten muss, außer bei Vorliegen eines Fehlers. 
+Neben der händischen bzw. automatischen Prüfung bestehen derzeit keine Vorgaben für eine periodische 
+Funktionsprüfung durch externe Prüfgeräte. Handelsübliche Installationsprüfgeräte erfüllen diese Testfunktion 
+derzeit nicht. 
+3.6 Überspannungen 
+Bei der Unterbrechung des Neutralleiters in einer Drehstromanlage kann eine Außenleiter-Neutralleiter 
+Überspannung auftreten mit einem Höchstwert entsprechend der Spannung zwischen den Außenleitern. Die 
+daraus folgende außergewöhnliche Erwärmung von Lasten kann einen Brand verursachen. AFDD können 
+entsprechende Vorrichtungen enthalten, die zB bei U > 270 V abschalten.  
+3.7 Bedienbarkeit, Trennfunktion, Netzsysteme 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) gemäß OVE EN 62606 dürfen von elektrotechnischen Laien (BA1) 
+betätigt werden und erfordern keine Instandhaltung. Sie erfüllen in der Ausschaltstellung die Anforderungen für 
+sichere Trennung. AFDD sind für den Einsatz in TN-, TT- und IT-Systemen geeignet. 
+3.8 Einsatzbedingungen 
+Fehlerlichtbogen-Schutzeinrichtungen gemäß OVE EN 62606 sind für die Verwendung in einer Umgebung mit 
+Verschmutzungsgrad 2 vorgesehen, d.h. normalerweise tritt keine leitfähige Verschmutzung auf, gelegentlich muss 
+jedoch mit vorübergehender Leitfähigkeit durch Betauung gerechnet werden. Es gelten Normalbedingungen für 
+Temperatur und Umgebung entsprechend Tabelle 4. Für den Einbau an Orten mit raueren Umgebungs-
+bedingungen können zusätzliche Anforderungen notwendig sein. 
+ 
+ 
+
+
+===== PAGE 6/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 6 von 8 
+Tabelle 4 – Normbedingungen für den Betrieb 
+Einflussgröße 
+Normbereich der 
+Anwendung 
+Bezugswert 
+Prüfabweichungenf 
+Umgebungstemperatur a, g 
+–5 °C bis +40 °C b 
+20 °C 
+±5 °C 
+Höhenlage 
+Nicht über 2 000 m 
+ 
+ 
+Relative Feuchte 
+(Höchstwert bei 40 °C) 
+50 % c 
+ 
+ 
+Äußeres Magnetfeld 
+Nicht über dem 5-fachen 
+Erdmagnetfeld in jeder 
+Richtung 
+Erdmagnetfeld 
+d 
+Lage 
+Wie vom Hersteller angegeben, 
+mit einer Abweichung von 2° in 
+jeder Richtung e 
+Wie vom Hersteller 
+angegeben 
+2° in jeder Richtung 
+Frequenz 
+Bezugswert ±5 % f 
+Bemessungswert 
+±2 % 
+Verzerrung der Sinusform 
+Nicht über 5 % 
+Null 
+5 % 
+a  
+Der Höchstwert der mittleren Tagestemperatur beträgt +35 °C. 
+b  
+Nach Vereinbarung zwischen Hersteller und Anwender sind Werte außerhalb des Bereichs zulässig, wo härtere 
+klimatische Bedingungen herrschen. 
+c  
+Höhere Werte der relativen Feuchte sind bei niedrigen Temperaturen zulässig (zB 90 % bei 20 °C). 
+d  
+Wenn eine AFDD in der Nähe eines starken Magnetfelds eingebaut ist, können zusätzliche Anforderungen 
+notwendig sein. 
+e  
+Die Einrichtung muss befestigt werden, ohne dass Verformungen auftreten, die seine Funktion beeinträchtigen. 
+f  
+Die angegebenen Abweichungen gelten, wenn in den entsprechenden Prüfungen nichts anderes festgelegt ist. 
+g  
+Höchstgrenzen von −20 °C und +60 °C sind während Lagerung und Transport zulässig und sollten bei der 
+Konstruktion der Einrichtung berücksichtigt werden. 
+ 
+3.9 Bauformen 
+Bei Fehlerlichtbogen-Schutzeinrichtungen (AFDD) wird zwischen folgenden Bauformen unterschieden: 
+a) 
+Fehlerlichtbogen-Schutzeinrichtung (AFDD) bestehend aus AFD-Einheit und Ausschaltvorrichtung, welche 
+keinen Überstrom- oder Fehlerstromschutz beinhaltet; der Anschluss erfolgt in Reihe mit geeigneten 
+Schutzeinrichtungen. 
+b) 
+Fehlerlichtbogen-Schutzeinrichtung 
+(AFDD) 
+bestehend 
+aus 
+einer 
+AFD-Einheit 
+integriert 
+in 
+ein 
+Schutzschaltgerät das einer oder mehreren der folgenden Normen OVE EN 60898-1, OVE EN 61008-1, OVE 
+EN 61009-1 oder OVE EN 62423 entspricht. 
+c) 
+Fehlerlichtbogen-Schutzeinrichtung (AFDD), bestehend aus einer AFD-Einheit und einer angegebenen 
+Schutzeinrichtung (zB Leitungsschutzschalter, Fehlerstromschutzschalter), die vor Ort zusammenzubauen 
+sind. 
+4 
+Anwendung von Fehlerlichtbogen-Schutzeinrichtungen 
+4.1 Schutz gegen die Auswirkungen von Fehlerlichtbögen 
+Gemäß OVE E 8101, Unterabschnitt 421.7 sind für Hausinstallationen und ähnliche Anwendungen besondere 
+Maßnahmen zum Schutz gegen die Auswirkungen von Lichtbögen in einzelnen Endstromkreisen wie folgt zu 
+berücksichtigen: 
+a) 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) sind zu installieren in Wechselstromkreisen mit einem 
+Nennstrom nicht größer als 16 A in: 
+
+
+===== PAGE 7/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 7 von 8 
+– 
+Schlafräumen von Heimen für behinderte oder alte Menschen (zB Senioren- oder Pensionistenheimen) 
+oder Schlafräumen von Kindergärten; 
+– 
+Räumen oder Orten mit einem Brandrisiko durch verarbeitete oder gelagerte Materialien, zB BE2 gemäß 
+OVE E 8101 Teil 5-51. 
+b) 
+Fehlerlichtbogen-Schutzeinrichtungen (AFDD) werden empfohlen in Wechselstromkreisen mit einem 
+Nennstrom nicht größer als 16 A in: 
+– 
+Schlafräumen in Wohngebäuden (insbesondere bei Nutzung durch in ihrer Mobilität dauerhaft 
+eingeschränkten Personen infolge körperlicher oder geistiger Behinderung) 
+– 
+Räumen oder Orten mit Gefährdung unersetzbarer Güter. 
+Wenn Fehlerlichtbogen-Schutzeinrichtungen (AFDD) verwendet werden, müssen diese den Anforderungen von 
+OVE EN 62606 entsprechen und am Anfang des zu schützenden Stromkreises installiert werden. 
+Es sind die Installationshinweise des Herstellers zu beachten (zB maximale Leitungslänge). 
+Der Einsatz einer Fehlerlichtbogen-Schutzeinrichtung (AFDD) schließt die Notwendigkeit weiterer Maßnahmen 
+gemäß OVE E 8101 Teil 4-42 nicht aus. 
+4.2 Installationsbeispiel 
+Bild 2 zeigt ein Installationsbeispiel für Fehlerlichtbogen-Schutzeinrichtungen (AFDD). 
+ 
+Bild 2 – Installationsbeispiel für Fehlerlichtbogen-Schutzeinrichtungen (AFDD) 
+ 
+ 
+ 
+
+
+===== PAGE 8/8 =====
+OVE-Fachinformation IS03:2023-12-01 
+Seite 8 von 8 
+Literaturhinweise 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+OVE EN 60898-1, Leitungsschutzschalter für Hausinstallationen und ähnliche Zwecke – Teil 1: Leitungsschutz-
+schalter für Wechselstrom (AC) 
+OVE EN 62606, Allgemeine Anforderungen an Fehlerlichtbogen-Schutzeinrichtungen 
+OVE EN 61008-1, Fehlerstrom-/Differenzstrom-Schutzschalter mit eingebautem Überstromschutz (RCCBs) für 
+Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen  
+OVE EN 61009-1, Fehlerstrom-/Differenzstrom-Schutzschalter ohne eingebauten Überstromschutz (RCBOs) für 
+Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN 62423, Fehlerstrom-/Differenzstrom-Schutzschalter Typ F und Typ B mit und ohne eingebautem 
+Überstromschutz für Hausinstallationen und für ähnliche Anwendungen 
+BGBl. Nr. 106/1993, Elektrotechnikgesetz 1992 – ETG 1992 
+ 
+Links 
+https://brandverhuetung-oesterreich.at/brandstatistik/ Brandschadenstatistik der österreichischen 
+Brandverhütungsstellen 2021 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für 
+Elektrotechnik 
+ 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2023. Alle Rechte 
+vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt 
+nur wortgetreu und ohne Auslassung oder 
+Zusatz wiedergegeben werden. 
+ 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

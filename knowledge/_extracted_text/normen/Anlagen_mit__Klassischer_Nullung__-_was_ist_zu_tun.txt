@@ -1,0 +1,675 @@
+
+
+===== PAGE 1/4 =====
+Einleitung
+Anlagen mit „Klassischer
+Nullung“ existieren in Öster-
+reich nur in einigen, ganz be-
+stimmten Gebieten (z. B. in Ti-
+rol, in der Stadt Salzburg und
+in Weiz), in denen die Schutz-
+maßnahme Nullung bereits
+seit etwa 1938 oder früher
+zulässig ist. Unter dem Begriff
+„Klassische Nullung“ versteht
+man nach heutiger IEC-No-
+menklatur eine Anlage im TN-
+C-System, bei der ein PEN-
+Leiter auch mit geringeren
+Querschnitten als 10 mm2 bis
+zum letzten Auslass (Steckdo-
+se oder Festanschluss) ge-
+führt ist. Dort wurde der PEN-
+Leiter zunächst mit der
+Schutzleiterklemme und
+außerdem über einen Bügel
+mit der Neutralleiterklemme
+verbunden. Diese Anlagen
+wurden daher Kosten sparend
+nur mit zwei Leitern (für
+Wechselstromkreise) oder mit
+vier Leitern (für Drehstrom-
+kreise) ausgeführt.
+Technischer Sachverhalt
+Mit der Ausarbeitung der heu-
+tigen IEC 60364 seit den 60er
+Jahren des vorigen Jahrhun-
+derts wurde erkannt, dass die-
+ser Schutzmaßnahme, die bei
+Vorliegen der netzseitigen Vor-
+aussetzungen sehr preiswert
+ist, gewisse sicherheitstechni-
+sche Probleme anhaften, z. B.
+bei einer Unterbrechung des
+PEN-Leiters oder bei unsach-
+gemäßen Eingriffen von Laien.
+Außerdem können derartige
+Anlagen in erheblichem Maß
+Anlass zu EMV-Problemen ge-
+ben, weil durch den Span-
+nungsabfall am PEN-Leiter
+Anteile des Betriebsstromes in
+einer kaum nachvollziehbaren
+Weise auch über alle fremden
+leitfähigen Teile des Gebäudes
+fließen (Abb. 1). 
+Während die Nullung
+selbst als Schutzmaßnahme
+hohes Ansehen genießt und
+ihre generelle Einführung in
+Österreich durch die
+Nullungsverordnung (Bundes-
+gesetzblatt, 1998, Teil II, Nr.
+322; Umlauft, 2002) vorge-
+schrieben ist, wobei für die öf-
+fentlichen Netze grundsätzlich
+das TN-C-System als aner-
+kannter Stand der Technik mit
+besonderen Vorteilen für die
+Sicherheit der Kundenanlagen
+zur Anwendung kommt, gibt
+es zur Anwendung dieses Sy-
+stems innerhalb von Gebäu-
+den zunehmend Vorbehalte.
+Auch die hier als extremer
+Sonderfall eines TN-C-Sy-
+stems zu behandelnde „Klas-
+sische Nullung“ erfüllt in den
+Altanlagen durchaus noch
+ihren Zweck. Sie gilt heute
+zwar nicht als unmittelbar ge-
+fährlich, entspricht aber ande-
+rerseits keineswegs mehr den
+heutigen Anforderungen der
+Technik. In der ÖVE-EN
+1/1975 (verbindlich seit 01.
+01. 1976) wurde auch in
+Österreich für Neuanlagen
+erstmals verlangt, dass ein
+PEN-Leiter nur mit einem
+Querschnitt von ≥10 mm2 Cu
+ausgeführt werden darf. Unter
+Berücksichtigung von Über-
+gangsfristen ist davon auszu-
+gehen, dass die letzten Anla-
+gen in klassischer Nullung –
+zum Teil leider auch ohne
+Elektroinstallationsrohre mit
+Stegleitungen – bis etwa 1978
+errichtet worden sind und alte
+Anlagen dieser Art zum Teil
+bis heute in dieser Weise er-
+weitert werden, sofern es sich
+dabei nicht um „wesentliche
+Erweiterungen“ im Sinne des
+Elektrotechnikgesetzes han-
+delt. Die Elektrotechnikbehör-
+de hat sich jedenfalls bisher
+nicht veranlasst gesehen, den
+weiteren Betrieb solcher Anla-
+gen durch gesetzliche Rege-
+lungen zeitlich zu begrenzen. 
+Mit der zunehmenden An-
+wendung empfindlicher elek-
+tronischer Geräte muss jedoch
+mit entsprechenden EMV-Pro-
+blemen gerechnet werden.
+Diese Probleme treten aller-
+dings grundsätzlich bei allen
+Anlagen auf, die teilweise als
+TN-C-System ausgeführt sind,
+auch dann, wenn die End-
+stromkreise nicht in klassi-
+scher Nullung, sondern mit
+getrenntem PE-Leiter ausge-
+führt sind (Abb. 2** ). Deshalb
+wurde bereits mit ÖVE-EN
+1/1975 empfohlen, alle Anla-
+gen innerhalb von Gebäuden
+generell mit getrenntem
+Schutzleiter auszuführen. Die-
+se wichtige Empfehlung ist
+heute in ÖVE/ÖNORM E 8001-
+1, Abschnitt 21.4.5, enthalten. 
+Durch den bei modernen
+Anlagen stets auszuführenden
+Hauptpotenzialausgleich be-
+finden sich der Schutzleiter
+und die fremden leitfähigen
+Teile, die an allen zwangsge-
+erdeten Betriebsmitteln der
+Klasse I mit dem Schutzleiter
+verbunden sind, auf
+annähernd gleichem Potenzi-
+al. Wesentlich für die EMV-
+Problematik ist es jedoch,
+dass bei einer kompletten An-
+lagenausführung nach dem
+TN-S-System keine Betriebs-
+ströme des Neutralleiters in-
+nerhalb der Anlage über den
+Schutzleiter und über die mit
+diesem verbundenen fremden
+leitfähigen Teile fließen kön-
+nen (Abb. 3**). Eine solche
+Anlagenausführung sollte da-
+her das Ziel jeder Sanierung
+einer Altanlage sein, auch
+wenn diese aus anderen
+Gründen nur in mehreren
+Schritten erfolgen kann. In
+Anlagen nach dem TN-S-Sy-
+stem fließen im Schutzleiter
+nur vergleichsweise geringe
+„Ableitströme“, die leider von
+heft7/8 Juli/August 2004
+a33
+Anlagen mit „Klassischer Nullung“ – 
+was ist zu tun?
+Eine Zusammenfassung der Fachmeinungen im OVE-Fachausschuss E und seinem Fachunterausschuss E 07* 
+E. SCHMAUTZER, D. UMLAUFT
+* Dieser Aufsatz hat dem Lenkungsausschuss des OVE zur Begutachtung vorgelegen und wurde von diesem zustimmend zur Kenntnis genommen.
+**Die Abbildungen sind symbolisch, d. h. sie stellen den grundsätzlichen Sachverhalt dar und erheben, insbesondere betreffend die Stromaufteilung in den PA-,
+PE- und PEN-Leitern, keinen Anspruch auf Vollständigkeit. Es können sich parasitäre Ströme z. B. über die Verteiler, Geländer usw. über das elektrische Strö-
+mungsfeld im Mauerwerk ausbilden und dann über elektrisch leitende Einbauten abfließen.
+Abb. 1. Unterschiedliche Betriebsstromaufteilung bei asymmetrischer
+Belastung in TN-C- und TN-S-Systemen
+news
+
+
+===== PAGE 2/4 =====
+einigen elektrischen Betriebs-
+mitteln auch im Normalbetrieb
+verursacht werden. Es sind
+dementsprechend nur gerin-
+gere störende elektromagneti-
+sche Felder im Gebäude zu
+erwarten.
+Problemstellung
+Ausgehend von Anfragen aus
+Tirol, einer schriftlichen Anfra-
+ge der Landesinnung Wien
+der Elektro-, Audio-, Video-
+und Alarmanlagentechniker,
+durch den Erfahrungsaus-
+tausch der Fachleute in den
+deutschsprachigen Ländern
+und letztlich auf Ersuchen der
+Konferenz der Amtssachver-
+ständigen haben sich der
+OVE-Fachausschuss E und
+sein Unterausschuss E 07
+mehrfach mit Detailfragen
+zum Problem der Erweiterung
+und Sanierung bestehender
+Anlagen mit klassischer
+Nullung befasst.
+Hintergrund aller dieser
+Anfragen ist letztlich, dass je-
+der Umbau einer Anlage mit
+klassischer Nullung auf den
+heutigen Stand der Technik
+einen nicht unbeachtlichen
+Kostenaufwand verursacht,
+insbesondere dann, wenn die
+bestehende Anlage unter Ver-
+wendung von Stegleitungen
+ausgeführt ist und daher nicht
+durch das Einziehen neuer
+Aderleitungen in vorhandene
+Elektroinstallationsrohre sa-
+niert werden kann. Zu den
+meist juristischen Fragestel-
+lungen hinsichtlich der Ko-
+stentragung für notwendige
+oder gewünschte Sanierungs-
+arbeiten bei Miet- oder Eigen-
+tumswohnungen wollen und
+können die angesprochenen
+technischen Fachgremien al-
+lerdings kaum Antworten ge-
+ben, sondern müssen sich auf
+allgemein bekannte Grundsät-
+ze zurückziehen. Als aner-
+kannt gilt dabei der Grund-
+satz, dass eine feste Elektro-
+installation (gleichgültig ob in
+der Wand oder mit Oberputz-
+leitungen ausgeführt) als inte-
+graler Bestandteil des betref-
+fenden Gebäudes gilt. Somit
+hat grundsätzlich auch der
+Gebäudeeigentümer für die
+Kosten allfällig notwendiger
+wesentlicher Maßnahmen an
+diesen Anlagen aufzukom-
+men, sofern diesbezüglich mit
+den Nutzern des Gebäudes
+keine eindeutig anders lauten-
+den Regelungen bestehen.
+Die Frage, ob und unter
+welchen Umständen eine Anla-
+ge insgesamt oder zum Teil
+von einer vorhandenen klassi-
+schen Nullung auf den heuti-
+gen Stand der Technik umge-
+baut werden muss und wer
+dies zu bezahlen hat, kann da-
+her nur unter Abwägung aller
+Gesamtumstände im jeweiligen
+Einzelfall entschieden werden.
+Das Anliegen der beteiligten
+Elektrotechniker sollte es dabei
+sein, das Verständnis der be-
+troffenen Gebäudeeigentümer
+und -nutzer für eine möglichst
+komplette Sanierung aller Ein-
+zelverbraucheranlagen in ei-
+nem Gebäude zu wecken, um
+den künftigen Anforderungen
+an eine moderne Elektroinstal-
+lation zu genügen. 
+Nur mit einer komplett
+sanierten Gebäudeinstallati-
+on im TN-S-System, bei der
+das netzseitige TN-C-Sy-
+stem beim Hausanschluss
+mit einem in der Nähe be-
+findlichen Hauptpotenzial-
+ausgleich endet, lassen sich
+die möglichen EMV-Proble-
+me in diesem Objekt auf
+den heute üblichen Stand
+einer Neuanlage im TN-S-
+System verringern. Bei nur
+teilweisen Erneuerungen der
+Installationen, z. B. beim Um-
+bau eines Gebäudeteiles oder
+Stockwerkes für einen neuen
+Mieter, ist im Sinne dieses
+Zieles eine entsprechende
+Neuinstallation als TN-S-Sy-
+stem ab Hausanschluss sehr
+zu empfehlen. Trotzdem lässt
+es sich durch das kaum ver-
+meidbare Vorhandensein
+zwangsgeerdeter Betriebsmit-
+tel der Klasse I (z. B. Warm-
+wasserbereiter, Etagenhei-
+zungsanlagen, elektrisch ge-
+steuerte Gasgeräte) in mehr-
+geschoßigen Gebäuden aus
+physikalischen Gründen nicht
+verhindern, dass zumindest
+Teilströme des Neutralleiter-
+Betriebsstromes über den
+Schutzleiter fließen können,
+solange in dem betreffenden
+Objekt auch nur eine Einzel-
+verbraucheranlage oder ein
+Teil der Hauptleitungen als
+TN-C-System ausgeführt ist
+(Abb. 4**). Insbesondere beim
+Vorhandensein zahlreicher
+niederohmiger Einbauten, wie
+z. B. Konstruktionsteile des
+Gebäudes aus Metall, Klima-,
+Fernwärme-, Druckluft- oder
+Rohrpostanlagen, können
+beim Vorhandensein eines
+TN-C-Systemes nennenswer-
+te Ausgleichsströme über die-
+se fremden leitfähigen Teile
+fließen. Speziell in Industrie-
+anlagen mit eigener Trafostati-
+on muss daher in einem sol-
+chen Fall die gesamte Elektro-
+installation ab dem Transfor-
+mator als TN-S-System er-
+richtet werden, will man EMV-
+Probleme vermeiden. 
+Auf der anderen Seite soll-
+te es aber aus Kostengründen
+auch möglich sein, die elektro-
+technische Sanierung eines
+Objektes mit mehreren Einzel-
+verbraucheranlagen vom TN-
+C-System zu einem vollständi-
+gen TN-S-System schrittweise
+vorzunehmen, wie in Abb. 4
+gezeigt, und zwar jeweils
+dann, wenn in einem Teilbe-
+reich bauliche Sanierungen
+oder Renovierungsarbeiten an-
+stehen. Eine zu sanierende
+Steigleitung sollte unbedingt
+fünfpolig ausgeführt werden.
+Dabei kann dann auch das
+Problem der Zumutbarkeit der
+meist notwendigen Neuinstal-
+lation jeder Einzelverbraucher-
+anlage berücksichtigt werden,
+wenn in dem betreffenden Ob-
+jekt bisher keine EMV-Proble-
+me auftreten und bis zum voll-
+ständigen Umbau aller elektri-
+schen Anlagen auf das TN-S-
+System vorerst nicht zu erwar-
+ten sind. Bei einem Ausbau
+von Teilen des Gebäudes für
+Nutzungen mit sensiblen elek-
+tronischen Geräten (z. B. als
+medizinisches Labor, für emp-
+findliche Diagnosegeräte oder
+für Räume mit CAD-Arbeits-
+plätzen und empfindlichen
+elektronischen Messgeräten)
+wird sich dagegen eine elek-
+trotechnische Generalsanie-
+rung des Objektes kaum ver-
+meiden lassen.
+Die an der Meinungsbil-
+dung beteiligten Fachleute in
+den technischen Gremien des
+OVE haben sich von diesen
+Grundsätzen leiten lassen und
+sich auch an einer ähnlichen
+Vorgangsweise in Deutschland
+orientiert (Rudolph, Schulze,
+1994; Bödecker, 2001).
+a34
+e&i elektrotechnik und informationstechnik
+news
+Abb. 2. Vagabundierende Betriebsströme in einem Gebäude mit Anla-
+genteilen nach dem TN-C-System
+
+
+===== PAGE 3/4 =====
+Antworten zu Fragen an
+den OVE im Detail
+(1) Wie ist vorzugehen,
+wenn eine Einzelverbrau-
+cheranlage in klassischer
+Nullung um einen Strom-
+kreis erweitert werden soll?
+Ein ab Verteiler der Anlage
+neu zu installierender Strom-
+kreis ist jedenfalls mit ge-
+trenntem PE- und N-Leiter
+auszuführen.
+(2) Muss ein neuer
+Steckdosenstromkreis in ei-
+ner solchen Anlage mit Zu-
+satzschutz ausgestattet
+werden?
+Aus fachlichen Gründen
+ja. Gemäß ÖVE/ÖNORM E
+8001-1/A1:2002-04, Abschnitt
+6.1.1 (Steckdosen für den
+Hausgebrauch bzw. industriel-
+le Anwendungen bis 16 A),
+sind Steckdosen-Stromkreise
+bis 16 A mit Zusatzschutz
+durch eine Fehlerstrom-
+Schutzeinrichtung mit einem
+Nennfehlerstrom ≤30 mA
+auszustatten. Dies kann bei
+Platzmangel in der Verteilung
+auch mit einem FI/LS-Schalter
+erfolgen, wobei die übrigen,
+weiterhin klassisch genullten
+Stromkreise der Anlage davon
+unberührt bleiben. Eine solche
+Vorgangsweise ist im Interes-
+se der Sicherheit zwar sicher-
+lich angebracht, kann aber je
+nach Interpretation der Be-
+stimmungen des derzeit gel-
+tenden Elektrotechnikgeset-
+zes (Bundesgesetzblatt, 1993,
+Nr. 106) nicht in jedem Falle
+erzwungen werden, sondern
+ist von der entsprechend den
+örtlichen Gegebenheiten vor-
+zunehmenden Einstufung des
+neuen Stromkreises als „Neu-
+anlage“ oder als „wesentliche
+Erweiterung“ abhängig. 
+(3) Stellt die Installation
+eines zusätzlichen Steckdo-
+senstromkreises in einer
+klassisch genullten Anlage
+eine „wesentliche Erweite-
+rung“ im Sinne des Elektro-
+technikgesetzes dar und be-
+gründet dies den Umbau der
+gesamten Einzelverbrau-
+cheranlage?
+Die Installation eines zu-
+sätzlichen Steckdosen-Strom-
+kreises innerhalb des örtli-
+chen Bereiches einer vorhan-
+denen elektrischen Anlage
+stellt nach gängiger Auffas-
+sung allein keine „wesentliche
+Erweiterung“ im Sinne von
+ETG 1992, §1, Abs. 4, Ziffer 1,
+dar, jedoch sind bei der fachli-
+chen Entscheidung über die in
+einer solchen Anlage insge-
+samt zu treffenden Maßnah-
+men auch andere technische
+und örtliche Gegebenheiten
+zu beachten. Allein durch die
+Vornahme einer „einfachen“
+(nicht „wesentlichen“ im Sinne
+des ETG) Erweiterung und
+auch durch eine entsprechen-
+de „einfache“ Änderung eines
+Stromkreises in einer vorhan-
+denen Anlage kann eine für
+die Umstellung der gesamten
+Anlage auf das TN-S-System
+in aller Regel erforderliche
+Neuinstallation nicht erzwun-
+gen werden, weil die vorhan-
+dene Schutzmaßnahme
+Nullung nicht geändert wird
+und auch durch das gleichzei-
+tige Vorhandensein „alter“
+und „neuer“ Stromkreise kei-
+ne Beeinträchtigung der
+Schutzmaßnahmen erfolgt.
+Auch ein für die Erweiterung
+der Anlage aus Platzgründen
+möglicherweise erforderlicher
+Austausch des Verteilers bie-
+tet dafür keinen rechtlichen
+Anlass. 
+(4) Löst eine „wesentliche
+Änderung“ oder eine „we-
+sentliche Erweiterung“ im
+Sinne des Elektrotechnikge-
+setzes in einer klassisch ge-
+nullten Anlage in jedem Falle
+den kompletten Umbau der
+betreffenden Anlage aus?
+Nicht unbedingt. Eine we-
+sentliche Änderung oder eine
+wesentliche Erweiterung einer
+solchen Anlage, muss gemäß
+ETG 1992, §6, Abs. 1, nicht
+zwangsläufig zu einer kom-
+pletten Neuinstallation der
+vorhandenen TN-C-Anlage
+führen, weil in dieser Bestim-
+mung nur eine Anpassung der
+vorhandenen Anlagenteile mit
+unmittelbarem funktionellen
+Zusammenhang insoweit ge-
+fordert wird, als dies für die
+einwandfreie Funktion der
+elektrischen Schutzmaßnah-
+men erforderlich ist. Diese Be-
+stimmung sollte jedoch z. B.
+dahingehend ausgelegt wer-
+den, dass jene vorhandenen
+Anlagenteile, die im Zuge
+des Umbaues hinter eine
+Fehlerstrom-Schutzeinrich-
+tung zu liegen kommen,
+nicht mehr als TN-C-System
+ausgeführt sein dürfen, weil
+dieses die Funktion der Feh-
+lerstrom-Schutzeinrichtung
+beeinträchtigt. 
+(5) Was ist zu tun, wenn
+in einem mehrstöckigen Ge-
+bäude die Steigleitung aus
+technischen Gründen er-
+neuert werden muss? Wie
+soll diese Steigleitung aus-
+gelegt werden, wenn nicht
+gleichzeitig auch alle vor-
+handenen Einzelverbrau-
+cheranlagen auf TN-S-Sy-
+stem umgestellt werden
+können?
+Wird in einem Objekt die
+Steigleitung erneuert, so ist
+gemäß ÖVE/ÖNORM E 8001-
+1, Abschnitt 21.4.5, eine fünf-
+polige Ausführung jedenfalls
+dringend zu empfehlen, weil
+heute in allen Gebäuden mit
+dem Einbau vernetzter Einrich-
+tungen der Informationstech-
+nik gerechnet werden muss.
+Da von einem PEN-Leiter
+gemäß ÖVE/ÖNORM E 8001-
+1, Abschnitt 21.4.2, beliebig oft
+PEN-, PE- und N-Leiter abge-
+zweigt werden dürfen, kann in
+diesem Falle der durchgehend
+grün/gelb gekennzeichnete
+Leiter der Steigleitung (unge-
+achtet des ebenfalls vorhande-
+nen blauen Neutralleiters) als
+PEN-Leiter zusätzlich gekenn-
+zeichnet werden, um für den
+Anschluss des PEN-Leiters je-
+ner Anlageteile verwendet zu
+werden, die zeitweilig noch als
+TN-C-Anlagen bestehen blei-
+ben. Ein den Vorschriften ent-
+sprechender Querschnitt die-
+ses „PEN-Leiters“ der Steiglei-
+tung (analog zu den Außenlei-
+tern, mindestens jedoch 10
+mm2 Cu) wird dabei vorausge-
+setzt. Zusätzlich muss eine
+Kennzeichnung als PEN-Leiter
+an allen Enden dieses Leiters
+durch blaue Endmarkierungen
+erfolgen (Abb. 4). Außerdem ist
+(nach deutschem Vorbild, Bö-
+decker 2001) in den betreffen-
+den Verteilern ein ausdrückli-
+cher Warnhinweis: „Achtung!
+Stromkreise … noch nicht auf
+TN-S-System umgestellt“ an-
+zubringen.
+(An dieser Stelle wurde
+die ursprüngliche schriftliche
+Antwort des OVE vom 13.
+November 2002 zu einer An-
+heft7/8 Juli/August 2004
+a35
+Abb. 3. Stromverlauf der Betriebsströme in einem Gebäude mit Instal-
+lation nach dem TN-S-System
+
+
+===== PAGE 4/4 =====
+frage der Landesinnung Wien
+auf Anregung der Konferenz
+der Amtssachverständigen
+hinsichtlich der notwendigen,
+besonderen Kennzeichnung
+des PEN-Leiters nachträglich
+ergänzt.) 
+Diese Vorgangsweise er-
+möglicht sowohl eine zukunfts-
+sichere Ausführung der erneu-
+erten Steigleitung ohne we-
+sentliche Mehrkosten (gegenü-
+ber einer bisher teilweise ge-
+handhabten und auch zulässi-
+gen, jedoch nicht empfohle-
+nen vierpoligen Ausführung)
+als auch eine jederzeitige spä-
+tere, auch schrittweise Umstel-
+lung der alten TN-C-Anlagen-
+teile auf das TN-S-System. Zu
+beachten ist, dass dieser PEN-
+Leiter bis zum Abschluss der
+kompletten Umstellung auch
+Betriebsströme führt und dem-
+entsprechende EMV-Probleme
+auftreten können. Nach Um-
+stellung aller Einzelverbrau-
+cheranlagen in dem Gebäude
+auf das TN-S-System sind die
+blauen Endenkennzeichnungen
+zu entfernen, und der durchge-
+hend grün/gelb gekennzeich-
+nete Leiter dient danach aus-
+schließlich als PE-Leiter. 
+Literatur
+Bödecker, K. (2001): Bestands-
+schutz und Anpassung elektrischer
+Anlagen. Für und gegen die klassi-
+sche Nullung. Elektropraktiker. Ber-
+lin. (55) 9: 720-722.
+Bundesgesetzblatt für die Repu-
+blik Österreich, Jahrgang 1993, Nr.
+106: ETG 1992 – Elektrotechnikge-
+setz 1992: Bundesgesetz über Si-
+cherheitsmaßnahmen, Normalisie-
+rung und Typisierung auf dem Ge-
+biete der Elektrotechnik. 
+Bundesgesetzblatt für die Repu-
+blik Österreich, Jahrgang 1998,
+Teil II, Nr. 322: Verordnung des Bun-
+desministers für wirtschaftliche An-
+gelegenheiten über die Anforderun-
+gen an öffentliche Verteilungsnetze
+mit der Nennspannung 400/230 V
+und an diese angeschlossene Ver-
+braucheranlagen zur grundsätzlichen
+Anwendung der Schutzmaßnahme
+Nullung (Nullungsverordnung) vom
+16. September 1998. 
+Rudolph, W., Schulze, B. (1994):
+Neuinstallation bei teilweisem Belas-
+sen von zweiadrigen Endstromkreisen.
+Elektropraktiker. Berlin. (48) 7: 561.
+Umlauft, D. (2002): Genereller Über-
+gang zum TN-System in Österreich
+bis 2008. etz, H. 23-24: 18-25.
+Autoren: Dipl.-Ing. Dr. techn. Ernst
+Schmautzer, Institut für Elektrische
+Anlagen, Technische Universität
+Graz, Inffeldgasse 18, A-8010 Graz;
+Dipl.-Ing. Dieter Umlauft, Fernkorn-
+gasse 49/1/60, A-1100 Wien, beide:
+Fachnormenausschuss E „Elektri-
+sche Niederspannungsanlagen“ und
+Fachnormenunterausschuss E07
+„Weiterführung der bestehenden EN-
+Bestimmungen“ im OVE. 
+a36
+e&i elektrotechnik und informationstechnik
+news
+Abb. 4. Teilsaniertes Objekt als TN-C-S-System mit einer neuen Steig-
+leitung, einer TN-S-Anlage und einer noch nicht umgestellten Anlage
+nach dem TN-C-System

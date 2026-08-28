@@ -1,0 +1,2148 @@
+
+
+===== PAGE 1/24 =====
+Inhaltsverzeichnis
+Vorwort
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+1
+Planung, Dimensionierung und Kalkulation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+1.1
+1-Familien-Haus mit Einliegerwohnung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+1.1.1
+Festlegung der Anzahl von Anschlüssen und Stromkreise 
+nach DIN 18 015 und HEA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+1.1.2
+Berechnung aller Leitungsquerschnitte  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+1.1.3
+Anordnung der Zähleranlage nach TAB . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+1.1.4
+Zeichnung der Verteilungspläne und der Hauptstromversorgung . . . . . . . .
+33
+1.1.5
+Dimensionierung des Hauptpotenzialausgleiches  . . . . . . . . . . . . . . . . . . . .
+35
+1.1.6
+Massenermittlung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+1.1.7
+Kalkulation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+39
+1.2 Mechanische Werkstatt  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+42
+1.2.1
+Berechnung aller Leitungsquerschnitte  . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+46
+1.2.2
+Anordnung der Zähleranlage (Wandlermessung) nach TAB  . . . . . . . . . . .
+53
+1.2.3
+Zeichnung der Verteilungspläne und der Hauptstromversorgung . . . . . . . .
+56
+1.2.4
+Dimensionierung vom Hauptpotenzialausgleich . . . . . . . . . . . . . . . . . . . . .
+56
+1.2.5
+Massenermittlung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+61
+1.2.6
+Kalkulation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+61
+1.3
+Geschäfts- und Wohnhaus  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+70
+1.3.1
+Berechnung der Zuleitungsquerschnitte mit unterschiedlicher Einteilung 
+des Spannungsfalles  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+72
+1.3.2
+Berechnung der Hauptleitung, Installation einer NSHV  . . . . . . . . . . . . . .
+77
+1.3.3
+Zeichnung der Verteilungspläne und der Hauptstromversorgung . . . . . . . .
+79
+1.3.4
+Dimensionierung vom Hauptpotenzialausgleich . . . . . . . . . . . . . . . . . . . . .
+81
+1.4
+Metall- und Schweißwerkstatt  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+81
+1.4.1
+Berechnung aller Leitungsquerschnitte  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+85
+1.4.2
+Berechnung der Kompensationsanlage der Schweißerei  . . . . . . . . . . . . . . .
+96
+1.4.3
+Anordnung der Zähleranlage (Wandlermessung) nach TAB  . . . . . . . . . . .
+99
+1.4.4
+Zeichnung der Verteilungspläne und der Hauptstromversorgung . . . . . . . .
+101
+1.4.5
+Dimensionierung vom Potenzialausgleich . . . . . . . . . . . . . . . . . . . . . . . . . .
+101
+7
+Der Onlineservice InfoClick bietet unter
+www.vogel-buchverlag.de nach Codeeingabe zusätzliche
+Informationen und Aktualisierungen.
+
+
+===== PAGE 2/24 =====
+8
+1.5
+1-Familien-Haus mit Einliegerwohnung, beheizt mit Speicheröfen  . . . . . . . . . . . . .
+101
+1.5.1
+Wärmebedarfsberechnung, Berechnung der Heizleistung 
+der Speicheröfen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+98
+1.5.2
+Berechnung aller Leitungsquerschnitte  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+104
+1.5.3 Anordnung der Zähleranlage nach TAB  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+105
+1.5.4
+Zeichnung der Verteilungspläne und der Hauptstromversorgung . . . . . . . .
+106
+1.5.5
+Dimensionierung vom Hauptpotenzialausgleich . . . . . . . . . . . . . . . . . . . . .
+109
+1.6
+Landwirtschaftliche Betriebsstätte . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+109
+1.6.1
+Komplette Berechnung der Versorgungssysteme . . . . . . . . . . . . . . . . . . . . .
+112
+1.6.2
+Erdungsanlage, Potenzialausgleich, separate Verlegung von PE  . . . . . . . . .
+114
+2
+Einführung in die Planung der Elektroinstallation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+117
+2.1
+Mindestanforderungen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+117
+2.1.1
+Rechtliche Grundlagen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+118
+2.1.1.1 Energiewirtschaftsgesetz und DIN-VDE-Bestimmungen  . . . . . . . . . . .
+119
+2.1.1.2 Bauordnungsrecht . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+121
+2.1.1.3 AVBEltV und TAB  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+124
+2.1.1.4 VOB und Normen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+133
+2.1.1.5 Arbeitsschutzgesetz, Arbeitsstättenverordnung 
+und Arbeitsstättenrichtlinien . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+138
+2.1.1.6 VdS-Richtlinien . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+144
+2.1.2
+Fachgerechte Planung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+150
+2.1.2.1 Gebäudetechnik  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+150
+2.1.2.2 Leistungsbedarf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+154
+2.1.2.3 Raumarten nach DIN VDE 0100  . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+150
+2.1.2.4 Richtige Materialien  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+155
+2.1.2.5 Installationszonen nach DIN 18 015-3 . . . . . . . . . . . . . . . . . . . . . . . .
+155
+2.1.2.6 Installationsarten  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+157
+2.1.3
+Komfort und Zukunftsorientierung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+157
+2.1.3.1 Einsatz von Kleinsteuerungen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+158
+2.1.3.2 Bussysteme  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+159
+2.2
+Von der Einspeisung bis zum Endverbraucher  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+160
+2.2.1
+Hausanschluss  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+160
+2.2.1.1 Hausanschlussraum nach DIN 18 012  . . . . . . . . . . . . . . . . . . . . . . . .
+163
+2.2.1.2 Fundamenterder nach DIN 18 014 . . . . . . . . . . . . . . . . . . . . . . . . . . .
+164
+2.2.1.3 Hauptstromversorgungssystem unter Beachtung 
+von DIN 18 015 und TAB  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+165
+2.2.1.4 Zählerplätze nach DIN 43 870 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+167
+2.2.2
+Stromkreisverteiler . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+171
+2.2.2.1 Verbindungsleitung vom Zähler zum Stromkreisverteiler  . . . . . . . . . .
+171
+2.2.2.2 Unterverteilungen und Lastschwerpunkt . . . . . . . . . . . . . . . . . . . . . . .
+172
+2.2.2.3 Stromkreisaufteilung  nach DIN 18 015 und HEA . . . . . . . . . . . . . . .
+174
+2.2.2.4 Übertemperatur von Betriebsmitteln in Stromkreisverteilern 
+unter Berücksichtigung der DIN VDE 0660-504  . . . . . . . . . . . . . . . .
+176
+2.2.3
+Endstromkreise unter Beachtung von DIN 18 015 und DIN VDE  . . . . . . . . .
+179
+2.2.3.1 Steckdosenstromkreise  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+179
+2.2.3.2 Lichtauslässe . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+182
+2.2.3.3 Stromkreise für Großverbraucher  . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+184
+2.2.3.4 Rollladen- und Jalousieanschlüsse  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+187
+2.2.3.5 Stromkreise für Motoren nach DIN VDE 0113-1 . . . . . . . . . . . . . . . .
+188
+2.2.4
+Antennen- und Breitbandkommunikationsanlagen  . . . . . . . . . . . . . . . . . . . . .
+188
+2.2.4.1 Außenantennen und Erdung unter Beachtung 
+von DIN VDE 0855 Teil 1  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+189
+2.2.4.2 Einspeisung über BK-Kabel und Potenzialausgleich  . . . . . . . . . . . . . .
+191
+2.2.4.3 Verteilungsnetz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+192
+
+
+===== PAGE 3/24 =====
+9
+2.2.5
+Fernmelde-, Klingel- und Türsprechanlagen . . . . . . . . . . . . . . . . . . . . . . . . . . .
+193
+2.2.5.1 Hausübergabepunkt  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+194
+2.2.5.2 Verteilungsnetz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+194
+2.2.5.3 Gefahrenmeldeanlagen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+196
+2.2.6
+Blitzschutz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+197
+2.2.6.1 Äußerer Blitzschutz . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+200
+2.2.6.2 Innerer Blitzschutz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+203
+3
+Ausgewählte Sachthemen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+209
+3.1
+Massenermittlung und Kalkulation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+209
+3.1.1
+Lohnkosten, Gemeinkosten und sonstige Kosten  . . . . . . . . . . . . . . . . . . . . . . .
+210
+3.1.2
+Betriebsabrechnungsbogen (BAB)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+211
+3.2
+Gefährdungen durch elektrischen Strom  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+213
+3.3
+Vorteile und Nachteile von TN- und TT-System . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+220
+3.4
+Bedeutung des Hauptpotenzialausgleiches  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+232
+3.5
+Berechnung des Spannungsfalles auf Leitungen und Kabel  . . . . . . . . . . . . . . . . . . .
+240
+3.5.1
+Stichleitung ohne Abzweige  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+241
+3.5.2
+Stichleitung mit Abzweigen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+246
+3.5.3
+Ringleitung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+248
+3.5.4
+Allgemein gültige Gleichungen zum Spannungsfall  . . . . . . . . . . . . . . . . . .
+249
+3.6
+Kabel- und Leitungsschutz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+251
+3.6.1
+Kurzschlussschutz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+253
+3.6.2
+Überlastschutz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+259
+3.6.3
+Verlegearten  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+265
+3.6.4
+Umgebungstemperatur  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+269
+3.6.5
+Häufung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+271
+3.7
+Überstromschutzeinrichtungen und Selektivität  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+274
+3.7.1
+Schmelzsicherung →Schmelzsicherung  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+279
+3.7.2
+Schmelzsicherung →Leitungsschutzschalter oder Leistungsschalter . . . . . .
+281
+3.7.3
+Leitungsschutzschalter oder Leistungsschalter →Leitungsschutzschalter  . .
+284
+3.7.4
+Leistungsschalter oder Leitungsschutzschalter →Schmelzsicherung . . . . . .
+285
+3.8
+Belastung des Neutralleiters durch Oberschwingungsströme  . . . . . . . . . . . . . . . . .
+286
+3.8.1
+Symmetrisch und unsymmetrisch belastete Drehstromsysteme . . . . . . . . . .
+286
+3.8.2
+Grundschwingung und Oberschwingungen  . . . . . . . . . . . . . . . . . . . . . . . .
+289
+3.8.3
+Oberschwingungsströme und Neutralleiterstrom 
+bei symmetrischer Belastung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+293
+3.9
+Blindleistungskompensation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+295
+3.10
+Funktion, Auswahl und Einsatz von Fehlerstromschutzeinrichtungen (RCDs)  . . . .
+302
+3.11
+Schutzklassen und Schutzarten von elektrischen Betriebsmitteln . . . . . . . . . . . . . . .
+308
+3.12
+Installationsbestimmungen für Räume besonderer Art  . . . . . . . . . . . . . . . . . . . . . .
+312
+3.12.1 Räume mit Badewanne und/oder Duschwanne nach DIN VDE 0100-701 .
+312
+3.12.2 Anlagen im Freien und Räume mit feuchten und nassen Bereichen  . . . . . .
+317
+3.12.3 Landwirtschaftliche Betriebe nach DIN VDE 0100-705 
+und unter Berücksichtigung der VdS-Richtlinien  . . . . . . . . . . . . . . . . . . . .
+319
+Anhang . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+325
+Liste der DIN- und VDE-Normen auf die Bezug genommen wird  . . . . . . . . . . . . . . . . . . . . . .
+325
+Mathematische Zeichen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+327
+Elektrotechnische Symbole  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+328
+Literaturverzeichnis  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+329
+Stichwortverzeichnis  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+330
+
+
+===== PAGE 4/24 =====
+'HU 2QOLQHVHUYLFH ,QIR&OLFN ELHWHW XQWHU ZZZYRJHOEXFKYHUODJGH QDFK
+&RGHHLQJDEH HYHQWXHOO ]XVlW]OLFKH ,QIRUPDWLRQHQ XQG $NWXDOLVLHUXQJHQ
+)RUGHUQ 6LH IU ,KU (%RRN GHQ &RGH XQWHU EXFK#YRJHOEXFKYHUODJGH
+DQ
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+
+===== PAGE 5/24 =====
+1
+Planung, Dimensionierung und Kalkulation
+Damit ein ausführliches Leistungsverzeichnis und somit ein Angebot für eine elek-
+trische Anlage erstellt werden kann, muss eine vollständige Planung und Dimen-
+sionierung erfolgen. Um dies durchzuführen, müssen Kundenwünsche, Leistungs-
+bedarf der elektrischen Verbraucher, sicherheitsrelevante Bestimmungen sowie
+entsprechende Normen und Gesetze bekannt sein. Neben den notwendigen
+Berechnungen für Querschnitte von Kabeln und Leitungen sind vom Planer ent-
+sprechende Übersichtsschaltpläne für Verteilungen sowie Grundrisspläne mit
+Lage der einzelnen Betriebsmittel und der Anschlüsse zu erstellen. 
+An einigen Beispielen aus den Bereichen Wohnungsbau und Kleingewerbe wird
+die Vorgehensweise von der Planung bis zur Kalkulation gezeigt. Hauptsächlich
+wird hier auf die energietechnische Installation eingegangen. Antennen-, Breit-
+bandkommunikations- und Telekommunikationsanlagen werden hier nicht
+berücksichtigt. Aus Platzgründen sind nur einzelne Grundrisse von Gebäuden
+ohne die kompletten Seiten- und Geschossansichten gezeigt. Notwendige Anga-
+ben, wie z.B. Geschosshöhen oder Längenangaben, findet man innerhalb der ein-
+zelnen Projekte.
+1.1
+1-Familien-Haus mit Einliegerwohnung
+Technische Vorbemerkungen zur Elektroinstallation
+Für die Elektroinstallation gelten die Bestimmungen der DIN VDE 0100 in allen
+Teilen. Arbeiten und Materialien müssen den einschlägigen Normen, Richtlinien
+und Bestimmungen der jeweils letztgültigen Fassung entsprechen, insbesondere den
+Vorschriften nach VDE und DIN, den Unfallverhütungsvorschriften der Berufsge-
+nossenschaft für Feinmechanik und Elektrotechnik und den Vorschriften und
+zusätzlichen Auflagen des zuständigen örtlichen Verteilungsnetzbetreibers (VNB).
+Sämtliche Fundamente, Mauer- und Erdarbeiten, Dachdecker-, Klebe- und Iso-
+lierarbeiten und baulicher Schallschutz werden bauseits hergestellt. Die Raumhö-
+he beträgt 2,50 m, Tür und Fensterhöhe 2,00 m, Fensterbrüstung 1,00 m. Außen-
+wände sind 36 cm, Innenwände 24 cm dick.
+Hauptzuleitungen und Verteilungen
+Alle Verteilungen müssen gemäß den Richtlinien des VNB und den VDE-Vor-
+schriften aufgebaut werden. Der innere Aufbau erfolgt mittels Normfeldeinsätzen
+11
+
+
+===== PAGE 6/24 =====
+im Rastersystem. Mindestens 30% der eingebauten Geräte sind als Leerplatz für
+spätere Erweiterungen vorzusehen. Der Verteilungsnetzbetreiber stellt am Über-
+gabepunkt das TN-C-System zur Verfügung. Die Hauptleitung wird auf Putz mit
+Abstandsschellen verlegt, Leitungslänge 9 m. Die Zuleitung zur Unterverteilung
+(UV) der Hauptwohnung wird im Rohr auf Putz verlegt, die zur UV der Einlie-
+gerwohnung unter Putz.
+Allgemeine Elektroinstallation
+Es sind grundsätzlich Kunststoffmantelleitungen zu verwenden. Eine Stegleitung ist 
+nur in Ausnahmefällen zulässig. Die Leitungsführung hat in Anlehnung an DIN
+18 015 Teil 3 (s. Abschnitt 2.1.2.5) zu erfolgen. Da die Decken mit Holzpanelen
+verkleidet werden, sind die Leitungen dort auf Putz zu verlegen. Licht und Steckdo-
+senstromkreise sind grundsätzlich zu trennen. Leitungsquerschnitte sind nach den
+zu erwartenden Belastungen und unter Berücksichtigung von Verlegeart und Lei-
+tungslänge zu berechnen. Die 1-phasigen Stromverbraucher sind so auf die 3 Pha-
+sen L1, L2, und L3 aufzuteilen, dass eine möglichst gleichmäßige Belastung gewähr-
+leistet ist. Für Klemmarbeiten müssen Schalterklemmdosen verwendet werden,
+Abzweigdosen u.P. sind nicht gestattet. Aufputzinstallationen (AP) können in Rohr,
+in Kanal oder mit Abstandsschellen ausgeführt werden. Bei mehreren parallelen
+Leitungen ist PVC-Kanal oder PVC-Stangenrohr zu verwenden. In technischen
+Betriebsräumen ist eine Feuchtraum-Aufputzinstallation vorzusehen. Die Anlage ist
+als TN-S-System auszuführen; als Schutz gegen den elektrischen Schlag ist der
+Schutz durch automatische Abschaltung mittels Überstrom-Schutzeinrichtung zu
+realisieren (s. Abschnitt 3.2 und 3.3). Als Zusatzschutz werden noch Fehlerstrom-
+schutzeinrichtungen mit IDn £ 30 mA eingesetzt. Aus Gründen der Betriebssicher-
+heit sollen 2 kurzzeitverzögerte RCDs verwendet werden (s. Abschnitt 3.10). Bild
+1.1a zeigt den Grundriss der Hauptwohnung vom Projekt «1-Familien-Haus mit
+Einliegerwohnung», Bild 1.1b den Grundriss vom Keller mit Einliegerwohnung.
+Anschlussleistungen elektrischer Verbraucher der Hauptwohnung
+(Zuleitung zur UV: l = 13 m)
+1 Durchlauferhitzer im Bad 400 V, 21 kW, l = 14,8 m;
+1 Durchlauferhitzer in der Küche 400 V, 18 kW, l = 10,5 m;
+1 Elektroherd 400 V, 11,9 kW, l = 9 m;
+1 Waschmaschine 230 V, 3,1 kW, l = 7 m;
+1 Geschirrspüler 230 V, 2,9 kW, l = 8,5 m;
+1 Wäschetrockner 230 V, 2,8 kW, l = 7 m;
+1 Heizstrahler Bad 230 V, 1,5 kW, l = 6,5 m;
+1 Mikrowelle 230 V, 1,2 kW, l = 8 m;
+Schuko einfach 200 W und Schuko mehrfach 300 W, s. Abschnitt 2.2.3.1;
+pro Leuchtenauslass 300 W, s. Abschnitt 2.2.3.2;
+Anschlussleistungen elektrischer Verbraucher der Einliegerwohnung
+(Zuleitung zur UV: l = 7 m, für die Ausstattung soll DIN 18 015 Teil 2 zu Grun-
+de gelegt werden)
+12
+
+
+===== PAGE 7/24 =====
+1 Durchlauferhitzer 400 V, 21 kW, l = 6,5 m;
+1 Elektroherd 400 V, 9,0 kW, l = 5,5 m;
+1 Waschmaschine 230 V, 3,1 kW, l = 7,5 m;
+13
+Bild 1.1a Grundriss der Hauptwohnung von Projekt 1-Familien-Haus mit Einliegerwohnung
+Bild 1.1b Grundriss des Kellergeschosses vom Projekt 1-Familien-Haus mit Einliegerwohnung
+
+
+===== PAGE 8/24 =====
+1 Heizstrahler Bad 230 V, 1,8 kW, l = 4,0 m;
+2 Beleuchtungsstromkreise à 1,0 kW, l = 8,0 m;
+3 Steckdosenstromkreise à 1,4 kW, l = 12 m;
+Anschlussleistungen elektrischer Verbraucher der Allgemeinbenutzung
+1 Heizungsanlage 230 V, 0,3 kW, l = 8,0 m
+1 Stromkreis für Treppenbeleuchtung 230 V, 0,5 kW, l = 4,0 m
+1 Stromkreis für Außenbeleuchtung 230 V, 0,5 kW, l = 15 m
+1.1.1
+Festlegung der Anzahl von Anschlüssen und Stromkreise 
+nach DIN 18 015 und HEA
+Am Projekt «1-Familien-Haus mit Einliegerwohnung» soll gezeigt werden, wie
+nach DIN 18 015 Teil 2 und nach HEA, Ausstattungswert 3, die Anzahl der
+Steckdosen, Auslässe für Beleuchtung, Anschlüsse für besondere Verbrauchsmit-
+tel (Bild 2.7) und Anzahl der Stromkreise ermittelt wird. Anschlussmöglichkeiten
+für Telefon (TAE) und Antenne sind entsprechend der Wohnungsgröße festgelegt
+worden. Beispiel: Wohnzimmer mit Essecke, Raumgröße ca. 47,5 m2. Nach DIN
+wird zwischen Wohnraum und Wohnraum mit Essecke unterschieden, was nach
+HEA keine Berücksichtigung findet. Danach müssen bei DIN mindestens 1 Steck-
+vorrichtung 3-fach, 5 weitere Steckvorrichtungen und 3 Leuchtenauslässe instal-
+liert werden. Nach HEA, würde 1 Steckvorrichtung 3-fach, 1 2-fach, 11 weitere
+Steckvorrichtungen und 4 Leuchtenauslässe angebracht werden, was in Anbe-
+tracht der Raumgröße auch sicherlich sinnvoll ist. Die Steckvorrichtung neben
+der Antennensteckdose ist als 3-fach-Steckdose, die neben dem TAE-Anschluss
+als 2-fach-Steckdose vorzusehen, was aber als jeweils 1 Steckvorrichtung gezählt
+wird. Da sich nach DIN im Wohnzimmer mit Essecke, bezogen auf die Raumgrö-
+ße, wenige Steckdosen befinden, könnte man sich eine Wand zwischen Wohn-
+und Essecke vorstellen, so dass diese dann als 2 Räume angesehen werden kön-
+nen. Dies würde nach DIN bedeuten: Im Wohnzimmer, jetzt ca. 30 m2, 1 Steck-
+vorrichtung 3-fach, 4 weitere Steckvorrichtungen und 2 Leuchtenauslässe, für das
+Esszimmer, jetzt ca. 17,5 m2, 4 Steckvorrichtungen und 1 Leuchtenauslass. Wür-
+de man mit dieser Methode die Anzahl der Betriebsmittel nach HEA bestimmen,
+wäre dies sehr wahrscheinlich überdimensioniert. Im Wohnzimmer 1 Steckvor-
+richtung 3-fach, 1 2-fach, 11 weitere Steckvorrichtungen, 4 Leuchtenauslässe, im
+Esszimmer 1 Steckvorrichtung 2-fach, 9 weitere Steckvorrichtungen und 3 Leuch-
+tenauslässe. Der Mittelweg ist sicherlich der beste, nach DIN die «2-Raum-
+Methode», nach HEA Wohnraum >20 m2.
+Tabelle 1.1 zeigt am Beispiel der Hauptwohnung die Anzahl der Steckdosen,
+Auslässe und sonstige Anschlüsse nach DIN 18 015 Teil 2 und dem Ausstattungs-
+wert 3 nach HEA. Die Steckvorrichtungen neben den Betten, nach HEA auch die
+neben den TAE-Anschlussdosen, sind mindestens als 2-fach-Steckvorrichtungen,
+neben den Antennensteckdosen mindestens als 3-fach-Steckvorrichtungen vorzu-
+sehen. Sie werden aber jeweils nur als 1 Steckdose gerechnet. Bei der Leistungs-
+14
+
+
+===== PAGE 9/24 =====
+berechnung werden sie als Mehrfachsteckdose betrachtet, da dort ja auch mehre-
+re Geräte angeschlossen sein können.
+15
+Tabelle 1.1
+Anzahl der Anschlüsse von der Hauptwohnung nach DIN und HEA 
+(in Anlehnung an DIN 18015 Teil 2 und HEA RAL RG 678/1)
+DIN 18 015-2
+Ausstattungswert 3 nach HEA
+Anzahl
+Anzahl
+Art des
+Verbrauchsmittels
+Steck-
+dosen
+Aus-
+lässe
+bes. Ver-
+brauchs-
+mittel
+Art des
+Verbrauchs-
+mittels
+Steck-
+dosen
+Aus-
+lässe
+bes. Ver-
+brauchs-
+mittel
+Wohnzimmer ca. 30 m2
+Wohnzimmer mit Essecke ca. 47,5 m2
+Steckdosen
+5
+Steckdosen
+13
+Beleuchtung
+2
+Beleuchtung
+4
+Esszimmer ca. 17,5 m2
+Steckdosen
+4
+Beleuchtung
+1
+Schlafzimmer ca. 26 m2
+Steckdosen
+5
+Steckdosen
+13
+Beleuchtung
+2
+Beleuchtung
+4
+Kinderzimmer ca. 22 m2
+Steckdosen
+5
+Steckdosen
+13
+Beleuchtung
+2
+Beleuchtung
+4
+Küche
+Steckdosen
+5
+Steckdosen
+12
+Beleuchtung
+2
+Beleuchtung
+3
+Dunstabzug
+1x
+E-Herd
+1
+Spülmaschine
+      1***
+Warmwassergerät
+1
+Kühlgerät
+1
+Gefriergerät
+1
+Mikrowelle
+1 xxx
+1 xxx
+
+
+===== PAGE 10/24 =====
+16
+Vorrat
+Steckdosen
+1
+Steckdosen
+2
+Beleuchtung
+1
+Beleuchtung
+1
+Bad
+Steckdosen
+2
+Steckdosen
+5
+Beleuchtung
+2
+Beleuchtung
+3
+Heizgerät
+1xx
+Waschmaschine
+1 xxx
+Wäschetrockner
+1 xxx
+Warmwassergerät
+1 xxx
+WC
+Steckdosen
+1
+Steckdosen
+2
+Beleuchtung
+1
+Beleuchtung
+2
+Flur (Länge >3 m)
+Steckdosen
+1
+Steckdosen
+4
+Beleuchtung
+2
+Beleuchtung
+2
+Balkon
+Balkon (Breite >3 m)
+Steckdosen
+1
+Steckdosen
+3
+Beleuchtung
+1
+Beleuchtung
+2
+Gerätestromkreise
+E-Herd mit
+Backofen
+1
+Spül-
+maschine
+1 xxx
+Warm-
+wassergerät
+2
+Wäsche-
+trockner
+1 xxx
+Wasch-
+maschine
+1 xxx
+x   der Auslass für den Dunstabzug wird als Steckvorrichtung ausgeführt
+xx  die Steckdose für ein Heizgerät wird als Festanschluss mit eigenem Stromkreis installiert
+xxx wird mit einer Steckvorrichtung angeschlossen
+
+
+===== PAGE 11/24 =====
+Beispiel: Schlafzimmer
+Nach DIN sind hier 5 Steckdosen zu installieren. Neben den Betten jeweils eine
+2fache à 300 W, unter dem Lichtschalter eine 1fache mit 200 W, neben dem Fen-
+ster eine 1fache mit 200 W und neben dem Antennenanschluss eine 3fache mit
+300 W: macht zusammen 5 Steckdosen mit einer Gesamtleistung von 1300 W
+(2 · 200 W + 3 · 300 W). In der Küche soll nach DIN ein Auslass für eine Dunst-
+abzugshaube, im Bad und im WC ein Lüfter installiert werden, wenn eine Einzel-
+lüftung vorzusehen ist. Da sich im Bad und WC Fenster befinden, wird dort auf
+die Lüfter verzichtet. Die Steckvorrichtung im Bad für ein Heizgerät wird als Fest-
+anschluss mit eigenem Stromkreis ausgeführt.
+Zusätzlich können noch Anschlüsse für Geräte vorgesehen werden, die in vie-
+len Haushalten heutzutage üblich, aber nicht in den Ausstattungswerten aufge-
+führt sind. Der Heizstrahler im Bad ist in der Mindestausstattung nach DIN
+berücksichtigt, aber im Ausstattungswert 3 nach HEA nicht. Auch hier ist es
+durchaus sinnvoll, dafür einen Anschluss vorzusehen.
+In Tabelle 1.2 sind allgemeine Angaben über Anschlüsse enthalten, die sich
+nicht einem bestimmten Raum zuordnen lassen.
+Bild 1.2 zeigt Anzahl und Lage der Betriebsmittel nach DIN 18015 Teil 2, Bild
+1.3 Anzahl und Lage nach HEA Ausstattungswert 3. Nun muss die Anzahl der
+Stromkreise ermittelt werden. Für eine 1fach-Schukosteckdose wird nach Abschnitt
+2.2.3.1 eine Leistung von 200 W, für eine Mehrfach-Schukosteckdose 300 W, für
+einen Leuchtenauslass ca. 300 W nach Abschnitt 2.2.3.2 angenommen. Für die
+17
+Allgemeines
+DIN 18 015-2
+Ausstattungswert 3 nach HEA
+Nützliche Geräte:
+Nützliche Geräte:
+Heizgerät
+1
+xx
+Stromkreise für
+Beleuchtung und Steck-
+dosen bei Wohnungs-
+größe > 125 m
+2
+7
+Stromkreise für
+Beleuchtung und
+Steckdosen
+9
+Stromkreisverteiler
+min. 2-reihig
+Stromkreisverteiler
+min. 4-reihig
+Antennensteckdosen
+5
+Antennensteckdosen
+7
+Telekommunikations-
+anschluss
+4
+Telekommunikations-
+anschluss
+6
+xx  die Steckdose für ein Heizgerät wird als Festanschluss mit eigenem Stromkreis installiert
+xxx wird mit einer Steckvorrichtung angeschlossen
+Tabelle 1.2
+Allgemeine Angaben über Anschlüsse die räumlich nicht zuzuordnen sind 
+(in Anlehnung an DIN 18 015 Teil 2 und HEA RAL RG 678/1)
+
+
+===== PAGE 12/24 =====
+Gefrier-Kühl-Kombination soll nach Abschnitt 2.1.2.2 ein Leistungsbedarf von
+400 W gelten. Bei Räumen ab 20 m2 Raumgröße müssen 2 Beleuchtungsauslässe
+vorhanden sein, über deren Schaltungsmöglichkeit aber keine Angaben gemacht
+18
+Bild 1.2
+Ausstattung der Hauptwohnung nach DIN 18 015 Teil 2
+Bild 1.3
+Ausstattungswert 3 nach HEA der Hauptwohnung
+
+
+===== PAGE 13/24 =====
+werden. Im Kinderzimmer ist ein Auslass über dem Bett angeordnet, der Schalter
+befindet sich direkt an der Leuchte. In Tabelle 1.3 wird nach Bild 1.2 die Anzahl
+der notwendigen Stromkreise berechnet.
+Nach der Leistung würde man nur 5 Stromkreise à 16 A (230 V · 16 A = 3680
+W) benötigen, aber laut Tabelle 2.19 aus Abschnitt 2.2.2.3 müssen nach DIN
+18015-2 ab einer Größe von 125 m2 mindestens 7 Stromkreise für Steckdosen
+und Beleuchtung vorgesehen werden. Die Aufteilung kann deswegen großzügiger
+sein, was einen Vorteil bei Erweiterungen hat. Da Licht- und Steckdosenstrom-
+kreise grundsätzlich getrennt sein sollen (s. Vorbemerkungen) wird folgende Auf-
+teilung vorgenommen:
+1 Steckdosenstromkreis für Wohn-, Esszimmer und Balkon,
+1 Steckdosenstromkreis für Küche,
+1 Steckdosenstromkreis für Bad, Flur und WC,
+1 Steckdosenstromkreis für Schlaf- und Kinderzimmer,
+1 Beleuchtungsstromkreis für Wohn-, Esszimmer und Balkon,
+1 Beleuchtungsstromkreis für Küche, Bad, Flur und WC und
+1 Beleuchtungsstromkreis für Schlaf- und Kinderzimmer.
+19
+Steckdosen 1-fach
+ à 200 W
+Steckdosen
+mehrfach à 300 W
+Leuchtenauslässe
+à  300 W
+Wohnzimmer mit Balkon
+4
+2
+3
+Esszimmer
+3
+1
+1
+Küche mit Vorratsraum
+Dunstabzug
+Kühl- und Gefriergerät
+1
+1
+400 W
+5
+3
+Bad
+2
+2
+Flur
+1
+2
+WC
+1
+1
+Kinderzimmer
+3
+2
+2
+Schlafzimmer
+2
+3
+2
+Summe:
+18 · 200 W + 400
+W = 4000 W
+13 · 300 = 3900 W
+16 · 300 = 4800 W
+4000 W + 3900 W = 7900 W
+7900 W : 3680 W = 3 Stromkreise
+4800 W : 3680 W
+= 2 Stromkreise
+Tabelle 1.3
+Berechnung der Stromkreise nach DIN
+
+
+===== PAGE 14/24 =====
+Anzahl der notwendigen Stromkreise nach HEA Ausstattungswert 3 nach Bild
+1.3 in Tabelle 1.4. Aus optischen und auch wirtschaftlichen Gründen werden teil-
+weise Einzelsteckdosen zu Mehrfachsteckdosen (2fach oder 3fach) zusammenge-
+fasst (in Bild 1.3 mit * markiert). In der Leistungsberechnung werden diese dann
+aber nicht als Mehrfachsteckdose, sondern z.B. bei 1 2fach- als 2 Einfachsteck-
+dosen gerechnet. Beispiel Kinderzimmer: Es müssen hier 13 Steckdosen installiert
+werden. Die dem Bett zugeordnete muss als 2fach-, die der Antennensteckdose
+zugeordnete als 3fach-Schukosteckdosen ausgeführt werden. Beide sind jeweils
+aber nur als 1 zu zählen, werden aber bei der Leistung als Mehrfachsteckdosen
+gerechnet. Berechnung: 3 Mehrfachsteckdosen (neben Bett, TAE- und Antennen-
+anschluss) à 300 W und 10 Einfachsteckdosen à 200 W = 2900 W (3· 300 W +
+10 · 200 W = 2900 W). Dieses Vorgehen ist der Freiheit des Planers überlassen,
+da es darüber keinerlei Vorgaben gibt. Man könnte auch alle 2- und 3fachen
+Steckdosen als Mehrfachsteckdosen betrachten, die Leistungsberechnung im Kin-
+derzimmer würde dann 2000 W (6 · 300 W + 200 W) ergeben, was aber im
+Widerspruch zur Installation als Einzelsteckdosen steht. Deshalb wird in allen
+anderen Projekten die Leistung nach der vorhergehenden Weise ermittelt. Im Kin-
+der- und Schlafzimmer wurde je 1 Bett 1 Leuchtenauslass zugeordnet, der direkt
+an der Leuchte schaltbar ist.
+Nach dem Ausstattungswert 3 sollen mindestens 9 Stromkreise für Steckdosen
+und Beleuchtung vorhanden sein, die hier auch benötigt werden. Folgende Auf-
+teilung wird vorgenommen:
+20
+Steckdosen 1-fach
+à 200 W
+Steckdosen
+mehrfach à 300 W
+Leuchtenauslässe à
+300 W
+Wohn- und Essz., Balkon
+  9
+7
+6
+Küche mit Vorratsraum
+13
+1
+4
+Bad
+  5
+3
+Flur
+  3
+1
+2
+WC
+  2
+2
+Kinderzimmer
+10
+3
+4
+Schlafzimmer
+  9
+4
+4
+Summe:
+51 · 200 = 10200 W
+16 · 300 = 4800 W
+25 · 300 = 7500 W
+10 200 W + 4800 W = 15 000 W
+15 000 W : 3680 W = 5 Stromkreise
+7500 W : 3680 W
+= 3 Stromkreise
+Tabelle 1.4
+Berechnung der Stromkreise nach HEA, Ausstattungswert 3
+
+
+===== PAGE 15/24 =====
+1 Steckdosenstromkreis für Wohnzimmer, 
+1 Steckdosenstromkreis für Esszimmer und Balkon, 
+1 Steckdosenstromkreis für Küche und Vorratsraum, 
+1 Steckdosenstromkreis für Bad, Flur und WC, 
+1 Steckdosenstromkreis für Schlafzimmer, 
+1 Steckdosenstromkreis für Kinderzimmer, 
+1 Beleuchtungsstromkreis für Wohn-, Esszimmer, Balkon und WC, 
+1 Beleuchtungsstromkreis für Küche, Bad, Vorratsraum und Flur, 
+1 Beleuchtungsstromkreis für Schlaf- und Kinderzimmer.
+1.1.2
+Berechnung aller Leitungsquerschnitte
+Ermittlung des Leiterquerschnitts wegen der Strombelastbarkeit:
+Nach DIN VDE 0100 Teil 430 wird die Strombelastbarkeit ermittelt. Danach
+gilt:
+Ib £ In £ Iz,
+mit:
+Ib Betriebsstrom des Verbrauchsmittels
+In Nennstrom der Überstromschutzeinrichtung
+Iz max. zulässige Strombelastbarkeit der Cu-Leitung (abhängig von der jeweili-
+gen Verlegeart, s. Abschnitt 3.6.3)
+Beispiel: Durchlauferhitzer im Bad 
+P = 21 kW; U = 400 V; Verlegeart C; Leitungslänge l = 12 m; g = 56 m/(W · mm2)
+(Gl. 1.1)
+Hierfür wird eine Sicherung mit In 35 A gewählt, somit ist Ib mit 30,31 A < als
+In mit 35 A. Der Querschnitt der Leitung wird nach Tabelle 3.9 aus Abschnitt
+3.6.3 mit 25°C Umgebungstemperatur, der Verlegeart C und 3 belasteten Adern
+bestimmt. Danach muss ein Leiterquerschnitt von 4 mm2 verlegt werden. Noch-
+malige Überprüfung:
+Ib = 30,31 A < In = 35 A £ Iz = 35 A
+Die Forderung nach DIN 18 015-1, dass die Zuleitung für einen Durchlauferhit-
+zer mit 35 A belastbar sein muss, ist ebenfalls erfüllt.
+Überprüfung des Leiterquerschnitts wegen des Spannungsfalles: Maximaler
+Spannungsfall 2,5% (10 V) von UV bis Verbraucher nach Abschnitt 2.2.3:
+21
+=
+→
+=
+⋅
+⋅
+b
+21 kW
+30,31 A
+3
+3 400 V
+P
+I
+U
+
+
+===== PAGE 16/24 =====
+(Gl. 1.2)
+Nach DIN 18 015 Teil 1 ist für die Berechnung des Spannungsfalles der Nenn-
+strom der vorgeschalteten Sicherung einzusetzen. Da der Spannungsfall mit 
+3,25 V < als 10 V ist, ist der Querschnitt von 4 mm2 ausreichend.
+Beispiel: Steckdosen in Schlaf- und Kinderzimmer 
+(Stromkreis Nr. 13 aus Tabelle 1.5)
+5 Schukosteckdosen einfach à 200 W = 1200 W, 5 Schukosteckdosen mehrfach à 
+300 W = 1200 W. Summe = 2400 W; Verlegeart C; längster Leitungsweg 21 m.
+P
+2500 W
+Ib = 4 = 05 = 10,87 A
+(Gl. 1.3)
+U
+230 V
+Da es vorkommen kann, dass an einer dieser Steckdosen ein Verbraucher mit bis
+zu 3680 W angeschlossen wird (230 V · 16 A = 3680 W, max. Leistungsaufnah-
+me bei einem Überstromschutzorgan von 16 A), sollte hierfür auch eine Siche-
+rung von 16 A gewählt werden. Der Querschnitt der Leitung wird ebenfalls nach
+Tabelle 3.9 aus Abschnitt 3.6.3 für 25°C Umgebungstemperatur, der Verlegeart
+C und 2 belasteten Adern bestimmt. Danach ist ein Leiterquerschnitt von 
+1,5 mm2 ausreichend. Nochmalige Überprüfung:
+Ib = 10,43 A < In = 16 A < Iz = 21 A
+Überprüfung des Leiterquerschnitts wegen des Spannungsfalles: Maximaler
+Spannungsfall 2,5% (5,75 V) von UV bis Verbraucher nach Abschnitt 2.2.3; zur
+Berechnung muss die Länge der am weitesten entfernten Steckdose genommen
+werden.
+2 · l · I · cos j
+2 · 21 m · 16 A · 1
+DU = 096 = 00054 = 8 V
+(Gl. 1.4)
+g · A
+m
+56 05 · 1,5 mm2
+W · mm2
+Da der Spannungsfall bei 1,5 mm2 zu hoch ist, muss 2,5 mm2 verlegt werden ,
+DU ist dann 4,8 V. Bei den anderen Stromkreisen wird genauso verfahren, s.
+Tabellen 1.5…1.8. Nach der alten TAB musste der gleichzeitige Betrieb von 2
+Durchlauferhitzern ab einem Anschlusswert von 18 kW durch geeignete schal-
+tungstechnische Vorkehrungen verhindert werden. Diese Forderung ist in der
+TAB 2000 nicht mehr enthalten. Trotzdem sollte man dies auch in Zukunft tun,
+denn sind die beiden Geräte gleichzeitig in Betrieb, fließt schon ein Gesamtstrom
+von 56,3 A. Durch weitere Verbraucher, die eingeschaltet sind, kann in der Zulei-
+tung zum Stromkreisverteiler der Stromfluss über 63 A betragen. Ist aber ein grö-
+22
+2
+2
+3
+cos
+3 12 m 35 A 1
+3,25 V
+m
+56
+4 mm
+mm
+l I
+U
+A
+ϕ
+γ
+⋅⋅
+⋅
+⋅
+⋅
+⋅
+∆
+=
+=
+=
+⋅
+⋅
+Ω⋅
+
+
+===== PAGE 17/24 =====
+23
+Strom-
+kreis
+Nr.
+Gerät
+Stromkreis
+cosϕ
+η
+DS
+3~
+WS
+1~
+Pab
+(kW)
+Pzu
+(kW)
+Strom I
+(A)
+L1
+(A)
+L2
+(A)
+L3
+(A)
+Siche-
+rungs-
+größe
+A
+Quer-
+schnitt
+A
+(mm2)
+Länge
+(m)
+∆U
+max.
+2,5 %
+(V)
+∆U
+(V)
+Hauptwohnung
+  1
+Durchlauferhitzer Bad
+1
+1
+400
+21
+21
+30,31
+30,31
+30,31
+30,31
+35
+4
+14,8
+10
+4,01
+  2
+Durchlauferhitzer Küche
+1
+1
+400
+18
+18
+25,98
+35
+4
+10,5
+10
+2,84
+  3
+Elektroherd
+1
+1
+400
+11,9
+11,9
+17,18
+17,18
+17,18
+17,18
+20
+2,5
+9
+10
+2,23
+  4
+Wäschetrockner
+1
+1
+230
+2,4
+2,4
+10,43
+10,43
+16
+1,5
+7
+5,75
+2,67
+  5
+Geschirrspüler
+1
+1
+230
+2,9
+2,9
+12,61
+12,61
+16
+1,5
+8,5
+5,75
+3,24
+  6
+Waschmaschine
+1
+1
+230
+3,1
+3,1
+13,48
+13,48
+16
+1,5
+7
+5,75
+2,67
+  7
+Heizstrahler Bad
+1
+1
+230
+1,5
+1,5
+6,52
+6,52
+16
+1,5
+6,5
+5,75
+2,48
+  8
+Schuko Wohn-Essz., Balk.
+1
+1
+230
+2,1
+2,1
+9,13
+9,13
+16
+4
+28
+5,75
+4,00
+  9
+Schuko Küche u. Vorrat
+1
+1
+230
+2,3
+2,3
+10,00
+10,00
+16
+2,5
+19
+5,75
+4,34
+10
+Bel. Wohn- u. Essz.
+1
+1
+230
+1,2
+1,2
+5,22
+5,22
+16
+2,5
+23
+5,75
+5,26
+11
+Bel. Küche, Flur, Bad, WC
+1
+1
+230
+2,4
+2,4
+10,43
+10,43
+16
+2,5
+18
+5,75
+4,11
+12
+Bel. Kinder- u. Schlafz.
+1
+1
+230
+1,2
+1,2
+5,22
+5,22
+16
+2,5
+22
+5,75
+5,03
+13
+Schuko Schlaf-, Kinderz.
+1
+1
+230
+2,5
+2,5
+10,87
+10,87
+16
+2,5
+21
+5,75
+4,80
+14
+Mikrowelle
+1
+1
+230
+1,2
+1,2
+5,22
+5,22
+16
+1,5
+8
+5,75
+3,05
+15
+Schuko Bad, Flur, WC
+1
+1
+230
+0,8
+0,8
+3,48
+3,48
+16
+1,5
+12
+5,75
+4,57
+Summe:
+80,53
+84,88
+79,67
+Tabelle 1.5
+Projekt: 1-Familien-Haus mit Einliegerwohnung / UV: Hauptwohnung, Ausstattung nach DIN 18 015 Teil 2 / Verlegeart C
+
+
+===== PAGE 18/24 =====
+24
+Strom-
+kreis
+Nr.
+Gerät
+Stromkreis
+cosϕ
+η
+DS
+3~
+WS
+1~
+Pab
+(kW)
+Pzu
+(kW)
+Strom Ι
+(A)
+L1
+(A)
+L2
+(A)
+L3
+(A)
+Siche-
+rungs-
+größe
+A
+Quer-
+schnitt
+A
+(mm2)
+Länge
+(m)
+∆U
+max.
+2,5 %
+(V)
+∆U
+(V)
+Hauptwohnung
+  1
+Durchlauferhitzer Bad
+1
+1
+400
+21
+21
+30,31
+30,31
+30,31
+30,31
+35
+4
+14,8
+10
+4,01
+  2
+Durchlauferhitzer Küche
+1
+1
+400
+18
+18
+25,98
+35
+4
+10,5
+10
+2,84
+  3
+Elektroherd
+1
+1
+400
+11,9
+11,9
+17,18
+17,18
+17,18
+17,18
+20
+2,5
+9
+10
+2,23
+  4
+Wäschetrockner
+1
+1
+230
+2,8
+2,8
+12,17
+12,17
+16
+1,5
+7
+5,75
+2,67
+  5
+Geschirrspüler
+1
+1
+230
+2,9
+2,9
+12,61
+12,61
+16
+1,5
+8,5
+5,75
+3,24
+  6
+Waschmaschine
+1
+1
+230
+3,1
+3,1
+13,48
+13,48
+16
+1,5
+7
+5,75
+2,67
+  7
+Heizstrahler Bad
+1
+1
+230
+1,5
+1,5
+6,52
+6,52
+16
+1,5
+6,5
+5,75
+2,48
+  8
+Mikrowelle
+1
+1
+230
+1,2
+1,2
+5,22
+5,22
+16
+1,5
+8
+5,75
+3,05
+  9
+Schuko Schlafzimmer
+1
+1
+230
+3,0
+3,0
+13,04
+13,04
+16
+2,5
+22
+5,75
+5,03
+10
+Schuko Wohnzimmer
+1
+1
+230
+1,9
+1,9
+8,26
+8,26
+16
+2,5
+16
+5,75
+3,66
+11
+Schuko Essz., Balk.
+1
+1
+230
+2,0
+2,0
+8,70
+8,70
+16
+2,5
+24
+5,75
+5,49
+12
+Schuko Küche, Vorrat
+1
+1
+230
+2,9
+2,9
+12,61
+12,61
+16
+2,5
+19
+5,75
+4,34
+13
+Bel. Wohn-Essz., Balk., WC
+1
+1
+230
+2,4
+2,4
+10,43
+10,43
+16
+2,5
+23
+5,75
+5,26
+14
+Schuko Kinderzimmer
+1
+1
+230
+2,9
+2,9
+12,61
+12,61
+16
+2,5
+22
+5,75
+5,03
+15
+Bel. Küche, Bad, Flur
+1
+1
+230
+2,7
+2,7
+11,74
+11,74
+16
+2,5
+18
+5,75
+4,11
+16
+Bel. Kinder- u. Schlafz.
+1
+1
+230
+2,4
+2,4
+10,43
+10,43
+16
+2,5
+22
+5,75
+5,03
+17
+Schuko Bad, Flur, WC
+1
+1
+230
+2,3
+2,3
+10,00
+10,00
+16
+1,5
+12
+5,75
+4,57
+Summe:
+95,30
+96,63
+98,36
+Tabelle 1.6
+Projekt: 1-Familien-Haus mit Einliegerwohnung / UV: Hauptwohnung, Ausstattungswert 3 nach HEA / Verlegeart C
+
+
+===== PAGE 19/24 =====
+25
+Projekt: 1-Familien-Haus mit Einliegerwohnung/UV: Einliegerwohnung, Ausstattung nach DIN 18 015 Teil 2/Verlegeart C
+Strom- Gerät
+cosw
+h
+DS
+WS
+Pab
+Pzu
+Strom L1
+L2
+L3
+Siche-
+Quer-
+Länge
+DU
+DU
+kreis
+I
+rungs- schnitt
+max.
+Nr.
+Stromkreis
+größe
+A
+2,5%
+(3~)
+(1~)
+(kW)
+(kW)
+(A)
+(A)
+(A)
+(A)
+(A)
+(mm2) (m)
+(V)
+(V)
+Einliegerwohnung
+1
+Durchlauf-
+1
+1
+400
+21
+21
+30,31
+30,31
+30,31
+30,31
+35
+4
+14,8
+10
+4,01
+erhitzer: Bad
+2
+Elektroherd
+1
+1
+400
+9
+9
+12,99
+12,99
+12,99
+12,99
+16
+1,5
+9
+10
+2,97
+3
+Schuko 1
+1
+1
+230
+1,4
+1,4
+6,09
+6,09
+16
+4
+27,7
+5,8
+3,96
+4
+Schuko 2
+1
+1
+230
+1,4
+1,4
+6,09
+6,09
+16
+4
+28
+5,8
+4,00
+5
+Schuko 3
+1
+1
+230
+1,4
+1,4
+6,09
+6,09
+16
+2,5
+19
+5,8
+4,34
+6
+Beleuchtung 1
+1
+1
+230
+1
+1
+4,35
+4,35
+10
+1,5
+23
+5,8
+5,48
+7
+Heizstrahler Bad
+1
+1
+230
+1,5
+1,5
+6,52
+6,52
+16
+1,5
+6,5
+5,8
+2,48
+8
+Waschmaschine 
+1
+1
+230
+3,1
+3,1
+13,48
+13,48
+16
+1,5
+11
+5,8
+4,19
+9
+Beleuchtung 2 
+1
+1
+230
+1
+1
+4,35
+4,35
+10
+1,5
+18
+5,8
+4,29
+Summe: 
+58,10
+55,92
+62,87
+Tabelle 1.7
+Berechnung aller Stromkreise der Einliegerwohnung, Ausstattung nach DIN
+
+
+===== PAGE 20/24 =====
+26
+Projekt: 1-Familien-Haus mit Einliegerwohnung/UV: Allgemein/Verlegeart C
+Strom- Gerät
+cosw
+h
+DS
+WS
+Pab
+Pzu
+Strom
+L1
+L2
+L3
+Siche-
+Quer-
+Länge
+DU
+DU
+kreis
+I
+rungs- schnitt
+max.
+Nr.
+Stromkreis
+größe
+A
+2,5%
+(3~)
+(1~)
+(kW)
+(kW)
+(A)
+(A)
+(A)
+(A)
+(A)
+(mm2) (m)
+(V)
+(V)
+Allgemein
+1
+Außen-
+1
+1
+230
+0,5
+0,5
+2,17
+2,17
+16
+1,5
+15
+5,75
+5,71
+beleuchtung
+2
+Treppen-
+1
+1
+230
+0,5
+0,5
+2,17
+2,17
+16
+1,5
+4
+5,75
+1,52
+beleuchtung
+3
+Heizungsanlage
+1
+1
+230
+0,3
+0,3
+1,30
+1,30
+16
+1,5
+8
+5,75
+3,05
+Summe: 
+2,17
+2,17
+1,30
+Tabelle 1.8
+Berechnung aller Stromkreise des Allgemeinteils
+
+
+===== PAGE 21/24 =====
+ßerer Betriebsstrom als 60 A zu erwarten, ist nach TAB die Art der Zähl- bzw.
+Messeinrichtung mit dem VNB abzustimmen. Hier wird von einigen eine Wand-
+lermessung gefordert, wodurch die Installationskosten steigen. Günstiger ist des-
+halb die in Bild 1.4 dargestellte Verriegelungsschaltung mit Lastabwurfrelais.
+Deshalb ist der Stromkreis Nr. 2, Durchlauferhitzer in der Küche, nicht in die
+Summe der Gesamtbelastung mit einbezogen. 
+Nach HEA, Ausstattungswert 3, ist für die Hauptwohnung mindestens eine 
+4-reihige Unterverteilung zu wählen. Es ist zu überprüfen, ob einerseits der Platz
+für die benötigten Einbaugeräte ausreicht, andererseits, ob die zulässige Verlust-
+leistung im Stromkreisverteiler nicht überschritten wird (s. Abschnitt 2.2.2.4). Es
+wird eine Umgebungstemperatur von 25°C angenommen, die Grenztemperatur
+im Verteiler 40°C, somit ist DJ = 15 K. Die zulässige Verlustleistung eines 4-rei-
+higen Verteilers für den Wandeinbau wird vom Hersteller bei 15 K mit 11 W
+angegeben. In Tabelle 1.9 wird die Berechnung für jede Schutzeinrichtung eines
+Stromkreises durchgeführt. Auch hier wird in der Summe der Durchlauferhitzer
+in der Küche nicht mit aufgeführt. Das gleiche gilt für das Lastabwurfrelais, denn
+wenn über dieses Strom fließt, geht Schütz K1 in Ruhestellung und erzeugt somit
+keine Verlustwärme. Da die Verlustwärme des 3-poligen Schützes größer ist als
+die des Lastabwurfrelais, kann die Verlustwärme von 9,8 W unberücksichtigt
+bleiben.
+Da im Verteiler in jedem Außenleiter 8 Sicherungen sind, wird die Summe der
+Verlustleistungen mit f 2 = 0,36 (Nennbelastungsfaktor bei 6…9 Überstrom-
+schutzeinrichtungen je Außenleiter, s. Abschnitt 2.2.2.4, Tabelle 2.21) multipli-
+ziert. Somit beträgt die Verlustleistung 30,41 W (84,47 W · 0,36 = 30,41 W). Die
+Verlustleistung des 4-reihigen Verteilers ist somit überschritten. Da nach der Vor-
+gabe für das Projekt bei Verteilern eine Platzreserve von 30% zu berücksichtigen
+ist, entsprechen die notwendigen 39 TLE 70%. Daraus folgt, dass noch rund 17
+TLEs benötigt werden und somit muss ein 6-reihiger Verteiler mit 72 Teilungsein-
+27
+Bild 1.4
+Verriegelungsschaltung mit Lastabwurfrelais für
+2 Durchlauferhitzer
+
+
+===== PAGE 22/24 =====
+heiten eingesetzt werden. Laut Herstellerangaben hat dieser bei 15 K eine zuläs-
+sige Verlustleistung von 27 W. Dies wäre bei 30,41 W immer noch nicht ausrei-
+chend. Da für diese Wohnung der 6-reihige Verteiler ausreichen soll, wird in
+28
+Stromkreis
+Nr.
+Typ
+Teilungs-
+einheit
+TLE
+Verlust-
+leistung
+Pn
+W
+Ιb
+A
+Ιn
+A
+Pa =
+Pn · (Ιb  /Ιn)2
+W
+  1
+D02 3-pol.
+4,5
+15,72
+30,31
+63
+  3,64
+  2
+D02 3-pol.
+4,5
+15,72
+  3
+LS-B 20 A 3-pol.
+3
+14,40
+17,18
+20
+10,63
+  4
+LS-B 16 A 1-pol.
+1
+  4,73
+12,17
+16
+  2,74
+  5
+LS-B 16 A 1-pol.
+1
+  4,73
+12,61
+16
+  2,94
+  6
+LS-B 16 A 1-pol.
+1
+  4,73
+13,48
+16
+  3,36
+  7
+LS-B 16 A 1-pol.
+1
+  4,73
+  6,52
+16
+  0,79
+  8
+LS-B 16 A 1-pol.
+1
+  4,73
+  5,22
+16
+  0,50
+  9
+LS-B 16 A 1-pol.
+1
+  4,73
+13,04
+16
+  3,14
+10
+LS-B 16 A 1-pol.
+1
+  4,73
+  8,26
+16
+  1,26
+11
+LS-B 16 A 1-pol.
+1
+  4,73
+  8,70
+16
+  1,40
+12
+LS-B 16 A 1-pol.
+1
+  4,73
+12,61
+16
+  2,94
+13
+LS-B 16 A 1-pol.
+1
+  4,73
+10,43
+16
+  2,01
+14
+LS-B 16 A 1-pol.
+1
+  4,73
+12,61
+16
+  2,94
+15
+LS-B 16 A 1-pol.
+1
+  4,73
+11,74
+16
+  2,55
+16
+LS-B 16 A 1-pol.
+1
+  4,73
+10,43
+16
+  2,01
+17
+LS-B 16 A 1-pol.
+1
+  4,73
+10,00
+16
+  1,85
+Schütz 3-pol.
+3
+27,83
+30,31
+40
+15,98
+Lastabwurfrelais
+1
+  9,80
+Stromstoßschalter
+1
+  3,23
+  3,91
+16
+  0,19
+FI 40/0,03 4-pol.
+4
+11,8
+40,00
+40
+11,80
+FI 40/0,03 4-pol.
+4
+11,8
+40,00
+40
+11,80
+Summe:
+39
+84,47
+Tabelle 1.9
+Berechnung der Verlustleistung in der UV-Hauptwohnung
+
+
+===== PAGE 23/24 =====
+Anlehnung an Abschnitt 2.2.2.4 statt f 2 der Gleichzeitigkeitsfaktor g für die
+Berechnung der Verlustleistung herangezogen. Für die Wohnung gilt g = 0,4. Dar-
+aus ergibt sich die Verlustleistung zu Pa· g2 = 84,47 W· 0,16 = 13,52 W, und
+somit wäre auch noch ausreichend Leistungsreserve von rund 13,5 W (50% von
+27 W) im Verteiler vorhanden.
+1.1.3
+Anordnung der Zähleranlage nach TAB
+Der Aufbau der Zähleranlage ist bei jedem VNB anders auszuführen. Vor der Pla-
+nung/ Montage sollte man sich deshalb in jedem Fall mit diesem in Verbindung set-
+zen, um spätere Umbauten und somit unnötige Kosten zu vermeiden. Grundlage für
+die Ausführung der Zähleranlage sind die Technischen Anschlussbedingungen, TAB
+(Abschnitt 2.1.1.3). Mit Erscheinen der TAB 2000 hat, nach dem vom jeweiligen
+VNB vereinbarten Geltungsbeginn, nach einer einjährigen Übergangsfrist die TAB
+von 1991 ihre Gültigkeit verloren. Viele VNBs lassen aber noch den Aufbau nach
+der alten TAB zu. Sollte der Betriebsstrom mehr als 60 A betragen, so sind die Aus-
+führungen des Zählerplatzes mit dem VNB abzustimmen, denn hier wird meist eine
+Wandlermessung verlangt. Hauptsächlich kommen 4 verschiedene Varianten zur
+Anwendung (Bild 1.5 und Tabelle 1.10)
+Die Überstromschutzeinrichtung vor der Zähl- und Messeinrichtung darf bei
+Direktmessung einen Nennstrom von max. 100 A haben. Nach der alten TAB
+wurde für den Stromkreisverteiler eine Freischalteinrichtung für mindestens 63 A
+gefordert. Es ist möglich, diese Trennvorrichtung auch im oberen Anschlussraum
+anzuordnen. Dies kann z.B. ein Hauptschalter, eine Fehlerstromschutzeinrich-
+tung oder eine Sicherung sein. Dies wird in der neuen TAB nicht mehr gefordert.
+Dort wird statt dessen im unteren Anschlussraum vor jedem Zählerfeld ein sperr-
+und plombierbarer, selektiver Hauptleitungsschutzschalter (SH-Schalter) mit
+einem Nennstrom von 63 A verlangt. Dadurch kann die Trennvorrichtung im
+oberen Anschlussraum entfallen, da der SH-Schalter die Forderung der Freischal-
+tung des Stromkreisverteilers und somit das Inbetriebsetzen der Kundenanlage
+übernimmt (s. Variante 4). In diesem Projekt soll noch Variante 2 zur Anwendung
+29
+Bild 1.5
+Aufbauvarianten der Zähleranlage
+
+
+===== PAGE 24/24 =====
+Variante 1
+Variante 2
+Variante 3
+Variante 4
+Oberer 
+Oberer 
+Oberer
+Oberer
+Anschlussraum:
+Anschlussraum:
+Anschlussraum:
+Anschlussraum:
+D02 Abgangs-
+sperrbarer
+sperrbarer
+Hauptleitungsabzweig-
+sicherung 
+Hauptschalter
+Hauptschalter
+klemme 5-pol.
+Unterer
+Unterer
+Unterer
+Unterer
+Anschlussraum:
+Anschlussraum:
+Anschlussraum:
+Anschlussraum:
+Sammelschienen
+Sammelschienen
+Sammelschienen
+Sammelschienen
+4-pol., NH00-
+4-pol., NH00-
+4-pol., NH00-
+4-pol., selektiver
+Vorsicherung
+Vorsicherung
+Lasttrennschalter
+Haupt-Leitungsschutz-
+schalter
+Tabelle 1.10
+Beschreibung der einzelnen Varianten zu Bild 1.5
+kommen. Der Aufbau der Zähleranlage hat direkt auch Einfluss auf die Quer-
+schnittsdimensionierung der Zuleitungen zu den einzelnen Unterverteilungen
+sowie der Hauptleitung. Zur Berechnung der Stromkreiszuleitung zur Unterver-
+teilung der Hauptwohnung nach HEA, Ausstattungswert 3, kommen 2 unter-
+schiedliche Verfahren in Tabelle 1.11 zur Anwendung (s. auch Abschnitt 2.2.3.3):
+Stärkster belasteter Außenleiter L3 mit 98,36 A (s. Tabelle 1.6); Leitungslänge
+13 m; Verlegung in Rohr (Verlegeart B2); Spannungsfall max. 0,5%. 
+Der Nennstrom der Sicherung für die Zuleitung zur UV Hauptwohnung muss
+in beiden Fällen 63 A betragen. Nun ist noch die Selektivität zwischen der Siche-
+rung für die UV und den Sicherungen/Leitungsschutzschaltern in der UV zu über-
+prüfen. Größte Schmelzsicherung in der Unterverteilung ist die des Durchlaufer-
+hitzers mit 35 A, größter Leitungsschutzschalter der des Elektroherdes mit der
+Auslösecharakteristik B und einem Nennstrom von 20 A. Nach Abschnitt 3.7.1
+ist Selektivität bei Schmelzsicherungen gegeben, wenn der Unterschied 2 Nenn-
+stromstufen beträgt: Sicherung in UV = gL 35 A → Vorsicherung 63 A. Zwischen
+Leitungsschutzschalter und Schmelzsicherung ist in der Regel Selektivität vorhan-
+den, wenn die vorgeschaltete Schmelzsicherung 3 Nennstromstärken größer ist:
+Leitungsschutzschalter in UV = B 20 A →Vorsicherung gL 50 A (s. Abschnitt
+3.7.2). Da in beiden Fällen Selektivität gegeben ist, kann nun mit der Sicherungs-
+größe von 63 A der Zuleitungsquerschnitt zur Unterverteilung bestimmt werden.
+Dabei ist, unabhängig von der Strombelastung, auch DIN 18015 Teil 1 zu
+berücksichtigen, nach der die Stromkreiszuleitung zu einer Wohnung als Dreh-
+stromleitung mit einer Mindestbelastbarkeit von 63 A ausgelegt sein muss. Der
+Querschnitt der Leitung wird nach der Tabelle 3.9 aus Abschnitt 3.6.3 für 25°C
+30
+Verfahren 1
+Verfahren 2
+ΙL3 = Ιges · g = 98,36 A · 0,6 = 59,02 A
+IL3 = (Iges – IDHF) · g + IDHF =
+(98,36 A – 30,31 A) · 0,4 + 30,31 A = 57,53 A
+Tabelle 1.11
+Berechnung des Zuleitungsstroms zur UV-Hauptwohnung

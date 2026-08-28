@@ -1,0 +1,219 @@
+
+
+===== PAGE 1/4 =====
+1 
+ 
+ 
+Herausgeber: 
+ 
+ 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+ 
+ 
+ 
+ 
+Eschenbachgasse 9, 1010 Wien  Tel.: +43 1 587 63 73  Fax: +43 1 587 63 73 - 99 
+ 
+ 
+ 
+E-Mail: ove@ove.at  Internet: www.ove.at  ZVR: 327279890  
+ 
+ 
+ 
+ 
+ATU36808601  Banken: BA-CA Kto.-Nr. 0043-28423/00  PSK Kto.-Nr. 1.935.655 
+Fachinformation  
+des Österreichischen Elektrotechnischen Komitees – OEK  
+Blitzschutz von ortsfesten Flüssiggastanks 
+Ausgearbeitet in einer Zusammenarbeit der Technischen Komitees Blitzschutz (TK BL) und Explosionsschutz (TK EX) des 
+OVE unter der Mitarbeit von S. Pack, M. Kompacher, R. Hofer, D. Thyr, R. Brenner, K. Kopia, M. Kreihsl, A. Kaltenbrunner,  
+W. Fischer, S. Thumser und G. Junker. 
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu und ohne Auslassung oder Zusatz wiedergegeben werden.  
+ 
+ 
+Inhalt 
+1 
+Ausgangssituation .......................................................................................................................................... 2 
+2 
+Allgemeines und Anwendungsbereich ......................................................................................................... 2 
+3 
+Oberirdische Flüssiggastanks ...................................................................................................................... 2 
+3.1  Fang- und Ableitungseinrichtungen ............................................................................................................. 2 
+3.2  Erdungsanlage ................................................................................................................................................ 3 
+4 
+Erdgedeckte metallene Flüssiggastanks ..................................................................................................... 3 
+5 
+Behandlung vorhandener EX-Zonen ............................................................................................................ 3 
+6 
+Dokumentation ................................................................................................................................................ 4 
+7 
+Literatur ........................................................................................................................................................... 4 
+ 
+
+
+===== PAGE 2/4 =====
+2 
+ 
+Blitzschutz von ortsfesten Flüssiggastanks  
+Ausgabe Jänner 2014 
+www.ove.at 
+1 
+Ausgangssituation 
+Für die Errichtung einer Blitzschutzanlage von Flüssiggastanks sind weder in der Druckbehälter-Aufstellungs-
+Verordnung, noch in der Flüssiggas-Verordnung noch in den Technische Regeln Flüssiggas (ÖVGW TR- 
+Flüssiggas) des ÖVGW entsprechende Anforderungen enthalten. Diese Fachinformation erläutert die 
+Anforderungen an den Blitzschutz von ortsfesten Flüssiggastanks auf Basis der Normenreihe ÖVE/ÖNORM 
+EN 62305. 
+ANMERKUNG 
+Unter Flüssiggastanks sind in dieser Fachinformation ortsfeste Flüssiggasbehälter zu verstehen. 
+2 
+Allgemeines und Anwendungsbereich 
+Flüssiggas wird häufig als Energieträger für die Erzeugung von Wärme und Licht, als Brenngas bei der 
+Bearbeitung von Metallen, aber auch als Kraftstoff für Verbrennungsmotoren verwendet. Flüssiggas ist brennbar 
+und kann mit dem Sauerstoff aus der Luft ein explosionsfähiges Gemisch bilden. Bei Auftreten einer wirksamen 
+Zündquelle, wie zB bei Blitzschlag, kommt es zur Entzündung dieses Gas-Luft-Gemisches. 
+Für die Aufbewahrung von größeren Flüssiggasmengen werden häufig ortsfeste Flüssiggastanks verwendet. 
+Diese sind entweder oberirdisch1) oder erdgedeckt2) aufgestellt. 
+Versandbehälter für Flüssiggas (Flüssiggasflaschen) sind nicht Gegenstand dieser Fachinformation. 
+Die technischen Anforderungen dieser Fachinformation basieren auf der Normenreihe ÖVE/ÖNORM EN 62305. 
+3 
+Oberirdische Flüssiggastanks 
+3.1 
+Fang- und Ableitungseinrichtungen 
+Oberirdische Flüssiggastanks sind vor direkten atmosphärischen Entladungen und den daraus entstehenden 
+Gefahren durch ein Blitzschutzsystem gemäß der Normenreihe ÖVE/ÖNORM EN 62305 zu schützen. 
+Flüssiggastanks 
+aus 
+Stahl 
+und 
+deren 
+Sicherheitsventile 
+können 
+als 
+natürlicher 
+Bestandteil 
+des 
+Blitzschutzsystems (Fangeinrichtung) angesehen werden, sofern sie aus einem Werkstoff hergestellt sind, 
+dessen Mindestdicke (Mindestwandstärke) nicht kleiner als der Wert t gemäß ÖVE/ÖNORM EN 62305-3:2008, 
+Tabelle 3 ist (Mindestdicke t von Blechen aus Stahl 4 mm). Diese Mindestdicke verhindert das Durchlöchern. 
+Flüssiggastanks aus Stahl und deren Sicherheitsventile sind aufgrund der Konstruktion blitzstromtragfähig und 
+können Blitzströme führen (Ableitungseinrichtung). 
+Bei einer Dicke (Wandstärke) des Flüssiggastanks aus Stahl unter der Mindestdicke t (Mindestwandstärke) ist 
+ein Blitzschutzsystem mit Fangeinrichtungen vorzusehen, sodass der Einschlagspunkt der atmosphärischen 
+Entladung nicht am Stahltank bzw. am Ventilgehäuse liegt. 
+ANMKERUNG 1 
+Die bei ortsfesten Flüssiggastanks erforderlichen und vorhandenen Tanksicherheitsventile schützen den 
+Flüssiggastank vor zu hoher innerer Druckbeanspruchung. Diese Sicherheitsventile sprechen ausschließlich bei einem 
+Störfall an, wodurch ein unzulässiger Überdruck im Tankinneren abgebaut wird. 
+ 
+ 
+                                                           
+1)  
+Oberirdisch: Die Flüssiggastanks sind im Freien ohne Erd- oder Sanddeckung aufgestellt; hierzu zählen auch 
+Flüssiggasbehälter, die in Erde oder Sand gebettet, an ihrer Oberseite jedoch nicht mit Erde oder Sand bedeckt sind 
+(teilweise oberirdische Flüssiggasbehälter). 
+2)  
+Erdgedeckt: Die Flüssiggasbehälter sind zur Gänze oder bis auf eine Stirnwand mit Erde oder Sand bedeckt. 
+
+
+===== PAGE 3/4 =====
+3 
+ 
+Blitzschutz von ortsfesten Flüssiggastanks  
+Ausgabe Jänner 2014 
+www.ove.at 
+Die Verbraucherleitung innerhalb der Blitzschutzzone des Flüssiggastanks muss aufgrund der vorhandenen 
+Rohrbruchsicherung blitzschutztechnisch nicht berücksichtigt werden.  
+ANMKERUNG 2 
+Die Rohrbruchsicherung (Abrisssicherung) im Tank verhindert bei einem Leitungsbruch der 
+Verbraucherleitung den unkontrollierten Austritt von Flüssiggas aus dem Flüssiggastank. 
+3.2 
+Erdungsanlage 
+a) 
+Bei oberirdischen Flüssiggastanks mit einer projizierten Tankfläche bis 20 m2 ist eine Erdungsanlage mit 
+folgenden Anforderungen zu errichten: 
+– 
+Es ist ein einzelner Tiefenerder mit einer Mindestlänge von 3,5 m oder ein Horizontalerder mit einer 
+Mindestlänge von 5 m zu verlegen. 
+– 
+Der Horizontalerder ist unterhalb der Frostgrenze (0,5 m) zu verlegen. 
+– 
+Als Erder sind rostfreier Stahl, Kupfer oder andere Werkstoffe mit gleichwertigen mechanischen, 
+elektrischen und chemischen (Korrosions-)Leistungsmerkmalen zu verwenden. 
+– 
+Die dabei verwendeten Materialien und Querschnitte müssen blitzstromtragfähig sein (gemäß 
+ÖVE/ÖNORM EN 62305-3). 
+– 
+Die Erdungsanlage muss im unmittelbaren Bereich des Tanks liegen, wobei die Verbindung zum Tank 
+so kurz wie möglich auszuführen ist. 
+– 
+Bei der Verwendung von Kupfer ist auf eine korrosionsbeständige Verbindung mit dem Tank zu achten. 
+b) 
+Bei oberirdischen Flüssiggastankanlagen mit mehr als einem Einzeltank oder mit einer projizierten 
+Tankfläche größer 20 m2 ist ein Erdungssystem gemäß ÖVE/ÖNORM EN 62305-3, Anordnung Typ B zu 
+errichten. 
+Im Fall der Errichtung oder Sanierung von Flüssiggastankanlagen auf bestehenden Fundamenten ohne 
+geeigneten Fundamenterder kann die Erdungsanlage mit Tiefenerdern ausgeführt werden. Die Tiefenerder 
+sind entlang des Umfanges des bestehenden Fundaments im Abstand von maximal 10 m anzuordnen und 
+entsprechend a) auszuführen. 
+ANMERKUNG 
+Durch die Verbindung des Tanks mit der Erdungsanlage wird auch die Ableitung elektrostatischer 
+Aufladungen sichergestellt. 
+4 
+Erdgedeckte Flüssiggastanks 
+Bei erdgedeckten metallenen Flüssiggastanks sind keine Blitzschutzmaßnahmen erforderlich. 
+Hinweis: 
+Die Ableitung elektrostatischer Aufladungen muss sichergestellt sein, zB durch die Opferanode des 
+kathodischen Korrosionsschutzes. 
+5 
+Behandlung vorhandener explosionsgefährdeter Zonen (Ex-Zonen) 
+Bei Flüssiggastanks kann davon ausgegangen werden, dass das Volumen einer Zone 1 gemäß 
+ÖVE/ÖNORM EN 60079-10-1 und ÖVE/ÖNORM EN 60079-10-2 jenes einer Kugel mit 1 m Radius nicht 
+überschreitet, das Ausbreiten einer Explosion in das Innere des Tanks aufgrund des vorherrschenden 
+Innendrucks zuverlässig verhindert wird und Blitzströme über die metallene Tankstruktur zuverlässig abgeleitet 
+werden. Daher führt das Eindringen des Blitzkanals in eine vorhandene Zone 1 zu keiner unzulässigen 
+Gefährdung und es sind gemäß ÖVE/ÖNORM EN 62305-3 Beiblatt 1 keine zusätzlichen Blitzschutzmaßnahmen 
+zum Schutz der Ex-Zonen erforderlich. 
+
+
+===== PAGE 4/4 =====
+4 
+ 
+Blitzschutz von ortsfesten Flüssiggastanks  
+Ausgabe Jänner 2014 
+www.ove.at 
+6 
+Dokumentation 
+Die Dokumentation gemäß dem Prüfprotokoll für Blitzschutzanlagen des ÖVE ist in erforderlichem Umfang 
+auszuführen und der Dokumentationsumfang des Blitzschutzsystems ist an die ausgeführte Flüssiggasanlage 
+anzupassen. 
+Vorhandene Ex-Zonen aus den Explosionsschutzkonzepten bzw. Explosionsschutzdokumenten sind zu 
+berücksichtigen. 
+Das Blitzschutzsystem, etwaige Potenzialausgleichsverbindungen sowie die vorhandenen Ex-Zonen sind im 
+Lageplan der Flüssiggasanlage einzutragen.  
+7 
+Literatur 
+ÖVE/ÖNORM EN 60079-10-1, Explosionsfähige Atmosphäre – Teil 10-1: Einteilung der Bereiche – 
+Gasexplosionsgefährdete Bereiche 
+ÖVE/ÖNORM EN 60079-10-2, Explosionsfähige Atmosphäre – Teil 10-2: Einteilung der Bereiche - 
+Staubexplosionsgefährdete Bereiche 
+ÖVE/ÖNORM EN 62305 Reihe, Blitzschutz 
+ÖVE/ÖNORM EN 62305-3 Beiblatt 1, Blitzschutz – Teil 3: Schutz von baulichen Anlagen und Personen – 
+Beiblatt 1: Zusätzliche Informationen für bauliche Anlagen mit explosionsgefährdeten Bereichen 
+ÖVE/ÖNORM EN 62305-3 Beiblatt 2, Blitzschutz – Teil 3: Schutz von baulichen Anlagen und Personen – 
+Beiblatt 2: Auswahl der Mindest-Blitzschutzklasse und der Prüfintervalle für bauliche Anlagen 
+ÖVE/ÖNORM E 8014 Reihe, Errichtung von Erdungsanlagen für elektrische Anlagen mit Nennspannungen  
+bis AC 1000 V und DC 1500 V 
+BGBl. II Nr. 361/1998, Druckbehälter-Aufstellungs-Verordnung, DBA-VO 
+BGBl. II Nr. 446/2002, Flüssiggas-Verordnung 2002 – FGV 
+ÖVGW G 2 Reihe, Technische Regeln Flüssiggas (ÖVGW TR-Flüssiggas), Regel-Nr. G 23) 
+Blitzstromprüfungen an Sicherheitsventilen von Flüssiggastanks (Gutachten von Dr. Junker vom  
+20. November 2011) 
+Prüfprotokoll für Blitzschutzanlagen des ÖVE4) 
+ 
+                                                           
+3)  
+Bezugsquelle: ÖVGW – Österreichische Vereinigung für das Gas- und Wasserfach, 1010 Wien, Schubertring 14 
+4)  
+Bezugsquelle: http://oek.ove.at/shop/blitzschutz.htm 

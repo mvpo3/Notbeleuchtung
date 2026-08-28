@@ -1,0 +1,2750 @@
+
+
+===== PAGE 241/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 237 
+ 
+J.6.3.3 
+Gekreuzte Diagonalen 
+(1) Unter der Voraussetzung, dass beide Stäbe durchlaufen (siehe Bild J.4(c)) und miteinander mit  
+wenigstens einer Schraube verbunden sind, kann ihr Schnittpunkt als Festpunkt in der Diagonalebene 
+angesehen werden. Die Knicklänge ist daher  1,0  L1 und der Schlankheitsgrad ist anzunehmen als 
+λ1 =  1,0  L1/ivv. 
+(2) Die Behinderung der Verschiebung quer zur Diagonalebene hängt vom Verhältnis 
+d
+d / N
+S
+ ab, 
+ 
+dabei ist 
+ 
+Sd 
+Kraft im Stützstab (Zug oder Druck); 
+ 
+Nd 
+Kraft im Druckstab. 
+Die folgenden zusätzlichen Schlankheitsgrade λ2 müssen berücksichtigt werden: 
+ 
+Sd 
+Zugkraft und 
+3
+/
+2
+/
+d
+d
+≥
+N
+S
+ 
+ 
+λ2 = λ1 =  1,0  ⋅ L1/ivv (Schnittpunkt ist Festpunkt) 
+ 
+Sd 
+Zugkraft und 
+3
+/
+2
+/
+d
+d
+<
+N
+S
+ 
+ 
+λ2 =  1,0  ⋅ 
+d
+d
+yy
+1
+/
+5,1
+2
+N
+S
+i
+L
+−
+ 
+ 
+Sd 
+Druckkraft und 
+d
+d
+N
+S ≤
+ 
+ 
+λ2 =  1,0  ⋅ 
+d
+d
+yy
+1
+/
+2
+2
+N
+S
+i
+L
++
+mit λ2 ≤ L2/iyy 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+241 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 242/273 =====
+Seite 238  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+Bild J.5 – Verwendung von sekundären und räumlichen Ausfachungssystemen 
+J.6.3.4 
+Gekreuzte Diagonalen mit Aussteifungsstäben 
+(1) Wenn Aussteifungsstäbe vorgesehen werden, um die Eckstiele zu stabilisieren (siehe Bild J.4(d)) ver-
+mindern diese auch die Knicklänge um die kleinste Trägheitsachse auf L1. Der Schlankheitsgrad ist 
+dann anzunehmen als: 
+ 
+λ1 =  1,0  ⋅ L1/ivv 
+(2) Das Knicken muss mit der Länge L2 um die rechtwinklige Achse für das Ausknicken quer zur Diagonal-
+ebene nachgewiesen werden: 
+ 
+λ2 =  1,0  ⋅ L2/iyy 
+ 
+Der Wert λ2 ist mit einem angemessenen Beiwert, abhängig von 
+d
+d / N
+S
+ nach J.6.3.3(2) zu multiplizie-
+ren. 
+ 
+Die Schlankheit der gesamten Diagonallänge (siehe Bild J.4(d)) L3 um die Querachse yy darf  350  nicht 
+überschreiten. 
+J.6.3.5 
+Unterbrochene, gekreuzte Diagonalen mit durchgehendem Horizontalstab am Schnittpunkt 
+(siehe Bild J.6) 
+(1) Der horizontale Stab muss in der Querrichtung ausreichend steif sein, um als Festpunkt in den Lastfäl-
+len zu wirken, in denen die Druckkraft in einem Stab die Zugkraft im anderen Stab übersteigt oder beide 
+Stäbe druckbelastet sind (siehe Bild J.5(e)). 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+242 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 243/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 239 
+ 
+(2) Dieses Kriterium ist erfüllt, wenn sichergestellt wird, dass der Horizontalstab (als Strebe beim Knicken 
+mit ihrer gesamten Länge um die rechtwinklige Achse yy) der algebraischen Summe der Kräfte in den 
+zwei Stäben der gekreuzten Diagonalen, zerlegt in die waagrechte Richtung, standhält (siehe Bild J.6). 
+(3) Die größte Schlankheit des Horizontalstabes darf  250  nicht überschreiten. 
+ 
+Bild J.6 – Unterbrochene, gekreuzte Diagonalen 
+J.6.3.6 
+Mehrfache Gitterdiagonalen 
+(1) Zusätzlich zur Berechnung als Diagonale sind die Winkeldiagonalstäbe eines Gitterwerkes, die an allen 
+Schnittpunkten miteinander verbunden sind als Sekundärstäbe (entsprechend J.10) mit einer Knick-
+länge von Eckstiel zu Eckstiel und dem Trägheitsradius iyy (siehe Bild J.5 (g)) zu bemessen. Im Hinblick 
+auf die Stabilität des Mastabschnittes sollte iyy/ivv größer als 1,25 (iyy ist der Trägheitsradius um die un-
+gefähr zur Fachwerkebene parallele Achse) und der gesamte Schlankheitsgrad L/iyy kleiner als  350  
+sein. 
+(2) Weiterhin muss die Stabilität des Stabes (AB) unter der aufgebrachten Last mit der kritischen Knick-
+länge L0 für den Schlankheitsgrad λ =  1,0  L0/ivv nachgewiesen werden. 
+J.6.3.7 
+Gekreuzte Diagonalen mit diagonalen Eckverbindungen 
+Bei einigen Arten von gekreuzten Diagonalen wird ein Eckstab eingesetzt, um die Knicklänge quer zur Dia-
+gonalebene zu vermindern (siehe Bild J.5 (f)). 
+(1) In diesem Fall müssen fünf Stabilitätsprüfungen durchgeführt werden, um zu entscheiden, ob diese 
+Ausführung eine ausreichende Stützung darstellt: 
+- 
+Stabilität des Stabes unter größter Last über die Länge L1 um die kleinste Trägheitsachse vv. 
+- 
+Stabilität des Stabes unter größter Last über die Länge L2 um die Querachse yy. 
+- 
+Stabilität der zwei Stäbe der gekreuzten Diagonalen für die algebraische Summe der Kräfte in den 
+gekreuzten Diagonalen über die Länge L3 und die Querachse yy. 
+- 
+Stabilität der zwei Stäbe (einer in jeder der benachbarten Wände) in Bezug auf die algebraische 
+Summe der Lasten in den zwei Stäben, die mit dem diagonalen Eckstab verbunden sind, über die 
+Länge L4 und die Querachse yy. 
+- 
+Stabilität der vier Stäbe (jeder Stab der gekreuzten Diagonalen in zwei benachbarten Wänden) in 
+Bezug auf die algebraische Summe der Lasten in allen vier Stäben mit der Länge L5 um die Quer-
+achse yy. 
+ 
+Die Schlankheit von L5 um die Querachse yy darf  350  nicht überschreiten. 
+J.6.3.8 
+K-Ausfachung (siehe Bild J.5 (h und i)) 
+(1) Die kritische Knicklänge ist L1 um die Achse kleinster Trägheit, der Schlankheitsgrad sollte wie folgt an-
+gesetzt werden: 
+ 
+λ1 =  1,0  L1/iyy 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+243 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 244/273 =====
+Seite 240  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(2) Das Knicken mit der Länge L2 zur Wandausfachung um die zutreffende rechtwinklige Achse sollte ge-
+prüft werden, wenn keine dritte Wand vorgesehen ist; der Schlankheitsgrad sollte dann angenommen 
+werden als: 
+ 
+λ2 =  1,0  L2/iyy oder L2/izz 
+(3) Wenn eine dritte Wand mit dreiecksförmiger Aussteifung vorgesehen ist, dann sollte die Länge zwi-
+schen diesen Aussteifungsstäben L3 für die Prüfung des Knickens quer zur Diagonalwand um die zuge-
+hörige rechtwinklige Achse verwendet werden; der Schlankheitsgrad sollte dann angenommen werden 
+als: 
+ 
+λ3 =  1,0  L3/iyy oder L3/izz 
+J.6.4 
+Zusammengesetzte Stäbe 
+J.6.4.1 
+Allgemeines 
+(1) Zusammengesetzte Stäbe können aus zwei Rücken an Rücken liegenden Winkelstählen (Bild J.7) oder 
+aus zwei, drei oder vier Winkelstählen mit kreuzförmigem Querschnitt (Bild J.8) gebildet werden. 
+(2) Wenn sie durchgehend verschweißt sind (Bild J.8 (a)), können sie als ein Stab angesehen werden. 
+(3) Für Fachwerkgitterstäbe wird auf ENV 1993-1-1, Abschnitt 5.9.2, verwiesen. 
+J.6.4.2 
+Einzelheiten 
+Für den Schlankheitsgrad eines Teilstabes muss λ1 ≤ 50 sein. 
+Wenn Bindebleche verwendet werden, müssen sie wenigstens in den Drittelpunkten der gesamten Knick-
+länge und an den Enden der Stäbe angeordnet werden. 
+Wenn aus zwei Winkelprofilen zusammengesetzte Stäbe an einem gemeinsamen Knotenblech angeschlos-
+sen sind, sind zusätzliche Bindebleche an den Stabenden nicht erforderlich. 
+Jedes Bindeblech muss an jeden Einzelstab mit Schrauben oder mit einer gleichwertigen Schweißnaht an-
+geschlossen werden. An den Stabenden ist ein zusätzliches Verbindungselement für jede dieser Verbindun-
+gen vorzusehen. 
+Im Falle von über Eck gestellten Winkelstählen sind mindestens zwei Schrauben je Stab an jedem Binde-
+blech erforderlich. 
+ 
+ 
+Bild J.7 – Stäbe aus Schenkel an Schenkel liegenden Winkelstählen 
+J.6.4.3 
+Bemessung 
+Wenn die bauliche Durchbildung die vorstehend genannten Anforderungen erfüllt, dürfen die Stäbe nach 
+den folgenden Regeln bemessen werden: 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+244 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 245/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 241 
+ 
+Mehrteilige Druckstäbe, die aus m Einzelstäben bestehen und deren Querschnitt eine Stoffhauptachse y-y 
+hat, dürfen für das Ausknicken quer zu dieser Stoffachse wie einteilige Druckstäbe bemessen werden. 
+Für das Ausknicken quer zur stofffreien Querschnittshauptachse z-z darf der Stab wie ein einteiliger Druck-
+stab mit der ideellen Schlankheit von  
+2
+2
+1
+2
+z
+zi
+m
+λ
+λ
+λ
++
+=
+ 
+behandelt werden, dabei ist 
+m 
+die Anzahl der Profile; 
+λz 
+der Schlankheitsgrad des Gesamtstabes wie in J.6.2 bzw. J.6.3 definiert; 
+λ1 
+der Schlankheitsgrad eines Einzelstabes gleich c/ivv; 
+c 
+der Abstand zwischen Bindeblechen entsprechenden den Bildern J.7 und J.8. 
+ 
+ 
+Bild J.8 – Kreuzförmige Mehrfachstäbe 
+J.7 Zusätzliche Empfehlungen für Ausfachungsformen 
+J.7.1 
+Waagrechte Randstäbe mit waagrechten Querverbänden (Bild J.9) 
+Das Nachstehende sollte in geeigneter Weise beachtet werden: 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+245 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 246/273 =====
+Seite 242  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(1) Wenn die Länge waagrechter Randstäbe zu groß wird, z.B. wenn der Schlankheitsgrad größer ist als 
+derjenige, der in J.6.3.5(3) oder J.7.2(5) vorgeschlagen wird, oder wenn der Mast gegen Teilinstabilitä-
+ten zu sichern ist, ist es üblich, einen waagrechten Querverband vorzusehen. 
+(2) Die geometrische Knicklänge eines waagrechten Stabes ist der Abstand zwischen den Schnittpunkten 
+im Querverband in Bezug auf Knicken quer zum Verband; für das Knicken in der Ebene des Verbandes 
+ist die Knicklänge der Abstand zwischen den Anschlusspunkten in der Ebene des Verbandes. 
+(3) Bei der Wahl der vv- oder der rechtwinkligen Achse ist bei Einzelstäben Sorgfalt geboten; die vv-Achse 
+sollte verwendet werden, wenn kein ausreichender Festpunkt durch Diagonalen genau oder ungefähr in 
+der Mitte der Knicklänge vorgesehen ist. 
+(4) Der waagrechte Querverband muss ausreichend steif sein, um Teilknicken zu verhindern. Im Zwei-
+felsfall kann das Folgende als praktische Bemessungsregel gelten: 
+- 
+Der waagrechte Querverband, wie in Bild J.9 dargestellt, muss einer waagrechten Einzellast  
+F = 1,5⋅L in kN, angreifend in der Mitte des waagrechten Stabes, standhalten, wobei L gleich der 
+Länge des waagrechten Randstabes in m ist. 
+- 
+Die Durchbiegung der waagrechten Diagonalen unter dieser Last ist auf L/1000 begrenzt. 
+ 
+ 
+Bild J.9 – Typischer Querverband 
+J.7.2 
+Waagrechte Randstäbe ohne waagrechten Querverband 
+(1) Bei geringen Mastbreiten können Querverbände in manchen Fällen weggelassen werden. 
+(2) Da waagrechte Stäbe üblicherweise in einer Hälfte druckbelastet und in der anderen Hälfte zugbelastet 
+sind, muss die wirksame Länge kL des waagrechten Stabes quer zum Fachwerk aus Bild J.10, ab-
+hängig vom Verhältnis der Zuglast P2 zur Drucklast P1, entsprechend der folgenden Formel bestimmt 
+werden: 
+k = 0,085 ⋅ R2 - 0,316 R + 0,730 
+dabei ist  
+R = |P2/P1| und 0 ≤ R ≤ 1 
+(3) Der Trägheitsradius um die yy-Achse (iyy) muss für das Knicken quer zum Fachwerk verwendet werden, 
+ausgenommen Einzelwinkelstäbe: Diese sind entweder durch sekundäres Fachwerk in Intervallen zu 
+stützen oder der Trägheitsradius um die vv-Achse (ivv) muss verwendet werden. 
+(4) In Bezug auf die Wahl des Knickfalles muss der Stab als an beiden Enden nicht durchlaufend angese-
+hen werden. 
+(5) Die Gesamtschlankheit des waagrechten Randstabes um die Querachse sollte kleiner als  250  sein. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+246 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 247/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 243 
+ 
+ 
+Bild J.10 – Waagrechter Randstab über einem K-Fachwerk 
+k = effektiver Längenbeiwert nach J.7.2(2) 
+J.7.3 
+Geknicktes K-Fachwerk 
+Für große Mastbreiten kann eine Abknickung in den Hauptdiagonalen vorgesehen werden (siehe Bild J.11). 
+Das wirkt ermäßigend auf die Längen und die Maße der Sekundärfachwerkstäbe, ruft aber höhere Span-
+nungen in den Stäben hervor, die am Knick zusammenlaufen, und erfordert Queraussteifung an der Verbin-
+dung. Diagonalen und waagrechte Stäbe sollten wie für das K-Fachwerk bemessen werden, wobei die wirk-
+samen Längen der Diagonalen auf die Längen zum Knickpunkt bezogen werden. 
+J.7.4 
+Portalrahmen 
+(1) In manchen Fällen wird ein waagrechter Stab am Knickpunkt vorgesehen, um den Mastabschnitt als 
+Portalrahmen zu gestalten (siehe Bild J.12). Der Hauptnachteil hiervon ist das Fehlen eines Gelenkes, 
+das im K-Fachwerk vorhanden ist. Dieses System ist empfindlich für Gründungssetzungen oder -bewe-
+gungen; dieser Eigenschaft sollte daher besondere Aufmerksamkeit gewidmet werden. 
+(2) Dieses Beispiel zeigt auch ein besonderes Sekundärfachwerk, das für Lasten aus solchen Bewegungen 
+weniger empfindlich ist. 
+ 
+ 
+ 
+Bild J.11 – Geknicktes K-Fachwerk 
+Bild J.12 – Portalrahmen 
+λ = kL/iyy 
+λ = kL/ivv  für Winkel 
+L 
+L
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+247 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 248/273 =====
+Seite 244  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+J.8 Berechnung der wirksamen Schlankheit 
+eff
+λ
+(durch Belastungsprüfungen unter-
+stützte Tragwerksbemessung) 
+Die Knickbeanspruchbarkeit ist entsprechend ENV 1993-1-1, Abschnitt 5.5.1.2, mit dem Imperfektionsbei-
+wert 0,34 (Kurve b) zu bestimmen. 
+Um die Tragfähigkeit der Stäbe zu berechnen, wird eine dimensionslose Schlankheit 
+eff
+λ
+ eingeführt, die 
+abhängt von: 
+- 
+der Art des Stabes; 
+- 
+der Querschnittsachse, für die die Tragfähigkeit ermittelt wird; 
+- 
+der Art der Anschlüsse; 
+- 
+der Art der Diagonalausfachung (siehe J.6); 
+- 
+der Durchgängigkeit der Stäbe. 
+Unter Verwendung der Kurve b wird 
+eff
+λ
+ wie folgt berechnet: 
+A
+A
+E
+f
+eff
+y
+π
+λ
+λ =
+ 
+Fall 1 
+eff
+λ
+ = 
+1,98)
+(1,747
+e
+−
+λ
+ 
+ 
+für 
+0,2 ≤ λ  ≤ 1,035 
+ 
+eff
+λ
+ = 1,091 λ  - 0,287  
+für 
+λ  ≥ 1,035 
+Fall 26) 
+eff
+λ
+ = 
+(1,747
+e
+1,2
+1,98)
+−
+λ
+ 
+ 
+für 
+0,2 ≤ λ  ≤ 1,035 
+ 
+eff
+λ
+ = 1,091  1,2 λ  - 0,287 
+für 
+1,2 λ  ≥ 1,035 
+Fall 3 
+eff
+λ
+ = 0,02 + 0,88 λ  
+Fall 4 
+eff
+λ
+ = 0,30 + 0,68 λ  
+Fall 5 
+eff
+λ
+ = 0,52 + 0,68 λ  
+Fall 6 
+eff
+λ
+ = 0,16 + 0,94 λ  
+Der zutreffende Knickfall ist nach J.9 zu wählen (Tabelle J.1). 
+J.9 Wahl des Knickfalles für Winkelprofile (durch Belastungsprüfungen gestützte  
+Tragwerksberechnung) 
+J.9.1 
+Einfachwinkel 
+(1) Die zugrunde liegende Knickkurve ist die Kurve b von ENV 1993-1-1. 
+(2) Für Eckstiele sind zwei Fälle vorgesehen: 
+ 
+Der Fall 1 bezieht sich auf einen axial belasteten Stab, der über eine Anzahl von Diagonalfeldern ohne 
+versetzte Abstützungen nach Bild J.3 (a), (b) und (c) durchläuft. 
+                                                
+6)  Nationale Fußnote: Zum besseren Verständnis ist die vollständige Gleichung eingefügt. Die Übersetzung 
+aus der englischen Fassung lautet: 
+eff
+λ
+ = wie Fall 1 mit λ =  1,2  mal λ von Fall 1. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+248 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 249/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 245 
+ 
+ 
+Der Fall 2 bezieht sich auf den gleichen Stab jedoch mit versetzten Abstützungen nach Bild J.3 (d). 
+(3) Für Diagonalen gelten die folgenden Überlegungen: 
+ 
+Die nur mit einem Schenkel angeschlossenen Endverbindungen von Diagonalstäben rufen Exzentrizi-
+täten und/oder Zwänge hervor, die beide auf die Beanspruchbarkeit der Stäbe Einfluss haben. 
+ 
+Mit zunehmendem Schlankheitsgrad nimmt die Auswirkung von Exzentrizitäten ab und die positive Wir-
+kung der Endeinspannung nimmt zu, so dass für Berechnungszwecke angenommen werden sollte, 
+dass sich diese Auswirkungen bei einem Schlankheitsparameter von 
+2
+=
+λ
+ gegenseitig aufheben. 
+ 
+Bei geringeren Schlankheitsgraden wird die Tragfähigkeit von mit einer Schraube angeschlossenen 
+Stäben üblicherweise von der Beanspruchbarkeit des Anschlusses bestimmt. 
+ 
+Für größere Schlankheitsgrade wird die positive Wirkung von Endeinspannungen wichtiger als die ne-
+gative infolge der Exzentrizität des Anschlusses, so dass es möglich wird, einen günstigeren Fall zu 
+verwenden, wenn eine angemessene Endsteifigkeit vorhanden ist (Minimum 2 Schrauben oder ge-
+schweißte Verbindung, Starrheit der stützenden Winkel) 
+(4) In allen Fällen sind die Knicklängen die geometrischen Längen, d.h. der Abstand zwischen den Mitten 
+der Systemschnittpunkte. 
+(5) Der zutreffende Fall wird aus Tabelle J.1 gewählt; die Bedingungen hinsichtlich der Durchgängigkeit des 
+Stabes sind: 
+ 
+2 Enden = der Stab läuft an beiden Enden durch; 
+ 
+1 Ende 
+= der Stab läuft nur an einem Ende durch; 
+ 
+0 Enden = Einzelfeldstab. 
+(6) Diagonalstäbe, die an beiden Eckstielen angeschlossen sind, werden wie Eckstiele behandelt. 
+(7) Ein durch Schweißen angeschlossener Diagonalstab wird als mit zwei Schrauben angeschlossen be-
+trachtet. 
+J.9.2 
+Mehrteilige Stäbe/Gitterstäbe 
+Alle Fälle werden gemäß Fall 1 für den Gesamtnachweis des mehrteiligen Stabes behandelt. 
+Der Einzelstab ist nach Tabelle J.1 nachzuweisen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+249 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 250/273 =====
+Seite 246  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle J.1 – Knickfälle 
+ 
+ 
+Knickachse 
+Schlankheits-
+bedingung 
+λ  
+Last- 
+exzentrizitäts-
+bedingung 
+Durchlauf-
+bedingung 
+des Stabes 
+Schraubenanzahl 
+am nicht durch-
+laufenden Ende 
+ 
+Fall 
+Nr. 
+< 
+2  
+1 Ende 
+- 
+- 
+3 
+< 
+2  
+2 Enden 
+- 
+- 
+4 
+> 
+2  
+- 
+2 Enden 
+- 
+1 
+> 
+2  
+- 
+1 Ende 
+2 Schrauben 
+4 
+> 
+2  
+- 
+1 Ende 
+1 Schraube 
+1 
+> 
+2  
+- 
+0 Enden 
+2 Schrauben 
+4 
+vv 
+> 
+2  
+- 
+0 Enden 
+1 Schraube 
+1 
+< 
+2  
+1 Ende 
+- 
+- 
+4 
+< 
+2  
+2 Enden 
+- 
+- 
+5 
+> 
+2  
+- 
+2 Ende 
+- 
+1 
+> 
+2  
+- 
+1 Ende 
+2 Schrauben 
+4 
+> 
+2  
+- 
+1 Ende 
+1 Schraube 
+1 
+> 
+2  
+- 
+0 Enden 
+2 Schrauben 
+5 
+Diagonal- 
+stab 
+yy oder zz 
+> 
+2  
+- 
+0 Enden 
+1 Schraube 
+6 
+vv 
+alle Fälle 
+Bild J.3 (a) (b) 
+1 
+alle Fälle 
+Bild J.3 (c) 
+1 
+Eckstiel 
+yy oder zz 
+alle Fälle 
+Bild J.3 (d) (versetzt) 
+2 
+J.10 Sekundärstäbe (Null-Stäbe) 
+(1) Um Sekundärstäbe zu bemessen, ist es erforderlich, eine hypothetische Kraft quer zum gestützten 
+Hauptstab einzuführen, und zwar an jedem Knotenpunkt des Anschlusses eines Sekundärstabes. Diese 
+Lasten addieren sich nicht zu den vorhandenen Kräften im Tragwerk. 
+ 
+Diese Kraft wird an jedem Knotenpunkt abwechselnd in der Wandebene angenommen; ihr Wert wird 
+berechnet als K · N / 100, 
+ 
+wobei 
+ 
+K = 
+(
+)
+32
+60
+1
++
+λ
+ 
+mit 
+1 ≤ K ≤ 2 
+ 
+N  
+ Axialkraft im Hauptstab 
+(2) Der Winkel zwischen dem Sekundärstab und dem Hauptstab darf nicht weniger als 15° betragen. 
+(3) Im Falle eines K-Fachwerks mit Knick (Bild J.11) mit Winkeln zwischen den Diagonalen und dem Eck-
+stiel nahe 15° sollten Sekundäreffekte mitbetrachtet werden (Gesamtinstabilität, Verkürzung der Eck-
+stiele, Schraubenschlupf). 
+J.11 
+Schraubverbindungen 
+Schraubverbindungen für Winkelstäbe müssen nach Tabelle J.2 und Bild J.13 bemessen werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+250 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 251/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 247 
+ 
+Tabelle J.2 – Bemessungsbeanspruchbarkeit für Schrauben 
+an einem Winkelprofil 
+Scherbeanspruchbarkeit je Scherfläche: 
+Wenn die Scherfläche durch den gewindelosen Teil der Schraube geht: 
+Fv,Rd =  0,6  fub A/γMb 
+Wenn die Scherfläche durch den Gewindeteil der Schraube geht: 
+Fv,Rd =  0,6  fub As/γMb für die Güten 4.6 - 5.6 - 6.6 - 8.8 
+Fv,Rd =  0,6  fub As/γMb für die Güten 4.8 - 5.8 - 6.8 - 10.9 
+Lochleibungsbeanspruchbarkeit je Schraube: 
+Fb,Rd = α fu d t/γM2 
+Dabei ist α der kleinste Wert aus: 
+1,20 ⋅ (e1/do); 1,85 ⋅ (e1/do - 0,5); 0,96 ⋅ (P1/do - 0.5); 2,3 ⋅ (e2/do - 0,5) 
+Zugbeanspruchbarkeit je Schraube: 
+Ft,Rd = 0,9 fub As/γMb 
+A 
+Querschnittsfläche der Schraube 
+As 
+Schraubenfläche im Gewindeteil bei axialer Zugbeanspruchung 
+d 
+Schraubendurchmesser 
+d0 
+Bohrungsdurchmesser 
+ 
+ 
+Bild J.13 – Lage von Schrauben in einem Winkelstab mit 
+einem angeschlossen Schenkel 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+251 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 252/273 =====
+Seite 248  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang K 
+(normativ) 
+ 
+Einstielige Stahlmaste 
+In den folgenden Abschnitten wird in Klammern auf die entsprechenden Abschnitte von ENV 1993-1-1  
+verwiesen. 
+K.1 Definitionen von im Anhang K verwendeten Symbolen 
+Symbole 
+Bedeutung 
+A 
+Querschnittsfläche 
+Aeff 
+wirksame Querschnittsfläche 
+AS 
+Zugquerschnittsfläche von Ankerschrauben 
+b 
+Nennbreite 
+beff 
+wirksame Breite 
+d 
+Außendurchmesser, Außendurchmesser gemessen über den Polygonecken 
+fbd 
+Verbundspannung zwischen Stahl und Beton 
+fck 
+charakteristische Druckfestigkeit von Beton 
+fctm 
+durchschnittliche Zugfestigkeit von Beton 
+fctk0,05 
+charakteristische Zugfestigkeit von Beton 
+fub 
+Zugfestigkeit für Ankerschrauben 
+fy 
+Streckgrenze 
+Msd 
+Biegemoment im Querschnitt 
+Nsd 
+axiale Kraft im Querschnitt 
+n 
+Seitenanzahl des Polygons 
+t 
+Dicke 
+Weff 
+wirksames Widerstandsmoment 
+Wel 
+elastisches Widerstandsmoment 
+∆M 
+zusätzliches Moment 
+σcom, Ed 
+größte berechnete Druckspannung 
+σx, Ed 
+größte tatsächliche Längsspannung 
+γc 
+Teilsicherheitsbeiwert für Verbund 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+252 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 253/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 249 
+ 
+γM1 
+Teilsicherheitsbeiwert für Beanspruchbarkeit 
+γMb 
+Teilsicherheitsbeiwert von Ankerschrauben 
+p
+λ  
+Plattenschlankheit 
+ρ 
+Reduktionsbeiwert 
+ψ 
+Spannungsverhältnis 
+K.2 Einstufung in Querschnittsklassen (Abschnitt 5.3) 
+Die Querschnitte sind der Klasse 3 zuzuordnen, wenn die Dünnwandigkeit es zulässt, dass die berechneten 
+Spannungen in den äußeren Druckzonen des Rohres dessen Streckgrenze erreichen. Alle anderen Quer-
+schnitte, für die bei der Bestimmung ihrer Momentenbeanspruchbarkeit oder Druckbeanspruchbarkeit expli-
+zite Vorkehrungen für die Auswirkung des Beulens notwendig sind, müssen nach den in Tabelle K.1 ange-
+gebenen Kriterien als der Klasse 4 zugehörig angesehen werden. 
+Tabelle K.1 – Einstufung von Rohrquerschnitten unter Biegung 
+Querschnittsart 
+Kriterien für Klasse 4 
+ 
+ 
+t 
+d
+ 
+ 
+ 
+ 
+ 
+ 
+d/t > 176 ε² 
+ 
+ 
+ 
+ 
+ 
+für  n gleich 6 bis 18 Seiten 
+ 
+b/t > 42 ε 
+ 
+Dabei sind ε = (235/fy)0,5 und fy der Nennwert der Streckgrenze in N/mm². 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+253 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 254/273 =====
+Seite 250  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+K.3 Wirksame Querschnittswerte für Querschnitte der Klasse 4 (Abschnitt 5.3.5) 
+Die wirksamen Querschnittswerte von Querschnitten der Klasse 4 sind mit der wirksamen Breite der druck-
+beanspruchten Querschnittsteile zu bestimmen, wie in Bild K.1 gezeigt. 
+Aeff bei axialer Kraft 
+Weff bei einem Biegemoment 
+ 
+ 
+ 
+ 
+ 
+Bild K.1 – Wirksame Querschnittscharakteristiken für Querschnitte der Klasse 4 
+Die effektiven Breiten von ebenen druckbeanspruchten Wandabschnitten sollten unter Verwendung von 
+ENV 1993-1-1, Tabelle 5.3.2, bemessen werden, wobei als eine auf der sicheren Seite liegende Näherung 
+der Abminderungsfaktor ρ aus 5.3.5 (3) von ENV 1993-1-1 erhalten werden kann. Das in ENV 1993-1-1, 
+Tabelle 5.3.2, verwendete Spannungsverhältnis ψ kann die Bruttoquerschnittswerte zur Grundlage haben. 
+Im Hinblick auf eine größere Wirtschaftlichkeit kann jedoch die Plattenschlankheit 
+p
+λ
+ eines jeden Quer-
+schnittsteiles unter Verwendung der größten berechneten Druckspannung 
+Ed
+com,
+σ
+ in diesem Teil anstelle 
+der Streckgrenze fy bestimmt werden, vorausgesetzt, dass 
+Ed
+com,
+σ
+ unter Verwendung der effektiven Breite 
+beff aller druckbeanspruchten Wandabschnitte bestimmt wird. Dieses Vorgehen verlangt im Allgemeinen eine 
+iterative Berechnung, wobei ψ in jedem Schritt wieder aus den Spannungen bestimmt wird, die mit den wirk-
+samen, am Ende des vorhergehenden Schrittes berechneten Querschnitten erhalten werden. Diese Span-
+nungen beinhalten auch die Wirkung des zusätzlichen Momentes ∆M. 
+K.4 Beanspruchbarkeit von kreisförmigen Querschnitten ohne Öffnungen mit  
+überwiegendem Biegemoment 
+Ausreichende Beanspruchbarkeit eines kreisförmigen Querschnittes ohne Öffnungen mit überwiegendem 
+Biegemoment ist sichergestellt, wenn die auftretende größte Längsspannung
+Ed
+x,
+σ
+, (einschließlich der 
+gleichzeitigen axialen Last) berechnet auf der Grundlage des Bruttoquerschnittes, die folgenden Kriterien 
+erfüllt: 
+1
+M
+y
+Ed
+x,
+γ
+ρ
+σ
+/
+f
+⋅
+≤
+ 
+Dabei gilt 
+für Querschnitte der Klasse 3: 
+0,1
+=
+ρ
+ 
+ 
+für Querschnitte der Klasse 4: 
+1,0
+/
+53
+0,70
+2
+≤
++
+=
+t
+d
+ε
+ρ
+, mit 
+(
+)
+5,0
+y
+/
+235 f
+=
+ε
+ 
+Bild K.2 gibt den Abminderungsfaktor ρ als Funktion des Verhältnisses d/t direkt wieder. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+254 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 255/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 251 
+ 
+ 
+0,83 
+0,84 
+0,85 
+0,86 
+0,87 
+0,88 
+0,89 
+0,90 
+0,91 
+0,92 
+0,93 
+0,94 
+0,95 
+0,96 
+0,97 
+0,98 
+0,99 
+1 
+100 
+110 
+120 
+130 
+140 
+150
+160
+170
+180
+190
+200
+210
+220 
+230 
+240 
+250
+Stahl S235 
+Stahl S355
+ρ 
+d/t
+ 
+Bild K.2 – Abminderungsfaktor ρ 
+K.5 Beanspruchbarkeit von polygonalen Querschnitten ohne Öffnungen mit  
+überwiegendem Biegemoment 
+K.5.1 Querschnitte der Klasse 3 (Abschnitt 5.4.8.2) 
+Die Beanspruchbarkeit von polygonalen Querschnitten der Klasse 3 ist ausreichend, wenn die größte 
+Längsspannung
+Ed
+x,
+σ
+, die bei Beanspruchung durch ein überwiegendes Biegemoment und durch eine 
+gleichzeitige axiale Kraft mit dem Bruttoquerschnitt berechnet wird, das folgendes Kriterium erfüllt: 
+M1
+y
+Ed
+x,
+γ
+σ
+/
+f
+≤
+ 
+Für Querschnitte ohne Öffnungen ergibt sich für das obige Kriterium: 
+ 
+1
+M
+y
+el
+Sd
+Sd
+γ
+f
+W
+M
+A
+N
+≤
++
+ 
+Dabei ist 
+A 
+die Bruttoquerschnittsfläche; 
+Wel 
+das elastische Widerstandsmoment ist. 
+K.5.2 Querschnitte der Klasse 4 (Abschnitt 5.4.8.3) 
+Polygonale Querschnitte der Klasse 4 ohne Öffnung sind ausreichend bemessen, wenn die größte Längs-
+spannung
+Ed
+x,
+σ
+, die bei Beanspruchung durch überwiegendes Biegemoment und gleichzeitige axiale Kräfte 
+mit den wirksamen Breiten der Druckteile berechnet wird, das folgendes Kriterium erfüllt: 
+ 
+1
+M
+y
+d
+γ/
+f
+σ ≤
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+255 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 256/273 =====
+Seite 252  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Für Querschnitte ohne Öffnung führt dieses Kriterium zu: 
+ 
+1
+M
+y
+eff
+Sd
+eff
+Sd
+γ
+f
+W
+M
+A
+N
+≤
++
+ 
+Dabei ist 
+Aeff 
+die wirksame Querschnittsfläche unter gleichförmigem Druck; 
+Weff 
+das wirksame Widerstandsmoment des Querschnitts ist, wenn dieser nur einem Moment um die ein-
+schlägige Achse unterworfen ist. 
+ANMERKUNG: Eine ins einzelne gehende Methode für die Berechnung des wirksamen Querschnittswertes für 
+Querschnitte der Klasse 4 ist in ENV 1993-1-1, Abschnitt 5.3.5, angegeben. Die Nomogramme der Bilder K.3 und 
+K.4 ermöglichen eine schnelle Bestimmung von Aeff und Weff für polygonale Querschnitte ohne Öffnungen. 
+K.6 
+Bemessung von Ankerschrauben 
+Die Bemessung der Verankerungslänge von Ankerschrauben in Beton ist in Tabelle K.2 angegeben. Die 
+kombinierte Bemessungsbeanspruchbarkeit von Schrauben unter Scher- und Zug- oder Druckbelastung 
+wird in ENV 1993-1-1, Abschnitt 6.5.5, behandelt. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+256 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 257/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 253 
+ 
+ 
+ 
+ 
+ 
+ 
+b
+d
+t 
+ n Seiten
+Wel
+           
+f y 
++ 
+-
+Weff
+ 
+ 
+n=6
+n=8
+n=12
+n=16
+n=18 
+f     = 235 N/mm
+y 
+2
+W eff 
+W el 
+1.
+.95
+.9
+.85
+.8
+.75
+.7
+.65
+.6
+.55
+75 
+100 
+125
+150
+175
+200
+225
+250 
+d / t
+84 
+110 
+162
+215
+242 
+ 
+ 
+n=6
+n=8
+n=12
+n=16
+n=18 
+f     = 355 N/mm
+y 
+2
+d / t
+1.
+.95
+.9
+.85
+.8
+.75
+.7
+.65
+.6
+.55
+W eff 
+W el 
+75 
+100
+125
+150
+175
+200
+225
+250 
+.5
+.45
+50 
+68 
+89 
+131
+174
+196
+ 
+ 
+Bild K.3 – Polygonale Querschnitte der Klasse 4 
+Wirksames Widerstandsmoment Weff 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+257 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 258/273 =====
+Seite 254  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+ 
+ 
+b 
+d 
+t 
+ n Seiten
+A
+        
+ 
+fy
++
+Aeff 
+ 
+ 
+ 
+ 
+n=6
+n=8
+n=12
+n=16
+n=18 
+y 
+f y    = 235 N/mm2
+d / t
+1.
+.95
+.9
+.85
+.8
+.75
+.7
+.65
+.6
+.55
+A eff 
+A 
+75 
+100
+125
+150
+175
+200
+225 
+250 
+.5
+.45
+50
+84 
+110
+162
+215
+242 
+.4
+.35
+.3
+  
+ 
+ 
+n=6
+n=8
+n=12
+n=16
+n=18 
+y 
+fy     = 355 N/mm2
+d / t
+1.
+.95
+.9
+.85
+.8
+.75
+.7
+.65
+.6
+.55
+A eff 
+A 
+75 
+100
+125
+150
+175
+200
+225 
+250 
+.5
+.45
+50 
+68 
+89 
+131
+174
+196
+.4
+.35
+.3
+  
+ 
+Bild K.4 – Polygonale Querschnitte der Klasse 4 
+Wirksame Fläche Aeff 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+258 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 259/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 255 
+ 
+Tabelle K.2 – Bemessung von Ankerschrauben 
+Gerade Anker 
+Anker mit Haken 
+Anker mit Platte 
+ 
+ 
+ 
+ 
+bd
+b
+Rd
+a,
+f
+L
+F
+φ
+π
+=
+ 
+bd
+b
+Rd
+a,
+f
+L
+F
+φ
+π
+=
+ 
+mit 
+(
+)
+2
+1
+b
+5
+3
+2
+3
+l
+,
+D
+,
+l
+L
++
++
+=
+ 
+bd
+b
+Rd
+a,
+f
+L
+F
+φ
+π
+=
+ 
+mit 
+0
+2
+2
+bd
+cd
+b
+1
+25
+,0
+45
+,2
+l
+r
+r
+f
+f
+L
++
+
+
+
+−
+
+
+
+
+
+
+−
+=
+ν
+φ
+φ
+ 
+bd
+f
+ 
+= 
+Verbundspannung zwischen Stahl und Beton 
+mit: 
+bd
+f
+ 
+= 
+c
+ck
+36
+,0
+γ
+f
+ für glatte Stäbe und 
+c
+0,05
+ctk
+bd
+25
+,2
+γ
+f
+f
+=
+ für gerippte Stäbe 
+mit: 
+0,05
+ctk
+f
+ = 
+ctm
+0,7 f
+ und 
+3
+/
+2
+ck
+ctm
+0,3 f
+f
+=
+  
+Dabei ist 
+ 
+ck
+f
+ 
+ 
+die charakteristische Betonfestigkeit; 
+ 
+ctm
+f
+ 
+ 
+die mittlere Betonzugfestigkeit; 
+ 
+ctk0,05
+f
+ 
+ 
+die charakteristische Betonzugfestigkeit; 
+ 
+c
+γ  
+ 
+der Teilsicherheitsbeiwert für den Verbund =  1,50 . 
+Zum Beispiel: für Beton C 20/25 
+ck
+f
+= 20 N/mm², 
+ctm
+f
+= 2,2 N/mm², 
+ctk0,05
+f
+ = 1,55 N/mm², 
+und 
+bd
+f
+ = 1,1 N/mm² für glatte Stäbe oder 
+bd
+f
+ = 2,3 N/mm² für gerippte Stäbe. 
+Die Verankerungslänge muss die Beziehung 
+Sd
+t,
+bd
+b
+Rd
+a,
+F
+f
+L
+F
+≥
+=
+φ
+π
+ erfüllen. 
+Dabei ist 
+Sd
+t,
+F
+ die Bemessungszugkraft je Schraube für den Grenzlastzustand. 
+Die Abmessung der Schrauben soll so sein, dass die Beziehung 
+Mb
+s
+ub
+Rd
+t,
+Sd
+t,
+/
+9,0
+γ
+A
+f
+F
+F
+=
+≤
+ erfüllt ist. 
+Dabei ist 
+ub
+f
+ =  Zugfestigkeit der Ankerschrauben; 
+ 
+ 
+s
+A  = Zugquerschnitt der Ankerschraube; 
+ 
+ 
+Mb
+γ
+= Teilsicherheitsbeiwert bezüglich Beanspruchbarkeit der Ankerschraube =  1,25 . 
+ANMERKUNG: Nach ENV 1993-1-1, Abschnitt 6.5.5 (6), ist der einschlägige Wert durch Multiplikation mit einem Faktor von 
+0,85 zu vermindern, wenn die Gewinde nicht durch eine Schraubenherstellungsfachfirma geschnitten sind. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+259 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 260/273 =====
+Seite 256  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang L 
+(informativ) 
+ 
+Bemessungsanforderungen für Tragwerke und Gründungen 
+L.1 Das Tragwerk betreffende Anforderungen: 
+Die folgenden Unterlagen sind für die Bemessung von Stützpunkten und Gründungen erforderlich: 
+- 
+aufgebrachte Lasten, einschließlich Teilsicherheitsbeiwerte für Einwirkungen, wirkend an den An-
+schlusspunkten der Isolatoren/Leiter/Erdseile (in Form von Anordnungen mit Quer- (T), Vertikal- (V) und 
+Längslasten (L)); 
+- 
+Windlasten auf die Stützpunkte; 
+- 
+Lastkombinationen; 
+- 
+Grenzlastzustand für jede Lastkombination; 
+- 
+Gebrauchstauglichkeitsgrenzzustand für jede Lastkombination (zulässige Durchbiegungen); 
+- 
+bevorzugte Fehlerfolge; 
+- 
+Belastungen aus Instandhaltung und Errichtung. 
+L.2 Anforderungen an die Anordnung: Arten der Stützpunkte und ihr Verwen-
+dungszweck 
+Stützpunktart, schematische Darstellung, Anordnung der Leiter, Abstände zwischen den Leitern, elektrische 
+Abstände und Anordnung der Erdseile müssen wie in der Projektspezifikation festgelegt ausgeführt werden. 
+Die folgenden Tabellen können als Hilfe verwendet werden: 
+Tabelle L.1 – Art und Verwendung des Stützpunktes 
+Stützpunktart 
+Beschreibung 
+Leitungswinkel oder 
+Winkel der  
+Leitungseinführung 
+Isolatortyp 
+...... 
+...... 
+...... 
+...... 
+ 
+Tabelle L.2 – Umfang der Verlängerungen 
+Stützpunktart 
+Umfang der Verlängerungen 
+Beschreibung 
+ 
+Kleinste Höhe 
+Größte Höhe x 
+Zunahme der Verlängerung 
+(Meter) 
+ 
+...... 
+...... 
+...... 
+ANMERKUNG: In der Spalte „Beschreibung“ sollte angegeben werden, ob die Verlängerungen entweder ein-
+zelne Verlängerungen darstellen oder Kombinationen von Mastschaft- und Fußverlängerungen; im letzten Fall 
+ist die Höhe der Schaftverlängerung und der Bereich der Fußverlängerungen anzugeben. Zusätzlich sollten 
+Verwendungsgrenzen, Austauschbarkeit, Anschlussebene und die größte zulässige Höhendifferenz zwischen 
+einzelnen Fußverlängerungen klar dargestellt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+260 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 261/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 257 
+ 
+Tabelle L.3 – Einzelheiten der Leitungsauslegung 
+Anzahl der Teilleiter je Gesamtleiter 
+Art und Größe der Teilleiter 
+Anordnung der Teilleiter 
+Abstand der Teilleiter (horizontal und vertikal) 
+Anzahl und Art der Erdseile 
+Größe eines jeden Erdseiles 
+Regelspannweite für den Stützpunkt mit der Nennhöhe 
+Stützpunktnennhöhe  
+Größter Erdseilschutzwinkel an der Spitze/an den äußeren Leiterseilen, ohne Wind (Grad) 
+Größte Einzelfeldlänge  
+Größte Summe der benachbarten Feldlängen  
+Größte Gewichtsspannweite, Normalbedingungen  
+Größte Gewichtsspannweite, ungleiche Lastbedingungen 
+Kleinste Gewichtsspannweite unter Normalbedingungen zugeordnet zur größten Windspannweite 
+Kleinste Gewichtsspannweite, ungleiche Lastbedingungen 
+Größte Gewichtsspannweite, für Endstützpunkte 
+Tabelle L.4 – Einzelheiten der Isolatorketten 
+Kleinste/größte Länge der Isolatorketten 
+Tragketten 
+Stützisolatoren 
+Hilfstragkette 
+Abspannkette, innerer Isolatorstrang 
+Abspannkette, äußerer Isolatorstrang 
+Hilfskette, mit oder ohne Anpassmöglichkeit 
+Anzahl der Isolatorstränge je Leiter 
+Tragketten 
+Abspannketten 
+Hilfsketten 
+Kleinster Abstand von spannungsführenden Metallteilen zur Stahlkonstruktion des Stützpunktes oder zu 
+geerdeten Armaturen 
+Angenommene größte Ausschwingung der Hängekette (Grad) 
+Tragisolatorkette: 
+(a) ausgelenkt zwischen 0 und .... Grad von der Lotrechten (m) 
+(b) ausgelenkt zwischen .... und dem Höchstwert gegen die Lotrechte (m) 
+Abspannisolatorkette: 
+(a) lotrecht hängende Stromschlaufe 
+(b) gegen die Lotrechte um .... Grad ausgelenkte Stromschlaufe 
+Gewichtsbelastete Hilfsisolatorkette: 
+(a) angenommene Anfangsauslenkung ohne Wind .... Grad 
+(b) größte Auslenkung .... Grad, wenn sich die Stromschlaufe in größter ausgelenkter Lage befindet 
+ANMERKUNG 1: Wenn möglich, sollten Zeichnungen der Isolatorkette bereitgestellt werden, die Lichtbogenschutzar-
+maturen, Einstellmöglichkeiten für den Durchhang und Einzelheiten für die Befestigung am Stützpunkt vollständig ent-
+halten. 
+ANMERKUNG 2: Wenn V-Ketten verwendet werden, sollten die Länge der Kette zwischen den Befestigungen oder der 
+eingeschlossene Winkel und gegebenenfalls die Druckbelastbarkeit angegeben werden. Wenn Stützisolatoren verwendet 
+werden, sollte die Neigung des Leitungsstützer zur Waagrechten angegeben werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+261 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 262/273 =====
+Seite 258  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle L.5 – Räumliche Abstände 
+Anordnung der Leiter, lotrecht 
+Anordnung der Leiter, waagrecht 
+Anordnung der Leiter im Dreieck 
+Mindesthöhe der Leiter am Tragwerk mit der Nennhöhe .... für jeden Stützpunkttyp 
+Größter Ausschwingwinkel der Erdseile gegenüber der Lotrechten (Grad) 
+Kleinster lotrechter Abstand zwischen benachbarten Leitern eines Stromkreises 
+Kleinster projizierter lotrechter Abstand zwischen benachbarten Leitern eines Stromkreise 
+Kleinster lotrechter Abstand zwischen Leiter und Erdseilen 
+L.3 Befestigung für Leiter und Erdseile 
+Einzelheiten der Befestigung für die Leiter und Erdseile an den Stützpunktquerträgern oder -schäften sind in 
+der Projektspezifikation festzulegen oder mit dem Auftraggeber vor Beginn der Detailauslegung zu vereinba-
+ren. 
+L.4 Stahlkonstruktion in der Gründung 
+Einzelheiten der vorgeschlagenen Methode der Verbindung zwischen dem Stützpunkt und der Gründung, 
+z.B. Fußeckstiele und Knaggen, Ankerschrauben oder einbetonierte Schüsse, müssen in der Projektspezifi-
+kation festgelegt oder mit dem Auftraggeber vereinbart werden. 
+L.5 Einrichtungen für Errichtung und Instandhaltung 
+Vorkehrungen für Einrichtungen zur Errichtung und für die nachfolgende Instandhaltung, die Konsequenzen 
+für die Auslegung haben, müssen eindeutig in der Projektspezifikation festgelegt werden oder mit 7.12 die-
+ser Norm übereinstimmen, d.h.: 
+- 
+Vorkehrungen für Instandhaltungseinrichtungen; 
+- 
+Vorkehrungen für Befestigungseinrichtungen; 
+- 
+Vorkehrungen im Hinblick auf die Errichtung bei besonderen Geländeverhältnissen; 
+- 
+Vorkehrungen für Transportmöglichkeiten; 
+- 
+Vorkehrungen für Markierungen; 
+- 
+Vorkehrungen für Erdungseinrichtungen. 
+L.6 Einschränkungen bezüglich Massen und Maße 
+Irgendwelche besonderen Einschränkungen bezüglich der gesamten Stützpunktanordnung oder des Her-
+stellungsprozesses, die Einfluss auf die Auslegung haben, müssen klar in der Projektspezifikation festgelegt 
+werden, d.h.: 
+- 
+Einschränkungen der Gesamtbreite des Tragwerks an der Erdoberkante; 
+- 
+Einschränkungen der Gesamtmaße der Mastabschnitte und -schüsse; 
+- 
+Einschränkungen der Gesamtmaße oder -massen einzelner Stäbe; 
+- 
+Einschränkungen hinsichtlich des Schweißens vor Ort; 
+- 
+Einschränkungen hinsichtlich der vorgeschlagenen Errichtungsmethoden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+262 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 263/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 259 
+ 
+Anhang M 
+(informativ) 
+ 
+Typische Werte für geotechnische Parameter von Böden und Felsen 
+M.1 Allgemeines 
+Die nachfolgend angegebenen geotechnischen Parameter sollten verwendet werden, wenn Ergebnisse ei-
+ner Baugrunderkundung nicht verfügbar sind. Sie sollten nicht an die Stelle einer Baugrunderkundung treten; 
+die angegebenen Werte sollten während der Herstellung bestätigt werden. 
+Bei Zweifeln hinsichtlich der Zuordnung eines gegebenen Bodens zu einer der in den folgenden Tabellen 
+erscheinenden Bodenarten sollte der eher ungünstigere Wert verwendet werden. 
+In Tabelle M.1 sind einige der am häufigsten angetroffenen Böden hinsichtlich ihres Ursprungs beschrieben 
+und hinsichtlich ihrer Eignung als tragende Bodenschicht bewertet. 
+Die nächsten beiden Tabellen M.2 und M.3 geben für die Hauptbaugrundarten, nämlich bindige und nicht 
+bindige Böden sowie Fels, den Bereich der geotechnischen Parameter an, die für Gründungsbemessungs-
+formeln benötigt werden. 
+M.2 Definitionen 
+Bodeneinteilung nach der Korngröße 
+Korngröße in mm 
+Definition 
+ 
+ d > 200 
+Felsblöcke 
+ 
+200 > d > 20 
+Kieselsteine 
+ 
+20 > d > 2 
+Kies 
+ 
+2 > d > 0,2 
+Grobsand 
+ 
+0,2 > d > 0,06 
+Feinsand 
+ 
+0,06 > d > 0,002 
+Schluff 
+ 
+ d < 0,002 
+Ton 
+M.3 Einheiten 
+γ 
+spezifisches Gewicht, 
+kN/m³ 
+γ’ 
+spezifisches Gewicht mit Auftrieb, 
+kN/m³ 
+Φ’ 
+Winkel der inneren Reibung, 
+Grad 
+c’ 
+(wirksame) Kohäsion, 
+kN/m² 
+cu 
+nicht entwässerte Scherfestigkeit, 
+kN/m² 
+Ct 
+Steifemodul in 2 m Tiefe, 
+MN/m³ 
+Rc 
+Quetschfestigkeit, 
+MN/m² 
+Rt 
+Zugfestigkeit, 
+MN/m² 
+E 
+Elastizitätsmodul, 
+MN/m² 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+263 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 264/273 =====
+Seite 260  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle M.1 – Üblicherweise angetroffene Bodenarten 
+ 
+Bodenart 
+Bodenbildung 
+Beschreibung 
+Technische Eigenschaften 
+und Eignung für Gründungen
+1 
+Kiesige  
+Sei-
+tenmoränen 
+Sandig-kiesige Ablagerung 
+mit glazialem Ursprung, 
+abgelagert am Rand eines 
+Gletschers 
+Sandig-kiesiges Material 
+mit einem weiten Bereich 
+von Korngrößen, sehr  
+heterogen 
+Mittlere bis hohe Tragfähigkeit, 
+geringe Verdichtbarkeit,  
+wasserdurchlässig, sehr guter 
+Untergrund für Gründungen 
+2 
+Glaziale 
+Schichten  
+(ungeordnet) 
+Ungeordnete glaziale  
+Ablagerungen von Ton bis 
+Kies, üblicherweise in  
+dichtem Zustand,  
+bedecken üblicherweise 
+Molasse-Schichten oder 
+den Grundfels 
+Kiesiges Material in einer 
+Schluff-Tonstruktur mit  
+einem großen Bereich von 
+Korngrößen. 
+Hohe Verdichtung, niedrige  
+Zusammendrückbarkeit,  
+wasserundurchlässig, guter  
+Untergrund für Gründungen 
+3 
+Glaziale  
+Geschiebe, 
+durch Flüsse 
+geordnet 
+Sandig-kiesige Schichten 
+aus Material von alluvialen 
+Moränen 
+Kiesiges Material ohne 
+große Kieselstücke und 
+Ton mit wenig Schluff 
+Mittlere Verdichtung, mittlere 
+bis hohe Verdichtbarkeit,  
+wasserdurchlässig, guter Un-
+tergrund für Gründungen 
+4 
+Glazialer Ton 
+Sehr feinkörniges Material 
+aus dem Moränenabtrag, 
+in Seen abgelagert 
+Verschiedene Tone mit 
+Schichten von Schluff und 
+Feinsand; Vorhandensein 
+von Torf und Schlamm ist 
+möglich. 
+Geringe Dichte, mittlere bis  
+hohe Plastizität, zusammen-
+drückbar, wasserundurchläs-
+sig, Schlechter Untergrund für 
+Gründungen 
+5 
+Alluvialer  
+Boden 
+Ablagerungen in über- 
+fluteten Ebenen und  
+Meeresbuchten 
+Abwechselnd  
+schluffig-sandige und kie-
+sige Schichten. Vorhan-
+densein von Torf und 
+Schlamm möglich 
+Unterschiedliche Verdichtung 
+und Durchlässigkeit, inhomo-
+gener Boden. Schlechter bis 
+guter Untergrund für Gründun-
+gen 
+6 
+Felsen 
+Felshaufen am Fuß einer 
+Klippe 
+Lose, kantige Felstücke 
+unterschiedlicher Größe 
+Geringe Verdichtung, hohe 
+Durchlässigkeit. Obwohl  
+instabil, für Gründungen  
+annehmbar 
+7 
+Überkonsoli-
+dierte Böden 
+Ablagerungsböden, die 
+früher größeren über- 
+lagerten Schichten als  
+heute ausgesetzt waren 
+Tone, 
+Sande, 
+Schluffe 
+Im Allgemeinen für  
+Gründungen annehmbar 
+8 
+Weiche  
+Gesteine  
+(verwittert bis 
+unverwittert) 
+Ablagerungsböden usw., 
+die größeren überlagerten 
+Drucken als überkonsoli-
+dierte Böden ausgesetzt 
+waren 
+Mergel,  
+Sandstein, 
+Kalk 
+Verwitterter Felsen, muss von 
+Fall zu Fall bewertet werden. 
+Ansonsten allgemeinen für 
+Gründungen gut 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+264 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 265/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 261 
+ 
+Tabelle M.2 – Bodenmechanische Kennwerte einiger Standardböden 
+(Definitionen wie in M.2 und M.3 angegeben) 
+Bodenart 
+γ 
+kN/m³ 
+γ' 
+kN/m³ 
+Φ' 
+Grad 
+c’ 
+kN/m² 
+cu 
+kN/m² 
+Ct 
+MN/m³ 
+Mergel, kompakt 
+20 ± 2 
+11 ± 2 
+25 ± 5 
+30 ± 5 
+60 ± 20 
+> 200 
+Mergel, gealtert 
+19 ± 2 
+11 ± 2 
+20 ± 5 
+10 ± 5 
+30 ± 10 
+50 ± 10 
+Kies, unterschiedliche  
+Korngrößen 
+19 ± 2 
+10 ± 2 
+38 ± 5 
+- 
+- 
+150 ± 10 
+ 
+lose 
+Sand mitteldicht 
+ 
+dicht 
+18 ± 2 
+19 ± 2 
+20 ± 2 
+10 ± 2 
+11 ± 2 
+12 ± 2 
+30 ± 5 
+32 ± 5 
+35 ± 5 
+- 
+- 
+60 ± 10 
+80 ± 10 
+100 ± 10 
+Sandiger Schluff 
+18 ± 2 
+10 ± 2 
+25 ± 5 
+10 ± 5 
+30 ± 10 
+60 ± 10 
+Toniger Schluff 
+19 ± 2 
+11 ± 2 
+20 ± 5 
+20 ±10 
+40 ± 10 
+50 ± 10 
+Lehm, Schluff, gemischt 
+17 ± 2 
+7 ± 2 
+20 ± 5 
+- 
+20 ± 10 
+35 ± 5 
+ 
+weich 
+Ton 
+halbsteif 
+ 
+steif 
+17 ± 2 
+19 ± 2 
+20 ± 2 
+7 ± 2 
+9 ± 2 
+10 ± 2 
+12 ± 5 
+15 ± 5 
+20 ± 5 
+25 ± 5 
+60 ± 20 
+25 ± 5 
+30 ± 5 
+40 ± 5 
+Ton, geschichtet 
+20 ± 2 
+10 ± 2 
+30 ± 5 
+12 ± 7 
+400 ± 350 
+- 
+Ton mit organischen  
+Beimengungen 
+15 ± 2 
+5 ± 2 
+15 ± 5 
+- 
+- 
+- 
+Torf, Morast 
+12 ± 2 
+2 ± 2 
+- 
+- 
+- 
+- 
+Verfüllmaterial, Dämme,  
+mittlere Verdichtung 
+19 ± 2 
+10 ± 2 
+25 ± 5 
+- 
+15 ± 5 
+20 ± 5 
+ 
+Tabelle M.3 – Mechanische Werte einiger Gesteinsarten 
+(Definitionen wie in M.2 und M.3 angegeben) 
+Gesteinsbezeichnung 
+Rc 
+MN/m² 
+Rt 
+MN/m² 
+E 
+MN/m² 
+Granit, Gneis, Basalt 
+ 
+100 - 200 
+ 
+4 
+- 10 
+ 
+20 000 - 70 000 
+Schiefer, Ton 
+ 
+15 - 100 
+ 
+0 
+- 10 
+ 
+7 000 - 50 000 
+Kalkstein, kompakt 
+ 
+50 - 100 
+ 
+5 
+- 
+7 
+ 
+30 000 - 60 000 
+Kalkstein, weich 
+ 
+10 - 20 
+ 
+1 
+- 
+3 
+ 
+4 000 - 20 000 
+Mergel, nicht gealtert 
+ 
+10 - 20 
+ 
+1 
+- 
+2 
+ 
+200 - 
+1 000 
+Sandstein 
+ 
+10 - 100 
+ 
+1 
+- 
+6 
+ 
+10 000 - 40 000 
+Molasse 
+ 
+2 - 10 
+ 
+0,2 - 
+1 
+ 
+1 500 - 
+5 000 
+Gips 
+ 
+3 - 10 
+ 
+0,3 - 
+1 
+ 
+2 000 - 
+5 000 
+ANMERKUNG: 
+- 
+Die Querkontraktion µ liegt im Allgemeinen zwischen 0,25 und 0,35.  
+- 
+Der Winkel der inneren Reibung Φ‘ liegt im Allgemeinen zwischen 35° und 45° und hängt 
+stark vom Grad und der Richtung von Klüftungen ab. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+265 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 266/273 =====
+Seite 262  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang N 
+(informativ) 
+ 
+Leiter und Erdseile 
+N.1 Festlegungen für Leiter und Erdseile 
+N.1.1 Bedingungen, die die Leiter- und Erdseilwahl und -bemessung beeinflussen 
+Leiter und Erdseile für Freileitungen werden im Hinblick auf die Einhaltung der durch die Auslegungspara-
+meter einer Freileitung bestimmten mechanischen und elektrischen Kennwerte bemessen. Zusätzliche Ein-
+flussfaktoren in Bezug auf Betrieb, Instandhaltung und Umwelteinwirkungen können gegebenenfalls beach-
+tet werden, wenn die Anforderungen an Leiter und Erdseile für eine Freileitung festgelegt werden. 
+N.1.2 Betriebliche Einflüsse 
+Eine Rolle spielende Einflussfaktoren sind: 
+- 
+angestrebte Zuverlässigkeit und angestrebte Zeit für die Wiederherstellung für unterschiedliche Arten 
+erzwungener Abschaltungen; 
+- 
+Stromtragfähigkeit (dauernd und kurzzeitig); 
+- 
+Vorgaben hinsichtlich elektrischer Verluste (I2⋅R und Korona); 
+- 
+innere und äußere Abstände; 
+- 
+Vorgaben hinsichtlich elektrischer Leitungskennwerte (Längsreaktanz, Querblindleitwert usw.); 
+- 
+erforderliche Lebensdauer. 
+N.1.3 Anforderungen hinsichtlich Instandhaltung 
+Eine wichtige Anforderung ist: 
+- 
+Zugang entlang der Leiter zu Armaturen im Feld (z.B. Feldbündelabstandhalter und Sichtmarker). 
+N.1.4 Umweltparameter 
+Solche Parameter sind: 
+- 
+Wind und/oder Eisbelastungen, die die Wahl der Festigkeit, den Leiterdurchhang und das Schwingungs- 
+und Tanzverhalten beeinflussen; 
+- 
+Verschmutzung, die den Korrosionsschutz beeinflusst; 
+- 
+Blitze, die die Erdseil- und Leiterspezifikation beeinflussen; 
+- 
+Vorgaben hinsichtlich Funk- (und anderer) Störbeeinflussungen; 
+- 
+Vorgaben hinsichtlich Geräuschpegel; 
+- 
+Sichtmarker für Vögel und Flugzeuge; 
+- 
+optische Wahrnehmbarkeit (z.B. Oberflächenbehandlung von Leitern); 
+- 
+Elektrische und magnetische Felder; 
+- 
+Leiterfett (z.B. Tropfpunkt und chemische Zusammensetzung); 
+- 
+höchste und niedrigste Umgebungstemperaturen. 
+N.2 Leiter- und Erdseilauswahl 
+Zusätzlich zu den auf der Grundlage der Parameter für die Freileitungsbemessung festgelegten Kennwerten 
+und den in N.1 im Einzelnen beschriebenen Faktoren sollte der Wahl der Leiter für jede einzelne Anwen-
+dung besonderes Augenmerk geschenkt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+266 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 267/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 263 
+ 
+Diese Überlegungen können umfassen: 
+- 
+Leiterart – Runddrähte, Segmentdrähte, verseilte Leiter oder anderer Aufbau; 
+- 
+Bündelleiterart – Einzelleiter, Zweier-, Dreier-, Viererbündel usw., Bündelleiter ohne Feldbündelabstand-
+halter; 
+- 
+Leitermaterial z.B.: 
+(a) Reinaluminiumleiter (AL1); 
+(b) Aluminium-/Aluminiumlegierungs-Verbundleiter (AL1/ALx); 
+(c) Aluminium-/Stahlverbundleiter (AL1/STyz); 
+(d) Aluminium-/aluminium-ummantelter Stahlverbundleiter (AL1/ASyz); 
+(e) Aluminiumlegierungs-/Stahlverbundleiter (ALx/STyz); 
+(f) Aluminiumlegierungs-/aluminium-ummantelte Stahlverbundleiter (ALx/Syz); 
+(g) Aluminiumlegierungsleiter (ALx); 
+(h) Leiter aus aluminium-ummantelten Stahldrähten (20SA); 
+(i) 
+Kupfer-/Kupferlegierungsleiter; 
+(j) 
+Stahl. 
+- 
+Leiter- und Bündelleitermaße; 
+- 
+Dauerstromtragfähigkeit; 
+- 
+Art des Fettes und Gehalt; 
+- 
+Oberflächenbehandlung (einschließlich Beschichtung); 
+- 
+(elektrische) Leitfähigkeit; 
+- 
+Spannungs-Dehnungsverhalten; 
+- 
+Zugfestigkeit (mit Betrachtung der Minderung abhängig von der Temperatur und der Zeit); 
+- 
+Kriechverhalten; 
+- 
+Anforderungen für die Lichtwellenleiter (einschließlich Schutz); 
+- 
+Korrosionsschutz; 
+- 
+Schwingungskennwerte (Seileigendämpfung, Biege- und Torsionssteifheit, längenbezogene Masse 
+usw.); 
+- 
+höchste Betriebstemperatur (Dauerzustand, Kurzzeitzustand und Kurzschluss); 
+- 
+zulässige Belastungen der Freileitungsstützpunkte. 
+N.3 Verpackung und Lieferung von Leitern und Erdseilen 
+Leiter sollten auf geeigneten Spulen mit vorher zwischen Auftraggeber und Auftragnehmer vereinbarten Län-
+gen verpackt und zur Baustelle geliefert werden; die Behandlung von Holzspulen sollte in der Projekt-
+spezifikation festgelegt werden. Die Spulen sollten die Leiter in geeigneter Weise schützen. Für die Rück-
+lieferung oder Entsorgung von Leerspulen sollten entsprechende Vereinbarungen getroffen werden.  
+N.4 Vorkehrungen während des Verlegens von Leitern und Erdseilen 
+Während des Verlegens sollten die Leiter immer mit Sorgfalt behandelt werden, um Oberflächenschäden 
+möglichst klein zu halten. Im Besonderen sollten Vorkehrungen getroffen werden, um schleifenden Kontakt 
+mit dem Boden oder anderen Oberflächen zu vermeiden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+267 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 268/273 =====
+Seite 264  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang P 
+(informativ) 
+ 
+Prüfungen an Freileitungsisolatoren und Isolatorketten 
+aus Porzellan- und Glasisolierwerkstoffen 
+Tabelle P.1 – Liste der Prüfungen 
+ 
+Kettenisolatoren 
+Isolator-
+ketten 
+Stützen-
+isolatoren 
+ 
+Langstäbe
+(Typ A) 
+Kappen 
+(Typ B) 
+ 
+ 
+Genormte Typprüfungen 
+Prüfung der Maße 
+Prüfung der betriebsfrequenten Stehspannung 
+unter Regen 
+Prüfung der Steh-Blitzstoßspannung, trocken 
+Prüfung der Steh-Schaltstoßspannung unter 
+Regen 
+Prüfung des thermisch-mechanischen Ver-
+haltens 
+Prüfung der mechanischen oder der elektro-
+mechanischen Nennkraft 
+Wahlfreie Typprüfungen 
+Prüfung der Funkstörspannung 
+Fremdschichtprüfung 
+Lichtbogenprüfung 
+Stoßspannungsdurchschlagprüfung 
+Prüfung des Zinkkragens 
+Prüfung der Restfestigkeit 
+Stichprobenprüfungen 
+Prüfung der Maße 
+Nachweis des Sicherungssystems und der  
+Abweichungen 
+Temperaturwechselprüfung 
+Prüfung der mechanischen oder elektro-
+mechanischen Nennkraft 
+Wärmeschockprüfung (nur für Isolatoren aus 
+vorgespanntem Glas) 
+Durchschlags-Stehspannungsprüfung 
+Porösitätsprüfung (nur für Porzellanisolatoren) 
+Verzinkungsprüfung 
+ 
+X 
+ 
+Xa) 
+Xa) 
+ 
+- 
+ 
+X 
+ 
+X 
+ 
+- 
+- 
+- 
+- 
+- 
+- 
+ 
+X 
+ 
+X 
+X 
+ 
+X 
+ 
+- 
+- 
+X 
+X 
+ 
+X 
+ 
+Xa) 
+Xa) 
+ 
+- 
+ 
+X 
+ 
+X 
+ 
+X 
+- 
+- 
+X 
+X 
+X 
+ 
+X 
+ 
+X 
+X 
+ 
+X 
+ 
+X 
+X 
+X 
+X 
+ 
+X 
+ 
+Xb) 
+X 
+ 
+Xc) 
+ 
+- 
+ 
+- 
+ 
+X 
+Xd) 
+X 
+- 
+- 
+- 
+ 
+- 
+ 
+- 
+- 
+ 
+- 
+ 
+- 
+- 
+- 
+- 
+ 
+X 
+ 
+X 
+X 
+ 
+ 
+ 
+- 
+ 
+X 
+ 
+X 
+X 
+X 
+- 
+- 
+- 
+ 
+X 
+ 
+- 
+X 
+ 
+X 
+ 
+X 
+- 
+X 
+X 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+268 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 269/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 265 
+ 
+Tabelle P.1 – Liste der Prüfungen (fortgesetzt) 
+ 
+Kettenisolatoren 
+Isolator-
+ketten 
+Stützen-
+isolatoren 
+ 
+Langstäbe 
+(Typ A) 
+Kappen 
+(Typ B) 
+ 
+ 
+Wahlfreie Stichprobenprüfungen 
+Prüfung der Funkstörspannungen 
+Stoßspannungsdurchschlagprüfung 
+Prüfung des Zinkkragens 
+Stückprüfungen 
+Sichtprüfung 
+Mechanische Prüfung 
+ 
+Elektrische Prüfung 
+Wahlfreie Stückprüfung 
+Ultraschalluntersuchung 
+ 
+- 
+- 
+- 
+ 
+X 
+X 
+ 
+- 
+ 
+X 
+ 
+X 
+X 
+X 
+ 
+X 
+X 
+ 
+Xe) 
+ 
+- 
+ 
+- 
+- 
+- 
+ 
+- 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+- 
+- 
+ 
+X 
+X 
+(h > 300 mm) 
+- 
+ 
+- 
+a) 
+Prüfung wird an einem kurzen Standardstrang oder an einem Langstabisolator durchgeführt. 
+b) 
+Prüfung wird an Isolatorketten für Anlagen mit Us ≤ 245 kV durchgeführt. 
+c) 
+Prüfung wird an Isolatorketten für Anlagen mit Us > 245 kV durchgeführt. 
+d) 
+Die Fremdschichtprüfung wird allgemein an Isolatorsträngen ohne Armaturen durchgeführt. 
+e) 
+Nur für Isolatoren aus keramischem Werkstoff anzuwenden (siehe EN 60383-1). 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+269 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 270/273 =====
+Seite 266  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang Q 
+(informativ) 
+ 
+Isolatoren 
+Q.1 Spezifikation von Isolatoren 
+Q.1.1 Bedingungen, die die Isolatorspezifikation beeinflussen 
+Isolatoren und Isolatorketten für Freileitungen werden im Hinblick auf die Einhaltung der durch die Ausle-
+gungsparameter einer Freileitung bestimmten mechanischen und elektrischen Kennwerte ausgelegt. Zu-
+sätzliche Einflussfaktoren in Bezug auf Betrieb, Instandhaltung und Umwelteinwirkungen können gegebe-
+nenfalls beachtet werden, wenn die Anforderungen an Isolatoren und Isolatorketten für Freileitungen fest-
+gelegt werden. 
+Q.1.2 Betriebliche Faktoren 
+Beispielhafte Faktoren sind: 
+- 
+angestrebte Zuverlässigkeit und angestrebte Wiedereinschaltzeit der Leitung für unterschiedliche Arten 
+von erzwungenen Abschaltungen; 
+- 
+erforderliche Lebensdauer für jede Komponente; 
+- 
+Nennspannung im Netz; 
+- 
+vorübergehende Überspannungen; 
+- 
+Isolationskoordination und Schaltverfahren; 
+- 
+elektrische Abstände. 
+Q.1.3 Anforderungen hinsichtlich Instandhaltung 
+Beispielhafte Anforderungen sind: 
+- 
+Arbeitsverfahren - Arbeiten an der Freileitung unter Spannung oder spannungsfrei; 
+- 
+Zugang zu den Leitern über die Isolatoren; 
+- 
+Verhalten von beschädigten Isolatoren, d.h. Resttragfähigkeit; 
+- 
+Vorkehrungen für die Befestigung von Instandhaltungseinrichtungen sowohl an Trag- als auch an  
+Abspannketten. 
+Q.1.4 Umweltparameter 
+Beispielhafte Parameter sind: 
+- 
+NN-Höhe und ihr Einfluss auf das Isolatorverhalten; 
+- 
+Verschmutzungsgrad und Art der Verschmutzung; 
+- 
+Vorgaben hinsichtlich Geräuschpegel oder Funkstörspannung; 
+- 
+Blitz (Blitzeinschlagdichte, keraunischer Pegel) und der Umfang von Netzschutzmaßnahmen gegen 
+Blitzauswirkungen; 
+- 
+höchste und niedrigste Umgebungstemperaturen; 
+- 
+Wahrnehmbarkeit, z.B. Farbe der Isolatoren; 
+- 
+Vandalismus. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+270 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 271/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 267 
+ 
+Q.2 Isolatorauswahl 
+Zusätzlich zu den auf der Grundlage der Freileitungsauslegungsparameter festgelegten elektrischen und 
+mechanischen Kennwerte und der in Q.1 im einzelnen angegebenen Faktoren sollte auch der Wahl von 
+Isolatoren für bestimmte Anwendungen Beachtung geschenkt werden. Diese Überlegungen können umfas-
+sen: 
+- 
+Isolatoren aus keramischem Material oder Glas, z.B. Kettenisolatoren als Kappen- oder als Langstab-
+isolatoren, Stützenisolatoren; 
+- 
+Verbundisolatoren; 
+- 
+Maße, einschließlich der Strang- und Kettenlänge, Abstand der einzelnen Isolatoren, Durchmesser, 
+Kriechweg, Schirmprofil und Verbindungs- oder Endarmaturen; 
+- 
+Stehspannungen; 
+- 
+Korrosionsschutz, d.h. Verzinkung von Metallteilen, Zinkkragen an Kappenisolatoren, Fetten der Ver-
+bindungen; 
+- 
+Gewicht der Isolatoren, der Stränge und der Gesamtketten. 
+Q.3 Verpackung und Lieferung 
+Isolatoren sollten so verpackt werden, dass sie sicher an die Baustelle geliefert werden können. Die Größe 
+und das Gewicht der einzelnen Packeinheiten sollten für eine bequeme Handhabung vor Ort und während 
+der Freileitungserrichtung geeignet sein, d.h. sie sollten die Anforderungen des Auftraggebers erfüllen. 
+Die Größe und das Gewicht von Großpackeinheiten sollten auf die Liefermittel und Geräte für die mechani-
+sche Handhabung abgestimmt sein. 
+Die Ausführung von Schutzverschlägen sollte den Isolatoren genügenden Schutz geben und die Isolatorein-
+heiten stützen und, soweit wie möglich, Stoßschäden oder Schirmschäden unter normalen, während des 
+Transports und der Handhabung vor Ort anzutreffenden Bedingungen vermeiden. 
+Die Verpackung sollte alle Anforderungen für die Entsorgung des Verpackungsmaterials erfüllen. 
+Q.4 Vorsichtsmaßnahmen während des Einbaus 
+Während des Einbaus sollten die Isolatoren sorgfältig behandelt werden, um Schäden zu vermeiden. In eini-
+gen Fällen kann die Verwendung mechanischer Hubeinrichtungen vorteilhaft sein. Sowohl beim manuellen 
+als auch mechanischen Anhub von Isolatoren in ihre Einbaulage sollte die Sicherheit der arbeitenden Per-
+sonen angemessen beachtet werden. 
+Wenn längere Isolatorstränge oder -ketten angehoben werden, wird empfohlen, einen Verschlag oder eine 
+andere Einrichtung zu verwenden, um Biegebelastungen gering zu halten und jedes Risiko der Verdrehung 
+von Verbindungen der Kettenisolatoren auszuschließen oder Verbundisolatoren nicht zu beschädigen. 
+Isolatoren mit halbstarren Verbindungen (z.B. Gabeln, Laschen oder Ösen) können Schaden erleiden, wenn 
+sie hohen Torsionslasten ausgesetzt sind. Geeignete Vorkehrungen für das Vermeiden von Spannungen 
+können daher während der Seilzugsarbeiten erforderlich sein. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+271 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 272/273 =====
+Seite 268  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Anhang R 
+(informativ) 
+ 
+Freileitungszubehör – Freileitungsarmaturen 
+R.1 Festlegung und Auswahl von Armaturen 
+R.1.1 Einflussfaktoren, die die Armaturenauslegung und -auswahl beeinflussen 
+Armaturen für Freileitungen werden im Hinblick auf die Einhaltung der durch die Auslegungsparameter einer 
+Freileitung bestimmten mechanischen und elektrischen Kennwerte bemessen. Zusätzliche Einflussfaktoren 
+bezüglich Betrieb, Instandhaltung und Umwelteinwirkungen können gegebenenfalls beachtet werden, wenn 
+die Anforderungen an Armaturen für Freileitungen festgelegt und bestimmte Ausführungen für die Verwen-
+dung in einer Freileitung ausgewählt werden. 
+R.1.2 Betriebliche Einflussfaktoren 
+Beispielhafte Faktoren sind: 
+- 
+angestrebte Zuverlässigkeit, Betriebssicherheit und Personensicherheit und angestrebte Wiederein-
+schaltzeit der Leitung für unterschiedliche Arten von erzwungenen Abschaltungen; 
+- 
+geforderte Lebensdauer für jede Komponente; 
+- 
+Bereich der Betriebsspannungen; 
+- 
+Stromtragfähigkeit; 
+- 
+Verhalten im Kurzschlussfall; 
+- 
+Vorgaben hinsichtlich elektrischer Verluste; 
+- 
+Beschränkung der Beanspruchungen durch geeignete Klemmenausführung. 
+R.1.3 Anforderungen hinsichtlich der Instandhaltung 
+Beispielhafte Anforderungen sind: 
+- 
+Arbeitsverfahren – Arbeiten an der Freileitung unter Spannung oder spannungsfrei; 
+- 
+Zugang zu den Leitern über Isolatoren und Armaturen; 
+- 
+Vorkehrungen für die Befestigung von Instandhaltungseinrichtungen sowohl an Trag- als auch an Ab-
+spannketten; 
+- 
+Zugang über die Leiter zu Armaturen im Feld (z.B. Feldabstandhalter und Sichtmarker). 
+R.1.4 Umwelteinflüsse 
+Beispielhafte Parameter sind: 
+- 
+Verhalten bei winderregten Schwingungen; 
+- 
+Vorgaben für Geräuschpegel und Funkstörspannungen; 
+- 
+Vandalismus; 
+- 
+Sichtmarker für Vögel und Flugzeuge; 
+- 
+Bereich der Umgebungstemperatur und höchste und niedrigste Temperatur; 
+- 
+atmosphärische Verschmutzung, die den Korrosionsschutz beeinflusst; 
+- 
+Wind- und Eisbelastungen, die die Bemessung beeinflussen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+272 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 273/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 269 
+ 
+R.2 Verpackung und Lieferung von Armaturen 
+Die Armaturen sollten in einer für eine sichere Lieferung an die Baustelle geeigneten Weise verpackt wer-
+den. Größe und Gewicht einzelner Packeinheiten sollten für eine bequeme Handhabung vor Ort geeignet 
+sein. 
+Größe und Gewicht von Gesamtpackeinheiten sollten die aus den Liefermitteln und den Begrenzungen für 
+die mechanische Handhabung folgenden Anforderungen erfüllen. 
+Die Verpackung sollte alle Anforderungen für die Entsorgung des Verpackungsmaterials erfüllen. 
+R.3 Vorsichtsmaßnahmen während des Einbaus von Armaturen 
+Während des Einbaus sollten die Armaturen mit ausreichender Sorgfalt behandelt werden, um Schäden zu 
+vermeiden. In einigen Fällen ist die Verwendung von mechanischen Hubhilfen angezeigt. Unabhängig da-
+von, ob die Armaturen manuell oder mechanisch an ihren Einbauort angehoben werden, sollte den Sicher-
+heitsbestimmungen für das Arbeitspersonal entsprechende Beachtung geschenkt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+273 von 273
+www.ris.bka.gv.at

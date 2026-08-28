@@ -1,0 +1,1218 @@
+
+
+===== PAGE 1/45 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8626 
+ 
+Ausgabe: 2012-11-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Stecker und Steckdosen für den Hausgebrauch und 
+ähnliche Zwecke  
+Lehren zur Überprüfung der Funktionsmaße 
+ 
+Plugs and socket-outlets for household and similar purposes – 
+Theories for the examination of the function mass 
+ 
+Fiches et prises de courant pour usages domestiques et analogues –  
+Enseignements visant le réexamen de la masse de fonction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.120.30 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/Komitee 
+ 
+ 
+TK IS 
+ 
+Installationsmaterial und Schaltgeräte 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Austrian Standards Institute 
+ 
+Copyright © OVE/Austrian Standards Institute – 2012.  
+Alle Rechte vorbehalten! Nachdruck oder 
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch 
+Austrian Standards Institute 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@as-plus.at 
+Internet: www.as-plus.at 
+Webshop: www.as-plus.at/shop 
+Tel.: +43 1 213 00-444 
+Fax: +43 1 213 00-818 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: www.ove.at 
+Webshop: www.ove.at/webshop 
+Tel.: +43 1 587 63 73 
+Fax: +43 1 587 63 73-99 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+1 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 2/45 =====
+ÖVE/ÖNORM E 8626:2012 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................4 
+1 
+Anwendungsbereich .............................................................................................................................5 
+2 
+Normative Verweisungen ......................................................................................................................5 
+3 
+Begriffe ...................................................................................................................................................5 
+4 
+Lehre C1 zur Prüfung der Stecker-Einführungsöffnungen ...............................................................5 
+5 
+Lehre C2 für die Prüfung der kleinsten Öffnung und der kleinsten Abzugskraft der 
+Kontaktbuchsen .....................................................................................................................................6 
+6 
+Lehre C3 zum Nachweis, dass sich zweipolige Stecker in die Steckdose 16 A, AC 250 V 
+einführen lassen ....................................................................................................................................8 
+7 
+Lehre C4 zum Nachweis, dass sich in zweipolige Steckdosen 16 A, AC 250 V Stecker mit 
+Schutzkontakten einführen lassen ......................................................................................................9 
+8 
+Lehre C7 zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und der  
+Buchse von Steckdosen 16 A, AC 250 V .......................................................................................... 10 
+9 
+Lehre C8 zur Überprüfung des Leitungskanals ............................................................................... 11 
+10 
+Lehre C9 für die Überprüfung des Durchmessers der Steckerstifte ............................................. 11 
+11 
+Gut-Lehren C10 für die Prüfung des Stiftabstandes ....................................................................... 12 
+12 
+Lehre C11 zur Prüfung der größten Öffnung der Kontaktbuchsen von Stecker und  
+Steckdosen 16 A, AC 250 V ............................................................................................................... 13 
+13 
+Lehre C12 zum Nachweis, dass sich Stecker mit Schutzkontakten in Steckdosen einführen 
+lassen ................................................................................................................................................... 14 
+14 
+Lehre C13 zum Nachweis, dass sich zweipolige Stecker ohne Schutzkontakte für Geräte  
+der Schutzklasse II 2,5 A, AC 250 V in Steckdosen einführen lassen ........................................... 15 
+15 
+Lehre C18 zur Prüfung auf Unmöglichkeit des einpoligen Einführens ......................................... 16 
+16 
+Lehre C19 zum Nachweis, dass ein einpoliges Einführen des Steckers in die Steckdose  
+nicht möglich ist ................................................................................................................................. 17 
+17 
+Lehre C20 zum Nachweis, dass sich Winkelstecker in IPX0 zweipolige Steckdosen und 
+ortsfeste IPX4 oder IPX5 Steckdosen ohne Dichtbereich; 16 A, AC 250 V einführen lassen ..... 19 
+18 
+Lehre C21 zur Überprüfung der voreilenden Schutzkontaktverbindung von Steckdosen;  
+16 A, AC 250 V ..................................................................................................................................... 20 
+19 
+Lehre C22 zur Prüfung der Innenkontur der Steckdosen mit seitlichen Schutzkontakten ......... 21 
+20 
+Lehre C23 zur Prüfung der größten Abzugskraft des Steckers ..................................................... 22 
+21 
+Lehre C24 zur Prüfung einer möglichen Verformung von seitlichen Schutz-kontakten ............. 26 
+22 
+Lehre C25 zur Prüfung des Umrisses von Kappen und Abdeckungen ........................................ 27 
+23 
+Lehre C26 zur Prüfung von Rillen, Löcher und Hinterschneidungen ........................................... 30 
+24 
+Lehren für Zweipolige Einbausteckdosen und nicht abklemmbare Kupplungs-steckdosen; 
+2,5 A, AC 250 V .................................................................................................................................... 31 
+25 
+Lehren für Steckvorrichtungen IPX4 ................................................................................................ 35 
+26 
+Lehre C27 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter hindurch  
+und nach der Prüfung des bestimmungsgemäßen Betriebes ....................................................... 38 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+2 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 3/45 =====
+ÖVE/ÖNORM E 8626:2012 
+3 
+27 
+Lehre C28 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter hindurch  
+und von aktiven Teilen von Steckdosen mit erhöhtem Schutz ...................................................... 39 
+28 
+Lehre C29 zur Überprüfung der Kriech- und Luftstrecke für Unterputzsteckdosen .................... 40 
+29 
+Lehre C30 zur Überprüfung der Nichteinführbarkeit zweipoliger Stecker ohne  
+Schutzkontakt ...................................................................................................................................... 41 
+30 
+Ausführung der Lehren....................................................................................................................... 41 
+Literaturverzeichnis ......................................................................................................................................... 42 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+3 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 4/45 =====
+ÖVE/ÖNORM E 8626:2012 
+4 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 
+1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Änderungen 
+Diese 
+ÖVE/ÖNORM 
+ist 
+das 
+Ergebnis 
+einer 
+redaktionellen 
+Überarbeitung 
+von 
+ÖVE/ÖNORM  
+E 8626:2010 und der Anpassung aufgrund der Überarbeitung nachfolgender Normen: 
+– 
+ÖVE/ÖNORM E 8610:2010, 
+– 
+ÖVE/ÖNORM E 8611:2010, 
+– 
+ÖVE/ÖNORM E 8612:2010, 
+– 
+ÖVE/ÖNORM E 8613:2010, 
+– 
+ÖVE/ÖNORM E 8620 Reihe:2010, 
+– 
+ÖVE/ÖNORM E 8622 Reihe:2010, 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt ÖNORM E 6622-9:1996-04, ÖNORM E 6622-10:1986-11, ÖNORM  
+E 6622-11:1996-04 und ÖVE/ÖNORM E 8626:2010. Da die zu ersetzende ÖNORM E 6622-9:1996-04, 
+ÖNORM E 6622-10:1986-11 und ÖNORM E 6622-11:1996-04 mit der ETV 2002/A2 verbindlich erklärt 
+wurden, kann die Zurückziehung dieser Bestimmungen erst mit Erscheinen einer neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+4 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 5/45 =====
+ÖVE/ÖNORM E 8626:2012 
+5 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für Lehren zur Überprüfung der Funktionsmaße von Steckern gemäß ÖVE/ÖNORM  
+E 8620 Reihe, ÖVE/ÖNORM E 8611 und ÖVE/ÖNORM E 8613 sowie Steckdosen gemäß ÖVE/ÖNORM 
+E 8622 Reihe, ÖVE/ÖNORM E 8610 und ÖVE/ÖNORM E 8612 für den Hausgebrauch und ähnliche Zwecke. 
+Sie ist gemeinsam mit ÖVE/ÖNORM E 8684-1 und ÖVE-IG/EN 50075 anzuwenden.  
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8684-1, Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE-IG/EN 50075, Flache, nicht wiederanschließbare, zweipolige Stecker, 2,5 A, AC 250 V, mit Leitung  
+für die Verbindung von Klasse II-Geräten für den Haushalt und ähnliche Zwecke 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM E 8684-1 und  
+ÖVE-IG/EN 50075. 
+4 
+Lehre C1 zur Prüfung der Stecker-Einführungsöffnungen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Diese Lehre darf sich nicht zwanglos in die Einführungsöffnungen einführen lassen. 
+Abmessungen für Lehre C1 gemäß Tabelle 1 und Bild 1. 
+Tabelle 1 – Abmessungen für Lehre C1 
+Material der Buchsenabdeckung der Steckdose oder 
+Kupplungssteckdose 
+Keramik oder Gummi 
+Andere Werkstoffe 
+Durchmesser D 
+mm 
+6 (+0,01/–0) 
+5,8 (+0,01/–0) 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+5 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 6/45 =====
+ÖVE/ÖNORM E 8626:2012 
+6 
+Maße in mm 
+Bild 1 – Lehre C1 zur Prüfung der Stecker-Einführungsöffnungen 
+5 
+Lehre C2 für die Prüfung der kleinsten Öffnung und der kleinsten Abzugskraft der 
+Kontaktbuchsen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1 und 22.2 (Bild 19). 
+Diese Lehren dürfen nicht unter dem Eigengewicht innerhalb von 30 s aus der Kontaktbuchse herausfallen. 
+Abmessungen für die Lehren C2 gemäß Tabelle 2 und Bild 2. 
+Tabelle 2 – Abmessungen für die Lehre C2 
+Bemessungswerte der 
+Steckvorrichtung 
+Lehre 
+Durchmesser 
+D 
+Masse 
+mm 
+kg 
+Steckdose oder 
+Kupplungssteckdose 
+2,5 A, 250 V; 
+16 A, 250 V 
+C2A 
+3,8  0,05 
+0,2 
+Schutzkontaktbuchse des 
+Steckers 
+16 A, 250 V 
+C2B 
+4,6  0,05 
+0,4 
+Schutzkontaktbuchse der 
+Steckdose oder 
+Kupplungssteckdose 
+16 A, 400 V 
+C2C 
+– 
+0,3 
+ 
+D 
+50,5 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+6 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 7/45 =====
+ÖVE/ÖNORM E 8626:2012 
+7 
+Maße in mm 
+ 
+ 
+ 
+Bild 2a – Lehre C2A und C2B 
+Bild 2b – Lehre C2C 
+Bild 2 – Lehre C2 für die Prüfung der kleinsten Öffnung und der kleinsten  
+Abzugskraft der Kontaktbuchsen 
+Ø 8  2 
+D 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+7 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 8/45 =====
+ÖVE/ÖNORM E 8626:2012 
+8 
+6 
+Lehre C3 zum Nachweis, dass sich zweipolige Stecker in die Steckdose 16 A, 
+AC 250 V einführen lassen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Die Stiftpaare der Lehrenseiten A und B müssen sich leicht und bis zur Berührung der Stirnflächen einführen 
+lassen. 
+Abmessungen für die Lehren C3 gemäß Tabelle 2 und Bild 3. 
+Maße in mm 
+Bild 3 – Lehre C3 zum Nachweis, dass sich zweipolige Stecker in die  
+Steckdose 16 A, AC 250 V einführen lassen 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+8 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 9/45 =====
+ÖVE/ÖNORM E 8626:2012 
+9 
+7 
+Lehre C4 zum Nachweis, dass sich in zweipolige Steckdosen 16 A, AC 250 V 
+Stecker mit Schutzkontakten einführen lassen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Die Stifte der Lehre müssen sich leicht und bis zur Berührung der Stirnflächen in die Steckdose einführen 
+lassen. 
+Abmessungen für die Lehre C4 gemäß Bild 4. 
+ 
+Maße in mm 
+ 
+Bild 4 – Lehre C4 zum Nachweis, dass sich in zweipolige Steckdosen 16 A, AC 250 V 
+Stecker mit Schutzkontakten einführen lassen 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+9 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 10/45 =====
+ÖVE/ÖNORM E 8626:2012 
+10 
+8 
+Lehre C7 zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und 
+der Buchse von Steckdosen 16 A, AC 250 V 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für die Lehre C7 gemäß Tabelle 3 und Bild 5. 
+Tabelle 3 – Abmessungen für die Lehre C7 
+Lehre 
+Durchmesser D 
+mm 
+C7A 
+5,45 (+0,02/–0) 
+C7B 
+5,60 (+0,02/–0) 
+C7C 
+5,75 (+0,02/–0) 
+C7D 
+5,95 (+0,02/–0) 
+ 
+ 
+Maße in mm 
+Bild 5 – Lehre C7 zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose  
+und der Buchse von Steckdosen 16 A, AC 250 V 
+Von den angegebenen Lehren C7A bis C7D ist die Lehre mit dem größten Durchmesser D zu benutzen, die 
+sich in die Steckerstiftöffnung vollständig einführen lässt. Der kurze Lehrenstift darf die Kontaktbuchsen der 
+Steckdose nicht erreichen, der lange Lehrenstift muss die Kontaktbuchsen berühren. 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+10 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 11/45 =====
+ÖVE/ÖNORM E 8626:2012 
+11 
+9 
+Lehre C8 zur Überprüfung des Leitungskanals 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1 und 13.4. 
+Bei Aufputz-Steckdosen mit Leitungskanal muss es möglich sein, die Lehre, ohne dass sie vorsteht, in den 
+Leitungskanal einzuführen. 
+Abmessungen für die Lehre C8 gemäß Bild 6. 
+Maße in mm 
+Bild 6 – Lehre C8 zur Überprüfung des Leitungskanals 
+10 Lehre C9 für die Überprüfung des Durchmessers der Steckerstifte 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Es muss möglich sein, die Gut-Lehre leicht über den Stift zu führen. 
+Es darf nicht möglich sein, die Schlecht-Lehre zwanglos über den Stift zu führen. 
+Abmessungen für die Lehre C9 gemäß Tabelle 4 und Bild 7. 
+Tabelle 4 – Abmessungen für die Lehre C9 
+Nennstrom 
+Lehre 
+D 
+B 
+A 
+mm 
+mm 
+2,5 
+C9A 
+4,06 (+0,01/–0) 
+3,94 (+0/0,01) 
+16 
+C9B 
+4,86 (+0,01/–0) 
+4,74 (+0/0,01) 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+11 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 12/45 =====
+ÖVE/ÖNORM E 8626:2012 
+12 
+Maße in mm 
+ 
+ 
+ 
+Bild 7a – Gut-Lehren C9A und C9B 
+Bild 7b – Schlecht-Lehren C9A und C9B 
+Bild 7 – Lehre C9 für die Überprüfung des Durchmessers der Steckerstifte 
+11 Gut-Lehren C10 für die Prüfung des Stiftabstandes 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Es muss möglich sein, die Lehre C10A leicht über die Stifte zu führen und die Lehre C10B leicht zwischen 
+den Stiften durchzuführen. 
+Abmessungen für die Lehre C10 gemäß Bild 8. 
+Maße in mm 
+ 
+ 
+ 
+Bild 8a – Lehre C10A 
+Bild 8b – Lehre C10B 
+Bild 8 – Lehre C10, Gut-Lehren für die Prüfung des Stiftabstandes 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+12 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 13/45 =====
+ÖVE/ÖNORM E 8626:2012 
+13 
+12 Lehre C11 zur Prüfung der größten Öffnung der Kontaktbuchsen von Stecker und 
+Steckdosen 16 A, AC 250 V 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Es muss möglich sein, diese Lehre leicht in die Kontaktbuchsen einzuführen.  
+Abmessungen für die Lehre C11 gemäß Bild 9. 
+Maße in mm 
+Bild 9 – Lehre C11 zur Prüfung der größten Öffnung der Kontaktbuchsen von  
+Stecker und Steckdosen 16 A, AC 250 V 
+Ø 8  2
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+13 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 14/45 =====
+ÖVE/ÖNORM E 8626:2012 
+14 
+13 Lehre C12 zum Nachweis, dass sich Stecker mit Schutzkontakten in Steckdosen 
+einführen lassen  
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Es muss möglich sein, Stecker mit Schutzkontakten leicht und bis zur Berührung der Stirnflächen in die Lehre 
+einzuführen.  
+Abmessungen für die Lehre C12 gemäß Bild 10. 
+Maße in mm 
+Bild 10 – Lehre C12 zum Nachweis, dass sich Stecker mit Schutzkontakten in  
+Steckdosen einführen lassen 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+14 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 15/45 =====
+ÖVE/ÖNORM E 8626:2012 
+15 
+14 Lehre C13 zum Nachweis, dass sich zweipolige Stecker ohne Schutzkontakte für 
+Geräte der Schutzklasse II 2,5 A, AC 250 V in Steckdosen einführen lassen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Es muss möglich sein, die Stecker in die Lehre ohne übermäßige Kraft so einzuführen, dass ihre Stirnfläche 
+die Oberfläche der Lehre berührt. 
+Abmessungen für die Lehre C13 gemäß Bild 11. 
+Maße in mm 
+ 
+Bild 11 – Lehre C13 zum Nachweis, dass sich zweipolige Stecker ohne Schutzkontakt für Geräte  
+der Schutzklasse II 2,5 A, AC 250 V in Steckdosen einführen lassen 
+ 
+0,05
+0 
+5,5
+ 
+Ø
+
+0,05
+0 
+4,07
+ 
+Ø
+
+0,05
+19 
+1
+0,
+0 7 
+Ø
+
+20 min. 
+Kanten leicht gerundet 
+0,1
+ 
+ 4 
+0,1
+ 
+ 
+4,5 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+15 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 16/45 =====
+ÖVE/ÖNORM E 8626:2012 
+16 
+15 Lehre C18 zur Prüfung auf Unmöglichkeit des einpoligen Einführens 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.3. 
+Abmessungen für die Lehre C18 gemäß Bild 12. 
+Anwendung der Lehre C18 siehe Bild 13. 
+Maße in mm 
+ 
+Bild 12 – Lehre C18 zur Prüfung auf Unmöglichkeit des einpoligen Einführens 
+Bild 12a – Lehre C18A
+Bild 12a – Lehre C18B
+Lehre C18A 
+Lehre C18B 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+16 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 17/45 =====
+ÖVE/ÖNORM E 8626:2012 
+17 
+Es darf nicht möglich sein, eine Kontaktbuchse mit einem Stift der Lehre zu berühren. 
+Bild 13 – Anwendung Lehre C18 
+16 Lehre C19 zum Nachweis, dass ein einpoliges Einführen des Steckers in die 
+Steckdose nicht möglich ist 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.3. 
+Abmessungen für die Lehre C19 gemäß Tabelle 5 und Bild 14. 
+Anwendung der Lehre C19 siehe Bild 15. 
+Tabelle 5 – Abmessungen für die Lehren C19 
+Nennstrom 
+Lehre 
+C 
+D 
+A 
+mm 
+mm 
+2,5 
+A 
+16,4  0,05 
+12,3  0,1 
+16 
+B 
+15,6  0,05 
+13,0  0,1 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+17 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 18/45 =====
+ÖVE/ÖNORM E 8626:2012 
+18 
+Maße in mm 
+Bild 15 – Anwendung Lehre C19A und Lehre C19B 
+Die Masse der Lehre muss betragen: 
+– 
+0,25 kg für Stecker aus starrem Werkstoff 
+– 
+1 kg für andere Stecker. 
+Die Lehren C19A und C19B sind wie dargestellt, zwischen die Steckerstifte zu klemmen und 1 min dort zu 
+belassen. Sie darf durch ihr Eigengewicht die beiden Steckerstifte nicht so weit auseinander drücken, dass sie 
+die Stirnfläche des Steckers berührt. 
+Bild 14 – Lehre C19A und Lehre C19B zum Nachweis, dass ein einpoliges Einführen des
+Steckers in die Steckdose nicht möglich ist 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+18 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 19/45 =====
+ÖVE/ÖNORM E 8626:2012 
+19 
+17 Lehre C20 zum Nachweis, dass sich Winkelstecker in IPX0 zweipolige 
+Steckdosen und ortsfeste IPX4 oder IPX5 Steckdosen ohne Dichtbereich;  
+16 A, AC 250 V einführen lassen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre C20 gemäß Bild 16. 
+Nicht angegebene Einzelheiten sind zweckentsprechend zu wählen. 
+Die Stifte der Lehre müssen sich leicht und bis zur Berührung der Stirnflächen in die Steckdose einführen 
+lassen. 
+Diese Lehre ist nicht anzuwenden, wenn das Maß der Steckdose von 18,0 mm (Topfmaß) für das Erreichen 
+der Schutzart IPX4 oder höher überschritten wird. 
+Maße in mm 
+6
+ 
+Bild 16 – Lehre C20 zum Nachweis, dass sich Winkelstecker in IPX0 zweipolige Steckdosen und 
+ortsfeste IPX4 oder IPX5 Steckdosen ohne Dichtbereich; 16 A, AC 250 V einführen lassen 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+19 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 20/45 =====
+ÖVE/ÖNORM E 8626:2012 
+20 
+18 Lehre C21 zur Überprüfung der voreilenden Schutzkontaktverbindung von 
+Steckdosen; 16 A, AC 250 V 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre C21 gemäß Bild 17. 
+Anwendung der Lehre C21 siehe Bild 18. 
+Maße in mm 
+ 
+Bild 17 – Lehre C21 zur Überprüfung der voreilenden Schutzkontaktverbindung  
+von Steckdosen; 16 A, AC 250 V 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+20 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 21/45 =====
+ÖVE/ÖNORM E 8626:2012 
+21 
+Kontaktstück
+L
+N
+Schutzkontakt
+Kontakt-
+buchse
+Prüfstift
+ 
+Bild 18 – Anwendung Lehre C21 
+Die Lehre wird soweit in die Steckdose eingeführt bis das Kontaktstück und der Schutzkontakt Verbindung 
+haben (Lampe leuchtet). Der Schutzkontakt und die Kontaktbuchse dürfen keinen Durchgang haben. 
+19 Lehre C22 zur Prüfung der Innenkontur der Steckdosen mit seitlichen 
+Schutzkontakten 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre C22 gemäß Bild 19. 
+Es darf nicht möglich sein, die Lehre mit einer Kraft von 75 N einzuführen. 
+Maße in mm 
+ 
+Bild 19 – Lehre C22 zur Prüfung der Innenkontur der Steckdosen mit seitlichen Schutzkontakten 
+Werkstoffe Stirnplatte: Gummi oder Elastomere mit einer Härte von (80 ± 2) Shore A 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+21 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 22/45 =====
+ÖVE/ÖNORM E 8626:2012 
+22 
+20 Lehre C23 zur Prüfung der größten Abzugskraft des Steckers  
+20.1 Lehre C23A zur Prüfung der größten Abzugskraft des Steckers 2P + X AC 250 V 16 A 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1. 
+Abmessungen für Lehre C23A gemäß Bild 20. 
+Diese Lehre darf unter den Prüfbedingungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1 nicht in der 
+Steckdose stecken bleiben. 
+Maße in mm 
+Bild 20 – Lehre C23A zur Prüfung der größten Abzugskraft des Steckers 2P + X AC 250 V 16 A 
+Werkstoff für Lehre C23A 
+Griff: 
+Isolierstoff 
+Sorte nach Wahl des Herstellers 
+Körper und Stifte: 
+Nichtrostender gehärteter Stahl 
+Sorte nach Wahl des Herstellers 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+22 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 23/45 =====
+ÖVE/ÖNORM E 8626:2012 
+23 
+20.2 Lehre C23B zur Prüfung der größten Abzugskraft des Steckers  
+3P + N + X AC 400/230 V 16 A 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1. 
+Abmessungen für Lehre C23B gemäß Bild 21. 
+Diese Lehre darf unter den Prüfbedingungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1 nicht in der 
+Steckdose stecken bleiben. 
+Maße in mm 
+ 
+Bild 21 – Lehre C23B zur Prüfung der größten Abzugskraft des Steckers 3P + N + X AC 400/230 V 16 A 
+Werkstoff für Lehre C23B 
+Griff: 
+Isolierstoff 
+Sorte nach Wahl des Herstellers 
+Körper und Stifte: 
+Nichtrostender gehärteter Stahl 
+Sorte nach Wahl des Herstellers 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+23 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 24/45 =====
+ÖVE/ÖNORM E 8626:2012 
+24 
+20.3 Lehre C23C zur Prüfung der größten Abzugskraft des Steckers 
+3P + N + X AC 400/230 V 25 A 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1. 
+Abmessungen für Lehre C23C gemäß Bild 22. 
+Diese Lehre darf unter den Prüfbedingungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1 nicht in der 
+Steckdose stecken bleiben. 
+Maße in mm 
+ 
+Bild 22 – Lehre C23C zur Prüfung der größten Abzugskraft des Steckers 3P + N + X AC 400/230 V 25 A 
+Werkstoff für Lehre C23C 
+Griff: 
+Isolierstoff 
+Sorte nach Wahl des Herstellers 
+Körper und Stifte: 
+Nichtrostender gehärteter Stahl 
+Sorte nach Wahl des Herstellers 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+24 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 25/45 =====
+ÖVE/ÖNORM E 8626:2012 
+25 
+20.4 Lehre C23D zur Prüfung der größten Abzugskraft des Steckers 2P AC 250 V 2,5 A 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1. 
+Abmessungen für Lehre C23D gemäß Bild 23. 
+Diese Lehre darf unter den Prüfbedingungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 22.1 nicht in der 
+Steckdose stecken bleiben. 
+Maße in mm 
+ 
+Bild 23 – Lehre C23D zur Prüfung der größten Abzugskraft des Steckers 2P AC 250 V 2,5 A 
+Werkstoff für Lehre C23D 
+Griff: 
+Isolierstoff 
+Sorte nach Wahl des Herstellers 
+Körper und Stifte: 
+Nichtrostender gehärteter Stahl 
+Sorte nach Wahl des Herstellers 
+19,2 -0,1
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+25 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 26/45 =====
+ÖVE/ÖNORM E 8626:2012 
+26 
+21 Lehre C24 zur Prüfung einer möglichen Verformung von seitlichen Schutz-
+kontakten 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.6. 
+Diese Lehre muss unter den Prüfbedingungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.6 die 
+Anforderungen gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9 erfüllen. 
+Abmessungen für Lehre C24 gemäß Bild 24. 
+Maße in mm 
+ 
+Bild 24 – Lehre C24 zur Prüfung einer möglichen Verformung von seitlichen Schutzkontakten 
+6
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+26 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 27/45 =====
+ÖVE/ÖNORM E 8626:2012 
+27 
+22 Lehre C25 zur Prüfung des Umrisses von Kappen und Abdeckungen 
+22.1 Lehre C25 zur Prüfung des Umrisses von Kappen und Abdeckungen 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 24.17 (Bild 32). 
+Die Anwendung dieser Lehre und die Prüfungsbewertung erfolgt nach ÖVE/ÖNORM E 8684-1:2010, 
+Abschnitt 24.17. 
+Abmessungen für Lehre C25 gemäß Bild 25. 
+Maße in mm 
+Bild 25 – Lehre C25 zur Prüfung des Umrisses von Kappen und Abdeckungen (Dicke ca. 2 mm) 
+Seite A 
+Seite C 
+Seite B 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+27 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 28/45 =====
+ÖVE/ÖNORM E 8626:2012 
+28 
+22.2 Beispiele für die Anwendung der Lehre C25 an Kappen, die ohne Schrauben auf einer 
+festen Montagefläche oder Trägerfläche befestigt sind 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 24.17 (Bild 33). 
+Anwendung 1 der Lehre C25 siehe Bild 26. 
+Es bedeutet: 
+a 
+Zwischenstück mit der gleichen Dicke wie das Trägerteil 
+Bild 26 – Anwendung 1 der Lehre C25 
+Montagefläche 
+Steckdose 
+Montagefläche 
+Trägerfläche 
+Steckdose 
+Zwischenstück a 
+Montagefläche 
+Steckdose 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+28 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 29/45 =====
+ÖVE/ÖNORM E 8626:2012 
+29 
+22.3 Beispiele für die Anwendung der Lehre C25 an Kappen, die ohne Schrauben auf einer 
+festen Montagefläche oder Trägerfläche befestigt sind  
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 24.17 (Bild 34). 
+Anwendungen der Lehre C25 siehe Bild 27. 
+Maße in mm 
+Bild 27 – Anwendungen der Lehre C25 
+ 
+Anwendung a und Anwendung b 
+– 
+nicht bestanden 
+Anwendung c, Anwendung d, Anwendung e und Anwendung f 
+– 
+bestanden 
+(die 
+Übereinstimmung 
+muss 
+jedoch 
+noch 
+mit 
+den 
+Anforderungen 
+gemäß 
+ÖVE/ÖNORM E 8684-1:2010, 24.18 durch Verwendung der Lehre C26 geprüft werden) 
+Bild 27.2 – Anwendung d
+Bild 27.4 – Anwendung e
+Bild 27.6 – Anwendung f 
+Bild 27.1 – Anwendung a
+Bild 27.3 – Anwendung b
+Bild 27.5 – Anwendung c
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+29 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 30/45 =====
+ÖVE/ÖNORM E 8626:2012 
+30 
+23 Lehre C26 zur Prüfung von Rillen, Löcher und Hinterschneidungen 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 24.18 (Bild 35 und Bild 36). 
+Die Anwendung dieser Lehre und die Prüfungsbewertung erfolgt nach ÖVE/ÖNORM E 8684-1:2010, 
+Abschnitt 24.18. 
+Abmessungen für Lehre C26 gemäß Bild 28. 
+Anwendungsrichtungen der Lehre C26 siehe Bild 29. 
+Maße in mm 
+Bild 28 – Lehre C26 zur Prüfung von Rillen, Löcher und Hinterschneidungen 
+ 
+ 
+ 
+Bild 29 – Darstellung der Anwendungsrichtungen der Lehre C26 
+Prüfstift (Metall)
+rechtwinkelige scharfe Kanten 
+Montagefläche 
+Steckdose 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+30 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 31/45 =====
+ÖVE/ÖNORM E 8626:2012 
+31 
+24 Lehren für Zweipolige Einbausteckdosen und nicht abklemmbare Kupplungs-
+steckdosen; 2,5 A, AC 250 V 
+24.1 Lehre CF1 zur Prüfung der Stecker-Einführungsöffnungen 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre CF1 gemäß Bild 30. 
+Diese Lehre darf sich nicht zwanglos in die Einführungsöffnungen einführen lassen. 
+Maße in mm 
+Bild 30 – Lehre CF1 zur Prüfung der Stecker-Einführungsöffnungen 
+01
+,0
+0
+5
+
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+31 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 32/45 =====
+ÖVE/ÖNORM E 8626:2012 
+32 
+24.2 Lehre CF3 zum Nachweis, dass sich zweipolige Stecker 2,5 A (Flachstecker) in die 
+Steckdose einführen lassen 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre CF3 gemäß Bild 31. 
+Die Stiftpaare beider Lehrenseiten müssen sich leicht und bis zur Berührung der Stirnflächen einführen 
+lassen. 
+Maße in mm 
+Bild 31 – Lehre CF3 zum Nachweis, dass sich zweipolige Stecker 2,5 A (Flachstecker)  
+in die Steckdose einführen lassen 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+32 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 33/45 =====
+ÖVE/ÖNORM E 8626:2012 
+33 
+24.3 Lehre CF7A zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und 
+der Buchse von Steckdosen 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre CF7A gemäß Bild 32. 
+Maße in mm 
+ 
+Bild 32 – Lehre CF7A zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und der 
+Buchse von Steckdosen 
+Der kurze Lehrenstift darf die Kontaktbuchsen der Steckdose nicht erreichen, der lange Lehrenstift muss die 
+Kontaktbuchse berühren. 
+24.4 Lehre CF7B zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und 
+der zusätzlichen Buchsen für Flachstecker gemäß ÖVE-IG/EN 50075 von Steckdosen 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1. 
+Abmessungen für Lehre CF7B gemäß Bild 33. 
+  
+Bild 33 – Lehre CF7B zur Prüfung des Abstandes zwischen der Stirnfläche der Steckdose und der 
+zusätzlichen Buchsen für Flachstecker gemäß ÖVE-IG/EN 50075 von Steckdosen 
+Der kurze Lehrenstift darf die Kontaktbuchsen der Steckdose nicht erreichen, der lange Lehrenstift muss die 
+Kontaktbuchse berühren. 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+33 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 34/45 =====
+ÖVE/ÖNORM E 8626:2012 
+34 
+24.5 Lehre CF18 zur Prüfung auf Unmöglichkeit des einpoligen Einführens 
+Prüfung gemäß siehe ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.3. 
+Abmessungen für Lehre CF18 gemäß Bild 34. 
+Anwendung der Lehre CF18 siehe Bild 13. 
+Es darf nicht möglich sein, eine Kontaktbuchse mit einem Stift der Lehre zu berühren. 
+Maße in mm 
+Bild 34 – Lehre CF18 zur Prüfung auf Unmöglichkeit des einpoligen Einführens 
+1,0
+0
+5,2
+
+
+01
+,0
+4 
+
+0
+3
+2
+90
+
+
+
+
+0
+01
+,
+0
+17
+3,0
+3,
+34
+
+01
+,0
+4 
+
+12,70,3 
+19,50,1 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+34 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 35/45 =====
+ÖVE/ÖNORM E 8626:2012 
+35 
+25 Lehren für Steckvorrichtungen IPX4 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 9.1 und 16.2. 
+25.1 Lehre L1 (Maßlehre) und Lehre L2 (Dichtlehre) 
+Die Lehre L1 (Maßlehre) muss bei Anwendung einer Kraft von 150 N in eine Kupplungssteckdose bis zur 
+Berührung der Spiegelflächen einsteckbar sein. 
+Abmessungen für Lehre L1 gemäß Bild 35. 
+Die Lehre L2 (Dichtlehre) wird zum Prüfen der Schutzart IPX4 bis zur Berührung der Spiegelflächen in den 
+Prüfling eingesteckt. 
+Abmessungen für Lehre L2 gemäß Bild 36. 
+Maße in mm 
+Bild 35 – Lehre L1 (Maßlehre) 
+Bild 36 – Lehre L2 (Dichtlehre) 
+Werkstoff 
+Griff:  
+Isolierstoff nach Wahl des Herstellers 
+Körper und Stifte:  
+Nichtrostender gehärteter Stahl (Lehre L2) 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+35 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 36/45 =====
+ÖVE/ÖNORM E 8626:2012 
+36 
+25.2 Ringlehre RL1 und Ringlehre RL2 
+Abmessungen für Lehre RL1 gemäß Bild 37 und Abmessungen für Lehre RL2 gemäß Bild 38. 
+Prüfvorrichtung zu Ringlehre RL1 und zu Ringlehre RL2 siehe Bild 39. 
+Für die Prüfung des Außendurchmessers wird die Prüfvorrichtung verwendet. Die Vorrichtung braucht der 
+bildlichen Darstellung nicht entsprechen, die angegebenen Maße sind einzuhalten.  
+Bei der Prüfung wird nur die Ringlehre RL1 mit den Feststellern auf der Grundplatte befestigt. 
+Ringlehre RL1: 
+Zugkraft am Stecker maximal 50 N. Der Stecker muss durch die Ringlehre gleiten. 
+Ringlehre RL2: 
+Der Stecker darf beim Abheben nicht durch die Ringlehre gleiten. 
+Die Prüfdauer muss eine Minute andauern. 
+Maße in mm 
+ 
+ 
+Bild 37 – Ringlehre RL1 
+ 
+Bild 38 – Ringlehre RL2 
+ 
+Es bedeutet: 
+a 
+L wird durch die Masse (Gewicht) der Ringlehre RL2 bestimmt – Richtwert 45 mm 
+ 
+Masse der Ringlehre RL2: (500  10) g 
+ 
+a 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+36 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 37/45 =====
+ÖVE/ÖNORM E 8626:2012 
+37 
+Maße in mm 
+Bild 39 – Prüfvorrichtung zu Ringlehre RL1 und RL2 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+37 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 38/45 =====
+ÖVE/ÖNORM E 8626:2012 
+38 
+26 Lehre C27 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter 
+hindurch und nach der Prüfung des bestimmungsgemäßen Betriebes 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.5 und 21 (Bild 9). 
+Abmessungen für Lehre C27 gemäß Bild 40. 
+Die Anwendung dieser Lehre und die Prüfungsbewertung erfolgt nach ÖVE/ÖNORM E 8684-1:2010,  
+Abschnitt 10.5. 
+Maße in mm 
+Bild 40 – Lehre C27 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter  
+hindurch und nach der Prüfung des bestimmungsgemäßen Betriebes 
+Um die Lehre zu kalibrieren wird auf den starren Stahldraht eine Kraft von 20 N in der Richtung der Achse 
+angewandt. Die Charakteristik der inneren Feder muss so sein, dass die Ebene A – A‘ auf praktisch das 
+gleiche Niveau gebracht wird wie die Ebene B – B‘, wenn diese Kraft angewandt wird. 
+Schnitt C – C 
+starrer Stahldraht 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+38 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 39/45 =====
+ÖVE/ÖNORM E 8626:2012 
+39 
+27 Lehre C28 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter 
+hindurch und von aktiven Teilen von Steckdosen mit erhöhtem Schutz 
+Prüfung gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 10.5, 10.7, 24.1 und 21 (Bild 10). 
+Abmessungen für Lehre C28 gemäß Bild 41. 
+Die Anwendung dieser Lehre und die Prüfungsbewertung erfolgt nach ÖVE/ÖNORM E 8684-1:2010,  
+Abschnitt 10.5 und 10.7. 
+Maße in mm 
+Bild 41 – Lehre C28 zur Prüfung der Nichtberührbarkeit von aktiven Teilen durch Shutter  
+hindurch und von aktiven Teilen von Steckdosen mit erhöhtem Schutz 
+Um die Lehre zu kalibrieren wird auf den starren Stahldraht eine Kraft von 1 N in der Richtung der Achse 
+angewandt. Die Charakteristik der inneren Feder muss so sein, dass die Ebene A – A‘ auf praktisch das 
+gleiche Niveau gebracht wird wie die Ebene B – B‘, wenn diese Kraft angewandt wird. 
+starrer Stahldraht 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+39 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 40/45 =====
+ÖVE/ÖNORM E 8626:2012 
+40 
+28 Lehre C29 zur Überprüfung der Kriech- und Luftstrecke für Unterputzsteckdosen 
+Die Anwendung dieser Lehre erfolgt gemäß ÖVE/ÖNORM E 8684-1:2010, Abschnitt 27.1, Tabelle 25. 
+Abmessungen für Lehre C29 gemäß Bild 42. 
+Maße in mm 
+Bild 42 – Lehre C29 zur Überprüfung der Kriech- und Luftstrecke für Unterputzsteckdosen 
+BGBl. II - Ausgegeben am 8. Juli  2020 - Nr. 308
+40 von 44
+www.ris.bka.gv.at

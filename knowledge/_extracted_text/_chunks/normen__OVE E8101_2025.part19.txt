@@ -1,0 +1,1833 @@
+
+
+===== PAGE 761/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 1 
+Teil 7-722  
+Stromversorgung von Elektrofahrzeugen 
+722.1 
+Anwendungsbereich 
+Dieser Teil gilt für 
+– 
+Stromkreise für die Energieversorgung von Elektrofahrzeugen und 
+– 
+Stromkreise für die Rückspeisung von elektrischer Energie von Elektrofahrzeugen. 
+Die von diesem Teil der Normen abgedeckten Stromkreise enden am Anschlusspunkt für ein Elektrofahrzeug 
+(Begriff 722.3.2). 
+ANMERKUNG 
+Die Anforderungen an Stromversorgungseinrichtungen für Elektrofahrzeuge zum konduktiven Laden und 
+die entsprechenden Lademodi sind in den Normen der Reihe OVE EN IEC 61851 beschrieben. Die Anforderungen an 
+Stromversorgungseinrichtungen für Elektrofahrzeuge für die drahtlose Energieübertragung sind in den Normen der Reihe 
+OVE EN IEC 61980 beschrieben. 
+722.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+722.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+722.3 
+Bestimmungen allgemeiner Merkmale 
+722.31 
+Zweck, Stromversorgung und Aufbau 
+722.311 
+Leistungsbedarf und Gleichzeitigkeitsfaktor 
+Füge hinzu: 
+Es ist zu berücksichtigen, dass im normalen Gebrauch jeder einzelne Anschlusspunkt für ein Elektrofahrzeug 
+mit seinem Bemessungsstrom oder mit dem konfigurierten maximalen Ladestrom der Ladestation betrieben 
+wird. Die Konfiguration des maximalen Ladestroms darf nur durch eine Elektrofachkraft oder elektrotechnisch 
+unterwiesene Personen und nur mit einem Werkzeug (z. B. Software, Hardware, Schlüssel) durchgeführt 
+werden. 
+Da alle Anschlusspunkte für Elektrofahrzeuge der Anlage gleichzeitig genutzt werden können, muss der 
+Gleichzeitigkeitsfaktor für alle betroffenen Stromkreise als 1 angenommen werden, es sei denn, in der 
+Stromversorgungseinrichtung für das Elektrofahrzeug, an einer vorgeschalteten Stelle oder in einer 
+Kombination aus beiden ist eine Lastregelung integriert. 
+722.312 
+Leiterkonfiguration und Erdung der Systeme 
+722.312.2 
+System nach Art der Erdverbindung (Netzsysteme) 
+722.312.2.1 
+TN-System 
+Füge hinzu: 
+In einem TN-System muss der Stromkreis, welcher den Anschlusspunkt für ein Elektrofahrzeug versorgt, ein 
+TN-S-System sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 762/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 2 
+722.314 
+Aufteilung der Anlage 
+Füge hinzu: 
+722.314.101 
+Für die Energieübertragung vom/zum Elektrofahrzeug muss ein eigener Stromkreis ausgeführt werden. 
+722.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+722.41 
+Schutz gegen elektrischen Schlag 
+722.410.3 
+Allgemeine Anforderungen 
+722.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+722.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahmen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+ 
+722.411 
+Schutzmaßnahme: Automatische Abschaltung der Stromversorgung 
+722.411.3 
+Anforderungen an den Fehlerschutz 
+722.411.3.3 Zusätzlicher Schutz (Zusatzschutz) für Stromkreise für Steckdosen und Stromkreise für 
+die Versorgung von ortsveränderlichen Betriebsmitteln für den Außenbereich 
+Die Anforderungen des Harmonisierungsdokuments an den zusätzlichen Schutz (Zusatzschutz) finden sich in 
+Österreich in 722.415.1. 
+722.413 
+Schutzmaßnahme: Schutztrennung 
+722.413.3 
+Anforderungen an den Fehlerschutz 
+722.413.3.2 
+Ersetze die Anforderungen durch: 
+Der Stromkreis mit Schutztrennung muss durch einen Trenntransformator gemäß ÖVE/ÖNORM  
+EN 61558-2-4 versorgt werden, und die Spannung des Stromkreises mit Schutztrennung darf nicht größer als 
+500 V sein. 
+722.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+722.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 763/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 3 
+722.415.1.101 
+Bei AC-Ladestationen muss jeder einzelne Anschlusspunkt für ein Elektrofahrzeug durch eine eigene 
+Fehlerstrom-Schutzeinrichtung (RCD), welche mindestens die Anforderungen des Typ A erfüllt, mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein. 
+Die ausgewählten Schutzeinrichtungen müssen alle aktiven Leiter, einschließlich des Neutralleiters, 
+ausschalten (siehe 722.531.3.1). 
+Wenn die EV-Ladestation mit einer Steckdose oder Fahrzeugkupplung gemäß der Normenreihe OVE 
+EN IEC 62196 ausgestattet ist, müssen Schutzvorkehrungen gegen Gleichfehlerströme vorgesehen werden, 
+es sei denn, diese sind in die EV-Ladestation integriert. Geeignete Vorkehrungen für jeden Anschlusspunkt für 
+ein Elektrofahrzeug sind Folgende: 
+– 
+der Einsatz einer Fehlerstrom-Schutzeinrichtung (RCD) vom Typ B, oder 
+– 
+der Einsatz einer Fehlerstrom-Schutzeinrichtung (RCD) vom Typ A oder Typ F in Verbindung mit einer 
+Fehlergleichstrom-Überwachungseinrichtung (RDC-DD) in Übereinstimmung mit IEC 62955. 
+ANMERKUNG AT 
+Siehe dazu 722.531.3.101. 
+722.443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+722.443.4.002.AT 
+Verbraucheranlagen 
+Füge hinzu: 
+Um das Elektrofahrzeug vor möglichem Schaden, verursacht durch Überspannungen, zu schützen, muss ein 
+Überspannungsschutz für den versorgenden Stromkreis wirksam sein. 
+722.444 
+Maßnahmen gegen elektromagnetische Einflüsse 
+722.444.0 
+Einleitung 
+Füge hinzu: 
+722.444.0.101 
+Die Betriebsmittel zur kontaktlosen Energieübertragung dürfen nicht die Sicherheit und ordnungsgemäße 
+Funktion der elektrischen Anlage beeinträchtigen und müssen in Übereinstimmung mit den Herstellerangaben 
+errichtet werden. 
+722.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+722.51 
+Allgemeine Bestimmungen 
+722.511 
+Übereinstimmung mit Normen 
+Füge hinzu: 
+722.511.101 
+ 
+Bei der konduktiven Energieübertragung müssen EV-Ladestationen den jeweiligen Teilen der Normenreihe 
+OVE EN IEC 61851 entsprechen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 764/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 4 
+722.511.102 
+ 
+Kontaktlose Energieübertragungssysteme (en: wireless power transfer system; WPT) für Elektrofahrzeuge 
+müssen den jeweiligen Teilen der Normenreihe OVE EN IEC EN 61980 entsprechen. 
+722.512 
+Betriebsbedingungen und äußere Einflüsse 
+722.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+722.512.2.101  
+Auftreten von Wasser (AD) 
+Bei einer Installation im Freien müssen die Betriebsmittel des Anschlusspunkts für ein Elektrofahrzeug mit einer 
+Schutzart von mindestens IPX4 ausgewählt werden, um gegen Spritzwasser (AD4) geschützt zu sein. 
+Falls bei eingesteckten Steckern (gemäß OVE E 8684-1) der Schutzgrad IPX4 nicht erreicht wird, sind 
+zusätzliche Maßnahmen zu ergreifen, um den Anschlusspunkt für ein Elektrofahrzeug allseitig gegen 
+Spritzwasser zu schützen. 
+722.512.2.102  
+Auftreten von festen Fremdkörpern (AE) 
+Bei einer Installation im Freien müssen die elektrischen Betriebsmittel des Anschlusspunkts für ein 
+Elektrofahrzeug mit einer Schutzart von mindestens IP4X ausgewählt oder versehen werden, um einen Schutz 
+gegen Eindringen von sehr kleinen Fremdkörpern (AE3) sicherzustellen. 
+722.512.2.103  
+Mechanische Beanspruchung: Schlag (AG) 
+Betriebsmittel, die in öffentlich zugänglichen Bereichen errichtet werden, müssen gegen hohe mechanische 
+Beanspruchung (AG3) geschützt sein. Der Schutz muss durch eine oder mehrere der nachfolgenden 
+Maßnahmen erreicht werden: 
+– 
+die Position (z. B. Montagehöhe) der elektrischen Betriebsmittel muss so ausgewählt werden, dass 
+Beschädigungen durch jede angemessen vorhersehbare Beanspruchung vermieden werden; 
+– 
+die Ausführung eines örtlichen oder eines allgemeinen mechanischen Schutzes (z. B. Anfahrschutz); 
+– 
+die Verwendung von elektrischen Betriebsmitteln in Übereinstimmung mit einem Schutz gegen äußere 
+mechanische Beanspruchung mit mindestens IK08 (siehe OVE EN 62262). 
+722.53 
+Schalt- und Steuergeräte 
+722.530 
+Einleitung 
+722.530.4 
+Allgemeine Anforderungen 
+Füge hinzu: 
+722.530.4.101 
+Die Anforderungen aus 722.531 bis 722.538.2.101 müssen erfüllt werden, entweder: 
+– 
+durch die Auswahl und Errichtung geeigneter Betriebsmittel in der ortsfesten elektrischen Anlage, oder 
+– 
+durch die Auswahl einer EV-Ladestation, welche diese enthält, oder 
+– 
+durch eine Kombination von beiden. 
+ANMERKUNG 1  
+Die Anforderungen an die Auswahl und Errichtung von Einrichtungen zum Trennen, Schalten und 
+Steuern von kontaktlosen Energieübertragungssystemen sind durch Teil 5-53 abgedeckt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 765/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 5 
+ANMERKUNG 2  
+Gemäß OVE EN 62752 wird die ladeleitungsintegrierte Steuer- und Schutzeinrichtung (en: in-
+cable control and protection device; IC-CPD) nicht als Schutzeinrichtung der ortsfesten elektrischen Anlage angesehen. 
+722.530.4.102 
+Anforderungen an Einrichtungen zur Isolationsfehlersuche (IFLS) siehe 722.538.2.101. 
+722.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag 
+722.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+722.531.3.101 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen einer der folgenden Normen entsprechen: OVE EN 61008-1, 
+OVE EN 61009-1, OVE EN 60947-2 oder OVE EN 62423. 
+Die Anforderungen des Harmonisierungsdokuments an den zusätzlichen Schutz (Zusatzschutz) finden sich in 
+Österreich in 722.415.1.101. 
+ANMERKUNG AT 
+Anforderungen für die Auswahl und Errichtung von Fehlerstrom-Schutzeinrichtungen (RCD) für 
+Anschlusspunkte von DC-Ladestationen sind in Beratung. 
+722.531.3.1 
+Allgemeine Anforderungen 
+Ersetze den ersten Abschnitt durch Folgendes: 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen alle aktiven Leiter ausschalten. 
+722.533 
+Einrichtungen zum Schutz bei Überstrom 
+Füge hinzu: 
+722.533.101 
+Mit Ausnahme von Stromversorgungseinrichtungen für Elektrofahrzeuge nach OVE EN IEC 61851-1 mit 
+mehreren Anschlusspunkten für Elektrofahrzeuge und enthaltener Überstrom-Schutzeinrichtung (OCPD) nach 
+OVE EN IEC 61851-1:2020, 13.1 muss jeder Anschlusspunkt für ein Elektrofahrzeug durch einen eigenen 
+Endstromkreis versorgt und durch eine eigene Überstrom-Schutzeinrichtung (OCPD) nach OVE EN 60947-2, 
+OVE EN IEC 60947-6-2 oder OVE EN 61009-1 oder mit den relevanten Teilen der Normenreihe 
+OVE EN 60898, der Normenreihe ÖVE/ÖNORM E 8669 oder der Normenreihe ÖVE/ÖNORM EN 60269 
+geschützt sein. 
+ANMERKUNG 
+Eine Stromversorgungseinrichtung für das Elektrofahrzeug kann mehrere Anschlusspunkte haben. 
+722.536 
+Koordination der elektrischen Betriebsmittel von Schutz-, Trenn-, Schalt- und 
+Steuereinrichtungen 
+722.536.4 
+Anforderungen an die Koordination 
+722.536.4.2 
+Anforderungen für die Selektivität 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 766/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 6 
+722.536.4.2.4.1 Allgemeine Anforderungen 
+Füge hinzu: 
+Falls für den Betrieb erforderlich, muss Selektivität zwischen der Fehlerstrom-Schutzeinrichtung (RCD) des 
+Anschlusspunkts für ein Elektrofahrzeug und der Fehlerstrom-Schutzeinrichtung (RCD) des vorgeschalteten 
+Stromkreises erreicht werden. 
+722.538 
+Einrichtungen zur Überwachung 
+722.538.1 
+Isolationsüberwachungsgeräte (IMD) für IT-Systeme 
+Füge hinzu: 
+722.538.1.101 
+Wenn keine Schutzvorrichtung zum Unterbrechen des Stromkreises beim ersten Isolationsfehler vorhanden 
+ist, muss ein Isolationsüberwachungsgerät nach ÖVE/ÖNORM EN 61557-8 installiert werden. 
+Wenn das Isolationsüberwachungsgerät nicht Teil der EV-Ladestation ist, wird ein Isolationsüberwachungs-
+gerät mit den folgenden Ansprechwerten empfohlen: 
+– 
+Vorwarnung; 
+ 
+Wenn der Isolationswiderstand auf unter 300 Ω/V fällt, sollte dem Anwender ein optisches und/oder 
+akustisches Warnsignal ausgegeben werden. Ein laufender Ladezyklus darf dabei noch abgeschlossen 
+werden, aber es darf kein neuer Ladezyklus gestartet werden. 
+– 
+Alarm. 
+ 
+Wenn der Isolationswiderstand auf unter 100 Ω/V fällt, sollte dem Anwender ein optisches und/oder 
+akustisches Warnsignal ausgegeben werden. Der Ladekreis sollte daraufhin innerhalb von 10 s 
+abgeschaltet werden. 
+722.538.2 
+Einrichtungen zur Isolationsfehlersuche (IFLS) in IT-Systemen 
+Füge hinzu: 
+722.538.2.101 
+Für die in 722.538.1.101 beschriebenen Stromkreise und bei einer Versorgung von mehr als einem 
+Elektrofahrzeug über denselben ungeerdeten Stromkreis wird empfohlen, eine Einrichtung zur 
+Isolationsfehlersuche gemäß ÖVE/ÖNORM EN 61557-9 zu verwenden, um den fehlerhaften Stromkreis so 
+schnell wie möglich erkennen zu können. 
+722.54 
+Erdungsanlagen und Schutzleiter 
+722.543 
+Schutzleiter 
+Füge hinzu: 
+722.543.101 
+Steuersignale auf dem Schutzleiter dürfen nicht in die der EV-Ladestation vorgeschaltete ortsfeste elektrische 
+Anlage gelangen. Die Betriebsmittel müssen entsprechend ausgewählt werden. 
+ANMERKUNG 1  
+Mit dieser Anforderung soll verhindert werden, dass derartige Signale und die zugehörigen 
+Einrichtungen die ordnungsgemäße Funktion der installierten Geräte beeinträchtigen, die zur Sicherstellung der 
+automatischen Abschaltung der Stromversorgung als Schutzmaßnahme dienen (z. B. Fehlerstrom-Schutzeinrichtung 
+(RCD)). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 767/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 7 
+ANMERKUNG 2  
+Diese Anforderung kann durch Einsatz einer galvanischen Trennung der Steuerelektronik erreicht 
+werden.  
+ANMERKUNG 3  
+Vorübergehend auftretende Ströme zur Durchgangsprüfung von Schutzleitern aus Sicherheits-
+gründen werden nicht als Signalströme erachtet. 
+722.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+722.55.101 Steckdosen und Fahrzeugkupplungen 
+722.55.101.1  
+Wenn es sich bei dem Anschlusspunkt für ein Elektrofahrzeug um eine Steckdose oder eine 
+Fahrzeugkupplung handelt, muss diese den folgenden Normen entsprechen: 
+– 
+OVE EN IEC 60309-1 oder OVE EN IEC 62196-1, wenn keine Austauschbarkeit erforderlich ist, oder 
+– 
+OVE EN IEC 60309-2, OVE EN IEC 62196-2, OVE EN IEC 62196-3 oder IEC TS 62196-4, wenn 
+Austauschbarkeit erforderlich ist, oder 
+– 
+OVE E 8684-1 für Steckdosen, sofern der Bemessungsstrom 16 A nicht übersteigt. 
+Mit Ausnahme der Schutzmaßnahme Schutztrennung muss jede Steckdose einen Schutzkontakt aufweisen, 
+der mit dem Schutzleiter verbunden ist. 
+722.55.101.2  
+Jede Steckdose oder jede Fahrzeugkupplung muss so nahe wie möglich am Parkplatz für 
+Elektrofahrzeuge angeordnet sein, der versorgt werden soll. 
+722.55.101.3  
+Ortsveränderliche Steckdosen sind nicht zulässig. 
+722.55.101.4  
+Eine Steckdose oder Fahrzeugkupplung darf nur ein einzelnes Elektrofahrzeug versorgen. 
+Füge hinzu: 
+722.55.102 EV-Ladestationen 
+Öffentlich zugängliche EV-Ladestationen müssen so ausgelegt sein, dass der Anschlusspunkt für ein 
+Elektrofahrzeug unabhängig von der Lage des Anschlusses am Elektrofahrzeug leicht zugänglich ist. 
+722.551 
+Stromerzeugungseinrichtungen 
+722.551.1 
+Anwendungsbereich 
+722.551.1.1 
+Füge folgende Aufzählung hinzu: 
+– 
+Elektrofahrzeuge. 
+722.551.2 
+Allgemeine Anforderungen für die Auswahl der Stromerzeugungseinrichtung 
+Füge hinzu: 
+722.551.2.101 
+Wenn Elektrofahrzeuge elektrische Energie zurück in elektrische Anlagen speisen sollen, gelten die 
+Anforderungen der OVE E 8008-2 (in Vorbereitung). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 768/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-722 – Seite 8 
+722.551.NE1.7.AT 
+Zusätzliche Anforderungen für elektrische Anlagen, bei denen ein Parallelbetrieb 
+der Stromerzeugungseinrichtung mit anderen Stromquellen erfolgt 
+722.551.NE1.7.2.AT 
+Ersetze ii) durch: 
+ 
+ii) 
+Bei einer rückspeisefähigen EV-Ladestation muss 
+ 
+ 
+– 
+diese an dem Stromkreis nach 722.314.101 fest angeschlossen sein und 
+ 
+ 
+– 
+auf der Fahrzeugseite eine Steckvorrichtung gemäß Normenreihe OVE EN IEC 62196 
+aufweisen. 
+722.6 
+Prüfungen 
+722.600.4 
+Erstprüfung 
+722.600.4.1  Allgemeines 
+722.600.4.1.1 
+Füge hinzu: 
+Der betroffene Teil der bestehenden elektrischen Anlage muss ebenfalls hinsichtlich der Erfüllung der 
+Anforderungen gemäß OVE E 8101 geprüft werden (z. B. Anforderungen an den Schutz gegen Überströme). 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 769/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 1 
+Teil 7-729  
+Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit 
+eingeschränkter Zugangsberechtigung 
+729.1 
+Anwendungsbereich 
+Dieser Teil gilt für Bedienungsgänge und Instandhaltungsgänge sowie für den Basisschutz und weitere 
+Gesichtspunkte in Bereichen mit eingeschränkter Zugangsberechtigung. 
+ANMERKUNG 1 AT 
+Dieser Teil enthält Anforderungen zu den Breiten der Gänge, die in Richtung zum Fluchtweg 
+führen, ohne selbst Fluchtweg zu sein. Für Mindestbreiten für Fluchtwege sind die gesetzlichen Arbeitsschutz- und 
+Bauvorschriften zu beachten. 
+ANMERKUNG 2 AT 
+Bei Räumen mit Niederspannungs- und Hochspannungsanlagen sind die Anforderungen nach 
+OVE EN IEC 61936-1 vorrangig zu beachten. Für „fabrikfertige Stationen“ ist zusätzlich OVE EN IEC 62271-202 zu 
+beachten. 
+729.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+729.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+729.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+729.41 
+Schutz gegen elektrischen Schlag 
+729.410.3 
+Allgemeine Anforderungen 
+729.410.3.5 
+Füge hinzu: 
+In abgeschlossenen elektrischen Betriebsstätten sind Mindestabstände (Schutz durch Abstand) im Rahmen 
+der Schutzvorkehrungen für den Basisschutz Schutz durch Hindernisse oder Schutz durch Anordnung 
+außerhalb des Handbereichs erforderlich, wenn andere Schutzvorkehrungen für den Basisschutz gemäß 
+Teil 4-41 nicht sinnvoll anwendbar sind. 
+ANMERKUNG AT 
+Hierbei ist zu beachten, dass die Gänge gegebenenfalls breiter gewählt werden müssen, damit 
+sich die Schranktüren und Schwenkrahmen vollständig öffnen lassen und Einschübe sich vollständig ausziehen lassen. 
+In allen anderen Bereichen mit eingeschränkter Zugangsberechtigung ist die Anwendung der 
+Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs als 
+alleinige Schutzvorkehrung für den Basisschutz nicht zulässig. 
+Füge hinzu: 
+729.410.3.5.101 
+Wenn in Bedienungs- und Instandhaltungsgängen ungeschützte aktive Teile nur auf einer Seite angeordnet 
+sind (siehe Bild 729.1), müssen folgende Mindestabstände eingehalten werden: 
+a) 
+Breite des Gangs zwischen der Wand und aktiven Teilen 
+900 mm 
+b) 
+freier Durchgang vor Steuer- oder Bedienelementen usw. 
+700 mm 
+c) 
+Höhe von aktiven Teilen über dem Fußboden 
+2 500 mm 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 770/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 2 
+Maße in mm 
+ 
+ANMERKUNG 
+Die Höhe von 2 500 mm über dem Boden als Mindestabstand zu aktiven Teilen gilt nur für die 
+Bedienungs- und Instandhaltungsgänge, in denen Personen stehen oder gehen können. 
+Bild 729.1 – Bedienungs- und Instandhaltungsgänge in Räumen, wenn ungeschützte  
+aktive Teile nur auf einer Seite angeordnet sind 
+729.410.3.5.102 
+Wenn in Bedienungs- und Instandhaltungsgängen ungeschützte aktive Teile auf beiden Seiten angeordnet 
+sind (siehe Bild 729.2), müssen folgende Mindestabstände eingehalten werden: 
+a) 
+Breite des Gangs zwischen aktiven Teilen 
+1 300 mm 
+b) 
+Mindestabstand zwischen Bedienelementen und aktiven Teilen  
+auf der gegenüberliegenden Seite des Gangs 
+1 100 mm 
+c) 
+Mindestbreite des freien Durchgangs zwischen gegenüberliegenden  
+Steuer- oder Bedienelementen, Leistungsschaltern in Trennstellung usw. 
+900 mm 
+d) 
+Höhe von aktiven Teilen über dem Fußboden 
+2 500 mm 
+Maße in mm 
+ 
+ANMERKUNG 
+Die Höhe von 2 500 mm über dem Boden als der Mindestabstand zu aktiven Teilen gilt nur für die 
+Bedienungs- und Instandhaltungsgänge, in denen Personen stehen oder gehen können. 
+Bild 729.2 – Bedienungs- und Instandhaltungsgänge, wenn in Räumen  
+ungeschützte aktive Teile auf beiden Seiten angeordnet sind 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 771/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 3 
+729.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+729.51 
+Allgemeine Bestimmungen 
+729.513 
+Zugänglichkeit 
+Füge hinzu: 
+729.513.102 
+Anforderungen an Bedienungs- und Instandhaltungsgänge 
+Die Breite von Bedienungs- und Instandhaltungsgängen und Zugangsbereichen muss für angemessenes 
+Arbeiten, für den Zugang zum Bedienen, für den Zugang und das Verlassen in Notfällen sowie für den 
+Transport von elektrischen Betriebsmitteln geeignet sein. 
+Die Breite von Bedienungs- und Instandhaltungsgängen muss das Öffnen von Türen oder Schwenkrahmen 
+um mindestens 90° ermöglichen (siehe auch 729.A.1). 
+729.513.102.1  
+Schutz durch Abdeckungen oder Umhüllungen als Schutzvorkehrung 
+Wenn die Schutzvorkehrung Schutz durch Abdeckungen oder Umhüllungen gemäß Teil 4-41 angewendet wird, 
+müssen folgende Mindestabstände eingehalten werden (siehe Bild 729.3): 
+a) 
+Breite von Bedienungs- und Instandhaltungsgängen zwischen  
+gegenüberliegenden Steuer- oder Bedienelementen, Leistungsschaltern  
+in Trennstellung usw. sowie zwischen solchen Elementen und der Wand 
+600 mm 
+b) 
+Breite von Bedienungs- und Instandhaltungsgängen zwischen Abdeckungen  
+oder Umhüllungen und gegenüberliegenden Abdeckungen oder Umhüllungen  
+sowie Abdeckungen oder Umhüllungen und der Wand 
+700 mm 
+c) 
+Höhe der Deckenverkleidung über dem Fußboden 
+2 000 mm 
+d) 
+Höhe der ungeschützten aktiven Teile über dem Fußboden  
+(nur in abgeschlossenen elektrischen Betriebsstätten zulässig) 
+2 500 mm 
+ANMERKUNG 1  
+Dort, wo zusätzlicher Bewegungsraum für Arbeiten benötigt wird, z. B. bei speziellen 
+Schaltgeräten oder Schaltgerätekombinationen, können größere Abstände erforderlich sein. 
+Maße in mm 
+ 
+Bild 729.3 – Bedienungs- und Instandhaltungsgänge in Räumen mit  
+Schutz durch Abdeckungen oder Umhüllungen als Schutzvorkehrung 
+ANMERKUNG 2  
+Die oben genannten Abstände gelten, nachdem alle Teile der Deckenverkleidung montiert sind 
+und die Verkleidung geschlossen ist und sich die Leistungsschalter in Trennstellung befinden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 772/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 4 
+729.513.102.2  
+Abgeschlossene elektrische Betriebsstätten mit Schutz durch Hindernisse als 
+Schutzvorkehrung 
+Wenn die Schutzvorkehrung Schutz durch Hindernisse gemäß Teil 4-41, angewendet wird, müssen folgende 
+Mindestabstände eingehalten werden (siehe Bild 729.4): 
+a) 
+Breite von Bedienungs- und Instandhaltungsgängen zwischen Hindernissen  
+und Steuer- oder Bedienelementen, Leistungsschaltern in Trennstellung usw.  
+oder Hindernissen und der Wand oder Steuer- oder Bedienelementen,  
+Leistungsschaltern in Trennstellung usw. und der Wand 
+700 mm 
+b) 
+Höhe der Deckenverkleidung über dem Fußboden 
+2 000 mm 
+c) 
+Höhe der ungeschützten aktiven Teile über dem Fußboden 
+2 500 mm 
+Maße in mm 
+ 
+Bild 729.4 – Bedienungs- und Instandhaltungsgänge in Räumen mit  
+Schutz durch Hindernisse als Schutzvorkehrung 
+ANMERKUNG 
+Die oben genannten Abstände gelten, nachdem alle Teile der Deckenverkleidung montiert sind und die 
+Verkleidung geschlossen ist und sich die Leistungsschalter in Trennstellung befinden. 
+729.513.102.3  
+Zugang zu Bedienungs- und Instandhaltungsgängen 
+Bedienungs- und Instandhaltungsgänge, die länger als 10 m sind, müssen von beiden Seiten zugänglich sein. 
+ANMERKUNG 1  
+Dies kann erreicht werden durch das Aufstellen der elektrischen Betriebsmittel mit einem 
+Mindestabstand von 700 mm zu den Stirnwänden (siehe Bild 729.5) oder, wenn notwendig, durch eine weitere Zugangstür 
+in der gegenüberliegenden Stirnwand. 
+Bedienungs- und Instandhaltungsgänge in Bereichen, die länger als 20 m sind, müssen von beiden Seiten 
+durch Türen zugänglich sein. 
+ANMERKUNG 2  
+Bei Bedienungs- und Instandhaltungsgängen, die länger als 6 m sind, sollte eine Zugänglichkeit 
+von beiden Seiten möglich sein. 
+ANMERKUNG AT 
+Bei beidseitigem Zugang müssen beide Fluchtrichtungen berücksichtigt werden. 
+Türen zu den Bedienungs- und Instandhaltungsgängen müssen sich nach außen (in Fluchtrichtung) öffnen 
+lassen (siehe Bild 729.5) und müssen folgende Mindestabmessung haben: 
+– 
+Breite: 700 mm; 
+– 
+Höhe: 
+2 000 mm. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 773/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 5 
+ 
+ 
+Bild 729.5 – Beispiele für die Anordnung von Türen für den Zugang zu  
+Bedienungs- und Instandhaltungsgängen 
+729.56 
+Einrichtungen für Sicherheitszwecke 
+729.560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+Füge hinzu: 
+In abgeschlossenen elektrischen Betriebsstätten kann es, in Abhängigkeit der Größe der Betriebsstätte, 
+erforderlich sein, eine Notbeleuchtung zu errichten oder organisatorische Maßnahmen zu treffen. 
+ANMERKUNG AT 
+Anforderungen an eine Sicherheitsbeleuchtung in Arbeitsstätten siehe Arbeitsstättenverordnung. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 774/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 6 
+Anhang 729.A 
+(normativ) 
+ 
+Zusätzliche Anforderungen für  
+Bedienungs- und Instandhaltungsgänge 
+729.A.1 
+Verlassen im Gefahrenfall 
+Um ein leichtes Verlassen im Gefahrenfall zu ermöglichen, müssen sich die Türen aller Einrichtungen innerhalb 
+der Betriebsstätte in Bewegungsrichtung (Fluchtrichtung) schließen lassen. In Bedienungs- und 
+Instandhaltungsgängen müssen sich die Türen aller Einrichtungen und schwenkbarer Baugruppenträger um 
+mindestens 90° öffnen lassen (siehe Bild 729.A.1). 
+ANMERKUNG 1.AT 
+Für Arbeitsstätten gelten die strengeren Anforderungen gemäß Arbeitsstättenverordnung. 
+ANMERKUNG 2.AT 
+Ergänzend wird auf die baurechtlichen Anforderungen der OIB-Richtlinien hingewiesen. 
+ 
+Legende 
+1 
+Leistungsschalter 
+2 
+Bedienelemente (z. B. zur Steuerung oder für elektrische Betriebsmittel) 
+ 
+a 
+Mindestabstand von 600 mm zwischen der Wand und dem Leistungsschalter sowie Bedienelementen 
+Bild 729.A.1 – Mindestgangbreite für das Verlassen im Gefahrenfall – Fall 1 
+Bei Türen, die in geöffneter Position arretiert werden können, oder bei Leistungsschaltern oder elektrischen 
+Betriebsmitteln, die zu Wartungszwecken werden können (Position: vollständig herausgezogen), muss eine 
+Mindestdurchgangsbreite von 600 mm zwischen der Türkante oder der Kante von Leistungsschaltern/ 
+Betriebsmitteln/Abdeckungen und der gegenüberliegenden Seite des Bedienungs- oder Instandhaltungsgangs 
+eingehalten werden (siehe Bild 729.A.2 und Bild 729.A.3). 
+Sofern die Arbeitsstättenverordnung keine Anwendung findet, oder eine entsprechende Ausnahme von der 
+Arbeitsstättenverordnung gewährt wurde, kann eine Mindestdurchgangbreite von 500 mm ausreichend sein. 
+ANMERKUNG 
+Mindestabstand für Leistungsschalter in vollständig herausgezogener Position, siehe Bild 729.A.3. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 775/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 7 
+ 
+Legende 
+1 
+ausgeklappter Schwenkrahmen 
+Bild 729.A.2 – Mindestabstand für das Verlassen im Gefahrenfall – Fall 2 
+ 
+Legende 
+1 
+Vollständig herausgezogener Leistungsschalter 
+2 
+Tür in arretierter Stellung 
+ 
+a 
+Bei Bedienungs- und Instandhaltungsgängen muss eine Mindestdurchgangsbreite von 600 mm zwischen 
+der Wand, oder einer gegenüberliegenden Einrichtung (Schaltgerätekombination) und dem 
+Leistungsschalter, der vollständig herausgezogen ist, oder der Tür in arretierter Stellung verbleiben. Bei 
+gegenüberliegenden Einrichtungsfronten sind mögliche Einengungen von beiden Seiten zu 
+berücksichtigen. 
+Bild 729.A.3 – Mindestgangbreite für das Verlassen im Gefahrenfall – Fall 3 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 776/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 8 
+Anhang 729.B 
+(informativ) 
+ 
+Zusätzliche Hinweise zu den Anforderungen 
+für elektrische Betriebsstätten 
+729.B.1 
+Lüftung und Kühlung 
+Elektrische Betriebsstätten sollten 
+– 
+mit einer Entlüftung (natürliche oder mit Gebläse), oder 
+– 
+mit einer Klimaanlage 
+ausgestattet sein. 
+Soweit erforderlich, sollten Klimaanlagen zur Aufrechterhaltung einer geeigneten Umgebungstemperatur für 
+die elektrischen Einrichtungen eingesetzt werden. 
+ANMERKUNG 
+Schalt- und Steuergeräte von Verteilern und Batterien sind von den Herstellern für bestimmte 
+Umgebungstemperaturbereiche ausgelegt. 
+Für elektrische Betriebsstätten im Freien müssen die äußeren Einflüsse (klimatische Bedingungen) beachtet 
+werden. 
+729.B.2 
+Beschaffenheit und Beleuchtung 
+Bedienungs- und Instandhaltungsgänge und Zugangsbereiche sollten einen festen und ebenen Fußboden und 
+eine angemessene Beleuchtung haben (siehe auch 729.560.9). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 777/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 9 
+Nationale Ergänzung 729.NE 
+(normativ) 
+ 
+Zusätzliche Anforderungen an abgeschlossene 
+elektrische Betriebsstätten 
+Folgende Anforderungen gelten zusätzlich zu den Anforderungen von Teil 7-729 für abgeschlossene 
+elektrische Betriebsstätten. Die Nummerierung der Abschnitte dieser Nationalen Ergänzung entspricht der 
+Nummerierung von Teil 7-729. 
+729.NE.1  Anwendungsbereich 
+Diese Nationale Ergänzung gilt für die Planung und Errichtung von elektrischen Anlagen und Anlagenteilen in 
+begehbaren abgeschlossenen elektrischen Betriebsstätten in Ergänzung zu den allgemeinen Anforderungen 
+von Teil 7-729. 
+ANMERKUNG AT 
+Mit Ausnahme von 729.NE.41.101 gelten die nachfolgenden Anforderungen nicht für 
+Hochspannungsanlagen. 
+729.NE.31  
+Zweck, Stromversorgung und Aufbau der Anlage 
+Füge hinzu: 
+729.NE.31.101  
+Anordnung von elektrischen Betriebsmitteln 
+Steckdosen, Leuchten und zugehörige Schalter sowie andere elektrische Betriebsmittel für allgemeine Zwecke 
+sind so anzubringen, dass bei ihrer Nutzung und Instandhaltung eine Berührung aktiver Anlagenteile 
+zuverlässig verhindert ist. 
+Bei Anordnung von Betätigungselementen in der Nähe von aktiven Teilen sind die Anforderungen gemäß 
+ÖVE/ÖNORM EN 50274 zu berücksichtigen. 
+729.NE.31.102  
+Beleuchtungsstromkreise 
+Beleuchtungsstromkreise müssen in Bezug auf Überstromschutz und Schutz gegen elektrischen Schlag über 
+eigene Stromkreise versorgt werden, wenn deren Ausfall zu einer Gefährdung führen kann. 
+729.NE.31.103  
+Andere Einrichtungen 
+In abgeschlossenen elektrischen Betriebsstätten sollten sich keine nicht elektrischen Einrichtungen wie z. B. 
+Sanitäranlagen, Wasserleitungen, Abwasserleitungen befinden. 
+729.NE.4  Schutzmaßnahmen und Schutzvorkehrungen 
+729.NE.41  
+Schutz gegen elektrischen Schlag 
+Füge hinzu: 
+729.NE.41.101  
+Kombination von Hochspannungs- und Niederspannungsanlagen 
+Hochspannungsanlagen dürfen mit Niederspannungsanlagen zusammen in einer abgeschlossenen 
+elektrischen Betriebsstätte errichtet werden, wenn folgende Bedingungen erfüllt sind: 
+1) 
+Bei einem gemeinsamen Kabelboden, der sowohl die Elektroinstallation des Niederspannungsbereichs 
+als auch die des Hochspannungsbereichs enthält, ist auf der Niederspannungsseite im Kabelboden ein 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 778/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 10 
+Schutz gegen das Hineingreifen in den Hochspannungsbereich vorzusehen, wenn sonst ein Eindringen in 
+die Gefahrenzone möglich wäre. 
+ 
+ANMERKUNG AT  
+Im Hochspannungsbereich kommt das Eindringen in die Gefahrenzone (ÖVE/ÖNORM  
+EN 50110-1:2014, Tabelle 101) dem direkten Berühren gleich. Das gilt auch für das Berühren von Hochspannungs-
+kabeln, sofern diese keinen vor Ort geerdeten Metallmantel oder -schirm aufweisen. 
+2) 
+Der Basisschutz der Hochspannungsanlage, z. B. Hochspannungstransformator, ist gemäß OVE EN 
+IEC 61936-1:2023, 8.2 auszuführen. 
+729.NE.Anhang 41.B 
+Schutzvorkehrung durch Hindernisse und Anordnung außerhalb des 
+Handbereichs 
+Füge hinzu: 
+729.NE.41.B.2 
+Hindernisse 
+Hindernisse sind zuverlässig zu befestigen und müssen gegen Verformung ausreichend widerstandsfähig sein. 
+Hindernisse aus nichtleitfähigen Werkstoffen dürfen ohne Schlüssel oder Werkzeug entfernbar sein. 
+ANMERKUNG AT 
+Als widerstandsfähig gegen Verformung kann angesehen werden, wenn bei 500 N die 
+Durchbiegung an Hindernissen 20 mm beträgt. 
+Schutzleisten, Geländer und nicht leitende Ketten und Seile sind in einer Höhe von 1 100 mm bis 1 300 mm 
+über der Zugangsebene anzubringen. Der Abstand zwischen festen Hindernissen und aktiven Teilen muss 
+mindestens 500 mm (gemäß ÖVE/ÖNORM EN 50110-1:2014, Tabelle 102) betragen. 
+Bei Verwendung von Ketten und Seilen muss die maximale Auslenkung beachtet werden. 
+Abgeschlossene elektrische Betriebsstätten sind in geeigneter Weise (z. B. Wände, Zäune) gegen andere 
+Bereiche abzugrenzen. 
+An den Zugängen ist das Warnzeichen W012 „Warnung vor elektrischer Spannung“ gemäß ÖNORM EN 
+ISO 7010 anzubringen. An äußeren Umzäunungen ist das Warnzeichen in ausreichender Anzahl zu 
+wiederholen. 
+ANMERKUNG AT 
+Das betrifft z. B. alle Zugänge zu Räumen oder Bereichen, Masten und Türmen. 
+Zeichen, Schilder und Hinweise müssen dauerhaft und korrosionsbeständig ausgeführt sein. 
+ 
+729.NE.5  Auswahl, Montage und Installation elektrischer Betriebsmittel 
+729.NE.51 
+Allgemeine Bestimmungen 
+UV-empfindliche Materialien dürfen dem einfallenden Tageslicht nicht ausgesetzt sein. 
+729.NE.512 
+Betriebsbedingungen und äußere Einflüsse 
+729.NE.512.2  
+Äußere Einflüsse 
+Füge hinzu: 
+729.NE.512.2.101 
+Sonnenstrahlung (AN) und ultraviolette Strahlung 
+Wenn erhebliche Sonneneinwirkung (AN2) oder ultraviolette Strahlung zu erwarten ist, müssen geeignete 
+Betriebsmittel ausgewählt und errichtet werden, oder es ist ein entsprechender Schutz gegen diese 
+Sonneneinwirkung vorzusehen. Für Betriebsmittel, welche ionisierender Strahlung ausgesetzt sind, können 
+besondere Vorkehrungen notwendig sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 779/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 11 
+729.NE.513 
+Zugänglichkeit 
+Füge hinzu: 
+729.NE.513.101 Transport/Demontage 
+Wenn abgeschlossene elektrische Betriebsstätten zum Transport vorgesehen sind, müssen die 
+Herstellerangaben berücksichtigt werden (Masse, Abmessungen, maximale Beschleunigungswerte etc.). Beim 
+Transportieren sind nur geeignete Hilfsmittel (z. B. Anschlagmittel) zu verwenden. 
+Für Großkomponenten der elektrischen Ausrüstung, die innerhalb der abgeschlossenen elektrischen 
+Betriebsstätte aufgebaut sind und zu Instandhaltungszwecken ausgebaut werden müssen, sind entsprechend 
+der Masse und der Größe geeignete Transportwege und Öffnungen (z. B. für einen Kraneinsatz) vorzusehen. 
+729.NE.7 Räume und Anlagen besonderer Art 
+729.NE.7.729 Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit eingeschränkter 
+Zugangsberechtigung 
+Der Zugang zu abgeschlossenen elektrischen Betriebsstätten darf nur durch verschließbare Türen möglich 
+sein. Zugangstüren müssen 
+– 
+nach außen (in Fluchtrichtung) aufschlagen,  
+– 
+von innen ohne Schlüssel jederzeit zu öffnen sein und 
+ 
+ANMERKUNG 1.AT 
+Die Anforderungen können entfallen, wenn die Tür aufgrund der Größe der elektrischen 
+Betriebsstätte während der Bedienung oder Instandhaltung geöffnet bleibt. 
+– 
+ein Sicherheitsschloss enthalten. 
+ANMERKUNG 2.AT 
+Das kann z. B. ein Schloss mit Schließzylinder oder ein elektronisches Zutrittssystem sein. 
+Bei Türen zwischen verschiedenen Räumen einer abgeschlossenen elektrischen Betriebsstätte sind Schlösser 
+grundsätzlich nicht erforderlich. 
+Fenster müssen gegen Einstieg gesichert sein. 
+ANMERKUNG 3.AT 
+Die Anforderung ist erfüllt, wenn z. B. die Fenster vergittert sind oder die Unterkante des Fensters 
+mindestes 1,8 m über der Zugangsebene ist oder das Gebäude mit einer mindestens 1,8 m hohen Abgrenzung umgeben 
+ist. 
+ANMERKUNG 4.AT 
+Die Anforderung gilt nicht, wenn die abgeschlossenen elektrischen Betriebsstätten sich in einem 
+umschlossenen Betriebsbereich oder gesichertem Gelände befinden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 780/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-729 – Seite 12 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 781/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 1 
+Teil 7-730  
+Elektrischer Landanschluss für Fahrzeuge der Binnenschifffahrt 
+730.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen mit einer Nennspannung bis AC 400/690 V, 50 Hz zur Versorgung von 
+Fahrzeugen der Binnenschifffahrt für gewerbliche Zwecke und Zwecke der öffentlichen Verwaltung in Marinas, 
+Häfen und ähnlichen Bereichen. 
+Dieser Teil gilt nicht für elektrische Anlagen zur Versorgung von Wassersportfahrzeugen (siehe Teil 7-709). 
+Für elektrische Landanschlüsse mit einer Stromstärke 
+– 
+bis 125 A, siehe ergänzend ÖNORM EN 15869-1 (Allgemeine Anforderungen) und ÖNORM EN 15869-2 
+(Stromversorgungsstation); 
+– 
+über 125 A, wie sie z. B. für Fahrgastschiffe mit Hotelbetrieb in Betracht kommen, siehe ergänzend 
+ÖNORM EN 16840. 
+Dieser Teil gilt nicht für die Errichtung des bordseitigen Teils des Landanschlusses von Fahrzeugen der 
+Binnenschifffahrt einschließlich deren Landanschlussleitung (siehe ÖNORM EN 15869-3). 
+730.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+730.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+730.3 
+Bestimmungen allgemeiner Merkmale 
+730.31 
+Zweck, Stromversorgung und Aufbau  
+730.312 
+Leiterkonfiguration und Erdung der Systeme 
+730.312.2 
+Systeme nach Art der Erdverbindungen (Netzsysteme) 
+Füge hinzu: 
+ANMERKUNG 
+In Übereinstimmung mit der Richtlinie 2008/59/EG über technische Vorschriften für Binnenschiffe sind für 
+Binnenschiffe die folgenden Wechselstrom-Bordnetzsysteme erlaubt: TN-S, TT, IT. 
+730.313 
+Stromversorgungen 
+730.313.1 
+Allgemeines 
+Füge hinzu: 
+730.313.1.101  
+ 
+Die zulässige Nennspannung ist im Anwendungsbereich angegeben. 
+730.313.1.102  
+Galvanische Trennung 
+Wenn für die Stromversorgung vom Land ein fest installierter Trenntransformator verwendet wird, um 
+galvanische Ströme zwischen dem Schiffskörper und den metallenen Teilen der Landseite zu verhindern, muss 
+dieser gemäß ÖVE/ÖNORM EN 61558-2-4 ausgeführt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 782/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 2 
+Der Schutzleiter der Stromversorgung zum Trenntransformator darf nicht mit dem Schutzleiteranschluss der 
+Steckverbindung, die das Fahrzeug der Binnenschifffahrt versorgt, verbunden werden. 
+Der Potentialausgleich des Fahrzeugs der Binnenschifffahrt darf nicht mit dem Schutzleiter der Landversorgung 
+verbunden werden. 
+730.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+730.41 
+Schutz gegen elektrischen Schlag 
+730.410.3 
+Allgemeine Anforderungen 
+730.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+730.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutztrennung mit mehr als einem Verbrauchsmittel gemäß 
+Anhang 41.C dürfen nicht angewendet werden. 
+730.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+730.411.1 
+Allgemeines 
+Füge hinzu: 
+Jede einzelne Steckdose mit einem Bemessungsstrom über 63 A muss durch eine eigene Fehlerstrom-
+Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,3 A geschützt sein. Die ausgewählte 
+Fehlerstrom-Schutzeinrichtung (RCD) muss alle aktiven Leiter, einschließlich des Neutralleiters, ausschalten. 
+730.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+730.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+730.415.1.001.AT 
+Ersetze: 
+Jede einzelne Steckdose mit einem Bemessungsstrom bis höchstens 63 A muss durch eine eigene 
+Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,03 A geschützt sein. Die 
+ausgewählte Fehlerstrom-Schutzeinrichtung (RCD) muss alle aktiven Leiter, einschließlich des Neutralleiters, 
+ausschalten. 
+730.443 
+Schutz bei transienten Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen  
+ANMERKUNG AT 
+Anforderungen an den Schutz bei transienten Überspannungen infolge atmosphärischer Einflüsse 
+oder von Schaltvorgängen siehe Abschnitt 443. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 783/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 3 
+Füge hinzu: 
+Die Stromsäule ist mit einem Überspannungsschutz auszurüsten, außer eine entsprechende Risikobeurteilung 
+ergibt, dass kein Überspannungsschutz erforderlich ist. 
+730.46 
+Trennen und Schalten 
+730.462 
+Trennen 
+730.462.1 
+Füge hinzu: 
+Für jede Stromsäule muss mindestens eine Einrichtung zum Trennen aller aktiven Leiter einschließlich des 
+Neutralleiters installiert werden. 
+ANMERKUNG AT 
+Diese Anforderung kann z. B. durch die Verwendung von Fehlerstrom-Schutzeinrichtungen (RCD) 
+nach OVE EN 61008-1 bzw. OVE EN 61009-1 erfüllt werden. 
+730.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+730.51 
+Allgemeine Bestimmungen 
+ANMERKUNG AT 
+Anforderungen an die Auswahl und Installation elektrischer Betriebsmittel bezüglich der äußeren 
+Einflüsse siehe Teil 5-51. 
+730.512 
+Betriebsbedingungen und äußere Einflüsse 
+730.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+730.512.2.101  
+Auftreten von Wasser (AD) 
+Elektrische Betriebsmittel, die an oder über einer Anlegestelle, einem Landeplatz, einem Pier oder einem 
+Ponton errichtet werden, müssen entsprechend den äußeren Einflüssen, die auftreten können, wie folgt 
+ausgewählt werden: 
+– 
+Spritzwasser (AD4):  IPX4; 
+– 
+Strahlwasser (AD5):  IPX5; 
+– 
+Wasserwellen (AD6):  IPX6. 
+730.512.2.102.AT 
+Vorhandensein von festen Fremdkörpern (AE)  
+Elektrische Betriebsmittel, errichtet an oder über einer Anlegestelle, einem Landeplatz, einem Pier oder einem 
+Ponton, müssen mit einem Schutzgrad von mindestens IP4X ausgewählt werden, um Schutz gegen Eindringen 
+von sehr kleinen Fremdkörpern zu verhindern (AE3). 
+730.512.2.103.AT 
+Auftreten von korrosiven oder verunreinigenden Substanzen (AF) 
+Elektrische Betriebsmittel, errichtet an oder über einer Anlegestelle, einem Landeplatz, einem Pier oder einem 
+Ponton, müssen für das Auftreten von korrosiver Atmosphäre oder Schadstoffen (AF2) geeignet sein. Wenn 
+Kohlenwasserstoffe auftreten können, ist AF3 anzuwenden. 
+Elektrische Betriebsmittel, die in Umgebungen mit Wasser errichtet werden, müssen auf geeignete Art und 
+Weise geschützt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 784/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 4 
+Elektrische Betriebsmittel müssen so ausgeführt sein, dass Korrosion und Wasserverschmutzung vermieden 
+wird. 
+ANMERKUNG 1.AT 
+Siehe dazu auch Entscheidung Nr. 2455/2001/EG zur Festlegung der Liste prioritärer Stoffe im 
+Bereich der Wasserpolitik. 
+ANMERKUNG 2.AT 
+CWA 16387, Clean Harbours – Guidelines, enthält zusätzliche Empfehlungen. 
+730.512.2.104.AT 
+Mechanische Beanspruchung (AG) 
+Elektrische Betriebsmittel, errichtet an oder über einer Anlegestelle, einem Landeplatz, Pier oder Ponton, 
+müssen gegen mechanische Beanspruchung (mittlere mechanische Beanspruchung AG2) geschützt sein. Der 
+Schutz muss durch eine oder mehrere der nachfolgenden Maßnahmen erreicht werden: 
+– 
+die Position oder der Standort der Betriebsmittel muss so ausgewählt werden, dass Beschädigungen durch 
+jede angemessen vorhersehbare Beanspruchung vermieden werden; 
+– 
+die Ausführung eines örtlichen oder eines allgemeinen mechanischen Schutzes; 
+– 
+die Verwendung von elektrischen Betriebsmitteln mit einem Mindestschutz gegen äußere mechanische 
+Beanspruchung IK07 (siehe OVE EN 62262). 
+730.513 
+Zugänglichkeit 
+Füge hinzu: 
+Steckdosen müssen auf geeignete Art und Weise beleuchtet werden z. B. durch eine Umgebungsbeleuchtung, 
+damit sie auch nachts genutzt werden können. 
+730.52 
+Kabel- und Leitungsanlagen 
+730.521 
+Arten von Kabel- und Leitungsanlagen 
+Füge hinzu: 
+730.521.101 
+Kabel- und Leitungsanlagen von Häfen, Liegeplätzen und Schwimmstegen 
+730.521.101.1  
+Häfen und Liegeplätze 
+Folgende Kabel/Leitungen und Verlegearten sind geeignet: 
+a) 
+Kabel/Leitungen geeignet für die Verlegung im Erdreich; 
+b) 
+Freigespannte Kabel/Leitungen oder isolierte Leiter; 
+c) 
+Kabel/Leitungen mit Kupferleiter und thermoplastischer oder elastomerischer Isolierung, die in einem 
+entsprechenden Kabelführungssystem errichtet sind, bei dem äußere Einflüsse berücksichtigt sind, wie 
+Bewegung, mechanische Beanspruchung, Korrosion und Umgebungstemperatur; 
+d) 
+mineralisolierte Kabel/Leitungen aus thermoplastischem Material; 
+e) 
+armierte Kabel/Leitungen mit einer Ummantelung aus thermoplastischem oder elastomerischem Material; 
+f) 
+Gleichwertige Kabel/Leitungen und Materialien wie unter a), b), c), d) oder e) angeführt. 
+Es müssen alle Vorkehrungen getroffen werden, um ein Untertauchen der Kabel/Leitungen zu verhindern. 
+Es müssen Maßnahmen getroffen werden, um zu verhindern, dass über die Kabel/Leitungen gefahren wird  
+(z. B. durch LKW oder Kräne). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 785/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 5 
+730.521.101.2  
+Schwimmstege (schwimmende Anlegestelle) 
+Kabel/Leitungen und die Kabel- und Leitungsanlagen müssen für die Bewegungen von Schwimmstegen 
+geeignet sein. Die folgenden Kabel/Leitungen und Kabel- und Leitungsanlagen können für Verteilungs-
+stromkreise an/auf Schwimmstegen verwendet werden: 
+a) 
+Kabel/Leitungen mit Kupferleiter und thermoplastischer oder elastomerischer Isolierung, die in einem 
+entsprechenden Kabel- und Leitungssystem errichtet sind, bei dem äußere Einflüsse  wie Bewegungen, 
+Stöße, Korrosion und Umgebungstemperatur berücksichtigt sind; 
+b) 
+armierte Kabel/Leitungen mit einer Abdeckung aus thermoplastischem oder elastomerischem Material; 
+c) 
+gleichwertige Kabel/Leitungen und Materialien wie unter a) oder b) aufgeführten. 
+730.521.101.3  
+Kabel/Leitungen und Kabelführungssysteme 
+730.521.101.3.1 Allgemeines 
+Kabel/Leitungen bzw. Kabelführungssysteme müssen so ausgewählt und errichtet werden, dass mechanische 
+Beschädigungen, z. B. bei Änderungen von Pegelständen, durch Bewegungen von schwimmenden Bauten, 
+verhindert werden. 
+Kabelführungssysteme müssen so errichtet werden, dass eingedrungenes Wasser durch ein Gefälle und/oder 
+über Drainageöffnungen ablaufen kann. 
+730.521.101.3.2 Kabel/Leitungen, verlegt im Erdreich 
+Im Erdreich verlegte Kabel/Leitungen müssen, soweit sie nicht mit einem zusätzlichen mechanischen Schutz 
+versehen sind, in einer Mindesttiefe von 0,7 m verlegt sein, um Beschädigungen, z. B. durch Bewegung von 
+Fahrzeugen, zu vermeiden.  
+ANMERKUNG AT 
+Anforderungen für die ortsfeste Verlegung von Kabeln, wie z. B. Mindestverlegetiefe, Hinweise 
+zum zusätzlichen mechanischen Schutz, siehe OVE E 8120. 
+ANMERKUNG 
+Für erdverlegte Elektroinstallationsrohrsysteme siehe OVE EN 50626-1. 
+730.521.101.3.3 Freigespannte Kabel/Leitungen und isolierte Leiter 
+Im Bereich von Wasserwegen (Wasserstraßen) dürfen Kabel/Leitungen nicht oberirdisch verlegt werden. 
+Alle freigespannten Leiter müssen isoliert sein. 
+Masten und andere Unterstützungen für freigespannte Kabel und Leitungen oder isolierte Leiter müssen so 
+angeordnet oder geschützt sein, dass es unwahrscheinlich ist, dass sie durch vorhersehbare Bewegungen 
+(z. B. Fahrzeuge) beschädigt werden. 
+Freigespannte Kabel und Leitungen oder isolierte Leiter müssen 
+– 
+in Bereichen, in denen Fahrzeuge bewegt werden, mindestens 6 m über dem Boden, 
+– 
+in allen anderen Bereichen mindestens 3,5 m über dem Boden 
+angeordnet werden. 
+ANMERKUNG AT 
+Anforderungen an die Führung freigespannter selbsttragender oder an Spanndrähten 
+aufgehängter Kabel und isolierter Leitungen für Nennspannungen ≤1 kV im Luftraum siehe OVE E 8110. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 786/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 6 
+730.53 
+Schalt- und Steuergeräte 
+730.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag 
+730.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Die Anforderungen des Harmonisierungsdokuments an den zusätzlichen Schutz (Zusatzschutz) finden sich in 
+Österreich in 730.415.1. 
+Die Anforderungen des Harmonisierungsdokuments an den Fehlerschutz finden sich in Österreich in 730.411. 
+ANMERKUNG 
+Diese Fehlerstrom-Schutzeinrichtungen (RCD) sind nicht für den Schutz der Bordnetzstromkreise, die 
+außerhalb des Anwendungsbereichs dieses Teils sind, vorgesehen. 
+730.533 
+Einrichtungen zum Schutz bei Überstrom 
+Füge hinzu: 
+Für jede einzelne Steckdose muss eine eigene Überstrom-Schutzeinrichtung gemäß Teil 4-43 vorgesehen 
+sein. 
+730.534 
+Einrichtungen zum Schutz bei transienten Überspannungen 
+Füge Folgendes hinzu: 
+Die Anforderungen aus 534.4.1 gelten für Stromsäulen sinngemäß. 
+730.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+730.55.101 Steckdosen 
+730.55.101.1  
+Wenn Austauschbarkeit bei den Steckdosen gefordert ist, müssen diese mit einem 
+Nennstrom von 
+– 
+bis 125 A der OVE EN IEC 60309-2 entsprechen; 
+– 
+über 125 A der OVE EN IEC 60309-1und OVE EN IEC 60309-4 entsprechen. 
+Wenn Austauschbarkeit bei den Steckdosen nicht gefordert ist, müssen diese, unabhängig vom Nennstrom, 
+OVE EN IEC 60309-1 und OVE EN IEC 60309-4 entsprechen. 
+730.55.101.2  
+Steckdosen müssen so nahe wie möglich am Liegeplatz, der versorgt werden soll, 
+angeordnet sein. 
+Steckdosen müssen in einer Stromsäule (z. B. Verteiler z. B. gemäß OVE EN IEC 61439-7 oder in einem 
+separaten Gehäuse) eingebaut werden. 
+Die Schutzart der Schaltgerätekombination muss auch bei angeschlossenen/eingesteckten Versorgungs-
+leitungen sichergestellt sein (siehe OVE EN IEC 61439-7). 
+730.55.101.3  
+Um Gefahren durch lange Anschlussleitungen zu vermeiden und um die geforderte  
+IP-Schutzart einzuhalten, dürfen in einer Stromsäule höchstens vier Steckdosen zusammengefasst werden. 
+Diese sind so anzuordnen, dass mit den Anschlussleitungen keine Verkehrswege gequert werden. 
+730.55.101.4  
+Eine Steckdose darf nur für die Versorgung eines Schiffs verwendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 787/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 7 
+730.55.101.5  
+Steckdosen müssen auf einer Höhe von mindestens 1 m über dem höchsten Wasserstand 
+unter Normalbedingungen angebracht werden. Im Fall von Schwimmpontons und Gängen kann die Höhe auf 
+0,3 m über dem höchsten Wasserstand reduziert werden, vorausgesetzt, dass zusätzliche geeignete 
+Maßnahmen gegen Spritzwasser (AD4) getroffen werden. 
+ 
+730.559 
+Leuchten und Beleuchtungsanlagen 
+Füge hinzu: 
+730.559.001.AT Wenn die Marina, der Hafen oder ein ähnlicher Ort auch nachts genutzt wird, ist dieser 
+Bereich/Ort zu beleuchten (siehe auch ÖNORM EN 12464-2). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 788/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-730 – Seite 8 
+Anhang 730.A 
+(informativ) 
+ 
+Beispiele von Verfahren für die Stromversorgung von Schiffen 
+Beispielbilder siehe Anhang 709.B. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 789/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 1 
+Teil 7-740  
+Vorübergehend errichtete elektrische Anlagen für Aufbauten, 
+Vergnügungseinrichtungen und Buden auf Veranstaltungsplätzen und für 
+Zirkusse 
+740.1 
+Anwendungsbereich 
+Dieser Teil gilt für vorübergehend errichtete elektrische Anlagen von vorübergehend errichteten beweglichen 
+oder transportablen „fliegenden“ Aufbauten mit elektrischen Betriebsmitteln. Diese Aufbauten sind vorgesehen, 
+wiederholt ohne Verlust von Sicherheit auf Veranstaltungsplätzen, Zirkussen oder ähnlichen Orten 
+vorübergehend errichtet zu werden. 
+Zweck dieses Teils ist es, Anforderungen für die elektrische Anlage von solchen Aufbauten festzulegen, die 
+entweder die gesamte Vergnügungseinrichtung oder ein integrierter Teil derselben sind. 
+Dieser Teil gilt für: 
+– 
+die vor Ort vorübergehend errichtete elektrische Anlage ab dem Speisepunkt bzw. ab dem Anschlusspunkt 
+(siehe Bild 740.NE.001.AT); 
+– 
+die vor Ort vorübergehend errichtete allgemeine elektrische Anlage z. B. Verteilungsstromkreise, 
+Endstromkreise für Allgemeinbeleuchtung, Steckdosen für allgemeine Verbrauchsmittel. 
+Dieser Teil gilt grundsätzlich nicht für die elektrische Ausrüstung von Maschinen (siehe OVE EN 60204-1) 
+sowie für Fahrgeschäfte und Vergnügungsanlagen (siehe ÖNORM EN 13814 Reihe). 
+Dieser Teil gilt nicht für die ortsfest errichtete Anlagenteile z. B. bis zum Speisepunkt, bis zum Anschlusspunkt 
+an der vorübergehend errichteten Anlage. 
+ANMERKUNG 
+Beispiele von elektrischen Anlagen gemäß Anwendungsbereich siehe Anhang 740.ZA bzw. Nationale 
+Ergänzung 740.NE. 
+ANMERKUNG 1.AT 
+Für mobile Beleuchtungs- und Beschallungsanlagen siehe ONR 151060. 
+ANMKERUNG 2.AT 
+In diesem Teil wird für den Begriff „Speisepunkt“ gemäß 826-10-02 die Definition vom 
+„Speisepunkt für die vorübergehend errichtete elektrische Anlage“ gemäß Begriff 711.3.6 verwendet. 
+740.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+740.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+740.3 
+Bestimmungen allgemeiner Merkmale 
+740.30 
+Allgemeines 
+Füge hinzu: 
+740.30.001.AT 
+Versorgungssystem 
+ANMERKUNG AT 
+Die benötigte Anschlussleistung und die Nennspannung sollten zwischen den Beteiligten 
+abgestimmt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 790/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 2 
+740.31 
+Zweck, Stromversorgung und Aufbau 
+740.313 
+Stromversorgungen 
+740.313.1 
+Allgemeines 
+Füge hinzu: 
+Die Nennspannung gegen Erde der vorübergehend errichteten elektrischen Anlagen für Buden, Stände und 
+Vergnügungseinrichtungen darf AC 230 V oder DC 350 V nicht überschreiten. 
+740.313.1.001.AT 
+Elektrische Versorgung 
+Für jede Vergnügungseinrichtung muss ein leicht zugänglicher Anschlusspunkt vorhanden sein, der dauerhaft 
+mit den folgenden Merkmalen gekennzeichnet sein muss: 
+– 
+Bemessungsspannung; 
+– 
+Bemessungsstrom; 
+– 
+Bemessungsfrequenz. 
+– 
+Anschlussleistung. 
+Füge hinzu: 
+740.313.3 
+ Stromversorgung aus dem Verteilernetz 
+Ungeachtet der Anzahl von Stromquellen zur Stromversorgung dürfen ab dem Speisepunkt für die 
+vorübergehend errichtete elektrische Anlage Außenleiter und Neutralleiter nicht untereinander verbunden sein. 
+Siehe auch 740.411.4 und 740.411.6 (Beispiele siehe Nationale Ergänzung 740.NE). Die Anweisungen des 
+Verteilernetzbetreibers sind zu beachten. 
+740.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+740.41 
+Schutz gegen elektrischen Schlag 
+740.410.3 
+Allgemeine Anforderungen 
+740.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrung Schutz durch Hindernisse gemäß Anhang 41.B darf nicht angewendet werden. 
+Die Schutzvorkehrung Schutz durch Anordnung außerhalb des Handbereichs gemäß Anhang 41.B für die 
+Versorgung von elektrischen Autoskootern ist zulässig. 
+740.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 791/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 3 
+740.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+740.411.3 
+Anforderungen an den Fehlerschutz 
+740.411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+Füge hinzu: 
+Für jede vorübergehend errichtete elektrische Anlage muss bei dessen Speisepunkt oder im unmittelbar 
+nachgeschalteten Verteiler eine Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,3 A vorhanden sein. Diese Einrichtung muss zeitverzögert in Übereinstimmung mit OVE EN 60947-2 
+ausgeführt sein, oder es müssen Fehlerstrom-Schutzeinrichtungen (RCD) vom Typ S gemäß OVE  
+EN 61008-1 oder OVE EN 61009-1 ausgewählt werden, um eine Selektivität mit den Fehlerstrom-
+Schutzeinrichtungen (RCD) in den Endstromkreisen zu erreichen. 
+ANMERKUNG AT 
+Diese Anforderung wird von Baustromverteilern im Allgemeinen nicht erfüllt. 
+740.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+Füge hinzu: 
+740.411.4.101 
+Ab dem Speisepunkt muss ein TN-S-System angewendet werden (Beispiele siehe Nationale 
+Ergänzung 740.NE). 
+740.411.4.6.001.2.2.AT 
+Erdungsbedingung in Verbraucheranlagen 
+Füge bei der dritten Aufzählung „eine gleichwertige Erderkombination“ hinzu: 
+Bei Anwendung der automatischen Abschaltung der Stromversorgung ist beim ersten Verteiler am oder nach 
+dem Speisepunkt die Verbindung des Erdungsanschlusses mit einer geeigneten Erdungsanlage erforderlich. 
+Es bestehen folgende Möglichkeiten: 
+− 
+Verbindung mit einem Vertikalerder mit zumindest 0,8 m Einschlagtiefe oder mechanisch gleichwertig 
+ausgeführt in unmittelbarer Nähe des Verteilers; 
+− 
+Verbindung mit einer in unmittelbarer Nähe vorhandenen Erdungsanlage  
+740.411.5 
+TT-Systeme 
+740.411.5.3 
+Ersetze die Aufzählung iii) durch: 
+Für diesen Anlagenteil muss keine eigene Erdungsanlage errichtet werden. 
+740.411.6 
+IT-Systeme 
+Wo ein alternatives System zur Verfügung steht, darf ein IT-System nicht verwendet werden. 
+IT-Systeme dürfen jedoch für DC-Anwendungen verwendet werden, wenn die Aufrechterhaltung der 
+Stromversorgung benötigt wird. 
+740.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+740.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 792/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 4 
+Vorzugsweise sind kombinierte kurzzeitverzögerte Fehlerstrom-Differenzstrom-Schutzschalter (RCBO) mit 
+ausreichender Stoßstromfestigkeit, z. B. Typ G, zu verwenden. 
+ANMERKUNG 1.AT 
+Dies dient zur Erhöhung der Versorgungssicherheit. 
+740.415.1.002.AT 
+Füge hinzu: 
+Diese Anforderungen gelten auch für ortsfeste elektrische Betriebsmittel. 
+740.415.1.003.AT 
+Füge hinzu: 
+Ausgenommen davon sind Stromkreise der Sicherheitsbeleuchtung. 
+740.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+In Bereichen, die für Tiere vorgesehen sind, müssen alle Körper und fremden leitfähigen Teile, die gleichzeitig 
+berührt werden können, zu einem örtlichen zusätzlichen Schutzpotentialausgleich verbunden werden (siehe 
+auch 705.415.2.3). 
+ANMERKUNG AT 
+Für mobile Beleuchtungs- und Beschallungsanlagen siehe ergänzend ONR 151060. 
+740.42 
+Schutz gegen thermische Einflüsse 
+740.422 
+Maßnahmen bei Brandrisiken 
+740.422.3 
+Räume oder Orte mit besonderem Brandrisiko aufgrund der hergestellten, bearbeiteten 
+oder gelagerten Materialien 
+Füge hinzu: 
+Ein Motor, der automatisch oder von der Ferne gesteuert und nicht fortwährend beaufsichtigt ist, muss mit einer 
+manuell rücksetzbaren Schutzeinrichtung bei übermäßigen Temperaturen geschützt sein. 
+740.422.4 
+Räume oder Orte hauptsächlich aus brennbaren Baustoffen 
+Füge hinzu: 
+740.422.4.001.AT 
+Wärmeerzeugung 
+Leuchten, Leuchtmittel, Scheinwerfer, Projektoren und andere elektrische Betriebsmittel oder Geräte mit hoher 
+Oberflächentemperatur müssen angemessen geschützt, montiert und platziert sein in Übereinstimmung mit 
+den jeweiligen Produktnormen. All diese Betriebsmittel müssen ausreichend weit von brennbarem Material 
+entfernt sein, um eine Entzündung des Materials zu vermeiden. 
+Schaukästen und Leuchtschriften müssen aus Werkstoffen hergestellt sein, die eine ausreichende 
+Wärmebeständigkeit, 
+mechanische 
+Festigkeit, 
+elektrische 
+Isolation 
+und 
+Belüftung 
+haben, 
+unter 
+Berücksichtigung der Brennbarkeit von Ausstellungsgegenständen in Bezug auf die erzeugte Wärme. 
+Standeinrichtungen mit einer Ansammlung von elektrischen Geräten, Beleuchtungseinrichtungen oder 
+Leuchten, die in der Lage sind, übermäßige Wärme zu entwickeln, dürfen nicht eingebaut werden, es sei denn, 
+es ist Vorsorge für eine ausreichende Be- und Entlüftung getroffen, z. B. gut belüftete Decken aus 
+unbrennbarem Material. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 793/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 5 
+Es sind die Herstellerangaben zu beachten. 
+740.46 
+Trennen und Schalten 
+740.462 
+Trennen 
+740.462.1 
+Füge hinzu: 
+Jede einzelne, vorübergehend errichtete elektrische Anlage für Vergnügungseinrichtungen und jeder 
+Verteilungsstromkreis, der eine elektrische Anlage im Außenbereich versorgt, muss mit einer eigenen leicht 
+zugänglichen und eindeutig zuordenbaren Einrichtung zum Trennen versehen sein. 
+ANMERKUNG AT 
+Anforderungen für die Auswahl und Installation von Einrichtungen zum Trennen siehe 537.2. 
+Schalter, Steckdosen, Lasttrennschalter, Leistungsschalter, Fehlerstrom-Schutzeinrichtungen (RCD) usw., die nach den 
+entsprechenden Normen zum Trennen geeignet sind, dürfen benutzt werden. 
+740.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+740.51 
+Allgemeine Bestimmungen 
+Füge hinzu: 
+740.51.101  
+Steuer- und Schutzschalteinrichtungen müssen in Verteilern, Dosen und Gehäusen untergebracht werden, die 
+mit Schlüssel oder Werkzeug geöffnet werden können. Ausgenommen hiervon sind solche elektrischen 
+Betriebsmittel, die vorgesehen sind, durch elektrotechnische Laien (BA1) bedient zu werden. 
+ANMERKUNG.AT 
+Anforderungen an Schaltgerätekombinationen für Marktplätze finden sich in OVE EN  
+IEC 61439-7. 
+740.512 
+Betriebsbedingungen und äußere Einflüsse 
+740.512.2 
+Äußere Einflüsse 
+ 
+Elektrische Betriebsmittel müssen mindestens die Schutzart IP44 aufweisen. 
+740.513 
+Zugänglichkeit 
+Füge hinzu: 
+Alle elektrischen Betriebsmittel einschließlich der Kabel- und Leitungsanlagen müssen so angeordnet werden, 
+dass Betrieb, Besichtigung und Wartung und der Zugang zu den Verbindungen leicht möglich sind. Solche 
+Einrichtungen dürfen durch die Anordnung in einem Gehäuse oder in einem Einbauraum nicht wesentlich 
+beeinflusst werden. 
+740.52 
+Kabel- und Leitungsanlagen 
+740.521 
+Arten von Kabel- und Leitungsanlagen 
+Füge hinzu: 
+Kabel und Leitungen müssen die Anforderungen gemäß OVE EN IEC 60332-1-2 erfüllen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 794/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 6 
+Die Wege von Kabeln und Leitungen im Erdreich müssen in entsprechenden Abständen gekennzeichnet 
+werden. Im Erdreich verlegte Kabel und Leitungen müssen gegen mechanische Beschädigung geschützt sein. 
+ANMERKUNG Z1 
+Installationsrohre, die einen Schutz gegen Druck von 450 N aufweisen und einen Schutz gegen 
+normalen Schlag gemäß OVE EN 50626-1 sicherstellen, können diese Anforderung erfüllen. 
+Bewehrte Kabel und Leitungen oder Kabel und Leitungen mit Schutz gegen mechanische Beanspruchung 
+müssen verwendet werden, wo immer die Gefahr einer mechanischen Beschädigung (hohe mechanische 
+Beanspruchung – AG3 gemäß Tabelle 51.ZA.1) aufgrund äußerer Einflüsse auftreten kann. Ein zusätzlicher 
+mechanischer Schutz muss in Bereichen, die der Öffentlichkeit zugänglich sind und in Bereichen, wo Kabel 
+und Leitungen Straßen und Fußwege kreuzen, vorgesehen werden. 
+ANMERKUNG 1.AT 
+Anforderungen für die Verlegung von Energie-, Steuer- und Messkabeln, siehe OVE E 8120. 
+ANMERKUNG 2.AT 
+Bei freigespannten Kabeln und Leitungen über 20 m Stützpunktentfernung, siehe OVE E 8110. 
+ANMERKUNG Z2 
+Es kann davon ausgegangen werden, dass die oben genannten Anforderungen wie folgt erfüllt 
+werden, durch: 
+– 
+Elektroinstallationsrohre, die einen Schutz gegen Druck von 1 250 N, die einen Schutz gegen schweren Schlag und 
+einem mittleren/hohen Schutz vor Korrosion (innen/außen) gemäß OVE EN IEC 61386-21 sicherstellen. 
+– 
+zu öffnende und geschlossene Elektroinstallationskanäle, die einen Schutz gegen schweren Schlag gemäß OVE EN 
+IEC 61084-1 sicherstellen. 
+Wenn Kabel/Leitungen Bewegungen ausgesetzt sind, müssen flexible Bauarten verwendet werden. 
+ANMERKUNG Z3 
+Kabel und Leitungen vom Typ H07RN-F oder H07BN4-F zusammen mit Elektroinstallations-
+rohren gemäß OVE EN IEC 61386-23 erfüllen diese Anforderungen. 
+740.526 
+Elektrische Verbindungen 
+Füge hinzu: 
+740.526.001.AT In Kabeln und Leitungen dürfen keine Verbindungen vorgesehen werden, ausgenommen 
+notwendige Verbindungen in Stromkreisen. Wenn Verbindungen hergestellt werden, müssen hierfür entweder 
+Verbinder in Übereinstimmung mit den entsprechenden Normen verwendet werden oder die Verbindung muss 
+in einem Gehäuse mit mindestens der Schutzart von IP4X oder IPXXD hergestellt werden. 
+Wenn eine Zugbeanspruchung auf die Klemmen übertragen werden kann, muss für die Verbindung eine 
+Kabelbefestigung(en) (Zugentlastung) enthalten sein. 
+740.53 
+Schalt- und Steuergeräte 
+740.537 
+Geräte zum Trennen und Schalten 
+740.537.1 
+Allgemeines 
+Füge hinzu: 
+Jede elektrische Anlage gemäß Anwendungsbereich muss eine eigene Einrichtung zum Trennen, Schalten 
+und zum Schutz bei Überstrom haben, die leicht zugänglich und eindeutig zuordenbar sein muss. 
+740.537.2 
+Einrichtungen zum Trennen 
+Füge hinzu: 
+Einrichtungen zum Trennen müssen alle aktiven Leiter (Außenleiter und Neutralleiter) trennen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 795/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 7 
+740.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+740.55.101 Sicherheitstransformatoren und elektronische Konverter 
+Sicherheitstransformatoren 
+müssen 
+mit 
+ÖVE/ÖNORM EN 61558-2-6 
+übereinstimmen 
+oder 
+eine 
+entsprechende Sicherheit bieten. 
+Besondere Sorgfalt ist erforderlich, wenn Transformatoren für Kleinspannung (ELV) eingebaut werden. Diese 
+müssen für die Allgemeinheit außerhalb des Handbereichs angeordnet sein und eine ausreichende Belüftung 
+haben. Die Zugänglichkeit durch Elektrofachkräfte (BA5) oder elektrotechnisch unterwiesene Personen (BA4) 
+für Prüfung und Wartung muss vorgesehen sein. 
+Gehäuse, die Gleichrichter und/oder Transformatoren beinhalten, müssen angemessen belüftet werden, und 
+die Öffnungen dürfen während des Betriebs nicht verdeckt sein. 
+Elektronische Konverter müssen mit dem entsprechenden Teil der Normenreihe OVE EN 61347 
+übereinstimmen. 
+Füge hinzu: 
+740.55.102 Steckdosen und Stecker 
+Es ist eine entsprechend den zu erwartenden Verbrauchsmitteln angemessene Anzahl von Steckdosen fest zu 
+installieren. 
+ANMERKUNG Z1 
+Die Anzahl und die technischen Anforderungen der zu erwartenden Verbrauchsmittel sind 
+möglichst rechtzeitig dem Errichter der elektrischen Anlage bekannt zu geben. 
+Steckdosen, vorgesehen für Beleuchtungsstromkreise, angeordnet außerhalb des Handbereichs (in 
+Übereinstimmung mit 740.415.1) müssen entsprechend ihrer Verwendung kodiert oder gekennzeichnet sein. 
+Steckdosen müssen, wenn sie im Freien angeordnet sind, mit OVE EN IEC 60309-2 oder, wenn eine 
+Austauschbarkeit nicht gefordert ist, mit OVE EN IEC 60309-1 übereinstimmen. 
+Steckdosen in Übereinstimmung mit anderen nationalen Normen dürfen installiert werden, wenn sie einen 
+entsprechenden mechanischen Schutz (gleichwertig zu den Anforderungen von OVE EN IEC 60309-1) haben 
+und der Bemessungsstrom 16 A nicht übersteigt. 
+ANMERKUNG Z2 
+Ein entsprechender mechanischer Schutz kann durch die Steckdose oder durch ein Gehäuse 
+erfüllt werden. 
+Füge hinzu: 
+740.55.103 Elektrische Autoskooter 
+ANMERKUNG AT 
+Anforderungen an die Errichtung der elektrischen Anlage für Autoskooter, siehe Normenreihe 
+ÖNORM EN 13814. 
+740.551 
+Stromerzeugungseinrichtungen 
+740.551.2 
+Allgemeine Anforderungen für die Auswahl der Stromerzeugungseinrichtung 
+Füge hinzu: 
+Erfolgt die Stromversorgung durch Stromerzeugungseinrichtungen (Generatoren), so müssen diese so 
+angeordnet oder geschützt werden, dass Gefahren und Schäden durch heiße Oberflächen oder gefährliche 
+Teile verhindert werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 796/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 8 
+Zum Generator gehörige elektrische Betriebsmittel müssen sicher und, falls notwendig, erschütterungsfrei 
+befestigt sein. 
+Hinweise in diesem Abschnitt auf Schaden und Gefahr beinhalten auch eine nicht elektrische Gefahr und einen 
+nicht elektrischen Schaden. 
+Wo ein Generator eine vorübergehend errichtete elektrische Anlage unter Anwendung eines TN-, TT- oder  
+IT-Systems versorgt, muss beachtet werden, dass die Erdungsanlage Teil 5-54 entspricht. 
+Der Neutralleiter des Sternpunkts des Generators muss, mit Ausnahme bei IT-Systemen, mit dem Körper des 
+Generators verbunden sein. 
+740.559 
+Beleuchtungsanlagen 
+740.559.3 
+Allgemeine Anforderungen 
+Füge hinzu: 
+740.559.3.101 Leuchten und Lichterketten 
+Alle Leuchten und Lichterketten müssen 
+– 
+eine geeignete IP-Schutzart in Abhängigkeit von den äußeren Einflüssen aufweisen, 
+ 
+ANMERKUNG AT Für Beleuchtungsanlagen im Freien gilt Teil 7-714. 
+– 
+so errichtet sein, dass die IP-Schutzart durch die Montage nicht beeinträchtigt wird und 
+– 
+sicher befestigt sein, oder es müssen Stützpunkte, die sie tragen können, vorgesehen werden. Die Masse 
+einer Leuchte oder einer Lichterkette darf nicht am speisenden Kabel/an der speisenden Leitung hängen, 
+es sei denn die Kabel/Leitungen sind für diesen Zweck ausgewählt und errichtet. 
+Leuchten und Lichterketten in einer Höhe von weniger als 2,50 m (Handbereich) über Fußbodenniveau, oder 
+wenn sie zufällig berührbar sind, müssen angemessen befestigt sein und so angeordnet oder geschützt 
+werden, dass es zu keiner Verletzung einer Person oder zu keiner Entzündung von Material kommen kann. 
+ 
+Flache Lichterkettenleitungen H05RNH2-F müssen mit ÖVE/ÖNORM EN 50525-2-82 übereinstimmen. 
+ANMERKUNG 
+Lichterketten dürfen in jeder Länge verwendet werden, vorausgesetzt die Überstrom-Schutzeinrichtung 
+ist entsprechend bemessen. 
+740.559.3.102 Fassungen für Leuchtmittel 
+Fassungen für Leuchtmittel mit Durchdringungsanschlusstechnik dürfen nicht verwendet werden, 
+ausgenommen die Kabel oder die Leitungen sind zugehörig zu den Fassungen für Leuchtmittel und die 
+Fassungen für Leuchtmittel sind nicht mehr veränderbar nach der Befestigung am Kabel/an der Leitung. 
+740.559.3.103 Anlagen mit elektrischen Entladungslampen mit einer Nennversorgungsspannung 
+höher als AC 230/400 V 
+740.559.3.103.1 Allgemeines 
+Stromkreise mit jeglicher Art von Leuchtröhrenschriften oder Leuchten als Illuminationseinheit auf einem Stand 
+oder als Ausstellungsgegenstand mit Nennversorgungsspannungen größer als AC 230/400 V müssen die 
+Anforderungen nach 740.559.3.103.2 bis 740.559.3.103.4 erfüllen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 797/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 9 
+740.559.3.103.2 Anordnung 
+Leuchtröhrenschriften, Leuchtzeichen oder Leuchten müssen außerhalb des Handbereichs errichtet oder 
+angemessen geschützt werden, um das Risiko einer Verletzung zu reduzieren. 
+ANMERKUNG AT 
+ÖVE/ÖNORM EN 50107-1:2003 
+enthält 
+in 
+den 
+Abschnitten 7.4 
+und 
+7.6 
+zusätzliche 
+Anforderungen für die Anordnung von Hochspannungs-Leuchtröhrenanschlüssen innerhalb des Handbereichs. 
+740.559.3.103.3 Errichtung 
+Die Abdeckung oder die Standausstattung hinter Leuchtröhrenschriften oder Leuchten darf nicht entzündbar 
+sein und muss entsprechend den nationalen Normen geschützt sein. 
+Steuereinrichtungen mit Ausgangsspannungen höher als AC 230/400 V müssen auf nicht entzündbarem 
+Material befestigt werden. 
+740.559.3.103.4 Einrichtungen für das Ausschalten im Notfall 
+Zur Versorgung von Leuchtröhrenschriften, Leuchtzeichen oder Leuchten ist ein separater Stromkreis zu 
+verwenden, der mit einer Not-Aus-Einrichtung gemäß Abschnitt 465 versehen werden muss. Diese Einrichtung 
+muss leicht erkennbar und zugänglich sein sowie in Übereinstimmung mit den Anforderungen der zuständigen 
+Behörde gekennzeichnet sein. 
+ANMERKUNG AT 
+Schilder und Leuchtröhrengeräte mit einer Leerlaufspannung über 1 kV, aber nicht über 10 kV, 
+siehe Normenreihe ÖVE/ÖNORM EN 50107. 
+740.559.104 
+Leuchten in Schießbuden/auf Schießständen 
+Alle Leuchten in Schießbuden/auf Schießständen und anderen Showbühnen, wo Geschoße benutzt werden, 
+müssen gegen zufällige Beschädigung angemessen geschützt werden. 
+740.559.105 
+Scheinwerfer 
+Wenn transportable Scheinwerfer verwendet werden, müssen sie so aufgestellt oder montiert werden, dass 
+diese keine Gefahr (z. B. Stolpergefahr, Verbrennungsgefahr) darstellen. Versorgungskabel/-leitungen müssen 
+flexibel sein und einen entsprechenden Schutz gegen mechanische Beschädigung haben. 
+740.559.106 
+Brandrisiko durch Leuchten und Scheinwerfer 
+Leuchten und Scheinwerfer müssen so befestigt und geschützt sein, dass eine Fokussierung oder 
+Konzentration der Hitze, die zur Entzündung irgendeines Materials führen kann, unwahrscheinlich ist. 
+740.6 
+Prüfungen 
+Füge hinzu: 
+Die vorübergehend errichtete elektrische Anlage zwischen Speisepunkt und jedem elektrischen Betriebsmittel 
+bzw. dessen Anschlusspunkt muss nach jedem Zusammenbau vor Ort geprüft werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 798/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 10 
+Anhang 740.ZA 
+(informativ) 
+ 
+Beispiele von entsprechenden elektrischen Anlagen 
+ 
+Bild 740.ZA.1 – Beispiele für elektrische Anlagen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 799/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 11 
+Nationale Ergänzung 740.NE 
+(informativ) 
+ 
+Beispiele für Abgrenzungen 
+ 
+Bild 740.NE.001.AT – Beispiel für vorübergehend errichtete elektrische Anlagen mit 
+Versorgungssystem; vor und nach dem Speisepunkt 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 800/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-740 – Seite 12 
+Legende zu Bild 740.NE.001.AT 
+ 
+Anlagenteile, die sich nicht im Anwendungsbereich dieses Teils befinden 
+ 
+ 
+Verbrauchsmittel bis 32 A 
+ 
+ 
+Verbrauchsmittel über 32 A 
+  
+ 
+Leuchte 
+ 
+ 
+Steckvorrichtung 16 A 
+ 
+Steckvorrichtung 63 A; 3/N/PE 
+ 
+1 
+vorübergehend errichtete elektrische Anlage ab Speisepunkt bis zum Anschlusspunkt der Aufbauten 
+2 
+vor Ort vorübergehend errichtete elektrische Anlage in Aufbauten (z. B. Stände, Buden) sowie die vor Ort 
+vorübergehend errichtete elektrische Anlage außerhalb von Aufbauten (z. B. Lichterketten); nicht im 
+Anwendungsbereich dieses Teils (siehe Teil 7-711) 
+3 
+vor Ort vorübergehend errichtete elektrische Anlage (z. B. Allgemeinbeleuchtung, Steckdosen für 
+allgemeine Verbrauchsmittel) 
+4 
+vor Ort vorübergehend errichtete Verbrauchsmittel; fest angeschlossen und außerhalb des Handbereichs 
+montiert 
+5 
+vor Ort vorübergehend errichtete Verbrauchsmittel der Beleuchtungs- und Beschallungstechnik (BBT); 
+nicht im Anwendungsbereich dieses Teils 
+6 
+vor Ort vorübergehend errichtete elektrische Anlage (z. B. großes Fahrgeschäft, Maschinen); nicht im 
+Anwendungsbereich dieses Teils (siehe ÖNORM EN 13814 Reihe, OVE EN 60204-1) 
+7 
+Einrichtung zum Trennen 
+8 
+Speisepunkt 
+ 
+ANMERKUNG AT  
+Wenn die speisende Verteilung zur festen elektrischen Anlage gehört, beginnt der 
+Speisepunkt für die vorübergehend errichtete elektrische Anlage an den Abgangsklemmen der Verteilung, andernfalls 
+beginnt er an den Klemmen des zu versorgenden Stromkreises. 
+9 
+Anschlusspunkt der vorübergehend errichteten elektrischen Anlage 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

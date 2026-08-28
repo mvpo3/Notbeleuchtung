@@ -1,0 +1,1232 @@
+
+
+===== PAGE 1/19 =====
+Seite 1 von 19 
+ 
+ 
+ 
+OVE-Fachinformation IS02 
+ 
+Ausgabe: 2021-07-01 
+ 
+ 
+ 
+ 
+Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen  
+in Niederspannungsanlagen gemäß den in Österreich geltenden 
+anerkannten Regeln der Technik 
+ 
+Ersatz für 
+Ausgabe 2013-10 
+Zuständig 
+OVE/TSK IS23E – Schutzschalter 
+ICS 
+29.020; 29.120; 29.130; 29.240.01; 91.140.50 
+ 
+ 
+ 
+Änderungen 
+In dieser Ausgabe wurden die Änderungen, die durch die Herausgabe der anerkannten Regeln der Technik 
+OVE E 8101:2019-01-01, OVE E 8101/AC1:20219-05-01, OVE E 8601:2018 und ÖVE/ÖNORM E 8603:2015 
+eingetreten sind, eingearbeitet. 
+ 
+ 
+ 
+ 
+Inhalt 
+Seite 
+Änderungen ....................................................................................................................................................... 1 
+1 
+Ausgangssituation ............................................................................................................................... 2 
+2 
+Hinweise aus den Betriebsmittelnormen ........................................................................................... 2 
+2.1 
+Sensitivität gegenüber Fehlerströmen (Auswahltabelle) ................................................................. 2 
+2.2 
+Bauformen von Fehlerstrom-Schutzeinrichtungen (Übersicht) ...................................................... 6 
+2.3 
+Überlast- und Kurzschlussschutz gemäß OVE E 8101 .................................................................... 7 
+3 
+Einsatzbedingungen von Fehlerstrom-Schutzeinrichtungen .......................................................... 8 
+4 
+Anwendung von Fehlerstrom-Schutzeinrichtungen ) – Überblick ................................................ 10 
+Literaturhinweise ............................................................................................................................................. 19 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 2 von 19 
+1 
+Ausgangssituation 
+In den letzten Jahren wurden einige wesentliche internationale, europäische und nationale anerkannte Regeln 
+der Technik für Fehlerstrom-Schutzeinrichtungen (RCCBs) aktualisiert bzw. neu erstellt.  
+Diese Fachinformation wurde mit dem Ziel zusammengestellt, dem Praktiker eine anwendungsbezogene 
+Übersicht über die in den einschlägigen Normen enthaltenen und auch am Markt erhältlichen 
+Ausführungsformen von Fehlerstrom-Schutzeinrichtungen zu geben. 
+2 
+Hinweise aus den Betriebsmittelnormen 
+2.1 
+Sensitivität gegenüber Fehlerströmen (Auswahltabelle) 
+Zum Zeitpunkt der Herausgabe dieser Fachinformation sind die in Tabelle 1 angegebenen, hinsichtlich ihrer 
+Sensitivität gegenüber verschiedenen Kurvenformen des Fehlerstromes genormten Ausführungen von 
+Fehlerstrom-Schutzeinrichtungen am Markt verfügbar. 
+Tabelle 1 – Typ (Sensitivität), Beschreibung und Kennzeichnung von  
+Fehlerstrom-Schutzeinrichtungen 
+Typ 
+Beschreibung 
+Kennzeichnung 
+AC 
+Wechselstromsensitiv entsprechend OVE EN 61008-1 und  
+OVE EN 61009-1 
+ 
+Fehlerstrom-Schutzeinrichtung (RCCB), sensitiv für sinusförmige 
+Wechselfehlerströme (50/60 Hz), die plötzlich oder langsam ansteigend 
+auftreten. 
+ 
+A 
+Pulsstromsensitiv entsprechend OVE EN 61008-1 und  
+OVE EN 61009-1  
+ 
+Fehlerstrom-Schutzeinrichtung, sensitiv für sinusförmige 
+Wechselfehlerströme und pulsierende Gleichfehlerströme (50 Hz/60 Hz), 
+die plötzlich oder langsam ansteigend auftreten. 
+ 
+ 
+F 
+Sensitivität entsprechend ÖVE/ÖNORM EN 62423 
+ 
+Fehlerstrom-Schutzeinrichtung, sensitiv für sinusförmige 
+Wechselfehlerströme pulsierende Gleichfehlerströme (50 Hz/60 Hz) mit 
+überlagerten glatten Gleichfehlerströmen von max. 10 mA, sowie für 
+zusammengesetzte Fehlerströme, die plötzlich oder langsam ansteigend 
+auftreten. 
+ 
+  
+B 
+Sensitivität entsprechend ÖVE/ÖNORM EN 62423  
+ 
+Fehlerstrom-Schutzeinrichtung, sensitiv für sinusförmige 
+Wechselfehlerströme, pulsierende sowie glatte Gleichfehlerströme und 
+Wechselfehlerströme mit Frequenzen bis 1 000 Hz, die plötzlich oder 
+langsam ansteigend auftreten. 
+ 
+ 
+ 
+ 
+Die in Tabelle 1 genannten Typen von Fehlerstrom-Schutzeinrichtungen sind in der Lage, die in Tabelle 2 
+dargestellten Kurvenformen von Fehlerströmen zu erfassen. 
+ 
+ 
+
+
+===== PAGE 3/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 3 von 19 
+Tabelle 2 – Kurvenformen von Fehlerströmen und deren Zuordnung zu den Typen von  
+FehIerstrom-Schutzeinrichtungen – Auswahlhilfe a) (1 von 4) 
+Nr. 
+Schaltungsart 
+Schaltung (schematisch) / Typ 
+Laststromverlauf (IL) 
+Fehlerstromverlauf (IF, IF1, IF2) 
+1 
+Phasenanschnittssteuerung 
+ 
+2 
+Paketsteuerung 
+(Burst-Steuerung) 
+ 
+3 
+Einphasig 
+ 
+4 
+Zweipuls-Brückenschaltung 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 4 von 19 
+Tabelle 2 – Kurvenformen von Fehlerströmen und deren Zuordnung zu den Typen von  
+FehIerstrom-Schutzeinrichtungen – Auswahlhilfe a) (2 von 4) 
+Nr. 
+Schaltungsart 
+Schaltung (schematisch) / Typ 
+Laststromverlauf (IL) 
+Fehlerstromverlauf (IF, IF1, IF2) 
+5 
+Zweipuls-Brückenschaltung, 
+halbgesteuert 
+ 
+6 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung 
+ 
+ 
+Anmerkung zu IF2: Die tatsächliche Frequenz kann von der hier dargestellten 
+Frequenz von 50 Hz deutlich abweichen. 
+7 
+Einphasig mit Glättung 
+ 
+ 
+8 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung und PFC b) 
+ 
+Anmerkung zu IF2: Die tatsächliche Frequenz kann von der hier dargestellten 
+Frequenz von 50 Hz deutlich abweichen. 
+ 
+ 
+
+
+===== PAGE 5/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 5 von 19 
+Tabelle 2 – Kurvenformen von Fehlerströmen und deren Zuordnung zu den Typen von  
+FehIerstrom-Schutzeinrichtungen – Auswahlhilfe a) (3 von 4) 
+Nr. 
+Schaltungsart 
+Schaltung (schematisch) / Typ 
+Laststromverlauf (IL) 
+Fehlerstromverlauf (IF, IF1, IF2) 
+9 
+Zweipuls-Brückenschaltung 
+zwischen Außenleitern 
+ 
+10 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung zwischen den 
+Außenleitern 
+ 
+Anmerkung zu IF2: Die tatsächliche Frequenz kann von der hier dargestellten 
+Frequenz von 50 Hz deutlich abweichen. 
+11 
+Drehstrom-Sternschaltung 
+ 
+12 
+Sechspuls-Brückenschaltung 
+ 
+ 
+ 
+
+
+===== PAGE 6/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 6 von 19 
+Tabelle 2 – Kurvenformen von Fehlerströmen und deren Zuordnung zu den Typen von  
+FehIerstrom-Schutzeinrichtungen – Auswahlhilfe a) (4 von 4) 
+Nr. 
+Schaltungsart 
+Schaltung (schematisch) / Typ 
+Laststromverlauf (IL) 
+Fehlerstromverlauf (IF, IF1, IF2) 
+13 
+Frequenzinverter mit Sechspuls-
+Brückenschaltung 
+ 
+Anmerkung zu IF2: Die tatsächliche Frequenz kann von der hier dargestellten 
+Frequenz von 50 Hz deutlich abweichen. 
+a)  Die Informationen zu Tabelle 2 wurden OVE E 8101:2019-01-01 entnommen. 
+b) 
+PFC … Power Factor Correction 
+Bei der Bearbeitung dieser Fachinformation wurden in den grafischen Darstellungen In OVE E 8101:2019-01-01, 
+Anhang 531.A und in den Vorlagen in HD 60364 Reihe bzw. IEC 60364 Series darstellungstechnische Unklarheiten 
+entdeckt. Die vorliegende Tabelle enthält aus diesem Grund in den Zeilen 8 und 10 korrigierte Darstellungen mit 
+Anmerkungen. 
+Kennzeichnung in grüner Farbe 
+Fehlerstrom-Schutzeinrichtung kann Fehlerströme dieses Typs erfassen 
+Kennzeichnung in roter Farbe 
+Fehlerstrom-Schutzeinrichtung kann Fehlerströme dieses Typs nicht erfassen 
+ 
+2.2 
+Bauformen von Fehlerstrom-Schutzeinrichtungen (Übersicht) 
+Neben der so genannten üblichen Bauform sind die in Tabelle 3 angegebenen (Sonder-) Bauformen in den 
+anerkannten Regeln der Technik enthalten. 
+ 
+ 
+
+
+===== PAGE 7/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 7 von 19 
+Tabelle 3 – Bauform, Beschreibung und Kennzeichnung von Fehlerstrom-Schutzeinrichtungen 
+Bauform 
+Beschreibung 
+Kennzeichnung 
+übliche 
+Bauform ohne Zeitverzögerung gemäß OVE EN 61008-1 
+ 
+Fehlerstrom-Schutzschalter ohne definierte Nichtauslösezeit. 
+keine 
+G 
+Kurzzeitverzögert gemäß OVE E 8601  
+ 
+Fehlerstrom-Schutzeinrichtung, die ungewolltes Auslösen beim Auftreten von 
+Überspannungen durch Einhalten einer Nichtauslösezeit von 0,01 s mit hoher 
+Wahrscheinlichkeit verhindert. 
+G 
+S 
+Selektiv gemäß OVE EN 61008-1 
+ 
+Fehlerstrom-Schutzeinrichtung mit Zeitverzögerung, die dafür ausgelegt ist, 
+je nach Wert des auftretenden Fehlerstromes, einen festgelegten Wert der 
+Nichtauslösezeit nicht zu unterschreiten und der bei Einhaltung der 
+Selektivitätsbedingung mit in Energieflussrichtung nachgeschalteten 
+Fehlerstrom-Schutzeinrichtung selektiv schaltet.  
+Die kürzeste Nichtauslösezeit beträgt 0,04 s. 
+S 
+M 
+Selektiv gemäß ÖVE/ÖNORM E 8603 
+ 
+Fehlerstrom-Schutzschalter mit Zeitverzögerung mit Nennströmen  
+über 32 A selektiv mit elektromagnetischen Schnellauslösern von 
+Leitungsschutzschaltern nach ÖVE/ÖNORM EN 60898 Reihe und  
+mit Fehlerstrom-Schutzschaltern der Bauformen „allgemein“, G und „S“  
+gemäß OVE EN 61008-1, OVE E 8601. 
+Die kürzeste Nichtauslösezeit beträgt 0,2 s. 
+M 
+ 
+2.3 
+Überlast- und Kurzschlussschutz gemäß OVE E 8101 
+In ÖVE-EN 1, Teil 1b/1995 § 12.12, wie auch in ÖVE/ÖNORM E 8001-1:2010, Abschnitt 12.1 und auch in OVE 
+E 8101:2019, Unterabschnitte 536.4.2.4 und 536.4.3.2 wird klargestellt, dass Fehlerstromschutzschalter 
+(RCCB)  
+– 
+gegen Kurzschluss und 
+– 
+gegen thermische Überlastung  
+zu schützen sind.  
+Durch diese Festlegungen wird der Planer wie auch der Errichter der elektrischen Anlage darauf hingewiesen, 
+dass bei der Installation von Fehlerstromschutzschaltern sowohl der Bemessungswert der Schutzeinrichtung 
+(zB Vorsicherung) für den Überlastschutz als auch für den Kurzschlussschutz zu beachten ist.  
+Fehlt in den Angaben des Herstellers einer Fehlerstrom-Schutzeinrichtung die Angabe des höchstzulässigen 
+Nennstromes der Überlast-Schutzeinrichtung, dann gilt der Bemessungsstrom der Fehlerstrom-Schutz-
+einrichtung IN als deren dauernd zulässiger Überstrom IZ, d. h. (IN = IZ). Es ist in der Anlage durch geeignete 
+Überlast-Schutzeinrichtungen sicherzustellen, dass der Bemessungsstrom der Fehlerstrom-Schutzeinrichtung 
+nicht über die konventionelle Ausschaltzeit der Überstrom-Schutzeinrichtung hinausgehend auf Dauer fließen 
+kann. 
+Für die Dimensionierung der vorgeschalteten Überstrom-Schutzeinrichtung gilt: 
+IN (Fehlerstrom-Schutzeinrichtung) ≥  I2 (Überstrom-Schutzeinrichtung) 
+ 
+ 
+
+
+===== PAGE 8/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 8 von 19 
+Dabei ist: 
+IN 
+der Bemessungsstrom der Fehlerstrom-Schutzeinrichtung; 
+I2 
+der konventioneller Auslösestrom 1). 
+Dabei entspricht I2 bei Schmelzsicherungen der Klasse gG 2) dem konventionellen Auslösestrom If. Für 
+Schmelzsicherungen der Nennstromstärken 25 A bis 400 A beträgt der Wert von If = 1,6 · IN(Schmelzsicherung). 
+Für Leitungsschutzschalter der Charakteristiken B und C beträgt I2 = 1,45 · IN(Leitungsschutzschalter).  
+Daraus ergibt sich, dass für all jene Fälle, in denen in den Herstellerangaben nur Aussagen zur höchst-
+zulässigen Vorsicherung für den Kurzschlussschutz enthalten sind, bei Verwendung von Schmelzsicherungen 
+der Klasse gL die in Tabelle 4 angegebenen maximalen Nennströme für die Vorsicherung für den 
+Überlastschutz gelten. 
+Tabelle 4 – Maximale Nennströme für die Vorsicherung von Fehlerstrom-Schutzeinrichtungen, in 
+Fällen, in denen vom Hersteller keine Angaben hinsichtlich des Überlastschutzes bestehen 
+Nennstrom der Fehlerstrom-Schutzeinrichtung 
+Nennstrom a) der vorgeschalteten 
+Schmelzsicherung Klasse gL für Überlastschutz 
+A 
+A 
+16 
+10 
+25 
+16 
+40 
+25 
+63 
+40 
+80 
+50 
+100 
+63 
+a) gerundete Werte 
+ 
+3 
+Einsatzbedingungen von Fehlerstrom-Schutzeinrichtungen 
+Fehlerstrom-Schutzeinrichtungen gemäß den anerkannten Regeln der Technik OVE EN 61008-1, 
+ÖVE/ÖNORM EN 62423 und OVE EN 61009-1 sind von den Herstellern für definierte Einsatzbedingungen 
+entwickelt und hergestellt. Nur für diese Einsatzbedingungen gelten die technischen Spezifikationen der 
+jeweiligen Produkte. 
+Für die Praxis bedeutet dies, dass diese Produkte nur unter den definierten Einsatzbedingungen betrieben 
+werden dürfen oder zusätzliche Maßnahmen am Einbauort (zB im Verteiler) zu treffen sind, damit diese 
+definierten Einsatzbedingungen während des Betriebes hergestellt werden (zB Schaltschrankbelüftung, 
+Heizung, Klimatisierung, notwendige Vorsicherung(en)). Einige wesentliche Einflussgrößen sind in Tabelle 5 
+zusammengestellt. 
+Darüber hinaus sind die Angaben der Hersteller zum jeweiligen Produkt zu beachten. 
+ 
+ 
+ 
+1)  
+Ist jener Strom, der mit Sicherheit zur Auslösung führt, d. h. der Auslösestrom bei Leistungsschaltern bzw. der große 
+Prüfstrom bei Sicherungen und bei Leitungsschutzschaltern. 
+2)  
+Bei von gG abweichenden Kennlinien sind die Herstellerangaben für den konventionellen Auslösestrom zu beachten. 
+
+
+===== PAGE 9/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 9 von 19 
+Tabelle 5 – Einflussgrößen und definierte Einsatzbedingungen für  
+Fehlerstrom-Schutzeinrichtungen (Auswahl) 
+Einflussgröße 
+Definierte Einsatzbedingungen 
+Umgebungstemperatur der Fehlerstrom-
+Schutzeinrichtung im Verteiler 
+–5 °C bis +40 °C a)  
+–25 °C bis +40 °C a); RCCBs für diesen Anwendungs- 
+bereich müssen mit folgenden Zeichen beschriftet sein: 
+24 h Mittelwert ≤35 °C 
+Höhenlage 
+Nicht über 2000 m 
+Relative Feuchte (Höchstwert bei 40°C) 
+50 % 
+Höhere Werte der relativen Feuchte sind bei niedrigen 
+Temperaturen zulässig (zB 90 % bei 20 °C). 
+Lage 
+Wie vom Hersteller angegeben, mit einer Abweichung von 2°  
+in jeder Richtung b). 
+Frequenz 
+Bezugswert ±5 % 
+Vorsicherung für Überlast 
+Lt. Herstellerangabe 
+Vorsicherung für Kurzschluss 
+Lt. Herstellerangabe 
+Elektromagnetische Umgebung 
+Störfestigkeitsangaben lt. Herstellerangabe (zB OVE EN 
+IEC 61000-6-1:2019 für Wohnbereich, Geschäfts- und 
+Gewerbebereiche sowie Kleinbetriebe und/oder OVE EN 
+IEC 61000-6-2:2019 für Industriebereiche. 
+a) 
+Nach Vereinbarung zwischen Hersteller und Anwender sind Werte außerhalb des Bereichs zulässig, wo  
+härtere klimatische Bedingungen herrschen. 
+b) 
+Das Gerät muss befestigt werden, ohne dass Verformungen auftreten, die seine Funktion beeinträchtigen. 
+ 
+ 
+
+
+===== PAGE 10/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 10 von 19 
+4 
+Anwendung von Fehlerstrom-Schutzeinrichtungen 3) – Überblick 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (1 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+1 
+Alle Bereiche bei Schutzmaßnahme 
+Fehlerstrom-Schutzschaltung 
+FS 
+OVE E 8101:2019, 
+Unterabschnitt 411.5.3 
+Auswahl des Bemessungs-
+fehlerstromes IΔN unter Einhaltung 
+der Bedingungen: 
+ZS ≤ 
+U0
+5 ∙ I∆N
+ 
+ZS  ≤ 100 Ω 
+je nachdem, welcher Wert kleiner 
+ist 
+ 
+Bauform: übliche, S, G 
+AC 
+A 
+F 
+B 
+Die Auswahl der Bauart: übliche, S  
+oder G erfolgt nach dem Kriterium d), der 
+Vermeidung von unerwünschten oder 
+unbeabsichtigten Auslösungen, d.h. ob  
+es sich zB um Anlagenteile (Stromkreise) 
+handelt, durch deren unbeabsichtigtes 
+Ausschalten mittelbare Personen oder  
+Sach-schäden entstehen können (zB 
+Tiefkühltruhen, Intensivtierhaltung, 
+Computer). 
+2 
+Alle Bereiche bei Schutzmaßnahme 
+Nullung, wenn die Ausschalt-
+bedingung mittels Überstrom-
+Schutzeinrichtungen nicht 
+eingehalten werden kann. 
+FS 
+OVE E 8101:2019, 
+Unterabschnitt 411.4.5 
+Auswahl des Bemessungs-
+fehlerstromes IΔN unter Einhaltung 
+der Bedingung: 
+ZS≤ 
+U0
+5 ∙𝐼𝐼ΔN
+ 
+IA … Fehlerstrom, der die 
+Abschaltung innerhalb der in 
+411.3.2.2 oder 411.3.2.3 bewirkt. 
+Bauform: übliche, S, G, M 
+AC 
+A 
+F 
+B 
+Zusätzliche Bedingung beachten:  
+Der Überstromschutz jedes Stromkreises 
+muss sichergestellt sein. 
+ 
+ 
+ 
+ 
+3)  Text und Änderungen gemäß Beschluss OVE TK-E E-505: Bei der Bearbeitung dieser Fachinformation wurden editorielle und technische inhaltliche Unklarheiten im Text von OVE  
+E 8101:2019 entdeckt. Die in dieser Fachinformation enthaltenen Textpassagen, die vom Text von OVE E 8101:2019 abweichen, wurden mit Beschluss E-505 als Änderungsvorschläge 
+in der 115. Sitzung des TK E diskutiert und zur Berücksichtigung bei der Erarbeitung der nächsten Ausgabe von OVE E 8101 an die zuständigen TSKs weitergeleitet. 
+
+
+===== PAGE 11/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 11 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (2 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+3 
+Alle Stromkreise mit Steckdosen in 
+Anlagen mit Wechselspannung mit 
+einem Bemessungsstrom von 
+höchstens 20 A und für Stromkreise 
+für ortsveränderliche elektrische 
+Betriebsmittel für die Verwendung im 
+Freien mit einem Bemessungsstrom 
+von höchstens 32 A 
+ZS 
+OVE E 8101:2019, 
+Unterabschnitt 415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Nur bei Nullung, Schutzerdung, 
+Fehlerstrom-Schutzschaltung als 
+Maßnahme des Fehlerschutzes. 
+Achtung! In besonderen Anlagen gelten 
+teilweise abweichende Bedingungen  
+(siehe Tabelle 6, ab Zeile 5). 
+4 
+Räume oder Orte mit besonderem 
+Brandrisiko 
+Merkmal BE2 
+BS 
+OVE E 8101:2019, 
+Unterabschnitt 422.3.9 
+ 
+ 
+TN- und TT-Systemen: 
+Endstromkreise in Endstromkreise in  
+solchen Räumen und Orten, die elektrische 
+Betriebsmittel versorgen oder elektrische 
+Betriebsmittel durchqueren, müssen wie 
+nachfolgend beschrieben geschützt werden: 
+(Text gemäß Beschluss des OVE TK-E E-505) 
+BS 
+OVE E 8101:2019, 
+Unterabschnitt 422.3.9 a) 
+I∆N ≤ 0,3 A 
+Bauform: übliche, S, G 
+oder 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+A 
+F 
+B 
+In TN- und TT-Systemen: 
+Fehlerstrom-Schutzeinrichtungen (RCD)  
+mit einem Bemessungsfehlerstrom  
+IΔN ≤ 0,3 A eingesetzt werden.  
+Wo widerstandsbehaftete Fehler einen  
+Brand entzünden können, zB bei 
+Deckenheizungen mit Flächenheiz-
+elementen, muss der Bemessungs-
+fehlerstrom der Fehlerstrom-
+Schutzeinrichtung IΔN ≤ 0,03 A betragen. 
+(Text gemäß Beschluss des OVE TK-E E-505) 
+ 
+ 
+BS 
+OVE E 8101:2019, 
+Unterabschnitt 422.3.9 b) 
+I∆N ≤ 0,3 A 
+Bauform: übliche, S, G 
+oder 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+A 
+F 
+B 
+In IT-Systemen: 
+Als Alternative zu RCM oder IMD 
+Fehlerstrom-Schutzeinrichtungen wie in 
+Unterabschnitt 422.3.9 a). Beim Auftreten 
+des zweiten Fehlers siehe für die 
+Ausschaltzeiten Teil 4-41. 
+(Text gemäß Beschluss des OVE TK-E E-505) 
+ 
+
+
+===== PAGE 12/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 12 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (3 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+5 
+Räume und Orte mit Badewanne 
+und Dusche 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 701.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Für alle Stromkreise. 
+Ausnahmen für Stromkreise: 
+• 
+mit der Schutzmaßnahme 
+Schutztrennung, wenn von  
+jeder Sekundärwicklung des 
+Trenntransformators gemäß 
+ÖVE/ÖNORM EN 61558-2-4 nur ein 
+elektrisches Verbrauchsmittel versorgt 
+wird, 
+• 
+mit der Schutzmaßnahme Schutz  
+durch Kleinspannung mittels SELV  
+oder PELV, 
+• 
+mit der Schutzmaßnahme Isolations-
+Überwachungssystem 
+6 
+Schwimmbecken und Springbrunnen 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 702.410.3.101.2 
+Unterabschnitt 702.410.3.101.3 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Schutz jedes Stromkreises in den Bereichen 
+0 und 1 von Springbrunnen bei Nullung 
+oder Fehlerstrom-Schutzschaltung. 
+Schutz jedes Stromkreises in den Bereich 2 
+von Schwimmbecken bei Nullung oder 
+Fehlerstrom-Schutzschaltung. 
+Schutz des versorgenden Stromkreises  
+der SELV-Stromquelle wenn die 
+Stromquelle im Bereich 2 angeordnet ist  
+und SELV für Schaltgeräte, Steuergeräte 
+und Steckdosen im Bereich 1 angewendet 
+wird. 
+Schutz von Stromkreisen für Schaltgeräte, 
+Steuergeräte und Steckdosen im Bereich 2, 
+bei Nullung oder Fehlerstrom-
+Schutzschaltung. 
+Schutz des versorgenden Stromkreises der 
+Stromquelle für Schutztrennung, wenn diese 
+im Bereich 2 angeordnet ist. 
+ 
+ 
+ 
+
+
+===== PAGE 13/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 13 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (4 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+7 
+Räume und Kabinen mit 
+Saunaheizgeräten 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 703.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Für alle Stromkreise. 
+Ausnahmen für Stromkreise: 
+• 
+mit Schutzmaßnahme Schutztrennung 
+• 
+mit Schutzmaßnahme Schutz durch 
+Kleinspannung mittels SELV oder 
+PELV. 
+8 
+Baustellen 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 704.410.3.101 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+ 
+Bei Schutzmaßnahme Nullung oder 
+Fehlerstrom-Schutzschaltung: 
+Endstromkreise mit einem 
+Bemessungsstrom bis einschließlich 32 A 
+zur Versorgung von Steckdosen jeder Art 
+und andere Stromkreise, die fest 
+angeschlossene handgeführte elektrische 
+Verbrauchsmittel mit einem Bemessungs-
+strom bis einschließlich 32 A versorgen. 
+ 
+ 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 704.411.3.2.1 
+Bauform: übliche, S, G 
+ 
+AC 
+A 
+F 
+B 
+Alle Stromkreise bei Schutzmaßnahme 
+Nullung 
+ 
+ 
+BS 
+OVE E 8101:2019 
+Unterabschnitt 704.411.3.2.1 
+IΔN ≤ 0,5 A 
+Bauform: übliche, S, G 
+ 
+AC 
+A 
+F 
+B 
+Alle Endstromkreise mit Bemes-
+sungsströmen über 32 A zur Versorgung 
+von Steckdosen jeder Art. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 14/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 14 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (5 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+9 
+Elektrische Anlagen von 
+landwirtschaftlichen und 
+gartenbaulichen Betriebsstätten 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 705.411.1 
+I∆N ≤ 0,3 A 
+Bauform: übliche, S, G 
+AC 
+A 
+F 
+B 
+Bei Schutzmaßnahmen mit automatischer 
+Abschaltung der Stromversorgung in allen 
+Stromkreisen 
+ 
+ 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 705.411.1 
+(neue Abschnittsnummerierung 
+gemäß Beschluss des OVE TK-E  
+E-505: 705.415.1.001 AT) 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Bei Schutzmaßnahmen mit automatischer 
+Abschaltung der Stromversorgung in TN-  
+und TT-Systemen in allen Endstromkreisen 
+mit Steckdosen unabhängig vom 
+Bemessungsstrom. 
+Stromkreise und Anwendungen die eine  
+hohe Verfügbarkeit erfordern, sollten durch 
+Fehlerstrom-Schutzeinrichtungen mit einem 
+Bemessungsfehlerstrom IΔN ≤ 0,03 A 
+geschützt werden, die kurzzeitverzögert 
+abschalten, zB Typ G. 
+(Text gemäß Beschluss des OVE TK-E E-505) 
+ 
+ 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 705.411.5.2 
+Bauform: übliche, S, G 
+AC 
+A 
+F 
+B 
+Bei Anwendung der Schutzvorkehrung 
+automatische Abschaltung der 
+Stromversorgung im TT-System müssen in 
+allen Stromkreisen zwei Fehlerstrom-
+Schutzeinrichtungen in Reihe wirksam sein. 
+ 
+ 
+BS 
+OVE E 8101:2019 
+Unterabschnitt 705.422.7 
+I∆N ≤ 0,3 A 
+Bauform: übliche, M, S, G 
+AC 
+A 
+F 
+B 
+Bei Anwendung der Schutzvorkehrung 
+automatische Abschaltung der 
+Stromversorgung in TN- oder TT-Systemen. 
+10 
+Caravanplätze, Campingplätze und 
+ähnliche Bereiche 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 708.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Jede Steckdose muss einzeln geschützt sein. 
+Jeder Endstromkreis, der für einen festen 
+Anschluss zur Versorgung eines Mobilheimes 
+oder eines Parkwohnheimes vorgesehen ist, 
+muss einzeln geschützt sein. 
+11 
+Marinas und ähnliche Bereiche 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 709.531.3 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+ 
+Schutz jeder einzelnen Steckdose. 
+Schutz jedes Endstromkreises, der für den 
+festen Anschluss zur Versorgung eines 
+Hausbootes vorgesehen ist. 
+
+
+===== PAGE 15/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 15 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (6 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+12 
+Medizinisch genutzte Bereiche 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 710.415.1 
+I∆N ≤ 0,3 A 
+Bauform: übliche, G 
+AC 
+A 
+F 
+B 
+Bei Anwendung der Schutzmaßnahme 
+Nullung für Endstromkreise über 63 A  
+ 
+ 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 710.415.1 
+I∆N ≤ 0,03 A 
+Bauform: 
+Stoßstromfestigkeit 
+mindestens 3 kA, G 
+AC 
+ 
+Für alle Endstromkreise in Räumen der 
+Gruppe 2, bei denen Schutz durch 
+automatische Abschaltung im ersten Fehlerfall 
+zulässig ist für elektrische Betriebsmittel im 
+Handbereich bis 63 A 
+13 
+Ausstellungen, Shows und Stände 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 711.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Alle Endstromkreise bis einschließlich 32 A 
+Bemessungsstrom für 
+− Beleuchtung, 
+− Steckdosen und 
+− ortsveränderliche elektrische Betriebsmittel, 
+die über flexible Kabel oder Leitungen 
+angeschlossen sind, müssen mit Fehlerstrom-
+Schutzeinrichtungen mit einem 
+Bemessungsfehlerstrom IΔN ≤ 0,03 A 
+geschützt werden. 
+Vorzugsweise sind kombinierte 
+kurzzeitverzögerte Fehlerstrom-
+Leitungsschutzschalter mit ausreichender 
+Stoßstromfestigkeit (zB Typ G) zu verwenden. 
+Ausnahmen für Stromkreise: 
+• 
+mit Schutzmaßnahme Schutztrennung 
+• 
+mit Schutzmaßnahme Schutz durch 
+Kleinspannung mittels SELV oder PELV. 
+(Text gemäß Beschluss OVE TK-E-505: 
+705.415.1.001 AT) 
+ 
+ 
+ 
+
+
+===== PAGE 16/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 16 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (7 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+14 
+Photovoltaische Anlagen (PV-
+Anlagen) 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 712.531.3.101 
+Bauform: übliche, S, G 
+B 
+Ausnahmen: 
+• 
+das PCE e) besitzt mindestens eine 
+einfache Trennung zwischen der AC-  
+und der DC-Seite, oder 
+• 
+die PV-Anlage besitzt mindestens eine 
+einfache Trennung zwischen dem PCE 
+und dem RCD durch einen Transformator 
+mit getrennten Wicklungen, oder 
+• 
+das PCE erfüllt die Anforderungen gemäß 
+ÖVE/ÖNORM EN 62109-1 und erfordert, 
+gemäß der Bestätigung des PCE-
+Herstellers, kein RCD vom Typ B. 
+15 
+Möbel 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 713.415 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Für die gesamte elektrische Anlage für Möbel 
+16 
+Beleuchtungsanlagen im Freien 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 714.415 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Einrichtungen in Telefonzellen, 
+Wartehäuschen, Werbeschilder, Leuchtkästen 
+(zB für Stadtpläne) und ähnliche Anlagen mit 
+integrierter Beleuchtung. 
+17 
+Ortsveränderliche oder transportable 
+Baueinheiten 
+FS 
+OVE E 8101:2019 
+Unterabschnitt 717.411b) 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+A 
+F 
+B 
+Für ortsfeste Anlage, die ein TT- oder  
+TN-System bildet. 
+ 
+ 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 717.415 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Bei Nullung oder Fehlerstrom-Schutzschaltung 
+(zusätzlich): 
+Alle Stromkreise in Anlagen für 
+Wechselspannung unabhängig vom 
+Bemessungsstrom, die der Versorgung  
+von elektrischen Verbrauchsmitteln außerhalb 
+der Baueinheit dienen. 
+ 
+ 
+
+
+===== PAGE 17/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 17 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (8 von 9) 
+Lfd. 
+Nr. 
+Raumart / Nutzung 
+Schutz-
+ziel a) 
+Normenreferenz 
+Bemessungsfehlerstrom 
+I∆N / Bauform 
+Typ b) 
+Erläuterung c) 
+18 
+Öffentliche Einrichtungen und 
+Arbeitsstätten 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 718.NE.1.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Leuchten im Handbereich in Umkleideräumen 
+für Darsteller, in Friseur- und 
+Maskenbildnerräumen. 
+19 
+Elektrische Anlagen in Caravans und 
+Motorcaravans 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 721.415 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Bei (Fehler-) Schutz durch automatische 
+Abschaltung der Stromversorgung. 
+20 
+Stromversorgung von 
+Elektrofahrzeugen 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 722.531.3 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+Af) 
+B 
+Mit Ausnahme von Stromkreisen, die als 
+Schutzmaßnahme Schutztrennung anwenden, 
+muss jeder Anschlusspunkt durch eine eigene 
+Fehlerstrom-Schutzeinrichtung geschützt sein. 
+21 
+Vorübergehend errichtete elektrische 
+Anlagen für Aufbauten, 
+Vergnügungseinrichtungen und 
+Buden auf Veranstaltungsplätzen 
+und für Zirkusse 
+ZS 
+ 
+OVE E 8101:2019 
+Unterabschnitt 740.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+ 
+Alle Endstromkreise bis einschließlich 32 A 
+Bemessungsstrom für 
+− Beleuchtung, 
+− Steckdosen und 
+− ortsveränderliche elektrische Betriebsmittel, 
+die über flexible Kabel oder Leitungen 
+angeschlossen sind, müssen mit Fehlerstrom-
+Schutzeinrichtungen mit einem 
+Bemessungsfehlerstrom IΔN ≤ 0,03 A 
+geschützt werden. 
+Vorzugsweise sind kombinierte 
+kurzzeitverzögerte Fehlerstrom-
+Leitungsschutzschalter mit ausreichender 
+Stoßstromfestigkeit (zB Typ G) zu verwenden. 
+Ausnahmen für Stromkreise: 
+• 
+mit Schutzmaßnahme Schutztrennung 
+• 
+mit Schutzmaßnahme Schutz durch 
+Kleinspannung mittels SELV oder PELV. 
+(Text gemäß Beschluss des OVE TK-E E-505) 
+22 
+Heizanlagen mit Heizleitungen und 
+Flächenheizelementen 
+ZS 
+OVE E 8101:2019 
+Unterabschnitt 753.415.1 
+I∆N ≤ 0,03 A 
+Bauform: übliche, G 
+AC 
+Bei Nullung, Fehlerstrom-Schutzschaltung 
+oder Überstrom-Schutzerdung: 
+Für alle Stromkreise, die Heizeinheiten speisen 
+ 
+ 
+
+
+===== PAGE 18/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 18 von 19 
+Tabelle 6 – Überblick über die Anwendung von Fehlerstrom-Schutzeinrichtungen gemäß den in Österreich  
+geltenden anerkannten Regeln der Technik (9 von 9) 
+a) 
+FS … Fehlerschutz 
+ 
+ZS … Zusatzschutz 
+ 
+BS … Brandschutz 
+b) 
+Siehe auch Abschnitt 2.1 dieser Fachinformation; sind in dieser Spalte mehrere Typen von Fehlerstrom-Schutzeinrichtungen zur Auswahl angegeben, so hängt der tatsächlich einzusetzende  
+Typ von den Kurvenformen der zu erwartenden Fehlerströme ab. 
+c) 
+Aus verständlichen Gründen konnte in die Spalte „Erläuterungen“ nicht der volle Wortlaut der jeweils zitierten Normentexte aufgenommen werden. Aus diesem Grund ist es unerlässlich, vor 
+Anwendung der Inhalte der Tabelle auf die jeweilige Anlage den Stand des aktuellen technischen Regelwerkes zu beachten. 
+d) 
+Kriterium nach OVE E 8101:2019, Unterabschnitte 531.3.1.003.AT und 531.3.2. 
+e) 
+PCE … Power Conversion Equipment 
+f) 
+In Verbindung mit einer geeigneten Einrichtung zur Abschaltung der Stromversorgung im Fall des Auftretens von Gleichfehlerströmen >6 mA. 
+Text und Änderungen gemäß Beschluss des OVE TK-E E-505: Bei der Bearbeitung dieser Fachinformation wurden editorielle und technische inhaltliche Unklarheiten im Text von OVE E 8101:2019 
+entdeckt. Die in dieser Fachinformation enthaltenen Textpassagen, die vom Text von OVE E 8101:2019 abweichen, wurden mit Beschluss E-505 als Änderungsvorschläge in der 115. Sitzung des 
+TK-E diskutiert und zur Berücksichtigung bei der Erarbeitung der nächsten Ausgabe von OVE E 8101 an die zuständigen TSKs weitergeleitet 
+ 
+ 
+ 
+
+
+===== PAGE 19/19 =====
+OVE-Fachinformation IS02:2021-07-01 
+Seite 19 von 19 
+Literaturhinweise 
+ÖVE-EN 1, Teil 1b, Nachtrag b zu Teil 1/1989, Errichtung von Starkstromanlagen mit Nennspannungen bis 
+AC 1 000 V und DC 1 500 V – Teil 1 Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8001-1, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und  
+DC 1 500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+OVE E 8601, Kurzzeitverzögerte Fehlerstrom-Schutzschalter des Typs G ohne und mit eingebautem 
+Überstromschutz – Ergänzung zu OVE EN 61008-1 und OVE EN 61009-1 
+ÖVE/ÖNORM E 8603, Zeitverzögerte Fehlerstrom-Schutzschalter des Typs M ohne eingebautem 
+Überstromschutz zur Anwendung in Stromkreisen mit Nennströmen über 32 A – Ergänzung zu ÖVE/ÖNORM 
+EN 61008-1 
+ÖVE/ÖNORM EN 60898 Reihe, Elektrisches Installationsmaterial - Leitungsschutzschalter für 
+Hausinstallationen und ähnliche Zwecke 
+OVE EN 61008-1, Fehlerstrom-/Differenzstrom-Schutzschalter ohne eingebauten Überstromschutz (RCCBs) 
+für Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN 61009-1, Fehlerstrom-/Differenzstrom-Schutzschalter mit eingebautem Überstromschutz (RCBOs) 
+für Hausinstallationen und für ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+OVE EN IEC 61000-6-1, Elektromagnetische Verträglichkeit (EMV) – Teil 6-1: Fachgrundnormen – 
+Störfestigkeit für Wohnbereich, Geschäfts- und Gewerbebereiche sowie Kleinbetriebe 
+OVE EN IEC 61000-6-2, Elektromagnetische Verträglichkeit (EMV) – Teil 6-2: Fachgrundnormen – 
+Störfestigkeit für Industriebereiche 
+ÖVE/ÖNORM EN 61558-2-4, Sicherheit von Transformatoren, Drosseln, Netzgeräten und dergleichen  
+für Versorgungsspannungen bis 1 100 V – Teil 2-4: Besondere Anforderungen und Prüfungen an 
+Trenntransformatoren und Netzgeräte die Trenntransformatoren enthalten 
+ÖVE/ÖNORM EN 62109-1, Sicherheit von Wechselrichtern zur Anwendung in photovoltaischen 
+Energiesystemen – Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 62423, Fehlerstrom-/Differenzstrom-Schutzschalter Typ F und Typ B mit und ohne 
+eingebautem Überstromschutz für Hausinstallationen und für ähnliche Anwendungen 
+HD 60364 Series, Low-voltage electrical installations 
+IEC 60364 Series, Low-voltage electrical installations 
+ 
+ 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für 
+Elektrotechnik 
+ 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2021. Alle Rechte 
+vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt 
+nur wortgetreu  
+und ohne Auslassung oder Zusatz 
+wiedergegeben werden. 
+ 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

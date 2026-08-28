@@ -1,0 +1,2378 @@
+
+
+===== PAGE 41/298 =====
+Exercise 1 Units Practice 2
+Open a file in imperial units - acad.dwt - and set your UNITS.
+Use PAN to move the object onto your screen and start drawing from 0,0.
+'"(\J
+I
+~
+20/-4
+If
+4'-6/
+1 -I
+3
+1
+ARCHITECTURAL
+24
+CHAPTER ONE
+SURVEYORS
+
+
+===== PAGE 42/298 =====
+Exercise 1 Practice
+LIMITS may be used to get started, or put in the first line and ZOOM ALL.
+GRID and SNAP make these much easier. Don1t forget POLAR.
+These objects are drawn individually as practice. They are not scaled to the page.
+L50
+U
+~
+~,25
+1---5,75----l
+Ib
+lQ
+3.50
+I
+~5D
+2'1
+0
+-'---'--._;:======-""'11--_---' ~
+3,00-1
+I
+1----5.50---1
+r-- 2.50T
+2.00-1
+c-
+5.501~
+t
+.5,
+le
+Introductory Geometry and Setting Up
+25
+
+
+===== PAGE 43/298 =====
+Exercise 1 Architectural
+Open an imperial file - acad.dwt - and draw the objects as shown.
+Do not attempt to dimension the drawing.
+I Command:ONITS, Architectural,
+Precision 0'-0"
+Command: LIMITS
+Reset model space limits
+Specify lower left corner or
+[ON/OFF]<O,O>: -2' ,-2'
+Specify upper right corner<12,9>:25' ,20'
+Command: SNAP
+Specify snap spacing
+(X)
+or
+[ON/OFF/Aspect/Rotate/Style/Type]<l>: 3
+Command: GRID
+Specify grid spacing or
+[ON/OFF!Snap/Aspect] <1>: 6
+15'
+~
+I~tT
+Rl~
+~
+,I
+..q-
+'"
+I
+2' fl
+~
+[
+I,Q
+I8
+)Y
+(ryl
+~
+I
+80
+In
+~
+~.
+t ] f[
+10'
+8'
+10' 08
+3'
+2'-6'"
+2'-6"
+,
+2'-6
+6
+)
+2'
+2'-6'
+I
+T
+I
+I
+r
+e
+e
+o
+[
+-=L11. 1'-6' "I g]
+II
+2'
+·1
+~~
+1'-8"
+I
+1
+~
+4'"
+I--..-:-
+~
+8
+Kitchen Layout
+26
+CHAPTER ONE
+
+
+===== PAGE 44/298 =====
+Exercise 1 Mechanical
+Open a NEW file in metric, acadiso.dwt, and draw the object below.
+The GRID and SNAP will help you get started.
+Some people find LIMITS handy.
+Draw the LINEs first, then add the CIRCLEs, ARCs, and FILLETs.
+Command: UNITS,
+Decimal,
+Precision 0
+Command: LIMITS
+Reset model space limits
+Specify lower left corner or
+[ON/OFFJ<O,O>:-lO,-40
+Specify upper right corner<12,9>:220,110
+Command: SNAP
+Specify snap spacing
+(X)
+or
+[ON/OFF/Aspect/Rotate!Style!Type]<lO>:5
+Command: GRID
+Specify grid spacing or
+[ON/OFF!Snap!Aspect]<10>:lO
+Command:
+(from the View Pull
+Down menu,
+pick
+ZOOM ~l)
+R25
+¢30
+R35
+210
+70
+30
+70
+R15
+R15
+10
+I fl
+75
+100
+20
+R20
+R6
+Template
+Introductory Geometry and Setting Up
+27
+
+
+===== PAGE 45/298 =====
+Exercise 1 Woodwork
+Start a NEW file in metric - acadiso.dwt - and set it up as shown.
+Either use LIMITS as shown below, or put in a line from 0,0 to 580,0 and ZOOM ALL.
+Command: UNITS,
+Decimal, Precision 0
+Command: LIMITS
+Reset model space limits
+Specify lower left corner or
+[ON/OFF]<O,O>:-lO,-lO
+Specify upper right corner<550,340>:1000,800
+Command: SNAP
+Specify snap spacing
+(X) or [ON/OFF/Aspect/Rotate/Style/Type] <10>: 5
+Command: GRID
+Specify grid spacing or [ON/OFF/Snap/Aspect] <10>: 10
+Command:
+(from the View Pull Down menu, pick
+ZOOM All)
+I
+270_---1
+r--
+305
+35
+580
+l
+J
+t
+0
+f'...
+l
+J
+0
+f'...
+l
+J
+a
+f"'--.
+l
+J
+a
+f'...
+l
+0
+CD
+l+
+-.;;t
+a
+0J
+0J
+R12
+i
+.--i
+96
+f
+In
+Ln
+.--i
+T
+--
+I--
+20
+Ln
+(Y)
+Paper Cabinet
+28
+CHAPTER ONE
+
+
+===== PAGE 46/298 =====
+Help Files, OSNAP, OTRACK,
+BREAK, TRIM, and ERASE
+Once youhave learnedhow to sign on to the system andhave locatedall the menus, you
+can learn the system from on-screen documentation.The Help files have two main
+functions.
+The first function serves as an index ofcommands. When looking for a command that
+will change the magnification ofthe data on the screen, you may be able to spot it by
+using the following (Note: There is no ~Ask Me' in Release 2007 or 2008).
+displaying
+spacing
+setting
+"Is. snap grid spacing
+grid
+View window in dbConnectt elements
+grid [dr':~Wlrlg
+Ifyou havejust opened a new file in AutoCAD, you can get to the Help files simply by
+pressing the space bar before entering a command.
+Use the X at the top right of the dialog box to remove the box from your screen.
+The Help index gives you a listing ofthe various commands which are available onthe
+system. Once you have found the correct command, you can retrieve information
+about how it works.
+AutoCAD responds to any command with a series ofprompts. The Help files explain
+those prompts.
+On any version of AutoCAD, the Help files explain the syntax or command line se-
+quence, and the prompts and options of each command.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 29
+
+
+===== PAGE 47/298 =====
+Understanding
+Command
+Strings
+Creates a circle
+~ [k<l;W menu: Circle
+I!! Command line: circle
+Command strings are generally very similar in construction. Once you understand
+how they work, your AutoCAD skills should improve very quickly.
+Option and Default Brackets
+The AutoCAD commands are set up so that you can understand what the options are
+and accept the defaults within the commands. Once you understand how the com-
+mands are set up, it should be easier to figure out how to use theln. Rememberyou are
+in control.
+Defaults
+The information offered in angle brackets, < >, is the default. This is what the com-
+mand will do if you do not specify something else.
+Specify center point for circle or [3P Hhree PQlnts)i 2P (Two Points)1 rtr (tan tan
+radiusl]: Specify a point Of enter an option
+In the case ofthe CIRCLE command, the previous radius is usedby default ifno other is
+specified. The square brackets offer you construction and diameter options.
+Ifyou have asked AutoCAD to construct a circle for you, you will then be prompted
+for the information needed to construct that circle.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan Lan
+radius) ]:
+(pick a point)
+Specify radius of circle or
+[Diameter]
+<5.00>:
+The first line says that by default you start the circle by indicating the center point.
+2
+Center/Radius
+Figure 2.1
+2
+2 Point
+1
+o
+2
+3 Point
+Then you can specify the radius or, with the use of' D' to indicate diameter, you can in-
+dicate a diameter.
+If you would like to specify another means by which you would like the circle con-
+structed, choose one of the three options within the square brackets.
+Figure 2.1 illustrates three different ways that AutoCAD can construct a circle without
+reference to any other objects. The first circle on the left is the default. 2 Point and 3
+Point are the other two circle types.
+The AutoCAD prompts change according to the options you choose. Most options re-
+quire a numeric value. For example, to change the diameter, type in d for diameter,
+then type in the diameter that you need, 1.5,2.75, etc. You can also choose the value on
+screen by picking a point.
+30
+CHAPTER TWO
+
+
+===== PAGE 48/298 =====
+Option Brackets
+The square brackets offer the various options available with each command. In the
+CIRCLE command, many ofthe options are shown in the first line; the Diameter option
+is shown in the second line.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius) ] : (pick a point)
+Specify radius of circle or
+[Diameter]
+<5.00>:
+With the ARC command, some options are shown in the first prompt, but others show
+up with each option chosen. There are many ways of calculating arcs, and these are
+found in the Draw pull-down menu and illustrated in the Help files, but you generally
+only use one or two.
+In Figure 2.2, three different arcs are generated. The first is calculated through three
+points. The second is calculated through the start, end and radius. To enterthis, type in
+C to place the center ofthe arc or E to place the end instead of the default.
+2
+3
+X3
+2
+Xl
+J
+2
+Figure 2.2
+Three Point
+Start End Radius
+Center Start Angle
+(
+3 e.oints
+r: ;2.tart, Center! End
+tN. Start, CenterJAngle
+t? Stgrt, Center) Length
+r;; Start) End) Angle
+r
+Start, End) Q,irection
+f1 Start) End! 8,.adius
+r: ~.enter, Start, End
+tN. C§.nter, Start, Angle
+J7. Center, Start, b.ength
+r; CQntinue
+Command:ARC
+ARC Specify start point of arc or
+[Center]: (pick 1)
+Specify second point of arc or
+Center/End]: (pick 2)
+Specify end point of arc: (pick 3)
+The third is calculated through the centerpoint, then the start point, which will give the
+radius, and then the angle through which it is drawn, in this case 135 degrees.
+Command:ARC
+arc Specify start point of arc or
+[Center]:
+c
+Specify center point of arc: (pick 1)
+Specify start point of arc: (pick 2)
+Specify end point of arc or
+[Angle/chord Length] :_a
+Specify included angle:135
+Picking the arc from the Draw pull-down menu will bring up the list ofarcs shown on
+the left. Ifyou pick an arc from this Inenu, you will be promptedfor each component of
+the arc in tum.
+In some cases you are prompted to pick a point through which the arc can be generated,
+such as the start, end or center of the arc.
+In other cases you are prompted for a value. In the example above, 135, the angle ofthe
+arc, is a value. When specifying an option such as a diameter or angle, you first choose
+the option and use .J to have AutoCAD accept this option. You will then be prompted
+for the required value. Values can be entered on screen with a 'pick' as well as by en-
+tering the numeric value at the command line.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 31
+
+
+===== PAGE 49/298 =====
+Obiect SNAPs
+There are three ways to enter points:
+PICKING Pick on screen, using SNAP to be accurate. (Chapter 1)
+COORDINATE ENTRY You can enter absolute, relative, or polar coordinates in any
+order.
+ENTITY SELECTION, OBJECT SNAP, OR OSNAP This allows you to use existing ob-
+jects to create your file. Accessing points on existing objects is called using OSNAPs.
+,
+~
+[~Dpoitlt
+WIDpoint
+I~T....S4PC tion
+Figure 2.3
+, ,
+,
+,
+,
+,
+....
+,
+....
+,
+,
+,
+,
+,
+,
+off
+SettifltJS...
+OSNAP: Object SNAP
+Object Snaps allow you to specify precise points on objects in order to create or edit
+objects. AutoCAD has 16 Object Snap modes that allow you to specify precise points
+on objects. The capitalized letters are those needed when typing in the option.
+32
+CHAPTER TWO
+APPint
+CENter
+ENDpoint
+EXTention
+FROM
+INSertion
+INTersection
+MIDpoint
+NEARest
+NODE
+NONE
+PARallel
+PERpendicular
+QUADrant
+Quick
+TANgent
+snaps to a real or imaginary intersection of two ohjects
+(apparent ntersection)
+snaps to the center of an arc or circle
+snaps to the closest end ofany object
+snaps to a point along the extension ofa line or arc
+establishes a temporary reference point from the parameters of
+an existing objects
+snaps to the insertion point ofa block
+snaps to the intersection of two items
+snaps to the midpoint of a selected item
+snaps to a point on an object nearest to the digitized point
+snaps to a point created by POINT, DIVIDE, or MEASURE
+turns the Object Snap mode off
+draws a line parallel to an existing line
+snaps to a 90 degree angle to an existing line
+snaps to the 0, 90, 180, or 270 degree point on an arc, circh:, or
+ellipse
+snaps to the first snap point found
+snaps to the tangent of an arc or circle
+
+
+===== PAGE 50/298 =====
+Accessing OSNAPs
+OSNAPs can be accessed in one of four ways:
+1.
+There may be a designated button on your mouse. Often ifyou hold the Shift button on
+your keyboard down and use the right-click button on your mouse, an OSNAP menu
+will appear where your cursor is.
+2.
+Type in the first few letters of the OSNAP mode.
+3.
+Choose Object Snap from the Drafting Settings under the Tools menu.
+4.
+Use the OSNAP buttons.
+The hyphen (-) in the architec-
+tural point entry is not the same
+as in the architectural readout
+on the status line.
+Using OSNAPs
+Figure 2.4 illustrates the use of some OSNAPs within
+the command line. When entering the OSNAP, type in
+the first three or four letters, or Shiftright-click and ac-
+cess the asNAP list.
+First, draw three circles as shown in Figure 2.5. The
+size doesn't matter.
+Command: CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :0,0
+Specify radius of circle or
+[Diameter] :3
+Cornrnand:C
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)) :9,4
+Specify radius of circle or
+[Diameter] :6
+Cornmand:C
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)) :18,0
+Specify Radius of Circle or
+[Diameter] :3
+Figure 2.4
+000
+Figure 2.5
+Now create lines tangent to the arcs. The TANgent object snap creates a tangent to the
+identified object from the last object to a circle or arc. For TANgent type in TAN,
+Command:LINE
+Specify first point:TANgent to
+(pick 1)
+Specify next point or
+[Undo]:
+TANgent to (pick 2)
+Specify next point or
+[Undo]:~
+Comrnand:LlNE
+Specify first point:TANgent to (pick 3)
+Specify next point or
+[Undo]:
+TANgent to (pick 4)
+Specify next point or
+[Undo]:~
+Figure 2.6
+AutoCAD will calculate the tangent for you; just pick which side ofthe object the tan-
+gent should be on, as shown in Figure 2.6. You need to secure a tangent connection for
+both sides ofthe line. To set the OSNAP to TANgent, right-click the OSNAP button, set
+tangent, and make sure the OSNAP button is on.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 33
+
+
+===== PAGE 51/298 =====
+Now use the QUADrant option to attach the other two lines as shown in Figure 2.7.
+QUADrant takes the top, the bottom, or the far right or left ofa specified circle or arc.
+Type in QUAD for QUADrant.
+Command:LINE
+Specify first point:TANgent to
+(pick 1)
+Specify next point or
+[Undo]:
+QUADrant of (pick 2)
+Specify next point or
+[Undo]:~
+Command: LINE
+Specify first point:
+QUADrant of
+(pick 3)
+Specify next point or
+[Undo):
+TANgent to
+(pick 4)
+Specify next point or
+[Undo]:~
+Now use CENter to place a circle concentric with the
+first as shown in Figure 2.8, CENter takes the center
+ofan arc orcircle. Only items with a definedradius can
+have a center point.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :CENter
+of
+(pick 5)
+Specify Radius of Circle or
+[Diameter] :3
+Now use the TRIM command (see page 72) to trim off
+the extra portions ofthe circle, as shown in Figure 2.9.
+The TRIM command will erase a portion of an object
+between two edges identified by intersections with
+other objects.
+Command: TRIM
+Current settings:
+Projection=UCS
+Figure 2.7
+Figure 2.8
+Figure 2.9
+Figure 2.10
+34
+CHAPTER TWO
+Edge=None
+Select cutting edges ...
+Select objects: (pick 1)
+Select objects: (pick 2)
+Select objects: (pick 3)
+Select objects: (pick 4)
+Select
+objects:~ (enter -
+no more cutting edges are needed)
+<Select object to trim> or
+shift-select to extend [Fence/
+Project/Edge/eRase/Undo] : (pick 5,6)
+Your final image should look like Figure 2.10.
+The TRIM command will not work unless the TANgent
+option has been properly used. Ifthe lines don't inter-
+sect the circles, they will not be trilnmed.
+This example has shown how to use OSNAPs within a
+command string. You can type in the first few letters
+ofthe OSNAP option, use Shift right-click to get a list on screen or get the OSNAP op-
+tions from a pull-down menu or floating toolbar.You can also set up your OSNAP so
+that the options automatically appear.
+
+
+===== PAGE 52/298 =====
+OTRACK
+Running OSNAPs
+You can set up OSNAP so that the options are automatically turned on.
+ti)
+To llack hom an Omap point pau$/< O\Ief tho! POInI \'\/h,e in ~
+"Vif
+cOl!lLl\l'lF'Jd A trocl<ing"actO! "PpedlS wher1 you move I"" CVIro<
+To:lop lr!lCkin;l, p!lll'$il <We[!he point_.
+In this example, ENDpoint, MIDpoint and CENter are turned on. These are the usual
+choices. We have seen how CENter works. ENDpoint takes the closest end point. All
+lines are made up of two end points. MIDpoint takes the middle point of an object.
+These options are illustrated in the Tutorials at the end of this chapter.
+The OTRACK cOlnmand is useful for lining objects up relative to other objects.
+Figure 2.11
+OTRACK is a toggle switch found on the function bar at the bottom ofyour screen, as
+shown in Figure 2.11.
+Using OTRACK
+With OSNAP on, OTRACK will track the ENDpoint, MIDpoint or CENter ofan object
+and line up a new point exactly across from or beneath it. OTRACK works vertically or
+horizontally. First draw in the lines as shown in Figure 2.12 (A).
+_r· ..·T
+A
+Figure 2,12
+Command: LINE
+Specify first point: (pick 1)
+Specify next point or
+[Undo]: (pick 2)
+Specify next point or
+[Undo]:~
+Make a line from the top right comer, lining it up with point 1 as shown on Figure 2.12
+(A). Then draw your cursor across the endpoint ofpoint 1 without picking it. Move it
+up level to your beginning point. When you have found the position that lines up, pick
+that point. AutoCAD will create a line using the X value ofpoint 1 and the Yvalue of
+your start point in Figure 2.12 B. It's a lot easier to do than to explain.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 35
+
+
+===== PAGE 53/298 =====
+BREAK, TRIM,
+and ERASE
+The BREAK command removes a portion of a single object between two specified
+points. The TRIM command trims a series ofobjects according to a cutting line or cut-
+ting lines. The ERASE command removes an entire object from the file.
+The BREAK Command
+BREAK is found under the Modify menu in both the Toolbar and the pull-down menu.
+The object will be broken from the point chosen on the object or by another point
+specified after entering F to indicate a different first break point. In Figure 2.13, the
+line indicated in the first pick is cut from the center ofthe circle to the intersection of
+the line and the circle.ea
+2
+Figure 2.13
+Comrnand:BREAK
+Select object: (pick 1)
+Enter second point
+(or F for first point) :F
+Enter first point:CENter of (pick 2)
+Enter second point:INTersection of (pick 3)
+The TRIM Command
+TRIM is found under the Modify menu in both the Toolbar and the pull-down menu.
+Pick either one or a series of cutting lines, and then choose the objects to trim.
+In Figure 2.14, the lines are all trimmed to the circle; the circle was indicated first.
+Figure 2.14
+Command:TRIM (or TR)
+Current settings:
+Projection=UCS Edge=None
+Select cutting edges ...
+Select objects: (pick 1)
+Select
+objects:~ (no more cutting edges are needed)
+<Select object to trim> or shift-select to extend
+[Fence/
+Project/Edge/eRase/Undo] : (pick 2,3,4,5,6)
+The ERASE Command
+Figure 2.15@@@
+Command:ERASE (or E)
+Select objects: (pick 1)
+Select objects:
+~
+ERASE is found under the Modify menu in both the Toolbar and the pull-down menu.
+You can also simply type in E. In Fig-
+ure 2.15 the non-concentric circle is
+erased.
+36
+CHAPTER TWO
+
+
+===== PAGE 54/298 =====
+GRIPS
+GRIPS are used to identify a selection set or group ofobjects prior to a Modify com-
+mand such as ERASE or MOVE (see Chapter 3). Ifyou select a group of objects, blue
+grips will appear. This means you have selected the objects for editing. Now you can
+use ERASE to erase them.
+Command: (pick 1)
+other corner
+(pick 2)
+Command:ERASE Erase 5 found
+In Figure 2.16, five objects were selected by a crossing
+window, going from right to left. The objects were then
+erased. To undo an erase, use Undo or U.
+Command:U Undo Erase
+Figure 2.16
+Use the Escape key on the top left ofyour keyboard to clear the grips ifyou have cho-
+sen them incorrectly.
+ERASE can also be used with the Crossing and the Window options to erase a group of
+objects as seen in Figure 2.17.
+ERASE with
+Window and
+Crossing
+o
+Figure 2.17
+Window
+Col1l.t'Tland: ERASE
+Select objects: (pick 1, 2)
+Select objects:
+~
+Crossing
+Command:ERASE
+Select objects: (pick 3, 4)
+Select objects:
+~
+UNDO and
+REDO
+The Window selection set, as shown in picks 1and 2, provides a blue-colored window.
+Any objects contained in this window will be erased. Since the diagonal line and the
+top line do not lie completely within the window, they will not be erased.
+The Crossing selection set, as shown in picks 3 and 4, provides a green-coloured rec-
+tangle. Any object that touches or is within this rectangle will be affected by the com-
+mand. Inthis example, every object except the vertical line on the left willbe erased.
+The UNDO command will undo the previous command, regardless ofwhat it is. Ifyou
+erase something by mistake, trim something by mistake or enter some geometrythat is
+not correct, use UNDO to return to correct it. You can UNDO as many commands as
+you have entered since the file was last opened.
+Command:UNDO (or U)
+Command:REDO
+REDO will bring back a command that you have taken out with UNDO.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 37
+
+
+===== PAGE 55/298 =====
+Step}
+Start a new file in imperial units. You are
+making a tricycle. No limits are needed, but
+you need to make sure you are in imperial.
+Choose acad.dwt. (You make the entries
+shown in BOLD).
+Command:
+NEW
+(Choose acad.dwt)
+Or
+Command:STARTUP
+Enter new value for startup
+<0>:1
+Command:
+NEW(Choose Imperial)
+Command:
+UNITS
+Set units to architectural.
+[~~~:~~~=:~:~:~~~~~~~~;:~:::=:::::.:.~.,.•-
+Id;~"'"''
+~
+i QPTWTemplates
+\ OSheetSets
+!~acad -Named Plot Styles,dlNt
+33 I<
+!.~.dwt
+331<
+i ~ac~dISO ·Named Plot styles.dwt
+25 K
+: 5acadi5o,dwt
+25K
+!SANSI A(portrait)-Color Depe...
+281<'
+: [SjAN5I A (portrait) -Named Plot.. ,
+28 K
+i BANSI A -Color Dependent Plot...
+29 K
+i SANSI A-Named Plot Styles.dwt
+29 K
+I!5AN5I B-Color Dependent Plot..,
+28 K
+.1 [EiAN5I 6 -Named Plot Styles.dwt
+29 K
+; [!SANSI C -Color Dependent Plot...
+29 K
+I~AN51 C -Named Plot styles,dwt
+291:
+Li}:diliE1;c\'
+~"'.~.,.~_...c •• ·._ •• :
+•.
+~~~i
+Step 2
+38
+CHAPTER TWO
+Often with architectural designs the layout is set at regular inter-
+vals so LlMITS/ GRID and SNAP are an advantage. With this tricy-
+cle elevation these are not needed. Simply start with a couple of
+circles, then ZOOM Extents.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :0,0
+Specify radius of circle or
+[Diameter] :10
+Cornrnand:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :0,0
+Specify radius of circle or
+[Diameter] :12
+Command:
+(from the View pull-down menu, pick ZOOM Extents)
+Command:Z
+Specify corner of window, enter a scale factor
+(nX or
+nXP),or[All/Center/Dynamic!
+Extents!Previous/Scale/WindowJ<realtime>:E
+Command:Z
+Specify corner of window,
+..... Scale/Window] <real time>:.7X
+You can also use your roller ballto ZOOM the objects into the middle ofyour screen.
+
+
+===== PAGE 56/298 =====
+Step 3
+Make sure OSNAP is on, and draw an arc from the CENter ofthese two circles justup
+and to the right. When your cursor approaches the circle, a smallercircle should appear
+at the center indicating an OSNAP. Ifthis doesn't show up, use Shift right-click for the
+menu, and pick kenter as shown on the left, or simply type in CEN.
+Command:ARC
+ARC Specify start point of arc or
+[Center] :CEN of (pick 1)
+Specify second point of arc or [Center/End]: (pick 2)
+Specify end point of arc: (pick 3)
+3
+3
+Command: ARC
+ARC Specify start point of arc or
+[Center] :CEN of
+(pick 1)
+Specify second point of arc or
+[Center/End] : (pick 2)
+Specify end point of arc: (pick 3)
+Next you want to place an arc starting from the saine
+center point, just a
+little to the right of
+the first arc.
+OSNAP
+After you have picked the first point, turn OSNAP off
+or you will have difficulty placing the next points. If
+the cursor 'picks up' another line, an OSNAP is as-
+sumed, and the second arc will be generated along the
+endpoints ofthe existing arc.
+no Qsnap Settings...
+e
+~ent8t
+o Quadrant
+() Tangent
+......0 Temporary trac~point
+£' Erom
+Mid Be~ween 2 Points
+Poin~ Filter'S
+/
+t;.ndpoint
+;:/ Midpoint
+X Intersection
+X
+~parent Intersect
+_ ... E)$.tension
+...!.- !:erpendicular
+;
+ParaUel
+o
+Noqe
+60
+In~ert
+.It Near.est
+A;, tlone
+You should now have two arcs and two circles.
+Step 4
+Place a circle with aradius of l' at the same center point.
+Use Zoom Window to zoom in and see it. You can either
+use your roller ball on your mouse, the icon as shown, or
+type in Z then pick two points.
+Command:Z
+Specify corner of window,
+enter a
+scale ... ow]<realtime>: (pick 1)
+Specify opposite
+corner: (pick 2)
+Now put the two circles in using the END ofthe two arcs.
+Turn your OSNAP on.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :END of
+(pick 1)
+Specify Radius of Circle or
+[Diameter] :3
+Command: CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius) ] :END of (pick 1)
+Specify Radius of Circle or
+[Diameter]:2
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 39
+
+
+===== PAGE 57/298 =====
+StepS
+Use TRIM to remove the ends,
+ofthe arcs as shown.The circle
+is your cutting edge.
+With OSNAP on, you will snap to
+whatever
+settings
+are
+current.
+Squares and triangles will show up
+on your objects as you move your
+cursor when OSNAP is on. Toggle
+them off on the status line.
+Comrnand:TRIM
+Current settings:
+Select cutting edges ...
+Select objects: (pick 1)
+Select objects:.J
+<Select object to trim> or shift-select to extend [Fence/
+Project/Edge/eRase/Undo] : (pick 2(3)
+<Select object to trim> or shift-select to extend
+[Fence/
+Project/Edge/eRase/Undo] :.J
+Since you have now been using the file for at least a few minutes, you should
+save at this point.
+Step 6
+Use the line com-
+mand with OSNAP,
+OTRACK and PO-
+LAR to place the
+rectangle at the top
+ofthe two arcs.
+Comrnand:LINE
+Specify first point:END of
+(pick 1)
+Specify next point or
+[Undo] :END of (pick 2)
+Specify next point or
+[Undo] :4 (move your cursor up)
+Specify next point or
+[Undo]: (move your cursor over pick 1,
+then back up to a horizontal, then pick the point shown)
+Specify next point or
+[Undo]:c
+/
+Step 7
+/
+1
+Now we need to draw the back wheels. Draw in a
+line from the bottom QUADrant ofthe first wheel,
+36 inches to the back. Make sure POLAR is on..
+Command:LINE
+Specify first point:QUAD of (pick
+1)
+Specify next point or
+[Undo] :36
+(move your cursor to the right)
+Specify next point or
+[Undo]:.J
+2
+2
+40
+CHAPTER TWO
+Command: CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius) ] :2P
+Specify first end point on circle's diameter:END of (pick 1)
+Enter second end point of circle's diameter:12{move your
+cursor straight up)
+Once the CIRCLE has been drawn in, ERASE the line.
+
+
+===== PAGE 58/298 =====
+NEAR
+Command: CIRCLE
+Specify ... radius)] :CEN of {the
+right circle}
+Specify radius of circle or
+[Diameter]:D
+Specify diameter:10
+Command:ARC
+ARC Specify start point of arc or
+[Center]:NEAR the line
+Specify second point of arc or
+[Center/End]: (pick 2)
+Specify end point of arc:NEAR the circle
+Using a similar proceedure as for the front wheel, put
+in three more circles and two arcs. For the arcs, make
+the first from the center ofthe small circle to the MID-
+point of the vertical line, and the second to a point
+slightly higher using NEARest. TRIM all unwanted
+lines.
+Step 8
+Step 9
+For the handle, use ARC and LINE. The ARC command
+will continue from the last entered point if you use .J
+when prompted for the first point.
+Comrnand:ARC
+ARC Specify
+[Center]: (pick 1)
+Specify second
+End] : (pick 2)
+Specify end point of arc: (pick 3)
+Command:~ (brings back ARC)
+ARC Specify
+. of arc or
+[Center]:~
+(continues from last point)
+Specify second point of arc or
+[Center/End]: (pick 2)
+Specify end point of arc: (pick 3)
+Step 10
+For the pedals, setup a GRID and SNAP, and draw them
+in without OSNAP. Use two points to pick the size of
+your limits.
+Comrnand:LIMITS
+Specify bottom left: (pick 1)
+Specify upper right: (pick 2)
+Command: SNAP
+Specify snap spacing<>:.5
+Command: GRID
+Specify grid spacing<>:l
+Finally use LINE and ARC to draw in a seat.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 41
+
+
+===== PAGE 59/298 =====
+In this Tutorial we will practice using OSNAP and OTRACK to draw the mechanical
+piece shown below. Make sure ORTHO, OTRACK and POLAR are all on.
+o
+0
+Step]
+,.......
+....,••, ....,
+'""--.-..No..........'...... ..
+.....
+~
+.
+.....,.""'"-....
+~
+~10ij~Ji·r~PQ'LAB.]·ci·$.~~p'·.'liQiB~~~··
+.••.·,~i
+Formany applications, particularly mechanical, LIM-
+ITS, GRID and SNAP are not needed. Another way to
+setup your screen is simplyto choose yourunits, lnet-
+ric or imperial, then draw in the first object. Use
+ZOOM to place it on the page.
+Cornmand:CIRCLE
+oo
+o
+Step 2
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius) J :0,0
+Specify Radius of circle
+or
+[Diameter] :100
+Now ZOOM the object on screen.
+Cornmand:Z
+Specify corner of window,
+enter a scale factor
+(nX ornXP),or
+[All!Center!Dynamic/Extents!Previous!Scale/Window]
+<realtime>:
+A
+Comrnand:Z
+Specify corner of window, enter a scale factor (nX or nXP), or
+[All!Center/Dynamic/Extents!Previous/Scale/Window]
+<real time>:. 3X
+You can also use your mouse roller ball to center the circle on the screen.
+Use the POLAR option to place the lines around the outside of the circle. Move your
+cursor along the direction indicated by the arrows, then type in the value.
+Point entry by typing coordinates will
+not work if DYNamic mode is on.
+Turn it off.
+i
+I
+I
+G Ii
+-~Q9~:~QQ
+J
+i-- -------------1
+i G
+!
+i
+300,->0°1
+/
+Command: LINE
+Specify first point:-300,-300
+Specify next point or
+[Undo] : 600 right
+Specify next point or
+[Undo] : 600 up
+Specify next point or
+[Undo] : 600 left
+Specify next point or
+(Undo) :c
+42
+CHAPTER TWO
+
+
+===== PAGE 60/298 =====
+Step 3
+Fillet the comers with a radius of 100.
+Command: FILLET (or F)
+Current settings:
+Mode = Trim,
+Radius
+= <5.0000>
+Select first object or[Undo/Polyline/
+Radius/Trim/Multiple] :R
+Specify fillet radius:l00
+Select first object or
+[Undo/Polyline/Radius/Trim/MultipleJ:
+(pick 1)
+Select second object: (pick 2)
+Corrunand:FILLET
+Current settings:
+Mode
+= Trim,
+Radius
+= <5.0000>
+Select first object or[Undo/Polyline/
+Radius/Trim/Multiple] : (pick 3)
+Select second object: (pick 4)
+Continue until all four comers are done. By pressing the
+spacebar at the Command: prompt, the last entered com-
+mand will be retreived. This could make your data entry a
+lot quicker.
+o
+o
+o
+0
+• -----------
+2
+Step 4_n
+If the CENter OSNAP does not
+come on, right-click the OSNAP
+button, choose settings.
+Place CIRCLEs in the four comers. As shown in the illustra-
+tion, once the circle is identified, you can pick either the pe-
+rimeter or the center of the circle to place the smaller ones.
+For pick 1place the cursor over the circle, then move the cursor to the center ofthe cir-
+cle. The object snap picked up will be the CENter because the center mark is high-
+lighted. The OSNAP button must be on.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] : CENter of (pick 1)
+Specify Radius of Circle or
+[Diameter] :25
+Command: CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)] :CENter of
+(pick 2)
+Specify Radius of Circle or
+[Diameter] :25
+Step 5
+If you type in CEN this will override the ENDpoint
+OSNAP I which is the system default.
+Now draw in the lines as shown in the illustration. To
+place these, use both OSNAP MIDpoint and the OTRACK
+ofthe center ofthe circles for placelnent as described be~
+low.
+o
+0
+o
+o
+0
+Make sure that CENter, MIDpoint and ENDpoint OSNAP is set and that the OSNAP
+button is turned on.
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE 43
+
+
+===== PAGE 61/298 =====
+For the first point,
+pick the MID of the
+left vertical line.
+(
+Cornmand:LINE
+Specify first point:MID of
+(pick the vertical line)
+For the next point, drag your cur-
+sor over the circle as shown. Do
+not pick the circle, simply drag the
+cursor across it. Then drag it down
+to line up with the horizontal. This
+will give you a line with the X
+value ofthe centerofthe circle and
+the Yvalue ofthe MIDpoint ofthe
+vertical line, producing a straight
+line.
+Draw in all four lines.In this exam-
+ple, the MIDpoint is taken from
+the top line and the end of the line
+is lined up with the center of the
+circle on the right.
+Once you have done this for all
+four lines, you should be familiar
+with the way it works.
+o
+2
+~
+o
+Step 6
+Finally, access the ENDpoints of the small lines to
+finish the drawing.
+o
+44
+CHAPTER TWO
+Command: LINE
+Specify first point:END of
+(pick 1)
+Specify next point or
+[Undo] :END of
+(pick 2)
+Specify next point or
+[Undo] :END of
+(pick 3)
+Specify next point or
+[Undo] :END of
+(pick 4)
+Specify next point or
+[Undo] :c
+o
+0
+When completed, your object should look like this.
+0
+o
+0
+
+
+===== PAGE 62/298 =====
+Exercises 2
+Practice
+DRAW all of these, just for practice.
+i~O.90 ~
+00.90~~
+2
+Holes
+05.00
+(,14.00
+4.275
+1------ 8.55 --------
+TeMple.te
+Po.ttern
+,021.95
+-o
+~qj1595
+-
++
+-
+I
+Axle Side
+-- 3/8"
+PL YBACK
+DRECoRMED
+"oP -
+\
+I
+I
+00'1
+f.
+......
+. .
+. .
+"
+..
+~...
+' ..
+-.
+cL
+.><:
+1::><
+IA
+~1
+'ill
+1
+x 3
+PINE
+FRAME \
+2
+4
+REQ'D
+-
+i--
+'::><:':1
+::><
+0
+~-- 1/2# PLY SID[S~
+H
+\.1
+::><-1
+1::><
+~
+~1 X 2
+HARDwOCJD
+f-~RONT
+Pf"lNEL
+'JJ
+C
+":>c::::
+1:><
+1/2 Pl.._Y RllrmM\
+,----;I~
+~
+~
+'T
+...-- 2
+X 4
+BASl --------...
+4
+I·
+191
+]
+2
+24
+_.,~-.._---
+CD
+cu
+Cabinet
+Help-Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE
+45
+
+
+===== PAGE 63/298 =====
+Exercise 2 Architectural
+For the Lot Plan you will need to change your UNITS to Surveyors.
+The Floor Plan is drawn with Architectural Units.
+To get the area of the lot, set your OSNAP to ENDpoint, then use the AREA command.
+You will be prompted for the corners of the lot. Press Enter for the area.
+POOL
+USE CIRCLE TTR
+?
+?o
+~
+Z
+in
+o
+72 1\0.75"
+349
+1 4.25"
+N84D54
+11G'E
+LOT PLANS SHOW THE PROPOSED STRUCTURE AND THE LOT
+UPON WHICH IT IS TO BE BUILT. THE LOT IS SHOWN IN
+SURVEYORS I UNITS. AND OFTEN INCLUDES EXISTING WATER,
+GASS AND ELECTRICAL SERVICES. THE NORTH ARROW SHOWS
+THE ORIENTATION OF THE BUILDING. THE EASEMENTS AND
+GRADING OF THE LOT WOULD BE NEEDED TO COMPLY WITH
+LOCAL BUILDING CODES IN ORDER TO GET A BUILDING
+PERMIT.
+IN THE NORTHERN HEMISPHERE, THE MAJORITY OF THE
+WINDOWS SHOULD BE ON THE SOUTH SIDE OF THE BUILDING
+TO TAKE ADVANTAGE OF PASSIVE SOLAR HEATING IN THE
+WINTER. DECIDUOUS TREES SHOULD BE PLACED OUTSIDE
+THESE WINDOWS TO SHADE THEM IN SUMMER.
+LOT PLAN
+46
+CHAPTER TWO
+r-
+39
+1-4"
+LOT (SURVEYORS' UNITS)
+
+
+===== PAGE 64/298 =====
+Exercise 2 Mechanical
+TANgent OSNAP will be important for both of these.
+Start with a circle at 0,0. ZOOM, then place your next circle relative to it.
+These objects are not drawn to scale within the page.
+R1.l2
+1~2,50
+¢1.00
+3 HOLES
+Rl,SO
+R
+0
+--+----1----+ .75
+1.50
+3,00
+f-
+Escutcheon Detail
+r---600-~
+Escutcheon
+Edges chamfered at 45°
+Cir-cle Ttr
+f---- 100 -----I
+9'J28,Q
+Circle
+2P
+Plate
+R82.0
+R64,O
+i
+i
+-~--t
+,_--+-------+--.......-...1-
+I
+i
+R19,Q
+f~ 12.0 --.T-----<-J
+4
+Fillets
+R26,Q
+R38.0
+Help File, OSNAP, OTRACK, BREAK, TRIM, and ERASE
+47
+
+
+===== PAGE 65/298 =====
+Exercise 2 Challenger
+Start with the origin at the center of the left circle.
+Place the circles according to the coordinates.
+Fillets and lines at angles are demonstrated in Chapter 1.
+U1
+C)
+(J\
+/0
+C)
+w
+\
+~
+C)
+t---"
+\D
+/0
+/0
+t---"
+[JJ
+W
+I------"
+t-'"
+[JJ
+w
+~
+t-'"
+ru
+¢
+~
+Q\
+~
+ru
+\D
+/0
+I
+C)
+/0
+ru
+C)
+U1
+U1
+/0
+C)
+C)
+'-l
+W
+C)
+t::J
+f'I
+Cl
+/0
+I------"
+C) j
+C)
+~-r
+C)
+Ul
+C)
+'"
+T
+t-'"
+C)
+'"
+U1
+"-
+0
+ru
+'-J
+[JJ
+'-/
+t:j
+/0
+~rr
+U1
+.........
+t---"
+(J\
+I
+nJ
+..p..
+C
+Z'1
+I
+ru
+~
+U1
+C)
+Iru
+ru
+C)
+c
+Z
+'1
+48
+CHAPTER TWO
+
+
+===== PAGE 66/298 =====
+Selecting Obiects
+Within the
+Modify
+Commands
+Object Selection and
+Modify Commands
+objects
+Once objects are drawn on the screen, editing commands under the Modify menu or
+toolbar are used to cut down on drawing time. When editing, OSNAP is particularly
+importantto getthe exact position ofobjects when they are moved, copied, orrotated.
+In virtually every editing command, you will be prompted to 'Select objects'. This
+makes sense because the editing command will change the position or the parameters
+of objects, and thus the system needs to know which objects you want to change. As
+you select items, they are highlighted (dotted lines).
+Objects can be selected in a variety ofways. Ifyou are selecting the object after you
+have invoked the command you can select the objects by:
+•
+digitizing the desired item with the cursor pick box
+•
+indicating a group of items with the Crossing option - type C or pick right to
+left
+•
+indicating a group of items with the Window option-type W or pick left to
+right
+•
+indicating a series of items with Fence - type F
+•
+indicating a group of items with CPolygon- type CP
+•
+indicating a group of items with WPolygon - type WP
+•
+indicating the last entered item using the Last option - type L
+•
+indicating the previous selection set with Previous - type P
+•
+indicating all objects by typing in ALL
+Once you have identified your selection set or chosen the objects that are to be edited,
+AutoCAD will keep prompting you to select objects to be added or removed from the
+selection set. To continue with the Modify command after selecting objects, press.J to
+signal the end of object selection.
+Obiect Selection and Modify Commands
+49
+
+
+===== PAGE 67/298 =====
+Figure 3.1
+The object selection default is to select the items one by one, as shown in Figure 3.1.
+Only the two objects selected will be affected by the editing corrunand.
+Select objects: (pick 1, 2)
+Selection Windows
+You can also select objects by drawing a rectangular window or crossing area in re-
+sponse to the Select objects: prompts as shown in Figure 3.2.
+a
+Figure 3.2
+4
+b
+Window is Blue
+Command:
+ERASE
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Crossing is Green
+Command:
+ERASE
+Select objects: (pick 3)
+Other corner: (pick 4)
+Picking from the left to the right,as in Figure 3.2 a will create a Window (blue after Re-
+lease 2007) that will highlight for modification all objects contained within it. Picking
+from right to left, as in Figure 3.2b will identify for modification all objects that touch
+the crossing line (green after Release 2007).
+Figure 3.3
+a
+b
+SO
+CHAPTER THREE
+Selection Polygons
+To select objects in an irregularly shaped area, use Window Polygon orCrossing Poly-
+gon. The Wpolygon (Figure 3.3a) and Cpolygon (Figure 3.3b), work like Window and
+Crossing windows. Type in WP or CP after the Select objects: prompt.
+
+
+===== PAGE 68/298 =====
+Modify
+Commands
+Since COpy assumes multiple
+copies, .J must be used to exit
+from the command.
+Selection Lines or Fence
+With the Fence option, the objects touching the fence line will be picked up, as in Fig-
+ure 3.4. Fence is useful for non-adjacent objects.
+((@~';
+•<V>
+------ --_._~---
+Figure 3.4
+Select objects:F
+(Fence)
+(pick points)
+You can use any of the above methods for object selection in any of the editing
+commands. The following examples show how to choose first the command, and then
+the selection set. Choosing the selection set first with GRIPS is covered on page 56.
+The COpy Command
+The COPY commandtakes an item or group ofitems andplaces a copy at another loca-
+tion or at multiple locations. The COPY command assumes the creation of multiple
+copies.
+The command line equivalent is COPY.
+~--9'3"·--'1
+J
+'-------
+Figure 3.5
+Cornmand:COPY
+Select objects: (pick 1, 2)
+Select objects:.J
+Specify base point or displacement [Multiple] :END of (pick 3)
+Specify second point of displacement or <use first point as
+displacernent>:END of (pick 4)
+Specify second point of displacement or <>:.J
+In Figure 3.5 the vector along which the objects will be copied is identified by point
+picks. You can also use an incremental value, as seen below.
+Second point of displacernent:@9'3",O
+(uses the incremental
+value rather than picking points)
+Object Selection and Modify Commands
+Sl
+
+
+===== PAGE 69/298 =====
+Autodesk has unaccountably tripled
+the words in the prompts. In COpy
+and MOVE, the first point is 'from
+where' the next is 'to where'.
+Figure 3.6 illustrates the use of COpy with multiple entries.
+1----------0.0.---
+1_1;1
+Figure 3.6
+Command: COPY
+Select objects: (pick 1, 2)
+Select objects:.J
+Specify base point or displacement [MultipleJ :END of (pick 3)
+Specify second point of displacement or <use first point as
+displacement>:END of (pick 4, 5,
+6)
+Specify second point of displacement or <>:.J
+The MOVE Command
+The MOVE command moves an object or series ofobjects from one point to another,
+relative to a defined point on the object or a base point.
+The command line equivalent is MOVE or M.
+.----_+-+-~......-¥2
+X,
+X4
+I
+)IE-.-~~~-~~
+f
+Figure 3.7
+IIi
+i
+.------
+--- f----
+52
+CHAPTER THREE
+Command:MOVE
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify base point or displacement: (pick 3)
+(from where)
+Specify second point of displacement or <use first point as
+displacement>: (pick 4)
+(to where)
+In Figure 3.7 the objects are moved according to point picks. As in the above example
+for copy, an increment or polar could also have been used:
+Specify second point of displacement or <>:@-2,O
+
+
+===== PAGE 70/298 =====
+Moving Objects to 0,0
+To move a selected group ofobjects from their current position to 0,0, fIrst identify the
+selection set. Identify which point you would like to be at 0,0. Use 0,0 as the destina-
+tion or displacement. In Figure 3.8, the two circles were created in the middle ofthe
+screen. They were then moved to 0,0 and then zoomed into the screen again.
+In Figure 3.8, pick 3 is where
+the objects are coming from,
+and 0,0 is where they are
+going
+to.
+The
+destination
+need not be ON the objects
+Figure 3.8
+Comrnand:MOVE
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify base point or displacement:CENter of (pick 3)
+Specify second point of displacement or <use first point as
+displacement>:O,O
+(to 0,0)
+The MIRROR Command
+The MIRROR command creates a mirror image ofan item or group ofitems through a
+specified mirroring plane selected by a real or imaginary line.
+The command line equivalent is MIRROR.
+r------¥2
+'f3
+i
+:~
+Figure 3.9
+Command:MIRROR
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select
+objects:~
+Specify first point of mirroring plane:END of (pick 3)
+Specify second point of mirroring plane:END of
+(pick 4)
+Delete source objects?
+[Yes/No]<N>:.J
+In Figure 3.9 the objects are mirrored through a plane created by picks 3 and 4.
+Object Selection and Modify Commands
+53
+
+
+===== PAGE 71/298 =====
+The ROTATE Command
+The ROTATE command rotates an object or series of objects around a specified base
+point. Using the command sequence below, the objects are rotated 45 degrees around a
+point in the middle ofthe object itselfas shown in Figure 3.10. To view the rotation of
+the object dynamically, move the cursor in a circle around the base point.
+The command line equivalent is ROTATE.
+54
+CHAPTER THREE
+Figure 3 - 10
+Command:ROTATE
+Current positive angle in DCS:
+ANGDIR=clockwise ANGBASE=O
+Select
+objects~ (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify base point: (pick 3)
+(use SNAP for accuracy)
+Specify rotation angle or
+[Copy/Reference] :45
+COpy and ROTATE
+A very good new feature in ROTATE found in Releases 2007 and 2008 is the ability to
+copy the objects within the command string.
+Figure 3.11
+Cornrnand:ROTATE
+Current positive angle in DCS:
+ANGDIR=clockwise ANGBASE=O
+Select objects:all (this will take all your objects)
+Select objects:.J
+Specify base point: (pick the middle point)
+Specify rotation angle or
+[Copy/ReferenceJ:c
+Rotating a copy of the selected objects
+Specify rotation angle or
+[Copy/Reference] :45
+In Figure 3.11 the'c' option for copy was usedto copy the objects as they were rotated.
+
+
+===== PAGE 72/298 =====
+Rotating Using a Reference
+Use the reference option to rotate something when you are not sure what the angle is,
+but you know the desired final angle.
+.... 'Xs
+Figure 3.12
+Q.
+. .
+.
+'
+.
+.
+"
+.
+~
+.
+..
+.
+'
+...
+.
+.
+.
+,
+.
+.
+.
+.
+..
+~ .. .. .. .
+Command: ROTATE
+Current positive angle in DCS:
+ANGDIR=clockwise ANGBASE=O
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify base point: (END of pick 3)
+Specify rotation angle or
+[Copy/Reference]:r
+Specify the reference angle <0>: (END of pick 4)
+Specify second point: (END of pick 5)
+Specify the new angle: (END of pick 6)
+In Figure 3.12 the'r' option for reference was used to reference the current angle to the
+desired angle in picks 5 and 6.
+The SCALE Command
+The SCALE command is very similar to those described above. Figure 3.13 shows ob-
+jects scaled at a value of.5. A scale factor more than 1: 1will make the image bigger. A
+scale factor less than 1: 1 will make it smaller.
+The command line equivalent is SCALE,
+Figure 3.13
+Command: SCALE
+Select objects: (pick 1,2)
+Specify base point: (pick 3)
+Specify scale factor or [Reference]:.5
+Obiect Selection and Modify Commands
+55
+
+
+===== PAGE 73/298 =====
+Editing with
+Grips
+Getting Good Results the First Time
+Always use SNAP, OSNAP, or actual coordinates to pick base points. Ifa reference ob-
+ject is needed to complete an editing command (for example, a line in the MIRROR
+command), insert it, reference it with OSNAP, then erase it.
+The commands demonstrated above were used before the objects were selected. With
+the aid of grips you can select objects, then use the editing commands to edit them.
+LINE
+Figure 3.14
+CIRCLE
+POLYLINE
+SPLINED POLYLINE
+Figure 3.14 shows where the grips would be placed on a variety of objects.
+Grip Modes
+Once you select objects using grips, the commands STRETCH, MOVE, ROTATE,
+SCALE, and MIRROR can be invoked. Once you have identified the selection set, you
+identify a base pointorhotgrip. This is solidinReleases 2005-2006, and red in Release
+2007 and 2008.
+When the hot grip is chosen, it turns a solid color. The grip modes will then be loaded
+and you can edit using one ofthe five modes. Use the space bar or Enter key to toggle
+through the modes, or type in the first two letters ofthe mode. For example, to reach
+Scale mode from another mode, keep pressing.J until Scale appears, or enter se.
+If the grip mode does not work on your system, type GRIPS and then enter 1.
+Grips Example
+First draw in a series oflines as shown in Figure 3.15. At the Command: prompt pick
+up the two lines on the right. The grips will appear in blue on the set of objects.
+,~i--I
+11 B]3
+56
+CHAPTERTH REE
+Figure 3.15
+Command: (pick 1,
+2)
+Command: (pick 3)
+Pick 3 loads the hot grip and the grip modes. Now you can modify the two objects cho-
+sen.
+
+
+===== PAGE 74/298 =====
+Figure 3.16
+a Ih
+I
+~l
+i
+b
+c
+Clear
+grips
+by
+pressing
+ESCape twice, or by accessing
+a
+new
+command
+through
+either buttons or menus.
+Once the base grip is chosen, the grip modes appear. Figure 3.16a shows STRETCH.
+Command:**STRETCH**
+Specify stretch point or
+[Base point!Copy/Undo/eXit] :
+(pick a point to stretch the objects to as shown.)
+Figure 3.16b shows MOVE. Just use the space bar or Enter to advance to MOVE.
+Command:**STRETCH**~
+Command: **MOVE**
+Specify move point or
+[Base point/Copy/Undo/ eXit]: (pick a
+point to move the objects to as shown)
+Figure 3.16c shows ROTATE. Just use the space bar or Enter to advance to ROTATE.
+Command:**STRETCH**~
+Command:**MOVE**~
+Command: **ROTATE**
+Specify rotation or
+[Basepoint/Copy/Undo!Reference!eXit] :-50
+n
+I
+IL' D-E'l
+Figure 3.17
+a
+Figure 3.17a shows SCALE.
+b
+Command:**STRETCH**SC
+Command:**SCALE**
+Specify scale factor or
+[Base point/Copy/Undo!eXit] : .5
+Figure 3.17b shows MIRROR.
+Command:**STRETCH**MI
+Command:**MIRROR**
+Specify second point or
+[Base point/Copy/Undo/Exit] : (pick
+above)
+Exiting from Grips
+Use the ESCape key on the top left ofyour keyboard to remove the grips. Ifyoll pick
+up grips by mistake use ESCape to remove them.
+Obiect Selection and Modify Commands
+57
+
+
+===== PAGE 75/298 =====
+Setting
+LINETYPEs
+AutoCAD offers the standard different types oflines - center, hidden, and dashed - in
+addition to many variations to make drawings more legible and more attractive. The
+LlNETYPEs are not loaded with the default AutoCAD drawing, so for you to use them
+they must be loaded into the file.
+---ByLayer
+---ByLayer
+---B.vBlock
+--- Continuous
+If your Properties toolbar, or any
+other
+toolbar,
+is
+not
+loaded,
+right-click
+any
+toolbar
+on
+the
+vertical lines and then choose the
+Changing
+LTSCALE
+58
+CHAPTER THREE
+The command line equivalent is L1NETYPE.
+To load new linetypes, choose Other...from the linetype menu. This will retrieve the
+Linetype Manager dialog box. From this, choose Load. This will retrieve the Load or
+Reload dialog box. Choose the linetype you would like to use, then click OK. Close the
+Linetype Manager.
+You will then return to the main menu. If you want to use the new linetype to draw
+with, pick the down arrow, then the linetype you havejust loaded. This will set the cur-
+rent linetype for subsequently drawn objects.
+To change objects already drawn into a specific linetype, pick the object, pick the
+down arrow on the Linetype button, and pick the linetype you want for those objects.
+Depending on the size ofyour object, linetypes that are not continuous may show up as
+such. This is because the scale of the drawing is too large or too small.
+To see your changes properly you need to change the scale of the screen display.
+Command:LTSCALE
+Enter new linetype scale factor <1.000>:13
+The final drawing scale oflinetypes is discussed in Chapter 11. Don't waste too much
+time trying to work out what linetype scale you need, just keep entering numbers in in-
+crements of 10, .1,10,100,1000, -10, until it looks OK.
+
+
+===== PAGE 76/298 =====
+Step 1
+In this tutorial we will make a roller arm. Open a new file
+in metric using acadiso.dwt. Keep the settings the same.
+Start with two circles at 0,0. PAN them into view.
+Command:C
+Specify center point for circle or
+[3P/2P/Ttr(tan tan rad)] :0,0
+Specify Radius of circle or
+[Diameter] :50
+Command:C
+Specify center point for circle or
+[3P/2P/Ttr(tan tan rad) ] :0,0
+Specify Radius of circle or
+[Diameter] :75
+o
+1
+©
+Step 2
+Step 3
+IOlRACK
+Command:Pan (the hand will
+show up and you can move the
+image across the screen)
+Now use COpy to place another set of circles at 300 units in X and 100 in Y.
+Command:COPY
+Select objects: (pick 1, 2)
+Specify base point or
+[Displacement]
+displacement:CEN
+of
+(pick 2)
+Specify second point of
+displacement
+or <use first point as displacement>:@300,100
+Now use MIRROR to get the third set ofcircles in. Set POLAR and OTRACK on to make
+your line entry easier.
+Command:MIRROR
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify first point of mirror line:CEN of
+(pick 3)
+Specify second point: (pick 4)
+Delete source objects?[Yes/No]<N>:.J
+Obiect Selection and Modify Commands
+59
+
+
+===== PAGE 77/298 =====
+Current settings:
+Mode =
+TrimrRadius = <5.0000>
+Select first object or[Undo/
+Polyline/Radius/Trim/Multiple] :r
+Specify fillet radius <1.000>:300
+Select first object or
+[Undo/Polyline/Radius/Trim/Multiple]:
+(pick 1)
+Select second object or shift-select to apply corner:
+Command: FILLET
+Use FILLET to create the arcs between the parts.
+Step 4
+(pick 2)
+(pick 3 to 6)
+as shown
+Your drawing should look like this.
+o
+of
+(pick 3)
+or
+[Copy/Reference]:c
+selected objects
+or
+[Copy/Reference] :240
+StepS
+Now use ROTATE with the copy option to make two
+rocker anns at a 240 degree angle.
+Command: ROTATE
+Current positive angle in DeS:
+ANGDIR=clockwise ANGBASE=O
+Select objects: (pick 1, pick 2)
+Select objects:.J
+Specify base point:CEN
+Specify rotation angle
+Rotating a copy of the
+Specify rotation angle
+2)i(i
+~
+Your object should now look like this.
+Step 6
+Change the linetype ofthe new rocker ann.
+Load a hidden linetype with the Linetype button.
+Pick the objects using a crossing window and
+place them on this linetype.
+Use LTSCALE if needed to make the new linetype
+appear as a hidden line.
+60
+CHAPTER THREE
+
+
+===== PAGE 78/298 =====
+In this example we will make a bay window using ROTATE, COPY, and MIRROR.
+Open anew file in imperial units and change yourunits to architectural- use UNITS.
+Command:LlNE
+Specify start point:O,O
+/'
+Specify next point or
+(Undo) : 8,0
+Specify next point or
+(Undo) : 8, 60
+Specify next point or
+(Undo) :0,60
+Specify next point or
+(Undo) : c
+Step 1
+Use LINE to draw in the window itself, not the dimensions,
+just the window.
+Command: ZOOM
+Command: ZOOM
+All
+.8X
+Depending
+on
+how
+your
+system is set UPt you may have
+to
+use
+5TARTUP
+to
+access
+imperial units.
+You can also use your mouse and roller ball to zoom the part onto the screen.
+Command:LlNE
+Specify start point:0,6
+Specify next point or
+(Undo) :@8,0
+Specify next point or
+(Undo):~
+Comrnand:LINE
+Specify start point:O,54
+Specify next point or
+(Undo) :@8,0
+Specify next point or
+(Undo):~
+Command:LlNE
+Specify start point:MID of (pick 1)
+Specify next point or
+(Undo) : PER of
+(pick 2)
+Specify next point or
+(Undo):~
+Step 2
+Use COpy to create the glass section. Use POLAR if
+you like, if not type in the displacement value.
+Command:COPY
+Select objects: (pick line)
+Select
+objects:~
+Specify base point or
+[Displacement]
+displacement:
+(pick anywhere)
+Specify second point of displacement
+or <use first point as displacement>:@l,O
+Step 3
+Make sure that the POLAR and OTRACK options are on to addthe next 8x 8 section.
+Command:LlNE
+Specify start point: (pick the
+corner)
+Specify next point or
+(Undo):8
+Specify next point or
+(Undo):8
+Specify next point or
+(Undo):8
+Specify next point or
+(Undo):~
+",--- --_.-
+I
+S·
+1
+_
+l~~8'-J
+Object Selection and Modify Commands
+61
+
+
+===== PAGE 79/298 =====
+Step 4
+Step 5
+Use ROTATE to rotate the comer section at 60 degrees while copying it.
+Command:ROTATE
+Current positive angle in Des:
+ANGDIR=clockwise ANGBASE=O
+Select objects: (pick 1, pick 2)
+Select
+objects:~
+Specify base point:END of
+(pick 3)
+Specify rotation angle or
+[Copy/Reference] :c
+Rotating a copy of the selected objects
+Specify rotation angle or
+[Copy/Reference] :300
+Fillet the right side to make a good comer, and erase the other two lines.
+Step 6
+~
+.•......~
+..............•........
+...~
+Command: FILLET
+Current settings:
+Mode
+Trim,Radius
+Select first object
+or [Undo/Polyline
+/Radius/Trim/Multiple] :r
+Specify fillet radius <1.000>:0
+Select first object or
+(Undo/Polyline/Radius/Trim/Multi
+pie] : (pick 1)
+Select second object or shift-
+select to apply corner: (pick 2)
+Command: ERASE
+Select objects: (pick 3,4)
+Now COpy the window down to the comer, and ro-
+tate it using a reference point.
+Command:COPY
+Select obJects: (pick 1, pick 2)
+Select objects:
+~
+Specify base point or
+[Displacement)
+displacement:END
+of (pick 3)
+Specify second point of
+displacement
+or <use first point as
+displacement:END of (pick 4)
+Command: ROTATE
+Current positive
+ANGBASE=O
+Select objects: (pick 5, pick 6)
+Select objects:.J
+<5.0000>
+2
+3
+),(---~
+I
+I
+:"'-Tr- J,
+: ::
+~
+I
+II
+j
+I
+II
+j
+: :::
+:
+::
+l:
+,
+I I
+~
+I
+II
+l
+•
+II
+I
+I
+H
+I
+I
+U
+I
+I
+H
+I
+I
+H
+I
+I
+:if
+I
+J
+Ii
+I
+I
+H
+I
+,
+~ l
+I
+I
+l:I
+I
+~jLi
+4
+6
+X
+62
+CHAPTERTH REE
+Use ZOOM Window to zoom into the object to see it. Within the command string pick
+ZOOM from the Properties tool barand zoom into the comer. See detail on nextpage.
+
+
+===== PAGE 80/298 =====
+Step 7
+Specify base point:END of
+(pick 7
+)
+Specify rotation angle or
+[Copy/Reference]:R
+(Zoom into the area using the Zoom Window icon)
+Specify the reference angle <O>:END of
+(pick 7)
+Specify second point:END of
+(pick 8)
+Specify the new angle:END of
+(pick 9)
+Now MIRROR the lower window throughthe upper window.
+Command:MIRROR
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:.J
+Specify first point of mirror line:
+MID of
+(pick 3)
+Specify second point: (pick 4)
+Delete source objects? [Yes/No]<N>:.J
+Use ZOOM Extents to view the whole window. Using
+ZOOM Extents will show all parts of geometry on your
+screen.
+I
+I
+I
+I
+!---TI--j
+I
+II
+I
+I
+II
+I
+I
+II
+I
+I
+II
+I
+4
+X
+Command:ZOOM (or just Z)
+Specify corner of window, enter a scale factor
+(nX or
+nXP),
+or[All/Center/Dynamic/Extents/
+Previous/Scale/Window/ObjectJ
+<real time>:E
+Your bay window should look like this.
+Object Selection and Modify Commands
+63

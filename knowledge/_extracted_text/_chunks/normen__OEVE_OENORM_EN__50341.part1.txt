@@ -1,0 +1,3295 @@
+
+
+===== PAGE 41/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 37 
+ 
+Symbol 
+Bezeichnung 
+Bezug 
+VR 
+Bezugswindgeschwindigkeit 
+4.2.2.1.5 
+VR(II) 
+Bezugswindgeschwindigkeit an einer nahe gelegenen Messstelle der Geländeart II 
+4.2.2.1.5 
+Vg 
+Böenwindgeschwindigkeit 
+4.2.2.1.1 
+Vh 
+Bezugswindgeschwindigkeit in einer Höhe h über Grund 
+4.2.2.1.6 
+Vmean 
+Mittelwert der Windgeschwindigkeit  
+4.2.2.1.1 
+XK 
+charakteristischer Wert einer Werkstoffeigenschaft 
+3.7.2 
+Xd 
+Bemessungswert einer Werkstoffeigenschaft 
+3.7.2 
+XnK 
+charakteristischer Wert der Werkstoffeigenschaft n 
+3.7.3 
+Xnd 
+Bemessungswert der Werkstoffeigenschaft n 
+3.7.3 
+z0 
+Bodenrauhigkeitslänge 
+4.2.2.1.4 
+α 
+Exponent für die Änderungen der Windgeschwindigkeit abhängig von der Höhe über 
+Grund 
+4.2.2.1.6 
+α 
+Abminderungsbeiwerte für Eislasten 
+4.2.10.2 
+β 
+Abminderungsbeiwert für die Leiterzugkraft 
+4.2.7 
+γ 
+Teilsicherheitsbeiwert 
+4.2.11 
+γA 
+Teilsicherheitsbeiwert für Ausnahmeeinwirkung 
+3.7.2 
+γC 
+Teilsicherheitsbeiwert für Lasten aus Leiterzugkräften 
+4.3.11 
+γF 
+Teilsicherheitsbeiwert für Einwirkungen 
+3.7.2 
+γG 
+Teilsicherheitsbeiwert für ständige Einwirkung 
+3.7.2 
+γI 
+Teilsicherheitsbeiwert für Eiseinwirkung 
+4.2.4.1 
+γM 
+Teilsicherheitsbeiwert für eine Werkstoffeigenschaft 
+3.7.2 
+γP 
+Teilsicherheitsbeiwert für Lasten aus Errichtung und Instandhaltung 
+4.2.11 
+γPt 
+Teilsicherheitsbeiwert für Einwirkungen durch Vorspannkräfte 
+7.6.4 
+γQ 
+Teilsicherheitsbeiwert für eine veränderliche Einwirkung 
+3.7.2 
+γQn 
+Teilsicherheitsbeiwert für die veränderliche Einwirkung n 
+3.7.4 
+γw 
+Teilsicherheitsbeiwert für eine Windeinwirkung 
+4.2.11 
+ρ 
+Luftdichte 
+4.2.2.2 
+ρE 
+spezifischer Erdwiderstand nahe der Oberfläche (Ω⋅m) 
+6.2.4.3 
+ρI 
+Eisdichte 
+4.2.4.2 
+ρ‘ 
+Luftdichte bei der absoluten Temperatur T‘ und in der Bezugs-NN-Höhe H 
+4.2.2.2 
+φ 
+Windeinwirkungswinkel der maßgebenden Windrichtung 
+4.2.2.4.1 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+41 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 42/273 =====
+Seite 38 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Symbol 
+Bezeichnung 
+Bezug 
+φ 
+Winkel zwischen Windrichtung und der Längsachse eines Gitterquerträgers 
+4.2.2.4.3 
+χ 
+Völligkeit eines Mastschusses 
+4.2.2.4.3 
+Ψ 
+Kombinationsbeiwert für eine Einwirkung 
+4.2.11 
+ΨI 
+Kombinationsbeiwert für eine Eiseinwirkung 
+4.2.4.1 
+ΨQ 
+Kombinationsbeiwert für eine veränderliche Einwirkung 
+3.4.3 
+ΨQn 
+Kombinationsbeiwert für die veränderliche Einwirkung n 
+3.7.4 
+ΨW 
+Kombinationsbeiwert für eine Windeinwirkung 
+4.2.4.1 
+ 
+2.3 
+Normative Verweisungen 
+Diese europäische Norm enthält Verweisungen entweder normativer oder informativer Art auf Vorgaben in 
+anderen Veröffentlichungen. Diese Verweisungen werden an den geeigneten Stellen im Text zusammen mit 
+einer Angabe zitiert, die angibt, ob die Verweisung in dieser Norm normativ oder informativ ist. Alle Ver-
+weisungen sind undatiert; die neueste Ausgabe der angezogenen Veröffentlichungen gilt. 
+Diese Veröffentlichungen sind nachstehend aufgelistet. Diese Verweisungen stimmen mit den CEN- und 
+CENELEC-Katalogen und dem Katalog der IEC-Veröffentlichungen aus dem Jahr 2001 überein. 
+ 
+EN ISO 1461 
+Feuerverzinkung von Einzelteilen (Stückverzinken) – Spezifikationen und Prüfverfahren 
+EN ISO 9001 
+Qualitätsmanagementsysteme – Modell zur Darlegung der Qualitätssicherung in  
+Design/Entwicklung, Produktion, Montage und Wartung 
+EN ISO 9002 
+Qualitätsmanagementsysteme – Modell zur Darlegung der Qualitätssicherung in  
+Produktion, Montage und Wartung 
+EN ISO 9003 
+Qualitätsmanagementsysteme – Modell zur Darlegung der Qualitätssicherung bei der 
+Endprüfung 
+EN ISO 14713 
+Korrosionsschutz bei Eisen und Stahl – Zink- und Aluminiumbeschichtungen –  
+Richtlinien 
+EN 10025 
+Warmgewalzte Erzeugnisse aus unlegierten Baustählen – Technische Lieferbedingun-
+gen 
+EN 10149 
+Warmgewalzte Flachstäbe mit hoher Festigkeit für die Kaltverformung 
+EN 10204 
+Metallische Erzeugnisse – Arten von Prüfbescheinigungen 
+EN 12465 
+Einstielige Holzmaste für Freileitungen – Dauerfestigkeitsanforderungen 1) 
+EN 12479 
+Einstielige Holzmaste für Freileitungen – Größen 
+EN 12509 
+Einstielige Holzmaste für Freileitungen – Prüfverfahren – Bestimmung des Elastizitäts-
+moduls, der Biegefestigkeit, der Dichte und des Feuchtigkeitsgehalts 1) 
+                                                
+1) Nationale Fußnote: in Vorbereitung. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+42 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 43/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 39 
+ 
+EN 12510 
+Einstielige Holzmaste für Freileitungen – Anforderungen an Normen zur Festigkeits-
+klassifikation 1) 
+EN 12511 
+Einstielige Holzmaste für Freileitungen – Bestimmung von Kennwerten 1) 
+EN 12843 
+Vorgefertigte Betonmaste 1) 
+EN 22063 
+Metallische und andere anorganische Schichten – Thermisches Spritzen – Zink,  
+Aluminium und ihre Legierungen 
+EN 50182 
+Verseilte Leiter für Freileitungen mit konzentrischen Lagen aus Runddrähten 
+EN 50183 
+Aluminium-Magnesium-Silizium-Drähte für Leiter von Freileitungen 
+EN 50189 
+Zinkummantelte Stahldrähte für Leiter von Freileitungen 
+EN 50326 
+Eigenschaften von Fett für blanke Leiter für Freileitungen 
+EN 50351 
+Grundnorm für die Berechnungs- und Messverfahren bezogen auf die Beeinflussung 
+von Telekommunikationssystemen durch elektrische Energieversorgungs- und  
+Bahnstromsysteme 
+EN 50352 
+Grenzwerte bezogen auf die Beeinflussung von Telekommunikationssystemen durch  
+elektrische Energieversorgungs- und Bahnstromsysteme 
+EN 60071-1 
+Isolationskoordination – Teil 1: Begriffe, Definitionen, Grundsätze und Regeln  
+(IEC 60071-1) 
+EN 60071-2 
+Isolationskoordination – Teil 2: Anwendungshinweisblatt (IEC 60071-2) 
+EN 60305 
+Isolatoren für Freileitungen mit einer Nennspannung über 1 kV – Keramik- oder Glas-
+isolatoren für Wechselstromsysteme – Kenngrößen von Kappenisolatoren (IEC 60305) 
+EN 60383-1 
+Isolatoren für Freileitungen mit einer Nennspannung über 1 kV – Teil 1: Keramik- oder 
+Glasisolatoren für Wechselstromsysteme – Begriffe, Prüfverfahren und  
+Annahmekriterien (IEC 60383-1) 
+EN 60383-2 
+Isolatoren für Freileitungen mit einer Nennspannung über 1 kV – Teil 2: Isolatorstränge 
+und Isolatorketten für Wechselstromsysteme: Begriffe, Prüfverfahren und  
+Annahmekriterien (IEC 60383-2) 
+EN 60433 
+Isolatoren für Freileitungen mit Nennspannung über 1000 V – Keramische Isolatoren für 
+AC-Netze Kenngrößen von Langstabkettenisolatoren (IEC 60433) 
+EN 60437 
+Funkstörprüfung an Hochspannungsisolatoren (IEC 60437) 
+EN 60507 
+Fremdschichtprüfungen an Hochspannungs-Isolatoren zur Anwendung in  
+Wechselspannungssystemen (IEC 60507) 
+EN 60794-1-1 
+Lichtwellenleiterkabel – Teil 1-1: Fachgrundspezifikation – Allgemeines (IEC 60794-1-1)
+EN 60794-1-2 
+Lichtwellenleiterkabel – Teil 1-2: Fachgrundspezifikation – Grundlegende Prüfverfahren 
+für Lichtwellenleiterkabel (IEC 60794-1-2) 
+EN 60865-1 
+Kurzschlussströme, Berechnung der Wirkung – Teil 1: Begriffe und Berechnungsver-
+fahren (IEC 60865-1) 
+                                                
+1) Nationale Fußnote: in Vorbereitung. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+43 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 44/273 =====
+Seite 40 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+EN 60889 
+Hartgezogene Aluminiumdrähte für Leiter von Freileitungen (IEC 60889) 
+EN 61232 
+Aluminium-ummantelte Stahldrähte für die Elektrotechnik (IEC 61232) 
+EN 61284 
+Freileitungen – Anforderungen und Prüfungen für Armaturen (IEC 61284) 
+EN 61325 
+Isolatoren für Freileitungen mit einer Nennspannung über 1000 V – Keramik- oder Glas-
+isolatoren für Gleichspannungssysteme – Begriffe, Prüfverfahren und Annahmekriterien 
+(IEC 61325) 
+EN 61395 
+Freileitungsseile – Prüfverfahren für das Kriechen verseilter Leiter (IEC 61395) 
+EN 61466-1 
+Verbund-Kettenisolatoren für Freileitungen mit einer Nennspannung über 1 kV –  
+Teil 1: Genormte Festigkeitsklassen und Endarmaturen (IEC 61466-1) 
+EN 61466-2 
+Verbund-Kettenisolatoren für Freileitungen mit einer Nennspannung über 1 kV –  
+Teil 2: Maße und elektrische Kenngrößen (IEC 61466-2) 
+EN 61773 
+Freileitungen – Prüfung von Tragwerksgründungen (IEC 61773) 
+EN 61854 
+Freileitungen – Anforderungen und Prüfungen für Feldabstandhalter (IEC 61854) 
+EN 61897 
+Freileitungen – Anforderungen und Prüfungen für Schwingungsdämpfer – Typ Stock-
+bridge (IEC 61897) 
+EN 187200 
+Rahmenspezifikation: Lichtwellenleiterkabel-Starkstromleitungen (OCEPL) 
+ENV 1090-1 
+Ausführung von Tragwerken aus Stahl – Teil 1: Allgemeine Regeln und Regeln für 
+Hochbauten 
+EUROCODE 1 
+ENV 1991: Grundlagen der Tragwerksplanung und Einwirkungen auf Tragwerke  
+ENV 1991-1: Grundlagen der Tragwerksplanung 
+ENV 1991-2-1: Einwirkungen auf Tragwerke – Dichten, Eigenlasten, Nutzlasten 
+ENV 1991-2-4: Einwirkungen auf Bauwerke – Windlasten 
+EUROCODE 2 
+ENV 1992: Planung von Stahlbeton- und Stahltragwerken 
+ENV 1992-1-1: Grundlagen und Anwendungsregeln für den Hochbau 
+ENV 1992-1-3: Allgemeine Regeln – Bauteile und Tragwerke aus Fertigteilen 
+ENV 1992-3: Planung von Stahlbetontragwerken – Fundamente  
+EUROCODE 3 
+ENV 1993: Bemessung und Konstruktion von Stahlbauten 
+ENV 1993-1-1: Grundlagen und Anwendungsregeln für den Hochbau 
+ENV 1993-1-3: Ergänzende Regeln für kaltverformte, dünnwandige Stäbe und Platten 
+ENV 1993-5: Pfahlgründungen 
+EUROCODE 5 
+ENV 1995: Planung von Holzbauten 
+ENV 1995-1-1: Grundlagen und Anwendungsregeln für den Hochbau 
+EUROCODE 7 
+ENV 1997: Grundbau 
+ENV 1997-1: Grundlagen 
+EUROCODE 8 
+ENV 1998: Auslegung von Bauwerken gegen Erdbeben 
+ENV 1998-5: Gründungen, Stützbauwerke und bodenmechanische Aspekte 
+HD 474 S1 
+Maße von Klöppel- und Pfannenverbindungen von Kettenisolatoren (IEC 60120) 
+HD 637 
+Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+IEC 60038 
+IEC standard voltages 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+44 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 45/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 41 
+ 
+IEC 60050-441 
+International Electrotechnical Vocabulary – Chapter 441: Switchgear, controlgear and 
+fuses 
+IEC 60050-466 
+International Electrotechnical Vocabulary – Chapter 466: Overhead lines 
+IEC 60050-471 
+International Electrotechnical Vocabulary – Chapter 471: Insulators 
+IEC 60050-601 
+International Electrotechnical Vocabulary – Chapter 601: Generation, transmission and 
+distribution of electricity – General 
+IEC 60050-604 
+International Electrotechnical Vocabulary – Chapter 604: Generation, transmission and 
+distribution of electricity – Operation 
+IEC 60287-3-1 
+Electric cables – Calculation of the current rating – Part 3-1: Current rating equations 
+(100 % load factor) and calculation of losses 
+IEC 60372 
+Locking devices for ball and socket couplings of string insulator units – Dimensions and 
+tests 
+IEC 60471 
+Dimensions of clevis and tongue couplings of string insulator units 
+IEC/TR2 60479-1 Effects of current on human beings and livestock – Part 1: General aspects 
+IEC/TR 60575 
+Thermal-mechanical performance test and mechanical performance test on string insu-
+lator units 
+IEC 60652 
+Loading tests on overhead line towers 
+IEC 60720 
+Characteristics of line post insulators 
+IEC 60724 
+Short-circuit temperature limits of electric cables with rated voltages of 1 kV 
+(Um = 1,2 kV) and 3 kV (Um = 3,6 kV) 
+IEC 60794-4-1 
+Optical fibre cables – Part 4-1: Aerial optical cables for high-voltage power lines 
+IEC 60797 
+Residual strength of string insulator units of glass or ceramic material for overhead lines 
+after mechanical damage of the dielectric 
+IEC/TR 60815 
+Guide for the selection of insulators in respect of polluted conditions 
+IEC/TR 60826 
+Loading and strength of overhead transmission lines 
+IEC 60909 
+Short-circuit current calculation in three-phase a.c. systems 
+IEC 61109 
+Composite insulators for a.c. overhead lines with a nominal voltage greater than 1000 V 
+Definitions, test methods and acceptance criteria 
+IEC/TR2 61211 
+Insulators of ceramic material or class for overhead lines with a nominal voltage greater 
+than 1000 V – Puncture testing 
+IEC/TR2 61467 
+Insulators for overhead lines with a nominal voltage above 1000 V – A.C. power arc 
+tests on insulator sets 
+IEC/TR3 61597 
+Overhead electrical conductors – Calculation methods for stranded bare conductors 
+IEC/TR2 61774 
+Overhead lines – Meteorological data for assessing climatic loads 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+45 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 46/273 =====
+Seite 42 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+IEC 62219 
+Formed wire concentric lay overhead electrical stranded conductors 1) 
+CISPR 16-1 
+Specification for radio disturbance and immunity measuring apparatus and methods – 
+Part 1: Radio disturbance and immunity measuring apparatus 
+CISPR 16-2 
+Specification for radio disturbance and immunity measuring apparatus and methods – 
+Part 2: Methods of measurement of disturbance and immunity 
+CISPR 18-2 
+Radio interference characteristics of overhead power lines and high voltage equipment 
+– Part 2: Methods of measurement and procedure for determining limits 
+CISPR 18-3 
+Radio interference characteristics of overhead power lines and high voltage equipment 
+– Part 3: Code of practice for minimising the penetration of radio interferences 
+ 
+ 
+(ncpt) 
+AT.1:  
+ÖNORM B 3304  
+Betonzuschläge aus natürlichem Vorkommen; Eigenschaften, 
+Prüfung, Abnahme 
+(ncpt) 
+AT.2:  
+ÖNORM B 3307  
+Transportbeton 
+(ncpt) 
+AT.3:  
+ÖNORM B 4100-2  
+Berechnung und Ausführung der Tragwerke, Holzbau, Holztrag-
+werke 
+(A-dev) AT.4:  
+ÖNORM B 4200-4  
+Stahlbetontragwerke; Grundlagen der Berechnung und Ausfüh-
+rung 2)  
+(A-dev) AT.5:  
+ÖNORM B 4200-7 
+Massivbau; Stahleinlagen 
+(A-dev) AT.6:   
+ÖNORM B 4200-8 und -9 Stahlbetontragwerke; Berechnung und Ausführung 2) 
+(A-dev) AT.7:  
+ÖNORM B 4200-10   Beton; Herstellung und Überwachung 
+(A-dev) AT.8:  
+ÖNORM B 4430-1  
+Erd- und Grundbau; Zulässige Belastungen des Baugrundes,  
+Flächengründungen 
+(A-dev) AT.9:  
+ÖNORM B 4430-2  
+Erd- und Grundbau; Zulässige Belastung des Baugrundes, Pfahl-
+gründungen 
+(A-dev) AT.10:  
+ÖNORM B 4605  
+Stahlbau; Maste; Berechnung und Ausführung der Tragwerke 
+(ncpt) 
+AT.11:  
+ÖNORM E 4000  
+Elektrische Freileitungen; Drähte aus Aluminium und Aluminium-
+Knetlegierung, E-AlMgSi für Leiterseile 
+(ncpt) 
+AT.12:  
+ÖNORM E 4030  
+Elektrische Freileitungen; Drähte und Seile aus Aluminium,  
+E-AlMgSi oder Stahl sowie Aluminium-Stahl-Seile und E-AlMgSi-
+Stahl-Seile; Technische Lieferbedingungen 
+(ncpt) 
+AT.13:  
+ÖNORM E 4006  
+Elektrische Freileitungen; Verzinkte Stahldrähte für Leiterseile 
+(ncpt) 
+AT.14:  
+ÖNORM E 4200  
+Elektrische Freileitungen; Holzmaste, Übernahmebedingungen 
+und Behandlung 
+(ncpt) 
+AT.15:  
+ÖNORM E 4201  
+Elektrische Freileitungen; Holzmaste, Berechnung und  
+ 
+Konstruktion 
+                                                
+1) Nationale Fußnote: in Vorbereitung. 
+2) Nationale Fußnote: Die ÖNORMEN B 4200-4, -8 und -9 wurden ersetzt durch ÖNORM B 4700. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+46 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 47/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 43 
+ 
+(ncpt) 
+AT.16:  
+ÖNORM E 4202  
+Elektrische Freileitungen; Holzmaste, Tragfähigkeit der Grund-
+formen 
+(A-dev) AT.17:   
+ÖNORM S 1119  
+Niederfrequente elektrische und magnetische Felder, zulässige 
+Expositionswerte zum Schutz von Personen im Frequenzbereich 
+0 Hz bis 30 kHz 
+(ncpt) 
+AT.18:  
+DIN 48200 Teil 1  
+Drähte für Leitungsseile; Drähte aus Kupfer 
+(A-dev) AT.19:  
+ÖVE EN 50110-1  
+Betrieb von elektrischen Anlagen 
+(A-dev) AT.20:   
+ÖVE-L11  
+Errichtung von Starkstromfreileitungen über 1kV 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+47 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 48/273 =====
+Seite 44 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+3 
+Grundlagen für Auslegung und Bemessung 
+(A-dev) AT.1: Werden nicht genormte Bauteile verwendet, so ist nachzuweisen, dass ihre Eigenschaften die 
+geforderte Sicherheit bieten. Ein rechnerischer Nachweis ist zulässig. 
+3.1 
+Allgemeines 
+Dieser 
+Abschnitt 
+enthält 
+die 
+Grundlagen 
+und 
+allgemeinen 
+Prinzipien für die bautechnische,  
+bodenmechanische und mechanische Auslegung von Freileitungen mit Nennspannungen über AC 45 kV. 
+Dieser Abschnitt sollte im Zusammenhang mit den EUROCODES 1, 2, 3, 5, 7 und 8 gelesen werden. Die in 
+dieser Norm enthaltenen Vorgaben treten anstelle der entsprechenden Abschnitte in den angesprochenen 
+EUROCODES. 
+Die allgemeinen Prinzipien haben das Grenzzustandskonzept zur Grundlage, das in Verbindung mit der  
+Methode der Teilsicherheitsbeiwerte, wie in 3.7 beschrieben, verwendet wird. 
+Die Werte der Teilsicherheitsbeiwerte bezüglich Lasten und Beanspruchbarkeiten hängen ab vom Grad der 
+Unsicherheit der Einwirkungen, der Beanspruchbarkeiten, der geometrischen Größen und der Modelle so-
+wie von der Art des Tragwerkes und der Art des Grenzzustandes. Teilsicherheitsbeiwerte können auch von 
+der für die Freileitung angestrebten Abstimmung der Beanspruchbarkeit abhängen. 
+Es gibt im Prinzip zwei Arten, um numerische Werte für Einwirkungen und für Teilsicherheits-Beiwerte zu 
+bestimmen. Der eine Weg hat die statistische Auswertung von meteorologischen Daten, Versuchsdaten und 
+Beobachtungen an Standorten zur Grundlage. Diese Auswertung sollte im Rahmen einer probabilistischen 
+Zuverlässigkeitstheorie, wie in IEC 60826 beschrieben, vorgenommen werden. Ein zweiter Weg hat das 
+Kalibrieren entsprechend einer langjährigen und erfolgreichen Errichtung von Hochspannungsfreileitungen 
+zur Grundlage. Diese Leitlinie gilt für die meisten der in den erwähnten EUROCODES vorgeschlagenen 
+Beiwerte. 
+In der Praxis werden die beiden Vorgehensweisen wie in Bild 3.1 dargestellt verwendet. Eine statistische 
+Methode erfordert insbesondere eine ausreichende Datengrundlage. In vielen Fällen sind zusätzliche An-
+strengungen notwendig, um solche Daten zu erhalten. Vergleiche mit herkömmlichen Auslegungsmethoden 
+mit langer Erfahrung hinsichtlich Auslegung und Betrieb von Freileitungen können, wie oben erwähnt, durch-
+geführt werden. Aus dieser Sicht kann die statistische Vorgehensweise zusätzliche Grundlagen zur eher 
+traditionellen empirischen Vorgehensweise beitragen und umgekehrt. 
+Die in 4.3 beschriebene empirische Vorgehensweise stellt eine Alternative zur in 4.2 angegebenen allge-
+meinen Vorgehensweise hinsichtlich der Einwirkungen dar. Die empirische Vorgehensweise beinhaltet die 
+oben erwähnte Erfahrung mit vorhandenen nationalen Hochspannungs-Freileitungsnormen, die in einigen 
+Ländern seit etwa 1900 vorhanden sind. Daher können diese Normen eine gute Grundlage für das Kalibrie-
+ren der empirischen Methode bilden. Eine vergleichende Prüfung bestimmter Werte mit den Ergebnissen 
+statistischer Auswertungen sollte zur Bestätigung und Kalibrierung der Auslegungskriterien durchgeführt 
+werden.  
+Jedes einzelne nationale Komitee der CENELEC entscheidet, welche besonderen nationalen und/oder  
+regionalen Anforderungen bei der Auslegung von Freileitungen zu beachten sind, und bestimmt gegebenen-
+falls deren einschlägigen Teilsicherheitsbeiwerte, siehe gegebenenfalls 4.2.11 und 4.3.11. Das nationale 
+Komitee kann weiterhin entscheiden, die empirische Vorgehensweise nach 4.3 zu verwenden. Teilsicher-
+heitsbeiwerte sind zusammen mit den dazugehörigen Anforderungen in den Nationalen Normativen Festle-
+gungen zu dieser Norm enthalten und werden so bindend. Sie können auch in einer Projekt-Spezifikation 
+festgelegt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+48 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 49/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 45 
+ 
+ 
+Bild 3.1 – Übersicht über die Bestimmung von Teilsicherheitsbeiwerten 
+3.2 
+Anforderungen 
+3.2.1 
+Grundlegende Anforderungen 
+Eine Freileitung muss so bemessen, konstruiert und errichtet werden, dass sie während der vorgesehenen 
+Lebensdauer  
+- 
+ihre Übertragungsaufgabe unter gegebenen Bedingungen mit einem angemessenen Maß an Zuverläs-
+sigkeit wirtschaftlich erfüllt. Dies bezieht sich auf die Gesichtspunkte der Zuverlässigkeitsanforderungen; 
+- 
+gegen kaskadenartige Schäden geschützt ist, wenn eine bestimmte Komponente beschädigt wird. Dies 
+bezieht sich auf die Gesichtspunkte der Betriebssicherheitsanforderungen; 
+- 
+keine Verletzungen oder den Tod von Personen während der Errichtung und Instandhaltung verursacht. 
+Dies bezieht sich auf die Gesichtspunkte der Anforderungen an die Personensicherheit. 
+Eine Freileitung muss auch so ausgelegt und errichtet werden, dass die öffentliche Sicherheit, die Dauerhaf-
+tigkeit, die Robustheit, die Instandhaltungsfähigkeit, sowie Gesichtspunkte der Umweltverträglichkeit und der 
+Ästhetik berücksichtigt sind. 
+Die angeführten Anforderungen werden erfüllt durch die Wahl geeigneter Werkstoffe, durch angemessene 
+Bemessung und Ausführung und durch Vorgabe von Qualitätssicherungsverfahren für die Bemessung, die 
+Herstellung, die Errichtung und den Betrieb für das jeweilige Projekt. 
+Die ausgewählten Bemessungsbedingungen müssen, dargestellt durch repräsentative Lastfälle, ausrei-
+chend streng und vielfältig sein, damit sie alle Bedingungen umfassen, für die vernünftigerweise angenom-
+men werden kann, dass sie während der Errichtung und der geplanten Lebensdauer der Freileitung auftre-
+ten werden. 
+3.2.2 
+Zuverlässigkeit von Freileitungen 
+Die für Freileitungen einschließlich aller Elemente und Komponenten erforderliche Zuverlässigkeit wird durch 
+Auslegung entsprechend dieser Norm und den EUROCODES 1, 2, 3, 5, 7 und 8 sowie durch angemessene 
+Qualitätssicherungsmaßnahmen erreicht. 
+Es gilt dabei (a) oder (b): 
+(a) Übereinstimmend mit ihren nationalen Erfahrungen und vorgenommenen Kalibrierungen können die 
+nationalen Komitees von CENELEC entscheiden, eine Zuverlässigkeitsstufe, im Allgemeinen mindes-
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+49 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 50/273 =====
+Seite 46 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+tens der unten erwähnten Zuverlässigkeitsstufe 1 entsprechend, anzusetzen. Ausnahmen hiervon müs-
+sen in den Nationalen Normativen Festlegungen (NNA) angegeben werden. 
+(A-dev) AT.1: In Österreich ist gemäß 4.3  "Einwirkungen, empirische Vorgehensweise" zu bemessen. Die 
+Festlegung einer bestimmten Zuverlässigkeitsstufe ist deshalb nicht erforderlich.  
+ 
+(b) Wenn die statistische Vorgehensweise verwendet wird, können im Allgemeinen drei unterschiedliche 
+Zuverlässigkeitsstufen für Freileitungen entsprechend einer vorgegebenen Wiederkehrdauer der klima-
+tischen Einwirkungen, wie in Tabelle 3.1, festgelegt in Betracht gezogen werden. 
+Tabelle 3.1 – Zuverlässigkeitsstufen 
+Wiederkehrdauer T von klimatischen 
+Einwirkungen 
+Zuverlässigkeitsstufe 
+Jahre 
+1 
+50 
+2 
+150 
+3 
+500 
+Abweichungen von diesen Stufen können in Abstimmung mit den besonderen Anforderungen für ein be-
+stimmtes Projekt vorgenommen werden. Jedoch muss die gewählte Stufe mindestens der Zuverlässigkeits-
+stufe 1 entsprechen, ausgenommen zeitlich begrenzte Bauwerke oder zeitlich begrenzt eingesetzte Kom-
+ponenten. 
+ANMERKUNG: Die jährliche Zuverlässigkeit einer Freileitung steht näherungsweise in Bezug zur Wie-
+derkehrdauer T der klimatischen Einwirkungen und liegt zwischen 1 - 1/T und 1 - 1/(2T), was als Minimalwert 
+angesehen werden kann. Weitere Angaben finden sich in IEC 60826. 
+Eine absolute Zuverlässigkeit ist im Allgemeinen für eine Freileitung schwierig zu bestimmen. Daher kann 
+die Zuverlässigkeitsstufe 1 als Bezugsgröße betrachtet werden, wobei höhere Zuverlässigkeitsstufen relativ 
+zur Referenzstufe zu verstehen sind. 
+Falls Zuverlässigkeitsstufen festgelegt werden, werden diese in den NNA angegeben. 
+3.2.3 
+Anforderungen an die Betriebssicherheit 
+Anforderungen an die Betriebssicherheit wird durch besondere Lastvorgaben und/oder Maßnahmen Rech-
+nung getragen, die dazu dienen sollen, sich unkontrolliert ausbreitende oder kaskadenartige Schäden zu 
+verhindern. 
+Sollte eine Leitung entweder infolge von Werkstofffehlern, unvorhergesehenen Ereignissen (z.B. Auftreffen 
+eines Objektes, Erdrutsch usw.) oder eines ungewöhnlichen klimatischen Ereignisses versagen, ist es we-
+sentlich, dass ein Schaden auf jenen Bereich und seine Umgebung begrenzt wird, wo Überlasten aufgetre-
+ten sind, die die Beanspruchbarkeit von Komponenten überstiegen. 
+Um kaskadenartige Schäden zu verhindern, werden in dieser Norm einige simulierte Einwirkungen und Be-
+lastungsbedingungen vorgesehen, die im Abschnitt 4 angegeben sind. 
+Eine höhere Betriebssicherheit kann für einige Freileitungen entweder wegen ihrer Wichtigkeit im Netz oder 
+weil sie schweren klimatischen Lasten ausgesetzt sind, gerechtfertigt sein. In solchen Fällen können zusätz-
+liche Maßnahmen angewandt werden, um die Betriebssicherheit entsprechend der Erfahrung oder der Art 
+der auszulegenden Leitung zu erhöhen. Abspannmaste können in vorgegebenen Abständen eingefügt wer-
+den, um die Ausbreitung des Versagens zu begrenzen. 
+3.2.4 
+Anforderungen an die Personensicherheit während der Errichtung und Instandhaltung 
+Anforderungen an die Personensicherheit zielen darauf ab, sicherzustellen, dass Errichtungs- und Instand-
+haltungsarbeiten keine Gefahren für Personen hervorrufen. Die Anforderungen an die Personensicherheit 
+umfassen in dieser Norm insbesondere Lasten wie in 4.2.6 und 4.3.6 festgelegt, für die die Leitungskompo-
+nenten (meist Stützpunkte) ausgelegt werden müssen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+50 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 51/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 47 
+ 
+3.2.5 
+Abstimmung der Beanspruchbarkeit 
+Die Behandlung einer Freileitung als System verlangt die Abstimmung der Beanspruchbarkeit der Kompo-
+nenten, die die Leitung bilden. In dieser Norm wird auf besondere Anforderungen an die Abstimmung der 
+Beanspruchbarkeiten in den NNA verwiesen. 
+ANMERKUNG: Die Abstimmung der Beanspruchbarkeiten wird in der Praxis im Allgemeinen durch die Anpas-
+sung der Teilsicherheitsbeiwerte und/oder der Lastfälle erreicht. 
+Anhang A „Abstimmung der Beanspruchbarkeit“ (informativ) enthält Einzelheiten bezüglich des Konzeptes 
+der Beanspruchbarkeitsabstimmung auf der Grundlage von IEC 60826. 
+3.2.6 
+Zusätzliche Betrachtungen 
+Die Betrachtung einer Freileitung als ein Bauwerk in der Umwelt muss auf die in der jeweiligen Region oder 
+in einem Land bestehende Umweltgesetzgebung Rücksicht nehmen. 
+Die Sicherheit von Personen und der Schutz von Wild- und Nutztieren, z.B. Vögel, Vieh usw., müssen in 
+geeigneter Weise berücksichtigt werden. Besondere Anforderungen können in den NNA angegeben wer-
+den. 
+3.2.7 
+Geplante Lebensdauer 
+Die geplante Lebensdauer ist der angenommene Zeitabschnitt, für den eine Freileitung entsprechend ihres 
+vorgesehenen Zweckes mit der vorgesehenen Instandhaltung, aber ohne dass wesentliche Reparaturen 
+notwendig werden, in Gebrauch sein soll. 
+Die geplante Lebensdauer von Freileitungen wird im Allgemeinen mit 50 Jahren angesetzt, wenn nicht in 
+einer Projekt-Spezifikation anders festgelegt. 
+ANMERKUNG: Die Betriebsdauer liegt üblicherweise im Bereich von 30 Jahren bis 80 Jahren. 
+3.2.8 
+Dauerhaftigkeit 
+Die Dauerhaftigkeit eines Tragwerkes oder Teiles hiervon muss unter Beachtung der Umwelt ausreichen, 
+damit bei angemessener Instandhaltung die Gebrauchstüchtigkeit während der geplanten Lebensdauer ge-
+geben ist.  
+Die Umweltbedingungen müssen zum Zeitpunkt der Auslegung abgeschätzt werden, um ihre Bedeutung in 
+Bezug auf die Dauerhaftigkeit zu beurteilen und um angemessene Vorkehrungen für den Schutz der Werk-
+stoffe zu ermöglichen. 
+3.2.9 
+Qualitätssicherung 
+Um eine Freileitung entsprechend den Anforderungen und den während der Auslegung getroffenen Annah-
+men zu erstellen, müssen angemessene Qualitätssicherungsmaßnahmen während der Auslegung und der 
+Errichtung angewandt werden. 
+ANMERKUNG: Qualitätssicherungsmaßnahmen sind in EN ISO 9001 beschrieben. 
+3.3 
+Grenzzustände 
+3.3.1 
+Allgemeines 
+Grenzzustände sind Zustände, bei deren Überschreiten die Freileitung nicht mehr den an sie gestellten Aus-
+legungsanforderungen genügt. 
+Allgemein wird zwischen „Grenzlastzuständen“ und „Grenzzuständen der Gebrauchstauglichkeit“ unter-
+schieden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+51 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 52/273 =====
+Seite 48 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+3.3.2 
+Grenzlastzustände 
+Grenzlastzustände sind diejenigen, die mit einem Zusammenbruch oder mit ähnlichen Formen von Trag-
+werksschäden durch übermäßige Verformung, Verlust der Stabilität, Umkippen, Riss, Knicken usw. verbun-
+den sind. 
+Schadenszustände, die einem Zusammenbruch des Tragwerks vorhergehen und der Einfachheit halber an-
+stelle des Zusammenbruches selbst in Betracht gezogen werden, werden auch als Grenzlastzustände be-
+handelt. 
+Grenzlastzustände betreffen: 
+- 
+die Zuverlässigkeit und Betriebssicherheit von Stützpunkten, Gründungen, Leitern und Ausrüstung; 
+- 
+die Personensicherheit. 
+3.3.3 
+Grenzzustände der Gebrauchstauglichkeit 
+Grenzzustände der Gebrauchstauglichkeit entsprechen bestimmten festgelegten Bedingungen, bei deren      
+Überschreiten für eine Freileitung festgelegte Betriebsanforderungen nicht mehr erfüllt werden. 
+Die Anforderungen an die Grenzzustände der Gebrauchstauglichkeit betreffen: 
+- 
+die mechanische Funktionsfähigkeit der Stützpunkte, Gründungen, Leiter und Ausrüstung; 
+- 
+die elektrischen Abstände. 
+Grenzzustände der Gebrauchstauglichkeit, die gegebenenfalls zu berücksichtigen sind, schließen ein: 
+- 
+Verformungen und Verschiebungen, die das Erscheinungsbild und den wirksamen Gebrauch des Stütz-
+punktes beeinträchtigen und elektrische Abstände vermindern; 
+- 
+Schwingungen, die Schäden an Leitern, Stützpunkten und der Ausrüstung verursachen und deren 
+Funktionalität begrenzen; 
+- 
+Schäden (einschließlich Risse), die möglicherweise das Erscheinungsbild, die Dauerhaftigkeit oder die 
+Funktion eines Stützpunktes ungünstig beeinträchtigen. 
+Hinsichtlich Empfehlungen für Grenzzustände der Gebrauchstauglichkeit und Kriterien für die Leistungsfä-
+higkeit wird auf NNA und Projekt-Spezifikationen verwiesen. 
+3.3.4 
+Auslegung im Hinblick auf Grenzzustände 
+Die Auslegung im Hinblick auf Grenzzustände muss durchgeführt werden durch: 
+- 
+Erstellen von Tragwerks- und Lastmodellen für die einschlägigen Grenzzustände der Lasten und der 
+Gebrauchstauglichkeiten, die bei unterschiedlichen Auslegungssituationen und Lastfällen zu berück-
+sichtigen sind; 
+- 
+Nachweis, dass die Grenzzustände nicht überschritten werden, wenn die Bemessungswerte für Einwir-
+kungen, Werkstoffeigenschaften und geometrische Daten in den Modellen verwendet werden. 
+Bemessungswerte werden im Allgemeinen durch Verwenden der charakteristischen Werte oder Kombina-
+tionswerte (wie in dieser Norm festgelegt) in Verbindung mit Teilsicherheitsbeiwerten, wie in dieser Norm 
+und in den EUROCODES 2, 3, 5, 7 und 8 festgelegt, erhalten. 
+In einigen Fällen kann es angemessen sein, Bemessungswerte direkt zu bestimmen. Die Werte müssen mit 
+Bedacht gewählt werden und sollten mindestens dem gleichen Zuverlässigkeitsgrad für die unterschied-
+lichen Grenzzustände entsprechen, wie in den Teilsicherheitsbeiwerten dieser Norm enthalten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+52 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 53/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 49 
+ 
+3.4 
+Einwirkungen 
+3.4.1 
+Einteilung in Hauptklassen 
+Eine Einwirkung F ist: 
+- 
+direkt, wenn eine Last auf die Tragwerke einschließlich ihrer Gründungen, auf die Leiter usw. einwirkt; 
+- 
+indirekt, wenn eine aufgezwungene oder verhinderte Verformung verursacht durch Temperaturände-
+rungen, Grundwasserbewegungen oder ungleiche Setzungen zu Belastungen führt. 
+Einwirkungen werden eingeteilt: 
+(a) gemäß ihrer zeitlichen Änderung: 
+(1) Ständige Einwirkungen (G), d.h. das Eigengewicht der Tragwerke einschließlich Gründungen, Ar-
+maturen und fester Zubehörteile. 
+ 
+Das Eigengewicht der Leiter und die Einwirkungen der zugehörigen Leiterzugkräfte bei Bezugs-
+temperatur, siehe Abschnitt 4, und auch die ungleichen Setzungen von Tragwerken werden als 
+ständige Einwirkungen behandelt. 
+(2) Veränderliche Einwirkungen (Q), d.h. Windlasten, Eislasten oder andere äußere Lasten. 
+ 
+Windlasten und Eislasten mit den zugehörigen Temperaturen sind klimatische Lasten, die durch 
+probabilistische Methoden (Zuverlässigkeitskonzept) oder auf deterministischer Grundlage abge-
+schätzt werden können. 
+ 
+Änderungen der Leiterzugkräfte infolge von Wind und Eis und von Temperaturänderungen gegen-
+über der Bezugstemperatur sind ebenfalls veränderliche Einwirkungen. 
+ 
+ANMERKUNG: Die lotrechte Einwirkung des Leitereigengewichtes am Stützpunkt (in anderen Worten die Ge-
+wichtsspannweite) wird durch die Änderungen gegenüber dem Bezugszustand der Leiterzugkraft infolge von 
+Leiterkriechen und Temperaturänderungen beeinflusst. Wie erwähnt, ist diese Abweichung gegenüber dem 
+Bezugszustand eine veränderliche Einwirkung. Soweit dies für die Bemessung entscheidend ist, insbesondere 
+wenn keine anderen klimatischen Lasten vorhanden sind, sollte die Unsicherheit einer solchen Änderung - in 
+ungünstiger oder günstiger Richtung - durch Verwendung eines auf das Eigengewicht (oder die Gewichts-
+spannweite) bezogenen Teilsicherheitsbeiwertes berücksichtigt werden. 
+ 
+Einwirkende Lasten infolge der Leiterverlegung, des Besteigens des Tragwerkes usw. werden auf 
+einer deterministischen Grundlage abgeschätzt und sind dem Gesichtspunkt der Personensicher-
+heit zuzuordnen. 
+(3) Ausnahmelasten (A), d.h. Lastannahmen zur Schadensbegrenzung, Lawinenlasten usw. Diese be-
+ziehen sich auf den Gesichtspunkt der Betriebssicherheit. 
+ 
+Außergewöhnliche Eislasten einschließlich ungleicher Eislast können als Ausnahmeeinwirkung be-
+handelt werden, wenn die empirische Vorgehensweise angewandt wird. 
+(b) durch ihre Art und/oder die Reaktion des Tragwerks: 
+(1) statische Einwirkungen, die keine wesentliche Beschleunigung der Komponenten oder Elemente 
+hervorrufen; 
+(2) dynamische Einwirkungen, die wesentliche Beschleunigungen von Komponenten oder Elementen 
+hervorrufen. 
+Es ist im Allgemeinen ausreichend, die äquivalenten statischen Wirkungen von quasi-statischen 
+Einwirkungen, wie Windlasten, bei der Auslegung von Freileitungsstützpunkten (einschließlich 
+Gründungen) zu betrachten. Besondere Aufmerksamkeit ist außergewöhnlich hohen und/oder 
+schlanken Stützpunkten zu widmen. 
+3.4.2 
+Charakteristische Werte der Einwirkungen 
+Der charakteristische Wert einer Einwirkung (FK) ist ihr repräsentativer Hauptwert, der für den Nachweis des 
+Grenzzustandes verwendet wird. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+53 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 54/273 =====
+Seite 50 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Ständige Einwirkungen (G) 
+Der charakteristische Wert der ständigen Einwirkungen kann bei der Bemessung von Freileitungen norma-
+lerweise als ein Wert GK bestimmt werden, da die Streuung von G sehr klein ist. 
+Veränderliche Einwirkungen (Q) 
+Für veränderliche Einwirkungen entspricht der charakteristische Wert QK entweder 
+- 
+einem Nennwert, der für deterministische Einwirkungen und in der empirischen Vorgehensweise ver-
+wendet wird oder 
+- 
+einem oberen Wert mit einer angestrebten Wahrscheinlichkeit, während einer Bezugszeitdauer von 
+einem Jahr nicht überschritten zu werden (Wind und Eis), oder einem unteren Wert mit einer ange-
+strebten Wahrscheinlichkeit, nicht unterschritten zu werden (Temperatur). In dieser Norm wird eine jähr-
+liche Wahrscheinlichkeit von 0,02 angenommen (d.h. die Wiederkehrdauer ist 50 Jahre). 
+Ausnahmeeinwirkung (A) 
+Für Ausnahmeeinwirkungen ist der repräsentative Wert im Allgemeinen ein charakteristischer Wert AK ent-
+sprechend einem festgelegten Wert.  
+3.4.3 
+Kombinationswerte für veränderliche Einwirkungen 
+Kombinationswerte sind der Verwendung von Kombinationen von Einwirkungen zugeordnet, um der ver-
+minderten Wahrscheinlichkeit des gleichzeitigen Eintretens der ungünstigsten Werte mehrerer unabhängiger 
+Einwirkungen Rechnung zu tragen. 
+Der Kombinationswert einer veränderlichen Einwirkung Q wird im Allgemeinen als Produkt eines Kombina-
+tionswertes und eines charakteristischen Wertes ΨQ · QK oder durch eine Last mit einer verminderten Wie-
+derkehrdauer oder unmittelbar, wie im Abschnitt 4 festgelegt, dargestellt. Der Kombinationswert (ΨQ · QK) 
+wird als Bemessungswert verwendet. Soweit das Auftreten von unterschiedlichen Einwirkungen in gegen-
+seitiger Wechselbeziehung steht, wirkt sich dies im Kombinationswert aus.  
+ANMERKUNG: In dieser Norm wird der Kombinationsbeiwert für eine veränderliche Einwirkung ΨQ prinzipiell 
+auf der Basis einer verminderten Wiederkehrdauer abgeleitet und beinhaltet daher sowohl den Teilsicherheits-
+beiwert, wie er in der Darstellung der EUROCODES verwendet wird, als auch alle anderen Ermäßigungsbeiwer-
+te. 
+3.5 
+Werkstoffeigenschaften 
+Eigenschaften von Werkstoffen werden durch charakteristische Werte dargestellt, die dem Wert der Eigen-
+schaft entsprechen, der in einer hypothetischen, unbegrenzten Prüfreihe mit einer vorgegebenen Wahr-
+scheinlichkeit nicht unterschritten wird. Er entspricht für eine bestimmte Eigenschaft einer festgelegten Frak-
+tile (oder Ausschlussgrenze) einer angenommenen statistischen Verteilung der Werkstoffeigenschaft im 
+System. 
+Werkstoffeigenschaftswerte müssen üblicherweise mit genormten, unter festgelegten Bedingungen durch-
+geführten Prüfungen bestimmt werden. Ein Umrechnungsfaktor muss dann angewandt werden, wenn es 
+notwendig wird, Prüfergebnisse in Werte umzuwandeln, von denen man annehmen kann, dass sie das Ver-
+halten des Werkstoffes in der Freileitung wiedergeben. 
+ANMERKUNG: In den EUROCODES 2, 3, 5 und 7 und in auf hierin verwiesenen Normen festgelegte Werk-
+stoffeigenschaften dürfen allgemein angewandt werden, wenn in dieser Norm nichts anderes festgelegt ist. Er-
+gänzende, in IEC 60826 enthaltene Angaben über Werkstoffdaten dürfen in jedem Fall angewandt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+54 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 55/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 51 
+ 
+3.6 
+Modellbildung für Tragwerksberechnung und Tragwerksbeanspruchbarkeit 
+3.6.1 
+Allgemeines 
+Berechnungen müssen unter Verwendung geeigneter Bemessungsmodelle mit den maßgeblichen Verän-
+derlichen durchgeführt werden. Die Modelle müssen geeignet sein, das Tragwerksverhalten und die be-
+trachteten Grenzzustände vorherzusagen. 
+Bemessungsmodelle sollten normalerweise eingeführte Auslegungstheorien und -praktiken zur Grundlage 
+haben, die gegebenenfalls auch durch Versuche bestätigt sind. 
+3.6.2 
+Zusammenwirken zwischen Tragwerksgründungen und Boden 
+Besondere Aufmerksamkeit ist dem Zusammenwirken zu widmen zwischen 
+- 
+den aus dem Tragwerk herrührenden Lasten; 
+- 
+den Lasten infolge des aktiven Erddruck und des Eigengewichts der Gründung und des Bodens; 
+- 
+den Auftriebswirkungen des Grundwassers auf den Boden und auf die Gründung. Diese sind mit den 
+Reaktionskräften der Bodenschichten in der Berechnung der Tragwerksgründungen zu berücksichtigen. 
+Ebenso sollten Kriterien der Grenzzustände bezüglich 
+- 
+zulässiger/unzulässiger Setzungen der Gründung einschließlich ungleicher Setzungen; 
+- 
+aufgezwungener Verformungen am Tragwerk oder an Tragwerksteilen; 
+- 
+Schiefstellungen der Stützpunkte (insbesondere bei Winkel- und Endmasten) 
+festgelegt und berücksichtigt werden. 
+Vorgaben für das Zusammenwirken von Lasten und Empfehlungen bezüglich der Grenzzustandskriterien 
+werden in den Abschnitten 7 und 8 und den dazugehörigen Anhängen angegeben. 
+3.7 
+Bemessungswerte und Nachweismethode 
+3.7.1 
+Allgemeines 
+Nach dieser Norm wird die Zuverlässigkeit durch die Anwendung von Teilsicherheitsbeiwerten oder ange-
+messenen Wiederkehrdauern für klimatische Einwirkungen auf der Grundlage der statistischen Vorgehens-
+weise und durch Anwendung von Teilsicherheitsbeiwerten für deterministische Lasten und für Werkstoff-
+eigenschaften erreicht. 
+Mit der Teilsicherheitsbeiwertmethode wird nachgewiesen, dass bei allen einschlägigen Auslegungssituatio-
+nen keine Grenzzustände erreicht werden, wenn die Bemessungswerte für Einwirkungen, Werkstoffeigen-
+schaften und geometrische Daten in den Bemessungsmodellen verwendet werden. Im Besonderen muss 
+nachgewiesen werden, dass  
+- 
+die Auswirkungen der Bemessungseinwirkungen die Bemessungsbeanspruchbarkeiten der Freileitung 
+im Grenzlastzustand nicht überschreiten; 
+- 
+die Auswirkungen der Bemessungseinwirkungen den Kriterien für das Verhalten der Freileitung im 
+Grenzzustand der Gebrauchstauglichkeit genügen. 
+Vereinfachte Nachweise auf der Grundlage des Grenzzustandskonzepts mit Berücksichtigung nur der 
+Grenzlastzustände und der Lastkombinationen, von denen nach der Erfahrung oder nach besonderen Krite-
+rien bekannt ist, dass sie für die Bemessung maßgebend werden, dürfen verwendet werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+55 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 56/273 =====
+Seite 52 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+3.7.2 
+Bemessungswerte 
+Der Bemessungswert für eine Einwirkung Fd wird allgemein ausgedrückt als 
+K
+F
+d
+F
+γ
+F
+⋅
+=
+ 
+Der Teilsicherheitsbeiwert für Einwirkungen γF hängt von der gewählten Zuverlässigkeitsstufe ab und be-
+rücksichtigt die Möglichkeit von Einwirkungsänderungen zur ungünstigen Seite, ungenaue Modelle und Un-
+sicherheiten in der Beurteilung der Auswirkungen von Einwirkungen. 
+ANMERKUNG 1: Die Bemessungswerte der unterschiedlichen nach 3.4.1 geordneten Einwirkungen G, Q und A 
+werden als γG ⋅ GK, γQ ⋅ QK bzw. γA ⋅ AK berechnet. 
+ANMERKUNG 2: Teilsicherheitsbeiwerte für Einwirkungen haben im Allgemeinen theoretische Überlegungen, 
+Erfahrungen und Kalibrierung aufgrund der Nachrechnung von bestehenden Freileitungen zur Grundlage.  
+Nationale Werte, die von nationalen Komitees der CENELEC als erforderlich festgelegt werden, sind in den 
+NNA enthalten, siehe 3.1. 
+Wenn die Auswirkung der Einwirkung aus der Leiterzugkraft berechnet wird, werden die Teilsicherheitsbei-
+werte auf die charakteristischen Werte der Einwirkung angewandt, d.h. direkt auf die Wind- oder/und Eislast, 
+die auf den Leiter wirkt. Der berechnete Wert der Leiterzugkraft bildet dann den endgültigen Bemes-
+sungswert. 
+Für deterministische Berechnungen, die Lastbedingungen hinsichtlich der Betriebssicherheit eingeschlos-
+sen, kann der Teilsicherheitsbeiwert jedoch auf die Auswirkung der Einwirkung des charakteristischen Wer-
+tes einer Einwirkung, d.h. auf die Leiterzugkraft angewandt werden, wie dies genauer im Abschnitt 4 hin-
+sichtlich Einwirkungen beschrieben wird.  
+Bei der probabilistischen Vorgehensweise ist der Bemessungswert einer Einwirkung Fd direkt durch deren 
+Wert für eine gewählte Wiederkehrdauer T gegeben: 
+T
+d
+F
+F =
+ 
+Der Bemessungswert einer Werkstoffeigenschaft Xd wird allgemein definiert als 
+M
+K
+d
+γ/
+X
+X =
+ 
+Der Teilsicherheitsbeiwert für Werkstoffeigenschaften γM trägt ungünstigen Abweichungen vom charakteristi-
+schen Wert XK, Ungenauigkeiten in den angewandten Umrechnungsfaktoren und Unsicherheiten in den ge-
+ometrischen Eigenschaften und im Modell der Beanspruchbarkeit Rechnung. Teilsicherheitsbeiwerte für 
+Leitungskomponenten werden in dieser Norm festgelegt. In den EUROCODES 2, 3, 5, 7 und 8 festgelegte 
+Teilsicherheitsbeiwerte gelten allgemein, soweit sie nicht in dieser Norm besonders geändert oder anders in 
+den NNA oder einer Projekt-Spezifikation festgelegt werden. 
+3.7.3 
+Grundlegende Bemessungsgleichung 
+Für einen Grenzzustand hinsichtlich Bruch oder übergroßer Verformung einer Komponente, eines Elemen-
+tes oder einer Verbindung muss nachgewiesen werden, dass 
+d
+d
+R
+E ≤
+ 
+Dabei ist 
+Ed der gesamte Bemessungswert der Auswirkung von Einwirkungen wie Schnittgrößen oder entspre-
+chende Vektoren, siehe 3.7.4; 
+Rd die entsprechende Tragwerksbeanspruchbarkeit, die, wie in jedem Einzelfall, alle Tragwerkseigenschaf-
+ten entweder durch die entsprechenden Bemessungswerte gemäß 
+ 
+{
+}
+,...
+,
+2
+1
+d
+d
+d
+X
+X
+f
+R =
+ 
+ 
+oder alternativ durch die entsprechenden charakteristischen Werte Xnk gemäß 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+56 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 57/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 53 
+ 
+ 
+{
+}
+M
+K
+2
+K
+1
+d
+γ/
+X
+X
+f
+R
+,....
+,
+=
+ 
+ 
+berücksichtigt. 
+3.7.4 
+Kombination von Einwirkungen 
+Die ständigen Einwirkungen G, die Werte der veränderlichen, gleichzeitig auftretenden Einwirkungen Q1, Q2, 
+Q3 usw. und die maßgebenden Ausnahmeeinwirkungen A werden entsprechend der betrachteten Ausle-
+gungssituation kombiniert. 
+Für jeden maßgebenden Lastfall sollten die Bemessungswerte der Auswirkungen der Einwirkungen Ed wie 
+durch die nachfolgenden Gleichungen (1) und (3) gegeben ermittelt werden. 
+Die alternativen Gleichungen (2) und (4) gelten, wenn die veränderlichen Einwirkungen Qn unmittelbar be-
+stimmt werden. In Gleichung (2) wird die dominante veränderliche Einwirkung Q1 mit der Wiederkehrdauer T1 
+entsprechend der gewählten Zuverlässigkeitsstufe (z.B. 150 Jahre) mit den veränderlichen Einwirkungen Qn 
+(n > 1) kombiniert, die ermäßigte Wiederkehrdauern Tn (z.B. 3 Jahre) haben. In Gleichung (4) werden die 
+Ausnahmeeinwirkungen A mit den veränderlichen Einwirkungen Qn (n ≥ 1) kombiniert, die gleichzeitig wirken 
+und durchgehend die ermäßigte Wiederkehrdauern Tn haben. 
+(a) Bemessungssituationen in Bezug auf ständige und veränderliche Einwirkungen 
+Bemessungswert einer überwiegenden Einwirkung γQ1⋅Q1K, d.h. üblicherweise entweder Wind oder Eis, 
+und der Kombinationswerte anderer Einwirkungen ΨQn·QnK oder in symbolischer Form 
+
+
+
+
+
+
+⋅
+⋅
+⋅
+=
+∑
+∑
+> 1
+K
+Q
+1K
+Q1
+K
+G
+d
+,
+,
+n
+n
+n Q
+Q
+G
+f
+E
+ψ
+γ
+γ
+  
+(1) 
+
+
+
+
+
+
+⋅
+=
+∑
+∑
+>1
+)
+(
+1)
+1(
+K
+G
+d
+,
+,
+n
+Tn
+n
+T
+Q
+Q
+G
+f
+E
+γ
+  
+ 
+(2) 
+(b) Bemessungssituationen entsprechend Ausnahmeeinwirkungen 
+Bemessungswerte von Ausnahmeeinwirkungen γA⋅AK und Kombinationswerte der veränderlichen Ein-
+wirkungen ΨQn·Qnk, soweit diese wirken, oder in symbolischer Form 
+
+
+
+
+
+
+⋅
+⋅
+⋅
+=
+∑
+∑
+≥1
+K
+Q
+K
+A
+K
+G
+d
+,
+,
+n
+n
+n Q
+A
+G
+f
+E
+ψ
+γ
+γ
+  
+(3) 
+
+
+
+
+
+
+⋅
+⋅
+=
+∑
+∑
+≥1
+)
+(T
+K
+A
+K
+G
+d
+,
+,
+n
+n
+n
+Q
+A
+G
+f
+E
+γ
+γ
+ 
+ 
+(4) 
+Aufgezwungene Verformungen sollten gegebenenfalls berücksichtigt werden. 
+4 
+Einwirkungen auf Freileitungen 
+4.1 
+Einführung 
+Der Abschnitt über Einwirkungen auf Freileitungen wurde in Übereinstimmung mit 3.1 über Auslegungs-
+grundlagen in zwei Versionen verfasst. Die erste Version wird „Allgemeine Vorgehensweise“ genannt und 
+die zweite „Empirische Vorgehensweise“. 
+Jedes Nationalkomitee ist für die Vorgabe klimatischer Daten in ihren NNA verantwortlich, die die Anwen-
+dung einer der beiden Vorgehensweisen entsprechend 4.2 (Allgemeine Vorgehensweise) oder 4.3 (Empiri-
+sche Vorgehensweise) ermöglichen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+57 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 58/273 =====
+Seite 54 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Wenn die NNA bezüglich 4.2 keine ausreichenden klimatischen Daten vorgeben, muss die Projektspezifika-
+tion solche Daten aus verfügbaren Quellen beinhalten, um eine zuverlässige Bemessung zu gestatten. 
+Für die empirische Vorgehensweise kann die in den NNA enthaltene Festlegung von Wind- und Eislasten 
+und ihrer Kombinationen als durch Erfahrung und lang andauernden Betrieb von Freileitungen begründet 
+betrachtet werden. Diese bilden ein geschlossenes Auslegungssystem, insbesondere bei Beachtung der 
+festgelegten Lastfälle. Wo immer möglich und sinnvoll sollten Vergleiche mit der allgemeinen Vorgehens-
+weise nach 3.1 und 4.2 durchgeführt werden, wobei die Unterschiede der beiden Vorgehensweisen zu be-
+achten sind. 
+Die allgemeine Vorgehensweise folgt anschließend. Hinsichtlich der empirischen Vorgehensweise wird auf 
+4.3 verwiesen. 
+(A-dev) AT.1: In Österreich ist gemäß 4.3 „Einwirkungen, empirische Vorgangsweise“ zu bemessen. 
+4.2 
+Einwirkungen, allgemeine Vorgehensweise 
+4.2.1 
+Ständige Lasten 
+Die Eigengewichte der Stützpunkte, Isolatorketten und anderer fester Zubehörteile sowie der Leiter herrüh-
+rend von den benachbarten Spannfeldern wirken als ständige Lasten. Flugwarnkugeln und ähnliche Ele-
+mente sind auch als ständige Eigenlasten zu berücksichtigen. 
+4.2.2 
+Windlasten 
+4.2.2.1 
+Windgeschwindigkeiten 
+4.2.2.1.1 
+Anwendungsbereich 
+Dieser Abschnitt enthält Regeln für die Bestimmung der Bemessungswindlasten, die auf Freileitungskompo-
+nenten einwirken und meteorologische Daten zur Grundlage haben. Die Regeln beinhalten Tragwerkshö-
+hen, wie sie in den NNA vorgegeben sind. Wenn keine Anforderungen in den NNA festgelegt sind, sind 60 m 
+als Höhenbegrenzung allgemein annehmbar. 
+Andere Mittelungsperioden für Windgeschwindigkeiten als in diesem Abschnitt verwendet können in den 
+NNA festgelegt werden. In einem solchen Fall gelten die in den NNA angegebenen windtechnischen Para-
+meter, die die in den NNA festgelegten Perioden berücksichtigen. 
+Für Freileitungen, die hinsichtlich des Grenzlastzustandes ausgelegt werden, ist die Böenwindgeschwindig-
+keit kritisch. In dieser Norm kann wahlweise die mittlere Windgeschwindigkeit Vmean oder die Böenwindge-
+schwindigkeit Vg als Grundlage für die extreme Windgeschwindigkeit entsprechend der in jedem einzelnen 
+Land üblichen Praxis verwendet werden. Im folgenden Text wird das gemeinsame Windgeschwindigkeits-
+symbol V für beide Alternativen verwendet, wenn keine Notwendigkeit gegeben ist, zwischen den beiden 
+Optionen zu unterscheiden. 
+Der informative Anhang B „Extreme Windgeschwindigkeiten und Eislasten“ gibt Richtlinien für die statisti-
+sche Auswertung von Windgeschwindigkeitsdaten im Hinblick auf die Bestimmung von extremen Windge-
+schwindigkeiten. 
+4.2.2.1.2 
+Mittlere Windgeschwindigkeit Vmean 
+In dieser Norm gilt als mittlere Windgeschwindigkeit Vmean die mittlere Windgeschwindigkeit in m/s gemittelt 
+über 10 min und gemessen 10 m über Boden in einem relativ offenen Gelände (Geländeart II, siehe  
+Tabelle 4.2.1). 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+58 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 59/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 55 
+ 
+4.2.2.1.3 
+Böenwindgeschwindigkeit Vg 
+Die Böenwindgeschwindigkeit Vg ist ein charakteristischer Größtwert des augenblicklichen turbulenten  
+Windes (in dieser Norm angegeben auf der Grundlage des Mittelwertes über 2 s). 
+4.2.2.1.4 
+Turbulenz, Geländeart und Böenfaktor 
+Die Turbulenz wird als zeitliche und räumliche Änderung des Augenblickwertes der Geschwindigkeit ge-
+genüber dem Mittelwert beobachtet. Die Turbulenzintensität hängt vom Gelände ab. In dieser Norm werden 
+vier Geländearten unterschieden, gekennzeichnet durch den Bodenrauhigkeitsparameter z0, siehe Tabel-
+le 4.2.1. Eine fünfte Geländeart wurde hinzugefügt, deren Windklima nicht direkt einem Rauhigkeitsparame-
+ter zugeordnet werden kann. 
+Die Beziehung zwischen der Böen- und der mittleren Windgeschwindigkeit wird ausgedrückt durch die Glei-
+chung 
+mean
+g
+g
+V
+k
+V
+⋅
+=
+ 
+wobei kg der Böenfaktor ist.  
+Der Böenfaktor hängt von der Messdauer, wie sie in 4.2.2.1.2 und 4.2.2.1.3 festgelegt ist, der Höhe h über 
+Grund und dem Bodenrauhigkeitsparameter z0 ab. Für die in dieser Norm verwendeten Messdauern kann 
+der Böenfaktor wie folgt berechnet werden: 
+ 
+0
+g
+z
+h
+k
+ln
+/
+2,28
+1 +
+=
+ 
+4.2.2.1.5 
+Bezugswindgeschwindigkeit VR 
+Die Bezugswindgeschwindigkeit VR ist die Windgeschwindigkeit, die an dem in Frage stehenden Standort in 
+10 m Höhe über dem Boden berücksichtigt werden muss. 
+In Ländern, in denen die Option der mittleren Windgeschwindigkeit verwendet wird, kann die Bezugswind-
+geschwindigkeit VR für einen Ort mit einer bestimmten Geländeart aus der Bezugsgeschwindigkeit VR(II) ei-
+ner nahegelegenen Messstelle der Geländeart II ermittelt werden mit der Formel 
+0
+R
+T
+R
+z
+ln 10
+⋅
+⋅
+=
+(II)
+V
+k
+V
+. 
+Der Geländebeiwert kT und der Bodenrauhigkeitsparameter z0 sind in Tabelle 4.2.1 enthalten. 
+Wenn die Option der Böenwindgeschwindigkeit verwendet wird, ist es am besten, die Bezugswindge-
+schwindigkeit unabhängig von der Geländeart gleich der Bezugswindgeschwindigkeit VR einer nahegelege-
+nen Messstelle zu setzen. 
+Bezugswindgeschwindigkeiten werden in den NNA angegeben. Wenn jedoch diese Bezugswindgeschwin-
+digkeiten für ein bestimmtes Projekt als ungenügend erscheinen, sollten andere Datenquellen für die Be-
+stimmung der extremen Windgeschwindigkeiten an dem in Frage stehenden Ort verwendet werden. 
+ANMERKUNG: In den meisten europäischen Ländern werden Windgeschwindigkeitskarten für unterschiedliche 
+Regionen ausgearbeitet. Für Regionen, die nicht in solchen Karten erfasst werden, sollte die Unterstützung 
+durch Meteorologen gesucht werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+59 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 60/273 =====
+Seite 56 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle 4.2.1 – Geländebeiwert kT und Bodenrauhigkeitsparameter z0 für unterschiedliche  
+Geländearten entsprechend ENV 1991-2-4 
+Gelände-
+art 
+Eigenschaften des Geländes 
+kT 
+z0 
+I 
+Raue, offene See, Binnenseen mit wenigstens 5 km 
+Abmessung auf der Windseite und sanftes flaches 
+Gelände ohne Hindernisse 
+0,17 
+0,01 
+II 
+Ackerland mit Grenzhecken, verstreute kleine land-
+wirtschaftliche Häuser oder Bäume 
+0,19 
+0,05 
+III 
+Vorstädte oder Industriegebiete und ständige Wälder 
+0,22 
+0,30 
+IV 
+Städtische Gebiete, mindestens 15 % der Oberfläche 
+bedeckt mit Gebäuden von mindestens 15 m Höhe 
+0,24 
+1,0 
+V 
+Gebirgiges und komplexes Gelände, wo der Wind 
+lokal verstärkt oder abgeschwächt werden kann 
+Muss getrennt ausgewertet  
+werden, möglicherweise durch 
+Meteorologen 
+ANMERKUNG: Obwohl die Geländearten, die in dieser Tabelle aufgelistet sind, mit dem EUROCODE 
+ENV 1991-2-4, Abschnitt 8, übereinstimmen, können einige Länder eine andere Wahl der Geländearten als besser 
+geeignet und besser ihrem Gelände entsprechend ansehen. Dies kann in den NNA berücksichtigt werden. Die Ge-
+ländearten III und IV sind normalerweise nicht für Freileitungen anwendbar, wurden aber aufgeführt, um die Tabelle 
+zu vervollständigen. 
+4.2.2.1.6 
+Windgeschwindigkeit Vh in beliebiger Höhe h über Boden 
+Für Teile der Freileitung in Höhen bis 10 m wird die Bezugswindgeschwindigkeit direkt verwendet: 
+ 
+R
+h
+V
+V =
+ 
+Für Teile der Freileitung, die höher als 10 m über Grund reichen, wird eine entsprechend dem logarithmi-
+schen Gesetz erhöhte Windgeschwindigkeit verwendet. Für die Option der mittleren Windgeschwindigkeit ist 
+diese gegeben durch 
+ 
+0
+R
+T
+0
+0
+R
+h
+ln
+ln
+h
+ln
+10
+z
+h
+V
+k
+z
+z
+V
+V
+⋅
+⋅
+=
+⋅
+=
+(II)
+/
+ 
+Dabei ist 
+h 
+die Höhe über Grund; 
+kT 
+der Geländebeiwert und; 
+z0 
+der Rauhigkeitsparameter. 
+Die relative Änderung der mittleren Windgeschwindigkeit, abhängig von der Geländeart und der Höhe über 
+Grund, kann der Tabelle 4.2.2 entnommen werden. 
+Die Option der Böenwindgeschwindigkeit sollte mit der oben angegebenen Formel und der in 4.1.2.1.4 oder 
+anderweitig in den NNA festgelegten Weise behandelt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+60 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 61/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 57 
+ 
+Tabelle 4.2.2 – Relative Änderung der mittleren Windgeschwindigkeit mit der Geländeart  
+und der Höhe über Boden 
+Geländeart 
+Vh/VR (II) = kT ln(h/z0) abhängig von der Höhe über Boden 
+ 
+10 m
+15 m 
+20 m
+25 m
+30 m
+35 m
+40 m
+45 m
+50 m 
+55 m 
+60 m 
+I 
+1,17 
+1,24 
+1,29 
+1,33 
+1,36 
+1,39 
+1,41 
+1,43 
+1,45 
+1,46 
+1,48 
+II 
+1,00 
+1,08 
+1,14 
+1,18 
+1,22 
+1,24 
+1,27 
+1,29 
+1,31 
+1,33 
+1,35 
+III 
+0,77 
+0,86 
+0,92 
+0,97 
+1,01 
+1,05 
+1,08 
+1,10 
+1,13 
+1,15 
+1,17 
+IV 
+0,55 
+0,65 
+0,72 
+0,77 
+0,82 
+0,85 
+0,89 
+0,91 
+0,94 
+0,96 
+0,98 
+ANMERKUNG: Alternativ kann, wenn in den NNA für die einschlägigen Geländearten festgelegt, das 
+Potenzgesetz für die Berechnung des Verlaufs der Windgeschwindigkeit abhängig von der Geländeart und 
+der Höhe h wie folgt verwendet werden, das für die mittlere Windgeschwindigkeit lautet: 
+ 
+α
+)
+(
+10
+R
+h
+h
+V
+V =
+, 
+wobei die betreffenden Exponenten α abhängig von der Geländeart in den NNA oder Projektspezifikation an-
+zugeben sind. 
+4.2.2.2 
+Staudruck qh 
+Der Staudruck qh (in N/m²) in der Höhe h über Grund wird bestimmt durch 
+ 
+2
+h
+h
+2
+1
+V
+ρ
+q
+⋅
+⋅
+=
+ 
+Dabei ist 
+ρ 
+die Dichte der Luft gleich 1,225 kg/m³ bei 15 °C und einem atmosphärischen Druck von 1013 hPa. Für 
+andere Werte der Temperatur und des Luftdrucks können die zutreffenden Luftdichten berechnet oder 
+aus der Tabelle 4.2.3 entnommen werden. 
+Vh 
+die Windgeschwindigkeit in m/s in der Höhe h über Grund (siehe 4.2.2.1.6). 
+Tabelle 4.2.3 – Relative Luftdichte ρ als Funktion der Höhe über NN 
+und der Temperatur 
+Temperatur 
+Höhe über NN 
+°C 
+0 m 
+600 m 
+1200 m 
+1800 m 
+-30 
+1,18 
+1,10 
+1,02 
+0,95 
+-20 
+1,13 
+1,05 
+0,97 
+0,91 
+-5 
+1,08 
+1,00 
+0,93 
+0,87 
+5 
+1,04 
+0,96 
+0,90 
+0,84 
+15 
+1,00 
+0,93 
+0,86 
+0,80 
+30 
+0,96 
+0,89 
+0,83 
+0,77 
+ANMERKUNG: Die Werte in dieser Tabelle wurden aus 
+ 
+ρ‘/ρ = 
+H
+T
+⋅
+−
+⋅
+−
+4
+10
+1,2
+e
+'
+288
+ 
+abgeleitet.  
+Dabei ist 
+ρ‘ 
+die Luftdichte für eine absolute Temperatur T‘ in der Höhe H; 
+H 
+die Bezugshöhe in m für die Bestimmung der Luftdichte; 
+T‘ 
+die absolute Temperatur in Grad Kelvin in der Höhe H. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+61 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 62/273 =====
+Seite 58 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+Wenn die Windgeschwindigkeit in verschiedenen Sektoren, d.h. Windrichtungen, differiert, muss qh für den 
+Sektor, der den höchsten Staudruck auf eine Komponente oder ein Bauteil ergibt, berechnet werden. 
+ANMERKUNG: In einigen Ländern wurde aufgrund langer Erfahrung und genauer Untersuchungen herausge-
+funden, dass bestimmte Staudruckwerte für ihr Windklima repräsentativ sind. Für diese Fälle wird auf die NNA 
+verwiesen, wo solche Werte angegeben sind. 
+4.2.2.3 
+Windlast auf Komponenten einer Freileitung 
+Der Wert QWx für die Last infolge eines horizontal wirkenden Windes rechtwinklig auf eine Komponente der 
+Freileitung wird gegeben durch  
+ 
+A
+C
+G
+G
+q
+Q
+⋅
+⋅
+⋅
+⋅
+=
+x
+x
+q
+h
+Wx
+ 
+Dabei ist 
+qh 
+der Staudruck, wie in 4.2.2.2 definiert; 
+Gq 
+der Böenfaktor. 
+Wenn die Option der mittleren Windgeschwindigkeit verwendet wird, kann Gq nach 4.2.2.1.4 wie nach-
+folgend angegeben und in Tabelle 4.2.4 zusammengefasst berechnet werden. Der Bodenrau-
+higkeitsparameter z0 ist in Tabelle 4.2.1 angegeben. 
+ 
+2
+0
+2
+)
+ln
+/
+(
+28
+,2
+1
+z
+h
+k
+G
+g
+q
++
+=
+=
+ 
+Wenn die Option der Böenwindgeschwindigkeit verwendet wird, ist der Böenfaktor gleich 1. 
+Gx 
+der Bauwerksreaktionsbeiwert entsprechend dem betrachteten Bauteil. 
+ 
+Der Bauwerksreaktionsbeiwert kann entsprechend der im EUROCODE ENV 1991-2-4, Abschnitt B.2, 
+enthaltenen Methode berechnet werden, wobei die in der vorliegenden Norm verwendete Böenwind-
+geschwindigkeit zu berücksichtigen ist. In den nachfolgenden Abschnitten werden vereinfachte Werte 
+für Leiter, Gittermasten und einstielige Stahlmasten angegeben. 
+Cx 
+der Windwiderstandsbeiwert abhängig von der Form des betrachteten Bauteiles. 
+A 
+die dem Wind ausgesetzte Fläche des betrachteten Bauteiles projiziert auf eine ebene Fläche recht-
+winklig zur Windrichtung. 
+ANMERKUNG: Im Prinzip kann Gx entsprechend dem unten stehenden Ausdruck abgeschätzt werden, wobei g 
+(Spitzenfaktor), Q0 (Hintergrund-Reaktionsanteil) und Rx (Resonanz-Reaktionsanteil) unter Verwendung von 
+EUROCODE ENV 1991-2-4, Abschnitt B.2 berechnet werden können. Dabei sind die Abmessung und die dy-
+namischen Eigenschaften der Komponente zu berücksichtigen. 
+q
+x
+x
+ln
+2
+1
+G
+z
+h
+R
+Q
+g
+G
+0
+2
+2
+0 +
++
+=
+ 
+Bei der Ermittlung der Gesamteinwirkung auf Stützpunkte und Gründungen, herrührend von den Windlasten auf 
+die Leiter, kann die unterschiedliche Reaktion von Stützpunkten und Leitern auf Böen berücksichtigt werden. Die 
+Gesamtabminderung der Böenlasten liegt typischerweise im Bereich von 5 % bis 15 % abhängig von den Ab-
+messungen und den dynamischen Eigenschaften der zusammenwirkenden Komponenten. Anwendungsregeln 
+dürfen in den NNA angegeben werden. 
+Die Windlasten auf Freileitungskomponenten sind wie nachfolgend erläutert, oder, falls in den NNA festge-
+legt, unter Verwendung eines kombinierten Windbeiwertes anstelle von Gx und Gc zu berechnen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+62 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 63/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 59 
+ 
+Tabelle 4.2.4 – Böenfaktoren Gq 
+Geländeart 
+Böenfaktor abhängig von der Höhe über Grund 
+ 
+10 m 
+15 m 
+20 m
+25 m
+30 m
+35 m
+40 m
+45 m 
+50 m 
+55 m
+60 m
+I 
+1,77 
+1,72 
+1,69 
+1,67 
+1,65 
+1,64 
+1,63 
+1,62 
+1,61 
+1,60 
+1,59 
+II 
+2,05 
+1,96 
+1,91 
+1,87 
+1,84 
+1,82 
+1,80 
+1,78 
+1,77 
+1,76 
+1,75 
+III 
+2,72 
+2,51 
+2,38 
+2,30 
+2,24 
+2,19 
+2,15 
+2,12 
+2,09 
+2,07 
+2,05 
+IV 
+3,96 
+3,39 
+3,10 
+2,92 
+2,79 
+2,69 
+2,62 
+2,56 
+2,51 
+2,46 
+2,42 
+4.2.2.4 
+Windlasten auf Freileitungskomponenten 
+4.2.2.4.1 
+Windlasten auf Leiter 
+Der Staudruck auf Leiter bewirkt sowohl Lasten quer zur Leitungsrichtung als auch eine Erhöhung der Zug-
+kräfte in den Leitern. Aus den beiden angrenzenden Spannfeldern ergibt sich die Windlast auf einen Trag-
+mast (siehe Bild 4.2.1) für jeden Teilleiter: 
+QWc 
+V
+ 
+Bild 4.2.1 – Windlast auf einen Tragmast 
+φ
+2
+2
+1
+Wc
+cos
+2
+c
+c
+q
+h
+⋅
++
+⋅
+⋅
+⋅
+⋅
+⋅
+=
+L
+L
+d
+C
+G
+G
+q
+Q
+ 
+Dabei ist 
+qh 
+der Staudruck (siehe 4.2.2.2), berechnet entsprechend dem Schwerpunkt der Windwirkung auf 
+den Leiter im Feld; 
+Gq 
+der Böenfaktor (siehe 4.2.2.3); 
+Gc 
+der Reaktionsbeiwert für Leiter abhängig von der Spannweite, auch Spannweitenbeiwert ge-
+nannt. Der Beiwert berücksichtigt auch die Tatsache, dass der Winddruck auf die Leiter in einem 
+Spannfeld seine größten Werte nicht gleichzeitig im gesamten Spannfeld erreicht; 
+ 
+Der Spannweitenbeiwert kann mit dem Ergebnis der in Tabelle 4.2.5 angegebenen Werte be-
+rechnet werden, wobei L die Länge der Windspannweite in Meter bedeutet, oder anderweitig wie 
+in den NNA festgelegt bestimmt werden. 
+Cc 
+der Windwiderstandsbeiwert des Leiters; 
+ 
+Für verseilte Leiter aus Runddrähten und übliche Windgeschwindigkeiten gilt Cc gleich 1,00. Für 
+andere Leiterarten und höhere Windgeschwindigkeiten sollte der Wert des Widerstandsbeiwer-
+tes gemessen oder berechnet werden. 
+d 
+der Leiterdurchmesser; 
+L1 und L2 
+die Längen der zwei benachbarten Spannfelder, deren Mittelwert die Windspannweite L ist; 
+φ 
+der Einfallwinkel der ungünstigsten Windrichtung. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+63 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 64/273 =====
+Seite 60 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Die gesamte Windlast auf ein Leiterbündel ist als Summe der Lasten auf die Teilleiter festgelegt ohne mög-
+liche Abschirmeffekte für die leeseitigen Leiter zu berücksichtigen. 
+Bei der Ermittlung von Windlasten auf Winkelmasten müssen der Einfluss der Leitungsrichtungsänderung, 
+der Windeinfallwinkel auf der linken und rechten Seite des Winkelmastes, die angrenzenden Spannweiten 
+und die Leiteranordnung berücksichtigt werden. 
+Tabelle 4.2.5 – Spannweitenbeiwerte Gc 
+Geländeart 
+Spannweitenbeiwert Gc abhängig von der Windspannweite L 
+ 
+Formel 
+100 m 
+200 m 
+300 m 
+400 m 
+600 m 
+800 m 
+I 
+1,30 - 0,073 ln(L) 
+0,96 
+0,91 
+0,88 
+0,86 
+0,83 
+0,81 
+II 
+1,30 - 0,082 ln(L) 
+0,92 
+0,87 
+0,83 
+0,81 
+0,78 
+0,75 
+III 
+1,30 - 0,098 ln(L) 
+0,85 
+0,78 
+0,74 
+0,71 
+0,67 
+0,65 
+IV 
+1,30 - 0,110 ln(L) 
+0,79 
+0,72 
+0,67 
+0,64 
+0,60 
+0,57 
+ANMERKUNG 1: Die Formeln für Gc sind Vereinfachungen des allgemeinen Ausdrucks für Gx, der in 4.2.2.3 ange-
+geben ist. Der Spannweitenbeiwert ist abgeschätzt auf der Grundlage einer Windfront, die die Spannfelder auf bei-
+den Seiten des Tragwerks überdeckt. 
+ANMERKUNG 2: Zur Berechnung der Leiterzugkraft kann eine reduzierte Wirkung des Staudruckes infolge der 
+Abspannabschnittslänge berücksichtigt werden, wenn die Geländebedingungen und die Höhe der Leiter über Grund 
+gleich bleiben. In diesem Fall kann ein Spannweitenbeiwert, ermittelt auf der Grundlage der Länge des Leitungsab-
+schnittes, angesetzt werden. 
+ 
+4.2.2.4.2 
+Windlasten auf Isolatoren 
+Die von den Isolatoren auf die Maste übertragenen Windkräfte rühren aus den Windlasten auf die Leiter und 
+vom Staudruck auf die Isolatoren selbst her. Die Windlast auf Isolatoren wirkt auf den Aufhängepunkt am 
+Stützpunkt in der Windrichtung und ist gleich 
+ins
+ins
+ins
+q
+h
+Wins
+A
+C
+G
+G
+q
+Q
+⋅
+⋅
+⋅
+⋅
+=
+ 
+Dabei ist 
+qh 
+der Staudruck (siehe 4.2.2.2); 
+Gq 
+der Böenfaktor (siehe 4.2.2.3); 
+Gins 
+der Reaktionsbeiwert der Isolatorketten gleich Gt oder Gpol zu setzen, je nach dem welcher Wert zu-
+trifft; 
+Cins 
+der Widerstandsbeiwert für Isolatorketten, entspricht 1,2; 
+Ains 
+die waagrecht auf eine vertikale Ebene parallel zur Kettenachse projizierte Isolatorkettenfläche. 
+4.2.2.4.3 
+Windlasten auf Gittermasten 
+Die Windlasten auf Masten rühren sowohl von den von Leitern und Isolatoren übertragenen Kräften als auch 
+vom Staudruck her, der direkt auf die Masten selbst wirkt. 
+Bei Gittermasten mit rechteckigem Querschnitt sind die Lasten auf die einzelnen Mastabschnitte entspre-
+chend den gewählten Höhenstufungen über Grund zu berechnen. Die Länge eines Mastabschnitts sollte  
+üblicherweise gleich dem Abstand zwischen zwei benachbarten Verbindungen zwischen Eckstielen und Dia-
+gonalstäben sein.  
+Die im Schwerpunkt eines Mastabschnittes mit rechteckigem Querschnitt wirkende Windlast ist: 
+ 
+)
+sin
+cos
+sin
+2
+t
+2
+t
+1
+t
+1
+t
+t
+q
+h
+Wt
+2
+0,2
+1
+φ
+φ
+φ
+2
+2
+2
+(
+)
+(
+⋅
+⋅
++
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+=
++
+A
+C
+A
+C
+G
+G
+q
+Q
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+64 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 65/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 61 
+ 
+Dabei ist 
+qh 
+der Staudruck (siehe 4.2.2.2); 
+Gq 
+der Böenfaktor (siehe 4.2.2.3); 
+Gt 
+der Bauteilreaktionsbeiwert, der für Gittermasten unter 60 m gleich 1,05 zu setzen ist. Für Tragwerke 
+höher als 60 m sollte Gt ermittelt werden; 
+Ct1 
+der Windwiderstandsbeiwert für die Wand 1 für rechtwinklig zu dieser Wand wirkenden Wind; 
+Ct2 
+der Windwiderstandsbeiwert für die Wand 2 für rechtwinklig zu dieser Wand wirkenden Wind; 
+At1 
+die wirksame Fläche der Gitterelemente des Mastabschnitts in der Wand 1 (Bild 4.2.2); 
+At2 
+die wirksame Fläche der Gitterelemente des Mastabschnitts in der Wand 2 (Bild 4.2.2); 
+φ 
+der Winkel zwischen Windrichtung und der Längsachse des Gitterquerträgers. 
+Die Windwiderstandsbeiwerte Ct sind in Bild 4.2.3 für Wände aus Elementen mit ebenen Oberflächen ab-
+hängig von dem in Bild 4.2.2 definierten Völligkeitsgrad χ angegeben. Für andere Arten von Gittermasten 
+können Windwiderstandsbeiwerte in EUROCODE ENV 1991-2-4, Abschnitt 10, gefunden werden. 
+Für Gitterquerträger können die Windlasten wie folgt abgeschätzt werden: 
+ 
+)
+cos
+sin
+0,4
+tc
+tc
+t
+q
+h
+Wtc
+φ
+φ +
+⋅
+⋅
+⋅
+⋅
+=
+⋅(
+A
+C
+G
+G
+q
+Q
+ 
+Dabei ist 
+Ctc 
+der Windwiderstandsbeiwert für den Gitterquerträger in einer rechtwinklig zur Querträgerwand wir-
+kenden Windströmung; 
+Atc 
+die wirksame Fläche der Gitterstäbe in der dem Wind ausgesetzten Querträgerwand (Bild 4.2.2); 
+und die anderen Parameter werden wie oben angegeben verwendet. 
+ 
+(
+)
+2
+1
+b
+b
+h
+A
++
+=
+2
+t
+χ
+ 
+Dabei ist 
+χ 
+der Völligkeitsgrad eines Mastwandabschnitts; 
+At 
+die wirksame Fläche der Bauteile eines Wandabschnitts, projiziert rechtwinklig zur Wand. Ausfa-
+chungselemente der benachbarten Wände und die Horizontalverbände können vernachlässigt wer-
+den. 
+Bild 4.2.2 – Mastwandabschnitt, Querträger und Definition des Völligkeitsgrades 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+65 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 66/273 =====
+Seite 62 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+Bild 4.2.3 – Windwiderstandsbeiwert Ct für rechtwinklige Masten 
+bestehend aus Stäben mit flachen Seiten 
+4.2.2.4.4 
+Windlasten auf einstielige Masten 
+Windlasten auf einstielige Masten (aus Stahl, Beton, Holz, usw.) rühren sowohl von den Windlasten auf die 
+Leiter und die Isolatoren als auch vom Winddruck auf den Mast selbst her. Die Windlast auf den Mast selbst 
+ist gleich: 
+pol
+pol
+pol
+q
+h
+Wpol
+A
+C
+G
+G
+q
+Q
+⋅
+⋅
+⋅
+⋅
+=
+ 
+Dabei ist: 
+qh 
+der Staudruck (siehe 4.2.2.2), soweit erforderlich, berechnet für die jeweiligen Mastabschnitte; 
+Gq 
+der Böenfaktor (siehe 4.2.2.3); 
+Gpol 
+der Tragwerksreaktionsbeiwert (jeweils entsprechend 4.2.2.3 zu ermitteln); 
+Cpol 
+den Windwiderstandsbeiwert abhängig von der Form und der Oberflächenrauhigkeit des einstieligen 
+Mastes; 
+Windwiderstandsbeiwerte finden sich in EUROCODE ENV 1991-2-4, Abschnitt 10. Für Holzmaste 
+kann 0,8 als repräsentativ gelten. 
+Apol 
+die projizierte Fläche des einstieligen Mastes. 
+ANMERKUNG: Für selbsttragende, einstielige Stahlmasten ist Gpol beispielsweise 1,15. 
+4.2.3 
+Eislasten 
+4.2.3.1 
+Allgemeines 
+Dieser Abschnitt enthält Regeln für die Ermittlung von Eislasten QI, die an Leitern der Freileitung wirken. 
+Gegebenenfalls können diese Regeln auch für Abspannseile usw. verwendet werden. 
+Aneisung von Leitern tritt entsprechend ihrem Entstehungsprozess in zwei Hauptarten auf: 
+- 
+Eisbildung aus Niederschlägen, die nasser Schnee oder Klareis sein können; 
+- 
+Eisbildung in Nebel oder wasserhaltiger Luft, woraus weicher oder harter Reif entsteht. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+66 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 67/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 63 
+ 
+ANMERKUNG: Ins Einzelne gehende Beschreibungen der meteorologischen Bedingungen betreffend Eislasten 
+sind in IEC 61774 enthalten. 
+In Gebieten, in denen beide Eisarten auftreten können, ist es häufig schwierig, zwischen ihnen zu unter-
+scheiden. Dies gilt insbesondere in gebirgigen Gegenden, in denen die schwersten Eislastereignisse häufig 
+eine Kombination der beiden Arten darstellen. Für die beiden erwähnten Eisarten können die in diesem Ab-
+schnitt beschriebenen statistischen Methoden unabhängig angewandt werden. 
+Bei der Ermittlung der Bemessungswerte für die Eiseinwirkung sollte gegebenenfalls auch der Einfluss des 
+Geländes berücksichtigt werden. Es ist nicht möglich, einfache und allgemeine Regeln für Geländeeinflüsse 
+bereitzustellen; Angaben über den Einfluss der örtlichen Topographie auf die beiden Arten der atmosphäri-
+schen Eisbildung können aber in dem oben erwähnten IEC-Fachbericht gefunden werden. 
+Wenn unterschiedliche klimatische und atmosphärische Bedingungen entlang einer Freileitung auftreten, 
+muss diese in Abschnitte unterteilt werden. 
+Eislasten auf andere Komponenten können aus den Belastungen auf die Leiter abgeleitet werden, werden 
+aber in dieser Norm nicht besonders behandelt. 
+In den meisten Ländern liegen nur wenige statistische Daten über Eisansatz vor. Daher müssen Eislasten 
+oft direkt aus der Erfahrung begründet werden.  
+Der Anhang B „Extreme Wind- und Eislasten“ (informativ) enthält Regeln für die statistische Auswertung von 
+Eislastdaten zur Bestimmung der extremen Eislast. 
+4.2.3.2 
+Charakteristische Eislast 
+Die an einem in Frage stehenden Ort anzusetzende längenbezogene Eislast IK (in N/m) ist die Bezugseislast 
+IR für die unterschiedlichen Regionen der Länder, wie sie in den NNA festgelegt oder anderweitig in einer 
+Projektspezifikation angegeben ist. 
+4.2.3.3 
+Eislast auf Leiter 
+Eislasten an Leitern verursachen sowohl lotrechte Lasten als auch erhöhte Zugkräfte in den Leitern. Aus den 
+beiden angrenzenden Spannfeldern ergibt sich die Eislast aus jedem Leiter an einem Stützpunkt zu 
+)
+(
+2
+w
+1
+w
+I
+L
+L
+I
+Q
++
+⋅
+=
+ 
+Dabei ist 
+I 
+die längenbezogene Eislast an dem Leiter und 
+Lw1 und Lw2 die Beiträge aus den Gewichtsspannweiten der beiden angrenzenden Spannfelder. 
+4.2.4 
+Gleichzeitige Wind- und Eislasten 
+4.2.4.1 
+Verbundene Wahrscheinlichkeiten 
+In dieser Norm wird nur die gleichzeitige Wirkung von Wind- und Eislasten auf Leiter betrachtet. Windlasten 
+auf vereiste Stützpunkte und Isolatoren können ähnlich behandelt werden, wenn angemessene Windwider-
+standsbeiwerte verwendet werden. 
+Die Windwirkung auf vereiste Leiter wird hauptsächlich von drei Veränderlichen bestimmt: 
+- 
+der Windgeschwindigkeit während des Zeitabschnittes, in dem Eisansatz am Leiter vorhanden ist; 
+- 
+der Masse der Eisschicht und 
+- 
+der Form des Eisansatzes, d.h. dessen Durchmesser und dem einschlägigen Windwiderstandsbeiwert. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+67 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 68/273 =====
+Seite 64 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Für diese Einwirkungen wird in dieser Norm eine vereinfachte Methode verwendet, die zwei Hauptkombina-
+tionen betrachtet: 
+(a) Eine extreme Eislast gleich dem Auslegungswert  der Eislast γI ⋅ QIK verbunden mit einer mäßigen 
+Windlast ψW ⋅ QWk. Die mit Eislast verbundene mäßige Windlast wird als das 0,55- bis 0,65fache der 
+50-Jahres-Windgeschwindigkeit abhängig von der Eisart angenommen. Dementsprechend wurde ein  
+repräsentativer Wert für den Kombinationsbeiwert für Windwirkung ψW gleich 0,4 in die Tabelle 4.2.8 
+aufgenommen. 
+(b) Eine hohe Windgeschwindigkeit verbunden mit mäßiger Eislast ψW ⋅ QIK. Die hohe, mit Eislast kombi-
+nierte Windgeschwindigkeit kann als das 0,7- bis 0,85fache der extremen Windgeschwindigkeit ange-
+setzt werden, abhängig von der Art des Eises. Ein Kombinationsbeiwert für Eiseinwirkung ψI gleich 0,35 
+gilt allgemein und wurde in der Tabelle 4.2.8 aufgenommen. 
+Lastkombinationen und Kombinationsbeiwerte sind in den NNA angegeben, welche auch niedrigere Wind-
+geschwindigkeiten in Übereinstimmung mit den Erfahrungen in jedem Land enthalten können. Weitere An-
+gaben sind im informativen Anhang B „Extreme Windgeschwindigkeiten und Eislasten“ enthalten. 
+Die den unterschiedlichen Kombinationen entsprechenden Windlasten treten in jedem Fall gleichzeitig mit 
+der tatsächlichen Eislast (lotrechte Last) auf.  
+4.2.4.2 
+Windwiderstandsbeiwerte und Eisdichten 
+Tabelle 4.2.6 enthält Anhaltswerte für die Dichte unterschiedlicher Eisarten zugeordnet zu einem Bereich 
+von Windwiderstandsbeiwerten. Alternativ können andere Werte in den NNA festgelegt werden. 
+Tabelle 4.2.6 – Windwiderstandsbeiwerte CcI und Dichten ρI (kg/m3) 
+für unterschiedliche Eisarten 
+Eisart 
+Nasser Schnee 
+Klareis 
+Weicher Reif 
+Harter Reif 
+CcI 
+1,0 
+1,0 
+1,2 
+1,1 
+ρI 
+500 
+900 
+300 
+700 
+ 
+4.2.4.3 
+Staudruck 
+Der Staudruck (in N/m²) wird wie in 4.2.2.2 berechnet: 
+2
+lh
+h
+2
+1
+V
+ρ
+q
+⋅
+⋅
+=
+ 
+wobei VIh die Windgeschwindigkeit in der Höhe h über Grund entsprechend der behandelten Kombination 
+von Wind und Eis wie in 4.2.4.1 angegeben darstellt. 
+4.2.4.4 
+Äquivalenter Durchmesser D der Leiter mit Eisansatz 
+Auch wenn die Form des Eisansatzes ziemlich unregelmäßig ist, wird sie hier mit äquivalenter zylindrischer 
+Form mit dem Durchmesser: 
+I
+9,81
+4
+πρ
+I
+d
+D
++
+=
+2
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+68 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 69/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 65 
+ 
+angenommen, dabei ist 
+d 
+der Leiterdurchmesser (m); 
+I 
+die Eislast (N/m) entsprechend der Kombination mit Wind nach 4.2.4.1; 
+π 
+die Zahl 3,1416; 
+ρI 
+die Dichte entsprechend der Eisart (kg/m3) und dem Windwiderstandsbeiwert (siehe Tabelle 4.2.6). 
+4.2.4.5 
+Windkräfte auf Stützpunkte herrührend von Leitern mit Eisansatz 
+Analog zu 4.2.2.4.1 ist die Windlast im Allgemeinen 
+φ²
+cos
+2
+cI
+c
+q
+h
+Wc
+⋅
++
+⋅
+⋅
+⋅
+⋅
+⋅
+=
+2
+1
+L
+L
+D
+C
+G
+G
+q
+Q
+, 
+Dabei ist 
+qh 
+in 4.2.4.3 angegeben; 
+Gq 
+der Böenfaktor (siehe 4.2.2.3); 
+Gc 
+der Spannweitenbeiwert (siehe 4.2.2.4.1). Für Lastkombinationen mit mäßigen Wind-
+geschwindigkeiten sind die Werte Gc konservativ; 
+CcI 
+der Windwiderstandsbeiwert für Leiter mit Eisansatz, wie in 4.2.4.2 angegeben; 
+D 
+in 4.2.4.4 erläutert; 
+L1 und L2 
+die Spannfeldlängen der benachbarten Felder und 
+φ 
+der Winkel der Einwirkung für die kritische Windrichtung. 
+ANMERKUNG 1: Für Lastkombinationen mit mäßigen Windgeschwindigkeiten sind die für Gc verwendeten Wer-
+te konservativ. 
+ANMERKUNG 2: Zur Berechnung der Leiterzugkraft kann eine reduzierte Wirkung des Staudruckes infolge der 
+Abspannabschnittslänge berücksichtigt werden, wenn die Geländebedingungen und die Höhe der Leiter über 
+Grund gleich bleiben. In diesem Fall kann ein Spannweitenbeiwert, ermittelt auf der Grundlage der Länge des 
+Leitungsabschnittes, angesetzt werden. 
+4.2.5 
+Temperatureinwirkungen 
+Im Allgemeinen können Temperatureinwirkungen in fünf unterschiedlichen, nachfolgend beschriebenen Aus-
+legungssituationen wirksam werden. Sie hängen von anderen klimatischen Einwirkungen ab, soweit solche 
+vorhanden sind. 
+(a) Die niedrigste Temperatur, die gegebenenfalls ohne andere klimatische Einwirkungen zu berücksichti-
+gen ist. 
+(b) Eine übliche Umgebungstemperatur, die bei extremer Windgeschwindigkeit angenommen wird. 
+(c) Gegebenenfalls eine niedrigste Temperatur, die mit einer ermäßigten Windgeschwindigkeit kombiniert 
+wird. 
+(d) Eine Temperatur, bei der Eisansatz auftritt. Für beide Hauptarten der Vereisung kann eine Temperatur 
+von 0 °C angenommen werden, soweit dies nicht anderweitig festgelegt ist. Eine niedrigere Temperatur 
+sollte angesetzt werden, um Gebieten Rechnung zu tragen, in denen die Temperatur häufig nach einem 
+Schneefall wesentlich sinkt. 
+(e) Die Temperatur, die bei der Kombination von Wind- und Eiswirkung angesetzt wird. 
+Die maßgebenden Temperaturen und dazugehörige Auslegungssituationen werden in den NNA angegeben. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+69 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 70/273 =====
+Seite 66 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+4.2.6 
+Lasten aus Errichtung und Instandhaltung 
+4.2.6.1 
+Allgemeines 
+Die Stützpunkte müssen allen wahrscheinlich auftretenden Errichtungs- und Instandhaltungslasten Qp mit 
+einer angemessenen Sicherheit standhalten können, wobei die Arbeitsverfahren, vorübergehende Veranke-
+rungen, Hebevorrichtungen usw. zu berücksichtigen sind. Eine Überbeanspruchung der Stützpunkte sollte 
+durch Festlegung zulässiger Arbeitsverfahren und/oder Beanspruchbarkeiten verhindert werden. 
+Nationale Anforderungen können in den NNA festgelegt werden. 
+4.2.6.2 
+Lasten aus dem Gewicht von Monteuren 
+Die charakteristische Errichtungs- und Instandhaltungslast auf Querträger darf nicht weniger als 1,0 kN 
+betragen und muss, falls maßgebend, als zusammen mit den ständigen Lasten und anderen äußeren Las-
+ten wirkend betrachtet werden. Bei Stahlgitterstützpunkten müssen diese Lasten an den im Einzelfall un-
+günstigsten Knoten des Untergurtes einer Querträgerwand wirkend angenommen werden, in allen anderen 
+Fällen in der Achse des Querträgers am Aufhängepunkt der Leiter. 
+Werden Laufstege oder Arbeitsplattformen vorgesehen, müssen sie für die größte Last bemessen werden. 
+Anforderungen können in den NNA oder in der Projektspezifikation angegeben werden. 
+Bei allen Stäben, die begangen werden können und mit einem Winkel kleiner 30° gegenüber der Waagrech-
+ten geneigt sind, muss eine charakteristische Last von 1,0 kN lotrecht im Mittelpunkt des Stabes wirkend 
+angenommen werden, jedoch ohne irgendwelche anderen Lasten. Zusätzliche Anforderungen oder Vorkeh-
+rungen sollten getroffen werden, wenn eine Vormontage am Boden stattfindet. 
+Steigsprossen (irgendwelcher Art) müssen für eine konzentrierte charakteristische Last von 1,0 kN lotrecht 
+an einer statisch ungünstigen Position einwirkend bemessen werden. 
+4.2.7 
+Lasten im Hinblick auf die Betriebssicherheit 
+In dieser Norm werden Lasten für die Betriebssicherheit festgelegt, um Mindestanforderungen an die Tor-
+sionsbeanspruchbarkeit und die Beanspruchbarkeit der Stützpunkte in Leitungsrichtung im Hinblick auf die 
+Schadensbegrenzung anzugeben. Die betrachteten Lasten entsprechen der einseitigen Verminderung der 
+statischen Zugkraft in einem Leiter bzw. üblichen ungleichen Überlasten.  
+Nationale Anforderungen und Berechnungsregeln können in den NNA oder in einer Projektspezifikation fest-
+gelegt werden. 
+(a) Torsionslasten 
+An jedem Erdseil- oder Leiterseilbefestigungspunkt muss eine statische Restlast angenommen werden, 
+die vom Wegfall der Zugkraft eines gesamten Leiters, eines Teilleiters oder eines Erdseiles im angren-
+zenden Feld herrührt. Eine Zugkraftminderung in mehreren Teilleitern oder Leitern (bis hin zu allen Lei-
+tern) kann bei einigen Lastfällen berücksichtigt werden und trägt strengeren Bedingungen Rechnung. 
+Lasten und Leiterzugkräfte können bei der üblichen Umgebungstemperatur ohne irgendwelche Wind- 
+oder Eislast berechnet werden und stellen Bemessungswerte dar. Dies gilt auch für alle nicht von der 
+Minderung betroffenen Erd- und Leiterseile. Strengere klimatische Bedingungen können in den NNA  
+oder in der Projektspezifikation festgelegt werden. 
+(b) Längslasten 
+Längslasten sind an allen Leiterbefestigungspunkten gleichzeitig wirkend anzunehmen. 
+Die auf den Stützpunkt wirkenden Lasten müssen gleich der einseitigen Last sein, die durch die Zug-
+kräfte der Leiter aller Felder auf einer Seite des Stützpunktes und durch die Zugkräfte der Leiter mit ei-
+ner fiktiven Zusatzbelastung gleich dem Leitereigengewicht (wenn erforderlich mit einem Faktor mul-
+tipliziert) in allen Feldern auf der anderen Seite des Stützpunktes hervorgerufen wird. Die Lasten kön-
+nen alternativ als einseitige Verminderung der Leiterzugkräfte, wie oben unter (a) erwähnt, bestimmt 
+werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+70 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 71/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 67 
+ 
+Lasten und Leiterzugkräfte werden bei der normalen Umgebungstemperatur ohne Windlast berechnet 
+und stellen Bemessungswerte dar. Strengere klimatische Bedingungen können in den NNA oder in der 
+Projektspezifikation festgelegt werden. 
+ANMERKUNG: Die vom Leiter auf den Stützpunkt übertragene Last hängt vom Grad der Beweglichkeit des Lei-
+teranschlusspunktes ab. Im Falle von an Hängeisolatorketten üblicher Länge befestigten Leitern sind die Diffe-
+renzkräfte wegen des Ausschwingens der Ketten normalerweise klein. 
+(c) Mechanische Bedingungen für die Wahl der Lasten 
+Die Betriebssicherheitslasten, die aus den oben erläuterten Fällen (a) und (b) herrühren, können bei 
+Tragstützpunkten unter Berücksichtigung der Lastermäßigung infolge des Ausschwingens der Isolator-
+ketten und der elastischen Biegung oder Verdrehung des Stützpunktes berechnet werden. Die Berech-
+nung kann normalerweise für die ideelle Feldlänge des Leitungsabschnittes durchgeführt werden. 
+Die Betriebssicherheitslastwerte (infolge der obigen Fälle (a) und (b)) können auch durch hierfür aus-
+gelegte Einrichtungen begrenzt werden (z.B. Rutschklemmen). 
+Alternativ darf die Betriebssicherheitslast auch als Anteil der Leiterzugkraft wie folgt bestimmt werden: 
+0
+T
+A
+⋅
+= β
+K
+ 
+Dabei ist 
+AK 
+die charakteristische Leiterrestzugkraft; 
+β 
+der Abminderungsbeiwert für die Leiterzugkraft; 
+T0 
+die Anfangshorizontalzugkraft im Leiter. 
+Unterschiedliche β-Beiwerte dürfen gewählt werden, um die unterschiedlichen einschlägigen Bedingungen 
+in den obigen Fällen (a) und (b) abzudecken. Ein Teilsicherheitsbeiwert kann auf die Leiterrestzugkraft an-
+gewandt werden. 
+4.2.8 
+Kurzschlusslasten 
+Aufmerksamkeit sollte den Auswirkungen von Lasten bei solchen Freileitungen gewidmet werden, die Teil 
+eines Übertragungsnetzes mit sehr hohen Kurzschlusskenndaten sind. Angaben hierüber sind im informati-
+ven Anhang C „Sonderlasten“ enthalten. Nationale Anforderungen für Lasten infolge von Kurzschlussströ-
+men müssen, falls erforderlich, in den NNA oder der Projektspezifikation festgelegt werden. 
+4.2.9 
+Andere Sonderlasten 
+4.2.9.1 
+Lawinen, rutschender Schnee 
+Wenn Leitungen in Gebirgsregionen verlaufen und der Gefahr von Lawinen oder rutschendem Schnee aus-
+gesetzt sein können, müssen mögliche zusätzliche Belastungen beachtet werden, die auf Tragwerke, Grün-
+dungen und/oder Leiter wirken. Einige Angaben zu diesem Gegenstand finden sich im Anhang C „Son-
+derlasten“ (informativ). Soweit erforderlich, müssen nationale Anforderungen in den NNA oder der Projekt-
+spezifikation festgelegt werden. 
+4.2.9.2 
+Erdbeben 
+Wenn Leitungen in erdbebenaktiven Gebieten errichtet werden, müssen die Belastungen der Leitungen in-
+folge von Erdbeben und/oder von seismischen Erschütterungen beachtet werden. Einige Angaben zu die-
+sem Gegenstand sind im informativen Anhang C „Sonderlasten“ (informativ) enthalten. Soweit erforderlich, 
+müssen nationale Anforderungen in den NNA festgelegt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+71 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 72/273 =====
+Seite 68 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+4.2.10 Lastfälle 
+4.2.10.1 Allgemeines 
+Für die Auslegung von Leitern, Zubehör und Stützpunkten einschließlich Gründungen im Grenzlastzustand 
+muss derjenige Lastfall berücksichtigt werden, der zu den größten Lastauswirkungen in jedem einzelnen 
+Bauteil führt. 
+Falls ein Anteil einer äußeren Last die Spannung in einem bestimmten Bauteil oder Querschnitt mindert, 
+muss ein besonderer Lastfall berücksichtigt werden. Dabei wird die Lastkomponente, die zu einer Minderung 
+führt, mit dem geringsten vertretbaren Wert eingesetzt, während die anderen Lastanteile unverändert blei-
+ben. 
+ANMERKUNG 1: Ein Beispiel für den oben angeführten Einfluss ist ein Stützpunkt in Form eines Portals, das 
+Leiter in waagrechter Anordnung trägt. Die Eislast am mittleren Leiter verursacht eine Abnahme der Beanspru-
+chung in der Mitte des Portalquerträgers verursachen; ein Lastfall mit geringster Eislast in der Mitte sollte daher 
+berücksichtigt werden. 
+Ein anderes Beispiel ist ein abgespannter Stützpunkt, wobei die Enden der Stützen exzentrisch gelagert sind, 
+um den Biegeeinfluss infolge der Windlast auf den Mast zu vermindern. In diesem Fall sollte auch ein Lastfall 
+mit geringster Windlast auf den Mast berücksichtigt werden. 
+Leiterzugkräfte müssen entsprechend den auf die Leiter in dem entsprechenden Lastfall wirkenden Lasten 
+bestimmt werden. Die Komponenten der Leiterzugkräfte an den Befestigungspunkten der Stützpunkte ein-
+schließlich der Wirkung von lotrechten und waagrechten Winkeln müssen in geeigneter Weise berücksichtigt 
+werden. Falls die Stromkreise eines Mehrsystem-Stützpunktes oder die Teilleiter von Bündeln anfänglich nur 
+teilweise verlegt werden, muss diese Bedingung bei der Auslegung berücksichtigt werden. 
+ANMERKUNG 2: Die Leiterzugkräfte können üblicherweise mit dem Konzept der ideellen Spannweite berechnet 
+werden, vorausgesetzt, dass der Leiter an Hängeketten befestigt ist, die die notwendigen Auslenkungen in Lei-
+tungslängsrichtung ermöglichen. Für ausreichend flaches Gelände kann die ideelle Spannweite LR aus der For-
+mel  
+n
+3
+n
+L
+L
+R
+L
+∑
+∑
+=
+ 
+bestimmt werden, wobei Ln die einzelnen Spannweiten des behandelten Leitungsabschnittes darstellen. 
+Die Belastungen auf die Stützpunkte müssen in geeigneter Weise gewählt werden, wobei die festgelegten 
+Tragfähigkeiten und der Anwendungszweck zu beachten sind. Allgemein wird zwischen Tragstützpunkten 
+und Abspannstützpunkten unterschieden. Auch eine Kombination dieser Stützpunktarten, z.B. als Abzweig-
+stützpunkt, kann auftreten. 
+Gegebenenfalls können Anforderungen in NNA auf die oben erwähnten Stützpunktarten Bezug nehmen. 
+Des Weiteren können Sonderstützpunkte erforderlich werden, z.B. hohe Kreuzungsstützpunkte, für die be-
+sondere Anforderungen in der Projektspezifikation festgelegt werden müssen. 
+4.2.10.2 Standardlastfälle 
+Für das Sicherstellen einer angemessenen Zuverlässigkeit und Funktion einer Freileitung unter Betriebs-
+bedingungen können in den NNA Lastfälle, die die nachfolgenden Optionen enthalten, zusätzlich zu den in 
+Tabelle 4.2.7 enthaltenen Standardlastfällen festgelegt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+72 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 73/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 69 
+ 
+Tabelle 4.2.7 – Standardlastfälle 
+Lastfall 
+Lasten 
+nach  
+Abschnitt 
+Bedingungen 
+Bemerkung 
+1a 
+1b 
+4.2.2 
+Extreme Windlast 
+Windlast bei niedrigster Temperatur 
+Siehe (a) 
+Wenn zutreffend, siehe 4.2.5 
+2a 
+2b 
+ 
+2c 
+ 
+2d 
+4.2.3 
+Gleichförmige Eislasten in allen Feldern 
+Gleichförmige Eislasten, Biegung in Querrich-
+tung 
+Ungleichförmige Eislasten, Biegung in Längs-
+richtung 
+Ungleichförmige Eislasten, Biegung und Tor-
+sion 
+ 
+Wenn zutreffend, siehe (b) 
+ 
+Siehe (c) 
+ 
+Wenn zutreffend, siehe (d) 
+3 
+4.2.4 
+Kombinierte Wind- und Eislasten 
+Siehe (e) 
+4 
+4.2.6 
+Lasten aus Errichtung und Instandhaltung 
+ 
+5a 
+ 
+5b 
+4.2.7 (a) 
+ 
+4.2.7 (b) 
+Betriebssicherheitslasten, Biegung und Tor-
+sion 
+Betriebssicherheitslasten, Längslasten 
+Verminderte Teilsicherheits-
+beiwerte für Werkstoffe können 
+entsprechend Abschnitt 7 und 8 
+angesetzt werden 
+ 
+Alle Lastfälle müssen die lotrechte Komponenten der ständigen Einwirkungen, wie in 4.2.1 angegeben, ent-
+halten. Bei der Berechnung von Zugkräften, die Zugbelastungen der Gründungen eingeschlossen, müssen 
+die kleinsten Werte der ständigen Einwirkungen verwendet werden, z.B. das kleinste zulässige Verhältnis 
+der Gewichts- zur Windspannweite, wenn die ständigen Lasten die Auswirkungen der anderen Einwirkungen 
+vermindern. 
+Wenn in einer Projektspezifikation festgelegt und zutreffend, müssen Lastfälle für Kurzschlusslasten oder 
+andere Ausnahmelasten entsprechend 4.2.8 bzw. 4.2.9 untersucht werden. 
+Die Punkte (a) bis (e) gelten wie in Tabelle 4.2.7 dargestellt: 
+(a) Windwirkung rechtwinklig zur Leitungsrichtung und unter allen Richtungen, die für die Auslegung maß-
+gebend werden können, muss berücksichtigt werden. 
+ANMERKUNG: Die Windrichtung rechtwinklig zur Leitung oder unter 45° (Wind über Eck) ist üblicherweise für 
+eine Mehrzahl der Tragwerke entscheidend. Auch andere Richtungen können maßgebend werden, abhängig 
+z.B. von der Symmetrie der Leiteranordnung, von den Leitungswinkeln usw. 
+Als Option kann eine Windbelastung in allen Feldern in einer Richtung eines Stützpunktes bei der Aus-
+legung des entsprechenden Stützpunktes berücksichtigt werden, die zu Längslasten führt, wenn diese 
+Bedingung nicht durch andere festgelegte Lastfälle ausreichend berücksichtigt ist. 
+(b) Im Lastfall 2b muss eine verminderte Eislast angesetzt werden, die gleich der charakteristischen Eislast 
+multipliziert mit dem Abminderungsbeiwert α ist und an allen Leitern an den Querträgern auf einer Seite 
+des Stützpunktes wirkt. Dieser Lastfall ist in Bild 4.2.4 dargestellt. Wenn dieser Lastfall unberücksichtigt 
+bleiben kann, wird α gleich eins gesetzt. 
+(c) Im Lastfall 2c muss die charakteristische Eislast an allen Leitern einer Leitungsrichtung aller Querträger 
+des Stützpunktes mit dem Abminderungsbeiwert α1 und an allen Leitern in der anderen Richtung mit α2 
+multipliziert werden. Dieser Lastfall ist in Bild 4.2.5 dargestellt. 
+(d) Im Lastfall 2d muss die charakteristische Eislast an allen Leitern aller Querträger auf einer Seite des 
+Stützpunktes aber nur in einer Leitungsrichtung mit dem Abminderungsbeiwert α3 multipliziert werden. 
+Die Eislast an allen übrigen Leitern muss mit dem Abminderungsbeiwert α4 multipliziert werden. Dies 
+führt zur größten Torsion. 
+Dieser Lastfall ist in Bild 4.2.6 dargestellt. Die Anzahl der Leiter mit unterschiedlichen Eislasten kann in 
+den NNA anders festgelegt werden. Wo diese Lastbedingung vernachlässigt werden kann oder in an-
+derer Form in den NNA durch anders definierte Lastfälle berücksichtigt wird, sind α3 und α4 gleich 1 zu 
+setzen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+73 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 74/273 =====
+Seite 70 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(e) Als Option können gleichzeitig ungleiche Wind- und Eislasten bei der Bemessung von einschlägigen 
+Stützpunkten berücksichtigt werden, wenn diese Bedingung infolge der Örtlichkeit angebracht erscheint 
+und nicht anderweitig durch anders definierte Lastfälle berücksichtigt ist. Die Eislast und/oder die Wind-
+last wird an allen Leitern nur in einer Richtung von allen Querträgern des Stützpunktes berücksichtigt 
+und führt zu Längslasten. 
+Eine ungleiche Eislast wirkt im Allgemeinen in drei aufeinander folgenden Feldern, jedoch können in den 
+NNA verminderte Eislasten in allen Feldern auf einer Seite des Stützpunktes gefordert werden. 
+ANMERKUNG: Wenn nicht in den NNA anders festgelegt, können die oben erwähnten Abminderungsbeiwerte 
+wie folgt angesetzt werden: 
+α = 0,5; 
+α1 = 0,3; 
+α2 = 0,7;     α3 = 0,3; 
+α4 = 0,7. 
+ 
+Bild 4.2.4 – Biegung in Querrichtung 
+ 
+ 
+Bild 4.2.5 – Biegung in Längsrichtung 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+74 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 75/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 71 
+ 
+ 
+Bild 4.2.6 – Biegung und Torsion 
+4.2.11 Teilsicherheitsbeiwerte für Einwirkungen 
+Die empfohlenen Werte für Teilsicherheitsbeiwerte γ und Kombinationsbeiwerte Ψ  für die in 4.2.1 bis 4.2.10 
+festgelegten Einwirkungen sind in Tabelle 4.2.8 angegeben. Geänderte Beiwerte können nach 3.1 in den 
+NNA enthalten sein. 
+Tabelle 4.2.8 – Teilsicherheitsbeiwerte und Kombinationsbeiwerte – Grenzlastzustände 
+Einwirkung 
+Symbol 
+Zuverlässigkeitsstufe 
+ 
+ 
+1 
+2 
+3 
+Veränderliche Einwirkungen: 
+ 
+ 
+ 
+ 
+Klimatische Lasten 
+Windlast 
+  
+Eislast 
+ 
+γW 
+ΨW 
+γI 
+ΨI 
+ 
+1,0 
+0,4 
+1,0 
+0,35 
+ 
+1,2 
+0,4 
+1,2 
+0,35 
+ 
+1,4 
+0,4 
+1,4 
+0,35 
+Instandhaltungs- und Errichtungslasten a) 
+γP 
+1,5 
+Ständige Einwirkungen: 
+Eigengewicht 
+ 
+γG 
+ 
+1,0 
+Ausnahmeeinwirkungen: 
+Betriebssicherheitslasten 
+Torsionslasten infolge von Leiterzugkräften  
+Längslasten infolge von Leiterzugkräften 
+ 
+ 
+ 
+γA1 
+ 
+γA2 
+ 
+ 
+1,0 
+1,0 
+ANMERKUNG: Die Teilsicherheitsbeiwerte für Einwirkungen sollten in Verbindung mit den Teilsicherheitsbeiwer-
+ten für Werkstoffe betrachtet werden, die in anderen Abschnitten dieser Norm festgelegt sind. 
+a) Der Kombinationsbeiwert für Wind- und Eislasten kann gemäß den tatsächlichen Lasten angesetzt werden, wie 
+sie wahrscheinlich während der Instandhaltung und der Errichtung auftreten. Häufig können die Auswirkungen 
+von Wind- und Eislasten vernachlässigt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+75 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 76/273 =====
+Seite 72 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+4.3 
+Einwirkungen, empirische Vorgehensweise 
+(ncpt) 
+AT.1: Die Tragwerke sind für folgende äußere Kräfte (Lasten) zu bemessen:  
+ 
+(1) Eigengewicht des Tragwerkes; 
+ 
+(2) ständige Lasten; 
+ 
+(3) Zusatzlasten; 
+ 
+(4) Montagelasten; 
+ 
+(5) Windlasten; 
+ 
+(6) Leiterzüge. 
+4.3.1 
+Ständige Lasten 
+Es wird auf 4.2.1 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+4.3.2 
+Windlasten 
+Die Windrichtung ist waagrecht. Die Windlast auf Masten, Querträger und Isolatoren (allgemein mit dem  
+Index x und im Einzelnen mit t, tc bzw. ins bezeichnet):  
+A
+C
+q
+Q
+⋅
+⋅
+=
+x
+x
+Wx
+ 
+ist als rechtwinklig zu der vom Wind getroffenen Fläche wirkend anzunehmen. 
+Für Leiter oder Teilleiter ergibt sich die rechtwinklig zu den Leitern wirkende Windlast wie folgt 
+φ
+2
+cos
+⋅
+⋅
+⋅
+⋅
+⋅
+=
+L
+d
+C
+G
+q
+Q
+c
+c
+c
+Wc
+ 
+Dabei ist 
+qx 
+der Wert für den in den NNA abhängig von der Höhe über Grund festgelegten Staudruck für Stütz-
+punkte. Dies gilt für Maste, Querträger und Isolatoren; 
+qc 
+der Wert für den in den NNA festgelegten Staudruck abhängig von der Höhe über Grund für Leiter.  
+ 
+Der Staudruck q (in N/m2) ist gleich 
+2
+h
+2
+1
+V
+q
+⋅
+=
+ρ
+ 
+ 
+Dabei ist 
+ρ 
+die Dichte der Luft, die von der Höhe über NN, der Temperatur und dem Luftdruck, wie er in 
+dem Gebiet während Sturmlagen zu erwarten ist, abhängt. Ein empfohlener Wert für übliche 
+Verwendung bei 10 °C ist ρ = 1,25 kg/m3. Andere Werte werden in den NNA angegeben; 
+Vh 
+die Bezugswindgeschwindigkeit (in m/s) abhängig von der Höhe über Boden und der Reaktion 
+der Bauelemente (siehe NNA); 
+Gc 
+der Spannweitenbeiwert, der wie folgt angenommen werden kann, wenn in den NNA nichts anderes 
+festgelegt ist: 
+ 
+Gc = 1,0 
+für Spannweiten bis 200 m, 
+ 
+Gc = 0,6 + 80/L 
+für Spannweiten über 200 m; 
+Cx, Cc aerodynamische Windwiderstandsbeiwerte, die von der Gestalt und der Oberflächenbeschaffenheit 
+der vom Wind getroffenen Körper abhängen und in den NNA festgelegt sind; 
+A 
+die projizierte Fläche, die dem Wind ausgesetzt ist; 
+d 
+der Durchmesser der Leiter oder Teilleiter oder der Durchmesser mit Eislast, für die ein kreis-
+förmiger Querschnitt angenommen wird; 
+L 
+die Spannweite. Für die Bemessung des Stützpunktes muss die Windspannweite benutzt werden; 
+φ 
+der Angriffswinkel der kritischen Windrichtung. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+76 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 77/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 73 
+ 
+Die Windlast auf Leiter muss mit Bezug auf deren Höhe über Grund an ihren Aufhängepunkten ermittelt wer-
+den. 
+Die örtlichen Verhältnisse müssen insbesondere in windgefährdeten Gegenden berücksichtigt werden. 
+ 
+ 
+ANMERKUNG: Zur Berechnung der Leiterzugkraft kann eine reduzierte Einwirkung des Staudruckes infolge der 
+Abspannabschnittslänge berücksichtigt werden, wenn die Geländebedingungen und die Höhe der Leiter über 
+Grund gleich bleiben. In diesem Fall kann ein Spannweitenbeiwert, ermittelt auf der Grundlage des Leitungsab-
+schnittslänge, angesetzt werden. 
+(ncpt)  
+AT.1: Windlasten sind bei der Bemessung der Leitungstragwerke im Allgemeinen nur für Regellast-
+fälle zu berücksichtigen, wobei die vom Wind getroffenen Bauteile unvereist anzunehmen sind. 
+ 
+(ncpt)   
+AT.2: In außergewöhnlichen Fällen, bei besonders ungünstigen klimatischen Verhältnissen, kann es 
+erforderlich sein, außer den Ausnahmslastfällen nach den relevanten Abschnitten dieser Bestim-
+mung, einen zusätzlichen Lastfall vorzusehen, bei dem Winddruck auf die vereisten Bauteile anzu-
+nehmen ist. 
+ 
+(ncpt)   
+AT.3: Winddruck 
+ 
+Tabelle 4.3.2/AT.3 – Winddruck, auf unmittelbar getroffene Bauteile wirkend. 
+Es werden eine Windgeschwindigkeit von 120 km/h und ein Staudruck von 695 N/m2 zugrunde ge-
+legt. 
+ 
+Bauteile 
+ 
+Windwider-
+standsbeiwert
+c 
+cx . q120 
+N/m² 
+Abminderungs- 
+faktor 
+(in cx . q120 bereits 
+berücksichtigt) 
+volle ebene Flächen 
+1,6 
+1112 
+1 
+aus Winkelprofilen 
+1,4 
+973 
+1 
+ebene Fachwerkwände 
+aus Rohren 
+1,1 
+765 
+1 
+Holzmaste, Stahlrohrmaste, Stahlbetonmaste mit kreis-
+förmigem bzw. annähernd kreisförmigem Querschnitt 
+0,7 
+487 
+1 
+Stahlrohr- und Stahlbetonmaste mit sechs- und achtecki-
+gem Querschnitt 
+1,0 
+695 
+1 
+Doppelmaste aus Holz, 
+in der Stangenebene  
+0,7 
+487 
+1 
+Stahl bzw. Stahlbeton 
+dm 
+ 
+ 
+ 
+ 
+                       e 
+ 
+ 
+Rechtwinkelig zur  
+Stangenebene,  
+wobei e < dm
+  a) 
+0,8 
+ 
+ 
+ 
+ 
+556 
+1 
+Drähte und Seile mit kreisför-
+migem 
+d < 15,8 mm  
+1,15 
+600 
+0,75 
+oder elliptischem Querschnitt 
+d > 15,8 mm  
+1,0 
+521 
+0,75 
+Warnkugeln und Radar-
+marker (Rotationskörper) 
+d < 1,0 m 
+0,4 
+278 
+1 
+a) 
+e...... innerer Abstand der Einzelstangen 
+ 
+dm.... mittlerer Stangendurchmesser 
+ 
+(ncpt)    AT.4:  Die auf die Tragwerkende einwirkende von den Leitern herrührende Windlast ist nach der 
+Formel  Qwc = qc ⋅ Gc ⋅ Cc ⋅ d ⋅ L ⋅ cos ϕ zu ermitteln 
+ 
+(ncpt)   
+AT.5: Ebene Flächen und Fachwerkswände, die in Windrichtung liegen, dürfen bei der Ermittlung 
+der Windlast vernachlässigt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+77 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 78/273 =====
+Seite 74 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   
+AT.6: Bei Anströmen über Eck ist die auf gleichseitig-dreieckige oder quadratische Stahlgittermaste 
+wirkende gesamte Windkraft mit dem Zweifachen der Windkraft bei Anströmen senkrecht zu einer 
+einzelnen Mastwand anzusetzen. Damit sind die Rückwände bereits berücksichtigt. 
+ 
+(ncpt)  
+AT.7: Für Bauteile, die im Windschatten liegen, ist die Windlast nach Tabelle 4.3.2/AT.7 anzuneh-
+men. 
+Tabelle 4.3.2/AT.7 – Windlast, auf in Windschatten liegende Bauteile wirkend 
+ 
+Bauteil 
+Windlast gemäß 4.3.2 
+Rückwand von Fachwerkmasten und fachwerkartigen 
+Auslegern 
+80 % der Windkraft auf die vordere Fachwerk-
+fläche 
+A-Maste (Wind in Richtung der A-Ebene auf die hintere 
+Stange) 
+50 % der Windkraft auf die vordere Stange 
+Bündelleiter mit horizontal nebeneinanderliegenden Ein-
+zelleitern für die vom Wind abgekehrten Einzelleiter 
+80 % der Windkraft auf den vorderen Leiter 
+Bauteile, die im Windschatten liegen, in 
+x < B 
+keine Windlast 
+Abhängigkeit vom lichten Abstand x dieser 
+Bauteile und von der Breite B des  
+x = B  bis 
+x = 20 B 
+50 % 
+  der Windlast  
+  auf den vorderen 
+vorderen Bauteiles  
+x > 20 B 
+100 % 
+  Bauteil 
+ 
+(snc)   
+AT.8: Spannweitenbeiwert GC = 1,0. 
+ 
+(snc)   
+AT.9: Der Faktor Vh (m/s) aus der Formel gemäß 4.3.2 und AT.4 ist folgendermaßen zu ermitteln: 
+ 
+- für Höhen über 15 m bis 40 m über Grund: mindestens 33,33 m/s (120 km/h). 
+ 
+ 
+- für Höhen unter 15 m und über 40 m: die Werte Cx ⋅ q120 nach Tabelle 4.3.2/AT.3 dürfen für Höhen 
+bis 15 m über Boden um 30 % vermindert werden. Sie sind für Höhen über 40 m über Boden auf die 
+höher gelegenen Teile der Leitung – für je angefangene 50 m zusätzlicher Höhe um 30 % – zu ver-
+größern. 
+4.3.3 
+Eislasten 
+Die Leiterbelastungen durch Eislasten QI tragen zusätzlich zur längenbezogenen Eislast auch anderen äu-
+ßeren lotrechten Lasten Rechnung. 
+Für die Leiter ist zwischen „normaler Eislast“ und „erhöhter Eislast“ zu unterscheiden. 
+Eine „erhöhte Eislast“ ist zu berücksichtigen, wenn sie regelmäßig auftritt. Sie hängt von dem Gelände, 
+durch das die Freileitung führt, ab und kann ein Vielfaches der „normalen Eislast“ betragen.  
+Bei der Festlegung der Eislasten sind die Erfahrungen mit nationalen Normen, die Beobachtungen während 
+der Betriebszeit anderer Freileitungen und die besonderen topografischen und meteorologischen Verhält-
+nisse des Baugebiets der Freileitung zu berücksichtigen. 
+Nationale Anforderungen werden in den NNA festgelegt. 
+(A-dev) AT.1: Eislasten auf Leiter (auch auf Erdseile und OPGW): 
+ 
+Eislasten treten als Regelzusatzlasten in Regellastfällen und als Ausnahmszusatzlasten in Aus-
+nahmslastfällen auf. 
+(A-dev) AT.2: Die Höhe der Regel- und der Ausnahmszusatzlast ist unter Beachtung der jeweiligen klimati-
+schen Verhältnisse zu wählen; es ist mindestens anzunehmen: 
+ 
+ 
+(1) die Regelzusatzlast mit (4 + 0,2 d) N/m 
+ 
+ 
+(wobei d der Leiterdurchmesser in mm ist); 
+ 
+ 
+(2) die Ausnahmszusatzlast in N/m 
+ 
+ 
+für Gruppe II 
+III 
+IV 
+ 
+ 
+mit 
+ 
+35 
+40 
+50  
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+78 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 79/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 75 
+ 
+(snc) 
+AT.3: Für Tragwerke und Ausrüstungen gelten die Zusatzlasten gemäß Tabelle 4.3.3/AT.3:  
+ 
+Tabelle 4.3.3/AT.3 – Zusatzlasten, Eislasten 
+ 
+Bauteil 
+Regelzusatzlasten 
+Ausnahmszusatzlasten 
+Isolatorketten aus Glas 
+oder Porzellan a) 
+mindestens 20 % des Eigengewichtes 
+mindestens 40 % des Eigengewichtes
+Mastkörper 
+keine 
+keine 
+Ausleger aus Stahlprofi-
+len  
+mindestens 40 % des Eigengewichtes 
+mindestens 80 % des Eigengewichtes
+Ausleger aus anderem 
+Material 
+mindestens 120 N/m2 auf die gesamte 
+Oberfläche aller Auslegerbauteile 
+mindestens 250 N/m2 auf die gesamte 
+Oberfläche aller Auslegerbauteile 
+Warnkugeln und Radar-
+marker 
+mindestens 120 N/m2 auf die gesamte 
+Oberfläche 
+mindestens 250 N/m2 auf die gesamte 
+Oberfläche 
+a) Für Verbundisolatorketten sind gegebenenfalls höhere Prozentsätze anzunehmen. 
+4.3.4 
+Gleichzeitige Wind- und Eislasten 
+Lasten aus der gleichzeitigen Wind- und Eislastwirkung werden in 4.3.10 betrachtet. Nationale Anforderun-
+gen können in den NNA festgelegt werden. 
+(ncpt)   
+AT.1: Bei der Berechnung von Windlasten sind als Mindestannahme alle Komponenten der Leitung, 
+die dem Wind ausgesetzt sind, unvereist anzunehmen. Die vorherrschenden Wetterbedingungen 
+sind jedoch zu berücksichtigen. 
+ 
+ 
+In außergewöhnlichen Fällen, bei besonders ungünstige klimatischen Verhältnissen, kann es erfor-
+derlich sein, außer den Ausnahmslastfällen nach den Tabellen 4.3.10/AT.1 bis AT.3 einen zusätzli-
+chen Lastfall vorzusehen, bei dem Winddruck auf die vereisten Bauteile anzunehmen ist. 
+4.3.5 
+Temperatureinwirkungen 
+Die Temperatur während des Auftretens von Wind- und Eislasten, die größte, kleinste und die Alltagstempe-
+ratur, müssen entsprechend den meteorologischen Bedingungen berücksichtigt werden. Die mit Eiszu-
+ständen angenommene Temperatur beträgt -5 °C, was dem Mittelwert des Temperaturbereiches entspricht, 
+in dem Eis auftreten kann. 
+Die Leiterzugkräfte müssen für jeden einzelnen Lastfall bestimmt werden. Die den entsprechenden Tempe-
+raturen zugeordneten Lastfälle sind in 4.3.10 angegeben. 
+Nationale Anforderungen können in den NNA festgelegt werden. 
+4.3.6 
+Lasten aus Errichtung und Instandhaltung 
+Es wird auf 4.2.6 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+(ncpt)   
+AT.1: Die Montagelast ist alternierend als Einzellast mit mindestens 1000 N, lotrecht wirkend, anzu-
+nehmen: 
+(1) 
+bei Auslegern, die mehr als 1,2 m auskragen, am Auslegerende, 
+(2) 
+bei Horizontalstäben der Auslegeruntergurtebene in freier Stabmitte (Auslegerobergurte müs-
+sen nicht auf Montagelast bemessen werden), 
+(3) 
+In jenen Bereichen, wo Steighilfen (z.B. Leitern oder Steigsprossen in den Eckstiefeln) auf 
+Tragwerken vorhanden sind, müssen solche Stäbe der Tragwerkskörper nicht auf Mon-
+tagelast bemessen werden. 
+(4) 
+Bei allen horizontalen Stäben der Tragwerkskörper (z.B. Querscheiben, Nullstäbe) in freier 
+Stabmitte. 
+ 
+Bei (1) und (2) sind die übrigen Belastungen der Regellastfälle gemäß 4.3.10.4 gleichzeitig wirkend 
+anzunehmen; bei (3) und (4) ist dies nicht erforderlich. 
+Bei Holzmasten muss für den Mastkörper keine Montagelast angenommen werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+79 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 80/273 =====
+Seite 76 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+4.3.7 
+Lasten im Hinblick auf die Betriebssicherheit 
+Es wird auf 4.2.7 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+(A-dev) AT.1: Diese Lasten sind durch die Ausnahmslastfälle gemäß 4.3.10 abgedeckt. Es ist keine zusätzli-
+che Berücksichtigung erforderlich. 
+4.3.8 
+Kurzschlusslasten 
+Es wird auf 4.2.8 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+(ncpt)   
+AT.1: Kurzschlusslasten sind nicht zu berücksichtigen. 
+4.3.9 
+Andere Sonderlasten 
+Es wird auf 4.2.9 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+4.3.10 Lastfälle 
+4.3.10.1 Allgemeines 
+Es wird auf 4.2.10.1 verwiesen. Nationale Anforderungen können in den NNA festgelegt werden. 
+4.3.10.2 Arten der Lasten und Lastfälle 
+Stützpunkte müssen entsprechend ihrer Funktion und den hierfür angemessenen Lastfällen bemessen wer-
+den. Die Belastung kann entsprechend den einschlägigen Anforderungen wie folgt unterteilt werden: 
+- 
+für Mastschäfte, Querträger und Erdseilstützen; 
+- 
+Normallastfälle, Lastfälle für Errichtung und Instandhaltung und Ausnahmelastfälle, d.h. Schadenslast-
+fälle; 
+- 
+Torsionslasten, Lasten für die Verhinderung kaskadenartiger Schäden und ungleichförmige Lasten müs-
+sen getrennt berechnet werden, können aber als Ausnahmelastfälle zusammengefasst werden. 
+4.3.10.3 Lastfälle für die Leiterzugkräfte 
+Die Leiterzugkräfte müssen für jeden einzelnen Lastfall bestimmt werden. Soweit nicht anders in den NNA 
+festgelegt, sind die Lastfälle der Leiter in der folgenden Tabelle 4.3.1 angegeben: 
+Tabelle 4.3.1 – Lastfälle für die Leiterzugkräfte 
+Lastfall 
+Temperatur 
+°C 
+Last 
+normal 
+-5 
+Leitereigengewicht und normale Eislast 
+(bzw. erhöhte Eislast) (Anmerkung 1) 
+normal 
+-20 
+Leitereigengewicht (Anmerkung 1) 
+normal 
++15 
+Leitereigengewicht und größte Windlast (Anmerkungen 1 
+und 3) 
+normal 
++40 
+Leitereigengewicht (Anmerkungen 1 und 2) 
+ANMERKUNG 1: Einzelheiten für Normal- und Ausnahmelastfälle können in den einschlägigen 
+NNA festgelegt werden. 
+ANMERKUNG 2: Bei Freileitungen, über die hohe elektrische Ströme wahrscheinlich auch im 
+Sommer fließen, muss eine höhere Leitertemperatur berücksichtigt werden, z.B. +60 °C. Die 
+größte zu berücksichtigende Leitertemperatur wird in der Projektspezifikation festgelegt. 
+ANMERKUNG 3: Übliche, mit der Windlast verbundene Umgebungstemperatur, die in den NNA 
+angegeben ist. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+80 von 273
+www.ris.bka.gv.at

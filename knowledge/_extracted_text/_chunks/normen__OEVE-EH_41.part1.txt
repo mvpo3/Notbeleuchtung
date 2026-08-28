@@ -1,0 +1,1018 @@
+
+
+===== PAGE 41/61 =====
+ÖVE-EH 411987 § 18
+
+19.1
+
+19.2
+
+19.21
+
+18.2.2
+
+7 Sishe OVE
+® Isokstoren
+
+§ 18. Freileitungsmaste
+
+Allgemaines
+
+Masten aus Stahl und anderem leitfähigen Material und Stahlbe-
+tonmaste sind durch ihren MastfuB geerdet.
+
+Bei Masten aus Holz oder anderem nicht leitfdhigen Material
+ohne metallene Uberbriickung der Strecke zwischen den Isola-
+torträgern und Erde ist eine Schutzerdung nicht erforderlich.
+Bei Leitungen mit durchlaufendem Erdssil gilt als Erdungsimpe-
+danz für die Schutzerdung der Wert bei aufgelegiem Erdseil.
+Erdungsleitungen an Masten sind im Hinblick auf thermische
+Beanspruchung nur für den dber sie flieBenden Anteil des Erdieh-
+lerstroms zu bemesgen (7, gemäß Abb. 5-1). Die Mindesiquer-
+schnitte gemäß § 14 sind einzuhalten.
+
+Netze mit iscliertem Sternpunkt oder ErdschiuBkompen-
+sation
+
+Am Mast dart die Berlhrungsspannung 85V nicht Giberschreiten.
+Diese Forderung gilt als erfüllt, wenn die Erdungsimpedanz Z;
+den Wert 125V//; nicht (berschreitet; dabel ist I der Erdungs-
+strom im Sinne des § 93,
+Für die Ermittlung des Erdungsstromes gilt
+
+fe=re I
+Bei Freileitungen chne Erdseil ist der Reduktionstakior r = 1.
+Reduktionsfaktoren fiir Freileitungen mit Erdseil sind den ein-
+schidgigen technischen Bestimmungen?} zu entnehmen.
+Der Erdfehlerstrom 7 ist entsprechend § 9.2 in Netzen mit iso-
+liertem Sternpunkt der kapazitive ErdschluBstrom I, in Netzen
+mit ErdachiuBkompensation der ErdschiuBreststrom ...
+
+An die Stelle der Einbaltung von § 19.2.1 kann eine der folgenden
+MaBnahmen treten, durch die ein Erdschluß am Mast unwahr-
+scheinlich oder seine Dauer auf maglichst kurze Zeit beschranki
+wird:
+
+(1} Verwendung von Langstab- oder Volikemisolatoren®)
+oder
+
+(2} Verwendung von Isolatoren, deren innerer Isolationszustand
+von außen deutlich erkennbar ist (z. B. Kappenisolatoren aus
+
+B1
+'D A gemäß C(VE-L 30,
+
+4i
+
+
+===== PAGE 42/61 =====
+ÖNE-EH 41/1987 519
+
+18.3
+
+19.3.1
+
+193.2
+
+19.33
+
+vorgespanntem Glas), und Uberwachung der Isolatoren im
+Betrieh in Abständen von etwa einem Jahr
+oder
+
+(3) Einbauvon ErdschiuBsucheinrichtungen, umgehende Suche
+und Abschaltung von srdschiuBibehafteten Leitungen.
+
+Bel Masten in Freibidern oder auf Campingplétzen darf jedoch
+die Ersatzma8nahme nach § 19.2.2(3} nicht angewendet werden:
+die Ersatzmafinahme nach $ 19.2.2(2) darf hier nur angewsndet
+wearden, wenn die Leitung kein Erdsell besitzt und an den betref-
+fenden Masten isolatorenketien aus vorgespanntem Glas ver-
+wendet werden, deren Isoliervermdgen um etwa 50 % erhöht ist
+und die mit Lichtbogenschutzarmaturen ausgerilstet sind. Die
+Maßnahme nach § 19.2.2(1} ist zulassig, wenn die {solatorenket-
+ten mit Lichtbogenschutzarmaiuren ausgestatiet sind.
+
+Netze mit niederohmiger Sternpunkterdung
+
+Leitungen, deren Maste in überwiegender Zahl aus Stahl oder
+anderem leitfähigen Material bestehen, müssen ein durchlauien-
+des Erdseil haben, das mit der Stationserdungsanlage verbun-
+denwerden mul. Das Erdseit darf, z. B. bei Leitungskreuzungen,
+auch durch ein Bodensell ersetzt werden,
+
+Der Erdungsstrom (siehe Abh. 5-1) ergibt sich hier aus
+Ig=w:re* i
+
+Der Erwantungsfakior w ist 1 Tr Netze mit Nennspannungen
+
+unter 110 KV, Für Netze mit Nennspannungen von 110 kv und dar-
+
+über darf w = 0,7 eingesetzt werden. Kleinere Werte miissen
+
+gegebenenfalls nachgewiesen werden.
+
+Reduktionsfaktoren rg für Frelleitungen sind in sinschldgigen
+
+technischen Bestimmungen® angegeben.
+
+Als Erdfehlersirom 7 ist der Anfangs-KurzachluBwechselstrom
+
+i¥\po einzusetzen.
+
+Bei Masten — ausgenommen solchen nach § 19.34 — sindkeine
+Grenzwerte der Berührungs- und Erdungsspannung einzuhal-
+ten, wenn eine automatische Schneilausschaltung des Erdiehler-
+stromes eingeleitel wird. Andernfalls sind beim FlieBen des
+Erdungastremes nach 8 19.3.2 die BerGhrungsspannungen nach
+Ahb, 1841 einzuhalien.
+
+%) Auf QVE-B 1 wird verwiosen.
+
+42
+
+
+===== PAGE 43/61 =====
+ÖVE-EH 411987 S 19, 8 20
+
+1934
+
+194
+
+20.2
+
+203
+
+Bei Masten In Frelbddern und auf Campingpiétzen dirfen die
+
+. Berührungsspannung am Mast und die Spannung zwischen zwei
+
+beliebigen, 1.5 m voneinandsr entfernten Punkien der Mast-
+umgebung die Werte nach Abb. 18-1 nicht dberschreiten, wenn
+der Erdungsstrom nach § 19.3.2 zum Fließen kommt.
+MaBnahmen zum Erflllen dieser Forderungen sind z. B
+Schotter- oder Asphaltschichten nach $ 8.8 oder Potentialsteue-
+rung.
+
+Statt dessen darf der gefährdete Bersich durch einen Zaun abge-
+grenzt werden.
+
+Netze mit voribergehend niederchmiger Erdung des Stern-
+punktes
+
+Die Erdung von Freileitungsmasten ist nach § 19.2 2u bemessen.
+
+$ 20. Masischalier, Masistationen und Kabelendmaste
+
+Gerlistteile von Masischaltern auf Holzmasten brauchen nicht
+gesrdet zu werden. In die Betdtigungsgestange missen dann
+auBerhalb des Handbereiches mechanisch zuverldssige Isola-
+torend) eingsbaut werden, die für die Nennisclation des Schal-
+ters bamessen sind. Der vom Erdboden aus berührbare Teil des
+Antriebes ist zur Ableitung von Kriechstrdmen zu erden. Hierfür
+genügt ein Vertikalerder von mindestens 1 m Länge oder ain Hori-
+zontalerder um den Mast in etwa 1 m Abstand. Für Erder und
+Erdungeleitung genigen dis Mindesiquerschniite nach § 13 baw.
+8 14.
+
+Mastschalter auf Stahl- oder Stahibetonmasten sind so zu erden,
+daß die Berihrungsspannung bei Erdschluß 65V nicht über-
+schraitet. Diese Bedingung glit als erfülk, wenin um den Mast ein
+Huorizontalerder in etwa 1 m Abstand und in hichstens 0.5 m Tiefe
+(Stauererder) verlegt ist und die Erdungsspannung 250V nicht
+überschreitet. Erder und Erdungsleitung sind nach $ 13 bzw. $ 14
+zu bemessaen.
+
+Werden Mastschalter auf Holzmasten mit geerdeten isolatortré-
+gern am Schaltermast geerdet, so ist nach $ 20.2 zu verfahren.
+Wird die Erdungsleitung der Mastschaltererdung bis In eine Ent-
+fernung von mindestens 20 m isollert verlegt {Kabel oder Erdung
+
+% Sighe Seiw 41,
+
+
+===== PAGE 44/61 =====
+ÖWE-EH 4141987 §20,§21
+
+204
+
+211
+
+21.2
+
+an einem Nachbarmast), so ist das Betätigungsgestänge am
+Schaltermast nach $ 20.1 zu behandein. Erdungs- und Beriih-
+rungsspannung an der Masischaltersrdung sind nicht begrenzt.
+Erder und Erdungsleitung sind nach $ 13 bzw. § 14 zu bernessen.
+
+Für Traggeriste von Maststationen ist unier Beachtung von § 13
+und $ 14 eine der folgenden MaBnahmen anzuwenden:
+
+(1) Es ist ein Horizontalerdsr um den Mast in atwa 1 m Abstand
+und bis hichstens 0.5 m Tiefe zu verlegen, der mit der Erdung
+der Traggerists zu verbinden ist. Etwa vorhandene metallene
+Schaltkasten, die sich im Bereich des Horizontalerders befin-
+den, sind ebenialls mit dem Erder zu verbinden. Die Erdung
+ist sa zu bemessen, daß die Berihrungsspannung bei
+Erdachluß 65V nicht Oberachreitet. Diese Bedingung gilt als
+erfiiit, wenn die Erdungsspannung 250V nicht Uberschreitet.
+
+Ein Fehlergtromicreis über die Erdung des Traggariistes und die Nicterspannungs-
+betriebserde wird im slgemeinen von 06r Tanslormalor-Nigderspannungssicherung
+richt unlerbeschen,
+
+2} Die Erdungsleitung des Traggeriistes wird gemäß $ 20.3bisin
+eine Entfernung von mindestens 20 m isoliert verlegt. Metal-
+lerte Schaltksten sind mit der Niederspannungsbedriebs-
+erdung zu verbinden. Unter dem Schaltkasten ist ein mit
+diesem verbundener Horizomalerder in etwa 1 m Abstand
+und höchstens 05 m Tiefe zu verlegen.
+
+Kabeilmäntel und metaliene EndverschluBgehéuse auf Holz-,
+Stahl- oder Stahlbetonmasten sind nach den Bestimmungen des
+8 14 und § 15 am Mast zu erden. Ausgenommen sind metallene
+Endverschlüsse von Kunstistoffkabein, die über einen konzentri-
+schen Leiter oder Schirm einen nicht leitenden Kunststoffmante!
+haben, wenn der konzentrische Leiter oder Schirm dieser Kabel
+wenigstens an einer anderen Stelle geerdst ist.
+
+§ 21. Örtsveränderliche Umspannstelien
+
+Ein Schutz gegen zufélliges Abgreifen der Berdihrungsspannung
+muB durch eine geeignete Absperrung sichergestellt sein, wobei
+für Badignungsstandorte die Standortisolierung anzuwenden isi,
+oder es sind die Bedingungen des § 15 einzuhalien.
+
+Für die Behandiung der angeschiossenen Anlagen bis 1000V gilt
+$ 23. Bei Baustromversorgung aus ortsveränderlichen oder provi-
+
+
+===== PAGE 45/61 =====
+OVE-EH 411987 §21,822,§23
+
+sorischen Umspannstelien ist jedoch die Hochspannungserdung
+von dem niederspannungsseitigen Schutzieiter zu frennen, wenn
+die Erdungsspannung bei hochspannungsseitigem Erdschluß
+125V dberschreitet.
+
+$ 22. Vorrichtungen zum Erden und KurzschlieBen an Ausschalistelien
+e R TORNTICToN an Ausscnalisielien
+
+22.1
+
+Fest eingebaute Erdungs- und KurzschiieBvorrichtungen missen
+den am Einbauort auftretenden KurzschluBbeanspruchungen
+gewachsen sein. Für AngchluBstellen von Erdungs- und Kurz-
+schlieBvorrichtungen®) sowie fir Erdungsschalter') sowie hin-
+sichtlich transporiabier Erdungs- und Kurzschilefvorrichtungen
+wird auf die einschidgigen technischen Bestimmungen") hinge-
+wiegen.
+
+Vorlbergehende Erdungen an Arbeits- und Ausschalistelien
+missen durch Anschluß an geerdete Teile, z. B. an Matalimaste,
+vorgenommen werden. Besteht diess Mglichkeit nicht, so ist
+eine Erdung 2u verlegen, die mindestens einem Vertikalerder mit
+1 m Länge gleichweitig ist.
+
+§ 23 Zusammenschius von Erdungen in Anlagen mit Nennspannungen
+
+231
+
+23.2
+
+_ über 1 kV und mit Nennspannungen bis 1000Y
+—_—— AA DSPANDUNGEN DS T UG Y
+
+Versorgung von Niederspannungsanlagen innerhalb siner
+Hochspannungsardungsaniage
+
+Werden von einer Hochspannungsankage nur solche Mieder-
+spannungaverbraucher versorgt, die innerhalb einer Hochspan-
+nungeerdungsaniage oder Hochspannungsstation liegen, so
+sind alle Schutz- und Betriebserdungen an eine gemeinsame
+Erdungsaniage anzuschliefen.
+
+Versorgung von Niederspannungsaniagen auBethalb einer
+Hochspannungserdungsaniage
+
+Der AnschiuB aller Schutz- und Betrisbserdungen an eine
+gemeinsame Erdungsaniage wird unter folgenden Voraussetzun-
+gen empiohlen:
+
+
+===== PAGE 46/61 =====
+523
+
+[ 00A08 = HRM e usbeuRiswieuy O U SummpdssSungsn s TSUSBURUUSHSISDN wi UEBUNMIBERMNEE SUOLZIERTT DE ' !
+| ‘TN SOTUOURUSRIFY UE DI JORME USLDURILIOA 309 YSYKUEERE) SI Bury
+E äw__aﬁ!_ﬁ?gﬁ!vg%%?ääääﬁäwäsäg?ääﬁä &
+_ .ﬁ_äﬁ„ﬁesﬁäiääägäss_mﬁ?äägw
+‘usgelyoenzUsunIeEnz Sunprazywossiuuueds
+.gzuigäﬁäg.%ggﬁäääägsäa.!ääaägzﬁä%?%äﬂsa {ı ]
+
+. ‘UOeSUBdWONGMUEPIT 18P0 DIUNGLIBIS WalSII0s] HLU LSZIEN 187 SIM Bunpusijund
+uaqeBuy aip velel ‘DHm 1episel DIUNCLEIS UICH Uausp Ut ‘uebeuy uelugn ewp g ‘uiee | 2
+Hnue {¢) ¢St § anı sa J16P6 uy ueioewsh BunpIepUNdWS JebjuyosBpsiu 1w pusysbiequoapun | |
+USZION 199 9ip UOHeB ‘pam 19PJ0S6 pueyebiegrion punduwels J8P uauap UL USÖRIUN IN UOESUSCLOIMYISPIZ
+
+Geiea§ _ | Bunpuopundwsag | . |
+WpoAOOZL E W3 | afinuyosspoi § |
+
+| uonesusdwongniuospia
+
+{ze) CSl §s0po
+
+| (elesi§eporszt="n | prundusels soueNes!
+i _ Bundupag — - _
+_ {Ze) 9l §sepo GuNIBow Bunprepjundwug
+. e < A SUYO GRIYSSUBKUWESITZ w _
+| o av DE SIM 5 E — shuyorapor }
+
+Jopo |
+u_c_..„_„._c.ﬁm 0181911054 |
+
+(LE)e9,S0p0 LA SI |
+
+| A„m ssa_ä____.us%‚äucs | .„_.u_ﬁ_ .
+unneqgeq J60 jyosah |
+u URKOIGEE) Ul -SÄUNULUBOSJADSIN |
+
+— erl OÖSIVESBUNULESYICH SISIORNEN SIC
+
+ZWUu
+-sBunuuedeysoH
+
+a! — BumpuesysquNdueis 8 L
+
+„m._. SA mww.._..ga?.u äﬁm&m& U UB _mm_ﬁmew S90 M2Q n&ﬁ% o
+„eBund43 UoA IYOSUAULUBENZ 180 Bunuusdsebuniypieg 49P SJEMLYOBN SUY0 upuep sepun ‘usBunbuipeg 'VEZ "qel &
+
+OVE-EH 4141987
+
+
+===== PAGE 47/61 =====
+ÖVE-EH 411987 $23
+
+{1} In der betrachteten Anlage sind die Bedingungen gemäß
+Tab. 23-1 erfüllt, oder es wird nachgewiesen, daß die
+Berührungsspannung gemäß Abb. 18-1 singehaiten ist. Bei
+Anlagen mehrerer Spannungsebenen auf siner gemein-
+samen Erdungsanlage ist der unginstigste Fall zugrunde zu
+legen.
+
+{2) Ist die Erdungsanlage sines TN-Netzes mit der entfernten
+Erdungsanlage einer dbergeordneten Spannungsebene
+leitend verbunden, so darf die Erdungsspannung Ug der
+übergeordneten Anlage 125V in Netzen mit isoliertem Stom-
+punkt oder ErdschluBkompensation bzw. das Zweitache der
+Werte der Berlihrungsspannung gemäß Abb. 18-1 in Neizen
+mit niederchmiger Stermpunkterdung nicht überschreiten.
+
+2322 Hachspannungserdungsanlage und Niederspannungserdungs-
+anlage müssen getronnt werden, wenn die Bedingungen gemäß
+Tab. 23-1 nicht erfüllt sind und nicht nachgewiesen werden kann,
+daß die Berlhrungsspannung gemäß Abb. 18-1 eingehalten wird.
+Der Abstand der getrannten Erder darf 10 m nicht unterschreiien
+{siehe Abb. 231 und Abb. 23-2). Zwischen die getrennten Erder
+darf aus Blitzschulzgrinden ein Uberspannungsableiter
+geschaltet werden.
+
+metmmmmmmmmmmswmmmwmm
+rungsankage 52,
+
+Abb. 23-1, Getrennte Erdungsanlage mit Freiteitungsanschluß
+
+47
+
+
+===== PAGE 48/61 =====
+ÖVE-EH 411987 5238 24, 5 25
+
+|
+I
+'
+|
+|
+
+Mmablme{_.l.--—--'i'
+z E F
+*__#_.--'m_._ nn 2¥m s L annn
+
+‚._-E.._.
+
+Abb. 23-2. Geirennie Erdungsanlage mit Kabelanschluß
+
+-
+=
+
+Die Körper der elektrischen Betriebsmittel der Niederspannungs-
+anlage, die sich innerhalb der Hochspannungsaniage befinden,
+sind über Schutzleiter anı die Hochspannungserdungsaniage
+anzuschliefen'™®).
+
+§ 24. Berucksichtigung der Erfordemisse des Blitzschutzes
+
+Die Besiicksichtigung der Erfordermisse des Biitzschutzes erfolgt nicht auf
+Grund sicherheitstechnischer, sondern auf Grund betrisbstechniacher
+Erwägungen {vgl. Anhang 1}.
+
+§ 25. Uberwachung von Erdungsaniagen
+
+Erdungsanlagen sind zur Festsiellung alifalliger Korrostonsschéden perio-
+disch an kritischen Stellen zu kontrollieren.
+
+16} Siehe ÖVE-EN 1, Teil 1.
+
+48
+
+
+===== PAGE 49/61 =====
+ÖVE-EH 41Anhänge 987 § 124
+
+Anhang 1
+Berlicksichtigung der Erfordernisse des Blitzschutzes
+
+$ 124. Berücksichtigung der Erfordernisse des Blitzschutzes
+E NTA G Jes ONMNLZSCHUNZGB
+
+124,1 Bei Blitzeinschtägen in geerdete Telle elektrischer Anlagen
+(Erdseile, Stahlbetonmaste, Holzmaste mit herabgeführter
+Erdungsleitung, Gerüste von Freiluftanlagen) kann es zwischen
+den geerdeten Anlagenteilen und betriebsmasig spannung-
+führenden Teilen zum Uberschiag kommen (rückwärtiger Uber-
+schiag).
+
+Rücäﬂige Überschläge sind im aligemeinen nicht zu erwarten,
+wenn der Stod-Erdungswiderstand der Beziehung
+
+genügt. Dabei ist
+
+R, der So8-Erdungswiderstand der Mast- bzw. Gerilsterdung,
+U, die StehstoBspannung der isclierung,
+
+I der Scheitelwert des Blitzstromes im Mast bzw. Gerüst.
+
+124.1.1 Tab. 124-1 zeigt die Haufigksit, mit welcher Blitzströme bis zu
+giner bestimmten Stromstirke in Masten aufireten.
+
+Tab, 124-1. Anhaltswerte über die Hiufighelt von Blitzstrémen In Masten
+von Freilaitungen mit Erdseil
+
+AI
+|_Summenhäufigkeit aller Bitzschidge 9% j 0 ] %o [os | %e |%|
+
+124.1.2 Ob MaBnahmen zur Verringerung der Wahrscheinlichkeit rück-
+wärtiger Überschläge getroffen werden, ist nur von betriebstech-
+nischen Erwägungen abhängig.
+
+In Freiluftaniagen ist der Stoß-Erdungswiderstand im allgemeinan
+80 nigdrig, daß rückwärtige Überschläge nicht zu erwarten sind.
+
+Blitzstrom 7, im Mast bis
+
+49
+
+
+===== PAGE 50/61 =====
+OVE-EH a1fanhingei 1967 § 124
+
+124.2
+
+1243
+
+1244
+
+1245
+
+1246
+
+50
+
+Der Stoß-Erdungswiderstand einer Erdungsanlage weicht mehr
+oder weniger von ihrer Erdungsimpedanz Ze ab. Bei Erdungs-
+anlagen geringer räumlicher Ausdehnung (z. B. bei Mastiüßen,
+Vertikalerdem bis zu etwa 10 m Länge, Plattenerdern, Strahlen-
+erdern, deren Einzelstrahlen 20 m nicht wesentlich überschrei-
+ten} kann er näherungsweise gleich dem Ausbreitungswider-
+stand {bei abgehobenen Erdseilen) gesetzt werden,
+
+Bei der Hersiellung von Masterdungsaniagen wird empfohlen,
+statt eings sehr langen Vertikal- oder Horizontalerders mehrere
+weniger lange Erder in der Umgebung des Mastes anzuordnen.
+
+Erdssile von Freileitungen sollen mdglichst über den Leiterseilen
+bis zur Anlage weitergeführt und mit deren Erdungsanlage ver-
+bunden werden.
+
+Erdseile bei Freileitungen mit Holzmasten sollen nach Moglich-
+keit an jedem Mast, mindestens jedoch in Abstdnden von 300 m
+geerdet sein (ausgenommen Weitspannfelder).
+
+Die Ableitungen etwa vorhandener Blitzschutzanlagen sind auf
+kiirzestem Wege mit der Hochspannungserdungsanlage 2u ver-
+binden. Im Hinblick auf Berithrungsspannung bei Erdschluß ist
+8& 15.2.1 zu beachien.
+
+
+===== PAGE 51/61 =====
+ÖVE-EH 4tiAnhingef1987 5 125, § 128 5 127
+
+Anhang 2
+
+Überwachung und Messung von Erdungsanlac
+
+§ 125. Aligemeines zur Nachprüfung bzw. Überwachung
+
+12514 Bei ausgedehnten Erdungsaniagen empfiehlt es sich, einen
+Lageplan anzufertigen.
+
+1252  Fir die periodische Uberprifung von Erdungsanlagen wird ein
+Zeitraum von etwa 5 Jahren empichlen.
+
+Für grofe Anlagen, 2. B. Umspaninwerie, soe Masterdungen genügt ein Zeitraum von stwa
+W Jahren,
+
+$ 126. Messung von spezifischen Erdwiderstinden
+
+Massungen des spezifischen Erdwiderstandes zur Vorausbestimmung des
+Ausbreitungswiderstandes oder der Erdungsimpedanz sind nach einem
+Viersondenveriahrsn {z. B. Wenner-Verfahren) durchzuführen, wobei der
+spezifische Erdwiderstand filr verschiedene Tiefen mit Hilfe der geoelektri-
+schen MeBverfahren ermittelt wird.
+
+$ 127. Messung von Ausbreitungswiderstinden und Erdungsimpedanzen
+
+1271 Diese konnen auf verschiedens Weise ermittelt werden. Von der
+Ausdehnung der Aniage und dem Grad der Beeinflussung (siehe
+$ 130) héingt es ab, welches MeBveriahren zweckmäßig ist.
+
+Es ist zu beschien, daß bei diesen Messungen und den vorbensilenden Arbeiten auch im:
+abgeschaltelen
+
+Zustand, insbesonder sber während der Messung an und zwischen
+
+geandeien Teilen (2. B. zwischen kdasien und äbgehobenem Erdseil) Berührungsspannun-
+en auftreion könnert.
+
+51
+
+
+===== PAGE 52/61 =====
+ÖVE-EH 4VArhängeN967 § 127
+
+127.2
+
+127.2.1
+
+Beigpiele für geeignete Medverfahren und Arten von Meßgeräten
+sind:
+
+ErdungsmeBbricke
+
+Diese wird gingesetzt bei Erdern oder Erdungsanlagen kleinerer
+oder mittlerer Ausgdehnung, z. B. einzelnen Staberdem, Band-
+erdern, Freileitungasmasterdern bei abgehobenem Erdseil, Hoch-
+spannungserdungen von Ortsnietzstationen in Freilaitungsnetzen
+bei Trennung von der Niederspannungserdung. Die Frequenz der
+verwendeten Wechselspannung soll 150 Hz nicht Gberschreiten.
+Zu pritender Erder, Sonde und Hilfserder sollen méglichst auf
+einer Geraden liegen.
+
+Der Abatand der Sonde vom zu prüfenden Erder solt mindestens
+das 2fache der größten Erderausdehnung (in MaBrichtung
+gesehen) betragen, jedoch nicht weniger als 20 m; der Abstand
+des Hilfserders mindestens das 4fache, jedoch nicht weniger als
+
+Abb. 127-1. Beispiel für die Ermittlung der Erdungsimpedanz durch Strom- und
+Spannungsmessung
+
+52
+
+1, Erdungasirom bei der Messung (n diesem Fall nicht urumiitelbar 2u mevsen}
+1, Erdungssiröm im Fehlertol
+Erdungssirom b Masaung: / = . £,
+X, Ausbreitungselderstand dos Megchenerders
+£,y Ausbrsitungewidenstand sines Masies
+. Erdungsspannung Sei der Messung
+
+
+===== PAGE 53/61 =====
+ÖVE-EH 41/Anhänge987 § 127
+
+12722 Strom- und Spannungsmessung (siehe Abb, 127-1)
+
+Dieses Verfahren wird insbesonders zur Messung der Erdungs-
+impedanz grofier Erdungsaniagen angewendet,
+
+Durch Anlegen einer Wechsslspannung etwa von Netzirequenz
+zwischen Erdungsaniage und einem Gegenerder wird in die
+Erdungsanlage ein Versuchsstrorn /,'2) eingeleitet, der zu einer
+meBbaren Potentialanhebung der Anlage führt. Dabei dirfen
+Erdseile und Kabelménte! mit Erdwirkung, die bstrishaméBig an
+die Anlage angeschlossen sind, nichi abgstrennt werden.
+
+Die Erdungsimpedanz ist
+LE
+ZeE = —,
+5 ' H
+Darin ist
+
+Uev sine gemessene Spannung zwischen der Erdungsaniage
+und einer Sonde im Bereich der Bezugserde (neutrale
+Erde},
+
+/ der gemessene Versuchsstrom,
+
+re  der Reduktionsfaktor der Leitung zum Gegenerder. Der
+Reduktionsfaktor kann durch Rechnung oder Messung
+bestimmt werden'3),
+Für Leitungen ohne Erdseile und Kabel ohne Schirm oder
+Bewehrung ist rg = 1.
+
+Erdseile anderer parallel zur Versuchsleitung zwischen Erder und
+Gegenerder verlaufender Leitungen sind hierbei zu beriick-
+sichtigen. Wird als Versuchs!gitung ein Kabel mit beldssits ge-
+erdeter, gut leitender metallischer Hülle verwendet, wird der weit-
+aus größte Teil des Versuchsstromes itber die Hülle zuriick-
+geleitel. Liegt um die Hülle ein isolierender AuBenmantel, karn es
+daher zweckmäßig sein, die Erdungen der Hulle aufzuheben. Bei
+Kabeln mit erdfithliger metallener Auenhille dirfen die Erdun-
+gen jedoch nicht aufgetrannt werden.
+
+Die Entfernung zwischen Erder und Gegenerder soll nach MS
+lichkeit 5 km nicht unterschreiten.
+
+Der Versuchsstrom soll nach Möglichkeit mindestens so hoch
+gewählt werden, daß die zu messenden Spannungen größer sind
+als etwaige Fremd- und Störungsspannungen. Dies ist im all-
+gemeinen bei Versuchsströmen ab 50 A gewährleistet.
+
+=) mmmmsmwmdnwmeﬁmmümwmm‚ﬁmmm
+der Formelzeichen verzichiet,
+
+mmauwmmm
+»} Vo, auch GVER 1,
+
+53
+
+
+===== PAGE 54/61 =====
+ÖVE-EH 4Anhänge!1887 § 127, 8 128
+
+127.23
+
+128.1
+
+Der Innenwiderstand des Spannungsmessers soli mindestens
+das 10fache des Ausbreitungswiderstandes der Sonde betragen.
+Gegebenenfalls vorhandene Fremd- und Stirspannungen sind
+zu eliminieren (siehe § 130).
+
+Ermitilung aus den Einzelwiderstanden
+
+Besteht die Erdungsaniage aus einzeinen Erdem, die einander
+prakiisch nicht beeinflussen, aber über Erdungsleitungen ver-
+bunden sind, so kann Zg auch in foigender Weise bestimmt
+warden.
+
+Der Ausbreitungswiderstand jedes Erders wird bei aufgetrennten
+Verbindungsleitungen mit der ErdungsmeBbriicke enmittedt, die
+Impedanzen der Erdungsleitungen hierzwischen werden errech-
+net, und die Erdungsimpedanz Z wird aus der Ersatzachaltung
+der Ausbreitungswiderstinde und der Impedanzen der Erdungs-
+isitungen bestimmt.
+
+Sind die Erder über Freileitungserdseile statt Gber Erdungsleitun-
+gen verbunden, so karn das gleiche Verfahren angewendet
+werden.
+
+§ 128, Ermittiung der Erdungsspannung
+Es gili:
+Dabei ist:
+U die Erdungsspannung entsprechend $ 8.1,
+Z die Erdungsimpedanz z. B. aus der Messung nach $ 127.2.2
+
+oder aus der Rechnung nach § 127.2.3,
+FE der Erdungsstrom entsprechend $ 9.3,
+
+IIE'::
+
+= Zr I
+
+Erdschluß innerhaib einer Anlage {sishe Abb. 5-2)
+Wird ein Erdkurzschluß innerhalb der Anlage betrachiet, so gilt für
+den Erdungssirom:
+
+{E‘f|’3£¢:+rg'3ioz+ ...= E r;°3£0i.
+
+Hierin sind i, die Nullasträme der einzelnen in die Anlage
+fihrenden Leitungen, r; sind die Erdseilreduktionsfaktoren der
+ainzeinen fehlerstromfiihrenden Leitungen.
+
+
+===== PAGE 55/61 =====
+ÖNE-EH 41/AnhängeN987 § 128, § 129
+
+Sind die Erdssilredukiionsfakioren aller in die Anlage eingefiihr-
+ien Leitungen gleich, so gilt:
+
+N
+Iem=r Y, 300 = r Ur — Iw-
+i=1
+
+Hierin ist 7, der Erdiehlerstrom und [y, der Strorn {ber den
+Transformatorsternpunkt.
+
+Erdkurzschluß auBerhalb einer Anlage {siehe Abb. 5-3)
+
+Wird cin ErdkurzschiuB auBerhalb der Anlage betrachtet, so gilt
+fir große Entfornungen zwischen der Fehlerstelle F und der
+Anlage A für den Erdungsstrom der Anlage A:
+
+Za = Zu +F 6 +3-Ip+ ..}~
+—(?t"3'10.+!‘z'3'£m+---)=3'!m“2fj‘iq-
+F=
+
+Fiir den Erdungsstrom des Fehiermastes F:
+Zn =7 3 Lo + 3 L)
+
+Hierin sind I, die Nullstrbme der einzeinen in die Station
+führenden Leitungen mit Ausnahme der vom Fehler betroffenen
+Leitung.
+
+Für Zg gilt:
+
+A
+3-Lomlu+ ), 3 Lo
+i=1
+i ist der auf der fehlerbehafteten Leitung zuflieSende Nullstrom;
+r, r sind die Erdseilreduktionsfaktoren der einzelnen Leitungen.
+
+BeiErdkurzschlüssen außerhalb siner Anlage, aber in der Hähe derselber:, iedi ein größerer
+Teit das Fehlerairomes als (1-r) - 3 - £, Ober das Endsad und 23 können sich daher gün-
+stigere Verhälinisse enyeben.
+
+$ 129. Mossung von Berührungsspannungen
+
+Die Berührungsspannung ist mit einem Spannungsmesser, der einen inne-
+ren Widerstand von etwa 1 ki) hat, zu ermitteln. Die Meßelektrode(n} zur
+Nachbildung der Füße sollien) eine Fläche von insgesamt 400 cm? haben
+und mit einem Mindestgewicht ven insgesamt S0C N auf dem Boden auf-
+liegen. Ersatzweise darf auch eine mindestens 20 cm tief eingetriebene
+Sonde an Stelle der MeBelektrode verwendet werden.
+
+55
+
+
+===== PAGE 56/61 =====
+ÖVE-EH 4UAnhängeM987 $ 129, § 130
+
+Als Meßelektrode zur Nachbildung der Hand kann z. B. eine Spitzen-
+elekircde verwendet werden, Farbanstriche an der Mefistelle (jedoch nicht
+Isolierungen) sind zuverlässig zu durchstoBen.
+
+Bei der Messung der Beriihrungsspannung arı einem Anlagenteil ist die
+Elektrode in 1m Abstand von dem berdhrbaren Anlagenieil aul den
+Standort aufzusetzen, bei Beion oder ausgetrocknetem Boden auf giner
+angeleuchteten Zwischenlage.
+
+Die eine Klemme des Spannungsmessers wird mit der Handelekirode, die
+andere mit der FuBelektrode bzw. den beiden FuBslektroden verbunden.
+Es geniigt, in einer Anlage solche Messungen stichprobenartig vor-
+zunehmen.
+
+Es hat sich sine kombinierie hach- und niederohmige Messung bewährt,
+Bricht die Spannung beim Umschalten von hohem Innenwiderstand auf
+den Eingangswiderstand vor: 1 ki2 erheblich zusammen, kinnen zu hohe
+Ubergangswiderstiinde im Meßkreis varhanden sein.
+
+U schrneif einen Überblick Ober die chare Grenze der Berührungsspanaungen 2u bekonwmen, ks okt die
+Messung mit einem Spannungsmesser mit hokem Eingangswidersians und Sonde zweckmäßig.
+
+§ 130. Eliminierung von Fremd- und Störspannungen
+bei Erdungsmessungen
+
+Bei der Bestimmung von Erdungs- und Berhrungsspannungan entspre-
+chend § 127.2.2 und § 129 können Mebwertverfilschungen auftreten durch
+Fremd- und Storspannungen jeder Art, z. B, induktive Beeinflussung langer
+Meßleitungen, induktive Baeinflussung des Versuchastiomkreises durch in
+Betrist befindliche Nachbarsysteme.
+
+Beispiele für in der Praxis bewährte Methodsn zur Eliminierung derartiger
+Storeinflisse sind:
+
+130.1 Schwebungsmethode
+
+Hierbsi wird eine Spannungsquels (z. B. Noistromaggregat) ein-
+gesetzt, deren Frequenz um einige Zehntel Heriz von der Netz-
+frequenz abweichi. Die vom Versuchsstrom hervorgerufenen
+Spannungen addieren sich zu etwaigen Störspannungen L,
+deren Betrag und Phasenlage bei hinreichend kurzer Dauer
+eines MeBzykius als konstant angesehen werden kann, Durchdie
+asynchrone Uberlagerung pendelt der Zeiger des Spannungs-
+messers zwischen einern Maximal- und einem Minimalkwert U,
+und I/, Für die vom Versuchsstrom hervorgerufene Spannung
+gilt dann
+
+56
+
+
+===== PAGE 57/61 =====
+OVE-EH 41AnhEnge/ 1967 5 130
+
+1303
+
+U= E%UZ für U,= U,
+
+U= U—‘%—EE für &, U
+
+Umpolungsmethode
+
+Hierzu wird eine netzsynchrone Spannungsquelle (Transforma-
+tor) benutzt, deren Phasenlage nach einer stramlosen Pause um
+190° el. gedreht wird. Es werden die beim Fließen des Versuchs-
+gtromes auftretende Spannung &/, vor dem Umpolen, U, nach
+dem Umpolen und die Stdrspannung L, bei abgeschaltetem Ver-
+suchsstrom gemessen.
+
+Auf Grund gsometrischer Beziehungen gilt fiir die vom Versuchs-
+strom hervorgsrufene Spannung
+
+} 2
+U___\/E.:’z_;ﬁ_usz,
+
+Kompensationsverfahren
+
+Längere Mefileitungen {z. B. zur Sonde nach Abb. 127-1) sollen
+nach Möglichkeit rechtwinklig zur Versuchsleitung geführt wer-
+den. st dies aus räumlichen Gründen nicht möglich, kann der
+durch den Versuchsstrom in die Meßleitung induzierte Span-
+nungsanteil durch Kompensation eliminiert werden.
+
+Abblockung von Gleichstrdmen
+
+Weisen die Stérspannungen hohe Glsichspannungsantsile auf,
+kann die Verwendung eines Spannungsmessers erforderlich
+wearden, bei dem die Gleichspannung abgeblockt wird.
+
+57
+
+
+===== PAGE 58/61 =====
+QVE-EH 4VAnhängeNGE7 § 131
+
+Anhang 3
+
+§ 131. Beispiel zur Ermittlung der erforderlichen Länge von Horizontal-
+erdern oder Kabeln mit Erderwirkung
+
+ErdkurzschiuBstrom /r = 800A,
+
+Erdkurzschlußdauer = 1,2 s,
+
+Up = 76V gemäß Abb, 18-1.
+
+Die eingefiihrten Kabel seien Kabelsysteme mit Kupfarschirm und ginem
+rasuliierenden Reduktionsfaktor » = 0,7, die Oberfldchensarder verzinkie
+Stahlbénder 40 mm x 4 mm.
+
+Dann ist
+
+2y 2 + 7Y
+F, 0,7 - BDOA
+
+Es gehen Kabel auf drei verschiedenen Trassen ab. Dann ist die Erdungs-
+impedanz j& Trasse
+
+Ze < = 0,271 QO
+
+Zer = 3 0,271 (0 = 084100,
+Der spezilische Erdwiderstand € ¢ sei 50 Qm.
+
+Aus Abb. 15-1 erhält man hisrzu sine erforderliche Erderlänge von 250 m
+für jede der drei Trassen.
+
+
+===== PAGE 59/61 =====
+OVE-EH 411967 Sachverzeichnis
+
+Sachverzeichnis $
+Abschaltung ....................... RR KK KK RE 73,74
+Abspannisclator ... ... ... . i 18.1(5)
+Anschlußgl@is . ... . ... it i et i 18.6
+Ausbreitungswiderstand . .................. ... §.2, 10.2, 18.1, 127
+Ausschaltstelle .......... ... 040800 E RET EE KB RE RET 22
+Ausschaltzeit E 123
+Bahnanlage .................... e e 1.2, 186
+Baustromversorgung ... ..000000004 0404010 R K RRI RK RR KK 21.2
+Beanspruchung, themmische . ...... ... ... ... ... .. ..., 133, 4.1
+A .. ... ... .. i 1.2
+BerGhrungsspannungd . ................. 83, 12.2, 151, 18.3{1), 187,
+
+19.2.1, 1933, 20.2, 204, 23.2.2, 129
+Betdtigungsgestéinge ............. ... ... .. i i, 203
+Betriebserdung ......... ... ... ... 6.2, 125, 23
+Bowohrung .. ... ... e e e 131
+Bezugserde E 32,62, 53 81
+Blitzschutz ......... . i i i RE RE 24, 124
+Blitzschutzerdung ........... .. ... . 83
+Campingplatz . ... ..o i e 19.2.2, 1934
+(Tt E 11.1.2
+(B TT03 1) (11T T o [N 18.1{4)
+Eigenbedarfsnetz . ......... ... .. .. . . .. i 188
+Elektrofilteraniage ............ .. ittt .. 12
+Endtemperatur . ... e e 11
+Endverschlul ... ... . ... . . e, 205
+Z E 33 43 52, 102, 16
+Erdfehlerstrom .. ... ... . e e 92, 84
+ErdurzschluB ... ... . e 212
+Erdkarzschlustrom ... ... ... ... . ittt 93
+Erdoberflächenpoterntial .. ... 8.2, 85
+Erdaschluß .. ... ... e e 9.1, 18.2.2
+ErdschiuBkompensation ............. ... . .o, 7.2, 13.2
+Erdschlußreststrom .. ....... . ... ... i i, 8.2
+ErdschluBspule ... ... RE 19.1, 1244, 1245
+ErdschluBstrom ... ... ... . .. i i 7.2
+] E 14.1
+Erdung, vorübergehend® . ............... ... i, 126
+
+
+===== PAGE 60/61 =====
+OVE-EH 411987 Sachverzeichnis
+
+$
+Erdungsaniage E 35, 5.3, 12
+Erdungsimpsdanz . ........................... 53, 19.1, 19.2, 127
+Erdungsbeitung .. ... ... ... .. ... .. . ..., 34, 14, 14, 17, 181
+Erdungssammelleitung ............................ 35, 171, 173
+Erdungsspannung ... .......... ... ... .. 0iin... 8 122, 187
+T . .. L e e 93
+Erdwidarstand, spezifischer ........................ 5.1, 101, 126
+Emwartungsfaktor ....... ... ... . ... ... .. 26
+Faheitungsanlage ........ ... ... .. .. v ... 1.2
+AN O ... .. e e 1.2
+Femnmeldekabel . ...... ... .. ... .. . ... ... ..., 18.3{(2)
+Freibad ... ... 19.2.2, 1934
+Freileitungsmast ......................... e 18
+Freiluftanlage ... ... ... ... ... . . .. ... 16.24
+C NG ... ... i e 130
+Fundamenierder ............... e e 33 45, 101, 187
+Gileichstromanlage . ...... ... ittt i, 1.1
+Gleichstrombahn . ............ KKr 1.2, 1863
+Hochirequenzanlage, elekiromedizinische .. ................... 1.2
+Horizomtalerder ............................ 411, 0.2, 15.2, 16.
+Innenanlage .. ..... ... ... i i e 18.23
+Kabel ............ e et 44, 153, 183
+Kosrosion ............ ... . i iiiiiiiinn, 131, 13.2, 171, 1831}
+KurzschluBstromdichte .......... et 11.1.2
+Maschenerder ... ... ... ... . ... RR 10.2
+Mastschalter .. ... ... ... . e 20
+Maststation ........ RR e 204
+MeBwandler ......... SE 18.4
+Metailgerüst ... ... ... . ... ... . ...l 17.2, 181
+Metalltell . ...... ... .. ... . i i 18.1{6)
+Mindestabmessungen ............ ... . ... RR RR KG 13.2
+Nennspannung E e 1.1, 124
+NUllung ... e e e 23.2.2
+
+60
+
+
+===== PAGE 61/61 =====
+ÖVE-EH 411987 Sachverzeichnis
+
+§
+Potentialausgleich . .............. ... ... ........ 85, 15.2.3 15.24
+Polentialsteuwerung ............. ... .. 48, 86, 15.2, 18.7
+Potentialverschleppung ........ ... ... .. ... i ... 8.7, 18.7
+Reduktionsfaktor ... ... . ... ... . ... 95
+Rohrleitung . ... ... 1865
+Rontgenanlage ........ ... ... ... .. 1.2
+Schaltkaston . ...... ... ... i, 204
+Schaltwagen .. ... ... i R RR 18.1(3}
+T T4 15.1(3)
+Schignanbahn . ... ... ... ... .. i, 1.2
+Schnellausschalitung ...........................cu... 84, 1933
+Schrittepannung E 84
+Schutzerdung .............. ..o it 6.1, 125, 23
+Schwingung, transiemte ......... ... ... vttt 73
+Sprihanlage, elektrostatische ............................... 1.2
+Stahleinlage ............. ..., e 174
+AN . . 86
+Standortizolierung .......................... 88, 16.2, 186.1, 2t.1
+N .. ... e 15
+Stermpunkt ...ı e 7, 19.2
+Sternpunkterdung ... .......................... 73,74, 193, 194
+Steuererder .......... ... ... 0., 48, 15.24, 185, 20.2
+S ... ... e 130
+StoBerdungswiderstand . ... ... ... ... ... 54, 1241, 124.2
+Strahlenerder ... ... ... ... .. .. 16.1
+Strombelastbarkeit ........... ... ... ... ... ... .. .. 1
+Stitzisolator ......... .. . . . i 18.1{5}
+L E 15.2.2
+Überspannungsableiter ... ...ı 18.1(6)
+Umziunung . ... .. ... o 15.2.2, 185
+Verbindungsstelle ............................... 163, 17.2, 175
+Vertikalerder . ..........ccoiin i, 41.2, 10.2, 182
+Werkatoff . ... . 13
+Zusammenschiul ......... ... ... 23

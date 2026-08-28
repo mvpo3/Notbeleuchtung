@@ -1,0 +1,2901 @@
+
+
+===== PAGE 81/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+77 
+24.1.4 
+Die zuständige Norm für automatische Regel- und/oder Steuereinrichtungen ist IEC 60730-1 
+zusammen mit ihren zutreffenden Teilen 2. 
+Die Anzahl der Betriebsspiele, die für 6.10 und 6.11 der IEC 60730-1 angegeben ist, darf nicht geringer sein 
+als die folgende: 
+– 
+Temperaturregler: 
+10 000 
+– 
+Betriebstemperaturbegrenzer: 
+1 000 
+– 
+selbsttätig rückstellende Schutztemperaturbegrenzer: 
+300 
+– 
+spannungsgehaltene nichtselbsttätig rückstellende Schutztemperaturbegrenzer: 
+1 000 
+– 
+andere nichtselbsttätig rückstellende Schutztemperaturbegrenzer: 
+30 
+– 
+Zeitschalter: 
+3 000 
+– 
+Energieregler: 
+10 000 
+ANMERKUNG 1 Die angegebene Anzahl der Betriebsspiele gilt nicht für automatische Steuer- und/oder Regeleinrichtun-
+gen, die während der Prüfung nach Abschnitt 11 ansprechen, falls das Gerät die Anforderungen dieser Norm erfüllt, wenn 
+sie kurzgeschlossen sind. 
+Falls automatische Steuer- und/oder Regeleinrichtungen geprüft werden müssen, werden sie auch nach 
+11.3.5 bis 11.3.8 und Abschnitt 17 der IEC 60730-1 als Regel- und/oder Steuereinrichtung der Bauart 1 
+geprüft. 
+ANMERKUNG 2 Die Prüfungen nach den Abschnitten 12, 13 und 14 der IEC 60730-1 werden nicht vor den Prüfungen 
+nach Abschnitt 17 durchgeführt. 
+ANMERKUNG 3 Die Umgebungstemperatur während der Prüfungen nach Abschnitt 17 der IEC 60730-1 ist diejenige, 
+welche während der Prüfung nach Abschnitt 11 im Gerät auftritt, wie in Fußnote b) der Tabelle 3 festgelegt. 
+Thermische Motorschutzeinrichtungen werden zusammen mit ihrem Motor unter den in Anhang D spezifizier-
+ten Bedingungen betrieben. 
+Bei Wasserventilen, die aktive Teile enthalten und in externe Schläuche eingebaut sind, um ein Gerät an die 
+Wasserversorgungsanlage anzuschließen, muss der Schutzgrad, den das Gehäuse gegen gefährliches Ein-
+dringen von Wasser bietet und der nach 6.5.2 der IEC 60730-2-8 erklärt wird, IPX7 sein. 
+24.1.5 
+Die zuständige Norm für Gerätesteckvorrichtungen ist IEC 60320-1. Für Geräte jedoch, die höher 
+als IPX0 eingestuft werden, ist IEC 60320-2-3 die zuständige Norm. 
+Die zuständige Norm für Netzweiterverbindungen ist IEC 60320-2-2. 
+24.1.6 
+Die zuständige Norm für kleine Lampenfassungen ähnlich E10-Lampenfassungen ist IEC 60238. 
+Es gelten die Anforderungen für E10-Lampenfassungen. Es ist jedoch nicht erforderlich, dass sie eine mit 
+E10-Sockel ausgestattete Lampe entsprechend der geltenden Ausgabe des Normblattes 7004-22 der 
+IEC 60061-1 aufnehmen können. 
+24.1.7 
+Erfolgt die Fernwirkung des Gerätes mit Hilfe eines Telekommunikationsnetzes, so ist die 
+zutreffende Norm für die Schnittstelle zum Telekommunikationsnetz im Gerät IEC 62151.N6 
+24.1.8 
+Die entsprechende Norm für die Temperatursicherungen ist IEC 60691. Temperatursiche-
+rungen, die nicht mit IEC 60691 übereinstimmen, werden für Abschnitt 19 als beabsichtigte Schwachstelle 
+angesehen. 
+                                                     
+N6 Nationale Fußnote: IEC 62151 wurde nicht als nationale Norm übernommen. Anforderungen an die 
+Schnittstellen sind in EN 41003 und 6.3 der EN 60950 enthalten. 
+1 
+1 
+1 
+1 
+1 
+1 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+81 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 82/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+78 
+24.1.9 
+Relais, außer Relais zum Starten von Motoren, werden als Teil des Gerätes geprüft. Sie werden 
+jedoch auch in Übereinstimmung mit Abschnitt 17 der IEC 60730-1 unter den größten im Gerät auftretenden 
+Lastbedingungen geprüft, wobei die Mindestzahl der Betriebsspiele nach 24.1.4 aufgrund der Funktion des 
+Relais im Gerät ausgewählt wird. 
+24.2 
+Geräte dürfen nicht ausgestattet sein mit: 
+– 
+Schaltern oder selbsttätig wirkenden Regel- und/oder Steuereinrichtungen in flexiblen Leitungen; 
+– 
+Einrichtungen, die im Falle eines Fehlers im Gerät die Schutzeinrichtung in der festen Installation zum 
+Ansprechen bringen; 
+– 
+Schutztemperaturbegrenzern, die durch einen Lötvorgang zurückgestellt werden können. 
+ANMERKUNG 
+Der Gebrauch von Lötzinn mit einem Schmelzpunkt von mindestens 230 °C ist zulässig. 
+Prüfung: Besichtigung. 
+24.3 
+Schalteinrichtungen, die dazu bestimmt sind, eine allpolige Abschaltung eines ortsfesten 
+Gerätes nach 22.2 sicherzustellen, müssen direkt mit den Anschlussklemmen verbunden sein und müssen 
+eine volle Abschaltung unter den Bedingungen der Überspannungskategorie III in jedem Pol haben. 
+ANMERKUNG 1 Volle Abschaltung ist nach IEC 61058-1 eine der Basisisolierung entsprechende Kontakttrennung in 
+einem Pol, zwischen dem Netz und jenen Teilen, die abgeschaltet werden sollen.  
+ANMERKUNG 2 Die Bemessungsstoßspannungen für die Überspannungskategorien sind in Tabelle 15 angegeben. 
+Prüfung: Besichtigung und Messung. 
+24.4 
+Stecker und Steckdosen für Kreise mit Kleinspannung und solche, die als Anschlussvorrichtungen 
+von Heizelementen benutzt werden, dürfen nicht verwechselbar sein mit in IEC 60083 oder IEC 60906-1 auf-
+geführten Steckern und Steckdosen oder mit Steckern und Gerätesteckern nach den Normblättern von 
+IEC 60320-1. 
+Prüfung: Besichtigung. 
+24.5 
+Kondensatoren für Motorhilfswicklungen müssen mit ihrer Bemessungsspannung und Bemes-
+sungskapazität gekennzeichnet sein und nach dieser Kennzeichnung eingesetzt werden. 
+Kondensatoren in Geräten, für die 30.2.3 gilt und die ständig in Reihe mit einer Motorwicklung geschaltet 
+sind, müssen der Klasse P1 oder P2 der IEC 60252 entsprechen. 
+Prüfung: Besichtigung und geeignete Prüfung. Zusätzlich wird bei Kondensatoren, die in Reihe mit einer 
+Motorwicklung geschaltet sind, festgestellt, dass bei Betrieb des Gerätes mit 1,1facher Bemessungs-
+spannung und bei minimaler Last die Spannung am Kondensator nicht das 1,1fache seiner Bemessungs-
+spannung überschreitet. 
+24.6 
+Die Arbeitsspannung von direkt an das Netz angeschlossenen Motoren mit Basisisolierung, die 
+für die Bemessungsspannung des Gerätes nicht ausreichend ist, darf 42 V nicht übersteigen. Zusätzlich 
+müssen die Anforderungen von Anhang I erfüllt werden. 
+Prüfung: Messungen und Prüfungen nach Anhang I. 
+24.7 
+Schlauchsätze zum Anschluss von Geräten an die Wasserversorgungsanlage müssen mit 
+IEC 61770 übereinstimmen. Sie müssen mit dem Gerät geliefert werden. 
+Prüfung: Besichtigung. 
+2 
+A11 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+82 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 83/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+79 
+25 Netzanschluss und äußere Leitungen 
+25.1 
+Geräte, ausgenommen solche, die dauernd an festverlegte Leitungen angeschlossen werden, 
+müssen mit einem der folgenden Mittel zum Anschluss an das Netz ausgestattet sein: 
+– 
+mit einer mit einem Stecker ausgestatteten Netzanschlussleitung; 
+– 
+mit einer Gerätesteckvorrichtung, die mindestens den gleichen Schutz gegen Feuchtigkeit hat, wie der 
+für das Gerät geforderte; 
+– 
+mit Steckerstiften zum Einführen in Steckdosen. 
+Prüfung: Besichtigung. 
+25.2 
+Geräte, ausgenommen ortsfeste Geräte für Mehrfachstromversorgung, dürfen nicht mit mehr als 
+einem Mittel zum Anschluss an das Netz ausgestattet sein. Ortsfeste Geräte für Mehrfachstromversorgung 
+dürfen mit mehr als einem Anschlussmittel ausgestattet sein, vorausgesetzt, dass die jeweiligen Stromkreise 
+ausreichend gegeneinander isoliert sind. 
+ANMERKUNG 1 Eine Mehrfachstromversorgung wird z. B. bei Tag- und Nachtstromtarifen gefordert. 
+Prüfung: Besichtigung und Prüfung wie folgt. 
+Eine annähernd sinusförmige Spannung von 1 250 V und eine Frequenz von 50 Hz oder 60 Hz wird 1 min 
+zwischen den jeweiligen Netzanschlussmitteln angelegt.  
+ANMERKUNG 2 Diese Prüfung kann zusammen mit der nach 16.3 durchgeführt werden. 
+Während der Prüfung darf kein Überschlag auftreten. 
+25.3 
+Geräte, die zum dauernden Anschluss an festverlegte Leitungen bestimmt sind, müssen den An-
+schluss der Netzleiter gestatten, nachdem das Gerät auf seiner Unterlage befestigt worden ist, und mit einem 
+der folgenden Netzanschlussmittel ausgestattet sein: 
+– 
+mit einem Satz Klemmen, die den Anschluss an festverlegte Leitungen mit den in 26.6 festgelegten 
+Leiternennquerschnitten erlauben; 
+– 
+mit einem Satz Klemmen, die den Anschluss einer flexiblen Leitung gestatten; 
+ANMERKUNG 1 In diesem Fall ist es zulässig, die Netzanschlussleitung anzuschließen, bevor das Gerät auf seiner 
+Unterlage befestigt worden ist. Das Gerät darf mit einer flexiblen Leitung ausgestattet sein. 
+– 
+mit einem Satz Anschlussleitern, die in einem geeigneten Innenfach untergebracht sind; 
+– 
+mit einem Satz Klemmen und Leitungseinführungsöffnungen, Rohreinführungen, Ausbrechöffnungen 
+oder Stopfbuchsen, die den Anschluss der geeigneten Typen von Leitungen oder Installationsrohren 
+gestatten. 
+ANMERKUNG 2 Ist ein befestigtes Gerät so gebaut, dass Teile entfernt werden können, um die Installation zu erleich-
+tern, so gilt die Anforderung als erfüllt, wenn es möglich ist, die Netzanschlussleitungen nach Befestigung eines Teiles 
+des Gerätes auf seiner Unterlage ohne Schwierigkeiten anzuschließen. In diesem Fall müssen die entfernbaren Teile so 
+gebaut sein, dass sie leicht an das in seiner Position befestigte Teilgerät angebaut werden können ohne Gefahr eines 
+falschen Zusammenbaus oder einer Beschädigung der Leitung oder der Klemmen. 
+Prüfung: Besichtigung und, falls erforderlich, Herstellen der jeweiligen Anschlüsse. 
+25.4 
+Bei Geräten zum Anschluss an festverlegte Leitungen mit einem Bemessungsstrom nicht über 
+16 A müssen die Einführungsöffnungen für Leitungen oder Rohre mit den größten Außendurchmesser 
+Abmessungen nach Tabelle 10 geeignet sein. 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+83 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 84/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+80 
+Tabelle 10 – Durchmesser Abmessungen von Leitungen und Rohren 
+Größter Außendurchmesser 
+mm 
+Anzahl der Leiter einschließlich Schutzleiter 
+Leitung 
+Rohr a) 
+2 
+13,0 
+16,0 (23,0) 
+3 
+14,0 
+16,0 (23,0) 
+4 
+14,5 
+20,0 (23,0) 
+5 
+15,5 
+20,0 (29,0) 
+a) 
+Die Abmessungen in Klammern gelten für USA und Kanada. 
+Einführungsöffnungen für Installationsrohre, Leitungseinführungsöffnungen und Ausbrechöffnungen müssen 
+so gebaut oder angeordnet sein, dass die Einführung des Rohres oder der Leitung die Kriech- oder Luft-
+strecken nicht unter die in Abschnitt 29 festgelegten Werte herabsetzt. 
+Prüfung: Besichtigung und Messung. 
+25.5 
+Netzanschlussleitungen müssen am Gerät nach einem der folgenden Verfahren angebracht 
+werden: 
+– 
+Anschlussart X; 
+– 
+Anschlussart Y; 
+– 
+Anschlussart Z, wenn im Teil 2 zugelassen. 
+Die Anschlussart X darf nicht für leichte Zwillingsleitungen mit Lahnlitzenleiter verwendet werden, es sei 
+denn, es wird eine besonders zugerichtete Leitung verwendet. 
+Prüfung: Besichtigung. 
+25.6 
+Stecker dürfen nicht mit mehr als einer flexiblen Leitung ausgestattet sein. 
+Netzanschlussleitungen von ortsveränderlichen Einphasengeräten mit einem Bemessungsstrom bis 
+16 A müssen mit einem Stecker versehen sein, der folgenden Normblättern in IEC 60083:1975 entspricht: 
+– 
+für Geräte der Schutzklasse I 
+Normblatt C2b, C3b oder C4; 
+– 
+für Geräte der Schutzklasse II 
+Normblatt C5 oder C6. 
+Prüfung: Besichtigung. 
+25.7 
+Netzanschlussleitungen dürfen nicht leichter sein als: 
+– 
+umflochtene Leitung (Kurzzeichen 60245 IEC 51), wenn im Teil 2 zugelassen; 
+– 
+Gummischlauchleitung (Kurzzeichen 60245 IEC 53); 
+– 
+Schlauchleitung mit Polychloroprenmantel (Kurzzeichen 60245 IEC 57); 
+– 
+leichte Zwillingsleitung mit Lahnlitzenleiter (Kurzzeichen 60227 IEC 41), wenn im Teil 2 zugelassen; 
+– 
+leichte PVC-Schlauchleitung (Kurzzeichen 60227 IEC 52) für Geräte mit einer Masse nicht über 3 kg; 
+– 
+normale PVC-Schlauchleitung (Kurzzeichen 60227 IEC 53) für Geräte mit einer Masse über 3 kg. 
+Werden Netzanschlussleitungen hoher Flexibilität benutzt, dürfen sie nicht leichter sein als 
+– 
+Schlauchleitung (Kurzzeichen 60245 IEC 86), 
+– 
+gummiisolierte Leitung mit Mantel aus vernetztem PVC (Kurzzeichen 60245 IEC 87), 
+– 
+Schlauchleitung aus vernetztem PVC (Kurzzeichen 60245 IEC 88). 
+ANMERKUNG 
+Eine niedrigere Zahl im Kurzzeichen bezeichnet in IEC 60227 oder IEC 60245 eine leichtere Bauart. 
+1 
+1 
+ 
+ 
+ 
+2 
+1/2 
+2 
+/2 
+/2 
+/2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+84 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 85/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+81 
+ANMERKUNG Z1 Die harmonisierten Kurzzeichen, die den IEC-Leitungsarten entsprechen, sind in Anhang ZD ange-
+geben. 
+PVC-ummantelte Leitungen dürfen nicht für Geräte verwendet werden, bei denen die Temperaturerhöhung 
+äußerer Metallteile 75 K während der Prüfung nach Abschnitt 11 überschreitet. Sie dürfen jedoch verwendet 
+werden, falls 
+– 
+das Gerät so gebaut ist, dass Berührung der Netzanschlussleitung mit solchen Metallteilen im sachge-
+mäßen Gebrauch nicht wahrscheinlich ist; 
+– 
+die Netzanschlussleitung für höhere Temperaturen geeignet ist. In diesem Fall ist die Anschlussart Y 
+oder Z zu verwenden. 
+Prüfung: Besichtigung und Messung. 
+25.7 
+Netzanschlussleitungen müssen einem der folgenden Typen entsprechen: 
+– 
+Schlauchleitung mit Isolierhülle und Mantel aus EPR: 
+Ihre Eigenschaften müssen mindestens denjenigen von normalen Schlauchleitungen mit Mantel aus EPR 
+(Kurzzeichen 60245 IEC 53) entsprechen. 
+ANMERKUNG 1 Diese Leitungen sind nicht für Geräte geeignet, die dazu bestimmt sind, im Freien benutzt zu werden, 
+oder wenn sie wahrscheinlich einer signifikant erhöhten ultravioletten Strahlung ausgesetzt werden. 
+– 
+Schlauchleitung mit Polychloroprenmantel: 
+Ihre Eigenschaften müssen mindestens denjenigen von normalen Schlauchleitungen mit Polychloropren-
+mantel (Kurzzeichen 60245 IEC 57) entsprechen. 
+ANMERKUNG 2 Diese Leitungen sind für Geräte geeignet, bei denen eine Niedrigtemperaturanwendung beabsichtigt ist. 
+– 
+Leitung mit Gummiisolierung und Mantel aus vernetztem PVC: 
+Ihre Eigenschaften müssen mindestens denjenigen von normalen gummiisolierten Leitungen mit Mantel 
+aus vernetztem PVC (Kurzzeichen 60245 IEC 87) entsprechen. 
+ANMERKUNG 3 Diese Leitungen sind für Geräte geeignet, die mit heißen Oberflächen in Berührung kommen können. 
+Aufgrund des Leiteraufbaus ist die Leitung für Anwendungen geeignet, bei denen eine hohe Biegsamkeit gefordert wird. 
+– 
+PVC-Schlauchleitung: 
+Diese Leitungen dürfen nicht eingesetzt werden, wenn sie wahrscheinlich Metallteile berühren können, 
+deren Temperatur während der Prüfung nach Abschnitt 11 75 K überschreitet. Ihre Eigenschaften 
+müssen mindestens denjenigen  entsprechen von 
+● 
+leichten PVC-Schlauchleitungen (Kurzzeichen 60227 IEC 52) für Geräte mit einer Masse nicht über 
+3 kg, 
+● 
+mittleren PVC-Schlauchleitungen (Kurzzeichen 60227 IEC 53) für andere Geräte. 
+– 
+Hitzebeständige PVC-Schlauchleitung: 
+Diese Leitungen dürfen nicht für Anschlussart X eingesetzt werden, es sei denn bei besonders vorbe-
+reiteten Leitungen. Ihre Eigenschaften müssen mindestens denjenigen entsprechen von 
+● 
+hitzebeständigen leichten PVC-Schlauchleitungen (Kurzzeichen 60227 IEC 56) für Geräte mit einer 
+Masse nicht über 3 kg, 
+● 
+hitzebeständigen PVC-Schlauchleitungen (Kurzzeichen 60227 IEC 57) für andere Geräte. 
+Prüfung durch Messungen. 
+25.8 
+Leiter von Netzanschlussleitungen müssen einen Nennquerschnitt haben, der nicht kleiner ist als 
+in Tabelle 11 angegeben. 
+/2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+85 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 86/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+82 
+Tabelle 11 – Kleinster Querschnitt der Leiter 
+Bemessungsstrom des Gerätes 
+A 
+Nennquerschnitt 
+mm² 
+ 
+ 
+≤ 0,2 
+Lahnlitzenleitung a) 
+ 
+> 0,2 
+und 
+≤ 3 
+0,5 a) 
+ 
+> 3 
+und 
+≤ 6 
+0,75 
+ 
+> 6 
+und 
+≤ 10 
+1 (0,75) b) 
+ 
+> 10 
+und 
+≤ 16 
+1,5 (1,0) b) 
+ 
+> 16 
+und 
+≤ 25 
+2,5 
+ 
+> 25 
+und 
+≤ 32 
+4 
+ 
+> 32 
+und 
+≤ 40 
+6 
+ 
+> 40 
+und 
+≤ 63 
+10 
+a) Diese Leitungen dürfen nur verwendet werden, wenn ihre Länge 2 m zwischen dem 
+Punkt, an dem die Leitung oder die Biegeschutztülle in das Gerät eintritt, und dem Eintritt 
+in den Stecker nicht überschreitet. 
+b) Leitungen mit dem in der Klammer angegebenen Wert dürfen für ortsveränderliche 
+Geräte benutzt werden, wenn ihre Länge 2 m nicht überschreitet. 
+Prüfung: Messung. 
+25.9 
+Netzanschlussleitungen dürfen nicht in Berührung mit scharfen Spitzen oder Kanten des Gerätes 
+kommen. 
+Prüfung: Besichtigung. 
+25.10 
+Die Netzanschlussleitung von Geräten der Schutzklasse I muss eine grün/gelbe Ader haben, 
+die an den Schutzleiteranschluss des Gerätes und den Schutzkontakt des Steckers angeschlossen ist. 
+Prüfung: Besichtigung. 
+25.11 
+Leiter von Netzanschlussleitungen dürfen nicht an Stellen durch Blei/Zinn-Lot verfestigt werden, 
+an denen sie Kontaktdruck unterliegen, es sei denn, die Klemmvorrichtung ist so gebaut, dass keine Gefahr 
+eines schlechten Kontaktes durch Kaltfluss des Lotes besteht. 
+ANMERKUNG 1 Die Anforderung kann durch Verwendung von Federklemmen erfüllt werden. Sicherung der Klemm-
+schrauben allein gilt nicht als ausreichend. 
+ANMERKUNG 2 Verzinnen der Spitze eines Litzenleiters ist zulässig. 
+Prüfung: Besichtigung. 
+25.12 
+Die Isolierung der Netzanschlussleitung darf nicht beschädigt werden, wenn die Leitung in einen 
+Teil des Gehäuses eingegossen wird. 
+Prüfung: Besichtigung. 
+25.13 
+Eintrittsöffnungen für Netzanschlussleitungen müssen so ausgeführt sein, dass der Mantel der 
+Netzanschlussleitung ohne Gefahr einer Beschädigung eingeführt werden kann. Sofern das Gehäuse an 
+der Eintrittsöffnung nicht aus einem Isolierstoff besteht, muss eine nichtabnehmbare Auskleidung oder nicht-
+abnehmbare Tülle vorhanden sein, die 29.3 für zusätzliche Isolierung entspricht. Ist die Netzanschluss-
+leitung nicht ummantelt, ist eine ähnliche zusätzliche Einführungstülle oder Auskleidung notwendig, es sei 
+denn, das Gerät gehört zur Schutzklasse 0. 
+Prüfung: Besichtigung. 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+86 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 87/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+83 
+25.14 
+Geräte mit einer Netzanschlussleitung, die im Betrieb bewegt werden, müssen so gebaut sein, 
+dass die Netzanschlussleitung an der Stelle, an der sie in das Gerät eintritt, gegen übermäßige Biegung 
+angemessen geschützt ist. 
+ANMERKUNG 1 Diese Anforderung gilt nicht für Geräte mit selbsttätigen Aufwickelvorrichtungen; diese werden statt-
+dessen nach 22.16 geprüft. 
+Prüfung: Biegeprüfung auf einer Vorrichtung mit einem schwenkbaren Teil nach Bild 8 wie folgt: 
+Der Teil des Gerätes mit der Eintrittsöffnung wird derart an dem schwenkbaren Teil befestigt, dass, wenn sich 
+die Netzanschlussleitung in der Mitte des Schwenkbereiches befindet, die Achse der Leitung an der Stelle, 
+an der sie in die Biegeschutztülle oder Leitungseinführung eintritt, senkrecht durch die Schwingachse ver-
+läuft. Die größere Achse des Querschnitts von flachen Leitungen muss parallel zur Schwingachse verlaufen. 
+Die Leitung wird so belastet, dass die ausgeübte Kraft beträgt: 
+– 
+10 N bei Leitungen mit einem Nennquerschnitt von mehr als 0,75 mm2; 
+– 
+5 N bei anderen Leitungen. 
+Die in Bild 8 gezeigte Entfernung X zwischen der Schwingachse und der Stelle, an der die Leitung oder die 
+Biegeschutztülle in das Gerät eintritt, wird so eingestellt, dass die Leitung und die Last die geringste 
+Seitwärtsbewegung ausführen, wenn sich der schwenkbare Teil über den gesamten Schwenkbereich 
+bewegt. 
+Der schwenkbare Teil wird über einen Winkel von 90° (45° auf jeder Seite der Senkrechten) bewegt, wobei 
+die Zahl der Biegungen bei Anschlussart Z 20 000 und bei anderen Anschlussarten 10 000 beträgt. Es 
+werden 60 Biegungen je Minute ausgeführt. 
+ANMERKUNG 2 Eine Biegung ist eine Bewegung um 90°. 
+Nach der Hälfte der Biegungen werden die Leitung und ihre dazugehörigen Teile um einen Winkel von 90° 
+gedreht, es sei denn, es handelt sich um eine Flachleitung. 
+Während der Prüfung werden die Leiter unter Bemessungsspannung mit dem Bemessungsstrom des 
+Gerätes belastet. 
+ANMERKUNG 3 Durch den Schutzleiter wird kein Strom geleitet. 
+Die Prüfung darf nicht zu folgenden Ergebnissen führen: 
+– 
+Kurzschluss zwischen den Leitern; 
+– 
+Bruch von mehr als 10 % der Litzen eines Leiters; 
+– 
+Lösen des Leiters von seiner Anschlussklemme; 
+– 
+Lockerung einer Zugentlastung; 
+– 
+Beschädigung von Leitung oder Zugentlastung, die die Übereinstimmung mit dieser Norm beeinträch-
+tigen könnte; 
+– 
+zu gebrochenen Litzen, die die Isolierung durchdringen und berührbar werden. 
+ANMERKUNG 4 Leiter schließen Schutzleiter ein. 
+ANMERKUNG 5 Ein Kurzschluss zwischen den Leitern der Leitung wird angenommen, wenn der Strom einen Wert über-
+schreitet, der gleich dem doppelten Bemessungsstrom des Gerätes ist. 
+25.15 
+Geräte mit einer Netzanschlussleitung und Geräte, die dauerhaft zum Anschluss an festverlegte 
+Leitungen durch eine flexible Leitung bestimmt sind, müssen Zugentlastungen haben. Die Zugentlastung ent-
+lastet die Leiter von Zug einschließlich Verdrehung an der Stelle, wo sie innerhalb des Gerätes ange-
+schlossen sind, und schützt die Isolierung der Leiter gegen Abrieb. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+87 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 88/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+84 
+Es darf nicht möglich sein, die Leitung so weit in das Gerät zu schieben, dass die Leitung oder innere Teile 
+des Gerätes beschädigt werden können. 
+Prüfung: Besichtigung, Handprobe und folgende Prüfung. 
+Auf der Leitung wird, während sie der in Tabelle 12 festgelegten Zugkraft ausgesetzt ist, in einer Entfernung 
+von etwa 20 mm von der Zugentlastung oder an einem anderen geeigneten Punkt eine Markierung ange-
+bracht. 
+Die Leitung wird dann mit der festgelegten Kraft jeweils 1 s lang ruckfrei in die ungünstigste Richtung gezo-
+gen. Die Prüfung wird 25-mal durchgeführt. 
+Die Leitung, ausgenommen solche auf einer selbsttätigen Aufwickelvorrichtung, wird dann sofort einem 
+Drehmoment unterworfen, das so nahe wie möglich am Gerät ausgeübt wird. Das in Tabelle 12 festgelegte 
+Drehmoment wird 1 min angewandt. 
+Tabelle 12 – Zugkraft und Drehmoment 
+Gewicht des Gerätes 
+kg 
+Zugkraft 
+N 
+Drehmoment 
+Nm 
+ 
+≤ 1 
+30 
+0,1 
+ 
+> 1 und ≤ 4 
+60 
+0,25 
+ 
+> 4 
+100 
+0,35 
+Während der Prüfungen darf die Leitung nicht beschädigt werden und darf keine deutliche Überbean-
+spruchung an den Anschlussklemmen zeigen. Die Zugkraft wird nochmals angewendet und die Leitung darf 
+nach den Prüfungen nicht um mehr als 2 mm in Längsrichtung versetzt sein. 
+25.16 
+Bei der Anschlussart X müssen Zugentlastungen so ausgeführt oder angeordnet sein, dass: 
+– 
+ein Ersatz der Leitung leicht möglich ist; 
+– 
+klar ist, wie die Zugentlastung und der Verdrehungsschutz erreicht werden; 
+– 
+sie für die verschiedenen Typen von Netzanschlussleitungen, die angeschlossen werden dürfen, 
+geeignet sind, es sei denn, die Leitung ist eine besonders zugerichtete; 
+– 
+die Leitung die Klemmschrauben der Zugentlastung nicht berühren kann, falls diese Schrauben zugäng-
+lich sind, es sei denn, sie sind durch zusätzliche Isolierung von berührbaren Metallteilen getrennt; 
+– 
+die Leitung nicht durch eine Metallschraube geklemmt wird, die unmittelbar auf die Leitung drückt; 
+– 
+wenigstens ein Teil der Zugentlastung fest mit dem Gerät verbunden ist, es sei denn, sie ist Teil einer 
+besonders zugerichteten Leitung; 
+– 
+Schrauben, die beim Ersetzen der Leitung betätigt werden müssen, nicht zur Befestigung eines anderen 
+Einzelteiles dienen. Dies gilt jedoch nicht, wenn 
+• 
+durch Weglassen der Schrauben oder falsches Befestigen der Einzelteile das Gerät betriebsunfähig 
+oder offensichtlich unvollständig wird, 
+• 
+die durch sie zu befestigenden Teile während des Ersetzens der Leitung nicht ohne Werkzeug 
+entfernt werden können; 
+– 
+falls Labyrinthe umgangen werden können, die Prüfung nach 25.15 trotzdem bestanden wird; 
+– 
+sie bei Geräten der Schutzklassen 0, 0I und I aus Isolierstoff bestehen oder mit einer isolierenden 
+Auskleidung versehen sind, es sei denn, ein Isolationsfehler der Leitung macht berührbare Metallteile 
+nicht aktiv; 
+– 
+sie bei Geräten der Schutzklasse II aus Isolierstoff bestehen, oder, falls sie aus Metall sind, von 
+berührbaren Metallteilen durch eine zusätzliche Isolierung getrennt sind. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+88 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 89/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+85 
+ANMERKUNG 1 Falls bei Anschlussart X die Zugentlastung ein oder mehrere Klemmglieder enthält, auf die mittels 
+Muttern auf sicher am Gerät angebrachten Gewindebolzen Druck ausgeübt wird, wird angenommen, dass ein Teil der 
+Zugentlastung sicher am Gerät befestigt ist, auch wenn die Klemmglieder von den Gewindebolzen entfernt werden 
+können. 
+ANMERKUNG 2 Falls der Druck auf die Klemmglieder mittels einer oder mehrerer Schrauben ausgeübt wird, die mit 
+getrennten Muttern oder mit einem Gewinde in einem Teil zusammenwirken, das eine Einheit mit dem Gerät ist, wird 
+nicht angenommen, dass die Zugentlastung ein am Gerät sicher befestigtes Teil hat. Das gilt nicht, wenn eines der 
+Klemmglieder selbst am Gerät befestigt oder die Oberfläche des Gerätes aus Isolierstoff und so geformt ist, dass es 
+offensichtlich ist, dass diese Oberfläche eines der Klemmglieder ist. 
+ANMERKUNG 3 Beispiele annehmbarer und nicht annehmbarer Konstruktionen von Zugentlastungen sind in Bild 9 
+dargestellt. 
+Prüfung: Besichtigung und die Prüfung nach 25.15 unter den folgenden Bedingungen. 
+Die Prüfungen werden mit dem leichtesten zulässigen Leitungstyp und dem kleinsten in Tabelle 13 festge-
+legten Querschnitt durchgeführt und dann mit dem nächstschwereren Leitungstyp und dem größten festge-
+legten Querschnitt. Falls jedoch das Gerät mit einer besonders zugerichteten Anschlussleitung ausgestattet 
+ist, wird die Prüfung mit dieser Leitung durchgeführt. 
+Die Leiter werden in die Anschlussklemmen geführt und deren Klemmschrauben gerade so weit angezogen, 
+dass die Leiter ihre Lage nicht leicht ändern können. Die Klemmschrauben der Zugentlastung werden mit 
+zwei Drittel des in 28.1 festgelegten Drehmoments angezogen. 
+Schrauben aus Isolierstoff, die direkt auf die Leitung drücken, werden mit zwei Dritteln des in Spalte 1 von 
+Tabelle 14 festgelegten Drehmoments angezogen, wobei die Länge des Schlitzes im Schraubenkopf als der 
+Nenndurchmesser der Schraube angenommen wird. 
+Nach den Prüfungen dürfen sich die Leiter um nicht mehr als 1 mm in den Anschlussklemmen bewegt haben. 
+25.17 
+Bei den Anschlussarten Y und Z müssen die Zugentlastungen ausreichend sein. 
+Prüfung: nach 25.15. 
+ANMERKUNG 
+Die Prüfung wird mit der mitgelieferten Anschlussleitung durchgeführt. 
+25.18 
+Zugentlastungen müssen so angeordnet sein, dass sie nur mit Werkzeug zugänglich sind, oder sie 
+müssen so gebaut sein, dass die Leitung nur mit Werkzeug angebracht werden kann. 
+Prüfung: Besichtigung. 
+25.19 
+Bei Anschlussart X dürfen Stopfbuchsen nicht als Zugentlastung für ortsveränderliche Geräte 
+verwendet werden. Es ist nicht zulässig, einen Knoten in die Leitung zu machen oder die Leitung mit einer 
+Schnur anzubinden. 
+Prüfung: Besichtigung. 
+25.20 
+Die isolierten Leiter der Netzanschlussleitung müssen bei Anschlussarten Y und Z zusätzlich 
+gegen berührbare Metallteile isoliert sein durch Basisisolierung für Geräte der Schutzklassen 0, 0I und I 
+und zusätzliche Isolierung für Geräte der Schutzklasse II. Diese Isolierung kann durch den Mantel der 
+Netzanschlussleitung oder andere Mittel gegeben sein. 
+Prüfung: Besichtigung und entsprechende Prüfungen. 
+25.21 
+Der Anschlussraum für den Anschluss der Netzanschlussleitung bei Anschlussart X oder für den 
+Anschluss an festverlegte Leitungen muss so gebaut sein, dass 
+– 
+es vor dem Anbringen von Abdeckungen möglich ist zu prüfen, ob sich die Netzleiter in der richtigen 
+Lage befinden und richtig angeschlossen sind; 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+89 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 90/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+86 
+– 
+Abdeckungen ohne Gefahr der Beschädigung der Leiter oder ihrer Isolierung angebracht werden 
+können; 
+– 
+bei ortsveränderlichen Geräten das unisolierte Ende eines Leiters, sollte er sich aus der Klemme 
+lösen, nicht in Kontakt mit berührbaren Metallteilen kommen kann. 
+Prüfung: Besichtigung nach dem Anschließen von Leitungen für feste Verlegung oder flexiblen Leitungen mit 
+dem größten in Tabelle 13 festgelegten Querschnitt. 
+Ortsveränderliche Geräte werden folgender zusätzlicher Prüfung unterworfen, es sei denn, sie sind mit 
+Buchsenklemmen ausgestattet und die Netzanschlussleitung ist innerhalb von 30 mm von ihnen befestigt. 
+ANMERKUNG 
+Die Netzanschlussleitung kann durch eine Zugentlastung befestigt sein. 
+Die Klemmschrauben oder -muttern werden nacheinander gelöst. Eine Kraft von 2 N wird in der Nähe der 
+Klemme in einer beliebigen Richtung auf den Leiter ausgeübt. Das unisolierte Ende des Leiters darf nicht mit 
+berührbaren Metallteilen in Kontakt kommen. 
+25.22 
+Gerätestecker: 
+– 
+müssen so angeordnet oder umschlossen sein, dass aktive Teile während der Einführung oder des Ent-
+fernens des Steckverbinders nicht berührt werden können; 
+– 
+müssen so angeordnet sein, dass der Steckverbinder ohne Schwierigkeiten eingeführt werden kann; 
+– 
+müssen so angeordnet sein, dass nach Einführung des Steckverbinders das Gerät nicht von dem Steck-
+verbinder gestützt wird, wenn es in beliebiger Lage des sachgemäßen Gebrauchs auf eine ebene Ober-
+fläche gestellt wird; 
+– 
+dürfen nicht Gerätestecker für kalte Bedingungen sein, wenn die Temperaturerhöhung äußerer Metall-
+teile des Gerätes 75 K während der Prüfung nach Abschnitt 11 überschreitet, es sei denn, die Netzan-
+schlussleitung berührt im sachgemäßen Gebrauch wahrscheinlich nicht solche Metallteile. 
+Prüfung: Besichtigung. 
+ANMERKUNG 
+Gerätestecker nach IEC 60320-1 verhindern das Berühren von aktiven Teilen beim Stecken und 
+Ziehen des Steckverbinders. 
+25.23 
+Verbindungsleitungen müssen die Anforderungen für die Netzanschlussleitung erfüllen mit 
+folgenden Ausnahmen: 
+– 
+Der Leiterquerschnitt der Verbindungsleitung wird auf der Grundlage des höchsten, während der 
+Prüfung nach Abschnitt 11 im Leiter geführten Stromes und nicht nach dem Bemessungsstrom des 
+Gerätes bestimmt. 
+– 
+Die Dicke der Isolierung des Leiters kann vermindert werden, wenn die Spannung des Leiters kleiner als 
+die Bemessungsspannung ist. 
+Prüfung: Besichtigung, Messung und falls erforderlich durch Prüfungen wie eine Spannungsfestigkeitsprüfung 
+nach 16.3. 
+25.24 
+Verbindungsleitungen dürfen nicht ohne Werkzeug abnehmbar sein, wenn bei ihrer Entfernung 
+die Einhaltung dieser Norm beeinträchtigt ist. 
+Prüfung: Besichtigung und falls erforderlich entsprechende Prüfungen. 
+25.25 
+Die Maße der Gerätestifte, die in eine Steckdose eingeführt werden, müssen mit den Maßen der 
+entsprechenden Steckdose verträglich sein. Die Maße der Stifte und der Frontfläche müssen mit den Maßen 
+des entsprechenden Steckers übereinstimmen, wie in IEC 60083 angegeben. 
+Prüfung: Erfolgt durch Messen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+90 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 91/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+87 
+26 Anschlussklemmen für äußere Leiter 
+26.1 
+Geräte müssen mit Anschlussklemmen oder ähnlichen wirksamen Einrichtungen für den Anschluss 
+von externen Leitern ausgestattet sein. Die Anschlussklemmen dürfen nur nach dem Entfernen einer nicht-
+abnehmbaren Abdeckung zugänglich sein. Erdanschlussklemmen dürfen jedoch zugänglich sein, wenn ein 
+Werkzeug für die Herstellung der Verbindung notwendig ist und Mittel zur Verfügung gestellt werden, um die 
+Drähte unabhängig von ihrer Verbindung zu klemmen. 
+ANMERKUNG 1 Schraubklemmen nach IEC 60998-2-1, schraubenlose Klemmen nach IEC 60998-2-2 und Klemmen 
+nach IEC 60999-1 werden als wirksame Einrichtung angesehen. 
+ANMERKUNG 2 Die Anschlussklemmen eines Einzelteiles wie z. B. eines Schalters dürfen als Anschlussklemmen für 
+äußere Leiter benutzt werden, wenn sie die Anforderungen dieses Abschnitts erfüllen. 
+Prüfung: Besichtigung und Handprobe. 
+26.2 
+Geräte mit Anschlussart X außer solchen mit einer besonders zugerichteten Leitung und Geräte 
+für den Anschluss an festverlegte Leitungen müssen mit Anschlussklemmen ausgestattet sein, in denen der 
+Anschluss durch Schrauben, Muttern oder gleichwirksame Mittel erfolgt, es sei denn, die Verbindungen sind 
+gelötet. 
+Schrauben und Muttern dürfen nicht zum Befestigen irgendwelcher anderer Einzelteile benutzt werden, 
+ausgenommen, dass sie auch innere Leiter klemmen dürfen, wenn diese so angeordnet sind, dass ihre Ver-
+lagerung beim Anschließen der Netzleiter unwahrscheinlich ist. 
+Werden Lötverbindungen benutzt, muss der Leiter so angeordnet oder befestigt sein, dass nicht die Lötung 
+allein gewährleistet, dass der Leiter in seiner Lage bleibt. Jedoch kann Löten allein verwendet werden, wenn 
+Trennstege so vorgesehen sind, dass die Kriech- und Luftstrecken zwischen aktiven Teilen und anderen 
+Metallteilen nicht unter die für zusätzliche Isolierung festgelegten Werte verringert werden können, sollte 
+sich der Leiter von der Lötstelle lösen. 
+ANMERKUNG 
+Das Einhängen des Leiters in eine Öse vor dem Löten wird als geeignetes Mittel angesehen, den Leiter 
+einer Netzanschlussleitung, ausgenommen Lahnlitzenleiter, in seiner Lage zu halten, vorausgesetzt, dass die Öse nicht 
+unangemessen groß ist. 
+ANMERKUNG 
+Leiter, die durch Löten befestigt sind, werden nicht als in ihrer Lage gehalten oder befestigt angesehen. 
+Es kann nicht darauf vertraut werden, dass sie allein durch Löten in ihrer Lage gehalten werden. In der Nähe der 
+Anschlussstelle  muss der Leiter  unabhängig vom Löten in seiner Lage gehalten werden. 
+Prüfung: Besichtigung und Messung. 
+26.3 
+Anschlussklemmen für Anschlussart X und solchen für den Anschluss an festverlegte Leitungen 
+müssen so gebaut sein, dass sie den Leiter zwischen Metallflächen klemmen, und zwar mit genügendem 
+Kontaktdruck, aber ohne ihn zu beschädigen. 
+Anschlussklemmen müssen so befestigt sein, dass, wenn die Klemmvorrichtung angezogen oder gelöst wird, 
+– 
+die Anschlussklemme nicht gelockert wird; 
+– 
+innere Leitungen keiner Beanspruchung unterworfen werden; 
+– 
+Kriech- und Luftstrecken nicht unter die in Abschnitt 29 festgelegten Werte herabgesetzt werden. 
+ANMERKUNG 1 Das Lockern von Klemmen kann verhindert werden durch Befestigung mit zwei Schrauben, durch 
+Befestigung mit einer Schraube in einer Vertiefung, so dass es kein merkliches Spiel gibt, oder durch andere geeignete 
+Mittel. Abdecken mit Vergussmasse ohne andere Mittel gegen Lockern gilt nicht als ausreichend. Selbsthärtende Harze 
+dürfen jedoch zur Sicherung gegen Lockern von Klemmen verwendet werden, wenn diese im sachgemäßen Gebrauch 
+nicht auf Drehung beansprucht werden. 
+Prüfung: Besichtigung und die Prüfung nach 8.6 9.6 der IEC 60999-1, wobei das eingesetzte Drehmoment 
+gleich zwei Drittel des angegebenen Drehmoments ist. 
+1 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+91 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 92/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+88 
+ANMERKUNG 2 Leiter werden als beschädigt angesehen, wenn sie tiefe oder scharfe Einkerbungen zeigen. 
+26.4 
+Klemmen für Anschlussart X außer bei Anschlussart X mit einer besonders zugerichteten Leitung 
+und Klemmen für den Anschluss an festverlegte Leitungen dürfen keine besondere Vorbereitung des Leiters 
+erfordern. Sie müssen so ausgeführt oder angeordnet sein, dass der Leiter nicht herausrutschen kann, wenn 
+Klemmschrauben oder -muttern festgezogen werden. 
+Prüfung: Besichtigung der Klemmen und der Leiter nach der Prüfung nach 26.3. 
+ANMERKUNG 
+Verlöten der Leiterlitzen, Verwendung von Kabelschuhen oder Ösen usw. erfüllen nicht die Anforde-
+rung, jedoch das Richten des Leiters vor seiner Einführung in die Klemme oder das Verdrillen eines Litzenleiters, um das 
+Ende zu verfestigen. 
+26.5 
+Anschlussklemmen für Anschlussart X müssen so angeordnet oder abgeschirmt sein, dass für 
+den Fall, dass ein Draht eines Litzenleiters beim Anschließen nicht erfasst würde, keine Gefahr einer zufälli-
+gen Verbindung zu anderen Teilen besteht, die eine Gefährdung verursachen könnte. 
+Prüfung: Besichtigung und wie folgt: 
+Ein 8 mm langes Stück der Isolierung wird vom Ende eines flexiblen Leiters mit einem Nennquerschnitt ent-
+sprechend Tabelle 11 entfernt. Ein Draht des Litzenleiters wird frei gelassen und die anderen Drähte werden 
+vollständig in die Anschlussklemme eingeführt und in ihr festgeklemmt. Der freie Draht wird, ohne die Isolie-
+rung zurückzuziehen, in jede mögliche Richtung gebogen, jedoch ohne scharfe Biegungen um Trennstege 
+auszuführen. 
+ANMERKUNG 
+Die Prüfung gilt auch für Schutzleiter. 
+Es darf keine Verbindung geben zwischen aktiven Teilen und berührbaren Metallteilen sowie bei Schutz-
+klasse II-Anordnungen zwischen aktiven Teilen und Metallteilen, die von berührbaren Metallteilen nur 
+durch zusätzliche Isolierung getrennt sind. 
+26.6 
+Klemmen für Anschlussart X und Klemmen für den Anschluss an festverlegte Leitungen müssen 
+den Anschluss von Leitern mit dem in Tabelle 13 festgelegten Querschnitt gestatten. Wenn jedoch eine 
+besonders zugerichtete Leitung verwendet wird, müssen die Klemmen nur für den Anschluss dieser Leitung 
+geeignet sein. 
+Tabelle 13 – Nennquerschnitt von Leitern 
+Nennquerschnitt  
+mm² 
+Bemessungsstrom des Gerätes 
+A 
+Flexible 
+Leitungen 
+Leitungen für 
+feste Verlegung 
+ 
+ 
+ 
+≤ 3 
+ 
+0,5 
+und 
+0,75 
+ 
+1 
+bis 
+2,5 
+ 
+> 3 
+und 
+≤ 6 
+ 
+0,75 
+und 
+1 
+ 
+1 
+bis 
+2,5 
+ 
+> 6 
+und 
+≤ 10 
+ 
+1 
+und 
+1,5 
+ 
+1 
+bis 
+2,5 
+ 
+> 10 
+und 
+≤ 16 
+ 
+1,5 
+und 
+2,5 
+ 
+1,5 
+bis 
+4 
+ 
+> 16 
+und 
+≤ 25 
+ 
+2,5 
+und 
+4 
+ 
+2,5 
+bis 
+6 
+ 
+> 25 
+und 
+≤ 32 
+ 
+4 
+und 
+6 
+ 
+4 
+bis 
+10 
+ 
+> 32 
+und 
+≤ 40 
+ 
+6 
+und 
+10 
+ 
+6 
+bis 
+16 
+ 
+> 40 
+und 
+≤ 63 
+ 
+10 
+und 
+16 
+ 
+10 
+bis 
+25 
+ 
+> 32 
+und 
+≤ 50 
+ 
+6 
+und 
+10 
+ 
+6 
+bis 
+16 
+ 
+> 50 
+und 
+≤ 63 
+ 
+10 
+und 
+16 
+ 
+10 
+bis 
+25 
+Prüfung: Besichtigung, Messung und Anschließen der Leitung mit dem kleinsten und dem größten ange-
+gebenen Querschnitt. 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+92 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 93/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+89 
+26.7 
+Klemmen für die Anschlussart X müssen nach dem Entfernen einer Abdeckung oder eines Teiles 
+des Gehäuses zugänglich sein. 
+Prüfung: Besichtigung. 
+26.8 
+Klemmen einschließlich der Schutzleiterklemme für den Anschluss an festverlegte Leitungen 
+müssen nahe beieinander angeordnet sein. 
+Prüfung: Besichtigung. 
+26.9 
+Buchsenklemmen müssen so angeordnet und aufgebaut sein, dass das Ende eines in die Bohrung 
+eingeführten Leiters sichtbar ist oder dass er um den halben Nenndurchmesser der Schraube oder mindes-
+tens 2,5 mm über das Gewindeloch hinausragen kann. 
+Prüfung: Besichtigung und Messung. 
+26.10 
+Schraubklemmen und schraubenlose Klemmen dürfen nicht für den Anschluss von Leitern von 
+leichten Zwillingsleitungen mit Lahnlitzenleiter verwendet werden, es sei denn, die Enden der Leiter sind mit 
+einer für Schraubklemmen geeigneten Vorrichtung versehen. 
+Prüfung: Besichtigung und Anwendung einer Zugkraft von 5 N auf die Verbindung. 
+Nach der Prüfung darf der Anschluss keine Beschädigung aufweisen, die die Übereinstimmung mit dieser 
+Norm beeinträchtigen könnte. 
+26.11 
+Für die Anschlussarten Y und Z dürfen Löt-, Schweiß-, Quetsch- und ähnliche Verbindungen für 
+den Anschluss äußerer Leiter verwendet werden. Bei Geräten der Schutzklasse II muss der Leiter so 
+angeordnet oder befestigt sein, dass es nicht auf Löten, Schweißen oder Quetschen allein beruht, dass er in 
+seiner Lage bleibt. Diese Methoden dürfen jedoch allein verwendet werden, wenn Trennstege so vorgesehen 
+sind, dass die Kriech- und Luftstrecken zwischen aktiven Teilen und anderen Metallteilen nicht unter die 
+für zusätzliche Isolierung festgelegten Werte verringert werden können, sollte der Leiter an der Löt- oder 
+Schweißstelle sich lösen oder aus der Quetschverbindung herausrutschen.  
+ANMERKUNG 1 Das Einhängen des Leiters in eine Öse vor dem Löten wird als geeignetes Mittel angesehen, den Leiter 
+einer Netzanschlussleitung, ausgenommen Lahnlitzenleiter, in seiner Lage zu halten. Voraussetzung ist, dass die Öse 
+nicht unangemessen groß ist. 
+ANMERKUNG 2 Eine Befestigung in der Nähe der Klemme, die sowohl die Isolierung als auch den Leiter flexibler 
+Leitungen klemmt, wird als passende zusätzliche Befestigung angesehen. 
+ANMERKUNG 
+Leiter, die durch Löten befestigt sind, werden nicht als in ihrer Lage gehalten oder befestigt angesehen. 
+Es kann nicht darauf vertraut werden, dass sie allein durch Löten in ihrer Lage gehalten werden. In der Nähe der 
+Anschlussstelle  muss der Leiter  unabhängig vom Löten in seiner Lage gehalten werden.  
+Prüfung: Besichtigung und Messung. 
+27 Schutzleiteranschluss 
+27.1 
+Berührbare Metallteile von Geräten der Schutzklassen 0I und I, die im Falle eines Isolations-
+fehlers aktiv werden können, müssen dauerhaft und zuverlässig mit einer Schutzleiterklemme im Innern des 
+Gerätes oder mit dem Schutzkontakt des Gerätesteckers verbunden sein. 
+Schutzleiterklemmen und Schutzkontakte dürfen nicht mit der Klemme für den Neutralleiter verbunden sein. 
+Geräte der Schutzklassen 0, II und III dürfen keinen Schutzleiteranschluss haben. 
+SELV-Stromkreise dürfen nicht geerdet werden, es sei denn, es sind PELV-Stromkreise. 
+Prüfung: Besichtigung. 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+93 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 94/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+90 
+ANMERKUNG 1 Falls berührbare Metallteile von aktiven Teilen durch Metallteile abgeschirmt sind, die ihrerseits mit 
+der Schutzleiterklemme oder dem Schutzkontakt verbunden sind, gilt es als unwahrscheinlich, dass sie im Falle eines 
+Isolationsfehlers aktiv werden. 
+ANMERKUNG 2 Metallteile hinter einer dekorativen Abdeckung, die der Prüfung nach 21.1 nicht standhalten, werden als 
+berührbare Metallteile angesehen. 
+27.2 
+Die Klemmmittel von Schutzleiterklemmen müssen angemessen gegen zufälliges Lockern gesichert 
+sein. 
+ANMERKUNG 1 Im Allgemeinen sorgen die Bauarten, die für Strom führende Klemmen gewöhnlich benutzt werden, 
+ausgenommen einige Arten Buchsenklemmen, für ausreichende Elastizität, um dieser Anforderung zu genügen. Für 
+andere Bauarten können besondere Maßnahmen wie die Anwendung eines angemessenen elastischen Teiles, dessen 
+versehentliches Entfernen unwahrscheinlich ist, erforderlich sein. 
+Klemmen zum Anschluss äußerer Potentialausgleichsleiter müssen den Anschluss von Leitern mit einem 
+Nennquerschnitt von 2,5 mm2 bis 6 mm2 gewährleisten und dürfen nicht zur Schutzleiterverbindung zwischen 
+verschiedenen Geräteteilen benutzt werden. Es darf nicht möglich sein, die Leiter ohne Werkzeug zu lösen. 
+ANMERKUNG 2 Der Schutzleiter in einer Netzanschlussleitung gilt nicht als Potentialausgleichsleiter. 
+Prüfung: Besichtigung und Handprüfung. 
+27.3 
+Wird ein abnehmbares Teil mit einem Schutzleiterkontakt in ein anderes Teil des Gerätes einge-
+steckt, so muss die Schutzleiterverbindung vor der Verbindung der Stromleiter erfolgen. Die Verbindung der 
+Stromleiter muss vor der Verbindung des Schutzleiters getrennt werden, wenn das Teil entfernt wird. 
+Bei Geräten mit Netzanschlussleitungen muss die Anordnung der Klemmen oder die Länge der Leiter von 
+der Zugentlastung bis zu den Klemmen so sein, dass die Strom führenden Leiter vor dem Schutzleiter 
+gestrafft werden, falls die Leitung aus der Zugentlastung rutscht. 
+Prüfung: Besichtigung und Handprobe. 
+27.4 
+Alle Teile der Schutzleiterklemme, die zum Anschluss äußerer Leiter bestimmt sind, müssen so 
+beschaffen sein, dass keine Korrosionsgefahr ausgeht von der Berührung zwischen diesen Teilen und dem 
+Kupfer des Schutzleiters oder einem anderen Metall, das mit diesen Teilen in Berührung ist. 
+Teile, die Schutzleiterverbindung gewährleisten, ausgenommen Teile eines Metallrahmens oder Gehäuses, 
+müssen aus Metall und ausreichend korrosionsbeständig sein. Bestehen solche Teile aus Stahl, müssen sie 
+an den wesentlichen Stellen mit einem galvanischen Überzug von mindestens 5 μm Dicke versehen sein. 
+ANMERKUNG 1 Teile aus Kupfer oder Kupferlegierungen mit mindestens 58 % Kupfer für Teile, die kalt bearbeitet 
+werden, und mindestens 50 % für andere Teile sowie Teile aus nichtrostendem Stahl mit mindestens 13 % Chrom 
+werden als ausreichend korrosionsbeständig angesehen. 
+ANMERKUNG 2 Die wesentlichen Stellen von Stahlteilen sind insbesondere Stellen, die dazu neigen, einen Fehlerstrom 
+zu übertragen. Bei der Beurteilung solcher Stellen muss die Verteilung der Dicke des Überzuges im Verhältnis zur Form 
+des Teiles berücksichtigt werden. Im Zweifelsfall wird die Dicke des Überzuges nach ISO 2178 oder ISO 1463 gemessen. 
+Teile aus beschichtetem oder unbeschichtetem Stahl, die nur dazu bestimmt sind, Kontaktdruck zu erzeugen 
+oder zu übertragen, müssen ausreichend gegen Rosten geschützt sein. 
+ANMERKUNG 3 Beispiele von Teilen, die Schutzleiterverbindung gewährleisten, und von Teilen, die nur dazu bestimmt 
+sind, Kontaktdruck zu erzeugen oder zu übertragen, sind in Bild 10 dargestellt. 
+ANMERKUNG 4 Teile mit einer Behandlung, wie z. B. Verchromung, werden im Allgemeinen nicht als ausreichend 
+korrosionsbeständig angesehen; sie dürfen jedoch verwendet werden, um Kontaktdruck zu erzeugen oder zu übertragen. 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+94 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 95/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+91 
+Wenn der Körper einer Schutzleiterklemme Teil eines Rahmens oder Gehäuses aus Aluminium oder einer 
+Aluminiumlegierung ist, so müssen Vorkehrungen getroffen werden, um die Gefahr einer Kontaktkorrosion 
+zwischen Kupfer und Aluminium oder ihren Legierungen zu vermeiden. 
+Prüfung: Besichtigung und Messung. 
+27.5 
+Die Verbindung zwischen der Schutzleiterklemme oder dem Schutzleiterkontakt und geerdeten 
+Metallteilen muss einen geringen Widerstand haben. 
+Falls die Luftstrecken bei Basisisolierung in einem PELV-Kreis auf der Bemessungsspannung des 
+Gerätes beruhen, gilt diese Anforderung nicht für die Schutzleiterverbindungen im PELV-Kreis. 
+Prüfung wie folgt: 
+Ein Strom aus einer Stromquelle mit einer Leerlaufspannung nicht über 12 V (Wechsel- oder Gleichspan-
+nung) und gleich dem 1,5fachen Bemessungsstrom des Gerätes oder 25 A, je nachdem was größer ist, 
+wird von der Schutzleiterklemme oder dem Schutzkontakt nacheinander zu jedem berührbaren Metallteil 
+geleitet. 
+Der Spannungsfall zwischen der Schutzleiterklemme des Gerätes oder dem Schutzkontakt des Geräte-
+steckers und dem berührbaren Metallteil wird gemessen. Der aus dem Strom und diesem Spannungsfall 
+berechnete Widerstand darf 0,1 Ω nicht überschreiten. 
+ANMERKUNG 1 Im Zweifelsfall wird die Prüfung durchgeführt, bis der Beharrungszustand erreicht ist. 
+ANMERKUNG 2 Der Widerstand der Netzanschlussleitung wird in die Widerstandsmessung nicht einbezogen. 
+ANMERKUNG 3 Es ist darauf zu achten, dass der Übergangswiderstand zwischen der Spitze des Prüfdorns und dem zu 
+prüfenden Metallteil das Messergebnis nicht beeinflusst. 
+27.6 
+Die Leiterbahnen auf Leiterplatten dürfen bei Handgeräten nicht zur Herstellung der Schutzleiter-
+verbindung benutzt werden. Bei anderen Geräten dürfen sie zur Herstellung der Schutzleiterverbindung 
+benutzt werden, wenn 
+– 
+mindestens zwei Bahnen mit unabhängigen Lötpunkten benutzt werden und das Gerät für jeden Strom-
+kreis 27.5 entspricht; 
+– 
+der Werkstoff der Leiterplatte der IEC 60249-2-4 oder IEC 60249-2-5 entspricht. 
+Prüfung: Besichtigung und entsprechende Prüfungen. 
+27.6 
+Bei Handgeräten dürfen die Leiterbahnen auf Leiterplatten zur Schutzleiterverbindung nicht benutzt 
+werden. Bei anderen Geräten dürfen sie zur Schutzleiterverbindung angewendet werden, wenn mindestens 
+zwei Bahnen mit unabhängigen Lötpunkten vorhanden sind und das Gerät für jeden Stromkreis 27.5 
+entspricht. 
+Prüfung: Besichtigung und entsprechende Prüfungen. 
+28 Schrauben und Verbindungen 
+28.1 
+Befestigungen, deren Versagen die Einhaltung dieser Norm beeinträchtigen kann, elektrische Ver-
+bindungen und Schutzleiterverbindungen müssen den im sachgemäßen Gebrauch auftretenden mechani-
+schen Beanspruchungen standhalten. 
+Für diese Zwecke verwendete Schrauben dürfen nicht aus einem Metall bestehen, das weich ist oder zum 
+Fließen neigt wie z. B. Zink oder Aluminium. Falls sie aus Isolierstoff sind, müssen sie einen Nenndurch-
+messer von mindestens 3 mm haben und dürfen nicht für elektrische Verbindungen oder Schutzleiter-
+verbindungen benutzt werden. 
+Schrauben, die bei elektrischen Verbindungen oder Schutzleiterverbindungen benutzt werden, müssen in 
+Metall eingreifen. 
+2 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+95 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 96/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+92 
+Schrauben dürfen nicht aus Isolierstoff sein, wenn ihr Ersatz durch eine Metallschraube eine zusätzliche 
+oder verstärkte Isolierung beeinträchtigen könnte. Schrauben, die beim Ersetzen einer Netzanschluss-
+leitung mit Anschlussart X oder bei Benutzerwartung entfernt werden können, dürfen nicht aus Isolierstoff 
+sein, wenn ihr Ersatz durch eine Metallschraube die Basisisolierung beeinträchtigen könnte. 
+Prüfung: Besichtigung und wie folgt: 
+Schrauben und Muttern werden geprüft, wenn sie 
+– 
+bei elektrischen Verbindungen benutzt werden; 
+– 
+bei Schutzleiterverbindungen benutzt werden, es sei denn, es werden mindestens zwei Schrauben oder 
+Muttern benutzt; 
+– 
+wahrscheinlich festgezogen werden 
+• 
+während der Benutzerwartung, 
+• 
+beim Ersetzen der Netzanschlussleitung bei Anschlussart X, 
+• 
+während der Installation. 
+Die Schrauben und Muttern werden ruckfrei festgezogen und gelöst 
+– 
+10-mal bei Schrauben, die in Isolierstoffgewinde eingreifen; 
+– 
+5-mal bei Muttern und anderen Schrauben. 
+In Isolierstoffgewinde eingreifende Schrauben werden dabei jedes Mal vollständig entfernt und wieder einge-
+setzt. 
+Bei der Prüfung von Schrauben und Muttern von Anschlussklemmen wird eine Leitung für feste Verlegung 
+oder eine flexible Leitung mit dem größten, in Tabelle 13 festgelegten Querschnitt in die Klemme eingelegt. 
+Sie wird vor jedem Festziehen neu eingelegt. 
+Die Prüfung wird mit einem geeigneten Schraubendreher, Schraubenschlüssel oder Steckschlüssel durch 
+Ausüben des in Tabelle 14 angegebenen Drehmomentes durchgeführt. 
+Spalte I gilt für Metallschrauben ohne Kopf, die nach dem Festziehen nicht aus dem Gewindeloch vorstehen. 
+Spalte II gilt 
+– 
+für andere Metallschrauben und Muttern; 
+– 
+für Schrauben aus Isolierstoff 
+• 
+mit Sechskantkopf, dessen Schlüsselweite größer ist als der Gewinde-Außendurchmesser, 
+• 
+mit Zylinderkopf und Innensechskant, dessen Eckenmaß größer ist als der Gewinde-Außendurch-
+messer, 
+• 
+mit Schlitz- oder Kreuzschlitzkopf, bei dem die Länge des Schlitzes größer ist als das 1,5fache des 
+Gewinde-Außendurchmessers. 
+Spalte III gilt für andere Isolierstoffschrauben. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+96 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 97/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+93 
+Tabelle 14 – Drehmoment für die Prüfung von Schrauben und Muttern 
+Drehmoment 
+Nm 
+Nenndurchmesser der Schraube 
+(Gewinde-Außendurchmesser) 
+mm 
+I 
+II 
+III 
+ 
+ 
+ 
+≤ 2,8 
+0,2 
+0,4 
+0,4 
+ 
+> 2,8 
+und 
+≤ 3,0 
+0,25 
+0,5 
+0,5 
+ 
+> 3,0 
+und 
+≤ 3,2 
+0,3 
+0,6 
+0,5 
+ 
+> 3,2 
+und 
+≤ 3,6 
+0,4 
+0,8 
+0,6 
+ 
+> 3,6 
+und 
+≤ 4,1 
+0,7 
+1,2 
+0,6 
+ 
+> 4,1 
+und 
+≤ 4,7 
+0,8 
+1,8 
+0,9 
+ 
+> 3,7 
+und 
+≤ 5,3N7 
+ 
+> 4,7 
+und  
+≤ 5,3 
+0,8 
+0,8 
+2,0 
+2,0 
+1,0 
+1,0 
+ 
+> 5,3 
+– 
+2,5 
+1,25 
+Es darf kein Schaden entstehen, der den weiteren Gebrauch der Befestigungen oder Verbindungen beein-
+trächtigt. 
+28.2 
+Elektrische Verbindungen und Schutzleiterverbindungen müssen so ausgeführt sein, dass der Kon-
+taktdruck nicht über Isolierstoff übertragen wird, der zum Schrumpfen oder Verformen neigt, es sei denn, die 
+metallenen Teile besitzen genügend Elastizität, um ein mögliches Schrumpfen oder Verformen des Isolier-
+stoffes auszugleichen. 
+ANMERKUNG 
+Keramisches Material neigt nicht zum Schrumpfen oder Verformen. 
+Diese Anforderung gilt nicht für elektrische Verbindungen in Stromkreisen, die einen Strom nicht über 0,5 A 
+führen. 
+Prüfung: Besichtigung. 
+28.3 
+Blechschrauben dürfen nur für elektrische Verbindungen verwendet werden, wenn sie die Teile 
+zusammenklemmen. 
+Gewindeschneidschrauben dürfen nur dann für elektrische Verbindungen verwendet werden, wenn sie ein 
+vollgeformtes Normgewinde schneiden. Solche Schrauben dürfen nicht verwendet werden, wenn ihre Betäti-
+gung durch den Benutzer oder Installateur wahrscheinlich ist, es sei denn, das Gewinde ist durch Drücken 
+geformt. 
+Blech- und Gewindeschneidschrauben dürfen zur Herstellung von Schutzleiterverbindungen verwendet 
+werden, vorausgesetzt, es ist nicht notwendig, die Verbindung im sachgemäßen Gebrauch zu unterbrechen, 
+und dass mindestens zwei Schrauben für jede Verbindung verwendet werden. 
+Gewindeschneidschrauben und gewindeformende Schrauben dürfen nur für elektrische Verbindungen 
+verwendet werden, wenn sie ein vollgeformtes Normgewinde erzeugen. Gewindeschneidschrauben dürfen 
+nicht verwendet werden, wenn ihre Betätigung durch den Benutzer oder Installateur wahrscheinlich ist. 
+Gewindeschneid-, gewindeformende und Blechschrauben dürfen zur Herstellung von Schutzleiterver-
+bindungen verwendet werden, vorausgesetzt, es ist nicht notwendig, die eine Schraubverbindung zu lösen 
+– 
+im sachgemäßen Gebrauch; 
+– 
+während der Benutzerwartung; 
+– 
+beim Ersetzen einer Netzanschlussleitung mit Anschlussart X oder 
+– 
+während der Installation. 
+                                                     
+N7 Nationale Fußnote: Es ist nur die englische Fassung betroffen. 
+2 
+2 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+97 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 98/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+94 
+Für jede Schutzleiterverbindung müssen mindestens zwei Schrauben verwendet werden, es sei denn, die 
+Schraube formt ein Gewinde, dessen Länge mindestens dem halben Schraubendurchmesser entspricht. 
+Prüfung: Besichtigung. 
+28.4 
+Schrauben und Muttern, die eine mechanische Verbindung zwischen verschiedenen Teilen des 
+Gerätes herstellen, müssen gegen Lockern gesichert sein, falls sie auch elektrische Verbindungen oder 
+Schutzleiterverbindungen herstellen. 
+ANMERKUNG 1 Diese Forderung gilt nicht für Schrauben im Schutzleiterstromkreis, falls mindestens zwei Schrauben für 
+die Verbindung verwendet werden oder ein alternativer Schutzleiterstromkreis vorhanden ist. 
+ANMERKUNG 2 Federscheiben, Sicherungsscheiben und Kronensicherungen als Teil des Schraubenkopfes sind Mittel, 
+die eine ausreichende Sicherung darstellen. 
+ANMERKUNG 3 Vergussmasse, die beim Erwärmen erweicht, gilt nur für Schraubverbindungen, die im sachgemäßen 
+Gebrauch nicht auf Verdrehung beansprucht werden, als ausreichende Sicherung. 
+Niete, die für elektrische Verbindungen oder Schutzleiterverbindungen verwendet werden, müssen gegen 
+Lockern gesichert werden, falls diese Verbindungen im sachgemäßen Gebrauch auf Verdrehung bean-
+sprucht werden. 
+ANMERKUNG 4 Diese Anforderung bedeutet nicht, dass mehr als ein Niet notwendig ist, um eine Schutzleiterver-
+bindung herzustellen. 
+ANMERKUNG 5 Ein unrunder Zapfen oder eine entsprechende Nut kann ausreichend sein. 
+Prüfung: Besichtigung und Handprobe. 
+29 Luftstrecken, Kriechstrecken und feste Isolierung 
+Die Geräte müssen so gebaut sein, dass Luftstrecken, Kriechstrecken und feste Isolierung ausreichend 
+dimensioniert sind, um den zu erwartenden elektrischen Beanspruchungen standzuhalten. 
+Prüfung: Durchführung der Prüfungen nach 29.1 bis 29.3. 
+Falls auf Leiterplatten Beschichtungen benutzt werden, um die Mikroumgebung der Leiterplatte zu schützen 
+oder um Basisisolierung zu gewähren, gilt Anhang J. 
+Falls auf Leiterplatten Beschichtungen benutzt werden, um die Mikroumgebung der Leiterplatte zu schützen 
+(Typ-A-Beschichtung) oder um Basisisolierung (Typ-B-Beschichtung) zu gewähren, gilt Anhang J. Unter 
+Typ-A-Beschichtung gilt für die Mikroumgebung der Verschmutzungsgrad 1. Unter Typ-B-Beschichtung gibt 
+es keine Anforderungen für die Kriech- und Luftstrecken. 
+Falls auf Leiterplatten Beschichtungen benutzt werden, um die geschützte Mikroumgebung der Leiterplatte 
+(Typ-1-Beschichtung) oder um Basisisolierung (Typ-2-Beschichtung) zu gewährleisten, gilt Anhang J. Unter 
+Typ-1-Beschichtung gilt für die Mikroumgebung  Verschmutzungsgrad 1. Unter Typ-2-Beschichtung gibt es 
+keine Anforderungen an Kriech- und Luftstrecken. 
+ANMERKUNG 1 Die Anforderungen und Prüfungen basieren auf IEC 60664-1, aus der weitere Informationen ent-
+nommen werden können. 
+ANMERKUNG 2 Die Bewertung der Luftstrecken, Kriechstrecken und fester Isolierung ist getrennt vorzunehmen. 
+2 
+1 
+1/2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+98 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 99/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+95 
+29.1 
+Luftstrecken dürfen nicht kleiner sein als die in Tabelle 16 festgelegten Werte, wobei die Bemes-
+sungsstoßspannungen für die Überspannungskategorien der Tabelle 15 zu berücksichtigen sind. Jedoch 
+können kleinere Abstände für Basisisolierung und Funktionsisolierung verwendet werden, wenn die Luft-
+strecke die Stoßspannungsprüfung nach Abschnitt 14 erfüllt. Die Prüfung ist nur anwendbar, wenn der Auf-
+bau derart ist, dass keine Wahrscheinlichkeit besteht, dass die Abstände durch Verspannung, durch 
+Verschleiß, durch Bewegung der Teile oder während der Montage verringert werden. 
+29.1 
+Luftstrecken dürfen nicht kleiner sein als die in Tabelle 16 festgelegten Werte, wobei die Bemes-
+sungsstoßspannungen für die Überspannungs-Kategorien der Tabelle 15 zu berücksichtigen sind, es sei 
+denn, sie erfüllen für Basisisolierung und Funktionsisolierung die Stoßspannungsprüfung nach 
+Abschnitt 14. Ist der Aufbau jedoch derart, dass die Abstände durch Abnutzung, Verspannung, durch 
+Bewegung der Teile oder während der Montage beeinflusst werden können, wird die Luftstrecke für 
+Bemessungsstoßspannungen von 1 500 V und größer um 0,5 mm erhöht und die Stoßspannungsprüfung 
+ist nicht anwendbar. 
+Die Stoßspannungsprüfung ist auch nicht anwendbar bei Verschmutzungsgrad 3 der Mikroumgebung oder 
+für die Basisisolierung von Geräten der Schutzklassen 0 und 0I. 
+ANMERKUNG 1 Konstruktionsbeispiele, für die die Prüfung anwendbar sein kann, sind solche mit starren Teilen oder 
+Teilen, die durch Vergießen in ihrer Lage gehalten werden. 
+Konstruktionsbeispiele, bei denen der Abstand wahrscheinlich beeinflusst wird, sind solche mit Lötverbindungen, 
+schraublose Klemmen und Schraubklemmen sowie Luftstrecken von Motorwicklungen. 
+Für Geräte gilt Überspannungskategorie II. 
+ANMERKUNG 2 Wenn ein interner Stromkreis durch eine Einrichtung im Gerät wie durch eine Überspannungsableiter 
+Überspannungsschutzeinrichtung nach IEC 61643-1 besonders geschützt ist, kann Überspannungskategorie I gelten. 
+ANMERKUNG 3 Anhang K gibt Informationen zu den Überspannungskategorien. 
+Tabelle 15 – Bemessungsstoßspannung 
+Bemessungsstoßspannung  
+V 
+Überspannungskategorie 
+Bemessungsspannung 
+V 
+I 
+II 
+III 
+ 
+  
+≤ 50 
+330 
+500 
+800 
+ 
+> 50 und 
+≤ 150 
+800 
+1 500 
+2 500 
+ 
+> 150 und 
+≤ 300 
+1 500 
+2 500 
+4 000 
+ANMERKUNG 1 
+Bei Mehrphasengeräten ist die Spannung Phase-Neutralleiter oder Phase-Schutzleiter 
+als Bemessungsspannung zu verwenden. 
+ANMERKUNG 2 
+Die Werte beruhen auf der Annahme, dass das Gerät keine höheren Überspannungen 
+erzeugt als die festgelegten. Werden höhere Überspannungen erzeugt, so müssen die Luftstrecken ent-
+sprechend vergrößert werden. 
+Geringere Luftstrecken als in Tabelle 16 festgelegt sind nicht erlaubt für die Basisisolierung bei Geräten 
+der Schutzklassen 0 und 0I oder wenn Verschmutzungsgrad 3 gilt. 
+1 
+1 
+1 
+2 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+99 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 100/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+96 
+Tabelle 16 – Mindestluftstrecken 
+Bemessungsstoßspannung 
+V 
+Mindestluftstrecke a) 
+mm 
+330 
+0,5 b), c) 
+500 
+0,5 b), c) 
+800 
+0,5 b), c) 
+1 500 
+1,0 c) 
+1 500 
+0,5 c)  
+2 500 
+2,0 c) 
+2 500 
+1,5 
+4 000 
+3,5 c) 
+4 000 
+3,0 
+6 000 
+6,0 c) 
+6 000 
+5,5 
+8 000 
+8,5 c) 
+8 000 
+8,0 
+10 000 
+11,5 
+10 000 
+11,0 
+a) Die festgelegten Abstände gelten nur für Luftstrecken. 
+b) Die kleineren in IEC 60664-1 festgelegten Luftstrecken wurden aus prakti-
+schen Gründen, z. B. Massenfertigungstoleranzen, nicht übernommen. 
+c) Die Werte in IEC 60664-1 wurden um 0,5 mm erhöht, um etwaige Verrin-
+gerungen während der Lebensdauer des Gerätes zu berücksichtigen. 
+c) Der Wert ist auf 0,8 mm bei Verschmutzungsgrad 3 zu erhöhen. 
+Prüfung: Besichtigung und Messung. 
+Teile wie Sechskantmuttern, die in unterschiedliche Positionen während des Zusammenbaus festgezogen 
+werden können, und bewegliche Teile werden in ihre ungünstigste Lage gebracht. 
+Während der Messung wird eine Kraft auf blanke Leiter, ausgenommen die von Heizelementen, und berühr-
+bare Oberflächen ausgeübt im Bestreben, die Luftstrecken zu verkleinern. Die Kraft beträgt: 
+– 
+2 N für blanke Leiter; 
+– 
+30 N für berührbare Oberflächen. 
+Die Kraft wird mittels der Prüfsonde B nach IEC 61032 ausgeübt. Öffnungen werden als mit einem flachen 
+Metallstück abgedeckt angesehen. 
+ANMERKUNG 4 Verfahren für die Messung von Luftstrecken sind in IEC 60664-1 festgelegt. 
+ANMERKUNG 5 Das Verfahren zur Beurteilung der Luftstrecken ist in Anhang L angegeben. 
+ANMERKUNG 6 Bei Geräten, die für den Gebrauch in Höhen über 2 000 m bestimmt sind, sollten die in Tabelle A.2 der 
+IEC 60664-1 festgelegten Korrekturfaktoren für die Höhe berücksichtigt werden. 
+29.1.1 
+Die Luftstrecken der Basisisolierung müssen ausreichend sein, um die Überspannungen auszu-
+halten, die im Gebrauch erwartet werden können, wobei die Bemessungsstoßspannung zu berücksichtigen 
+ist. Es gelten die Werte der Tabelle 16 oder die Stoßspannungsprüfung nach Abschnitt 14 wird angewendet. 
+ANMERKUNG 
+Die Überspannungen können äußere Ursachen haben oder durch Schaltvorgänge verursacht sein. 
+Bei Verschmutzungsgrad 1 kann die Luftstrecke an den Anschlussklemmen von Rohrheizkörpern auf 
+1,0 mm vermindert werden. 
+1 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+100 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 101/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+97 
+Lackierte Drähte von Wicklungen gelten als blanke Leiter, aber die in Tabelle 16 festgelegten Luftstrecken 
+werden um 0,5 mm für Werte der Bemessungsstoßspannung von mindestens 1 500 V verringert. 
+Lackierte Leiter von Wicklungen gelten als blanke Leiter. 
+Prüfung: Messung. 
+29.1.2 
+Luftstrecken von zusätzlicher Isolierung dürfen nicht kleiner sein als jene in Tabelle 16 für 
+Basisisolierung. 
+Prüfung: Messung. 
+29.1.3 
+Luftstrecken von verstärkter Isolierung dürfen nicht kleiner sein als jene in Tabelle 16 für 
+Basisisolierung, aber unter Verwendung des nächsthöheren Tabellenwertes für die Bemessungs-
+stoßspannung als Bezug. 
+ANMERKUNG 
+Bei doppelter Isolierung, die kein leitfähiges Teil zwischen Basisisolierung und zusätzlicher Isolie-
+rung hat, werden die Luftstrecken zwischen aktiven Teilen und der berührbaren Oberfläche gemessen, und das 
+Isolationssystem wird als verstärkte Isolierung angesehen, wie in Bild 11 dargestellt. 
+Prüfung: Messung. 
+29.1.4 
+Bei Funktionsisolierung gelten die Werte der Tabelle 16. Luftstrecken werden jedoch nicht 
+festgelegt, wenn das Gerät bei überbrückter Funktionsisolierung die Anforderungen von Abschnitt 19 erfüllt. 
+Lackierte Leiter von Wicklungen gelten als blanke Leiter. Jedoch werden Luftstrecken an Kreuzungspunkten 
+nicht gemessen. 
+Die Luftstrecke zwischen den Oberflächen von PTC-Heizelementen kann auf 1 mm verringert werden. 
+Lackierte Drähte von Wicklungen gelten als blanke Leiter, aber die in Tabelle 16 festgelegten Luftstrecken 
+werden um 0,5 mm für Werte der Bemessungsstoßspannung von mindestens 1 500 V verringert. 
+Prüfung: Messung und Prüfung, wenn erforderlich. 
+29.1.5 
+Bei Geräten mit höheren Arbeitsspannungen als Bemessungsspannung, z. B. auf der 
+Sekundärseite eines Aufwärtstransformators oder bei einer Resonanzspannung, muss die Spannung zur 
+Bestimmung der Luftstrecken aus Tabelle 16 die Summe aus der Bemessungsstoßspannung und der 
+Differenz zwischen dem Scheitelwert der Arbeitsspannung und dem Scheitelwert der Bemessungs-
+spannung sein. 
+ANMERKUNG 1 Luftstrecken für Zwischenwerte der Tabelle 16 können durch Interpolation bestimmt werden. 
+ANMERKUNG 2 Bei Spannungen größer als 10 000 V gelten für die Bestimmung der Luftstrecken die in Tabelle 2 der 
+IEC 60664-1 festgelegten Luftstreckenwerte des Falles A. Sie werden jedoch um 0,5 mm erhöht, wobei der nächst-
+höhere Wert der Stoßspannungsfestigkeit in der Tabelle verwendet wird. 
+Wenn die Sekundärseite eines Abwärtstransformators geerdet ist oder es einen geerdeten Schirm zwischen 
+den Primär- und Sekundärwicklungen gibt, dürfen die Luftstrecken der Basisisolierung auf der Sekundär-
+seite nicht kleiner sein als jene in Tabelle 16, aber unter Verwendung des nächstniedrigeren Tabellenwertes 
+für die Bemessungsstoßspannung als Bezug. 
+ANMERKUNG 3 Die Verwendung eines Trenntransformators ohne geerdeten Schutzschirm oder geerdeter Sekundär-
+seite gestattet nicht eine Verkleinerung der Bemessungsstoßspannung. 
+Bei Stromkreisen, die mit einer geringeren Spannung als der Bemessungsspannung betrieben werden, bei-
+spielsweise auf der Sekundärseite eines Transformators, basieren die Luftstrecken der Funktions-
+isolierung auf der Arbeitsspannung, die als Bemessungsspannung in Tabelle 15 verwendet wird. 
+Prüfung: Messung. 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+101 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 102/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+98 
+29.2 
+Die Geräte müssen so gebaut sein, dass die Kriechstrecken nicht kleiner sind als die für die 
+Arbeitsspannung geeigneten, wobei die Werkstoffgruppe und der Verschmutzungsgrad zu berücksichtigen 
+sind. 
+ANMERKUNG 1 Die Arbeitsspannung für Teile, die an den Neutralleiter angeschlossen sind, ist dieselbe wie für Teile, 
+die an die Phase angeschlossen sind.  
+ANMERKUNG 1 Die Arbeitsspannung für Teile, die an den Neutralleiter angeschlossen sind, ist dieselbe wie für Teile, 
+die an die Phase angeschlossen sind, und dies ist dann die Arbeitsspannung für die Basisisolierung.  
+Verschmutzungsgrad 2 gilt, es sei denn, 
+– 
+es wurden Vorkehrungen getroffen, um die Isolierung zu schützen. In diesem Fall gilt Verschmutzungs-
+grad 1; 
+– 
+die Isolierung ist leitender Verschmutzung unterworfen. In diesem Fall gilt Verschmutzungsgrad 3. 
+ANMERKUNG 2 Eine Erklärung des Verschmutzungsgrades wird in Anhang M gegeben. 
+Prüfung: Messung. 
+ANMERKUNG 3 Verfahren für die Messung von Kriechstrecken sind in IEC 60664-1 festgelegt. 
+Teile wie Sechskantmuttern, die in unterschiedlichen Positionen während des Zusammenbaus festgezogen 
+werden können, und bewegliche Teile werden in ihre ungünstigste Lage gebracht. 
+Während der Messung wird eine Kraft auf blanke Leiter, ausgenommen die von Heizelementen, und berühr-
+bare Oberflächen ausgeübt im Bestreben, die Kriechstrecken zu verkleinern. Die Kraft beträgt: 
+– 
+2 N für blanke Leiter; 
+– 
+30 N für berührbare Oberflächen. 
+Die Kraft wird mittels der Prüfsonde B nach IEC 61032 ausgeübt. 
+Zwischen Werkstoffgruppe und den Werten der Vergleichszahl der Kriechwegbildung (CTI), wie in 2.7.1.3 der 
+IEC 60664-1 angegeben, besteht folgende Beziehung: 
+– 
+Werkstoffgruppe I: 
+600 ≤ CTI; 
+– 
+Werkstoffgruppe II: 
+400 ≤ CTI < 600; 
+– 
+Werkstoffgruppe IIIa: 
+175 ≤ CTI < 400; 
+– 
+Werkstoffgruppe IIIb: 
+100 ≤ CTI < 175. 
+Diese CTI-Werte ergeben sich entsprechend IEC 60112 unter Verwendung der Lösung A. Wenn der CTI-
+Wert des Werkstoffs nicht bekannt ist, wird eine Prüfung zur Bestimmung der Prüfzahl der Kriechwegbildung 
+(PTI) entsprechend Anhang N bei den festgelegten CTI-Werten durchgeführt, um die Werkstoffgruppe zu 
+ermitteln. 
+ANMERKUNG 4 Die Prüfung für die Vergleichszahl der Kriechwegbildung (CTI) in Übereinstimmung mit IEC 60112 ist 
+dazu bestimmt, die Tauglichkeit verschiedener Isolierstoffe unter Prüfbedingungen zu vergleichen. Auf eine waagerechte 
+Oberfläche fallende Tropfen eines wässrigen Kontaminationsmittels führen dabei zu einer elektrolytischen Leitung. Die 
+Prüfung gibt einen qualitativen Vergleich, aber wenn Isolierstoffe die Tendenz haben, Kriechwege zu bilden, kann sie 
+auch einen quantitativen Vergleich bieten, nämlich die Vergleichszahl der Kriechwegbildung. 
+ANMERKUNG 5 Das Verfahren zur Beurteilung der Kriechstrecken ist in Anhang L angegeben. 
+ANMERKUNG 6 In einem System mit doppelter Isolierung wird die Arbeitsspannung für beide, Basisisolierung und 
+zusätzliche Isolierung, als Arbeitsspannung für das vollständige System der doppelten Isolierung genommen. Es 
+wird keine Aufteilung nach Dicken und dielektrischen Konstanten der Basisisolierung und der zusätzlichen Isolierung 
+vorgenommen. 
+29.2.1 
+Kriechstrecken der Basisisolierung dürfen nicht kleiner sein als jene in Tabelle 17. 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+102 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 103/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+99 
+Außer bei Verschmutzungsgrad 1 darf die entsprechende Kriechstrecke nicht kleiner sein als das kleinste 
+Maß, das für Luftstrecken in Tabelle 16 festgelegt ist, wenn die Prüfung nach Abschnitt 14 für die Über-
+prüfung einzelner Luftstrecken benutzt wurde. 
+Tabelle 17 – Mindestkriechstrecken für Basisisolierung 
+Kriechstrecke  
+mm 
+Verschmutzungsgrad 
+1 
+2 
+3 
+ 
+Werkstoffgruppe 
+Werkstoffgruppe 
+ 
+Arbeitsspannung 
+V 
+ 
+I 
+II 
+IIIa/IIIb 
+I 
+II 
+IIIa/IIIb 
+ 
+ 
+ 
+≤ 50 
+0,2 
+0,6 
+0,9 
+1,2 
+1,5 
+1,7 
+1,9 a) 
+ 
+> 50 
+und 
+≤ 125 
+0,3 
+0,8 
+1,1 
+1,5 
+1,9 
+2,1 
+2,4 
+ 
+> 125 
+und 
+≤ 250 
+0,6 
+1,3 
+1,8 
+2,5 
+3,2 
+3,6 
+4,0 
+ 
+> 250 
+und 
+≤ 400 
+1,0 
+2,0 
+2,8 
+4,0 
+5,0 
+5,6 
+6,3 
+ 
+> 400 
+und 
+≤ 500 
+1,3 
+2,5 
+3,6 
+5,0 
+6,3 
+7,1 
+8,0 
+ 
+> 500 
+und 
+≤ 800 
+1,8 
+3,2 
+4,5 
+6,3 
+8,0 
+9,0 
+10,0 
+ 
+> 800 
+und 
+≤ 1 000 
+2,4 
+4,0 
+5,6 
+8,0 
+10,0 
+11,0 
+12,5 
+ > 1 000 
+und 
+≤ 1 250 
+3,2 
+5,0 
+7,1 
+10,0 
+12,5 
+14,0 
+16,0 
+ > 1 250 
+und 
+≤ 1 600 
+4,2 
+6,3 
+9,0 
+12,5 
+16,0 
+18,0 
+20,0 
+ > 1 600 
+und 
+≤ 2 000 
+5,6 
+8,0 
+11,0 
+16,0 
+20,0 
+22,0 
+25,0 
+ > 2 000 
+und 
+≤ 2 500 
+7,5 
+10,0 
+14,0 
+20,0 
+25,0 
+28,0 
+32,0 
+ > 2 500 
+und 
+≤ 3 200 
+10,0 
+12,5 
+18,0 
+25,0 
+32,0 
+36,0 
+40,0 
+ > 3 200 
+und 
+≤ 4 000 
+12,5 
+16,0 
+22,0 
+32,0 
+40,0 
+45,0 
+50,0 
+ > 4 000 
+und 
+≤ 5 000 
+16,0 
+20,0 
+28,0 
+40,0 
+50,0 
+56,0 
+63,0 
+ > 5 000 
+und 
+≤ 6 300 
+20,0 
+25,0 
+36,0 
+50,0 
+63,0 
+71,0 
+80,0 
+ > 6 300 
+und 
+≤ 8 000 
+25,0 
+32,0 
+45,0 
+63,0 
+80,0 
+90,0 
+100,0 
+ > 8 000 
+und ≤ 10 000 
+32,0 
+40,0 
+56,0 
+80,0 
+100,0 
+110,0 
+125,0 
+ > 10 000 
+und ≤ 12 500 
+40,0 
+50,0 
+71,0 
+100,0 
+125,0 
+140,0 
+160,0 
+ANMERKUNG 1 
+Lackdrähte von Wicklungen gelten als blanke Leiter, aber Kriechstrecken brauchen nicht größer zu sein als die 
+dazugehörigen Luftstrecken, die in Tabelle 16 unter Berücksichtigung von 29.1.1 festgelegt sind. 
+ANMERKUNG 2 
+Bei Glas, Keramik und anderen anorganischen Isolierstoffen, die keine Kriechwege bilden, brauchen die Kriech-
+strecken nicht größer sein als die dazugehörigen Luftstrecken. 
+ANMERKUNG 3 
+Außer bei Stromkreisen auf der Sekundärseite von Trenntransformatoren wird von der Arbeitsspannung ange-
+nommen, dass sie nicht geringer als die Bemessungsspannung des Gerätes ist. 
+a) 
+Die Werkstoffgruppe IIIb ist zulässig, wenn die Arbeitsspannung 50 V nicht übersteigt. 
+Prüfung: Messung. 
+29.2.2 
+Kriechstrecken der zusätzlichen Isolierung dürfen nicht kleiner sein als jene in Tabelle 17 für die 
+Basisisolierung. 
+ANMERKUNG 
+ANMERKUNGEN 1 und 2 der Tabelle 17 gelten nicht. 
+Prüfung: Messung. 
+29.2.3 
+Kriechstrecken der verstärkten Isolierung müssen mindestens doppelt so groß sein als jene in 
+Tabelle 17 für die Basisisolierung. 
+ANMERKUNG 
+Anmerkungen 1 und 2 der Tabelle 17 gelten nicht. 
+Prüfung: Messung. 
+29.2.4 
+Kriechstrecken der Funktionsisolierung dürfen nicht kleiner sein als jene in Tabelle 18. Kriech-
+strecken können jedoch verkleinert werden, wenn das Gerät bei überbrückter Funktionsisolierung die 
+Anforderungen des Abschnitts 19 erfüllt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+103 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 104/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+100 
+Tabelle 18 – Mindestkriechstrecken für Funktionsisolierung 
+Kriechstrecke 
+mm 
+Verschmutzungsgrad 
+1 
+2 
+3 
+ 
+Werkstoffgruppe 
+Werkstoffgruppe 
+ 
+Arbeitsspannung 
+V 
+ 
+I 
+II 
+IIIa/IIIb 
+I 
+II 
+IIIa/IIIb 
+ 
+ 
+ 
+≤ 50 
+0,2 
+0,6 
+0,8 
+1,1 
+1,4 
+1,6 
+1,8 a) 
+ 
+> 50 
+und  
+≤ 125 
+0,3 
+0,7 
+1,0 
+1,4 
+1,8 
+2,0 
+2,2 
+ 
+> 125 
+und 
+≤ 250 
+0,4 
+1,0 
+1,4 
+2,0 
+2,5 
+2,8 
+3,2 
+ 
+> 250 
+und 
+≤ 400 b) 
+0,8 
+1,6 
+2,2 
+3,2 
+4,0 
+4,5 
+5,0 
+ 
+> 400 
+und 
+≤ 500 
+1,0 
+2,0 
+2,8 
+4,0 
+5,0 
+5,6 
+6,3 
+ 
+> 500 
+und 
+≤ 800 
+1,8 
+3,2 
+4,5 
+6,3 
+8,0 
+9,0 
+10,0 
+ 
+> 800 
+und 
+≤ 1 000 
+2,4 
+4,0 
+5,6 
+8,0 
+10,0 
+11,0 
+12,5 
+ 
+> 1 000 
+und 
+≤ 1 250 
+3,2 
+5,0 
+7,1 
+10,0 
+12,5 
+14,0 
+16,0 
+ 
+> 1 250 
+und 
+≤ 1 600 
+4,2 
+6,3 
+9,0 
+12,5 
+16,0 
+18,0 
+20,0 
+ 
+> 1 600 
+und 
+≤ 2 000 
+5,6 
+8,0 
+11,0 
+16,0 
+20,0 
+22,0 
+25,0 
+ 
+> 2 000 
+und 
+≤ 2 500 
+7,5 
+10,0 
+14,0 
+20,0 
+25,0 
+28,0 
+32,0 
+ 
+> 2 500  
+und 
+≤ 3 200 
+10,0 
+12,5 
+18,0 
+25,0 
+32,0 
+36,0 
+40,0 
+ 
+> 3 200 
+und 
+≤ 4 000 
+12,5 
+16,0 
+22,0 
+32,0 
+40,0 
+45,0 
+50,0 
+ 
+> 4 000 
+und 
+≤ 5 000 
+16,0 
+20,0 
+28,0 
+40,0 
+50,0 
+56,0 
+63,0 
+ 
+> 5 000 
+und 
+≤ 6 300 
+20,0 
+25,0 
+36,0 
+50,0 
+63,0 
+71,0 
+80,0 
+ 
+> 6 300 
+und 
+≤ 8 000 
+25,0 
+32,0 
+45,0 
+63,0 
+80,0 
+90,0 
+100,0 
+ 
+> 8 000 
+und ≤ 10 000 
+32,0 
+40,0 
+56,0 
+80,0 
+100,0 
+110,0 
+125,0 
+ 
+> 10 000 
+und ≤ 12 500 
+40,0 
+50,0 
+71,0 
+100,0 
+125,0 
+140,0 
+160,0 
+ANMERKUNG 1 
+Bei PTC-Heizelementen braucht die Kriechstrecke auf der Oberfläche des PTC-Werkstoffs nicht größer als 
+die dazugehörige Luftstrecke für eine Arbeitsspannung von weniger als 250 V und für Verschmutzungsgrade 1 und 2 zu sein. 
+Jedoch für die Kriechstrecken zwischen den Anschlüssen gelten die Tabellenwerte. 
+ANMERKUNG 2 
+Bei Glas, Keramik und anderen anorganischen Werkstoffen, die keine Kriechwege bilden, brauchen die Kriech-
+strecken nicht größer zu sein als die dazugehörigen Luftstrecken. 
+a) Die Werkstoffgruppe IIIb ist zulässig, wenn die Arbeitsspannung 50 V nicht überschreitet. 
+b) Die Arbeitsspannung zwischen den Phasen ist > 250 V und ≤ 400 V bei Geräten mit einer Bemessungsspannung im Bereich 
+von 380 V bis 415 V. 
+Prüfung: Messung. 
+29.3 
+Feste Isolierung muss eine Mindestdicke von 1 mm für zusätzliche Isolierung und 2 mm für ver-
+stärkte Isolierung haben. 
+ANMERKUNG 1 Dies bedeutet nicht, dass die Dicke nur aus fester Isolierung bestehen muss. Die Isolierung darf aus 
+festem Werkstoff und aus einer oder mehreren Luftschicht(en) bestehen. 
+Diese Anforderung gilt nicht: 
+– 
+bei zusätzlicher Isolierung, wenn sie aus mindestens zwei Lagen besteht, vorausgesetzt dass, jede der 
+Lagen die Spannungsfestigkeitsprüfung nach 16.3 besteht; 
+– 
+bei verstärkter Isolierung, wenn sie aus mindestens drei Lagen besteht, vorausgesetzt dass, jeweils 
+zwei der drei Lagen in unmittelbarem Kontakt zueinander die Spannungsfestigkeitsprüfung nach 16.3 
+bestehen. 
+In diesem Fall dürfen die Lagen weder aus Naturglimmer noch einem ähnlichen schuppigen Werkstoff 
+bestehen. 
+ANMERKUNG 2 Die Lagen dürfen miteinander verbunden sein, solange es möglich ist, sie vor dem Verbinden getrennt 
+zu prüfen. 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+104 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 105/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+101 
+Ist die Isolierung nicht zugänglich, gilt diese Anforderung ebenfalls nicht: 
+– 
+wenn die maximale Temperaturerhöhung, die während der Prüfungen nach Abschnitt 19 ermittelt wird, 
+den in 11.8 festgelegten Wert nicht überschreitet; 
+oder 
+– 
+wenn die Isolierung die Spannungsfestigkeitsprüfung nach 16.3 besteht, nachdem sie 168 h in einem 
+Wärmeschrank bei einer Temperatur vorbehandelt wurde, die 50 K über der während der Prüfung nach 
+Abschnitt 19 gemessenen maximalen Temperaturerhöhung liegt. Bei Opto-Kopplern wird das Vorbe-
+handlungsverfahren bei einer Temperatur von 50 K über der höchsten gemessenen Temperatur durch-
+geführt, die auf der Oberfläche des Opto-Kopplers bei den Prüfungen nach Abschnitt 11 oder 19 
+gemessen wurde. Die Spannungsfestigkeitsprüfung wird an der Isolierung sowohl bei der im Wärme-
+schrank auftretenden Temperatur als auch nach Abkühlung auf annähernd Raumtemperatur durch-
+geführt. 
+Prüfung: Besichtigung und Prüfung. 
+29.3 
+Zusätzliche Isolierung und verstärkte Isolierung müssen eine ausreichende Dicke aufweisen 
+oder genügend Lagen haben, um der elektrischen Beanspruchung, die während des Gebrauchs des Gerätes 
+erwartet werden kann, zu genügen. 
+Prüfung: 
+– 
+Messung in Übereinstimmung mit 29.3.1 oder durch 
+– 
+eine Spannungsfestigkeitsprüfung in Übereinstimmung mit 29.3.2, falls die Isolierung aus mehr als einer 
+Lage, außer bei Naturglimmer oder ähnlichem schuppigen Material, besteht, oder durch 
+– 
+eine Untersuchung der thermischen Qualität des Werkstoffs in Verbindung mit einer Spannungsfestig-
+keitsprüfung in Übereinstimmung mit 29.3.3., 
+– 
+eine Untersuchung der thermischen Qualität des Werkstoffs in Verbindung mit einer Spannungsfestig-
+keitsprüfung in Übereinstimmung mit 29.3.3 und bei berührbarer, verstärkter Isolierung, die nur aus 
+einer Lage besteht, Messungen in Übereinstimmung mit 29.3.Z1. 
+29.3.1 
+Die Stärke der Isolierung muss mindestens betragen: 
+– 
+1 mm bei zusätzlicher Isolierung; 
+– 
+2 mm bei verstärkter Isolierung. 
+29.3.2 
+Jede Lage des Werkstoffs muss der Spannungsfestigkeitsprüfung nach 16.3 für zusätzliche Isolie-
+rung genügen. Zusätzliche Isolierung muss aus mindestens zwei Lagen Werkstoff und verstärkte Isolie-
+rung aus mindestens drei Lagen bestehen.  
+29.3.3 
+Die Isolierung wird der Prüfung Bb für trockene Hitze der IEC 60068-2-2 für 48 h unterworfen, die 
+um 50 K über der während der Prüfung nach Abschnitt 19 gemessenen höchsten Temperaturerhöhung liegt. 
+Am Ende der Prüfdauer wird die Isolierung einer Spannungsfestigkeitsprüfung nach 16.3 unterworfen, die bei 
+der Vorbehandlungstemperatur durchgeführt wird und nochmals, nachdem sie auf Raumtemperatur abge-
+kühlt ist. 
+Falls die Temperaturerhöhung der Isolierung, die während der Prüfung nach Abschnitt 19 gemessen wurde, 
+nicht die in Tabelle 3 festgelegten Werte überschreitet, wird die Prüfung nach IEC 60068-2-2 nicht durchge-
+führt. 
+29.3.Z1 Falls die berührbare, verstärkte Isolierung aus einer Lage besteht, muss die Dicke dieser Lage mit 
+Tabelle Z1 übereinstimmen. 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+A12 
+A12 
+1 
+1 
+1 
+1 
+1 
+1 
+A12 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+105 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 106/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+102 
+Tabelle Z1 – Mindeststärke für einlagige, berührbare, verstärkte Isolierung 
+Bemessungs-
+spannung 
+V 
+Mindeststärke für einlagige, berührbare, verstärkte Isolierung 
+mm 
+ 
+Überspannungskategorie
+I 
+Überspannungskategorie
+II 
+Überspannungskategorie
+III 
+< 50 
+0,01 
+0,04 
+0,1 
+50 ≤ 150 
+0,1 
+0,3 
+0,6 
+150 ≤ 300 
+0,3 
+0,6 
+1,2 
+ 
+ANMERKUNG 
+Die Kriechstrecke durch ein mögliches Loch wird nicht als belangvoll angesehen, da sie nur von Bedeu-
+tung ist, wenn die zweite Elektrode (der menschliche Körper) vorhanden ist. 
+ANMERKUNG 
+Die Kriechstrecke durch ein möglicherweise vorhandenes Loch in der Isolierschicht wird vernachlässigt, 
+da diese nur beansprucht wird, wenn die zweite Elektrode (der menschliche Körper) vorhanden ist. 
+30 Wärme- und Feuerbeständigkeit 
+30.1 
+Äußere Teile aus nichtmetallischem Werkstoff, Isolierstoffteile, die aktive Teile in ihrer Lage halten 
+einschließlich Verbindungen, und Thermoplastteile der zusätzlichen und verstärkten Isolierung müssen 
+ausreichend wärmebeständig sein, sofern ihre Verschlechterung bewirken könnte, dass das Gerät dieser 
+Norm nicht genügt. 
+Diese Anforderung gilt nicht für die Isolierung oder den Mantel von flexiblen Leitungen oder innerer Verdrah-
+tung. 
+Prüfung: Das betreffende Teil wird der Kugeldruckprüfung nach IEC 60695-10-2 unterworfen. 
+Die Prüfung wird bei einer Temperatur durchgeführt, die (40 ± 2) °C über der während der Prüfung nach 
+Abschnitt 11 gemessenen maximalen Temperaturerhöhung liegt, mindestens jedoch bei 
+– 
+(75 ± 2) °C für äußere Teile; 
+– 
+(125 ± 2) °C für Teile, die aktive Teile in ihrer Lage halten. 
+Thermoplastteile der zusätzlichen oder verstärkten Isolierung werden jedoch bei einer Temperatur geprüft, 
+die um (25 ± 2) °C über der während der Prüfungen nach Abschnitt 19 ermittelten maximalen Temperatur-
+erhöhung liegt, wenn diese höher ist. Die Temperaturerhöhungen von 19.4 werden nicht berücksichtigt, 
+vorausgesetzt, die Prüfung von 19.4 wird durch das Ansprechen einer nichtselbsttätig rückstellenden 
+Schutzeinrichtung beendet, zu deren Rückstellung die Beseitigung einer Abdeckung oder die Verwendung 
+eines Werkzeugs notwendig ist. 
+ANMERKUNG 1 Bei Spulenkörpern werden nur solche Teile der Prüfung unterzogen, die Anschlussklemmen stützen 
+oder in ihrer Lage halten. 
+ANMERKUNG 2 Die Prüfung wird nicht an Teilen aus keramischen Werkstoffen durchgeführt. 
+ANMERKUNG 3 Auswahl und Reihenfolge der Prüfungen für die Wärmebeständigkeit werden in Bild O.1 gezeigt. 
+30.2 
+Teile aus nichtmetallischem Werkstoff müssen widerstandsfähig gegen Entzündung und Feueraus-
+breitung sein. 
+Diese Anforderung gilt nicht für Zierleisten, Knöpfe und andere Teile, bei denen es unwahrscheinlich ist, dass 
+sie entzündet werden oder Flammen weiterleiten, die im Innern des Gerätes entstehen. 
+A12 
+A12 
+A12 Corr. 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+106 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 107/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+103 
+Prüfung: Durchführung der Prüfungen nach 30.2.1. Zusätzlich gilt 
+– 
+bei beaufsichtigten Geräten 30.2.2,  
+– 
+bei unbeaufsichtigten Geräten 30.2.3. 
+Das Trägermaterial von Leiterplatten wird nach 30.2.4 geprüft. 
+Die Prüfungen werden an Teilen aus nichtmetallischem Werkstoff durchgeführt, die dem Gerät entnommen 
+wurden. Bei Durchführung der Glühdrahtprüfung werden sie in der gleichen Lage wie im sachgemäßen 
+Gebrauch angeordnet.  
+Diese Prüfungen werden nicht an der Isolierung der Verdrahtung durchgeführt. 
+ANMERKUNG 
+Auswahl und Reihenfolge der Prüfungen für die Feuerbeständigkeit werden in Bild O.2 gezeigt. 
+30.2 
+Teile aus nichtmetallischem Werkstoff müssen widerstandsfähig gegen Entzündung und Feueraus-
+breitung sein. 
+Diese Anforderung gilt nicht für Zierleisten, Knöpfe und andere Teile, bei denen es unwahrscheinlich ist, dass 
+sie entzündet werden oder Flammen weiterleiten, die im Innern des Gerätes entstehen. 
+Prüfung: Durchführung der Prüfungen nach 30.2.1. Zusätzlich gilt 
+– 
+bei beaufsichtigten Geräten 30.2.2,  
+– 
+bei unbeaufsichtigten Geräten 30.2.3. 
+Geräte zur Fernwirkung werden als Geräte angesehen, die während des Betriebes unbeaufsichtigt sind und 
+folglich der Prüfung nach 30.2.3 unterworfen werden. 
+Das Trägermaterial von Leiterplatten wird nach 30.2.4 geprüft. 
+Die Prüfungen werden an Teilen aus nichtmetallischem Werkstoff durchgeführt, die dem Gerät entnommen 
+wurden. Bei Durchführung der Glühdrahtprüfung werden sie in der gleichen Lage wie im sachgemäßen 
+Gebrauch angeordnet.  
+ANMERKUNG 1 Für Teile, die entfernt wurden, ist beabsichtigt, dass IEC 60695-2-11, Abschnitt 4, Punkt c) gilt. Dieser 
+gibt an, „das zu prüfende Teil ist vollständig zu entfernen und getrennt zu prüfen“. 
+Diese Prüfungen werden nicht an der Isolierung der Verdrahtung durchgeführt. 
+ANMERKUNG 2 Auswahl und Reihenfolge der Prüfungen für die Feuerbeständigkeit werden in Bild O.2 gezeigt. 
+30.2.1 
+Teile aus nichtmetallischem Werkstoff werden der Glühdrahtprüfung nach IEC 60695-2-11 bei 
+550 °C unterworfen. 
+Die Glühdrahtprüfung wird nicht an Teilen durchgeführt, deren Material nach IEC 60695-11-10 als HB 40 
+oder besser eingeordnet ist, wobei der Prüfling nicht dicker als das entsprechende Teil sein darf. 
+Teile wie beispielsweise aus weichem oder schaumigem Material, an denen die Glühdrahtprüfung nicht 
+durchgeführt werden kann, müssen den Anforderungen entsprechen, die in ISO 9772 für Werkstoff der 
+Kategorie FH3 HBF festgelegt sind, wobei der Prüfling nicht dicker als das entsprechende Teil sein darf.  
+30.2.1 
+Teile aus nichtmetallischem Werkstoff werden der Glühdrahtprüfung nach IEC 60695-2-11 bei 
+550 °C unterworfen. 
+Die Glühdrahtprüfung wird nicht an Teilen durchgeführt, deren Material nach IEC 60695-11-10 mindestens 
+als HB 40 eingeordnet ist, wobei der Prüfling nicht dicker als das entsprechende Teil des Gerätes sein darf. 
+Teile, an denen die Glühdrahtprüfung nicht durchgeführt werden kann wie beispielsweise solche aus 
+weichem oder schaumigem Werkstoff, müssen den Anforderungen entsprechen, die in ISO 9772 für Werk-
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+1/2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+107 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 108/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+104 
+stoff der Kategorie HBF festgelegt sind, wobei der Prüfling nicht dicker als das entsprechende Teil des 
+Gerätes sein darf.  
+30.2.2 
+Bei im Betrieb beaufsichtigten Geräten werden Isolierstoffteile, die stromführende Verbindungen in 
+ihrer Lage halten, und Isolierstoffteile, die innerhalb einer Entfernung bis zu 3 mm zu solchen Verbindungen 
+sind, der Glühdrahtprüfung nach IEC 60695-2-11 unterworfen, und zwar: 
+– 
+bei 750 °C für Verbindungen, die einen Strom von mehr als 0,5 A während des Normalbetriebs führen; 
+– 
+bei 650 °C für andere Verbindungen. 
+ANMERKUNG 1 Kontakte in Bauteilen wie Schalterkontakte werden als Verbindungen angesehen. 
+ANMERKUNG 2 Die Spitze des Glühdrahts wird am Prüfling in unmittelbarer Nähe zur Verbindung angesetzt. 
+Die Prüfung wird nicht durchgeführt 
+– 
+an Teilen, die Schweißverbindungen in ihrer Lage halten; 
+– 
+an Teilen, die Verbindungen in Niederleistungsstromkreisen nach 19.11.1 in ihrer Lage halten; 
+– 
+an Lötverbindungen auf Leiterplatten; 
+– 
+an Verbindungen von kleinen Einzelteilen auf Leiterplatten; 
+– 
+an Teilen in einem Abstand bis zu 3 mm zu jeder dieser Verbindungen; 
+– 
+bei Handgeräten; 
+– 
+bei Geräten, die von Hand oder Fuß eingeschaltet gehalten werden müssen; 
+– 
+bei Geräten, die kontinuierlich von Hand beladen werden. 
+ANMERKUNG 3 Kleine Einzelteile sind beispielsweise Dioden, Transistoren, Widerstände, Magnete, integrierte Schalt-
+kreise und Kondensatoren, die nicht direkt mit dem Versorgungsnetz verbunden sind. 
+30.2.2 
+Bei Geräten, die beaufsichtigt betrieben werden, werden nichtmetallische Werkstoffe, die Strom 
+führende Verbindungen in ihrer Lage halten, und Teile von nichtmetallischen Werkstoffen, die innerhalb einer 
+Entfernung bis zu 3 mm zu solchen Verbindungen sind, der Glühdrahtprüfung nach IEC 60695-2-11 unter-
+worfen. Die Glühdrahtprüfung wird jedoch nicht an Teilen durchgeführt, deren Werkstoff nach 
+IEC 60695-2-12 eine Glühdrahtentflammbarkeitszahl (glow-wire-flammability index, GWFI) von mindestens 
+– 
+750 °C hat für Verbindungen, die einen Strom von mehr als 0,5 A während des Normalbetriebs führen; 
+– 
+650 °C hat für andere Verbindungen. 
+Falls die Glühdrahtentflammbarkeitszahl (glow-wire-flammability index, GWFI) für Prüflinge mit einer Stärke, 
+die innerhalb von ± 0,1 mm des entsprechenden Teils liegt, nicht zur Verfügung steht, dann muss das Prüf-
+muster eine Dicke haben, die dem nähesten in IEC 60965-2-12 festgelegten Vorzugswert entspricht, der aber 
+nicht dicker als das entsprechende Teil ist. 
+ANMERKUNG 1 Die Vorzugswerte in 60695-2-12 sind (0,75 ± 0,1) mm, (1,5 ± 0,1) mm und (3,0 ± 0,2) mm. 
+Wo nichtmetallische Werkstoffe innerhalb einer Entfernung bis zu 3 mm zu Strom führenden Verbindungen 
+sind, aber von dieser Verbindung durch einen anderen Werkstoff abgeschirmt sind, wird die Glühdraht-
+prüfung nach IEC 60695-2-11 bei der zutreffenden Temperatur durchgeführt, indem die Spitze des Glüh-
+drahtes an dem dazwischen liegenden Werkstoff angewendet wird, und nicht direkt am abgeschirmten Werk-
+stoff. Wobei der abgeschirmte Werkstoff sich an seinem Platz befindet. 
+Wird die Glühdrahtprüfung nach IEC 60695-2-11 durchgeführt, betragen die Temperaturen 
+– 
+750 °C für Verbindungen, die einen Strom von mehr als 0,5 A während des Normalbetriebs führen; 
+– 
+650 °C für andere Verbindungen. 
+ANMERKUNG 2 Kontakte in Einzelteilen wie Schalterkontakte werden als Verbindungen angesehen. 
+ANMERKUNG 3 Die Spitze des Glühdrahts wird am Prüfling in unmittelbarer Nähe zur Verbindung angesetzt. 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+108 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 109/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+105 
+Die Prüfung wird nicht durchgeführt an: 
+– 
+Teilen, die Schweißverbindungen in ihrer Lage halten; 
+– 
+Teilen, die Verbindungen in Niederleistungsstromkreisen nach 19.11.1 in ihrer Lage halten; 
+– 
+Lötverbindungen auf Leiterplatten; 
+– 
+Verbindungen von kleinen Einzelteilen auf Leiterplatten; 
+und Teilen innerhalb einer Entfernung bis zu 3 mm von diesen Verbindungen.  
+ANMERKUNG 4 Kleine Einzelteile sind beispielsweise Dioden, Transistoren, Widerstände, Magnete, integrierte Schalt-
+kreise und Kondensatoren, die nicht direkt mit dem Versorgungsnetz verbunden sind. 
+Die Prüfung wird auch nicht durchgeführt bei: 
+– 
+Handgeräten; 
+– 
+Geräten, die von Hand oder Fuß eingeschaltet gehalten werden müssen; 
+– 
+Geräten, die kontinuierlich von Hand beladen werden. 
+30.2.3 
+Im Betrieb unbeaufsichtigte Geräte werden nach 30.2.3.1 und 30.2.3.2 geprüft. Die Prüfung wird 
+jedoch nicht durchgeführt  
+– 
+an Teilen, die Schweißverbindungen in ihrer Lage halten; 
+– 
+an Teilen, die Verbindungen in Niederleistungsstromkreisen nach 19.11.1 in ihrer Lage halten; 
+– 
+an Lötverbindungen auf Leiterplatten; 
+– 
+an Verbindungen von kleinen Einzelteilen auf Leiterplatten; 
+– 
+an Teilen in einem Abstand bis zu 3 mm zu jeder dieser Verbindungen. 
+ANMERKUNG 
+Kleine Einzelteile sind beispielsweise Dioden, Transistoren, Widerstände, Magnete, integrierte Schalt-
+kreise und Kondensatoren, die nicht direkt mit dem Versorgungsnetz verbunden sind. 
+30.2.3 
+Geräte die unbeaufsichtigt betrieben werden, werden nach 30.2.3.1 und 30.2.3.2 geprüft. Die 
+Prüfung wird jedoch nicht durchgeführt bei 
+– 
+Teilen, die Schweißverbindungen in ihrer Lage halten; 
+– 
+Teilen, die Verbindungen in Niederleistungsstromkreisen nach 19.11.1 in ihrer Lage halten; 
+– 
+Lötverbindungen auf Leiterplatten; 
+– 
+Verbindungen von kleinen Einzelteilen auf Leiterplatten; 
+und Teilen in einem Abstand bis zu 3 mm zu jeder dieser Verbindungen. 
+ANMERKUNG 
+Kleine Einzelteile sind beispielsweise Dioden, Transistoren, Widerstände, Magnete, integrierte Schalt-
+kreise und Kondensatoren, die nicht direkt mit dem Versorgungsnetz verbunden sind. 
+30.2.3.1 Isolierstoffteile, die Verbindungen in ihrer Lage halten, die im Normalbetrieb einen Strom von mehr 
+als 0,2 A führen, und Isolierstoffteile, die innerhalb einer Entfernung bis zu 3 mm zu solchen Verbindungen 
+sind, müssen eine Glühdrahtentflammbarkeitszahl (glow-wire-flammability index, GWFI) von mindestens 
+850 °C nach IEC 60695-2-12 haben, wobei der Prüfling nicht dicker als das entsprechende Teil sein darf. 
+30.2.3.1 Teile aus nichtmetallischen Werkstoffen, die Verbindungen in ihrer Lage halten, die im Normal-
+betrieb einen Strom von mehr als 0,2 A führen und Teile aus nichtmetallischen Werkstoffen, die innerhalb 
+einer Entfernung bis zu 3 mm zu solchen Verbindungen sind, werden der Glühdrahtprüfung (glow wire test, 
+GWT) nach IEC 60695-2-11 mit einer Prüfschärfe von 850 °C unterworfen. Diese Glühdrahtprüfung wird 
+jedoch nicht an Teilen durchgeführt, die eine Glühdrahtentflammbarkeitszahl (glow-wire-flammability index, 
+GWFI) von mindestens 850 °C nach IEC 60695-2-12 haben. Falls die Glühdrahtentflammbarkeitszahl (glow-
+wire-flammability index, GWFI) für Prüflinge mit einer Stärke, die innerhalb von ± 0,1 mm des 
+entsprechenden Teils liegt, nicht zur Verfügung steht, dann muss das Prüfmuster eine Dicke haben, die dem 
+nähesten, in IEC 60965-2-12 festgelegten Vorzugswert entspricht, der aber nicht dicker als das relevante Teil 
+ist. 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+109 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 110/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+106 
+ANMERKUNG 1 Die bevorzugten Werte in IEC 60695-2-12 sind (0,75 ± 0,1) mm, (1,5 ± 0,1) mm und (3,0 ± 0,2) mm. 
+ANMERKUNG 2 Kontakte in Einzelteilen wie Schalterkontakte werden als Verbindungen angesehen. 
+ANMERKUNG 3 Die Spitze des Glühdrahts wird am Prüfling in unmittelbarer Nähe zur Verbindung angesetzt. 
+Die Glühdrahtprüfung wird nicht an kleinen Teilen durchgeführt, die der Nadelflammprüfung nach Anhang E 
+genügen oder an kleinen Teilen, die aus einem Werkstoff bestehen, der als V-0 oder V-1 nach 
+IEC 60965-11-10 eingeordnet ist, vorausgesetzt, der Prüfling war nicht dicker als das entsprechende Teil. 
+ANMERKUNG 4 Kleine Teile sind in IEC 60695-4 festgelegt. 
+Wo nichtmetallische Werkstoffe innerhalb einer Entfernung bis zu 3 mm zu Strom führenden Verbindungen 
+sind, aber von dieser Verbindung durch einen anderen Werkstoff abgeschirmt sind, wird die Glühdraht-
+prüfung nach IEC 60695-2-11 bei der zutreffenden Temperatur durchgeführt, indem die Spitze des Glüh-
+drahtes an dem dazwischen liegenden schirmenden Werkstoff angewendet wird und nicht allein am 
+abgeschirmten Werkstoff. Wobei der abgeschirmte Werkstoff sich an seinem Platz befindet. 
+30.2.3.2 Isolierstoffteile, die stromführende Verbindungen in ihrer Lage halten, und Isolierstoffteile, die inner-
+halb einer Entfernung bis zu 3 mm zu solchen Verbindungen sind, werden der Glühdrahtprüfung nach 
+IEC 60695-2-11 unterworfen. Die Glühdrahtprüfung wird jedoch nicht an Teilen durchgeführt, deren Werkstoff 
+nach IEC 60695-2-13 eine Glühdrahtentzündungstemperatur (glow-wire-ignition-temperatur GWIT) von min-
+destens 
+– 
+775 °C hat für Verbindungen, die einen Strom von mehr als 0,2 A während des Normalbetriebs führen, 
+– 
+675 °C hat für andere Verbindungen, 
+wobei der Prüfling nicht dicker als das entsprechende Teil sein darf. 
+Wird die Glühdrahtprüfung nach IEC 60695-2-11 durchgeführt, gelten die Temperaturen 
+– 
+von 750 °C für Verbindungen, die einen Strom von mehr als 0,2 A während des Normalbetriebs führen; 
+– 
+von 650 °C für andere Verbindungen. 
+ANMERKUNG 1 Kontakte in Bauteilen wie Schalterkontakte werden als Verbindungen angesehen. 
+ANMERKUNG 2 Die Spitze des Glühdrahts wird am Prüfling in unmittelbarer Nähe zur Verbindung angesetzt. 
+Teile, die die Glühdrahtprüfung nach IEC 60695-2-11 bestehen, aber bei denen während der Prüfung eine 
+Flamme auftritt, die länger als 2 s fortdauert, werden diese Teile und die angrenzenden TeileN8 wie folgt 
+weiter geprüft. Teile oberhalb der Verbindung innerhalb eines Zylinders mit einem Durchmesser von 20 mm 
+und einer Höhe von 50 mm werden der Nadelflammprüfung nach Anhang E unterworfen. Teile, die jedoch 
+durch eine Trennwand abgeschirmt sind, die die Nadelflammprüfung nach Anhang E besteht, werden nicht 
+der Prüfung unterworfen. 
+Die Nadelflammprüfung wird nicht an Teilen durchgeführt, die aus einem Werkstoff bestehen, der als V-0 
+oder V-1 nach IEC 60965-11-10 eingeordnet ist, vorausgesetzt, der Prüfling war nicht dicker als das ent-
+sprechende Teil. 
+30.2.3.2 Teile von nichtmetallischen Werkstoffen, die Strom führende Verbindungen in ihrer Lage halten, 
+und Teile von nichtmetallischen Werkstoffen, die innerhalb einer Entfernung bis zu 3 mm zu solchen Verbin-
+dungen sind, werden der Glühdrahtprüfung (glow wire test, GWT) nach IEC 60695-2-11 unterworfen. Die 
+Glühdrahtprüfung wird jedoch nicht an Teilen durchgeführt, deren Werkstoff nach IEC 60695-2-13 eine 
+Glühdrahtentzündungstemperatur (glow-wire-ignition-temperatur GWIT) von mindestens 
+– 
+775 °C bei Verbindungen, die einen Strom von mehr als 0,2 A während des Normalbetriebes führen, 
+– 
+675 °C bei anderen Verbindungen einhalten. 
+                                                     
+N8  Nationale Fußnote: Der unterstrichene Text wird durch Corrigendum 1 (ed. 4.1):2005 ergänzt. 
+C1(4.1) 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+110 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 111/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+107 
+Falls die Glühdrahtentzündungstemperatur (glow-wire-ignition-temperatur GWIT) für Prüflinge mit einer 
+Dicke, die innerhalb von ± 0,1 mm des entsprechenden Teils liegt, nicht zur Verfügung steht, dann muss das 
+Prüfmuster eine Dicke haben, die dem nähesten, in IEC 60965-2-13 festgelegten Vorzugswert entspricht, der 
+aber nicht dicker als das relevante Teil ist. 
+ANMERKUNG 1 Die bevorzugten Werte in IEC 60695-2-13 sind (0,75 ± 0,1) mm, (1,5 ± 0,1) mm und (3,0 ± 0,2) mm. 
+Wo nichtmetallische Werkstoffe innerhalb einer Entfernung bis zu 3 mm zu Strom führenden Verbindungen 
+sind, aber von dieser Verbindung durch einen anderen Werkstoff abgeschirmt sind, wird die Glühdraht-
+prüfung nach IEC 60695-2-11 bei der zutreffenden Temperatur durchgeführt, indem die Spitze des Glüh-
+drahtes an dem dazwischen liegenden schirmenden Werkstoff angewendet wird und nicht allein am 
+abgeschirmten Werkstoff. Wobei der abgeschirmte Werkstoff sich an seinem Platz befindet. 
+Wird die Glühdrahtprüfung nach IEC 60695-2-11 durchgeführt, gelten die Temperaturen 
+– 
+von 750 °C für Verbindungen, die einen Strom von mehr als 0,2 A während des Normalbetriebs führen; 
+– 
+von 650 °C für andere Verbindungen. 
+ANMERKUNG 2 Kontakte in Einzelteilen wie Schalterkontakte werden als Verbindungen angesehen. 
+ANMERKUNG 3 Die Spitze des Glühdrahts wird am Prüfling in unmittelbarer Nähe zur Verbindung angesetzt. 
+Bei Teilen, die die Glühdrahtprüfung nach IEC 60695-2-11 bestehen, aber bei denen während der Prüfung 
+eine Flamme auftritt, die länger als 2 s fortdauert, werden diese Teile und die angrenzenden Teile wie folgt 
+weiter geprüft. Teile oberhalb der Verbindung innerhalb eines Zylinders mit einem Durchmesser von 20 mm 
+und einer Höhe von 50 mm werden der Nadelflammprüfung nach Anhang E unterworfen. Teile, die jedoch 
+durch eine Flammenbarriere abgeschirmt sind, die der Nadelflammprüfung gemäß Anhang E genügt, werden 
+nicht der Prüfung unterworfen. 
+Die Nadelflammprüfung wird nicht an Teilen durchgeführt, die aus einem Werkstoff bestehen, der als V-0 
+oder V-1 nach IEC 60695-11-10 eingeordnet ist, vorausgesetzt, der bewertete Prüfling war nicht dicker als 
+das entsprechende Teil des Gerätes. 
+30.2.4 
+Der Werkstoff von Leiterplatten wird der Nadelflammprüfung nach Anhang E unterworfen. Die 
+Flamme wird an der Kante der Leiterplatte an einem Ort angewendet, an der die Wärmeableitung am ge-
+ringsten ist, wenn sich die Leiterplatte in normaler Gebrauchslage befindet. 
+ANMERKUNG 
+Die Prüfung kann an einer Leiterplatte zusammen mit ihren Bauteilen durchgeführt werden. Das 
+Entzünden von Bauteilen wird jedoch nicht beachtet. 
+Die Prüfung wird nicht durchgeführt  
+– 
+an Leiterplatten von Niederleistungsstromkreisen nach 19.11.1; 
+– 
+an Leiterplatten in 
+• 
+einem Metallgehäuse, das Flammen oder brennende Tropfen einschließt; 
+• 
+Handgeräten; 
+• 
+Geräten, die von Hand oder Fuß eingeschaltet gehalten werden müssen; 
+• 
+Geräten, die kontinuierlich von Hand beladen werden; 
+– 
+wenn der Werkstoff als V-0 nach IEC 60695-11-10 eingeordnet ist, wobei der Prüfling nicht dicker als die 
+entsprechende Leiterplatte sein darf. 
+30.2.4 
+Der Werkstoff von Leiterplatten wird der Nadelflammprüfung nach Anhang E unterworfen. Die 
+Flamme wird an der Kante der Leiterplatte an einem Ort angewendet, an der die Wärmeableitung am ge-
+ringsten ist, wenn sich die Leiterplatte in normaler Gebrauchslage befindet. 
+ANMERKUNG 
+Die Prüfung kann an einer Leiterplatte zusammen mit ihren montierten Einzelteilen durchgeführt 
+werden. Das Entzünden von Einzelteilen wird jedoch nicht beachtet. 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+111 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 112/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+108 
+Die Prüfung wird nicht angewendet bei 
+– 
+Leiterplatten von Niederleistungsstromkreisen nach 19.11.1; 
+– 
+Leiterplatten in 
+• 
+einem Metallgehäuse, das Flammen oder brennende Tropfen einschließt; 
+• 
+Handgeräten; 
+• 
+Geräten, die von Hand oder Fuß eingeschaltet gehalten werden müssen; 
+• 
+Geräten, die kontinuierlich von Hand beladen werden; 
+– 
+wenn das Trägermaterial als V-0 nach IEC 60695-11-10 eingeordnet ist, wobei der bewertete Prüfling 
+nicht dicker als die entsprechende Leiterplatte war. 
+31 Rostschutz 
+Eisenteile, deren Rosten bewirken könnte, dass das Gerät dieser Norm nicht genügt, müssen ausreichend 
+gegen Rosten geschützt sein. 
+ANMERKUNG 
+Prüfungen sind, falls erforderlich, in Teil 2 festgelegt. 
+32 Strahlung, Giftigkeit und ähnliche Gefährdungen 
+Geräte dürfen weder schädliche Strahlung emittieren noch eine Gefährdung durch giftige Stoffe oder Ähn-
+liches darstellen. 
+ANMERKUNG 
+Prüfungen sind, falls erforderlich, in Teil 2 festgelegt. 
+Von Geräten dürfen im normalen Gebrauch weder schädliche Strahlungen noch  Gefährdungen durch giftige 
+Stoffe oder Ähnliches ausgehen. 
+Prüfung: Durch die in den Teilen 2 festgelegten Grenzwerte oder Prüfungen. Sind jedoch in den Teilen 2 
+keine Grenzwerte oder Prüfungen festgelegt, so wird angenommen, dass das Gerät die Anforderungen ohne 
+Prüfung erfüllt. 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+112 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 113/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+109 
+ 
+Legende 
+C 
+Stromkreis nach Bild 4 von IEC 60990 
+1 
+Berührbares Teil 
+2 
+Nichtberührbares Metallteil 
+3 
+Basisisolierung 
+4 
+Zusätzliche Isolierung 
+5 
+Doppelte Isolierung 
+6 
+Verstärkte Isolierung 
+Bild 1 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur für 
+Einphasengeräte der Schutzklasse II 
+ 
+Legende 
+C 
+Stromkreis nach Bild 4 der IEC 60990 
+Bild 2 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von 
+Einphasengeräten, die nicht nach Schutzklasse II gebaut sind 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+113 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 114/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+110 
+ 
+Legende 
+C 
+Stromkreis nach Bild 4 der IEC 60990 
+ 
+Anschlüsse und Versorgung 
+1 
+Berührbares Teil 
+ 
+L1, L2, L3, N Versorgungsspannung mit Neutralleiter 
+2 
+Nichtberührbares Metallteil 
+ 
+ 
+3 
+Basisisolierung 
+ 
+ 
+4 
+Zusätzliche Isolierung 
+ 
+ 
+5 
+Doppelte Isolierung 
+ 
+ 
+Bild 3 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von Geräten der 
+Schutzklasse II für dreiphasigen Anschluss 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+114 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 115/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+111 
+ 
+Legende 
+C 
+Stromkreis nach Bild 4 der IEC 60990 
+ 
+Anschlüsse und Versorgung 
+ 
+ 
+L1, L2, L3, N Versorgungsspannung mit Neutralleiter 
+Bild 4 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von Geräten für 
+dreiphasigen Anschluss, ausgenommen der Schutzklasse II  
+ 
+Legende 
+A 
+Hochspannungstransformator 
+ 
+Anschlüsse und Versorgung 
+B 
+Trenntransformator 
+ 
+L1, L2, L3, N Versorgungsspannung mit 
+Neutralleiter 
+ANMERKUNG 
+Falls die Wicklung des Sekundärkreises des Trenntransformators keinen Mittenabgriff hat, kann die 
+Ausgangswicklung des Hochspannungstransformators an den Mittenabgriff eines veränderbaren Widerstandes ange-
+schlossen werden, der nicht mehr als 2 000 Ω hat und der zwischen den Außenklemmen des Trenntransformators ange-
+schlossen ist. 
+Bild 5 – Schaltbild für die Spannungsfestigkeitsprüfung bei Betriebstemperatur 
+Bild 5 – Ungültig 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+115 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 116/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+112 
+ 
+D ist einer der am weitesten von der Stromquelle entfernten Punkte, an denen die für eine externe Last ver-
+fügbare Leistung 15 W überschreitet. 
+A und B sind die der Stromquelle am nächsten gelegenen Punkte, an denen die für eine externe Last ver-
+fügbare Leistung 15 W nicht überschreitet. Diese sind Niederleistungspunkte. 
+Die Punkte A und B werden getrennt mit C kurzgeschlossen. 
+Die in 19.11.2 festgelegten Fehlerbedingungen a) bis f) werden einzeln auf Z1, Z2, Z3, Z6 und Z7 ange-
+wendet, wo zutreffend. 
+Bild 6 – Beispiel einer elektronischen Schaltung mit Niederleistungspunkten
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+116 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 117/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+113 
+ 
+ 
+Bild 7 – Prüffingernagel 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+117 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 118/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+114 
+Maße in mm 
+ 
+Legende 
+A 
+Isolierstoff 
+B 
+Feder mit einer passenden Federkonstanten, um am Prüffingernagel eine Druckkraft, wie in 22.11 festgelegt, zu 
+erzeugen 
+C 
+Öse 
+Bild 7 – Prüffingernagel 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+118 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 119/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+115 
+ 
+Legende 
+A 
+Schwingachse 
+B 
+Schwenkrahmen 
+C 
+Gegengewicht 
+D 
+Prüfling 
+E 
+Verstellbare Auflageplatte 
+F 
+Verstellbare Halterung 
+G 
+Last 
+Bild 8 – Biegeprüfgerät 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+119 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 120/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+116 
+AKZEPTABLE KONSTRUKTIONEN 
+ 
+Die Konstruktion zeigt sicher am Gerät angebrachte Gewindebolzen. 
+ 
+Ein Teil des Gerätes ist aus Isolierstoff und 
+so geformt, dass er offensichtlich Teil einer 
+Leitungsklemme ist. 
+ 
+Leitungsklemme oder bei Sattel-
+klemmen ein Teil davon, am Gerät 
+befestigt. 
+ANMERKUNG 
+Klemmschrauben können in Gewindelöcher im Gerät eingreifen oder bei Durchgangslöchern mit 
+Muttern gesichert werden. 
+NICHT AKZEPTABLE KONSTRUKTIONEN 
+ 
+Die Konstruktion zeigt nicht sicher am Gerät angebrachte Teile. 
+ANMERKUNG 
+Klemmschrauben können in Gewindelöcher im Gerät eingreifen oder bei Durchgangslöchern mit 
+Muttern gesichert werden. 
+Bild 9 – Schematische Darstellung von Zugentlastungen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+120 von 166
+www.ris.bka.gv.at

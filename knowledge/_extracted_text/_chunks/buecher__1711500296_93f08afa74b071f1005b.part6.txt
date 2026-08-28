@@ -1,0 +1,3023 @@
+
+
+===== PAGE 241/298 =====
+In this example we will take a floor plan ofa house that has a circular fireplace and a
+kitchen, and we will create one drawing sheet with a plan view and the two details de-
+scribed. Take your layout from Chapter 7, or use another floor plan. This drawing will
+have three scales as follows:
+Step]
+Plan view ofhouse
+Detail of fireplace
+Detail ofkitchen
+Retrieving the File
+1/4 = 1 -0
+1 = 1 -0
+1/2 = 1 -0
+Final Drawing
+[~
+~
+~
+-.c;,...
+~
+--'\r-
+§~
+~
+Retrieve the floor plan file on which you want to create a drawing.
+Ifyou would like to use an AutoCAD template, open a new file and choose Architec-
+tural English Units. Then you won't need to draw a title block. Insert the floor plan or
+CopylPaste into model space.
+Now create the following layers:
+Layer name
+DIMI
+DIM2
+DIM3
+BORDER
+Pspace
+Detail
+Color
+red
+yellow
+green
+magenta
+blue
+cyan
+!'\i&¥!}O Layout1r
+Step 2
+Opening Paper Space
+Make sure your BORDER layer
+is current.
+'l!:J Pdge Setup
+Setup1
+224
+CHAPTER TWELVE
+Pick the Layout tab at the bottom
+of your screen or use the T1-
+LEMODE system variable.
+Command:TILEMODE
+Enter new value for
+TILEMODE <1>:0
+Regenerating drawing.
+This will get you into a non-tiled
+space. There will be a view of
+your model on screen with a ma-
+genta border.
+Right-click the Layout tab to set the size ofyour paper. Make a new layout called Floor
+plan.
+
+
+===== PAGE 242/298 =====
+Step 3
+Now you want to pick the plotter size that you need for this drawing. We are going to
+use a 34 X 22 sheet.
+Ifyour plotter options do not include a plotter this size, go back to AutoCAD and use
+the CONFIG conunand plus Configure a Plotter Wizard to configure a Designjet or
+similar plotter. Just accept all the defaults. The driver should come with AutoCAD.
+Then right-click again on Layoutl. Setup yourpage as above, and be sure to make this
+layout current on your way out.
+Creating the Views
+Now you can add your views relative to this paper with the command MVIEW.
+First, in model space zoom the current view to a scale of 1to 48.
+Command:Z
+Specify corner of
+window,
+enter a scale factor
+(nX or nXP)
+or
+(All/Center/Dynamic/
+Object]
+<real time>:1/48xp
+or in paper space pick the border and choose 1/4
+=: I -0 in the properties menu.
+You must be in paper space to use the Properties toolbar.
+4
+3 .---
+~
+2
+Now adjust the size of this viewport using the grips on the corners.
+Go back to paper space lllode for this.
+Pick up the frame on the comer and drag it into place.
+Now add two more views with MVIEW.
+Command:MVIEW
+Specify corner of viewport or
+[ON/OFF/Fit/Hideplot/Lock/Object/
+Polygonal/Restore/2/3/4] : (pick 1)
+Specify opposite corner: (pick 2)
+Command: MVIEW
+Specify corner of viewport or
+[ON/OFF/Fit/Hideplot/Lock/Object/
+Polygonal/Restore/2/3/4J : (pick 3)
+Specify opposite corner: (pick 4)
+Each new view added will have the full floor plan on it.
+Poper Space
+225
+
+
+===== PAGE 243/298 =====
+Step 4
+Zooming the Views
+On the lower right view, toggle into model
+space, then zoom into the views so that you get
+approximately the fireplace view.
+Then use ZOOM with the xp scale to zoom it to
+1 =1 -0
+This will be a zoom of 1/12XP.
+Command: Zoom
+Specify corner ... <real time>:1/12XP
+Go back to paper space and move your screen so
+that you can see the upper right view. Zoom into
+the kitchen, then zoom it to a scale of lh = 1 -0 or
+1I24XP.
+Command: Zoom
+Specify corner ... <real
+time>:1/24XP
+The ZOOM command is viewport dependent. You
+must be in the view in model space to zoom the ob-
+jects with ZOOM, and in paper space to use the
+Properties menu.
+rni'\
+~
+r
+~
+[S~
+StepS
+Dimensioning the Views
+With your kitchen still on screen and zoomed at the correct view, go to the Dimension
+Styles dialog box and create a new dim layer called Pspace.
+() Ute ovelllllscalecI
+>1~;d,;~~;;:,;;;;t:::'WW' ::::.,. :..:::.:.:..."..".~<::: :.' €> Sqll; dimentlOflt rolayoiA
+Toggle to paper space to zoom
+into the view so that you can see
+it properly.
+Once you have the kitchen on
+your screen return to model
+space so that you can access the
+information within the viewport
+in order to dimension it.
+Since this is a drawing done in imperial, make sure
+that your primary units are set to imperial as well.
+In model space, go to the Layer pull-down menu
+and make DIM1 frozen in the current viewport.
+Then make DIM3 current.
+Use the lineardimension to dimension the room as
+shown.
+Under the Fit tab, change the
+overall scale to O. This will size
+all of the dimensions to the re-
+spective views.
+Set this dimension style to cur-
+rent.
+226
+CHAPTER TWELVE
+
+
+===== PAGE 244/298 =====
+v~~~D dim2
+You can use either the Layer dialog box or the
+Layer pull-down menu to freeze and thaw lay-
+ers within individual viewports.
+This must be done in model space.
+Once it is completed, toggle to paper
+space to pan the drawing over so that you
+can access the fireplace.
+Then toggle back to model space, make
+the DIM1 layer frozen in that viewport,
+make DIM2 current, and dimension the
+view as shown,
+Now go back to paper space and zoom
+the full paper. Notice that you must make
+D.IM2 aynd DIM3 fro~ehn il1
+h
+the
+L
+floor pla11n
+::I!
+VIew.
+ou can use elt er t e
+ayer pu -
+,
+down menu with model space on, or the
+VPLAYER command in paper space.
+.....0..-
+_
+2/-6'"
+Command:VPLAYER
+Enter an option
+Freeze/Thaw/Reset/Newfrz/Vpvisdflt:F
+Layer(s)
+to Freeze:DIM3,DIM2
+All/Selected/<current>:S
+Select objects: (pick the plan view)
+Enter an option
+[Freeze/Thaw/Reset/Newfrz/Vpvisdflt:~
+You may notice that the default dimension
+size sometimes just doesn't work. The num-
+bers looktoo large and clumsy for the layout
+It is always useful to know how to create a
+custom-scaled dimension layer for cases like
+this.
+Automatic dimension scaling is OK for
+many applications, but in this case a dimen-
+sion scale of 10 may be better than one of 12,
+which is the default for this window zoom
+factor.
+Go to the Dimension Style dialog box. Cre-
+ate a new dimension called fireplace. Set the
+Fit factor for the overall size to 10, then make
+it current.
+Put one dimension on with the new size. If
+you like it, use Match properties to update
+the other dimensions.
+You should never deflect more than a few units from the default size or the dimensions
+wi1llook wrong, but sOluetimes a little 'tweeking' is the difference between a good
+plot and a great one.
+If, when you go to paper space and zoom the whole paper, you can read the dimen-
+sions, they are too big.
+Paper Space
+227
+
+
+===== PAGE 245/298 =====
+Step 6
+Step 7
+Adding the Notations
+Your three views are ready to be la-
+beled. In paper space, make your
+pspace layer current.
+Add the title for each view at a scale
+of 1;4 lettering. The TEXT command is
+easier here than MTEXT. The toggle
+for underlining is %%U.
+Remember that the view titles are al-
+ways placed under the view.
+In addition, when the borders are fro-
+zen you will need break lines to show
+that the wall continues past the bor-
+ders of the frames. AutoCAD draw-
+ings
+must
+maintain
+the
+same
+protocols as manual drawings.
+Placing the Title Block
+~
+~
+~
+~ I'
+il -
+Nf:§
+....... I-l":
+z
+--00
+c=~
+1
+N tt'
+fireplace Oetall
+5alIe 1",,1'0"
+The dimensioning layers are frozen within certain views and not others. In paper space
+you want to do a global freeze on the border layer.
+With your borderlayer frozen, you often
+see that the layout could use a bit of mi-
+nor adjustment to make it look better.
+:~) CJ4®1i. 0
+'5 .;~ :~fII r.~::;!i·~,:~"i;.·.·.·":.·.·.·.·.·:::":""::".·:":::::::: :...·:.·.·:...·.~·:.·::::.....·.·.·.·..•I.11
+':1
+Freeze or thaw in ALL viewports
+~iJ1jIl DIM'
+Bring the borders back. Move them around ifnecessary, go into the views to tighten up
+some ofthe dimensions, and move the view titles around so that there is room for a title
+block.
+Finally, if you have not used the AutoCAD architectural template, add a title block.
+Your drawing is now ready to plot.
+Use the PLOT command and plot to a scale factor of 1:1.
+x
+~~---
+l~lI-r~I'
+!··.·~.3
+.~-
+...>••.T.c."i
+__.r..'.·<~..·.1
+--,~i
+/~
+~
+oo
+ErJ
+Drawing using custom title block
+228
+CHAPTERTWELVE
+Drawing using AutoCAD architectural template
+
+
+===== PAGE 246/298 =====
+Step]
+In this example we will draw two footings
+and show how they are assembled on a
+footing layout. The footing layout will be
+at a scale of I:500. Footing A will be at a
+scale of 1:50. Footing B will be at a scale
+of 1:25.
+Be sure to start in a metric drawing. aca-
+diso.dwt.
+This will be plotted at 297
+210 in land-
+scape orientation. We will add our own ti-
+tle block.
+First create the following layers
+I
+Draw the footings. Make the footprint (darker
+lines) in the Footprint layer, and the other details
+of each view in the Detail layer. Do not
+dimension the footings yet.
+Laver name
+DIM!
+DIM2
+DIM3
+Border
+Footprint
+Pspace
+Detail
+color
+red
+yellow
+green
+rnagE~nta
+blue
+blue
+cyan
+~
+0
+'"'
+.
+~
+lD
+ru
+0
+0
+'"
+<"l
+g
+t
+I
+230 1- -"'- I- 230
+920
+2000
+Footing A
+co
+N
+of-
+Footing B is half the size of
+footing A. Clearly COpy and
+SCALE will make the drawing a
+lot simpler.
+The footings will be assembled
+on a layout grid. On the detail
+views you want to show the
+outside dimension or footprint
+of each
+footing (the darker
+line) as well as the pin and up-
+per level details.
+ooo
+2000
+680
+r
+514
+~
+I
+•
+~ fl.
+'<t :Jf
+.
+t
+I
+.3
+u..~
+wz
+::i
+On drawings oflarge construc-
+tion projects, the footings are
+Footing B
+often laid out in bays or grids.
+Paper Space
+229
+
+
+===== PAGE 247/298 =====
+Step 2
+The Layout
+On Layer DIMl draw in a
+grid of eight vertical lines
+spaced at 8000 units each
+and five horizontal lines at
+6500 units each.
+Draw bubbles along the top
+and side corresponding to
+this grid. Put in the letters
+and numbers shown.
+[
+II
+Layout Grid
+Use COpy to place the foot-
+ings on the grid intersections.
+Use the grid lines to place
+the footings centered on the
+grid lines. ARRAY will also
+work.
+Note that the footings are
+centered on the grid lines
+so the base point is quite
+important
+If you have not done so al-
+ready, save the drawing at
+this point.
+Step 3
+230
+CHAPTER TWELVE
+Layout grid with footings
+Opening Paper Space
+Make sure your Border layer is current.
+Pick the Layoutl tab at the bottom of your screen or use the TILEMODE system vari-
+able.
+T~ Layout' [
+Command:TILEMODE
+Enter new value for TILEMODE <1>:0
+Regenerating drawing.
+f,;;J
+~ ;]
+f,;;l
+r.;\
+;\
+f,;J
+~ ~
+[,;]
+r~
+~ ~
+r~
+~p
+l~
+r~
+~ ~
+r~
+[,1;]
+r.~
+[,1;)
+r.~
+f,iJ
+r.J
+~ ~
+r.J
+C~
+l'~
+~~
+r~
+r~
+r ~
+~ ~
+r~
+L
+~
+
+
+===== PAGE 248/298 =====
+~Clrwne:
+P/ott/j(:
+Plotsi:l&,
+wtw."
+This will get you into a non-tiled space. There will be a view ofyour model on screen
+with a magenta border. Ifthe border is not magenta, you are not in the correct layer.
+Make sure your frame or border is on
+the Border layer.
+Right-click the Layout1 tab to get to
+the Page Setup Manager.
+Make a New layout called Setup.
+Now you want to pick the plotter size
+that you need for this drawing. Weare
+going to use an 8.5 x 11 sheet or 297
+x 210 mm.
+Set the plotter to the one you generally
+use. Pick the paper size.
+Make sure that the plotter will plot
+from 1:1. Then click OK and return to
+the drawing.
+....
+.........................
+.......
+..:
+.....
+....
+.........
+............
+.......
+..................
+'N<lIller
+! ....
+·r..lI:;;q~
+r-.,
+II
+.Pl'Qperti'?S.
+c'
+...••.•.... ...>
+:
+...
+.......
+....
+.1 210
+MM j(-
+.'
+>
+.~
+......
+.....
+.........
+.•..•..•......
+..........
+c
+....
+. ..
+>
+J
+......
+;
+....
+.
+. .......
+. '
+....
+...
+...
+< .,
+..
+TC;li lJ.4 (?1 nnn ,,"0" nn MM'
+MI~I.·
+<.
+".
+......
+;
+• ~~
+,~
+'f
+.....
+. ..
+..
+......
+-
+...........
+..... .
+....•••• >
+i
+..··.·.·
+...t·.:
+.•.....
+. ......
+... . ,
+...
+.........
+Layout
+;1
+.
+-
+..
+:
+....
+.'
+......
+.........
+......
+..,
+I
+n
+.. ~
+iTIi!m".
+..
+10.00
+rfIl'I'l
+.•...••..>
+............
+Step 4
+Setting up the First Viewport
+Now you can add your views relative to this paper using either the Floating Viewports
+orthe command MVIEW. First set up the existing viewport. In model space, ZOOM the
+current view to a scale of 1 to 500.
+Command:MS
+Command:Z
+Specify corner of
+window,
+enter a scale factor
+(nX
+or nXP)
+or[All/Center/Dynamic/ ...
+. ... . Object]
+<real
+time>:1/500xp
+This zooms the view to exactly 1I500th
+or 1:500.
+Paper Space
+231
+
+
+===== PAGE 249/298 =====
+L
+----~
+You must be in paper space for this.
+Pick up the frame on the comer and
+drag it into place.
+There is no standard scale for this in
+the Properties manager. Use the Prop-
+erties toolbar to set up a custom size of
+1-500 or use ZOOM.
+-_.'
+-
+---. -
+-
+-
+~-
+-~ -
+-
+-
+"1
+..-_
+_---_
+_
+.
+1:'·-----------····-·----------·-------------------1---
+:~'fIlI'rr~f~,.~
+IV-
+-
+.
+0-
+-
+:
+'!
+:
+,·~--·-~I
+,
+!
+.................~
+i
+I
+Now adjust the size of this viewport
+I
+using the grips on the comers. Pick the
+I
+edge of the frame to highlight the
+:
+grips, then pick the comer to stretch
+I
+the frame smaller.
+.II
+I
+I
+r-G
+il
+....-.,
+(
+1
+'"
+i
+I
+-----J
+'---------'-~~ J
+Command: Zoom
+Specify corner ... <real
+time>:1/50XP
+Command: Zoom
+Specify corner ... <real time>:1/25XP
+Toggle into model space, then zoom into
+the footing views so that they are approxi-
+mately centered in the view.
+Then use ZOOM with the XP scale or
+Properties to zoom them. Footing A
+should be at a scale of 1:50. Footing B
+should be at a scale of 1:25.
+Command:M
+for move
+Then pick the view and move it.
+Keep the view that is zoomed at 1:500 on
+the bottom.
+Zooming the Views
+It is more practical to have the smaller views on
+top, so move the views and stretch them until
+they look like this.
+Making New Views
+Now add two more views with MVIEW.
+Command:MVIEW
+Specify corner of viewport or
+[ON/OFF/Fit/Hideplot/Lock/Ob
+ject/ polygonal/Restore
+/ 2/3/ 4] : (pick 1)
+Specify opposite corner: (pick 2)
+Command:MVIEW
+Specify corner of viewport or
+[ON/OFF/Fit/Hideplot/Lock/Obje
+ct/ Polygonal/Restore
+/2/3/4] : (pick 3)
+Specify opposite corner: (pick 4)
+Step 6
+StepS
+232
+CHAPTER TWELVE
+
+
+===== PAGE 250/298 =====
+Step 7
+Step 8
+The ZOOM command is viewport dependent. You must be in Inodel space to zoom the
+objects using ZOOM, or in paper space to change the scale using the Properties menu
+shown on the left.
+Adding View Titles
+So you don't forget what scale you have zoomed the views to, add the notations.
+Make the Pspace layer current, then use the TEXT command. The underline toggle is
+%%U. Make the title text height 2.5 mm for the title and 2 for the scale.
+Command: text
+Specify start point of text or [Justify/Style]: (pick a point
+beneath the view)
+Specify height<10.000>:2.5
+Specify rotation angle of
+text<O>:~
+Enter text: %%UFo()ting A.J
+Command: text
+Specify start point of text or
+[Justify/Style]:~
+Specify height<10.000>:2
+Specify rotation angle of
+text<O>:~
+Enter text:%%UScale
+1:50~
+Add the titles and scales for Footing B (scale I:25) and the layout (scale 1:500).
+Dimensioning the Views
+Toggle to paper space to zoom to
+the outside ofyour border so you
+can see your footing well enough
+:ition,prace it:
+to dimension it.
+Go to the Create Dimension Style
+dialog box and make a new
+dimension layer called Pspace.
+Under the Fit tab, choose Scale
+dimensions to layout. This will
+make all of the dimensions sized
+to the respective views.
+Choose OK to exit this dialog
+box, and set current to have the
+Pspace dimension style active.
+9 both text and
+first thing to
+is:
+lines
+t inside
+o Use overall scale of:
+@ Scale dimensions to layout
+~
+.0
+v~ ~ fl. border
+V(I ~~. Defpoinls
+V~ @I~. details
+\) ~ fJ fb. DIM1
+V(i~fbD~••••••
+oG7JtJ ~ltJ dim3
+o(I ~lfbEJ footprint @§J
+V~ ~ 'lJ. pspace
+Toggle back to model space to access the in-
+formation within the viewport in order to di-
+mension it.
+In model space, go to the Layer pull-down
+menu and make DIM! frozen in the current
+viewport. Then make DIM2 current.
+Use linear dimension to dimension the part as
+shown.
+~g
+("l
+•
+0
+ro
+0
+~
+0
+~
+a
+'oj)
+~
+0
+0("l
+t
+230 1--.- r-- 230
+920
+2000
+«)
+('l
+ot-
+N
+wz:J
+Paper Space
+233
+
+
+===== PAGE 251/298 =====
+Once it is completed, toggle back to pa-
+per space to pan the drawing over so that
+you can access Footing B.
+Then toggle back to model space, make
+the DIMl layer frozen in that viewport,
+g
+make D1M3 current, and dimension the
+view as shown.
+2000
+680
+514
+I
+j
+"
+o
+~j
+I
+~
+~,
+I
+.
+,
+I
+Do the same for the layout view. Notice that you must make DIM2 and DIM3 frozen as
+well. You can also freeze the Detail layer in this view.
+You may also find that you need to freeze the Footprint layer to place the dimensions
+properly. Once the dimensions are completed, thaw the Footprint layer.
+You may notice that when the Footprint layer is turned back on, the default dimension
+size just doesn't work. The numbers look too large and clumsy for the layout.
+It is always useful to know how to create a custOln-scaled dimension layer for cases
+like this. The automatic dimension scaling is OK for many applications, but in this
+case a dimension scale of 450 is better than one of 500, which is the default for this
+window zoom factor.
+Go to the Dimension Style dialog box. Create a new dimension called Fullview.
+Set the Fit factor for the overall size to 450, then make it current. Put one dimension on
+with the new size. Ifyou like it, use Match properties to update the other dimensions.
+;e both text and
+~ first thing to
+~ is:
+t lines
+fit inside
+6349,38
+@ Use overall scale of:
+cD Scale dimensions to layout
+234
+CHAPTER TWELVE
+Itis a good idea atthis pointto go into each view andre-zoom at 1I500XP, lIS0XP, and
+1/25XP just in case you have zoomed the views while dimensioning.
+
+
+===== PAGE 252/298 =====
+Step 9
+Thaw the Footprint layer if you
+have frozen it.
+The convention for a repetitive
+dimension like that ofthe footing
+bays is to put in one dimension
+F
+and assume that the rest are the
+same.
+The footings must be labeled: A
+H
+beside all A footings, and B be-
+side all B footings.
+Adding the Title Block
+Your three views are
+n~ady, and
+they are already labeled. Now all
+you need to do is freeze the Border
+layer and add a title block.
+With your Borderlayer frozen, you
+often see that the layout could use a
+bit of minor adjustment to make it
+look better.
+Bring the borders back. Move
+them around if necessary, go into
+the views to tighten up some ofthe
+dimensions, and move the view ti-
+tles around so that there is room
+for a title block.
+Finally add a title block. Either
+draw a new one or fill in the one
+that you opened. Your drawing is
+now ready to plot.
+Use the PLOT command and plot
+to a scale factor of 1: 1.
+i'DOG
+.wr~~
+I
+I
+f
+L
+I
+~I~
+"1~
+.
+A
+A
+fltXX ~~al
+~1:!700
+l
+l
+'--f- .
+Ii:
+I!
+"I~
+f--
+il
+23lI -.- -
+~
+aooo
+Assemb
+Drowin
+-
+Footi
+B A &: S
+ASSOIBLY BUILDING
+MAY '06
+R
+er Ali
+B noted
+82
+Paper Space
+235
+
+
+===== PAGE 253/298 =====
+Exercise 12 Practice
+Create the fireplace drawing, then open new viewports
+in paper space to create the details.
+6'8
+8
+A
+2' x 4'-16' a.c.
+A
+I
+~Ievatictl
+~cale 1/ 2" ~ 1'-0"
+I
+9'
+t
+I
+l
+M
+<
+~"
+7
+/
+,
+(
+J
+t
+6'
+Mt<::t"
+-_._-
+3.
+3
+'l f-13 -1~(~
+~
+\11
+Sl£ETl11F'l
+Title
+IFlreplo.ce
+Column Detail
+5cale III :- I' -0 I
+Section A - A
+5cale I/ 2" ~ I' -0' I
+COl'lpa.ny
+.A~
+fJ/wJxvr.t HMTIiIb
+~tytv
+l'
+Half Plan
+~cale 1/2
+11 "" 1'-0'
+Mantle Detail
+236 CHAPTER TWELVE
+
+
+===== PAGE 254/298 =====
+Exercise 12 Architectural
+Use the drawings on pages 194 and 195 to compile this commercial
+building in paper space. Use ISO A1 sheet size.
+WORKING DRAWINGS
+I:
+~
+~i~
+UII
+~l
+WORKING DRAWINGS ARE COMPILED IN
+SETS. THE FLOOR PLANS ARE USUALLY
+ON THE TOP, THEN THE ELEVATIONS,
+SECTIONS, DETAILS, MECHANICAL, AND
+HVAC.
+DRAWINGS ARE NUMBERED ON THE
+BOTTOM RIGHT CORNER IN THE TITLE
+BLOCK STARTING WITH AI, A2, ETC.
+WHEN COMPLETED, THEY ARE SENT OUT
+FOR ESTIMATING AND QUOTES.
+l3d~~~d jO dOl 01
+~DOlj
+L218
+~~
+t5
+~
+z
+C)
+("l
+I:lL
+1..3
+....
+I
+K ~
+I
+~
+/
+I
+I
+1-K
+~ I-
+f
+I---
+~
+a
+I
+I
+~
+.~
+~
+~~
+-'1.1.
+UJo~
+~<C
+I
+V
+~1S:1
+~~
+-.I
+~~
+<:C)
+~r\
+\3
+g~
+I:L~
+~
+V
+~
+~\
+\3
+~
+i'..
+u~
+!J
+~~
+~
+./
+W
+~~~
+~
+UJo
+SL
+ffij
+~~~
+iS2
+r-r-r-
+~
+:u,.:.-'''--
+~
+I I
+~
+W
+I
+I
+s::::,
+r-'
+I
+I
+~
+-.I
+~
+\:::'i
+~
+I-
+SL
+~
+~
+-.I
+\:::'i
+r---V
+I-.
+I I
+\
+I
+~
+I
+t'\
+~
+I I
+\
+.i: ~
+I
+K
+~
+I I
+. u
+u
+I
+- ~ ~
+"-
+"-
+s::::,~
+~~
+~~
+('
+::E~
+~~
+'t:3~~
+~~
+z>t-~
+Z:3
+<:C)
+~~\2
+I
+V
+I
+I'
+UJo
+I:L~
+~
+-'
+I
+r\
+I
+..,::
+~
+~
+I
+v
+~
+~
+~
+I
+'-'"
+I
+r\
+I
+\Al
+\.)
+r--r- .....
+I I
+\
+V
+I
+I I
+f'-
+~
+I
+I I
+K
+~
+~
+Iozn-1
+"-
+llV~
+~JOla-OJ3 JO dOL 01 lJ
+0'1768
+Paper Space
+237
+
+
+===== PAGE 255/298 =====
+!~--1.6S0
+0'900~
+0'
+75°ri
+0.600
+0.450 I
+-....
+r
+3 x 0.250-28
+UNF-3B
+EQ
+SP
+AS
+SHOWN
+MINOR
+¢
+l
+0500
+MIN
+FULL
+THD
+'"
+0.450
+~V\liO,260-0.265 x
+45"
+NOTEl
+THREAD
+ROTATED
+TO
+PLANE OF
+DRA'w'ING
+¢2.750
+;
+R 0,05
+A-A
+SCALE ~4/1
+l
+¢2,80
+0,05 j
+2 x
+R 0.05
+0,300
+0,15
+5
+x 0.050
+NOTES
+I-DO NOT SCALE
+D~G
+2-ALL DIMENSIONS ARE IN INCHES
+3-BREAK ALL SHARP EDGES AND CORNERS
+4-SURF'ACE FINISH .: 2~U.C.S.
+UJ
+~
+~
+~
+UJt
+~u
+co
+(I)
+c--.
+.......
+PEDESTAL
+MORA WX COLLEGE
+-.c
+tA
+-I11III
+¢3.40
+¢4.00
+SHEET 1 DF" 1
+~:::-
+-
+....-
+__
+IIlIIlIl_
+2
+X R l.00
+It._-kj
+I
+I
+1.70 I-- J
+3.40
+~
+PEDESTAL.
+~
+1TDI
+QTY
+DESCRlPTDJt
+SR 025 ALL AROUND
+TYP
+0,65
+:J.c
+.2
+------~i-~~A
+-101
+OJ?
+1------10,00----
+10~~0'75
+UF.osso
+C::!:.
+SCALE-2/1
+TYP-4 PLACES
+08:lLi
+--
+.. 90
+5:5
+-I
+I
+3.40 r
+J At
+0,25 ALL AROUND
+I
+I
+'4~;~-J
+8.50
+0,30
+0.15
+2 x R
+.ll::.Il.
+SCALE-4fl
+e9
+~,
+45'
+J~
+~07C
+IfO~
+2 x
+4 x
+¢
+0,260
+4 HOLES
+EQ
+SP
+AS
+SHO'w'N
+N
+~
+CD
+CI).-
+U
+L-
+CD
+><
+w
+cu.-
+c::c
+-'=u
+CD
+~
+
+
+===== PAGE 256/298 =====
+--I
+l\.)
+~
+oo
+Q.
+m
+><
+CD.,
+n(ji-
+CD
+onnet r ron
+Bonnet Side
+Base Front
+Bose Side
+Moulding Base 1
+Moulding Base 2
+Moulding Waist 1
+Moulding Waist
+2
+Moulding Bonnet
+Waist Front
+Waist Side
+Door
+Crown Post
+Part List
+280
+~~f:J
+250
+'"
+.ta.&.
+I.a,.
+Various
+Full
+I
+Belenoy
+10
+.1'"
+~.s
+.$'
+15
+J\>J,s
+COMp(\ny
+.
+(JIonr;n; (///orlts
+JJw- .,.
+I·
+JJob,:
+I
+SHEET 1 of 1
+Ryan MacIntosh
+31/03/06
+~,\6,S
+~
+~\1'i:l
+;."'.>".J~
+R5
+¢:'!-o
+ll)
+o
+.30
+.1Jl- I J=W
+~ltS
+~~
+Bonnet and Face
+scale 1:5
+~":>
+~
+R5
+Details
+scale 1:2.5
+~h
+~
+A
+~
+~][
+~
+~n~lt)
+F~
+~~j I
+75
+I~~
+:is
+L{)
+FuU Qock
+scale 1:8
+i
+II
+1~g
+II
+R52
+TTr--:::J
+i
+~l :211,{)I llBnll
+:265
+¢
+~
+L{)
+L{)
+~I
+~~~I
+I~I
+l~
+20
+.;l-
+f
+L-t::H1ff
+I ~~
+I
+I
+~
+L{)
+<D
+l"-
+I ~I
+Ii Wf~H1 1I*1 L
+I,{)
+N
+~~if
+? 'f
+G
+1~ I I .
+a
+R51~rffffil
+~
+~ ~rrr
+~I*I IlfP'trl
+~I
+~I
+I.,
+~
+210
+1 r-
+a
+I"')
+h)
+~
+~
+"'U
+o
+"0
+~
+c..n
+"8
+@
+
+
+===== PAGE 257/298 =====
+I
+I
+~
+a,
+BLOCK CONFI GURED FOR
+UPPER COURSES
+SCALE I" = 1'-0"
+6" CONNECTOR
+Il"GffiI
+1
+"
+2
+2
+I~"ni
+rnl~"
+WEB 'T' LOCATIONS
+~ 1
+16"1
+~~:~
+BLOCK CONFIGURED FOR
+SCALE I" = 1'-0·
+PLAN - FORMS AND TIES
+SCALE I" ;;: 1'-0"
+I
+'BARS' @ I" OC,
+4'-O'DEEPER GROOVES IDENTIFY
+/\. WEB LOCATIONS
+~
+r
+16"
+LIII!I!IIIIII!IIIII!!!IIII!!!!!!!!I'!!"!I!!!!'!!!
+~'-t-8"~:.O~8'-T.8·14~
+l ~"; :-;::::-:-ffi= ;-:: ffi;; ::;:::;F¥::r
+II" 6"J..ld:: :::~:::::: ::~:::::=~ ::::
+~::::: ::~
+ti:'
+~
+VI
+E
+(;
+u..
+~
+~uc
+0
+U
+-0
+~
+0
+"3
+VI
+'- ..s
+(1)0
+C)~
+c:
+.~
+(1)
+~
+_
+-0
+-
+:-=
+C -t
+..c:-o
+U
+0
+Q)
+-0
+N
+~u
+.....
+0
++-
+(1)
+Q)u
+U)
+00.
+.-
+VI
+U
+I.....
+Q)
+L-
+0.
+(1)
+00..
+><
+Q)
+w:3
+BLOCK CONFIGURED FOR
+FIRST COURSE
+SCALE I" ;;: 1'-0"
+~
+6" CONNECTOR
+SCALE 4" ;;: 1'_0'
+em
+TIE ANCHOR
+SCALE 4" = 1'-0"
+ICF DETAIL - RESIDENTIAL
+ICompany
+BRIAN CRIBBIN LIMITED
+Drwn
+SLR.
+Date Ap r i I U--woe
+Scale
+as not ed
+DWG No.
+N
+0:::
+ll.J
+fi:
+~u
+o
+'l:I'
+c--.
+
+
+===== PAGE 258/298 =====
+POINT, DIVIDE, MEASURE, and
+Inquiry Commands
+Qocompletion of this chapter, you should be able to:
+1. Change PDMODE and PDSIZE
+2,lJs~PtVI()EondMEASURE to place points and/or multiple obiects
+where desired within a model
+·3;Use··tneSBUNE· command
+4.Ch¢ckfheporqrneters and properties of obiects within the model
+O.Cnecktheo'leroll size ofthe model
+6~Colculotethe area of a model with AREA or BOUNDARY
+I. Use the SPLINE command.
+Points, Point
+Display and
+Point Size
+Options
+Points are used in spline generation, in many 3D applications, and as node or reference
+points which you can snap to or offset from, When you DIVIDE or MEASURE an object,
+points are used to show the divisions. You can set the style of the point and its size
+either relative to the screen or in absolute units.
+The command line equivalent is POINT.
+The default point display is as shown on the icon, simply a one pixel point. In order to
+make use of points along other objects it is necessary to change the point display.
+!::ielp
+I
+"--.....
+OK
+~ I
+Cancel II
+In PDSIZE, a positive nmnber will represent the actual
+size in drawing units ofthe point. A negative number is
+taken as a relative percentage ofthe screen and a differ-
+ence in the zoom factor will have no effect on the size of
+Point Size:
+the point display.
+G} SetSizeJielative to 5Cl.Elen
+First choose whether you want the point to be relative to
+()SetSizein8bsoJuteUnii$
+the screen or in absolute values. AutoCAD stores the
+point size in the PDSIZE systelll variable. All points will
+be added relative to the new size, and all existing points
+will be updated according to this size on the next regeneration.
+Points, either created by MEASURE and DIVIDE or entered using the POINT command,
+can be accessed with the OSNAP option NODE. This is particularly important when
+entering blocks at specific points or, in 3D, when finding centers for fillets, etc.
+Point Style
+The Point Style dialog box is found under the format
+menu or by typing in DDPTYPE.
+To set the point size or style without using the dialog
+box, use PDMODE for the style and PDSIZE for the size.
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+241
+
+
+===== PAGE 259/298 =====
+{J
+Figure 13.1
+ZOOM ,~)(
+{J
+ZOOM ,~X
+Using DIVIDE
+and MEASURE
+242
+CHAPTER THIRTEEN
+The points will then be added in at the points determined by either the DIVIDE or the
+MEASURE command, as shown in Figure 13.1.
+Ifyou have an object or space that needs to be cut into equal pieces orportions, you can
+use DIVIDE or MEASURE.
+DIVIDE will visually divide any linear element- an arc, a circle, a line, or a pline - into
+a specified number of equal parts.
+MEASURE will visually measure a linear elementinto segments ofa specified length.
+The DNIDE Command
+DIVIDE places equally spaced point objects or blocks along the length or perimeter of
+an object.
+The command line equivalent is DIVIDE.
+DIVIDE with Points
+Using the Point Style dialogbox, set the current point to one that can be easily seen, not
+the fIrst one.
+Command:DIVIDE
+Select object to divide:
+(pick the object)
+Enter the number of segments or [Block]:6
+Figure 13.2
+The selected object is not altered in any way, but as can he seen in Figure 13.2, there
+are points in the current style at regular intervals. The points become objects on the
+current model. To access these points with OSNAP use NODE.
+This command is particularly useful for placing lines and arcs along a polyline, as can
+be seen in the arcs on pages 119 and 120.
+
+
+===== PAGE 260/298 =====
+o
+DIVIDE Using a BLOCK
+DIVIDE can also be used with blocks. In the follow-
+ing example, a mullion block is used to divide a
+window into equally spaced sections. Both a
+curved window and a block called mullion are
+needed.
+In Figure 13.3 we have a curved window and a
+block called mullion, which is the shape of a mul-
+lion. The insertion point on the block is the middle
+of the bottom line.
+Figure 13.3
+The command will place this block at regular inter-
+vals along the window. The base point ofthe block
+is very important. In Figure 13.3a the mullion is placed on the lower arc and rotated, in
+13.3b the mullion is placed on the upper arc without rotation.
+Cornmand:DIVIDE
+Select object to divide: (pick 1)
+Enter the number of segments or
+[Block]:B
+Enter name of block to insert:MULLION
+Align block with object? [Yes/No] : (Y for a,
+N for b)
+Enter the number of segments:8
+The MEASURE Command
+The MEASURE command is very similar to the DIVIDE command in that it divides a
+specifiedobject into a series ofequal portions. The difference is that the equal portions
+are given a specific length, and thus there may be a portion ofthe object left over when
+the command is finished. Again, the MEASURE command works on lines, arcs, circles,
+and plines, and again, the markers can be either points or blocks.
+The command line equivalent is MEASURE.
+MEASURE with Points
+In the following example, use point display 4, or
+the vertical line in the dialog box, and change the
+length to 18m withPDSIZE 18. Then use MEASURE
+to divide a road illustrated by a pline, Figure
+13Aa, into equally spaced lots, Figure 13Ab.
+First draw the pline representing the road.
+b
+Type in the system variables PDMODE and
+PDSIZE.
+Figure 13.4
+Command:PDMODE
+Select new point mode <1>:4
+Command:PDSIZE
+Enter new point size< 1.000>:18
+Command:MEASURE
+Select object to measure: (pick
+(a)
+Specify length of segment or
+[Block] :15
+We now have a road that is divided into equal portions of 15 ill lengths with a depth of
+18 ill each. Notice that the road is created withpline and thus has line and arc segments.
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+243
+
+
+===== PAGE 261/298 =====
+MEASURE Using BLOCKs
+In the next exalnple, we will place a block of
+a toilet along an existing wall. Both a LINE
+representing a 19' wall and a BLOCK that rep-
+resents a toilet will be needed.
+Create a toilet that has an interior space of3'
+x 5,' as in Figure 13.5.
+Now BLOCK the toilet, making sure that the
+insertion base point leaves enough space for a
+2" wall on the back and on the sides.
+Insl!1"'t;Oft Bast' po;,,1; ~
+2" '-"01'1 bock _all
+2'" Sl)act' 1'01" s;ck> _all
+11
+~3'4'~
+Figure 13.5
+244
+CHAPTER THIRTEEN
+Now use MEASURE to place the toilet along the 19' long wall, as in Figure 13.6.
+--------------19'0°---------------1
+Figure 13.6
+Command:BLOCK
+Block name:TOILET
+Insertion base point:corner
+Select objects: (pick up all the objects)
+Command:MEASURE
+Select object to measure: (pick 1)
+(take the left side of the
+wall)
+Specify length of segment or
+[Block]:B
+Enter name of block to insert:TOILET
+Align block with object?
+[Yes/No]:~
+Specify length of segrnent:1000
+When creating the block to be used in a MEASURE command, be sure that you have no
+overlapping items.
+If you use points in either the DIVIDE or the MEASURE commands, you will have to
+change the PDMODE to be able to see the displayed points. Once placed, these points
+become objects in the file and will be affected by editing commands such as ERASE,
+MOVE, COPY, etc. Ifyou do not change the pOMaDE, these points may be difficult to
+see.
+
+
+===== PAGE 262/298 =====
+The SPLINE
+Command
+In Chapter 5 we looked at polylines and how to edit them into splines. There is also a
+command to create splines or smooth curved lines without accessing the PLiNE
+command,
+AutoCAD uses the Nonuniform Rational B-Spline (NURBS) formula to describe the
+splines entered. A NURBS curve produces a smooth curve between control points;
+this spline can be either quadratic or cubic.
+Ifyou are creating a large drawing with multiple splines for mapping or airfoil design,
+a drawing containing splines uses less disk space and memory than a drawing with
+polylines. To access the SPLINE command:
+The command line equivalent is SPLINE.
+In Figure 13.7 a spline is drawn dynamically as the
+vertices are being entered.
+2
+10
+Cornmand:SPLlNE
+X
+3
+Specify first point or
+[Object]:
+(pick 1)
+Specify next point: (pick 2)
+Specify next point or
+[Close/Fi t
+tolerance]
+<start point>:
+Figure 13.7
+(pick 3 through 9)
+Specify start tangent: (pick 10)
+Specify end tangent: (pick 11)
+7
+9
+8
+llX
+Entering Points
+Enter points to add additional spline curve seg-
+ments until you press.J. Like the LINE and PUNE
+commands, Ufor Undo will remove the last entered
+point.
+As the points are entered you can see the spline be-
+ing created.
+Start and End Tangency
+The Enter start tangent: prompt specifies the tangency
+of the spline at the fITst point; the Enter end tangent:
+prompt does the same for the end point. You can spec-
+ify tangency at both ends ofthe spline, and you can use
+point, TANgent, or PERpendicular object snaps to
+make the spline tangent or perpendicular to existing
+objects.
+Specify start tangent: (pick 12)
+Specify end tangent: (pick 13)
+Points 12 and 13 in Figure 13.8 and 14 in Figure 13.9
+are points ofcontinuity for the spline curve.
+Figure 13.8
+14X
+Figure 13.9
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+245
+
+
+===== PAGE 263/298 =====
+Close
+As in the PLiNE command, the Close option defines the last point as coincident with
+the first and makes it tangent there.
+Fit Tolerance
+This changes the tolerance for fitting the spline through the points. The number is
+higher or lower depending on how you want the spline to fit through the points.
+Object
+This option converts either 2D or 3D polylines into splines.
+The SPLINEDIT Command
+The SPLINEDIT command edits the spline object.
+The command line equivalent is SPLINEDIT.
+The options for this edit command are similar to those of PEDIT.
+Inquiry
+Commands
+The Inquiry commands are used to see and list
+the parameters of a model. Objects are put in
+relative to the origin, 0,0. The size, shape and
+properties of the objects can be listed with the
+Inquiry commands.
+; .~~PI~~~"~"W~~SWbQow .~
+~.
+Work$p""e<;
+•
+i(
+P<llett(l$
+·H~J Command Line
+CTRL+9
+Clean Screen
+CTRL+O
+:.;;,;: Qistance
+: !lArea
+:e. Region/tiass Properties
+.i~.
+~ist
+,15 lDPolnt
+Sp~l~g
+Qulctseled...
+DrllWQ.rder
+.'
+: €1 UpdilteFields----
+: ,
+illod Editor
+Xref and Block In-place Editing
+; ~ Attribute E~tra(tion...
+1-
+ID
+Distance
+Inquiry
+f3
+~oad Apprtciltion•..
+8,unScript...
+~Clo
+I!me
+Set ~ariilble
+•'r-'-.,"""'-----~
+The Inquiry commands can be found on the In-
+quitytoolbar shown above or in the Tools pull-
+down menu under Inquiry, as shown in Figure
+13.10. These commands can also be typed in at
+the Command: prompt.
+Figure 13.10
+AREA
+0lS1
+LIST
+10
+STATUS
+computes the area of a closed polygon
+computes the distance between two points
+lists the position and properties ofa specific object or group of
+objects
+identifies the position ofa point
+displays a listing of all the statistics of a file along with other
+infonnation
+246
+CHAPTER THIRTEEN
+
+
+===== PAGE 264/298 =====
+The AREA Command
+AutoCAD offers built-in area computational
+abilities which also display the perimeter of
+the object calculated. This can be extremely
+useful for calculations of plines and irregular
+shapes.
+AREA Using an Entity
+In Figure 13.11 is a pline that has been fitted
+with a spline curve, and the area and perimeter
+are to be calculated. In this case an entity is
+chosen for the area option.
+Figure 13.1 1
+Command:AREA
+Specify first corner point or
+[Object/Add/Subtract]:O
+Select objects; (pick 1)
+Area = 16.1434 Perimeter = 19.6824
+AREA Using Lines
+When calculating a series ofstraight lines, the default is to have the shape entered by a
+series of points as shown in Figure 13.12. OSNAPs are needed for accuracy.
+Command:AREA
+Specify first corner point or
+[Object/Add/Subtract] :
+END of
+(pick 1)
+Specify next point or press ENTER for total:END of
+(pick 2)
+Specify next point or press ENTER for total:END of (pick 3)
+Specify next point or press ENTER for total:END of
+(pick 4)
+Specify next point or press ENTER for total:END of
+(pick 5)
+Specify next point or press ENTER for total:..J
+Area = 67.5000 Perimeter = 31.1131
+4
+3
+5
+2
+Figure 13.12
+Subtract and Add with AREA
+To calculate the net floor area of a bathroom, a
+drawing ofa bathroom will be needed. Draw in a
+bathroom 3 m x 2 m, as shown in Figure 13.13.
+Set OSNAP to ENDpoint and calculate the total
+floor area.
+Command:OSNAP
+Object snap modes:ENDpoint
+Figure 13.13
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+247
+
+
+===== PAGE 265/298 =====
+2
+Command:AREA
+Specify first corner point or
+[Object/Add/Subtract] :A
+First point: (pick 1)
+Next point: (pick 2)
+Next point: (pick 3)
+Next point: (pick 4)
+Next point:.J
+Area
+=
+6000000
+Perimeter = 10000
+Without leaving the command, subtract the fixtures.
+1L:J,x----------.-----7f.,.
+Figure 13.14
+Specify first corner point or
+[Object/Add/Subtract]:5
+Specify next corner
+ENTER for total (SUBTRACT mode) : (pick 5)
+Specify next corner
+ENTER for total (SUBTRACT mode) : (pick 6)
+Specify next corner
+ENTER for total (SUBTRACT mode) : (pick 7)
+Specify next corner
+ENTER for total
+(SUBTRACT mode) : (pick 8)
+(SUBTRACT mode)
+Next point:.J
+Area = 1859444, Perimeter
+=
+5859
+Total area
+=
+4140556
+6
+Specify first corner point
+: (pick 10)
+Specify
+(SUBTRACT mode) : (pick 11)
+Specify
+(SUBTRACT mode) : (pick 12)
+Specify
+(SUBTRACT
+mode):~
+Area
+=
+306148,
+Perimeter = 2226
+Total area = 3834408
+n
+10
+)f----";{
+9
+8
+Figure 13.15
+5
+u
+The wording in these commands is
+Ivoluminous, just Jook for SUBTRACT
+mode or Add.
+Specify first corner point or
+[Object/Add]: (pick
+Specify
+(SUBTRACT mode) : (pick 14)
+Specify
+(SUBTRACT mode) : (pick 15)
+Specify
+(SUBTRACT mode) : (pick 16)
+(SUBTRACT mode)
+Next point:.J
+Area = 139611,
+Perimeter
+::::: 1732
+Total area = 3694797
+13)
+(SUBTRACT mode) <First
+point>/Object/Add:O
+Select objects: (pick 17)
+Area = 199307,
+Perimeter
+1615
+Total area 3495490
+248
+CHAPTER THIRTEEN
+Figure 13.16
+As you can see from Figures 13.13, 13.14, 13.15,
+and 13.16, points and objects can be used together. With the Subtract mode, subse~
+quent area calculations are subtracted from the accumulated area. Use Add to enter the
+first area, then Subtract for the subsequent areas.
+With the Add option, subsequent areas will be added to the accumulated area.
+AREA and PERIMETER are also system variables and can be viewed but not changed by
+displaying them. Use the SENAR command to access the system variable. Ifyou cal-
+culated an area, but neglected to jot it down, type AREA as the variable name and the
+last calculated area will be displayed. To find the length or circumference ofa circle,
+arc, or pline, use the LIST command. Be sure to change the units to the desired values
+before entering the AREA command, othelWise the readings may be inaccurate.
+
+
+===== PAGE 266/298 =====
+The BOUNDARY Command
+The BOUNDARY command creates a region or a polyline ofa closed boundary. Speci-
+fying a boundary set can produce the boundary more quickly, because AutoCAD ex-
+amines fewer objects when a boundary set is identified. For an example of how
+BOUNDARY works, see Tutoria113.
+The DISTance Command
+The DISTance command will give you the actual distance between two points.
+The command line equivalent is OIST.
+Remember that when dealing with points in AutoCAD or any other CAD package, you
+can specify the points in three ways:
+1,
+if they are associated with objects, by finding them with OSNAPs e.g. ENDpoint,
+MIDpoint, etc.
+2,
+by picking on them on the screen, with or without the use of SNAP
+3,
+by specifying their coordinates.
+When calculating DISTance, you can identify the
+points by any combination of the above. First enter
+the DIST command, then respond with the two points
+that identify the distance you want to know, as in
+Figure 13.17. It is better that you specify the exact
+points with either an OSNAP or a coordinate entry.
+As with the other commands, you will be offered the
+information relative to the current units specified.
+You will note that the readout contains not only the
+distance, but also the angle from the XY plane, and
+the length and width of the object.
+A
+Figure 13.17 _1
+Command:DIST
+Specify first point: (pick point A)
+Specify second point: (pick point B)
+Distance= 10.2956, Angle in X-Y Plane = 61,
+Angle from X-Y
+Plane = 0 Delta X = 5.0000 Delta Y = 9.0000 Delta Z =
+0.0000
+The LIST Command
+We looked at LIST briefly in the first section ofthis book to establish the layer, color,
+and linetype properties ofobjects that had already been entered. In addition to this, LIST
+is an extremely useful command for the following purposes:
+1.
+cleaning up objects before hatching and editing
+2.
+finding out the angle of an existing LINE
+3.
+finding out the radius of a specified circle
+4.
+determining text fonts and sizes
+5.
+finding out if existing items were put in incorrectly or without the use ofSNAP
+6.
+checking for incorrect dimensions.
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+249
+
+
+===== PAGE 267/298 =====
+LIST can also be usedto show the number ofob·
+j ects within a specified window to check that
+the objects follow good CAD practice. In the
+following exalnple, we will see how LIST can
+also be used to tell us if the dimension for an
+object is real or made up.
+In Figure 13.18 there are two associative di-
+mensions listed. To the eye, they look the
+same. They are identified by being highlighted
+in the DOT linetype.
+Note the difference in the readouts after the
+LIST command has been used.
+Command:LIST
+Select objects: (pick the dimension)
+~"e:-;" 2.0000
+Figure 13.18
+5.0000
+x= 2.0000 y= 4.5000
+Z= 0.0000
+x= 4.0000 ¥= 3.5000
+Z= 0.0000
+x= 4.0000 y= 2.5000
+Z= 0.0000
+y= 2.5000
+Z= 0.0000
+The Properties command has much
+of the LIST information in a dialog
+format.
+250
+CHAPTER THIRTEEN
+DIMENSION Layer:
+dim
+SPACE:
+Model Space
+Handle = ID14
+type: horizontal
+1st extension defining point:
+2nd extension defining point:
+dimension line defining point:
+default text position X= 3.875
+default text
+dimension style
+*UNNAMED
+DIMENSION Layer:
+dim
+SPACE: Model Space
+Handle
+=::
+ID14
+type: vertical
+1st extension defining point:
+X= 6.0000
+Y= 8.5000
+Z= 0.0000
+2nd extension defining point:
+X= 6.0000 ¥= 3.0000
+Z= 0.0000
+dimension line defining point:
+X= 6.5000 ¥= 2.5000
+Z= 0.0000
+default text position X= 6.500 Y= 5.7500
+Z= 0.0000
+dimension text modifier:
+5.0000
+dimension style
+*UNNAMED
+You can see that the first dimension has been entered properly, and the text for the di-
+mension is the default text. In the second dimension, however, the dimension text has
+beenmodified to read 5.0000. Ifyou subtract the second extension defining point from
+the first in the Yvalue, you will notice that the actual distance should read 5.5000, but
+the dimension text has been altered before it was entered.
+In addition to checking your own work to be sure that it is all entered correctly and that
+there are no overlapping items, with the LIST command you can check to see that the di-
+mensions associated with the drawing you have on file are correct and not altered in
+any way. Ifthe dimensions have been altered, check to see that all ofthe necessary di-
+mensions have been altered.
+Another great advantage of LIST is that it enables you to determine ifthere are overlap-
+ping lines when making hatches and dimensions. Use LIST, then Crossing, to see the
+number of objects overlapping.
+The ID Command
+The ID function is similar to the LIST function, in that it gives an exact position. The dif-
+ference is that it gives an exact position ofa point ratherthan an object. This command
+is used in 3D modeling more frequently than in 2D modeling, to determine the Z depth
+ofitems. In 2D this can be useful for finding out the exact position you are looking at
+
+
+===== PAGE 268/298 =====
+on a zoomed screen, or for simply getting your bearings. Keep in mind that ifyou are
+picking a point in space, a snap can give a more usable readout.
+The location ofthe point will be relative to the origin or 0,0,0 ofthe modeL Ifa point in
+space is chosen, the Z depth will be the current elevation; ifan object is chosen with an
+OSNAP, the actual Z depth of the object will be used.
+ID can be used as a reference point for the next point entered using @:
+Command:LlNE
+From point:@2,O (starts the line 2 units in X from the ID
+point)
+There are basically two ways ofusing ID. The first is to find the parameters ofa point
+on the screen.
+Command:ID
+Specify point: (pick a point)
+X = 34.6375
+Y = 24.8758
+Z
+0.0000
+This will give the coordinates ofa point in space in the defined units. The second is to
+locate a point by typing in the coordinates.
+Command:ID
+Specify point:23,4,O
+The STATUS Command
+Another useful command for determining what is happening is STATUS. As you be-
+come proficient with AutoCAD, you will find the STATUS command more and more
+useful, because it displays a listing of all the statistics of a file.
+The STATUS command also offers information on memory and the partition on the hard
+drive where your temporary file or .AC$ file is being stored. Ifyou run out ofspace in
+this partition (in a classroomthis is often the A: drive), the program will terminate after
+first saving your file.
+STATUS is most often used by beginners to determine if the color setting is overriding
+the layer color setting.
+Enter STATUS at the command prompt and read the status of your file.
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+251
+
+
+===== PAGE 269/298 =====
+Step 1
+Step 2
+Set up three layers, for Points, Object, and Dimensions. Make Points current. Then add
+points.
+Make the top center or thirdpoint active, and change Size Relative to Screento 50/0.
+8.2'500
+6.9375
+Z.5000
+0.7500 TYP. ALL SPACES
+~
+a
+.0
+:2
+.0
+<:>
+~
+~
+~
+If)
+<:>
+C\J
+~
+Q
+C>
+,.;
+,.;
+ci
+(")
+,..;
+ci
+ci
+~
+If1
+I
+.J-::
+ru
+ru
+I
+I
+....
+Cl'
+CO
+~
+If)
+....;
+:!
+~
+Add the points. The lower left comer will be 0,0.
+Command: POINT
+Specify point:.75,.75
+COffiInand: POINT
+Specify point:l.5,.7725
+Comrnand:POINT
+Specify point:2.25, .7965
+Command: POINT
+Specify point:3.0,.8665
+Command: POINT
+Specify point:3.75,l.0305 etc.
++ ++
++++
++
++ +++
+Step 3
+252
+CHAPTER THIRTEEN
+Change OSNAP to NODE and use SPLINE to create a spline through all ofthe points.
+Command:OSNAP
+Object snap rnodes:NODE
+Now use SPLINE to create a spline through
+the identified points.
+Comrnand:SPLlNE
+Specify
+first
+point
+or
+[Object] : (pick the first point)
+Specify next point: (pick the next point)
+Specify next point or [Close, Fit Tolerance]: (pick the points
+in sequence)
+Specify next point or
+[Close,
+Fit Tolerance] : (pick the last
+point)
+Specify next point or [Close, Fit Tolerance] :~~
+Specify start tangent: (pick the first point)
+Specify end tangent: (pick the last point)
+
+
+===== PAGE 270/298 =====
+Step 4
+Using the drawing given at the beginning, add the outside lines.
+Step 5
+Now use the Boundary op-
+tion to help detennine the
+area ofthe top ofthe part.
+Step 6
+From the Boundary Creation dialog box, choose Make New Boundary Set.
+Now pick the lines and the spline.
+3
+2
+4
+6
+5
+Press .J when you are finished and you will return to the Boundary Creation dialog
+box.
+From the dialog box, select Pick Points. You will be prompted to pick the internal
+point; choose the inside of the part.
+A region will be created and you will have the area for the part.
+Ifyour system doesn't allow this, enter the
+AREA command, use the Object option, and
+Lfor last object.
+Now list the properties ofthe spline and one
+ofthepoint nodes.
+You will get a listing of the properties.
+2
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+253
+
+
+===== PAGE 271/298 =====
+Step 7
+Now add some points along the top edge ofthe part that corresponds to the X measure-
+ment ofall ofthe points. This is to double-check that all ofyour points are entered cor-
+rectly. Use DDPTYPE to change the point style to the vertical line as shown.
+Command:MEASURE
+Select object to
+measure: (pick 1)
+Specify length of
+segment or
+[Block]: .75
+Use Undo to remove the points once
+they have been used to double-check
+the lower points.
+Step 8
+Now add the remaining lines and di-
+mensions to this view.
+Step 9
+Pan the screen over and, using the same method, draw in the front view ofthe gusset.
+8.2500
+6.9375
+2.5000
+0.7500 TYP, ALL SPACES
+.+_1-
+In
+In
+r-
+~
+111
+~
+a>
+(\J
+~
+>D
+In
+..,
+>D
+....
+'"
+'"
+N
+M
+:;
+d
+d
+~
+M
+M
+I
+N
+~
+t
+I
+In
+""
+In
+S
+'"
+'"
+I
+,
+~
+,
+0+'-+----+--+-4--+--f"--t"'i
+*
+~
+d
+ci
+rr==
+T
+1
+-..~~
+~
+~
+~
+I
+~
+~
+~ 1
+",>m
+~i
+~
+. ~ m
+TYP. ALL SPACES
+'" ...d
+I
+I
+The points will be much easier to enter ifyou make 0,0 the upper left comer. Move the
+fIrst view up and out of the way.
+When you are done, add a title block and notations to complete the drawing.
+Type in the word TIME to see how long it took you to do the drawing.
+254
+CHAPTER THIRTEEN
+
+
+===== PAGE 272/298 =====
+Step 1
+DIVIDE and MEASURE are used most effectively on
+PLlNEs. In this example we will draw a pseudo four-cen-
+tered arch.
+First we must detennine the span of the arch. Start by
+setting up some construction lines with the span and the
+rise of the arch.
+We will make the span 5" or 60 N, and the rise
+14 N.
+Draw in two construction lines as shown.
+Then put in two circles, each one centered 6"
+from the end ofthe span line, having a radius of
+6
+11
+•
+"
+I
+-'"
+.....------,.-------t
+Step 2
+Draw lines tangent to the circles terminating at the top of the rise. Trim the circles.
+Step 3
+Use PEDIT with the Join option to make two plines, one on either side ofthe rise.
+2
+Comrnand:PEDIT
+Select object: (pick 1)
+Object selected is not a polyline
+Do you want to turn it into one?
+<y>:~
+Enter an option
+[Close/Join/Width... rve/Ltypegen/UndoJ:
+j
+Select objects: (pick 2)
+Select objects:.J
+1 segments added to polyline
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+255
+
+
+===== PAGE 273/298 =====
+Step 4
+Use DIVIDE to divide the plines into six equal sections for the stone pieces. First set
+PDMODE. Under the Format menu, pick Point Style.
+Cornmand:DIVIDE
+Select object to divide: (pick 1)
+Enter the number of segments or
+[Block] :6
+StepS
+Step 6
+256
+CHAPTER THIRTEEN
+Your PLiNE should have six points on it. Do the Saine with the other side.
+Now OFFSET the PUNEs first by 6", then by 7".
+Use FILLET with a radius of0 to close the top off. Then use LINE with the OSNAP NODE
+and PERpendicular to make the lines for the stone.
+The hidden lines and arrows show the method of calculation.
+,
+I
+~
+\
+I
+\
+!
+....
+/"
+~~
+\
+{
+\
+I
+\
+{
+\
+I
+\
+{
+\
+f
+\
+I
+\
+f
+\
+I
+\
+{
+\
+I
+\
+{
+\
+f
+\
+I
+\
+f
+\'
+
+
+===== PAGE 274/298 =====
+GLIDING DOOR UNIT
+Exercise 13 Practice
+Create the simple floor plan shown below.
+Use DIVIDE to divide the glass wall and gliding doors into equal portions.
+Use MEASURE with BLOCK to create the decorative brick wall.
+7:l
+~ BEDROOM 2
+,
+WOOD
+SEAT
+o }E
+-
+L()
+(Y)
+I.
+.~."'T"T-
+17'
+......-
+14R up
+37/-6
+11
+FLOOR PLAN
+CLOSET 2
+(V'IW
+I
+.1
+I..
+8'-10°
+.1
+~
+CD
+D~ion
+~nt
+DECORAriVE WALL
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+257
+
+
+===== PAGE 275/298 =====
+Exercise 13 Architectural
+This steel roof framing plan is very difficult without DIVIDE.
+To place the 'marks' make a dimension style without extension or dimension lines.
+~
+'0<:::i
+@
+800 i
+\.1310
+X 21
+n fJ
+.:.
+Bi
+c-
+._@
+0
+~
+:(
+2-!
+I~
+g1
+0
+x
+~
+oD
+n
+~
+Iw
+!
+ttl
+!ru
+'-I>
+Ir\J
+fI.)
+l~ ,w
+'\£J
+jO
+i
+tel
+U1
+x 6Clli5
+tel .....
+M-<
+:1>""0
+:x
+VI."
+0
+z::O
+b::l
+:iF=:
+tel
+U1
+..... r
+Ul
+VI ......
+~:;
+..... fT1
+Z;o
+Glz
+1"
+r
+\.1410
+X
+:I>
+I
+I
+0
+Drc3:
+~
+ZVI
+::;\J
+:r:
+VI
+~
+Vi
+[J
+0
+n.:.
+~
+(1\
+S
+Q!
+~
+~[J
+\.I_41_0_X_5~"4_G_2
+_
+@
+~~I
+tj~~
+<>,..,
+n "s-
+ttl
+\D
+<9
+m
+y
+O~
+@
+r
+CSJ~----~
+m
+B5
+(/) (f)
+0-1
+]:>;0
+rc
+mn
+-I
+C;0
+Nl>
+(}1r
+(f)
+-Im
+m
+r
+11
+;0»
+3:
+Z
+G)
+-U
+rl>
+Z
+~D~
+I
+,. I~
+£)c
+Cl'
+J>
+ru
+r
+ru
+U1
+Vl
+U
+J>
+nrl
+(/l
+258 CHAPTER THIRTEEN
+
+
+===== PAGE 276/298 =====
+Exercise 13 Mechanical
+Use DIVIDE and MEASURE to produce 13A.
+Use AREA to find the various surface area of 13B.
+Use PDSIZE to display the nodes at the corred distance.
+RO,40
+¢2,OO
+¢O,5000
+R3
+¢1.00
+13A
+R17
+R2,25
+¢5,50
+(2)6,50
+¢3,OO
+(ll13
++
+T
+r-38~
+R5
+~3
+45
+IL
+4
+(ll13
+R3
+u u =t-r
+- ------- -+~u _ i
+2r 1
+13l 89J:J
+138
+POINT, DIVIDE, MEASURE, and Inquiry Commands
+259
+
+
+===== PAGE 277/298 =====
+'-
+Q)
+C)
+c:
+Q)--c
+..c
+U
+a5u..g
+:J
+CIlo
+'C
+Q)
+M~
+r--
+Q)
+.L
++-,
+Q)e
+V)
+0
+.-
+OJ
+U
+0
+'-
+Q)
+(1)
+-£
+>< -g
+Wu::
+!
+Ir-
+952
+302
+R32
+J
+A
+NO 7 DRILL 201 DEEP
+SECTION A-A
+FILLETS &
+ROUNDS 32 R
+
+
+===== PAGE 278/298 =====
+Introduction
+Attributes for
+Title Blocks and
+Notations
+Attributes
+chapter, you should be able to:
+••.•.••..•..•..•••.• >i3.••• ln~iedrth€:cltt(lbu·tesonto a drawing
+boxes
+In addition to creating geometry and drawings, AutoCAD allows for the generation of
+non-graphic information which can be accessed in the form of bills of materials,
+schedules, parts lists, and other data that is cross-referenced on the drawing. This
+non-graphic intelligence is called an attribute. Attributes provide a label or tag that lets
+you attach text or other data to a block. This attribute information can then be
+downloaded onto your file in a text format.
+Attributes can also be used to generate templates for fill-in-the-blanks situations such
+as on drawing notations and title blocks. This information can then be used by your
+system manager to track files and drawings.
+Attributes are commonly used to fill in relevant infonnation on title blocks and other
+drawing notations. All ofthe sizes for the inserted text are determined at the time the
+attribute is defined and blocked, as are the placement ofthe text and the lettering font.
+All the user needs to do is add the missing information for the customer, name ofpart,
+date, name ofdesigner, etc.
+In the title block in Figure 14.1, all the informa-
+tion relative to the current drawing (in italics) has
+been added using attributes.
+Cornmand:-INSERT
+r
+SCALE
+,
+BEACH DESIGNS
+COMPUTER AIDED
+DESIGN SERVICES
+-s'kylab Industries _...
+B.ChaUis
+Ho";k Link
+>tAU:
+1:500
+...ro
+_..
+MaTck 17 2008
+DFC-1003
+Figure 14.1
+Enter block name or
+[?] : TITLE
+Specify insertion point or [Scale
+/X/Y/Z/Rotate/PScale/PX/PY/PZ/P
+Rotate] :0,0
+Enter X scale factor,specify opposite corner,or
+[Corner/XYZ] :.J
+Enter Y scale factor <use X scale factor>:.J
+Specify rotation angle <O>:.J (the same as block inserts)
+Customer name <Skylab
+Industries>:~
+Name of Part<>:Hook Link
+Enter the current date
+(Month/Day/Year) :March 17 2006
+Drawn by <B.
+Challis>:~
+Scale
+<1:5>:~
+Drawing no.
+DFC-####<>:DFC-1003
+Remember that the angle brackets contain defaults, e.g. <Skylab Industries>.
+Attributes
+261
+
+
+===== PAGE 279/298 =====
+Defining the
+Attributes
+Use -INSERT and -ATTDEF to
+avoid the dialog boxes.
+262
+CHAPTER FOURTEEN
+To define attributes, use theATTDEF command. In atitle blockthe text font for the block
+titles (Name, Date, Drawn By) should be different from the text font for the current
+information. Before creating the attribute defmitions, load the new text font.
+To define the attribute use -ATIOEF or the Attribute dialog box.
+The ATTDEF Command
+The ATTDEF command allows you to define an attribute. We will create the attribute
+definition for the date. Access the ATTDEF command through the command line.
+The command line equivalent is ATIDEF for the dialog box and -ATIDEF for the com-
+mand string.
+Figure 14.2 illustrates a comer ofa title block. The word Scale is added in text to iden-
+tify the information within that box. The tag Scale will then be added with the AITDEF
+command. See the Attribute Definition dialog box on the next page as well.
+Command:-ATTDEF
+Current attribute modes -- Invisible-N,
+Constant-N,
+Verify-N,
+Preset-N
+Enter an option to change
+[Invisible!Constant/Verify/Preset]
+<done>:~
+Change the modes ifyou want the attribute to be constant, invisible, preset, or verified.
+In this case no change is necessary.
+The attribute tag is a one-word summary of the subject of the attribute. In this case,
+you want the user to enter the scale of the drawing.
+Enter attribute tag name:Scale
+The attribute prompt is what is actually going to appear on the command line. This
+prompt asks you for the required information, in this case the scale, and it should offer
+any further infonnation that may be required in order to enter that information.
+Enter attribute prompt:Enter scale of drawing
+The default attribute value is what the user will usually want to use. If most of your
+drawings are done with a scale of 1:50, that is the scale you should use as a default.
+Enter default attribute value:l:50
+Now that the you have identified what your attribute is going to say, you need to place
+it on the title block. ATIDEF works like the TEXT command.
+Specify start point of text or [Justify/Style]:J
+Align/Center/Fit/Middle/Right/TL!TC/TR/ML/MC/MR/BL/BC/BR:R
+Right:
+(pick the right to have your text right justified)
+Specify height <0.1800>:.25
+Specify rotation angle
+<O>:~
+
+
+===== PAGE 280/298 =====
+SCALE
+Text in the Standard font was used to define the
+I
+text for the title block. The tag for the scale at-
+tribute is in the Italic Complex Font. This is
+~ ......
+where the current scale will appear. The tag
+1-,
+_
+shows up as shown in Figure 14.2 until the at-
+tributes are blocked.
+Figure 14.2
+Using the Define ATTribute DIAlog Box
+In the Attribute Definition dialog box you can set the modes, tag information, prompt,
+location, and text style as described above. When Insertion Point is chosen, the dialog
+box will disappear until the point is chosen, then reappear once the selectionis made.
+The Value
+box means
+default
+value.
+Mode
+oInvisible
+Dkonstant
+DY:elify
+O,ererel
+l~'ertion Point
+Ea Spedy Q.n·screen
+lag;
+ProIDPt
+Value:
+TelllOptions
+,lustkation:
+Text~tyle:
+H~ight<
+flotation <
+Editing Attribute
+Definitions
+o81ign helow previous attribute definition
+r;a Loc!:, pos~ion in block
+OK
+i I
+Cancel I I
+Help
+When using the dialog boxes you need to be sure to enter a point for the reference
+point (Specify On-screen). Ifnot, your attribute could end up anywhere.
+Once the attribute definitions are all entered, the attributes can be blocked andthen in-
+serted.
+If you have made an error in defrning the attribute you can change the attribute
+defmition with the CHANGE command or with the Edit Attribute Definition dialog
+box.
+The command line equivalents are ED, DDEDIT or CHANGE.
+DDEDIT and ED give you a dialog box where you can change the tag, prompt, and de-
+fault values, etc. The CHANGE command does the same without the dialog box.
+Command: CHANGE
+Select objects: (pick the definition you wish to change)
+Select objects:-l
+Command:DDEDIT
+<Select a
+TEXT or ATTDEF object>/Undo: (pick the ATTDEF)
+Attributes
+263

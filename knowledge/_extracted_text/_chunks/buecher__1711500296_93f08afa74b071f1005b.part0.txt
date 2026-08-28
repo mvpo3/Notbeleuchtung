@@ -1,0 +1,2415 @@
+
+
+===== PAGE 1/298 =====
+
+
+===== PAGE 2/298 =====
+AutoCAD Workbook for
+Architects and Engineers
+Shannon R Kyles
+Professor ofArchitecture
+Mohawk College, Ontario, Canada
+• A Blackwell
+..II Publishing
+
+
+===== PAGE 3/298 =====
+
+
+===== PAGE 4/298 =====
+AutoCAD Workbook for
+Architects and Engineers
+Shannon R Kyles
+Professor ofArchitecture
+Mohawk College, Ontario, Canada
+• A Blackwell
+..II Publishing
+
+
+===== PAGE 5/298 =====
+This edition first published 2008
+© 2008 by S.R. Kyles
+Blackwell Publishing was acquired by John Wiley & Sons in February 2007. Blackwell's publishing programme
+has been merged with Wiley's global Scientific, Technical, and Medical business to form Wiley-Blackwell.
+Registered office
+John Wiley & Sons Ltd, The Atrium, Southern Gate, Chichester, West Sussex, PO19 8SQ, United Kingdom
+Editorial office
+9600 Garsington Road, Oxford, OX4 2DQ, United Kingdom
+For details of our global editorial offices, for customer services and for information about how to apply for
+permission to reuse the copyright material in this book please see our website at
+www.wiley.comlwiley-blackwell.
+The right ofthe author to be identified as the author ofthis work has been asserted in accordance with the
+Copyright, Designs and Patents Act 1988.
+All rights reserved. No part ofthis publication may be reproduced, stored in a retrieval system, or transmitted,
+in any form or by any means, electronic, mechanical, photocopying, recording or otherwise, except as
+permitted by the UK Copyright, Designs and Patents Act 1988, without the prior permission of the publisher.
+Wiley also publishes its books in a variety ofelectronic formats. Some content that appears in print may not be
+available in electronic books.
+Designations used by companies to distinguish their products are often claimed as trademarks. All brand
+names and product names used in this book are trade names, service marks, trademarks or registered
+trademarks of their respective owners. The publisher is not associated with any product or vendor mentioned in
+this book. This publication is designed to provide accurate and authoritative information in regard to the
+subject matter covered. It is sold on the understanding that the publisher is not engaged in rendering
+professional services. Ifprofessional advice or other expert assistance is required, the services of a competent
+professional should be sought.
+Certain images and materials contained in this publication were reproduced with the permission of Autodesk,
+Inc. © 1999-2007 All rights reserved. Autodesk, AutoCAD, and AutoCAD LT are registered trademarks or
+trademarks of Autodesk, Inc., in the U.SA., Canada, and certain other countries.
+Library ofCongress Cataloging-in-Publication Data
+Kyles, Shannon.
+AutoCAD workbook for architects I S.R. Kyles.
+p.em.
+Includes index.
+ISBN-13: 978-1-4051-8096-2 (pbk. : alk. paper)
+ISBN-I0: 1-4051-8096-X (pbk. : alk. paper)
+I. Architectural drawing-Computer-aided
+design-Handbooks, manuals, etc.
+2. AutoCAD-Handbooks, manuals, etc.
+1. Title.
+NA2728.K952008
+720.28'40285536--dc22
+2007033120
+A catalogue record for this book is available from the British Library.
+Set in Times New Roman 101l3pt by S.R. Kyles, Canada
+Printed in Singapore by C.O.S. Printers Pte Ltd
+12008
+
+
+===== PAGE 6/298 =====
+Contents
+Acknowledgments
+Introduction
+Using this Book
+Disks and File Storage
+Starting AutoCAD
+Keyboard and Mouse Functions
+Function Buttons
+Entering Commands and Coordinates
+Windows Toolbars
+Scroll Bars
+Opening or Accessing Drawings
+Exiting AutoCAD
+Options Dialog Box
+page viii
+ix
+ix
+IX
+X
+x
+Xl
+Xl
+Xl
+XlI
+xii
+XlV
+xiv
+Introductory Geometry and Setting Up
+Starting a Drawing in Metric or Imperial
+The UNITS Command
+Choosing the Origin
+Using PAN to get Started
+The LIMITS Command
+Entry of Points
+Coordinate Entry using Absolute, Relative, and Polar Values
+Coordinate Entry using SNAP, ORTHO, POlAR and DYNAMIC
+Geometry Commands
+View Commands
+Alternate Units
+1
+Tutorial1a
+Tutoriallb
+Exercise 1
+Exercise 1
+Exercise 1
+Using Draw Commands and Limits
+Using Draw Commands without Limits
+Units Practice 1
+Units Practice 2
+Practice
+1
+I
+2
+3
+4
+4
+6
+6
+8
+11
+13
+17
+18
+21
+23
+24
+25
+Contents
+ii
+
+
+===== PAGE 7/298 =====
+iv
+Contents
+Exercise 1
+Architectural
+26
+Exercise 1
+Mechanical
+27
+Exercise 1
+Woodwork
+28
+2
+Help Files, OSNAP, OTRACK, BREAK, TRIM, and ERASE
+29
+Understanding Command Strings
+30
+Object SNAPs
+32
+OTRACK
+35
+BREAK, TRIM, and ERASE
+36
+GRIPS
+37
+ERASE with Window and Crossing
+37
+UNDO and REDO
+37
+Tutoria12a
+Using SNAP, OSNAP, and TRIM
+38
+Tutoria12b
+Using OSNAP and OTRACK
+42
+Exercise 2
+Practice
+45
+Exercise2
+Architectural
+46
+Exercise 2
+Mechanical
+47
+Exercise 2
+Challenger
+48
+3
+Object Selection and Modify Commands
+49
+Selecting Objects Within the Modify Commands
+49
+Modify Commands
+51
+Editing with Grips
+56
+Setting LINETYPEs
+58
+Changing LTSCALE
+58
+Tutoria13a
+Using ROTATE, COPY, and MIRROR
+59
+Tutoria13b
+Using ROTATE, COPY, and MIRROR
+61
+Exercise 3
+Practice
+64
+Exercise 3
+Architectural
+65
+Exercise 3
+Mechanical
+66
+Exercise 3
+Challenger
+67
+4
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+69
+Removing and Adding Objects
+69
+More Modify Commands
+70
+Tutoria14
+Modify Commands
+80
+Exercise4a
+Practice
+83
+Exercise4b
+Practice
+84
+Exercise 4
+Architectural
+85
+Exercise4a
+Mechanical
+86
+Exercise4b
+Mechanical
+87
+Exercise 4
+Challenger
+88
+5
+Entity Commands with Width
+89
+The PUNE Command
+89
+The PEDIT Command
+92
+The POLYGON Command
+94
+The SOLID Command
+95
+
+
+===== PAGE 8/298 =====
+The DONUT Command
+The TEXT Command
+Multilines
+Tutorial 5
+Using PLiNE and SOLID
+Exercise 5
+Practice
+Exercise 5
+Architectural
+Exercise 5
+Mechanical
+Exercise 5
+Wood
+Exercise 5
+Challenger
+6
+Entity Properties: Layers, Colors, and Linetypes
+About LAYERs
+Creating aNew Layer
+Changing LTSCALE
+Match Properties and CHPROP
+Layer Filtering
+Tutorial 6
+Layers, Colors, and Linetypes
+Exercise 6
+Practice
+Exercise 6
+Architectural
+Exercise 6
+Mechanical
+Exercise 6
+Challenger
+7
+Dimensioning
+About Dimensioning
+Entering Dimensions
+Dimension Styles
+The Text Tab
+The Fit Tab
+The Primary Units Tab
+The Alternate Units Tab
+The Symbols and Arrows Tab
+Saving Dimension Styles
+Editing Dimensions
+Tutorial7a
+Dimensioning for Mechanical Applications
+Tutorial7b
+Dimensioning for Architectural Applications
+Exercise 7
+Practice
+Exercise 7
+Architectural
+Exercise 7
+Mechanical
+Exercise 7
+Wood
+Exercise 7
+Challenger
+8
+Text and Pictorial Views
+Linear Text
+Paragraph Text
+Text Styles and Fonts
+Editing Text
+Using LEADER to Create Notations
+SNAP and GRID
+Tutoria18a
+Using Text and Text Styles
+95
+96
+97
+98
+102
+103
+104
+105
+106
+107
+107
+108
+110
+110
+111
+112
+116
+117
+118
+119
+121
+121
+122
+126
+126
+127
+128
+128
+128
+129
+129
+130
+134
+136
+137
+138
+139
+140
+141
+141
+144
+145
+147
+148
+149
+150
+Contents
+V
+
+
+===== PAGE 9/298 =====
+vi
+Contents
+Tutorial8b
+Using Rotated SNAP and GRID to make a 2D Isometric
+155
+Exercise 8
+Practice
+159
+Exercise 8
+Architectural
+160
+Exercise 8
+Mechanical
+161
+Exercise 8
+Wood Millwork
+162
+Exercise 8
+Challenger
+164
+9
+HATCH, SKETCH, and GRADIENTS
+165
+The BHATCH Command
+165
+Solid Hatches
+169
+Editing Hatches
+169
+The SKETCH Command
+170
+Gradient
+171
+Tutorial 9
+HATCH
+172
+Exercise 9
+Practice
+175
+Exercise 9
+Architectural
+176
+Exercise 9
+Wood Millwork
+177
+Exercise 9
+Mechanical
+178
+Exercise 9
+Challenger
+180
+10
+Blocks and Wblocks
+181
+Using Blocks
+181
+The BLOCK Command
+181
+The INSERT Command
+182
+External Blocks
+183
+The WBLOCK Command
+184
+CopylPaste
+185
+The MINSERT Command
+186
+Editing Blocks
+186
+Blocks, Wblocks, Color, and Layers
+187
+Tutorial 10
+BLOCK, WBLOCK, INSERT, and Copy/Paste
+189
+Exercise 10
+Practice
+192
+Exercise 10
+Mechanical
+]93
+Exercise 1Oa Architectural
+194
+Exercise lOb Architectural
+195
+Exercise 10
+Challenger
+196
+11
+Setting Up Drawings and Plotting
+197
+Set Up and Scale for Simple 2D Drawings
+197
+Using Blocks to Compile Drawings
+199
+View Titles and Drawing-Related Notations
+202
+Importing Notations
+203
+Using Lineweights
+204
+Plotting
+204
+Tutorial 11a Imperial Example
+207
+Tutorial!!b Metric Example
+210
+Exercise 11
+Practice
+213
+Exercise 11
+Architectural
+214
+
+
+===== PAGE 10/298 =====
+Exercise 11
+Mechanical
+215
+Exercise 11
+Challenger
+216
+12
+Paper Space for 2 Dimensional Drawings
+217
+Paper Space
+217
+Accessing Paper Space
+218
+Scaling Views Within a Drawing
+220
+Layers Within Viewports
+221
+The VPLAYER Command
+222
+Dimensioning in Paper Space
+222
+AutoCAD~s Template Drawings
+223
+Tutoriall2a Imperial Example
+224
+Tutoria112b Metric Example
+229
+Exercise 12
+Practice
+236
+Exercise 12
+Architectural
+237
+Exercise 12
+Mechanical
+238
+Exercise 12
+Wood
+239
+Exercise 12
+Challenger
+240
+13
+POINTS, DIVIDE, MEASURE, and Inquiry Commands
+241
+Points, Point Display and Point Size Options
+241
+Using DIVIDE and MEASURE
+242
+The SPLINE Command
+245
+Inquiry Commands
+246
+Tutorial13a Inquiry Commands and SPLINE
+252
+Tutorial13b MEASURE and DIVIDE with Inquiry Commands
+255
+Exercise 13
+Practice
+257
+Exercise 13
+Architectural
+258
+Exercise 13
+Mechanical
+259
+Exercise 13
+Challenger
+260
+14
+Attributes
+261
+Introduction
+261
+Attributes for Title Blocks and Notations
+261
+Defining the Attributes
+262
+Editing Attribute Definitions
+263
+Displaying Attributes
+265
+Creating Attributes for Data Extraction
+265
+Editing Attributes
+266
+Data Extraction
+267
+Tutorial14a Attributes for a Title Block
+268
+Tutorial14b Defining, Blocking, and Inserting Attributes
+271
+Tutorial14c Defining, Blocking, and Inserting Attributes
+276
+Exercise 14
+Architectural
+277
+Exercise 14
+Challenger
+278
+m~
+2~
+Drawings
+281
+Contents
+vii
+
+
+===== PAGE 11/298 =====
+viii
+Acknowledgements
+Acknowledgments
+The exercises in this book went through many years ofstudent testing both at Mohawk
+College and at McMaster University in Hamilton, Ontario, Canada. Since the student
+edition appeared in January1993,there have been many positive suggestions and much
+constructive criticism. I would like to thank all my students over the past 27 years of
+teaching CAD for working with me on the development ofnew projects, and for proof-
+ing tutorials and exercises.
+I would like to thank Brian McKibbin, Diego Gomez, and Trevor Garwood Jones for
+their generosity in letting me use their architectural designs to provide students with
+up-to-date architectural work. I would also like to thank Robert Deeks and Henry
+Brink for their help in updating the mechanical engineering examples, and Ken Mer-
+cer for checking the accuracy ofthe wood-related drawings.
+Finally I would like to thank Catriona Dixon and Madeleine Metcalfe from Blackwell
+Publishing for their efforts in polishing this text.
+Shanon R. Kyles
+Canada
+December 2007
+
+
+===== PAGE 12/298 =====
+Using this Book
+[)isks and File
+Storage
+Introduction
+AutoCAD is a very popular, flexible software system that allows the user to create
+both 2-dimensional and 3-dimensional models and drawings. This book offers a series
+ofexercises to help you learn the 2D drawing techniques ofAutoCAD. Most ofthe 2D
+commands in Releases 2006, 2007 and 2008 have not changed since Release 2000i.
+These exercises can be used on all releases from 2000i through 2008.
+For those who are familiar with computers, learning AutoCAD will be easy, simply
+because you are aware ofthe typical response structure andthe format ofyour system.
+System Prompts and User Responses
+All commands listed within the text of this book are in the command font. CIRCLE,
+LINE, ZOOM, MIRROR, etc. When shown as in this font are commands.
+In this book, the system command information will be shown in this style:
+Command:
+Specify first point:
+Specify second point or
+[Undo]:
+The user responses (what you should type in) will be shown in bold:
+COffi."l1and: LINE
+Specify first point:O,O
+Specify second point or
+[Undo] :5,3
+The Enter or Return Key
+At the end ofeach command or entry on the command line, use the Enter key (symbol-
+ized by .J) to signal the end of:
+a command entry:
+Command:LlNE.J
+• a coordinate entry:
+Specify first point:2,4.J
+• a value:
+New fillet radius.OOOO:3.J
+• text:
+Text:All Holes 2.00R Unless
+Note~
+Please note that the .J will not be shown at the end ofevery entry after Chapter 1; it will
+only be used when the user should press .J rather than entering any other response.
+Most ofthe drawings in this book are small, so a floppy disk may be used for file storage
+if your computer still has a floppy drive.
+Zip drives, Jazz drives, mass storage units
+and CD writers are better suited to storing larger files. Always make three copies of
+your files. Save your file every halfhour on the permanent computer drive, either C: or
+D:. Ifyou have been working for more than three hours, also save onto an external file
+system like a flash drive. Before you sign offfrom the system, e-mail a copy ofthe file
+to yourself as welL
+INTRODUCTION
+ix
+
+
+===== PAGE 13/298 =====
+Starting
+AutoCAD
+AutoC6.D Classic
+Keyboard and
+Mouse Functions
+x
+INTRODUCTION
+Your Windows environment should have been set up so that a double-click on the
+AutoCAD application icon will bring up AutoCAD.You will automatically be placed
+in the Drawing Editor.
+When you first start up, there may be palettes overlaying your screen. Click on the "X"
+to remove them. On releases 2007 and 2008 a dashboardmay come up instead ofto01-
+bars. Pick AutoCAD Classic from the Workspaces toolbar.
+Unfortunately, there is no way ofguaranteeing how the last user has left the screen, so
+you may not have the necessary toolbars showing. If your screen is not the same as
+shown below, you can either open toolbars in the View pull-down menu (very cumber-
+some and difficult) or right~c1ickany toolbar on screen and pick from the list a toolbar
+that you want.
+The Windows Drawing Editor
+The initial Windows screen contains the menu bar, the status bar, the drawing window
+or graphics area, and several toolbars. Toolbars contain icons that represent com-
+mands.
+The menu bar (along the top) contains the pull-down menus. The status bar (along the
+bottom) displays the cursor coordinates and the status modes such as GRID and SNAP.
+Mode names are always visible in the status bar as selectable buttons. Click the buttons
+to toggle the modes. The command line in Windows is "floating," that is, it may be
+dragged to any location on the screen. The command line is where your commands
+will be written out. Keep reading this to see where you are.
+There are many different kinds ofpointing devices or mice on the market. Some have
+two or three buttons, others have as many as 20. Two buttons are adequate for most
+operations. A central roller on the top ofthe mouse will help with display cOlnmands.
+In releases after 2004, the roller ball on the mouse will both ZOOM and PAN your file.
+The Pick Button
+On all mice there is a point or command indicator or pick button; on a two-button
+mouse, it is usually on the left side of the device.
+The pick button is used to indicate the command you want to access either from the
+on-screen menu or from the digitizer tablet. It is also used to indicate point positions.
+The Enter Button
+The button on the right ofthe mouse will often have the function ofthe .J key (Enter or
+Return) on the keyboard. This signals the end ofa command. There is also a right-click
+facility that accesses the functions associated with each command. This can be turned
+offunder the Tools pull-down menu by selecting Options and then UserPreferences.
+
+
+===== PAGE 14/298 =====
+Function Buttons
+Many people who have used AutoCAD for a few years still make use of the function
+keys on the top ofthe keyboard ( F6, F7, F8, etc). Move the mouse around the screen
+noting the movement of the crosshairs.
+F6
+F7
+F8
+F9
+toggles the Co-ordinate readout from
+absolute, to incremental to offand back
+toggles GRID on and off
+toggles ORTHO on and off
+toggles the SNAP on and off
+Entering
+Commands and
+Coordinates
+You can enter information either through the keyboard or through your mouse or
+pointing device. There are also toolbars and icons that help to access the information.
+You can enter a command by typing it in at the command prompt or you can use the
+pointing device to pick up commands from:
+the pUll-down menus in the menu bar
+the icons on the toolbars.
+Windows
+Toolbors
+Toolbars are groups of icons or tools compiled according to ap-
+plication. Toolbars can be on-screen or not, and can be on the top
+or side of your screen or floating.
+Accessing Too/bars
+In Releases 2000 to 2005, Toolbars can be accessed through the
+View pull-down menu. Pick View, then Toolbars, then the tool-
+bar that you need. In Releases 2006, 2007
+and 2008, simply
+right-click the two parallel lines on the end ofthe toolbar, and a
+list of possible toolbars will appear. Pick the one you want.
+To remove a toolbar from your screen, click on the X icon on the
+top right ofthe toolbar.
+Using Windows Too/hars
+Toolbars contain tools that represent commands. When you
+move the pointing device over a tool, Tooltips display the name
+of the tool below the cursor. Pick that tool to invoke the com-
+mand.
+Placing Toolhars
+The Standard toolbar is visible by default. It carries frequently
+used tools such as Zoom, Redraw, and Undo. A docked too/bar
+attaches to any edge of the graphics window. Afloating too/bar
+can lie anywhere on the application screen, and it can be resized
+and does not overlap with the drawing window.
+3D Orbit
+CAD Standards
+Dimension
+." Draw
+Draw Order
+Inquiry
+Insert
+..; Layers
+Layouts
+v Modify
+Modify II
+Object Snap
+." Properties
+Refedit
+Reference
+Render
+Shade
+Solids
+Solids Editing
+." Standard
+Styles
+Surfaces
+Text
+UCS
+ucsn
+View
+Viewports
+Web
+Workspaces
+Zoom
+Lock Location
+~
+Customize.. ,
+Ifnone ofyour toolbars appear on screen, exit AutoCAD and open the software again.
+Your start-up file may not have been properly loaded.
+INTRODUCTION
+xi
+
+
+===== PAGE 15/298 =====
+Scroll Bars
+Opening or
+Accessing
+Drawings
+xii
+INTRODUCTION
+To Dock a Toolbar
+1. Position the cursor on the toolbar, andpress the pickbutton on the pointing device.
+2. Drag the toolbar to a dock location at the top, bottom, or either side ofthe drawing
+window.
+3. When the outline ofthe toolbar appears in the docking area, release the pick button.
+To place the toolbar in a docking region without docking it, hold down the Ctr1 key as
+you drag.
+Placing theFirst Toolbar
+If your screen comes up with no toolbars, type in the word 'toolbar' preceeded by a
+dash as shown below. Then type in 'Standard' and your Standard toolbar will appear.
+Dock it, as explained above, then right-click the two parallel lines on the end and place
+the other toolbars as required. If this doesn't work, exit AutoCAD and reload it.
+Command:-toolbar
+Enter toolbar name or
+[All] :Standard
+The Windows Command Window
+Like the toolbars, the Windows command line or response area can be moved and
+docked. By default the command window is docked at the bottom of your screen.
+You can resize the command window vertically and horizontally, both with the point-
+ing device and with the splitter bar located at the top edge ofthe window when docked
+on the bottom and on the bottom edge when docked at the top. Resizing and docking
+the command window can help you to create more space for your drawings on-screen.
+Itcan also help you see your commands to find out where you may have gone wrong.
+In most Windows applications there are scroll bars that advance the file you are
+viewing. Each scroll bar has arrows that indicate a move up or down. To access an area
+not displayed, click on the up or down arrow until the information is displayed or pick
+the box within the scroll bar and move it quickly up and down the screen.
+Scroll bars can be either vertical or horizontal. In Windows, the scroll bars on the top
+and bottom move the file across the screen in the same way that PAN does.
+Once you have accessed the Drawing Editor, you can start drawing and later save your
+work under a specified name in a specified directory. Ifyou have a drawing staTted in
+AutoCAD Release 2000i, 2004 or some earlier version, you can use OPEN to find it
+and then work on it.
+Opening Existing Drawing.5
+The command line equivalent is OPEN.
+In Windows, under File Name double-click the file name in the list of files. Use the
+scroll bars to access other files. To access other directories, pick the down arrow be-
+side the words' Look in:'. You can also type in the drawing name by picking the long
+white box beside File Name:, then typing in the name ofthe file. Ifyou prefer to type in
+both the directory and the name, type that into the File Name box.
+Once your file is open, any changes can be saved to the same directory with the SAVE
+command.
+
+
+===== PAGE 16/298 =====
+Starting a New File
+If you would like to start a new file, access the same File menu and choose New.
+Before the new file is created, you can choose a default drawing file environment
+and/or enter the name of the file that you wish to create.
+Command:
+new
+Enter template file name or
+L.
+(For none)]
+<acad.dwt>:
+Enter template file name or
+[.
+(For none)]
+<acadiso.dwt>:
+The _dwt extension stands for drawing template. acad.dwt is imperial, acadiso.dwt is
+metric.
+The default file environment can be either the acad.dwt standard file or a prototype file
+that contains all the settings for a specific application. Once you are familiar with
+AutoCAD, you can save drawing templates that contain plotter information, layer in-
+formation, groups, blocks, linetypes, and other standard information so that you don't
+need to set up your file from scratch each time.
+Recovering Files
+Jfyou have a problem with retrieving a file using OPEN, you may need to RECOVER
+the file. Usually these problems are caused by either bad diskettes or removing the
+floppy disk from the drive before AutoCAD has completely exited from the file. Ifyou
+need to restore a file, simply type in RECOVER at the command prompt. Theoretically,
+the OPEN cOlnmand should automatically repair any damaged files, but ifthis doesn't
+work, try RECOVER.
+Saving Files
+Computers have a tendency to lose information at the worst possible times. It is sug-
+gested that when you are using AutoCAD you save your files at least every hour.
+The first time you save a drawing, you will be prompted for the name ofthe file before
+it is saved. Ifyou have already entered the name ofthe current file under the New op-
+tion under File, then AutoCAD simply saves the file under the given name and direc-
+tory and you will not be prompted for a name.
+To save a named file, use SAVE. Use the icon or
+1.
+Type in the word SAVE at the command prompt
+To save the file under a new name or on a different
+directory, choose Save As frOln the File pull-down
+Inenu.
+Choose SAVE every subsequent time you would
+like to save the drawing, and the drawing will auto-
+matically be saved under this specified file name.
+If you specified a directory and file when you
+signed on, use SAVE to save the file under this
+name.
+Save B.s...
+. IQ ;iave
+.,~~i.~'.'N.~i:~.. ".:.~~::~.w ..~~
+!QI r:!ew...
+Ne~ Sheet Set...
+Qpen...
+Op~n Sheet Set...
+Load Marlsup Set.•.
+~Iose
+From the File menu, choose SAVE. In the Save
+Drawing As dialog box, enter the new drawing
+name. Then choose OK.
+2.
+To save a file to be read on an
+earlier release of AutoCAD,
+choose Save As, then under
+the Files of Type box, pick
+Rel130se 2000.
+To change the directory, double-click on the directory listing that you want. The line
+reading 'Look In:' must reflect the directory chosen.
+You can save a file as a different release ofAutoCAD by specifying the file type. Spec-
+ify the release you need under the Files of Type box in the Save As dialog box.
+INTRODUCTION
+xiii
+
+
+===== PAGE 17/298 =====
+Exiting AutoCAD
+Options Dialog
+Box
+Changing the Drawing Name or Directory
+Ifyou wantto change the drawing name or directory, use Save As. Ifyou have been ad-
+dressing C: while creating your drawing, you can save the file onto a disk before exit-
+ing the file by using Save As, then pick A: or B: for the directory or drive.
+Once you have saved the file, you can exit AutoCAD either by clicking on
+the X at the top right or by picking Exit from the File menu.
+The command line equivalent is QUIT.
+The large red X will exit you from AutoCAD. The smaller black x will exit you from
+the current drawing.
+Do not remove your floppy disk from the drive before you have completely exited
+fronl AutoCAD.
+In previous releases and in many other Windows programs the
+Options dialogbox is calledPreferences. The Options setup your
+screen display, the drawing environment, and the systelTI. Ifyou
+fmd the color ofthe screen difficult to work with, change it under
+Tools, Options, Display, Color. You can also set right-click
+preferences here.
+Window Elements
+D Display sCioli bars in drawing window
+o Display screen menu
+(EJ U~e I<ltge buttom for loolbafS
+o Show ToolTips
+o Show shortcut kejls in ToolTips
+r----___
+Colors...
+1 I
+FonlL
+Layout elements
+o Display Layout and Model tabs
+o Display Plintable aleC!
+21 Display paper background
+[!j Displey paper shadow
+o Show Page SelupManagel tor new layouts
+~ Creale viewport in new layouts
+Closshair SIW
+i5
+DisplC!jI resolution
+.:.! 11OO~.J
+Arc and circle smoothness
+~~. ;8
+I
+Segments in a polyline curve
+~l ~!
+Rendered object smoolhness
+:?! ;4
+!
+Contour lines per surtace
+Display perlormance
+o Pan and zoom with lasler &OLE
+~ High~ght rasler image frMle only
+:l 0 App~ solid liD
+~ 0 Show lexl boundary flame only
+~ 0 Draw tliue silhouettes 101 roIids and ~fa=
+Reference Edillading intensity
+[50-------;
+L __i
+xiv
+INTRODUCTION
+Context:
+Interface e1eFlle!'¢;
+@t..Ugp--Tnx
+,I!_
+• • • •I1I~~·
+I~out
+I 1Crosshairs
+.l=~------""';;;;';;.q
+i3D paralIel projection
+1Autotrack vector
+II Red
+i3D perspective projection
+1;Autosnap marker
+0 YeBow
+I
+Block editor
+: 1Drafti[1Q tool tip
+EJ Green
+I Command line
+IiDrafting tool tip background
+mCyan
+·tiPlot preview
+i ILight glyphs
+•
+Blue
+,~~._._~_~.~~~_"",
+..} ILight hotspot
+;Light falloff
+II Magenta
+1Light start limit
+0 White
+!Ughtendlimlt
+•••••••••
+!~amera9lyp.hs c:~I?r
+CI Select Color, ..
+
+
+===== PAGE 18/298 =====
+Introductory Geometry and
+Setting Up
+.
+i
+chapter you should be able to:
+UhAl
+SNAP, and GRID
+methods and on-screen picking
+ZOOM and PAN
+This book is about how to use AutoCAD to make drawings. The information is rele-
+vant to all AutoCAD releases from 2000 to 2008. Commands not available before a
+particular release are noted.
+Figure 1.1
+/UC5ICor.J
+/
+...----C(llT1J'11i:jnd ~Ine. Co'ordlna+..e Readout
+/
+Move your cursor across
+the screen to the right ofthe
+drawing area. If the nUll
+-hers
+in
+the
+coordinate
+readout are under 100, you
+have opened an ilnperial
+file. If they are over 500,
+you have opened in metric.
+Once you have entered the Drawing Editor,
+AutoCAD
+establishes
+a
+default
+working
+environment. There may also be some 'floating
+palettes' on the screen (Sheet Sets, Tool Palettes).
+Click on the X at the top
+right corner of each palette
+to
+clear
+these
+off your
+screen
+so
+it
+looks
+like
+Figure 1.1. Make sure your
+workspace
+is
+AutoCAD
+Classic (Releases 2007 and
+2008).
+Starting a
+Drawing in
+Metric or
+Imperial
+Changing Imperial and Metric
+It is best to start off immediately with the units that
+you want to use. If you have started in the wrong
+units, open a new file with acad.dwt (imperial) or
+acadiso.dwt (metric).
+The command STARTUP can also be used. This will
+prompt for either imperial or metric without the other
+options.
+'·~PTWT;;P'I;;·~'·····_·-'"·~~·.'~~'.~.~.
+~Sheet5et$
+tijatad -Named Plot Styles..dwt
+g;acad.dwt
+liIacadISO ..NamedPlot Styles,dwt
+lliacadiso.dwt
+tilANSI A(portraitl-Color Depe.,.
+Command: STARTUP
+Enter new value for startup <0>:1
+Com..rnand :NEW
+Introductory Geometry and Setting Up
+1
+
+
+===== PAGE 19/298 =====
+Pick either imperial or metric from the dialog box. Ifyou don't start in the right units,
+your dimensioning, area, and volume calculations will be difficult.
+Figure 1.2
+The UNITS
+Command
+If you pick a point on the graphics
+screen, you start to draw a rectangle,
+Pick
+another
+point
+and
+it
+will
+disappear.
+In AutoCAD it is suggested that you draw everything at full scale or 1: 1 scale, and plot
+the drawing at the required scale factor later.
+Once you have chosen your deired units
+from the startup menu, you then use the
+UNITS
+command to
+set
+your readout
+only.The type of units chosen detennines
+how AutoCAD interprets coordinate and
+angle command entries. The 'Insertion
+scale' area indicates again yourbase units.
+AutoCAD offers various types ofunits of
+measure for use on your drawings. Before
+setting up the parameters of the drawing,
+first set up the units so that the readout dis-
+plays the required units. Decimal mode
+may be used for Inetric units as well as for
+imperial units. Be sure you have set up
+your file correctly for the units that you re-
+qUIre.
++x
+-y
++y
+-x
+Figure 1.40
+Starting to Draw
+AutoCAD uses Cartesian coordinates for
+point entry. The points are set around a de-
+termined origin atXO, YO, ZOo In this caseX
+is 21"10". Y is 5'0", and Z is 0.0000. All
+points to the right of 0,0 have a positive X
+value; all points to the left have a negative
+X All points above 0,0 have a positive Y
+value; all points below have negative Y.
+Moving the cursor around the screen you
+will notice that the 0,0 position defaults to
+the bottom left corner of your screen. See
+Figures 1.4a and Figure lAb.
+The decimal unit type will display one
+millimeterfor one unit. Specify the number of
+decimal places for your readout using preci-
+sion, as in Figure 1.2.
+The engineering and architectural modes as-
+sume that one drawing unit equals one inch.
+Again set your precision, as shown in Figure
+1.3. Fractional and scientific settings will
+give a readout in those specific units. Again,
+the UNITS cOlnmand only sets the readout. If
+you are setting your UNITS in inches, but your
+'Insertion scale' is luillimeters, then you will
+have problems later.
+The UNITS command can be accessed either
+Figure 1.3
+through the command line or through the
+UNITS dialog box from the Fonnat pull-down
+menu at the top of your screen.
+i
+Ilf you press the space bar before
+entering any other command just as
+you open the file, the system might
+offer you the 'HELP' files. To get the
+'HELP' files off screen, click on the Xat
+the top right.
+Figure 1.4b
+2
+CHAPTER ONE
+
+
+===== PAGE 20/298 =====
+(:hoosing the
+Origin
+The origin or 0,0 should be the most easily accessible point on the design. If a large
+percentage ofthe dimensions on a drawing stem from one point, it should be made the
+origin. The coordinate readout on the bottom of the screen is there to help you fmd
+your position. The placement of the origin is important to establish a base for your
+readouts. It will be more important later when merging files.
+To move 0,0 from the bottom of the screen use the PAN command, as in Figure 1.5.
+y
+Figure 1.5
+Often you can press down on the roller ball ofyour mouse to get PAN. The command
+line equivalent is PAN or just P.
+Command: PAN
+(drag the icon across the screen to where you want it)
+In architectural drawings the origin is often at the bottom left comer, as in Figure 1.6.
+upper right 35',30'
+0,0*===::::::=a_-=!.I
+-2',-2' lower left
+Figure 1.6
+0,0
+-5',-5' lower left
+upper right 50',45'
+1
+42'1
+In mechanical applications it is often in the center, as in Figure 1.7_
+upper right 2,2
+upper right 10,20
+-2,-2 lower left
+Figure 1.7
+1.2
+-10,-20 lower left
+16
+Introductory Geometry and Setting Up
+3
+
+
+===== PAGE 21/298 =====
+Using PAN to
+get Started
+IiIn the command examples, the bold
+type is the user entry or response.
+The easiest way to start a file is by using 0,0 as the starting point. Use PAN to move the
+origin or 0,0 to the center ofthe screen. Then draw your first object using 0,0 as the
+fIrst point.
+The PAN command is as follows:
+The command line equivalent is PAN or P.
+Once centered, draw a circle, then use ZOOM All to fit it to your screen, as in Figure
+1.8. The same can be done using LINE. The CIRCLE command is explained further on
+page 11, but the commands below will show how it works.
+PAN
+Figure 1.8
+y
+~x
+CIRCLE
+ZOOM ALL
+The LIMITS
+Command
+4
+CHAPTER ONE
+Command:PAN
+(move your 0,0 to the center of the screen as in
+Figure 1.5)
+Command:CIRCLE
+Specify center point for circle or [3P/2P/Ttr
+(tan tan
+radius)] :0,0
+Specify radius of circle or
+[Diameter]<1'-O">:5
+Command: ZOOM
+Specify corner of window, enter a scale factor
+(nX or nXP),
+or
+[All/Center/Dynamic/Extents/Previous/Scale
+/Window/ObjectJ<real time>:ALL
+LIMITS sets a flexible general size for your drawing. LIMITS sets the size ofyour screen
+and the area covered by the screen grid. Unlike drawing on paper, you can change the
+LIMITS size at any time. It simply gives you a place to start and helps provide a visual
+size that you can identify with.
+The command line equivalent is LIMITS.
+Setting LIMITS does not limit your model; it merely lets you determine how big the fin-
+ished product might be. You can reset the LIMITS at any time simply by picking new
+points on the screen. ZOOM All allows you to view the size you have chosen.
+
+
+===== PAGE 22/298 =====
+Open acad.dwt. Change your
+UNITS to Architectural and draw
+in a line .. ZOOM All to see it on
+the screE"n.
+Use LIMiTS; GRID and SNAP to
+set up a
+drawing environment.
+Draw a line or circle the size of
+your part, then use ZOOM All.
+Set up your LIMITS, GRID and
+SNAP if they might be useful.
+Draw a line or circle the size of
+your part, then ZOOM All.
+A Sample Set Up
+A house that is 40' x 36'.
+The following commands will center the frrst line on your screen without LIMITS.
+Command: LINE
+LINE Specify first point:O,O
+Specify next point or
+[Undo] :40' ,0
+Specify next point or
+[Undo]:~
+Command: ZOOM
+Specify corner of window, enter a scale factor
+(nX or nXP),
+or
+[All/Center/Dynamic/Extents/Previous/Scale
+/Window/Object]<real time>:ALL
+You can also draw this using LIMITS.
+Command: LIMITS
+Reset Model space limits
+Specify lower left corner or
+[ON /
+OFF]
+<0'-0",0'-0">:-5' ,-5'
+Specify upper right corner <12.0000,9.0000>:45' ,40'
+Command: ZOOM
+Specify corner of window,
+enter .... /ObjectJ<real time>:ALL
+Cornmand:LINE
+LINE Specify first point:O,O
+Specify next point or
+[Undo] :40' ,0
+Specify next point or
+[Undo]:~
+Setting LIMITS, SNAP and GRID
+LIMITS sets an overall size for your design. SNAP sets an increment that the cursor will
+move by. GRID sets a visual aid to help you place objects, and is often set to twice the
+SNAP value. The grid will extend over the area given by the LIMITS command.
+To find GRID and SNAP:
+The command line equivalent is SNAP or GRID.
+Command: LIMITS
+Reset Model space limits
+Specify lower left corner or
+[ON/OFF]<0.OOOO,O.OOOO>:-S,-40
+Specify upper right corner<12.0000,9.0000>:240,180
+Command: ZOOM
+Specify corner ..... Extents/Left/Previous/Scale/Window]<real
+time>:ALL
+Command: SNAP
+Specify snap spacing
+(X)
+or
+[ON/OFF/Aspect/Rotate/Style/Type]<1.0000>:5
+Corn...'Tland: GRID
+Specify grid spacing or
+[ON/OFF/Snap/Aspect]<O>:10
+Introductory Geometry and Setting Up
+5
+
+
+===== PAGE 23/298 =====
+Entry of Points
+Coordinate Entry
+using Absolute,
+Relative, and
+Polar Values
+The DYNamic function is very useful
+but confusing at first. Turn it off for
+coordinate entry by clicking the icon.
+DYNamic off
+DYNamic on
+6
+CHAPTER ONE
+All parts of geometry are entered by means of points. Lines have two points each.
+circles have a centerpoint and a point determining the radius. Arcs have a center point,
+a radius point, a start point, and an end point.
+There are three ways of entering points:
+by coordinates: absolute values, relative values, or polar values
+picking them on the screen, with or without SNAP or DYNamic
+relative to existing geometry
+In this chapter we will look only at the first two methods ofpoint entry. The LINE com-
+mand will be used to illustrate coordinate entries.
+The LINE Command
+Find LINE as follows:
+The command line equivalent is LINE or the command alias L.
+Co~~and:LlNE or L
+To create a LINE, you will need to know where it starts and where it ends. Pick two or
+more points on the screen or enter the coordinates. Tenninate the command by press-
+ing the Enter key (.J) .
+The coordinates of an item, the X and Yvalues, can be entered either relative to the
+origin (the absolute value of the line) or relative to the last point entered (the
+incremental value).
+Absolute Value Entries
+In this method, the origin of the model or drawing does not change: the objects are
+placed relative to the origin. To enter the absolute value ofan item, type in the X value,
+then the Y value, separated by a comma. You will need to enter two sets of values to
+draw a line. Press the enter key -I
+to signal the end ofthe coordinate entry and you
+should get the line shown in Figure 1.9.
+Command:LlNE
+Specify first point:O,O
+Specify next point or
+[Undo] :4,0
+Figure 1.9
+This will draw a line from the absolute position of 0,0 to the absolute position of
+4,0.
+
+
+===== PAGE 24/298 =====
+Relative Value Entries
+To enter an incremental or relative value, type the @ symbol (Shift-2) before the
+number. @ means 'from the last point.'
+Command:LINE
+Specify first point:2,3
+Specify next point or
+[Undo] :@4,0
+This will draw a line from the absolute position of2,3 to a position 4 units in positiveX
+from this point.
+Try these two examples:
+Absolute
+Comrnand:LINE
+Specify first point:O,O
+Specify next point or[Undo] :4,0
+Specify next point or[Undo] :4,4
+Specify next point or
+[Undo] :0,4
+Specify next point or
+[Undo] :0,0
+Specify next point or
+[Undo]:~
+D
+Figure 1.10
+Relative
+Comrnand:LINE
+Specify first point:5,5
+Specify next [Undo] :@4,O
+Specify next [Undo] :@O,4
+Specify next [Undo] :@-4,O
+Specify next [Undo] :@0,-4
+Specify next
+[Undo]
+:~
+The example on the left in Figure 1.10 is a four-unit square starting at 0,0. The example
+on the right is a four-unit square starting at 5,5. Both squares are created relative to the
+origin, 0,0.
+To draw a line from point 5,6 to point 8.3,6 use either of the following:
+Absolute
+Command: LINE
+Specify first point:5,6
+Specify next point or[Undo] :8.3,6
+Relative
+Command: LINE
+Specify first point:5,6
+Specify next[Undo] :@3.3,0
+In choosing between the absolute and the incremental method, the deciding factor is
+what you know. Ifyou know that the final point is going to be 8.3,6, use the absolute
+value. Ifyou know that the line is going to be 3.3 units inpositiveXfrom the last point,
+then enter the incremental coordinates. AutoCAD will do the calculations.
+Introductory Geometry and Setting Up
+7
+
+
+===== PAGE 25/298 =====
+Polar Value Entries
+Polar coordinates allow you to enter an item, relative to the last item, at a specified
+length and angle. Angles are normally calculated counterclockwise from the positive
+X direction, as shown in Figure 1.11.
+Command: LINE
+Specify first point:3,4
+Specify next point or
+[Undo]
+:@4<45
+~@4<45
+3,4 </,,---4-------J45
+0
+Figure 1.11
+90
+180
+--+-+-----'-~-
+270
+o
+Where: @
+4
+<
+45
+relative to the last point
+the length of the line
+angle
+the angle that the line will be drawn at; all angles are calculated
+counterclockwise
+@1<210
+Try this example:
+Command: LINE
+Specify first point:6,O
+Next point:@2<O
+Next point:@3<90
+Next point:@2<O
+Next point:@1<270
+Next point:@2<O
+Next point:@2<90
+Next point:@6<150
+Next point:@1<210
+Next point:C (for close)
+Close
+6,0
+@2<0
+@6<150
+@2<90
+@2<0
+@1<270
+@
+@2<O
+3<90
+Coordinate Entry
+using SNAP,
+ORTHO,POLAR,
+and DYNAMIC
+8
+CHAPTER ONE
+As noted above, angles are calculated counter-
+Figure 1.12
+clockwise from the furthest point in positive X
+Functions that can help you enter your drawing information are found at the bottom of
+your screen. The lefthand button on the mouse will enter apoint every time you press it
+while in a draw command. Yau can make your digitizing or picking of points much
+easier and more accurate by using functions such as SNAP, POLAR and ORTHO. The
+function bar is shown in Figure 1.13.
+Figure 1.13
+
+
+===== PAGE 26/298 =====
+SNAP on
+SNAP off
+SNAP
+With SNAP you can draw lines, arcs or circles at preset integers. SNAP can also be set at
+an angle or on an isometric. GRID follows the SNAP settings. More advanced SNAP
+functions are found in Chapter 2. Ifyou set the SNAP to .25, all entries will be rounded
+to the nearest .25 interval as shown in Figure 1.14.
+6.25,6.75
+9.50,4.75
+3.75,4
+Figure 1.14
+The toggle turns SNAP off and on, you need the command to change the size.
+Command: SNAP
+Specify snap spacing
+(X)
+or
+[ON/OFF/Aspect/Rotate/Style!Type]<1.0000>:.25
+Try repeating the examples on pages 7 and 8 using the mouse and setting the SNAP
+value to 1. If the coordinate readout does not move, press F6. Remember that it is a
+three-way toggle; off, absolute, and incremental. If you set SNAP to 1, all the points
+you digitize or pick from the screen will be accurate to one-unit integers. You cannot
+be accurate without using SNAP and/or POLAR.
+ORTHO
+With the ORTHO option (F8 or the ORTHO button ), lines can only be drawn vertically
+or horizontally. Draw a LINE across your screen. Keep adding segments to the line and
+tum ORTHO on. You will notice that the cursor only goes vertically and horizontally.
+By turning ORTHO off, you will be able to draw diagonal lines again.
+The GRID (F7 or the GRID button) gives you a visual display of distance.
+POLAR is very useful for placing
+lines and determining distances.
+Use it with SNAP for accuracy.
+POLAR
+Now tum ORTHO offand POLAR on. AsshowninFigure 1.15, POLAR allows lines to
+be drawn vertically or horizontally at a given distance and it gives the incremental dis-
+tance from the last entered point. The button is on when it looks pushed in.
+IPOLAR
++_.-
+Figure 1.15
+Command: LINE
+Specify first point: (pick a point)
+(with POLAR on move your
+cursor to the right)
+Specify next point or
+[Undo] :60
+Specify next point or
+[Undo] :50 (move your cursor up)
+The line will be drawn 60 units in positive X and 50 units in positive Y. POLAR will al-
+low length entry for lines going 0,90, 180 or 270 degrees. Leave these lines on screen.
+Introductory Geometry and Setting Up
+9
+
+
+===== PAGE 27/298 =====
+DYNamic
+The DYNamic function displays the command line beside the cursor. DYNamic also
+gives you a dynamic angle readout. You can draw lines at anglesin a similar way to
+drawing using the POLAR option. Beware, however, because these angle readouts are
+not given in decimal places; lines drawn in using DYNamic are not always accurate.
+Change your angle precision in UNITS for more accuracy. Place one line beside the
+otheras i n Figure 1.16. Zoom in to see how accurate they are.
+••• 11I:•
+..:.•.:~I/........
+k::x
+;
+dynamic
+Figure 1.16
+\/
+I
+coordinate entry
+T
+Command: LINE
+Specify first point:O,O
+Specify next point:l00
+Command: LINE
+Specify first point:O,O
+Specify next point:@100<33
+The second line in Figure 1.16 is accurate, the first is not. The line put in using the DY-
+Namic angle is approximately 33 degrees, but is actually placed whereever your cur-
+sor is between 33 and 34 degrees.
+The DYNamic readout is useful for those who like to read their cOlmnands on the dis-
+play screen rather than on the command line. In Figure 1.17, the ERASE command is
+being used and the user is selecting the objects to be erased.
+· .
+Command: ERASE
+Select objects: (pick 1)
+Select objects:
+~
+Turn
+DYNamic
+off for
+coordinate
+entries.
+With geometry commands, you are prompted
+for each point entry or value.
+Figure 1.17
+10
+CHAPTER ONE
+The value box will turn from
+blue to white as you enter the
+value, as shown in the radius
+option of Figure 1.18.
+Comrnand:Circle
+Specify center point
+for circle or
+[3P/2P/Ttr
+(tan
+tan radius) J :0,0
+Figure 1.18
+
+
+===== PAGE 28/298 =====
+Geometry
+Commands
+Without SNAP or coordinate entry
+using POLAR or not your lines will
+not be accurate.
+All geometry commands are similar in the way they are entered. The user picks the
+command LINE, CIRCLE, ARC, etc., and then AutoCAD will prompt for the points or
+distances needed to create that geometry.
+The LINE Command
+The LINE command is as simple as the above examples indicate. With either a pick on
+the screen or a coordinate position you can tell AutoCAD where each point shouldbe.
+Any combination ofpoints is accepted. Use the enterkey.J
+to exitthe command.
+~~
+~ti~
+/
+.~
+~
+~~;
+",,1
+The command line equivalent is LINE or L.
+Cornmand:LINE
+Specify first point: (pick a point)
+Specify next point or
+(Undo) :@3<250
+Specify next point or
+(Undo): (pick another point)
+Specify next point or
+(Undo):~ (Enter)
+When drawing lines, you are creating objects that are describedby two points; a begin-
+ning and an end. Any number ofpoints can be entered in the LINE command with each
+pointjoinedto the last by a separate line. Ifyou have entered five or sixpoints in a sin-
+gle command, any ofthe lines can be erased.
+LINE Options
+C will close the string of lines with a line from the last point to the first point.
+U can be entered within the command line to undo the last entered point.
+The CIRCLE Command
+When drawing a CIRCLE you are also describing an object that has two points; a center
+and a radius. An ARC has four points: a center, a radius, a start, and an end.
+The CIRCLE command will prompt you for the information needed to cOlnplete the
+circle.
+The command line equivalent is CIRCLE or C.
+Figure 1.19 shows a circle with a radius of 4.
+Command: CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan radius)]: (pick a
+point or type 0,0)
+Specify radius of circle or
+[Diameter}<l'-O!l>: (pick another point
+or type in a radius value, for
+example 4)
+Figure 1.19
+4,0
+Introductory Geometry and Setting Up
+11
+
+
+===== PAGE 29/298 =====
+Turn OSNAP off if your cursor
+keeps going to another obiect on
+..the screen.
+Where: 3P = a circle fitted through three points
+2P
+a circle fitted through two points
+Ttr = a circle that is tangent on its diameter to two selected objects
+indicated with a specified radius
+Options appear when you type in C or CIRCLE. The default is to have a circle defined
+by the radius. Type in Dthen space ifyou prefer to enter a diameter.When picking C IR-
+CLE from either the screen menu or the pull-down menu, you will be prompted for one
+ofthe options listed above.
+The ARC Command
+Arcs are also createdby using options to control how the ARC is entered. The default is
+to define the first, then the second, then the third or final point of an arc.
+The command line equivalent is ARC or A.
+The default arc is created through three contiguous
+points. Pick three points on the screen after initiating
+the ARC command as shown in Figure 1.20. The points
+can be entered withSNAP on, by coordinate entry, or by
+using existing objects with OSNAP, as shown in Chap-
+ter 2.
+Figure 1.20
+Command:ARC
+ARC Specify start point of arc or
+[Center]: (pick point -
+1)
+Specify second point of arc or [Center/End]: (pick point -
+2)
+Specify end point of arc: (pick a third point -
+3)
+There are many variations on the ARC command.
+You can access all ARC options through the Draw pull-down menu under Arc. Should
+you want to enter the options at the command line, simply type in the option that you
+want. Only the first letter ofthe option is required: e for end, r for radius, etc. Put in the
+arc using the Start End Radius fonnula, as shown in Figure 1.21.
+12
+CHAPTER ONE
+Command:ARC
+ARC Specify start point of arc or
+[Center] : (pick 1)
+Specify second point of arc
+or
+[Center/End]:E
+Specify end point of arc: (pick 2)
+Specify center point of arc or
+[Angle/Direction/Radius] :R
+Specify radius of arc <0.00>: (pick
+3)
+ARCs will be calculated counterclockwise.
+Figure 1.21
+
+
+===== PAGE 30/298 =====
+View Commands
+The FILLET Command
+The FILLET command provides an easy way to place an arc between two existing ob-
+jects, usually lines. FILLET can also be used with radius 0 to clean up comers and con-
+nect lines to an apex.
+::,--
+r
+n
+~f,f::~~~
+..."""
+...".."..
+The command line equivalent is FILLET or F.
+- -':*- - --
+1
+~
+2:
+j
+Figure 1.22
+Command: FILLET
+Current settings:
+Mode
+=
+Trim,Radius
+=
+<5.0000>
+Select first object or
+[Undo/Polyline/Radius/Trim/Multiple] : (pick 1)
+Select second object: (pick 2)
+In Figure 1.22 the default radius of5 was used. To change the radius choose the option
+R. Always press the enter key -l after letter options. In the example below the option R
+to change the radius, has been used to create a FILLET with the new radius value of 12.
+Note that Rmust be followed by a space. R indicates that you would like to enter a new
+radius value, the actual number is entered on the next line.
+Cornmand:FILLET
+Current settings:
+Mode = Trim,Radius = <5.0000>
+Select first object or
+[Undo/Polyline/Radius/Trirn/MultipleJ :~
+Specify fillet radius:12
+Select first object or
+[Undo/Polyline/Radius/Trim/MultipleJ : (pick 1)
+Select second object: (pick 2)
+The View menu and toolbar offer commands which will change the display of the
+model or drawing relative to the screen. Commands from the View menu will not
+change the coordinates or position ofthe model or the database. They only change the
+way you look at it. The following commands appear in the View menu:
+ZOOM
+PAN
+REDRAW
+REGEN
+magnifies a section of the screen
+moves the model across the screen without changing the
+magnification factor (zoom)
+updates the view and erase marks
+recomputes the file
+Ifyour scroll bars are not displayed, go to the Tools pull-down menu and choose Op-
+tions, and then the Display tab.
+Introductory Geometry and Setting Up
+13
+
+
+===== PAGE 31/298 =====
+The ZOOM Command
+ZOOM is accessed by typing it on the command line, using the slider bars on the top
+and bottom of the screen, or using the pull-down menus or the standard toolbar. For
+the ZOOM options on the toolbar, hold the Zoom Out button down and the options will
+be shown.
+ZOOM is a transparent command which means it can be used with the icons below
+within a command string.
+The command line equivalent is ZOOM or just Z.
+Command:ZOOM (or Z)
+Specify corner of window, enter a scale factor
+(nX or nXP) , or
+[All/Center/Dynamic/Extents/Previous/Scale/Window/Object]<re
+al time>:
+The options for the Zoom command are:
+All (A)
+Center (C)
+Dynamic (D) =
+Extents (E)
+Previous (P)
+Realtime
+Window(W)
+Scale nX
+Scale nXP
+expands or shrinks the lllodel or drawing to fit onto the
+screen relative to your limits
+centers the model on the screen; you mustenter a
+magnification factor or "height"
+creates a dynamic display of the item for zooming
+expands or shrinks the model or drawing to fit all of the
+objects on screen
+returns you to the Previous zoom factor
+zooms interactively to a logical extent. Activate with either
+the button or a right-click
+describes by two diagonal points a rectangle around the
+area you want to view
+specifies a percentage of the existing size
+specifies a size relative to paper space
+Many mice have a roller ball that acts as a ZOOM function. Roll the roller ball to
+change the Zoom factor, or press down on it and move it across the screen to PAN. In
+Release 2008 the ZOOM function on the roller ball sometimes malfunctions. Use
+ZOOM All or ZOOM Extents to center your drawing on the screen.
+Zoomed in
+Figure 1.23
+Original
+Zoomed out
+14
+CHAPTER ONE
+In Figure 1.23 the object is centered on the screen using ZOOM ALL. Ifyour object gets
+lost use ZOOM ALL to get it back on screen.
+
+
+===== PAGE 32/298 =====
+ZOOM Window
+\
+!
+I
+i
+I
+I
+I
+I
+Figure 1.24
+Comrnand:ZOOM (or Z)
+Specify corner of window, enter a scale factor
+(nX or nXP),
+or [All/Center/Dynamic/Extents/Previous/Scale
+/Window]<real time>:W
+Specify first corner: (pick 1)
+Specify opposite corner: (pick 2)
+ZOOM Extents
+Figure 1.25
+Command:Z
+Specify corner of window, enter a scale factor
+(nX or nXP),
+or [All/Center/Dynamic/Extents/Previous/Scale
+/WindowJ<real time>:E
+ZOOM with scale
+Figure 1.26
+Scale works like this: .8x will display an image at 80% ofits current size; .5x will dis-
+play an image at halfthe current size; and 2x will display an image twice the size ofthe
+current size.
+Comrnand:Z
+Specify corner of window, enter a scale factor
+(nX or nXP),
+or [All/Center/Dynamic/Extents/Previous/Scale
+/Window]<real time>: .5x
+Introductory Geometry and Setting Up
+15
+
+
+===== PAGE 33/298 =====
+ZOOM All is yourfriend. If you lose
+all your objects, just ZOOMAII and
+they will magically reappear.
+Zooming In and Out
+Zooming in doubles the size of the image, zooming out reduces the image by half.
+Zoom Limits shows the screen limits. Ifyou have a center rolling wheel on yourmouse
+you can zoom in and out quickly, but ZOOM Window is usually more efficient.
+ZOOMAJI
+To display the entire drawing, use ZOOM All or ZOOM Extents.
+Cornmand:ZOOM
+Specify corner of window,
+enter a scale factor
+(nX or nXP),
+or [All/Center!Dynamic/Extents/Previous/Scale!Window]<real
+time>:A
+The PAN Command
+To move the view across the screen without changing the display size, use PAN as
+shown in Figure 1.27.
+X
+1
+Figure 1.27
+X 2
+16
+CHAPTER ONE
+Command:PAN
+(or P)
+Press ESC or ENTER to exit, if you have a roller on your
+mouse, just press down and move it to PAN.
+PAN and ZOOM
+The PAN command moves the model across the screen, while ZOOM magnifies the
+model within the screen. The database, i.e.the 0,0,0 point and associated coordinate
+points, remain the same.
+The roller ball can be very useful in placing the image on the screen, but be sure to ex-
+periment with ZOOM All and ZOOM with a window (pick two points around what you
+want to look at) and you may find these useful as well.
+Windows Scroll Bars
+Windows scrollbars can be used instead ofthe PAN command. To move the drawing
+up, pick the down arrow on the vertical scroll bar. To move the drawing to the left, pick
+the right arrow on the scroll bar. Ifyou have a smaller screen, you may want to have the
+scroll bars not displayed. To remove them from the screen, choose the Tools menu,
+then Options, then Display. Remove the check mark from the box beside Display
+Scroll Bars.
+REGEN
+While your data are always available, to save memory, they are not always completely
+generated. The REGEN command (RE) is used to update arc and circle displays to make
+the objects look more rounded. If your arcs are choppy or squared, use REGEN to
+update the screen to the current magnification factor and display a superior image.
+
+
+===== PAGE 34/298 =====
+Figure 1.28
+Alternate Units
+Remember that UNITS only
+changes the readout. To be
+-accurate, use SNAP or coordinates
+-to place points.
+It is important to have the correct nomenclature when entering geometry.
+Architectural
+Command: LINE
+Specify first point:2,3
+(X 2 inches,
+Y 3 inches)
+Specify next point or
+(Undo
+:@4',0
+(4 feet in X, none in Y)
+Specify next point or
+(Undo) :@O,2'3
+(none in X,
+2 feet 3
+inches in Y)
+Specify next point or
+(Undo) :@3'4-1/2",O
+(3 feet 4 1/2
+inches in X, none in Y)
+~"'ractional
+With fractional units the information is entered as a fraction with a slash (I). For mixed
+numbers a hyphen (-) must be added with the slash (I).
+Command:LINE
+Specify first point:1-1/2,2-3/4
+Specify next point or
+(Undo) :@3/4,O
+Surveying
+The surveyor's compass rose is much the same as a ship's compass. It is divided into
+four parts with the top being north, the left being west, etc. Angles are expressed in 90
+degree quadrants.
+The quadrantbetween north and east, for example, starts at 0 degrees due east and pro-
+gresses 90 degrees to due north. To express 25 decimal degrees using AutoCAD's de-
+fault origin for angles, enter N25dO/Q"E. You may omit null minutes and/or seconds
+and enter N25dE.
+When entering this measurement, do not use spaces.
+Command:L
+Specify first point:O,O
+Specify next point or
+(Undo) :@38<S44d14'9"W
+Measuring Angles
+AutoCAD's default setting for angles is zero de-
+grees at due east. You may change this zero-
+degree reference point to due north, due west, or
+due south. These are the only four positions of-
+fered by the UNITS command. To orient the zero
+reference at an angle other than those specified,
+you can change the user coordinate system
+(UeS) as explained later.
+Untranslated Angles: lfthe UNITS command is
+set to a nondecimal angular mode (e.g. radians),
+an angle can be preceded by a 'less than'symbol
+< to enter a measurement counterclockwise
+from 3 o'clock.
+If an angle measurement direction or origin has
+beenchanged, enter < before an angle measurement to have the angle measured coun-
+terclockwise from 3 o'clock.
+Change the precision ofyour angle readouts to show up on the POLAR and DYNamic
+readouts, as shown in Figure 1.28.
+Introductory Geometry and Setting Up
+17
+
+
+===== PAGE 35/298 =====
+Step]
+Open AutoCAD. IfAutoCAD is already running, pick File from
+the pull-down Inenu (top left), then New to start a new file in met-
+ric by using acadiso.dwt.
+Use the Tools pull-down menu and Drafting Settings or the
+following typed commands to set your LIMITS and SNAP. Then
+pick ZOOM All from the View pull-down menu, use the icon
+shown, or type it in.
+The bold type in the following c01TIlnands is the user response or
+what you type in. Use the Enter Key .J to enter each command or
+value.
+Command:LIMITS.J
+Tools
+Dra'H
+Dimen
+layer...
+LSl.yer tools
+!:.olor...
+Liuetype...
+Line~ejght..•
+5cal!t,List...
+/;? Text ~tyle".
+~ QimensKln style...
+~. T~Style ...
+eoint Style...
+MuJtmne Style, ..
+~njts ...
+dl' Thickness
+.4t".!IM~
+Rename. "
+Step 2
+/
+Step 3
+Reset model space limits
+Specify lower left corner or
+[ON/OFFJ<O.OOOO,O.OOOO>:-S,-5.J
+Specify upper right corner<12.0000,9.0000>:100,60.J
+Command: (from the View pull-down menu, pick ZOOM All)
+Command: SNAP
+Specify snap spacing
+(X)
+or
+[ON/OFF/Aspect/Rotate/Style/Type]<1.0000>:5
+Start by drawing a series oflines using absolute coordinates. Turn DYNamic off.
+Command:L.J
+Specify start
+point:O,O~
+Specify next point or
+[undo] :75,0....1
+Specify next point or
+[undo] :75,50.J
+Specify next point or
+[undo] :0,50....1
+Specify next point or
+[undo] :c.J
+Command: ZOOM
+Specify corner of
+Scale/Window] <real time>:Extents
+Command: ZOOM
+Specify corner of
+Scale/Window]<real time>:.8x
+Make sure that ORTHO, and OTRACK are off, but that POLAR and SNAP are on.
++
+When entering coordinates, make
+sure your DYN button is turned
+off! Its on the bottom line of your
+screen
+Then draw in the next lines using POLAR to
+complete an inside rectangle. Move your
+cursor directly up, down, right or left from the
+last entered point.
+I
+I
+/
+18
+CHAPTER ONE
+Command:L.J
+Specify start point:5,5.J
+Specify next point or
+[undo]: (move your cursor to the right)65.J
+Specify next point or
+[undo]: (move your cursor up)40.J
+Specify next point or
+[undo]: {move your cursor left)65.J
+Specify next point or
+[undo] :c.J
+
+
+===== PAGE 36/298 =====
+Step 4
+Use the enter key .J at the end of
+each typed entry to send the
+information to the computer or to
+exit you from the LINE command.
+Enter a line at an angle from 10,10.
+COffi...rnand:L
+Specify start point:10,10
+Specify next point or
+[undo] :@20<30
+Specify next point or
+[undo]:~
+Then another from the opposite direction.
+Command:L
+Specify start point:50,10
+Specify next point or
+[undo] :@20<150
+Specify Dext point or
+[undo]:~
+StepS
+Notice that the ends of the diagonal lines are not
+near the snap points. ZOOM into the end ofthe line
+on the left to start adding circles. Use either the
+icon or type the letter Z.
+Command:Z
+Specify corner of window, enter a
+scale factor
+(nX or nXP),
+or
+[All/Center/Dynamic!Extents/Previo
+us/Scale/Window]<real time>: (pick 1, pick 2)
+Make sure SNAP is on too. Use the CIRCLE command with DYNamic.
+Command:CIRCLE
+Specify center point for circle
+or
+[3P/2P/Ttr
+(tan tan
+radius)]: (pick the snap point
+to the right of the end of the
+diagonal line)
+Specify radius of circle or
+[Diameter]<1.OOOO>:2.7
+The radius ofthe circle will snap
+to the closest snap point. Yourra-
+dius entry at the command line
+will override this. When asked B
+for the radius, use .J to accept
+the default.
+Command: CIRCLE
+Specify center point for circle or
+[3P!2P!Ttr
+(tan tan
+radius)]: (pick the snap point shown)
+Specify radius of circle or
+[Diameter]<2.7000>:~
+Introductory Geometry and Setting Up
+19
+
+
+===== PAGE 37/298 =====
+Step 6
+Step 7
+Now use ZOOM All to place your total image within your screen again.
+Then use CIRCLE with the Ttr option to add a circle in the center.
+Command:CIRCLE
+Specify center point for circle or [3P/2P/Ttr
+(tan tan
+radius)] :Ttr
+Specify point on object for first tangent of circle: (pick
+the first circle)
+Specify point on object for first tangent of circle: (pick
+the other circle)
+Specify radius of circle <2.7000>:10
+Finally add some FILLETs to the inside rectangle.
+r----~--------------------
+:
+2
+tl
+I
+I
+I
+i
+I
+I
+I
+I
+I
+I
+20
+CHAPTER ONE
+~
+Command: FILLET
+Current settings:
+Mode = Trim,Radius = <5.0000>
+Select first object or
+[Undo/Polyline/Radius/Trim/MultipleJ :r
+Specify fillet radius:l0
+Select first object or
+[Undo/
+Multiple]: (pick 1)
+Select first object or
+[Undo/
+Multiple]: (pick 2)
+Continue to fillet the edge until your drawing looks like the one on the right above.
+
+
+===== PAGE 38/298 =====
+In this tutorial we will create a drawing in imperial measurements without using LIMITS
+or SNAP. Make sure your status bar looks like this: only MODEL and POLAR on:
+Step]
+LIMITS, GRID and SNAP are very useful for placing items that are rectilinear with regu-
+lar integers. For many applications, they are simply not needed. Here is how to get
+started without them.
+First open a new file and make sure that the units are imperiaL Pick either File, then
+New, or pick the icon from the Standard toolbarwhich should be on the top left ofyour
+screen.
+Command:NEW
+Then choose acad.dwt from the list oftemplate
+options.
+Another way to get started is to use STARTUP.
+"eipTW"e~e$ ... ---~.~~-~­
+faI~etsets
+lIacad·~NamedPlotStYle$.dwt
+lIaC~i£9'At
+lIIacgolS0 ..NamedPiat 5t~S.dwt
+IIJqc&iiso·d~
+IIIANSIA (oortrait:J·"€oIor DeOe...
+Step 2
+Step 3
+Command: STARTUP
+Enter new value for
+startup <0>:1
+Command:NEW
+(Choose imperial)
+Now set your UNITS to architec-
+tural.
+Command:UNITS
+Set your units to architectural.
+Choose the 11'" under Precision.
+There is no need to change the
+Angle readout.
+Choose OK.
+Now draw a CIRCLE, then use
+ZOOM to place it on the page.
+Command:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius)] :0,0
+Specify Radius of circle or
+[Diameter] :4'
+Don't forget the foot symool. AutoCAD defaults to inches, so if you only enter 4 as
+your value it will be accepted as four inches not four feet.
+Introductory Geometry and Setting Up
+21
+
+
+===== PAGE 39/298 =====
+Step 4
+You will not be able to see the object on screen, so
+use ZOOM to place it.
+Use the roller on your mouse, the icons, or simply Z
+from your keyboard to start the ZOOM command.
+Command:Z
+Specify corner of window, enter a
+scale factor
+(nX or nXP),or
+[All/Center/Dynarnic/Extents/Previous
+/Scale/Window] <realtirne>:A
+Comrnand:Z
+Specify
+corner
+a f
+window,
+enter
+a
+scale factor
+(nX or nXP),
+or
+[All ..... ow]<real time>: .5X
+This centers your circle on the screen. Let's assume
+this circle is a patio table, now let's make chairs.
+-i;
+!
+StepS
+Step 6
+Use the LINE command to create a small rectangular chair. Use POLAR to make the
+chair 24" x 18". Just move the cursor directly right, then up, and type in the value.
+Conunand:LlNE
+Specify first point: (pick a point to start)
+Specify next point or
+[Undo] :24
+(move the cursor right)
+Specify next point or
+[Undo] : 18
+(move the cursor up)
+Specify next point or
+[Undo] :24
+(move the cursor left)
+Specify next point or
+(Undo) : c
+Now use CIRCLE and ARC to create another type ofchair.
+a
+Comrnand:CIRCLE
+Specify center point for circle or
+[3P/2P/Ttr
+(tan tan
+radius) ] : (pick 1)
+Specify radius of circle or
+[Diameter] <1'-0">: (pick 2)
+Command:ARC
+ARC Specify start point of arc or
+[Center] : (pick 3)
+Specify second point of arc or
+[Center/End] : (pick 4)
+Specify end point of arc: (p~ck 5)
+Command:
+(from the View pull-down
+menu, pick ZOOM All)
+22
+CHAPTER ONE
+Step 7
+The only way to make progress is to practice. Use ZOOM to zoom in and out, creating
+more chairs.
+
+
+===== PAGE 40/298 =====
+Exercise 1 Units Practice 1
+Open a NEW file and set the UNITS accordingly.
+PAN the origin (0,0) onto your screen and draw in the first line starting at 0,0.
+Use ZOOM All or your roller boll to adjust the size of your image.
+1--:---- ----~--~9~~~_11_i================-2-~-=1---J
+-l
+43
+11
+4
+4
+I
+34
+34
+---
+-
+-----
+-
+------
+Rl
+FRACTIONAL
+8'
+2,50
+~2'OI0---1~
+~O,80
+~~
+r
+---I---f--+
+2,83
+-~~1,20
+~
+90"
+~
+L
+1,00
+135'
+2,12
+I
+I~
+~L50
+3,00---j
+DECIMAL
+"-In
+I
+(\J
+]
+90"~ ARCHITECTURAL
+-- -~----- ,.------.
+ENGINEERING
+1250E+001
+12,60l+00
+f
+3.04E +00
+--....--117"'(j
+I---l.20E+00~
+SCIENTIFIC
+1
+l' -6,0
+11
+~
+01'-6.0
+11
+1'-3,0",
+I
+f.---~- 5'-0.1' ------~
+I
+3,_ 3,0/' --.--f---f---
+1
+1'-60'
+Introductory Geometry and Setting Up
+23

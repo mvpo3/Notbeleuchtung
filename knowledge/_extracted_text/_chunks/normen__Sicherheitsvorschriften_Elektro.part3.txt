@@ -1,0 +1,1924 @@
+
+
+===== PAGE 121/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+109 
+22.8 
+Begrenzung der Fehlerspannung am geerdeten Systemleiter 
+Als TT- oder TN-Netze betriebene Niederspannungsnetze müssen an einem Systemleiter (N- 
+bzw. PEN-Leiter) über einen Betriebserder geerdet werden. Der Gesamterdungswiderstand 
+aller Betriebserder soll möglichst niedrig sein (ein Wert von 2W gilt als ausreichend); für Bö-
+den mit höheren Erdungswiderständen siehe ÖVE E8101. 
+ 
+ 
+ 
+ 
+Abbildung 37 – Begrenzung Fehlerspannung 
+ 
+Begrenzen der Fehlerspannung bei geerdetem Systemleiter
+RA
+RE
+RB
+RE ... kleinster Erdungswiderstand von nicht mit Schutzleiter 
+verbundenen fremden leitfähigen, Teilen, über die Erdschluss entstehen kann.
+W
+=
+×
+W
+=
+Þ
+-
+=
+Þ
+W
+=
+-
+
+5
+V
+65
+V
+165
+2
+R
+V
+65
+V
+230
+V
+65
+R
+R
+2
+R
+für
+V
+65
+U
+V
+65
+R
+R
+E
+E
+B
+B
+N
+E
+B
+
+
+===== PAGE 122/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+110 
+22.9 
+IT-Systeme 
+IT-Systeme werden vorwiegend in Fabriken, Bergwerken, Krankenhäusern und ähnlichen 
+Großbetrieben angewendet, bei denen eine hohe Betriebssicherheit erwünscht wird. 
+ 
+IT Systeme müssen gegen Erde isoliert sein oder über eine hochohmige Impedanz mit Erde 
+verbunden werden. Der Auftretende Fehlerstrom ist somit so gering, dass eine Ausschaltung 
+nicht gefordert wird. Bei zwei auftretenden Fehler müssen jedoch Maßnahmen gegen den 
+elektrischen Schlag getroffen werden. 
+ 
+Die Körper der Betriebsmittel müssen mit der Erdungsanlage verbunden werden und folgen-
+de Bedingung muss erfüllt werden: 
+ 
+V
+I
+R
+d
+A
+50
+
+
+ 
+ 
+Id = Fehlerstrom beim ersten Fehler. 
+ 
+Zur Überwachung dürfen folgende Schutzgeräte verwendet werden: 
+ 
+ Isolationswächter (IMD) 
+ Differenzstromüberwachung (RCM) 
+ Isolationsfehlersucheinrichtung (IFLS) 
+ Überstromschutzeinrichtungen 
+ Fehlerstromschutzeinrichtungen (RCD) 
+ 
+In IT Systemen bei denen beim ersten Fehler keine Abschaltung erfolgt muss der Fehler 
+durch folgende Schutzgeräte gemeldet werden: 
+ 
+ Isolationswächter die mit Isolationsfehlersucheinrichtung kombiniert werden können 
+ Differenzstromüberwachung die den auftretenden Differenzstrom auch erfassen kann 
+ 
+Die Schutzgeräte müssen ein akustisches und/oder optisches Signal erzeugen. Sind beide 
+Meldungen vorhanden, so kann die akustische Meldung quittiert werden. 
+ 
+Personen muss es möglich sein die Meldungen auch wahrzunehmen. 
+ 
+ 
+ 
+
+
+===== PAGE 123/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+111 
+Bei einem zweiten Fehler muss es möglich sein eine automatische Abschaltung zu ermögli-
+chen. 
+ 
+Dabei gilt, wenn die Körper durch Schutzleiter verbunden sind und an der gleichen Er-
+dungsanlage geerdet sind: 
+ 
+Systeme ohne Neutralleiter  
+aI
+U
+Zs
+*
+2
+
+ 
+ 
+Systeme mit Neutralleiter  
+aI
+U
+s
+Z
+*
+2
+' 
+ 
+ 
+Zs = Fehlerschleifenimpedanz zwischen Außenleiter und Schutzleiter 
+Z’s = Fehlerschleifenimpedanz zwischen Außenleiter und Neutralleiter 
+Ia = 
+Strom der die Schutzeinrichtung betätigt 
+ 
+Sind die Körper gruppenweise oder einzeln geerdet gilt: 
+ 
+a
+A
+I
+V
+R
+50
+
+ 
+ 
+ 
+Abbildung 38 - Isolationsüberwachung 
+ 
+ 
+Isolationsüberwachungssystem
+L1
+L2
+L3
+N
+PE
+Offene Erdung 
+( oder über 
+Überspannungs-
+Ableiter )
+Z<
+RA
+
+
+===== PAGE 124/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+112 
+23 
+DER FEHLERSTROMSCHUTZSCHALTER 
+23.1 
+Aufbau des FI 
+Der Aufbau eines FI Schutzschalters ist relativ einfach. Neben dem Gehäuse, den Anschluss-
+klemmen und inneren Verdrahtungsleitungen findet man noch ein paar spezielle Bauteile 
+wie die Prüftaste (zur regelmäßigen Funktionskontrolle) und den Prüfwiderstand. Das „Herz-
+stück“ eines FI Schalters ist der so genannte Summenstromwandler. Auf diesen sitzt die Aus-
+lösespule mit der der Schaltkontakt betätigt wird. 
+ 
+23.2 
+Wirkungsweise des FI 
+Der FI funktioniert nach dem Ersten kirchhoffschen Gesetz. Jeder stromdurchflossene Leiter 
+baut um sich ein Magnetfeld auf. Je nach Stromrichtung mit oder gegen den Uhrzeigersinn. 
+Ist die Summe der zufließenden und abfließenden Ströme gleich, so heben sich die Magnet-
+felder im Summenstromwandler auf. 
+ 
+Sollte jedoch ein Fehlerstrom in der Anlage gegen Erde abfließen, so erkennt diesen der FI 
+Schutzschalter. Die Magnetfelder im Summenstromwandler sind nicht mehr gleich groß. In 
+der Auslösespule, die am Summenstromwandler sitzt, wird eine Spannung induziert (Trans-
+formatorprinzip). Die induzierte Spannung hat einen Strom zur Folge, welcher das Schalt-
+schloss betätigt. Der FI Schutzschalter schaltet ab. 
+ 
+In der Praxis beträgt die Abschaltzeit beim Personenschutz zwischen 10 ms - 30 ms. Die ma-
+ximal erlaubte Abschaltzeit eines FI Schalters der Standardbaureihe bei einfachem Auslö-
+sestrom beträgt 300ms. 
+ 
+Um eine Funktionskontrolle durchführen zu können ist eine Prüftaste vorgesehen. Die Prüf-
+taste ist je nach Hersteller zwischen zwei Außenleitern oder zwischen einen Außenleiter und 
+dem Neutralleiter geschalten. Bei Betätigung der Prüftaste wird der Summenstromwandler 
+überbrückt und ein künstlicher Fehler erzeugt. Der Prüfwiderstand dient in diesen Fall als 
+Strombegrenzer um keinen Kurzschluss zu erzeugen. 
+ 
+Die FI Schalter muss regelmäßig einer Funktionskontrolle unterzogen werden um dessen 
+einwandfreien Betrieb zu gewährleisten. Wird der FI nicht regelmäßig betätigt, so können die 
+Adhäsionskräfte zwischen den Kontakten die Federkraft übersteigen. Der FI bleibt „picken“. 
+ 
+Der FI Schalter soll, um diesen Fehler zu vermeiden, im Haushalt halbjährlich getestet wer-
+den. Die Herstellerangaben müssen für die Prüfintervalle beachtet werden. Für die Prüfung 
+ist der Anlagenbetreiber bzw. Verbraucher zuständig. 
+ 
+ 
+
+
+===== PAGE 125/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+113 
+23.3 
+Begriffe 
+23.3.1 Verträglichkeit 
+Der FI Schalter darf durch die Arbeitsweise der nach geschalteten Betriebsmittel (im unge-
+störten und gestörten Betrieb) keine Störungen erhalten und ein ungestörter Betreib muss 
+möglich sein. 
+ 
+23.3.2 Kurzschlussfestigkeit 
+Ein Kurzschluss der nach dem FI Schalter auftritt darf, für die benötigte Ausschaltzeit der dem 
+FI Schalter vor geschalteten Sicherung, zu keiner Schädigung am FI Schalter führen. Angaben 
+im Datenblatt oder am FI Schalter beachten. 
+ 
+ 
+23.3.3 Überlastfestigkeit 
+Überströme die im Betrieb einer Anlage auftreten, dürfen am FI Schalter keine Schädigungen 
+vornehmen. Überstromschutzeinrichtungen können bis zu einer Stunde (großer Prüfstrom) 
+Überströme führen. Am FI Schalter dürfen keine thermischen Schäden auftreten (maximale 
+Vorsicherung beachten). 
+ 
+23.3.4 Stoßstromfestigkeit 
+Es kommt infolge von transienten Überspannungen zu keinen Fehlauslösungen am FI Schal-
+ter. Stoßstromfestigkeit bei Type G (3kA) und Type S (5kA). 
+23.3.5 Selektivität 
+Es wird sichergestellt, dass nur ein FI Schalter von zwei in Serie geschalteten FI Schaltern im 
+Fehlerfall auslöst. Dies wird erreicht, durch unterschiedliche Auslösekennlinien mit nicht 
+überschneidenden Auslösezeitbereichen. 
+23.3.6 Zeitverzögerung 
+Die Ausschaltzeit ist abhängig von auftretenden Auslösefehlerstrom. Meist erreicht durch 
+elektronische Verzögerung bei G-Type (10ms-300ms) und S-Type (40ms-500ms). 
+23.3.7 Umrichterfestigkeit 
+Beim Einsatz von Umrichtern treten Netzrückwirkungen auf. Dieser FI Schalter ist beständig 
+gegenüber Fehlauslösungen durch das Erkennen, Auswerten und Ignorieren von in Um-
+richteranlagen auftretenden betriebsmäßigen Ableitströmen größer 50Hz. 
+
+
+===== PAGE 126/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+114 
+23.3.8 Temperaturbeständigkeit 
+Die Funktion des FI Schalters wird bis zur angegebenen Temperatur gewährleistet. Einsatz in 
+Baustromverteilern, Kühlräumen, Freiluftverteilern. 
+23.3.9 Auslösefehlerstrom 
+Der Auslösefehlerstrom IΔN ist jener Strom der den FI Schalter zum Auslösen bringt. Der Aus-
+lösefehlerstrom ist am FI Schalter angegeben. 
+ 
+23.3.10 Kurzzeichen 
+Kurz-
+zeichen 
+englische und deutsche Bezeichnung 
+ 
+RCD 
+residual current protectiv device 
+ 
+Fehlerstromschutzeinrichtung (Oberbegriff) 
+ 
+PRCD 
+portable residual current operated device 
+ 
+ortsveränderliche FI- bzw. DI-Schalter 
+ 
+SRCD 
+fixed socket outlets residual current protectiv device 
+ 
+ortsfeste FI- bzw. DI-Schalter in Steckdosenausführung 
+ 
+RCCB 
+residual current operated circuit breakers without integral overcurrent protec-
+tion 
+FI- bzw. DI-Schalter ohne eingebauten Überstromschutzschalter 
+ 
+RCBO 
+residual current operated circuit breaker with integral overcurrent protection 
+ 
+FI- bzw. DI-Schalter mit eingebauten Überstromschutzschalter 
+ 
+RCM 
+residual current monitors for household and similar uses 
+ 
+FI- bzw. DI-Überwachungs und Meldeeinrichtung 
+ 
+CBR 
+circuit braker incorporating residual current protection 
+ 
+Leistungsschalter mit integriertem Fehlerstromschutz 
+ 
+MRCD 
+modular residual current device 
+ 
+modularer Fehlerstromschutzschalter (Fehlerstromrelais) 
+ 
+ 
+ 
+
+
+===== PAGE 127/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+115 
+23.4 
+Anforderungen an den Fehlerstromschutzschalter 
+Die Anforderungen werden in der ÖVE E8101 im Teil 531.3 aufgelistet, wobei sich auch in 
+den entsprechenden Kapiteln (Fehlerschutz, zusätzlicher Schutz) Anforderungen finden. 
+ 
+Im entsprechenden Kapital finden sich auch die Anforderungen an Überstromschutzorgane 
+und Brandschutzschalter. 
+23.4.1 Allgemeine Anforderungen 
+ Die Prüfeinrichtung muss leicht zugänglich sein. 
+ In Anlagen in den unbeabsichtigtes Ausschalten zu Personen oder Sachschäden füh-
+ren kann müssen Schalter der Type G oder S verwendet werden. (z.B.: Intensivtierhal-
+tung, Computer, Tiefkühltruhen, …). 
+ Für Sonderanlagen (unbesetzte Sendeanlagen, Relaisstationen, Wasserwerke, …) dür-
+fen FI-Schalter verwendet werden, die nach der Ausschaltung selbstständig wieder 
+einschalten. 
+ FI-Schalter dürfen nicht durch einen künstlichen Fehler abschaltet werden (z.B. Not 
+Aus Funktion). 
+ Externe Prüfeinrichtungen die bei Betätigung gefährliche Fehlerspannungen erzeugen, 
+dürfen nicht verwendet werden. 
+ FI-Schalter müssen allpolig inkl. Neutralleiter abschalten. 
+ Der Schutzleiter darf nicht durch den FI geführt werden. 
+ Sogenannte Steckdosen FI dürfen nur für zusätzlichen Schutz verwendet werden 
+ Die alleinige Verwendung eines FI-Schalters in Anlagen ohne Schutzerdungsleiter er-
+füllt nicht die Anforderungen für den Fehlerschutz. 
+ Fehlerstromschutzschalter sind entsprechend den Herstellerangaben vor Überlast zu 
+schützen 
+ Eine Fehlerstromschutzeinrichtung darf nicht gleichzeitig für Fehlerschutz und Zusatz-
+schutz verwendet werden. 
+ Die Fehlerstromschutzschaltung muss vor Inbetriebnahme geprüft werden. 
+ 
+ 
+ 
+
+
+===== PAGE 128/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+116 
+23.4.2 Anforderungen für den Fehlerschutz 
+Bei Verwendung im TN-Netz: 
+ 
+ Am Beginn der Anlage 
+ Unerwünschte Auslösungen müssen vermieden werden 
+ Die Aufteilung des PEN Leiter vor der Schutzeinrichtung 
+ Keine Verbindung zwischen Neutralleiter und Schutzleiter nach dem Fehlerstrom-
+schutzschalter 
+ Kein Fehlerstromschutzschalter in einem TN-C Netz 
+ 
+Bei Verwendung im TT-Netz: 
+ 
+ Am Beginn der Anlage 
+ Unerwünschte Auslösungen müssen vermieden werden 
+ Der Maximalwert des RA darf nicht überschritten werden 
+ 
+N
+A
+I
+V
+R
+D
+50
+ 
+ 
+23.4.3 Anforderungen für den Zusatzschutz 
+ Maximaler I∆N ≤ 30mA 
+ Fehlerstromschutzschalter der Ausführungen RCCB, RCBO 
+ Ein RCD darf nicht gleichzeitig Fehlerschutz und Zusatzschutz erfüllen 
+ Einbau vorzugsweise im Verteiler 
+ 
+23.4.4 Anforderungen für den Brandschutz 
+ Maximaler I∆N ≤ 300mA 
+ Installation am Anfang der Leitungsanlage 
+ 
+ 
+ 
+
+
+===== PAGE 129/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+117 
+23.4.5 Vermeidung von Fehlauslösungen 
+ Die Auswahl hat so zu erfolgen, dass unerwünschte Auslösungen vermieden werden 
+ Aufteilung auf mehrere Fehlerstromschutzschalter (max. Belastung eines Fehlerstrom-
+schutzschalters mit 0,3 x I∆N 
+ Verwendung von kurzzeitverzögerten Fehlerstromschutzschaltern 
+ Richtige Schaltung von Fehlerstromschutzschaltern 
+ 
+23.4.6 Auswahl nach Personengruppen 
+ Bei Benutzung durch Laien (BA1), Kinder (BA2) oder Menschen mit Beeinträchtigung 
+(BA3) nur Schutzgeräte – RCCB, RCBO 
+ Bei Benutzung durch unterwiesene. Personen (BA4) und Elektrofachkräfte (BA5) – 
+RCCB, RCBO, MRCD 
+ 
+23.5 
+Ausführungsformen 
+Um den Anforderungen in modernen Netzen gerecht zu werden, wurden verschiedene Ty-
+pen von Fehlerstromschutzschaltern entwickelt. 
+ 
+23.5.1 Wechselstromsensitivität (FI-Type AC)  
+Es ist eine Erfassung von reinen sinusförmigen Wechselfehlerströmen möglich. Gleichstro-
+manteile beeinflussen die Abschaltung nachteilig. 
+ 
+23.5.2 Pulsstromsensitivität (FI-Type A) 
+ 
+Zusätzlich zu reinen sinusförmigen Wechselfehlerströmen werden pulsierende Gleichströ-
+men mit bis zu 6mA Gleichstromanteil erfasst. 
+ 
+23.5.3 Pulsstromsensitivität (FI-Type F) 
+Wie Type A jedoch mit einem Gleichstromanteil bis 10mA. 
+ 
+23.5.4 Allstromsensitivität (FI-Type B)  
+ 
+Dieser FI Schalter erkennt sinusförmige Wechselfehlerströme (1000Hz), pulsierende Gleich-
+fehlerströme und reine Gleichfehlerströme. 
+ 
+
+
+===== PAGE 130/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+118 
+23.5.5 Allstromsensitivität (FI-Type PD) 
+Spezieller FI für die Ladebetriebsart 3 von Elektrofahrzeugen. 
+ 
+23.5.6 G-Type 
+Der G-Type kann in allen Anlagen eingebaut werden. Es wird durch seinen Einbau verhin-
+dert, dass es zu Fehlauslösungen Aufgrund von transienten Überspannungen kommt. 
+ 
+Der Einbau von G Typen ist in manchen Bereichen zwingend vorgeschrieben. Diese Berei-
+che sind lt. ÖVE-E8001-1 Intensivtierhaltung, Rechenzentren und Kühlgeräte wo Aufgrund 
+einer unbeabsichtigten Ausschaltung ein großer wirtschaftlicher Schaden entsteht. 
+ 
+G: 
+stoßstromfest bis 3kA (8/20µs) und kurzzeitverzögert mindestens 10ms. 
+ 
+23.5.7 S-Type 
+Die S-Type wird für die Serienschaltung benötigt. Werden in einer Anlage zwei FI in Serie 
+geschalten (z.B. Fehlerstromschutzschaltung mit Zusatzschutz), so muss wie bei den Siche-
+rungen Selektivität gewährleistet sein. 
+ 
+Selektivität erreicht man durch Kombination eines Normalen oder G-Type mit einer S-Type. 
+Der dem Netz vor geschaltete FI muss eine Type S sein und den dreifachen Auslösestrom 
+haben. 
+ 
+S: 
+selektiv-stoßstromfest bis 5kA (8/20µs) und kurzzeitverzögert mindestens 40ms. 
+ 
+ 
+ 
+
+
+===== PAGE 131/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+119 
+23.6 
+Einbau des FI-Schutzschalters 
+Um den sicheren Betrieb über Jahre hinweg zu sichern ist ein fachgerechter Einbau notwen-
+dig. Dieser richtet sich nach den geltenden Vorschriften und den Angeben der Hersteller. 
+ 
+Grundsätzlich muss unterschieden werden welchen Zweck der FI Schalter erfüllen soll. Die 
+Möglichkeiten sind Fehlerschutz, Zusatzschutz und Brandschutz. Nicht jeder FI darf für alle 
+Anwendungen genützt werden. Ein FI Schalter kann nie gleichzeitig Fehlerschutz und Zu-
+satzschutz realisieren. Auch die maximale Vorsicherung muss richtig dimensioniert werden. 
+ 
+23.6.1 Vorsicherung des FI 
+Für jeden FI Schalter gibt es eine festgelegte Vorsicherung die im Datenblatt ersichtlich ist. Ist 
+am FI Schalter nichts angegeben so gilt folgende Regelung: 
+ 
+Der Nennstrom der Vorsicherung des FI Schalters muss und den Faktor 1,6 kleiner sein als 
+der Nennstrom des FI Schalters. 
+ 
+z.B.: FI IN=40A 
+ 
+→ 
+40A/1,6=25A 
+→ 
+Sicherung IN=25A 
+ 
+oder Sicherung IN=35A 
+→ 
+35A*1,6=56A 
+→ 
+FI IN=63A 
+ 
+Da mit dieser Regelung in der Vergangenheit und auch noch heute viele Fehler passieren, 
+haben mittlerweile einige Hersteller Typen entwickelt die thermisch Eigensicher sind. D.h. 
+diese Typen können 1:1 (FI Nennstrom ist gleich dem Sicherungsnennstrom) abgesichert 
+werden. 
+ 
+ 
+
+
+===== PAGE 132/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+120 
+23.6.2 Staffelung der FI Schalter 
+Der vorgeschaltete FI Schutzschalter muss alle auftretenden Fehlerströme erkennen können. 
+ 
+ 
+ 
+Abbildung 39 – Schaltung von FI‘s 
+ 
+ 
+
+
+===== PAGE 133/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+121 
+24 
+DER BRANDSCHUTZSCHALTER AFDD 
+In der ÖVE E8101 werden dem Schutz vor elektrischem Brand und der Brandausbreitung 
+eigene Kapital gewidmet. 
+ 
+Ein besonderes Augenmerk gilt dabei dem Brandschutzschalter, der somit erstmals in einer 
+österreichischen Norm erwähnt wird. In der derzeitigen Ausgabe sind die Anwendungen 
+noch eher gering gehalten. Man kann jedoch davon ausgehen, dass in zukünftigen Ausgaben 
+die Anwendungen vielfältiger und in weiteren Umfang der AFDD zu verwenden ist. 
+ 
+Es ist aber nicht falsch schon heute den AFDD überall dort einzubauen wo es empfohlen ist 
+und auch darüber hinaus, da er ein hervorragendes Schutzgerät ist und die Sicherheit der 
+Anlage wesentlich erhöht. 
+ 
+AFDD Arc fault detection device 
+ 
+24.1 
+Wirkungsweise 
+Eine elektronische Schaltung erfasst einen Fehlerlichtbogen im entsprechenden Stromkreis. 
+Die Schutzeinrichtung muss somit am Beginn des Stromkreises angebracht werden. Der 
+Lichtbogen verursacht ein „Rauschen“ welches ausgewertet wird. Dabei wird unterschieden, 
+ob es sich um einen Fehler handelt, oder um einen Lichtbogen wie z.B. in einen Lichtschal-
+ter. 
+ 
+Ob es sich um einen Serien- (Leiterbruch) oder Parallellichtbogen (L-N) handelt, ist dabei 
+unerheblich. Der AFDD schaltet den entsprechenden Stromkreis ab, noch bevor ein 
+elektrisch gezündeter Brand entstehen kann. 
+ 
+Der RCD kann solche Fehler nicht erfassen, da ja nach wie vor die Summe der Ströme Null 
+ist. Der Einbau eines AFDD’s bedeutet aber nicht, dass nicht weitere Maßnahmen gesetzt 
+werden müssen. 
+ 
+Den AFDD Schalter gibt es je nach Hersteller in unterschiedlichen Ausführungen. So werden 
+AFDD’s in Kombination mit Leitungsschutzschalter oder in Kombination mit FI/LS Schaltern 
+angeboten. 
+ 
+Eine reine Kombination aus AFDD und FI ist derzeit nicht verfügbar und auch nicht unbe-
+dingt sinnvoll, da sich die Fehlersuche als äußerst schwierig darstellt. Manche Fehlerlichtbö-
+gen entstehen erst nach einer gewissen Zeit oder erst bei Belastung. Somit könnte es sein, 
+dass nach dem Wiedereinschalten einer solchen Kombination eine Auslösung erst nach eini-
+ger Zeit erfolgt. Die Eingrenzung des entsprechend fehlerhaften Stromkreises ist somit sehr 
+mühsam. 
+ 
+ 
+ 
+
+
+===== PAGE 134/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+122 
+AFDD’s besitzen eine Prüftaste und eine Kontrollleuchte, über welche die Auslösung und 
+einwandfreie Funktion angezeigt wird. 
+ 
+ 
+AFDD’s müssen, je nach Hersteller, bei einer Isolationsmessung abgeschaltet werden! 
+ 
+ 
+24.1.1 Einbaupflicht in Wechselstromkreisen bis 16A Nennstrom 
+ Schlafräume von Heimen für behinderte Menschen 
+ Schlafräume von Heimen für alte Menschen 
+ Schlafräume von Kindergärten 
+ Räumen oder Orte mit einem Brandrisiko durch verarbeitete oder gelagerte Materia-
+lien (Einstufung BE2) 
+ 
+BE2 – Herstellung, Bearbeitung oder Lagerung von entflammbaren Material ein-
+schließlich Vorhandensein/Auftreten von Staub. Hierzu zählen Scheunen, 
+Werkstätten für Holzverarbeitung bzw. Holzbearbeitung, Papier- und Textil-
+fabriken. 
+ 
+24.1.2 Einbauempfehlung in Wechselstromkreisen bis 16A Nennstrom 
+ Schlafräumen in Wohngebäuden – insbesondere bei Nutzung durch in ihrer Mobilität 
+dauerhaft eingeschränkte Personen 
+ Räume oder Orte mit Gefährdung unersetzbare Güter 
+ 
+ 
+ 
+
+
+===== PAGE 135/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+123 
+25 
+DER POTENTIALAUSGLEICH 
+ 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-1 
+ 
+Um zwischen unterschiedlichen leitfähigen Teilen Potentialdifferenzen zu vermeiden ist es 
+notwendig einen Potentialausgleich zu errichten. Man unterscheidet dabei den Hauptpoten-
+tialausgleich, den zusätzlichen Potentialausgleich und die Potentialsteuerung. Für jeden 
+Hausanschluss oder gleichwertige Versorgungseinrichtung muss ein Potentialausgleich er-
+richtet werden. 
+ 
+25.1 
+Der Hauptpotentialausgleich 
+Der Hauptpotentialausgleich wird hergestellt indem an die Haupterdungsschiene folgende 
+Leiter, falls zutreffend, angeschlossen werden: 
+ 
+ 
+ Erdungsleiter zum Anlagenerder 
+ Schutzerdungsleiter der Hauptleitung 
+ Nullungsverbindung 
+ Blitzschutzanlage 
+ Funktions- und Überspannungsschutzerdung der Fernmeldeanlage 
+ Antennenanlagen 
+ Wasserrohre 
+ Gasrohre 
+ andere metallische Rohrsysteme ( z.B. Steigleitungen zentraler Heizungsanlagen...) 
+ Metallteile und Gebäudekonstruktionsteile soweit möglich 
+ 
+ 
+Kabeltassen und ähnliche brauchen nicht in den Hauptpotentialausgleich einbezogen wer-
+den. Die Verbindung zur Blitzschutzanlage hat möglichst nahe an deren Erdern zu erfolgen. 
+Wenn eine Verbindung über den Fundament Erder erfolgt kann eine gesonderte Verbindung 
+entfallen. 
+ 
+Der Hauptpotentialausgleich erfolgt normalerweise über eine Potentialausgleichsschiene 
+‚PAS'. In größeren Anlagen können auch mehrere PAS zur Anwendung kommen. 
+ 
+ 
+ 
+
+
+===== PAGE 136/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+124 
+ 
+Abbildung 40 – PA und Netzsystem 
+ 
+ 
+ 
+Abbildung 41 – PA Beispiel 
+ 
+Nur im TN-System 
+HAK
+PE-Leiter
+Leiter zur Blitzschutzanlage
+Detail Z
+Fernmeldeanlage
+Antenne
+Z
+Heizung
+Wasser
+Abwasser
+Gas
+Isolierstück
+Potential-
+ausgleichsschiene
+Fundamenterder
+HAK
+PAS
+N
+N
+TT-System
+PE
+PE
+HAK
+PAS
+N
+N
+TT-System
+PE
+N
+HAK
+PAS
+PEN
+PEN
+TN-C-S-System
+PA
+HAK
+PAS
+PEN
+PEN
+TN-C-System
+PA
+Detail Z
+
+
+===== PAGE 137/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+125 
+25.2 
+Der zusätzliche Potentialausgleich 
+Ein örtlich zusätzlicher Potentialausgleich ist zusätzlich zum Hauptpotentialausgleich zu er-
+richten, wenn er wegen besonderer Gefährdung (z.B. erschwerte Umgebungsbedingungen, 
+Nennspannung gegen Erde höher als 250V,…) in den jeweils technischen Bestimmungen 
+gefordert ist. 
+ 
+In mehrstöckigen Gebäuden, in denen vernetzte Einrichtungen der Informationsnetze ver-
+wendet werden oder zur Anwendung kommen sollen, wird das Errichten eines zusätzlichen 
+Potentialausgleiches an der Hauptverteilung jedes Stockwerkes empfohlen, um Potentialun-
+terschiede am Schutzerdungsleiter möglichst gering zu halten. 
+ 
+In den zusätzlichen Potentialausgleich müssen alle gleichzeitig berührbaren Teile ortsfester 
+Betriebsmittel, Schutzerdungsleiteranschlüsse und alle fremden leitfähigen Teile einbezogen 
+werden. Dies gilt auch für die Bewehrung der Stahlbetonkonstruktion von Gebäuden, soweit 
+die durchführbar ist. 
+ 
+25.2.1 Die Mindestquerschnitte der Potentialausgleichsleiters: 
+ 
+ 
+Querschnitte für Potentialausgleichsleiter 
+(zusätzlicher Potentialausgleich) 
+normal 
+Zwischen zwei Körpern 
+1xQuerschnitt des kleineren PE-Leiters 
+Zwischen einem Körper und einem 
+fremden leitfähigen Teil 
+0,5xQuerschnitt des PE-Leiters 
+mindestens 
+bei mechanischem Schutz 
+2,5mm² Kupfer 
+ohne mechanischem Schutz 
+4,0mm² Kupfer 
+ 
+25.2.2 Querschnittdimensionierung bei 2 Körpern: 
+ 
+Abbildung 42 - PA zwei Körper 
+
+
+===== PAGE 138/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+126 
+25.2.3 Querschnittdim. zwischen Körper und fremden leitfähigen Teil: 
+ 
+ 
+Abbildung 43 – PA Konstruktion 
+ 
+25.2.4 Die Ausführungen des Erdungsleiters 
+ 
+ 
+Abbildung 44 - Erdungsleiter 
+ 
+ 
+
+
+===== PAGE 139/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+127 
+25.4 
+Ausführung des Schutzleiters 
+25.4.1 Schutzleiterquerschnitt 
+Zuordnung des Schutzleiterquerschnittes zum Außenleiter 
+ 
+Außenleiter 
+Schutzleiter od. PEN-Leiter 
+Isolierte Starkstromleitung 
+Schutzleiter od. PEN-Leiter 
+0,6/1kV Kabel mit 4 Leitern 
+mm² 
+mm² 
+mm² 
+1,5 
+1,5 
+1,5 
+2,5 
+2,5 
+2,5 
+4,0 
+4,0 
+4,0 
+6,0 
+6,0 
+6,0 
+10 
+10 
+10 
+16 
+16 
+16 
+25 
+16 
+16 
+35 
+16 
+16 
+50 
+25 
+25 
+ 
+Laut Nullung ist die Verminderung des PEN Leiters nicht mehr zu empfehlen.  
+ 
+Wird für mehrere Stromkreise ein gemeinsamer Schutzleiter benützt, so muss dieser nach 
+dem größten Außenleiter bemessen werden. 
+ 
+25.4.2 Arten von Schutzleitern 
+ Leiter in mehradrigen Kabeln und Leitungen 
+ isolierte oder blanke Leiter in gemeinsamer Umhüllung mit Außenleitern und dem 
+Neutralleiter 
+ fest verlegte blanke oder isolierte Leiter 
+ metallene Umhüllungen wie Mäntel, konzentrische Leiter... 
+ Metallrohre, Metallkapselungen, Gehäuse 
+ fremde leitfähige Teile 
+ Profilschienen,  auch wenn sie Klemmen und/oder Geräte tragen. 
+ 
+ 
+ 
+
+
+===== PAGE 140/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+128 
+Wenn die Anlage Gehäuse oder Konstruktionsteile umfasst, können diese als Schutzleiter 
+verwendet werden, wenn 
+ 
+ ihre durchgehende elektrische Verbindung so ausgeführt ist, dass durch zu erwartende 
+Einflüsse keine Verschlechterung eintritt 
+ ihre Leitfähigkeit den Schutzleiter-Querschnitten entspricht 
+ der Ausbau einzelner Elemente keine Unterbrechung des Schutzleiters zur Folge hat 
+(zweiseitiger Anschluss) 
+ 
+Metallene Umhüllungen von Kabeln und Leitungen dürfen als Schutzleiter verwendet wer-
+den, wenn sie den Anforderungen für Konstruktionsteile entsprechen. 
+ 
+Fremde leitfähige Teile dürfen als Schutzleiter verwendet werden, wenn 
+ 
+ ihre durchgehende elektrische Verbindung durch Bauart oder Anwendung geeigneter 
+Verbindungselemente gewährleistet ist 
+ ihre Leitfähigkeit den Schutzleiter-Querschnitten entspricht 
+ der Ausbau einzelner Elemente keine Unterbrechung des Schutzleiters zur Folge hat 
+(zweiseitiger Anschluss) 
+ 
+Spannseile, Aufhängeseile, Installations-Metallrohre usw. dürfen nicht als Schutzleiter ver-
+wendet werden. 
+ 
+25.4.3 Sichere elektrische Verbindung der Schutzleiter 
+ Schutzleiterverbindungen müssen angemessen gegen die Verschlechterung ihrer Ei-
+genschaften infolge mechanischer,  chemischer oder elektrochemischer Einflüsse ge-
+schützt werden. 
+ Schutzleiterverbindungen müssen zwecks Prüfung zugänglich sein, außer sie sind 
+vergossen. 
+ Schutzleiterverbindungen müssen gegen Lockern geschützt sein. 
+ Im Schutzleiter darf kein Schaltorgan eingebaut sein. 
+ Körper elektrischer Betriebsmittel dürfen nicht als Schutzleiter für andere Betriebsmit-
+tel verwendet werden. 
+
+
+===== PAGE 141/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+129 
+26 
+DOKUMENTATION 
+26.1 
+Allgemeines 
+Mit der Elektroverordnung 2002 wurde der Teil 6 der E8001 ins Leben gerufen. In diesem 
+Teil ist erstmals geregelt wie ein Anlagenbuch aus zu sehen hat und welchen Inhalt es haben 
+muss. Bis zu diesen Zeitpunkt war nur im Elektrotechnikgesetz ein Nachweis über die Si-
+cherheit der Anlage gefordert. 
+ 
+Mit erscheinen der ÖVE E8101 wird nicht mehr explizit von einem Anlagenbuch gesprochen 
+sondern von einer Dokumentation der elektrischen Anlage, wobei das „Anlagenbuch“ einen 
+Teil davon darstellt. 
+ 
+In der ÖVE E8101 wird schon im ersten Teil (allgemeine Grundsätze) auf die Notwendigkeit 
+einer Dokumentation hingewiesen und wie diese auszusehen hat. Im Teil 6 wird erklärt, wie 
+die dazu erforderlichen Überprüfungen durchzuführen sind. 
+ 
+Die Dokumentation umfasst auf alle Fälle nicht nur die Erfassung von Messergebnissen son-
+dern auch weitere Bereiche wie z.B. Erdungsanlagen, Mindestausstattung, Blitzschutz, … 
+ 
+26.2 
+Mindestumfang der Dokumentation 
+Bei umfangreichen Anlagen und somit dementsprechenden großen Dokumentationen, ist das 
+Erstellen von einem Inhaltsverzeichnis empfehlenswert. 
+26.2.1 Allgemeine Angaben 
+ Widmung der Anlage 
+ Bezeichnung der Anlage 
+ Beschreibung der Anlage (Räume, besondere Anlagen, …) 
+ Beilage der Bescheide 
+ Beilage der Behördenauflagen 
+ Angabe über Anlagenadresse 
+ Angaben über den Auftraggeber 
+ Angaben über den Planer 
+ Angaben über den Anlagenerrichter 
+ Angaben über den Netzbetreiber 
+ Zeitraum der Errichtung der Anlage 
+
+
+===== PAGE 142/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+130 
+26.2.2 Technische Angaben 
+ Pläne (eventuell auch Listen) 
+ Hauptleitungsschema (mit allen erforderlichen Angaben – Leitermaterial, Länge, 
+Querschnitt, Schutzeinrichtungen, …) 
+ Erdungsanlage (mit Fotos) 
+ Verteilerpläne (Einstellwerte der Schutzorgane, Querschnitte, …) 
+ Stromlaufpläne 
+ Funktionsbeschreibungen (Motorsteuerung, Bussysteme, Datenbanken, …) 
+ Einbauorte der Überspannungsableiter 
+ Fotografische Dokumentation nicht mehr zugänglicher Verbindungen 
+26.2.3 Zusatzinformationen für Wartung 
+ Einstelldaten, sofern nicht in schon enthalten 
+ Bedienungsanleitungen 
+ Wartungsanleitungen 
+ Prüfanleitungen 
+ Sammlung aller Herstellerangaben für elektrische Betriebsmittel 
+ Für besondere Anlagenteile entsprechende technische Beschreibungen und Prüf-
+nachweise 
+ 
+Für die Dokumentation und deren Befunde gibt es über das Kuratorium für Elektrotechnik 
+eine bundeseinheitliche Fassung. Diese zu verwenden ist aber keine Pflicht. Die Vorlage ist 
+aber ein sehr guter Leitfaden und Hilfestellung für die Erstellung von Befunden. 
+ 
+ 
+Die Dokumentation ist bis zum Ende der Lebensdauer der Anlage aufzubewahren. 
+ 
+Die Dokumentation ist immer auf den aktuellen Stand zu halten. 
+ 
+ 
+ 
+
+
+===== PAGE 143/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+131 
+26.3 
+Der Prüfbericht 
+26.3.1 Erstprüfung 
+ Nach erfolgter Prüfung ist ein Prüfbericht zu erstellen, der alle relevanten Messergeb-
+nisse und Beschreibungen enthält. 
+ Festgestelle Mängel müssen behoben werden, damit die Anlage den gesetzlichen An-
+forderungen entspricht. 
+ Der Prüfbefund darf auch Empfehlungen und Verbesserungsvorschläge enthalten 
+ Der Prüfbefund muss übergeben und unterschrieben werden. 
+ Eine Empfehlung für die wiederkehrende Prüfung (Quellenangabe z.B. ESV, nicht ver-
+gessen) soll angegeben werden. 
+26.3.2 Wiederkehrende Prüfung 
+ Es sollen vorherige Prüfbefunde und Empfehlungen berücksichtigt werden. 
+ Die wiederkehrende Prüfung muss mit oder ohne Demontage durchgeführt werden. 
+ Schäden und Verschlechterungen bzw. gefährliche Zustände müssen aufgezeichnet 
+werden. 
+ Die Häufigkeit ergibt sich je nach Nutzung, Belastung der Anlage, bzw. gesetzliche 
+Vorgaben (ESV) 
+ Nach Abschluss muss ein Bericht erstellt werden. 
+ Der Befund ist dem Auftraggeber nachweislich zu übergeben. 
+ 
+
+
+===== PAGE 144/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+132 
+27 
+ÜBERPRÜFUNG DER SCHUTZMAßNAHMEN 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-6-61 
+Quelle BGBL II 223 / 2010 Ausgabe:12. Juli 2010 – ÖVE/ÖNORM EN50110-1-2008 
+27.1 
+Allgemeines 
+Im Elektrotechnikgesetz ist der Nachweis der Sicherheit der elektrischen Anlage gefordert. 
+Dieser Nachweis ist für jede elektrische Anlage zu erbringen. Um einen ordnungsgemäßen 
+Nachweis zu erstellen sind einige wesentliche Punkte notwendig. 
+ 
+In der ÖVE E8101 Teil 6 ist geregelt welche Messmethoden bei einer Erstprüfung anzuwen-
+den sind bzw. wie zu dokumentieren ist. 
+ 
+Jede elektrische Anlage muss je nach Zweckmäßigkeit während der Errichtung und/oder bei 
+der Fertigstellung bevor sie in Betrieb genommen wird, geprüft werden. Sie muss vor der In-
+betriebnahme geprüft werden. Dem Prüfer sind auch alle geforderten Unterlagen zur Verfü-
+gung zu stellen. 
+ 
+Während die Anlage geprüft wird muss sichergestellt sein, dass keine Gefährdung von Perso-
+nen und Beschädigung von Sachwerten erfolgt. Wurde eine Anlage erweitert, so muss si-
+chergestellt sein, dass die Erweiterung die bestehende Anlage nicht nachteilig beeinflusst. Es 
+muss an alle möglichen Eventualfälle, ungünstigen Betriebsbedingungen, Störungen, Ausfäl-
+le, Versorgungs- und Überwachungsprobleme usw. gedacht werden. 
+ 
+Als Prüfer dürfen nur Elektrofachkräfte mit einer entsprechenden Erfahrung herangezogen 
+werden. Nach erfolgter Prüfung muss ein Bericht mit allen erforderlichen Prüfergebnissen 
+erstellt werden. 
+ 
+Für manche Situationen sind besonders strenge Maßstäbe anzulegen wie z.B.: 
+ 
+ Feuergefährdete oder explosionsgefährdete Räume 
+ Räume mit größeren Menschenansammlungen 
+ Spitäler 
+ Industriebetriebe 
+ Notstromversorgungsanlagen usw. 
+ 
+In jedem Fall ist nicht nur den letzten technischen Kenntnissen entsprechend vorzugehen, es 
+müssen natürlich auch alle einschlägigen Gesetze, Vorschriften, Normen und Bestimmungen 
+der entsprechenden Energieversorger berücksichtigt werden. Darüber hinaus sollen die Anla-
+gen aber auch hinsichtlich ihrer wirtschaftlichen und kostengünstigen Errichtung durchdacht 
+und geplant werden. 
+
+
+===== PAGE 145/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+133 
+Eine sorgfältige Planung durch gewissenhafte, erfahrene und umsichtige Kräfte, kann viel 
+Korrekturarbeit vor, während und nach der Inbetriebnahme ersparen, Umbauten und Repara-
+turen überflüssig machen und einen zufrieden stellenden ordnungsgemäßen Betrieb sicher-
+stellen. 
+ 
+Der durch eine ordnungsgemäße Überprüfung resultierende gute Ruf des Planers, Errichters 
+bzw. Inbetriebnehmers kann bereits den Grundstein für weitere Aufträge legen. Durch eine 
+gewachsene und durch Erfahrung gefestigte Vertrauensstellung können auch Aufträge ohne 
+Konkurrenzdruck und Kostendruck gewonnen werden. 
+ 
+Von einem klaglosen Funktionieren der errichteten Schutzmaßnahmen können Leben, Ge-
+sundheit und Sicherheit von Personen, sowie der Schutz und die Erhaltung von Sachwerten 
+durch Abwendung von Gefahren wie Brand, Explosion, Beschädigung oder Zerstörung durch 
+Blitzschlag und Kurzschlüssen usw. abhängen. 
+ 
+Die gewissenhafte Überprüfung der Anlage ist daher unbedingt erforderlich und darf keines-
+falls vernachlässigt oder gar unterlassen werden. Leben und Gesundheit, die davon abhängig 
+sein können, sind einmalige unwiederbringliche Geschenke. 
+ 
+Die Tötung oder Verletzung von Personen oder Tieren, Zerstörung oder Beschädigung von 
+Sachwerten in der Folge von elektrischen Fehlern bei unzureichenden Schutzmaßnahmen, 
+können zu schwerwiegenden rechtlichen Maßnahmen, Gerichtsverfahren, Verurteilen und 
+Bestrafungen auch mit empfindlichen finanziellen, materiellen Verlusten bis zum Freiheits-
+entzug führen. 
+ 
+Im Interesse der Sicherheit, sowie der rechtlichen Deckung aller Beteiligten (Errichter, Betrei-
+ber, Aufsichts- und Kontrollbehörden, EVU´s ...) ist es daher angebracht, wichtige Messungen 
+zu protokollieren. 
+ 
+Vor Inbetriebnahme einer Anlage ist durch Prüfung nachzuweisen, dass die für die einzelnen 
+Anlagenteile und Betriebsstätten geforderten Schutzmaßnahmen bei indirektem Berühren 
+wirksam sind und die Anlage den geforderten Errichtungsbestimmungen entspricht. Bei den 
+angewandten Schutzmaßnahmen ist zu prüfen, ob sie den für sie zutreffenden Anforderun-
+gen entsprechen. 
+ 
+ 
+ 
+
+
+===== PAGE 146/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+134 
+Für die Überprüfung elektrischer Anlagen zwischen 2000 und 2018 gelten folgende Prüfbe-
+stimmungen: 
+ 
+ ÖVE / ÖNORM E 8001 – 6 – 61 Erstprüfung 
+ ÖVE / ÖNORM E 8001 – 6 – 62 Wiederkehrende und außerordentliche Prüfung 
+ ÖVE / ÖNORM E 8001 – 6 – 63 Anlagenbuch und Prüfberichte 
+ 
+Für die Überprüfung elektrischer Anlagen ab 2019 gelten folgende Prüfbestimmungen: 
+ 
+ ÖVE E 8101 – 6 – 600.3 
+Erstprüfung 
+ ÖVE E 8101 – 6 – 600.4 
+Wiederkehrende Überprüfung 
+ ÖVE E8101 – 1 – 134 
+Errichten und Prüfen elektrischer Anlagen 
+ 
+27.2 
+Mängel aus der Sicht der Elektrotechniker 
+Im ETG finden sich zwei Punkte zum Thema Mängel die wie folgt lauten. 
+ 
+a) in §9, Absatz 3  das der Zustand oder Betrieb einer elektrischen Anlage oder dass ein 
+elektrisches Betriebsmittel diesem Bundesgesetz oder den auf seiner Grundlage erlas-
+senen Verordnung nicht entspricht,... 
+ 
+b) in §9, Absatz 4  das der Zustand oder Betrieb einer elektrischen Anlage oder dass ein 
+elektrisches Betriebsmittel diesem Bundesgesetz oder den auf seiner Grundlage erlas-
+senen Verordnung nicht entspricht, und droht dadurch eine unmittelbare Gefahr für 
+das Leben oder der Gesundheit von Personen oder für Sachen, ... 
+ 
+ 
+ 
+
+
+===== PAGE 147/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+135 
+27.3 
+Begriffe 
+27.3.1 Prüfen 
+Unter Prüfen fallen alle Tätigkeiten, durch welche festgestellt wird, ob die Ausführung der 
+gesamten elektrischen Anlage den jeweils zutreffenden Bestimmungen entspricht. Prüfen um-
+fasst das Besichtigen, Erproben und Messen. 
+ 
+27.3.2 Besichtigen 
+Ist die augenscheinliche Überprüfung der elektrischen Anlage zur Feststellung ihrer bestim-
+mungsgemäßen Errichtung. 
+ 
+27.3.3 Erproben und Messen 
+Alle Maßnahmen, die über das Besichtigen hinausgehen, um in einer elektrischen Anlage 
+festzustellen, ob diese ihren Zweck erfüllt. 
+ 
+ 
+ 
+
+
+===== PAGE 148/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+136 
+27.4 
+Die Besichtigung 
+Die Besichtigung der Anlage erfolgt als erster Schritt einer Überprüfung bevor der Erprobung 
+und Messung. Es können somit offensichtliche Mängel erkannt werden, welche bei der Mes-
+sung eventuell einer Gefahr darstellen. Die Besichtigung ist vorzugsweise bei abgeschalteter 
+Anlage durchzuführen. Die zu übergebenden Anlagen sollten vor ihrer Inbetriebnahme bzw. 
+anlässlich einer Überprüfung unter anderem nach folgenden Gesichtspunkten untersucht 
+werden. 
+27.4.1 Punkte laut ÖVE E8001-6-61 
+ Übereinstimmung mit den Sicherheitsanforderungen für die einzelnen Betriebsmittel 
+(eventuell durch Überprüfung von Aufschriften, Kennzeichnung oder Zertifikaten) 
+ Korrekte Auswahl und Einbau der Bestandteile entsprechend den Anforderungen und 
+Herstellerangaben 
+ Keine sichtbaren, die Sicherheit beeinträchtigenden Beschädigungen 
+ Art und Maßnahme des Fehlerschutzes 
+ Selektivität der Schutzeinrichtungen 
+ Messung von Abständen (z.B. Handbereich, Schutzbereich im Bad, …) 
+ Vorhandensein von Brandabschottungen 
+ Leiterquerschnitte in Bezug auf die Strombelastung 
+ Spannungsabfall 
+ Verwendete Leiter, Erdungsleitung und Erder einschließlich nachvollziehbarer Doku-
+mentation 
+ Verwendete Schutz- und Überwachungseinrichtungen und deren Einstellung (Motor-
+schutz, …) 
+ Vorhandensein von geeigneten und an richtiger Stelle angeordneten Trenn- und 
+Schaltgeräten 
+ Einbauorte und Auswahl von SPD’s 
+ Maßnahmen gegen elektromagnetische Störungen  
+ Verwendete Betriebsmittel und deren Schutzart (Schutzklasse, IP) 
+ Kennzeichnung und richtige Verwendung der Leiter (Neutralleiter, Schutzleiter) 
+ Vorhanden sein von Plänen 
+ Anbringung von Warnhinweisen, Absperrungen, Hindernisse und dergleichen 
+ Kennzeichnung der Stromkreise, Sicherungen, Schalter, Klemmen usw. 
+ Ordnungsgemäße Leiterverbindungen 
+ Leichte Zugänglichkeit zur Bedienung 
+ 
+ 
+
+
+===== PAGE 149/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+137 
+27.4.2 Beispiel bei Schutzmaßnahmen mit Schutzleiter 
+ Schutzleiter, Erdungsleitungen und Potentialausgleichsleiter mindestens den geforder-
+ten Querschnitt haben  
+ Schutzleiter, Erdungsleitungen und Potentialausgleichsleiter einwandfrei verlegt und 
+zuverlässig angeschlossen sind 
+ Schutzleiter und Schutzleiteranschlüsse richtig gekennzeichnet sind 
+ Schutzleiter nicht mit aktiven Teilen verbunden sind 
+ Schutzleiter und Neutralleiter nicht verwechselt sind 
+ für Schutzleiter und Neutralleiter in Schaltanlagen und Verteilern Teil 2 § 30 eingehal-
+ten ist 
+ Die Schutzkontakte der Steckdosen keine Mängel erkennen lassen 
+ in PEN-Leitern keine Überstromschutzeinrichtungen vorhanden und PEN-Leiter für 
+sich alleine nicht schaltbar sind 
+ Schutzeinrichtungen (z.B. Überstromschutzeinrichtungen, FI-Schutzeinrichtungen, 
+Isolationsüberwachungsgeräte) und Schaltgeräte richtig ausgewählt sind. 
+ 
+27.4.3 Beispiele bei Schutzmaßnahmen ohne Schutzleiter 
+ bei Schutzkleinspannung, Funktionskleinspannung und Schutztrennung die Strom-
+quellen, die Leitungen und die übrigen Betriebsmittel richtig ausgewählt sind 
+ Bei Schutzkleinspannung und Funktionskleinspannung nur solche Steckdosen einge-
+baut sind, die in derselben Anlage nicht für höhere Spannungen verwendet werden 
+ die Schutzisolierung nicht durch leitfähige Teile oder durch Beschädigung unwirksam 
+ist 
+ 
+
+
+===== PAGE 150/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+138 
+27.5 
+Erproben und Messen 
+27.5.1 Allgemeines 
+Die Erprobung besteht in der Betätigung der Prüfeinrichtungen z. B. bei Isolationsüberwa-
+chungsgeräten und FI-Schutzschaltern, Not-Aus und anderer sicherheitstechnischer Einrich-
+tungen. 
+ 
+Durch Messungen müssen die Werte ermittelt werden, die eine Beurteilung der Wirksam-
+keit der Schutzmaßnahmen ermöglichen. Durch Messungen dürfen keine Unfall- oder 
+Brandgefahren entstehen. Dies kann durch eine der folgenden Sicherheitsmaßnahmen er-
+reicht werden: 
+ 
+1. 
+Anwenden von Messgeräten, deren Ausgangsspannung bei Belastung die jeweils zu-
+lässige Berührungsspannung (z.B.  50 V oder = 90 V) nicht überschreitet. Für die Prü-
+fung sind Prüfgeräte gemäß den technischen Bestimmungen der Reihe ÖVE -ÖNORM 
+EN 61557 zu verwenden. Werden andere Geräte eingesetzt, so dürfen diese keinen 
+geringeren Grad an Sicherheit und Genauigkeit aufweisen. 
+ 
+2. 
+Maßnahmen gegen etwaige Auswirkungen der Messspannungen oder Messströme 
+z.B. Abschranken, Beobachter aufstellen. Diese Maßnahmen müssen sich auf alle An-
+lagenteile erstrecken, die bei der Prüfung mit der zu prüfenden Anlage leitend ver-
+bunden sind. 
+ 
+Sind in besonderen Fällen Messungen mit technisch oder wirtschaftlich vertretbarem Auf-
+wand nicht durchführbar, z.B. bei ausgedehnten Erdungsanlagen oder bei großen Leiter-
+querschnitten, so ist auf andere Weise, z.B. durch Berechnung oder mit Hilfe eines Netzmo-
+dells, nachzuweisen, dass die zu ermittelnden Werte eingehalten werden. 
+ 
+ 
+ 
+
+
+===== PAGE 151/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+139 
+ 
+Die nachstehenden Erprobungen und Messungen sind, sofern zutreffend, durchzuführen und 
+sollten vorzugsweise in der folgenden Reihenfolge vorgenommen werden: 
+ 
+1. Durchgängigkeit der Schutzerdungsleiter und der Potentialausgleichsleiter (zweckmä-
+ßig auch der Neutralleiter) 
+2. Isolationswiderstände der elektrischen Anlage 
+3. Messung des Isolationswiderstandes bei SELV, PELV oder Schutztrennung 
+4. Messung der Isolationswiderstände bei isolierenden Fußboden- und Wänden 
+5. automatische Abschaltung im Fehlerfall 
+6. Spannungspolarität 
+7. Prüfung des Fehlerschutzes automatische Abschaltung 
+8. Zusatzschutz 
+9. Phasenfolge 
+10. Funktionsprüfungen 
+11. Spannungsabfall 
+ 
+Im Falle eines festgestellten Fehlers sind die Funktionsprüfungen und Messungen, die durch 
+den Fehler möglicherweise beeinflusst wurden, zu wiederholen, nach dem der Fehler beho-
+ben wurde. 
+ 
+27.5.2 Durchgängigkeit der Leiter 
+Die Prüfung der Durchgängigkeit der Leiter ist durch Messung mit Messgeräten gemäß ÖVE 
+EN 61557-4 durchzuführen. 
+ 
+Zu Messen sind die Schutzleiter inkl. Potentialausgleichsleiter, Verbindungen zu Körpern von 
+Betriebsmitteln und bei ringförmigen Endstromkreisen auch die aktiven Leiter. 
+ 
+ 
+ 
+
+
+===== PAGE 152/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+140 
+27.5.3 Der Isolationswiderstand 
+Bei der Messung des Isolationswiderstandes unterscheidet man die Messung an Betriebsmit-
+tel und die Messung an einer Neu- bzw. Altanlage- 
+ 
+a) 
+Der Isolationswiderstand eines Betriebsmittels (ÖVE-E 8701) 
+ Schutzisolierte Geräte: 
+ 
+Der Isolationswiderstand des Betriebsmittels muss mindestens 2 MW betragen. Die 
+Überprüfung der Geräte erfolgt nach ÖVE E 8701 (alt ÖVE HG701) entweder mit ei-
+nem Isolationsmesser oder besser mit speziellen Messgeräten. 
+ 
+ Geräte mit Schutzleiter: 
+ 
+Der Schutzleiterwiderstand darf maximal 0,3W betragen. Während der Messung 
+muss die Anschlussleitung bewegt werden um einen eventuell vorhandenen Lei-
+tungsbruch oder mangelhaften Anschluss festzustellen Die Überprüfung der Geräte 
+erfolgt nach ÖVE E 8701 (alt ÖVE HG701) entweder mit einem Isolationsmesser o-
+der besser mit speziellen Messgeräten. 
+ 
+b) 
+Der Isolationszustand der Anlage 
+ist vor Inbetriebnahme zwischen allen aktiven Leitern und Erde wie folgt zu messen: 
+ 
+ Zwischen aktiven Leitern, wobei jeweils zwei Leiter gegeneinander gemessen werden. 
+Die Messung kann in der Praxis nur während der Errichtung der Installation vor dem 
+Anschluss der Geräte durchgeführt werden. 
+ Zwischen allen aktiven Leitern und Erde. In TN-C Systemen wird der PEN Leiter als 
+geerdet betrachtet. Während der Messung dürfen Außenleiter und Neutralleiter ver-
+bunden sein. 
+ 
+Bei diesen Messungen muss auch der Neutralleiter von der Spannungsversorgung getrennt 
+sein. Ferner ist darauf zu achten, dass im zu messenden Stromkreis allenfalls vorhandene 
+Überspannungs-Schutzeinrichtungen abgeklemmt sind. 
+ 
+Die Messung ist mit Gleichspannung durchzuführen. Das Prüfgerät muss bei einem Mess-
+strom von 1 mA die vorgeschriebenen Prüfspannungswerte abgeben können. (Würde die 
+Messung mit Wechselspannung durchgeführt, so würde man die induktiven und kapazitiven 
+Widerstände der Leitung mit messen.) 
+ 
+Wenn der Stromkreis elektronische Geräte enthält, müssen während der Messung Außenlei-
+ter- und Neutralleiter miteinander verbunden sein. 
+ 
+ 
+
+
+===== PAGE 153/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+141 
+Mindestwerte des Isolationswiderstandes ÖVE E8101: 
+ 
+Nennspannung des Stromkreises 
+Prüfspannung Gleichspannung 
+Isolationswiderstand
+V 
+V 
+MW 
+SELV und PELV 
+250 
+≥0,50 
+bis einschließlich 500 V und FELV 
+500 
+≥1,00 
+über 500 V 
+1000 
+≥1,00 
+ 
+Mindestwerte des Isolationswiderstandes ÖVE E8001: 
+ 
+Nennspannung des Stromkreises 
+Prüfspannung Gleichspannung 
+Isolationswiderstand
+V 
+V 
+MW 
+SELV und PELV 
+250 
+≥0,25 
+bis einschließlich 500 V 
+500 
+≥0,50 
+über 500 V 
+1000 
+≥1,00 
+ 
+ 
+Wenn die Abtrennung der Überspannungs-Schutzeinrichtungen praktisch nicht möglich ist 
+(z.B. eingebaute Überspannungs-Schutzeinrichtungen in Steckdosen), darf die Prüfspannung 
+bis auf 250V reduziert werden, aber der Isolationswiderstand muss 1MW betragen..  
+ 
+Bei Anlagen vor dem Jahr 2000 ist nach den geltenden Vorschriften zum damaligen Zeit-
+punkt vorzugehen. In der ÖVE EN1 lautete die Forderung des Mindestisolationswertes 1kW 
+pro Volt. Bei feuchten und nassen Räumen durfte dieser Wert auf 500W pro Volt reduziert 
+werden. 
+ 
+27.5.4 Spannungspolarität 
+Es muss mit einer Messung festgestellt werden, dass: 
+ 
+ Einpolige Schaltgeräte wie Sicherungen nur im Außenleiter befinden 
+ Die Anschlüsse an Lampen richtig sind, wenn eine Vorgabe (L-N) zum richtigen An-
+schluss besteht 
+ An Steckdosen an denen der Anschluss des Neutralleiter vorgegeben ist, richtig ange-
+schlossen sind. 
+ 
+ 
+
+
+===== PAGE 154/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+142 
+27.5.5 Die Maßnahmen des Fehlerschutzes 
+Unter diesen Punkt wird der Nachweis der Bedingung für Maßnahmen des Fehlerschutzes 
+mit Schutzleiter (automatische Abschaltung der Stromversorgung) gefordert. 
+ 
+Allgemeines 
+ 
+Der Nachweis der Bedingungen für Maßnahmen des Fehlerschutzes mit Schutzleiter (auto-
+matische Abschaltung der Stromversorgung) ist wie folgt durchzuführen: 
+ 
+a) 
+Automatische Abschaltung im TN Netz 
+Fehlerstromschutzschalter für den Brandschutz sind nach diesen Vorgaben zu prüfen. 
+ 
+Folgende Messungen sind durchzuführen 
+ 
+ Messung der Fehlerschleifenimpedanz. Die vorgenannte Messung ist nicht erforder-
+lich, wo Berechnungen der Fehlerschleifenimpedanz oder der Widerstand der Schut-
+zerdungsleiter zur Verfügung stehen und die Ausführung der Anlage den Nachweis 
+der Länge und des Querschnittes der Leiter erlaubt. In diesen Fällen ist der Nachweis 
+der Durchgängigkeit des Schutzerdungsleiters ausreichend. 
+ Nachweis der Charakteristik der zugehörigen Schutzeinrichtung (z.B. durch Besichti-
+gen des eingestellten Auslösestromes von Leistungsschaltern und des Nennstromes 
+von Sicherungen). Bei Fehlerstrom-Schutzschaltern die zur Einhaltung der Ausschalt-
+bedingung zusätzlich vorhanden sind, ebenfalls Kontrolle und Messung. 
+ 
+Es sind die Abschaltzeiten für TN-Systeme einzuhalten. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 155/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+143 
+b) 
+Automatische Abschaltung im TT Netz 
+Folgende Messungen sind durchzuführen 
+ 
+ Messung der Fehlerschleifenimpedanz 
+ Nachweis der Charakteristik der zugehörigen Schutzeinrichtung (z.B. durch Besichti-
+gen des eingestellten Auslösestromes von Leistungsschaltern und des Nennstromes 
+von Sicherungen). 
+ Bei Fehlerstrom-Schutzschaltern Besichtigung und Messung. 
+ 
+Erforderliche Auslösezeiten von Fehlerstromschutzschaltern 
+ 
+Fehlerstrom-Schutzschalter 
+Auslösezeit in Sekunden 
+Typ 
+bei IDN 
+allgemein 
+0,300 
+G 
+0,300 
+S 
+0,500 
+ 
+27.5.6 Die Maßnahmen des zusätzlichen Schutzes 
+Die Wirksamkeit ist durch Messen und Besichtigen nachzuweisen. Die erforderlichen Ab-
+schaltzeiten richten sich nach den Zeiten bei automatischer Abschaltung im TN Netz. Der 
+Erforderliche Erdungswiderstand ist ebenfalls nachzuweisen. 
+ 
+27.5.7 Messung der Fehlerschleifenimpedanz 
+Die Messung der Fehlerschleifenimpedanz muss mit der Nennfrequenz des Stromkreises 
+durchgeführt werden. Methoden für die Messung werden in der ÖVE E8001-6-61 Anhang D 
+angeführt. 
+ 
+Wenn die Werte der Fehlerschleifenimpedanz durch nennenswerte Fehlerströme beeinflusst 
+werden können, dürfen die Ergebnisse der mit solchen Strömen in der Fabrik oder im Labor 
+durchgeführten Messungen berücksichtigt werden. Dies gilt besonders für fabriksfertige 
+Schaltgerätekombinationen einschließlich Sammelschienensystemen, metallische Rohre und 
+Kabel mit metallischen Umhüllungen.  
+ 
+ 
+ 
+
+
+===== PAGE 156/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+144 
+27.5.8 Funktionsprüfungen 
+Baugruppen, wie Schaltgerätekombinationen, Antriebe, Stelleinrichtungen, Verriegelungen, 
+müssen einer Funktionsprüfung unterzogen werden, um nachzuweisen, dass sie ordnungs-
+gemäß befestigt, eingestellt und angeschlossen sind. 
+ 
+Weiteres können auch Funktionsprüfungen an Not-Aus, Isolationswächtern oder Fehler-
+stromschutzschaltern durchgeführt werden. 
+ 
+27.5.9 Prüfen des Drehfeldes 
+Der Nachweis eines rechtsdrehenden Drehfeldes muss erbracht werden. 
+ 
+27.5.10 Prüfen des Spannungsabfalles 
+Der Nachweis kann mittels Berechnung erfolgen, wobei die Impedanz des Stromkreises zur 
+Berechnung benützt werden kann. 
+ 
+In Verbraucheranlagen gilt im Allgemeinen ein maximaler Spannungsabfall bis zur Messein-
+richtung von 1% und ab der Messeinrichtung 3%. Bei Steckdosenstromkreisen ist der Siche-
+rungsstrom für den Spannungsabfall maßgeblich. 
+ 
+27.6 
+Messmethoden 
+27.6.1 Erdungsmessung 
+Zur Messung des Erdungswiderstandes gibt es verschiedene Methoden. Je nach Situation 
+muss man unterschiedliche Messmethoden anwenden. 
+ 
+a) 
+Messung mit einer Erdungsmessbrücke 
+ 
+Wesentlich ist wie bei jeder Art der Schutzmaßnahme, ob die jeweilige Forderung der ange-
+wendeten Schutzmaßnahme erfüllt ist! 
+ 
+Wenn die Anlage in einem Gebiet mit geschlossener Bebauung (z.B. in Städten) errichtet ist, 
+in dem eine Messung mit Hilfserdern nicht sinnvoll ist, sind andere Methoden (z.B. Messung 
+mit Stromwandlern, oder die Messung der Fehlerschleifenimpedanz) anzuwenden. 
+ 
+
+
+===== PAGE 157/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+145 
+ 
+Abbildung 45 - Sondenmessung 
+ 
+b) 
+Erdungsmessung mit Wandlern 
+ 
+Die selektive Erdungsmessung mit Stromwandlern gestattet die Messung des Erdungswider-
+standes einer einzelnen Erdungsanlage ohne Verwendung von Hilfserder und Sonde. Dieses 
+Messverfahren ist speziell in Gebieten mit geschlossener Bebauung unter der zusätzlichen 
+Bedingung geeignet, dass es sich um eine einzelne Erdungsanlage handelt und die benach-
+barten Erdungsanlagen über PEN-Leiter mit dieser und miteinander verbunden sind. 
+ 
+Das Messverfahren arbeitet mit zwei Stromwandlern. Ein Stromwandler induziert in einer 
+Schleife, die auch den zu ermittelnden Erdungswiderstand enthält, eine Spannung. Der von 
+dieser Spannung getriebene Strom wird mit dem zweiten Stromwandler gemessen, so dass 
+der Gesamtwiderstand der Schleife errechenbar ist. Das Messverfahren kann jedoch nur 
+dann zu richtigen Ergebnissen führen, wenn die jeweils zu messende Erdungsanlage nur 
+durch die mit der Messzange erfasste Erdungsleitung, im Allgemeinen über die PAS, mit dem 
+PEN- oder N-Leiter des Netzes verbunden ist und alle anderen allenfalls vorhandenen Er-
+dungsleitungen der zu messenden Erdungsanlage geöffnet sind. 
+ 
+Die beiden Stromwandler können samt der erforderlichen Speisung und der Mess- und Re-
+chenelektronik in einem Zangengehäuse untergebracht sein. Alternativ dazu kann der Auf-
+bau auch mit zwei unabhängigen Stromwandlern erfolgen, die an ein Grundgerät ange-
+schlossen sind, das die Speisung sowie Mess- und Rechenelektronik beinhaltet. 
+ 
+ 
+ 
+
+
+===== PAGE 158/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+146 
+ 
+RX ...  
+gesuchter Erdungswiderstand 
+R1, R2, ..Rn 
+über PEN-Leiter parallel geschaltete andere Erdungsanlagen im Netz 
+RPEN 
+Widerstand des Verbindungsleiters netzseitig bis zur Hauptpotentialausgleich-
+schiene, z.B. PEN-Leiter 
+RSchleife 
+Widerstand der gesamten Messschleife 
+U 
+ 
+für die Messung induzierte Spannung 
+I 
+ 
+gemessener Strom in der Messschleife 
+ 
+ 
+RX » RSchleife = RX + (R1 // R2 // . . .// Rn ) + RPEN = U / I 
+ 
+PAS
+PEN
+zusätzliche Verbindung während
+der Erdungsmessung trennen
+ 
+Abbildung 46 – Schaltung Wandlermessung 
+ 
+Für echte TT-Systeme ist dieses Messverfahren wegen des fehlenden niederohmigen Rück-
+schlusses über den Hauptpotentialausgleich und den Neutralleiter nicht einsetzbar. 
+ 
+Wenn eine umfangreiche Anlage gemessen werden soll, so ist sicherzustellen, dass nur an 
+der Messstelle eine galvanische Verbindung mit der Erdungsanlage besteht. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 159/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+147 
+c) 
+Messung der Fehlerschleifenimpedanz 
+ 
+Die Methode gibt nur einen Näherungswert für die Fehlerschleifenimpedanz und berücksich-
+tigt nicht die Phasenverschiebung der Spannung z.B. während eines Erdfehlers. Der Nähe-
+rungswert kann jedoch akzeptiert werden, vorausgesetzt, dass die Reaktanz dieses Stromkrei-
+ses vernachlässigbar ist. 
+ 
+Es ist erforderlich, dass die Durchgängigkeit zwischen dem neutralen Punkt und den Körpern 
+zu prüfen, bevor die Schleifenimpedanzmessung durchgeführt wird. 
+ 
+ 
+ 
+Abbildung 47 – Schaltung Schleifenimpedanz 
+ 
+IR
+U
+U
+Z
+2
+1-
+=
+ 
+ 
+d) 
+Korrektur des Schleifenwiderstandes: 
+ 
+Der Schleifenwiderstand muss wegen der steigenden Temperatur im Fehlerfall bzw. wegen 
+der Messungenauigkeit korrigiert werden. 
+ 
+Da die Messungen mit kleinen Strömen bei Raumtemperatur durchgeführt werden, kann das 
+im folgenden beschriebene Verfahren verwendet werden, um den Anstieg des Leiterwider-
+stands durch die steigende Temperatur aufgrund von Fehlern zu berücksichtigen und um für 
+TN-Systeme nachzuweisen, dass der gemessene Wert der Fehlerschleifenimpedanz von Ö-
+VE/ÖNORM E 8001-1:2000-03, Abschnitt 10 erfüllt. 
+ 
+L1
+L2
+L3
+N
+Up
+RA
+A
+Ip
+R
+RB
+S
+V
+Schalter S offen ® U
+Schalter S geschlossen ®Up, I p
+Up max. 65V ! Vorsicht ! 
+Berührungs- od. Schrittspannung!
+
+
+===== PAGE 160/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+148 
+Die Anforderungen von ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 10 werden als erfüllt 
+angesehen, wenn die gemessene Fehlerschleifenimpedanz folgende Bedingung erfüllt: 
+ 
+A
+I
+Uo
+Zs
+*
+3
+2
+=
+  
+A
+K
+I
+I
+*
+5,1
+
+  
+N
+A
+I
+m
+I
+*
+=
+ 
+ 
+ZS 
+gemessener Wert der Fehlerschleifenimpedanz 
+U0 
+Effektivwert der Nennspannung gegen Erde in Volt 
+IA 
+Strom, der die automatische Auslösung der Schutzeinrichtung bewirkt, in Ampere 
+m 
+Abschaltfaktor der Sicherung 
+IN 
+Nennstrom der vorgeschalteten Leitungsschutzeinrichtung 
+ 
+Bei Anlagen wo Nullung mit Zusatzschutz angewendet wird, ist die Ausschaltbedingung 
+auch in dem Fehlerstromschutz-Schutzschalter nachgeschaltetem Anlagenteil nachzuweisen. 
+ 
+Dies kann erfolgen durch Verwendung geeigneter Messgeräte oder Messung, ob die Nul-
+lungsbedingungen am Anschlusspunkt des Fehlerstrom-Schutzschalters erfüllt sind, und Er-
+mittlung des Schleifenwiderstandes des nachgeschalteten Stromkreises. 
+ 
+Um bei der Überprüfung von Anlagen keine Probleme zu bekommen empfiehlt es sich Lei-
+tungsschutzschalter der Klasse B und nicht der Klasse C standardmäßig zu verwenden. Ein 
+16A Leitungsschutzschalter B schaltet bei 80A ab. Ein Leitungsschutzschalter 16A Klasse C 
+schaltet erst bei 160A ab. Wenn das Schutzmaßnahmenmessgerät 200A IK anzeigt so wird in 
+der Praxis dieser Wert für richtig empfunden. Nach erfolgter Korrektur stellt man fest, dass 
+der tatsächliche Kurzschlussstrom 133A beträgt. In diesem Fall wird der LS Klasse C nicht 
+mehr rechtzeitig abschalten. 
+ 
+ 
