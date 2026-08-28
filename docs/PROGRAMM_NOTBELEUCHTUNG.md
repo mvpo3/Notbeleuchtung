@@ -34,7 +34,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Item | Slice | Owner | Status | Stand |
 |------|-------|-------|--------|-------|
 | Repo-Skelett + 3 Contracts + Fake-Durchstich | 0 | Leonis | **DONE** (13✓/1s) | 2026-08-27 |
-| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | TODO | — |
+| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | **DONE** (13✓/1s) | 2026-08-28 |
 | Leonis echt: `communal_stgh_strategy` + `geometry` (Fake-Raum, echte Norm) | 2 | Leonis | TODO | — |
 | Render echt: `dxf_writer`/`layout_template` + Schrack-Infra + `assets/E-Symbole.dxf` | 3 | Leonis/Render | TODO | — |
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
