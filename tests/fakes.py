@@ -17,6 +17,7 @@ from notbeleuchtung.hauptengine.contracts import (
     ProviderBundle,
     RaumModell,
 )
+from notbeleuchtung.platzierung import NotlichtPlatzierer
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -64,15 +65,19 @@ class FakeNormProvider:
 
 
 class FakePlatzierer:
-    """Leonis-Double — PlatzierungsErgebnis aus Fixture (ignoriert Input)."""
+    """Leonis-Double — PlatzierungsErgebnis aus Fixture (ignoriert Input).
+
+    Slice 0-Referenz. Der E2E-Durchstich nutzt ab Slice 2 den echten
+    `NotlichtPlatzierer` (siehe `build_fake_bundle`)."""
 
     def place(self, raum: RaumModell, norm) -> PlatzierungsErgebnis:
         return PlatzierungsErgebnis.model_validate(_load("platzierung_4og.json"))
 
 
 def build_fake_bundle() -> ProviderBundle:
+    """Raum + Norm noch Fake (Slice 4/1), Platzierer ab Slice 2 ECHT."""
     return ProviderBundle(
         raum=FakeRaumProvider(),
         norm=FakeNormProvider(),
-        platzierer=FakePlatzierer(),
+        platzierer=NotlichtPlatzierer(),
     )
