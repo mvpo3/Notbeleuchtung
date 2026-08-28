@@ -1,0 +1,1861 @@
+
+
+===== PAGE 241/348 =====
+Anwendung der BIM-Methode im Pilotprojekt „LFS Grottenhof Modernisierung“
+240
+Nach der geometrischen Abstimmung der 
+Modelle ging es daran, den Informationsbedarf 
+der Projektbeteiligten zu ermitteln und die Infor-
+mationsflüsse festzulegen. Also, WER braucht 
+WELCHE Informationen bis WANN, in WELCHER 
+Form und WER soll/kann diese möglichst einfach 
+liefern. Der Informationsbedarf des Bauherren 
+war bereits vorab in den „Auftraggeber-Informa-
+tions-Anforderungen“ (AIA) festgehalten worden. 
+In den Abstimmungsterminen wurde mit den 
+Fachplaner:innen erarbeitet, wie dieser erfüllt 
+werden kann.
+Mit dem Übergang in die Entwurfsphase 
+begann auch die modellbasierte Arbeitsweise.  
+In regelmäßigen Abständen von zwei Wochen 
+wurden die Modelle in BIM-Koordinations­
+terminen miteinander überlagert, um etwaige 
+Problemstellen zu detektieren und Lösungen zu 
+finden. Zunächst wurden grobe Strukturen wie 
+die Rohbauelemente der Architektur mit den 
+Trassen­führungen für HKLS- und ET-Planungen 
+miteinander abgeglichen und auf die einheitliche 
+und zweckmäßige Benennung von Merkmalen 
+sowie die richtige Zuordnung der Bauelemente 
+zu Systemen geachtet.
+Mit fortschreitendem Planungsstand ver-
+schob sich der Fokus der Koordination auf immer 
+feinere Teile der Modelle, wie z.B. die Koordina-
+tion der abgehängten Decken mit den Leitungen 
+und auch die Leitungsführungen der unter-
+schiedlichen Teilmodelle miteinander. Natürlich 
+haben sich im Planungsprozess immer wieder 
+Anforderungen für weitere Teilmodelle ergeben. 	
+Die Entscheidung, ob ein Teilmodell notwendig 
+ist, ist zu großen Teilen von der Modellprüfung 
+abhängig. Spezifische Modelle lieferten zum 
+einen konkretere Prüfungsergebnisse, bedeute-
+ten im Gegenzug aber auch mehr Aufwand für 
+den Export und bei der Prüfung der Daten. Die 
+Entscheidung für oder gegen ein Teilmodell 
+wurde gemeinschaftlich in den Koordinations­
+terminen jeweils unter Abwägung von Aufwand 
+und Nutzen getroffen. 
+Ein immer wiederkehrendes Thema war die 
+Haftung für Informationen und Planungsinhalte.  
+Es wurden zum einen Merkmale zur Daten­
+lieferung der Planer:innen definiert, aus deren 
+Namensgebung die Quelle ersichtlich ist. Zum 
+anderen gab es jeweils zwei Tage vor den Koordi-
+nationsterminen einen Modell-Upload auf einem 
+Planserver, womit die angegebenen Informatio-
+nen zu diesem Zeitpunkt klar den Fachplanern 
+und Fachplanerinnen zugeordnet werden konn-
+ten. Erst die von der BIM-Koordination überprüf-
+ten Modelle und die dabei aufgefundenen Issues 
+wurden auf ein CDE hochgeladen. 	
+Dieser Weg mag zunächst als größerer Auf-
+wand erscheinen, die Vorteile der klaren Doku-
+mentation und Ablage aller Teilmodelle machen 
+dies aber schnell wieder wett. 
+
+
+===== PAGE 242/348 =====
+241
+Melanie Maria Wölwitsch, Landesimmobilien-Gesellschaft mbH
+ Abbildung 83: Koordinationsmodell aus BIMPLUS150 
+Grundlegend ist zu sagen, dass die Koor­
+dinationstermine nur eine Hilfestellung für die 
+Abstimmung der Projektbeteiligten untereinan-
+der sind und nicht als grundsätzliches Kommu­
+nikationsmittel gesehen werden können. Keines-
+falls sollten Elemente modelliert werden, die 
+nicht zuvor durchdacht, oder auf kurzem Wege 
+mit den anderen am Planungsprozess Beteiligten 
+abgestimmt wurden. Aus Sicht des Bauherrn  
+liegt der Vorteil der neuen Planungsmethode in 
+erster Linie darin, die Qualität der Planung zu 
+steigern und somit auch die Bereitstellung der 
+wesentlichen Informationen für alle Beteiligten 
+im Planungs- und Ausführungsprozess – sowie in 
+der späteren Nutzungsphase – sicherzustellen 
+und gegenüber der bisherigen Planungsmetho-
+de zu verbessern. Die direkte Kommunikation 
+zwischen den Projektbeteiligten ist auch weiter-
+hin eine wichtige Komponente im Planungs­
+prozess.
+Das Projekt befindet sich kurz vor Fertig­
+stellung der Ausführungsplanung und am Beginn 
+der Erstellung der Leistungsverzeichnisse für die 
+Ausführung. Für die folgenden Projektphasen ist 
+es das Ziel, ein As-Built-Modell für den Betrieb 
+des Gebäudes nach der Fertigstellung zu erhal-
+ten. Wir blicken mit Erwartung auf die kommen-
+den Projektmonate, können aber bereits jetzt 
+sagen, dass der Einsatz der BIM-Methode in der 
+Planungsphase dieses Pilotprojektes erfolgreich 
+gelungen ist.
+150	 BIMCOS e.U. BM Hanspeter Schachinger;  
+Anton Wiesenburg-Gasse 7, A-3133 Traismauer.
+
+
+===== PAGE 243/348 =====
+242
+BIM-Projektorganisation
+Die BIM-Methode bringt nicht nur Neuerungen in der Planung selbst,  
+sondern auch in der Projektorganisation mit sich. Es entstehen neue Methoden 
+und Schnittstellen in der Zusammenarbeit und im Datenaustausch, es treten neue 
+Akteure auf und Rollenbezeichnungen werden an die BIM-Methode angepasst. 
+Anhand von Projektkonstellationen werden klassische Organisationsstrukturen mit 
+der BIM-Projektorganisationen verglichen, und es erfolgt eine Gegenüberstellung 
+von „klassischen“ und „BIM-Akteuren“. Hierbei steht besonders das praxisgerechte 
+Aufsetzen und Abwickeln von BIM-Projekten im Fokus.
+BIM- 
+Projektorganisation
+Kapitel 6
+CHRISTIAN  HOFSTADLER, MARKUS KUMMER UND MICHAEL KOLBITSCH
+
+
+===== PAGE 244/348 =====
+Einleitung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+244
+Projektphasen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+245
+Leistungsphasen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+250
+Detaillierungs-, Informations- und  
+Koordinationsgrade (LOD in den  
+Projektphasen) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+252
+Akteure (Wer bin ich …?) . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+254
+Typische Projektkonstellationen  . . . . . . . . . . . . . . . . . . . .	
+258
+Klassische Planung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+258
+BIM-Planung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+261
+Aufsetzen und Abwickeln eines  
+BIM-Projekts („hands on“) . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+264
+Abstimmung des BAP bei 
+bereits vorhandenem Konzept . . . . . . . . . . . . . . . . . . . . . . . .	
+264
+Erstellung der AIA und des BAP . . . . . . . . . . . . . . . . . . . . . . .	
+266
+Einbindung bzw. Erstellung der Kollaborations- 
+plattform CDE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+270
+Erstellung der Fachmodelle . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+275
+Erstellung des Koordinationsmodells  . . . . . . . . . . . . . . . . .	
+279
+Änderungsmanagement . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+281
+BIM im Betrieb bzw. in der Nutzung . . . . . . . . . . . . . . . . . . .	
+281
+Zusammenfassung und Ausblick  . . . . . . . . . . . . . . . . . . .	
+285
+Literaturverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+286
+243
+BIM-Projektorganisation
+
+
+===== PAGE 245/348 =====
+244
+BIM-Projektorganisation
+Einleitung
+Die Projektorganisation ist ein wesentliches 
+Element der Zusammenarbeit und Abwicklung – 
+nicht nur, aber besonders auch – bei BIM-Projek-
+ten. Zur Orientierung für die Akteure werden zu-
+nächst die Projektphasen und Meilensteine 
+(Quality Gates – QG)  dargestellt sowie typische 
+Projektkonstellationen skizziert. Weiters werden 
+die Rollen der unterschiedlichen Projektbeteilig-
+ten in der klassischen Planung mit jenen in der 
+BIM-Planung verglichen. Dies soll eine Gegen-
+überstellung bekannter Organisationsstrukturen 
+mit der neuen BIM-Projektorganisation ermög-
+lichen und zudem vermitteln, welche Rolle die 
+einzelnen Planungsdisziplinen dabei einnehmen 
+und in welcher Phase sie ins Projekt einsteigen. 
+Natürlich können nicht alle möglichen Konstel­
+lationen und Spezialfälle abgebildet werden, es 
+sollen jedoch zumindest übersichtliche (einfache) 
+Organisationsstrukturen exemplarisch dargestellt 
+und genauer beschrieben werden.
+Ein besonderer Fokus wird hierbei auf das 
+Aufsetzen (bzw. auf die Vorbereitung) eines BIM-
+Projekts gelegt. Dabei steht die Erstellung der 
+Auftraggeber-Informations-Anforderungen (AIA), 
+der BIM-Abwicklungsplanung (BAP) sowie der 
+Projektplattform/Kollaborationsplattform (CDE) 
+im Vordergrund. Ein weiterer Schwerpunkt liegt 
+auf dem Aufbau von Fachmodellen sowie des 
+Koordinationsmodells. Laut dem BIM-Regelwerk 
+von buildingSMART ist die BIM-Projektsteuerung 
+für die Konzeption bzw. Aktualisierung der BAP 
+zuständig. Die BIM-Gesamtkoordination ist für 
+die Umsetzung der gesamten BAP zuständig. 
+Darüber hinaus existiert eine Vielzahl an Sonder-
+formen innerhalb der Projektkonstellationen, 
+aber letztlich gelten die vertraglich vereinbarten 
+Zuständigkeiten und Schnittstellenregelungen.
+Auf diese möglichen vertraglichen Struktu-
+ren und besonders auf die Schnittstellen wird ab-
+schließend eingegangen sowie ein Überblick 
+über den aktuellen Meinungsbildungsprozess 
+und die damit verbundenen Diskussionen gelie-
+fert. Das Thema der Honorarordnungen sowie 
+der Inhalte der Leistungsbilder im Zusammen-
+hang mit BIM-Projekten wird nur am Rande be-
+rührt.
+
+
+===== PAGE 246/348 =====
+245
+Projektphasen
+Projektphasen
+Der Bauherr ist der Hauptbeteiligte und  
+-entscheidungsträger bei der Planung und Rea­
+lisierung der Projekt- und Bauwerksziele. Er be-
+einflusst besonders durch die Vorgabe von Mei-
+lensteinen und deren zeitlicher Festlegung direkt 
+und indirekt die Qualität der Bearbeitungen in 
+den verschiedenen Projektphasen und damit 
+letztendlich die Bauwerksqualität in der Gesamt-
+betrachtung. Auch dem Reifegrad der Projekt­
+unterlagen, der von einer ausreichenden  
+(= normalen) Projektvorlaufzeit sowie einem aus-
+kömmlichen (= normalen) Projektvorlaufbudget 
+abhängig ist, kommt eine tragende Rolle zu.  
+Die Häufigkeit und die Intensität von Störungen 
+und Mehrkostenforderungen stehen damit eben-
+falls im Zusammenhang. Dadurch ergibt sich für 
+den Bauherrn eine zentrale Möglichkeit der Ein-
+flussnahme, die vor allem durch die Auftrags­
+vergabe des geplanten Projekts bestimmt wird. 
+Die bis zu diesem Zeitpunkt erzielte Planungs-, 
+Ausschreibungs- und Vertragsqualität prägt in 
+hohem Ausmaß den Projekterfolg in der Reali­
+sierungs-, Nutzungs- und Betriebsphase. Dahin-
+gehende Versäumnisse in der Organisation oder 
+den Workflows (welche vom AG vorgegeben 
+werden) büßt der AG später mit höheren Kosten 
+und/oder schlechterer Qualität. Im Rahmen der 
+Vergabe von Bauleistungen werden der Beginn 
+der Arbeiten und die Bauzeit vertraglich fixiert. 
+Nicht nur die Planung sollte integral erfolgen  
+(alle Planenden stimmen sich regelmäßig ge-
+führt ab; kooperative Planung), sondern auch  
+ein in diesem Sinne integrales Bauen (alle AN 
+stimmen sich regelmäßig geführt ab; koopera­
+tives Bauen) gilt als erfolgsversprechender Faktor, 
+um Störungsarmut und reibungslose Abläufe zu 
+fördern.
+In allen Planungen aber auch bei der BIM-
+Methode sind eine hohe Planungsqualität sowie 
+ein hoher Ausschreibungsreifegrad notwendig, 
+um die Projekt- und Bauwerksziele zu erreichen. 
+Eine hohe Planungstiefe und ein aussagekräftiger 
+Planungsinhalt, gepaart mit einer genauen Be-
+schreibung des Leistungsumfangs, muss so weit 
+fortgeschritten sein, dass die Bieter die wesent-
+lichen Umstände, Komplexitäten und Qualitäts-
+
+
+===== PAGE 247/348 =====
+246
+BIM-Projektorganisation
+ansprüche der zu erbringenden Leistungen er-
+kennen und bewerten können.
+Generell sind für die Kalkulierbarkeit und 
+Vergleichbarkeit der Angebote folgende Voraus-
+setzungen durch den AG zu erfüllen, wobei im-
+mer vom ursprünglich vereinbarten Bau-SOLL 
+auszugehen ist:
+ die Angaben des AG müssen eine hohe Ein-
+trittswahrscheinlichkeit aufweisen (Bauzeit 
+[Beginn, verbindliche Zwischentermine, 
+Ende etc.], Mengen, Verteilung der Mengen, 
+Qualitäten [z.B. Oberflächenbeschaffenheit, 
+Festigkeit], Umfeld, Umstände der Leistungs-
+erbringung etc.) 
+ die Leistungen sind widerspruchsfrei und 
+eindeutig sowie vollständig beschrieben
+ zur Vermeidung von Fehlinterpretationen 
+und Spekulationen ist auf eine Übereinstim-
+mung zwischen der Leistungsbeschreibung 
+und den sonstigen Vertragsunterlagen wie 
+z.B. Pläne und Bauzeitpläne zu achten
+ der Planungs- und Ausschreibungsreifegrad – 
+hohe Planungstiefe und aussagekräftiger 
+Planungsinhalt gepaart mit einer genauen 
+Beschreibung des Leistungsumfangs – muss 
+so weit fortgeschritten sein, dass die Bieter 
+die wesentlichen Umstände, die Komplexität 
+und die Qualitätsansprüche der zu erbrin-
+genden Leistungen erkennen und bewerten 
+können
+ die Angaben des AG müssen derart gestaltet 
+sein, dass die Chancen-Risikoverhältnisse 
+(positionsbezogen sowie für die Gesamtleis-
+tung) durch die Bieter ermittelbar sind 
+ die vom AG auf den AN zu übertragenen 
+be­absichtigten Risiken müssen bewertbar 
+und kalkulierbar sein
+Jedes Bauobjekt durchlebt verschiedene 
+Projektphasen und kann auf unterschiedliche Art 
+und Weise umgesetzt werden. Zu Beginn steht 
+eine Idee, die sich wiederum in verschiedenen 
+Projektphasen zu einem konkreten Vertrags­
+gegenstand entwickelt und schlussendlich als 
+nutzbares Objekt realisiert wird. In Abhängigkeit 
+von der Art des Auftraggebers bestehen in den 
+verschiedenen Projektphasen mehr oder weniger 
+„Die BIM-Planungsmethode ist die Zukunft der Bauplanung und 
+Abwicklung. Leider ist der Anspruch, einen komplexen Vorgang durch 
+Einsatz mittels der diversen BIM-Tools abzubilden, noch schwieriger 
+geworden.“
+ARCH. BAUMEISTER DI WOLFGANG KURZ
+
+
+===== PAGE 248/348 =====
+247
+Projektphasen
+Zwänge, sich an festgeschriebene Prozesse, 
+Gesetze und Regelwerke zu halten.
+Auftraggeber sind in allen Projektphasen in-
+volviert und treffen Entscheidungen hinsichtlich 
+der Projektvorlaufzeit und -vorbereitung sowie 
+der Qualitäten, der Quantitäten, der Bauzeit 
+(bzw. der Termine) und des Budgets. Ausführen-
+de Auftragnehmer (AN) hingegen beteiligen sich 
+in der Regel erst am Ende der PPH 3 im Zuge der 
+Angebotsbearbeitung am Projekt und ziehen 
+sich am Ende der PPH 4 mit der Übergabe/Über-
+nahme (abgesehen von Gewährleistungsfristen) 
+als aktive Projektbeteiligte vom Bauvorhaben zu-
+rück. Planer:innen sowie die Projektorganisation 
+(Erfüllungsgehilfen des AG) steigen in unter-
+schiedlichen Phasen in das Projekt ein.
+Die fünf Projektphasen:
+ Projektvorbereitung
+ Planung
+ Ausführungsvorbereitung
+ Ausführung 
+ Projektabschluss 
+können in weitere Ebenen untergliedert werden 
+(siehe Abbildung 84). Bei den Übergängen von 
+einer Projektphase zur nächsten befinden sich 
+sogenannte „Quality Gates“ (QG). Diese stellen 
+sicher, dass erst mit der nächsten Projektphase 
+begonnen wird, nachdem die maßgeblichen 
+Beschlüsse für die aktuelle Projektphase gefasst 
+wurden. 
+Die hier gewählte Gliederung stellt eine 
+gebräuchliche und weit verbreitete Möglichkeit 
+dar, ein Bauprojekt in Phasen einzuteilen. Wei­
+tere Gliederungsmöglichkeiten sind z.B. dem 
+Anhang B der ÖNORM A 6241-2:2015 zu entneh-
+men. Darin werden Projekt-, Objektlebenszyklus- 
+bzw. Lebensphasen folgender Normen einander 
+gegenübergestellt:
+ ÖNORM B 1801-2 – Bauprojekt- und  
+Objektmanagement – Teil 2: Objekt- 
+Folgekosten
+ ÖNORM B 1801-1 – Bauprojekt- und  
+Objektmanagement – Teil 1: Objekt- 
+errichtung
+ ÖNORM A 7010-5 – Objektbewirtschaftung – 
+Datenstrukturen – Teil 5: Objektbuch zur  
+nutzungs- und betriebsorientierten Infor­ma­
+tionsweitergabe
+ ÖNORM EN 16310 – Ingenieurdienstleis- 
+tungen – Terminologie zur Beschreibung  
+von Ingenieurdienstleistungen für Gebäude, 
+Infrastruktur und Industrieanlagen
+ ÖNORM A 6241-2 – Digitale Bauwerksdoku-
+mentation – Teil 2: Building Information 
+Modeling (BIM) – Level 3-iBIM (hier wird 
+zwischen „Lebensphasen eines Gebäudes“ 
+und „Projektphasen eines Gebäudes“ unter-
+schieden)
+Naturgemäß muss zunächst eine Projektidee 
+vorhanden sein und eine entsprechende Bedarfs-
+anmeldung erfolgen (QG A), bevor die Anforde-
+rungsfreigabe für ein neues Projekt erteilt wird.
+Die Projektvorbereitung (PPH 1) wird in wei-
+terer Folge in Bedarfsplanung (QG B) und Projekt-
+entwicklung unterteilt. Die Finalisierung der  
+PPH 1 erfolgt mit dem Planungsbeschluss (QG C), 
+anschließend wird die Planung (Vorentwurf und 
+Entwurf – PPH 2) eingeleitet.
+
+
+===== PAGE 249/348 =====
+248
+BIM-Projektorganisation
+Nach dem Realisierungsbeschluss (QG D) folgt 
+ebenfalls in der PPH 2 die Genehmigungsplanung 
+(Einreichplanung), mit deren Fertigstellung die 
+PPH 2 durch das Einleiten des Einreichverfahrens 
+abgeschlossen wird.
+Ist die Baubewilligung erteilt, beginnt mit 
+dem Start der Ausführungsplanung (QG E) auch 
+die PPH 3 (Ausführungsvorbereitung). Nach Frei-
+gabe der Ausführungsplanung werden die ent-
+sprechenden Leistungsverzeichnisse erstellt,  
+um die Leistungen darauffolgend auszuschreiben 
+(QG F) und zu vergeben (Auftragsvergabe,  
+QG G).
+In einem idealen Projektablauf erfolgt die 
+Abwicklung der einzelnen Projektphasen chrono-
+logisch. Die Ausführungsplanung sowie die Ver-
+gabe aller Leistungen wären somit abgeschlos-
+sen, bevor mit der Realisierung begonnen wird. 
+In der Realität ist die Ausführungsplanung mit 
+dem Beginn der Realisierungsphase jedoch meist 
+noch nicht beendet, sondern wird „baubeglei-
+tend“ fortgeführt. Auch der AG hat i.d.R. die Auf-
+tragsvergabe aller Gewerke mit dem Baubeginn 
+noch nicht vollständig abgewickelt. Dies hängt 
+allerdings maßgeblich von der Art der Vergabe 
+ab (GU-Vergabe, Einzelvergabe usw.).
+Durch die Überlappung von PPH 3 und  
+PPH 4 kann die Gesamtdauer reduziert werden. 
+Dies ist zwar insgesamt als vorteilhaft für den AG 
+zu beurteilen, weil er sein Objekt früher nutzen 
+kann, führt jedoch zu einem enormen Zeitdruck, 
+wodurch die Fehleranfälligkeit steigt. 
+Von Auftraggebern, die sich nicht festlegen 
+wollen, kann es als positiv beurteilt werden, dass 
+durch die nicht abgeschlossene Planung eine 
+flexiblere Reaktion auf geänderte Anforderungen 
+möglich ist. Jedoch verursachen Planungsände-
+rungen meist Mehrkosten und/oder Bauzeitüber-
+schreitungen (z.B. durch Änderungen bereits 
+fertiggestellter Pläne oder Mehraufwand für zu-
+sätzliche Abstimmungen, erhöhte Fehleranfällig-
+keit), die bei einer im Vorhinein abgeschlossenen 
+Planung hätten vermieden werden können. 
+ Abbildung 84: Projektphasen (PPH)151 
+151	 Hofstadler/Kummer (2017), Chancen- und Risiko­
+management in der Bauwirtschaft. S. 158.
+
+
+===== PAGE 250/348 =====
+249
+Projektphasen
+Zusätzlich besteht immer die Gefahr, dass Pläne 
+bei baubegleitender Planung nicht rechtzeitig 
+zum vereinbarten Liefertermin beigestellt wer-
+den können oder diese aufgrund des vorherr-
+schenden Zeitdrucks eine geringere Qualität 
+aufweisen. 
+Durch die BIM-Philosophie sollte es zukünf-
+tig gelingen, diese Überlappung zwischen PPH 3 
+und PPH 4 weitestgehend zu vermeiden und da-
+mit die Funktion der Quality Gates zu verstärken.
+Der aufgrund des Einsatzes von BIM entste-
+hende zusätzliche Nutzen wird von Expert:innen 
+bzw. anhand von Praxisberichten aktuell und zu-
+künftig in den nachfolgenden Punkten erwartet:
+ transparenteres Arbeiten/klare Schnitt­
+stellen,
+ ein gültiger Datenstand für alle Gewerke,
+ frühzeitige Erkennung von Kollisionen, 
+ frühzeitige Erkennung von eklatanten 
+Massenauffälligkeiten im LV,
+ deutlich verbesserte Kommunikation inner-
+halb des Projektteams,
+ schnelle und einfache Visualisierungen,
+ weniger Bieterfragen durch das beigelegte 
+BIM-Modell und durch die klaren Schnittstel-
+len der Gewerke.
+Der BIM-Prozess soll keinesfalls die direkte 
+Kommunikation und Abstimmung der Fachpla-
+ner:innen (gegebenenfalls auch mit Papier und 
+Stift) behindern oder ersetzen. Die BIM-Methode 
+kann als zusätzliches Hilfswerkzeug zur Steige-
+rung der Qualität und zur Verminderung doppel-
+ter Arbeit angesehen werden. Ziel ist es, einen 
+zusätzlichen Nutzen für alle Beteiligten zu gene-
+rieren. Diese Qualitätssteigerung sollte sich mit-
+tel- und langfristig in den Planungsbüros selbst 
+aber auch in weiterer Folge in der Ausführung 
+und Nutzung der Bauwerke widerspiegeln.
+Nach Fertigstellung der Leistungen erfolgt 
+die Übergabe durch den AN bzw. die Übernahme 
+durch den AG (QG H). Das Erreichen dieses 
+Quality Gates wird auch als technischer Projekt-
+abschluss bezeichnet. Nachfolgend beginnt die 
+PPH 5 (Projektabschluss) mit der Betriebsüber­
+gabe, im Zuge derer noch ausstehende Abrech-
+nungen und Mängelbehebungen durchgeführt 
+werden. Sind auch diese Bearbeitungen abge-
+schlossen (kaufmännischer Projektabschluss), 
+erfolgt in Abhängigkeit vom Bauwerkstyp der 
+Verwendungsnachweis und der Start für den 
+Probe- oder Realbetrieb (QG I). Spätestens in die-
+sem Projektstadium schließen die AN das Projekt 
+ab (sofern sie nicht auch als Betreiber des Bau­
+objekts fungieren wie beispielsweise bei PPP-
+Projekten). Mit der Übernahme beginnen die 
+Gewährleistungsfristen zu laufen. Im Rahmen 
+dieser tritt der AN über eventuell erforderliche 
+Mängelbehebungen wieder aktiv mit dem Pro-
+jekt in Verbindung.
+Im Zuge des Projektabschlusses (Ende der 
+PPH 5) sollten die AG eine Projektbewertung 
+durchführen (sofern sie nicht ohnehin als institu-
+tionelle AG dazu verpflichtet sind). Hierbei wer-
+den zentrale Daten und Kennwerte erhoben  
+und dokumentiert, damit diese Erfahrungswerte 
+systematisch in neue Projekte bzw. interne Vor-
+gaben des AG einfließen können (QG J). Auch 
+Auftragnehmer sollten Projektbewertungen ihrer 
+Leistungen durchführen, um interne Kennzahlen 
+anpassen und optimieren zu können bzw. den 
+eigenen Wissensspeicher entsprechend zu be­
+füllen.
+
+
+===== PAGE 251/348 =====
+250
+BIM-Projektorganisation
+Leistungsphasen
+Projekte können neben der Gliederung in 
+Projektphasen (PPH) auch in Leistungsphasen 
+(LPH) für Planende unterteilt werden. Den Pro-
+jektphasen 1 bis 5 werden dabei insgesamt  
+zehn Leistungsphasen (0 bis 9) zugeordnet (siehe 
+Abbildung 85). Die Leistungsphase 0 ist als fiktive 
+Phase in der PPH 1 zu sehen.
+ Abbildung 85: Projektphasen (PPH) und Leistungsphasen (LPH)152 
+152	 Hofstadler/Kummer (2017), Chancen- und Risiko­
+management in der Bauwirtschaft. S. 160.
+
+
+===== PAGE 252/348 =====
+251
+Leistungsphasen
+Die Beeinflussbarkeit bzgl. der Projektkosten 
+ist in den ersten Leistungsphasen (siehe Abbil-
+dung 85) am größten und nimmt mit zunehmen-
+dem Fortschritt sukzessive ab. In der Phase der 
+Vorbereitung der Vergabe (LPH 6) bzw. während 
+der Bauausführung (LPH 7) ist der Einfluss auf die 
+Kosten im Vergleich zur Phase der Projektvorbe-
+reitung (LPH 0) bereits stark eingeschränkt (siehe 
+dazu auch Abbildung 86). Mit der Reduktion der 
+Kostenbeeinflussbarkeit verringert sich auch die 
+Möglichkeit der Einflussnahme auf lebenszyklus-
+orientierte Qualitäten. Gleichzeitig steigen der 
+Grad der Konkretisierung und die Genauigkeit 
+der Beschreibung des Leistungsumfangs. Dafür 
+erreicht die Kenntnis über die Ausführungskosten 
+in dieser Phase zum ersten Mal (auf Basis einer
+detaillierten Ausschreibung) eine Genauigkeit 
+innerhalb eines üblichen Toleranzrahmens. In  
+der Neuauflage der ÖNORM B 1801-1:2021 sind 
+unter Pkt. 4.3.4 erstmalig Vorgaben hinsichtlich 
+der Genauigkeit (maximale Abweichungen) des 
+Kostenplans mit fortschreitender Projektphase 
+angeführt. Die in der Norm angegebenen Gren-
+zen werden in der Praxis kritisch aufgefasst und 
+aktuell intensiv diskutiert.154 
+ Abbildung 86: Leistungsbeschreibung und Beeinflussbarkeit mit fortlaufender Projektdauer153 
+153	 Wall (2017), Lebenszyklusorientierte Modellierung 
+von Planungs-, Ausschreibungs- und Vergabe­
+prozessen, S. 187.
+154	 Vgl. z.B. Lechner et al. (2021), Kostenplanung und die 
+ÖNORM B 1801-1:2021. In: derPlan N° 52 April 2021,  
+S. 10–12.
+
+
+===== PAGE 253/348 =====
+252
+BIM-Projektorganisation
+ 
+ Kapitel 2, S. 68
+Richtig Modellieren 
+Detaillierungs-, Informations- und  
+Koordinationsgrade (LOD in den  
+Projektphasen)
+In der Abwicklung eines BIM-Projekts stößt 
+man sehr schnell auf den Begriff LOD (Level of 
+Development).155
+Der LOD setzt sich aus dem LoI (Level of 
+Information), dem LoG (Level of Geometry) und 
+dem LoC (Level of Coordination) zusammen. 
+Durch den LOD wird der Detaillierungsgrad bzw. 
+der Informationsgrad der digitalen Bauwerks­
+modelle (Architekturmodell, TGA-Modell etc.) in 
+den verschiedenen Projektphasen festgelegt. 
+Dabei wird durch den LOD definiert, welche geo-
+metrischen und welche alphanumerischen Mo-
+dellinformationen je Projektphase gefordert sind. 
+Grundsätzlich wird der LOD vom Auftrag­
+geber in den AIA vorgegeben und in weiterer 
+Folge im BAP durch die Planer:innen konkre­
+tisiert. Meist wird der Detaillierungs- und Infor­
+mationsgrad zwischen zwei Projektphasen (bei 
+einem Quality Gate) auf die nächsthöhere Stufe 
+angehoben. Entlang der Projektphasen werden 
+also die Stufen LOD 100, 200, 300, 350 (optional), 
+400 und 500 verteilt, wobei LOD 100 die Stufe mit 
+dem geringsten und LOD 500 die Stufe mit dem 
+höchsten Detaillierungsgrad darstellt.
+Exemplarisch könnte die Zuordnung für ein 
+Modell so aussehen:
+Projektphase
+Level of 
+Development
+Modell
+Quality 
+Gate
+PPH1 Projektvorbereitung
+LOD 100
+Vorentwurfsmodell
+PPH2 Planung
+LOD 200
+Entwurfsmodell
+C
+PPH3 Ausführungsvorbereitung
+LOD 300
+Genehmigungsmodell
+E
+PPH4 Ausführung
+LOD 400
+Ausführungsmodell
+G
+PPH5 Projektabschluss
+LOD 500
+As-Built-Modell
+H
+Tabelle 25:  Zusammenhang zwischen Projektphasen und Detaillierungsgrad
+155	 Je nach Nationalität kann LOD auch für „Level of Definition“ oder auch „Level of Detail“ stehen.
+
+
+===== PAGE 254/348 =====
+253
+Detaillierungs-, Informations- und Koordinationsgrade (LOD in den Projektphasen)
+Eine verbindliche Zuordnung der Detail­
+lierungs- und Informationsgrade zu den Projekt-
+phasen gibt es jedoch nicht – sie sollten projekt-
+spezifisch festgelegt werden. Auch eine Tren-
+nung zwischen geometrischen und alpha­
+numerischen Modellinhalten hat sich in der Praxis 
+bewährt – somit müssen LOD und LoI eines Mo-
+dells in derselben Projektphase nicht zwingend 
+übereinstimmen. Weiters gilt es, die Detaillie-
+rungs- und Informationsgrade verschiedener 
+Bauwerksmodelle individuell festzulegen. 
+Unterschiedliche Teilmodelle müssen in der 
+gleichen Projektphase nicht zwingend denselben 
+Reifegrad aufweisen.
+Unter Berücksichtigung der Projektziele aus 
+den AIA werden die Anforderungen, welche die 
+Modelle in den LOD-Stufen aufzuweisen haben, 
+von den Projektbeteiligten im BAP festgelegt.  
+Ein Beispiel für die Festlegung der Detaillierungs-
+grade im BAP kann im „BIM Regelwerk (AIA+BAP)“ 
+unter dem Kapitel „F.6 Festlegung der Detail­
+lierungsgrade“ gefunden werden.156
+156	 Siehe https://www.buildingsmart.co.at/muster-aia-und-muster-bap/, Datum des Zugriffs: 3.  8.  2021.
+Im Zuge von BIM-Projekten treten im Rahmen 
+unterschiedlicher Bauvorhaben immer wieder 
+ähnliche Anwendungsfälle auf, welche die han-
+delnden Akteure vor Herausforderungen stellen. 
+Die Sammlung und Dokumentation dieser An-
+wendungsfälle hilft Anwender:innen dabei, 
+Lösungen auf Basis von vorhandenen BIM-Anwen-
+dungsfällen zu finden, umzusetzen und an die 
+individuellen Projektanforderungen anzupassen. 
+BIM-Anwendungsfälle stellen dokumentierte 
+sowie allgemein beschriebene Erfahrungen und 
+Empfehlungen aus vergangenen BIM-Projekten 
+dar. Es werden darin bestimmte Abläufe/Prozesse 
+für unterschiedliche Anwendungsfälle über die 
+gesamte Wertschöpfungskette festgehalten. 
+buildingSMART definierte zu diesem Thema den 
+Begriff „Use Case Management“, welcher be-
+schreibt, wer
+ welche Information
+ zu welchem Zeitpunkt
+ in welchem Format
+ in welchem Detaillierungsgrad
+zur Verfügung zu stellen hat. Darüber hinaus soll 
+das Use Case Management das Projekt von der 
+Projektidee bis zur Fertigstellung begleiten und 
+kann somit auch als Hilfestellung für die Konzep-
+tion der AIA und der BAP dienen. Die Anwen-
+dungsfälle enthalten dabei beispielsweise:
+ Definition des Anwendungsfalls
+ Nutzen und Zweck
+ Umsetzung
+ Implementierungsvoraussetzungen
+ Referenzen
+ Abgrenzungen
+ Daten, Modelle und Formate
+ Praxisbeispiele
+Exkurs: BIM-Anwendungsfälle bzw. Use Cases
+Weiterführende Literatur und Beispiele zu BIM-Anwendungsfällen/Use Cases:
+ https://bim4infra.de/handreichungen/ Teil 6: Steckbriefe der wichtigsten BIM-Anwendungsfälle
+ https://ucm.buildingsmart.org/
+ https://bauen-digital.ch/de/projekte/use-case-management/
+
+
+===== PAGE 255/348 =====
+254
+BIM-Projektorganisation
+Akteure (Wer bin ich …?)
+Bei BIM-Projekten erhalten die Akteure aus 
+der klassischen Planung in der Regel neue Be-
+zeichnungen und haben teilweise auch abwei-
+chende bzw. ergänzte Leistungsbilder. 
+Jene Akteure, die nicht direkt bzw. vorrangig 
+mit der BIM-Planung in Zusammenhang stehen 
+bzw. sich in weiterer Folge als Nutzer:innen des 
+Modells darstellen, werden in nachstehender 
+Abbildung 87 als „Allgemeine Akteure“ bezeich-
+net. Es handelt sich dabei beispielsweise um die 
+Örtliche Bauaufsicht (ÖBA), den Auftraggeber 
+(AG) selbst, sämtliche ausführende Unternehmen 
+(AN) inkl. Subunternehmer (SUB), die begleitende 
+Kontrolle (BK), die Nutzer:innen des Bauwerks 
+(NU) und das Facility Management (FM). Dabei ist 
+jedoch nicht außer Acht zu lassen, dass in einem 
+BIM-Projekt nahezu jede:r Beteiligte ein BIM-
+Basiswissen aufweisen muss und je nach Projekt-
+konstellation und -phase auch wertvolle Beiträge 
+zum BIM-Modell zu liefern hat (z.B. in Bezug auf 
+die Dokumentation oder auch die Planungen des 
+AN etwa im Bereich HKLS). Ein gutes Beispiel da-
+für ist die ÖBA, welche als Vertreter des Bauherrn 
+die BIM-Planung und die Bauausführung im Blick 
+hat.157  
+Ein Akteur kann dabei sowohl eine einzelne 
+Person, als auch eine Gruppe von Personen  
+bzw. ein ganzes Unternehmen/eine ganze 
+Organisation sein.
+Jene Akteure, die Planungsleistungen er­
+bringen, sind einander als „klassische Akteure“ 
+(blaue Farbe in den Grafiken) und „BIM-Akteure“ 
+(orange Farbe in den Grafiken) gegenüberge-
+stellt. Hier wird die Projektleitung (PL) beispiels-
+weise zur BIM-Projektleitung (BPL) und die klas­
+sische Projektsteuerung (PS) zur BIM-Projekt­
+steuerung (BPS), jedoch die oder der General­
+planer:in (GP) zur/zum BIM-Gesamtkoordinator:in 
+(BGK) und die Fachplaner:innen (FP) zu BIM-Fach-
+koordinator:innen (BFK). Die klassischen Tech­
+157	 Die ÖBA übernimmt je nach Projektorganisation 
+auch Aufgaben im BIM-Prozess und ist daher in Ab-
+bildung 87 sowohl in schwarz (als klassischer Akteur) 
+als auch in orange (als BIM-Akteur) dargestellt. Mit 
+der Werkplanung übernehmen teilweise auch spe­
+zifische AN (z.B. HKLS, Stahlbau) zentrale Aufgaben 
+in der BIM-Planung und sind daher ebenfalls in Ab-
+bildung 87 sowohl in schwarz (als klassischer Akteur) 
+als auch in orange (als BIM-Akteur) dargestellt.
+
+
+===== PAGE 256/348 =====
+255
+Akteure (Wer bin ich …?)
+nischen Zeichner:innen (TZ) werden zu BIM-
+Ersteller:innen158 (BE). Zu beachten ist, dass die 
+Akteure bzw. die entsprechenden Rollenbilder 
+nicht immer 1 : 1 zuzuordnen sind und teilweise 
+auch in Personalunion abgedeckt werden kön-
+nen. Die zentrale Rolle der BIM-Projektsteuerung 
+kann beispielsweise als zusätzliche Rolle zur klas-
+sischen Projektsteuerung gesehen werden, es ist 
+aber auch denkbar, dass die klassische Projekt-
+steuerung die Aufgaben der BIM-Projektsteue-
+rung mitabdeckt.
+Hierbei gilt es zu beachten, dass die oder der 
+BIM-Fachkoordinator:in zwar dem oder der Fach-
+planer:in entsprechen kann, aber es sich auch um 
+eine übergeordnete Funktion zur Koordination 
+einzelner Fachplaner:innen handeln könnte. Dies 
+hängt nicht zuletzt von der Projektkonstellation 
+und der Komplexität des Vorhabens ab. 
+ Abbildung 87: Vergleich der Akteure 
+158	 Auch als „BIM-Modeler“ bezeichnet.
+
+
+===== PAGE 257/348 =====
+256
+BIM-Projektorganisation
+nicht zwingend in dieser Form erfolgen. Welcher 
+Projektbeteiligte in welcher BIM-Rolle im Projekt 
+auftritt, ist nicht zuletzt von der Komplexität des 
+Projekts abhängig. Aber auch die BIM-Kompe-
+tenz der jeweiligen Projektbeteiligten könnte hier 
+zu einer Umverteilung der Aufgaben und Rollen 
+führen. In Abbildung 88 ist dargestellt, welche 
+BIM-Rollen von welchen Projektbeteiligten be-
+setzt werden können. Dabei ist zu beachten,  
+dass auch mehrere Projektbeteiligte in einer  
+BIM-Rolle auftreten können. Zusätzlich besteht 
+die Möglichkeit, dass Projektbeteiligte die Auf­
+gaben mehrerer BIM-Rollen (mit-)übernehmen. 
+Besonders wird dies bei kleineren Projekten der 
+Fall sein.
+Beispielsweise können die Aufgaben der 
+BIM-Projektleitung gesondert vergeben und 
+erfüllt werden oder diese Aufgaben werden vom 
+AG selbst und/oder der Projektleitung, dem:r 
+Es fällt auf, dass der – in der Literatur häufig 
+genannte – Begriff der BIM-Managerin oder des 
+BIM-Managers in dieser Darstellung keine An-
+wendung findet. In diesem Zusammenhang ist es 
+zielführender, die BIM-Projektleitung in Kombina-
+tion mit der BIM-Projektsteuerung und dem AG 
+als „BIM-Management“ zu verstehen. Beim  
+BIM-Management handelt es sich also zumeist 
+we­niger um einen konkreten Akteur, sondern 
+vielmehr um eine Organisationseinheit innerhalb 
+der Projektorganisation eines BIM-Projekts.159 
+Weitere Akteure und Aufgabengebiete ent-
+wickeln sich aktuell in der Praxis auf Basis von 
+Erfahrungen, die aus Pilotprojekten gewonnen 
+wurden bzw. werden. So gibt es beispielsweise 
+bei manchen öffentlichen Auftraggebern die 
+Funktion des Informationsmanagements, das als 
+Bindeglied zwischen der Planung, Ausführung 
+und späteren Nutzung angesiedelt und beispiels-
+weise auch in die Ausarbeitung der Auftrag­
+geber-Informations-Anforderungen (AIA) und  
+des BIM-Abwicklungsplans (BAP) involviert ist.
+Die in Abbildung 87 dargestellte Gegen­
+überstellung dient als Orientierung und muss 
+ Abbildung 88: BIM-Rollen mit möglichen Projektbeteiligten 
+159	 Abhängig vom Auftraggeber wird unter dem „BIM-
+Manager“ die „BIM-Projektsteuerung“ als konkretem 
+Akteur ver­standen.
+
+
+===== PAGE 258/348 =====
+257
+Akteure (Wer bin ich …?)
+Generalplaner:in oder der Fachplanung (z.B. 
+Architektur) übernommen. Ebenso verhält es  
+sich mit den Aufgaben der BIM-Projektsteuerung, 
+die eigenständig oder auch durch den AG und/
+oder die Projektsteuerung ausgeführt werden 
+können.
+ Exakte vertragliche Festlegung, wem im Pro-
+jekt welche Verantwortlichkeiten, Pflichten, 
+Leistungen usw. zukommen;
+ Prüfung, wo „BIM-Leistungen“ geregelt sind, 
+z.B. im Planervertrag, in der AIA, in BIM-BVB;
+ Studium von AIA, BAP, Einzelvertrag, BIM-
+BVB, welche Rollen und Aufgaben wem zu-
+gewiesen sind;
+ Prüfung, ob es durch die BIM-Methode zu 
+Änderungen der Leistungserbringung (z.B. 
+Vorziehung von Leistungen in frühere Leis-
+tungsphasen, zusätzliche Leistungen) kommt;
+ Prüfung, ob mit der Anwendung der BIM- 
+Methode auch neue Vertragsmodelle und 
+Vertragsstrukturen, wie Partnering-Modelle, 
+Allianz-Modelle, sinnvoll bzw vorgesehen 
+sind;
+ Welche Planungsergebnisse mit welchen 
+Informationen sind wem (z.B. Unternehmer, 
+Facility Manager) zur Verfügung zu stellen?
+ Findet das Vergabeverfahren mit einem  
+BIM-Modell statt, das der Auftragnehmer 
+nach Zuschlagserteilung weiterbearbeiten 
+können soll?
+DR. KONSTANTIN POCHMARSKI 
+zu den „neuen/alten“ Rollen in einem BIM-Projekt
+Rechtstipp
+
+
+===== PAGE 259/348 =====
+258
+BIM-Projektorganisation
+Jedes Bauprojekt und damit auch jedes BIM-
+Projekt ist ein Unikat. Eine wirklich „typische“ 
+Projektkonstellation wird es üblicherweise nicht 
+geben. Es treffen immer wieder neue Beteiligte 
+aufeinander und auch die Anforderungen an die 
+Projektorganisation ändern sich. Dennoch wird 
+versucht, anhand einer Konstellation für die Ein-
+zel- und Generalplanervergabe die Projekt­
+struktur sowie die Beziehungen und Schnitt­
+stellen zwischen den Akteuren in der klassischen 
+Planung und der BIM-Planung darzustellen.
+Die Darstellungsmethode zieht sich durch 
+alle folgenden Projektkonstellationen, wobei die 
+Farbe Blau für das klassische Projektmanage-
+ment, die Farbe Orange für das Projektmanage-
+ment mit BIM-Anwendung und die Farbe Grau  
+für neutrale Funktionen im Projektmanagement 
+steht. Durchgezogene, schwarze Linien stehen 
+für Vertragsbeziehungen zwischen Projektbetei-
+ligten und strichlierte, schwarze Linien stellen 
+den (üblichen) Informationsfluss zwischen den 
+Projektbeteiligten dar. Die grün strichpunktierten 
+Linien beschreiben zusätzliche optionale Infor-
+mationsflüsse, bei denen sich beispielsweise der 
+Auftraggeber die Möglichkeit offenhält, direkt 
+mit den Fachplaner:innen und ausführenden 
+Unternehmen zu kommunizieren. Dies kann 
+insbesondere dann vorkommen, wenn der Auf-
+traggeber entweder ein sehr erfahrener Bauherr 
+ist und/oder der Auftraggeber in der Projekt­
+leitung oder Projektsteuerung mitwirkt. 
+Klassische Planung
+Bei der klassischen Planung stehen insbeson-
+dere die Projektleitung, die ÖBA und in weiterer 
+Folge auch die ausführenden Unternehmen in 
+direktem Informationsaustausch mit den planen-
+den Akteuren. Die Vertragsverhältnisse bestehen 
+bei der Einzelvergabe aber jeweils immer nur 
+direkt mit dem AG. 
+In Abbildung 89 ist eine mögliche Projekt-
+konstellation mit Vergabe an Einzelplaner:innen, 
+wie sie in einem klassischen Bauprojekt (ohne BIM-
+Anwendung) vorkommen könnte, dargestellt. 
+In dieser Projektkonstellation stehen alle Pro-
+jektbeteiligten bis zur Ebene der Fachplaner:in-
+nen in einer direkten Vertragsbeziehung mit dem 
+Auftraggeber. Dies betrifft die Erfüllungsgehilfen 
+des AG (BK, PL, PS, ÖBA), aber auch die Planer:in-
+ 
+ 
+  
+ 
+ Arbeits- 
+materialien
+Beispiele für 
+Organigramme 
+und Projekt- 
+konstellationen
+Typische Projektkonstellationen
+
+
+===== PAGE 260/348 =====
+259
+Typische Projektkonstellationen
+ Abbildung 89: Klassisch – Einzelplanervergabe
+nen und die ausführenden Unternehmen (bei 
+Einzelvergaben). Weitere Planer:innen, welche  
+als Unterstützung für die oder den Fachplaner:in 
+fungieren (hier als technische Zeichner:innen dar-
+gestellt), sind vertraglich dem oder der Fachpla-
+ner:in untergeordnet. Auch Subunternehmer der 
+ausführenden Unternehmen stehen in keiner 
+direkten vertraglichen Beziehung mit dem Auf-
+traggeber, sondern sind dem Auftragnehmer 
+untergeordnet.
+Bei den Planer:innen bildet die Objektpla-
+nung (meist) die Koordination für die einzelnen 
+Fachplaner:innen, wobei der Informationsfluss 
+zwischen Objektplaner:in und den Fachplaner:in-
+nen bzw. deren technischen Zeichner:innen er-
+folgt. U.U. sind hier auch noch weitere (optionale) 
+Informationsflüsse mit dem AG und seinen an­
+deren Erfüllungsgehilfen möglich, sollten aber 
+entsprechend vorab definiert werden.
+
+
+===== PAGE 261/348 =====
+260
+BIM-Projektorganisation
+Wird die Planung nicht an die einzelnen  
+Planer:innen vergeben, sondern erfolgt die 
+Vergabe an eine:n Generalplaner:in, ist diese:r 
+zwischen Projektleitung und Objekt- bzw. Fach-
+planer:innen „zwischengeschaltet“ (siehe Ab­
+bildung 90). Dabei hat auch nur die oder der 
+Generalplaner:in ein direktes Vertragsverhältnis 
+mit dem AG. Alle anderen Planer:innen haben 
+jeweils vertragliche Beziehungen mit der oder 
+dem Generalplaner:in und nicht direkt mit  
+dem AG. 
+Die oder der Generalplaner:in fungiert  
+in dieser Projektkonstellation auch als Koor- 
+dinator:in aller Fachplaner:innen. Je nach  
+Projekt­größe und Projektart kann die Koor­
+dination der Fachplaner:innen von der oder  
+dem General­planer:in z.B. an die oder den 
+Objektplaner:in übergeben werden. Oft tritt  
+ Abbildung 90: Klassisch – Generalplanervergabe
+
+
+===== PAGE 262/348 =====
+261
+Typische Projektkonstellationen
+ Abbildung 91: BIM-Planung – Einzelplanervergabe
+auch die oder der Objektplaner:in als General­
+planer:in auf.
+Durch die zusätzlich in Abbildung 90 dar­
+gestellten optionalen Informationsflüsse wird 
+deutlich, dass der Informationsaustausch nicht 
+zwingend über die oder den Objektplaner:in ver-
+laufen muss, sondern auch direkt zwischen den 
+Fachplaner:innen sowie mit dem oder der Gene-
+ralplaner:in erfolgen kann.
+BIM-Planung
+Eine mögliche Projektkonstellation mit Ver-
+gabe an Einzelplaner:innen, wie sie in einem Bau-
+projekt mit BIM-Anwendung vorkommen könnte, 
+ist in Abbildung 91 beispielhaft dargestellt. 
+Der oder die in manchen Literaturquellen an-
+geführte „BIM-Manager:in“ stellt sich in der Dar-
+stellung der Projektkonstellation nicht etwa als 
+eine Person dar. Es gibt stattdessen wie oben be-
+
+
+===== PAGE 263/348 =====
+262
+BIM-Projektorganisation
+reits ausgeführt ein „BIM-Management“,160 das 
+sich aus dem AG, der BIM-Projektleitung und der 
+BIM-Projektsteuerung zusammensetzt.  Der Un-
+terschied zur klassischen Projektkonstellation ist, 
+dass der BIM-Projektsteuerung eine (neue) zen­
+trale Rolle zuteil wird. Obwohl Auftraggeber, BIM-
+Projektleitung und BIM-Projektsteuerung zum 
+BIM-Projektmanagement zählen, gilt in den meis-
+ten BIM-Projekten die BIM-Projektsteuerung als 
+Kommunikationsglied zwischen Auftraggeber- 
+und Auftragnehmerseite. Die BIM-Projektsteue-
+rung sollte dabei möglichst über das planerische 
+Wissen eines Generalplaners verfügen, damit 
+fachlich beurteilt werden kann, welche Werte 
+(z.B. im Hinblick auf bauphysikalische oder brand-
+schutztechnische Simulationen) in den Modellen 
+eingetragen werden müssen (formal wird dies  
+in den AIA geregelt), um einen entsprechenden 
+Mehrwert zu generieren und auch zu gewähr­
+leisten, dass BIM-Modelle über das Projekt wei-
+tergeführt werden.
+Eine weitere Möglichkeit wäre, das der oder 
+die BIM-Fachkoordinator:in der Architektur (Ob-
+jektplaner:in) als BIM-Gesamtkoordinator:in auf-
+tritt und die weiteren BIM-Fachkoordinator:innen 
+koordiniert.161
+Die zusätzlich dargestellten optionalen Infor-
+mationsflüsse, wie sie in den klassischen Projekt-
+konstellationen noch häufiger auftreten, sind in 
+Projekten mit BIM-Anwendung sehr begrenzt, da 
+durch die Auftraggeber-Informations-Anforde-
+rungen (AIA) und den daraus entstehenden BIM-
+Abwicklungsplan (BAP) bestimmte Richtlinien zu 
+den Informationsflüssen festgelegt werden. Die 
+Einhaltung der im BAP definierten Prozesse zur 
+Erreichung und Einhaltung der in den AIA festge-
+haltenen Anforderungen und Vorschriften ist 
+notwendig für ein funktionierendes BIM-Projekt. 
+Die Funktionalität des BAP obliegt der BIM-Pro-
+jektsteuerung und wird auch von dieser während 
+des gesamten Projekts betreut und aktualisiert. 
+Erfolgt die Vergabe in der Form einer Gene-
+ralplanung, ergibt sich bei einem Bauprojekt mit 
+BIM-Anwendung beispielhaft eine Projektkons-
+tellation wie sie in Abbildung 92 dargestellt ist.  
+In dieser Projektkonstellation wird allen BIM-
+Fachkoordinator:innen eine BIM-Gesamtkoor­
+dination vorangestellt. Die Aufgaben der BIM-Ge-
+samtkoordination müssen in jedem BIM-Projekt 
+zwingend erfüllt werden. In komplexeren Projek-
+160	 Abhängig vom Auftraggeber wird unter dem „BIM-
+Manager“ die „BIM-Projektsteuerung“ als konkretem 
+Akteur verstanden.
+161	 Abhängig vom Auftraggeber wird auch die Sicht­
+weise vertreten, dass die BGK auf der Seite des Auf-
+traggebers und die Fachkoordination auf der Seite 
+der Auftragnehmer angeordnet ist.
+
+
+===== PAGE 264/348 =====
+263
+Typische Projektkonstellationen
+ Abbildung 92: BIM-Planung – Generalplanervergabe
+ten wird dafür eine eigene Position vergeben.  
+In weniger komplexen Projekten werden die Auf-
+gaben der BIM-Gesamtkoordination – sofern kei-
+ne strategische und/oder technische Trennung 
+erforderlich ist – entweder von der BIM-Projekt-
+steuerung oder z.B. von der BIM-Fachkoordina-
+tion der Hauptplanung (im Hochbau z.B. 
+Architektur; im Infrastrukturbau z.B. die Trag-
+werksplanung) übernommen. 
+Wird die BIM-Gesamtkoordination von der 
+Hauptplanung (ähnlich wie in der Einzelplaner-
+vergabe) übernommen, bleibt die Rolle des oder 
+der BIM-Gesamtkoordinators:in bei der General­
+planer­vergabe aufrecht. Die Hauptplanung 
+fungiert damit übergeordnet als BIM-Gesamtko-
+ordination und ebenso als BIM-Fachkoordination 
+für den jeweiligen Fachbereich.
+
+
+===== PAGE 265/348 =====
+264
+BIM-Projektorganisation
+Das Aufsetzen eines BIM-Projekts beinhaltet 
+verschiedene Prozesse und Abläufe, die mit un-
+terschiedlichen Beteiligten und zum Teil mit 
+mehreren Rückkopplungen bzw. Feedbackschlei-
+fen ablaufen. Zu den zentralen Werkzeugen eines 
+BIM-Projektes zählen z.B. die Auftraggeber-Infor-
+mations-Anforderungen (AIA), der BIM-Abwick-
+lungsplan (BAP), die Kollaborationsplattform 
+(engl. Common Data Environment, CDE), aber 
+auch diverse BIM-Modelle. Ist das Projekt ent-
+sprechend aufgesetzt, sind im Projektverlauf die 
+Voraussetzungen für mehr Transparenz und die 
+Nutzung von Synergien geschaffen.162
+Bereits vor dem eigentlichen Projektstart 
+und folgend in der ersten Leistungsphase wird 
+der Fokus auf die Erstellung der AIA und des dar-
+aus abgeleiteten BAP gerichtet. Parallel dazu wird 
+in der Leistungsphase 1 (LPH 1) und Leistungs-
+phase 2 (LPH 2) am Aufbau des CDE gearbeitet 
+(sofern eine solche zum Einsatz gelangen soll). 
+Diese dient in weiterer Folge als zentrale Daten-
+bank aller Dokumente rund um ein BIM-Projekt. 
+Erst nach der Freigabe des BAP (durch die 
+BPS) können BIM-Fachkoordinator:innen gemein-
+sam mit den BIM-Ersteller:innen damit beginnen, 
+Modelle (nach Einhaltung der Vorgaben im BAP) 
+für eine Übertragung ins Koordinationsmodell zu 
+erstellen. 
+In weiterer Folge werden dann die BIM-
+Fachmodelle in ein BIM-Koordinationsmodell 
+eingepflegt. Nach teils automatisierter und teils 
+manueller Kollisionsprüfung im BIM-Koordina­
+tionsmodell und anschließender Nacharbeitung 
+können Pläne aus den Fachmodellen für die Bau-
+ausführung erstellt werden.
+Nachfolgend werden die wesentlichen Pro-
+zesse für das Aufsetzen und die Abwicklung eines 
+BIM-Projekts vermittelt.
+Abstimmung des BAP bei  
+bereits vorhandenem Konzept
+In manchen Fällen werden in BIM-Projekten 
+bereits vorab fertige AIA sowie ein fertiger oder 
+als Konzept vorhandener BAP vom AG vorgege-
+Aufsetzen und Abwickeln eines  
+BIM-Projekts („hands on“)
+162	 Teilweise führen öffentliche AG auch Anwender-
+handbücher, in denen „first Steps“ für BIM-Projekte 
+dargestellt werden. Diese Unterlagen bilden dann 
+explizit die Prozesse und gewünschten Abläufe des 
+jeweiligen Auftraggebers ab und können nur be-
+dingt auf andere Auftraggeber umgelegt werden.
+
+
+===== PAGE 266/348 =====
+265
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+ Abbildung 93:  Finalisierung des BAP bei bereits vorhandenen AIA und BAP
+ben. Dabei wird nur wenig Spielraum für die Pro-
+jektsteuerung und nachfolgende Planer:innen 
+gelassen. Dies ist vor allem dann der Fall, wenn 
+der AG bzw. seine Projektleitung schon Erfahrun-
+gen in der Abwicklung eines BIM-Projektes auf-
+weist, oder die Dokumente durch entsprechende 
+Berater:innen erstellen lässt.
+Im dargestellten Prozess in Abbildung 93 
+wird davon ausgegangen, dass die AIA bereits 
+existieren und es lediglich zu kleinen Abstim-
+mungen zwischen Auftraggeber (AG, BPL) und 
+Auftragnehmer (BPS, BGK, BFK) bei der Erstellung 
+des BAP kommt. 
+
+
+===== PAGE 267/348 =====
+266
+BIM-Projektorganisation
+Nachfolgend werden die in Abbildung 93 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben:
+1.	 Es wird davon ausgegangen, dass die AIA 
+bereits bestehen und größtenteils auch der BAP 
+bereits vorgegeben bzw. als Konzept vorhanden 
+ist. Dies ist meistens der Fall, wenn Bauherren 
+Erfahrung in der Abwicklung von BIM-Projekten 
+aufweisen.
+2.	 Der vorgegebene BAP wird von der BPS 
+analysiert und überprüft. 
+3.	 Bei Bedarf wird der BAP erweitert. Um 
+spätere Konflikte in der Planung zu vermeiden, 
+können dafür BGK und/oder BFK bei Abstimmung 
+Anwendung finden. Bevor BGK und BFK für einen 
+Informationsaustausch herangezogen werden, 
+sollte man diese einer Qualifikationsüberprüfung 
+unterziehen.
+4.	 Der gegebenenfalls überarbeitete und 
+erweiterte BAP wird zusammen mit möglichen 
+Änderungsvorschlägen seitens BPS, BGK oder 
+BFK wieder an den AG und seine BPL übermit- 
+telt.
+5.	 Nach wiederholter Prüfung des über­
+arbeiteten BAP sowie der Einarbeitung von In­
+formationen und Änderungsvorschlägen kann 
+der BAP entweder vom AG und BPL freigegeben 
+oder zur weiteren Prüfung an die BPS übermittelt 
+werden. 
+Wird der BAP freigegeben, gilt er als Regel-
+werk (wird in der Regel Vertragsbestandteil), 
+welches über den gesamten Projektverlauf  
+von jedem davon erfassten Projektbeteiligten  
+unbedingt eingehalten werden muss. Der BAP  
+ist ein projektspezifisches Dokument, das den 
+Weg zur Erfüllung der BIM-Ziele und BIM-An­
+wendungs­fälle zeigt. Dieses Dokument wird  
+laufend überarbeitet und macht am Ende eines 
+Projekts nachvollziehbar, wie dieses umgesetzt 
+wurde.163
+Erstellung der AIA und des BAP
+Sind die AIA und der BAP in einem Projekt 
+noch nicht vorhanden, müssen diese vorab ver-
+fasst werden. In diesem Prozess (siehe Ab­bil­
+dung 94) wird vereinfacht dargestellt, wie es von 
+einer Projektidee des Auftraggebers (AG) zu 
+einem ausführungsreifen BIM-Abwicklungsplan 
+(BAP) kommt. Der BAP ist dabei als ein „lebendes“ 
+Dokument zu sehen und stellt die Grundlage für 
+jedes BIM-Projekt dar. Der BAP regelt Prozesse,  
+an die sich jede:r Projektbeteiligte – von der oder 
+dem BIM-Gesamtkoordinator:in (BGK) bis zu den 
+BIM-Ersteller:innen (BE) – als Mindeststandard 
+bzw. kleinsten gemeinsamen Nenner zu halten 
+hat. Die BIM-Projektsteuerung (BPS) ist für die 
+Einhaltung und Aktualisierung des BAP verant-
+wortlich. 
+Grundlegend ist der AG für die Erstellung der 
+Auftraggeber-Informations-Anforderungen (AIA) 
+zuständig. Jedoch wird je nach Größe und Kom-
+plexität des Projekts eine BIM-Projektleitung 
+(BPL) aus BIM-erfahrenen Mitgliedern zur Erstel-
+lung herangezogen. Der AG schreibt zusammen 
+mit der BPL all seine Anforderungen an das BIM-
+Projekt in den AIA fest.
+Die BIM-Projektsteuerung (BPS) analysiert 
+die Vorgaben der AIA. Das Konzept für den BAP 
+kann dann – je nach Projektorganisation und 
+Festlegung – in weiterer Folge entweder auch 
+durch die BPS oder aber durch die BGK (in Infor-
+mationsaustausch mit den BFK) erstellt werden. 
+Hierbei ist es wichtig, die Anforderung aus 
+den AIA klar zu definieren und trotzdem noch 
+163 	In der Regel wird der freigegebene BAP offizieller 
+Vertragsbestandteil.
+ 
+ Arbeits- 
+materialien
+Beispiele von AIA
+
+
+===== PAGE 268/348 =====
+267
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+genügend Spielraum für nachfolgende Planer:in-
+nen, welche im nächsten Schritt den BAP kon­
+kretisieren, zu gewährleisten. 
+Das BAP-Konzept der BPS wird vom AG sowie 
+der BIM-Projektleitung (BPL) geprüft und freige-
+geben bzw. mit möglichen Änderungswünschen 
+wieder an die BPS übermittelt (in Abbildung 94 
+als „Rückkopplung BAP-Konzept“ dargestellt). 
+Erst wenn der AG mit dem BAP-Konzept ein­
+verstanden ist, erfolgt die Freigabe. All dies 
+geschieht idealerweise noch vor der ersten 
+Leistungsphase (bzw. vor Beginn der Aus­
+führungs- und Detailplanung). Man könnte  
+diese Phase als Leistungsphase 0 ansehen, in  
+ Abbildung 94: Erstellung der AIA und des BAP 
+
+
+===== PAGE 269/348 =====
+268
+BIM-Projektorganisation
+ 
+ Arbeits- 
+materialien
+Beispiele von BAP
+der die Umgebung für das BIM-Projekt geschaf-
+fen wird.
+Im nächsten Schritt kommen die Planer:in-
+nen in Form des BIM-Gesamtkoordinators (BGK) 
+bzw. der BIM-Fachkoordinatoren (BFK) ins Spiel. 
+Der BGK in Abstimmung mit dem BFK analysiert 
+das BAP-Konzept der BIM-Projektsteuerung und 
+erstellt daraus den endgültigen BAP. Der BAP 
+wird wiederum vom AG mit BPL geprüft und frei-
+gegeben bzw. mit Änderungswünschen wieder 
+über die BPS an den BGK und die BFK zurückge-
+geben (in Abbildung 94 als „Rückkopplung BAP“ 
+dargestellt). Zusätzlich ist noch zu erwähnen, 
+dass die BPS für die Überprüfung der BIM-
+Qualifikationsanforderungen der Planer:innen  
+im Zuge der Vergabe der Planungsleistungen  
+zuständig ist.
+Entspricht der BAP allen Anforderungen des 
+AG und wurde dieser zusätzlich durch seine BPL 
+auf Vollständigkeit geprüft, gilt dieser als Regel-
+werk für das gesamte BIM-Projekt und dessen 
+Beteiligte. Der BAP ist ein lebendes Dokument 
+und kann nur von der BPS in Abstimmung mit  
+der BPL geändert und aktualisiert werden.
+Nachfolgend werden die in Abbildung 94 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben. Es gilt dabei zu beachten, 
+dass der Prozess lediglich die Erstellung der AIA 
+und des BAP beschreibt. Mit Schritt 16 ist der Pro-
+zess der „Erstellung AIA und BAP“ abgeschlossen. 
+Die zusätzlichen Schritte 17 und 18 werden 
+während des gesamten Projektverlaufs, je nach 
+Bedarf, immer wieder durchlaufen.
+1.	
+Der AG zusammen mit seiner BPL halten 
+alle Anforderungen an das BIM-Projekt in den AIA 
+fest. Diese werden auch Rahmenbedingungen 
+für das Projekt genannt.
+2.	
+Die AIA werden von der BPS analysiert und 
+als Vorlage für den BAP herangezogen.
+3.	
+Unter der Einhaltung aller Anforderungen 
+des AG, welche sich in den AIA befinden, erstellt 
+die BPS ein BAP-Konzept. Dieses Konzept muss 
+unter Berücksichtigung der AIA trotzdem noch 
+genügend Spielraum für nachfolgende Planer:in-
+nen enthalten.
+4.	
+Das BAP-Konzept geht nun zurück zur BPL 
+und wird von dieser auf Einhaltung und Vollstän-
+digkeit geprüft.
+5.	
+Nach der Prüfung des BAP-Konzepts  
+durch den AG und die BPL werden Änderungs-
+wünsche an die BPS weitergeleitet. Ist der AG  
+mit dem BAP-Konzept einverstanden, kann auch 
+eine direkte Freigabe des BAP-Konzepts erfol-
+gen.
+6.	
+Die Änderungswünsche des AG und der 
+BPL werden von der BPS berücksichtigt und in 
+den BAP eingebaut. Nun folgen wieder die 
+Schritte 4, 5 und 6 – bis AG und BPL das BAP- 
+Konzept freigeben.
+7.	
+Das Planer:innenteam – hier bestehend aus 
+BGK und BFK – analysiert das BAP-Konzept, wel-
+ches als Vorlage für die Erstellung des endgül­
+tigen BAP dient und auch eingehalten werden 
+muss.
+8.	
+BGK und BFK erstellen den BAP. Eine Ab-
+stimmung mit BPS kann hier zusätzlich erfolgen 
+(ist im Prozess nicht explizit dargestellt). 
+9.	
+Der BAP geht zurück zum AG sowie seiner 
+BPL und wird auf Einhaltung und Vollständigkeit 
+geprüft.
+10.	 Nach der Prüfung des BAP durch den AG 
+und die BPL werden Änderungswünsche an die 
+BPS weitergeleitet. Ist der AG mit dem BAP ein-
+verstanden, kann auch eine direkte Freigabe des 
+BAP erfolgen.
+
+
+===== PAGE 270/348 =====
+269
+17.	 Zu diesem Zeitpunkt wurde der BAP schon 
+freigegeben und gilt als Regelwerk für das BIM-
+Projekt. Da es sich bei dem BAP um ein „leben­
+diges“ Dokument handelt, kann dieser situations-
+bedingt und je nach Bedarf angepasst bzw. 
+aktualisiert werden. Für die Aktualisierung des 
+BAP ist die BPS zuständig, weshalb in diesem Pro-
+zess noch eine zusätzliche Rückkopplung dar­
+gestellt wird.
+18.	 Die BPS sammelt Änderungsvorschläge für 
+den BAP im Laufe der BIM-Projektabarbeitung. 
+Diese Änderungsvorschläge werden mit AG und 
+BPL abgestimmt und bei Einverständnis wird der 
+BAP geändert bzw. aktualisiert.
+In der Projektnachbetrachtung sollten der 
+AG und seine Erfüllungsgehilfen den BAP noch-
+mals analysieren und gegebenenfalls für zukünf-
+tige Projekte anpassen und gewonnene Erkennt-
+nisse einfließen lassen.
+11.	 Die Änderungswünsche des AG und der 
+BPL werden von der BPS berücksichtigt. Eine Än-
+derung kann dann direkt durch die BPS erfolgen 
+oder die Änderungswünsche werden an den BGK 
+und BFK weitergegeben.
+12.	 Unter Berücksichtigung der Änderungs-
+wünsche des AG und der BPL wird der BAP vom 
+BGK zusammen mit dem BFK überarbeitet.
+13.	 Nach der Einbeziehung aller Änderungs-
+wünsche wird der überarbeitete BAP wieder vom 
+AG und seiner BPL auf Einhaltung und Vollstän-
+digkeit geprüft.
+14.	 Entspricht der BAP allen Anforderungen 
+des AG und seiner BPL, kann der BAP freigegeben 
+werden. Bestehen noch Änderungswünsche, 
+folgen wieder die Punkte 11, 12, 13 und 14.
+15.	 Die Freigabe des BAP wird von der BPS an 
+die BGK weitergegeben.
+16.	 Der BAP ist damit vorerst finalisiert und 
+freigegeben, wird aber im Laufe des Projekts 
+immer wieder aktualisiert und überarbeitet.
+Modelle
+DR. KONSTANTIN POCHMARSKI 
+für die Arbeit mit AIA und BAP
+Rechtstipp
+ In den AIA sind präzis die Vorgaben des AG 
+aus seinen BIM-Zielen festzuschreiben, 
+damit diese mit der Ausschreibung und dem 
+Vertrag bindend werden.
+ Wenn der BAP nach Vertragsschluss ge-
+meinsam erarbeitet oder geändert wird, 
+ist dies nur mehr parteieneinvernehmlich 
+bzw. konkretisierend im Rahmen der bin-
+dend festgelegten Vorgaben der AIA mög-
+lich.
+ Präzise Leistungsvorgaben hinsichtlich 
+Quantität und Qualität der Leistungen ge-
+hören in die Ausschreibung mit den AIA.
+ Der BAP regelt dann „nur“ mehr den Weg zu 
+der Leistungserbringung. 
+ Studium von AIA, BAP, Einzelvertrag, 
+BIM-BVB, welche Rollen und Aufgaben 
+wem zugewiesen sind.
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+
+
+===== PAGE 271/348 =====
+270
+BIM-Projektorganisation
+Einbindung bzw. Erstellung der 
+Kollaborationsplattform CDE
+Die Kollaborationsplattform, kurz CDE (Com-
+mon Data Environment), ist eine Plattform, die als 
+zentrale Datenbank aller Dokumente rund um ein 
+BIM-Projekt dient.164 
+Anzumerken ist hierbei, dass „eine“ einzelne 
+Plattform für ein BIM-Projekt wünschenswert 
+wäre. In der aktuellen Praxis kommt es aber meist 
+zum Einsatz mehrerer Plattformen, die mit unter-
+schiedlichen Schwerpunkten parallel betrieben 
+werden. Für die weitere Darstellung wird jeweils 
+das CDE abgebildet, um das Verständnis für die 
+Prozesse besser gewährleisten zu können.  
+Für ein konkretes Projekt in der Praxis ist festzu-
+legen, über welche Plattformen welche Daten 
+ausgetauscht werden und wer auf welche Daten 
+Zugriff hat.
+Das CDE wird z.B. von der BIM-Projektsteue-
+rung aufgebaut, zur Verfügung gestellt, aktuali-
+siert und erweitert.165 Als Unterstützung bei der 
+164	 Natürlich kann ein CDE auch ohne den expliziten 
+Einsatz von BIM zur Anwendung kommen.
+165	 Je nach Auftraggeber und Festlegungen in den AIA 
+kann es auch sein, dass das CDE von den Planer:in-
+nen gestellt wird.
+ Abbildung 95: Inhalte einer CDE (idealtypisch in einer Plattform vereint) 
+
+
+===== PAGE 272/348 =====
+271
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+Erstellung des CDE zieht die BIM-Projektsteue-
+rung häufig das Planer:innenteam – bestehend 
+aus BIM-Gesamtkoordinator:in und BIM-Fach­
+koordinator:innen – hinzu. 
+Je nach zugewiesenen Zuständigkeiten legt 
+der Ersteller des CDE (z.B. BPS) in weiterer Folge 
+fest, welche Projektbeteiligten auf welche Daten 
+in dem CDE zugreifen dürfen bzw. welchen Pro-
+jektbeteiligten es erlaubt ist, neue Daten in das 
+CDE zu schreiben. Dabei werden von der BIM-
+Projektsteuerung Lese- und Schreibberechtigun-
+gen an die Projektbeteiligten erteilt und manch-
+mal auch eine Nomenklatur für die Dokumente 
+vorgegeben.
+Die beispielhafte Aufzählung zeigt, welche 
+Daten im CDE zu finden sind (siehe auch Ab­
+bildung 95):
+ Auftraggeber-Informations-Anforderungen 
+(AIA)
+ BIM-Abwicklungsplan (BAP)
+ Modelle (Koordinationsmodell; Fachmodell 
+TGA, TWP, AR; Umgebungsmodell; As-Built-
+Modell)
+ Aufträge und Angebote (z.B. mit beschränk-
+tem Zugriff für AG)
+ Genehmigungsdokumente
+ Besprechungs- und Abnahmeprotokolle, 
+Gutachten, Befunde
+ Bestell- und Lieferscheine
+ Zertifikate
+ Nachweise und Berechnungen
+ Pläne
+ etc.
+Teilweise werden in BIM-Projekten schon 
+CDE-Systeme vom Bauherrn vorgegeben. Das 
+kommt vor allem dann vor, wenn der Bauherr 
+bzw. seine Projektleitung bereits Erfahrungen in 
+der Abwicklung eines BIM-Projektes aufweist 
+oder eine zentrale Datenbank hat.
+Im dargestellten Prozess in Abbildung 96 
+wird davon ausgegangen, dass das CDE bereits 
+vorgegeben ist und von der BPS sowie den nach-
+folgenden Planer:innen lediglich adaptiert wird.
+Nachfolgend werden die in Abbildung 96 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben:
+1.	 Eine funktionierende CDE wird der BPS vom 
+AG und seiner BPL vorgegeben.
+2.	 Die BPS bindet das CDE in das BIM-Projekt 
+ein und ist im Laufe des Projekts zuständig für des-
+sen Funktionalität und Aktualisierung. Dabei steht 
+die BPS in ständigem Informationsaustausch mit 
+der BGK und den BFK, um mög­liche Änderungs-
+vorschläge in das CDE aufnehmen zu können.
+3.	 Im dritten Schritt werden die Planer:innen 
+(BGK, BFK) in das CDE mit eingebunden. Dabei 
+werden Zugriffsrechte (z.B. Lese- und Schreib­
+berechtigungen) von der BPS an die Planer:innen 
+vergeben.
+4.	 Wurden die Zugriffsrechte vergeben, 
+können die BGK und BFK das CDE analysieren 
+und bei Bedarf Informationen auslesen oder 
+hineinschreiben.
+Ist das CDE noch nicht vorhanden, muss 
+diese erst entsprechend aufgebaut werden,  
+
+
+===== PAGE 273/348 =====
+272
+BIM-Projektorganisation
+ Abbildung 96: Adaptierung einer vorhandenen Kollaborationsplattform (CDE)
+um eine zentrale Datenablage und -verwaltung 
+gewährleisten zu können. Dies ist aktuell das  
+vor­herrschende Szenario. Das Erstellen der Kol­
+laborationsplattform ist als Prozess in Abbil-
+dung 97 dargestellt. Im Zentrum steht wiederum 
+die BIM-Projektsteuerung (BPS), die zusätzlich 
+von der BIM-Gesamtkoordination (BGK) und den  
+BIM-Fachkoordinator:innen (BFK) unterstützt 
+wird. 
+Nachfolgend werden die in Abbildung 97 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben. Hinweis: Der Prozess be-
+inhaltet nicht das Einarbeiten von Planungs­
+dateien in das CDE, sondern lediglich den Prozess 
+zur Erstellung des CDE im Sinne des „Aufsetzens 
+eines BIM-Projekts“. Mit Schritt 10 ist der Prozess 
+„Erstellung Kollaborationsplattform“ abgeschlos-
+sen. Die Schritte 11 und 12 werden während des 
+
+
+===== PAGE 274/348 =====
+273
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+ Abbildung 97: Erstellung der Kollaborationsplattform (CDE) 
+gesamten Projektverlaufs je nach Bedarf immer 
+wieder durchlaufen:
+1.	
+Der AG und seine BPL stellen die Anfor­
+derung eines CDE an die BPS. Dies wird meist 
+schon in den AIA festgelegt. Dadurch ist die BPS 
+verpflichtet, ein CDE für das BIM-Projekt zu er­
+stellen und über den gesamten Projektverlauf zu 
+aktualisieren und zu warten.
+2.	
+Nach den in den AIA und dem BAP fest­
+gelegten Rahmenbedingungen wird von der  
+BPS zunächst ein Konzept für ein CDE erstellt.
+
+
+===== PAGE 275/348 =====
+274
+BIM-Projektorganisation
+3.	
+Das Konzept des CDE wird von der BPS an 
+das Planer:innenteam – hier bestehend aus BGK 
+und BFK – weitergegeben.
+4.	
+Das CDE-Konzept wird vom BGK in Ab­
+stimmung mit den BFK konkretisiert und vervoll-
+ständigt.
+5.	
+Die vom Planer:innenteam überarbeitete 
+CDE geht zur Überprüfung zurück zur BPS. Das 
+CDE wird nochmals von der BPS überarbeitet und 
+entweder direkt freigegeben oder es werden 
+Änderungswünsche an das Planer:innenteam 
+weitergegeben (im Prozess als „Rückkopplung 
+CDE“ bezeichnet).
+6.	
+Bestehen Änderungswünsche seitens der 
+BPS, werden diese entweder direkt von der BPS 
+übernommen oder an die BGK delegiert.
+7.	
+Vorhandene Änderungswünsche der  
+BPS werden vom Planer:innenteam in dem CDE 
+berücksichtigt und überarbeitet.
+8.	
+Das überarbeitete CDE geht zurück an  
+die BPS, von dieser wird es wiederum geprüft 
+und freigegeben. Bestehen immer noch Ände- 
+rungswünsche, folgen wieder die Schritte 6, 7  
+und 8.
+9.	
+Sind keine Änderungen mehr vorzu­
+nehmen, wird das CDE von der BPS freige- 
+geben.
+10.	 Das CDE ist damit vorerst finalisiert und 
+freigegeben, wird aber im Laufe des Projekts  
+immer wieder aktualisiert und überarbeitet.
+11.	 Die BPS ist für die Aktualisierung und 
+Beaufsichtigung des CDE zuständig. Daher ist  
+im dargestellten Prozess noch eine weitere 
+
+
+===== PAGE 276/348 =====
+275
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+Rückkopplung hinzugefügt, welche die lau-
+fende Aktualisierung des CDE durch die BPS 
+visualisiert.
+12. Änderungswünsche/-vorschläge können
+von allen Projektbeteiligten im Laufe des Projekts 
+kommuniziert werden. Aufgabe der BPS ist es, 
+diese Änderungswünsche/-vorschläge zu prüfen 
+und bei Bedarf direkt in das CDE einzuarbeiten 
+oder die Änderungen durch den BGK durchfüh-
+ren zu lassen.
+Erstellung der Fachmodelle
+Nach der Erstellung des CDE geht es in die 
+eigentliche Planung bzw. Erstellung der Fach-
+modelle durch die Fachplaner:innen. Der in 
+Abbildung 98 dargestellte Prozess zur Erstellung 
+der Fachmodelle erstreckt sich von der PPH 2 
+bis zur PPH 4 bzw. über die Leistungsphasen 
+1 bis 8.
+Zur besseren Übersicht bildet der dargestell-
+te Prozess nur zwei Fachplaner:innen (Architektur 
+und TGA) ab, kann aber, dem dargestellten Mus-
+ter entsprechend, für weitere Fachplaner:innen 
+fortgeführt werden.
+Speziell am Beginn eines Projekts wird es 
+sich bei der Erstellung der Fachmodelle noch 
+nicht um parallele Vorgänge handeln. Erst im 
+Laufe des Projekts stellt sich eine gleichlaufende 
+Bearbeitung (wie sie in Abbildung 98 dargestellt 
+ist) ein.
+Zur Zusammenarbeit innerhalb des eigenen 
+Büros oder auch mit anderen Fachplaner:innen 
+wird auf Kapitel 5 (Zusammenarbeit) verwiesen.
+Kapitel 5, S. 206  
+  
+Zusammenarbeit
+ Versicherungsdeckung der Haftp˜ icht-
+versicherung generell bzw. für das Einzel-
+projekt prüfen.
+ Bedarf an neuen Versicherungen („cyber-
+Versicherung“) prüfen.
+ Mit dem AG Versicherungslösungen für das 
+Gesamtprojekt erörtern (vgl. „Bauwesen-
+versicherung“).
+ Welche Daten, Informationen habe ich, die 
+ich nicht Dritten unbeschränkt zur Verfü-
+gung stellen will? = „Geschäftsgeheimnisse“.
+ Auf welche Weise sind diese Geschäfts-
+geheimnisse im Projekt „vulnerabel“?
+ Welche rechtlichen/vertraglichen Verein-
+barungen und Vorgaben gibt es (in der AIA, 
+in den BIM-BVB etc.) zum Schutz meiner 
+Geschäftsgeheimnisse?
+ Welche technischen Mittel kann man (z.B. 
+im BAP) zum Schutz meiner Geschäfts-
+geheimnisse implementieren?
+DR. KONSTANTIN POCHMARSKI 
+für die Arbeit im CDE
+Rechtstipp
+
+
+===== PAGE 277/348 =====
+276
+BIM-Projektorganisation
+ Abbildung 98: Erstellung der Fachmodelle
+
+
+===== PAGE 278/348 =====
+277
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+Nachfolgend werden die in Abbildung 98 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben:
+1.	
+Daten auslesen.
+2.	
+Das CDE gilt als Plattform zur Datenbereit-
+stellung jeglicher Form rund um das BIM-Projekt. 
+Die BFK lesen den aktuellen BAP aus dem CDE 
+heraus und analysieren diesen. In den AIA und 
+den daraus abgeleiteten BAP sind alle Informa­
+tionen für eine ordnungsgemäße Erstellung  
+eines BIM-Fachmodells festgelegt.166  
+3.	
+Der BFK ist verantwortlich für die Koor­
+dination und Aktualisierung des Fachmodells.  
+Er hat Zugriff auf die Informationen des CDE und 
+gibt diese an die BIM-Ersteller:innen (BE) weiter. 
+Zusätzlich gilt der BFK als Koordinator:in für alle 
+zugeordneten BE. Der BFK ist außerdem im stän-
+digen Informationsaustausch mit anderen BFK, 
+um hier Abstimmungen vorzunehmen.
+4.	
+Die BE sind verantwortlich für die Erstel-
+lung und Aktualisierung des BIM-Fachmodells. 
+Dabei müssen zwingend alle Vorgaben aus dem 
+BAP zur Erreichung der Anforderungen aus den 
+AIA eingehalten werden. Zusätzlich gilt es, bei 
+der Erstellung des BIM-Fachmodells alle weiteren 
+Informationen des BFK zu berücksichtigen.
+5.	
+Das erstellte BIM-Fachmodell wird vom 
+BFK überprüft. Das BIM-Fachmodell wird vom 
+BFK entweder freigegeben und in das CDE 
+übertragen, direkt überarbeitet oder es werden 
+Änderungswünsche an die BE weitergeleitet. 
+6.	
+Bestehen Änderungswünsche seitens des 
+BFK (oder vorgeschalteten BIM-Projektbeteiligten 
+wie BPS, ÖBA, BGK), werden diese zur Einarbei-
+tung an den BE weitergegeben.
+7.	
+Alle Änderungswünsche werden wieder 
+unter Berücksichtigung des BAP in das BIM- 
+ aufgenommen und dieses aktualisiert.
+8.	
+Wie in Schritt 4 wird das BIM-Fachmodell 
+wieder von dem BFK überprüft.
+9.	
+Entspricht das BIM-Fachmodell allen der-
+zeitigen Anforderungen im Projekt, wird es für 
+weitere Projektbeteiligte in das CDE übertragen. 
+Achtung: Schritt 8 findet nur statt, wenn die Pla-
+ner:innenvergabe bereits stattgefunden hat und 
+z.B. ein Wettbewerb beendet ist. Vor der Vergabe 
+werden nur die erforderlichen Unterlagen von 
+dem oder der BIM-Gesamtkoordinator:in oder 
+BIM-Fachkoordinator:in an den Auftraggeber und 
+deren Projektmanagement übergeben.
+10.	 Prozess beginnt von vorne mit neuem 
+Projektfortschritt.
+166	 Bei der Erstellung der Fachmodelle sind die Fach­
+planer:innen weitestgehend frei und auch nicht an 
+Vorgaben ge­bunden. Bei der Übergabe der (inter-
+nen) Fachmodelle in das Koordinationsmodell sind 
+aber die Vorgaben aus dem BAP streng einzuhalten, 
+um die Erstellung des Koordinationsmodells zu er-
+möglichen. 
+	
+Erfahrungen in BIM-Projekten haben gezeigt, dass 
+AIA und BAP allein oft nicht ausreichen, um den Pla-
+ner:innen den notwendigen Rahmen vorzugeben, 
+sodass die Modelle direkt weiterverwendet werden 
+können. Aus diesem Grund können Modellierungs-
+leitfäden nationaler und/oder internationaler Ar-
+beitskreise als vertragliche Begleitdokumente zu  
+den AIA festgelegt werden, um so die Mindest­
+anforderungen an die Erstellung der Fachmodelle 
+noch genauer definieren zu können.
+
+
+===== PAGE 279/348 =====
+278
+BIM-Projektorganisation
+ Abbildung 99: Erstellung des Koordinationsmodells
+
+
+===== PAGE 280/348 =====
+279
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+Erstellung des  
+Koordinationsmodells
+Einer der wesentlichen Vorteile – aber auch 
+eine Herausforderung – von BIM-Projekten ist das 
+Zusammenführen unterschiedlicher Fachmodelle 
+zu einem Gesamt- bzw. Koordinationsmodell im 
+Sinne der integralen Planung. Anhand dieses 
+Modells können in weiterer Folge z.B. Kollisions-
+prüfungen und Abstimmungen zwischen den 
+Fachplaner:innen durchgeführt werden. Diese 
+Modelle können bei eindeutiger Abstimmung 
+ihrer Ziele, Qualitäten und Schnittstellen auch 
+bereits im Innenverhältnis zwischen zwei oder 
+drei Planer:innen schnell zu einer Verbes­serung 
+der Kommunikation und der Abstimmung bei­
+tragen.
+Der Prozess zur Erstellung eines Koordina­
+tionsmodells ist in Abbildung 99 ersichtlich.  
+Die Prozesse für die Erstellung der Fachmodelle 
+(siehe Abbildung 98) und eines Koordinations-
+modells sind als direkt miteinander verknüpft  
+zu sehen. Es handelt sich dabei um einen sich 
+schrittweise wiederholenden Prozess innerhalb 
+des BIM-Projekts, der laufende Abstimmungen 
+und Koordinationen zwischen den Akteuren er-
+fordert.
+Nachfolgend werden die in Abbildung 99 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben:
+1.	
+Daten auslesen.
+2.	
+Der BGK (bzw. der koordinierende BFK bei 
+Einzelplanervergabe) ist verantwortlich für die Er-
+stellung, die Koordination und die Aktualisierung 
+des BIM-Koordinationsmodells. Dazu ist er:sie 
+verpflichtet, die BIM-Fachmodelle der BFK zu 
+analysieren und zu prüfen.
+3.	
+Durch Zusammenführen der BIM-Fach­
+modelle wird vom BGK ein Koordinationsmodell 
+erstellt. In diesem Modell werden alle Fachmodel-
+le auf Kompatibilität geprüft (z.B. Kollisionsprü-
+fung, ID-Prüfung, Geometrieprüfung, Merkmal-
+prüfung, Strukturprüfung).
+4.	
+Alle Informationen, welche entweder soft-
+warebasiert oder durch den BGK in Absprache 
+mit den BPS generiert wurden, werden zur weite-
+ren Verarbeitung wieder in das CDE übertragen. 
+Diese Informationen können auch als Änderungs-
+auftrag an die BFK in das CDE integriert werden.
+5.	
+In einer CDE existieren nun neue Informa-
+tionen, welche von den betroffenen Projektbetei-
+ligten überarbeitet werden müssen. Zum Beispiel 
+könnte durch die Kollisionsprüfung ein Ände-
+rungsauftrag (BCF-Viewpoint) für den BFK-TGA 
+entstanden sein, womit man wieder bei den 
+Schritten 2 bzw. 3 im Prozess „Modellerstellung 
+Fachmodell“ (siehe Abbildung 98) einsteigen 
+würde.

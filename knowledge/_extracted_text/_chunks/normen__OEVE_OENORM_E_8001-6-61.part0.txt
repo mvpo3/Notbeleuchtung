@@ -1,0 +1,1125 @@
+
+
+===== PAGE 1/19 =====
+ÖVE/ÖNORM
+E 8001-6-61
+Ausgabe: 2001-07-01
+Normengruppen 330 und E
+ Ungleich (NEQ) IEC 60364-6-61:1986 Übersetzung
+ Ungleich (NEQ) HD 384.6.61 S1:1992
+Ersatz für siehe Nationales Vorwort
+ICS 29.240.01
+Errichtung von elektrischen Anlagen mit
+Nennspannungen bis 1000 V und 1500 V
+Teil 6-61: Prüfungen – Erstprüfungen
+Erection of electrical installations with rated voltages up to 1000 V and 1500 V –
+Part 6-61: Verification – Initial verification
+Réalisation des installations électriques de tension nominale jusqu’à 1000 V
+et 1500 V – Partie 6-61: Vérification – Vérification à la mise en service
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als
+auch den einer ÖNORM gemäß NG 1971.
+Fortsetzung
+ÖVE/ÖNORM E 8001-6-61 Seiten 2 bis 19
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, A-1010 Wien
+Fach(normen)ausschuss
+Österreichisches Normungsinstitut, A-1021 Wien
+FA/FNA E
+Copyright © ÖVE/ON - 2001. Alle Rechte vorbehalten; 
+Elektrische Niederspannungsanlagen
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger
+ 
+nur mit Zustimmung des ÖVE/ON gestattet!
+ 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch: 
+          
+ON Österreichisches Normungsinstitut, Heinestraße 38, Postfach 130, A-1021 Wien
+          
+Tel.: (+43-1) 213 00-805, Fax: (+43-1) 213 00-818, E-Mail: sales@on-norm.at,
+Internet: http://www.on-norm.at
+Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für
+Preisgruppe 12
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43-1) 587 63 73,
+Telefax: (+43-1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at
+
+
+===== PAGE 2/19 =====
+Seite 2
+ÖVE/ÖNORM E 8001-6-61
+Inhaltsverzeichnis
+Seite
+Vorbemerkung ....................................................................................................................................................2
+1
+Anwendungsbereich...................................................................................................................................3
+2
+Normative Verweisungen ...........................................................................................................................3
+3
+Begriffe.......................................................................................................................................................3
+4
+Allgemeines................................................................................................................................................4
+5
+Besichtigung...............................................................................................................................................4
+6
+Erproben und Messen ................................................................................................................................5
+Anhang A (normativ): Methoden zur Messung der Übergangswiderstände von Fußböden und Wänden.........9
+Anhang B (normativ): Nachweis der Funktion von Fehlerstrom-Schutzschaltern ...........................................11
+Anhang C (informativ): Messung des Erdungswiderstandes ............................................................................12
+Anhang D (informativ): Messung der Fehlerschleifenimpedanz .......................................................................15
+Anhang E (informativ): Leitlinie zur Anwendung der vorliegenden Bestimmungen ..........................................16
+Anhang F (informativ): Übersichtstabelle zur Prüfung der Schutzmaßnahmen ................................................18
+Anhang G (informativ): Literaturhinweise..........................................................................................................19
+Vorbemerkung
+Auf Grund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig alle
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den
+einer ÖNORM gemäß NG 1971.
+Die Reihe ÖVE-EN 1 wird künftig als Reihe ÖVE/ÖNORM E 8001 erscheinen. In der Übergangsfrist werden Teile der
+ÖVE-EN 1 und Teile von ÖVE/ÖNORM E 8001 bestehen, die gegebenenfalls gemeinsam angewendet werden müssen.
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den je-
+weils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen.
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten:
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle
+Stand zu berücksichtigen.
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst.
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des Aus-
+gabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die Verweisung auf
+die jeweils neueste Ausgabe dieses Standards.
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug genommene
+Ausgabe des Standards.
+In dieser ÖVE/ÖNORM ist der sachliche Inhalt von CENELEC HD 384.6.61 S1:1992, das IEC 60364-6-61:1986 mit
+gemeinsamen CENELEC-Abänderungen entspricht, eingearbeitet worden. Die Abschnittsnummern des CENELEC
+HD 384.6.61 S1:1992 sind am Rand in eckigen Klammern gesetzt.
+Abweichungen bzw. nationale Ergänzungen sind mit [ – ] gekennzeichnet.
+Erläuterung zum Ersatzvermerk
+Die vorliegende ÖVE/ÖNORM ersetzt die Anhänge A.1 bis A.3 von
+ÖVE-EN 1 Teil 1:1989 + Teil 1a:1992 + Teil 1b:1995-10.
+Da ÖVE-EN 1 Teil 1:1989 + Teil 1a:1992 + Teil 1b:1995-10 mit der ETV 1996 verbindlich erklärt ist, kann die
+Zurückziehung dieser ÖVE erst mit Erscheinen einer neuen ETV erfolgen. Auf entsprechende Übergangsfristen in einer
+neuen ETV ist zu achten.
+
+
+===== PAGE 3/19 =====
+Seite 3
+ÖVE/ÖNORM E 8001-6-61
+1
+Anwendungsbereich
+Diese ÖVE/ÖNORM gilt für die Erstprüfung von elektrischen Anlagen, die gemäß ÖVE-EN 1 Reihe bzw. ÖVE/ÖNORM
+E 8001 Reihe errichtet bzw. wesentlich erweitert oder wesentlich geändert werden.
+ANMERKUNG 1:
+Anleitungen für wiederkehrende Prüfungen sind in ÖVE/ÖNORM E 8001-6-62 (in Vorbereitung) enthalten.
+ANMERKUNG 2:
+Anleitungen für die Anlagen- und Prüfdokumentation sind in ÖVE/ÖNORM E 8001-6-63 (in Vorbereitung)
+enthalten.
+ANMERKUNG 3:
+Wenn für besonders genützte Räume oder Bereiche andere Bestimmungen (z.B. ÖVE-EN 2, ÖVE-EN 7,
+ÖVE-EX 65 usw.) zutreffen, ist die Erfüllung der relevanten Anforderungen zu prüfen. Die vorliegenden
+Bestimmungen sind jedoch nicht Gegenstand dieser Forderungen.
+2
+Normative Verweisungen
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil dieser
+ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen nicht. Vertragspartner,
+die diese ÖVE/ÖNORM anwenden, werden jedoch aufgefordert, die Möglichkeit zu prüfen, die jeweils neuesten
+Ausgaben der nachfolgend angegebenen normativen Dokumente anzuwenden. Bei undatierten Verweisungen ist die
+letzte Ausgabe des in bezug genommenen normativen Dokumentes anzuwenden. Rechtsvorschriften sind immer in der
+jeweils geltenden Fassung anzuwenden.
+ÖVE-EN 1 Reihe
+Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 41500 V
+ÖVE/ÖNORM E 8001 Reihe
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 41500 V
+ÖVE/ÖNORM E 8001-1
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 4 500 V –
+Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen)
+ÖVE-EN 1 Teil 2
+Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 41500 V –
+Teil 2: Elektrische Betriebsmittel
+ÖVE-HG 701-1
+Instandsetzung, Änderung und Prüfung elektrischer Geräte für den Hausgebrauch und
+ähnliche Zwecke – Teil 1: Allgemeine Bestimmungen
+ÖVE/ÖNORM E 8001-6-62
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 41500 V –
+Teil 6-62: Prüfungen – Wiederkehrende Prüfungen (in Vorbereitung)
+ÖVE/ÖNORM E 8001-6-63
+Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 41500 V –
+Teil 6-63: Prüfungen – Anlagenbuch und Prüfbefund (in Vorbereitung)
+ÖVE bzw. ÖVE/ÖNORM 
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC 1,5 kV – Geräte
+EN 61557 Reihe
+zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen
+ÖVE EN 61557-4
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC 1,5 kV – Geräte
+zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 4: Widerstand von
+Erdungsleitern, Schutzleitern und Potentialausgleichsleitern
+ÖVE EN 61557-6
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC 1,5 kV – Geräte
+zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 6: Fehlerstrom-
+Schutzeinrichtungen (RCD) in TT-, TN- und IT-Systemen
+ÖVE bzw. ÖVE/ÖNORM 
+Sicherheit von Transformatoren, Netzgeräten und dergleichen
+EN 61558 Reihe
+3
+Begriffe
+[ HD 384.6.61, Anhang Z]
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten folgende Begriffe:
+3.1
+Prüfen
+alle Tätigkeiten, durch welche festgestellt wird, ob die Ausführung der gesamten elektrischen Anlage den jeweils
+zutreffenden Bestimmungen entspricht. Prüfen umfasst das Besichtigen, Erproben und Messen.
+3.2
+Besichtigen
+augenscheinliche Überprüfung der elektrischen Anlagen zur Feststellung ihrer bestimmungsgemäßen Errichtung.
+3.3
+Erproben und Messen
+alle Maßnahmen, die über das Besichtigen hinausgehen, um in einer elektrischen Anlage festzustellen, ob diese ihren
+Zweck erfüllt.
+
+
+===== PAGE 4/19 =====
+Seite 4
+ÖVE/ÖNORM E 8001-6-61
+4
+Allgemeines
+[61]
+[61.1.1]
+4.1
+Jede elektrische Anlage muss je nach Zweckmäßigkeit während der Errichtung und/oder bei Fertigstellung bevor
+sie in bestimmungsgemäßen Betrieb genommen wird, geprüft werden. Sie muss vor Inbetriebnahme geprüft werden, um
+nachzuweisen, dass die Anforderungen der jeweils zutreffenden technischen Bestimmungen erfüllt sind.
+[61.1.2]
+4.2
+Die gemäß ÖVE-EN 1 Teil 2:1993-04 und ÖVE-EN 1 Teil 2a:1996-03, § 25 geforderten Informationen müssen
+dem Prüfer zur Verfügung gestellt werden.
+[61.1.3]
+4.3
+Während der Prüfung müssen Vorsichtsmaßnahmen getroffen werden, um eine Gefährdung von Personen und
+eine Beschädigung von Sachwerten einschließlich der eingebauten Betriebsmittel zu vermeiden.
+[61.1.4]
+4.4
+Im Falle einer Erweiterung oder Änderung einer bestehenden Anlage muss geprüft werden, ob die Erweiterung
+oder Änderung der Reihe ÖVE-EN 1 bzw. ÖVE/ÖNORM E 8001 entspricht und die Sicherheit der bestehenden Anlage
+nicht beeinträchtigt wird.
+[61.1.5]
+4.5
+Die Prüfung muss von einer Elektrofachkraft durchgeführt werden, die über entsprechende Erfahrungen verfügt.
+[61.1.6, – ]
+4.6
+Über die abgeschlossenen Prüfungen gemäß 4.1 und 4.4 muss ein Bericht erstellt werden, der die erforderlichen
+Prüfergebnisse enthalten muss.
+5
+Besichtigung
+[611]
+[611.1]
+5.1
+Die Besichtigung muss vor dem Erproben und Messen erfolgen und ist vorzugsweise bei abgeschalteter Anlage
+durchzuführen.
+[611.2]
+5.2
+Die Besichtigung muss durchgeführt werden, um festzustellen, dass die Bestandteile der Anlage folgenden
+Anforderungen genügen:
+(1)
+Übereinstimmung mit den zutreffenden Sicherheitsanforderungen für die einzelnen Betriebsmittel;
+ANMERKUNG:
+Dies kann durch Überprüfung von Aufschriften, Kennzeichnungen oder Zertifikaten erfolgen.
+(2)
+korrekte Auswahl und Einbau entsprechend den Anforderungen gemäß den Reihen ÖVE-EN 1 bzw.
+ÖVE/ÖNORM E 8001 und den Herstellerangaben;
+(3)
+keine sichtbaren, die Sicherheit beeinträchtigenden Beschädigungen.
+Sicherheitsrelevante Abweichungen sind zu beheben, bevor Erprobungen oder Messungen vorgenommen werden.
+[611.3]
+5.3
+Die Besichtigung muss mindestens die Kontrolle folgender Punkte auf plangemäße Ausführung umfassen (sofern
+zutreffend):
+(1)
+Art der Maßnahme des Fehlerschutzes sowie Messung von Abständen, die z.B. den Schutz durch
+Absperrungen oder Umhüllungen, durch Hindernisse oder durch Anordnung außerhalb des Handbereichs be-
+treffen;
+ANMERKUNG:
+Die Anforderungen gemäß ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 7.4 "Standortisolierung" sind nur dann
+überprüfbar, wenn die Anlage ausnahmslos fest angeschlossene Betriebsmittel enthält.
+(2)
+Vorhandensein von Brandabschottungen und anderen brandschutztechnischen Maßnahmen sowie Schutz
+gegen thermische Einwirkungen (siehe ÖVE/ÖNORM E 8001-1-23, ÖVE/ÖNORM E 8001-4-50),
+(3)
+verwendete Leiter, Erdungsleitungen und Erder bereits im Zuge der jeweiligen Errichtung einschließlich
+nachvollziehbarer Dokumentation,
+(4)
+verwendete Schutz- und Überwachungseinrichtungen und deren Einstellungen,
+(5)
+Vorhandensein von geeigneten und an der richtigen Stelle angeordneten Trenn- und Schaltgeräten,
+(6)
+verwendete Betriebsmittel und deren Schutzarten,
+(7)
+Kennzeichnung der Neutralleiter und der Schutzerdungsleiter,
+(8)
+Vorhandensein von Plänen, Warnhinweisen und dergleichen,
+(9)
+Kennzeichnung der Stromkreise, Sicherungen, Schalter, Klemmen usw.,
+(10) ordnungsgemäße Leiterverbindungen,
+(11) leichte Zugängigkeit zur Bedienung, Kennzeichnung und Instandhaltung.
+
+
+===== PAGE 5/19 =====
+Seite 5
+ÖVE/ÖNORM E 8001-6-61
+6
+Erproben und Messen
+[612]
+6.1
+Allgemeines
+[612.1, – ]
+Die nachstehenden Erprobungen und Messungen sind, sofern zutreffend, durchzuführen (siehe Anhang F) und sollten
+vorzugsweise in der folgenden Reihenfolge vorgenommen werden:
+(1)
+Durchgängigkeit der Schutzerdungsleiter und der Potentialausgleichsleiter (siehe 6.2),
+ANMERKUNG:
+Es ist zweckmäßig, auch die Durchgängigkeit der Neutralleiter nachzuweisen.
+(2)
+Isolationswiderstände der elektrischen Anlage (siehe 6.3),
+(3)
+Trennung der Stromkreise in den Fällen der Maßnahmen des Fehlerschutzes Schutzkleinspannung,
+Funktionskleinspannung und Schutztrennung (siehe 6.4),
+(4)
+Fußboden- und Wandwiderstände (siehe 6.5),
+(5)
+automatische Abschaltung im Fehlerfall (siehe 6.6),
+(6)
+Prüfung auf polrichtiges Schalten (siehe 6.7),
+(7)
+bleibt frei,
+(8)
+Funktionsprüfungen (siehe 6.9),
+(9)
+bleibt frei,
+(10) Prüfung des Drehfeldes (siehe 6.11).
+Im Falle eines festgestellten Fehlers sind die Funktionsprüfungen und Messungen, die durch den Fehler möglicherweise
+beeinflusst wurden, zu wiederholen, nachdem der Fehler behoben wurde.
+Die Messgeräte müssen der Reihe ÖVE bzw. ÖVE/ÖNORM EN 61557 entsprechen, es sei denn, es werden Messgeräte
+verwendet, die keinen geringeren Grad an Genauigkeit und Sicherheit aufweisen.
+6.2
+Durchgängigkeit der Schutzerdungsleiter und der Potentialausgleichsleiter
+[612.2, − ]
+Die Prüfung der Durchgängigkeit von Schutzerdungsleiter und Potentialausgleichsleiter ist durch Messung mit
+Messgeräten gemäß ÖVE EN 61557-4 durchzuführen.
+Der Nachweis gilt ebenfalls als erbracht, wenn der niedere Widerstand (Niederohmigkeit) des Schutzerdungsleiters im
+Zuge einer Prüfung der Fehlerstrom-Schutzschaltung mit Messgeräten gemäß ÖVE EN 61557-6 ermittelt wurde.
+6.3
+Isolationswiderstände der elektrischen Anlage
+[612.3]
+Der Isolationswiderstand muss zwischen allen aktiven Leitern und Erde gemessen werden:
+a) zwischen allen möglichen Zweierkombinationen der aktiven Leiter
+ANMERKUNG:
+In der Praxis kann diese Messung nur während der Errichtung durchgeführt werden, solange die
+Verbrauchsmittel nicht angeschlossen sind.
+b) zwischen jedem aktiven Leiter und Erde.
+ANMERKUNG 1:
+In TN-C-Systemen wird der PEN-Leiter als geerdet betrachtet.
+ANMERKUNG 2:
+Während dieser Messung dürfen Außen- und Neutralleiter miteinander verbunden sein.
+ANMERKUNG 3:
+Die Werte der Tabelle 1 gelten ebenso für den Isolationswiderstand ungeerdeter Schutzleiter gegen Erde.
+Bei diesen Messungen muss auch der Neutralleiter von der Stromversorgung getrennt sein. Ferner ist darauf zu achten,
+dass im zu messenden Stromkreis allenfalls vorhandene Überspannungs-Schutzeinrichtungen abgeklemmt sind.
+
+
+===== PAGE 6/19 =====
+Seite 6
+ÖVE/ÖNORM E 8001-6-61
+Tabelle 1: Mindestwerte des Isolationswiderstandes
+Stromkreis-Nennspannung
+V
+Prüfgleichspannung
+V
+Isolationswiderstand
+MΩ
+1
+Schutzkleinspannung und
+Funktionskleinspannung
+250
+≥ 0,25
+2
+bis einschließlich 500 V
+(ausgenommen Zeile 1)
+5001)
+≥ 0,5
+3
+über 500 V
+1 000
+≥ 1,0
+1) 
+Wenn die Abtrennung der Überspannungs-Schutzeinrichtungen praktisch nicht möglich ist (z.B. eingebaute
+Überspannungs-Schutzeinrichtungen in Steckdosen), darf die Prüfspannung bis auf 250 V reduziert werden.
+Der mit der Prüfgleichspannung gemäß Tabelle 1 gemessene Isolationswiderstand ist ausreichend, wenn jeder
+Stromkreis bei nicht angeschlossenen Geräten einen Isolationswiderstand hat, der nicht kleiner ist als der in Tabelle 1
+angegebene zugehörige Wert.
+ANMERKUNG:
+Diese Bestimmung besagt nicht, dass jeder Stromkreis einzeln gemessen werden muss.
+Die Messungen sind mit Gleichspannung durchzuführen. Das Messgerät muss bei einem Messstrom von 1 mA die
+Prüfgleichspannung gemäß Tabelle 1 abgeben können.
+Wenn der Stromkreis elektronische Geräte enthält, müssen während der Messung Außen- und Neutralleiter miteinander
+verbunden sein.
+[612.4]
+6.4
+Trennung der Stromkreise (Schutzkleinspannung, Funktionskleinspannung, Schutztrennung)
+Die Trennung der Stromkreise muss geprüft werden:
+-
+im Falle von Schutz durch Schutzkleinspannung gemäß 6.4.1,
+-
+im Falle von Schutz durch Funktionskleinspannung gemäß 6.4.2,
+-
+im Falle von Schutztrennung gemäß 6.4.3.
+Der Isolationswiderstand ist bei geschlossenen Schaltern im jeweils gesamten Stromkreis zu messen.
+[−]
+Der Isolationswiderstand von Anlagenteilen, die entweder gemäß ÖVE-EN 1 Teil 3 § 42:1998-03, § 42.1.6.2 oder gemäß
+ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 13.2.7 ausgelegt und errichtet sind, ist mit jener Prüfspannung zu messen,
+die der höchsten Nennspannung in Tabelle 1  zugeordnet ist.
+6.4.1
+Schutz durch Schutzkleinspannung
+[612.4.1, − ]
+Die Trennung aktiver Teile von aktiven Teilen anderer Stromkreise und von Erde muss durch eine Messung des
+Isolationswiderstandes geprüft werden. Die festgestellten Widerstandswerte müssen in Übereinstimmung mit den
+Angaben in Tabelle 1 sein.
+6.4.2
+Schutz durch Funktionskleinspannung
+[612.4.2, − ]
+Die Trennung aktiver Teile von aktiven Teilen anderer Stromkreise muss durch eine Messung des Isolationswider-
+standes geprüft werden. Die festgestellten Widerstandswerte müssen in Übereinstimmung mit den Angaben in Tabelle 1
+sein.
+6.4.3
+Schutztrennung
+[612.4.3, − ]
+Die Trennung aktiver Teile von aktiven Teilen anderer Stromkreise und von Erde muss durch eine Messung des
+Isolationswiderstandes geprüft werden. Die festgestellten Widerstandswerte müssen in Übereinstimmung mit den
+Werten gemäß Tabelle 1 sein.
+6.5
+Fußboden- und Wandwiderstände
+[612.5, − ]
+Wo die Einhaltung der Anforderungen ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 7.4 "Standortisolierung" notwendig ist,
+müssen mindestens je drei Messungen pro Raum gemacht werden, wobei eine Messung ungefähr 1 m von berührbaren
+fremden leitfähigen Teilen des Raumes entfernt erfolgen muss. Die beiden anderen Messungen müssen in einem
+größeren Abstand von berührbaren fremden leitfähigen Teilen durchgeführt werden.
+Die oben angeführte Messreihe muss für jede Oberflächenart des Raumes wiederholt werden.
+Im Anhang A sind Methoden zur Messung der Boden- und Wandwiderstände angegeben.
+
+
+===== PAGE 7/19 =====
+Seite 7
+ÖVE/ÖNORM E 8001-6-61
+6.6
+Nachweis der Bedingungen für Maßnahmen des Fehlerschutzes mit Schutzleiter (automatische
+Abschaltung der Stromversorgung)
+[612.6]
+6.6.1
+Allgemeines
+[ − ]
+Der Nachweis über die Wirksamkeit der Maßnahmen für den Fehlerschutz mit Schutzleiter (automatische Abschaltung
+der Stromversorgung) ist wie folgt durchzuführen:
+a)
+für Nullung
+Die Übereinstimmung mit den Anforderungen von ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 10.2 muss
+nachgewiesen werden durch:
+(1) Messung der Fehlerschleifenimpedanz (siehe 6.6.3).
+ANMERKUNG:
+Die vorgenannte Messung ist nicht erforderlich, wo Berechnungen der Fehlerschleifenimpedanz oder der
+Widerstand der Schutzerdungsleiter zur Verfügung stehen und wenn die Ausführung der Anlage den
+Nachweis der Länge und des Querschnittes der Leiter erlaubt. In diesen Fällen ist der Nachweis der
+Durchgängigkeit des Schutzerdungsleiters ausreichend (siehe 6.2).
+(2) Nachweis der Charakteristik der zugehörigen Schutzeinrichtung (z.B. durch Besichtigen des eingestellten
+Auslösestromes von Leistungsschaltern und des Nennstromes von Sicherungen und auch durch Prüfen
+von Fehlerstrom-Schutzschaltern).
+Zusätzlich muss, wo erforderlich, der wirksame Erdungswiderstand RB in Übereinstimmung mit ÖVE/ÖNORM
+E 8001-1:2000-03, Abschnitt 14 ermittelt werden.
+b) für Schutzerdung und Fehlerstrom-Schutzschaltung
+Die Übereinstimmung mit den Anforderungen von ÖVE/ÖNORM E 8001-1:2000-03, Abschnitte 9.1 und 12.2.1
+muss nachgewiesen werden durch:
+(1) Messung des Widerstandes des Erders für Körper in der Anlage (siehe 6.6.2) bzw. Messung der
+Fehlerspannung und rechnerischer Nachweis dass RA ≤ 100 Ω ist.
+(2) Nachweis der Charakteristik der zugehörigen Schutzeinrichtung. Dieser Nachweis muss erbracht werden:
+−
+für Fehlerstrom-Schutzschalter (RCD) durch Prüfen (einschließlich Auslösezeit, siehe Anhang B);  [ − ]
+−
+für 
+Überstrom-Schutzeinrichtungen 
+durch 
+Besichtigen 
+(z.B. 
+eingestellter 
+Auslösestrom 
+von
+Leistungsschaltern, Nennstrom von Sicherungen);
+−
+für die Schutzerdungsleiter durch Erprobung bzw. Messung ihrer Durchgängigkeit (siehe 6.2).
+c) für Isolationsüberwachungssysteme
+Berechnung oder Messung des Fehlerstromes beim ersten Fehler.
+ANMERKUNG 1:
+Diese Messung ist nicht erforderlich in den Fällen, in denen das System über eine hochohmige Impedanz
+mit Erde verbunden ist und alle Körper der Anlage mit dieser Erde verbunden sind.
+ANMERKUNG 2:
+Die Messung muss nur durchgeführt werden, wenn eine Rechnung nicht möglich ist, weil nicht alle
+betreffenden Parameter bekannt sind. Während dieser Messung sind Vorkehrungen zu treffen um die
+Gefahr eines Doppelfehlers zu vermeiden.
+[ − ]
+Wenn im Falle eines zweiten Fehlers die Bedingungen in Übereinstimmung mit dem TT-System
+(Schutzerdung bzw. Fehlerstrom-Schutzschaltung) anzuwenden sind, ist der Nachweis in Übereinstimmung
+mit 6.6.1 b) durchzuführen.
+Wenn die Bedingungen für das TN-System (Nullung) anzuwenden sind, muss der Nachweis in
+Übereinstimmung mit 6.6.1 a) erbracht werden.
+ANMERKUNG 3:
+Während der Messung der Fehlerschleifenimpedanz ist es erforderlich, eine Verbindung mit geringer
+Impedanz zwischen einem Punkt des Systems und dem Schutzerdungsleiter des Speisepunktes der
+Anlage vorzusehen.
+
+
+===== PAGE 8/19 =====
+Seite 8
+ÖVE/ÖNORM E 8001-6-61
+6.6.2
+Messung des Widerstandes der Erder
+[ − ]
+Wo die Messung des Widerstandes der Erder vorgeschrieben ist, ist dies mit einer geeigneten Methode durchzuführen.
+ANMERKUNG 1:
+Anhang C.1 beschreibt eine Methode der Messung unter Verwendung von zwei Hilfserdern und die Bedingungen
+die dabei zu erfüllen sind.
+ANMERKUNG 2: 
+[ − ]
+Wenn die Anlage in einem Gebiet mit geschlossener Bebauung (z.B. in Städten) errichtet ist, in dem eine
+Messung mit Hilfserder nicht sinnvoll ist, sind andere Methoden (z.B. Messung mit Stromwandlern, siehe
+Anhang C.2 oder Messung der Fehlerschleifenimpedanz siehe Anhang D) anzuwenden.
+6.6.3
+Messung der Fehlerschleifenimpedanz
+Die Messung der Fehlerschleifenimpedanz muss mit der Nennfrequenz des Stromkreises durchgeführt werden.
+ANMERKUNG:
+Eine Methode für die Messung der Fehlerschleifenimpedanz ist als Beispiel im Anhang D enthalten.
+Die gemessene Fehlerschleifenimpedanz muss übereinstimmen mit ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 10 für
+TN-Systeme und mit ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 11.3.4 für IT-Systeme.
+ANMERKUNG:
+Wenn die Werte der Fehlerschleifenimpedanz durch nennenswerte Fehlerströme beeinflusst werden können,
+dürfen die Ergebnisse der mit solchen Strömen in der Fabrik oder im Labor durchgeführten Messungen
+berücksichtigt werden. Dies gilt besonders für fabrikfertige Schaltgerätekombinationen einschließlich Sammel-
+schienensysteme, metallische Rohre und Kabel mit metallischen Umhüllungen.
+6.7
+Prüfung auf polrichtiges Schalten
+[612.7, – ]
+Es muss durch eine Prüfung festgestellt werden, dass alle vorhandenen Schalter in Außenleitern eingebaut sind (dazu
+zählen insbesondere Sicherungen, einpolige und einzeln abschaltende Leitungsschutzschalter).
+6.8
+Bleibt frei. 
+[612.8, – ]
+6.9
+Funktionsprüfungen
+[612.9, – ]
+Baugruppen, wie Schaltgerätekombinationen, Antriebe, Stelleinrichtungen, Verriegelungen, müssen einer Funktions-
+prüfung unterzogen werden, um nachzuweisen, dass sie in Übereinstimmung mit den zutreffenden Anforderungen von
+ÖVE-EN 1 Reihe bzw. ÖVE/ÖNORM E 8001 Reihe ordnungsgemäß befestigt, eingestellt und angeschlossen sind.
+Schutzeinrichtungen müssen, soweit erforderlich, Funktionsprüfungen unterworfen werden, um festzustellen, ob sie
+ordnungsgemäß montiert und eingestellt sind.
+6.10
+Bleibt frei. 
+[612.10, – ]
+6.11
+Prüfung des Drehfeldes
+[ – ]
+Der Nachweis eines rechtsdrehenden Drehfeldes muss erbracht werden.
+
+
+===== PAGE 9/19 =====
+Seite 9
+ÖVE/ÖNORM E 8001-6-61
+Anhang A (normativ): Methoden zur Messung der Übergangswiderstände von
+Fußböden und Wänden
+[ – ]
+A.1
+Zum Nachweis des ausreichenden Übergangswiderstandes von Fußböden und Wänden dürfen folgende
+Methoden angewandt werden:
+(1) Isolationswiderstandsmessung mit einem Isolationswiderstandsmessgerät gemäß ÖVE/ÖNORM EN 61557-2. Die
+Messspannung muss betragen
+−
+bei Netznennspannungen bis 500 V .............. 500 V Gleichspannung,
+−
+bei Netznennspannungen über 500 V............. 1000 V Gleichspannung.
+Als Messelektroden dürfen Messelektrode 1 oder Messelektrode 2 verwendet werden. Im Zweifelsfall ist die
+Verwendung der „Messelektrode 1“ die Referenzmethode.
+(2) Übergangsimpedanzmessung mit Wechselspannung
+Wird die Übergangsimpedanzmessung mit Wechselspannung durchgeführt, muss die Spannungsquelle vom Netz
+getrennt sein. Die Messspannung (Effektivwert) muss zwischen 25 V und maximal Netznennspannung betragen.
+Als Messelektrode darf nur Messelektrode 1 verwendet werden.
+Alternativ darf auch durch eine Messung gemäß ÖVE-HG 701-1 auf die Übergangsimpedanz geschlossen
+werden.
+Die Messung der Isolationswiderstände von Fußböden und Wänden ist vorzugsweise mit der Nennfrequenz des zu
+beurteilenden Stromkreises durchzuführen. Die in ÖVE/ÖNORM E 8001-1:2000-03 angegebenen Grenzwerte basieren
+auf diesem Zusammenhang. Wird in Wechselspannungs-Stromkreisen mit Gleichstrom gemessen, so gilt, wegen der
+fehlenden Berücksichtigung der kapazitiven Komponenten der Isolationsimpedanz, als Grenzwert des Isolations-
+widerstandes, der nicht unterschritten werden darf, der 10fache Wert des Grenzwertes für Wechselspannung.
+ANMERKUNG:
+Es wird empfohlen, die Messung vor der Behandlung von Oberflächen (Überzüge, Farben u.Ä.) durchzuführen.
+A.1.1
+Messelektrode 1
+Die Elektrode besteht aus einer quadratischen Metallplatte von 250 mm Seitenlänge und einem Quadrat aus feuchtem,
+wasserdurchlässigem Papier oder Stoff mit einer Seitenlänge von ungefähr 270 mm, von dem die Wassertropfen abge-
+schüttelt wurden, und das zwischen die Metallplatte und die zu messende Fläche gelegt wird.
+Die Messung sollte mit den vorkommenden Nennspannungen und Nennfrequenzen gegen Erde durchgeführt werden.
+Als Spannungsquelle darf wahlweise verwendet werden:
+a) ein Transformator mit sicherer elektrischer Trennung,
+b) eine unabhängige Spannungsquelle.
+Für die Messung ist ein Leiter zu erden.
+Der Fußboden bzw. die Wand sollte an ungünstigsten Stellen, z.B. an Fugen oder Stoßstellen von Fußbodenbelägen mit
+einem feuchten Tuch von 270 mm × 270 mm bedeckt werden. Auf das feuchte Tuch ist eine Metallplatte von ungefähr
+250 mm × 250 mm × 2 mm zu bringen und mit einer Kraft von ungefähr 750 N bei Fußböden oder ungefähr 250 N bei
+Wänden mittig zu belasten.
+Die Impedanz zwischen der belasteten Metallplatte und Erde ergibt sich aus der Gleichung:
+
+
+
+
+
+
+−
+=
+1
+0
+x
+i
+x
+U
+U
+R
+Z
+Darin sind:
+Zx ............gesuchte Impedanz des Fußbodens oder der Wand gegen Erde
+Ri.............Innenwiderstand des Spannungsmessers
+Der Mindest-Innenwiderstand des Spannungsmessers muss so gewählt werden, dass bei
+vernachlässigtem Übergangswiderstand des Fußbodens oder der Wand ein maximaler Messstrom
+von 3,5 mA fließen kann. Der Maximalwert des Innenwiderstandes darf für Messbereiche bis 500 V
+500 kΩ und für Messbereiche bis 1000 V 1 MΩ nicht überschreiten.
+U0............gemessene Spannung gegen Erde
+Ux............gemessene Spannung gegen die Metallplatte
+
+
+===== PAGE 10/19 =====
+Seite 10
+ÖVE/ÖNORM E 8001-6-61
+*) Anstelle einer Erde darf auch der geerdete Schutzleiter verwendet werden.
+Bild A.1: Messanordnung zur Messung des Widerstandes von Fußböden und Wänden mit Wechselspannung
+(Messelektrode 1)
+A.1.2
+Messelektrode 2
+Die Elektrode besteht aus einem metallischen Dreifuß, wobei die mit dem Boden in Berührung kommenden Teile die
+Punkte eines gleichseitigen Dreiecks bilden. Jede Auflagefläche hat eine flexible Unterlage, die bei Belastung einen
+engen Kontakt mit der Oberfläche auf einer Fläche von ungefähr 900 mm² sicherstellt und einen Widerstand von weniger
+als 5 000 Ω darstellt.
+Bevor die Messung durchgeführt wird, ist die zu untersuchende Fläche anzufeuchten oder mit einem feuchten Tuch
+abzudecken. Während der Durchführung der Messung ist bei Fußböden eine Kraft von ungefähr 750 N, bei Wänden eine
+Kraft von ungefähr 250 N, mittig auf die Elektrode aufzubringen.
+Der Widerstand wird zwischen der Messelektrode und dem Schutzerdungsleiter oder der Erde gemessen.
+Bild A.2: Messelektrode 2
+750 N (Fußböden)
+250 N (Wände)
+Holzplatte
+Metallplatte
+feuchtes Tuch
+Fußboden
+oder Wand
+Untergrund
+U0
+UX
+
+
+===== PAGE 11/19 =====
+Seite 11
+ÖVE/ÖNORM E 8001-6-61
+Anhang B (normativ): Nachweis der Funktion von Fehlerstrom-Schutzschaltern
+B.1
+Auslösung von Fehlerstrom-Schutzschaltern
+Die folgenden Methoden sind Beispiele.
+Bild B.1 zeigt das Prinzip von Methoden bei der ein veränderbarer Widerstand zwischen einem aktiven Leiter auf der
+Lastseite und dem Körper angeschlossen wird. Der Strom wird größer durch Reduzierung des Wertes des variablen
+Widerstandes RP.
+L1
+L2
+L3
+N
+RCD
+M
+V
+A
+RP
+Bild B.1
+Der Strom IA, bei dem der Fehlerstrom-Schutzschalter (RCD) auslöst, darf nicht größer sein als der Bemessungs-
+fehlerstrom I∆N.
+ANMERKUNG 1:
+Diese Methoden können für TN-S-, TT- und IT-Systeme angewendet werden. Bei IT-Systemen kann es
+notwendig sein, einen Punkt des Systems während der Prüfung der Funktion des Fehlerstrom-Schutzschalters
+direkt mit Erde zu verbinden.
+ANMERKUNG 2:
+Die Sondenmethode kann nur angewendet werden, wenn die Örtlichkeit die Verwendung eines Hilfserders
+erlaubt.
+B.2
+Auslösezeiten von Fehlerstrom-Schutzschaltern
+[ – ]
+Die Auslösezeit darf die Werte gemäß Tabelle B.1 nicht überschreiten. Die Prüfung ist mit I∆N oder 2 × I∆N
+durchzuführen.
+Tabelle B.1
+Auslösezeit in Sekunden
+Fehlerstrom-
+Schutzschalter-Typ
+bei I∆N
+bei 2 × I∆N
+allgemein
+0,3
+0,15
+G
+0,3
+0,15
+S
+0,5
+0,2
+V
+Hilfserder
+Sondenmethode
+RP
+
+
+===== PAGE 12/19 =====
+Seite 12
+ÖVE/ÖNORM E 8001-6-61
+Anhang C (informativ): Messung des Erdungswiderstandes
+C.1 Messung mit Hilfserder
+[ – ]
+Das folgende Verfahren darf angewandt werden, wenn die Messung des Erdungswiderstandes durchgeführt werden
+muss (siehe Bild C.1).
+A
+6 m
+6 m
+d
+d
+V
+Versorgung
+Stromeinstellung
+Spannungstrichter
+(nicht überschneidend)
+T
+X
+T2
+Y
+T1
+T ........Erder, während der Prüfung getrennt von allen anderen Stromversorgungen
+T1.......erster Hilfserder
+T2.......zweiter Hilfserder
+X ........alternative Position von T2 während der Messung
+Y ........weitere alternative Positionen von T2 während der anderen Messung
+d ........halber Abstand zwischen T und T1
+Bild C.1
+Ein Wechselstrom mit konstantem Wert ist zum Fließen zu bringen zwischen dem Erder T und einem Hilfserder T1 mit
+einem solchen Abstand zu T, dass sich die Spannungstrichter der beiden Erder nicht überschneiden.
+Ein zweiter Hilfserder T2, wird im halbem Abstand zwischen T und T1 in die Erde eingeschlagen. Der Spannungsabfall
+zwischen T und T2 ist zu messen.
+Der Widerstand der Erder ergibt sich aus der Spannung zwischen T und T2, dividiert durch den Strom, welcher zwischen
+T und T1 fließt, vorausgesetzt es gibt keine Überschneidung der Spannungstrichter.
+Zum Nachweis, dass der Widerstand der Erder richtig ist, müssen zwei weitere Messungen mit veränderter Lage von T2
+durchgeführt werden. Der Abstand muss jeweils im Bereich von 6 m von und zum Erder T verändert werden. Falls die
+drei Ergebnisse annähernd übereinstimmen, ist der Mittelwert der drei Messungen der Widerstand des Erders T. Falls es
+keine Übereinstimmung gibt, muss die Messung mit zunehmenden Abstand zwischen T und T1 wiederholt werden.
+Falls die Messung mit Nennfrequenz gemacht wird, darf der Innenwiderstand des Voltmeters, das bei der Messung
+verwendet wird, nicht kleiner sein als 200 Ω/V.
+Die Stromquelle, die für die Messung verwendet wird, muss vom Netz sicher elektrisch getrennt sein.
+C.2
+Selektive Erdungsmessung ohne Sonde mit zwei Wandlern
+C.2.1
+Allgemeines
+Die selektive Erdungsmessung mit Stromzangen gestattet die Messung des Erdungswiderstandes einer einzelnen
+Erdungsanlage ohne Verwendung von Hilfserder und Sonde. Dieses Messverfahren ist speziell in Gebieten mit
+geschlossener Bebauung unter der zusätzlichen Bedingung geeignet, dass es sich um eine einzelne Erdungsanlage
+handelt und die benachbarten Erdungsanlagen über PEN-Leiter mit dieser und miteinander verbunden sind.
+Das Messverfahren arbeitet mit zwei Stromwandlern. Ein Stromwandler induziert in einer Schleife, die auch den zu
+ermittelnden Erdungswiderstand enthält, eine Spannung. Der von dieser Spannung in der Schleife getriebene Strom wird
+mit dem zweiten Stromwandler gemessen, so dass der Gesamtwiderstand der Schleife errechenbar ist. Das
+Messverfahren kann jedoch nur dann zu richtigen Ergebnissen führen, wenn die jeweils zu messende Erdungsanlage
+nur durch die mit der Messzange erfasste Erdungsleitung, im Allgemeinen über die PAS, mit dem PEN- oder N-Leiter
+des Netzes verbunden ist und alle anderen allenfalls vorhandenen Erdungsleitungen der zu messenden Erdungsanlage
+geöffnet sind.
+
+
+===== PAGE 13/19 =====
+Seite 13
+ÖVE/ÖNORM E 8001-6-61
+Die beiden Stromwandler können samt der erforderlichen Speisung und der Mess- und Rechenelektronik in einem
+Zangengehäuse (mit magnetischer Schirmung zwischen den Wandlerkernen) untergebracht sein. Alternativ dazu kann
+der Aufbau auch mit zwei unabhängigen Stromwandlern erfolgen, die an ein Grundgerät angeschlossen sind, das die
+Speisung sowie Mess- und Rechenelektronik beinhaltet.
+C.2.2
+Funktionsprinzip
+Die Schaltung ist in Bild C.2 schematisch dargestellt. RX ist der zu ermittelnde Erdungswiderstand der Anlage. Als
+Verbindungsleiter wird der PEN-Leiter (oder in Netzen, in denen auf Grund früher gültiger Bestimmungen der
+Anlagenerder mit dem Neutralleiter verbunden ist, der Neutralleiter) verwendet. Die Widerstände R1, R2 bis Rn stellen die
+Erdungswiderstände der im selben Netz befindlichen Anlagenerder der benachbarten Anlagen und der Erder der
+Betriebs- und Ausläufererdung des Netzes dar, welche über den PEN-Leiter parallel geschaltet sind. Mit diesen Erdern
+verbundene fremde leitfähige Teile behindern die Messung nicht, sofern sie keine zusätzliche Verbindung zu der zu
+messenden Erdungsanlage haben.
+Der Widerstand der Parallelschaltung von R1 bis Rn unter Einbeziehung der vorhandenen fremden leitfähigen Teile ist in
+einem Gebiet mit geschlossener Bebauung im Allgemeinen sehr klein. Ebenso ist der Widerstand des PEN-Leiters (oder
+des Verbindungsleiters) im Allgemeinen sehr gering. Die Werte dieser beiden Widerstände können daher gegenüber
+dem Widerstand des zu messenden Einzelerders vernachlässigt werden.
+Da in der zu betrachtenden Messschleife der Erdungswiderstand RX nur mit dem geringen Widerstand des PEN-Leiters
+und mit der Parallelschaltung aller zusammengeschlossenen Erdungsanlagen in Serie geschaltet ist, wird der
+Widerstand der Messschleife hauptsächlich vom Widerstand RX bestimmt. Daher gilt näherungsweise:
+RX  ≈ RSchleife= RX + (R1 // R2 //...// Rn) + RPEN = U / I
+RX kann maximal den Wert RSchleife aufweisen, womit man sich durch die angeführte Vernachlässigung der Widerstände
+des PEN-Leiters und der anderen von der Schleife umfassten Erdungswiderstände auf der sicheren Seite befindet.
+Für echte TT-Systeme ist dieses Messverfahren wegen des fehlenden niederohmigen Rückschlusses über den
+Hauptpotentialausgleich und den N-Leiter nicht einsetzbar.
+Der zu beurteilende Erder muss entweder ein Einzelerder sein oder auf Grund seines Anschlusses als Einzelerder zu
+betrachten sein. Bei einer Erdungsanlage, die aus mehreren Vertikalerdern besteht, kann auch jeder Einzelerder
+gemessen werden, indem die jeweilige Erdungsleitung mit der/den Zange/n umfasst wird. Das Messergebnis ist in
+diesem Fall jedoch nur dann richtig, wenn gesichert ist, dass die einzelnen Erder im Erdreich keine weitere Verbindung
+haben. Im Fall eines Fundamenterders, der meist als geschlossener Ringerder in Beton verlegt ist, ist das
+Einzelerderkriterium nur dann gegeben, wenn die Erdungsanlage nur über eine Erdungsleitung mit der
+Haupterdungsschiene(-klemme) verbunden ist und keine weiteren Anschlussfahnen besitzt, die während der Messung
+mit anderen Erdungsanlagen oder fremden leitfähigen Teilen verbunden sind (siehe Bild C.3).
+Wenn eine zu messende, umfangreiche Erdungsanlage mit mehreren Haupterdungsschienen(-klemmen) verbunden ist,
+muss sichergestellt sein, dass außer der Verbindung an der Messstelle keine weitere galvanische Verbindung des
+Erders mit dem System der Messschleife besteht. Falls dies nicht ermöglicht werden kann, weil die zusätzlichen
+Verbindungen während des Betriebes der Anlage nicht geöffnet werden dürfen, so ist das Messverfahren für diese
+Anlage nicht anwendbar, weil in diesem Falle nur die Schleife in der Anlage selbst gemessen werden würde. Die
+Messanordnung ist in einem solchen Falle jedoch geeignet, wenigstens die Niederohmigkeit der einzelnen
+Anschlussverbindungen oder Ableitungen nachzuweisen (siehe Bild C.3).
+
+
+===== PAGE 14/19 =====
+Seite 14
+ÖVE/ÖNORM E 8001-6-61
+PEN-Leiter als Verbindungsleiter zu „benachbarten“ Erdungsanlagen
+RPEN
+RSchleife
+RX............................... gesuchter Erdungswiderstand
+R1 , R2 ... Rn ................. über den PEN-Leiter parallel geschaltete andere Erdungsanlagen im Netz einschließlich
+Erderwirkungen fremder leitfähiger Teile
+RPEN ............................ Widerstand des Verbindungsleiters netzseitig bis zur Hauptpotentialausgleichsschiene, z.B.
+PEN-Leiter
+RSchleife......................... Widerstand der gesamten Messschleife
+U................................. für die Messung induzierte Spannung
+I .................................. gemessener Strom in der Messschleife
+Bild C.2: Schema der selektiven Messung des Erdungswiderstandes
+mit einem bzw. zwei Stromwandler(n) in einem ausgedehnten Erdernetz
+Bild C.3: Messung der Erdungsanlage eines Objektes mit Blitzschutz
+Zusätzliche Verbindung während
+der Erdungsmessung trennen!
+PAS
+PEN
+Messung des Erdungswiderstandes RA
+bei Objekt mit Fundamenterder
+Messung der
+Niederohmigkeit
+der Ableitungen
+
+
+===== PAGE 15/19 =====
+Seite 15
+ÖVE/ÖNORM E 8001-6-61
+Anhang D (informativ): Messung der Fehlerschleifenimpedanz
+Die folgende Methode ist ein Beispiel für die Messung in TN-Systemen, wenn die Messung der Fehlerschleifenimpedanz
+durchgeführt wird.
+ANMERKUNG 1:
+Die Methode, die in diesem Anhang vorgeschlagen wird, gibt nur einen Näherungswert für die
+Fehlerschleifenimpedanz und berücksichtigt nicht die Phasenverschiebung der Spannung, z.B. während eines
+möglichen Erdfehlers. Der Näherungswert kann jedoch akzeptiert werden, vorausgesetzt, dass die Reaktanz
+dieses Stromkreises vernachlässigbar ist.
+ANMERKUNG 2:
+Es ist erforderlich, die Durchgängigkeit (siehe 6.2) zwischen dem neutralen Punkt und den Körpern zu prüfen,
+bevor die Schleifenimpedanzmessung durchgeführt wird.
+Messung der Fehlerschleifenimpedanz über den Spannungsabfall
+[ – ]
+ANMERKUNG:
+Es wird darauf hingewiesen, dass diese Methode bei kleinen Impedanzen zu Schwierigkeiten bei der Anwendung
+führen kann.
+L1
+L2
+L3
+N
+R
+PE
+V
+A
+S
+Bild D.1
+Die Spannung ist mit und ohne Verbindung zu einem variablen Lastwiderstand zu messen.
+Die Fehlerschleifenimpedanz wird berechnet mit der Formel:
+RI
+U
+U
+Z
+2
+1  
+S
+−
+=
+ZS.......Fehlerschleifenimpedanz
+U1 ......Spannung, die bei geöffnetem Schalter S gemessen wird
+U2 ......Spannung, die bei geschlossenem Schalter S gemessen wird
+IR .......Strom, der durch den Widerstand fließt
+ANMERKUNG: Die Differenz zwischen U1 und U2 sollte nennenswert sein.
+
+
+===== PAGE 16/19 =====
+Seite 16
+ÖVE/ÖNORM E 8001-6-61
+Anhang E (informativ): Leitlinie zur Anwendung der vorliegenden Bestimmungen
+Die Nummerierung der Abschnitte und Unterabschnitte dieses Anhanges E richtet sich nach der Nummerierung der
+entsprechenden Abschnitte der vorliegenden ÖVE/ÖNORM.
+Wenn kein Bezug auf Abschnitte vorhanden ist, so bedeutet dies, dass hierzu keine weiteren Erläuterungen gegeben
+werden.
+E.5
+Besichtigen
+E.5.3 (3) und (4) 
+[ – ]
+Auswahl der Leiter bezüglich Strombelastbarkeit und Spannungsabfall sowie Auswahl und Einstellung der Schutz- und
+Überwachungseinrichtungen:
+Die Auswahl und Montage der Leiter (Materialien, Verlegung und Querschnitte) sowie die Montage und Einstellung der
+Schutzeinrichtungen werden anhand der Dokumentation der Anlage auf Übereinstimmung mit den jeweils zutreffenden
+Errichtungsbestimmungen überprüft.
+E.5.3 (10)
+Ordnungsgemäße Leiterverbindungen:
+Es soll überprüft werden, ob die Verbindungsmittel für die zu verbindenden Leiter geeignet sind und ob die Verbindungen
+ordnungsgemäß ausgeführt wurden.
+E.6
+Erproben und Messen 
+[ – ]
+E.6.3
+Isolationswiderstand der elektrischen Anlage
+Die Messungen müssen in der von der Stromversorgung getrennten Anlage durchgeführt werden.
+Im allgemeinen wird die lsolationsmessung vom Speisepunkt der Anlage aus durchgeführt.
+Wenn der Messwert kleiner als der in Tabelle 1 vorgegebene Wert ist, ist es zulässig, die Anlage in einzelne
+Stromkreisgruppen aufzuteilen. In diesem Fall muss der lsolationswiderstand einer jeden Gruppe gemessen werden.
+Wenn bei einer Stromkreisgruppe der gemessene Wert kleiner als der in Tabelle 1 vorgegebene Wert ist, muss der
+Widerstand eines jeden Stromkreises dieser Gruppe gemessen werden.
+Wenn Stromkreise oder Teile von Stromkreisen durch Unterspannungs-Schutzeinrichtungen abgeschaltet werden
+(z.B. durch Schütze), die alle aktiven Leiter unterbrechen, so wird der Isolationswiderstand dieser Stromkreise oder Teil-
+stromkreise getrennt gemessen.
+Wenn Geräte angeschlossen sind, so ist es ausreichend, die Messung zwischen den aktiven Leitern und Erde
+durchzuführen.
+Wenn in diesem Fall der gemessene Wert kleiner ist als der in Tabelle 1 vorgegebene Wert, müssen diese Geräte
+abgetrennt werden und die Messung muss wiederholt werden.
+E.6.4
+Schutz durch sichere Trennung (Schutzkleinspannung, Funktionskleinspannung, Schutztrennung)
+Wenn ein Betriebsmittel gleichzeitig einen getrennten Stromkreis und andere Stromkreise enthält, ist die erforderliche
+Isolierung durch die Herstellung der Betriebsmittel in Übereinstimmung mit den Sicherheitsanforderungen der ent-
+sprechenden ÖVE/ÖNORM gegeben.
+Im Falle einer ortsfesten Stromquelle für die Trennung sollte nachgewiesen werden, dass ihre Sekundärstromkreise
+durch eine doppelte oder verstärkte Isolierung von ihren Gehäusen getrennt sind. Dies ist nicht erforderlich, wenn diese
+Stromquelle entsprechend gekennzeichnet ist.
+
+
+===== PAGE 17/19 =====
+Seite 17
+ÖVE/ÖNORM E 8001-6-61
+E.6.6
+Nachweis der Bedingungen für Maßnahmen des Fehlerschutz mit Schutzleiter (automatische
+Abschaltung der Stromversorgung)
+E.6.6.3
+Messung der Fehlerschleifenimpedanz
+Anhang D beschreibt beispielhaft eine Methode zur Messung der Fehlerschleifenimpedanz.
+a)
+Berücksichtigung des Anstiegs der Leiterwiderstände bei steigender Temperatur:
+Da die Messungen mit kleinen Strömen bei Raumtemperatur durchgeführt werden, kann das im folgenden
+beschriebene Verfahren verwendet werden, um den Anstieg des Leiterwiderstands durch die steigende
+Temperatur aufgrund von Fehlern zu berücksichtigen und um für TN-Systeme nachzuweisen, dass der
+gemessene Wert der Fehlerschleifenimpedanz die Anforderungen von ÖVE/ÖNORM E 8001-1:2000-03,
+Abschnitt 10 erfüllt.
+Die Anforderungen von ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 10 werden als erfüllt angesehen, wenn die
+gemessene Fehlerschleifenimpedanz folgende Bedingung erfüllt:
+A
+0
+(m)
+ 
+S,
+ 
+ 3
+2
+ 
+ 
+I
+U
+Z
+×
+≤
+ZS, (m).....gemessener Wert der Fehlerschleifenimpedanz aus Außenleiter und geerdetem Neutralleiter in Ohm
+U0 .........Effektivwert der Nennspannung gegen Erde in Volt
+IA ..........Strom, der die automatische Auslösung der Schutzeinrichtung bewirkt, in Ampere
+Wenn der gemessene Wert der Fehlerschleifenimpedanz größer ist als 2U0/3IA , kann eine genauere Bewertung
+der Übereinstimmung mit ÖVE/ÖNORM E 8001-1:2000-03, Abschnitt 10 erfolgen, indem man den Wert ZS, der
+Fehlerschleifenimpedanz gemäß dem folgenden Verfahren bestimmt:
+−
+zuerst wird die Schleifenimpedanz ZE, aus Außenleiter und geerdetem Neutralleiter des Versorgungs-
+stromkreises am Speisepunkt der Anlage gemessen,
+−
+anschließend wird der Widerstand von Außenleiter und Schutzerdungsleiter der Verteilungsstromkreise
+gemessen,
+−
+dann werden die Widerstände des Außenleiters und der Schutzerdungsleiter des Endstromkreises
+gemessen,
+−
+die Werte dieser Widerstände erhöhen sich mit steigender Temperatur, wobei im Fall von Fehlerströmen die
+durch die Schutzeinrichtung freigesetzte Energie zu berücksichtigen ist,
+−
+diese erhöhten Widerstandswerte werden schließlich zur Schleifenimpedanz ZE aus Außenleiter und
+geerdetem Neutralleiter des Versorgungsstromkreises hinzugefügt, wodurch man einen realistischen Wert
+für ZS, unter Fehlerbedingungen erhält.
+b) Bei Anlagenteilen wo Nullung mit Zusatzschutz angewendet wird, ist die Ausschaltbedingung auch im dem
+Fehlerstromschutz-Schutzschalter nachgeschaltetem Anlagenteil nachzuweisen.
+Dies kann z.B. erfolgen durch
+−
+Verwendung geeigneter Messgeräte oder
+−
+Messung, ob die Nullungsbedingungen am Anschlusspunkt des Fehlerstrom-Schutzschalters erfüllt sind,
+und Ermittlung des Schleifenwiderstandes des nachgeschalteten Stromkreises.
+
+
+===== PAGE 18/19 =====
+Seite 18
+ÖVE/ÖNORM E 8001-6-61
+Anhang F (informativ): Übersichtstabelle zur Prüfung der Schutzmaßnahmen
+Prüfung
+Besichtigung
+Durchgängigkeit PA- und PE-Leiter
+Isolationswiderstand
+Trennung der Stromkreise
+Fußboden- und Wandimpedanzen
+Widerstand der Erder
+Fehlerspannung
+Prüfung der Charakteristik der
+Fehlerstrom-Schutzschalter
+Auslösezeit
+Fehlerschleifenimpedanz
+polrichtiges Schalten
+Funktionsprüfung
+Drehfeld
+Fehlerstrom
+Abschnitt von ÖVE/ÖNORM E 8001-1
+Abschnitt der
+vorliegenden
+ÖVE/ÖNORM
+5
+6.2
+6.3
+6.4
+6.5
+6.6.1b)(1)
+6.6.1b)(1)
+6.6.1b)(2)
+6.6.1b)(2)
+6.6.3
+6.7
+6.9
+6.11
+6.6.1 c
+Anmerkung
+-
+Allgemein
+X
+X
+X
+X
+X
+X
+6.1
+Zusatzschutz
+X
+X
+X*
+X*
+X
+X
+X*
+Ausschaltbedingung
+siehe E 6.6.3 b)
+7.4
+Standortisolierung
+X
+X
+8.2
+Schutzkleinspannung
+X
+X
+X
+8.3
+Funktionskleinspannung
+X
+X
+X
+X
+9
+Schutzerdung
+X
+X
+X
+X*
+X*
+X*
+Ausschaltbedingung
+10
+Nullung
+X
+X
+X
+X
+Ausschaltbedingung
+11
+Isolationsüberwachungs-
+system
+X
+X
+X
+X
+X
+X
+Doppelkörperschluss-
+Ausschaltbedingung
+Isolationswächter
+12
+Fehlerstrom-
+Schutzschaltung
+X
+X
+X
+X*
+X*
+X
+X
+X*
+Ausschaltbedingung
+RA ≤ 100 Ω
+13
+Schutztrennung
+X
+X
+X
+X
+Potentialausgleichs-
+leitung
+einpoliger Erdschluss-
+strom ≤ 0,03 A
+X* wahlweise (entweder / oder)
+
+
+===== PAGE 19/19 =====
+Seite 19
+ÖVE/ÖNORM E 8001-6-61
+Anhang G (informativ): Literaturhinweise
+ÖVE-EN 2 
+Starkstromanlagen und Sicherheitsstromversorgung in baulichen Anlagen für
+Menschenansammlungen
+ÖVE-EN 7 
+Starkstromanlagen in Krankenhäusern und medizinisch genutzten Räumen außerhalb von
+Krankenhäusern
+ÖVE-EX 65
+Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen
+ÖVE EN 60079-14
+Elektrische Betriebsmittel für gasexplosionsgefährdete Bereiche – Teil 14: Errichtung
+elektrischer Anlagen in explosionsgefährdeten Bereichen (ausgenommen Grubenbau)
+ÖVE EN 60079-17
+Elektrische Betriebsmittel für gasexplosionsgefährdete Bereiche – Teil 17: Prüfung und
+Instandhaltung elektrischer Anlagen in explosionsgefährdeten Bereichen (ausgenommen
+Grubenbau)

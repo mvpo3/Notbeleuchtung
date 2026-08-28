@@ -1,0 +1,2290 @@
+
+
+===== PAGE 441/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 1 
+Teil 5-55 Andere elektrische Betriebsmittel 
+Inhalt 55 
+551 
+Niederspannungsstromerzeugungseinrichtungen 
+551.1 
+Anwendungsbereich 
+551.2 
+Allgemeine Anforderungen 
+551.3 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV und PELV 
+551.4 
+Fehlerschutz (Schutz bei indirektem Berühren) 
+551.5 
+Schutz bei Überstrom 
+551.6 
+Zusätzliche Anforderungen für Anlagen, bei denen die Stromerzeugungseinrichtung eine 
+umschaltbare Versorgungsalternative zur allgemeinen Stromversorgung der Anlage darstellt 
+551.7 
+Zusätzliche Anforderungen für elektrische Anlagen, bei denen ein Parallelbetrieb der 
+Stromerzeugungseinrichtung mit anderen Stromquellen einschließlich einem Verteilungsnetz 
+zulässig ist 
+551.8 
+Anforderungen für Anlagen mit ortsfesten Batterien 
+Anhang 551.ZA (normativ)  Zusätzliche Anforderungen für eigenständige 
+Niederspannungsstromerzeugungseinrichtungen, die nicht am Stromverteilungsnetz  
+angeschlossen sind  und für eigenständige Niederspannungsstromerzeugungseinrichtungen,  
+die dauerhaft errichtete Anlagen versorgen,  die vom Stromverteilungsnetz getrennt sind 
+557 
+Hilfsstromkreise 
+557.1 
+Anwendungsbereich 
+557.2 
+Begriffe 
+557.3 
+Anforderungen an Hilfsstromkreise 
+557.4 
+Eigenschaften von Kabeln und Leitungen – Mindestquerschnitte 
+557.5 
+Anforderungen an Hilfsstromkreise für Messzwecke 
+557.6 
+Funktionale Eigenschaften 
+557.7 
+Funktionale Sicherheit 
+557.8 
+Elektromagnetische Verträglichkeit (EMV) 
+559 
+Leuchten und Beleuchtungsanlagen 
+559.1 
+Anwendungsbereich 
+559.2 
+Begriffe 
+559.3 
+Allgemeine Anforderungen 
+559.4 
+Schutz der Umgebung gegen thermische Einflüsse (Auswahl und Installationsanforderungen) 
+559.5 
+Kabel- und Leitungsanlagen für Beleuchtungsanlagen und Befestigung der Leuchten 
+559.6 
+Unabhängige Leuchtmittel-Betriebsgeräte, zB EVG, LED-Treiber 
+559.7 
+Kompensationskondensatoren 
+559.8 
+Schutz gegen elektrischen Schlag in Ausstellungsbereichen für Leuchten 
+559.9 
+Stroboskopischer Effekt 
+559.10 
+Bodeneinbauleuchten 
+Anhang 559.A (informativ)  Erläuterung der in Leuchten, Betriebsgeräten für Leuchten und für die Montage der 
+Leuchten verwendeten Zeichen 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 442/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 2 
+551 Niederspannungsstromerzeugungseinrichtungen 
+551.1 
+Anwendungsbereich 
+Dieser Abschnitt gilt für die Auswahl und Errichtung von Niederspannungs- und Kleinspannungsstrom-
+erzeugungseinrichtungen, die dafür vorgesehen sind, eine Gesamtanlage oder einen Teil davon entweder 
+dauerhaft oder zeitweilig zu versorgen. 
+Sie enthält weiterhin Anforderungen für die Stromversorgungen folgender Anlagen: 
+– 
+Stromversorgung einer Anlage, die nicht an ein Verteilernetz angeschlossen ist, 
+– 
+Stromversorgung einer Anlage als Alternative zum Verteilernetz, 
+– 
+Stromversorgung einer Anlage parallel zum Verteilernetz, 
+– 
+geeignete Kombinationen der oben aufgeführten Stromversorgungen. 
+Dieser Abschnitt gilt nicht für eigenständige elektrische Kleinspannungsbetriebsmittel, die sowohl die 
+Energiequelle als auch die Energie verbrauchende Last beinhalten und für die eine Produktnorm mit 
+Anforderungen an die elektrische Sicherheit besteht. 
+Vor der Errichtung des Anschlusses einer Stromerzeugungseinrichtung an eine elektrische Anlage mit 
+Verteilernetzanschluss ist das Einvernehmen mit dem Verteilernetzbetreiber herzustellen (siehe TOR Teil D, 
+Hauptabschnitt D4 und Netzzugangsvertrag). Ausgenommen von dieser Verpflichtung sind Anschlüsse von 
+Stromversorgungseinrichtungen ohne Verteilernetzanschluss. 
+551.1.1 Es werden Stromerzeugungseinrichtungen mit folgenden Energiequellen berücksichtigt: 
+– 
+Verbrennungsmotoren; 
+– 
+Turbinen; 
+– 
+Elektromotoren; 
+– 
+photovoltaische Zellen (siehe auch Teil 7-712); 
+– 
+Batterien; 
+ 
+ANMERKUNG 1.AT 
+Beispiel: Für Blei- und NiCd-Batterien mit Sekundärzellen siehe ÖVE/ÖNORM  
+EN 50272-2. 
+– 
+weitere geeignete Energiequellen. 
+ANMERKUNG 2.AT 
+Beispiele: Für stationäre Brennstoffzellen-Energiesysteme siehe ÖVE/ÖNORM EN 62282-3-1; 
+für Windenergieanlagen siehe OVE EN 61400 Reihe; für den Anschluss von Klein-Generatoren an das öffentliche 
+Niederspannungsnetz siehe ÖVE/ÖNORM EN 50438. 
+551.1.2 Es werden Stromerzeugungseinrichtungen mit folgenden elektrischen Eigenschaften berücksichtigt: 
+– 
+fremderregte Haupt- und Nebenschluss-Synchrongeneratoren, 
+– 
+fremderregte und selbsterregte Asynchrongeneratoren, 
+– 
+netz- und selbstgeführte statische Umrichter mit oder ohne Umgehungseinrichtungen, 
+– 
+Stromerzeugungseinrichtungen mit anderen geeigneten elektrischen Eigenschaften. 
+551.1.3 Stromerzeugungseinrichtungen für folgende Anwendungen werden berücksichtigt: 
+– 
+Stromversorgung für dauerhaft errichtete Anlagen, 
+– 
+Stromversorgung für vorübergehend errichtete Anlagen, 
+– 
+Stromversorgung für ortsveränderliche elektrische Betriebsmittel, die nicht mit einer dauerhaft errichteten 
+Anlage verbunden sind, 
+– 
+Stromversorgung für ortsveränderliche Baueinheiten (siehe auch Teil 7-717). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 443/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 3 
+551.2 
+Allgemeine Anforderungen 
+551.2.1 Die für Erregung und Kommutierung angewendeten Mittel müssen für den beabsichtigten Einsatz 
+der Stromerzeugungseinrichtung geeignet sein. Die Sicherheit und einwandfreie Funktion anderer 
+Stromquellen dürfen durch die Stromerzeugungseinrichtung nicht beeinträchtigt werden. 
+ANMERKUNG 
+Für besondere Anforderungen für den Parallelbetrieb der Stromerzeugungseinrichtung mit einem 
+Verteilernetz siehe 551.7. 
+551.2.2 Der zu erwartende Kurzschlussstrom und der zu erwartende Erdschlussstrom müssen für jede 
+Stromquelle oder für jede Kombination von Stromquellen ermittelt werden, die unabhängig von den anderen 
+Stromquellen oder Stromquellenkombinationen betrieben werden können. Der Wert des Kurzschluss-
+Ausschaltvermögens (Bemessungs-Ausschaltvermögen) der Schutzeinrichtungen in der Anlage, die, falls 
+zutreffend, an das Verteilernetz angeschlossenen sind, darf bei keiner der vorgesehenen Betriebsarten der 
+Stromquellen überschritten werden. 
+ANMERKUNG 
+Der Leistungsfaktor der Anlage sollte bei der Auswahl der Schutzeinrichtungen beachtet werden. 
+551.2.3 Das Leistungsvermögen und die Betriebseigenschaften der Stromerzeugungseinrichtung müssen 
+so beschaffen sein, dass nach dem Einschalten oder Ausschalten jeder vorgesehenen Last keine 
+Gefährdung oder Beschädigung von Betriebsmitteln als Folge einer Abweichung der Spannung oder 
+Frequenz vom vorgesehenen Toleranzbereich entsteht. Es sind elektrische Betriebsmittel zu verwenden, mit 
+denen die Anlagenteile erforderlichenfalls automatisch abgeschaltet werden, wenn das maximale 
+Leistungsvermögen der Stromerzeugungseinrichtung überschritten wird. 
+ANMERKUNG 1  
+Es sollte auf die Summe der einzelnen Lastanteile im Verhältnis zum maximalen 
+Leistungsvermögen der Stromerzeugungseinrichtung und auf Motoranlaufströme geachtet werden. 
+ANMERKUNG 2  
+Es ist zu beachten, dass für bestimmte Schutzeinrichtungen zulässige Bereiche für den 
+Leistungsfaktor spezifiziert sein können. 
+ANMERKUNG 3  
+Der Anschluss einer Stromerzeugungseinrichtung an ein bestehendes Gebäude oder in einer 
+bestehenden Anlage kann die für diese Anlage zu beachtenden äußeren Einflüsse verändern (siehe Teil 1 und Teil 5-51), 
+zB durch Einbringen von sich bewegenden Teilen, von Teilen mit hoher Temperatur oder durch das Vorhandensein von 
+brennbaren Flüssigkeiten und schädlichen Gasen usw. 
+551.2.4 Einrichtungen zum Trennen jeder Stromquelle oder einer Kombination von Stromquellen müssen 
+die Anforderung gemäß Abschnitt 537 erfüllen. 
+ANMERKUNG AT 
+Siehe dazu auch TOR Teil D, Hauptabschnitt D4, Netz-Entkupplungsstelle. 
+551.2.001.AT 
+Eine elektrische Anlage, in die eine Stromerzeugungseinrichtung als Alternative zur 
+allgemeinen Stromversorgung einspeisen soll, muss entweder eine Umschalteinrichtung zwischen 
+Eigenversorgung und Netzbetrieb aufweisen (siehe 551.6) oder für den Netzparallelbetrieb der 
+Stromerzeugungseinrichtung (siehe 551.7) geeignet sein. 
+551.2.002.AT 
+Können Ersatzstromerzeuger nicht nur von ihrem Aufstellungsort aus gestartet werden, 
+müssen sie in einem abgegrenzten, gegen unbefugtes Betreten gesicherten Bereich aufgestellt werden, und 
+es ist die Anbringung eines Warnschildes „Achtung! Aggregat läuft selbsttätig an“ an gut sichtbarer Stelle 
+erforderlich (zB auch im Hauptverteiler). 
+551.2.Z1  
+Anhang 551.ZA beschreibt zusätzliche Anforderungen 
+– 
+für 
+eigenständige 
+(zB mobile) 
+Niederspannungsstromerzeugungseinrichtungen, 
+die 
+nicht 
+am 
+Stromverteilungsnetz angeschlossen sind und 
+– 
+für eigenständige (zB mobile) Niederspannungsstromerzeugungseinrichtungen, die dauerhaft errichtete 
+Anlagen versorgen, die vom Stromverteilungsnetz getrennt sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 444/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 4 
+551.3 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV und PELV 
+551.3.1 
+Zusätzliche Anforderungen für SELV und PELV, wenn die Anlage von mehr als einer 
+Stromquelle versorgt wird 
+Wenn ein SELV- oder ein PELV-System von mehr als einer Stromquelle versorgt wird, gelten die 
+Anforderungen gemäß 414.3 für jede Stromquelle. 
+Werden eine oder mehrere Stromquellen geerdet, gelten die Anforderungen für PELV-Systeme gemäß 
+414.4. 
+Wenn eine oder mehrere der Stromquellen die Anforderungen von 414.3 nicht erfüllen, muss das System als 
+FELV-System behandelt werden und entsprechend den Anforderungen von 411.7 ausgeführt werden. 
+551.3.2 
+Zusätzliche Anforderungen, wenn es erforderlich ist, die Stromversorgung eines 
+Kleinspannungssystems aufrechtzuerhalten 
+Wenn die Aufrechterhaltung der Versorgung eines Kleinspannungssystems, das von mehreren Stromquellen 
+gespeist wird, nach dem Ausfall einer oder mehrerer Stromquelle(n) notwendig ist, müssen die verbleibenden 
+Stromquellen so ausgelegt sein, dass sie die vorgesehene Last des Kleinspannungssystems versorgen 
+können. 
+Es sind Vorkehrungen zu treffen, dass der Ausfall der Niederspannungsstromversorgung für eine 
+Kleinspannungsstromquelle nicht zu einer Gefahr oder Beschädigung anderer Kleinspannungsbetriebsmittel 
+führt. 
+ANMERKUNG 
+Für die Versorgung von Einrichtungen für Sicherheitszwecke können solche Vorkehrungen notwendig 
+sein (siehe Teil 5-56). 
+551.4 
+Fehlerschutz (Schutz bei indirektem Berühren) 
+551.4.1 Für die Anlage ist der Fehlerschutz unter Berücksichtigung jeder Stromquelle oder Kombination von 
+Stromquellen vorzusehen, die unabhängig von anderen Stromquellen oder Kombinationen von Stromquellen 
+in Betrieb sein können. 
+Vorkehrungen für den Fehlerschutz müssen ausgewählt oder Vorsichtsmaßnahmen müssen vorgesehen 
+werden, um sicherzustellen, dass dort, wo unterschiedliche Maßnahmen für den Fehlerschutz in derselben 
+Anlage oder einem Teil der Anlage ausgewählt wurden, keine Einflüsse oder Bedingungen auftreten, die die 
+Wirksamkeit der Vorkehrungen für den Fehlerschutz beeinträchtigen. 
+ANMERKUNG 
+Dies kann zB die Verwendung eines Trenntransformators zwischen den Teilen der Anlage erfordern, 
+wo unterschiedliche Erdungssysteme nach Art der Erdverbindung (TT-, TN- oder IT-System) angewendet werden. 
+551.4.2 Wird die Stromerzeugungseinrichtung an eine elektrische Anlage im TT- oder TN-System 
+angeschlossen, so muss gewährleistet werden, dass die in dieser Anlage vorhandenen Fehlerstrom-
+Schutzeinrichtungen (RCD) wirksam bleiben, d. h. dass der neutrale Punkt der Stromerzeugungseinrichtung 
+vor diesen Fehlerstrom-Schutzeinrichtungen mit einer geeigneten Erdungsanlage verbunden sein muss. 
+ANMERKUNG 1.AT 
+Diese Erdverbindung muss nicht notwendigerweise unmittelbar am Generator, sondern kann 
+auch in der elektrischen Anlage erfolgen. 
+Wenn in der elektrischen Anlage Stromkreise vorhanden sind, deren Fehlerschutz durch Überstrom-
+Schutzeinrichtungen erfolgt, muss gewährleistet sein, dass die Kurzschlussleistung des Generators für die 
+ordnungsgemäße 
+Ausschaltung 
+der 
+Überstrom-Schutzeinrichtungen 
+innerhalb 
+der 
+geforderten 
+Ausschaltzeiten ausreicht. Bei Einspeisesteckvorrichtungen für die Stromerzeugungseinrichtung muss dafür 
+dauerhaft ein Hinweis erfolgen, welche Kurzschlussleistung mindestens erforderlich ist. 
+ANMERKUNG 2.AT 
+Wenn die Stromerzeugungseinrichtung eine eingebaute Fehlerstrom-Schutzeinrichtung (RCD) 
+aufweist, führt eine weitere Erdverbindung in der elektrischen Anlage zu deren Auslösung. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 445/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 5 
+ANMERKUNG 3.AT 
+Für Stromerzeugungseinrichtungen in landwirtschaftlichen und gartenbaulichen Betriebsstätten 
+siehe Teil 7-705. 
+ANMERKUNG 4.AT 
+Für Stromerzeugungseinrichtungen im IT-System siehe 551.4.001.AT, für Stromerzeugungs-
+einrichtungen mit Schutztrennung siehe 551.4.002.AT, für Stromerzeugungseinrichtungen mit Isolationsüberwachung und 
+Ausschaltung beim ersten Fehler siehe 551.ZA.3.1.001.AT. 
+551.4.3 
+Schutz durch automatische Abschaltung der Stromversorgung 
+551.4.3.1 
+Allgemeines 
+Wenn Schutz durch automatische Abschaltung der Stromversorgung als Maßnahme zum Schutz gegen 
+elektrischen Schlag angewendet wird, gelten die Anforderungen gemäß Abschnitt 411. Ausgenommen 
+hiervon sind die Sonderfälle gemäß 551.4.3.2 oder 551.4.3.3. 
+551.4.3.2 
+Zusätzliche Anforderungen für Anlagen, bei denen die Stromerzeugungseinrichtung eine 
+umschaltbare Versorgungsalternative zur allgemeinen Stromversorgung der Anlage 
+darstellt 
+Der Schutz durch automatische Abschaltung der Stromversorgung darf nicht von der Erdverbindung des 
+Verteilernetzes abhängig sein, wenn die Stromerzeugungseinrichtung als umschaltbare Versorgungs-
+alternative betrieben wird. Bei Ersatzstrombetrieb muss eine geeignete Art der Systemerdung (Erdungs-
+anlage und Erdung des Sternpunkts der Stromerzeugungseinrichtung) ausgeführt sein. 
+ANMERKUNG 1.AT 
+Grundsatz ist, dass für jede Stromversorgung, die unabhängig von den anderen 
+Stromversorgungen in Betrieb sein kann, ein geeigneter Fehlerschutz in der Anlage erforderlich ist. 
+ANMERKUNG 2.AT 
+Man geht dabei davon aus, dass in Österreich eine Verbraucheranlage, die aus dem 
+Verteilernetz versorgt wird, jedenfalls eine Erdungsanlage besitzt, die für den Schutz durch automatische Abschaltung 
+geeignet ist und herangezogen werden kann. 
+551.4.3.3 
+Zusätzliche Anforderungen für Stromquellen mit statischen Umrichtern und 
+Umgehungsschaltung in Anlagen 
+Wenn der Fehlerschutz für Teile einer elektrischen Anlage, die durch eine Stromquelle mit einem statischen 
+Umrichter versorgt wird, vom automatischen Schließen eines By-Pass-Schalters abhängig ist und von den 
+Schutzeinrichtungen auf der Speiseseite des By-Pass-Schalters die erforderlichen Ausschaltzeiten gemäß 
+Teil 4-41 nicht eingehalten werden, dann ist ein zusätzlicher Schutzpotentialausgleich gemäß 415.2 zwischen 
+gleichzeitig berührbaren Körpern und fremden leitfähigen Teilen auf der Lastseite des statischen Umrichters 
+erforderlich. 
+ANMERKUNG 1.AT 
+Diese 
+Anforderung 
+betrifft 
+zB 
+den 
+Sonderfall, 
+bei 
+dem 
+eine 
+unterbrechungsfreie 
+Stromversorgung (USV) ständig in Betrieb ist, die Schutzmaßnahme jedoch von der vorgelagerten Anlage und nicht von 
+der USV gewährleistet wird. 
+Der Widerstand R des in diesem Falle geforderten zusätzlichen lokalen Schutzpotentialausgleichsleiters 
+zwischen gleichzeitig berührbaren leitfähigen Teilen muss im Wechselstromsystem folgende Bedingung 
+erfüllen: 
+ 
+R = 
+50 V
+Ia  
+(F 551.1) 
+Dabei ist 
+Ia 
+der maximale Fehlerstrom gegen Erde, der vom statischen Umrichter für eine Zeitdauer bis zu 5 s 
+erzeugt werden kann. 
+ANMERKUNG 
+Wenn eine derartige Einrichtung für den Parallelbetrieb zu einem Verteilernetz vorgesehen ist, gelten 
+auch die Anforderungen von 551.7. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 446/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 6 
+ANMERKUNG 2.AT 
+Hinweise zur Querschnittsdimensionierung des zusätzlichen Schutzpotentialausgleichsleiters 
+finden sich in Teil 5-54. 
+ 
+Legende 
+1 
+Überstrom-Schutzeinrichtung 
+2 
+Fehlerstrom-Schutzeinrichtung (RCD) 
+3 
+Batterie mit Sekundärzellen für Netzersatz 
+4 
+Fehlererfassung 
+5 
+By-Pass-Schalter 
+6 
+Verbraucher 
+7 
+zusätzlicher Schutzpotentialausgleich 
+Bild 551.001.AT– Beispiel für die By-Pass-Schaltung zur Erfüllung von 551.4.3.3 
+551.4.3.3.2 Es sind Vorkehrungen zu treffen oder die elektrischen Betriebsmittel sind so auszuwählen, dass 
+die ordnungsgemäße Funktion von Schutzeinrichtungen nicht durch Gleichströme beeinträchtigt wird, die von 
+einem statischen Umrichter oder durch Filter erzeugt werden. 
+551.4.3.3.3 Auf beiden Seiten eines statischen Umrichters muss eine Trenneinrichtung vorgesehen werden. 
+Diese Anforderung gilt nicht auf der Seite der Stromquelle des statischen Umrichters, wenn die Stromquelle 
+mit dem statischen Umrichter in einem gemeinsamen Gehäuse untergebracht ist. 
+551.4.001.AT 
+Zusätzliche Anforderungen bei Schutztrennung 
+Wenn die Schutzmaßnahme Schutztrennung angewendet wird und die Niederspannungsstromerzeugungs-
+einrichtung nicht als elektrisches Betriebsmittel der Schutzklasse II oder mit gleichwertiger sicherer Trennung 
+ausgeführt ist, müssen sowohl die Körper der Niederspannungsstromerzeugungseinrichtung als auch jene 
+der anzuschließenden elektrischen Betriebsmittel der Schutzklasse I mit dem für diese Schutzmaßnahme 
+erforderlichen Potentialausgleichsleiter verbunden sein. 
+551.4.002.AT 
+Zusätzliche Anforderungen bei Isolationsüberwachung mit automatischer 
+Abschaltung beim ersten Fehler 
+Werden mehrere elektrische Verbrauchsmittel an eine Stromerzeugungseinrichtung angeschlossen und 
+können die Anforderungen von Teil 4-41 Anhang 41.C.3 personell nicht erfüllt werden, kann alternativ die 
+Schutzmaßnahme Isolationsüberwachung mit automatischer Abschaltung beim ersten Fehler zur Anwendung 
+kommen. Beim Sinken des Isolationswiderstandes zwischen aktiven Teilen und dem Schutzleiter unter 
+100 Ω/V Nennspannung müssen die Stromkreise der elektrischen Verbrauchsmittel innerhalb 5 s 
+automatisch ausgeschaltet werden. Eine Begrenzung der Netzausdehnung ist dabei nicht erforderlich. 
+ANMERKUNG AT 
+Die Ansprechzeit sollte nach Angaben von ÖVE/ÖNORM EN 61557-8 geprüft werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 447/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 7 
+551.5 
+Schutz bei Überstrom 
+551.5.1 Wenn der Schutz bei Überstrom der Stromerzeugungseinrichtung gefordert ist, muss er so nahe 
+wie möglich an den Generatoranschlussklemmen angeordnet sein. 
+ANMERKUNG 
+Der Anteil des zu erwartenden Kurzschlussstroms einer Stromerzeugungseinrichtung kann 
+zeitabhängig und viel geringer sein als der Kurzschlussstrom, der bei einer Speisung über einen Mittel- oder 
+Niederspannungstransformator gegeben ist. 
+551.5.2 Wenn eine Stromerzeugungseinrichtung für den Parallelbetrieb mit einer anderen Stromquelle, 
+einschließlich dem öffentlichen Stromverteilungsnetz, vorgesehen ist, oder wenn zwei oder mehr 
+Stromerzeugungseinrichtungen parallel arbeiten, müssen Oberschwingungsströme so begrenzt werden, dass 
+der thermische Bemessungswert der Leiter nicht überschritten wird. 
+Die Auswirkungen von Oberschwingungsströmen dürfen in folgender Weise begrenzt werden: 
+– 
+Auswahl von Stromerzeugungseinrichtungen mit Kompensationswicklungen, 
+– 
+Verwenden einer geeigneten Impedanz mit Verbindung zum Sternpunkt der Stromerzeugungs-
+einrichtung, 
+– 
+Verwendung von Schaltgeräten, die den Stromkreis unterbrechen, jedoch so, dass der Fehlerschutz zu 
+jeder Zeit gewährleistet ist, 
+– 
+Verwendung von Filtern, 
+– 
+andere geeignete Mittel. 
+ANMERKUNG 1  
+Es sollte auf die maximale Spannung geachtet werden, die an einer zur Begrenzung von 
+auftretenden Oberschwingungen angeschlossenen Impedanz hervorgerufen werden kann. 
+ANMERKUNG 2  
+Überwachungseinrichtungen nach ÖVE/ÖNORM EN 61557-12 liefern Messwerte über die 
+Größe der störenden Oberschwingungen. 
+551.6 
+Zusätzliche Anforderungen für Anlagen, bei denen die Stromerzeugungseinrichtung eine 
+umschaltbare Versorgungsalternative zur allgemeinen Stromversorgung der Anlage darstellt 
+551.6.1 Es sind Maßnahmen gemäß den einschlägigen Anforderungen für das Trennen gemäß Abschnitt 
+537 vorzusehen, damit ein Betrieb der Stromerzeugungseinrichtung parallel zum Verteilernetz nicht möglich 
+ist. Geeignete Maßnahmen können sein: 
+– 
+eine elektrische, mechanische oder elektromechanische Verriegelung zwischen den Schaltgeräten oder 
+den Steuerstromkreisen der Umschalteinrichtungen, 
+– 
+ein Verriegelungssystem mittels eines einzigen Schlüsselprofils, 
+– 
+ein Umschalter mit drei Stellungen, der erst trennt und dann schaltet, 
+– 
+ein automatischer Umschalter mit geeigneter Verriegelung, 
+– 
+andere Mittel, die eine gleichwertige Betriebssicherheit ergeben. 
+Diese angeführten Maßnahmen gelten auch für die Steuerstromkreise des Generators. 
+ANMERKUNG AT 
+Damit soll vermieden werden, dass ein ungewollter Parallelbetrieb mit dem Verteilungsnetz über 
+Steuerstromkreise erfolgen kann. 
+551.6.2 Fehlerstrom-Schutzeinrichtungen (RCD) sind so anzuordnen, dass eine Fehlfunktion infolge 
+paralleler Neutralleiter-Erde-Verbindung vermieden wird. 
+ANMERKUNG 1  
+Der vom Netz kommende PEN-Leiter darf grundsätzlich nicht getrennt werden (siehe 
+Nullungsverordnung). 
+ANMERKUNG 2  
+Siehe dazu auch 444.7. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 448/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 8 
+551.6.001.AT 
+Umschaltbedingungen 
+Speisen Ersatzstromerzeuger bei Ausfall der allgemeinen Stromversorgung eine elektrische Anlage, so sind 
+folgende Bedingungen einzuhalten. 
+– 
+Alle Außenleiter und ein in der Anlage nicht geerdeter neutraler Leiter müssen vom Leitungsnetz der 
+allgemeinen Stromversorgung durch Schaltgeräte getrennt werden. 
+– 
+Es wird empfohlen, 4-polig (3L+N) zwischen Ersatzstromversorgung und Netzbetrieb umzuschalten, 
+ausgenommen zB in Fällen, wo Anlagen im Netzparallelbetrieb betrieben werden können. 
+– 
+Nach dem Umschalten auf den Ersatzstromerzeuger muss entweder die in der elektrischen Anlage 
+vorhandene Schutzmaßnahme bei indirektem Berühren wirksam bleiben oder eine andere 
+Schutzmaßnahme gemäß Teil 4-41 wirksam werden. 
+– 
+Bei Wiederkehr der allgemeinen Stromversorgung ist die Rückschaltung erst nach einer angemessenen 
+Verzögerungszeit vorzunehmen (siehe TOR D4). 
+– 
+Bestehen keine diesbezüglichen Vereinbarungen mit Betreibern der allgemeinen Stromversorgung, ist 
+eine Verzögerungszeit von mindestens 1 Minute anzunehmen. 
+551.7 
+Zusätzliche Anforderungen für elektrische Anlagen, bei denen ein Parallelbetrieb  
+der Stromerzeugungseinrichtung mit anderen Stromquellen einschließlich einem 
+Verteilungsnetz zulässig ist 
+551.7.1 Wenn eine Stromerzeugungseinrichtung als zusätzliche Stromquelle im Parallelbetrieb mit einer 
+anderen Stromquelle eingesetzt wird, müssen der Schutz gegen thermische Einflüsse gemäß Teil 4-42 und 
+der Schutz bei Überstrom gemäß Teil 4-43 in allen Fällen wirksam sein. 
+Mit Ausnahme von unterbrechungsfreien Stromversorgungen, die zur Versorgung von bestimmten 
+elektrischen Betriebsmitteln in einem Endstromkreis eingesetzt werden, müssen Stromerzeugungs-
+einrichtungen auf der Versorgungsseite aller Schutzeinrichtungen der Endstromkreise angeschlossen 
+werden. 
+551.7.2 Eine Stromversorgungseinrichtung, die als zusätzliche Stromquelle im Parallelbetrieb mit einer 
+anderen Stromquelle vorgesehen ist, muss wie folgt errichtet werden: 
+– 
+Anschluss auf der Versorgungsseite aller Schutzeinrichtungen für die Endstromkreise der Anlage, oder 
+– 
+Anschluss auf der Lastseite aller Schutzeinrichtungen für einen Endstromkreis der Anlage, jedoch 
+müssen in diesem Fall alle folgenden Anforderungen zusätzlich erfüllt werden: 
+ 
+i) 
+die Leiter und andere elektrische Betriebsmittel der Endstromkreise müssen folgende Anforderung 
+erfüllen: 
+ 
+IZ  ≥ In + Ig 
+(F.551.2) 
+ 
+Dabei ist 
+ 
+Iz die Strombelastbarkeit der Leiter und anderer Betriebsmittel des Endstromkreises; 
+ 
+In der Bemessungsstrom der Schutzeinrichtung des Endstromkreises; 
+ 
+Ig der Bemessungsausgangsstrom der Stromerzeugungseinrichtung. 
+und 
+ii) 
+eine Stromerzeugungseinrichtung darf nicht mittels eines Steckers und einer Steckdose mit dem 
+Endstromkreis verbunden werden und 
+iii) eine Fehlerstrom-Schutzeinrichtung (RCD) in Übereinstimmung mit den Abschnitten 411 oder 415, 
+vorgesehen für den Schutz des Endstromkreises, muss alle aktiven Leiter einschließlich des 
+Neutralleiters unterbrechen und 
+iv) Außenleiter und Neutralleiter von Endstromkreisen der Stromerzeugungseinrichtung dürfen nicht 
+hinter der Schutzeinrichtung des Endstromkreises mit Erde verbunden werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 449/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 9 
+ANMERKUNG 
+Wenn eine Stromerzeugungseinrichtung auf der Lastseite aller Schutzeinrichtungen dieses 
+Endstromkreises eingesetzt wird, ausgenommen die internen Schutzeinrichtungen der Stromerzeugungseinrichtung 
+unterbrechen die Außenleiter und den Neutralleiter, ergibt sich die maximale Ausschaltzeit im Fehlerfall aus der 
+Ausschaltzeit der Schutzeinrichtung für den Endstromkreis und der Zeit, die erforderlich ist, um die Ausgangsspannung 
+der Stromerzeugungseinrichtung auf einen Wert unter 50 V zu reduzieren. 
+551.7.3 Bei Auswahl und Einsatz einer Stromerzeugungseinrichtung für den Parallelbetrieb mit anderen 
+Stromquellen, einschließlich des Verteilernetzes, ist auf die Vermeidung negativer Auswirkungen auf das 
+Verteilernetz und auf andere Anlagen in Bezug auf Leistungsfaktor, Spannungsänderungen, nichtlineare 
+Verzerrungen, Gleichstromüberlagerung, Lastunsymmetrie sowie Anlauf-, Synchronisier- oder Flickereffekte 
+zu achten. 
+Bei Einspeisung in ein Verteilernetz müssen die besonderen Anforderungen des Netzbetreibers 
+berücksichtigt werden. 
+ANMERKUNG AT 
+Anforderungen dazu siehe TOR Teil D, Hauptabschnitt D4. 
+Wenn eine Synchronisierung notwendig ist, ist der Einsatz von automatischen Synchronisieranlagen zu 
+bevorzugen, die die Frequenz, Phasenlage und den Spannungswert berücksichtigen. 
+551.7.4 Wenn eine Stromerzeugungseinrichtung für den Parallelbetrieb mit dem Verteilernetz vorgesehen 
+ist, müssen Mittel zur automatischen Trennung der Stromerzeugungseinrichtung vom Verteilernetz 
+vorgesehen werden, wenn die Versorgung unterbrochen ist oder die Spannung oder die Frequenz an den 
+Anschlussklemmen von den zulässigen Werten, die für einen Normalbetrieb erforderlich sind, abweicht. 
+Die Art der Schutzeinrichtungen, die Empfindlichkeit und die Ansprechzeiten hängen von der 
+Schutzmaßnahme des Verteilernetzes und der Zahl der angeschlossenen Stromerzeugungseinrichtungen ab 
+und müssen vom Versorgungsunternehmen zugelassen sein. 
+ANMERKUNG AT 
+Anforderungen dazu siehe TOR Teil D, Hauptabschnitt D4. 
+Wenn statische Umrichter vorhanden sind, müssen die Mittel zum Schalten auf der Lastseite des statischen 
+Umrichters vorgesehen werden. 
+551.7.5 Wenn eine Stromerzeugungseinrichtung für den Parallelbetrieb mit dem Verteilernetz vorgesehen 
+ist, sind Mittel vorzusehen, um die Verbindung der Stromerzeugungseinrichtung mit dem Verteilernetz zu 
+verhindern, wenn die Netzversorgung unterbrochen ist oder die Spannung oder die Frequenz an den 
+Anschlussklemmen von den zulässigen Werten, die für einen Normalbetrieb erforderlich sind, abweicht. 
+ANMERKUNG AT 
+Gemäß TOR Teil D, Hauptabschnitt D4 kann dies durch eine selbsttätig wirkende Schaltstelle 
+oder Entkupplungsstelle erfolgen. 
+551.7.6 Wenn eine Stromerzeugungseinrichtung für den Parallelbetrieb mit dem Verteilernetz vorgesehen 
+ist, sind Mittel vorzusehen, die ein Trennen der Stromerzeugungseinrichtung von diesem ermöglichen. Die 
+Zugänglichkeit dieser Trenneinrichtungen muss den nationalen Regeln und den Anforderungen des 
+Netzbetreibers entsprechen. 
+ANMERKUNG AT 
+Gemäß TOR Teil D, Hauptabschnitt D4 kann dies durch eine Schaltstelle erfolgen. 
+551.7.7 Wenn eine Stromerzeugungseinrichtung auch als umschaltbare Versorgungsalternative mit dem 
+Verteilernetz betrieben werden kann, muss die Anlage auch die Anforderungen von 551.6 erfüllen. 
+551.8 
+Anforderungen für Anlagen mit ortsfesten Batterien 
+551.8.1 Ortsfeste Batterien müssen so errichtet werden, dass sie nur Elektrofachkräften (BA5) oder 
+elektrotechnisch unterwiesenen Personen (BA4) zugänglich sind. 
+ANMERKUNG 
+Dieses erfordert im Allgemeinen die Errichtung der Batterieanlage in einem eigenen gesicherten Raum 
+oder bei kleineren Batterieanlagen in einer gesicherten Umhüllung, siehe zB ÖVE/ÖNORM EN 50272-2, 
+Herstellerangaben, baurechtliche Anforderungen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 450/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 10 
+Der Raum oder die Umhüllung müssen gemäß den Herstellerangaben angemessen belüftet sein. 
+ANMERKUNG AT 
+In Abhängigkeit der Batterie-Technologie kann eine ständige und angemesse Be- und Entlüftung 
+ins Freie erforderlich sein. 
+551.8.2 Batterieanschlüsse müssen einen Basisschutz durch Isolierung oder Umhüllungen haben, oder sie 
+müssen so angeordnet sein, dass zwei blanke leitfähige Teile, zwischen denen ein Potentialunterschied von 
+größer 90 V besteht, nicht unbeabsichtigt gleichzeitig berührt werden können. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 451/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 11 
+Anhang 551.ZA 
+(normativ) 
+ 
+Zusätzliche Anforderungen für eigenständige 
+Niederspannungsstromerzeugungseinrichtungen,  
+die nicht am Stromverteilungsnetz angeschlossen sind  
+und für eigenständige Niederspannungsstromerzeugungs-
+einrichtungen, die dauerhaft errichtete Anlagen versorgen,  
+die vom Stromverteilungsnetz getrennt sind 
+551.ZA.1 Allgemeines 
+Besonders für eigenständige Niederspannungsstromerzeugungseinrichtungen müssen Vorkehrungen 
+getroffen werden, die die Niederspannungsstromerzeugungseinrichtung oder eine Kombination von 
+Niederspannungsstromerzeugungseinrichtungen abschalten, wenn ein fehlerbehaftetes Anschlusskabel oder 
+wenn ein Fehler im versorgten elektrischen Betriebsmittel vorliegt. In diesem Fall müssen die Anforderungen 
+gemäß Teil 4-41 erfüllt werden, mit Ausnahme der nach 551.ZA.2 und 551.ZA.3 beschriebenen Maßnahmen 
+für bestimmte Anwendungen. 
+ANMERKUNG AT 
+Eine 
+„eigenständige 
+Niederspannungsstromerzeugungseinrichtung“ 
+wird 
+in 
+diesem 
+Anhang 551.ZA kürzend „eigenständige Stromerzeugungseinrichtung“ genannt. 
+551.ZA.2 Allgemeine Anforderungen 
+Die eigenständige Stromerzeugungseinrichtung muss für den vorgesehenen Verwendungszweck geeignet 
+sein (zB Betriebseigenschaft, Nennleistung). 
+ANMERKUNG 
+Es gelten besondere Anforderungen für den Parallelbetrieb der eigenständigen Stromerzeugungs-
+einrichtungen. 
+Der zu erwartende Kurzschlussstrom und der zu erwartende Erdschlussstrom müssen für jede eigenständige 
+Stromerzeugungseinrichtung oder für jede Kombination von eigenständigen Stromerzeugungseinrichtungen 
+ermittelt werden, die unabhängig von anderen Quellen oder (deren) Kombinationen betrieben werden 
+können. Der Wert des Kurzschluss-Ausschaltvermögens der Schutzeinrichtungen darf für keine der 
+vorgesehenen Betriebsarten der eigenständigen Stromerzeugungseinrichtung überschritten werden. 
+Das Leistungsvermögen und die Betriebseigenschaften der eigenständigen Stromerzeugungseinrichtung 
+müssen so beschaffen sein, dass nach dem Einschalten oder Ausschalten jeder vorgesehenen Last keine 
+Gefährdung oder Beschädigung von elektrischen Betriebsmitteln als Folge einer Abweichung der Spannung 
+oder Frequenz vom vorgesehenen Betriebsbereich entsteht. 
+Es sind Schutzeinrichtungen vorzusehen, die die Anlagenteile gegebenenfalls automatisch abschalten, wenn 
+das maximale Leistungsvermögen der eigenständigen Stromerzeugungseinrichtung überschritten wird. 
+Es sollte auf die Summe der einzelnen Lastanteile im Verhältnis zum maximalen Leistungsvermögen der 
+eigenständigen Stromerzeugungseinrichtung und auf Motoranlaufströme geachtet werden. 
+Für die Ausschaltung jeder eigenständigen Stromerzeugungseinrichtung oder deren Kombinationen sind 
+Vorkehrungen notwendig, mit denen die Anforderungen gemäß Teil 4-41 erfüllt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 452/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 12 
+551.ZA.3 Schutzmaßnahmen – Schutzvorkehrungen 
+551.ZA.3.1 Schutz durch automatische Abschaltung der Stromversorgung 
+551.ZA.3.1.1 Allgemeines 
+Wenn der Schutz durch automatische Abschaltung der Stromversorgung als Maßnahme zum Schutz gegen 
+elektrischen Schlag angewendet wird, gelten die Anforderungen gemäß Abschnitt 411, mit Ausnahme der 
+nachfolgend aufgeführten Abweichungen für bestimmte Anwendungen. 
+551.ZA.3.1.2 Zusätzliche Anforderungen für eigenständige Stromerzeugungseinrichtungen mit 
+statischen Umrichtern 
+Wenn eine Anlage über eine eigenständige Stromerzeugungseinrichtung mit statischem Umrichter versorgt 
+wird und der Fehlerschutz auf der Auslösung von Schutzeinrichtungen beruht, muss die Ausschaltzeit gemäß 
+Teil 4-41 Tabelle 41.1 entsprechen. Wenn in einem Teil der Anlage diese Zeit nicht eingehalten werden kann, 
+muss ein zusätzlicher Schutzpotentialausgleich gemäß 415.2 zwischen gleichzeitig berührbaren Körpern und 
+fremden leitfähigen Teilen auf der Lastseite des statischen Umrichters vorgesehen werden. 
+Der Widerstand R des geforderten zusätzlichen Schutzpotentialausgleichsleiters zwischen gleichzeitig 
+berührbaren leitfähigen Teilen muss im Wechselstromsystem folgende Bedingung erfüllen: 
+ 
+𝑅 ≤ 
+50 V
+Ia  
+(F 551.ZA.1) 
+Dabei ist 
+Ia 
+der maximale Fehlerstrom gegen Erde, der vom statischen Umrichter für eine Zeitdauer bis zu 5 s 
+erzeugt werden kann. 
+Es sind Vorsichtsmaßnahmen vorzusehen, oder die elektrischen Betriebsmittel sind so auszuwählen, dass 
+die ordnungsgemäße Funktion von Schutzeinrichtungen oder das Messprinzip der Isolationsüberwachungs-
+einrichtung (IMD) durch Gleichströme, die von einem statischen Umrichter oder durch Filter erzeugt werden, 
+nicht beeinträchtigt wird. 
+551.ZA.3.1.3 Anwendung eines TN-Systems für eigenständige Stromerzeugungseinrichtungen 
+Es muss eine ausreichende Kurzschlussleistung der eigenständigen Stromerzeugungseinrichtung 
+sichergestellt sein, um zu gewährleisten, dass der Stromkreis im Fehlerfall durch eine Überstrom-
+Schutzeinrichtung oder durch eine Fehlerstrom-Schutzeinrichtung (RCD) gemäß 411.4 ausgeschaltet wird. 
+ANMERKUNG AT 
+Die Ausschaltung mittels Überstrom-Schutzeinrichtung ist in Österreich die bevorzugte 
+Maßnahme. 
+Aus praktischen Gründen wird empfohlen, dass die Betriebsanleitung der eigenständigen Stromerzeugungs-
+einrichtungen einen Hinweis auf den maximalen Bemessungsstrom enthält. 
+551.ZA.3.1.4 Anwendung eines IT-Systems für eigenständige Stromerzeugungseinrichtungen 
+Für die Anwendung eines IT-Systems für eigenständige Stromerzeugungseinrichtungen gelten die 
+Anforderungen gemäß 411.6 und zusätzlich die folgenden Anforderungen: 
+– 
+beim Auftreten eines ersten Isolationsfehlers, bei dem der Isolationswiderstand unter 100 Ω/V (bezogen 
+auf die Leiter-Erde-Spannung U0 in einem fehlerfreien Netz) sinkt, muss eine Warnung durch das 
+Isolationsüberwachungsgerät (IMD) gemäß ÖVE/ÖNORM EN 61557-8 erfolgen, 
+– 
+für die Anforderungen bei einem zweiten Isolationsfehler siehe 411.6.4. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 453/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 13 
+551.ZA.3.1.001.AT 
+ 
+Schutz durch ein Isolations-Überwachungssystem mit automatischer 
+Abschaltung der Stromversorgung beim ersten Fehler 
+ANMERKUNG 1.AT 
+Werden 
+mehrere 
+elektrische 
+Verbrauchsmittel 
+an 
+eine 
+Stromerzeugungseinrichtung 
+angeschlossen und können die Anforderungen von Teil 4-41 Anhang 41.C.3 personell nicht erfüllt werden, kann alternativ 
+die Schutzmaßnahme Isolations-Überwachungssystem mit automatischer Abschaltung beim ersten Fehler zur 
+Anwendung kommen. 
+Es muss ein Isolationsüberwachungsgerät (IMD) gemäß ÖVE/ÖNORM EN 61557-8 installiert werden. Beim 
+Sinken des Isolationswiderstandes zwischen den aktiven Teilen und dem Schutzpotentialausgleichsleiter 
+unter 100 Ω/V Leiter-Erde-Spannung U0 müssen die Stromkreise nach Erkennen des Fehlers unverzüglich 
+automatisch abgeschaltet werden. 
+Die Ansprechzeiten des IMD sollten nach Angaben von ÖVE/ÖNORM EN 61557-8 geprüft werden. 
+Diese Schutzmaßnahme darf so ausgeführt werden, dass nach dem Abschalten des Netzes eine einphasige 
+Steckdose (Notfallsteckdose) weiter versorgt werden kann. Diese Steckdose muss dauerhaft so 
+gekennzeichnet sein, dass immer nur ein elektrisches Verbrauchsmittel daran angeschlossen werden darf. 
+Sofern die eigenständige Niederspannungsstromerzeugungseinrichtung als elektrisches Betriebsmittel der 
+Schutzklasse I ausgeführt ist, muss deren Körper mit dem Schutzpotentialausgleichsleiter verbunden sein. 
+Eine 
+Begrenzung 
+der 
+Netzausdehnung 
+ist 
+nicht 
+erforderlich, 
+weil 
+die 
+eigenständige 
+Stromerzeugungseinrichtung bereits beim Auftreten eines ersten Isolationsfehlers ausgeschaltet wird. 
+Wird 
+der 
+Isolationswiderstand 
+ständig 
+durch 
+ein 
+Isolationsüberwachungsgerät 
+(IMD) 
+nach 
+ÖVE/ÖNORM EN 61557-8 
+überwacht, 
+kann 
+die 
+Isolationswiderstandsmessung 
+gemäß 
+Teil 6 
+für 
+wiederkehrende Prüfungen wegfallen. 
+ANMERKUNG 2.AT 
+Die unmittelbare Versorgung von ansteckbaren Verbrauchsmitteln durch eigenständige 
+Stromerzeugungseinrichtungen erfordert keine Errichtung einer elektrischen Anlage und ist daher nicht Gegenstand von 
+Abschnitt 551. 
+551.ZA.3.2 Anwendung 
+von 
+Schutztrennung 
+in 
+Verbindung 
+mit 
+einer 
+eigenständigen 
+Stromerzeugungseinrichtung 
+551.ZA.3.2.1 Schutztrennung mit nur einem elektrischen Verbrauchsmittel 
+Ist nur ein einziges elektrisches Verbrauchsmittel an die eigenständige Stromerzeugungseinrichtung 
+angeschlossen, gelten die Anforderungen gemäß Abschnitt 413. 
+551.ZA.3.2.2 Schutztrennung mit mehr als einem elektrischen Verbrauchsmittel 
+Dieser Unterabschnitt kommt in Österreich nicht zur Anwendung. Es gelten die Anforderungen von Abschnitt 
+413 einschließlich Teil 4-41 Anhang 41.C.3. 
+551.ZA.3.2.2.3 Schutztrennung mit RCD und automatischer Abschaltung 
+Dieser Unterabschnitt kommt in Österreich nicht zur Anwendung. 
+551.ZA.3.3 Inbetriebnahme der eigenständigen Stromerzeugungseinrichtung 
+Für die Inbetriebnahme einer eigenständigen Stromerzeugungseinrichtung ist keine Elektrofachkraft 
+erforderlich, wenn die Anforderungen von 551.ZA.3.1.3, 551.ZA.3.2.2 oder 551.ZA.3.1.001.AT sowie die 
+folgenden Anforderungen erfüllt sind. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 454/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 14 
+– 
+Nachdem 
+die 
+eigenständige 
+Stromerzeugungseinrichtung 
+gestartet 
+wurde 
+und 
+bevor 
+die 
+Stromversorgung aufgenommen wird, muss die Funktionsfähigkeit einer Isolationsüberwachungs-
+einrichtung (IMD) durch das Drücken der Prüftaste auf dem entsprechenden Gerät oder automatisiert 
+geprüft werden. 
+– 
+Verlängerungskabel, Verbindungskabel und Stecker/Steckdosen müssen regelmäßig, insbesondere auf 
+mechanische Beschädigungen, überprüft werden. 
+– 
+Es dürfen nur Kabel verwendet werden, die dauerhaft für den beabsichtigten Einsatz geeignet sind. 
+ANMERKUNG AT 
+Prüffristen für eigenständige Stromerzeugungseinrichtungen sind zB den Herstellerangaben 
+oder der Elektroschutzverordnung – ESV zu entnehmen. 
+551.ZA.3.4 Eigenständige 
+Stromerzeugungseinrichtungen, 
+die 
+ortsfeste 
+elektrische 
+Anlagen 
+versorgen, die vom Stromverteilungsnetz getrennt sind 
+Sofern eine eigenständige Stromerzeugungseinrichtung für eine wahlweise Verwendung gemäß Betriebsart 1 
+oder Betriebsart 2 vorgesehen ist, muss sie mit einer geeigneten Schalteinrichtung zum Umschalten der 
+Betriebsart ausgestattet sein. Die Schalterstellung muss eindeutig gekennzeichnet sein. 
+In Betriebsart 1 speist die eigenständige Stromerzeugungseinrichtung gemäß 551.ZA.3.2.2. 
+Betriebsart 2 ist die Einstellung für die Versorgung einer vom Netz getrennten ortsfesten elektrischen Anlage 
+mit den folgenden Anforderungen: 
+– 
+ergänzend zu Unterabschnitt 551.4.3.2 wird empfohlen, die Erdung der dauerhaft errichteten 
+elektrischen Anlage zu nutzen. Ist das nicht möglich, müssen geeignete Erdungsmaßnahmen 
+vorgesehen werden; 
+– 
+aus Gründen der Unverwechselbarkeit muss eine spezielle Steckdose eingesetzt werden, die verhindert, 
+dass eine Standard-Steckvorrichtung direkt an der Stromerzeugungseinrichtung angeschlossen werden 
+kann. Wenn für diese Steckvorrichtung eine Steckdose gemäß ÖVE/ÖNORM EN 60309-2 genutzt wird, 
+muss der PE-Anschluss in 01:00 h-Stellung eingesetzt werden. 
+Bild 551.ZA.1 zeigt ein Beispiel einer eigenständigen Stromerzeugungseinrichtung, bei der die Betriebsart mit 
+einem Schalter eingestellt werden kann. 
+ANMERKUNG 1  
+Für die Ersatzstromversorgung in landwirtschaftlichen und gartenbaulichen Betriebsstätten siehe  
+Teil 7-705. 
+ANMERKUNG 2  
+Die Anwendung eines 4-poligen Schalters hinter der eigenständigen Stromerzeugungs-
+einrichtung mit Überstromschutz für die aktiven Leiter schützt die eigenständige Stromerzeugungseinrichtung gegen 
+Isolationsfehler in der eigenständigen Stromerzeugungseinrichtung. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 455/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 15 
+ 
+Bild 551.ZA.1 – Beispiel einer eigenständigen Stromerzeugungseinrichtung  
+mit Umschalter zur Einstellung von Betriebsart 1 oder Betriebsart 2 innerhalb  
+der eigenständigen Stromerzeugungseinrichtung 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 456/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 16 
+557 Hilfsstromkreise 
+557.1 
+Anwendungsbereich 
+Dieser Abschnitt gilt für Hilfsstromkreise, ausgenommen diejenigen, die von Produkt- oder Systemnormen 
+abgedeckt werden. 
+557.2 
+Begriffe 
+Für die Anwendung dieses Abschnitts gelten die Begriffe gemäß Teil 2. 
+557.3 
+Anforderungen an Hilfsstromkreise 
+557.3.1 
+Allgemeines 
+Die Stromversorgung eines Hilfsstromkreises, AC oder DC, darf entsprechend ihrer geforderten Funktion 
+entweder abhängig oder unabhängig vom Hauptstromkreis sein. Wenn der Zustand eines Hauptstromkreises 
+angezeigt werden soll, muss der Signalstromkreis unabhängig von diesem Hauptstromkreis funktionieren. 
+ANMERKUNG 
+In ausgedehnten Anlagen kann die Verwendung einer DC-Hilfsstromversorgung sinnvoll sein. 
+557.3.2 
+Hilfsstromkreisversorgung abhängig vom Hauptstromkreis 
+557.3.2.1 
+Allgemeines 
+Hilfsstromkreise mit einer vom AC-Hauptstromkreis abhängigen Stromversorgung müssen mit dem 
+Hauptstromkreis 
+– 
+direkt (Beispiel siehe Bild 557.1), oder 
+– 
+über einen Gleichrichter (Beispiel siehe Bild 557.2), oder 
+– 
+über einen Transformator (Beispiel siehe Bild 557.3) 
+verbunden werden. 
+Es wird empfohlen, Hilfsstromkreise, die überwiegend elektronische Betriebsmittel oder Systeme versorgen, 
+nicht direkt, sondern mindestens mit einfacher Trennung vom Hauptstromkreis zu versorgen. 
+ 
+Bild 557.1 – Beispiel für einen Hilfsstromkreis, der direkt vom Hauptstromkreis versorgt wird 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 457/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 17 
+ 
+Bild 557.2 – Beispiel für einen Hilfsstromkreis, der über einen Gleichrichter  
+vom Hauptstromkreis versorgt wird 
+ 
+ 
+Bild 557.3 – Beispiel für einen Hilfsstromkreis, der über einen Transformator  
+vom Hauptstromkreis versorgt wird 
+ANMERKUNG 
+Bei Hilfsstromkreisen, die direkt vom Hauptstromkreis versorgt werden, beginnt der Hilfsstromkreis an 
+den Anschlussstellen zum Hauptstromkreis, siehe Bild 557.1. Beim Anschluss über einen Gleichrichter, siehe Bild 557.2, 
+beginnt der Hilfsstromkreis auf der DC-Seite des Gleichrichters. Beim Anschluss über einen Transformator, siehe 
+Bild 557.3, beginnt der Hilfsstromkreis an der Sekundärseite des Transformators. 
+557.3.2.2 
+Hilfsstromkreis, der vom Hauptstromkreis über einen Transformator versorgt wird 
+Wenn ein Hilfsstromkreis von mehr als einem Transformator versorgt wird, müssen diese sowohl auf der 
+Primär- als auch auf der Sekundärseite parallel geschaltet werden. 
+557.3.3 
+Hilfsstromkreis, der von einer unabhängigen Stromquelle versorgt wird 
+Wenn eine unabhängige Stromquelle verwendet wird, sollte der Ausfall der Versorgung oder eine 
+Unterspannung des Hauptstromkreises erfasst werden. Ein unabhängiger Hilfsstromkreis darf keine 
+gefährliche Situation verursachen. 
+ANMERKUNG 
+Batterien und ein von der Hauptstromversorgung unabhängiges Stromversorgungssystem sind 
+Beispiele für unabhängige Stromquellen. 
+557.3.4 
+Hilfsstromkreise mit oder ohne Erdverbindung 
+557.3.4.1 
+Allgemeines 
+Ein Hilfsstromkreis muss die Erdungsanforderungen gemäß OVE E 8101 erfüllen, ausgenommen 
+Abweichungen in 557.3.4.2 oder 557.3.4.3. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 458/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 18 
+Wenn hohe Zuverlässigkeit gefordert wird, sollte die Anwendung eines ungeerdeten Hilfsstromkreises 
+vorgesehen werden. 
+ANMERKUNG 
+Ob ein Hilfsstromkreis geerdet oder ungeerdet betrieben wird, hängt von den Anforderungen an diesen 
+ab. In einem geerdeten Hilfsstromkreis zB führt ein Erdschluss in einem nicht geerdeten Leiter zu einer Ausschaltung der 
+Stromversorgung des Hilfsstromkreises. In einem ungeerdeten Hilfsstromkreis führt ein Erdschluss in einem Leiter nur zu 
+einem Signal durch eine Isolationsüberwachungseinrichtung (IMD) (siehe 557.3.4.3). 
+557.3.4.2 
+Geerdete Hilfsstromkreise 
+Hilfsstromkreise, die über einen Transformator versorgt werden, dürfen auf der Sekundärseite nur an einer 
+Stelle geerdet werden. Die Erdverbindung muss sich in der Nähe des Transformators befinden. Diese 
+Verbindung muss leicht zugänglich und für Isolationsmessungen trennbar sein. 
+557.3.4.3 
+Ungeerdete Hilfsstromkreise 
+Wenn ein Hilfsstromkreis ungeerdet über einen Transformator versorgt wird, muss auf der Sekundärseite 
+eine Isolationsüberwachungseinrichtung (IMD) gemäß ÖVE/ÖNORM EN 61557-8 vorgesehen werden. 
+ANMERKUNG 
+Abhängig von einer Risikobeurteilung sollte festgelegt werden, ob das Signal der Isolations-
+überwachungseinrichtung (IMD) einen akustischen und/oder optischen Alarm auslöst oder ob das Signal an ein 
+Überwachungssystem übertragen wird. 
+557.3.5 
+Stromversorgungen für Hilfsstromkreise 
+557.3.5.1 
+Allgemeines 
+Die Bemessungsspannung des Hilfsstromkreises und die verwendeten Komponenten des Stromkreises 
+müssen für diesen Stromkreis geeignet sein. 
+ANMERKUNG 
+Eine für die Anwendung zu niedrig gewählte Versorgungsspannung kann einen unzuverlässigen Betrieb 
+zur Folge haben, zB ein nicht ordnungsgemäß funktionierendes Relais. 
+Für die korrekte Funktion der elektrischen Betriebsmittel des Hilfsstromkreises müssen die Auswirkungen 
+eines Spannungsabfalls berücksichtigt werden, zB: 
+– 
+bei Wechselstromversorgung können Relais und Magnetventile einen Einschaltstrom erzeugen, der dem 
+7- bis 8-fachen des Haltestroms entspricht, 
+– 
+bei Gleichstromversorgung ist der Einschaltstrom gleich dem Haltestrom, 
+– 
+bei Motoren, die direkt eingeschaltet werden, kann die vom Hauptstromkreis abhängige Spannung des 
+Hilfsstromkreises soweit abgesenkt werden, dass die Mindesthaltespannung von zugehörigen 
+Schaltgeräten unterschritten werden kann. 
+557.3.5.2 
+Ersatz- oder Sicherheitsstromversorgungen 
+Bei der Verwendung einer Ersatzstromversorgung oder einer Stromversorgung durch einen Generatorsatz 
+zur Versorgung von Hilfsstromkreisen müssen die Frequenzschwankungen berücksichtigt werden. 
+557.3.5.3 
+Wechselspannungsversorgung 
+Die Nennspannung von Steuerstromkreisen sollte vorzugweise 230 V für Stromkreise bei 50 Hz 
+Nennfrequenz, unter Berücksichtigung einer Spannungstoleranz gemäß ÖVE/ÖNORM EN 60038, nicht 
+überschreiten. 
+Die Auswahl der Leitungslängen hinsichtlich der Leitungskapazitäten, zB die Zuleitung zu einem Endschalter, 
+erfordert eine Koordinierung mit den ausgewählten Relais oder Magnetventilen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 459/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 19 
+Das durch eine hohe Leitungskapazität verursachte Fortbestehen einer Spannung kann ein Abschalten eines 
+Relais oder Magnetventils beeinträchtigen. 
+ANMERKUNG AT 
+Ergänzende Maßnahmen zur Löschung der kapazitiven Spannung können erforderlich sein. 
+557.3.5.4 
+Gleichspannungsversorgung 
+557.3.5.4.1 
+Versorgung durch ein Netz 
+Die Nennspannung von Steuerstromkreisen sollte vorzugsweise 230 V nicht überschreiten. 
+557.3.5.4.2 
+Versorgung durch Batterien 
+Bei der Verwendung von Batterien zur Hilfsstromkreisversorgung dürfen die beim Lade-/Entladevorgang 
+auftretenden Spannungsschwankungen die zulässigen Spannungstoleranzen gemäß ÖVE/ÖNORM 
+EN 60038 nicht überschreiten, ausgenommen, der Hilfsstromkreis ist speziell dafür konstruiert, solche 
+Spannungsschwankungen auszugleichen. 
+557.3.6 
+Schutzmaßnahmen 
+Schutzmaßnahmen und Schutzvorkehrungen gemäß Teil 4 sind auch für Hilfsstromkreise erforderlich. 
+Es dürfen auch von den Hauptstromkreisen abweichende Schutzmaßnahmen angewendet werden, wenn 
+hierdurch keine nachteilige gegenseitige Beeinflussung auftritt. 
+557.3.6.1 
+Schutz von Kabel- und Leitungsanlagen 
+Bei ausgedehnten Hilfsstromkreisen ist sicherzustellen, dass der für die Schutzeinrichtung erforderliche 
+Auslösestrom auch am weitest entfernten Ende der betreffenden Kabel- und Leitungsanlage erreicht wird, 
+siehe 433.1. 
+Einphasige, geerdete Hilfsstromkreise (AC und DC), die von Transformatoren versorgt werden, dürfen auf 
+der Sekundärseite des Transformators durch eine einpolige Schutzeinrichtung geschützt werden. Die 
+Schutzeinrichtungen dürfen nur in Leitern vorgesehen werden, die nicht geerdet sind. 
+Ungeerdete Hilfsstromkreise (AC und DC) müssen durch Schutzeinrichtungen gegen Kurzschlussströme 
+geschützt werden, die alle Außenleiter unterbrechen. Einpoliger Schutz ist zulässig, wenn die Bemessungs-
+spannung und die Strom-/Zeitcharakteristik der zugehörigen Schutzeinrichtung so bemessen sind, dass der 
+Leiter mit dem geringsten Querschnitt geschützt wird. 
+ANMERKUNG 1  
+Die 
+Verwendung 
+von 
+Schutzeinrichtungen, 
+die 
+alle 
+Außenleiter 
+eines 
+ungeerdeten 
+Hilfsstromkreises abschalten, helfen bei der Fehlersuche und Wartung. 
+Wenn die Kurzschluss-Schutzeinrichtung auf der Primärseite des Transformators für einen Hilfsstromkreis so 
+ausgewählt ist, dass sie auch bei einem Kurzschluss auf der Sekundärseite schützt, kann auf eine 
+Schutzeinrichtung auf der Sekundärseite des Transformators verzichtet werden. 
+ANMERKUNG 2  
+Die Größe des Kurzschlussstromes auf der Primärseite hängt auch von der Impedanz des 
+Transformators ab. 
+557.3.6.2 
+Schutz bei Kurzschluss 
+Schaltkontakte von elektrischen Schaltgeräten des Hilfsstromkreises müssen gegen Beschädigung durch 
+Kurzschlussströme entsprechend den Herstellerangaben geschützt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 460/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 20 
+557.4 
+Eigenschaften von Kabeln und Leitungen – Mindestquerschnitte 
+Um eine ausreichende mechanische Festigkeit sicherzustellen, müssen die Mindestquerschnitte nach 
+Tabelle 557.1 eingehalten werden. Wenn besondere Anforderungen an die mechanische Festigkeit von 
+Kabeln und Leitungen bestehen, müssen größere Querschnitte gemäß 522.6 gewählt werden. 
+Tabelle 557.1 – Mindestquerschnitte für Kupferleiter 
+Anwendung 
+Art der Leiter 
+ 
+einadrig 
+zweiadrig 
+mehradrig 
+eindrähtig 
+mehrdrähtig 
+abgeschirmt 
+nicht 
+abgeschirmt 
+abgeschirmt oder 
+nicht abgeschirmt 
+ 
+mm2 
+Steuerstromkreise a 
+0,5 
+0,5 
+0,5 
+0,5 
+0,1 
+Datenübertragung 
+– 
+– 
+– 
+– 
+0,1 
+a 
+Andere Hilfsstromkreise können größere Kupferleiterquerschnitte erfordern, zB für Messungen. 
+ANMERKUNG 
+Die Querschnitte von Kupferleitungen sind Teil 5-52 entnommen. 
+ 
+557.5 
+Anforderungen an Hilfsstromkreise für Messzwecke 
+557.5.1 
+Allgemeines 
+Messstromkreise sind Hilfsstromkreise mit bestimmten Anforderungen, die in den folgenden Unterabschnitten 
+beschrieben werden. 
+557.5.2 
+Hilfsstromkreise für Direktmessung elektrischer Größen 
+Beim direkten Anschluss von Messeinrichtungen an Hauptstromkreise sind folgende Maßnahmen zum 
+Schutz der Kabel und Leitungen gegen zu hohe Erwärmung anzuwenden: 
+– 
+Anforderungen gemäß ÖVE/ÖNORM EN 61439-1:2012 Abschnitte 8.6.2 und 8.6.4 und/oder 
+– 
+Verwendung von Kurzschluss-Schutzeinrichtungen. 
+Wenn die Unterbrechung des Messstromkreises bei Ausschaltung durch die Kurzschluss-Schutzeinrichtung 
+zu einer gefährlichen Situation führen kann, muss die Kurzschluss-Schutzeinrichtung auch den zugehörigen 
+Hauptstromkreis abschalten. 
+Bei Messeinrichtungen mit direktem Kontakt zwischen Messstromkreis und Hilfsstromversorgung ist auf 
+Phasengleichheit und auf richtige Polung zu achten. 
+557.5.3 
+Hilfsstromkreise für Wandlermessung elektrischer Größen 
+557.5.3.1 
+Stromwandler 
+Beim Anschluss von Messeinrichtungen über Stromwandler an den Hauptstromkreis sind folgende 
+Anforderungen zu berücksichtigen: 
+– 
+Sekundärstromkreise von Stromwandlern in Niederspannungsanlagen dürfen nicht geerdet werden, es 
+sei denn, dass die Messaufgabe nur durch eine Verbindung mit Erde erfüllt werden kann. 
+– 
+In Sekundärstromkreisen von Stromwandlern dürfen unterbrechende Schutzeinrichtungen nicht 
+verwendet werden. 
+– 
+Die Isolierung der Sekundärleitungen von Wandlern muss für die höchste vorkommende Spannung aller 
+aktiven Teile ausgewählt werden, oder die Sekundärleitungen müssen so verlegt werden, dass ihre 
+Isolierung keine aktiven Teile berühren kann, zB keine Berührung mit Sammelschienen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 461/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 21 
+– 
+Für temporäre Messungen müssen Anschlussstellen vorgesehen werden. 
+Zur Verringerung des Einflusses der Leitungswiderstände auf das Ergebnis der Messung sollten 
+vorzugsweise Wandler mit einem sekundären Nennstrom von 1 A verwendet werden. 
+Die obigen Anforderungen gelten nicht für Summenstromwandler, bei denen keine gefährlichen Spannungen 
+auftreten können, zB Einrichtungen zur Isolationsfehlersuche nach ÖVE/ÖNORM EN 61557-9. 
+557.5.3.2 
+Spannungswandler 
+Die Sekundärseite von Spannungswandlern muss durch Kurzschluss-Schutzeinrichtungen geschützt sein. 
+557.6 
+Funktionale Eigenschaften 
+557.6.1 
+Spannungsversorgung 
+Wenn Spannungsausfall, Spannungsschwankungen, Überspannung oder Unterspannung die vorgesehene 
+Funktion des Hilfsstromkreises verhindern könnten, müssen Maßnahmen getroffen werden, um eine 
+kontinuierliche Funktion des Hilfsstromkreises sicherzustellen. 
+557.6.2 
+Qualität der Signale in Abhängigkeit der Eigenschaften von Kabeln/Leitungen 
+Kabel/Leitungen, einschließlich ihrer Impedanz und Länge, die zwischen elektrischen Betriebsmitteln des 
+Hilfsstromkreises verlegt sind, dürfen den Betrieb eines Hilfsstromkreises nicht nachteilig beeinflussen. 
+Die Kapazität von Kabeln/Leitungen darf den ordnungsgemäßen Betrieb eines Wirkgliedes (zB Betätigungs- 
+und Haltespulen, Schütze, Leuchtmelder, elektromagnetische Verriegelungseinrichtungen) im Hilfsstromkreis 
+nicht beeinträchtigen. Bei der Auswahl von Schalt- und Steuergeräten oder elektronischen Stromkreisen sind 
+die Eigenschaften und Längen der Kabel/Leitungen zu berücksichtigen. 
+Bei einem Hilfsstromkreis größerer Ausdehnung wird die Nutzung einer Gleichspannungsversorgung oder 
+eines Bussystems empfohlen. 
+557.6.3 
+Maßnahmen zur Vermeidung des Verlustes der Funktionalität 
+Für Hilfsstromkreise, die für besondere Anwendungen vorgesehen sind, bei denen Zuverlässigkeit eine 
+wesentliche Anforderung darstellt, müssen zusätzliche Anforderungen beim Aufbau berücksichtigt werden, 
+um das Riskio von Kabel- und Leitungsfehlern zu minimieren. Diese Fehler können zu einem Verlust der 
+Funktion und/oder eines Signals führen. Unter diese Anforderungen beim Aufbau fallen: 
+– 
+Auswahl von geeigneten Verlegearten von Kabeln/Leitungen (siehe 557.4); 
+– 
+Auswahl von elektrischen Betriebsmitteln, bei denen ein Kurzschluss zu Körpern (eines elektrischen 
+Betriebsmittels) nicht möglich ist, zB elektrisches Betriebsmittel der Schutzklasse II; 
+– 
+Verwendung von kurzschluss- und erdschlusssicheren Anlagen und elektrischen Betriebsmitteln. 
+Bei der Nutzung von kurzschluss- und erdschlusssicheren Anlagen und bei der Verwendung von 
+kurzschluss- und erdschlusssicheren Betriebsmitteln muss Folgendes betrachtet werden: 
+a) 
+Anordnungen aus Einzelleitern, wenn Maßnahmen getroffen sind, die ein gegenseitiges Berühren und 
+die Berührung von Körpern (eines elektrischen Betriebsmittels) verhindern, zB durch Basisisolierung und 
+wenn ein Kurzschluss durch äußere Einflüsse nicht zu erwarten ist. Dies kann zB erreicht werden durch: 
+ 
+– 
+Verlegung in einem zu öffnenden Elektroinstallationskanalsystem, oder 
+ 
+– 
+Verlegung im Elektroinstallationsrohr. 
+b) 
+Anordnungen aus 
+ 
+– 
+einadrigen Kabeln/Leitungen, oder 
+ 
+– 
+einadrigen, Nichtmetall-ummantelten Kabeln/Leitungen, oder 
+ 
+– 
+flexiblen Gummischlauchleitungen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 462/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 22 
+c) 
+Vorkehrung zum Schutz gegen mechanische Beschädigung und Sicherheitsabstand zu brennbarem 
+Material bei Nichtmetall-ummantelten Kabel/Leitungen. 
+d) 
+Anordnung von Nichtmetall-ummantelten Kabeln/Leitungen für eine Nennspannung U0/U von 
+mindestens 0,6/1kV (U0 = Spannung Leiter gegen Erde, U = Spannung zwischen Leitern). 
+e) 
+Verwendung von Kabeln/Leitungen mit selbstlöschenden und feuerhemmenden Eigenschaften. 
+f) 
+Schutz der verwendeten Kabeln/Leitungen durch Verlegung im Untergrund, zB Verlegung von 
+Kabeln/Leitungen im Erdreich oder Beton. 
+ANMERKUNG 1  
+Maßnahmen zur Querschlusssicherheit sind Vorkehrungen zum Schutz gegen Kurzschluss 
+zwischen zwei parallelen Leitungen, die Teil einer Ausrüstung sind. 
+ANMERKUNG 2  
+Dies darf zB durch die Verwendung von Kabeln/Leitungen mit einem geerdeten Schirm erreicht 
+werden. Im Fall von Quetschung/Scherung eines Kabels/einer Leitung sollte ein möglicher Erdschluss über den Schirm 
+berücksichtigt werden. In geerdeten Hilfsstromkreisen, die nach dem Ruhestromprinzip aufgebaut sind, kann ein 
+Kurzschluss zum Ansprechen der Kurzschluss-Schutzeinrichtung führen. In ungeerdeten Hilfsstromkreisen wird der 
+Kurzschluss durch eine Isolationsüberwachungseinrichtung (IMD) erfasst, siehe 557.3.4.3. 
+557.6.4 
+Strombegrenzende Signalausgänge 
+In Hilfsstromkreisen mit strombegrenzenden Signalausgängen bzw. elektronischem Schutz bei Kurzschluss 
+muss sowohl im geerdeten als auch im ungeerdeten Hilfsstromkreis bei Ansprechen dieser Einrichtung eine 
+Ausschaltung des betreffenden Signalkreises innerhalb von 5 s erfolgen. In besonderen Fällen kann eine 
+kürzere Ausschaltzeit erforderlich sein. 
+Bei strombegrenzenden Signalausgängen bzw. bei elektronischem Schutz darf auf die automatische 
+Abschaltung des betreffenden Hilfsstromkreises verzichtet werden, wenn dadurch keine unkontrollierten bzw. 
+gefahrbringenden Abläufe entstehen können. 
+557.6.5 
+Verbindung mit dem Hauptstromkreis 
+557.6.5.1 
+Hilfsstromkreise ohne direkte Verbindung mit dem Hauptstromkreis 
+Elektrische Wirkglieder, zB Betätigungs- und Haltespulen, Schütze, Leuchtmelder, elektromagnetische 
+Verriegelungseinrichtungen, müssen mit dem gemeinsamen Leiter verbunden sein (siehe Bild 557.4): 
+a) 
+in geerdeten Hilfsstromkreisen mit dem geerdeten (gemeinsamen) Leiter; 
+b) 
+in ungeerdeten Hilfsstromkreisen mit dem gemeinsamen (ungeschalteten) Leiter. 
+ 
+Bild 557.4 – Aufbau eines Hilfsstromkreises 
+Ausnahme: Schaltglieder von Schutzrelais, zB Überstromrelais, die zwischen dem geerdeten oder 
+ungeerdeten Leiter und einer Spule errichtet werden können, vorausgesetzt, dass 
+– 
+sich diese Verbindungen innerhalb eines gemeinsamen Gehäuses befinden, oder 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 463/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 23 
+– 
+dies zur Vereinfachung außen liegender Steuereinrichtungen führt, zB Schleifleitungen, Leitungsroller 
+(Kabeltrommeln), Vielfachstecker, und die Anforderungen von 557.3.6.2 Berücksichtigung finden. 
+557.6.5.2 
+Hilfsstromkreise mit direkter Verbindung zum Hauptstromkreis 
+Wird der Hilfsstromkreis 
+a) 
+zwischen zwei ungeerdeten Außenleitern (zB zwischen L1 und L2 eines IT-Systems) angeschlossen, so 
+müssen die Schaltglieder zweipolig ausgeführt werden; 
+b) 
+mit dem geerdeten Neutralleiter des Hauptstromkreises verbunden, dann gelten die Anforderungen 
+gemäß Teil 4-43. 
+557.6.6 
+Steckverbindungen 
+Die Möglichkeit des Vertauschens von Mehrfachsteckverbindungen untereinander ist nur dann zulässig, 
+wenn dies nicht zu mechanischer Beschädigung oder zu Risiken durch Feuer, elektrischen Schlag oder zu 
+Verletzungen von Personen führt. 
+ANMERKUNG 1  
+Solche Steckverbindungen sind Teil des Hilfsstromkreises und können unterschiedliche Signale 
+führen. 
+ANMERKUNG 2  
+Der Schutz gegen Verwechslung darf sowohl durch Markierungen, mechanische Kodierung, 
+Bauform oder durch elektronische Verriegelung erfolgen. 
+Die Steckverbindungen müssen mit einer Arretierung gegen unbeabsichtigtes Lösen gesichert sein. 
+557.7 
+Funktionale Sicherheit 
+Bei Verwendung von sicherheitsbezogenen Systemen gemäß ÖVE/ÖNORM EN 61508 Reihe oder 
+vergleichbaren Normen müssen alle Beschreibungen und Errichtungsanforderungen entsprechend den 
+Herstellerangaben für sicherheitsbezogene Systeme berücksichtigt werden. 
+557.8 
+Elektromagnetische Verträglichkeit (EMV) 
+Zur Erfüllung der Anforderungen zur elektromagnetischen Verträglichkeit (EMV) müssen alle Beschreibungen 
+und Errichtungsanforderungen entsprechend den Herstellerangaben für EMV berücksichtigt werden. 
+ANMERKUNG 
+Diese Anforderung schließt die Anwendung von Abschnitt 444 nicht aus. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 464/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 24 
+559 Leuchten und Beleuchtungsanlagen 
+559.1 
+Anwendungsbereich 
+Dieser Abschnitt gilt für die Auswahl der Leuchten und die Errichtung von Beleuchtungsanlagen, die Teil 
+einer ortsfesten elektrischen Anlage sind. 
+Zusätzliche Anforderungen für besondere Arten von Beleuchtungsanlagen sind u. a. enthalten in: 
+– 
+Teil 7-702 für Anlagen in Becken von Schwimmbädern, begehbaren Wasserbecken und Springbrunnen; 
+– 
+Teil 7-711 für Anlagen in Ausstellungen, Shows und Ständen; 
+– 
+Teil 7-713 für elektrische Anlagen in Möbeln; 
+– 
+Teil 7-714 für Beleuchtungsanlagen im Freien; 
+– 
+Teil 7-715 für Kleinspannungsbeleuchtungsanlagen. 
+Anforderungen für eine Notbeleuchtung siehe Teil 5-56, ÖVE/ÖNORM EN 50172, ÖNORM EN 1838 und 
+ÖVE/ÖNORM EN 60598-2-22. 
+Dieser Abschnitt gilt nicht für: 
+– 
+mit Niederspannung versorgte Schilder und Leuchtröhrengeräte mit einer Leerlaufspannung über 1 kV, 
+aber nicht über 10 kV (siehe ÖVE/ÖNORM EN 50107-1 und ÖVE/ÖNORM EN 50107-2); 
+– 
+vorübergehende Festbeleuchtung (zB Weihnachtsbeleuchtung, Girlanden, Partylichter). 
+ 
+ANMERKUNG AT Unter der vorübergehenden Festbeleuchtung sind steckerfertige Betriebsmittel zu verstehen, die 
+an eine vorhandene Installation angeschlossen werden. 
+ANMERKUNG 1  
+Anforderungen für mit Niederspannung versorgte Schilder oder Zeichen, die mit Hochspannung 
+versorgt werden („Neonröhren“), sind in ÖVE/ÖNORM EN 60598-2-14 enthalten. 
+ANMERKUNG 2  
+Sicherheitsanforderungen für Leuchten sind in ÖVE/ÖNORM EN 60598 Reihe enthalten. 
+559.2 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+559.3 
+Allgemeine Anforderungen 
+Leuchten müssen unter Berücksichtigung der Herstellerangaben ausgewählt und installiert werden und 
+müssen ÖVE/ÖNORM EN 60598 Reihe entsprechen. 
+Elektrische Stromschienensysteme für Leuchten müssen den Anforderungen gemäß ÖVE/ÖNORM 
+EN 60570 entsprechen. 
+ANMERKUNG 1  
+Bezüglich 
+Verträglichkeit 
+zwischen 
+Leuchten 
+und 
+deren 
+Leuchtmittel 
+sowie 
+den 
+Schutzeinrichtungen und Schalt-/Steuergeräten wird auf 512.1.5 hingewiesen. Beispiele für Einflussgrößen, die bei der 
+Auswahl und Installation von Leuchten ebenfalls berücksichtigt werden sollten, sind: 
+– 
+Einschaltstrom bzw. Einschaltstrombegrenzung; 
+– 
+Oberschwingungsstrom; 
+– 
+Kompensation; 
+– 
+Ableitstrom; 
+– 
+Vorheizstrom; 
+– 
+Beherrschen von Spannungseinbrüchen; 
+– 
+Dauer der Einschaltverzögerung; 
+– 
+Heißwiederzündung (für Hochdruckleuchtmittel); 
+– 
+äußere Einflüsse. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 465/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 25 
+ANMERKUNG 2  
+Zur korrekten Auswahl der Schutz- und Steuereinrichtungen dienen Informationen über die 
+Ströme (Einschaltstrom, Oberschwingungsstroms, Ableitstrom, Vorheizstrom usw.), die von den Leuchten und deren 
+Leuchtmittel erzeugt werden. 
+ANMERKUNG 3  
+Anhang 559.A enthält die Erläuterung der für Leuchten, Schalt-/Betriebsgeräte für Leuchten und 
+für die Montage der Leuchten verwendeten Zeichen. 
+ANMERKUNG AT 
+Anforderungen für ballwurfsichere Leuchten siehe VDE 0710-13. 
+Für die Anwendung dieses Abschnitts gilt eine Leuchte auch dann als Niederspannungsbetriebsmittel, wenn 
+diese mit in Reihe geschaltenen Kleispannungsleuchtmitteln bestückt ist (zB Bilderleuchte) und mit einer 
+Versorgungsspannung > 50 V AC betrieben wird. Diese Leuchte muss entweder der Schutzklasse I oder der 
+Schutzklasse II entsprechen. 
+Eine Leuchte muss nach Herstellerangaben derart ausgewählt und montiert werden, dass sie nicht nachteilig 
+durch Vorhänge, Markisen o. Ä. oder deren Bedienung beeinflusst wird und im üblichen Gebrauch keine 
+Brandgefahr darstellt. Dies gilt auch für architektonische und dekorative Bauelemente. 
+559.4 
+Schutz der Umgebung gegen thermische Einflüsse (Auswahl und Installationsanforderungen) 
+Zum Schutz der Umgebung sind bei der Planung der Auswahl und der Installation von Leuchten deren 
+thermischen Einflüsse auf ihre Umgebung zu berücksichtigen, wie: 
+a) 
+die maximal zulässige Leistung des Leuchtmittels bzw. die Bemessungsleistung der Leuchte; 
+ 
+ANMERKUNG 1 
+Die maximal zulässige Leistung des Leuchtmittels ist auf der Leuchte zu finden. 
+b) 
+die Wärmebeständigkeit der angrenzenden Materialien im thermisch beeinflussten Bereich; 
+c) 
+der Mindestabstand zu brennbaren Materialien, einschließlich zu solchen, die sich im Scheinwerferstrahl 
+befinden; 
+d) 
+Herstellerangaben wie zB Aufschriften auf der Leuchte, Symbole; 
+ 
+ANMERKUNG 2 
+Anhang 559.A enthält Aufschriften und Symbole bezüglich thermischer Auswirkungen. 
+e) 
+erforderliche Mindestabstände für eine ausreichende Wärmeabfuhr. 
+ 
+ANMERKUNG AT Dies ist besonders bei einer Leuchte zu beachten, die zB hinter einer Verblendung montiert ist. 
+ANMERKUNG 3  
+Die Verwendung von Glimmstartern nach ÖVE/ÖNORM EN 60155 wird empfohlen. 
+Zusätzliche Anforderungen bezüglich Schutz gegen thermische Einflüsse für Leuchten sind in 422.3 und 
+422.4 enthalten. 
+559.5 
+Kabel- und Leitungsanlagen für Beleuchtungsanlagen und Befestigung der Leuchten 
+559.5.1 
+Anschluss an die ortsfeste Installation 
+Leitungen der ortsfesten Installation für den Anschluss von Leuchten müssen entweder: 
+– 
+in einer Installationsdose der festen Installation gemäß der entsprechenden Norm der ÖVE/ÖNORM 
+EN 60670 Reihe enden, oder 
+– 
+in einer Steckvorrichtung für den Anschluss von Leuchten (DCL – Device for the Connection of 
+Luminaires) gemäß den Normen der OVE EN 61995 Reihe, die in einer Installationsdose installiert ist, 
+enden, oder 
+– 
+die Anschlussleitungen der ortsfesten Installation enden in einem geeigneten Anschlussraum der 
+Leuchte oder an einem Anschluss-Stück eines Leuchtensystems (Stromschiene). 
+559.5.1.001.AT Durchschleifen von Leitungen 
+Grundsätzlich ist ein Durchschleifen nur in Leuchten zulässig, die vom Hersteller als dafür geeignet 
+ausgewiesen sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 466/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 26 
+ANMERKUNG 1.AT 
+Für jeden Leuchtenanschluss wird eine eigene Zuleitung empfohlen. 
+ANMERKUNG 2.AT 
+In ÖVE/ÖNORM EN 60598-1:2015 Abschnitt 1.2.48 wird Durchschleifen als System zur 
+Herstellung des Netzanschlusses für zwei oder mehrere Leuchten definiert, bei dem jeder Leiter eingangs- und 
+ausgangsseitig an der gleichen Klemme angeschlossen ist (siehe Bild 559.001.AT). 
+ 
+Legende 
+1 
+Anschlussklemmen 
+2 
+Netz 
+3 
+Vorschaltgerät 
+4 
+Starter 
+5 
+Lampe 
+Bild 559.001.AT – Darstellung des Begriffs „Durchschleifen“  
+(angelehnt an ÖVE/ÖNORM EN 60589-1:2015, Bild 20a) 
+559.5.2 
+Befestigung von Leuchten 
+Es müssen geeignete Mittel zur Befestigung der Leuchte an einer dafür geeigneten baulichen Konstruktion 
+verwendet werden. 
+Als Befestigungsmittel dürfen mechanische Mittel (zB Haken oder Schrauben), Dosen oder Gehäuse, welche 
+geeignet sind, Leuchten zu tragen (siehe ÖVE/ÖNORM EN 60670-21), oder tragende Vorrichtungen zum 
+Anschluss einer Leuchte verwendet werden. 
+Das Befestigungsmittel muss eine Masse von mindestens 5 kg tragen können. Wenn die Masse einer 
+Leuchte (zB Hängeleuchte, Lichtband) mehr als 5 kg beträgt, müssen entsprechende Vorkehrungen getroffen 
+werden, damit die Befestigungsmittel die Masse der Leuchte dauerhaft tragen können. Bei der Montage der 
+Befestigungsmittel sind die Herstellerangaben zu berücksichtigen. 
+Die Tragfähigkeit der an der Befestigungsstelle vorhandenen baulichen Konstruktion (zB Decke, abgehängte 
+Decke) muss für die Masse der Leuchte, der Dose, ihrer Befestigungsmittel und ihrer eventuell vorhandenen 
+Zubehörteile entsprechend ausgelegt ein. 
+ANMERKUNG 1  
+Die erforderliche Tragfähigkeit der Konstruktionen ist bereits in der bautechnischen Planung zu 
+berücksichtigen. 
+Kabel und Leitungen zwischen den Befestigungsmitteln und der Leuchte müssen derart verlegt werden, dass 
+durch die zu erwartende Beanspruchung der Leiter, Klemmen und Verbindungen die Sicherheit der 
+Beleuchtungsanlage nicht beeinträchtigt wird. 
+ANMERKUNG 2  
+Siehe auch 522.8. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 467/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 27 
+Freihängende fest installierte elektrische Betriebsmittel mit einer Masse über 5 kg müssen mit einem 
+zusätzlichen unabhängigen Befestigungsmittel gesichert sein. 
+ANMERKUNG AT 
+Sicherungsseile und Sicherungsketten sind als zusätzliche Befestigungsmittel zulässig. 
+559.5.3 
+Durchgangsverdrahtung (Durchgangsleitung) 
+Durchgangsverdrahtung (Durchgangsleitung) in Leuchten (Lichtbändern) ist nur in dafür vorgesehenen 
+Leuchten zulässig. 
+ANMERKUNG AT 
+Die Darstellung des Begriffes Durchgangsleitung siehe Bild 559.002.AT. 
+Die Durchgangsverdrahtung (Durchgangsleitung) in Leuchten (Lichtbändern) wird vom Produkthersteller 
+nach Produktnormen errichtet. 
+ 
+Bild 559.002.AT a) – Darstellung des Begriffs „Durchgangsleitung“  
+bei angeschlossener Leuchte 
+(kann für dreiphasige Durchgangsleitung benutzt werden, wobei die Leuchte abwechselnd  
+zwischen L1, L2 und L3 und dem Neutralleiter angeschlossen ist) 
+ 
+Bild 559.002.AT b) – Darstellung des Begriffs „Durchgangsleitung“,  
+die nicht in der Leuchte angeschlossen ist 
+Legende 
+1 
+Anschlussklemmen 
+2 
+Netz 
+3 
+Vorschaltgerät 
+4 
+Starter 
+5 
+Lampe 
+Bild 559.002.AT – Darstellung des Begriffes „Durchgangsleitung“ gemäß ÖVE/ÖNORM EN 60598-1 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 468/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 28 
+Wenn Verbindungsmaterial benötigt wird, jedoch bei der für Durchgangsverdrahtung (Durchgangsleitung) 
+vorgesehenen Leuchte nicht vorhanden ist, muss wahlweise Folgendes Verbindungsmaterial verwendet 
+werden: 
+– 
+Anschlussklemmen gemäß ÖVE/ÖNORM EN 60998 Reihe, oder 
+– 
+Installationssteckverbinder, die zur Verbindung der Durchgangsverdrahtung (Durchgangsleitung) 
+geeignet sind, gemäß ÖVE/ÖNORM EN 61535, oder 
+– 
+ein den einschlägigen Normen entsprechendes Verbindungsmaterial. 
+Kabel und Leitungen für eine Durchgangsverdrahtung (Durchgangsleitung) müssen in Übereinstimmung mit 
+der Temperaturangabe auf der Leuchte oder der Montageanweisung des Herstellers, falls vorhanden, 
+ausgewählt werden: 
+– 
+für Leuchten gemäß ÖVE/ÖNORM EN 60598 Reihe mit Temperaturkennzeichnung: Kabel und 
+Leitungen entsprechend den angegebenen Temperaturen; 
+– 
+für Leuchten gemäß ÖVE/ÖNORM EN 60598 ohne Temperaturkennzeichnung: Es werden keine 
+wärmebeständigen Kabeln/Leitungen gefordert, sofern in der Montageanweisung des Herstellern keine 
+anderen Angaben vorhanden sind; 
+– 
+für Leuchten nicht gemäß ÖVE/ÖNORM EN 60598 Reihe und wenn keine Informationen vorliegen: 
+Kabel/Leitungen oder isolierte Leiter gemäß ÖVE/ÖNORM EN 50525-2-41 oder gleichwertige Bauarten. 
+ANMERKUNG 
+Die 
+Temperaturkennzeichnung 
+auf 
+Leuchten 
+zeigt 
+die 
+Grenztemperatur 
+gemäß 
+ÖVE/ÖNORM EN 60598-1:2015 Tabelle 12.2 für übliche in Leuchten verwendete Werkstoffe an und ist mit dem Zeichen 
+ (siehe Anhang 559.A) gekennzeichnet. 
+559.5.4 
+Anforderungen an Kabel/Leitungen und Verbindungsmaterial für den Anschluss an die 
+ortsfeste Installation 
+Kabel und Leitungen die für den unmittelbaren Anschluss von Leuchten verwendet werden, müssen 
+entsprechend den Herstellerangaben des Leuchtenherstellers ausgeführt werden (zB Außendurchmesser 
+oder örtlich thermisch geschützt). 
+Bei Leuchten ohne Betriebsmittel für den Anschluss an die ortsfeste Anlage müssen folgende geeignete und 
+passende Anschlussmittel verwendet werden: 
+– 
+Anschlussklemmen gemäß ÖVE/ÖNORM EN 60998 Reihe, oder 
+– 
+Betriebsmittel für den Anschluss von Leuchten (DCL) gemäß OVE EN 61995-1, oder 
+– 
+Installationssteckverbinder gemäß ÖVE/ÖNORM EN 61535, oder 
+– 
+ein den einschlägigen Normen entsprechendes Verbindungsmaterial. 
+559.5.5 
+Leuchtengruppen 
+Ein dreiphasiger Endstromkreis, bei dem Leuchtengruppen auf die Außenleiter aufgeteilt werden, muss 
+mindestens eine Einrichtung besitzen, die alle Außenleiter dieses Endstromkreises gleichzeitig abschaltet. 
+ANMERKUNG 
+Siehe auch Abschnitt 537. 
+559.5.6 
+Schutz gegen Hitze und UV-Strahlung innerhalb der Leuchte 
+Es sind die Herstellerangaben zu beachten. Diesbezüglich mitgelieferte Materialien (zB wärmebeständige 
+Isolierschläuche) sind zu verwenden. 
+559.6 
+Unabhängige Leuchtmittel-Betriebsgeräte, zB EVG, LED-Treiber 
+Außerhalb von Leuchten sind ausschließlich unabhängige Leuchtmittel-Betriebsgeräte zu verwenden, die 
+entsprechend der Norm für den unabhängigen Einsatz geeignet und gekennzeichnet sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 469/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 29 
+ANMERKUNG AT 
+In ÖVE/ÖNORM EN 60598-1 wird das Lampenbetriebsgerät als Gerät, das zum Betrieb von 
+Lampen benutzt wird, zB Vorschaltgerät, Transformator und Konverter beschrieben. Wobei dieser Begriff keine Geräte 
+zum Schalten von Lampen oder zur Steuerung der Helligkeit wie zB Dimmer und Tageslichtsensoren beinhaltet. 
+Ein unabhängiges Lampenbetriebsgerät gemäß ÖVE/ÖNORM EN 60598-1 ist ein Lampenbetriebsgerät aus einem oder 
+mehreren Einzelteilen, dass so gebaut ist, dass dieses/diese außerhalb und unabhängig von der Leuchte entsprechend 
+seiner/seinen Aufschrift/en ohne zusätzliche Gehäuse angebracht werden kann (können). 
+ANMERKUNG 
+Das allgemein festgelegte Zeichen ist: 
+, unabhängiges Leuchtmittel-Betriebsgerät nach 
+ÖVE/ÖNORM IEC 60417 DB-5138. 
+Auf brennbaren Materialien dürfen nur befestigt werden: 
+– 
+thermisch geschützte Leuchtmittel-Betriebsgeräte der Klasse „P“, die mit dem Zeichen 
+, oder 
+– 
+temperaturgekennzeichnete thermisch geschützte Leuchtmittel-Betriebsgeräte, die mit dem Zeichen 
+ 
+gekennzeichnet sind. 
+ANMERKUNG AT 
+Gemäß OVE EN 61347-1 sind für die mit 
+ gekennzeichneten Leuchtmittel-Betriebsgeräte 
+eine maximale Gehäusetemperatur von 90 °C, ein maximale Bemessungstemperatur der Wicklung (tw) von 105 °C und 
+eine maximale Bemessungs-Betriebstemperatur für einen Kondensator (tc) von 70 °C zulässig. 
+559.7 
+Kompensationskondensatoren 
+Anforderungen dafür siehe OVE EN 61048. 
+559.8 
+Schutz gegen elektrischen Schlag in Ausstellungsbereichen für Leuchten 
+Stromkreise, die Ausstellungsbereiche für Leuchten versorgen, müssen geschützt werden, entweder durch 
+– 
+Kleinspannung mittels SELV oder PELV gemäß Teil 4-41, oder 
+– 
+automatische Abschaltung der Stromversorgung gemäß Abschnitt 411 und Zusatzschutz durch 
+Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,03 A gemäß 415.1. 
+559.9 
+Stroboskopischer Effekt 
+Bei der Beleuchtung von Orten, wo Maschinen mit sich bewegenden Teilen in Betrieb sind, ist der 
+stroboskopische Effekt zu berücksichtigen, der den Stillstand dieser bewegten Teile vortäuscht. Dieser Effekt 
+ist durch die Auswahl von Leuchten mit geeigneten Leuchtmittel-Betriebsgeräten zu verhindern (zB EVG). 
+559.10 Bodeneinbauleuchten 
+Die Auswahl und Installation von Bodeneinbauleuchten müssen entsprechend dem Verwendungszweck 
+unter Berücksichtigung von zB Oberflächentemperatur, „Rutschklasse“, Aufbauhöhe über Einbauniveau (zB 
+Thema Schneeräumung) und statischer Belastung gemäß ÖVE/ÖNORM EN 60598-2-13 erfolgen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 470/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 30 
+Anhang 559.A 
+(informativ) 
+ 
+Erläuterung der in Leuchten, Betriebsgeräten für Leuchten und für die 
+Montage der Leuchten verwendeten Zeichen 
+ 
+Bedingt oder unbedingt kurzschlussfester Sicherheitstransformator 
+(ÖVE/ÖNORM EN 61558-2-6) 
+ 
+Leuchte mit begrenzter Oberflächentemperatur (ÖVE/ÖNORM EN 60598-2-24) 
+ 
+Nicht zur Abdeckung mit Wärmedämmmaterial geeignete Leuchten 
+(ÖVE/ÖNORM EN 60598-1) 
+ 
+Nicht zur direkten Befestigung auf normal entflammbaren Oberflächen geeignete 
+Einbauleuchte (ÖVE/ÖNORM EN 60598-1) 
+ 
+Nicht zur direkten Befestigung auf normal entflammbaren Oberflächen geeignete 
+oberflächenmontierbare Leuchte (ÖVE/ÖNORM EN 60598-1) 
+ 
+Unabhängiges Vorschaltgerät (ÖVE/ÖNORM IEC 60417 DB-5138) 
+ 
+Umformer mit einer Temperaturbegrenzung von 110 °C 
+ 
+Unabhängiges Vorschaltgerät für direkte Montage auf normal entflammbaren 
+Oberflächen (OVE EN 61347-1) 
+ 
+Thermisch geschütztes Lampenbetriebsgerät/geschützter Transformator  
+(Klasse P) (OVE EN 61347-1) 
+ 
+Verwendung von wärmefesten Netz-Anschlussleitungen, Verbindungsleitungen 
+oder äußeren Leitungen (Anzahl der Leiter ist freigestellt) 
+(ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+Leuchten, gebaut für die Anwendung von Kopfspiegellampen 
+(ÖVE/ÖNORM EN 60598 Reihe) 
+ta …..ºC 
+Höchste Bemessungs-Umgebungstemperatur (ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+Warnhinweis gegen die Verwendung von „cool beam“-Lampen 
+(ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+Kleinster Abstand zu angestrahlten Flächen (in m) (ÖVE/ÖNORM EN 60598 
+Reihe) 
+ 
+Leuchten für rauen Betrieb (ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 471/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 31 
+ 
+Leuchten zum Betrieb mit Natriumdampf-Hochdrucklampen, die ein außerhalb 
+(der Lampe) angebrachtes Zündgerät erfordern (ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+Leuchten zum Betrieb mit Natriumdampf-Hochdrucklampen mit eingebautem 
+Zündgerät (ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+ 
+Jede zersprungene Schutzabdeckung ist zu ersetzen (rechteckig oder rund)  
+(ÖVE/ÖNORM EN 60598 Reihe) 
+ 
+Leuchten, die nur für „self-shielded“-Halogenglühlampen ausgelegt sind 
+(ÖVE/ÖNORM EN 60598 Reihe), und Lampen, die in offenen Leuchten 
+verwendet werden können. 
+ 
+Lampen, die nur in geschützten Leuchten verwendet werden dürfen. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 472/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-55 – Seite 32 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 473/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 1 
+Teil 5-56 Einrichtungen für Sicherheitszwecke 
+Inhalt 56 
+560.1 
+Anwendungsbereich 
+560.2 
+Normative Verweisungen 
+560.3 
+Begriffe 
+560.4 
+Klassifizierung 
+560.5 
+Allgemeines 
+560.6 
+Stromquellen für Sicherheitszwecke 
+560.7 
+Stromkreise für Sicherheitszwecke 
+560.8 
+Kabel- und Leitungsanlagen 
+560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+560.10 
+Allgemeine Anforderungen für brandschutztechnische Einrichtungen 
+Anhang 56.A (informativ)  Leitfaden für Sicherheitsbeleuchtung 
+Anhang 56.B (informativ)  Leitfaden für brandschutztechnische Einrichtungen 
+Nationale Ergänzung 56.NE (normativ)  Ergänzende Anforderungen für Einrichtungen für Sicherheitszwecke 
+ 
+ 
+560.1 
+Anwendungsbereich 
+Dieser Teil enthält allgemeine Anforderungen für Einrichtungen für Sicherheitszwecke, für die Auswahl und 
+Errichtung elektrischer Anlagen von Einrichtungen für Sicherheitszwecke und von Stromquellen für 
+Sicherheitszwecke. 
+ANMERKUNG AT 
+Ergänzende Anforderungen sind in weiteren Teilen der gegenständlichen Norm zu finden, wie 
+zB für öffentliche Einrichtungen und Arbeitsstätten (Teil 7-718), für Krankenhäuser und medizinisch genutzte Bereiche 
+außerhalb von Krankenhäusern (Teil 7-710). 
+Dieser Teil gilt nicht für 
+– 
+Anlagen in explosionsgefährdeten Bereichen (BE3) – Anforderungen siehe ÖVE/ÖNORM EN 60079-14. 
+– 
+Ersatzstromversorgungsanlagen – Anforderungen siehe Abschnitt 551. 
+Weitere Anforderungen siehe auch nationale Ergänzung 56.NE. 
+560.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+560.3 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+560.4 
+Klassifizierung 
+560.4.1 Ein Stromversorgungssystem für Einrichtungen für Sicherheitszwecke ist entweder 
+– 
+eine nicht-automatische Stromversorgung, deren Einschaltung durch das Bedienpersonal erfolgt, oder 
+ 
+ANMERKUNG AT Die nicht-automatische Stromversorgung kommt bei elektrischen Anlagen im Anwendungs-
+bereich von Teil 7-710 und Teil 7-718 nicht zur Anwendung. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 474/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 2 
+– 
+eine automatische Stromversorgung, deren Einschaltung unabhängig vom Bedienpersonal erfolgt. 
+Eine automatische Stromversorgung wird wie folgt entsprechend ihrer maximalen Umschaltzeit klassifiziert: 
+– 
+unterbrechungsfrei: automatische Stromversorgung, die während der Umschaltung eine fortlaufende 
+Versorgung innerhalb festgelegter Bedingungen, zB hinsichtlich Spannungs- und Frequenz-
+schwankungen, sicherstellen kann; 
+– 
+sehr kurze Unterbrechung: automatische Stromversorgung, die innerhalb von 0,15 s (≤0,15 s) zur 
+Verfügung steht; 
+– 
+kurze Unterbrechung: automatische Stromversorgung, die innerhalb von 0,5 s (≤0,5 s) zur Verfügung 
+steht; 
+– 
+durchschnittliche Unterbrechung: automatische Stromversorgung, die innerhalb von 5 s (≤5 s) zur 
+Verfügung steht; 
+– 
+mittlere Unterbrechung: automatische Stromversorgung, die innerhalb von 15 s (≤15 s) zur Verfügung 
+steht; 
+– 
+lange Unterbrechung: automatische Stromversorgung, die nach mehr als 15 s (>15 s) zur Verfügung 
+steht. 
+560.4.2 Die wesentlichen elektrischen Betriebsmittel der Einrichtungen für Sicherheitszwecke müssen mit 
+der Umschaltzeit kompatibel sein, um den bestimmungsgemäßen Betrieb sicherzustellen. 
+560.5 
+Allgemeines 
+560.5.1 An Einrichtungen für Sicherheitszwecke können die Anforderungen gestellt sein, dass ihre Funktion 
+zu jeder Zeit, auch während eines Ausfalls der Haupt- und lokalen Stromversorgung und im Brandfall, 
+erhalten bleiben muss. Um diesen Anforderungen zu genügen, sind besondere Stromquellen, elektrische 
+Betriebsmittel, Stromkreise und Kabel- und Leitungsanlagen erforderlich. Einige Anwendungsfälle haben 
+auch besondere Anforderungen, wie in 560.5.2 und 560.5.3 angeführt. 
+Ergänzend dazu gelten die Anforderungen gemäß OVE-Richtlinie R 12-2. 
+Die nationale Notwendigkeit, Vorkehrungen für den Betrieb im Brandfall (mit Funktionserhalt) für 
+Einrichtungen für Sicherheitszwecke vorzusehen, kann sich wie folgt ergeben: 
+– 
+durch die brandschutz-/bautechnischen Richtlinien bzw. die Behördenvorschreibungen, oder 
+– 
+durch die Notwendigkeit von erhöhten Anforderungen für Räume und Anlagen besonderer Art (Art der 
+Nutzung) gemäß OVE-Richtlinie R 12-2. 
+560.5.2 Für Einrichtungen für Sicherheitszwecke, bei denen auch im Brandfall die Funktion erhalten bleiben 
+muss, sind die folgenden zusätzlichen Bedingungen zu erfüllen: 
+– 
+es ist eine Stromquelle für Sicherheitszwecke zu wählen, die die Stromversorgung für eine ausreichende 
+Dauer aufrecht erhält und 
+– 
+alle elektrischen Betriebsmittel der Einrichtungen für Sicherheitszwecke müssen entweder aufgrund ihrer 
+Bauart oder durch die Art der Errichtung so geschützt werden, dass ihre Feuerbeständigkeit für eine 
+ausreichende Dauer (siehe dazu OVE-Richtlinie R 12-2) sichergestellt ist. 
+ANMERKUNG 
+Die Stromquelle für Sicherheitszwecke ist zusätzlich zur allgemeinen Stromversorgung, zB der 
+Versorgung aus dem öffentlichen Stromversorgungsnetz, vorhanden. 
+560.5.3 Wird der Schutz durch automatische Abschaltung der Stromversorgung als Maßnahme zum Schutz 
+gegen elektrischen Schlag angewendet, so sind Schutzmaßnahmen ohne automatische Abschaltung beim 
+ersten Fehler zu bevorzugen. 
+In IT-Systemen müssen Isolationsüberwachungseinrichtungen vorgesehen werden, die einen ersten Fehler 
+akustisch und optisch anzeigen. 
+560.5.4 Eine Störung im Steuerungs- oder Bussystem der elektrischen Anlage darf nicht die Funktion der 
+Einrichtungen für Sicherheitszwecke beeinträchtigen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 475/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 3 
+560.5.001.AT 
+An zentraler während der betriebserforderlichen Zeit ständig überwachter Stelle ist durch 
+Meldeeinrichtungen der Anlagenzustand (System betriebsbereit, Speisung aus der Stromquelle für 
+Sicherheitszwecke, Störung) des Sicherheitsstromversorgungssystems anzuzeigen. Dies gilt nicht für Einzel-
+batterieanlagen für bis zu 20 Sicherheitsleuchten. 
+ANMERKUNG 1.AT 
+Eine akustische Meldung darf zusätzlich vorgesehen werden. 
+ANMERKUNG 2.AT 
+Die Meldung darf zB über ein Gebäudeleitsystem erfolgen. 
+560.6 
+Stromquellen für Sicherheitszwecke 
+ANMERKUNG AT 
+Anforderungen an die Räume und die Orte, in denen Stromquellen für Sicherheitszwecke 
+errichtet werden, siehe OVE-Richtlinie R 12-2. 
+560.6.1 Die folgenden Stromquellen für Sicherheitszwecke sind zulässig: 
+– 
+Batterien mit Sekundärzellen (wiederaufladbar); 
+– 
+Batterien mit Primärzellen (nicht wiederaufladbar); 
+– 
+Generatoren, die von der normalen (allgemeinen) Stromversorgung unabhängig sind; 
+– 
+eine separate Einspeisung aus dem Versorgungsnetz, die von der normalen Einspeisung unabhängig ist 
+(siehe 560.6.5). 
+ANMERKUNG AT 
+Für Sicherheitsleuchten mit Einzelbatterie gelten die Anforderungen gemäß ÖVE/ÖNORM 
+EN 60598-2-22. 
+Batterien mit Primärzellen dürfen für Sicherheitsbeleuchtungsanlagen nicht verwendet werden. 
+560.6.2 Stromquellen für Sicherheitszwecke müssen als ortsfeste Anlagen errichtet werden und dürfen 
+durch den Ausfall der allgemeinen Stromversorgung nicht beeinträchtigt werden. 
+560.6.3 Stromquellen für Sicherheitszwecke müssen an einem geeigneten Standort angeordnet werden und 
+dürfen nur Elektrofachkräften (BA5) oder elektrotechnisch unterwiesenen Personen (BA4) zugänglich sein. 
+560.6.4 Der Standort von Stromquellen für Sicherheitszwecke muss ständig und angemessen – in 
+Abhängigkeit des Typs der Stromquelle – be- und entlüftet sein. Sofern von der Stromquelle für Sicherheits-
+zwecke Gase, Rauch oder Dämpfe ausgehen, dürfen diese nicht in die von Personen genutzten Bereiche 
+eindringen. 
+560.6.5 Separate voneinander unabhängige Einspeisungen aus dem Versorgungsnetz dürfen nur als 
+Stromquelle für Sicherheitszwecke verwendet werden, wenn eine Zusicherung besteht, dass ein 
+gleichzeitiger Ausfall beider Einspeisungen unwahrscheinlich ist. 
+560.6.6 Die Stromquelle für Sicherheitszwecke muss über eine ausreichende Kapazität zur Versorgung der 
+zugehörigen Einrichtungen für Sicherheitszwecke verfügen. 
+560.6.7 Eine Stromquelle für Sicherheitszwecke darf nur dann zusätzlich für andere Zwecke als zur 
+Versorgung von Einrichtungen für Sicherheitszwecke verwendet werden, wenn die Verfügbarkeit für die 
+Versorgung der Einrichtungen für Sicherheitszwecke dadurch nicht beeinträchtigt wird. Ein Fehler, der in 
+einem Stromkreis auftritt, der anderen Zwecken als der Versorgung von Einrichtungen für Sicherheitszwecke 
+dient, darf zu keiner Unterbrechung irgendeines Stromkreises der Einrichtungen für Sicherheitszwecke 
+führen. 
+560.6.8 
+Besondere Anforderungen für Stromquellen für Sicherheitszwecke, die zum Parallelbetrieb 
+nicht geeignet sind 
+560.6.8.1 
+Es sind geeignete Vorkehrungen zu treffen, um einen Parallelbetrieb der Stromquellen zu 
+verhindern. 
+ANMERKUNG 
+Dies darf durch mechanische Verriegelung erreicht werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 476/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 4 
+560.6.8.2 
+Der Schutz bei Kurzschluss und der Fehlerschutz müssen für jede Stromquelle sichergestellt 
+werden. 
+560.6.9 
+Besondere Anforderungen für Stromquellen für Sicherheitszwecke, die zum Parallelbetrieb 
+geeignet sind 
+ANMERKUNG 1  
+Der Parallelbetrieb unabhängiger Stromquellen bedarf im Allgemeinen der Genehmigung des 
+Netzbetreibers. Hierfür können spezielle Betriebsmittel, zB um die Rückeinspeisung von Energie zu verhindern, 
+erforderlich sein. 
+Der Schutz bei Kurzschluss und der Fehlerschutz müssen sichergestellt sein, unabhängig davon, ob die 
+Anlage von einer der beiden Stromquellen oder von beiden Stromquellen parallel versorgt wird. 
+ANMERKUNG 2  
+Es können Vorkehrungen zur Begrenzung des Stromflusses in der Verbindung zwischen den 
+Sternpunkten der Stromquellen, insbesondere zur Begrenzung der Auswirkungen der 3. Oberschwingung, erforderlich 
+sein (siehe Teil 1 und Teil 4-41). 
+560.6.10 Zentrales Stromversorgungssystem (ohne Leistungsbegrenzung) 
+Batterien müssen wartungsarm in geschlossener oder verschlossener Bauart eingesetzt werden und müssen 
+einer Industrieausführung für hohe Beanspruchungen entsprechen, wie zB Batterien gemäß OVE EN 60623 
+oder ÖVE/ÖNORM EN 60896 Reihe. 
+Zentrale Stromversorgungssysteme für die Sicherheitsbeleuchtung müssen den Anforderungen gemäß 
+ÖVE/ÖNORM EN 50171 entsprechen. 
+560.6.11 Zentrales Stromversorgungssystem (mit Leistungsbegrenzung) 
+Die Ausgangsleistung eines Stromversorgungssystems mit Leistungsbegrenzung ist auf 500 W für eine 
+Dauer von 3 Stunden und auf 1 500 W für eine Dauer von 1 Stunde begrenzt. Batterien können wartungsarm 
+in gasdichter oder verschlossener Bauart eingesetzt werden und müssen einer Industrieausführung für hohe 
+Beanspruchungen entsprechen, wie zB Batterien gemäß OVE EN 60623 oder ÖVE/ÖNORM EN 60896 
+Reihe. 
+Zentrale Stromversorgungssysteme für die Sicherheitsbeleuchtung müssen den Anforderungen gemäß 
+ÖVE/ÖNORM EN 50171 entsprechen. 
+560.6.12 Unterbrechungsfreies Stromversorgungssystem 
+Wird ein unterbrechungsfreies Stromversorgungssystem eingesetzt, so muss dieses: 
+a) 
+in der Lage sein, die Schutzeinrichtungen der Stromkreise auszulösen und 
+b) 
+in der Lage sein, die Einrichtungen für Sicherheitszwecke zu starten und zu betreiben, wenn der 
+Umrichter unter Notbetriebsbedingungen von der Batterie gespeist wird und 
+c) 
+den Anforderungen gemäß 560.6.10 entsprechen und 
+d) 
+soweit Zutreffend, ÖVE/ÖNORM EN 62040-1 oder ÖVE/ÖNORM EN 62040-3 entsprechen. 
+560.6.13 Stromerzeugungsaggregate für Sicherheitszwecke 
+Wird ein Stromerzeugungsaggregat als Stromquelle für Sicherheitszwecke eingesetzt, muss dieses 
+ISO 8528-12, DIN 6280-12 bzw. DIN 6280-13 (je nach Zutreffen) entsprechen. 
+560.6.14 Der Zustand der Stromquelle für Sicherheitszwecke (betriebsbereit, Störung, Stromquelle für 
+Sicherheitszwecke in Betrieb) muss angezeigt werden. 
+560.7 
+Stromkreise für Sicherheitszwecke 
+560.7.1 Stromkreise für Sicherheitszwecke müssen von anderen Stromkreisen unabhängig sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 477/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 5 
+ANMERKUNG 
+Dies bedeutet, dass ein elektrischer Fehler oder ein Eingriff in ein System oder eine Änderung in einem 
+System die ordnungsgemäße Funktion des anderen Systems nicht beeinträchtigt. Dies kann eine Trennung durch 
+feuerbeständiges Material oder getrennte Trassenführung oder Umhüllungen erforderlich machen. 
+560.7.2 Stromkreise für Sicherheitszwecke dürfen nicht durch Bereiche mit hohem Brandrisiko (BE2) 
+geführt werden, es sei denn, sie entsprechen den Anforderungen gemäß 560.8.1. In keinem Fall dürfen die 
+Stromkreise durch explosionsgefährdete Bereiche (BE3) geführt werden. 
+ANMERKUNG 
+Soweit möglich, sollten Stromkreise generell nicht durch Bereiche mit hohem Brandrisiko (BE2) geführt 
+werden. Anforderungen dazu siehe 422.3. 
+ANMERKUNG AT 
+Hinweise zu den äußeren Einflüssen siehe Teil 5-51 Tabelle ZA.1. 
+560.7.3 Gemäß 433.3.3 darf auf einen Schutz bei Überlast verzichtet werden, sofern der Ausfall der 
+Stromversorgung eine größere Gefahr hervorrufen kann. Wird auf einen Schutz bei Überlast verzichtet, muss 
+das Vorhandensein einer Überlast angezeigt werden. 
+560.7.4 Überstrom-Schutzeinrichtungen sind so auszuwählen und zu errichten, dass ein Überstrom in 
+einem Stromkreis die ordnungsgemäße Funktion anderer Stromkreise für Sicherheitszwecke nicht 
+beeinträchtigt. 
+560.7.5 Schaltgeräte und Steuergeräte für Stromkreise für Sicherheitszwecke müssen eindeutig 
+gekennzeichnet sein und dürfen nur an solchen Standorten aufgestellt sein, die nur Elektrofachkräften (BA5) 
+oder elektrotechnisch unterwiesenen Personen (BA4) zugänglich sind. 
+ANMERKUNG AT 
+Wenn Schalt- und Steuergeräte in versperrbaren Gehäusen untergebracht sind, gilt diese 
+Anforderung als erfüllt. 
+560.7.6 Wird ein Betriebsmittel von zwei unabhängigen Stromkreisen versorgt, darf ein Fehler, der in einem 
+Stromkreis auftritt, weder den Schutz gegen elektrischen Schlag noch die ordnungsgemäße Funktion des 
+anderen Stromkreises beeinträchtigen. Wenn erforderlich, müssen solche Betriebsmittel mit den 
+Schutzleitern beider Stromkreise verbunden sein. 
+560.7.7 Kabel und Leitungen von Stromkreisen für Sicherheitszwecke, die nicht den Anforderungen gemäß 
+560.8.1 und 560.8.2 entsprechen, müssen grundsätzlich zuverlässig durch Abstand oder räumliche Trennung 
+(zB Trennsteg) von anderen Kabel und Leitungen getrennt werden. 
+Das gemeinsame Verlegen von mehreren Kabeln und Leitungen verschiedener Stromkreise für Sicherheits-
+zwecke ist zulässig. 
+Innerhalb des letzten Brandabschnittes dürfen Kabeln und Leitungen von Stromkreisen für Sicherheitszwecke 
+gemeinsam mit anderen Kabel und Leitungen auf einem gemeinsamen Tragsystem verlegt werden. 
+ANMERKUNG 
+Für Batteriekabel/-leitungen können besondere Anforderungen gelten. 
+560.7.8 Mit Ausnahme von Versorgungskabeln/-leitungen für Feuerwehraufzüge und Kabel-/Leitungs-
+anlagen für Aufzüge mit besonderen Anforderungen dürfen Stromkreise für Sicherheitszwecke nicht in 
+Aufzugsschächten oder anderen kaminähnlichen Schächten (Zugwirkung) verlegt werden. 
+560.7.9 Zusätzlich zum allgemeinen Prinzipschaltplan (ein einpoliger Schaltplan ist ausreichend) müssen 
+vollständige Angaben von allen Stromquellen für Sicherheitszwecke vorhanden sein. Diese Informationen 
+müssen bei den Sicherheitsstromquellen und in den zugehörigen Hauptverteilern aufbewahrt werden. 
+560.7.10  
+Es müssen aktuelle Pläne des Stromversorgungssystems für Einrichtungen für Sicherheits-
+zwecke verfügbar sein, die die genauen Standorte zeigen von: 
+– 
+allen elektrischen Betriebsmitteln und Installationsverteilern mit Bezeichnung der Betriebsmittel; 
+– 
+Sicherheitseinrichtungen mit Kennzeichnung der Endstromkreise und Einzelheiten über den Zweck der 
+Einrichtungen; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 478/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 6 
+– 
+besonderen Schalt- und Überwachungseinrichtungen für die Sicherheitsstromversorgung (zB 
+Bereichsschalter, optische oder akustische Warneinrichtungen). 
+560.7.11  
+Eine Liste der ständig an die Sicherheitsstromversorgung angeschlossenen elektrischen 
+Verbrauchsmitteln mit Angabe von Nennleistung, Nenn- und Anlaufströmen sowie Anlaufzeit der elektrischen 
+Verbrauchsmittel muss verfügbar sein. 
+ANMERKUNG 
+Diese Angaben dürfen in den Plänen enthalten sein. 
+560.7.12  
+Betriebsanleitungen 
+für 
+Sicherheitseinrichtungen 
+und 
+elektrische 
+Einrichtungen 
+für 
+Sicherheitszwecke müssen verfügbar sein. Sie müssen alle Einzelheiten der elektrischen Anlagen 
+berücksichtigen. 
+560.7.13 Batterieanlagen 
+Für Batterieanlagen gelten grundsätzlich die Anforderungen gemäß ÖVE/ÖNORM EN 50272-2. 
+560.8 
+Kabel- und Leitungsanlagen 
+Die nationale Notwendigkeit, Vorkehrungen für den Betrieb im Brandfall (Funktionserhalt) vorzusehen und 
+deren Ausführung, ist in den folgenden Abschnitten und in OVE-Richtlinie R 12-2 beschrieben bzw. muss der 
+Behördenvorschreibung bzw. kann den brandschutz-/bautechnischen Richtlinien entnommen werden. 
+ANMERKUNG AT 
+Für ergänzende Anforderungen zur Errichtung der Kabel- und Leitungsanlage (einschließlich der 
+Verteiler und Leitungsverbindungen) mit Funktionserhalt im Brandfall siehe OVE-Richtlinie R 12-2. 
+560.8.1 Für Einrichtungen für Sicherheitszwecke mit Funktionserhalt im Brandfall müssen Kabel- und 
+Leitungsanlagen mit einer oder mehreren der folgenden Eigenschaften verwendet werden: 
+– 
+mineralisolierte Kabel und Leitungen gemäß ÖVE/ÖNORM EN 60702-1 und ÖVE/ÖNORM EN 60702-2; 
+– 
+feuerbeständige Kabel und Leitungen mit Isolationserhalt gemäß den jeweils anwendbaren Teilen von 
+OVE EN 50200 und OVE EN 60332-1-2; 
+– 
+eine Kabel- und Leitungsanlage, die den erforderlichen Schutz gegen Feuer und mechanische 
+Beschädigung aufweist. Das sind zB: 
+ 
+• 
+Kabel- und Leitungsanlagen mit Funktionserhalt gemäß ÖNORM DIN 4102-12 oder gleichwertig 
+klassifiziert, oder 
+ 
+• 
+bauliche Umhüllungen der Kabel- und Leitungsanlage zum Schutz gegen Feuer und mechanische 
+Beschädigung, oder 
+ 
+• 
+Führung der Kabel- und Leitungsanlagen in getrennten Brandabschnitten, oder 
+ 
+• 
+Schienenverteiler, ausgeführt in einem Kanal bzw. in einem Schacht mit integriertem 
+Funktionserhalt. 
+Kabel- und Leitungsanlagen müssen so befestigt und errichtet werden, dass die Funktion der Stromkreise im 
+Brandfall nicht beeinträchtigt wird. 
+560.8.2 Die Anforderungen gemäß 560.8.1 gelten auch für Kabel- und Leitungsanlagen für Steuerungs- und 
+Bussysteme von Einrichtungen für Sicherheitszwecke. Dies gilt nicht für Stromkreise, die keinen nachteiligen 
+Einfluss auf den Betrieb der Sicherheitseinrichtungen haben. 
+560.8.3 Es sind Vorsichtsmaßnahmen zu ergreifen, um Schäden an erdverlegten Stromkreisen für 
+Sicherheitszwecke durch Erdarbeiten zu verhindern. 
+ANMERKUNG AT 
+So sind zB Kabel/Leitungen der allgemeinen Stromversorgung und Kabel/Leitungen für 
+Einrichtungen für Sicherheitszwecke bei Verlegung im Erdreich auf getrennten Trassen mit einem Mindestabstand von 
+2 m (horizontal) oder in einer Stufenkünette mit einem Höhenunterschied von mindestens 1 m verlegt. Im Nahbereich 
+einer Gebäudeeinführung dürfen Kabeln/Leitungen den Abstand von 2 m unterschreiten, wenn besonderer mechanischer 
+Schutz gegen Beschädigungen bei Tiefbauarbeiten vorgesehen ist. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 479/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 7 
+560.8.4 Stromkreise für Sicherheitszwecke, die mit Gleichstrom gespeist werden können, müssen mit 
+zweipoligen Überstrom-Schutzeinrichtungen ausgeführt sein. 
+560.8.5 Schaltgeräte und Steuergeräte, die sowohl für Wechsel- als auch für Gleichstromquellen genutzt 
+werden, müssen sowohl für den Wechselstrom- als auch für den Gleichstrombetrieb geeignet sein. 
+560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+ANMERKUNG 1.AT 
+Die Bereiche, in Abhängigkeit von der Art der Nutzung, für die eine Sicherheitsbeleuchtung 
+erforderlich ist (zB Sicherheitsbeleuchtung nur für Fluchtwege) kann der OVE-Richtlinie R 12-2 entnommen werden. 
+ANMERKUNG 2.AT 
+Ist eine Sicherheitsbeleuchtung erforderlich, so ist diese nach ÖVE/ÖNORM EN 50172 zu 
+errichten, zu überwachen und zu warten, und es sind die grundlegenden lichttechnischen Anforderungen an die 
+Sicherheitsbeleuchtung und zugehörige Messungen nach ÖNORM EN 1838 zu berücksichtigen. 
+ANMERKUNG 3.AT 
+Für besondere Anlagen, zB Sportstätten, können abweichende Anforderungen gegenüber 
+ÖNORM EN 1838 vorhanden sein (zB siehe ÖNORM EN 12193). Anforderungen bzw. die Notwendigkeit einer 
+Sicherheitsbeleuchtung bei Aufzugsanlagen (Fahrkorb, Schachtbeleuchtung, brandgeschützte Vorräume) siehe ÖNORM 
+EN 81-20, ÖNORM EN 81-72 bzw. TRVB 150 S. 
+ANMERKUNG 4.AT 
+Die für die Gebäudeerrichtung, für öffentliche Einrichtungen, für den Brandschutz (Brandschutz-
+konzept) usw. zuständigen Behörden können Anforderungen für die Auswahl von elektrischen Betriebsmitteln und die 
+Errichtung von elektrischen Anlagen festlegen (zB über Behördenvorschreibung). 
+560.9.1 Sicherheitsbeleuchtungsanlagen dürfen entweder von einem zentralen Stromversorgungssystem 
+versorgt oder durch Sicherheitsleuchten mit Einzelbatterie realisiert werden. Die Versorgung dieser 
+Sicherheitsleuchten mit Einzelbatterie ist von den Anforderungen der Abschnitte 560.9.1 bis 560.9.4 
+ausgenommen. 
+Bei Kabel- und Leitungsanlagen für ein zentral versorgtes Sicherheitsbeleuchtungssystem muss die 
+Versorgung von der Stromquelle bis zu den Sicherheitsleuchten im Brandfall für eine angemessene Dauer 
+erhalten bleiben (siehe dazu auch OVE-Richtlinie R 12-2). Dies muss durch die Verwendung von Kabeln und 
+Leitungen gemäß 560.8.1 und 560.8.2 erreicht werden, um die Energie durch einen Brandabschnitt zu leiten. 
+Innerhalb des Brandabschnitts gelten für die Kabel- und Leitungsanlage zur Stromversorgung der 
+Sicherheitsleuchten die Anforderungen gemäß 527.1. 
+Die nationale Notwendigkeit, Vorkehrungen für den Betrieb im Brandfall (mit Funktionserhalt) für 
+Einrichtungen für Sicherheitszwecke vorzusehen, kann sich wie folgt ergeben: 
+– 
+durch die brandschutz-/bautechnischen Richtlinien bzw. die Behördenvorschreibungen, oder 
+– 
+durch die Notwendigkeit von erhöhten Anforderungen für Räume und Anlagen besonderer Art (Art der 
+Nutzung) gemäß OVE-Richtlinie R 12-2. 
+In Brandabschnitten mit mehr als einer Sicherheitsleuchte sind diese Leuchten abwechselnd auf mindestens 
+zwei verschiedene Stromkreise zu verteilen, sodass auch bei Ausfall eines Stromkreises eine 
+Grundbeleuchtung entlang des Fluchtweges (siehe dazu folgende Anmerkungen 1.AT und 2.AT) 
+sichergestellt ist. 
+ANMERKUNG 1.AT 
+In internationalen Dokumenten für Lichttechnik bzw. Elektrotechnik (ÖNORM EN 1838 bzw. 
+ÖVE/ÖNORM EN 50172) wird der Begriff Rettungsweg als Oberbegriff für Bereiche, die sowohl der „Selbstrettung“ als 
+auch der „Fremdrettung“ dienen, verwendet. 
+In nationalen arbeits- und baurechtlichen Bestimmungen, wie zB Arbeitsstättenverordnung, OIB-Richtlinie, wird jener Teil 
+des Rettungsweges, der der Selbstrettung dient, als „Fluchtweg“ bezeichnet. 
+Aus diesem Grund wird in den Dokumenten der OVE E 8101 zur Vereinheitlichung der international verwendete Begriff 
+„Rettungsweg“ durch den Begriff „Fluchtweg“ ersetzt. 
+ANMERKUNG 2.AT 
+Anforderungen an die elektrische Anlage in Rettungswegen gemäß OIB-Richtlinie können durch 
+ein Brandschutzkonzept oder durch die Behörde festgelegt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 480/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-56 – Seite 8 
+560.9.2 Werden Leuchten abwechselnd auf verschiedene Stromkreise aufgeteilt, so muss durch Überstrom-
+Schutzeinrichtungen sichergestellt sein, dass ein Kurzschluss in einem Stromkreis die Versorgung der 
+benachbarten Leuchten im Brandabschnitt oder der Leuchten in anderen Brandabschnitten nicht 
+unterbrechen kann. 
+Von einem Endstromkreis dürfen nicht mehr als 20 Leuchten mit einer Gesamtbelastung von nicht mehr als 
+60 % des Nennstromes der Überstrom-Schutzeinrichtung gespeist werden. 
+Stromkreisverteiler, Steuer- oder Schutzeinrichtungen dürfen die Funktionsfähigkeit des Stromkreises nicht 
+beeinträchtigen. 
+560.9.3 Für die Evakuierung eines Gebäudes sind eine ausreichende Mindestbeleuchtungsstärke sowie 
+ausreichende Umschaltzeit und Bemessungsbetriebsdauer gemäß ÖNORM EN 1838 erforderlich. 
+ANMERKUNG 
+Ein Leitfaden für die Planung entsprechender Anlagen ist in Tabelle 56.A.1.AT enthalten. Für 
+Arbeitsstätten 
+gemäß 
+ArbeitnehmerInnenschutzgesetz – ASchG 
+gelten 
+die 
+Anforderungen 
+gemäß 
+der 
+Arbeitsstättenverordnung, wenn nicht im Anwendungsbereich von Teil 7-718 enthalten. 
+560.9.4 Eine Sicherheitsbeleuchtung muss im Dauerbetrieb oder im Bereitschaftsbetrieb geschaltet sein. 
+Die Betriebsarten dürfen auch kombiniert werden. 
+560.9.5 Im Bereitschaftsbetrieb muss die Stromversorgung der allgemeinen Beleuchtung für den 
+betroffenen Bereich im Endstromkreis überwacht werden. Führt eine Unterbrechung der Stromversorgung für 
+die allgemeine Beleuchtung in einem Bereich zum Ausfall der allgemeinen Beleuchtung, so muss die 
+Sicherheitsbeleuchtung automatisch aktiviert werden. Es sind in jedem Fall Maßnahmen zu treffen, die 
+sicherstellen, dass bei Ausfall der allgemeinen Stromversorgung die örtliche Sicherheitsbeleuchtung des 
+betroffenen Bereichs aktiviert wird. 
+560.9.6 Werden 
+Dauerbetrieb 
+und 
+Bereitschaftsbetrieb 
+in 
+Kombination 
+genutzt, 
+muss 
+jede 
+Umschaltvorrichtung mit einer eigenen Überwachungseinrichtung ausgerüstet und gesondert schaltbar sein. 
+560.9.7 Die Sicherheitsbeleuchtung im Dauerbetrieb darf gleichzeitig mit der allgemeinen Beleuchtung 
+geschaltet werden in Bereichen, die entweder 
+– 
+während des Betriebs nicht verdunkelt werden können, oder 
+– 
+nicht ständig genutzt werden. 
+560.9.8 Die 
+Funktion 
+von 
+Sicherheitsbeleuchtungsanlagen 
+darf 
+von 
+keinem 
+Steuerungssystem 
+beeinträchtigt werden. Auch Änderungen an den Steuerungssystemen müssen die Anforderungen der 
+funktionalen Sicherheit weiterhin erfüllen. 
+Im Falle eines Fehlers des Steuerungssystems und/oder im Endstromkreis der allgemeinen Beleuchtung 
+müssen alle Sicherheitsleuchten im betroffenen Bereich die erforderliche Beleuchtungsstärke erbringen. 
+ANMERKUNG 
+Für die Definition der funktionalen Sicherheit siehe ÖVE/ÖNORM EN 61508-4:2011 Abschnitt 3.1.12. 
+560.9.9 Die Umschaltung vom Normalbetrieb zum Notbetrieb muss automatisch erfolgen, sobald die 
+Versorgungsspannung für länger als 0,5 s unter die 0,6-fache Bemessungsversorgungsspannung fällt. Weist 
+die Versorgungsspannung wieder einen Wert größer als die 0,85-fache Bemessungsversorgungsspannung 
+auf, so ist der Normalbetrieb wieder herzustellen. 
+ANMERKUNG 1  
+Die geforderte Zeit für die Umschaltung kann durch nationale Vorschriften geregelt sein. 
+ANMERKUNG 2  
+Der Wert der Versorgungsspannung, bei dem die Umschaltung erfolgt, hängt von den für die 
+Einrichtungen für Sicherheitszwecke verwendeten elektrischen Betriebsmitteln ab. 
+560.9.10  
+Ist die allgemeine Stromversorgung im Verteiler oder im überwachten Stromkreis wieder 
+hergestellt, so muss sich die Sicherheitsbeleuchtung im Bereitschaftsbetrieb automatisch abschalten. 
+Berücksichtigt werden muss die Zeit, die erforderlich ist, bis die Lampen der allgemeinen Beleuchtung wieder 
+ihre normale Leuchtstärke erreichen. Berücksichtigt werden müssen außerdem Räume, welche vor Ausfall 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

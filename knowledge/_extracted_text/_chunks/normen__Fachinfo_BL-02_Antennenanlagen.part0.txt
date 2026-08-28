@@ -1,0 +1,399 @@
+
+
+===== PAGE 1/10 =====
+Seite 1 von 10 
+ 
+ 
+ 
+OVE-Fachinformation BL02 
+ 
+Ausgabe: 2021-02-01 
+ 
+ 
+ 
+ 
+Blitz- und Überspannungsschutz sowie Erdung von Antennen und 
+Antennenanlagen 
+ 
+Ersatz für 
+Ausgabe 2020-03 
+Zuständig 
+OVE/TK BL Blitzschutz 
+ICS 
+29.020; 91.120.40; 33.060.40 
+ 
+ 
+ 
+ 
+1 
+Einleitung 
+Werden bauliche Anlagen, welche mit einem bestehenden Blitzschutzsystem (LPS – en: lightning protection 
+system) gemäß ÖVE-E 49, ÖVE/ÖNORM E 8049-1 oder ÖVE/ÖNORM EN 62305:2012 ausgestattet sind, 
+baulich erweitert oder geändert, ergibt sich die Frage nach den anzuwendenden elektrotechnischen Normen 
+und Referenzdokumenten. 
+Zum Thema Blitz- und Überspannungsschutz von Antennenanlagen finden sich in mehreren Vorschriften 
+Hinweise und Anforderungen, die in dieser Fachinformation inhaltlich zusammengeführt sind.  
+Diese Fachinformation setzt voraus, dass alle zutreffenden Rechtsvorschriften und anzuwendenden elektro-
+technischen Normen mit den dazugehörigen Referenzdokumenten eingehalten werden. 
+Durch die Errichtung einer Antennenanlage auf oder an einem Gebäude oder Objekt wird die 
+Wahrscheinlichkeit, dass ein Blitz das Objekt trifft, in der Regel nicht erhöht. Sehr wohl aber hat die Installation 
+einer Antennenanlage Einfluss auf die möglichen Schäden im Falle eines direkten Blitzschlages, da 
+beträchtliche Blitzteilströme über die Antennenleitungen in das Innere des Gebäudes geleitet werden können. 
+Diese Blitzteilströme können Ursache von Personengefährdung oder für Sachschäden sein und sind daher der 
+Grund, dass bei Antennenanlagen als auch unter Umständen bei Gebäuden oder Objekten entsprechende 
+Maßnahmen getroffen werden müssen. 
+Die Maßnahmen für Antennenanlagen auf und an einem Gebäude oder Objekt gemäß dieser Fachinformation 
+haben zum Ziel, Personengefährdungen oder Sachschäden, bei vertretbarem Aufwand, möglichst klein zu 
+halten. Sie sind jedoch kein Ersatz für einen Gebäudeblitzschutz gemäß ÖVE/ÖNORM EN 62305 Reihe, da 
+dabei jeder Punkt des Gebäudes als potenzielle Einschlagstelle gesichert werden muss! 
+2 
+Festlegung der Schutzbereiche  
+Die Bestimmung des Schutzbereichs von Fangeinrichtungen oder Gebäudeelementen sollte für Antennen-
+anlagen mindestens auf Basis von Schutzklasse III gemäß ÖVE/ÖNORM EN 62305 Reihe erfolgen. 
+Bei einem vorhandenen Blitzschutzsystem ist für die Antennenanlage mindestens die gleiche Blitzschutzklasse 
+wie für das Gebäude zu Grunde zu legen. Es ist auf die Einhaltung von Maßnahmen des Inneren Blitzschutzes 
+zu achten. 
+Befindet sich die gesamte Antennenanlage innerhalb nachfolgender Schutzbereiche und wird der Trennungs-
+abstand gemäß der anzuwendenden Blitzschutznorm eingehalten, so ist keine gesonderte Einbeziehung in das 
+Blitzschutzsystem erforderlich.  
+– 
+Antennenanlagen an Gebäuden, die mit einem Mindestabstand von 2 m unterhalb der Dacheindeckung 
+oder Dachkante und weniger als 1,5 m von den äußeren Gebäudewänden entfernt angebracht sind. 
+– 
+Antennenanlagen, die sich innerhalb des Gebäudes befinden. 
+–  
+Antennenanlagen, die sich im Schutzbereich einer Fangeinrichtung einer bestehenden Blitzschutzanlage 
+befinden und der Trennungsabstand eingehalten wird. 
+
+
+===== PAGE 2/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 2 von 10 
+Ein Schutz der elektrischen/elektronischen Einrichtungen der Antennenanlagen ist nur durch Maßnahmen des 
+Inneren 
+Blitzschutzes 
+(zB 
+Schutzpotentialausgleich, 
+geeignete 
+Leitungsführung 
+und 
+Einbau 
+von 
+entsprechenden Überspannungsschutzgeräten) zu erreichen. 
+Die Ausführungen sind in den jeweils gültigen österreichischen Bestimmungen für die Elektrotechnik geregelt, 
+siehe Literaturhinweis. 
+Befinden sich mehrere Antennenanlagen auf einem Gebäude, so ist ein gemeinsames Konzept für dieses 
+System zu erarbeiten. 
+3 
+Anwendungsbereich 
+Diese Fachinformation gilt allgemein für Sende- und/oder Empfangsantennen und die zugehörigen Verteilnetze, 
+wie zB: 
+– 
+Rundfunk- und Fernsehantennen; 
+– 
+Antennen für Mobiltelefonie inklusive DECT; 
+– 
+Telekommunikationsanlagen auf Hochspannungsmasten 1); 
+– 
+Antennen für Amateurfunk, CB-Funk und Betriebsfunk; 
+– 
+Antennen für Richtfunk oder ähnlich geartete Systeme (zB Laser, Infrarot); 
+– 
+VSAT-Systeme. 
+Dieses Informationsblatt beinhaltet nicht die besonderen Anforderungen für die Errichtungen von Antennen-
+anlagen auf Gebäuden oder Objekten mit explosionsgefährdeten Atmosphären. 
+4 
+Begriffe 
+4.1 
+Antennenanlage 
+alle Antennenanlagen mit deren zugehörigen Systemen mit ihren mechanisch und elektrisch erforderlichen 
+Teilen 
+4.2 
+Gebäude 
+Überdeckte, allseits oder überwiegend umschlossene Bauwerke, die von Personen betreten werden können 
+[QUELLE: OIB Richtlinie, Begriffsbestimmungen] 
+4.3 
+Schutzbereich 
+Bereich, in welchem durch Fangeinrichtungen oder Gebäudeelemente nach ÖVE/ÖNORM EN 62305-3 kein 
+direkter Blitzeinschlag möglich ist 
+Die Ermittlung erfolgt gemäß ÖVE/ÖNORM EN 62305 Reihe nach dem Schutzwinkel oder Blitzkugelverfahren. 
+5 
+Neuerrichtung von Antennenanlagen auf oder an Gebäuden ohne 
+Blitzschutzsystem 
+Auf einem Gebäude ohne Blitzschutzsystem gelten für Neuerrichtung von Antennenanlagen OVE  
+EN 60728-11 sowie die jeweils gültigen baurechtlichen Bestimmungen. 
+ANMERKUNG 
+Bei 
+Installationen 
+von 
+potentialbehafteten 
+Verbindungen 
+(SAT-ZF-Verteiler) 
+sind 
+besondere 
+Anforderungen gemäß OVE EN 50174 Reihe und OVE EN 50310 zur Vermeidung von Potentialverschleppungen 
+auszuführen.  
+ 
+1) 
+Siehe Technische Empfehlung TE 25 des Technischen Komitee für Beeinflussungsfragen; herausgeben durch die 
+Österreichs E-Wirtschaft Akademie GmbH, Brahmsplatz 3, A-1041 Wien. 
+
+
+===== PAGE 3/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 3 von 10 
+6 
+Änderung und Erweiterung von Antennenanlagen 
+Auf einem Gebäude mit Blitzschutzsystem oder auf Gebäuden, die nur mit Antennenerdung ausgestattet sind, 
+ist bei einer Erweiterung der Antennenanlage zu klären, ob es sich dabei um eine wesentliche Änderung oder 
+Erweiterung handelt. 
+Da das ETG 1992 aber keine direkt anwendbaren Aussagen über wesentliche Änderungen und wesentliche 
+Erweiterungen im Zusammenhang mit Antennenanlagen macht, werden nachfolgend Beurteilungskriterien und 
+typische Beispiele angeführt. 
+6.1 
+Wesentliche Änderung/Erweiterung von bestehenden Antennenanlagen 
+Eine wesentliche bauliche Änderung/Erweiterung der Antennenanlag liegt vor, wenn durch nachfolgende 
+Maßnahmen der bestehende Schutzbereich und/oder Trennungsabstand nicht mehr eingehalten wird. 
+Typische Beispiele können sein: 
+– 
+Errichtung mindestens eines zusätzlichen Tragwerkes; 
+– 
+Tragwerkserhöhung; 
+– 
+Errichtung von zusätzlichen Antennen; 
+– 
+Nachrüstung einer Flughindernisbefeuerung; 
+– 
+Installation zusätzlicher elektrischer und/oderelektronischer Systeme, wenn kein Direkteinschlag akzeptiert 
+wird; 
+– 
+Verlegung zusätzlicher Kabel und Leitungen, wenn diese nicht auf vorhandenen Kabeltrassen bzw. nicht 
+im Schutzbereich einer Fangeinrichtung liegen. 
+6.2 
+Keine wesentliche Änderung/Erweiterung von bestehenden Antennenanlagen 
+Keine wesentliche Änderung/Erweiterung liegt vor, wenn durch die Fangeinrichtung unter Einhaltung der 
+Trennungsabstandsanforderung als auch der Blitzschutzpotentialausgleichsanforderung der Schutz weiterhin 
+gegeben ist. 
+Typische Beispiele können sein: 
+– 
+Tragwerksauswechslung; 
+– 
+Tragwerkserhöhung bei Blitzschutzpotentialausgleich auf Dachebene; 
+– 
+Austausch bzw. Installation zusätzlicher elektrischer und/oder elektronischer Systeme; 
+– 
+Installation antennennaher Verstärker; 
+– 
+Auswechslung oder Umlegung von Kabeln und Leitungen; 
+– 
+Auswechslung von Potentialausgleichsleitern; 
+– 
+Verlegung zusätzlicher Kabel und Leitungen, wenn diese auf derselben Kabeltrasse liegen. 
+7 
+Empfohlene Vorgangsweise 
+Die nachfolgenden Vorgangsweisen werden vom TK-BL für die Errichtung, Erweiterung und Änderung von 
+Antennenanlagen vorgeschlagen: 
+
+
+===== PAGE 4/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 4 von 10 
+Blitzschutzsystem 
+vorhanden?
+Antennenanlage
+Blitzschutzsystem 
+mangelhaft?
+- Instandsetzung des LPS durch den 
+Eigentümer der baulichen Anlage 
+nach den Bestimmungen zum 
+Errichtungszeitpunkt
+- OVE Fachinformation BL02 - 
+Antennen und Antennenanlagen
+- OVE Fachinformation BL02 - 
+Antennen und Antennenanlagen
+- OVE EN 60728-11
+Mangel behoben?
+Blitzteilströme 
+in das Gebäude 
+zugelassen?
+- Anbindung an das LPS gemäß 
+OVE EN 60728-11
+- siehe Abschnitt 7 dieser 
+Fachinformation ANMERKUNG 1 
+getrenntes Blitzschutzsystem
+- ÖVE/ÖNORM EN 62305 Reihe
+- siehe Abschnitt 7 dieser Fachinformation 
+ANMERKUNG 2 
+Ja
+Nein
+Ja
+Ja
+Nein
+Nein
+Ja
+Ja
+Nein
+Blitzteilströme 
+in das Gebäude 
+zugelassen? 
+Siehe Anmerkung 1 
+und Anmerkung 2
+Schutzmaßnahme gemäß 
+OVE EN 60728-11 Bild 15
+Schutzmaßnahme gemäß 
+OVE EN 60728-11 Bild 13
+Ja
+Nein
+ 
+ 
+ANMERKUNG 1  
+In folgenden Fällen ist die Anbindung einer Antennenanlage an das bestehende Blitzschutzsystem 
+zulässig: 
+– 
+Bei Gebäuden zB mit durch verbundener Metallfassade oder durch verbundenen stahlarmierten Betonbauten, bei 
+denen diese natürlichen metallenen Komponenten als Ableitung verwendet werden (großflächige Stromaufteilung), 
+wird der geänderte Teil direkt an diese elektrische durch verbundene metallene Komponenten angeschlossen. 
+– 
+Wenn die elektrische Anspeisung der Antennenanlage ab der Gebäudehauptverteilung getrennt ist, die 
+Versorgungsleitungen, Antennenleitungen, die Systemtechnik außerhalb des Gebäudes liegen oder diese innerhalb 
+des Gebäudes errichtet werden. Die Trennungsabstände sind jedenfalls einzuhalten. 
+ANMERKUNG 2  
+Bei anderen Gebäuden wird für die neuen oder wesentlich geänderten Antennenanlagen eine 
+getrennte Fangeinrichtung installiert, die auf der Dachebene mit der vorhandenen Fangeinrichtung verbunden wird. Bei 
+einem getrennten Blitzschutzsystem sind die Trennungsabstände s einzuhalten. 
+ 
+ 
+
+
+===== PAGE 5/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 5 von 10 
+8 
+Ausführungsbeispiele 
+Nachfolgende Bilder sind Beispiele für die Ausführung des Blitzschutzes sowie für die Erdung von 
+Antennenanlagen.  
+Es bedeutet: 
+SPD I 
+ 
+Überspannungsableiter SPD Klasse I gemäß ÖVE/ÖNORM EN 61643  
+SPD II 
+ 
+Überspannungsableiter SPD Klasse II gemäß ÖVE/ÖNORM EN 61643  
+SPD III 
+ 
+Überspannungsableiter SPD Klasse III gemäß ÖVE/ÖNORM EN 61643  
+HSK 
+ 
+Hausanschlusskasten 
+EVU 
+ 
+Energieversorgungsunternehmen (Neue Bezeichnung: Verteilernetzbetreiber)  
+HF-Kabel 
+Hochfrequenzkabel 
+DC-Kabel 
+Gleichspannungsversorgung 
+RRU, RRH 
+Funk-Transceiver die Antennen nah montiert werden 
+HES 
+ 
+Haupterdungsschiene 
+PAS 
+ 
+Potentialausgleichsschiene 
+s 
+ 
+ 
+Trennungsabstand gemäß ÖVE/ÖNORM EN 62305 
+ 
+ANMERKUNG 
+Alle Querschnitte des zusätzlichen Schutzpotentialausgleichs gemäß OVE EN 60728-11 bzw. OVE  
+E 8101 mindestens 2,5 mm² (mechanisch geschützt) oder mindestens 4 mm² (mechanisch ungeschützt). 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 6 von 10 
+8.1 
+Errichtung einer neuer Antennenanlage (zB SAT-Anlage) 
+ 
+Bild 1 – Beispielhaftes Prinzipschaltbild für eine Antennenanlage im Schutzbereich einer 
+Fangstange inkl. Überspannungsschutz und zusätzlichen Schutzpotentialausgleich 
+ 
+ 
+
+
+===== PAGE 7/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 7 von 10 
+8.2 
+Bestehende Antennenanlage (zB SAT-Anlage) 
+Das LPS entspricht entweder ÖVE-E 49, ÖVE/ÖNORM E 8049-1 oder ÖVE/ÖNORM EN 62305 Reihe. 
+Blitzteilströme in das Gebäude werden akzeptiert. 
+ 
+Bild 2 – Beispielhaftes Prinzipschaltbild für eine Antennenanlage, die direkt an das LPS 
+angeschlossen ist, mit einem Überspannungsschutz und Schutzpotentialausgleich 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 8 von 10 
+8.3 
+Antennenanlage (zB Mobilfunk) an einem Gebäude mit einem Blitzschutzsystem (LPS) 
+Das LPS entspricht entweder ÖVE-E 49, ÖVE/ÖNORM E 8049-1 oder ÖVE/ÖNORM EN 62305 Reihe. 
+Blitzteilströme in das Gebäude werden akzeptiert. 
+ 
+Bild 3 – Antennenanlage mit Blitzschutzsystem 
+ 
+ 
+
+
+===== PAGE 9/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 9 von 10 
+8.4 
+Antennenanlage (zB Mobilfunk) an einem Gebäude ohne Blitzschutzsystem, 
+Blitzteilströme in das Gebäude werden nicht akzeptiert 
+ 
+Bild 4 – Antennenanlage ohne Blitzschutzsystem 
+
+
+===== PAGE 10/10 =====
+OVE-Fachinformation BL02:2021-02-01 
+Seite 10 von 10 
+Literaturhinweise 
+ÖVE-E 49, Blitzschutzanlagen 
+ÖVE/ÖNORM E 8001-1, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1000 V und  
+DC 1500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8049-1, Blitzschutz baulicher Anlagen – Teil 1: Allgemeine Grundsätze 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+OVE EN 50174 Reihe, Informationstechnik – Installation von Kommunikationsverkabelung 
+OVE EN 50310, Anwendung von Maßnahmen für Erdung und Potentialausgleich in Gebäuden mit 
+Einrichtungen der Informationstechnik 
+OVE EN 60728-11, Kabelnetze für Fernsehsignale, Tonsignale und interaktive Dienste –  
+Teil 11: Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 62305 Reihe, Blitzschutz 
+ÖVE/ÖNORM EN 62305-3 Beiblatt 2, Blitzschutz – Teil 3: Schutz von baulichen Anlagen und Personen – 
+Beiblatt 2: Auswahl der Mindest-Blitzschutzklasse und der Prüfintervalle für bauliche Anlagen 
+BGBl. Nr. 106/1993 i.d.g.F., Elektrotechnikgesetz 1992 – ETG 1992 i.d.g.F. 
+OIB-Richtlinie – Begriffsbestimmungen 
+ 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2021. Alle Rechte vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu  
+und ohne Auslassung oder Zusatz wiedergegeben werden. 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

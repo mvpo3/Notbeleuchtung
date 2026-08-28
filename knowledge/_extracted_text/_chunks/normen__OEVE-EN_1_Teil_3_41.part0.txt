@@ -1,0 +1,1891 @@
+
+
+===== PAGE 1/38 =====
+OVE-EN 1 Teil 3 (§ 41)
+Ausgabe 1995-03
+
+ÖSTERREIC_I_-IISCHE BESTIMMUNGEN
+FÜR DIE ELEKTROTECHNIK
+
+Errichtung von Starkstromanlagen
+mit Nennspannungen bis
+- 1000 V und =1 500 V
+
+Beschaffenheit, Bemessung und
+Verlegung von Leitungen und Kabeln
+Bemessung von Leitungen
+
+und Kabeln in mechanischer und
+elektrischer Hinsicht
+
+Überstromschutz
+DK: 621.31.027.4
+
+ÖSTERREICHISCHER VERBAND FÜR ELEKTROTECHNIK
+
+vy,
+
+FachausschuB E oo /
+Elektrische OVE
+
+Niederspannungsaniagen
+
+Preisgruppe 10
+
+
+
+===== PAGE 2/38 =====
+ÖVE-EN 1 Teil 3 (§ 41):1995-03
+
+INHALTSÜBERSICHT
+
+Seite
+YL ) E 4
+41.1 GEHUNG e e e 41-1
+41.2 Begriffe und Benennungen ... 41-1
+41.3 Mechanische Festigkeit ar i 41-3
+41.4 EinfluBgréBen auf den zuldssigen Dauerstrom ................... 41-3
+41.5 Ermittlung des zuldssigen Dauerstromes kk 41-12
+41.6 Uberstrom-Schutzeinrichtungen errnnn 41-14
+41.7 Schutz bei UDerlast au ELE 41-15
+41 8 Schutz bei KUrzschluB vrrnnn e 41-18
+
+41.9 Koordinieren des Schutzes bei Uberlast und Kurzschlug .... 41-21
+41.10 Uberstrombegrenzung durch die Art der Einspeisung ........ 41-21
+41.11 Zuordnung der Schutzeinrichtungen zu den Leitungen bzw.
+
+Kabe oo e e 41-21
+41.12 Schutz gemäß der Art der Stromkreise sr 41-24
+41.13 Zusatzbestimmungen fur Licht- und
+
+SteckdosenstromkreisSe arr e 41-25
+Anhang
+A1 TaDBNEN oot et 41-26
+A2  Zulassiger Dauerstrom /, bei parallel geschalteten Leitungen
+
+oder Kabeln unterschiedlichen Querschnittes ..................... 41-32
+A3 Mehrmotorenantrieb ... 41-32
+
+
+===== PAGE 3/38 =====
+OVE-EN 1 Teil 3 (§ 41):1995-03
+
+(1}
+
+@)
+
+(3)
+
+(4)
+
+EINLEITUNG
+
+Diese Osterreichischen Bestimmungen fir die Elektrotechnik wur-
+den vom LenkungsausschuB der Sektion ,,Osterreichische Bestim-
+mungen für die Elektrotechnik® im OVE bei der 42. Sitzung am
+14. März 1995 verabschiedet. Sie ersetzen OVE-EN 1 Teil 3 (§ 41)/
+1981 und OVE-EN 1 Teil 3 (§ 41a)/1986.
+
+Der Rechtsstatus dieser Osterreichischen Bestimmungen für die
+
+Elektrotechnik ist den jeweils geltenden Verordnungen zum Elek-
+
+trotechnikgesetz zu entnehmen.
+
+Diese Bestimmungen wurden vom FachausschuBB E ,Elektrische
+
+Niederspannungsanlagen® unter Verwendung des CENELEC-Re-
+
+portes R064-001 ausgearbeitet.
+
+In diesem Heft wird auf folgende Osterreichische Bestimmungen
+
+fur die Elektrotechnik Bezug genommen:
+
+OVE EN 60204 Sicherheit von Maschinen - Elektrische Ausri-
+stung von Maschinen
+
+OVE EN 60439-1  Niederspannungs-Schaltgerdtekombinationen —
+typgeprufte und partiell typgeprüfte Kombina-
+
+tionen
+
+OVE-EX65 Errichtung elektrischer Anlagen in explosions-
+gefahrdeten Bereichen
+
+OVE-HG 335 Sicherheitsanforderungen für Elektrogeréte für
+
+den Hausgebrauch und &hnliche Zwecke
+OVE-HG/EN 60335 Sicherheitsanforderungen fur Elektrogeréte für
+
+den Hausgebrauch und dhnliche Zwecke
+OVE-IMEN 60439-2 Niederspannungs-Schaltgerdtekombinationen —
+
+Besondere Anforderungen an Schienenverteier
+
+OVE-K 20 Papierisolierte Energiekabel bis 34,7/60 kV
+
+OVE-K 23 Kunststoffisolierte Energiekabel bis 5,8/10 kV
+
+OVE-K 26 Halogenfreie Energiekabel mit verbessertem
+Verhalten im Brandfall — Nennspannung
+0,6/1 kV
+
+OVE-K 40 Energieleitungen mit einer Isolierung aus
+Gummi
+
+OVE-K 41 Energieleitungen mit einer Isolierung aus PVC
+
+OVE-L1 Errichtung von Starkstromfreileitungen bis
+1000V
+
+OVE-L 20 Verlegung von Energie-, Steuer- und MeB-
+kabeln
+
+OVE EN 60598 Leuchten
+OVE-MG/EN 60601 Medizinische elektrische Gerate
+
+
+===== PAGE 4/38 =====
+OVE-EN 1 Teil 3 (§ 41):1995-03
+
+OVE-SN 40 Niederspannungssicherungen bis 1 000 V und
+bis 3000V
+
+OVE-SN 52 Leitungsschutzschalter bis 63 A Nennstrom,
+~ 415V, 50 Hz
+
+OVE-SN/EN 60898 Leitungsschutzschalter für den Haushalt und
+dhnliche Anwendungen
+
+In diesem Heft wird auf folgende ONORMEN Bezug genommen:
+
+ONORM DIN 43671 Stromschienen aus Kupfer — Bemessung für
+Dauerstrom
+
+In diesem Heft wird auf die folgenden internationalen, regionalen, na-
+tionalen bzw auslandischen Verdffentlichungen Bezug genommen:
+
+DIN VDE 0102 Berechnung von KurzschluBstromen in Dreh-
+stromnetzen
+EN 60947-2 Niederspannungs-Schaitgerate
+; Teil 2: Leistungsschalter
+EN 60947-4-1 Niederspannungs-Schaitgeräte
+
+Teil 4: Schütze und Motorstarter
+Hauptabschnitt 1: Elektromechanische Schüt-
+ze und Motorstarter
+
+IEC 287 Calculation of the continuous current rating of
+cables (100% load factor)
+IEC 448 Current-carrying capacities of conductors for
+
+electrical installations of buildings
+CENELEC-Report Strombelastbarkeiten für Kabel und Leitungen
+R064-001
+Elektroinstallationen in Gebauden, Band !I
+
+VDE-Schriften- Schutz von Kabeln und Leitungen bei Uber-
+reihe 32 strom
+
+VDE-Schriften- Lexikon der Installationstechnik
+
+reihe 52
+
+Die Hinweise auf Veroffentlichungen in den FuBnoten beziehen
+sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt
+der Herausgabe dieses Heftes. Zum Zeitpunkt der Anwendung die-
+ses Heftes ist der durch die Verordnungen zum Elektrotechnikge-
+setz oder gegebenenfalls auf andere Weise festgelegte aktuelie
+Stand zu berlcksichtigen.
+
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich er-
+kiarten Osterreichischen Bestimmungen für die Elektrotechnik ist
+zu beachten:
+
+
+===== PAGE 5/38 =====
+ÖVE-EN 1 Teil 3 841
+
+(8.1) Vorworte, Ergänzungen, Erläuterungen (im Kieindruck) und Hinwei-
+se auf Fundstellen in anderen, verbindlich erklarten Osterreichichen
+Bestimmungen für die Elektrotechnik werden auch von der Ver-
+bindlicherkldrung erfait.
+
+(8.2) Einleitungen, Rechtsbelehrungen, Anhange, FuBnoten und Hinwei-
+se auf Fundstellen in anderen Texten werden von der Verbind-
+licherklarung nicht erfaBt.
+
+(9) Die in diesem Heft angeführten Österreichischen Bestimmungen
+für die Elektrotechnik, ÖNORMEN der Elektrotechnik und sonstige
+technische Veröffentlichungen können vom ÖVE, Eschenbach-
+gasse 9, A-1010 Wien, bezogen werden.
+
+
+===== PAGE 6/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+Errichtung von Starkstromanlagen
+mit Nennspannungen bis
+- 1000 V und === 1 500 V
+
+Teil 3 Beschaffenheit, Bemessung und Verlegung
+von Leitungen und Kabeln
+
+§ 41 Bemessung von Leitungen und Kabeln
+in mechanisq_her und elektrischer Hinsicht
+Uberstromschutz
+
+411 Geltung
+
+Diese Bestimmungen gelten für die Bemessung von Leitungen und Ka-
+beln in mechanischer und elektrischer Hinsicht für das Leitermaterial Kup-
+fer. Für andere als durch die Tabellen 41-6 und 41-7 erfaBte Verlegearten
+und für das Leitermaterial Aluminium generell wird durch sachgerechte
+und nachvoliziehbar dokumentierte Anwendung
+
+— des Anhanges At,
+—- des CENELEC-Reportes R064-001,
+— anderer einschlagiger internationaler Verdffentlichungen (z. B.
+der |IEC-Publikationen 287 oder 448) oder
+— geeigneter empirischer Methoden
+der Bemessungsanforderung dieser Bestimmungen entsprochen.
+
+Bei Anderungen und Erweiterungen durch zusétzliche Leitungen oder Ka-
+bel ist der zuléssige Dauerstrom [, und der Nennstrom /; der Schutzein-
+richtung auch fir den durch die Anderung oder Erweiterung beeinfluBten
+Teil neu zu bestimmen.
+
+41.2 Begriffe und Benennungen
+
+41.2.1 Zuldssiger Dauerstrom /, ist jener Strom, der von einem Leiter
+unter den vorhandenen Bedingungen dauernd geflhrt werden kann, ohne
+daB die zuldssige Temperatur am Leiter bei ungestértem Betrieb über-
+schritten wird.
+
+41.2.2 Bemessungsstrom /, einer Leitung ist der zulassige Dauerstrom
+unter festgelegten Bedingungen (z. B. Verlegeart, Umgebungstempera-
+tur).
+
+41.2.3 Betriebsstrom /; ist der im ungestorten Betrieb in einer Leitung
+bzw. in einem Kabel auftretende Strom. Er wird aus der Leistung der an-
+zuschlieBenden Betriebsmittel berechnet unter Berlcksichtigung von zu
+erwartender Gleichzeitigkeit bzw. gewlinschter Verflgbarkeit.
+
+1895-03 41-1
+
+
+===== PAGE 7/38 =====
+OVE-EN 1 Teil 3 § 41
+
+41.2.4 Uberstrom ist jeder Strom, der den zuldssigen Dauerstrom über-
+schreitet.
+41.2.4.1 Uberlaststrom ist jener Uberstrom, der in einem fehterfreien
+Stromkreis bei Uberlastung durch angeschlossene Betriebsmittel auftritt.
+41.2.4.2 KurzschluBstrom ist jener Uberstrom, der infolge eines Kurz-
+schlusses zum FlieBen kommt.
+41.2.4.3 UnbeeinfluBter KurzschluBstrom ist jener Uberstrom, der
+durch einen Fehler vernachlassigbarer Impedanz (vollkommener Kurz-
+schluB) zwischen Leitern, die im ungestdrten Betrieb unterschiediiches
+Potential haben, verursacht wird.
+41.2.5 Nennstrom" / der Schutzeinrichtung ist jener Stromwert, mit dem
+die Schutzeinrichtung gekennzeichnet ist. Bei einstellbaren Schutzein-
+richtungen entspricht der Nennstrom dem eingesteilten Wert.
+41.2.6 Auslosestrom /, ist jener Strom, der mit Sicherheit zur Auslésung
+flihrt, d. h.
+
+(1} der Auslösestrom bei Leistungsschaltern,
+
+(2) der groBe Priifstrom bei Sicherungen vom Typ gL und bei Lei-
+tungsschutzschaltern.
+
+41.2,7 Zulassige Betriebstemperatur ist die höchste zutdssige Tempe-
+ratur am Leiter bei ungestdrtem Betrieb.
+
+41.2.8 Zulidssige KurzschluBtemperatur ist die héchste zulassige Tem-
+peratur am Leiter bei KurzschluB mit einer KurzschluBdauer bis max.
+5 Sekunden.
+
+1} In OVE-SN/EN 60898 Bemessungsstrom genannt.
+
+1995-03 41-2
+
+
+===== PAGE 8/38 =====
+ÖVE-EN 1 Teil 3 8 41
+
+41.3 Mechanische Festigkeit
+
+41.3.1 Leitungen und Kabel müssen ausreichende mechanische Festig-
+keit haben.
+
+Tab. 41-1: Mindestwerte der Leiternennguerschnitte für Leitungen
+
+Mindestnenn-
+Verlegeart querschhitt in mm?
+bei Cu
+
+1 Feste Veriegung von Aderleitungen In Elekiro-Installationsrohren und feste 15
+
+Verlegung von Mantelteitungen ’
+Schalt- und Steusrieitungen
+Feste Verlegung von einadrigen Leitungen
+Feste Verlegung von mehr- oder vieladrigen flexiblen Leitungen 0
+{Schiauchleitungen)
+
+4
+
+1,0
+
+‚75
+
+Feste ungeschützte Verlegung, z. B. in Schaltanlagen und Verteilern, sowie 0.5
+innere Verdrahtung von Beleuchtungskdrpern' '
+
+1,6
+
+0
+
+2
+
+Faste ungeschützte Verlegung bei einem maximalen Abstand der Befesti-
+gungspunkte von 20 m 2
+
+{1} bei Leitungen mit Trageinrichtung ’
+(2} bei Leitungen ohne Trageinrichtung ;
+Flexible Leitungen bei leichter mechanischer Beanspruchung für den An-
+
+Schluß elaktrischer Geréte
+
+Flexible Leitungen bei mittlerer mechanischer Beanspruchung für den An- 0,757
+schluB elekirischer Geräte
+
+Flexible Leitungen bei schwerer mechanischer Beanspruchung für den An- 40
+schluß elektrischer Geräte ’
+
+Flexible Leitungen (z. B. leichte Zwillingsieitung) sind für den Anschluß besonders leichter Hand-
+
+gerite (2. B, elektrischaer Rasierapparat), soweit dies in den Bestimmungen für Gerdte erlaubt ist, bei
+einer größten Leitungslänge von 2 m und einer maximalen Strombelastung von 0,2 A zulassig.
+
+Mindestquerschnitte für Antriebe und Antriebsgruppen siehe $ 27.
+
+" Auf die in den ertsprachenden Gerétebestimmungen festgelegten Mindestquerschnitte ist zu achten.
+3 (berschreitet der Abstand der Befestigungspunkte 20 m, gelten die Bestimmungen gemäß OVE-L 1.
+
+of @ mSE » Jol » |
+
+41.4 EinfluBgréBen auf den zulassigen Dauerstrom
+
+41.4.1 Nennquerschnitte und Bemessungsstrome für Cu-Leiter
+Der Bemessungsstrom /; darf die Werte gemaB Tab. 41-2 nicht Uber-
+schreiten. Dabei sind die der Tabelle zugrunde gelegten Installationsbe-
+dingungen zu beachten.
+
+1995-03 41-3
+
+
+===== PAGE 9/38 =====
+—
+
+xt
+U
+
+ÖVE-EN 1 Teil 3
+
+81105 815U0EU BUNZJaSHOJ
+
+41-4
+
+USIALIBAI0H S18a = TN HNYasiney-usdoolys = HO HNYISINEM-INIEN = HN
+ynyasiney-usAdoidusiAylg = Hda WLOSIEY ISUISHBUIUAS = HS DLOYAAUAAI0L = DAd
+*018 DAd-[EIZedS 44I 9 ‘2 D, 06 UoA Inteiadwisisqeliey USÖISSEINZ Jeule FL ajois1oNos] sispue iy yone HI6 saig (
+YDIIYDISIS UsISILS|RISIH Ul PUN 62 Y-FAQ ‘€2 M-JAQ Ul g Z PUS VSHEaqEM 8.99M JD awgssbunssewsg {
+‘UBIOUNZULS J8JeIS18H WOoA INjelsdsisgaliag SÖISSEINZ 4IR Japuamuy Woa 15! ([elseiemz wi Bifiusyge dAjsBunyosiy won 1suneiadwalsgalieg sbisseinzaig (
+
+ulspy
+usIRlseleq
+9P [EZUY
+uaye aeIah
+-afopap | -pueH
+yesbauan
+puebiel} uByoEB|S iy
+nEsadwsy
+D 02 Da DE
+
+-mmc:nmeD
+Ya 04
+00 067 308 %0 02/% 067 D208 [D 0410-06] 99 D 0L
+
+343 Ul OqeX TR ul [aqeM
+
+ANJEJSCLUS}
+
+-sqewmeg | ¢
+abisseing
+0 [SSSEIN| mA | e [9SSEA| g | (A (\HOISIBHOS] m
+3dA { He 3A [peided YS/EN
+
+. (- 180EM uaBunye a4 BunBeuap 8158 Nı [BAEY pun uabunysT
+(eloeJale]alalalnle[alvlafels[s]ojsl[v]efz]}]
+
+usBunbuipeg us1Be|abflss) Jajun */ wonssbunssewag :Z-Lb el
+
+uayeneg
+
+1995-03
+
+
+
+===== PAGE 10/38 =====
+OVE-EN 1 Teil 3
+
+§ 41
+
+v ul ¥ wonssBunssswag
+
+vz o v ]ar ] ja er ]r er [a[nfofels
+
+uebBunBuipeg uelßejaßıse) Jajun Y Luo.4SsSsBUNSSeWSS :Z-LF 'qeL BunzlesuO4
+
+siayspdny
+S8R HIUYOS
+-lanbuuay
+
+41-5
+
+1995-03
+
+
+
+===== PAGE 11/38 =====
+ÖVE-EN 1 Teil 3 & 41
+
+41.4.2 Leitungs- und Kabelbauarten
+
+Für die gebräuchlichsten Leitungs- und Kabelbauarten sind die maximal
+zulässigen Betriebstemperaturen für Dauerbelastung in Tab. 41-3 ange-
+geben.
+
+Tab. 41-3; Beispiele für maximale Betriebstemperaturen
+
+1
+
+; ;
+Beispiele für Bauarten ää:äfc?rf;{äpt mf;fnßgﬁgfut:fs- Isolier- Mantel-
+P e Werkstoff Werkstoff
+bzw. national) C
+
+Leitungen für feste
+
+Verlegung:
+
+— Aderleitungen HO7WV
+
+— Mantelleitungen ADBWY
+
+— Stegleitungen YM-Steg
+— lluminationsflachleitungen | HOSRNH2-F
+
+Flexible Leitungen:
+
+— Zwillingsleitungen HO3VH-H
+
+— PVYC-Schlauchleitungen | HAO3WVY, 05VV
+
+- Gummischlauchieitungen HAS5RR
+
+— PVC-Flachleitungen HO5VVHS,
+HO7\VWHE
+
+- Gummischlauchleitungen GMSSud
+
+Kabel:
+
+-PvC - PVC
+
+- Papier/Masse -
+
+- VPE - PE(HDPE}
+
+PVC = Polyvinylchlorid SR = Synthetischer Kautschuk
+NR = Natur-Kautschuk CR = Chloropren-Kautschuk
+
+EPR = Ethylenpropyien-Kautschuk
+PE = Polyethylen HDPE = Polyethylen hoher Dichte VFE = Vernetzies Polyethylen
+
+41.4.3 Verlegung
+
+41.4.3.1 Verlegearten
+
+Die gebauchlichsten Verlegearten von Leitungen und Kabeln sind in
+Tab. 41-4 beschrieben. Der Zusammenhang mit den Bemessungsstrd-
+men ist der Tab. 41-2 zu entnehmen. Die Bemessungsstréme sind unter
+der Voraussetzung ermittelt, daB Leitungen bzw. Kabel jeweils einzeln
+verlegt werden. Unberlcksichtigt ist die Haufung, d. h. eine mogliche ge-
+genseitige Warmebeeinflussung der Leitungen bzw. Kabel.
+
+1995-03 41-6
+
+
+===== PAGE 12/38 =====
+8 41
+
+ÖVE-EN 1 Teil 3
+
+385 SISUOBU BUNZJOSHOJ
+
+‘L0J09 JapO MI0M
+-Janepy SNE UePOQaN- JeDO USHISM "USPUBAA Ui US4HOISUCHENEISUOHMEj W) vaBunyaleIuey; sbupeule —
+'‘UOJag J8P0 YeMISNeW SNE UApQGYn4 J8P0 UAMIS( 'USPUBAA LI USJJOISUDIE|BISUIGRS|T Ul *
+
+‘UaEUBYUSPOGEINS Ualaynieq Ui USJUOISUDHRIRISUONNST Ul +
+‘USHOS( JOPC USPUEAA JM US[BUEY- 1800 USIYOISUONE EISUFOUMSI Ul >
+‘usBunyplopy —
+“US{EUEY- JBPO UBIYOISUCHEHEISUIDIPIR|T Ul ZiNd JQJUN J8P0 U840S(} 'UBPURA Ul 19P0 Jne BunBoyuea
+
+yapiojeb pusbBuimz o yoopal ‘usyasebion Jemz S! uaye|dsBunpispjieawneyy
+uap HW uebunyet Jepo axyay iep Buniuniag sulx "uspuyaqg uaieidsBunpapiieluney USP pun gunyial
+-94LUEIA JD JOPO USIYOISUCHE|[BISU| USP USUISIMZ SBUBIA JOLLIZS}IIM Ul [BUS1BIA SOPUSLLILIEDSULIEM UIDY
+yols HEP Joye( Jeuejeßqge BunpisuaApUEAA 8IP 18MM INU pJIM SLBMISNLIBA SIC "USHORUISUE AQlosudul)
+180 UE aIs gep ‘1BaBA puBA 40P Ul 0S puis uabunysjjeluepy uablupeiyaiu 8IP J8P0 SILJOISLIO E EISUY al
+
+‘uaxaaq pun uapuga Ul uaBunie|euep SBUPEReLU —
+
+‘USSR LUSpU3L
+-WERSUUEM SUYO 18po JW ‘UBpoggnd Ul udjRUBRNSUOEEISUIoIeIT U usBunyaeiueyy sbupeiyaw —
+*U8POdHN PUN UaMDa ‘UBPUEBAA U! UJUOISUOHE)IRISUI0ISIT UL uabunusijsiuep BÖLPEIYAL —
+USIBLIGIR A USPUSLLEPALLIEM IW UapOqdeN- DU UHDS(J ‘USpPUBA LI BunbBapap
+
+‘pepioieB pusBumz Woiu yoopal ‘usyesabloa JEMZ 151 uspedsbunpis yieawney
+usp HW usBunyen Jepo auyoy Jap Buniyruag aug “uspuyaq uspedsbunpiepilemuney uep pun Bunjle|
+-|SIUE 48P 18P0 UIYOISUOIBHEISUL Lap Usyosimz aBuspy JOUWESHIM L) [ElIeie|y SSPUSLULLEPILLLIEM oy
+yois pep Jeueq -leusiebge Bunpiapsapue aIp Jaqn U PUIM SUIBMSNLIBA 8IJ "USHoiUISUE SPSSUSU
+-uj Jap UB ais gep ‘15a49A pUBAA JBp Ui 0S pUIS uabBunj|aiuely usbupews aip 1SPO SIUOLSUCHRURISU; SIC
+
+"USIEUSJEIN
+USPUSUIERSLLLIEM 2UYO 1800 HW ‘USPEQeN Ul USJPUENSUOHPEISUOHMS{ Ul UVaBUuNejSIWEIN SBUPBUS —
+"USHELSIEY LOpPUSLWILERSULEM SULO 18P0 HW USpggnd Ul uajgueysuoie|eisujop@d Ul «
+‘uales
+-8JEIA| USPUBLILIBPALLLIEM SUYO USPOQEn LUl JEUWEM UBUSSSO|YRSe0 LUE USIYOISUGHEBHEISUIOIPDI] Ui *
+‘uapoagr.4 purn U8aMDaG ‘USPUBAA Ul USIYOISUOREHEISUIOISIT Ul +
+‘usBunyouepy -
+USHELISIEIA USPUSWLUBPSLUEM L USPOQENY pun us3ae(q ‘Uepuis Ul BunbBajap
+
+ayesusuul
+
+fiunbBopep 2159y ını usbunps
+
+uaprabsalap :p-LE el
+
+
+===== PAGE 13/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+s
+
+3}495 8JS49DEU Bunziesuo
+
+‘nesBel] y usBunyisyeiuep —
+D £'0 T U9PUBR/AA UCA PUBISC Weula 18G usBunys|ejueyy sbupeiysw —
+‘His1ssbiayois ıE1 aqebgeswiiea apepuyatun aip "y p ‘UM ur 131 BunBauaa
+
+"ZIng Jejun uabunyaifelg -
+‘USPQUENS 1900 USMIS0 ‘Uspuem Jne uabunye)eue sBupeuie —
+‘US[PUEXSUCHENEISUCHMT USUSSSQILUISEÖ uslayneg
+Ui 1900 USJEUEM U8U8)0 Ul ‘Zind WI 419P0 UapQgand ‘UOX28(] ‘uspuem jne uUa6unyejaIVelA ebupeiysw —
+Bunbapsp
+
+‘uajeuey
+-SUONBIIRISUIO/NET UdUessSO|Ysab Ul Jopo usiyossuonieeIsuioyel3 U uabunpoyeiueyy sbupeiyaw —
+'USRUEN- 2P0 URIYOISUGIE|RISUICIDIO|T Ul USPOGENY 1800 uexoad ‘UspuBA U 18po jne BunBajiep
+
+uspesbalsp (-1 el Bunziespo
+
+1995-03
+
+
+===== PAGE 14/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+9}95 9J540BU Bunziespod
+
+OF A-JAQ BURIG 7
+‘2-1t "qe] sne % Bunuyosiag nd (
+
+-usjlenbauugp, aplwalj sopo Bunjuyeisususuuog apsip uabeb Z1NU4DS -
+Snpesedwain ueuatenseb
+18024 19P SUMBMISNSA 9ip Yyoinp Jap BunBliyoisyoniag 1900 sLIngy s1ouneq pun 89046 pusyoiaisne
+‘uafie|laqey Jepusabal] Japueula.agn PuRISqQY WD DE SUSISspUIL
+‘UJeQeM uspueh
+-8]| JepUELRIaqN 'MZ( JOPUELIBUSGEU 189 JBSSALULUDINPIEORY JSUIBIOMZ SUSISOPUIL WNZIUSYISIMZ
+‘W2 Z SUSISAPUIL USMIS( Japo UepOg ‘UAPUBAA UOA JSQEM 49D PUBISAY
+4S4NP HOM9 patm SOI
+QIS yaipuaw InjeadwarsBung
+f -8bwin 8l Yols gep suyo ‘uagababqe LspuIyafiun VORMSAUOM 1900 BUNYERS YOJINP paim SUMBASMUSA
+1P Y P "UNT Ul 184 Wapy uSie)seiag JD W [3gey sUallos)-OdA Japo -asseuaided -OAd abupeluew
+
+PUabunwunsag usyosiLyDs) usp gewal ONSSAD g "z puabal uayoe|q UE 180 ne
+A 0179 SIg Bunuuedsuusap Ja1yous pun wspy URISISERG 18P HL usbunye auaios)-4d3 ebupriysiy
+
+{8)eEJe6pUeH Japa -SMEH JD4 UawiwouaBsne} pusben usyog4
+UE J8p0o [NE wispy USISISERq P Japo lemMZ HLL uabunja ausiosl-OAd 490 ~wwnegy abupeiysiy
+
+usBunya a|gIxald
+
+uapesbtouan (-1 qel BunzlesuO.4
+
+41-9
+
+03
+
+1995-
+
+
+===== PAGE 15/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+‘02 1-3A0 SYSIS @
+
+-UspJem H848 5 pun 29 ‘g '2v v veddrus) uap geWwWaß uapeaßalieA Jep puakDeIdsiu8
+wodissbunssaweg JU! uuey ‘16a48A USBUNEOISUCHENEISU] SIM |SOEM 8L8NOSI-OAd SÖLPEI4EW Uapiap
+
+Wg‘L S B> win
+'u8pP0g
+LgZIasuanp uaieipugliseg VaUosıue6iO 480 BN 89495 *8M49BUDS H4Ny9S HLU UOA BunpieuleA —
+‘SUNIYQKRMHBAUSPOA JegewabsBunuplo —
+‘uaBunBipagelny WLgn —
+180 PHM JU98.108 Jap
+4z1es6ÖSNeJ0A MM (L UOA SBUIIRIOQIYOND4 S8p PUBlSIep malLBmuapoqp.sd J940SIzeds US pam S3
+{guabunwunsag aUYOSILYOS) ayels Bunbapea yonbnzag) 8SSMy9SWeN7 aUYO anysneps3
+19P0 DUBG U{ UISZU8 WaPy USISISEISg 84 HUL (2GR eLIaI|osI-IdA J8P0 -assep SI0 - *-OAd sBupeiyap
+
+uapeaBaliap r-LF qel Bunziasuog
+
+apJg ul
+BB
+
+-10
+
+41
+
+1995-03
+
+
+===== PAGE 16/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+41.4.3.2 Häufung
+
+Die Häufung von Leitungen bzw. Kabeln ist durch den Faktor f, gemäß
+Tab. AT-2 zu berücksichtigen. Falls Leitungen oder Kabel mlt einem
+Strom von héchstens 30% ihres zulassigen Dauerstromes /, bei Häufung
+belastet werden, ist es zulassig, diese bei der Bestimmung des Umrech-
+nungsfaktors für die restlichen Leitungen oder Kabel dieser Gruppe, zu
+vernachlässigen.
+
+41.4.3.3 Gleichzeitigkeit
+
+Die Anforderungen dieser Bestimmungen, insbesondere die der Häufung,
+gelten unter der Annahme, daß alle Leitungen bzw. Kabel mit Vollast
+(100%) belastet werden. Ist dies nicht der Fall, darf die Gleichzeitigkeit
+berticksichtigt werden. (Siehe Faktor f, in Tab. At-1))
+
+41.4.3.4 Verlegeabstand
+
+Das Verlegen mit Abstand setzt zwischen zwei Leitungen bzw. Kabeln ei-
+nen Abstand voraus, der mindestens dem zweifachen AuBeren Durch-
+messer der dickeren Leitung bzw. des dickeren Kabels entspricht,
+
+Für die praktische Anwendung ist der Mittelwert der Abstände entlang der
+Leitungs- und Kabelfiihrung zugrunde zu legen. Wenn dieser Abstand
+nicht eingehalten ist, gelten die Leitungen bzw. Kabel als ohne Abstand
+verlegt.
+
+41.4.3.5 Aderzahl
+
+Für die Bemessung sind nur die tatsächlich vorn Strom durchflossenen
+Adern (belastete Adern) zu berlicksichtigen; der Schutzleiter (PE-Leiter)
+ist daher nicht mitzuzahlen.
+
+Bei gemeinsamer Flhrung aller Leiter eines Drehstomkreises gelten der
+Neutralleiter sowie der PEN-Leiter als nicht stromdurchflossen. (Dement-
+sprechend gelten die für die Aderzahl drei angegebenen Werte für die drei
+Leiter eines Drehstromkreises mit Neutralleiter und ohne Neutralleiter.) Bei
+mehr als drei belasteten Adern gelten die Faktoren f, gemäß Tab. A1-3 bzw.
+für aufgewickelte Leitungen oder Kabel f, gemäß Tab. A1-4.
+
+In Sonderféllen, z. B. bei Oberschwingungsbelastung, missen gegebe-
+nenfalls alle Adern als stromdurchflossen angesehen werden.
+41.4,3.6 Verlegen im Rohr
+
+41.4.3.6.1 Die Führung von Leitungen und Kabeln in Elektroinstallations-
+rohren von jeweils max. 1 m Lange darf hinsichtlich des zuléssigen Dau-
+erstromes dann unberlcksichtigt bleiben, wenn die Rohre oder Kanile
+frei in Luft oder an senkrechten Flachen verlegt sind.
+
+1995-03 41-11
+
+
+===== PAGE 17/38 =====
+OVE-EN 1 Teil 3 § 41
+
+41.4.3.6.2 Die Verlegung in Decken- oder Wanddurchbriichen (umge-
+bendes Material mit groBerem Warmewiderstand als 2 K-m/W) mit jeweils
+0,2 m maximaler Länge dürfen hinsichtlich des zuidssigen Dauerstromes
+unbericksichtigt bleiben.
+
+41.4.3.6.3 Bei Verlegung von Kabeln in Rohrsystemen in Erde [Uber-
+schubrohr > 6 m} ist der Umrechnungsfaktor f, = 0,85 zu berlicksichtigen.
+
+41.4.4 Umgebungstemperaturen
+
+Die Bemessungswerte gemäß Tab. 41-2 sind für eine Umgebungstem-
+peratur von t = 30 °C in Luft bzw. 20 °C für Kabel in Erde, ausgelegt. Die
+Tab. A1-5 gibt die Umrechnungsfaktoren f, fir abweichende Temperatu-
+ren an.
+
+41.4.5 Betriebsart
+
+Die Tab. A1-6 gibt fur erdverlegte Kabel die Umrechnungsfaktoren flir ver-
+schiedene Belastungsgrade sowie flr unterschiedliche Erdbodenwérme-
+widerstédnde an.
+
+41.5 Ermittlung des zulässigen Dauerstromes /,
+
+41.5.1 Zulassiger Dauerstrom /, in Normaiféllen
+(Bemessungsstrom /p)
+
+Der Bemessungsstrom /. ist, unter Beachtung der festgelegten Bedin-
+
+gungen, aus Tab, 41-2 zu entnehmen. Für diese Falle gilt:
+
+= |
+
+!Z R
+
+41.5.2 Zulassiger Dauerstrom /, in Sonderfillen
+
+Weichen die tatsichlichen Bedingungen von den Bedingungen gemäß
+Tab. 41-2 ab, ist der zulassige Dauerstrom gemäß der Formel zu berech-
+nen:
+
+=1 xl'lf
+
+zuldssiger Dauerstrom unter Berlicksichtigung aller Einfiu3-
+faktoren
+
+Bemessungsstrom bei festgelegten Bedingungen (Tab. 41-2}
+
+Produkt der zutreffenden Umrechnungsfaktoren
+(I, =f, x xfyx..)
+
+Die Zuordnung der tatséchlichen Bedingungen zu den einzelnen Fakto-
+ren, wie auch zu den Tabellen, aus denen die Zahlenwerte entnommen
+werden kénnen, ist aus Tab. A1-1 zu ersehen.
+
+1995-03 41-12
+
+
+===== PAGE 18/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+41.5.2.1 Zulassiger Dauerstrom [/, von Kabeln, blanken und
+polyethylen-isolierten Freileitungsleitern
+
+41.5.2.1.1 Für den Bemessungsstrom /g von Kabeln bestehen zusatzli-
+che technische Bestimmungen?.
+
+41.5.2.1.2 Für den Bemessungsstrom /; von blanken und PE-isolierten
+Freileitungsleitern bestehen technische Bestimmungen®.
+
+41.5.2.2 Leitungen im Inneren von Geräten und fabriksfertigen
+Schaltgeratekombinationen
+
+Für Leitungen im Inneren von Geréten und fabriksfertigen Schaltgerate-
+kombinationen sowie fest an Verbrauchsmitteln angeschlossene flexible
+AnschluBleitungen gelten die entsprechenden technischen Bestimmun-
+gen für Eiektrogeréte?,
+
+41.5.2.3 Aussetz- oder Kurzzeitbetrieb
+
+Bei Aussetz- oder Kurzzeitbetrieb ist das zeitweise Auftreten von Uber-
+laststrémen zuldssig. Die Leiterquerschnitte sind fir jeden einzelnen An-
+wendungsfall zu berechnen®.
+
+41.5.2.4 Mehrmotorenantriebe
+
+Bei Betrieb von Mehrmotorenantrieben sind für die Bemessung der Lei-
+tungsquerschnitte die Betriebsstrome (unter Beriicksichtigung der An-
+laufstréme sowie deren zeitliche Dauer) zu beriicksichtigen. Daflr geeig-
+nete Verfahren sind im Anhang A3 erlautert.
+
+41.5.2.5 Blanke Leiter und fest verlegte einadrige Verbindungs-
+leitungen bis Nennquerschnitt 50 mm® Cu
+
+Für blanke Leiter und fest verlegte einadrige Verbindungsleitungen zwi-
+schen Maschinen, Transformatoren, Akkumulatoren, Schaltanlagen und
+dgl. mit Nennguerschnitten < 50 mm? Cu gelten die Werte der Verlegeart
+E gemaB Tab. 41-2.
+
+41.5.2.6 Blanke Leiter und fest verlegte einadrige Verbindungs-
+leitungen über Nennquerschnitt 50 mm® Cu
+
+Verbindungen aus blanken Leitern und fest verlegte einadrige Verbin-
+dungsleitungen mit Nennguerschnitten > 50 mm? Cu sind so zu bemes-
+
+2} Siehe z. B. OVE-K 20, OVE-K 23 und OVE-K 26 und Herstellerangaben.
+
+3} Siehe OVE-L 1.
+
+4) Siehe z. B. OVE-HG 335 baw. OVE-HG/EN 60335, OVEEN 60598, OVE-MG/EN 60601 und
+OVE EN 60439,
+
+5} Siehe z. B. ,Elektroinstallaticnen in Geb&uden Band It, Abschnitt 2*, OVE EN 60204-1.
+
+1995-03 41-13
+
+
+===== PAGE 19/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+sen, daB sie bei den zu erwartenden Betriebs- und Uberstrémen ausrei-
+chende mechanische Festigkeit haben und keine für den Betrieb oder die
+Umgebung gefährliche Temperaturen annehmen kdnnen®.
+
+41.5.2.7 Parallel geschaltete Leitungen und Kabel
+
+Werden mehrere parallel geschaltete Leiter durch eine gemeinsame Uber-
+stromschutzeinrichtung geschltzt, gilt als zuldssiger Dauerstrom die
+Summe der Werte des zuldssigen Dauerstromes aller Leiter. Dies gilt je-
+doch nur, wenn alle Leiter die gleichen elektrischen Eigenschaften haben
+(Bauart, Verlegeart, Lange, Querschnitt) und in ihrem Verlauf keine Ab-
+zweige aufweisen.
+
+Weisen parailel geschaltete Leiter unterschiedliche Querschnitte auf, ist
+der zulässige Dauerstrom [, der Parallelschaltung gemäß Anhang A2 zu
+berechnen.
+
+41.5.2.8 Leitungen und Kabel in Ringen oder auf Trommeln
+
+Bei Leitungen und Kabeln in Ringen oder auf Trommeln ist der zulassige
+Dauerstrom /, von Fall zu Fall zu ermitteln. (Siehe Faktor F, in Tab. A1-4.)
+
+41.5.2.9 Zulassiger Dauerstrom /, von Leitern in Stromschie-
+nensystemen
+
+41.5.2.9.1 Der zulassige Dauerstrom /, fabriksfertiger Stromschienen-
+systeme ist vom Hersteller anzugeben”.
+
+41.5.2.9.2 Für nicht fabriksfertige Stromschienensysteme sind die L.eiter-
+querschnitte für die zu erwartenden Belastungen entsprechend zu be-
+messen®. Bei der Bemessung der Leiterguerschnitte ist auBerdem die La-
+ge der Leiter zueinander und die verminderte Wérmeabfuhr, z. B. durch
+eine Umhdllung, zu berlicksichtigen.
+
+41.6 Uberstrom-Schutzeinrichtungen
+
+Leitungen und Kabel miissen mit Uberstrom-Schutzeinrichtungen gegen
+zu groBe Erwdrmung geschitzt werden, die sowohi durch betriebs-
+maBige Ubertast als auch bei vollkommenem Kurzschluß auftreten kann.
+Dies kann entweder durch Schutzeinrichtungen gemäß $ 41.6.1 oder
+durch Schutzeinrichtungen gemäß § 41.6.2 und $ 41.6 3 erfolgen, wobei
+letztere nicht an derselben Stelle eingebaut sein missen (siehe auch
+§ 41.8.4.2).
+
+&} Siehe ONORM DIN 43 671.
+7) Siehe OVE EN 60439-1, OVE-IM/EN 60439-2.
+8) Siehe OGNORM DIN 43 671.
+
+1995-03 41-14
+
+
+===== PAGE 20/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+41.6.1 Einrichtungen, die sowohl bei Uberiast als auch bei
+KurzschluB schiitzen
+
+Diese Schutzeinrichtungen missen jeden Uberstrom bis zum größten
+Strom bei vollkommenem KurzschiuB an ihrer Einbaustelle unterbrechen
+kénnen:
+
+Als Schutzeinrichtungen dirfen daflir verwendet werden z. B.:
+
+(1) Leitungsschutzsicherungen gemäß den technischen Bestim-
+mungen?,
+
+(2) Leitungsschutzschalter gemäß den technischen Bestimmun-
+gen'?,
+
+(3) Leistungsschalter gemäß den technischen Bestimmungen™.
+
+41.6.2 Einrichtungen, die nur bei Uberlast schitzen
+
+Dies sind im allgemeinen stromabhéngig verzégette Schutzeinrichtungen,
+deren Ausschaltvermdgen kleiner ist, als der Strom bei vollkommenem
+KurzschiuB an ihrer Einbaustelle, z. B. Schiitze mit Uberlastausldser
+gemäß den technischen Bestimmungen'?.
+
+41.6.3 Einrichtungen, die nur bei KurzschluB schitzen
+
+Diese Schutzeinrichtungen mussen KurzschiuBstréme bis zum groBten
+Strom bei vollkommenem Kurzschluß an ihrer Einbaustelle unterbrechen
+kdnnen.
+
+Als Schutzeinrichtungen dürfen dafiir verwendet werden z. B.:
+
+(1) Teilbereichssicherungen zum Gerateschutz gemäß den techni-
+schen Bestimmungen'?,
+
+(2) Leistungsschalter mit Schnellausidsern gemäß den techni-
+schen Bestimmungen'4.
+
+41.7 Schutz bei Uberlast
+
+41.7.1 Allgemeines
+
+Schutz bei Uberlast besteht darin, Schutzeinrichtungen vorzusehen, die
+Uberlaststréome in den Leitern von Stromkreisen unterbrechen, ehe für
+Leiterisolierungen, AnschluB3- und Verbindungsstelien sowie fir die Um-
+gebung von Leitungen, Kabeln und Stromschienen schadigende Erwar-
+mung hervorgerufen wird.
+
+9) Siehe OVE-SN 40.
+10} Siehe OVE-SN/EN 80898 hzw. OVE-SN 52,
+11) Siehe EN 60947-2.
+12) Siehe EN 60947-4-1.
+13) Siehe OVE-SN 40,
+14) Siehe EN 60947-2.
+
+1995-03 41-15
+
+
+===== PAGE 21/38 =====
+OVE-EN 1 Teil 3 § 41
+
+41.7.2 Zuordnung der Schutzeinrichtungen
+Zum Schutz bei Uberlast von Leitungen, Kabeln und Stromschienen müs-
+sen folgende Bedingungen erflllt sein:
+lp<1 <1, (1}
+!2 <145 x/, (2)
+Betriebsstrom des Stromkreises
+
+!B
+
+Iy Nennstrom der Schutzeinrichtung
+I, zulassiger Dauerstrom
+
+/ AusliGsestrom
+
+1) Sicherungen mit anderer Charakteristik als gL sind so auszuwéhlen, daß deren groBer Prüf-
+strom {Strom, bei dem die Sicherung innerhalb der konventionelten Prifdauer anspricht)
+nicht gréBer ist als der groBe Priifstrom [, von Sicherungen des Typs gL und auch nicht
+später zur Abschaitung führt.
+
+2} Bei Leitungsschutzschaltern ist die Charaktetistik zu beachten:
+
+— Bei Leitungsschutzschaltern der Charakteristik L und U gemäß den technischen Bestim-
+mungen'® ist für £, der groBe Prifstrom einzusetzen,
+
+- bei Leitungsschutzschalterm der Charakteristik B, © und D gemäß den technischen Be-
+stimmungen'® gilt fur den groBen Prifstrom /, = 1,45 - |, und daher vereinfachen sich
+die Bedingungen {1) und {2) zu der ginzigen Bedingung:
+
+hshSh
+
+Die in Osterreich vereinbarte Konvention, daB auch bei Schmelzsicherungen der Ge-
+brauchskategorie gL gemäß den technischen Bestimmungen' für den groBen Prifstrom
+1, =145 -} gilt, beruht auf keiner konstruktiv begrundeten Anderung der Sicherungskenn-
+linie sondem lediglich auf geänderten Prifbedingungen. {Es wird eine geringere Wirmeab-
+fubr aus den Sicherungseinsiétzen unterstelitl) Dies und der Umstand, daß Schmelzsiche-
+rungen beim großen Prifstrom nur innerhalb der konventionellen Prifdauer ansprechen
+müssen (dies kann bei den höheren Nennstromwerten bis zu 4 Stunden betragen, während
+sie bei Leitungsschutzschaltern hichstens im Bereich von Minuten liegt), kénnen die Wirk-
+samkeit des Uberlastschutzes durch Sicherungen erheblich herabsetzen. Dieser Tatsache
+ist bei der Auswahl von Schmelzsicherungen für den Uberlastschutz gegebenenfalls Rech-
+nung zu tragen.
+
+Der in diesem Absatz vorgesehene Schutz bietet in Einzelfällen keinen vollständigen Schutz
+der Leiter gegen unzuldssige Erwarmung, z. B. bei länger anstehenden Uberstrémen unter-
+halb des Wertes ,. Er stellt auch nicht zwangs{äufig die winschaftlichste Lösung dar. Es
+wurde daher im Rahmen diese Absatzes davon ausgegangen, daß kleine Langzeit-Über-
+laststräme nicht regelmäßig, d. h. höchstens in Ausnahmetéllen, auftreten.
+
+41.7.3 Anordnung der Schutzeinrichtungen zum Schutz bei
+
+Uberlast
+41.7.3.1 Aligemeines
+Schutzeinrichtungen zum Schutz bei Uberlast miissen an allen Stellen
+eingebaut werden, an denen der zulassige Dauerstrom /, gemindert wird,
+sofern die vorgeschaltete Schutzeinrichtung den Schutz nicht sicherstel-
+len kann. Ausgenommen sind Fälle gemäß § 41.7.5.
+
+3
+
+o
+
+X
+
+15) Sishe ÖVE-SN 52,
+16) Siehe OVE-SN/EN 60898.
+17} Siehe GVE-SN 40.
+
+1995-03 41-16
+
+
+===== PAGE 22/38 =====
+ÖVE-EN 1 Teil 3 8 41
+
+Ursachen für die Minderung des zulässigen Dauerstromes /, können sein:
+(1) Änderung des Leiterquerschnittes,
+(2) Änderung der Art der Verlegung,
+(3) Änderung des Aufbaues der Leitungen und Kabet.
+
+41.7.3.2 Versetzen der Schutzeinrichtungen zum Schutz von
+Leitungen und Kabeln bei Überlast
+
+Die Schutzeinrichtung zum Schutz bei Überlast darf im Zuge der zu schüt-
+zenden Leitungen bzw. Kabel an beliebiger Stelle angeordnet werden,
+wenn der Leitungs- bzw. Kabelabschnitt zwischen der Änderung des Lei-
+terquerschnittes, Änderung der Art der Verlegung oder Änderung des Auf-
+baues einerseits und der Schutzeinrichtung andererseits weder Abzweige
+noch Steckvorrichtungen enthält.
+
+41.7.4 Fälle, in denen auf die Schutzeinrichtung zum Schutz
+bei Überlast verzichtet werden darf
+
+Die folgenden Ausnahmen geiten nicht für Anlagen, für die in technischen
+
+Bestimmungen'® abweichende Anforderungen bestehen.
+
+Schutzeinrichtungen zum Schutz bei Uberlast diirfen entfallen in
+
+(1) Leitungs- oder Kabelanlagen, in denen mit dem Auftreten von
+Uberlaststrémen nicht gerechnet werden muB, vorausgesetzt,
+daB diese weder Abzweige noch Steckvorrichtungen aufwei-
+sen,
+
+Hierunter fallen Verbindungsleitungen zwischen Stromquelien, wie Generatoren, Anlas-
+sern, Transformatoren, Gleichrichtem, Akkurnulatoren und deren Schaltanlagen, sowie
+Verbindungsleitungen zu Uberspannungsableitern.
+
+(2) Hilfsstromkreisen, weil dort nicht mit dem Auftreten von Uber-
+laststrémen gerechnet werden muß,
+
+(3) Vertellungsnetzen, die als im Erdreich verlegte Kabel oder als
+Freileitungen ausgefihrt sind.
+
+41.7.5 Falle, bei denen der Wegfall von Schutzeinrichtungen
+zum Schutz bei Uberlast aus Sicherheitsgriinden erfor-
+derlich ist
+
+Schutzeinrichtungen zum Schutz bei Uberlast dürfen nicht eingebaut wer-
+
+den, wenn die Unterbrechung des Stromkreises eine Gefahr darstelien
+
+kann. Die Stromkreise sind in diesen Fallen so auszulegen, daB mit dem
+
+Auftreten von Uberlaststrdmen nicht gerechnet werden muß.
+
+Beispiele für solche Stromkreise sind:
+
+(1) Erregerstromkreise von drehenden elektrischen Maschinen,
+
+(2) Speisestromkreise von Hubmagneten,
+
+18) Siehe z. B. OVE-EX 65,
+
+1995-03 41-17
+
+
+===== PAGE 23/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+(3) Sekundärstromkreise von Stromwandlern,
+
+(4) Stromkreise, die der Sicherheit dienen, z. B. Stromkreise von
+Feuerlöscheinrichtungen.
+
+in diesen Fällen sollte eine Überlast-Meldeeinrichtung vorgesehen werden.
+41.8 Schutz bei Kurzschluß
+
+41.8.1 Allgemeines
+
+Schutz bei Kurzschluß besteht darin, Schutzeinrichtungen vorzusehen,
+die Kurzschlußströme in Leitern von Stromkreisen unterbrechen, ehe für
+Leiterisolierungen, Anschluß- und Verbindungsstellen sowie für die Um-
+gebung von Leitungen und Kabeln schädigende Erwärmung und schädi-
+gende mechanische Wirkungen hervorgerufen werden.
+
+41.8.2 Bestimmung des Stromes bei vollkommenem Kurzschluß
+Der Strom bei vollkommenem Kurzschluß muB durch eine der folgenden
+Methoden bestimmt werden:
+
+(1) Geeignetes Rechenverfahren'?,
+
+(2) Untersuchungen an einer Netznachbildung,
+(8} Messungen in der Anlage,
+
+(4) Angaben des EVU.
+
+41.8.3 KenngroBen der Schutzeinrichtungen zum Schutz bei
+KurzschluB
+
+Die Schutzeinrichtungen zum Schutz bei KurzschluB missen den Bedin-
+
+gungen gemäß $ 41.8.3.1 und $ 41.8.3.2 entsprechen.
+
+41.8.3.1 Das Ausschaltvermdgen muB mindestens dem gréBten Strom
+bei vollkommenem Kurzschluß am Einbauort entsprechen.
+
+Ein geringeres Ausschaltvermidgen ist jedoch zuldssig, wenn der
+Schutzeinrichtung eine andere Schutzeinrichtung mit dem etforderlichen
+Ausschaltvermdgen vorgeschaltet ist. In diesem Fall miissen die Eigen-
+schaften der beiden Schutzeinrichtungen so aufeinander abgestimmt
+sein, daß die nachgeschaltete Schutzeinrichtung und die zu schitzenden
+Leitungen bzw. Kabel nicht beschadigt werden (DurchlaBenergie, Ver-
+schweiBfestigkeit, dynamische Festigkeit der Strombahnen).
+
+Für die Abstimmung der KenngréBen der beiden Schutzeinrichtungen sind die Angaben der Hersteller
+heranzuziehen.
+
+41.8.3.2 Die Zeit bis zum Ausschalten des durch einen vollkommenen
+KurzschluB in einem beliebigen Punkt des Stromkreises hervorgerufenen
+Stromes darf nicht langer sein als die Ausschattzeit ¢, in der dieser Strom
+die Leiter auf die zulassige KurzschluBtemperatur erwarmt.
+
+19) Siehe z. B. germäß DIN VDE 0102.
+
+1995-03 41-18
+
+
+===== PAGE 24/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+Die zulassige Ausschaltzeit ¢ für Kurzschilisse bis zu einer Dauer von 5 s
+kann annahernd gemäß folgender Gleichung bestimmt werden:
+
+A
+t = Ik —*
+k)
+zuiassige Ausschaltzeit im Kurzschlußfall in Sekunden
+Leiterquerschnitt in mm®
+Effektivwert des Stromes bei vollkommenem Kurzschluß in A
+k Materialkoeffizient gemäß Tab. 41-5
+
+Für Ausschaltzeiten über 5 s sind besondere Untersuchungen notwendig.
+
+""‘):h"""
+
+Bei sehr kurzen zulässigen Ausschaltzeiten {t < 0,1 s} und bei Anwendung
+strombegrenzender Schutzeinrichtungen muß in Dreh- und Wechsel-
+stromkreisen wegen der Gleichstromkomponente des KurzschiuB-
+stromes der vom Hersteller angegebene Ft-Wert kieiner sein als k*-A2,
+
+LS-Schalter der Energiebagrenzungskiasse 3 gemäß den technischen Bestimmungen® erfiillen diese
+Bedingung.
+
+Tab. 41-5: Materialkoeffizient {k-Werte)
+
+PVC-isofierte Kupferleiter 115
+
+gummisolierte Kupferleiter
+
+41.8.4 Anordnung der Schutzeinrichtungen für den Schutz bei
+Kurzschluß
+
+41.8.4.1 Allgemeines
+
+Schutzeinrichtungen für den Schutz bei Kurzschluß müssen am Anfang
+jedes Stromkreises sowie an jenen Stellen eingebaut werden, an denen
+die Kurzschlußstrom-Belastbarkeit gemindert wird, sofern eine vorge-
+schaltete Schutzeinrichtung den geforderten Schutz bei Kurzschluß nicht
+sicherstetlen kann. Ursachen für die Minderung der KurzschiuBstrom-Be-
+lastbarkeit können sein z. B: Verringerung des Nennquerschnittes, ande-
+re Leiterisolierung.
+
+41.8.4.2 Versetzen der Schutzeinrichtung für den Schutz bei
+
+KurzschluB
+
+Die Ausnahmen gemäß (a) bis (c) geiten nicht für Anlagen, fur die in ande-
+ren technischen Bestimmungen abweichende Anforderungen bestehen,
+z. B. in brand- und explosionsgefdhrdeten Raumen.
+
+20} Siehe OVE-SN/EN 60898.
+
+1995-03 41-19
+
+
+===== PAGE 25/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+In den Fallen gemäß (a) bis (c) darf die Schutzeinrichtung für den Schutz
+bei Kurzschluß abweichend von § 41.8.4.1 im Zuge der zu schützenden
+Leitung bzw. des zu schitzenden Kabels versetzt werden.
+
+Die Schutzeinrichtung für den Schutz bei KurzschiuB darf im Zuge der zu
+schutzenden Leitung bzw. des zu schitzenden Kabels versetzt werden,
+wenn der zwischen der Querschnittsverringerung oder sonstigen Ande-
+rung einerseits und der Schutzeinrichtung andererseits liegende Lei-
+tungs- bzw. Kabelabschnitt gleichzeitig den Bedingungen gemäß (a) bis
+{c) entspricht:
+
+(@) Die Lange des Leitungs- bzw. Kabelabschnittes betragt héch-
+stens 3 m,
+
+(b} der Leitungs- bzw. Kabelabschnitt ist so verlegt, daß die Ge-
+fahr eines Kurzschlusses auf ein Mindestmaß beschrinkt ist,
+Diese Bedingung wird erfüllt z. B. durch sine Verstarkung des Schutzes der Leitung bzw.
+des Kabels gegen AuBere Einflisse.
+
+(c) Der Leitungs- bzw. Kabelabschnitt ist so ausgeführt, daß die
+Gefahr von Brand- und/oder Personenschiden auf ein Min-
+destmaB beschrankt ist.
+
+Die Schutzeinrichtung für den Schutz bei KurzschluB darf im Zuge einer
+zu schitzenden Leitung bzw. eines zu schiitzenden Kabels maximal so-
+weit versetzt werden, daß die Leitung bzw. das Kabel entsprechend den
+Anforderungen geman § 41.8.3.2 bei KurzschiuB noch geschiitzt ist und
+dieser Nachweis im Einzelfall (z. B. mittels graphischer oder rechnerischer
+Verfahren2") erbracht werden kann.
+
+41.8.4.3 Fälle, in denen auf den Schutz bei KurzschluB verzich-
+tet werden darf
+Schutzeinrichtungen zum Schutz bei KurzschluB dirfen entfalien
+
+(1) für Verbindungsleitungen oder -kabel, die Generatoren, Trans-
+formatoren, Gleichrichter und Akkumulatoren mit deren Schalt-
+anlagen verbinden,
+
+(2} in Stromkreisen gemäß $ 41.7.5, deren Unterbrechungen den
+Betrieb der entsprechenden Anlagen gefédhrden,
+
+in bestimmten MeBstromkreisen oder
+
+wenn beide nachstehend angegebenen Bedingungen gleich-
+
+zeitig erfullt sind:
+
+(a} die Leitung oder das Kabel ist so ausgefihrt, daB die Ge-
+fahr eines Kurzschlusses auf ein Mindestmaß beschrénkt
+ist, siehe § 41.8.4.2(b),
+
+(3
+(4
+
+E i
+
+21) Siehe Fachiiteratur, z. B. VDE-Schriftenreihe 52, Tab. B4 his B23, VDE-Schriftenreihe 32.
+
+1995-03 41-20
+
+
+===== PAGE 26/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+(b) die Leitung oder das Kabel befindet sich nicht in der Nähe
+brennbarer Materialien.
+
+41.9 Koordinieren des Schutzes bei Überlast und Kurzschluß
+
+41.9.1 Schutz durch eine gemeinsame Schutzeinrichtung
+Entspricht das Ausschaltvermögen einer gemäß § 41.7.2 ausgewählten
+Schutzeinrichtung für den Schutz bei Uberlast mindestens dem Strom bei
+vollkommenem Kurzschluß an der Einbaustelle, so stellt sie gleichzeitig
+den Schutz bei Kurzschluß der nachgeschalteten Leitungen oder Kabel
+sicher.
+
+41.9.2 Schutz durch getrennte Schutzeinrichtungen
+
+Die Anforderungen gemäß $ 41.7 und § 41.8 gelten in diesem Fall jeweils
+unabhéngig voneinander für die Schutzeinrichtung für den Schutz bei
+Uberlast und die Schutzeinrichtung für den Schutz bei KurzschluB.
+
+Die Eigenschaften der beiden Schutzeinrichtungen missen so aufeinan-
+der abgestimmt sein, daß die Schutzeinrichtung fir den Schutz bei Uber-
+last im KurzschiuBfall nicht beschadigt wird (DurchlaBenergie, Ver-
+schweiBfestigkeit, dynamische Festigkeit der Strombahnen).
+
+41.10 Uberstrombegrenzung durch die Art der Einspeisung
+
+Schutz bei Uberlast und KurzschluB der Leiter ist auch gegeben, wenn die
+Stromquelle keinen die Strombelastbarkeit der Leiter Uberschreitenden
+Strom zu liefern vermag (z. B. Klingeltransformatoren, SchweiBtransfor-
+matoren etc.}.
+
+41.11 Zuordnung der Schutzeinrichtungen zu den Leitungen bzw.
+Kabeln
+
+Fir Elektroinstallationen in Wohngebduden und in Gebauden mit ver-
+
+gleichbaren Anforderungen ist die Zuordnung der Schutzeinrichtungen zu
+
+den Leitungen bzw. Kabein gemäß Tab. 41-6 bzw. Tab. 41-7 zu treffen.
+
+Den Werten der Tabellen 41-6 und 41-7 ist eine Umgebungstemperatur
+
+von 25 °C zugrunde gelegt.
+
+1995-03 41-21
+
+
+===== PAGE 27/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+Y Ul SJ9}eYoszinyossBunyia] sep WOMSUUEN JajeLUIXew
+
+20 peibsbunse)
+-89 pun 1selgous
+
+181 Uayasebion usbelursIISNPU] Ul ZIBSUIT USP IN} g SILNUUSHSSOISNY alp gep ‘ussamebuly jnesep pim S3
+
+BunIyILIBZINYDS J3p WOGSULSAJ USPELEXBUE W gaLsqane]
+
+q Pun 9 ‘g ustuljuuexasg|sny Uap HUL _mtm_.__üwmwz_‚._owmmc:„_m.._
+WSßUMNISPICIU USIPQUOREIBA IW UapneEgED ul pun USBUNUYOAA U UgE pun uaÄunyer nz VEBUNIVOLLHSZINYOS-LUOUHSISG UOA Bunuplonz 19- L ‘gl
+
+SOM
+
+sap JUU40S
+-NBULON
+
+mniezeduws)
+-sBungabuin
+
+aneladug)
+-S(sileg
+afiisseleAanz
+
+41-22
+
+03
+
+1985
+
+
+===== PAGE 28/38 =====
+8 41
+
+'Z9 NS-3AQ 94815 (g2
+'0F NS-JAQ 24815 (22
+
+(¥ G2 'MZG ¥ OL *8 'Z) USIYEM NZ WO4SUULeN
+Slaulaplsyseu J6p 381 ‘uies JEQÖNUSA L40OluU BumusuuwezinyassBunya uaepUaMIaA J8ap 18Q (usBuniayaig 180 Y € 1900 ¥ Z| H Z) SUSMUBYISIMZ USTIIOS |,
+
+oV Ul sserreysszinyossbunyia Sap Jepo Bunioydis Jep WOHNSULUSN Jojewxew
+
+OVE-EN 1 Teil 3
+
+siapapsidny
+Sap HIUUOS
+-lanbuuan
+
+wepy
+U8J8JSBI80
+48P [yezuy
+
+melsdiug)
+-sBungauwin
+
+Inyeradwey
+-SQaineg
+obissepaanz
+
+tezf] h|_ uiuyulaxnesg|sny _ USP LU ._üu_mcomﬁäc„umwm:stml_ ‚_mml_m SSSEPSgslileg Jep cmmc_.zwr_o_w
+uaBuniapiopuy uslequaie)filen LU uspnegag Ul pun uabunuyoma W upgey pun uabunye nz uabunyoutazinyog-wioasiagn uoa Bunupionz -1y "qel
+
+-23
+
+41
+
+1995-03
+
+
+===== PAGE 29/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+41,12 Schutz gemäß der Art der Stromkreise
+
+41.12.1 Schutz der AuBBenleiter
+
+Uberstrom-Schutzeinrichtungen sind in allen AuBenlsitern vorzusehen;
+sie missen das Ausschalten jenes Leiters, in dem der Uberstrom auftritt,
+bhewirken, nicht aber unbedingt auch das Ausschalten der Ubrigen akiiven
+Leiter.
+
+Wenn das Ausschalten eines einzelnen Aulenleiters eine Gefahr verursachen kann, z. B, bei Drehstrom-
+
+motoren, müssen geeignete Vorkehrungen getroffen werden z. B. Motorschutzschalter mit Phasenaus-
+fallschutz.
+
+41.12.2 Schutz des Neutralieiters (N-Leiter)
+
+41.12.2.1 Allgemeines
+
+Wenn der Neutralleiter belastet wird, ohne daB die AuBenleiter entspre-
+chend entlastet werden, muß der Neutralieiter bei der Ermittiung des Be-
+messungsstromes des Stromkreises mitberlcksichtigt werden.
+
+Derartige Neutralleiterstrdme kénnen beispielsweise durch ausgeprigte Oberschwingungsstrome
+3 x #-ter Ordnung in Drehstromkreisen hervorgerufen werden.
+
+Wenn das Ausschalten des Neutralleiters erforderlich ist, muB die ver-
+wendete Schutzeinrichtung so beschaffen sein, daß der Neutralleiter in
+keinem Fall vor den AuBenleitern ausgeschaltet und nicht nach diesen
+eingeschaltet werden kann.
+
+41.12.2.2 TN- oder TT-Systeme
+
+Entspricht der Querschnitt des Neutralleiters mindestens dem Quer-
+schnitt der AuBenleiter, ist für den Neutralleiter weder eine Uberstrom-
+erfassung noch eine Ausschalteinrichiung erforderlich.
+
+Ist der Querschnitt des Neutrallgiters geringer als jener der Außenletter, ist
+eine seinem Querschnitt angemessene Uberstromerfassung im Neutral-
+leiter vorzusehen; diese Uberstromerfassung mufß das Ausschalten der
+AuBenleiter, jedoch nicht unbedingt die des Neutralleiters, bewirken. Auf
+diese Uberstrom-Schutzeinrichtung darf jedoch verzichtet werden, wenn
+gieichzeitig folgende Bedingungen erflitit werden:
+
+(a) Der Neutralleiter ist durch die Schutzeinrichtung der AuBenlei-
+ter des Stromkreises bei Kurzschluß geschützt,
+
+{0) der Höchststrom, der den Neutralieiter durchflieBen kann, ist
+bei normaiem Betrieb betrachtlich geringer als der Wert der
+Strombelastharkeit dieses Leiters.
+
+Diese Bedingung ist erfüllt, wenn die übertragene Leistung méaglichst gleichmäßig auf die
+AuBenleiter aufgetsilt ist.
+
+1995-03 41-24
+
+
+===== PAGE 30/38 =====
+ÖVE-EN 1 Teil 3 8 41
+
+41.12.2.3 IT-System
+
+Wenn das Mitführen des Neutralleiters erforderlich ist, muB im Neutrallei-
+ter jedes Stromkreises eine Uberstrom-Schutzeinrichtung vorgesehen
+werden, die das Ausschalten aller aktiven Leiter des betreffenden Strom-
+kreises, einschlieBlich des Neutralleiters, bewirkt.
+
+41.12.3 Schutz der Leiter mit Schutzfunktion (PE-, PEN-Leiter)
+
+41.12.3.1 PE-Leiter dürfen in ihrem gesamten Verlauf keine nur auf sie al-
+lein wirkende Uberstromschutzeinrichtungen enthalten.
+
+41.12.3.2 Bei PEN-Leitern mit Uberstromerfassung müssen Einrichtun-
+gen zur Uberwachung des Stromes, z. B. Stations-Schutzschalter, beim
+Ansprechen entweder nur die AuBenleiter oder die AuBenleiter gemein-
+sam mit dem PEN-Leiter praktisch gleichzeitig ausschalten.
+
+41.13 Zusatzbestimmungen fiir Licht- und Steckdosenstromkreise
+
+41.13.1 Bei der Bemessung von Uberstromschutzeinrichtungen für
+Licht- und Steckdosenstromkreise ist nicht nur auf den zulässigen Dauer-
+strom der Leitungen sondern auch auf den Nennstrom des Installations-
+materials zu achten. Es gilt der niederste Wert.
+
+In keinem Fall darf der Nennstrom der Uberstromschutzeinrichtung
+größer sein als der Nennstrom der eingebauten Steckvorrichtungen.
+
+Bei Leuchtstofflampen- und Leuchtstoffréhrenstromkreisen sowie bei
+Lichtstromkreisen mit Fassungen E 40, ist besonders auf den Nennstrom
+der Installationsschalter zu achten.
+
+1995-03 41-25
+
+
+===== PAGE 31/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+ANHANG
+A1l Tabellen
+Im folgenden werden Tabellenausziige aus dem CENELEGC-Report
+R0O64-001 und aus anderen Verdffentlichungen wiedergegeben, deren
+sachgeméBe Anwendung die Erfüllung der Bemessungsanforderungen
+des 8 41 sicherstellt.
+A1.1 Für die Beriicksichtigung abweichender Verlege- bzw. Betriebsbe-
+dingungen dürfen die Faktoren f, bis f, gemaB Tab. A1-1 in Verbindung
+mit § 41.4.3.2, 8 41.4.3.3, 8 41.4.3.5, § 41.5.2 und § 41.5.2.8 herangezo-
+gen werden.
+
+Tab. A1-1: Umrechnungsfaktoren bei abweichenden Bedingungen
+
+2 I A
+Kurz- Umrechnunhgsafaktor i
+zeichen fiir i
+
+Festigelegte Abweichende
+
+Bedingungen Bedingunhgen
+" . Zwei und mehr Leitun-
+f Mehr- und vieladrige | Zwei oder drei Mehr als drei belastete | 71 4413
+2 Leitungen bzw, Kabel | belastete Adern Adern ;
+
+,
+
+T
+
+Aufgewickelte Keine aufgewickelten | Aufgewickelte
+f Leitungen Leitungen Leitungen in ein Tab. A1-4
+9 g oder mehr Lagen
+
+Tab. A1-5
+
+Leitungen und nicht
+in Erde veriegte
+
+Temperaturen < 30 °C
+Temperaturen > 30 °C
+
+Abweichende
+
+Umgebungs- Kabel 30 °C,
+temperaturan in Erde verlegte Temperaturen < 20 °C
+Kabel 20 °C Temperaturen > 20 °C
+
+Abweichende spezifi-
+sche Erdbodenwirme-
+
+f
+f,
+
+widerstände bei < 1 Km/W
+
+Kabelverlegung in Erde | 1 K-m/W >1 K-m/W Tab. A1-6
+und und
+
+Belastungsgrad bei und <07
+
+Kabelverlegung in Erde | 0,7 =07
+
+Kabe in Erde fperseheron > 6M | 5414363
+
+Gigichzeitigkeit in Ausarbeitung — §41.4.3.3
+
+Fiir hohe Ubertragungsieistungen kann eine Berechnung gemäß IEC 287 durchgeflhrt werden.
+Liegen keine Abweichungen vor, giltf; =1
+
+4
+5
+f.
+
+fö
+7
+
+A1.2 Für die Berücksichtigung der Häufung von Leitungen und Kabeln
+kann der Faktor f, gemäß Tab. A1-2 in Verbindung mit § 41.4.3.2 heran-
+gezogen werden.
+
+1995-03 | 41-26
+
+
+===== PAGE 32/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+8186 8J54OBU Bunziespo,
+
+"UePUEYSQ N2 JEqeM MZg uabunysT a6UPELJAL SIM awalsAsisge) Jepo -sBunien
+USJePFIge6 Yalnpep 8Ip pun USSSEINZUSLALESNZ 9SIaMLLI0ASURI( 48P0 -1S408/A USJepIIGe6 sjemal SNEJEP Jap PUAUYOSJdSIUB asaip PUIS uisgey usbupeuls
+18p0 uaßunyıe ] ueßupeula UOA BunpuaMIaA 19q (USLUIYaUNZIOA UONEIOdEXZ BUIS 3S! JegeM MZqg usbunps T USBUPEIY8L LIOA |UeZUy USJ8g046 Jeue 189 ı
+
+—mm_—“m_—“m——mm_—m“——mm——“m_—“m_
+290 89'0 j 2i'0 | t8'0
+/ g
+2’0 | ¥8°0 | c8'0 | 980 | ze'0 | 980 L
+P
++ [ 1 1 * s
+e2'0 ] 82'0 | s2'0 | 62'0 | 980 L ;
+
+8180y Jepo
+USUUEAA Jop
+
+PUBISOY 1AL 932801 J8p JELUN
+
+Buniyniag HW 8980 Jop Jelun
+
+puelsqy
+I uspog weap jne Bibepng
+
+Bunuynieg
+IW uspoq wep me Bifeng
+
+SUnyneH aip n} Y JopeisBunuyosiwn :Z- 1y 'qel
+
+-27
+
+41
+
+03
+
+1995
+
+
+===== PAGE 33/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+allag 9J8U9BU Bunziesuo4
+
+uonenyaZ
+-HM7 suspUIYBqUN {pURISGY
+HW pusbaly uslsonagey iny
+
+Ujagey
+
+Japo usBunyen apueba) |
+JApUBUIBLIE YONP UQNENMMZ
+-yn 8U8PUyaq Buniynieg
+ML puabBal uaysonages Ny
+
+uaLLRAA Buessoyosal
+
+UL UDBU Y24np Loeinyiiz
+-H71 apdpUIysq puelSqQy
+U puabal| usuuemBgEy IN
+
+uBUUBAL 8U8SSQyDseß
+
+UBIUN YIBU Ya VORREINMAIZ
+-y suspuiyey Buniyniag
+HU puebaj} USULEMISCEM JIg
+
+Z-1v 'geL SunzjesSpOJ
+
+41-28
+
+1995-03
+
+
+===== PAGE 34/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+Em “
+
+LZ'0 “ 840
+
+'U8J49B aulBMISNISA YOuMp
+JMeladuwis)ynT SPUSYOlSMGE Ine BUNJNEH 48g0J6 180
+pun uawney uabus v ' YON-aRIOyHS USIpiNpay AUy
+
+Z-1¥ "geL Jep Bunzespod
+
+8R4 Ul j8Gey
+
+bunynisyg I pUBAA
+48p UE ispueuiaiagn BiBeug
+
+VOÖREBINMIZ
+T auapUiyagqUn (PUEISCw
+HW puaÖan ussouPgey Ny
+
+41-29
+
+1995-03
+
+
+===== PAGE 35/38 =====
+OVE-EN 1 Teil 3
+
+spi3
+
+u jage
+
+* 1opeysbunuyaain
+
+09
+GG
+0S
+Gr
+or
+SE
+ot
+GE
+ne
+GL
+oL
+
+aSSEW
+Aa
+
+9. Jmesesdwaisbungabun
+
+HOISHIBMIBIOS)
+
+HT1 Ul eqeM pun wabunyen
+
+1a FE Sr 7} ol 4 g ¥
+
+v
+
+&
+
+uabe Jop yezuy
+
+uaBiurmis ayaymmebjne INı 5t sopeIsBunuyasIn Zp- 1y "qel
+
+Wiapy Uelajselad Jap [yezuy
+
+“
+
+9Ppı9 ut BunBapiaaisgey| H
+
+¥ ul Bunbapoajadey pun -S6uUnuie7 H
+
+ueabapan
+
+ALl O{ SIQ uamuyasianbuLBLIeNET W JeqeM PUN usbunye S6UPEfIA pun -JUeUW Jny % JopesBunuyosiwn ‘g-1y "gel
+
+41-30
+
+1995-03
+
+
+===== PAGE 36/38 =====
+§ 41
+
+OVE-EN 1 Teil 3
+
+2.0
+£8°0
+
+H
+
+240 £8°0
+16'0 o'l
+
+JA
+
+68'0
+LEL
+
+2'0
+
+28 JSIUSHINS-I0A '3 Z meiowyor ] 4S sepeibstiuryselag sap uoybnzeg
+{isepeneq) o' pribsbuniseisg ©
+(8pJ3 Ul UBQGEM UoA swyeuuesBuNSEIRG BYINAn) /| PEJBSÄUNISEISA |,
+
+89'0 720 180 08'0 690 9/'0 28’0 060
+8.'0 88'0 o'y Zr ag'a 06’0 MO arı
+
+Ham[BWION |
+
+% JopiessBunuysaiwn peiBsBunsejag E
+
+: ' . : ' . ‘ AVULS U DUEISIOPIM
+Dhd
+
+assey/sade 4 HOISHIBMISIOS
+
+La j u o |6 | e f 2 [ o s | v e ] 2| b |
+
+. 0Z 189 pun 3P43 ul BunBapsp 19q spribsBuniselag pun SpUBISIIDIMOLLLIEM
+-USPOQPJI ayosiizads spusyciemae ın % opegsBunuyosiwn 19- 1y "qeL
+
+31
+
+41
+
+1995-03
+
+
+===== PAGE 37/38 =====
+ÖVE-EN 1 Teil 3 § 41
+
+A2 Zuléissiger Dauerstrom 1, bei parallel geschalteten Leitungen
+oder Kabeln unterschiedlichen Querschnittes
+
+=LA )X (A +AA L+ AdAL
+
+1A  zuldssiger Dauerstrom des Leiters mit groBtem Quer-
+schnitt
+
+Ao gréBter Querschnitt der parallelgeschalteten Leiter
+
+A, bis A, Querschnitte der Ubtigen parallelgeschalteten Leiter
+A3  Mehrmotorenantrieb
+
+A3.1 Für die Bemessung der Leiterquerschnitte gemäß $ 41.5.2.4 kann
+das folgende Verfahren angewandt werden:
+
+Liegt ein regelmasiger Verlauf von Betriebsstrom-/Einschaltdauer-Inter-
+vallen (/,, t,), (/,, t,) im Belastungsdiagramm vor, ist der quadratische Mit-
+telwert des Stromes /,, gemäß der Formel zu berechnen:
+
+5 5
+!M__:\/f%-t1+!2-t2+...+{N-tN
+
+t1+t2+...+tN
+
+Ir quadratischer Mittelwert des Stromes
+
+1,1, 1, Betriebsstrome in den Zeitintervallen
+
+t,, t, t, Einschaltdauer der Betriebsstrome
+Bei Belastungsfalien mit unregelmaiigem Verlauf ist der Belastungsver-
+lauf in Zeitabschnitte von jeweils 1 s zu zerlegen. Die Strommittelwerte in
+den 1 s-Intervallen sind ais /, mit t,, = 1 s in die Formel einzusetzen und
+daraus f,, zu berechnen. Beziiglich der Bemessung der Leitungen darf
+dieser Mittelwert /,, dem Wert /. in Tab. 41-2 gleichgesetzt werden, so-
+lange die Einschaltdauer des Spitzenstromes unter den Werten gemäß
+Tab. A3-1 liegt.
+
+Tab. A3-1: Zulässige Finschaltdauer bezogen auf den quadratischen Mittelwert
+
+Nennquerschmtt Zulasmge Elnschaltdauer
+I mm®
+
+T e e N
+] woesm T s
+S vemmsse [ e ]
+el vevomew AA ]
+Sl ventmunamew [ e |
+
+ist die Einschaitdauer länger, ist gemäß § 41.5 2.3 zu verfahren. Bei Ka-
+beln ist sinngem&B zu verfahren. Nahere Hinweise siehe Fachliteratur®?.
+
+—_
+
+M
+
+[
+
+*
+
+nm
+
+24) Siehe z. B. VDE-Schriftenreihe 32.
+
+1995-03 41-32
+
+
+===== PAGE 38/38 =====
+Dieses Werk ist urheberrechtlich geschützt. Die dadurch begründeten Rechte, insbesondere die
+
+der Übersetzung, des Nachdrucks, der Entnahme von Abbildungen, der Funksendung, der Wie-
+
+dergabe auf fotomechanischem oder ähnlichem Wege und der Speicherung in Datenverarbaei-
+tungsanlagen, bleiben, auch bei nur auszugsweiser Verwertung, vorbehalten.
+
+Im Eigenverlag des Osterreichischen Verbandes für Elektrotechnik
+Eschenbachgasse 9, A-1010 Wien, Telefon: 0 222/587 63 73
+
+Printed in Austria
+Druck: Manz, A-1050 Wien

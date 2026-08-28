@@ -1,0 +1,3773 @@
+
+
+===== PAGE 1/64 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8007 
+ 
+Ausgabe: 2007-12-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Starkstromanlagen in Krankenhäusern und 
+medizinisch genutzten Räumen außerhalb von 
+Krankenhäusern 
+ 
+Electrical installations in hospitals and locations for medical use outside hospitals 
+ 
+Installations électriques dans les hôpitaux et les lieux destines à l'usage médical 
+hors des hôpitaux 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2007. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@on-norm.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 2/64 =====
+ÖVE/ÖNORM E 8007:2007 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................4 
+1 
+Anwendungsbereich .............................................................................................................................6 
+2 
+Normative Verweisungen......................................................................................................................6 
+3 
+Begriffe ...................................................................................................................................................9 
+4 
+Allgemeine Anforderungen................................................................................................................ 15 
+4.1 
+Elektrische Betriebsräume ................................................................................................................ 15 
+4.2 
+Verteiler................................................................................................................................................ 15 
+4.3 
+Stromversorgung von Krankenhäusern, Ambulatorien und anderen baulichen Anlagen  
+mit vergleichbarer Zweckbestimmung............................................................................................. 17 
+4.3.1 
+Allgemeine Stromversorgung und Sicherheitsstromversorgung (inklusive  
+zusätzlicher Stromversorgung)......................................................................................................... 17 
+4.3.2 
+Sicherheitsstromversorgung............................................................................................................. 17 
+4.3.3 
+Stromversorgung von Räumen der Anwendungsgruppe 2 ........................................................... 17 
+4.4 
+Verbraucheranlage ............................................................................................................................. 19 
+4.4.1 
+Steckdosenstromkreise im IT-System von Räumen der Anwendungsgruppe 2......................... 19 
+4.4.2 
+BeIeuchtungsstromkreise.................................................................................................................. 20 
+4.4.3 
+Motorstromkreise ............................................................................................................................... 20 
+4.4.4 
+Zuleitung zu Löschwasserversorgungsanlagen............................................................................. 20 
+4.4.5 
+Steckdosenstromkreise ..................................................................................................................... 20 
+5 
+Schutz gegen elektrischen Schlag ................................................................................................... 20 
+5.1 
+Basisschutz......................................................................................................................................... 20 
+5.2 
+Fehlerschutz und Zusatzschutz außerhalb medizinisch genutzter Räume  
+und in Räumen der Anwendungsgruppe 0...................................................................................... 21 
+5.3 
+Fehlerschutz und Zusatzschutz bei Räumen der Anwendungsgruppe 1 und 
+Anwendungsgruppe 2........................................................................................................................ 21 
+5.3.1 
+Schutzisolierung................................................................................................................................. 21 
+5.3.2 
+Schutzkleinspannung......................................................................................................................... 21 
+5.3.3 
+Funktionskleinspannung ................................................................................................................... 21 
+5.3.4 
+Schutz durch Abschaltung ................................................................................................................ 21 
+5.3.5 
+Isolationsüberwachungssystem....................................................................................................... 22 
+5.3.6 
+Schutztrennung .................................................................................................................................. 23 
+5.4 
+Zusätzlicher Potenzialausgleich in Räumen der Anwendungsgruppe 1 und 
+Anwendungsgruppe 2........................................................................................................................ 23 
+5.5 
+Schutzleiter und Potenzialausgleichsleiter...................................................................................... 24 
+6 
+Sicherheitsstromversorgung (SV) und zusätzliche Sicherheitsstromversorgung (ZSV) ........... 25 
+6.1 
+Allgemeines......................................................................................................................................... 25 
+6.2 
+Sicherheitsstromversorgung mit Umschaltzeiten von 0 s bis 15 s............................................... 25 
+6.2.1 
+Sicherheitsbeleuchtung und Ersatzbeleuchtung............................................................................ 25 
+6.2.2 
+Notwendige Sicherheitseinrichtungen mit Umschaltzeiten bis 15 s ............................................ 26 
+6.2.3 
+Medizinisch-technische Einrichtungen mit einer Umschaltzeit bis 15 s ...................................... 26 
+6.3 
+Sicherheitsstromversorgung für Verbraucher ohne festgelegter Umschaltzeit.......................... 26 
+6.4 
+Zusätzliche Sicherheitsstromversorgung (ZSV) ............................................................................. 27 
+6.4.1 
+Zusätzliche Sicherheitsstromversorgung mit einer Umschaltzeit bis 15 s.................................. 27 
+6.4.2 
+Zusätzliche Sicherheitsstromversorgung mit einer Umschaltzeit bis 0,5 s................................. 27 
+6.5 
+Allgemeine Anforderungen an Sicherheitsstromquellen (sofern zutreffend).............................. 29 
+6.6 
+Zusätzliche Anforderungen an Stromerzeugungsaggregaten mit  
+Hubkolben-Verbrennungsmotoren als Sicherheitsstromquelle.................................................... 30 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 3/64 =====
+ÖVE/ÖNORM E 8007:2007 
+3 
+6.7 
+Zusätzliche Anforderungen an batteriegestützten Anlagen mit oder ohne Umrichter  
+als Sicherheitsstromquelle.................................................................................................................31 
+6.8 
+Zusätzliche Anforderungen an die Stromversorgung von OP-Leuchten......................................32 
+6.9 
+Besondere Anforderungen an die Leitungsnetze der Sicherheitsstromversorgung 
+und der zusätzlichen Sicherheitsstromversorgung ........................................................................32 
+6.10 
+Steuerstromkreise...............................................................................................................................33 
+7 
+Maßnahmen für Explosions- und Brandschutz, Schutz vor elektrostatischer Aufladung..........35 
+7.1 
+Explosionsschutz in medizinisch genutzten Räumen ....................................................................35 
+7.2 
+Brandschutz.........................................................................................................................................35 
+7.3 
+Vermeidung von elektrostatischer Aufladung .................................................................................37 
+8 
+Beeinflussung von elektro-medizinischen Einrichtungen durch Starkstromanlagen.................38 
+9 
+Medizinische Einrichtungen außerhalb von Krankenhäusern .......................................................39 
+9.1 
+Praxisräume der Human- und Dentalmedizin...................................................................................39 
+9.1.1 
+Zuordnung der Räume zu den Anwendungsgruppen.....................................................................39 
+9.1.2 
+Schutzmaßnahmen bei indirektem Berühren...................................................................................39 
+9.1.3 
+ZusätzIicher PotenziaIausgIeich........................................................................................................39 
+9.1.4 
+Sicherheitsstromversorgung .............................................................................................................39 
+9.2 
+Versorgung von medizinischen elektrischen Geräten, die eine besonders hohe  
+elektrische bzw. Betriebssicherheit erfordern (zB Heimdialyse, Beatmung) ...............................39 
+9.2.1 
+Maßnahmen in der elektrischen Anlage ...........................................................................................39 
+9.2.2 
+AnschIusseinrichtung zwischen Steckdose der Hausinstallation und Dialysegerät ..................40 
+9.3 
+Pflegeheime und Kuranstalten...........................................................................................................40 
+9.3.1 
+Sicherheitsstromversorgung für Pflegeheime und Kuranstalten ..................................................40 
+10 
+Pläne, Unterlagen und Betriebsanleitungen.....................................................................................41 
+10.1 
+Unterlagen............................................................................................................................................41 
+10.2 
+Verteiler ................................................................................................................................................42 
+10.3 
+Übersichtsschaltpläne........................................................................................................................42 
+10.4 
+Anlagenbuch........................................................................................................................................42 
+11 
+Prüfungen.............................................................................................................................................42 
+11.1 
+Erstprüfungen......................................................................................................................................42 
+11.2 
+Wiederkehrende Prüfungen ...............................................................................................................43 
+11.3 
+Erhalten des ordnungsgemäßen Zustandes ....................................................................................46 
+Anhang A (informativ): Brandschutz und Explosionsschutz......................................................................47 
+A.1 
+Brand- und Explosionsschutz in medizinisch genutzten Räumen................................................47 
+A.1.1 
+Allgemeine Hinweise...........................................................................................................................47 
+A.1.2 
+Adaptierter Auszug aus den Richtlinien für die Vermeidung von Zündgefahren infolge 
+elektrostatischer Aufladungen – Richtlinien „Statische Elektrizität“ – BGR 132.........................48 
+Anhang B (informativ): Ausführungsbeispiele .............................................................................................51 
+Anhang C (normativ): Patientenumgebung...................................................................................................57 
+Anhang D (informativ): Empfehlungen für Maßnahmen gegen die Beeinflussung von  
+elektromedizinischen Messeinrichtungen durch Starkstromanlagen...........................................58 
+D.1 
+Beeinflussungen und Anwendung der Maßnahmen .......................................................................58 
+D.2 
+Maßnahmen gegen Störungen durch elektrische Felder................................................................58 
+D.3 
+Maßnahmen gegen Störungen durch netzfrequente magnetische Felder....................................59 
+Literaturhinweise..............................................................................................................................................60 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 4/64 =====
+ÖVE/ÖNORM E 8007:2007 
+4 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem OVE und dem Österreichischem Normungsinstitut werden künftig 
+alle elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben 
+daher sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK 
+gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk 
+Diese vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8007:2005, die technisch überarbeitet wurde. 
+Die wesentlichen Änderungen sind nachfolgend angeführt, wobei diese Zusammenstellung keinen Anspruch 
+auf Vollständigkeit erhebt. 
+– 
+Anpassungen der Klassen des Brandverhaltens gemäß ÖNORM EN 13501-1, 
+– 
+Abschnitt 4.1.3 – Ergänzungen bei der Unterbringung des Gebäudehauptverteilers, 
+– 
+Umgruppierungen im Abschnitt 4.2: 
+– Abschnitt 4.2.5 „Neu“ – Anforderungen für Verteiler der notwendigen Sicherheitseinrichtungen, 
+– Abschnitt 4.2.6 „Neu“ – Aufbau von Verteilern nach dem Gebäudehauptverteiler, 
+– 
+Abschnitt 4.4.2 – Beleuchtungsstromkreis: Aufteilung der Leuchten auf mindestens 2 Stromkreise, 
+– 
+Abschnitt 5.3.5.4 – Isolationsüberwachungssystem: Schutz durch Meldung, 
+– 
+Abschnitt 7.2.3.1: Möglichkeit zum Verzicht auf den Funktionserhalt der elektrischen Leitungsanlage 
+innerhalb von Brandabschnitten, 
+– 
+Abschnitt 8: Aufteilung in Anforderung und Empfehlung (siehe Anhang D) 
+– 
+Abschnitt 10.4: Anforderung zur Erstellung eines Anlagenbuches 
+– 
+Abschnitt 11.2: Änderung der Prüffrist für elektrische Anlagen für medizinisch genutzte Bereiche, 
+– 
+Anhang B: Änderungen in den Bildern (kurzschluss- und erdschlusssichere Verlegung, Strom-
+versorgungen von Räumen der Anwendungsgruppe 2), 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 5/64 =====
+ÖVE/ÖNORM E 8007:2007 
+5 
+– 
+Entfall von Anhang C – Prüfspule, 
+– 
+Anhang D: Neunummierung auf Anhang C und Anpassung an ÖVE/ÖNORM EN 60601-1, 
+– 
+Anhang D: Empfehlungen für Maßnahmen gegen die Beeinflussung von elektromedizinischen Mess-
+einrichtungen durch Starkstromanlagen 
+Die 
+Bestimmungen 
+ÖVE-EN 7:1991, 
+ÖVE-EN 7a:1994-06, 
+ÖVE/ÖNORM E 8007/A1:2001-02-01, 
+ÖVE/ÖNORM E 8007/A2:2002-11-01 und ÖVE/ÖNORM E 8007/AC1:2004-04-01 sind mit der ETV 2002/A1 
+verbindlich erklärt worden. Somit kann die Zurückziehung dieser Bestimmungen erst mit Erscheinen einer 
+neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 6/64 =====
+ÖVE/ÖNORM E 8007:2007 
+6 
+1 
+Anwendungsbereich 
+Bei Anwendung dieser ÖVE/ÖNORM ist zu beachten, dass darin bautechnische Anforderungen enthalten 
+sind, weil diese aus sicherheitstechnischen Gründen von den elektrotechnischen Anforderungen nicht zu 
+trennen sind. 
+Die enthaltenen bautechnischen Anforderungen sind aus der Sicht elektrotechnischer Belange als anerkannte 
+Regeln der Technik zu betrachten. Jedoch kann es in einzelnen Bundesländern durch Inanspruchnahme 
+baurechtlicher Landeskompetenz Abweichungen geben, die jedoch keine unmittelbaren elektrotechnischen 
+Festlegungen enthalten dürfen. Diese Abweichungen können die Landesbehörden in eigener Verantwortung 
+festlegen. 
+Da solche Abweichungen Auswirkungen auf die Anwendung elektrotechnischer Bestimmungen haben, sind 
+sie gemäß § 3, Abs. 3, Elektrotechnikgesetz 1992 entsprechend zu veröffentlichen. 
+Diese Bestimmungen gelten für das Errichten und Prüfen von Starkstromanlagen in: 
+– 
+Krankenhäusern und Ambulatorien der Human- und Dentalmedizin sowie anderen baulichen Anlagen mit 
+vergleichbarer Zweckbestimmung,  
+– 
+medizinisch genutzten Räumen der Human- und Dentalmedizin außerhalb von Krankenhäusern 
+gemäß 9.1, 
+– 
+Bereichen zur Versorgung von Geräten für Heimdialysen, Heim-Beatmungsgeräten uÄ gemäß 9.2, 
+– 
+Pflegeheime und Kuranstalten gemäß 9.3. 
+Die in diesen Bestimmungen genannten Anforderungen berücksichtigen je nach Art oder Nutzung der 
+baulichen Anlagen die mögliche Gefährdung von Personen, insbesondere Patienten, durch gefährliche 
+Körperströme, bei Brand oder Ausfall der allgemeinen Stromversorgung. 
+Die Anforderungen dieser Bestimmungen sind deshalb zusätzlich zu den Anforderungen gemäß 
+ÖVE/ÖNORM E 8001 Reihe, bzw. ÖVE EN 1 Reihe und ÖVE/ÖNORM EN 50272-2 zu erfüllen. 
+Diese Bestimmungen gelten nicht für: 
+– 
+Krankenhäuser, die nur für Katastrophenfälle in Bereitschaft gehalten und nicht regelmäßig benützt 
+werden, so genannte Hilfskrankenhäuser und Notlazarette, 
+– 
+elektromedizinische Geräte und Gerätekombinationen sowie für elektromedizinische Einrichtungen 
+gemäß Medizinproduktegesetz, 
+– 
+Seniorenheime („Betreutes Wohnen“). 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖNORM B 3850, Feuerschutzabschlüsse – Drehflügeltüren und -tore sowie Pendeltüren – Ein- und zwei-
+flügelige Ausführung 
+ÖNORM B 5220, Anforderungen 
+an 
+Bodenbeläge 
+hinsichtlich 
+elektrischer 
+und 
+elektrostatischer 
+Eigenschaften 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 7/64 =====
+ÖVE/ÖNORM E 8007:2007 
+7 
+ÖNORM DIN 4102-12, Brandverhalten 
+von 
+Baustoffen 
+und 
+Bauteilen – Teil 12: Funktionserhalt von 
+elektrischen Kabelanlagen – Anforderungen und Prüfungen 
+ÖNORM E 6610, Dreipolige Steckdosen mit N- und mit Schutzkontakt – Hauptmaße – 16 A, Wechselstrom 
+220/380 V – 16 A, Wechselstrom 230/400 V 
+ÖNORM EN 1838, Angewandte Lichttechnik – Notbeleuchtung 
+ÖNORM EN 13501-1, Klassifizierung von Bauprodukten und Bauarten zu ihrem Brandverhalten –  
+Teil 1: Klassifizierung mit den Ergebnissen aus den Prüfungen zum Brandverhalten von Bauprodukten 
+ÖNORM EN 13501-2, Klassifizierung von Bauprodukten und Bauarten zu ihrem Brandverhalten –  
+Teil 2: Klassifizierung mit den Ergebnissen aus den Feuerwiderstandsprüfungen, mit Ausnahme von 
+Lüftungsanlagen 
+ÖVE/ÖNORM E 8001-1, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8001-6-61, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 6-61: Prüfungen – Erstprüfungen 
+ÖVE/ÖNORM E 8001-6-63, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 6-63: Prüfungen – Anlagenbuch und Prüfbefund 
+ÖVE/ÖNORM E 8002-1, Starkstromanlagen und Sicherheitsstromversorgung in baulichen Anlagen für 
+Menschenansammlungen – Teil 1: Allgemeines 
+ÖVE/ÖNORM E 8002-5, Starkstromanlagen und Sicherheitsstromversorgung in baulichen Anlagen für 
+Menschenansammlungen – Teil 5: Gaststätten 
+ÖVE/ÖNORM E 8241-1, Starkstromfreileitungen mit thermoplastischer Isolierhülle für Nennspannungen bis 
+450/750 V – Teil 1: Allgemeine Anforderungen  
+ÖVE/ÖNORM E 8241-5, Polyvinylchlorid-isolierte 
+Leitungen 
+mit 
+Nennspannungen 
+bis 
+450/750 V 
+–  
+Teil 5: Flexible Leitungen 
+ÖVE/ÖNORM E 8751-1, Wiederkehrende Prüfungen nach Instandsetzung von medizinischen elektrischen 
+Geräten – Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet), Betrieb von elektrischen Anlagen –  
+Teil 1: Europäische Norm – Teil 2-100 Nationale Ergänzungen 
+ÖVE/ÖNORM EN 50272-2, Sicherheitsanforderungen an Batterien und Batterieanlagen –  
+Teil 2: Stationäre Batterien 
+ÖVE/ÖNORM EN 60146-2, Halbleiter-Stromrichter – Teil 2: Selbstgeführte Halbleiter-Stromrichter 
+einschließlich Gleichstrom-Direktumrichter 
+ÖVE/ÖNORM EN 60598-2-22, Leuchten – Leuchten für Notbeleuchtung 
+ÖVE/ÖNORM EN 60896-11, Ortsfeste Blei-Akkumulatoren – Teil 11: Geschlossene Batterien – Allgemeine 
+Anforderungen und Prüfverfahren 
+ÖVE/ÖNORM EN 60898-1, Elektrisches Installationsmaterial – Leitungsschutzschalter für Hausinstallationen 
+und ähnliche Zwecke – Teil 1: Leitungsschutzschalter für Wechselstrom (AC) 
+ÖVE/ÖNORM EN 60947-2, Niederspannungsschaltgeräte – Teil 2: Leistungsschalter 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 8/64 =====
+ÖVE/ÖNORM E 8007:2007 
+8 
+ÖVE/ÖNORM EN 60947-4-1, Niederspannungsschaltgeräte – Teil 4-1: Schütze und Motorstarter – Elektro-
+mechanische Schütze und Motorstarter 
+ÖVE/ÖNORM EN 61558-2-9, Sicherheit 
+von 
+Transformatoren, 
+Netzgeräten 
+und 
+dergleichen 
+–  
+Teil 2-9: Besondere Anforderungen an Transformatoren für Handleuchten der Schutzklasse III für 
+Wolframdrahtlampen 
+ÖVE/ÖNORM EN 61558-2-15, 
+Sicherheit 
+von 
+Transformatoren, 
+Netzgeräten 
+und 
+dergleichen 
+–  
+Teil 2-15: Besondere Anforderungen an Trenntransformatoren zur Versorgung medizinischer Räume 
+ÖVE/ÖNORM EN 62040 Reihe, Unterbrechungsfreie Stromversorgungssysteme (USV) 
+ÖVE/ÖNORM EN 88528-11, Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren –  
+Teil 11: Dynamische, unterbrechungsfreie Stromversorgung – Leistungsanforderungen und Prüfverfahren 
+ÖVE-EN 1 Teil 3, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und DC 1 500 V – 
+Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und Kabeln  
+ÖVE-EN 1 Teil 3 § 42, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und Kabeln – § 42 Verlegung 
+von Leitungen und Kabeln 
+ÖVE-EN 1 Teil 4 § 57, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 4: Besondere Anlagen – § 57 Elektrische Anlagen für Sicherheitszwecke 
+ÖVE-EN 1 Teil 4 § 95, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 4: Besondere Anlagen – § 95 Aufzüge 
+ÖVE/ÖNORM EN 60601-1, Medizinische elektrische Geräte – Teil 1: Allgemeine Festlegungen für die 
+Sicherheit einschließlich der wesentlichen Leistungsmerkmale 
+ÖVE EN 61557-8, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC 1,5 kV – Geräte 
+zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 8: Isolationsüberwachungsgeräte für  
+IT-Netze 
+DIN 6280-13, Stromerzeugungsaggregate – Stromerzeugungsaggregate mit Hubkolben-Verbrennungs-
+motoren – Teil 13: Für Sicherheitsstromversorgung in Krankenhäusern und in baulichen Anlagen für 
+Menschenansammlungen 
+DIN 41773-1, Stromrichter – Halbleiter-Gleichrichtergeräte mit IU-Kennlinie für das Laden von Bleibatterien, 
+Richtlinien 
+DIN 41773-2, Stromrichter 
+– 
+Halbleiter-Gleichrichtergeräte 
+mit 
+IU-Kennlinie 
+für 
+das 
+Laden 
+von 
+Nickel/Cadmium-Batterien – Anforderungen 
+DIN 42801, Anschlussbolzen für Potenzialausgleichsleitungen 
+DIN ISO 8528 Reihe, Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren 
+BGBl. Nr. 106/1993, Elektrotechnikgesetz 1992 – ETG 1992 
+BGBl. Nr. 252/1996, Explosionsschutzverordnung 1996 – ExSV 1996 
+BGBl. II Nr. 322/1998, Nullungsverordnung 1998 
+BGBl. II Nr. 424/2003, Elektroschutzverordnung 2003 – ESV 2003 
+BGBl. Nr. 657/1996, Medizinproduktegesetz 1996 – MPG 1996 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 9/64 =====
+ÖVE/ÖNORM E 8007:2007 
+9 
+TRVB B 108 1), Baulicher Brandschutz – Brandabschnittsbildungen (Technische Richtlinien Vorbeugender 
+Brandschutz – Bauwesen) 
+TRVB S 127 1), Sprinkleranlagen (Technische Richtlinien Vorbeugender Brandschutz – Selbsttätige 
+Brandmelde- und Löschanlagen) 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die folgenden Begriffe: 
+3.1 
+Bauliche Anlagen 
+3.1.1 
+Krankenhäuser 
+bauliche Anlagen mit Einrichtungen, in denen durch ärztliche und pflegerische Hilfeleistung Krankheiten, 
+Leiden oder Körperschäden festgestellt, geheilt oder gelindert werden, Geburtshilfe geleistet wird und in 
+denen die zu versorgenden Personen untergebracht und verpflegt werden 
+3.1.2 
+Ambulatorien 
+bauliche Anlagen oder Teile baulicher Anlagen, in denen Personen untersucht und behandelt, nicht jedoch 
+untergebracht, verpflegt und gepflegt werden 
+3.1.3 
+Pflegeheime und Kuranstalten 
+bauliche Anlagen in denen mit diplomiertem Pflegepersonal Personen gepflegt, Krankheiten und Leiden unter 
+Einsatz von medizinischen elektrischen Geräten (zB Pflegebetten, Ultraschallvernebler, Antidecubitus-
+Matratzen, EKG, Ernährungspumpen, Druckinfusionsgeräte u. dgl.) behandelt werden 
+3.1.4 
+Rettungswege (Fluchtwege) 
+im Notfall für Rettungszwecke vorgesehener Weg 
+ANMERKUNG Rettungswege (Fluchtwege) sind Verkehrsflächen auf Grundstücken und Bereiche in baulichen Anlagen, 
+die dem sicheren Verlassen, der Rettung von Personen und der Durchführung von Löscharbeiten dienen, wie 
+Treppenräume notwendiger Treppen und deren Verbindungswege ins Freie, allgemein zugängliche Flure, Rampen, 
+Ausgänge, Sicherheitsschleusen, Laubengänge, Rettungsbalkone, Rettungstunnel sowie Wege außerhalb der baulichen 
+Anlagen, die bis zu sicheren, in der Regel öffentlichen Verkehrsflächen führen. Zu den Verkehrsflächen auf Grundstücken 
+gehören 
+auch 
+die 
+Verkehrswege 
+zu 
+Wohnungen 
+und 
+Unterkünften 
+von 
+Ärzten 
+und 
+Pflegepersonal 
+im 
+Krankenhausbereich. 
+3.2 
+Anwendungsgruppen medizinisch genutzter Räume 
+Medizinisch genutzte Räume sind Räume der Human- und Dentalmedizin, die bestimmungsgemäß bei der 
+Untersuchung, Behandlung oder Pflege von Menschen benutzt werden 
+Hierzu zählen auch die hydrotherapeutischen und physikalisch-therapeutischen Behandlungsräume sowie die 
+Massageräume. In medizinischen Bereichen gehören hierzu nicht zB Flure, Treppenhäuser, Stations-
+dienstzimmer, Etagenbäder, Toiletten, NasszeIIen in Bettenräumen, Tee-Küchen, Aufenthaltsräume, Lager, 
+Abstellräume, Umkleideräume. 
+Medizinisch genutzte Räume werden hinsichtlich der zum Schutz gegen Gefahren im Fehlerfall notwendigen 
+Maßnahmen in die Anwendungsgruppen gemäß 3.2.1 bis 3.2.3 eingeteilt. 
+Die Zuordnung der Raumarten zu den Anwendungsgruppen ist in Tabelle 1 angeführt. 
+                                                          
+1) Herausgegeben vom Österreichischen Bundesfeuerwehrverband, Siebenbrunnengasse 21/ 3, 1050 Wien 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 10/64 =====
+ÖVE/ÖNORM E 8007:2007 
+10 
+3.2.1 
+Räume der Anwendungsgruppe 0 
+medizinisch genutzte Räume, in denen bei bestimmungsgemäßem Gebrauch sichergestellt ist, dass 
+– 
+elektromedizinische Geräte nicht verwendet werden, oder 
+– 
+elektromedizinische Geräte verwendet werden, die zur Anwendung auch außerhalb von medizinisch 
+genutzten Räumen gemäß Angaben in den Begleitpapieren zugelassen sind, oder  
+– 
+elektromedizinische Geräte betrieben werden, die ausschließlich aus in die Geräte eingebauten 
+Stromquellen versorgt werden. 
+3.2.2 
+Räume der Anwendungsgruppe 1 
+medizinisch genutzte Räume, in denen netzabhängige elektromedizinische Geräte verwendet werden, mit 
+denen oder mit deren Anwendungsteilen Patienten bei der Untersuchung, Behandlung oder Pflege 
+bestimmungsgemäß in Berührung kommen 
+Bei Auftreten eines ersten Körperschlusses oder bei Ausfall der allgemeinen Stromversorgung kann deren 
+Abschaltung hingenommen werden, ohne dass hierdurch Patienten gefährdet werden. Untersuchungen und 
+Behandlungen von Patienten können abgebrochen und wiederholt werden. 
+3.2.3 
+Räume der Anwendungsgruppe 2 
+medizinisch genutzte Räume, in denen netzabhängige elektromedizinische Geräte betrieben werden, die 
+operativen und/oder anderen Maßnahmen, die lebensnotwendig sind, dienen 
+ANMERKUNG Unter operativen Maßnahmen sind insbesondere chirurgische Maßnahmen zu verstehen. 
+Bei Auftreten eines ersten Körperschlusses oder bei Ausfall der allgemeinen Stromversorgung müssen diese 
+Geräte weiterbetrieben werden können, weil Untersuchungen oder Behandlungen nicht ohne Gefahr für den 
+Patienten abgebrochen und wiederholt werden können. 
+3.3 
+Raumarten und Ex-Zonen 
+3.3.1 
+Aufwachräume 
+Räume, in denen die Anästhesie des Patienten unter Beobachtung abklingt 
+3.3.2 
+Bettenräume 
+Räume, in denen Patienten während der Dauer ihres Aufenthaltes in Krankenhäusern, Sanatorien, Kliniken, 
+Pflegeheime u. dgl. stationär untergebracht sind und gegebenenfalls mit elektromedizinischen Geräten 
+untersucht und behandelt werden 
+3.3.3 
+Chirurgische Ambulanzen  
+Räume, in denen unter anderem auch kleine operative Eingriffe ambulant durchgeführt werden 
+3.3.4 
+Dialyseräume 
+Räume, in denen Patienten bestimmungsgemäß der Blutwäsche unterzogen werden 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 11/64 =====
+ÖVE/ÖNORM E 8007:2007 
+11 
+3.3.5 
+Endoskopieräume 
+Räume, in denen zur Beobachtung von Organen im Körperinneren Endoskope durch natürliche oder 
+künstliche Körperöffnungen des Patienten eingeführt und gegebenenfalls kleine Eingriffe durchgeführt werden 
+ANMERKUNG Zur Endoskopie gehören zB Bronchoskopie, Laryngoskopie, Zystoskopie, Gastroskopie, Laparoskopie, 
+Rektoskopie 
+3.3.6 
+Herzkatheterräume  
+Räume, in denen Katheter in das Herz eingebracht werden 
+3.3.7 
+Intensiv-Überwachungsräume (-Behandlungsräume) 
+Räume, in denen stationär behandelte Patienten über längere Zeit an elektromedizinische Geräte zur 
+Überwachung, gegebenenfalls auch zum Anreiz der Körperaktionen, angeschlossen werden 
+3.3.8 
+Intensiv-Untersuchungsräume 
+Räume, in denen Personen an eine oder mehrere elektromedizinische Mess- oder Überwachungs-
+einrichtungen angeschlossen werden 
+3.3.9 
+Operations-Gipsräume 
+Räume, in denen Gipsverbände unter Aufrechterhaltung der Anästhesie angelegt werden 
+3.3.10 
+Operationsräume 
+Räume, in denen chirurgische Eingriffe vorgenommen werden 
+Dabei werden Analgesien (Aufhebung der Schmerzempfindlichkeit) oder Anästhesien (Teil- oder 
+Vollnarkosen) 
+vorgenommen, 
+bzw. 
+Überwachungs- 
+und 
+Wiederbelebungsgeräte, 
+Hochfrequenz-
+Chirurgiegeräte, Röntgenapparate oder andere medizinische Einrichtungen eingesetzt. 
+3.3.11 
+Operations-Vorbereitungsräume 
+Räume, in denen Patienten für Operationen vorbereitet werden, zB durch Einleitung der Anästhesie 
+3.3.12 
+Praxisräume der Human- und Dentalmedizin 
+alle Räume in Arztpraxen zur Untersuchung und Behandlung von Menschen 
+3.3.13 
+Räume für Hydrotherapie 
+Räume, in denen Patienten medizinisch mit Wasser behandelt werden 
+3.3.14 
+Räume für physikalische Therapie 
+Räume, in denen Patienten mit Hilfe von Geräten mit elektrischer, mechanischer oder thermischer Energie 
+behandelt werden 
+3.3.15 
+Räume für radiologische Diagnostik und Therapie 
+Räume, in denen ionisierende Strahlen zur Darstellung des Körperinneren und zur Erzielung therapeutischer 
+Effekte an der Oberfläche und im Inneren des Körpers angewandt werden 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 12/64 =====
+ÖVE/ÖNORM E 8007:2007 
+12 
+3.3.16 
+Explosionsgefährdete Zonen von medizinisch genutzten Räumen 
+Bereiche, in denen mit dem Vorhandensein von Stoffen in gefahrbringender Menge gerechnet werden muss, 
+die in Gemischen mit zB Luft, Sauerstoff oder Lachgas explosionsfähig sind  
+Man unterscheidet im Allgemeinen die Zonen G und M: 
+– 
+Zone G, auch als „umschlossenes medizinisches Gassystem“ bezeichnet, umfasst nicht unbedingt 
+allseitig umschlossene Hohlräume, in denen dauernd oder zeitweise explosionsfähige Gemische in 
+geringen Mengen erzeugt, geführt oder angewendet werden 
+– 
+Zone M, auch als „medizinische Umgebung" bezeichnet, umfasst den Teil eines Raumes, in dem 
+explosionsfähige Atmosphären durch Anwendung von Analgesiemitteln oder medizinischen Haut-
+reinigungs- oder Desinfektionsmitteln, jedoch nur in geringen Mengen und nur für kurze Zeit, vorkommen 
+können 
+ANMERKUNG Die punktuelle Hautdesinfektion bei Verabreichung einer Injektion ist zum Beispiel nicht als 
+gefahrbringende Menge anzusehen und fällt nicht in die Zone M. 
+3.3.17 
+Raumgruppe 
+Raum mit seinen funktionsmäßig zugehörigen Nebenräumen bzw. Räume einer Intensivüberwachungs- oder 
+Intensivuntersuchungsstation, welche von einem zentralen Stützpunkt aus überwacht werden 
+3.3.18 
+IMCU – Intermediate care unit 
+Bereich oder Raum für überwachungspflichtige Patienten, die lebenswichtige (zB Monitoring), jedoch keine 
+lebenserhaltenden (zB kontrollierte Beatmung) medizinische elektrische Geräte benötigen, die netzversorgt 
+sind 
+3.3.19 
+Patientenumgebung 
+das Volumen gemäß Anhang C, Bild C.1, in welchem beabsichtigt oder unbeabsichtigt eine Verbindung 
+zwischen Patienten und Teilen eines medizinischen elektrischen Gerätes oder Systems oder anderen 
+Personen, die Teile des medizinischen elektrischen Gerätes oder Systems berühren, zustande kommen kann 
+ANMERKUNG Dies ist zutreffend, wenn die Position des Patienten vorbestimmt ist, wenn dies nicht zutrifft, sind alle 
+möglichen Positionen des Patienten zu berücksichtigen. 
+3.4 
+Elektrotechnik 
+3.4.1 
+Sicherheitsstromversorgung (SV) 
+elektrische Anlage bestehend aus den Sicherheitsstromquellen, zugehörigen Schalteinrichtungen, Verteilern, 
+Verteilungs- und Verbraucherstromkreisen bis zu den Anschlussklemmen der zu versorgenden Einrichtungen  
+Sie versorgt bei Störung der allgemeinen Stromversorgung (AV) für eine begrenzte Zeit notwendige 
+Sicherheitseinrichtungen, medizinisch-technische Einrichtungen und Einrichtungen, die zur Aufrechterhaltung 
+des Krankenhausbetriebes unerlässlich sind. 
+3.4.2 
+zusätzliche Sicherheitsstromversorgung (ZSV) 
+Kombination von Betriebsmitteln, die bei Ausfall der allgemeinen Stromversorgung und der Sicherheits-
+stromversorgung bestimmte medizinisch-technische Einrichtungen für eine begrenzte Zeit mit elektrischer 
+Energie versorgt 
+Sie kann in der Ausführung als unterbrechungsfreie, rotierende Sicherheitsstromquelle auch andere 
+Verbraucher nach 6.4.4 versorgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 13/64 =====
+ÖVE/ÖNORM E 8007:2007 
+13 
+3.4.3 
+notwendige Sicherheitseinrichtungen (NSE) 
+Einrichtungen, die im Gefahrenfall der Sicherheit der Personen dienen und aufgrund allgemein geltender oder 
+im Einzelfall erhobener bauordnungsrechtlicher Anforderungen vorzusehen sind und einer Sicherheits-
+stromversorgung bedürfen 
+ANMERKUNG Zu den notwendigen Sicherheitseinrichtungen zählen zB die Sicherheitsbeleuchtung, Brandschutz-
+einrichtungen sowie medizinische Einrichtungen, die einer ZSV bedürfen 
+3.4.4 
+Sicherheitsbeleuchtung 
+Teil der Notbeleuchtung, der Personen das sichere Verlassen eines Raumes/Gebäudes ermöglicht oder der 
+es Personen ermöglicht, vor dem Verlassen einen potentiell gefährlichen Arbeitsablauf zu beenden 
+3.4.5 
+Ersatzbeleuchtung 
+Teil der Notbeleuchtung, der vorgesehen ist, damit notwendige Tätigkeiten im Wesentlichen unverändert 
+fortgesetzt werden können 
+Im Sinne dieser ÖVE/ÖNORM ist die Ersatzbeleuchtung eine Beleuchtung, die vorgesehen ist, um bei 
+Störung der allgemeinen Stromversorgung Verkehrswege, medizinisch genutzte Räume sowie Räume zur 
+Aufrechterhaltung des Krankenhausbetriebes zu versorgen. 
+3.4.6 
+Umschaltzeit 
+ist im Sinne dieser ÖVE/ÖNORM die Zeitspanne, die zwischen dem Beginn der Störung der allgemeinen 
+Stromversorgung und dem Wirksamwerden der Sicherheitsstromversorgung vergeht 
+3.4.7 
+Störung der allgemeinen Stromversorgung 
+Störung, die vorliegt, wenn die Spannung der allgemeinen Stromversorgung über einen Zeitraum von mehr 
+als 0,5 s unter den Wert von 90 % der Netznennspannung gesunken ist 
+Für den Bereich der Sicherheitsbeleuchtung liegt gemäß ÖVE/ÖNORM E 8002-1 eine Störung vor, wenn die 
+Nennspannung über einen Zeitraum von mehr als 0,5 s unter den Wert von 75 % der Netznennspannung 
+absinkt. 
+3.4.8 
+Löschwasserversorgungsanlage 
+Gesamtheit der zur Förderung des Löschwassers erforderlichen Einrichtungen, zB Pumpen, Pumpenantriebe, 
+Schalt-, Steuer-, Regel- und Überwachungseinrichtungen, Energieübertragungs- und Steuerleitungen sowie 
+die Energieversorgung 
+ANMERKUNG Sprinkleranlagen gemäß TRVB S 127 fallen nicht unter diese Definition 
+3.4.9 
+brandhemmend 
+Bauteil, der der Feuerwiderstandsklasse EI 30 oder REI 30 gemäß ÖNORM EN 13501-2 oder Feuer-
+widerstandsklasse EI2 30-C gemäß ÖNORM B 3850 
+3.4.10 
+brandbeständig 
+Bauteil, der der Feuerwiderstandsklasse EI 90 oder REI 90 gemäß ÖNORM EN 13501-2 oder Feuer-
+widerstandsklasse EI2 90-C gemäß ÖNORM B 3850 entspricht 
+3.4.11 
+nicht brennbar  
+Baustoff, wenn er der Euroklasse des Brandverhaltens A1 oder A2 gemäß ÖNORM EN 13501-1 entspricht 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 14/64 =====
+ÖVE/ÖNORM E 8007:2007 
+14 
+3.4.12 
+Bettenaufzug 
+Personenaufzug, dessen Gebrauch für den Transport von Krankenbetten vorgesehen ist 
+Tabelle 1 – Beispiele für die Zuordnung der Raumarten zu den Anwendungsgruppen 
+gemäß 3.2.1 bis 3.2.3 
+1 
+2 
+3 
+Anwendungs
+-gruppe 
+Art der medizinischen Nutzung 
+Raumart bezogen auf den 
+bestimmungsgemäßen Gebrauch 
+0 
+Keine Anwendung elektromedizinischer 
+Geräte oder Anwendung 
+elektromedizinischer Geräte gemäß 3.2.1. 
+Bettenräume, Praxisräume der Human- und 
+Dentalmedizin. 
+1 
+Anwendung elektromedizinischer Geräte 
+am oder im Körper über natürliche 
+Körperöffnungen; oder kleinere operative 
+Eingriffe. 
+Bettenräume, Räume für physikalische 
+Therapie, Räume für Hydro-Therapie, 
+Massageräume, Praxisräume der Human- 
+und Dentalmedizin. 
+Räume für radiologische Diagnostik und 
+Therapie, Endoskopieräume. 
+Dialyseräume, Intensiv-
+Untersuchungsräume, Entbindungsräume, 
+Chirurgische Ambulanzen. 
+2 
+Organoperationen jeder Art, Einbringen 
+von Herzkathetern, chirurgisches 
+Einbringen von Geräteteilen, Operationen 
+jeder Art (außer jene gemäß 
+Anwendungsgruppe 1), Gefahr innerer 
+Blutungen bei endoskopischen Eingriffen, 
+Erhalten der Lebensfunktion mit 
+elektromedizinischen Geräten, Eingriffe am 
+offenen Herzen. 
+Operations-Vorbereitungsräume, 
+Operationsräume, Aufwachräume, 
+Operations-Gipsräume, Intensiv-
+Untersuchungsräume, Intensiv-
+Überwachungsräume. 
+Räume für radiologische Diagnostik und 
+Therapie, Endoskopie-Räume, 
+Herzkatheter-Räume für Therapie und 
+Diagnostik, klinische Entbindungsräume, 
+Notfall- bzw. Akutdialyse. 
+IMCU 
+ANMERKUNG Die Zuordnung von Raumarten (Spalte 3) zu den Anwendungsgruppen bestimmt sich aus der Art ihrer 
+vorgesehenen medizinischen Nutzung (Spalte 2) und medizinischen Einrichtungen. Aus diesem Grund können 
+bestimmte Raumarten mehreren Anwendungsgruppen zugeordnet sein. 
+Bei Planung von Starkstromanlagen in Krankenhäusern oder Pflegeheimen ist der zu erwartende bestimmungsgemäße 
+Gebrauch elektromedizinischer Geräte, zB in Bettenräumen, meist nicht vorhersehbar. Im Zweifelsfall sollte deshalb von 
+der Anwendungsgruppe 0 kein Gebrauch gemacht werden. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 15/64 =====
+ÖVE/ÖNORM E 8007:2007 
+15 
+4 
+Allgemeine Anforderungen 
+4.1 Elektrische Betriebsräume 
+4.1.1 In baulichen Anlagen gemäß diesen Bestimmungen müssen folgende Anlagen in eigenen 
+abgeschlossenen elektrischen Betriebsstätten und eigenen Brandabschnitten mit brandbeständigen 
+Feuerschutzabschlüssen untergebracht werden: 
+– 
+Transformatoren und/oder Schaltanlagen mit Nennspannungen über 1 kV, 
+– 
+ortsfeste Stromerzeugungsaggregate der SV, 
+– 
+ortsfeste Stromerzeugungsaggregate der ZSV, 
+– 
+Zentralbatterieanlagen der Sicherheitsstromversorgung (dazugehörende Verteileranlage kann ebenfalls 
+dort situiert sein), 
+– 
+zentrale Einrichtungen der statischen ZSV (zB Batterieanlage mit Wechselrichter inkl. Hauptverteiler), 
+– 
+Hauptverteiler und Gebäudehauptverteiler der allgemeinen Stromversorgung (Ausnahme siehe 4.1.3), 
+– 
+Hauptverteiler und Gebäudehauptverteiler der SV (Ausnahme siehe 4.1.3), 
+– 
+Hauptverteiler und Gebäudehauptverteiler der ZSV (Ausnahme siehe 4.1.3). 
+4.1.2 Für Transformatoren mit Nennspannungen über 1 kV sind selbsttätige Schutzeinrichtungen gegen die 
+Auswirkungen von Überlastungen sowie von inneren und äußeren Fehlern vorzusehen. 
+4.1.3 Die Unterbringung der Hauptverteiler der Sicherheitsstromversorgung, ausgenommen ZSV, darf auch 
+gemeinsam mit dem Hauptverteiler der allgemeinen Stromversorgung in einer eigenen abgeschlossenen 
+elektrischen Betriebsstätte erfolgen, wenn diese für andere Zwecke nicht genutzt wird. Die beiden 
+Hauptverteiler sind voneinander lichtbogensicher (zB Trennwand aus 20 mm dickem Fasersilikat, wobei der 
+Kuppelschalter dem Verteilerbereich der Sicherheitsstromversorgung zuzuordnen ist) zu trennen. Diese 
+Ausnahme gilt auch für Gebäudehauptverteiler. 
+Wenn das Verteilergehäuse eines Gebäudehauptverteilers der ZSV zur Versorgung von NSE für die Dauer 
+des Funktionserhaltes gemäß ÖNORM DIN 4102-12 ausgeführt wurde, darf dieser Verteiler auch außerhalb 
+einer abgeschlossenen elektrischen Betriebsstätte oder gemeinsam mit dem Gebäudehauptverteiler der 
+allgemeinen Versorgung und/oder der SV untergebracht werden.  
+Wenn in einem Gebäude nur Anlagenbereiche, welche keine NSE sind, von einer rotierenden ZSV versorgt 
+werden, dann darf der Gebäudehauptverteiler der ZSV auch gemeinsam mit den Verteilern der allgemeinen 
+Versorgung und/oder der SV untergebracht werden. 
+4.2 Verteiler 
+4.2.1 Verteiler sind außerhalb medizinisch genutzter Räume unterzubringen. 
+4.2.2 Verteiler müssen leicht zugänglich und gegen den Zugriff Unbefugter gesichert sein. 
+4.2.3 Die Verteiler müssen eine allseitige Verkleidung aus Blech oder lsolierstoff entsprechend den 
+einschlägigen Bestimmungen haben. 
+ANMERKUNG Ein Maskenverteiler mit Rückwand gilt als allseitig verkleidet. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 16/64 =====
+ÖVE/ÖNORM E 8007:2007 
+16 
+4.2.4 Für Verteiler nach dem Gebäudehauptverteiler gilt die Anforderung, dass die nachstehend 
+angeführten Stromversorgungsquellen bzw. Anlagenteile in eigenen entsprechend voneinander getrennten 
+Verteilern oder Verteilerbereichen vorzusehen sind: 
+– 
+Allgemeine Stromversorgung, 
+– 
+SV versorgte Anlagenbereiche, die keine notwendigen Sicherheitseinrichtungen sind, 
+– 
+SV versorgte Anlagenbereiche, die notwendige Sicherheitseinrichtungen sind. Die Trennung muss 
+gemäß 
+7.2.3.1, 
+entsprechend 
+dem 
+geforderten 
+Funktionserhalt 
+der 
+notwendigen 
+Sicherheitseinrichtungen, ausgeführt sein, 
+– 
+alle von einer rotierenden ZSV nach 6.4.4 (3) versorgten Anlagenbereiche, die keine notwendigen 
+Sicherheitseinrichtungen sind, 
+– 
+alle von einer rotierenden ZSV nach 6.4.4 versorgten Anlagenbereiche, die notwendige Sicherheits-
+einrichtungen sind. Die Trennung muss gemäß 7.2.3.1, entsprechend dem geforderten Funktionserhalt 
+der notwendigen Sicherheitseinrichtungen, ausgeführt sein, 
+– 
+alle von einer ZSV in der Ausführung als Batterie-Wechselrichteranlage versorgten Anlagenbereiche. Die 
+Trennung muss gemäß 7.2.3.1, entsprechend dem geforderten Funktionserhalt der notwendigen 
+Sicherheitseinrichtungen, ausgeführt sein.  
+– 
+alle von einer ZSV in der Ausführung als Batterie-Wechselrichteranlage mitversorgten Geräte nach 6.4.3, 
+– 
+ZSV in der Ausführung als Batterieanlage. Die Trennung muss gemäß 7.2.3.1, entsprechend dem 
+geforderten Funktionserhalt der notwendigen Sicherheitseinrichtungen, ausgeführt sein. 
+Die ZSV versorgten Teile der allgemeinen Raumbeleuchtung gemäß 6.2.1.2 (3) dürfen aus jedem von einer 
+ZSV-Quelle versorgten Verteilerbereich angespeist werden (siehe Bild B.3, Stromkreis 5). 
+4.2.5 Für Verteiler der notwendigen Sicherheitseinrichtungen sind besondere Maßnahmen erforderlich, um 
+einen entsprechenden Funktionserhalt im Brandfall zu erreichen. Ebenso darf der Verteiler durch andere 
+Installationen oder Gebäudeeinbauten nicht gefährdet werden. Dies ist auch in einem Störungsfall  
+(zB Undichtwerden einer Wasser- oder Dampfleitung) zu berücksichtigen. Sprinkleranlagen sind in 
+elektrischen Betriebsräumen der notwendigen Sicherheitseinrichtungen nicht geeignet. 
+4.2.6 Die Verteiler sind so auszuführen, dass eine einfache Messung des Isolationswiderstandes aller Leiter 
+gegen Erde jedes einzelnen abgehenden Stromkreises möglich ist. Bei Stromkreisen mit Leiterquerschnitten 
+unter 
+10 mm2 
+muss 
+diese 
+Messung 
+ohne 
+Abklemmen 
+des 
+Neutralleiters 
+möglich 
+sein,  
+zB durch allpolig trennende Schalteinrichtungen. 
+4.2.7 Für medizinisch genutzte Räume der Anwendungsgruppe 2 sind eigene Verteiler erforderlich. Sie 
+dürfen in einem gemeinsamen Gehäuse mit Verteilern für nicht medizinisch genutzte Räume oder für Räume 
+anderer Anwendungsgruppen untergebracht werden, wenn sie von diesen durch eine Zwischenwand getrennt 
+und mit einer eigenen Abdeckung versehen sind. 
+Trennung und eigene Abdeckung sind nicht erforderlich für funktionell dazugehörende, einzelne nicht 
+medizinisch genutzte Räume oder medizinisch genutzte Räume der Anwendungsgruppe 0 oder 
+Anwendungsgruppe 1 in diesem Bereich, wie zB Geräteräume, OP-Waschräume, OP-Sterilisationsräume, 
+Aufenthaltsräume, Nachbehandlungsräume, Toiletten, Flure, Umkleideräume u. dgl.. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 17/64 =====
+ÖVE/ÖNORM E 8007:2007 
+17 
+4.3 Stromversorgung von Krankenhäusern, Ambulatorien und anderen baulichen Anlagen 
+mit vergleichbarer Zweckbestimmung 
+4.3.1 Allgemeine 
+Stromversorgung 
+und 
+Sicherheitsstromversorgung 
+(inklusive 
+zusätzlicher 
+Sicherheitsstromversorgung) 
+In Starkstromanlagen mit Nennspannungen bis AC 1 000 V dürfen ab dem Hauptverteiler des Gebäudes 
+keine PEN-Leiter verwendet werden. 
+ANMERKUNG Zur Vermeidung elektromagnetischer Störbeeinflussung muss bei der Neuerrichtung von Kranken-
+häusern und Pflegeheimen ein konsequentes TN-S-System aufgebaut werden, wobei der Neutralleiter nur an einer 
+zentralen Stelle (in der Regel in der Hauptverteilung) zu erden ist. 
+4.3.2 Sicherheitsstromversorgung 
+In Starkstromanlagen mit Nennspannungen bis AC 1 000 V gelten die Anforderungen gemäß 5.2 und 6 
+zusätzlich zu den Anforderungen gemäß ÖVE-EN 1 Teil 4:1989 § 57. 
+4.3.3 Stromversorgung von Räumen der Anwendungsgruppe 2 
+4.3.3.1 
+Um die Betriebssicherheit zu gewährleisten muss jeder Verteiler, oder mindestens der 
+Verteilerabschnitt der ZSV-versorgten IT-Systeme, über zwei voneinander unabhängige Zuleitungen versorgt 
+werden können. 
+Die 
+erste 
+Leitung 
+muss 
+von 
+jener 
+Schiene 
+des 
+Hauptverteilers 
+des 
+Gebäudes, 
+die 
+der 
+Sicherheitsstromversorgung dient, abzweigen (siehe Bild B.3 und Bild B.4). 
+4.3.3.1.1 
+Je 
+nach 
+Art 
+der 
+installierten 
+zusätzlichen 
+Sicherheitsstromversorgung 
+sind 
+zwei 
+Schaltungsvarianten möglich: 
+1) 
+ZSV mit nicht unterbrechungsloser Versorgung 
+ 
+Die SV-Schiene und die ZSV-Schiene des zu versorgenden Verteilers werden bei ungestörtem Betrieb 
+von der ersten Leitung versorgt. Bei Ausfall der Spannung am Ende der ersten Leitung bleibt die  
+SV-Schiene spannungslos, während die ZSV-Schiene auf die zweite Leitung umgeschaltet wird. 
+2) 
+ZSV mit unterbrechungsloser Versorgung 
+ 
+Bei ungestörtem Betrieb wird die ZSV-Schiene von der ZSV-Anspeisung (zweite Leitung) und die  
+SV-Schiene von der ersten Leitung versorgt.  
+ 
+Bei Ausfall der Spannung am Ende der ersten Leitung bleibt die SV-Schiene spannungslos, die  
+ZSV-Schiene wird von der zweiten Leitung weiter aus der ZSV-Anlage versorgt.  
+ 
+Bei Ausfall der Spannung am Ende der zweiten Leitung wird die ZSV-Schiene auf die SV-Schiene (auf 
+die erste Leitung) umgeschaltet. 
+Es wird empfohlen, die jeweils in Reservestellung befindliche Leitung zu überwachen. 
+4.3.3.2 
+Wird zusätzlich zu dem ZSV-versorgten IT-System ein SV-versorgtes IT-System errichtet, ist für 
+dieses System eine Zuleitung ausreichend (keine Reserveleitung). Im übrigen gelten die gleichen 
+Anforderungen wie für das ZSV-versorgte IT-System (siehe Bild B.3 und Bild B.4). 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 18/64 =====
+ÖVE/ÖNORM E 8007:2007 
+18 
+4.3.3.3 
+Für jeden Raum oder jede Raumgruppe der Anwendungsgruppe 2 ist für Stromkreise, die der 
+Versorgung elektromedizinischer Geräte für chirurgische Eingriffe oder Maßnahmen dienen, die lebenswichtig 
+sind, mindestens ein eigenes ZSV-versorgtes IT-System zu errichten. 
+SV-versorgte IT-Systeme sind ebenfalls auf einen Raum oder eine Raumgruppe zu begrenzen. 
+4.3.3.4 
+Als Transformatoren der IT-Systeme sind Einphasen-Transformatoren zu verwenden. Sie sind 
+außerhalb der medizinisch genutzten Räume unterzubringen (zB im OP-Verteiler). 
+Ist ein IT-System für die Versorgung von Drehstromverbrauchern erforderlich, ist hierfür ein eigener 
+Drehstrom-Transformatoren vorzusehen. 
+4.3.3.5 
+Es sind Transformatoren gemäß ÖVE/ÖNORM EN 61558-2-15 zu verwenden. 
+4.3.3.6 
+Für den Transformator des IT-Systems, seine primärseitigen Zuleitungen und seine sekundär-
+seitigen Ableitungen, sind Schutzeinrichtungen mit automatischer Abschaltung nur zum Schutz bei 
+Kurzschluss zulässig. Für den Schutz des Transformators bei Überlast sind eine Laststrom- und eine 
+Temperatur-Überwachung vorzusehen. Die Meldung muss akustisch (quittierbar) und optisch so erfolgen, 
+dass sie vom medizinischen Personal des betroffenen Bereiches wahrgenommen werden kann. 
+ANMERKUNG Dies wird üblicherweise dadurch erreicht, dass die Schutzeinrichtung für den Transformator des  
+IT-Systems erst beim 1,5 fachen Wert des zulässigen Dauerbelastungsstromes des Transformators abschaltet und 
+für den Überlastschutz des Transformators eine geeignete Überwachung vorgesehen wird. Dabei sind die Angaben 
+des Transformatorherstellers zu beachten. Bei Überschreiten der zulässigen Grenzwerte erfolgt eine Alarmierung, 
+wobei die Stromüberwachung auf den zulässigen Dauerbelastungsstrom des Transformators eingestellt ist. Bei 
+Überschreiten dieses Wertes (ausgenommen bei Einschaltstromstößen) erfolgt die Alarmierung, welche bei 
+Rückgang auf den Dauerbelastungsstrom selbständig wieder abfällt. 
+Die primär- und sekundärseitigen Leitungen sind hinsichtlich ihrer Querschnitte auf die dadurch gegebenen höheren 
+Strombelastungen auszulegen. Einschaltstromspitzen dürfen bei der Anspeisung von Transformatoren des  
+IT-Systems keinesfalls zum Ansprechen einer Überstromschutzeinrichtung führen.  
+4.3.3.7 
+Die Einspeisung eines IT-Systems eines Raumes oder einer Raumgruppe darf über einen einzigen 
+Trenntransformator erfolgen, wenn ein Ausfall durch Fehler im Transformator, dessen Zuleitung vom Verteiler 
+zu den Eingangsklemmen des Transformators und dessen Ableitung zwischen den Ausgangsklemmen des 
+Transformators und dem Verteilerabschnitt des IT-Systems nicht zu erwarten ist. Dies ist dann der Fall, wenn 
+folgende Anforderungen erfüllt sind (siehe Bild B.3): 
+1) 
+Die Kabel oder Leitungen der Transformator Zu- und -ableitung sind kurzschluss- und erdschlusssicher 
+gemäß ÖVE/ÖNORM E 8001-1:2000, Abschnitt 3.7.2 und ÖVE-EN 1 Teil 3:1998 § 42 verlegt. Sie dürfen 
+keine Schutzeinrichtungen enthalten. 
+ 
+Die 
+selektive 
+Abschaltung 
+der 
+Zuleitung 
+zu 
+den 
+einzelnen 
+Verteilern 
+der 
+Räume 
+der 
+Anwendungsgruppe 2 muss sichergestellt sein. 
+2) 
+Für den Trenntransformator ist zum Schutz bei indirektem Berühren eine der folgenden Maßnahmen 
+anzuwenden: 
+– 
+Schutzisolierung gemäß ÖVE/ÖNORM E 8001-1:2000 Abschnitt 7, 
+– 
+Schutz durch nicht leitende Räume (Standortisolierung) gemäß ÖVE/ÖNORM E 8001-1:2000 
+Abschnitt 7.4, 
+– 
+Schutz durch besondere Aufstellung folgendermaßen: 
+1) 
+Der Transformator in der Ausführung Schutzklasse I ist isoliert aufgestellt und nicht mit dem 
+Schutzleiter verbunden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 19/64 =====
+ÖVE/ÖNORM E 8007:2007 
+19 
+2) 
+Der Transformator ist vom OP-Verteiler oder anderen Verteilern räumlich getrennt oder 
+geschottet, hinter einer nur mittels Werkzeug oder besonderem Schlüssel zu öffnenden 
+Abdeckung aufgestellt. 
+3) 
+Der Zugang ist nur Fachkräften gemäß ÖVE/ÖNORM EN 50110-1 vorbehalten. 
+4) 
+Auf der Abdeckung und dem Transformator ist gut sichtbar und unverlierbar ein Warnhinweis  
+(zB „Achtung! Vor dem Berühren des Trafos Spannungsprüfung durchführen!“) anzubringen, 
+der auf die mögliche Gefahr einer Fehlerspannung an den leitfähigen Teilen des 
+Transformators, zB bei Körperschluss, und die Notwendigkeit einer Spannungsprüfung vor 
+Berührung verweist.  
+4.3.3.8 
+Wenn die Anforderungen gemäß 4.3.3.7 nicht erfüllt sind, muss bei Ausfall der Spannung am Ende 
+des Transformatorstromkreises, der das IT-System bei störungsfreiem Betrieb versorgt, die Stromversorgung 
+selbsttätig auf den Stromkreis eines zweiten Transformators (gemäß Bild B.4 und Bild B.5) umgeschaltet 
+werden. 
+4.3.3.9 
+Für die selbsttätige Umschalteinrichtung gemäß 4.3.3.1.1 und gemäß 4.3.3.8 gelten folgende 
+Anforderungen: 
+– 
+Zur Spannungsüberwachung ist eine allpolige, eigenständige Überwachungseinrichtung erforderlich. 
+– 
+Die Schaltgeräte der Umschalteinrichtung sind für das 1,5 fache des Bemessungsstromes auszulegen. 
+Bei Schützen gemäß ÖVE/ÖNORM EN 60947-4-1 ist für das Nennschaltvermögen die Gebrauchs-
+kategorie AC 3 und für den Kurzschlussschutz die Anforderung „verschweißfrei“ zugrunde zu legen. 
+Halbleiterschütze sind nicht zulässig. 
+– 
+Zur Erhöhung der Verriegelungs- und Umschalt-Sicherheit sind pro Schaltgerät jeweils zwei 
+Hilfskontakte zusammenzuschalten. Mechanisch verriegelte Schütze oder Umschaltschütze sind 
+elektrisch verriegelten Schützen vorzuziehen. 
+– 
+Die Umschaltung auf die in Reserve stehende Leitung (siehe 4.3.3.1.1) ist als Störmeldung hoher 
+Priorität an die Haus/Betriebstechnik zu melden. 
+– 
+Zur Funktionsüberprüfung der Umschalteinrichtung ist im Verteiler ein Schalter oder Taster vorzusehen. 
+Dieser ist als Testeinrichtung zu kennzeichnen. 
+– 
+Die Rückschaltung auf die bevorzugte Zuleitung bei Spannungswiederkehr muss zeitverzögert erfolgen. 
+4.3.3.10 
+Verteiler der Anwendungsgruppe 2 
+Der Verteiler muss vom zugehörigen Raum der Anwendungsgruppe 2 leicht erreichbar sein. Die 
+Leitungslängen des IT-Systems sind möglichst kurz zu halten. 
+Dies wird im Allgemeinen erreicht, wenn der Verteiler, der Transformator und die erforderlichen Kabel- 
+und Leitungsanlagen sich im selben Geschoß und gleichem oder angrenzendem Brandabschnitt wie der 
+zugehörige (zu versorgende) Raum der Anwendungsgruppe 2 befinden. 
+4.4 Verbraucheranlage 
+4.4.1 Steckdosenstromkreise im IT-System von Räumen der Anwendungsgruppe 2 
+4.4.1.1 
+Den Patientenplätzen müssen Stromkreise mit zweipoligen Steckvorrichtungen mit Schutzkontakt 
+zugeordnet sein, die aus einem IT-System versorgt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 20/64 =====
+ÖVE/ÖNORM E 8007:2007 
+20 
+4.4.1.2 
+Stromkreise im IT-System dürfen jeweils nur einem Patientenplatz zugeordnet sein. 
+Die Steckdosen an jedem Patientenplatz sind auf mindestens zwei Stromkreise im IT-System aufzuteilen, 
+wenn mehr als zwei Steckdosen benötigt werden. Jeder Stromkreis im IT-System darf maximal 6 Steckdosen 
+enthalten.  
+ANMERKUNG Eine Spannungsanzeige bei jeder Steckdose wird empfohlen. 
+4.4.1.3 
+Für den Schutz von Kabeln und Leitungen gegen zu hohe Erwärmung dürfen nur 
+Leitungsschutzschalter gemäß ÖVE/ÖNORM EN 60898-1 oder Leistungsschalter gemäß ÖVE/ÖNORM 
+EN 60947-2 verwendet werden, die in allen Polen einen Auslöser besitzen. Sie müssen kurzschluss-selektiv 
+gegenüber den vorgeschalteten Schutzeinrichtungen wirken. 
+4.4.2 BeIeuchtungsstromkreise 
+In Rettungswegen und Räumen der Anwendungsgruppe 1 und Anwendungsgruppe 2 mit mehr als einer 
+Leuchte sind die Leuchten auf mindestens zwei Stromkreise aufzuteilen. Wenn die Schutzmaßnahme 
+Fehlerstrom-Schutzschaltung angewandt wird, sind diese den Stromkreisen so zuzuordnen, dass bei 
+Ansprechen einer Schutzeinrichtung nicht alle Beleuchtungsstromkreise eines Raumes oder Rettungsweges 
+ausfallen. Die Leuchten in den Rettungswegen müssen den Stromkreisen abwechselnd zugeordnet sein. 
+4.4.3 Motorstromkreise 
+Motoren, die selbsttätig geschaltet, ferngeschaltet oder nicht ständig beaufsichtigt werden, müssen durch 
+Motorschutzschalter gemäß ÖVE/ÖNORM EN 60947-4-1 oder durch gleichwertige Einrichtungen geschützt 
+werden. 
+Nach Ansprechen der Schutzeinrichtungen muss ein selbsttätiges Wiedereinschalten der Motoren verhindert 
+werden. Motorschutzschalter oder gleichwertige Einrichtungen sind nicht erforderlich für Kühl-, Gefrier- und 
+Klimageräte. 
+4.4.4 Zuleitung zu Löschwasserversorgungsanlagen 
+Die elektrische Anlage muss mit einer eigenen Zuleitung direkt vom Gebäudehauptverteiler der Sicherheits-
+stromversorgung gespeist werden. Die Zuleitung ist so zu verlegen, dass sie bei äußerer Brandeinwirkung für 
+die Dauer von mindestens 90 Minuten funktionsfähig bleibt. 
+4.4.5 Steckdosenstromkreise 
+Wenn bei einer Stromversorgung eines Raumes aus verschiedenen Systemen (AV, SV, ZSV, IT-System, TN-
+System) eine Verwechslungsmöglichkeit besteht, sind Steckdosen, gegebenenfalls Schalter oder 
+Betriebsmittel (zB Leuchten) besonders zu kennzeichnen, um eine eindeutige Zuordnung für den Benutzer 
+sicherzustellen. 
+ANMERKUNG Bei farblicher Kennzeichnung ist die Farbe „grün“ für Bereiche der Sicherheitsstromversorgung und 
+die Farbe „gelb“ oder „orange“ für Bereiche der ZSV vorzuziehen, jedoch kann eine einheitliche andersartige 
+Kennzeichnung innerhalb einer Anlage, insbesondere bei einer Erweiterung, zweckmäßig sein. 
+5 
+Schutz gegen elektrischen Schlag 
+5.1 Basisschutz 
+Außerhalb medizinisch genutzter Räume und in Räumen der Anwendungsgruppe 0 ist der Basisschutz 
+gemäß ÖVE/ÖNORM E 8001-1 anzuwenden. Zusätzlich ist in Räumen der Anwendungsgruppe 1 und 
+Anwendungsgruppe 2 nur Schutz durch Isolierung, Abdeckung oder Umhüllung aktiver Teile anzuwenden.  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 21/64 =====
+ÖVE/ÖNORM E 8007:2007 
+21 
+5.2 Fehlerschutz und Zusatzschutz außerhalb medizinisch genutzter Räume und in Räumen 
+der Anwendungsgruppe 0 
+Außerhalb medizinisch genutzter Räume und in Räumen der Anwendungsgruppe 0 sind Fehlerschutz und 
+Zusatzschutz gemäß ÖVE/ÖNORM E 8001-1 anzuwenden. 
+Bei den Schutzmaßnahmen Nullung oder Schutzerdung ist der Nachweis für die Einhaltung der 
+Abschaltbedingung gemäß ÖVE/ÖNORM E 8001-1 rechnerisch zu erbringen. 
+5.3 Fehlerschutz und Zusatzschutz bei Räumen der Anwendungsgruppe 1 und 
+Anwendungsgruppe 2 
+Es dürfen nur Maßnahmen des Fehlerschutzes gemäß 5.3 angewandt werden, wobei für notwendige 
+Sicherheitseinrichtungen die Schutzmaßnahmen gemäß 5.3.1, 5.3.2, 5.3.3, 5.3.5 und 5.3.6 bevorzugt 
+anzuwenden sind. Für Räume der Anwendungsgruppe 2 sind Einschränkungen gemäß 5.3.4.3.4 zu 
+beachten. Außerdem ist ein zusätzlicher Potenzialausgleich gemäß 5.4 erforderlich. 
+5.3.1 Schutzisolierung 
+Elektrische Betriebsmittel erfüllen die Anforderungen der Schutzisolierung, wenn sie der Schutzklasse II 
+entsprechen oder gleichwertige Isolierungen gemäß ÖVE/ÖNORM E 8001-1 aufweisen. 
+5.3.2 Schutzkleinspannung  
+Es gelten die Anforderungen gemäß ÖVE/ÖNORM E 8001-1 mit der Abweichung, dass die Nennspannung 
+der Stromkreise 25 V Wechselspannung oder 60 V Gleichspannung nicht überschreiten darf. 
+5.3.3 Funktionskleinspannung  
+Es gelten die Anforderungen gemäß ÖVE/ÖNORM E 8001-1 mit der Abweichung, dass die Nennspannung 
+der Stromkreise 25 V Wechselspannung oder 60 V Gleichspannung nicht überschreiten darf. 
+Für Operationsleuchten und vergleichbare Leuchten darf die Funktionskleinspannung nur mit sicherer 
+Trennung angewandt werden. 
+5.3.4 Schutz durch Abschaltung 
+5.3.4.1 
+Fehlerschutz mit PE-Leiter gemäß ÖVE/ÖNORM E 8001-1 
+– 
+Nullung gemäß ÖVE/ÖNORM E 8001-1, 
+– 
+Fehlerstrom-Schutzschaltung gemäß ÖVE/ÖNORM E 8001-1, jedoch mit UFL ≤ 25 V Wechselspannung 
+bzw. UFL ≤ 60 V Gleichspannung. 
+5.3.4.2 
+Zusatzschutz gemäß ÖVE/ÖNORM E 8001-1 
+Für alle Endstromkreise bis 63 A für Betriebsmittel im Handbereich sind Fehlerstrom-Schutzeinrichtungen mit 
+ausreichender Stoßstromfestigkeit (mindestens 3 kA) mit einer Kurzzeitverzögerung (zB Bauart G) 
+vorzusehen. Der Auslösenennfehlerstrom der Fehlerstrom-Schutzeinrichtung darf 30 mA nicht überschreiten. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 22/64 =====
+ÖVE/ÖNORM E 8007:2007 
+22 
+5.3.4.3 
+Besondere Anforderungen 
+5.3.4.3.1 
+Bei Anwendung des Fehlerschutzes Nullung sind für Betriebsmittel außerhalb des Hand-
+bereiches sowie für Endstromkreise über 63 A Fehlerstrom-Schutzeinrichtungen mit einem Auslöse-
+nennfehlerstrom bis maximal 300 mA zusätzlich zu verwenden. 
+5.3.4.3.2 
+Aus Gründen des Personenschutzes oder der Betriebssicherheit kann es für bestimmte 
+Betriebsmittel (zB elektronische Betriebsmittel, Röntgenanlagen) erforderlich sein, besondere Bauarten von 
+Fehlerstrom-Schutzeinrichtungen (zB Typ A bzw. Typ B) zu verwenden.  
+5.3.4.3.3 
+Bei in Serie geschalteten Fehlerstrom-Schutzeinrichtungen ist die Selektivität gemäß 
+ÖVE/ÖNORM E 8001-1:2000 Abschnitt 12.1.5 einzuhalten. 
+5.3.4.3.4 
+Fehlerstrom-Schutzeinrichtungen dürfen in Räumen der Anwendungsgruppe 2 nur für folgende 
+Stromkreise angewandt werden: 
+– 
+Stromkreise für Röntgenapparate, 
+– 
+Stromkreise für Großgeräte mit einer Leistung über 5 kW, 
+– 
+Stromkreise für die Raumbeleuchtung, sofern sie nicht in 6.4.2 fällt, 
+– 
+Stromkreise für Geräte, die nicht der unmittelbaren medizinischen Anwendung am Patienten dienen, 
+– 
+Stromkreise für Geräte, die weder operativen Einrichtungen noch Maßnahmen dienen, die lebenswichtig 
+sind, 
+– 
+Stromkreise für Operationstische, Betten, u. dgl., 
+– 
+Stromkreise für IMCU-Patientenplätzen, die nicht der Versorgung von lebenswichtigen elektrischen 
+medizinischen Geräten dienen. 
+In Räumen der Anwendungsgruppe 2 sind Steckdosenstromkreise mit Fehlerstrom-Schutzeinrichtungen 
+eindeutig zu kennzeichnen und das Personal ist zu unterweisen. 
+5.3.5 Isolationsüberwachungssystem  
+5.3.5.1 
+Jedes 
+IT-System 
+gemäß 
+4.3.3.3 
+ist 
+mit 
+einem 
+Isolationsüberwachungsgerät 
+gemäß 
+ÖVE EN 61557-8 auszurüsten, das folgenden zusätzlichen Anforderungen entsprechen muss: 
+– 
+der Wechselstrom-Innenwiderstand muss mindestens 100 kΩ betragen, 
+– 
+die Messspannung darf nicht größer als 25 V Gleichspannung sein, 
+– 
+der Messstrom darf auch im Fehlerfall nicht größer als 1 mA sein, 
+– 
+die Anzeige muss spätestens bei Absinken des Isolationswiderstandes auf 50 kΩ erfolgen, 
+– 
+die Zeit zwischen Fehlerauftritt und Meldung darf maximal 5 s betragen. Dies gilt analog auch für den 
+Wegfall des Fehlers. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 23/64 =====
+ÖVE/ÖNORM E 8007:2007 
+23 
+5.3.5.2 
+Für jedes Isolationsüberwachungssystem ist an geeigneter, während des Betriebes von 
+medizinisch zuständigem Personal ständig überwachbarer (oder sichtbarer/hörbarer) Stelle, eine 
+Meldekombination anzuordnen, die folgende Einrichtungen enthält: 
+– 
+eine grüne Meldeleuchte als Betriebsanzeige, 
+– 
+eine gelbe Meldeleuchte, die bei Unterschreiten des eingestellten Isolationswiderstandes gemäß 5.3.5.1 
+aufleuchtet. Sie darf nicht Iöschbar und nicht abschaltbar sein, 
+– 
+eine akustische Meldung, die bei Unterschreiten des eingestellten lsolationswiderstandes gemäß 5.3.5.1 
+ertönt. Sie darf Iöschbar, aber nicht abschaltbar sein, 
+– 
+eine Prüftaste zur optischen und akustischen Funktionsprüfung. 
+Alternativ kann eine Meldekombination mit gleichwertiger Textanzeige und optischer und akustischer 
+Signalisierung ausgeführt werden. Die optische und akustische Signalisierung muss mit einer Prüftaste 
+getestet werden können. 
+5.3.5.3 
+In Räumen der Anwendungsgruppe 2 darf beim ersten Fehler keine Abschaltung, sondern nur eine 
+Meldung erfolgen, weil Untersuchungen oder Behandlungen nicht ohne Gefahr für Patienten unterbrochen 
+werden können. Deshalb ist in diesen Räumen die Schutzmaßnahme Isolationsüberwachungssystem 
+mindestens für folgende Stromkreise anzuwenden: 
+– 
+Stromkreise 
+mit 
+zweipoligen 
+Steckvorrichtungen, 
+an 
+die 
+elektromedizinische 
+Einrichtungen 
+angeschlossen werden, die operativen Eingriffen oder Maßnahmen dienen, die lebenswichtig sind. 
+– 
+Stromkreise für Operationsleuchten und vergleichbare Leuchten, die mit Nennspannungen über 25 V 
+Wechselspannung oder 60 V Gleichspannung betrieben werden. 
+ANMERKUNG Beim Anschluss von nur einem Betriebsmittel kann alternativ auch die Schutzmaßnahme 
+Schutztrennung (siehe 5.3.6) angewendet werden. 
+5.3.5.4 
+Bei Schutz durch Meldung mit Isolationsüberwachungseinrichtung im Isolationsüberwachungs-
+system darf auf Grund der örtlichen Begrenztheit des Systems und durch den geforderten zusätzlichen 
+Potenzialausgleich für die Berechnung die volle Nennspannung des Isolationsüberwachungssystems für die 
+Einhaltung der Abschaltbedingung bei Doppelerdschluss herangezogen werden. 
+ANMERKUNG In ÖVE/ÖNORM E 8001-1 wird die halbe Nennspannung herangezogen. 
+5.3.6 Schutztrennung 
+Es ist nur der Anschluss eines Verbrauchsmittels zulässig.  
+Es ist ein Trenntransformator gemäß ÖVE/ÖNORM EN 61558-2-15 zu verwenden. 
+Ein allfälliger Schutzleiteranschluss des Verbrauchsmittels ist in den zusätzlichen Potentialausgleich 
+einzubinden. 
+5.4 Zusätzlicher Potenzialausgleich in Räumen der Anwendungsgruppe 1 und 
+Anwendungsgruppe 2 
+5.4.1 
+Zum Ausgleich von Potenzialunterschieden zwischen den Körpern der elektrischen Betriebsmittel und 
+fest eingebauten fremden leitfähigen Teilen ist ein zusätzlicher Potenzialausgleich zu errichten. 
+ANMERKUNG Die Entfernung der Potenzialausgleichsschiene(n) und der Schutzleiterschiene(n) zu den 
+medizinisch genutzten Räumen ist möglichst kurz zu halten. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+23 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 24/64 =====
+ÖVE/ÖNORM E 8007:2007 
+24 
+5.4.2 
+In jedem Verteiler oder in dessen Nähe ist eine Potenzialausgleichsschiene anzubringen, an die die 
+Potenzialausgleichsleiter übersichtlich und einzeln lösbar angeschlossen und dauerhaft beschriftet sind. 
+5.4.3 
+Folgende Teile sind mittels Potenzialausgleichsleiter mit der Potenzialausgleichsschiene zu 
+verbinden: 
+– 
+die Schutzleiterschiene des zugehörenden Versorgungsbereiches, 
+– 
+leitfähige Teile in der Patientenumgebung, deren Widerstand gemessen zum Schutzleiter in Räumen der 
+a) Anwendungsgruppe 1 kleiner als 7 kΩ, 
+b) Anwendungsgruppe 2 kleiner als 2,5 MΩ ist, und 
+ 
+mit dem Schutzleiter nicht in Verbindung stehen, 
+– 
+Abschirmung gegen elektrische Störfelder, 
+– 
+Ableitnetze elektrostatisch leitfähiger Fußböden, 
+– 
+ortsfeste nicht elektrisch betriebene Operationstische, die nicht mit dem Schutzleiter verbunden sind, es 
+sei denn, sie sind bestimmungsgemäß von Erde getrennt, 
+– 
+Operationsleuchten und vergleichbare Leuchten bei Anwendung der Funktionskleinspannung mit 
+sicherer elektrischer Trennung, 
+– 
+Potenzialausgleichsschiene des zugeordneten LAN-Verteilers. 
+ANMERKUNG Elektrisch leitende Fensterkonstruktionen, die mit der Blitzschutzanlage verbunden sind, sind nicht 
+an den zusätzlichen Potenzialausgleich anzuschließen. 
+5.4.4 
+In Räumen, in denen intrakardiale Eingriffe vorgenommen werden, sind folgende Maßnahmen 
+erforderlich: 
+1) 
+In der Nähe der Patientenposition sind Anschlussvorrichtungen für Potenzialausgleichsleitungen gemäß 
+5.4.5 anzubringen, über die ortsveränderliche elektromedizinische Geräte bei intrakardialen Eingriffen 
+einbezogen werden können. 
+2) 
+Innerhalb der Patientenumgebung darf in Räumen, in denen intrakardiale Untersuchungen oder 
+Behandlungen vorgenommen werden, die Spannung im fehlerfreien Betrieb der elektrischen Anlage 
+zwischen 
+fremden 
+leitfähigen 
+Teilen, 
+Schutzkontakten 
+von 
+Steckdosen 
+und 
+Körpern 
+fest 
+angeschlossener elektrischer Betriebsmittel 10 mV nicht überschreiten. 
+5.4.5 
+In Räumen der Anwendungsgruppe 2 sind in der Nähe der Patientenposition Anschlussvorrichtungen 
+gemäß DIN 42801 für Potenzialausgleichsleitungen anzubringen, über die ortsveränderliche medizinische 
+Geräte in den zusätzlichen Potenzialausgleich einbezogen werden können.  
+In Räumen der Anwendungsgruppe 1 wird die Installation von derartigen Anschlussvorrichtungen empfohlen. 
+5.4.6 
+Zwischen den Potenzialausgleichs-Sammelschienen von Räumen oder Raumgruppen mit funktions-
+mäßig gemeinsamen Mess- oder Überwachungseinrichtungen (zB für Körperfunktionen oder Körperaktions-
+spannungen) sind Potenzialausgleichsleiter zu verlegen. 
+5.5 Schutzleiter und Potenzialausgleichsleiter 
+5.5.1 
+Die Auswahl und Bemessung hat gemäß ÖVE/ÖNORM 8001-1 und ÖVE-EN 1 Teil 3 zu erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+24 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 25/64 =====
+ÖVE/ÖNORM E 8007:2007 
+25 
+5.5.2 
+Potenzialausgleichsleiter 
+müssen 
+isoliert 
+und 
+grün-gelb 
+gekennzeichnet 
+sein. 
+Potenzial-
+ausgleichsleiter zum Anschluss elektrisch leitender Türzargen dürfen auch aus blankem Metall sein. 
+5.5.3 
+Für jeden Stromkreis ist ein eigener Schutzleiter notwendig. 
+6 
+Sicherheitsstromversorgung (SV) und zusätzliche Sicherheitsstrom-
+versorgung (ZSV) 
+6.1 Allgemeines 
+In Krankenhäusern, Ambulatorien und anderen baulichen Anlagen mit entsprechender Zweckbestimmung ist 
+eine Sicherheitsstromversorgung erforderlich, die bei Störung der allgemeinen Stromversorgung die 
+Einrichtungen gemäß 6.2 und 6.3 nach einer zulässigen Umschaltzeit über eine bestimmte Zeit mit 
+elektrischer Energie versorgt. 
+Darüber 
+hinaus 
+kann 
+es 
+notwendig 
+sein, 
+bestimmte 
+Anlagen 
+und 
+Geräte 
+durch 
+eine 
+Sicherheitsstromversorgung weiter zu betreiben, wenn bei Ausfall der allgemeinen Stromversorgung eine 
+Gefährdung auftritt oder die Aufrechterhaltung des Krankenhausbetriebes nicht sichergestellt ist. 
+Wenn eine Störung eines oder mehrerer Außenleiter am Hauptverteiler des Gebäudes gemäß 3.4.7 vorliegt 
+müssen Einrichtungen gemäß 6.2 und 6.3 aus mindestens einer Sicherheitsstromquelle für die Dauer von 
+24 Stunden weiter betrieben werden können.  
+Diese Betriebsdauer der SV von mindestens 24 Stunden darf auf eine Betriebsdauer von mindestens 
+3 Stunden reduziert werden, wenn in Abhängigkeit von der medizinischen Betriebsart und der tatsächlichen 
+medizinischen Nutzung eine gefahrlose Beendigung der Untersuchung oder Behandlung und ein geordnetes 
+Verlassen des Gebäudes innerhalb dieser drei Stunden anzunehmen ist (dies kann zB bei Ambulatorien für 
+physikalische Therapie oder Röntgeninstitute zutreffen). 
+6.2 Sicherheitsstromversorgung mit Umschaltzeiten von 0 s bis 15 s 
+Eine Sicherheitsstromversorgung ist erforderlich für: 
+6.2.1 Sicherheitsbeleuchtung und Ersatzbeleuchtung 
+Als Kriterium für das Wirksamwerden einer Sicherheitsbeleuchtung in Bereitschaftsschaltung gilt eine Störung 
+der Allgemeinbeleuchtung gemäß 3.4.7 im zugehörigen Unterverteiler. 
+6.2.1.1 
+Die Sicherheitsbeleuchtung ist (soweit in anderen Abschnitten nichts anderes festgelegt ist) gemäß 
+ÖVE/ÖNORM E 8002-1 auszuführen für: 
+1) 
+Rettungswege, 
+2) 
+die Beleuchtung bzw. Hinterleuchtung von Rettungszeichen, 
+3) 
+Arbeitsplätze mit besonderer Gefährdung, 
+4) 
+Räume von Sicherheitsstromaggregaten, Hauptverteilern der Sicherheitsstromversorgung und Schalt-
+anlagen mit Nennspannungen über 1 kV. 
+Ab einer Anzahl von 50 Sicherheitsleuchten ist eine automatische Prüfeinrichtung gemäß ÖVE/ÖNORM 
+E 8002-1:2007, Abschnitt 7.4.3.8 auszuführen. Diese automatische Prüfeinrichtung wird auch bei geringerer 
+Stückzahl empfohlen, wodurch die tägliche Prüfpflicht gemäß ÖVE/ÖNORM E 8002-1:2007, Abschnitt 10.2.3 
+auf ein Jahr hinaufgesetzt wird. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+25 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 26/64 =====
+ÖVE/ÖNORM E 8007:2007 
+26 
+6.2.1.2 
+Die Ersatzbeleuchtung mit Umschaltzeiten bis 15 s ist auszuführen für: 
+1) 
+Arbeitsräume, soweit diese nach arbeitnehmerschutzrechtlichen Bestimmungen erforderlich ist oder die 
+Räume unter 5) fallen, 
+2) 
+Räume der Anwendungsgruppe 1, wobei in jedem Raum mindestens eine Leuchte der Allgemein-
+beleuchtung sowie vorhandene Untersuchungsleuchten von der Sicherheitsstromquelle eingespeist 
+werden müssen, 
+3) 
+Räume der Anwendungsgruppe 2, wobei die Raumbeleuchtung sowohl aus der Sicherheitsstromquelle 
+als auch aus der allgemeinen Stromversorgung oder der zusätzlichen Sicherheitsstromversorgung 
+gespeist 
+werden 
+muss. 
+In 
+jedem 
+Fall 
+müssen 
+50 % 
+der 
+Raumbeleuchtung 
+von 
+der 
+Sicherheitsstromquelle versorgt werden, 
+4) 
+Etagenbäder, Toiletten und Nasszellen, die auch von Patienten benutzt werden, 
+5) 
+Räume, die zur Aufrechterhaltung des Krankenhausbetriebes notwendig sind, wobei in jedem Raum 
+mindestens eine Leuchte von der Sicherheitsstromquelle angespeist werden muss. 
+6.2.2 Notwendige Sicherheitseinrichtungen mit Umschaltzeiten bis 15 s 
+Notwendige Sicherheitseinrichtungen sind auszuführen für: 
+– 
+Feuerwehraufzüge und notwendige Bettenaufzüge, 
+– 
+Rauch-, Wärmeabzugs- und Druckbelüftungsanlagen, 
+– 
+Lüftungsanlagen für Betriebsräume von Sicherheitsstromquellen, 
+– 
+Anlagen der Personenruftechnik (zB Lichtrufzentralen) und Telefonanlagen, 
+– 
+Alarm- und Warnanlagen, 
+– 
+Löschwasserversorgungsanlagen (ausgenommen Sprinkleranlagen gemäß TRVB S 127), 
+– 
+weitere Anlagenteile, die einer Sicherheitsstromversorgung und eines Funktionserhaltes bedürfen. 
+6.2.3 Medizinisch-technische Einrichtungen mit einer Umschaltzeit bis 15 s 
+Medizinisch-technische Einrichtungen sind auszuführen für: 
+– 
+notwendige medizinische elektrische Geräte, 
+– 
+elektrische 
+Einrichtungen 
+der 
+medizinischen 
+Gasversorgung 
+einschließlich 
+Druckluft, 
+Vakuumversorgung und Narkosegasabsaugung sowie deren Überwachungseinrichtungen. 
+6.3 Sicherheitsstromversorgung für Verbraucher ohne festgelegte Umschaltzeit 
+Nach gesichertem Betrieb der Einrichtungen gemäß 6.2 muss die Stromversorgung für weitere zur 
+Aufrechterhaltung des Krankenhausbetriebes unerlässliche Einrichtungen von der Sicherheitsstromquelle 
+übernommen werden. Die jeweilige Umschaltzeit richtet sich nach den betrieblichen Notwendigkeiten. Zu 
+diesen Einrichtungen gehören zB: 
+– 
+Sterilisationseinrichtungen, 
+– 
+haustechnische Anlagen, insbesondere Heizungs-, Lüftungs- (ohne Kältemaschinen), Versorgungs- und 
+Entsorgungsanlagen, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+26 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 27/64 =====
+ÖVE/ÖNORM E 8007:2007 
+27 
+– 
+Kühlanlagen, 
+– 
+Kocheinrichtungen, 
+– 
+Ladeeinrichtungen für Akkumulatoren, zB für zusätzliche Sicherheitsstromversorgung, 
+– 
+Schrankenanlagen bei Feuerwehr- und Rettungszufahrten, 
+– 
+sonstige Aufzüge. 
+Bei ausreichender Versorgung dürfen auch weitere Verbraucher zugeschaltet werden. 
+6.4 
+Zusätzliche Sicherheitsstromversorgung (ZSV) 
+6.4.1 Zusätzliche Sicherheitsstromversorgung mit einer Umschaltzeit bis 15 s 
+Elektromedizinische Geräte in Räumen der Anwendungsgruppe 2, die operativen Eingriffen oder Maß-
+nahmen dienen die lebenswichtig sind, müssen zusätzlich innerhalb von 15 s nach Ausfall der Spannung am 
+Verteiler des Isolationsüberwachungssystemes selbsttätig aus einer zusätzlichen Sicherheitsstromversorgung 
+für die Dauer von mindestens drei Stunden versorgt werden können. 
+Sie darf jedoch für mindestens eine Stunde bemessen sein, wenn eine weitere unabhängige 
+Sicherheitsstromquelle die Mindestbetriebsdauer von drei Stunden sicherstellt. 
+ANMERKUNG Die Sicherheitsstromversorgung gemäß 6.2 oder 6.3 ist nicht als weitere unabhängige Sicherheits-
+stromquelle anzusehen (zB gerätebezogene Sicherheitsstromversorgung). 
+Für die selbsttätige Umschalteinrichtung gilt 4 3.3.9. 
+ANMERKUNG Bei Erweiterung, Änderung oder Umbau elektrischer Anlagen der Anwendungsgruppe 2 kann es aus 
+technischen und wirtschaftlichen Gründen empfehlenswert sein, die elektromedizinischen Geräte bei Ausfall der 
+Netzspannung 
+an 
+der 
+IT-Schiene 
+aus 
+einer 
+dem 
+Bereich 
+zugeordneten 
+(dezentralen) 
+zusätzlichen 
+Sicherheitsstromversorgung zu versorgen. 
+Für Frühgeborenen-Stationen und akut gefährdete Patienten kann es erforderlich sein, außer den OP-Leuchten auch 
+andere Geräte, zB Beatmungs- und Überwachungsgeräte, bei Ausfall der Netzspannung innerhalb von 0,5 s oder kürzer, 
+weiter zu versorgen. 
+6.4.2 Zusätzliche Sicherheitsstromversorgung mit einer Umschaltzeit bis 0,5 s 
+Operationsleuchten und vergleichbare Leuchten müssen zusätzlich zur Sicherheitsstromversorgung 
+gemäß 6.1 aus einer Sicherheitsstromversorgung mit einer Umschaltzeit bis 0,5 s selbstständig weiter 
+betrieben werden können, wenn die Spannung  bei der Einspeisung der Leuchten unter den Wert von 90 % 
+der Nennspannung gesunken ist. Die Sicherheitsstromquelle muss für eine Versorgung von drei Stunden 
+bemessen sein. Sie darf jedoch für mindestens eine Stunde bemessen werden, wenn eine weiter 
+unabhängige Sicherheitsstromquelle die Mindestbetriebsdauer der Operationsleuchte von drei Stunden 
+sicherstellt. 
+ANMERKUNG 1 
+Die Sicherheitsstromversorgung gemäß 6.2 oder 6.3 ist nicht als weitere unabhängige 
+Sicherheitsstromquelle anzusehen (zB gerätebezogene Sicherheitsstromversorgung). 
+ANMERKUNG 2 
+Als vergleichbare Leuchten gelten auch die allgemeinen Raumleuchten oder Teile solcher, wenn sie 
+die Funktion einer OP- oder Untersuchungsleuchte ersetzen (zB in Herzkatheterräumen). 
+Auf die Errichtung einer eigenen zusätzlichen Sicherheitsstromversorgung gemäß 6.4.1 darf verzichtet 
+werden, wenn die zusätzliche Sicherheitsstromversorgung den Anforderungen gemäß 6.4.2 entspricht und 
+die Geräte gemäß 6.4.1 aus dieser zusätzlichen Sicherheitsstromversorgung mitversorgt werden können. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+27 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 28/64 =====
+ÖVE/ÖNORM E 8007:2007 
+28 
+In Räumen, in denen lebenswichtige oder chirurgische Geräte über eine ZSV-Anlage gemäß 6.4.1 versorgt 
+werden, ist auch eine ZSV-versorgte Beleuchtung vorzusehen, um die Untersuchung oder Behandlung 
+fortsetzen zu können. 
+Operationsleuchten und vergleichbare Leuchten müssen fest angeschlossen sein. 
+6.4.3 Bei ausreichender Versorgungsleistung der ZSV-Anlage in der Ausführung als Batterie- bzw. Batterie-
+Wechselrichteranlage dürfen auch andere elektromedizinische Geräte, wichtige Laborgeräte und für die 
+Untersuchung oder Behandlung wichtige EDV-Geräte (zB Patientendatenmanagementsysteme – PDMS) 
+angeschlossen werden, wenn dadurch die Versorgungssicherheit, insbesondere auch die Kurzschluss-
+selektivität der notwendigen Sicherheitseinrichtungen nicht beeinträchtigt wird (siehe Bild B.3 und Bild B.4). 
+Es ist zu verhindern, dass durch die Geräte allgemeiner Art, die an die ZSV-Anlage angeschlossen werden 
+dürfen, die Versorgungssicherheit der ZSV-Anlage gefährdet wird. Wenn die mit der ZSV-Anlage 
+mitversorgten Geräte in medizinisch genutzten Räumen aufgestellt sind und zum Funktionsbereich dieser 
+Räume gehören, sind entsprechende Beschriftungen der Anschlusssteckdosen ausreichend. Wenn die mit 
+der ZSV-Anlage mitversorgten Geräte außerhalb medizinisch genutzer Räume aufgestellt sind oder zu einem 
+anderen Funktionsbereich gehören, sind diese Geräte entweder fest oder mittels Sondersteckvorrichtungen 
+anzuschließen. 
+6.4.4 Wird 
+als 
+zusätzliche 
+Sicherheitsstromversorgung 
+eine 
+unterbrechungsfreie, 
+rotierende 
+Sicherheitsstromquelle 
+betrieben, 
+so 
+dürfen 
+alle 
+notwendigen 
+Sicherheitseinrichtungen 
+(zB 
+Sicherheitsbeleuchtung gemäß 6.2.1, Einrichtungen der ZSV, u. dgl.), wichtige elektromedizinische Geräte, 
+Laborgeräte, EDV-Anlagen sowie sonstige Anlagen der Informationstechnik, welche eine kurze Umschaltzeit 
+benötigen unter folgenden Voraussetzungen mitversorgt werden (siehe Bild B.2 und Bild B.3): 
+1) 
+Das Sicherheitsstromaggregat muss ausreichend bemessen sein, sodass der Betrieb und die zulässige 
+Umschaltzeit der notwendigen Sicherheitseinrichtungen nicht gefährdet werden. 
+2) 
+Es ist sicherzustellen, dass durch die Mitversorgung der nicht zu den notwendigen Sicherheits-
+einrichtungen gehörenden Verbraucher keine unzulässigen Beeinträchtigungen (Überlastungen, 
+Netzrückwirkungen) auftreten. 
+3) 
+Verbraucher, die nicht zu den notwendigen Sicherheitseinrichtungen gehören, sind über eine eigene 
+Leitungsanlage ab dem Gebäudehauptverteiler anzuspeisen, wobei die Kurzschlussselektivität der 
+notwendigen Sicherheitseinrichtungen nicht beeinträchtigt werden darf. 
+4) 
+Sicherheitsstromquellen für die zusätzliche Sicherheitsstromversorgung sind so zu bemessen, dass bei 
+der Zuschaltung und im dynamischen Betrieb keine größeren Abweichungen als 10 % von der 
+Nennspannung und 1 Hz von der Nennfrequenz auftreten. 
+5) 
+Die Verfügbarkeit des ZSV-Aggregates muss unabhängig von anderen Anlagen sein. Daher ist 
+insbesondere ein eigener Tank vorzusehen. 
+ANMERKUNG Die Mindestbetriebszeit von 3 Stunden kann auch durch den vorhandenen Tagestank 
+sichergestellt werden. 
+6.4.5 Der ZSV-Notbetrieb ist mit hoher Priorität an die Haus/Betriebstechnik zu melden. Darüber hinaus 
+muss eine automatische Meldung des ZSV-Notbetriebes akustisch (quittierbar) und optisch so erfolgen, dass 
+sie vom medizinischen Personal des betroffenen Bereiches wahrgenommen werden kann. Diese Meldung an 
+das medizinische Personal darf entfallen, wenn der Tankinhalt einer rotierenden Sicherheitsstromquelle für 
+einen Notbetrieb für mindestens 12 Stunden garantiert ist und eine kurzfristige Information des medizinischen 
+Personals durch eine andere, zB organisatorische Maßnahme sichergestellt wird. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+28 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 29/64 =====
+ÖVE/ÖNORM E 8007:2007 
+29 
+6.5 Allgemeine Anforderungen an Sicherheitsstromquellen (sofern zutreffend) 
+6.5.1 Für Stromquellen der Sicherheitsstromversorgung wird auf ÖVE-EN 1 Teil 4:1989, § 57 verwiesen. 
+6.5.2 Eine Sicherheitsstromquelle muss die Versorgung selbstständig übernehmen, wenn eine Störung der 
+allgemeinen Stromversorgung gemäß 3.4.7 an einem oder mehreren Außenleitern am Gebäudehauptverteiler 
+vorliegt. Die Übernahme der Versorgung muss mit Rücksicht auf Kurzzeitunterbrechung bei Berücksichtigung 
+der zulässigen Umschaltzeit verzögert erfolgen. 
+Nach Wiederkehr der allgemeinen Stromversorgung muss eine verzögerte, automatische Rückschaltung 
+erfolgen. 
+Eine unterbrechungsfreie Rückschaltung wird empfohlen. 
+6.5.3 Sicherheitsstromquellen sind so zu bemessen, dass sie mindestens 80 % der vorgesehenen 
+Verbraucherleistung innerhalb von 15 s übernehmen können. Die restlichen 20 % der Verbraucherleistung 
+müssen spätestens nach weiteren 5 s übernommen werden können. Dabei dürfen keine größeren 
+Abweichungen als 10 % von der Nennspannung und 5 Hz von der Nennfrequenz der Sicherheitsstromquelle 
+auftreten. 
+Als 
+Verbraucherleistung 
+gilt 
+die 
+Summenleistung 
+der 
+zu 
+versorgenden 
+Verbraucher 
+der 
+Sicherheitsstromversorgung unter Berücksichtigung der Gleichzeitigkeitsfaktoren dieser Verbraucher. 
+Bei der Bemessung ist auf die Art der Verbraucher (Aufzüge, Pumpen, Ventilatoren Stromrichter) wegen des 
+Auftretens möglicher Laststöße und/oder Oberschwingungen zu achten. 
+6.5.4 Im statischen Betrieb darf die Abweichung von der Nennspannung an den Ausgangsklemmen der 
+Sicherheitsstromquelle nicht mehr als ± 1 % und von der Nennfrequenz nicht mehr als 1 Hz betragen. 
+6.5.5 Der Oberschwingungsanteil an den Ausgangsklemmen der Sicherheitsstromquelle darf unter Nenn-
+bedingungen, bei Verbrauchern mit linearem Strom-Spannungsverhältnis, bis zur Nennleistung nicht mehr als 
+5 % betragen. Dies gilt sowohl für die verkettete Spannung als auch für die Strangspannung. 
+6.5.6 Die produktspezifisch zutreffenden EMV-Anforderungen für Sicherheitsstromquellen sind einzuhalten. 
+6.5.7 Die 
+Verbindungsleitungen 
+zwischen 
+einzelnen 
+Bauteilen 
+oder 
+Baugruppen 
+der 
+Sicherheitsstromquellen müssen kurzschluss- und erdschlusssicher gemäß ÖVE/ÖNORM E 8001-1:2000, 
+Abschnitt 3.7.9 und ÖVE-EN 1 Teil 3 § 42 ausgeführt sein. 
+6.5.8 Eine Sicherheitsstromquelle mit dreiphasigem Ausgang muss bei einer Schieflast von 100 % 
+Phasenstrom die Versorgung der ihr zugeordneten Verbraucher der Sicherheitsstromversorgung 
+sicherstellen. 
+6.5.9 Eine Sicherheitsstromquelle muss mit 10 % der Nennleistung für die Dauer einer Stunde überlastbar 
+sein. Dieser Überlastfall muss nach zwölf Stunden wiederholt werden können. 
+6.5.10 Der Nennstrom der Sicherheitsstromquelle muss mindestens zehnmal so groß wie die Summe der 
+Leerlaufströme aller Transformatoren bei Isolationsüberwachungssystem sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+29 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 30/64 =====
+ÖVE/ÖNORM E 8007:2007 
+30 
+6.5.11 Die Betätigungseinrichtungen der Sicherheitsstromquelle müssen mindestens folgende Betriebs-
+zustände ermöglichen: 
+– 
+automatischer Betrieb, 
+– 
+Probebetrieb zur Überprüfung aller automatisch ablaufenden Vorgänge; bei einem Netzausfall während 
+der Probe muss die Lastübernahme in jedem Fall selbsttätig stattfinden, 
+– 
+Handbetätigung für: 
+ 
+„Start“, 
+ 
+„Stopp“, 
+ 
+„Sicherheitsstromquelle Ein/Aus“, 
+ 
+„Netz Ein/Aus“, 
+– 
+Sperrung jeglichen Betriebes, zB bei Wartungsarbeiten, 
+– 
+Not-Aus. 
+6.5.12 Sicherheitsstromquellen müssen folgende Mess- und Überwachungseinrichtungen haben: 
+– 
+Spannungs- und Strommesser in jedem Außenleiter, 
+– 
+Frequenzmesser bei Sicherheitsstromquellen mit Wechsel- bzw. Drehstromausgang, 
+– 
+Batterieladekreisüberwachung. 
+Folgende Betriebszustände sind optisch anzuzeigen: 
+– 
+Netz-Betrieb, 
+– 
+Sicherheitsstromquellen-Betrieb, 
+– 
+Störung der Sicherheitsstromquelle, 
+– 
+Probebetrieb. 
+Die Weiterleitung dieser Meldungen muss möglich sein. Die Meldungen „Störung der Sicherheitsstromquelle“ 
+und „Treibstoffvorrat für Nennbetriebsdauer unterschritten“ müssen außerdem an geeigneter Stelle optisch 
+und akustisch erfolgen. Die akustische Meldung muss Iöschbar sein. Die Funktionsfähigkeit von Meldelampen 
+muss prüfbar sein. 
+6.6 Zusätzliche Anforderungen an Stromerzeugungsaggregate mit Hubkolben-
+Verbrennungsmotoren als Sicherheitsstromquelle 
+6.6.1 Soweit in diesen Bestimmungen keine anderen Anforderungen enthalten sind, gelten für die 
+Ausführung und Errichtung der Aggregate je nach zutreffen die Anforderungen gemäß DIN 6280-13, 
+DIN ISO 8528 Reihe und ÖVE/ÖNORM EN 88528-11. 
+Es sind luftgekühlte Kraftmaschinen oder wassergekühlte Kraftmaschinen mit Luftrückkühlung zu verwenden. 
+Bei Blockheizkraftwerken müssen ein Notkühler und eine Kraftmaschine mit der vollen Leistung als Reserve 
+vorhanden sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+30 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 31/64 =====
+ÖVE/ÖNORM E 8007:2007 
+31 
+6.6.2 Die Ladeeinrichtung für die Starteinrichtung ist so zu bemessen, dass der entladene Energiespeicher 
+(Batterie oder Druckbehälter) in maximal sechs Stunden wieder so geladen wird, dass damit 
+bestimmungsgemäß gestartet werden kann. 
+6.6.3 Die Lüftungsjalousien müssen auch von Hand betätigt werden können. 
+6.6.4 Für die Sicherheitsstromversorgung ist ein Wirkleistungsmesser vorzusehen, der sowohl die Leistung 
+bei Versorgung aus dem Netz als auch aus der Sicherheitsstromquelle anzeigt. 
+6.6.5 Mindestens folgende Störungsmeldungen sind am Schaltschrank erforderlich: 
+– 
+Batteriespannung unterschritten, 
+– 
+Anlassluftdruck unterschritten (falls vorhanden), 
+– 
+Anlauf gestört, 
+– 
+Motortemperatur zu hoch, 
+– 
+Schmieröldruck zu nieder, 
+– 
+Überdrehzahl, 
+– 
+Generator-Überstrom, 
+– 
+Treibstoffvorrat für die Nennbetriebsdauer unterschritten, 
+– 
+Kraftstoffförderpumpe defekt (bei Einsatz eines Kraftstoff-Servicebehälters). 
+6.6.6 Folgende Betriebs- und Störungsmeldungen sind an einer zentralen, während der Betriebszeit ständig 
+überwachten Stelle erforderlich: 
+– 
+Aggregat betriebsbereit (Schalterstellung: Automatik), 
+– 
+Aggregat in Betrieb – Verbraucher werden vom Sicherheitsstromaggregat versorgt, 
+– 
+Aggregat in Betrieb – Verbraucher werden vom allgemeinen Netz versorgt, 
+– 
+Aggregat gestört (Sammelmeldung für Störungen gemäß 6.6). 
+6.7 Zusätzliche Anforderungen an batteriegestützten Anlagen mit oder ohne Umrichter als 
+Sicherheitsstromquelle 
+6.7.1 Aufstellung, Prüfung und Wartung 
+– 
+Akkumulatoren gemäß ÖVE/ÖNORM EN 50272-2, 
+– 
+Ladeeinrichtung 
+gemäß 
+ÖVE/ÖNORM EN 50272-2, 
+ÖVE/ÖNORM EN 62040-1-1, 
+ÖVE/ÖNORM 
+EN 62040-1-2, DIN 41773-1 und DIN 41773-2, 
+– 
+Stromrichter/Umrichter gemäß ÖVE/ÖNORM EN 60146-2. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+31 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 32/64 =====
+ÖVE/ÖNORM E 8007:2007 
+32 
+6.7.2 Eine batteriegestützte ZSV-Anlage muss aus dem Erhaltungsladebetrieb mindestens für die Dauer 
+von 3 Stunden mit Nennleistung, bei Wechsel- bzw. Drehstrom mit Nennleistung bei cos φ ≥ 0,8 induktiv 
+betrieben werden können. Sie darf für die Dauer von 1 Stunde bemessen sein, wenn eine weitere 
+unabhängige Sicherheitsstromquelle die Mindestdauer von 3 Stunden sicherstellt. Die Batterie muss nach 
+einer Ladedauer von maximal 6 Stunden wieder die gleiche Entnahme ermöglichen. Diese Bedingungen 
+gelten bei einer Umgebungstemperatur von +20 ºC. 
+6.7.3 Es dürfen nur ortsfeste Batterien gemäß ÖVE/ÖNORM E 8002-1:2007, Abschnitt 7.4.3 (Zentral-
+batterieanlage) verwendet werden.  
+6.7.4 Der einwandfreie Ladezustand der Akkumulatoren muss durch selbsttätiges Laden und 
+Erhaltungsladen sichergestellt sein. 
+6.7.5 Der Spannungsabfall auf der Lade-/Entladeleitung, zwischen Batterie und Stromrichter/Umrichter, darf 
+bei Nennstrom 1 % der Nennspannung nicht überschreiten. 
+6.8 Zusätzliche Anforderungen an die Stromversorgung von OP-Leuchten 
+Bei OP-Leuchten oder vergleichbaren Leuchten muss die Spannung um ± 5 % der Nennspannung in 
+Schritten von höchstens 2 % der Nennspannung angepasst werden können, um anlagebedingte 
+Spannungsabfälle auszugleichen. Bei Leistungsänderungen von 100 % der Nennleistung müssen die 
+Grenzwerte der Abweichungen von der Nennausgangsspannung nach maximal 0,5 s wieder eingehalten 
+werden. 
+6.9 Besondere Anforderungen an die Leitungsnetze der Sicherheitsstromversorgung und 
+der zusätzlichen Sicherheitsstromversorgung 
+6.9.1 Kabel oder Leitungen zwischen Sicherheitsstromquelle und der zugehörigen ersten Überstrom-
+Schutzeinrichtung sowie zwischen Batterie und Ladegerät müssen kurzschluss- und erdschlusssicher gemäß 
+ÖVE/ÖNORM E 8001-1:2000, Abschnitt 3.7.9 und ÖVE-EN 1 Teil 3 § 42 verlegt sein. Sie dürfen sich nicht in 
+der Nähe brennbarer Materialien befinden. 
+6.9.2 Für die Versorgung der Verbraucher der notwendigen Sicherheitseinrichtungen ist ein eigenes 
+Verteilungs- und Verbrauchernetz ab der Netzumschaltung erforderlich. Dieses Verteilungs- und 
+Verbrauchernetz muss getrennt sein vom Netz der Verbraucher der allgemeinen Stromversorgung und vom 
+Netz der Verbraucher der Sicherheitsstromversorgung, welches die Verbraucher versorgt, die nicht zu den 
+notwendigen Sicherheitseinrichtungen gehören. 
+6.9.3 Soll eine Sicherheitsstromquelle über die NSE hinaus alle Verbraucher eines Gebäudes versorgen 
+(Vollversorgung), so sind ab der Netzumschaltung bis zum Gebäudehauptverteiler zwei unabhängige 
+Einspeisungen erforderlich. Ab dem Gebäudehauptverteiler ist ein eigenes Verteilungs- und Verbrauchernetz 
+für die NSE erforderlich.  
+6.9.4 Bei Stromversorgung eines oder mehrerer Gebäude von einer zentralen Stelle aus gelten für die 
+Zuleitung zu den einzelnen Gebäuden die Anforderungen gemäß 6.9.4.1 bis 6.9.4.4 (siehe Bild B.1). 
+6.9.4.1 
+Einrichtungen, die bei Störung der allgemeinen Stromversorgung gemäß 3.4.7 das Inbetriebsetzen 
+der 
+Sicherheitsstromquelle 
+und 
+die 
+Umschaltung 
+der 
+Sicherheitsstromversorgung 
+auf 
+die 
+Sicherheitsstromquelle bewirken, müssen sich im Hauptverteiler der zentralen Versorgungsanlage befinden. 
+6.9.4.2 
+In jedem Gebäudehauptverteiler muss sich eine Einrichtung befinden, die bei Ausfall mindestens 
+eines Außenleiters an der Einspeisestelle der SV-Schiene (von AV-Schiene oder von SV-Anspeiseleitung) die 
+Versorgung über die zweite Einspeisestelle (SV-Anspeiseleitung oder AV-Schiene) sicherstellt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+32 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 33/64 =====
+ÖVE/ÖNORM E 8007:2007 
+33 
+6.9.4.3 
+Leitungen der allgemeinen Stromversorgung, der Sicherheitsstromversorgung und der zusätzlichen 
+Sicherheitsstromversorgung sind bei Verlegung im Erdreich auf getrennten Trassen mit einem 
+Mindestabstand von 2 m oder in einer Stufenkünette mit einem Höhenunterschied von mindestens 1 m zu 
+verlegen. Im Nahbereich einer Gebäudeeinführung dürfen Kabel den Abstand von 2 m unterschreiten, wenn 
+besonderer mechanischer Schutz gegen Beschädigungen bei Tiefbauarbeiten vorgesehen ist. 
+6.9.4.4 
+Bei Leitungsanlagen außerhalb des Erdreiches, zB im Kollektor, darf die Leitungsanlage der 
+Sicherheitsstromversorgung 
+auf 
+der 
+gleichen 
+Trasse 
+wie 
+die 
+Leitungsanlage 
+der 
+allgemeinen 
+Stromversorgung geführt werden, wenn sie so vor äußerer Brandeinwirkung geschützt ist, dass sie im 
+Brandfall für die Dauer von mindestens 90 min gemäß ÖNORM DIN 4102-12 funktionsfähig bleibt. 
+Dieser Funktionserhalt kann entfallen, wenn in einem Brandfall der Funktionserhalt der Leitungsanlagen für 
+die notwendigen Sicherheitseinrichtungen (NSE) anderwärtig gewährleistet ist (zB dezentrale Versorgung der 
+NSE oder Versorgung der NSE über eine getrennte Leitungsanlage mit Funktionserhalt u. dgl.). 
+6.9.5 In allen Stromkreisen der Sicherheitsstromversorgung (SV und ZSV) müssen die Kennwerte der 
+Sicherheitsstromquellen und der Schutzeinrichtungen sowie die Querschnitte der Leiter sowohl bei 
+Versorgung aus der allgemeinen Stromversorgung als auch aus der Sicherheitsstromquelle so ausgewählt 
+werden, dass bei einem Kurzschluss in einem Stromkreis an beliebiger Stelle der Ausfall der zugehörigen 
+Verteilereinspeisung vermieden wird. 
+Ein Nachweis der Kurzschlussselektivität ab der Schutzeinrichtung im Hauptverteiler bis zu den Gruppen-
+Kurzschluss-Schutzeinrichtungen 
+der 
+Fehlerstrom-Schutzeinrichtungen 
+bzw. 
+Kurzschluss-
+Schutzeinrichtungen im Unterverteiler der notwendigen Sicherheitseinrichtungen ist zu erbringen (siehe 
+Bild 1). 
+Bei Versorgung über NSE-Batterieanlagen kann die Kurzschlussselektivität durch Vergleich der Kennlinien 
+der zum Einsatz kommenden Kurzschluss-Schutzeinrichtungen nachgewiesen werden. 
+ANMERKUNG Um eine Kurzschlussselektivität gewährleisten zu können, kann der Einsatz von Leistungsschaltern 
+mit den entsprechenden Auslösesystemen erforderlich sein. 
+6.9.6 In einem mehradrigen Kabel oder einer mehradrigen Leitung der Sicherheitsstromversorgung darf ein 
+Stromkreis nur mit einem zugehörigen Hilfsstromkreis zusammengefasst werden. Das Zusammenfassen von 
+mehreren Hauptstromkreisen in einem Kabel oder einer Leitung (zB auch Beleuchtungsstromkreise mit 
+gemeinsamem Neutralleiter) ist nicht zulässig. 
+6.10 Steuerstromkreise 
+Steuerstromkreise der Sicherheitsstromversorgung sind so errichten, dass ein einziger Fehler im 
+Steuerstromkreis, mit dessen Auftreten gerechnet werden, nicht zum gleichzeitigen Ausfall der 
+Sicherheitsstromversorgung und der allgemeinen Stromversorgung führt. 
+Solche Fehler sind zB Ausfall der Steuerspannung, Ansprechen einer Schutzeinrichtung, Körper- oder 
+Erdschluss im Steuerstromkreis, Leitungsunterbrechung im Steuerstromkreis. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+33 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 34/64 =====
+ÖVE/ÖNORM E 8007:2007 
+34 
+Bild 1 – Selektivität der Kurzschlussschutzgeräte im SV- und ZSV-Netz 
+ 
+Unterverteiler
+Einspeisung 
+Unterverteiler mit 
+Leistungstrenner
+Betriebsmittel/Verbraucher
+Überstrom - 
+Schutzeinrichtung(en)
+abgehendes 
+Schutzorgan mit 
+Leistungsschalter
+Anlagenhauptverteiler
+Einspeisung
+SV oder ZSV - 
+Quelle
+Kabel
+Anlagenbereich 
+ohne Nachweis der Selektivit t
+Anlagenbereich 
+Nachweis der Kurzschulussselektivit t
+Fehlerschutz
+Leitungsschutz-
+schalter
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+34 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 35/64 =====
+ÖVE/ÖNORM E 8007:2007 
+35 
+7 
+Maßnahmen für Explosions- und Brandschutz, Schutz vor elektrostatischer 
+Aufladung 
+7.1 Explosionsschutz in medizinisch genutzten Räumen 
+7.1.1 Innerhalb der explosionsgefährdeten Zonen gemäß 3.3.16 von medizinisch genutzten Räumen dürfen 
+nur angewendet werden: 
+1) 
+in Zone G: Elektromedizinische Geräte der Klasse APG (Anästhesiemittelprüfung der Klasse G). 
+2) 
+in Zone M: Elektromedizinische Geräte der Klasse APG (Anästhesiemittelprüfung der Klasse G) oder der 
+Klasse AP (Anästhesiemittelprüfung der Klasse M). 
+ANMERKUNG Welche Bereiche von elektromedizinisch genutzten Räumen als explosionsgefährdet im Sinne 
+von 7.1 gelten, kann gemäß Anhang A.1 festgestellt werden. Hinsichtlich der Beurteilung der Vermeidung von 
+Zündgefahren infolge elektrischer Aufladung ist die deutsche BGR 132 „Richtlinien für die Vermeidung von 
+Zündgefahren infolge elektrostatischer Aufladungen“ (Auszug siehe Anhang A.1) als Regel der Technik zu 
+beachten. 
+7.1.2 Wenn 
+in 
+medizinisch 
+genutzten 
+Räumen 
+explosionsgefährdete 
+Bereiche 
+durch 
+andere 
+explosionsfähige Atmosphären als durch Anästhesiemittel oder medizinische Hautreinigungs- oder 
+Desinfektionsmittel auftreten, müssen medizinische elektrische Geräte zusätzlich den Anforderungen der 
+Gruppe II nach Explosionsschutzverordnung 1996 entsprechen.  
+7.2 Brandschutz 
+Soweit Anlagenteile Leitungen für verbrennungsfördernde Gase, zB Sauerstoff, Lachgas, enthalten sind 
+die folgenden Anforderungen zu berücksichtigen: 
+7.2.1 Elektrische Betriebsmittel (Steckdosen und Schalter) müssen in einem Abstand von mindestens 0,2 m 
+(Mittelpunkt zu Mittelpunkt) von Auslässen verbrennungsfördernder oder brennbarer Gase installiert sein. 
+7.2.2 Wenn betriebsmäßig stromführende elektrische Leitungen (auch Datenleitungen) gemeinsam mit 
+Leitungen für verbrennungsfördernde Gase (zB Sauerstoff, Lachgas) in Kanälen, Rohren oder Gehäusen 
+verlegt sind, müssen die elektrischen Leitungen mindestens der Bauart mittlere PVC-Schlauchleitung gemäß 
+ÖVE/ÖNORM E 8241-5 entsprechen, wenn das Produkt aus Leerlaufspannung und Kurzschlussstrom den 
+Wert von 10 VA übersteigt. 
+7.2.3 Brandschutz für elektrische Leitungsanlagen von notwendigen Sicherheitseinrichtungen 
+Die elektrischen Leitungsanlagen von notwendigen Sicherheitseinrichtungen müssen so beschaffen sein, 
+dass diese Sicherheitseinrichtungen im Falle eines Brandes für eine bestimmte Zeit weiter die Funktion der 
+Anlage gewährleisten. 
+7.2.3.1 
+LeitungsanIagen 
+Die Betriebssicherheit notwendiger Sicherheitseinrichtungen ist sichergestellt, wenn die elektrischen 
+Leitungsanlagen so ausgeführt oder durch Bauteile umkleidet werden, dass sie bei äußerer Brandeinwirkung 
+für eine ausreichende Zeitdauer funktionsfähig bleiben. 
+Dies umfasst nicht nur die Leitungsanlage selbst, sondern auch die Leitungsträger und deren 
+Befestigungselemente (zB keine Kunststoffdübel). Ebenso darf die Funktion notwendiger Sicherheits-
+einrichtungen nicht durch andere (zB herabfallende) Gebäudeeinbauten gefährdet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+35 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 36/64 =====
+ÖVE/ÖNORM E 8007:2007 
+36 
+Die Dauer des Funktionserhaltes wird gemäß ÖNORM DIN 4102-12 geprüft und muss mindestens betragen: 
+1) 
+30 Minuten bei 
+– 
+Anlagen zur Alarmierung und Erteilung von Anweisungen an Besucher und Beschäftigte, 
+ANMERKUNG Lichtrufanlagen im Patientenbereich zählen in der Regel nicht zu den notwendigen 
+Sicherheitseinrichtungen mit der Erfordernis eines Funktionserhalts, es sei denn, sie müssen die Funktion 
+der Alarmierung im Brandfall übernehmen, weil andere Alarmierungsanlagen unzureichend sind. 
+– 
+Sicherheitsbeleuchtung gemäß 6.2.1.1 in Rettungswegen, ausgenommen jener Teile der 
+Endstromkreise, deren Ausfall zu keiner unzulässigen Beeinträchtigung anderer Bereiche der 
+Rettungswege führt, d. h.: 
+ 
+Der Verzicht auf den Funktionserhalt ist nur innerhalb des letzten Brandabschnittes zulässig. Aus 
+diesem Brandabschnitt dürfen keine Leitungen in weitere Brandabschnitte abgehen, ausgenommen 
+Leitungen in Unterbrandabschnitte gemäß TRVB B 108 mit maximal je zwei Sicherheitsleuchten (mit 
+oder ohne Piktogramm). 
+ 
+Bei 
+einem 
+lokalen 
+Brand 
+in 
+einem 
+mitversorgten 
+Unterbrandabschnitt 
+darf 
+die 
+Sicherheitsbeleuchtung der Rettungswege nicht unzulässig beeinträchtigt werden. Dies ist dann 
+erfüllt, wenn mindestens 50 % der Sicherheitsbeleuchtung in den Rettungswegen (zB durch eine 
+alternierende Stromkreisaufteilung der Sicherheitsleuchten) funktionsfähig bleibt. Bei Fluchtstiegen-
+häusern müssen 100 % der Sicherheitsbeleuchtung in den Rettungswegen funktionsfähig sein. 
+ANMERKUNG Die Überlegung geht davon aus, dass die unmittelbare Umgebung eines Brandherdes 
+sowieso sofort verlassen werden muss. Bei großen Brandabschnitten (größer 1 600 m2) sind besondere 
+Überlegungen erforderlich, welche die Rettungswegsituation, die Leuchtenanordnung und die 
+Leitungsführung berücksichtigen. Dazu kann es hilfreich sein, einen großen Brandabschnitt in kleinere, 
+voneinander unabhängige Anspeisebereiche mit Funktionserhalt zu unterteilen. Außerdem ist die örtliche 
+Situierung des Verteilers zu berücksichtigen. 
+– 
+Leitungen zur externen Alarmweiterleitung, wenn sie durch nicht überwachte Bereiche führen, 
+– 
+natürlichen Rauchabzugsanlagen (Rauchableitung durch thermischen Auftrieb); ausgenommen sind 
+Anlagen, die bei einer Störung der Stromversorgung selbsttätig öffnen, sowie Leitungsanlagen in 
+Räumen, die durch automatische Brandmelder überwacht werden und das Ansprechen eines 
+Brandmelders durch Rauch bewirkt, dass die Anlage selbsttätig öffnet, 
+– 
+Personenaufzügen und Bettenaufzüge, die nicht unter 7.2.3.1, 2) fallen. Die Forderung auf E 30 
+entfällt, wenn die Versorgungs- und Steuerleitungen nur durch Bereiche führen, welche durch eine 
+automatische Brandmeldeanlage überwacht sind. 
+2) 
+90 Minuten bei 
+– 
+Löschwasserversorgungsanlagen (ausgenommen Sprinkleranlagen gemäß TRVB S 127), 
+– 
+Lüftungsanlagen von Sicherheitstreppenräumen, innen liegenden Treppenräumen, Fahrschächten, 
+Sicherheitsschleusen und Triebwerksräumen von Feuerwehraufzügen, 
+– 
+mechanische Rauch- und Wärmeabzugsanlagen und Druckbelüftungsanlagen, 
+– 
+Feuerwehraufzügen und Personenaufzügen in Hochhäusern gemäß ÖVE-EN 1 Teil 4:1991 § 95, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+36 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 37/64 =====
+ÖVE/ÖNORM E 8007:2007 
+37 
+– 
+zusätzlicher Sicherheitsstromversorgung gemäß 6.4, ausgenommen Endstromkreise, deren Ausfall 
+zu keiner Beeinträchtigung anderer Bereiche führt. Endstromkreise, die in weitere Brandabschnitte 
+führen, sind jedenfalls entsprechend zu schützen. 
+ 
+Die Forderung nach Funktionserhalt gilt auch als erfüllt, wenn die beiden Leitungen von ZSV und 
+SV vor der örtlichen Umschalteinrichtung gemäß 4.3.3.1.1 in unterschiedlichen Brandabschnitten 
+geführt werden. 
+Die Anforderung an den Funktionserhalt der Leitungsanlage für notwendige Sicherheitseinrichtungen richtet 
+sich primär an die starkstromseitige Anspeisung. Der Funktionserhalt kann auch für nachrichtentechnische 
+Anlagen, die nicht in den Anwendungsbereich dieser ÖVE/ÖNORM fallen (zB Anlage zur Alarmierung), 
+notwendig sein. 
+Auf den Funktionserhalt der starkstromseitigen Anspeisung darf verzichtet werden, wenn die Anlage mit einer 
+eigenen Batterie ausgestattet ist, die den funktionellen Anforderungen dieser Bestimmung entspricht und die 
+gemäß ÖVE/ÖNORM EN 60896-11 gewartet wird. 
+Verteiler gelten als Bestandteil der Leitungsanlage. 
+Der Funktionserhalt der Verteiler ist sichergestellt, wenn die Verteiler in eigenen, nur für Sicherheits-
+einrichtungen genutzten Räumen untergebracht werden, die gegenüber anderen Räumen durch Wände, 
+Decken und Türen mit einer Brandwiderstandsdauer entsprechend der für die Leitungsanlage geforderten 
+Dauer des Funktionserhaltes abgetrennt sind oder folgende Anforderungen erfüllt sind: 
+– 
+das Verteilergehäuse besitzt nur geringfügige Öffnungen für Lüftungsschlitze und 
+– 
+im Umkreis von 2,4 m um den Verteiler entsprechen die Fußbodenbeläge und Wandverkleidungen der 
+Euroklasse des Brandverhaltens gemäß ÖNORM EN 13501-1 mindestens C und s1 und  
+ANMERKUNG 
+Euroklasse C äquivalent B1 gemäß ÖNORM B 3800-1 und Euroklasse s1 äquivalent Q1 
+gemäß ÖNORM B 3800-1 
+– 
+sichergestellt wird, dass keine Lagerung von Gegenständen in diesem Bereich erfolgt und 
+– 
+der Bereich vor der Messeinrichtung bzw. vor dem Verteiler durch eine automatische Brandmeldeanlage 
+überwacht wird und 
+– 
+der Verteiler(bereich) mit gefordertem Funktionserhalt (30 Minuten bzw. 90 Minuten) ist von 
+angrenzenden Verteilerfeldern oder sonstigen Bereichen mit erhöhter Brandgefahr entsprechend der 
+geforderten Dauer des Funktionserhaltes durch eine Trennwand abgeschottet (siehe Bild B.2, Bild B.3 
+und Bild B.5). 
+7.3 Vermeidung von elektrostatischer Aufladung 
+Zur Vermeidung der elektrostatischen Aufladung sind Fußböden der Klasse I gemäß ÖNORM B 5220 
+auszuführen, zB in folgenden Räumen: 
+– 
+Herzkatheterräume, 
+– 
+Intensiv-Überwachungsräume, 
+– 
+Intensiv-Untersuchungsräume, 
+– 
+Operations-Gipsräume, 
+– 
+Operationsräume, 
+– 
+Operationsvorbereitungsräume, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+37 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 38/64 =====
+ÖVE/ÖNORM E 8007:2007 
+38 
+– 
+Aufwachräume, 
+– 
+Chirurgische Ambulanzen, 
+– 
+Notfall- und Akutdialyseräume, 
+– 
+Entbindungsräume, 
+– 
+EEG-Räume, 
+– 
+EMG-Räume, 
+– 
+Obduktionsräume, 
+– 
+Räume für Lagerung oder Abfüllung von brennbaren Flüssigkeiten der Gefahrenklasse 1, 
+– 
+Gaslagerräume, 
+– 
+Chemielabors, 
+– 
+Dunkelkammern, 
+– 
+Rechner- bzw. EDV-Räume,  
+– 
+IMCU-Räume, 
+und sofern mit Röntgenkassetten gearbeitet wird (Verblitzungsgefahr) oder der Errichter der Röntgen-
+einrichtung besondere Anforderungen stellt: 
+– 
+Räume für radiologische Diagnostik und Therapie, 
+– 
+Röntgenräume. 
+ANMERKUNG Siehe auch Brandschutz und Explosionsschutz – Anhang A. 
+8 
+Beeinflussung von elektro-medizinischen Einrichtungen durch Starkstrom-
+anlagen 
+Elektrische Betriebsmittel dürfen in Ihrer Funktion durch elektrische oder magnetische Felder der 
+Starkstromanlagen nicht gestört werden. 
+Besonders kritisch sind Bereiche, in denen bestimmungsgemäß elektro-medizinische Messeinrichtungen zur 
+Anwendung kommen. 
+Zu diesen gehören insbesondere: 
+– 
+EEG-Räume, EKG-Räume und EMG-Räume, 
+– 
+Intensiv-Untersuchungsräume, 
+– 
+Intensiv-Überwachungsräume, 
+– 
+Herzkatheterräume, 
+– 
+Operationsräume. 
+Empfehlungen gegen die Beeinflussung von elektromedizinischen Messeinrichtungen durch Starkstrom-
+anlagen siehe Anhang D. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+38 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 39/64 =====
+ÖVE/ÖNORM E 8007:2007 
+39 
+9 
+Medizinische Einrichtungen außerhalb von Krankenhäusern 
+9.1 Praxisräume der Human- und Dentalmedizin 
+9.1.1 Zuordnung der Räume zu den Anwendungsgruppen 
+Die richtige Zuordnung der Räume zu den Anwendungsgruppen ergibt sich aus den Anforderungen 
+gemäß 3.2.1 bis 3.2.3 in Verbindung mit den Beispielen gemäß Tabelle 1. 
+9.1.2 Schutzmaßnahmen bei indirektem Berühren 
+9.1.2.1 
+In Räumen der Anwendungsgruppe 0 sind Schutzmaßnahmen gemäß ÖVE/ÖNORM E 8001-1 
+anzuwenden. 
+9.1.2.2 
+In Räumen der Anwendungsgruppe 1 und Anwendungsgruppe 2 ist Abschnitt 5.3 anzuwenden. 
+ANMERKUNG Die der Untersuchung oder Behandlung von Patienten dienenden Räume in ärztlichen Praxen der 
+Human- oder Dentalmedizin sind in der Regel Räume der Anwendungsgruppe 1. 
+9.1.3 ZusätzIicher PotenziaIausgIeich 
+In Räumen der Anwendungsgruppe 1 und Anwendungsgruppe 2 ist ein zusätzlicher Potentialausgleich 
+gemäß 5.4 und 5.5 zu errichten. 
+9.1.4 Sicherheitsstromversorgung 
+Bei Störung der allgemeinen Stromversorgung gemäß 3.4.7 müssen folgende Einrichtungen aus einer 
+geeigneten Sicherheitsstromversorgung für die Dauer von mindestens drei Stunden weiter betrieben werden 
+können: 
+In Räumen der Anwendungsgruppe 2 müssen nachfolgende Einrichtungen aus einer Sicherheitsstromquelle 
+gemäß 6.4 versorgt werden: 
+– 
+Operationsleuchten und vergleichbare Leuchten mit einer Umschaltzeit von höchstens 0,5 s, 
+– 
+lebenswichtige elektromedizinische Geräte mit einer Umschaltzeit von höchstens 15 s. 
+Bei entsprechender Auslegung dieser Anlage und einer maximal zu erwartenden Behandlungszeit von 
+1 Stunde kann diese Anlage auch die Funktion der Sicherheitsstromversorgung für weitere NSE und wichtige 
+medizinische Geräte gemäß 6.2.3 übernehmen. 
+9.2 Versorgung von medizinischen elektrischen Geräten, die eine besonders hohe 
+elektrische bzw. Betriebssicherheit erfordern (zB Heimdialyse, Beatmung) 
+Für die regelmäßige Versorgung von Geräten für die Heimdialyse in Räumen von Wohnungen sind 
+Maßnahmen gemäß 9.2.1 oder eine Anschlusseinrichtung gemäß 9.2.2 vorzusehen. 
+9.2.1 Maßnahmen in der elektrischen Anlage 
+1) 
+Es ist ein eigener Stromkreis, beginnend am Unterverteiler der Wohnung, zu errichten. 
+2) 
+Der Stromkreis ist mit einer Fehlerstrom-Schutzeinrichtung mit IΔN ≤ 0,03 A gemäß ÖVE/ÖNORM 
+E 8001-1 zu schützen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+39 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 40/64 =====
+ÖVE/ÖNORM E 8007:2007 
+40 
+3) 
+Für den Anschluss des medizinischen elektrischen Gerätes sind Steckvorrichtungen vorzusehen, die mit 
+den übrigen Steckdosen unverwechselbar, zB Steckvorrichtung ausgeführt gemäß ÖNORM E 6610, oder 
+besonders gekennzeichnet ist. 
+4) 
+Es ist ein zusätzlicher Potenzialausgleich in der Patientenumgebung gemäß Bild C.1 zu errichten, in den 
+alle fremden leitfähigen Teile einbezogen werden müssen, die der Patient während der Behandlung 
+berühren kann. 
+9.2.2 AnschIusseinrichtung zwischen Steckdose der Hausinstallation und Dialysegerät 
+Den Geräten für die Heimdialyse ist eine Anschlusseinrichtung vorzuschalten, die die Anforderungen gemäß 
+Abschnitt 9.2.2, 1) bis 6) erfüllt. 
+1) 
+Die Isolierstoffumhüllung der Anschlusseinrichtung muss die Anforderungen der Schutzisolierung 
+erfüllen. 
+2) 
+Die Anschlussleitung muss zweiadrig ohne Schutzleiter ausgeführt sein. Sie muss der Bauart H05VV 
+gemäß ÖVE/ÖNORM E 8241-1 oder gleichwertigen entsprechen. 
+3) 
+Eingangs- und Ausgangsseite der Anschlusseinrichtung sind durch einen Trenntransformator gemäß 
+ÖVE/ÖNORM EN 61558-2-9 sicher elektrisch zu trennen. Eine Einschaltstrombegrenzung ist 
+vorzusehen. 
+4) 
+Es sind auf der Ausgangsseite Steckdosen vorzusehen, die mit den Steckdosen der Hausinstallation 
+unverwechselbar sind, zB Steckvorrichtungen gemäß ÖNORM E 6610. 
+5) 
+Zwischen den Ausgangsklemmen des Trenntransformators und den ausgangsseitigen Steckdosen ist 
+entweder 
+– 
+jede Steckdose mit einer eigenen Fehlerstrom-Schutzeinrichtung mit IΔN ≤ 0,03 A zu versehen oder 
+– 
+eine Isolationsüberwachung gegen den ungeerdeten Potenzialausgleichsleiter gemäß 6) 
+vorzusehen. 
+ 
+Bei Anwendung der Isolationsüberwachung ist eine Abschaltung beim zweiten Fehler nicht erforderlich, 
+wenn sich bei der Meldeanzeige der deutliche Hinweis befindet, dass bei Ansprechen der Meldung die 
+Dialyse beendet werden darf, aber eine erneute Dialyse erst nach Beseitigung des Fehlers zulässig ist. 
+6) 
+Die Schutzkontakte der ausgangsseitigen Steckdosen sind untereinander durch einen ungeerdeten 
+isolierten Potenzialausgleichsleiter zu verbinden. 
+9.3 Pflegeheime und Kuranstalten 
+Für Pflegeheime und Kuranstalten gilt diese Norm mit folgenden Abweichungen: 
+9.3.1 Sicherheitsstromversorgung für Pflegeheime und Kuranstalten 
+9.3.1.1 
+Sicherheitsstromversorgung gemäß 6.2 und 6.3 wird durch 9.3.1.1.1 bis 9.3.1.2 ersetzt. 
+9.3.1.1.1 Für einen Notbetrieb bei Netzausfall ist eine Notstromversorgung mit einem stationären Aggregat 
+gemäß 6 oder eine externe Einspeisemöglichkeit mit einem organisatorisch sicher zur Verfügung stehenden 
+transportablen Aggregat vorzusehen. Über dieses Aggregat müssen insbesondere die notwendigen 
+Sicherheitseinrichtungen versorgt werden. Zu diesen gehören zB Notrufanlagen, Sicherheitsbeleuchtung, 
+Drucksteigerungsanlage, notwendige medizinische Geräte. Bei der Auslegung des Notstromaggregates ist 
+darauf zu achten werden, dass auch eine ordnungsgemäße elektrische Schutzmaßnahme im Notbetrieb 
+gewährleistet ist. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+40 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 41/64 =====
+ÖVE/ÖNORM E 8007:2007 
+41 
+9.3.1.1.2 Die Sicherheitsbeleuchtung von Rettungswegen für Treppen ist gemäß ÖVE/ÖNORM E 8002-1 in 
+Dauerschaltung oder Bereitschaftsschaltung mit einer Mindestbetriebsdauer von 8 Stunden oder 3 Stunden 
+mit einer sichergestellten externen Einspeisung binnen 3 Stunden auszuführen. Im Falle der Bereitschafts-
+schaltung ist sicherzustellen, dass durch das Tageslicht bzw. die allgemeine Beleuchtung dauernd eine 
+ausreichende Sichtbarkeit der Treppen gegeben ist bzw. die Beleuchtung über Bewegungsmelder 
+sichergestellt ist. 
+9.3.1.1.3 Die Sicherheitsbeleuchtung von Rettungswegen, ausgenommen Treppen, ist gemäß ÖVE/ÖNORM 
+E 8002-1 in Dauerschaltung gemäß 9.3.1.1.2 oder in Bereitschaftsschaltung nach ÖVE/ÖNORM E 8002-5 
+und einer maximalen Umschaltzeit von 15 s errichtet werden. 
+9.3.1.1.4 Rettungszeichenleuchten müssen ÖVE/ÖNORM EN 60598-2-22 entsprechen.  
+Sie 
+sind 
+in 
+Dauerschaltung 
+mit 
+einer 
+Mindestbetriebsdauer 
+von 
+8 Stunden 
+auszulegen. 
+Eine 
+Mindestbetriebsdauer von 3 Stunden ist ausreichend, wenn eine Weiterversorgung durch eine externe 
+Einspeisung sichergestellt ist, oder wenn das Sicherheitszeichen durch die übrige Sicherheitsbeleuchtung 
+entsprechend ÖNORM EN 1838 angestrahlt wird. 
+Es ist auch Bereitschaftsschaltung zulässig, wenn durch die Allgemeinbeleuchtung bzw. das Tageslicht eine 
+ausreichende Sichtbarkeit der Rettungszeichen gegeben ist. 
+9.3.1.1.5 In für Heimbewohner zugänglichen Sanitärräumen sind Maßnahmen zu treffen, die bei 
+Stromausfall ein gefahrloses Verlassen gewährleisten (zB Sicherheitsleuchte, beleuchteter Notruftaster, 
+Leuchtfolie, u. dgl.). 
+9.3.1.1.6 Arbeitsplätze mit besonderer Gefährdung sind gemäß ÖVE/ÖNORM E 8002-1 auszuführen. 
+9.3.1.2 
+Zusätzliche Sicherheitsstromversorgung gemäß 6.4 
+Für Operationsleuchten und vergleichbare Leuchten sowie für lebenswichtige elektromedizinische Geräte ist 
+eine zusätzliche Sicherheitsstromversorgung gemäß 6.4 vorzusehen, unabhängig vom Vorhandensein einer 
+Sicherheitsstromversorgung für medizinisch technische Einrichtungen (siehe 6.2.3). 
+10 Pläne, Unterlagen und Betriebsanleitungen 
+10.1 Unterlagen 
+Für den sicheren Betrieb sind Schaltungsunterlagen sowie Bedienungs- und Wartungsanweisungen 
+erforderlich. 
+Insbesondere sind dies: 
+– 
+Übersichtsschaltpläne 
+des 
+Verteilungsnetzes 
+der 
+allgemeinen 
+Stromversorgung 
+und 
+der 
+Sicherheitsstromversorgung in einpoliger Darstellung. Diese Pläne müssen Angaben über die Lage der 
+Unterverteiler im Gebäude enthalten, 
+– 
+Übersichtsschaltpläne der Schaltanlagen und Verteiler (vorzugsweise einpolige Darstellung), 
+– 
+Auslasspläne mit Situierung der (Rangier)-Verteiler, 
+– 
+Stromlaufpläne von Steuerungen, 
+– 
+Bedienungs- und Wartungsanweisungen für die Sicherheitsstromquellen, 
+– 
+rechnerischer Nachweis der Erfüllung der Anforderungen gemäß 5.2 und 6.9.5, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+41 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 42/64 =====
+ÖVE/ÖNORM E 8007:2007 
+42 
+– 
+Liste der an die Sicherheitsstromversorgung fest angeschlossenen Verbraucher mit Angabe der 
+Nennströme und bei motorischen Verbrauchern der Anlaufströme, 
+– 
+Prüfbuch bzw. Prüfberichte mit den Ergebnissen über alle vor der Inbetriebnahme erforderlichen 
+Prüfungen. 
+10.2 Verteiler 
+Bei jedem Verteiler muss der zugehörende Übersichtsschaltplan vorhanden sein. 
+10.3 Übersichtsschaltpläne 
+Aus den Übersichtsschaltplänen muss erkennbar sein: 
+– 
+Stromart und Nennspannung, 
+– 
+Anzahl und Leistung der Transformatoren und der Sicherheitsstromquellen, 
+– 
+Bezeichnung der Stromkreise, Nennstrom der Überstrom-Schutzeinrichtungen der angeschlossenen 
+Stromkreise, 
+– 
+Leiterquerschnitte und -werkstoffe. 
+10.4 Anlagenbuch 
+Es muss ein Anlagenbuch gemäß ÖVE/ÖNORM E 8001-6-63 erstellt werden. Dieses muss jedenfalls die 
+Unterlagen von 10.1 enthalten. 
+11 Prüfungen 
+11.1 Erstprüfungen 
+Die Prüfungen gemäß 1) bis 15), die Aufschluss über die elektrische Sicherheit der Anlage entsprechend den 
+Anforderungen dieser Bestimmungen sowie über die Funktion und das Verhalten von Sicherheits-
+einrichtungen geben, sind vor Inbetriebnahme sowie nach Änderungen oder lnstandsetzungen vor der 
+Wiederinbetriebnahme durchzuführen und zu dokumentieren. 
+1) 
+Prüfung gemäß ÖVE/ÖNORM E 8001-6-61, 
+2) 
+Funktionsprüfung der Umschalteinrichtungen, 
+3) 
+Funktionsprüfung 
+der 
+Isolationsüberwachungseinrichtungen 
+der 
+IT-Systeme 
+und 
+der 
+Melde-
+kombinationen. 
+4) 
+Prüfung der richtigen Auswahl der Betriebsmittel zur Einhaltung der Kurzschlussselektivität der 
+Sicherheitsstromversorgungen 
+(SV, ZSV) 
+entsprechend 
+den 
+Planungsunterlagen 
+und 
+den 
+Berechnungen, 
+5) 
+Messungen zum Nachweis, dass die in 5.4.3 und, soweit zutreffend, in 9.1.3, 9.2.1, 4) und 9.2.2, 6) 
+angeführten fremden leitfähigen Teile in den Potenzialausgleich einbezogen sind, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+42 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 43/64 =====
+ÖVE/ÖNORM E 8007:2007 
+43 
+6) 
+Messungen zum Nachweis, dass die in 5.4.4, 2) angeführte Spannung im fehlerfreien Betrieb nicht 
+überschritten wird, 
+ 
+Diese Prüfung muss zu einem Zeitpunkt vorgenommen werden, zu dem die elektrische Anlage des 
+Gebäudes belastet ist. Die Messung erfolgt mit einem Spannungsmesser für Effektivwerte, dessen 
+Innenwiderstand, zB durch äußere Beschaltung, auf 1 kΩ eingestellt ist (siehe ÖVE/ÖNORM  
+EN 60601-1:2007, Bild 12). 
+Der 
+Frequenzbereich 
+des 
+Spannungsmessers 
+sollte 
+1 kHz 
+nicht 
+überschreiten, 
+7) 
+Prüfung der Belüftung des Aufstellraumes von Sicherheitsstromquellen gemäß ÖVE/ÖNORM 
+EN 50272-2, 
+8) 
+Prüfung der Batterien hinsichtlich ausreichender Kapazität, 
+9) 
+Prüfung der Funktion der Sicherheitsstromversorgung (SV, ZSV) durch Unterbrechung der Netzzuleitung 
+am Verteiler der zu versorgenden Verbraucher, 
+10) Prüfung der Aufstellungsräume für Stromerzeugungsaggregate der Sicherheitsstromversorgung (SV, 
+ZSV) hinsichtlich Brandschutz, möglicher Überflutung, Belüftung, Abgasführung, Ausstattung und 
+Einrichtungen, 
+11) Prüfung der Bemessung des Stromerzeugungsaggregates unter Berücksichtigung des Verzeichnisses 
+über die statische Belastung und eventuell auftretender Anlaufströme (zB bei Lüfter-, Pumpen- oder 
+Aufzugsmotoren), 
+12) Prüfung der Aggregateschutzeinrichtungen, dazu gehört insbesondere die Abstimmung der Selektivität 
+von Schutzeinrichtungen, 
+13) Funktionsprüfungen der Sicherheitsstromversorgung (SV, ZSV) mit Verbrennungsmotoren, bestehend 
+aus Prüfung des Start- und Anlaufverhaltens, der Funktion der Hilfseinrichtungen, der Schalt- und 
+Regelungseinrichtungen, 
+Durchführung 
+eines 
+Lastlaufs 
+mit 
+Nennlast 
+sowie 
+Prüfung 
+des 
+Betriebsverhaltens im Aggregatbetrieb. Dabei sind die dynamischen Spannungs- und Drehzahl-
+abweichungen besonders zu beachten. 
+ 
+Weiters sind zu erwartende Revisionsfälle (zB ausgefahrener Kuppelschalter) in die Prüfungen mit ein zu 
+beziehen. 
+14) Prüfung der Einhaltung des Brandschutzes gemäß Abschnitt 7 und Anhang A.1, 
+15) Die Sicherheitsbeleuchtung ist nach den Vorgaben der ÖVE/ÖNORM E 8002-1 zu prüfen. 
+11.2 Wiederkehrende Prüfungen 
+11.2.1 Allgemeines 
+Elektrische Anlagen für medizinisch genutzte Bereiche sind mindestens alle drei Jahre auf Basis des 
+Anlagenbuches bzw. Ersatzanlagenbuches zu prüfen. 
+Nicht medizinisch genutzte Funktionsbereiche im Geltungsbereich der Elektroschutzverordnung 2003 sind 
+entsprechend der darin angeführten Intervalle wiederkehrend zu prüfen. 
+Die Prüffristen und der Umfang der Prüfungen von Installation und Betriebsmitteln müssen mindestens den 
+Anforderungen gemäß Tabelle 3 und Tabelle 4 entsprechen. 
+Von Behörden anders lautend festgelegte Prüffristen bleiben dadurch unberührt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+43 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 44/64 =====
+ÖVE/ÖNORM E 8007:2007 
+44 
+11.2.2 Die angeführten Messungen sind Mindestanforderungen und haben keinen Anspruch auf 
+Vollständigkeit. Sie sind zusätzlich zu den notwendigen Besichtigungen und Erprobungen im Rahmen der 
+wiederkehrenden Prüfung der elektrischen Anlage durchzuführen. 
+Für Prüfungen sind grundsätzlich jene Bestimmungen maßgebend, welche zum Zeitpunkt der Errichtung der 
+Anlage gegolten haben. Angeschlossene Betriebsmittel und Anlage müssen zueinander kompatibel sein  
+(zB erfordern Geräte der Schutzklasse I Anlagen mit Schutzleiter). Auf die Nullungsverordnung 1998 wird 
+hingewiesen. Bei Anlagen, die der Nachrüstpflicht gemäß ÖVE-EN 7a:1990 unterliegen, ist diese zu 
+beachten. 
+Tabelle 3 – Überprüfung der Installation 
+Prüfungen im Intervall von 3 Jahren 
+Prüfumfang 
+(Mindestanforderungen) und Bemerkungen 
+AG 2-, AG 1-, AG 0-Räume und von den selben 
+Verteilern versorgte Nebenräume: 
+– 
+Schutzmaßnahmen (Steckdosen) 
+ 
+ 
+ 
+– 
+RPA/RPE Messung 
+ 
+ 
+Überprüfung der Schutzmaßnahmen (indirektes Berühren) bei 
+allen Steckdosen 
+a 
+Bei Steckdosen von IT-Systemen ist das Ansprechen der 
+Isolationsüberwachung (SV, ZSV) bei allen Steckdosen zu 
+überprüfen 
+Alle leitfähigen Teile welche gemäß 5.4 in den zusätzlichen 
+Potenzialausgleich einzubeziehen sind 
+Messungen in Verteilern: 
+– 
+Schutzmaßnahme des Verteilers 
+– 
+Schutzmaßnahme der Verbraucheranlage 
+ 
+Bei begründetem Verdacht (zB wiederholtes Auslösen von 
+Schutzeinrichtungen): Ableitstrom oder Isolationswiderstand 
+ 
+zB Fehlerschleifenimpedanz 
+zB Fehlerstrom-Schutzschalter mittels Schutzmaßnahmen-
+Messgerät, sofern die Auslösung nicht bereits durch eine Messung 
+in der Verbraucheranlage erfolgte 
+a Bei Anlagen, welche gemäß ÖVE/ÖNORM E 8001-1 errichtet wurden, sind Fehlerschutz und Zusatzschutz zu prüfen. 
+ 
+Der Ableitwiderstand des Fußbodens ist in den unter 7.3 angeführten Räumen im Intervall von 3 Jahren, bzw. 
+nach Änderung des Reinigungsverfahrens zu messen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+44 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 45/64 =====
+ÖVE/ÖNORM E 8007:2007 
+45 
+Tabelle 4 – Überprüfung von Betriebsmitteln 
+Betriebsmittel 
+Im Handbereich 
+Außerhalb des Handbereiches 
+Medizinische elektrische Geräte 
+Überprüfungen und Intervalle gemäß Medizinproduktegesetz 1996 und gemäß 
+ÖVE/ÖNORM E 8751-1 
+Nicht medizinische elektrische Geräte 
+(Betriebsmittel) in medizinisch genutzten 
+Räumen, nicht fest angeschlossen 
+Überprüfungen im Intervall von maximal 3 Jahren gemäß Bestimmungen für 
+wiederkehrende Überprüfungen von Geräten bzw. gemäß Herstellerangaben 
+Überprüfungsintervalle gemäß 
+Elektroschutzverordnung 2003, gemäß 
+Bestimmungen für wiederkehrende 
+Überprüfungen von Geräten bzw. gemäß 
+Herstellerangaben 
+Messung der Durchgängigkeit des 
+Schutzerdungsleiters bei Geräten der 
+Schutzklasse I im Intervall von 5 Jahren 
+Überprüfungen im Intervall von max. 
+3 Jahren gemäß Bestimmungen für 
+wiederkehrende Überprüfungen von 
+Geräten bzw. gemäß Herstellerangaben 
+Messung der Durchgängigkeit der 
+Schutzerdungsleiter bei Leuchten im 
+Intervall von 10 Jahren 
+Nicht medizinische elektrische Geräte 
+(Betriebsmittel) in medizinisch genutzten 
+Räumen, fest angeschlossen 
+Bei Leuchten wird sich der Prüfumfang auf die Sichtprüfung und die Messung der 
+Durchgängigkeit des Schutzerdungsleiters und dem Nachweis der Funktion des 
+Fehlerstrom-Schutzschalters beschränken 
+Elektrische Geräte (Betriebsmittel) 
+außerhalb medizinisch genutzter Räume 
+Überprüfungsintervalle wie in der Elektroschutzverordnung 2003, gemäß Bestimmungen 
+für wiederkehrende Überprüfungen von Geräten bzw. gemäß Herstellerangaben 
+ 
+11.2.3 Die Prüfungen gemäß 1) bis 10) sind zusätzlich zu den Prüfungen gemäß 11.2.1 und 11.2.2 
+durchzuführen: 
+1) 
+Prüfung der Fehlerstrom-Schutzeinrichtungen und der lsolationsüberwachungseinrichtungen durch 
+Betätigen der Prüfeinrichtung mindestens alle sechs Monate durch eine Fachkraft oder eine 
+unterwiesene Person gemäß ÖVE/ÖNORM EN 50110-1, 
+2) 
+Messung des Isolationswiderstandes von Stromkreisen der Operations-Leuchten, die mit Funktions-
+kleinspannung mit sicherer elektrischer Trennung ohne Isolationsüberwachungseinrichtung betrieben 
+werden, mindestens alle 12 Monate durch eine Fachkraft, 
+3) 
+Funktionsprüfung der Sicherheitsstromversorgung (SV, ZSV) monatlich zum Nachweis, 
+– 
+des Start- und Anlaufverhaltens, 
+– 
+der erforderlichen Lastübernahme, 
+– 
+der Schalt-, Regel- und Hilfseinrichtungen. 
+4) 
+Funktionsprüfung des Lastverhaltens der Sicherheitsstromversorgungen (SV, ZSV) monatlich mit 
+mindestens 50 % der Nennlast für eine Betriebsdauer von 
+– 
+15 Minuten bei Sicherheitsstromquellen mit Batterien, 
+– 
+60 Minuten bei Sicherheitsstromquellen mit Verbrennungsmotor; diese Funktionsprüfung darf 
+entfallen bei Sicherheitsstromversorgung im Dauerbetrieb, 
+5) 
+zur Überprüfung der Umschalteinrichtungen der Sicherheitsstromquellen muss mindestens alle 
+12 Monate ein Test durch Trennung vom Versorgungsnetz durchgeführt werden, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+45 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 46/64 =====
+ÖVE/ÖNORM E 8007:2007 
+46 
+6) 
+Prüfung der Funktion der Netzumschaltung und der Umschalteinrichtung in den Verteilern für Räume der 
+Anwendungsgruppe 2 halbjährlich, 
+7) 
+Messung der Spannungen gemäß 5.4.4, 2), sofern zutreffend, jährlich, 
+8) 
+Prüfung von Batterien hinsichtlich ausreichender Kapazität einmal jährlich außerhalb der zu erwartenden 
+Einsatzzeiten, 
+9) 
+Prüfung, ob die Leistungen der Sicherheitsstromquellen noch dem erforderlichen Leistungsbedarf der 
+versorgten Verbrauchsmittel entsprechen, jährlich, 
+10) Prüfung der Funktion der Sicherheitsbeleuchtung gemäß ÖVE/ÖNORM E 8002-1. 
+11.2.4 Über die regelmäßigen Prüfungen sind Prüfbücher zu führen. Diese Prüfbücher sind mindestens drei 
+Jahre nach der darauf folgenden Prüfung aufzubewahren. 
+11.3 Erhalten des ordnungsgemäßen Zustandes 
+Für das Erhalten des ordnungsgemäßen Zustandes gelten die Anforderungen gemäß ÖVE/ÖNORM 
+EN 50110-1. 
+Ausfälle im Bereich der notwendigen Sicherheitseinrichtungen sind unverzüglich zu beheben. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+46 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 47/64 =====
+ÖVE/ÖNORM E 8007:2007 
+47 
+Anhang A 
+(informativ) 
+Brandschutz und Explosionsschutz 
+Die baulichen brandschutztechnischen Belange sind durch österreichische landesrechtliche Vorschriften (zB 
+Bautechnikverordnung), bundesrechtliche Bestimmungen (zB AAV, AMGSV ua) geregelt. Im Übrigen wird auf 
+Technische Richtlinien für vorbeugenden Brandschutz hingewiesen. 
+A.1 Brand- und Explosionsschutz in medizinisch genutzten Räumen 
+A.1.1 Allgemeine Hinweise 
+Im 
+medizinischen 
+Bereich 
+gelangen 
+als 
+Hautreinigungs- 
+und 
+Hautentfettungsmittel 
+sowie 
+als 
+Desinfektionsmittel brennbare Flüssigkeiten zum Einsatz. Werden diese Stoffe offen verwendet, so besteht 
+aufgrund der Vermischung ihrer Dämpfe mit Luft erhöhte Brand- und Explosionsgefahr. 
+Auch bei der Verabreichung von Anästhesiemitteln, die mit Luft explosionsfähige Atmosphären oder mit 
+Sauerstoff bzw. Lachgas explosionsfähige Gemische bilden können, kann Explosionsgefahr entstehen. 
+In den letzten Jahren konnte jedoch eine erhebliche Gefahrenreduzierung dadurch erreicht werden, dass 
+– 
+in ihrer Anwendungskonzentration zündfähige Anästhesiemittel kaum noch Verwendung finden, 
+– 
+Anästhesiemittel aus den Anwendungsräumen abgeleitet werden, 
+– 
+mittels technischer Lüftungsmaßnahmen für eine jederzeit gute Raumdurchlüftung gesorgt wird, 
+– 
+brennbare, leicht verdampfende Hautreinigungs- und Hautdesinfektionsmittel nur noch in geringen 
+Mengen zum Einsatz gelangen. 
+Zwar hat die Verwendung zündfähiger Anästhesie- sowie Hautreinigungs- und Desinfektionsmittel 
+beträchtlich abgenommen, deren Anwendung kann jedoch nicht generell ausgeschlossen werden. Somit 
+kann auf Explosionsschutzmaßnahmen in medizinisch genutzten Räumen entsprechend den Anforderungen 
+in gesetzlichen und arbeitsschutz-rechtlichen Regelwerken weiterhin nicht verzichtet werden. Die Verordnung 
+explosionsfähige Atmosphären gibt Schutzziele und Schutzmaßnahmen vor. 
+Zum Unterschied zur VEXAT sind in den neuesten Regelwerken der EU (zB nach neuem Recht ElexV 1996 
+in Deutschland) keine Zonen M und G angeführt.  
+In Räumen mit einer dem Stand der Technik (ÖNORM H 6020 mit einem Außenluftvolumenstrom je m2 
+Bodenfläche von mindestens 20 m3 · h-1 bzw. 1 200 m3 · h-1 Außenluftvolumenstrom bei TAV-Schirmen in 
+Operationsräumen) ausgeführten raumlufttechnischen Anlage ist in der Regel keine explosionsgefährdete 
+Atmosphäre in gefahrbringender Menge zu erwarten. In diesem Fall ist somit keine Zone M gegeben. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+47 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 48/64 =====
+ÖVE/ÖNORM E 8007:2007 
+48 
+A.1.2 Adaptierter Auszug aus den Richtlinien für die Vermeidung von Zündgefahren infolge 
+elektrostatischer Aufladungen – Richtlinien „Statische Elektrizität“ – BGR 132 
+A.1.2.1 Begriffsbestimmungen 
+Stoffe sind Gase, Flüssigkeiten oder Feststoffe, mit denen im Betrieb umgegangen wird. Zu den Stoffen 
+gehören zB Abluft, Treibstoffe und Lösemittel, Stäube. 
+Durchgangswiderstand ist der elektrische Widerstand eines Stoffes oder Materials ohne den Oberflächen-
+widerstand. Der Durchgangswiderstand und der spezifische Widerstand werden in Ω bzw. Ω · m gemessen. 
+Spezifischer Widerstand ist der elektrische Widerstand eines Stoffes oder Materials gemessen an einer Probe 
+der Einheitslänge und der Einheitsquerschnittsfläche. Der spezifische Widerstand wird oft auch spezifischer 
+Durchgangswiderstand genannt und in Ω · m gemessen. 
+Oberflächenwiderstand ist der elektrische Widerstand gemessen auf der Oberfläche eines Gegenstandes. Er 
+wird zwischen zwei parallelen Elektroden geringer Breite und jeweils 100 mm Länge, die 10 mm auseinander 
+liegen und mit der zu messenden Oberfläche Kontakt haben, gemessen. Der Oberflächenwiderstand wird in 
+Ω angegeben. 
+Spezifischer Oberflächenwiderstand ist der elektrische Widerstand gemessen auf der Oberfläche eines 
+Gegenstandes. Die Messung erfolgt zwischen zwei parallelen Elektroden geringer Breite und der Länge L. 
+Der Abstand A der Elektroden ist gleich ihrer Länge L (A = L). Der Messwert wird in Ω ausgedrückt. 
+Ableitwiderstand eines Gegenstandes ist sein elektrischer Widerstand gegen Erdpotenzial, oft auch Erde 
+genannt. Der Ableitwiderstand wird in Ω gemessen. Der Ableitwiderstand hängt unter anderem vom 
+spezifischen Widerstand, vom – gegebenenfalls spezifischen – Oberflächenwiderstand der Materialien sowie 
+vom Abstand zwischen den gewählten Messpunkten und Erde ab. Dieser Widerstand wird häufig auch 
+Erdableitwiderstand RE genannt. 
+Leitfähigkeit ist der Kehrwert des spezifischen Widerstandes. Die Leitfähigkeit wird in S/m gemessen. 
+Leitfähig ist ein Stoff oder Material mit einem spezifischen Widerstand höchstens 104 Ω · m. Leitfähig ist ein 
+Stoff oder Material auch, wenn sein Oberflächenwiderstand höchstens 104 Ω beträgt. Leitfähige Materialien 
+können nicht gefährlich aufgeladen werden, wenn sie geerdet sind. Für Flüssigkeiten, Schüttgüter oder 
+bestimmte Gegenstände werden in den entsprechenden Abschnitten spezielle Festlegungen getroffen. Der 
+Oberflächenwiderstand leitfähig gemachter Kunststoffe weist oft einen großen Streubereich auf. Der 
+Höchstwert darf 105 Ω und der Mittelwert 104 Ω nicht überschreiten. Als leitfähig werden auch Gegenstände 
+und Einrichtungen bezeichnet, wenn sie aus leitfähigem Material bestehen. 
+Leiter sind Gegenstände oder Einrichtungen aus leitfähigen Materialien. 
+Ableitfähig ist ein Stoff oder ein Material mit einem spezifischen Widerstand von über 104 Ω · m und unter 
+109 Ω · m oder ein Gegenstand oder eine Einrichtung mit einem Oberflächenwiderstand zwischen 104 Ω und 
+109 Ω gemessen bei 23 °C und 50 % relativer Luftfeuchte oder mit einem Oberflächenwiderstand zwischen 
+104 Ω und 1011 Ω gemessen bei 23 °C und 30 % relativer Luftfeuchte. Mit sinkender Luftfeuchte nimmt der 
+Oberflächenwiderstand in der Regel beträchtlich zu.  
+Ableitfähige Stoffe oder Gegenstände und Einrichtungen aus ableitfähigen Materialien speichern keine 
+gefährliche elektrostatische Ladung, wenn sie mit Erde in Kontakt stehen.  
+Antistatisch wird außerhalb dieser Regel auch zur Beschreibung einer Aufladungsvermindernden Eigenschaft 
+verwendet, zB bei Schuhwerk oder bei Zusatzstoffen für den Umgang mit Flüssigkeiten, und liegt in diesen 
+Fällen meist zwischen 108 Ω und 1011 Ω.  
+Als ableitfähig werden auch Gegenstände und Einrichtungen bezeichnet, wenn sie aus ableitfähigen 
+Materialien bestehen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+48 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 49/64 =====
+ÖVE/ÖNORM E 8007:2007 
+49 
+Isolierend ist ein Stoff oder Material, das weder leitfähig noch ableitfähig ist. 
+Als isolierend werden auch Gegenstände oder Einrichtungen aus isolierenden Materialien bezeichnet.  
+Isolierende Stoffe sowie Gegenstände und Einrichtungen aus isolierenden Materialien werden mit Rücksicht 
+auf ihre elektrostatischen Eigenschaften auch als „aufladbar“ bezeichnet. Zu diesen Materialien gehören viele 
+Kunststoffe, zB Polymere. 
+Geerdet im elektrostatischen Sinne sind leitfähige Gegenstände, Flüssigkeiten und Schüttgüter mit einem 
+Ableitwiderstand unter 106 Ω und Personen mit einem Ableitwiderstand unter 108 Ω.  
+Personen und kleine Gegenstände sind auch geerdet, wenn ihre Relaxationszeit unter 10-2 s ist. 
+Relaxationszeit ist die Zeitspanne, in der eine elektrostatische Ladung, zB auf einer festen Oberfläche, im 
+Innern einer Flüssigkeit, in einer Schüttung oder in einer Nebel- oder Staubwolke, auf 1/e (d. h. ungefähr 
+37 %) ihres ursprünglichen Wertes abnimmt.  
+Die Relaxationszeit τ bei Entladung eines Kondensators der Kapazität C über einen Entladewiderstand R 
+beträgt: τ = R × C. 
+Aufladbar sind isolierende Stoffe sowie Gegenstände und Einrichtungen aus isolierenden Materialien. 
+Aufladbar sind auch nicht mit Erde verbundene leitfähige oder ableitfähige Gegenstände und Einrichtungen. 
+Leitfähiges Schuhwerk ist Schuhwerk mit einem Ableitwiderstand gegen Erde unter 105 Ω. 
+Gefährliche explosionsfähige Atmosphäre ist ein Gemisch brennbarer Gase, Dämpfe, Nebel oder Stäube mit 
+Luft in gefahrdrohender Menge unter atmosphärischen Bedingungen. 
+Explosionsgefährdeter Bereich ist ein räumlicher Bereich, in dem auf Grund der örtlichen und betrieblichen 
+Verhältnisse gefährliche explosionsfähige Atmosphäre auftreten kann. Diese Bereiche werden in Zonen 
+unterteilt. 
+Gefährliche Aufladung ist eine elektrostatische Aufladung, die bei ihrer Entladung die zu erwartende 
+explosionsfähige Atmosphäre entzünden kann. 
+A.1.2.2 Erdung und Potenzialausgleich in medizinisch genutzten Räumen 
+Liegen in medizinisch genutzten Räumen explosionsgefährdete Bereiche vor oder fallen die Räume in die 
+Aufzählung gemäß 7.3, sind Maßnahmen gegen elektrostatische Aufladungen erforderlich. Hierbei ist zu 
+berücksichtigen, dass die Zündempfindlichkeit von Stoffen durch Sauerstoffanreicherung der Umgebungsluft 
+stark erhöht wird. 
+Explosionsgefährdete Bereiche können zB durch brennbare Reinigungs- oder Desinfektionsmittel gebildet 
+werden. 
+Zur Vermeidung von Aufladungen soll der Oberflächenwiderstand von Arbeitskleidung, Decken und Tüchern 
+unter den betriebsgemäß anzunehmenden Bedingungen ableitfähig sein. Kleidung, Tücher und Decken aus 
+Mischgeweben mit mindestens 30 % Anteil an Naturbelassener Baumwolle bzw. Viskose (ohne 
+Kunstharzausrüstung) sind im Allgemeinen ableitfähig. 
+Wolldecken, Plastiktücher und solche Gewebe und Gewirke, die nicht den vorgenannten Bedingungen 
+entsprechen, sind auszuschließen, da sie bei Reibungs- und Trennungsvorgängen zu hohen Aufladungen 
+führen können. 
+Auch für typische Gegenstände und Einrichtungen in medizinischen Räumen, zB Gummitücher, -matratzen,  
+-kopfkissen oder gepolsterte Sitze dürfen nicht gefährlich aufgeladen werden. 
+Ableitfähige Überzüge isolierender Gegenstände haben diese vollständig zu umschließen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+49 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 50/64 =====
+ÖVE/ÖNORM E 8007:2007 
+50 
+Abdeckungen des Operationstisches und fahrbarer Krankentragen sowie der Sitzflächen von Hockern 
+müssen aus ableitfähigem Gummi oder Kunststoff mit Oberflächenwiderständen zwischen 5 × 104 Ω und 
+106 Ω bestehen. 
+Der Ableitwiderstand des Fußbodens darf höchstens 108 Ω betragen. Bei Bodenbelägen, bei denen eine 
+Erhöhung des Ableitwiderstandes während des Gebrauches nicht ausgeschlossen ist, darf der 
+Ableitwiderstand im Neuzustand höchstens 107 Ω und nach vier Jahren höchstens 108 Ω betragen. 
+Die Erdverbindung darf an keiner Stelle unterbrochen sein, zB durch isolierende Lackierung.  
+Der Durchgangswiderstand von Reifen oder Rollen soll 104 Ω nicht überschreiten. 
+Hocker, Tritte, fahrbare Krankentragen und Ähnliches müssen durch Rollen bzw. Fußkappen aus leitfähigem 
+Werkstoff mit dem Fußboden verbunden sein. 
+In medizinisch genutzten Räumen ist ableitfähiges Schuhwerk – einschließlich der Überschuhe – zu tragen. 
+Jedoch soll ein Ableitwiderstand von mindestens 5 × 104 Ω eingehalten werden. 
+ANMERKUNG Anforderungen an elektrostatisch ableitfähiges Schuhwerk siehe ÖVE/ÖNORM EN 61340-4-3 und 
+Anforderungen an antistatische Schuhe siehe ÖNORM EN ISO 20345. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+50 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 51/64 =====
+ÖVE/ÖNORM E 8007:2007 
+51 
+Anhang B 
+(informativ) 
+Ausführungsbeispiele 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+51 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 52/64 =====
+ÖVE/ÖNORM E 8007:2007 
+52 
+Es bedeutet: 
+1 
+Siehe 6.9.4.4 
+2 
+Siehe 6.9.4.2 (Einspeisestelle von AV-Schiene dargestellt) 
+3 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+Bild B.1 – Stromversorgung mehrerer Gebäude von einer Stelle aus bei Verlegung außerhalb des Erdreiches gemäß 6.9.4.4 
+ 
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+E 90
+E 90
+AV
+SV
+ZSV
+(1)
+GEBÄUDEHAUPTVERTEILER 1
+HAUPTVERTEILER
+GEBÄUDEHAUPTVERTEILER 2
+GEBÄUDEHAUPTVERTEILER 3
+E 90
+UNTERBRINGUNG gemäß 4.1
+ZSV mit internem Bypass
+(2)
+Start
+Automatik
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+(1)
+(1)
+(2)
+(2)
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+Lichtbogensicher
+gemäß 4.1.3
+(3)
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+52 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 53/64 =====
+ÖVE/ÖNORM E 8007:2007 
+53 
+ 
+Es bedeutet: 
+1 
+Sicherheitsbeleuchtung gemäß 6.2.1.1, 1), 3) und 4) 
+2 
+Beleuchtung bzw. Hinterleuchtung von Rettungszeichen gemäß 6.2.1.1, 2) 
+3 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+4 
+Ersatzbeleuchtung gemäß 6.2.1.2 (ausgenommen 6.2.1.2, 3)) 
+5 
+Verbraucher gemäß 6.4.4, die nicht lebenswichtigen Maßnahmen dienen 
+6 
+Notwendige Personenaufzüge und Bettenaufzüge ohne Funktionserhalt gemäß 7.2.3.1, 1) 
+7 
+Feuerwehraufzüge E 90 gemäß 7.2.3.1, 2) 
+8 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+9 
+Die Versorgung der rotierenden ZSV-Anlage kann auch über die AV erfolgen 
+10 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+11 
+bei Querung von Brandabschnitten 
+Bild B.2 – Beispiel für die Stromversorgung eines Verteilers der Anwendungsgruppe 1, 
+bei rotierender ZSV-Anlage 
+ZSV
+AV
+SV
+ZSV
+t < 15s
+(5)
+E 30
+(3)
+(4)
+(1)
+(2)
+weitere Verteiler
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+t < 0,5s
+t > 15s
+E 90
+Unterverteiler AWG 1
+(6)
+(7)
+E 90
+Zwischenwand gemäß 4.2.4
+Zwischenwand gemäß 4.2.4
+Abschottung 30 Minuten gemäß 7.2.3.1
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+(9)
+(10)
+(11)
+(8)
+(8)
+(8)
+(8)
+(8)
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+53 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 54/64 =====
+ÖVE/ÖNORM E 8007:2007 
+54 
+Es bedeutet: 
+1 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 1) 
+2 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 2) 
+3 
+Sicherheitsbeleuchtung gemäß 6.2.1.1, 1) 
+4 
+Ersatzbeleuchtung gemäß 6.2.1.2 
+5 
+Raumbeleuchtung aus zusätzlicher Stromversorgung (siehe 6.2.1.2, 3)) 
+6 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+7 
+Verbraucher gemäß 6.4.4, 3) die keine notwendigen Sicherheitseinrichtungen sind  
+8 
+Beleuchtung bzw. Hinterleuchtung von Rettungszeichen gemäß 6.2.1.1, 2) 
+9 
+IT-System gemäß 4.3.3.2 
+10 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+11 
+Kurzschluss- und erdschlusssichere Verlegung 
+12 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+13 
+Die Versorgung der rotierenden ZSV-Anlage kann auch über die AV erfolgen 
+14 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+15 
+bei Querung von Brandabschnitten 
+Bild B.3 – Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler,  
+rotierender ZSV-Anlage mit einer Umschaltzeit höchstens 0,5 s
+t < 15s
+ZSV
+(7)
+(2)
+(1)
+E 90
+Zweite Leitung
+Erste Leitung
+Unterverteiler AWG 2
+ϑ>
+OP-Leuchte
+k?
+(4)
+(3)
+AV
+(10)
+(8)
+(5)
+t < 0,5s
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+ Ausführung gemäß 4.3.3.7
+E 90
+Ι >
+(6)
+(9)
+ Ausführung gemäß 4.3.3.2
+Ι >
+gemäß 4.3.3.6
+k?
+ϑ >
+(14)
+Zwischenwand gemäß 4.2.4
+E 90
+(12)
+(13)
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+Zwischenwand gemäß 4.2.4
+Abschottung 90 Minuten gemäß 7.2.3.1
+(11)
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+(15)
+(12)
+(12)
+(12)
+(12)
+(11)
+(11)
+(11)
+gemäß 4.3.3.6
+(5)
+AV
+SV
+ZSV
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+54 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 55/64 =====
+ÖVE/ÖNORM E 8007:2007 
+55 
+ 
+Es bedeutet: 
+1 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 1) 
+2 
+Abgriff der Spannungsversorgung bei Versorgung gemäß 4.3.3.1.1, 2) 
+3 
+Ersatzbeleuchtung gemäß 6.2.1.2  
+4 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+5 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+6 
+Verbraucher gemäß 6.4.3 die keine notwendigen Sicherheitseinrichtungen sind 
+7 
+IT-System gemäß 4.3.3.2 
+8 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+9 
+Kurzschluss- und erdschlusssichere Verlegung 
+10 
+alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+11 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+12 
+bei Querung von Brandabschnitten 
+Bild B.4 – Beispiel für die Stromversorgung eines OP-Verteilers mit zentraler ZSV-Anlage mit einer 
+Umschaltzeit höchstens 0,5 s und zwei Trenntransformatoren 
+(ohne Darstellung der Sicherheitsbeleuchtung gemäß 6.2.1.1) 
+ZSV
+AV
+SV
+ZSV
+t < 15s
+(2) (1)
+E 90
+Unterverteiler AWG 2
+k?
+AV
+(8)
+t < 0,5s
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+E 90
+(5)
+OP-Leuchte
+ Ausführung gemäß 4.3.3.8
+ϑ >
+Ι >
+(3)
+(7)
+ Ausführung gemäß 4.3.3.7
+k?
+ϑ >
+Ι >
+ϑ >
+Ι >
+(5)
+(6)
+E 90
+Zweite Leitung
+Erste Leitung
+Start
+Automatik
+Lichtbogensicher
+gemäß 4.1.3
+Abschottung 90 Minuten gemäß 7.2.3.1
+Zwischenwand gemäß 4.2.4
+Zwischenwand gemäß 4.2.4
+Bei Querung anderer
+Brandabschnitte E 90,
+ansonsten ohne Funktionserhalt
+gemäß 4.3.3.6
+ gemäß 4.3.3.6
+ gemäß 4.3.3.6
+(9)
+(9)
+(10)
+(10)
+(10)
+(10)
+(10)
+(12)
+(11)
+(4)
+(6)
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+55 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 56/64 =====
+ÖVE/ÖNORM E 8007:2007 
+56 
+Es bedeutet: 
+1 
+ZSV- versorgte Beleuchtung gemäß 6.4.2 
+2 
+Ersatzbeleuchtung gemäß 6.2.1.2 (ausgenommen 6.2.1.2, 3)) 
+3 
+Raumbeleuchtung aus allgemeiner Stromversorgung (siehe 6.2.1.2, 3)) 
+4 
+Stromkreise in Räume der AWG 2 gemäß 5.3.4.3.4 
+5 
+Beleuchtung von Rettungswegen gemäß 6.2.1.1, 1) und Beleuchtung bzw. Hinterleuchtung von 
+ 
+Rettungszeichen gemäß 6.2.1.1, 2) 
+6 
+Stromkreise in Räumen der AWG 2 gemäß 5.3.4.3.4 für welche keine SV gefordert ist 
+7 
+Ersatzbeleuchtung aus SV gemäß 6.2.1.2, 3) 
+8 
+bei Querung von Brandabschnitten 
+Bild B.5 – Beispiel für die Stromversorgung eines Verteilers der AWG 2 mit dezentraler ZSV-Anlage 
+mit einer Umschaltzeit höchstens 0,5 s 
+ZSV
+AV
+SV
+t < 15s
+Unterverteiler AWG 2
+k?
+AV
+(6)
+(3)
+t > 15s
+GEBÄUDEHAUPTVERTEILER (Unterbringung gemäß 4.1)
+(4)
+(1)
+(5)
+(2)
+(7)
+Versorgung von Zentralbatterie
+t < 0,5s
+E 90
+M
+M
+Lichtbogensicher
+gemäß 4.1.3
+Start
+Automatik
+Zwischenwand gemäß 4.2.4
+Abschottung 90 Minuten gemäß 7.2.3.1
+Abschottung 90 Minuten gemäß 7.2.3.1 und 4.2.4
+Automatische 
+Prüfeinrichtung 
+gemäß 6.2.1.1
+(8)
+ gemäß 4.3.3.6
+gemäß 4.3.3.6
+ Ausführung gemäß 4.3.3.8
+ϑ>
+Ι >
+ϑ>
+Ι >
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+56 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 57/64 =====
+ÖVE/ÖNORM E 8007:2007 
+57 
+ANHANG C 
+(normativ) 
+Patientenumgebung 
+Bild C.1 – Patientenumgebung 
+ 
+1,5 m
+1,5 m 
+1,5 m
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+57 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 58/64 =====
+ÖVE/ÖNORM E 8007:2007 
+58 
+ANHANG D 
+(informativ) 
+Empfehlungen für Maßnahmen gegen die Beeinflussung von elektro-
+medizinischen Messeinrichtungen durch Starkstromanlagen 
+D.1 Beeinflussungen und Anwendung der Maßnahmen 
+Elektrische oder magnetische Felder elektrischer Anlagen können medizinische Messeinrichtungen, 
+insbesondere solche für Körperaktionsspannungen, bis zur Funktionsunfähigkeit stören. Die im Folgenden 
+beschriebenen Maßnahmen sind als Schutz gegen Störungen geeignet, die durch Starkstromanlagen in oder 
+in der Nähe medizinisch genutzter Räume hervorgerufen werden. Ihre Anwendung ermöglicht den 
+bestimmungsgemäßen Betrieb medizinischer Messeinrichtungen. Sie reichen nicht gegen Störungen, die 
+durch Hochfrequenzquellen aller Art für die Nachrichtentechnik oder Therapie erzeugt werden aus. 
+Maßnahmen gegen die Störungen sind nicht Gegenstand dieser Errichtungsbestimmung. 
+In Räumen und in der Umgebung von Räumen, in denen bestimmungsgemäß Messungen von Körperaktions-
+Spannungen, zB EEG, EKG oder EMG, durchgeführt werden, sollten die Maßnahmen gemäß D.2 und D.3 
+angewandt werden, wenn nach örtlichen Gegebenheiten mit dem Auftreten von Störungen gerechnet werden 
+kann. Gegebenenfalls kann es notwendig werden, diese Maßnahmen zur Sicherstellung des 
+bestimmungsgemäßen Gebrauches nachträglich durchzuführen. 
+ANMERKUNG Zu den Räumen die gegen Störungen geschützt werden sollen, gehören insbesondere: 
+– 
+EEG-Räume, EKG-Räume und EMG-Räume, 
+– 
+Intensiv-Untersuchungsräume, 
+– 
+Intensiv-Überwachungsräume, 
+– 
+Herzkatheterräume, 
+– 
+Operationsräume. 
+D.2 Maßnahmen gegen Störungen durch elektrische Felder 
+D.2.1 Die Kabel und Leitungen der Starkstromanlage sollen mit leitfähigen, abschirmenden Umhüllungen 
+verlegt werden. Empfohlen wird diese Maßnahme an allen Kabeln und Leitungen, die im zu schützenden 
+Raum, in dessen Wänden, Decke und Fußboden sowie auf deren Außenseiten verlegt sind. 
+D.2.2 Die leitfähigen Umhüllungen von Kabeln und Leitungen (zB abgeschirmte Leitungen mit Metallmantel, 
+Stahlpanzerrohr oder ähnliche Installationsrohre und -kanäle) sollten untereinander und mit dem 
+Potenzialausgleichsleiter gut leitend verbunden werden (Schweißpunkte, gelötete Drahtbrücken). Dabei 
+sollen die Abschirmungen (zB die metallische Umhüllung der abgeschirmten Leitungen bzw. das 
+Stahlpanzerrohr) keine geschlossenen Ringverbindungen (Maschen) bilden. 
+D.2.3 Alternativ zu D.2.1 und D.2.2 können die zu schützenden Einrichtungen auf andere Weise wirksam 
+gegen Störungen geschützt werden. Dies kann durch Einlegen eines Abschirmgewebes oder einer Metallfolie 
+in den Fußboden, die Decke oder die Wände der zu entstörenden Räume geschehen. Diese Abschirmung ist 
+von Rohrleitungen und leitfähigen Gebäudeteilen uÄ isoliert zu verlegen und über einen eigenen 
+Potenzialausgleichsleiter mit der Potenzialausgleich-Sammelschiene zu verbinden. 
+D.2.4 Festangeschlossene elektrische Verbrauchsmittel sollen in Schutzklasse I ausgeführt sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+58 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 59/64 =====
+ÖVE/ÖNORM E 8007:2007 
+59 
+D.3 Maßnahmen gegen Störungen durch netzfrequente magnetische Felder 
+Störungen sind nicht zu erwarten, wenn an der Patientenposition (Kopf, Becken, Fuß) die Induktion Bss bei 
+50 Hz folgende Werte nicht überschreitet: 
+Bss = 400 nT für EKG 
+Bss = 200 nT für EEG 
+Bss = 100 nT für EMG 
+ANMERKUNG 
+1) 
+Diese Grenzwerte werden im allgemeinen nicht überschritten, wenn zwischen Anlagenteilen und Betriebsmitteln, die 
+magnetische Störungen hervorrufen können, und den für die Untersuchung von Patienten vorgesehenen Plätzen 
+folgende Abstände in allen Richtungen eingehalten werden: 
+1.1) Bei Verwendung einer Leuchte mit einem Vorschaltgerät (Drossel) ist ein Abstand in alle Richtungen von 0,75 m 
+ausreichend. Bei Verwendung mehrerer Vorschaltgeräte mit höheren Arbeitsfrequenzen, die nicht in den 
+Übertragungsbereich der elektromedizinischen Messeinrichtung fallen, sind kleinere Abstände erlaubt. 
+1.2) Bei Verwendung vorwiegend induktiver Betriebsmittel großer Leistung ist ein Abstand in alle Richtungen von 6 m 
+ausreichend. Solche Betriebsmittel sind zB: 
+– Transformatoren der Starkstromanlage, zB des IT-Systemes, 
+– ortsfeste Motoren, insbesondere solche über 3 kW. 
+1.3) Zwischen mehradrigen Kabeln und Leitungen der Starkstromanlage und den zu schützenden Patientenplätzen 
+werden folgende Mindestabstände in Abhängigkeit vom Leiterquerschnitt empfohlen: 
+– Leiterquerschnitt (Cu) zwischen 10 mm2 und 70 mm2 – empfohlener Mindestabstand 3 m, 
+– Leiterquerschnitt (Cu) zwischen 95 mm2 und 185 mm2 – empfohlener Mindestabstand 6 m, 
+– Leiterquerschnitt (Cu) über 185 mm2 – empfohlener Mindestabstand 9 m. 
+Bei einadrigen Kabeln und Leitungen sowie Stromschienensystemen können größere Abstände notwendig 
+werden. 
+1.4) Die in 1.1) bis 1.3) genannten Abstände können durch magnetische Abschirmungen vermindert werden. 
+2) 
+Es wird auf die mögliche Beeinflussung von elektromedizinischen Messeinrichtungen durch 16 ⅔ Hz Wechselstrom-
+Bahnanlagen in Gebäudenähe hingewiesen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+59 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 60/64 =====
+ÖVE/ÖNORM E 8007:2007 
+60 
+Literaturhinweise 
+ÖNORM B 3800-12), Brandverhalten von Baustoffen und Bauteilen; Baustoffe: Anforderungen und Prüfungen 
+ÖNORM E 6610, Dreipolige Steckdosen mit N- und mit Schutzkontakt – Hauptmaße – 16 A, Wechselstrom 
+220/380 V – 16 A, Wechselstrom 230/400 V 
+ÖNORM H 6020, Lüftungstechnische Anlagen für medizinisch genutzte Räume – Projektierung, Errichtung, 
+Betrieb, Instandhaltung, technische und hygienische Kontrollen 
+ÖNORM EN ISO 20345, Persönliche Schutzausrüstung – Sicherheitsschuhe 
+ÖNORM EN 739, Niederdruck-Schlauchleitungssysteme zur Verwendung mit medizinischen Gasen 
+ÖNORM EN 962, Ortsbewegliche Gasflaschen – Ventilschutzkappen und Ventilschutzvorrichtungen für 
+Gasflaschen in industriellem und medizinischem Einsatz – Gestaltung, Konstruktion und Prüfungen 
+ÖNORM ISO 554, Normklimate für die Konditionierung und/oder Prüfung – Zahlenangaben 
+ÖVE/ÖNORM E 8065, Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen 
+ÖVE/ÖNORM E 8241 Reihe, Starkstromfreileitungen mit thermoplastischer Isolierhülle für Nennspannungen 
+bis 450/750 V 
+ÖVE/ÖNORM EN 55014-1, Elektromagnetische Verträglichkeit – Anforderungen an Haushaltsgeräte, 
+Elektrowerkzeuge und ähnliche Elektrogeräte – Teil 1: Störaussendung 
+ÖVE/ÖNORM EN 55014-2, Elektromagnetische 
+Verträglichkeit 
+– 
+Anforderungen 
+an 
+Haushaltgeräte, 
+Elektrowerkzeuge und ähnliche Elektrogeräte – Teil 2: Störfestigkeit 
+ÖVE/ÖNORM EN 60079-7, Elektrische Betriebsmittel für explosionsgefährdete Bereiche – Teil 7: Erhöhte 
+Sicherheit „e“ 
+ÖVE/ÖNORM EN 60247, Isolierflüssigkeiten 
+– 
+Messung 
+der 
+Permittivitätszahl, 
+des 
+dielektrischen 
+Verlustfaktors (tan δ) und des spezifischen Gleichstrom-Widerstandes 
+ÖVE/ÖNORM EN 60439-1, Niederspannungs-Schaltgerätekombinationen – Teil 1: Typgeprüfte und partiell 
+typgeprüfte Kombinationen 
+ÖVE/ÖNORM EN 61558-2-5, Sicherheit 
+von 
+Transformatoren, 
+Netzgeräten 
+und 
+dergleichen 
+–  
+Teil 2-5: Besondere Anforderungen an Rasiersteckdosen- Transformatoren und Rasiersteckdosen-Einheiten  
+ÖVE/ÖNORM EN 62034, Automatische Prüfsysteme für batteriebetriebene Sicherheitsbeleuchtung für 
+Rettungswege 
+ÖVE-EN 1 Reihe, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und DC 1 500 V 
+ÖVE-EN 1 Teil 4 § 53, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V 
+– 
+Teil 4: 
+Besondere 
+Anlagen 
+– 
+§ 53 
+Ersatzstromversorgungsanlagen 
+und 
+andere 
+Stromversorgungsanlagen für den vorübergehenden Betrieb 
+                                                          
+2) mit 2004-01-01 zurückgezogen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+60 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 61/64 =====
+ÖVE/ÖNORM E 8007:2007 
+61 
+ÖVE EN 7a:19903), Nachtrag a zu ÖVE-EN 7/1981; Errichtung von elektrischen Anlagen in medizinisch 
+genutzten Räumen 
+ÖVE EN 61008-1, Fehlerstrom-/Differenzstrom-Schutzschalter 
+ohne 
+eingebauten 
+Überstromschutz 
+für 
+Hausinstallationen und ähnliche Anwendungen – Teil 1: Allgemeine Anforderungen 
+ÖVE EN 61558-2-4, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-4: Besondere 
+Anforderungen an Trenntransformatoren für allgemeine Anwendungen 
+ÖVE EN 61558-2-6, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-6: Besondere 
+Anforderungen an Sicherheitstransformatoren für allgemeine Anwendungen  
+ÖVE EN 61558-2-7, Sicherheit von Transformatoren, Netzgeräten und dergleichen – Teil 2-7: Besondere 
+Anforderungen an Transformatoren für Spielzeuge  
+ÖVE/ÖNORM EN 61340-4-3, Elektrostatik – Teil 4-3: Standard-Prüfverfahren für spezielle Anwendungen – 
+Schuhwerk 
+ÖVE-K 41 Reihe, PVC-isolierte Leitungen für Nennspannungen bis einschließlich 450/750 V 
+DIN 41773-1, Stromrichter – Halbleiter-Gleichrichtergeräte mit IU-Kennlinie für das Laden von Bleibatterien, 
+Richtlinien 
+DIN 41773-2, Stromrichter 
+– 
+Halbleiter-Gleichrichtergeräte 
+mit 
+IU-Kennlinie 
+für 
+das 
+Laden 
+von 
+Nickel/Cadmium-Batterien – Anforderungen 
+DIN 49400, Elektrisches Installationsmaterial – Haushalt- und Kragensteckvorrichtungen – Übersicht 
+DIN 51412-1, Prüfung von Mineralölerzeugnissen – Bestimmung der elektrischen Leitfähigkeit –  
+Teil 1: Laborverfahren 
+DIN 51412-2, Prüfung von Mineralölerzeugnissen – Bestimmung der elektrischen Leitfähigkeit –  
+Teil 2: Feldverfahren 
+DIN VDE 0303-8, VDE-Bestimmungen für elektrische Prüfungen von Isolierstoffen; Beurteilung des 
+elektrostatischen Verhaltens 
+DIN VDE 0558-1, Halbleiter-Stromrichter – Allgemeine Bestimmungen und besondere Bestimmungen für 
+netzgeführte Stromrichter 
+VDE 0303-30, Prüfverfahren für Elektroisolierstoffe – Spezifischer Durchgangswiderstand und spezifischer 
+Oberflächenwiderstand von festen, elektrisch isolierenden Werkstoffen 
+VDE 0413-2, Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Isolationswiderstand 
+VDE 0558-2, Halbleiter-Stromrichter – Selbstgeführte Halbleiter-Stromrichter einschließlich Gleichstrom-
+Direktumrichter 
+VDE 0558-11, Halbleiter-Stromrichter – Allgemeine Anforderungen und netzgeführte Stromrichter – 
+Festlegung der Grundanforderungen 
+BGBl. Nr. 218/1983, Allgemeine Arbeitnehmerschutzverordnung – AAV 
+BGBl. Nr. 219/1983, Allgemeine Maschinen- und Geräte- Sicherheitsverordnung – AMGSV 
+BGBl. Nr. 45/1994, Elektro-Ex-Verordnung 1993 – ElExV 1993 
+                                                          
+3) mit 1996-05-01 zurückgezogen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+61 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 62/64 =====
+ÖVE/ÖNORM E 8007:2007 
+62 
+BGBl. II Nr. 309/2004, Verordnung explosionsfähige Atmosphären – VEXAT 
+BGBl. II Nr. 33/2006, Änderung der Elektrotechnikverordnung 2002 (Elektrotechnikverordnung 2002/A1 – 
+ETV 2002/A1) 
+Landesrechtliche Bautechnikverordnung i.d.g.F. 
+BGR 132, Richtlinien für die Vermeidung von Zündgefahren infolge elektrostatischer Aufladungen 
+(Berufsgenossenschaftliche Regeln für Sicherheit und Gesundheit bei der Arbeit – BGR) 
+Richtlinie für die Vermeidung von Gefahren durch explosionsfähige Atmosphäre – mit Beispielsammlung, 
+Explosionsschutz-Richtlinien – (EX-RL). Bezugsquelle: Carl Heymanns Verlag, Luxemburger Straße 449, 
+50939 Köln 
+Vermeidung von Zündgefahren infolge elektrostatischer Aufladungen. Bezugsquelle: Carl Heymanns Verlag, 
+Luxemburger Straße 449, 50939 Köln 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+62 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 63/64 =====
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+63 von 64
+www.ris.bka.gv.at
+
+
+===== PAGE 64/64 =====
+ 
+ 
+ 
+Wichtige Informationen für Normen-Anwender 
+ÖVE/ÖNORMEN sind Regeln, die im Dialog und Konsens aller 
+Betroffenen und Interessierten entwickelt werden. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und 
+Qualifikationen fest und definieren, wie die Einhaltung dieser Anforderungen überprüft 
+wird. 
+Von ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig 
+(ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den 
+aktuellen Stand der Technik dokumentieren, das was in einem bestimmten Fachgebiet 
+„Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Experten 
+und Expertinnen in den zuständigen Komitees auf nationaler, europäischer und 
+internationaler Ebene - sowie die Kompetenz des Österreichischen Verbandes für 
+Elektrotechnik und seiner Referenten. 
+ 
+Aktualität des Normenwerks. Analog zur technischen und 
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen 
+Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Aktualität 
+überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. 
+Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten 
+Ausgaben der Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine 
+Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen 
+entsprechen. 
+ 
+Wissen um Veränderungen. Das Österreichische Normungsinstitut 
+bietet gemeinsam mit dem Österreichischen Verband für Elektrotechnik 
+Normanwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote, die 
+dafür sorgen, dass Normanwender zuverlässig über die neusten Versionen von 
+Normen verfügen und über Änderungen – Neuausgaben und/oder Zurückziehungen – 
+informiert werden. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen. 
+Informationen über Angebote und Dienstleistungen des ON und des OVE bei 
+ 
+ON Sales & Service 
+OVE Normung 
+ON Österreichisches Normungsinstitut 
+OVE Österreichischer Verband 
+Austrian Standards Institute 
+für Elektrotechnik 
+Heinestraße 38, 1020 Wien 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: sales@on-norm.at 
+E-Mail: ove@ove.at 
+Internet: www.on-norm.at/shop 
+Internet: www.ove.at 
+Fax: +43 1 213 00-818 
+Fax: +43 1 586 74 08 
+Tel.: +43 1 213 00-805 
+Tel.: +43 1 587 63 73 
+ 
+ 
+ 
+ 
+ISO 9001:2000 
+zertifiziert│certified by SQS 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+64 von 64
+www.ris.bka.gv.at

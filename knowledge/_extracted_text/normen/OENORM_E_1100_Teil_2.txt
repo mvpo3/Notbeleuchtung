@@ -1,0 +1,343 @@
+
+
+===== PAGE 1/6 =====
+ONORM E 1100 Teil 1, Nov. 1979
+
+Frithere Ausgaben:
+
+Medieninhaber: Osterreichisches Normungsinstitut, 1021 Wien.
+Hersteller: Buch- und Offsetdruck Ing. Kar) Raab, 1160 Wien.
+
+Anderungen gegeniiber der vorherigen Ausgabe:
+
+Anpassung an CENELEC
+
+DK 621.3.027.2 1. Juni 1990
+
+Normspannungen
+
+Nennspannungen
+fiir Niederspannungs-Stromverteilungssysteme
+
+Standard voltages; Gemeinsam mit ONORM E 1100 Teil 1
+nominal voltages for low voltage public Ersatz für ONORM E 1100 Teil 1, Nov. 1979
+electricity supply systems
+
+Stimmt teilweise überein mit (+)
+
+IEC 38 (1983), stimmt inhaltlich überein
+
+mit (=) CENELEC HD 472 S1
+
+und CENELEC-Memorandum 14
+
+Vorbemerkung
+
+Auf der Grundlage von IEC-Publikation 38, 6. Fassung 1983, hat CENELEC einen Teil der Begriffe rsowie
+die Nennspannungen und deren Harmonisierung für Niederspannungs-Stromverteilungssysteme in
+CENELEC HD 472 S 1 iibernommen.
+
+Die ONORM E 1100 erscheint daher in zwei Teilen: Teil 1 beinhaltet IEC 38, ausgenommen die Nieder-
+spannungs-Wechselstromnetze, Teil 2 beinhaltet CENELEC HD 472 S 1 und die zugehérige Tabelle 1 aus
+IEC 38.
+
+Der Abschnitt ,,Begriffsbestimmungen” des vorliegenden Teiles 2 stimmt mit CENELEC HD 472 S 1 und
+IEC 38 iiberein.
+
+CENELEC hat mit der Annahme von HD 472 S 1 beschlossen, die bisher bestehenden, linderweise ver-
+schiedenen Nennspannungen für Niederspannungsnetze unter Anwendung von Ubergangsregelungen auf
+3N — 400V (~ 230 V) zu harmonisieren. Nach den Regeln des CENELEC sind alle Mitgliedsorganisa-
+tionen verpflichtet, dieses Harmonisierungsdokument in ihrem nationalen Normenwerk zu beriicksichtigen
+und entgegenstehende Bestimmungen zuriickzuziehen. Die vorliegende ONORM stellt die nationale
+Umsetzung von CENELEC HD 472 S 1 fiir Osterreich dar.
+
+Fir die Niederspannungen sind in IEC 38 'und CLC HD 472 S 1 die Spannungswerte 380/220V und
+415/240V fir Drehstromnetze der elektrischen Energieversorgung durch einen einzigen, weltweit
+genormten Einheitswert 400/230 V ersetzt worden. Durch die fiir die Ubergangszeit bis zum Jahr 2003
+vorgesehenen Toleranzen wird erreicht, daB fiir 380/220 V bemessene elektrische Betriebsmitte! bis zum
+Ende ihrer Lebensdauer sicher betrieben werden kénnen.
+
+Einzelne Abweichungen in Aufbau und Systematik der vorliegenden ONORM von der iiblichen Ge-
+staltung von ONORMEN ergeben sich aus der Notwendigkeit der Ubereinstimmung mit internatio-
+nalen Dokumenten.
+
+Fortsetzung Seiten 2 bis 6
+
+Nach dieser ONORM ist eine Normkennzeichnung gemäß § 3 Normengesetz 1971 unzuléssig.
+
+Textstellen in kursiver Schrift. ausgenommen Formelzeichen, sind nicht Normentext. Zitierungen von Normen ohne Ausgabedatum beziehen sich auf die jeweils geitende
+Fassung. Auslegungen (Interpretationen) und Erlauterungen zu ONORMEN sind laut Geschattsordnung des ON nur dann authentisch, wenn sie vom ON aufgrund einer
+BeschluBfassung im zustandigen FNA herausgegeben werden.
+
+Fachnormenausschuf3
+110A
+
+Allgemeine
+Eiektrotechnik
+
+250 Verkauf von ONORMEN und anderen Normen durch: © ON-1930 PG 8
+Osterreichisches Normungsinstitut (ON), HeinestraBe 38, Alle Rechte vorbehalten; Nachdruck oder Verviettaltigung, Auf-
+Postfach 130, A-1021 Wien, Tel.: (0222) 26 75 35 nahme auf cder in sonstige Medien oder Datentrager nur mit
+
+Telex: 115960 norm a, Telefax: 26 75 52, Zustimmung des ON gestattet!
+
+
+
+===== PAGE 2/6 =====
+Seite 2 ÖNORM E 1100 Teil 2
+
+Inhaltsverzeichnis
+
+1 Anwendungsbereich
+
+2 Begriffsbestimmungen
+
+2.1 Nennspannung
+
+2.2 höchste Spannung eines Netzes
+
+2.3 niedrigste Spannung eines Netzes
+
+2.4 Übergabestelle
+
+3 Genormte Werte der Nennspannungen
+3.1 Allgemeine Übersicht
+
+3.2 Nennspannung 400/230 V
+
+4 Hinweis auf andere Unteriagen
+
+Anhang
+
+1 Anwendungsbereich
+
+Diese ÖNORM ist für öffentliche Niederspannungs-Verteilungsnetze mit Nennspannungen von ~ 100 V
+bis ~ 1000 V sowie für die Betriebsmittel, die mit diesen Netzen verbunden sind, anzuwenden.
+
+Sie ist insbesondere für öffentliche Verteilungsnetze mit Nennspannungen zum Zeitpunkt der Ausgabe
+dieser ÖNORM von
+
+(1) 3N ~ 380V
+(2) 3 ~220Vund
+(3) -+ ~220V
+
+und die an diese anzuschlieBenden Betriebsmittel sowie sinngemaB auch für private Niederspan-
+nungsnetze anzuwenden.
+
+Diese ONORM ist nicht für Signal- oder MeBspannungen und nicht für Normspannungen von Bau-
+elementen und Teilen in elektrischen Geräten oder Teilen von Betriebsmitteln vorgesehen.
+
+2 Begriffsbestimmungen
+
+Bei den in dieser ONORM angegebenen Spannungen handeit es sich um Effektivwerte.
+
+2.1 Nennspannung: Spannung, nach der ein Netz oder ein Betriebsmittel benannt ist und auf die
+bestimmte Betriebseigenschaften bezogen werden.
+
+Bei Betriebsmitteln ist dies insbesondere die Spannung, mit der das Betriebsmittel gekennzeichnet ist und
+die den für das Betriebsmittel geltenden Priifbestimmungen zugrundegelegt wurde.
+
+Es gilt als Konvention, daB Betriebsmittel unabhdngig von den in den jeweiligen Priifbestimmungen ange-
+gebenen Priifspannungen in Netzen gemäß dieser ONORM hinsichtlich ihrer Sicherheit uneingeschrénkt
+und hinsichtlich ihrer Funktion zufriedenstellend betreibbar sein missen.
+
+
+
+===== PAGE 3/6 =====
+ONORM E 1100 Teil2 Seite 3
+
+2.2 höchste Spannung eines Netzes: höchster Spannungswert, der unter normalen Betriebsbedin-
+gungen zu einem beliebigen Zeitpunkt an irgendeiner Stelle des Netzes auftritt.
+
+Ausgenommen sind transiente Spannungen (z. B. von Schaltvorgängen im Netz), zeitweilige Span-
+nungsschwankungen und anomale Betriebszustände.
+
+2.3 niedrigste Spannung eines Netzes: niedrigster Spannunswert, der unter normalen Betriebsbedin-
+gungen zu einem beliebigen Zeitpunkt an irgendeiner Stelle des Netzes auftritt.
+
+Ausgenommen sind transiente Spannungen (z.B. von Schaltvorgängen im Netz), zeitweilige Span-
+nungsschwankungen und anomale Betriebszustände.
+
+2.4 Übergabestelle: Stelle, an der die elektrische Energie vom Verteilungsnetz des Elektrizitäts-
+versorgungsunternehmens an die Verbraucheranlage übergeben wird:
+
+3 Genormte Werte der Nennspannungen
+
+3.1 Allgemeine Übersicht
+
+Die genormten Werte der Nennspannungen sind in Tabelle 1 angeführt. In dieser Tabelle schließen
+die Drehstrom-Vierleiternetze und die Einphasen-Dreileiternetze auch Einphasen-Stromkreise
+(Anschlüsse, Abzweige u. dgl.) mit ein, die mit diesen Netzen verbunden sind.
+
+In Tabelle 1 sind die höheren Werte Spannungen zwischen den Außenleitern und die niedrigeren
+Werte Spannungen gegen den Neutralleiter. Wenn nur ein Wert angegeben ist, bezieht er sich auf
+Dreileiternetze und gibt die Spannung zwischen den AuBenleitern an.
+
+Höhere Spannungen als 400/230 V sind im allgemeinen für die Anwendung in großen Industriebetrie-
+ben und Großbauten vorgesehen.
+
+Tabelle 1: Nennspannungen für Wechselstromnetze sowie
+zugehörige Betriebsmittel
+
+Drehstrom-
+Vierteiter- Einphasen-
+oder Dreileiternetze )
+Dreileiternetze
+
+Nennspannung
+V
+
+- 240/120'}
+230?)} _
+400/230
+480/2777)
+690/4003)
+
+1000
+
+') Netze diesgr Art sind in CLC HD 472 S 1 nicht erwahnt und
+werden in Osterreich nicht verwendet.
+
+2) Nur für Sonderzwecke.
+
+3) Der Ubergang von der derzeitigen Nennspannung 660/380 V
+auf 690/400V erfolgt analog zur Harmonisierung auf die
+neue Nennspannung 400/230 V.
+
+
+
+===== PAGE 4/6 =====
+Seite 4 ÖNORM E 1100 Teil 2
+
+Es wird empfohlen, daß unter normalen Netzbedingungen die Spannung an den Übergabestellen um
+nicht mehr als = 10% von der Nennspannung abweicht.
+
+Es wird darauf hingewiesen, daß im Bereich zwischen der Übergabestelle und den Betriebsmitteln des
+Verbrauchers ein zusätzlicher Spannungsabfall auftritt, der nicht Gegenstand der vorliegenden ÖNORM ist.
+
+3.2 Nennspannung 400/230 V
+Bei der Nennspannung 400/230 V beträgt
+
+— in Vierleiter-Drehstromnetzen die Spannung zwischen einem Außenleiter und dem Neutralleiter
+230 V und die Spannung zwischen zwei Außenleitern 400 V,
+
+— in Dreileiter-Drehstromnetzen die Spannung zwischen zwei AuBenieitern 230 V.
+
+Die Nennspannung der vorhandenen 380/220-V-Netze muß auf den genormten Wert 400/230 V
+gebracht werden.
+
+Die Übergangszeit sollte so kurz wie möglich sein und das Jahr 2003 nicht überschreiten. (Siehe A.1)
+
+Bis zum 31. Dezember 1995 sollten die Elektrizitätsversorgungsunternehmen die 380/220-V-Netze
+zunächst auf 400/230 V *,8% bringen.
+
+In Ländern, die 415/240-V-Netze betreiben, wird gleichzeitig die Spannung auf 400/230 V * ’g;/g gebracht
+werden.
+
+Ab 1. Janner 2004 betragt die empfohlene Spannungstoleranz + 10 %, bezogen auf 400/230 V.
+
+Fiir den Zeitraum nach dem Jahre 2003 wird international eine Verkleinerung der Toleranzen in Erwdgung
+gezogen.
+
+Dieser Absichtserkldrung wurde von Osterreich wegen fehlender Relevanz zum normativen Inhalt des CLC
+HD 472 S 1 nicht zugestimmt.
+
+4 Hinweis auf andere Unterlagen
+
+ONORM E 1002 Graphische Symbole fir Schaltungsunterlagen; Schaltzeichenelemente, kenn-
+zeichnende Symbole und andere Symbole für allgemeine Zwecke
+
+IEC 38 (1983) IEC standard voltages
+IEC-Normspannungen
+IEC 617-2 (1983) Symbol elements, qualifying symbols and other symbols having general application
+
+Schaltzeichenelemente, kennzeichnende Elemente und andere Symbole fir allge-
+meine Zwecke
+
+CENELEC HD 472 S1 Nominal voitages for low voltage public electricity supply systems
+Nennspannungen fiir 6ffentliche Niederspannungs-Stromverteilungssysteme
+
+
+
+===== PAGE 5/6 =====
+ÖNORM E1100 Teil2 Seite 5
+
+Anhang
+
+A.1 Ablauf der Umstellung zur Einführung der harmonisierten Nennspannung
+
+Nachstehend wird der vorgesehene Ablauf der Umstellung in Osterreich zusammenfassend dargestellt.
+
+A.1.1 Netzsysteme
+
+Offentliche Stromversorgungsnetze für Niederspannung sind ausschlieBlich als Drehstrom-Vierleiter-
+systeme, derzeit 3N —- 380/220V, spater 3N — 400/230V, zu errichten. Vorhandene Versorgungs-
+netze 3 ~ 220V oder 3N ~ 220/127 V dirfen als 3 ~ 230V weiter betrieben werden; Anschlüsse
+mit ~ 127 V sind auf ~ 230V umzustellen. Private Niederspannungsnetze für Sonderzwecke durfen
+auch als Drehstrom-Dreileiternetze, derzeit 3 ~ 220 V, später 3 ~ 230 V, errichtet werden.
+
+A.1.2 Nennspannung der Netze und hdchste/niedrigste Spannung eines Netzes an der Ubergabestelle
+
+Die in 3.2 angegebenen Werte fiir die Nennspannung und die héchste und die niedrigste Spannung
+an den Ubergabestellen von den Verteilungsnetzen der Elektrizitatsversorgungsunternehmen zu
+den Verbraucheranlagen in den verschiedenen Zeitabschnitten der Umstellung sind in Tabelle A1
+und Bild A.1 enthalten.
+
+Tabelle A.1
+
+bis 31. Dez. 1995 380/220V 418/242V 342/198 V
+
+vom 1. Jän. 19967)
+bis 31. Dez. 2003
+
+ab 1. Jan. 2004 400/230V 440/253V 360/207 V
+
+400/230V 424/244 V 360/207 V
+
+1} Letzter Termin für das Erreichen der Werte für die niedrigste Spannung. Es wird empfohlen, das in dieser Zeile
+angegebene Spannungsband bereits ab 1. Jan. 1993 einzuhalten.
+
+U{V]t
+260 P ' r —
+253 = N | e e
+lı —— ü i q--—«——*-————a-r |
+210 ¢ ol NN AN i -
+207 —— i j QL.\—}A_-\_-—\A_..\AÄ\Q_A—. ki kar o i
+198———"200 r—'—'—'-“'H
+190 4 —— La F G A —— }{a]
+1990 1995 2000 2003
+
+Nennspannung
+———-— höchste Spannung des Netzes an der Ubergabestelle
+
+—“ —— “ —r
+
+niedrigste Spannung des Netzes an der Übergabestelle
+
+Bild A.1: Spannungsband der Netze
+
+
+===== PAGE 6/6 =====
+Seite 6 ONORM E 1100 Teil 2
+
+A.1.3 Nennspannung der Betriebsmittel
+
+Ab 1.Jdn. 1993 werden neue Betriebsmittel fir 400/230 V ausgelegt und entspréchend gekenn-
+zeichnet.
+
+Die Ubergangszeit, in der Betriebsmittel mit einer Nennspannungs-Kennzeichnung 380/220 V noch in
+Verkehr gebracht werden dürfen, ist der jeweils gültigen Elektrotechnikverordnung zu entnehmen.
+
+Vor dem 1. Jän. 1993 dürfen Betriebsmitte! dann mit 400/230 V gekennzeichnet werden, wenn sie geeig-
+net sind, auch unter den Bedingungen von Tabelle A.1, Zeile 1, betrieben zu werden.
+
+Auch nach AbschiuB des Umstellungsvorganges dirfen Betriebsmittel, die mit 380/220 V gekenn-
+zeichnet sind, weiter betrieben werden.
+
+A.2 Interpretation der Nennspannungs-Angaben in Publikationen
+
+in allen dsterreichischen Normen und elektrotechnischen Bestimmungen sind - wenn nicht ausdriick-
+lich etwas anderes angegeben ist - Angaben über die Nennspannung der Versorgungsnetze und
+Betriebsmittel entsprechend den in Tabelle A.1 angegebenen Werten zu lesen. Dies gilt auch fir
+vertragliche Abmachungen über die Lieferung elektrischer Energie u. 4.
+

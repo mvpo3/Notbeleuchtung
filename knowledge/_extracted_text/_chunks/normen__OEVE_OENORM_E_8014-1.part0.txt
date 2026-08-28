@@ -1,0 +1,335 @@
+
+
+===== PAGE 1/7 =====
+ÖVE/ÖNORM
+ 
+E 8014-1
+Ausgabe: 2006-08-01
+ 
+Auch Normengruppe 330 
+ 
+ 
+Ersatz für ÖNORM E 2790:1991 
+ 
+ICS  29.020; 
+ 
+91.120.40; 
+ 
+91.140.50 
+Errichtung von Erdungsanlagen für elektrische 
+Anlagen mit Nennspannungen bis AC 1000 V 
+und DC 1500 V 
+Teil 1: Allgemeine Anforderungen und Begriffe 
+ 
+Erection of earthing installations for electrical installations with rated voltages up to 
+AC 1000 V and DC 1500 V – Part 1: General requirements and definitions 
+ 
+ 
+Erection d'installations de mise à la terre pour installations à courant fort jusqu'à 
+AC 1000 V et DC 1500 V – Partie 1: Prescriptions générales et définitions 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8014-1 Seiten 2 bis 7 
+Fach(normen)ausschuss
+FA/FNA E
+Elektrische 
+Niederspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © OVE/ON - 2006. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des OVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, 1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (OVE), Eschenbachgasse 9, 1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 7
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 2/7 =====
+Seite 2 
+ÖVE/ÖNORM E 8014-1 
+Vorwort 
+ 
+Auf Grund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den 
+einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den je-
+weils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum 
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte 
+aktuelle Stand zu berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk 
+Die ÖVE/ÖNORM E 8014 Reihe ersetzt ÖNORM E 2790:1991. Da die zu ersetzende ÖNORM jedoch mit der 
+ETV 2002/A1 verbindlich erklärt ist, kann die Zurückziehung dieser Bestimmung erst mit Erscheinen einer neuen ETV 
+erfolgen. 
+ 
+Inhaltsverzeichnis 
+Vorbemerkung................................................................................................................................................................... 3 
+1 
+Anwendungsbereich ................................................................................................................................................ 3 
+2 
+Normative Verweisungen......................................................................................................................................... 3 
+3 
+Begriffe ...................................................................................................................................................................... 3 
+4 
+Allgemeine Anforderungen...................................................................................................................................... 4 
+Anhang A  
+(normativ): Korrosionsschutz von Erdungsanlagen ............................................................................... 6 
+Anhang B  
+(informativ): Literaturhinweise .................................................................................................................. 7 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 3/7 =====
+Seite 3 
+ÖVE/ÖNORM E 8014-1 
+Vorbemerkung 
+Die ÖVE/ÖNORM E 8014 Reihe besteht aus folgenden Teilen: 
+Teil 1 
+Allgemeine Anforderungen und Begriffe 
+Teil 2 
+Fundamenterder 
+Teil 3 
+Besonderheiten von Erdungsanlagen in Gebäuden mit speziellen EMV-Anforderungen der 
+informationstechnischen Einrichtungen  
+Die vorliegende ÖVE/ÖNORM ist das Ergebnis einer Überarbeitung und Anpassung von ÖNORM E 2790 
+„Elektroinstallationen – Erdungsanlagen – Fundamenterder“ an den neuesten Stand der Technik, wobei auch die 
+normativen Verweisungen aktualisiert wurden.  
+1 
+Anwendungsbereich 
+Diese Norm gilt für die Anordnung und den Einbau von Fundamenterdern in neu zu errichtenden Gebäuden und ist 
+gemeinsam mit ÖVE/ÖNORM E 8014-2 und ÖVE/ÖNORM E 8014-3 anzuwenden. Hinsichtlich der Errichtung von 
+Horizontal- und Vertikalerdern im Erdreich, die für bestehende Gebäude und zB für Betriebserdungsanlagen elektrischer 
+Netze erforderlich sein können, sind besondere Hinweise im Anhang A enthalten. Im übrigen wird für die Errichtung 
+dieser Erdungsanlagen auf ÖVE/ÖNORM E 8001-1 verwiesen. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten Verweisungen 
+gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe des in Bezug 
+genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind immer in der jeweils geltenden 
+Fassung anzuwenden. 
+ÖVE/ÖNORM E 8001-1 
+Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1000 V und 
+DC 1500 V –  Teil 1: Begriffe und Schutz gegen elektrischen Schlag 
+(Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8014-2 
+Errichtung von Erdungsanlagen für elektrische Anlagen mit Nennspannungen  
+bis AC 1000 V und DC 1500 V – Teil 2: Fundamenterder 
+ÖVE/ÖNORM E 8014-3 
+Errichtung von Erdungsanlagen für elektrische Anlagen mit Nennspannungen  
+bis AC 1000 V und DC 1500 V – Teil 3: Besonderheiten von Erdungsanlagen in 
+Gebäuden mit speziellen EMV-Anforderungen der informationstechnischen 
+Einrichtungen 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe nach ÖVE/ÖNORM E 8001-1 und die folgenden Begriffe: 
+3.1 
+Erder 
+leitfähiges Teil, das in das Erdreich eingebettet ist und damit in leitender Verbindung steht, oder ein solches, das in Beton 
+eingebettet ist, der mit dem Erdreich großflächig leitend in Berührung steht 
+ANMERKUNG: 
+Im Falle eines Fundamenterders wirkt die erdfühlige Oberfläche des Betonkörpers als Erder. 
+3.2 
+Fundamenterder 
+Erder, die in Beton eingebettet sind, der mit der Erde großflächig leitend in Berührung steht 
+ANMERKUNG: 
+Durch das Einbetten in zweckmäßig gewähltem Beton ist eine lange Lebensdauer des Werkstoffes zu 
+erwarten. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 4/7 =====
+Seite 4 
+ÖVE/ÖNORM E 8014-1 
+3.3 
+Erdungsleitung  
+Verbindungsleitung zwischen einem zu erdenden Anlagenteil und einem Erder, soweit sie außerhalb der Erde oder 
+isoliert in der Erde verlegt ist 
+ANMERKUNG: 
+Hierfür wird auch die Bezeichnung Erdungsleiter verwendet. 
+3.4 
+Erdungsanlage  
+örtlich abgegrenzte Gesamtheit miteinander leitend verbundener Erder und/oder in gleicher Weise wirkender Metallteile 
+(zB Mastfüße, Bewehrungen, metallene Kabelmäntel) und Erdungsleitungen 
+3.5 
+Anschlussfahne 
+Verbindungsstück zwischen dem Fundamenterder und der Potenzialausgleichsschiene für den Hauptpotenzialausgleich, 
+oder Verbindungsstück zum Anschluss der Ableitung einer Blitzschutzanlage, eines Anschlussteiles oder sonstiger 
+Konstruktionsteile aus Metall an den Fundamenterder 
+ANMERKUNG: 
+Eine Anschlussfahne kann auch in obere Stockwerke weitergeführt sein. 
+3.6 
+Anschlussteil 
+in Beton oder Mauerwerk oberflächenbündig eingebettetes Bauelement, das mit dem Fundamenterder verbunden ist und 
+zum Anschluss eines Potenzialausgleichsleiters oder einer Erdungsleitung dient 
+ANMERKUNG: 
+Diese Anschlussteile werden auch als Erdungsfestpunkte bezeichnet. 
+3.7 
+verrödeln 
+herstellen einer mechanischen Verbindung von Metallteilen durch Umwickeln mit Eisendraht, dessen Enden verdrillt 
+werden 
+ANMERKUNG: 
+Durch die unmittelbare Berührung der Metallteile entsteht ein elektrischer Kontakt, der zwar dazu führt, dass alle 
+diese Teile das gleiche Potenzial annehmen, jedoch nur für EMV-Belange nutzbar ist.  
+3.8 
+informationstechnische Anlage 
+Gesamtheit aller informationstechnischen Einrichtungen ab dem Netzabschlusspunkt (NAP) des IT-Netzbetreibers 
+einschließlich Empfangs- und Verteilanlagen für Ton- und Fernsehsignale sowie für interaktive Dienste mit oder ohne 
+Anschluss an ein allgemein zugängliches Netz eines IT-Netzbetreibers  
+4 
+Allgemeine Anforderungen 
+Erdungsanlagen sind wichtige und unverzichtbare Bestandteile der Schutzmaßnahmen gegen gefährliche Körperströme 
+in elektrischen Anlagen. Gemäß ÖVE/ÖNORM E 8001-1/A1:2002, Abschnitt 20, ist in neu zu errichtenden Gebäuden, 
+wenn sie mit erdfühligen Fundamenten ausgeführt werden, ein Fundamenterder zu errichten.  
+Der Fundamenterder ist eine wirtschaftliche und dauerhafte Form der Ausführung einer Erdungsanlage für alle 
+Neubauten sowie für Zu- und Umbauten mit neuen Fundamenten und bildet zugleich die beste Grundlage für den 
+erforderlichen Hauptpotenzialausgleich. 
+In Gebäuden, deren Fundament dauerhaft elektrisch gegen das Erdreich isoliert ausgeführt wird, sind die Bewehrungen 
+im Fundament als Grundlage für den Potentialausgleich und hinsichtlich der EMV-Anforderungen gemäß ÖVE/ÖNORM 
+E 8014-2 und ÖVE/ÖNORM E 8014-3 ebenfalls zusammen zu schließen, jedoch muss das Gebäude zusätzlich einen 
+dauerhaften Anlagenerder in geeigneter Form erhalten. 
+In Gebäuden bilden die metallenen konstruktiven Bauteile der baulichen Anlage (Bewehrungen, Metallkonstruktionen 
+u. dgl.), der Wasser-, Gas- und Heizungsinstallationen zusammen mit den Starkstrom-, Antennen und 
+informationstechnischen Anlagen ein verzweigtes Netz leitfähiger Systeme, die teils getrennt, teils unmittelbar oder 
+mittelbar miteinander verbunden sind. 
+Während der Hauptpotenzialausgleich die Aufgabe hat, alle vorangeführten leitfähigen Systeme einerseits untereinander 
+und andererseits mit der Erdungsanlage (dem Erder) zu verbinden, stellen die Erder direkt oder indirekt, zB als 
+Fundamenterder über die Einbettung in den Fundamenterderbeton, eine leitfähige Verbindung zum Erdreich her. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 5/7 =====
+Seite 5 
+ÖVE/ÖNORM E 8014-1 
+In Gebäuden mit speziellen EMV-Anforderungen der informationstechnischen Einrichtungen ist aus EMV-Gründen die 
+Errichtung 
+eines 
+zusätzlichen 
+Potenzialausgleiches 
+in 
+jedem 
+Stockwerk 
+gemäß 
+ÖVE/ÖNORM  
+E 8001-1:2000, Abschnitt 15.2 empfohlen, in besonderen Fällen jedoch für die ordnungsgemäße Funktion der 
+informationstechnischen Anlagen unerlässlich. Eine entsprechende Ausführung des Fundamenterders bildet hierfür die 
+Basis (siehe ÖVE/ÖNORM E 8014-3). 
+Hinsichtlich des Korrosionsschutzes von Erdungsanlagen ist zu beachten, dass in Beton eingebetteter Stahl generell ein 
+elektrochemisches Potenzial nahe dem von im Erdreich verlegten Kupfer aufweist (siehe Anhang A). 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 6/7 =====
+Seite 6 
+ÖVE/ÖNORM E 8014-1 
+Anhang A (normativ): Korrosionsschutz von Erdungsanlagen 
+Ordnungsgemäß in Fundamenterderbeton verlegter Stahl (ungeschützt oder feuerverzinkt) und auch dessen 
+Verbindungsklemmen sind durch die chemische Wirkung des Betons in hohem Maße, meist auf Lebensdauer des 
+Bauwerks, gegen Korrosion geschützt. Zu beachten ist jedoch, dass Stahl in Beton ein elektrochemisches Potenzial 
+annimmt, das mit dem von Kupfer in Erde annähernd gleich ist.  
+Zur Vermeidung von Korrosionsschäden an Erdungsanlagen in Zusammenhang mit Fundamenterdern sind daher 
+folgende Maßnahmen erforderlich: 
+– 
+Anschlüsse für außen am Gebäude heruntergeführte Ableitungen aus verzinktem Stahl, zB einer 
+Blitzschutzanlage, müssen etwa 1 m über der fertigen äußeren Geländeoberkante in das Gebäude 
+eingeführt werden und entweder in Beton bis zum Fundamenterder oder innerhalb des Gebäudes in Luft 
+bis zur nächsten Anschlussstelle an die vermaschte Erdungsanlage geführt werden.  
+– 
+Sollte es aus baulichen Gründen nicht möglich sein, Ableitungen oberhalb der äußeren Geländeoberkante 
+in das Bauwerk einzuführen, so müssen im Erdreich anzuordnende Einführungen aus einem 
+elektrochemisch resistenten Material hergestellt werden, zB aus Kupfer, aus Edelstahl V4A oder aus 
+fabriksmäßig kunststoffisoliertem Runddraht. Der Übergang von Stahl auf diese Materialien darf jedoch 
+keinesfalls innerhalb des Erdreiches erfolgen. Der Anschluss an den Fundamenterder ist innerhalb des 
+Fundamenterderbetons oder kontrollierbar an einer Anschlussstelle der vermaschten Erdungsanlage im 
+Inneren des Gebäudes vorzunehmen. 
+– 
+Zusätzliche, außen noch erforderliche Erder sind vorzugsweise aus Kupfer, kupferummanteltem Stahl oder 
+aus Edelstahl V4A herzustellen und ebenfalls innerhalb des Fundamenterderbetons oder kontrollierbar an 
+eine Anschlussstelle der vermaschten Erdungsanlage im Inneren des Gebäudes anzuschließen. 
+ANMERKUNG: 
+Aufgrund der Potenzialverhältnisse dürfen Erdermaterialien aus verzinktem Stahl keinesfalls aus dem 
+Betonfundament direkt ins Erdreich herausgeführt werden, weil unmittelbar neben dem Fundament die 
+elektrochemische Korrosionswirkung am größten ist. Auch allenfalls außerhalb des Fundamenterders zusätzlich noch 
+erforderliche Erder sollen zweckmäßigerweise nicht aus verzinktem Stahl errichtet werden. Der Korrosionsangriff auf 
+derartige Erder ist umso größer, je größer das bewehrte Fundament ist, je näher sich der Erder im Bereich des (oder 
+der) miteinander verbundenen Fundamenterder(s) befindet und je geringer der spezifische Bodenwiderstand ist. Das 
+elektrochemische Potenzial eines Fundamenterders oder einer elektrisch verbundenen Armierung in Beton ist auch 
+auf Rohrleitungen aus Metall wirksam, die in das Gebäude eingeführt werden. Diese sind daher vorzugsweise durch 
+Isoliermuffen zu trennen, oder es sind besondere Maßnahmen für einen kathodischen Korrosionsschutz zu treffen. 
+Eine Beschichtung oder Ummantelung mit Korrosionsschutzbinden schützt hier auf Dauer nicht, weil diese 
+erfahrungsgemäß immer einzelne Fehlerstellen aufweisen wird, an denen dann ein besonders intensiver Lochfraß 
+einsetzt. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 7
+www.ris.bka.gv.at
+
+
+===== PAGE 7/7 =====
+Seite 7 
+ÖVE/ÖNORM E 8014-1 
+Anhang B (informativ): Literaturhinweise 
+ÖNORM B 5432 
+Elektroinstallationen – Bauliche Vorkehrungen für Fundamenterder 
+ÖNORM E 2960-1 
+Blitzschutzanlagen – Klemm- und Befestigungsmaterial – Allgemeines, Laschen, 
+Stützen, Dachdurchführungen, Kasten 
+ÖVE/ÖNORM E 8049-1 
+Blitzschutz baulicher Anlagen – Teil 1: Allgemeine Grundsätze 
+ÖVE/ÖNORM E 8383 
+Starkstromanlagen mit Nennwechselspannung über 1 kV 
+ÖVE/ÖNORM EN 50164-1 
+Blitzschutzbauteile – Teil 1: Anforderungen für Verbindungsbauteile 
+ÖVE/ÖNORM EN 50164-2 
+Blitzschutzbauteile – Teil 2: Anforderungen an Leitungen und Erder 
+ÖVE/ÖNORM EN 50174-2 
+Informationstechnik – Installation von Kommunikationsverkabelung –  
+Teil 2: Installationsplanung und Installationspraktiken in Gebäuden 
+ÖVE E 40 
+Schutz von Erdern und erdverlegten Metallteilen gegen Korrosion  
+ÖVE EH 41 
+Erdungen in Wechselstromanlagen mit Nennspannungen über 1 kV  
+BGBL II Nr. 322/1998 
+Nullungsverordnung 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 7
+www.ris.bka.gv.at

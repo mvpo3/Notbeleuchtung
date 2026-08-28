@@ -1,0 +1,1651 @@
+
+
+===== PAGE 161/348 =====
+160
+Datenaustausch
+Die grundsätzliche Voraussetzung für die BIM-basierte Zusammenarbeit ist ein 
+funktionierender Datenaustausch zwischen den verschiedensten Professionisten 
+und deren teilweise sehr unterschiedlichen Softwareanwendungen. 
+Jede Software bzw. Herstellerplattform arbeitet mit eigenen Formaten. Beim 
+Umwandeln dieser Daten in offene Dateiformate gehen zwar viele Daten verloren, 
+aber dafür können offene Dateiformate von den meisten Programmen verarbeitet 
+werden.
+Datenaustausch
+Kapitel 4
+MARCUS WALLNER
+
+
+===== PAGE 162/348 =====
+Proprietär und/oder offen?  . . . . . . . . . . . . . . . . . . . . . . . . . .	
+162
+Proprietäre Formate  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+162
+Offene Formate  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+164
+open contra closed . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+165
+BIM und GIS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+167
+3D-Laserscan  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+168
+Punktwolken . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+171
+BIM und GIS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+173
+Objektorientierte Modellierung  . . . . . . . . . . . . . . . . . . . .	
+179
+OOM-Konzept . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+180
+Vererbung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+184
+Weitere Beziehungen zwischen Klassen . . . . . . . . . . . . . . .	
+185
+Nomenklatur . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+186
+bSDD (buildingSMART Data Dictionary) . . . . . . . . . . . . . . .	
+186
+ASI-Merkmalserver . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+188
+IFC (Industry Foundation Classes) . . . . . . . . . . . . . . . . . . .	
+190
+IFC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+192
+IFC-Versionen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+194
+MVD (Model View Definition)  . . . . . . . . . . . . . . . . . . . . . . . . .	
+195
+Literaturverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+198
+161
+Datenaustausch
+
+
+===== PAGE 163/348 =====
+162
+Datenaustausch
+Proprietär und/oder offen? 
+	
+Das Datenformat steht für openBIM oder closedBIM
+Entscheidend für einen funktionierenden 
+Dateiaustausch ist das Dateiformat und dessen 
+korrekter Import und Export. Grundsätzlich wird 
+zwischen offenen und proprietären Formaten 
+unterschieden. Ein Element (z.B. Außenwand) 
+muss aus der Anwendersoftware so exportiert 
+werden, dass es nach dem Import in die Software 
+eines anderen Anwenders wieder der gleichen 
+Klasse angehört und mit den gewünschten und 
+gleichen Attributen in die Empfängersoftware 
+eingelesen wird. 
+Proprietäre Formate 
+Übersetzt bedeutet proprietär so viel wie  
+„im Eigentum befindlich“, juristisch wird es syno-
+nym verwendet für „urheberrechtlich geschützt“. 
+Proprietäre Softwareprodukte oder Dateiformate 
+befinden sich im Eigentum eines Herstellers.  
+Da nur dieser über den Quellcode verfügt, kann 
+er sich die Verwendung entsprechend honorie-
+ren lassen. Normalerweise sind die Quellcodes 
+ein Handelsgeheimnis des Herstellers. Soweit 
+also nur ein Hersteller das Format definiert, wird 
+dieses Dateiformat als proprietär bezeichnet.  
+Hinter proprietären Formaten stecken neben 
+technischen Bedürfnissen meist auch kommer-
+zielle Interessen. Dabei kommt es vor, dass der 
+Hersteller dieses Format innerhalb seiner ge­
+samten Produktpalette nützt. Falls das Format 
+nur von einer Anwendung genutzt wird, spricht 
+man sogar von einem „nativen Format“. Um­
+gekehrt kann es vorkommen, dass proprietäre 
+Formate auch von anderen Herstellern genutzt 
+werden, dann können diese im Lauf der Zeit 
+manchmal zu allgemeinen Standards werden. 
+Dahinter verbergen sich meist hochpoliti-
+sche Vorgänge. Kaum jemand kann sich noch 
+daran erinnern, als der Acrobat Reader kosten-
+pflichtig und PDF ein proprietäres Format war. 
+Einen großen Vorteil hatte das Dateiformat aller-
+dings von Anfang an. Es ist plattformunabhängig 
+und bildet somit sogar eine Brücke, nicht nur 
+zwischen einzelnen Softwareprodukten, sondern 
+sogar zwischen den Betriebssystemen. Während 
+man früher noch kostenpflichtige Software 
+brauchte, kann heutzutage eine unglaubliche 
+Anzahl an Softwareprodukten PDF-Formate ein-
+lesen und ausgeben. Durch Offenlegung des 
+Formates und ISO-Zertifizierung hat es Adobe 
+geschafft, aus einem ursprünglich proprietären 
+
+
+===== PAGE 164/348 =====
+163
+Proprietär und/oder offen?
+„Für mich ist openBIM keine echte Alternative. Bei der Reduktion von 
+proprietären Datenformaten zu IFC verliere ich zu viele Daten. Solange es 
+geht, arbeite ich im proprietären Format.” 
+MARKUS HIERMER, REVIT-SPEZIALIST 
+„IFC ist das Rückgrat von effizienten Datenmodellen. Dieser ISO- 
+Standard ist weltweit gültig und erlaubt transparente Planung auf 
+höchstem Niveau.“
+ING. MAG. ALFRED WASCHL
+Dateiformat einen der wichtigsten Standards für 
+Austauschformate unserer Zeit zu machen. 
+Oftmals entscheiden sich Softwarehersteller 
+auch dazu, die proprietären Formate anderer 
+Hersteller zu akzeptieren. Man kann sich hier bei-
+spielsweise fragen, welche Strategie Graphisoft 
+bei Archicad24 verfolgt, wenn es ermöglicht, dass 
+RVT-Dateien als Referenzmodell eingelesen und 
+ausgeschrieben werden können. Der Konkurrent 
+Autodesk macht dies umgekehrt nicht. Zum Leid-
+wesen der Anwender:innen verfolgt jeder Her-
+steller seine eigene Strategie, um Marktanteile  
+zu gewinnen. Dateiformate spielen dabei eine 
+entscheidende Rolle. In der Praxis ist es oft sehr 
+überraschend, welche Dateiformate sich am Ende 
+eines oft jahrelangen Prozesses durchsetzen.
+offen
+proprietär
+Vorteile 
+ von allen verwendbar
+ unabhängig
+ 100 % der Informationen bleiben 
+erhalten, kein Datenverlust
+Nachteile
+ größter gemeinsamer Nenner  
+(nicht möglich ohne Datenverlust)
+ Geometrie und Eigenschafts­
+parameter können „leiden“
+ Herstellerabhängigkeit  
+(Insolvenz der Herstellers)
+ Einstellung der Weiterentwicklung
+ Kosten (Erhöhung der  
+Lizenzgebühren)
+Tabelle 13:  Was sind nun die Vor- und Nachteile des jeweiligen Formates?
+
+
+===== PAGE 165/348 =====
+164
+Datenaustausch
+Am Ende entscheiden nicht immer Sinnhaf-
+tigkeit und Qualität darüber, welche Formate sich 
+am Markt durchsetzen. Ein besonders skurriles 
+Beispiel für die Entwicklung von Dateiformaten 
+im Praxisgebrauch sind wohl die Formate DWG 
+und DXF. So ist das DWG-Format ein proprietäres 
+CAD-Format der Firma Autodesk. Für DWG-
+Dateien lizensiert Autodesk lediglich eine Lese- 
+bzw. Schreibbibliothek an andere Hersteller. 
+Deswegen wurde auch schon probiert, das DWG-
+Format durch Reverse Engineering öffentlich zu 
+machen, was allerdings nicht gelang, aber zu 
+einer langen Litanei an juristischen Auseinander-
+setzungen führte. Stattdessen war ursprünglich 
+das DXF-Format von Autodesk als offenes Aus-
+tauschformat für CAD-Dateien angedacht und 
+wurde somit auch offen zur Verfügung gestellt.
+Nur die Praxis nahm einen anderen, selt­
+samen Weg. Zum Datenaustausch bekommen 
+wir viel öfter DWG-Dateien zugesandt, als die 
+eigentlich dafür vorgesehenen DXF-Dateien. 
+DWG ist als proprietäres Format wohl zum welt-
+weit am häufigsten verwendeten Austausch­
+format für CAD-Daten geworden. So bleibt es 
+also durchaus noch ein wenig spannend, welche 
+Formate sich in einigen Jahren im BIM wirklich 
+etabliert haben werden.
+Offene Formate 
+Offene Dateiformate werden in der Regel 
+durch ein standardisiertes Gremium festgelegt 
+und weiterentwickelt. Diese können ohne tech­
+nische und rechtliche Einschränkungen von allen 
+genutzt werden, ihr Quellcode wird öffentlich zur 
+Verfügung gestellt. Bekannte offene Formate 
+sind beispielsweise HTML oder CSV. Es muss also 
+nicht immer das IFC-Format sein. Viele von uns 
+haben schon mit Hilfe des CSV-Formats tabel­
+larische Daten von einer Software in die andere 
+transportiert. So ist in vielen Bereichen mit CSV-
+Dateien schon vor BIM ein offener Daten­
+austausch praktiziert worden.
+Man muss sich aber im Klaren sein, dass ein 
+offenes Datenformat immer einen gewissen 
+Informationsverlust mit sich bringt. Der Inhalt 
+eines offenen Datenformats kann im besten Fall 
+den kleinsten gemeinsamen Nenner zwischen 
+den Herstellerwelten transportieren. Die Frage  
+ist nur, ob man die verlorenen Daten benötigt.
+Unbestritten ist der Vorteil von offenen Forma-
+ten. Diese sind in der sehr inhomogenen Soft-
+warelandschaft der BIM-Welt teils unverzichtbar. 
+Sie bieten oft die einzige Möglichkeit, dass alle 
+Beteiligten ihre Daten miteinander austauschen 
+können.
+ 
+ Kapitel 1, S. 42
+open- und 
+closedBIM
+
+
+===== PAGE 166/348 =====
+165
+MAG. LUKAS ANDRIEU, LL.M. (COLUMBIA), BSC.
+zur Verpflichtung zu (open-)BIM bei öffentlichen Aufträgen und dem Gebot der Herstellerunabhängigkeit
+Technische Spezifikationen müssen allen 
+Bewerbern und Bietern den gleichen Zugang  
+zum Vergabeverfahren gewähren. 
+Wenn öffentliche Auftraggeber BIM vor-
+schreiben, haben sie das Gebot der neutralen 
+Leistungsbeschreibung und der Bietergleich­
+behandlung sowie das allgemeine Diskriminie-
+rungsverbot zu beachten. Das bedeutet, dass  
+die Vorschreibung einer ganz konkreten BIM- 
+Software wohl unzulässig sein dürfte (vgl. § 106 
+Abs 5 BVergG 2018). Die Anforderungen an die 
+Software sind daher funktional bzw. abstrakt zu 
+beschreiben.
+Im Allgemeinen darf in technischen 
+Spezifikationen nämlich nicht auf eine bestimmte 
+Herstellung oder Herkunft etc. verwiesen werden, 
+wenn dadurch bestimmte Unternehmer begüns-
+tigt oder ausgeschlossen werden. 
+Damit ist auch das dahinterstehende 
+Problem der Gegenüberstellung von openBIM 
+und closedBIM angesprochen. Angesichts der 
+vergaberechtlichen Vorgaben ist einem System 
+der Vorzug zu geben, in dem die Wahl des kon­
+kreten Bearbeitungswerkzeugs frei ist und die 
+Plattform sowie die Austauschformate hersteller-
+unabhängig gestaltet sind. So soll eine gemein­
+same multidisziplinäre Modellbearbeitung durch 
+mehrere Auftragnehmer gefördert werden. 
+Öffentliche Auftraggeber sollten es aus 
+Gründen der Rechtssicherheit den Bietern über-
+lassen, mit welcher Software sie die Bau- bzw. 
+Planungsleistung erbringen möchten. 
+Rechtstipp
+Proprietär und/oder offen?
+open contra closed
+Die unterschiedlichen Dateiformate spielen 
+eine wesentliche Rolle, wenn es um die Frage 
+geht, ob in openBIM oder closedBIM gearbeitet 
+wird. Während in closedBIM-Konstellationen vor-
+wiegend mit proprietären Formaten gearbeitet 
+wird, kennzeichnet sich openBIM durch die Ver-
+wendung von offenen Dateiformaten, meist dem 
+IFC-Format.
+Wobei gesagt werden muss, dass in der 
+Praxis reines closedBIM eher selten vorkommt. 
+Meist wird bei closedBIM eine Art hybridBIM 
+praktiziert, bei welchem ein Kernteam in closed-
+BIM arbeitet und die restlichen Parteien über 
+openBIM involviert werden.
+
+
+===== PAGE 167/348 =====
+166
+Datenaustausch
+ Abbildung 39: Proprietäres und offenes Umfeld bei hybridBIM
+Reality-Check open vs. closed
+In der Praxis wird also ein Teil der Projekte in 
+closedBIM umgesetzt und der andere in openBIM. 
+Tendenziell ist openBIM vor allem im öffentlichen 
+Sektor immer mehr auf dem Vormarsch. Dagegen 
+hat sich closedBIM eher im Umfeld der großen 
+Baufirmen und Generalunternehmer etabliert.
+Spricht man über closedBIM, meint dies in 
+Österreich eigentlich immer die Welt rund um die 
+Autodesk-Plattform. In Europa ist Autodesk der 
+einzige Hersteller, welcher am Markt über eine 
+annähernd ausreichende Breite an Software­
+produkten verfügt, um mit dem eigenen 
+(proprietären) Format über den Großteil der 
+Fachsparten hinweg zu agieren. In unserer Region 
+wird openBIM mehr oder weniger von allen 
+anderen Softwareanbietern favorisiert. So sind in 
+einem openBIM-Projekt viel mehr verschiedene 
+Produkte im Einsatz. Für die Pflege und Weiter-
+entwicklung einheitlicher Standards in openBIM 
+ist buildingSMART verantwortlich. 
+Für ein Projekt, welches in closedBIM 
+gestartet wurde, ist ein Wechsel auf openBIM 
+möglich. Projekte, die in openBIM angelegt sind, 
+können nicht in closedBIM transformiert werden.
+
+
+===== PAGE 168/348 =====
+167
+BIM und GIS
+BIM und GIS 
+	
+Punktwolken, die Welt der Vermesser
+Egal ob Sie es bevorzugen, auf proprietären 
+oder auf offenen Plattformen zu arbeiten, früher 
+oder später werden Sie dabei immer auf eine 
+ganz spezielle Datenform treffen: die Punkt­
+wolken. Die Punktwolke ist ein Datenformat, wel-
+ches normalerweise aus dem Vermessungswesen 
+kommt und sich nicht ohne Weiteres in einen 
+BIM-Datenaustausch integrieren lässt. Die 
+Schwierigkeit liegt darin, dass Punktwolken und 
+Vermesser:innen in GIS-Systemen zu Hause sind 
+und eine Integration zwischen BIM und GIS noch 
+in den Kinderschuhen steckt.
+110	 Eschenbruch/Leupertz, BIM und Recht2 (2019), Datenhoheit, Datenschutz, Vertraulichkeiten und Urheberrechte 
+Rz 63.
+Die Datenschutzgrundverordnung (DSGVO)  
+ist anwendbar, wenn personenbezogene Daten 
+von natürlichen Personen ganz oder teilweise 
+automatisiert verarbeitet werden. Bei BIM-
+Projekten ist wohl immer von einer automatisier-
+ten Verarbeitung auszugehen.  
+Personenbezogene Daten sind alle Infor­
+mationen, die sich auf eine identifizierte oder 
+identifizierbare natürliche Person beziehen.  
+Im Zusammenhang mit BIM kommen diverse 
+personenbezogene Daten als Anknüpfungs­
+punkte für die Anwendung der DSGVO in Be-
+tracht. 
+Personenbezogene Daten können in diesem 
+Zusammenhang z.B. Titel, Geschlecht, Name,  
+E-Mail-Adresse, aber auch Informationen wie  
+IP-Adressen des zugreifenden Endgeräts oder 
+Protokolldaten, durch die der einzelne Zugriff auf 
+die Software, Änderungen oder ähnliche Hand-
+lungen der Nutzer protokolliert werden, sein.110 
+MAG. THOMAS SCHWAB 
+zu BIM und dem Datenschutz
+Rechtstipp
+
+
+===== PAGE 169/348 =====
+168
+Datenaustausch
+3D-Laserscan
+Eine sehr einfache Form des Laserscans, die 
+wir alle kennen, ist der Barcodeleser. Dieser ist 
+aus unserer Welt nicht mehr wegzudenken.
+Laserscanner haben sich aber mittlerweile 
+enorm weiterentwickelt und das 3D-Laser­
+scanning ist in vielen Disziplinen unaufhaltsam 
+im Vormarsch. 
+In der Geomorphologie werden digitale 
+Höhenmodelle erstellt, in der Agrartechnik wird 
+die Nutzung von Flächen überwacht, in der 
+Materialprüfung werden Mikrorisse erkannt, für 
+die Stadtplanung dienen die Daten als Entschei-
+dungsgrundlage –, die Liste der Anwendungen 
+ist kaum noch zu überblicken.
+Im Bauwesen kommen die Laserscans 
+normalerweise von einem Vermessungsbüro.  
+Die klassischen Vermessungsgeräte wie Tachy­
+meter oder Theodolit werden für die Baudoku-
+mentation immer häufiger von Laserscannern 
+abgelöst. Eine der häufigsten Anwendungen 
+eines 3D-Laserscans am Bau ist die Bestands­
+aufnahme. Aber auch in vielen anderen Berei-
+chen wie der Qualitätssicherung und Dokumen-
+tation kommt der Laserscanner immer häufiger 
+zum Einsatz. So wird beispielsweise die Instal­
+lation unter der Decke eines Supermarktes ein­
+gescannt, ehe die abgehängte Decke geschlos-
+sen wird, um später im Fall des Falles eine 
+brauchbare Dokumentation zu haben.
+Praxistipp
+Seien Sie sich bei der Verarbeitung personen-
+bezogener Daten immer Ihrer Pflichten nach der 
+DSGVO bewusst. Pflichten nach der DSGVO sind 
+z.B.:
+ Einhaltung der Grundsätze der DSGVO
+ Verarbeitung nur mit Rechtsgrundlage 
+ Einhaltung der Informationspflichten der 
+betroffenen Person 
+ Wahrung der Betroffenenrechte
+ Führung des Verarbeitungsverzeichnisses 
+ Abschluss der notwendigen Vereinbarungen 
+mit Auftragsverarbeitern
+
+
+===== PAGE 170/348 =====
+169
+BIM und GIS
+Auf Grund verschiedener Einsatzgebiete und 
+rasanter Entwicklung haben sich verschiedene 
+Formen des Laserscannens entwickelt. In der 
+Geodäsie wird die klassische Fotogrammetrie 
+zunehmend von Airborne Laserscanning (ALS) 
+zur Ermittlung der Topografie ersetzt. 
+Ursprünglich wurden für ALS Flugzeuge oder 
+Helikopter eingesetzt, mittlerweile ist der Einsatz 
+von Drohnen im Vormarsch. Durch die teils 
+riesigen Flächen, die beim Einsatz von ALS erfasst 
+werden, entstehen hier enorm große Daten­
+mengen bzw. gibt es Abstriche bei der Mess­
+dichte. Die Punktgenauigkeit liegt hier meist 
+noch im Dezimeterbereich, beim Einsatz von 
+Drohnen liegt diese eher im Zentimeterbereich.
+ Abbildung 40: Oberflächenmodell111 
+ Abbildung 41:  Digitales Geländemodell 
+(DGM) mit ALS112 
+111	 DI Peter Skalicki-Weixelberger.
+112	 DI Peter Skalicki-Weixelberger.
+
+
+===== PAGE 171/348 =====
+170
+Datenaustausch
+Für die Bestandsaufnahme wird meist 
+Terrestrisches Laserscanning (TLS)  ange­
+wendet. Bei TLS ist die Aufnahmeposition des 
+Scanners normalerweise statisch fixiert. 
+Da es bei nahezu jeder statischen Position  
+zu „Verschattungen“ kommt, sind bei TLS fast 
+immer mehrere Messungen von verschiedenen 
+Messstandorten nötig. Mit Hilfe von Zielmarken 
+können diese Messungen später exakt zusam-
+mengeführt werden. Mit modernen TLS- 
+Systemen kann durchaus eine Punktgenauigkeit 
+bis zu einem Millimeter erreicht werden.
+In Zukunft wird der Anwendungsbereich  
+und die Akzeptanz von Laserscanning durch 
+handgeführtes Laserscanning massiv  
+gesteigert werden. In Einzelfällen werden  
+diese Scanner schon erfolgreich eingesetzt,  
+aber momentan haben sie noch eine gerin- 
+gere Reichweite und sind zudem noch  
+empfindlicher.
+ Abbildung 42: Terrestrischer Laserscanner auf Stativ mit Zielmarken113 
+ Abbildung 43:  Die Scanner müssen so positio-
+niert werden, dass es zu keinen 
+Verschattungen kommt.114 
+113	 IGMS, TU Graz.
+114	 Raphael Wieser.
+
+
+===== PAGE 172/348 =====
+171
+BIM und GIS
+Mobile Scanner liefern leider nur unstruktu-
+rierte Punktwolken. Terrestrische Scanner hin-
+gegen sind in der Lage, sogenannte struktu­
+rierte Punktwolken zu liefern. Aufgrund des 
+fixen Messstandortes verfügen diese über die 
+Information, wo der Punkt herkommt.
+Tabelle 14:  Kostenlose 3D-Viewer für Punktwolken
+Cloudcompare (MAC) 
+https://asmaloney.com/software/ 
+Cloudcompare (WIN) 
+https://www.danielgm.net/cc/ 
+Meshlab (WIN & MAC) 
+https://www.meshlab.net/#download 
+GOM Inspect (WIN) 
+https://www.gom.com/de/3d-software/gom-inspect-suite/ 
+systemunabhaengige-inspektionssoftware/3d-inspektion.html
+Nun stellt sich die Frage: Was bringt 3D- 
+Laserscanning? Bei bisherigen Aufmaßtechniken 
+konnte es schon zu größeren Toleranzen oder 
+Ungenauigkeiten kommen. Der größte Vorteil 
+dürfte wohl in der hohen Messgenauigkeit lie-
+gen, wodurch man eine viel genauere Planungs-
+grundlage erhält. Durch eine höhere Qualität der 
+Aufmaße können sicher einige teure Planungs-
+fehler vermieden werden und man verfügt über 
+eine bessere Entscheidungsgrundlage bei der 
+Frage der Machbarkeit. Bei großflächigen und 
+komplexeren Geometrien ist 3D-Laserscanning 
+inzwischen schon kostengünstiger und schneller 
+als herkömmliche Methoden. 
+Aber auch rein inhaltlich sind mit Laser­
+scanning Dinge möglich, die vorher nicht oder 
+nur mit enormem Aufwand möglich waren. Man 
+denke hier nur an eine Erfassung von TGA-Leitun-
+gen oder unregelmäßigen Altbauoberflächen. 
+Punktwolken
+Unter einer Punktwolke versteht man die 
+Rohform der Daten, die von 3D-Laserscannern 
+geliefert werden. Der Laser erfasst alle materiel-
+len Bereiche – von Wänden über Installations­
+leitungen bis zu Straßen. Ein 3D-Laserscanner lie-
+fert für jeden abgetasteten Materialbereich einen 
+Messpunkt. Die Summe dieser Punkte ergibt eine 
+Wolke mit verdichteten Bereichen. Jeder erfasste 
+Punkt ist in einem xyz-Koordinatensystem genau 
+verortet. Je nach Scanner können noch zusätz­
+liche Attribute wie beispielsweise ein Vektor zur 
+Orientierung des Punktes, ein RGB-Wert für die 
+Farbe, ein Wert für die Helligkeit, den Aufnahme-
+zeitpunkt und/oder die Messgenauigkeit erfasst 
+werden.
+Das Hauptproblem mit Punktwolken stellt 
+zur Zeit aber noch die unglaublich große Daten-
+menge dar, was eine enorme Herausforderung 
+an die Performance der Hardware darstellt. Die 
+immense Größe liegt einerseits an der Unmenge 
+an Punkten, die im Dateiformat erfasst sind, und 
+andererseits bei Städten oder Infrastrukturpro-
+jekten an der Größe des zu erfassenden Objektes 
+per se. Eine mittelgroße Punktwolke setzt sich 
+bei der aktuellen Technologie schnell einmal aus 
+einigen hundert Millionen Punkten zusammen. 
+Zur Bearbeitung von Punktwolken sind sogar 
+spezielle Out-of-Core-Algorithmen nötig, um mit 
+der bestehenden Hardware überhaupt arbeiten 
+Arbeits-
+materialien 
+ 
+   
+ 
+  
+Punktwolken
+
+
+===== PAGE 173/348 =====
+172
+Reality-Check 
+Automatische Objekterkennung Punktwolke
+Eines vorweg: So einfach und problemlos, 
+wie mancher Softwarehersteller in seiner 
+Werbung verspricht, ist es sicher nicht. Im 
+Extremfall werden innerhalb kürzester Zeit bis  
+zu 80 % automatische Elementerkennung 
+versprochen. Werte wie dieser sind Welten von 
+der Realität unserer Praxis entfernt und können 
+als unseriöse Irreführung der Anwender:innen 
+betrachtet werden.
+Datenaustausch
+zu können. Für Punktwolken braucht es auf jeden 
+Fall einen sehr großen Arbeitsspeicher und, wenn 
+möglich, mehrere schnelle SSD-Festplatten. Die 
+enorme Dateigröße kann auch noch weitere 
+Schwierigkeiten mit sich bringen. Viele Empfän-
+ger dürfen oder können gar keine derart großen 
+Dateien annehmen, oft lassen die Sicherheits­
+bedingungen von großen Konzernen oder Behör-
+den dies erst gar nicht zu. In BIM-Dateien sollten 
+Punktwolken immer nur verknüpft und nie im-
+portiert werden. So ist aber ein zentraler Ablage-
+ort für die Punktwolken-Datei nötig, auf den alle 
+zugreifen können sollten, was wiederum ein 
+Problem sein kann.
+Wie kommt nun eigentlich eine Punktwolke 
+vom Scanner in die Modelliersoftware? Zu  
+Beginn wird der betroffene Bereich mit dem  
+3D-Laserscanner eingescannt. Das Einlesen der 
+Punkt­wolke in die Modelliersoftware („as-built-
+modelling-workflow“) ist (noch) nicht vollständig 
+automatisiert, wodurch nur Teilbereiche der 
+Punktwolke auch als BIM-Objekt erkannt werden 
+können. Die vom Laserscanner erhaltenen Punkt-
+wolkendaten müssen zunächst in eine 3D-Scan-
+software eingelesen werden, um dann in die 
+Modelliersoftware mit den richtigen Einstellun-
+gen exportiert zu werden. Vorsicht: Die richtigen 
+Einstellungen und Dateiformate findet man meist 
+nicht beim ersten Versuch. Oft generieren die 
+gewählten Exporteinstellungen zu große Datei-
+en, ein anderes Mal akzeptiert die Software nicht 
+alle angeblich möglichen Dateiformate. Beim 
+ersten Mal sollten Sie sich besser auf ein Arbeiten 
+nach dem trial-and-error-Prinzip einstellen.
+In der 3D-Scannersoftware werden die Daten 
+erst einmal „gesäubert“. Durch Filterung können 
+beispielsweise bewegliche Objekte heraus­
+gerechnet werden. Nach der Filterung kommt es 
+zur sogenannten Registrierung, unter dieser 
+versteht man das automatische oder manuelle 
+Zusammensetzen (Überlagern) von mehreren 
+Scan-Files zu einer Punktwolke. 
+
+
+===== PAGE 174/348 =====
+173
+BIM und GIS
+https://de.wikipedia.org/wiki/Liste_von_ 
+Programmen_zur_Punktwolkenverarbeitung
+ 
+Die Software bietet nun noch viele weitere 
+Funktionalitäten an. So ist es möglich, die Punkt-
+wolke zu „regionalisieren“, um in den Vorteil von 
+kleineren Bearbeitungsbereichen hinsichtlich der 
+Performance zu kommen. Eine typische Form 
+der Regionalisierung könnte zum Beispiel ein 
+Aufsplitten in Geschosse sein. Um Geländeober-
+flächen zu erhalten, gibt es die Funktionalität 
+des Vermaschens, durch diese werden die Punk-
+te polygonalisiert. Einige Softwareprodukte inter-
+pretieren auch Schnitte und Grundrisse im DWG-
+Format.
+Einige der weiter fortgeschrittenen Soft-
+wareprodukte bieten hier auch halbautomati­
+sierte Elementerkennungen an. Grundproblem 
+bei der Elementerkennung ist, dass der Scan  
+nur eine gesamtheitliche Oberfläche liefert und 
+keine einzelnen Körper. Zudem ist die Element-
+erkennung sehr abhängig vom hinterlegten Ele-
+mentkatalog, welcher meist auf Standardproduk-
+ten aus dem Heimatland des Softwareherstellers 
+beruht und somit österreichische Produkte nur 
+allzu selten erkennt. 
+Natürlich ist es auch möglich, dass einzelne 
+Elemente sogar mit der rich­tigen Elementzuord-
+nung in die BIM-konforme Modelliersoftware ex-
+portiert werden. Aber machen wir uns nichts vor, 
+beim heutigen Entwicklungsstand der 3D- 
+Scannersoftware müssen die Daten einer Punkt-
+wolke zum größten Teil noch in der Modellier-
+software nachmodelliert werden. Manche  
+3D-Scannersoftware bietet sogar für die ge-
+bräuchlichsten Modelliersoftwareprodukte  
+Plugins an. Dies ermöglicht dann das parallele 
+Modellieren mit den Elementkategorien der  
+Modelliersoftware in der 3D-Scannersoftware.
+Ein weiteres Problem stellt die unübersicht-
+liche Anzahl von Dateiformaten dar, die es für 
+Punktwolken gibt. Zum einen liegt dies an den 
+zahlreichen Herstellern von 3D-Laserscannern, 
+zum anderen gibt es auch kein einheitliches For-
+mat für die Verknüpfung mit der Modelliersoft-
+ware – fast jeder hat sein eigenes Format. Bis zu 
+einem allgemeinen Standardformat dürfte es 
+noch viele Jahre dauern. Dies könnte dann aber 
+schon für intelligentere Punktwolken gelten, 
+welche mit AI-Technologien eine ganz andere 
+Zuverlässigkeit bei der Elementzuordnung 
+bieten.
+BIM und GIS
+Innerhalb einer gescannten Punktwolke 
+richten sich die einzelnen Punkte bezüglich ihrer 
+xyz-Anordnung an einem kartesischen Projekt-
+koordinatensystem (PCS) aus. Schwierig wird es 
+jetzt, wenn wir an großflächige Scans aus Infra-
+strukturprojekten denken. Ab einer gewissen 
+Größe müssen wir auch die Erdkrümmung einbe-
+ziehen. Dazu bieten einige 3D-Scannersoftwares 
+die Möglichkeit an, eine kartesische Punktwolke 
+in eine georeferenzierte umzuwandeln. Diese 
+bezieht sich dann nicht mehr auf ein abstraktes 
+kartesisches, sondern auf ein erdbezogenes 
+Koordinatensystem wie beispielsweise das  
+Gauß-Krüger-System.
+
+
+===== PAGE 175/348 =====
+174
+Datenaustausch
+Und da wären wir auch schon bei den  
+beiden Welten BIM und GIS. Während sich ein 
+BIM-Modell normalerweise in einem Projekt­
+koordinatensystem abspielt, bezieht sich ein GIS-
+basiertes Modell auf ein Koordinatensystem der 
+realen Welt. 
+Ein naheliegender Gedanke wäre nun, GIS 
+einfach als perfektes Repository (ver­waltetes 
+Verzeichnis) für BIM-Informationen zu verstehen. 
+Aber so einfach ist es leider nicht. 
+Beide Welten behandeln 3D-Objekte, aber 
+be­ruhen auf ganz unterschiedlichen Heran­
+gehensweisen, wodurch Daten entstehen, die 
+nicht ohne weiteres jederzeit zwischen den 
+beiden Systemen hin und her synchronisiert 
+werden können.
+ Abbildung 44:   Darstellung der unterschiedlichen Modellierungsparadigmen am Beispiel eines Modell­
+ausschnitts mit den entsprechenden Objektklassen in IFC- und CityGML115 
+115	 Nagel, C.; Stadler, A.; Kolbe, T. H. (2009), Conceptual  
+Requirements for the Automatic Reconstruction of  
+Building Information Models from Uninterpreted  
+3D Models. Proceedings of the Academic Track of 
+the Geoweb 2009 – 3D Cityscapes Conference in 
+Vancouver, Canada, 27–31 July 2009 (International 
+Archives of the Photogrammetry, Remote Sensing 
+and Spatial Information Sciences), ISPRS, 2009.
+
+
+===== PAGE 176/348 =====
+175
+BIM und GIS
+Das Modellieren in BIM startet mit der Idee 
+für ein Bauwerk. Mit Hilfe von konstruktiven 
+Elementen und deren Attributen wird ein digita-
+les Modell des geplanten Bauwerks vor dessen 
+Errichtung modelliert. In einem GIS (Geoinforma-
+tionssystem) wird die reale Welt (Bestand) abge-
+bildet. Meist entsteht lediglich eine topografische 
+Abstraktion der sichtbaren Oberflächen. BIM  
+und GIS unterscheidet sich auch bezüglich des 
+Skalenbereiches. Während ein BIM-Modell meist 
+ein Gebäude mit Bauteilen und Räumen abbildet, 
+behandelt ein GIS-Modell eher Stadt- und Land-
+schaftsmodelle. Dementsprechend ist auch der 
+Detaillierungsgrad ein ganz anderer. Im BIM 
+scheint sich ein Level of Development (LOD) in 
+den Stufen von 100 bis 500 abzuzeichnen. Ein 
+Element wird also schrittweise in seiner Geo­
+metrie verfeinert und erhält immer mehr Attribute. 
+„Bei der Landebahn des Flughafens Graz (Länge 3.000 m) liegt  
+aufgrund der Erdkrümmung der Höhenunterschied im Dezimeter- 
+Bereich.” 
+DI PETER SKALICKI-WEIXELBERGER
+ Abbildung 45:  Implizite Geometrieerstellung in BIM durch parametrische Elemente (CSG im Beispiel links) 
+und explizite Geometrieerstellung in GIS durch Akkumulation aller umschließenden 
+Begrenzungsflächen (B-Rep im Beispiel rechts)116 
+116	 Leitfaden Geodäsie und BIM, 2020, S. 54.
+Kapitel 2, S. 76  
+ 
+  
+ 
+  
+Grundlagen der 
+Geometrie
+
+
+===== PAGE 177/348 =====
+176
+Datenaustausch
+Es handelt sich dabei um nachvollziehbare, 
+logische Operationen. GIS-Objekte werden durch 
+Vermessen der Realität erstellt, also durch ein 
+explizites Verfahren. Somit erhalten wir meist  
+nur die sichtbaren Oberflächen mit einer Orien-
+tierung bezüglich Vorder- und Rückseite. Daraus 
+lassen sich nun Vorteile und Schwachstellen der 
+beiden Systeme leicht erklären. Bei BIM-Objekten 
+lässt sich ganz einfach ein Objekt parametrisie-
+ren, man gibt nur einen anderen Wert für den 
+Parameter (beispielsweise Länge) ein und schon 
+ist das Element angepasst. Schwierig wird es 
+beispielsweise, wenn man mit implizit erstellten 
+Geometrien eine historisch verformte Wand­
+oberfläche im BIM-Modell nachbilden will.
+Im GIS hingegen bezieht sich der Detaillierungs-
+grad nicht auf den Entwicklungsstand der jewei­
+ligen Elemente. Der Detailierungsgrad (LOD) im 
+GIS wird nach dem Grad der Generalisierung 
+definiert. Es geht also vom Regionalmodell, bei 
+welchem viele Details einfach weggelassen wer-
+den, über ein Bauwerksmodell zum Innenraum-
+modell.
+Der Unterschied, welcher einem fließenden 
+Austausch zwischen BIM und GIS am meisten im 
+Wege steht, liegt im geometrischen Aufbau der 
+Objekte. BIM-Objekte werden in der Regel mit 
+impliziten Verfahren erstellt. Das geometrische 
+Konstruktionsverfahren des jeweiligen 3D- 
+Körpers ist also eindeutig nachvollziehbar.  
+Reality-Check 
+Zusammenarbeit BIM und GIS
+Was bedeutet das nun für den gegenseitigen 
+Austausch? Will man also BIM-Objekte ins GIS 
+bringen, muss man diese, vereinfacht gesagt,  
+in ihre Oberflächen zerlegen und die meisten 
+Attribute als Datenverlust abschreiben. 
+Umgekehrt ist es gar nicht so leicht, 
+GIS-Objekte in ein BIM-Modell zu integrieren. 
+Dazu muss man erst die zusammengehörenden 
+Oberflächen zu einem Objekt (bzw. Element) 
+zusammensammeln und dann manuell jedes 
+Objekt der richtigen Kategorie zuweisen. 
+Anschließend kann man dann noch die benötig-
+ten Attribute ermitteln und anfügen. Momentan 
+ist das Zusammenspiel dieser beiden Welten  
+noch sehr mühsam. Da aber beide Systeme Daten 
+aus jeweils anderen integrieren müssen, also 
+beispielsweise Brücken in GIS und Lagepläne in 
+BIM, bleibt nur zu hoffen, dass in diese Schnittstel-
+le in den nächsten Jahren noch viel Entwicklungs-
+arbeit gesteckt wird.
+
+
+===== PAGE 178/348 =====
+177
+BIM und GIS
+ Abbildung 46:  Bei der Umwandlung von BIM-Objekten in GIS-Objekten verliert man viele Informationen.  
+So macht es beispielsweise keinen Sinn mehr, den einzelnen Wandflächen eine Wärme­
+leitfähigkeit zu attributieren.
+ Abbildung 47:  Bei der Umwandlung von GIS-Objekten in BIM-Objekte lässt sich leider nicht abklären, zu 
+welcher Wand der Überschneidungsbereich im T-Stoß gehört. Ein weiteres Problem kann 
+die Frage sein, welche Wandflächen zu welcher Wand gehören.
+Man kann sich nun fragen, welchen Nutzen 
+die Verbindung von BIM und GIS überhaupt hat. 
+Ganz einfach: Wir brauchen für die Praxis Daten 
+aus beiden Welten. Die Verbindung von BIM-
+Objekten mit GIS-Standortdaten wird bei fast 
+jedem Projekt gewünscht und benötigt.  
+Will man beispielsweise inmitten einer Großstadt 
+ein noch freies Grundstück bebauen, stellen sich 
+viele Fragen bezüglich Erschließung und zu­
+künftiger Baustellenlogistik. Dabei möchten die 
+Planer:innen so genau wie möglich wissen,  
+welche Leitungen am Grundstück oder rund um 
+
+
+===== PAGE 179/348 =====
+178
+Datenaustausch
+das Grundstück verlegt sind. Leider sind heutzu-
+tage noch gar nicht alle Leitungen digital erfasst. 
+Allerdings sollten wir in Zukunft über digitale 
+GIS-Pläne verfügen, in denen alle Leitungen als 
+BIM
+GIS
+Bestimmendes  
+Koordinaten­system
+Kartesisches  
+Projekt­koordinatensystem
+Georeferenziertes  
+Welt­koordinatensystem
+Modell
+Modell zukünftig geplanter  
+Objekte
+Modell bereits bestehender  
+Objekte
+Standard für Austausch
+IFC
+CityGML
+Skalenbereich
+Gebäude
+Stadt, Landschaft
+Detaillierungsgrad
+LOD 100 – LOD 500
+LOD 1 – LOD 4
+Objekte
+als Volumenelemente
+als einzelne Flächen
+Geometrie
+Implizite Verfahren
+Explizite Verfahren
+Tabelle 15:  Unterschiede zwischen BIM und GIS
+ Abbildung 48:  GIS- und BIM-Daten in einem Modell117 
+klassifizierbare BIM-Objekte erfasst sind. Im Mo-
+ment ist dies noch eine Vision, da leider noch 
+nicht einmal alle dafür benötigten IFC-Klassen 
+und Attribute spezifiziert sind.
+117	 https://www.computer-spezial.de/artikel/integration-von-gis-und-bim_3434779.html.
+
+
+===== PAGE 180/348 =====
+179
+Objektorientierte Modellierung
+Objektorientierte Modellierung 
+	
+Ohne standardisierte Klassen geht es nicht
+Was hilft eine Unmenge an Daten, wenn 
+diese nicht zuordenbar, vergleichbar oder aus-
+wertbar sind? Es benötigt also gewisse Syste­
+matiken bzw. Schemata, um Ordnung in unsere 
+Daten zu bringen. Je strukturierter und geordne-
+ter diese sind, desto höher wird deren Qualität 
+und Verwertbarkeit. In der BIM-Welt gibt es 
+diverse Klassifikationen, um Ordnung in die Da-
+ten der Modelle zu bringen. 
+Unter Klassifizierung versteht man eine 
+Wissensstruktur, die es ermöglicht, abstrakte 
+Elemente (Objekte) über Auswahl und Filterung 
+entsprechenden Kategorien (Klassen) zuzu­
+ordnen. Mit Hilfe von übereinstimmenden Merk-
+malen (Attributen) werden also Objekte (diese 
+können auch immateriell sein, beispielsweise 
+Prozesse und Rollen) voneinander abgegrenzt, 
+unterschieden und abstrakten Klassen gezielt 
+zugewiesen.
+Ohne Klassifizierungssysteme wäre ein BIM-
+konformes Arbeiten unmöglich. Klassen bilden 
+die Grundlage für einen funktionierenden Daten-
+austausch zwischen BIM-Modellen. Eine Tür, die 
+aus einer Software exportiert wird, sollte beim 
+Import in eine andere Software von dieser gleich 
+wieder als Tür klassifiziert werden. Daten, die 
+keinen Klassen zugeordnet sind, laufen Gefahr, 
+beim Datenaustausch verloren zu gehen. 
+Beim Erstellen der Modelle muss darauf 
+geachtet werden, dass alle Objekte von Anfang 
+an der richtigen Klasse zugewiesen werden.  
+Dies passiert oft automatisch durch die ent­
+sprechende Auswahl von Typen in der Modellier-
+software oder auf Grund der Verwendung von 
+ausgereiften Templates. Eine Wand wird meist 
+automatisch der richtigen Klasse (Klasse Wand) 
+zugeordnet. Bei einer Decke ist das nicht mehr  
+so selbstverständlich, hier kann eine spezielle  
+Zuweisung nötig sein. Die „Decke“ kann zu ver-
+schiedenen Klassen gehören, es kann eine 
+Bodenplatte, ein Fußbodenaufbau, eine Ge-
+schossdecke, eine abgehängte Decke oder auch 
+ein Flachdach sein.
+Klassifizierungssysteme sollten nicht erst 
+während eines Projektes entstehen, sondern 
+projektübergreifend gültig sein. Deshalb gibt es 
+weltweit mehrere Institutionen, die an der Ent-
+wicklung diverser Klassifizierungen arbeiten.
+Kapitel 2, S. 86  
+ 
+  
+Projekt aufsetzen  
+und Templates
+
+
+===== PAGE 181/348 =====
+180
+Datenaustausch
+Leider arbeiten diese nicht alle an einem 
+universell gültigen Schema. So müssen sich die 
+Projektbeteiligten vor Beginn eines Projektes erst 
+einmal auf ein gemeinsames Schema einigen.  
+Im weiteren Verlauf dieses Kapitels wird noch auf 
+die wichtigsten Klassifizierungssysteme einge-
+gangen.
+OOM-Konzept
+Die objektorientierte Modellierung  ist 
+ursprünglich ein Konzept aus der Softwarepro-
+grammierung. Irgendwann hat die Bauwirtschaft 
+erkannt, dass die objektorientierte Denkweise 
+durchaus behilflich ist, wenn es um die Einteilung 
+in Klassen und Objekte sowie deren Beziehungen 
+untereinander geht. Eine Instanz einer Klasse 
+wird als Objekt bezeichnet. Was darf man sich 
+nun alles unter einem Objekt vorstellen? Ein 
+Objekt kann ein klassisches Bauteil aus realer 
+Materie wie beispielweise eine Wand, ein Fenster 
+oder ein Lüftungskanal sein, muss es aber nicht. 
+Es kann auch abstrakt sein, also vielleicht eine 
+Rolle, ein Raum, eine Bedingung oder eine Last.
+ Abbildung 49:  Obwohl alle drei in Revit als Geschossdecke erstellt wurden, müssen sie bei ifc-Export in 
+unterschiedliche Klassen zugeordnet werden: IfcRoof (Flachdach), IfcSlab (Geschossdecke) 
+und IfcFooting (Fundamentplatte)
+
+
+===== PAGE 182/348 =====
+181
+Objektorientierte Modellierung
+Rein softwaretechnisch und im Sinne einer 
+objektorientierten Modellierung betrachtet, ist 
+ein BIM-Objekt eine Instanz einer Klasse eines 
+BIM-Informationsmodells. Nach dieser Definition 
+sind alle Modellelemente eines digitalen Bau­
+werksmodells BIM-Objekte. Sie sind die digitalen 
+Bausteine, welche die Planer:innen einem Bau-
+werksmodell mit Hilfe von BIM-Modelliersoftware 
+hinzufügen. Oder anders ausgedrückt: BIM-Ob-
+jekte sind die digitale Abbildung von Bauteilen, 
+aus denen das Gebäude zusammengesetzt ist.
+BIM-Objekte enthalten geometrische und 
+alphanumerische Informationen, die im BIM-Mo-
+dell zueinander in Beziehung gesetzt und aus­
+gewertet werden können, um z.B. Bauteillisten  
+zu erstellen. Daher sollte ein BIM-Objekt alle In­
+formationen aufnehmen können, die zum Ent­
+werfen, Finden, Spezifizieren und Analysieren des 
+Bauteils erforderlich sind. Darüber hinaus sollten 
+sich die im Projekt für die Projektphasen verein-
+barten Detaillierungs- und Informationsgrade 
+(LOD/LOI) in einem BIM-Objekt widerspiegeln.118
+ Abbildung 50:  Objekte am Beispiel einer Wand119 
+118	 https://www.baunetzwissen.de/bim/fachwissen/modellinhalte/was-ist-ein-bim-objekt-5292455.
+119	 Vgl. Bormann, A. et al., Building Information Modeling – Technologische Grundlagen und industrielle Praxis. S. 30.
+Reality-Check 
+Was ist ein BIM-Objekt?
+
+
+===== PAGE 183/348 =====
+182
+Datenaustausch
+In einer Klasse werden einander ähnliche 
+Objekte zusammengefasst. Um Klassen und Ob-
+jekte darzustellen, bietet sich die UML (Unified 
+Modeling Language) als ISO zertifizierte Notation 
+an. Wie stellt man nun die Klasse „Wand“ dar?  
+In UML stellt ein in drei Abschnitte geteiltes 
+Rechteck eine Klasse dar. Im oberen Bereich 
+steht der Name der Klasse, also Wand, im zweiten 
+Bereich werden die entsprechenden Attribute 
+(Eigenschaften oder Merkmale) durch einen 
+Doppelpunkt getrennt vom zugehörigen Daten-
+typ aufgelistet. Im dritten Feld kämen dann in der 
+UML-Notation noch die Methoden (Operationen). 
+Im BIM werden im Allgemeinen aber nur 
+statische Daten und keine zur Klasse gehören-
+den Funktionalitäten ausgetauscht. Also können 
+wir dieses Feld für unsere Zwecke getrost leer 
+lassen.
+ Abbildung 51: Klassendiagramm
+ Abbildung 52: Objektdiagramm
+Die einzelnen Ausprägungen einer Klasse 
+stellen die einzelnen Objekte (z.B. Wand 1, 
+Öffnung 1, Öffnung 2 …) dar. Objekte werden 
+ähnlich dargestellt, aber nur mehr mit zwei 
+Feldern. Oben steht der Objektname und, mit 
+einem Doppelpunkt getrennt, die zugehörige 
+Klasse. Zur besseren Erkennung als Objekt wird 
+dieses Feld unterstrichen. Im zweiten Feld wer-
+den alle Attribute aus dem Klassendiagramm  
+mit einem “=“-Zeichen und dem entsprechenden 
+Wert aufgelistet.
+Alle Objekte, die zu einer Klasse gehören, 
+besitzen genau die gleichen Attribute. Die 
+Attributwerte sind aber individuell auf das je­
+weilige Objekt bezogen. Datentechnisch funk­
+tioniert das Ganze nur, wenn der im Klassen­
+diagramm angegebene Wert auch dem 
+angegebenen Datentyp entspricht. 
+
+
+===== PAGE 184/348 =====
+183
+Objektorientierte Modellierung
+Kategorie
+Typ
+Beispiele
+Primitive Typen
+Ganzzahl (INT, INTEGER, LONG)
+-123, 0, 2, 875
+Gleitpunktzahl (FLOAT, DOUBLE)
+-1.234, 1.234e02
+Wahrheitswert (BOOL, BOOLEAN,  
+LOGICAL)
+true (0), false (1)
+Zeichen (CHAR, CHARACTER)
+a, A, α, 7, ≥, ∞
+Aufzählungs- 
+typen
+Aufzählung (ENUM, ENUMERATION)
+Farbe := {BLAU, GRUEN, ROT, GELB}
+Längeneinheit := {MM, CM, DM, M, 
+KM}
+Betonfestigkeitsklasse := {C12/15, 
+C16/20, . . . , C100/115}
+Feldtyp
+Feld bzw. Reihung (ARRAY), endliche 
+indexbasierte Folge von Werten  
+eines Basistyps
+3D-Vektor := ARRAY(1..3) of DOUBLE,  
+z. B. [-1.23, 4.56e-5, 123.45]
+Komplexe Typen
+Klasse (CLASS, STRUCT), endliche 
+Menge an Attributen unterschied­
+lichen Typs (primitiver Typ,  
+Aufzählungstyp, komplexer Typ)
+Klasse Datum := {tag:INT, monat:  
+INT, jahr:INT}, z.B. {15, 2, 2012}
+Liste bzw. Folge (LIST), (un-)endliche 
+indexbasierte Folge von Werten eines 
+komplexen Typs (objektorientiert  
+als Klasse umgesetzt)
+Öffnungsliste := LIST of
+CLASS(Oeffnung), z. B. [O1, O2]
+Menge (SET), (un-)endliche unsortierte 
+Menge von Werten eines komplexen 
+Typs (objektorientiert als Klasse  
+umgesetzt)
+Öffnungsmenge := SET of
+CLASS(Oeffnung), z. B. {O1, O2}
+Besitzen alle Objekte einer Klasse für ein Attribut 
+den gleichen Wert, so ist dieses Attribut kein 
+Objektattribut mehr, sondern ein Klassenattribut. 
+In vielen Modelliersoftwares spricht man nicht 
+von Objekt- und Klassenattributen, sondern von 
+Instanz- und Typmerkmalen.
+Tabelle 16:  Datentypen und deren zulässige Einheiten
+
+
+===== PAGE 185/348 =====
+184
+Datenaustausch
+Vererbung
+Um verstehen zu können, welche Ver­
+knüpfungen zwischen einzelnen BIM-Objekten  
+in einer Software möglich sind, kann es nicht 
+schaden, wenn man sich kurz ansieht, welche 
+theoretischen Relationen es zwischen Klassen 
+gibt. Die wohl wichtigste Verknüpfung ist die 
+Vererbung. Bei dieser vererbt eine Basisklasse 
+(auch Elternklasse, Oberklasse oder Superklasse 
+genannt) all ihre Attribute an eine oder mehrere 
+abgeleitete Klassen (auch Kindklasse, Unter­
+klasse oder Subklasse genannt). Die abgeleiteten 
+Klassen haben dann meist noch weitere eigene 
+Attribute, somit spricht man bei abgeleiteten 
+Klassen von einer Spezialisierung. Die Attribute 
+der Basisklasse beschreiben die allgemeinen 
+Attribute, somit sind Basisklassen Generalisie-
+rungen ihrer abgeleiteten Klassen.
+Die Hierarchisierung kann man sich in der 
+Praxis zu Nutze machen. So teilen wir die Basis-
+klasse „Wand“ beispielsweise auf Grund des 
+Materials in Unterklassen (Betonwand, Mauer-
+werkswand …) ein. Die Klasse Betonwand kann 
+wiederum bezüglich der Herstellung (Höhe 
+kleiner oder größer 3 m) spezialisiert werden. 
+In einer weiteren Spezialisierung (Innen- 
+oder Außenwand) könnten zum Beispiel die Inter-
+essen des Bauphysikers Berücksichtigung finden. 
+Es muss nicht jedes Mal eine neue Klasse entste-
+hen. So könnte man auch beispielsweise den Sta-
+tiker berücksichtigen, indem man ein Attribut 
+tragend/nichtragend anfügt. Auswertungen 
+können also auf Grund der Klassenzuordnung 
+und/oder entsprechender Attributwerte gefiltert 
+werden. Attribute, die von der Basisklasse vererbt 
+wurden, sind in der abgeleiteten Klasse auto­
+matisch Typ-Attribute und neue Attribute sind 
+dann Instanz-Attribute. 
+Es macht also Sinn, sich schon vor dem Start 
+des Modellierens eine Klassenstruktur mit den 
+entsprechenden Attributen zu überlegen, welche 
+möglichst für alle Bedürfnisse der am Projekt 
+beteiligten Klassen und Attribute beinhaltet. 
+Diese Struktur ist keine starre, sie wird mit der 
+Erfahrung jedes neuen Projektes verfeinert.
+ Abbildung 53: Vererbung am Beispiel Wand → Betonwand → über 3 m → Außenwand120 
+120	 Vgl. Bormann, A. et al., Building Information 
+Modeling – Technologische Grundlagen und 
+industrielle Praxis. S. 52.
+
+
+===== PAGE 186/348 =====
+185
+Objektorientierte Modellierung
+Am besten wird sie immer gleich im Temp-
+late der Modelliersoftware mitgeführt. Indem 
+man beim Anlegen eines neuen Projektes dieses 
+Template auswählt, hat man dann schon viel ge-
+wonnen. Natürlich werden im Lauf des Projektes 
+noch kleine Anpassungen dieser Klassen- und At-
+tributstruktur nötig sein.
+Weitere Beziehungen zwischen 
+Klassen
+Die einfachste Verknüpfung zwischen Klas-
+sen ist die Assoziation, diese wird einfach durch
+ Abbildung 54: Assoziation mit Multiplizitäten121
+ Abbildung 55: Aggregation mit leerer Raute122 
+ Abbildung 56: Komposition mit gefüllter Raute123 
+121	 Bormann, A. et al., Building Information Modeling – 
+Technologische Grundlagen und industrielle Praxis.  
+S. 54.
+122	 Bormann, A. et al., Building Information Modeling – 
+Technologische Grundlagen und industrielle Praxis.  
+S. 54.
+123	 Bormann, A. et al., Building Information Modeling – 
+Technologische Grundlagen und industrielle Praxis.  
+S. 55.
+eine Linie zwischen den Klassen dargestellt. Eine 
+Assoziation kann durch sogenannte Multiplizitä-
+ten noch genauer definiert werden. Diese sagen
+
+
+===== PAGE 187/348 =====
+186
+Datenaustausch
+einfach nur aus, wie viele Objekte einer Klasse  
+mit wie vielen Objekten einer anderen Klasse  
+verknüpft sind. Hierbei gibt es Besonderheiten in 
+der Schreibweise. 0..2 bedeutet, dass 0-2 Objekte 
+dieser Klasse verknüpft sind und ein* steht für 
+beliebig viele Objekte.
+Eine besondere Form der Assoziation ist  
+die Aggregation. Sie steht für eine Ganze-Teil-
+Beziehung. Das bedeutet, ein Objekt der Klasse 1 
+hat oder besitzt ein Objekt der Klasse 2, beide 
+Objekte können aber unabhängig voneinander 
+existieren. Kann diese Klasse nicht mehr unab-
+hängig von der ersten existieren, handelt es sich 
+nun um eine Sonderform der Aggregation, der 
+sogenannten Komposition. Für die Darstellung 
+einer Aggregation wird ans Ende der Verbin-
+dungslinie eine leere Raute gesetzt, für die  
+Komposition eine volle Raute.
+Nomenklatur
+Noch kurz ein Wort zur Nomenklatur: In der 
+Praxis wird meist zu wenig Wert auf eine klar ver-
+ständliche und funktionale Nomenklatur gelegt. 
+Eigentlich sollte der Hausverstand schon reichen, 
+um wenigstens eine klar verständliche Nomen-
+klatur zu erstellen. Auf Klassenbezeichnungen 
+wie „Wa-B-h>3-au“ sollten Sie verzichten. Neue 
+oder externe Mitarbeiter:innen würden auch 
+gerne verstehen, was gemeint ist. Bessere wäre  
+in diesem Fall „wand_beton_hoeheueber320cm_
+aussenwand“. Zudem sollten Sie die späteren 
+Verarbeitungsmöglichkeiten in IT-Prozessen be-
+denken. Also keine Sonderzeichen verwenden, 
+Umlaute wie ä, ü, ö oder ß als ae, ue, oe und ss
+schreiben, als Trennzeichen lediglich den Unter-
+strich (_) verwenden und vielleicht noch alles in 
+Kleinbuchstaben realisieren.
+bSDD (buildingSMART  
+Data Dictionary)
+BIM-Objekte sind ja nicht bloße 3D-Geo­
+metrien, sondern vor allem auch Klassen zuge-
+ordnete und mit Attributen versehene Objekte. 
+Oft werden die gleiche Klasse oder das gleiche 
+Attribut mit vielen verschiedenen Begriffen 
+versehen. So kommt es vor, dass ein Architekt 
+vom „Isolierfaktor“ spricht, der Bauphysiker vom 
+„U-Wert“ und der Produkthersteller von der 
+„Wärmeleitfähigkeit“, aber alle meinen das Glei-
+che. In einem BIM-Projekt müssen alle unbedingt 
+einen einheitlichen Begriff verwenden, um einen 
+fehlerfreien und eindeutigen Datenaustausch zu 
+gewährleisten. 
+Das gleiche Problem haben wir bei inter­
+nationalen Projekten, wenn einmal von „Tür“ und 
+einmal von „door“ gesprochen wird. Zudem 
+schreibt vielleicht noch jemand „Tuer“ anstatt 
+„Tür“. Will man nun eine Türliste erstellen und 
+sucht nach allen Objekten der Klasse „Tür“, wird 
+man wohl die den Klassen „door“ oder „Tuer“ 
+zugewiesenen Objekte nicht erfassen, was natür-
+lich fatale Folgen haben kann.
+https://search.bsdd.buildingsmart.org/
+Man braucht in einem BIM-Projekt also 
+unbedingt eine einheitliche Klassifizierung und 
+Attributsbezeichnung. Derzeit dürfte die welt-
+weit am meisten verbreitete standardisierte
+ 
+ Norm: 
+ISO 12006-3 
+Basis für das bSDD
+
+
+===== PAGE 188/348 =====
+187
+Objektorientierte Modellierung
+ Abbildung 57: Klasse „door“ im bSDD124 
+124	 buildingSMART.
+
+
+===== PAGE 189/348 =====
+188
+Datenaustausch
+Terminologie (BIM-Klassifizierung) das bSDD 
+(buildingSMART Data Dictionary) sein. Dabei han-
+delt es sich um eine Art Wörterbuch für Klassen 
+und Attribute mit Google-Translate-Funktion. 
+Wie der Name schon sagt, wurde das bSDD von 
+buildingSMART entwickelt. buildingSMART 
+entwickelt das bSDD laufend weiter und stellt es 
+ganz im Sinne von openBIM als Cloud Service 
+offen zur Verfügung. Im Hintergrund gibt es 
+eine eindeutige ID für alle Klassen und Attribute. 
+Diese ermöglicht, dass die landesspezifischen 
+Darstellungen in der jeweiligen Sprache immer 
+auf die richtige Klasse verweisen.
+Das bSDD ist derzeit leider nur in sehr 
+wenigen Softwareprodukten integriert. BIM ist 
+leider noch immer mehr „trial-and-error“ anstatt 
+„plug-and-play“. Für Einsteiger:innen ist somit 
+eine Übersetzung der jeweiligen Modelliersoft-
+ware-Klassen in die IFC-Klassen des bSDD mehr 
+als nur eine Herausforderung. Erwähnen muss 
+man hier noch ein weiteres Problem. Für den 
+Hochbau ist das bSDD schon sehr weit ausge­
+arbeitet. Für manche Fachbereiche, wie die Infra-
+strukturbereiche, gibt es aktuell aber meist nur 
+Arbeitsgruppen, die gerade erst die nötigen Klas-
+sen und Attribute erarbeiten. Und in Bereichen 
+wie beispielsweise der Landschaftsarchitektur 
+passiert fast noch gar nichts. Das bedeutet leider 
+auch, dass BIM in einigen Fachbereichen gerade
+erst praxistauglich wird. In der TGA wurden diese 
+Strukturen vorbildlich im Projekt metaTGA der  
+TU Graz ausgearbeitet. Dies wird in Zukunft noch 
+für viele weitere Bereiche geschehen.
+http://www.metatga.org/
+ASI-Merkmalserver
+Vor mehr als fünf Jahren leistete die 
+Forschungsgruppe freeBIM an der Universität 
+Innsbruck Pionierarbeit. Es lässt sich beinahe be-
+haupten, dass Österreich hier der Vorreiter in der 
+europäischen Entwicklung war. Der Merkmalser-
+ver stellt sogar die Grundlage für die nationale 
+und europäische Normengebung dar. Mittlerwei-
+le ist der ASI-Merkmalserver essenzieller Bestand-
+teil der ÖNORM A 6241-2. Der Merkmalserver ver-
+steht sich als eine Datenbank zur Sammlung der 
+„Eigenschaften von Bauteilen und Materialien. 
+Ziel ist es, diese beschreibenden Eigenschaften 
+mit dem bSDD (buildingSMART Data Dicitionary) 
+abzugleichen und dieses um nicht vorhandene 
+Werte zu ergänzen.“125 Der Zugang zum Merkmal-
+server steht als Open Source für jedermann zur 
+Verfügung:
+ 
+ 
+ Norm: 
+ÖNORM A 6241-2
+125	 http://db.freebim.at.
+
+
+===== PAGE 190/348 =====
+189
+Objektorientierte Modellierung
+ Abbildung 58: Bauteileigenschaften im Merkmalserver126 
+ Abbildung 59: Bauteileigenschaften im Merkmalserver127 
+126	 http://db.freebim.at.
+127	 http://db.freebim.at.
+
+
+===== PAGE 191/348 =====
+190
+Datenaustausch
+Einer der wichtigsten Faktoren für die Wei-
+terentwicklung in unserer heutigen Industrie sind 
+anerkannte Standards. Der Standard für den Aus-
+tausch in openBIM-Prozessen ist IFC. Es handelt 
+sich dabei um einen offenen, internationalen 
+Standard in der Bauindustrie, welcher von 
+buildingSMART definiert wurde und auch kon­
+tinuierlich weiterentwickelt wird. Streng genom-
+men, ist IFC kein Dateiformat, sondern nur ein 
+Schema, das Geometrie, Daten und Beziehungen 
+transportiert.
+ist buildingSMART als die offizielle Interessens-
+vertretung von openBIM zu verstehen. In mehr 
+als 20 Ländern gibt es inzwischen schon natio­
+nale Niederlassungen, sogenannte Chapters.  
+Das Austrian Chapter wurde Anfang 2018 ge- 
+gründet.
+buildingSMART Austria (bSA) setzt sich 
+engagiert für die Umsetzung von openBIM in 
+Österreich ein. ClosedBIM dagegen wird von bSA 
+als nicht zukunftsträchtig gesehen und somit 
+leider komplett ignoriert. Ursprünglich lag der 
+Focus von bSi primär auf der Gebäudedomäne,  
+in den letzten Jahren erweiterte bSi seinen 
+Anwendungsbereich beispielsweise auf Städte 
+und Infrastruktur. 
+www.buildingsmart.co.at
+Zudem werden von bSi auch Software­
+anwendungen und Menschen/Anwender zerti-
+fiziert. So testet buildingSMART Softwareproduk-
+te, ob diese IFC-Dateien korrekt importieren und 
+korrekt exportieren. Import und Export werden 
+also getrennt zertifiziert. So kann es Software­
+produkte geben, bei denen nur der Import oder 
+der Export funktioniert. Des Weiteren werden  
+IFC (Industry Foundation Classes)
+	
+Der Standard für den Datenaustausch in openBIM
+Als weltweite Dachorganisation erarbeitet 
+buildingSMART international (bSi) offene Stan-
+dards und Zertifizierungsrichtlinien für die Digi­
+talisierung im Bauwesen. Proaktiv setzt sich bSi 
+für die Verbreitung und aktive Nutzung offener 
+Standards rund um openBIM ein. International 
+buildingSMART
+
+
+===== PAGE 192/348 =====
+191
+IFC (Industry Foundation Classes)
+die Zertifikate auch separat für IFC 2x3 und IFC4 
+erteilt. Für IFC4 sind fast noch keine Produkte zer-
+tifiziert, es sind aber viele IFC4-Zertifizierungen in 
+Bearbeitung – für IFC 4.1 gibt es noch gar nichts. 
+Für die Praxis bedeutet dies, dass die Fortschritte 
+von IFC4 und höher faktisch so gut wie noch gar 
+nicht umsetzbar sind.
+https://technical.buildingsmart.org/services/ 
+certification/ifc-certification-participants/
+Name
+Beschreibung
+Standard
+IFC
+Industry Foundation Classes
+Branchenspezifisches  
+Datenmodellschema
+ISO 16739
+IDM
+Information Delivery Manual
+Methode zur Definition und  
+Dokumentation von Geschäfts-
+prozessen und Daten­
+anforderungen
+ISO 29481-1
+ISO 29481-2
+MVD
+Model View Definition
+Datenmodellaustausch­
+spezifikation
+buildingSMART MVD
+BCF
+BIM Collaboration Format
+Modellbasierte, software­
+unabhängige Kommunikations-
+protokolle
+buildingSMART BCF
+bSDD
+buildingSMART Data Dictionary
+Standardbibliothek mit allg.  
+Definitionen von BIM-Objekten 
+und Ihren Attributen
+buildingSMART bSDD
+Tabelle 17:  Nebem dem IFC betreut bSI viele weitere Standards
+
+
+===== PAGE 193/348 =====
+192
+Datenaustausch
+ Abbildung 60: Ausbildungspyramiden bSI und bSA
+buildingSMART zertifiziert aber auch Perso-
+nen und Firmen. Für Firmen ist eine sogenannte 
+Professional Certifikation angedacht und für 
+Personen gibt es die Individual Certification. 
+Momentan ist bSi die einzige Institution, die ein 
+weltweit anerkanntes BIM-Zertifikat mit dem 
+Level A (Basiskenntnisse) anbietet. Aufbauend  
+auf dem Level A von bSi führt bSA gerade Zerti-
+fizierungen für Level B (BIM-Koordination) und 
+Level C (BIM-Projektsteuerung) ein.
+IFC
+Man kann sagen, IFC ist der Standard 
+schlechthin für den Datenaustausch in openBIM. 
+Das IFC-Format wurde auch schon als „das PDF 
+von BIM“ bezeichnet. Dieser Vergleich zeigt sehr 
+gut auf, was IFC kann und was nicht. Angenom-
+men Sie versenden eine Word-Datei, kann der 
+Empfänger, vorausgesetzt er besitzt das Pro-
+gramm, Änderungen direkt im nativen Format 
+selbst vornehmen. Wenn er dieses aber nicht 
+besitzt oder Sie gar nicht wollen, dass jemand 
+unkontrolliert Änderungen vornehmen kann, 
+speichern Sie das Dokument als PDF ab und 
+versenden dieses. Nun kann der Empfänger  
+nur kommentieren und muss die Änderung  
+des Originales bei Ihnen anfordern.
+Das IFC ist also wie eine eingefrorene 
+Momentaufnahme der Originaldatei, das für 
+Kollisionserkennung, Kostenschätzungen, Si- 
+mulationen usw. benutzt werden kann. Es war  
+jedoch nie dafür gedacht, vom Empfänger 
+editiert zu werden. Das IFC transportiert nicht 
+den eigentlichen Modellinhalt, es referenziert 
+lediglich auf diesen. BIM-Einsteiger:innen irritiert 
+dies des Öfteren,  
+sie müssen sich erst daran gewöhnen, dass somit 
+alle Fachplaner:innen für ihr Teilmodell die Rolle 
+der Eigentümer:innen behalten und so die Ver-
+antwortungen klar abgrenzbar sind.
+
+
+===== PAGE 194/348 =====
+193
+IFC (Industry Foundation Classes)
+So übermittelt bei einem typischen Daten-
+austausch der Sender erst einmal eine IFC-Datei 
+an den Empfänger. Dieser verlinkt die Datei in 
+sein Modell und prüft sie. Sollte der Empfänger 
+feststellen, dass es entsprechender Änderungen 
+bedarf, sendet er eine Änderungsanfrage (dies 
+könnte per BCF erfolgen) an den Sender. Der Sen-
+der übermittelt dann die gemäß den Änderungs-
+anforderungen überarbeitete Datei wieder als IFC 
+an den Empfänger.
+ Abbildung 61: IFC, das „PDF“ von openBIM128 
+Abbildung 62: IFC-Workflow Referenzmodell129
+128	 Vgl. Baldwin, M.: Grundlagen für open BIM –  
+die buildingSMART Standards. https://docplayer.
+org/115231786-Grundlagen-fuer-open-bim.html, 
+Datum des Zugriffs: 1.  4.  2022, S. 4.
+129	 Baldwin, 2019.
+
+
+===== PAGE 195/348 =====
+194
+Datenaustausch
+IFC-Versionen
+Im Vergleich zu anderen Formaten ist beim 
+IFC noch relativ viel Bewegung. BuildingSMART 
+arbeitet laufend an neuen verbesserten Versio-
+nen. Die ersten IFC-Versionen unterscheiden sich 
+in ihrem Aufbau und ihrer Struktur wesentlich 
+von allen nachfolgenden Versionen und sind 
+nicht miteinander kompatibel. Dies änderte sich 
+erst ab Version 2x, welche auf der jeweils voran-
+gehenden Version aufbaute und diese erweiterte, 
+wodurch im Kern eine Kompatibilität mit der Vor-
+gängerversion sichergestellt wurde.
+Derzeit wird immer noch die 2006 offiziell 
+veröffentlichte Version IFC2x3 am häufigsten ver-
+wendet. Für diese Version sind auch heute noch 
+am meisten Softwareprogramme von building-
+SMART sowohl für den Import als auch für den 
+Export zertifiziert. In Version IFC4 wurde vor al-
+lem an einer besseren Übergabe komplexer Geo-
+metrien gearbeitet. 2013 wurde IFC4 ein offizieller 
+ISO-Standard (ISO 16739:2013), trotzdem ist IFC4 
+noch immer nicht zum Standard in der Praxis ge-
+worden. Dies dürfte unter anderem daran liegen, 
+dass die meisten Softwareanwendungen noch 
+nicht für IFC4 bei buildingSMART zertifiziert sind. 
+An der Entwicklung des Reifegrades von IFC sieht 
+man, dass die Einführung von BIM ein mehrere 
+Jahrzehnte andauernder Prozess ist, bei welchem 
+wir wohl noch nicht einmal ganz in der Mitte an-
+gekommen sind.
+https://technical.buildingsmart.org/services/ 
+certification/ifc-certification-participants/
+ Abbildung 63: Ausblick auf die Neustrukturierung des IfcSpatialStructureElement (Verortungsstruktur) in IFC4.3.130 
+130	 buildingSMART.de.
+
+
+===== PAGE 196/348 =====
+195
+IFC (Industry Foundation Classes)
+ Abbildung 64: Weiterentwicklung MVDs und IFC
+MVD (Model View Definition)
+Wird aus einer proprietären Datei ein IFC ab-
+gespeichert, muss dieses nicht immer gleich sein. 
+Anhand der Modellansichtsdefinitionen MVDs 
+besteht die Möglichkeit, nur die erforderlichen 
+Teilinhalte zu transportieren. Unter einer MVD 
+versteht man eine Unterspezifikation des gesam-
+ten IFC-Schemas, welche für eine ganz bestimmte 
+Anforderung oder einen bestimmten Workflow 
+spezialisiert ist. 
+Für jede IFC-Version gibt es von building- 
+SMART standardisierte MVDs. Theo­retisch be-
+steht auch die Möglichkeit, eine eigene MVD für 
+ein Projekt anzulegen, aber meist greift man auf 
+die von bSi vorgegebenen zurück. In IFC2x3 wird 
+die Coordination View am häufigsten verwendet, 
+sie ist für den Austausch und die Koordination 
+von Modellen optimiert. Von bSi gibt es noch vier 
+weitere offizielle MVDs. Bei IFC4 gibt es derzeit 
+zwei offizielle MVDs. Die IFC4 Reference View ist 
+mehr oder weniger der Nachfolger der IFC2x3 
+Coordination View. Die Reference View ist aus-
+schließlich zur Referenzierung angedacht, somit 
+bleiben alle Rechte beim Urheber. Auch die Geo-
+metrie wurde mit tessellierten Oberflächen für 
+eine geringere Dateigröße optimiert.
+Mit der Design Transfer View von IFC4 kommt 
+zum ersten Mal der Gedanke des IFC-Roundtrip 
+ins Spiel. Diese View verwendet eine bessere 
+geometrische Beschreibung (advanced BREPs) 
+und ist somit für die Übergabe von einzelnen de-
+taillierten Elementen zur Weiterbearbeitung ge-
+eignet. Hier könnte beispielsweise der Architekt 
+die tragenden Elemente aus Beton an den Stati-
+ker übergeben, damit dieser die Elemente über-
+nimmt und Fugen samt Fugenbänder einarbeitet.
+https://technical.buildingsmart.org/standards/
+ifc/mvd/mvd-database/
+ 
+ 
+  Norm: 
+ISO 16739:2013
+
+
+===== PAGE 197/348 =====
+196
+Datenaustausch
+Eine der essenziellsten Aufgaben im BIM-
+Workflow ist das richtige Abspeichern von IFC-
+Dateien. Welche Einstellungen muss man treffen, 
+um ein gutes IFC zu exportieren? Hier wären wir 
+wieder beim trial-and-error-Prinzip. Damit dies 
+nicht ins Uferlose ausartet, können Sie auf unse-
+rerem YouTube Channel für die drei wichtigsten 
+Modelliersoftwareprodukte (Archicad, Revit und 
+Allplan) drei Video-Tutorials abrufen. Grundsätz-
+lich muss die Klasse der Ursprungssoftware  
+über eine Mappingtable in die entsprechende 
+IFC-Klasse übersetzt werden. Beim Import muss 
+dann die IFC-Klasse wieder über eine Mapping-
+table in die entsprechende Klasse der Zielsoft-
+ware umgewandelt werden.
+
+ Kapitel 2, S. 76
+Grundlagen der 
+Geometrie
+
+  
+ YouTube 
+Channel
+IFC richtig 
+exportieren
+ Abbildung 65: Verschiedene MVDs desselben Gebäudes131 
+131	 Autodesk, Revit IFC Handbuch, Ausführliche An­
+leitung für den Umgang mit IFC-Dateien, 02/2018.
+
+
+===== PAGE 198/348 =====
+197
+IFC (Industry Foundation Classes)
+ Abbildung 66: Mappingtables für den Export und Import bei IFC
+
+
+===== PAGE 199/348 =====
+198
+Datenaustausch
+	
+Baldwin, Mark, Der BIM-Manager, Praktische 
+Anleitung für das BIM-Projektmanagement, 
+2. Auflage (2019), DIN Deutsches Institut  
+für Normung e.V., Mensch und Maschine (Hrsg.);  
+Beuth Verlag Berlin (ISBN 978-3-410-29440-5 
+http://db.freebim.at, Datum des Zugriffs: 
+10. 12. 2021
+	
+Borrmann, André; König, Markus; Koch, 
+Christian; Beetz, Jakob (Hrsg.) (2015), Building 
+Information Modeling. Technologische Grund­
+lagen und industrielle Praxis. Berlin, Heidelberg. 
+Springer-Verlag (ISBN 978-3-658-05605-6)
+https://www.computer-spezial.de/artikel/ 
+integration-von-gis-und-bim_3434779.html,  
+Datum des Zugriffs:  10. 12. 2021
+	
+Kaden, Robert, Clemen, Christian, Seuß, 
+Robert, Blankenbach, Jörg, Becker, Ralf, Eichhorn, 
+Andreas, Donaubauer, Andreas, Kolbe, Thomas 
+H., Gruber, Ulrich (Hrsg.), Leitfaden Geodäsie und 
+BIM, Version 2.1 (2020), DVW-Merkblatt 11-2020, 
+DVW e. V. – Gesellschaft für Geodäsie, Geoinfor-
+mation und Landmanagement; Runder Tisch GIS 
+e. V.
+Literaturverzeichnis
+
+
+===== PAGE 200/348 =====
+199
+Literaturverzeichnis

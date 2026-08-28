@@ -1,0 +1,952 @@
+
+
+===== PAGE 1/20 =====
+ÖVE-EN 1 Teil 4 (§ 49)
+Ausgabe 1996-03
+
+OSTERREICHISCHE BESTIMMUNGEN
+FUR DIE ELEKTROTECHNIK
+
+Errichtung von Starkstromanlagen
+mit Nennspannungen bis
+~1 000V und =1 500 V
+
+Teil 4 Besondere Anlagen
+§ 49 Baderäume, Duschecken,
+Schwimmbecken- und Saunaanlagen
+
+DK 621.31.027.4
+
+ÖSTERREICHISCHER VERBAND FÜR ELEKTROTECHNIK
+
+A A
+MS
+Fachausschuß E
+
+‚y \\
+@ Janı ‘,_
+L, R
+
+L J
+\é S‘)i; ! . Elektrische OVE
+& Niederspannungsanlagen
+
+Preisgruppe 08
+
+
+===== PAGE 2/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 3
+
+@
+
+@)
+(4)
+
+Inhaltsübersicht Seite
+
+§ 49.1 Baderäume und Duschecken snr 5
+
+§ 49.2 Schwimmbeckenanlagen ... 11
+
+8 49.3 Saunaaniagen ..., 15
+
+Anhang A1 Erlauterungen ... 18
+EINLEITUNG
+
+Diese Osterreichischen Bestimmungen für die Elektrotechnik wur-
+
+den vom LenkungsausschuB der Sektion ,Osterreichische Bestim-
+
+mungen fir die Elektrotechnik” im OVE bei der 45. Sitzung am
+
+19. März 1996 verabschiedet. Sie ersetzen OVE-EN 1 Teil 4 (§ 49)/
+
+1980.
+
+Der Rechtsstatus dieser Osterreichischen Bestimmungen fir die
+
+Elektrotechnik ist den jeweils geltenden Verordnungen zum Elek-
+
+trotechnikgeeetz zu entnehmen.
+
+Diese Bestimmungen wurden vom FachausschuB E ,Elektrische
+
+Niederspannungsanlagen“ (FA-E) ausgearbeitet.
+
+In diesem Heft wird auf folgende Osterreichische Bestimmungen
+
+fur die Elektrotechnik Bezug genommen:
+
+OVE-A/EN 60529 Schulzarten durch Gehéuse (IP-Code)
+
+OVE-EN 7 Starkstromanlagen in Krankenhdusern
+und medizinisch genutzten R&umen
+auBerhalb von Krankenh&usern
+
+OVE EN 60742 Trenntransformatoren und Sicherheits-
+transformatoren —- Anforderungen
+
+OVE-HG/EN 60335-2-53 Sicherheit elektrischer Geräte für den
+Hausgebrauch und &hnliche Zwecke -
+Elektrische Sauna-Heizgerate
+
+Bleibt frei.
+
+Bleibt frei.
+
+Die Hinweise auf Verdffentlichungen in den FuBnoten beziehen
+
+sich, sofern nicht anders angegeben. auf den Stand zum Zeitpunkt
+
+der Herausgabe dieses Heftes. Zum Zeitpunkt der Anwendung die-
+
+ses Heftes ist der durch Elektrotechnikverordnung oder gegebe-
+
+nenfalls auf andere Weise festgelegte aktuelle Stand zu beriick-
+
+sichtigen.
+
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich er-
+klarten Osterreichischen Bestimmungen fiir die Elektrotechnik ist
+zu beachten:
+
+
+
+===== PAGE 3/20 =====
+ÖVE-EN 1 Teil 4 (& 49):1996-03 4
+
+(8.1)
+
+(8.2)
+
+(9)
+
+Vorworte, Ergänzungen, Erläuterungen (im Kleindruck) und Hinwei-
+se auf Fundstellen in anderen, verbindlich erklärten Österreichi-
+schen Bestimmungen für die Elektrotechnik werden auch von der
+Verbindlicherklärung erfaßt.
+
+Einleitungen, Rechtsbelehrungen, Anhänge, Fußnoten und Hinwei-
+se auf Fundstellen in anderen Texten werden von der Verbindlich-
+erklärung nicht erfaßt.
+
+Die in diesem Heft angefihrten Österreichischen Bestimmungen
+für die Elektrotechnik, ÖNORMEN der Elektrotechnik und sonstige
+technische Veröffentlichungen können vom ÖVE, Eschenbach-
+gasse 9, A-1010 Wien, bezogen werden.
+
+
+
+===== PAGE 4/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 5
+
+$ 49 Baderdume, Duschecken,
+Schwimmbecken- und Saunaanlagen
+
+$ 49.1 Baderdaume und Duschecken
+
+49.1.1 Allgemeines
+
+Diese Bestimmungen verfolgen in erster Linie das Ziel, Personen, die
+
+baden oder duschen, vor den Auswirkungen gefihrlicher Beriihrungs-
+
+spannungen zu schitzen; in zweiter Linie wird dabei auch ein Schutz von
+
+Sachwerten angestrebt. Zur Erreichung dieser Schutzziele sind fiir Bade-
+
+rdume und Duschecken Schutzbereiche festgelegt. Für elektrische Anla-
+
+gen und Betriebsmittel innerhalb dieser Schutzbereiche sowie in den an-
+grenzenden Wénden bis zu einer Tiefe von 5 cm gelten besondere, ver-
+scharfte Bestimmungen.
+
+Baderäume und Duschecken in Hausinstallationen gemäß § 3.1.13, gel-
+
+ten im Sinne dieser Bestimmungen als trockene Rdume gemäß 8 3.6.4.
+
+49.1.2 Schutzbereich
+
+Die Grenzen des Schutzbereiches sind wie folgt definiert:
+
+(1) Bei Vorhandensein einer Badewanne oder Duschtasse (Abb. 49.1-1)
+—oben: 225 cm Uber der Standfliche in der Wanne oder Dusch-
+
+tasse.
+
+—-unten: FuBboden des Raumes, allenfalls auch Aufstellungsfléche
+der Wanne oder Duschtasse, falls diese gegeniiber dem
+FuBboden des Raumes abgesenkt ist,
+
+- seitlich: Feste Begrenzungswéande sowie ein Bereich mit einem Ra-
+dius von 60 cm auBerhalb des &uBeren Wannen- oder
+Duschtassenrandes. Eln mogliches Herumgreifen um feste
+Begrenzungswande ist dabei zu beriicksichtigen.
+
+(2) Bei Fehlen einer Duschtasse (z. B. Wasserablauf im FuBboden) und
+Brausekopf oberhalb der Standfläche starr befestigt (Abb. 49.1-2a)
+—oben: 225 cm Uber der Standflache,
+
+—unten: Standflache (FuBboden des Raumes),
+
+— seitlich: Feste Begrenzungswande sowie ein Bereich mit einem Ab-
+stand von 60 cm auBerhalb der angenommenen Grenze
+des Brausestrahles. Ein mogliches Herumgreifen um feste
+Begrenzungswénde ist dabei zu beriicksichtigen. Der
+Brausestrahl wird als stehender Zylinder mit einem Radius
+von 60 cm unterhalb des Brausekopfes angenommen.
+
+Ist der Brausekopf nicht starr befestigt, sondern z. B. als Handbrause mit
+
+SchlauchanschluB ausgefiihrt, ist die Lage des als Grenze des Brause-
+
+strahles angenommenen Zylinders so festzulegen, daB dieser den An-
+
+schluBpunkt des Brauseschlauches tangiert (Abb. 49.1-2b).
+
+
+
+===== PAGE 5/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 6
+
+49.1.3 Leitungen
+
+49.1.3.1 Im Schutzbereich gemäß Abb 49.1-1, Abb. 49.1-2a und Abb.
+49.1-2b und in dessen Begrenzungswänden bis zu einer Tiefe von 5 cm
+dürfen keine Leitungen und Zubehör z. B. Einbaudosen verlegt werden.
+Ausgenommen sind Leitungen zur Versorgung von fest angebrach-
+ten Verbrauchsmitteln und für Steckdosen mit vorgeschalteten, einge-
+bauten Trenntransformatoren (Rasiersteckdosen), wenn sie senkrecht
+von oben oder unten (Fußbodeninstallation) zur Anschlulstelle des Ver-
+brauchsmittels geführt werden. Ebenso ausgenommen sind Leitungen
+der Informationstechnik, wobei eine analoge Leitungsführung empfohlen
+wird.
+
+Diese Anforderung wurde aufgenommen, um zu verhindern, daß beim spéteren Anbringen z. B. von me-
+tallenen Handgriffen und metallenen Aufhéngevorrichtungen für Brausen die Isolierung von Leitungen
+und Wandeinbaugehausen durch Befestigungsmittel (Metalldiibel, Schrauben oder Négel) beschadigt
+wird (siehe Abb. 49.1-3).
+
+49.1.3.2 Leitungen, die zur Stromversorgung anderer Rdume oder Orte
+dienen, dürfen nur auBerhalb des Schutzbereiches verlegt werden.
+
+49.1.4 Betriebsmittel und Verbrauchsmittel
+49.1.4.1 Steckdosen, Schalter und AnschluBdosen
+
+Steckdosen und Schalter diirfen innerhalb des gekennzeichneten Schutz-
+bereiches aemäß Abb. 49.1-1, Abb. 49.1-2a und Abb. 49.1-2b nicht an-
+
+Schnitt A - A
+
+Schnitt B-B
+
+Abb. 49.1-1 Schutzbereich bei Badewannen und Duschtassen
+
+
+
+===== PAGE 6/20 =====
+Korrektur
+
+zu Abb. 49.1-1
+Seite 6, OVE-EN 1 Teil 4 (§49):1996-03
+
+
+
+===== PAGE 7/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 7
+Brausekopf
+/'// \\\ Schnitt A - A
+; E A . A -
+@ |
+&l
+2
+
+2,25 m
+
+PTE
+
+Abb. 49.1-2a: Schutzbereich bei Dusche ohne Duschtasse,
+Brausekopf starr befestigt
+
+—- angenommene Grenze des Brausestrahles
+
+. _” Grenze des Schutzbereiches
+
+AbL. 49.1-2b; Schutzbereich bel Dusche onne Duschtasse,
+Handbrause mit Schlauchanschluß
+
+Abb. 49.1-3 Mindestwanddicke
+
+
+
+===== PAGE 8/20 =====
+ÖVE-EN 1 Teil 4 (& 49):1996-03 8
+
+gebracht werden; ausgenommen sind Einbauschalter an Verbrauchsmit-
+teln gemäß § 49.1.4.2 sowie Rasiersteckdosen.
+
+Für den AnschiuB festangeschlossener Verbrauchsmittel im Schutzbe-
+reich sind AnschluBdosen zuléssig.
+
+49.1.4.2 Verbrauchsmittel
+
+Innerhalb von Badewannen und Duschtassen dürfen nur geeignete Ver-
+brauchsmittel mit Nennspannung < 12 V Wechselstrom oder < 30 V
+Gleichstrom verwendet werden.
+
+Unterhalb von Badewannen oder Duschtassen diirfen nur solche elekiri-
+sche Verbrauchsmittel eingesetzt werden, die ausdriicklich für diese Ver-
+wendung hergestellt sind.
+
+AuBerhalb von Badewannen oder Duschtassen im Schutzbereich missen
+elektrische Verbrauchsmittel mindestens der Schutzart IPX4" (spritzwas-
+sergeschuitzt) entsprechen, ausgenommen sind elektrische Warmwasser-
+bereiter, sowie solche fiir Gas- oder Olfeuerung mit elektrischen Ziindein-
+richtungen.
+
+Strahlungsheizgerite brauchen nicht spritzwassergeschitzt sein, wenn
+sie so befestigt sind, daB ihre Unterkante mindestens einen Abstand von
+2 m Uber der jeweiligen Standflache hat.
+
+49.1.4.3 Betriebsmittel der Informationstechnik, Ruf- und
+Signalanlagen
+
+Innerhalb des Schutzbereiches dürfen nur Betriebsmittel mit Nennspan-
+
+nung < 25 V Wechselspannung oder < 60 V Gleichspannung verwendet
+
+werden.
+
+49.1.5 SchutzmaBnahmen
+
+Für Verbrauchsmittel innerhalb von Badewannen oder Duschtassen darf
+nur die SchutzmaBnahme Schutzkleinspannung mit einer Nennspannung
+von < 12 V Wechselspannung oder < 30 V Gleichspannung angewandt
+werden, wobei sich die Stromquelle für die Schutzkleinspannung auBer-
+halb des Schutzbereiches befinden muB.
+
+49.1.5.1 Schutzkleinspannung (SELV)
+Bei Verwendung der SchutzmaBnahme Schutzkleinspannung muß der
+
+Schutz gegen direktes Berithren ungeachtet der Nennspannung durch
+eine der folgenden MaBnahmen sichergestellt sein:
+
+— Abdeckungen oder Umhiillungen, mindestens Schutzart IPX2"
+oder
+
+— Isolation, die so ausgelegt ist, daB sie einer Prifspannung von
+500 V mindestens eine Minute lang standhalt.
+
+" Siehe OVE-A/EN 80529,
+
+
+
+===== PAGE 9/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 9
+
+49.1.5.2 Festangeschlossene Verbrauchsmittel gemäß $ 49.1.4.2 sind,
+sofern sie nicht mit SELV betrieben werden, durch eine Fehlerstrom-
+Schutzeinrichtung mit einem Nennfehlerstrom /. < 0,03 A zu schützen
+oder einzeln über Trenntransformatoren® zu versorgen, wobei sich die
+Trenntransformatoren außerhalb des Schutzbereiches befinden müssen.
+
+49.1.5.3 Zusatzschutz
+
+Für Baderäume und Räume mit Duschen ist der Zusatzschutz durch Feh-
+lerstrom-Schutzeinrichtungen mit einem Nennfehlerstrom von /,, < 0,03 A
+anzuwenden.
+
+49.1.6 Zusitzlicher Potentialausgleich
+
+49.1.6.1 Wenn im Schutzbereich mindestens zwei leitfdhige Rohrlei-
+tungssysteme beriihrbar sind, muB ein zusétzlicher Potentialausgleich
+ausgefuhrt werden. (Siehe $ 15.2)
+
+Dies ist dann der Fall, wenn z. B. die Wasserverbrauchsleitung und die Abwasserleitung durchgehend
+aus leitfahigen Werkstoffen bestehen.
+
+Eine Verbindung der Potentlalausgleichsleitung it dem Schutzleiter ist dann nicht erforderlich, wenn
+diese bereits durch den Hauptpotentialausgleich gemaB § 15 gegeben ist.
+
+Dieser Potentialausgleich muB auch dann ausgefiihrt werden, wenn in
+Baderaumen und Duschecken keine elektrischen Einrichtungen vorhan-
+den sind.
+
+49.1.6.2 Die Potentialausgleichsleituna muB einen Mindestquerschnitt
+von 4 mm?2 Cu haben oder aus leitwertgleichem feuerverzinktem Stahl be-
+stehen.
+
+49.1.6.3 Wenn ein zusatzlicher Potentialausgleich notwendig ist, sind
+Badewannen oder Duschtassen mit metallener Oberflache, z. B. nicht
+emailliert, in den zusétzlichen Potentialausgleich einzubeziehen. Die
+Potentialausgleichsleitung ist mit der AnschiuBstelle der Badewarine vder
+
+1 zusétzlicher Potentialausgleich gemäß $ 49.1.6
+
+2 AnschiuBnocken
+
+3 Ab- und Uberlaufgarnitur (Ablaufventil bei Duschtasse)
+4 leitfahiges AbfluBrohr
+
+5 leitfahige Wasserverbrauchsleitung
+
+6 AnschluBstelle
+
+7 Siphon
+
+Abb. 10.1-4: Potentialausgleich bei Badewannen und Duschtassen
+
+2 Siehe OVE EN 60742.
+
+
+
+===== PAGE 10/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 10
+
+Duschtasse zu verbinden. Eine allfällig vorhandene metallene Ab- und
+Uberlaufgarnitur ist in diese Verbindung einzubeziehen (Abb. 49.1-4). Ein-
+zelne Metallteile, die keine leitfahige Verbindung mit den Rohrsystemen
+aufweisen, brauchen nicht in den Potentialausgleich einbezogen werden.
+
+49.1.7 Elektrische Flachenheizung
+
+Im Schutzbereich diirfen im FuBboden eingebettete elektrische Flachen-
+heizungen verwendet werden, wenn sie entweder eine geerdete me-
+tallene Umhüllung haben oder mit einer gleichwertigen metallenen
+Abdeckung versehen sind. Die metallene Umhüllung oder Abdeckung ist
+gegebenenfalls in den gemaB $ 49.1.6 geforderten, zusatzlichen Poten-
+tialausgleich einzubeziehen oder andernfalls mit dem Schutzleiter zu ver-
+binden.
+
+Bezuglich elektrischer Flachenheizung gelten die Anforderungen gemäß
+§ 34a dieser Bestimmungen.
+
+49.1.8 Rewegliche Bade- und Duscheinrichtungen
+
+49.1.8.1 Bewegliche Bade- und Duscheinrichtungen (Schrankbéder,
+Duschkabinen) mit eingebauten elektrischen Betriebsmitteln gelten als
+ortsfeste Verbrauchsmittel, die begrenzt bewegbar sind (siehe § 3.2.2).
+
+49.1.8.2 Beim Aufstellen ist zu beachten, daB die Anforderungen bezüg-
+lich des Schutzbereiches (siehe § 49 1 2) eingehalten werden. Fntspre-
+chende Aufstell- bzw. Betriebsanleitungen sind vom Hersteller zu erstel-
+len und vom Aufsteller und Betreiber zu beachten. Die Anforderungen
+gemäß $ 49.1.4 sind auch dann einzuhalten, wenn die beweglichen Bade-
+und Duscheinrichtungen keine eingebauten elektrischen Betriebsmittel
+haben.
+
+49.1.8.3 Elektrische Betriebsmittel in beweglichen Bade- oder Duschein-
+richtungen missen mit flexiblen Leitungen, die mindestens als mittlere
+PVC-Schlauchleitung oder als leichte Gummischlanchleituing ausgefiihrt
+sind, angeschlossen werden.
+
+49.1.8.4 Der zusatzliche Potentlalausgleich gemäß $ 49.1.6 ist herzustel-
+len.
+49.1.9 Sonstige Bade- und Duschrdaume
+
+(z. B. Gemeinschaftsanlagen)
+49.1.9.1 Für diese gelten zusatzlich die Bestimmungen gemäß der
+Raumart (z. B. für nasse und feuchte Raume gilt § 45 dieser Bestimmun-
+gen).
+49.1.9.2 Fir medizinisch genutzte Baderdume gelten zusétzlich techni-
+sche Bestimmungen?d.
+
+3 Siehe OVE-EN 7.
+
+
+
+===== PAGE 11/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 11
+
+§ 49.2 Schwimmbeckenanlagen
+49.2.1 Geltung
+
+Diese Bestimmungen gelten für das Errichten elektrischer Anlagen in
+überdachten Schwimmbädern (Schwimmhallen) und Schwimmbädern im
+Freien.
+
+Besondere Anforderungen gelten für den unmittelbaren Beckenbereich
+von Schwimmbeckenanlagen sowie den dazugehörigen Fußwasch-
+becken und deren umgebende Bereiche.
+
+49.2.2 Schutzbereich und Raumarten
+49.2.2.1 Einteilung der Bereiche
+
+Anlagen mit Schwimmbecken haben drei Bereiche, für die besondere An-
+forderungen festgelegt sind (siehe Abb. 49.2-1 und Abb. 49.2-2):
+
+- Bereich 0
+
+umfaßt das Innere des Beckens und schließt vorhandene wesent-
+liche Öffnungen in seinen Wänden oder im Fußboden ein, die den
+im Becken befindlichen Personen zugängig sind.
+
+— Bereich 1 iot begronzt
+
+— einerseits durch eine angenommene senkrechte Fläche in 2 m
+Abstand vom Rand des Beckens,
+
+— andererseits durch den Boden oder die Standflache, auf der
+sich Personen aufhalten können, und durch eine angenommene
+waagrechte Fläche in 2,5 m Höhe über dem Boden oder der
+Standfläche.
+
+Enthalt die Schwimmbeckenanlage Sprungtürme und/oder -bretter,
+Startblöcke, Rutschbahnen und ähnliche Einrichtungen, so umfaßt der
+Bereich 1 auch jenen Raum, der durch eine angenommene senkrechte
+Fläche in 1,5 m waagrechtem Abstand von diesen Einrichtungen und eine
+angenommene waagrechte Fläche in 2,5 m Höhe über der höchsten
+Standfläche auf der sich Personen aufhalten können, begrenzt wird.
+
+— Bereich 2 ist begrenzt
+
+— einerseits durch die den Bereich 1 begrenzende senkrechte
+Fläche und eine zu ihr parallele Fläche im Abstand von 1,5 m,
+
+— andererseits durch den Boden oder die Standfläche, auf der
+sich Personen aufhalten können und die waagrechte Fläche in
+2,5 m Höhe über dem Boden oder der Standfläche.
+
+
+
+===== PAGE 12/20 =====
+ÖVE-EN 1 Teil 4 (& 49):1996-03 12
+
+Abb. 49.2-1: Einteilung der Bereiche für Schwimmbecken und Fußwaschrinnen
+Bei den Maßen für die Bereichseinteilung dürfen Wände und feste Trennwände
+berücksichtigt werden (siehe Abbildung in den Erläuterungen).
+BO...Bereich 0, B1 . . . Bereich 1, B2 . . . Bereich 2
+
+BO Bereich0
+B1 Bereich 1
+B2 Bereich2
+
+Abb. 49.2-2: Einteilung der Bereiche für Schwimmbecken, die auf
+einer Fläche (z. B. Erdboden) aufgestellt sind
+Bei den MaBen für die Bereichseinteilung dürfen Wénde und feste Trennwénde
+berlicksichtigt werden (siehe Abbildung in den Erlauterungen).
+
+
+
+===== PAGE 13/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 13
+
+49.2.2.2 Raumarten
+
+(1) Dor Bereich 1 gemäß Abb. 49.2-1 und Abb. 19.2-2 gilt als feuchter
+und nasser Raum,
+
+(2) Schwimmhallen gelten als feuchte und nasse Rdume,
+wenn jedoch in Schwimmbhallen sichergestellt ist, daß in der Regel
+weder Kondenswasser auftritt noch die Luft mit Feuchtigkeit gesat-
+tigt ist und in ihnen nicht zu Reinigungszwecken abgespritzt wird,
+gilt der Bereich auBerhalb des Bereiches 1 als trockener Raum,
+
+(3) Nebenraume, wie Umkleidekabinen, WC, Getrankeausschank,
+Aufenthaltsraume usw., gelten als trockene Raume, sofern in ih-
+nen nicht zu Reinigungszwecken abgespritzt wird,
+
+(4) Baderaume und Duschecken: Für Baderaume und Duschecken in-
+nerhalb von Schwimmbeckenanlagen gilt § 49.1,
+
+(5) Anlagen im Freien (siehe § 48).
+
+49.2.3 Elektrische Anlagen in den Bereichen 0 und 1
+
+49.2.3.1 Es durfen nur Kabel und Leitungen verlegt werden, die fir die
+Versorgung der dort befindlichen Betriebsmittel erforderlich sind.
+
+49.2.3.2 Es dirfen nur kunststoffisolierte Energiekabel oder PVC-Mantel-
+leitungen oder gleichwertige Kabel oder Leitungen ohne leitfahige Umhül-
+lung verlegt werden.
+
+49.2.3.3 Verbindungsdosen sind nicht zuldssig.
+
+49.2.3.4 Flexible Leitungen missen mindestens als schwere Gummi-
+schiauchleitung ausgefiihrt sein.
+
+49.2 3 5 Es dürfen keine Installationsgerite eingebaut werden
+
+Ist es jedoch aus baulichen Griinden z. B. bei kleineren Schwimmbecken,
+nicht méglich, Steckdosen auBerhalb des Bereiches 1 anzubringen, dür-
+fen diese im Bereich 1 nur dann angebracht werden, wenn sie mindestens
+1,25 m vom Bereich 0, waagrecht gemessen und in einer Héhe von min-
+desten 0,3 m über der Standflache, angeordnet sind.
+
+49.2.4 Betriebsmittel und Verbrauchsmittel
+
+49.2.4.1 Innerhalb des Bereiches 0 dirfen nur solche elektrische Ver-
+brauchsmiltel eingeselzt werden, die bestimmungsgemäß für den Ge-
+brauch in diesem Bereich hergestellt sind.
+
+49.2.4.2 Elektrische Betriebsmittel in den Bereichen 1 und 2 und im Frei-
+en mussen, sofern Strahlwasser fiir Reinigungszwecke eingesetzt wird,
+der Schutzart IPX5" entsprechen. Kommt Strahlwasser nicht zur Verwen-
+dung, gentigt Schutzart IPX4%.
+
+” Siehe OVE-A/EN 60529.
+
+
+
+===== PAGE 14/20 =====
+ÖVE-EN 1 Teil 4 (§ 49):1996-03 14
+
+49.2.5 Schutzmaßnahmen
+49.2.5.1 Für Verbrauchsmittel in den Bereichen 0 und 1 darf nur die
+Schutzmaßnahme Schutzkleinspannung mit einer Nennspannung von
+< 12 V Wechselspannung oder < 30 V Gleichspannung angewandt wer-
+den, wobei sich die Stromquelle der Schutzkleinspannung außerhalb der
+Bereiche 0, 1 und 2 befinden muß (siehe jedoch § 49.2.3.5).
+49.2.5.1.1 Schutzkleinspannung (SELV)
+Bei Anwendung der Schutzmaßnahme Schutzkleinspannung muß der
+Schutz gegen direktes Berühren ungeachtet der Nennspannung durch
+eine der folgenden Maßnahmen sichergestellt sein:
+
+— Abdeckungen oder Umhüllungen, mindestens Schutzart IPX2" oder
+
+— Isolation, die so ausgelegt ist, daß sie einer Prüfspannung von 500 V
+
+mindestens eine Minute lang standhält.
+
+49.2.5.1.2 Werden Steckdosen gemäß $ 49.2.3.5 angebracht, sind diese
+durch eine Fehlerstrom-Schutzeinrichtung mit einem Nennfehlerstrom
+I,n < 0,03 A zu schützen oder einzeln über Trenntransformatoren zu ver-
+sorgen, wobei sich die Trenntransformatoren außerhalb der Bereiche 0
+und 1 befinden müssen.
+49.2.5.2 Im Bereich 2 sind folgende Schutzmaßnahmen anzuwenden:
+
+(1) Fehlerstromschutzschaltung mit Zusatzschutz gemäß § 6 oder
+
+(2) Nullung mit Zusatzschutz gemaB § 6 oder
+
+(3) Schutzkleinspannung oder
+
+(4) Schutztrennung mit einzeln zugeordneten Trenntransformatoren.
+49.2.5.3 AuBerhalb der Bereiche 0, 1 und 2 darf jede SchutzmaBnahme
+entsprechend der Raumart (§ 49.2.2.2) angewendet werden, falls nicht
+§ 149.2.5.3.1 zu beachten ist. Für Stockdoeen, die nicht mit Schutz-
+kleinspannung oder Schutztrennung betrieben werden, ist der Zusatz-
+schutz gemäß § 6 anzuwenden.
+49.2.5.3.1 Fur elektrische Betriebs- und Verbrauchsmittel, welche zwar
+auBerhalb der Bereiche 0, 1 und 2 installiert sind, jedoch zur Wasserbe-
+wegung oder -aufbereitung dienen und mit dem Becken durch metallene
+Rohrleitungen verbunden sind, gelten hinsichtlich der anzuwendenden
+SchutzmaBnahme die Anforderung des Bereiches 2.
+49.2.6 Zusitzlicher Potentialausgleich
+Alle fremden leitfdhigen Teile in den Bereichen 0, 1 und 2 sind mittels
+Potentialausgleichsleiter untereinander und mit dem Schutzleiter aller
+elektrischen Betriebsmittel innerhalb dieser Bereiche zu verbinden.
+
+Der Potentialausgleichsleiter ist gemäß § 21.5 zu dimensionieren. Die Verbindung des/der Potentialaus-
+gleichsleiter(s) mit dem Schutzleiter erfolgt zweckmaBigerweise durch eine örtliche Potentialausgleichs-
+achiene (PAS) innerhalb der Bereiche 1 oder 2 oder im néchstliegenden Gtromkreisverteiler,
+
+) Siehe OVE-A/EN 60529.
+
+
+
+===== PAGE 15/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 15
+
+49.2.7 Elektrische Flachenheizung
+
+In den Bereichen 1 und 2 diirfen im FuBhoden eingebettete elektrische
+Flachenheizungen verwendet werden, wenn sie entweder eine geerdete
+metallene Umhüllung haben oder mit einer gleichwertigen metallenen Ab-
+deckung versehen sind. Die metallene Umhüllung oder Abdeckung ist in
+den zusitzlichen Potentialausgleich gemäß § 49.2.6 einzubeziehen.
+Beziiglich elektrischer Flachenheizung gelten die Anforderungen gemäß
+§ 34a dieser Bestimmungen.
+
+49.2.8 Verteiler
+
+In den Verteilern muB eine Isolationspriifung der abgehenden Stromkrei-
+se ohne Abklemmen der Neutralleiter méglich sein, z. B. durch Leitungs-
+schutzschalter mit schaltbarem Neutralleiter.
+
+§ 49.3 Saunaanlagen
+49.3.1 Geltung
+
+Diese Bestimmungen gelten für HeiBluft- und Dampfsaunardume, in
+denen besondere Umgebungsbedingungen vorliegen und in denen elek-
+trische Sauna-Heizgerate gemaB den technischen Bestimmungen® ange-
+bracht sind, wenn die Rdume ausschlieBlich fiir diese Nutzung vorgese-
+hen sind.
+Fur vorgefertigte Saunaeinheiten (bestehend aus Saunaheizgeréat, Steuer-
+und Sicherheitseinrichtungen sowie der Saunakabine) bestehen techni-
+sche Bestimmungen?.
+49.3.2 Begriffe und Benennungen
+49.3.2.1 HeiBluft-Saunaraum ist ein Raum oder Bereich, in dem bei
+Saunabetrieb die Luft auf hohe Temperaturen erwarmt wird und die rela-
+tive Luftfeuchtigkeit Uiblicherweise nieder ist. Die Luftfeuchtigkeit steigt
+nur wahrend kurzer Zeit an, wenn Wasser auf den Ofen gegossen wird.
+Der Saunaraum gilt als trockener Raum.
+49.3.2.2 Dampf-Saunaraum ist ein Raum oder Bereich, der zusétzlich
+zum HeiBluft-Saunaraum als feuchter bzw. nasser Raum gemäß $ 45 die-
+ser Bestimmungen gilt.
+49.3.3 SchutzmaBnahmen
+In Saunaanlagen, wo elektrische Gerate der Schutzklasse |, z. B. Sauna-
+ofen, durch Benutzer beriihrt werden koénnen, dirfen nur folgende
+SchutzmaBnahmen angewendet werden:
+
+(1) Fehlerstromschutzschaltung mit Zusatzschutz gemäß § 6,
+
+(2) Nullung mit Zusatzschutz gemas $ 6,
+
+(3) Schutzkleinspannung.
+
+4 Siehe OVE-HG/EN 60335-2-53.
+
+
+
+===== PAGE 16/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 16
+
+Bei Anwendung der SchutzmaBnahme Schutzkleinspannung muB der
+Schutz gegen direktes Berithren ungeachtet der Nennspannung durch
+eine der folgenden MaBnahmen sichergestellt sein:
+— Abdeckungen oder Umhiillungen, mindestens Schutzart IPX2" oder
+— Isolation, die so ausgelegt ist, daB sie einer Prifspannung von 500 V
+mindestens eine Minute lang standhait.
+
+49.3.3 Installationsmaterial und Betriebsmittel
+
+49.3.3.1 Allgemeine Bestimmungen
+
+Die Betriebsmittel müssen mindestens der Schutzart IP24 entsprechen.
+
+Vier Bereiche sind gemaB Abb. 49.3-1 festgelegt:
+
+Bereich 1: Es dirfen nur elektrische Betriebsmittel, die zu den Sauna-
+Heizgeraten gehören, angebracht werden.
+
+Bereich 2: Innerhalb dieses Bereiches bestehen keine besonderen Anfor-
+derungen hinsichtlich der Warmefestigkeit der dort verwende-
+ten Betriebsmittel.
+
+Bereich 3: Elektrische Betriebsmittel in diesem Bereich missen einer
+Umgebungstemperatur von 125 °C unbeschadet standhalten.
+
+Bereich 4: Hier dürfen nur verwendet werden
+
+— Leuchten und ihre AnschluBleitungen, die so angebracht
+sind, daR einer Überhitzung vorgebeugt ist.
+
+— Steuereinrichtungen von Sauna-Heizgerdten (Thermostate
+und thermische Ausloser) sowie die zugehdrigen Verbin-
+dungsleitungen.
+
+Die Temperaturfestigkeit dieser elektrischen Betriebsmittel
+
+muß jener von Bereich 3 entsprechen.
+
+49.3.4.2 Leitungen und Kabel
+
+Leitungen und Kabel müssen schutzisoliert sein; sie dirfen keine Metall-
+mantel haben und dirfen nicht in metallenen Rohren verlegt sein.
+49.3.4.3 Schaltgerdte und Steckdosen
+
+Schaltgerate, die nicht in Saunaheizgerate eingebaut sind, müssen außer-
+halb der Umhillung des Saunaraumes angebracht werden.
+
+Steckdosen durfen in Saunardumen nicht angebracht werden.
+
+Die elektrischen Einrichtungen des Saunaraumes müssen von zentraler
+Stelle aus durch einen Schalter gemaB § 31.1.1.1 trennbar (freischaltbar)
+sein.
+
+49.3.5 Dampf-Saunaraume (Dampfsauna)
+
+Dampf-Saunardume gelten zusatzlich als feuchte und nasse Raume
+gemaB § 45 dieser Bestimmungen. Im übrigen gelten § 49.3.1 bis
+$ 49.3.4.3 suwie § 49.2.8.
+
+” Siehe OVE-A/EN 60529.
+
+
+
+===== PAGE 17/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 . 17
+
+Schnitt: Heißluft-Saunaraum thermisch isolierte Decke
+
+e A o e,
+Bereich 4
+
+Bereich 3 ' Bereich 1
+
+Y
+
+R
+
+SSS
+
+Z
+— /
+thermisch isolierte Wand
+
+Grundriß : HeiBluft-Saunaraum
+
+NS
+
+SSS
+
+>
+
+SS
+
+Abb. 49.3-1: Bereiche bezüglich der Umgebungstemperatur
+
+
+
+===== PAGE 18/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 18
+
+Anhang A 1
+ERLÄUTERUNGEN
+
+Zu 8 49.1:
+
+Neueste Erkenntnisse der Elektropathologie und Veränderungen in der
+Baupraxis erlauben eine wesentliche Vereinfachung der Bestimmungen.
+
+(1) Die im IEC-Bericht 479 gemachten Angaben zeigen, daß für Span-
+nungen über 100 V die Korperimpedanzen tür trockene und nasse
+Haut sehr wenig verschieden sind. Bei 200 V Berührungsspannung ist
+es daher egal, ob die Haut trocken oder naß ist, wobei die Impedan-
+zen praktisch zur Gänze in den Extremitäten, d. h. in den Armen oder
+Beinen liegen. Sitzt der Mensch in der Badewanne und greift auf den
+Wasserauslauf, so ist gegen den Wannenablauf die Impedanz eines
+Armes, das sind rund 500 Q, wirksam.
+
+(2) Bei modernen Wohnbauten werden immer mehr Rohrleitungen in Iso-
+lierstoff ausgeführt. Die früher im Badezimmer bekannt gewordenen
+tödlichen Unfälle durch Spannungsverschleppungen haben immer
+zwischen Wasserleitungen und Wannenablauf Fehlerspannungen ge-
+zeigt. Eine zweite Kategorie von Unfällen sind jene, die durch
+Berühren von mit Wasser gefüllten Geräten passieren, wobei der
+Strom zwischen der Berührungsstelle und Wasserleitung oder Bade-
+wannenablauf fließt.
+
+In jeder Anlage ist gemäß ÖVE-EN 1 8 15 der Hauptpotentialausgleich
+vorgeschrieben.
+
+(4) Fast alle Badezimmer sind heute verfliest und die Standflächen haben
+einen hohen Standort-Übergangswiderstand. Dadurch ist eigentlich
+das Badezimmer weniger gefährlich als der Hausgarten oder eine
+Küche mit einer geerdeten Nirosta-Arbeitsfläche.
+
+Aus den Punkten (1) bis (4) ergeben sich tolgende wesentliche Erkennt-
+nisse:
+
+1. Eine zusätzliche Gefahr im Badezimmer besteht nur in der Wanne oder
+Duschecke selbst oder in deren Umgebung, soweit der Handbereich
+reicht. Daher gelten im Badezimmer im wesentlichen die gleichen In-
+stallationsbestimmungen wie für andere Räume.
+
+3
+
+~
+
+2. In der Wanne oder Duschecke besteht eine Gefahr zwischen dem
+Wasserauslauf und dem Wannenablauf nur dann, wenn die Wasser-
+verbrauchsleitungen und die Wasserablaufrohre aus Metall sind. Dies
+gilt auch fir vorhandene andere Rohrsysteme im Handbereich. Eine
+Potentialausgleichsleitung ist daher überflüssig, wenn alle Rohre bis
+auf eines aus Isolierstoff bestehen. Sie ist notwendig, wenn minde-
+stens zwei Rohrsysteme metallisch leitend sind.
+
+
+
+===== PAGE 19/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 19
+
+3. Da gemäß § 15 der Hauptpotentialausgleich vorgeschrieben ist, ist
+
+sichergestellt, daß an zentraler Stelle (Potentialausgleichsschiene) der
+Schutzleiter mit allen leitfähigen Rohrsystemen verbunden ist. Daher
+entfällt in jedem Fall die Notwendigkeit, die Potentialausgleichsleitung
+mit dem Schutzleiter zu verbinden (Dies ist schon in ÖVE-EN 1 Teil 4
+$ 49/1980, $ 49.1.5.3 vorgesehen).
+Wenn bei Erweiterungen bzw. Erneuerungen in Altanlagen der Haupt-
+potentialausgleich fehlt, ist dieser nachizuristen oder Örtlich auszu-
+führen. Wenn nur ein leitfähiges Rohrsystem vorhanden ist, ist festzu-
+stellen, ob eine leitende Verbindung zur Erde vorhanden ist.
+
+4. Es genügt daher installationstechnisch, im Badezimmer auf jene Ge-
+fahren Rücksicht zu nehmen, die unmittelbar in der Umgebung von
+Wanne oder Duschecke bestehen, d. h. der Schutzbereich von 60 cm
+wie bisher ist die vernünftigste Regelung, und zwar mit einer Höhe von
+2,25 m. Darüber hinaus genügt es vorzuschreiben, daß elektrische Be-
+triebsmittel in der Wanne uder in der Duschtasse mit Schutzkleinspan-
+nung betrieben werden müssen.
+
+zu $ 49.1.2:
+
+Als feste Begrenzungswände gelten auch Duschwände aus Glas oder
+ähnlichem Material, wenn sie fest angebracht sind. Bei einer Höhe von
+2 2,25 m erfüllen sie auch die Anforderungen des Schutzbereiches.
+
+zu $ 49.2.2:
+
+Ein Beispiel für die Bereichseinteilung bei Schwimmbecken und fester
+Trennwand siehe Abb. 49.2-1.
+
+zu $ 49.2.6:
+
+In Anlehnung an die französische und englische Fassung wurde vom
+deutschen nationalen Komitee folgende deutschsprachige Neufassung
+des Begriffes „fremdes leitfähiges Teil“ bei CENELEC beantragt:
+
+Ein fremdes leitfahiges Teil ist ein leitfähiges Teil, das nicht zur elektri-
+schen Anlage gehört, das ein Potential, im allgemeinen das Erdpotential,
+einführen kann.
+
+Daraus ergibt sich, daB z. B. folgende leitfahige Teile, sofern kein Poten-
+tial eingefiihrt werden kann, nicht zu den fremden leitfahigen Teilen zahlen
+und somit auch nicht in den zusétzlichen Potentialausgleich einbezogen
+werden müssen:
+
+- Leitfahige Einstiegsleiter,
+— leitfahige Handldufe am Beckenrand,
+
+— leitfahige Gitterabdeckungen einschlieBlich deren Einbaurahmen
+von Uberlaufrinnen.
+
+
+
+===== PAGE 20/20 =====
+OVE-EN 1 Teil 4 (§ 49):1996-03 20
+
+Nichtisolierende Fußböden sind fremde leiffihige Teile. Fiir die Beurtei-
+lung der Isolationseigenschaften kann Teil 1 Anhang A3 dieser Bestim-
+mungen herangezogen werden.
+
+Als nichtisolierende Fußböden gelten z. B. Betonplatten mit Armierung
+(z. B. Baustahlmatten). Diese Armierung ist beim Einbringen zu verrédeln
+oder zu verschweiBen und in den zusitzlichen Potentialausgleich einzu-
+beziehen. Damit wird eine ähnliche Wirkung wie bei der friiher geforderten
+Potentialsteuerung erreichil. FuBboden, die aus elnzelnen Betonplatten
+bestehen, deren Armierung nicht ohne Beschadigung der Platten zugan-
+gig ist, brauchen nicht in den zusétzlichen Potentialausgleich einbezogen
+werden.
+
+Betonplatten (auch wenn sie nicht isolierend sind) ohne Armierung, Plat-
+tenbelége, sowie der Mutterboden (z. B. Rasen) brauchen nicht in den zu-
+sétzlichen Potentialausgleich einbezogen werden.
+
+Für letztgenannte Falle, sowie fiir isolierende FuBbdden, ist auch keine
+zusétzliche Potentialsteuerung erforderlich.
+
+Bereich 0
+
+Maße in m
+n=2m
+R=rn—5n—umn
+” =3,5m
+18 — 13 — S4 — 82
+= n —3 — 8
+
+Abb. 49.2-1: Beispiel der Bereichseinteilung bei Schwimmbecken
+und fester Trennwand
+

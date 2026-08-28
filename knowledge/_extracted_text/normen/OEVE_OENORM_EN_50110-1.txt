@@ -1,0 +1,2808 @@
+
+
+===== PAGE 1/44 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+EN 50110-1 
+ 
+Ausgabe: 2008-09-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Betrieb von elektrischen Anlagen 
+Teil 1: Europäische Norm  
+(Teil 2-100: Nationale Ergänzungen eingearbeitet) 
+(Berichtigung 1:2008-09 eingearbeitet) 
+ 
+Operation of electrical installations – Part 1: European Standard –  
+Part 2-100: National annexes 
+ 
+Exploitation des installations électriques – Partie 1: Norme Européenne –  
+Partie 2-100: Annexes nationales 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ungleich (NEQ)  
+EN 50110-1:2004 
+ 
+                      Ersatz für      ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100  
+                                             eingearbeitet):2007-05 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK H 
+ 
+Elektrische Hochspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2008. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 2/44 =====
+ÖVE/ÖNORM EN 50110-1:2008 
+2 
+Nationales Vorwort 
+ 
+Diese Europäische Norm EN 50110-1:2004 hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den einer ÖNORM gemäß 
+NG 1971. Bei ihrer Anwendung ist dieses Nationale Vorwort zu berücksichtigen. 
+ 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des 
+Ausgabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die 
+Verweisung auf die jeweils neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug 
+genommene Ausgabe des Standards. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Europäische Normen (EN) werden gemäß den „Gemeinsamen Regeln“ von CEN/CENELEC durch 
+Veröffentlichung eines identen Titels und Textes in das Gesamtwerk der ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN übernommen, wobei der Nummerierung der 
+Zusatz 
+ÖVE/ÖNORM 
+bzw. 
+ÖNORM 
+vorangestellt 
+wird. 
+Die 
+nachstehende 
+Tabelle 
+listet 
+jene 
+ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN auf, die in Titel, 
+Nummerierung und/oder Inhalt (nicht ident) von den zitierten internationalen bzw. europäischen Standards 
+abweichen.  
+ 
+ 
+ 
+Europäische Norm 
+ 
+Internationale Norm 
+ÖSTERREICHISCHE 
+BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK bzw. ÖNORM 
+HD 384 (alle Teile) 
+IEC 60364 (alle Teile) 
+ÖVE-EN 1 bzw.  
+ÖVE/ÖNORM E 8001 (nicht ident) 
+(alle Teile) 
+HD 637 S1 
+– 
+ÖVE/ÖNORM E 8383 
+ 
+ÖVE-EN 1, Errichtung von Starkstromanlagen mit Nennspannungen bis 51000 V und 41500 V 
+ÖVE/ÖNORM E 8001, Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 41500 V 
+ÖVE/ÖNORM E 8383, Starkstromanlagen mit Nennwechselspannung über 1 kV 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 3/44 =====
+ÖVE/ÖNORM EN 50110-1:2008 
+3 
+Erläuterung zur Einarbeitung des Teiles 2-100 
+Gemäß den Beschlüssen von CENELEC sind nationale Ergänzungen von den jeweiligen Nationalkomitees 
+auszuarbeiten und als EN 50110-2-100 zu veröffentlichen. Für Österreich wurden diese nationalen 
+Ergänzungen vom Technischen Komitee für „Elektrische Hochspannungsanlagen“ – und Technischen 
+Subkomitee H 5 – „Betrieb“ –  ausgearbeitet und in Kursivschrift in den Text der EN 50110-1 eingearbeitet.  
+Die Nummerierung der nationalen Ergänzungen besteht aus der zutreffenden Abschnittsnummer der  
+EN 50110-1 und einer zusätzlichen Zahl beginnend bei 101 (z. B. 6.4.3.105). 
+Berichtigung:  
+Der in der englischen Originalfassung verwendete Begriff „Live working zone“ wurde missverständlich mit 
+„Gefahrenzone“ übersetzt. Für den Gebrauch dieser Norm ist der Begriff „Gefahrenzone“ jeweils durch 
+„Bereich für Arbeiten unter Spannung“ zu ersetzen. 
+Durch die Einarbeitung der nationalen Ergänzungen sind zusätzlich zu Abschnitt 2 dieser Norm folgende 
+Dokumente für die Anwendung dieses Dokumentes erforderlich. 
+ÖVE-E 34, Erste Hilfe bei Unfällen durch Elektrizität (auch als Wandtafel erhältlich) 
+ÖVE/ÖNORM E 2750, Photovoltaische Energieerzeugungsanlagen – Errichtungs- und Sicherheits-
+anforderungen 
+ÖVE/ÖNORM E 8350, Bekämpfung von Bränden in elektrischen Anlagen und in deren Nähe  
+(auch als Wandtafel erhältlich) 
+ÖVE/ÖNORM E 8385, Betrieb von elektrischen Anlagen – Besondere Festlegungen für landwirtschaftliche 
+und gartenbauliche Betriebsstätten 
+ÖVE/ÖNORM E 8555, Betrieb elektrischer Bahnen und Obusse 
+ÖVE EN 50110-2-700, Betrieb von elektrischen Anlagen Teil 2-700: Betrieb elektrischer Anlagen im Bergbau 
+BGBl. II Nr. 13/2007, Fachkenntnisnachweis-Verordnung – FK-V sowie Änderung der Verordnung über den 
+Nachweis der Fachkenntnisse für die Vorbereitung und Organisation von bühnentechnischen und 
+beleuchtungstechnischen Arbeiten, der Verordnung über die Fachausbildung der Sicherheitsfachkräfte und 
+die Besonderheiten im untertägigen Bergbau, der Bauarbeiterschutzverordnung, der Druckluft- und 
+Taucherarbeitenverordnung, der Verordnung über den Schutz der Dienstnehmer und der Nachbarschaft beim 
+Betrieb von Steinbrüchen, Lehm-, Ton-, Sand- und Kiesgruben sowie bei Haldenabtragungen und der 
+Sprengarbeitenverordnung 
+ [1]   Technische und organisatorische Regeln (TOR) für Betreiber und Benutzer von Übertragungs- und 
+Verteilernetzen gemäß ElWOG – Teil D: Besondere Regeln – Hauptabschnitt D4: Parallelbetrieb von 
+Erzeugungsanlagen mit Verteilernetzen
+1) 
+ 
+ 
+                                                     
+1) Herausgeber: Verband der Elektrizitätsunternehmen Österreichs 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 4/44 =====
+ÖVE/ÖNORM EN 50110-1:2008 
+4 
+Berichtigung 1:2008-09 
+In ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet):2007-05 – Betrieb elektrischer Anlagen – ist zu 
+berichtigen: 
+Abschnitt 6.2.4.3 
+Die Nummerierung der bisherigen nationalen Ergänzungen 6.2.4.3.101 und 6.2.4.3.102 ist auf 6.2.4.3.102 
+und 6.2.4.3.103 zu ändern. 
+Es ist eine nationale Ergänzung mit der Abschnittsnummer 6.2.4.3.101 mit folgendem Text neu einzufügen. 
+6.2.4.3.101 
+Ist an allen Ausschaltstellen von elektrischen Leitungen oder anderen Anlagen mit Nennspannungen 
+über 1 kV kurzschlussfest geerdet und kurzgeschlossen, so genügt an der Arbeitsstelle ein Querschnitt 
+der Erdungs- und Kurzschließseile von 25 mm2 Kupfer. 
+Erläuterung zur Berichtigung 
+Die angeführten Änderungen der Berichtigung 1:2008-01 wurden in die vorliegende ÖVE/ÖNORM 
+eingearbeitet. Die entsprechenden Änderungen sind mit einem Strich am linken Seitenrand markiert. 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 5/44 =====
+EUROPÄISCHE NORM 
+ EN 50110-1 +  
+ 
+ EN 50110-2-100:2007-05-01 
+EUROPEAN STANDARD 
+ 
+ (eingearbeitet) 
+NORME EUROPÉENNE 
+ 
+November 2004 
+CENELEC 
+Europäisches Komitee für Elektrotechnische Normung 
+European Committee for Electrotechnical Standardization 
+Comité Européen de Normalisation Electrotechnique 
+ 
+Zentralsekretariat: rue de Stassart 35, B - 1050 Brüssel 
+ 
+ 
+© 2004 CENELEC -  Alle Rechte der Verwertung, gleich in welcher Form und in welchem Verfahren, 
+ 
+sind weltweit den Mitgliedern von CENELEC vorbehalten. 
+Ref. Nr. EN 50110-1:2004 D 
+ 
+ 
+ICS 29.240.00 
+Ersatz für EN 50110-1:1996
+ 
+ 
+Deutsche Fassung 
+ 
+ 
+Betrieb von elektrischen Anlagen 
+ 
+ 
+Operation of electrical installations 
+ 
+Exploitation des installations électriques 
+ 
+ 
+ 
+ 
+ 
+Diese Europäische Norm wurde von CENELEC am 2004-07-01 angenommen. Die CENELEC-Mitglieder 
+sind gehalten, die CEN/CENELEC-Geschäftsordnung zu erfüllen, in der die Bedingungen festgelegt sind, 
+unter denen dieser Europäische Norm ohne jede Änderung der Status einer nationalen Norm zu geben ist. 
+ 
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren bibliographischen Angaben sind 
+beim Zentralsekretariat oder bei jedem CENELEC-Mitglied auf Anfrage erhältlich. 
+ 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Französisch). Eine 
+Fassung in einer anderen Sprache, die von einem CENELEC-Mitglied in eigener Verantwortung durch 
+Übersetzung in seine Landessprache gemacht und dem Zentralsekretariat mitgeteilt worden ist, hat den 
+gleichen Status wie die offiziellen Fassungen. 
+ 
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, Dänemark, 
+Deutschland, Estland, Finnland, Frankreich, Griechenland, Irland, Island, Italien, Lettland, Litauen, 
+Luxemburg, Malta, den Niederlanden, Norwegen, Österreich, Polen, Portugal, Schweden, der Schweiz, 
+der Slowakei, Slowenien, Spanien, der Tschechischen Republik, Ungarn, dem Vereinigten Königreich und 
+Zypern. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 6/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 2 - 
+Vorwort 
+ 
+Diese Europäische Norm wurde ausgearbeitet von dem CENELEC BTTF 62-3 "Operation of electrical 
+installations".  
+ 
+Der Text des Entwurfs wurde der formellen Abstimmung unterworfen und von CENELEC am 2004-07-01 als 
+EN 50110-1 angenommen. 
+ 
+Diese Europäische Norm ersetzt EN 50110-1:1996. 
+ 
+Nachstehende Daten wurden festgelegt: 
+ 
+– 
+spätestes Datum, zu dem die EN auf nationaler Ebene 
+durch Veröffentlichung einer identischen nationalen Norm 
+oder durch Anerkennung übernommen werden muss 
+ 
+ 
+ 
+(dop) 
+ 
+ 
+2005-07-01 
+– 
+spätestes Datum, zu dem nationale Normen, die der EN 
+entgegenstehen, zurückgezogen werden müssen 
+ 
+(dow) 
+ 
+2007-07-01 
+__________ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 7/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 3 - 
+Inhalt 
+Seite
+Einleitung............................................................................................................................................................4 
+1 
+Anwendungsbereich.................................................................................................................................5 
+2 
+Normative Verweisungen .........................................................................................................................6 
+3 
+Begriffe .....................................................................................................................................................6 
+4 
+Allgemeine Grundsätze............................................................................................................................9 
+4.1 
+Sicherer Betrieb........................................................................................................................................9 
+4.2 
+Personal .................................................................................................................................................10 
+4.3 
+Organisation ...........................................................................................................................................10 
+4.4 
+Kommunikation (Informationsübermittlung) ...........................................................................................11 
+4.5 
+Arbeitsstelle............................................................................................................................................12 
+4.6 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel...............................................................................12 
+4.7 
+Schaltpläne und Unterlagen...................................................................................................................13 
+4.8 
+Schilder...................................................................................................................................................13 
+5 
+Übliche Betriebsvorgänge ......................................................................................................................13 
+5.1 
+Allgemeines............................................................................................................................................13 
+5.2 
+Schalthandlungen...................................................................................................................................13 
+5.3 
+Erhalten des ordnungsgemäßen Zustandes..........................................................................................14 
+6. 
+Arbeitsmethoden ....................................................................................................................................16 
+6.1 
+Allgemeines............................................................................................................................................16 
+6.2 
+Arbeiten im spannungsfreien Zustand ...................................................................................................17 
+6.3 
+Arbeiten unter Spannung .......................................................................................................................22 
+6.4 
+Arbeiten in der Nähe unter Spannung stehender Teile..........................................................................27 
+7 
+Instandhaltung........................................................................................................................................31 
+7.1 
+Allgemeines............................................................................................................................................31 
+7.2 
+Personal .................................................................................................................................................31 
+7.3 
+Instandsetzung .......................................................................................................................................31 
+7.4 
+Auswechseln von Sicherungseinsätzen, Lampen und Zubehör ............................................................31 
+7.5 
+Vorübergehende Unterbrechung der Arbeit...........................................................................................32 
+7.6 
+Abschluss von Instandhaltungsarbeiten.................................................................................................32 
+Anhang A (informativ)  Richtwerte für Abstände in Luft bei Arbeiten...............................................................34 
+A.1 
+Arbeiten unter Spannung .......................................................................................................................34 
+A.2 
+Arbeiten in der Nähe unter Spannung stehender Teile..........................................................................34 
+Anhang B (informativ)  Zusätzliche Informationen zum sicheren Arbeiten ......................................................36 
+B.1 
+Anwendungsbeispiel bei Arbeiten unter Spannung ...............................................................................36 
+B.1.1 Überprüfung der Genehmigung für Arbeiten unter Spannung...............................................................36 
+B.1.2 Berechnung des festgelegten Arbeitsabstandes....................................................................................36 
+B.2 
+Umgebungsbedingungen .......................................................................................................................36 
+B.3 
+Brandschutz – Brandbekämpfung..........................................................................................................37 
+B.4 
+Explosionsgefährdete Arbeitsbereiche...................................................................................................37 
+Literaturhinweise...............................................................................................................................................38 
+ 
+Bild 1 – Abstände in Luft und Zonen für Arbeiten.............................................................................................33 
+Bild 2 – Begrenzung der Gefahrenzone durch isolierende Schutzvorrichtung.................................................33 
+Tabelle 100 – Strombelastbarkeit der Kurzschließseile aus Kupfer zum Einsatz in Wechsel- und 
+            Drehstromanlagen......................................................................................................................20 
+Tabelle 100a – Mindestquerschnitt der Erdungsseile in Abhängigkeit vom Querschnitt der Kurzschließseile 20 
+Tabelle 101 – Gefahrenzone............................................................................................................................23 
+Tabelle 102 – Annäherungszone......................................................................................................................27 
+Tabelle A.1 – Richtwerte für Abstände DL und DV............................................................................................35 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 8/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 4 - 
+Einleitung 
+Es gibt zahlreiche nationale Gesetze, Normen und interne Regelungen für Angelegenheiten, die in den  
+Anwendungsbereich dieser Norm fallen und als Grundlage für die Erarbeitung der Norm gedient haben. 
+Die Norm besteht aus zwei Teilen. Der erste Teil der EN 50110 enthält Mindestanforderungen, die in allen 
+CENELEC-Ländern gelten, und informative Anhänge über sicheres Arbeiten. Der zweite Teil der EN 50110 
+besteht aus einer Aufzählung nationaler normativer Anhänge, die sowohl gegenwärtig geltende Sicherheits-
+anforderungen als auch nationale Ergänzungen zu den Mindestanforderungen enthalten. 
+Dieses Konzept soll ein entscheidender Schritt in Europa sein zu einer schrittweisen Angleichung der 
+Sicherheitspegel beim Bedienen von und Arbeiten an, mit oder in der Nähe von elektrischen Anlagen. Diese 
+Norm berücksichtigt die derzeit national unterschiedlichen Sicherheitsfestlegungen. Es ist beabsichtigt, im Laufe 
+der Zeit einen einheitlichen Sicherheitsstandard zu schaffen.  
+Die besten Vorschriften und Anweisungen sind wertlos, wenn nicht alle Personen, die an, mit oder in der Nähe 
+von elektrischen Anlagen arbeiten, mit diesen Festlegungen und allen gesetzlichen Anforderungen vollkommen 
+vertraut sind und sie strikt einhalten. 
+Die Norm EN 50110-1:1996 war seit mehr als 7 Jahren in Gebrauch.  
+Diese Neuausgabe integriert nun den Rücklauf von denjenigen Mitgliedsstaaten, die diese Norm angewandt 
+haben. 
+Soweit Aspekte dieser Norm im Widerspruch stehen zu nationalen Vorschriften der betroffenen 
+Mitgliedsstaaten, sind stets die Festlegungen aus diesen nationalen Vorschriften maßgebend. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 9/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 5 - 
+1 
+Anwendungsbereich 
+Diese Norm gilt für das Bedienen von und allen Arbeiten an, mit oder in der Nähe von elektrischen Anlagen. 
+Hierbei handelt es sich um elektrische Anlagen aller Spannungsebenen von Kleinspannung bis Hochspannung. 
+Der Begriff Hochspannung schließt die Spannungsebenen Mittelspannung und Höchstspannung ein. 
+Diese elektrischen Anlagen dienen der Erzeugung, Übertragung, Umwandlung, Verteilung und Anwendung 
+elektrischer Energie. Einige dieser elektrischen Anlagen sind ortsfest, wie z. B Verteilungseinrichtungen in einer 
+Fabrik oder einem Bürogebäude, andere werden nur vorübergehend aufgebaut, wie z. B. auf Baustellen; wieder 
+andere sind ortsveränderlich und können entweder unter Spannung stehend oder im spannungsfreien Zustand 
+bewegt werden. Beispiele hierfür sind elektrisch angetriebene Bagger in Steinbrüchen oder Braunkohle-
+Tagebauen. 
+Diese Norm beschreibt die Anforderungen für sicheres Bedienen von und Arbeiten an, mit oder in der Nähe von 
+elektrischen Anlagen. Diese Anforderungen gelten für alle Bedienungs-, Arbeits- und Wartungsverfahren. Sie 
+gelten für alle nichtelektrotechnischen Arbeiten, wie Bauarbeiten in der Nähe von Freileitungen oder Kabeln 
+sowie für elektrotechnische Arbeiten, bei denen eine elektrische Gefahr besteht. 
+Diese Norm gilt nicht beim Benutzen elektrischer Anlagen und Betriebsmittel, die den einschlägigen Normen 
+entsprechen und die konstruiert und installiert wurden für den Gebrauch durch Laien. 
+Diese Norm wurde nicht ausdrücklich erarbeitet für die Anwendung auf die nachfolgend aufgeführten 
+elektrischen Anlagen. 
+Es wird jedoch empfohlen, die Prinzipien dieser Norm auf diese elektrischen Anlagen anzuwenden sofern keine 
+anderen Regelungen oder Verfahrensweisen zur Verfügung stehen: 
+– 
+Anlagen in Luftfahrzeugen oder Luftkissenfahrzeugen, die sich durch eigenen Antrieb bewegen (diese 
+unterliegen dem internationalen Luftverkehrsrecht, das Vorrang vor nationalen Gesetzen hat); 
+– 
+Anlagen auf Hochseeschiffen, die sich durch eigenen Antrieb oder nach Anweisung einer Leitstelle 
+bewegen (diese unterliegen dem internationalen Seerecht, das Vorrang vor nationalen Gesetzen hat); 
+– 
+elektronische Kommunikations- und Informationssysteme; 
+– 
+elektronische Steuerungs-, Regelungs- und Automatisierungssysteme; 
+– 
+Anlagen im Bergbau; 
+– 
+Anlagen auf Off-shore-Einrichtungen, für die internationales Seerecht gilt; 
+– 
+Anlagen in Fahrzeugen; 
+– 
+elektrische Bahnsysteme; 
+– 
+elektrotechnische Versuchsarbeiten in der Forschung. 
+ 
+1.101 
+Für Österreich gelten folgende 
+ 
+a) „Zusatzfestlegungen“, die nur zusammen mit der Basisnorm für den Betrieb von elektrischen 
+Anlagen anzuwenden sind. 
+EN 50110-2-700 
+ 
+Betrieb von elektrischen Anlagen  
+Teil 2-700: Betrieb elektrischer Anlagen im Bergbau 
+ 
+b) „besondere Festlegungen“ die unabhängig von dieser Norm anzuwenden sind. 
+ÖVE/ÖNORM E 8385 
+ 
+Betrieb von elektrischen Anlagen – 
+Besondere Festlegungen für landwirtschaftliche und 
+gartenbauliche Betriebsstätten. 
+ÖVE/ÖNORM E 8555 
+Betrieb elektrischer Bahnen und Obusse  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 10/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 6 - 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokumentes erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe 
+des in Bezug genommenen Dokuments (einschliesslich aller Änderungen). 
+EN 50191:2000, Errichten und Betreiben elektrischer Prüfanlagen 
+EN 60529:1991, Schutzarten durch Gehäuse (IP-Code) (IEC 60529:1989) 
+EN 61472:2004, Arbeiten unter Spannung – Mindest-Arbeitsabstände für Wechselspannungsnetze im 
+Spannungsbereich von 72,5 kV bis 800 kV – Berechnungsverfahren (IEC 61472:2004) 
+HD 384 Reihe, Elektrische Anlagen von Gebäuden (Reihe IEC 60364, mod.) 
+HD 637 S1:1999, Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+IEC 60050-151:2001, International Electrotechnical Vocabulary – Chapter 151: Electrical and magnetic devices 
+IEC 60050-601:1985, International Electrotechnical Vocabulary – Chapter 601: Generation, transmission and 
+distribution of electricity - General 
+IEC 60050-604:1987, International Electrotechnical Vocabulary – Chapter 604: Generation, transmission and 
+distribution of electricity - Operation 
+IEC 60050-826:1982, International Electrotechnical Vocabulary – Chapter 826: Electrical installations of 
+buildings  
+3 
+Begriffe 
+Für die Anwendung dieser Norm gelten nachstehende Begriffe. Für weitere Begriffe, die hier nicht definiert sind, 
+wird auf das Internationale Elektrotechnische Wörterbuch verwiesen. 
+3.1 
+Allgemeines 
+3.1.1 
+elektrische Anlage 
+Anlagen mit elektrischen Betriebsmitteln zur Erzeugung, Übertragung, Umwandlung, Verteilung und Anwendung 
+elektrischer Energie. Dies schließt Energiequellen ein wie Batterien, Kondensatoren und alle anderen Quellen 
+gespeicherter elektrischer Energie 
+3.1.2 
+Betrieb 
+alle Tätigkeiten, die erforderlich sind, damit die elektrische Anlage funktionieren kann. Dies umfasst Schalten, 
+Regeln, Überwachen und Instandhalten sowie elektrotechnische und nichtelektrotechnische Arbeiten 
+3.1.2.101 Bedienen 
+Schalten, Steuern, Regeln und Überwachen wird unter dem Begriff Bedienen zusammengefasst. 
+Instandhaltungstätigkeiten wie Auswechseln von Lampen, Sicherungen und dergleichen sind ebenfalls 
+unter diesem Begriff zu verstehen. 
+3.1.3 
+Risiko 
+eine Kombination der Eintrittswahrscheinlichkeit und des Schweregrades der möglichen Verletzung oder 
+Gesundheitsschädigung einer Person in einer Gefährdungssituation 
+3.1.4 
+elektrische Gefährdung 
+Quelle einer möglichen Verletzung oder Gesundheitsschädigung durch das Vorhandensein elektrischer Energie 
+in einer Anlage 
+3.1.5 
+elektrische Gefahr 
+Risiko einer Verletzung, das von einer elektrischen Anlage ausgeht 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 11/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 7 - 
+3.1.6 
+Verletzung (durch elektrische Energie) 
+Tod oder Verletzung einer Person durch elektrischen Schlag, Verbrennung, Lichtbogen oder durch Brand oder 
+Explosion, ausgelöst durch elektrische Energie, verursacht durch den Betrieb einer elektrischen Anlage 
+3.2 
+Personal, Organisation und Kommunikation 
+3.2.1 
+Arbeitsverantwortlicher 
+eine Person, die beauftragt ist, die unmittelbare Verantwortung für die Durchführung der Arbeit zu tragen. 
+Erforderlichenfalls können einige mit dieser Verantwortung einhergehenden Verpflichtungen auf andere 
+Personen übertragen werden 
+3.2.1.101 
+Als Arbeitsverantwortlicher ist in Abhängigkeit von der Art der Tätigkeit und der elektrischen Gefährdung 
+zumindest eine elektrotechnisch unterwiesene Person einzusetzen. 
+3.2.2 
+Anlagenverantwortlicher 
+eine Person, die beauftragt ist, die unmittelbare Verantwortung für den Betrieb der elektrischen Anlage zu 
+tragen. Erforderlichenfalls können einige mit dieser Verantwortung einhergehenden Verpflichtungen auf andere 
+Personen übertragen werden 
+3.2.3 
+Elektrofachkraft 
+eine Person mit geeigneter fachlicher Ausbildung, Kenntnissen und Erfahrung, so dass sie Gefahren erkennen 
+und vermeiden kann, die von der Elektrizität ausgehen können  
+[IEV 195/4/1, modifiziert] 
+3.2.3.101 
+Zur Beurteilung der fachlichen Ausbildung kann auch eine mehrjährige Tätigkeit auf dem betreffenden 
+Arbeitsgebiet herangezogen werden. 
+3.2.4 
+elektrotechnisch unterwiesene Person 
+eine Person, die durch Elektrofachkräfte ausreichend unterrichtet wurde, so dass sie Gefahren vermeiden kann, 
+die von der Elektrizität ausgehen können  
+[IEV 826-09-02, modifiziert] 
+3.2.4.101 
+Erfordert die Qualifikation zur elektrotechnisch unterwiesenen Person lediglich Kenntnis über einfache 
+Unterweisungsinhalte wie z. B. die einzuhaltenden Abstände zu elektrischen Anlagen (Annäherungs- 
+zone – DV), so kann in diesem Fall die Unterweisung von einer elektrotechnisch unterwiesenen Person 
+durchgeführt werden. 
+3.2.5 
+Laie 
+eine Person, die weder Elektrofachkraft noch elektrotechnisch unterwiesene Person ist  
+[IEV 826-09-03] 
+3.2.6 
+Meldungen 
+Nachrichten oder Anweisungen, die mündlich oder schriftlich im Zusammenhang mit dem Betrieb einer 
+elektrischen Anlage gegeben werden 
+3.3 
+Arbeitsbereiche 
+3.3.1 
+Arbeitsstelle 
+Baustelle, Bereich oder Ort, wo Arbeiten durchgeführt werden oder wurden 
+3.3.2 
+Gefahrenzone 
+ein Bereich um unter Spannung stehende Teile, in dem beim Eindringen ohne Schutzmaßnahme der zur 
+Vermeidung einer elektrischen Gefahr erforderliche Isolationspegel nicht sichergestellt ist (siehe Bilder 1 und 2) 
+[IEV 651-01-06, modifiziert] 
+ANMERKUNG 
+Die äußere Begrenzung der Gefahrenzone wird als Abstand DL bezeichnet (siehe Bilder 1 und 2). 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 12/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 8 - 
+3.3.3 
+Annäherungszone 
+begrenzter Bereich außerhalb der Gefahrenzone (siehe Bilder 1 und 2) 
+ANMERKUNG 
+Die äußere Begrenzung der Annäherungszone wird als Abstand DV bezeichnet (siehe Bilder 1 und 2). 
+3.4 
+Tätigkeitsbegriffe 
+3.4.1 
+Arbeiten 
+jede Form elektrotechnischer oder nichtelektrotechnischer Tätigkeit, bei der die Möglichkeit einer elektrischen 
+Gefährdung besteht 
+3.4.2 
+elektrotechnische Arbeiten 
+Arbeiten an, mit oder in der Nähe einer elektrischen Anlage, z. B. Erproben und Messen, Instandsetzen, 
+Auswechseln, Ändern, Erweitern, Errichten und Prüfen 
+3.4.3 
+nichtelektrotechnische Arbeiten 
+Arbeiten im Bereich einer elektrischen Anlage, z. B. Bau- und Montagearbeiten, Erdarbeiten, Reinigen, Anstrich 
+usw. 
+3.4.4 
+Arbeiten unter Spannung 
+jede Arbeit, bei der eine Person bewusst mit Körperteilen oder Werkzeugen, Ausrüstungen oder Vorrichtungen 
+unter Spannung stehende Teile berührt oder in die Gefahrenzone gelangt  
+[IEV 651-01-01, modifiziert] 
+ANMERKUNG Bei Niederspannung wird Arbeiten unter Spannung ausgeführt, wenn der Arbeitende blanke unter Spannung 
+stehende Teile im Sinne der voranstehenden Definition berührt. Bei Hochspannung wird Arbeiten unter Spannung 
+ausgeführt, wenn der Arbeitende in die Gefahrenzone eindringt, unabhängig davon, ob unter Spannung stehende Teile 
+berührt werden oder nicht. 
+3.4.5 
+Arbeiten in der Nähe unter Spannung stehender Teile 
+alle Arbeiten, bei denen eine Person mit Körperteilen, Werkzeug oder anderen Gegenständen in die 
+Annäherungszone gelangt, ohne die Gefahrenzone zu erreichen 
+3.4.6 
+Freischalten 
+allseitiges Aussschalten oder Abtrennen eines Betriebsmittels oder eines Stromkreises von anderen 
+Betriebsmitteln oder Stromkreisen durch Trennstellen, die den zu erwartenden Spannungsunterschieden 
+zwischen dem Betriebsmittel oder dem Stromkreis und anderen Stromkreisen standhalten kann 
+3.4.7 
+Spannungsfrei 
+Spannung Null oder annähernd Null, das heißt ohne Spannung und/oder ohne Ladung 
+3.4.8 
+Arbeiten im spannungsfreien Zustand 
+Arbeiten an elektrischen Anlagen, deren spannungsfreier Zustand zur Vermeidung elektrischer Gefahren 
+hergestellt und sichergestellt ist 
+3.4.101 Aufsichtsführung 
+kann im Gegensatz zur direkten Beaufsichtigung auch durch fallweise Kontrollen erfolgen 
+3.5 
+Schutzmittel 
+3.5.1 
+Schutzvorrichtung 
+jede isolierte oder nichtisolierte Vorrichtung, die zur Verhinderung der Annäherung an ein Betriebsmittel oder 
+Anlagenteil verwendet wird, das eine elektrische Gefahr darstellt 
+3.5.2 
+Abdeckung 
+ein Teil, durch das Schutz gegen direktes Berühren in allen üblichen Zugangs- oder Zugriffsrichtungen gewährt 
+wird  
+[IEV 826-03-13] 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 13/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 9 - 
+3.5.3 
+isolierende Abdeckung 
+eine starre oder flexible Vorrichtung aus isolierendem Material zur Abdeckung unter Spannung stehender 
+und/oder ausgeschalteter und/oder benachbarter Teile, um unbeabsichtigtes direktes Berühren zu verhindern 
+3.5.4 
+Umhüllung 
+Teil, das ein Betriebsmittel gegen bestimmte äußere Einflüsse schützt und durch das Schutz gegen direktes 
+Berühren in allen Richtungen gewährt wird 
+[IEV 826-03-12] 
+3.6 
+Spannungsebenen 
+3.6.1 
+Kleinspannung (ELV) 
+kleiner oder gleich 50 V Wechselspannung (AC) oder 120 V oberschwingungsfreie Gleichspannung (DC) 
+zwischen Leitern oder gegen Erde; dies schließt SELV, PELV und FELV ein (siehe HD 384.4.41 S2, 
+Section 411) 
+3.6.2 
+Niederspannung (LV) 
+kleiner oder gleich 1 000 V AC oder 1 500 V DC 
+3.6.3 
+Hochspannung (HV) 
+größer als 1 000 V AC oder 1 500 V DC 
+4 
+Allgemeine Grundsätze 
+4.1 
+Sicherer Betrieb 
+Vor jedem Bedienungsvorgang und jeder Arbeit an einer elektrischen Anlage muss eine Bewertung der 
+elektrischen 
+Risiken 
+vorgenommen 
+werden. 
+Durch 
+diese 
+Bewertung 
+ist 
+festzulegen, 
+wie 
+der 
+Bediengungsvorgang oder die Arbeit ausgeführt werden muss und welche Sicherheitsmaßnahmen und 
+Vorkehrungen anzuwenden sind, um die Sicherheit zu gewährleisten. 
+4.1.101 
+Elektrische Anlagen sind den zum Zeitpunkt der Errichtung gültig gewesenen Errichtungsbestimmungen 
+entsprechend in ordnungsgemäßem Zustand zu erhalten. Bei Änderung der Betriebsbedingungen,  
+z. B. Art der Betriebsstätte (trocken, feucht oder explosionsgefährdet), müssen die bestehenden Anlagen 
+den jeweiligen Anforderungen bzw. Beanspruchungen angepasst werden. 
+4.1.102 
+Werden an und in elektrischen Anlagen Mängel beobachtet, die eine Gefahr für Personen, Nutztiere oder 
+Sachen zur Folge haben, so sind unverzüglich Maßnahmen zur Beseitigung der Mängel zu treffen. Sofern 
+es die Betriebsverhältnisse nicht erlauben, die Mängel unmittelbar zu beseitigen, ist die Gefahr zunächst 
+einzuschränken, z. B. durch Absperren, Kenntlichmachen, Anbringen von Schildern. Der Anlagen-
+verantwortliche ist unverzüglich zu benachrichtigen. 
+Schadhafte elektrische Betriebsmittel dürfen nicht benutzt werden, es sei denn, dass ihre 
+Weiterbenutzung offensichtlich gefahrlos ist. Behelfsmäßig ausgebesserte Betriebsmittel dürfen nur kurze 
+Zeit benutzt werden, wenn zwingende Gründe dies rechtfertigen, z. B. Aufrechterhalten wichtiger 
+Betriebsfunktionen; die Instandsetzung muß unverzüglich veranlaßt werden. 
+4.1.103 
+Schalter, die den Anforderungen am Einbauort nur eingeschränkt genügen, sind zu kennzeichnen und in 
+ihrer Funktion entsprechend zu beschränken, z. B. durch Unwirksammachen des Schutzrelais, Verriegeln 
+des Schalters. 
+4.1.104 
+In gefahrbringender Nähe von nicht gegen direktes Berühren geschützten aktiven Anlagenteilen dürfen 
+keine 
+Gegenstände 
+gelagert 
+oder 
+aufbewahrt 
+werden, 
+z. B. 
+Montagematerial, 
+Werkzeuge, 
+Kleidungsstücke. An Kabeln und Leitungen, an Schutzverkleidungen, Schutzgittern, Schutzleisten, 
+Stellteilen, Gehäusen von Betriebsmitteln und Feuerlöschgeräten dürfen keine Gegenstände angehängt 
+oder befestigt werden. Dies gilt nicht für Teile, die zur Anlage gehören, Kennzeichnungs- und 
+Sicherheitsschilder, Schutzabdeckungen und Sperrvorrichtungen, z. B. Vorhängeschlösser. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 14/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 10 - 
+4.2 
+Personal 
+Die Verantwortlichkeiten für die Sicherheit von Personen, die an einer Arbeit beteiligt oder von ihr betroffen sind, 
+müssen der nationalen Gesetzgebung entsprechen. 
+Alle an Arbeiten an, mit oder in der Nähe einer elektrischen Anlage beteiligten Personen müssen über die 
+einschlägigen Sicherheitsanforderungen, Sicherheitsvorschriften und betrieblichen Anweisungen unterrichtet 
+werden. Die Unterrichtung ist im Verlauf der Arbeiten zu wiederholen, wenn die Arbeiten lange andauern oder 
+komplex sind. Die Arbeitenden müssen angewiesen werden, diese Anforderungen, Vorschriften und 
+Anweisungen einzuhalten. 
+Arbeitskräfte müssen für den Arbeitsort und die Arbeitsbedingungen geeignete Kleidung tragen. Möglicherweise 
+bedeutet dies, dass enganliegende Kleidung oder zusätzliche Persönliche Schutzausrüstung zu tragen ist. 
+Vor Beginn sowie während einer Arbeit muss der Arbeitsverantwortliche dafür sorgen, dass alle einschlägigen 
+Anforderungen, Vorschriften und Anweisungen eingehalten werden. 
+Der 
+Arbeitsverantwortliche 
+muss 
+alle 
+an 
+der 
+Arbeit 
+beteiligten 
+Personen 
+über 
+alle 
+unter 
+Vernunftsgesichtspunkten vorhersehbaren Gefahren unterrichten, die für diese nicht ohne weiteres erkennbar 
+sind. 
+4.2.101 zu Absatz 5 
+Wird eine Arbeit von mehreren Personen oder Arbeitsgruppen gemeinschaftlich ausgeführt und ist der 
+Arbeitsverantwortliche nicht dauernd anwesend, so ist eine geeignete Person als Stellvertreter zu 
+bestimmen (Elektrofachkraft oder elektrotechnisch unterwiesene Person), die über den Arbeitsablauf und 
+ihre Aufgaben genau informiert ist. Im Allgemeinen wird der Arbeitsverantwortliche bzw. sein 
+Stellvertreter mitarbeiten. 
+Hat eine Person für eine Arbeit nicht das zur Vermeidung elektrischer Gefahren oder Verletzungen erforderliche 
+Wissen oder die Erfahrung, so darf sie diese Arbeit nicht ausführen, es sei denn, sie unterliegt dabei einer 
+ausreichenden Aufsichtsführung. 
+4.2.102 zu Absatz 6 
+Aufsichtsführung reicht von fallweiser Kontrolle bis zu ständiger Aufsicht. 
+Die nationale Gesetzgebung kann das Mindestalter und die Kriterien für die fachliche Qualifikation von Personen 
+vorschreiben. 
+Wo es keine nationalen Festlegungen für die fachliche Qualifikation gibt, sind dafür folgende 
+Beurteilungskriterien anzuwenden: 
+– 
+Kenntnisse der Elektrotechnik; 
+– 
+Erfahrung mit elektrotechnischer Arbeit; 
+– 
+Kenntnis der Anlage, an der zu arbeiten ist, sowie praktische Erfahrung mit der vorgesehenen Arbeit; 
+– 
+Kenntnis der Gefährdungen, die während der Arbeit entstehen können, und der zu beachtenden 
+Sicherheitsmaßnahmen; 
+– 
+die Fähigkeit, jederzeit zu erkennen, ob es sicher ist, die Arbeit fortzusetzen. 
+Vor Beginn der Arbeit müssen Art und Schwierigkeitsgrad beurteilt werden, um für die Durchführung der Arbeit 
+je nach Erfordernis Elektrofachkräfte, elektrotechnisch unterwiesene Personen oder Laien auszuwählen. 
+4.3 
+Organisation 
+Jede elektrische Anlage muss unter der Verantwortung einer Person, des Anlagenverantwortlichen, stehen. Wo 
+zwei oder mehr Anlagen miteinander in Verbindung stehen, sind eindeutige Absprachen zwischen den 
+jeweiligen Anlagenverantwortlichen unverzichtbar, um die Sicherheit zu gewährleisten. 
+Der Zugang zu allen Orten, wo elektrische Gefährdungen für Laien bestehen, muss geregelt sein. Die Art der 
+Zugangsregelung und -überwachung ist vom Anlagenverantwortlichen festzulegen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 15/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 11 - 
+4.3.101 zu Absatz 2 
+Abgeschlossene elektrische Betriebsstätten müssen verschlossen gehalten werden. Die Schlüssel 
+müssen so verwahrt werden, daß sie unbefugten Personen nicht zugänglich sind. Abgeschlossene 
+elektrische Betriebsstätten dürfen nur von hierzu befugten Personen geöffnet werden. Der Zutritt ist 
+Elektrofachkräften und elektrotechnisch unterwiesenen Personen, Laien jedoch nur unter Beaufsichtigung 
+von Elektrofachkräften oder elektrotechnisch unterwiesenen Personen gestattet. 
+Für jede Arbeit muss ein Arbeitsverantwortlicher benannt werden. Sofern die Arbeitsdurchführung unterteilt ist, 
+kann es erforderlich sein, für jede Arbeitsgruppe eine für die Sicherheit verantwortliche Person und für alle eine 
+koordinierende Person zu benennen. 
+Der Arbeitsverantwortliche und der Anlagenverantwortliche müssen Schaltungen in der Anlage und den 
+Arbeitsplan für Arbeiten an, mit oder in der Nähe von elektrischen Anlagen miteinander vereinbaren, bevor der 
+Schaltzustand geändert oder mit den Arbeiten begonnen wird. 
+Der Arbeitsverantwortliche und der Anlagenverantwortliche können ein und dieselbe Person sein. 
+Die Vorbereitung komplexer Arbeiten muss schriftlich erfolgen. 
+4.3.102  zu Absatz 6  
+Dies gilt nicht für Arbeiten im Störungsfall. 
+Eine Elektrofachkraft kann festlegen, wie die Arbeit durchzuführen ist, damit die Sicherheit gewährleistet ist: 
+a) 
+in übersichtlichen Anlagen oder Anlagenteilen unter eindeutigen oder übersichtlichen Begleitumständen 
+und 
+b) 
+wo überschaubare Arbeiten stattfinden, oder 
+c) 
+bei Instandhaltungsarbeiten, die entsprechend vereinbarter Abläufe durchgeführt werden. 
+ 
+Von den an, mit oder in der Nähe von elektrischen Anlagen arbeitenden Personen muss eine ausreichende 
+Anzahl so ausgebildet und unterwiesen sein, dass sie bei elektrischem Schlag und/oder Verbrennungen 
+entsprechend Erste Hilfe leisten können. Es wird empfohlen, Anleitung zur Ersten Hilfe je nach Erfordernis an 
+der Arbeitsstelle auszuhängen oder als Merkblatt oder in anderer geeigneter Form an die arbeitenden Personen 
+auszugeben. 
+4.3.103 zu Absatz 8  
+Siehe ÖVE-E 34/1989 „Erste Hilfe bei Unfällen durch Elektrizität“ 
+Jeder Person, die aus Sicherheitsgründen Bedenken hat, eine Anweisung oder Arbeit auszuführen, muss die 
+Möglichkeit gegeben werden, diese Bedenken unmittelbar dem Arbeitsverantwortlichen mitzuteilen. Dieser muss 
+die Sachlage untersuchen und erforderlichenfalls die Entscheidung einer fachlich übergeordneten Stelle 
+herbeiführen. 
+4.4 
+Kommunikation (Informationsübermittlung) 
+Kommunikation umfasst jede Art der Informationsübergabe oder des Informationsaustausches zwischen 
+Personen, d. h. mündlich (z. B. Telefon, Sprechfunk, direktes Gespräch), schriftlich (z. B. Telefax) und optisch 
+(z. B. Sichtgeräte, Anzeigetafeln, Leuchtanzeigen). 
+Vor Beginn einer Arbeit muss der Anlagenverantwortliche über die vorgesehene Arbeit informiert werden. 
+Alle für den sicheren Betrieb der elektrischen Anlage erforderlichen Informationen, wie Netzzustand, 
+Schaltgerätezustand (ein, aus, geerdet), Zustand der Sicherheitseinrichtungen, müssen durch eine Meldung 
+übermittelt werden. Andere Arten der Informationsübermittlung, wie z. B. Funksignale, Rechner, Leuchtanzeigen 
+usw., dürfen nur dann verwendet werden, wenn sichergestellt wird, dass der Übertragungsweg zuverlässig ist 
+und keine Missverständnisse entstehen können oder falsche Signale gegeben werden. 
+Alle Meldungen müssen den Namen, und, falls erforderlich, den Standort der Person enthalten, die die 
+Information übermittelt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 16/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 12 - 
+Um bei der mündlichen Informationsübermittlung Fehler zu vermeiden, muss der Empfangende die Information 
+gegenüber dem Absendenden wiederholen, der bestätigen muss, dass die Information richtig empfangen und 
+verstanden wurde. 
+Freigabe zur Arbeit bzw. Wiedereinschalten nach beendeter Arbeit darf nicht auf Grund von Zeichengebung 
+oder vorher getroffener Zeitabsprache erfolgen. 
+4.5 
+Arbeitsstelle 
+Die Arbeitsstelle muss eindeutig festgelegt und gekennzeichnet sein. An allen Arbeitsstellen an, mit oder in der 
+Nähe einer elektrischen Anlage muss ausreichende Bewegungsfreiheit, ungehinderter Zugang und 
+ausreichende Beleuchtung vorhanden sein. Falls erforderlich, muss der sichere Zugang zur Arbeitsstelle 
+eindeutig gekennzeichnet sein. 
+4.5.101  
+Als Kennzeichnung der Arbeitsstelle können auch beispielsweise 
+− 
+die Kennzeichnung der Bereiche, die unter Spannung bleiben, 
+− 
+das Anbringen einer Erdungsgarnitur, 
+− 
+die Anbringung einer Abdeckung gegenüber spannungsführenden Teilen, 
+− 
+ eine offene Kabelkünette, 
+angenommen werden. 
+Es müssen geeignete Vorkehrungen getroffen werden, Verletzungen von Personen auch durch 
+nichtelektrotechnische Gefahrenquellen an der Arbeitsstelle und bei der Arbeit, wie mechanische oder 
+Drucksysteme, oder durch Abstürze zu vermeiden. 
+Zugänge, Fluchtwege und der zum Bedienen und Arbeiten erforderliche Raum von Schaltanlagen und -geräten 
+müssen von hinderlichen Gegenständen und/oder leicht entzündlichen Materialien freigehalten werden. Leicht 
+entzündliche Materialien, die in oder nahe bei der elektrischen Anlage gelagert werden, müssen von allen 
+Zündquellen ferngehalten werden. 
+4.6 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel müssen den Anforderungen einschlägiger europäischer, 
+nationaler oder internationaler Normen entsprechen, soweit solche existieren. 
+ANMERKUNG 1 Beispiele für Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel sind: 
+– 
+isolierende Schuhe, Handschuhe und Überschuhe; 
+– 
+Augen- oder Gesichtsschutz; 
+– 
+Kopfschutz; 
+– 
+geeignete Schutzkleidung; 
+– 
+Isoliermatten, isolierende Plattformen und Arbeitsbühnen; 
+– 
+isolierende flexible oder feste Materialien zum Abdecken; 
+– 
+isolierte Werkzeuge und Werkzeuge aus Isoliermaterial; 
+– 
+Betätigungsstangen, Isolierstangen; 
+– 
+Schlösser, Aufschriften und Aushänge, Schilder; 
+– 
+Spannungsprüfer und -prüfsysteme; 
+– 
+Kabelsuch- und Auslesegeräte; 
+– 
+Erdungs- und Kurzschließgeräte und -vorrichtungen; 
+– 
+Materialien zum Abschranken, Flaggen und andere Markierungshilfsmittel. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 17/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 13 - 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel müssen entsprechend der vom Hersteller oder Lieferanten 
+mitgelieferten Betriebsanleitung verwendet werden. Diese Anleitung muss in der Sprache des Landes oder den 
+Sprachen des Landes geschrieben sein, in dem sie verwendet wird. 
+Alle Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel, die für den sicheren Betrieb und das Arbeiten an, mit 
+oder in der Nähe von elektrischen Anlagen vorgesehen sind, müssen für diesen Einsatz geeignet sein, in 
+ordnungsgemäßem Zustand erhalten und bestimmungsgemäß angewendet werden. 
+ANMERKUNG 2 "Erhalten des ordnungsgemäßen Zustandes" bedeutet, in angemessenen Zeitabständen besichtigen und, 
+soweit erforderlich, prüfen, insbesondere nach Instandsetzungen und/oder Änderungen, um den ordnungsgemäßen 
+elektrischen und mechanischen Zustand der Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel nachzuweisen. 
+ANMERKUNG 3 Der Begriff Ausrüstung schließt persönliche Schutzausrüstungen ein. 
+Alle speziellen Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel, die während des Betriebes oder während der 
+Arbeit an, mit oder in der Nähe einer elektrischen Anlage verwendet werden, müssen ordnungsgemäß gelagert 
+werden. 
+4.7 
+Schaltpläne und Unterlagen 
+Es müssen aktuelle Schaltpläne und Unterlagen für die elektrische Anlage verfügbar sein. 
+4.7.101 
+Als Schaltpläne und Unterlagen gelten auch Übersichtspläne in vereinfachter einpoliger Darstellung der 
+Schaltung ohne Hilfsleitungen, Blind- oder Steckschaltbilder, ausreichende Beschriftung der Stromkreise. 
+4.7.102 
+Arbeits- und Anlagenverantwortlichen sowie Personen, die unter eigener Verantwortung arbeiten, ist  
+ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet) zugänglich zu machen. 
+4.8 
+Schilder 
+Beim Betrieb von oder bei Arbeiten an elektrischen Anlagen müssen, sofern erforderlich, geeignete 
+Sicherheitsschilder angebracht werden, um auf mögliche Gefährdungen aufmerksam zu machen. Die Schilder 
+müssen einschlägigen europäischen, nationalen oder internationalen Normen entsprechen, soweit solche 
+existieren. 
+5 
+Übliche Betriebsvorgänge 
+5.1 
+Allgemeines 
+Bei Tätigkeiten nach 5.2 und 5.3 sind erforderlichenfalls geeignete Werkzeuge und Ausrüstungen zu benutzen, 
+um Gefahren für Personen zu vermeiden. Diese Tätigkeiten müssen mit dem Anlagenverantwortlichen 
+abgestimmt sein. Der Anlagenverantwortliche ist zu informieren, wenn diese Tätigkeiten beendet sind. 
+5.1.101 
+Hat der Anlagenverantwortliche Tätigkeiten in diesem Zusammenhang auf andere Personen übertragen, 
+so sind diese gemäß 5.1 zu informieren. 
+5.2 
+Schalthandlungen 
+5.2.1 
+Schalthandlungen dienen dazu, den Schaltzustand von elektrischen Anlagen zu ändern. 
+Es werden zwei Arten von Schalthandlungen unterschieden: 
+– 
+Schalthandlungen zur Änderung des elektrischen Zustands einer Anlage, zum Bedienen von 
+Betriebsmitteln, Ein- und Ausschalten, Starten und Stillsetzen von Betriebesmitteln mit Einrichtungen, deren 
+bestimmungsgemäßer Gebrauch gefahrlos ist; 
+– 
+Ausschalten oder Wiedereinschalten von Anlagen im Zusammenhang mit der Durchführung von Arbeiten. 
+Schalthandlungen dürfen vor Ort oder durch Fernsteuerung durchgeführt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 18/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 14 - 
+5.2.2 
+Freischalten vor oder Freigabe zum Wiedereinschalten nach Arbeiten im spannungsfreien Zustand 
+muss durch Elektrofachkräfte oder elektrotechnisch unterwiesene Personen durchgeführt werden, wie in 6.2 
+festgelegt. 
+5.2.3 
+Für die Bereitstellung von Einrichtungen zur Unterbrechung der Stromversorgung von Anlagen und 
+Betriebsmitteln im Notfall sind nationale oder betriebliche Vorschriften zu beachten. 
+5.2.4 
+Schalthandlungen bei Notfällen dürfen in der Elektrizitätsversorgung nur von Elektrofachkräften oder 
+elektrotechnisch unterwiesenen Personen durchgeführt werden. 
+5.2.4.101 
+Das Abschalten von elektrischen Anlagen zur Sicherstellung des Lebens und der Gesundheit und zur 
+Verhinderung von Brand- und Explosionsgefahr darf auch von Laien durchgeführt werden. Das Feststellen 
+des spannungsfreien Zustandes bleibt jedenfalls der Elektrofachkraft oder elektrotechnisch unterwiesenen 
+Person vorbehalten. 
+5.2.5 
+Wenn ein Erdschluss in einer elektrischen Anlage über 1 kV nicht ausgeschaltet wird, ist die 
+Erdschlussstelle zu ermitteln, und es sind geeignete Sicherheitsmaßnahmen zum Schutz von Personen zu 
+treffen. 
+ANMERKUNG 
+Diese Sicherheitsmaßnahmen sind abhängig von der Art und Auslegung der elektrischen Anlage. 
+5.2.5.101 
+In Anlagen, deren Aufbau keinen Schutz für Personen gegen die gefährlichen Auswirkungen von Stör-
+lichtbögen gewährt, dürfen nur Personen zugegen sein, die mit der Schalthandlung zu tun haben, wenn 
+z. B. Trennschalter oder Erdungsschalter an ihrem Einbauort geschaltet werden. 
+5.3 
+Erhalten des ordnungsgemäßen Zustandes 
+5.3.1 
+Messen 
+5.3.1.1 
+In dieser Norm umfasst Messen alle Tätigkeiten zur Ermittlung physikalischer Daten in elektrischen 
+Anlagen. Messungen dürfen nur von Elektrofachkräften, elektrotechnisch unterwiesenen Personen oder von 
+Laien unter direkter Beaufsichtigung oder unter Aufsichtführung durch eine Elektrofachkraft ausgeführt werden. 
+5.3.1.2 
+Für Messungen in elektrischen Anlagen müssen geeignete und sichere Messgeräte verwendet 
+werden. Diese Messgeräte müssen vor und, soweit erforderlich, nach der Benutzung geprüft werden. 
+5.3.1.3 
+Wenn beim Messen die Gefahr der direkten Berührung unter Spannung stehender Teile besteht, 
+müssen persönliche Schutzausrüstungen verwendet werden und Vorkehrungen gegen elektrischen Schlag und 
+die Auswirkungen von Kurzschluss und Störlichtbögen getroffen werden. 
+5.3.1.4 
+Sofern erforderlich, müssen die Festlegungen für Arbeiten im spannungsfreien Zustand (6.2), Arbeiten 
+unter Spannung (6.3) oder Arbeiten in der Nähe unter Spannung stehender Teile (6.4) angewendet werden. 
+5.3.2 
+Erproben 
+5.3.2.1 
+Erproben dient der Feststellung der Funktionsfähigkeit oder des elektrischen, mechanischen oder 
+thermischen Zustandes einer elektrischen Anlage. Erproben schließt auch die Überprüfung der Wirksamkeit von 
+z. B. elektrischen Schutzeinrichtungen und Sicherheitsstromkreisen ein. Erproben kann Messungen 
+einschließen, die nach 5.3.1 durchzuführen sind. Erprobungen dürfen nur von Elektrofachkräften, 
+elektrotechnisch unterwiesenen Personen oder von Laien unter Aufsichtführung oder unter direkter 
+Beaufsichtigung durch eine Elektrofachkraft ausgeführt werden. 
+5.3.2.2 
+Bei Erprobungen, die im spannungsfreien Zustand durchgeführt werden sollen, sind die Festlegungen 
+für das Arbeiten im spannunsfreien Zustand einzuhalten. Sofern es erforderlich ist, Erdungs- und 
+Kurzschließeinrichtungen zu öffnen oder zu entfernen, müssen geeignete Vorsichtsmaßnahmen getroffen 
+werden, die Personen vor elektrischem Schlag schützen und die verhindern, dass die Anlage von irgendeiner 
+Stromquelle unter Spannung gesetzt wird. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 19/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 15 - 
+5.3.2.3 
+Wenn beim Erproben die Einspeisung aus dem normalen Netz erfolgt, sind die einschlägigigen 
+Festlegungen von 6.1, 6.3 und 6.4 anzuwenden. 
+5.3.2.4 
+Wenn beim Erproben eine Hilfs- oder Prüf-Stromquelle verwendet wird, ist sicherzustellen, dass: 
+– 
+die Anlage von jeder möglichen Stromquelle freigeschaltet ist (siehe 6.2.1); 
+– 
+die Anlage nicht von einer anderen Stromquelle unter Spannung gesetzt werden kann; 
+– 
+während der Erprobung Sicherheitsmaßnahmen gegen elektrischen Gefährdungen für alle anwesenden 
+Personen wirksam sind; 
+– 
+die Trennstellen ausreichend isoliert sind für das gleichzeitige Anstehen der Prüfspannung auf der einen 
+und der Betriebsspannung auf der anderen Seite. 
+5.3.2.5 
+Spezielle Erprobungen, z. B. in Hochspannungs-Versuchsanlagen, bei denen die Gefahr direkten 
+Berührens unter Spannung stehender Teile besteht, müssen von Elektrofachkräften mit Zusatzausbildung 
+durchgeführt werden. Je nach Erfordernis müssen zusätzliche Schutzmaßnahmen nach EN 50191 und nach 
+Abschnitt 6 von EN 50110-1 getroffen werden. 
+5.3.3 
+Prüfen 
+5.3.3.1 
+Der Zweck von Prüfungen besteht in dem Nachweis, dass eine elektrische Anlage den 
+Sicherheitsvorschriften und den Errichtungsnormen entspricht; die Prüfungen können den Nachweis des 
+ordnungsgemäßen Zustandes der Anlage einschließen. Sowohl neue Anlagen als auch bestehende Anlagen 
+nach Änderungen und Erweiterungen müssen vor ihrer Inbetriebnahme einer Prüfung unterzogen werden. 
+Elektrische Anlagen müssen in geeigneten Zeitabständen geprüft werden. Wiederkehrende Prüfungen sollen 
+Mängel aufdecken, die nach der Inbetriebnahme aufgetreten sind und den Betrieb behindern oder 
+Gefährdungen hervorrufen können. 
+5.3.3.2 
+Prüfungen können folgende Schritte umfassen: 
+– 
+Besichtigen; 
+– 
+Messen und/oder Erproben entsprechend den Anforderungen in 5.3.1 und 5.3.2. 
+5.3.3.3 
+Prüfungen müssen unter Bezugnahme auf die erforderlichen Schaltpläne (siehe 4.7) und technischen 
+Unterlagen durchgeführt werden. 
+5.3.3.4 
+Mängel, die eine unmittelbare Gefahr bilden, müssen unverzüglich behoben oder fehlerhafte Teile 
+außer Betrieb genommen und gegen Wiedereinschalten gesichert werden. 
+5.3.3.5 
+Prüfungen müssen von Elektrofachkräften durchgeführt werden, die Kenntnisse durch Prüfung 
+vergleichbarer Anlagen haben. Die Prüfungen müssen mit geeigneter Ausrüstung und so durchgeführt werden, 
+dass Gefahren vermieden werden, wobei erforderlichenfalls Einschränkungen durch blanke unter Spannung 
+stehende Teile zu berücksichtigen sind. 
+5.3.3.6 
+Das Prüfungsergebnis muss aufgezeichnet werden. Falls erforderlich sind entprechende Maßnahmen 
+zur Mängelbeseitigung zu treffen, und die Ergebnisse sind in Übereinstimmung mit nationalen und betrieblichen 
+Anforderungen aufzuzeichnen. 
+5.3.3.101  
+Wiederkehrende Prüfungen 
+Der Umfang wiederkehrender Prüfungen nach 5.3.3.1 darf je nach Bedarf und nach den 
+Betriebsverhältnissen auf Stichproben sowohl in Bezug auf den örtlichen Bereich (Anlagenteile) als auch 
+auf die durchzuführenden Maßnahmen beschränkt werden, soweit dadurch eine Beurteilung des 
+ordnungsgemäßen Zustandes möglich ist. 
+Sind in besonderen Fällen Messungen an oder in elektrischen Anlagen mit technisch oder wirtschaftlich 
+vertretbarem Aufwand nicht durchführbar, z. B. bei ausgedehnten Erdungsanlagen, großen Leiter-
+querschnitten, vermaschten Netzen, so ist auf andere Weise nachzuweisen, dass die zu ermittelnden 
+Werte eingehalten werden, z. B. durch Berechnung, mit Hilfe von Netzmodellen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 20/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 16 - 
+6. Arbeitsmethoden 
+6.1 
+Allgemeines 
+Jede vorgesehene Arbeit muss geplant werden. 
+Entsprechend den allgemeinen Grundsätzen muss entweder der Anlagenverantwortliche oder der 
+Arbeitsverantwortliche sicherstellen, dass vor Beginn und bei Beendigung von Arbeiten die ausführenden 
+Personen aufgabenbezogen unterwiesen werden. 
+Vor Beginn der Arbeit muss der Arbeitsverantwortliche dem Anlagenverantwortlichen die Art, den Ort und die 
+Auswirkungen der vorgesehenen Arbeit auf die Anlage melden. Vorzugsweise ist diese Meldung schriftlich zu 
+machen, insbesondere bei komplexen Arbeiten. 
+Nur der Anlagenverantwortliche darf die Erlaubnis für die vorgesehene Arbeit geben. Ein entsprechendes 
+Verfahren muss auch im Fall einer Unterbrechung und bei Beendigung der Arbeit eingehalten werden. 
+Es wird zwischen drei Arbeitsmethoden unterschieden: Arbeiten im spannungsfreien Zustand (siehe 6.2), 
+Arbeiten unter Spannung (siehe 6.3), Arbeiten in der Nähe unter Spannung stehender Teile (siehe 6.4). 
+Alle drei Methoden setzen wirksame Sicherheitsmaßnahmen gegen elektrischen Schlag sowie gegen 
+Auswirkungen von Kurzschluss und Störlichtbögen voraus. 
+Wenn die Anforderungen von 6.2 (Arbeiten im spannungsfreien Zustand) oder 6.4 (Arbeiten in der Nähe unter 
+Spannung stehender Teile) nicht vollständig erfüllt werden können, sind die Festlegungen von 6.3 (Arbeiten 
+unter Spannung) anzuwenden. 
+Bei Arbeiten muss der erforderliche Isolationspegel sichergestellt werden, z. B. durch Einbringen festen 
+Isoliermaterials oder Einhalten eines ausreichenden Abstandes in Luft (siehe 6.3 und 6.4). Das Einhalten eines 
+ausreichenden Abstandes in Luft ist in EN 61472 erklärt. 
+6.1.101 
+Nationale Festlegungen zu den Abständen gemäß 6.3 und 6.4 sind in Tabelle 101 und Tabelle 102 zu 
+finden. 
+6.1.1 
+Beeinflussungsspannungen 
+Leiter oder leitfähige Teile in der Nähe unter Spannung stehender Teile können elektrisch beeinflusst werden. 
+Ergänzend zu den nachfolgenden Festlegungen in 6.2 und 6.4 sind beim Arbeiten an elektrischen Systemen 
+unter Beeinflussungsspannung besondere Sicherheitsmaßnahmen zu treffen (dies gilt besonders für 
+Freileitungen) 
+– 
+durch abschnittsweise Erdung in angemessenen Abständen, so dass die Beeinflussungsspannung gegen 
+Erde auf ungefährliche Werte abgebaut wird; 
+– 
+durch Potenzialausgleichsmaßnahmen an der Arbeitsstelle, um zu verhindern, dass Arbeitende in eine 
+Induktionsschleife geraten können. 
+6.1.2 
+Wetterbedingungen 
+Bei ungünstigen Umgebungsbedingungen, z. B. bei Blitz, starken Regenfällen, Nebel, heftigem Wind usw., sind 
+Einschränkungen hinsichtlich der Aufnahme und/oder Fortführung von Arbeiten anzuwenden. 
+Wenn Blitz oder Donner wahrgenommen wird oder ein Gewitter aufzieht, sind Arbeiten an Freileitungen bzw. 
+Anlagenteilen oder Betriebsmitteln, die unmittelbar mit Freileitungen verbunden sind, sofort einzustellen, wenn 
+dies zur Abwendung von Gefahren erforderlich ist, und der Anlagenverantwortliche ist zu benachtrichtigen. 
+Bei unzureichender Sicht an der Arbeitsstelle dürfen Arbeiten nicht begonnen werden, und alle laufenden 
+Arbeiten müssen nach Sicherung der Arbeitsstelle unterbrochen werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 21/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 17 - 
+6.1.2.101 
+Weitere Festlegungen und Informationen zur Beurteilung der Umgebungsbedingungen sind in 6.3.7 und 
+im Anhang B.2 enthalten. 
+6.2 
+Arbeiten im spannungsfreien Zustand 
+Dieser Abschnitt behandelt die wesentlichen Anforderungen („die fünf Sicherheitsregeln“) zum Herstellen und 
+Sicherstellen des spannungsfreien Zustandes an der Arbeitsstelle für die Dauer der Arbeit. Dies erfordert die 
+eindeutige Festlegung des Arbeitsbereichs. Nachdem die betroffenen Anlagenteile festgelegt sind, müssen die 
+folgenden fünf wesentlichen Anforderungen in der angegebenen Reihenfolge eingehalten werden, sofern es 
+nicht wichtige Gründe gibt, davon abzuweichen: 
+– 
+Freischalten; 
+– 
+gegen Wiedereinschalten sichern; 
+– 
+Spannungsfreiheit feststellen; 
+– 
+Erden und Kurzschließen; 
+– 
+benachbarte, unter Spannung stehende Teile abdecken oder abschranken. 
+Der/die Arbeitsverantwortliche/n erhält/erhalten vom Anlagenverantwortlichen die Erlaubnis, die geplanten 
+Arbeiten durchzuführen. Alle an der Arbeit beteiligten Personen müssen Elektrofachkräfte oder elektrotechnisch 
+unterwiesene Personen sein oder unter Aufsichtsführung einer solchen Person stehen. 
+6.2.101 
+In Anlagen, bei denen Maßnahmen der fünf Sicherheitsregeln mit Fernsteuerung durchgeführt werden, ist 
+eine sichere Befehlsübertragung und Rückmeldung erforderlich. 
+6.2.1 
+Freischalten 
+Der Teil der Anlage, an dem gearbeitet werden soll, muss von allen Einspeisungen freigeschaltet sein. Die 
+Freischaltung ist durch Trennstrecken in der Luft oder gleichwertige Isolation herzustellen, so dass sichergestellt 
+ist, dass kein Überschlag erfolgt.  
+6.2.1.101 
+Freischalten 
+a) 
+ Anlagen oder Anlagenteile, die nur durch automatisch betätigte Schalteinrichtungen (z. B. 
+Dämmerungsschalter, Rundsteuerung) abgeschaltet sind, gelten nicht als freigeschaltet.  
+Dies gilt nicht für spezielle Netzfreischalteinrichtungen die eine sichere Netztrennung gewährleisten  
+(z. B. entsprechend ÖVE/ÖNORM E 2750 und [1] TOR – Hauptabschnitt D4). 
+b) 
+In Anlagen mit Nennspannungen über 1 kV muss auch der Sternpunktleiter abgeschaltet werden, 
+sofern er nicht niederohmig geerdet ist. 
+c) 
+Sicherungstrennschalter in Anlagen mit Nennspannungen über 1 kV müssen ausgeschaltet werden. 
+Das Herausnehmen der Sicherungspatrone allein genügt nicht. 
+6.2.1.102 
+Hat der Arbeitsverantwortliche nicht selbst freigeschaltet, so muss die Meldung der Freischaltung 
+abgewartet werden. 
+Das Fehlen der Spannung ist keine Bestätigung der vollzogenen Freischaltung. 
+6.2.1.103 
+Wenn bei Arbeiten im Hochspannungsnetz die Freischaltung von Einspeisungen aus dem Nieder-
+spannungsnetz, die auch Rückwirkungen in das Hochspannungsnetz haben können, nur mit erheblichem 
+Aufwand durchgeführt werden könnte und daher unterbleibt, sind vom Arbeitsverantwortlichen geeignete 
+Ersatzmaßnahmen zu treffen. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 22/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 18 - 
+6.2.2 
+Gegen Wiedereinschalten sichern 
+Alle Schaltgeräte, mit denen die Arbeitsstelle freigeschaltet worden ist, müssen gegen Wiedereinschalten 
+gesichert werden, vorzugsweise durch Sperren des Betätigungsmechanismus. Wenn keine Sperreinrichtungen 
+vorhanden sind, müssen in der Praxis bewährte gleichwertige Maßnahmen getroffen werden, um gegen 
+Wiedereinschalten zu sichern. Wenn für die Betätigung der Schaltgeräte Hilfsenergie erforderlich ist, muss diese 
+unwirksam gemacht werden. Unbefugte Eingriffe müssen durch entsprechende Schilder verboten werden. Wird 
+durch Fernsteuerung gegen Wiedereinschalten gesichert, muss die Betätigung der Schaltgeräte vor Ort 
+ebenfalls unterbunden werden. Alle Übertragungs- und Verriegelungssysteme, die für diesen Zweck verwendet 
+werden, müssen zuverlässig sein. 
+Teile der Anlage, die nach dem Freischalten noch unter Spannung stehen, z. B. Kondensatoren und Kabel, 
+müssen mit geeigneten Betriebsmitteln entladen werden. 
+6.2.2.101 
+Bei ferngesteuerten Schaltern in abgeschlossenen elektrischen Betriebsstätten darf vom Sichern gegen 
+Wiedereinschalten am Einbauort abgesehen werden, wenn folgende Bedingungen erfüllt sind: 
+a) 
+Bei speicherprogrammierbaren Steuerungen und rechnergestützten Schalthandlungen ist die 
+Software so gestaltet, dass eine unbeabsichtigte Wiedereinschaltung sicher verhindert wird. 
+b) 
+In Fernsteuerstellen weist ein Verbotsschild mit der Sachaussage „Nicht schalten“ oder eine 
+entsprechende Vorrichtung auf die Gefahren beim Betätigen des betreffenden Steuerschalters hin. 
+Seine unbeabsichtigte Betätigung ist durch eine geeignete Vorrichtung verhindert. 
+c) 
+In der ferngesteuerten Anlage ist an auffälliger Stelle darauf hinzuweisen, dass Schalthandlungen an 
+dieser Anlage nur auf Anweisung oder mit Zustimmung der Steuerstelle durchgeführt werden dürfen.  
+6.2.2.102 
+Bei Arbeiten im Leitungsnetz gelten die vorgenannten Bestimmungen auch für örtlich besetzte Anlagen, 
+sofern für Steuerung von der Warte aus die Voraussetzungen gemäß 6.2.2.101 a) bis c) zutreffen. 
+6.2.2.103 
+Allgemein zugängliche Schalter (z. B. Masttrennschalter, Kranhauptschalter) sind gegen Betätigung durch 
+Unbefugte zu sperren. 
+6.2.2.104 
+Werden Sicherungseinsätze oder einschraubbare Leitungsschutzschalter zum Freischalten benützt, 
+müssen diese allpolig herausgenommen und sicher verwahrt oder durch Schraubkappen oder 
+Blindeinsätze ersetzt werden. Fest eingebaute Leitungsschutzschalter, die auch zum Freischalten von 
+Anlagenteilen verwendet wurden, sind gegen Wiedereinschalten durch geeignete Maßnahmen,  
+z. B. Klebefolien oder Steckkappen, zu sichern. 
+6.2.3 
+Spannungsfreiheit feststellen 
+Die Spannungsfreiheit muss an oder so nahe wie möglich der Arbeitsstelle allpolig festgestellt werden. Dieser 
+Zustand muss für spannungsfreie Teile der Anlage entsprechend den betrieblichen Anweisungen festgestellt 
+werden. Dazu gehört zum Beispiel die Verwendung von festeingebauten und/oder ortsveränderlichen 
+Spannungsprüfern. Diese Spannungsprüfer sind mindestens unmittelbar vor und nach Möglichkeit auch nach 
+Gebrauch zu überprüfen. 
+Wenn freigeschaltete Kabel an der Arbeitsstelle nicht eindeutig ermittelt werden können, sind stattdessen 
+andere bewährte Sicherheitsmaßnahmen zu treffen. Dazu kann zum Beispiel die Anwendung geeigneter 
+Kabelschneid- oder Kabelbeschussgeräte gehören. 
+Wenn zum Feststellen der Spannungsfreiheit ferngesteuerte Erdungsschalter verwendet werden, muss die 
+Schaltstelltung des Erdungsschalters vom Fernsteuerungssystem zuverlässig übertragen werden. 
+6.2.3.101 
+Nach dem Anwenden von Kabelschneid- oder Kabelbeschussgeräten sind gegebenenfalls weitere 
+Maßnahmen zum Prüfen auf Spannungsfreiheit notwendig. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 23/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 19 - 
+6.2.3.102 
+Die Spannungsfreiheit kann mit Spannungsprüfern, Spannungssuchern, Messinstrumenten, durch 
+Heranführen von Erdungs- oder Kurzschließvorrichtungen oder durch Prüferdungen  festgestellt werden. 
+Bei Hochspannungsanlagen kann die Feststellung der Spannungsfreiheit in übersichtlichen Fällen durch 
+Verfolgen der Leiter erfolgen. 
+6.2.3.103 
+Die Spannungsfreiheit darf nur durch eine Elektrofachkraft oder durch eine elektrotechnisch unterwiesene 
+Person festgestellt werden. 
+6.2.3.104 
+Bei Kabeln und isolierten Leitungen sowie deren Zubehörteilen darf, nachdem an den Ausschaltstellen die 
+Spannungsfreiheit festgestellt worden ist, vom Feststellen der Spannungsfreiheit an der Arbeitsstelle 
+abgesehen werden, wenn 
+− 
+das Kabel oder die isolierte Leitung von der Ausschaltstelle bis zur Arbeitsstelle eindeutig verfolgt 
+werden kann, oder 
+− 
+das Kabel oder die isolierte Leitung eindeutig ermittelt ist, z. B. durch Kabelpläne, Bezeichnungen, 
+Kabelsuchgeräte, Kabelauslesegeräte. 
+6.2.4 
+Erden und Kurzschließen 
+6.2.4.1 
+Allgemeines 
+In Hochspannungsanlagen und bestimmten Niederspannungsanlagen (siehe 6.2.4.2) müssen alle Teile, an 
+denen gearbeitet werden soll, an der Arbeitsstelle geerdet und kurzgeschlossen werden. Die Erdungs- und 
+Kurzschließvorrichtungen müssen zuerst mit der Erdungsanlage verbunden und dann an die zu erdenden Teile 
+angeschlossen werden. Die Erdungs- und Kurzschließvorrichtungen müssen nach Möglichkeit von der 
+Arbeitsstelle aus sichtbar sein. Andernfalls sind sie so nahe an der Arbeitsstelle wie möglich anzubringen. 
+Müssen während der Arbeit Leiter unterbrochen oder verbunden werden und besteht dabei Gefahr durch 
+Potenzialunterschiede, dann sind zuvor an der Arbeitsstelle geeignete Maßnahmen zu ergreifen, wie z. B. 
+Überbrückung und/oder Erdung. 
+In jedem Fall muss sichergestellt sein, dass die Erdungs- und Kurzschließvorrichtungen, Kabel und 
+Verbindungen geeignet und für die Kurzschlussbeanspruchung am Einbauort ausgelegt sind.  
+Es muss sichergestellt werden, dass die Erdungs- und Kurzschließmaßnahmen während der gesamten Dauer 
+der Arbeit wirksam bleiben. Wenn die Erdung und Kurzschließung für die Dauer von Messungen oder Prüfungen 
+entfernt werden muss, sind zusätzliche oder andere geeignete Sicherheitsmaßnahmen zu treffen. 
+Wenn durch ferngesteuerte Erdungsschalter geerdet und kurzgeschlossen wird, muss die Schaltstellung des 
+Erdungsschalters vom Fernsteuersystem zuverlässig übertragen werden. 
+6.2.4.1.101 
+Bei Nennspannungen über 1 kV sind die Erdungs- und Kurzschließseile mit einer Isolierstange, (siehe  
+EN 61230), an die zu erdenden Teile heranzuführen. 
+6.2.4.1.102 
+Wenn sich leitende Teile im Bereich der Arbeitsstelle befinden, die an verschiedenen Erdern geerdet sind, 
+sind sie für die Dauer der Arbeit zu verbinden. 
+6.2.4.1.103 
+Schaltgeräte, mit denen eine Erd- oder Kurzschließverbindung auf andere elektrische Betriebsmittel,  
+z. B. auf Leiterseile, Kabel oder Stromschienen, übertragen wird, sind gegen Ausschalten zu sichern. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+23 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 24/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 20 - 
+6.2.4.1.104 
+In EN 61230 sind Formeln für die Dimensionierung der Erdungsgarnituren enthalten. Dabei wird auf die 
+Netzverhältnisse und die Sternpunktsbehandlung Rücksicht genommen. Auf Grund der bisherigen 
+nationalen Erfahrungen können auch die nachstehenden Tabellen verwendet werden. 
+Tabelle 100 – Strombelastbarkeit der Kurzschließseile aus Kupfer 
+zum Einsatz in Wechsel- und Drehstromanlagen 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+ 
+Querschnitt des 
+Kupferseiles 
+Kurzschlussstrom in A während 
+der Dauer bis maximal 
+ 
+mm2 
+10 s 
+5 s 
+2 s 
+1 s 
+0,5 s 
+1 
+16 
+1 000 
+1 400 
+2 200 
+3 200 
+4 400 
+2 
+25 
+1 500 
+2 200 
+3 500 
+5 000 
+6 800 
+3 
+35 
+2 200 
+3 100 
+4 800 
+7 000 
+9 500 
+4 
+50 
+3 100 
+4 300 
+7 000 
+10 000 
+14 000 
+5 
+70 
+4 300 
+6 000 
+9 500 
+14 000 
+19 500 
+6 
+95 
+5 800 
+8 300 
+13 000 
+18 500 
+26 500 
+7 
+120 
+7 500 
+10 500 
+16 500 
+23 500 
+33 500 
+8 
+150 
+9 200 
+13 000 
+21 000 
+29 500 
+42 000 
+Sofern nach der Beanspruchung der Erdungs- und Kurzschließgarnitur mit dem Kurzschlussstrom 
+eine 
+unmittelbar 
+folgende 
+Nachschaltung 
+(z. B. 
+durch 
+automatische 
+Wiedereinschaltung) 
+ausgeschlossen werden kann, dürfen bei Querschnitten ab 50 mm2 um 20 % höhere Belastungswerte 
+(entsprechend einer Endtemperatur von rund 400 oC) zugelassen werden. Die zur Anwendung 
+gelangenden Anschließteile müssen für diese höheren Werte bemessen sein. 
+Tabelle 100a – Mindestquerschnitte der Erdungsseile in Abhängigkeit  
+vom Querschnitt der Kurzschließseile 
+1 
+2 
+Querschnitt des 
+Kurzschließseiles 
+mm2 
+Mindestquerschnitt 
+des Erdungsseiles 
+mm2 
+1 
+16 
+16 
+2 
+25 
+16 
+3 
+35 
+25 
+4 
+50 
+25 
+5 
+70 
+35 
+6 
+95 
+35 
+7 
+>_ 120 
+50 
+ 
+6.2.4.2 
+Festlegungen für Kleinspannungs- und Niederspannungsanlagen 
+In Kleinspannungs- und Niederspannungsanlagen darf vom Erden und Kurzschließen abgesehen werden, außer 
+wenn das Risiko besteht, dass die Anlage unter Spannung gesetzt wird, z. B. 
+– 
+bei Freileitungen, die von anderen Leitungen gekreuzt oder elektrisch beeinflusst werden; 
+– 
+durch eine Ersatzstromversorgungsanlage. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+24 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 25/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 21 - 
+6.2.4.2.101 
+Bei Arbeiten an Freileitungen mit Nennspannungen bis 1 000 V, ausgenommen isolierte Freileitungen, 
+müssen alle Leiter einschließlich des Neutralleiters sowie der Schalt- und Steuerdrähte, z. B. für 
+Straßenbeleuchtung, in unmittelbarer Nähe der Arbeitsstelle möglichst geerdet, in jedem Falle aber 
+kurzgeschlossen werden. 
+6.2.4.3 
+Festlegungen für Hochspannungsanlagen 
+Nichtisolierte Freileitungen und blanke Leiter, die in den Bereich der Arbeitsstelle hineinführen, sind allseitig und 
+allpolig zu erden und kurzzuschließen; mindestens eine Erdungs- und Kurzzschließvorrichtung muss von der 
+Arbeitsstelle aus sichtbar sein. Dies gilt mit folgenden Ausnahmen: 
+– 
+wenn während der Arbeit kein Leiter unterbrochen wird, genügt eine einzige Erdungs- und 
+Kurzschließvorrichtung an der Arbeitsstelle; 
+– 
+ist keine der Erdungs- und Kurzschließvorrichtungen innerhalb des Arbeitsbereichs sichtbar, muss eine 
+zusätzliche Erdung, Anzeigevorrichtung oder eindeutige Kennzeichnung an der Arbeitsstelle angebracht 
+werden. 
+Bei Arbeiten an nur einem Leiter einer Freileitung ist das Kurzschließen an der Arbeitsstelle nicht erforderlich, 
+wenn alle nachstehenden Bedingungen erfüllt sind: 
+– 
+an allen Ausschaltstellen ist entsprechend 6.2.4.1 geerdet und kurzgeschlossen; 
+– 
+der Leiter, an dem gearbeitet wird, und alle leitfähigen Teile innerhalb des Arbeitsbereiches sind mit 
+geeigneten Mitteln oder Vorrichtungen leitend verbunden und geerdet; 
+– 
+der geerdete Leiter, die Arbeitsstelle und Personen befinden sich in einem Abstand größer als DL (siehe 
+Bilder 1 und 2) von den übrigen Leitern desselben Stromkreises. 
+Bei isolierten Freileitungen, Kabeln oder anderen isolierten Leitern muss an allen Ausschaltstellen oder auf allen 
+Seiten der Arbeitsstelle möglichst nahe an den Ausschaltstellen geerdet und kurzgeschlossen werden. 
+6.2.4.3.101 
+Ist an allen Ausschaltstellen von elektrischen Leitungen oder anderen Anlagen mit Nennspannungen über 
+1 kV kurzschlussfest geerdet und kurzgeschlossen, so genügt an der Arbeitsstelle ein Querschnitt der 
+Erdungs- und Kurzschließseile von 25 mm2 Kupfer. 
+6.2.4.3.102 
+Bei Arbeiten an Transformatoren, deren Ober- und/oder Unterspannungsseite nicht unmittelbar geerdet 
+und kurzgeschlossen werden können, muss das Erden und Kurzschließen an den, dem Transformator 
+nächstgelegenen Schaltstellen der Ober- und Unterspannungsseite durchgeführt werden. 
+6.2.4.3.103 
+Vom Erden und Kurzschließen auf der Oberspannungsseite von Transformatoren mit Nennspannungen 
+von über 1 kV bis 30 kV darf beim Auswechseln der Sicherungen von Hand und bei Arbeiten unterhalb 
+der Sicherungen unter folgenden Bedingungen abgesehen werden: 
+− 
+Die Transformatoren müssen durch einen Sicherungstrenner mit mechanisch gesicherter Ausschalt-
+stellung, einen Trennschalter oder Lasttrennschalter vom Netz getrennt sein. 
+− 
+Die Ober- und Unterspannungsseite müssen freigeschaltet sein, die allpolige Trennstelle für die 
+Oberspannung muss vom Boden und vom Arbeitsplatz aus sichtbar sein. 
+− 
+Ein Wiedereinschalten durch an der Arbeit Nichtbeteiligte oder durch gespeicherte Einschaltkraft 
+muss zuverlässig verhindert sein. Ein Sicherheitsschild allein genügt nicht. 
+− 
+Die Spannungsfreiheit ist mindestens auf der Unterspannungsseite festzustellen. 
+− 
+Wenn von der Unterspannungsseite Rückspannung kommen kann, ist dort kurzzuschließen, bei 
+Nennspannungen über 690 V ist zu erden. Beides darf auch an der nächstgelegenen Unter-
+spannungsverteilung geschehen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+25 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 26/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 22 - 
+6.2.5 
+Benachbarte, unter Spannung stehende Teile abdecken oder abschranken 
+Können Anlagenteile in der Nähe der Arbeitsstelle nicht freigeschaltet werden, müssen vor Arbeitsbeginn 
+zusätzliche Sicherheitsmaßnahmen wie beim "Arbeiten in der Nähe unter Spannung stehender Teile" getroffen 
+werden (siehe 6.4). 
+6.2.6 
+Freigabe zur Arbeit 
+Die Genehmigung des Anlagenverantwortlichen ist eine notwendige Voraussetzung. Die Freigabe zur Arbeit darf 
+nur vom Arbeitsverantwortlichen und erst nach Durchführung der in 6.2.1 bis 6.2.5 beschriebenen Maßnahmen 
+erteilt werden. 
+ANMERKUNG 
+Zur Vermeidung von Missverständnissen sollten für Arbeiten an Hochspannungsanlagen Einzelheiten über 
+Freischaltungen und Erdungen in der Regel schriftlich festgelegt werden. 
+6.2.6.101 
+Die Genehmigung des Anlagenverantwortlichen zur Erteilung der „Freigabe zur Arbeit“ an den Arbeits-
+verantwortlichen ist mit der Erlaubnis zur Durchführung der Arbeiten (6.2) erfüllt. 
+6.2.7 
+Unterspannungsetzen nach beendeter Arbeit 
+Nach Beendigung und Überprüfung der Arbeit müssen alle nicht mehr benötigten Personen informiert werden, 
+dass die Arbeit fertigggestellt und keine weitere Arbeit erlaubt ist. Alle nicht mehr benötigten Personen müssen 
+zurückgezogen werden. Alle verwendeten Werkzeuge, Ausrüstungen und Hilfsmittel sind zu entfernen. Erst 
+dann darf mit dem Verfahren zum Wiedereinschalten begonnen werden. Alle Erdungs- und anderen 
+Sicherheitsmaßnahmen an der Arbeitsstelle müssen aufgehoben werden.  
+Anschließend sind, ausgehend von der Arbeitsstelle, alle für die Arbeit getroffenen Sicherheitsmaßnahmen 
+außerhalb der Arbeitstelle aufzuheben; dazu gehört das Entfernen der Kurzschließung und Erdung und das 
+Aufheben der Sicherung gegen Wiedereinschalten. Alle für die Arbeit verwendeten Schilder sind zu entfernen. 
+Sobald eine der Sicherheitsmaßnahmen aufgehoben ist, sind die für die Arbeit freigeschalteten Anlagenteile als 
+unter Spannung stehend zu betrachten. 
+Wenn der Arbeitsverantwortliche sich davon überzeugt hat, dass die Arbeitsstelle wieder einschaltbereit ist, 
+muss er dem Anlagenverantwortlichen die Beendigung der Arbeit und die Einschaltbereitschaft melden. 
+6.3 
+Arbeiten unter Spannung 
+Arbeiten unter Spannung müssen nach nationalen Anforderungen und Verfahren ausgeführt werden. Danach 
+sind die Anforderungen in 6.3 möglicherweise nicht in vollem Umfang anzuwenden auf Arbeiten wie Feststellen 
+der Spannungsfreiheit, Anbringen von Erdungs- und Kurzschließvorrichtungen usw. 
+6.3.101 
+Zu diesen Arbeiten gehört auch das Heranführen, Anbringen und Entfernen von geeigneten Sicherheits- 
+und Justiereinrichtungen (Isolierabdeckplatten, Isolierschläuche, usw.) 
+6.3.1 
+Allgemeines 
+6.3.1.101 
+Für Arbeiten unter Spannung über 1 kV sind zusätzliche gesetzliche Bestimmungen über die 
+Fachkenntnis für die Vorbereitung und Organisation bestimmter Arbeiten unter Spannung über 1 kV zu 
+berücksichtigen (BGBl. Nr. 13/2007). 
+6.3.1.1 
+Bei Arbeiten unter Spannung berühren Personen mit Körperteilen, Werkzeugen, Ausrüstungen oder 
+Hilfsmitteln blanke unter Spannung stehende Teile oder dringen in die Gefahrenzone ein. 
+Empfohlene Werte für den Abstand DL können Tabelle A.1 entnommen werden. 
+Arbeiten unter Spannung dürfen nur durchgeführt werden, wenn Brand- und Explosionsgefahren 
+ausgeschlossen sind (siehe B.3 und B.4). 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+26 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 27/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 23 - 
+6.3.1.1.101  
+Nationale Werte für den Abstand DL sind in Tabelle 101 festgelegt 
+Tabelle 101 – Gefahrenzone 
+Netz-Nennspannung 
+ 
+Un (Effektivwert) 
+kV 
+Äußere Grenze der Gefahrenzone 
+Innenraumanlage                           Freiluftanlage 
+DL
+1) (Abstand in Luft) 
+mm 
+Bemessungs-Steh-
+Blitz-
+/Schaltstoßspannung
+Uimp  (Scheitelwert) 
+kV 
+< 1 
+Keine Berührung 
+4 
+3 
+60 
+120 
+40 
+6 
+90 
+120 
+60 
+10 
+120 
+150 
+75 
+15 
+160 
+95 
+20 
+220 
+125 
+30 
+320 
+170 
+36 
+380 
+200 
+45 
+480 
+250 
+60 
+630 
+325 
+70 
+750 
+380 
+110 
+1100 
+550 
+132 
+1300 
+650 
+150 
+1500 
+750 
+220 
+2100 
+1050 
+275 
+2400 
+850 
+380 
+2900 / 3400 
+950 / 1050 
+480 
+4100 
+1175 
+700 
+6400 
+1550 
+1) Werte DL sind für die höchste Bemessungs-Stehstoßspannung (Blitz- oder Schaltstoßspannung) 
+angegeben; weitere Werte für niedrigere Bemessungsspannungen siehe EN 61472. 
+6.3.1.2 
+Es ist für einen festen Standort zu sorgen, bei dem der Arbeitende beide Hände frei hat. 
+6.3.1.3 
+Arbeitende müssen geeignete persönliche Schutzausrüstung benutzen. Sie sollten keine Metallteile 
+wie z. B. Schmuck tragen, wenn dadurch eine Gefährdung entstehen kann. 
+6.3.1.4 
+Bei Arbeiten unter Spannung sind Schutzmaßnahmen gegen elektrischen Schlag und Kurzschluss 
+anzuwenden. Alle unterschiedlichen Potenziale (Spannungen) in der Umgebung der Arbeitsstelle müssen 
+berücksichtigt werden. 
+In Abhängigkeit von der Art der Arbeit dürfen Arbeiten unter Spannung nur von Elektrofachkräften oder 
+elektrotechnisch unterwiesenen Personen ausgeführt werden. Beide Personengruppen müssen über eine 
+entsprechende Spezialausbildung verfügen. Für einige bestimmte Arbeiten ist die Spezialausbildung nicht 
+erforderlich. 
+Arbeiten unter Spannung erfordert die Anwendung besonderer Verfahren, wie in 6.3.4 beschrieben. Es müssen 
+Anweisungen bestehen, wie Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel in ordnungsgemäßem Zustand 
+zu erhalten und vor der Arbeit zu überprüfen sind (siehe 6.3.6). 
+Umgebungsbedingungen (siehe 6.3.7) wie Feuchte und Luftdruck können die Durchführung der Arbeit 
+beeinflussen. Daraus resultierende Einschränkungen müssen festgelegt sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+27 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 28/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 24 - 
+6.3.2 
+Spezialausbildung 
+Ein spezielles Ausbildungsprogramm muss vorhanden sein, um den Elektrofachkräften und elektrotechnisch 
+unterwiesenen Personen die Fähigkeit zum Arbeiten unter Spannung zu vermitteln und zu erhalten. Dieses 
+Programm muss die speziellen Anforderungen für das Arbeiten unter Spannung berücksichtigen und 
+theoretische und praktische Übungen einschließen. 
+Diese Übungen müssen auf die später auszuführenden Arbeiten abgestimmt sein oder, wenn sie davon 
+abweichen, auf den gleichen Sicherheitsgrundsätzen beruhen. 
+Nach erfolgreichem Abschluss der Spezialausbildung müssen die Teilnehmer einen Befähigungsnachweis zum 
+Arbeiten unter Spannung erhalten, aus dem hervorgeht, für welche Arbeiten sie ausgebildet wurden. 
+Der Grad der Befähigung sollte durch eine Genehmigung zum Arbeiten unter Spannung bestätigt werden. 
+6.3.3 
+Erhaltung der fachlichen Fähigkeit 
+Die Fähigkeit zum sicheren Arbeiten unter Spannung muss entweder durch Praxis oder durch erneute Schulung 
+erhalten werden. 
+Bei gegebenem Anlass (siehe B.1.1) sollte überprüft werden, ob eine Person Arbeiten unter Spannung 
+entsprechend ihrem Befähigungsnachweis weiterhin ausführen kann. 
+6.3.4 
+Arbeitsverfahren 
+Es gibt zur Zeit drei anerkannte Arbeitsverfahren, die sich hinsichtlich des Standortes des Arbeitenden in Bezug 
+auf unter Spannung stehende Teile und der Hilfsmittel zum Schutz gegen elektrischen Schlag und Kurzschluss 
+unterscheiden. 
+6.3.4.1 
+Arbeiten auf Abstand 
+Beim Arbeiten auf Abstand bleibt der Arbeitende in einem festgelegten Abstand von unter Spannung stehenden 
+Teilen und führt seine Arbeit mit isolierenden Stangen aus. 
+6.3.4.2 
+Arbeiten mit Isolierhandschuhen 
+Bei diesem Arbeitsverfahren berührt der Arbeitende, geschützt durch Isolierhandschuhe und möglicherweise 
+isolierenden Armschutz, direkt unter Spannung stehende Teile. 
+Bei Niederspannungsanlagen schließt die Benutzung von Isolierhandschuhen die Verwendung von isolierenden 
+und isolierten Handwerkzeugen und eine geeignete Standortisolierung nicht aus. 
+6.3.4.3 
+Arbeiten auf Potential 
+Bei diesem Arbeitsverfahren befindet sich der Arbeitende auf gleichem Potenzial wie die unter Spannung 
+stehenden Teile und berührt diese direkt; dabei ist er gegenüber der Umgebung ausreichend isoliert. 
+6.3.5 
+Arbeitsanweisungen 
+Abhängig von Art und Umfang der Arbeit müssen Verhaltensmaßregeln in Arbeitsanweisungen in 
+Übereinstimmung mit 6.3.4 festgelegt sein. Sie legen den Arbeitsablauf fest unter Berücksichtigung der 
+vorbereitenden Tätigkeiten sowie der zu benutzenden Spezialwerkzeuge und Ausrüstungen. 
+Die Arbeitsanweisungen können einen oder mehrere der folgenden Punkte enthalten: 
+– 
+Beschreibung der Beziehungen zwischen den an den Arbeiten unter Spannung beteiligten Personen, wie 
+z. B. dem Anlagenverantwortlichen, dem Arbeitsverantwortlichen, den ausführenden Personen; 
+– 
+Maßnahmen zur Begrenzung von Schaltüberspannungen an der Arbeitsstelle, wie z. B. Verhindern der 
+automatischen Wiedereinschaltung von Leistungsschaltern; 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+28 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 29/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 25 - 
+– 
+festgelegte Arbeitsabstände für Personen und für die verwendeten leitfähigen Hifsmittel. Diese Abstände 
+beruhen auf der Spannung Leiter gegen Erde, müssen jedoch auch für die Spannung Leiter gegen Leiter 
+angegeben sein; dabei ist der geforderte Isolationspegel zu berücksichtigen (siehe B.1.2). 
+6.3.6 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel 
+Ergänzend zu 4.6 müssen Eigenschaften, Anwendung, Lagerung, Instandhaltung, Transport und Prüfungen von 
+Werkzeugen, Ausrüstungen, Schutz- und Hilfsmitteln festgelegt sein. 
+Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel müssen deutlich gekennzeichnet sein. 
+In einigen Fällen fordern nationale Vorschriften, dass die Festlegungen für Werkzeuge, Ausrüstungen, Schutz- 
+und Hilfsmittel schriftlich vorliegen müssen, z. B. in einem sogenannten "Technischen Datenblatt". Diese 
+Datenblätter werden verwendet, um ein bestimmtes Qualitätsniveau sicherzustellen. 
+Ein derartiges Datenblatt sollte für alle Werkzeuge, Ausrüstungen, Schutz- und Hilfsmittel zum Einsatz unter 
+Hochspannung auch dann vorhanden sein, wenn dies nach den nationalen Vorschriften nicht gefordert ist. 
+6.3.7 
+Umgebungsbedingungen 
+Für Arbeiten unter Spannung müssen bei ungünstigen Umgebungsbedingungen Einschränkungen gemacht 
+werden. Bei diesen Einschränkungen werden die Minderung der Isolationseigenschaften sowie eine 
+eingeschränkte Sicht und Bewegungsfreiheit des Personals berücksichtigt. 
+Wo es notwendig zur Vermeidung von Gefahren ist, müssen für Arbeiten im Freien die Wetterbedingungen wie 
+Niederschlag, dichter Nebel, Gewitter, starker Wind, Salzsturm, extrem tiefe Temperaturen berücksichtigt 
+werden (siehe B.2). Arbeiten unter Spannung sind zu verbieten oder zu unterbrechen bei starkem Regen oder 
+schlechter Sicht oder wenn die Arbeitenden ihre Werkzeuge nicht ungehindert bewegen können. Bei Gewitter 
+dürfen Arbeiten unter Spannung nicht begonnen oder sie müssen unterbrochen werden. 
+Für Arbeiten in Innenräumen brauchen Wetterbedingungen nicht berücksichtigt zu werden, vorausgesetzt, dass 
+voraussichtlich keine Überspannungen aus den eingeschalteten Freiluftanlagen auftreten und die Sicht an der 
+Arbeitsstelle ausreichend ist. 
+Andere Einflussgrößen, wie z. B. geografische Höhe, ungünstige Umgebung, Luftverschmutzung, müssen 
+besonders bei Arbeiten an oder in der Nähe von Hochspannungsanlagen berücksichtigt werden, wenn sie das 
+Isoliervermögen von Werkzeugen, Ausrüstungen, Schutz- und Hilfsmitteln beeinträchtigen. 
+Wenn die Arbeit auf Grund der Umgebungsbedingungen unterbrochen werden muss, hat das Personal die 
+Anlage sowie alle eingebauten isolierenden und isolierten Arbeitsmittel in gesichertem Zustand zu hinterlassen. 
+Außerdem muss das Personal die Arbeitsstelle auf sichere Weise verlassen. Bevor die unterbrochene Arbeit 
+wieder aufgenommen wird, muss überprüft werden, ob die isolierenden Teile sauber und unversehrt sind. Wenn 
+solche Teile gereinigt werden müssen, ist das Reinigungsverfahren festzulegen und anzuwenden. 
+6.3.8 
+Organisation von Arbeitsabläufen 
+6.3.8.1 
+Arbeitsvorbereitung 
+Wenn Zweifel über die Vorgehensweise bei durchzuführenden Arbeiten bestehen, müssen vor Arbeitsaufnahme 
+entsprechende Versuche durchgeführt werden. Im Rahmen der Arbeitsvorbereitung müssen alle elektrisch 
+bedingten und anderen Sicherheitsaspekte berücksichtigt werden. 
+Für komplexe Arbeiten muss diese Vorbereitung schriftlich und rechtzeitig vorher erfolgen. 
+6.3.8.1.101  
+Dies gilt nicht für Arbeiten im Störungsfall. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+29 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 30/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 26 - 
+6.3.8.2 
+Maßnahmen des Anlagenverantwortlichen 
+Für die Anlage oder den Anlagenteil, an dem gearbeitet werden soll, muss der bei der Vorbereitung festgelegte 
+Zustand hergestellt und sichergestellt werden. Dies kann das Verhindern von automatischen Rückstellungen 
+(Wiedereinschaltungen) und/oder Änderungen der Einstellung elektrischer Schutzeinrichtungen einschließen. 
+Die Stelle, an der automatische Wiedereinschaltung verboten ist, sollte durch ein entsprechendes Schild mit 
+dem Hinweis gekennzeichnet sein, dass Arbeiten unter Spannung durchgeführt werden. 
+Abhängig von Art und Umfang der Arbeit müssen direkte Kommunikationsverbindungen zwischen der 
+Arbeitsstelle und der zuständigen Leitstelle benutzt werden. 
+6.3.8.3 
+Maßnahmen des Arbeitsverantwortlichen 
+Der Arbeitsverantwortliche muss den Anlagenverantwortlichen über Art und Ort der vorgesehenen Arbeiten 
+informieren.  
+Vor Beginn muss das Personal über Art und Umfang der Arbeiten, Sicherheitsmaßnahmen, Verteilung der 
+Aufgaben und in der Anwendung von Werkzeugen und Geräten unterwiesen werden.  
+Der Grad der Aufsichtführung muss Art und Umfang der Arbeit und/oder der Höhe der Spannung angemessen 
+sein. 
+Der Arbeitsverantwortliche muss die Umgebungsbedingungen an der Arbeitsstelle berücksichtigen. 
+Die Freigabe zur Arbeit darf den an der Arbeit beteiligten Personen nur vom Arbeitsverantwortlichen erteilt 
+werden. 
+Nach beendeter Arbeit muss der Arbeitsverantwortliche den Anlagenverantwortlichen in der vorgeschriebenen 
+Weise informieren. Wenn die Arbeit unterbrochen wird, müssen geeignete Sicherheitsmaßnahmen getroffen 
+werden, und der Anlagenverantwortliche muss darüber informiert werden. 
+6.3.9 
+Besondere Festlegungen für Kleinspannungsanlagen 
+An Anlagen mit Schutzkleinspannung (SELV) darf ohne Schutz gegen direktes Berühren unter Spannung 
+gearbeitet werden, jedoch sind Vorkehrungen gegen Kurzschluss zu treffen. Bei Arbeiten unter Spannung in 
+Anlagen mit Funktionskleinspannung mit sicherer Trennung (PELV) oder Funktionskleinspannung ohne sichere 
+Trennung (FELV) sind nationale Festlegungen zu beachten; wo solche Festlegungen fehlen, ist 6.3.10 
+einzuhalten. 
+6.3.10 Besondere Festlegungen für Niederspannungsanlagen 
+Für Niederspannungsanlagen (bis 1 000 V Wechselspannung oder 1 500 V Gleichspannung) mit Überstrom- 
+und Kurzschlussschutz sind isolierende Schutzmittel gegen benachbarte unter Spannung stehende Teile, 
+isolierte oder isolierende Werkzeuge sowie geeignete persönliche Schutzausrüstungen zu verwenden. 
+Die allgemeinen Festlegungen (6.3.1 bis 6.3.8) sind einzuhalten, wenn der Kurzschlussstrom gefährliche Werte 
+erreichen kann. Eine Aufsichtsführung ist nicht zwingend erforderlich, jedoch müssen allein Arbeitende in der 
+Lage sein, alle auftretenden Risiken zu berücksichtigen und zu beherrschen. 
+6.3.10.101 
+Bei Arbeiten in Hilfsstromkreisen (z. B. Fehlereingrenzung) sind gegebenenfalls sicherheitstechnische 
+Maßnahmen gegen sekundäre Gefährdung von Personen zu treffen. 
+6.3.11 Besondere Festlegungen für Hochspannungsanlagen 
+Alle ausgewählten Verfahren und Werkzeuge müssen auf ihre Eignung für die Anlage, an der gearbeitet werden 
+soll, überprüft werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+30 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 31/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 27 - 
+Dielektrische und mechanische Eigenschaften von Werkzeugen müssen entsprechend der Normen und unter 
+Berücksichtigung der physikalischen Anforderungen an der Arbeitsstelle festgelegt werden. 
+Wenn der Arbeitsverantwortliche die Arbeitsstelle auf Grund ihrer Ausdehnung nicht allein überwachen kann, 
+muss er hierzu weitere Personen einsetzen. 
+6.3.12 Spezielle Arbeiten unter Spannung 
+Für Arbeiten wie z. B. Reinigen, Abspritzen von Isolatoren und Entfernen von Raureif müssen jeweils besondere 
+Arbeitsanweisungen vorliegen. Diese Arbeiten dürfen nur von Elektrofachkräften oder elektrotechnisch 
+unterwiesenen Personen ausgeführt werden. 
+6.3.12.101  
+Unter diesen speziellen Arbeiten ist auch 
+− 
+das Arbeiten an Akkumulatoren unter Beachtung geeigneter Vorsichtsmaßnahmen, und 
+− 
+die Fehlereingrenzung in Hilfsstromkreisen zu verstehen. 
+6.4 
+Arbeiten in der Nähe unter Spannung stehender Teile 
+Arbeiten in der Nähe unter Spannung stehender Teile müssen nach nationalen Vorschriften ausgeführt werden 
+(siehe auch Anhang A). 
+6.4.1 
+Allgemeines 
+6.4.1.1 
+In der Nähe unter Spannung stehender Teile mit Nennspannungen über 50 V Wechselspannung oder 
+120 V Gleichspannung darf nur gearbeitet werden, wenn durch geeignete Maßnahmen sichergestellt ist, dass 
+unter Spannung stehende Teile nicht berührt werden können oder die Gefahrenzone nicht erreicht werden kann. 
+6.4.1.1.101 
+Nationale Werte für den Abstand Dv (Schutzabstand) bei Arbeiten gemäß 6.4.3.101, 6.4.3.103, 6.4.3.104, 
+6.4.3.106 und 6.4.3.107 und 6.4.4.101 sind in Tabelle 102 festgelegt. 
+Tabelle 102 – Annäherungszone 
+Netz-Nennspannung 
+Un (Effektivwert) 
+kV 
+Äußere Grenze der Annäherungszone 
+DV (Abstand in Luft von ungeschützten unter Spannung stehenden Teilen) 
+m 
+            bis 1 
+0,5 
+über 1 bis 30 
+1,5 
+über 30 bis 110 
+2,0 
+über 110 bis 220 
+3,0 
+über 220 bis 380 
+4,0 
+ 
+6.4.1.2 
+Elektrische Gefährdung in der Nähe unter Spannung stehender Teile kann durch Schutzvorrichtung, 
+Abdeckung, Kapselung oder isolierende Umhüllung vermieden werden (siehe 6.4.2). 
+Wenn diese Maßnahmen nicht angewendet werden können, muss von blanken unter Spannung stehenden 
+Teilen ein sicherer Abstand, größer als DL (siehe 6.3.1.1), eingehalten werden und erforderlichenfalls eine 
+entsprechende Aufsichtsführung sichergestellt sein. 
+6.4.1.3 
+Es ist für einen festen Standort zu sorgen, bei dem der Arbeitende beide Hände frei hat. 
+6.4.1.4 
+Vor Beginn der Arbeiten muss der Arbeitsverantworliche die für die Arbeit vorgesehenen Personen, 
+insbesondere solche, die mit Arbeiten in der Nähe unter Spannung stehender Teile nicht vertraut sind, über das 
+Einhalten der notwendigen Abstände sowie über die getroffenen Sicherheitsmaßnahmen und die Notwendigkeit 
+eines ständigen sicherheitsbewussten Verhaltens unterrichten. Die Grenzen des Arbeitsbereichs sind jeweils 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+31 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 32/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 28 - 
+genau und deutlich anzugeben (siehe 6.4.1.5), auf Besonderheiten ist hinzuweisen. Unterrichtung und 
+Aufforderung sind in angemessenen Zeitabständen oder nach Änderung der Arbeitsbedingungen zu 
+wiederholen. 
+6.4.1.5 
+Die Arbeitsstelle ist durch geeignete Abdeckungen, Seile, Flaggen, Lampen, Schilder usw. zu 
+kennzeichnen. Benachbarte unter Spannung stehende Schaltfelder müssen durch zusätzliche, deutlich sichtbare 
+Hilfsmittel gekennzeichnet werden, z. B. deutliche Warnschilder an Türen. 
+6.4.1.6 
+Der Arbeitende hat bei jeder Bewegung stets selbst darauf zu achten, dass er weder mit einem Teil 
+seines Körpers noch mit Werkzeugen oder Gegenständen die Gefahrenzone erreicht. Besondere Vorsicht ist 
+geboten beim Umgang mit langen Gegenständen, wie z. B. Werkzeugen, Leitungsenden, Rohren, Leitern usw. 
+6.4.2 
+Schutz durch Schutzvorrichtung, Abdeckung, Kapselung oder isolierende Umhüllung 
+6.4.2.1 
+Diese Schutzmittel müssen so ausgewählt und angebracht sein, dass ausreichender Schutz gegen zu 
+erwartende elektrische und mechanische Beanspruchungen gegeben ist. 
+6.4.2.2 
+Wenn diese Schutzmittel in der Gefahrenzone angebracht werden müssen, ist hierfür entweder der 
+spannungsfreie Zustand herzustellen, oder es sind die Festlegungen für das Arbeiten unter Spannung 
+anzuwenden. 
+6.4.2.3 
+Wenn diese Schutzmittel außerhalb der Gefahrenzone angebracht werden, ist hierfür entweder der 
+spannungsfreie Zustand herzustellen, oder es sind Einrichtungen zu benutzen, die Personen daran hindern, die 
+Gefahrenzone zu erreichen. Erforderlichenfalls sind die Festlegungen für das Arbeiten unter Spannung 
+anzuwenden. 
+6.4.2.4 
+Wenn die Anforderungen nach 6.4.2.1 bis 6.4.2.3 erfüllt sind, dürfen Arbeiten in der Nähe unter 
+Spannung stehender Teile von Elektrofachkräften, elektrotechnisch unterwiesenen Personen oder Laien 
+durchgeführt werden, ohne dass weitere besondere Vorkehrungen getroffen werden müssen. Die 
+Schutzvorrichtungen, 
+Abdeckungen, 
+Kapselungen 
+oder 
+isolierenden 
+Umhüllungen 
+müssen 
+sich 
+in 
+ordnungsgemäßem Zustand befinden und während der Arbeiten sicher angebracht sein. Bieten solche 
+Einrichtungen 
+keinen 
+vollständigen 
+Schutz 
+der 
+blanken 
+unter 
+Spannung 
+stehenden 
+Teile 
+(bei 
+Niederspannungsanlagen eine Schutzart gegen Eindringen von nicht weniger als IP2X... oder IPXXB), müssen 
+Laien, die in der Nähe dieser Teile arbeiten, beaufsichtigt werden. 
+6.4.2.4.101 
+Isolierstoffgekapselte Anlagen und Betriebsmittel über 1 kV müssen hinsichtlich ihres Berührungsschutzes 
+beurteilt werden. Falls keine eindeutigen Angaben vorliegen, müssen solche Anlagen wie luftisolierte 
+(offene) Anlagen behandelt werden. 
+6.4.3 
+Schutz durch Abstand und Aufsichtführung 
+Wenn Schutz durch Abstand und Aufsichtführung angewandt werden soll, muss für diese Methode mindestens 
+folgendes festgelegt sein: 
+– 
+der sichere Abstand, größer als DL, wobei Art und Umstände der Arbeiten sowie die Nennspannung der 
+Anlage zu berücksichtigen sind; 
+– 
+anzuwendende Kriterien für die Auswahl des Personals, das für die Ausführung der Arbeiten benötigt wird; 
+– 
+während der Arbeit zu beachtende Vorgehensweisen, die das Erreichen der Gefahrenzone ausschließt. 
+6.4.3.101 
+Beim Bewegen von Leitern oder sperrigen Gegenständen ist darauf zu achten, dass 
+− 
+diese in abgeschlossenen elektrischen Betriebsstätten unter Spannung stehende Teile nicht berühren 
+oder bei Nennspannungen über 1 kV die Gefahrenzone nicht erreichen können, 
+− 
+in der Nähe von Freileitungen die Schutzabstände nach Tabelle 102 nicht unterschritten werden. 
+Ausgenommen von dieser Festlegung ist die Benutzung von nichtmetallischen Leitern in der Nähe von 
+Freileitungen mit Nennspannungen bis 1 000 V. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+32 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 33/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 29 - 
+Diese Arbeiten müssen von Elektrofachkräften oder elektrotechnisch unterwiesenen Personen 
+durchgeführt oder von ihnen beaufsichtigt werden. 
+6.4.3.102 
+In abgeschlossenen elektrischen Betriebsstätten mit Nennspannungen über 1 kV dürfen unter Spannung 
+stehende Teile ohne Schutzvorrichtung mit Fahrzeugen und fahrbaren oder verschiebbaren Geräten 
+unterquert werden, wenn bei Nennspannungen 
+− 
+bis 30 kV ein Mindestabstand von 500 mm eingehalten wird, 
+− 
+über 30 kV bis 380 kV die Abstände nach Tabelle 101 nicht erreicht werden. 
+Dabei dürfen sich Personen auf den Fahrzeugen oder fahrbaren Geräten nur aufhalten, wenn durch 
+entsprechende Schutzvorrichtungen am Fahrzeug oder fahrbaren Gerät, z. B. Kabinendach oder 
+Sicherheitsgurt, sichergestellt ist, dass die vorgenannten Abstände nicht erreicht werden können. 
+6.4.3.103 
+Liegen bei Freileitungen mehrere Stromkreise (Systeme) mit Nennspannungen über 1 kV auf einem 
+gemeinsamen Gestänge, so dürfen Arbeiten an einem Stromkreis nur vorgenommen werden, wenn die 
+Schutzabstände (äußere Grenze der Annäherungszone) nach Tabelle 102 nicht unterschritten werden 
+oder ein Erreichen der Gefahrenzone unter Spannung stehender Teile durch Bauart oder 
+Schutzvorrichtungen verhindert ist. 
+Außerdem müssen Maßnahmen gegen Verwechseln der Stromkreise getroffen sein; dies sind genaue 
+Anweisungen und Bezeichnungen, z. B. Nummern, Zeichen, Farbe. 
+Diese Arbeiten müssen von Elektrofachkräften oder elektrotechnisch unterwiesenen Personen oder unter 
+deren Aufsichtsführung durchgeführt werden. 
+6.4.3.104 
+Sofern Freileitungen oder Leitungen in Freiluftanlagen unterhalb einer Arbeitsstelle unter Spannung 
+bleiben müssen, dürfen Werkzeuge, Material und dergleichen nur außerhalb der Schutzabstände (äußere 
+Grenze der Annäherungszone) nach Tabelle 102 hochgezogen oder herabgelassen werden. Diese 
+Arbeiten müssen von Elektrofachkräften oder elektrotechnisch unterwiesenen Personen oder unter deren 
+Aufsichtsführung durchgeführt werden. 
+6.4.3.105 
+Beim Besteigen von Masten für Freileitungen mit Nennspannungen über 1 kV, an denen auch blanke 
+Fernmeldeleitungen geführt sind, müssen letztere an der Arbeitsstelle oder in der Nähe geerdet und 
+kurzgeschlossen werden. Dies gilt auch, wenn die Starkstromfreileitungen schon freigeschaltet, geerdet 
+und kurzgeschlossen sind. Die Fernmeldeleitungen dürfen nicht berührt werden, ehe sie geerdet sind. 
+6.4.3.106 
+Bei Arbeiten an Masten, Portalen und dergleichen (z. B. Anstrich- und Ausbesserungsarbeiten) sind von 
+unter Spannung stehenden Teilen der Freileitung mit Nennspannungen über 1 kV die Schutzabstände 
+(äußere Grenze der Annäherungszone) nach Tabelle 102 einzuhalten. Diese Arbeiten müssen von 
+Elektrofachkräften oder elektrotechnisch unterwiesenen Personen oder unter deren Aufsichtsführung 
+durchgeführt werden. 
+6.4.3.107 
+Ist an allen Ausschaltstellen von Freileitungen oder eines Stromkreises (Systems) mit Nennspannungen 
+über 1 kV entsprechend 6.2.4 geerdet und kurzgeschlossen, so darf für Arbeiten vom Erden und 
+Kurzschließen an der Arbeitsstelle abgesehen werden, wenn folgende Bedingungen erfüllt sind: 
+− 
+An der Arbeitsstelle ist die Leitung und der Stromkreis eindeutig ermittelt, z. B. durch Leitungspläne, 
+Bezeichnungen oder durch Verfolgen des Leitungsverlaufes von der Ausschaltstelle bis zur 
+Arbeitsstelle. 
+− 
+Es ist sichergestellt, dass beim Arbeiten in der Nähe des geerdeten und kurzgeschlossenen 
+Stromkreises die Gefahrenzone dieses Stromkreises nach Tabelle 101 nicht erreicht wird und die 
+Schutzabstände anderer Stromkreise nach Tabelle 102 nicht unterschritten werden. 
+− 
+Die Arbeiten werden von Elektrofachkräften oder elektrotechnisch unterwiesenen Personen 
+durchgeführt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+33 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 34/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 30 - 
+6.4.3.108 
+Bei Arbeiten, die ohne Gefahr vom Erdboden oder einem gleichwertigen Standort aus durchgeführt 
+werden, darf der Arbeitende höchstens den Fußpunkt der Isolation erreichen können, jedoch ist der 
+Abstand nach Tabelle 101 einzuhalten. 
+6.4.4 
+Bauarbeiten und sonstige nichtelekrotechnische Arbeiten 
+Bei Bauarbeiten und sonstigen nichtelektrotechnischen Arbeiten, wie z. B. 
+– 
+Gerüstbau; 
+– 
+Arbeiten mit Hebezeugen, Baumaschinen und Fördermitteln; 
+– 
+Montagearbeiten; 
+– 
+Transportarbeiten; 
+– 
+Anstrich- und Ausbesserungsarbeiten; 
+– 
+Bewegen von sonstigen Geräten und Bauhilfsmitteln, 
+muss stets ein festgelegter Abstand eingehalten werden, insbesondere beim Ausschwingen von Lasten, Trag- 
+und Lastaufnahmemitteln. Dieser Abstand muss vom nächstgelegenden Leiter oder blanken unter Spannung 
+stehenden Teil gemessen werden. 
+Dieser festgelegte Abstand muss abgeleitet werden aus Dv (Tabelle A.1) erhöht um einen weiteren Abstand. Bei 
+dessen Festlegung sind zu berücksichtigen: 
+– 
+die Spannungshöhe; 
+– 
+die Art der Arbeit; 
+– 
+die verwendete Ausrüstung; 
+– 
+die Tatsache, dass die beteiligten Personen keine elektrotechnischen Kenntnisse haben. 
+Es ist dringend zu empfehlen, dass dieser festgelegte Abstand nicht kleiner oder aber vorzugsweise größer  
+als Dv ist. 
+6.4.4.101 
+Als Basis für die Festlegung des Abstandes soll (an Stelle der Tabelle A.1) die Tabelle 102 herangezogen 
+werden. 
+Bei Freileitungen sind alle möglichen Bewegungen der Leiterseile in Betracht zu ziehen sowie jede Bewegung 
+oder Verlagerung, jedes Ausschwingen, Wegschnellen oder Herunterfallen von Gegenständen, die bei der 
+Arbeit benutzt werden. 
+Wegen der großen Vielfalt und Unterschiede bei solchen Arbeiten werden in dieser Norm keine Empfehlungen 
+für diesen Abstand gegeben. 
+6.4.4.102 
+Bei Straßentransporten (Sondertransporten) müssen zu unter Spannung stehenden Teilen von 
+kreuzenden Leitungen die Abstände gemäß Tabelle 102 eingehalten werden. Unter Aufsicht von 
+Elektrofachkräften oder zumindest elektrotechnisch unterwiesenen Personen des Leitungsbetreibers darf 
+eine Annäherung bis auf die Werte gemäß Tabelle 101 erfolgen. 
+7 
+Instandhaltung 
+7.1 
+Allgemeines 
+7.1.1 
+Instandhaltung dient dazu, die elektrische Anlage im geforderten Zustand zu erhalten. Instandhaltung 
+besteht aus vorbeugender Instandhaltung (Wartung), die regelmäßig durchgeführt wird, um Ausfälle zu verhüten 
+und die Betriebsmittel in ordnungsgemäßem Zustand zu erhalten, und Instandsetzung, z. B. Reparatur, 
+Austausch eines fehlerhaften Teils. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+34 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 35/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 31 - 
+7.1.2 
+Bei der Instandhaltung sind zu unterscheiden: 
+– 
+Arbeiten, bei denen die Gefahr des elektrischen Schlages, von Kurzschluss oder Lichtbogenbildung besteht, 
+weshalb eine geeignete Arbeitsmethode (siehe Abschnitt 6) angewendet werden muss; 
+– 
+Arbeiten, bei denen die Beschaffenheit der Betriebsmittel die sichere Ausführung bestimmter Tätigkeiten 
+ermöglicht (z. B. Auswechseln von Sicherungseinsätzen oder Lampen), ohne dass dabei die 
+Arbeitsmethoden nach Abschnitt 6 vollständig angewendet werden müssen. 
+7.1.3  
+Wenn erforderlich, müssen die Regeln für Arbeiten im spannungsfreien Zustand (6.2), Arbeiten unter 
+Spannung (6.3) oder Arbeiten in der Nähe unter Spannung stehender Teile (6.4) angewendet werden. 
+7.2 
+Personal 
+7.2.1 
+Alle durchzuführenden Instandhaltungsarbeiten müssen vom Anlagenverantwortlichen genehmigt 
+werden. 
+7.2.2 
+Wenn Instandhaltungsarbeiten an elektrischen Anlagen ausgeführt werden, muss 
+– 
+der betreffende Anlagenteil genau angegeben werden; 
+– 
+die für die Instandhaltung verantwortliche Person dafür einen Arbeitsauftrag haben. 
+7.2.3 
+Instandhaltungspersonal muss ausreichend unterwiesen oder fachlich ausgebildet sein, d. h. fachlich in 
+der Lage sein, die Aufgabe auszuführen. Es muss geeignete Werkzeuge, Mess- und Prüfeinrichtungen und 
+persönliche Schutzausrüstung benutzen, die sich in ordnungsgemäßem Zustand befinden müssen. 
+7.2.4 
+Gefahren 
+für 
+andere 
+Personen, 
+Nutztiere 
+und 
+Sachwerte 
+müssen 
+durch 
+geeignete 
+Sicherheitsmaßnahmen und Vorkehrungen verhindert werden. 
+7.3 
+Instandsetzung 
+Instandsetzung besteht im Wesentlichen aus folgenden Schritten: 
+– 
+Fehlerortung; 
+– 
+Fehlerbehebung und/oder Austausch von Teilen; 
+– 
+Wiederinbetriebnahme des instandgesetzten Anlagenteils. 
+Für die einzelnen Arbeitsschritte kann die Anwendung unterschiedlicher Arbeitsmethoden erforderlich sein. 
+7.3.1 
+Für die Ortung und Bestimmung von Fehlern unter Betriebsspannung oder Prüfspannung müssen 
+besondere Festlegungen in Übereinstimmung mit Abschnitt 5 oder auf der Grundlage von Abschnitt 6 getroffen 
+werden. 
+7.3.2 
+Bei der Fehlerbehebung sind die Festlegungen für die Arbeitsmethoden zu beachten (siehe 
+Abschnitt 6). 
+7.3.3 
+Der ordnungsgemäße Zustand instandgesetzter Anlagenteile ist vor der Wiederinbetriebnahme durch 
+zweckentsprechende Funktions- und Nachweisprüfungen und die notwendigen Einstellungen sicherzustellen. 
+7.4 
+Auswechseln von Sicherungseinsätzen, Lampen und Zubehör 
+7.4.1 
+Sicherungseinsätze 
+Grundsätzlich sind Sicherungseinsätze im spannungsfreien Zustand auszuwechseln, wenn kein anderes 
+sicheres Verfahren zum Austausch unter Spannung verfolgt wird. 
+Wenn in Niederspannungsanlagen der Sicherungseinsatz so eingebaut ist, dass Personen gegen direktes 
+Berühren und vor den Auswirkungen eines möglichen Kurzschlusses geschützt sind, darf das Auswechseln von 
+Laien durchgeführt werden, ohne die Spannungsfreiheit festzustellen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+35 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 36/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 32 - 
+In Hochspannungsanlagen muss das Auswechseln von einer Elektrofachkraft oder elektrotechnisch 
+unterwiesenen Person unter Anwendung einer geeigneten Arbeitsmethode (siehe Abschnitt 6) durchgeführt 
+werden. 
+7.4.1.101 
+Das Ersetzen von NH-Sicherungen unter Spannung darf nicht von Laien durchgeführt werden, 
+ausgenommen solche in Sicherungslasttrennschaltern bis 125 A. Schraubsicherungen dürfen unter 
+Spannung von Laien nur bis 63 A ersetzt weden 
+7.4.2 
+Lampen und Zubehör 
+Sofern erforderlich, muss das Auswechseln von Lampen und herausnehmbarem Zubehör, wie z. B. Startern, im 
+spannungsfreien Zustand durchgeführt werden. 
+Wenn in Niederspannungsanlagen vollständiger Schutz gegen direktes Berühren besteht, dürfen diese Arbeiten 
+durch Laien unter Spannung ausgeführt werden. 
+In allen anderen Fällen, insbesondere in Hochspannungsanlagen, muss das Auswechseln nach den 
+Festlegungen 
+für 
+Instandsetzungsarbeiten 
+durchgeführt 
+werden 
+(7.3). 
+Beim 
+Auswechseln 
+von 
+nichtherausnehmbaren Zubehörteilen ist eine geeignete Arbeitsmethode nach Abschnitt 6 anzuwenden. 
+Es muss darauf geachtet werden, dass die verwendeten Ersatzteile für den Einsatz in dem instand zu setzenden 
+Betriebsmittel geeignet sind. 
+7.5 
+Vorübergehende Unterbrechung der Arbeit 
+Im Falle vorübergehender Unterbrechung von Instandhaltungsarbeiten muss der Arbeitsverantwortliche alle 
+erforderlichen Maßnahmen treffen, um Zugang zu unter Spannung stehenden Teilen und unbefugtes Bedienen 
+der elektrischen Anlage zu verhindern. 
+Erforderlichenfalls ist der Anlagenverantwortliche über eine derartige Unterbrechung zu informieren. 
+7.6 
+Abschluss von Instandhaltungsarbeiten 
+Nach Beendigung der Instandhaltungsarbeiten ist die Anlage vom Arbeitsverantwortlichen an den 
+Anlagenverantwortlichen zu übergeben. Der Zustand der Anlage bei Übergabe ist dem Anlagenverantwortlichen 
+zu melden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+36 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 37/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 33 - 
+Unter Spannung stehendes Teil
+Gefahrenzone
+Annäherungszone
+D
+D
+L
+V
+D   : Abstand, der die äußere Begrenzung der Gefahrenzone festlegt
+D   : Abstand, der die äußere Begrenzung der Annäherungszone festlegt
+L
+V
+ 
+Bild 1 – Abstände in Luft und Zonen für Arbeiten 
+ 
+Unter Spannung stehendes Teil
+Gefahrenzone
+Annäherungszone
+D
+D
+L
+V
+D   : Abstand, der die äußere Begrenzung der Gefahrenzone festlegt
+D   : Abstand, der die äußere Begrenzung der Annäherungszone festlegt
+L
+V
+Äußere Oberfläche der isolierenden
+Schutzvorrichtung
+ 
+Bild 2 – Begrenzung der Gefahrenzone durch isolierende Schutzvorrichtung 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+37 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 38/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 34 - 
+Anhang A 
+(informativ) 
+ 
+Richtwerte für Abstände in Luft bei Arbeiten 
+Dieser Anhang soll denjenigen Norm-Anwendern, für die keine nationalen Festlegungen existieren, 
+Empfehlungswerte für Mindestabstände bei Arbeiten unter Spannung sowie bei Arbeiten in der Nähe unter 
+Spannung stehender elektrischer Anlagen zur Verfügung stellen, verbunden mit einer Anleitung zur Benutzung 
+der Tabelle A.1. 
+A.1 
+Arbeiten unter Spannung 
+Die Gefahrenzone umschließt unter Spannung stehende Teile. Die äußere Grenze dieser Zone wird vom aktiven 
+Teil aus gemessen. Der Abstand DL gilt für die äußere Grenze der Zone. Arbeiten unter Spannung ist jede 
+Tätigkeit, bei der der Arbeitende unter Spannung stehende Teile berührt oder mit Körperteilen oder Werkzeugen 
+(siehe B.1.2), Ausrüstungen und Geräten in die Gefahrenzone eindringt. 
+A.2 
+Arbeiten in der Nähe unter Spannung stehender Teile 
+Die Annäherungszone umschließt die Gefahrenzone. Die äußere Grenze dieser Zone wird vom aktiven Teil aus 
+gemessen. Der Abstand DV gilt für die äußere Grenze der Zone. Der Abstand von der Grenze der Gefahrenzone 
+zur äußeren Grenze der Annäherungszone ist abhängig von der Spannung des aktiven Teils. Arbeiten in der 
+Nähe unter Spannung stehender Teile umfasst alle Tätigkeiten, bei denen der Arbeitende mit Körperteilen oder 
+Werkzeugen, Ausrüstungen und Geräten in die Annäherungszone eindringt, die Gefahrenzone jedoch nicht 
+erreicht. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+38 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 39/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 35 - 
+Tabelle A.1 — Richtwerte für Abstände DL und DV 
+Netz-Nennspannung 
+ 
+ 
+ 
+UN (Effektivwert) kV 
+Annehmbarer Mindestabstand in 
+Luft, der die äußere Grenze der 
+Gefahrenzone bestimmt 
+ 
+DL 
+mm 
+Annehmbarer Mindestabstand in 
+Luft, der die äußere Grenze der 
+Annäherungszone bestimmt 
+ 
+DV 
+mm 
+< 1 
+keine Berührung 
+300 
+3 
+60 
+1 120 
+6 
+90 
+1 120 
+10 
+120 
+1 150 
+15 
+160 
+1 160 
+20 
+220 
+1 220 
+30 
+320 
+1 320 
+36 
+380 
+1 380 
+45 
+480 
+1 480 
+60 
+630 
+1 630 
+70 
+750 
+1 750 
+110 
+1 000 
+2 000 
+132 
+1 100 
+3 000 
+150 
+1 200 
+3 000 
+220 
+1 600 
+3 000 
+275 
+1 900 
+4 000 
+380 
+2 500 
+4 000 
+480 
+3 200 
+6 100 
+700 
+5 300 
+8 400 
+Die DL- und DV-Werte sind als eine Gruppe von administrativen Mindestwerten ausgelegt und beziehen sich 
+auf die in den Ländern Europas existierenden Werte. 
+Bis 70 kV: Für DL gibt es eine Vielzahl von Werten, da bei der Berechnung des elektrischen Bauteils 
+ergonomische Erwägungen vorherrschen. 
+Daher wird der niedrigste der europäischen Werte verwendet. 
+Über 70 kV: Die elektrische Komponente herrscht vor.  
+Dementsprechend werden die Minimal-Werte für DL in dieser Tabelle bestätigt durch Berechnungsverfahren 
+von IEC 61472. 
+ANMERKUNG 1   Zwischenwerte für DL und DV können durch lineare Interpolation bestimmt werden. 
+ANMERKUNG 2   Die Werte der Tabelle A.1 sollen eine Richtschnur darstellen für die zukünftige Harmonisierung 
+zwischen den Mitgliedsstaaten. Dennoch können niedrigere Werte vorübergehend akzeptiert werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+39 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 40/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 36 - 
+Anhang B 
+(informativ) 
+ 
+Zusätzliche Informationen zum sicheren Arbeiten 
+B.1 
+Anwendungsbeispiel bei Arbeiten unter Spannung 
+B.1.1 Überprüfung der Genehmigung für Arbeiten unter Spannung 
+Wenn die Genehmigung für Arbeiten unter Spannung durch Vorschrift oder Praxis gefordert wird, sollte ihre 
+Gültigkeit in den folgenden Fällen überprüft werden: 
+– 
+Versetzung von Personal oder Wechsel der Führungsstruktur; 
+– 
+Aufgabenwechsel; 
+– 
+langanhaltende Unterbrechung der Tätigkeiten; 
+– 
+ärztliche Einschränkungen; 
+– 
+gemeldete Nichteinhaltung von Arbeitsanweisungen oder Nichteignung; 
+– 
+bei wesentlichen Änderungen an den Anlagen (Änderungen an Betriebsmitteln oder am Aufbau); 
+– 
+bei Änderungen der Arbeits- oder Instandhaltungsverfahren. 
+Es wird empfohlen, die Genehmigung zum Arbeiten unter Spannung mindestens einmal im Jahr zu überprüfen. 
+B.1.2 Berechnung des festgelegten Arbeitsabstandes 
+Eine Grundlage für diese Berechnung ist enthalten in EN 61472. 
+B.2 
+Umgebungsbedingungen 
+Die folgenden Witterungsbedingungen sind bei der Beurteilung der Umgebungsbedingungen zu berücksichtigen: 
+B.2.1 
+Niederschlag 
+Niederschlag umfasst Regen, Schnee, Hagel, Nieselregen, Sprühregen oder Raureif. 
+Niederschlag wird als unbedeutend bezeichnet, wenn er die Sicht der Arbeitenden nicht behindert. Wird die 
+Sicht behindert, wird er als bedeutend bezeichnet. Je nach Spannungspegel, Anlagenart und angewendeter 
+Arbeitsmethode sollte die Arbeit eingestellt werden, wenn der Niederschlag bedeutend ist. 
+B.2.2 
+Dichter Nebel 
+Nebel wird als dicht angesehen, wenn die Sicht so weit beeinträchtigt ist, dass die Sicherheit gefährdet ist, 
+besonders dann, wenn der Arbeitsverantwortliche die Arbeitenden und die unter Spannung stehenden Teile, an 
+denen oder in deren Nähe sie arbeiten sollten, nicht mehr sehen kann. In diesem Fall sollte die Arbeit eingestellt 
+werden. 
+B.2.3 
+Gewitter 
+Gewitter bestehen aus Blitz und Donner. Wenn einer der Arbeitenden Blitz und Donner wahrnimmt, sollte die 
+Arbeit eingestellt werden, wenn an blanken Leitern, Freileitungen oder daran angeschlossenen Schaltanlagen 
+gearbeitet wird. 
+B.2.4 
+Heftiger Wind 
+Wind wird als heftig angesehen, wenn er verhindert, dass der Arbeitende seine Werkzeuge und Geräte mit 
+ausreichender Genauigkeit handhaben kann; in diesem Fall sollte die Arbeit eingestellt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+40 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 41/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 37 - 
+B.2.5 
+Salzsturm 
+Dies sind starke Winde, die salzhaltige feuchte Luft von der See zum Land tragen. 
+Der Isolationspegel wird stark verringert, oder es kommt zu Überschlägen, wenn später Nebel oder Nieselregen 
+auftritt oder die Luftfeuchte stark ansteigt. 
+Bei Salzsturm sollte die Arbeit eingestellt werden. 
+B.2.6 
+Extrem tiefe Temperatur 
+Temperaturen werden als extrem tief angesehen, wenn durch die Kälte der Gebrauch von Werkzeugen 
+erschwert und die Belastbarkeit von Materialien verringert ist; in diesem Fall sollte die Arbeit eingestellt werden. 
+B.3 
+Brandschutz - Brandbekämpfung 
+Beim Betrieb von elektrischen Anlagen ist die Möglichkeit eines Brandes nicht auszuschließen. 
+Bei Ausbruch eines Brandes sollten gefahrbringende oder gefährdende Teile der elektrischen Anlage 
+ausgeschaltet werden, soweit sie nicht für die Brandbekämpfung unter Spannung gehalten werden müssen oder 
+die Ausschaltung andere Gefahren verursacht. 
+Zum Löschen von Bränden in elektrischen Anlagen sollten der Brandklasse entsprechende Feuerlöscher oder 
+Feuerlöscheinrichtungen an geeigneter Stelle bereitgehalten werden, die der Art und Größe der Anlage 
+angepasst sind. 
+Für die Brandbekämpfung sind geeignete Arbeitskräfte in der Bedienung der Löschgeräte zu unterweisen, 
+insbesondere bei der Anwendung an unter Spannung stehenden Betriebsmitteln. Diese Unterweisung sollte in 
+angemessenen Abständen wiederholt werden. 
+Bei der Anwendung von Feuerlöschern und Feuerlöschsystemen in elektrischen Anlagen sollte der erforderliche 
+Sicherheitsabstand eingehalten werden. 
+Personen sollten damit rechnen, dass von heißen und brennenden Materialien giftige Substanzen freigesetzt 
+werden können. 
+Leicht entzündliche Stoffe und Gegenstände sollten so angeordnet oder gelagert werden, dass sie sich nicht 
+entzünden können. 
+B.2.101 
+Nähere Festlegungen zu dieser Thematik können der ÖVE/ÖNORM E 8350 „Bekämpfung von Bränden in 
+elektrischen Anlagen und in deren Nähe“ entnommen werden. 
+ 
+B.4 
+Explosionsgefährdete Arbeitsbereiche 
+Wenn elektrotechnische Arbeiten in explosionsgefährdeten Bereichen auszuführen sind, sollten folgende 
+Empfehlungen befolgt werden: 
+a) Entweder sind alle Arbeiten zu verbieten oder einzustellen, bis geeignete Maßnahmen durchgeführt sind, um 
+die Explosionsgefahr zu beseitigen, z. B. Verhindern des Austretens brennbarer Gase, Lüftung; 
+b) oder es sind geeignete, auf die Art der Explosionsgefahr abgestimmte Maßnahmen zu ergreifen, das Risiko 
+zu beherrschen, wie z. B.: 
+1) ständige Überwachung der umgebenden Luft und Verbot jeder Energiequelle, die das explosive 
+Gemisch zünden könnte; 
+2) ständige Lüftung und Überwachung der umgebenden Luft; 
+3) Begrenzung der Arbeiten auf den bestimmungsgemäßen Umgang mit eigensicheren elektrischen 
+Geräten und Anlagenteilen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+41 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 42/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+- 38 - 
+Literaturhinweise 
+EN ISO 12100-1:2003, Sicherheit von Maschinen – Grundbegriffe, allgemeine Gestaltungsleitsätze –  
+Teil 1: Grundsätzliche Terminologie, Methodologie (ISO 12100-1:2003) 
+EN 50191:2000, Errichten und Betreiben elektrischer Prüfanlagen 
+EN 50340:2001, Hydraulische Kabelschneidgeräte – Geräte zur Verwendung an elektrischen Anlagen mit 
+Nennwechselspannung bis 30 kV 
+EN 60071-1:1995, Isolationskoordination – Teil 1: Begriffe, Grundsätze und Anforderungen (IEC 60071-1:1993) 
+EN 60071-2:1997, Isolationskoordination – Teil 2: Anwendungsrichtlinie (IEC 60071-2:1996) 
+EN 60743:2001, Arbeiten unter Spannung – Terminologie für Werkzeuge, Ausrüstungen und Geräte 
+(IEC 60743:2001) 
+EN 60832:1996, Isolierende Arbeitsstangen und zugehörige Arbeitsköpfe zum Arbeiten unter Spannung 
+(IEC 60832:1988 + Corrigendum May 2000, mod.) 
+EN 60855:1996, Isolierende schaumgefüllte Rohre und massive Stäbe zum Arbeiten an unter Spannung 
+stehenden Teilen (IEC 60855:1985 + Corrigendum Jul. 1999, mod.) 
+EN 60895:2003, Schirmende Schutzbekleidung zum Arbeiten an unter Spannung stehenden Teilen für eine 
+Nennspannung bis a.c. 800 kV (IEC 60895:2002 + Corrigendum Feb. 2003, mod.) 
+EN 60900:2004, Arbeiten unter Spannung - Handwerkzeuge zum Gebrauch bis AC 1 000 V und DC 1 500 V 
+(IEC 60900:2004) 
+EN 60903:2003, Norm für Handschuhe aus isolierendem Material zum Arbeiten an unter Spannung stehenden 
+Teilen (IEC 60903:2002 + Corrigendum Feb. 2003, mod.) 
+EN 60984:1992 + A11:1997 + A1:2002, Isolierende Ärmel zum Arbeiten unter Spannung (IEC 60984:1990 
++ Corrigenda Jul. 1999 and May 2000 + A1:2002, mod.) 
+EN 61057:1993, Hubarbeitsbühnen mit isolierender Hubeinrichtung zum Arbeiten unter Spannung über AC 1 kV 
+(IEC 61057:1991 + Corrigendum Jul. 1999, mod.) 
+EN 61219:1993, Arbeiten unter Spannung – Erdungs- oder Erdungs- und Kurzschließvorrichtung mit Stäben als 
+kurzschließendes Gerät - Staberdung (IEC 61219:1993 + Corrigendum May 2000) 
+EN 61229:1995 + A1:1998 + A2:2002, Starre Schutzabdeckungen zum Arbeiten unter Spannung in Wechsel-
+spannungsanlagen (IEC 61229:1993 + A1:1998 + Corrigendum May 2000 + A2:2002, mod.) 
+EN 61230:1995 + A11:1999, Arbeiten unter Spannung - Ortsveränderliche Geräte zum Erden oder Erden und 
+Kurzschließen (IEC 61230:1993 + Corrigenda Jul. 1999, May 2000 and Dec. 2000, mod.) 
+EN 61235:1995, Arbeiten unter Spannung - Isolierte hohle Rohre für elektrotechnische Zwecke (IEC 61235:1993 
++ Corrigenda Jul. 1999 and May 2000, mod.) 
+EN 61236:1995, Mastsättel, Stangenschellen und Zubehör zum Arbeiten unter Spannung (IEC 61236:1993 + 
+Corrigenda Jul. 1999 and May 2000, mod.) 
+EN 61243-1:1997 + Corr. Jun 1999 + A1:1997, Arbeiten unter Spannung – Spannungsprüfer - Teil 1: Kapazitive 
+Ausführung für Wechselspannungen über 1 kV und bis 52 kV (IEC 61243-1:1993 + Corrigenda Jul. 1999 and 
+May 2000 + A1:1997, mod.) 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+42 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 43/44 =====
+EN 50110-1:2004 + EN 50110-2-100:2007 (eingearbeitet) 
+ 
+- 39 - 
+EN 61243-2:1997 + A1:2000 + A2:2002, Arbeiten unter Spannung – Spannungsprüfer – Teil 2: Resistive 
+(ohmsche) Ausführungen für Wechselspannungen von 1 kV bis 36 kV (IEC 61243-2:1995 + Corrigenda Jun. 
+1996, Jul. 1999 and Mar. 2000 + A1:1999 + A2:2002, mod.) 
+EN 61243-3:1998, Arbeiten unter Spannung – Spannungsprüfer – Teil 3: Zweipoliger Spannungsprüfer für 
+Niederspannungsnetze (IEC 61243-3:1998 + Corrigenda May 2000 and Dec. 2000) 
+EN 61477:2002 + A1:2002, Arbeiten unter Spannung – Mindestanforderungen für die Nutzung von Werkzeugen, 
+Ausrüstungen und Geräten (IEC 61477:2001 + A1:2002) 
+ENV 50354:2001, Störlichtbogenprüfverfahren für Materialien und Kleidungsstücke für Anwender, die einer 
+Störlichtbogengefährdung ausgesetzt sind 
+ENV 61111:2001, Matten aus isolierendem Material für elektrische Anwendungen (IEC 61111:1992 
++ Corrigendum May 2000, mod.) 
+ENV 61112:2001, Abdecktücher aus isolierendem Material zum Arbeiten unter Spannung (IEC 61112:1992 
++ Corrigendum May 2000, mod.) 
+Guidelines on Basic Life Support Skills ist auf www.erc.edu zu finden, The European Resuscitation council 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+43 von 44
+www.ris.bka.gv.at
+
+
+===== PAGE 44/44 =====
+ 
+ 
+ 
+Wichtige Informationen für Normen-Anwender 
+ÖVE/ÖNORMEN sind Regeln, die im Dialog und Konsens aller 
+Betroffenen und Interessierten entwickelt werden. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und 
+Qualifikationen fest und definieren, wie die Einhaltung dieser Anforderungen überprüft 
+wird. 
+Von ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig 
+(ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den 
+aktuellen Stand der Technik dokumentieren, das was in einem bestimmten Fachgebiet 
+„Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Experten 
+und Expertinnen in den zuständigen Komitees auf nationaler, europäischer und 
+internationaler Ebene - sowie die Kompetenz des Österreichischen Verbandes für 
+Elektrotechnik und seiner Referenten. 
+ 
+Aktualität des Normenwerks. Analog zur technischen und 
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen 
+Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Aktualität 
+überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. 
+Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten 
+Ausgaben der Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine 
+Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen 
+entsprechen. 
+ 
+Wissen um Veränderungen. Das Österreichische Normungsinstitut 
+bietet gemeinsam mit dem Österreichischen Verband für Elektrotechnik 
+Normanwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote, die 
+dafür sorgen, dass Normanwender zuverlässig über die neusten Versionen von 
+Normen verfügen und über Änderungen – Neuausgaben und/oder Zurückziehungen – 
+informiert werden. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen. 
+Informationen über Angebote und Dienstleistungen des ON und des OVE bei 
+ 
+ON Sales & Service 
+OVE Normung 
+ON Österreichisches Normungsinstitut 
+OVE Österreichischer Verband 
+Austrian Standards Institute 
+für Elektrotechnik 
+Heinestraße 38, 1020 Wien 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: sales@on-norm.at 
+E-Mail: ove@ove.at 
+Internet: www.on-norm.at/shop 
+Internet: www.ove.at 
+Fax: +43 1 213 00-818 
+Fax: +43 1 586 74 08 
+Tel.: +43 1 213 00-805 
+Tel.: +43 1 587 63 73 
+ 
+ 
+ 
+ 
+ISO 9001:2000 
+zertifiziert│certified by SQS 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+44 von 44
+www.ris.bka.gv.at

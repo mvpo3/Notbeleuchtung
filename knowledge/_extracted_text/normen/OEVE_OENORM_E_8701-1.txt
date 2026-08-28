@@ -1,0 +1,1798 @@
+
+
+===== PAGE 1/26 =====
+ÖVE/ÖNORM
+ 
+E 8701-1
+Ausgabe: 2003-01-01
+ 
+Auch Normengruppe 330 
+ 
+Ungleich (NEQ)  DIN VDE 0701:2000 
+Ungleich (NEQ)  DIN VDE 0702:1996
+ 
+ 
+ 
+Ersatz für siehe nationales Vorwort 
+ 
+ICS  29.020 
+Prüfung nach Instandsetzung und Änderung und 
+Wiederkehrende Prüfung elektrischer Geräte 
+Teil 1: Allgemeine Anforderungen 
+ 
+Inspection after repair and modification and repeat tests of electrical appliances –  
+Part 1: General requirements 
+ 
+Examen après réparation et modification et essais de répétition sur les appareils  
+électriques – Partie 1: Règles générales 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als  
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8701-1 Seiten 2 bis 26 
+ 
+Fach(normen)ausschuss
+FA/FNA G
+Geräte
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON – 2003. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 12
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+1 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 2/26 =====
+Seite 2 
+ÖVE/ÖNORM E 8701-1 
+Inhaltsverzeichnis 
+Vorbemerkung ....................................................................................................................................................... 3 
+1 
+Anwendungsbereich .................................................................................................................................. 5 
+2 
+Normative Verweisungen........................................................................................................................... 5 
+3 
+Begriffe........................................................................................................................................................ 6 
+4 
+Anforderungen............................................................................................................................................ 7 
+5 
+Prüfungen ................................................................................................................................................... 8 
+5.1 
+Allgemeines.................................................................................................................................................. 8 
+5.2 
+Sichtprüfung ................................................................................................................................................. 8 
+5.3 
+Prüfung des Schutzleiters............................................................................................................................. 9 
+5.4 
+Messung des Isolationswiderstandes ......................................................................................................... 11 
+5.5 
+Messung des Schutzleiterstromes.............................................................................................................. 13 
+5.6 
+Messung des Berührungsstromes .............................................................................................................. 15 
+5.7 
+Messung des Ersatzableitstromes.............................................................................................................. 17 
+5.8 
+Funktionsprüfung........................................................................................................................................ 19 
+5.9 
+Prüfung der Aufschriften............................................................................................................................. 19 
+6 
+Dokumentation ......................................................................................................................................... 19 
+7 
+Messeinrichtungen................................................................................................................................... 19 
+7.1 
+Allgemeines................................................................................................................................................ 19 
+7.2 
+Anforderungen............................................................................................................................................ 20 
+7.3 
+Messeinrichtung zur Messung des Schutzleiterstromes gemäß 5.5........................................................... 20 
+7.4 
+Messeinrichtung zur Messung des Berührungsstromes gemäß 5.6 ........................................................... 20 
+7.5 
+Messeinrichtung zur Messung des Ersatzableitstromes gemäß 5.7........................................................... 20 
+Anhang A (informativ): Prüfablaufschema ........................................................................................................ 21 
+Anhang B (informativ): Erläuterungen............................................................................................................... 23 
+Anhang C (informativ): Literaturhinweise ......................................................................................................... 26 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+2 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 3/26 =====
+Seite 3 
+ÖVE/ÖNORM E 8701-1 
+Vorbemerkung 
+Diese 
+ÖVE/ÖNORM 
+hat 
+sowohl 
+den 
+Status 
+von 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971.  
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den je-
+weils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum 
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle 
+Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterung zum Ersatzvermerk 
+Diese ÖVE/ÖNORM ersetzt ÖVE-HG 701, Teil 1:1985. Da jedoch ÖVE-HG 701 Teil 1:1985 durch die ETV 2002 
+verbindlich erklärt ist, kann die Zurückziehung von ÖVE-HG 701, Teil 1:1985 erst mit Neuerscheinung einer ETV erfolgen. 
+Erläuterungen allgemein 
+Während ihrer gesamten Lebensdauer müssen elektrische Geräte so beschaffen sein, dass Sie einen ausreichenden 
+Schutz gegen die von ihnen ausgehenden Gefahren, insbesondere jene der Elektrizität, aufweisen. Ob die 
+Mindestanforderungen an erwartbarer Sicherheit für schon in Verwendung stehenden Geräten gegeben ist, wird durch 
+Prüfungen festgestellt.  
+Die Publikation einer einheitlichen Europäischen Norm für die im Anwendungsbereich genannten Geräteprüfungen ist 
+nicht zustande gekommen. Es hat sich jedoch in den letzten Jahren bei der Anwendung der bisher geltenden 
+Österreichischen Bestimmung für die Elektrotechnik ÖVE-HG 701, Teil 1:1985 sowie der Teile 2 gezeigt, dass für immer 
+mehr elektrische Geräte neuer Bauart die bisherigen Prüfmethoden nicht mehr ausreichen, um eine vollständige 
+Beurteilung durchführen zu können.  
+Es sind daher Prüfverfahren für Geräte, deren Isolationsvermögen bisher nicht vollständig bewertet werden konnte, 
+ergänzt worden. Ebenso wurden die Mindestwerte für den Isolationswiderstand und die höchstzulässigen Grenzwerte für 
+den Ersatzableitstrom bei Schutzklasse-I-Geräten neu festgelegt. Dadurch wird auch dem inzwischen erweiterten und 
+angehobenen Sicherheitsniveau der Bestimmungen für neue Geräte Rechnungen getragen. 
+Um daher die bisherigen Bestimmungen an den neueren technischen Stand anzupassen, orientiert sich diese 
+ÖVE/ÖNORM 
+vor 
+allem 
+in 
+Systematik 
+und 
+Messverfahren 
+an 
+DIN 
+VDE 
+0701-1:2000-09 
+und 
+an 
+ 
+DIN VDE 0702-1:1995-11. 
+Das entspricht auch dem Bedürfnis der österreichischen Anwender, vor allem um auf gleichartige Messgeräte 
+zurückgreifen zu können. 
+Ziel dieser ÖVE/ÖNORM ist daher: 
+(1) 
+Festlegung des erforderlichen Mindestprüfumfanges, der an in Stand gesetzten oder geänderten Geräten 
+durchzuführen ist. 
+(2) 
+Klarstellung, welche Sicherheitsgrenzwerte für diese Prüfungen anzuwenden sind.  
+(3) 
+Hinsichtlich des Prüfumfanges und der Sicherheitsgrenzwerte für die Wiederkehrende Prüfung gebrauchter, in 
+Verwendung stehender elektrischer Geräte, eine nachvollziehbare, dokumentierbare Regelung zu schaffen. 
+(4) 
+Die bisher verwendeten Messmittel und -geräte sollen auch weiterhin großteils angewendet werden können. 
+(5) 
+Durch die Ergänzung weiterer Messmethoden soll es möglich sein, in (fast) allen in der Praxis vorkommenden 
+Situationen, 
+durch 
+Anwendung 
+einer 
+geeigneten 
+Messmethode 
+zumindest 
+eine 
+Kontrolle 
+des 
+Isolationszustandes vorzunehmen.  
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+3 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 4/26 =====
+Seite 4 
+ÖVE/ÖNORM E 8701-1 
+Gegenüber der bisherigen ÖVE-HG 701, Teil 1:1985 wurde der Anwendungsbereich dem deutschen Normenwerk 
+angeglichen und hat sich daher um einige Geräte- und Betriebsmittelarten erweitert. Jedoch mit dem Ziel, geräteart-
+abhängige Besonderheiten – soweit möglich – bereits in den "Allgemeinen Anforderungen" des Teiles 1 zu erfassen, um 
+die Anzahl zusätzlicher Festlegungen in den "Besonderen Anforderungen" zu reduzieren. 
+Durch diese ÖVE/ÖNORM werden keine strengeren Sicherheitsanforderungen vorgegeben, als in den, auf das einzelne 
+Gerät anzuwendenden betriebsmittelspezifischen Normen für die Typ- und/oder Stückprüfung neuer Geräte festgelegt 
+ist. Es ist auch berücksichtigt, dass die zu prüfenden Geräte schon längere Zeit unter unterschiedlichen Bedingungen in 
+Betrieb gestanden sind und es durch die Prüfmethoden selbst zu keinen sicherheitsmindernden Beeinträchtigungen 
+kommen soll, wie sie unter den besonderen Bedingungen bei Typenprüfungen auftreten können.  
+Andererseits sollen durch das Prüfen nach der Instandsetzung oder Änderung, möglicherweise aufgetretene, die 
+Sicherheit beeinträchtigende Fehler erkannt werden. Ebenso liegt in einer regelmäßigen Gerätekontrolle der Vorteil, 
+gefährliche Verschlechterungen des Gerätezustandes rechtzeitig zu erkennen. 
+Die Verpflichtung zur Anwendung dieser ÖVE/ÖNORM ist von ihrem Rechtsstatus abhängig. Insbesondere ist 
+diesbezüglich auf die Elektrotechnikverordnung in der jeweils geltenden Fassung zu verweisen. 
+Das Erfordernis sowie Fristen für Wiederkehrende Prüfungen werden durch diese ÖVE/ÖNORM selbst nicht geregelt. 
+Hier ist ua auf die Regelungen des ArbeitnehmerInnenschutzgesetz – ASchG 1994 idgF und dessen Durchführungs-
+verordnungen, insbesondere auf die Elektroschutzverordnung – ESV 1995, zu verweisen. 
+ 
+Da diese ÖVE/ÖNORM  
+– auch Anforderungen für Wiederkehrende Prüfungen enthält,  
+– auch für die Prüfung fest angeschlossener Geräte (im Gegensatz zu DIN VDE 0702:1995) anwendbar ist, 
+– von einem gesamtheitlicheren Schutzzielkonzept für die von Geräten ausgehenden Gefahren im Sinne des 
+gerätespezifischen Normenwerks ausgeht und 
+– die besonderen österreichischen Gegebenheiten berücksichtigt,  
+sind die ähnlichen deutschen DIN-VDE-Normen der Reihe VDE 0701 und VDE 0702 inhaltlich im Detail unterschiedlich. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+4 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 5/26 =====
+Seite 5 
+ÖVE/ÖNORM E 8701-1 
+1 
+Anwendungsbereich 
+1.1 Diese ÖVE/ÖNORM legt die Anforderungen hinsichtlich der elektrischen Sicherheit von elektrischen Geräten und 
+der elektrischer Ausrüstung von nicht-elektrischen Geräten bei Instandsetzung oder Änderung fest.  
+Die in dieser ÖVE/ÖNORM enthaltenen Prüfverfahren und Grenzwerte sind auch zur Feststellung der elektrischen 
+Sicherheit von gebrauchten und/oder in Verwendung stehenden Geräten anzuwenden (Wiederkehrende Prüfungen). 
+In den jeweiligen Gerätebestimmungen enthaltene, ergänzend festgelegte Sicherheitsziele, wie Anforderungen zur 
+mechanischen Sicherheit oder zum Brandschutz, sind ebenso zu berücksichtigen. 
+ANMERKUNG 1: 
+Diese ÖVE/ÖNORM bezieht sich auch auf das Instandsetzen und Ändern an nicht-elektrischen Teilen, wenn 
+dadurch die elektrische Sicherheit beeinträchtigt werden kann. 
+ANMERKUNG 2:  
+Die Notwendigkeit sowie die Häufigkeit (Überprüfungsfristen) von Wiederkehrenden Prüfungen sind durch diese 
+ÖVE/ÖNORM nicht festgelegt. Diese können zB durch die Bestimmungen des ArbeitnehmerInnenschutz-
+gesetzes – ASchG 1994 bzw. durch die Elektroschutzverordnung – ESV 1995, aber auch durch den 
+Gerätehersteller selbst festgelegt sein. 
+ANMERKUNG 3: 
+Unter den Begriff "elektrische Ausrüstung von nicht-elektrischen Geräten" fallen zB die Steuerungen von 
+Gasthermen uÄ. 
+1.2 Die in dieser ÖVE/ÖNORM vorgegebenen Anforderungen gelten zB für: 
+– Laborgeräte 
+– Mess-, Steuer- und Regelgeräte 
+– Geräte zur Spannungsumformung und -erzeugung  
+(wie zB Netzgeräte und Kleintransformatoren, Schweißgeräte, Umformer, Maschinen.) 
+– Elektrowerkzeuge 
+– Elektrowärmegeräte 
+– Elektromotorgeräte 
+– Leuchten 
+– Geräte der Unterhaltungs-, Informations- und Kommunikationselektronik 
+– Leitungsroller, Verlängerungs- und Geräteanschlussleitungen. 
+1.3 Besondere Anforderungen für die einzelnen Gerätekategorien sind in weiteren Teilen dieser ÖVE/ÖNORM 
+festgelegt. Sie gelten nur im Zusammenhang mit Teil 1 “Allgemeine Anforderungen“. 
+1.4 Diese ÖVE/ÖNORM gilt nicht für Prüfungen an elektrischen Betriebsmitteln, bei denen spezielle Normen oder 
+Verordnungen beachtet werden müssen (zB Geräte für explosionsgefährdete Bereiche, Geräte für den Bergbau unter 
+Tage, medizinische elektrische Geräte) sowie für Anforderungen, die sich aus den einschlägigen EMV-Bestimmungen 
+ergeben. 
+1.5 Diese ÖVE/ÖNORM gilt nicht für Instandsetzungen gemäß Gebrauchsanweisung, wie das Auswechseln von Teilen 
+(zB Lampen, Startern und Sicherungen), die vom Benutzer vorgenommen werden dürfen. 
+2 
+Normative Verweisungen 
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil dieser 
+ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen dieser Publikationen 
+nicht. Es wird jedoch empfohlen, die Möglichkeit zu prüfen, die jeweils neuesten Ausgaben der nachfolgend 
+angegebenen normativen Dokumente anzuwenden. Bei undatierten Verweisungen ist die letzte Ausgabe des in Bezug 
+genommenen normativen Dokumentes anzuwenden. Rechtsvorschriften sind immer in der jeweils geltenden Fassung 
+anzuwenden. 
+ 
+ÖVE EN 50110-1(EN 50110-2-100 eingearbeitet)  
+Betrieb elektrischer Anlagen – Teil 1 Europäische Norm –  
+Teil 2-100 Nationale Ergänzungen 
+ÖVE/ÖNORM EN 60309 
+Stecker, Steckdosen und Kupplungen für industrielle Anwendungen 
+ÖVE EN 60950 
+Sicherheit von Einrichtungen der Informationstechnik 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+5 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 6/26 =====
+Seite 6 
+ÖVE/ÖNORM E 8701-1 
+ÖVE/ÖNORM EN 60950 
+Sicherheit von Einrichtungen der Informationstechnik 
+ÖVE/ÖNORM EN 61010-1 Sicherheitsbestimmungen für elektrische Meß-, Steuer-, Regel- und Laborgeräte –  
+Teil 1: Allgemeine Anforderungen  
+ÖVE EN 61010-2-031 
+Sicherheitsbestimmungen für elektrische Meß-, Steuer-, Regel- und Laborgeräte –  
+Teil 2-31: Besondere Anforderungen an handgehaltene Meß-, Prüf- und 
+Verbindungsleitungen (Meßzubehör) zum elektrischen Messen, Prüfen und Experimentieren 
+ÖVE EN 61010-2-032 
+Sicherheitsbestimmungen für elektrische Meß-, Steuer-, Regel- und Laborgeräte –  
+Teil 2-32: Besondere Anforderungen an handgehaltene Strom-Meßzangen zum  
+elektrischen Messen und Prüfen  
+ÖVE EN 61557-1 
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1000 V und DC 1500 V –  
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE EN 61557-2 
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1000 V und DC 1500 V –  
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen –  
+Teil 2: Isolationswiderstand  
+ÖVE EN 61557-4 
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1000 V und DC 1500 V –  
+Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen –  
+Teil 4: Widerstand von Erdungsleitern, Schutzleitern und Potentialausgleichsleitern  
+DIN VDE 0404-1 
+Messen, Steuern, Regeln – Geräte zur sicherheitstechnischen Prüfung von elektrischen 
+Betriebsmitteln – Allgemeine Festlegungen. 
+DIN VDE 0404-2 
+Geräte zur sicherheitstechnischen Prüfung von elektrischen Betriebsmitteln – Geräte bei 
+wiederkehrenden Prüfungen 
+BGBl. Nr. 450/1994 
+ArbeitnehmerInnenschutzgesetz 1994 – ASchG 1994 
+BGBl. Nr. 706/1995 
+Elektroschutzverordnung 1995 – ESV 1995 
+3 
+Begriffe 
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten die folgenden Begriffe: 
+3.1 Prüfen 
+Anwendung von Maßnahmen zur Bestimmung der elektrischen Sicherheit von Geräten nach Instandsetzung oder 
+Änderung 
+3.2 Wiederkehrende Prüfung 
+Prüfung in bestimmten Zeitabständen, die dem Nachweis dient, dass die für die sichere Weiterverwendung von 
+elektrischen Geräten und Betriebsmitteln erforderlichen Sicherheitsmerkmale ausreichend sind 
+3.3 Instandsetzung 
+Maßnahmen zur Wiederherstellung des Sollzustandes von technischen Mitteln eines Systems 
+ANMERKUNG:  
+Die Instandsetzung eines Gerätes bedeutet, dass nach Auftreten eines Fehlers ohne hinzufügen neuer Merkmale 
+oder sonstiger Änderungen, dieses wieder gebrauchsfähig gemacht wird. 
+3.4 Änderung 
+Eingriff am Gerät nach Herstellerangaben 
+Dabei sind die entsprechenden Gerätebestimmungen zu berücksichtigen. Andernfalls erfolgt der Eingriff in 
+Eigenverantwortung der Fachkraft. 
+3.5 Fachkraft 
+Person, welche auf Grund der fachlichen Ausbildung, Kenntnisse und Erfahrungen sowie Kenntnis der einschlägigen 
+Bestimmungen die übertragenen Arbeiten beurteilen und elektrotechnische und andere mögliche Gefahren erkennen und 
+vermeiden kann 
+3.6 Schutzleiterstrom 
+Strom, der durch den Schutzleiter von Geräten der Schutzklasse I fließt 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+6 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 7/26 =====
+Seite 7 
+ÖVE/ÖNORM E 8701-1 
+3.7 Berührungsstrom 
+Strom, der bei Geräten der Schutzklasse II mit berührbaren leitfähigen Teilen sowie bei Geräten der Schutzklasse I mit 
+berührbaren leitfähigen Teilen, die nicht mit dem Schutzleiter verbunden sind (zB Zierteile), bei der Handhabung des 
+Gerätes über die bedienende Person zur Erde fließen kann 
+3.8 Differenzstrom 
+vektorielle Summe der Momentanwerte aller Ströme, die am netzseitigen Eingang (Anschluss) des Gerätes durch alle 
+aktiven Leiter fließen 
+3.9 Ersatzableitstrom 
+Strom, der zwischen den zusammengeschlossenen aktiven Leitern des Prüflings (Außenleitern und Neutralleiter) und 
+dem Schutzleiter bzw. den berührbaren leitfähigen Teilen des Prüflings bei Anlegen von Nennspannung und 
+Nennfrequenz fließen würde 
+Er wird durch Anlegen einer netzunabhängigen Prüfwechselspannung gemessen. 
+4 
+Anforderungen 
+4.1  Instandsetzung oder Änderung sowie Prüfungen an elektrischen Geräten müssen von einer Fachkraft oder unter 
+ihrer Verantwortung vorgenommen werden. 
+4.2  Nach dem Instandsetzen bzw. nach der Änderung darf bei bestimmungsgemäßem Gebrauch der Geräte keine 
+Gefahr für den Benutzer oder die Umgebung des Gerätes bestehen. Insbesondere dürfen die ursprünglichen Kriech- und 
+Luftstrecken sowie die Maßnahmen zum Schutz gegen elektrischen Schlag (direktes und bei indirektem Berühren), der 
+Schutz gegen Eindringen von Feuchte und Staub und der Schutz gegen mechanische oder sonstige Gefährdungen nicht 
+sicherheitsmindernd verändert worden sein. 
+Zusätzliche, in den jeweiligen Gerätenormen enthaltene besondere, geräteabhängige Sicherheitsmerkmale, wie 
+Anforderungen zur mechanischen Sicherheit, zum Brandschutz, Schutz vor gefährlichen Strahlen, Hygiene- und 
+Gesundheitsschutz uÄ, sind zu berücksichtigen. 
+4.3  Für die Sicherheit maßgebliche Einzelteile, Bauelemente, Baugruppen und Software müssen entsprechend ihren 
+Bemessungsdaten und sonstigen Sicherheitsmerkmalen geeignet sein. Dies sind zB zulässige Temperatur, geforderte 
+Schutzart, mechanische Bauart und Funktionsablauf der Software für das Gerät. Das Gerät muss nach deren Einbau den 
+für das Gerät geltenden Bestimmungen entsprechen. Sofern von Hersteller oder Importeur verlangt, sind die von diesen 
+angegebenen Ersatzteile entsprechend den Instandhaltungs- bzw. Instandsetzungsanleitungen zu verwenden. 
+4.4  Zur Sicherheit beitragende Teile des Gerätes, die bei der Durchführung der Instandsetzung, Änderung oder Prüfung 
+sichtbar werden, dürfen weder beschädigt noch für das Gerät offensichtlich ungeeignet sein. 
+4.5  Nach Beendigung der Prüfungen muss feststehen, ob eine oder dass keine Gefahr für den Benutzer oder die 
+Umgebung des Gerätes besteht.  
+Wird festgestellt, dass der Prüfling offensichtlich sicherheitsmindernde Beschädigungen, Merkmale von unsach-gemäßen 
+Eingriffen oder Modifikationen, Funktionsbeeinträchtigungen usw. aufweist oder offensichtlich bestimmungswidrig 
+verwendet wird, ist der Prüfvorgang abzubrechen und der Prüfling als fehlerhaft zu kennzeichnen. 
+4.6 Bei Wiederkehrenden Prüfungen sind 4.2 bis 4.5 so anzuwenden, wie dies ohne Zerlegung des Prüflings möglich 
+ist.  
+Gegebenenfalls können in Übereinstimmung mit dem Auftraggeber Korrekturmaßnahmen eingeleitet werden. 
+Korrekturmaßnahmen in diesem Sinne können zB erweiterte Prüfungen, Instandsetzung und Änderung, Anpassung der 
+Verwendungsbedingungen, des Einsatzortes oder auch Maßnahmen zur Außerbetriebnahme sein. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+7 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 8/26 =====
+Seite 8 
+ÖVE/ÖNORM E 8701-1 
+5 
+Prüfungen 
+5.1 Allgemeines 
+Die folgenden Prüfungen sind in der angegebenen Reihenfolge durchzuführen. Jede der Prüfungen muss bestanden 
+sein, bevor mit der nächsten Prüfung begonnen wird: 
+(siehe auch Ablaufschema im Anhang A) 
+(1) 
+für alle Geräte eine Sichtprüfung gemäß 5.2  
+(2) 
+für alle Geräte mit Schutzleiter eine Prüfung des Schutzleiters gemäß 5.3  
+(3) 
+für alle Geräte eine Messung des Isolationswiderstandes gemäß 5.4, sofern dies technisch möglich ist  
+(4) 
+wenn die Isolationswiderstandsmessung technisch möglich ist und mit einem positiven Ergebnis 
+abgeschlossen wurde:  
+– für Geräte der Schutzklasse I eine Messung des Schutzleiterstromes gemäß 5.5 oder eine  
+Ersatzableitstrommessung gemäß 5.7 
+– für Geräte der Schutzklasse II sowie für berührbare leitfähige Teile von Geräten der Schutzklasse I, die nicht 
+an den Schutzleiter angeschlossen sind, eine Messung des Berührungsstromes gemäß 5.6 oder eine 
+Ersatzableitstrommessung gemäß 5.7  
+(5) 
+wenn die Isolationswiderstandsmessung technisch nicht möglich ist:  
+– für Geräte der Schutzklasse I eine Messung des Schutzleiterstromes gemäß 5.5  
+– für Geräte der Schutzklasse II sowie für berührbare leitfähige Teile von Geräten der Schutzklasse I, die nicht 
+an den Schutzleiter angeschlossen sind, eine Messung des Berührungsstromes gemäß 5.6 
+(6) 
+berührbare Stromkreise (bzw. deren Anschlussstellen) sind auf Einhaltung ihrer Berührungsschutz-
+maßnahmen und der dazugehörenden Grenzwerte zu überprüfen (zB Messung der Leerlaufspannung bei 
+Sicherheitskleinspannung). Diese Stromkreise sind wie berührbare leitfähige Teile von Geräten der 
+Schutzklasse I, die nicht mit dem Schutzleiter verbunden sind, zu prüfen. 
+(7) 
+für alle Geräte eine Funktionsprüfung gemäß 5.8  
+(8) 
+für alle Geräte eine Prüfung der Aufschriften gemäß 5.9. 
+Leitungsroller, Verlängerungs-, Geräteanschlussleitungen und Garnituren sind sinngemäß diesen Prüfungen zu 
+unterziehen. 
+Wenn anlässlich einer am Betriebsort des Gerätes durchgeführten Instandsetzung oder Änderung festgestellt wird, dass 
+weder durch den Anlass noch durch den Arbeitsvorgang elektrische oder andere für die Sicherheit maßgebliche Teile 
+betroffen oder beeinflusst wurden, darf die messtechnische Überprüfung eingeschränkt werden. 
+In allen Fällen, bei welchen Einschränkungen des Prüfumfanges und/oder Modifikationen der Prüfverfahren begründbar 
+erforderlich sind, müssen diese in der Prüfdokumentation nachvollziehbar vermerkt werden. Das Schutzziel dieser 
+ÖVE/ÖNORM muss dabei erreicht werden. 
+ANMERKUNG: 
+Bei Prüfungen von festangeschlossenen und/oder eingebauten Geräten am Betriebsort kann es erforderlich sein, 
+dass einzelne Prüfschritte (zB Isolationswiderstandsmessung) übersprungen werden müssen.  
+Die zu den einzelnen Prüfungen dargestellten Schaltungsbeispiele dienen zur Erläuterung der Messverfahren (Prüflinge 
+und Prüf- bzw. Messgeräte), wie sie in der Praxis häufig vorkommen. Andere Anwendungsfälle sind ebenso möglich, 
+wenn die grundsätzlichen Merkmale des jeweiligen Verfahrens beachtet werden. Die Mess- und Prüfgeräte müssen den 
+Anforderungen von Abschnitt 7 entsprechen. 
+5.2 Sichtprüfung 
+Es muss darauf geachtet werden, dass die Geräteteile sowie deren Eigenschaften, die zur Sicherheit beitragen, weder 
+sichtbare Schäden aufweisen noch für das Gerät offensichtlich ungeeignet sind. 
+Dies gilt insbesondere für Isolierungen und Isolierteile, die bei der Durchführung der Instandsetzung, Änderung oder 
+Prüfung sichtbar werden, sowie für Gehäuse von Geräten der Schutzklasse II. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+8 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 9/26 =====
+Seite 9 
+ÖVE/ÖNORM E 8701-1 
+Gegenstände der Sichtprüfung sind zB: 
+(1) 
+Gehäuse, Schutzabdeckungen 
+(2) 
+Anschlussleitungen und andere äußere Leitungen 
+(3) 
+Befestigungen der Leitungen und aller anderen Teile 
+(4) 
+Zustand der Isolierungen 
+(5) 
+Zugentlastungsvorrichtungen, Biegeschutzvorrichtungen und Leitungsführungen 
+(6) 
+Steckvorrichtungen 
+(7) 
+dem Betreiber zugängliche Gerätesicherungshalter und Sicherungseinsätze 
+(8) 
+Kühlluftöffnungen und Luftfilter (Vorhandensein und Wirksamkeit) 
+(9) 
+Überdruckventile 
+(10) 
+Anzeichen von Überlastung und unsachgemäßem Gebrauch 
+(11) 
+unzulässige Eingriffe und Änderungen 
+(12) 
+sicherheitsbeeinträchtigende Verschmutzung und Korrosion 
+(13) 
+Kennzeichnungen, die der Sicherheit dienen (zB Warnsymbole, Sicherungsnenndaten, Schalterstellungen). 
+ANMERKUNG : 
+Im Zuge der Sichtprüfung können auch Handproben zweckmäßig sein zB das Öffnen von Wartungsbereichen. 
+Erkennbare Mängel, die Anlass anderer Gefährdungen (wie fehlende mechanische Schutzvorkehrungen, Strahlungs-, 
+Hygiene- oder Brandgefahren usw.) sein können, müssen eine sofortige Instandsetzung oder Einschränkungen 
+hinsichtlich der weiteren Verwendung (bzw. Außerbetriebnahme) bis zur Mängelbehebung nach sich ziehen. 
+5.3 Prüfung des Schutzleiters 
+5.3.1 Die Messung des Schutzleiterwiderstandes ist je nach Gegebenheiten gemäß Bild 1 oder Bild 2 durchzuführen. 
+Werden keine ausreichenden Verbindungen gemessen, ist durch Besichtigung festzustellen, ob diese Teile im Fehlerfall 
+berührungsgefährlich werden können. 
+Kann diese Beurteilung während einer Wiederkehrenden Prüfung nicht getroffen werden, sind diese Teile als 
+schutzisolierte Bereiche im Sinne dieser ÖVE/ÖNORM anzusehen. 
+5.3.2 Der Weg des Schutzleiters ist zu verfolgen, soweit dies ohne weitere Demontage des Gerätes möglich ist. Die 
+Einführungsstellen sowie die Befestigungen der Leitungen sind der Sichtprüfung gemäß 5.2 und soweit wie möglich einer 
+Handprobe zu unterziehen. 
+5.3.3 Der Grenzwert für den Schutzleiterwiderstand beträgt 0,5 Ω für Leuchten und 0,3 Ω für andere Geräte mit 
+Anschlussleitungen bis 5 m Länge, zuzüglich 0,1 Ω je weitere 7,5 m, bis zu einem Maximalwert von 1,0 Ω. 
+Die Grenzwerte gelten auch für Leitungsroller, Verlängerungs-, Geräteanschlussleitungen und -garnituren usw. 
+5.3.4 Bei Geräten mit Anschlussleitung und Stecker ist der Widerstand des Schutzleiters zwischen jedem berührbaren 
+leitfähigen Teil und dem Schutzkontakt des Steckers zu messen. Während der Messung ist die Anschlussleitung auf der 
+ganzen Länge abschnittsweise zu bewegen. Wird beim Bewegen der Leitung eine Widerstandsänderung festgestellt, ist 
+davon auszugehen, dass der Schutzleiter beschädigt oder eine Anschlussstelle defekt ist.  
+5.3.5 Bei fest angeschlossenen Geräten ist der Schutzleiterwiderstand zwischen jedem berührbaren leitfähigen Teil und 
+der Anschlussklemme des Schutzleiters oder einem geeigneten Messpunkt zu messen (siehe Bild 2).  
+Zur Bestimmung des Grenzwertes gemäß 5.3.3 dürfen bei Geräten, die fest angeschlossen sind, die Leitungslängen zu 
+parallelliegenden Steckdosen auch geschätzt werden. 
+Sollte es notwendig sein, den Schutzleiter an der Netzanschlussklemme zu trennen, zB bei Geräten, deren Körper 
+infolge des Anschlusses an eine Wasserleitung Erdpotential hat, ist nach Abschluss der Messung der ordnungsgemäße 
+Anschluss des Schutzleiters wiederherzustellen. 
+5.3.6 Die Leerlaufspannung des Messgerätes darf 24 V Gleich- oder Wechselspannung nicht übersteigen und 4 V nicht 
+unterschreiten. Der Messstrom darf nicht weniger als 0,2 A betragen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+9 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 10/26 =====
+Seite 10 
+ÖVE/ÖNORM E 8701-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 Messeinrichtung 
+2 Prüfling 
+9 Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten*) der Gestaltung 
+dieser Messleitungen) 
+ 
+ 
+ 
+ 
+*) weitere Varianten sind zB Sonden, Adapter uÄ 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I. 
+ANMERKUNG:  
+Die Darstellung gilt analog auch für mehrphasige Geräte. 
+Bild 1 – Messung des Schutzleiterwiderstandes  
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 Messeinrichtung 
+2 Prüfling 
+3 Sicherung oder 
+Trennstelle 
+4 Steckdose 
+9 Messleitungen  
+ 
+(die Darstellung 
+entspricht nicht den 
+möglichen Varianten der 
+Gestaltung dieser 
+Messleitungen) 
+ 
+Beispiel: Gerät der Schutzklasse I, dessen Verbindungen zum Versorgungsnetz (Verteiler, Klemmen oder Stecker) 
+nicht gelöst (unterbrochen) werden dürfen oder nur schwer zu lösen sind. 
+ 
+ANMERKUNG:  
+ 
+Die Darstellung gilt analog auch für mehrphasige Geräte. 
+ 
+Bild 2 – Messung des Schutzleiterwiderstandes bei fest angeschlossenen Geräten 
+ 
+Ω 
+G 
+6
+1 
+9 
+L1 N
+PE
+L1 
+N 
+PE 
+X
+9 
+3
+3
+3
+4
+Ω 
+G6 
+1 
+9 
+9 
+L1 
+N 
+PE 
+2
+X 
+2
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+10 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 11/26 =====
+Seite 11 
+ÖVE/ÖNORM E 8701-1 
+5.4  Messung des Isolationswiderstandes 
+5.4.1 Der Isolationswiderstand wird zwischen den aktiven und den berührbaren leitfähigen Teilen gemessen. Dabei ist 
+sicherzustellen, dass alle beanspruchten Isolierungen erfasst werden. Es ist darauf zu achten, dass Schalter, 
+Temperaturregler usw. geschlossen sind. 
+Ist dies nur durch Anlegen der Netzspannung möglich, wie zB bei Geräten mit elektrisch betätigten allpoligen Relais, 
+muss ersatzweise eine Messung gemäß 5.5 bzw. 5.6 durchgeführt werden. 
+5.4.2 Während der Messung ist das Gerät vom Netz zu trennen, wie in den Bildern 3, 4 und 5 dargestellt ist. 
+Geräte bzw. Teile von Geräten, die bestimmungsgemäß im Wasser eingetaucht sind, müssen während der Messung des 
+Isolationswiderstandes mit Wasser bedeckt sein. 
+5.4.3 Der Isolationswiderstand ist zu messen: 
+(1) 
+bei Geräten der Schutzklasse I mit Anschlussleitung und Stecker gemäß Bild 3  
+(2) 
+bei fest angeschlossenen Geräten der Schutzklasse I gemäß Bild 4 
+(3) 
+bei berührbaren leitfähigen Teilen an Geräten der Schutzklasse I, die nicht an den Schutzleiter angeschlossen 
+sind, gemäß Bild 5 
+(4) 
+bei berührbaren leitfähigen Teilen an Geräten der Schutzklasse II und der Schutzklasse III, die berührbare 
+leitfähige Teile enthalten, gemäß Bild 5. 
+5.4.4 Der Isolationswiderstand darf folgende Werte nicht unterschreiten: 
+(1) 
+0,3 MΩ für Geräte der Schutzklasse I mit eingeschalteten Heizelementen  
+ 
+Wird bei Geräten der Schutzklasse I mit Heizelementen ≤ 3,5 kW Gesamtleistung der geforderte 
+Isolationswiderstand nicht erreicht, gilt das Gerät dennoch als einwandfrei, wenn der Schutzleiterstrom die 
+Grenzwerte gemäß 5.5 nicht überschreitet. 
+(2) 
+1,0 MΩ für alle übrigen Geräte der Schutzklasse I 
+(3) 
+2,0 MΩ für Geräte der Schutzklasse II und berührbare leitfähige Teile an Geräten der Schutzklasse I, die nicht 
+an den Schutzleiter angeschlossen sind 
+(4) 
+0,25 MΩ für Geräte der Schutzklasse III. 
+5.4.5 Die Messgleichspannung der Messeinrichtung darf nicht weniger als 500 V bei einem Lastwiderstand von 0,5 MΩ 
+betragen. 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+6.2 berührbare leitfähige Teile von 
+Geräten der Schutzklasse I, die 
+nicht mit dem Schutzleiter 
+verbunden sind 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht 
+den möglichen Varianten der 
+Gestaltung dieser Messleitungen) 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I. 
+Messung zwischen den aktiven Teilen und dem Körper (2) sowie den möglicherweise vorhandenen, nicht an den 
+Schutzleiter angeschlossenen berührbaren leitenden – schutzisolierten – Teilen (6.2). 
+ 
+ANMERKUNG: Die Darstellung gilt analog auch für mehrphasige Geräte.  
+Bild 3 – Messung des Isolationswiderstandes 
+ 
+MΩ 
+G4 
+1
+9
+9 
+L1 
+N
+PE 
+2
+6.2 
+9 
+9 
+X 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+11 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 12/26 =====
+Seite 12 
+ÖVE/ÖNORM E 8701-1 
+ 
+Legende 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+3 
+Sicherung bzw. Trennstelle 
+5 
+Leitung oder Anschluss getrennt 
+6.2 berührbare leitfähige Teile von 
+Geräten der Schutzklasse I die 
+nicht mit dem Schutzleiter ver-
+bunden sind 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht 
+den möglichen Varianten der 
+Gestaltung dieser Messleitungen) 
+ 
+ 
+Beispiel: Gerät der Schutzklasse I, dessen Verbindungen zum Versorgungsnetz (Klemmen oder Stecker) an der 
+Anschlussstelle nur schwer zu lösen sind, aber an anderer Stelle (Verteiler) gelöst werden können. 
+Messung zwischen den aktiven Teilen und dem Körper (2) sowie den möglicherweise vorhandenen, nicht an den 
+Schutzleiter angeschlossenen berührbaren leitenden – schutzisolierten – Teilen (6.2). 
+ANMERKUNG:  
+Die Darstellung gilt analog auch für mehrphasige Geräte. 
+ 
+Bild 4 – Messung des Isolationswiderstandes bei fest angeschlossenem Gerät 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+6.1  berührbare leitfähige Teile von 
+Geräten der Schutzklassen II und III 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklassen II und III. 
+Messung zwischen den aktiven Teilen und den möglicherweise vorhandenen berührbaren leitfähigen Teilen (6.1). 
+ 
+Bild 5 – Messung des Isolationswiderstandes bei Geräten der Schutzklassen II und III 
+ 
+MΩ 
+G4 
+1
+9
+9 
+L1 
+N 
+2
+6.1 
+9 
+MΩ 
+G 
+4 
+1
+9
+L1 N
+PE
+L1 
+N 
+PE 
+X
+9
+3 
+3
+5
+9
+9
+6.2 
+2
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+12 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 13/26 =====
+Seite 13 
+ÖVE/ÖNORM E 8701-1 
+5.5 
+Messung des Schutzleiterstromes 
+5.5.1 Während der Messung des Schutzleiterstromes ist das Gerät nach bestandener Schutzleiterprüfung mit 
+Netzspannung zu versorgen und so zu betreiben, dass alle Gerätefunktionen, die einen Einfluss auf das Messergebnis 
+haben können eingeschaltet sind. Der ungünstigste, unter normalen Betriebsbedingungen gemessene Wert, gilt als 
+Messwert.  
+5.5.2 Die Messung des Schutzleiterstromes ist durchzuführen:  
+– mit dem direkten Verfahren gemäß Bild 6 oder 
+– mit dem Differenzstromverfahren gemäß Bild 7.  
+Wird das direkte Verfahren angewandt, so ist das zu prüfende Gerät gegenüber Erdpotential zu isolieren. Andere 
+Verbindungen zum Erdpotential wie Gas-, Wasser-, Antennen- oder Datenleitungsanschlüsse sind aufzutrennen. 
+5.5.3 Ist das Gerät mit einem ungepolten Netzstecker ausgerüstet oder darf sein Anschluss an das Netz unabhängig 
+von der Polarität vorgenommen werden, so ist die Messung sowohl in allen Positionen des Schalters als auch des 
+Steckers bzw. der Anschlussleitungen durchzuführen. Ergeben die Messungen unterschiedliche Werte, so ist der größte 
+Wert als Messergebnis zu betrachten.  
+ANMERKUNG:  
+Bei mehrphasigen Geräten ist die Möglichkeit eines symmetrischen Fehlers zu beachten. In solchen Fällen kann 
+durch Simulation des Ausfalles jeweils eines aktiven Leiters eine zusätzliche Beurteilung vorgenommen werden. 
+ 
+5.5.4 Der Schutzleiterstrom darf 3,5 mA nicht übersteigen mit folgenden Ausnahmen: 
+– Bei ortsfesten Geräten der Schutzklasse I mit Heizelementen mit einer Gesamtanschlussleistung größer 3,5 kW 
+darf der Schutzleiterstrom nicht größer als 1 mA je kW Heizleistung mit einem Höchstwert von 10 mA sein. 
+– Bei Geräten, bei welchen in den Gerätebestimmungen höhere Werte zulässig sind, dürfen diese Grenzwerte 
+angewendet werden.  
+– Bei ortsfesten Geräten der Schutzklasse I entsprechend ÖVE EN 60950, mit festem Anschluss oder mit 
+industriellen Steckvorrichtungen gemäß ÖVE/ÖNORM EN 60309 mit "Hohem Ableitstrom" (Ableitstrom über 
+3,5 mA) gelten die, in ÖVE EN 60950 festgelegten höchstzulässigen Werte des Ableitstromes. Die zusätzlichen 
+Bedingungen gemäß ÖVE EN 60950 bzw. ÖVE/ÖNORM EN 60950 sind einzuhalten. 
+(siehe ÖVE EN 60950:1997, Abschnitte 5.2.5 und G.5 bzw. ÖVE/ÖNORM EN 60950:2002, Abschnitt 5.1.7) 
+ 
+Bei diesen Geräten sind die besonderen Installationsbedingungen, die Anforderungen für die Schutz-
+leiterverbindungen und das Vorhandensein des vorgeschriebenen Warnhinweises  
+Achtung 
+HOHER ABLEITSTROM 
+Vor Inbetriebnahme Erdungsverbindung herstellen 
+ 
+zu berücksichtigen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+13 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 14/26 =====
+Seite 14 
+ÖVE/ÖNORM E 8701-1 
+ 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+8 
+isolierte Aufstellung des Prüflings 
+9  
+Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I. 
+Bei diesem Verfahren muss der Körper des Prüflings (2) gegenüber Teilen mit Erdpotential isoliert sein. 
+ANMERKUNG :  
+Die Darstellung gilt analog auch für mehrphasige Geräte. 
+ 
+Bild 6 – Messung des Schutzleiterstromes – Direktes Verfahren 
+ 
+ 
+ 
+Legende 
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I. 
+ 
+Bild 7 – Messung des Schutzleiterstromes – Differenzstromverfahren 
+mA
+1
+9 
+9 
+L1 
+N 
+PE 
+2 
+9 
+X 
+N 
+L1 
+PE 
+mA
+1 
+9 
+9 
+L1 
+N 
+PE 
+2 
+9 
+X 
+N 
+8 
+L1 
+PE 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+14 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 15/26 =====
+Seite 15 
+ÖVE/ÖNORM E 8701-1 
+5.6  Messung des Berührungsstromes 
+5.6.1 Die Messung des Berührungsstromes ist an allen berührbaren leitfähigen Teilen durchzuführen. Das gilt auch für 
+berührbare leitfähige Teile von Geräten der Schutzklasse I, die nicht an den Schutzleiter angeschlossen sind. 
+5.6.2 Für die Messung ist das zu prüfende Gerät mit Netzspannung zu versorgen und so zu betreiben, dass alle 
+Gerätefunktionen, die einen Einfluss auf das Messergebnis haben können, eingeschaltet sind. Der ungünstigste, unter 
+normalen Betriebsbedingungen gemessene Wert des Berührungsstromes, gilt als Messwert.  
+5.6.3 Die Messung des Berührungsstromes ist durchzuführen:  
+– mit dem Differenzstromverfahren gemäß Bild 8 oder  
+– mit dem direkten Verfahren gemäß Bilder 9a und 9b. 
+Wird das direkte Verfahren angewandt, so ist das zu prüfende Gerät gegenüber Erdpotential zu isolieren. Andere 
+Verbindungen zum Erdpotential wie Gas-, Wasser-, Antennen- oder Datenleitungsanschlüsse sind aufzutrennen. 
+ANMERKUNG:  
+Wird der Berührungsstrom von berührbaren leitfähigen Teilen von Geräten der Schutzklasse I, die nicht an den 
+Schutzleiter angeschlossen sind, unter Anwendung des Differenzstromverfahrens gemäß Bild 8 bestimmt, dann 
+enthält der ermittelte Messwert auch den Schutzleiterstrom. Deshalb ist das direkte Verfahren in diesen Fällen 
+vorzuziehen. 
+5.6.4 Ist das Gerät mit einem ungepolten Netzstecker ausgerüstet oder darf sein Anschluss an das Netz unabhängig 
+von der Polarität vorgenommen werden, so ist die Messung sowohl in allen Positionen des Schalters als auch des 
+Steckers bzw. der Anschlussleitungen durchzuführen. Ergeben die Messungen unterschiedliche Werte, so ist der größte 
+Wert als Messergebnis zu betrachten. 
+ANMERKUNG:  
+Bei mehrphasigen Geräten ist die Möglichkeit eines symmetrischen Fehlers zu beachten. In solchen Fällen kann 
+durch Simulation des Ausfalles jeweils eines aktiven Leiters eine zusätzliche Beurteilung vorgenommen werden. 
+5.6.5 Der Berührungsstrom darf nicht größer als 0,5 mA sein. 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+6.1 berührbare leitfähige Teile von 
+Geräten der Schutzklassen II und III 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+Ri 
+Innenwiderstand 1 kΩ bis 2 kΩ 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse II. 
+Messung an allen berührbaren leitfähigen Teilen (6.1) des Körpers des Prüflings (2). 
+ 
+Bild 8 – Messung des Berührungsstromes – Differenzstromverfahren 
+ 
+mA
+1
+9 
+9 
+L1
+N 
+2
+9 
+E 
+N 
+L1 
+PE 
+Ri 
+6.1 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+15 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 16/26 =====
+Seite 16 
+ÖVE/ÖNORM E 8701-1 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I 
+Messung an allen berührbaren leitfähigen Teilen (6.2) des 
+Körpers des Prüflings (2), die nicht an den Schutzleiter 
+angeschlossen sind. 
+Bild 9a 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Legende  
+ 
+1 
+Messeinrichtung 
+2 
+Prüfling 
+6.1 berührbare 
+leitfähige 
+Teile 
+von 
+Geräten der Schutzklassen II und III 
+6.2 berührbare 
+leitfähige 
+Teile 
+von 
+Geräten der Schutzklasse I die nicht 
+mit dem Schutzleiter verbunden sind
+8 
+isolierte Aufstellung des Prüflings 
+9 
+Messleitungen 
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+Ri 
+Innenwiderstand 1 kΩ bis 2 kΩ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse II 
+Messung an allen berührbaren leitfähigen Teilen (6.1) des 
+Körpers des Prüflings (2). 
+Bild 9b 
+ 
+Bei Geräten der Schutzklasse I müssen bei diesem Verfahren nur die berührbaren leitfähigen Teile (6.2) des Körpers des 
+Prüflings (2), die nicht an den Schutzleiter angeschlossen sind, gegenüber Teilen mit Erdpotential isoliert sein. 
+Bei Geräten der Schutzklasse II muss bei diesem Verfahren der gesamte Körper des Prüflings (2) gegenüber Teilen (6.1) 
+mit Erdpotential isoliert sein. 
+ANMERKUNG: Die Darstellung gilt analog auch für mehrphasige Geräte. 
+Bild 9 – Messung des Berührungsstromes – Direktes Verfahren 
+N
+L1 
+1 
+mA
+9 
+2
+L1 
+N
+W 
+E 
+Ri 
+9 
+6.1 
+8 
+N 
+L1 
+1 
+mA
+9 
+2
+L1 
+N
+W 
+X 
+Ri 
+9 
+6.2 
+8 
+PE 
+PE 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+16 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 17/26 =====
+Seite 17 
+ÖVE/ÖNORM E 8701-1 
+5.7 Messung des Ersatzableitstromes 
+Die Messung des Ersatzableitstromes gemäß Bild 10 bzw. Bild 11 ist nach bestandener Isolationswiderstandsmessung 
+ein alternatives Messverfahren zur Messung des Schutzleiterstromes gemäß 5.5 bzw. des Berührungsstromes gemäß 
+5.6. 
+5.7.1 Das zu prüfende Gerät ist vom Versorgungsnetz zu trennen und gemäß Bild 10 oder Bild 11 anzuschließen. 
+Um sicherzustellen, dass alle beanspruchten Isolierungen bei dieser Messung erfasst werden, ist darauf zu achten, dass 
+Schalter, Temperaturregler usw. geschlossen sind. 
+5.7.2 Die Messungen sind bei Netzfrequenz und mit einer Leerlaufspannung von mindestens 25 V und höchstens 
+250 V durchzuführen. Bei einer Leerlaufspannung von mehr als 50 V darf der effektive Kurzschlussstrom 3,5 mA nicht 
+übersteigen. 
+5.7.3 Der gemessene Wert ist so zu korrigieren, dass der Messwert dem einer Prüfung bei Netznennspannung 
+entspricht. 
+ANMERKUNG:  
+Messgeräte gemäß DIN VDE 0404 führen diese Korrektur automatisch durch. 
+5.7.4 Bei Geräten der Schutzklasse I ist der Ersatzableitstrom gemäß Bild 10 zu messen.  
+– Der Wert des Ersatzableitstromes darf nicht mehr als 3,5 mA betragen. 
+– Bei ortsfesten Geräten der Schutzklasse I mit Heizelementen mit einer Gesamtanschlussleistung größer 
+3,5 kW darf der Ersatzableitstrom nicht größer als 1 mA je kW Heizleistung mit einem Höchstwert von 10 mA 
+sein. 
+– Bei Geräten, bei welchen in den Gerätebestimmungen höhere Werte zulässig sind, dürfen diese Grenzwerte 
+angewendet werden. 
+Bei Geräten mit allpoliger Abschaltung und symmetrischer kapazitiver Schaltung darf der gemessene Wert des 
+Ersatzableitstromes zur Bewertung nach diesem Verfahren halbiert werden.  
+Der Ersatzableitstromgrenzwert von 7 mA ist an den Grenzwert des Schutzleiterstromes mit 3,5 mA angeglichen. Da die 
+Messung prinzipbedingt höhere Messwerte ergeben kann, darf als Referenzverfahren eine Messung gemäß 5.5 bzw. 5.6 
+herangezogen werden. 
+Die Messwerthalbierung darf nicht vorgenommen werden, wenn keine allpolige Netztrennung (zB nur einpoliger 
+Funktionsschalter) ausgeführt ist. 
+5.7.5 Bei Geräten der Schutzklasse II und bei berührbaren leitfähigen Teilen von Geräten der Schutzklasse I, die nicht 
+mit dem Schutzleiter verbunden sind, ist der Ersatzableitstrom gemäß Bild 11 zu messen.  
+Der Wert des Ersatzableitstromes darf 0,5 mA nicht überschreiten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+17 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 18/26 =====
+Seite 18 
+ÖVE/ÖNORM E 8701-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Legende 
+1 Messeinrichtung 
+2 Prüfling 
+9 Messleitungen  
+(die Darstellung entspricht nicht den 
+möglichen Varianten der Gestaltung 
+dieser Messleitungen) 
+Ri Innenwiderstand 1 kΩ bis 2 kΩ 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse I. 
+ANMERKUNG:  
+Die Darstellung gilt analog auch für mehrphasige Geräte. 
+ 
+Bild 10 – Messung des Schutzleiterstromes – Ersatzableitstrommessung 
+ 
+ 
+ 
+ 
+ 
+ 
+Legende 
+ 
+1 Messeinrichtung 
+2 Prüfling 
+6.1 berührbare leitfähige Teile  
+von Geräten der  
+Schutzklassen II und III 
+7 Berührbares leitfähiges Teil, zB 
+Antenne 
+9 Messleitungen 
+(die Darstellung entspricht nicht 
+den möglichen Varianten der 
+Gestaltung dieser Messleitungen) 
+Ri Innenwiderstand 1 kΩ bis 2 kΩ 
+ 
+Beispiel: Ortsveränderliches Gerät der Schutzklasse II. 
+Messung an allen berührbaren leitfähigen Teilen (6.1) des Körpers des Prüflings. 
+ 
+Bild 11 – Messung des Berührungsstromes – Ersatzableitstrommessung 
+mA 
+1
+9
+9 
+L1 
+N 
+2
+9 
+E 
+Ri 
+G
+5 
+7
+6.1 
+mA 
+1
+9 
+9 
+L1 
+N 
+PE 
+2
+9 
+X 
+Ri 
+G 
+5 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+18 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 19/26 =====
+Seite 19 
+ÖVE/ÖNORM E 8701-1 
+5.8 Funktionsprüfung 
+5.8.1 Nach Instandsetzen, Ändern und Beendigung der elektrischen Sicherheitsprüfungen ist eine Funktionsprüfung 
+des Gerätes durchzuführen. Durch diese Prüfung ist der bestimmungsgemäße Gebrauch darzustellen, um festzustellen, 
+dass keine offensichtliche Funktions- oder Sicherheitsmängel bestehen.  
+Gegebenenfalls sind Instandhaltungs- bzw. Instandsetzungs-Anweisungen des Herstellers bzw. des Importeurs 
+heranzuziehen.  
+Verkürzte Teilprüfungen können ausreichend sein. 
+5.8.2 Bei Wiederkehrenden Prüfungen können diese Prüfungen auf die ordnungsgemäße Funktion von betriebsmäßig 
+wirkenden Sicherheitseinrichtungen eingeschränkt werden. 
+ANMERKUNG: 
+Als betriebsmäßig wirkende Sicherheitseinrichtungen sind zB Sicherheitsverriegelungen, wie Türver-
+riegelungsschalter von Waschmaschinen, zwangsgeführte Schaltmittel zum Spannungsfreischalten von 
+Bedienungs- oder Wartungsbereichen bei Büromaschinen uÄ. anzusehen. Ebenso fällt die Funktionskontrolle von 
+Ein-Tastern bei handgeführten Elektrowerkzeugen, Not-Aus-Einrichtungen usw. darunter. 
+5.9  Prüfung der Aufschriften 
+Das Vorhandensein der Aufschriften, die der Sicherheit dienen, zB Warnhinweise, Angaben zur Drehrichtung, sowie der 
+betriebsmäßig erforderlichen Gerätenenndaten (zB Typenschild) ist zu kontrollieren, gegebenenfalls in geeigneter Form 
+zu erneuern, zu ergänzen oder zu berichtigen. 
+6  
+Dokumentation 
+6.1 Die durchgeführten Prüfungen gemäß Abschnitt 5 sind in geeigneter Weise zu dokumentieren.  
+Die Aufzeichnung der Messwerte wird empfohlen. 
+6.2 Über Änderungen an elektrischen Geräten sind Aufzeichnungen zu führen, die dem Betreiber bzw. Auftraggeber zur 
+Ergänzung seiner Geräteunterlagen zu überlassen sind.  
+ANMERKUNG 1: 
+Bei einfachen Änderungen, Tausch von Einzelteilen, sind die üblicherweise erstellten Materiallisten oder 
+Reparaturbelege als ausreichend anzusehen, wenn dadurch die Nachvollziehbarkeit sowie die Identifikation von 
+getauschten oder geänderten Bauteilen gegeben ist. 
+ANMERKUNG 2: 
+Auf das besondere Erfordernis der Nachvollziehbarkeit, insbesondere bei begründeten Einschränkungen des 
+Prüfumfanges wird hingewiesen. Auch aus rechtlichen Überlegungen und Qualitätssicherungsgründen kann es 
+erforderlich sein, alle Maßnahmen im Zusammenhang mit Instandsetzung, Änderungen bzw. die Ergebnisse der 
+Prüfungen in schriftlicher Form vorweisen zu können. 
+6.3 Ist die Sicherheit des Gerätes festgestellt, so darf dem Betreiber oder Auftraggeber die Sicherheit des behandelten 
+Gerätes schriftlich mit dem Text 
+“Geprüft gemäß ÖVE/ÖNORM E 8701“ 
+bescheinigt werden. 
+6.4 Erweist sich ein Gerät im Sinne dieser Bestimmungen als nicht sicher, ist dies am Gerät deutlich zu kennzeichnen, 
+und der Betreiber ist schriftlich über die vom Gerät ausgehenden Gefahren in Kenntnis zu setzen.  
+ANMERKUNG: 
+Erforderliche Maßnahmen für Geräte, bei welchen gefahrbringende Mängel festgestellt werden, sind in 
+ÖVE EN 50110-1:1997-06, Abschnitt 4.1.102 enthalten. 
+7  
+Messeinrichtungen 
+7.1 Allgemeines 
+Für die, in dieser ÖVE/ÖNORM beschriebenen Prüfungen, sind Messgeräte entsprechend den Normen DIN VDE 0404 
+(alle Teile) bzw. ÖVE EN 61557 bzw. ÖVE/ÖNORM EN 61557 (alle Teile) oder solche Messgeräte oder/und 
+Messbedingungen zu verwenden, die nachvollziehbare, gleiche Messergebnisse sicherstellen. 
+Während der Prüfung muss sichergestellt sein, dass auch bei fehlerhaften zu prüfenden Geräten der Benutzer oder 
+unbeteiligte Dritte nicht gefährdet und das Messgerät bzw. das zu prüfende Gerät nicht beschädigt werden können. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+19 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 20/26 =====
+Seite 20 
+ÖVE/ÖNORM E 8701-1 
+7.2 Anforderungen 
+Messeinrichtungen für die in dieser ÖVE/ÖNORM enthaltenen Prüfungen müssen mindestens zu den Festlegungen der 
+Normen DIN VDE 0404 Teil 1:1988-07 und DIN VDE 0404 Teil 2:1988-07 folgende Anforderungen erfüllen: 
+– Es sind nur Messeinrichtungen zu verwenden, die ÖVE/ÖNORM EN 61010-1 sowie den grundlegenden 
+Anforderungen der Normenreihe ÖVE EN 61557 bzw. ÖVE/ÖNORM EN 61557 entsprechen. 
+– Das Zubehör für die Prüfeinrichtungen muss ÖVE EN 61010-2-031 und ÖVE EN 61010-2-032 entsprechen. 
+– Bei bestimmungsgemäßem Gebrauch dürfen die Messeinrichtungen den Prüfenden oder unbeteiligte 
+Personen nicht gefährden. 
+– Die Betriebsmessabweichung der jeweiligen Messfunktionen darf im gekennzeichneten Bereich oder in dem 
+vom Hersteller angegebenen Bereich ± 15 %, berechnet nach den Vorgaben von ÖVE EN 61557-1, nicht 
+überschreiten. 
+Bei 
+Verwendung 
+von 
+Stromzangen 
+ist 
+der 
+Fremdfeldeinfluss, 
+entsprechend 
+der 
+Herstellerangaben, zusätzlich zu berücksichtigen. 
+– Für die Prüfungen dürfen in den Messeinrichtungen die Schutzleiterverbindungen unterbrochen werden, wenn 
+durch eine andere geeignete Maßnahme der Schutz gegen elektrischen Schlag (gemäß ÖVE/ÖNORM EN 
+61010-1) sichergestellt ist. 
+– In den Messeinrichtungen muss bei den Messungen gemäß 5.3, 5.4, 5.7 sowie bei dem Differenz-
+stromverfahren gemäß 5.5.2 und 5.6.3 die galvanische Trennung der Messschaltungen vom Netz und vom 
+Netzschutzleiter sichergestellt sein. Eine Verbindung mit dem Netzschutzleiter ist zugelassen, wenn durch die 
+Messeinrichtung parallele Erdverbindungen berücksichtigt oder in geeigneter Weise angezeigt werden. 
+7.3  Messeinrichtung zur Messung des Schutzleiterstromes gemäß 5.5 
+7.3.1  Die Messeinrichtung für das direkte Verfahren muss 
+– die Durchführung der Messungen gemäß Bild 6 ermöglichen 
+– einen Innenwiderstand von maximal 5 Ω haben; bei höheren Widerständen sind Maßnahmen zu treffen, die 
+das Auftreten von gefährlichen Berührungsspannungen vermeiden  
+– den gemessenen Strom als Effektivwert angeben. 
+Während der Messung muss durch geeignete Maßnahmen der Schutz gegen elektrischen Schlag (gemäß ÖVE/ÖNORM 
+EN 61010-1) sichergestellt sein. 
+Die isolierte Aufstellung des Prüflings während der Messung muss sichergestellt werden. Auf die Notwendigkeit kann 
+durch einen automatischen Warnhinweis durch die Prüfeinrichtung oder durch eine deutlich sichtbare Aufschrift “Prüfling 
+isoliert aufstellen“ an der Prüfeinrichtung hingewiesen werden. 
+7.3.2  Die Messeinrichtung für eine Messung gemäß dem Differenzstromverfahren muss  
+– die Durchführung der Messungen gemäß Bild 7 ermöglichen  
+– den gemessenen Strom als Effektivwert angeben. 
+7.4  Messeinrichtung zur Messung des Berührungsstromes gemäß 5.6 
+Die Messeinrichtung muss 
+– die Durchführung der Messungen gemäß Bild 8 bzw. Bild 9 ermöglichen  
+– den gemessenen Strom als Effektivwert angeben 
+– einen Innenwiderstand von mindestens 1 kΩ bis zu einem Höchstwert von 2 kΩ haben. 
+Bei versehentlichem Anschluss der Strommessschaltung an eine Spannung bis zu 120 % der Netznennspannung dürfen 
+der Benutzer nicht gefährdet und die Prüfschaltung nicht beschädigt werden. 
+Falls im Messpfad ein Überstromschutz vorhanden ist, muss dessen Ansprechen eindeutig signalisiert werden oder 
+erkennbar sein. 
+7.5  Messeinrichtung zur Messung des Ersatzableitstromes gemäß 5.7 
+Die Messeinrichtung muss 
+– die Durchführung der Messungen gemäß Bild 10 bzw. Bild 11 ermöglichen  
+– den Anforderungen von 5.7.2 und 5.7.3 entsprechen 
+– einen Innenwiderstand von mindestens 1 kΩ bis zu einem Höchstwert von 2 kΩ haben. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+20 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 21/26 =====
+Seite 21 
+ÖVE/ÖNORM E 8701-1 
+Anhang A (informativ): Prüfablaufschema 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild A.1 – Prüfablaufschema für die Prüfung der elektrischen Sicherheit nach Instandsetzung  
+und Reparatur bzw. für die Wiederkehrende Prüfung von Geräten der Schutzklasse I 
+Messung des 
+Schutzleiterstromes: 
+Differenzstrom-
+verfahren 
+ gemäß 5.5 und Bild 7
+Messung des 
+Schutzleiterstromes: 
+Direktes Verfahren 
+gemäß 5.5 und Bild 6 
+ 
+Messung des 
+Schutzleiterstromes: 
+Ersatzableitstrom-
+messung gemäß 5.7 
+und Bild 10 
+Messung des 
+Schutzleiterstromes: 
+Differenzstrom-
+verfahren 
+ gemäß 5.5 und Bild 7
+Messung des 
+Schutzleiterstromes: 
+Ersatzableitstrom-
+messung gemäß 5.7 
+und Bild 10 
+Messung des 
+Schutzleiterstromes: 
+Differenzstrom-
+verfahren 
+ gemäß 5.5 und Bild 7
+Messung des 
+Schutzleiterstromes: 
+Direktes Verfahren 
+gemäß 5.5 und Bild 6 
+ 
+Messung des 
+Schutzleiterstromes: 
+Differenzstrom-
+verfahren 
+ gemäß 5.5 und Bild 7
+Prüfung des Schutzleiters 
+gemäß 5.3 und Bilder 1 und 2 
+ 
+Funktionsprüfung 
+gemäß 5.8 
+ 
+Prüfung der Aufschriften 
+gemäß 5.9 
+ 
+Dokumentation gemäß 
+Abschnitt 6 
+Messung des 
+Isolationswiderstandes 
+  gemäß 5.4 und Bilder 3 und 4 
+Ist die Messung des 
+Isolations-
+widerstandes 
+anwendbar? 
+Siehe 5.4 
+Dieselben Messungen wie bei „Nein“, 
+aber zusätzliche Messungen für diese 
+Teile gemäß Prüfablaufschema  
+Bild A.2, Schutzklasse II 
+Sichtprüfung 
+gemäß 5.2 
+Ende 
+Ja 
+Ja 
+Ja 
+Ja 
+Nein 
+Nein 
+Nein 
+Nein 
+Kann das Gerät 
+von der Erde 
+isoliert werden?
+Siehe 5.5.2
+Enthält das Gerät 
+berührbare leitfähige 
+Teile, die nicht an den 
+Schutzleiter ange-
+schlossen sind? 
+Kann das Gerät 
+von der Erde 
+isoliert werden?
+Siehe 5.5.2
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+21 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 22/26 =====
+Seite 22 
+ÖVE/ÖNORM E 8701-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild A.2 – Prüfablaufschema für die Prüfung der elektrischen Sicherheit nach Instandsetzung und Reparatur 
+bzw. für die Wiederkehrende Prüfung von Geräten der Schutzklassen II und III und schutzisolierte Bereiche bei Geräten der Schutzklasse II 
+Messung des 
+Berührungsstromes: 
+Differenzstrom-
+verfahren  
+ gemäß 5.6 und Bild 8
+Messung des 
+Berührungsstromes: 
+Direktes Verfahren 
+gemäß 5.6 und Bild 9 
+Messung des 
+Berührungsstromes: 
+Ersatzableitstrom-
+messung gemäß 5.7 
+und Bild 11 
+Messung des 
+Berührungsstromes: 
+Differenzstrom-
+verfahren  
+ gemäß 5.6 und Bild 8
+Messung des 
+Berührungsstromes: 
+Ersatzableitstrom-
+messung gemäß 5.7 
+und Bild 11 
+Messung des 
+Berührungsstromes: 
+Differenzstrom-
+verfahren  
+ gemäß 5.6 und Bild 8
+Messung des 
+Berührungsstromes: 
+Direktes Verfahren 
+gemäß 5.6 und Bild 9 
+ 
+Messung des 
+Berührungsstromes: 
+Differenzstrom-
+verfahren  
+ gemäß 5.6 und Bild 8
+Schutzklasse II und berührbare 
+leitfähige Teile der 
+Schutzklasse I, die nicht  
+mit dem Schutzleiter  
+verbunden sind 
+ 
+Funktionsprüfung 
+gemäß 5.8 
+ 
+ 
+Prüfung der Aufschriften 
+gemäß 5.9 
+ 
+ 
+Dokumentation gemäß 
+Abschnitt 6 
+ 
+Messung des 
+Isolationswiderstandes  
+gemäß 5.4 und Bild 5 
+Ist die Messung des
+Isolations-
+widerstandes 
+anwendbar? 
+Siehe 5.4 
+Sichtprüfung 
+gemäß 5.2 
+Schutzklasse II 
+oder III 
+Kann das Gerät 
+von der Erde 
+isoliert werden? 
+Siehe 5.6.3 
+Kann das Gerät 
+von der Erde 
+isoliert werden? 
+Siehe 5.6.3 
+Schutzklasse III 
+Messung des 
+Isolationswiderstandes 
+gemäß 5.4 und Bild 5 
+Ende 
+Ja 
+Ja 
+Ja 
+Nein 
+Nein 
+Nein 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+22 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 23/26 =====
+Seite 23 
+ÖVE/ÖNORM E 8701-1 
+Anhang B (informativ): Erläuterungen 
+Zu 4.1 Anforderungen 
+Die Befugnis, in welcher Art und Weise Personen derartige Arbeiten durchführen dürfen ist im Elektrotechnikgesetz 1992 
+(ETG 1992, § 12) festgelegt. 
+ETG 1992, § 12, Absätze (1) bis (3) lauten: 
+„§ 12.  (1) Die Befugnis zur gewerbsmäßigen Herstellung, Änderung oder Instandhaltung von elektrischen Anlagen und 
+Betriebsmitteln richtet sich nach den gewerberechtlichen Vorschriften. Die Bestimmungen des Ziviltechnikergesetzes, 
+BGBl. Nr. 146/1957 in der jeweils geltenden Fassung, bleiben dadurch unberührt. 
+(2) Die nicht gewerbsmäßige Herstellung, Änderung oder Instandhaltung von elektrischen Anlagen und elektrischen 
+Betriebsmitteln ist nur solchen Personen gestattet, welche die hiezu erforderlichen Kenntnisse und Fähigkeiten besitzen 
+oder die Arbeit wenigstens unter der Aufsicht solcher Personen durchführen. 
+(3) Die Kenntnisse und Fähigkeiten (Abs. 2) sind insbesondere bei jenen Personen anzunehmen, bei denen die 
+Voraussetzungen für die Erlangung der Befugnis zur Installation der betreffenden elektrischen Anlagen beziehungsweise 
+der elektrischen Betriebsmittel gegeben sind.“ 
+Zu 4.2 Anforderungen 
+Entsprechend den generellen Schutzzielen im Sinne dieser ÖVE/ÖNORM, soll dem Gerätebenützer sowohl nach 
+Reparaturen als auch nach einer Wiederkehrenden Prüfung, ein insgesamt für die Weiterverwendung sicheres Gerät zur 
+Verfügung stehen. Aufgrund dieses Aspektes, ist eine Einschränkung des Prüfumfanges auf ausschließlich elektrische 
+Sicherheitsmerkmale (Berührungsschutz, Isolationszustand, Schutzleiterverbindungen usw.) nicht zielführend.  
+Unter Berücksichtigung des Zeitpunktes der Geräteherstellung und den tatsächlichen Verwendungsbedingungen sind 
+daher auch weitere, von den Geräten ausgehende Gefahren, wie zB fehlende, überaltete oder nicht mehr zufrieden 
+stellend arbeitende mechanische Schutzeinrichtungen usw., mitzubeurteilen. 
+Ohne Beachtung dieser, in den besonderen Gerätebestimmungen enthaltenen, zusätzlichen Sicherheitskriterien bzw. der 
+erforderlichen Maßnahmen, ist eine dahingehend zufrieden stellende Instandsetzung und Prüfung oder Bewertung im 
+Zuge einer Wiederkehrenden Prüfung nicht möglich (zB bei Mikrowellenherden, Kühlgeräten mit explosiblen Kältemitteln, 
+Handkreissägen usw.) 
+Da insbesondere bei älteren Geräten Bauart bedingt, deren sicherheitstechnische Ausrüstung nicht dem neuesten Stand 
+entsprechen kann, ist daher durch eine Risikoabwägung unter Berücksichtigung der erwartbaren bzw. vorgefundenen 
+Bedingungen, eine Beurteilung vorzunehmen. Eine Reduktion von derart ermittelten Gefahren, die im Zuge der 
+Weiterverwendung zu erwarten sind, kann zB durch entsprechende Nachrüstung oder durch Festlegung von Ver-
+wendungsbeschränkungen erreicht werden.  
+Zu 4.5 Anforderungen 
+Die Festlegung, dass bei Wiederkehrenden Prüfungen keine weiteren Zerlegungsarbeiten vorgenommen werden, 
+bedeutet jedoch, dass alle ohne Werkzeug abnehmbaren Teile und vom Benützer lt. Betriebsanleitung des 
+Geräteherstellers zu bedienenden Wartungsbereiche (zB Batteriefächer, Befüllungsbereiche von Warenausgabe-geräten 
+usw.) zu kontrollieren sind. 
+Andererseits ist eine klare Abgrenzung des Prüfumfanges für Wiederkehrende Prüfungen und jene nach Reparaturen 
+erforderlich. Muss ein Gerät im Zuge der Wiederkehrenden Prüfung zerlegt werden (um zB eine endgültige Beurteilung 
+des Zustandes der Schutzmassnahmen vorzunehmen, bei fehlendem Typenschild oder auf Verdacht von 
+unsachgemäßen Modifikationen), findet ein Übergang des Prüfvorganges, hin zu einer derart erweiterten Prüfung, wie sie 
+im Rahmen der Instandsetzung erforderlich ist, statt. So können etwa durch die Zerlegungsarbeiten entstandene 
+sicherheitsmindernde Veränderungen durch die erweiterte Kontrolle erkannt werden. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+23 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 24/26 =====
+Seite 24 
+ÖVE/ÖNORM E 8701-1 
+Zu 5.1 Prüfungen – Allgemeines 
+Der Isolationszustand eines Gerätes ist daher durch 
+− eine Isolationswiderstandsmessung und zusätzlich 
+− eine Ableitstrommessung mit Netzspannung (Schutzleiterstrom bzw. Berührungsstrom)  
+zu kontrollieren. 
+Durch diese zusätzliche Messung wird dem immer größer werdenden Anteil von Geräten mit kapazitiven Ableitströmen 
+usw. Rechnung getragen. Anstelle der Ableitstromessung kann auch die schon bisher angewendete Ersatzableitstrom-
+Messmethode vorgenommen werden. Dadurch ist es möglich, in vielen Anwendungsfällen die bisher genützten 
+Prüfgeräte weiter zu verwenden. Es ist daher nicht zwingend erforderlich, in diesen Fällen neue Prüfgeräte für die 
+Schutzleiterstrom- sowie Berührungsstrommessung sofort anzuschaffen. 
+Von diesem vorgegebenen Messvorgang darf abgewichen werden, wenn  
+− die Isolationswiderstandsmessung technisch nicht vollständig durchführbar ist, zB bei Geräten, die ohne das 
+Anschließen an Netzspannung nicht oder nicht vollständig einschaltbar sind  
+− durch 
+die 
+Leerlaufgleichspannung 
+der 
+Isolationswiderstandsmesseinrichtung 
+(bis 
+zu 
+750 V) 
+mit 
+Gerätebeschädigungen gerechnet werden muss  
+− bei Wärmegeräten mit einer Nennleistung größer 3,5 kW ein Isolationswiderstand kleiner als 0,3 MΩ 
+gemessen wurde. 
+In diesen Fällen  
+− wird die Messung des Schutzleiter- bzw. Berührungsstromes vorgenommen 
+− darf die Ersatzableitstrommessung nicht anstelle der Schutzleiterstrom- bzw. Berührungsstrommessung 
+angewendet werden 
+− ist zu berücksichtigen, dass die leitfähigen Teile des Prüflings infolge eines Isolationsfehlers eine gefährliche 
+Spannung annehmen können. 
+Durch die erweiterten Möglichkeiten der Anwendung von Messmethoden ist es daher praktisch in den meisten Fällen 
+möglich (zB auch die Durchführung der Schutzleiterstrom- bzw. Berührungsstrommessung durch Verwendung geeigneter 
+Stromzangen) eine ausreichende Prüfaussage über den Isolationszustand des zu prüfenden Gerätes im Sinne dieser 
+ÖVE/ÖNORM zu treffen.  
+Durch die Anwendung der zusätzlichen Messmethoden wird andererseits berücksichtigt, dass bei Geräten mit Steuer- 
+und Regeleinrichtungen bzw. elektronischen Schaltelementen, eine Beurteilung des Isoliervermögens aller Stromkreise 
+und Betriebszustände erst durch das Anlegen der Netzspannung möglich ist. Dieses Faktum wurde bisher in der Praxis 
+oftmals übersehen und kann dadurch vermieden werden. 
+So kann auch durch die Wahl einer für die Geräteart geeigneten Messmethode die Gefahr von Funktions-
+beschädigungen, zB bei informationstechnischen Einrichtungen, verringert werden. 
+Eine Abweichung von dem, in dieser ÖVE/ÖNORM festgelegten grundsätzlichen Messvorgang, wie sie in den 
+Vorgängerbestimmungen (ÖVE-HG 701, Teil 1/1985) enthalten war, ist daher nicht mehr erforderlich. Andererseits wurde 
+beibehalten, dass bei Reparaturen, die Vorort durchgeführt werden und in keiner Weise eine Zerlegung von für die 
+Sicherheit maßgeblichen Teile erfordern (wie zB die Erneuerung eines einfachen, von außen anbringbaren 
+Abflussschlauches einer Waschmaschine uÄ), der Prüfumfang auf das erforderliche Maß eingeschränkt werden darf.  
+Grundsätzlich gilt jedoch, dass jedwede Einschränkung, wie sie auch betriebsbedingt bei Wiederkehrenden Prüfungen 
+auftreten kann, schriftlich festgehalten (Begründung) werden soll. 
+Zu 5.3 Prüfung des Schutzleiters 
+Für die Beurteilung längerer Anschlussleitungen wurden klare Grenzwerte festgelegt, die auch für Leitungsroller und 
+Verlängerungsleitungen usw. anwendbar sind. 
+Die bisher fehlenden Anforderungen an den Schutzleiter-Prüfstromkreis wurden ergänzt. 
+Zu 5.4 Messung des Isolationswiderstandes 
+Der Mindestisolationswiderstand bei Geräten der Schutzklasse I wurde von 0,5 MΩ auf 1 MΩ angehoben.  
+Bei Wärmegeräten der Schutzklasse I wurde ein Mindestwert für den Isolationswiderstand von 0,3 MΩ neu festgelegt. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+24 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 25/26 =====
+Seite 25 
+ÖVE/ÖNORM E 8701-1 
+Zu 5.5 Messung des Schutzleiterstromes 
+Im Vergleich mit der direkten Messung des Schutzleiterstromes hat das Differenzstrom-Messverfahren den Vorteil, dass 
+es nicht erforderlich ist, das zu prüfende Gerät bzw. die zu prüfenden leitfähigen Teile gegenüber Erde durch eine 
+entsprechende Aufstellung zu isolieren. Daher müssen auch nicht alle Verbindungen (Daten-, Antennenleitungen usw.) 
+bei der Messung vom Gerät abgetrennt werden.  
+Durch Herstellung von unterschiedlichen Schalterstellungen, Netzanschluss- und Betriebsbedingungen soll sichergestellt 
+werden, dass der höchste in der Praxis auftretende Ableitstrom erfasst wird. 
+Die zulässigen Ausnahmen vom generellen Grenzwert für den Schutzleiterstrom wurden gegenüber VDE 0701-1:2000 
+klarer dargestellt: 
+− Für Wärmegeräte größer 3,5 kW wurde ein Höchstwert festgelegt. 
+− In einigen Gerätebestimmungen (zB bei Großküchenwärmegeräten) sind keine Ableitstromhöchstwerte oder 
+abweichende Werte festgelegt. Falls in diesen Fällen bei der Messung des Schutzleiterstromes die 
+höchstzulässigen Werte nach dieser ÖVE/ÖNORM überschritten werden, können die Grenzwerte der 
+Gerätebestimmungen als Beurteilungsgrundlage dienen. Die zusätzlich erforderlichen Bedingungen im 
+Rahmen des Anschlusses eines derartigen Gerätes an die Anlage sind jedoch zu berücksichtigen. 
+− Die Schutzleiterstrommessung von Geräten der Informationstechnik mit "Hohem Ableitstrom" ist gemäß den 
+Gerätebestimmungen durchzuführen und zu bewerten. Vor allem ist auch bei Reparaturen auf die Einhaltung 
+der zusätzlichen Maßnahmen zu achten. 
+Zu 5.6 Messung des Berührungsstromes 
+Hinsichtlich des Vorteils des Differenzstromverfahrens und der Herstellung des ungünstigsten Messwertes wird auf 5.5 
+verwiesen. 
+Zu 5 
+Messung des Ersatzableitstromes 
+Die Grenzwerte und Ausnahmen sind an jenen des Schutzleiterstromes gemäß 5.5 orientiert. Aufgrund der besonderen 
+Regelungen hinsichtlich der Bewertung entsteht dadurch keine Verschärfung für Altgeräte die bisher gemäß 
+ÖVE-HG 701, Teil 1:1985 beurteilt wurden. 
+Zu 6 
+Dokumentation 
+Die Aufzeichnung der Maßnahmen und Prüfergebnisse ist aus unterschiedlichsten Überlegungen unverzichtbar, darf 
+aber auf das Maß der eventuell erforderlichen Nachvollziehbarkeit beschränkt bleiben, zB bei der Prüfung mit 
+Messgeräten mit Gut/Schlecht-Anzeige durch Angabe des Gerätes, Messbereicheinstellung usw.  
+Die Möglichkeit der Bescheinigung "Geprüft gemäß ÖVE/ÖNORM E 8701" (zB auch auf der Reparaturrechnung oder als 
+Geräteaufkleber) hat sich in der Vergangenheit als Bestätigung und Prüfanreiz bewährt und ist daher (im Gegensatz zu 
+VDE 0701-1:2000) weiterhin Teil dieser ÖVE/ÖNORM. 
+Zu 7.1 Messeinrichtungen – Allgemeines 
+Die Forderung, dass mit den zur Anwendung kommenden Messausrüstungen gleiche Prüfaussagen erzielt werden 
+müssen, beinhaltet auch, dass die Messgeräte in regelmäßigen Abständen entsprechend der Herstellerangaben zu 
+überprüfen und zu kalibrieren sind. 
+Zur Vermeidung von Gefährdungen im Zuge der elektrischen Prüfungen wird auf die Einhaltung der Festlegungen 
+entsprechend ÖVE/ÖNORM EN 50191 hingewiesen. 
+Zu 7.4 Messeinrichtungen – Berührungsstrommessung 
+Der festgelegte Innenwiderstand des Messgerätes wurde auf den in anderen Bestimmungen üblichen Wert von 1 kΩ 
+abgesenkt, der höchstzulässige Wert von 2 kΩ beibehalten. Dadurch ist die Kompatibilität des in der Praxis zur 
+Verfügung stehenden Messgeräteparks erweitert. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+25 von 26
+www.ris.bka.gv.at
+
+
+===== PAGE 26/26 =====
+Seite 26 
+ÖVE/ÖNORM E 8701-1 
+Anhang C (informativ): Literaturhinweise 
+ÖVE-HG 701, Teil 1 
+Instandsetzung, Änderung und Prüfung elektrischer Geräte für den Hausgebrauch und 
+ähnliche Zwecke – Teil 1: Allgemeine Bestimmungen 
+ÖVE/ÖNORM EN 50191  
+Errichten und Betreiben elektrischer Prüfanlagen 
+DIN VDE 0701-1 
+Instandsetzung, Änderung und Prüfung elektrischer Geräte – Teil 1 Allgemeine 
+Anforderungen 
+DIN VDE 0702-1  
+Wiederholungsprüfungen an elektrischen Geräten 
+BGBl. Nr. 146/1957 
+Zivilingenieurgesetz idgF 
+BGBl. Nr. 106/1992 
+Elektrotechnikgesetz 1992 – ETG 1992 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+26 von 26
+www.ris.bka.gv.at

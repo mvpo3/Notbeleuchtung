@@ -1,0 +1,2121 @@
+
+
+===== PAGE 41/70 =====
+Seite 41
+ÖVE/ÖNORM E 8001-1
+12.2
+Fehlerstrom-Schutzschaltung
+12.2.1
+Wird die Fehlerstrom-Schutzschaltung angewandt (siehe Bild 12-1), müssen folgende Bedingungen
+erfüllt werden:
+12.2.1.1
+Alle zu schützenden Anlagenteile müssen mit einem geeigneten Erder verbunden sein.
+Für den Erdungswiderstand RA gelten:
+A
+N
+ V
+R
+I
+≤65
+∆
+   und   RA ≤ 100 Ω
+je nachdem, welcher Wert kleiner ist.
+I∆N...... Nennwert des Auslösefehlerstromes (Nennfehlerstrom) der Fehlerstrom-Schutzeinrichtung
+12.2.1.2
+Beim Errichten der Erdungen sind die Bedingungen gemäß Abschnitt 20 und Abschnitt 21 einzuhalten.
+Bild 12-1: Fehlerstrom-Schutzschaltung als Fehlerschutz gemäß 3.8.13
+12.2.2 Fehlerstrom-Schutzeinrichtungen für den Fehlerschutz
+Fehlerstrom-Schutzeinrichtungen für den Fehlerschutz müssen folgende Bedingungen erfüllen:
+12.2.2.1 Fehlerstrom-Schutzeinrichtungen, bei denen die Bauteile für die Erfassung und Ausschaltung des
+Fehlerstromes in einem gemeinsamen Gehäuse angeordnet sind (Fehlerstrom-Schutzschalter), müssen allpolig,
+einschließlich des Neutralleiters, ausschalten.
+12.2.2.2 Für Fehlerstrom-Schutzeinrichtungen für Nennstromstärken über 63 A, bei denen die Bauteile für die
+Erfassung und 
+Ausschaltung des 
+Fehlerstromes in 
+getrennten 
+Gehäusen 
+angeordnet sind 
+(z. B.
+Leistungsschalter mit Fehlerstromrelais), wird das Ausschalten des Neutralleiters im allgemeinen nicht gefordert,
+ausgenommen jedoch in TT-Systemen gemäß 14.2.3.1.
+12.2.2.3 Fehlerstrom-Schutzeinrichtungen, deren Funktion von der Netzspannung abhängt, dürfen bei Ausfall der
+Netzspannung nicht ausschalten. Die Erfassung des Fehlerstromes muss durch Bauteile erfolgen, deren Funktion
+vom Vorhandensein der Netzspannung unabhängig ist.
+12.2.2.4 Für Fehlerstrom-Schutzeinrichtungen gemäß 12.2.2.1 darf der Nennwert des Auslösefehlerstromes nicht
+verstellbar sein.
+Für Fehlerstrom-Schutzeinrichtungen gemäß 12.2.2.2 darf der Nennwert des Auslösefehlerstromes verstellbar
+sein. Falls auch die Ausschaltzeit verstellbar ist, darf diese im gesamten Einstellbereich beim 5-fachen
+Einstellwert des Fehlerstromes nicht größer als 0,15 s sein.
+
+
+===== PAGE 42/70 =====
+Seite 42
+ÖVE/ÖNORM E 8001-1
+12.2.2.5 Für Fehlerstrom-Schutzeinrichtungen der Bauart S oder mit einstellbarer Ausschaltzeit gemäß 12.2.2.4
+muss der Nennfehlerstrom /∆N ≥ 0,1 A sein.
+12.2.3
+Die alleinige Verwendung von Fehlerstrom-Schutzeinrichtungen in Anlagen ohne Schutzerdungsleiter
+erfüllt nicht die Anforderungen für den Fehlerschutz.
+12.2.4
+Für Anlagenteile, die netzseitig vor der Fehlerstrom-Schutzeinrichtung liegen, muss eine Maßnahme des
+Fehlerschutzes wirksam sein (z. B. Schutzisolierung). Es ist zulässig, den Schutzerdungsleiter vor der
+Fehlerstrom-Schutzeinrichtung in gemeinsamer Umhüllung mit den aktiven Leitern zu verlegen.
+12.2.5
+Eine Fehlerstrom-Schutzeinrichtungen darf nicht gleichzeitig für Fehler- und Zusatzschutz verwendet
+werden.
+12.2.6
+Die Fehlerstrom-Schutzschaltung muss vor der ersten Inbetriebnahme der Anlage geprüft und
+dokumentiert werden (siehe Abschnitt 22).
+
+
+===== PAGE 43/70 =====
+Seite 43
+ÖVE/ÖNORM E 8001-1
+13 
+Schutztrennung
+13.1
+Bei der Schutztrennung wird der Stromkreis der Verbrauchsmittel mit Hilfe eines Trenntransformators
+oder eines hinsichtlich der elektrischen Trennung gleichwertigen Motorgenerators vom speisenden Netz getrennt
+(siehe Bild 13-1).
+ANMERKUNG: Durch die Schutztrennung soll verhindert werden, dass beim Berühren aktiver Teile des
+Stromkreises der Betriebsmittel oder bei Körperschlüssen an den Betriebsmitteln gefährliche
+Berührungsströme entstehen. Die Maßnahme des Fehlerschutzes Schutztrennung ist nur wirksam,
+solange auf der Sekundärseite kein Erdschluss auftritt, z. B. durch Beschädigung der Leitungen oder
+durch Körperschluss in einer Kupplungssteckvorrichtung mit metallenem Gehäuse und gleichzeitiger
+Erdberührung.
+Unter Motorgenerator ist ein Elektromotor mechanisch gekoppelt mit einem Generator, aber auch ein
+Einankerumformer mit entsprechender elektrischer Trennung der Wicklungen, zu verstehen.
+Bild 13-1: Schutztrennung mit einem angeschlossenen Betriebsmittel
+13.2
+Bei Anwendung der Schutztrennung müssen folgende Bedingungen erfüllt sein:
+13.2.1
+Die Schutztrennung ist nur zulässig in Netzen mit Nennspannungen von höchstens 690 V. Die
+Nennspannung auf der Sekundärseite des Trenntransformators oder Motorgenerators darf jedoch nicht höher als
+500 V (Leiter-Leiter-Spannung) sein.
+13.2.2
+Der Fehlerstrom bei einpoligem Erdschluss im Sekundärstromkreis darf höchstens 30 mA sein.
+ANMERKUNG: Die Messung erfolgt gegen geerdete leitfähige Teile im Handbereich bzw. bei leitfähigem
+Standort gemäß ÖVE/ÖNORM E 8001-6-61.
+Diese Anforderung gilt als eingehalten, wenn das Produkt aus Nennspannung in Volt und Leitungslänge in
+Meter den Wert von 100 000 nicht überschreitet. Es wird empfohlen, wegen der Gefahr von
+Leitungsbeschädigungen die Leitungslänge auf 500 m zu beschränken. Andernfalls ist für ausreichenden
+mechanischen Leitungsschutz und übersichtliche Leitungsverlegung zu sorgen.
+13.2.3
+Werden an einen Trenntransformator oder an einen Motorgenerator mehrere Betriebsmittel
+angeschlossen, dann müssen die Schutzkontakte von Steckdosen und/oder festangeschlossene Betriebsmittel
+der Schutzklasse I durch ungeerdete isolierte Potentialausgleichsleiter miteinander verbunden sein (Bild 13-2),
+die gemäß Tabelle 21-3-2 zu bemessen sind.
+
+
+===== PAGE 44/70 =====
+Seite 44
+ÖVE/ÖNORM E 8001-1
+Bild 13-2: Schutztrennung mit mehreren angeschlossenen Betriebsmitteln
+13.2.4
+Ortsveränderliche Trenntransformatoren müssen schutzisoliert sein und zum Anschließen der
+Betriebsmittel fest eingebaute Steckdosen haben.
+13.2.4.1
+Schutzkontakte von Steckdosen müssen sowohl von berührbaren leitfähigen Teilen als auch von den
+nicht berührbaren aktiven und inaktiven Teilen des Trenntransformators oder Motorgenerators sicher elektrisch
+getrennt sein.
+13.2.4.2
+Wenn nur eine Steckdose vorhanden ist, bleibt ihr Schutzkontakt unbeschaltet. Sind mehrere
+Steckdosen vorhanden, müssen sie Schutzkontakte haben, die durch ungeerdete, isolierte Potential-
+ausgleichsleiter miteinander verbunden sein müssen (siehe 13.2.3).
+13.2.5
+Flexible Leitungen müssen mindestens der Ausführung schwere Gummischlauchleitung (siehe
+ÖVE-K 40) oder mittlere PVC-Schlauchleitung (siehe ÖVE-K 41) entsprechen.
+13.2.6
+Für Trenntransformatoren wird auf ÖVE EN 60742 bzw. ÖVE EN 61558 Reihe und für Motorgeneratoren
+wird auf ÖVE EN 60034 Reihe verwiesen. Trenntransformatoren müssen durch das Zeichen gemäß Bild 13-3
+gekennzeichnet sein.
+Bild 13-3: Zeichen für Trenntransformatoren
+13.2.7
+Die Sekundärstromkreise von Trenntransformatoren oder Motorgeneratoren dürfen nicht geerdet und
+nicht mit anderen Anlagenteilen leitend verbunden werden.
+13.2.8
+Bei besonderer Gefährdung, wie sie bei elektrisch leitendem Standort vorliegt, z. B. in Kesseln, auf
+Stahlgerüsten, in Schiffsrümpfen u. dgl., sind die Gehäuse der zu schützenden Betriebsmittel der Schutzklasse I
+mit dem Standort über einen Kupferleiter mit einem Querschnitt von mindestens 4 mm² zu verbinden.
+Ein Verbinden des Potentialausgleichsleiters mit dem Standort genügt ebenfalls. Bei solchen Arbeiten ist der
+Trenntransformator oder Motorgenerator geschützt und womöglich außerhalb des Arbeitsbereiches aufzustellen.
+
+
+===== PAGE 45/70 =====
+Seite 45
+ÖVE/ÖNORM E 8001-1
+14
+Begrenzung der Fehlerspannung am geerdeten Systemleiter
+14.1
+Als TT- oder TN-Systeme betriebene Niederspannungsnetze sind an einem Systemleiter - bei
+Vorhandensein eines Sternpunktes ist dies immer der N- oder PEN-Leiter - über den Betriebserder RB zu erden.
+14.2
+Dimensionierung des Betriebserders
+14.2.1 allgemein
+Der Erdungswiderstand der Gesamtheit aller Betriebserder des Verteilungsnetzes muss ausreichend niedrig sein.
+Dazu zählen alle über den geerdeten Systemleiter zusammengeschlossenen Erder. Ein Wert von 2 Ω gilt im
+allgemeinen als ausreichend.
+Es muss in TN-Systemen (PEN-Leiter) immer und in solchen TT-Systemen, in denen der geerdete Systemleiter
+(N-Leiter) des Verteilungsnetzes aus Gründen des Netzbetriebes als sicher geerdet gilt, die folgende Bedingung
+erfüllt sein:
+R
+R
+U
+B
+E
+N
+≤
+−
+65
+65
+(1)
+RB...... Erdungswiderstand der Gesamtheit aller Betriebserder
+RE...... kleinster abschätzbarer Erdausbreitungswiderstand der nicht mit einem Schutzerdungsleiter (oder
+Potentialausgleichsleiter) verbundenen, fremden leitfähigen Teile, über die ein Erdschluss
+entstehen kann
+UN...... Nennspannung gegen geerdete Leiter
+RA......Erdungswiderstand der Verbraucheranlage
+Bild 14-1: Erdschluss in einem geerdeten Verteilungsnetz und einer Verbraucheranlage im TT-System
+Diese Bedingung stellt sicher, dass der geerdete Systemleiter keine unzulässig hohe Fehlerspannung annehmen
+kann (Bild 14-1). In Gebieten mit geschlossener Bebauung (siehe 3.6.15) gilt diese Anforderung immer als erfüllt.
+Sie ist auch dann erfüllt, wenn es sich ausschließlich um ein Kabel-Verteilungsnetz handelt, weil in diesem Fall
+nur hochohmige Erdfehler zu erwarten sind.
+Zur Abschätzung des niedrigsten zu erwartenden RE wird ein Leitungsriss in einer Freileitung angenommen, bei
+dem 10 m Leiterseil satt am Boden zu liegen kommen. Der Erdausbreitungswiderstand dieses Leiterstückes wird
+gleich dem eines ebenso langen Oberflächenerders angenommen, womit die Abschätzung auf der sicheren Seite
+liegt. Für UN = 230 V können die höchstzulässigen Ausbreitungswiderstände der Gesamtheit aller Betriebserder
+den Bildern 14-2-1 und 14-2-2 entnommen werden, für davon abweichende Spannungswerte ist die Formel (1) in
+Verbindung mit
+R
+L
+L
+d
+E
+E
+=
+⋅
+×
+⋅
+ρ
+π
+ln(
+)
+2
+(2)
+ρE....... niedrigster zu erwartender, spezifischer Erdwiderstand
+L ........ Länge des Leiterseiles .....10 m (Annahme)
+d ........ Durchmesser des Leiterseiles .....0,015 m (Annahme)
+zur Ermittlung des höchstzulässigen Erdungswiderstandes des Betriebserders heranzuziehen.
+
+
+===== PAGE 46/70 =====
+Seite 46
+ÖVE/ÖNORM E 8001-1
+Für die Abschätzung wird der niedrigste zu erwartende, spezifische Widerstand in jenen Gebieten des
+Verteilungsnetzes gewählt, in denen Erdschlüsse zufolge Freileitungsrissen angenommen werden können
+(kleinster zu erwartender Wert von RE).
+Dabei bleiben Stellen mit im Vergleich zum ganzen Netzgebiet geringer örtlicher Ausdehnung, wie z. B.
+Wasserläufe, Tümpel oder schmale Sumpfzonen, unberücksichtigt, da sie im Vergleich zur gesamten Netzlänge
+ein vernachlässigbares Restrisiko darstellen.
+Bild 14-2-1: Maximal zulässiger Wert für den Gesamterdungswiderstand aller
+Betriebserder RB in Abhängigkeit vom niedrigsten zu erwartenden,
+spezifischen Erdwiderstand ρE für UN = 230 V
+Bild 14-2-2: Maximal zulässiger Wert für den Gesamterdungswiderstand aller Betriebserder RB
+in Abhängigkeit vom niedrigsten zu erwartenden, spezifischen Erdwiderstand ρE
+(Detailbereich bis 500 Ω·m) für UN =  230 V
+
+
+===== PAGE 47/70 =====
+Seite 47
+ÖVE/ÖNORM E 8001-1
+14.2.2 im TN-System
+In TN-Systemen hat der geerdete Systemleiter (das ist im allgemeinen der PEN-Leiter) auch die Funktion eines
+Schutzerdungsleiters und die Einhaltung der Bedingung gemäß 14.2.1 stellt sicher, dass dieser durch
+Erdschlüsse im Verteilungsnetz keine unzulässig hohe Fehlerspannung annehmen kann.
+Sind im Bereich des Verteilungsnetzes gute Erder vorhanden, so ist der Betriebserder nach Möglichkeit mit
+diesen zu verbinden. Dadurch und zufolge des in jeder Verbraucheranlage an den PEN-Leiter angeschlossenen
+Hauptpotentialausgleiches ist die Erfüllung der Bedingung gemäß 14.2.1 immer sichergestellt.
+14.2.3 im TT-System
+14.2.3.1
+In TT-Systemen, in denen der geerdete Systemleiter (das ist im allgemeinen der N-Leiter) des
+Verteilungsnetzes aus Gründen des Netzbetriebes sicher geerdet sein muss (weil er im Netz gemäß ÖVE-E 5
+Teil 1 bzw. ÖVE EN 50110 nicht geschaltet zu werden braucht), stellt die Einhaltung der Bedingung
+gemäß 14.2.1 sicher, dass der N-Leiter durch Erdschlüsse im Verteilungsnetz keine unzulässig hohe
+Fehlerspannung annehmen kann.
+Sind im Bereich des Verteilungsnetzes gute Erder vorhanden, so ist der Betriebserder im TT-System nach
+Möglichkeit mit diesen zu verbinden. Dies jedoch nur soweit es sich dabei nicht um Anlagenerder
+(Hauptpotentialausgleich) einer Verbraucheranlage oder mit 
+diesen 
+verbundene 
+Erder 
+(Blitzschutz-,
+Antennenerder etc.) handelt.
+14.2.3.2
+In TT-Systemen, in denen der geerdete Systemleiter (N-Leiter) des Verteilungsnetzes aus Gründen
+des Netzbetriebes nicht sicher geerdet sein muss (weil der N-Leiter im Netz als aktiver Teil betrachtet wird und
+gemäß ÖVE-E 5 Teil 1 bzw. ÖVE EN 50110 geschaltet wird), darf auf die Einhaltung der Bedingung
+gemäß 14.2.1 verzichtet werden, weil der N-Leiter dann ohne Einschränkung als aktiver Teil gilt und die
+Begrenzung der Fehlerspannung am N-Leiter bei Erdschlüssen im Verteilungsnetz nicht erforderlich ist.
+
+
+===== PAGE 48/70 =====
+Seite 48
+ÖVE/ÖNORM E 8001-1
+15 
+Potentialausgleich
+15.1
+Hauptpotentialausgleich
+Für jeden Hausanschluss oder jede gleichwertige Versorgungseinrichtung (siehe Bild 3-6) muss ein
+Hauptpotentialausgleich gemäß 15.1.1 errichtet werden.
+15.1.1
+Der Hauptpotentialausgleich wird hergestellt indem an die Haupterdungsschiene (Potentialausgleichs-
+schiene - PAS) oder an die Haupterdungsklemme folgende Leiter, falls zutreffend, angeschlossen werden (siehe
+Bilder 15-1 und 15-2):
+–
+Erdungsleiter zum Anlagenerder,
+–
+Nullungsverbindung (bei Ausführung gemäß Bild 10-1b),
+–
+Schutzerdungsleiter der Hauptleitung (PE- oder PEN-Leiter),
+–
+Potentialausgleichsleiter von Antennenanlagen,
+–
+Funktions- und Überspannungs-Erdungsleiter der Informationstechnik (siehe ÖVE-F 1 Teil 7),
+–
+Potentialausgleichsleiter zur Blitzschutzanlage,
+–
+Potentialausgleichsleiter zu leitfähigen Wasserverbrauchsleitungen,
+–
+Potentialausgleichsleiter zu leitfähigen Gasinnenleitungen,
+–
+Potentialausgleichsleiter zu anderen metallenen Rohrsystemen, z. B. Steigleitungen
+zentraler Heizungs- und Klimaanlagen,
+–
+Potentialausgleichsleiter zu Metallteilen der Gebäudekonstruktion, soweit sinnvoll.
+ANMERKUNG: Kabeltassen u.ä. brauchen nicht in den Hauptpotentialausgleich einbezogen werden.
+Die Verbindung zur Blitzschutzanlage hat möglichst nahe an deren Erder zu erfolgen. Wenn sichergestellt ist,
+dass die Blitzschutzanlage am Anlagenerder (Fundamenterder) angeschlossen ist, darf eine gesonderte
+Verbindung entfallen.
+Der Hauptpotentialausgleich erfolgt normalerweise mit einer Haupterdungsschiene (Potentialausgleichsschiene
+PAS). 
+Bei 
+größeren 
+Anlagen 
+dürfen 
+anstelle 
+der 
+Hauptpotentialausgleichsschiene 
+(PAS) 
+mehrere
+Erdungsschienen (Potentialausgleichsschienen) bzw. mehrere Haupterdungsklemmen an einer durchlaufenden
+Potentialausgleichsleitung angeschlossen werden. Diese Leitung ist je nach Anforderung als Schutzerdungsleiter
+gemäß Tabelle 21-2 oder als Potentialausgleichsleiter gemäß Tabelle 21-3-1 zu dimensionieren.
+15.1.2
+Sind an Rohrleitungen Isolierstücke vorhanden, hat der Anschluss der Potentialausgleichsleitungen
+jeweils gebäude- oder anlagenseitig zu erfolgen.
+15.1.3
+Es ist nicht erforderlich, jeden leitfähigen Teil, der in den Hauptpotentialausgleich einbezogen werden
+muss über einen eigenen Potentialausgleichsleiter an die Haupterdungsschiene (Potentialausgleichsschiene)
+anzuschließen. Es dürfen örtlich auch mehrere leitfähige Teile, die in den Hauptpotentialausgleich einbezogen
+werden müssen, über einen Potentialausgleichsleiter miteinander und mit der Haupterdungsschiene
+(Potentialausgleichsschiene) bzw. Haupterdungsklemme verbunden werden, siehe Bild 15-2.
+15.1.4
+Die Gasinnenleitung ist auch dann in den Hauptpotentialausgleich einzubeziehen, wenn kein Isolierstück
+vorhanden ist. Bei vorhandenem Isolierstück ist der Anschluss gemäß Bild 15-1 vorzunehmen.
+15.1.5
+Gasinnenleitungen und Wasserverbrauchsleitungen, die teilweise aus nicht metallenen Werkstoffen
+bestehen, brauchen an diesen Stellen nicht mit einem Potentialausgleichsleiter überbrückt zu werden. Davon
+ausgenommen sind Wasserverbrauchsleitungen in bestehenden Anlagen, wenn sie noch als Schutzerdungsleiter
+verwendet werden. Die Überbrückungsleiter sind gemäß Tabelle 21-2 zu bemessen.
+
+
+===== PAGE 49/70 =====
+Seite 49
+ÖVE/ÖNORM E 8001-1
+W
+1
+2
+PAS
+3
+4
+5
+6
+7
+8
+14
+13
+15
+16
+9
+10
+11
+12
+Bild 15-1: Beispiel für Hauptpotentialausgleich mit Haupterdungsschiene (PAS) und Potentialausgleichsleitern
+1
+2
+2
+3
+4
+5
+6
+7
+8
+14
+13
+15
+16
+9
+10
+11
+12
+5
+5
+5
+5
+5
+2
+W
+Bild 15-2: Beispiel für Hauptpotentialausgleich einer größeren Anlage
+Erläuterung zu Bild 15-1 und Bild 15-2:
+1
+Hauptsicherungskasten
+2
+Erdungsleiter zum Anlagenerder
+3
+Nullungsverbindung, soweit anwendbar
+4
+Schutzerdungsleiter der Hauptleitung
+(PE-Leiter)
+5
+Haupterdungsschiene 
+(Potentialausgleichsschiene - PAS)
+bzw. Haupterdungsklemme
+6
+Potentialausgleichsleiter von Antennen-
+anlagen, Photovoltaikanlagen etc.
+7
+Funktions- und Überspannungs-
+Schutzerdungsleitungen der
+Informationstechnik
+8
+Potentialausgleichsleiter zur Blitzschutzanlage
+(siehe 15.1.1)
+9
+leitfähige Wasserverbrauchsleitung
+10
+leitfähige Gasinnenleitung
+11
+Isolierstück
+12
+Wasserzähler
+13
+leitfähige Heizungsrohre
+14
+leitfähiges Abwasserrohr
+15
+Anlagenerder
+16
+Isolierstück oder nichtleitende Wasserleitung
+
+
+===== PAGE 50/70 =====
+Seite 50
+ÖVE/ÖNORM E 8001-1
+15.2
+Zusätzlicher Potentialausgleich
+Ein örtlicher zusätzlicher Potentialausgleich ist zusätzlich zum Hauptpotentialausgleich gemäß 15.1 zu errichten,
+wenn er wegen besonderer Gefährdung (z. B. Nennspannung des Netzes höher als 250 V gegen Erde,
+erschwerte Umgebungsbedingungen, Beeinflussung) in den jeweiligen technischen Bestimmungen gefordert
+wird.
+In mehrstöckigen Gebäuden, in denen vernetzte Einrichtungen der Informationstechnik verwendet werden oder
+zur Anwendung kommen sollen, wird das Errichten eines zusätzlichen Potentialausgleiches an der
+Hauptverteilung jedes Stockwerkes empfohlen, um Potentialunterschiede am Schutzerdungsleiter möglichst
+gering zu halten.
+Für die Errichtung des zusätzlichen Potentialausgleiches gilt 15.2.1 und 15.2.2.
+15.2.1
+In den zusätzlichen Potentialausgleich müssen alle gleichzeitig berührbaren leitfähigen Teile ortsfester
+Betriebsmittel, Schutzerdungsleiteranschlüsse und alle fremden leitfähigen Teile einbezogen werden. Dies gilt
+auch für die Bewehrung der Stahlbetonkonstruktion von Gebäuden, soweit dies durchführbar ist.
+15.2.2
+Der 
+zusätzliche 
+Potentialausgleich 
+muss 
+mit 
+einem 
+Potentialausgleichsleiter 
+gemäß 
+21.5
+(Tabelle 21-3-2) ausgeführt werden.
+16 
+Verwenden von Gas- und Wasserleitungen als Erder, Erdungsleitung oder 
+Schutzerdungsleiter
+16.1
+Unabhängig von den Anforderungen hinsichtlich des Hauptpotentialausgleiches gemäß 15.1 dürfen Gas-
+und Wasserleitungen nicht als Schutzerdungsleiter, Erdungsleiter, Potentialausgleichsleiter oder Erder verwendet
+werden. Ihre natürliche Wirksamkeit (Erderwirksamkeit, Stromtragfähigkeit bei Parallelschaltung) darf bei der
+Dimensionierung der elektrischen Anlage nicht berücksichtigt werden.
+16.2
+In bestehenden Verbraucheranlagen ist bei wesentlichen Erweiterungen oder wesentlichen Änderungen
+darauf zu achten, dass die Wirksamkeit des Fehlerschutzes ohne Benutzen des Wasserrohrnetzes und der
+Wasserverbrauchsleitungen als Erder und Schutzerdungsleiter sichergestellt ist.
+16.3
+Bei Gleichstromanlagen ist ÖVE-B 5 zu beachten.
+17 
+Zusammenschluss von Erdungen in Nieder- und Hochspannungsanlagen
+Siehe ÖVE-EH 41 bzw. ÖVE/ÖNORM E 8383.
+
+
+===== PAGE 51/70 =====
+Seite 51
+ÖVE/ÖNORM E 8001-1
+18 
+Schutz elektrischer Anlagen gegen transiente Überspannungen
+Überspannungs-Schutzmaßnahmen
+Unter transienten Überspannungen werden im Rahmen dieses Abschnittes vorwiegend jene verstanden, die
+durch atmosphärische Entladungen oder durch Schaltvorgänge entstehen.
+Transiente Überspannungen zufolge atmosphärischer Entladungen können in leitungsgebundene - über das
+Niederspannungs-Verteilungsnetz in die Verbraucheranlage gelangende - indirekte Blitzeinwirkungen und in
+direkte Blitzeinwirkungen unterteilt werden.
+Die Bestimmungen dieses Abschnittes sollen den Schutz gegen indirekte Blitzeinwirkungen sicherstellen.
+Für den Schutz gegen direkte Blitzeinwirkungen sind ergänzende Maßnahmen gemäß ÖVE-E 49 bzw.
+ENV 61024 notwendig.
+Für den Schutz von informationstechnischen Anlagen wird auf ÖVE-F 1 Teil 7 hingewiesen.
+18.1
+Hauptpotentialausgleich und zusätzlicher Potentialausgleich
+Siehe Abschnitt 15.
+18.2
+Bleibt frei.
+18.3 Installation von Überspannungs-Schutzeinrichtungen
+18.3.1 Überspannungs-Schutzeinrichtungen im Verteilungsnetz
+Alle aktiven Leiter sind gegen Überspannungen zu schützen.
+(1)
+Überspannungs-Schutzeinrichtungen müssen
+–
+im TN-C-System jeweils zwischen jedem der Außenleiter und dem PEN-Leiter,
+–
+im TN-S- und im TT-System
+a) jeweils zwischen jedem der aktiven Leiter (Außenleiter und Neutralleiter) und dem PE-Leiter
+bzw. einem geeigneten Betriebserder oder
+b) jeweils zwischen jedem der Außenleiter und dem Neutralleiter sowie zwischen Neutralleiter
+und dem PE-Leiter bzw. einem geeigneten Betriebserder,
+– im IT-System jeweils zwischen jedem aktiven Leiter und dem Schutzerder
+geschaltet werden.
+Ist der Neutralleiter an der Einbaustelle der Überspannungs-Schutzeinrichtungen oder in deren Nähe
+geerdet, so entfällt die Überspannungs-Schutzeinrichtung für den Neutralleiter.
+(2)
+Es müssen Überspannungs-Schutzeinrichtungen verwendet werden, deren Bemessungsspannung
+–
+im TN-C-System mindestens der 1,45-fachen Leiter-Erde-Spannung,
+–
+im TN-S- und im TT-System bei Installation gemäß (1) a) mindestens der -fachen
+Leiter-Erde-Spannung,
+–
+im TN-S- und im TT-System bei Installation gemäß (1) b) für alle Außenleiter mindestens der
+1,45-fachen und für Überspannungs-Schutzeinrichtungen zwischen Neutralleiter und
+PE-Leiter mindestens der 1,1-fachen Leiter-Erde-Spannung,
+–
+im IT-System mindestens der 1,1-fachen Außenleiterspannung
+entspricht.
+Die Installation zusätzlicher Überspannungs-Schutzeinrichtungen zwischen jeweils zwei Außenleitern mit einer
+Bemessungsspannung, die mindestens der 1,1-fachen Außenleiterspannung entspricht, ist zulässig.
+18.3.1.1
+Freileitungsnetze
+In Freileitungsnetzen sind Überspannungs-Schutzeinrichtungen der Ableiterklasse A bzw. der Prüfklasse I oder II
+gemäß ÖVE-SN 60 bzw. IEC 61643-1 einzubauen. Die Abstände der Einbaustellen dürfen 1000 m nicht
+überschreiten. Zusätzlich sind in Gegenden mit erhöhter oder hoher Blitzdichte (siehe Anhang A) die Abstände im
+Mittel auf 500 m zu verringern. Ergänzend wird empfohlen die Überspannungs-Schutzeinrichtungen möglichst bei
+Betriebserdungen und bei Transformatorstationen zu installieren.
+
+
+===== PAGE 52/70 =====
+Seite 52
+ÖVE/ÖNORM E 8001-1
+18.3.1.2
+Gemischte Kabel- und Freileitungsnetze
+18.3.1.2.1
+In allen Netzen mit geringer Ausdehnung des Kabelabschnittes sind mindestens Überspannungs-
+Schutzeinrichtungen der Ableiterklasse C bzw. der Prüfklasse II gemäß ÖVE-SN 60 Teil 4 bzw. IEC 61643-1
+einzubauen. Die Abstände der Einbaustellen dürfen in den Freileitungsabschnitten im Mittel 1 000 m nicht
+überschreiten. In Gegenden mit erhöhter oder hoher Blitzdichte (siehe Anhang A) sind die Abstände im Mittel auf
+500 m zu verringern. Zusätzlich sind Überspannungs-Schutzeinrichtungen bei Transformatorstationen und bei
+Kabelendverschlüssen einzubauen.
+18.3.1.2.2
+In anderen Netzen in Gegenden mit erhöhter oder hoher Blitzdichte (siehe Anhang A) sind
+mindestens Überspannungs-Schutzeinrichtungen der Ableiterklasse C bzw. der Prüfklasse II gemäß ÖVE-SN 60
+Teil 4 bzw. IEC 61643-1 einzubauen. Die Abstände der Einbaustellen in den Freileitungsabschnitten dürfen im
+Mittel 500 m nicht überschreiten. Zusätzlich sind Überspannungs-Schutzeinrichtungen bei Transformatorstationen
+und bei Kabelendverschlüssen einzubauen.
+18.3.1.2.3
+In allen anderen Fällen wird der Einbau von Überspannungs-Schutzeinrichtungen im Kabelabschnitt
+empfohlen.
+18.3.1.3
+Kabelnetze
+18.3.1.3.1
+Kabelnetze mit geringer Ausdehnung (Gesamtlänge unter 500 m) und Kabelnetze in Gebieten 
+geringer Bodenleitfähigkeit
+In Gegenden mit erhöhter oder hoher Blitzdichte (siehe Anhang A) sind mindestens Überspannungs-
+Schutzeinrichtungen der Ableiterklasse C bzw. der Prüfklasse II gemäß ÖVE-SN 60 Teil 4 bzw. IEC 61643-1
+einzubauen. Die Überspannungs-Schutzeinrichtungen sind bei Transformatorstationen und bei Kabelend-
+verschlüssen vorzusehen.
+18.3.1.3.2
+Andere Kabelnetze
+Es wird der Einbau von Überspannungs-Schutzeinrichtungen empfohlen.
+18.3.2 Überspannungs-Schutzeinrichtungen in den Verbraucheranlagen
+Die folgenden Bestimmungen sind als Mindestanforderungen zu betrachten. In Abhängigkeit der zu schützenden
+Anlagen und Geräte und anderer Einflussfaktoren kann auch für andere Anlagen als die genannten die
+Installation von Überspannungs-Schutzeinrichtungen sinnvoll oder notwendig sein bzw. kann für Anlagen die
+Installation zusätzlicher Überspannungs-Schutzeinrichtungen sinnvoll oder notwendig sein. Für solche
+zusätzlichen Überspannungs-Schutzeinrichtungen gelten die Anforderungen gemäß 18.3.2.1 bis 18.3.2.3
+unverändert sowie 18.3.2.4 sinngemäß.
+ANMERKUNG: Für Verbraucheranlagen in unmittelbarer Nähe von Hochspannungserdungen oder
+Schienenanlagen für elektrische Bahnen können höhere als die genannten Mindestbemessungs-
+spannungen sowie ergänzende Maßnahmen erforderlich sein. In solchen Fällen ist das Einvernehmen mit
+den jeweiligen Anlagenbetreibern herbeizuführen.
+(1)
+Verbraucheranlagen, die aus Niederspannungsnetzen gemäß 18.3.1.1, 18.3.1.2, oder 18.3.1.3.1
+versorgt werden, sowie Anlagen in Gebäuden mit äußerem Blitzschutz gemäß ÖVE-E 49 bzw.
+ENV 61024, sind zumindest durch den Einbau von Überspannungs-Schutzeinrichtungen im Bereich
+der Hauptleitung zu schützen.
+(2)
+Die Überspannungs-Schutzeinrichtungen müssen mindestens der Ableiterklasse C bzw. der
+Prüfklasse II gemäß ÖVE-SN 60 Teil 4 bzw. IEC 61643-1 mit einem Nennableitstoßstrom von
+≥ 5 kA (8/20 µs) und einem Schutzpegel ≤ 2000 V, entsprechen.
+(3)
+Werden 
+Überspannungs-Schutzeinrichtungen 
+gemäß 
+18.3.2.1 (1) b), 
+18.3.2.2 (1) b) 
+oder
+18.3.2.3 (1) b) installiert, muss der Nennableitstoßstrom der Überspannungs-Schutzeinrichtung
+zwischen Neutralleiter und Haupterdungsschiene (PAS) oder PE-Schiene der Summe der
+Nennableitstoßströme 
+der 
+Überspannungs-Schutzeinrichtung 
+zwischen 
+den 
+zugehörigen
+Außenleitern und dem Neutralleiter plus 5 kA betragen.
+Das bedeutet für einphasige Verbraucheranlagen mindestens 10 kA und für 3-phasige
+Verbraucheranlagen mindestens 20 kA.
+(4)
+Die Ableiter sind so nahe wie möglich bei der Haupterdungsschiene (PAS) oder PE-Schiene
+einzubauen.
+
+
+===== PAGE 53/70 =====
+Seite 53
+ÖVE/ÖNORM E 8001-1
+18.3.2.1
+Auswahl und Einbau bei Anwendung der Maßnahme des Fehlerschutzes Nullung gemäß Abschnitt 10
+(1)
+Überspannungs-Schutzeinrichtungen müssen
+–
+bei Nullung ohne getrennt geführten Schutzerdungsleiter zwischen jeweils jeden Außenleiter
+und Haupterdungsschiene (PAS), PEN-Leiter oder PEN-Schiene geschaltet werden (Bild 18-1)
+–
+bei Nullung mit getrennt geführtem Schutzerdungsleiter
+a) jeweils zwischen jeden Außenleiter sowie dem Neutralleiter und die Haupterdungsschiene
+(PAS) oder PE-Schiene geschaltet werden (Bild 18-3) oder
+b) jeweils zwischen jeden Außenleiter und den Neutralleiter sowie zwischen Neutralleiter und
+Haupterdungsschiene (PAS) oder PE-Schiene geschaltet werden (Bild 18-4).
+Ist die Nullungsverbindung an der Einbaustelle der Überspannungs-Schutzeinrichtungen oder in
+deren unmittelbarer Nähe hergestellt (siehe Bild 18-2), so darf die Überspannungs-
+Schutzeinrichtung für den Neutralleiter entfallen.
+(2)
+Es müssen Überspannungs-Schutzeinrichtungen verwendet werden, deren Bemessungsspannung
+mindestens der 1,45-fachen Leiter-Erde-Spannung entspricht.
+Die Installation zusätzlicher Überspannungs-Schutzeinrichtungen zwischen den Außenleitern mit einer
+Bemessungsspannung, die mindestens der 1,1-fachen Außenleiterspannung entspricht, ist zulässig.
+Bild 18-1: Anordnung der Überspannungs-Schutzeinrichtungen bei Anwendung der Maßnahme des
+Fehlerschutzes Nullung ohne getrennt geführtem Schutzerdungsleiter
+Bild 18-2: Anordnung der Überspannungs-Schutzeinrichtungen bei Anwendung der Maßnahme des
+Fehlerschutzes Nullung wenn die Nullungsverbindung an der Einbaustelle oder in deren
+unmittelbaren Umgebung hergestellt ist
+
+
+===== PAGE 54/70 =====
+Seite 54
+ÖVE/ÖNORM E 8001-1
+Bild 18-3: Anordnung der Überspannungs-Schutzeinrichtungen bei Anwendung der Maßnahme des
+Fehlerschutzes Nullung mit getrennt geführtem Schutzerdungsleiter gemäß (1) a)
+Bild 18-4: Anordnung der Überspannungs-Schutzeinrichtungen bei Anwendung der Maßnahme des
+Fehlerschutzes Nullung mit getrennt geführtem Schutzerdungsleiter gemäß (1) b)
+18.3.2.2
+Auswahl und Einbau bei Anwendung der Fehlerstrom-Schutzschaltung gemäß 12.2
+(1)
+Überspannungs-Schutzeinrichtungen müssen entweder
+a) jeweils zwischen jeden Außenleiter sowie, falls vorhanden, den Neutralleiter und die
+Haupterdungsschiene (PAS) oder PE-Schiene geschaltet werden (Bild 18-5) oder
+b) jeweils zwischen jeden Außenleiter und den Neutralleiter sowie zwischen Neutralleiter und
+Haupterdungsschiene (PAS) oder PE-Schiene geschaltet werden (Bild 18-6).
+Ist in Sonderfällen, z. B. gemäß 14.2.3.1 der Neutralleiter an der Einbaustelle der Überspannungs-
+Schutzeinrichtungen oder in deren unmittelbarer Nähe mit der Haupterdungsschiene (PAS) oder
+PE-Schiene verbunden, so entfällt die Überspannungs-Schutzeinrichtung für den Neutralleiter.
+Bild 18-5: Anordnung der Überspannungs-Schutzeinrichtungen bei der Maßnahme des Fehlerschutzes
+Fehlerstrom-Schutzschaltung gemäß (1) a)
+
+
+===== PAGE 55/70 =====
+Seite 55
+ÖVE/ÖNORM E 8001-1
+Bild 18-6: Anordnung der Überspannungs-Schutzeinrichtungen bei der Maßnahme des Fehlerschutzes
+Fehlerstrom-Schutzschaltung gemäß (1) b)
+(2)
+Es müssen Überspannungs-Schutzeinrichtungen verwendet werden, deren Bemessungsspannung
+–
+bei Installation gemäß (1) a) mindestens der 1,1·-fachen Leiter-Erde-Spannung und
+–
+bei Installation gemäß (1) b) für alle Außenleiter mindestens der 1,45-fachen und für
+Überspannungs-Schutzeinrichtungen zwischen Neutralleiter und PE-Leiter mindestens der
+1,1-fachen Leiter-Erde-Spannung
+entspricht.
+(3)
+Werden Überspannungs-Schutzeinrichtungen gemäß (1) a) vor der Fehlerstrom-Schutzeinrichtung
+installiert und die Bedingung
+A
+FL
+A
+R
+U
+I
+≤
+RA ..... Erdungswiderstand des Anlagenerders
+UFL .... vereinbarter Grenzwert der Fehlerspannung
+IA ....... Ausschaltstrom der vorgeschalteten oder im Ableiter integrierten
+Überstrom-Schutzeinrichtung (siehe Herstellerangaben und Tabelle 10-1)
+ist nicht erfüllt, ist in die Zuleitungen oder die Erdungsleitung der Überspannungs-
+Schutzeinrichtungen ein Ableitertrennschalter einzubauen (Bild 18-5) oder die Überspannungs-
+Schutzeinrichtungen sind gemäß (1) b) zu installieren (Bild 18-6).
+Dieser Ableitertrennschalter muss mindestens eine Stoßstromfestigkeit entsprechend der Summe
+der Nennableitstoßströme der angeschlossenen Überspannungs-Schutzeinrichtungen haben.
+Das bedeutet für einphasige Verbraucheranlagen mindestens 10 kA und für 3-phasige
+Verbraucheranlagen mindestens 20 kA.
+Bei Ableitvorgängen mit Stoßströmen über der Stoßstromfestigkeit des Ableitertrennschalters kann
+es zu Fehlauslösungen des Ableitertrennschalters kommen.
+Der Erdungswiderstand RA der Verbraucheranlage muss folgende Bedingung erfüllen:
+A
+FL
+FN
+R
+U
+I
+≤
+IFN...... Auslösenennstrom des Ableitertrennschalters
+ANMERKUNG: Die eingebauten Abtrennvorrichtungen der Ableiter stellen lediglich einen
+Überlastungs- und Überhitzungsschutz für jene Fälle dar, in denen der Ableiter leitend wird. Bei
+Einhaltung der genannten Bedingungen zusätzlich zu den Anforderungen an den RA gemäß 12.2
+(Fehlerstrom-Schutzschaltung) können unzulässig hohe Berührungsspannungen vermieden
+werden.
+
+
+===== PAGE 56/70 =====
+Seite 56
+ÖVE/ÖNORM E 8001-1
+Die Installation von Überspannungs-Schutzeinrichtungen der Ableiterklasse B bzw. der Prüfklasse I
+nach Fehlerstrom-Schutzeinrichtungen ist nicht zulässig, ausgenommen die Überspannungen sind
+von der Lastseite des Fehlerstrom-Schutzschaltern zu erwarten.
+Die Installation von Überspannungs-Schutzeinrichtungen der Ableiterklasse C bzw. der Prüf-
+klasse II nach Fehlerstrom-Schutzeinrichtungen ist nur zulässig, wenn vor der Fehlerstrom-
+Schutzeinrichtung bereits Überspannungs-Schutzeinrichtungen entsprechend 18.3.2 (2) bzw. (3)
+installiert sind oder die Überspannungen von der Lastseite des Fehlerstrom-Schutzschalters zu
+erwarten sind (Bild 18-7). In solchen Fällen sind Fehlerstrom-Schutzschalter der Bauart S oder
+Bauart G zu installieren.
+Bild 18-7: Beispiel für die zulässige Anordnung von Überspannungs-Schutzeinrichtungen der
+Ableiterklasse C bzw. der Prüfklasse II nach einer Fehlerstrom-Schutzeinrichtung
+(4)
+Bei 
+Installation 
+der 
+Überspannungs-Schutzeinrichtungen 
+gemäß 
+(1) a) 
+müssen 
+alle
+Überspannungs-Schutzeinrichtungen gemeinsam mit den laut Herstellerangabe vorzuschaltenden
+Schutzeinrichtungen 
+(AT-Schalter, 
+Vorsicherung, 
+etc.) 
+den 
+Anforderungen 
+gemäß
+IEC 61643-1:1998-02, Abschnitt 7.7.4 ohne Gefährdung von Personen und Sachwerten
+entsprechen.
+(5)
+Bei 
+Installation 
+der 
+Überspannungs-Schutzeinrichtungen 
+gemäß 
+(1) b) 
+muss 
+die
+Überspannungsschutzeinrichtung zwischen Neutralleiter und Haupterdungsschiene (PAS) oder
+PE-Schiene gemeinsam mit den laut Herstellerangabe vorzuschaltenden Schutzeinrichtungen den
+Anforderungen gemäß IEC 61643-1:1998-02, Abschnitt 7.7.4 ohne Gefährdung von Personen und
+Sachwerten entsprechen.
+Die Installation zusätzlicher Überspannungs-Schutzeinrichtungen zwischen den Außenleitern mit einer
+Bemessungsspannung, die mindestens der 1,1-fachen Außenleiterspannung entspricht, ist zulässig.
+18.3.2.3 
+Auswahl und Einbau bei Anwendung des Isolationsüberwachungssystems gemäß Abschnitt 11 oder
+bei isolierten Netzen (IT-Systemen) mit Nennspannungen ≤ 250 V
+(1)
+Überspannungs-Schutzeinrichtungen müssen entweder
+a) zwischen 
+jeden 
+Außenleiter 
+sowie, 
+falls 
+vorhanden, 
+den 
+Neutralleiter 
+und 
+die
+Haupterdungsschiene (PAS) oder PE-Schiene geschaltet werden (Bild 18-8) oder
+b) zwischen jeden Außenleiter und den Neutralleiter sowie zwischen Neutralleiter und
+Haupterdungsschiene (PAS) oder PE-Schiene geschaltet werden (wie Bild 18-6).
+(2)
+Es müssen Überspannungs-Schutzeinrichtungen verwendet werden, deren Bemessungsspannung
+–
+bei Installation gemäß (1) a) mindestens der 1,1-fachen Außenleiterspannung entspricht,
+–
+bei Installation gemäß (1) b) für alle Außenleiter mindestens der 1,45-fachen und für
+Überspannungs-Schutzeinrichtungen zwischen Neutralleiter und PE mindestens der 1,1-fachen
+Außenleiter-Neutralleiter-Spannung entspricht.
+Die Installation zusätzlicher Überspannungs-Schutzeinrichtungen zwischen den Außenleitern mit einer
+Bemessungsspannung, die mindestens der 1,1-fachen Außenleiterspannung entspricht, ist zulässig.
+
+
+===== PAGE 57/70 =====
+Seite 57
+ÖVE/ÖNORM E 8001-1
+Bild 18-8: Anordnung der Überspannungs-Schutzeinrichtungen in IT-Systemen gemäß (1) a)
+18.3.2.4
+Zusätzliche Anforderungen für die Auswahl und den Einbau
+18.3.2.4.1 Kombination mit Fehlerstrom-Schutzeinrichtungen
+Werden Überspannungs-Schutzeinrichtungen der Ableiterklasse C bzw. der Prüfklasse II oder III nach einer
+Fehlerstrom-Schutzeinrichtung eingebaut, so muss letztere der Bauart G oder Bauart S gemäß ÖVE-SN 50 bzw.
+ÖVE EN 61008 Reihe entsprechen.
+Bei Ableitvorgängen mit Stoßströmen über 3 kA (Bauart G) oder 5 kA (Bauart S) kann es zu Fehlauslösungen der
+Fehlerstrom-Schutzeinrichtung kommen.
+Beim Defektwerden eines Ableiters erfolgt ebenfalls eine Auslösung der Fehlerstrom-Schutzeinrichtung.
+18.3.2.4.2 Anschlussleitungen
+Überspannungs-Schutzeinrichtungen sind so anzuordnen, dass die Zuleitungen und Erdungsleitungen möglichst
+kurz (vorzugsweise ≤ 0,5 m) sind und möglichst keine Schleifen (impedanzarme Verlegung) beinhalten
+(Bild 18-9).
+Ist eine solche Verlegung nicht möglich, so sollte der Anschluss V-förmig erfolgen, wobei darauf zu achten ist,
+dass die Zuleitungen und Erdungsleitungen mit möglichst großem Abstand verlegt werden (Bild 18-10).
+Bild 18-9: Impedanzarme, kurze ÜSE-Zuleitungen und Erdungsleitungen
+Bild 18-10: V-förmiger Anschluss der Zuleitung (und Erdungsleitung)
+
+
+===== PAGE 58/70 =====
+Seite 58
+ÖVE/ÖNORM E 8001-1
+Die Ableitung erfolgt entweder zur Haupterdungsschiene (PAS) oder zur PE- bzw. PEN-Schiene, je nachdem,
+welche Strecke kürzer ist.
+Der Querschnitt der Anschlussleitungen ist entsprechend dem maximal möglichen Kurzschlussstrom an der
+Einbaustelle zu bemessen. Der Mindestquerschnitt beträgt 4 mm² Kupfer.
+Überlastströme können durch Überspannungs-Schutzeinrichtungen normalerweise nicht verursacht werden,
+daher darf auf den Schutz bei Überlast verzichtet werden.
+18.3.2.4.3
+Schutz bei Überstrom
+Beim Einbau der Überspannungs-Schutzeinrichtungen ist darauf zu achten, dass der maximale Kurzschlussstrom
+und die Vorsicherung an der Einbaustelle nicht größer sind, als gemäß Herstellerangabe maximal zulässig ist. Die
+Installation von Überspannungs-Schutzeinrichtungen ohne eingebaute oder vorgeschaltete Kurzschluss-
+Schutzeinrichtung ist nicht zulässig. Diese Anforderung bezüglich Kurzschlussstrom gilt nicht für Überspannungs-
+Schutzeinrichtungen, die zwischen Neutralleiter und Haupterdungsschiene (PAS) oder PE-Schiene geschaltet
+werden.
+Unabhängig davon ist zu entscheiden, ob im Sinne der Verfügbarkeit der Energieversorgung bei einem Defekt
+der Überspannungs-Schutzeinrichtungen eine eigene Vorsicherung für die Überspannungs-Schutzeinrichtungen
+vorgesehen wird.
+18.3.2.4.4
+Einbau
+Überspannungs-Schutzeinrichtungen dürfen ohne zusätzliche Maßnahmen (siehe ÖVE-EX 65) nicht in brand-
+oder explosionsgefährdeten Räumen eingebaut werden. Sie sind von leicht oder normal brennbaren Materialien
+(siehe ÖNORM B 3800) mindestens brandhemmend zu trennen.
+Überspannungs-Schutzeinrichtungen in Verteilern, zu denen Laien Zutritt haben, sind so einzubauen, dass
+vorhandene Kennmelder auch durch Laien kontrolliert werden können.
+Wenn die Hersteller der Überspannungs-Schutzeinrichtungen in der Installationsanweisung angeben, dass die
+Messung des Isolationswiderstandes der Niederspannungsanlage gemäß ÖVE/ÖNORM E 8001-6-61 mit
+installierten Überspannungs-Schutzeinrichtungen nicht möglich ist, ist ein Hinweisschild mit der Aufschrift „Bei
+Isolationswiderstands-Messungen Überspannungs-Schutzeinrichtungen trennen oder ansteigende Prüfspannung
+verwenden!“ deutlich sichtbar im Verteiler anzubringen.
+18.3.2.4.5
+Koordination von Überspannungs-Schutzeinrichtungen
+Der Hersteller hat in der Installationsanweisung Angaben zur Koordination seiner Überspannungs-
+Schutzeinrichtungen zu machen, die bei der Installation zu beachten sind.
+18.3.2.4.6
+Koordination mit Überstrom-Schutzeinrichtungen
+Bei der Auswahl von Überspannungs-Schutzeinrichtungen und deren Ableitvermögen (Nennableitstoßstrom) ist
+zu beachten, dass das maximale Ableitvermögen der vorgeschalteten Überstrom-Schutzeinrichtungen ebenfalls
+begrenzt ist.
+18.4
+Leitungsverlegung in Gebäuden mit Blitzschutzanlagen
+In Bauwerken mit Blitzschutzanlagen sind bei der Verlegung von Leitungen und Kabeln - zusätzlich zu ÖVE-EN 1
+Teil 3 - ÖVE-E 49 bzw. ENV 61024 zu beachten.
+18.5
+Leitungstragwerke auf Gebäuden mit Blitzschutzanlagen
+Für Leitungstragwerke auf Gebäuden mit Blitzschutzanlagen sind ÖVE-E 49 bzw. ENV 61024 und ÖVE-L 1 zu
+beachten.
+19 
+Isolationswiderstand
+Der Isolationswiderstand der Anlagenteile ohne Verbrauchsgeräte zwischen zwei Überstrom-Schutzeinrichtungen
+oder hinter der letzten Überstrom-Schutzeinrichtung muss mindestens 0,5 MΩ bei Nennspannung bis 500 V und
+1 MΩ bei Nennspannung bis 1 000 V, gemessen mit Gleichspannung, betragen.
+
+
+===== PAGE 59/70 =====
+Seite 59
+ÖVE/ÖNORM E 8001-1
+20 
+Erdung
+20.1
+Erder, Einteilung und Arten
+20.1.1
+Einteilung gemäß der Lage
+(1)
+Horizontalerder
+Erder, die im wesentlichen waagrecht in geringer Tiefe eingebracht werden.
+Sie können z. B. als Strahlen-, Ring- oder Maschenerder oder als Kombination aus diesen
+ausgeführt werden.
+(2)
+Vertikalerder
+Erder, die im wesentlichen lotrecht in größere Tiefen eingebracht werden.
+20.1.2
+Einteilung gemäß der Form und dem Profil
+Man unterscheidet:
+Banderder, Runderder, Rohrerder, Staberder, Plattenerder und Seilerder.
+20.1.3
+Fundamenterder
+Erder, die in Beton eingebettet sind, der mit der Erde großflächig leitend in Berührung steht.
+ANMERKUNG: Durch das Einbetten in zweckmäßig gewähltem Beton ist eine lange Lebensdauer des
+Werkstoffes zu erwarten.
+20.1.4
+natürliche Erder
+mit der Erde oder mit Wasser unmittelbar oder über Beton in Verbindung stehende Metallteile, deren
+ursprünglicher Zweck nicht die Erdung ist, die aber als Erder wirken.
+ANMERKUNG: Hierzu gehören: Rohrleitungen, Spundwände, Betonbewehrungen, Stahlteile von
+Gebäuden usw.
+20.1.5
+Kabel mit Erderwirkung
+Kabel, deren metallene Mäntel, Schirme oder Bewehrungen einen Ausbreitungswiderstand haben, der in der
+Größenordnung des Ausbreitungswiderstandes eines Erders liegt.
+ANMERKUNG: Solche Kabel werden sinngemäß den natürlichen Erdern zugeordnet.
+20.1.6
+Steuererder
+Erder, welche nach Form und Anordnung mehr zur Potentialsteuerung als zum Einhalten eines bestimmten
+Ausbreitungswiderstandes dienen.
+20.2
+Spezifischer Erdwiderstand und Ausbreitungswiderstand
+20.2.1
+Der Spezifische Erdwiderstand hängt im wesentlichen von der Bodenart ab und schwankt im weiten
+Bereich.
+Tabelle 20-1 enthält Richtwerte für spezifische Erdwiderstände verschiedener Bodenarten.
+Bis zu einigen Metern Tiefe können sich durch Veränderungen des Feuchtigkeitsgehaltes auch zeitliche
+Schwankungen des spezifischen Erdwiderstandes ergeben. Ferner ist zu beachten, dass sich der spezifische
+Erdwiderstand infolge der im allgemeinen gegebenen Schichtung des Erdreiches mit der Tiefe stark ändern kann.
+Tabelle 20-1: Richtwerte für spezifische Erdwiderstände
+1
+2
+Bodenart
+Spezifischer Erdwiderstand ρE
+Ω⋅m
+1
+2
+3
+4
+5
+6
+Moorboden
+Lehm, Ton, Humus
+Sand
+Kies
+verwittertes Gestein
+Granit, Grauwacke, Hartgestein feucht
+5
+bis
+40
+20 
+bis
+200
+200 
+bis
+2 500
+2 000 
+bis
+3 000
+meist unter
+1 000
+2 000 
+bis
+3 000
+Bei Fundamenterdern darf so gerechnet werden, als ob der Leiter im umgebenden
+Erdreich verlegt wäre.
+
+
+===== PAGE 60/70 =====
+Seite 60
+ÖVE/ÖNORM E 8001-1
+20.2.2 Ausbreitungswiderstand
+20.2.2.1
+Der Ausbreitungswiderstand eines Erders hängt vom spezifischen Erdwiderstand sowie von den
+Abmessungen und der Anordnung des Erders ab. Er ist hauptsächlich von der Länge des Erders, weniger von
+seinem Querschnitt, abhängig. Bild 20-1 und Bild 20-2 zeigen Werte des Ausbreitungswiderstandes für
+Horizontalerder bzw. Vertikalerder in Abhängigkeit von der Gesamtlänge.
+20.2.2.2
+Der Ausbreitungswiderstand eines Maschenerders ist näherungsweise mit folgender Formel zu
+berechnen:
+R
+D
+E
+E
+= ρ
+2
+Hierbei ist ρE (rhoE) der spezifische Erdwiderstand und D der Durchmesser eines Kreises, der den gleichen
+Flächeninhalt wie der Maschenerder aufweist.
+20.2.2.3 
+Messen des Ausbreitungswiderstandes
+Der Ausbreitungswiderstand der Erdungsanlage soll leicht messbar sein.
+Es ist zweckmäßig, zugängige Messstellen vorzusehen, die getrennte Messungen an einzelnen Erdern
+ermöglichen, z. B. um Fehler einzugrenzen.
+ANMERKUNG: Aus Einzelmessungen kann nicht ohne weiteres auf den Gesamterdungswiderstand einer
+Erdungsanlage geschlossen werden.
+20.3
+Werkstoffe und Mindestabmessungen von Erdern
+20.3.1
+Als Werkstoff für Erder ist Stahl oder Kupfer zu verwenden, soweit nicht örtliche Verhältnisse (z. B. in
+chemischen Betrieben) einen anderen Werkstoff bedingen (siehe ÖVE-E 40).
+ANMERKUNG: Beim Zusammenschluss von Erdern aus verschiedenen Metallen kann durch
+Elementbildung Korrosion auftreten. Auf die Spannungsreihe der Elemente ist zu achten. Fundamenterder
+und Kupfererder haben praktisch das gleiche elektrochemische Potential.
+20.3.2
+Die mit Rücksicht auf ihre mechanische Festigkeit und Korrosion erforderlichen Mindestabmessungen
+von Erdern sind in Tabelle 20-2 festgelegt.
+ANMERKUNG: Eine unzulässige Erwärmung des Erdreiches in der Umgebung von Erdern ist bei
+Einhaltung dieser Werte im allgemeinen nicht zu erwarten.
+Bild 20-1: Ausbreitungswiderstand RE von Horizontalerdern (aus Band, Rundmaterial oder Seil) bei gestreckter
+Verlegung in Abhängigkeit von der Länge I und von Maschenerdern entsprechend einem
+Durchmesser D bei verschiedenen spezifischen Erdwiderständen ρE
+
+
+===== PAGE 61/70 =====
+Seite 61
+ÖVE/ÖNORM E 8001-1
+Bild 20-2: Ausbreitungswiderstand RE von (senkrecht angebrachten) Vertikalerdern in Abhängigkeit von der
+Erderlänge / bei verschiedenen Außendurchmessern d  und verschiedenen spezifischen Erdwiderständen  ρE
+20.3.3
+Soweit Erder nur dem Potentialausgleich dienen, muss der Mindestquerschnitt von feuerverzinktem oder
+kupferplattiertem Stahl 16 mm² und der von Kupfer 10 mm² betragen.
+ANMERKUNG: Wenn Korrosionsgefährdung z. B. durch aggressives Erdreich zu erwarten ist, oder
+unverzinkter Stahl als Erder benützt wird, so empfiehlt es sich, ca. den 1,5-fachen Querschnitt gegenüber
+den Werten gemäß Tabelle 20-2 zu verwenden.
+20.3.4
+Werkstoffe für Fundamenterder
+siehe 20.5.4.
+20.4
+Natürliche Erder
+20.4.1
+Natürliche Erder dürfen verwendet werden, wenn sichergestellt ist, dass ein Ausbau oder ein Austausch
+von Teilen derselben gegen nichtleitende Teile nicht vorgenommen oder rechtzeitig zur Kenntnis des für die
+Erdungsanlage Verantwortlichen gebracht wird, und wenn sie außerdem in sich gut leitend verbunden sind. Diese
+Verbindung kann z. B. durch Messung des Ausbreitungswiderstandes nachgewiesen werden.
+20.4.2
+Natürliche Erder sind in der Regel als gute Erder im Sinne von 14.2 zu betrachten.
+20.4.3
+Die Metallmäntel von Kabeln, die nicht mit Kunststoff isoliert und unmittelbar im Erdreich verlegt sind,
+dürfen als Erder herangezogen werden, wenn die Verbindungen in den Muffen mindestens leitwertgleich zum
+Metallmantel sind.
+
+
+===== PAGE 62/70 =====
+Seite 62
+ÖVE/ÖNORM E 8001-1
+Tabelle 20-2: Werkstoffe für Erder und ihre Mindestmaße bezüglich Korrosion
+1
+2
+3
+4
+5
+6
+7
+8
+Mindestmaße
+Kern
+Beschichtung
+Durch-
+messer
+Quer-
+schnitt
+Dicke
+Mindest-
+wert
+Mittel-
+wert
+Werkstoff
+Form
+mm
+mm2
+mm
+µm
+µm
+1
+Band3)
+90
+3
+60
+70
+2
+Kreuzprofil o.dgl.
+90
+3
+60
+70
+3
+Rund für
+Vertikalerder
+20
+-
+-
+60
+70
+4
+Stahl
+feuer-
+verzinkt
+1)
+Rund für
+Horizontalerder
+102)
+-
+-
+40
+50
+5
+Band
+90
+3
+−
+−
+6
+Rund für
+Vertikalerder
+20
+-
+-
+−
+−
+7
+Edel
+stahl
+V4A
+korrosions-
+beständig
+Rund für
+Horizontalerder
+10
+-
+-
+−
+−
+8
+Band
+50
+2
+−
+−
+9
+Rund für
+Horizontalerder
+7
+-
+-
+−
+−
+10
+Kupfer
+blank
+Seil
+1,8
+für die
+Einzeldrähte
+25
+-
+−
+−
+1)
+Verwendbar auch für Einbettung in Beton.
+2)
+Für Fernmeldeanlagen als Kabelbegleiterdung 8 mm Durchmesser.
+3)
+Folgende Querschnitte sind bevorzugt zu verwenden:
+30 mm × 3 mm in Ringen,
+40 mm × 3 mm in Ringen,
+40 mm × 4 mm in Ringen.
+20.5 Anordnung und Ausführung von Erdern
+20.5.1
+Bei der Auswahl und Anordnung der Erder sind die örtlichen Verhältnisse, die Bodenbeschaffenheit und
+der zulässige Ausbreitungswiderstand zu berücksichtigen. Bei Kombination verschiedener Erdermaterialien,
+insbesondere von Fundament- und Kupfererder einerseits und von Eisen/Stahlerder andererseits, ist auf deren
+gegenseitige korrosive Beeinflussung zu achten.
+Der Erder muss in guter Verbindung mit dem umgebenden Erdreich stehen. Gut leitende Erdschichten sind
+wegen des geringen Aufwandes zu bevorzugen. In trockenen Erdschichten sind die Erder in nichtbindigem
+Erdreich einzuschlämmen; bindiges Erdreich ist sorgfältig zu stampfen. Steine und grober Kies unmittelbar am
+Erder vergrößern den Ausbreitungswiderstand. Es empfiehlt sich in diesen Fällen, die Erder mit bindigem
+Erdreich zu umgeben.
+20.5.2
+Horizontalerder müssen frostfrei, d. i. im allgemeinen in einer Mindesttiefe von 0,8 m, verlegt werden,
+sofern die Bodenverhältnisse dies erlauben. Bei Strahlenerdern soll der Winkel zwischen benachbarten Strahlen
+60° nicht unterschreiten, da kleinere Winkel wegen der gegenseitigen Beeinflussung eine Vergrößerung des
+Ausbreitungswiderstandes verursachen.
+20.5.3
+Vertikalerder sollen möglichst lotrecht in die Erde eingetrieben werden. Sie können besonders dann von
+Vorteil sein, wenn in der Tiefe der spezifische Erdwiderstand abnimmt. Sind mehrere Vertikalerder notwendig, um
+den gewünschten Ausbreitungswiderstand zu erreichen, so ist ein gegenseitiger Abstand von mindestens der
+wirksamen Länge eines einzelnen Erders anzustreben.
+ANMERKUNG: Bei hohem spezifischem Erdwiderstand der oberen Bodenschichten sind Vertikalerder
+nicht in ihrer ganzen Länge wirksam.
+
+
+===== PAGE 63/70 =====
+Seite 63
+ÖVE/ÖNORM E 8001-1
+20.5.4
+Für die Verlegung von Fundamenterdern werden die für den Bau notwendigen Aufgrabungen
+ausgenützt. Es wird empfohlen, vorhandene Bewehrungsstähle mit dem Fundamenterder zu verbinden.
+Als Werkstoff ist verzinkter oder blanker Bandstahl (mindestens 30 mm × 3 mm) oder Rundstahl (mindestens
+10 mm Durchmesser) zu verwenden. Im Betonkörper darf blankes Material, außerhalb des Betonkörpers darf
+über Erde nur mindestens feuerverzinktes Material und für unterirdische Ausleitung nur Kupfer verwendet
+werden. Bewehrungsstähle und einbetonierte Stahlteile dürfen ebenfalls herangezogen werden.
+Schweißverbindungen an Bewehrungsstählen dürfen nur im Einvernehmen mit dem Ersteller des Stahlbetons
+hergestellt werden.
+Fundamenterder sind gemäß ÖNORMEN B 5432 und E 2790 auszuführen.
+Der Fundamenterder ist im allgemeinen folgendermaßen anzuordnen:
+(1)
+Ein Erder ist als geschlossener Ring im Fundament der Umfassungsmauer zu verlegen.
+(2)
+Sind Punkte innerhalb des Grundrisses weiter als 5 m vom Erder entfernt, sind
+weitere Verbindungen so einzulegen, dass dieses Maß nirgends überschritten wird.
+(3)
+Sind Dehnungsfugen vorhanden, sind die Erder außerhalb des Betons korrosionsgeschützt
+zu verbinden.
+Für den Anschluss des Fundamenterders an die elektrische Anlage ist mindestens eine Anschlussfahne
+auszuführen. Weitere Anschlussfahnen sind nach Notwendigkeit vorzusehen, z. B. für den Anschluss des
+Gebäudeblitzschutzes oder benachbarte Erder. Weitere Reserveanschlussfahnen für allfällige Erweiterungen sind
+zweckmäßig.
+Die Anschlussfahnen dürfen innerhalb des Fundamenterderbetons ohne Korrosionsschutz geführt werden. Für
+Ausleitungen in den Luftraum (Innenräume oder an der Gebäudeaußenseite ausreichend über Erde) genügt ein
+einfacher Korrosionsschutz, am besten feuerverzinktes Material. Müssen Ausleitungen ins Erdreich verlegt
+werden, so sind diese entweder in Kupfer auszuführen oder es ist kunststoffummanteltes Material (z. B. mittels
+Schrumpfschlauch) zu verwenden, wobei diese Ausleitungen mindestens 0,25 m oder die halbe Betonkörperdicke
+in den Betonkörper reichen müssen. In jedem Fall sind Ausleitungen nach innen oder nach außen und
+ausreichend über Erdniveau gegenüber solchen unter Erde der Vorzug zu geben.
+ANMERKUNG: Feuerverzinkung ist für Eisen und Stahl dann kein ausreichender Korrosionsschutz wenn
+im selben Erdereinflussbereich andere, elektrochemisch edlere Erder vorhanden sind. Diese sind in der
+Praxis und in erster Linie Fundament- und Kupfererder.
+20.5.5
+Erder sind miteinander und mit Erdungsleitungen durch Schweiß-, Schraub- oder Klemmverbindung
+elektrisch leitend und mechanisch fest zu verbinden. Wird die Verschraubung nur mit einer Schraube ausgeführt,
+so ist mindestens Gewinde M 10 zu verwenden. Das gleiche gilt für Anschlussschellen an Rohrerdern.
+21 
+Erdungsleitungen, Schutzerdungsleiter und Potentialausgleichsleiter
+21.1
+Erdungsleitungen
+Erdungsleitungen müssen den folgenden Bestimmungen entsprechen:
+21.1.1
+Bei Verlegen von Erdungsleitungen sind die Mindestquerschnitte gemäß Tabelle 21-1einzuhalten.
+21.1.2
+Der Anschluss der Erdungsleitung an einen Erder muss zuverlässig und elektrotechnisch einwandfrei
+ausgeführt werden.
+Wenn eine Erdungsschelle verwendet wird, darf sie den Erder (z. B. ein Rohr) oder die Erdungsleitung nicht
+beschädigen. Wird die Verschraubung nur mit einer Schraube ausgeführt, ist mindestens Gewinde M 10 zu
+verwenden. An Seilen dürfen auch Hülsenverbinder (z. B. Kerb-, Press- oder Schraubverbindungen) verwendet
+werden.
+21.1.3
+Erdungsleitungen über der Erde müssen sichtbar oder bei Verkleidung zugängig verlegt und gegen zu
+erwartende mechanische und chemische Zerstörung geschützt sein. Schalter oder ohne Werkzeug leicht lösbare
+Verbindungen sind in Erdungsleitungen unzulässig.
+Für den Betriebserder gilt als ausreichender Schutz, wenn er im Handbereich so am Mast oder an der Wand
+befestigt ist, dass er nicht umfasst werden kann.
+21.1.4
+Verbindungen von Erdung und Erdungssammelleitungen miteinander sind gemäß 20.5.5 herzustellen.
+
+
+===== PAGE 64/70 =====
+Seite 64
+ÖVE/ÖNORM E 8001-1
+Tabelle 21-1: Mindestquerschnitte von Erdungsleitungen
+1
+2
+Verlegung
+mechanisch geschützt
+(z. B. YY oder Rohr)
+mechanisch
+ungeschützt
+1
+isoliert
+wie gemäß 21.3 gefordert
+mindestens 4 mm² Cu,
+zulässige Begrenzung
+16 mm² Cu
+Aluminium
+Kupfer
+unzulässig
+16 mm²
+2
+blank
+---
+Aluminium
+Kupfer
+Eisen,
+feuerverzinkt
+unzulässig
+25 mm²
+50 mm²
+jedoch nicht im Einflussbereich von oder in
+Kombination mit Fundament- und Kupfererdern
+21.2
+Haupterdungsschiene (Potentialausgleichsschiene PAS); Haupterdungsklemme
+Vorrichtungen zum Abtrennen der Erdungsleitungen müssen zugängig sein. Sie können zweckmäßig mit der
+Haupterdungsschiene (Potentialausgleichsschiene PAS) oder Haupterdungsklemme kombiniert werden, damit es
+möglich ist, den Ausbreitungswiderstand der Erdungsanlage zu messen. Diese Verbindung darf nur mittels
+Werkzeuges lösbar sein; sie muss ausreichende mechanische Festigkeit haben und eine dauerhafte elektrische
+Verbindung sicherstellen.
+21.3
+Schutzerdungsleiter
+21.3.1
+Querschnitte
+21.3.1.1
+Die Auswahl der Mindestquerschnitte erfolgt im allgemeinen gemäß Tabelle 21-2. Bestehen besondere
+Anforderungen an den Schutzerdungsleiter, z. B. beim Anschluss von Betriebsmitteln der Leistungselektronik, so
+ist der Schutzerdungsleiter entsprechend zu dimensionieren (siehe ÖVE EN 50178).
+In Grenzfällen ist auch eine Berechnung des Schutzerdungsleiterquerschnittes gemäß HD 384.5.54 S1 zulässig,
+wobei die auftretenden Kurzschlussströme und die vorhandenen Überstrom-Schutzeinrichtungen zu
+berücksichtigen sind. Eine Verringerung unter den halben Außenleiterquerschnitt ist in genullten Anlagen nicht
+zulässig. Ausgenommen davon sind entsprechende Angaben in Betriebsmittelbestimmungen, z. B. in
+ÖVE EN 60439.
+Ergeben sich aus der Berechnung nicht genormte Querschnitte, ist der in der Normreihe nächstgrößere
+Querschnitt auszuwählen.
+Tabelle 21-2: Zuordnung des Schutzerdungsleiters und des PEN-Leiters zum Außenleiter
+1
+2
+Querschnitt A der Außenleiter der Anlage
+Mindestquerschnitt APE(N),min des
+Schutzerdungsleiters, PEN-Leiters
+mm²
+mm²
+1
+A ≤ 16
+A
+2
+16 < A ≤ 35
+161)
+3
+A > 35
+A/2
+Die Werte sind nur gültig, wenn der Schutzerdungsleiter (PEN-Leiter) aus dem gleichen Metall besteht wie der
+Außenleiter. Trifft dies nicht zu, so ist der Querschnitt des Schutzerdungsleiter (PEN-Leiters) so festzulegen, dass
+sich die gleiche Leitfähigkeit ergibt.
+Ergeben sich aus der Berechnung A/2 keine genormten Querschnitte, sind die nächstgrößeren Nennquerschnitte zu
+verwenden.
+1) In bestehenden Anlagen mit Kabeln mit einem Querschnitt 3 × 16+10 ist ein PEN-Leiter-Querschnitt von 10 mm²
+zulässig.
+21.3.1.2
+Der Querschnitt von Schutzerdungsleitern, die nicht mit Außenleitern und Neutralleitern in einer
+gemeinsamen Umhüllung verlegt sind, darf in keinem Fall kleiner sein als
+–
+2,5 mm² Kupfer, bei mechanisch geschützter Verlegung,
+–
+4 mm² Kupfer, bei mechanisch ungeschützter Verlegung,
+–
+50 mm² Stahl, (Rundstahl mindestens 8 mm Durchmesser und Bandstahl mit
+mindestens 3 mm Dicke).
+21.3.1.3
+Wird ein gemeinsamer Schutzerdungsleiter für mehrere Stromkreise verwendet, muss der Querschnitt
+des Schutzerdungsleiters entsprechend dem größten Außenleiterquerschnitt bemessen sein.
+
+
+===== PAGE 65/70 =====
+Seite 65
+ÖVE/ÖNORM E 8001-1
+21.3.2
+Arten von Schutzerdungsleitern
+21.3.2.1
+Als Schutzerdungsleiter dürfen verwendet werden:
+–
+Leiter in mehradrigen Kabeln und Leitungen,
+–
+isolierte oder blanke Leiter verlegt in gemeinsamer Umhüllung mit Außenleitern und dem Neutralleiter
+z. B. in Elektro-Installationsrohren und Elektro-Installationskanälen,
+–
+fest verlegte blanke oder isolierte Leiter,
+–
+metallene Umhüllungen (Mäntel, Schirme und konzentrische Leiter bestimmter Kabel und Leitungen,
+Elektro-Installationsrohre und Elektro-Installationskanäle), siehe jedoch 21.3.2.3,
+–
+Profilschienen auch wenn sie Klemmen und/oder Geräte tragen,
+–
+Gehäuse und Bauteile elektrischer Betriebsmittel soweit sie bestimmungsgemäß dafür vorgesehen
+sind, z. B. Gehäuse von Stromschienensystemen, siehe jedoch 21.3.2.2.
+Fremde leitfähige Teile dürfen nicht als Schutzerdungsleiter verwendet werden.
+21.3.2.2 Wenn 
+die 
+Anlage 
+Gehäuse 
+oder 
+Konstruktionsteile 
+von 
+Schaltgeräte-Kombinationen 
+oder
+metallgekapselte Stromschienensysteme umfasst, dürfen die Metallgehäuse oder Konstruktionsteile als
+Schutzerdungsleiter verwendet werden, vorausgesetzt, dass sie gleichzeitig folgende Anforderungen erfüllen:
+(1)
+Ihre durchgehende elektrische Verbindung muss so ausgeführt sein, dass eine Verschlechterung
+infolge der zu erwartenden mechanischen, chemischen oder elektrochemischen Einflüsse
+verhindert wird. Der Ausbau einzelner Konstruktionsteile, die den Schutzerdungsleiter bilden, darf
+keine Unterbrechung der Schutzerdungsleiterbahn zur Folge haben.
+(2)
+Ihre Leitfähigkeit muss mindestens den Querschnitten gemäß Tabelle 21-2 entsprechen.
+(3)
+An jeder dafür vorgesehenen Stelle müssen auch andere Schutzerdungsleiter angeschlossen
+werden können.
+ANMERKUNG: Für den Anschluss von außen herangeführter Schutzerdungsleiter müssen, falls
+erforderlich, geeignete Anschlussklemmen vorgesehen sein.
+Anschlussstellen für den Schutzerdungsleiter müssen mit dem Zeichen für Schutzleiter gemäß ÖNORM E 1357
+gekennzeichnet sein.
+21.3.2.3
+Metallene Umhüllungen (blank oder isoliert) von Kabeln und Leitungen insbesondere Mäntel mineral-
+isolierter Leitungen und Elektro-Installationsrohre und Elektro-Installationskanäle dürfen als Schutzerdungsleiter
+des entsprechenden Stromkreises verwendet werden, wenn sie den Anforderungen gemäß 21.3.2.2.(1) und (2)
+entsprechen.
+21.3.3 Sichere elektrische Verbindung der Schutzerdungsleiter
+21.3.3.1
+Schutzerdungsleiterverbindungen 
+müssen 
+angemessen 
+gegen 
+die 
+Verschlechterung 
+ihrer
+Eigenschaften infolge mechanischer, chemischer oder elektrochemischer Einflüsse geschützt werden.
+Befestigungs- und Verbindungsschrauben (für mechanische Zwecke) dürfen nicht für den Anschluss von
+Schutzerdungsleitern verwendet werden.
+Wenn betriebsbedingt erforderlich, darf der Schutzerdungsleiter auch über Schleifringe geführt werden, jedoch
+dürfen die Schleifkontakte gegenüber den übrigen Stromabnehmern nicht austauschbar sein.
+21.3.3.2
+Schutzerdungsleiterverbindungen müssen zur Besichtigung und Prüfung zugängig sein, es sei denn,
+sie sind vergossen.
+21.3.3.3
+Im Schutzerdungsleiter darf keine Schalteinrichtung eingebaut sein. Es dürfen jedoch Trennstellen
+vorhanden sein, die für Prüfzwecke mittels Werkzeuges lösbar sind.
+21.3.3.4
+Körper elektrischer Betriebsmittel dürfen nicht als Schutzerdungsleiter für andere elektrische
+Betriebsmittel verwendet werden; ausgenommen siehe 21.3.2.2.
+21.3.3.5
+Schutzerdungsleiterverbindungen 
+und 
+Schutzerdungsleiteranschlüsse 
+müssen 
+gegen 
+Lockern
+gesichert sein. Im allgemeinen gelten bestimmungsgemäße Klemmen, die mit dem vorgegebenen Drehmoment
+angezogen sind, als gegen Lockern gesichert. Es kann notwendig sein, ein elastisches Teil, z. B. eine
+Druckplatte, vorzusehen, wenn die Verbindung Schwingungen oder Temperaturwechsel ausgesetzt ist (siehe
+ÖVE EN 60999).
+
+
+===== PAGE 66/70 =====
+Seite 66
+ÖVE/ÖNORM E 8001-1
+21.4
+PEN-Leiter
+21.4.1
+Bei Nullung gemäß Abschnitt 10 darf bei fester Verlegung und einem Leiterquerschnitt von mindestens
+10 mm² Kupfer, bzw. 16 mm² Aluminium ein einziger Leiter verwendet werden, der sowohl Schutzerdungsleiter
+als auch Neutralleiter ist.
+Wenn es sich jedoch um Kabel oder Leitungen mit konzentrischen Leiter handelt und vorausgesetzt, dass an
+allen Anschlussstellen und Klemmen im Verlauf der konzentrischen Leiter doppelte Verbindungen vorhanden
+sind, darf der Mindestquerschnitt des Leiters, der gleichzeitig die Funktion des PE-Leiters und des Neutralleiters
+hat, 4 mm² betragen. Die Anwendung von konzentrischen PEN-Leitern setzt Geräte und Einrichtungen voraus,
+die für diesen Zweck konstruiert sind.
+21.4.2
+Neutralleiter, PEN- und PE-Leiter dürfen beliebig oft vom PEN-Leiter abgezweigt werden. Ein vom PEN-
+Leiter abgezweigter Neutralleiter darf nach der Aufteilung nicht mehr geerdet und nicht mehr mit einem
+PE-Leiter verbunden werden.
+21.4.3
+Profilschienen dürfen als PEN-Leiter verwendet werden, wenn sie nicht aus Stahl bestehen und nur
+Klemmen jedoch keine Geräte tragen.
+ANMERKUNG: Beim Aufbringen von Geräten, z. B. Leitungsschutzschalter, Fehlerstrom-Schutz-
+einrichtungen, ist die Wärmeabfuhr der Profilschiene nicht sichergestellt.
+21.4.4
+Fremde leitfähige Teile dürfen nicht als PEN-Leiter verwendet werden.
+21.4.5
+In Gebäuden, in denen vernetzte Einrichtungen der Informationstechnik verwendet werden oder zur
+Anwendung kommen sollen, wird empfohlen, auf die Führung eines PEN-Leiters auch bei Querschnitten über
+10 mm² Kupfer bzw. 16 mm² Aluminium zu verzichten und die gesamte Installation mit getrennt geführtem
+Schutzerdungsleiter auszuführen, um das Fließen von Ausgleichsströmen über den Schutzerdungsleiter zu
+vermeiden.
+21.5
+Potentialausgleichsleiter
+21.5.1
+Die Querschnitte von Potentialausgleichsleitern sind den Tabellen 21-3-1 und 21-3-2 zu entnehmen.
+Der zusätzliche Potentialausgleich darf auch mit Hilfe von fest angebrachten, fremden, leitfähigen Teilen wie z. B.
+Metallkonstruktionen oder zusätzlichen Leitern oder einer Kombination von beiden ausgeführt werden.
+21.5.2
+Der Anschluss von 
+Potentialausgleichsleitern an 
+Rohrleitungen muss mittels 
+Rohrschellen,
+Anschlussfahnen, Kontaktbolzen oder Hartlöt- bzw. Schweißverbindungen erfolgen.
+Schrauben zur Befestigung von Rohrschellen und Spannbandschrauben müssen mindestens Schrauben mit
+Gewinde M 6 sein.
+Wird die Schraubverbindung nur durch eine Schraube hergestellt, so muss mindestens Gewinde M 10 verwendet
+werden.
+Anschlüsse von Potentialausgleichsleitern müssen für Besichtigung und Prüfung zugängig sein.
+21.5.3
+Der Anschluss von Potentialausgleichsleitern an Rohrleitungen in Erde, in feuchten und nassen
+Räumen, sowie bei stark korrosiver Beanspruchung (z. B. in Stallungen) muss mit einem Korrosionsschutz
+versehen werden, z. B. durch:
+–
+Auftragen einer plastischen Vergussmasse (z. B. Bitumenmasse) und
+Bewickeln mit Korrosionsschutzbinde oder
+–
+Korrosionsschutzbinde mit unverrottbarem Trägergewebe und porenfreier Kunststofffolie oder
+–
+geeignete Schrumpfschläuche.
+In feuchten und nassen Räumen dürfen auch Anstriche, Beschichtungen oder korrosionsbeständige Werkstoffe
+verwendet werden.
+
+
+===== PAGE 67/70 =====
+Seite 67
+ÖVE/ÖNORM E 8001-1
+Tabelle 21-3-1: Querschnitte für Potentialausgleichsleiter für den Hauptpotentialausgleich
+1
+2
+Querschnitte für Potentialausgleichsleiter
+(Hauptpotentialausgleich)
+1
+normal
+0,5 × Querschnitt des größten PE-Leiters der Anlage1)
+2
+mindestens
+10 mm² Kupfer
+3
+zulässige Begrenzung
+25 mm² Kupfer oder gleicher Leitwert bei anderen Werkstoffen
+1) 
+Größter PE-Leiter der Anlage ist
+-
+der vom Hauptverteiler der Anlage abgehende Schutzerdungsleiter mit dem größten Querschnitt oder
+-
+wenn kein Hauptverteiler vorhanden ist, der Schutzerdungsleiter der Hauptleitung.
+Bei zentraler Zähleranordnung gilt diese als Hauptverteiler.
+Tabelle 21-3-2: Querschnitte für Potentialausgleichsleiter für den zusätzlichen Potentialausgleich
+1
+2
+Querschnitte für Potentialausgleichsleiter
+(zusätzlicher Potentialausgleich)
+1
+zwischen zwei Körpern
+1 × Querschnitt des kleineren
+PE-Leiters
+2
+normal
+zwischen 
+einem 
+Körper 
+und
+einem fremden leitfähigen Teil
+0,5 × Querschnitt des
+PE-Leiters
+3
+bei mechanischem Schutz
+2,5 mm² Kupfer
+4
+mindestens
+ohne mechanischem Schutz
+4 mm² Kupfer
+21.6
+Kennzeichnung von Schutzerdungsleiter, PEN-Leiter, Erdungsleitung und
+Potentialausgleichsleiter
+21.6.1 Isolierte Leiter
+Isolierte PE-Leiter und isolierte PEN-Leiter sind in ihrem ganzen Verlauf durchgehend grün-gelb zu kennzeichnen
+(siehe ÖVE-EN 1 Teil 3 § 40).
+Diese Kennzeichnung darf auch für
+–
+Potentialausgleichsleiter,
+–
+Erdungsleitungen,
+–
+Verbindungsleitungen und
+–
+Überbrückungsleiter
+verwendet werden.
+Für andere Leiter ist die Farbkennzeichnung grün-gelb nicht zulässig.
+21.6.2 Einadrige und mehradrige Kabel und Leitungen
+Bei Verwendung einadriger und mehradriger Kabel und Leitungen ist ÖVE-EN 1 Teil 3  § 40 anzuwenden.
+21.6.3 Konstruktionsteile und nicht isolierte Leiter
+Die grün-gelbe Kennzeichnung darf entfallen
+–
+bei blanken Schutzerdungsleitern, wenn eine dauerhafte Kennzeichnung nicht möglich ist,
+–
+wenn der Schutzerdungsleiter aus leitfähigen Konstruktionsteilen (siehe 21.3.2.2) besteht,
+–
+bei Freileitungen.
+22 
+Prüfung des Schutzes gegen elektrischen Schlag (Schutzmaßnahmen)
+Die Wirksamkeit der Schutzmaßnahme(n) ist/sind vor der ersten Inbetriebnahme der Anlage zu prüfen
+(Erstprüfung).
+In ÖVE/ÖNORM E 8001-6-61 sind für die Prüfung der Schutzmaßnahmen vor der ersten Inbetriebnahme
+Anleitungen bzw. Methoden angegeben. Es wird jedoch nachdrücklich darauf hingewiesen, dass sämtliche
+Bestimmungen für die Schutzmaßnahmen einzuhalten sind.
+Die Messergebnisse sind zu dokumentieren.
+
+
+===== PAGE 68/70 =====
+Seite 68
+ÖVE/ÖNORM E 8001-1
+Anhang A (informativ): Blitzgefährdung in Österreich
+Die durchschnittliche Dichte der Erdblitze (Ng), d. h. die mittlere Anzahl der Blitzeinschläge pro km2 und Jahr,
+beschreibt am ehesten die Blitzgefährdung eines bestimmten Gebietes und wird am besten mit Hilfe eines
+Blitzortungssystems ermittelt.
+Liegen keine Daten eines Blitzortungssystems vor, kann die Blitzdichte auf Basis der Gewittertage nach der
+folgenden von IEC vorgeschlagenen Gleichung abgeschätzt werden:
+Ng = 0,04.Td
+1,25
+Dabei ist Td die mittlere Anzahl der Gewittertage pro Jahr, entnommen aus Karten des isokeraunischen Pegels.
+Die folgende Tabelle 1 zeigt Beispiele des Zusammenhanges  zwischen Td und Ng.
+Tabelle A.1
+Anzahl der Gewittertage pro Jahr
+Td
+Td < 20
+20 ≤ Td < 25
+25 ≤ Td < 30
+30 ≤ Td < 35
+Td > 35
+Blitzschläge je km2 und Jahr
+Ng
+Ng < 1,7
+1,7 ≤ Ng < 2,2
+2,2 ≤ Ng < 2,8
+2,8 ≤ Ng < 3,4
+Ng > 3,4
+Blitzgefährdungskategorie
+gering
+mäßig
+erhöht
+hoch
+sehr hoch
+In Österreich wird mit dem Blitzortungssystem ALDIS (Austrian Lightning Detection & Information System) seit
+1992 die Blitzhäufigkeit bundesweit registriert. In Tabelle 3 ist die mittlere jährliche Blitzdichte für die politischen
+Bezirke in Österreich zusammengestellt. Als „blitzgefährdet„ bezeichnet man im allgemeinen Gebiete mit
+durchschnittlich mehr als 2,2 Einschlägen pro km2 und Jahr (entspricht nach Tab. 1 Gebieten mit mehr als
+25 Gewittertagen).
+ANMERKUNG: Durch die Mittelwertbildung der Blitzdichte über die Gesamtfläche der einzelnen Bezirke
+gehen wesentliche Informationen über ausgeprägte Unterschiede in der regionalen Blitzdichte verloren.
+Wie Tabelle 2 am Beispiel eines willkürlichen Ausschnittes des Bezirkes Murau in der Steiermark zeigt,
+treten innerhalb eines kleinen Gebietes von 10 km mal 9 km Blitzdichtewerte zwischen 1,1 und 5,9
+Einschlägen pro km2 und Jahr auf. Dabei zeigt sich eine deutliche Abhängigkeit von den lokalen
+topographischen Gegebenheiten (z. B. geringe Blitzhäufigkeit in Tälern und rascher Anstieg der Blitzdichte
+mit zunehmender Höhe). Als Mittelwert über den gesamten Bezirk Murau ergibt sich eine Blitzdichte von
+3,03 Einschlägen pro km2 und Jahr (siehe Tabelle 2).
+Genauere Informationen über die lokale Blitzdichte erhalten Sie bei:
+ÖVE-ALDIS,
+Kahlenberger Str. 2b,
+1190 Wien
+Tel.: +43-1-3180566        Fax: +43-1-3180566-9
+www.aldis.at
+Tabelle A.2: Beispiel der lokale Blitzdichte in 1-km-mal-1-km-Flächen in einem willkürlichen Ausschnitt des
+Bezirkes Murau in der Steiermark. Die Zahlenangaben in den Tabellenfeldern entsprechen
+der mittleren Anzahl von Blitzschlägen pro km2 und Jahr basierend auf den Blitzortungsdaten
+der Jahre 1992 bis 1997
+3,4
+2,1
+1,4
+2,0
+2,4
+2,1
+2,6
+2,3
+3,4
+2,6
+1,7
+1,3
+2,6
+2,4
+1,9
+3,7
+2,3
+1,1
+1,7
+1,9
+3,3
+4,7
+2,4
+2,9
+5,3
+3,4
+3,0
+2,1
+2,4
+2,6
+3,4
+4,6
+2,6
+3,3
+2,6
+3,0
+1,3
+4,3
+3,7
+4,3
+4,0
+4,3
+2,9
+1,7
+4,4
+3,3
+3,6
+4,1
+2,9
+3,0
+2,0
+2,1
+4,0
+2,9
+2,9
+3,3
+3,7
+3,7
+3,3
+3,1
+1,7
+2,1
+2,4
+1,7
+3,4
+4,4
+3,0
+2,9
+3,0
+1,4
+2,9
+4,3
+2,1
+5,1
+3,7
+2,9
+2,0
+2,0
+2,9
+2,4
+2,1
+1,3
+4,0
+2,7
+2,3
+2,1
+1,7
+2,4
+3,3
+5,9
+
+
+===== PAGE 69/70 =====
+Seite 69
+ÖVE/ÖNORM E 8001-1
+Tabelle A.3: Blitzgefährdung der einzelnen Bezirke in Österreich (Basierend auf den
+   ALDIS-Blitzortungsdaten der Jahre 1992 bis 1997)
+Bezirk
+Mittlere
+Blitzdichte Ng
+in Anzahl
+Blitze je km2
+und Jahr
+Blitz-
+gefährdung
+Bezirk
+Mittlere
+Blitzdichte Ng
+in Anzahl
+Blitze je km2
+und Jahr
+Blitz-
+gefährdung
+BURGENLAND
+OBERÖSTERREICH
+Eisenstadt
+1,39
+gering
+Linz-Stadt
+1,13
+gering
+Rust
+1,16
+gering
+Steyr-Stadt
+1,31
+gering
+Eisenstadt-Umgebung
+1,31
+gering
+Wels-Stadt
+1,40
+gering
+Güssing
+1,50
+gering
+Braunau am Inn
+1,23
+gering
+Jennersdorf
+1,68
+gering
+Eferding
+1,09
+gering
+Mattersburg
+2,17
+mäßig
+Freistadt
+1,47
+gering
+Neusiedl am See
+1,20
+gering
+Gmunden
+2,05
+mäßig
+Oberpullendorf
+1,80
+mäßig
+Grieskirchen
+1,20
+gering
+Oberwart
+2,01
+mäßig
+Kirchdorf/Krems
+1,87
+mäßig
+Linz-Land
+1,15
+gering
+KÄRNTEN
+Perg
+1,33
+gering
+Klagenfurt-Stadt
+1,84
+mäßig
+Ried im Innkreis
+1,15
+gering
+Villach-Stadt
+2,20
+mäßig
+Rohrbach
+1,31
+gering
+Hermagor
+2,51
+erhöht
+Schärding
+1,10
+gering
+Klagenfurt-Land
+2,16
+mäßig
+Steyr-Land
+1,37
+gering
+St.Veit an der Glan
+3,28
+hoch
+Urfahr-Umgebung
+1,23
+gering
+Spittal an der Drau
+2,18
+mäßig
+Vöcklabruck
+1,45
+gering
+Villach-Land
+2,73
+erhöht
+Wels-Land
+1,29
+gering
+Völkermarkt
+2,41
+erhöht
+Wolfsberg
+2,97
+hoch
+SALZBURG
+Feldkirchen
+2,96
+hoch
+Salzburg-Stadt
+1,92
+mäßig
+Hallein
+2,61
+erhöht
+NIEDERÖSTERR.
+Salzburg-Umgebung
+1,65
+gering
+Krems an der Donau
+1,86
+mäßig
+St.Johann im Pongau
+2,28
+erhöht
+St.Pölten-Stadt
+0,78
+gering
+Tamsweg
+2,37
+erhöht
+Waidhofen/Ybbs
+1,25
+gering
+Zell am See
+2,08
+mäßig
+Wiener Neustadt
+2,26
+erhöht
+Amstetten
+1,28
+gering
+STEIERMARK
+Baden
+1,45
+gering
+Graz-Stadt
+2,98
+hoch
+Bruck an der Leitha
+1,19
+gering
+Bruck an der Mur
+2,69
+erhöht
+Gänserndorf
+1,17
+gering
+Deutschlandsberg
+2,80
+hoch
+Gmünd
+1,36
+gering
+Feldbach
+2,20
+erhöht
+Hollabrunn
+1,31
+gering
+Fürstenfeld
+2,16
+mäßig
+Horn
+1,30
+gering
+Graz-Umgebung
+3,18
+hoch
+Korneuburg
+1,12
+gering
+Hartberg
+2,81
+hoch
+Krems
+1,59
+gering
+Judenburg
+2,58
+erhöht
+Lilienfeld
+1,42
+gering
+Knittelfeld
+2,83
+hoch
+Melk
+1,04
+gering
+Leibnitz
+2,05
+mäßig
+Mistelbach
+1,32
+gering
+Leoben
+2,44
+erhöht
+Mödling
+1,03
+gering
+Liezen
+2,24
+erhöht
+Neunkirchen
+2,74
+erhöht
+Mürzzuschlag
+3,07
+hoch
+St.Pölten-Land
+0,86
+gering
+Murau
+3,03
+hoch
+Scheibbs
+1,49
+gering
+Radkersburg
+2,05
+mäßig
+Tulln
+1,04
+gering
+Voitsberg
+3,38
+hoch
+Waidhofen/Thaya
+1,38
+gering
+Weiz
+3,04
+hoch
+Wiener Neustadt-Land
+2,09
+mäßig
+Wien-Umgebung
+0,90
+gering
+TIROL
+Zwettl
+1,58
+gering
+Innsbruck-Stadt
+1,86
+mäßig
+Imst
+1,10
+gering
+VORARLBERG
+Innsbruck-Land
+1,59
+gering
+Bludenz
+1,16
+gering
+Kitzbühel
+2,74
+erhöht
+Bregenz
+1,59
+gering
+Kufstein
+2,24
+erhöht
+Dornbirn
+1,88
+mäßig
+Landeck
+1,11
+gering
+Feldkirch
+1,22
+gering
+Lienz
+1,59
+gering
+Reutte
+1,54
+gering
+WIEN
+Schwaz
+2,06
+mäßig
+Wien-Stadt
+0,78
+gering
+
+
+===== PAGE 70/70 =====
+Seite 70
+ÖVE/ÖNORM E 8001-1
+Anhang B (informativ): Literaturhinweise
+ÖVE-E 40
+Schutz von Erdern und erdverlegten Metallteilen gegen Korrosion
+ÖVE-EH 41
+Erdungen in Wechselstromanlagen mit Nennspannungen über 1 kV
+ÖVE-EN 1 Teil 4 § 97
+Errichtung von Starkstromanlagen mit Nennspannungen bis 1000 V
+und 1500 V - Teil 4: Besondere Anlagen - § 97: Fliegende Bauten
+und Wagen nach Schaustellerart sowie deren Stromversorgung
+ÖVE-EN 2 Teil 1 bis Teil 8
+Starkstromanlagen und Sicherheitsstromversorgung in baulichen 
+Anlagen für Menschenansammlungen
+ÖVE-EN 7
+Starkstromanlagen in Krankenhäusern und in medizinisch genutzten
+Räumen außerhalb von Krankenhäusern
+ÖVE EN 50178
+Ausrüstung von Starkstromanlagen mit elektronischen Betriebsmitteln
+ÖVE EN 60034 Reihe
+Drehende elektrische Maschinen
+ÖVE EN 60065
+Sicherheitsbestimmungen für netzbetriebene elektronische Geräte 
+und deren Zubehör für den Hausgebrauch und ähnliche 
+Anwendung
+ÖVE EN 60335 Reihe
+Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche 
+Zwecke
+ÖVE EN 60439-4
+Niederspannungs-Schaltgerätekombinationen - Teil 4: Besondere
+Anforderungen an Baustromverteiler (BV)
+ÖVE EN 60519 Reihe
+Sicherheit in Elektrowärmeanlagen
+ÖVE EN 60598 Reihe
+Leuchten
+ÖVE EN 60601 Reihe
+Medizinische elektrische Geräte
+ÖVE EN 60999
+Verbindungsmaterial - Sicherheitsanforderungen für Schraubklemm-
+stellen und schraubenlose Klemmstellen für elektrische Kupferleiter
+ÖVE EN 61557-8
+Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 kV und DC
+1,5 kV - Geräte zum Prüfen, Messen oder Überwachen von Schutz-
+maßnahmen - Teil 8: Isolationsüberwachungsgeräte für IT-Netze
+ÖVE-EX 65
+Errichtung elektrischer Anlagen in explosionsgefährdeten 
+Bereichen
+ÖVE-F 1Teil 7
+Fernmeldeanlagen und -geräte - Teil 7: Schutz gegen schädigende 
+transiente Überspannungen
+ÖVE HD 625.1 S1
+Isolationskoordination für elektrische Betriebsmittel in Nieder-
+spannungsanlagen - Teil 1: Grundsätze, Anforderungen und
+Prüfungen
+ÖVE-K 40
+Energieleitungen mit einer Isolierung aus Gummi
+ÖVE-K 41
+Energieleitungen mit einer Isolierung aus PVC
+ÖNORM B 3800 Reihe
+Brandverhalten von Baustoffen und Bauteilen
+ÖNORM F 1000 Reihe
+Feuerwehr- und Brandschutzwesen
+ISO/IEC-Guide 51
+Guidelines for the inclusion of safety aspects in standards

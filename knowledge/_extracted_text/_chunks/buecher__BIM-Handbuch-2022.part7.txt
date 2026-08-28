@@ -1,0 +1,1283 @@
+
+
+===== PAGE 281/348 =====
+280
+BIM-Projektorganisation
+ Entscheidend ist wie bisher das „Durch­
+denken“ und „Mitdenken“ der Vorgaben 
+des AG, der Vorleistungen anderer Planer etc.
+ Vorsicht bei der Übernahme „neuer“ Auf-
+gaben, ob die dafür notwendige Ausbildung 
+vorhanden ist.
+ Achtung auf die Klärung und Regelung von 
+inhaltlichen, organisatorischen und ver-
+fahrensbedingten Schnittstellen.
+DR. KONSTANTIN POCHMARSKI 
+zu Prüf- und Warnpflichten
+Rechtstipp
+ Aktuelle Software verwenden.
+ Software bestimmungsgemäß verwenden 
+und keine „Hilfslösungen“ verwenden.
+ Wartung/Update der Software wahrnehmen.
+ Rechenergebnisse des „Blechtrottels“ mit 
+Fachverstand plausibilisieren und die erfolg-
+te Plausibilisierung dokumentieren.
+DR. KONSTANTIN POCHMARSKI 
+zum Einsatz von Software
+Rechtstipp
+
+
+===== PAGE 282/348 =====
+281
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+Änderungsmanagement
+Auch durch die Anwendung von BIM lassen 
+sich Änderungen und Umplanungen bei Bauvor-
+haben nicht vermeiden. Durch die mit BIM ge-
+wonnene Transparenz und einen hohen 
+Reifegrad der Planung lassen sich bei entspre-
+chender Kommunikationskultur jedoch so man-
+che Konflikte bzw. Kollisionen zwischen Gewer-
+ken schon in der Planungsphase erkennen und 
+das Potenzial, zeit- und kostenintensive Ände-
+rungsprozesse in der Ausführungsphase zu ver-
+meiden, steigt.
+Treten Änderungen bei Bauvorhaben (z.B. 
+auf Wunsch des Bauherrn) auf, können diese am 
+Modell visualisiert und bei entsprechender Para-
+metrisierung auch die zeitlichen und finanziellen 
+Auswirkungen ermittelt werden. Durch die Be-
+trachtung unterschiedlicher Szenarien können ef-
+fiziente und wirtschaftliche Lösungen für erfor-
+derliche Änderungen erarbeitet werden. 
+Durch die BIM-basierte Arbeitsweise ist es 
+möglich, das Verständnis betreffend Kostenände-
+rungen bei entsprechenden Planungsänderun-
+gen zu steigern und anhand von Visualisierungen 
+für alle Beteiligten besser nachvollziehbar und 
+transparenter zu gestalten. Eine modellbasierte, 
+bauteilbezogene Dokumentation der Änderun-
+gen bietet zusätzlich die Chance, Leistungsände-
+rungen sowie zusätzliche Leistungen einfacher 
+zuzuordnen und fair zu vergüten.
+BIM im Betrieb bzw. in der 
+Nutzung
+Zukünftig wird besonders für die Nutzung 
+und den Betrieb von Bauwerken, die als BIM-Pro-
+jekte geplant und ausgeführt wurden, durch as-
+built-Dokumentationen und CAFM-Systeme ein 
+wesentlicher zusätzlicher Nutzen für die Betrei-
+ber von Objekten erwartet. Damit werden Daten 
+und Informationen bereitgestellt sowie laufend 
+aktualisiert und gewartet, die für den Betrieb, die 
+Instandhaltung/Wartung und Nutzung des Ob-
+jekts erforderlich sind. Für die Nutzung solcher 
+Systeme ist eine frühe Definition der Ziele durch 
+den AG und ein Datentransfer von der Planung 
+und Ausführung bis hin zum Betrieb erforderlich. 
+Dieser Datentransfer muss spätestens in der Leis-
+tungsphase 9 erfolgen. Am Projektbeginn ist ge-
+meinsam mit dem AG bzw. dem Betreiber ein 
+entsprechendes System (oder auch mehrere) für 
+den Betrieb und die Nutzung zu definieren und 
+aufzubauen. Der Fokus ist dabei besonders auf 
+die Kompatibilität der auszutauschenden Daten-
+formate zu legen. Verantwortlich für die Anbin-
+dung von Modelldaten und der as-built-Doku-
+mentation an ein CAFM-System ist der AG bzw. 
+der Betreiber. Zu berücksichtigen ist jedoch, dass 
+je nach Projektkonstellation das CAFM-System 
+während des Projektverlaufs durch die/den BGK 
+in Abstimmung mit dem BIM-Management suk-
+zessive mit Daten versorgt. 
+
+
+===== PAGE 283/348 =====
+282
+BIM-Projektorganisation
+„Zivilingenieur:innen für Vermessungswesen kommen zumin-
+dest immer dann ins Spiel, wenn es um den Bestand geht (BIM as- 
+built). Das Modellieren einfacher oder auch komplexerer Bestände 
+wird von uns als Basis für weitere Planungen gemacht. Die Erfahrung 
+zeigt: Es wird äußerst selten angefragt. Spätestens, wenn die Frage 
+nach dem Preis kommt, steigen viele aus. Natürlich ist der Aufwand 
+größer als das Anfertigen von einfachen Grundrissplänen. Je größer 
+der Detailreichtum, desto mehr Aufwand steckt dahinter. Es ist aber 
+vieles gut machbar und abbildbar. Viele Vermesser:innen haben das 
+Know-how und die Möglichkeiten, BIM-fähige Daten zu liefern. Diese 
+stellen eine solide dreidimensionale Datengrundlage dar, die es allen 
+anderen ermöglicht, direkt darin weiter zu arbeiten, ohne sie erst für 
+3D adaptieren (umbauen) zu müssen.“
+DI CORA STÖGER
+Dabei wird festgehalten, dass eine as-built-
+Dokumentation kein selbstverständlicher Be-
+standteil eines BIM-Projekts ist und davon 
+abhängt, wie ein solches in den AIA definiert ist. 
+Eine as-built-Dokumentation ist zumeist nicht mit 
+dem Letztstand der Planung (Fachmodell) bei 
+Projektende gleichzusetzen. Es handelt sich da-
+bei vielmehr um eine gesonderte Leistung, die 
+auch gesondert vergütet werden muss. Für die 
+as-built-Dokumentation werden z.B. Aufnahmen 
+in Form von 3D-Punktwolken durchgeführt, die 
+dann in weiterer Folge auch mit dem BIM-Modell 
+verglichen und Abweichungen sichtbar gemacht 
+werden können. Für eine modellbasierte Be-
+triebs- & Erhaltungsphase ist eine Punktwolke 
+aber zu wenig bzw. ungeeignet. Es muss dazu  
+ein eigenes Modell erstellt bzw. die Änderungen/
+Abweichungen in ein bestehendes Modell einge-
+arbeitet werden.
+In Abbildung 100 ist die Einbindung eines 
+CAFM-Systems als Prozess beispielhaft dar­
+gestellt. Im laufenden Projekt (LPH 3 bis LPH 8) 
+werden die Modelldaten nach und nach an das 
+CAFM-System angebunden. Die Datenstruktur 
+wird dabei zu Beginn eines Projektes mit den zu-
+ständigen Planer:innen analysiert und festgelegt 
+sowie im Projektverlauf durch die BGK überprüft. 
+Als finaler Schritt werden nach der Ausführung in 
+der LPH 9 die endgültigen Modelldaten an das 
+CAFM-System angebunden und schließlich an 
+den AG für den Betrieb und die Nutzung des 
+Gebäudes übergeben.
+
+
+===== PAGE 284/348 =====
+283
+Aufsetzen und Abwickeln eines BIM-Projekts („hands-on“)
+ Abbildung 100: Einbindung eines CAFM-Systems
+Nachfolgend werden die in Abbildung 100 
+dargestellten, durchnummerierten Ablaufschritte 
+genauer beschrieben:
+1.	
+Durch den AG und/oder die späteren 
+Nutzer:innen des Bauwerks (und deren FM-
+Dienstleister) wird vorgegeben, welche Daten 
+durch das CAFM-System für einen optimalen  
+Betrieb bereitgestellt werden sollen. Dabei lohnt 
+es sich durchaus, bereits in früheren Leistungs-
+phasen mehr Zeit zu investieren, da die Nutzung 
+zeitlich und kostenmäßig mehr Kapazitäten in 
+
+
+===== PAGE 285/348 =====
+284
+BIM-Projektorganisation
+Anspruch nimmt als die Planung und der Bau.  
+Mit welchen Informationen ein CAFM-System 
+schon während der Planungs- und Bauphase  
+gefüttert wird, ist in den AIA festgelegt.
+2.	
+Bei zu geringen Erfahrungswerten des 
+AG sollte für die richtige Wahl eines CAFM- 
+Systems eine BIM-Projektleitung herangezogen 
+werden. Dies erfolgt idealerweise durch Abstim-
+mung mit dem Facility Management (FM). Bei der 
+Wahl des CAFM-Systems muss auf die Kompa­
+tibilität mit dem für das Projekt ausgewählten 
+BIM-System geachtet werden. Eine mögliche 
+Schnittstelle zwischen CAFM-System und BIM-
+System wäre zum Beispiel der Datentransfer auf 
+IFC-Ebene.
+3.	
+Wurde ein passendes CAFM-System 
+ausgewählt, wird in diesem Prozess nochmals 
+eine Rückkopplung zum AG dargestellt. Durch 
+diesen wird dann die Auswahl des CAFM-Systems 
+freigegeben. Entspricht das CAFM-System nicht 
+den Anforderungen des AG bzw. der späteren 
+Nutzer:innen und des Facility Managements, 
+folgen wieder die Schritte 1 bis 3.
+4.	
+In diesem Schritt wird das freigegebene 
+CAFM-System durch den oder die BIM-Gesamt­
+koordinator:in (BGK) analysiert und gegebenen-
+falls nochmals auf Kompatibilität geprüft. Ent-
+scheidungen (z.B. in Bezug auf Machbarkeit, 
+Sinnhaftigkeit, Kosten & Nutzen) werden vom 
+BGK in dieser Phase keine mehr getroffen, es 
+steht das Sammeln und Einlesen der Daten im 
+Vordergrund.
+5.	
+In den Leistungsphasen 3 bis 8 werden 
+die Modelldaten vom:n BIM-Gesamtkoordina-
+tor:in gesammelt und zur Einarbeitung in das 
+CAFM-System vorbereitet.
+6.	
+Die gesammelten Modelldaten werden 
+laufend während der Planungs- und Bauphase 
+aktualisiert und bei Bedarf in das CAFM-System 
+übertragen bzw. für die finale Übertragung vor-
+bereitet. Die Schleife bestehend aus den Schrit-
+ten 4, 5 und 6 wiederholt sich bis zur Fertigstel-
+lung des Projekts.
+7.	
+Die oder der BIM-Gesamtkoordina-
+tor:in analysiert und prüft die übertragenen 
+Modell­daten.
+8.	
+Nach Fertigstellung des Bauwerks wer-
+den ausgewählte Modelldaten aller Planungs­
+beteiligten für eine Endübergabe an das CAFM-
+System finalisiert.
+9.	
+In der Leistungsphase 9 wird die End­
+übergabe aller erforderlichen Modelldaten aller 
+Planungsbeteiligten durch den oder die BIM-
+Gesamt­koordinator:in koordiniert und überprüft.
+10.	 Wurden alle Gebäudedaten seitens  
+des BGK in das CAFM-System übertragen, kann es 
+dem AG bzw. den späteren FM-Dienstleistern der 
+Gebäudenutzer:innen übergeben werden.
+
+
+===== PAGE 286/348 =====
+285
+Zusammenfassung und Ausblick
+Zusammenfassung und Ausblick
+Die komplexe Aufbau- und Ablauforganisa-
+tion von BIM-Projekten erfordert Prozessdarstel-
+lungen und -beschreibungen, um den handeln-
+den Akteur:innen entsprechende Aufgaben, 
+Verantwortlichkeiten, Rechte und Pflichten zu-
+ordnen zu können sowie die gesamte Projekt­
+organisation verständlich und übersichtlich dar-
+zustellen.
+Für die Beteiligten ist es von zentraler Be­
+deutung zu wissen, welche Rolle(n) sie innerhalb 
+des BIM-Projektes einnehmen, welche Aufgaben 
+und Verantwortlichkeiten mit diesen Rollen ver-
+bunden sind, wo sie Schnittstellen mit anderen 
+Akteuren aufweisen und wie Informationen und 
+Daten ausgetauscht werden. 
+Im Kapitel wurden dazu exemplarisch unter-
+schiedliche Konstellationen der Projektorganisa-
+tion beschrieben und zentrale Aufgaben, wie 
+etwa die Erstellung und Abstimmung von Auf-
+traggeber-Informations-Anforderungen (AIA) 
+und der BIM-Abwicklungsplanung (BAP), erläu-
+tert. Auch die Einrichtung einer Austauschplatt-
+form (Common Data Environment – CDE) sowie 
+die Erstellung von Fachmodellen bzw. eines Koor-
+dinationsmodelles wurde anhand von Prozess­
+abläufen dargestellt und beschrieben. 
+
+
+===== PAGE 287/348 =====
+286
+BIM-Projektorganisation
+	
+Hofstadler, Christian; Kummer, Markus (2017), 
+Chancen- und Risikomanagement in der Bauwirt-
+schaft. Berlin, Heidelberg. Springer-Verlag (ISBN 
+978-3-662-54318-4)
+	
+https://www.buildingsmart.co.at/muster-aia-
+und-muster-bap/, Datum des Zugriffs: 3. 8. 2021
+	
+Lechner, Hans et al. (2021), Kostenplanung 
+und die ÖNORM B 1801-1:2021. In: derPlan N°52 
+April 2021. (Online unter: https://wien.arching.at/
+fileadmin/user_upload/redakteure_wnb/A_Aktu-
+elles/derPlan_Jahresberichte/derPlan_52_WEB_
+V3.pdf, Datum des Zugriffs: 22. 11. 2021)
+	
+Wall, Johannes (2017), Lebenszyklusorien­
+tierte Modellierung von Planungs-, Ausschrei-
+bungs- und Vergabeprozessen. Dissertation. 
+Graz. Institut für Baubetrieb und Bauwirtschaft 
+der Technischen Universität Graz
+Literaturverzeichnis
+	
+
+
+===== PAGE 288/348 =====
+287
+Literaturverzeichnis
+
+
+===== PAGE 289/348 =====
+288
+BIM-Projektorganisation in der ASFiNAG
+BIM-Projektorganisation in der ASFiNAG	
+Im Rahmen unserer Projekte ergeben sich 
+bereits aus der konventionellen Abwicklung ver-
+schiedene Projektorganisationen. Mit BIM kom-
+men dann nochmal neue Rollen dazu. Damit 
+Auftragnehmer nicht jedes Mal die BIM-Rollen  
+des Auftraggebers studieren müssen, haben sich 
+alle öffentliche Auftraggeber in einer Arbeits­
+gruppe auf ein einheitliches Rollenbild und deren 
+Beschreibung geeinigt.
+Auf diese Rollen haben sich die öffentlichen 
+Auftraggeber geeinigt und diese werden bei  
+allen BIM-Projekten angewendet. Doch welche 
+BIM-Aufgaben habe die einzelnen Rollen für den 
+öffentlichen Auftraggeber:
+Das BIM-Informationsmanagement koor­
+diniert alle operativen BIM-Agenden in einem 
+Unternehmen und unterstützt alle Projektlei-
+tungen, insbesondere die BIM-Projektsteuerung, 
+in allen BIM-relevanten Fragen. Diese Rolle wurde 
+für die BIM-Methode neu geschaffen. 
+Die BIM-Projektleitung ist die verantwort-
+liche Stelle beim AG für die generelle Spezi­
+fizierung der Rahmenbedingungen eines Pro-
+jekts, für die Definition der verwendeten 
+Leistungsbilder der jeweiligen Akteure sowie 
+ASFINAG
+für die Durchsetzung der Anforderungen des AG 
+an die verwendete Datenstruktur im Projekt.
+Die BIM-Projektsteuerung vertritt die Inter-
+essen des AG bei der konkreten Spezifizierung 
+und der operativen Durchführung eines BIM-
+Projekts.
+Die BIM-Gesamtkoordination koordiniert 
+und verifiziert interdisziplinäre BIM-Inhalte 
+der Planungsbeteiligten auf Grundlage der 
+Vorgaben der BIM-Projektsteuerung. Dise trägt 
+die Verantwortung für das Koordinationsmodell 
+und überwacht die Durchführung der vorge­
+gebenen Aufgaben der Fachkoordination und  
+ist primärer Ansprechpartner der digitalen 
+Planung gegenüber der BIM-Projektsteuerung.
+Die BIM Fachkoordination (BFK) verifiziert 
+fachspezifische BIM-Inhalte der jeweiligen Fach-
+disziplin und ist verantwortlich für die proaktive 
+Abstimmung der disziplineigenen Planungs-
+leistungen mit den anderen Fachdisziplinen so-
+wie für die Deklaration bzw. Fortschreibung von 
+Statusangaben (BCF).
+Die BIM-Erstellung erstellt BIM-Inhalte der je-
+weiligen Fachdisziplin. Diese Rolle wird aus Sicht 
+der Auftraggeber nicht weiter spezifiziert. 
+
+
+===== PAGE 290/348 =====
+289
+ASFiNAG
+ Abbildung 101: BIM-Rollen aus Sicht der Auftraggeber
+Die BIM-Koordination Bau-AN ist Ansprech-
+partner für die BIM-Projektsteuerung. Ob die 
+BIM-Koordination Bau-AN das BIM-Modell selbst 
+weiterführt oder die Inhalte zur Integration zum 
+Beispiel an die BIM-Gesamtkoordination weiter-
+gibt, ist projektspezifisch festzulegen.
+Im Rahmen von ASFiNAG BIM-Projekten wird 
+derzeit evaluiert, ob die BIM-Gesamtkoordination 
+und die BIM-ÖBA in einer Personalunion fusio-
+niert werden kann. 
+Hier auch noch ein konkretes Beispiel einer 
+Projektorganisation (siehe oben).
+
+
+===== PAGE 291/348 =====
+BIM-Projektorganisation in der ASFiNAG
+290
+Im Projekt A26 Linz Umfahrung Etappe 2 
+haben wir in der ASFiNAG dieses schematische 
+Rollenorganigramm. Das BIM-Informationsma-
+nagement wird intern durch den Fachbereich 
+BMG Services abgewickelt. Die BIM-Projekt­
+leitung und die BIM-Projektsteuerung wird in  
+Personalunion abgewickelt und ist somit das 
+BIM-Management. Zusätzlich zur BIM-Projekt-
+steuerung gibt es noch eine klassische externe 
+Projektsteuerung in diesem Projekt.
+ Abbildung 102:  Projektorganigramm A26 Linz Umfahrung Etappe 2
+
+
+===== PAGE 292/348 =====
+291
+ASFiNAG
+
+
+===== PAGE 293/348 =====
+292
+Auswertungen
+Durch BIM sind viele Auswertungen erst so richtig möglich geworden.  
+Manche waren zwar schon vorher möglich, aber mit einem viel höheren Aufwand. 
+So ist es nun Realität geworden, auch schon einmal mitten im Projekt die eine oder 
+andere Zwischenauswertung zu fahren, um beispielsweise zu sehen, wie es um  
+das Verhältnis von Nutz-, Verkehrs- und Technikflächen steht, oder ob es bei den 
+Mengen oder Kosten auffällige Positionen gibt. Im Regelfall liefert die Modellier-
+software dabei die Basisdaten. Nach einer korrekten Übergabe der Daten an eine 
+entsprechende Auswertungssoftware liefert diese dann entsprechende Analysen 
+und Ergebnisse.
+Auswertungen
+Kapitel 7
+MARCUS WALLNER
+
+
+===== PAGE 294/348 =====
+Auswählen und Hervorheben  . . . . . . . . . . . . . . . . . . . . . .	
+294
+Filter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+294
+Überschreiben . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+297
+Sichtbarkeiten . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+299
+Versionsvergleiche . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+302
+4D-Simulationen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+302
+Mapping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+305
+Mengenermittlung (5D)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+305
+Korrekte Modellierung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+307
+Richtige Zuweisung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+307
+Tatsächliche Mengen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+308
+Weitere Anwendungen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+311
+Literaturverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+314
+293
+Auswertungen
+
+
+===== PAGE 295/348 =====
+294
+Auswertungen
+Auswählen und Hervorheben
+Fangen wir mit den einfachen Benefits von 
+BIM an. So könnte man das Auswählen von 
+gleichen Elementen als eine Art Ureigenschaft 
+von BIM verstehen. Einige Modellierprogramme 
+offerierten diese Funktion bereits, bevor noch 
+richtig über BIM gesprochen wurde. Auf den 
+ersten Blick hört sich das Auswählen sehr trivial 
+an, auf den zweiten Blick stellt man dann aber 
+fest, dass sehr viele nützliche Auswertungen, 
+Darstellungsmöglichkeiten und Funktionalitäten 
+auf der Qualität dieser Auswahl aufsetzen. 
+Allerdings funktioniert das Auswählen nur, 
+wenn vorher genau genug und richtig modelliert 
+wurde. 
+Der Auswahlalgorithmus beruht stets auf 
+zugewiesenen Klassen und Attributen. Nur wenn 
+die Elemente den richtigen Klassen zugeordnet 
+und mit korrekten Attributen versehen wurden, 
+liefert das Softwareprogramm die gewünschte 
+Auswahl. Hat man eine Gruppe an Elementen 
+sorgfältig ausgewählt, kann man an allen Elemen-
+ten der Auswahl in einem Schritt einen bestimm-
+ten Befehl ausführen und muss nicht mehr jedes 
+Element einzeln bearbeiten.
+Filter
+Wie kommen wir nun zur gewünschten Aus-
+wahl? Dabei helfen uns je nach Software ver-
+schiedene Filter. Hinter jedem dieser Filter steckt 
+ein Auswahlalgorithmus. Im einfachsten Fall ist 
+der Filter auswahlbasiert, das heißt, er beruht 
+auf einer Addition von manuell ausgewählten 
+Elementen, die als Auswahlsatz abgespeichert 
+wurden. In der Regel benötigen wir aber intelli-
+gentere, sogenannte regelbasierte Filter. Diese 
+scannen das gesamte Model nach Elementen mit 
+Zugehörigkeit zu bestimmten Klassen und/oder 
+gewissen Attributen ab, also beispielsweise nach 
+Elementen der Klasse „Wand“ mit der Eigenschaft 
+„tragend“.
+ 
+ Kapitel 4, S. 182
+Klassen und 
+Attribute
+
+
+===== PAGE 296/348 =====
+295
+Auswählen und Hervorheben
+Wenn man sauber modelliert hat, sollte mit 
+geschicktem Einstellen der Filter fast jede be­
+liebige Auswahl erstellbar sein. Die eigentliche 
+Kunst liegt im geschickten Kombinieren ver-
+schiedener Filterbedingungen. Mit „und“ bzw. 
+„oder“ kommt man meist schon ans Ziel. Wenn 
+das nicht reicht, können wir bei den Attributen 
+zusätzlich noch Bedingungen setzen. So lassen 
+sich ganz einfach alle Elemente aus dem Material 
+Beton, die tragend sind, leicht und schnell selek-
+tieren.
+Wozu hilft uns nun eine erstellte Auswahl? 
+Zunächst können wir damit eine Auswahl be-
+stimmter Elemente grafisch hervorheben, wo-
+durch oft ganz schnell ein Überblick gewonnen 
+werden kann. In Archicad gibt es die Möglichkeit, 
+die verschiedenen Arbeitsbereiche im Modell auf 
+diese Weise farblich unterschiedlich darzustellen. 
+Somit kann man schnell erkennen, welche Ele-
+mente  in wessen Arbeitsbereich fallen.
+ Abbildung 103: Leistungsbeschreibung und Beeinflussbarkeit mit fortlaufender Projektdauer167 
+167	 Autodesk screen shots reprinted courtesy of 
+Autodesk, Inc.
+
+
+===== PAGE 297/348 =====
+296
+Auswertungen
+Je nach Problemstellung lässt sich das  
+Modell nach verschiedensten Kriterien in  
+farbliche Bereiche unterteilen. 
+So kann man für sich selbst, aber auch für 
+Besprechungen mit Dritten viel leichter ersicht-
+lich machen, um welche Elemente es sich gerade 
+handelt.
+ Abbildung 104: Teamwork in Archicad: farbliche Unterteilung in Arbeitsbereiche168 
+168	 Graphisoft.
+
+
+===== PAGE 298/348 =====
+297
+Überschreiben
+ Abbildung 105: Entwicklung des Brandschutzplans durch Überschreibung des Grundrisses
+Überschreiben
+Reicht das reine farbliche Markieren nicht 
+aus, gibt es auch noch die Möglichkeit, die aus-
+gewählten Elemente in ausgesuchten Ansichten 
+farblich zu überschreiben. Schauen wir uns dies 
+einmal am Beispiel des Brandschutzes an. Zum 
+Brandschutzgutachten gehören auch die ent-
+sprechenden Pläne, die sich mit BIM sehr einfach 
+erstellen und vor allem immer aktuell halten 
+lassen. 
+
+
+===== PAGE 299/348 =====
+298
+Auswertungen
+Man wählt einfach Elemente mit einer 
+bestimmten Feuerwiderstandsklasse aus und legt 
+eine Überschreibung für diese mit der entspre-
+chenden Farbe je nach Feuerwiderstand – also 
+E30, E60, E90, Brandwand usw. – fest, schon hat 
+man einen Grundriss mit allen relevanten Wän-
+den flächig mit entsprechender Farbe überschrie-
+ben. Gibt es nun kleine Anpassungen der Wände 
+oder neue Zuweisungen von Feuerwiderstands-
+klassen im BIM-Modell, so aktualisiert sich der 
+Grundrissplan „Brandschutz“ automatisch mit. 
+Da aber nicht nur Flächen sondern auch Linien-
+stärken überschreibbar sind, ist es ein Leichtes, 
+im weiteren Vorgehen aus diesen Grundrissen 
+auch noch die Flucht- und Rettungspläne für die 
+Beschilderung im späteren Gebäude, oder gar die 
+Feuerwehrlaufkarten für die Brandmeldezentrale 
+zu erstellen.
+Bei Haustechnikplänen ist das farbliche 
+Überschreiben eigentlich schon Standard. Einige 
+Programme machen dies automatisch, bei ande-
+ren muss kurz ein Filterset ausgeführt werden.  
+In der Haustechnik wäre es ohne farbliche Kenn-
+zeichnung gar nicht mehr möglich, die Übersicht 
+zu behalten. Man stelle sich nur vor, wenn Warm- 
+und Kaltwasser oder Zu- und Abluft die gleiche 
+Farben hätten, kein Mensch würde sich mehr 
+auskennen.
+ Abbildung 106: Eindeutig bessere Erkennbarkeit in der farblich hervorgehobenen Systemdarstellung
+
+
+===== PAGE 300/348 =====
+299
+Sichtbarkeiten
+ Abbildung 107: Sichtbarkeitseinstellung der aktiven Ansicht in Revit nach Disziplin169 
+Sichtbarkeiten
+Über die Auswahlfilter ergibt sich noch eine 
+weitere unverzichtbare Ver- bzw. Auswertung:  
+die Sichtbarkeitssteuerung. So wissen wir, dass 
+sich eine Ansicht über das Attribut „tragend“ so 
+einstellen lässt, dass nur die Elemente, die den 
+Statiker interessieren, sichtbar sind. Viele Soft-
+wareprogramme haben sogar Ansichtseinstel­
+lungen dafür. So ist es also möglich, dass man 
+nur die Disziplinen einblendet, die gerade für die 
+aktuelle Problemstellung relevant sind.
+Eine weitere Anwendung der Sichtbarkeiten 
+spielt bei Altbausanierungen eine große Rolle. 
+Dort werden die Elemente über ein Attribut der 
+entsprechenden „Phase“ zugeordnet. Elementen 
+werden dabei unterschiedliche Zustände zuge-
+wiesen – von Bestand über Abriss bis hin zu 
+Neubau. 
+Bei den Genehmigungsplänen müssen wir 
+die Abbruchelemente noch in den Ansichten  
+dar­stel­len. Wenn diese Information später nicht 
+mehr benötigt wird, können wir diese dann  
+ganz einfach über den entsprechenden Filter  
+aus­blenden.
+Kapitel 4, S. 182 
+ 
+   
+ 
+  
+Klassen und 
+Attribute
+169	 Autodesk screen shots reprinted courtesy of 
+Auto­desk, Inc.
+
+
+===== PAGE 301/348 =====
+300
+Auswertungen
+ Abbildung 108: Archicad bietet mit seinem Umbaufilter weitreichende Einstellungsmöglichkeiten170 
+Beim digitalen Verlegen von Bewehrung in 
+3D-Bauwerksmodellen verliert man ab einer 
+bestimmten Anzahl an Eisen schnell einmal den 
+Überblick. Insbesondere bei komplexen Geo­
+metrien, Durchbrüchen, Einlegeteilen etc. kann 
+das Spiel der Linien am Bildschirm schnell einem 
+gordischen Knoten gleichen. Hier behilft man 
+sich, ähnlich wie auch in der 2D-Planung üblich, 
+mit dem Aufteilen der einzelnen Lagen, um bes-
+ser den Überblick zu behalten. 
+170	 Screenshot Graphisoft.
+
+
+===== PAGE 302/348 =====
+301
+Sichtbarkeiten
+ Abbildung 109: Allplan, Planzusammenstellung mit Bewehrung und Biegeliste mit Layerfilter
+Beispielsweise werden eigene Layer für 
+Obere Lage, Untere Lage, Einbauteile, Anschluss-
+bewehrung etc. angelegt und die entsprechen-
+den Verlegungen von Matten und Rundstahl den 
+Layern zugewiesen. Obwohl sämtliche modellier-
+ten Bewehrungseisen im Modell enthalten sind, 
+kann man nun über die gewünschte Kombination 
+an aktiven und ausgeblendeten Layern besser 
+den Überblick über die Bewehrungsführung be-
+wahren und nach wenigen Klicks trotzdem die 
+Vorteile ausnützen, die eine gesammelte 
+Dar­stellung aller Eisen bietet, wie zum Beispiel 
+Einbausituationen und Rüttelgassen zu kon­
+trollieren. 
+Allplan dehnt die Funktionalität des Filtern 
+nach Layern auf das Erstellen der Biegeliste aus. 
+Die Biegeliste ist dabei nichts anderes als die Aus-
+wertung der verlegten Eisen, ihrer Biegeform, 
+Stückzahl sowie die Masse der einzelnen und 
+Summe aller Bewehrungspositionen in kg.
+
+
+===== PAGE 303/348 =====
+302
+Auswertungen
+Versionsvergleiche
+Bekommt man einen Plan mit neuem Index, 
+stellt sich schnell die Frage: Was hat sich geän-
+dert? Normalerweise gibt es im Plankopf für jede 
+Indexänderung eine Zeile, in der kurz beschrie-
+ben sein sollte, was sich geändert hat. Zudem 
+sollte in den Plänen jede Änderung mit entspre-
+chender Änderungswolke und Beschreibung ver-
+sehen sein. Wie wir aber alle wissen, funktioniert 
+dies in der Praxis meist nicht so ganz perfekt, da 
+oft einige Wolken fehlen.
+Ohne BIM ist eine Überprüfung der Änderun-
+gen von Version zu Version des gleichen Modells 
+sehr aufwendig und sehr schwer darstellbar. Will 
+man einfach die vorgenommenen Änderungen 
+zum besseren Verständnis beispielsweise für Be-
+sprechungen visuell veranschaulichen, bietet uns 
+BIM dazu sehr einfache Lösungen.
+Verschiedenste BIM-Programme bieten uns 
+die Möglichkeit eines Versionsvergleiches. Dieser 
+ist nicht nur deutlich zuverlässiger als die Index-
+erläuterung auf dem Papier, er ist auch viel über-
+sichtlicher. Durch bestimmte Farben werden ver-
+schiedene Änderungskategorien klar ersichtlich. 
+Meist gibt es eine Farbe für Elemente, die hinzu-
+gefügt wurden, eine Farbe für Elemente, die ent-
+fernt wurden und eine Farbe für geänderte Ele-
+mente. Bezüglich der Art der entsprechenden 
+Änderungen kann mit Hilfe verschiedener Filter-
+funktionen noch feiner selektiert werden. Das 
+Ergebnis kann sowohl in den verschiedenen 
+Ansichten angezeigt als auch für einen Gesamt-
+überblick tabellarisch aufgelistet werden. Bei 
+Bedarf können auch ältere Versionen verglichen 
+werden.
+4D-Simulationen
+Bei den meisten Projekten finden Plan­
+erstellung und Terminplanung noch völlig ge-
+trennt voneinander statt. Das Modell entsteht in 
+der Modelliersoftware und der Terminplan in 
+einer separaten Software. Will man nun schon 
+während der Planung seine Bauabläufe simulie-
+ren, so ist das mit BIM gar nicht so schwer. In einer 
+Gegenüberstellung zweier Simulationsvarianten 
+könnte man so die Umsetzung zweier Bauweisen 
+bezüglich ihrer Vor- und Nachteile vergleichen.
+Am Beispiel eines Hotels stellt man eine Bau-
+weise mit Badzellen in Fertigbetonzellen einer 
+Bauweise mit Fertigzellen in Trockenbauweise 
+
+
+===== PAGE 304/348 =====
+303
+Versionsvergleiche
+171	 Autodesk.
+ Abbildung 110: Versionsvergleich in BIM 360171 
+gegenüber. Bei den Fertigbetonzellen müssen 
+die Zellen vor Betonierung der jeweiligen Decke 
+exakt eingebracht werden. Bei den Trockenbau-
+zellen kann die Einbringung über eine Fassaden-
+öffnung flexibler terminisiert werden. Aus der 
+Gegenüberstellung der beiden Simulationen 
+wird klar ersichtlich, welche Reihenfolgen auf  
+der Baustelle möglich sind und welche Vor- und 
+Nachteile sich daraus ergeben. Man kann über 
+die Simulation auch Anlieferung, Abladung, Kran-
+positionierungen, Zwischenlagerungen und 
+vieles weitere überprüfen.
+Für diese Verknüpfung des BIM-Modells mit 
+dem Terminplan gibt es schon durchaus einfach 
+realisierbare Lösungen. Es muss lediglich dafür 
+gesorgt werden, dass die Elemente aus dem BIM-
+Modell über einen geeigneten Parameter mit den 
+Aufgaben für das jeweilige Element im Termin-
+plan „gemappt“ werden. Über den Wert dieses 
+Parameters im BIM-Modell verbindet die Anima-
+tionssoftware das Element bzw. die Elemente mit 
+der zugehörigen Aufgabe („Balken“ im Gantt-
+Diagramm) im Terminplan.
+YouTube 
+Channel 
+ 
+   
+ 
+  
+4D-Simulation
+
+
+===== PAGE 305/348 =====
+304
+Auswertungen
+ Abbildung 111:  In der Modelliersoftware wurde der Parameter „MY_Classificator“ angelegt, um Elemente 
+später bei der Zuweisung zu einem Zeitbalken identifizieren zu können.172 
+172	 Autodesk screen shots reprinted courtesy of Autodesk, Inc.
+173	 Autodesk screen shots reprinted courtesy of Autodesk, Inc.
+ Abbildung 112:  Über den in Revit und MS-Project angelegten Parameter werden in Navisworks Element 
+und Aufgabe zusammengeführt.173 
+
+
+===== PAGE 306/348 =====
+305
+Versionsvergleiche
+Mapping
+Bei den meisten Auswertungen werden 
+Daten von einer Software in eine weitere über­
+geben. Entscheidend ist hierbei eine korrekte Da-
+tenübergabe. Dafür ist die richtige Klassifizierung 
+beim Modellieren ebenso wichtig wie das Map-
+ping. Immer wenn Daten übergeben werden, 
+müssen diese auch zugewiesen („gemapped“) 
+werden. Oftmals macht das – wie beim IFC-
+Import und -Export – die Software selbst, manch-
+mal müssen wir jedoch einen Parameter, der als 
+verbindendes Element aushilft, einfügen. Wie 
+auch immer, durch das Mapping werden ein­
+deutige Zuweisungen zwischen Klassen und 
+Attributen vollzogen. Diese bilden dann die Basis, 
+um die gewünschten Auswertungen auszu­
+führen.
+Je nach eingesetzter Projektmanagement-
+software ist es gar nicht mehr nötig, einen Para-
+meter selbst anzulegen. Bei Powerproject können 
+beispielsweise die Elemente eines Tasks in der 
+Modelliersoftware ausgewählt und direkt mit 
+Drag and Drop auf dem Gantt-Balken dieses 
+Tasks abgesetzt werden.
+Mengenermittlung (5D)
+Die vielleicht wichtigste Auswertung ist die 
+Mengenermittlung. Für jedes Bauprojekt spielen 
+Mengen bzw. Massen eine ungeheuer wichtige 
+Rolle. Die ermittelten Mengen sollten so sicher 
+und nachvollziehbar wie möglich sein, denn 
+Fehler bei der Mengenermittlung haben schnell 
+drastische Folgen. In den meisten Fällen kommt 
+heutzutage noch die manuelle Mengenermitt-
+lung zum Tragen. Dabei misst man mit dem 
+Maßstab zunächst noch die einzelnen Elemente 
+aus den Plänen heraus, ehe diese dann be- 
+rechnet und addiert werden müssen. Nach 
+größeren Planungsänderungen kann es pas­
+sieren, dass man die ganze Arbeit wiederholen 
+muss.
+In BIM-Software wird die Menge anhand der 
+modellbasierten Mengenermittlung festge-
+stellt. Durch die in BIM-Programmen automatisch 
+erstellten Mengentabellen kann es zu enormen 
+Zeiteinsparungen kommen. Die modellbasierte 
+Mengenermittlung in BIM ermittelt Nettomas-
+sen, die auf dem aktuellen BIM-Modell beruhen.  
+Das bedeutet, dass bei Planungsänderungen die 
+Nettomassen automatisch angepasst werden. 
+Man hat also immer die aktuellen Zahlen. 
+Die traditionellen Abrechnungsregeln sind 
+allerdings bei der Verwendung von Nettomassen 
+nicht mehr gültig. Nehmen wir das Beispiel einer 
+Betonwand. Dabei muss entschieden werden, ob 
+man traditionell mit Abrechnungsregeln und 
+„Bruttomassen“ ausschreibt oder ob man die 
+Nettomassen aus der Software nimmt und dann 
+noch beispielsweise alle Durchbrüche einzeln 
+auflistet. Verschiedene Studien174 haben ergeben, 
+dass mit beiden Arten der Mengenermittlung 
+sehr genaue Ergebnisse erzielt werden können. 
+Die Genauigkeit hängt also nicht von der ge­
+wählten Methode ab, sondern von der Gewissen-
+haftigkeit innerhalb der jeweiligen Methode. 
+Beide Methoden sind demnach möglich, im 
+Projekt müssen aber alle von der gleichen 
+Methode ausgehen.
+https://openbim.graphisoft.de/open-bim-funk-
+tioniert/
+Kapitel 4, S. 197 
+ 
+  
+ 
+  
+Mappingtable IFC
+174	 BIM Netto-Massen, Universität Innsbruck.
+
+
+===== PAGE 307/348 =====
+306
+Auswertungen
+175	 Screenshot RIB Software.
+ Abbildung 113:  Mengenzuweisung im Modell-Beispiel iTwo175 
+Software
+Hersteller
+iTWO
+RIB Software SE
+Nevaris
+NEVARIS Bausoftware GmbH (Nemetschek Group)
+ABK
+ib-data GmbH
+ABiS AVA
+ABIS Softwareentwicklungs GesmbH
+AVA.relax
+COSOBA GmbH
+AVANTI
+Softtech AG
+BauSU
+Bau-Software Unternehmen GmbH
+NOVA AVA
+NOVA BUILDING IT GmbH
+ORCA AVA
+ORCA Software GmbH
+Standard kalkulation
+Inndata Datentechnik GmbH
+BIM4You
+BIB GmbH
+Bechmann AVA
+BECHMANN GmbH
+…
+Tabelle 26:  Beispiele für AVA-Software
+
+
+===== PAGE 308/348 =====
+307
+Versionsvergleiche
+Durch Auswählen einzelner Mengenposi­
+tionen kann man sich jederzeit einen Überblick 
+verschaffen, ob und welche Elemente in der je-
+weiligen Menge erfasst sind. Die Vollständigkeit 
+ist leicht zu überprüfen, indem man einfach alle 
+erfassten Elemente im Modell farblich ausgraut 
+oder ausblendet. Sollten noch farbige Ele­mente 
+übrig bleiben, können diese ganz einfach der 
+entsprechenden Mengenposition zugeordnet 
+werden.
+Korrekte Modellierung
+Auf ein paar Dinge sollte man aber bei der 
+modellbasierten Mengenermittlung schon ach-
+ten: 
+ Die Mengen sind von einer entsprechend 
+sauberen Modellierung abhängig. 
+ Aus dem Modell können nur Massen ge­
+zogen werden, wenn die dazugehörigen 
+Elemente im BIM-Modell existieren, was  
+aber nicht immer der Fall ist. 
+ Bauteilunabhängige Leistungen müssen 
+immer noch manuell in die AVA-Software 
+eingegeben werden.
+ Allgemeinkosten wie Baustelleneinrichtung, 
+Sicherheitsmaßnahmen u.ä. werden wie 
+gehabt in der AVA-Software erstellt.
+Wichtig ist auch eine exakte Klassifizierung 
+beim Modellieren. So ist Brandschutzklappe nicht 
+gleich Brandschutzklappe. Diese sind zuallererst 
+in wartungsfreie Brandschutzklappen und Brand-
+schutzklappen mit Wartungsintervall zu differen-
+zieren und mit unterschiedlichen Klassen zu er-
+stellen. Aber damit noch nicht genug, denn auch 
+der Einbau einer Brandschutzklappe in eine Mas-
+sivwand bedingt andere Maßnahmen und Kosten 
+als in eine Trockenbauwand. Also müssen diese 
+auch unterschiedlich modelliert werden, damit 
+sie im folgenden Prozess richtig zugeordnet wer-
+den können.
+Richtige Zuweisung
+Entscheidend für eine genaue Mengen­
+ermittlung ist auch die richtige Zuweisung. Es ist 
+wichtig, Objekte und Attribute korrekt miteinan-
+der zu verknüpfen und mit den richtigen Werten 
+zu befüllen. Betrachten wir eine einfache Wand, 
+so stellt sich dabei die Frage nach der richtigen 
+Länge. Oft ist die Länge der Außenwand schon 
+etwas ausgeprägter als die Länge der Innenwand. 
+Für die „Base Quantities“ im IFC errechnet sich  
+die Länge entlang einer gedachten Ebene in der 
+Mitte des Bauteils.176 Man muss also aufpassen, 
+dass die richtige Länge gewählt wird. 
+Bei mehrschichtigen Wänden wird es noch 
+etwas komplizierter. Will man lediglich das Volu-
+men einer Schicht berechnet haben, muss man 
+aufpassen, dass nicht die „mittlere“ Länge der 
+gesamten Wand in die Berechnung einfließt. 
+Bei mehrschichtigen Wänden besteht zudem die 
+Gefahr, dass die Software die gesamte Breite aller 
+Schichten auswählt und somit das Volumen für 
+alle Schichten anstatt der einzelnen Schicht aus-
+wirft.
+176	 https://openbim.graphisoft.de/OPEN-BIM- 
+FUNKTIONIERT/#modellierungsrichtlinie.
+
+
+===== PAGE 309/348 =====
+308
+Auswertungen
+Tatsächliche Mengen
+Ein weiteres Problem liegt im Detaillierungs-
+grad (LOD) des Modells. Zum einen haben wir  
+oft nicht genug Einfluss, wenn wir Modelle von 
+Dritten bekommen, um den für eine exakte Men-
+genermittlung nötigen LOD einzufordern. Zum 
+an­deren ist es oft auch zu aufwendig bzw. kos-
+tenintensiv, manche Detailelemente in 3D zu 
+modellieren.
+Die Mengen aus dem BIM-Modell werden 
+ständig aktualisiert und müssen nicht erst auf-
+wendig berechnet werden. So ist es schon in frü-
+hen Entwurfsphasen möglich, jederzeit zumin-
+dest grobe Voraussagen zu treffen. Selbst wenn 
+man noch keine genauen Wände und Decken 
+hat, sondern noch mit Kubaturen arbeitet, kann 
+man über entsprechende Kennzahlen schon 
+erste grobe Einschätzungen treffen. Über den 
+Bruttorauminhalt, bezogen auf verschiedene 
+Funktionen, können beispielsweise schon erste 
+grobe Aussagen zu den Kosten gemacht werden.
+Die Mengen sind also schon im BIM-Modell 
+enthalten. In den gängigen Modelliersoftware-
+produkten gibt es für die wichtigsten Kategorien 
+schon vorgefertigte tabellarische Templates, um 
+Mengen anzuzeigen. In Archicad sind es Aus­
+wertungen, in Allplan werden Reports erstellt, in 
+Revit spricht man von Bauteillisten usw. Leider 
+sind die unterschiedlichen Benennungen etwas 
+verwirrend, aber im Hintergrund handelt es sich 
+eigentlich immer um Tabellen, wie wir sie aus 
+Excel kennen.
+ Abbildung 114:  Eine Wand weist ganz unterschiedliche Längen auf, da heißt es aufpassen, welche Länge 
+jeweils gebraucht wird.177 
+177	 Autodesk screen shots reprinted courtesy of 
+Autodesk, Inc.
+
+
+===== PAGE 310/348 =====
+309
+Versionsvergleiche
+ Abbildung 115:   Report in Allplan, Mengen Rohbau Wände, Mengen Wandschalung178 
+Über geeignete Schnittstellen werden die 
+Mengen nun an andere Softwareprodukte über-
+geben, meist an AVA-Programme. Oft werden 
+diese Daten über die klassische GAEB-Schnitt-
+stelle ausgetauscht. Manche Softwareprodukte 
+haben sogar eine eigene Echtzeitschnittstelle 
+zwischen Modelliersoftware und AVA-Software 
+entwickelt. Man kann die Mengen aber auch ein-
+fach in eine Exceldatei exportieren und sogar 
+wieder zurück importieren. Im Sinne von open-
+BIM bietet sich natürlich die Weitergabe über das 
+IFC-Format an. Im IFC-Format sind die Mengen als 
+IfcElementQuantity enthalten.
+178	 Raphael Wieser.
+
+
+===== PAGE 311/348 =====
+310
+Auswertungen
+ Abbildung 116:  Erste Aussagen zu Kosten über Kenngrößen wie ÖNORM B 1800179 
+179	 https://abk-bausoftware.bss.at/.
+
+
+===== PAGE 312/348 =====
+311
+Weitere Anwendungen
+Weitere Anwendungen
+Es gibt schon eine größere Menge an Aus-
+wertungen und Simulationen in der BIM-Welt, als 
+man im ersten Moment denkt. Einen großen Teil 
+der Simulationen stellen Berechnungen dar, die 
+auf Auswertungen aus dem Modell beruhen. 
+Viele davon existieren beispielsweise in der Haus-
+technik. Ganz selbstverständlich werden Heiz- 
+und Kühllastberechnungen erstellt oder auf 
+Grund von Luftwechselraten die nötigen Volu-
+menströme berechnet und – darauf aufbauend – 
+wiederum die Mindestquerschnitte.
+Klassische Berechnungen wie die FEM 
+(Finite-Elemente-Methode) in der Statik sind hier 
+genauso zu nennen. Es können grafische Darstel-
+lungen erstellt werden, die farblich kritische Be-
+reiche bezüglich der Durchbiegung einer Decke 
+aufzeigen. Diese Auswertung kann dann wieder 
+zurück in die Modelliersoftware gespielt werden, 
+in welcher der Architekt dann nötige gleitende 
+Deckenanschlüsse festlegen kann.
+In der Stadtplanung gibt es Simulations­
+programme für Vorhersagen zum Verkehrsauf-
+kommen. Für große Stadien, Konzertsäle und 
+Arenen kann das Fluchtverhalten von Menschen 
+simuliert werden, um zu sehen, ob Sicherheits-
+vorkehrungen und Fluchtwege ausreichen.  
+Beim Bau von Wolkenkratzern werden Wind­
+simulationen berechnet, um eine ausreichende 
+Befestigung der Fassade zu gewährleisten. In der 
+Bauphysik kann über Tageslichtsimulationen fest-
+gestellt werden, ob die Belichtung eines Raumes 
+ausreicht. Und es gibt noch viele weitere Beispie-
+le, in denen schon jetzt die Möglichkeiten von 
+BIM genutzt werden.
+Eines der größten Felder für Auswertungen 
+und Simulationen dürfte sich in Zukunft im Be-
+reich Umwelt und Klima bieten. Schon heute sind 
+Energieauswertungen nicht mehr wegzudenken. 
+Es gibt viele Softwareprodukte, die aufgrund der 
+Daten des BIM-Modells einen gültigen Energie-
+ausweis erstellen können. Da dies teils automa­
+tisiert geschieht, kann man ständig überprüfen, 
+ob man sich in Reichweite zum Ziel der gesteck-
+ten Energieeffizienzklasse bewegt.
+Wie wir sehen, werden mit Hilfe von BIM 
+schon mehr Auswertungen und Simulationen in 
+der Praxis umgesetzt, als vielleicht vermutet. 
+Viele davon sind auch jetzt schon für nor­male  
+Anwender:innen umsetzbar.  
+
+
+===== PAGE 313/348 =====
+312
+Auswertungen
+ Abbildung 117:  Simulation der Deckendurchbiegung in dlubal180 
+180	 dlubal.
+
+
+===== PAGE 314/348 =====
+313
+Weitere Anwendungen
+ Abbildung 118:  Energieanalyse in Autodesk insight181 
+Durch den Einsatz von BIM kann man sich in 
+einigen Bereichen durchaus Zeit ersparen.  
+Nicht zu verachten ist oft auch der Mehrwert 
+durch verschiedenste Möglichkeiten bei der 
+Datenauswertung, den uns die BIM-Arbeitsweise 
+bringt.
+Zukünftig werden noch viele weitere Aus-
+wertungen, die zum heutigen Stand nur für Spe-
+zialisten in Frage kommen, auch für normale  
+Anwender:innen verfügbar sein. In den nächsten 
+Jahren wird die Zahl der Anwendungen noch 
+enorm steigen. Denken wir nur einmal an die 
+ganzen Umweltauflagen, die noch auf uns zu-
+kommen werden. Schon in wenigen Jahren wird 
+auch die Baubrache CO2-Nachweise liefern müs-
+sen. Wie sollte das ohne BIM realisierbar sein? Nur 
+über die Daten der verschiedenen Modelle wird 
+es möglich sein, einen CO2-Wert für ein Bauele-
+ment festzulegen. Mit der BIM-Methode werden 
+wir über den Transport, das Material, die Langle-
+bigkeit und andere Faktoren CO2-Werte für jedes 
+Bauwerk ermitteln. BIM wird ein ganz normaler 
+Teil unseres Berufsalltages werden.
+181	 Autodesk screen shots reprinted courtesy of 
+Autodesk, Inc.
+
+
+===== PAGE 315/348 =====
+314
+Auswertungen
+	
+https://openbim.graphisoft.de/OPEN-BIM-
+FUNKTIONIERT/#modellierungsrichtlinie, Datum 
+des Zugriffs: 10. 12. 2021.
+Literaturverzeichnis
+	
+
+
+===== PAGE 316/348 =====
+315
+Literaturverzeichnis
+
+
+===== PAGE 317/348 =====
+316
+Anhang: BIM-Handbuch 2022
+BIM-Handbuch 2022
+Anhang
+Nach einer Idee ihrer Arbeitsgruppe  
+Digi­talisierung initiierte die Kammer der Zivil-
+techniker:innen für Steiermark und Kärnten das 
+österreichweite Projekt eines BIM-Handbuchs  
+für die Praxis. Um diese Initiative branchen­
+übergreifend um­zusetzen, wurden die beiden 
+Branchen-Fach­verbände Bundesinnung Bau  
+sowie der Fach­verband Ingenieurbüros von der 
+Bundeskammer der Ziviltechniker:innen als  
+Kooperationspartner und Mitherausgeber  
+ein­ge­laden.
+Unter der Projektleitung von DI Gustav 
+Spener, Präsident der Kammer der Ziviltech­
+niker:innen für Steiermark und Kärnten, wurde  
+die Realisierung in Angriff genommen. 
+Wissenschaftlicher Partner ist das Institut für 
+Baubetrieb und Bauwirtschaft der Technischen 
+Universität Graz. Die Autorentätigkeit leitete 
+Marcus Wallner. 
+Die inhaltliche und redaktionelle Gestaltung 
+erfolgte in engster Abstimmung mit Expertinnen 
+und Experten aus der Praxis, die sich ehrenamt-
+lich über ihre Berufsvertretung oder als Vertre­
+terinnen und Vertreter inhaltlich-redaktioneller 
+Partner engagierten. Ihnen ist herzlichst für ihren 
+umfassenden Einsatz gedankt! 
+Das BIM-Handbuch 2022 beleuchtet BIM aus 
+der Sicht der planenden Berufe in der Praxis. 
+Interessierte und Einsteigende erhalten wichtige 
+einleitende Informationen sowie Tipps und Tricks 
+zur Erleichterung des Arbeitsalltags. Grundlegen-
+de Fragen wie „Was nützt mir BIM?“, „Wo steht 
+BIM derzeit und welche Spannungsfelder gibt 
+es?“ und „Was ist mit BIM heute realistisch mög-
+lich?“ werden ausgeleuchtet. Dabei bietet das 
+Handbuch kompakte Kapitel und eine Reihe von 
+Zusatzinformationen in Form von Downloads, 
+Tools, Musterverträgen etc., die begleitend on-
+line bereitgestellt werden.
+Das BIM-Handbuch 2022 E-Book wird von den Herausgebern der Fachöffentlichkeit mit Schwerpunkt DACH-
+Region kostenfrei zur Verfügung gestellt!
+Durch eine Kooperation der Herausgeber mit dem Verlag der TU Graz sowie dem Manz Verlag ist das BIM-
+Handbuch 2022 auch im Buchhandel erhältlich.
+Praxis-Impulse für planende Berufe
+
+
+===== PAGE 318/348 =====
+Herausgeber
+Bundeskammer der Ziviltechniker:innen
+office@arching.at
+www.arching.at
+Bundesinnung Bau
+office@bau.or.at
+www.bau.or.at
+Fachverband Ingenieurbüros
+ib@wko.at 
+www.ingenieurbueros.at
+Projektleitung
+Dipl.-Ing. Gustav Spener
+Präsident der Kammer der Ziviltechniker:innen für Steiermark und Kärnten
+office@ztkammer.at
+www.ztkammer.at
+Projektkoordination
+Mag. Armin Ruhri, Stellvertreter der Kammerdirektorin 
+der Kammer der Ziviltechniker:innen für Steiermark und Kärnten
+Bernhard L. Wieland, Projektleitung Digitalisierung 
+Bundeskammer der Ziviltechniker:innen
+Dipl.-Ing. Robert Rosenberger, Referent
+Bundesinnung Bau
+Mag. Sarah Fisegger, Geschäftsführerin 
+Fachverband Ingenieurbüros
+317
+Praxis-Impulse für planende Berufe
+
+
+===== PAGE 319/348 =====
+318
+Anhang: BIM-Handbuch 2022
+Inhaltliches Projektkoordinations- und Projektteam (ehrenamtlich) 
+Ziviltechniker:innen:
+Arch. Dipl.-Ing. Thomas Arnfelser – www.arnfelser.at
+Arch. Dipl.-Ing. Siegfried Diesenberger – www.diesenberg.at
+Arch. Dipl.-Ing. Johann Grabner – www.grazt.at
+Arch. Dipl.-Ing. Martin Gruber – www.planorama.net
+Dipl.-Ing. Gerald Haussteiner – www.baucon.at
+Arch. Dipl.-Ing. Thomas Hoppe – www.hoppe.at
+Arch. Dipl.-Ing. Christine Horner – www.solidarchitecture.at
+Dipl.-Ing. Herbert Mühlburger, BSc – www.it-zt.at
+Arch. Dipl.-Ing. Uwe Schwarz – www.3kant.at
+Arch. Dipl.-Ing. Bernhard Sommer – www.exikon.at
+Dipl.-Ing. Gustav Spener – www.spener.at
+Arch. Dipl.-Ing. Hanno Vogl-Fernheim – www.vogl-fernheim.eu
+Dipl.-Ing. Peter Skalicki-Weixelberger – www.innogeo.at
+Bundesinnung Bau:
+EUR ING Bmstr. Ing. Anton Gasteiger – www.aga-bau.com, www.bimm.eu 
+Bmstr. Ing. Otto Handle, MBA – www.inndata.at
+Bmstr. Arch. DI Reinhard Hubmann – www.baumeister-leitner.at 
+Fachverband Ingenieurbüros:
+Ing. Bernhard Hammer, MBA – www.equadrat.com
+Ing. Christoph Passecker, MSc MBA – www.ht-wien.at
+Dipl.-Ing Wolfgang Stejskal – www.stejskal.at
+Dipl.-Ing. Wolfgang Thurner 
+Wissenschaftlicher Partner, Team der Autorinnen und Autoren 
+Technische Universität Graz
+Institut für Baubetrieb und Bauwirtschaft – www.tugraz.at/institute/bbw
+Assoc. Prof. Dipl.-Ing. Dr. techn. Christian Hofstadler
+Dipl.-Ing. Dr. techn. Markus Kummer, BSc
+Marcus Wallner, Hauptautor
+Dipl.-Ing. Michael Kolbitsch, BSc
+Nicole Richter, BSc
+Raphael Wieser
+
+
+===== PAGE 320/348 =====
+319
+Praxis-Impulse für planende Berufe
+Wir danken für die inhaltlich-redaktionelle Kooperation
+ASFiNAG
+Autobahnen- und Schnellstraßen-Finanzierungs-Aktiengesellschaft 
+www.asfinag.at
+Dipl.-Ing. Eva Hackl 
+Ing. Sabine Hruschka 
+BIG
+Bundesimmobiliengesellschaft
+www.big.at
+Mag. Claudius Weingrill
+Dipl.-Ing. Wolfgang Malzer 
+ÖBB Infrastruktur AG
+https://infrastruktur.oebb.at
+Andreas Beer, MA
+Dipl.-Ing. Ewald Griesser 
+Ing. Dr. Gregor Fleischmann
+Ing. Reinhold Hödl
+Dipl.-Ing. Gerald Zwittnig
+Land Steiermark
+Dipl.-Ing. Andreas Kammersberger
+Landesimmobiliengesellschaft des Landes Steiermark
+www.lig-stmk.at
+Dipl.-Ing. Melanie Maria Wölwitsch 
+Land Kärnten 
+KWF Kärntner Wirtschaftsförderungs Fonds
+www.kwf.at
+Mag. Jürgen Kopeinig, MBA
+Österreichischer Verband gemeinnütziger Bauvereinigungen – Revisionsverband 
+verband@gbv.at
+Projektbau: Planung Projektmanagement Bauleitung 
+www.projektbau.at
+Dipl.-Ing. Christian Reischauer

@@ -1,0 +1,1063 @@
+
+
+===== PAGE 1/16 =====
+ 
+ 
+ 
+OVE E 8350 
+ 
+Ausgabe: 2017-12-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bekämpfung von Bränden in elektrischen Anlagen  
+und in deren Nähe 
+ 
+Fire fighting in and near electrical installations 
+ 
+Défense contre les incendies dans les installations électriques et dans leur 
+environnement 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.020 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ersatz für 
+ÖVE/ÖNORM E 8350:2005-04-01 
+ 
+ 
+ 
+ zuständig 
+OVE/TK H 
+ 
+Elektrische Hochspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ 
+Copyright © OVE – 2017.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 
+Tel.: +43 1 587 63 73 
+Fax: +43 1 587 63 73-99 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 2/16 =====
+OVE E 8350:2017-12-01 
+2 
+Inhaltsverzeichnis 
+ 
+Seite 
+Vorwort ................................................................................................................................................................2 
+Erläuterung ..........................................................................................................................................................3 
+1 
+Anwendungsbereich ..............................................................................................................................3 
+2 
+Normative Verweisungen ......................................................................................................................3 
+3 
+Begriffe ...................................................................................................................................................4 
+4 
+Vorbereitende Maßnahmen ...................................................................................................................6 
+5 
+Maßnahmen bei Bränden ......................................................................................................................6 
+6 
+Eignung von Löschmitteln ....................................................................................................................9 
+7 
+Maßnahmen nach dem Brand .............................................................................................................14 
+Literaturhinweise ..............................................................................................................................................15 
+ 
+Vorwort 
+Diese Norm hat den Status einer nationalen elektrotechnischen Norm gemäß ETG 1992. Bei ihrer Anwendung 
+ist dieses Vorwort zu berücksichtigen. 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des 
+Ausgabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die 
+Verweisung auf die jeweils neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug 
+genommene Ausgabe des Standards. 
+Der Rechtsstatus dieser nationalen elektrotechnischen Norm ist den jeweils geltenden Verordnungen zum 
+Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+rein 
+österreichischen 
+elektrotechnischen Normen ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt der Herausgabe dieser rein österreichischen elektrotechnischen Norm. Zum Zeitpunkt der 
+Anwendung dieser rein österreichischen elektrotechnischen Norm ist der durch die Verordnungen zum 
+Elektrotechnikgesetz 
+oder 
+gegebenenfalls 
+auf 
+andere 
+Weise 
+festgelegte 
+aktuelle 
+Stand 
+zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Hinweis 
+Die vorliegende Norm ist für den Aushang an elektrischen Anlagen auch als Wandtafel in 
+Kunststoffausführung (wetterfest und säurebeständig), Größe 85 cm x 60 cm, erhältlich. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 3/16 =====
+OVE E 8350:2017-12-01 
+3 
+Erläuterung 
+Die vorliegende OVE-Norm wurde vom Technischen Komitee H – „Elektrische Hochspannungsanlagen“ und 
+Technischen Subkomitee H5 – „Betrieb“ in Abstimmung mit Vertretern der Feuerwehren erarbeitet. 
+Auslöser für die Überarbeitung waren: 
+- 
+die Anpassung der Begriffe an die neue Vorschrift für den Betrieb elektrischer Anlagen, 
+- 
+neue harmonisierte Normen für Feuerlöscher. 
+Es hat in den vielen Jahren seit Bestand dieser Bestimmungen keine nennenswerten Elektrounfälle von 
+Feuerwehrkräften gegeben, wenn die Festlegungen der Bestimmungen eingehalten wurden. 
+Wie schon bei der bisherigen Bestimmung waren sich die in Österreich betroffenen Stellen, vornehmlich 
+Feuerwehr und Elektrizitätsversorgungsunternehmen einig, dass es für die Praxis sinnvoller ist, die 
+Bestimmungen auf jene genormten Mehrzweckstrahlrohre gemäß ÖNORM F 2190 (DIN 14365), die 
+üblicherweise verwendet werden, und jene Bedingungen abzustimmen, mit denen in der Mehrzahl der Fälle 
+gerechnet werden muss. Für diese Normalfälle können auf solche Weise kleinere Abstände vorgegeben 
+werden. Sonderfälle sollten durch Entfernungszuschläge erfasst werden. Außerdem schien es nicht 
+notwendig, die Abstände so weit zu erhöhen, dass in keinem Falle Stromimpulse zu verspüren sind. Grundsatz 
+musste freilich bleiben, dass jede Gefährdung von Personen mit Sicherheit ausgeschaltet wird. 
+1 
+Anwendungsbereich  
+Diese OVE-Norm gilt für die Bekämpfung von Bränden in elektrischen Anlagen mit Betriebsspannungen über 
+50 V Wechselspannung oder 120 V Gleichspannung zwischen beliebigen Leitern und in der Nähe dieser 
+Anlagen. 
+Diese OVE-Norm gilt nicht für die Errichtung und den Betrieb ortsfester Löschanlagen. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖNORM EN 2, Brandklassen 
+ÖNORM EN 3-7, Tragbare Feuerlöscher – Teil 7: Eigenschaften, Löschleistung, Anforderungen und 
+Prüfungen 
+ÖNORM EN 15182 (alle Teile), Strahlrohre für die Brandbekämpfung 
+ÖNORM F 2190, Mehrzweckstrahlrohre, Anforderungen, Prüfungen, Normkennzeichnung 
+ÖVE/ÖNORM E 8001-4-44, Errichtung von elektrischen Anlagen mit Nennspannungen bis 51000 V und 
+41500 V – Teil 4-44: Abgeschlossene elektrische Betriebsstätten 
+OVE E 8555, Betrieb elektrischer Bahnen und Obusse 
+ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet), Betrieb von elektrischen Anlagen – Teil 1: 
+Europäische Norm – Teil 2-100: Nationale Ergänzungen 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 4/16 =====
+OVE E 8350:2017-12-01 
+4 
+3 
+Begriffe 
+Für den Anwendungsbereich dieser OVE-Norm gelten die folgenden Begriffe: 
+3.1 
+ 
+elektrische Anlage 
+Anlage mit elektrischen Betriebsmitteln zur Erzeugung, Übertragung, Umwandlung, Verteilung und 
+Anwendung elektrischer Energie 
+Dies schließt Energiequellen wie Batterien, Kondensatoren und alle anderen Quellen gespeicherter 
+elektrischer Energie ein. 
+3.1.1 
+ 
+Niederspannungsanlage 
+elektrische Anlage mit Nennspannung kleiner oder gleich 1000 V bei Wechselstrom (AC) oder kleiner oder 
+gleich 1500 V bei Gleichstrom (DC) 
+ANMERKUNG 1 zum Begriff: 
+Zu 
+den 
+Niederspannungsanlagen 
+gehören 
+z. B. 
+Stromerzeugungs- 
+und 
+Verteilungsanlagen, 
+Ortsnetze, 
+Hausinstallationen 
+sowie 
+Installationen 
+für 
+industrielle, 
+gewerbliche 
+und 
+landwirtschaftliche Betriebe, die Fahrleitungsanlagen und Installationen der mit Gleichstrom (Niederspannung) 
+betriebenen Straßen- und Stadtbahnen, Oberleitungsbusse (Obusse), Fernmelde- und Informationsverarbeitungs-
+anlagen.  
+3.1.2 
+ 
+Hochspannungsanlage 
+elektrische Anlagen mit Nennspannung größer als 1000 V bei Wechselstrom (AC) oder größer als 1500 V bei  
+Gleichstrom (DC) 
+ANMERKUNG 1 zum Begriff: 
+Zu den Hochspannungsanlagen gehören insbesondere Anlagen, die der Erzeugung, 
+Umwandlung, Verteilung und Anwendung elektrischer Energie dienen, z. B. Kraftwerke, Schalt- und Umspannanlagen, 
+Freileitungen, Kabelanlagen sowie Anlagen und Fahrzeuge von elektrischen Bahnen. Hochspannungsanlagen sind in der 
+Regel durch Warnschilder gekennzeichnet.  
+3.2 
+ 
+Brandklassen  
+Klassifizierung von Bränden nach der Art des Brennstoffes 
+siehe ÖNORM EN 2 
+Brandklasse A 
+Brände fester Stoffe, hauptsächlich organischer Natur, die normalerweise unter 
+Glutbildung verbrennen, z. B. Holz, Papier, Stroh, Textilien, Kohle   
+Brandklasse B 
+Brände von flüssigen oder flüssig werdenden Stoffen, z. B. Benzin, Benzol, Öle, Fette, 
+Lacke, Teer, Äther, Alkohol, Stearin, Paraffin  
+Brandklasse C 
+Brände von Gasen, z. B. Methan, Propan, Wasserstoff, Acetylen, Stadtgas  
+Brandklasse D 
+Brände von Metallen, z. B. Aluminium, Magnesium und ihren Legierungen, Natrium, 
+Kalium  
+Brandklasse F 
+Brände von Speiseölen/-fetten (pflanzliche oder tierische Öle und Fette) in Frittier- und 
+Fettbackgeräten und anderen Kücheneinrichtungen und -geräten. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 5/16 =====
+OVE E 8350:2017-12-01 
+5 
+3.3 Feuerlöscher 
+3.3.1 
+ 
+tragbarer Feuerlöscher 
+Feuerlöscher, der getragen und von Hand bedient werden kann und im betriebsbereiten Zustand eine Masse 
+von nicht mehr als 20 kg hat (ÖNORM EN 3-7) 
+3.3.2 
+ 
+fahrbarer Feuerlöscher 
+ortsbeweglicher Feuerlöscher mit einer Gesamtmasse von mehr als 20 kg, der mit Rädern für den manuellen 
+Transport versehen ist und der für die manuelle Bedienung des Feuerlöschers ausgelegt ist 
+(ÖNORM EN 1866) 
+3.4 
+ 
+Freileitung 
+elektrische Leitung, deren Leiter oberirdisch geführt sind, im Allgemeinen mit Hilfe von Isolatoren und 
+geeigneten Stützpunkten 
+ANMERKUNG 1 zum Begriff: 
+Bestimmte Freileitungen können mit isolierten Leitern ausgerüstet sein. 
+3.5 
+ 
+Fahrleitungsanlage 
+Gesamtheit der Betriebsmittel der elektrischen Energieversorgung von den Unterwerken zu elektrischen 
+Triebfahrzeugen, bestehend entweder aus Oberleitungsanlagen oder aus Stromschienenanlagen; die 
+elektrischen Grenzen der Fahrleitungsanlage im Stromkreis bilden der Speisepunkt und die Kontaktstelle zum 
+Stromabnehmer 
+ANMERKUNG 1 zum Begriff: 
+Zur Fahrleitungsanlage gehören auch alle die Leitungen, Stromschienen, Kabeln, 
+Überwachungs- und Schutzeinrichtungen tragenden Anlagenteile wie Maste einschließlich ihrer Gründung, Tragwerke, 
+Isolatoren, Nachspannvorrichtungen, Schaltgeräte, Streckentrenner, Schutzvorkehrungen, Schutzerdungen u.dgl. 
+3.6 
+ 
+Elektrofachkraft 
+eine Person mit geeigneter fachlicher Ausbildung, Kenntnissen und Erfahrungen, so dass sie Gefahren 
+erkennen und vermeiden kann, die von der Elektrizität ausgehen können 
+[ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet)] 
+ANMERKUNG 1 zum Begriff: 
+Als fachliche Ausbildung kann auch eine mehrjährige Tätigkeit auf dem betreffenden 
+Arbeitsgebiet herangezogen werden. 
+3.7 
+ 
+Elektrotechnisch unterwiesene Person 
+eine Person, die durch eine Elektrofachkraft ausreichend unterrichtet wurde, so dass sie Gefahren vermeiden 
+kann, die von der Elektrizität ausgehen können 
+[ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet)] 
+3.8 
+ 
+abgeschlossene elektrische Betriebsstätte 
+Raum oder Ort (auch im Freien), der ausschließlich dem Betreiben elektrischer Betriebsmittel dient und 
+aufgrund der Betriebseigenschaften derselben abgeschlossen gehalten wird 
+Kennzeichnung, Art des Verschlusses und die Zutrittsberechtigung ist in ÖVE/ÖNORM E 8001-4-44 und in  
+ÖVE/ÖNORM EN 50110-1 (EN 50110-2-100 eingearbeitet), Abschnitt 4.3 geregelt. 
+ANMERKUNG 1 zum Begriff: 
+Hierzu gehören z. B. Schalt- und Verteilungsanlagen, Transformatorenzellen, 
+Schaltzellen, Maststationen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 6/16 =====
+OVE E 8350:2017-12-01 
+6 
+3.9 
+ 
+ortsfeste Löschanlage 
+fest installierte Löscheinrichtungen 
+Die Auslösung kann sowohl von Hand vorgenommen werden als auch selbsttätig erfolgen. 
+3.10  
+Strahlrohre gemäß ÖNORM F 2190 
+Strahlrohre CM haben einen Mundstückdurchmesser von 9 mm und einen Düsendurchmesser von 12 mm 
+Strahlrohre BM haben einen Mundstückdurchmesser von 16 mm und einen Düsendurchmesser von 22 mm 
+ANMERKUNG 1 zum Begriff: 
+M bedeutet Mehrzweckstrahlrohr. Mehrzweckstrahlrohre sind Armaturen zur 
+wahlweisen Abgabe von Löschwasser in Form von Vollstrahl oder Sprühstrahl zur Brandbekämpfung. 
+3.11  
+Druckluftschaum 
+Löschschaum, erzeugt durch eine Druckluftschaumanlage 
+4 
+Vorbereitende Maßnahmen 
+4.1 
+Bei elektrischen Anlagen wie z. B. Kraftwerken, Umspannwerken, Schaltstationen usw. können spezielle 
+Maßnahmen bei der Brandbekämpfung erforderlich sein. Verständnisvolle Zusammenarbeit zwischen der 
+Feuerwehr und dem Betreiber dieser elektrischen Anlagen ist dabei erforderlich. Diesem Zweck dienen die 
+nachstehend, beispielhaft angeführten Maßnahmen. 
+4.1.1 
+Der Betreiber gibt der Feuerwehr Auskunft über Anlagen, Leitungen und Einrichtungen, die besondere 
+Gefahren für die Einsatzkräfte verursachen und/oder besondere Maßnahmen bei der Brandbekämpfung 
+erfordern. 
+4.1.2 
+Der Betreiber legt mit der Feuerwehr geeignete Maßnahmen zur Brandbekämpfung fest. 
+4.1.3 
+Der Betreiber stellt der Feuerwehr auf Verlangen die notwendigen Informationen und Planunterlagen 
+zur Verfügung. 
+4.1.4 Der Betreiber gibt auf Wunsch der Feuerwehr die zuständigen Dienststellen oder Personen bekannt, 
+die im Brandfall für die Durchführung von Maßnahmen an den elektrischen Anlagen des Betreibers zur 
+Verfügung stehen, und wie sie erreichbar sind. 
+4.1.5 
+Die Feuerwehr veranlasst, falls es sich nach Rücksprache mit dem Betreiber als zweckmäßig und 
+möglich erweist, die Einweisung von Feuerwehrkräften, dass sie im Einvernehmen mit dem Betreiber im 
+Notfall bestimmte Schalthandlungen ausführen kann. 
+4.2 
+Es wird empfohlen, Maßnahmen gemäß 4.1 einer periodischen Überprüfung (gegebenenfalls im 
+Rahmen von Übungen) zu unterziehen. 
+5 
+Maßnahmen bei Bränden 
+5.1 Allgemeine Maßnahmen 
+5.1.1 
+Die Feuerwehr verständigt im Brandfall den Betreiber entsprechend den getroffenen Vereinbarungen. 
+5.1.2 
+Beauftragte des Betreibers haben sich auf Verlangen beim Betreten der Brandstelle auszuweisen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 7/16 =====
+OVE E 8350:2017-12-01 
+7 
+5.1.3 
+In elektrischen Anlagen sind, soweit überhaupt notwendig, nur die vom Brand betroffenen oder 
+unmittelbar bedrohten Teile spannungsfrei zu machen. Grundsatz muss sein, dass sowenig wie möglich 
+abgeschaltet wird, und zwar mit Rücksicht auf die Nachteile für die Bekämpfung des Brandes sowie für die 
+Allgemeinheit, z. B. durch: 
+- 
+Gefährdung von Personen,
+- 
+Stilllegung der Wasserversorgung,
+- 
+Gefahren und Schäden durch die Unterbrechung von Betriebsabläufen,
+- 
+Stillstand von Aufzügen und elektrisch betätigten Toren,
+- 
+Verdunkelung von Straßen,
+- 
+Ausfall von Sicherheits- und Signaleinrichtungen.
+5.1.4 
+Die Stromversorgung für Wasserversorgungsanlagen oder sonstige Einrichtungen, die im Brandfall 
+wichtig sein können, z. B. Löschanlagen, Aufzüge, elektrisch betätigte Tore oder Beleuchtungsanlagen, ist 
+solange wie möglich in Betrieb zu lassen. 
+Durch Abschalten bestimmter elektrischer Betriebsmittel (z. B. Lüftung) kann es zu erhöhter Brand- und 
+Explosionsgefahr kommen. Daher sollten Abschaltungen nur im Einvernehmen zwischen Feuerwehr und 
+Betreiber vorgenommen werden.  
+5.1.5 
+Beim Einsatz von Leitern, Teleskopgeräten und anderen Geräten dürfen die unter 5.2.4 und 5.3.5 
+angegebenen und jeweils zutreffenden Mindestabstände nicht unterschritten werden. Hierbei ist die 
+Annäherung durch Belastungen und Schwankungen zu berücksichtigen. 
+5.1.6 
+Nicht vom Brand betroffene elektrische Betriebsmittel (elektrische Maschinen, Schalttafeln, Geräte, 
+Telekommunikationsanlagen und anderes) sind nach Möglichkeit vor Löschmitteln zu schützen. 
+5.2 Besondere Maßnahmen für Niederspannungsanlagen 
+5.2.1 
+Sind im Bereich der Brandstelle Zerstörungen der Niederspannungsanlagen, insbesondere der 
+Freileitungen, zu erwarten oder bereits eingetreten, so sind die betroffenen Anlagen bzw. Leitungen im Bereich 
+der Brandstelle spannungsfrei zu machen. 
+ANMERKUNG 
+Diese Maßnahme ist erforderlich, weil der Isolationszustand durch Brand oder Löschmaßnahmen unter 
+Umständen erheblich herabgesetzt werden kann und weil Freileitungen reißen können. Das Berühren herabgefallener 
+Leitungen, auch wenn sie am Boden liegen, und das Berühren der im normalen Zustand nicht unter Spannung stehenden 
+Metallteile (z. B. Maschinen, Fernmeldefreileitungen, Antennen, Blechdächer und -wände, Regenrinnen, Wasser- oder 
+Gasleitungen, Metallzäune) kann gefährlich sein. Diese Metallteile können unter Umständen unter Spannung stehen. 
+5.2.2 
+Schalthandlungen und Eingriffe in Niederspannungsanlagen sollten nur durch Elektrofachkräfte oder 
+elektrotechnisch unterwiesene Personen (insbesondere Betriebspersonal des Betreibers) vorgenommen 
+werden. Hiervon ausgenommen sind Hausinstallationen. 
+ANMERKUNG 
+Zur 
+Hausinstallation 
+im 
+Sinne 
+dieser 
+Norm 
+gehören 
+auch 
+elektromedizinische 
+Geräte, 
+Leuchtröhrenanlagen, z. B. für Reklame, die zwar mit Hochspannung betrieben werden, jedoch an die Hausinstallation 
+angeschlossen sind und dort geschaltet werden können. 
+5.2.3 
+Unsachgemäßes Kurzschließen oder Durchtrennen von unter Spannung stehenden Leitungen und 
+Kabeln ist lebensgefährlich. 
+Kurzschließen oder Durchtrennen von unter Spannung stehenden Leitungen und Kabeln als Notmaßnahme 
+darf daher bei Gefährdung von Menschenleben nur von Elektrofachkräften durchgeführt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 8/16 =====
+OVE E 8350:2017-12-01 
+8 
+5.2.4 
+Bei Annäherung an unter Spannung stehende nicht gegen direktes Berühren geschützte 
+Niederspannungsanlagenteile ist ein Mindestabstand von 1 m einzuhalten (Tabelle 1). Dieser Abstand darf 
+auch bei der Verwendung von Geräten und Hilfsmitteln nicht unterschritten werden.  
+Tabelle 1 – Zulässige Annäherung an Niederspannungsanlagen 
+Nennspannung 
+Annäherung 
+bis 1000 V Wechselspannung 
+und 1500 V Gleichspannung 
+1 m 
+Bei Löscharbeiten gelten die Mindestabstände nach Tabelle 4 
+5.3 Besondere Maßnahmen für Hochspannungsanlagen 
+5.3.1 
+Hochspannungsanlagen dürfen – soweit nicht andere Vereinbarungen vorliegen – nur in Gegenwart 
+einer zuständigen Elektrofachkraft oder elektrotechnisch unterwiesenen Person und nur von unmittelbar an 
+der Brandbekämpfung Beteiligten betreten werden. Die Weisungen dieses Fachpersonals sind zu befolgen.  
+5.3.2 
+Im unmittelbaren Einflussbereich eines Brandes liegende Anlagenteile sollen soweit für den Einsatz 
+erforderlich spannungsfrei gemacht werden. Ist dies nicht möglich, so sind die, in den nachfolgenden Tabellen 
+festgelegten Abstände einzuhalten.  
+5.3.3 
+Schalthandlungen und Eingriffe in Hochspannungsanlagen dürfen nur Elektrofachkräfte oder 
+elektrotechnisch unterwiesene Personen (insbesondere Betriebspersonal des Betreibers oder in Sonderfällen 
+die vom Betreiber zu Schalthandlungen unterwiesenen und ermächtigten Personen) durchführen.  
+5.3.4 
+Hochspannungsanlagen, z. B. Freileitungen, dürfen weder durch behelfsmäßiges Erden und 
+Kurzschließen noch durch Durchtrennen spannungsfrei gemacht werden. 
+5.3.5 
+Bei Annäherung an unter Spannung stehende Hochspannungsanlagen, z. B. Freileitungen, dürfen die 
+Mindestabstände gemäß Tabelle 2 nicht unterschritten werden. 
+Dabei ist das Ausschwingen der Leitung, der Geräte und Hilfsmittel sowie deren mögliche Lageveränderungen 
+zu berücksichtigen. Die angegebenen Abstände müssen zwischen ausgeschwungener Leitung und der 
+ungünstigsten Lage der Geräte erhalten bleiben. 
+Unter Aufsicht einer Elektrofachkraft oder elektrotechnisch unterwiesenen Personen ist eine weitere 
+Annäherung bis auf jene Werte möglich, die für Arbeiten in der Nähe von unter Spannung stehenden Teilen 
+gelten 
+(siehe 
+ÖVE/ÖNORM EN 50110-1 
+(EN 50110-2-100 
+eingearbeitet) bzw. 
+für 
+Bahnanlagen 
+OVE E 8555). 
+Im Zweifelsfall ist ein Abstand von 5 m einzuhalten. 
+Tabelle 2 – Zulässige Annäherung an Hochspannungsanlagen 
+Nennspannung 
+Annäherung 
+über  1 kV  
+bis 110 kV 
+3 m 
+über  110 kV bis 220 kV 
+4 m 
+über  220 kV  bis 380 kV 
+5 m 
+Bei Löscharbeiten gelten die Mindestabstände gemäß Tabelle 4. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 9/16 =====
+OVE E 8350:2017-12-01 
+9 
+5.3.6 
+Freileitungen und Fahrleitungsanlagen in der Nähe von Brandstellen können beschädigt werden und 
+herunterfallen. Auch durch das Berühren von Hochspannungsleitungen mit Kränen, Betonpumpen, Leitern und 
+anderen leitfähigen Gegenständen kommt es zur Ableitung der Spannung zur Erde. Das Betreten der 
+Umgebung solcher Ableitstellen oder der Umgebung herabgefallener Leitungen ist lebensgefährlich 
+(Schrittspannung). Von den am Boden liegenden Leitungen oder sonstigen Ableitstellen ist daher ein 
+Abstand von mindestens 20 m, bei Fahrleitungsanlagen von mindestens 15 m, einzuhalten und als 
+Gefahrenzone abzusichern. Besteht zudem Berührung mit Metallteilen wie Zäunen, Geländern, Schienen, 
+usw., so ist von diesen Teilen ebenfalls der entsprechende Abstand einzuhalten. Der Bereich darf 
+erst wieder nach Beseitigung der Gefahr und Freigabe durch den Betreiber betreten werden. 
+Mit dem vorstehenden Abstand soll sichergestellt werden, dass selbst bei ungünstigen Bedingungen keine 
+Gefährdung für die im Einsatz befindliche Feuerwehr vorliegt. Ungünstige Bedingungen liegen z. B. bei 
+gelöschten 110 kV-Netzen und gleichzeitig hohen spezifischen Erdwiderständen vor. Ist durch eine 
+Elektrofachkraft des Betreibers eindeutig festgestellt, dass es sich um ein Netz mit maximal 30 kV 
+Nennspannung mit Erdschlusskompensation handelt, darf der Abstand auf 10 m verringert werden.  
+Bei Niederspannung ist die Bildung einer gefährlichen Schrittspannung nicht zu erwarten. 
+Bild 1 – Schrittspannung Us im Bereich einer Fehlerstelle bei der Schrittlänge ls 
+6 
+Eignung von Löschmitteln 
+6.1 Auswahl der Löschmittel 
+Die Löschmittel sind unter Beachtung ihrer Eignung und eventueller Einsatzbeschränkungen auszuwählen 
+(siehe auch 3.3 und Tabelle 4). 
+US1
+US2 
+Erdoberflächenpotential 
+Entfernung von 
+der Fehlerstelle 
+Fehlerstelle 
+B
+20 m/ 15 m/ 10 m 
+siehe 5.3.6 
+lS 
+lS 
+Fehlerstelle 
+Bei Annäherung an die Fehlerstelle 
+mit gleich bleibender Schrittlänge 
+wächst die Schrittspannung 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 10/16 =====
+OVE E 8350:2017-12-01 
+10 
+6.2 Anwendung der Löschmittel 
+6.2.1 
+Allgemeines 
+Die in Tabelle 4 genannten Mindestabstände zwischen Löschmittelaustrittsöffnung und unter Spannung 
+stehenden Teilen der elektrischen Anlagen sind erforderlich, um gefährliche Stromeinwirkungen über das 
+Löschmittel auf die den Löscheinsatz durchführenden Personen zu verhindern. 
+Sind den Einsatzkräften die anstehenden Spannungen und die örtlichen Verhältnisse nicht bekannt, so dürfen 
+beim Einsatz von Strahlrohren CM gemäß ÖNORM F 2190, zwischen Strahlrohr und unter Spannung 
+stehenden Anlagenteilen, die Richtwerte nach Tabelle 3 nicht unterschritten werden. 
+Die Verwendungs- bzw. Warnhinweise auf den Löschgeräten sind zu beachten. 
+Tabelle 3 – Richtwerte 
+Strahlrohr CM 
+Niederspannung (N) 
+AC ≤ 1000 V oder DC ≤ 1500 V 
+Hochspannung (H) 
+AC > 1 kV oder DC > 1,5 kV 
+Sprühstrahl 
+Vollstrahl 
+1 m 
+5 m 
+5 m 
+10 m 
+Kurzzeichen 
+N-1-5 
+H-5-10 
+Wird bei Strahlrohren CM gemäß ÖNORM F 2190 ein Fließdruck von 5 bar 
+überschritten, 
+sind 
+die 
+angegebenen 
+Mindestabstände 
+bei 
+Einsatz 
+in 
+Hochspannungsanlagen um zusätzliche 2 m zu vergrößern. 
+6.2.2 
+Wasser 
+Brände im Bereich elektrischer Anlagen sollten mit Sprühstrahl bekämpft werden. Muss Vollstrahl 
+angewendet werden, sind möglichst nur Strahlrohre CM gemäß ÖNORM F 2190 zu verwenden. 
+6.2.2.1 
+Sprühstrahl 
+Es dürfen die in Tabelle 4, Zeile 1, genannten Mindestabstände nicht unterschritten werden. Sie gelten für 
+CM-Strahlrohre gemäß ÖNORM F 2190.  
+Für andere Sprühstrahlrohre (z. B. Wasserwerfer oder Hochdruckstrahlrohre) gelten diese Mindestabstände 
+nur dann, wenn eine mindestens gleich große elektrische Sicherheit nachgewiesen wurde. 
+Liegt dieser Nachweis nicht vor, dürfen diese Strahlrohre nur in spannungsfreien elektrischen Anlagen 
+eingesetzt werden. 
+Wird bei Strahlrohren CM gemäß ÖNORM F 2190 ein Fließdruck von 5 bar überschritten, sind die 
+angegebenen Mindestabstände bei Einsatz in Hochspannungsanlagen um zusätzliche 2 m zu vergrößern. 
+6.2.2.2 
+Vollstrahl 
+Ist der Einsatz von Vollstrahl nicht zu umgehen und wird Wasser beliebiger Qualität (z. B. auch Wasser mit 
+Leitfähigkeit erhöhenden Inhaltsstoffen wie Frostschutzmittel, Jauche und dergleichen) verwendet, dürfen die 
+in Tabelle 4, Zeile 2, genannten Mindestabstände nicht unterschritten werden. Sie gelten für Strahlrohre CM 
+gemäß ÖNORM F 2190. Für andere Strahlrohre gelten diese Mindestabstände nur dann, wenn eine 
+mindestens gleich große elektrische Sicherheit nachgewiesen wurde. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 11/16 =====
+OVE E 8350:2017-12-01 
+11 
+Ist im Sonderfall die Verwendung von Strahlrohren BM gemäß ÖNORM F 2190 (Mundstückdurchmesser 
+16 mm, Düsendurchmesser 22 mm) nicht zu vermeiden, so erhöhen sich die in Tabelle 4, Zeile 2, genannten 
+Mindestabstände um 5,0 m mit Mundstück bzw. 10 m ohne Mundstück. Dies ist jedenfalls zwischen 
+Feuerwehr und Betreiber abzusprechen. 
+Für andere Strahlrohre gelten die Mindestabstände nur dann, wenn eine mindestens gleich große elektrische 
+Sicherheit nachgewiesen wurde.  
+Wird bei Strahlrohren CM gemäß ÖNORM F 2190 ein Fließdruck von 5 bar überschritten, sind die 
+angegebenen Mindestabstände bei Einsatz in Hochspannungsanlagen um zusätzliche 2 m zu vergrößern  
+6.2.2.3 
+Bei Wasser mit Inhaltsstoffen, welche die Leitfähigkeit erhöhen, wie Jauche und dergleichen ist die 
+Bildung von leitfähigen Überzügen auf Isolatoren möglich, die zu Überschlägen und Isolatorenschäden führen 
+können. 
+6.2.2.4 
+Wasser mit Bestandteilen, welche die Strahleigenschaften verändern, z. B. Netzmittel, darf im 
+Bereich unter Spannung stehender elektrischer Anlagen nur eingesetzt werden, wenn die einzuhaltenden 
+Mindestabstände als vorbereitende Maßnahme (Abschnitt 4) ermittelt worden sind. 
+6.2.2.5 
+Soll nach dem Einsatz von Löschpulver in elektrischen Anlagen mit Wasser gelöscht werden, so ist 
+auf die Möglichkeit der Bildung leitfähiger Beläge Bedacht zu nehmen. 
+6.2.2.6 
+Sonstige 
+Geräte, 
+wie 
+z. B. 
+Wasserwerfer, 
+Hohlstrahldüsen, 
+Hochdruckstrahlrohre 
+oder 
+Sonderlöscher, dürfen im Bereich unter Spannung stehender elektrischer Anlagen nur eingesetzt werden, 
+wenn die einzuhaltenden Mindestabstände als vorbereitende Maßnahme ermittelt worden sind. 
+Beim Einsatz dieser Geräte ist die Gefahr einer mechanischen Beschädigung von Isolatoren und 
+Anlagenteilen besonders zu beachten. 
+6.2.2.7 
+Für Wasserwerfer können auf Grund der Verschiedenartigkeit der Düsen keine genauen 
+Mindestabstände angegeben werden. Als Richtwerte gelten bei Verwendung eines Sprühstrahles 10 m und 
+bei Vollstrahl 30 m. 
+Beim Einsatz von Wasserwerfern mit Vollstrahl ist die Gefahr einer mechanischen Beschädigung von 
+Isolatoren und Anlagenteilen besonders zu beachten. 
+6.2.3 
+Löschschäume 
+6.2.3.1 
+Allgemein 
+Löschschäume 
+dürfen 
+im 
+Allgemeinen 
+nur 
+bei 
+spannungsfreien 
+Anlagen 
+angewendet 
+werden, 
+erforderlichenfalls sind benachbarte Anlagenteile abzuschalten. 
+Für unter Spannung stehende Niederspannungsanlagen ist der Einsatz geeigneter typgeprüfter Löschgeräte 
+zulässig. 
+6.2.3.2 
+Druckluftschaum 
+Druckluftschaum darf in unter Spannung stehenden Niederspannungsanlagen eingesetzt werden. 
+Die in Tabelle 4, Zeile 4 und 5, angegebenen Mindestabstände beziehen sich auf Strahlrohre nach 
+ÖNORM F 2190, ÖNORM EN 15182 oder andere Strahlrohre mit Austrittsöffnung bis höchstens 25 mm 
+Durchmesser, einer maximalen Durchflussmenge von höchstens 235 l/min Wasser-Schaummittelgemisch und 
+C-Kupplung.  
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 12/16 =====
+OVE E 8350:2017-12-01 
+12 
+Bei Einhaltung der angegebenen Mindestabstände besteht keine Gefahr über den Löschmittelstrahl. 
+Einsatzkräfte können jedoch durch Spannungsverschleppung, in Folge von an unter Spannung stehenden 
+Teilen anhaftenden Schaum und einen damit in Verbindung stehenden Schaumteppich, gefährdet werden. 
+In Hochspannungsanlagen darf Druckluftschaum nur an spannungsfreien Anlagen eingesetzt werden. 
+6.2.4 
+Löschpulver 
+6.2.4.1 
+Niederspannungsanlagen 
+Löschpulver darf bei unter Spannung stehenden Anlagen angewendet werden. Es ist der in Tabelle 4, Zeile 6 
+und 7, genannte Mindestabstand von 1 m einzuhalten. 
+ANMERKUNG 
+Der 
+Einsatz 
+von 
+Löschpulver 
+ist 
+in staubempfindlichen Anlagen (wie Fernmeldeanlagen, 
+Datenverarbeitungsanlagen, Mess- und Regelanlagen, Verteilerschränken mit Schützen und Relais u.dgl.) möglichst zu 
+vermeiden. 
+6.2.4.2 
+Hochspannungsanlagen 
+Löschpulver kann auf der Oberfläche von Isolatoren leitfähige Beläge bilden. Dies tritt beim Flammbrandpulver 
+(BC-Pulver) in erster Linie durch Feuchtigkeit, beim Glutbrandpulver (ABC-Pulver) zusätzlich durch Wärme 
+ein. Beim Einsatz von Löschpulver in Hochspannungsanlagen ist darauf Bedacht zu nehmen (siehe auch 7.7). 
+Es ist auch zu bedenken, dass die Pulverwolke vom Wind abgetrieben werden kann. 
+In trockenen Freiluft- und Innenraumanlagen, die unter Spannung stehen, darf Flammbrandpulver (BC-Pulver) 
+angewendet werden, wenn die in Tabelle 4, Zeile 7, angegebenen Mindestabstände eingehalten werden. 
+6.2.5 
+Kohlendioxid (CO2) 
+6.2.5.1 
+Kohlendioxid ist elektrisch nicht leitend und hinterlässt keine Rückstände. Es ist schwerer als Luft 
+und kann erstickend wirken. Gefahrenhinweise auf den Löschgeräten beachten! Vorsicht bei Verwendung in 
+engen, schlecht belüfteten Räumen. Lebensgefahr! 
+Im Freien ist die Wirkung begrenzt, weil sich Kohlendioxid verflüchtigt. 
+6.2.5.2 
+Es dürfen die in Tabelle 4, Zeile 8, genannten Mindestabstände nicht unterschritten werden. 
+6.2.6 
+Halone und andere Löschgase 
+6.2.6.1 
+Für den Einsatz von Halonen bestehen gesetzliche Verwendungsbeschränkungen (z. B. Verbot von 
+Halonen, Halonbankverordnung). 
+6.2.6.2 
+Halone sind elektrisch nicht leitend und hinterlassen keine Rückstände. Sie sind schwerer als Luft 
+und können gesundheitsschädliche Dämpfe entwickeln. Die Gefahrenhinweise auf den Löschgeräten sind zu 
+beachten. Im Freien ist die Wirkung begrenzt, weil sich Halone verflüchtigen können. 
+6.2.6.3 
+Es dürfen die in Tabelle 4, Zeile 9, genannten Mindestabstände nicht unterschritten werden. 
+6.2.6.4 
+Bei Verwendung anderer Löschgase sind die Angaben der Hersteller zu beachten. 
+6.2.7 
+Trag- oder fahrbare Feuerlöscher 
+Bei Verwendung von tragbaren oder fahrbaren Feuerlöschern, die für Hochspannungsanlagen zugelassen 
+sind, darf in Hochspannungsanlagen bis maximal 30 kV Nennspannung der Mindestabstand auf 2 m reduziert 
+werden (gilt für die Zeilen 7, 8 und 9 der Tabelle 4). Die Spannungsebene muss durch eine Elektrofachkraft 
+oder eine elektrotechnisch unterwiesene Person festgestellt sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 13/16 =====
+OVE E 8350:2017-12-01 
+13 
+Tabelle 4 – Eignung der Löschmittel und Abstände im Bereich elektrischer Anlagen, 
+Gefahrenhinweise und Verwendungsbeschränkungen 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+Abschnitt 
+Löschmittel 
+Eignung im Bereich 
+der Brandklassen 
+Mindestabstände 
+in m 
+bei Niederspannung 
+bis 
+bei Hochspannung 
+bis AC 
+A 
+B 
+C 
+D 
+AC 1000 V/DC 1500 V 110 kV 
+220 kV 
+380 kV 
+1 6.2.2.1 
+Wasser Sprühstrahl 
+ja 
+ja
+1)
+nein 
+nein
+2)
+1 
+3
+7)
+4
+7)
+5
+7)
+2 6.2.2.2 
+Wasser Vollstrahl 
+ja 
+nein 
+nein 
+nein 
+5 
+9)
+8
+7) 9)
+9
+7) 9)
+10
+7) 9)
+3 6.2.3 
+Löschschaum 
+ja 
+ja 
+nein 
+nein 
+Anwendung nur in 
+spannungsfreien 
+Anlagen
+4)
+Anwendung nur in 
+spannungsfreien Anlagen 
+4 6.2.3 
+Druckluftschaum 
+Sprühstrahl 
+ja 
+ja 
+nein 
+nein 
+1
+8)
+Anwendung nur in 
+spannungsfreien Anlagen 
+5 6.2.3 
+Druckluftschaum 
+Vollstrahl 
+ja 
+ja 
+nein 
+nein 
+5
+8)
+Anwendung nur in 
+spannungsfreien Anlagen 
+6 6.2.4 
+ABC-Löschpulver 
+(Glutbrandpulver) 
+ja 
+ja 
+ja 
+nein 
+1 
+Anwendung nur in 
+spannungsfreien Anlagen 
+7 6.2.4 
+BC-Löschpulver
+5)
+(Flammbrandpulver) 
+nein 
+ja 
+ja 
+nein 
+1 
+3 
+4 
+5 
+8 6.2.5.2 
+CO2 
+nein 
+ja
+3)
+ja
+3)
+nein 
+1 
+3 
+4 
+5 
+9 6.2.6.3 
+Halone
+6)
+nein 
+ja 
+ja 
+nein 
+1 
+3 
+4 
+5 
+Gefahrenhinweise und Verwendungsbeschränkungen: 
+In den Zeilen 1 und 2 gelten die Werte nur für Strahlrohre CM gemäß ÖNORM F 2190 
+1)
+Nur für brennbare Flüssigkeiten mit einem Flammpunkt über 55°C
+2)
+Allenfalls in Sonderfällen
+3)
+Eignung für Brandklasse wird durch Düse bestimmt
+B.....CO2-Schnee oder -Nebel; C.....CO2-Gas 
+4)
+Ausgenommen ist der Einsatz typgeprüfter und für die Verwendung in Niederspannungsanlagen
+zugelassener Löschgeräte bei einem Abstand von 1 m
+5)
+Bei Hochspannung nur in trockenen Anlagen
+6)
+Für andere Löschgase sind die Angaben der Hersteller zu beachten
+7)
+Wird bei Strahlrohren CM gemäß ÖNORM F 2190 ein Fließdruck von 5 bar überschritten, sind die gegebenen
+Mindestabstände um zusätzliche 2 m zu vergrößern.
+8)
+Einsatzkräfte können durch Spannungsverschleppung, in Folge von an unter Spannung stehenden Teilen
+anhaftenden Schaum und einen damit in Verbindung stehenden Schaumteppich, gefährdet werden.
+9)
+Ist im Sonderfall die Verwendung von Strahlrohren BM gemäß ÖNORM F 2190 (Mundstückdurchmesser 16 mm,
+Düsendurchmesser 22 mm) nicht zu vermeiden, so erhöhen sich die in Tabelle 4, Zeile 2, genannten
+Mindestabstände um 5,0 m mit Mundstück bzw. 10 m ohne Mundstück. Dies ist jedenfalls zwischen Feuerwehr und
+Betreiber abzusprechen.
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 14/16 =====
+OVE E 8350:2017-12-01 
+14 
+7 
+Maßnahmen nach dem Brand 
+7.1 
+Beim Betreten der Brandstelle ist besondere Vorsicht erforderlich.  
+7.2 
+Es besteht die Gefahr, dass vorhandene Metallteile unter Spannung stehen können, also nicht nur 
+elektrische Leitungen und Geräte, sondern auch metallene Rohrleitungen, Dachrinnen oder Drahtzäune, 
+sofern sie mit einem unter Spannung stehenden Teil in Berührung stehen. 
+7.3 
+Nach dem Brand ist der Brandraum zu lüften, bevor Personen ohne Atemschutz den Raum betreten, 
+wobei zu vermeiden ist, dass sich giftige und korrosive Zersetzungsprodukte im Gebäude ausbreiten. 
+Unbefugte Personen dürfen die Brandstelle nicht betreten. 
+Besteht Verdacht, dass Personen mit giftigen Zersetzungsprodukten in Kontakt gekommen sind, müssen sie 
+unverzüglich ärztlicher Betreuung zugeführt werden. 
+7.4 
+Bei der Verbrennung von Kunststoffen (z. B. PVC) oder PCB-haltigen Betriebsmitteln oder wenn SF6-
+Anlagen in Brandeinwirkung geraten, können toxische und aggressive Gase, Säuren und Rückstände 
+entstehen. 
+7.5 
+Auf Gefahren im Zusammenhang mit der Verwendung von Ionisations-Rauchmeldern (Radioaktivität) ist 
+Bedacht zu nehmen. 
+7.6 
+Unter Spannung stehende elektrische Anlagenteile sind gegen direktes Berühren und gegen gefährliche 
+Annäherung zu sichern. 
+7.7 
+Löschpulver oder Löschschaum auf Isolatoren von in Betrieb befindlichen und von wieder in Betrieb zu 
+nehmenden Anlagenteilen sind möglichst rasch zu beseitigen. 
+7.8 
+Die Wiederinbetriebnahme der elektrischen Anlage darf nur durch eine Elektrofachkraft des Betreibers 
+vorgenommen werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 15/16 =====
+OVE E 8350:2017-12-01 
+15 
+Literaturhinweise 
+ÖNORM EN 3-8, Tragbare Feuerlöscher – Teil 8: Zusätzliche Anforderungen zu EN 3-7 an die konstruktive 
+Ausführung, Druckfestigkeit, mechanische Prüfungen für tragbare Feuerlöscher mit einem maximal zulässigen 
+Druck kleiner gleich 30 bar 
+ÖNORM EN 3-9, Tragbare Feuerlöscher – Teil 9: Zusätzliche Anforderungen zu EN 3-7 an die Druckfestigkeit 
+von Kohlendioxid-Feuerlöscher 
+ÖNORM EN 3-10, Tragbare Feuerlöscher – Teil 10: Festlegungen für die Bestätigung der Konformität 
+tragbarer Feuerlöscher nach EN 3-7 
+ÖNORM EN 615, Brandschutz – Löschmittel – Anforderungen an Löschpulver (nicht für Löschpulver der 
+Brandklasse D) 
+ÖNORM EN 1568 (alle Teile), Feuerlöschmittel – Schaummittel 
+ÖNORM EN 1866 (alle Teile), Fahrbare Feuerlöscher 
+ÖNORM EN 1869, Löschdecken 
+ÖNORM F 1040, Wiederverwendbare Löschdecken – Anforderungen, Prüfungen 
+OVE E 8351, Erste Hilfe bei Unfällen durch Elektrizität 
+ÖVE/ÖNORM E 8383, Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+OVE EN 50122-1, Bahnanwendungen – Ortsfeste Anlagen – Elektrische Sicherheit, Erdung und Rückleitung – 
+Teil 1: Schutzmaßnahmen gegen elektrischen Schlag 
+ÖVE/ÖNORM EN 50341 (alle Teile), Freileitungen über AC 45 kV 
+ÖVE/ÖNORM EN 50423 (alle Teile), Freileitungen über AC 1 kV bis einschließlich AC 45 kV 
+ÖVE/ÖNORM EN 61936, Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+ÖVE L 1, Errichtung von Starkstromfreileitungen bis 1000 V 
+DIN 14366, Tragbare Schaumstrahlrohre PN 16 
+DIN VDE 0132 (VDE 0132), Brandbekämpfung und technische Hilfeleistung im Bereich elektrischer Anlagen 
+BGBl. Nr. 227/1969, Strahlenschutzgesetz, idgF 
+BGBl. Nr. 576/1990, Verbot von Halonen 
+BGBl. II Nr. 77/2000, Halonbankverordnung 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 16/16 =====
+ 
+ 
+ 
+ 
+ 
+ 
+WICHTIGE INFORMATIONEN FÜR NORM-ANWENDER 
+ 
+ 
+Normen werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen Bereich 
+Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser An- 
+forderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig (ausgenommen gesetz- 
+lich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der Technik dokumentieren: das, was in einem bestimmten 
+Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Expertinnen und Experten in den zuständigen 
+Komitees auf nationaler, europäischer und internationaler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik 
+(OVE) und seiner Referenten. 
+ 
+ 
+Aktualität des Normenwerks 
+ 
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie werden vom 
+zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. Für 
+den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu haben, 
+um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen entsprechen. 
+ 
+ 
+Wissen um Veränderungen 
+ 
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen Fassungen zu 
+haben, bietet der Österreichische Verband für Elektrotechnik gemeinsam mit der Austrian Standards plus GmbH den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen Fachgebiets-Abonnements bis 
+hin zu innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian Standards plus GmbH ist ein 
+hundertprozentiges Tochterunternehmen von Austrian Standards Institute. 
+ 
+ 
+ 
+Kontakt 
+ 
+Weitere Informationen über Dienstleistungen und Angebote des OVE bietet Ihnen: 
+ 
+ 
+ 
+OVE Normung 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 
+1010 Wien 
+E-Mail: ove@ove.at  
+Internet: www.ove.at  
+Tel.: +43 1 587 63 73 
+Fax: +43 1 587 63 73-99
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

@@ -1,0 +1,1603 @@
+
+
+===== PAGE 1/32 =====
+ 
+ 
+ 
+OVE E 8014 
+ 
+Ausgabe: 2019-01-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fundamenterder und ergänzende Maßnahmen mit 
+Erdung und Potentialausgleich für Einrichtungen  
+der Informationstechnik 
+ 
+Foundation earth electrode and supplementary measures with earthing  
+and equipotential bonding for information technology facilities 
+ 
+Prise de terre à fond de fouille et mesures supplémentaires avec mise à la terre  
+et liaison équipotentielle pour les installations de technologie de l'information 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.020; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      ÖVE/ÖNORM E 8014-1:2006 
+ 
+ 
+ÖVE/ÖNORM E 8014-2:2006 
+ 
+ 
+ÖVE/ÖNORM E 8014-3:2006 
+ 
+ 
+ zuständig 
+OVE/TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ 
+Copyright © OVE – 2019.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 
+Tel.: +43 1 587 63 73 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 2/32 =====
+Vorwort 
+Diese Norm hat den Status einer nationalen elektrotechnischen Norm gemäß ETG 1992. Bei ihrer 
+Anwendung ist dieses Nationale Vorwort zu berücksichtigen. 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des 
+Ausgabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die 
+Verweisung auf die jeweils neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug 
+genommene Ausgabe des Standards. 
+Der Rechtsstatus dieser nationalen elektrotechnischen Norm ist den jeweils geltenden Verordnungen zum 
+Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+rein 
+österreichischen 
+elektrotechnischen Normen ist zu beachten: 
+–
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum
+Zeitpunkt der Herausgabe dieser rein österreichischen elektrotechnischen Norm. Zum Zeitpunkt der
+Anwendung dieser rein österreichischen elektrotechnischen Norm ist der durch die Verordnungen zum
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu
+berücksichtigen.
+–
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen,
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst.
+Änderungen 
+Die vorliegende OVE-Norm ist das Ergebnis einer Adaptierung der Normenreihe ÖVE/ÖNORM E 8014. 
+Gegenüber der Normenreihe ÖVE/ÖNORM E 8014:2006 wurden folgende Änderungen und Anpassungen 
+vorgenommen, wobei diese Zusammenstellung keinen Anspruch auf Vollständigkeit erhebt: 
+–
+Zusammenfassung der Teile 1 bis 3 aus ÖVE/ÖNORM E 8014 Reihe;
+–
+Überarbeitung der normativen und informativen Verweisungen;
+–
+Aktualisierung der Normenverweise;
+–
+Anpassung der Begriffe an das IEV, Formulierungen der Bautechnik, ÖVE/ÖNORM EN 62305 Reihe und
+OVE EN 50310;
+–
+Einarbeitung 
+der 
+Tabelle 
+betreffend 
+Expositionsklassen 
+und 
+Eignung 
+von 
+Beton 
+als
+Fundamenterderbeton;
+–
+Einarbeitung der Tabelle „Zusammenschluss von Erdern aus verschiedenen Werkstoffen“ aus
+ÖVE-E 40/1987.
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt die Normenreihe ÖVE/ÖNORM E 8014:2006. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 3/32 =====
+Inhalt 
+Seite 
+1 
+Anwendungsbereich ............................................................................................................................... 4 
+2 
+Normative Verweisungen ....................................................................................................................... 4 
+3 
+Begriffe ................................................................................................................................................... 5 
+4 
+Anforderungen an Fundamenterder ....................................................................................................... 8 
+4.1 
+Allgemeines ............................................................................................................................................ 8 
+4.2 
+Nutzung von natürlichen Bestandteilen.................................................................................................. 8 
+5 
+Ausführung ............................................................................................................................................. 9 
+5.1 
+Allgemeines ............................................................................................................................................ 9 
+5.2 
+Ergänzende Anforderungen an Fundamenterder, in Beton gebettet ..................................................... 9 
+5.3 
+Ergänzende Anforderungen an Fundamenterder, in Erde gebettet ....................................................... 9 
+5.4 
+Ergänzende Anforderungen bei Anordnung in unbewehrtem Fundament bzw. in Faserbeton ........... 10 
+5.5 
+Ergänzende Anforderungen bei Anordnung in bewehrtem Fundament sowie bei 
+Wannenabdichtungen .......................................................................................................................... 10 
+5.6 
+Verbindung der Teile von Fundamenterdern ....................................................................................... 11 
+5.7 
+Zuverlässig elektrisch leitende Verbindungen ..................................................................................... 11 
+5.8 
+Anschlussfahnen, Anschlussteile ......................................................................................................... 12 
+5.9 
+Werkstoff .............................................................................................................................................. 12 
+6 
+Fundamenterderbeton .......................................................................................................................... 13 
+7 
+Maßnahmen für Einrichtungen der Informationstechnik mit geschirmten 
+Verkabelungssystemen ........................................................................................................................ 15 
+7.1 
+Schutzziel ............................................................................................................................................. 15 
+7.2 
+Ausführung ........................................................................................................................................... 15 
+8 
+Prüfung und Dokumentation ................................................................................................................ 16 
+Anhang A (informativ)  Grundlagen der elektrochemischen Korrosion ............................................................ 18 
+Anhang B (informativ)  Entscheidungshilfe zur Ausführung eines Fundamenterders...................................... 20 
+Anhang C (informativ)  Ausführungsbeispiele .................................................................................................. 22 
+Literaturhinweise .............................................................................................................................................. 30 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 4/32 =====
+1 
+Anwendungsbereich 
+Diese OVE-Norm legt die Anforderungen für die Anordnung, den Einbau und die Prüfung von 
+Fundamenterdern in Gebäuden fest. 
+Werden Einrichtungen der Informationstechnik mit geschirmten Verkabelungssystemen installiert, gelten 
+ergänzend die Maßnahmen gemäß Abschnitt 7. Bei ungeschirmten Verkabelungssystemen können die 
+Maßnahmen sinngemäß angewendet werden. 
+Besondere Hinweise zum Korrosionsschutz von Erdungsanlagen siehe Abschnitt 5.9 und Anhang A. 
+ANMERKUNG 1  
+Anforderungen an die Errichtung von Erdungsanlagen außerhalb des Anwendungsbereichs 
+dieser OVE-Norm siehe OVE E 8101. 
+ANMERKUNG 2  
+Anforderungen für Blitzschutzsysteme (LPS) siehe ÖVE/ÖNORM EN 62305 Reihe. 
+Ist für die elektrische Anlage ein in Beton gebetteter Erder erforderlich, aber handelt es sich nicht um ein 
+Gebäudefundament, sind die zutreffenden Anforderungen aus den Abschnitten 5, 6, 7 und 8 sinngemäß 
+anzuwenden. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+ÖVE/ÖNORM EN 50173-1, Informationstechnik – Anwendungsneutrale Kommunikationskabelanlagen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 50174 Reihe, Informationstechnik – Installation von Kommunikationsverkabelung 
+OVE EN 50310, Telekommunikationstechnische Potentialausgleichsanlagen für Gebäude und andere 
+Strukturen 
+ÖVE/ÖNORM EN 50522, Erdung von Starkstromanlagen mit Nennwechselspannungen über 1 kV 
+ÖVE/ÖNORM EN 60728-11, Kabelnetze für Fernsehsignale, Tonsignale und interaktive Dienste –  
+Teil 11: Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 61557-4, Elektrische Sicherheit in Niederspannungsnetzen bis AC 1 000 V und  
+DC 1 500 V – Geräte zum Prüfen, Messen oder Überwachen von Schutzmaßnahmen – Teil 4: Widerstand 
+von Erdungsleitern, Schutzleitern und Potentialausgleichsleitern 
+ÖVE/ÖNORM EN 62305 Reihe, Blitzschutz 
+ÖVE/ÖNORM EN 62561 Reihe, Blitzschutzbauteile 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 5/32 =====
+3 
+Begriffe 
+Für die Anwendung dieser OVE-Norm gelten die Begriffe gemäß OVE E 8101 Teil 2 und die folgenden: 
+3.1 
+Erder 
+leitfähiges Teil, das in das Erdreich oder in ein anderes bestimmtes leitfähiges Medium, zB Beton, das in 
+elektrischem Kontakt mit der Erde steht, eingebettet ist 
+[QUELLE: IEV 826-13-05, mod.] 
+3.2 
+Fundamenterder 
+leitfähiges Teil, das unter einem Gebäudefundament1) in das Erdreich oder bevorzugt im Beton eines 
+Gebäudefundamentes, im Allgemeinen als geschlossener Ring, eingebettet ist  
+[QUELLE: IEV 826-13-08] 
+3.2.1 
+Fundamenterder, in Beton gebettet  
+Erder in Beton eines Gebäudefundaments gebettet, im Allgemeinen als geschlossener Ring 
+[QUELLE: IEV 826-13-08, mod.] 
+3.2.2 
+Fundamenterder, in Erde gebettet 
+Erder erdfühlig unterhalb bzw. außerhalb des Betonkörpers eines Gebäudefundaments verlegt, im 
+Allgemeinen als geschlossener Ring 
+[QUELLE: IEV 826-13-08, mod.] 
+3.3 
+Erdungsleiter 
+Leiter, der einen Strompfad oder einen Teil des Strompfads zwischen einem gegebenen Punkt eines Netzes, 
+einer Anlage oder eines Betriebsmittels und einem Erder oder einem Erdernetz herstellt 
+[QUELLE: IEV 826-13-12] 
+Anmerkung 1 zum Begriff: 
+In der elektrischen Anlage einer baulichen Anlage ist der gegebene Punkt üblicherweise 
+die Haupterdungsschiene (Haupterdungsklemme) und der Erdungsleiter verbindet diesen Punkt mit dem Erder oder dem 
+Erdernetz. 
+3.4 
+Erdungsanlage 
+Gesamtheit der zum Erden eines Systems, einer Anlage oder eines Betriebsmittels verwendeten elektrischen 
+Verbindungen und Einrichtungen 
+[QUELLE: IEV 826-13-04] 
+ 
+ 
+1) 
+Ein Fundament (en: foundation) oder eine Gründung im Sinne dieser Norm ist Teil der tragenden Struktur einer 
+baulichen Anlage, die die auf die Konstruktion wirkenden Lasten in den Baugrund (Boden) überträgt und im direkten 
+Kontakt mit dem Boden steht (siehe dazu ÖNORM ENV 1993-5:2000, mod., 1.4.1 und ÖVE/ÖNORM EN 61400-3:2010, 
+3.11, mod.). 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 6/32 =====
+3.5 
+Anschlussfahne 
+Verbindungsstück zwischen dem Fundamenterder und der Haupterdungsschiene (Potentialausgleichs-
+schiene – PAS; Haupterdungsklemme) oder Verbindungsstück zum Anschluss der Ableitungseinrichtung zB 
+eines Blitzschutzsystems, eines Anschlussteiles oder sonstiger Konstruktionsteile aus Metall an den 
+Fundamenterder 
+3.6 
+Anschlussteil 
+in Beton oder im Mauerwerk oberflächenbündig eingebettetes Bauelement, das mit dem Fundamenterder zB 
+über Anschlussfahnen verbunden ist und zum Anschluss anderer leitfähiger Teile dient 
+Anmerkung 1 zum Begriff: 
+Diese Anschlussteile werden auch als Erdungsfestpunkte oder als Zugangspunkte 
+bezeichnet. 
+3.7 
+verrödeln 
+Herstellen einer mechanischen Verbindung von Metallteilen durch Umwickeln mit Eisendraht, dessen Enden 
+verdrillt werden 
+3.8 
+zuverlässig elektrisch leitende Verbindungen 
+galvanisch einwandfreie Klemm-, Schweiß- oder Schraub-Verbindung 
+3.9 
+Informationstechnik 
+Technologie, die sich mit der Übertragung, dem Senden und dem Empfang von Zeichen, Signalen, Texten, 
+Bildern und Tönen beschäftigt; d.h. Information aller Art über Draht, Funk, Licht oder elektromagnetische 
+Systeme 
+[QUELLE: ÖVE/ÖNORM EN 50173-1:2011] 
+Anmerkung 1 zum Begriff: 
+Dazu zählen auch Alarmanlagen, Brandmeldeanlagen, EDV-Netzwerke, Steuer- und 
+Regelungstechnik. 
+3.10 
+Perimeterdämmung  
+Wärmedämmung erdberührter Bauteile zwischen Bauwerk und Abdichtung oder außerhalb der Abdichtung 
+[QUELLE: ÖNORM B 3692] 
+3.11 
+Bewegungsfuge (Dehnungsfuge) 
+Spalt zur Trennung von Bauwerken oder Bauteilen, um unterschiedliche Bewegungen derselben zu 
+ermöglichen 
+[QUELLE: ÖNORM B 3430-1] 
+3.12 
+leitfähiges Teil 
+Teil, das elektrischen Strom führen kann  
+[QUELLE: IEV 826-12-09] 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 7/32 =====
+3.13 
+MICE-Klassifizierung 
+Klassifikationssystem, 
+das 
+die 
+Umgebungsbedingungen, 
+die 
+auf 
+eine 
+informationstechnische 
+Übertragungsstrecke lokal einwirken, auf der Grundlage folgender Faktoren beschreibt: mechanisch (M), 
+Eindringen (I), klimatisch und chemisch (C) und elektromagnetisch (E) 
+[QUELLE: ÖVE/ÖNORM EN 50173-1] 
+3.14 
+Potentialausgleich 
+Herstellen elektrischer Verbindungen zwischen leitfähigen Teilen, um Potentialgleichheit zu erzielen 
+[QUELLE: IEV 826-13-19] 
+3.15 
+Potentialausgleichsanlage 
+en: equipotential bonding system 
+Gesamtheit der Verbindungen zwischen leitfähigen Teilen, die den Potentialausgleich zwischen diesen Teilen 
+herstellt 
+[QUELLE: IEV 826-13-30] 
+3.16 
+Schutzpotentialausgleichsanlage 
+en: protective equipotential bonding system 
+Potentialausgleichsanlage, die Schutzpotentialausgleich herstellt 
+[QUELLE: IEV 826-13-31] 
+Anmerkung 1 zum Begriff: 
+Der Schutzpotentialausgleich ist der Potentialausgleich zum Zweck der Sicherheit. 
+[QUELLE: IEV 826-13-20] 
+3.17 
+kombinierte Potentialausgleichsanlage 
+Potentialausgleichsanlage, die sowohl Schutzpotentialausgleich als auch Funktionspotentialausgleich 
+herstellt 
+[QUELLE: IEV 826-13-33] 
+Anmerkung 1 zum Begriff: 
+Dieser Begriff entspricht dem Begriff der „gemeinsamen Potentialausgleichsanlage“ 
+gemäß OVE EN 50310:2017. 
+3.18 
+natürlicher Bestandteil der Potentialausgleichsanlage 
+leitender Bestandteil, der nicht eigens für den Potentialausgleich eingebaut wurde, der aber zusätzlich für den 
+Potentialausgleich genutzt wird oder in manchen Fällen die Funktion eines oder mehrerer Teile eines 
+Potentialausgleichs übernehmen kann 
+Anmerkung 1 zum Begriff: 
+Beispiele für die Anwendung dieses Begriffes sind: 
+− 
+die durchverbundene Bewehrung der baulichen Anlage; 
+− 
+das Metall des elektrisch verbundenen Stahlbetonskeletts der baulichen Anlage; 
+ 
+In Stahlbetonfertigteilen ist es wichtig, Verbindungsstellen zwischen den Bewehrungsteilen vorzusehen. Es ist 
+weiterhin wichtig, dass im Stahlbeton eine leitfähige Verbindung zwischen allen Verbindungsstellen ist. Die 
+einzelnen Teile sollten auf der Baustelle während der Montage miteinander verbunden werden. 
+ 
+Im Falle von Spannbeton sollte auf das Risiko unzulässiger mechanischer Folgen geachtet werden, die entweder 
+durch Blitzströme oder als Folge des Anschlusses an das Blitzschutzsystem auftreten können. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 8/32 =====
+Anmerkung 2 zum Begriff: 
+Anforderungen an diese Bauteile zur Verwendung als natürliche Bestandteile siehe 
+Abschnitt 4.2. 
+3.19 
+natürlicher Bestandteil des Blitzschutzsystems (LPS) 
+leitender Bestandteil, der nicht eigens für das LPS eingebaut wurde, der aber zusätzlich zum LPS genutzt 
+wird oder in manchen Fällen die Funktion eines oder mehrerer Teile eines LPS übernehmen kann 
+Anmerkung 1 zum Begriff: 
+Beispiele für die Anwendung dieses Begriffes sind: 
+− 
+natürliche Fangeinrichtung; 
+− 
+natürliche Ableitung; 
+− 
+natürlicher Erder. 
+[QUELLE: ÖVE/ÖNORM EN 62305-3] 
+Anmerkung 2 zum Begriff: 
+Anforderungen an diese Bestandteile zur Verwendung als natürliche Bestandteile siehe 
+ÖVE/ÖNORM EN 62305-3. 
+3.20 
+Erdernetz 
+Teil einer Erdungsanlage, der nur die Erder und ihre elektrischen Verbindungen untereinander umfasst 
+[QUELLE: IEV 826-13-06] 
+4 
+Anforderungen an Fundamenterder 
+4.1 
+Allgemeines 
+ANMERKUNG 1 
+ 
+Die Anforderung, dass bei neuen Gebäuden bzw. Gebäudeteilen in denen elektrische Anlagen 
+errichtet werden, ein Fundamenterder errichtet werden muss, siehe OVE E 8101. 
+Fundamenterder gemäß dieser OVE-Norm dienen dazu, eine Verbindung zur Erde herzustellen, und sind die 
+Basis für: 
+− 
+die Erfüllung von Schutzmaßnahmen in elektrischen Nieder- und Hochspannungsanlagen (siehe zB 
+OVE E 8101, ÖVE/ÖNORM EN 50522); 
+ 
+ANMERKUNG 1 
+ 
+Für die Erdung von Starkstromanlagen mit Nennwechselspannungen über 1 kV (zB für 
+Trafostationen) siehe ÖVE/ÖNORM EN 50522. 
+− 
+den Potentialausgleich und die Potentialsteuerung in Gebäuden (siehe OVE E 8101 und OVE  
+EN 50310); 
+− 
+die Erdung von Blitzschutzsystemen und Überspanungsschutzeinrichtungen (siehe ÖVE/ÖNORM 
+EN 62305-3); 
+− 
+die Gewährleistung der Anforderungen an die elektromagnetische Verträglichkeit; 
+− 
+den Funktionspotentialausgleich und die Funktionserdung. 
+ANMERKUNG 2  
+Eine Entscheidungshilfe zur Ausführung des Fundamenterders siehe Anhang B. 
+4.2 
+Nutzung von natürlichen Bestandteilen 
+Natürliche Bestandteile aus leitenden Werkstoffen, die immer in/auf der baulichen Anlage verbleiben und 
+nicht geändert werden (zB durchverbundene Stahlbewehrung, Stahlskelett der baulichen Anlage), dürfen als 
+Teil des Erders (oder als Teil der Potentialausgleichsanlage) verwendet werden, sofern sie gemäß 
+Abschnitt 5.7 verbunden sind.  
+Als Erder sollte vorzugsweise durchverbundener Bewehrungsstahl in Betonfundamenten oder andere 
+geeignete unterirdische Anlagenteile aus Metall genutzt werden. Wird die Betonbewehrung als Teil des 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 9/32 =====
+Erders 
+(oder 
+als 
+Teil 
+der 
+Potentialausgleichsanlage) 
+benutzt, 
+müssen 
+die 
+Verbindungen 
+der 
+Bewehrungsstäbe besonders sorgfältig ausgeführt werden, um eine Zersplitterung des Betons zu vermeiden. 
+ANMERKUNG 
+Siehe dazu auch ÖVE/ÖNORM EN 62305-3:2012, 5.4.4 mod.. 
+5 
+Ausführung 
+5.1 
+Allgemeines 
+5.1.1 
+Durch eine vorhersehbare Änderung des Erdungswiderstandes (zB aufgrund von Korrosion, 
+Austrocknung oder Frost) dürfen die Maßnahmen für den Schutz gegen elektrischen Schlag gemäß 
+OVE E 8101, nicht unzulässig beeinflusst werden. 
+5.1.2 
+Ausführungen, Werkstoffe und Abmessungen der Erder müssen so ausgewählt werden, dass sie 
+über die zu erwartende Lebenszeit der Korrosion widerstehen und eine angemessene mechanische 
+Festigkeit besitzen. 
+ANMERKUNG 
+Zur Vermeidung von Korrosion sind folgende Eigenschaften zu betrachten: Der pH-Wert des Erdreichs, 
+Widerstand und Feuchtigkeit des Erdreichs, Streuströme und Ableitströme (AC und DC), chemische Belastung des 
+Bodens und die örtliche Nähe von unterschiedlichen Materialien. 
+5.1.3 
+Wird ein Gebäude mit einem Blitzschutzsystem ausgestattet, müssen ergänzend die Anforderungen 
+betreffend der Erdungsanlage gemäß ÖVE/ÖNORM EN 62305 Teil 3 und Teil 4 erfüllt werden. 
+5.1.4 
+Wenn eine elektrische Anlage mit Hochspannung versorgt wird, müssen die Anforderungen 
+betreffend der Erdungsanlage für die Hochspannungs- und die Niederspannungsseite gemäß ÖVE/ÖNORM 
+EN 50522 bzw. OVE E 8101 erfüllt werden. 
+5.1.5 
+Besonders betrachtet werden müssen Erdungsanlagen, in denen Ströme mit hohen Frequenzen 
+erwartet werden. 
+5.2 
+Ergänzende Anforderungen an Fundamenterder, in Beton gebettet 
+5.2.1 
+Für die Verlegung (Bettung) des Fundamenterders in Beton werden die für den Bau notwendigen 
+Aufgrabungen ausgenützt. Der Fundamenterder ist so anzuordnen, dass er allseitig mindestens 5 cm mit 
+Beton gemäß Abschnitt 6 umhüllt ist. 
+5.2.2 
+Der Fundamenterder in Beton ist im Allgemeinen als geschlossener Ring auszuführen und in den 
+Fundamenten der Außenwände des Gebäudes beziehungsweise in der Fundamentplatte entsprechend 
+anzuordnen (Beispiele siehe Bilder C.1 und C.2). Sind Punkte innerhalb des Fundamentgrundrisses weiter 
+als 5 m von den in den Fundamenten der Außenwände zu verlegenden Erdern entfernt, so sind weitere 
+Verbindungen derart zu verlegen, dass dieses Maß nicht überschritten wird. Innerhalb des geschlossenen 
+Ringes sind Maschenweiten von höchstens 10 m x 20 m zulässig. 
+ANMERKUNG 
+In Abhängigkeit von der Nutzung (MICE-Klassifizierung gemäß ÖVE/ÖNORM EN 50173-1) können 
+geringere Maschenweiten gemäß OVE EN 50310 erforderlich sein.  
+5.2.3 
+Wird der Fundamenterder in Beton über Bewegungsfugen (Dehnungsfugen) geführt, ist er an 
+diesen Stellen zu unterbrechen und über einen Bewegungsausgleich zuverlässig elektrisch leitend zu 
+verbinden (Beispiele siehe Bild C.7). 
+5.2.4 
+Der Fundamenterder in Beton ist mit einer vorhandenen Bewehrung in Abständen von höchstens 
+2 m zuverlässig elektrisch leitend zu verbinden. Unter bestimmten Bedingungen (siehe Abschnitte 5.6 und 
+5.7) können Teile der Bewehrung die Funktion eines Fundamenterders erfüllen. 
+5.3 
+Ergänzende Anforderungen an Fundamenterder, in Erde gebettet 
+Dieser Erder ist außerhalb des Betonkörpers erdfühlig anzuordnen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+9 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 10/32 =====
+Um einen konstanten, niedrigen Erdausbreitungswiderstand zu erzielen, muss der Erder im frostfreien 
+Erdreich außerhalb des Fundaments angeordnet werden, sofern die Bodenverhältnisse dies erlauben. 
+ANMERKUNG 1  
+Frostfrei bedeutet im Allgemeinen eine Verlegetiefe von mindestens 0,8 m. 
+Wird der Fundamenterder in Erde gebettet, gelten, insbesondere für die maximale Maschenweite, die 
+Abschnitte 5.2.2, 5.4 und soweit sinngemäß anwendbar Abschnitt 5.5. 
+ANMERKUNG 2  
+Beispiele für die Anordnung: 
+− 
+seitlich im Arbeitsraum der Baugrube, ggf. unterhalb einer Drainageschicht; oder 
+− 
+unterhalb des Fundaments im Bereich der Außenwände; oder 
+− 
+in der Sauberkeitsschicht; oder 
+− 
+außerhalb einer Frostschutzschürze. 
+5.4 
+Ergänzende Anforderungen bei Anordnung in unbewehrtem Fundament bzw. in 
+Faserbeton 
+Das für den Fundamenterder verwendete Material gemäß Abschnitt 5.9 ist so zu verlegen, dass es nach 
+Einbringen des Betons allseitig mindestens 5 cm mit Beton gemäß Abschnitt 6 umhüllt ist. Die Maschenweite 
+darf höchstens 10 m x 20 m betragen. 
+ANMERKUNG 
+In Abhängigkeit von der Nutzung (MICE-Klassifizierung gemäß ÖVE/ÖNORM EN 50173-1) können 
+geringere Maschenweiten gemäß OVE EN 50310 erforderlich sein.  
+Bei Verwendung von Bandmaterial sollte dieses hochkant eingebaut werden, damit sich beim Einfüllen des 
+Betons keine Hohlräume bilden können. Im Falle einer maschinellen Verdichtung (zB mittels Innenrüttler) des 
+Betons, kann das Bandmaterial auch flach eingebaut werden. 
+Kann eine allseitige Umhüllung mit Beton von mindestens 5 cm nicht sichergestellt werden, ist ein Werkstoff 
+gemäß Abschnitt 5.9 wie außerhalb des Betonkörpers zu verwenden. 
+5.5 
+Ergänzende Anforderungen bei Anordnung in bewehrtem Fundament sowie bei 
+Wannenabdichtungen 
+5.5.1 
+Dieser Fundamenterder ist auf einer Bewehrungslage anzuordnen (Beispiele siehe Bilder C.8 und 
+C.9). 
+ANMERKUNG 
+Bei bewehrten Fundamenten und maschineller Verdichtung (zB mittels Innenrüttler) des Betons, kann 
+Bandstahl auch flach verlegt werden.  
+5.5.2 
+Bei Gebäuden mit Abdichtung gegen von außen drückendes Wasser oder bei gegenüber dem 
+Erdreich mit einer Perimeterdämmung versehenen Fundamenten ist zusätzlich zum Fundamenterder in 
+Beton ein Fundamenterder in Erde mit einer Maschenweite von höchstens 10 m x 20 m, unter Beachtung der 
+Erfordernisse des Korrosionsschutzes gemäß Anhang A, unterhalb oder außerhalb der Abdichtung oder 
+Wärmeisolierung zu verlegen (Beispiel siehe Bild C.9).  
+Die Anschlussfahnen sind unter Beachtung der Erfordernisse des Korrosionsschutzes gemäß Anhang A 
+entweder an der Außenfläche oder innerhalb einer Vormauerung eingebettet hoch zu führen und oberhalb 
+des höchsten Grundwasserstandes in das Gebäude einzuführen. Anschlussfahnen bzw. Anschlussteile 
+dürfen auch durch die Abdichtung hindurch in das Gebäude eingeführt werden, wenn dabei die Dichtheit 
+gewährleistet wird. 
+Im Abstand von höchstes 10 m am Gebäudeumfang ist eine elektrisch leitende Verbindung zwischen dem 
+Fundamenterder im Beton und dem Fundamenterder in Erde herzustellen und mindestens eine Verbindung 
+je Ableitung zu errichten (gemäß Blitzschutzklasse). 
+ANMERKUNG 
+Abdichtung gegen von außen drückendes Wasser oder Perimeterdämmung kann zB sein: 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+10 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 11/32 =====
+− 
+wasserundurchlässiger Beton (WU-Beton oder weiße Wanne) gemäß ÖNORM B 4710-1 Expositionsklasse ab XC3 
+oder Betonsorte B1; 
+− 
+Abdichtungen zB Bitumenbahnen (schwarze Wanne), kunststoffmodifizierte Bitumendickbeschichtung (KMB), (Bau)-
+Folien; 
+− 
+zusätzlich eingebrachte, kapillarbrechende, schlecht elektrisch leitenden Bodenschichten zB aus Recyclingmaterial, 
+Glasschaumschotter, Blähton. 
+5.5.3 
+Einzelfundamente 
+5.5.3.1 
+Bei Bauwerken oder Gebäuden deren Fundamenterder nur aus der Erdung von Einzelfundamenten 
+(zB für Stützen; Beispiele siehe Bilder C.3, C.4, C.5 und C.6) besteht, ist jedes Einzelfundament mit einem 
+Horizontalerder mit einer Mindestlänge von 5 m in Erde oder mit einem Vertikalerder mit einer Mindestlänge 
+von 2,5 m auszustatten. 
+ANMERKUNG 1  
+Horizontalerder sind Erder, die im Wesentlichen waagrecht in geringer Tiefe eingebracht und zB 
+als Strahlen-, Ring- oder Maschenerder oder als Kombination aus diesen ausgeführt werden. 
+ANMERKUNG 2  
+Vertikalerder sind Erder, die im Wesentlichen lotrecht in größere Tiefen eingebracht werden zB 
+Staberder. 
+Wenn das Einzelfundament die entsprechenden Abmessungen hat und erdfühlig ist, kann der 
+Horizontalerder auch im diesem Fundament verlegt werden. 
+Die Einzelfundamente sind miteinander mit Erdermaterial gemäß Abschnitt 5.9 zuverlässig elektrisch leitend 
+zu verbinden um den Potentialausgleich zwischen den Einzelfundamenten zu erreichen. Die 
+Korrosionsbeständigkeit der Verbindungsleitungen ist sicherzustellen.  
+5.5.3.2 
+Bei Einzelfundamenten außerhalb von Bauwerken oder Gebäuden, ist die Mindestlänge der 
+Erdungsanlage gemäß OVE E 8101 und ÖVE/ÖNORM EN 62305 Reihe auszuführen (Beispiele siehe auch 
+Bilder C.2 und C.4). 
+5.6 
+Verbindung der Teile von Fundamenterdern 
+Die Teile des Fundamenterders sind untereinander und mit den Anschlussfahnen gemäß Abschnitt 5.7 
+zuverlässig elektrisch leitend und mechanisch fest zu verbinden. Verrödeln und ähnliche Verbindungen sind 
+unzulässig. 
+Zuverlässig elektrisch leitend miteinander gemäß Abschnitt 5.7 verbundene Teile der Bewehrung dürfen auch 
+als Teile des Fundamenterders verwendet werden. Haben diese Bewehrungsteile einen geringeren 
+Durchmesser als 10 mm (zB Baustahlgitter), so ist ihre Verwendung als Teil des Fundamenterders dann 
+zulässig, wenn die Anschlussfahnen entsprechend oft zuverlässig elektrisch leitend an unterschiedlichen 
+Stellen (mindestens querschnittsgleich zu 10 mm Durchmesser) mit den Bewehrungsteilen verbunden 
+werden. 
+5.7 
+Zuverlässig elektrisch leitende Verbindungen 
+Als zuverlässig elektrisch leitende Verbindungen gelten galvanisch einwandfreie Klemm-, Schweiß- oder 
+Schraub-Verbindungen. 
+Wird die Verbindung mit nur einer Schraube ausgeführt, so ist mindestens Gewinde M 10 zu verwenden. Das 
+Leitungs-, 
+Klemm- 
+und 
+Befestigungsmaterial 
+muss ÖVE/ÖNORM EN 62561-1 
+und 
+ÖVE/ÖNORM  
+EN 62561-2 entsprechen. 
+Wird der Beton maschinell verdichtet (zB mittels Rüttler), so dürfen Keilverbinder nicht verwendet werden, da 
+sich diese durch den Verdichtungsvorgang lösen können. 
+Schweißverbindungen an Bewehrungsstählen und Gebäudeteilen aus Stahl dürfen nur im Einvernehmen mit 
+dem Ersteller des Stahlbetons hergestellt werden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+11 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 12/32 =====
+5.8 
+Anschlussfahnen, Anschlussteile 
+5.8.1 
+Es ist mindestens eine Anschlussfahne oder ein Anschlussteil für den Anschluss der 
+Potentialausgleichsschiene/Haupterdungsschiene anzuordnen. 
+5.8.2 
+In der Bauphase sind Anschlussfahnen innen bis etwa 1 m über Fußboden bzw. außen etwa 1 m 
+über das geplante Geländeniveau hochzuführen sowie auffällig und dauerhaft gelb zu kennzeichnen. 
+5.8.3 
+Soll der Fundamenterder auch als Erder für ein Blitzschutzsystem gemäß ÖVE/ÖNORM EN 62305 
+Reihe verwendet werden, so sind weitere Anschlussfahnen bzw. Anschlussteile zum Anschluss der 
+Ableitungen auszuführen. 
+5.8.4 
+Sollen Konstruktionsteile aus Metall, zB Führungsschienen für Aufzüge, Regenfallrohre u. dgl. 
+direkt mit dem Fundamenterder verbunden werden, so sind ebenfalls zusätzliche Anschlussfahnen bzw. 
+Anschlussteile an den erforderlichen Stellen vorzusehen. 
+5.8.5 
+Für Gebäude mit Einrichtungen der Informationstechnik ist eine entsprechend größere Anzahl von 
+Anschlussfahnen mit Anschlussteilen erforderlich (siehe 7.2 e)). 
+5.8.6 
+Die Verbindung des Anschlussteiles mit dem Fundamenterder kann über eine Anschlussfahne oder 
+einen Schutzpotentialausgleichsleiter erfolgen. 
+ANMERKUNG 
+Anforderungen an Schutzpotentialausgleichsleiter siehe OVE E 8101. 
+5.9 
+Werkstoff 
+Für Fundamenterder und Anschlussfahnen ist vorzugsweise Rundstahl (mindestens 10 mm Durchmesser), 
+allenfalls auch Bandstahl (mindestens 30 mm x 3 mm) zu verwenden.  
+Im Betonkörper dürfen blanker oder feuerverzinkter Stahl und andere Materialien, außerhalb des 
+Betonkörpers in Erde dürfen nur nichtrostender Stahl (mindestens „V4A“ 2) mit mindestens 10 mm 
+Durchmesser), Kupfer (mindestens 8 mm Durchmesser) oder elektrochemisch gleichwertiges Material 
+verwendet werden. Bei Anschlussfahnen in den Luftraum (Innenräume oder an der Gebäudeaußenseite 
+ausreichend über Erde) ist ein einfacher Korrosionsschutz zB feuerverzinkter Stahl ausreichend. 
+ANMERKUNG 1  
+Mindestquerschnitte von Erdern siehe ÖVE/ÖNORM EN 62561-2:2013, Tabelle 3. 
+ANMERKUNG 2  
+Ordnungsgemäß in Fundamenterderbeton verlegter Stahl (ungeschützt oder feuerverzinkt) und 
+auch dessen Verbindungen gemäß 5.6 sind durch die chemische Wirkung des Betons in hohem Maße, meist auf 
+Lebensdauer des Bauwerks, gegen Korrosion geschützt. Zu beachten ist jedoch, dass Stahl in Beton ein 
+elektrochemisches Potential annimmt, das mit dem von Kupfer in Erde annähernd gleich ist. Aufgrund der 
+Potentialverhältnisse dürfen Erdermaterialien aus verzinktem Stahl keinesfalls aus dem Betonfundament direkt ins 
+Erdreich herausgeführt werden, weil unmittelbar neben dem Fundament die elektrochemische Korrosionswirkung am 
+größten ist, siehe auch Anhang A. 
+ANMERKUNG 3  
+Wird für eine Anlage bzw. einen Anlagenteil (zB Gasverdichterstation) ein lokaler kathodischer 
+Korrosionsschutz (LKS) errichtet, und ist die Erdungsanlage Teil der durch den LKS geschützten Anlage, so kann 
+aufgrund dieser technischen Maßnahme die Erdungsanlage mit blankem oder feuerverzinktem Stahl ausgeführt werden. 
+2) 
+„V4A“ ist eine alte Bezeichnung und steht für Chrom-Nickel-Stahl mit Molybdänzusatz. V4A gibt es nicht mehr, wird 
+aber weiterhin noch immer als Begriff genutzt. Der V4A-Stahl ist in den Ausführungen 1.4401, 1.4404 und 1.4571 
+erhältlich. Eingesetzt werden diese Stähle in der Bauindustrie, im Offshore-Bereich, an Chemietankern sowie in der 
+Nahrungsmittel- und Getränkeindustrie. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+12 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 13/32 =====
+6 
+Fundamenterderbeton 
+Fundamenterderbeton muss eine gute elektrische Leitfähigkeit besitzen und den Erder vor Korrosion 
+schützen. Als Fundamenterderbeton sind nur die Expositionsklasse X0, XC1 und XC2 geeignet (siehe 
+Tabelle 1). 
+ANMERKUNG 
+Anforderungen an die Festlegung, Herstellung, Verwendung und Konformitätsnachweis an den Beton 
+siehe ÖNORM B 4710-1. 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+13 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 14/32 =====
+Tabelle 1 – Übersicht und Eignung von Beton als Fundamenterderbeton 
+Kurzbezeichnung 
+Österreich 
+– 
+– 
+– 
+B1 
+B4 
+B2 
+– 
+– 
+B5 
+B3 
+B7 
+– 
+– 
+– 
+– 
+– 
+– 
+– 
+– 
+– 
+Expositions-
+klasse 
+X0 
+XC1 
+XC2 
+XC3 
+XC4 
+XD1 
+XD2 
+XD3 
+XF1 
+XF2 
+XF3 
+XF4 
+XA1L 
+XA2L 
+XA3L 
+XA1T 
+XA2T 
+XA3T 
+XM1 
+XM2 
+XM3 
+max. W/B-Wert 
+– 
+0,7 
+0,65 
+0,6 
+0,5 
+0,55 
+0,45 
+0,55 
+0,5 
+0,55 
+0,45 
+0,55 
+0,45 
+– 
+0,55 
+0,45 
+– 
+0,55 
+0,45 
+0,45 
+Bindemittelgehalt 
+mind.  
+kg/m3 
+80 
+260 
+260 
+280 
+300 
+300 
+320 
+300 
+320 
+300 
+340 
+300 
+360 
+– 
+300 
+360 
+– 
+300 
+340 
+340 
+Beton geeignet für 
+Fundamenterder 
+Ja a 
+Ja 
+Ja 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+Nein 
+a 
+geeignet bei korrosionsbeständigem Erdermaterial (zB V4A, Kupfer) 
+ANMERKUNG 
+W/B-Wert bedeutet „Wasser-Bindemittelwert“. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+14 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 15/32 =====
+7 
+Maßnahmen für Einrichtungen der Informationstechnik mit geschirmten 
+Verkabelungssystemen 
+7.1 
+Schutzziel 
+Ziel der nachfolgenden Maßnahmen ist es, für Einrichtungen der Informationstechnik mit geschirmten 
+Verkabelungssystemen innerhalb von Gebäuden in allen Bereichen direkte Anschlüsse an ein vermaschtes 
+System von Schutzpotentialausgleichsleitern (eine vermaschte Potentialausgleichsanlage 3)) zu ermöglichen.  
+ANMERKUNG 1  
+Dies erfolgt in der Regel durch die  
+− 
+Erhöhung der Anzahl der Anschlussfahnen bzw. der Verbindungsleitung zum Fundamenterder; 
+− 
+Errichtung von Potentialausgleichsanlagen in den Geschossen bei Gebäuden mit mehreren Stockwerken; 
+− 
+Errichtung von Potentialausgleichsanlagen in den Geschoßwänden; 
+− 
+Errichtung von Anschlussteilen für den Potentialausgleich. 
+ANMERKUNG 2  
+Über die allgemeinen Eigenschaften eines Fundamenterders gemäß der Abschnitte 4 und 5 
+hinaus, wird ein vermaschter Potentialausgleich im Sinne dieser OVE-Norm auch zur Verbesserung der EMV-
+Eigenschaften der Anlage verwendet. Dies wird, zB in neu errichteten Gebäuden dadurch erreicht, dass alle metallenen 
+Konstruktionsteile (zB Stahlskelett und Bewehrung) zuverlässig elektrisch leitend verbunden und an die 
+Potentialausgleichsanlage angeschlossen werden. Das gilt auch für vorgefertigte Bauteile (zB Betonfertigteile). 
+ANMERKUNG 3  
+Wird für eine Anlage bzw. einen Anlagenteil (zB Gasverdichterstation) ein lokaler kathodischer 
+Korrosionsschutz (LKS) errichtet, sind die Auswirkungen auf geschirmte Verkabelungssysteme der Informationstechnik 
+zu berücksichtigen. 
+7.2 
+Ausführung 
+Um das Schutzziel gemäß 7.1 zu erreichen, sind folgende Maßnahmen erforderlich: 
+a) 
+Ergänzung des Fundamenterders um eine vermaschte Potentialausgleichsanlage; 
+ 
+Die erforderliche Maschenweite der Potentialausgleichsanlage ist abhängig vom ausgewählten 
+Gefährdungspegel für den Blitzschutz gemäß ÖVE/ÖNORM EN 62305-4, von der Störfestigkeit der 
+Betriebsmittel als Teil der Anlage und von den für die Datenübertragung verwendeten Frequenzen. 
+ 
+Die elektromagnetische Beeinflussung wird in einer vermaschten Potentialausgleichsanlage deutlich 
+verringert, wenn die Maschenweite verkleinert wird. Die Maschenweite muss daher an die 
+Anforderungen und die Abmessungen des zu schützenden Gebäudes angepasst sein, darf aber in 
+Bereichen, in denen empfindliche Betriebsmittel installiert sind gemäß OVE E 8101 Abschnitt 444, 
+höchstens 2 m x 2 m sein. 
+ 
+Zur Verbesserung der Maßnahmen können auch die Bestandteile des LPS und die natürlichen 
+Bestandteile des Gebäudes (zB Betonbewehrung im Boden des Geschosses mit einer Maschenweite ca. 
+20 cm; Metall des elektrisch verbundenen Stahlbetonskeletts) verwendet werden (siehe Bild C.12). 
+ 
+Wenn keine Bewehrung vorhanden oder diese nicht zugänglich ist, müssen zusätzlich Baustahlgitter 
+oder Ähnliches (Maschenweite ca. 20 cm) in die Fußbodenkonstruktion verlegt und zuverlässig elektrisch 
+leitend verbunden werden. Hat dieses Baustahlgitter einen geringeren Durchmesser als 8 mm, so ist 
+seine Verwendung dann zulässig, wenn die Anschlussfahnen entsprechend oft zuverlässig elektrisch 
+leitend an unterschiedlichen Stellen (mindestens querschnittsgleich zu 8 mm Durchmesser) mit dem 
+Baustahlgitter verbunden werden.  
+3) 
+Durch die Vermaschung der Potentialausgleichsanlagen besitzen diese eine erhöhte Störfestigkeit gegen EMI. Die 
+vermaschten Potentialausgleichsanlagen (zB die Standardtopologie MESH-BN gemäß OVE EN 50310) müssen mit der 
+Schutzpotentialausgleichsanlage innerhalb des Gebäudes verbunden werden. Eine MESH-BN erweitert die 
+Schutzpotentialausgleichsanlage durch Erhöhung der örtlichen Leiterdichte und funktioniert durch Aufteilen und 
+Begrenzen der Hochfrequenz-Fangschleifenfläche der Strompfade derart, dass die Stromdichte in jedem Leiter oder jeder 
+leitenden Schleife auf einen annehmbaren Wert verringert wird. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+15 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 16/32 =====
+ 
+ANMERKUNG 1 
+ 
+Anforderungen an die natürlichen Bestandteile (Erder, Ableitungseinrichtungen) siehe 
+ÖVE/ÖNORM EN 62305-3. 
+b) 
+Erhöhung der Anzahl der Anschlussfahnen bzw. der Verbindungsleitungen zum Fundamenterder; 
+ 
+Anschlussfahnen an den Fundamenterder sind zumindest in einem Abstand von höchstens 10 m im 
+Bereich aller Außenwände (auch solcher zu Lichthöfen) und bei jeder Säule der Baukonstruktion 
+auszuführen. Wenn die Bewehrung selbst als Fundamenterder genutzt wird, ist für den Anschluss der 
+Anschlussfahnen Abschnitt 5.8 zu beachten. 
+c) 
+Errichtung von Potentialausgleichsanlagen in den Geschoßen; 
+ 
+Mindestanforderung ist die Errichtung eines Potentialausgleichs mit einer Maschenweite von höchstens 
+10 m x 20 m im jeweiligen Geschoss. Eine Verbesserung des Schutzes der Einrichtungen der 
+Informationstechnik bietet eine vermaschte Potentialausgleichsanlage wie in a) beschrieben. 
+ 
+Die 
+Potentialausgleichsanlagen 
+in 
+den 
+Geschoßen 
+sind 
+untereinander 
+über 
+vertikale 
+Schutzpotentialausgleichsleiter 4) (so kurz wie möglich) zu verbinden. Diese Schutzpotential-
+ausgleichsleiter sind bis zum Dachgeschoß zu führen, u.a. um auch für Antennenanlagen einen 
+Erdungsanschluss gemäß ÖVE/ÖNORM EN 60728-11 zu ermöglichen. 
+ 
+Wenn das Gebäude über vertikale (bauliche) Konstruktionsteile aus Stahl verfügt, so sind diese über 
+mindestens eine Anschlussfahne mit dem Fundamenterder zu verbinden und diese können, sofern sie in 
+jedem Geschoss für einen Anschluss zugänglich sind, als vertikale Schutzpotentialausgleichsleiter 
+verwendet werden. Gleiches gilt für bewehrte vertikale Konstruktionsteile aus Beton unter der 
+Voraussetzung, dass die Bewehrung in jedem Geschoss für einen Anschluss zugänglich und mit 
+ausreichendem Querschnitt gemäß 7.2. a) zuverlässig elektrisch leitend untereinander und durchgängig 
+mit der Fundamenterdungsanlage verbunden ist. 
+ 
+ANMERKUNG 2 
+ 
+Anforderungen an Schutzpotentialausgleichsleiter siehe OVE E 8101. 
+d) 
+Errichtung von Potentialausgleichsanlagen in den Geschoßwänden; 
+ 
+In Räumen mit erhöhten EMV-Anforderungen (siehe ÖVE/ÖNORM EN 50173-1:2011, MICE Tabelle 2, 
+Umgebungsklasse E2 bzw. E3) sind gegebenenfalls in den raumumschließenden Wänden ergänzende 
+Maßnahmen 
+erforderlich 
+und 
+mit 
+den 
+vertikalen 
+Schutzpotentialausgleichsleitern, 
+der 
+Potentialausgleichsanlage des Geschoßes und den Bewehrungen zuverlässig elektrisch leitend zu 
+verbinden. 
+e) 
+Errichtung von Anschlussteilen für den Potentialausgleich; 
+ 
+In jedem Geschoß sind Anschlussteile in einem Abstand von höchstens 10 m, gemessen am inneren 
+Gebäudeumfang, an die vertikalen Schutzpotentialausgleichsleiter gemäß OVE EN 50310 und 
+ÖVE/ÖNORM EN 50174-2 zuverlässig elektrisch leitend anzuschließen. 
+ 
+Anschlussteile sind wandbündig in einer empfohlenen Höhe von 0,3 m bis 1 m über der fertigen 
+Fußbodenoberkante anzuordnen (siehe Bilder C.3, C.8, C.9 und C.10). 
+ 
+Diese 
+Anschlussteile 
+können 
+für 
+den 
+Anschluss 
+von 
+metallenen 
+Installationskanälen, 
+Netzwerksschränken und für andere Zwecke verwendet werden. So können zB die notwendigen 
+Verbindungen zu den Schutzleiterschienen der energietechnischen Verteiler im Stockwerk dort 
+angeschlossen werden.  
+ 
+Bei Doppelböden können die Anschlussteile auch horizontal angeordnet werden (siehe Bild C.11). 
+ 
+Alle Anschlussteile sind mit dem Erdungssymbol sichtbar und dauerhaft zu kennzeichnen sowie zu 
+dokumentieren. 
+8 
+Prüfung und Dokumentation 
+Vor dem Verfüllen des Erders (zB Einbringung des Betons oder Erdreiches) sind die korrekte Lage des 
+Erders und seiner Anschlussfahnen sowie die Zuverlässigkeit aller Verbindungen von einem befugten 
+Elektrotechniker zu prüfen, zu dokumentieren und freizugeben. 
+4) 
+Vertikale Schutzpotentialausgleichsleiter verbinden die Potentialausgleichsanlagen in den Geschossen bei 
+Gebäuden mit mehreren Stockwerken untereinander. Sie können als Schutzpotentialausgleichsleiter bzw. als natürliche 
+Bestandteile ausgeführt werden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+16 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 17/32 =====
+Die Lage des gesamten Fundamenterders ist durch Erdungspläne mit aussagekräftigen Fotos der 
+Gesamterdungsanlage und eindeutig zuordenbare Detailaufnahmen von Verbindungsstellen (zB zu 
+Haupterdungsschiene, Anschlussteilen des Blitzschutzsystems) nachvollziehbar zu dokumentieren. 
+Vor dem Einbringen des Betons sind 
+− 
+durch eine Durchgangsmessung die Niederohmigkeit (Messung des ausreichend niedrigen elektrischen 
+Widerstandes mit einem Messgerät gemäß ÖVE/ÖNORM EN 61557-4) zwischen allen Anschlussfahnen 
+und Erdungsfestpunkte untereinander und dem Fundamenterder nachzuweisen und 
+ 
+ANMERKUNG 1 
+Dieser Wert sollte nicht höher als 0,2 Ω sein. 
+−  
+die Lage der Anschlussteile sowie aller zugehörigen Verbindungen entsprechend dieser Norm von einem 
+dazu befugten Elektrotechniker zu kontrollieren. 
+Die Ergebnisse der Prüfung sind nachvollziehbar zu dokumentieren. 
+Nachdem der Beton abgebunden hat, ist die Messung des Erdungswiderstandes gemäß OVE E 8101 
+vorzunehmen. 
+ANMERKUNG 2  
+Dies ist üblicherweise nach 28 Tagen der Fall. 
+Die Dokumentation der Lage und Ausführung des Fundamenterders und der Anschlussfahnen sowie die 
+Messergebnisse sind gemäß OVE E 8101 in die Dokumentation aufzunehmen. 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+17 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 18/32 =====
+Anhang A 
+(informativ) 
+ 
+Grundlagen der elektrochemischen Korrosion 
+A.1 
+Die Korrosion eines Metalls im Erdreich (das als Elektrolytlösung wirkt) steht im Zusammenhang mit 
+dem Metall-Erdboden-Potential. Dieses Potential hängt ab vom Metall und dessen Oberflächenzustand sowie 
+von der Art und Zusammensetzung des Erdbodens. Hierbei spielen die Belüftung, die Konzentration 
+chemischer Bestandteile im Erdboden und der pH-Wert eine Rolle. 
+Entlang von Erdern, Rohrleitungen oder anderen Bauteilen aus einheitlichem Werkstoff, die von 
+verschiedenen Bodenarten umgeben sind, entstehen unterschiedliche Metall-Erdboden-Potentiale. Es bilden 
+sich anodische und kathodische Bereiche, wobei die anodischen Bereiche die negativeren Potentiale 
+aufweisen und korrosionsgefährdet sind. Für die Korrosionsgeschwindigkeit sind neben der Potentialdifferenz 
+zwischen kathodischem und anodischem Bereich (Elementspannung) FIächenverhältnis Ak/Aa, dieser, die 
+von der Gleichstromdichte und der Zeit abhängigen anodischen und kathodischen Polarisationsspannungen 
+und Polarisationswiderstände sowie der spezifische Widerstand des Erdbodens maßgebend. 
+A.2 
+Für erste Abschätzungen kann davon ausgegangen werden, dass bei einem Flächenverhältnis 
+Ak/Aa ≤ 100 (Verhältnis der kathodischen Fläche zur anodischen Fläche) im Wesentlichen die Eigenkorrosion 
+maßgebend ist. Bei Überschreiten dieses Werts muss mit einer bedeutenden Zunahme der 
+Korrosionsgeschwindigkeit gerechnet werden. 
+A.3 
+Folgende Erdermaterialien verhalten sich gegenüber Stahl kathodisch: 
+− 
+blankes Kupfer; 
+− 
+verzinntes Kupfer; 
+− 
+Kupfer oder Stahl mit Bleimantel; 
+− 
+Stahl in Beton. 
+A.4 
+Beim Ermitteln der anodischen Fläche ist zu beachten: 
+A.4.1 
+An Fehlstellen in der elektrisch isolierenden Umhüllung von Rohrleitungen oder Behältern können 
+wegen des ungünstigen Flächenverhältnisses besonders hohe Elementstromdichten auftreten. 
+A.4.2 
+Erdverlegte blanke Metallteile, die mit elektrisch isolierend umhüllten Rohrleitungen oder Behältern 
+elektrisch leitend verbunden sind, verändern das Flächenverhältnis. Sie sind daher beim Ermitteln der 
+anodischen Fläche zu berücksichtigen. 
+A.5 
+Die wirksame Oberfläche der Metallbewehrung kann gleich der Fundamentfläche gesetzt werden, 
+wenn die Bewehrungseisen genügend engmaschig durchverbunden sind. 
+A.6 
+Feuerverzinkte Erder aus Stahl verhalten sich, solange die Zinkschicht ausreichend dick ist (siehe 
+Tabelle A.1), beim Zusammenschluss mit erdverlegten Anlagen aus blankem Stahl stets anodisch. 
+A.7 
+Es muss berücksichtigt werden, dass sich die Verhältnisse entscheidend verändern können, sobald 
+metallene Beschichtungen bzw. Mäntel verletzt oder abgetragen werden.  
+ANMERKUNG 
+Das elektrochemische Potential eines Fundamenterders oder einer elektrisch verbundenen Armierung 
+in Beton ist auch auf Rohrleitungen aus Metall wirksam, die in das Gebäude eingeführt werden. Diese sind daher 
+vorzugsweise durch Isoliermuffen zu trennen, oder es sind besondere Maßnahmen für einen kathodischen 
+Korrosionsschutz zu treffen. Eine Beschichtung oder Ummantelung mit Korrosionsschutzbinden schützt hier auf Dauer 
+nicht, weil diese erfahrungsgemäß immer einzelne Fehlerstellen aufweisen wird, an denen dann ein besonders intensiver 
+Lochfraß einsetzt. 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+18 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 19/32 =====
+Tabelle A.1 – Zusammenschluss metallischer Werkstoffe im Hinblick auf Korrosion 
+ 
+ 
+Werkstoff mit großem Flächenanteil 
+(aber unter Einhaltung von Ak/Aa ≤ 100) 
+ 
+ 
+Stahl 
+Stahl 
+verzinkt 
+Stahl in 
+Beton 
+Stahl 
+verzinkt in 
+Beton 
+Stahl nicht 
+rostend 
+Kupfer 
+Kupfer 
+verzinnt 
+Kupfer mit 
+Bleimantel 
+Werkstoff mit kleinem Flächenanteil 
+Stahl 
+ja 
+ja 
+nein 
+nein 
+nein 
+nein 
+nein 
+ja 
+Stahl 
+verzinkt 
+ja a 
+ja 
+nein 
+ja a 
+nein 
+nein 
+nein 
+ja a 
+Stahl in 
+Beton 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+Stahl nicht 
+rostend 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+Stahl mit 
+Bleimantel 
+ja 
+ja 
+bedingt b 
+ja 
+nein 
+nein 
+ja 
+ja 
+Stahl mit 
+Kupfer-
+mantel 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+Kupfer 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+Kupfer 
+verzinnt 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+ja 
+Kupfer mit 
+Bleimantel 
+ja 
+ja 
+bedingt b 
+ja 
+bedingt b 
+bedingt b 
+ja 
+ja 
+a 
+Zinkabtrag 
+b 
+Bleiabtrag 
+ja 
+Zusammenschluss zulässig 
+nein 
+Zusammenschluss nicht zulässig 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+19 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 20/32 =====
+Anhang B 
+(informativ) 
+ 
+Entscheidungshilfe zur Ausführung eines Fundamenterders 
+Entscheidungshilfe
+zur Ausführung eines 
+Fundamenterder
+Jedes einzelne Fundament ist mit 
+einem Vertikalerder ≥ 2,5 m 
+(0,5 m x 5 m Erderlänge des 
+Horizontalerders) oder mit einem 
+Horizontalerder ≥ 5 m im Erdreich 
+auszustatten.
+Der 
+Fundamenterder in 
+Beton ist mit einer
+Maschenweite
+≤ 10 m x 20 m 
+auszustatten.
+ Der Fundamenterder
+in Beton (5.2.2) 
+ist mit einem zusätzlichen 
+Fundamenterder in Erde
+(5.3; Maschenweite 
+≤ 10 m x 20 m) 
+auszustatten.
+(5.5.3)
+Einzel-
+Fundamente
+wie Köcher-, 
+Block- oder 
+Streifen-
+fundament 
+(5.5)
+Erhöhter
+ Erdübergangs-
+widerstand durch
+hochvergüteten 
+Beton
+≥  XC3
+Alle Einzelfundamente sind 
+miteinander zuverlässig 
+elektrisch leitend zu einem 
+geschlossenen Ring zu 
+verbinden (Potentialausgleich)
+Anschlussfahne/Anschlussteile
+für zB den Hauptpotential-
+ausgleich gemäß OVE E 8101, 
+Ableitungseinrichtungen eines 
+Blitzschutzsystem gemäß 
+ÖVE/ÖNORM EN 62305-3.
+Der Fundamenterder ist dauerhaft 
+korrosionsbeständig zu verlegen.
+(5.2.4)
+ Alle 2 m
+ist eine 
+zuverlässige 
+elektrisch leitende 
+Verbindung mit der 
+Armierung
+herzustellen.
+Prüfung, Dokumentation
+Erhöhter
+ Erdübergangs-
+widerstand wie
+zB bei schwarzer 
+oder weißer Wanne, 
+Permiterdämmung,
+Hochvergüteter
+Beton 
+≥ XC3
+Ja
+(5.5.2)
+Bewehrte 
+Fundamente 
+ Für den Betriebserder von Trafostationen
+sind zusätzliche Maßnahmen gemäß 
+OVE E 8101 und 
+ÖVE/ÖNORM EN 50522 erforderlich.
+ Bei EMV-Anforderungen 
+sind zusätzliche Maßnahmen
+gemäß Abschnitt 7, 
+ÖVE/ÖNORM EN 62305-4 sowie
+OVE EN 50310 erforderlich.
+Einzelfundamente 
+mit einer bewehrten 
+Fundamentplatte 
+Ja
+Nein    (5.5.1)
+Nein
+Ja
+Jedes einzelne Fundament ist mit 
+einem Vertikalerder ≥ 2,5 m 
+(0,5 m x 5 m Erderlänge des 
+Horizontalerders) oder mit einem 
+Horizontalerder ≥ 5 m 
+auszustatten.
+Nein
+(5.5.3.1)
+ 
+Diagramm B.1.1 – Ablauf für Einzelfundamente und bewehrte Fundamente 
+ 
+ 
+zu 
+Diagramm B.1.2 
+von 
+Diagramm B.1.2 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+20 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 21/32 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Der Fundamenterder 
+in Beton ist mit einer
+Maschenweite
+≤ 10 m x 20 m
+auszustatten.
+Der Fundamenterder 
+in Erde (5.3) 
+ist mit einer
+Maschenweite
+≤ 10 m x 20 m
+auszustatten.
+Nein   (5.4)
+Erhöhter
+ Erdübergangs-
+widerstand wie 
+zB bei schwarze 
+oder weißer Wanne, 
+Permiterdämmung,
+Hochvergüteter
+Beton 
+≥ XC3
+Ja
+(5.5.2)
+unbewehrte 
+Fundamente 
+ 
+Diagramm B.1.2 – Ablauf für unbewehrte Fundamente 
+Diagramm B.1 – Entscheidungshilfe 
+ 
+ 
+von Diagramm B.1.1
+zu Diagramm B.1.1
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+21 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 22/32 =====
+Anhang C 
+(informativ) 
+ 
+Ausführungsbeispiele 
+ 
+Bild C.1 – Beispiel für die Anordnung des Fundamenterders im stahlbewehrten Beton-
+Streifenfundament in den Außenwänden eines Gebäudes 
+ 
+Auf der Fundamentplatte befinden sich Säulen des Gebäudes (zB Industriehalle). Außerhalb des Gebäudes 
+befinden sich noch Einzelfundamente für zB ein Vordach oder eine Überbauung. 
+Bild C.2 – Beispiel für die Anordnung des Fundamenterdes eines Gebäudes mit zusätzlichen Erdern 
+im baulichen Raster zur Einhaltung der Maschenweite von höchstens 10 m x 20 m 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+22 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 23/32 =====
+ 
+ 
+Bild C.3 – Schnittdarstellung zu Bild C.2 
+ 
+Bild C.4 – Beispiel für die Anordnung des Fundamenterders bei einem Gebäude auf 
+Einzelfundamenten (siehe Abschnitt 5.5.3) 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+23 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 24/32 =====
+ 
+Bild C.5 – Schnittdarstellung zu Bild C.4 
+ 
+Bild C.6 – Schnittdarstellung zu Bild C.4 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+24 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 25/32 =====
+ 
+Bild C.7.1 – Beispiel für eine Dehnungsfuge in der Außenwand 
+ 
+Bild C.7.2 – Beispiel für eine Dehnungsfuge in der Fundamentplatte 
+Bild C.7 – Beispiele für die Überbrückung einer Bewegungsfuge mit Bewegungsausgleich  
+im Inneren von Bauwerken 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+25 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 26/32 =====
+ 
+Bild C.8 – Beispiel für die Anordnung des Fundamenterders  
+in einem bewehrten Fundament ohne Wannenabdichtung 
+ 
+Bild C.9 – Beispiel für eine Anordnung von Fundamenterdern bei Wärmedämmung bzw. Abdichtung 
+gegen von außen drückendes Wasser 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+26 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 27/32 =====
+ 
+Bild C.10 – Beispiel für ein vertikales Anschlussteil im Geschoss für EMV-Maßnahmen 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+27 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 28/32 =====
+ 
+Bild C.11 – Beispiel für ein horizontales Anschlussteil im Geschoss  
+mit Doppelboden für EMV-Maßnahmen 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+28 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 29/32 =====
+ 
+Legende 
+ 
+Anschlussfahne/Anschlussteil 
+ 
+zuverlässig elektrisch leitende Verbindung 
+Das Gebäude besitzt einen Innenhof und zwei zusätzlich tragende Säulen. Für Einrichtungen der 
+Informationstechnik wird für EMV-Maßnahmen die Bewehrung (Baustahlgitter) genutzt und besitzt eine 
+Maschenweite von höchstens 20 cm. 
+Bild C.12 – Beispiel für den Grundriss eines Gebäudes (Fundament oder Obergeschoss) 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+29 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 30/32 =====
+Literaturhinweise 
+ÖNORM B 3430-1, Planung und Ausführung von Maler- und Beschichtungsarbeiten – Teil 1: Beschichtungen 
+auf Holz, Holzwerkstoffen, Metall, Kunststoff, Mauerwerk, Putz, Beton und Leichtbauplatten 
+ÖNORM B 3692, Planung und Ausführung von Bauwerksabdichtungen 
+ÖNORM B 4710-1, Beton – Teil 1: Festlegung, Herstellung, Verwendung und Konformitätsnachweis (Regeln 
+zur Umsetzung der ÖNORM EN 206-1 für Normal- und Schwerbeton) 
+ÖNORM ENV 1993-5, Eurocode 3: Bemessung und Konstruktion von Stahlkonstruktionen – Teil 5: Pfähle 
+und Spundwände) 
+ÖVE/ÖNORM EN 61400-3, Windenergieanlagen – Teil 3: Auslegungsanforderungen für Windenergieanlagen 
+auf offener See 
+BGBL II Nr. 322/1998, Nullungsverordnung 
+BGBl. I Nr. 70/2003, Telekommunikationsgesetz 2003 – TKG 2003 
+IEV Electrotechnical Vocabulary, http://www.electropedia.org/ 
+Online Browsing Platform (OBP), http://www.iso.org/obp 
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+30 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 31/32 =====
+ 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+31 von 32
+www.ris.bka.gv.at
+
+
+===== PAGE 32/32 =====
+WICHTIGE INFORMATIONEN FÜR ANWENDER VON NORMEN 
+Normen werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die 
+Einhaltung dieser Anforderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist 
+somit freiwillig (ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der 
+Technik dokumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und 
+die Erfahrung der Expertinnen und Experten in den zuständigen Komitees auf nationaler, europäischer und internationaler 
+Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik (OVE) und seiner Referenten. 
+Aktualität des Normenwerks 
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie 
+werden vom zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der 
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der 
+Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. 
+Dienstleistungen den Markterfordernissen entsprechen. 
+Wissen um Veränderungen 
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen 
+Fassungen zu haben, bietet der Österreichische Verband für Elektrotechnik gemeinsam mit der Austrian Standards plus 
+GmbH den Norm-Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen 
+Fachgebiets-Abonnements bis hin zu innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian 
+Standards plus GmbH ist ein hundertprozentiges Tochterunternehmen von Austrian Standards International. 
+Kontakt 
+Weitere Informationen über Dienstleistungen und Angebote des OVE bietet Ihnen: 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 
+1010 Wien 
+E-Mail: ove@ove.at
+Internet: www.ove.at
+Tel.: +43 1 587 63 73
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+32 von 32
+www.ris.bka.gv.at
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:11:34+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

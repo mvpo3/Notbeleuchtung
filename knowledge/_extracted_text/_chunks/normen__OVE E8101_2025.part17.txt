@@ -1,0 +1,1792 @@
+
+
+===== PAGE 681/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 39 
+ 
+Bild 710.NE2.006.AT – Beispiel für einen Unterverteiler für medizinisch genutzte Bereiche der Gruppe 1 (UV1) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 682/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-710 – Seite 40 
+ 
+Bild 710.NE2.007.AT – Beispiel für einen Unterverteiler für medizinisch genutzte Bereiche der Gruppe 2 (UV2) 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 683/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 1 
+Teil 7-711  
+Ausstellungen, Shows und Stände 
+711.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen, die in Ausstellungen, Shows und Ständen (einschließlich mobiler und 
+tragbarer Stände und Geräte), Messen und Kongressen vorübergehend errichtet werden. 
+Dieser Teil gilt für die vor Ort vorübergehend errichteten elektrischen Anlagen ab dessen Speisepunkt(en). 
+Falls nicht besonders erwähnt, gilt dieser Teil nicht für Ausstellungsgegenstände (Exponate), für die es 
+Anforderungen in entsprechenden Normen gibt. 
+ 
+Die Anforderungen dieses Teils gelten nicht für vorübergehend errichtete elektrische Anlagen für Aufbauten, 
+Vergnügungseinrichtungen und Buden auf Veranstaltungsplätzen und für Zirkusse – siehe Teil 7-740. 
+ANMKERUNG AT 
+In diesem Teil wird anstelle des Begriffs „Speisepunkt“ gemäß 826-10-02 der Begriff „Speisepunkt 
+für die vorübergehend errichtete elektrische Anlage“ gemäß 711.3.6 verwendet. 
+711.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+711.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+711.3 
+Bestimmung allgemeiner Merkmale 
+711.30 
+Allgemeines 
+Füge hinzu: 
+711.30.001.AT 
+Versorgungssystem 
+ANMERKUNG AT 
+Die benötigte Anschlussleistung und die Nennspannung sollten zwischen den Beteiligten 
+abgestimmt werden. 
+711.31 
+Zweck, Stromversorgung und Aufbau  
+711.313 
+Stromversorgungen 
+711.313.1 
+Allgemeines 
+Füge hinzu: 
+Die Nennspannung gegen Erde der vorübergehend errichteten elektrischen Anlage gemäß Anwendungs-
+bereich darf AC 230 V oder DC 350 V nicht überschreiten. 
+711.313.1.001.AT 
+Elektrische Versorgung 
+Für jede vorübergehend errichtete elektrische Anlage muss ein leicht zugänglicher Anschlusspunkt vorhanden 
+sein, der dauerhaft mit den folgenden Merkmalen gekennzeichnet sein muss: 
+– 
+Bemessungsspannung; 
+– 
+Bemessungsstrom; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 684/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 2 
+– 
+Bemessungsfrequenz; 
+– 
+Anschlussleistung. 
+711.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+711.41 
+Schutz gegen elektrischen Schlag 
+711.410.3 
+Allgemeine Anforderungen 
+711.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+711.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+Füge hinzu: 
+711.410.3.101 
+Die Anforderungen des Harmonisierungsdokuments an den zusätzlichen Schutz (Zusatzschutz) finden sich in 
+Österreich in 711.415.1. 
+711.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+711.411.3 
+Anforderungen an den Fehlerschutz 
+711.411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+Füge hinzu: 
+711.411.3.2.101  
+Für jede vorübergehend errichtete elektrische Anlage muss bei deren Speisepunkt oder im unmittelbar 
+nachgeschalteten Verteiler eine Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,3 A vorhanden sein. Diese Einrichtung muss zeitverzögert in Übereinstimmung mit OVE EN 60947-2 
+ausgeführt sein, oder es muss eine Fehlerstrom-Schutzeinrichtung (RCD) vom Typ S gemäß OVE 
+EN 61008-1 oder OVE EN 61009-1 ausgewählt werden, um eine Selektivität mit den Fehlerstrom-
+Schutzeinrichtungen (RCD) in den Endstromkreisen zu erreichen. 
+ANMERKUNG AT 
+Diese Anforderung wird von Baustromverteilern im Allgemeinen nicht erfüllt. 
+711.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 685/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 3 
+711.411.4.101  
+Ab dem Speisepunkt muss ein TN-S-System angewendet werden. 
+711.411.4.6.001.2.2.AT 
+Erdungsbedingung in Verbraucheranlagen 
+Füge bei der dritten Aufzählung „eine gleichwertige Erderkombination“ hinzu: 
+Bei Anwendung der automatischen Abschaltung der Stromversorgung ist beim ersten Verteiler am oder nach 
+dem Speisepunkt die Verbindung des Erdungsanschlusses mit einer geeigneten Erdungsanlage erforderlich. 
+Es bestehen folgende Möglichkeiten: 
+− 
+Verbindung mit einem Vertikalerder mit zumindest 0,8 m Einschlagtiefe oder mechanisch gleichwertig 
+ausgeführt in unmittelbarer Nähe des Verteilers; 
+− 
+Verbindung mit einer in unmittelbarer Nähe vorhandenen Erdungsanlage. 
+711.411.5 
+TT-Systeme 
+711.411.5.3 
+Ersetze die Aufzählung iii) durch: 
+Für diesen Anlagenteil muss keine eigene Erdungsanlage errichtet werden. 
+711.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+711.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+711.414.4.5 
+ 
+Ersetze den Abschnitt durch Folgendes: 
+Ungeachtet der Höhe der Nennspannung muss in AC- und DC-Stromkreisen der Basisschutz vorgesehen 
+werden durch: 
+– 
+eine Basisisolierung in Übereinstimmung mit Anhang 41.A.1, oder 
+– 
+Abdeckungen oder Umhüllungen in Übereinstimmung mit Anhang 41.A.2. 
+711.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+711.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Vorzugsweise sind kombinierte kurzzeitverzögerte Fehlerstrom-Differenzstrom-Schutzschalter (RCBO) mit 
+ausreichender Stoßstromfestigkeit z. B. Typ G zu verwenden. 
+ANMERKUNG 1.AT 
+Dies dient der Erhöhung der Versorgungssicherheit. 
+ 
+711.415.1.002.AT 
+Füge hinzu: 
+Diese Anforderungen gelten auch für ortsfeste elektrische Betriebsmittel. 
+711.415.1.003.AT 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 686/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 4 
+Füge hinzu: 
+Ausgenommen davon sind Stromkreise der Sicherheitsbeleuchtung. 
+711.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+ 
+In Bereichen, die für Tiere vorgesehen sind, müssen alle Körper und fremden leitfähigen Teile, die gleichzeitig 
+berührt werden können, zu einem lokalen zusätzlichen Schutzpotentialausgleich verbunden werden (siehe 
+auch 705.415.2.3). 
+ANMERKUNG AT 
+Für mobile Beleuchtungs- und Beschallungsanlagen siehe ergänzend ONR 151060. 
+711.42 
+Schutz gegen thermische Einflüsse 
+711.422 
+Maßnahmen bei Brandrisiken 
+711.422.4 
+Räume oder Orte hauptsächlich aus brennbaren Baustoffen 
+Füge hinzu: 
+711.422.4.101 Wärmeerzeugung 
+Leuchten, Leuchtmittel, Scheinwerfer, Projektoren und andere elektrische Betriebsmittel oder Geräte mit hoher 
+Oberflächentemperatur müssen angemessen geschützt, montiert und platziert sein, in Übereinstimmung mit 
+den jeweiligen Produktnormen. All diese Betriebsmittel müssen ausreichend weit von brennbarem Material 
+entfernt sein, um eine Entzündung des Materials zu vermeiden. 
+Schaukästen und Leuchtschriften müssen aus Werkstoffen hergestellt sein, die eine ausreichende Wärme-
+beständigkeit, mechanische Festigkeit, elektrische Isolation und Belüftung haben, unter Berücksichtigung der 
+Brennbarkeit von Ausstellungsgegenständen in Bezug auf die erzeugte Wärme. 
+Standeinrichtungen mit einer Ansammlung von elektrischen Geräten, Beleuchtungseinrichtungen oder 
+Leuchten, die in der Lage sind, übermäßige Wärme zu entwickeln, dürfen nicht eingebaut werden, es sei denn, 
+es ist Vorsorge für eine ausreichende Be- und Entlüftung getroffen, z. B. gut belüftete Decken aus 
+unbrennbarem Material. 
+Es sind die Herstellerangaben zu beachten. 
+711.46 
+Trennen und Schalten 
+711.462 Trennen 
+711.462.1 
+Füge hinzu: 
+Jede einzelne, vorübergehend errichtete Anlage, wie z. B. ein Fahrzeug, Stand oder eine Einheit, und jeder 
+Verteilungsstromkreis zur Versorgung von Außenanlagen, muss mit einer eigenen leicht zugänglichen und 
+eindeutig zuordenbaren Einrichtung zum Trennen versehen sein. 
+ANMERKUNG AT 
+Anforderungen für die Auswahl und Installation von Einrichtungen zum Trennen siehe 537.2. 
+Schalter, Steckdosen, Lasttrennschalter, Leistungsschalter, Fehlerstrom-Schutzeinrichtungen (RCD) usw., die nach den 
+entsprechenden Normen zum Trennen geeignet sind, dürfen benutzt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 687/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 5 
+711.5 
+Auswahl und Installation von elektrischen Betriebsmitteln 
+711.51 
+Allgemeine Bestimmungen 
+Füge hinzu: 
+711.51.101 
+ 
+Steuer- und Schutzschalteinrichtungen müssen in Verteilern, Dosen und Gehäusen untergebracht werden, die 
+mit Schlüssel oder Werkzeug geöffnet werden können. Ausgenommen hiervon sind solche elektrischen 
+Betriebsmittel, die vorgesehen sind, durch elektrotechnische Laien (BA1) bedient zu werden. 
+ANMERKUNG.AT 
+Schaltgerätekombinationen für die Bedienung durch Laien nach OVE EN IEC 61439-3 erfüllen 
+diese Anforderungen. 
+711.511 Übereinstimmung mit Normen 
+711.511.1 
+Füge hinzu: 
+Wo Austauschbarkeit gefordert ist 
+– 
+müssen Steckdosen mit einem Bemessungsstrom nicht größer als 16 A, mit OVE EN IEC 60309-2 oder 
+entsprechenden nationalen Normen (OVE E 8684-1) übereinstimmen und 
+– 
+müssen Steckdosen mit einem Bemessungsstrom größer als 16 A, jedoch nicht größer als 125 A mit 
+OVE EN IEC 60309-2 übereinstimmen. 
+Steckdosen müssen mit OVE EN IEC 60309-1 übereinstimmen, wenn 
+– 
+der Bemessungsstrom größer als 125 A ist, oder 
+– 
+Austauschbarkeit nicht gefordert ist. 
+711.52 
+Kabel- und Leitungsanlagen 
+Füge hinzu: 
+711.52.101 
+Leiter von Kabeln und Leitungen müssen einen Mindestquerschnitt von 1,5 mm2 Kupfer oder gleichwertig 
+haben. 
+Kabel und Leitungen müssen mit der Normenreihe ÖVE/ÖNORM EN 50525 übereinstimmen. 
+711.521 
+Arten von Kabel- und Leitungsanlagen 
+Füge hinzu: 
+711.521.101 
+Wenn in einem Gebäude, das für Ausstellungen usw. genutzt wird, kein Brandmeldesystem installiert ist, 
+müssen Kabel und Leitungen bzw. die Kabel- und Leitungsanlagen entweder 
+– 
+flammwidrig gemäß OVE EN IEC 60332-1-2 oder OVE EN IEC 60332-3 Reihe und mit geringer 
+Rauchentwicklung gemäß OVE EN 61034 Reihe sein, oder 
+– 
+aus ein- oder mehradrigen unbewehrten Kabeln/Leitungen in metallenen oder nichtmetallenen Rohren 
+oder Kanälen bestehen, die einen Widerstand gegen Flammausbreitung in Übereinstimmung mit Normen 
+der Reihe ÖVE/ÖNORM EN 50085 und eine Schutzart von mindestens IP4X oder IPXXD bieten. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 688/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 6 
+711.526 
+Elektrische Verbindungen 
+Füge hinzu: 
+711.526.101 
+ 
+In Kabeln und Leitungen dürfen keine Verbindungen vorgesehen werden, ausgenommen notwendige 
+Verbindungen in Stromkreisen. Wenn Verbindungen hergestellt werden, müssen hierfür entweder Verbinder in 
+Übereinstimmung mit den entsprechenden Normen hergestellt werden, oder die Verbindung muss in einem 
+Gehäuse mit mindestens der Schutzart von IP4X oder IPXXD hergestellt werden. 
+Wenn eine Zugbeanspruchung auf die Klemmen übertragen werden kann, muss für die Verbindung eine 
+Kabelbefestigung (Zugentlastung) enthalten sein. 
+711.53 
+Schalt- und Steuergeräte 
+711.536 
+Koordination von Schutz-, Trenn-, Schalt- und Steuereinrichtungen 
+711.536.4 
+Anforderungen an die Koordination 
+711.536.4.2 
+Anforderungen für die Selektivität 
+711.536.4.2.4 
+Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Selektivität zwischen hintereinander geschalteten Fehlerstrom-Schutzeinrichtungen (RCD) muss gegeben 
+sein. 
+711.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+711.55.101 
+Sicherheitstransformatoren und elektronische Konverter 
+Sicherheitstransformatoren 
+müssen 
+mit 
+ÖVE/ÖNORM EN 61558-2-6 
+übereinstimmen 
+oder 
+eine 
+entsprechende Sicherheit bieten. 
+Besondere Sorgfalt ist erforderlich, wenn Transformatoren für Kleinspannung (ELV) eingebaut werden. Diese 
+müssen für die Allgemeinheit außerhalb des Handbereichs angeordnet sein und eine ausreichende Belüftung 
+haben. Die Zugänglichkeit durch Elektrofachkräfte (BA5) oder elektrotechnisch unterwiesene Personen (BA4) 
+für Prüfung und Wartung muss vorgesehen sein. 
+Gehäuse, die Gleichrichter und/oder Transformatoren beinhalten, müssen angemessen belüftet werden, und 
+die Öffnungen dürfen während des Betriebs nicht verdeckt sein. 
+Elektronische Konverter müssen mit der Normenreihe OVE EN 61347 übereinstimmen. 
+711.55.001.AT  
+Steckdosen und Stecker 
+Es ist eine, entsprechend der zu erwartenden Verbrauchsmittel, angemessene Anzahl von Steckdosen ortsfest 
+zu installieren. 
+ANMERKUNG 1.AT 
+Die Anzahl und die technischen Anforderungen der zu erwartenden Verbrauchsmittel sind 
+möglichst rechtzeitig dem Errichter der elektrischen Anlage bekannt zu geben. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 689/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 7 
+711.559 
+Beleuchtungsanlagen 
+711.559.3 
+Allgemeine Anforderungen 
+Füge hinzu: 
+711.559.3.101 Leuchten und Lichterketten 
+Leuchten und Lichterketten in einer Höhe von weniger als 2,5 m (Handbereich) über Fußbodenniveau oder 
+wenn sie zufällig berührbar sind, müssen angemessen befestigt sein und so angeordnet oder geschützt 
+werden, dass es zu keiner Verletzung einer Person oder zu keiner Entzündung von Material kommen kann. 
+Flache Lichterkettenleitungen H05RNH2-F müssen mit ÖVE/ÖNORM EN 50525-2-82 übereinstimmen. 
+ANMERKUNG AT 
+Lichterketten dürfen in jeder Länge verwendet werden, vorausgesetzt die Überstrom-
+Schutzeinrichtung ist entsprechend bemessen. 
+ 
+711.559.3.102 Fassungen für Leuchtmittel 
+Fassungen für Leuchtmittel mit Durchdringungsanschlusstechnik dürfen nicht verwendet werden, 
+ausgenommen die Kabel oder die Leitungen sind zugehörig zu den Fassungen für Leuchtmittel und die 
+Fassungen für Leuchtmittel sind nicht mehr veränderbar nach der Befestigung am Kabel/an der Leitung. 
+711.559.3.103 Anlagen mit elektrischen Entladungslampen mit einer Nennversorgungsspannung 
+höher als AC 230/400 V 
+711.559.3.103.1 Allgemeines 
+Stromkreise mit jeglicher Art von Leuchtröhrenschriften oder Leuchten als Illuminationseinheit auf einem Stand 
+oder als Ausstellungsgegenstand mit Nennversorgungsspannungen größer als AC 230/400 V müssen die 
+Anforderungen nach 711.559.3.103.2 bis 711.559.3.103.4 erfüllen. 
+711.559.3.103.2 Anordnung 
+Leuchtröhrenschriften, Leuchtzeichen oder Leuchten müssen außerhalb des Handbereichs errichtet oder 
+angemessen geschützt werden, um das Risiko einer Verletzung zu reduzieren. 
+ANMERKUNG AT 
+OVE EN 50107-1:2003 enthält in 7.4 und 7.6 zusätzliche Anforderungen für die Anordnung von 
+Hochspannungs-Leuchtröhrenanschlüssen innerhalb des Handbereichs. 
+711.559.3.103.3 Errichtung 
+Die Abdeckung oder die Standausstattung hinter Leuchtröhrenschriften oder Leuchten darf nicht entzündbar 
+und muss entsprechend den nationalen Normen geschützt sein. 
+Steuereinrichtungen mit Ausgangsspannungen höher als AC 230/400 V müssen auf nicht entzündbarem 
+Material befestigt werden. 
+711.559.3.103.4 Einrichtungen für das Ausschalten im Notfall 
+Zur Versorgung von Leuchtröhrenschriften, Leuchtzeichen oder Leuchten ist ein separater Stromkreis zu 
+verwenden, der mit einer Not-Aus-Einrichtung gemäß Abschnitt 465 versehen werden muss. Diese Einrichtung 
+muss leicht erkennbar und zugänglich sowie in Übereinstimmung mit den Anforderungen der zuständigen 
+Behörde gekennzeichnet sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 690/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-711 – Seite 8 
+ANMERKUNG AT 
+Schilder und Leuchtröhrengeräte mit einer Leerlaufspannung über 1 kV, aber nicht über 10 kV 
+siehe Normenreihe ÖVE/ÖNORM EN 50107. 
+711.559.3.001.AT 
+Leuchten in Schießbuden 
+Alle Leuchten in Schießbuden und anderen Showbühnen, wo Geschoße benutzt werden, müssen gegen 
+zufällige Beschädigung angemessen geschützt werden. 
+711.6 
+Prüfung 
+Füge hinzu: 
+Die vorübergehend errichtete elektrische Anlage zwischen Speisepunkt und jedem elektrischen Betriebsmittel 
+bzw. dessen Anschlusspunkt muss nach jedem Zusammenbau vor Ort geprüft werden. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 691/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 1 
+Teil 7-712  
+Photovoltaische Anlagen (PV-Anlagen) 
+712.1 
+Anwendungsbereich 
+Dieser Teil gilt für PV-Anlagen, die insgesamt oder teilweise elektrische Energie in eine Verbraucheranlage, 
+das öffentliche Netz oder ein örtliches Netz (z. B. Inselanlagen, Inselnetze, Microgrids) einspeisen. 
+In diesem Teil werden die elektrischen Betriebsmittel einer PV-Anlage nur insoweit behandelt, wie es ihre 
+Auswahl und die Anwendung in der Anlage betrifft. 
+Die PV-Anlage beginnt an einem PV-Modul oder einer Kombination von PV-Modulen, die mit den vom 
+Hersteller vorgesehenen Anschlusskabeln/-leitungen miteinander verbunden sind, und endet am 
+Netzanschlusspunkt oder der Verbraucheranlage. 
+Die Anforderungen gelten für: 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, die nicht an ein öffentliches Verteilernetz 
+angeschlossen sind; 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, die parallel an das öffentliche Verteilernetz 
+(Netzparallelbetrieb) angeschlossen sind; 
+– 
+PV-Anlagen zur Einspeisung in ein Verteilernetz; 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, alternativ zum Verteilernetz; 
+– 
+geeignete Kombinationen der oben genannten Aufzählungen. 
+ANMERKUNG 1.AT 
+Normen für PV-Anlagen mit Batterien oder anderen Energiespeichersystemen sind in 
+Vorbereitung. 
+ANMERKUNG 2.AT 
+Sicherheitsanforderungen und Hinweise für stationäre elektrische Energiespeichersysteme (ESS) 
+für den Festanschluss an ortsfeste elektrische Anlagen, die an das Niederspannungsnetz angeschlossen sind, siehe  
+OVE-Richtlinie R 20. 
+ANMERKUNG 3.AT 
+Ausführungsbeispiele für PV-Anlagen siehe Anhang 712.A. 
+ANMERKUNG 4.AT 
+Empfehlungen für PV-Freiflächenanlagen siehe IEC TS 62738. 
+ANMERKUNG 5.AT 
+Anforderungen für den Netzanschluss von PV-Anlagen siehe in den Technischen und 
+Organisatorischen Regeln für Betreiber und Benutzer von Netzen (TOR) und OVE-Richtlinie R 25. 
+ANMERKUNG 6.AT 
+Gemäß TOR Stromerzeugungsanlagen sind technische Änderungen und Ergänzungen an einer 
+PV-Anlage oder geplante Veränderungen der Betriebsweise dem Netzbetreiber in Hinblick auf eine erneute Beurteilung 
+des Netzanschlusses, der zu erwartenden Beeinflussung des umgebenden Netzes und der Auswirkungen auf den 
+Netzbetrieb mitzuteilen. 
+712.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+712.3 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+712.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+712.41 
+Schutz gegen elektrischen Schlag 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 692/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 2 
+712.410 
+Einleitung 
+Füge hinzu: 
+712.410.101 
+ 
+Elektrische Betriebsmittel auf der DC-Seite müssen als unter Spannung stehend betrachtet werden, auch wenn 
+die AC-Seite vom Netz getrennt ist oder wenn der PV-Wechselrichter von der DC-Seite getrennt ist. 
+712.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen auf der DC-Seite nicht angewendet werden. 
+712.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+Füge hinzu: 
+712.410.102 
+Auf der DC-Seite muss eine der folgenden Schutzmaßnahmen angewendet werden: 
+– 
+Doppelte oder verstärkte Isolierung; 
+– 
+Schutz durch Kleinspannung (SELV oder PELV). 
+712.412 
+Schutzmaßnahme: Doppelte oder verstärkte Isolierung (Schutzisolierung) 
+Füge hinzu: 
+712.412.101 
+ 
+Die auf der DC-Seite (bis zum DC-Anschluss des PV-Wechselrichters) verwendeten elektrischen 
+Betriebsmittel, z. B. PV-Module, Kabel- und Leitungsanlagen (z. B. Verbindungsdosen, Kabel/Leitungen) 
+müssen Schutzklasse II oder eine vergleichbare Isolierung haben. 
+712.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+Füge hinzu: 
+712.414.101 
+ 
+Bei der Verwendung von SELV und PELV als Schutzmaßnahmen auf der DC-Seite darf UOC MAX 120 V nicht 
+überschreiten. 
+Es wird empfohlen, die Spannung auf DC 90 V zu begrenzen. 
+ANMERKUNG 1.AT 
+Diese Empfehlung erfolgt unter Bezugnahme auf 410.3.001.AT ANMERKUNG 1.AT. Der Wert 
+von DC 90 V ist jedoch aufgrund der Festlegungen in europäischen Produktstandards derzeit in der Praxis nicht immer 
+umsetzbar. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 693/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 3 
+ANMERKUNG 2.AT 
+Anforderungen für PV-Module der Schutzklasse III siehe OVE EN IEC 61730-1. 
+712.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+712.414.4.5 
+ 
+Ersetze die Anforderungen durch: 
+Ist die Nennspannung (hier UOC MAX) > DC 30 V, muss für SELV- oder PELV-Stromkreise ein Basisschutz 
+vorgesehen werden. 
+712.42 
+Schutz gegen thermische Einflüsse 
+Füge hinzu: 
+712.420.101 
+Vorbeugender Brandschutz für PV-Anlagen 
+ANMERKUNG 
+Siehe nationale oder örtliche Anforderungen an den vorbeugenden Brandschutz wie z. B. Technische 
+Richtlinien vorbeugender Brandschutz, baurechtliche Bestimmungen. 
+ANMERKUNG AT 
+Hinweise zum Schutz von Einsatzkräften siehe OVE-Richtlinie R 11-1. 
+712.421 
+Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+ANMERKUNG AT 
+In Bereichen, wo ein besonderes Brandrisiko besteht, siehe auch 532.1. 
+Füge hinzu: 
+712.421.101 
+Schutz bei Isolationsfehlern auf der DC-Seite, bei einfacher Trennung auf der AC-Seite 
+oder im PV-Wechselrichtern 
+712.421.101.1 
+Es 
+muss 
+ein 
+Isolationsüberwachungsgerät 
+(IMD) 
+installiert 
+werden, 
+um 
+den 
+Isolationszustand auf der DC-Seite während der Lebenszeit des PV-Generatorfelds fortlaufend zu prüfen. 
+Ausgenommen sind Anwendungen gemäß 712.421.101.2. 
+ANMERKUNG 
+Isolationsüberwachungsgeräte (IMD) gemäß ÖVE/ÖNORM EN 61557-8 erfüllen diese Funktion. 
+ANMERKUNG AT 
+Es wird empfohlen, dass ein Isolationsfehler innerhalb kürzest möglicher Zeit behoben wird. 
+Die Isolationsüberwachungsgeräte (IMD) darf auch im PV-Wechselrichter integriert sein (PV-IMF gemäß 
+ÖVE/ÖNORM EN 61557-8:2016, Anhang D). 
+712.421.101.2 
+Bei Verbindung eines aktiven Leiters auf der DC-Seite innerhalb eines PV-Wechselrichters 
+mit Erde (Funktionspotentialausgleich zur Verhinderung von potentialinduzierter Degradation) muss eine 
+Maßnahme vorgesehen werden, die im Falle eines Isolationsfehlers des zweiten aktiven Leiters gegen Erde 
+eine Unterbrechung des Fehlerstroms in Übereinstimmung mit Tabelle 712.537 sicherstellt. 
+Füge hinzu: 
+712.421.001.AT Schutz bei Isolationsfehlern, wenn weder auf der AC-Seite noch im  
+PV-Wechselrichter eine galvanische Trennung zwischen DC- und AC-Seite 
+vorhanden ist 
+Eine Funktionserdung eines aktiven Leiters auf der DC-Seite ist nicht zulässig. 
+Im Fall eines Isolationsfehlers auf der DC-Seite muss entweder 
+– 
+der PV-Wechselrichter automatisch von der AC-Seite getrennt werden, oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 694/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 4 
+– 
+der fehlerhafte Teil des PV-Generatorfelds automatisch vom PV-Wechselrichter getrennt werden. 
+ANMERKUNG 1.AT 
+Die Trennfunktion kann vom PV-Wechselrichter bereitgestellt werden (siehe Normenreihe 
+ÖVE/ÖNORM EN 62109). 
+ANMERKUNG 2.AT 
+Die automatische Trennung kann von einer Fehlerstrom-Schutzeinrichtung (RCD) erfüllt werden. 
+712.43 
+Schutz bei Überstrom 
+712.431 
+Anforderungen entsprechend der Art der Stromkreise 
+Füge hinzu: 
+712.431.101 
+ 
+In einem PV-Generatorfeld mit parallelen PV-Strängen der Anzahl Ns (mit Ns >  2) müssen zum Schutz jedes 
+PV-Strangs Schutzeinrichtungen vorgesehen werden, wenn die folgende Bedingung erfüllt ist: 
+ 
+1,35 ∙ IMOD MAX OCPR < (NS −1) ∙ ISC MAX 
+(F 712.1) 
+Bei einer Anzahl Ns ≤ 2 ist keine Überstrom-Schutzeinrichtung gefordert. 
+ANMERKUNG 1  
+Wenn ein PV-Wechselrichter mehrere unabhängige MPPT hat und aufgrund der Auslegung kein 
+Rückstrom von einem Eingang zu einem anderen Eingang fließen kann, dann ist Ns die Anzahl der Stränge, die an einem 
+einzelnen MPPT-Eingang angeschlossen sind. 
+Alle parallel angeschlossenen PV-Stränge müssen dieselbe Bemessungsspannung haben. 
+ANMERKUNG 2  
+In der Praxis bedeutet das, dass jeder PV-Strang die gleiche Anzahl von in Reihe verbundenen  
+PV-Modulen bei Verwendung gleicher PV-Module hat. 
+ANMERKUNG AT 
+In Ausnahmefällen (z. B. durch Herstellerangaben der PV-Module) kann davon abgewichen 
+werden. 
+712.431.102 
+ 
+Der Schutz vor überhöhter thermischer Belastung der PV-Module bei Rückstrom (wie in OVE  
+EN IEC 61730-1 angegeben) wird durch die Verwendung von Schutzeinrichtungen gemäß 712.432 
+sichergestellt. 
+Wenn Schutzeinrichtungen gefordert sind, muss ihr Bemessungsstrom In die folgenden Bedingungen erfüllen: 
+ 
+1,1 × ISC MAX des PV-Strangs ≤ In  ≤ IMOD MAX OCPR 
+(F 712.2) 
+ANMERKUNG 
+Der Faktor 1,1 ist ein Sicherheitszuschlag zur Vermeidung vorzeitiger Auslösung der Schutz-
+einrichtungen bei normalen Stressbedingungen. 
+Im Fall besonderer Bedingungen muss der Faktor 1,1 angepasst werden, z. B. im Fall von Reflexionen oder 
+besonderer PV-Modul-Technologien (BEISPIEL: Bifacial-Module). 
+Jeder PV-Strang muss einzeln durch eine Schutzeinrichtung geschützt sein. 
+Wenn mehrere parallele PV-Stränge durch eine Überstrom-Schutzeinrichtung geschützt sind, muss der 
+Bemessungsstrom In die folgende Gleichung erfüllen: 
+ 
+Np × 1,1 × ISC MAX  ≤ In  ≤ IMOD MAX OCPR − (Np −1) × ISC MAX 
+(F 712.3) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 695/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 5 
+Dabei ist Np die Anzahl paralleler PV-Stränge, die an dieselbe Überstrom-Schutzeinrichtung angeschlossen 
+sind. 
+712.432 
+Art der Schutzeinrichtungen 
+Füge hinzu: 
+712.432.101 
+Wenn Überstrom-Schutzeinrichtungen auf der DC-Seite gemäß 712.431.101 gefordert sind, müssen, 
+unabhängig von der Anlagenkonfiguration, beide Pole geschützt werden. 
+Ausgenommen sind PV-Strangkabel/-leitungen, die nicht gemeinsam mit Teil-Generatorfeldkabel/-leitungen in 
+einem Verkabelungssystem geführt werden sowie Teil-Generatorfeldkabel/-leitungen, die nicht gemeinsam mit 
+PV-Strangkabeln/-leitungen in einem Verkabelungssystem geführt werden. In diesen Fällen muss eine 
+Überstrom-Schutzeinrichtung nur an einem aktiven Leiter ohne Funktionserdung installiert werden. 
+712.432.102 
+ 
+Sperrdioden, die in parallelen PV-Strängen eingesetzt werden, dürfen nicht als Schutz bei Überstrom 
+verwendet werden. 
+712.432.103 
+ 
+ 
+ANMERKUNG AT 
+Anforderungen für die Auswahl von Überstrom-Schutzeinrichtungen auf der DC-Seite siehe 
+712.533.101. 
+712.433 
+Schutz bei Überlastströmen 
+Füge hinzu: 
+712.433.101 
+Schutz des PV-Strangkabels/-leitung 
+Beim Schutz der PV-Strangkabel/-leitung muss Folgendes berücksichtigt werden: 
+– 
+In einem PV-Generatorfeld mit einem oder zwei parallelen PV-Strängen ist keine Überstrom-
+Schutzeinrichtung gefordert (siehe auch 712.431.101). 
+ 
+Die dauernde Strombelastbarkeit des PV-Strangkabels/-leitung muss größer oder gleich dem maximalen 
+Kurzschlussstrom des PV-Strangs sein: 
+ 
+ISC MAX des PV-Strangs ≤ Iz
+ 
+(F 712.4) 
+– 
+In einem PV-Generatorfeld mit Ns parallelen PV-Strängen, wobei Ns größer als 2 ist, ist der maximale im 
+PV-Strangkabel/-leitung fließende Rückstrom (Ns – 1) ∙ ISCMAX. Eine der folgenden Maßnahmen muss 
+angewendet werden: 
+ 
+• 
+Wenn für den PV-Strang keine Überstrom-Schutzeinrichtung gemäß 712.431.101 gefordert ist, muss 
+Iz des PV-Strangkabels/-leitung größer oder gleich dem maximalen Rückstrom sein: 
+ 
+(NS −1) ∙ ISC MAX des PV-Strangs ≤ Iz 
+(F 712.5) 
+ 
+• 
+Wenn für den PV-Strang eine Überstrom-Schutzeinrichtung gemäß 712.431.101 gefordert ist, muss 
+Iz des PV-Strangkabels/-leitung größer oder gleich dem Bemessungsstrom In der Schutzeinrichtung 
+des PV-Strangs sein: 
+ 
+In ≤ IZ 
+(F 712.6) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 696/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 6 
+Bei Berechnung von ISC MAX muss Anhang 712.B angewendet werden. 
+712.433.102 
+Schutz des PV-Teilgeneratorfeldkabels/-leitung 
+Für den Schutz des PV-Teilgeneratorfeldkabels/-leitung muss Folgendes beachtet werden: 
+– 
+In einem PV-Generatorfeld mit zwei PV-Teilgeneratorfeldern ist keine Überstrom-Schutzeinrichtung des 
+PV-Teilgeneratorfeldkabels/-leitung 
+gefordert. 
+Die 
+dauernd 
+zulässige 
+Strombelastbarkeit 
+des  
+PV-Teilgeneratorfeldkabels/-leitung muss größer oder gleich dem maximalen Gleichstrom des  
+PV-Teilgenerators sein: 
+ 
+ISC MAX des PV-Teilgeneratorfelds ≤ Iz 
+(F 712.7) 
+– 
+In einem PV-Generatorfeld mit Na parallelen PV-Teilgeneratorfeldern, mit Na größer als zwei, ist der 
+maximale Rückstrom im Teilgeneratorfeldkabel/-leitung (Na – 1) ∙ ISCMAX. Eine der folgenden Maßnahmen 
+muss verwendet werden: 
+ 
+• 
+Wenn keine Überstrom-Schutzeinrichtung des Teilgeneratorfeldkabels/-leitung verwendet wird, muss 
+die dauernd zulässige Strombelastbarkeit des Teilgeneratorfeldkabels/-leitung sein: 
+ 
+(Na −1) ∙ ISC MAX des PV-Teilgeneratorfelds ≤ Iz 
+(F 712.8) 
+ 
+• 
+Wenn eine Überstrom-Schutzeinrichtung des PV-Teilgeneratorfeldkabels/-leitung verwendet wird, 
+müssen deren Bemessungsstrom In und die dauernd zulässige Strombelastbarkeit Iz des 
+Teilgeneratorfeldkabels/-leitung die folgenden Bedingungen erfüllen: 
+ 
+1,1 ∙ ISC MAX des PV-Teilgeneratorfelds ≤ In  ≤ IZ 
+(F 712.9) 
+ANMERKUNG 1  
+Der Faktor 1,1 ist ein Sicherheitszuschlag zur Vermeidung vorzeitiger Auslösung der Schutz-
+einrichtungen bei normalen Stressbedingungen. 
+Im Fall besonderer Bedingungen muss der Faktor 1,1 angepasst werden, z. B. im Fall von Reflexionen oder 
+besonderen PV-Modul-Technologien (BEISPIEL: Bifacial-Module). 
+ANMERKUNG 2  
+Anforderungen für die Dimensionierung der Kabel/Leitungen von PV-Generatorfeldern sind in 
+derselben Weise wie bei PV-Teilgeneratorfeldkabel/-leitungen angeführt. 
+712.433.103 
+Schutz des PV-Generatorfeldkabels/-leitung 
+Die dauernd zulässige Strombelastbarkeit Iz des PV-Generatorfeldkabels/-leitung muss größer oder gleich 
+dem maximalen Gleichstrom des PV-Generatorfelds sein: 
+ 
+ISC MAX des PV-Generatorfelds ≤ Iz 
+(F 712.10) 
+712.433.104 
+Schutz des PV-AC-Versorgungskabel/-leitung 
+Bei der Auslegung des Bemessungsstroms der Überstrom-Schutzeinrichtung der PV-AC-Versorgungskabel/-
+leitung auf der AC-Seite muss der maximale Ausgangsstrom des PV-Wechselrichters berücksichtigt werden. 
+Der maximale Ausgangsstrom des PV-Wechselrichters ist entweder der vom Hersteller angegebene maximale 
+Wechselstrom oder, wenn keine Herstellerangabe zur Verfügung steht, das 1,1-Fache des AC-Nennstroms 
+des PV-Wechselrichters. 
+712.434 
+Schutz bei Kurzschlussströmen 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 697/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 7 
+712.434.101 
+ 
+Das PV-AC-Versorgungskabel/-leitung muss durch eine Überstrom-Schutzeinrichtung bei Kurzschluss 
+geschützt sein, die an der Anschlussstelle der AC-Seite installiert ist. 
+712.44 
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+712.443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse und von Schaltvorgängen 
+712.443.1 
+Anwendungsbereich und Allgemeines  
+Füge hinzu: 
+Für die Auswahl und Errichtung des Blitz- und Überspannungsschutzes für PV-Generatoren gelten die 
+Anforderungen gemäß OVE-Richtlinie R 6-2 Reihe. 
+712.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+712.51 
+Allgemeine Bestimmungen 
+ 
+712.511 
+Übereinstimmung mit Normen 
+Füge hinzu: 
+712.511.101 
+ 
+PV-Module müssen die Anforderungen der entsprechenden elektrischen Betriebsmittelnormen, z. B. OVE EN 
+IEC 61215 Reihe und OVE EN IEC 61730 Reihe, erfüllen (siehe auch 712.412.101). 
+712.511.102 
+ 
+PV-Wechselrichter müssen z. B. ÖVE/ÖNORM EN 62109-1, ÖVE/ÖNORM EN 62109-2, ÖVE/ÖNORM 
+EN 62116 entsprechen. 
+712.511.103 
+ 
+Anschlussgehäuse, Verteiler und Schaltgerätekombinationen müssen der Normenreihe OVE EN 61439 
+entsprechen.  
+ANMERKUNG AT 
+Ergänzende Hinweise für laienbedienbare Schaltgerätekombinationen siehe OVE-Richtlinie R 18. 
+Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche ortsfeste elektrische Installationen 
+müssen der Normenreihe ÖVE/ÖNORM EN 60670 entsprechen. 
+ 
+Füge hinzu: 
+712.511.001.AT 
+ANMERKUNG AT 
+Hinweise zu Niederspannungseinrichtungen für den Photovoltaik-Erdschlussschutz (PV-EFPE) 
+siehe OVE EN IEC 63112. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 698/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 8 
+712.512 
+Betriebsbedingungen und äußere Einflüsse 
+712.512.1 
+Betriebsbedingungen 
+712.512.1.1 
+Spannung 
+Füge hinzu: 
+Bei Auswahl von elektrischen Betriebsmitteln für PV-Generatorfelder muss UOC MAX als Bemessungsspannung 
+angenommen werden. 
+Für die Berechnung von UOC MAX ist Anhang 712.B anzuwenden. 
+712.512.1.2 
+Strom 
+Füge hinzu: 
+Bei Auswahl von elektrischen Betriebsmitteln für PV-Generatorfelder muss ISC MAX als Bemessungsstrom 
+angenommen werden. 
+Für die Berechnung von ISC MAX ist Anhang 712.B anzuwenden. 
+Füge hinzu: 
+712.512.101 
+ 
+Wenn Sperrdioden verwendet werden, muss ihre Sperrspannung für 2 ∙ UOC MAX des PV-Strangs bemessen 
+sein und ihr Bemessungsstrom muss mindestens 1,1 ∙ ISC MAX betragen. Die Sperrdioden müssen in Reihe mit 
+den PV-Strängen angeschlossen sein. 
+712.512.102 
+ 
+Gehäuse und Umhüllungen für im Freien installierte elektrische Betriebsmittel müssen mindestens der 
+Schutzart IP44 gemäß ÖVE/ÖNORM EN 60529 und mindestens der Schutzart IK07 gegen äußere 
+mechanische Beanspruchung gemäß OVE EN 62262 entsprechen. 
+712.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Für die Auslegung der mechanischen Festigkeit der Befestigungen der Module am Gebäude, an Gerüsten oder 
+Fundamenten (z. B. gegen Einwirkungen von Wind- und Schneelasten oder Kälte- und Wärmedehnungen) 
+sind die jeweils zutreffenden Bestimmungen maßgebend. 
+ANMERKUNG AT 
+Diese sind z. B. OVE EN 50583 Reihe, ÖNORM M 7778, baurechtliche Bestimmungen. 
+712.513 
+Zugänglichkeit 
+Füge hinzu: 
+712.513.101  
+Bei der Auswahl und Errichtung einer PV-Anlage müssen Vorkehrungen getroffen werden, damit die vom 
+Hersteller der elektrischen Betriebsmittel vorgesehenen Instandhaltungs- und Wartungs-arbeiten ohne 
+Gefahren ausgeführt werden können. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 699/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 9 
+712.514 
+Kennzeichen 
+Füge hinzu: 
+712.514.101 
+ 
+Für die Sicherheit von Personen müssen Warnhinweise vorhanden sein, welche auf das Vorhandensein einer 
+PV-Anlage aufmerksam machen, z. B. für Wartungs- und Instandhaltungspersonal, Prüfer, Betriebspersonal 
+der öffentlichen Stromversorgung und Einsatzkräfte. 
+Ein Hinweisschild, wie z. B. in Bild 712.514.101 dargestellt, muss fest angebracht sein 
+– 
+am Einspeisepunkt in die elektrische Anlage und 
+– 
+am Zählerplatz, wenn vom Einspeisepunkt entfernt, und 
+– 
+am elektrischen Verteiler, an dem die Versorgung des PV-Wechselrichters angeschlossen ist. 
+ 
+Bild 712.514.101 – Hinweisschild für das Vorhandensein einer PV-Anlage auf einem Gebäude 
+712.514.102 
+ 
+An jedem Zugangspunkt zu aktiven Teilen auf der DC-Seite, wie z. B. Verteiler und Verbindungsdosen, muss 
+eine dauerhafte Kennzeichnung angebracht sein, die anzeigt, dass aktive Teile nach der Trennung unter 
+Spannung stehen können, z. B. durch den Text: 
+ 
+„Achtung PV-Anlage – aktive Teile können nach dem Trennen unter Spannung stehen!“ 
+712.514.103 
+ 
+PV-Wechselrichter müssen Kennzeichnungen besitzen, die darauf hinweisen, dass vor Wartungs- und 
+Instandhaltungsarbeiten die PV-Wechselrichter auf der DC-Seite und auf der AC-Seite elektrisch getrennt 
+werden müssen. 
+712.52 
+Kabel- und Leitungsanlagen 
+712.521 
+Arten von Kabel- und Leitungsanlagen 
+Füge hinzu: 
+712.521.101 
+ 
+Kabel/Leitungen auf der DC-Seite müssen so ausgewählt und verlegt werden, dass das Risiko von Erd- und 
+Kurzschlüssen möglichst gering ist. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 700/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 10 
+Kabel/Leitungen dürfen nicht direkt auf der Dachoberfläche verlegt werden. 
+ANMERKUNG 
+Unter anderem beschreiben ÖVE/ÖNORM EN 50618 bzw. ÖVE/ÖNORM E 8200-603 Kabel und 
+Leitungen, die für die Verwendung auf der Gleichspannungsseite von PV-Anlagen geeignet sind. 
+712.521.102 
+ 
+Um durch Blitzeinwirkung induzierte Spannungen möglichst klein zu halten, sollte die Fläche aller Kabel- und 
+Leiterschleifen so klein wie möglich gehalten werden, insbesondere bei der Verkabelung der PV-Stränge. Die 
+DC-Kabel/-Leitungen und die Potentialausgleichsleiter sollten nebeneinander verlegt sein. 
+712.523 
+Strombelastbarkeit 
+Füge hinzu: 
+712.523.101 
+ 
+Für die Auslegung von Kabeln/Leitungen, die auf der Unterseite der PV-Module direkter Erwärmung ausgesetzt 
+sind, wird die für ihre Querschnittsdimensionierung zu berücksichtigende Umgebungstemperatur mit 
+mindestens 70 °C angenommen. 
+ANMERKUNG AT 
+Zur Strombelastbarkeit von PV-Kabeln/PV-Leitungen gemäß 712.521.101 siehe ÖVE/ÖNORM 
+EN 50618. 
+712.526 
+Elektrische Verbindungen 
+712.526.1 
+Füge hinzu: 
+Jedes Steckverbindungspaar muss elektrisch und mechanisch kompatibel für die vorliegenden äußeren 
+Einflüsse geeignet sein, und muss von einem Hersteller und gleicher Type sein. 
+712.526.101 
+Steckverbinder für die DC-Seite 
+Steckverbinder für die DC-Seite müssen gemäß ÖVE/ÖNORM EN 50521 oder OVE EN 62852 ausgewählt 
+werden. 
+Steckverbindungen, die elektrotechnischen Laien frei zugänglich sind, dürfen sich nicht ohne die Verwendung 
+von Werkzeug öffnen lassen oder müssen sich in einer nur mittels Schlüssel oder mittels Werkzeug zu 
+öffnenden Umhüllung befinden. 
+712.53 
+Schalt- und Steuergeräte 
+712.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag 
+Füge hinzu: 
+712.531.101 
+ 
+Wenn auf der AC-Seite eine Fehlerstrom-Schutzeinrichtung (RCD) für den Fehlerschutz vorgesehen ist, 
+müssen die Anforderungen von Abschnitt 712.531.3.101 angewendet werden. 
+712.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 701/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 11 
+712.531.3.101 
+Wenn eine Fehlerstrom-Schutzeinrichtung (RCD) für den Schutz des PV-AC-Versorgungsstromkreises 
+verwendet wird, muss diese vom Typ B gemäß OVE EN 62423 oder OVE EN 60947-2 sein, es sei denn 
+– 
+der PV-Wechselrichter besitzt mindestens eine einfache Trennung zwischen der AC- und der DC-Seite, 
+oder 
+– 
+die PV-Anlage besitzt mindestens eine einfache Trennung zwischen dem PV-Wechselrichter und der 
+Fehlerstrom-Schutzeinrichtung (RCD) durch einen Transformator mit getrennten Wicklungen, oder 
+– 
+der PV-Wechselrichter erfüllt die Anforderungen gemäß ÖVE/ÖNORM EN 62109-1 und erfordert, gemäß 
+der Bestätigung des PV-Wechselrichter-Herstellers, keine Fehlerstrom-Schutzeinrichtung (RCD) vom 
+Typ B. 
+712.532 
+Einrichtungen für den vorbeugenden Brandschutz 
+Füge hinzu: 
+712.532.101 
+ 
+Wenn auf der AC-Seite eine Fehlerstrom-Schutzeinrichtung (RCD) vorgesehen ist, müssen die Anforderungen 
+von 712.531.3.101 angewendet werden. 
+712.533 
+Einrichtungen zum Schutz bei Überstrom 
+Füge hinzu: 
+712.533.101 
+Überstrom-Schutzeinrichtungen auf der DC-Seite 
+Als Überstrom-Schutzeinrichtungen auf der DC-Seite oder für die Anwendung in PV-Anlagen ausgewiesene 
+müssen verwendet werden: 
+– 
+gPV-Sicherungen gemäß OVE EN 60269-6, oder 
+– 
+Sicherungslastschalter gemäß OVE EN IEC 60947-3, oder 
+– 
+Leistungsschalter gemäß OVE EN 60947-2, oder 
+– 
+Leitungsschutzschalter gemäß OVE EN 60898-2. 
+Diese Einrichtungen müssen die folgenden besonderen Maßnahmen erfüllen: 
+1) 
+die Bemessungsspannung Un muss größer oder gleich der Spannung UOC MAX des PV-Generatorfelds 
+sein; 
+2) 
+der Bemessungsstrom In muss wie in 712.431.102 definiert sein; 
+3) 
+das Bemessungsausschaltvermögen muss mindestens gleich wie ISC MAX des PV-Generatorfelds sein; 
+4) 
+Überstrom-Schutzeinrichtungen müssen bidirektional wirken. 
+712.534 
+Einrichtungen zum Schutz bei transienten Überspannungen 
+Füge hinzu: 
+Der Schutz von PV-Anlagen gegen transiente Überspannungen, die durch direkte und durch indirekte 
+Blitzeinwirkungen verursacht werden, muss gemäß OVE-Richtlinie R 6-2-2 erfolgen. 
+ANMERKUNG AT 
+Anforderungen, um die Sicherheit, Funktion und Verfügbarkeit der PV-Anlagen durch Maßnahmen 
+des Überspannungsschutzes und, falls gefordert, Maßnahmen des Blitzschutzes zu gewährleisten, siehe OVE-
+Richtlinie R 6-2-1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 702/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 12 
+712.537 
+Geräte zum Trennen und Schalten 
+712.537.2 
+Einrichtungen zum Trennen 
+Füge hinzu: 
+712.537.2.101  
+Einrichtungen für Instandhaltungs- und Wartungsarbeiten 
+Für Instandhaltungs- und Wartungsarbeiten des PV-Wechselrichters müssen Einrichtungen zum Trennen des 
+PV-Wechselrichters von der DC-Seite und der AC-Seite vorgesehen werden. 
+ANMERKUNG 
+Weitere Anforderungen hinsichtlich des Trennens einer PV-Anlage im Parallelbetrieb mit dem öffentlichen 
+Verteilernetz siehe 551.NE1.7.AT sowie TOR Stromerzeugungsanlagen. 
+712.537.2.102  
+Einrichtungen zum Trennen auf der DC-Seite 
+Auf der DC-Seite des PV-Wechselrichters muss ein Lasttrennschalter oder ein zum Trennen geeigneter 
+Leistungsschalter vorgesehen werden. 
+712.537.2.001.AT 
+Einrichtung zum Trennen auf der AC-Seite 
+Bei der Auswahl der Trenneinrichtung muss die Anschlussrichtung der Trenneinrichtung berücksichtigt werden 
+(wenn erforderlich, siehe Herstellerinformation), sodass das Verteilernetz an den Netzklemmen und dem PV-
+Wechselrichter an den Lastklemmen angeschlossen wird. 
+712.537.2.103  
+Trennen des Funktionspotentialausgleichsleiters 
+Eine automatische Trenneinrichtung muss in Reihe mit dem Funktionspotentialausgleichsleiter angeschlossen 
+sein und für die folgenden Bedingungen bemessen sein: 
+– 
+den maximalen Kurzschlussstrom des PV-Generatorfelds ISC MAX, 
+– 
+die maximale Spannung des PV-Generatorfelds UOC MAX, 
+– 
+den maximalen Bemessungsstrom gemäß Tabelle 712.537. 
+Tabelle 712.537 – Bemessungsstrom der automatischen Trenneinrichtung  
+im Funktionspotentialausgleichsleiter 
+Gesamte PV-Generatorfeld-
+Bemessungsleistung (Höchstwert) 
+Maximaler Bemessungsstrom In der 
+automatischen Trenneinrichtung 
+kW 
+A 
+≤ 25 
+1 
+> 25 bis 50 
+2 
+> 50 bis 100 
+3 
+> 100 bis 250 
+4 
+> 250 
+5 
+712.537.2.104  
+Maßnahmen zur Verhinderung der Trennung unter Last auf der DC-Seite 
+Zur Verhinderung des Auftretens von Lichtbögen muss jede Einrichtung ohne Lastschaltvermögen, die dazu 
+benutzt werden könnte, einen DC-Stromkreis zu öffnen, gegen unbeabsichtigte oder unzulässige Betätigung 
+gesichert sein. 
+Das kann erreicht werden durch das Anordnen der Einrichtung in einem abschließbaren Bereich oder Gehäuse, 
+oder durch deren Verriegelbarkeit. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 703/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 13 
+BEISPIEL  
+Beispiele von Einrichtungen, für die diese Anforderungen gelten, sind SPD- und Sicherungshalter sowie 
+Steckverbinder. 
+712.537.2.105  
+Fernbedienung von Einrichtungen zur Zwangstrennung im PV-Anschlussgehäuse 
+Für das Trennen unter spezifischen Fehlerbedingungen können fernbediente Einrichtungen im  
+PV-Anschlussgehäuse installiert werden. 
+712.538 
+Einrichtungen zur Überwachung 
+Füge hinzu: 
+Isolationsüberwachungsgeräte (IMD) müssen gemäß ÖVE/ÖNORM EN 61557-8 ausgewählt werden. 
+Wenn das Isolationsüberwachungsgerät (IMD) ein integrierter Bestandteil des PV-Wechselrichters ist, hat die 
+Funktion der Isolationsüberwachung in Übereinstimmung mit ÖVE/ÖNORM EN 62109-2 oder ÖVE/ÖNORM 
+EN 61557-8 zu sein. 
+In PV-Generatorfeldern über 100 kWp wird eine automatische Einrichtung zur Isolationsfehlersuche gemäß 
+ÖVE/ÖNORM EN 61557-9 empfohlen. 
+712.54 
+Erdungsanlagen und Schutzleiter 
+ANMERKUNG AT 
+Weitere Anforderungen zum Potentialausgleich siehe OVE-Richtlinie R 6-2-2. 
+712.542 
+Erdungsanlagen 
+Füge hinzu: 
+712.542.101 
+Potentialausgleich von Metallkonstruktionen der PV-Anlage 
+Die Metallkonstruktionen, welche die PV-Module tragen, einschließlich der Kabelführungssysteme, müssen 
+elektrisch leitfähig untereinander verbunden und in den Potentialausgleich eingebunden werden. 
+Die Verbindungspunkte der Konstruktionen müssen so ausgeführt sein, dass ein dauerhafter 
+Potentialausgleich aller Metallteile sichergestellt ist. 
+ANMERKUNG AT 
+Dies gilt auch hinsichtlich der verwendeten Materialien. 
+ANMERKUNG 
+Dieser Potentialausgleich begrenzt die Wirkungen der Entladung elektrostatischer Aufladungen. 
+712.542.102 
+Funktionspotentialausgleich auf der DC-Seite 
+Ein aktiver Leiter auf der DC-Seite des PV-Wechselrichters darf nur dann einbezogen werden, wenn zwischen 
+der AC-Seite und der DC-Seite eine galvanische Trennung durch einen Transformator mit elektrisch getrennten 
+Wicklungen besteht. 
+Der 
+Transformator 
+darf 
+entweder 
+im 
+PV-Wechselrichter 
+oder 
+außerhalb 
+davon 
+sein. 
+Die 
+Transformatorwicklung, die an den PV-Wechselrichter angeschlossen ist, darf nicht geerdet werden, und der 
+PV-Wechselrichter muss dafür geeignet sein. 
+Die Verbindung muss an einem einzelnen Punkt auf der DC-Seite des PV-Wechselrichters ausgeführt sein. 
+Die Verbindung muss zwischen der Trenneinrichtung und dem DC-Anschluss des PV-Wechselrichters 
+angeordnet sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 704/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 14 
+712.542.103 
+Funktionspotentialausgleichsleiter 
+Dieser Potentialausgleichsleiter (isoliert oder blank) muss einen Mindestquerschnitt von 4 mm2 Kupfer oder 
+gleichwertig haben. 
+712.6 
+Prüfung 
+Füge hinzu: 
+712.600.101 
+ 
+Die zusätzlichen Anforderungen von OVE EN 62446-1 für die Systemdokumentation, die Inbetriebnahme-
+prüfungen, die Prüfungen und das Besichtigen sind anzuwenden. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 705/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 15 
+Anhang 712.A 
+(informativ) 
+ 
+Beispiele für PV-Array 
+ 
+ANMERKUNG AT 
+Überspannungs-Schutzeinrichtungen (SPD) sind im Bild nicht dargestellt (siehe OVE-Richtlinie  
+R 6-2-2). 
+Bild 712.A.1 – PV-Generatorfeld – mehrere parallele PV-Stränge 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 706/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 16 
+ 
+ANMERKUNG AT 
+Überspannungs-Schutzeinrichtungen (SPD) sind im Bild nicht dargestellt (siehe OVE-
+Richtlinie R 6-2-2). 
+Bild 712.A.001.AT – PV-Generatorfeld – mehrere PV-Teilgeneratorfelder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 707/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 17 
+ 
+ANMERKUNG AT 
+Überspannungs-Schutzeinrichtungen (SPD) sind im Bild nicht dargestellt (siehe OVE-
+Richtlinie R 6-2-2). 
+Bild 712.A.002.AT – PV-Generatorfeld – mehrere PV-Teilgeneratorfelder an unabhängigen MPPT 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 708/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 18 
+Anhang 712.B 
+(normativ) 
+ 
+Berechnung von UOC MAX und ISC MAX 
+712.B.1 
+Berechnung von UOC MAX 
+UOC MAX ist die maximale Leerlaufspannung (offener Stromkreis) an einem PV-Modul oder PV-Strang oder  
+PV-Teilgeneratorfeld oder PV-Generatorfeld, berechnet nach der folgenden Gleichung: 
+ 
+UOC MAX = KU  ∙ UOC STC 
+(F 712.B.1) 
+Der Korrekturfaktor KU berücksichtigt den Anstieg der Leerlaufspannung von PV-Modulen, wobei Tmin als 
+niedrigste Umgebungstemperatur der PV-Anlage und αUOC als Temperaturvariationskoeffizient der vom 
+Hersteller des PV-Moduls vorgegebenen Spannung UOC angesehen wird: 
+ 
+KU = 1 + (
+αUOC
+100 ) ∙ (Tmin −25) 
+(F 712.B.2) 
+Dabei ist 
+αUoc 
+der Temperaturvariationskoeffizient der Uoc PV-Modulspannung, in Prozent pro Grad Celsius (%/°C); 
+Tmin  
+die niedrigste Umgebungstemperatur der PV-Anlage, in Grad Celsius (°C); 
+αUoc 
+ein negativer Faktor, der entweder in mV/°C oder in %/°C vom Hersteller des PV-Moduls angegeben 
+ 
+werden kann. Wenn αUoc in mV/°C zum Ausdruck gebracht ist, kann der Ausdruck in %/°C erfolgen 
+ 
+durch Verwenden der Gleichung: 
+ 
+αUOC (
+%
+°C) = 0,1 ∙ 
+αUOC (mV
+°C )
+UOC STC_Module(V) 
+(F 712.B.3) 
+ANMERKUNG 
+Modulbeispiel mit αUoc ausgedrückt in mV/°C. Die folgende Berechnung ist ein Beispiel: 
+– 
+multikristallines Modul, UOC STC _Module = 38,3 V und αUoc = –133 mV/°C 
+ 
+→ αUOC = 0,1 ∙ 
+(−133)
+38,3  = −0,35 
+%
+°C 
+– 
+Tmin = −15 °C → (Tmin −25) = −40 °C 
+ 
+KU = 1 + (
+–0,35
+100 ) ∙ (–40) = 1,14 
+ 
+UOC MAX = KU  × UOC STC = 1,14 ∙ 38,3 V = 43,7 V 
+ANMERKUNG AT 
+αUoc ist von der Technologie der PV-Module abhängig. 
+Insbesondere für amorphe Silizium-Module sind die elektrischen Kennwerte während der ersten 
+Betriebswochen höher als die spezifizierten Kennwerte. Dieses Verhalten gibt der Hersteller des PV-Moduls 
+an und ist bei der Berechnung von UOC MAX in Betracht zu ziehen. 
+Ohne Information über die zu erwartende minimale Umgebungstemperatur oder ohne Information über den 
+Temperaturkoeffizienten des PV-Moduls muss UOC MAX gleich wie 1,2 ∙ UOC STC gewählt werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 709/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 19 
+712.B.2 
+Berechnung von ISC MAX 
+Der 
+maximale 
+Kurzschlussstrom 
+eines 
+PV-Moduls 
+oder 
+eines 
+PV-Strangs 
+oder 
+eines  
+PV-Teilgeneratorfeldes oder eines PV-Generatorfelds wird nach der folgenden Gleichung berechnet: 
+ 
+ISC MAX = Kl ∙ ISC STC 
+(F 712.B.4) 
+Der Mindestwert für KI ist 1,25. 
+Ist eine erhöhte Einstrahlung, z. B. aufgrund von Reflexionen, Sonnenintensität gegenüber den Werten der 
+STC zu erwarten, ist der Korrekturfaktor KI dementsprechend direkt proportional zu erhöhen. 
+ 
+ 
+Anhang 712.C 
+(informativ) 
+ 
+Beispiele für die Installation von  
+Überspannungs-Schutzeinrichtungen (SPD) 
+Siehe dazu OVE-Richtlinie R 6-2-2. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 710/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-712 – Seite 20 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 711/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-713 – Seite 1 
+Teil 7-713  
+Möbel 
+713.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen für Möbel und für deren Anschlussleitung an die ortsfeste elektrische 
+Anlage mit einer Nennspannung U0 von höchstens AC 230 V und einem Bemessungsstrom von höchstens 
+32 A. 
+Beispiele dafür sind Betten, Schränke, Schreibtische und Shop-Vitrinen, in denen elektrische Betriebsmittel wie 
+z. B. Leuchten, Installationssteckverbinder, Steckdosen, Schaltgeräte sowie Kabel- und Leitungsanlagen 
+installiert sind. 
+Die Anforderungen dieses Teils gelten für alle Arten von Möbeln, unabhängig vom Anschluss an die ortsfeste 
+elektrische Anlage des Gebäudes, ausgenommen für folgende Möbel und Betriebsmittel: 
+– 
+Möbel, die zusammen mit ihrer elektrischen Anlage Gegenstand einer eigenen Produktbestimmung sind; 
+– 
+elektrische Betriebsmittel und Geräte, die speziell für den Einbau in Möbel gebaut sind oder für die es 
+eigene Betriebsmittel- und Gerätenormen gibt; 
+ 
+ANMERKUNG AT  
+Dazu zählen z. B. Radios, TV-Geräte, Kühlschränke, Labortische, die über Stecker und 
+Steckdosen mit der ortsfesten elektrischen Anlage verbunden werden. 
+– 
+Lifte und ähnliche Geräte (z. B. höhenverstellbare Tische) für in und am Möbel und Bestandteile davon, 
+(z. B. Schubladen) installierte elektrische Betriebsmittel bzw. Geräte (siehe OVE EN 60335 Reihe bzw. 
+IEC 60335-2-116). 
+Für die Installation von Leuchten in und am Möbel gelten ergänzend: 
+– 
+für Leuchten und Beleuchtungsanlagen siehe Abschnitt 559; 
+– 
+für Kleinspannungsbeleuchtungsanlagen siehe Teil 7-715. 
+713.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+713.3 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+713.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+713.41 
+Schutz gegen elektrischen Schlag 
+713.410 
+Einleitung 
+713.410.3 
+Allgemeine Anforderungen 
+Füge hinzu: 
+713.410.3.001.AT 
+Die installierten Geräte müssen so gebaut und umschlossen sein, dass ausreichender 
+Schutz gegen zufällige Berührung aktiver Teile besteht (siehe dazu OVE EN 60335-1). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 712/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-713 – Seite 2 
+713.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+713.414.1.2 
+Füge hinzu: 
+Konstruktionsbauteile von Möbeln oder ähnlichen Einrichtungsgegenständen dürfen Betriebsströme führen, 
+wenn die maximale Spannung AC 25 V oder DC 60 V nicht überschreitet und die zu übertragende Leistung auf 
+60 W begrenzt ist. 
+713.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+713.415.1 
+Zusätzlicher Schutz: Fehlerstrom-Schutzeinrichtungen (RCD) 
+713.415.1.1 
+713.415.1.002.AT 
+Füge hinzu: 
+Diese Anforderungen gelten auch für ortsfeste elektrische Betriebsmittel. 
+713.42 
+Schutz gegen thermische Einflüsse 
+713.421 
+Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+713.421.1 
+Allgemeine Anforderungen 
+713.421.1.001.AT 
+ 
+Personen, Nutztiere und Sachen sind vor Schädigungen oder Verletzungen durch Wärme oder Brand, die von 
+elektrischen Anlagen verursacht oder dadurch verbreitet werden können, zu schützen, in dem die 
+Anforderungen von Teil 4-42 und die Hinweise der Betriebsmittel-Hersteller berücksichtigt werden. 
+Die Wärme, die von elektrischen Betriebsmitteln erzeugt wird, darf keine Gefahr oder schädliche Auswirkungen 
+auf benachbartes festes Material oder auf Material, welches sich vorhersehbar in der Nähe dieser 
+Betriebsmittel befinden kann, hervorrufen. Elektrische Betriebsmittel dürfen keine Brandgefahr für 
+benachbartes Material darstellen. 
+713.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+713.52 
+Kabel- und Leitungsanlagen 
+Füge hinzu: 
+713.52.101 Kabel- und Leitungsanlagen für Möbel 
+Folgende Kabel und Leitungen dürfen für die Verbindung von Möbeln mit der ortsfesten elektrischen Anlage 
+verwendet werden: 
+– 
+bei Verbindung des Möbels mithilfe von Steckern und Steckdosen oder mit Installationssteckverbindern: 
+flexible Kabel und Leitungen gemäß ÖVE/ÖNORM EN 50525-2-21, ÖVE/ÖNORM EN 50525-2-71 bzw. 
+ÖVE/ÖNORM EN 50525-2-11 (normaler oder schwerer Ausführung) oder gleichwertige Kabel/Leitungen; 
+– 
+bei Möbeln, die verstellt (bewegt) werden können: flexible Kabel und Leitungen gemäß 
+ÖVE/ÖNORM EN 50525-2-21, 
+ÖVE/ÖNORM EN 50525-2-71, 
+ÖVE/ÖNORM EN 50525-2-11 
+oder 
+ÖVE/ÖNORM E 8242 oder gleichwertige Kabel/Leitungen; 
+– 
+bei Verbindung von nichtverstellbaren (nicht bewegten) Möbeln: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 713/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-713 – Seite 3 
+ 
+• 
+starre 
+Ader- 
+und 
+Verdrahtungsleitungen 
+mit 
+thermoplastischer 
+PVC-Isolierung 
+gemäß 
+ÖVE/ÖNORM EN 50525-2-31 bzw. PVC-isolierte Leitungen gemäß ÖVE/ÖNORM E 8242 in 
+normaler oder schwerer Ausführung oder eine gleichwertige Leitung; 
+ 
+• 
+flexible Kabel und Leitungen gemäß ÖVE/ÖNORM EN 50525-2-21, ÖVE/ÖNORM EN 50525-2-71, 
+ÖVE/ÖNORM EN 50525-2-11 oder ÖVE/ÖNORM E 8242 oder gleichwertige Kabel/Leitung. 
+Kabel und Leitungen müssen mindestens die Anforderungen gemäß der Normenreihe OVE EN  
+IEC 60332-1-2 erfüllen. 
+Kabel und Leitungen für elektrische Betriebsmittel und Geräte für Möbel müssen, ausgenommen bei fester 
+Verlegung, an den Anschlussstellen von Zug und Schub entlastet sein (siehe auch Abschnitt 526). 
+Kabel und Leitungen müssen in geeigneter Weise gegen Beschädigung geschützt und so verlegt sein, dass 
+sie nicht gequetscht und durch scharfe Kanten oder bewegliche Teile beschädigt werden können. 
+Kabel und Leitungen müssen sicher und mit geeigneten Befestigungsmitteln am Möbel befestigt oder in 
+Elektroinstallationsrohrsystemen, geschlossenen Elektroinstallationskanalsystemen, zu öffnenden Elektro-
+installationskanalsystemen, gelenkigen oder flexiblen Systemen für die Kabel-/Leitungsführung gemäß 
+ÖVE/ÖNORM EN 62549 oder in einer dafür beim Bau der Möbel vorgesehenen Aussparung verlegt werden. 
+ANMERKUNG AT 
+Bei eventueller Verwendung von Bestandteilen des Möbels (z. B. Führungsschienen) als 
+stromführende Teile für Leuchten gelten für diese Teile die Anforderungen gemäß OVE EN IEC 60598-1. 
+713.524 
+Querschnitte von Leitern 
+Füge hinzu: 
+713.524.001.AT Für die feste Verlegung von Leistungs- und Beleuchtungsstromkreisen in Möbeln gilt, 
+abweichend von Tabelle 52.2, als Mindestquerschnitt der Leiter 0,75 mm2, vorausgesetzt dass 
+– 
+sie keine Steckdosen speisen und 
+– 
+die Gesamtlänge der Leitung von ihrem Anschluss an die ortsfeste elektrische Anlage bis zum letzten 
+Betriebsmittel 10 m nicht überschreitet. 
+713.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+713.553.101 
+Auswahl und Installation elektrischer Betriebsmittel 
+Es dürfen nur geeignete Dosen und Gehäuse gemäß der Normenreihe ÖVE/ÖNORM EN 60670 verwendet 
+werden (z. B. Dosen und Gehäuse geeignet für Hohlwände). 
+Elektrische Installationsgeräte müssen in Dosen und Gehäuse gemäß OVE EN 60670-24 eingebaut und 
+dürfen nicht mit (Spreiz-)Krallen befestigt werden. 
+Installationsgeräte müssen so angebracht oder geschützt sein, dass die elektrische Gefährdung durch 
+eventuell verschüttete Flüssigkeit weitgehend verhindert wird. 
+Anschluss- und Verbindungsstellen (z. B. Steckdosen, Geräteanschlussdosen, Verbindungsdosen) müssen 
+ohne Schwierigkeiten zugänglich sein. 
+ANMERKUNG 1.AT 
+Als ohne Schwierigkeiten zugänglich gilt auch eine Anschlussstelle hinter einem Möbel, wenn 
+dieses von einer Person verstellt (bewegt) werden kann oder wenn die Anschlussstelle durch eine Öffnung in der Rückwand 
+zugänglich ist. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 714/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-713 – Seite 4 
+Beim Einbau oder beim Aufstellen von elektrischen Verbrauchsmitteln in oder an Möbeln sind die 
+Herstellerangaben zu beachten. 
+ANMERKUNG 2.AT 
+Um die Anforderungen von Teil 4-42 zu erfüllen, kann es erforderlich sein, eingebaute elektrische 
+Verbrauchsmittel automatisch auszuschalten (z. B. automatisches Ausschalten der Beleuchtung beim Schließen des 
+Klappbetts). 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 715/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-714 – Seite 1 
+Teil 7-714  
+Beleuchtungsanlagen im Freien 
+714.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl von Leuchten und die Errichtung von Beleuchtungsanlagen, die Teil einer 
+ortsfesten elektrischen Anlage im Freien sind. 
+Die Anforderungen gelten z. B. für Beleuchtungsanlagen für Straßen, Parks, Gärten, Plätze mit öffentlichem 
+Zugang, Sportplätze, Beleuchtung von Denkmälern, Flutlicht, Telefonzellen, Wartehäuschen, Werbeschilder, 
+Leuchtkästen (z. B. für Stadtpläne) und Verkehrszeichen. 
+Dieser Teil gilt nicht für: 
+– 
+öffentliche Beleuchtungsanlagen, die unmittelbar einen elektrischen Leiter des öffentlichen Verteilernetzes 
+mitbenutzen; 
+– 
+vorübergehende Festbeleuchtungen (z. B. Weihnachtsbeleuchtung, Girlanden, Partylichter); 
+– 
+Verkehrslichtsignalanlagen; 
+– 
+außen an einem Gebäude fest angebrachte Leuchten, die vom inneren Leitungssystem dieser baulichen 
+Anlage versorgt werden. 
+714.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+714.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+714.41 
+Schutz gegen elektrischen Schlag 
+714.410.3 
+Allgemeine Anforderungen 
+714.410.3.6 
+Füge hinzu: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung) und Schutz durch 
+erdfreien örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als 
+einem elektrischen Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+714.411 
+Schutzmaßnahme mit automatischer Abschaltung der Stromversorgung 
+714.411.3 
+Anforderungen an den Fehlerschutz 
+714.411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+714.411.3.1.2 Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Metallteile (z. B. Zäune, Gitter) müssen nicht in einen Potentialausgleich einbezogen werden, wenn diese kein 
+Körper (eines elektrischen Betriebsmittels) und nicht Teil der Beleuchtungsanlage im Freien sind. 
+714.411.3.3 
+Zusätzlicher Schutz (Zusatzschutz) 
+Die Anforderungen des Harmonisierungsdokuments an den zusätzlichen Schutz (Zusatzschutz) finden sich in 
+Österreich in 714.415.1.003.AT. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 716/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-714 – Seite 2 
+714.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+714.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+714.415.1.003.AT 
+Füge hinzu: 
+Stromkreise mit Leuchten in Einrichtungen in Telefonzellen, in Wartehäuschen, für Werbeschilder, für 
+Leuchtkästen (z. B. für Stadtpläne) und ähnliche Anlagen müssen durch eine Fehlerstrom-Schutzeinrichtung 
+(RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt werden. 
+714.41 
+Anhang 41.A Schutzvorkehrungen für den Basisschutz 
+Füge hinzu: 
+Gehäuse von Leuchten und Beleuchtungsanlagen müssen ein direktes Berühren aktiver Teile verhindern und 
+dürfen nur mit Werkzeug oder Schlüssel geöffnet werden können, es sei denn, sie befinden sich in einem 
+Raum, zu dem nur Elektrofachkräfte (BA5) oder elektrotechnisch unterwiesene Personen (BA4) Zutritt haben. 
+Türen, die den Zugang zu elektrischen Betriebsmitteln ermöglichen und die weniger als 2,5 m über der 
+Standfläche angebracht sind, dürfen nur mit einem Schlüssel oder Werkzeug zu öffnen sein. Zusätzlich muss, 
+wenn die Tür geöffnet ist, ein Schutz gegen direktes Berühren angewendet werden, entweder durch 
+Verwendung von elektrischen Betriebsmitteln, die durch Konstruktion oder durch die Errichtung mindestens 
+dem Schutzgrad IPXXB oder IP2X entsprechen, oder durch Anbringen einer Abdeckung oder Umhüllung, die 
+den gleichen Schutzgrad bietet. 
+Bei Leuchten in einer Höhe von weniger als 2,8 m über der Standfläche darf der Zugang zu der Lichtquelle nur 
+nach Entfernen einer Abdeckung oder Umhüllung mittels Werkzeug möglich sein. 
+714.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+714.51 
+Allgemeine Bestimmungen 
+714.512 
+Betriebsbedingungen und äußere Einflüsse 
+714.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Die Klassen für äußere Einflüsse hängen von den örtlichen Bedingungen ab. 
+Die nachfolgenden Klassen der äußeren Einflüsse sind Mindestanforderungen: 
+– 
+bei Auftreten von Wasser: AD3 (Sprühwasser; erfordert mindestens Schutzart IPX3); 
+– 
+bei Auftreten von festen Fremdkörpern: AE2 (kleine Gegenstände; erfordert mindestens Schutzart IP3X). 
+ANMERKUNG 1.AT 
+Die folgenden Klassen gemäß Anhang 51.ZA kommen typischerweise zur Anwendung: 
+– 
+Umgebungstemperatur: AA2 (von –40 °C bis +5 °C) und AA4 (von –5 °C bis +40 °C); 
+– 
+Atmosphärische Luftfeuchte: AB2 (von 10 % bis 100 %) und AB4 (von 5 % bis 95 %). 
+ANMERKUNG 2.AT 
+Mögliche äußere Einflüsse sind beispielsweise auch korrosive Substanzen, mechanische 
+Beanspruchung, Sonnenstrahlung. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 717/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-714 – Seite 3 
+714.512.2.101  
+Elektrische Betriebsmittel müssen durch Konstruktion oder Installation mindestens die Schutzart IP33 besitzen. 
+ANMERKUNG 1  
+Es kann in einigen Fällen aufgrund von Betriebs- oder Reinigungsbedingungen notwendig sein, 
+einen höheren Schutzgrad zu fordern. 
+ANMERKUNG 2  
+Konstruktions- und Sicherheitsanforderungen für Leuchten siehe Normenreihe OVE EN 60598. 
+714.537 
+Geräte zum Trennen und Schalten 
+714.537.2 
+Einrichtungen zum Trennen 
+Füge hinzu: 
+714.537.2.101  
+Jeder Stromkreis muss einzeln von den aktiven Leitern der Versorgungskabel/-leitung getrennt werden können, 
+außer wie in 461.2 angegeben. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 718/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-714 – Seite 4 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 719/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-715 – Seite 1 
+Teil 7-715  
+Kleinspannungsbeleuchtungsanlagen 
+715.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl und Errichtung von Kleinspannungsbeleuchtungsanlagen, die von einer 
+Stromquelle mit einer maximalen Bemessungsspannung von AC 50 V oder DC 120 V versorgt werden. 
+ANMERKUNG 1  
+Zur Definition von Kleinspannungsbeleuchtungssystemen siehe OVE EN IEC 60598-2-23. 
+ANMERKUNG 2  
+Angegebene Werte für Wechselspannungen sind Effektivwerte. 
+715.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+715.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+715.41 
+Schutz gegen elektrischen Schlag 
+715.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+Füge hinzu: 
+Für Kleinspannungsbeleuchtungsanlagen ist nur die Schutzmaßnahme Schutz durch Kleinspannung mittels 
+SELV zulässig. Wenn blanke Leiter verwendet werden, darf die Spannung gemäß 414.4.5, höchstens AC 25 V 
+oder DC 60 V betragen. 
+Für SELV- oder PELV-Systeme sollten vorzugsweise Betriebsmittel mit einer Bemessungsspannung bis 
+DC 45 V zum Einsatz kommen. 
+ANMERKUNG AT 
+Siehe OVE EN 61140:2016, 5.2.6 sowie 410.3.001.AT Anmerkung 1.AT. Der Wert von DC 45 V 
+ist jedoch aufgrund der Festlegungen in europäischen Produktstandards derzeit in der Praxis nicht immer umsetzbar. 
+Als Versorgung für die Kleinspannungsbeleuchtungsanlage kann verwendet werden: 
+– 
+ein Sicherheitstransformator gemäß ÖVE/ÖNORM EN 61558-2-6; 
+ 
+Parallelschaltung von Transformatoren auf der Sekundärseite ist nur zulässig, wenn sie auch auf der 
+Primärseite parallel geschaltet sind und die Transformatoren gleiche elektrische Eigenschaften besitzen. 
+– 
+ein elektronischer Konverter mit sicherer Trennung gemäß OVE EN IEC 61347-2-2 für Glühlampen oder 
+gemäß OVE EN 61347-2-13:2017, Anhang I, für LED-Module. 
+ 
+ANMERKUNG AT  
+OVE EN 61347-2-13:2017, Anhang I verweist dabei auf OVE EN 61347-1:2021, Anhang L 
+(Besondere zusätzliche Anforderungen an Betriebsgeräte, die SELV liefern). 
+ 
+Die Parallelschaltung von elektronischen Konvertern ist nicht zulässig. 
+715.42 
+Schutz gegen thermische Einflüsse 
+715.422.3 
+Räume oder Orte mit besonderem Brandrisiko aufgrund der hergestellten, bearbeiteten 
+oder gelagerten Materialien 
+Füge hinzu: 
+Die Montageanleitung des Herstellers muss bei der Installation eingehalten werden, besonders die Angaben, 
+die sich auf die Installation auf entflammbaren oder nicht entflammbaren Oberflächen beziehen. 
+Leuchten und ihr Zubehör müssen derart ausgewählt und angeordnet werden, dass eine schädigende 
+Erwärmung von Materialien und der Umgebung vermieden wird. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 720/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-715 – Seite 2 
+ANMERKUNG 
+Siehe auch Abschnitt 559. 
+715.422.106 
+Brandrisiko durch Transformatoren/Konverter 
+Transformatoren müssen entweder 
+– 
+auf der Primärseite durch Schutzeinrichtungen geschützt sein, wie in 715.422.107.2 gefordert, oder 
+– 
+es müssen kurzschlussfeste Transformatoren (bedingt oder unbedingt kurzschlussfest) verwendet 
+werden. Kennzeichnung siehe Anhang 559.A. 
+Elektronische Konverter für Glühlampen müssen OVE EN IEC 61347-2-2 und für LED-Module müssen 
+OVE EN 61347-2-13:2017, Anhang I entsprechen. 
+ 
+715.422.107 
+Brandrisiko durch Kurzschluss 
+715.422.107.1 
+Wenn beide Leiter blank sind, muss entweder 
+– 
+eine besondere Schutzeinrichtung in Übereinstimmung mit den Anforderungen gemäß 715.422.107.2 
+vorgesehen werden, oder 
+– 
+die Versorgung mittels eines Transformators oder eines Konverters erfolgen, dessen Leistung 200 VA 
+nicht übersteigt, oder 
+– 
+ein Kleinspannungsbeleuchtungssystem gemäß OVE EN IEC 60598-2-23 verwendet werden. 
+715.422.107.2 
+Die in 715.422.107.1 beschriebene besondere Schutzeinrichtung gegen das Risko eines 
+Brands muss folgende Anforderungen erfüllen: 
+– 
+dauernde Überwachung des Leistungsbedarfs der Leuchten; 
+– 
+automatische Abschaltung der Stromversorgung innerhalb von 0,3 s im Falle eines Kurzschlusses oder 
+eines Fehlers, der eine Leistungsanhebung von mehr als 60 W verursacht; 
+– 
+automatische Abschaltung, während der Versorgungsstromkreis mit verminderter Leistung in Betrieb ist 
+(z. B. bei Anschnittsteuerung oder Regelungen oder einem Fehler des Leuchtmittels), falls ein Fehler eine 
+Leistungs-anhebung von mehr als 60 W verursacht; 
+– 
+automatische Abschaltung beim Einschalten des Versorgungsstromkreises, falls ein Fehler eine 
+Leistungsanhebung von mehr als 60 W verursacht; 
+– 
+die besondere Schutzeinrichtung muss bei einem Defekt einen sicheren Zustand einnehmen (kein 
+Brandrisiko). 
+ANMERKUNG 
+Einschaltströme sind zu berücksichtigen. 
+715.43 
+Schutz bei Überstrom 
+Füge hinzu: 
+715.430.104 
+Schutz bei Überstrom in Kleinspannungsbeleuchtungsanlagen 
+Überstrom-Schutzeinrichtungen, die sich selbst zurücksetzen, sind nur für Sicherheitstransformatoren und 
+Netzgeräte gemäß ÖVE/ÖNORM EN 61558-2-6 bis 50 VA zulässig. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

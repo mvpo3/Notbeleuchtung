@@ -1,0 +1,2598 @@
+
+
+===== PAGE 401/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 55 
+538.4.2 
+Differenzstrom-Überwachungseinrichtungen (RCM) in IT-Systemen 
+Wenn in IT-Systemen die Unterbrechung der Versorgung im Falle eines ersten Fehlers gegen Erde nicht 
+notwendig oder nicht zulässig ist, darf eine Differenzstrom-Überwachungseinrichtung (RCM) installiert 
+werden, um das Auftreten eines ersten Fehlers von einem aktiven Teil zu Körpern oder zur Erde anzuzeigen 
+(siehe auch 411.6.3). 
+ANMERKUNG AT 
+Auf die Möglichkeit, richtungsselektive Differenzstrom-Überwachungseinrichtungen einzusetzen, 
+wird hingewiesen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 402/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 56 
+Anhang 531.A 
+(informativ) 
+ 
+Mögliche Fehlerströme in Systemen mit Halbleitern 
+In den Diagrammen von Bild 531.A.1 sind Stromkreisbeispiele mit Halbleiterschaltungen und daraus 
+resultierenden Fehlerstromformen dargestellt. 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslösecharakteristik 
+der Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+1 
+Phasenanschnittssteuerung
+ 
+ 
+AC, A, F, B 
+2 
+Paketsteuerung  
+(Burst-Steuerung)
+ 
+ 
+AC, A, F, B 
+3 
+Einphasig 
+ 
+ 
+A, F, B 
+4 
+Zweipuls-Brückenschaltung 
+ 
+ 
+ 
+A, F, B 
+5 
+Zweipuls-Brückenschaltung, 
+halbgesteuert 
+ 
+ 
+ 
+A, F, B 
+Bild 531.A.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (1 von 3) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 403/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 57 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslösecharakteristik 
+der Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+6 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung 
+ 
+ 
+ 
+F, B 
+7 
+Einphasig mit Glättung 
+ 
+ 
+B 
+8 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung und PFC 
+ 
+ 
+B 
+9 
+Zweipuls-Brückenschaltung 
+zwischen Außenleitern 
+ 
+ 
+B 
+10 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung zwischen 
+den Außenleitern 
+ 
+ 
+ 
+B 
+Bild 531.A.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (2 von 3) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 404/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 58 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslösecharakteristik 
+der Fehlerstrom-
+Schutzeinrichtung 
+11 
+Drehstrom-Sternschaltung 
+ 
+ 
+B 
+12 
+Sechspuls-Brückenschaltung 
+ 
+ 
+ 
+B 
+13 
+Frequenzinverter mit 
+Sechspuls-Brückenschaltung 
+ 
+ 
+ 
+B 
+ANMERKUNG 
+Diese Übersicht berücksichtigt nur Fehler auf der Lastseite der Halbleiterschaltung, d. h. in der 
+elektrischen Anlage. 
+Legende 
+IL 
+Laststrom 
+IF 
+Fehlerstrom 
+t 
+Zeit 
+Bild 531.A.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (3 von 3) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 405/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 59 
+Anhang 534.A 
+(informativ) 
+ 
+Beispielhafte Darstellung von Standardinstallationen von 
+Überspannungs-Schutzeinrichtungen 
+Zusammenfassende beispielhafte Darstellung von Standardinstallationen und Angabe der wichtigsten 
+Auswahlparameter von Überspannungsschutzgeräten in 230/400 V-Netzen für den Schutz gegen indirekte 
+Blitzeinwirkungen. 
+Die Anordnung der Zähleinrichtung kann je nach Netzbetreiber unterschiedlich sein. 
+ANMERKUNG AT 
+Überstrom-Schutzeinrichtungen können als ein- oder mehrpolige Geräte ausgeführt sein. 
+534.A.1 
+Verbraucheranlage mit Nullung und PEN-Leiter – Anschlussart 1 
+ 
+Legende 
+1 
+wahlweise Verbindung zu HES/PAS oder PEN-Schiene, je nachdem, wo der ankommende PEN-Leiter 
+angeschlossen ist und welche Verbindung kürzer ist 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation 
+zwischen 
+Außenleiter 
+und 
+PEN-Leiter/Neutralleiter, 
+Dauerspannung 
+Uc ≥ 253 V, 
+Schutzpegel 
+Up ≤ 2 500 V, Nennableitstoßstrom In ≥ 5 kA 
+3 
+kWh-Zähler; Anordnung nur beispielhaft 
+4 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) für den zusätzlichen Brandschutz 
+5 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise  
+u. dgl. 
+ 
+F1, F2 
+ 
+Sicherung 
+HES/PAS 
+Haupterdungs- bzw. Potentialausgleichsschiene 
+Bild 534.A.001.AT – Beispiel für eine Verbraucheranlage mit Nullung und mit PEN-Leiter 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 406/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 60 
+534.A.2 
+Verbraucheranlage mit Nullung und getrennt geführtem Schutzleiter – 
+Anschlussart 2 
+ 
+Legende 
+1 
+wahlweise Verbindung zu HES/PAS oder PE-Schiene, je nachdem, welche Verbindung kürzer ist 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation 
+zwischen Außenleiter und Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation 
+zwischen Neutralleiter und PE-Leiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom In ≥ 20 kA 
+4 
+kWh-Zähler; Anordnung nur beispielhaft 
+5 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) für den zusätzlichen Brandschutz 
+6 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise  
+u. dgl. 
+ 
+Serienschaltung von SPD mit Index 2 + 3 – Schutzpegel Up ≤ 2 500 V 
+F1, F2 
+ 
+Sicherung 
+HES/PAS 
+Haupterdungs- bzw. Potentialausgleichsschiene 
+Bild 534.A.002.AT – Beispiel für eine Verbraucheranlage mit Nullung  
+und mit getrennt geführtem Schutzleiter 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 407/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 61 
+534.A.3 
+Verbraucheranlage mit Fehlerstrom-Schutzschaltung – Anschlussart 2 
+ 
+Legende 
+1 
+wahlweise Verbindung zu HES/PAS oder PEN-Schiene, je nachdem, welche Verbindung kürzer ist 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für 
+die Installation zwischen Außenleiter und Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom 
+In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für 
+die Installation zwischen Neutralleiter und PE-Leiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom 
+In ≥ 20 kA 
+4 
+kWh-Zähler; Anordnung nur beispielhaft 
+5 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) als Fehlerschutzvorkehrung 
+6 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise  
+u. dgl. 
+ 
+Serienschaltung von SPD mit Index 2 + 3 – Schutzpegel Up ≤ 2 500 V 
+F1, F2 
+ 
+Sicherung 
+HES/PAS 
+Haupterdungs- bzw. Potentialausgleichsschiene 
+Bild 534.A.003.AT – Beispiel für eine Verbraucheranlage  
+mit Fehlerstrom-Schutzschaltung 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 408/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 62 
+534.A.4 
+Verbraucheranlage mit Isolations-Überwachungssystem – Anschlussart 1 
+ 
+Legende 
+1 
+wahlweise Verbindung zur HES/PAS oder PEN-Schiene, je nachdem, welche Verbindung kürzer ist 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für IT-Systeme für die Installation zwischen 
+Außenleiter und PE-Leiter, Dauerspannung Uc ≥ 400 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom 
+In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für IT-Systeme für die Installation zwischen 
+Neutralleiter und PE-Leiter, Dauerspannung Uc ≥ 230 V, Schutzpegel Up ≤ 2 500 V, Nennableitstoßstrom 
+In ≥ 5 kA 
+ 
+F1, F2 
+ 
+Sicherung 
+HES/PAS 
+Haupterdungs- bzw. Potentialausgleichsschiene 
+PE  
+ 
+Schutzleiter(schiene) 
+Bild 534.A.004.AT – Beispielhafte Darstellung für eine Verbraucheranlage mit  
+Isolations-Überwachungssystem 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 409/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 63 
+Anhang 534.B 
+(informativ) 
+ 
+Anlagen mit Freileitungseinspeisung 
+Wenn Gebäude über eine Freileitungseinspeisung versorgt werden und wenn der direkte Blitzeinschlag in 
+den letzten Mast der Freileitung nahe dem Gebäude berücksichtigt wird, müssen die Überspannungs-
+Schutzeinrichtungen (SPD), die so nahe wie möglich am Einführungspunkt der Speiseleitung in die bauliche 
+Anlage installiert werden, gemäß Tabelle 534.B.1 ausgewählt werden. 
+Weitere Informationen siehe ÖVE/ÖNORM EN 62305 Reihe. 
+Tabelle 534.B.1 – Auswahl des Blitzstoßstromes (Iimp) 
+Anschluss 
+Iimp 
+kA 
+Netzsystem 
+Einphasen-System 
+Dreiphasen-System 
+Anschlussart 1 
+Anschlussart 2 
+Anschlussart 1 
+Anschlussart 2 
+L – N 
+ 
+5 
+ 
+5 
+L – PE 
+5 
+ 
+5 
+ 
+N – PE 
+5 
+10 
+5 
+20 
+ANMERKUNG 
+Diese Tabelle gilt für die Blitzschutzklassen (LPL) III und IV. 
+ 
+ 
+Anhang 534.C 
+(informativ) 
+ 
+Gegenüberstellung der SPD-Typen und Prüfklassen  
+gemäß der Produktnorm ÖVE/ÖNORM EN 61643-11 
+Tabelle 534.C.1 – Typ 1, Typ 2 und Typ 3 Überspannungs-Schutzeinrichtungen (SPD) 
+und die dazugehörigen Prüfklassen I, II und III 
+SPD-Typen 
+Prüfklasse 
+Referenzparameter 
+Typ 1 
+Prüfklasse I 
+Iimp 
+Typ 2 
+Prüfklasse II 
+In 
+Typ 3 
+Prüfklasse III 
+Uoc 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 410/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 64 
+Anhang 537.A 
+(normativ) 
+ 
+Geräte zum Trennen und Schalten 
+Tabelle 537.A.1 – Geräte zum Trennen und Schalten (1 von 2) 
+Gerät 
+Norm 
+Geeignet für 
+Trennen 
+Betriebsmäßiges 
+Schalten und Steuern 
+Not- 
+Ausschaltung 
+Lasttrennschalter 
+OVE EN 60947-3 a 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 62626-1 a 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 60669-2-4 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 60669-2-6 
+Ja 
+Nein 
+Ja 
+Trennschalter 
+ÖVE/ÖNORM  
+EN 60669-2-4 b 
+OVE EN 60947-3 b 
+Ja 
+ 
+Ja 
+Nein 
+ 
+Nein 
+Nein 
+ 
+Nein 
+Schalter 
+ÖVE/ÖNORM  
+EN 60669-1 
+Nein 
+Ja 
+Nein 
+ÖVE/ÖNORM  
+EN 60669-2-1 
+Nein 
+Ja 
+Nein 
+ÖVE/ÖNORM  
+EN 60669-2-2 
+Nein 
+Ja 
+Nein 
+ÖVE/ÖNORM  
+EN 60669-2-3 
+Nein 
+Ja 
+Nein 
+OVE EN 60669-2-5 
+Nein 
+Ja 
+Nein 
+OVE EN 60947-3 c 
+Nein 
+Ja 
+Nein 
+OVE EN 60947-5-1 
+Nein 
+Ja 
+Nein 
+Schütze 
+ÖVE/ÖNORM  
+EN 60947-4-1 
+ÖVE/ÖNORM  
+EN 61095 
+Ja b 
+Ja 
+Ja b 
+Relais 
+ÖVE/ÖNORM  
+EN 61810 Reihe 
+Nein 
+Ja 
+Nein 
+Motorstarter 
+ÖVE/ÖNORM  
+EN 60947-4-1 
+Ja b 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 60947-4-2 
+Nein 
+Ja 
+Nein 
+ÖVE/ÖNORM  
+EN 60947-4-3 
+Nein 
+Ja 
+Nein 
+Leistungsschalter/ 
+Leitungsschutzschalter 
+ÖVE/ÖNORM  
+EN 60898-1 
+ÖVE/ÖNORM  
+EN 60898-2 
+OVE EN 60947-2 
+Ja 
+ 
+Ja 
+ 
+Ja b 
+Ja d 
+ 
+Ja d 
+ 
+Ja d 
+Ja 
+ 
+Ja 
+ 
+Ja b 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 411/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 65 
+Tabelle 537.A.1 – Geräte zum Trennen und Schalten (2 von 2) 
+Gerät 
+Norm 
+Geeignet für 
+Trennen 
+Betriebsmäßiges 
+Schalten und Steuern 
+Not- 
+Ausschaltung 
+Fehlerstromschutzschalter 
+OVE EN 60947-2 
+Ja b 
+Ja d 
+Ja b 
+OVE EN 61008-1 
+Ja 
+Ja d 
+Ja 
+OVE EN 61009-1 
+Ja 
+Ja d 
+Ja 
+ÖVE/ÖNORM  
+EN 62423 
+Ja 
+Ja d 
+Ja 
+Fehlerlichtbogen-
+Schutzeinrichtungen (AFDD) 
+ÖVE/ÖNORM  
+EN 62606 
+Ja 
+Nein 
+Ja 
+Stecker und Steckdosen 
+ÖVE/ÖNORM  
+EN 60309 Reihe 
+ÖVE/ÖNORM E 8684-1 
+IEC 60906 Series 
+ÖVE-IG/EN 50075 
+Ja 
+ 
+Ja 
+Ja 
+Ja 
+Ja e 
+ 
+Ja e 
+Ja e 
+Ja e 
+Nein 
+ 
+Nein 
+Nein 
+Nein 
+Vorrichtungen für den  
+Anschluss von Leuchten 
+OVE EN 61995 Reihe 
+Ja f 
+Nein 
+Nein 
+Netzumschalter 
+ÖVE/ÖNORM  
+EN 60947-6-1 
+Ja b 
+Ja 
+Ja b 
+Steuer- und Schutz- 
+Schaltgeräte (CPS) 
+ÖVE/ÖNORM  
+EN 60947-6-2 
+Ja b 
+Ja 
+Ja b 
+Sicherungen 
+ÖVE/ÖNORM  
+EN 60269 Reihe 
+Ja g 
+Nein 
+Nein 
+Schalter-Sicherungs-Einheiten 
+OVE EN 60947-3 
+Ja b 
+Ja a 
+Ja a, b 
+Reihenklemmen für Kupferleiter 
+ÖVE/ÖNORM  
+EN 60947-7-1 
+Ja 
+Nein 
+Nein 
+Steckverbinder h 
+ÖVE/ÖNORM  
+EN 61984 
+Ja i 
+Nein 
+Nein 
+Ja 
+ 
+Funktion bereitgestellt. 
+Nein  
+Funktion nicht bereitgestellt. 
+a 
+Wenn mit dem Symbol 
+ gekennzeichnet oder in Kombination mit anderen Symbolen gemäß OVE EN 60947-3 oder 
+ÖVE/ÖNORM EN 62626-1. 
+b 
+Funktion ist nur dann bereitgestellt, wenn das Gerät zum Trennen geeignet und mit dem Symbol für Trenneigenschaften 
+gekennzeichnet ist (siehe ÖVE/ÖNORM IEC 60417 DB-6169-1 
+). 
+c 
+Wenn mit dem Symbol 
+ gekennzeichnet oder in Kombination mit anderen Symbolen. 
+d 
+Das Gerät wird für häufiges betriebsmäßiges Schalten nicht empfohlen. 
+e 
+Nur AC-Stecker und -Steckdosen mit einem Bemessungsstrom von höchstens 16 A können zum betriebsmäßigen Schalten 
+verwendet werden. 
+f 
+Gerät ist zum lastlosen Trennen geeignet. 
+g 
+Wenn vom Hersteller angegeben. 
+h 
+Verbindungs- 
+oder 
+Verdrahtungsklemmen 
+können 
+entsprechend 
+den 
+Herstellerangaben/Konstruktionsangaben 
+Trenneigenschaften bereitstellen. 
+i 
+Nur Steckverbinder mit Ausschaltvermögen (CBC) sind zum Zusammenstecken und zum Ausstecken unter Spannung oder 
+Last konstruiert, siehe ÖVE/ÖNORM EN 61984:2010 Abschnitt 3.8. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 412/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-53 – Seite 66 
+Anhang 537.B 
+(informativ) 
+ 
+Feuerwehrschalter 
+Dieser informative Anhang wurde in Österreich nicht übernommen. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 413/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 1 
+Teil 5-54 Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+Inhalt 54 
+541.1 
+Anwendungsbereich 
+542 
+Erdungsanlagen 
+542.1 
+Allgemeine Anforderungen 
+542.2 
+Erder 
+542.3 
+Erdungsleiter 
+542.4 
+Haupterdungsschiene 
+543 
+Schutzleiter 
+543.1 
+Mindestquerschnitte 
+543.2 
+Arten der Ausführung von Schutzleitern 
+543.3 
+Elektrische Durchgängigkeit von Schutzleitern 
+543.4 
+PEN-, PEL- oder PEM-Leiter 
+543.5 
+Kombinierte Schutz- und Funktionserdungsleiter 
+543.6 
+Ströme in Schutzleitern 
+543.7 
+Verstärkte Schutzleiter für Schutzleiterströme größer 10 mA 
+543.8 
+Anordnung von Schutzleitern 
+544 
+Schutzpotentialausgleichsleiter 
+544.1 
+Schutzpotentialausgleichsleiter für die Verbindung mit der Haupterdungsschiene 
+544.2 
+Schutzpotentialausgleichsleiter für den zusätzlichen Schutzpotentialausgleich 
+Anhang 54.A (normativ)  Verfahren zur Berechnung des Faktors k in 543.1.2 (siehe auch IEC 60724 und 
+IEC 60949) 
+Anhang 54.B (informativ)  Beispielhafte Darstellung von Erdungsanlagen,  Schutzleitern und 
+Schutzpotentialausgleichsleitern 
+Anhang 54.C (informativ)  Errichten von in Beton gebetteten Erdern 
+Anhang 54.D (informativ)  Errichten von in Erde gebetteten Erdern 
+ 
+ 
+541.1 
+Anwendungsbereich 
+Dieser Teil gilt für Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter mit dem Ziel, die 
+Sicherheit elektrischer Anlagen zu gewährleisten. 
+ANMERKUNG 1.AT 
+Anforderungen an die Fundamenterdung siehe OVE E 8014. 
+ANMERKUNG 2.AT 
+Die in diesem Teil verwendeten Begriffe Erdungsanlagen, Schutzleiter und Schutzpotential-
+ausgleichsleiter sind im Anhang 54.B grafisch dargestellt. 
+542 Erdungsanlagen 
+542.1 
+Allgemeine Anforderungen 
+542.1.1 Erdungsanlagen dürfen für Schutz- und Funktionszwecke, entsprechend den Anforderungen der 
+elektrischen Anlage, gemeinsam oder getrennt verwendet werden. Die Festlegungen für Schutzzwecke 
+müssen immer Vorrang haben. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 414/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 2 
+542.1.2 Wenn in der elektrischen Anlage ein Erder vorhanden ist, muss dieser durch einen Erdungsleiter 
+mit der Haupterdungsschiene verbunden werden. 
+542.1.3 Wenn die Einspeisung der elektrischen Anlage aus einem Hochspannungsnetz erfolgt, müssen für 
+den Fall eines Fehlers zwischen der Hochspannungsanlage und Erde Schutzmaßnahmen gemäß 
+Abschnitt 442 und ÖVE/ÖNORM EN 50522 vorgesehen werden. 
+542.1.001.AT 
+Werden Einrichtungen der Informationstechnik/Telekommunikationstechnik mit geschirmten 
+Verkabelungssystemen installiert, gelten ergänzend die Anforderungen gemäß OVE EN 50310 bzw. die 
+Anforderungen gemäß OVE E 8014:2019 Abschnitt 7. Bei ungeschirmten Verkabelungssystemen können 
+diese Anforderungen sinngemäß angewendet werden. 
+542.1.4 Die beschriebenen Anforderungen an Erdungsanlagen dienen dazu, eine Verbindung zur Erde 
+herzustellen, 
+– 
+die für die Schutzanforderungen der elektrischen Anlage geeignet und zuverlässig ist, 
+– 
+die Erdfehlerströme und Schutzleiterströme zur Erde führen kann, ohne dass eine Gefahr durch 
+thermische, thermomechanische oder elektromechanische Beanspruchungen und durch einen 
+elektrischen Schlag, hervorgerufen durch diese Ströme, entsteht, 
+– 
+die gegenüber möglichen äußeren Einflüssen widerstandsfähig oder mechanisch geschützt und 
+entsprechend widerstandsfähig gegen Korrosion ist (siehe Teil 5-51), 
+– 
+die, wenn erforderlich, auch für Funktionsanforderungen geeignet ist. 
+542.1.5 Besonders betrachtet werden müssen Erdungsanlagen, in denen Ströme mit hohen Frequenzen 
+erwartet werden (siehe Abschnitt 444). 
+542.1.6 Durch eine vorhersehbare Änderung des Erdungswiderstandes (zB aufgrund von Korrosion, Frost) 
+dürfen die Maßnahmen für den Schutz gegen elektrischen Schlag, wie in Teil 4-41 gefordert, nicht ungünstig 
+beeinflusst werden. 
+542.1.001.AT 
+Verwenden von Gas- und Wasserleitungen als Erder, Erdungsleitung oder 
+Schutzerdungsleiter 
+541.1.001.1.AT Unabhängig von den Anforderungen hinsichtlich des Hauptpotentialausgleiches gemäß 
+544.1 dürfen Gas- und Wasserleitungen nicht als Schutzerdungsleiter, Erdungsleiter, Schutzpotential-
+ausgleichsleiter 
+oder 
+Erder 
+verwendet 
+werden. 
+Ihre 
+natürliche 
+Wirksamkeit 
+(Erderwirksamkeit, 
+Stromtragfähigkeit bei Parallelschaltung) darf bei der Dimensionierung der elektrischen Anlage nicht 
+berücksichtigt werden. 
+541.1.001.2.AT In bestehenden Verbraucheranlagen ist bei wesentlichen Erweiterungen oder wesentlichen 
+Änderungen darauf zu achten, dass die Wirksamkeit des Fehlerschutzes ohne Benutzen des 
+Wasserrohrnetzes und der Wasserverbrauchsleitungen als Erder und Schutzerdungsleiter sichergestellt ist. 
+541.1.001.3.AT Bei Gleichstromanlagen ist ÖVE/ÖNORM EN 50162 zu beachten. 
+542.2 
+Erder 
+542.2.1 Ausführungen, Werkstoffe und Abmessungen der Erder müssen so ausgewählt werden, dass sie 
+über die zu erwartende Lebenszeit Korrosion widerstehen und eine angemessene mechanische Festigkeit 
+besitzen. 
+ANMERKUNG 1  
+Zur Vermeidung von Korrosion sollten folgende Eigenschaften betrachtet werden: der pH-Wert 
+des Erdreichs, Widerstand und Feuchtigkeit des Erdreichs, Streuströme und Ableitströme (AC und DC), chemische 
+Belastung des Bodens und die örtliche Nähe von unterschiedlichen Materialien. 
+Für Erder, die in Erde oder Beton verlegt werden, müssen die gebräuchlichen Werkstoffe und die minimalen 
+Abmessungen unter Berücksichtigung von Korrosion und mechanischer Festigkeit der Tabelle 54.1 
+entsprechen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 415/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 3 
+ANMERKUNG 2  
+Aufgrund der größeren mechanischen Beanspruchung während der Errichtung ist die 
+Mindestdicke der Beschichtung/Umhüllung bei senkrechter Verlegung des Erders größer als bei waagrechter Verlegung. 
+Wenn ein Blitzschutzsystem (LPS) gefordert ist, gelten die Anforderungen gemäß ÖVE/ÖNORM 
+EN 62305-3:2012 Abschnitt 5.4 und, wenn zutreffend, ÖVE/ÖNORM EN 62305-4. 
+Soweit Erder nur dem Schutzpotentialausgleich dienen, muss der Mindestquerschnitt von feuerverzinktem 
+oder kupferplattiertem Stahl 16 mm2 und der von Kupfer 10 mm2 betragen. 
+Tabelle 54.1 – Mindestmaße für gebräuchliche Erder, eingebettet in Erde oder in Beton, unter 
+Berücksichtigung von Korrosion und mechanischer Festigkeit (1 von 2) 
+Werkstoff und  
+Oberfläche 
+Form 
+Mindestmaße 
+Durch-
+messer 
+Quer-
+schnitt 
+Dicke 
+Gewicht der 
+Schutzschicht 
+Dicke der 
+Beschichtung/ 
+Umhüllung 
+mm 
+mm2 
+mm 
+g/m2 
+m 
+Stahl im Beton verlegt 
+(blank, feuerverzinkt oder 
+nichtrostend) 
+massives Rundmaterial 
+10 
+ 
+ 
+ 
+ 
+Bandstahl oder 
+Flachmaterial 
+ 
+75 
+3 
+ 
+ 
+Stahl feuerverzinkt c 
+Bandstahl b oder 
+Stahlplatte 
+ 
+90 
+3 
+500 
+63 
+Rundstange senkrecht 
+errichtet 
+16 
+ 
+ 
+350 
+45 
+massives Rundmaterial 
+waagrecht errichtet 
+10 
+ 
+ 
+350 
+45 
+Rohr 
+25 
+ 
+2 
+350 
+45 
+Seil (in Beton verlegt) 
+ 
+70 
+ 
+ 
+ 
+Kreuzprofil senkrecht 
+errichtet 
+ 
+(290) 
+3 
+ 
+ 
+Stahl mit 
+Kupferumhüllung 
+Rundstange senkrecht 
+errichtet 
+(15) 
+ 
+ 
+ 
+2 000 
+Stahl elektrolytisch 
+verkupfert 
+Rundstange senkrecht 
+errichtet 
+14 
+– 
+– 
+ 
+250 e 
+massives Rundmaterial 
+waagrecht errichtet 
+(8) 
+ 
+ 
+ 
+70 
+Bandstahl waagrecht 
+errichtet 
+ 
+90 
+3 
+ 
+70 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 416/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 4 
+Tabelle 54.1 – Mindestmaße für gebräuchliche Erder, eingebettet in Erde oder in Beton, unter 
+Berücksichtigung von Korrosion und mechanischer Festigkeit (2 von 2) 
+Werkstoff und  
+Oberfläche 
+Form 
+Mindestmaße 
+Durch-
+messer 
+Quer-
+schnitt 
+Dicke 
+Gewicht der 
+Schutzschicht 
+Dicke der 
+Beschichtung/ 
+Umhüllung 
+mm 
+mm2 
+mm 
+g/m2 
+m 
+Nichtrostender Stahl a 
+Bandstahl b oder 
+Stahlplatte 
+ 
+90 
+3 
+ 
+ 
+Rundstange senkrecht 
+errichtet 
+16 
+ 
+ 
+ 
+ 
+massives Rundmaterial 
+waagercht errichtet 
+10 
+ 
+ 
+ 
+ 
+Rohr 
+25 
+ 
+2 
+ 
+ 
+Kupfer 
+Kupferband 
+ 
+50 
+2 
+ 
+ 
+massives Rundmaterial 
+waagrecht errichtet 
+ 
+(25) d  
+50 
+ 
+ 
+ 
+massive Rundstange 
+senkrecht errichtet 
+(12) 15 
+ 
+ 
+ 
+ 
+Seil 
+1,7 (jeder 
+einzelne 
+Draht) 
+(25) d  
+50 
+ 
+ 
+ 
+Rohr 
+20 
+ 
+2 
+ 
+ 
+Massive Platte 
+ 
+ 
+(1,5)  
+2 
+ 
+ 
+Gitter 
+ 
+ 
+2 
+ 
+ 
+ANMERKUNG 
+Werte in Klammern gelten nur für den Schutz gegen elektrischen Schlag. Werte ohne Klammern gelten sowohl 
+für den Blitzschutz als auch für den Schutz gegen elektrischen Schlag. 
+ANMERKUNG AT  
+Eine Übersicht aller Erder, deren Werkstoff und Form sowie deren mechanische und elektrische 
+Kennwerte siehe in OVE EN 62561-2. 
+a 
+Chrom ≥ 16 %, Nickel ≥ 5 %, Molybdän ≥ 2 %, Kohlenstoff ≤ 0,08 %. 
+b 
+Als aufgerollter Bandstahl oder Spaltbänder mit abgerundeten Kanten. 
+c 
+Die Beschichtung muss glatt, gleichmäßig und frei von Flussmittelschmutz sein. 
+d 
+Wenn aufgrund von Erfahrungen bekannt ist, dass das Risiko der Korrosion und mechanischen Beschädigung extrem gering 
+ist, kann 16 mm2 verwendet werden. 
+e 
+Die Schichtdicke ist vorgesehen als Widerstand gegen mechanische Beschädigung der elektrolytisch aufgetragenen 
+Kupferschicht während der Errichtung. Sie darf reduziert werden, doch nicht kleiner als 100 μm, wenn besondere 
+Vorkehrungen zur Verhinderung mechanischer Beschädigungen des Kupfers bei der Errichtung vorgesehen werden (zB 
+vorgebohrte Löcher oder spezielle Schlagspitzen) entsprechend den Herstellerangaben. 
+ 
+542.2.2 Die Wirksamkeit eines jeden Erders ist abhängig von den örtlichen Bodenverhältnissen. Es müssen 
+ein oder mehrere Erder entsprechend den Bodenverhältnissen und dem für die jeweilige Anwendung 
+geforderten Wert des Erdungswiderstandes ausgewählt werden. 
+ANMERKUNG AT 
+Werte für den Erdungswiderstand können zB in Teil 4-41 für Schutzmaßnahmen bzw. 
+ÖVE/ÖNORM EN 62305 Reihe für Blitzschutzsysteme gefordert sein. 
+Anhang 54.D Unterabschnitt 54D.2 enthält Informationen zur Bewertung des Erdungswiderstandes. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 417/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 5 
+542.2.3 Im Folgenden sind Beispiele von Erdern genannt, die verwendet werden dürfen: 
+a) 
+Fundamenterder, in Beton gebettet gemäß OVE E 8014; 
+b) 
+Fundamenterder, in Erde gebettet gemäß OVE E 8014; 
+c) 
+vertikal oder horizontal in Erde verlegte metallene Elektroden (zB Rundstäbe, Drähte, Bänder, Rohre 
+oder Platten); 
+ 
+ANMERKUNG 1.AT 
+Hierfür werden auch die Begriffe Vertikal- oder Horizontalerder verwendet. 
+d) 
+Metallmäntel und andere Metallumhüllungen von Kabeln, entsprechend den örtlichen Gegebenheiten 
+oder Anforderungen; 
+e) 
+andere geeignete unterirdische Konstruktionsteile aus Metall (zB Rohre) und natürliche Erder, 
+entsprechend den örtlichen Gegebenheiten oder Anforderungen; 
+ 
+ANMERKUNG 2.AT 
+Natürliche Erder gemäß OVE E 8101 sind mit der Erde oder mit Wasser unmittelbar oder 
+über Beton in Verbindung stehende Metallteile, deren ursprünglicher Zweck nicht die Erdung ist, die aber als Erder 
+wirken. Dazu gehören zB Rohrleitungen, Spundwände, Betonbewehrungen (vorzugsweise durchverbundener 
+Bewehrungsstahl), Stahlteile von Gebäuden usw. Der Werkstoff und dessen Maße sind unter Berücksichtigung des 
+Korrosionsverhaltens der zu schützenden baulichen Anlage auszuwählen. 
+f) 
+einbetonierter verschweißter Bewehrungsstahl in Erde (ausgenommen Spannbeton). 
+ 
+ANMERKUNG 3.AT 
+Anforderungen für die Verwendung von Gas- und Wasserleitungen siehe 542.1.001.AT. 
+Bei neuen Gebäuden, in denen eine elektrische Anlage errichtet werden soll, ist ein Fundamenterder gemäß 
+a) oder b) zu errichten. 
+Bei bestehenden Gebäuden gelten 
+– 
+bei Errichtung einer neuen elektrischen Anlage; bzw. 
+– 
+bei wesentlichen Änderungen/wesentlichen Erweiterungen an einer elektrischen Anlage 
+die Anforderungen gemäß Abschnitt 542 und, wenn zutreffend, die Anforderungen gemäß OVE EN 50310 
+sowie sinngemäß die Anforderungen gemäß OVE E 8014:2019 Abschnitt 7. 
+542.2.4 Bei der Auswahl von Erdern und ihrer Verlegetiefe müssen die örtlichen Gegebenheiten, die 
+Bodenbeschaffenheit, der zulässige Ausbreitungswiderstand und die Möglichkeiten einer mechanischen 
+Beschädigung berücksichtigt werden, um die Auswirkungen von Bodenaustrocknung und Frost so gering wie 
+möglich zu halten. 
+542.2.001.AT 
+Der Erder muss in guter Verbindung mit dem umgebenden Erdreich stehen (erdfühlig). 
+Gut leitende Erdschichten sind zu bevorzugen. In trockenen Erdschichten sind die Erder in nicht-bindigem 
+Erdreich einzuschlämmen; bindiges Erdreich ist sorgfältig zu stampfen. 
+Steine und grober Kies unmittelbar am Erder vergrößern den Ausbreitungswiderstand. Es empfiehlt sich in 
+diesen Fällen, die Erder mit bindigem Erdreich zu umgeben. 
+542.2.002.AT 
+Horizontalerder müssen frostfrei verlegt werden, sofern die Bodenverhältnisse dies 
+erlauben. Bei Strahlenerdern soll der Winkel zwischen benachbarten Strahlen 60º nicht unterschreiten, da 
+kleinere Winkel wegen der gegenseitigen Beeinflussung eine Vergrößerung des Ausbreitungswiderstandes 
+verursachen. 
+ANMERKUNG AT 
+Frostfrei bedeutet in Österreich im Allgemeinen eine Verlegetiefe von mindestens 0,8 m. Siehe 
+dazu auch Anhang 54.D.1. 
+542.2.003.AT 
+Vertikalerder sollen möglichst lotrecht in die Erde eingetrieben werden. Sie können 
+besonders dann von Vorteil sein, wenn in der Tiefe der spezifische Erdwiderstand abnimmt. Sind mehrere 
+Vertikalerder notwendig, um den gewünschten Ausbreitungswiderstand zu erreichen, so ist ein gegenseitiger 
+Abstand von mindestens der wirksamen Länge eines einzelnen Erders anzustreben. 
+ANMERKUNG AT 
+Bei hohem spezifischen Erdwiderstand der oberen Bodenschichten sind Vertikalerder nicht in 
+ihrer ganzen Länge wirksam. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 418/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 6 
+542.2.5 Bei 
+Verwendung 
+unterschiedlicher 
+Werkstoffe 
+in 
+einer 
+Erdungsanlage 
+muss 
+deren 
+elektrochemische Korrosion berücksichtigt werden. Ein Verbindungsleiter zum Fundamenterder (zB 
+Erdungsleiter) aus feuerverzinktem Stahl darf nicht in Erde verlegt werden. 
+ANMERKUNG AT 
+Hinweise zum Zusammenschluss metallischer Werkstoffe in Hinblick auf Korrosion siehe 
+OVE E 8014. 
+542.2.6 Metallrohre für brennbare Flüssigkeiten oder Gase dürfen nicht für die Dimensionierung der 
+Erdungsanlage herangezogen werden. 
+ANMERKUNG 
+Diese Anforderung schließt das Einbeziehen solcher Rohre in den Schutzpotentialausgleich nach 
+Teil 4-41 über die Haupterdungsschiene nicht aus. 
+ANMERKUNG AT 
+Siehe auch 542.1.001.AT. 
+Wenn Kathodenschutz (kathodischer Korrosionsschutz) angewendet wird und der Körper (eines elektrischen 
+Betriebsmittels), der durch ein TT-System versorgt wird, direkt mit einem Metallrohr verbunden ist, darf für 
+dieses besondere Betriebsmittel das Metallrohr für brennbare Flüssigkeiten oder Gase als alleiniger Erder 
+verwendet werden. 
+ANMERKUNG AT 
+Siehe dazu auch Korrosion nach OVE E 8014. 
+542.2.7 Erder dürfen nicht direkt im Wasser eines Baches, Flusses, Teiches, Sees oder Ähnlichem verlegt 
+werden (siehe auch 542.1.6). 
+542.2.8 Wenn ein Erder aus Teilen besteht, die miteinander verbunden werden müssen, muss die 
+zuverlässig elektrisch leitende Verbindung durch Schweißen, Pressverbinder, Klemm- oder durch andere 
+geeignete mechanische Verbinder hergestellt werden. 
+ANMERKUNG 
+Verbindungen nur mit verdrillten Drähten sind für Schutzzwecke ungeeignet. 
+Als zuverlässig elektrisch leitende Verbindungen gelten galvanisch einwandfreie Klemm-, Schweiß- oder 
+Schraubverbindungen. 
+Wird die Verbindung mit nur einer Schraube ausgeführt, so ist mindestens Gewinde M 10 zu verwenden. Das 
+Leitungs-, Klemm- und Befestigungsmaterial muss OVE EN 62561-1 und OVE EN 62561-2 entsprechen. 
+Schweißverbindungen an Bewehrungsstählen oder Teilen des Gebäudes aus Stahl dürfen nur im 
+Einvernehmen mit dem Ersteller des Stahlbetons hergestellt werden. 
+ANMERKUNG AT 
+Anforderungen und Prüfungen für metallene Verbindungsbauteile, die ein Teil eines Blitzschutz-
+systems (LPS) sind, siehe OVE EN 62561-1. 
+542.2.004.AT 
+Natürliche Erder dürfen verwendet werden, wenn sichergestellt ist, dass ein Ausbau oder 
+ein Austausch von Teilen derselben gegen nichtleitende Teile nicht vorgenommen oder rechtzeitig zur 
+Kenntnis des für die Erdungsanlage Verantwortlichen gebracht wird, und wenn sie außerdem in sich gut 
+leitend verbunden sind. Diese Verbindung kann zB durch Messung des Ausbreitungswiderstandes 
+nachgewiesen werden. 
+Die Metallmäntel von Kabeln, die nicht mit Kunststoff isoliert und unmittelbar im Erdreich verlegt sind, dürfen 
+als Erder herangezogen werden, wenn die Verbindungen in den Muffen mindestens leitwertgleich zum 
+Metallmantel sind. 
+542.3 
+Erdungsleiter 
+542.3.1 Erdungsleiter müssen den Anforderungen gemäß 543.1.1 oder 543.1.2 entsprechen. Der 
+Querschnitt darf nicht kleiner als 16 mm2 Kupfer oder 50 mm2 Stahl sein, wobei eine Begrenzung auf 25 mm2 
+Kupfer oder auf den kupferäquivalenten Querschnitt der Erdungsanlage zulässig ist. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 419/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 7 
+ANMERKUNG AT 
+Die 
+geforderten 
+Mindestquerschnitte 
+berücksichtigen 
+die 
+Anforderungen 
+von 
+ÖVE/ÖNORM EN 62305 Reihe. 
+Wenn ein blanker Erdungsleiter in Erde verlegt ist, müssen seine Abmessungen und Eigenschaften auch den 
+Werten der Tabelle 54.1 entsprechen. 
+Leiter aus Aluminium dürfen nicht als Erdungsleiter verwendet werden. 
+542.3.2 Der Anschluss eines Erdungsleiters an einen Erder muss fest und elektrisch zuverlässig ausgeführt 
+werden. Die Verbindung muss durch Schweißen, Pressverbinder, Klemm- oder andere mechanische 
+Verbinder hergestellt werden. Mechanische Verbinder müssen in Übereinstimmung mit den Hersteller-
+angaben errichtet werden. Wenn ein Klemmverbinder verwendet wird, darf er den Erder oder den 
+Erdungsleiter nicht beschädigen. 
+Verbindungseinrichtungen oder Anschlüsse, die lediglich weich gelötet sind, dürfen nicht als alleinige 
+Verbindung verwendet werden, da sie keine ausreichend zuverlässige mechanische Festigkeit aufweisen. 
+ANMERKUNG 
+Bei senkrecht errichteten Erdern können Maßnahmen vorgesehen werden, die eine Besichtigung des 
+Anschlusses und den Austausch der senkrechten Stange ermöglichen. 
+ANMERKUNG AT 
+Beispiele für Verbindung eines Erdungsleiters mit einem Erder siehe Bild 54.001.AT. 
+542.3.001.AT 
+Erdungsleiter und deren Verbindungen müssen gegen zu erwartende mechanische und 
+chemische Beanspruchungen geschützt sein. 
+ 
+Bild 54.001a.AT – Erdungsleiter über die Anschlussfahne des Erders mit dem Erder verbunden 
+ 
+Bild 54.001b.AT – Erdungsleiter direkt mit dem Erder verbunden 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 420/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 8 
+ 
+Bild 54.001c.AT – Haupterdungsschiene über die Anschlussfahne des Erders  
+mit dem Erder verbunden 
+Legende 
+1 
+Erdungsleiter (bei Eintritt in Beton oder Erde isoliert) 
+2 
+Anschlusspunkt der Erdungsanlage 
+3 
+Anschlussfahne des Erders (falls vorhanden) 
+4 
+Erder 
+5 
+Beton oder Erdreich 
+6 
+Haupterdungsschiene 
+Bild 54.001.AT – Abgrenzung Erder – Erdungsleiter 
+542.4 
+Haupterdungsschiene 
+542.4.1 In jeder Anlage, in der ein Schutzpotentialausgleich gemäß 411.3.1.2 ausgeführt ist, muss eine 
+Haupterdungsschiene vorgesehen sein, mit der folgende Leiter verbunden sein müssen: 
+– 
+Schutzpotentialausgleichsleiter, 
+– 
+Erdungsleiter, 
+– 
+Schutzleiter, 
+– 
+Funktionserdungsleiter, falls erforderlich. 
+ANMERKUNG 1  
+Es ist nicht notwendig, jeden einzelnen Schutzleiter direkt mit der Haupterdungsschiene zu 
+verbinden, wenn sie über andere Schutzleiter mit dieser Haupterdungsschiene verbunden sind. 
+ANMERKUNG 2  
+Die Haupterdungsschiene des Gebäudes kann grundsätzlich für Funktionserdungszwecke 
+verwendet werden. Für Zwecke der Informationstechnik ist sie in diesem Fall der Verbindungspunkt zur 
+Potentialausgleichsanlage. 
+Wenn mehrere Erdungsschienen (-klemmen) vorhanden sind, müssen diese miteinander verbunden werden. 
+542.4.2 Alle an der Haupterdungsschiene bzw. an weiteren Erdungsschienen angeschlossenen Leiter 
+müssen zuordenbar und einzeln trennbar sein. Diese Verbindungen müssen zuverlässig ausgeführt und 
+dürfen nur mittels Werkzeug lösbar sein; sie müssen ausreichende mechanische Festigkeit haben und eine 
+dauerhafte elektrische Verbindung sicherstellen. 
+ANMERKUNG 
+Die Leiter sollten so an der Haupterdungsschiene bzw. den weiteren Erdungsschienen angeschlossen 
+werden, dass ein Auftrennen der Verbindungen möglich ist, um den Ausbreitungswiderstand der Erdungsanlage zu 
+messen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 421/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 9 
+543 Schutzleiter 
+543.1 
+Mindestquerschnitte 
+543.1.1 Der gewählte Querschnitt von jedem Schutzleiter muss ausreichen, um den mechanischen und 
+thermischen Beanspruchungen zu widerstehen, die durch Fehlerströme in der zu erwartenden Zeitdauer 
+auftreten können. 
+Wenn der Fehlerschutz durch automatische Abschaltung gemäß 411.3.2 erfolgt, muss der Querschnitt des 
+Schutzleiters 
+– 
+durch Berechnung gemäß 543.1.2 bestimmt werden, 
+– 
+oder gemäß Tabelle 54.2 ausgewählt werden. Bei Schutzleitern von Körpern von Stromversorgungen 
+(zB Generator oder Transformator) ist ein Querschnitt von der Hälfte eines aktiven Leiters nicht immer 
+ausreichend. In solchen besonderen Fällen muss sichergestellt sein, dass die Anforderungen des ersten 
+Absatzes erfüllt sind. 
+In anderen Fällen müssen die Anforderungen gemäß 543.1.3 erfüllt werden. 
+In TT-Systemen, in denen die Erder der Stromversorgung und die der Körper (eines elektrischen 
+Betriebsmittels) elektrisch unabhängig sind (siehe 312.2.2), darf der Leiterquerschnitt der Schutzleiter 
+begrenzt werden auf 
+– 
+25 mm2 Cu, 
+– 
+35 mm2 Al. 
+Tabelle 54.2 – Mindestquerschnitte von Schutzleitern 
+Querschnitt des 
+Außenleiters S 
+mm2 
+Mindestquerschnitt des zugehörigen Schutzleiters 
+ 
+mm2 
+ 
+Schutzleiter besteht aus demselben 
+Werkstoff wie der Außenleiter 
+Schutzleiter besteht nicht aus demselben 
+Werkstoff wie der Außenleiter 
+S  16 
+S 
+k1
+k2
+ ∙ S 
+16  S  35 
+16  a 
+k1
+k2
+ ∙ 16 
+S  35 
+S
+2  
+a
+ 
+k1
+k2
+ ∙ S
+2 
+Dabei ist 
+k1 
+der Wert k für den Außenleiter, ermittelt mit Hilfe der Formel im Anhang 54.A oder ausgewählt nach den 
+Tabellen von Teil 4-43 entsprechend dem Werkstoff des Leiters und der Isolierung; 
+k2 
+der Wert k für den Schutzleiter, ausgewählt nach den Tabellen 54.A.2 bis 54.A.6, je nachdem, welche Tabelle 
+anwendbar ist. 
+a 
+Für einen PEN-Leiter ist die Reduzierung des Querschnittes nur in Übereinstimmung mit den Bemessungs-
+regeln für Neutralleiter erlaubt (siehe Teil 5-52). 
+In Österreich ist es zulässig, Standardkabel mit einem Querschnitt von 150/70 mm2 und von 400/185 mm2 ohne 
+Berechnung zu verwenden. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 422/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 10 
+543.1.2 Die Querschnitte von Schutzleitern dürfen nicht kleiner sein als der Wert, ermittelt 
+– 
+entweder gemäß IEC 60949, oder 
+– 
+mit folgender Formel, die nur für Ausschaltzeiten bis 5 s anwendbar ist: 
+ 
+S
+ 
+  = 
+√I2 ∙ t
+k
+ 
+(F 54.1) 
+Dabei ist 
+S 
+der Schutzleiterquerschnitt, in mm2; 
+I 
+der Effektivwert des zu erwartenden Fehlerstromes, der bei einem Fehler mit vernachlässigbarer 
+Impedanz durch die Schutzeinrichtung fließen kann (siehe OVE EN 60909-0); 
+t 
+die Ansprechzeit der Schutzeinrichtung für die automatische Abschaltung der Stromversorgung; in s; 
+ 
+ANMERKUNG 1 
+Es sollten die strombegrenzende Wirkung der Stromkreisimpedanzen und die Begrenzung von 
+I2t der Schutzeinrichtung berücksichtigt werden. 
+k 
+der Faktor, der vom Werkstoff des Schutzleiters, von der Isolierung und anderen Teilen sowie von der 
+Anfangs- und Endtemperatur des Leiters abhängig ist (für die Berechnung des Faktors k siehe  
+Anhang 54.A). 
+Wenn die Anwendung der Formel keinen Standardquerschnitt ergibt, muss ein Leiter mit dem 
+nächstgrößeren Standardquerschnitt verwendet werden. 
+ANMERKUNG 2  
+In Bezug auf die Begrenzung der Temperaturen in Anlagen mit explosionsgefährdeten 
+Bereichen siehe ÖVE/ÖNORM EN 60079-0. 
+ANMERKUNG 3  
+Für den Fall, dass die metallenen Umhüllungen von mineralisolierten Kabeln nach 
+ÖVE/ÖNORM EN 60702-1 eine Kapazität gegen Erde besitzen, die größer ist als die der Außenleiter, ist die Berechnung 
+der Querschnitte der Umhüllungen nicht gefordert, wenn diese als Schutzleiter benutzt werden. 
+543.1.3 Der Querschnitt eines jeden Schutzleiters, der nicht Bestandteil eines Kabels oder einer Leitung ist 
+oder der sich nicht in gemeinsamer Umhüllung mit dem Außenleiter befindet, darf nicht kleiner sein als: 
+– 
+2,5 mm2 Cu oder 16 mm2 Al, wenn Schutz gegen mechanische Beschädigung vorgesehen ist, 
+– 
+4 mm2 Cu oder 16 mm2 Al, wenn Schutz gegen mechanische Beschädigung nicht vorgesehen ist, 
+– 
+50 mm2 Stahl (Rundstahl mindestens 8 mm Durchmesser und Bandstahl mit mindestens 3 mm Dicke). 
+Ein Schutzleiter, der nicht Teil eines Kabels/einer Leitung ist, wird als mechanisch geschützt angesehen, 
+wenn er in einem Installationsrohr, in einem Kabelkanal oder in vergleichbarer Weise geschützt verlegt ist. 
+543.1.4 Wenn ein Schutzleiter gemeinsam für zwei oder mehr Stromkreise verwendet wird, muss sein 
+Querschnitt wie folgt ermittelt werden: 
+– 
+durch Berechnung in Übereinstimmung mit 543.1.2 für die in diesen Stromkreisen ungünstigste 
+Bedingung von Fehlerstrom und Ausschaltzeit, oder 
+– 
+ausgewählt gemäß Tabelle 54.2 entsprechend dem größten Außenleiterquerschnitt dieser Stromkreise. 
+543.2 
+Arten der Ausführung von Schutzleitern 
+543.2.1 Schutzleiter dürfen sein: 
+– 
+Leiter in mehradrigen Kabeln oder Leitungen, 
+– 
+isolierte oder blanke Leiter in gemeinsamer Umhüllung mit aktiven Leitern, 
+– 
+fest verlegte blanke oder isolierte Leiter, 
+– 
+metallene Kabelmäntel, Kabelschirme, Kabelbewehrungen, konzentrische Leiter, metallene Elektro-
+installationsrohre nach den in 543.2.2.a) und b) aufgeführten Bedingungen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 423/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 11 
+ANMERKUNG 
+Bezüglich ihrer Anordnung siehe 543.8. 
+543.2.2 Wenn die Anlage metallene Gehäuse von Niederspannungs-Schaltgerätekombinationen gemäß 
+ÖVE/ÖNORM EN 61439-1, ÖVE/ÖNORM EN 61439-2 oder ÖVE/ÖNORM EN 61439-6 enthält, dürfen ihre 
+Gehäuse oder Konstruktionsteile aus Metall als Schutzleiter verwendet werden, vorausgesetzt, sie erfüllen 
+gleichzeitig die drei folgenden Anforderungen: 
+a) 
+ihre elektrisch durchgehende Verbindung muss durch die Konstruktion oder durch geeignete 
+Verbindungen in der Art sichergestellt sein, dass der Schutz gegen eine Verschlechterung dieser 
+Verbindung infolge mechanischer, chemischer oder elektrochemischer Einflüsse sichergestellt ist, 
+b) 
+sie entsprechen den Anforderungen gemäß 543.1, 
+c) 
+an jeder dafür vorgesehenen Anschlussstelle müssen andere Schutzleiter angeschlossen werden 
+können. 
+543.2.3 Folgende Metallteile dürfen nicht als Schutzleiter oder Schutzpotentialausgleichsleiter verwendet 
+werden: 
+– 
+Wasserleitungen aus Metall; 
+– 
+Metallrohre, die brennbare Stoffe wie Gase, Flüssigkeiten, Pulver oder Ähnliches enthalten; 
+ 
+ANMERKUNG 1 
+ 
+Für Kathodenschutz siehe 542.2.6. 
+– 
+Konstruktionsteile, die im normalen Betrieb besonderen mechanischen Beanspruchungen oder 
+besonderer Abnützung ausgesetzt sind; 
+– 
+flexible oder biegsame Elektroinstallationsrohre aus Metall, es sei denn, sie sind für diesen Zweck 
+hergestellt; 
+– 
+flexible Metallteile; 
+– 
+Tragseile; 
+– 
+Kabeltragsysteme wie zB Kabelwannen, Kabelpritschen. 
+ANMERKUNG 2  
+Beispiele von Schutzleitern sind Schutzpotentialausgleichsleiter, Schutzerdungsleiter und ein 
+Erdungsleiter, wenn dieser zum Schutz gegen elektrischen Schlag verwendet wird. 
+ANMERKUNG AT 
+Leitfähige Teile, bei denen nicht sichergestellt ist, dass sie über die Nutzungsdauer der 
+elektrischen Anlage verfügbar sind, sind im Allgemeinen für die Verwendung als Schutzpotentialausgleichsleiter nicht 
+geeignet. 
+543.3 
+Elektrische Durchgängigkeit von Schutzleitern 
+543.3.1 Schutzleiter müssen in geeigneter Weise gegen mechanische Beschädigung, chemische oder 
+elektrochemische Zerstörung sowie elektrodynamische Kräfte und thermodynamische Effekte geschützt 
+werden. 
+Jede Verbindung (zB Schraub-, Klemmverbindung) zwischen Schutzleitern oder zwischen einem Schutzleiter 
+und anderen elektrischen Betriebsmitteln muss eine dauerhafte elektrische Durchgängigkeit und einen 
+hinreichenden mechanischen Schutz und Festigkeit aufweisen. Schrauben, die für den Anschluss des 
+Schutzleiters vorgesehen sind, dürfen nicht für andere Zwecke verwendet werden. 
+Aus Gründen des aktiven und passiven Korrosionsschutzes ist es zulässig, Schutzleiter über besondere 
+Geräte mit hohem Gleichstrom- und niedrigem Wechselstrom-Widerstand (zB Polarisationszellen, 
+antiparallele Dioden) zu verbinden, wenn dies aus Gründen des Korrosionsschutzes erforderlich ist. Solche 
+Geräte sind für die höchsten zu erwartenden Fehlerstöme und ggfs. Stoßströme und Blitzteilströme zu 
+bemessen. 
+Wenn betriebsbedingt erforderlich, darf der Schutzleiter auch über Schleifringe geführt werden, jedoch dürfen 
+die Schleifkontakte erst nach Unterbrechung der übrigen Stromabnehmer austauschbar sein. 
+Verbindungen dürfen nicht durch Löten hergestellt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 424/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 12 
+ANMERKUNG 
+Alle elektrischen Verbindungen sollten eine ausreichende thermische Belastbarkeit und mechanische 
+Festigkeit aufweisen, um jeder Kombination des Strom/Zeit-Verhältnisses, die im Leiter des Kabels/in einem Kabelkanal 
+mit größtem Querschnitt auftreten kann, standhalten zu können. 
+543.3.2 Verbindungen von Schutzleitern müssen für das Besichtigen und Prüfen zugänglich sein, 
+ausgenommen 
+– 
+vergossene Verbindungen, 
+– 
+gekapselte Verbindungen, 
+– 
+Verbindungen in metallenen Elektroinstallationsrohren, Kabelkanälen und Schienenverteilern, 
+– 
+Verbindungen, die Teil eines Betriebsmittels sind, in Übereinstimmung mit den Betriebsmittelnormen, 
+– 
+Verbindungen, die durch Schweißen oder Hartlöten hergestellt wurden, 
+– 
+Verbindungen mittels Presswerkzeug. 
+543.3.3 Schaltgeräte dürfen in den Schutzleiter nicht eingefügt werden, jedoch dürfen Verbindungen 
+vorgesehen werden, die für Prüfzwecke mit Werkzeug gelöst werden können. 
+543.3.4 Wenn 
+eine 
+elektrische 
+Überwachung 
+der 
+Erdung 
+verwendet 
+wird, 
+dürfen 
+die 
+Überwachungseinrichtungen (zB Sensoren, Spulen, Stromwandler) in den Schutzleiter nicht eingefügt 
+werden. 
+543.3.5 Körper (von elektrischen Betriebsmitteln) dürfen als Teil eines Schutzleiters für andere 
+Betriebsmittel nicht verwendet werden, ausgenommen wie in 543.2.2 zulässig. 
+543.3.001.AT 
+Klemmverbindungen und Anschlüsse von Schutzerdungsleitern, die nicht Bestandteil eines 
+elektrischen Betriebsmittels sind, müssen gegen Lockern gesichert sein. 
+ANMERKUNG AT 
+Federscheiben, Sprengringe, Zahnscheiben und dergleichen werden als geeignet zur Sicherung 
+gegen Lockern angesehen. Beilagscheiben werden als ungeeignet angesehen, da sie keine Federwirkung aufweisen. Für 
+Klemmen entsprechend den Betriebsmittelbestimmungen (zB ÖVE/ÖNORM EN 60998 Reihe, ÖVE/ÖNORM EN 60999 
+Reihe, ÖVE/ÖNORM EN 60335 Reihe, ÖVE/ÖNORM EN 60598 Reihe) gilt diese Anforderung als erfüllt, wenn diese mit 
+dem vorgegebenen Drehmoment angezogen sind. 
+543.4 
+PEN-, PEL- oder PEM-Leiter 
+ANMERKUNG 
+Da diese Leiter zwei Funktionen übernehmen, und zwar als Schutzleiter und entweder als  
+Neutralleiter (N), Außenleiter (L) oder Mittelleiter (M), sind alle anwendbaren Anforderungen für die entsprechenden 
+Funktionen zu berücksichtigen. 
+543.4.1 PEN-, PEL- oder PEM-Leiter dürfen nur in fest installierten elektrischen Anlagen verwendet werden 
+und müssen aus mechanischen Gründen einen Leiterquerschnitt von mindestens 10 mm2 Cu oder 16 mm2 Al 
+besitzen. 
+Ein PEN-Leiter ist nur in Verteilungsnetzen und in Verbraucheranlagen bis zum Anschlusspunkt der 
+Nullungsverbindung zulässig. 
+ANMERKUNG 1  
+Siehe auch Abschnitt 444. 
+ANMERKUNG 2  
+Nach ÖVE/ÖNORM EN 60079-14 ist die Verwendung von PEN-, PEL- oder PEM-Leitern in 
+explosiver Atmosphäre nicht zulässig. 
+543.4.2 Der PEN-, PEL- oder PEM-Leiter muss für die Bemessungsspannung des Außenleiters isoliert sein. 
+Metallene Umhüllungen von Kabeln und Leitungen dürfen nicht als PEN-, PEL- oder PEM-Leiter verwendet 
+werden, mit Ausnahme von Schienenverteilern gemäß ÖVE/ÖNORM EN 61439-2 und Stromschienen-
+systemen gemäß ÖVE/ÖNORM EN 61534-1. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 425/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 13 
+543.4.3 Wenn ab einem beliebigen Punkt der Anlage in Neutral-, Mittelpunkt-, Außenleiter und Schutzleiter 
+aufgeteilt wird, ist es nicht zulässig, den Neutral-, Mittelpunkt-, Außenleiter mit irgendeinem anderen 
+geerdeten Teil der Anlage zu verbinden. Es ist jedoch zulässig, mehr als einen Neutral-, Mittelpunkt-, 
+Außenleiter und mehr als einen Schutzleiter vom PEN-, PEL- oder PEM-Leiter abzuzweigen. 
+Der PEN-, PEL- oder PEM-Leiter muss mit der Schiene oder Klemme verbunden werden, die für den 
+Schutzleiter vorgesehen ist, es sei denn, es gibt eine bestimmte Schiene oder Klemme, die für die 
+Verbindung des PEN-, PEL- oder PEM-Leiters vorgesehen ist (Beispiele siehe Bild 54.1b bzw. 
+Bild 41.004.AT). 
+ 
+Bild 54.1b – Beispiel für den PEN-Anschluss 
+ANMERKUNG AT 
+Die Bilder 54.1a und 54.1c von HD 60364-5-54 sind in Österreich nicht gebräuchlich und wurden 
+nicht übernommen. 
+ANMERKUNG 
+Systeme mit einer DC-SELV-Stromversorgung, zB Telekommunikationssysteme, enthalten keinen PEL- 
+oder PEM-Leiter. 
+543.4.4 Fremde leitfähige Teile dürfen als PEN-, PEM- oder PEL-Leiter nicht verwendet werden. 
+543.4.001.AT 
+In Freileitungsnetzen mit blanken Leitern darf der PEN-Leiter nicht oberhalb der 
+Außenleiter verlegt werden. 
+Dies gilt nicht für: 
+– 
+die Erweiterung bestehender Freileitungsnetze mit oben liegendem PEN-Leiter und 
+– 
+die Freigabe bestehender Netze mit oben liegendem Neutralleiter für die Anwendung der 
+Schutzmaßnahme Nullung. 
+543.5 
+Kombinierte Schutz- und Funktionserdungsleiter 
+Wenn ein gemeinsamer Schutzerdungs- und Funktionserdungsleiter verwendet wird, muss dieser die 
+Anforderungen für einen Schutzleiter erfüllen. Zusätzlich muss er auch die entsprechenden Anforderungen 
+für Funktionszwecke erfüllen (siehe Abschnitt 444). 
+Ein Gleichstrom-Rückleiter (PEL- oder PEM-Leiter) für eine informationstechnische Stromversorgung darf 
+ebenfalls als kombinierter Schutzerdungs- und Funktionserdungsleiter verwendet werden. 
+ANMERKUNG 
+Für weitere Informationen siehe OVE EN 61140:2016 Abschnitt 7.6.4.1. 
+543.6 
+Ströme in Schutzleitern 
+Der Schutzleiter darf im fehlerfreien Betrieb nicht als leitfähiger Pfad für Betriebsströme verwendet werden 
+(zB durch Verbindungen von Filtern aus EMV-Gründen), siehe auch OVE EN 61140. Wenn der Strom unter 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 426/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 14 
+normalen Betriebsbedingungen größer 10 mA ist, muss ein verstärkter Schutzleiter verwendet werden  
+(siehe 543.7). 
+ANMERKUNG 
+Kapazitive Ableitströme, zB bei Kabel/Leitungen oder Motoren, sollten durch konstruktive Maßnahmen 
+in der Anlage und den Betriebsmitteln reduziert werden. 
+543.7 
+Verstärkte Schutzleiter für Schutzleiterströme größer 10 mA 
+Für elektrische Verbrauchsmittel, die fest angeschlossen sind und deren Schutzleiterstrom größer 10 mA ist, 
+gilt Folgendes: 
+– 
+Wenn das elektrische Verbrauchsmittel über nur eine einzige entsprechende Schutzleiter-
+anschlussklemme verfügt, muss der angeschlossene Schutzleiter einen Querschnitt von mindestens 
+10 mm2 Cu oder 16 mm2 Al in seinem gesamten Verlauf aufweisen. 
+ 
+ANMERKUNG 1 
+ 
+Ein PEN-, PEL- oder PEM-Leiter in Übereinstimmung mit 543.4 erfüllt diese Anforderung. 
+– 
+Wenn das elektrische Verbrauchsmittel über eine separate Anschlussklemme für einen zweiten 
+Schutzleiter verfügt, muss ein zweiter Schutzleiter mit mindestens demselben Querschnitt, wie er für den 
+Fehlerschutz gefordert wird, bis zu dem Punkt verlegt werden, an dem der Schutzleiter mindestens einen 
+Querschnitt von 10 mm2 Cu oder 16 mm2 Al hat. 
+ANMERKUNG 2  
+In TN-C-Systemen, in denen die Neutral- und die Schutzleiter in einem einzigen Leiter (PEN-
+Leiter) bis zu den Anschlussstellen der elektrischen Betriebsmittel enthalten sind, darf der Schutzleiterstrom als 
+Betriebsstrom behandelt werden. 
+ANMERKUNG 3  
+Elektrische Verbrauchsmittel mit hohem Schutzleiterstrom im normalen Betrieb können in 
+Anlagen mit Fehlerstrom-Schutzeinrichtungen (RCD) Probleme verursachen. 
+543.8 
+Anordnung von Schutzleitern 
+Wenn Überstrom-Schutzeinrichtungen für den Schutz gegen elektrischen Schlag verwendet werden, muss 
+der Schutzleiter in demselben Kabel bzw. in derselben Leitung integriert sein wie die aktiven Leiter oder in 
+unmittelbarer Nähe zu diesen verlegt sein. 
+544 Schutzpotentialausgleichsleiter 
+544.1 
+Schutzpotentialausgleichsleiter für die Verbindung mit der Haupterdungsschiene 
+Der Schutzpotentialausgleichsleiter, der für die Verbindung mit der Haupterdungsschiene vorgesehen ist, 
+muss einen Querschnitt haben, der nicht kleiner ist als der halbe Querschnitt des größten Schutzleiters der 
+Anlage und darf nicht kleiner sein als: 
+– 
+10 mm2 Kupfer, oder 
+– 
+25 mm2 Aluminium, oder 
+– 
+50 mm2 Stahl. 
+ANMERKUNG 1.AT 
+Größter PE-Leiter der Anlage ist 
+– 
+der vom Hauptverteiler der Anlage abgehende Schutzleiter mit dem größten Querschnitt, oder 
+– 
+wenn kein Hauptverteiler vorhanden ist, der Schutzleiter der Hauptleitung. 
+Bei zentraler Zähleranordnung gilt dieser als Hauptverteiler. 
+ANMERKUNG 2.AT 
+Wenn die Anforderungen von ÖVE/ÖNORM EN 62305 Reihe zur Anwendung kommen, sind 
+andere Mindestquerschnitte (zB von 16 mm2 Cu) zu berücksichtigen. 
+Der Querschnitt von Schutzpotentialausgleichsleitern für die Verbindung mit der Haupterdungsschiene 
+braucht nicht größer als 25 mm2 Cu oder als vergleichbare Querschnitte anderer Materialien zu sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 427/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 15 
+544.2 
+Schutzpotentialausgleichsleiter für den zusätzlichen Schutzpotentialausgleich 
+544.2.1 Ein Schutzpotentialausgleichsleiter, der zwei Körper elektrischer Betriebsmittel verbindet, muss 
+eine Leitfähigkeit besitzen, die nicht kleiner ist als die des kleineren Schutzleiters, der an die Körper 
+angeschlossen ist (siehe Bild 54.002.AT). 
+ 
+Legende 
+M1, M2 
+ 
+Körper (eines elektrischen Betriebsmittel) 
+SPE1, SPE2 
+Querschnitte der Schutzleiter 
+Sb  
+ 
+Querschnitt des Schutzpotentialausgleichsleiters für den zusätzlichen  
+ 
+ 
+ 
+ 
+ 
+Schutzpotentialausgleich 
+Bild 54.002.AT – Schutzpotentialausgleichsleiter zwischen zwei Körpern  
+elektrischer Betriebsmittel 
+544.2.2 Ein Schutzpotentialausgleichsleiter, der Körper elektrischer Betriebsmittel mit fremden leitfähigen 
+Teilen verbindet, muss eine Leitfähigkeit besitzen, die mindestens halb so groß ist wie die des Querschnitts 
+des entsprechenden Schutzleiters (siehe Bild 54.003.AT). 
+ 
+Legende 
+M 
+ 
+Körper (eines elektrischen Betriebsmittels) 
+SPE  
+Querschnitt des Schutzleiters 
+Sb 
+ 
+Querschnitt des Schutzpotentialausgleichsleiters für den zusätzlichen Schutzpotentialausgleich 
+a 
+ 
+Ausführung mit mindestens: 
+ 
+ 
+– 
+2,5 mm2 Cu, wenn der Leiter mechanisch geschützt ist, 
+ 
+ 
+– 
+4 mm2 Cu, wenn der Leiter mechanisch ungeschützt ist. 
+Bild 54.003.AT – Schutzpotentialausgleichsleiter zwischen einem Körper  
+(eines elektrischen Betriebsmittels) (M) und einem Konstruktionsteil aus Metall 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 428/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 16 
+544.2.3 Der Mindestquerschnitt von Schutzpotentialausgleichleitern für den zusätzlichen Schutz-
+potentialausgleich und von Potentialausgleichsleitern zwischen zwei fremden leitfähigen Teilen muss den 
+Anforderungen von 543.1.3 entsprechen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 429/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 17 
+Anhang 54.A 
+(normativ) 
+ 
+Verfahren zur Berechnung des Faktors k in 543.1.2 
+(siehe auch IEC 60724 und IEC 60949) 
+Der Faktor k ist mit folgender Formel zu berechnen: 
+ 
+k
+ 
+  = √
+QC ∙ ( β +20 °C)
+ρ20
+ ∙ ln (
+β + θf
+β + θi ) 
+(F 54.A.1) 
+Dabei ist 
+Qc  
+die volumetrische Wärmekapazität des Leiterwerkstoffes bei 20 °C, in J/(°C mm3); 
+ß 
+ 
+der Reziprokwert des Temperaturkoeffizienten des spezifische Erdwiderstandes bei 0 °C für den 
+ 
+Leiter, in °C; 
+ρ20  
+der spezifischer elektrischer Widerstand des Leiterwerkstoffes bei 20 °C, in Ω ∙ mm; 
+Ɵi 
+ 
+die Anfangstemperatur des Leiters, in °C; 
+Ɵf  
+die Endtemperatur des Leiters, in °C. 
+Tabelle 54.A.1 – Werte der Parameter für verschiedene Leiterwerkstoffe 
+Material 
+a 
+Qc   
+a 
+20   
+a 
+√
+QC ∙ (β + 20)
+ρ20
+  
+ 
+°C
+J/°C mm3 
+Ω ∙ mm
+A√s
+mm2 
+Kupfer 
+Aluminium 
+Stahl 
+234,5 
+228 
+202 
+3,45  10–3 
+2,5  10–3 
+3,8  10–3 
+17,241  10–6 
+28,264  10–6 
+138  10–6 
+226 
+148 
+78 
+a 
+Werte sind von IEC 60949 abgeleitet. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 430/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 18 
+Tabelle 54.A.2 – Werte von k für isolierte Schutzleiter, die nicht Bestandteil  
+von Kabeln und Leitungen sind und nicht mit anderen Kabeln und Leitungen gebündelt sind 
+Leiterisolierung 
+Temperatur 
+°C b 
+Leiterwerkstoff 
+Kupfer 
+Aluminium 
+Stahl 
+Anfang 
+Ende 
+Werte für k c 
+70 °C Thermoplast 
+(PVC) 
+30 
+160/140 a 
+143/133 a 
+95/88 a 
+52/49 a 
+90 °C Thermoplast 
+(PVC) 
+30 
+160/140 a 
+143/133 a 
+95/88 a 
+52/49 a 
+90 °C Duroplast  
+(zB XLPE und EPR) 
+30 
+250 
+176 
+116 
+64 
+60 °C Duroplast  
+(EPR Kautschuk) 
+30 
+200 
+159 
+105 
+58 
+85 °C Duroplast  
+(zB EPR Kautschuk) 
+30 
+220 
+166 
+110 
+60 
+185 °C Duroplast 
+(Silikon-Kautschuk) 
+30 
+350 
+201 
+133 
+73 
+a 
+Der niedrigere Wert gilt für thermoplastisch-isolierte Leiter (zB PVC) mit Querschnitten größer 300 mm2. 
+b 
+Temperaturgrenzwerte für verschiedene Arten der Isolierung enthält IEC 60724. 
+c 
+Für die Berechnung von k siehe Gleichung am Anfang dieses Anhangs. 
+ 
+Tabelle 54.A.3 – Werte von k für blanke Schutzleiter in Berührung mit Umhüllungen  
+von Kabeln und Leitungen, jedoch ohne Bündelung mit anderen Kabeln und Leitungen 
+Kabel-/Leitungsumhüllung 
+Temperatur 
+°C a 
+Leiterwerkstoff 
+Kupfer 
+Aluminium 
+Stahl 
+Anfang 
+Ende 
+Wert für k b 
+Thermoplast (PVC) 
+Polyethylen 
+CSP c 
+30 
+30 
+30 
+200 
+150 
+220 
+159 
+138 
+166 
+105 
+91 
+110 
+58 
+50 
+60 
+a 
+Temperaturgrenzwerte für verschiedene Arten der Isolierung enthält IEC 60724. 
+b 
+Für die Berechnung von k siehe Gleichung am Anfang dieses Anhangs. 
+c 
+Ölbeständiger Kautschuk (CSP = Chloro-Sulphonated Polyethylene). 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 431/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 19 
+Tabelle 54.A.4 – Werte von k für Schutzleiter, die als Ader innerhalb von  
+Kabeln und Leitungen enthalten sind oder die in gemeinsamer Bündelung  
+mit anderen Kabeln und Leitungen oder mit Aderleitungen verlegt sind 
+Leiterisolierung 
+Temperatur 
+°C b 
+Leiterwerkstoff 
+Kupfer 
+Aluminium 
+Stahl 
+Anfang 
+Ende 
+Werte für k c 
+70 °C Thermoplast 
+(PVC) 
+30 
+160/140 a 
+115/103 a 
+76/68 a 
+42/37 a 
+90 °C Thermoplast 
+(PVC) 
+90 
+160/140 a 
+100/86 a 
+66/57 a 
+36/31 a 
+90 °C Duroplast (zB 
+XLPE und EPR) 
+90 
+250 
+143 
+94 
+52 
+60 °C Duroplast (EPR 
+Kautschuk) 
+60 
+200 
+141 
+93 
+51 
+85 °C Duroplast (zB 
+EPR Kautschuk) 
+85 
+220 
+134 
+89 
+48 
+185 °C Duroplast 
+(Silikon-Kautschuk) 
+180 
+350 
+132 
+87 
+47 
+a 
+Der niedrigere Wert gilt für thermoplastisch-isolierte Leiter (zB PVC) mit Querschnitten größer 300 mm2. 
+b 
+Temperaturgrenzwerte für verschiedene Arten der Isolierung enthält IEC 60724. 
+c 
+Für die Berechnung von k siehe Gleichung am Anfang dieses Anhangs. 
+ 
+Tabelle 54.A.5 – Werte von k für Schutzleiter als metallene Umhüllung  
+von Kabeln und Leitungen, zB als Bewehrung, Metallmantel, konzentrischer Leiter 
+Leiterisolierung 
+Temperatur 
+°C a 
+Leiterwerkstoff 
+Kupfer 
+Aluminium 
+Stahl 
+Anfang 
+Ende 
+Werte für k c 
+70 °C Thermoplast 
+(PVC) 
+60 
+200 
+141 
+93 
+51 
+90 °C Thermoplast 
+(PVC) 
+80 
+200 
+128 
+85 
+46 
+90 °C Duroplast  
+(zB XLPE und EPR) 
+80 
+200 
+128 
+85 
+46 
+60 °C Duroplast  
+(EPR Kautschuk) 
+55 
+200 
+144 
+95 
+52 
+85 °C Duroplast  
+(zB EPR Kautschuk) 
+75 
+220 
+140 
+93 
+51 
+Mineral Thermoplast 
+(PVC-umhüllt) b 
+70 
+200 
+135 
+– 
+– 
+mineralisoliert 
+105 
+250 
+135 
+– 
+– 
+a 
+Temperaturgrenzwerte für verschiedene Arten der Isolierung enthält IEC 60724. 
+b 
+Diese Werte dürfen auch für blanke Leiter angewendet werden, bei denen die Möglichkeit einer Berührung mit brennbarem 
+Material besteht. 
+c 
+Für die Berechnung von k siehe Formel F 54.A.1. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 432/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 20 
+Tabelle 54.A.6 – Werte von k für blanke Schutzleiter in Fällen, in denen  
+keine Gefährdung benachbarter Teile infolge der angegebenen Temperaturen entsteht 
+Bedingungen 
+Anfangs-
+temperatur 
+Leiterwerkstoff 
+Kupfer 
+Kupfer 
+Kupfer 
+max. Temperatur 
+(Endtemperatur) 
+Werte  
+für k 
+max. 
+Temperatur 
+(Endtemperatur) 
+Werte  
+für k 
+max. 
+Temperatur 
+(Endtemperatur) 
+Werte  
+für k 
+ 
+°C 
+°C 
+ 
+°C 
+ 
+°C 
+ 
+sichtbar und im 
+abgegrenzten 
+Bereich 
+30 
+500 
+228 
+300 
+125 
+500 
+82 
+normale 
+Bedingungen 
+30 
+200 
+159 
+200 
+105 
+200 
+58 
+Feuer-
+gefährdung 
+30 
+150 
+138 
+150 
+91 
+150 
+50 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 433/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 21 
+Anhang 54.B 
+(informativ) 
+ 
+Beispielhafte Darstellung von Erdungsanlagen,  
+Schutzleitern und Schutzpotentialausgleichsleitern 
+ 
+Bild 54.B.1 – Beispiel für die Anordnung von Erdungsanlagen, Schutzleitern  
+und Schutzpotentialausgleichsleitern 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 434/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 22 
+Tabelle 54.B.001.AT – Legende (1 von 2) 
+Symbol 
+Bezeichnung 
+Anmerkung 
+M 
+Körper (eines elektrischen Betriebsmittels) 
+ 
+C 
+fremdes leitfähiges Teil  
+ 
+C1 
+metallene Wasserleitung, von außen kommend 
+oder Fernwärme 
+C2 
+metallene Abwasserleitung, von außen kommend 
+ 
+C3 
+metallene Gasleitung mit Isolierstück, von außen kommend 
+ 
+C4 
+Klimaanlage 
+ 
+C5 
+Heizung 
+ 
+C6 
+metallene Wasserleitung, zB in einem Raum mit Badewanne 
+siehe Teil 7-701 
+C7 
+fremdes leitfähiges Teil im Handbereich von Körpern 
+siehe Teil 7-701 
+HES 
+Haupterdungsschiene, Haupterdungsklemme, Haupterdungsanschlusspunkt 
+Teil 2, Begriff 541.3.9 
+D 
+Isolierstück 
+ 
+HV 
+Hauptverteiler 
+ 
+UV 
+(Unter-)Verteiler 
+versorgt vom Hauptverteiler 
+ZPE 
+PE-Schiene für zusätzlichen Potentialausgleich 
+ 
+T 
+Erder  
+Teil 2, Begriff 541.3.3 
+siehe 542.2 
+T1 
+Fundamenterder 
+Teil 2, 541.3.4, Begriff 541.3.5 
+siehe 542.2 und OVE E 8014 
+T2 
+zusätzlicher Erder für das Blitzschutzsystem (LPS), falls erforderlich 
+siehe 542.2 und 
+ÖVE/ÖNORM EN 62305-3 
+T3 
+Anschlussfahne des Erders 
+ 
+LPS 
+Blitzschutzsystem 
+siehe ÖVE/ÖNORM  
+EN 62305-3 
+PE 
+Schutzleiteranschlussschiene im Verteiler 
+ 
+PE oder 
+PEN 
+PE- oder PEN-Schiene im Hauptverteiler 
+ 
+1 
+Schutzleiter 
+Teil 2, Begriff 541.3.6 
+siehe 543 
+2 
+Schutzpotentialausgleichsleiter 
+Teil 2, Begriff 541.3.7 
+siehe 544.1 
+2a 
+Schutzpotentialausgleichsleiter für den Hauptpotentialausgleich 
+Teil 2, Begriff 826-13-24 
+siehe 544.1 
+3 
+Schutzpotentialausgleichsleiter für den zusätzlichen 
+Schutzpotentialausgleich 
+siehe 544.2 
+4 
+Ableitungseinrichtung eines Blitzschutzsytems (LPS) 
+siehe ÖVE/ÖNORM  
+EN 62305-3 
+5 
+Erdungsleiter  
+Teil 2, Begriff 541.3.8 
+siehe 542.3 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 435/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 23 
+Tabelle 54.B.001.AT – Legende (2 von 2) 
+Symbol 
+Bezeichnung 
+Anmerkung 
+6 
+Fangeinrichtung eines Blitzschutzsystems (LPS) 
+siehe ÖVE/ÖNORM  
+EN 62305-3 
+N1 
+Hauptsicherungskasten  
+siehe Teil 4-41 
+N1a 
+Nullungsverbindung 
+siehe Teil 4-41 
+N2 
+Antennenanlage 
+siehe ÖVE/ÖNORM  
+EN 60728-11 
+N3 
+Informations-/Kommunikatonstechnik 
+siehe ÖVE-F 1 Teil 2 und Teil 7 
+N4 
+Wasserzähler 
+ 
+N5 
+„Flex-Verbinder“ für Klimaanlage 
+ 
+ 
+ 
+Anhang 54.C 
+(informativ) 
+ 
+Errichten von in Beton gebetteten Erdern 
+ANMERKUNG AT 
+Dieser informative Anhang wurde in Österreich nicht übernommen. 
+Für die Errichtung von Fundamenterdungsanlagen in neuen Gebäuden gelten die Anforderungen gemäß 
+OVE E 8014. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 436/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 24 
+Anhang 54.D 
+(informativ) 
+ 
+Errichten von in Erde gebetteten Erdern 
+ANMERKUNG AT 
+Für die Errichtung von in Erde gebetteten Fundamenterdungsanlagen (Ringerder) siehe 
+OVE E 8014. 
+54.D.1 
+Allgemeines 
+Der Erdausbreitungswiderstand ist abhängig von den Abmessungen des Erders, seiner Form und vom 
+spezifischen Erdwiderstand des Erdbodens, in den er eingebettet ist. Dieser spezifische Erdwiderstand ist 
+oftmals unterschiedlich, abhängig vom Ort und der Tiefe des Erders. 
+ANMERKUNG AT 
+Der Erdausbreitungswiderstand ist hauptsächlich von der Länge des Erders, weniger von 
+seinem Querschnitt, abhängig. 
+Der spezifische Erdwiderstand wird in Ω · m angegeben und stellt den Widerstand in Ω eines Erdwürfels oder 
+eines Erdzylinders mit einer Grundfläche von 1 m2 und einer Kantenlänge von 1 m dar. 
+Die Oberfläche des Bodens und die Art des Bewuchses können Hinweise auf eine mehr oder weniger 
+vorteilhafte Eigenschaft des Erdbodens für das Einbringen eines Erders geben. 
+Der spezifische Erdwiderstand ist abhängig von der Feuchtigkeit und der Temperatur, die jahreszeitlichen 
+Veränderungen unterworfen sind. Die Feuchtigkeit des Erdbodens selbst wird beeinflusst durch die Körnigkeit 
+und Dichte des Erdbodens. Im Allgemeinen nimmt der spezifische Erdwiderstand zu, wenn seine Feuchtigkeit 
+abnimmt. 
+Von Wasser durchdrungene Erdschichten, wie sie in der Nähe von Flüssen vorkommen, sind selten für das 
+Betten von Erdern geeignet. Diese Schichten bestehen aus steinigem Erdreich, das sehr durchlässig und von 
+Wasser durchtränkt ist, und durch natürliche Filtration gereinigt einen hohen Widerstand besitzt. Es sollten 
+lange Stäbe verwendet werden, um tiefere Erdschichten mit besserer Leitfähigkeit als die beschriebenen zu 
+erreichen. 
+Frost sorgt für eine beträchtliche Zunahme des Erdwiderstandes, der in gefrorenen Schichten einige Tausend 
+Ω · m erreichen kann. Die Dicke dieser gefrorenen Schichten kann in einigen Gegenden 1 m erreichen. 
+Trockenheit sorgt ebenfalls für eine Zunahme des Erdwiderstands. Der Austrocknungseffekt kann in einigen 
+Gegenden bis zu 2 m tief in den Erdboden reichen. Die Widerstandswerte können dort dieselbe 
+Größenordnung wie bei Frost erreichen. 
+54.D.2 
+Spezifischer Erdwiderstand 
+Tabelle 54.D.1 nennt Werte für spezifische Erdwiderstände für verschiedene Bodenarten. 
+Tabelle 54.D.2 zeigt, dass der spezifische Erdwiderstand bei gleicher Beschaffenheit des Erdbodens 
+variieren kann. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 437/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 25 
+Tabelle 54.D.1 – Werte des spezifischen Erdwiderstandes 
+Beschaffenheit des Erdreichs 
+Widerstand 
+Ω · m 
+moorastige Böden 
+von einigen wenigen Werten bis 30 
+Schwemmland 
+20 bis 100 
+Humus 
+10 bis 150 
+feuchter Torf 
+5 bis 100 
+weicher Ton 
+50 
+Mergel und bindiger Ton 
+100 bis 200 
+Jura-Mergel 
+30 bis 40 
+tonige Sandböden 
+50 bis 500 
+kieselhaltiger Sand 
+200 bis 3 000 
+nackter steiniger Sand 
+1 500 bis 3 000 
+steiniger Sand, bedeckt mit Gras 
+300 bis 500 
+weicher Kalkstein 
+100 bis 300 
+bindiger Kalkstein 
+1 000 bis 5 000 
+rissiger Kalkstein 
+500 bis 1 000 
+Schiefer 
+50 bis 300 
+Glimmer-Schiefer 
+800 
+Granit und Sandstein 
+1 500 bis 10 000 
+verwitterter Granit und verwitterter Sandstein 
+100 bis 600 
+ 
+Um eine erste Annäherung zur Ermittlung von Erdausbreitungswiderständen zu ermöglichen, darf die 
+Berechnung unter Anwendung der in Tabelle 54.D.2 angegebenen Werte vorgenommen werden. 
+Eine Berechnung, die mit diesen Werten durchgeführt wurde, liefert nur ein sehr angenähertes Ergebnis für 
+einen Erdausbreitungswiderstand. Das Ergebnis der Berechnung nach Anhang 54.D Unterabschnitt 54.D.3 
+erlaubt eine Schätzung des durchschnittlichen Erdausbreitungswiderstandswertes der vorhandenen Boden-
+bedingungen. 
+Tabelle 54.D.2 – Durchschnittswerte des spezifischen Erdwiderstandes 
+Beschaffenheit des Erdreichs 
+Durchschnittlicher Widerstandswert 
+Ω · m 
+schlammiger Ackerboden, feuchter bindiger Uferbereich 
+50 
+magerer Ackerboden, Kies, steiniger Uferbereich 
+500 
+steiniger Erdboden, trockener Sand, undurchlässiger Fels 
+3 000 
+ 
+54.D.3 
+Erder in Erde gebettet 
+54.D.3.1 
+Bestandteile 
+Folgende Werkstoffe dürfen verwendet werden: 
+– 
+Stahl feuerverzinkt, 
+– 
+Stahl mit Kupferumhüllung, 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 438/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 26 
+– 
+Stahl elektrolytisch verkupfert, 
+– 
+nichtrostender Stahl, 
+– 
+Kupfer blank. 
+Verbindungen zwischen verschiedenartigen Metallen dürfen nicht mit Erde in Berührung kommen. Andere 
+Metalle und Legierungen sollten grundsätzlich nicht verwendet werden. 
+Mindestdicke und Mindestdurchmesser berücksichtigen das gewöhnliche Risiko einer chemischen und 
+mechanischen Beanspruchung. Diese Abmessungen können jedoch nicht ausreichend sein, insbesondere 
+dann, wenn das Risiko einer bedeutenden Korrosion vorhanden ist. 
+Ein besonders bedeutendes Risiko für eine Korrosion in Erde kann dort bestehen, wo vagabundierende 
+Ströme fließen, zB Rückströme von Gleichstrombahnen oder elektrochemische Einflüsse aus Verbindungen 
+mit großen verstärkten Fundamenten oder elektrische Anlagen mit kathodischem Korrosionsschutz. In 
+solchen Fällen müssen besondere Vorkehrungen getroffen werden. 
+Erder sollten, soweit möglich, im feuchtesten Bereich des vorhandenen Erdreiches eingebettet werden. Sie 
+sind von Abfallhalden (Dung, flüssiger Dünger, chemische Produkte, Koks), wo Sickerflüssigkeit sie 
+zerfressen kann, fernzuhalten und sind, soweit wie möglich, von belebten Orten entfernt zu errichten. 
+54.D.3.2 
+Bewertung des spezifischen Erdwiderstandes 
+a) 
+Horizontal verlegte Leiter 
+Der Erdausbreitungswiderstand (R) darf näherungsweise mit folgender Formel berechnet werden: 
+ 
+R =  2 ∙ 
+ρ
+L  
+(F 54.D.1) 
+Dabei ist 
+ρ 
+der spezifischer Erdwiderstand; 
+L 
+die Länge des mit dem Leiter belegten Grabens, in m. 
+Das wellenförmige Verlegen des Leiters im Graben verbessert den Widerstand des Erders nicht 
+nennenswert. 
+In der Praxis werden diese Leiter auf zwei verschiedene Arten gelegt: 
+– 
+als Fundamenterder eines Gebäudes: Erder, der im Allgemeinen als geschlossener Ring um den 
+gesamten Umfang des Gebäudes verlegt ist. Die zu berücksichtigende Länge ist der Gebäudeumfang; 
+– 
+horizontale Gräben: Die Leiter werden frostfrei in dafür vorgesehen Gräben verlegt. 
+Vorzugsweise sollte der Graben mit Erde aufgefüllt werden (Speicherung der Feuchtigkeit). Steine, Schlacke 
+oder ähnliches Material sollte zum Auffüllen nicht verwendet werden. 
+b) 
+Gebettete Platten 
+Um den optimalen Erdkontakt der beiden Seiten sicherzustellen, sollten die Platten senkrecht angeordnet 
+werden. 
+Die Platten sollten so gebettet werden, dass sich das obere Ende in ca. 1 m Tiefe befindet. 
+Der Erdausbreitungswiderstand (R) darf näherungsweise mit folgender Formel berechnet werden: 
+ 
+R =  0,8 ∙ 
+ρ
+L  
+(F 54.D.2) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 439/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 27 
+Dabei ist 
+ρ 
+der spezifischer Erdwiderstand; 
+L 
+der Umfang der Platte, in m. 
+c) 
+Senkrechte Stäbe 
+Der Erdausbreitungswiderstand (R) eines Erders darf näherungsweise mit folgender Formel berechnet 
+werden: 
+ 
+R = 
+ρ
+L  
+(F 54.D.3) 
+Dabei ist 
+ρ 
+der spezifischer Erdwiderstand; 
+L 
+die Länge des Stabes, in m. 
+Wo das Risiko von Frost oder Trockenheit besteht, muss die Länge der Stäbe um 1 m bis 2 m erhöht werden. 
+Es ist möglich, den Wert des Erdausbreitungswiderstandes zu verringern, wenn 
+– 
+einige senkrechte Stäbe miteinander verbunden werden und 
+– 
+zwei oder mehr Stäbe vorhanden sind und diese mindestens um ihre Länge voneinander entfernt sind. 
+Zu beachten ist die Tatsache, dass das Erdreich selten homogen ist, sodass bei Verwendung von Stäben 
+großer Länge diese Erdschichten einen kleineren spezifischen Erdwiderstand erreichen können als andere. 
+d) 
+Maschenerder 
+Der Ausbreitungswiderstand eines Maschenerders darf näherungsweise mit folgender Formel berechnet 
+werden: 
+ 
+R = 
+ρ
+2 ∙ D  
+(F 54.D.4) 
+Dabei ist 
+ρ 
+der spezifischer Erdwiderstand; 
+D 
+der Durchmesser eines Kreises, der den gleichen Flächeninhalt wie der Maschenerder aufweist, in m. 
+54.D.4 
+Natürliche Erder 
+Natürliche Bestandteile (zB Metallsäulen), die untereinander elektrisch zuverlässig leitend verbunden und in 
+einer bestimmten Tiefe in Erde gebettet sind, dürfen als Erder verwendet werden. 
+Der Erdausbreitungswiderstand (R) darf näherungsweise mit folgender Formel berechnet werden: 
+ 
+R = 0,366 ∙ 
+ρ
+L ∙ log10 ∙ 
+3 ∙ L
+d  
+(F 54.D.5) 
+Dabei ist 
+ρ 
+der spezifischer Erdwiderstand; 
+L 
+die gebettete Länge der Säule, in m; 
+d 
+Durchmesser des die Säule umgebenden Zylinders, in m. 
+Eine Anordnung von untereinander verbundenen rund um das Gebäude verteilten metallenen Säulen hat 
+einen Erdausbreitungswiderstand ähnlich einem Fundamenterder. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 440/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-54 – Seite 28 
+Die Bettung in Beton widerspricht nicht der Verwendung von Säulen als Erder und ändert den 
+Erdausbreitungswiderstand nicht merkbar. 
+54.D.001.AT 
+Messen des Erdausbreitungswiderstandes 
+Der Erdausbreitungswiderstand der Erdungsanlage sollte leicht messbar sein. 
+Es ist zweckmäßig, zugängige Messstellen vorzusehen, um getrennte Messungen an einzelnen Erdern zu 
+ermöglichen, zB, um Fehler einzugrenzen. 
+ANMERKUNG AT 
+Aus Einzelmessungen kann nicht ohne Weiteres auf den Gesamterdungswiderstand oder 
+Erdausbreitungswiderstand einer Erdungsanlage geschlossen werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

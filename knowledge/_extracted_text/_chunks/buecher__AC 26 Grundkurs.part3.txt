@@ -1,0 +1,717 @@
+
+
+===== PAGE 121/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+121/137 
+9.5 
+Inhalte hinzufügen und bearbeiten 
+Jetzt wollen wir unseren Plänen Inhalte hinzufügen. Dafür stehen dir alle 2D-Werkzeuge wie Text, Schraffur, Linie etc. 
+zur Verfügung. Außerdem kannst du Ausschnitte aus deiner Ausschnitt-Mappe platzieren und auch externe Zeich-
+nungen hinzufügen. 
+Layout vs. Masterlayout 
+Wichtig ist dabei, ob die Elemente auf dem Layout oder auf dem Masterlayout platziert werden. 
+• 
+Elemente, die auf allen zugehörigen Layouts an der gleichen Stelle erscheinen sollen, werden auf das Master-
+layout und nicht auf das eigentliche Layout gelegt. So sparst du dir viel Arbeit. 
+• 
+Elemente, die nur auf einem bestimmten Layout erscheinen sollen, fügst du dem Layout hinzu. 
+Alle Elemente, die sich auf dem Masterlayout befinden, werden auf zugehörigen Layouts standardmäßig rot ange-
+zeigt. Hiervon ist nur die Bildschirmdarstellung betroffen. Auf dem Ausdruck des Layouts werden Masterlayout-Ele-
+mente in ihrer Original-Farbe angezeigt. Die rote Einfärbung erleichtert es dir, Masterlayout-Elemente von Layout-
+Elementen zu unterscheiden. 
+Wenn du möchtest, kannst du diese Einfär-
+bung deaktivieren. Dazu gehst du ins Menü 
+Optionen > Arbeitsumgebung > Bildschirm-
+Optionen und entfernst den Haken bei Ein-
+heitliche Farbe für Master-Elemente auf 
+dem Layout. 
+In diesem Skript bleibt die Einfärbung zur 
+besseren Unterscheidung aktiviert. 
+ 
+Ausschnitte platzieren 
+Im ersten Schritt werden wir unseren Plänen die wichtigsten Elemente hinzufügen - unsere Zeichnungen, die wir zu-
+vor als Ausschnitte angelegt haben. 
+Ausschnitt platzieren mit dem Zeich-
+nungswerkzeug 
+Dazu gehst du wie folgt vor: 
+1. 
+Öffne das Layout Titelseite. 
+2. 
+Aktiviere das Zeichnungs-Werkzeug 
+im Werkzeugkasten unter Doku-
+mentation. 
+3. 
+Klicke mit dem Cursor auf die Stelle 
+im Layout, an der die Zeichnung er-
+scheinen soll. 
+4. 
+Wähle im folgenden Menü den Aus-
+schnitt A-05 Ansicht Süd - Titelbild 
+aus. 
+5. 
+Bestätige die Auswahl mit einem 
+Klick auf Platzieren. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 122/137 =====
+ 
+ 
+Planlayouts 
+122/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Ausschnitt platzieren mit Drag&Drop 
+Alternativ zu dieser Methode kannst du 
+im Navigator auch die Ausschnitt-Mappe 
+öffnen und den gewünschten Ausschnitt 
+per Drag & Drop auf das Layout ziehen. 
+Mit beiden Methoden erzielst du das glei-
+che Ergebnis. 
+Probiere dies anhand des Ausschnitts 
+AB-01 Konzept Modulbau aus, indem du 
+den Ausschnitt mit gedrückter linker 
+Maustaste in das Rasterfeld A1 ziehst. 
+ 
+Hinweis: Die Punktlinie um die Aus-
+schnitte wird Zeichnungsrahmen ge-
+nannt. Dabei handelt es sich nur um eine 
+Bildschirmdarstellung, der Rahmen er-
+scheint nicht im Ausdruck. Du kannst die 
+Darstellung des Zeichnungsrahmens im 
+Menü Ansicht > Bildschirmdarstellungsop-
+tionen > Zeichnungsrahmen ein- und aus-
+schalten.  
+ 
+Aktualisierungsmodus 
+Ausschnitte, die du auf deinem Layout 
+platzierst, können bei Änderungen aktua-
+lisiert werden. Jede Zeichnung kann dazu 
+entweder den Aktualisierungsmodus Ma-
+nuell oder Automatisch erhalten. 
+Wähle eine der platzierten Zeichnungen 
+aus und öffne mit dem Shortcut Cmd+T 
+(MAC) bzw. Strg+T (WIN) die Grundeinstel-
+lungen der Zeichnung. Hier siehst du den 
+derzeit gewählten Aktualisierungsmodus 
+und kannst ihn ändern. 
+ 
+ 
+Wir empfehlen dir, deine Zeichnungen auf den Aktualisierungsmodus Automatisch einzustellen. So sind deine Lay-
+outs immer auf dem aktuellen Stand und du läufst nicht Gefahr, die Aktualisierung der Zeichnungen nach Änderun-
+gen zu vergessen. 
+Mehrere Ausschnitte gleichzeitig platzieren und automatisch anordnen 
+Du kannst auch mehrere Ausschnitte auf einmal platzieren. Markiere dazu mit gedrückter Umschalt-Taste mehrere 
+Ausschnitte und ziehe sie per Drag&Drop auf das Layout. Da wir in unserem Masterlayout eingestellt haben, dass 
+Zeichnungen bei der Platzierung an einem Raster ausgerichtet werden sollen, werden diese gleich automatisch an-
+hand des Rasters angeordnet.  
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 123/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+123/137 
+Externe Zeichnungen hinzufügen 
+Neben den normalen Zeichnungen gibt es viele weitere Planinhalte, die auf einen Plan müssen. Dazu zählen oft De-
+tails und Pläne, die von Herstellern im PDF oder DWG Format angeboten werden, oder auch externe Bilder. Auch 
+diese Dateien kannst du mit dem Zeichnungs-Werkzeug auf das Layout legen. 
+• 
+PDF- oder DWG-Dateien ziehst du einfach per Drag&Drop aus deinem Finder / Explorer auf das Layout. Hat 
+eine PDF-Datei mehrere Seiten, wirst du nach der Auswahl der Datei aufgefordert, die entsprechende(n) 
+Seite(n) auszuwählen, die platziert werden soll(en). Nach dem Platzieren haben diese den Aktualisierungs-
+modus Manuell aktualisieren. Du kannst den Aktualisierungsmodus aber natürlich jederzeit ändern. 
+• 
+Bild-Dateien kannst du zwar ebenfalls per Drag&Drop auf dein Layout ziehen, die Bilder werden dann aber 
+mit dem Bild-Werkzeug eingefügt und haben deshalb beschränkte Bearbeitungsmöglichkeiten. Deshalb 
+solltest du stattdessen die Methode des Platzierens per Zeichnungs-Werkzeug verwenden. 
+9.6 
+Zeichnungen bearbeiten und ausrichten 
+Nachdem du alle gewünschten Ausschnitte auf das Layout gebracht hast, müssen diese geordnet und ausgerichtet 
+werden. 
+Befehle zum Bearbeiten und Ausrichten von Zeichnungen 
+Um diese Zeichnungen am Gestaltungsraster besser ausrichten zu können, gibt es bestimmte Befehle, die du immer 
+wieder brauchen wirst. Die verfügbaren Befehle findest du in der Pet-Palette, die erscheint, wenn du eine Zeichnung 
+auswählst und erneut daraufklickst. Je nachdem, wo du auf die Zeichnung klickst (Ecke des Zeichnungsrahmens, 
+Kante des Zeichnungsrahmens, innerhalb des Zeichnungsrahmens), stehen dir unterschiedliche Bearbeitungsmög-
+lichkeiten in der Pet-Palette zur Verfügung. 
+Ecke des Zeichnungsrahmens 
+ 
+Kante des Zeichnungsrahmens 
+ 
+Innerhalb des Zeichnungsrahmens 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 124/137 =====
+ 
+ 
+Planlayouts 
+124/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+2D-Zeichenelemente hinzufügen 
+Du kannst dein Layout nun noch mit 2D-Zeichenelementen wie Schraffuren, Linien oder Text ergänzen. 
+Text einfügen 
+Um das Konzept eines Projektes zu erläutern, ist Text notwendig.  
+1. 
+Wähle das Text-Werkzeug im Bereich Doku-
+mentation des Werkzeugkastens aus und 
+öffne die Grundeinstellungen. 
+2. 
+Nimm alle gewünschten Einstellungen für 
+deinen Text vor und bestätige die Eingaben 
+mit einem Klick auf OK. 
+ 
+3. 
+Klicke auf eine beliebige Stelle des Layoutes. 
+4. 
+Ziehe den Cursor nach rechts unten, um ein 
+rechteckiges Textfeld aufzuziehen und klicke 
+dann wieder. 
+ 
+5. 
+Es öffnet sich ein Text-Editor. Dort kannst du 
+den Text eingeben und die Erscheinung 
+(Schriftart, Schriftgröße, Fett, Kursiv, etc.) ein-
+stellen. 
+6. 
+Wenn du fertig bist, klicke mit der linken 
+Maustaste irgendwo außerhalb des Textfel-
+des... 
+ 
+7. 
+...und der Text ist fertig! 
+ 
+Möchtest du den Text nachträglich bearbeiten, so 
+kannst du mit einem Doppelklick auf den Text den 
+Text-Editor wieder öffnen. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 125/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+125/137 
+Auto-Texte 
+Im Text-Editor hast du außerdem die Möglichkeit, 
+Auto-Texte einzufügen. Auto-Texte sind Platzhal-
+ter, deren Inhalt automatisch eingetragen wird. 
+Bei einer Änderung werden Autotexte automa-
+tisch angepasst. Dadurch kannst du dir viel Ar-
+beit und Fehler ersparen. 
+1. 
+Klicke dazu im Text-Editor auf den Befehl 
+Auto-Text einfügen. 
+2. 
+Es öffnet sich ein Verzeichnis aller verfüg-
+baren Auto-Texte. Möchtest du beispiels-
+weise stets das aktuelle Datum auf deinem 
+Layout hinzufügen, so tippe in der Such-
+zeile des Verzeichnisses "Datum" ein. 
+3. 
+Wähle dann den Autotext System: Datum 
+(kurz). 
+4. 
+Klicke auf Hinzufügen. 
+5. 
+Der Autotext erscheint nun grau hinterlegt 
+im Text-Editor und du siehst, dass das aktu-
+elle Datum angezeigt wird. 
+ 
+Schraffuren einfügen 
+Du kannst deinem Layout auch Schraffuren hinzufügen. Wechsle dazu zum Layout Grundrisse-Schnitte-Ansichten. 
+1. 
+Aktiviere das Schraffur-Werkzeug im Be-
+reich Dokumentation des Werkzeugkas-
+tens und öffne die Grundeinstellungen. 
+2. 
+Wähle hier eine passende Schraffur aus. 
+Dies kann auch eine Texturschraffur sein.  
+3. 
+Bestätige die Einstellungen mit OK. 
+ 
+4. 
+Aktiviere die Geometriemethode Recht-
+eckig und zeichne mit zwei Klicks eine 
+rechteckige Fläche. Alternativ kannst du 
+die Abmessungen der Schraffur über 
+deine Tastatur eingeben und anschlie-
+ßend mit Enter bestätigen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 126/137 =====
+ 
+ 
+Planlayouts 
+126/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Vervollständigung des Layouts 
+Du kennst nun alle Werkzeuge, Tipps und Tricks, um dein Layout zu erstellen. So könnte das Endergebnis aussehen: 
+9.7 
+Vorbereitung für den Druck 
+ 
+ 
+ 
+ 
+Bevor du dein Layout druckst oder als PDF-
+Datei abspeicherst, blende noch die Ras-
+terlinien deines Gestaltungsrasters aus, da-
+mit diese dort nicht erscheinen. 
+Öffne dazu einfach die Einstellungen dei-
+nes Masterlayouts Endabgabe Projekt und 
+klicke auf die Schaltfläche Einrichtungs-
+Raster (1). Stelle im sich öffnenden Dialog-
+fenster die Rasterliniendarstellung auf Alle 
+ausblenden (2). Schließe dann beide Ein-
+stellungsfenster mit OK (3+4). 
+ 
+Die Rasterlinien sind nun verschwunden. 
+Die Feldbeschriftung (A1, A2 usw.) erscheint 
+nur auf deinem Bildschirm und nicht im Aus-
+druck. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 127/137 =====
+Exportieren und Drucken 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+127/137 
+10 Exportieren und Drucken 
+10.1 Was ist der Publisher? 
+Deine Layouts sind fertig - jetzt musst du sie nur noch zu Papier bringen. 
+Natürlich kannst du deine Layouts über Ablage > Sichern als bzw. Drucken als 
+Datei abspeichern oder drucken. Gerade wenn du nicht nur ein, sondern meh-
+rere Layouts hast, wird das aber sehr umständlich und zeitaufwändig. Deshalb 
+zeigen wir dir in diesem Kurs, wie du den Publisher benutzt. Danach möchtest 
+du ihn nicht mehr missen! 
+Der Publisher ist ein zeit- und arbeitssparendes Tool, um schnell viele Layouts 
+an einen zuvor definierten Ort zu exportieren oder zu drucken. Dabei stehen 
+verschiedene Dateiformate wie zum Beispiel PDF, DWG, DXF und JPEG zur 
+Auswahl. 
+Du findest die Publisher-Sets im vierten und letzten Reiter des Navigators. 
+ 
+10.2 Publisher-Set einrichten 
+Im vorhergehenden Kapitel haben wir bereits zwei Layouts angelegt. Diese Layouts möchten wir mithilfe des Publis-
+hers als PDF-Dateien auf dem Rechner speichern. Dazu musst du zunächst ein neues Publisher-Set einrichten. Gehe 
+wie folgt vor: 
+1. 
+Wechsle im Navigator in den Reiter Pub-
+lisher-Sets. 
+2. 
+Über einen Klick auf das Pfeilsymbol 
+Eine Stufe höher gelangst du in die 
+Übersicht der Publisher-Sets. 
+ 
+3. 
+Hier siehst du bereits einige angelegte 
+Beispiele. Erstelle ein neues Publisher-
+Set durch einen Klick auf die Schaltflä-
+che Neues Publisher-Set. 
+4. 
+Vergib im sich öffnenden Dialogfenster 
+einen passenden Namen, z.B. "Endab-
+gabe Export". 
+5. 
+Klicke auf Erstellen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 128/137 =====
+ 
+ 
+Exportieren und Drucken 
+128/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+10. Du kannst den Organisator jetzt wieder schließen. Markiere die beiden Pläne im Publisher, um im unteren Be-
+reich das Dateiformat zu wählen (A). Bei Bedarf kannst du noch die Dokument-Optionen einstellen (B). 
+6. 
+Das neue Publisher-Set erscheint im Na-
+vigator. Öffne es mit einem Doppelklick. 
+ 
+7. 
+Das Publisher-Set ist noch leer, die zu 
+exportierenden Layouts müssen erst 
+noch eingeordnet werden. Dabei hilft 
+uns der Organisator. Klicke rechts oben 
+auf die Schaltfläche Projekt-Auswahl und 
+wähle dort Organisator anzeigen. 
+ 
+8. 
+Der Organisator besteht aus zwei Navi-
+gator-Fenstern, die nebeneinander an-
+geordnet sind. Dadurch ist es möglich, 
+Layouts aus dem Layoutbuch per 
+Drag&Drop in das Publisher-Set zu zie-
+hen. 
+Öffne auf der linken Seite des Organisa-
+tors das Layoutbuch und auf der rechten 
+Seite das Publisher-Set Endabgabe Ex-
+port. 
+9. 
+Ziehe die beiden Layouts Titelseite und 
+Grundrisse-Schnitte-Ansichten per 
+Drag&Drop in das Publisher-Set. Dort 
+werden sie dann mit einem PDF-Symbol 
+angezeigt. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 129/137 =====
+Exportieren und Drucken 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+129/137 
+10.3 Pläne publizieren 
+Deine Pläne sind nun bereit, als PDF-Dateien gespeichert ("publiziert") zu werden. 
+1. 
+Vor dem ersten Publizieren musst 
+du noch festlegen, wo die Dateien 
+abgespeichert werden sollen. Klicke 
+dazu mit der rechten Maustaste auf 
+ein Publisher-Element und gehe 
+dann auf Einstellungen. 
+ 
+2. 
+Klicke auf die Schaltfläche Suchen... 
+und wähle zum lokalen Dateisystem. 
+3. 
+Navigiere dann zum gewünschten 
+Speicherort und klicke dann auf 
+Auswählen. Bestätige die Publisher-
+Set-Einstellungen anschließend mit 
+OK 
+ 
+4. 
+Vor dem Publizieren kannst du aus-
+wählen, welches der Layouts publi-
+ziert werden soll. 
+5. 
+Klicke anschließend auf die Schalt-
+fläche Publizieren. 
+   
+ 
+Die Layouts wurden in eine PDF-Datei ge-
+speichert. Ein Abschlussbericht zeigt an, 
+ob der Prozess erfolgreich war. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 130/137 =====
+ 
+ 
+Exportieren und Drucken 
+130/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Verknüpfungen 
+Du kannst nicht nur Layouts, sondern auch Untergruppen aus dem Layoutbuch im Publisher hinzufügen. Hierfür gibt 
+es zwei Methoden, deren Unterschiede wir dir hier näher erläutern möchten. Öffne dazu erneut den Organisator. 
+A: Drag&Drop 
+Ziehst du eine Untergruppe aus dem Layout-
+buch wie im vorhergehenden Kapitel gezeigt 
+per Drag&Drop in das Publisher-Set, so wird 
+hier ein entsprechender Ordner erstellt. 
+ 
+ 
+ 
+Dieser Publisher-Ordner ist nicht mit der Untergruppe des Layout-Buches verknüpft. Das bedeutet, dass der Ordner 
+alle Pläne enthält, die zu diesem Zeitpunkt in der Untergruppe des Layoutbuchs enthalten sind. Fügst du zu einem 
+späteren Zeitpunkt weitere Layouts zur Untergruppe im Layoutbuch hinzu, erscheinen diese nicht automatisch im 
+Publisher. Bei dieser Methode kannst du einzelne Elemente aus dem Publisher-Ordner löschen. 
+ 
+B:  Verknüpfung erstellen 
+Alternativ kannst du einen mit dem Layout-
+buch verknüpften Ordner anlegen. Dazu ord-
+nest du wie zuvor das Layoutbuch auf der lin-
+ken und das Publisher-Set Endabgabe Ex-
+port auf der rechten Seite des Organisators 
+an. Wähle anschließend die Untergruppe 
+Endabgabe im Layoutbuch aus (1) und klicke 
+auf die Schaltfläche Verknüpfung erstellen 
+(2). Dadurch wird in dem Publisher-Set eine 
+Verknüpfung zu der Untergruppe in Form ei-
+nes neuen Ordners erstellt (3). 
+Du erkennst einen verknüpften Publisher-
+Ordner an dem kleinen schwarzen Pfeil so-
+wie der bläulichen Einfärbung des Ordner-
+Symbols. 
+ 
+ 
+Die Verknüpfung hat zur Folge, dass alle Än-
+derungen an der Zusammensetzung der Un-
+tergruppe auch in dem verknüpften Publis-
+her-Ordner durchgeführt werden. Fügst du 
+beispielsweise weitere Layouts zu der Unter-
+gruppe hinzu, erscheinen diese automatisch 
+im Publisher-Ordner. Gleiches gilt, wenn du 
+Layouts aus der Untergruppe entfernst. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 131/137 =====
+Exportieren und Drucken 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+131/137 
+Verzeichnisstruktur erstellen 
+Sortiere deine Pläne im Publisher-Set mithilfe von Ordnern und Unterordnern so, wie sie später auch auf deinem 
+Rechner erscheinen sollen. Lege beispielsweise je einen Ordner „PDF“ und „DWG“ ein und füge jeweils beide Pläne 
+im entsprechenden Dateiformat hinzu. Wenn du mit der Ordnerstruktur zufrieden bist, klicke auf Publizieren. Auf dem 
+Rechner wird dann dieselbe Ordnerstruktur erstellt und die PDF- und DWG-Dateien entsprechend eingeordnet. 
+ 
+Pläne in einer PDF-Datei zusammenfassen 
+Mithilfe des Publishers kannst du automatisch eine Ord-
+nerstruktur auf deinem Rechner anlegen lassen, in die die 
+publizierten Pläne eingeordnet sind. 
+Dazu muss in den Publisher-Set-Einstellungen die Option 
+Verzeichnisstruktur beibehalten/erzeugen ausgewählt 
+sein. 
+ 
+Archicad bietet dir die Möglichkeit, die PDF-Dateien verschiedener Blatt-
+formate in einer Datei zu sichern. 
+ 
+Wähle dazu den Ordner PDF im Publisher aus und aktiviere die Option In 
+einer PDF-Datei zusammenführen. Das Ordner-Symbol verändert sich 
+hierdurch. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 132/137 =====
+ 
+ 
+Exportieren und Drucken 
+132/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+10.4 Pläne drucken 
+Um deine Pläne zu drucken, musst du sie nicht unbe-
+dingt erst als PDF-Dateien publizieren. Du kannst auch 
+direkt aus Archicad heraus drucken. 
+Dazu stehen dir die Befehle Drucken... und Plotten... im 
+Archicad Menü Ablage zur Verfügung. Die jeweiligen 
+Einstellungen, beispielsweise zum Papierformat, findest 
+du ebenfalls in diesem Menü. 
+ 
+Alternativ kannst du auch direkt mithilfe des Publishers 
+drucken oder plotten. Wähle dazu in den Publisher-Set-
+Einstellungen die Ausgabeform Drucken oder Plotten. 
+ 
+Im Bereich Format findest du dann weitere Einstellungs-
+möglichkeiten für den Druck bzw. Plot. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 133/137 =====
+Hilfe 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+133/137 
+11 Hilfe 
+Archicad Hilfe 
+Die meisten Fragen zur Anwendung von Archicad las-
+sen sich mit der Archicad Hilfe beantworten. Diese 
+findest du im Menü 
+Hilfe > Archicad Hilfe.  
+Ist der Rechner online, gelangst du direkt ins Help 
+Center. Im Help Center findest du erklärende Filme 
+und Artikel zu allen Themen sowie die Handbücher. 
+Ist der Rechner offline, gelangst du in die interne Ar-
+chicad Hilfe.  
+Verwende am besten die Suchfunktion, um nach be-
+stimmten Themen zu suchen. 
+Solltest du die Hilfe auch offline benötigen, muss 
+diese bei der Installation von Archicad mitinstalliert 
+werden. 
+Du kannst du Hilfe außerdem jederzeit über einen 
+Rechtklick auf Schaltflächen oder Einstellungsfenster 
+in Archicad aufrufen. Wähle hier den Befehl Hilfe 
+(MAC) bzw. Was ist das? (WIN). Du gelangst dann di-
+rekt zu dem Artikel im Online-Handbuch, der sich auf 
+diesen Bereich bezieht. 
+ 
+ 
+ 
+Archicad Forum 
+Im deutschsprachigen Archicad Anwenderforum erhalten registrierte Anwender rund um die Uhr kostenlose schnelle 
+und kompetente Hilfe von anderen Archicad Anwendern, GRAPHISOFT Mitarbeitern und GRAPHISOFT Partnern. Du 
+findest das Archicad Anwenderforum unter: https://forum.graphisoft.de/ 
+Auch hier ist es ratsam, zunächst einmal die Suchfunktion des Forums zu verwenden, bevor du Fragen stellst, die 
+schon mehrfach beantwortet wurden. Im Unterforum „Tutorials“ findest du auch zahlreiche Anleitungsfilme von ande-
+ren Anwendern zu den unterschiedlichsten Funktionen in Archicad.  
+Kurstermine für Tutor:innen bei den WILDCADS 
+Auf unserer Webseite für Anwender:innen unserer Bildungsversion - GRAPHISOFT WILDCADS – findest du in der 
+Rubrik Tutor:innen immer die aktuellen Kurstermine unserer Seminare und Workshops für Archicad Tutor:innen. 
+https://wildcads.graphisoft.de/archicad-kurse-und-workshops/ 
+Kurstermine für Lehrende auf GRAPHISOFT.DE/AT 
+Auf der GRAPHISOFT Webseite findest du immer die aktuellen Kurstermine unserer Seminare und Workshops für 
+Lehrende. 
+https://graphisoft.com/de/studium-und-ausbildung/dozenten-und-lehrkraefte/schulungen-dozenten 
+https://graphisoft.com/at/studium-und-ausbildung/dozenten-und-lehrkrafte/schulungen-dozenten 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 134/137 =====
+ 
+ 
+Hilfe 
+134/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Onlinekurse für Studierende 
+Mit unseren neuen Onlinekursen lernst du Schritt für Schritt, wie du deine Entwürfe mit Archicad verwirklichst und 
+professionell präsentierst. Die Kurse sind kostenlos und du lernst, wann und wo du willst! 
+Einfach die Datei zum gewünschten Kurs herunterladen, mit der Archicad Studentenversion öffnen und direkt begin-
+nen. Alle derzeit verfügbaren Kurse findest du unter  
+https://wildcads.graphisoft.de/support-und-schulung/archicad-onlinekurse/ 
+Unser Kursangebot wird kontinuierlich erweitert. Es lohnt sich also, ab und zu auf unserer Webseite vorbeizu-
+schauen! 
+BIMcloud für Studierende 
+Mit unserer wildcads.bimcloud bieten wir Studierenden 
+die Möglichkeit, Archicad-Projekte im Team zu bear-
+beiten. Eure Datei wird auf unseren Servern gespei-
+chert, sodass mehrere Personen gleichzeitig und orts-
+unabhängig an einem Archicad-Projekt arbeiten kön-
+nen. Um die lästigen administrativen Angelegenheiten 
+kümmern wir uns. Wir richten euch als Nutzer:innen auf 
+unserem Sever ein und ihr könnt direkt mit eurem 
+Teamwork-Projekt loslegen. Alles, was ihr braucht, ist 
+eine Internetverbindung und eure Archicad Bildungs-
+version. Die Laufzeitlänge beträgt 1-2 Semester. An-
+meldung und Infos unter: 
+https://wildcads.graphisoft.de/wildcads-bimcloud/ 
+ 
+Archicad YouTube Kanal 
+Viele Filme rund um die Anwendung von Archicad findest du in unserem Archicad YouTube Kanal. Dort befinden 
+sich zahlreiche Filme, die dir die allgemeine Anwendung von Archicad und auch spezielle Funktionen im Detail erklä-
+ren. Schau doch gleich einmal nach! 
+https://www.youtube.com/user/PMGraphisoft 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 135/137 =====
+Hilfe 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+135/137 
+GRAPHISOFT Support 
+ 
+Für Lehrende und Archicad Tutor:innen 
+Registrierte Anwender:innen der Archicad Bildungsversion für Bildungseinrichtungen und Lehrende sowie zertifi-
+zierte Archicad Tutor:innen erhalten kostenfreien telefonischen Support unter der Rufnummer: 
+Deutschland: 
+Tel.: 0800 0 478255 
+Österreich: 
+Tel.: 0800 010 200 
+ 
+Hotline-Zeiten: 
+Montag - Donnerstag:  
+8.00 bis 18.00 Uhr 
+Freitag:   
+ 
+8.00 bis 15.00 Uhr 
+Du erhältst Support für Archicad 25-26. Support für ältere Versionen ist nicht möglich. 
+Bitte beachte, dass der Technische Support keine Schulung am Telefon leisten kann. Du solltest also vor deinem 
+Anruf immer überprüfen, ob du dein Problem nicht mit Hilfe des Handbuches, des Archicad Forums, des Help Cen-
+ters oder deiner Schulungsunterlagen lösen kannst. Erst wenn du damit nicht weiterkommst, wendest du dich an un-
+seren Support. 
+ 
+Für Studierende und Schüler:innen 
+Support für alle registrierten Anwender:innen der Archicad Bildungsversion für Studierende in dringenden Fällen und 
+bei Fragen, die sich mit Hilfe des Help Centers nicht lösen lassen, bieten wir über unseren kostenpflichtigen telefoni-
+schen Hotline-Support unter der Rufnummer: 
+Deutschland: 
+Tel.: 0900 547 8255 
+(0,99 €/Min. aus dem deutschen Festnetz) 
+Österreich: 
+Tel.: 0900 410 242 
+(1,36 €/Min. aus dem österreichischen Festnetz) 
+ 
+Hotline-Zeiten: 
+Montag – Donnerstag: 
+10.00 bis 12.00 Uhr und 14.00 bis 16.00 Uhr 
+Freitag:  
+ 
+10.00 bis 12.00 Uhr und 13.30 bis 15.00 Uhr 
+Du erhältst Support für Archicad 25-26. Support für ältere Versionen ist nicht möglich. 
+Leider können wir für Anrufe aus Mobilfunknetzen bis auf weiteres keine 0900 / 0180x Rufnummern für unsere Hot-
+line zur Verfügung stellen. Weder Telefoncarrier noch Mobilfunkbetreiber können uns derzeit für diese Kombination 
+(Anruf vom Handy auf unsere Hotline) technisch wirklich garantieren, dass für unsere Kunden keinerlei Kosten wäh-
+rend eines evtl. Aufenthaltes in der Warteschleife entstehen – und dass, obwohl genau dieses nicht nur von uns, 
+sondern in Kürze auch per Gesetz gefordert wird. Wir bitten daher um Verständnis, dass wir auf diesen Service ver-
+zichten müssen bis eine sichere technische Lösung auf dem Markt ist. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 136/137 =====
+ 
+ 
+Notizen 
+136/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+12 Notizen 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 137/137 =====
+Notizen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+137/137 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!

@@ -1,0 +1,226 @@
+
+
+===== PAGE 1/4 =====
+Herausgeber:
+OVE Österreichischer Verband für Elektrotechnik
+Eschenbachgasse 9, 1010 Wien n Tel.: +43 1 587 63 73 n Fax: +43 1 586 74 08
+E-Mail: ove@ove.at n Internet: www.ove.at n ZVR: 327279890
+ATU36808601 n Banken: BA-CA Kto.-Nr. 0043-28423/00 n PSK Kto.-Nr. 1.935.655 
+ISO/IEC 11801
+Fachinformation des TK IT-EG
+Fachinformation
+des Österreichischen Elektrotechnischen Komitees – OEK
+Anlass für diese Information ist das Amendment 
+1:2008-04 zu ISO/IEC 11801 Ausgabe 2 betreffend 
+horizontale Übertragungsstrecken der neuen Klas-
+sen EA  und FA.
+Diese Änderung zu der bereits im Jahre 2002 ver-
+abschiedeten internationalen Norm ist im April 2008 
+erschienen und wurde als konsolidierte Fassung 
+ISO/IEC 11801:2008-05 Ausgabe 2.1 publiziert. Sie 
+schafft damit eine Basis für Installationen von Netz-
+werkverkabelungen höherer Güte und Bandbreite, 
+um Dienste z. B. 10-Gbit-Ethernet oder zukünftig 
+auch höhere Übertragungsraten in vollem Umfang 
+zu übertragen. 
+Die österreichische Änderung der ÖVE/ÖNORM 
+EN 50173-1 (das ist das europäische Äquivalent zu 
+ISO/IEC 11801) ist noch in Bearbeitung und wird – 
+nach derzeitigem Stand – bezüglich der minimalen 
+Anforderungen der Klassen EA und FA der  gültigen 
+ISO/IEC 11801:2008-05 Ausgabe 2.1 entsprechen.
+Der OVE will mit diesem Informationsblatt den öster-
+reichischen Unternehmen eine Möglichkeit bieten, 
+bis zum Erscheinen der Änderung der ÖVE/ÖNORM 
+EN 50173-1  Netzwerke der Klasse EA mit einer 
+Bandbreite von 500 MHz sowie Netzwerke der 
+Klasse FA mit einer Bandbreite bis 1000 MHz  zu 
+planen, auszuschreiben,  zu installieren und mess-
+technisch auf offiziell publizierte Werte zu überprü-
+fen. Diese Klassen sind ausschließlich mit abge-
+Einbringung und Messung der neuen Klassen EA und FA 
+gemäß ISO/IEC 11801:2008-05 Ausgabe 2.1 „Information 
+technology – Generic cabling for customer premises“ 
+stimmten Systemkomponenten aufzubauen.
+In ISO/IEC 11801:2008-05 Ausgabe 2.1 sind die 
+Grenzwerte für den Channel Klasse EA und Channel 
+Klasse FA definiert.
+Was ist der Channel?
+Die horizontale Übertragungsstrecke kann sich wie in 
+Abbildung 1 ersichtlich in mehrere Teilbereiche  glie-
+dern. 
+Beginnend bei der anwendungsspezifischen Über-
+tragungseinrichtung (ASG) im Zentralverteiler/Eta-
+genverteiler (EV) wird von dort aus die Verbindung 
+mittels flexibler Geräteverbindungskabel auf ein 
+Rangierfeld hergestellt. Flexible Rangierkabel ver-
+binden auf das Horizontalverkabelungsrangierfeld, 
+an welchem die Kabelenden der fest installierten 
+Gebäudeverkablung fix angeschlossen sind.
+Im optionalen Sammelpunkt (SP) werden die ent-
+sprechenden Enden der Installationskabel abge-
+schlossen. Die Installationskabel werden weiter bis 
+zum informationstechnischen Anschluss (TA) geführt 
+und typischerweise in Brüstungskanälen, Wanddo-
+sen, Schreibtischen u. dgl. installiert. 
+Wenn der optionale Sammelpunkt (SP) nicht erforder-
+lich ist, werden die Installationskabel direkt bis zum in-
+formationstechnischen Anschluss (TA) geführt. An die-
+sem Punkt wird mittels flexibler Geräteanschlusskabel 
+das Endgerät an die Verkabelung angeschlossen.
+
+
+===== PAGE 2/4 =====
+
+Ausgabe Jänner 2009                      
+                                                         
+www.ove.at
+Abbildung 1:  Anordnung Channel (4-Stecker-Modell = Maximalkonfiguration)
+Wie misst man den Channel EA bzw. Channel FA 
+heute?
+Bei der Abnahmemessung von Klasse EA und Klas-
+se FA Übertragungsstrecken müssen die Messmittel 
+im Allgemeinen dafür ausgelegt sein. Nur Feldmess-
+geräte neuester Generation mit der entsprech- 
+enden Genauigkeitsklasse (gemäß ÖVE/ÖNORM 
+EN 61935-1) und den entsprechenden Messadap-
+tern, -kabeln u. dgl. gewährleisten korrekte sowie 
+reproduzierbare Messergebnisse.
+Die Messgeräte müssen ebenfalls den aktuellen 
+Softwarestand aufweisen.
+Verschlissene und/oder vorzeitig gealterte Mess-
+adapter, -kabel u. dgl. führen unnötigerweise zu 
+schlechteren Messresultaten. Die für die Messungen 
+
+
+===== PAGE 3/4 =====
+3
+Ausgabe Jänner 2009                      
+                                                         
+www.ove.at
+verwendeten systemzugehörigen Rangierkabel glei-
+cher Leistungsklasse müssen mindestens 2 m lang 
+sein und sollten 4 m Länge nicht überschreiten. 
+Eine korrekte Einstellung und Bedienung der Mess-
+geräte ist eine weitere wichtige Grundvoraussetzung 
+für eine korrekte Messung.
+Worauf ist im Speziellen zu achten?
+Neben der Auswahl der Art des Systems und der 
+Messmittel ist die Installationsqualität von erheb-
+licher Bedeutung für die Güte (Qualität) der Übertra-
+gungsstrecke.
+Dies bedeutet, dass besonderes Augenmerk zu le-
+gen ist auf z. B.:
+n	 Verlegung der Kabel,
+n	 Einhaltung der Biegeradien,
+n	 Aufschaltung der Verbindungstechnik,
+n	 Auftrennung der Adernpaare usw.,
+denn Klassen EA- und FA-Installationen sind weitaus 
+weniger fehlertolerant gegenüber Installationsfeh-
+lern als die bisherigen Klasse-D- oder Klasse-E-In-
+stallationen.
+Ausblick – Messungen sowie Verifikation des 
+Permanent Links
+Die Grenzwerte des Permanent Links sollen 
+in einem ergänzenden Schritt in der Norm 
+ISO/IEC 11801:2008-05 Ausgabe 2.1 als Amend-
+ment 2 einfließen. Desgleichen gilt für die 
+ÖVE/ÖNORM EN 50173 Serie.
+Derzeit ist das Erscheinungsdatum dieser Doku-
+mente noch nicht fixiert.
+Ausblick – Messungen sowie Verifikation der 
+Komponenten
+Die Anforderungen an die Komponenten der Leis-
+tungsklasse Kategorie 6A (Kat. 6A) sowie Kategorie 7A 
+(Kat. 7A) sollen ebenfalls in das Amendment 2 der 
+ISO/IEC 11801:2008-05 Ausgabe 2.1 einfließen. 
+Desgleichen gilt für die ÖVE/ÖNORM EN 50173 
+Serie. Entsprechende Standards für die messtech-
+nische Verifikation für die Qualifizierung der Kom-
+ponenten werden ebenfalls erarbeitet, sofern nicht 
+bereits vorhanden.
+Zusammenfassung:
+1.	 Bei der Systemauswahl ist bereits darauf zu 
+achten, dass das eingesetzte Verkabelungs-
+system den  Grenzwerten des Channels Klas-
+se EA, bzw. des Channels Klasse FA gemäß 
+ISO/IEC 
+11801:2008-05 Ausgabe 
+2.1, 
+ge-
+nügt. Dies ist durch ein unabhängiges, nach 
+ÖVE/ÖNORM EN ISO/IEC 17025 akkreditiertes 
+Prüflabor nachzuweisen. Bei Mix&Match-Ver-
+bindungen, (Patchkabel Steckkomponenten und 
+Installationskabel unterschiedlicher Hersteller) 
+kann nicht davon ausgegangen werden, dass die 
+Anforderungen der jeweiligen Klassen gewähr-
+leistet sind.
+2.	 Es sind nur Messgeräte mit dem aktuellen Soft-
+warestand zu verwenden, die auch über die 
+notwendige Genauigkeitsklasse verfügen. Des 
+Weiteren müssen die verwendeten Messadap-
+ter für die Messung einer Klasse EA- bzw. Klasse 
+FA-Übertragungsstrecke geeignet sein. Die Kalib-
+rierung soll innerhalb des vom Hersteller ange-
+gebenen Zeitraumes liegen, aber mindestens im 
+12-Monatsintervall erfolgen. Die aktuelle sowie 
+gültige Werkskalibrierung ist mit einer Kalibrie-
+rungsbestätigung nachzuweisen.
+ 
+Anmerkung: ÖVE/ÖNORM EN 50346:2003-10 
+„Informationstechnik – Installation von Verkabe-
+lungen – Prüfen installierter Verkabelungen“ Ab-
+schnitt 4.4 besagt: „Der Prüfer muss in Form eines 
+gültigen Kalibrierungszertifikates den Nachweis 
+haben, dass zum Prüfzeitpunkt die Verwendung 
+des Prüfgerätes unterstützt wird.“
+3.	 In ISO/IEC 11801:2008-05 Ausgabe 2.1 bezie-
+hen sich die Grenzwerte des Klasse EA Channels 
+auf das 4-Stecker-Modell, welches die Maximal-
+konfiguration darstellt. Typischerweise wird ein 
+2-Stecker-Modell verwendet. Damit man dieses 
+
+
+===== PAGE 4/4 =====
+
+Ausgabe Jänner 2009                      
+                                                         
+www.ove.at
+während der Nutzungsdauer auf ein 4-Stecker-
+Modell erweitern kann, muss es mindestens 
+2,7 dB NEXT-Reserve aufweisen und die Min-
+dest- und Maximallängen für die einzelnen Chan-
+nel-Segmente einhalten.
+4.	 Auswahl eines gut ausgebildeten, vom Herstel-
+ler des Systems qualifizierten Installateurs für die 
+Errichtung und Abnahmemessung des Verkabe-
+lungssystems.
+5.	 Derzeit gibt es nur die Norm für den Channel 
+– also den zusammengebaute Link – deshalb ist 
+auch in der Ende 2008 erscheinenden Leistungs-
+gruppe LG19 des Bundesministeriums noch kei-
+ne Komponente beschrieben, die diesen Chan-
+nel erfüllen wird.
+Ergänzenden Informationen
+Genauere Details, wie zum Beispiel die aktuellen 
+Grenzwerte für die einzelnen Leistungsklassen, kön-
+nen den angeführten Normen entnommen werden. 
+Diese sind entweder über den Österreichischen Ver-
+band für Elektrotechnik
+OVE-Zentrale 
+Eschenbachgasse 9
+1010 Wien 
+Tel.: +43 1 587 63 73-0
+Fax: +43 1 817 49 55 34 95
+E-Mail.  verkauf(at)ove.at
+Internet: www.ove.at 
+oder über das Österreichische Normungsinstitut 
+Austrian Standards plus GmbH
+Heinestraße 38 
+1020 Wien
+Tel.: +43 1 213 00
+Fax: +43 1 213 00-355
+E-Mail: office(at)as-plus.at
+Internet: www.as-plus.at
+zu beziehen.

@@ -1,0 +1,381 @@
+
+
+===== PAGE 1/7 =====
+ 
+ÖVE/ÖNORM 
+ 
+E 8002-3 
+Ausgabe: 2002-11-01 
+ 
+Auch Normengruppe 330 
+ 
+ 
+ 
+Ersatz für siehe Vorbemerkung 
+ 
+ICS  29.240.01 
+Starkstromanlagen und Sicherheitsstromversorgung 
+in baulichen Anlagen für Menschenansammlungen 
+Teil 3: Verkaufsstätten und Ausstellungsstätten 
+ 
+Power installation and safety power supply in communal facilities – Part 3: Stores and 
+shops and exhibition rooms 
+ 
+Installations a courant fort en courant de sécurité des services dans les bâtiments des 
+lieux de réunion – Partie 3: Grands magasins et centres d'exposition 
+ 
+ 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8002-3 Seiten 2 bis 7 
+Fach(normen)ausschuss 
+FA/FNA E 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2002. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 3 
+ 
+ 
+
+
+===== PAGE 2/7 =====
+Seite 2 
+ÖVE/ÖNORM E 8002-3 
+Inhaltsverzeichnis 
+Vorbemerkung ......................................................................................................................................................... 3 
+1 
+Anwendungsbereich ..................................................................................................................................... 4 
+2 
+Normative Verweisungen.............................................................................................................................. 4 
+3 
+Begriffe ......................................................................................................................................................... 4 
+4 
+Allgemeine Anforderungen ........................................................................................................................... 5 
+5 
+Brandschutz, Funktionserhalt ....................................................................................................................... 5 
+6 
+Allgemeine Stromversorgung ....................................................................................................................... 5 
+7 
+Sicherheitsstromversorgung......................................................................................................................... 6 
+8 
+Pläne und Betriebsanleitungen..................................................................................................................... 6 
+9 
+Erstprüfungen............................................................................................................................................... 6 
+10 
+Instandhaltung.............................................................................................................................................. 6 
+Anhang A (normativ): 
+Richtlinie über den Bau von Betriebsräumen für elektrische Anlagen .............................. 7 
+Anhang B (normativ): 
+Richtlinie über brandschutztechnische Anforderungen  
+ 
+ 
+ 
+an elektrische Leitungsanlagen ........................................................................................ 7 
+Anhang C (informativ): Erläuterungen zu Anhang B ............................................................................................. 7 
+Anhang D (informativ): Andere bauliche Anlagen mit Notbeleuchtung.................................................................. 7 
+Anhang E (informativ): 
+Literaturhinweise .............................................................................................................. 7 
+ 
+
+
+===== PAGE 3/7 =====
+Seite 3 
+ÖVE/ÖNORM E 8002-3 
+ 
+Vorbemerkung 
+ 
+ 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den 
+einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den je-
+weils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum 
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK /ÖNORM 
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle 
+Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk: 
+Diese ÖVE/ÖNORM ersetzt gemeinsam mit den Teilen 1, 2, 4, 5, 6, 8 und 9 ÖVE-EN 2 Teil 1 bis Teil 8:1993-02 und 
+ÖVE-EN 2 Teil 1a:1994-06. Da die zu ersetzenden ÖVE-Bestimmungen jedoch mit der ETV 2002 verbindlich erklärt 
+sind, kann die Zurückziehung dieser Bestimmungen erst mit Erscheinen einer neuen ETV erfolgen. 
+ÖVE-EN 2 Teil 7:1994-06 „Arbeitsstätten“ wird ersatzlos zurückgezogen. 
+Die Reihe ÖVE/ÖNORM E 8002 besteht aus folgenden Teilen: 
+Teil 1 
+Allgemeines 
+Teil 2 
+Veranstaltungsstätten 
+Teil 3 
+Verkaufsstätten und Ausstellungsstätten 
+Teil 4 
+Hochhäuser 
+Teil 5 
+Gaststätten 
+Teil 6 
+Großgaragen 
+Teil 7 
+Bleibt frei. 
+Teil 8 
+Fliegende Bauten als Veranstaltungsstätten, Verkaufsstätten, Ausstellungsstätten oder Schank- und 
+Speisewirtschaften 
+Teil 9 
+Schulen 
+Hinweis zur Anwendung 
+Bei Anwendung dieser ÖVE/ÖNORM ist zu beachten, dass darin bautechnische Anforderungen enthalten sind, weil 
+diese aus sicherheitstechnischen Gründen von den elektrotechnischen Anforderungen nicht zu trennen sind. 
+Die in dieser ÖVE/ÖNORM enthaltenen bautechnischen Anforderungen sind aus der Sicht elektrotechnischer Belange 
+als anerkannte Regeln der Technik zu betrachten. Jedoch kann es in einzelnen Bundesländern durch Inanspruchnahme 
+baurechtlicher Landeskompetenz Abweichungen geben, die jedoch keine unmittelbaren elektrotechnischen Festlegungen 
+enthalten dürfen. Diese Abweichungen können die Landesbehörden in eigener Verantwortung festlegen. Da solche 
+Abweichungen Auswirkungen auf die Anwendung elektrotechnischer Bestimmungen haben, sind sie gemäß § 3, Abs. 3, 
+ETG 1992 entsprechend zu veröffentlichen. 
+ 
+
+
+===== PAGE 4/7 =====
+Seite 4 
+ÖVE/ÖNORM E 8002-3 
+1 
+Anwendungsbereich 
+1.1 
+Diese ÖVE/ÖNORM ist gemeinsam mit ÖVE/ÖNORM E 8002-1 für das Errichten und Instandhalten von 
+Starkstromanlagen einschließlich der Sicherheitsstromversorgungsanlagen in Verkaufsstätten und Ausstellungsstätten 
+und den dazugehörenden Rettungswegen anzuwenden.  
+Wo auf ÖVE/ÖNORM E 8002-1 verwiesen wird gilt immer die Ausgabe 2002-11. 
+Diese ÖVE/ÖNORM ist nicht für Verkaufs- und Ausstellungsstätten in Fliegenden Bauten anzuwenden. Hierfür gilt 
+ÖVE/ÖNORM E 8002-8. 
+1.2 
+Verkaufsstätten im Sinne dieser ÖVE/ÖNORM sind: 
+(1) 
+Verkaufsstätten, deren Verkaufsräume einzeln oder zusammen eine Nutzfläche von mehr als 2 000 m² haben, 
+(2) 
+mehrere Verkaufsstätten, die miteinander in Verbindung stehen und deren Verkaufsräume zusammen eine 
+Nutzfläche von mehr als 2 000 m² haben (als Verbindung gelten auch Rettungswege). 
+1.3 
+Ausstellungsstätten im Sinne dieser Bestimmungen sind Ausstellungsstätten, deren Ausstellungsräume einzeln 
+oder zusammen eine Nutzfläche von mehr als 2 000 m² haben. 
+2 
+Normative Verweisungen 
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil dieser 
+ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen nicht. Vertragspartner, 
+die diese ÖVE/ÖNORM anwenden, wird jedoch empfohlen, die Möglichkeit zu prüfen, die jeweils neuesten Ausgaben der 
+nachfolgend angegebenen normativen Dokumente anzuwenden. Bei undatierten Verweisungen ist die letzte Ausgabe 
+des in bezug genommenen normativen Dokumentes anzuwenden. Rechtsvorschriften sind immer in der jeweils 
+geltenden Fassung anzuwenden. 
+ÖVE-K 40 bzw.  
+ÖVE/ÖNORM E 8240 
+Energieleitungen mit einer Isolierung aus Gummi 
+ÖVE-K 41 bzw.  
+ÖVE/ÖNORM E 8241 
+Energieleitungen mit einer Isolierung aus PVC 
+ÖVE/ÖNORM EN 60529 
+Schutzarten durch Gehäuse (IP-Code) 
+3 
+Begriffe 
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM E 8002-1 und die folgenden 
+Begriffe: 
+3.1 
+Verkaufsstätten 
+bauliche Anlagen mit Betrieben des Einzelhandels oder des Großhandels mit Verkaufsräumen 
+Zu einer Verkaufsstätte gehören außer den Verkaufsräumen auch alle Räume, die unmittelbar oder durch Rettungswege 
+mit den Verkaufsräumen verbunden sind, z.B. Büroräume, Lagerräume und Sozialräume. 
+3.2 
+Verkaufsräume 
+Räume von Verkaufsstätten, in denen Waren zum Kauf angeboten werden, einschließlich der zugehörenden 
+Ausstellungsräume, Erfrischungsräume, Vorführräume und Beratungsräume sowie aller dem Kundenverkehr dienenden 
+anderen Räume, mit Ausnahme von Fluren, Treppenräumen, Toiletten- und Waschräumen 
+Bei der Bestimmung der Nutzfläche sind Flächen von Schaufensterräumen, die nicht brandbeständig gegen 
+angrenzende Verkaufsräume abgetrennt sind, mitzurechnen. 
+3.3 
+Durchsichtsschaufensterbereich 
+unmittelbarer an das Schaufenster angrenzender Innenraum ohne Abtrennung bis zu einer Raumtiefe von 3 m, 
+gemessen von der Fensterfläche aus 
+3.4 
+Schaufensterraum 
+unmittelbarer an das Schaufenster angrenzender Innenraum, der von anderen angrenzenden Räumen getrennt ist 
+3.5 
+Ausstellungsstätten 
+ sind bauliche Anlagen oder Teile von baulichen Anlagen, die der Durchführung von Messen und ähnlichen 
+Veranstaltungen dienen. 
+3.6 
+Ausstellungsräume 
+Räume von Ausstellungsstätten, in denen  Waren ausgestellt werden 
+Zu den Ausstellungsräumen gehören auch Vorführräume, Erfrischungsräume, und Beratungsräume sowie alle den 
+Ausstellungsbesuchern dienenden anderen Räume, mit Ausnahme von Fluren, Treppenräumen, Toilettenräumen und 
+Waschräumen. 
+
+
+===== PAGE 5/7 =====
+Seite 5 
+ÖVE/ÖNORM E 8002-3 
+ 
+3.7 
+Rettungsweg 
+im Notfall für Rettungszwecke vorgesehener Weg 
+Zu den Rettungswegen zählen neben den im Notfall vorgesehenen Wegen in Verkaufsstätten und Ausstellungsstätten 
+die Hauptgänge in Verkaufs- und Ausstellungsräumen und die Ausgänge aus diesen. 
+4 
+Allgemeine Anforderungen 
+Es gilt ÖVE/ÖNORM E 8002-1 mit folgender Ergänzung: 
+Zusätzlich gilt nachstehende Anforderung: 
+Zusätzlich zu ÖVE/ÖNORM E 8002-1, Abschnitt 4.3.1 ist eine Antipanikbeleuchtung in Verkaufsräumen und 
+Ausstellungsräumen über 60 m² zu errichten. 
+Ausstellungsstände innerhalb großflächiger Ausstellungshallen oder -zelte sind nicht als Ausstellungsräume in diesem 
+Sinne anzusehen. 
+5 
+Brandschutz, Funktionserhalt 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6 
+Allgemeine Stromversorgung 
+6.1 
+Betriebsmittel mit Nennspannungen über 1 kV 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6.2 
+Betriebsmittel mit Nennspannungen bis 1000 V 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen: 
+6.2.1 
+Elektrische Betriebsräume 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6.2.2 Verteiler 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6.2.3 
+Kabel- und Leitungsanlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gilt nachstehende Anforderung:  
+Nicht festverlegte Leitungen müssen mindestens Gummischlauchleitungen H05RR gemäß ÖVE-K 40 bzw. 
+ÖVE/ÖNORM E 8240 oder PVC-Schlauchleitungen H05VV gemäß ÖVE-K 41 bzw. ÖVE/ÖNORM E 8241 sein. Dies gilt 
+nicht für Anschlussleitungen an Geräten, die zum Verkauf oder zur Ausstellung bestimmt sind. Ortsfest angebrachte 
+Geräte, wie Wärmestrahler, die eine wärmebeständige Anschlussleitung erfordern, dürfen nur über höchstens 1 m lange 
+Leitungen mit erhöhter Wärmebeständigkeit angeschlossen werden. 
+6.2.4 
+Verbraucheranlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+Die elektrischen Anlagen aller Schaufensterräume und Durchsichtsschaufensterbereiche müssen durch einen 
+einzigen, nur für diese bestimmten Lastschalter spannungsfrei geschaltet werden können. Der Schalter oder die 
+Betätigungseinrichtung von Schützen muss jederzeit leicht erreichbar sein, z.B. beim Nachtpförtner. Der Schaltzustand 
+muss eindeutig erkennbar sein. 
+(2) 
+In Schaufensterräumen und Durchsichtsschaufensterbereichen müssen Schalter und Steckdosen gegen 
+mechanische Beschädigung geschützt werden. 
+Ortsveränderliche Steckdosen dürfen nicht verwendet werden. 
+(3) 
+Die Anforderungen von ÖVE/ÖNORM E 8002-1, Abschnitte 6.2.4.7 und 6.2.4.8 gelten in Verkaufs- und 
+Ausstellungsräumen nicht für Leuchten an Vorführständen. 
+(4) 
+Strahlungsheizgeräte mit sichtbar glühenden Heizelementen sind in Verkaufs- und Ausstellungsräumen nicht 
+zulässig. 
+(5) 
+Elektrische Maschinen, ausgenommen Elektrowerkzeuge, müssen in Verkaufsräumen, Ausstellungsräumen, 
+Schaufensterräumen, Dekorations-, Schneider- und Tischlerwerkstätten sowie Lagerräumen mindestens in Schutzart 
+IP4X gemäß ÖVE/ÖNORM EN 60529 ausgeführt sein. 
+
+
+===== PAGE 6/7 =====
+Seite 6 
+ÖVE/ÖNORM E 8002-3 
+(6) 
+Die elektrischen Anlagen folgender Räume müssen durch Bereichsschalter geschaltet werden können:  
+– Verkaufsräume 
+– Ausstellungsräume 
+– Werkstätten 
+– Packräume 
+– Lagerräume 
+– Kantinen. 
+Davon ausgenommen sind: 
+– Teile der Allgemeinbeleuchtung, die auch außerhalb der Betriebszeit benötigt werden, 
+– Stromkreise der notwendigen Sicherheitseinrichtungen, 
+– Kühlanlagen, 
+– Datenverarbeitungsanlagen einschließlich ihrer Stromversorgung. 
+Die Bereichsschalter sind dem Zugriff Unbefugter zu entziehen und an einer für die Brandbekämpfung betrieblich 
+geeigneten Stelle anzubringen. 
+Die Einschaltstellung muss durch eine weiß leuchtende Signallampe erkennbar sein. Nach Ausschalten der 
+Bereichsschalter müssen auch alle Steckdosen in den genannten Räumen spannungsfrei sein, ausgenommen 
+Steckdosen für Kühlanlagen und Datenverarbeitungsanlagen, die besonders gekennzeichnet sind. 
+7 
+Sicherheitsstromversorgung 
+7.1 
+Allgemeine Anforderungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.2 
+Sicherheitsbeleuchtung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gilt nachstehende Anforderung:  
+In Verkaufs- und Ausstellungsstätten sind für die Hinweise auf Rettungswege hinterleuchtete oder beleuchtete 
+Sicherheitszeichen (für Rettungswege) zu verwenden. 
+7.3 
+Elektrische Betriebsräume 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.4 
+Sicherheitsstromquellen und zugehörige Einrichtungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.5 
+Netzsysteme und Schutz gegen elektrischen Schlag 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.6 
+Verteiler (Niederspannungs-Schaltgerätekombinationen) 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.7 
+Kabel- und Leitungsanlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.8 
+Verbraucher und Wechselrichter der Sicherheitsstromversorgung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+8 
+Pläne und Betriebsanleitungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+9  
+Erstprüfungen  
+Es gilt ÖVE/ÖNORM E 8002-1 
+10  
+Instandhaltung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+
+
+===== PAGE 7/7 =====
+Seite 7 
+ÖVE/ÖNORM E 8002-3 
+ 
+Anhang A (normativ): 
+Richtlinie über den Bau von Betriebsräumen für elektrische 
+Anlagen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang B (normativ): 
+Richtlinie über brandschutztechnische Anforderungen an 
+elektrische Leitungsanlagen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang C (informativ):  Erläuterungen zu Anhang B 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang D (informativ):  Andere bauliche Anlagen mit Notbeleuchtung  
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang E (informativ):  Literaturhinweise 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+ 
+ 
+ 

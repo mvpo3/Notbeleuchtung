@@ -1,0 +1,741 @@
+
+
+===== PAGE 1/16 =====
+OVE E 8065 
+Ausgabe: 2017-03-01 
+Errichtung elektrischer Anlagen in 
+explosionsgefährdeten Bereichen 
+Erection of electrical installations in hazardous areas 
+Erection des installations électriques dans les emplacements dangereux 
+ICS  
+29.260.20 
+   Ersatz für      siehe nationales Vorwort 
+ zuständig 
+OVE/TK EX 
+Schlagwetter und Explosionsschutz 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+Copyright © OVE – 2017.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at
+Internet: http://www.ove.at
+Webshop: www.ove.at/webshop
+Tel.: +43 1 587 63 73
+Fax: +43 1 587 63 73-99
+Regelwerke für die Elektrotechnik auch erhältlich bei 
+Austrian Standards Institute 
+Heinestraße 38, 1020 Wien 
+E-mail: sales@austrian-standards.at 
+Internet: www.austrian-standards.at 
+Webshop: www.austrian-standards.at/webshop 
+Tel.: +43 1 213 00-300 
+Fax: +43 1 213 00-818 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 2/16 =====
+Inhalt 
+Vorwort ................................................................................................................................................................ 3 
+1 
+Anwendungsbereich ............................................................................................................................. 5 
+2 
+Normative Verweisungen ...................................................................................................................... 5 
+3 
+Begriffe ................................................................................................................................................... 6 
+4 
+Allgemeine Anforderungen für explosionsgefährdete Bereiche ...................................................... 6 
+5 
+Kondensatoren .................................................................................................................................... 11 
+6 
+Blanke aktive Teile mit Nennspannungen über 10 kV ..................................................................... 11 
+Anhang A (informativ)  Zusammenhang mit Europäischen und internationalen Normen........................ 12 
+Anhang B (informativ)  Zusätzliche Erläuterungen ....................................................................................... 13 
+Literaturhinweise .............................................................................................................................................. 14 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 3/16 =====
+Vorwort 
+Diese OVE-Norm hat den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK gemäß ETG 1992. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+–
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum
+Elektrotechnikgesetz 
+oder 
+gegebenenfalls 
+auf 
+andere Weise festgelegte 
+aktuelle 
+Stand 
+zu
+berücksichtigen.
+–
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen,
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst.
+Erläuterungen zum Ersatzvermerk 
+Diese OVE-Norm ist das Ergebnis einer redaktionellen Überarbeitung der ÖVE/ÖNORM E 8065:2008-08-01, 
+wobei die Verweisungen aktualisiert wurden. 
+Da die zu ersetzende ÖVE/ÖNORM mit der ETV 2002/A2 verbindlich erklärt wurde, kann die Zurückziehung 
+dieser Bestimmung erst mit Erscheinen einer neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 4/16 =====
+Vorbemerkung 
+Für die Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen gelten folgende Europäische 
+Normen: 
+Für gasexplosionsgefährdete & staubexplosionsgefährdete Bereiche: 
+–
+ÖVE/ÖNORM EN 60079-0
+–
+ÖVE/ÖNORM EN 60079-10-1
+–
+ÖVE/ÖNORM EN 60079-10-2
+–
+ÖVE/ÖNORM EN 60079-14
+–
+ÖVE/ÖNORM EN 60079-17
+–
+ÖVE/ÖNORM EN 60079-25
+Die vorliegende Norm baut auf den oben angeführten Normen auf und regelt jene Bereiche für die Errichtung 
+elektrischer Anlagen in explosionsgefährdeten Bereichen, welche von diesen Normen nicht abgedeckt 
+werden. 
+Die Herstellung bzw. das Inverkehrbringen von elektrischen Betriebsmitteln für den bestimmungsgemäßen 
+Einsatz in explosionsgefährdeten Bereichen ist durch Europäisches Recht geregelt (Richtlinie 2014/34/EU, in 
+Österreich umgesetzt durch die Explosionsschutzverordnung 2015 – ExSV 2015, BGBl. Nr. 52/2016). 
+Es besteht eine Vielzahl von Betriebsmittelnormen. Jene Normen, welche zur Konformitätsvermutung im 
+Sinne der Richtlinie führen, werden im Amtsblatt der EU veröffentlicht (harmonisierte Normen). In Österreich 
+werden diese harmonisierten Normen vom Bundesministerium für Wirtschaft und Arbeit im Bundesgesetzblatt 
+kundgemacht. 
+Das wird im Anhang A durch Tabelle A1 verdeutlicht. 
+Für aktive Stromkreise (Stromkreise, die als Quelle wirken können) der Zündschutzart „Eigensicherheit“ wird 
+auf folgendes hingewiesen:  
+Bei diesen Stromkreisen werden für die äußeren Anschlüsse von den Prüf- und Zertifizierungsstellen 
+höchstzulässige äußere Induktivitäten La und höchstzulässige Kapazitäten Ca angegeben. Diese Grenzwerte 
+sind bei der aktuell in Europa geltenden Praxis sowohl für das Schutzniveau „ib“ als auch für „ia“ so zu 
+verstehen, dass entweder nur die äußere Induktivität oder nur die äußere Kapazität in den betreffenden 
+Stromkreis eingebracht werden darf. Bei der Beschaltung des Stromkreises sowohl mit Induktivitäten als auch 
+mit Kapazitäten jeweils bis zu den im Zertifikat angegebenen Grenzwerten kann der Sicherheitsfaktor, der mit 
+1,5 vorgeschrieben ist, in ungünstigen Fällen bis deutlich unter 1,0 sinken. 
+Wenn eine Beschaltung sowohl mit Induktivitäten als auch mit Kapazitäten erforderlich ist, sollte die Sicherheit 
+des Stromkreises deshalb gemäß ÖVE/ÖNORM EN 60079-25:2011, Anhang C vom Betreiber beurteilt 
+werden. Bei Ausnutzung der Reaktanzen ausschließlich als Leitungsbeläge sind keine besonderen 
+Maßnahmen erforderlich. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 5/16 =====
+1 
+Anwendungsbereich 
+1.1 
+Diese Bestimmungen gelten für elektrische Anlagen in explosionsgefährdeten Bereichen. Für den 
+Bergbau jedoch nur insoweit, als nicht bergrechtliche Vorschriften hierfür gelten. 
+1.2 
+Für den Explosionsschutz in medizinisch genutzten Bereichen gelten die Anforderungen gemäß 
+ÖVE/ÖNORM E 8007 und in explosivstoffgefährdeten Bereichen gelten die Anforderungen gemäß VDE 0166. 
+1.3 
+Diese Bestimmungen gelten nicht für schlagwettergefährdete Bereiche. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8001, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1000 V und 
+DC 1500 V  
+ÖVE/ÖNORM EN 50050-1, Elektrostatische Handsprüheinrichtungen – Sicherheitsanforderungen – 
+Teil 1: Handsprüheinrichtungen für entzündbare flüssige Beschichtungsstoffe 
+ÖVE/ÖNORM EN 50050-2, Elektrostatische Handsprüheinrichtungen – Sicherheitsanforderungen – 
+Teil 2: Handsprüheinrichtungen für entzündbares Beschichtungspulver  
+ÖVE/ÖNORM EN 50050-3, Elektrostatische Handsprüheinrichtungen – Sicherheitsanforderungen – 
+Teil 3: Handsprüheinrichtungen für entzündbaren Flock 
+ÖVE/ÖNORM EN 50176, Stationäre Ausrüstung zum elektrostatischen Beschichten mit entzündbaren 
+flüssigen Beschichtungsstoffen – Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 50177, Stationäre Ausrüstung zum elektrostatischen Beschichten mit entzündbaren 
+Beschichtungspulvern – Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 50223, Stationäre elektrostatische Flockanlagen für entzündbaren Flock – 
+Sicherheitsanforderungen 
+ÖVE/ÖNORM EN 60079-0, Explosionsgefährdete Bereiche – Teil 0: Betriebsmittel – Allgemeine 
+Anforderungen  
+ÖVE/ÖNORM EN 60079-10-1, Explosionsfähige Atmosphäre – Teil 10-1: Einteilung der Bereiche - 
+Gasexplosionsgefährdete Bereiche 
+ÖVE/ÖNORM EN 60079-10-2, Explosionsgefährdete Bereiche – Teil 10-2: Einteilung der Bereiche - 
+Staubexplosionsgefährdete Bereiche 
+ÖVE/ÖNORM EN 60079-14, Explosionsgefährdete Bereiche – Teil 14: Projektierung, Auswahl und Errichtung 
+elektrischer Anlagen 
+ÖVE/ÖNORM EN 60079-17, Explosionsgefährdete Bereiche – Teil 17: Prüfung und Instandhaltung 
+elektrischer Anlagen 
+ÖVE/ÖNORM EN 60079-25, Explosionsfähige Atmosphäre – Teil 25: Eigensichere Systeme 
+ÖVE/ÖNORM EN 62305 (alle Teile), Blitzschutz 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 6/16 =====
+3 
+Begriffe 
+Für die Anwendung dieser Norm gelten die in ÖVE/ÖNORM EN 60079 (alle Teile) angegebenen Begriffe. 
+4 
+Allgemeine Anforderungen für explosionsgefährdete Bereiche 
+Die hier angeführten Abschnitte sind zusätzlich zu 
+–
+ÖVE/ÖNORM EN 60079-0
+–
+ÖVE/ÖNORM EN 60079-10-1
+–
+ÖVE/ÖNORM EN 60079-10-2
+–
+ÖVE/ÖNORM EN 60079-14
+–
+ÖVE/ÖNORM EN 60079-17
+–
+ÖVE/ÖNORM EN 60079-25
+zu beachten. 
+4.1 
+Durch Glimmen von Staub kann explosionsfähige Atmosphäre gezündet werden. 
+4.2 Potenzialausgleich 
+Für ortsveränderliche Betriebsmittel muss der Querschnitt der zusätzlichen Potenzialausgleichsleitung je nach 
+Material leitwertadäquat dem Schutzleiterquerschnitt entsprechen und muss hinsichtlich der mechanischen 
+Festigkeit jedoch mindestens 4 mm2 Cu oder 2 mm2 Stahl betragen.  
+ANMERKUNG  Die Anforderung hinsichtlich der mechanischen Zugfestigkeit gilt für die gesamte Leitungs-
+konfektionierung (Anschlussgarnituren).  
+Die Leitfähigkeit der Konstruktionsteile untereinander und die Verbindung zum Schutzleiter müssen einem 
+Querschnitt von mindestens 10 mm2 Cu entsprechen. Als solche Verbindungen gelten z. B. geschraubte 
+Muffenverbindungen, verflanschte Rohrverbindungen und mehrfach verschraubte Konstruktionsteile. 
+Verbindungen des Potenzialausgleichsleiters dürfen nur durch gesicherte Schraub- und Pressverbindungen 
+sowie durch Schweißen und Hartlöten hergestellt werden. Weichlöten ist zulässig, falls die zu verbindenden 
+Leiter zusätzlich mechanisch zusammen gehalten werden.  
+Potenzialausgleichsleiter für nicht ortsfeste elektrotechnische Anlagen dürfen, davon abweichend, durch leicht 
+lösbare Verbindungen, wie z. B. durch Zangen, zeitlich begrenzt ausgeführt werden. 
+Für Potenzialausgleichsverbindungen gelten die Anforderungen gemäß den technischen Bestimmungen 
+ÖVE/ÖNORM E 8001, ÖVE/ÖNORM EN 50050-1, ÖVE/ÖNORM EN 50050-2, ÖVE/ÖNORM EN 50050-3, 
+ÖVE/ÖNORM EN 50176, ÖVE/ÖNORM EN 50177, und ÖVE/ÖNORM EN 50223 . 
+4.3 
+Wenn nicht durch andere Bestimmungen gefordert, brauchen kathodisch geschützte Anlagen nicht an 
+den Potenzialausgleich angeschlossen zu werden. Die für den kathodischen Schutz erforderlichen 
+Isolierstücke in Rohrleitungen oder Gleisen sind nach Möglichkeit außerhalb des explosionsgefährdeten 
+Bereiches anzuordnen. Ist dies nicht möglich, so sind die Anforderungen die in den gesonderten 
+Bestimmungen des kathodischen Korrosionsschutzes festgelegt sind einzuhalten und es ist zu beachten, 
+dass das Isolierstück aufgrund von Potenzialunterschieden eine potentielle Zündquelle darstellen kann. 
+4.4 Schaltung von Schutz- und Überwachungseinrichtungen 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 7/16 =====
+Schutz- 
+und 
+Überwachungseinrichtungen, 
+z. B. 
+Überstromauslöser, 
+Sicherheitstemperaturbegrenzer, 
+Druckschalter müssen nach Auslösen den Anlagenteil abschalten und dürfen ihn nicht selbsttätig wieder 
+einschalten. Beim Wiedereinschalten oder Entriegeln muss sichergestellt sein, dass die Schutzeinrichtung 
+funktionsfähig bleibt. An Stelle der Abschaltung genügt ein Warnsignal, wenn infolge der Abschaltung eine 
+Gefahrenausweitung zu erwarten ist. 
+4.5 Notabschaltung 
+Elektrische Betriebsmittel, deren Weiterbetrieb bei Störungen zu Gefahren (z. B. Ausweitung von Bränden) 
+Anlass geben, müssen von einer nicht gefährdeten Stelle aus unverzüglich abgeschaltet werden können 
+(Notabschaltung). Für diese Notabschaltung können gegebenenfalls auch die für den üblichen Betrieb 
+erforderlichen Schalter benutzt werden. Betriebsmittel, die bei Störungen zur Vermeidung von 
+Gefahrenausweitungen weiter betrieben werden müssen, dürfen nicht in die Notabschaltung einbezogen 
+werden, sondern müssen in einem unabhängig abschaltbaren Stromkreis liegen. In Zone 2 und Zone 22 kann 
+auf die Notabschaltung verzichtet werden. 
+4.6  Kabel und Leitungen 
+ANMERKUNG Die in diesem Abschnitt angeführten Bestimmungen entsprechen bis auf 4.8.5.1, 4.8.5.5 und 4.8.7 dem 
+Anhang der Verordnung explosionsfähige Atmosphären – VEXAT, BGBl. II Nr. 309/2004, Punkt 1 bis Punkt 28.  
+4.6.1 Allgemeines 
+4.6.1.1 
+Außer bei eigensicheren Installationen darf Aluminium, wenn es als Leiterwerkstoff eingesetzt wird, 
+nur mit geeigneten Anschlussvorrichtungen verwendet werden und muss einen der folgenden Leiter-
+querschnitte aufweisen: 
+a)
+bei mehradrigen Kabeln mindestens 16 mm2,
+b)
+bei einadrigen Kabeln mindestens 35 mm2.
+4.6.1.2 
+Vermeiden von Beschädigungen 
+Kabel und Leitungen sowie das Zubehör sollten soweit wie möglich an Stellen installiert sein, wo sie gegen 
+mechanische Beschädigungen, Korrosion, chemische Einwirkungen (z. B. Lösemittel) und Beeinträchtigungen 
+durch Wärme geschützt sind. Falls Einwirkungen dieser Art unvermeidlich sind, müssen Maßnahmen zum 
+Schutz der Anlage getroffen werden (z. B. Installation in ausreichend bemessenen Schutzrohren, Auswahl 
+besonderer Kabelqualitäten, bewehrte, gesicherte Kabel usw.). 
+4.6.1.3 
+Es dürfen nur ummantelte Kabel und Leitungen (Thermoplast-Duroplast-Elastomermäntel oder 
+mineralisolierte Metallmäntel) verwendet werden. Kabel und Leitungen für ortsfeste Verlegung müssen 
+hinsichtlich der Flammenausbreitung den Prüfungen nach Stand der Technik entsprechen, sofern sie nicht in 
+Erde oder Sand verlegt werden, siehe Anhang B. 
+4.6.1.4  
+Kabel und Leitungen mit einem Schirm oder einer Bewehrung aus Drahtgeflecht müssen zusätzlich 
+einen Mantel bzw. Schutzhüllen aus Gummi oder Kunststoff haben. Rohrdrähte dürfen nicht verwendet 
+werden. 
+4.6.1.5  
+Wo Schächte, Kanäle, Rohre oder Gräben zur Verlegung von Kabeln verwendet werden, müssen 
+Vorkehrungen getroffen werden, um den Durchtritt von brennbaren Gasen, Dämpfen oder Flüssigkeiten von 
+einem Bereich zum anderen und die Ansammlung brennbarer Gase, Dämpfe oder Flüssigkeiten in Gräben zu 
+verhindern. 
+4.6.1.6  
+Öffnungen für Kabel, Leitungen und „Conduits“ in Wänden zwischen explosionsgefährdeten 
+Bereichen und nicht gefährdeten Bereichen müssen in angemessener Weise abgedichtet sein, z. B. durch 
+Sandverschluss oder Mörtelabdichtung. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 8/16 =====
+4.6.1.7  
+Kabel und Leitungen sind so zu verlegen und an Betriebsmittel anzuschließen, dass der 
+Explosionsschutz, insbesondere die Zündschutzart, erhalten bleibt. 
+4.6.1.8  
+Für die ortsfeste Verwendung gebaute elektrische Betriebsmittel dürfen nur über fest verlegte 
+zugentlastete Leitungen angeschlossen werden. 
+4.6.2  Für Leitungen für ortsveränderliche und transportable Betriebsmittel gilt zusätzlich: 
+Ortsveränderliche und transportable Betriebsmittel müssen schwere Schlauchleitungen als Anschluss-
+leitungen mit einem Außenmantel aus Gummi, oder Polychloropren oder aus einem anderen gleichwertigen 
+synthetischen Elastomer aufweisen oder eine schwere Gummischlauchleitung oder gleichwertigen Aufbau 
+haben.  
+Die Leiter müssen einen Mindestquerschnitt von 1 mm2 mit Litzenaufbau haben. 
+Für ortsveränderliche elektrische Betriebsmittel mit einer Bemessungsspannung bis 250 V gegen Erde und 
+einem Bemessungsstrom nicht größer als 6 A dürfen Leitungen verwendet werden, die eine Ummantelung 
+aus Polychloropren, einem anderen gleichwertigen synthetischen Elastomer, normalem Gummi oder 
+gleichwertigem Aufbau haben. Solche Leitungen sind jedoch nicht zulässig für ortsveränderliche elektrische 
+Betriebsmittel, die starken mechanischen Beanspruchungen ausgesetzt sind, z. B. Handlampen, Fußschalter, 
+Fasspumpen.  
+Leitungen für ortsveränderliche elektrische Betriebsmittel aus Kunststoff, die bei Umgebungstemperaturen 
+unter minus 5 °C verwendet werden, müssen hinsichtlich der Kältebeständigkeit den schweren 
+Gummischlauchleitungen gleichwertig sein. Sie müssen eine diesbezügliche für den Anwender deutlich 
+lesbare Kennzeichnung aufweisen.  
+Wenn für ortsveränderliche und transportable elektrische Betriebsmittel eine flexible Metallbewehrung oder 
+ein flexibler Metallschirm in der Leitung enthalten ist, dürfen diese nicht als einziger Schutzleiter verwendet 
+werden, siehe Anhang B. 
+4.6.3  Für Kabel und Leitungen eigensicherer Stromkreise gilt: 
+4.6.3.1  
+Für eigensichere Stromkreise sind nur Kabel und Leitungen zulässig, von denen die Werte der 
+Kapazität, der Induktivität und des ohmschen Widerstandes bekannt sind. 
+4.6.3.2  
+Eine allfällige Bewehrung von Kabeln und Leitungen ist an den Potenzialausgleich anzuschließen. 
+4.6.3.3  
+Anlagen mit eigensicheren Stromkreisen müssen so errichtet werden, dass deren Eigensicherheit 
+nicht durch äußere elektrische oder magnetische Felder beeinträchtigt wird, wie z. B. durch nahe gelegene 
+Starkstromfreileitungen, oder einadrige Starkstromkabel. Das kann z. B. durch den Einsatz von Schirmungen 
+und/oder verdrillten Adern oder durch Einhaltung eines angemessenen Abstandes von der Quelle des 
+elektrischen oder magnetischen Feldes erreicht werden. 
+4.6.3.4  
+Kabel und Leitungen müssen im ganzen Verlauf eine der folgenden Anforderungen erfüllen: 
+a)
+Kabel und Leitungen eigensicherer Stromkreise müssen von Kabeln und Leitungen nichteigensicherer
+Stromkreise getrennt verlegt werden,
+b)
+Kabel und Leitungen eigensicherer Stromkreise müssen so angeordnet werden, dass sie gegen die
+Gefahr einer mechanischen Beschädigung geschützt sind,
+c)
+Kabel und Leitungen eigensicherer oder nicht eigensicherer Stromkreise müssen bewehrt, metall-
+ummantelt oder geschirmt sein.
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 9/16 =====
+4.6.3.5  
+Eigensichere und nichteigensichere Stromkreise dürfen nicht in derselben Leitung geführt werden. 
+4.6.3.6 
+Eigensichere und nichteigensichere Stromkreise in demselben Bündel oder Kabelkanal müssen 
+durch eine Isolierstoffzwischenlage oder eine geerdete Metallzwischenlage getrennt sein. Die Trennung ist 
+nicht erforderlich, wenn Mäntel oder Schirmungen für die eigensicheren oder die nichteigensicheren 
+Stromkreise verwendet werden. 
+4.6.3.7  
+In elektrischen Anlagen mit eigensicheren und nichteigensicheren Stromkreisen, z. B. in Schränken 
+der Mess-, Steuer- und Regelungstechnik, müssen die Anschlussklemmen der eigensicheren Stromkreise 
+zuverlässig von den nichteigensicheren Stromkreisen getrennt sein (z. B. durch eine Trennplatte mit einem 
+Fadenmaß von 50 mm oder einem Abstand von 50 mm).  
+Dies gilt auch für die Trennung eigensicherer Stromkreise der Zonen 0 und Zonen 1 voneinander.  
+Die Anschlussklemmen eigensicherer Stromkreise müssen als solche gekennzeichnet sein, siehe Anhang B. 
+4.6.3.8  
+Kabel und Leitungen, die eigensichere Stromkreise enthalten, müssen gekennzeichnet sein.  
+Wenn Mäntel oder Umhüllungen durch eine Farbe gekennzeichnet sind, muss die verwendete Farbe hellblau 
+sein. Für andere Zwecke dürfen derart gekennzeichnete Kabel und Leitungen nicht verwendet werden. 
+4.6.3.9 
+Innerhalb von Schränken, in denen die Gefahr der Verwechslung von Kabeln und Leitungen 
+eigensicherer und nichteigensicherer Stromkreise besteht (wenn z. B. ein blauer Neutralleiter vorhanden ist), 
+müssen andere Maßnahmen getroffen werden, wie: 
+–
+Verlegung der Adern in einem gemeinsamen hellblauen Kabelbaum,
+–
+besonders sorgfältige Beschriftung,
+–
+übersichtliche Anordnung und räumliche Trennung.
+4.6.4  Ergänzungen für staubexplosionsgefährdete Bereiche 
+4.6.4.1  
+Kabel und Leitungen müssen so geführt werden, dass sich nur eine möglichst geringe Staubmenge 
+ansammeln kann und dass sie für die Reinigung zugänglich sind. Falls zur Aufnahme von Kabeln und 
+Leitungen Pritschen, Kanäle oder Gräben verwendet werden, müssen Vorkehrungen gegen das Eindringen 
+und Ansammeln von brennbarem Staub getroffen werden. 
+4.68.4.2  Bei Staubarten mit niedriger Glimmtemperatur muss, wenn die Staubablagerungen auf Kabeln und 
+Leitungen nicht verhindert werden können, die Strombelastbarkeit besonders geprüft und allenfalls 
+herabgesetzt werden. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+9 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 10/16 =====
+4.6.5  Für Kabel und Leitungen eigensicherer Stromkreise für Zone 0 und Zone 20 gilt zusätzlich: 
+4.6.5.1  
+Ungeschirmte Leiter bzw. ungeschirmte Aderleitungen von eigensicheren Stromkreisen der Zone 0 
+oder Zone 20 (eigensichere Kreise der Kategorie „ia“) dürfen in Kabeln, Leitungen, Rohren und Leiterbündeln 
+nicht gemeinsam mit Leitungen oder Aderleitungen der Zone 1 oder Zone 21 (eigensichere Kreise der 
+Kategorie „ib“) geführt werden. 
+4.6.5.2 
+Eigensichere Stromkreise für die Zone 0 oder Zone 20 dürfen außerhalb von Geräten nicht mit 
+anderen Stromkreisen galvanisch verbunden werden. 
+4.6.5.3  
+Die Verbindung mit dem Potenzialausgleich muss in der Zone 0 oder Zone 20 oder in deren 
+unmittelbarer Nähe vorgenommen werden. 
+4.6.5.4 
+Bei Verwendung von Leitungen in eigensicheren Stromkreisen der Zone 0 oder Zone 20 ist die 
+zulässige Betriebsspannung aus der größtmöglichen Leitungskapazität zu ermitteln. 
+ANMERKUNG Zur 
+Dimensionierung 
+sollen 
+ÖVE/ÖNORM EN 60079-11 
+und 
+ÖVE/ÖNORM EN 60079-18 
+bzw. 
+ÖVE/ÖNORM EN 60079-25 herangezogen werden. 
+4.6.5.5  
+An Anlagenteilen der Zone 0 (z. B. Lagertanks für brennbare Flüssigkeiten, Destillationskolonnen in 
+petrochemischen Fabriken, Kläranlagen usw.) sowie in Anlagenteilen der Zone 20 (z. B. Silos), in denen 
+eigensichere Stromkreise in das Innere geführt werden und die Gefahr von gefährlichen Überspannungen 
+(z. B. Blitzschlag, Schaltüberspannungen) besteht, müssen folgende Maßnahmen zum Schutz gegen 
+Eindringen von gefährlichen Überspannungen angewendet werden: 
+a)
+Installation einer Überspannungsschutzeinrichtung möglichst nahe an der Einführung in die Zone 0 bzw.
+Zone 20, und
+b)
+Verlegung der Leitungen in durchgehend verbundenen Stahlrohren, siehe Anhang B. In technisch
+begründeten notwendigen Ausnahmefällen (z. B. zur Vermeidung von Kondensatbildung, Zonen-
+verschleppung, Schaffung von Detonationsgebilden, usw.), wo die Durchgängigkeit der Stahlrohre
+unterbrochen sein kann, muss ein besonderer mechanischer Schutz der eigensicheren Kreise und
+geeignete Schirmungsmaßnahmen zur Abwehr von gefährlichen Überspannungen angewendet werden.
+c)
+Von der Anwendung der Maßnahme a) kann abgewichen werden, soweit dies in Baumusterprüf-
+bescheinigungen und/oder Sicherheitsanweisungen des Herstellers des eigensicheren Gerätes
+angegeben wird.
+4.6.6 Für Kabel und Leitungen nicht eigensicherer Stromkreise gilt in Zone 0 und Zone 20 zusätzlich: 
+4.6.6.1  
+Es sind nur Kabel und Leitungen mit Metallmantel, Metallgeflecht aus Kupfer oder mit einem 
+Schirm zulässig. 
+Sie müssen zusätzlich einen flammwidrigen äußeren Mantel aus Gummi oder Kunststoff haben. Diese Kabel 
+und Leitungen müssen ständig auf den Isolationszustand der Leiter gegen die metallenen Umhüllungen 
+überwacht werden.  
+Sinkt der Isolationswiderstand unter 100 Ω/V Nennspannung, so muss der betreffende Stromkreis selbsttätig 
+und allpolig abgeschaltet werden.  
+Das Einschalten ist nur dann zulässig, wenn der Isolationswiderstand mindestens 100 Ω/V Nennspannung 
+beträgt (Wiedereinschaltsperre). 
+Der Messstromkreis der Isolationseinrichtung muss eigensicher nach Kategorie „ia“ sein. Die Funktions-
+fähigkeit der Isolationsüberwachungseinrichtung muss überprüfbar sein, siehe Anhang B. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+10 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 11/16 =====
+4.6.6.2  
+Im Kurzschlussfall muss der betreffende Stromkreis innerhalb von 0,25 s abgeschaltet sein. 
+4.6.6.3  
+Abzweige und Verbindungen sind im Zuge der Kabel- und Leitungsführung nicht zulässig. 
+4.6.7 Verbindungen durch Gießharzmuffen und Schrumpfschläuche 
+In Zone 0 und Zone 20 sind solche Verbindungen nicht erlaubt. 
+In allen anderen Zonen dürfen zum Verbinden von Kabeln und Leitungen auch Gießharzmuffen und 
+Schrumpfschläuche verwendet werden, wenn diese nicht mechanisch beansprucht sind. 
+Beim Herstellen der Verbindungen mit Gießharzmuffen müssen die zugehörigen Verarbeitungsanweisungen 
+beachtet werden.  
+ANMERKUNG Für das Gießharz bestehen gesonderte technische Bestimmungen (siehe VDE 0291 Teil 1). 
+4.7 Elektrostatische Aufladungen 
+Elektrische Anlagen müssen so errichtet werden, dass Zündgefahren durch elektrostatische Aufladungen 
+nicht zu erwarten sind.  
+4.8 Atmosphärische Entladungen 
+4.8.1 Elektrische Anlagen, die aus Freileitungen oder aus ähnlichen Leitungen gespeist werden, müssen so 
+errichtet werden, dass durch atmosphärische Entladungen keine Zündgefahren zu erwarten sind. 
+4.8.2 Explosionsgefährdete Bereiche der Zone 0, Zone 1, Zone 20, Zone 21 müssen mit einem Blitzschutz-
+system geschützt werden.  
+ANMERKUNG Sofern eine Blitzbeeinflussung von elektrischen Anlagen innerhalb von explosionsgefährdeten Bereichen 
+durch benachbarte Gebäudeteile, die nicht mit einem Blitzschutzsystem ausgerüstet sind, möglich ist, wird die Anwendung 
+besonderer Schutzmaßnahmen gegen Überspannungen notwendig sein.  
+Das Blitzschutzsystem ist gemäß ÖVE/ÖNORM EN 62305 (alle Teile) zu errichten und zu prüfen. 
+5 
+Kondensatoren 
+Kondensatoren, die auch nach dem Abschalten mit Stromkreisen der Zone 1 in Verbindung bleiben, müssen 
+unabhängig von ihrem Aufstellungsort – innerhalb der Zone 1 oder außerhalb des explosionsgefährdeten 
+Bereiches – eine Entladungsvorrichtung haben.  
+Diese Entladungseinrichtung muss innerhalb von 5 s auf eine verbleibende Energie von 
+–
+0,2 mJ bei elektrischen Betriebsmitteln der Gruppe II A,
+–
+0,06 mJ bei elektrischen Betriebsmitteln der Gruppe II B,
+–
+0,02 mJ bei elektrischen Betriebsmitteln der Gruppe II C entladen.
+6 
+Blanke aktive Teile mit Nennspannungen über 10 kV 
+Blanke aktive Teile mit Nennspannungen über 10 kV müssen wegen der möglichen Glimmerscheinungen wie 
+Teile behandelt werden, die betriebsmäßig Funken erzeugen. Ausgenommen sind elektrische Geräte, welche 
+dafür speziell gebaut, geprüft und gekennzeichnet sind. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+11 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 12/16 =====
+Anhang A 
+(informativ) 
+Zusammenhang mit Europäischen und internationalen Normen 
+Tabelle A1 – Internationale, Europäische und nationale Normen 
+Europäische Norm 
+Internationale 
+Norm 
+ÖVE/ÖNORM 
+Klassifikation im 
+VDE-Vorschriftenwerk 
+EN 60079-0:2012 + 
+A11:2013 
+IEC 60079-0:2011 
+(Mod) 
+ÖVE/ÖNORM EN 60079-0:2014-07-01 
+VDE 0170-1 
+EN 60079-10-1:2009 
+IEC 60079-10-
+1:2008 
+ÖVE/ÖNORM EN 60079-10-1:2009-12-01 
+VDE 0165-101 
+EN 60079-10-2:2015 
+IEC 60079-10-
+2:2015 
+ÖVE/ÖNORM EN 60079-10-2:2015-11-01 
+VDE 0165-102 
+EN 60079-14:2014 
+IEC 60079-14:2013 
+ÖVE/ÖNORM EN 60079-14:2014-11-01 
+VDE 0165-1 
+EN 60079-17:2014 
+IEC 60079-17:2013 
+ÖVE/ÖNORM EN 60079-17:2014-11-01 
+VDE 0165-10 
+EN 60079-25:2010 
+IEC 60079-25:2010 
+ÖVE/ÖNORM EN 60079-25:2011-07-01 
+VDE 0170-10-1 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+12 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 13/16 =====
+Anhang B 
+(informativ) 
+Zusätzliche Erläuterungen 
+Zu 4.6.1.3: 
+Duroplaste werden nach dem heutigen Stand der Technik in der Praxis nicht mehr als Mantelmaterial 
+eingesetzt. Als Mantelmaterialien werden entweder Thermoplaste oder Elastomere verwendet. 
+Kabel und Leitungen für ortsfeste Verlegung sollen hinsichtlich der Flammenausbreitung den Prüfungen nach 
+Stand der Technik entsprechen, sofern sie nicht in Erde oder Sand verlegt werden. Das ist in der Regel 
+mindestens 
+das 
+Bestehen 
+der 
+Prüfung 
+gemäß 
+ÖVE/ÖNORM EN 60332-1-2 
+bzw. 
+ÖVE/ÖNORM 
+EN 60332-2-2.  
+Zu 4.6.2: 
+Als gleichwertig zur schweren Gummischlauchleitung H07RN-F ist die ölbeständige schwere PVC-
+Schlauchleitung zum Einsatz bei tiefen Temperaturen AT-N07V3V3-F, gemäß ÖVE/ÖNORM E 8242, zu 
+betrachten. 
+Unter „Leiter mit Litzenaufbau" sind Leiter der Klassen 5 und 6 gemäß ÖVE/ÖNORM EN 60228 zu verstehen. 
+Zu 4.6.3.7: 
+Es wird empfohlen bei farblicher Kennzeichnung von Klemmen eigensicherer Stromkreise die Farbe „hellblau“ 
+auch für diese Klemmen zu verwenden. 
+Zu 4.6.5.5 b): 
+Die Stahlrohre sind zu verschrauben oder zu verschweißen. 
+Zu 4.6.6.1: 
+Die Flammwidrigkeit des kompletten Kabels oder der kompletten Leitung ist mindestens durch das Bestehen 
+der Prüfung gemäß ÖVE/ÖNORM EN 60332-1-2 bzw. ÖVE/ÖNORM EN 60332-2-2 nachzuweisen. 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+13 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 14/16 =====
+Literaturhinweise 
+ÖNORM EN 1127-1, Explosionsfähige Atmosphären – Explosionsschutz – Teil 1: Grundlagen und Methodik 
+ÖNORM EN 1127-2, Explosionsfähige Atmosphären – Explosionsschutz – Teil 2: Grundlagen und Methodik in 
+Bergwerken 
+ÖVE/ÖNORM E 8007, Starkstromanlagen in Krankenhäusern und medizinisch genutzten Räumen außerhalb 
+von Krankenhäusern 
+ÖVE/ÖNORM E 8049-1, Blitzschutz baulicher Anlagen – Teil 1: Allgemeine Grundsätze 
+ÖVE/ÖNORM E 8242, Starkstromleitungen mit Nennspannungen von 300/500 V bis 4000/8000 V (U0/U) – 
+Nationale Typen 
+ÖVE/ÖNORM EN 60079-1, Explosionsgefährdete Bereiche – Teil 1: Geräteschutz durch druckfeste 
+Kapselung „d“  
+ÖVE/ÖNORM EN 60079-2, Explosionsgefährdete Bereiche – Teil 2: Geräteschutz durch Überdruckkapselung 
+"p"   
+ÖVE/ÖNORM EN 60079-5, Explosionsgefährdete Bereiche – Teil 5: Geräteschutz durch Sandkapselung "q"  
+OVE EN 60079-6, Explosionsgefährdete Bereiche – Teil 6: Geräteschutz durch Flüssigkeitskapselung "o" 
+ÖVE/ÖNORM EN 60079-7, Explosionsfähige Atmosphäre – Teil 7: Geräteschutz durch erhöhte Sicherheit "e" 
+ÖVE/ÖNORM EN 60079-11, Explosionsgefährdete Bereiche – Teil 11: Geräteschutz durch Eigensicherheit "i" 
+ÖVE/ÖNORM EN 60079-13, Explosionsfähige Atmosphäre – Teil 13: Geräteschutz durch überdruckge-
+kapselte Räume 
+ÖVE/ÖNORM EN 60079-15, Explosionsfähige Atmosphäre – Teil 15: Geräteschutz durch Zündschutzart "n" 
+ÖVE/ÖNORM EN 60079-18, Explosionsgefährdete Bereiche – Teil 18: Geräteschutz durch Vergusskapselung 
+„m“ 
+ÖVE/ÖNORM EN 60079-20-1, Explosionsfähige Atmosphären – Teil 20-1: Stoffliche Eigenschaften zur 
+Klassifizierung von Gasen und Dämpfen - Prüfmethoden und Daten  
+ÖVE/ÖNORM EN 60079-19, Explosionsgefährdete Bereiche – Teil 19: Gerätereparatur, Überholung und 
+Regenerierung  
+ÖVE/ÖNORM EN 60079-26, Explosionsgefährdete Bereiche – Teil 26: Betriebsmittel mit Geräteschutzniveau 
+(EPL) Ga 
+OVE EN 60079-28,Explosionsgefährdete Bereiche – Teil 28: Schutz von Geräten und Übertragungssystemen, 
+die mit optischer Strahlung arbeiten  
+ÖVE/ÖNORM EN 60079-29-1, Explosionsfähige Atmosphäre – Teil 29-1: Gasmessgeräte - Anforderungen an 
+das Betriebsverhalten von Geräten für die Messung brennbarer Gase  
+ÖVE/ÖNORM EN 60079-29-2, Explosionsfähige Atmosphäre – Teil 29-2: Gasmessgeräte - Auswahl, 
+Installation, Einsatz und Wartung von Geräten für die Messung von brennbaren Gasen und Sauerstoff 
+ÖVE/ÖNORM EN 60079-29-3, Explosionsfähige Atmosphäre – Teil 29-3: Gasmessgeräte - Leitfaden zur 
+funktionalen Sicherheit von ortsfesten Gaswarnsystemen 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+14 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 15/16 =====
+ÖVE/ÖNORM EN 60079-29-4, Explosionsfähige Atmosphäre – Teil 29-4: Gasmessgeräte - Anforderungen an 
+das Betriebsverhalten von Geräten mit offener Messstrecke für die Messung brennbarer Gase  
+ÖVE/ÖNORM EN 60079-30-1, Explosionsfähige Atmosphäre – Teil 30-1: Elektrische Widerstands-
+Begleitheizungen - Allgemeine Anforderungen und Prüfanforderungen 
+ÖVE/ÖNORM EN 60079-30-2, Explosionsfähige Atmosphäre – Teil 30-2: Elektrische Widerstands-
+Begleitheizungen - Anwendungsleitfaden für Entwurf, Installation und Instandhaltung  
+ÖVE/ÖNORM EN 60079-31, Explosionsgefährdete Bereiche – Teil 31: Geräte-Staubexplosionsschutz durch 
+Gehäuse "t" 
+ÖVE/ÖNORM EN 60079-32-2, Explosionsgefährdete Bereiche – Teil 32-2: Elektrostatische Gefährdungen - 
+Prüfverfahren 
+ÖVE/ÖNORM EN 60079-35-1, Kopfleuchten für die Verwendung in schlagwettergefährdeten Grubenbauen – 
+Teil 35-1: Allgemeine Anforderungen - Konstruktion und Prüfung in Relation zum Explosionsrisiko 
+ÖVE/ÖNORM EN 60079-35-2, Explosionsfähige Atmosphäre – Teil 35-2: Kopfleuchten für die Verwendung in 
+schlagwettergefährdeten Grubenbauen - Gebrauchstauglichkeit und andere sicherheitsrelevante Themen 
+ÖVE/ÖNORM EN 60228, Leiter für Kabel und isolierte Leitungen 
+ÖVE/ÖNORM EN 60332-1-2, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall –
+Teil 1-2: Prüfung der vertikalen Flammenausbreitung an einer Ader, einer isolierten Leitung oder einem  
+Kabel – Prüfverfahren mit 1-kW-Flamme mit Gas/Luft-Gemisch 
+ÖVE/ÖNORM EN 60332-2-2, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall – 
+Teil 2-2: Prüfung der vertikalen Flammenausbreitung an einer kleinen Ader, einer kleinen isolierten Leitung 
+oder einem kleinen Kabel – Prüfverfahren mit leuchtender Flamme 
+ÖVE-EN 1, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1000 V und DC 1500 V 
+ÖVE-EX 65/1981, Errichtung elektrischer Anlagen in explosionsgefährdeten Bereichen 
+ÖVE-EX 65a/1985, Nachtrag a zu den Bestimmungen über die Errichtung elektrischer Anlagen in 
+explosionsgefährdeten Bereichen, ÖVE-EX 65/1981 
+VDE 0166, Elektrische Anlagen und deren Betriebsmittel in explosivstoffgefährdeten Bereichen 
+VDE 0291 Teil 1, Bestimmungen für Füllmassen für Kabelzubehörteile sowie Abbrühmassen – Heiß zu 
+vergießende Füllmassen, Kaltpressmassen, Kaltvergussmassen sowie Abbrühmassen 
+BGBl Nr. 52/2016, Explosionsschutzverordnung 2015 – ExSV 2015 
+BGBl. II Nr. 309/2004, Verordnung explosionsfähige Atmosphären – VEXAT 
+BGR 132, Vermeidung von Zündgefahren infolge elektrostatischer Aufladungen 
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+15 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 16/16 =====
+WICHTIGE INFORMATIONEN FÜR NORM-ANWENDER 
+Normen werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen Bereich 
+Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser An- 
+forderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig (ausgenommen gesetz- 
+lich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der Technik dokumentieren: das, was in einem bestimmten 
+Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Expertinnen und Experten in den zuständigen 
+Komitees auf nationaler, europäischer und internationaler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik 
+(OVE) und seiner Referenten. 
+Aktualität des Normenwerks 
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie werden vom 
+zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. Für 
+den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu haben, 
+um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen entsprechen. 
+Wissen um Veränderungen 
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen Fassungen zu 
+haben, bietet der Österreichische Verband für Elektrotechnik gemeinsam mit der Austrian Standards plus GmbH den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen Fachgebiets-Abonnements bis 
+hin zu innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian Standards plus GmbH ist ein 
+hundertprozentiges Tochterunternehmen von Austrian Standards Institute. 
+Kontakt 
+Weitere Informationen über Dienstleistungen und Angebote von OVE und Austrian Standards Institute bieten Ihnen: 
+OVE Normung 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 
+1010 Wien 
+E-Mail: ove@ove.at
+Internet: www.ove.at
+Tel.: +43 1 587 63 73
+Fax: +43 1 587 63 73-99
+Austrian Standards Institute 
+Heinestraße 38 
+1020 Wien 
+E-Mail: sales@austrian-standards.at
+Internet: www.austrian-standards.at
+Tel.: +43 1 213 00-300
+Fax: +43 1 213 00-818
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+16 von 16
+www.ris.bka.gv.at
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:11:53+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

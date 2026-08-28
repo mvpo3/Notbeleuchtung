@@ -1,0 +1,2401 @@
+
+
+===== PAGE 601/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 17 
+Die Sicherheitsstromversorgung muss den Weiterbetrieb automatisch übernehmen, wenn die Spannung 
+eines oder mehrerer aktiver Leiter am Hauptverteiler des Gebäudes der allgemeinen Stromversorgung über 
+mehr als 0,5 s auf weniger als 90 % der Nennspannung abfällt. 
+ANMERKUNG 2  
+Stromquellen 
+für 
+Sicherheitszwecke 
+und 
+das 
+elektrische 
+Versorgungssystem 
+für 
+Sicherheitszwecke sollten so angeordnet werden, dass wiederkehrende Prüfungen und notwendige Wartungen 
+durchgeführt werden können, ohne die Verfügbarkeit zu reduzieren und die Stromversorgung für Sicherheitszwecke zu 
+verschlechtern. 
+In medizinisch genutzten Bereichen zählen zu den Einrichtungen für Sicherheitszwecke gemäß Teil 5-56 
+zusätzlich auch: 
+– 
+notwendige Bettenaufzüge, 
+ 
+ANMERKUNG AT  
+Dies 
+sind 
+Bettenaufzüge, 
+die 
+bei 
+Ausfall 
+der 
+allgemeinen 
+Stromversorgung 
+weiterbetrieben werden müssen. 
+– 
+Lüftungsanlagen für Betriebsräume von Sicherheitsstromquellen, 
+– 
+Anlagen der Personenruftechnik (zB Lichtrufzentralen) und Telefonanlagen, 
+– 
+notwendige medizinische elektrische Geräte, 
+– 
+Verbrauchsmittel und Geräte gemäß 710.560.6.104.1, 
+– 
+elektrische Einrichtungen der medizinischen Gasversorgung einschließlich Druckluft, Vakuumversorgung 
+und Narkosegasabsaugung sowie deren Überwachungseinrichtungen. 
+710.560.4 
+Klassifizierung 
+Ersetze die Anforderungen durch: 
+710.560.4.1 
+Klassifizierung der Sicherheitszwecke 
+Die Klassifizierung der Stromquellen für Sicherheitszwecke ist Anhang 710.A zu entnehmen. 
+710.560.6 
+Stromquellen für Sicherheitszwecke 
+710.560.6.101 
+Im Falle eines Fehlers in der allgemeinen Stromversorgung muss die Stromversorgung für 
+Einrichtungen für Sicherheitszwecke die elektrischen Verbrauchsmittel, aufgeführt in 710.560.6.104.1, 
+710.560.6.104.2 und 710.560.6.104.3, mit elektrischer Energie über eine bestimmte Zeit und innerhalb einer 
+vorgeschriebenen Umschaltzeit versorgen. 
+Der Kraftstoffvorrat für Verbrennungsmotoren ist zumindest so auszulegen, dass die Nennleistung der 
+Stromquelle für die erforderliche Versorgungsdauer dauerhaft abgegeben werden kann. 
+Nach Wiederkehr der allgemeinen Stromversorgung muss eine verzögerte, automatische Rückschaltung 
+erfolgen. 
+710.560.6.102 
+Für Verbindungskabel/-leitungen zwischen den Einzelbauelementen und Unter-baugruppen 
+der Stromquellen für Sicherheitszwecke siehe 710.52. 
+ANMERKUNG 
+Der Stromkreis, der die Stromquelle für Sicherheitszwecke mit dem Hauptverteiler verbindet, sollte als 
+Stromkreis für Sicherheitszwecke betrachtet werden. 
+710.560.6.103 
+Wenn die Stromversorgung eines Raumes aus verschiedenen Systemen (AV, SV ≤ 15 s, 
+SV ≤ 0,5 s) erfolgt und eine Verwechslungsmöglichkeit besteht, sind Steckdosen und gegebenenfalls 
+Schalter besonders farblich zu kennzeichnen, um eine eindeutige Zuordnung für den Benutzer 
+sicherzustellen. 
+ANMERKUNG AT 
+Bei farblicher Kennzeichnung ist die Farbe „grün“ für Bereiche der SV ≤ 15 s und die Farbe 
+„gelb“ oder „orange“ für Bereiche der SV ≤ 0,5 s vorzuziehen, jedoch kann eine einheitliche andersartige Kennzeichnung 
+innerhalb einer Anlage, insbesondere bei einer Erweiterung, zweckmäßig sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 602/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 18 
+710.560.6.104 Detaillierte Anforderungen an die Sicherheitsstromversorgung 
+710.560.6.104.1 Stromquellen mit einer Umschaltzeit von höchstens 0,5 s 
+Im Falle eines Spannungsfehlers in einem oder mehreren Außenleitern an einem Verteiler muss eine 
+Sicherheitsstromversorgung mit einer Umschaltzeit von höchstens 0,5 s die Versorgung für mindestens 
+drei Stunden aufrechterhalten für: 
+– 
+Operationsleuchten und unentbehrliche Leuchten, 
+ 
+ANMERKUNG 1 
+Als unentbehrliche Leuchten gelten auch die allgemeine Raumbeleuchtung oder Teile davon, 
+wenn sie die Funktion einer OP- oder Untersuchungsleuchte ersetzen (zB in Herzkatheterräumen), sowie 
+Lichtquellen für die endoskopische chirurgische Feldbeleuchtung; 
+– 
+lebenserhaltende ME-Geräte und lebenswichtige chirurgische ME-Geräte (zB Hochfrequenz-Chirurgie-
+geräte zur Blutstillung), 
+– 
+lebenswichtige Überwachungsgeräte und -systeme sowie jene Teile davon, die sich nicht in medizinisch 
+genutzten Bereichen (zB Stützpunkt) befinden, 
+– 
+ME-Geräte, die Lichtquellen enthalten, die für die Anwendung des Geräts unbedingt erforderlich sind,  
+zB Endoskope, einschließlich der damit verbundenen unbedingt erforderlichen Geräte, zB Monitore. 
+Die Stromversorgung muss innerhalb einer Umschaltzeit von höchstens 0,5 s wieder hergestellt werden. 
+Diese SV ≤ 0,5 s ist neben der SV ≤ 15 s gemäß 710.560.6.104.2 und unabhängig von dieser vorzusehen. 
+Die Dauer darf von 3 Stunden auf 1 Stunde reduziert werden, wenn eine weitere unabhängige Sicherheits-
+stromquelle die Mindestbetriebsdauer von 3  Stunden sicherstellt. Die Sicherheitsstromversorgung gemäß 
+710.560.6.104.2 oder 710.560.6.104.3 ist nicht als weitere unabhängige Sicherheitsstromquelle anzusehen. 
+710.560.6.104.1.001.AT 
+Bei Ausführung der SV ≤ 0,5 s als Batterie- bzw. Batterie-Wechselrichteranlage ist 
+diese als batteriegestütztes zentrales Stromversorgungssystem (BSV) für Sicherheitszwecke zur Versorgung 
+medizinisch genutzter Bereiche auszuführen, mit folgenden Einschränkungen hinsichtlich des Anschlusses 
+von Verbrauchern. 
+ANMERKUNG AT 
+Anforderungen an batteriegestützte zentrale Stromversorgungssysteme (BSV) für Sicherheits-
+zwecke zur Versorgung medizinisch genutzter Bereiche siehe DIN VDE 0558-507. 
+Bei ausreichender Versorgungsleistung der BSV-Anlage dürfen auch andere ME-Geräte, wichtige 
+Laborgeräte und für die Untersuchung oder Behandlung wichtige EDV-Geräte (zB Patientendaten-
+managementsysteme – PDMS) angeschlossen werden, wenn dadurch die Versorgungssicherheit, 
+insbesondere auch die Kurzschlussselektivität der notwendigen Sicherheitseinrichtungen, nicht beeinträchtigt 
+wird. 
+710.560.6.104.1.002.AT 
+Bei Ausführung der SV ≤ 0,5 s als unterbrechungsfreie, rotierende Sicherheits-
+stromquelle dürfen alle Einrichtungen für Sicherheitszwecke, wichtige elektromedizinische Geräte, 
+Laborgeräte, EDV-Anlagen sowie sonstige Anlagen der Informationstechnik, welche eine kurze Umschaltzeit 
+benötigen, unter folgenden Voraussetzungen mitversorgt werden: 
+1) 
+Das Sicherheitsstromaggregat muss ausreichend bemessen sein, sodass der Betrieb und die zulässige 
+Umschaltzeit der Einrichtungen für Sicherheitszwecke nicht gefährdet werden. 
+2) 
+Es ist sicherzustellen, dass durch die Mitversorgung der nicht zu den Einrichtungen für 
+Sicherheitszwecke gehörenden Verbraucher keine unzulässigen Beeinträchtigungen (Überlastungen, 
+Netzrückwirkungen) auftreten. 
+3) 
+Verbraucher, die nicht zu den Einrichtungen für Sicherheitszwecke gehören, sind über eine eigene 
+Leitungsanlage ab dem Gebäudehauptverteiler zu versorgen, wobei die Kurzschlussselektivität der 
+Einrichtungen für Sicherheitszwecke nicht beeinträchtigt werden darf. 
+4) 
+Sicherheitsstromquellen für die SV ≤ 0,5 s sind so zu bemessen, dass bei der Zuschaltung und im 
+dynamischen Betrieb keine größeren Abweichungen als 10 % von der Nennspannung und 1 Hz von der 
+Nennfrequenz auftreten. 
+5) 
+Die Verfügbarkeit des SV ≤ 0,5 s-Aggregates muss unabhängig von anderen Anlagen sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 603/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 19 
+710.560.6.104.1.003.AT 
+Der SV ≤ 0,5 s-Notbetrieb ist mit hoher Priorität an die Haus-/Betriebstechnik zu 
+melden. 
+Darüber hinaus muss eine automatische Meldung des SV ≤ 0,5 s-Notbetriebes akustisch (quittierbar) und 
+optisch so erfolgen, dass sie vom medizinischen Personal des betroffenen Bereichs wahrgenommen werden 
+kann. Diese Meldung an das medizinische Personal darf entfallen, wenn der Tankinhalt einer rotierenden 
+Sicherheitsstromquelle für einen Notbetrieb von mindestens 12 Stunden garantiert ist und eine kurzfristige 
+Information des medizinischen Personals durch eine andere Maßnahme sichergestellt wird. 
+710.560.6.104.1.004.AT 
+Bei Verwendung eines gemeinsamen Vorratstanks für SV ≤ 0,5 s und SV ≤ 15 s 
+ist ein eigener Betriebstank bei der SV ≤ 0,5 s für eine Mindestbetriebszeit von 3 Stunden vorzusehen. 
+710.560.6.104.2 Stromquellen mit einer Umschaltzeit von höchstens 15 s (SV ≤ 15 s) 
+Die elektrischen Verbrauchsmittel gemäß 710.560.9 sowie die Einrichtungen für Sicherheitszwecke gemäß 
+710.56 müssen innerhalb von 15 s mit einer sicheren Stromquelle zur Versorgung für einen minimalen 
+Zeitraum von 24 Stunden verbunden sein, wenn die Spannung an einem oder mehreren Außenleitern der 
+Hauptverteilung der Stromversorgung für Sicherheitszwecke auf weniger als 90 % der Nennspannung über 
+0,5 s lang abfällt. 
+Die Dauer von 24 Stunden darf bis auf minimal 3 Stunden verringert werden, wenn die medizinischen 
+Anforderungen und die Nutzung des medizinischen Bereichs, einschließlich jeglicher medizinischen 
+Behandlung, beendet und das Gebäude in einer Zeit von 3 Stunden evakuiert werden kann (dies kann zB bei 
+Ambulatorien für physikalische Therapie oder Röntgeninstitute zutreffen). 
+Die Umschaltung für die Ladeeinrichtungen von Batterien für die SV < 0,5 s muss jedenfalls automatisch 
+erfolgen. 
+Bei ausreichender Versorgung dürfen auch weitere Verbraucher zugeschaltet werden. 
+710.560.6.104.3 Stromquellen mit einer Umschaltzeit über 15 s 
+Andere elektrische Verbrauchsmittel als in 710.560.6.104.1 und 710.560.6.104.2 aufgeführt, die für die 
+Aufrechterhaltung des Krankenhausbetriebs erforderlich sind, dürfen entweder automatisch oder manuell an 
+eine Stromquelle für Sicherheitszwecke angeschlossen werden, die für die Versorgung über einen Zeitraum 
+von mindestens 24 Stunden geeignet ist. 
+Diese Betriebsdauer von mindestens 24 Stunden darf auf mindestens 3 Stunden reduziert werden, wenn in 
+Abhängigkeit von der medizinischen Betriebsart und der tatsächlichen medizinischen Nutzung eine 
+gefahrlose Beendigung der Untersuchung oder Behandlung und ein geordnetes Verlassen des Gebäudes 
+innerhalb dieser drei Stunden anzunehmen sind (dies kann zB bei Ambulatorien für physikalische Therapie 
+oder Röntgeninstitute zutreffen). 
+ANMERKUNG AT 
+Zu diesen elektrischen Verbrauchsmitteln gehören zB: 
+– 
+Sterilisationseinrichtungen, 
+– 
+haustechnische Anlagen, insbesondere Heizungs-, Lüftungs- (ohne Kältemaschinen), Versorgungs- und 
+Entsorgungsanlagen, 
+– 
+Kühlanlagen, 
+– 
+Kocheinrichtungen, 
+– 
+Schrankenanlagen bei Feuerwehr- und Rettungszufahrten, 
+– 
+sonstige Aufzüge. 
+710.560.6.1.101 Allgemeine Anforderungen an Stromquellen für Sicherheitszwecke der Gruppe 1 und 
+Gruppe 2 
+Batterien mit Primärzellen sind als Stromquellen für Sicherheitszwecke nicht zulässig. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 604/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 20 
+Eine zusätzliche Netzeinspeisung der allgemeinen Stromversorgung, die von einer Netzenergiequelle kommt, 
+wird als Stromquelle für Sicherheitszwecke nicht anerkannt. 
+ANMERKUNG 
+Werden 
+als 
+Stromquellen 
+für 
+Sicherheitszwecke 
+Blockheizkraftwerke 
+mit 
+Hubkolben-
+Verbrennungsmotoren verwendet, so gilt ISO 8528-1. Zur Berechnung der Versorgungsleistung dürfen nur detaillierte 
+Leistungsbeschreibungen (PRP) nach ISO 8528-1 angewendet werden (siehe ISO 8528-1:2005 Abschnitt  13.3.2). 
+Für Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren als Sicherheitsstromquelle gelten für 
+die Ausführung und Errichtung der Aggregate je nach Zutreffen die Anforderungen gemäß DIN 6280-13, 
+ISO 8528 Series und ÖNORM EN ISO 8528-13, soweit in diesen Bestimmungen keine anderen 
+Anforderungen enthalten sind. 
+Eine batteriegestützte Anlage SV ≤ 0,5 s muss aus dem Erhaltungsladebetrieb mindestens für die Dauer von 
+3 Stunden mit Nennleistung, bei Wechsel- bzw. Drehstrom mit Nennleistung bei cos φ  0,8 induktiv 
+betrieben werden können. Die Batterie muss nach einer Ladedauer von höchstens 6 Stunden wieder die 
+gleiche Entnahme ermöglichen. Diese Bedingungen gelten bei einer Umgebungstemperatur von +20 ºC. Es 
+dürfen nur ortsfeste Batterien gemäß Teil 5-56 für zentrale Stromversorgungssysteme verwendet werden. 
+Der einwandfreie Ladezustand muss durch selbsttätiges Laden und Erhaltungsladen sichergestellt sein. 
+Die Verfügbarkeit (Betriebsbereitschaft) von Stromquellen für Sicherheitszwecke ist zu überwachen und an 
+einer geeigneten Stelle anzuzeigen. 
+710.560.6.1.102.AT 
+Besondere Anforderungen an die Leitungsnetze der Sicherheitsstrom-
+versorgungen SV ≤ 0,5 s und SV ≤ 15 s 
+Kabel oder Leitungen zwischen Sicherheitsstromquelle und der zugehörigen ersten Überstrom-
+Schutzeinrichtung sowie zwischen Batterie und Ladegerät müssen kurzschluss- und erdschlusssicher verlegt 
+sein. Sie dürfen sich nicht in der Nähe leicht brennbarer Materialien befinden. 
+Bei Stromversorgung eines oder mehrerer Gebäude von einer zentralen Stelle aus gelten für die Zuleitungen 
+zu den einzelnen Gebäuden die nachstehenden Anforderungen: 
+– 
+Einrichtungen, die bei Störung der allgemeinen Stromversorgung das Inbetriebsetzen der 
+Sicherheitsstromquelle 
+und 
+die 
+Umschaltung 
+der 
+Sicherheitsstromversorgung 
+auf 
+die 
+Sicherheitsstromquelle bewirken, müssen sich im Hauptverteiler der zentralen Versorgungsanlage 
+befinden. 
+– 
+In jedem Gebäudehauptverteiler muss sich eine Einrichtung befinden, die bei Ausfall mindestens eines 
+Außenleiters an der Einspeisestelle der SV-Schiene SV ≤ 15 s die Versorgung über die zweite 
+Einspeisestelle automatisch sicherstellt. Für den Fall, dass mit einer SV ≤ 0,5 s Einrichtungen für 
+Sicherheitszwecke gemäß 710.56 und 710.560.9 versorgt werden, ist eine Einrichtung vorzusehen, die 
+bei Ausfall der Zuleitung eine automatische Umschaltung auf die Einspeisestelle der SV ≤ 15 s 
+sicherstellt. Die Zuleitungen zu Bereichen der Gruppe 2 dürfen von dieser Umschaltung nicht betroffen 
+sein. 
+– 
+Bei 
+Verlegung 
+der 
+Kabel 
+und 
+Leitungen 
+der 
+allgemeinen 
+Stromversorgung, 
+der 
+Sicherheitsstromversorgung SV ≤ 15 s und der Sicherheitsstromversorgung SV ≤ 0,5 s im Erdreich sind 
+Vorkehrungen zu treffen, dass ein gleichzeitiger Ausfall mehrerer dieser Netze – zB verursacht durch 
+Erdarbeiten – verhindert wird. Dies kann zB durch Verlegung im Erdreich auf getrennten Trassen mit 
+einem Mindestabstand von 2 m oder in einer Stufenkünette mit einem Höhenunterschied von mindestens 
+1 m erreicht werden. Im Nahbereich einer Gebäudeeinführung dürfen Kabel den Abstand von 2 m 
+unterschreiten, wenn besonderer mechanischer Schutz gegen Beschädigungen bei Tiefbauarbeiten 
+vorgesehen ist. 
+– 
+Bei Kabel- und Leitungsanlagen außerhalb des Erdreiches, zB im Kollektor, darf die Kabel- und 
+Leitungsanlage der Sicherheitsstromversorgung auf der gleichen Trasse wie die Kabel- und Leitungs-
+anlage der allgemeinen Stromversorgung geführt werden, wenn sie so vor äußerer Brandeinwirkung 
+geschützt ist, dass sie im Brandfall für die Dauer von mindestens 90 Minuten gemäß ÖNORM  
+DIN 4102-12 funktionsfähig bleibt. 
+ 
+Dieser Funktionserhalt kann entfallen, wenn in einem Brandfall der Funktionserhalt der Kabel- bzw. 
+Leitungsanlagen für die Einrichtungen für Sicherheitszwecke anderwärtig gewährleistet ist (zB dezentrale 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 605/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 21 
+Versorgung der Einrichtungen für Sicherheitszwecke oder Versorgung der Einrichtungen für 
+Sicherheitszwecke über eine Kabel- bzw. Leitungsanlage durch andere Brandabschnitte). 
+In einem mehradrigen Kabel oder einer mehradrigen Leitung der Sicherheitsstromversorgung darf ein 
+Stromkreis nur mit einem zugehörigen Hilfsstromkreis zusammengefasst werden. Das Zusammenfassen von 
+mehreren Hauptstromkreisen in einem Kabel oder einer Leitung (zB auch Beleuchtungsstromkreise mit 
+gemeinsamem Neutralleiter) ist nicht zulässig. 
+710.560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtung 
+Füge hinzu: 
+Im Falle eines Netzausfalls darf die Umschaltzeit der Stromquelle für Sicherheitszwecke 15 s nicht 
+überschreiten. Die notwendige Mindestbeleuchtungsstärke muss in folgenden Bereichen zur Verfügung 
+stehen: 
+– 
+Räume für Stromquellen für Sicherheitszwecke, Hauptverteiler der Allgemeinen sowie der 
+Sicherheitsstromversorgungen, 
+– 
+Bereiche, in denen lebenswichtige Dienste vorgesehen sind – in jedem dieser Bereiche muss 
+mindestens eine Leuchte von einer Stromquelle für Sicherheitszwecke versorgt werden, 
+– 
+Standorte der Brandmeldezentrale und von Überwachungsanlagen, 
+– 
+Etagenbäder, Toiletten und Nasszellen, die auch von Patienten benutzt werden, 
+– 
+Räume, die zur Aufrechterhaltung des Krankenhausbetriebes notwendig sind, wobei in jedem Raum 
+mindestens eine Leuchte von der Stromquelle für Sicherheitszwecke versorgt werden muss. 
+Wenn Schutz durch automatische Abschaltung der Stromversorgung angewendet wird, sind die Stromkreise 
+so anzuordnen, dass bei Ansprechen einer Schutzeinrichtung nicht alle Beleuchtungsstromkreise eines 
+Raums oder Fluchtwegs ausfallen. 
+710.6 
+Prüfungen 
+710.600.4 
+Erstprüfung 
+Füge hinzu: 
+Die Prüfungen, nachstehend spezifiziert unter den Aufzählungen a) bis k) in Ergänzung zu den 
+Anforderungen gemäß Teil 6, müssen sowohl vor Inbetriebnahme als auch nach Änderungen oder 
+Reparaturen vor der Wiederinbetriebnahme durchgeführt werden: 
+a) 
+Funktionstest der Isolationsüberwachungseinrichtungen (IMD) und Überlast-Überwachungseinrichtungen 
+des medizinischen IT-Systems und der akustischen/visuellen Alarmsysteme; 
+b) 
+Messungen zur Prüfung, ob der zusätzliche Schutzpotentialausgleich gemäß 710.415.2 erfüllt ist; 
+c) 
+die Einbeziehung der Einrichtungen gemäß 710.415.2 in den Schutzpotentialausgleich ist zu prüfen; 
+d) 
+die Einhaltung der Anforderungen gemäß 710.56 für Einrichtungen für Sicherheitszwecke ist zu prüfen; 
+ 
+Bei der Prüfung der Bemessung des Stromerzeugungsaggregates sind die statische Belastung und das 
+dynamische Anlaufverhalten zu berücksichtigen. Dabei kann das Werksprüfungsprotokoll des 
+Aggregates herangezogen werden. 
+ 
+Im Falle des Zusammenwirkens von mehreren Stromerzeugungsaggregaten ist die dynamische 
+Lastübernahme bzw. Lastverteilung inklusive der zugehörigen übergeordneten Steuerung durch Prüfung 
+vor Ort nachzuweisen. Werksprüfungsprotokolle der einzelnen Aggregate sind in diesem Fall nicht 
+ausreichend. 
+ 
+Die Funktionstests von Stromerzeugungsaggregaten sind am Einbauort über die Dauer von mindestens 
+einer Stunde mit 100 % der Nennleistung der Aggregate durchzuführen. 
+e) 
+Messungen des Ableitstroms an der Ausgangswicklung und dem Gehäuse der medizinischen  
+IT-Transformatoren in unbelastetem Zustand (gemäß 710.512.1.101); 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 606/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 22 
+f) 
+Prüfung der Einhaltung der Selektivität der Stromversorgung für Sicherheitszwecke anhand der 
+Planungsunterlagen und der Berechnung; 
+g) 
+Prüfung der angewendeten Schutzmaßnahmen auf Übereinstimmung mit den Anforderungen für 
+medizinisch genutzte Bereiche der Gruppe 1 oder Gruppe 2 gemäß 710.536; 
+h) 
+Prüfung der Funktion aller Umschalteinrichtungen; 
+i) 
+Prüfung der Funktion der Sicherheitsstromversorgung SV < 15 s und SV < 0,5 s durch Unterbrechung 
+der Netzzuleitung am Verteiler der zu versorgenden Verbraucher; 
+j) 
+Messungen zum Nachweis, dass die in 710.415.2.101 angeführte Spannung im fehlerfreien Betrieb nicht 
+überschritten wird. Diese Prüfung muss zu einem Zeitpunkt vorgenommen werden, zu dem die 
+elektrische Anlage des Gebäudes belastet ist. Die Messung hat mit einem Spannungsmesser für 
+Effektivwerte, dessen Innenwiderstand, zB durch äußere Beschaltung, auf 1 kΩ eingestellt ist (siehe 
+ÖVE/ÖNORM EN 60601-1:2007 Bild 12), zu erfolgen. Der Frequenzbereich des Spannungsmessers 
+sollte 1 kHz nicht überschreiten; 
+k) 
+Messung des Ableitwiderstandes des Fußbodens in den unter 710.512.2.001.AT angeführten Räumen. 
+710.600.5 
+Wiederkehrende Prüfungen 
+Füge hinzu: 
+Verfahren für wiederkehrende Prüfungen müssen in enger Zusammenarbeit mit dem medizinischen Personal 
+erarbeitet werden, um das Risiko für die Patienten zu minimieren. 
+Elektrische Anlagen medizinisch genutzter Bereiche (dazu gehören auch die Niederspannungs-Hauptverteiler 
+und das Verteilungsnetz der Verbraucheranlage) sind mindestens alle 3 Jahre wiederkehrend zu prüfen. 
+Nicht medizinisch genutzte Funktionsbereiche im Geltungsbereich der Elektroschutzverordnung sind 
+entsprechend der darin angeführten Intervalle wiederkehrend zu prüfen. 
+Die Prüfintervalle und der Umfang der Prüfungen von Installation und elektrischen Betriebsmitteln müssen 
+mindestens den Anforderungen gemäß Tabelle 710.001.AT und Tabelle 710.002.AT entsprechen. 
+Die angeführten Messungen sind Mindestanforderungen und sind zusätzlich zu den notwendigen 
+Besichtigungen und Erprobungen im Rahmen der wiederkehrenden Prüfung der elektrischen Anlage 
+durchzuführen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 607/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 23 
+Tabelle 710.001.AT – Prüfung der elektrischen Anlage 
+Prüfungen im Intervall von 3 Jahren 
+Prüfumfang (Mindestanforderungen) und Bemerkungen 
+Gruppe 2-, Gruppe 1-, Gruppe 0-Räume und von den selben 
+Verteilern versorgte Nebenräume: 
+Schutzmaßnahmen (Steckdosen) 
+ 
+RPA/RPE-Messung 
+Prüfung der Schutzmaßnahmen (indirektes Berühren)  
+bei allen Steckdosen a 
+Bei Steckdosen von medizinischen IT-Systemen ist  
+das Ansprechen der Isolationsüberwachung bei allen 
+Steckdosen zu prüfen 
+Messungen zur Prüfung des zusätzlichen 
+Schutzpotentialausgleichs: 
+Vollständigkeit der in den Schutzpotentialausgleich 
+einzubeziehenden Einrichtungen 
+Messungen in Verteilern: 
+Schutzmaßnahme des Verteilers 
+Schutzmaßnahme der Verbraucheranlage 
+ 
+ 
+Bei begründetem Verdacht (zB wiederholtes Auslösen von 
+Schutzeinrichtungen): Ableitstrom oder Isolationswiderstand 
+ 
+zB Fehlerschleifenimpedanz 
+zB Fehlerstrom-Schutzeinrichtungen mittels 
+Schutzmaßnahmen-Messgerät, sofern die Auslösung  
+nicht bereits durch eine Messung in der  
+Verbraucheranlage erfolgte 
+a 
+Bei Anlagen, welche gemäß OVE E 8101 errichtet wurden, sind der Fehlerschutz und der zusätzliche Schutz (Zusatzschutz) zu 
+prüfen. 
+ 
+Der Ableitwiderstand des Fußbodens in den unter 710.512.2.001.AT angeführten Räumen ist zumindest alle 
+3 Jahre sowie nach Änderung des Reinigungsverfahrens oder -mittels zu messen. 
+Tabelle 710.002.AT – Prüfung von Geräten (elektrischen Betriebsmittenl) 
+Betriebsmittel 
+Im Handbereich 
+Außerhalb des Handbereichs 
+Medizinische elektrische Geräte 
+Intervall und Umfang gemäß Medizinproduktegesetz, Medizinproduktebetreiberverordnung 
+und ÖVE/ÖNORM EN 62353 
+Nicht 
+medizinische 
+elektrische 
+Geräte 
+(Betriebsmittel) 
+in medizinisch 
+genutzten 
+Räumen 
+nicht fest 
+angeschlossen 
+Prüfungen im Intervall von maximal 3 Jahren gemäß den Bestimmungen für wiederkehrende 
+Prüfungen von Geräten bzw. gemäß den Herstellerangaben 
+fest 
+angeschlossen 
+Prüfungen im Intervall von 
+höchstens 3 Jahren gemäß 
+den Bestimmungen für 
+wiederkehrende Prüfungen 
+von Geräten bzw. gemäß 
+Herstellerangaben  
+Intervall gemäß Elektroschutzverordnung bzw. den 
+Herstellerangaben 
+Umfang gemäß den Bestimmungen für wiederkehrende 
+Prüfungen von Geräten bzw. den Herstellerangaben 
+Besichtigung auf offensichtliche Mängel und Messung der 
+Durchgängigkeit des Schutzerdungsleiters im Intervall von 
+höchstens 10 Jahren 
+Elektrische Geräte (Betriebsmittel) 
+außerhalb medizinisch genutzter 
+Räume 
+Prüfungsintervalle gemäß Elektroschutzverordnung und gemäß den Bestimmungen für 
+wiederkehrende Prüfungen von Geräten (ÖVE/ÖNORM E 8701 oder ÖVE/ÖNORM EN 62353) 
+bzw. nach Herstellerangaben 
+Das medizinische Personal, welches in Räumen der Gruppe 2 tätig ist, ist über die Bedeutung der 
+unterschiedlichen Kennzeichnung der Steckdosen und der Alarmmeldungen nachweislich zu unterweisen, 
+einmal jährlich. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 608/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 24 
+Folgende Prüfungen gemäß a) bis j) sind zusätzlich zu den Prüfungen gemäß Tabelle 710.001.AT und 
+Tabelle 710.002.AT durchzuführen: 
+a) 
+Funktionstest der Umschalteinrichtungen in den Verteilern für Räume der Gruppe 2 gemäß den 
+Herstellerangaben, längstens in Abständen von 12 Monaten. 
+b) 
+Funktionstest der Isolations-Überwachungssysteme (einschließlich Alarm, Überwachungsbericht usw.) 
+gemäß den Herstellerangaben, längstens in Abständen von 12 Monaten. 
+c) 
+Messung des Isolationswiderstandes von Sekundärstromkreisen der Schutzmaßnahme Schutztrennung 
+(mit einem Verbrauchsmittel), alle 3 Jahre. 
+d) 
+Monatlicher Funktionstest der Sicherheitsstromversorgung gemäß den Herstellerangaben: 
+ 
+– 
+Sicherheitsstromversorgung mit Batterien: mindestens 15 Minuten; 
+ 
+– 
+Sicherheitsstromversorgung mit Verbrennungsmotoren: mindestens 60 Minuten. 
+ 
+Der monatliche Funktionstest muss bei mindestens 50 % der maximal erwarteten Verbraucherleistung 
+(Bemessungsleistung), die vom Aggregat zu übernehmen ist, jedoch mindestens mit jener 
+Minimalleistung, die das Aggregat nach Herstellerangaben, ohne Schaden zu nehmen unbegrenzt 
+abgeben kann, ausgeführt werden. 
+e) 
+Jährlicher Funktionstest der Sicherheitsstromversorgung gemäß den Herstellerangaben: 
+ 
+– 
+Sicherheitsstromversorgung mit Verbrennungsmotoren, bis die Nennbetriebstemperatur erreicht ist: 
+Dauerbetrieb; 
+ 
+– 
+Sicherheitsstromversorgung mit Batterien: Kapazitätstest. 
+ 
+Der jährliche Funktionstest muss bei mindestens 50 % der maximal erwarteten Verbraucherleistung 
+(Bemessungsleistung), die vom Aggregat zu übernehmen ist, jedoch mindestens mit jener 
+Minimalleistung, die das Aggregat nach Herstellerangaben ohne Schaden zu nehmen unbegrenzt 
+abgeben kann, ausgeführt werden. 
+f) 
+Prüfung der Umschalteinrichtungen der Sicherheitsstromquellen durch Trennung vom Versorgungsnetz:  
+längstens in Abständen von 12 Monaten. 
+ 
+ANMERKUNG AT  
+Der 
+simulierte 
+Test 
+der 
+Umschalteinrichtungen 
+kann 
+entfallen, 
+wenn 
+die 
+ordnungsgemäße Funktion im Zuge eines unvorhergesehenen Ausfalles des öffentlichen Netzes festgestellt und 
+dokumentiert wurde. 
+g) 
+Prüfung, ob die Leistungen der Sicherheitsstromquellen noch dem erforderlichen Leistungsbedarf der 
+versorgten Verbrauchsmittel entsprechen: 12 Monate. 
+h) 
+Prüfen des Auslösens der Fehlerstrom-Schutzeinrichtungen (RCD) durch Betätigung der Prüftaste, 
+gemäß den Herstellerangaben, aber längstens in Abständen von 12 Monaten durch eine Elektrofachkraft 
+(BA5) oder eine elektrotechnisch unterwiesene Person (BA4). 
+ 
+ANMERKUNG AT  
+Andere 
+Rechtsvorschriften 
+(zB 
+Elektroschutzverordnung) 
+können 
+auch kürzere 
+Prüfintervalle fordern. 
+j) 
+Messung der Spannungen gemäß 710.415.2.101, sofern zutreffend: jährlich. 
+Anforderungen an die Prüfung der Funktion der Sicherheitsbeleuchtung siehe Teil 5-56. 
+Über die regelmäßigen Prüfungen sind Prüfbücher zu führen. Diese Prüfbücher sind mindestens 3 Jahre 
+nach der darauffolgenden Prüfung aufzubewahren. Die Dokumentation kann auch elektronisch erfolgen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 609/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 25 
+ 
+ANMERKUNG 
+Die Abmessungen im Bild zeigen die Minimalausdehnung einer Patientenumgebung in einer freien 
+Umgebung. 
+Bild 710.1 – Beispiel einer Patientenumgebung (Quelle: ÖVE/ÖNORM EN 60601-1) 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 610/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 26 
+Anhang 710.A 
+(normativ) 
+ 
+Einteilung der Stromversorgung für Sicherheitszwecke von  
+medizinisch genutzten Bereichen 
+Tabelle 710.A.1 – Einteilung der für medizinisch genutzte Bereiche erforderlichen Stromversorgungen 
+für Sicherheitszwecke 
+(siehe auch Teil 5-56 Unterabschnitt 560.4) 
+Klasse 0 
+(keine Unterbrechung) 
+Automatische Stromversorgung unterbrechungsfrei verfügbar 
+Klasse 0,15 
+(sehr kurze Unterbrechung) 
+Automatische Stromversorgung innerhalb von 0,15 s verfügbar 
+Klasse 0,5 
+(kurze Unterbrechung) 
+Automatische Stromversorgung innerhalb von 0,5 s verfügbar 
+Klasse 15 
+(mittlere Unterbrechung) 
+Automatische Stromversorgung innerhalb von 15 s verfügbar 
+Klasse > 15 
+(lange Unterbrechung) 
+Automatische Stromversorgung nach mehr als 15 s verfügbar 
+ANMERKUNG 1 
+ 
+Allgemein ist es nicht notwendig, eine unterbrechungsfreie Stromversorgung für ME-Geräte 
+vorzusehen. Es können jedoch bestimmte mikroprozessorgesteuerte Geräte eine solche Versorgung notwendig machen. 
+ANMERKUNG 2 
+ 
+Stromversorgungen für Sicherheitszwecke für Bereiche mit unterschiedlicher Klassifizierung sollten in 
+Zweifelsfällen die Anforderungen der Klasse, die die größte Versorgungssicherheit ermöglicht, erfüllen. Auf Anhang 710.B mit 
+einer Anleitung zur Einteilung der Einrichtungen für Sicherheitsstromversorgung von medizinisch genutzten Bereichen sollte 
+Bezug genommen werden. 
+ANMERKUNG 3 
+ 
+Die Angabe „innerhalb“ schließt „kleiner oder gleich“ ein. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 611/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 27 
+Anhang 710.B 
+(informativ) 
+ 
+Beispiele für die Zuordnung von Gruppennummern und Einteilung  
+der Stromversorgung für Sicherheitszwecke von medizinisch  
+genutzten Bereichen 
+Die in Tabelle 710.B.1 aufgeführten Beispiele dienen ausschließlich als Leitfaden. 
+Tabelle 710.B.1 – Liste mit Beispielen von medizinisch genutzten Bereichen, die Zuteilung  
+zu einer Raumgruppe und deren Klassifizierung (Leitfaden) (1 von 2) 
+Medizinisch genutzter Bereich 
+Gruppe 
+Klassifizierung 
+0 c 
+1 
+2 
+≤ 0,5 s 
+> 0,5 s 
+≤ 15 s 
+1 
+Massageraum 
+x 
+x 
+ 
+ 
+x 
+2 
+Bettenraum 
+ 
+x 
+ 
+ 
+x 
+3 
+Entbindungsraum 
+ 
+x 
+ 
+x a 
+x 
+3.AT 
+Klinischer Entbindungsraum 
+ 
+ 
+x 
+x 
+x 
+4 
+ECG-, EEG- und EHG-Raum 
+ 
+x 
+ 
+ 
+x 
+5 
+Endoskopieraum 
+ 
+x b 
+x 
+x 
+x b 
+6 
+Untersuchungs- oder Behandlungsraum 
+ 
+x 
+ 
+x 
+x 
+7 
+Urologieraum 
+ 
+x b 
+x 
+x 
+x b 
+8 
+Radiologischer Diagnostik- und 
+ 
+Behandlungsraum 
+ 
+x 
+x 
+x 
+x 
+9 
+Hydrotherapieraum 
+ 
+x 
+ 
+ 
+x 
+10 
+Physiotherapieraum 
+ 
+x 
+ 
+ 
+x 
+11 
+Anästhesiebereich 
+ 
+ 
+x 
+x a 
+x 
+12 
+Operationssaal 
+ 
+ 
+x 
+x a 
+x 
+13 
+Operationsvorbereitungsraum 
+ 
+ 
+x 
+x a 
+x 
+14 
+Operationsgipsraum 
+ 
+ 
+x 
+x a 
+x 
+15 
+Aufwachraum 
+ 
+ 
+x 
+x a 
+x 
+16 
+Herzkatheterraum 
+ 
+ 
+x 
+x a 
+x 
+17 
+Intensivpflegeraum 
+ 
+ 
+x 
+x a 
+x 
+18 
+Angiographieuntersuchungsraum 
+ 
+ 
+x 
+x a 
+x 
+19 
+Hämo-Dialyseraum 
+ 
+x 
+ 
+ 
+x 
+19.AT Akut-Hämo-Dialyseraum 
+ 
+ 
+x 
+x 
+x 
+20 
+Magnetresonanzbildgebungsraum (MRI) 
+ 
+x 
+x 
+x 
+x 
+21 
+Nuklearmedizinischer Raum 
+ 
+x 
+ 
+ 
+x 
+22 
+Neonatologie 
+ 
+ 
+x 
+x a 
+x 
+23 
+Zwischenpflegestation (IMCU) 
+ 
+ 
+x 
+x 
+x 
+24.AT Intensiv-Erstversorgung (Schockraum) 
+ 
+ 
+x 
+x 
+x 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 612/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 28 
+Tabelle 710.B.1 – Liste mit Beispielen von medizinisch genutzten Bereichen, die Zuteilung  
+zu einer Raumgruppe und deren Klassifizierung (Leitfaden) (2 von 2) 
+a 
+Beleuchtungs- und lebenswichtige medizinische elektrische Einrichtungen, die eine Stromversorgung innerhalb  
+von 0,5 s oder schneller benötigen. 
+b 
+Wenn keine chirurgischen Eingriffe vorgenommen werden. 
+c 
+Bei der Planung von Starkstromanlagen in Krankenhäusern oder Pflegeheimen ist der zu erwartende bestimmungsgemäße 
+Gebrauch elektromedizinischer Geräte, zB in Bettenräumen, meist nicht vorhersehbar. Im Zweifelsfall sollte deshalb von der 
+Anwendungsgruppe 0 kein Gebrauch gemacht werden. 
+ 
+Erklärung der Begriffe von Tabelle 710.B.1: 
+1 
+Massageraum 
+2 
+Stationsraum (Bettenraum) 
+ 
+Medizinisch genutzter Raum oder Raumgruppe, in der Patienten während ihres Aufenthalts in der 
+Klinik oder jedem anderen medizinisch genutzten Bereich untergebracht sind. 
+3 
+Entbindungsraum 
+ 
+Raum, in dem die Geburt stattfindet. 
+3.1.AT Klinischer Entbindungsraum 
+ 
+Sectio OP. 
+4 
+Elektrokardiografieraum (ECG), Elektroenzephalografieraum (EEG), Elektohysterografieraum (EHG) 
+5 
+Endoskopieraum 
+ 
+Raum, der vorgesehen ist für die Anwendung von Endoskopiemethoden durch natürliche oder 
+künstliche Öffnungen zur Untersuchung und/oder Behandlung von Organen. 
+ 
+Beispiele 
+zur 
+Endoskopie-Behandlung 
+sind 
+die 
+Bronchoskopie, 
+Kehlkopfbehandlung, 
+Blasenbehandlung, Gastroskopie und ähnliche Methoden, die, wenn notwendig, unter Narkose 
+ausgeführt werden. 
+6 
+Untersuchungs- oder Behandlungsraum 
+7 
+Urologieraum (kein Operationsraum) 
+ 
+Raum, in dem Diagnosen oder Behandlungen im urologischen Bereich unter Anwendung 
+medizinischer elektrischer Geräte durchgeführt werden, wie zB Röntgen-, Endoskopie- und 
+Hochfrequenzchirurgiegeräte. 
+8 
+Radiologischer Diagnose- und Therapieraum 
+ 
+Radiologischer Diagnoseraum: 
+ 
+Raum, der für die Anwendung von ionisierender Strahlung zur Anzeige interner Körperstrukturen 
+durch Mittel der Radiografie oder Fluoroskopie oder durch den Einsatz radioaktiver Isotope oder für 
+andere diagnostische Zwecke bestimmt ist. 
+ 
+Radiologischer Therapieraum: 
+ 
+Raum, der zur Anwendung ionisierender Strahlung zur Erzielung therapeutischer Effekte bestimmt 
+ist. 
+9 
+Hydrotherapieraum 
+ 
+Raum, in dem Patienten mit wassertherapeutischen Methoden behandelt werden. Beispiele solcher 
+Methoden sind therapeutische Behandlungen mit Wasser, Sole, Schlamm, Schleim, Lehm, Dampf, 
+Sand, Wasser mit Gasen, Sole mit Gasen, Inhalationstherapie, Elektrotherapie im Wasser (mit oder 
+ohne Zusätze), Massage-Wärmetherapie und Wärmetherapie im Wasser (mit oder ohne Zusätze). 
+ 
+Allgemeine Schwimmbecken und bestimmungsgemäße Badezimmer werden nicht als Wasser-
+behandlungsräume angesehen. 
+10 
+Physiotherapieraum 
+ 
+Raum, in dem die Patienten mit physiotherapeutischen Methoden medizinisch behandelt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 613/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 29 
+11 
+Anästhesieraum 
+ 
+Medizinisch genutzter Bereich (Raum), in dem allgemeine Inhalationsnarkosen verabreicht werden. 
+ 
+ 
+ANMERKUNG  
+Der 
+Anästhesieraum 
+besteht 
+zB 
+aus 
+dem 
+Operationssaal, 
+dem 
+Operationsvorbereitungsraum, dem Operationsgipsraum und dem Behandlungsraum. 
+12 
+Operationssaal 
+ 
+Raum, in dem chirurgische Eingriffe durchgeführt werden. 
+13 
+Operationsvorbereitungsraum 
+ 
+Raum, in dem Patienten auf die Operation vorbereitet werden, zB mittels Verabreichung von 
+Narkosen. 
+14 
+Operationsgipsraum 
+ 
+Raum, in dem während der Narkose Gips oder ähnliches Material angewendet wird. 
+ 
+ 
+ANMERKUNG  
+Solch ein Raum gehört zu der Gruppe der Operationsräume und ist üblicherweise damit 
+räumlich verbunden. 
+15 
+Aufwachraum 
+ 
+Raum, in dem sich der Patient unter Beobachtung von der Wirkung der Narkose erholt. 
+ 
+ 
+ANMERKUNG  
+Solch ein Raum liegt üblicherweise sehr nahe an der Gruppe der Operationsräume, ist 
+aber notwendigerweise kein Teil davon. 
+16 
+Herzkatheterraum 
+ 
+Raum, der für die Untersuchung und Behandlung des Herzens mit Kathetern bestimmt ist. Beispiele 
+für Anwendungsfälle sind die Messung des Aktionspotentials, der Blutströmung im Herzen, 
+Entnahme von Blutproben, Injektion von Kontrastmitteln oder Verabreichung von Stimulanzmitteln. 
+17 
+Intensivpflegeraum 
+ 
+Raum, in dem bettlägerige Patienten unabhängig von einer Operation unter Anwendung von  
+ME-Geräten überwacht werden. Falls erforderlich, können Körperaktivitäten angeregt werden. 
+18 
+Angiographieuntersuchungsraum 
+ 
+Raum, der insbesondere zur Darstellung von Arterien oder Venen mittels Kontrastmittel bestimmt ist. 
+19 
+Hämo-Dialyseraum 
+ 
+Raum in einer medizinischen Einrichtung, dazu bestimmt, Patienten mit medizinischen elektrischen 
+Geräten zu verbinden, um ihr Blut zu reinigen. 
+19.AT Akut-Hämo-Dialyseraum 
+ 
+Raum wie unter 19, jedoch für akute, lebensbedrohende Fälle. 
+20 
+Magnetresonanzbildgebung (MRI) 
+21 
+Nuklearmedizin 
+22 
+Neonatologie 
+23 
+Zwischenpflegestation (IMCU) 
+ 
+Raum, in dem bettlägerige Patienten unabhängig von einer Operation mit ME-Geräten überwacht 
+werden. Zu diesen Räumen zählen auch Stroke Units. 
+24.AT Intensiv-Erstversorgung (Schockraum) 
+ 
+Raum, in dem frisch verunfallte Patientinnen/Patienten stabilisiert und diagnostiziert werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 614/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 30 
+Anhang 710.C 
+(informativ) 
+ 
+Schutz gegen elektromagnetische Störungen (EMI)  
+in Anlagen von Gebäuden 
+Mit Hinweis auf die Elektromagnetische Verträglichkeitsverordnung – EMVV ist das Gebäude nach einem 
+erstellten EMV-, Erdungs-, Potentialausgleichs-, Blitzschutz- und Überspannungsschutz-Konzept zu 
+errichten, in welchem die anzuwendenden Regeln der Technik zu dokumentieren sind. 
+Störungen sind nicht zu erwarten, wenn am Patientenplatz die magnetische Induktion B bei 50 Hz folgende 
+Grenzwerte nicht überschreitet: 
+– 
+Bss = 1 ∙ 10–7 Tesla für Elektromyogramm (EMG); 
+– 
+Bss = 2 ∙ 10–7 Tesla für Elektroenzephalogramm (EEG); 
+– 
+Bss = 4 ∙ 10–7 Tesla für Elektrokardiogramm (EKG). 
+ANMERKUNG AT 
+Die mit den Indizes „ss“ angegebenen Werte sind als „Spitze-Spitze-Werte“ und nicht als 
+Effektivwerte zu verstehen. 
+Diese Grenzwerte werden im Allgemeinen nicht überschritten, wenn zwischen elektrischen Betriebsmitteln, 
+die magnetische Störungen hervorrufen können, und den für die Untersuchung von Patienten vorgesehenen 
+Plätzen folgende Mindestabstände in alle Richtungen eingehalten werden: 
+a) 
+Bei Verwendung vorwiegend induktiver Betriebsmittel großer Leistung sind in der Regel 6 m Abstand 
+ausreichend. 
+ 
+Solche induktiven Betriebsmittel sind zB: 
+ 
+– 
+Transformatoren der Starkstromanlage, zB des medizinischen IT-Systems; 
+ 
+– 
+ortsfeste Elektromotoren, insbesondere solche mit Nennleistungen über 3 kW. 
+b) 
+Zwischen mehradrigen Kabeln und Leitungen der elektrischen Anlage und den zu schützenden 
+Patientenplätzen werden folgende Mindestabstände in Abhängigkeit vom Leiterquerschnitt empfohlen: 
+Leiter-Nennquerschnitt 
+Mindestabstand 
+10 mm2 bis 70 mm2 
+3 m 
+95 mm2 bis 185 mm2 
+6 m 
+größer 185 mm2 
+9 m 
+ 
+Bei einadrigen Kabeln und Leitungen können größere Abstände notwendig sein. Besteht die Anforderung zur 
+Prüfung der Einhaltung der Grenzwerte, werden Messungen durch Sachverständige empfohlen. 
+Zusätzliche Informationen siehe ÖVE/ÖNORM EN 50174-2. 
+Die in a) bis b) genannten Abstände können durch magnetische Abschirmungen vermindert werden. 
+Es wird auf die mögliche Beeinflussung von elektromedizinischen Messeinrichtungen durch 16,7 Hz 
+Wechselstrom-Bahnanlagen in Gebäudenähe hingewiesen. 
+Es wird auf mögliche Störungen durch Netzrückwirkungen der betriebseigenen Anlagen hingewiesen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 615/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 31 
+Nationale Ergänzung 710.NE 
+(informativ) 
+ 
+Ergänzende Anforderungen für medizinische Einrichtungen  
+außerhalb von Krankenhäusern 
+710.NE.1 Praxisräume der Human- und Dentalmedizin 
+710.NE.1.1 Zuordnung der Räume zu den Anwendungsgruppen 
+Die richtige Zuordnung der Räume zu den Anwendungsgruppen ergibt sich aus dem Abschnitt Begriffe. 
+ANMERKUNG AT 
+Die der Untersuchung oder Behandlung von Patienten dienenden Räume in ärztlichen Praxen 
+der Human- oder Dentalmedizin sind in der Regel medizinisch genutzte Räume der Gruppe 1. 
+710.NE.1.2 Anforderungen an Verteiler 
+Verteiler müssen leicht zugänglich, allseitig verkleidet und vor dem Zugriff Unbefugter gesichert sein.  
+Bei Endstromkreisen muss eine einfache Messung des Isolationswiderstandes möglich sein (zB allpolig 
+trennende Schalteinrichtungen). 
+Für medizinisch genutzte Räume der Gruppe 2 sind eigene Verteiler erforderlich. Sie dürfen in einem 
+gemeinsamen Gehäuse mit Verteilern für nicht medizinisch genutzte Räume oder für Räume anderer 
+Anwendungsgruppen untergebracht werden, wenn sie von diesen durch eine Zwischenwand getrennt und mit 
+einer eigenen Abdeckung versehen sind. 
+ANMERKUNG AT 
+Verteiler sind vorzugsweise außerhalb der medizinisch genutzten Räume der Gruppe 2 zu 
+installieren. 
+710.NE.1.3 Schutz gegen elektrischen Schlag und zusätzlicher Schutzpotentialausgleich 
+Es sind die Maßnahmen gemäß Abschnitt 710.41 auszuführen. Abweichend zur selbsttätigen Umschaltung 
+gemäß Abschnitt 710.512.1.102 zwischen SV ≤ 0,5 s und SV ≤ 15 s kann die Umschaltung zwischen der 
+SV ≤ 0,5 s und der allgemeinen Stromversorgung (AV) erfolgen. 
+710.NE.1.4 Sicherheitsstromversorgung und Ersatzbeleuchtung für medizinisch genutzte Bereiche 
+In Räumen der Gruppe 1 ist eine Ersatzbeleuchtung für die Dauer von 1 Stunde mit einer Umschaltzeit von 
+höchstens 15 s vorzusehen.  
+Für Räume der Gruppe 2 müssen bei Störung der allgemeinen Stromversorgung folgende Einrichtungen aus 
+einer SV ≤ 0,5 s gemäß dieser Bestimmung für die Dauer von mindestens 3 Stunden weiter betrieben werden 
+können: 
+– 
+Operationsleuchten und unentbehrliche Leuchten; 
+ 
+ANMERKUNG 1.AT 
+Als unentbehrliche Leuchten gelten auch die allgemeinen Raumleuchten oder Teile 
+solcher, wenn keine OP- oder Untersuchungsleuchte vorhanden ist. Ebenso zählen Lichtquellen für die 
+endoskopische chirurgische Feldbeleuchtung zu den unentbehrlichen Leuchten. 
+– 
+lebenswichtige elektromedizinische Geräte. 
+Bei entsprechender Auslegung kann diese Anlage auch die Funktion der Sicherheitsstromversorgung für 
+weitere Einrichtungen für Sicherheitszwecke und wichtige medizinische Geräte übernehmen. 
+ANMERKUNG 2.AT 
+Die Sicherheitsbeleuchtung für Fluchtwege wird davon nicht geregelt. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 616/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 32 
+710.NE.1.5 Steckdosenstromkreise im IT-System von Räumen der Gruppe 2  
+Für Steckdosenstromkreise im IT-System von Räumen der Gruppe 2 ist 710.55.102 einzuhalten. 
+710.NE.1.6 Prüfungen gemäß 710.6. 
+Prüfungen sind gemäß 710.6 durchzuführen. 
+710.NE.2 Versorgung von medizinischen elektrischen Geräten, die eine besonders hohe 
+elektrische bzw. Betriebssicherheit erfordern (zB Heimdialyse, Beatmung) 
+Für die regelmäßige Versorgung dieser Geräte in Räumen von Wohnungen sind Maßnahmen gemäß 
+710.NE.2.1 oder eine Anschlusseinrichtung gemäß 710.NE.2.2 vorzusehen. 
+710.NE.2.1 Maßnahmen in der elektrischen Anlage 
+1) 
+Es ist ein eigener Stromkreis, beginnend am Unterverteiler der Wohnung, zu errichten. 
+2) 
+Der Stromkreis ist mit einer Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A zu schützen. 
+ 
+ANMERKUNG 
+Im Sinne einer höheren Betriebssicherheit ist eine Fehlerstrom-Schutzeinrichtung (RCD) mit 
+ausreichender Stoßstromfestigkeit (mindestens 3 kA) mit einer Kurzzeitverzögerung (zB Typ G) vorzusehen. 
+3) 
+Für den Anschluss des medizinischen elektrischen Gerätes sind Steckdosen vorzusehen, die mit den 
+übrigen Steckdosen unverwechselbar, zB Steckdosen gemäß ÖVE/ÖNORM E 8610 oder besonders 
+gekennzeichnet sind. 
+4) 
+Es ist ein zusätzlicher Schutzpotentialausgleich in der Patientenumgebung gemäß Bild 710.C.1 zu 
+errichten, in den alle fremden leitfähigen Teile einbezogen werden müssen, die der Patient während der 
+Behandlung berühren kann. 
+710.NE.2.2 Anschlusseinrichtung zwischen einer Steckdose der Hausinstallation und einem Gerät 
+Den Geräten für die Heimdialyse ist eine Anschlusseinrichtung vorzuschalten, die die folgenden 
+Anforderungen erfüllt: 
+1) 
+Die Isolierstoffumhüllung der Anschlusseinrichtung muss die Anforderungen der Schutzisolierung 
+erfüllen. 
+2) 
+Die Anschlussleitung muss zweiadrig ohne Schutzleiter ausgeführt sein. Sie muss der Bauart H05VV 
+gemäß ÖVE/ÖNORM EN 50525-2 oder gleichwertigen entsprechen. 
+3) 
+Eingangs- und Ausgangsseite der Anschlusseinrichtung sind durch einen Trenntransformator gemäß 
+ÖVE/ÖNORM EN 61558-2-6 sicher elektrisch zu trennen. Eine Einschaltstrombegrenzung ist 
+vorzusehen. 
+4) 
+Es sind auf der Ausgangsseite Steckdosen vorzusehen, die mit den Steckdosen der Hausinstallation 
+unverwechselbar sind, zB Steckdosen gemäß ÖVE/ÖNORM E 8610. 
+5) 
+Zwischen den Ausgangsklemmen des Trenntransformators und den ausgangsseitigen Steckdosen ist 
+entweder 
+ 
+– 
+jede 
+Steckdose 
+mit 
+einer 
+eigenen 
+Fehlerstrom-Schutzeinrichtung 
+(RCD) 
+mit 
+einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A zu versehen, oder 
+ 
+– 
+eine Isolationsüberwachung gegen den ungeerdeten Schutzpotentialausgleichsleiter vorzusehen. 
+ 
+ 
+Bei Anwendung der Schutzmaßnahme Isolations-Überwachungssystem ist eine Ausschaltung beim 
+zweiten Fehler nicht erforderlich, wenn sich bei der Meldeanzeige der deutliche Hinweis befindet, 
+dass bei Ansprechen der Meldung die Dialyse beendet werden darf, aber eine erneute Dialyse erst 
+nach Beseitigung des Fehlers zulässig ist. 
+6) 
+Die Schutzkontakte der ausgangsseitigen Steckdosen sind untereinander durch einen ungeerdeten 
+isolierten Schutzpotentialausgleichsleiter zu verbinden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 617/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 33 
+710.NE.3 Pflegeheime und Kuranstalten 
+Für Pflegeheime und Kuranstalten gilt dieser Teil mit folgenden Abweichungen: 
+710.NE.3.1 Sicherheitsstromversorgung für Pflegeheime und Kuranstalten 
+710.NE.3.1.1 Es gelten die Anforderungen an die Sicherheitsstromversorgung gemäß 710.56 mit folgenden 
+Abweichungen: 
+710.NE.3.1.1.1 
+Ist ein Stromerzeugungsaggregat erforderlich, 
+– 
+um Einrichtungen für Sicherheitszwecke (zB Feuerwehraufzüge, mechanische Brandrauchentlüftung, 
+Drucksteigerungsanlage, unentbehrliche medizinische Geräte) zu versorgen, oder 
+– 
+zur Aufrechterhaltung des Betriebes notwendige Einrichtungen, 
+so ist dieses entweder als stationäres Aggregat mit einer Betriebsdauer von mindestens 24 Stunden oder 
+mittels eines transportablen Aggregates, das innerhalb von 3 Stunden nach Ausfall der allgemeinen 
+Stromversorgung betriebsbereit sein muss und ebenfalls die 24 Stunden Betriebsdauer gewährleistet, 
+auszuführen. Die Betriebsdauer von 24 Stunden kann auch durch organisatorisch sicher-gestelltes 
+Nachtanken erfüllt werden. Bei der Auslegung des Stromaggregates ist darauf zu achten, dass auch eine 
+ordnungsgemäße elektrische Schutzmaßnahme im Notbetrieb gewährleistet ist. 
+710.NE.3.1.1.2 
+Die Sicherheitsbeleuchtung in Fluchtwegen gemäß Teil 5-56 ist mit einer gesamten 
+Mindestbetriebsdauer von 8 Stunden auszuführen. 
+ANMERKUNG 
+Die 8 Stunden Mindestbetriebsdauer können sich zusammensetzen aus der Batteriekapazität der 
+Sicherheitsbeleuchtungsanlage und der Betriebsdauer des stationären bzw. externen Notstromaggregates. 
+710.NE.3.1.1.3 
+In für Heimbewohner zugänglichen Sanitärräumen sind Maßnahmen zu treffen, die bei 
+Stromausfall ein gefahrloses Verlassen gewährleisten (zB Sicherheitsleuchte, beleuchteter Notruftaster, 
+Leuchtfolie). 
+710.NE.3.1.2 Sicherheitsstromversorgung für Räume der Gruppe 2 gemäß 710.560.6.104.1 
+Für Operationsleuchten und unentbehrliche Leuchten sowie für lebenswichtige elektromedizinische Geräte ist 
+eine Sicherheitsstromversorgung SV ≤ 0,5 s gemäß 710.560.6.104.1 vorzusehen. In diesem Fall ist auch 
+eine SV < 15 s (stationäres Aggregat) vorzusehen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 618/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 34 
+710.NE.4 Beispielbilder 
+ 
+Bild 710.NE.4.001.AT – Teil 1 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 619/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 35 
+ 
+Bild 710.NE.4.001.AT – Teil 2 
+Bild 710.NE.4.001.AT – Stromversorgung mehrerer Gebäude von einer Stelle aus bei  
+Verlegung außerhalb des Erdreiches 
+Legende zu Bild 710.NE.4.001.AT (Teil 1 und Teil 2) 
+1 
+siehe 710.560.6.1.102.AT 
+2 
+siehe 710.560.6.1.102.AT (Einspeisestelle von AV-Schiene dargestellt) 
+3 
+Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+4 
+Unterverteiler für medizinisch genutzte Bereiche der Gruppe 2 
+5 
+für Einrichtungen für Sicherheitszwecke, ausgenommen Unterverteiler für medizinisch genutzte Bereiche 
+der Gruppe 2 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 620/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 36 
+ 
+Bild 710.NE.4.002.AT – Beispiel für die Stromversorgung eines  
+medizinisch genutzten Bereichs der Gruppe 1 
+Legende zu Bild 710.NE.4.002.AT 
+1 
+Sicherheitsbeleuchtung gemäß 710.560.9 
+2 
+Be- bzw. Hinterleuchtung von Rettungszeichen gemäß 710.560.9 
+3 
+Raumbeleuchtung aus allgemeiner Stromversorgung 710.560.9 
+4 
+Ersatzbeleuchtung gemäß 710.560.9 
+5 
+Verbraucher gemäß 710.560.6.104.1, die nicht lebenswichtigen Maßnahmen dienen, zB Laborgeräte, 
+EDV-Anlagen 
+6 
+Stromversorgung für notwendige Personenaufzüge und Bettenaufzüge; Kabel- und Leitungsanlage ohne 
+Funktionserhalt 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 621/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 37 
+7 
+Stromversorgung für Feuerwehraufzüge; Kabel- und Leitungsanlage mit Funktionserhalt gemäß 
+TRVB 150 S; Ausführung gemäß OVE-Richtlinie R 12-2 
+8 
+Alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+9 
+Die Versorgung der rotierenden SV ≤ 0,5 s kann auch über die AV erfolgen 
+10 Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+11 Bei Querung von Brandabschnitten 
+ 
+Bild 710.NE.4.003.AT –Teil 1 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 622/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-710 – Seite 38 
+ 
+Bild 710.NE.4.003.AT – Teil 2 
+Bild 710.NE.4.003.AT – Beispiel für die Stromversorgung eines  
+medizinisch genutzten Bereichs der Gruppe 2 
+Legende zu Bild 710.NE.4.003.AT (Teil 1 und Teil 2) 
+1 
+Bevorzugte Leitung gemäß 710.512.1.102 
+2 
+Leitung in Reservestellung 
+3 
+Ersatzbeleuchtung gemäß 710.560.9 
+4 
+Raumbeleuchtung aus zusätzlicher Stromversorgung (siehe 710.560.9) 
+5 
+Stromkreise in medizinisch genutzten Bereichen der Gruppe 2 gemäß 710.411.4.002.AT 
+6 
+Stromkreis aus IT-System gemäß 710.512.1.102 
+7 
+Stromkreise in medizinisch genutzten Bereichen der Gruppe 2 gemäß 710.411.4.002.AT für die keine 
+Sicherheitsstromversorgung gefordert ist 
+8 
+Kurz- und erdschlusssichere Verlegung 
+9 
+Alternativ Leitungsschutzschalter anstelle der Leistungsschalter 
+10 Die Versorgung der rotierenden SV ≤ 0,5 s kann auch über die AV erfolgen 
+11 Umschaltmöglichkeit (Notschaltung) von Hand (optional) 
+12 Bei Querung von Brandabschnitten  
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 623/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 1 
+Teil 7-711  
+Ausstellungen, Shows und Stände 
+711.1 
+Anwendungsbereich 
+Dieser Teil gilt für vorübergehend errichtete elektrische Anlagen in Ausstellungen, Shows und Ständen 
+(einschließlich mobiler und tragbarer Stände und Ausstattungen), Messen und Kongressen, um eine sichere 
+Planung, die Errichtung und den Betrieb von elektrischen Einrichtungen zu ermöglichen. Diese sind 
+vorgesehen, einmalig oder wiederholt ohne Verlust von Sicherheit vorübergehend errichtet zu werden. 
+Dieser Teil gilt für die vor Ort vorübergehend errichteten elektrischen Anlagen ab dem/den Speisepunkt(en). 
+Falls nicht besonders erwähnt, gilt dieser Teil nicht für Ausstellungsgegenstände (Exponate), für die es 
+Anforderungen in entsprechenden Normen gibt. 
+Die ortsfest errichtete elektrische Anlage eines Gebäudes einschließlich des Speisepunkts ist vom 
+Anwendungsbereich ausgeschlossen, auch wenn in diesem Ausstellungen, Shows oder Stände aufgebaut 
+werden können. 
+Die Anforderungen dieses Teils gelten nicht für vorübergehend errichtete elektrische Anlagen für Aufbauten, 
+Vergnügungseinrichtungen und Buden auf Veranstaltungsplätzen und für Zirkusse – siehe Teil 7-740. 
+711.3 
+Bestimmung allgemeiner Merkmale 
+711.31 
+Zweck, Stromversorgung und Aufbau  
+711.313 
+Stromversorgungen 
+711.313.1 
+Allgemeines 
+Füge hinzu: 
+Die Nennspannung gegen Erde der vorübergehend errichteten elektrischen Anlage gemäß Anwendungs-
+bereich darf 230 V oder DC 350 V nicht überschreiten. 
+711.313.1.001.AT 
+An jeder Einrichtung (Speisepunkt) und jedem Aufbau gemäß Anwendungsbereich 
+muss ein leicht zugänglicher Anschlusspunkt vorhanden sein, der dauerhaft mit den folgenden wichtigen 
+Merkmalen gekennzeichnet sein muss: 
+– 
+Bemessungsspannung, 
+– 
+Bemessungsstrom, 
+– 
+Bemessungsfrequenz. 
+ANMERKUNG AT 
+Der Speisepunkt stellt die Anwendungsgrenze der ortsfesten elektrischen Anlage oder einer 
+anderen Stromquelle dar, ab der die elektrische Energie für die vorübergehend errichtete elektrische Anlage geliefert 
+wird. Dies können zB Steckdosen oder Klemmen (an elektrischen Betriebsmitteln) sein. 
+711.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+711.41 
+Schutz gegen elektrischen Schlag 
+711.410.3 
+Allgemeine Anforderungen 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 624/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 2 
+711.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des 
+Handbereichs gemäß Teil 4-41 Anhang 41.B dürfen nicht angewendet werden. 
+711.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung für die Versorgung mit mehr als einem 
+Verbrauchsmittel gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+711.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+711.411.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+711.411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+Füge hinzu: 
+Für jede vorübergehend errichtete elektrische Anlage muss beim Speisepunkt eine Fehlerstrom-
+Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,3 A vorhanden sein. Diese Einrichtung 
+muss zeitverzögert in Übereinstimmung mit OVE EN 60947-2 ausgeführt sein, oder es müssen Fehlerstrom-
+Schutzeinrichtungen vom Typ S gemäß OVE EN 61008-1 oder OVE EN 61009-1 ausgewählt werden, um 
+eine Selektivität mit den Fehlerstrom-Schutzeinrichtungen in den Endstromkreisen zu erreichen. 
+ANMERKUNG 1.AT 
+Bestimmungsgemäß errichtete Baustromverteiler erfüllen nicht diese Anforderungen für Anlagen 
+gemäß dem Anwendungsbereich dieses Teils. 
+ANMERKUNG 2.AT 
+Diese Fehlerstrom-Schutzeinrichtung (RCD) kann auch Teil der vorübergehend errichteten 
+elektrischen Anlage gemäß Teil 7-740 sein. 
+711.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+Füge hinzu: 
+Es darf nur das TN-S-System angewendet werden. 
+ANMERKUNG AT 
+Siehe auch 740.411.4. 
+711.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+711.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Alle Endstromkreise bis einschließlich 32 A Bemessungsstrom für 
+– 
+Beleuchtung, 
+– 
+Steckdosen und 
+– 
+ortsveränderliche elektrische Betriebsmittel, die über flexible Kabel oder Leitungen angeschlossen sind, 
+müssen mit Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom I∆n  0,03 A 
+geschützt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 625/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 3 
+Vorzugsweise 
+sind 
+kombinierte 
+kurzzeitverzögerte 
+Fehlerstrom-Leitungsschutzschalter (RCBO) 
+mit 
+ausreichender Stoßstromfestigkeit (zB Typ G) zu verwenden. 
+ANMERKUNG 1.AT 
+Diese Empfehlung dient zur Erhöhung der Versorgungssicherheit. 
+ANMERKUNG 2.AT 
+Die Anforderungen für den zusätzlichen Schutz beziehen sich auf das erhöhte Risiko bezüglich 
+Beschädigung von Kabeln und Leitungen. 
+Diese Anforderungen sind nicht anzuwenden für: 
+– 
+Stromkreise mit Schutz durch Kleinspannung mittels SELV oder PELV (siehe Abschnitt 414), oder 
+– 
+Stromkreise mit Schutz durch Schutztrennung (siehe Abschnitt 413). 
+711.415.2 
+Zusätzlicher Schutz: Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+Der Querschnitt des Schutzpotentialausgleichsleiters muss mindestens 4 mm2 Cu sein. 
+In Bereichen, die für Tiere vorgesehen sind, müssen alle Körper und fremden leitfähige Teile, die gleichzeitig 
+berührt werden können, zu einem örtlichen zusätzlichen Schutzpotentialausgleich verbunden werden (siehe 
+auch 705.415.2). 
+711.42 
+Schutz gegen thermische Einflüsse 
+711.422 
+Maßnahmen bei besonderen Brandrisiken 
+711.422.1 
+Allgemeines 
+Füge hinzu: 
+ANMERKUNG 
+Das erhöhte Risiko durch Feuer und Brände und die Notwendigkeit der Berücksichtigung der 
+Anforderung von Teil 4-42 ist zu beachten. 
+711.422.3 
+Räume oder Orte mit besonderem Brandrisiko 
+Füge hinzu: 
+Ein Motor, der automatisch oder von der Ferne gesteuert ist und nicht fortwährend beaufsichtigt wird, muss 
+mit einer manuell rücksetzbaren Schutzeinrichtung bei übermäßigen Temperaturen geschützt sein. 
+711.422.4 
+Räume oder Orte hauptsächlich aus brennbaren Baustoffen 
+Füge hinzu: 
+711.422.4.001.AT 
+Wärmeerzeugung 
+Leuchten, Leuchtmittel, Scheinwerfer, kleine Projektoren und andere elektrische Betriebsmittel oder Geräte 
+mit hoher Oberflächentemperatur müssen angemessen geschützt, montiert und platziert sein. Diese Betriebs-
+mittel und Geräte müssen ausreichend weit von brennbarem Material entfernt sein. 
+Schaukästen und Leuchtschriften müssen aus Werkstoffen hergestellt sein, die eine ausreichende Wärme-
+beständigkeit, mechanische Festigkeit und elektrische Isolation haben. 
+In allen Fällen 
+– 
+muss für elektrische Betriebs- und Verbrauchsmittel eine ausreichende Wärmeabfuhr gewährleistet sein 
+und 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 626/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 4 
+– 
+es sind die Herstellerangaben (inkl. der Angaben aus den jeweiligen Produktnormen) zu beachten. 
+711.46 
+Trennen und Schalten 
+Füge hinzu: 
+Jede vorübergehend errichtete elektrische Anlage muss mit einer eigenen leicht zugänglichen und eindeutig 
+zuordenbaren Einrichtung zum Trennen versehen sein. 
+Die Trenneinrichtung muss in Übereinstimmung mit 537.2 ausgewählt und installiert werden. Schalter, 
+Leistungsschalter, Fehlerstrom-Schutzeinrichtungen (RCD) usw., die nach den entsprechenden Normen zum 
+Trennen geeignet sind, dürfen benutzt werden. 
+711.5 
+Auswahl und Installation von elektrischen Betriebsmitteln 
+711.51 
+Allgemeine Bestimmungen 
+Füge hinzu: 
+Schaltgeräte und Steuergeräte dürfen nur in Verteilern, Gehäusen oder Kästen untergebracht werden, die mit 
+Schlüssel oder Werkzeug geöffnet werden können. Ausgenommen hiervon sind solche elektrischen 
+Betriebsmittel, die vorgesehen sind, durch elektrotechnische Laien (BA1) bedient zu werden. 
+711.512 
+Betriebsbedingungen und äußere Einflüsse 
+711.512.2 
+Äußere Einflüsse 
+Die äußeren Einflüsse der Örtlichkeit, wo die vorübergehend errichtete elektrische Anlage aufgebaut ist, zB 
+Auftreten von Wasser, mechanische Beanspruchung, müssen berücksichtigt werden. 
+711.513 
+Zugänglichkeit 
+Füge hinzu: 
+Alle elektrischen Betriebsmittel einschließlich der Kabel- und Leitungsanlagen müssen so angeordnet 
+werden, dass Betrieb, Besichtigung und Wartung und der Zugang zu den Verbindungen leicht möglich sind. 
+Solche Einrichtungen dürfen nicht wesentlich beeinflusst werden durch die Anordnung in einem Gehäuse 
+oder in einem Einbauraum. 
+711.52 
+Kabel- und Leitungsanlagen 
+711.520 
+Einleitung 
+711.520.4 
+Allgemeine Anforderungen 
+Füge hinzu: 
+Kabel und Leitungen müssen eine Nennspannung von mindestens 450/700 V aufweisen, ausgenommen sind 
+Kabel und Leitungen innerhalb von Aufbauten, die eine Nennspannung von mindestens 300/500 V haben 
+dürfen. 
+Kabeln und Leitungen müssen einen Mindestquerschnitt von 1,5 mm2 Cu oder gleichwertig haben. 
+Flexible Kabel und Leitungen dürfen in Bereichen, die der Öffentlichkeit zugänglich sind, nicht verlegt werden, 
+es sei denn, sie sind gegen mechanische Beschädigung geschützt. 
+Kabel/Leitungen mit Schutz gegen mechanische Beanspruchung oder bewehrte Kabel/Leitungen müssen 
+verwendet werden, wo immer die Gefahr einer mechanischen Beschädigung aufgrund äußerer Einflüsse (zB 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 627/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 5 
+> AG2) auftreten kann. Ein mechanischer Schutz muss in Bereichen, die der Öffentlichkeit zugänglich sind, 
+und in Bereichen, wo Kabel/Leitungen Straßen und Fußwege kreuzen, vorgesehen werden. 
+ANMERKUNG 1.AT 
+Es kann davon ausgegangen werden, dass die oben genannten Anforderungen wie folgt erfüllt 
+werden: 
+– 
+Elektroinstallationsrohre, die einen Schutz gegen Druck von 1 250 N, einen Schutz gegen schweren Schlag und 
+einen mittleren/hohen Schutz vor Korrosion (innen/außen) gemäß ÖVE/ÖNORM EN 50086-2-1 oder gemäß 
+ÖVE/ÖNORM EN 61386-21 sicherstellen. 
+– 
+Zu öffnende und geschlossene Installationskanäle, die einen Schutz gegen schweren Schlag gemäß ÖVE/ÖNORM 
+EN 50085-1 sicherstellen. 
+ANMERKUNG 2.AT 
+Kabel und Leitungen vom Typ H07RN-F oder H07BN4-F zusammen mit Elektroinstallations-
+rohren gemäß ÖVE/ÖNORM EN 50086-2-3 erfüllen diese Anforderungen. 
+ANMERKUNG 3.AT 
+Anforderungen für die Verlegung von Energie-, Steuer- und Messkabeln siehe OVE E 8120. 
+Installationen dürfen nicht behelfsmäßig ausgeführt werden. 
+711.521 
+Arten von Kabel- und Leitungsanlagen 
+Wenn in einem Gebäude, das für Ausstellungen usw. genutzt wird, kein Brandmeldesystem installiert ist, 
+müssen Kabel und Leitungen bzw. die Kabel- und Leitungsanlagen entweder 
+– 
+flammwidrig gemäß OVE EN 60332-1 oder OVE EN 60332-3 und mit geringer Entwicklung von Rauch 
+gemäß ÖVE/ÖNORM EN 61034 sein, oder 
+– 
+aus ein- oder mehradrigen unbewehrten Kabeln/Leitungen in metallenen oder nichtmetallenen Rohren 
+oder Kanälen bestehen, die einen Feuerschutz in Übereinstimmung mit IEC 60614 oder IEC 61084 und 
+eine Schutzart von mindestens IP4X bieten. 
+ANMERKUNG AT 
+IEC 60614 ist thematisch vergleichbar mit den Normen der Reihe ÖVE/ÖNORM EN 50086. 
+711.526 
+Elektrische Verbindungen 
+711.526.101  
+In Kabeln und Leitungen dürfen keine Verbindungen vorgesehen werden, ausgenommen 
+notwendige Verbindungen in Stromkreisen. Wenn Verbindungen hergestellt werden, müssen hierfür 
+entweder Verbinder in Übereinstimmung mit den entsprechenden Normen hergestellt werden oder die 
+Verbindung muss in einem Gehäuse mit mindestens der Schutzart von IP4X oder IPXXD hergestellt werden. 
+Wenn eine Zugbeanspruchung auf die Klemmen übertragen werden kann, muss für die Verbindung eine 
+Kabelbefestigung (Zugentlastung) enthalten sein. 
+711.55 
+Andere elektrische Betriebsmittel 
+711.55.101 
+Elektromotoren 
+711.55.101.01 Trennen 
+Wo ein Elektromotor zu einer Gefahr führen könnte, muss der Motor mit einer wirksamen allpoligen Trenn-
+einrichtung versehen sein. Diese Einrichtung muss in der Nähe des Motors angeordnet sein, für den sie 
+vorgesehen ist (siehe ÖVE/ÖNORM EN 60204-1). 
+711.55.102 
+Sicherheitstransformatoren und elektronische Konverter 
+Sicherheitstransformatoren 
+müssen 
+mit 
+ÖVE/ÖNORM EN 61558-2-6 
+übereinstimmen 
+oder 
+eine 
+entsprechende Sicherheit bieten. 
+Sicherheitstransformatoren müssen eine entsprechende Belüftung haben. Die Zugänglichkeit durch 
+Elektrofachkräfte (BA5) oder unterwiesene Personen (BA4) für Prüfung und Wartung muss möglich sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 628/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 6 
+Gehäuse, die Gleichrichter und/oder Transformatoren beinhalten, müssen angemessen belüftet werden und 
+die Öffnungen dürfen während des Betriebs nicht verdeckt sein. 
+Elektronische Konverter müssen mit dem entsprechenden Teil der OVE EN 61347 Reihe übereinstimmen. 
+711.55.103 
+Steckdosen und Stecker 
+Es ist eine entsprechend der zu erwartenden Verbrauchsmittel angemessene Anzahl von Steckdosen fest zu 
+installieren. 
+ANMERKUNG 1.AT 
+Die Anzahl und die technischen Anforderungen der zu erwartenden Verbrauchsmittel sind 
+möglichst rechtzeitig dem Errichter der elektrischen Anlage bekannt zu geben. 
+Eine Energieverteilung durch die Aneinanderreihung von mobilen Mehrfach-Steckdosen ist nicht zulässig. 
+Steckvorrichtungen für unterschiedliche Stromarten und Spannungen müssen unverwechselbar sein. 
+Stecker, Steckdosen und Kupplungen müssen, wenn sie im Freien angeordnet sind, mit ÖVE/ÖNORM 
+EN 60309-2 oder, wenn eine Austauschbarkeit nicht gefordert ist, mit ÖVE/ÖNORM EN 60309-1 
+übereinstimmen. 
+Steckdosen in Übereinstimmung mit entsprechenden Normen dürfen errichtet werden, wenn sie einen 
+entsprechenden mechanischen Schutz (gleichwertig zu den Anforderungen von ÖVE/ÖNORM EN 60309-1) 
+haben und der Bemessungsstrom 16 A nicht übersteigt. 
+ANMERKUNG 2.AT 
+Ein entsprechender mechanischer Schutz kann durch die Steckdose oder durch ein Gehäuse 
+erfüllt werden. 
+Wo Fußbodensteckdosen eingebaut sind, müssen diese ausreichend gegen zufälliges Eindringen von 
+Wasser geschützt sein. 
+711.559 
+Beleuchtungsanlagen 
+711.559.3 
+Allgemeine Anforderungen 
+711.559.3.101 Leuchten und Lichterketten 
+Alle Leuchten und Lichterketten müssen 
+– 
+eine geeignete IP-Schutzart in Abhängigkeit von den äußeren Einflüssen aufweisen, 
+ 
+ANMERKUNG 
+Bei Beleuchtungsanlagen im Freien gilt Teil 7-714, und eine Schutzart von mindestens IP33 
+kann erforderlich sein. 
+– 
+so errichtet sein, dass die IP-Schutzart durch die Montage nicht beeinträchtigt wird und 
+– 
+sicher befestigt sein, oder es müssen Stützpunkte, die sie tragen können, vorgesehen werden. 
+Das Gewicht einer Leuchte oder einer Lichterkette darf nicht am speisenden Kabel/Leitung hängen, es sei 
+denn, die Kabel/Leitungen sind für diesen Zweck ausgewählt und errichtet. 
+Leuchten und Lichterketten in einer Höhe von weniger als 2,50 m (Handbereich) über Fußbodenniveau oder 
+sonst wie zufälligem Berühren zugänglich müssen angemessen befestigt sein und so angeordnet oder 
+geschützt werden, dass das Risiko einer Verletzung einer Person oder die Entzündung von Material 
+verringert wird. 
+Der Zugang zu einem Leuchtmittel einer in einer Höhe von weniger als 2,50 m (Handbereich) befestigten 
+Leuchte darf nur nach dem Entfernen einer Abdeckung oder eines Gehäuses unter Verwendung eines 
+Werkzeugs möglich sein. 
+Flache Lichterkettenleitungen H05RNH2-F müssen mit ÖVE/ÖNORM EN 50525-2-82 übereinstimmen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 629/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 7 
+ANMERKUNG AT 
+Lichterketten dürfen in jeder Länge verwendet werden, vorausgesetzt die Überstrom-
+Schutzeinrichtung ist entsprechend bemessen. 
+711.559.3.102 Kleinspannungsbeleuchtungssysteme für Glühlampen 
+Kleinspannungsbeleuchtungssysteme 
+für 
+Glühlampen 
+müssen 
+mit 
+ÖVE/ÖNORM EN 60598-2-23 
+übereinstimmen. 
+711.559.3.103 Lampenfassungen 
+Lampenfassungen mit Durchdringungsanschlusstechnik dürfen nicht verwendet werden, ausgenommen die 
+Kabel oder die Leitungen sind zugehörig zu den Lampenfassungen und die Lampenfassungen sind nicht 
+mehr veränderbar nach der Befestigung am Kabel/an der Leitung. 
+711.559.3.104 Anlagen mit elektrischen Entladungs-Lampen mit einer Betriebsspannung höher als 
+AC 230/400 V 
+Die Errichtung von Leuchtröhrenschriften, Leuchtzeichen oder Leuchten mit einer Betriebsspannung höher 
+als AC 230/400 V muss mit folgenden Anforderungen übereinstimmen. 
+711.559.3.104.1 Anordnung 
+Leuchtröhrenschriften, Leuchtzeichen oder Leuchten müssen außerhalb des Handbereichs errichtet werden 
+oder müssen angemessen geschützt werden, um das Risiko einer Verletzung zu reduzieren. 
+711.559.3.104.2 Errichtung 
+Die Abdeckung oder die Standausstattung hinter Leuchtröhrenschriften oder Leuchten darf nicht entzündbar 
+sein und muss entsprechend den nationalen Normen geschützt sein. 
+Steuereinrichtungen mit Ausgangsspannungen höher als AC 230/400 V müssen auf nicht entzündbarem 
+Material befestigt werden. 
+711.559.3.104.3 Einrichtungen für das Ausschalten im Notfall 
+Zur Versorgung von Leuchtröhrenschriften, Leuchtzeichen oder Leuchten ist ein separater Stromkreis zu 
+verwenden, der mit einer Not-Aus-Einrichtung gemäß Abschnitt 465 versehen werden muss. Diese 
+Einrichtung muss leicht erkennbar und zugänglich sein sowie in Übereinstimmung mit den Anforderungen der 
+zuständigen Behörde gekennzeichnet sein. 
+711.559.3.001.AT 
+Scheinwerfer 
+Wenn transportable Scheinwerfer verwendet werden, müssen sie so aufgestellt oder montiert werden, dass 
+diese keine Gefahr (zB Stolpergefahr, Verbrennungsgefahr) darstellen. Versorgungskabel/-leitungen müssen 
+flexibel sein und einen entsprechenden Schutz gegen mechanische Beschädigung haben. 
+711.559.3.002.AT 
+Brandgefahr durch Leuchten und Scheinwerfer 
+Leuchten und Scheinwerfer müssen so befestigt und geschützt sein, dass eine Fokussierung oder 
+Konzentration der Hitze, die zur Entzündung irgendeines Materials führen kann, unwahrscheinlich ist. 
+711.559.3.003.AT 
+Leuchten in Schießbuden 
+Alle Leuchten in Schießbuden und anderen Showbühnen, wo Geschosse benutzt werden, müssen gegen 
+zufällige Beschädigung angemessen geschützt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 630/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-711 – Seite 8 
+711.56 
+Einrichtungen für Sicherheitszwecke 
+711.560.9 
+Einrichtungen für Sicherheitszwecke: Allgemeine Anforderungen für Sicherheits-
+beleuchtungsanlagen 
+ANMERKUNG AT 
+Ist eine Sicherheitsbeleuchtung erforderlich, siehe Teil 5-56 und OVE-Richtlinie R 12-2. 
+711.6 
+Prüfung 
+Füge hinzu: 
+Die vorübergehend errichtete elektrische Anlage muss nach jedem Zusammenbau geprüft werden. 
+Die Mängelfreiheit bestätigt jeweils der Betreiber (zB Aussteller, Veranstalter) durch die Bereithaltung des 
+Prüfberichtes, der den aktuellen Anlagenumfang abdeckt. 
+ANMERKUNG 1.AT 
+Die internen elektrischen Verdrahtungen von Achterbahnen, Autoskootern und ähnlichen 
+elektrischen Betriebsmitteln werden nicht als Teile betrachtet, für die diese Prüfung gefordert wird. 
+ANMERKUNG 2.AT 
+In besonderen Fällen darf die Anzahl der Prüfungen abhängig vom Typ der vorübergehend 
+errichteten elektrischen Anlage modifiziert werden. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 631/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 1 
+Teil 7-712  
+Photovoltaische Anlagen (PV-Anlagen) 
+712.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Planung und Errichtung von PV-Anlagen, die insgesamt oder teilweise elektrische 
+Energie in eine Verbraucheranlage, das öffentliche Netz oder ein örtliches Netz (zB Inselanlagen, Inselnetze, 
+Microgrids) einspeisen. 
+In diesem Teil werden die elektrischen Betriebsmittel einer PV-Anlage nur insoweit behandelt, wie es ihre 
+Auswahl und die Anwendung in der Anlage betrifft. 
+Die PV-Anlage beginnt an einem PV-Modul oder einer Kombination von PV-Modulen, die mit den vom 
+Hersteller vorgesehenen Anschlusskabeln/-leitungen miteinander verbunden sind, und endet am 
+Netzanschlusspunkt oder der Verbraucheranlage. 
+Die Anforderungen gelten für: 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, die nicht an ein öffentliches Verteilnetz 
+angeschlossen sind, 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, die parallel an das öffentliche Verteilnetz 
+(Netzparallelbetrieb) angeschlossen sind, 
+– 
+PV-Anlagen zur Einspeisung in ein Verteilernetz, 
+– 
+PV-Anlagen zur Einspeisung in elektrische Anlagen, alternativ zum Verteilernetz, 
+– 
+geeignete Kombinationen der oben genannten Aufzählungen. 
+ANMERKUNG 1.AT 
+Normen für PV-Anlagen mit Batterien oder anderen Energiespeichersystemen sind in 
+Vorbereitung. 
+ANMERKUNG 2.AT 
+Sicherheitsanforderungen und Hinweise für stationäre elektrische Energiespeichersysteme 
+(ESS) für den Festanschluss an ortsfeste elektrische Anlagen, die an das Niederspannungsnetz angeschlossen sind, 
+siehe OVE-Richtlinie R 20. 
+ANMERKUNG 3.AT 
+Ausführungsbeispiele für PV-Anlagen siehe Anhang 712.A. 
+712.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+712.41 
+Schutz gegen elektrischen Schlag 
+712.410 
+Einleitung 
+712.410.101  
+Elektrische Betriebsmittel auf der DC-Seite müssen als unter Spannung stehend betrachtet 
+werden, auch wenn die AC-Seite vom Netz getrennt ist oder wenn das PCE von der DC-Seite getrennt ist. 
+712.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des 
+Handbereichs gemäß Teil 4-41 Anhang 41.B dürfen nicht angewendet werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 632/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 2 
+712.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung für die Versorgung mit mehr als einem 
+Verbrauchsmittel gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+712.410.102  
+Auf der DC-Seite muss eine der folgenden Schutzmaßnahmen angewendet werden: 
+– 
+Doppelte oder verstärkte Isolierung; 
+– 
+Schutz durch Kleinspannung (SELV oder PELV). 
+712.412 
+Schutzmaßnahme: Doppelte oder verstärkte Isolierung (Schutzisolierung) 
+712.412.101  
+Die auf der DC-Seite (bis zum DC-Anschluss des PCE) verwendeten elektrischen 
+Betriebsmittel, zB PV-Module, Kabelsysteme/Leitungssysteme (zB Verbindungsdosen, Kabel/Leitungen) 
+müssen Schutzklasse II oder eine vergleichbare Isolierung haben. 
+712.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+712.414.101  
+Bei der Verwendung von SELV und PELV als Schutzmaßnahmen auf der DC-Seite darf 
+UOC MAX 90 V DC nicht überschreiten. 
+712.42 
+Schutz gegen thermische Einflüsse 
+712.420.101 
+Vorbeugender Brandschutz für PV-Anlagen 
+ANMERKUNG 
+Siehe nationale oder örtliche Anforderungen an den vorbeugenden Brandschutz wie zB Technische 
+Richtlinien vorbeugender Brandschutz, OVE-Richtlinie R 11-1, baurechtliche Bestimmungen. 
+712.421 
+Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+712.421.101 
+Schutz bei Isolationsfehlern auf der DC-Seite von PV-Wechselrichtern mit einfacher 
+Trennung oder auf der AC-Seite 
+712.421.101.1 
+Es muss eine Isolationsüberwachungseinrichtung (IMD) installiert werden, um den 
+Isolationszustand auf der DC-Seite während der Lebenszeit des PV-Generatorfeldes fortlaufend zu prüfen. 
+Ausgenommen sind Anwendungen gemäß 712.421.101.2. 
+ANMERKUNG 
+Isolationsüberwachungseinrichtungen (IMD) gemäß ÖVE/ÖNORM EN 61557-8 erfüllen diese Funktion. 
+ANMERKUNG AT 
+Es wird empfohlen, dass ein Isolationsfehler innerhalb kürzest möglicher Zeit behoben wird. 
+Die Isolationsüberwachungseinrichtung (IMD) darf auch im PCE integriert sein (PV-IMF gemäß ÖVE/ÖNORM 
+EN 61557-8:2016 Anhang D). 
+712.421.101.2 
+Bei Verbindung eines aktiven Leiters auf der DC-Seite innerhalb eines PCE mit Erde 
+(Funktionserdung zur Verhinderung von potentialinduzierter Degradation) muss eine Maßnahme vorgesehen 
+werden, die im Falle eines Isolationsfehlers des zweiten aktiven Leiters gegen Erde eine Unterbrechung des 
+Fehlerstroms in Übereinstimmung mit Tabelle 712.537 sicherstellt. 
+712.421.001.AT Schutz bei Isolationsfehlern ohne mindestens einer einfachen Trennung  
+ 
+zwischen DC- und AC-Seite innerhalb des PV-Wechselrichters oder PCE  
+ 
+bzw. auf der AC-Seite 
+Eine Funktionserdung eines aktiven Leiters auf der DC-Seite ist nicht zulässig. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 633/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 3 
+Im Fall eines Isolationsfehlers auf der DC-Seite muss entweder: 
+– 
+das PCE automatisch von der AC-Seite getrennt werden, oder 
+– 
+der fehlerhafte Teil des PV-Generatorfeldes automatisch vom PCE getrennt werden. 
+ANMERKUNG 1.AT 
+Die Trennfunktion kann vom PCE bereitgestellt werden (siehe ÖVE/ÖNORM EN 62109 Reihe). 
+ANMERKUNG 2.AT 
+Die automatische Trennung kann von einer Fehlerstrom-Schutzeinrichtung (RCD) erfüllt werden. 
+712.43 
+Schutz bei Überstrom 
+712.431 
+Anforderungen entsprechend der Art der Stromkreise 
+712.431.101  
+In einem PV-Generatorfeld mit parallelen PV-Strängen der Anzahl Ns (mit Ns >  2) müssen 
+zum Schutz jedes PV-Strangs Schutzeinrichtungen vorgesehen werden, wenn die folgende Bedingung erfüllt 
+ist: 
+ 
+1,35 ∙ IMOD MAX OCPR < (NS −1) ∙ ISC MAX 
+(F 712.1) 
+Bei einer Anzahl Ns ≤ 2 ist keine Überstrom-Schutzeinrichtung gefordert. 
+ANMERKUNG 1  
+Wenn ein PCE mehrere unabhängige MPPT hat und aufgrund der Auslegung kein Rückstrom 
+von einem Eingang zu einem anderen Eingang fließen kann, dann ist Ns die Anzahl der Stränge, die an einem einzelnen  
+DC-Eingang angeschlossen sind. 
+Alle parallel angeschlossenen PV-Stränge müssen dieselbe Bemessungsspannung haben. 
+ANMERKUNG 2  
+In der Praxis bedeutet das, dass jeder PV-Strang die gleiche Anzahl von in Reihe verbundenen  
+PV-Modulen bei Verwendung gleicher PV-Module hat. 
+ANMERKUNG AT 
+In Ausnahmefällen kann davon abgewichen werden. 
+712.431.102  
+Der Schutz vor überhöhter thermischer Belastung der PV-Module bei Rückstrom (wie in 
+ÖVE/ÖNORM EN 61730-1 angegeben) wird durch die Verwendung von Schutzeinrichtungen gemäß 712.432 
+sichergestellt. 
+Wenn Schutzeinrichtungen gefordert sind, muss ihr Bemessungsstrom In die folgenden Bedingungen 
+erfüllen: 
+ 
+1,1 ∙ ISC MAX des PV-Strangs ≤ In  ≤ IMCD MAX OCPR 
+(F 712.2) 
+ANMERKUNG 
+Der 
+Faktor 1,1 
+ist 
+ein 
+Sicherheitszuschlag 
+zur 
+Vermeidung 
+vorzeitiger 
+Auslösung 
+der 
+Schutzeinrichtungen bei normalen Stressbedingungen. 
+Im Fall besonderer Bedingungen muss der Faktor 1,1 angepasst werden, zB im Fall von Reflexionen oder 
+besonderer PV-Modul-Technologien. 
+Jeder PV-Strang muss einzeln durch eine Schutzeinrichtung geschützt sein. 
+Wenn mehrere parallele PV-Stränge durch eine Überstrom-Schutzeinrichtung geschützt sind, muss der 
+Bemessungsstrom In die folgende Gleichung erfüllen: 
+ 
+Np ∙ 1,1 ∙ ISC MAX  ≤ In  ≤ IMCD MAX OCPR − (Np −1) ∙ ISC MAX 
+(F 712.3) 
+Dabei ist Np die Anzahl paralleler PV-Stränge, die an dieselbe Überstrom-Schutzeinrichtung angeschlossen 
+sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 634/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 4 
+712.432 
+Art der Schutzeinrichtungen 
+712.432.101  
+Wenn Überstrom-Schutzeinrichtungen auf der DC-Seite gemäß 712.431.101 gefordert 
+sind, müssen, unabhängig von der Anlagenkonfiguration, beide Pole geschützt werden. 
+Ausgenommen sind PV-Strangkabel/-leitungen, die nicht gemeinsam mit Teil-Generatorfeldkabel/-leitungen 
+in einem Verkabelungssystem geführt werden sowie Teil-Generatorfeldkabel/-leitungen, die nicht gemeinsam 
+mit PV-Strangkabeln/-leitungen in einem Verkabelungssystem geführt werden. In diesen Fällen muss eine 
+Überstrom-Schutzeinrichtung nur an einem aktiven Leiter ohne Funktionserdung des Strang- oder Teil-
+Generatorfeldkabels/-leitung errichtet werden. 
+712.432.102  
+Sperrdioden, die in parallelen PV-Strängen eingesetzt werden, dürfen nicht als Schutz bei 
+Überstrom verwendet werden. 
+712.432.103  
+Die Überstrom-Schutzeinrichtungen auf der DC-Seite müssen entweder gPV-Sicherungen 
+gemäß ÖVE/ÖNORM EN 60269-6 oder Schutzeinrichtungen gemäß OVE EN 60947-3, OVE EN 60947-2 
+oder ÖVE/ÖNORM EN 60898-2 sein. 
+712.433 
+Schutz bei Überlastströmen 
+712.433.101 
+Schutz des PV-Strangkabels/-leitung 
+Beim Schutz der PV-Strangkabel/-leitung muss Folgendes berücksichtigt werden: 
+– 
+In einem PV-Generatorfeld mit einem oder zwei parallelen PV-Strängen ist keine Überstrom-
+Schutzeinrichtung gefordert (siehe auch 712.431.101). 
+ 
+Die dauernde Strombelastbarkeit des PV-Strangkabels/-leitung muss größer oder gleich dem maximalen 
+Kurzschlussstrom des PV-Strangs sein: 
+ 
+ISC MAX des PV-Strangs ≤ Iz
+ 
+(F 712.4) 
+– 
+In einem PV-Generatorfeld mit Ns parallelen PV-Strängen, wobei Ns größer als 2 ist, ist der maximale im 
+PV-Strangkabel/-leitung fließende Rückstrom (Ns – 1) ∙ ISCMAX. Eine der folgenden Maßnahmen muss 
+verwendet werden: 
+ 
+ 
+Wenn für den PV-Strang eine Überstrom-Schutzeinrichtung nach 712.431.101 nicht gefordert ist, 
+muss Iz des PV-Strangkabels/-leitung größer oder gleich dem maximalen Rückstrom sein: 
+ 
+(NS −1) ∙ ISC MAX des PV-Strangs ≤ Iz 
+(F 712.5) 
+ 
+ 
+Wenn für den PV-Strang eine Überstrom-Schutzeinrichtung nach 712.431.101 verlangt ist, muss Iz 
+des PV-Strangkabels/-leitung größer oder gleich dem Bemessungsstrom In der Schutzeinrichtung 
+des PV-Strangs sein: 
+ 
+In ≤ IZ 
+(F 712.6) 
+Bei Berechnung von ISC MAX muss Anhang 712.B angewendet werden. 
+712.433.102 
+Schutz des PV-Teilgeneratorfeldkabels/-leitung 
+Für den Schutz des PV-Teilgeneratorfeldkabels/-leitung muss Folgendes beachtet werden: 
+– 
+In einem PV-Generatorfeld mit zwei PV-Teilgeneratorfeldern ist keine Überstrom-Schutzeinrichtung des 
+PV-Teilgeneratorfeldkabels/-leitung 
+gefordert. 
+Die 
+dauernd 
+zulässige 
+Strombelastbarkeit 
+des  
+PV-Teilgeneratorfeldkabels/-leitung muss größer oder gleich dem maximalen Gleichstrom des  
+PV-Teilgenerators sein: 
+ 
+ISC MAX des PV-Teilgeneratorfeldes ≤ Iz 
+(F 712.7) 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 635/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 5 
+– 
+In einem PV-Generatorfeld mit Na parallelen PV-Teilgeneratorfeldern, mit Na größer als zwei, ist der 
+maximale Rückstrom im Teilgeneratorfeldkabel/-leitung (Na – 1) ∙ ISCMAX. Eine der folgenden 
+Maßnahmen muss verwendet werden: 
+ 
+ 
+Wenn keine Überstrom-Schutzeinrichtung des Teilgeneratorfeldkabels/-leitung verwendet wird, 
+muss die dauernd zulässige Strombelastbarkeit des Teilgeneratorfeldkabels/-leitung sein: 
+ 
+(Na −1) ∙ ISC MAX des PV-Teilgeneratorfeldes ≤ Iz 
+(F 712.8) 
+ 
+ 
+Wenn eine Überstrom-Schutzeinrichtung des PV-Teilgeneratorfeldkabels/-leitung verwendet wird, 
+müssen deren Bemessungsstrom In und die dauernd zulässige Strombelastbarkeit Iz des 
+Teilgeneratorfeldkabels/-leitung die folgenden Bedingungen erfüllen: 
+ 
+1,1 ∙ ISC MAX des PV-Teilgeneratorfeldes ≤ In  ≤ IZ 
+(F 712.9) 
+ANMERKUNG 1  
+Der Faktor 1,1 ist ein Sicherheitszuschlag zur Vermeidung vorzeitiger Auslösung der Schutz-
+einrichtungen bei normalen Stressbedingungen. 
+Im Fall besonderer Bedingungen muss der Faktor 1,1 angepasst werden, zB im Fall von Reflexionen oder 
+besonderer PV-Modul-Technologien. 
+ANMERKUNG 2  
+Anforderungen für die Dimensionierung der Kabel/Leitungen von PV-Generatorfeldern sind in 
+derselben Weise wie bei PV-Teilgeneratorfeldkabel/-leitungen angeführt. 
+712.433.103 
+Schutz des PV-Generatorfeldkabels/-leitung 
+Die dauernd zulässige Strombelastbarkeit Iz des PV-Generatorfeldkabels/-leitung muss größer oder gleich 
+dem maximalen Gleichstrom des PV-Generatorfeldes sein: 
+ 
+ISC MAX des PV-Teilgeneratorfeldes ≤ Iz 
+(F 712.10) 
+712.433.104 
+Schutz des PV-AC-Versorgungskabel/-leitung 
+Bei der Auslegung des Bemessungsstroms der Überstrom-Schutzeinrichtung der PV-AC-Versorgungskabel/-
+leitung auf der AC-Seite muss der maximale Ausgangsstrom des PCE berücksichtigt werden. 
+Der maximale Ausgangsstrom des PCE ist entweder der vom Hersteller angegebene maximale 
+Wechselstrom oder, wenn keine Herstellerangabe zur Verfügung steht, das 1,1-fache des PCE-Bemessungs-
+wechselstroms. 
+712.434 
+Schutz bei Kurzschlussströmen 
+712.434.101  
+Das PV-AC-Versorgungskabel/-leitung muss durch eine Schutzeinrichtung für den Schutz 
+bei Kurzschluss oder durch eine Überstrom-Schutzeinrichtung geschützt sein, die an der Anschlussstelle der 
+AC-Seite errichtet ist. 
+712.44 
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+712.443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse und von Schaltvorgängen 
+712.443.1 
+Allgemeines und Anwendungsbereich 
+Füge hinzu: 
+Für die Auswahl und Errichtung des Blitz- und Überspannungsschutzes für PV-Generatoren gelten die 
+Anforderungen gemäß OVE-Richtlinie R 6-2 Reihe. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 636/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 6 
+712.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+721.51 
+Allgemeine Bestimmungen 
+Füge hinzu: 
+Die elektrischen Betriebsmittel müssen für DC und für die jeweils vorkommenden äußeren Einflüsse geeignet 
+sein. 
+712.511 
+Übereinstimmung mit Normen 
+712.511.101  
+PV-Module müssen die Anforderungen der entsprechenden elektrischen Betriebs-
+mittelnormen zB OVE EN 61215 Reihe und ÖVE/ÖNORM EN 61730 Reihe erfüllen (siehe auch 
+712.412.101). 
+712.511.102  
+PV-Wechselrichter müssen zB ÖVE/ÖNORM EN 62109-1, ÖVE/ÖNORM EN 62109-2, 
+ÖVE/ÖNORM EN 62116 entsprechen. 
+712.511.103  
+Anschlussgehäuse, Verteiler und Schaltgerätekombinationen müssen der ÖVE/ÖNORM 
+EN 61439 Reihe entsprechen. Laienbedienbare Schaltgerätekombinationen müssen zusätzlich OVE-
+Richtlinie R 18 entsprechen. 
+Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche ortsfeste elektrische Installationen 
+müssen ÖVE/ÖNORM EN 60670 Reihe entsprechen. 
+712.511.001.AT Anforderungen für den Netzanschluss von PV-Anlagen sind in den Technischen und 
+Organisatorischen Regeln für Betreiber und Benutzer von Netzen (TOR), Teil D, Hauptabschnitt D1, D2, D3 
+und D4 angeführt. 
+712.512 
+Betriebsbedingungen und äußere Einflüsse 
+712.512.1 
+Betriebsbedingungen 
+712.512.1.1 
+Spannung 
+Füge hinzu: 
+Bei Auswahl von elektrischen Betriebsmitteln für PV-Generatorfelder muss UOC MAX als Nennspannung 
+angenommen werden. 
+Für die Berechnung von UOC MAX ist Anhang 712.B anzuwenden. 
+712.512.1.2 
+Strom 
+Füge hinzu: 
+Bei Auswahl von elektrischen Betriebsmitteln für PV-Generatorfelder muss ISC MAX als Bemessungsstrom 
+angenommen werden. 
+Für die Berechnung von ISC MAX ist Anhang 712.B anzuwenden. 
+712.512.101  
+Wenn Sperrdioden verwendet werden, muss ihre Sperrspannung für 2 ∙ UOC MAX des  
+PV-Strangs bemessen sein und ihr Bemessungsstrom muss mindestens 1,1 ∙ ISC MAX betragen. Die 
+Sperrdioden müssen in Reihe mit den PV-Strängen angeschlossen sein. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 637/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 7 
+712.512.102  
+Gehäuse und Umhüllungen für im Freien installierte elektrische Betriebsmittel müssen 
+mindestens der Schutzart IP44 gemäß ÖVE/ÖNORM EN 60529 und der Schutzart mindestens IK07 gegen 
+äußere mechanische Beanspruchung gemäß ÖVE/ÖNORM EN 62262 entsprechen. 
+712.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Für die Auslegung der mechanischen Festigkeit der Befestigungen der Module am Gebäude, an Gerüsten 
+oder Fundamenten (zB gegen Einwirkungen von Wind- und Schneelasten oder Kälte- und Wärme-
+dehnungen) sind die jeweils zutreffenden Bestimmungen maßgebend. 
+ANMERKUNG AT 
+Diese sind zB ÖNORM B 1991-1-1, ÖNORM B 1991-1-3, ÖNORM EN 1991-1-4, OVE 
+EN 50583, ÖNORM M 7778, baurechtliche Bestimmungen. 
+712.513 
+Zugänglichkeit 
+712.513.101  
+Bei der Auswahl und Errichtung einer PV-Anlage müssen Vorkehrungen getroffen werden, 
+damit die vom Hersteller der elektrischen Betriebsmittel vorgesehenen Instandhaltungs- und Wartungs-
+arbeiten ohne Gefahren ausgeführt werden können. 
+712.514 
+Kennzeichen 
+712.514.101  
+Für die Sicherheit von Personen müssen Warnhinweise vorhanden sein, welche auf das 
+Vorhandensein einer PV-Anlage aufmerksam machen, zB für Wartungs- und Instandhaltungspersonal, 
+Prüfer, Betriebspersonal der öffentlichen Stromversorgung und Einsatzkräfte. 
+Ein Hinweisschild, wie zB im Bild 712.514.101 dargestellt, muss fest angebracht sein: 
+– 
+am Einspeisepunkt in die elektrische Anlage und 
+– 
+am Zählerplatz, wenn vom Einspeisepunkt entfernt und 
+– 
+am Stromkreisverteiler, an dem die Versorgung des PCE angeschlossen ist. 
+ 
+Bild 712.514.101 – Hinweisschild für das Vorhandensein einer PV-Anlage auf einem Gebäude 
+712.514.102  
+An jedem Zugangspunkt zu aktiven Teilen auf der DC-Seite wie zB Verteiler und 
+Verbindungsdosen muss eine dauerhafte Kennzeichnung angebracht sein, die anzeigt, dass aktive Teile 
+nach der Trennung unter Spannung stehen können, zB durch den Text: 
+ 
+„Achtung PV-Anlage – Aktive Teile können nach dem Trennen unter Spannung stehen!“ 
+712.514.103  
+PCE sollen Kennzeichnungen besitzen, die darauf hinweisen, dass vor Wartungs- und 
+Instandhaltungsarbeiten die PCE auf der DC-Seite und auf der AC-Seite elektrisch getrennt werden müssen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 638/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 8 
+712.52 
+Kabel- und Leitungsanlagen 
+712.521 
+Arten von Kabel- und Leitungsanlagen 
+712.521.101  
+Kabel/Leitungen auf der DC-Seite müssen so ausgewählt und verlegt werden, dass das 
+Risiko von Erd- und Kurzschlüssen vermieden wird. Dies kann zB  durch das Verwenden von Kabeln und 
+Leitungen gemäß ÖVE/ÖNORM EN 50618 erreicht werden. 
+Kabel/Leitungen dürfen nicht direkt auf der Dachoberfläche verlegt werden. 
+712.521.102  
+Um durch Blitzeinwirkung induzierte Spannungen möglichst klein zu halten, sollte die 
+Fläche aller Kabel- und Leiterschleifen so klein wie möglich gehalten werden, insbesondere bei der 
+Verkabelung der PV-Stränge. Die DC-Kabel/-Leitungen und die Potentialausgleichsleiter sollten 
+nebeneinander verlegt sein. 
+712.523 
+Strombelastbarkeit 
+712.523.101  
+Für die Auslegung von Kabeln/Leitungen, die auf der Unterseite der PV-Module direkter 
+Erwärmung ausgesetzt sind, wird die für ihre Querschnittsdimensionierung zu berücksichtigende 
+Umgebungstemperatur mit mindestens 70 °C angenommen. 
+ANMERKUNG AT 
+Zur Strombelastbarkeit von PV-Kabeln/PV-Leitungen gemäß 712.521.101 siehe ÖVE/ÖNORM 
+EN 50618. 
+712.526 
+Elektrische Verbindungen 
+712.526.1 
+Füge hinzu: 
+Jedes Steckverbindungspaar muss elektrisch und mechanisch kompatibel und für die vorliegenden äußeren 
+Einflüsse geeignet sein. 
+Es wird empfohlen, mit den Herstellern abzuklären, ob die Steckverbinder kompatibel sind. 
+712.526.101 
+Steckverbinder für die DC-Seite 
+Steckverbinder für die DC-Seite müssen gemäß ÖVE/ÖNORM EN 50521 oder ÖVE/ÖNORM EN 62852 
+ausgewählt werden. 
+Steckverbindungen, die elektrotechnischen Laien frei zugänglich sind, müssen derart ausgeführt werden, 
+dass diese nicht ohne die Verwendung von Werkzeug geöffnet werden können. 
+712.53 
+Schalt- und Steuergeräte 
+712.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag durch automatische 
+Abschaltung der Stromversorgung 
+712.531.101  
+Wenn auf der AC-Seite eine Fehlerstrom-Schutzeinrichtung (RCD) für den Fehlerschutz 
+vorgesehen ist, müssen die Anforderungen von Abschnitt 712.531.3.101 angewendet werden. 
+712.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+712.531.3.101 
+Wenn 
+eine 
+Fehlerstrom-Schutzeinrichtung 
+(RCD) 
+für 
+den 
+Schutz 
+des 
+PV-AC-
+Versorgungsstromkreises verwendet wird, muss diese vom Typ B gemäß ÖVE/ÖNORM EN 62423 oder 
+OVE EN 60947-2 sein, es sei denn 
+– 
+das PCE besitzt mindestens eine einfache Trennung zwischen der AC- und der DC-Seite, oder 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 639/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 9 
+– 
+die PV-Anlage besitzt mindestens eine einfache Trennung zwischen dem PCE und dem RCD durch 
+einen Transformator mit getrennten Wicklungen, oder 
+– 
+das PCE erfüllt die Anforderungen gemäß ÖVE/ÖNORM EN 62109-1 und erfordert, gemäß der 
+Bestätigung des PCE-Herstellers, kein RCD vom Typ B. 
+712.532 
+Einrichtungen zum Schutz gegen Brandrisiko 
+712.532.101  
+Wenn auf der AC-Seite eine Fehlerstrom-Schutzeinrichtung (RCD) vorgesehen ist, müssen 
+die Anforderungen von Abschnitt 712.531.3.101 angewendet werden. 
+712.533 
+Einrichtungen zum Schutz bei Überstrom 
+712.533.101 
+Überstrom-Schutzeinrichtungen auf der DC-Seite 
+Als Überstrom-Schutzeinrichtungen auf der DC-Seite müssen verwendet werden: 
+– 
+gPV-Sicherungen gemäß ÖVE/ÖNORM EN 60269-6, oder 
+– 
+Sicherungslastschalter gemäß OVE EN 60947-3, oder 
+– 
+Leistungsschalter gemäß OVE EN 60947-2, oder 
+– 
+Leitungsschutzschalter gemäß ÖVE/ÖNORM EN 60898-2. 
+Diese Einrichtungen müssen die folgenden besonderen Maßnahmen erfüllen: 
+1) 
+die Bemessungsspannung Un muss größer oder gleich der Spannung UOC MAX des PV-Generatorfeldes 
+sein, 
+2) 
+der Bemessungsstrom In muss wie in 712.431.102 definiert sein, 
+3) 
+das Bemessungsausschaltvermögen muss mindestens gleich wie ISC MAX des PV-Generatorfeldes sein, 
+4) 
+Überstrom-Schutzeinrichtungen müssen bidirektional wirken. 
+712.534 
+Einrichtungen zum Schutz bei Überspannungen 
+Füge hinzu: 
+Der Schutz von PV-Anlagen gegen transiente Überspannungen, die durch direkte und durch indirekte 
+Blitzeinwirkungen verursacht werden, muss gemäß OVE-Richtlinie R 6-2-2 erfolgen. 
+ANMERKUNG AT 
+Anforderungen, um die Sicherheit, Funktion und Verfügbarkeit der PV-Anlagen durch 
+Maßnahmen des Überspannungsschutzes und, falls gefordert, Maßnahmen des Blitzschutzes zu gewährleisten, siehe 
+OVE-Richtlinie R 6-2-1. 
+712.537 
+Geräte zum Trennen und Schalten 
+712.537.2 
+Einrichtungen zum Trennen 
+712.537.2.101  
+Einrichtungen für Instandhaltungs- und Wartungsarbeiten 
+Für Instandhaltungs- und Wartungsarbeiten des PCE müssen Einrichtungen zum Trennen des PCE von der 
+DC-Seite und der AC-Seite vorgesehen werden. 
+ANMERKUNG 
+Weitere Anforderungen hinsichtlich des Trennens einer PV-Anlage im Parallelbetrieb mit dem 
+öffentlichen Verteilnetz siehe 551.7 sowie TOR Teil D, Hauptabschnitt D4. 
+712.537.2.102  
+Einrichtungen zum Trennen auf der DC-Seite 
+Auf der DC-Seite des PCE muss ein Lasttrennschalter oder ein zum Trennen geeigneter Leistungsschalter 
+vorgesehen werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 640/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-712 – Seite 10 
+712.537.2.103  
+Einrichtung zum Trennen auf der AC-Seite 
+Bei der Auswahl der Trenneinrichtung muss die Anschlussrichtung der Trenneinrichtung berücksichtigt 
+werden (wenn erforderlich, siehe Herstellerinformation), sodass das Verteilnetz an den Netzklemmen und 
+das PCE an den Lastklemmen angeschlossen wird. 
+712.537.2.104  
+Trennen des Funktionspotentialausgleichsleiters 
+Eine automatische Trenneinrichtung muss in Reihe mit dem Funktionserdungsleiter angeschlossen sein und 
+muss für die folgenden Bedingungen bemessen sein: 
+– 
+den maximalen Kurzschlussstrom des PV-Generatorfeldes ISC MAX, 
+– 
+die maximale Spannung des PV-Generatorfeldes UOC MAX, 
+– 
+den maximalen Bemessungsstrom gemäß Tabelle 712.537. 
+Tabelle 712.537 – Bemessungsstrom der automatischen Trenneinrichtung  
+im Funktionserdungsleiter 
+Gesamte PV-Generatorfeld-
+Bemessungsleistung (Höchstwert) 
+Maximaler Bemessungsstrom In der 
+automatischen Trenneinrichtung 
+kW 
+A 
+≤ 25 
+1 
+> 25 bis 50 
+2 
+> 50 bis 100 
+3 
+> 100 bis 250 
+4 
+> 250 
+5 
+712.537.2.105  
+Maßnahmen zur Verhinderung der Trennung unter Last auf der DC-Seite 
+Zur Verhinderung des Auftretens von Lichtbögen muss jede Einrichtung ohne Lastschaltvermögen, die dazu 
+benutzt werden könnte, einen DC-Stromkreis zu öffnen, gegen unbeabsichtigte oder unzulässige Betätigung 
+gesichert sein. 
+Dieses kann erreicht werden durch das Anordnen der Einrichtung in einem abschließbaren Raum oder 
+Gehäuse oder durch deren Verriegelbarkeit. 
+BEISPIEL  
+Beispiele von Einrichtungen, für die diese Anforderung gelten, sind SPD- und Sicherungshalter. 
+712.537.2.106  
+Fernbedienung von Einrichtungen zur Zwangstrennung im PV-Anschlussgehäuse 
+Für das Trennen unter spezifischen Fehlerbedingungen können fernbediente Einrichtungen im  
+PV-Anschlussgehäuse installiert werden. 
+712.538 
+Einrichtungen zur Überwachung 
+Füge hinzu: 
+Isolationsüberwachungseinrichtungen müssen gemäß ÖVE/ÖNORM EN 61557-8 ausgewählt werden. 
+Wenn die Isolationsüberwachungseinrichtung ein integrierter Bestandteil des PCE ist, hat die Funktion der 
+Isolationsüberwachung in Übereinstimmung mit ÖVE/ÖNORM EN 62109-2 oder ÖVE/ÖNORM EN 61557-8 
+zu sein. 
+In PV-Generatorfeldern über 100 kWp wird eine automatische Einrichtung zur Isolationsfehlersuche gemäß 
+ÖVE/ÖNORM EN 61557-9 empfohlen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

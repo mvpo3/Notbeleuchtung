@@ -1,0 +1,3463 @@
+
+
+===== PAGE 1/58 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8002-1 
+ 
+Ausgabe: 2007-10-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Starkstromanlagen und Sicherheitsstromversorgung in 
+baulichen Anlagen für Menschenansammlungen 
+Teil 1: Allgemeines 
+ 
+Power installation and safety power supply in communal facilities – 
+Part 1: General 
+ 
+Installations a courant fort en courant de sécurité des services dans les bâtiments 
+des lieux de réunion – Partie 1: Généralités 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2007. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@on-norm.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 2/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................4 
+1 
+Anwendungsbereich .............................................................................................................................6 
+1.1 
+Allgemein................................................................................................................................................6 
+1.2 
+Bereiche von baulichen Anlagen .........................................................................................................6 
+2 
+Normative Verweisungen......................................................................................................................7 
+3 
+Begriffe ................................................................................................................................................ 10 
+4 
+Allgemeine Anforderungen................................................................................................................ 17 
+4.1 
+Allgemeines......................................................................................................................................... 17 
+4.1.1 
+Allgemeine Schutzziele...................................................................................................................... 17 
+4.1.2 
+Allgemeine Stromversorgung ........................................................................................................... 18 
+4.2 
+Sicherheitsstromversorgung............................................................................................................. 18 
+4.3 
+Notwendige Sicherheitseinrichtungen............................................................................................. 18 
+4.3.1 
+Sicherheitsbeleuchtung..................................................................................................................... 18 
+4.3.2 
+Andere Sicherheitseinrichtungen..................................................................................................... 20 
+5 
+Brandschutz, Funktionserhalt........................................................................................................... 23 
+6 
+Allgemeine Stromversorgung ........................................................................................................... 24 
+6.1 
+Betriebsmittel mit Nennspannungen über 1 000 V ......................................................................... 24 
+6.2 
+Betriebsmittel mit Nennspannungen bis 1 000 V............................................................................ 25 
+6.2.1 
+Elektrische Betriebsräume ................................................................................................................ 25 
+6.2.2 
+Verteiler................................................................................................................................................ 25 
+6.2.3 
+Kabel- und Leitungsanlage................................................................................................................ 25 
+6.2.4 
+Verbraucheranlage ............................................................................................................................. 26 
+7 
+Sicherheitsstromversorgung............................................................................................................. 27 
+7.1 
+Allgemeine Anforderungen................................................................................................................ 27 
+7.2 
+Sicherheitsbeleuchtung..................................................................................................................... 27 
+7.2.1 
+Schaltung der Sicherheitsbeleuchtung............................................................................................ 27 
+7.2.2 
+Mindestbeleuchtungsstärke .............................................................................................................. 28 
+7.3 
+Elektrische Betriebsräume ................................................................................................................ 29 
+7.4 
+Sicherheitsstromquellen und zugehörige Einrichtungen .............................................................. 29 
+7.4.1 
+Einzelbatterieanlage........................................................................................................................... 29 
+7.4.2 
+Gruppenbatterieanlage (LPS)............................................................................................................ 29 
+7.4.3 
+Zentralbatterieanlage (CPS) .............................................................................................................. 30 
+7.4.4 
+Sicherheitsstromaggregat ................................................................................................................. 31 
+7.4.5 
+Schnell- und Sofortbereitschaftsaggregat....................................................................................... 35 
+7.4.6 
+Zwei unabhängige Netze.................................................................................................................... 35 
+7.5 
+Netzsysteme und Schutz gegen elektrischen Schlag..................................................................... 35 
+7.6 
+Verteiler (Niederspannungs-Schaltgerätekombinationen)............................................................. 36 
+7.7 
+Kabel- und Leitungsanlage................................................................................................................ 37 
+7.8 
+Anforderungen an Leuchten, Wechselrichter und Vorschaltgeräte ............................................. 39 
+7.8.1 
+Leuchten.............................................................................................................................................. 39 
+7.8.2 
+Wechselrichter und Vorschaltgeräte................................................................................................ 40 
+8 
+Pläne und Betriebsanleitungen......................................................................................................... 41 
+8.1 
+Übersichtsschaltplan ......................................................................................................................... 41 
+8.2 
+Schaltplan der Sicherheitsbeleuchtung........................................................................................... 42 
+8.3 
+Installationsplan, Auslassplan .......................................................................................................... 42 
+8.4 
+Verbraucherlisten ............................................................................................................................... 42 
+8.5 
+Betriebsanleitungen ........................................................................................................................... 42 
+8.6 
+Prüfbuch für Sicherheitsbeleuchtungsanlagen (Aufzeichnungen)............................................... 42 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 3/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+3 
+9 
+Erstprüfungen......................................................................................................................................43 
+10 
+Instandhaltung.....................................................................................................................................44 
+10.1 
+Wartung................................................................................................................................................44 
+10.2 
+Wiederkehrende Prüfungen ...............................................................................................................44 
+10.3 
+Instandsetzung ....................................................................................................................................45 
+Anhang A (normativ) Richtlinie über den Bau von Betriebsräumen für elektrische Anlagen .................46 
+A.1 
+Anwendungsbereich...........................................................................................................................46 
+A.2 
+Anforderungen.....................................................................................................................................46 
+A.3 
+Zusätzliche Anforderungen zu ÖVE/ÖNORM E 8383.......................................................................46 
+A.4 
+Zusätzliche Anforderungen an elektrische Betriebsräume für ortsfeste 
+Stromerzeugungsaggregate...............................................................................................................47 
+A.5 
+Zusätzliche Anforderungen an Batterieräume .................................................................................47 
+Anhang B (normativ) Richtlinie über brandschutztechnische Anforderungen an elektrische 
+Leitungsanlagen..................................................................................................................................48 
+B.1 
+Anwendungsbereich...........................................................................................................................48 
+B.2 
+Elektrische Leitungsanlagen in notwendigen Treppenräumen, in Räumen  
+zwischen notwendigen Treppenräumen und Ausgängen ins Freie, in  
+notwendigen Fluren und in offenen Gängen vor Gebäudeaußenwänden ....................................48 
+B.3 
+Funktionserhalt von elektrischen Leitungsanlagen im Brandfall ..................................................51 
+Anhang C (informativ) Erläuterungen zu Anhang B.....................................................................................53 
+C.1 
+Allgemeines .........................................................................................................................................53 
+Anhang D (informativ) Andere bauliche Anlagen mit Notbeleuchtung ......................................................55 
+D.1 
+Bauliche Anlagen, die nicht unter den Anwendungsbereich von ÖVE/ÖNORM E 8002-1  
+fallen, jedoch einer Notbeleuchtung bedürfen.................................................................................55 
+D.2 
+Fluchtweg-Orientierungsbeleuchtung ..............................................................................................55 
+Literaturhinweise..............................................................................................................................................56 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 4/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+4 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig 
+alle elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben 
+daher sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK 
+gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz 
+oder 
+gegebenenfalls 
+auf 
+andere 
+Weise 
+festgelegte 
+aktuelle 
+Stand 
+zu 
+berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk 
+Diese vorliegende Ausgabe ersetzt ÖVE/ÖNORM E 8002-1:2002, die technisch überarbeitet wurde. 
+Die wesentlichen Änderungen sind nachfolgend angeführt, wobei diese Zusammenstellung keinen Anspruch 
+auf Vollständigkeit erhebt. 
+– 
+Anpassung an die Anforderungen gemäß ÖVE/ÖNORM EN 50171, 
+– 
+Anpassung an die Anforderungen gemäß ÖVE/ÖNORM EN 50172, 
+– 
+Anpassungen der Klassen des Brandverhaltens gemäß ÖNORM EN 13501-1, 
+– 
+Abschnitt 4.3.1 – Sicherheitsbeleuchtung: Ergänzung um Bodennahe elektrische Sicherheitsleitsysteme, 
+– 
+Abschnitt 5.4: Ergänzung um Absatz für Verzicht auf den Funktionserhalt bei der elektrischen 
+Leitungsanlage, 
+– 
+Abschnitt 7.3 – Elektrische Betriebsräume: Anpassungen gemäß ÖNORM B 3850 und ÖNORM  
+EN 13501-1, 
+– 
+Abschnitt 7.8.3 – Bussysteme: Verwendung von Bussystemen, 
+– 
+Abschnitt 8.6 – Prüfbuch für Sicherheitsbeleuchtungsanlagen (Aufzeichnungen), 
+– 
+Anhang D – Andere bauliche Anlagen mit Notbeleuchtung: Anwendungsbereich von TRVB E 102 und 
+ÖVE/ÖNORM E 8002. 
+Da die zu ersetzende ÖVE/ÖNORM mit der ETV 2002/A1 verbindlich erklärt wurde, kann die Zurückziehung 
+dieser Bestimmungen erst mit Erscheinen einer neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 5/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+5 
+Die Reihe ÖVE/ÖNORM E 8002 besteht aus folgenden Teilen: 
+Teil 1 
+Allgemeines 
+Teil 2 
+Veranstaltungsstätten 
+Teil 3 
+Verkaufsstätten und Ausstellungsstätten 
+Teil 4 
+Hochhäuser 
+Teil 5 
+Gaststätten 
+Teil 6 
+Großgaragen 
+Teil 7 
+Bleibt frei 
+Teil 8 
+Fliegende Bauten als Veranstaltungsstätten, Verkaufsstätten, Ausstellungsstätten oder Schank- 
+und Speisewirtschaften 
+Teil 9 
+Schulen 
+Hinweis zur Anwendung 
+Bei Anwendung dieser ÖVE/ÖNORM ist zu beachten, dass in dieser Norm auch bautechnische 
+Anforderungen enthalten sind, weil diese aus sicherheitstechnischen Gründen von den elektrotechnischen 
+Anforderungen nicht zu trennen sind. 
+Die in dieser ÖVE/ÖNORM enthaltenen bautechnischen Anforderungen sind aus der Sicht elektrotechnischer 
+Belange als anerkannte Regeln der Technik zu betrachten. Jedoch kann es in einzelnen Bundesländern 
+durch Inanspruchnahme baurechtlicher Landeskompetenz Abweichungen zu dieser Norm geben, die jedoch 
+keine unmittelbaren elektrotechnischen Festlegungen enthalten dürfen. Diese Abweichungen können die 
+Landesbehörden in eigener Verantwortung festlegen. Da solche Abweichungen Auswirkungen auf die 
+Anwendung elektrotechnischer Bestimmungen haben, sind sie gemäß § 3, Abs. 3, Elektrotechnikgesetz 1992 
+entsprechend zu veröffentlichen. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 6/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+6 
+1 
+Anwendungsbereich 
+1.1 Allgemein 
+Diese ÖVE/ÖNORM gilt zusätzlich zu ÖVE/ÖNORM E 8001 (alle Teile) bzw. ÖVE-EN 1 (alle Teile) für das 
+Errichten und Prüfen von Starkstromanlagen einschließlich der Sicherheitsstromversorgungsanlagen in 
+Bereichen von baulichen Anlagen für Menschenansammlungen und zugehörenden Rettungswegen, sowie 
+Arbeitsplätzen in Bereichen von baulichen Anlagen für Menschenansammlungen gemäß 1.2. 
+Die Norm legt weiters die Kennzeichnung von Rettungswegen und die Anforderungen der Beleuchtung an 
+Rettungswege bei Störung der allgemeinen Stromversorgung sowie die Mindestanforderung einer solchen 
+Sicherheitsbeleuchtung je nach Größe, Art und Nutzung der baulichen Anlage fest. Diese Norm betrifft die 
+Festlegung einer elektrischen Sicherheitsbeleuchtung an allen Arbeitsplätzen in Bereichen von baulichen 
+Anlagen für Menschenansammlungen und anderen baulichen Anlagen für Menschenansammlungen. 
+Es ist ÖVE/ÖNORM E 8002, Teil 1 und der jeweils zutreffende Teil 2, Teil 3, Teil 4, Teil 5, Teil 6, Teil 8 bzw. 
+Teil 9 aus der Reihe ÖVE/ÖNORM E 8002 gemeinsam anzuwenden. 
+Für Anlagen gemäß 1.2 (1) ist nur ÖVE/ÖNORM E 8002, Teil 1 anzuwenden. 
+Die Zuordnung in eine Kategorie gemäß 1.2 erfolgt in den meisten Fällen gemäß den zutreffenden 
+gesetzlichen Bestimmungen, zB Bauordnungen, Theatergesetze, Veranstaltungsstättengesetze oder 
+Gewerbeordnung. 
+Für Arbeitsstätten wird auf den informativen Anhang D verwiesen.  
+Für Sakralbauten ist die vorliegende ÖVE/ÖNORM nur soweit anwendbar, als im Einzelfall dies in ent-
+sprechenden behördlichen Genehmigungsverfahren festgelegt wird. 
+1.2 Bereiche von baulichen Anlagen 
+Bereiche baulicher Anlagen im Sinne dieser ÖVE/ÖNORM sind: 
+1) Öffentlich zugängliche Bereiche mit einer Fläche von mehr als 1 000 m2 in Gebäuden verkehrstechnischer 
+Einrichtungen wie Flughäfen oder Bahnhöfe, 
+2) Veranstaltungsstätten gemäß ÖVE/ÖNORM E 8002-2, 
+3) Verkaufsstätten und Ausstellungsstätten 
+3a) Verkaufsstätten 
+oder 
+entsprechend 
+genutzte 
+Teile 
+von 
+baulichen 
+Anlagen 
+gemäß  
+ÖVE/ÖNORM E 8002-3, 
+3b) Ausstellungsstätten gemäß ÖVE/ÖNORM E 8002-3, 
+4) Hochhäuser gemäß ÖVE/ÖNORM E 8002-4, 
+5) Gaststätten gemäß ÖVE/ÖNORM E 8002-5, 
+6) Großgaragen oder Tiefgaragen gemäß ÖVE/ÖNORM E 8002-6, 
+7) Bleibt frei, 
+8) Fliegende Bauten als Veranstaltungsstätten, Verkaufsstätten, Ausstellungsstätten oder Schank- und 
+Speisewirtschaften gemäß ÖVE/ÖNORM E 8002-8, 
+9) Schulen gemäß ÖVE/ÖNORM E 8002-9. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 7/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+7 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖNORM B 3850, Brandschutztüren – Ein- und zweiflügelige Drehflügeltüren und -tore 
+ÖNORM DIN 4102-12, Brandverhalten von Baustoffen und Bauteilen – Teil 12: Funktionserhalt von 
+elektrischen Kabelanlagen – Anforderungen und Prüfungen 
+ÖNORM EN 1838, Angewandte Lichttechnik – Notbeleuchtung 
+ÖNORM EN 13501-1, Klassifizierung von Bauprodukten und Bauarten zu ihrem Brandverhalten –  
+Teil 1: Klassifizierung mit den Ergebnissen aus den Prüfungen zum Brandverhalten von Bauprodukten 
+ÖNORM EN 13501-2, Klassifizierung von Bauprodukten und Bauarten zu ihrem Brandverhalten –  
+Teil 2: Klassifizierung mit den Ergebnissen aus den Feuerwiderstandsprüfungen, mit Ausnahme von 
+Lüftungsanlagen 
+ÖNORM Z 1000-1, Sicherheitskennfarben und -kennzeichen – Begriffsbestimmungen, Anforderung, 
+Ausführung 
+ÖNORM Z 1000-2, Sicherheitskennfarben und -kennzeichen – Sicherheits- und Gesundheitsschutz-
+kennzeichen 
+ÖVE/ÖNORM E 8001 (alle Teile), Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V 
+und DC 1 500 V 
+ÖVE/ÖNORM E 8226, Halogenfreie Energiekabel mit verbessertem Verhalten im Brandfall Nennspannung 
+0,6/1 kV 
+ÖVE/ÖNORM E 8240-4, Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 450/750 V – 
+Teil 4: Flexible Leitungen 
+ÖVE/ÖNORM E 8240-13, Gummiisolierte Leitungen mit Nennspannungen bis 450/750 V –  
+Teil 13: Ein-, mehr- und vieladrige Schlauchleitungen mit Isolierhülle und Mantel aus vernetztem Polymer, mit 
+geringer Entwicklung von Rauch und korrosiven Gasen im Brandfall 
+ÖVE/ÖNORM E 8241-3, Polyvinylchlorid-isolierte Leitungen mit Nennspannungen bis 450/750 V – 
+Teil 3: Aderleitungen für feste Verlegung 
+ÖVE/ÖNORM E 8241-5, Polyvinylchlorid-isolierte Leitungen mit Nennspannungen bis 450/750 V – 
+Teil 5: Flexible Leitungen 
+ÖVE/ÖNORM E 8241-12, Polyvinylchlorid-isolierte Starkstromleitungen mit Nennspannungen bis 450/750 V – 
+Teil 12: Wärmebeständige flexible Leitungen 
+ÖVE/ÖNORM E 8383, Starkstromanlagen mit Nennwechselspannung über 1 kV 
+ÖVE/ÖNORM EN 50085-1, Elektroinstallationskanalsysteme für elektrische Installationen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 50171, Zentrale Stromversorgungssysteme 
+ÖVE/ÖNORM EN 50172, Sicherheitsbeleuchtungsanlagen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 8/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+8 
+ÖVE/ÖNORM EN 50272-2, Sicherheitsanforderungen an Batterien und Batterieanlagen – Teil 2: Stationäre 
+Batterien  
+ÖVE/ÖNORM EN 60146-1-1, Halbleiter-Stromrichter – Allgemeine Anforderungen und netzgeführte 
+Stromrichter – Teil 1-1: Festlegung der Grundanforderungen 
+ÖVE/ÖNORM EN 60332-1-2, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall – 
+Teil 1-2: Prüfung der vertikalen Flammenausbreitung an einer Ader, einer isolierten Leitung oder einem  
+Kabel – Prüfverfahren mit 1-kW-Flamme mit Gas/Luft-Gemisch 
+ÖVE/ÖNORM EN 60439 (alle Teile), Niederspannungs-Schaltgerätekombinationen 
+ÖVE/ÖNORM EN 60598-2-22, Leuchten – Leuchten für Notbeleuchtung 
+ÖVE/ÖNORM EN 60702-1, Mineralisolierte Leitungen mit einer Bemessungsspannung bis 750 V –  
+Teil 1: Leitungen 
+ÖVE/ÖNORM EN 60707, Entflammbarkeit fester, nichtmetallischer Materialien bei Einwirkung von 
+Zündquellen – Liste der Prüfverfahren 
+ÖVE/ÖNORM EN 60947-3, Niederspannungsschaltgeräte – Teil 3: Lastschalter, Trennschalter, 
+Lasttrennschalter und Schalter-Sicherungs-Einheiten 
+ÖVE/ÖNORM EN 61347 (alle Teile), Geräte für Lampen 
+ÖVE/ÖNORM EN 61386-1, Elektroinstallationsrohrsysteme für elektrische Energie und für Informationen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 62034, Automatische Prüfsysteme für batteriebetriebene Sicherheitsbeleuchtung für 
+Rettungswege 
+ÖVE-EN 1 (alle Teile), Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V 
+ÖVE/ÖNORM EN 50110-1, Betrieb von elektrischen Anlagen – Teil 1: Europäische Norm 
+ÖVE EN 60146-1-1, Halbleiter-Stromrichter – Allgemeine Anforderungen und netzgeführte Stromrichter –  
+Teil 1-1: Festlegung der Grundanforderungen 
+ÖVE/ÖNORM E 8240-3, Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 450/750 V – 
+Teil 3: Wärmebeständige Silikonaderleitungen 
+ÖVE-K 40-9, Energieleitungen mit einer Isolierung aus Gummi – Teil 9: Einadrige Leitungen ohne Mantel für 
+feste Verlegung mit geringer Entwicklung von Rauch und korrosiven Gasen im Brandfall 
+ÖVE-K 40-54, Energieleitungen mit einer Isolierung aus Gummi – Teil 54: Schwere Gummischlauchleitungen 
+(Nationale Typen) 
+ÖVE-K 41-4, Energieleitungen mit einer Isolierung aus PVC – Teil 4: Mantelleitungen für feste Verlegung 
+(Autorisierte Typen) 
+ÖVE-K 41-52, Energieleitungen mit einer Isolierung aus PVC – Teil 52: Mantelleitungen für feste Verlegung 
+(Nationale Typen) 
+ISO 8528-1, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 1: Application, ratings and performance 
+ISO 8528-2, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 2: Engines 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 9/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+9 
+ISO 8528-3, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 3: Alternating current generators for generating sets 
+ISO 8528-5, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 5: Generating sets 
+ISO 8528-12, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 12: Emergency power supply to safety services 
+DIN 40041, Zuverlässigkeit; Begriffe 
+DIN ISO 8528-7, Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren – Teil 7: Technische 
+Festlegung für Auslegung und Ausführungen 
+DIN 6280-12, Stromerzeugungsaggregate – Unterbrechungsfreie Stromversorgung – Teil 12: Dynamische 
+USV-Anlagen mit und ohne Hubkolben-Verbrennungsmotor 
+DIN 6280-13, Stromerzeugungsaggregate – Stromerzeugungsaggregate mit Hubkolben-
+Verbrennungsmotoren – Teil 13: Für Sicherheitsstromversorgung in Krankenhäusern und in baulichen 
+Anlagen für Menschenansammlungen 
+DIN 6280-14, Stromerzeugungsaggregate – Stromerzeugungsaggregate mit Hubkolben-
+Verbrennungsmotoren – Teil 14: Blockheizkraftwerke (BHKW) mit Hubkolben-Verbrennungsmotoren – 
+Grundlagen, Anforderungen, Komponenten, Ausführung und Wartung 
+BGBl. Nr. 240/1991, Verordnung über brennbare Flüssigkeiten (VbF) 
+BGBl. Nr. 106/1993, Elektrotechnikgesetz 1992 – ETG 1992 
+BGBl. II Nr. 33/2006, Änderung der Elektrotechnikverordnung 2002 (Elektrotechnikverordnung 2002/A1 –  
+ETV 2002/A1) 
+TRVB E 102, Fluchtweg-Orientierungsbeleuchtung und bodennahe Sicherheitsleitsysteme (Technische 
+Richtlinien Vorbeugender Brandschutz – Elektronik) 
+TRVB B 108, Baulicher Brandschutz – Brandabschnittsbildungen (Technische Richtlinien Vorbeugender 
+Brandschutz – Bauwesen) 
+TRVB S 127, Sprinkleranlagen (Technische Richtlinien Vorbeugender Brandschutz – Selbsttätige 
+Brandmelde- und  Löschanlagen) 
+BGR 216, Optische Sicherheitsleitsysteme (Berufsgenossenschaftliche Regel für Sicherheit und Gesundheit 
+bei der Arbeit – BRD) 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 10/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+10 
+3 
+Begriffe 
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten die folgenden Begriffe: 
+ANMERKUNG 1 
+In anderen gesetzlichen Bestimmungen, die gegebenenfalls für Anlagen gemäß dieser ÖVE/ÖNORM 
+anzuwenden sind, können diese Begriffe anders lautend definiert sein. 
+ANMERKUNG 2 
+Weitere sachbezogene Begriffe siehe Teil 2 bis Teil 9 dieser ÖVE/ÖNORM-Reihe. 
+3.1 
+Bauliche Anlagen  
+Gebäude oder Teil eines Gebäudes, das bei Anwendung dieser Norm als eine Einheit betrachtet wird  
+3.1.1 
+Veranstaltungsstätten 
+bauliche Anlagen oder Teile baulicher Anlagen, die für die gleichzeitige Anwesenheit vieler Personen bei 
+Veranstaltungen 
+erzieherischer, 
+geselliger, 
+kultureller, 
+künstlerischer, 
+politischer, 
+sportlicher 
+oder 
+unterhaltender Art bestimmt sind 
+3.1.2 
+Verkaufsstätten 
+bauliche Anlagen oder Teile baulicher Anlagen mit Verkaufsräumen zB Kaufhäuser, Warenhäuser, 
+Gemeinschaftswarenhäuser, 
+Supermärkte, 
+Verbrauchermärkte, 
+Selbstbedienungsgroßmärkte, 
+Einkaufszentren 
+3.1.3 
+Ausstellungsstätten 
+bauliche Anlagen oder Teile von baulichen Anlagen, die der Durchführung von Messen und ähnlichen 
+Veranstaltungen dienen 
+3.1.4 
+Hochhäuser 
+Gebäude, die in der jeweiligen Landesbauordnung als solche definiert sind  
+3.1.5 
+Gaststätten 
+bauliche Anlagen oder Teile von baulichen Anlagen für Schank- oder Speisewirtschaften oder für 
+Beherbergungsbetriebe, Discotheken und Tanzcafes, wenn sie jedermann oder bestimmten Personenkreisen 
+zugänglich sind 
+3.1.6 
+Großgaragen 
+geschlossene oder offene Garagen mit einer Nutzfläche von mehr als 1 000 m2 
+Die Nutzfläche einer Garage ist die Summe aller miteinander verbundenen Flächen der Garageneinstellplätze 
+und der Verkehrsflächen. 
+3.1.7 
+fliegende Bauten  
+bauliche Anlagen, die geeignet und dazu bestimmt sind, wiederholt aufgestellt und zerlegt zu werden; hiezu 
+zählen auch Zelte und die vorübergehende Nutzung fester Bauwerke 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 11/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+11 
+3.1.8 
+Brandabschnitt (gemäß ÖNORM F 1000-2) 
+– 
+Teil eines Gebäudes oder einer Gebäudegruppe, der durch Brandwände und/oder brandbeständige 
+Decken begrenzt ist 
+– 
+Teil eines Geländes, der durch Brandschutzstreifen oder Schutzzonen begrenzt ist  
+3.1.9 
+Rettungsweg 
+im Notfall für Rettungszwecke vorgesehener Weg 
+ANMERKUNG Rettungswege (Fluchtwege) sind Verkehrsflächen auf Grundstücken und Bereiche in baulichen Anlagen, 
+die dem sicheren Verlassen, der Rettung von Personen und der Durchführung von Löscharbeiten dienen, wie 
+Treppenräume notwendiger Treppen und deren Verbindungswege ins Freie, allgemein zugängliche Flure, Rampen, 
+Ausgänge, Sicherheitsschleusen, Laubengänge, Rettungsbalkone, Rettungstunnel sowie Wege außerhalb der baulichen 
+Anlagen, die bis zu sicheren, in der Regel öffentlichen Verkehrsflächen führen. 
+3.1.10 
+notwendige Treppenräume oder notwendige Flure 
+Treppenräume oder Flure, die im Gefahrenfall, insbesondere bei einem Brand, als Rettungsweg dienen und 
+die aufgrund allgemein geltender oder im Einzelfall erhobener bauordnungsrechtlicher Anforderungen 
+vorzusehen sind  
+3.1.10.1 
+Sicherheitstreppenräume 
+notwendige Treppenräume welche gegen das Eindringen von Rauch und Flammen besonders geschützt sind 
+und die ausschließlich als Rettungsweg dienen 
+3.1.10.2 
+notwendige Treppenräume geringer Nutzung 
+Treppenräume von Wohngebäuden, ausgenommen Hochhäuser, sowie Treppenräume, zu denen nur 
+– 
+höchstens zehn Wohnungen oder 
+– 
+andere Nutzungseinheiten, deren Fläche jeweils nicht mehr als 200 m2 beträgt, mit einer Gesamtfläche 
+ 
+von höchstens 1 000 m2  
+gehören. 
+3.1.10.3 
+notwendige Flure geringer Nutzung 
+1) 
+Flure, die zu notwendigen Treppenräumen geringer Nutzung führen, 
+2) 
+Flure, die nicht über notwendige Treppenräume ins Freie führen und zu denen  
+– 
+höchstens zehn Wohnungen oder  
+– 
+andere Nutzungseinheiten, deren Fläche jeweils nicht mehr als 200 m2 beträgt, mit einer 
+Gesamtfläche von höchstens 1 000 m2  
+gehören.  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 12/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+12 
+3.1.11 
+Löschwasserversorgungsanlage 
+Gesamtheit der zur Förderung des Löschwassers erforderlichen Einrichtungen, zB Pumpen, Pumpenantriebe, 
+Schalt-, Steuer-, Regel- und Überwachungseinrichtungen, Energieübertragungs- und Steuerleitungen sowie 
+die Energieversorgung 
+ANMERKUNG  Sprinkleranlagen gemäß TRVB S 127 fallen nicht unter diese Definition. 
+3.1.12 
+Feuerwehraufzüge  
+Aufzug, vorwiegend für die Nutzung durch Personen bestimmt, ausgestattet mit zusätzlichen  Schutz-, 
+Kontroll- und Signaleinrichtungen, die es ermöglichen, ihn unter der unmittelbaren Kontrolle der Feuerwehr zu 
+nutzen 
+3.1.13 
+Personenaufzüge mit Gebäudeevakuierungskonzept 
+Aufzüge in Hochhäusern und Verkaufsstätten, die bei Ausfall der allgemeinen Stromversorgung wenigstens 
+nacheinander selbsttätig in ein für die Evakuierung festgelegte Bestimmungshaltestelle bzw. alternative 
+Bestimmungshaltestelle gefahren werden  
+3.2 
+Beleuchtungstechnik, Elektrotechnik 
+3.2.1 
+allgemeine Beleuchtung  
+Beleuchtung baulicher Anlagen mit künstlichem Licht, entsprechend der bestimmungsgemäßen Nutzung 
+dieser baulichen Anlagen, die aus der allgemeinen Stromversorgung gespeist wird 
+3.2.2 
+Notbeleuchtung 
+Beleuchtung, die bei Störung der Stromversorgung der allgemeinen künstlichen Beleuchtung wirksam wird 
+ANMERKUNG Im Rahmen dieser ÖVE/ÖNORM ist Notbeleuchtung ein übergeordneter Begriff, der mehrere Arten von 
+Beleuchtungen, wie in Bild 1 dargestellt, umfasst. 
+ 
+Bild 1 – Arten der Notbeleuchtung 
+Notbeleuchtung
+Sicherheitsbeleuchtung 
+Ersatzbeleuchtung 
+Sicherheitsbeleuchtung 
+für Rettungswege
+Antipanikbeleuchtung
+Sicherheitsbeleuchtung 
+für Arbeitsplätze mit 
+besonderer Gefährdung 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 13/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+13 
+3.2.2.1 
+Sicherheitsbeleuchtung  
+Teil der Notbeleuchtung, der Personen das sichere Verlassen eines Raumes/Gebäudes ermöglicht oder der 
+es Personen ermöglicht, vor dem Verlassen einen potentiell gefährlichen Arbeitsablauf zu beenden 
+ANMERKUNG Sicherheitsbeleuchtung ist zusätzlich zur allgemeinen Beleuchtung während der betriebserforderlichen 
+Zeiten aus Sicherheitsgründen notwendig (allgemeine Sicherheit, Unfallschutz). Sie wird bei Störung der Stromversorgung 
+der allgemeinen Beleuchtung wirksam (siehe 3.2.5) oder in ihrer Wirksamkeit erhalten (siehe 3.2.4). 
+3.2.2.1.1 
+Sicherheitsbeleuchtung für Rettungswege 
+Teil der Sicherheitsbeleuchtung, der es ermöglicht, Rettungseinrichtungen eindeutig zu erkennen, und sicher 
+zu benutzen, sofern Personen anwesend sind (d. h. während der betriebserforderlichen Zeiten)  
+ANMERKUNG Zweck der Sicherheitsbeleuchtung für Rettungswege (Rettungswegbeleuchtung) ist es, Personen durch 
+Vorsehen ausreichender Beleuchtung und Richtungsangaben auf Rettungswegen das sichere Verlassen zu ermöglichen 
+und sicherzustellen, dass Brandschutzeinrichtungen leicht gefunden und angewendet werden können. 
+3.2.2.1.2 
+Antipanikbeleuchtung  
+Teil der Sicherheitsbeleuchtung, der der Panikvermeidung dienen soll und es Personen erlaubt, eine Stelle zu 
+erreichen, von der aus ein Rettungsweg eindeutig als solcher erkannt werden kann 
+ANMERKUNG Zweck der Antipanikbeleuchtung ist es, die Wahrscheinlichkeit von Panik zu vermindern und Personen 
+das sichere Erreichen eines Rettungsweges durch Vorsehen ausreichender Beleuchtung und Richtungsangaben zu 
+ermöglichen. Sie wird bei Bereichen ohne festgelegte Rettungswege in Hallen oder baulichen Anlagen mit einer Fläche 
+größer 60 m² angewendet oder bei kleineren Flächen, sofern dort durch eine größere Menschenansammlung ein erhöhtes 
+Risiko besteht. 
+3.2.2.1.3 
+Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung 
+Teil der Sicherheitsbeleuchtung, der der Sicherheit von Personen dienen soll, die sich in potentiell 
+gefährlichen 
+Arbeitsabläufen 
+oder 
+Situationen 
+befinden 
+und 
+der 
+es 
+ermöglicht, 
+angemessene 
+Abschaltmaßnahmen zur Sicherheit des Bedienungspersonals und anderer in den Räumlichkeiten 
+befindlicher Personen zu treffen  
+ANMERKUNG Zweck der Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung ist es, das gefahrlose 
+Beenden notwendiger Tätigkeiten und das gefahrlose Verlassen des Arbeitsplatzes mit besonderer Gefährdung zu 
+ermöglichen. 
+3.2.3 
+Ersatzbeleuchtung 
+Teil der Notbeleuchtung, der vorgesehen ist, damit notwendige Tätigkeiten im Wesentlichen unverändert 
+fortgesetzt werden können 
+3.2.4 
+Dauerschaltung der Sicherheitsbeleuchtung  
+Schaltung der Sicherheitsbeleuchtung, bei der deren Lampen dauernd wirksam sind, wobei eine 
+Unterbrechung von maximal 0,5 s zulässig ist 
+3.2.5 
+Bereitschaftsschaltung der Sicherheitsbeleuchtung 
+Schaltung der Sicherheitsbeleuchtung, bei der deren Lampen bei Störung der Stromversorgung der 
+allgemeinen Beleuchtung selbsttätig wirksam werden 
+3.2.6 
+Sicherheitsleuchte 
+Leuchte mit oder ohne eigene Energiequelle, die für die Sicherheitsbeleuchtung verwendet wird 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 14/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+14 
+3.2.7 
+Sicherheitszeichen 
+Zeichen, das mittels einer Kombination von Farbe und geometrischer Form eine allgemeine 
+Sicherheitsinformation vermittelt und das durch die Hinzufügung eines graphischen Symbols oder Textes eine 
+spezielle Sicherheitsinformation vermittelt 
+3.2.7.1 
+beleuchtetes Sicherheitszeichen  
+Zeichen, das von einer externen Lichtquelle beleuchtet wird 
+3.2.7.2 
+hinterleuchtetes Sicherheitszeichen 
+Zeichen, das von einer internen Lichtquelle beleuchtet wird 
+3.2.8 
+Rettungszeichen-Leuchte 
+Sicherheitsleuchte, auf der ein graphisches Symbol angebracht ist, das als Sicherheitszeichen für 
+Rettungswege gilt 
+Sie dient der Kennzeichnung von Rettungswegen sowie zum Hinweis auf diese. 
+3.2.9 
+Mindestbeleuchtungsstärke der Sicherheitsbeleuchtung 
+örtlicher Mindestwert der Beleuchtungsstärke am Ende der Nutzungsdauer der Sicherheitsstromquellen und 
+Lampen 
+Die Mindestbeleuchtungsstärke gilt als Nennwert der Sicherheitsbeleuchtung. 
+3.2.10 
+Einrichtungen der Sicherheitsstromversorgungsanlage 
+Gesamtheit aus Sicherheitsstromquellen, zugehörenden Schalteinrichtungen, Verteilern, Haupt- und 
+Verbraucherstromkreisen bis zu den Anschlussklemmen der notwendigen Sicherheitseinrichtungen 
+3.2.11 
+notwendige Sicherheitseinrichtungen 
+Einrichtungen, die im Gefahrenfall (insbesondere bei Brand) der Sicherheit von Personen dienen und die 
+aufgrund allgemein geltender oder im Einzelfall erhobener bauordnungsrechtlicher Anforderungen 
+vorzusehen sind und einer Sicherheitsstromversorgung bedürfen 
+Hierzu gehören zum Beispiel Sicherheitsbeleuchtung, Löschwasserversorgungsanlagen, Feuerwehraufzüge, 
+Rauch- und Wärmeabzugseinrichtungen, Druckbelüftungsanlagen, Einrichtungen zur Alarmierung und zur 
+Erteilung von Anweisungen an Besucher und Beschäftigte sowie CO-Warnanlagen. 
+3.2.12 
+Ersatzstromquelle 
+Einrichtung, die bei Ausfall der allgemeinen Stromversorgung die elektrische Energie bereitstellt, um normale 
+Tätigkeiten fortsetzen oder in Ruhe beenden zu können 
+3.2.13 
+Sicherheitsstromquelle 
+Einrichtung, die bei Ausfall der allgemeinen Stromversorgung für eine begrenzte Zeit die elektrische Energie 
+für die Versorgung von notwendigen Sicherheitseinrichtungen bereitstellt 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 15/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+15 
+3.2.13.1 
+Einzelbatterieanlage 
+Batterieanlage, die aus einer Batterie wartungsfreier Bauart und einer Lade- und Kontrolleinrichtung besteht 
+Sie versorgt im Allgemeinen eine, höchstens zwei hinterleuchtete Sicherheitszeichen oder eine sonstige 
+Sicherheitseinrichtung. 
+3.2.13.2 
+Gruppenbatterieanlage 
+LPS-System – Low Power Supply System 
+Batterieanlage mit begrenzter Ausgangsleistung, die aus einer Batterie und einer Lade- und 
+Kontrolleinrichtung besteht 
+Sie versorgt notwendige Sicherheitseinrichtungen bis zu einer Anschlussleistung von 500 W bei 3 h bzw. 
+1 500 W bei 1 h Nennbetriebsdauer. 
+3.2.13.3 
+Zentralbatterieanlage 
+CPS-System – Central Power Supply System 
+Batterieanlage ohne Leistungsbegrenzung, die aus einer Batterie und einer Lade- und Kontrolleinrichtung 
+besteht 
+Sie versorgt mindestens die notwendigen Sicherheitseinrichtungen. 
+3.2.13.4 
+Stromerzeugungsaggregat 
+Aggregat, bestehend aus einem Motor als Erzeuger mechanischer Energie und aus einem Generator als 
+Wandler mechanischer in elektrische Energie 
+ANMERKUNG Für 
+Stromerzeugungsaggregate 
+mit 
+Hubkolben-Verbrennungsmotor 
+wird 
+auf 
+DIN 6280 
+sowie 
+DIN ISO 8528 hingewiesen. 
+3.2.13.4.1 
+Ersatzstromaggregat 
+Stromerzeugungsaggregat, das nach Ausfall der allgemeinen Stromversorgung zur Versorgung von 
+Einrichtungen zur Aufrechterhaltung des Betriebes dient, jedoch nicht eine Sicherheitsstromquelle gemäß 
+3.2.13 darstellt 
+3.2.13.4.2 
+Sicherheitsstromaggregat 
+Aggregat, das bei einem Ausfall der allgemeinen Stromversorgung nach maximal 15 s die elektrische Energie 
+für die Versorgung der notwendigen Sicherheitseinrichtungen bereitstellt 
+Hierbei wird das gesamte Aggregat nach Ausfall der allgemeinen Stromversorgung aus dem Stillstand in 
+Betrieb gesetzt. 
+Um die geforderten Zeiten zur Erreichung der Mindestbeleuchtungsstärken sicherzustellen, können 
+Zusatzmaßnahmen wie zB weitere Sicherheitsstromquellen erforderlich sein. 
+3.2.13.4.3 
+Schnellbereitschaftsaggregat 
+Aggregat, das bei einem Ausfall der allgemeinen Stromversorgung nach maximal 0,5 s die elektrische 
+Energie für die Versorgung der notwendigen Sicherheitseinrichtungen bereitstellt 
+Hierbei dient ein Energiespeicher zur kurzzeitigen Energieversorgung der Verbraucher und gegebenenfalls 
+zum Schnellhochfahren des Aggregats. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 16/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+16 
+3.2.13.4.4 
+Sofortbereitschaftsaggregat 
+Aggregat, das bei einem Ausfall der allgemeinen Stromversorgung ohne Unterbrechung die elektrische 
+Energie für die Versorgung der notwendigen Sicherheitseinrichtungen bereitstellt 
+Hierbei dient ein Energiespeicher zur kurzzeitigen Energieversorgung der Verbraucher und gegebenenfalls 
+zum schnellen Hochfahren des Motors. Beim Übergang des Antriebs vom Elektromotor auf die Kraftmaschine 
+kann eine vorübergehende Frequenzabweichung auftreten. 
+3.2.14 
+zwei unabhängige Netze 
+Stromversorgung bei der bei Ausfall eines Netzes die Versorgung durch das andere Netz sichergestellt wird 
+3.2.15 
+Umschaltbetrieb 
+Betriebsart, bei der die Sicherheitsstromquelle in Bereitschaft gehalten wird 
+Bei Störung der allgemeinen Stromversorgung wird auf die Sicherheitsstromquelle umgeschaltet. 
+3.2.16 
+Bereitschaftsparallelbetrieb 
+Betriebsart, bei der die Sicherheitsstromquelle ständig parallel zur allgemeinen Stromversorgung geschaltet 
+ist, aber unterbrechungsfrei nur dann Strom liefert, wenn die allgemeine Stromversorgung gestört ist 
+3.2.17 
+betriebserforderliche Zeit 
+Dauer, in der zB eine Sicherheitsbeleuchtungsanlage „betriebsbereit" geschaltet sein muss, abhängig von 
+rechtlichen Vorgaben, von den tageszeitabhängigen Dunkelstunden oder einer betriebsmäßigen 
+Verdunkelung 
+3.2.18 
+Störung der allgemeinen Stromversorgung 
+Störung, die vorliegt, wenn die Spannung der allgemeinen Stromversorgung über einen Zeitraum von mehr 
+als 0,5 s unter den Wert von 75 % der Netznennspannung gesunken ist 
+3.2.19 
+Nennbetriebsdauer der Sicherheitsstromquelle 
+Dauer, für die eine Sicherheitsstromquelle ausgelegt ist 
+Die Betriebsdauer der Sicherheitsstromquelle ist entsprechend Tabelle 1 und Tabelle 2 auszuführen. 
+3.2.20 
+Brauchbarkeitsdauer der Sicherheitsstromquelle 
+Zeitspanne, während der die festgelegten Zuverlässigkeitsanforderungen eingehalten werden (siehe 
+DIN 40041) 
+3.2.21 
+Betriebsräume für elektrische Anlagen (abgeschlossene elektrische Betriebsräume) 
+Räume, die ausschließlich zur Unterbringung von Einrichtungen zur Erzeugung oder Verteilung elektrischer 
+Energie oder zur Aufstellung von Batterien dienen 
+3.2.22 
+Hauptverteiler der Sicherheitsstromversorgung 
+erste Verteilerstelle im Gebäude, die direkt von der Sicherheitsstromquelle der Sicherheitsstromversorgung 
+gespeist wird 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 17/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+17 
+3.2.23 
+elektrische Leitungsanlage 
+Gesamtheit aus Kabeln, Leitungen und Stromschienen einschließlich der Verteiler und Leitungsverbindungen 
+Zu den Leitungen gehören deren Befestigungen und Beschichtungen; Lichtwellenleiter-Kabel gelten als 
+elektrische Leitungen. 
+3.2.24 
+elektrische Leitungen mit verbessertem Brandverhalten 
+Leitungen/Kabel, welche den Bestimmungen bzw. Normen gemäß Tabelle B.1 entsprechen 
+3.2.25 
+Endstromkreis 
+Stromkreis zu den Verbrauchern ab der letzten Überstrom-Schutzeinrichtung im Verteiler der 
+Stromversorgungsanlage 
+3.2.26 
+bodennahe elektrisch betriebene Sicherheitsleitsysteme 
+Leitsysteme, die mit Hilfe optischer Markierungen, Kennzeichnungen, Sicherheitszeichen und Richtungs-
+angaben einen sicheren Fluchtweg vorgeben, um Personen zu einem Ausgang oder sicheren Bereich bei 
+bereits verrauchter Umgebung zu führen 
+ANMERKUNG Bei bodennahen Sicherheitsleitsystemen liegt deren Oberkante nicht höher als 40 cm über dem 
+Fußboden. 
+3.2.27 
+brandhemmender Bauteil  
+Bauteil, wenn er der Feuerwiderstandsklasse EI 30 oder REI 30 gemäß ÖNORM EN 13501-2 oder der 
+Feuerwiderstandsklasse EI2 30-C gemäß ÖNORM B 3850 entspricht 
+3.2.28 
+brandbeständiger Bauteil 
+Bauteil, wenn er der Feuerwiderstandsklasse EI 90 oder REI 90 gemäß ÖNORM EN 13501-2 oder der 
+Feuerwiderstandsklasse EI2 90-C gemäß ÖNORM B 3850 entspricht 
+3.2.29 
+nicht brennbarer Baustoff  
+Baustoff, wenn er der Euroklasse des Brandverhaltens A1 oder A2 gemäß ÖNORM EN 13501-1 entspricht. 
+4 
+Allgemeine Anforderungen 
+4.1 Allgemeines 
+4.1.1 Allgemeine Schutzziele 
+Bei Stromausfall, bei Störung der allgemeinen Stromversorgung bzw. im Falle eines Brandes müssen  
+– 
+notwendige Sicherheitseinrichtungen für eine bestimmte Zeit (weiter)betrieben werden können und 
+– 
+das sichere Verlassen von baulichen Anlagen bzw. die Vermeidung von Panik unterstützt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 18/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+18 
+4.1.2 Allgemeine Stromversorgung 
+Es 
+gelten die Anforderungen 
+gemäß 
+ÖVE/ÖNORM E 8001 (alle Teile), ÖVE-EN 1 (alle Teile) und 
+ÖVE/ÖNORM E 8383. Zusätzlich sind in baulichen Anlagen gemäß dem Anwendungsbereich dieser 
+ÖVE/ÖNORM die Anforderungen gemäß Abschnitt 6 zu erfüllen, um einen Ausfall der allgemeinen Strom-
+versorgung, außer durch Netzausfall, möglichst zu vermeiden. 
+Ist im Einzelfall eine bauliche Anlage oder sind Teile davon hinsichtlich ihrer Ausführung oder Nutzung 
+mehreren Arten von Anlagen gemäß 1.2 zuzuordnen, so sind dafür die jeweils höheren Sicherheits-
+anforderungen maßgebend. 
+4.2 Sicherheitsstromversorgung 
+Es gelten die Anforderungen gemäß ÖVE-EN 1 Teil 4 § 57. Zusätzlich ist in baulichen Anlagen gemäß dem 
+Anwendungsbereich dieser ÖVE/ÖNORM eine Sicherheitsstromversorgung gemäß Abschnitt 7 erforderlich, 
+die bei Störung der allgemeinen Stromversorgung, zB bei Netzausfall, Anlagenstörung oder Brand die 
+notwendigen Sicherheitseinrichtungen nach einer zulässigen Umschaltzeit über eine bestimmte Zeit mit 
+elektrischer Energie weiter versorgt und deren Steuerung sicherstellt. 
+Ist im Einzelfall eine bauliche Anlage oder Teile davon hinsichtlich ihrer Ausführung oder Nutzung mehreren 
+Arten von Anlagen gemäß 1.2 zuzuordnen, so sind dafür die jeweils höheren Sicherheitsanforderungen 
+maßgebend.  
+4.3 Notwendige Sicherheitseinrichtungen 
+4.3.1 Sicherheitsbeleuchtung 
+4.3.1.1 
+Allgemeines 
+Die Sicherheitsbeleuchtung stellt sicher, dass bei Ausfall der allgemeinen Stromversorgung die Beleuchtung 
+unverzüglich, automatisch und für die vorgegebene in einem festgelegten Bereich zur Verfügung gestellt wird. 
+Die Anlage muss sicherstellen, dass die Sicherheitsbeleuchtung folgende Funktionen erfüllt: 
+a) 
+Beleuchtung der Rettungszeichen, 
+b) 
+Beleuchtung der Wege zu den Ausgängen, um sicher in den sicheren Bereich zu gelangen, 
+c) 
+ausreichende Beleuchtung der Brandbekämpfungseinrichtungen und der Meldeeinrichtungen entlang der 
+Rettungswege, 
+d) 
+Erlauben von Arbeiten in Verbindung mit Sicherheitsmaßnahmen. 
+Die Sicherheitsbeleuchtung muss nicht nur bei vollständigem Ausfall der allgemeinen Stromversorgung, 
+sondern auch bei einem örtlichen Ausfall der allgemeinen Beleuchtung wirksam werden, wie zB. beim Ausfall 
+eines Endstromkreises. 
+Grundlegende lichttechnische Anforderungen an die Sicherheitsbeleuchtung und zugehörige Messungen sind 
+in Tabelle 1 und ÖNORM EN 1838 festgelegt.  
+Die Sicherheitsbeleuchtung muss den Anforderungen gemäß Tabelle 1 entsprechen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 19/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+19 
+Eine Sicherheitsbeleuchtung muss in baulichen Anlagen gemäß 1.2 zusätzlich zur allgemeinen Beleuchtung 
+und unter Berücksichtigung der Abweichungen gemäß ÖVE/ÖNORM E 8002 Teil 2, Teil 3, Teil 4, Teil 5, 
+Teil 6, Teil 8 und Teil 9 vorhanden sein: 
+1) 
+in Rettungswegen, im Nahbereich von Ausgängen außerhalb des Gebäudes, in Aufzugskabinen und 
+Triebwerksräumen, bei Rolltreppen, bei Erste-Hilfe-Stellen, in Sanitärbereichen ab 8 m2 Größe und in 
+Behinderten-WC´s, 
+2) 
+in Räumen für Sicherheits- und Ersatzstromaggregate, für Hauptverteiler der Sicherheits- und Ersatz-
+stromversorgung und der allgemeinen Stromversorgung und für Schaltanlagen mit Nennspannungen 
+über 1 kV und in Räumen zur Bedienung zentraler brandschutztechnischer Einrichtungen (zB 
+Sprinklerzentrale, Brandmeldezentrale), 
+3) 
+in Flughäfen und Bahnhöfen ist zusätzlich zu den Einrichtungen gemäß 1) und 2) 
+– 
+in Wartezonen, Abfertigungshallen, Geschäftsflächen über 60 m2, 
+– 
+in Arbeitsräumen und Räumen die zur Aufrechterhaltung des Betriebes notwendig sind über 60 m2 
+Fläche 
+ eine Sicherheitsbeleuchtung (Antipanikbeleuchtung) zu errichten. 
+4) 
+In Bereichen von baulichen Anlagen für Menschenansammlungen mit erhöhter Gefährdung sollte 
+zusätzlich zur Sicherheitsbeleuchtung in Rettungswegen ein bodennahes elektrisch betriebenes 
+Sicherheitsleitsystem verwendet werden bzw. kann behördlich vorgeschrieben werden. Die Funktion der 
+Sicherheitsbeleuchtung nach der vorliegenden Norm darf durch das bodennahe Sicherheitsleitsystem 
+nicht beeinträchtigt werden. 
+Bereiche mit erhöhter Gefährdung in baulichen Anlagen können bestehen, wenn bei einer Gesamtfläche 
+der zusammenhängenden Räume (Funktionsbereiche) mehr als 8 000 m2 und ein hoher Anteil an 
+ortsunkundigen Personen gegeben ist. 
+Derartige Bereiche können zB in Flughäfen, Bahnhofsgebäuden, U-Bahnstationen, Einkaufszentren, 
+Universitäten, Hotels oder Veranstaltungsstätten sein. 
+Für die Ausführung des bodennahen elektrisch betriebenen Sicherheitsleitsystems gelten: 
+– 
+TRVB E 102 – Fluchtweg-Orientierungsbeleuchtung und bodennahe Sicherheitsleitsysteme, 
+– 
+BGR 216 – Optische Sicherheitsleitsysteme. 
+4.3.1.2 
+Erkennbarkeit und Leuchtdichte von Rettungszeichen  
+Wenn ein Ausgang nicht unmittelbar gesehen werden kann oder über seine Lage Zweifel bestehen, muss ein 
+Richtungszeichen (oder eine Folge von Rettungszeichen) vorgesehen und so angebracht werden, dass eine 
+Person sicher zu einem Notausgang geleitet wird. 
+Ein Rettungszeichen oder eine Richtungsangabe muss von allen Punkten entlang des Rettungsweges 
+sichtbar sein. 
+Alle Zeichen, die Ausgänge oder Rettungswege kennzeichnen, müssen in Farbe und Gestaltung 
+ÖNORM Z 1000 Teil 1 und Teil 2 und ihre Leuchtdichte muss ÖNORM EN 1838 entsprechen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 20/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+20 
+4.3.2 Andere Sicherheitseinrichtungen 
+Folgende beispielsweise angeführten Sicherheitseinrichtungen müssen an eine Sicherheitsstrom-
+versorgungsanlage angeschlossen werden, wenn dies aufgrund allgemein geltender oder im Einzelfall 
+erhobener behördlicher Anforderungen notwendig ist: 
+1) 
+Löschwasserversorgungsanlagen, ausgenommen Sprinkleranlagen gemäß TRVB S 127, 
+2) 
+Feuerwehraufzüge, 
+3) 
+Personenaufzüge mit besonderen Anforderungen, 
+4) 
+Einrichtungen zur Alarmierung und zur Erteilung von Anweisungen, 
+5) 
+Rauch- und Wärmeabzugseinrichtungen, Druckbelüftungsanlagen, 
+6) 
+CO-Warnanlagen. 
+Die Sicherheitsstromversorgungsanlage muss den jeweiligen Anforderungen gemäß Tabelle 2 entsprechen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 21/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+21 
+Tabelle 1 – Anforderungen an die Sicherheitsstromversorgungsanlage der Sicherheitsbeleuchtung gemäß 4.3.1 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+Veranstaltungsstätten 
+Schank- und Speisewirtschaften, Diskotheken und 
+Tanzcafes, 
+Verkaufsräume in Verkaufsstätten 
+ 
+Anforderungen für die 
+Sicherheitsbeleuchtung 
+Verkaufsstätten, 
+Ausstellungsstätten 
+bis 20 
+Sicherheitsleuchten 
+über 20 
+Sicherheitsleuchten 
+Beherbergungs-
+betriebe, 
+Hochhäuser, 
+Schulen 
+Großgaragen 
+Verkehrs-
+technische 
+Einrichtungen 
+(Flughäfen, 
+Bahnhöfe) 
+1 
+Mindestbeleuchtungsstärke 
+für Rettungswege in lx 
+a 
+1 
+1 
+1 
+1 
+1 
+2 
+Mindestbeleuchtungsstärke für 
+Antipanikbeleuchtung in lx 
+a 
+0,5 
+0,5 
+0,5 
+– 
+0,5 
+3 
+Zeit für das Erreichen der geforderten 
+Mindestbeleuchtungsstärke gemäß 
+Zeilen 1 und 2 
+in 5 s 50 % 
+in 60 s 100 % 
+in 5 s 50 % 
+in 60 s 100 % 
+in 5 s 50 % 
+in 60 s 100 % 
+in 5 s 50 % 
+in 60 s 100 % 
+in 5 s 50 % 
+in 60 s 100 % 
+4 
+Nennbetriebsdauer der 
+Sicherheitsstromquelle 
+b in Stunden 
+3 
+3 
+3 bzw. 8 
+c 
+1 
+3 
+5 
+Dauerschaltung für die Beleuchtung der 
+Sicherheitszeichen für Rettungswege  
+gefordert 
+d 
+gefordert 
+d 
+gefordert 
+d 
+gefordert 
+gefordert 
+6 
+Einzelbatterieleuchten 
+nicht zulässig 
+zulässig 
+nicht zulässig 
+zulässig 
+nicht zulässig 
+nicht zulässig 
+7 
+Gruppenbatterieanlage LPS 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+8 
+Zentralbatterieanlage CPS 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+9 
+Sicherheitsstromaggregat 
+nicht allein zulässig 
+nicht allein zulässig 
+zulässig 
+e 
+zulässig 
+e 
+zulässig 
+e 
+10 
+Schnellbereitschaftsaggregat 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+11 
+Sofortbereitschaftsaggregat 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+12 
+zwei unabhängige Netze 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+zulässig 
+a 
+gemäß ÖNORM EN 1838:1999, Abschnitt 4.2.1 und Abschnitt 4.3.1 
+b 
+bezüglich Nennbetriebsdauer siehe auch 7.1.2 
+c 
+bezieht sich nur auf Beherbergungsbetriebe und Hochhäuser, gemäß ÖVE/ÖNORM E 8002-4:2002, Abschnitt 7.2 und ÖVE/ÖNORM E 8002-5:2002, Abschnitt 7.2 
+d 
+Mit Ausnahme der Verkaufsstätten ist auch Bereitschaftsschaltung zulässig, wenn durch die Allgemeinbeleuchtung bzw. das Tageslicht während der Betriebszeit eine ausreichende 
+Sichtbarkeit der Sicherheitszeichen für Rettungswege gegeben ist. Von einer ausreichenden Sichtbarkeit der Sicherheitszeichen für Rettungswege in Bereitschaftsschaltung, ist 
+auszugehen, wenn die Erkennungsweiten dieser Sicherheitszeichen wie für beleuchtete Sicherheitszeichen eingehalten und eine Beleuchtungsstärke an den Oberflächen dieser 
+Sicherheitszeichen von mehr als 50 lux gewährleistet werden. Dabei ist 7.2.1.3 einzuhalten. 
+e 
+wenn ohne oder mit Zusatzmaßnahmen die Anforderungen gemäß Zeile 3 erfüllt werden 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 22/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+22 
+Tabelle 2 – Anforderungen an die Sicherheitsstromversorgungsanlage von Sicherheitseinrichtungen gemäß 4.3.2 
+ 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+Beispiele für Sicherheitseinrichtungen gemäß 4.3.2 
+ 
+Anforderungen für 
+Sicherheitseinrichtungen 
+Anlage zur 
+Löschwasser-
+versorgung b 
+Feuerwehraufzüge 
+Personenaufzüge mit 
+Gebäude-
+evakuierungskonzept
+ 
+Einrichtungen zur 
+Alarmierung und zur 
+Erteilung von 
+Anweisungen 
+Mechanische Rauch- 
+und Wärmeabzugs-
+einrichtungen, 
+Druckbelüftungs-
+anlagen 
+CO-Warnanlagen 
+1 
+Nennbetriebsdauer der 
+Sicherheitsstromquelle in Stunden 
+4 
+3 
+3 
+3 
+3 
+1 
+2 
+Max. Unterbrechungszeit in s 
+15 
+15 
+15 
+15 
+15 
+15 
+3 
+Netzüberwachung und Umschaltung 
+bei Netzausfall: 
+Am Hauptverteiler der 
+Sicherheitsstromversorgung 
+gefordert 
+gefordert 
+gefordert 
+gefordert a 
+gefordert a 
+gefordert a 
+ 
+Zulässige Sicherheitsstromquelle: (Zeilen 4 bis 7) 
+4 
+Einzelbatterien 
+nicht zutreffend 
+nicht zutreffend 
+nicht zutreffend 
+nicht zutreffend 
+5 
+Gruppen-, Zentralbatterien, mit oder 
+ohne Wechselrichter 
+nicht zutreffend 
+nicht zutreffend 
+nicht zutreffend 
+6 
+Ersatzstromaggregat sowie Schnell- 
+und Sofortbereitschaftsaggregat 
+7 
+zwei unabhängige Netze 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+gefordert im Bereich 
+der möglichen 
+Auswahl 
+a 
+soweit für diese Sicherheitseinrichtung nicht eine eigene Sicherheitsstromversorgung vorgesehen ist 
+b 
+ausgenommen Sprinkleranlagen gemäß TRVB S 127 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 23/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+23 
+5 
+Brandschutz, Funktionserhalt 
+Innerhalb von Gebäuden gemäß 1.2 müssen 
+1) 
+Transformatoren und Schaltanlagen für Nennspannungen über 1 kV, 
+2) 
+ortsfeste Stromerzeugungsaggregate und  
+3) 
+Zentralbatterieanlagen für Sicherheitsbeleuchtung 
+in jeweils eigenen elektrischen Betriebsräumen untergebracht sein. 
+Schaltanlagen für Sicherheitsbeleuchtung dürfen nicht in elektrischen Betriebsräumen mit Anlagen gemäß 1) 
+und 2) aufgestellt werden. 
+5.1 
+In baulichen Anlagen gemäß dieser ÖVE/ÖNORM sind für Räume mit Transformatoren, Schaltanlagen 
+mit Nennspannungen über 1 kV, Gruppenbatterien, Zentralbatterien und Stromerzeugungsaggregate und 
+deren Hilfseinrichtungen brandschutztechnische Maßnahmen vorzusehen. 
+Für Gruppenbatterien ist kein eigener elektrischer Betriebsraum notwendig, es ist jedoch ein ausreichender 
+Brandschutz sicherzustellen. 
+Für mögliche Arten der Ausführung wird auf Anhang A und Anhang B verwiesen. 
+5.2 
+Für die Führung von Kabeln und Leitungen durch Brandwände sowie durch Wände und Decken, die 
+brandbeständig sein müssen, sind brandschutztechnische Maßnahmen vorzusehen.  
+Für eine mögliche Art einer entsprechenden Ausführung wird auf Anhang B verwiesen. 
+5.3 
+Für elektrische Leitungsanlagen in notwendigen Treppenräumen, in Räumen zwischen notwendigen 
+Treppenräumen und Ausgängen ins Freie, in notwendigen Fluren und in offenen Gängen vor 
+Gebäudeaußenwänden sind brandschutztechnische Maßnahmen vorzusehen, mit dem Schutzziel der 
+Sicherung der Benutzbarkeit der Rettungswege im Brandfall, durch Begrenzung der Einbauten aus 
+brennbaren Stoffen auf ein unbedenkliches Ausmaß.  
+Für eine mögliche Art einer entsprechenden Ausführung wird auf Anhang B verwiesen. 
+5.4 
+Für die elektrischen Leitungsanlagen notwendiger Sicherheitseinrichtungen sind brandschutztechnische 
+Maßnahmen vorzusehen, dass sie bei äußerer Brandeinwirkung für eine ausreichende Zeitdauer 
+funktionsfähig bleiben. Ausgenommen davon sind Zuleitungen zu Einrichtungen mit integrierter 
+Sicherheitsstromquelle. 
+Die Dauer des Funktionserhaltes muss mindestens betragen: 
+1) 
+30 Minuten bei 
+– 
+Sicherheitsbeleuchtungen, ausgenommen jene Teile der Endstromkreise, deren Ausfall zu keiner 
+unzulässigen Beeinträchtigung anderer Bereiche führt. 
+ 
+Das bedeutet: 
+Der Verzicht auf den Funktionserhalt ist nur innerhalb des letzten Brandabschnittes zulässig. Aus 
+diesem Brandabschnitt dürfen keine Leitungen in weitere Brandabschnitte abgehen, ausgenommen 
+Leitungen in Unterbrandabschnitte gemäß TRVB B 108 mit maximal je zwei Sicherheitsleuchten (mit 
+oder ohne Piktogramm). 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+23 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 24/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+24 
+Bei einem lokalen Brand in einem mitversorgten Unterbrandabschnitt darf die Sicherheits-
+beleuchtung der Rettungswege nicht unzulässig beeinträchtigt werden. Dies ist dann erfüllt, wenn 
+mindestens 50 % der Sicherheitsbeleuchtung in den Rettungswegen (zB durch eine alternierende 
+Stromkreisaufteilung der Sicherheitsleuchten) funktionsfähig bleibt. Bei Fluchtstiegenhäusern 
+müssen 100 % der Sicherheitsbeleuchtung in den Rettungswegen funktionsfähig sein. 
+ANMERKUNG Die Überlegung geht davon aus, dass die unmittelbare Umgebung eines Brandherdes sowieso 
+sofort verlassen werden muss. Bei großen Brandabschnitten (größer 1 600 m²) sind besondere Überlegungen 
+erforderlich, welche die Rettungswegsituation, die Leuchtenanordnung und die Leitungsführung berücksichtigen. 
+Dazu kann es hilfreich sein, einen großen Brandabschnitt in kleinere, voneinander unabhängige 
+Anspeisebereiche mit Funktionserhalt zu unterteilen. Außerdem ist die örtliche Situierung des Verteilers zu 
+berücksichtigen.  
+– 
+Personenaufzügen mit Gebäudeevakuierungskonzept; ausgenommen sind Leitungsanlagen, die 
+sich innerhalb der Fahrschächte oder der Triebwerksräume befinden, 
+– 
+Leitungen zur externen Alarmweiterleitung, wenn sie durch nicht über eine automatische 
+Brandmeldeanlage überwachte Bereiche führen, 
+– 
+der starkstromseitigen Anspeisung für Anlagen zur Alarmierung und Erteilung von Anweisungen an 
+Besucher und Beschäftigte, sofern diese Anlagen im Brandfall wirksam sein müssen. Zutreffende 
+brandschutztechnische Maßnahmen für den Funktionserhalt der Leitungsanlagen zu den 
+Informationseinrichtungen, wie zB Lautsprecher und Hupen, sind nicht Gegenstand dieser Norm. Es 
+wird jedoch beispielhaft auf den Anhang B verwiesen. 
+– 
+natürlichen Rauch- und Wärmeabzugsanlagen (Rauchableitung durch thermischen Auftrieb); 
+ausgenommen sind Anlagen, die bei einer Störung der Stromversorgung selbsttätig öffnen, sowie 
+Leitungsanlagen in Räumen, die durch automatische Brandmelder überwacht werden und das 
+Ansprechen eines Brandmelders durch Rauch bewirkt, dass die Anlage selbsttätig öffnet, 
+2) 
+90 Minuten bei 
+– 
+Löschwasserversorgungsanlagen (ausgenommen Sprinkleranlagen gemäß TRVB S 127), 
+– 
+mechanische Rauch- und Wärmeabzugsanlagen und Druckbelüftungsanlagen, 
+– 
+Feuerwehraufzügen; ausgenommen sind Leitungsanlagen, die sich innerhalb der Fahrschächte oder 
+der Triebwerksräume befinden. 
+6 
+Allgemeine Stromversorgung 
+6.1 Betriebsmittel mit Nennspannungen über 1 000 V 
+6.1.1 Räume für Transformatoren und Schaltanlagen mit Nennspannungen über 1 000 V sind als 
+abgeschlossene elektrische Betriebsstätten zu gestalten. Räume für Transformatoren und Schaltanlagen 
+müssen Anforderungen gemäß Anhang A entsprechen. 
+6.1.2 Für Transformatoren sind selbsttätige Schutzeinrichtungen gegen Überlastungen sowie bei inneren 
+und äußeren Fehlern vorzusehen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+24 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 25/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+25 
+6.2 Betriebsmittel mit Nennspannungen bis 1 000 V  
+6.2.1 Elektrische Betriebsräume 
+6.2.1.1 
+Hausanschlusskästen und Hauptverteiler sind in eigenen Räumen oder Nischen unterzubringen. 
+Diese Räume oder Nischen müssen 
+a) 
+von Räumen mit erhöhter Brandgefahr, wie zB Versammlungsräume, Bühnen, Verkaufsräume, 
+Schaufensterräume, Ausstellungsräume und Lagerräume durch brandbeständige Wände und Decken 
+(Feuerwiderstandsklasse REI 90 bzw. EI 90 gemäß ÖNORM EN 13501-2) abgetrennt sein. Türen zu 
+diesen Räumen oder Nischen müssen mit Feuerschutzabschlüssen abgeschlossen sein, welche eine 
+Feuerwiderstandsklasse von mindestens EI 30 gemäß ÖNORM B 3850 bzw. ÖNORM EN 13501-2 
+aufweisen. 
+b) 
+von anderen Räumen durch mindestens brandhemmende Wände und Decken abgetrennt sein. Für 
+Türen zu diesen Räumen oder Nischen genügt eine Ausführung aus nicht brennbaren Baustoffen. Diese 
+Türen dürfen keine Lüftungsöffnungen zu anderen Räumen besitzen. 
+c) 
+im Gefahrenfall leicht und sicher erreichbar sein. 
+6.2.2 Verteiler 
+6.2.2.1 
+Verteiler müssen eine allseitige Umhüllung aus Blech oder stoßfestem Isolierstoff mit einer 
+Entflammbarkeit von mindestens Klassifizierung HB 40 gemäß ÖVE/ÖNORM EN 60707 haben. Sie sind 
+gegen den Zugriff Unbefugter zu sichern. 
+6.2.2.2 
+Es muss schaltungstechnisch sichergestellt sein, dass der Betrieb der notwendigen Sicherheits- 
+und Betriebseinrichtungen, wie Löschwasserversorgungsanlagen, Pumpen, Aufzüge, Lüftungsanlagen, 
+Rauch- und Wärmeabzugseinrichtungen, Druckbelüftungsanlagen, auch außerhalb der Betriebszeit möglich 
+ist. 
+6.2.2.3 
+Am Hauptverteiler muss jeder Abgang zu einem weiteren Verteiler mit einem Schalter, der 
+mindestens als Lastschalter gemäß ÖVE/ÖNORM EN 60947-3 ausgelegt ist, schaltbar sein. 
+Hauptschalter und Schalter, durch deren Ausschalten Gefahren entstehen können, sind auffällig zu 
+kennzeichnen. Für die Kennzeichnung ist die Farbe „Gelb" gemäß ÖNORM Z 1000-1 zu verwenden. 
+6.2.2.4 
+Die Verteiler sind so auszuführen, dass eine einfache Messung des Isolationswiderstandes aller 
+aktiven Leiter gegen Erde jedes einzelnen abgehenden Stromkreises möglich ist. Bei Leiterquerschnitten 
+unter 10 mm2 muss diese Messung ohne Abklemmen des Neutralleiters möglich sein, zB durch allpolig 
+trennende Schalteinrichtungen. 
+6.2.2.5 
+Die Kennzeichnung an den Anschlussstellen in den Verteilern und an den angeschlossenen 
+Kabeln oder Leitungen ist so auszuführen, dass eine eindeutige Zuordnung der zu einem Stromkreis 
+gehörenden Leiter und Klemmen erkennbar ist. 
+Die Beschriftung hat übereinstimmend mit dem Schaltplan zu erfolgen. 
+6.2.3 Kabel- und Leitungsanlage 
+6.2.3.1 
+Es dürfen nur Kabel und Leitungen, die mindestens den Anforderungen bezüglich Brennverhalten 
+gemäß ÖVE/ÖNORM EN 60332-1-2 entsprechen, zB PVC- oder Chloropren-ummantelt (gemäß Tabelle B.1), 
+und Elektroinstallationskanäle und Elektroinstallationsrohre aus Isolierstoff, die mindestens flammwidrig bzw. 
+nicht brandausbreitend gemäß ÖVE/ÖNORM EN 50085-1 und ÖVE/ÖNORM EN 61386-1 sind, verwendet 
+werden. Die Anwendung von blanken aktiven Leitern, ausgenommen solchen in Stromschienensystemen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+25 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 26/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+26 
+gemäß ÖVE-EN 1 Teil 2 und ÖVE/ÖNORM EN 60439-2, ist außerhalb abgeschlossener elektrischer 
+Betriebsstätten nicht zulässig. 
+6.2.3.2 
+Die Kabel oder Leitungen zwischen dem Netztransformator und dem Niederspannungs-
+Hauptverteiler müssen erd- und kurzschlusssicher gemäß ÖVE-EN 1 Teil 3 § 42 verlegt werden. 
+6.2.3.3 
+Die elektrische Anlage zur Löschwasserversorgung muss mit einer eigenen Zuleitung direkt vom 
+Hauptverteiler angespeist werden. Sie darf nicht mit einem allfällig vorhandenen Hauptschalter mitgeschaltet 
+werden. 
+6.2.4 Verbraucheranlage 
+6.2.4.1 
+Bei Ausfall eines Beleuchtungsstromkreises der allgemeinen Beleuchtung muss sichergestellt sein, 
+dass ein zweiter Stromkreis der allgemeinen Beleuchtung wirksam ist bzw. sich die Sicherheitsbeleuchtung 
+einschaltet. 
+6.2.4.2 
+Wärmeabgebende Betriebs- bzw. Verbrauchsmittel, zB Stellgeräte, Anlasser, Transformatoren, 
+Leuchten, Scheinwerfer sind so anzubringen, dass durch ihren Betrieb keine gefährliche Wärmeentwicklung 
+entstehen kann. Zu brennbaren Stoffen ist ausreichender Abstand einzuhalten, oder es sind wärme-
+dämmende, nicht brennbare Unterlagen bzw. Abschirmungen vorzusehen. 
+6.2.4.3 
+Wärmegeräte müssen so angebracht und befestigt sein, dass durch Wärmeübertragung keine 
+Brände entstehen können. Das Ablegen von Gegenständen auf dem Gehäuse ist bei eventueller Brandgefahr 
+durch Maßnahmen (zB Formgebung) zu erschweren. 
+6.2.4.4 
+Schalter und Steckdosen sowie Kabeln sind in Bereichen, in denen die Gefahr einer mechanischen 
+Beschädigung besteht, zu schützen. Dies kann geschehen durch ihre Bauart, durch ihren Einbau, durch ihre 
+Verlegeart (zB unter Putz), in Nischen oder durch entsprechende Halterungen. 
+6.2.4.5 
+Schalter in Räumen für Besucher sind bereichsweise zusammenzufassen und dem Zugriff 
+Unbefugter zu entziehen, soweit sie nicht auch durch Besucher betätigt werden müssen, wie zB in Treppen-
+räumen von Hochhäusern. 
+6.2.4.6 
+Schalter, die für die Betätigung durch Besucher bestimmt sind, müssen bei Dunkelheit erkennbar 
+sein. 
+6.2.4.7 
+Lampen müssen im Handbereich und an Stellen, an denen mit einer mechanischen Beschädigung, 
+zB durch Umgang mit sperrigen Gütern, zu rechnen ist, ausreichend geschützt sein, zB mittels 
+widerstandsfähiger Gitter, Körbe, Gläser oder Abdeckungen. Diese Schutzvorrichtungen dürfen nicht an den 
+Fassungen befestigt sein, soweit nicht deren Bauart dies besonders vorsieht. 
+6.2.4.8 
+Für Leuchten in Räumen für Besucher ist es notwendig Befestigungen vorzusehen, die mindestens 
+die fünffache Masse der Leuchte tragen können. 
+Leuchten mit einer Masse über 5 kg müssen durch zwei voneinander unabhängige Befestigungen gesichert 
+sein. Hierbei muss jede für sich die fünffache Masse der Leuchte tragen können. Sicherungsseile oder 
+Sicherungsketten gelten als zweite Befestigung. 
+6.2.4.9 
+Steckvorrichtungen für unterschiedliche Stromarten und Spannungen müssen unverwechselbar 
+sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+26 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 27/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+27 
+7 
+Sicherheitsstromversorgung 
+7.1 Allgemeine Anforderungen 
+7.1.1 Die Sicherheitsstromversorgung muss die Versorgung der notwendigen Sicherheitseinrichtungen 
+einer baulichen Anlage oder Teilen hiervon selbsttätig übernehmen, wenn die Spannung der allgemeinen 
+Stromversorgung über eine Zeit von mehr als 0,5 s unter den Wert von 75 % der Netznennspannung 
+gesunken ist. 
+7.1.2 Die Nennbetriebsdauer der Sicherheitsstromquelle muss mindestens den Anforderungen gemäß 
+Tabelle 1 und Tabelle 2 entsprechen. Die Nennbetriebsdauer von Batterien darf bei zusätzlichem Einsatz von 
+Sicherheitsstromaggregaten gemäß 7.4.4 auf eine Stunde reduziert werden, wenn  
+– 
+der Hauptverteiler der Sicherheitsstromversorgung an das Sicherheitsstromaggregat angeschlossen ist 
+und 
+– 
+die zu versorgenden Sicherheitseinrichtungen über das Aggregat mindestens für die geforderte Nenn-
+betriebsdauer versorgt werden. 
+7.1.3 Ab dem Hauptverteiler der Sicherheitsstromversorgung ist zur Versorgung der notwendigen 
+Sicherheitseinrichtungen ein eigenes, elektrisch getrennt geführtes Verteilungs- und Verbrauchernetz 
+erforderlich. 
+7.1.4 An zentraler während der betriebserforderlichen Zeit ständig überwachter Stelle ist durch Melde-
+einrichtungen der Anlagenzustand (Betrieb, Störung) der Sicherheitsstromversorgung anzuzeigen. Dies gilt 
+nicht für Einzelbatterieanlagen bis 50 Sicherheitsleuchten. 
+ANMERKUNG Die Meldung darf zB über ein Gebäudeleitsystem erfolgen. 
+7.1.5 Bei Sicherheitsstromversorgung eines oder mehrerer Gebäude von einer zentralen Stelle gelten die 
+Anforderungen gemäß 7.1.5.1 und 7.1.5.2. 
+7.1.5.1 
+Im Hauptverteiler der zentralen Versorgungsanlage muss sich eine Einrichtung befinden, die bei 
+Absinken der Einspeisespannung der allgemeinen Stromversorgung unter den Wert von 75 % der 
+Netznennspannung an einem Außenleiter das Inbetriebsetzen der Sicherheitsstromquelle bewirkt und die 
+Versorgung der Gebäudehauptverteiler der Sicherheitsstromversorgung übernimmt.  
+7.1.5.2 
+In jedem Gebäudehauptverteiler muss sich eine Einrichtung befinden, die bei Absinken der 
+Spannung unter den Wert von 75 % der Netznennspannung an einem Aussenleiter auf die zweite 
+Anspeiseleitung umschaltet und die Stromversorgung der notwendigen Sicherheitseinrichtungen sicherstellt. 
+7.2 Sicherheitsbeleuchtung 
+7.2.1 Schaltung der Sicherheitsbeleuchtung 
+7.2.1.1  
+Die Sicherheitsbeleuchtung ist entweder in Dauerschaltung oder in Bereitschaftsschaltung 
+auszuführen, sofern in Tabelle 1 bzw. im Teil 2 bis Teil 9 die Schaltungsart nicht festgelegt ist.  
+Die Schaltungen dürfen auch kombiniert werden.  
+7.2.1.2  
+Bei Dauerschaltung muss die allgemeine Stromversorgung am Hauptverteiler der Sicherheits-
+stromversorgung überwacht werden. Dies gilt nicht für Einzelbatterieleuchten. Bei Wiederkehr der 
+allgemeinen Stromversorgung muss selbsttätig auf diese zurückgeschaltet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+27 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 28/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+28 
+7.2.1.3 
+Bei Bereitschaftsschaltung muss die Stromversorgung für die allgemeine Beleuchtung im 
+Unterverteiler für diesen Bereich überwacht werden. Bei Einzelbatterieleuchten werden ihre Zuleitungen 
+überwacht. Kann durch das Ansprechen einer Schutzeinrichtung oder durch eine Störung die allgemeine 
+Beleuchtung eines Raumes soweit ausfallen, dass die Mindestbeleuchtungsstärke gemäß dieser 
+ÖVE/ÖNORM unterschritten wird, muss die Schutzeinrichtung bzw. die Steuerung mitüberwacht werden. 
+Bei Vorhandensein der Spannung der allgemeinen Stromversorgung am Verteiler der Sicherheitsbeleuchtung 
+muss diese aus der allgemeinen Stromversorgung gespeist werden. Beim Zurückschalten auf die Spannung 
+der allgemeinen Stromversorgung muss die Wiederzündung der Lampen der allgemeinen Beleuchtung 
+berücksichtigt werden. 
+In 
+betrieblich 
+verdunkelten 
+Räumen 
+darf 
+die 
+Rückschaltung 
+der 
+Sicherheitsbeleuchtung 
+in 
+Bereitschaftsbetrieb erst bei vorhandener und ausreichender allgemeiner Beleuchtung erfolgen. 
+7.2.1.4 
+Bei kombinierter Anwendung der Dauer- und Bereitschaftsschaltung müssen die Umschalt-
+einrichtungen jeweils eine eigene Überwachungseinrichtung haben und getrennt geschaltet werden können. 
+7.2.1.5 
+Die Sicherheitsbeleuchtung darf zusätzlich zu einer zentralen Schaltung gruppenweise nur nach 
+wichtigen Hausteilen und Betriebsstätten einschließlich der dazugehörenden Rettungswege betriebsbereit 
+schaltbar sein. 
+Die Sicherheitsbeleuchtung muss nur während betrieblich erforderlicher Zeiten aktiviert sein. 
+7.2.1.6  
+Die Sicherheitsbeleuchtung in Dauerschaltung darf in Räumen, die 
+– 
+ausreichend mit Tageslicht beleuchtet sind und 
+– 
+nicht betriebsmäßig verdunkelt werden können 
+mit der allgemeinen Beleuchtung des jeweiligen Raumes schaltbar sein. Dabei muss bei ausgeschalteter 
+allgemeiner Beleuchtung die Sicherheitsbeleuchtung auf Bereitschaftsschaltung umgeschaltet werden. 
+Erforderlichenfalls ist für die Auslegung der Schaltgeräte auch die Eignung für Gleichspannungsbetrieb zu 
+beachten. 
+7.2.1.7 
+Für bauliche Bereiche, deren allgemeine Beleuchtung in Betriebsruhezeiten ausgeschaltet wird, 
+muss ein Starten oder Entladen der Sicherheitsstromquelle zur Versorgung der Sicherheitsbeleuchtung 
+verhindert werden. Das Laden der Batterien (zB Einzelbatterieleuchten) darf nicht unterbrochen werden. 
+7.2.1.8 
+Für bauliche Bereiche mit einer Brandmeldeanlage in denen eine Sicherheitsbeleuchtung in 
+Bereitschaftsschaltung ausgeführt ist, ist bei Ansprechen der Branderkennung die Sicherheitsbeleuchtung zu 
+aktivieren (gilt nicht für Anlagen bis 50 Einzelbatterieleuchten). 
+7.2.1.9  
+Bei Verwendung der allgemeinen Beleuchtung für die Sicherheitsbeleuchtung ist aus Gründen der 
+Systemübersichtlichkeit und der Systemsicherheit vom Hersteller der Leuchten der Nachweis zu erbringen, 
+dass die eingesetzten Vorschaltgeräte ÖVE/ÖNORM EN 60598-2-22 sowie ÖVE/ÖNORM EN 61347-2-7 
+entsprechen. Weiters müssen beim Aktivieren der Sicherheitsbeleuchtung und bei der selbsttätigen 
+Rückschaltung auf Netzbetrieb die geforderten Umschaltzeiten und Mindestbeleuchtungsstärken eingehalten 
+werden.  
+7.2.2 Mindestbeleuchtungsstärke 
+Die Beleuchtungsstärke darf die Werte gemäß Tabelle 1 nicht unterschreiten. Weiters wird auf die 
+Anforderungen der ÖNORM EN 1838 hingewiesen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+28 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 29/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+29 
+7.3 Elektrische Betriebsräume 
+7.3.1 Zentralbatterien (CPS) und Stromerzeugungsaggregate sind in Räumen unterzubringen, die den 
+Anforderungen gemäß Anhang A entsprechen. 
+7.3.2 Hauptverteiler der Sicherheitsstromversorgung müssen in eigenen Räumen, die als abgeschlossene 
+elektrische Betriebsstätten und als eigene Brandabschnitte zu gestalten sind, untergebracht werden. 
+Diese Räume müssen von anderen Räumen durch brandbeständige Wände und Decken getrennt sein. 
+Zugangstüren müssen als Feuerschutzabschlüsse der Feuerwiderstandsklasse EI 90-C22 gemäß ÖNORM 
+B 3850 bzw. ÖNORM EN 13501-2 ausgeführt sein. 
+Wenn der Zugang aus Bereichen mit nur geringer oder keiner Brandbelastung erfolgt, wie zB Gänge, 
+Stiegenhäuser, Schleusenräume, genügt eine Feuerwiderstandsklasse EI 30-C2. Weiters sind diese Räume 
+so anzuordnen, dass sie auch im Gefahrenfall leicht und sicher erreichbar sind.  
+7.3.3 Hauptverteiler und Unterverteiler der Sicherheitsstromversorgung dürfen auch gemeinsam mit dem 
+Hauptverteiler der allgemeinen Stromversorgung in einem Raum untergebracht werden, wenn dieser Raum 
+7.3.2 entspricht und für andere Zwecke, wie auch für Starkstromanlagen gemäß 6.1, nicht genutzt wird. Die 
+beiden Hauptverteiler sind gegeneinander lichtbogensicher und brandhemmend abzutrennen. 
+Dies kann geschehen durch getrennte Aufstellung der Geräte (eigene Schränke) oder bei gemeinsamer 
+Umhüllung durch lichtbogensichere (Gasräume vermeiden, Keramikdurchführungen, Vergießen von 
+Kabeldurchführungen) und brandhemmende EI-30-Trennung der beiden Verteilerbereiche. 
+7.4 Sicherheitsstromquellen und zugehörige Einrichtungen 
+7.4.1 Einzelbatterieanlage 
+7.4.1.1 
+Einzelbatterieleuchten müssen ÖVE/ÖNORM EN 60598-2-22 entsprechen. 
+7.4.1.2 
+Für die Kontrolle der Gerätefunktion muss vorhanden sein: 
+1) 
+eine selbstrückstellende Schalteinrichtung am Gerät oder in der Netzzuleitung des Gerätes zur 
+Simulation eines Ausfalles der allgemeinen Stromversorgung. Ein Tastschalter genügt, wenn alle 
+Leuchten vom Betätigungsort aus eingesehen werden können. 
+2) 
+eine Anzeigevorrichtung für die Batterieladung. 
+3) 
+eine in der Leuchte integrierte automatische Testfunktion. 
+Diese Einrichtungen dürfen entfallen, wenn eine automatische Prüfeinrichtung mit Registrierung gemäß 
+7.4.3.9 eingesetzt ist. 
+7.4.1.3 
+Ab 50 Einzelbatterieleuchten in einem zusammenhängenden Gebäudeteil ist eine automatische 
+Prüfeinrichtung gemäß 7.4.3.9 mit zentraler Erfassung/Registrierung vorzusehen. 
+7.4.2 Gruppenbatterieanlage (LPS) 
+7.4.2.1  
+Gruppenbatterieanlagen (LPS) müssen den Anforderungen gemäß ÖVE/ÖNORM EN 50171 
+entsprechen. 
+7.4.2.2 
+Als Stromquelle dürfen nur ortsfeste Batterien in geschlossener oder verschlossener Bauart 
+verwendet werden, die mindestens drei Jahre wartungsfrei sind. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+29 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 30/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+30 
+Die Batterien müssen ÖVE/ÖNORM EN 50272-2 entsprechen oder von gleichwertiger Bauart sein. 
+Kraftfahrzeug-Starterbatterien oder Antriebsbatterien sind nicht zulässig. Wegen entstehender Ladegase ist 
+für ausreichende Lüftung zu sorgen.  
+Die Batterien müssen eine Brauchbarkeitsdauer (Lebenserwartung) von mindestens 5 Jahren bei 20 °C 
+Umgebungstemperatur haben. Wenn eine von 20 °C abweichende Bemessungstemperatur für die Batterie 
+aus technischen Gründen notwendig ist, muss dies bei der Planung berücksichtigt und bei der Ausführung 
+ausgewiesen werden. 
+7.4.2.3  
+Die Batterie und das System müssen so ausgelegt sein, dass sie in der Lage sind, die erforderliche 
+Systemleistung zu Beginn, während und am Ende der angegebenen Lebensdauer zu erfüllen (Alterungsfaktor 
+der Batterie berücksichtigen). 
+7.4.2.4 
+Von einer Gruppenbatterieanlage (LPS) dürfen notwendige Sicherheitseinrichtungen bis zu einer 
+maximalen Anschlussleistung von 500 W bei dreistündiger bzw. 1 500 W bei einstündiger Nennbetriebsdauer 
+versorgt werden. 
+7.4.2.5 
+Teilspannungen dürfen von der Batterie nicht abgegriffen werden. Ausgenommen sind Abgriffe für 
+die Batterieüberwachung. 
+7.4.2.6  
+Es muss eine geregelte Ladeeinrichtung vorhanden sein, welche sicherstellt, dass die Batterie 
+nach 12 Stunden Ladung mindestens 80 % ihrer festgelegten Betriebsdauer leisten kann. 
+Die Ladung muss automatisch unmittelbar nach Beendigung der Störung der allgemeinen Stromversorgung 
+beginnen. Die Ladeeinrichtungen müssen ÖVE EN 60146-1-1 und ÖVE/ÖNORM EN 50272-2 entsprechen. 
+7.4.2.7 
+Ab 50 Sicherheitsleuchten in einem zusammenhängenden Gebäudeteil ist eine automatische 
+Prüfeinrichtung gemäß 7.4.3.9 mit zentraler Erfassung/Registrierung vorzusehen. 
+7.4.3 Zentralbatterieanlage (CPS) 
+7.4.3.1  
+Zentralbatterieanlagen (CPS) müssen den Anforderungen gemäß ÖVE/ÖNORM EN 50171 
+entsprechen. 
+7.4.3.2 
+Als Stromquelle dürfen nur ortsfeste Batterien in geschlossener oder verschlossener Bauart 
+verwendet werden. 
+Die Batterien müssen ÖVE/ÖNORM EN 50272-2 entsprechen oder von gleichwertiger Bauart sein. 
+Kraftfahrzeug-Starterbatterien oder Antriebsbatterien sind nicht zulässig. Wegen entstehender Ladegase ist 
+für ausreichende Lüftung zu sorgen. 
+Die Batterien müssen eine Brauchbarkeitsdauer (Lebenserwartung) von mindestens 10 Jahren bei 20 °C 
+Umgebungstemperatur haben. Wenn eine von 20 °C abweichende Bemessungstemperatur für die Batterie 
+aus technischen Gründen notwendig ist, muss dies bei der Planung berücksichtigt und bei der Ausführung 
+ausgewiesen werden. 
+7.4.3.3  
+Die Batterie und das System müssen so ausgelegt sein, dass sie in der Lage sind, die erforderliche 
+Systemleistung zu Beginn, während und am Ende der angegebenen Lebensdauer zu erfüllen (Alterungsfaktor 
+der Batterie berücksichtigen). 
+7.4.3.4 
+Für 
+die 
+Errichtung 
+der 
+Zentralbatterieanlage 
+gelten 
+die 
+Anforderung 
+gemäß 
+ÖVE/ÖNORM EN 50272-2 mit dem Hinweis, dass auch neuere Batterietypen eingesetzt werden dürfen, wenn 
+ein gleichwertiger Sicherheitsstandard nachgewiesen wird. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+30 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 31/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+31 
+7.4.3.5 
+Zentralbatterien müssen so bemessen sein, dass mindestens die angeschlossenen notwendigen 
+Sicherheitseinrichtungen nach Ausfall der allgemeinen Stromversorgung für die erforderlichen Zeiten weiter 
+betrieben werden können. Der Anschluss weiterer Verbraucher ist zulässig, wenn die Batterie so bemessen 
+ist, dass der Betrieb der notwendigen Sicherheitseinrichtungen nicht gefährdet ist. 
+7.4.3.6 
+Teilspannungen dürfen von der Batterie nicht abgegriffen werden. Ausgenommen sind Abgriffe für 
+die Batterieüberwachung. 
+7.4.3.7 
+Es muss eine geregelte Ladeeinrichtung vorhanden sein, welche sicherstellt, dass die Batterie 
+nach 12 Stunden Ladung mindestens 80 % ihrer festgelegten Betriebsdauer leisten kann. 
+Die Ladung muss automatisch unmittelbar nach Beendigung der Störung der allgemeinen Stromversorgung 
+beginnen. Die Ladeeinrichtungen müssen ÖVE EN 60146-1-1 und ÖVE/ÖNORM EN 50272-2 entsprechen. 
+7.4.3.8 
+Ab 50 Sicherheitsleuchten in einem zusammenhängenden Gebäudeteil ist eine automatische 
+Prüfeinrichtung mit zentraler Erfassung/Registrierung vorzusehen. 
+7.4.3.9 
+Bei Verwendung einer automatischen Prüfeinrichtung mit Registrierung zur Kontrolle des 
+Anlagenzustandes anstelle der manuellen Prüfung gemäß 10.2.3 und 10.2.4 sind folgende Anforderungen 
+mittels Prüfeinrichtungen sicherzustellen: 
+a) 
+Überwachung der Ladung; kontinuierlich oder periodisch in Zeitabständen kürzer als 5 Minuten, 
+b) 
+zyklische 
+Überwachung 
+der 
+Funktionsfähigkeit 
+der 
+angeschlossenen 
+Verbraucher 
+für 
+die 
+Notstromversorgung, 
+– 
+bei Leuchten ist die Funktionsfähigkeit der Leuchtmittel zu prüfen. Die Fehleranzeige muss bereits 
+beim Ausfall einer Leuchte ansprechen. 
+– 
+Prüfzyklus: täglich 
+– 
+Prüfdauer: zwischen 0,5 min und 5 min. 
+c) 
+Fehlermeldung, bei Fehlern auf dem Übertragungsweg zur zentralen Überwachungsstelle. 
+Für automatische Prüfeinrichtungen gelten die Anforderungen gemäß ÖVE/ÖNORM EN 62034. 
+7.4.3.10 
+Die Sicherheitsstromversorgungsanlage muss am Hauptverteiler der Sicherheitsstromversorgung 
+betriebsbereit geschaltet werden können. 
+Zusätzlich ist eine Fernschaltung zulässig, wenn: 
+– 
+jede Betätigung durch Unbefugte verhindert ist, 
+– 
+an der Fernschaltstelle die Registrierung bzw. rückstellbare Anzeige der Betriebs- und Sammel-
+störungsmeldung erfolgt. 
+7.4.4 Sicherheitsstromaggregat  
+7.4.4.1 
+Motor-Generatorsätze mit Verbrennungsmotoren 
+Benzinbetriebene Ottomotore sind verboten.  
+ANMERKUNG Im Allgemeinen bestehen diese aus einem Dieselmotor als Antrieb und einer Synchronmaschine als 
+Generator. Andere Antriebe und Generatoren dürfen verwendet werden, vorausgesetzt, dass sie die nachstehenden 
+Anforderungen erfüllen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+31 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 32/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+32 
+Das Verbot benzinbetriebener Ottomotore begründet sich hauptsächlich mit der Lagerung von Benzin. Benzin fällt unter 
+die Gefahrenklasse I gemäß Verordnung über brennbare Flüssigkeiten und bedarf besonderer Maßnahmen. 
+Je nach Zutreffen müssen die Aggregate den Bestimmungen DIN 6280-12, DIN 6280-13, DIN 6280-14 bzw. 
+ISO 8528-12 entsprechen. 
+Bei Blockheizkraftwerken müssen ein Notkühler und eine zusätzliche Kraftmaschine zum sicheren Betrieb der 
+notwendigen Sicherheitseinrichtungen als Reserve mit den entsprechenden Umschalteinrichtungen 
+vorhanden sein. 
+Die 
+Antriebsleistung 
+muss 
+dem 
+erforderlichen 
+Gesamtwirkleistungsbedarf 
+(Bemessungsleistung) 
+entsprechen. 
+Für das Betriebsverhalten im Aggregatbetrieb gelten ISO 8528-2, ISO 8528-3, ISO 8528-5 und DIN 
+ISO 8528-7. 
+Die Betriebsgrenzwerte für Sicherheitsstromaggregate müssen mindestens der Ausführungsklasse G2 
+gemäß ISO 8528-5 und in Bezug auf das dynamische Spannungsverhalten der Ausführungsklasse G3 
+gemäß ISO 8528-1 und ISO 8528-5 entsprechen. 
+ANMERKUNG Zur Erreichung der für den monatlichen Probebetrieb erforderlichen Last (siehe 10.2.6) wird ein 
+Probebetrieb mit Synchronisation zum Netz empfohlen (siehe DIN 6280-13). 
+Lüftungsjalousien müssen auch von Hand betätigt werden können. 
+7.4.4.2 
+Sicherheitsstromaggregate müssen so bemessen sein, dass mindestens die angeschlossenen 
+notwendigen Sicherheitseinrichtungen bei Ausfall der allgemeinen Stromversorgung weiter betrieben werden 
+können. 
+Der Anschluss weiterer Verbraucher ist zulässig, wenn das Sicherheitsstromaggregat so bemessen ist, dass 
+der Betrieb und die zulässige Umschaltzeit der genannten Einrichtungen nicht gefährdet werden. In diesem 
+Fall ist der (nötigenfalls messtechnische) Nachweis zu erbringen, dass sich durch die anderen Verbraucher 
+keine unzulässigen Netzrückwirkungen ergeben. 
+Für die Leistungsauslegung gelten ISO 8528-1, ISO 8528-2, ISO 8528-3, ISO 8528-5, ISO 8528-7 und 
+ISO 8528-12 mindestens für zeitlich begrenzten Dauerbetrieb mit erwarteten 1 000 Betriebsstunden pro Jahr. 
+Bei der Bemessung ist auf die Art der Verbraucher (Aufzüge, Pumpen, Ventilatoren, Glühlampen, 
+Stromrichter) wegen des Auftretens möglicher Laststöße und/oder Oberschwingungen zu achten. 
+7.4.4.3 
+Für 
+Sicherheitsstromaggregate 
+sind 
+luftgekühlte 
+Kraftmaschinen 
+oder 
+wassergekühlte 
+Kraftmaschinen mit Luftrückkühlung aus Gründen der Verfügbarkeit zu verwenden. 
+7.4.4.4 
+Verbraucher gemäß 7.4.4.2 müssen selbsttätig auf Speisung durch das Sicherheitsstromaggregat 
+umgeschaltet werden, wenn dieses die Nennspannung und Nenndrehzahl bzw. Nennfrequenz erreicht hat. 
+Die Umschaltung darf jedoch nicht erfolgen, wenn die Netzspannung wiederkehrt, bevor das Sicherheits-
+stromaggregat die Nennspannung erreicht hat. 
+7.4.4.5 
+Zur Steuerung und Überwachung ist eine batteriegestützte Stromversorgung erforderlich. Als 
+Stromquelle 
+sind 
+nur 
+Akkumulatorenbauarten 
+zu 
+verwenden, 
+die 
+ÖVE/ÖNORM EN 50171:2002, 
+Abschnitt 6.12 oder mindestens einer gleichwertigen Qualität entsprechen und für diese Anwendung 
+zugelassen sind. Diese Batterie darf auch zum Anlassen der Kraftmaschine benutzt werden, wenn sie 
+entsprechend ausgelegt ist. Kraftfahrzeugstarterbatterien dürfen grundsätzlich nicht eingesetzt werden. Von 
+der Batterie dürfen keine Teilspannungen abgenommen werden. Diese Batterie darf nicht für andere Zwecke 
+als zum Starten und Steuern und Überwachen des Aggregates selbst verwendet werden. 
+Die Batterien sind so zu bemessen, dass aus dem Erhaltungsladezustand bei einer Umgebungstemperatur 
+von 5 °C die Start- und Steuerfähigkeit des Aggregates sichergestellt ist.  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+32 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 33/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+33 
+Es muss eine Ladeeinrichtung vorhanden sein, welche der Batterie innerhalb von 10 h, 90 % der für die 
+Nennbetriebsdauer erforderlichen Strommenge (Ah) wieder zuführt und Erhaltungsladen sicherstellt. 
+Zusätzlich zur Ladung muss auch der Dauerverbrauch für Steuer und Überwachungseinrichtungen gedeckt 
+werden. 
+Zur Kontrolle der Batterieladung muss eine Einrichtung vorhanden sein, mit der die Spannung der Batterie 
+laufend überwacht wird. Unterschreitet die Erhaltungsladespannung bei Nickel-Cadmium-Akkumulatoren 
+1,3 V je Zelle, bei Bleibatterien 2,1 V je Zelle, so muss eine Störungsmeldung erfolgen (siehe auch 7.4.4.12). 
+Der Stromkreis für diese Meldung darf nicht von dieser Batterie gespeist werden. Kurzzeitige Spannungs-
+einbrüche, zB während eines Anlassvorganges oder der Wiederaufladung der Batterie, dürfen keine Meldung 
+auslösen. 
+7.4.4.6 
+Ist für die Speisung der Automatik des Sicherheitsstromaggregates eine eigene Batterie 
+vorhanden, so gilt für diese 7.4.4.5 sinngemäß. Eine eigene Ladeeinrichtung ist erforderlich. 
+7.4.4.7 
+Für Dieselmotoren, die mit Druckluft angelassen werden, sind Größe und Anzahl der Anlass-
+luftflaschen so zu bemessen, dass der Dieselmotor aus dem kalten oder vorgewärmten Zustand mindestens 
+fünfmal über seine Zünddrehzahl hochgefahren werden kann. Für das Nachfüllen der Anlassluftflaschen 
+muss eine automatische Aufladeeinrichtung vorhanden sein. Die Aufladeeinrichtung ist so zu bemessen, dass 
+die leeren Luftflaschen innerhalb von 45 min auf den Betriebsdruck geladen werden können. Der Luftdruck in 
+den Anlassluftflaschen muss jederzeit gemessen werden können. 
+Beim Unterschreiten des erforderlichen Luftdrucks muss eine Störungsmeldung gemäß 7.4.4.12 erfolgen. 
+7.4.4.8 
+Die Aggregatautomatik und Geräte der Netzumschaltung dürfen zu einer baulichen Einheit 
+zusammengefasst werden. 
+7.4.4.9 
+Am Sicherheitsstromaggregat muss leicht erkennbar und dauerhaft ein Leistungsschild gemäß 
+ISO 8528-5 und DIN 6280-13 angebracht sein. 
+7.4.4.10 
+Der Kraftstoffvorrat ist für die in Tabelle 1 bzw. Tabelle 2 angeführte Nennbetriebsdauer zu 
+bemessen. 
+Der Kraftstoff-Vorratsbehälter muss so angeordnet werden, dass sich seine Unterkante über der 
+Einspritzpumpe des Hubkolben-Verbrennungsmotors befindet. Kann nicht der gesamte Kraftstoffbedarf in 
+diesem Vorratsbehälter untergebracht werden, so darf hierfür ein Kraftstoff-Servicebehälter (auszulegen für 
+einen mindestens zweistündigen Betrieb) zwischen Vorratsbehälter und Hubkolben-Verbrennungsmotor 
+vorgesehen werden. Für die Nachfüllung des Kraftstoff-Servicebehälters aus dem Kraftstoff-Vorratsbehälter 
+ist eine automatische Nachfülleinrichtung erforderlich. Dabei sind Vorkehrungen gegen Rückfluss aus dem 
+Kraftstoff-Servicebehälter zu treffen. Ausgenommen sind Kompaktanlagen, bei denen Aggregat und 
+Kraftstoff-Vorratsbehälter eine bauliche Einheit bilden. 
+Zur Füllstandskontrolle müssen Anzeige- oder Peileinrichtungen und eine Angabe über das Fassungs-
+vermögen vorhanden sein. 
+Bei gasbetriebenen Sicherheitsstromaggregaten (zB Blockheizkraftwerk – BHKW) muss ein entsprechend 
+dimensionierter Gastank vorgesehen werden. 
+7.4.4.11 
+Folgende Anzeigen sind erforderlich: 
+–  
+Generatorspannung, 
+–  
+Strom je Außenleiter (Momentanwert und rückstellbarer Höchstwert), 
+–  
+Frequenz, 
+– 
+Wirkleistung (im Drehstromnetz für unsymmetrische Belastung geeignet), 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+33 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 34/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+34 
+– 
+Spannung der allgemeinen Stromversorgung. 
+Die Betriebszustände „Netz-Ein" und „Generator-Ein" müssen optisch angezeigt werden. 
+Die 
+Bedienungselemente 
+der 
+Aggregatautomatik 
+müssen 
+mindestens 
+folgende 
+Betriebszustände 
+ermöglichen: 
+– 
+automatischer Betrieb, 
+– 
+Probebetrieb mit Lastübernahme, 
+– 
+Probebetrieb ohne Lastübernahme, 
+ 
+Bei einem Netzausfall während des Probebetriebes muss die Lastübernahme in jedem Fall selbsttätig 
+stattfinden. 
+– 
+vollständige Handbedienung für: 
+„Start“ 
+„Stop“ 
+„Generator Ein-Aus“ 
+„Netz Ein-Aus“ 
+„Sperrung jeglichen Aggregatbetriebes“, zB bei Wartungsarbeiten 
+„Not-Aus“. 
+7.4.4.12 
+Mindestens folgende Störungsmeldungen müssen am Schaltschrank ersichtlich sein: 
+– 
+Batteriespannung unterschritten, 
+– 
+Anlassluftdruck unterschritten (falls vorhanden), 
+– 
+Anlauf gestört, 
+– 
+Motortemperatur zu hoch, 
+– 
+Schmieröldruck zu nieder, 
+– 
+Überdrehzahl, 
+– 
+Generator-Überstrom, 
+– 
+Geringer Kraftstoffvorrat, 
+– 
+Kraftstoffförderpumpe defekt (bei Einsatz eines Kraftstoff-Servicebehälters). 
+7.4.4.13 
+Folgende Betriebs- und Störungsmeldungen sind an einer zentralen, während der Betriebszeit 
+ständig überwachten Stelle erforderlich: 
+– 
+Aggregat betriebsbereit (Schalterstellung: Automatik), 
+– 
+Aggregat in Betrieb – Verbraucher werden vom Sicherheitsstromaggregat versorgt, 
+– 
+Aggregat in Betrieb – Verbraucher werden vom allgemeinen Netz versorgt, 
+– 
+Aggregat gestört (Sammelmeldung gemäß 7.4.4.12), 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+34 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 35/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+35 
+– 
+Erdschlussmeldung (nicht erforderlich bei Niederspannungsanlagen). 
+7.4.4.14 
+Bei der Sicherheitsstromversorgung eines oder mehrerer Gebäude von einem zentralen Standort 
+der Sicherheitsstromaggregate aus, muss während der betrieblich erforderlichen Zeit an zentraler, ständig 
+überwachter Stelle folgendes gemeldet werden: 
+– 
+Spannungsausfall an überwachten hoch- und niederspannungsseitigen Gebäudehauptverteilern, an die 
+notwendige Sicherheitseinrichtungen angeschlossen sind (gemäß 7.1.5), 
+– 
+Stellung der Kuppelschalter des zentralen Hauptverteilers sowie Stellungen der Generatorschalter, 
+– 
+Stellungen und Auslösungen sämtlicher Schalter im Netz, soweit sie für die Sicherheitsstromversorgung 
+von Bedeutung sind, 
+– 
+Betriebszustand der Sicherheitsstromaggregate, 
+– 
+Einzelanzeige für jedes vorhandene Sicherheitsstromaggregat in Bezug auf Betrieb, Störung 
+(Sammelmeldung gemäß 7.4.4.12) sowie Stellung der Bedienungselemente gemäß 7.4.4.11. 
+7.4.5 Schnell- und Sofortbereitschaftsaggregat 
+Die Anforderungen gemäß 7.4.4 gelten mit der Ergänzung, dass mitlaufende Geräteteile für Dauerbetrieb 
+auszulegen sind. 
+7.4.6 Zwei unabhängige Netze 
+Unabhängige Einspeisungen dürfen nur zur Anwendung kommen, wenn die Energieversorger bestätigen, 
+dass ein gleichzeitiger Ausfall beider Versorgungen nicht anzunehmen ist. 
+Für zwei unabhängige Netze müssen die beiden voneinander unabhängigen Einspeisungen folgenden 
+Anforderungen genügen: 
+1) 
+Bei Störung der allgemeinen Stromversorgung aus einer Einspeisung, muss die andere Einspeisung 
+mindestens die Versorgung der notwendigen Sicherheitseinrichtungen sicherstellen. 
+2) 
+Fehler im Stromversorgungsnetz einer Einspeisung dürfen keine Störungen im Stromversorgungsnetz 
+der anderen Einspeisung auslösen. 
+Dies ist gegeben, wenn beide Netze nicht gekuppelt oder nur über „lose Kupplungen“ verbunden sind, die im 
+Störungsfall sofort automatisch geöffnet werden. 
+Dies liegt zB vor bei 
+– 
+Einspeisung aus einem öffentlichen Verteilungsnetz und einem davon unabhängigen Kraftwerk, 
+– 
+zwei voneinander unabhängigen Kraftwerken. 
+7.5 Netzsysteme und Schutz gegen elektrischen Schlag 
+7.5.1 Bei Betrieb aus der allgemeinen Stromversorgung (Normalbetrieb) dürfen alle Netzsysteme und 
+Maßnahmen gegen elektrischen Schlag gemäß ÖVE/ÖNORM E 8001-1 angewandt werden. Sind bei 
+abweichender Spannung der Sicherheitsstromversorgung von der Spannung der allgemeinen Strom-
+versorgung Transformatoren erforderlich, müssen diese getrennte Wicklungen haben. 
+7.5.2 Bei Betrieb aus der Sicherheitsstromquelle bei Ausfall der allgemeinen Stromversorgung gelten als 
+Maßnahme des Fehlerschutzes 7.5.2.1 bzw. 7.5.2.2.  
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+35 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 36/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+36 
+7.5.2.1 
+Bevorzugte Maßnahmen zum Schutz gegen elektrischen Schlag sind: 
+– 
+Schutzisolierung, 
+– 
+Schutzkleinspannung, 
+– 
+Funktionskleinspannung, 
+– 
+Schutztrennung, 
+– 
+Isolationsüberwachungssystem. 
+Die lsolationsüberwachung darf beim Einsatz von Einzelwechselrichtern entfallen, wenn beim zweiten Fehler 
+die Spannung an den Ausgangsklemmen durch dessen strombegrenzende Charakteristik nach maximal 5 s 
+auf höchstens 50 V sinkt und abschaltet. 
+7.5.2.2 
+Nullung sowie Fehlerstrom-Schutzschaltung dürfen angewandt werden, wenn die Auswahl der 
+Schutzeinrichtungen und die Auslegung der Verbraucherstromkreise und die Anordnung der Verbraucher so 
+erfolgt, dass die Abschaltung im ersten Fehlerfall zu keinem Totalausfall der Sicherheitseinrichtungen führt. 
+Dies erfordert eine selektive Auswahl und Anordnung von Schutzeinrichtungen und/oder redundante 
+Anspeisungen. 
+Bei Anwendung der Schutzmaßnahme Fehlerstrom-Schutzschaltung muss der Typ (die Kennlinie) der 
+Fehlerstrom-Schutzschalter entsprechend den Anforderungen der jeweiligen Verbraucher ausgewählt 
+werden.  
+Für Einzelverbraucher der notwendigen Sicherheitseinrichtungen muss ab einer Anschlussleistung von mehr 
+als 5 kVA die Schutzmaßnahme Isolationsüberwachungssystem oder Schutztrennung für ein Betriebsmittel 
+oder Nullung angewendet werden (zB für Drucksteigerungsanlagen). 
+7.6 Verteiler (Niederspannungs-Schaltgerätekombinationen) 
+7.6.1 Verteiler müssen ÖVE/ÖNORM EN 60439 (alle zutreffenden Teile) entsprechen. 
+Alle Schalt- und Prüfeinrichtungen, die betätigt werden sollen, sowie Anzeige- und Meldegeräte müssen so 
+angeordnet sein, dass sie bei bestimmungsgemäßem Gebrauch sichtbar sind. 
+Türen und abnehmbare Abdeckungen müssen so befestigt sein, dass der Zugang zu gefährlichen aktiven 
+Teilen ohne Anwendung eines Werkzeuges oder Schlüssels nicht möglich ist. 
+Baugruppen müssen im Gehäuse so angeordnet sein, dass Instandhaltung und Funktionsprüfung möglich 
+sind. 
+7.6.2 Die Geräte der Netzumschalteinrichtung sind als Teil der Sicherheits-Stromversorgungsanlage in dem 
+Hauptverteiler oder einem Unterverteiler der Sicherheitsstromversorgung unterzubringen. 
+7.6.3 Die Netzumschalteinrichtung ist für den am Einbauort höchstmöglichen Kurzschlussstrom auszulegen. 
+7.6.4 Folgende Anforderungen müssen bei Stromversorgung eines oder mehrerer Gebäude von einer 
+zentralen Stelle der Sicherheitsstromquelle aus eingehalten werden: 
+7.6.4.1 
+Anlagenteile der Sicherheitsstromversorgung und der allgemeinen Stromversorgung dürfen nur 
+hochspannungsseitig oder nur niederspannungsseitig betriebsmäßig gekuppelt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+36 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 37/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+37 
+7.6.4.2 
+Das Versagen eines Kuppelschalters, d. h. Nichttrennung der Versorgungsbereiche „Allgemeine 
+Stromversorgung“ und „Sicherheitsstromversorgung“ darf zu keiner Überlastung der Sicherheitsstromquelle 
+führen. 
+Hierzu 
+müssen 
+bei 
+Versorgung 
+der 
+einzelnen 
+Gebäude 
+schnellwirkende 
+Lastüberwachungseinrichtungen verwendet werden, die den fehlerhaften Anlagenteil erkennen und 
+heraustrennen. 
+Es sind mindestens die Meldeeinrichtungen gemäß 7.4.4.13 vorzusehen. 
+7.6.4.3 
+Die Versorgung der Sicherheitseinrichtungen muss bei Ausfall eines Außenleiters an der 
+Einspeisestelle des Gebäudehauptverteilers durch eine Umschalteinrichtung auf die zweite Anspeisung des 
+Gebäudehauptverteilers (siehe 7.7.5) sichergestellt sein. 
+7.6.5 Verteiler müssen so eingerichtet sein, dass der Betrieb der notwendigen Sicherheitseinrichtungen 
+auch außerhalb der Betriebszeiten möglich ist. An den Verteilern sind Hauptschalter der Stromversorgung 
+und Schalter für solche Einrichtungen, durch deren Ausschalten Gefahren entstehen können, auffällig zu 
+kennzeichnen. Für die Kennzeichnung muss, gemäß ÖNORM Z 1000-1, die Farbe „Gelb“ verwendet werden. 
+7.6.6 Für Verteiler der notwendigen Sicherheitseinrichtungen müssen besondere Maßnahmen angewendet 
+werden, um einen entsprechenden Funktionserhalt im Brandfall zu erreichen (siehe Anhang B 
+„Funktionserhalt von elektrischen Leitungsanlagen im Brandfall“). Ebenso darf der Verteiler durch andere 
+Installationen oder Gebäudeeinbauten nicht gefährdet werden. Dies ist auch in einem Störungsfall (zB 
+Undichtwerden einer Wasser- oder Dampfleitung) zu berücksichtigen. Sprinkleranlagen dürfen in elektrischen 
+Betriebsräumen der notwendigen Sicherheitseinrichtungen nicht verwendet werden. 
+7.6.7 Die Haupt- und Unterverteiler müssen so ausgeführt werden, dass eine einfache Messung des 
+lsolationswiderstandes aller aktiven Leiter gegen Erde jedes einzelnen abgehenden Stromkreises möglich ist. 
+Bei Leiterquerschnitten unter 10 mm2 muss diese Messung ohne Abklemmen des Neutralleiters möglich sein, 
+zB durch den Einbau allpoliger Leitungsschutzschalter. 
+7.6.8 Die Kennzeichnung an den Anschlussstellen in den Verteilern und an den angeschlossenen Kabeln 
+oder Leitungen muss so ausgeführt werden, dass eine eindeutige Zuordnung der zu einem Stromkreis 
+gehörenden Leiter und Klemmen erkennbar ist. 
+Die Beschriftung muss mit dem Schaltplan übereinstimmen. 
+7.7 Kabel- und Leitungsanlage 
+7.7.1 In Sicherheitsstromversorgungsanlagen dürfen nur Kabel oder Leitungen, die mindestens den 
+Anforderungen gemäß 6.2.3.1 entsprechen, verwendet werden. 
+7.7.2 Kabel oder Leitungen zwischen Sicherheitsstromquelle und der zugehörigen ersten Überstrom-
+Schutzeinrichtung sowie zwischen Batterie und Ladegerät müssen kurzschluss- und erdschlusssicher verlegt 
+sein (siehe ÖVE-EN 1 Teil 3 § 42). Sie dürfen sich nicht in der Nähe brennbarer Materialien befinden. 
+7.7.3 In explosionsgefährdeten Bereichen dürfen Kabel und Leitungen, die der Sicherheitsstromversorgung 
+anderer Bereiche dienen nicht geführt werden. 
+7.7.4 Notwendige Sicherheitseinrichtungen dürfen durch andere Installationen oder Gebäudeeinbauten 
+nicht gefährdet werden. Dies ist auch in einem Störungsfall (zB Undichtwerden einer Wasser- oder 
+Dampfleitung) und in einem Brandfall zu berücksichtigen.  
+Die Kabel bzw. Leitungen der notwendigen Sicherheitseinrichtungen müssen innerhalb eines Gebäudes 
+getrennt 
+von 
+anderen 
+Kabeln 
+und 
+Leitungen 
+(auch 
+von 
+den 
+Kabeln 
+und 
+Leitungen 
+einer 
+Ersatzstromversorgung der gleichen Stromquelle) verlegt werde. Bei Verlegung auf derselben Kabeltasse ist 
+zB ein Trennsteg oder eine gleichwertige Maßnahme erforderlich. Auf den Trennsteg darf verzichtet werden, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+37 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 38/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+38 
+wenn die Kabel und Leitungen der notwendigen Sicherheitseinrichtungen mit integriertem Funktionserhalt 
+ausgestattet sind.  
+Das gemeinsame Verlegen von mehreren Kabeln bzw. Leitungen verschiedener Sicherheitseinrichtungen ist 
+zulässig. 
+Zusätzlich ist dafür zu sorgen, dass bei elektrischen Kabel- und Leitungsanlagen mit integriertem 
+Funktionserhalt (E 30 oder E 90) für notwendige Sicherheitseinrichtungen auch im Brandfall keine 
+mechanische Beschädigung durch andere (herabfallende) Anlagenteile zu erwarten ist.  
+Die Forderung nach getrennter Verlegung gilt nicht für die Verlegung der Endstromkreise der 
+Sicherheitsbeleuchtung 
+und 
+der 
+in 
+diesem Bereich verlegten Kabel bzw. Leitungen zu den 
+Alarmierungsgeräten. 
+7.7.5 Folgende Anforderungen müssen bei Stromversorgung eines oder mehrerer Gebäude von einer 
+zentralen Stelle aus, für die Zuleitungen zu den einzelnen Gebäuden eingehalten werden: 
+7.7.5.1 
+Kabel der allgemeinen Stromversorgung und Kabel der Sicherheitsstromversorgung müssen bei 
+Verlegung im Erdreich auf getrennten Trassen mit einem Mindestabstand von 2 m (horizontal) oder in einer 
+Stufenkünette mit einem Höhenunterschied von mindestens 1 m verlegt werden. 
+Im Nahbereich einer Gebäudeeinführung oder im Bereich eines Kabelziehschachtes dürfen Kabel den 
+Abstand von 2 m unterschreiten, wenn ein besonderer mechanischer Schutz (zB Stahlrohr; Achtung: 
+Kabelabdecksteine reichen als Schutz nicht aus) vorgesehen ist. 
+7.7.5.2 
+Bei Verlegung der Kabel außerhalb des Erdreiches wie zB Kollektorgang, dürfen die Kabel der 
+Sicherheitsstromversorgung auf der gleichen Trasse (Kabelkanal, Kollektor) wie die Kabel der allgemeinen 
+Stromversorgung geführt werden, wenn die Kabel der Sicherheitsstromversorgung vor äußerer 
+Brandeinwirkung so geschützt sind, dass sie im Brandfall für die Dauer von 90 Minuten gemäß 
+ÖNORM DIN 4102-12 funktionsfähig bleiben. 
+7.7.6 In einem mehradrigen Kabel oder einer mehradrigen Leitung der Sicherheitsstromversorgung darf ein 
+Stromkreis nur mit einem zugehörenden Hilfsstromkreis zusammengefasst werden. Das Zusammenfassen 
+von mehreren Hauptstromkreisen in einem Kabel oder einer Leitung, zB Beleuchtungsstromkreise mit 
+gemeinsamem Neutralleiter, ist nicht zulässig. 
+7.7.7 Abweichend von den Anforderungen gemäß ÖVE/ÖNORM E 8001-1 ist bei TN-Systemen auch bei 
+Leiterquerschnitten über 10 mm2 mindestens ab dem letzten Verteiler für Schutz- und Neutralleiter jeweils ein 
+getrennter Leiter vorzusehen (TN-S-System). 
+7.7.8 Für die Sicherheitsstromversorgung muss lnstallationsmaterial für eine Nennspannung von 
+mindestens 250 V verwendet werden. 
+7.7.9 Der Leiterquerschnitt für Endstromkreise der Sicherheitsstromversorgung muss mindestens 1,5 mm2 
+betragen. 
+7.7.10 Der Isolationswiderstand der Stromkreise muss ÖVE/ÖNORM E 8001-1 entsprechen.  
+7.7.11 In allen Stromkreisen der Sicherheitsstromversorgung müssen die Kennwerte der Sicherheits-
+stromquellen und der Schutzeinrichtungen sowie die Querschnitte der Leiter sowohl bei Versorgung aus der 
+allgemeinen Stromversorgung als auch aus der Sicherheitsstromquelle so ausgewählt werden, dass bei 
+Kurzschluss in einem Stromkreis der Ausfall der zugehörigen Verteilereinspeisung vermieden wird. 
+Dabei müssen auch weitere angeschlossene Verbraucher (siehe 7.4.3.3 und 7.4.4.2) berücksichtigt werden. 
+7.7.12 Gleichstrom-Stromkreise müssen zweipolig mit Überstrom-Schutzeinrichtungen versehen sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+38 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 39/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+39 
+7.7.13 Endstromkreise der Sicherheitsbeleuchtung müssen mit Überstrom-Schutzeinrichtungen bis 13 A 
+Nennstrom geschützt werden. Sie dürfen höchstens mit 60 % des Nennwertes belastet werden. Dies gilt nicht 
+für die Zuleitungen zu Einzelbatterieleuchten.  
+7.7.14 In Endstromkreisen der Sicherheitsbeleuchtung dürfen keine Schalter oder Schaltelemente vorhanden 
+sein, ausgenommen in Fällen gemäß 7.2.1.5. Sicherungen sind in diesen Fällen nicht als Schalter oder 
+Schaltelemente anzusehen. 
+7.7.15 An einen Endstromkreis der Sicherheitsbeleuchtung dürfen höchstens 20 Leuchten angeschlossen 
+werden. 
+7.7.16 In Räumen und Rettungswegen mit mehr als einer Leuchte der Sicherheitsbeleuchtung müssen diese 
+abwechselnd auf mindestens zwei voneinander unabhängige Überstrom-Schutzeinrichtungen verteilt werden 
+(Ausnahme: Einzelbatterieleuchten). 
+7.7.17 Leuchten der Sicherheitsbeleuchtung und Verbindungs/Abzweigstellen, die ein Teil einer 
+Sicherheitsbeleuchtungsanlage sind, müssen leicht und sicher identifizierbar grün markiert sein. In der Nähe 
+der Leuchten bzw. an der Leuchte muss die Verteiler-, die Stromkreis- und die Leuchtennummer angebracht 
+sein. 
+7.7.18 Steuerstromkreise der Sicherheitsstromversorgung müssen so errichten werden, dass ein einzelner 
+Fehler im Steuerstromkreis nicht zum gleichzeitigen Ausfall der Sicherheitsstromversorgung und der 
+allgemeinen Stromversorgung führt.  
+Solche Fehler sind zB: 
+– 
+Ausfall der Steuerspannung, 
+– 
+Ansprechen einer Schutzeinrichtung, 
+– 
+Körper- oder Erdschluss im Steuerstromkreis, 
+– 
+Leitungsunterbrechung im Steuerstromkreis, 
+– 
+Brandfall. 
+7.8 Anforderungen an Leuchten, Wechselrichter und Vorschaltgeräte 
+7.8.1 Leuchten  
+7.8.1.1 
+Leuchten der Sicherheitsbeleuchtung müssen leicht erkennbar und dauerhaft durch eine grüne 
+Markierung sowie mit der Verteiler- und Stromkreisbezeichnung gekennzeichnet sein.  
+7.8.1.2 
+Leuchten der Sicherheitsbeleuchtung müssen ÖVE/ÖNORM EN 60598-2-22 entsprechen. 
+7.8.1.3 
+Hinterleuchtete Sicherheitszeichen (für Rettungswege) müssen ÖNORM Z 1000-1, ÖNORM 
+Z 1000-2 und ÖNORM EN 1838 entsprechen. 
+7.8.1.4 
+Die Lampen für die Allgemeinbeleuchtung und für die Sicherheitsbeleuchtung dürfen gemeinsam in 
+derselben Leuchte untergebracht werden. Innerhalb der Leuchte ist die Trennung gemäß ÖVE/ÖNORM 
+EN 60598-2-22 durchzuführen.  
+Die Fassungen für Lampen der Sicherheitsbeleuchtung müssen durch eine grüne Markierung gekennzeichnet 
+werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+39 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 40/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+40 
+7.8.1.5  
+Leuchten für die Sicherheitsbeleuchtung mit externen Anschluss (Stecker und Steckdosen), die 
+Schutz gegen eine unbeabsichtigte Trennung nicht aufweisen, müssen in folgenden Ausführungen benutzt 
+werden: 
+–  
+Der Anschluss ist nur mit Werkzeug zugänglich (zB geschlossenes Gehäuse), 
+–  
+die Kabel/Leitungslänge ist ausreichend lang, um Beschädigungen an den Anschlussleitungen zu 
+verhindern , und fest verlegt, um eine unbeabsichtigte Trennung zu verhindern, 
+–  
+das Anschlusssystem muss so sein, dass die Trennung der Außenleiter und des Neutralleiters vor der 
+Trennung des PE-Leiters erfolgt. 
+Diese Art von Leuchten ist für zeitweilige Installation (zB Zelte) geeignet. 
+7.8.2 Wechselrichter und Vorschaltgeräte 
+7.8.2.1 Elektronische Vorschaltgeräte für Lampen der Notbeleuchtung müssen ÖVE/ÖNORM EN 61347-1 
+entsprechen. Für gleichstromversorgte elektronische Vorschaltgeräte für die Sicherheitsbeleuchtung gilt 
+ÖVE/ÖNORM EN 61347-2-7. 
+7.8.2.2 
+Einzelwechselrichter dienen zur Versorgung einer bis maximal zwei Leuchten und Gruppen-
+wechselrichter dienen zur Versorgung eines Endstromkreises bis maximal 20 Leuchten.  
+7.8.2.3 
+Wechselrichter und elektronische Vorschaltgeräte müssen bei Umgebungstemperaturen von 5 °C 
+bis 40 °C bis zum Ansprechen der Tiefentladeschutzeinrichtung funktionsfähig sein; bei Einbau in Leuchten 
+oder Geräte muss die unter Umständen höhere Temperatur in diesen Leuchten oder Geräten berücksichtigt 
+werden. Bei Anbringung im Freien müssen sie unabhängig von der Umgebungstemperatur betriebssicher 
+arbeiten. 
+7.8.2.4 
+Die Ausgangsleistung der Gruppenwechselrichter muss mindestens 120 % der Lastanforderung 
+aller angeschlossenen Verbraucher betragen. Zusätzlich ist die Blindleistung der Verbraucher zu 
+berücksichtigen. Die Stromaufnahme des Wechselrichters ist auf 6 A begrenzt. Von einem Wechselrichter 
+dürfen höchstens 20 Leuchten betrieben werden. Für jeden Endstromkreis ist mindestens ein Wechselrichter 
+erforderlich. 
+7.8.2.5 
+Zentrale 
+Wechselrichter 
+müssen 
+den 
+Anforderungen 
+gemäß 
+ÖVE EN 60146-1-1 
+und 
+ÖVE/ÖNORM EN 50171 entsprechen. 
+ANMERKUNG USV–Anlagen, die üblicherweise zur Versorgung von EDV–Anlagen eingesetzt werden, erfüllen im 
+Allgemeinen nicht die Anforderungen gemäß dieser ÖVE/ÖNORM. 
+7.8.3  Bussysteme 
+7.8.3.1  
+Bei Verwendung von Bussystemen muss bei einem Fehler im Bussystem die allgemeine 
+Beleuchtung oder die Sicherheitsbeleuchtung wirksam werden. Tritt ein Fehler im Steuerungs- und 
+Bussystem der allgemeinen Beleuchtung auf, so darf dieser Fehler nicht die ordnungsgemäße Funktion der 
+Sicherheitsbeleuchtung beeinflussen. 
+7.8.3.2  
+Führt ein Fehler des Steuerungs- und Bussystems der allgemeinen Beleuchtung zu einem Ausfall 
+der allgemeinen Beleuchtung eines Raumes oder Rettungsweges, so muss diese Steuerung überwacht 
+werde. 
+Im 
+Fehlerfall 
+muss 
+sich 
+die 
+in 
+der 
+Betriebsart 
+„Bereitschaftsbetrieb“ 
+geschaltete 
+Sicherheitsbeleuchtung einschalten.  
+7.8.3.3  
+Bei Verwendung von kombinierten Bussystemen (zB Verwendung der Allgemeinbeleuchtung für 
+die Sicherheitsbeleuchtung) müssen die Hersteller einen Nachweis erbringen, dass die ordnungsgemäße 
+Funktionsweise der Sicherheitsbeleuchtung gemäß dieser Bestimmung gewährleistet ist. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+40 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 41/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+41 
+8 
+Pläne und Betriebsanleitungen 
+8.1 Übersichtsschaltplan 
+8.1.1 
+Über die allgemeine Stromversorgung und die Sicherheitsstromversorgung einschließlich der Kabel 
+und Leitungsanlage bis zum letzten Unterverteiler muss ein Übersichtsschaltplan vorhanden sein. 
+Dieser muss an den folgenden Stellen vorhanden sein: 
+– 
+bei Schaltanlagen im Anlagenbuch gemäß ÖVE/ÖNORM E 8001-6-63, 
+– 
+bei Sicherheitsstromquellen, 
+– 
+bei Gebäudehauptverteilern. 
+8.1.2 
+Bei den Unterverteilern der allgemeinen Stromversorgung und der Sicherheitsstromversorgung 
+müssen Übersichtsschaltpläne der abgehenden Stromkreise und der Einspeisung einschließlich der 
+erforderlichen Steuerungen vorhanden sein. 
+Es genügt eine einpolige Darstellung. 
+8.1.3 
+Es genügt ein gemeinsamer Schaltplan zu 8.1.1 und 8.1.2 wenn die Übersicht sichergestellt ist. 
+8.1.4 
+Aus den Übersichtsschaltplänen muss erkennbar sein: 
+1) 
+Stromart und Nennspannung, 
+2) 
+Anzahl, Art und Leistung der Transformatoren und der Sicherheits- und Ersatzstromquellen, 
+3) 
+Bei Akkumulatoren: Art, Zellenanzahl und Bemessungskapazität (zB C3), 
+4) 
+Bezeichnung der Stromkreise, Nennstrom der Überstromschutzeinrichtungen der angeschlossenen 
+Stromkreise, 
+5) 
+Leiterquerschnitte und Leiterwerkstoffe, 
+6) 
+Bezeichnung der Abgangsklemmen, wenn diese von der Benennung der Stromkreise abweicht, 
+7) 
+Maßnahmen des Fehlerschutzes und des Zusatzschutzes. 
+8.1.5 
+Warnschilder 
+Falls zutreffend, ist durch gut sichtbar und dauerhaft angebrachte Hinweisschilder  
+– 
+vor Gefahren durch austretenden Elektrolyten zu warnen, 
+– 
+Verhaltensregeln bei Körperkontakt mit dem Elektrolyten anzugeben, 
+– 
+vor Explosionsgefahr zu warnen. 
+Batterieart und Batterietype sind jedenfalls anzugeben. 
+Ein Warnschild muss folgenden Hinweis tragen: „Das Abschalten der allgemeinen Stromversorgung bedeutet 
+keine Sicherheit für Wartungszwecke“. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+41 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 42/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+42 
+8.2 Schaltplan der Sicherheitsbeleuchtung 
+Ein Schaltplan der Sicherheitsbeleuchtung muss bei der Schalteinrichtung, bei der Sicherheitsstromquelle 
+und beim Hauptverteiler der Sicherheitsbeleuchtung vorhanden sein. Im Schaltplan muss außer den Angaben 
+gemäß 8.1.4 folgendes enthalten sein: 
+1) 
+Schaltung der Sicherheitsbeleuchtung (Stromlaufplan) einschließlich der Netzüberwachung in den 
+Verteilern der allgemeinen Stromversorgung, 
+2) 
+Anzahl der Leuchten der einzelnen Endstromkreise, 
+3) 
+Belastung der einzelnen Endstromkreise und die Gesamtbelastung. 
+Ein Schaltplan für die innere Schaltung von Einzelbatterieleuchten ist nicht erforderlich. 
+8.3 Installationsplan, Auslassplan 
+Von der räumlichen Anordnung der elektrischen Anlagen müssen Auslasspläne aller Grundrisse vorhanden 
+sein, in denen dargestellt sind: 
+1) 
+die genaue Lage aller elektrischen Betriebsstätten und Verteiler mit Bezeichnung der Betriebsmittel, 
+2) 
+die genaue Lage aller Sicherheitseinrichtungen mit Endstromkreisbezeichnung und Angabe der 
+Verbraucherleistung, 
+3) 
+die genaue Lage von besonderen Schalt- und Überwachungseinrichtungen der Sicherheits-
+stromversorgung, zB Bereichsschalter, optische oder akustische Meldeeinrichtungen. 
+8.4 Verbraucherlisten 
+Es müssen Listen der an die Sicherheitsstromversorgung fest angeschlossenen Verbraucher mit Angabe der 
+Nennströme und bei motorischen Verbrauchern der Anlaufströme angefertigt werden und sind bereitzuhalten. 
+Die Verbraucherlisten müssen vom Betreiber auf dem jeweils aktuellen Stand gehalten werden. 
+8.5 Betriebsanleitungen 
+Betriebsanleitungen für Sicherheitseinrichtungen und Sicherheits- und Ersatzstromquellen müssen am 
+Aufstellungsort aufgelegt werden (gilt nicht für Einzelbatterieanlagen). Sie müssen in allen Einzelheiten der 
+errichteten Anlage entsprechen.  
+Betriebsanleitungen für Einzelbatterieleuchten müssen bei den Auslassplänen bzw. im Anlagenbuch 
+aufbewahrt werden. 
+8.6 Prüfbuch für Sicherheitsbeleuchtungsanlagen (Aufzeichnungen) 
+Das Prüfbuch muss vom Betreiber der Sicherheitsbeleuchtungsanlage bzw. einer von ihm ernannten 
+verantwortlichen Person bei der baulichen Anlage geführt werden und für entsprechend bevollmächtigte 
+Personen zur Einsichtnahme verfügbar sein. 
+Im Prüfbuch müssen mindestens folgende Informationen aufgezeichnet werden: 
+–  
+Datum der Inbetriebnahme der Anlage einschließlich jeder Bescheinigung über Änderungen 
+–  
+Datum jeder wiederkehrenden Prüfung und jedes Tests 
+–  
+Datum und kurzgefasste Einzelheiten über jeden Fehler und jede durchgeführte Abhilfemaßnahme 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+42 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 43/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+43 
+–  
+Datum und kurzgefasste Einzelheiten über jede Änderung an der Sicherheitsbeleuchtungsanlage 
+–  
+wenn eine automatische Prüfeinrichtung verwendet wird, müssen die Hauptmerkmale und die 
+Arbeitsweise dieses Gerätes beschrieben sein. 
+Ein entsprechender Ausdruck einer automatischen Prüfeinrichtung gemäß 7.4.3.9 erfüllt ebenso die 
+vorgenannte Anforderung. 
+9 
+Erstprüfungen  
+9.1 
+Vor der Inbetriebnahme sowie nach Änderungen oder Instandsetzungen müssen Prüfungen gemäß 
+ÖVE/ÖNORM E 8001-6-61 durchgeführt werden. 
+9.2 
+Zusätzlich zu 9.1 müssen folgende Prüfungen vor der ersten lnbetriebnahme in vollem Umfang und 
+nach Änderung oder Instandsetzung vor der Wiederinbetriebnahme im jeweils betroffenen Umfang 
+durchgeführt werden: 
+9.2.1 Prüfung der Be- und Entlüftung des Aufstellungsraumes für Batterien und zugehörende Einrichtungen. 
+Vergleiche 7.4.2.2 und 7.4.3.2.  
+9.2.2 Prüfung des Aufstellungsraumes für Sicherheits- oder Ersatzstromaggregate hinsichtlich Be- und 
+Entlüftung und Abgasabführung. 
+9.2.3 Prüfung der Einhaltung der Brandschutzanforderungen im Sinne von Anhang A und Anhang B. 
+9.2.4 Prüfung der Bemessung der Batterien hinsichtlich ausreichender Kapazität. 
+9.2.5 Prüfung der Bemessung der Stromerzeugungsaggregate unter Berücksichtigung der Verbraucher für 
+die statische Belastung und eventuell auftretender Anlaufströme, zB bei Lüfter-, Pumpen- oder Antriebsmotor. 
+9.2.6 Funktionsprüfungen der Sicherheitsstromversorgung mit Verbrennungsmotoren bestehend aus: 
+1) 
+Prüfung des Start- und Anlaufverhaltens, 
+2) 
+Prüfung der Funktion der Hilfseinrichtungen der Schalt- und Regelungseinrichtungen, 
+3) 
+Prüfung des Verhaltens im Aggregatbetrieb für die geforderte Nennbetriebsdauer. Dabei müssen die 
+dynamischen Spannungs- und Drehzahlabweichungen besonders beachtet werden (Aufzeichnung des 
+dynamischen Lastübernahmeverhaltens, Einhaltung der geforderten statischen und dynamischen 
+Betriebsparameter im Betrieb). 
+4) 
+Funktionsprüfung des Sicherheitsstromaggregates durch Unterbrechung der Hauptzuleitung unter der für 
+den Notbetrieb ausgelegten maximal zu versorgenden Nenn-Verbraucherleistung. 
+9.2.7 Prüfung der Funktion der Sicherheitsstromversorgung durch Unterbrechung der Netzzuleitung am 
+Verteiler der zu versorgenden Verbraucher. 
+Bei Sicherheitsstromversorgung mehrerer Gebäude von einem zentralen Standort aus, müssen 
+entsprechende 
+Teilfunktionsprüfungen 
+der 
+Überwachungs- 
+und 
+Umschalteinrichtungen 
+und 
+das 
+Wirksamwerden der Sicherheitsstromquelle durch Unterbrechung der Netzzuleitung an den überwachten 
+Gebäudehauptverteilern durchgeführt werden. 
+9.2.8 Prüfung der richtigen Auswahl der Betriebsmittel zur Einhaltung der Selektivität der Sicherheits-
+stromversorgung gemäß den Planungsunterlagen und der Berechnung gemäß 7.7.11. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+43 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 44/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+44 
+9.2.9 Prüfung der lichttechnischen Anforderungen der Sicherheitsbeleuchtung gemäß ÖNORM EN 1838 
+durch Nachweis (Messung der Beleuchtungsstärke). 
+9.3 
+Über die Prüfungen gemäß 9.1 und 9.2 ist ein Bericht mit den Ergebnissen der Prüfungen anzufertigen 
+und beim Anlagenbetreiber im Anlagenbuch aufzubewahren. 
+10 Instandhaltung 
+10.1 Wartung 
+Die Sicherheits- und Ersatzstromquellen müssen entsprechend den Herstellerangaben und jeweils 
+zutreffenden technischen Bestimmungen regelmäßig gewartet werden. 
+10.2 Wiederkehrende Prüfungen 
+10.2.1 Elektrische Anlagen müssen regelmäßig gemäß ÖVE/ÖNORM E 8001-6-62 und ÖVE/ÖNORM 
+EN 50110-1 geprüft werden. 
+10.2.2 Batterien müssen außerhalb der Betriebszeit mit allen angeschlossenen Verbrauchern bis zur 
+zulässigen Entladeschlussspannung einmal im Jahr entladen werden. 
+Der Prüfzeitpunkt muss so gewählt werden, dass die Batterien rechtzeitig zu Betriebsbeginn wieder mit 90 % 
+der für die Nennbetriebsdauer erforderlichen Strommenge aufgeladen sind. Dies gilt insbesondere bei 
+Einzelbatterien. 
+10.2.3 Die Funktion der Sicherheitsstromversorgung mit Gruppenbatterie oder Zentralbatterie ist an jedem 
+Betriebstag manuell zu prüfen. Dabei müssen alle angeschlossenen Verbraucher (Leuchten) bei 
+Batteriebetrieb auf ihre Funktionsfähigkeit kontrolliert werden.  
+Beim Einsatz einer automatischen Prüfeinrichtung gemäß 7.4.3.9 muss eine manuelle Prüfung der 
+Gerätefunktion mindestens einmal pro Jahr durchgeführt werden. 
+10.2.4 Die Funktion der Sicherheitsbeleuchtung muss bei Einzelbatterien mindestens einmal pro Woche 
+geprüft werden. 
+Beim Einsatz einer automatischen Prüfeinrichtung gemäß 7.4.3.9 muss eine manuelle Prüfung der 
+Gerätefunktion mindestens einmal pro Jahr durchgeführt werden. 
+10.2.5 Prüfung des Mindestkraftstoffvorrates entsprechend der erforderlichen Mindestbetriebsdauer. 
+10.2.6 Mit dem Stromerzeugungsaggregat muss monatlich ein Probebetrieb von mindestens einer Stunde 
+unter einer Last von mindestens 50 % der Nenn-Verbraucherleistung, jedoch mindestens mit jener 
+Minimalleistung, die der Motor nach Herstellerangaben ohne Schaden zu nehmen unbegrenzt abgeben kann, 
+durchgeführt werden. 
+Im Zuge des monatlichen Probelaufes muss an der Sicherheitsstromquelle eine Sichtprüfung der beweglichen 
+(Keil-, Zahnriemen, u. dgl.), der flüssigkeitsgefüllten (Kraftstoffleitung, Filter, u. dgl.) und der druckluftgefüllten 
+Teile auf Beschädigung bzw. Undichtheit durchgeführt werden. 
+10.2.7 Mindestens jährlich muss eine Funktionsprüfung des Sicherheitsstromaggregates für die Dauer von 
+mindestens einer Stunde durch Unterbrechung der Hauptzuleitung bzw. der Netzzuleitung an den 
+überwachten Verteilern möglichst mit der maximal zu versorgenden Nenn-Verbraucherleistung durchgeführt 
+werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+44 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 45/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+45 
+10.2.8 Bei Einsatz von zwei unabhängigen Netzen muss die Funktion der Umschalteinrichtung jährlich 
+geprüft werden. 
+10.2.9 Über die regelmäßigen Prüfungen müssen Prüfbücher geführt werden, die eine Kontrolle über 
+mindestens drei Jahre gestatten. 
+10.2.10 Es 
+muss 
+jährlich 
+ein 
+Nachweis 
+erbracht 
+werden, 
+dass 
+die 
+Bemessungsleistung 
+der 
+Sicherheitsstromquelle noch dem erforderlichen Verbraucher-Leistungsbedarf entspricht. 
+10.2.11 Die Beleuchtungsstärke der Sicherheitsbeleuchtung muss mindestens alle zwei Jahre geprüft werde. 
+10.2.12 Bei Sicherheitsstromquellen gemäß 7.4.4, 7.4.5 und 7.4.6 muss die Funktion aller angeschlossenen 
+Verbraucher (Leuchten) monatlich manuell auf ihre Funktionsfähigkeit kontrolliert werden. 
+Beim Einsatz einer automatischen Prüfeinrichtung gemäß 7.4.3.9 genügt eine jährliche manuelle Prüfung der 
+Gerätefunktion. 
+10.3 Instandsetzung 
+10.3.1 Wenn bei der Prüfung von Batterien bzw. Akkumulatoren weniger als zwei Drittel der erforderlichen 
+Nennbetriebsdauer festgestellt wird, sind diese zu erneuern. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+45 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 46/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+46 
+Anhang A 
+(normativ) 
+Richtlinie über den Bau von Betriebsräumen für elektrische Anlagen 
+A.1 Anwendungsbereich 
+1) 
+Diese Richtlinie gilt für elektrische Betriebsräume mit den in A.3 genannten elektrischen Anlagen in 
+baulichen Anlagen gemäß 1.2. 
+2) 
+Diese Richtlinie gilt nicht für elektrische Betriebsräume in freistehenden Gebäuden oder durch 
+Brandwände abgetrennten Gebäudeteilen, wenn diese nur die elektrischen Betriebsräume enthalten. 
+A.2 Anforderungen 
+Anforderungen an elektrische Betriebsräume sind: 
+1) 
+Elektrische Betriebsräume für Transformatoren und Schaltanlagen für Nennspannungen über 1 kV, 
+ortsfeste Stromerzeugungsaggregate und Zentralbatterien für Sicherheitsbeleuchtung müssen so 
+angeordnet sein, dass sie im Gefahrenfall von allgemein zugängigen Räumen oder vom Freien aus leicht 
+und sicher erreichbar sind und ungehindert verlassen werden können; sie dürfen von Treppenräumen mit 
+notwendigen Treppen nicht unmittelbar zugängig sein. Der Rettungsweg innerhalb eines elektrischen 
+Betriebsraumes bis zu einem Ausgang darf nicht länger als 40 m sein. 
+2)  Die Räume müssen so groß sein, dass die elektrischen Anlagen ordnungsgemäß errichtet und betrieben 
+werden können; sie müssen eine lichte Höhe von mindestens 2 m haben. Bedienungs- und 
+Wartungsgänge müssen eine Durchgangshöhe von mindestens 1,80 m haben. 
+3)  Die Räume müssen ständig wirksam be- und entlüftet werden, dass die beim Betrieb der 
+Transformatoren und Stromerzeugungsaggregate entstehende Verlustwärme und bei Batterien die Gase, 
+abgeführt werden. 
+4)  In elektrischen Betriebsräumen dürfen Leitungen und Einrichtungen, die nicht zum Betrieb der 
+elektrischen Anlagen erforderlich sind, nicht vorhanden sein. 
+A.3 Zusätzliche Anforderungen zu ÖVE/ÖNORM E 8383 
+Zusätzliche Anforderungen an elektrische Betriebsräume für Transformatoren und Schaltanlagen mit 
+Nennspannungen über 1 kV sind: 
+1) 
+Die Zuluft für die Räume muss unmittelbar oder über eigene Lüftungsleitungen dem Freien entnommen, 
+die 
+Abluft 
+unmittelbar 
+oder 
+über 
+besondere 
+Lüftungsleitungen 
+ins 
+Freie 
+geführt 
+werden. 
+Lüftungsleitungen, die durch andere Räume führen, sind so herzustellen dass Feuer und Rauch nicht in 
+andere Räume übertragen werden können. Öffnungen von Lüftungsleitungen zum Freien müssen 
+Schutzgitter haben. 
+2) 
+Fußböden müssen aus nichtbrennbaren Baustoffen bestehen; dies gilt nicht für Fußbodenbeläge. 
+3)  Räume mit Transformatoren dürfen vom Gebäudeinneren aus nur von Fluren zugängig sein. Sofern der 
+Flur gleichzeitig ein Rettungsweg ist, darf der Zugang zum Traforaum nur über Sicherheitsschleusen 
+erfolgen. Sicherheitsschleusen müssen Rauchabzüge haben. Bei Räumen für Transformatoren mit 
+Mineralöl oder einer synthetischen Flüssigkeit mit einem Flammpunkt höchstens 300 °C als Kühlmittel 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+46 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 47/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+47 
+muss mindestens ein Ausgang unmittelbar ins Freie oder über einen Vorraum ins Freie führen. Der 
+Vorraum darf auch mit dem Schaltraum, jedoch nicht mit anderen Räumen in Verbindung stehen. 
+4) 
+Abweichend von 3) darf nach behördlicher Maßgabe auf Sicherheitsschleusen und unmittelbar ins Freie 
+oder über einen Vorraum ins Freie führende Ausgänge verzichtet werden. Wenn der Ausgang aus dem 
+Aufstellungsraum aus dem Transformator nicht unmittelbar ins Freie führt, muss ein brandbeständiger 
+Feuerschutzabschluss gegeben sein. 
+A.4 Zusätzliche Anforderungen an elektrische Betriebsräume für ortsfeste Stromer-
+zeugungsaggregate 
+1) 
+Elektrische Betriebsräume für ortsfeste Stromerzeugungsaggregate müssen von anderen Räumen 
+brandbeständig getrennt sein. Öffnungen zur Durchführung von Kabeln und Leitungen sind mit 
+normgemäßen brandbeständigen Abschottungen zu verschließen. 
+2) 
+Türen müssen nach außen aufschlagen. Türschlösser müssen so beschaffen sein, dass der Zutritt 
+unbefugter Personen jederzeit verhindert ist, der Betriebsraum jedoch ungehindert verlassen werden 
+kann. 
+3)  Die Zuluft für die Räume muss unmittelbar oder über eigene Lüftungsleitungen dem Freien entnommen, 
+die 
+Abluft 
+unmittelbar 
+oder 
+über 
+besondere 
+Lüftungsleitungen 
+ins 
+Freie 
+geführt 
+werden. 
+Lüftungsleitungen, die durch andere Räume führen, sind so herzustellen, dass Feuer und Rauch nicht in 
+andere Räume übertragen werden können. Öffnungen von Lüftungsleitungen zum Freien müssen 
+Schutzgitter haben. 
+4) 
+Fußböden müssen aus nichtbrennbaren Baustoffen bestehen; dies gilt nicht für Fußbodenbeläge. 
+5) 
+Wände in der erforderlichen Höhe sowie der Fußboden müssen gegen wassergefährdende Flüssigkeiten 
+undurchlässig beschaffen sein. Der Raum muss so ausgebildet sein, dass die maximal austretende 
+Flüssigkeitsmenge innerhalb des Raumes aufgefangen wird (zB Türschwelle).  
+6) 
+Die Abgase von Verbrennungsmaschinen sind über besondere Leitungen ins Freie zu führen. Die 
+Abgasrohre müssen von Bauteilen aus brennbaren Baustoffen einen Abstand von mindestens 0,5 m 
+haben. Werden Abgasrohre durch Bauteile aus brennbaren Baustoffen geführt, so sind die Bauteile im 
+Umkreis von 0,5 m aus nichtbrennbaren, formbeständigen Baustoffen herzustellen, wenn kein 
+besonderer Schutz gegen strahlende Wärme vorhanden ist. 
+ 
+Sofern das Abgasrohr mit einer nichtbrennbaren Isolierung (zB Steinwolle) mit einer Dicke von 
+mindestens 0,1 m isoliert ist, darf es unter Verwendung eines nichtbrennbaren und hitzebeständigen 
+Überschubrohres unmittelbar durch Bauteile aus brennbaren Baustoffen geführt werden. 
+7) 
+Die Räume müssen frostfrei sein oder beheizt werden können.  
+A.5 Zusätzliche Anforderungen an Batterieräume 
+1) 
+Räume für Zentralbatterien müssen von anderen Räumen brandbeständig getrennt sein. Öffnungen zur 
+Durchführung von Kabeln oder Leitungen sind mit normgemäßen brandbeständigen Abschottungen zu 
+verschließen. 
+2) 
+Türen müssen nach außen aufschlagen, mindestens brandhemmend und selbstschließend sein. 
+3) 
+Für die Aufstellung und Unterbringung von Batterien und Batterieanlagen gelten die Anforderung gemäß 
+ÖVE/ÖNORM EN 50272-2. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+47 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 48/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+48 
+Anhang B 
+(normativ) 
+Richtlinie über brandschutztechnische Anforderungen an elektrische 
+Leitungsanlagen 
+ANMERKUNG Diese Richtlinie ist als Regel der Technik zu sehen. Es kann jedoch in den einzelnen Bundesländern 
+durch baurechtliche Landeskompetenz oder durch eigenständige brandschutztechnische Bestimmungen (zB TRVB, 
+ÖNORM, TAEV) darüber hinausgehende Regelungen bzw. Abweichungen geben. 
+B.1 Anwendungsbereich 
+Diese Richtlinie gilt für 
+a) 
+elektrische Leitungsanlagen in notwendigen Treppenräumen, in Räumen zwischen notwendigen 
+Treppenräumen und Ausgängen ins Freie, in notwendigen Fluren und in offenen Gängen vor 
+Gebäudeaußenwänden, 
+b) 
+den Funktionserhalt von elektrischen Leitungsanlagen notwendiger Sicherheitseinrichtungen im 
+Brandfall. 
+B.2 Elektrische Leitungsanlagen in notwendigen Treppenräumen, in Räumen zwischen 
+notwendigen Treppenräumen und Ausgängen ins Freie, in notwendigen Fluren und in 
+offenen Gängen vor Gebäudeaußenwänden  
+B.2.1 Anordnung von elektrischen Leitungsanlagen 
+Die Anordnung von elektrischen Leitungsanlagen in: 
+– 
+notwendigen Treppenräumen, 
+– 
+Räumen zwischen notwendigen Treppenräumen und Ausgängen ins Freie, 
+– 
+notwendigen Fluren oder 
+– 
+offenen Gängen vor Gebäudeaußenwänden, 
+welche die einzige Verbindung zwischen Aufenthaltsräumen und Treppenräumen herstellen, dürfen 
+elektrische Leitungsanlagen nur angeordnet werden, wenn keine Bedenken wegen des Brandschutzes 
+bestehen. Diese Voraussetzung gilt als erfüllt, wenn die elektrischen Leitungsanlagen in diesen Räumen und 
+offenen Gängen den nachfolgenden Anforderungen entsprechen. 
+B.2.2 Allgemeine Anforderungen 
+B.2.2.1 
+Elektrische 
+Leitungsanlagen 
+dürfen 
+in 
+Wände 
+und 
+Decken 
+sowie 
+in 
+Bauteile 
+von 
+Installationsschächten und Installationskanälen nur so weit eingreifen, dass die verbleibenden Decken- und 
+Wandstärken die erforderliche Brandwiderstandsdauer behalten. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+48 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 49/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+49 
+B.2.2.2 
+In Sicherheitstreppenräumen und in Räumen zwischen Sicherheitstreppenräumen und Ausgängen 
+ins Freie dürfen offen verlegte Leitungen nur dann verwendet werden, wenn sie ausschließlich der 
+unmittelbaren Versorgung dieser Räume oder der Brandbekämpfung dienen. 
+B.2.3 Elektrische Leitungsanlagen 
+B.2.3.1 
+Messeinrichtungen und Verteiler (einschließlich Verteiler der Sicherheitsstromversorgung) 
+Messeinrichtungen und Verteiler müssen allseitig mit Baustoffen der Euroklasse des Brandverhaltens 
+mindestens A.2 umhüllt sein und abzutrennen gegenüber 
+– 
+notwendigen Treppenräumen und Räumen zwischen notwendigen Treppenräumen und Ausgängen ins 
+Freie mindestens brandhemmend durch Bauteile aus nichtbrennbaren Baustoffen (Feuerwiderstands-
+dauer von mindestens EI 30 gemäß ÖNORM EN 13501-2); 
+ 
+Öffnungen in diesen Bauteilen müssen mit Türen oder Klappen, die mit dauerelastischen Dichtungen 
+versehen sind, verschlossen werden; 
+– 
+notwendigen Treppenräumen geringer Nutzung, Räumen zwischen notwendigen Treppenräumen 
+geringer Nutzung und Ausgängen ins Freie, notwendigen Fluren und offenen Gängen durch Bauteile aus 
+nichtbrennbaren Baustoffen (Euroklasse des Brandverhaltens mindestens A2 gemäß ÖNORM 
+EN 13501-1) mit geschlossenen Oberflächen;  
+ 
+Öffnungen in diesen Bauteilen müssen mit Türen oder Klappen aus nichtbrennbaren Baustoffen 
+(Euroklasse des Brandverhaltens mindestens A2 gemäß ÖNORM EN 13501-1) mit geschlossenen 
+Oberflächen verschlossen werden.  
+Auf die Feuerwiderstandsdauer von 30 Minuten und auf die geschlossene Oberfläche darf verzichtet werden, 
+wenn  
+– 
+die Messeinrichtung bzw. der Verteiler mit Ausnahme von Dichtungsmaterial aus nichtbrennbarem 
+Material (zB Stahlblech) umschlossen ist und 
+– 
+die Oberfläche nur Öffnungen für erforderliche Lüftungsschlitze besitzt und 
+– 
+im Umkreis von 2,4 m um den die Fußbodenbeläge und Wandverkleidungen der Euroklasse des 
+Brandverhaltens gemäß ÖNORM EN 13501-1 mindestens C und s1 entsprechen und  
+ANMERKUNG Euroklasse C äquivalent B1 gemäß ÖNORM B 3800-1 und Euroklasse s1 äquivalent Q1 
+gemäß ÖNORM B 3800-1 
+– 
+sichergestellt ist, dass keine Lagerung von Gegenständen in diesem Bereich erfolgt und 
+– 
+der Bereich vor der Messeinrichtung bzw. vor dem Verteiler durch eine automatische Brandmeldeanlage 
+überwacht ist und 
+– 
+ab einem Volumen von 1,2 m3 eines geschlossenen Verteilerfeldes auch der Bereich innerhalb des 
+Verteilers durch eine automatische Brandmeldeanlage überwacht wird und 
+– 
+der Verteiler(bereich) mit gefordertem Funktionserhalt von angrenzenden Verteilerfeldern oder sonstigen 
+Bereichen mit erhöhter Brandgefahr entsprechend der geforderten Dauer des Funktionserhaltes 
+abgeschottet ist. 
+Für 
+Verteiler(bereiche) 
+von 
+notwendigen 
+Sicherheitseinrichtungen 
+müssen 
+brandschutzmäßige 
+Anforderungen auch dann erfüllt sein, wenn sie nicht in notwendigen Treppenräumen oder notwendigen 
+Fluren situiert sind (Brandschutz der Anlage von außen). Nähere Angaben sind in Anhang B.3 enthalten. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+49 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 50/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+50 
+B.2.3.2 
+Elektrische Leitungen 
+B.2.3.2.1 
+Elektrische Leitungen müssen verlegt sein: 
+– 
+einzeln voll eingeputzt, oder 
+– 
+in Schlitzen von massiven Wänden, die mit mindestens 15 mm dickem mineralischem Putz auf 
+nichtbrennbarem Putzträger oder mit mindestens 15 mm dicken Platten aus mineralischen Baustoffen 
+verschlossen werden, oder 
+– 
+innerhalb von mindestens brandhemmenden Wänden, oder  
+– 
+in Installationsschächten und -kanälen oder 
+– 
+über Unterdecken oder 
+– 
+in Hohlraumestrichen oder in Doppelböden mit entsprechenden Vorkehrungen.  
+ 
+Entsprechenden Vorkehrungen für die Verlegung von elektrischen Leitungen in Hohlraumestrichen oder 
+in Doppelböden sind: 
+Hohlraumestriche müssen mineralisch und nicht brennbar sein. Die Hohlräume dürfen nicht höher als 
+20 cm sein. In allgemein zugänglichen Fluren und Treppenräumen dürfen sich keine Öffnungen, 
+ausgenommen Revisions- und Nachbelegungsöffnungen unter der Voraussetzung dichtschließender 
+und nicht brennbarer Verschlüsse befinden.  
+Die Konstruktion von Doppelböden (Bodenplatten und Ständer) muss mindestens brandhemmend sein. 
+Bodenplatten müssen in den wesentlichen Teilen aus nicht brennbaren Baustoffen bestehen.  
+Abweichend davon dürfen außerhalb von Treppenräumen und allgemein zugänglichen Fluren bei 
+Doppelböden bis zu einer lichten Hohlraumhöhe von 40 cm Bodenplatten verwendet werden, die vom 
+Hohlraum aus betrachtet der Euroklasse des Brandverhaltens mindestens C entsprechen. Ständer 
+müssen aus nicht brennbaren Baustoffen mit einer Schmelztemperatur mindestens 700 °C bestehen.  
+B.2.3.2.2 
+Elektrische Leitungen dürfen offen verlegt werden, wenn 
+– 
+sie ausschließlich der Versorgung von Räumen desselben Brandabschnittes dienen, oder 
+– 
+Leitungen mit verbessertem Brandverhalten gemäß Tabelle B.1 verwendet werden. 
+Außerdem dürfen in notwendigen Fluren einzelne, kurze Stichleitungen offen verlegt werden.  
+Werden für die oben angeführte offene Verlegung Elektroinstallationskanäle oder Elektroinstallationsrohre 
+verwendet, dann müssen diese aus nicht brennbaren Werkstoffen bestehen.  
+B.2.3.3 
+Bei den elektrischen Leitungen der notwendigen Sicherheitseinrichtungen mit Funktionserhalt E 30 
+oder E 90 ist zu beachten, dass keine Beschädigung durch fremde Gewerke (zB mechanische Beschädigung 
+durch herabfallende Anlagenteile im Brandfall, Flüssigkeitseintritt in den Verteiler der notwendigen 
+Sicherheitseinrichtungen in einem Störungsfall) erfolgt.  
+Hinsichtlich der Ausnahme vom Funktionserhalt der Endstromkreise im gleichen Brandabschnitt ist im 
+Einzelfall je nach der örtlichen Situierung des Verteilers zu entscheiden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+50 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 51/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+51 
+B.3 Funktionserhalt von elektrischen Leitungsanlagen im Brandfall 
+B.3.1 Elektrische Leitungsanlagen (einschließlich der Verteiler und Leitungsverbindungen für Sicherheits-
+einrichtungen 
+müssen 
+so 
+beschaffen 
+oder 
+durch 
+Bauteile 
+so 
+abgetrennt 
+sein, 
+dass 
+diese 
+Sicherheitseinrichtungen bei äußerer Brandeinwirkung für eine ausreichende Zeitdauer funktionsfähig bleiben 
+(Funktionserhalt). 
+B.3.1.1 
+Der Funktionserhalt der Leitungen ist sichergestellt, wenn die Leitungen 
+– 
+der ÖNORM DIN 4102-12, (Funktionserhaltsklasse E 90 bzw. E 30) entsprechen oder 
+– 
+auf Rohdecken unterhalb des Fußbodenestrichs mit einer Überdeckung von mindestens 30 mm verlegt 
+werden oder  
+– 
+im Erdreich verlegt werden oder 
+– 
+in einem Sandbett mit einer Abdeckung verlegt werden. 
+B.3.1.2 
+Der Funktionserhalt der Verteiler ist sichergestellt, wenn 
+– 
+die Verteiler in eigenen, für andere Zwecke als für Sicherheitseinrichtungen nicht genutzten Räumen 
+untergebracht werden, die gegenüber anderen Räumen durch Wände, Decken und Türen mit einer 
+Brandwiderstandsdauer 
+entsprechend 
+der 
+für 
+die 
+Leitungsanlage 
+geforderten 
+Dauer 
+des 
+Funktionserhaltes und – mit Ausnahme der Türen – aus nichtbrennbaren Baustoffen abgetrennt sind 
+oder 
+– 
+folgende Anforderungen erfüllt sind: 
+– 
+das Verteilergehäuse besitzt nur geringfügige Öffnungen für erforderliche Lüftungsschlitze und 
+– 
+im Umkreis von 2,4 m um den Verteiler die Fußbodenbeläge und Wandverkleidungen der 
+Euroklasse des Brandverhaltens gemäß ÖNORM EN 13501-1 mindestens C und s1 entsprechen 
+und  
+ 
+ANMERKUNG 
+Euroklasse C äquivalent B1 gemäß ÖNORM B 3800-1 und Euroklasse s1 äquivalent 
+Q1 gemäß ÖNORM B 3800-1 
+– 
+sichergestellt ist, dass keine Lagerung von Gegenständen in diesem Bereich erfolgt und 
+– 
+der Bereich vor der Messeinrichtung bzw. vor dem Verteiler durch eine automatische 
+Brandmeldeanlage überwacht ist und 
+– 
+der Verteiler(bereich) mit gefordertem Funktionserhalt von angrenzenden Verteilerfeldern oder 
+sonstigen Bereichen mit erhöhter Brandgefahr entsprechend der geforderten Dauer des 
+Funktionserhaltes abgeschottet ist. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+51 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 52/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+52 
+Tabelle B.1 – Bestimmungen und Normen für Kabel und Leitungen 
+ 
+Bauartkurzzeichen 
+ 
+Harmonisiert 
+national 
+Bezeichnung 
+Bestimmungen/ 
+Normen 
+Leitungen mit flammwidrigen Eigenschaften 
+1 
+H07V-U 
+H07V-R 
+H07V-K 
+Ye 
+Ym 
+Yf 
+PVC-Aderleitung 
+ÖVE/ÖNORM 
+E 8241-3 
+2 
+A05VV-U 
+A05VV-R 
+YM 
+PVC-Mantelleitung 
+ÖVE-K 41-4 
+3 
+– 
+YCM 
+Geschirmte PVC-Mantelleitung 
+ÖVE-K 41-52 
+4 
+H07RN-F 
+GMSuö 
+Schwere Gummischlauchleitung 
+ÖVE/ÖNORM 
+E 8240-4 
+5 
+– 
+GMSSuö 
+Schwere Gummischlauchleitung mit 
+Isolierung aus Ethylen-Propylen-
+Kautschuk und Mantel aus Polychloropren 
+ÖVE-K 40-54 
+6 
+H05V2V2-F 
+– 
+Wärmebeständige mittlere PVC-
+Schlauchleitung mit einer 
+höchstzulässigen Temperatur am Leiter 
+von 90 °C 
+ÖVE/ÖNORM 
+E 8241-12 
+7 
+H05SJ-K 
+ 
+Wärmebeständige Silikon-Aderleitung 
+ÖVE/ÖNORM 
+E 8240-3 
+8 
+H05VV-F 
+ 
+Mittlere PVC-Schlauchleitung 
+ÖVE/ÖNORM 
+E 8241-5 
+Leitungen mit verbessertem Verhalten im Brandfall 
+9 
+H07Z-U 
+H07Z-R 
+H07Z-K 
+– 
+Einadrige Leitungen ohne Mantel für feste 
+Verlegung mit geringer Entwicklung von 
+Rauch und korrosiven Gasen im Brandfall 
+ÖVE-K 40-9 
+10 
+H07ZZ-F 
+– 
+Vieladrige Schlauchleitungen mit geringer 
+Entwicklung von Rauch und korrosiven 
+Gasen im Brandfall 
+ÖVE/ÖNORM 
+E 8240-13 
+Kabel mit verbessertem Verhalten im Brandfall 
+11 
+– 
+– 
+Halogenfreie Energiekabel mit 
+verbessertem Verhalten im Brandfall 
+ÖVE/ÖNORM 
+E 8226 
+mineralisolierte Leitungen 
+12 
+– 
+– 
+mineralisolierte Leitungen 
+ÖVE/ÖNORM 
+EN 60702-1 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+52 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 53/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+53 
+Anhang C 
+(informativ) 
+Erläuterungen zu Anhang B 
+C.1 Allgemeines 
+Mit der Richtlinie (Anhang B) werden folgende, voneinander unabhängige Schutzziele verfolgt:  
+Sicherung der Benutzbarkeit der für die Rettung von Personen und Tieren im Brandfall und für die Brand-
+bekämpfung bedeutsamen Gebäudebereiche durch Begrenzung von Einbauten – hier in Form von 
+elektrischen Leitungsanlagen – aus brennbaren Stoffen in diesen Bereichen auf ein unbedenkliches Maß 
+(siehe B.2). 
+Aufrechterhaltung der Funktion der elektrischen Leitungsanlagen für bestimmte vorgeschriebene Sicherheits-
+einrichtungen bei äußerer Brandeinwirkung auf diese Leitungsanlagen (siehe B.3). 
+Zu B.2.3 in Verbindung mit B.2.3.2  
+Elektrische Leitungen mit verbessertem Brandverhalten im Sinne der Richtlinie sind für den Brandfall 
+hinsichtlich der Brandfortleitungsgeschwindigkeit längs einer Leitungstrasse und der beim Verbrennen der 
+Kunststoffe der Leitungen entstehenden Rauchmenge wesentlich günstiger einzustufen als elektrische 
+Leitungen anderer Bauarten. Es erscheint daher gerechtfertigt für derartige Leitungen in B.2.3.2.2 in 
+bestimmten Fällen deren offene d. h. brandschutztechnisch ungeschützte Verlegung zuzulassen.  
+Auf die Erfüllung weiterer Kriterien kommt es in diesem Zusammenhang nicht an. Insbesondere ist es nicht 
+erforderlich, die Halogenfreiheit der Kunststoffe der Leitungen zu verlangen. Derartige Kunststoffe haben 
+zwar den Vorteil, dass sich im Brandfall keine das Gebäude zusätzlich schädigenden Säuren bilden, aber es 
+erscheint angesichts der in der Baupraxis vielfältigen und umfangreichen Verwendung von halogenhaltigen 
+Baustoffen nicht vertretbar, elektrische Leitungen insoweit anders zu behandeln als sonstige Bauprodukte. Zu 
+berücksichtigen ist auch, dass verschiedentlich Leitungs- und Kabelarten angeboten werden, deren 
+Kunststoffe zwar halogenfrei sind und deren Brandverhalten gegenüber dem von herkömmlichen Leitungen 
+besser ist, die jedoch nicht die beiden o. g. Prüfkriterien erfüllen.  
+Die hier gemeinten elektrischen Leitungen mit verbessertem Brandverhalten sollen zumindest sinngemäß der 
+Euroklasse des Brandverhaltens mindestens B und s1 gemäß ÖNORM EN 13501-1 entsprechen. Dies auch 
+deshalb, da sich die Normungsorganisationen der EU-Länder darauf verständigt haben, zukünftig elektrische 
+Leitungen als Bauprodukte zu bezeichnen und einzustufen sowie dementsprechend zu normen. 
+Zu B.2.3.2  
+a) 
+Inwieweit herkömmliche elektrische Leitungen mit einer vor Ort aufgebrachten Beschichtung aus im 
+Brandfall aufschäumenden Baustoffen als eine gleichwertige Alternative zu den in B.2.3.2 behandelten 
+Verlegearten oder zu den Leitungen mit verbessertem Brandverhalten angesehen werden können, ist 
+derzeit noch offen. Es sind zwar in Materialprüfanstalten bereits eine Reihe von diesbezüglichen 
+Einzelprüfungen mit positiven Ergebnissen durchgeführt worden aber für derartige Systemlösungen 
+liegen noch keine allgemein gültigen Prüf- und Beurteilungsgrundlagen vor. 
+b) 
+Es erscheint grundsätzlich nicht ausgeschlossen, im besonderen Einzelfall von Maßnahmen des 
+baulichen Brandschutzes nach B.2.3.2.1 abzusehen, wenn stattdessen besondere anlagentechnische 
+Brandschutzmaßnahmen, wie zB die Installation einer automatischen Feuerlöschanlage oder 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+53 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 54/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+54 
+Brandmeldeanlage, vorgesehen werden. Hierüber kann jedoch nur von Fall zu Fall und im Einvernehmen 
+mit den zuständigen behördlichen Stellen entschieden werden.  
+Zu B.3.1. 
+Bei der Durchführung der Maßnahmen zum Funktionserhalt sind auch eventuelle Brände der elektrischen 
+Leitungsanlagen für die allgemeine Stromversorgung zu berücksichtigen. Es ist daher zB nicht zulässig (siehe 
+7.7.4), die Leitungen der Stromversorgung für die Sicherheitseinrichtungen gemeinsam mit Leitungen der 
+allgemeinen Stromversorgung in Schächten oder Kanälen der Funktionserhaltsklassen E 30 bzw. E 90 
+gemäß 
+ÖNORM DIN 4102-12 
+zu 
+verlegen 
+oder 
+Verteiler 
+der 
+Stromversorgung 
+für 
+die 
+Sicherheitseinrichtungen gemeinsam mit Verteilern der allgemeinen Stromversorgung in Räumen gemäß 
+6.2.1 ohne ergänzende Brandschutzmaßnahmen (siehe 7.3.3) unterzubringen. 
+Die Verlegung der Leitungen im oder unter Putz stellt keine ausreichende Maßnahme zum Funktionserhalt 
+der Leitungen dar. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+54 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 55/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+55 
+Anhang D 
+(informativ) 
+Andere bauliche Anlagen mit Notbeleuchtung  
+D.1 Bauliche Anlagen, die nicht unter den Anwendungsbereich von ÖVE/ÖNORM E 8002-1 
+fallen, jedoch einer Notbeleuchtung bedürfen 
+Für bauliche Anlagen, die nicht in den Anwendungsbereich der ÖVE/ÖNORM E 8002-1 fallen, wird auf 
+folgende Normen und Regelwerke verwiesen: 
+– 
+ÖNORM EN 1838, Angewandte Lichttechnik – Notbeleuchtung, 
+– 
+ÖVE/ÖNORM EN 50171, Zentrale Stromversorgungssysteme, 
+– 
+ÖVE/ÖNORM EN 50172, Sicherheitsbeleuchtungsanlagen, 
+– 
+TRVB E 102, Fluchtweg-Orientierungsbeleuchtung und bodennahe Sicherheitsleitsysteme, 
+– 
+BGR 216, Optische Sicherheitsleitsysteme. 
+Für Sicherheitsbeleuchtung und Orientierungshilfen in Arbeitsstätten wird auf die Arbeitsstättenverordnung 
+verwiesen. 
+D.2 Fluchtweg-Orientierungsbeleuchtung 
+Die Fluchtweg-Orientierungsbeleuchtung nach TRVB E 102 gilt nicht als Sicherheitsbeleuchtung im Sinne von 
+ÖVE/ÖNORM E 8002-1 bzw. ÖNORM EN 1838. 
+TRVB E 102 kommt für jene Bereiche in Frage, in denen keine Sicherheitsbeleuchtung nach ÖVE/ÖNORM 
+E 8002-1 gefordert ist. Durch die Fluchtweg-Orientierungsbeleuchtung sollen im Brandfall der Verlauf von 
+Fluchtwegen auch bei Stromausfall einzelner Bereiche ausreichend beleuchtet werden, damit die 
+Flüchtenden sicher zum vorgesehenen Ausgang bzw. ins Freie geführt werden.  
+Wenn eine Fluchtweg-Orientierungsbeleuchtung ausgeführt wird, darf diese von derselben Sicherheits-
+stromquelle wie für die Sicherheitsbeleuchtung, versorgt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+55 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 56/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+56 
+Literaturhinweise 
+ÖVE/ÖNORM E 8200-627, Starkstromkabel – Teil 627: Vieladrige und vielpaarige Kabel für die Verlegung in 
+Luft und in Erde 
+ÖVE/ÖNORM E 8240-1, Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 450/750 V - 
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 60269 bzw. ÖVE/ÖNORM IEC 60269 (alle Teile), Niederspannungssicherungen 
+ÖVE/ÖNORM EN 60332-1-1, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall –
+Teil 1-1: Prüfung der vertikalen Flammenausbreitung an einer Ader, einer isolierten Leitung oder einem Kabel 
+– Prüfgerät 
+ÖVE/ÖNORM EN 60332-2-1, Prüfungen an Kabeln, isolierten Leitungen und Glasfaserkabeln im Brandfall – 
+Teil 2-1: Prüfung der vertikalen Flammenausbreitung an einer kleinen Ader, einer kleinen isolierten Leitung 
+oder einem kleinen Kabel – Prüfgerät 
+ÖVE/ÖNORM EN 60898, Leitungsschutzschalter für den Haushalt und ähnliche Anwendungen 
+ÖVE/ÖNORM EN 60947-2, Niederspannungsschaltgeräte – Teil 2: Leistungsschalter 
+ÖVE/ÖNORM EN 61347-2-2, Geräte für Lampen – Teil 2-2: Besondere Anforderungen an gleich- oder 
+wechselstromversorgte elektronische Konverter für Glühlampen 
+ÖVE/ÖNORM EN 61347-2-3, Geräte für Lampen – Teil 2-3: Besondere Anforderungen an wechsel-
+stromversorgte elektronische Vorschaltgeräte für Leuchtstofflampen 
+ÖVE/ÖNORM EN 61347-2-4, Geräte für Lampen – Teil 2-4: Besondere Anforderungen an gleichstrom-
+versorgte elektronische Vorschaltgeräte für Allgemeinbeleuchtung 
+ÖVE/ÖNORM EN 61347-2-7, Geräte für Lampen – Teil 2-7: Besondere Anforderungen an gleichstrom-
+versorgte elektronische Vorschaltgeräte für die Notbeleuchtung 
+ÖVE/ÖNORM EN 61347-2-8, Geräte für Lampen – Teil 2-8: Besondere Anforderungen an Vorschaltgeräte für 
+Leuchtstofflampen 
+ÖVE/ÖNORM EN 61347-2-9, Geräte für Lampen – Teil 2-9: Besondere Anforderungen an Vorschaltgeräte für 
+Entladungslampen (ausgenommen Leuchtstofflampen) 
+ÖVE EN 60051 (alle Teile), Direkt wirkende anzeigende elektrische Messgeräte und ihr Zubehör – 
+Messgeräte mit Skalenanzeige 
+ÖVE EN 61046, Gleich- oder wechselstromversorgte elektronische Konverter für Glühlampen – Allgemeine 
+und Sicherheits-Anforderungen 
+ÖVE-K 40-13, Energieleitungen mit einer Isolierung aus Gummi – Schlauchleitungen mit geringer Entwicklung 
+von Rauch und korrosiven Gasen (Harmonisierte Typen) 
+DIN 6280-10, Hubkolben-Verbrennungsmotoren – Stromerzeugungsaggregate mit Hubkolben-
+Verbrennungsmotoren – Stromerzeugungsaggregate kleiner Leistung – Anforderung und Prüfung 
+DIN 6280-15, Stromerzeugungsaggregate – Stromerzeugungsaggregate mit Hubkolben-Verbrennungs-
+motoren – Teil 15: Blockheizkraftwerke (BHKW) mit Hubkolben-Verbrennungsmotoren – Prüfungen 
+DIN 40041, Zuverlässigkeit – Begriffe 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+56 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 57/58 =====
+ÖVE/ÖNORM E 8002-1:2007 
+57 
+DIN ISO 8528-9, Stromerzeugungsaggregate mit Hubkolben-Verbrennungsmotoren –  
+Teil 9: Messung und Bewertung der mechanischen Schwingungen 
+ISO 8528-4, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 4: Controlgear and switchgear 
+ISO 8528-6, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 6: Test methods 
+ISO 8528-10, Reciprocating internal combustion engine driven alternating current generating sets –  
+Part 10: Measurement of airborne noise by the enveloping surface method 
+BGBl. II Nr. 368/1998, Arbeitsstättenverordnung – AStV 
+DIN 4844-1, Graphische Symbole – Sicherheitsfarben und Sicherheitszeichen –  
+Teil 1: Gestaltungsgrundlagen für Sicherheitszeichen zur Anwendung in Arbeitsstätten und in öffentlichen 
+Bereichen 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+57 von 58
+www.ris.bka.gv.at
+
+
+===== PAGE 58/58 =====
+ 
+ 
+ 
+Wichtige Informationen für Normen-Anwender 
+ÖVE/ÖNORMEN sind Regeln, die im Dialog und Konsens aller 
+Betroffenen und Interessierten entwickelt werden. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und 
+Qualifikationen fest und definieren, wie die Einhaltung dieser Anforderungen überprüft 
+wird. 
+Von ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit freiwillig 
+(ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den 
+aktuellen Stand der Technik dokumentieren, das was in einem bestimmten Fachgebiet 
+„Standard“ ist. Dafür bürgen das hohe Fachwissen und die Erfahrung der Experten 
+und Expertinnen in den zuständigen Komitees auf nationaler, europäischer und 
+internationaler Ebene - sowie die Kompetenz des Österreichischen Verbandes für 
+Elektrotechnik und seiner Referenten. 
+ 
+Aktualität des Normenwerks. Analog zur technischen und 
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen 
+Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Aktualität 
+überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der Technik angepasst. 
+Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten 
+Ausgaben der Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine 
+Produkte und Produktionsverfahren bzw. Dienstleistungen den Markterfordernissen 
+entsprechen. 
+ 
+Wissen um Veränderungen. Das Österreichische Normungsinstitut 
+bietet gemeinsam mit dem Österreichischen Verband für Elektrotechnik 
+Normanwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote, die 
+dafür sorgen, dass Normanwender zuverlässig über die neusten Versionen von 
+Normen verfügen und über Änderungen – Neuausgaben und/oder Zurückziehungen – 
+informiert werden. Das reicht von klassischen Fachgebiets-Abonnements bis hin zu 
+innovativen kundenspezifischen Online-Lösungen. 
+Informationen über Angebote und Dienstleistungen des ON und des OVE bei 
+ 
+ON Sales & Service 
+OVE Normung 
+ON Österreichisches Normungsinstitut 
+OVE Österreichischer Verband 
+Austrian Standards Institute 
+für Elektrotechnik 
+Heinestraße 38, 1020 Wien 
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: sales@on-norm.at 
+E-Mail: ove@ove.at 
+Internet: www.on-norm.at/shop 
+Internet: www.ove.at 
+Fax: (+43 1) 213 00-818 
+Fax: (+43 1) 586 74 08 
+Tel.: (+43 1) 213 00-805 
+Tel.: (+43 1) 587 63 73 
+ 
+ 
+ 
+ 
+ISO 9001:2000 
+zertifiziert│certified by SQS 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+58 von 58
+www.ris.bka.gv.at
