@@ -1,7 +1,17 @@
 # knowledge/extracted — Norm-Digests für die Notbeleuchtungs-Engine
 
 Maschinen-orientierte Extraktion der 20 Norm-/Rechts-/Praxis-PDFs aus
-`knowledge/` (Volltext via pypdf, 2026-08-28). Jedes Digest: Regel-Tabelle mit ID,
+`knowledge/` (Volltext via pypdf, 2026-08-28).
+
+> **★ Einstieg für die Platzierungs-Logik:** [`PLATZIERUNGS_KONZEPTE.md`](PLATZIERUNGS_KONZEPTE.md)
+> — die synthetisierte *Denkweise* hinter allen Normen (Anker→Linie→Fläche,
+> Blend-Winkelmodus, RZ-Deckungsradius, Systemintegrität, Vor-Filter/Erforderlichkeit).
+> Das ist die „Lehre"; die Einzel-Digests unten liefern die zitierbaren §-Werte.
+>
+> **Bild-Lehren** (`bildlehren/`) — die PDFs wurden zusätzlich **visuell** Seite für
+> Seite gesichtet (Grafiken, Anordnungs-Schemata, Beispiel-Grundrisse), um das
+> Konzept hinter den Zahlen zu erfassen und Text-Extraktionslücken (Blend-Geometrie,
+> Ausleuchtungs-Modell, Serenga-Tabelle, Zumtobel-Matrix) zu schließen. Jedes Digest: Regel-Tabelle mit ID,
 §/Seite-Referenz, Werten und Typ (**Gebot / Verbot / Grenzwert / Definition /
 Empfehlung**). Verbote = Hard Stops der Engine (Entscheidungs-Hierarchie in
 `CLAUDE.md`: LB-explizit → Referenz-Praxis → EN-1838/ÖNorm-Default →
@@ -29,6 +39,20 @@ PDF-Original prüfen).
 | [ESV_2012.md](ESV_2012.md) | Elektroschutzverordnung | Betrieb nach anerkannten Regeln der Technik; Prüfpflichten (Notbeleuchtung untertage wöchentlich); Plandokumentation aufbewahrungspflichtig → der generierte Plan + Audit-Trail ist Teil davon. |
 | [Nullungsverordnung.md](Nullungsverordnung.md) | Nullung | TN-System-Default österreichischer Netze; für Platzierung irrelevant. |
 | [RIS_Standesregeln_Elektrotechnik.md](RIS_Standesregeln_Elektrotechnik.md) | Standesregeln Gewerbe | ETG/ETV/OVE/ÖNORM-Einhaltung = Standespflicht. |
+
+## Bild-Lehren (visuelle Analyse — `bildlehren/`)
+
+| Datei | Was visuell erschlossen wurde |
+|-------|-------------------------------|
+| [Bildlehren_EN1838_E08.md](bildlehren/Bildlehren_EN1838_E08.md) | Die 4 EN-1838-Grafiken (Arten-Hierarchie, Blend-Zonen 60°–90° horizontal vs. Vollkreis bei Treppen, Erkennungsweite l=z·h) + E-08 AStV-Matrix + 10-m/40-m-Wegbudget. Korrektur: Bild 2/3 sind Blend-, kein Mittellinien-Schema. |
+| [Bildlehren_ONL_Zumtobel.md](bildlehren/Bildlehren_ONL_Zumtobel.md) | AT-Kernquelle: Erforderlichkeits-Matrix S.28/29 pixelgenau (15 Gebäudetypen × 2 Regime × Dauer), Platzierungs-Isometrie S.31 (13 Pflichtpunkte). „OCR-Fehler" als echte Broschüren-Druckfehler verifiziert. |
+| [Bildlehren_INOTEC.md](bildlehren/Bildlehren_INOTEC.md) | EN 1838:2025-Flächengeometrie (Polygon-Offset −c), NEU-Pflichtstellen, alternierende Kreise 1-2-1-2, dynamische Fluchtweglenkung. |
+| [Bildlehren_GSYSTEMS.md](bildlehren/Bildlehren_GSYSTEMS.md) | Graph-Platzierung (Beispiel-Grundriss S.182–185), Montagehöhe↔Erkennungsweite h_m≤1,5+0,364·l, Eignungs-Matrix, E30-Trassen-Topologie. |
+| [Bildlehren_Kaufel.md](bildlehren/Bildlehren_Kaufel.md) | Abstandstabellen sind nicht-monotone Lookups (nie interpolieren), Xa/Xb-Semantik, virtuelle Brandabschnitte achsparallel, Verbraucher-Datenmodell. |
+| [Bildlehren_LichtWissen10.md](bildlehren/Bildlehren_LichtWissen10.md) | Bestätigt Muster: Kreuzung→Leuchte im Schnittpunkt, Flurknick→Ecke, Tür→RZ über Tür + SL + Außenleuchte. |
+
+Alle Konzept-Lehren sind in [`PLATZIERUNGS_KONZEPTE.md`](PLATZIERUNGS_KONZEPTE.md)
+zusammengeführt (mit **[KONVERGENT]**-Markierung, wo mehrere Quellen dasselbe zeigen).
 
 ## Referenz-Praxis (2. Hierarchie-Ebene — Planungs-Blaupausen, nie alleinige norm_quelle)
 
