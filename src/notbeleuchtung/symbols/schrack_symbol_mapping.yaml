@@ -1,0 +1,51 @@
+# Schrack-Symbol-Mapping — catalog_key → Block in CAD_Symbole/E-Symbole.dxf
+#
+# Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
+# backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
+# Notlicht-/Rettungszeichen-Keys, die die Notbeleuchtungs-Engine vergibt — nicht
+# der volle 109-Block-Katalog. Erweiterung um weitere Kategorien (Antipanik,
+# Sicherheitsleuchten) je Slice.
+#
+# Pflichtfelder je Eintrag: block_name, label, category
+# Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, notes
+#
+# Naht-Invariante (tests/contract): jede Platzierung.catalog_key muss ein Key
+# hier sein (Leonis ↔ Hauptengine/Render).
+
+# ── Notlicht / Rettungszeichen ────────────────────────────────
+# Richtungspfeil-Block. 'nach unten' (3.13 units, in-band) ist kanonisch; die
+# anderen Pfeil-Blöcke der Lib sind intern inkonsistent skaliert. Richtungswahl
+# = Rotation/mirror_x setzt der Platzierer je Fluchtweg-Geometrie.
+notlicht_ks_stiege:
+  block_name: "notbeleuchtung richtungspfeil nach unten"
+  label: "Notlicht KS (Stiege/Gänge)"
+  category: notlicht
+
+# Down-Rettungszeichen (Pfeil „nach unten" = Ausgang erreicht / Treppe abwärts).
+# Eigener Notbeleuchtungs-Key (im elektro-planer-Mapping nicht vorhanden — dort
+# über GT-Subtype 'RZ UNTEN' auf notlicht_ks_stiege gemappt); hier explizit, weil
+# der generative Platzierer die Variante am Ausgangs-Segment selbst wählt.
+notlicht_ks_stiege_unten:
+  block_name: "notbeleuchtung richtungspfeil nach unten"
+  label: "Notlicht KS Rettungszeichen unten (Ausgang)"
+  category: notlicht
+
+# Richtungs-Varianten. Der Library-Block 'nach rechts' ist korrupt (Pikto-Linien
+# 2603 units versetzt) → für BEIDE Seiten der wohlgeformte 'nach links'-Block;
+# "rechts" via Horizontal-Spiegelung (mirror_x).
+notlicht_ks_stiege_links:
+  block_name: "notbeleuchtung-richtungspfeil nach links"
+  label: "Notlicht KS Rettungszeichen links"
+  category: notlicht
+
+notlicht_ks_stiege_rechts:
+  block_name: "notbeleuchtung-richtungspfeil nach links"
+  label: "Notlicht KS Rettungszeichen rechts (gespiegelt)"
+  category: notlicht
+  mirror_x: true
+
+# Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
+notlicht_kw_garage:
+  block_name: "notbeleuchtung richtungspfeil nach unten"
+  label: "Notlicht KW (Garage/Nebenräume)"
+  category: notlicht

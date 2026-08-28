@@ -35,7 +35,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 |------|-------|-------|--------|-------|
 | Repo-Skelett + 3 Contracts + Fake-Durchstich | 0 | Leonis | **DONE** (13✓/1s) | 2026-08-27 |
 | Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | TODO | — |
-| Leonis echt: `communal_stgh_strategy` + `geometry` (Fake-Raum, echte Norm) | 2 | Leonis | TODO | — |
+| Leonis echt: `communal_stgh_strategy` + `geometry` + `NotlichtPlatzierer` (Fake-Raum/Norm) | 2 | Leonis | **DONE** (24✓/0s) | 2026-08-28 |
 | Render echt: `dxf_writer`/`layout_template` + Schrack-Infra + `assets/E-Symbole.dxf` | 3 | Leonis/Render | TODO | — |
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
