@@ -1,0 +1,558 @@
+
+
+===== PAGE 1/8 =====
+Herausgeber:
+OVE Österreichischer Verband für Elektrotechnik
+Eschenbachgasse 9, 1010 Wien n Tel.: +43 1 587 63 73 n Fax: +43 1 586 74 08
+E-Mail: ove@ove.at n Internet: www.ove.at n ZVR: 327279890
+ATU36808601 n Banken: BA-CA Kto.-Nr. 0043-28423/00 n PSK Kto.-Nr. 1.935.655 
+Erläuterungen zu ÖVE/ÖNORM  
+E 8001-1/A4:2009-04-01
+Fachinformation
+des Österreichischen Elektrotechnischen Komitees – OEK
+Hinweis zu den Markierungen im Text:
+Die Schlüsselpassagen sind farblich, durch den 
+Schriftstil kursiv und die Schriftart Times New Roman 
+gekennzeichnet.
+1.	Einleitung
+Mit 
+ÖVE/ÖNORM 
+E 
+8001-1/A4:2009 
+wurde 
+der Abschnitt 10 – Nullung von ÖVE/ÖNORM 
+E 8001-1:2000 komplett überarbeitet und an ver-
+schiedene Teile des Europäischen Harmonisierungs-
+dokuments CENELEC HD 60364 (Basis IEC 60364) 
+angeglichen. 
+Dabei wurden folgende Verschärfungen gegenüber 
+der bisherigen Fassung der Bestimmungen für die 
+Nullung für notwendig erachtet:
+a)	 Die Bestimmungen über die Ausschaltzeiten im 
+Fehlerfall sollten an das internationale Niveau im 
+Sinne einer Verringerung des Restrisikos angegli-
+chen werden.
+b)	 Die Errichtung von Verbraucheranlagen mit PEN-
+Leiter (TN-C-System) innerhalb von Gebäuden 
+(nunmehr „elektrisch versorgte Objekte“) sollte 
+aus EMV-Gründen deutlich eingeschränkt wer-
+den. Jeder PEN-Leiter, der bestimmungsgemäß 
+an mehreren, räumlich voneinander entfern-
+ten Punkten direkt oder über Schutzerdungslei-
+ter mit Erde verbunden ist, jedoch gleichzeitig 
+einen Betriebsstrom führt, kann Ströme über Erde 
+und fremde leitfähige Teile verursachen. Diese 
+Ströme verursachen in den umgebenden Berei-
+chen magnetische Felder. Diese Ströme und Fel-
+der können sich insbesondere auf empfindliche 
+Betriebsmittel und vernetzte Einrichtungen der 
+Informationstechnik nachteilig auswirken.
+Erläuterungsbedarf ergibt sich einerseits durch aus 
+der für eine Norm gebotenen Kürze der Formulierun-
+gen ohne umfangreiche Erläuterungen (die im An-
+hang E von ÖVE/ÖNORM E 8001-1/A4:2009 enthal-
+tenen Erläuterungen sind, wie die Praxis zeigt, nicht 
+umfassend genug). 
+Zum anderen beschäftigt sich dieser Teil der Norm 
+mit Maßnahmen zur Verbesserung des EMV-Verhal-
+tens genullter Anlagen, die nicht nur aus der Sicht der 
+störenden Betriebsmittel (hier der elektrischen Anla-
+ge), sondern auch aus der Sicht der beeinflussten 
+Betriebsmittel gesehen werden müssen. Eine Auf-
+gabenstellung bei der Überarbeitung von Abschnitt 
+10 war es, die Fünf-Leiter-Installation innerhalb von 
+Gebäuden von einer Empfehlung in eine normative 
+Bestimmung umzuwandeln, da im Bereich von An-
+lagen im TN-C-System bestimmte Betriebsmittel der 
+Informationstechnik gestört werden können.
+Allerdings muss auch dem Argument Berechtigung 
+eingeräumt werden, dass der Aufwand dafür in 
+bestimmten Anlagen unzumutbar hoch ist, wenn die 
+in diesen Anlagen eingesetzte Informationstechnik 
+entsprechend erhöhte Störfestigkeit aufweist und 
+zusätzliche Maßnahmen gesetzt werden.
+Eine andere Möglichkeit zur Vermeidung von 
+EMV-Problemen ist die Anwendung eines komplexen, 
+
+
+===== PAGE 2/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+eng vermaschten Erdungs-, Potenzialausgleichs- 
+und Blitzschutzsystems. Mit der damit erzielten groß-
+flächigen Aufteilung von Ausgleichsströmen werden 
+EMV-Probleme vermieden (z. B. in Kraftwerken und 
+Anlagen der Industrie).
+Generell gilt, dass sich an den Bestimmungen für 
+Verteilungsnetze inhaltlich nichts geändert hat, 
+da die Abschnitte 10.2.2.2 bis 10.2.2.4 sich aus-
+schließlich auf Verbraucheranlagen beziehen, 
+die in Abschnitt 3.1.10 klar abgegrenzt sind. Das 
+TN-C-System mit Verbindung des PEN-Leiters 
+zur verbraucherseitigen Erdungsanlage wird 
+wegen seiner sicherheits­technischen Vorteile 
+unverändert beibehalten. Innerhalb eines Ob-
+jektes mit eingebauter Netztrafostation oder bei 
+mehreren Anspeisungen aus dem öffentlichen 
+Verteilungsnetz kommt es dabei zu mehrfachen 
+Verbindungen des PEN-Leiters mit der Erdungs-
+anlage des Objektes. Dies ergibt sich aus den 
+Anforderungen der Nullungsverordnung für das 
+öffentliche Verteilungsnetz.
+2.	Interpretationsbedürftige  
+Textabschnitte von  
+ÖVE/ÖNORM E 8001-1/A4:2009
+Hinweis zu den Markierungen im Text:
+Die Schlüsselpassagen sind farblich, durch den Schriftstil 
+kursiv und die Schriftart Times New Roman gekennzeichnet.
+Abschnitt 3.1.7 (elektrisch versorgtes) Objekt
+Bauwerk 
+einschließlich 
+zugehöriger 
+Außenanlagen 
+mit gemeinsamer Versorgungseinrichtung für elek-
+trische 
+Energie 
+(Hausanschluss, 
+Transformator, 
+Generator) und Hauptpotenzialausgleich
+Als Objekt im Sinne dieser Bestimmungen gelten 
+auch Gebäudekomplexe, bestehend aus mehreren 
+Bauteilen, die sowohl gemeinsam mit elektrischer 
+Energie versorgt werden als auch ein gemeinsa-
+mes System für den Hauptpotenzialausgleich auf-
+weisen. Auch elektrische Verbraucheranlagen ohne 
+Gebäude, jedoch mit einem gemeinsamen Anschluss 
+gelten als ein elektrisch versorgtes Objekt.
+Bild 3-6a – Abgrenzung zwischen Verteilungsnetz und elektrischen Anlagen in Objekten – Situation mit 
+einem öffentlichen Verteilernetz
+
+
+===== PAGE 3/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+Abschnitt 3.1.10 Verbraucheranlage
+Gesamtheit aller elektrischen Betriebsmittel innerhalb 
+eines elektrisch versorgten Objekts ab der technischen 
+Grenze des Verteilungsnetzes1) (gemäß Bild 3-6a und 
+Bild 3-6b), ausgenommen die technisch dem Vertei-
+lungsnetz zuzurechnenden Teile des Hausanschlusses
+Im Objekt allfällig vorhandene Stromquellen gehören 
+nicht zur Verbraucheranlage in diesem Sinne.
+Abschnitt 10.1.1, zweiter Absatz
+Innerhalb eines elektrisch versorgten Objekts ist 
+für Neuanlagen die Verwendung eines PEN-Leiters 
+Bild 3-6b – Abgrenzung zwischen Verteilungsnetz und elektrischen Anlagen in Objekten – Situation mit 
+einem betrieblichen Verteilungsnetz
+1) Siehe dazu ÖVE/ÖNORM E 8001-1/A4:2009, Abschnitt 10.2.1, 1. Aufzählungsstrich: Verteilungsnetze unabhängig ihrer Eigentumssituation 
+bis zur ersten Überstrom-Schutzeinrichtung in der ersten Verteilung bei bzw. nach der Nullungsverbindung des zu speisenden Objektes.
+
+
+===== PAGE 4/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+ab dem Anschlusspunkt der Nullungsverbindung nicht 
+mehr zulässig. N- und PE-Leiter müssen ab diesem 
+Punkt als getrennte Leiter ausgeführt werden. Der 
+PEN-Leiter endet am Anschlusspunkt der Nullungs-
+verbindung (siehe Bild 3-6a und Bild 3-6b).
+Abschnitt 10.2.2.1 Erdungsbedingungen für 
+Verteilnetze, Ziffer 1)
+Für derartige (z. B. öffentliche) Verteilungsnetze 
+müssen folgende Bedingungen eingehalten werden:
+Der PEN-Leiter muss in der Nähe der Stromquelle 
+(des Transformators) und nahe den Enden der Netz-
+ausläufer geerdet werden (Betriebserdung). Als Netz-
+ausläufer gelten dabei Abzweige mit einer Länge von 
+mehr als 100 m. In neu zu errichtenden Netzen, an 
+die überwiegend Verbraucheranlagen mit Nullung als 
+Maßnahme des Fehlerschutzes angeschlossen wer-
+den, sind Erdungen an den Enden der Netzausläufer 
+nur dort erforderlich, wo netzseitig Überspannungs-
+Schutzeinrichtungen zum Einsatz kommen.
+Abschnitt 10.2.2.3 Erdungsbedingungen in 
+Verbraucheranlagen mit eigener Stromquelle
+„In Verbraucheranlagen mit einer einzigen Strom-
+quelle (Transformator oder Generator), darf der 
+Sternpunkt nur an einem Punkt geerdet werden (Be-
+triebserdung). Innerhalb des Objektes sind N-Leiter 
+und PE-Leiter getrennt zu führen (TN-S-System).“
+Abschnitt 10.2.2.4 Erdungsbedingungen in 
+Verbraucheranlagen mit mehreren Stromquellen
+ANMERKUNG Physikalische Grundsätze für den Parallel-
+betrieb mehrerer Stromquellen innerhalb eines elektrisch 
+versorgten Objektes siehe Anhang E.
+Abschnitt 10.2.2.4.1 Ausführung mit Stern-
+punkts-Verbindungs-Leitung (SVL)
+Werden innerhalb eines elektrisch versorgten Ob-
+jektes mehrere Stromquellen (z. B. Transformatoren, 
+Generatoren) einzeln oder parallel betrieben, so sind 
+die Sternpunkte dieser Stromquellen vorzugsweise 
+mittels eines Sternpunkt-Verbindungs-Leiters (SVL) 
+(siehe 3.3.3.7) zu verbinden. Dieser Sternpunkt-Ver-
+bindungs-Leiter (SVL) muss an einem einzigen Punkt 
+geerdet werden. Ab diesem Punkt muss die Anlage 
+als TN-S-System errichtet werden (symbolische Dar-
+stellung siehe Bild 10-4). Der PE-Leiter darf beliebig 
+oft zusätzlich geerdet oder mit dem Potenzialaus-
+gleich verbunden werden.
+ANMERKUNG Diese Lösung setzt voraus, dass die Entfer-
+nung zwischen den verschiedenen Stromquellen nicht zu 
+groß ist. Andernfalls kann die Ausschaltbedingung im Feh-
+lerfall wegen zu hoher Schleifenwiderstände nicht oder nur 
+mit hohem Aufwand erfüllbar sein. 
+Abschnitt 10.2.2.4.2 Alternative Ausführung
+Ist aus technischen Gründen eine Ausführung gemäß 
+10.2.2.4.1 nicht sinnvoll realisierbar, so darf die Spei-
+sung des elektrisch versorgten Objektes auf mehrere 
+einzelne Stromquellen oder mehrere Gruppen von 
+Stromquellen mit jeweils separatem SVL aufgeteilt 
+werden, deren Sternpunkte bzw. Sternpunkt-Verbin-
+dungs-Leiter jeder für sich geerdet sind. Eine Zu-
+sammenschaltung dieser Gruppen sollte vermieden 
+werden.
+Hinweis:
+Mit der Elektrotechnikverordnung 2002/A2, BGBL. II 
+Nr. 223 vom 12. Juli 2010 wurde die o. a. ÖVE/ÖNORM 
+(mit Ausnahme des Abschnittes 10.2.2.4) als SNT-
+Bestimmung für verbindlich erklärt. Neue Anlagen 
+sind bereits seit 1. Jänner 2011 dementsprechend zu 
+errichten.
+3.	Erläuterung der einzelnen Absätze
+Mit den nachstehenden Erläuterungen in der Reihen-
+folge der Abschnittsnummerierung soll daher eine 
+Hilfestellung bei der Interpretation der Bestimmungen 
+gegeben werden.
+Zu Abschnitt 1 – Anwendungsbereich
+Dieser Abschnitt wurde mit der Änderung A4 nicht 
+verändert. International sind Anlagen der öffentlichen 
+Stromversorgung vom Geltungsbereich der Publika-
+tionen IEC 60364 bzw. CENELEC HD 60364 ausge-
+nommen, bzw. es ist den Nationalkomitees überlas-
+sen, diesen Bereich sinngemäß in die nationalen Nor-
+men einzubeziehen. Dies ist in Österreich dadurch 
+erfolgt, dass für den Bereich der Verteilungsnetze 
+
+
+===== PAGE 5/8 =====
+5
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+besondere Aussagen getroffen wurden, die von die-
+sen internationalen Normen abweichen (Ausschalt-
+stromfaktor m = 1,6 sowie generelle Anwendung 
+des TN-C-Systems gemäß Nullungsverordnung). Mit 
+diesen Bestimmungen wird vor allem eine deutliche 
+Verringerung der Fehlerspannung bis zum Haus- 
+anschluss sowie ein möglichst flacher Verlauf des 
+Fehlerspannungstrichters außerhalb des Einflussbe-
+reiches der Erdungsanlagen erreicht.
+Zu Abschnitt 3.1.7 und Abschnitt 3.1.9
+Der neue Begriff des „elektrisch versorgten Objekts“ 
+sowie die Neuformulierung von Abschnitt 3.1.9 „Ver-
+teilungsleitung“ waren notwendig, um das Vertei-
+lungsnetz von den sogenannten „Verteilungsleitun-
+gen“ innerhalb der Objekte abzugrenzen, weil für 
+diese Leitungen unterschiedliche Ausschaltbedin-
+gungen festgelegt wurden. Der früher verwendete 
+Begriff „Gebäude“ wurde als unzureichend empfun-
+den, weil auch Außenanlagen einzubeziehen sind. Im 
+Wesentlichen geht es bei den „Objekten“ jedoch um 
+Gebäude und diesen unmittelbar zugeordnete elek-
+trische Anlagen. 
+Obwohl sich aus den Anforderungen, die auf Ver-
+braucheranlagen abzielen, und den zugehörigen 
+Begriffsbestimmungen eine klare Abgrenzung ergibt, 
+bestehen Unklarheiten und Erläuterungsbedarf, wie 
+künftig die Anschlüsse an das Netz für größere Ge-
+bäude und „Gebäudekomplexe“ sowie für Reihenhäu-
+ser und Wohnhausanlagen hergestellt werden sollen. 
+Wegen unterschiedlicher Vorgaben für die technische 
+Ausführung von Anschlüssen an öffentliche Netze 
+werden die Eigentumsgrenzen mit den Netzbetrei-
+bern jeweils vertraglich geregelt, was zu regionalen 
+Unterschieden führt.
+So ist es unverändert zulässig, für eine auf ei-
+ner gemeinsamen Fundamentplatte errichtete 
+Wohnhausanlage mit mehreren Stiegen jede 
+Stiege mit einem eigenen Hausanschluss zu ver-
+sehen und die jeweilige Nullungsverbindung mit 
+der (eventuell gemeinsamen) Erdungsanlage zu 
+verbinden. Gleiches gilt auch für Einfamilien-
+Reihenhäuser.
+Es gibt auch keine sinnvolle Möglichkeit, messtech-
+nisch zu überprüfen, ob die Erdungsanlagen be-
+nachbarter Objekte miteinander eine galvanische 
+Verbindung z. B. über Fernmeldeleitungen, Fernwär-
+meleitungen oder Blitzschutzanlagen u. dgl. haben. 
+In dicht verbauten Gebieten mit eng vermaschten 
+Erdungs- und Potenzialausgleichssystemen spricht 
+man von einem „globalen Erdungssystem“, das als 
+sicherheitstechnisch sehr vorteilhaft gilt.
+Ein Gebäudekomplex, bestehend aus mehreren Bau-
+werken, ist dann ein elektrisch versorgtes Objekt, 
+wenn er nur einen Anschluss an das Netz hat und 
+der Gebäudekomplex einen gemeinsamen, umfas-
+senden Hauptpotenzialausgleich aufweist. 
+Zu Bild 3-6a
+Dieses Bild dient ausschließlich der Verdeutli-
+chung der Abgrenzungen zwischen den verschie-
+denen Anlagenteilen, insbesondere zwischen: 
+a)	 Verteilungsnetzen gemäß Abschnitt 3.1.3,
+b)	 Verteilungsleitungen gemäß Abschnitt 3.1.9 (zu 
+denen nunmehr auch Hauptleitungen gemäß 
+Abschnitt 3.1.10 gehören) sowie
+c)	 Endstromkreisen gemäß Abschnitt  3.1.11.3.
+Ferner ist hier symbolisch dargestellt, dass der PEN-
+Leiter des Verteilungsnetzes nur in das elektrisch 
+versorgte Objekt eingeführt wird und an der Vertei-
+lung mit dem Anschlusspunkt der Nullungsverbindung 
+endet (während bisher ein PEN-Leiter auch weiter in 
+die Anlage geführt werden durfte). Über eine Verbin-
+dung oder Trennung der Erdungsanlagen der einzel-
+nen Objekte sagt das Bild nichts aus.
+Zu Bild 3-6b
+Wie im Bild 3-6b beispielhaft ersichtlich, kann auch 
+ein „betriebliches Verteilungsnetz“ als TN-C- 
+System ausgeführt werden (vorausgesetzt, es sind 
+keine EMV-Probleme zu erwarten). Derartiges wäre 
+beispielsweise in einem Betrieb mit mehreren Gebäu-
+den denkbar, wobei die einzelnen Objekte mit einem 
+Niederspannungs-Verteilungsnetz ähnlich dem eines 
+öffentlichen Netzes versorgt werden.
+
+
+===== PAGE 6/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+In der Trafostation ist wegen des nach außen weiter-
+führenden TN-C-Systems ein Verteiler mit PEN-Leiter 
+vorhanden. Es ist davon auszugehen, dass sowohl 
+die Betriebserdung des Transformators als auch die 
+Nullungsverbindung im unten dargestellten Objekt an 
+das gleiche Erdungssystem (z. B. den Fundament-
+erder) angeschlossen sind. Obwohl dies aus EMV-
+Sicht nicht optimal ist, ist es bei kurzer Entfernung der 
+beiden Anschlüsse vom neutralen Punkt des Sy-
+stems zur Erdungsanlage tolerierbar. Diese Ausfüh-
+rung ist sinngemäß auch anwendbar, wenn diese 
+Trafostation für die öffentliche Versorgung weite-
+rer Objekte genutzt wird.
+Die Frage der Verantwortlichkeit für die Erdungs-
+anlage wird von diesem Bild nicht berührt. Sie ist 
+bei Vorhandensein unterschiedlicher Anlagenbetrei-
+ber ebenso wie Zugangsmöglichkeiten und Instand-
+haltungspflichten in sachlich angemessener Weise 
+vertraglich zu regeln.
+Lassen sich zwischen dem im Bild 3-6b unten darge-
+stellten Gebäudekomplex und dem im Bild 3-6b oben 
+dargestellten Objekt Verbindungen über leitfähige Sy-
+steme, wie z. B. durch Rohrleitungen oder geschirm-
+te Kabel der Informationstechnik, nicht vermeiden, so 
+ist die elektromagnetische Verträglichkeit in diesem 
+Bereich zu gewährleisten.
+Zu Abschnitt 10.2.1.2 – Ausschaltbedingung für 
+Verteilungsleitungen in Verbraucheranlagen und 
+für Endstromkreise mit Überstrom-Schutz- 
+einrichtungen mit einem Nennstrom über 32 A
+Hierzu wird auf die bereits mit der Fachinformation 
+„Korrekturen zu ÖVE/ÖNORM E 8001-1“ vom 2010-
+07-01 erfolgte redaktionelle Korrektur verwiesen, 
+wonach die Anwendung der Ausschaltstromfaktoren 
+als Alternative zur Ermittlung der Ausschaltzeit gilt.
+Es wird darauf hingewiesen, dass die Ausschaltstrom-
+faktoren zum Teil verschärft wurden und auch für 
+Hauptleitungen („Steigleitungen“) gemäß 3.1.9.1 zur 
+Anwendung kommen, für welche bisher die Bedingun-
+gen für Verteilungsnetze angewendet werden durften.
+Zu Abschnitt 10.2.1.3 – Ausschaltbedingung für 
+Endstromkreise bis einschließlich 32 A Nenn-
+strom 
+Hierzu wird auf die bereits mit der Fachinformation 
+„Korrekturen zu ÖVE/ÖNORM E 8001-1“ von 2010-
+07-01 erfolgte redaktionelle Korrektur verwiesen, wo-
+nach die Anwendung der Ausschaltstromfaktoren als 
+Alternative zur Ermittlung der Ausschaltzeit gilt.
+Zu Abschnitt 10.2.2.3 – Erdungsbedingungen  
+in Verbraucheranlagen mit eigener Stromquelle
+Grundsätzlich gehört eine Stromquelle laut Definiti-
+on für die Verbraucheranlage nicht zur Verbraucher-
+anlage. Aus diesem Grund hat die Forderung, dass 
+die Verbraucheranlage nur an einem Punkt geer-
+det werden darf, keine Bedeutung für eine allfällige 
+Betriebserdung des Transformatorsternpunktes am 
+Transformatorstandort. Diese Betrachtungsweise ist 
+aus EMV-Gesichtspunkten zwar physikalisch nicht 
+korrekt, ist aber aus schutztechnischen und abgren-
+zungstechnischen Gesichtspunkten zulässig. Bei be-
+sonders empfindlichen Einrichtungen ist jedoch zu 
+überlegen, die Installation ab dem Transformator als 
+TN-S-System gemäß Abschnitt 10.1.3 auszuführen 
+und wirklich nur einen einzigen Erdungspunkt des 
+Neutralleiters in der gesamten Anlage entweder beim 
+Transformator oder in der Niederspannungshaupt-
+verteilung zu realisieren. 
+Dabei wird darauf aufmerksam gemacht, dass auch 
+das Gehäuse einer Stromquelle angemessen in eine 
+Schutzmaßnahme einbezogen werden muss. Anga-
+ben zur Schutzleiterdimensionierung finden sich in 
+ÖVE/ÖNORM E 8001-1/A5:2010. Für den Schutz-
+erdungsleiter zum Gehäuse einer Stromquelle ist zu 
+beachten, dass die Querschnitte gemäß Tabelle 21 in 
+Abhängigkeit von der Abschaltzeit unter Umständen 
+nicht ausreichen und daher nach Abschnitt 21.3.1.1 
+zu ermitteln sind.
+Zu Abschnitt 10.2.2.4 – Erdungsbedingungen in 
+Verbraucheranlagen mit mehreren Stromquellen
+Dieser aus IEC 60364-4-444 abgeleitete Abschnitt 
+befasst sich mit Maßnahmen zur Verbesserung der 
+
+
+===== PAGE 7/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+EMV durch Vermeidung von Ausgleichsströmen, 
+welche in konventionell im TN-C-S-System ausge-
+führten Anlagen durch mehrere Erdungspunkte an 
+den verschiedenen Stromquellen verursacht wer-
+den. Es wird darauf hingewiesen, dass noch wei-
+tere Maßnahmen zur Verbesserung der EMV für 
+informationstechnische 
+Anlagen 
+erforderlich 
+sein können (z. B. bestimmte Verlegetechniken 
+und Abschirmmaßnahmen). Ein diesbezügliches 
+CENELEC-Harmonisierungsdokument ist zwischen-
+zeitlich erschienen. Dessen Umsetzung steht jedoch 
+noch aus.
+Gemäß Abschnitt 10.2.2.4.1 ist die Anlage vorzugs-
+weise gemäß Bild 10-4 bzw. Bild 10-5 auszuführen. 
+Diese Anforderung lässt daher Alternativen zu. Eine 
+Alternative ist in Abschnitt 10.2.2.4.2 angeführt. In 
+diesem Absatz wird beschrieben, dass die Speisung 
+der Anlage auf mehrere einzelne Stromquellen oder 
+mehrere Gruppen von Stromquellen mit jeweils einer 
+zugehörigen Erdungsverbindung des Neutralleiters 
+aufgeteilt werden kann. Eine Zusammenschaltung 
+der Gruppen soll vermieden werden, ist jedoch nicht 
+ausgeschlossen. Ein Verbot stellt diese Anforderung 
+daher nicht dar.
+Daraus ergeben sich unter Berücksichtigung der 
+EMV weitere Möglichkeiten. Ein Patentrezept kann 
+derzeit nicht gegeben werden. Es ist davon auszuge-
+hen, dass der international empfohlene Verzicht auf 
+eine Mehrfacherdung des neutralen Punktes in Anla-
+gen mit hoher Leistung doch zu einer deutlichen Re-
+duzierung der Ströme auf den Schutzleitern und da-
+mit der elektromagnetischen Beeinflussungen führt. 
+Andererseits scheint eine Forderung nach weniger 
+sensiblen Betriebsmitteln der Informationstechnik, 
+d. h. nach Betriebsmitteln, die für den Einsatz in rau-
+er EMV-Umgebung geeignet sind, nicht unberech-
+tigt zu sein. Weniger empfindliche Technologien für 
+die Datenübertragung sind heute bereits verfügbar 
+(siehe 
+ÖVE/ÖNORM 
+EN 
+61000-6-1 
+und 
+ÖVE/ÖNORM EN 61000-6-2). 
+Folgende Alternativen sind denkbar:
+a)	 Für Anlagen ohne empfindliche Informationstech-
+nik oder mit ausreichend störfester Informations-
+technik kann die  bisherige Lösung eines TN-C-S-
+Systems ausgeführt werden. Im TN-C-Teil dieser 
+Anlagen lassen sich die Stromquellen jeweils un-
+mittelbar an den Sternpunkten erden und paral-
+lel schalten, wobei vor allem durch Schieflasten 
+verursachte Ausgleichsströme über das Erdungs- 
+und Potenzialausgleichssystem in Kauf genom-
+men werden.
+b)	 Es werden – auch im Hinblick auf die zu beherr-
+schende Kurzschlussleistung – mehrere kleinere 
+Stationen mit jeweils nur einer Stromquelle ge-
+mäß Abschnitt 10.2.2.4.2 errichtet, welche jeweils 
+nur die ihnen zugeordneten Verbraucherstrom-
+kreise versorgen und nicht parallel betrieben wer-
+den. Eine Umschaltung zwischen den Stations- 
+bereichen erfolgt ausschließlich vierpolig und mit 
+kurzer Unterbrechung.
+Kommt die vorzugsweise Ausführung entsprechend 
+Abschnitt 10.2.2.4.1 zur Anwendung, so wird auf 
+nachstehende Details hingewiesen, die bereits bei 
+der Planung der baulichen und elektrischen Anlagen 
+zu berücksichtigen sind:
+• Bei der Konzeption der Gebäude ist darauf zu 
+achten, dass alle (auch nur kurzzeitig) paral-
+lel zu betreibenden Stromquellen möglichst 
+nahe beieinander und möglichst nahe bei der 
+Hauptverteilung angeordnet werden. Dies gilt 
+auch für Ersatzstromanlagen.
+• Der Kessel der einspeisenden Transformatoren 
+ist durch eine Schutzmaßnahme mit automati-
+scher Abschaltung ordnungsgemäß zu schützen. 
+Dazu ist ein entsprechender Primärschutz mit 
+kurzer Ausschaltzeit erforderlich, der notfalls über 
+Leistungsschalter realisiert werden muss. Er-
+folgt der Primärschutz durch HH-Sicherungen, 
+so muss gewährleistet sein, dass diese so rasch 
+ausschalten, dass der ausgewählte Schutz- 
+erdungsleiter zum Trafokessel nicht überlastet 
+wird. Dabei ist im Falle einer Schaltung gemäß 
+Bild 10-5 der komplexe Widerstand der Fehler-
+schleife vom Trafokessel über den Schutzerdungs-
+leiter, die Schutzleiterschiene und den SVL zurück 
+zum Sternpunkt zu berücksichtigen. Die Regel, 
+dass der halbe Querschnitt eines Außenleiters für 
+
+
+===== PAGE 8/8 =====
+
+Ausgabe November 2011                 
+                                                         
+www.ove.at
+den Schutzerdungsleiter jedenfalls ausreicht, gilt 
+in diesem speziellen Fall nicht. Auch der indukti-
+ve Widerstand der Fehlerschleife ist jedenfalls 
+zu berücksichtigen. 
+• Das Gehäuse eines Generators muss geschützt 
+und der zu diesem führende Schutzleiter aus-
+reichend dimensioniert sein. Dazu kann es not-
+wendig sein, einen vierpoligen Generatorschal-
+ter zu verwenden, der vom Generatorschutz 
+unverzögert ausgelöst wird. Durch einen hierfür 
+geeigneten Schaltkontakt im SVL wird dabei der 
+Fehlerstromkreis vom Generatorgehäuse über 
+den Schutzerdungsleiter, die Schutzleiterschie-
+ne und den SVL zurück zum Sternpunkt rasch 
+unterbrochen, wodurch eine geeignete Dimen-
+sionierung des Schutzerdungs­leiters möglich 
+wird. Auch in diesem speziellen Fall gilt die Re-
+gel nicht, dass der halbe Querschnitt eines Au-
+ßenleiters für den Schutzerdungsleiter jedenfalls 
+ausreicht. Auch der induktive Widerstand der 
+Fehlerschleife bei einem Fehler der Stromquelle 
+zu deren Gehäuse ist zu berücksichtigen.
+• Die Ausschaltbedingungen gemäß den Abschnit-
+ten 10.2.1.2 bis 10.2.1.4 sind für jeden vorher-
+sehbaren Betriebszustand, auch bei Betrieb der 
+Ersatzstromanlage(n), sicher zu stellen.
+• Durch eine geeignete Auswahl von Schienen und 
+Kabeln sowie deren induktionsarmer Verlege- 
+anordnung sind induzierte Ströme auf den Schutz­
+erdungs- und Schutzpotenzialausgleichsleitern zu 
+minimieren.
+Ergänzend wird auf die Europanormen  
+ÖVE/ÖNORM EN 50310 und 
+ÖVE/ÖNORM EN 50174 hingewiesen.

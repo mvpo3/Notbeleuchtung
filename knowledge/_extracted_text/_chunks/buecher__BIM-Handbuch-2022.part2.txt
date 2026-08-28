@@ -1,0 +1,1528 @@
+
+
+===== PAGE 81/348 =====
+80
+Richtig Modellieren
+Positionierung des Modells	
+Solange alle in ein und demselben Modell 
+arbeiten, gibt es logischerweise nur eine Positio-
+nierung, die für alle gleich ist. In den meisten Fäl-
+len besteht ein BIM-Modell aber nicht aus einem 
+einzigen Modell, zu dem alle Beteiligten Zugriff 
+haben, sondern es wird durch Überlagerung der 
+Teilmodelle der einzelnen Fachplaner:innen zu-
+sammengesetzt. Zwingende Voraussetzung beim 
+Überlagern ist die absolut korrekte Positionie-
+rung, nur dann funktionieren typische BIM-Funk-
+tionalitäten, wie beispielsweise eine Kollisions-
+prüfung. Abgesehen davon, sollte das Bauwerk 
+aber auch noch an der richtigen Stelle gebaut 
+werden. Besonders beim erstmaligen Überlagern 
+sollte man hier große Sorgfalt walten lassen.
+Nullpunkte Projektbasispunkt 
+Aus der CAD-Planung kennen wir schon zwei 
+Koordinatensysteme: das Weltkoordinatensystem 
+(WKS) und das Benutzerkoordinatensystem (BKS). 
+Wie jedes Koordinatensystem haben diese natür-
+lich auch ihre Nullpunkte. Dabei liegt das BKS auf 
+dem WKS. Über den Nullpunkt des BKS wird das 
+Projekt im WKS georeferenziert. In BIM-Projekten 
+ist der Projektbasispunkt der zentrale dreidimen-
+sionale Nullpunkt eines jeden Projektes (Modell-
+ursprung). Je nach Modelliersoftware wird dieser 
+auf unterschiedliche Weise im Koordinatensystem 
+des jeweiligen Landes (Gauß-Krüger-Koordinaten-
+system) georeferenziert. „Mit dieser Georeferenz 
+ist es später dann möglich, den Einfügepunkt auf 
+der Baustelle real einzumessen.“82
+Normalnull 
+Etwas differenzierter müssen wir noch die 
+Georeferenzierung des Projektbasispunktes be-
+züglich der Höhe betrachten. Die geographische 
+Höhe wird in Meter über Meer angegeben. Das 
+bedeutet, dass der Projektbasispunkt innerhalb 
+des Projektes meist mit 0,00 m angesetzt wird. 
+Dieser Punkt weist im Landeskontext aber gleich-
+zeitig auch eine Höhe über dem sogenannten 
+Normalnull von beispielsweise 353 m auf. Dieses 
+Normalnull bezieht sich meist auf die mittlere 
+Höhe des Meeresspiegels, nur leider wird dieses 
+in fast jedem europäischen Land unterschiedlich 
+definiert. In Österreich spricht man bei Normal-
+null von „Meter über Adria“. 
+82	 BIM Workbook CK.
+
+
+===== PAGE 82/348 =====
+81
+Positionierung des Modells
+Praxistipp
+Wie lege ich den Projektbasispunkt an?
+Wenn möglich, sollte der Projektbasispunkt 
+zu Projektbeginn genau auf den internen Null­- 
+punkt der Modelliersoftware gelegt werden, um 
+Verwechslungen zu vermeiden. Da beispielsweise 
+DWG-Dateien keinen Projektbasispunkt besitzen, 
+werden diese gerne mit ihrem Ursprung (Null- 
+punkt des BKS) auf dem internen Ursprung der 
+jeweiligen BIM-Software positioniert. 
+„Wenn also der Projektbasispunkt mit dem 
+internen Ursprungspunkt übereinstimmt und 
+diese Position als gemeinsamer Nullpunkt für 
+den Austausch bestimmt wurde, hat man am 
+wenigsten Arbeit bzw. Fehlerquellen.“83
+Zudem sollte der Projektbasispunkt nahe 
+am Bauwerkmodell liegen. Eine weit entfernte 
+Position erfordert eine erhöhte Rechenleistung 
+und verursacht damit eventuell Einbußen 
+be­züglich der Softwareperformance, bei 
+extremen Ent­fernungen könnte es sogar zu 
+Fehlern kommen. 
+Günstig wäre auch, wenn der Projektbasis-
+punkt links unterhalb des Bauwerks liegt, so dass 
+das Bauwerk im „positiven“ Bereich der XY-Achsen 
+liegt. Oft wird der Projektbasispunkt auch auf den 
+Kreuzungspunkt der Achsen A-A und 1-1 gelegt. 
+Die Position sollte leicht und unmissverständlich 
+zu beschreiben sein. Geeignete Beispiele wären 
+also ein Achsenschnittpunkt, die linke untere Ecke 
+des Bauwerks oder eine Ecke der Grundstücks-
+grenze.  
+Nullpunkt X/Y, absolut 
+XX° AA‘ BB,CC‘‘ / YY° AA‘ BB,CC‘‘
+Nullpunkt Höhe 
++ 0,00 m über Meer
+Projektbasispunkt 
+DIFF XX, DIFF YY, DIFF ZZ
+Tabelle 1: Vorschlag für Angabe Nullpunkt und Projektbasispunkt in AIA bzw. BAP
+83	 Autodesk Leitfaden, S. 7.
+
+
+===== PAGE 83/348 =====
+82
+Richtig Modellieren
+Im Vergleich zu Deutschland, das sich auf 
+den Pegel in Amsterdam bezieht, kann es hier 
+schnell einmal zu einem Unterschied von 33 cm 
+kommen. Einigt man sich bei grenzüberschrei-
+tenden Infrastrukturprojekten nicht auf ein 
+gemeinsames Normalnull, könnte dies zu er­
+heblichen Problemen führen!
+https://de.wikipedia.org/wiki/Höhe_über_dem_
+Meeresspiegel
+Während es beim CAD durchaus vorkommen 
+kann, dass in einem Projekt mehrere BKS auf dem 
+WKS liegen, gibt es bei BIM-Projekten nur einen 
+Projektbasispunkt, welcher zu Projektbeginn 
+festgelegt wird. Oft passiert dies automatisch 
+über die Datei der Architektur oder des General-
+planers. Die nachfolgenden Fachplanungen ver-
+linken zu Beginn ihrer Arbeit als Erstes die Archi-
+tektendatei und schon haben sie den gleichen 
+Nullpunkt und die gleiche Nordung. Dieser Null-
+punkt und seine Nordung sollten im Laufe des 
+Projektes unter keinen Umständen mehr ge­
+ändert werden.
+Nordung
+Natürlich muss neben der Festlegung des 
+Nullpunktes das Projekt auch noch eingenordet 
+werden. 
+Durch das Einfügen der Daten des Vermes-
+sers ist der reale Norden (geografischer Norden) 
+recht schnell ersichtlich. In fast allen Projekten 
+wird aber nicht im geografischen Norden ge­
+arbeitet, sondern im sogenannten Projektnorden. 
+Für den Projektnorden wurde die Sicht auf das 
+Projekt so gedreht, dass möglichst viele Wände 
+orthogonal liegen. Dies erleichtert zwar das Mo-
+dellieren, stellt aber auch eine mögliche Fehler-
+quelle dar. 
+Der Unterschied der beiden Ansichten lässt 
+sich über Drehpunkt (im Idealfall auch der Pro-
+jektbasispunkt) und Winkel definieren. Die Daten 
+für den Projektbasispunkt und den Winkel zwi-
+schen geografischem Norden und Projektnorden 
+sollten unbedingt im BAP (BIM-Abwicklungsplan) 
+festgehalten werden.
+
+
+===== PAGE 84/348 =====
+83
+Positionierung des Modells
+Praxistipp
+Koordinationskörper
+Um ganz sicher zu gehen, dass alle Modelle 
+richtig positioniert sind, kann man zu Beginn der 
+Planung an alle Beteiligten eine Koordinations-
+datei mit Nullpunkt, Nordung und eventuell schon 
+dem Raster verteilen. Am Nullpunkt der Datei 
+kann sich zusätzlich noch ein Koordinationskörper 
+befinden. Dieser hat meist die Form einer Pyramide 
+mit quadratischer Grundfläche, die Spitze der 
+Pyramide liegt auf dem Nullpunkt, die quadrati-
+sche Grundfläche folgt der Nordung des 
+Projektes. Beim Zusammenführen diverser Teilmo-
+delle kann man schnell optisch kontrollieren, ob 
+die einzelnen Pyramiden übereinanderliegen. Ein 
+ent­sprechendes Beispiel für eine Datei mit 
+Testkörper und Dokumentation kann hier 
+heruntergeladen werden:
+ Abbildung 16: Beispiel eines Koordinationskörpers von Autodesk84 
+84	 Vgl. Autodesk Leitfaden, S. 8, Original unter http://www.vrame.com/ know-how/empfehlungen/.
+
+
+===== PAGE 85/348 =====
+84
+Richtig Modellieren
+Vertikale Gliederung	
+Hat man sich bezüglich der horizontalen 
+Positionierung festgelegt, stellt sich gleich die 
+nächste wichtige Frage: Wie gliedert man nun 
+das Modell vertikal? 
+Hier gilt es, sich am genormten IFC-Schema 
+zu orientieren. Die vertikale Verortung im IFC-
+Schema gliedert das Modell eindeutig nach 
+einzelnen Geschossen.
+Einteilung nach Geschossen  
+Geschosse (IfcBuildingStorey) werden  
+durch Ebenen gebildet. In den meisten Modellier-
+softwareprodukte bildet jede Ebene (nicht 
+Referenzebene) automatisch ein neues 
+Geschoss. In diesen Anwendungen sollte auch 
+nur eine Ebene pro Geschoss modelliert werden.
+Die Denkstruktur in Geschossen zieht sich 
+durch das komplette IFC-Modell. Fast alle Objekte 
+werden über den Einfügepunkt einem Geschoss 
+zugewiesen, Geschosse bilden die Grundlage für 
+die Grundrisse. 
+Die Bauablaufplanung (beispielsweise 
+Betonierabschnitte) beruht ebenso auf den Ge-
+schossen wie die Nomenklatur von Räumen und 
+Türen.
+IFC-Verortungsstruktur Hochbau
+https://standards.buildingsmart.org/IFC/DEV/IFC4_3/RC1/HTML/schema/ifcproductextension/lexical/
+ifcbuildingstorey.htm
+
+
+===== PAGE 86/348 =====
+85
+Vertikale Gliederung
+Nun stellt sich die Frage, welche Lage der 
+Ebene eignet sich als Geschoss-Null. Die 
+Architektur denkt hier anders als die Statik. So 
+bezieht sich die Architektur in gewohnter Weise 
+(z.B. Brüstungshöhen, Räume) auf die Oberkante 
+Fertigfußboden (OK FB), während die Statik meist 
+in einer Tragwerksebene in der Schwerlinie zwi-
+schen Oberkante Rohdecke (OK RD) und Unter-
+kante Rohdecke (UK RD) rechnet. 
+Lange Zeit verwendeten in der BIM-Planung 
+die Objekttypen mal die „Fertigdecke“, mal die 
+„Rohdecke“. Nicht zuletzt wegen der IFC-Struktur 
+hat es sich aber durchgesetzt, als geschoss­
+bildende Ebene die Oberkante Rohdecke projekt-
+übergreifend zu verwenden. Das ist auch für die 
+Gebäudetechnik wichtig. Wäre die Ebene auf OK 
+Fußboden, wären alle Leitungen und Rohre im 
+Fußboden dem darunterliegenden Geschoss 
+zugeordnet. 
+In Revit besitzen die Ebenen ein zusätzliches 
+Attribut, das „Gebäudegeschoss“. 
+Nur wenn dieses angekreuzt ist, bildet die 
+Ebene eine neue IfcBuildingStorey. Dies ist sehr 
+hilfreich, da wir uns pro Geschoss eigentlich 
+weitere Ebenen zum genauen Modellieren wün-
+schen. Es wird also zwischen Geschossebenen 
+(IfcBuildingStorey) und Modellierebenen unter-
+schieden. Ist eine Attributierung der Ebene nicht 
+möglich, kann man sich auch mit Referenz­
+ebenen zum Ausrichten der Objekte behelfen. 
+Da sich ein BIM-Modell oftmals aus der Über-
+lagerung der Fachmodelle ergibt, kann man auch 
+durchaus erwägen, die einzelnen Ebenen der Ver-
+antwortlichkeit den jeweiligen Fachprojektanten 
+zuzuweisen. So wäre es durchaus sinnvoll, die 
+Modellierebene Unterkante abgehängte Decke 
+(UK AD) im Teilmodell des Haustechnikers 
+anzulegen.
+ Abbildung 17:  Verortungsstruktur im IFC-Dateiformat85 
+85	 Vgl. Autodesk, Revit IFC Handbuch, S. 9.
+
+
+===== PAGE 87/348 =====
+86
+Richtig Modellieren
+
+Abbildung 18:  
+OKRD als geschoss- 
+bildende Ebene
+
+Abbildung 19:  
+Geschosseinstellungen 
+am Beispiel des 
+Starttemplates 
+von Archicad 1486
+86	 01 Archicad 24 Template (A) aus der Software Grafisoft.
+
+
+===== PAGE 88/348 =====
+87
+Vertikale Gliederung
+Praxistipp
+Projektübergreifend sollten sich von Anfang 
+an alle Beteiligten auf die Oberkante Rohdecke 
+(OK RD) als geschossbildende Ebene einigen.  
+Die weiteren Modellierebenen können dann je 
+nach Bedarf nur in den jeweiligen Fachmodellen 
+erstellt werden.
+Abkürzung
+Geschoss
+Ebene
+OG02_OKFF
+2. Obergeschoss
+Oberkante Fertigfußboden
+OG02_OKRD
+2. Obergeschoss
+Oberkante Rohdecke (geschossbildend) 
+OG01_UKRD
+1. Obergeschoss
+Unterkante Rohdecke
+OG01_OKFF
+1. Obergeschoss
+Oberkante Fertigfußbodenlage
+OG01_OKRD
+1. Obergeschoss
+Oberkante Rohdecke (geschossbildend)
+EG01_UKRD
+Erdgeschoss
+Unterkante Rohdecke
+EG01_UKAD
+Erdgeschoss
+Unterkante abgehängte Decke
+EG01_OKFF
+Erdgeschoss
+Oberkante Fertigfußboden
+EG01_OKRD
+Erdgeschoss
+Oberkante Rohdecke (geschossbildend)
+UG01_UKRD
+1. Untergeschoss
+Unterkante Rohdecke
+UG01_OKFF
+1. Untergeschoss
+Oberkante Fertigfußboden
+UG01_OKFU
+1. Untergeschoss
+Oberkante Fundament (geschossbildend)
+Tabelle 2:  Benennungsvorschlag Geschosse Ebenen
+Im Idealfall sollten Wände nicht über 
+Geschosse hinwegreichen. Sie sollten immer 
+geschossweise unterteilt werden. Dies erfordert 
+eventuell einen geringfügigen Mehraufwand, um 
+in den Ansichten über die Funktion „Verbinden“ 
+die geschossweisen Trennlinien aufzuheben. 
+Dafür ergeben sich viele Vorteile in der weiteren 
+Bearbeitung und Auswertung. 
+So ist es dann ein Leichtes, die Betonmenge 
+für ein einzelnes Geschoss zu ermitteln und 
+daraus einen entsprechenden Bauzeitplan 
+abzuleiten. 
+
+
+===== PAGE 89/348 =====
+88
+Richtig Modellieren
+Damit dies auch reibungslos gelingt, muss 
+man beim Modellieren auch noch richtig mit 
+dem möglichen Versatz entlang der Z-Achse 
+umgehen. 
+Also niemals den Einfügepunkt OK RD EG0 
+ Abbildung 20: Richtige Zuweisung zum Geschoss ohne Versatz87 
+87	 Richtige Zuweisung zum Geschoss ohne Versatz.
+mit einem Versatz von 3m wählen, sondern 
+gleich den Einfügepunkt ins richtige Geschoss 
+setzen – also OK RD OG1 und ohne Versatz.
+
+
+===== PAGE 90/348 =====
+89
+Vertikale Gliederung
+Umgang mit uneinheitlichen 
+Geschossen  
+Eine generelle Lösung hierfür gibt es nicht. 
+Oft kann aber durch eine Aufteilung des Bau­
+werkes in „Bauabschnitte“ ein großer Teil der 
+Probleme gelöst werden. Die Festlegung der 
+Geschosse bei Splitlevels oder bei Hangbauten  
+ist oft auf den ersten Blick fast nicht möglich.  
+So kann es passieren, dass die Geschossebene  
+OK RD OG1 die Wände des hangaufwärts ge­
+legenen EG-Halbgeschosses halbiert. Die untere 
+Hälfte wird dem EG zugeteilt und die obere dem 
+OG1.
+Eine mögliche Strategie wäre die Untertei-
+lung in zwei Modelle, ein Modell über dem Basis­
+geschoss und ein Modell für die Zwischen­
+geschosse. Bei Bedarf kann man zwischendurch 
+die beiden immer wieder in eine Koordinations-
+datei einspielen und anpassen.
+ Abbildung 21: Mögliche Geschosseinteilung bei Hangbauten über zwei Gebäude88 
+88	 Vgl. http://standards.buildingsmart.org/.
+
+
+===== PAGE 91/348 =====
+90
+Richtig Modellieren
+Verortung im Infrastruktur­
+bereich  
+Im Infrastrukturbereich sind die Dimensio-
+nen meist deutlich größer als beispielsweise im 
+Hochbau. Infrastrukturprojekte spielen sich meist 
+nicht mehr in einem kartesischen Koordinaten-
+system rund um einen Projektbasispunkt ab. Sie 
+beziehen sich auf das Gauß-Krüger-Koordinaten-
+system und denken in der GIS-Welt. Eine grund-
+sätzliche Verortung nach Geschossen wie im 
+Hochbau ergibt keinen Sinn. Die Verortung ist 
+mehr linien- oder oberflächenbasiert, was im  
+IFC 2x3 noch nicht vorgesehen ist.
+Zu Beginn der BIM-Entwicklung wurde der 
+Infrastrukturbereich leider völlig vernachlässigt, 
+erst mit IFC4 kamen hierfür schrittweise erste 
+BIM-Standards. So ist es schon möglich, mit IFC4.1 
+und IFC4.2 Infrastrukturprojekte umzusetzen. 
+Beispielsweise wurde mit IFC4.1 die Terrassierung 
+und das Alignement eingeführt. So richtig „rund“ 
+wird es wohl erst mit der Umsetzung von IFC4.3 
+oder IFC5 laufen, denn ab dann wird es viele 
+eigene Erweiterungen für IFC-Road, IFC-Rail,  
+IFC-Bridge und IFC-Tunnel geben.
+
+
+===== PAGE 92/348 =====
+91
+Vertikale Gliederung
+ Abbildung 22:  Ausblick auf die Neustrukturierung des IfcSpatialStructureElement (Verortungsstruktur) in 
+IFC4.389 
+89	 Eichler, C. C. et al., BIMcert Handbuch – Grund­lagenwissen open BIM, S. 69.
+
+
+===== PAGE 93/348 =====
+92
+Richtig Modellieren
+Bezüge 
+Beim Modellieren soll jedes Objekt bewusst 
+und kontrolliert einer ganz bestimmten Position 
+zugewiesen werden. Diese Position muss keine 
+absolute Position im Koordinatensystem sein.  
+Im Gegenteil, sehr oft ist dies auch eine ein­
+deutige Position in Bezug auf übergeordnete 
+Objekte, Linien oder Flächen. Typische Bezüge 
+sind Rasterlinien, Ebenen und Grundstücks­
+grenzen. Im weitesten Sinne kann man aber  
+auch ganz einfach ein anderes Objekt wie eine 
+Geschossdecke oder eine Wand als Bezug ver­
+stehen. Das einzufügende Objekt wird erstellt,  
+indem dessen Einfügepunkt bzw. dessen Ein­
+fügelinie (auch Referenz- oder Basislinie genannt) 
+am jeweiligen Bezug fixiert wird.
+Wie sollte nun die Verbindung zu einem Be-
+zug gewählt werden? Da die Bezüge zu Projekt-
+beginn festgelegt werden, ist noch mit einigen 
+Anpassungen der Dimensionen zu rechnen.  
+Das Objekt sollte so am Bezug orientiert sein, 
+dass eine Änderung möglichst keine neuen Feh-
+ler hervorruft. Ganz einfach ist es allerdings nicht 
+mit der Wahl der richtigen Bezüge. Aus den ver-
+schiedenen Sichtweisen der jeweiligen Fach­
+richtung werden sehr unterschiedliche Bezüge 
+bevorzugt. Generell sollten Bezüge nur innerhalb 
+des eigenen Modells und zu anderen verknüpf-
+ten Fachmodellen erstellt werden. 
+So wird aus statischer Sicht immer gerne die 
+Mittelachse gewählt (Lastabtragung). Bei einer 
+Querschnittsveränderung wird diese auf beiden 
+Seiten der Einfügelinie gleich geändert, wodurch 
+die Lastabtragungsachse immer in der Mitte 
+bleibt. Bei Außenwänden, die sich in den oberen 
+Geschossen verschlanken, ist die Bezugslinie 
+schon schwieriger zu definieren. Da das Gebäude 
+normalerweise von oben bis unten an der Fassa-
+de eben verläuft, werden die unterschiedlichen 
+Wandstärken nach innen aufgetragen. Als Kon­
+sequenz liegen dann auch die statischen Mittel-
+achsen nicht mehr übereinander. 
+Aus Sicht der Architektur soll beispielsweise 
+genau an der Grundstücksgrenze gebaut werden, 
+also die Einfügeachse der Wand am Rand dieser 
+liegen und exakt auf dem Bezug der Grenzlinie 
+fixiert werden. Bei einer Änderung der Wand­
+stärke würde diese dann immer ins Grundstück 
+hinein variieren, während das Gebäude exakt an 
+der Grundstücksgrenze bleibt.
+In der Haustechnik wählt man meist die UK 
+RD oder die abgehängte Decke als Bezugsebene. 
+Modelliertechniken	
+
+
+===== PAGE 94/348 =====
+93
+Modelliertechniken
+Entscheidend ist der Abstand der Kanäle 
+bzw. Leitungen zu diesen Bezügen. Da in der 
+haustechnischen Planung erst einmal mit einer 
+zentralen Entwurfslinie begonnen wird, lässt sich 
+bei einigen Softwareprodukten leider nur die 
+Mittelachse des haustechnischen Objekts in Be-
+zug zur entsprechenden Ebene setzen. Dies kann 
+bei Dimensionsvergrößerungen schnell zu Kolli-
+sionen führen, da die Oberkante dann in die De-
+cke hineinreichen würde. Hier muss die Haus-
+technik also noch die halbe Kanal- oder 
+Rohrdimension addieren.
+Objekt als Bezug 
+Nicht nur abstrakte Linien und Flächen kön-
+nen als Bezug fungieren, auch ein BIM-Objekt 
+kann den Bezug für ein anderes BIM-Objekt dar-
+stellen. So wird jede Tür und jedes Fenster in Be-
+zug auf eine Wand positioniert. 
+Datentechnisch gesehen, steht ein Objekt 
+der Klasse Wand in Kompositionsbeziehung zur 
+Klasse Fenster; praktisch gesehen, hat das Fens-
+terobjekt einen Einfügepunkt, welcher an einem 
+bestimmten Punkt in der Wand liegt. Wird dann 
+beispielweise die Wand verschoben, verschiebt 
+sich das Fenster mit. Innerhalb der Wand bleibt 
+das Fenster an der gleichen Position. Nach dem 
+gleichen Prinzip wird auch eine Dachgaube auf 
+dem Dach positioniert.
+Raster
+Grundsätzlich bieten Raster optimale Bezüge 
+für das Modellieren. Es wäre daher zweckmäßig, 
+wenn das Raster von Beginn an im Modell ist.  
+In der üblichen Entwurfspraxis einigt man sich 
+allerdings erst zu einem späteren Zeitpunkt auf 
+ein Raster, sodass dieses üblicherweise im Modell 
+nachgepflegt wird. Dies wiederum hat zur Folge, 
+dass nicht alle Objekte einen Bezug zum Raster 
+aufweisen. Bei Objekten, die nicht in einem Be-
+zug gebunden sind, besteht die Gefahr, dass Sie 
+bei späteren Änderungen des Bezugs vergessen 
+werden. Sobald das Raster festgelegt ist und im 
+Modell eingepflegt wurde, sollten die Raster­
+linien, genauso wie Projektbasispunkt und Nor-
+dung, im Projektverlauf nicht mehr geändert 
+werden. 
+Kapitel 4, S. 182  
+ 
+  
+Klassen
+„Wir modellieren so, wie gebaut wird.“ 
+DI (FH) CHRISTOPH C. EICHLER90 
+90	 Eichler, C. C. et al., BIMcert Handbuch – Grund­
+lagenwissen open BIM, S. 115.
+
+
+===== PAGE 95/348 =====
+94
+Richtig Modellieren
+Falls nötig, können weitere Rasterlinien er-
+gänzt werden.
+Dynamisches Modellieren
+Im Gegensatz zu CAD bietet BIM den Vorteil, 
+dynamisch modellieren zu können. Die Grund­
+lage dazu stellen Bezüge dar. Durch sie kann ein 
+Modell sowohl horizontal als auch vertikal wie 
+eine Ziehharmonika zusammen- oder auseinan-
+dergeschoben werden. Legt man ein Modell ent-
+sprechend sauber und intelligent an, kann man 
+durch die Änderung eines Bezuges mit einem 
+einzigen Klick alle Objekte, die sich an diesem 
+Bezug orientieren, anpassen. Vertikale Bezüge 
+können über die einzelnen Modellierebenen er-
+stellt werden, während sich horizontale Bezüge 
+zum Beispiel über das Raster herstellen lassen.
+Ändert sich beispielsweise die Stärke der Ge-
+schossdecke im Laufe genauerer Berechnungen, 
+muss man nicht mehr jede einzelne kleine Wand 
+in ihrer Höhe mühsam nachjustieren. Durch ent-
+sprechendes Verschieben der Modellierebene  
+UK RD werden alle Wände und Ausbauelemente 
+automatisch angepasst, vorausgesetzt, die obere 
+Abhängigkeit der Wände wurde an die UK RD 
+geknüpft. Das dynamische Modellieren bietet 
+damit nicht nur eine enorme Reduktion des 
+Arbeitsaufwands im Falle von Änderungen;  
+es ermöglicht auch eine große Flexibilität im 
+Planungsprozess.
+Das dynamische Modellieren beruht auf 
+Parametern. Diese stellen eine spezielle Aus­
+prägung von Attributen dar. Mit Hilfe von Para-
+metern wird ein Modell dynamisch gesteuert. 
+Beim Entwerfen geht die hohe Kunst des Model-
+lierens dahin, einen besonders intelligenten und 
+variablen Algorithmus (generatives Design) aus-
+zutüfteln. Dieser hält durch geschicktes Fixieren 
+und Verteilen entlang einer durch Bezüge ge­
+gliederten Strecke mehrere Entwurfsoptionen  
+im Projektverlauf offen. Die verschiedenen 
+Entwurfsoptionen können dann mit diversen 
+Simulationssoftwares verglichen werden.
+Modellierregeln 
+Leider ist es durch individuell unterschied-
+liche Modelliermethoden und -regeln leicht 
+möglich, divergierende Fachmodelle zu erhalten. 
+Diese Unterschiede können beim Zusammen­
+setzen der Fachmodelle oder im weiteren Verlauf 
+ 
+ YouTube 
+Channel
+Ziehharmonika- 
+prinzip 
+
+
+===== PAGE 96/348 =====
+95
+Modelliertechniken
+des BIM-Projektes schnell zu Problemen führen. 
+Mit Hilfe eines Modellierleitfadens soll zum einen 
+eine praxisnahe Arbeitsweise und zum anderen 
+ein durchgängiger Nutzen der jeweiligen Model-
+le gewährleistet werden. Mit den richtigen Mo-
+dellierregeln ist die Chance einer durch­gehenden 
+Nutzung des Fachmodells deutlich höher. 
+Wer erstellt nun diese Modellierleitfäden 
+oder Richtlinien? Zum einen bieten die meisten 
+Hersteller von Modelliersoftware einen Model-
+lierleitfaden an. Dieser ist zwar sehr hilfreich be-
+züglich des effizienten Modellierens innerhalb 
+der Software, man muss aber stets bedenken, 
+dass in diesem auch die entsprechende BIM- 
+Strategie des jeweiligen Herstellers eine Rolle 
+spielt. Es gibt viele weitere Leitfäden, man sollte 
+aber bei jedem bedenken, auf welchen Positio-
+nen dieser aufbaut. In Österreich sollte man sich 
+zuerst an den Anhang A (Modellierleitfaden) der 
+ÖNORN A 6241-2:2015 halten.91
+Es muss aber gesagt werden, die sogenannte 
+„eierlegende Wollmilchsau“, also einen Leitfaden 
+für das richtige Modellieren, welcher die Bedürf-
+nisse aller Beteiligen perfekt abdeckt, gibt es 
+nicht. Zudem ist ein Leitfaden nicht einfach so 
+von einem Projekt zum anderen übertragbar,  
+also nicht für jedes Projekt gleichermaßen  
+geeignet. Jeder Modellierleifaden sollte auf die 
+Bedürfnisse des aktuellen Projektes bzw. des  
+Bauherrn angepasst werden. Es wäre denkbar, 
+dass der Modellierleitfaden Bestandteil der  
+Verträge (AIA) zur Vergabe einer Planungs­
+leistung ist.
+Arbeiten mit Platzhaltern 
+Am Anfang eines Projektes sind die Informa-
+tionen über ein Objekt normalerweise noch sehr 
+dürftig. Im Vorentwurfs- oder Entwurfsstadium 
+weiß man bei einer Tür oft noch nicht, welche 
+Bauweise es letztendlich wird. Bevor man eine 
+falsche Tür platziert, ist es besser, ein allgemeines 
+Türobjekt einzusetzen. Das Arbeiten mit Platz­
+haltern ist eine übliche Modelliertechnik. Im Ent-
+wurfsstadium wird ein Objekt „Tür allgemein“ 
+eingesetzt. Im Laufe der Ausführungsplanung 
+wählt man dann beispielsweise alle Türen, die mit 
+einer L-Zarge ausgeführt werden sollen, aus und 
+ersetzt den Platzhalter mit dem Objekt „Tür 
+Metallzarge“.
+Arbeits- 
+materialien  
+ 
+  
+Modellierleitfäden
+YouTube  
+Channel 
+ 
+ 
+Arbeiten mit  
+Platzhaltern
+ÖNORM  
+A 6241-2:2015 
+Anhang A  
+ 
+  
+Modellierleitfäden
+91	 ÖNORM A 6241-2, S. 12.
+
+
+===== PAGE 97/348 =====
+96
+Richtig Modellieren
+Im Normalfall kann ein BIM-Objekt zu 
+Planungsbeginn noch gar nicht über alle In­
+formationen bis ins letzte Detail verfügen. Erst 
+mit dem Fortschreiten der Projektphasen wird 
+der Grad an Ausarbeitung und damit die Infor­
+mationstiefe Schritt für Schritt vervollständigt. 
+Über den gesamten Projektverlauf geht es immer 
+wieder darum, wer zu welchem Zeitpunkt welche 
+Information in welcher Tiefe benötigt. Üblicher-
+weise wird dies in den AIA (Auftraggeber-Infor-
+mationsanforderungen) und dem BAP (BIM-
+Ausführungsplan) festgehalten.
+Ein gutes Beispiel für den Umgang mit fort-
+schreitender Detaillierung findet sich im Projekt 
+mataTGA der TU Graz. Für unzählige TGA-Kom­
+ponenten wurden auf Basis der IFC-Struktur die 
+notwendigen Attribute erhoben und auch den 
+entsprechenden Leistungsphasen zugeordnet, 
+in welchen sie erstmalig benötigt werden. 
+Die LOI-Definitionen stehen als umfassende 
+Excel-Tabellen zur Verfügung, ebenso der An­
+wendungsprozess als BPMN-Modell. Es gibt sogar 
+die passenden Solibri Prüfregeln, ob alles in der 
+entsprechenden Leistungsphase Geforderte voll-
+ständig vorhanden ist.
+http://www.metatga.org/ergebnisse/
+LOD – Level of Development 
+Aus der CAD-Welt wissen wir, in welchem 
+Maßstab welche Informationen wie genau 
+gezeichnet werden müssen. Im BIM wird aber 
+immer im Maßstab 1 : 1 gearbeitet, also muss es 
+einen anderen Kriterienkatalog für den Detail­
+lierungsgrad geben.
+In BIM wird der Detaillierungsgrad von BIM- 
+Objekten über den LOD gesteuert. Ein und der-
+selbe LOD-Kriterienkatalog wird aber nicht für 
+jedes Projekt gleichermaßen geeignet sein, da 
+bekannterweise auch nicht alle Projekte gleich 
+abgewickelt werden. Zu Anfang des Projektes 
+sollten sich die Projektbeteiligten in den AIA 
+einigen, welcher LOD von wem in welcher Pro-
+jektphase gefordert wird. Diese Anforderungen 
+können im Projektverlauf über den BAP kon­
+tinuierlich nachjustiert werden.
+Wie schon zu Beginn des Kapitels erwähnt, 
+kennzeichnen sich Bauwerkselemente im BIM 
+primär durch ihre Geometrie und ihre Attribute. 
+Folgerichtig sind LoG (Level of Geometry) und 
+LoI (Level of Information) die zwei Urbestandteile 
+des LOD. Da im Laufe des Projektes die einzelnen 
+Fachmodelle stetig aufeinander abgestimmt 
+werden, sollte man aber auch den LoC (Level  
+of Coordination) nicht vernachlässigen.  
+Detaillierungsgrad
+ 
+ Kapitel 5, S. 234 
+AIA BAP 
+
+
+===== PAGE 98/348 =====
+97
+Detaillierungsgrad
+Gerade in Österreich wird dem LoC in Verbin-
+dung mit AIA und BAP immer größere Bedeutung 
+zugemessen.
+LOD =	 LoG (Level of Geometry) 
++ LoI (Level of Information) 
++ LoC (Level of Coordination)
+In der Literatur wird der LOD oftmals nicht nur für 
+BIM-Objekte verwendet, sondern auch für das 
+ganze Teilmodell. Streng genommen spricht man 
+bei Modellen nicht vom LOD, sondern vom Reife-
+grad. Wir werden uns hier immer auf BIM-Objekte 
+beziehen.
+LoX
+Da BIM immer noch in den Anfangsjahren 
+steckt, kommt es immer wieder vor, dass sich 
+auch die Begrifflichkeiten noch verändern. 
+Bezüglich der ganzen LoX (Level of anything) ist 
+definitiv noch nicht das letzte Wort gesprochen. 
+LOD, LoD, LoI, LoG, LoC, LoL, LOIN, … In Literatur 
+und Praxis sind sehr viele dieser Kreationen zu 
+finden. Wir wollen uns auf die wichtigsten 
+beschränken.
+Gerade LOD wird gerne falsch verwendet, 
+leider manchmal auch von offiziellen Stellen. 
+Redet man von LOD, wird dieser manchmal rich­
+tigerweise als Level of Development begriffen, 
+aber genauso oft als Level of Detail (LoD) oder als 
+Level of Definition falsch verstanden. Ob das „o“ 
+klein oder groß geschrieben wird, ist hier von 
+Bedeutung. Mit LOD ist der Oberbegriff, mit LoD 
+dagegen der Detaillierungsgrad der Geometrie 
+gemeint. 
+Für Österreich hat die Plattform 4.0 in 
+Abstimmung mit ÖIAV, ÖBV und der TU Wien die 
+Broschüre „Begriffe zu BIM und Digitalisierung“ 
+herausgegeben. An deren Begriffsbestimmung 
+wollen auch wir uns, bis auf Ausnahme des dort 
+angeführten LoD (Level of Detail), orientieren. 
+Wir verwenden statt dem LoD synonym den LoG 
+(Level of Geometry), dies hat den Vorteil, dass es 
+nicht so leicht zur Verwechslung kommen kann.
+ Abbildung 23: Zusammensetzung LOD92 
+92	 Vgl. https://www.bimpedia.eu/.
+
+
+===== PAGE 99/348 =====
+98
+Richtig Modellieren
+LOD 100 – 500
+Beim Erstellen einer tabellarischen Übersicht, 
+in welcher Phase welcher LOD geliefert werden 
+muss, greift man auf bekannte LOD-Definitionen 
+zurück und adaptiert diese nach Bedarf auf die 
+jeweiligen Projektspezifika. Es kursieren ver­
+schiedene LOD-Definitionen weltweit, aber eine 
+scheint sich in der Praxis als „Ausgangsstandard“ 
+durchgesetzt zu haben. Das „American Institut of 
+Architects“ definierte 2008 erstmals seinen LOD-
+Katalog. Dieser wird ständig aktualisiert und eine 
+aktuelle Spezifizierung ist immer auf den Seiten 
+von BIMFORUM.ORG downloadbar. 
+https://bimforum.org/lod/
+Gemäß BIM-Forum gliedert sich der LOD in 
+6 Levels von 100 bis 500. Der Zwischenschritt bei 
+Level 350 beschreibt eigentlich nur die Level 300 
+nach Abstimmung der jeweiligen Fachmodelle. 
+Level 350 betrifft also nur den LoC. LoG und LoI 
+sind ident mit Level 300. Im LOD 400 ist der LoG 
+meist deutlich detaillierter als im LOD 500. Das 
+liegt daran, dass im LOD 500 die Geometrie nur 
+noch „as build“ abgebildet wird, also beispiels-
+weise ein Laserscan der gebauten Wände, 
+während die Geometrie der Wände im LOD 400 
+noch mit Bewährung und Schalung dargestellt 
+wurde.
+LOD 100
+Konzeptionelle Darstellung 
+LOD 200
+Dimensionen und Größe maßgeblicher Bauteile
+LOD 300
+Ausschreibungsreife Angaben mit Spezifikation
+LOD 350
+300 mit anderen Teilmodellen koordiniert
+LOD 400
+Fabrikationsreife Ausführungsplanung
+LOD 500
+As.built-Dokumentation der ausgeführten Elemente
+Tabelle 3:  LOD 100–500 (350)
+
+
+===== PAGE 100/348 =====
+99
+Detaillierungsgrad
+Leider stimmen die Stufen unserer Modellier-
+softwareprodukte nicht mit diesen LOD-Levels 
+überein. Wünschenswert wäre, wenn wir in der 
+Software den LOD angeben und automatisch 
+eine Version des BIM-Objektes entsprechend 
+des geforderten LOD-Levels angezeigt bekämen. 
+Die Praxis ist leider eine andere. So bietet bei-
+spielsweise Revit für die einzelnen Objekte 
+(Familien) zur Darstellung nur die drei Stufen 
+grob, mittel und fein an. Jeder muss dann für sich 
+eine Strategie finden, wie er damit umgeht.
+LoG – Level of Geometry
+Der LoG steht für den Detaillierungsgrad der 
+geometrischen Körper des jeweiligen Objekts. 
+Eine der großen Fragen beim Modellieren ist, bis 
+zu welcher Tiefe eine Detaillierung sinnvoll er-
+scheint. Rein theoretisch würde nicht viel gegen 
+eine 100-prozentig detailgetreue Modellierung 
+sprechen; in der Praxis stehen dem jedoch zwei 
+ Abbildung 24: LOD-Definition, Beispiel Wandkonstruktion in Ortbeton93 
+93	 Vgl. Swiss BIM LOIN-Definition (LOD) (07/2018), S. 25.
+
+
+===== PAGE 101/348 =====
+100
+Richtig Modellieren
+große Gründe entgegen. Erstens benötigt man 
+dafür Zeit und ab einem gewissen Aufwand  
+stellt sich schnell die Frage: Ist das noch kosten-
+effizient? Eines ist klar, eine volle 3D-Detaillierung 
+wird im Regelfall niemals vergütet und kann sich 
+kein Büro leisten.
+Das zweite Problem betrifft die Rechner­
+leistung. Gerade bei großen Projekten kommt 
+auch bei heutigem IT-Standard die Rechner­
+kapazität schnell an ihre Grenzen. Jede Ecke, jede 
+Kante und jede Fläche eines Objektes kosten 
+Performance. Oft wird aus Eifer viel zu genau 
+modelliert. Nehmen wir als Beispiel eine Pumpe 
+aus der TGA. Zu Anfang reicht für die geometri-
+sche Darstellung ein abstrakter Quader, vielleicht 
+noch ein zweiter Quader für den Montage- bzw. 
+Wartungsbereich. Erst ab Level 300 kommen 
+dann Schritt für Schritt die genauen Positionen 
+der Anschlusspunkte dazu. Die Anschlussdimen-
+sionen werden hierbei als Attribute inkludiert. 
+Oft reicht diese Geometrie dann schon für den 
+gesamten Projektverlauf aus. Niemals sollte man 
+Dinge wie die Verschraubung der einzelnen 
+Pumpenteile, deren diverse Krümmungen, 
+einzelne Schalter usw. in 3D modellieren.
+Eine entscheidende Frage ist, was modelliere 
+ich noch als 3D-Objekt und was wird nur noch als 
+2D-Detail oder durch Beschreibung mit Attribu-
+ten ausgearbeitet. Wie nicht anders zu erwarten, 
+weichen hier die Modellierphilosophien teils sehr 
+stark voneinander ab. Am Beispiel der Modellie-
+rung einer Attika wollen wir kurz aufzeigen, wie 
+unterschiedlich dies sein kann.
+LoI – Level of Information
+Von Planungsphase zu Planungsphase wer-
+den immer mehr Informationen über die einzel-
+„Wir modellieren so viel wie nötig, so wenig wie möglich.“
+MARKUS HIERMER
+ 
+  
+ YouTube 
+Channel
+Tiefe 3D- 
+Modellierung
+
+
+===== PAGE 102/348 =====
+101
+Detaillierungsgrad
+nen Bauteile benötigt. Der LoI legt fest, welche 
+alphanumerischen Attribute für die einzelnen 
+Bauteile zu welchem Zeitpunkt und in welcher 
+Informationstiefe benötigt werden. Von Vorteil 
+ist, wenn schon bekannt ist, welche Auswertun-
+gen später gefordert werden. Dadurch lässt sich 
+im Vorfeld klar definieren, welche Attribute noch 
+benötigt werden. 
+Für Wartung und Betrieb ist es durchaus 
+üblich, dass nach Fertigstellung des Bauwerks 
+weitere Attribute hinzukommen. Manche  
+gehen so weit, hier von einem LOD 600 zu  
+sprechen. 
+Generell ist es jedoch ratsam, dass nicht ein 
+einzelnes Teilmodell mit allen Daten überfrachtet 
+wird. Wenn möglich, sollte immer nur der Daten-
+satz, der für das jeweilige Fach- oder Teilmodell 
+benötigt wird, in diesem auch abgespeichert 
+wird, um unnötigen Datenballast zu vermeiden. 
+So macht es auch Sinn, ein eigenes Modell, in 
+dem nur mehr die für den Betrieb nötigen Daten 
+enthalten sind, zu übergeben.
+LoC – Level of Coordination
+Zu vereinbarten Zeitpunkten werden die 
+Fachmodelle überlagert und auf Kollisionen ge-
+prüft. Vor BIM war eine automatisierte Kollisions-
+kontrolle nicht möglich, nun können dadurch 
+teils erhebliche Kosten vermieden werden.  
+Der LoC gibt nicht nur den Grad der klassischen 
+Kollisionen zwischen Bauteilen an, es werden 
+genauso Kollisionen mit Bereichen zur Wartung 
+bzw. Montage geprüft. Auch die Prüfung der 
+Barrierefreiheit fällt in den LoC. 
+
+
+===== PAGE 103/348 =====
+102
+Richtig Modellieren
+Mit Installation der Modelliersoftware wird  
+im Regelfall eine erste landesspezifische Objekt-
+Bibliothek mitgeliefert. Leider werden die (BIM-)
+Objekte in jeder Software anders benannt (siehe 
+Tabelle). Zudem wird über die Software auch 
+schon ein erstes Klassifizierungssystem, in wel-
+ches die Objekte eingeteilt werden, vorgegeben. 
+Die softwareeigenen Bibliotheken sind oft eine 
+gute Basis für den Anfang, aber sie reichen 
+schnell nicht mehr aus. Früher oder später wird 
+jeder gezwungen sein, einen eigenen Büro­
+standard zu pflegen.
+Objektbibliotheken	
+Allplan
+Smart Objects
+Archicad
+GDL-Objekte
+Revit
+Familien
+Tabelle 4:  Bezeichnung von BIM-Objekten in unter-
+schiedlichen Softwareprodukten 
+Bürostandard
+Man kann ganz einfach mit den Vorgaben 
+der Software anfangen und Jahr für Jahr diese 
+kontinuierlich individualisieren. Noch besser ist 
+es, wenn schon zu Beginn auf ein weiterent­
+wickeltes Template, welches zur eigenen Arbeits-
+philosophie passt, zurückgegriffen werden kann. 
+Ganz entscheidend ist aber, dass alle in einem 
+Projekt verwendeten Objekte den gleichen 
+Regeln entsprechen.
+Beispielsweise sollte der Detaillierungsgrad 
+für alle Objekte den gleichen Kriterien folgen,  
+um unter Berücksichtigung des Projektablaufs 
+diese aufeinander abzustimmen. Für den Fall, 
+dass gleiche Objekttypen (z.B. verschiedene 
+Türen) vorkommen, sollten gleiche Parameter 
+(Attribute) zugewiesen werden. Kommen Para-
+meter mehrfach vor, sollte deren Bedeutung 
+eindeutig definiert werden und auch in projekt­
+spezifischen Parameterlisten festgehalten 
+werden. Beispielhaft kann der Parameter „Breite“ 
+durch spezifischere Begriffe wie „Wandstärke“, 
+„Rohbaulichte“, „Rahmenstärke“ etc. näher 
+definiert werden. So sollte es in jedem Projekt 
+eine Parameterliste geben.
+Empfehlenswert ist es, wenn es im Büro so 
+etwas wie eine:n „BIM-Bibliothekar:in“ gibt. Die-
+se:r ist verantwortlich, laufend alle neuen Objekte 
+ 
+ Arbeits- 
+materialien
+Checkliste 
+Bürostandard
+
+
+===== PAGE 104/348 =====
+103
+Objektbibliotheken
+auf die eigenen Bürorichtlinien hin einzupflegen 
+und, wenn nötig, auch noch zu adaptieren. Diese 
+Position ist eine gute Gelegenheit für Mitarbei-
+ter:innen, wenn sie entsprechend IT-affin sind, 
+sich schnell hochzuarbeiten. Dieser bzw. diese 
+„BIM-Bibliothekar:in“ sollte alle Standards bezüg-
+lich BIM im Büro sauber warten, aufeinander ab­
+stimmen und dann die gesammelten Daten am 
+Server strukturiert ablegen. 
+Praxistipp
+Viele Planer:innen fürchten bei der Zusam-
+menarbeit auch um ihr IP (intellectual property). 
+Sie denken, dass ihr geistiges Eigentum nur zu 
+leicht von Dritten der am Projekt Beteiligten über-
+nommen werden könnte. 
+Bei der Weitergabe von proprietären Datei-
+formaten ist es zwar durchaus möglich, die ange-
+legten Objekte zu kopieren, ob das aber dem­
+jenigen wirklich weiterhilft, ist sehr fraglich. Denn 
+all die kopierten Objekte müssen auch erst einmal 
+an den je­weiligen Büro- oder Projektstandard an-
+gepasst werden, und das kann richtig viel Arbeit 
+kosten. Wer sich schon einmal in eine unbeschrif-
+tete Revit-Familie eingearbeitet hat und versucht 
+hat, diese gemäß dem eigenen Bürostandard 
+umzubauen, weiß, dass hier ganz schnell einmal 
+Stunden verloren gehen. 
+Zum anderen sollte man auch bedenken, 
+dass die eigenen BIM-Objekte meist auch nur aus 
+der Überarbeitung eines bestehenden BIM-
+Objekts aus einer fremden Bibliothek entstanden 
+sind. Vielleicht wäre es hier durchaus angebracht, 
+mit dem open-source-Gedanken an die Thematik 
+heranzutreten. Denn der eigentliche Wert liegt 
+nicht in den einzelnen Objekten, sondern in der 
+jahrelangen Abstimmung und dem Wissen im 
+Umgang damit. Wer aber ein Kopieren unbedingt 
+ausschließen möchte, darf dann seine Daten auch 
+nur in allgemeinen Austauschformaten wie dem 
+IFC weitergeben.
+Nur der Vollständigkeit halber sei hier noch 
+die Thematik der Wasserzeichen erwähnt. Es gibt 
+Software-Plugins von Drittherstellern, die 
+Wasserzeichen in die proprietären Dateien 
+schreiben. Die Sinnhaftigkeit ist aber wohl eher 
+anzuzweifeln. Dieser Schutz hilft nur, indem er 
+den Plagiats­vorgang erschwert. Mit entsprechen-
+den EDV-Kenntnissen sollte der Scourcecode der 
+Datei bereinigt werden können. Zudem ist ein 
+schlichtes teilweises Nachzeichnen des BIM-Ob-
+jektes immer möglich und geht entsprechend 
+schneller, als bei null anzufangen.
+https://de.graitec.com/powerpack-for-revit/
+
+
+===== PAGE 105/348 =====
+104
+Richtig Modellieren
+Nomenklatur
+Wieder einmal kommt es auf die richtige 
+Benennung an. Angenommen, Sie holen sich 
+aus verschiedenen Bibliotheken verschiedene 
+Fenster, dann kann es vorkommen, dass ein Ob-
+jekt ein „Fenster“ ist, das nächste ein „window“ 
+und ein weiteres eine „Festverglasung“. 
+Innerhalb eines Projektes muss die jeweilige 
+Bezeichnung immer eindeutig sein, sonst 
+funktioniert BIM im eigentlichen Sinne nicht. 
+Das gilt natürlich nicht nur für die Objekt-, son-
+dern auch für die Para­meternamen (Attribute). 
+Eine Parameterliste ist für jedes Projekt unum-
+gänglich.
+Bei der Zusammenarbeit mehrerer Planer:in-
+nen treffen auch verschiedene Bürostandards 
+aufeinander. Innerhalb eines Projektes kann das 
+schnell zu Problemen führen. 
+Im Idealfall sollte man sich auf einen gemein-
+samen Standard einigen. Ist das nicht möglich, 
+muss man zumindest die einzelnen Bürovorlagen 
+aufeinander abstimmen. Das Ergebnis sollte man 
+dann unbedingt anhand eines kleinen Testlaufs 
+überprüfen.
+Allgemeine Bibliotheken
+Vielleicht noch ein Wort zu den vielen 
+Objekt-Bibliotheken, die am Markt angeboten 
+werden. Leider muss man sagen, dass Objekte 
+aus Bibliotheken am Ende meist mehr Arbeit und 
+Probleme machen, als wenn man das Objekt 
+gleich selber modelliert hätte. Ein generelles 
+Problem aller Objekte aus diversen Bibliotheken 
+stellt deren Kompatibilität zum eigenen Büro-
+standard dar. Dabei müssen also die Nomen­
+klatur, die Parameter, der Umgang mit den LODs 
+und noch einige andere Kleinigkeiten angepasst 
+werden.
+Oft liegt auch in der Lokalisierung noch eine 
+weitere Gefahr. Vor allem standardisierte Bauteile 
+werden in diversen Ländern auch noch mit unter-
+schiedlichen Standardmaßen gefertigt. Nimmt 
+man beispielsweise ein Standardobjekt wie eine 
+Stahlzargentür, so wird eine auf Deutschland 
+angepasste Objektdatei einen Typ mit 885 mm 
+Breite anbieten, während dieser Objekttyp in 
+Österreich eine 800 mm Breite haben sollte. Als 
+Fazit lässt sich sagen, dass die eigentliche Arbeit 
+in einer durchgängigen Abstimmung aller Ob-
+jektdateien besteht.
+
+
+===== PAGE 106/348 =====
+105
+Objektbibliotheken
+Herstellerbibliotheken
+Schon zu CAD-Zeiten haben die Hersteller 
+versucht, ihre Produkte frühzeitig in den Projek-
+ten zu platzieren. Man bekam von den Herstel-
+lern sehr produktspezifische dxf- bzw. dwg-
+Dateien, die im weiteren Projektverlauf oft nur 
+mehr schwer durch andere Produkte zu ersetzen 
+waren. Nun haben wir das gleiche Spiel. Wir be-
+kommen die entsprechenden BIM-Objekte ange-
+boten. Bei öffentlichen Ausschreibungen kann 
+dies sehr problematisch werden, da die geforder-
+te Produktneutralität dann eventuell nicht mehr 
+gegeben ist, was im Extremfall zum Ausschluss 
+führen könnte.
+Objekte aus Herstellerbibliotheken bringen 
+so gut wie immer ein Performanceproblem mit 
+sich. Fast alle Objekte sind bezüglich ihrer Geo-
+metrie viel zu groß detailliert. Nachvollziehbarer-
+weise ist der Hersteller stolz auf sein Produkt und 
+will uns dieses möglichst mit allen Details offe­
+rieren. Im schlimmsten Fall wird auch noch eine 
+dreidimensionale Gravur von Logo und Name  
+des Herstellers geometrisch nachmodelliert.  
+Performancetechnisch ist das als absolutes No-Go 
+zu sehen. Um diese Dateien zu verwenden, müs-
+sen Sie bezüglich ihrer Geometrie erst einmal 
+kräftig gesäubert werden.
+
+
+===== PAGE 107/348 =====
+106
+Richtig Modellieren
+	
+Autodesk, Revit IFC Handbuch, Ausführliche 
+Anleitung für den Umgang mit IFC-Dateien, 2018 
+http://standards.buildingsmart.org/IFC/RELEASE/
+IFC4/ADD2_TC1/HTML/link/ifcbuilding.htm, 
+Datum des Zugriffs: 10. 12. 2021
+	
+Borrmann, André; König, Markus; Koch, 
+Christian; Beetz, Jakob (Hrsg.) (2015), Building 
+Information Modeling. Technologische Grund­
+lagen und industrielle Praxis. Berlin, Heidelberg. 
+Springer-Verlag. (ISBN 978-3-658-05605-6)
+	
+buildingSMART, IFC Infra Overall Architecture 
+Project, Documentation and Guidelines  
+(Final 01/03/2017)
+	
+buildingSMART Switzerland, Swiss BIM  
+LOIN-Definition (LOD) Verständigung,  
+07/2018
+Literaturverzeichnis
+	
+Eichler (2016), BIM-Leitfaden 2, Struktur und 
+Funktion https://www.bimpedia.eu/artikel/1005-
+lod-level-of-development, Datum des Zugriffs 
+10. 12. 2021, (ISBN 978-3-937654-99-7)
+	
+Eichler, C., et al., BIMcert Handbuch (2021), 
+Online unter: http://www.buildingsmart.co.at/
+wp-content/uploads/2021/07/BIMcert-Hand-
+buch-2021-eBook.pdf. Datum des Zugriffs: 
+28. 3. 2022
+	
+Horner (2021), BIM Reality Check: „Mixed 
+BIM“ – die gelebte Praxis
+	
+Hiermer, Markus, Autodesk Revit, Leitfaden 
+für die BIM Modellierung in Revit, Version 1.0
+	
+ÖNORM A 6241-2:2015. Digitale Bauwerks­
+dokumentation – Teil 2: Building Information 
+Modeling (BIM) – Level 3-iBIM
+
+
+===== PAGE 108/348 =====
+107
+Literaturverzeichnis
+
+
+===== PAGE 109/348 =====
+108
+Richtiges Modellieren in Infrastrukturprojekten
+Richtiges Modellieren in 
+Infrastrukturprojekten
+LUKAS HOCHREITER, HABAU GROUP
+Informationsanforderungen
+BIM-Modellierung ist nicht gleich 3D-
+Modellierung. Ein BIM-Modell zeichnet sich 
+durch seinen Informationsgehalt und durch 
+die strukturierte Art der Datenhaltung aus. 
+Branchenübergreifendes Ziel ist, die gemeinsame 
+Sprache und Struktur für BIM zu finden. Die fol-
+genden Kapitel geben einen Überblick über den 
+derzeitigen Stand der Technik in der BIM-Model-
+lierung und -Strukturierung. 
+Modelldetaillierung
+In der Literatur zum Thema BIM findet man 
+immer wieder folgende Begriffe:
+
+LOD	 –	 Level of Development
+
+LOI	 –	 Level of Information
+
+LOG	 –	 Level of Geometrie
+
+LOIN	–	 Level of Information Needed
+All diese Begriffe haben den Fokus die Mo-
+delldetaillierung zu verschiedenen Projektphasen 
+oder Anwendungsfällen zu definieren. Über diese 
+Definitionen werden geometrische Detaillierung 
+und der Merkmalgehalt von BIM-Modellen fest-
+gelegt. Es gibt jedoch noch keinen national oder 
+international gültigen Standard für die Modell­
+detaillierung. Aus diesem Grund empfiehlt es 
+sich derzeit, sich an die klassischen Begriffe zu 
+den jeweiligen Projektphasen anzulehnen:
+Projektphase 
+ Bezug zu LOD 
+Beschreibung 
+Bestand (Grundlage)
+vgl. LOD 100
+Altbestand, Grundlage
+Entwurf
+vgl. LOD 200
+Entwurfsmodell
+Ausschreibung
+vgl. LOD 300
+Ausschreibungsmodell 
+Ausführung 
+vgl. LOD 400 
+Ausführungsmodell
+Bestandsmodell (Übergabe)
+vgl. LOD 500
+As.Built-Modell 
+Tabelle 5:  Modelldetaillierung und LOD
+
+
+===== PAGE 110/348 =====
+109
+Lukas Hochreiter, HABAU Group
+ Abbildung 25: Übersicht über Lieferobjekte (Teil- & Fachmodelle), exemplarisch
+
+
+===== PAGE 111/348 =====
+110
+Richtiges Modellieren in Infrastrukturprojekten
+Modellstrukturierung
+Bei der Erstellung von BIM-Modellen ist die 
+Aufteilung und Strukturierung der Daten wichtig, 
+um die Projektzusammenarbeit sicherzustellen 
+und die Grundlage für den Einsatz von BIM über 
+den gesamten Lebenszyklus hinweg zu gewähr-
+leisten. Die Strukturierung der Daten hängt von 
+den Besonderheiten des jeweiligen Projekts ab. 
+Insbesondere bei großen, komplexen oder 
+mehrstufigen Projekten ist es wichtig, die 
+Modelle sinnvoll zu unterteilen. Die Aufteilung 
+sollte dabei in örtlicher und fachlicher Hinsicht 
+sinnvoll gewählt werden. Die Strukturierung in 
+Teil­modelle, welche wiederum in Fachmodelle 
+untergegliedert werden können, optimiert die 
+modellbasierte Koordination und Zusammen­
+arbeit. Der Modellstrukturplan ist grundsätzlich 
+projekt­unabhängig und kann für alle Gewerke in 
+Infrastrukturprojekten verwendet bzw. erweitert 
+werden.
+Strukturierungsmöglichkeiten
+1.	 Gliederung über Dateinamen-Bezeichnungs-
+konvention: 
+Lieferobjekte entsprechen Teil- & Fachmo-
+dellen: A02_STR_FL_EP_A400_AN1_V02.ifc
+2.	 Gliederung über den IFC-Strukturbaum: 
+Der IFC-Standard gibt eine Möglichkeit der 
+hierarchischen Strukturierung von Modellen über 
+einen Strukturbaum vor. Über die Definitionen 
+„ifcSite”, „ifcBuilding”, „ifcBuildingStorey” und 
+„ifcSpace” kann diese Hierarchie realisiert wer-
+den. IFC 5 soll eine „overall-architecture“ für alle 
+Bereiche im Bauwesen bringen und den Hochbau 
+erweitern.
+3.	 Gliederung über Merkmale:
+Die Gliederung über Merkmale stellt eine der 
+wesentlichsten Anforderungen für weitere Aus-
+wertungen dar. Diese strukturgebenden Merk-
+male können zum Filtern oder für Auswahl­
+mengen verwendet werden. 
+Für die Umsetzung von gängigen BIM-
+Anwendungsfällen (Bauzeitplanung (4D), Kosten-
+ermittlung (5D), Dokumentenverlinkung, etc.) ist 
+sowohl eine örtliche (projektspezifische) Gliede-
+rung in „Locationcodes“, als auch eine fachliche 
+(projektunabhängige) Gliederung in „Bauteil-
+codes“ empfehlenswert. In Infrastrukturprojekten 
+macht es Sinn, die fachliche Strukturierung zu-
+sätzlich im IFC-Strukturbaum aufzubauen, um 
+das Modellhandling wesentlich zu verbessern.
+
+
+===== PAGE 112/348 =====
+111
+Lukas Hochreiter, HABAU Group
+ Abbildung 26: IFC-Strukturbaum eines Infrastrukturprojekts
+BTC – Bauteilcode
+ LOC – Locationcode
+01_Teilmodell 
+01_Bauwerksbezeichnung 
+02_Fachmodell
+02_Abschnitt
+03_Gewerk
+03_Zonierung
+04_Bauteilgruppe
+04_Hauptgliederungselement
+05_Element
+05_Ausrichtung
+06_Material
+Tabelle 6:  Überblick über strukturgebende Merkmale
+
+
+===== PAGE 113/348 =====
+112
+Richtiges Modellieren in Infrastrukturprojekten
+Geometrische Anforderungen
+Neben den Informationsanforderungen 
+spielen auch die geometrischen Anforderungen 
+eine zentrale Rolle. BIM-Modelle bestehen in 
+erster Linie aus Volumenkörper und Flächen, die 
+etwa für den wichtigen Anwendungsfall der 
+Mengen- und Kostenermittlung (5D) ausgewertet 
+werden. Hierfür ist es wichtig, dass das Aus­
+führungsmodell aus demselben CAD-Modell 
+exportiert wird wie die 2D-Ausführungspläne. 
+Man spricht hierbei von Planableitung aus dem 
+Modell oder Plankonsistenz. Neben der Detaillie-
+rung ist es in Infrastrukturprojekten wesentlich, 
+dass die Modelle globale Koordinaten entspre-
+chend der Vermessung aufweisen, sodass die 
+Teilmodelle im Koordinationsmodell optimal  
+an- oder ineinander passen.  
+Projektbasispunkt und  
+Referenzierung
+Nur wenn die sogenannte Georeferen­
+zierung gewährleistet ist, können Prüfungen 
+wie die Kollisionskontrolle sinnvoll angewandt 
+werden. Eine Georeferenzierung wird über die 
+Definition eines Projektbasispunkts realisiert und 
+sichergestellt. 
+Grundsätzlich sollte die Lage des Projekt­
+nullpunkts ca. in der Mitte des Projekts gewählt 
+werden, sodass die Entfernungen zu den Projekt-
+grenzen in etwa gleich groß sind. Der Wert des 
+Projektnullpunkts sollte aus Gründen der ein­
+fachen Handhabung auf einen runden Wert  
+auf- bzw. abgerundet werden (runden auf  
+volle 5 oder 10 m). 
+System
+Amtliches Koordinatensystem
+Lokales Koordinatensystem
+Rechtswert 
+4.555.730 (Beispielwert) 
+0,000
+Hochwert
+5.848.910 (Beispielwert)
+0,000
+Bezugshöhe
+0,000 (müA)
+0,000
+Tabelle 7:  Definition Projektbasispunkt
+
+
+===== PAGE 114/348 =====
+Lukas Hochreiter, HABAU Group
+113
+Tabelle 8:  Unterteilung des Modells nach Straßenkilometer
+Modellunterteilung
+Ein Straßenbauwerk erstreckt sich als Linien-
+bauwerk häufig über eine große Entfernung. Die 
+Bauteile des Straßenmodells sollten für ein geeig-
+netes Modellhandling in Achsrichtung unterteilt 
+werden. 
+In Infrastrukturprojekten werden die zu er-
+stellenden Modelle häufig neben der Einteilung 
+in Bauabschnitten zusätzlich entsprechend einer 
+regelmäßigen Unterteilung nach Straßenkilo­
+meter in volle Kilometer unterteilt. Diese  
+„Zonierung“ richtet sich nach der Straßen­
+kilometrierung. Somit werden die Lieferobjekte 
+(Modelldatei, z.B. IFC) auch kilometerweise aus-
+gegeben. Die Unterteilung ist sowohl geo­
+metrisch als auch über den Locationcode  
+„Zonierung“ abgebildet. 
+Unterteilung 
+Kilometer von
+Kilometer bis
+Z01 
+Km022+675 
+Km023+000
+Z02 
+Km023+000
+Km024+000
+Z03
+Km024+000
+Km025+000
+Z04
+Km025+000
+Km026+000
+Z05
+Km026+000
+Km027+000
+Z06
+Km027+000
+Km028+000
+Z07 
+Km028+000
+Km028+175
+
+
+===== PAGE 115/348 =====
+Richtiges Modellieren in Infrastrukturprojekten
+114
+ Abbildung 27: Detaillierung bzw. „Tessellierung“ von Bauteilen
+
+
+===== PAGE 116/348 =====
+115
+Lukas Hochreiter, HABAU Group
+Geometrische Detaillierung
+Neben der Zonierung sollten die einzelnen 
+Elemente innerhalb einer Zone entsprechend 
+einem Regelabstand (5m-, 10m-, 15m- oder 25m- 
+Stationierung) unterteilt werden. Diese Unter­
+teilung wird in der IFC-Datei über sogenannte 
+„Composite-Elemente“ abgebildet. 
+In der Praxis hat sich gezeigt, dass eine 
+Stationierung des Oberbaus in 5m- bzw. 10m- 
+Abschnitte sinnvoll ist. Beim Erdbau ist eine Sta-
+tionierung analog zur klassischen Planung von 
+15 bis 25m ausreichend. Diese Bauteiltrennung 
+bedeutet nicht, dass die geometrischen Volu-
+menkörper nicht zwischen den Stationen noch 
+genauer detailliert sind. In modernen Straßen­
+planungssystemen kann man sowohl die Statio-
+nierung als auch die Genauigkeit der „Tessellie-
+rung“ (Punkte und Dreiecke, die einen Körper 
+definieren) beim IFC-Export festlegen. Somit wird 
+gewährleistet, dass die geometrischen Elemente 
+nicht nur linear zwischen 2 Profilen interpoliert 
+werden, sondern fachlich und optisch den 
+Gegebenheiten des Urgeländes und der Planung 
+folgen.
+
+
+===== PAGE 117/348 =====
+116
+Richtiges Modellieren in Infrastrukturprojekten
+Für die Modellierung ist es wichtig, dass die 
+einzelnen Bauteile fachlich und geometrisch rich-
+tig getrennt und gegliedert werden. Die folgende 
+Darstellung gibt einen Überblick über die inhalt-
+liche Gliederung eines Straßenquerschnitts. 
+Diese Gliederung wird sowohl über die Merkmale 
+als auch über den IFC-Strukturbaum abgebildet. 
+Dementsprechend gliedert sich das Fachmodell 
+„Straßenbau“ in folgende Bauteile: 
+ Abbildung 28: Überblick über die Bauteile eines Straßenquerschnitts im Dammbereich
+
+
+===== PAGE 118/348 =====
+117
+Lukas Hochreiter, HABAU Group
+Liegt das Straßenprojekt in einem Ein-
+schnittsbereich, ist auch der Abtrag als „Aushub-
+körper“ bzw. „Erdkörper“ zu modellieren.  
+In diesem Fall liegen „Abtragskörper“ und  
+„Neubau“-Elemente lagemäßig übereinander: 
+Die geometrische Detaillierung wird etwa 
+bei der ASFiNAG in einem „BIM-Modellierungs-
+leitfaden“ gewerkspezifisch für die jeweiligen 
+Teil- und Fachmodelle im Detail beschrieben. 
+ Abbildung 29: Überblick über die Bauteile eines Straßenquerschnitts im Dammbereich
+
+
+===== PAGE 119/348 =====
+118
+BIM-Software
+Wenn wir uns mit der Digitalisierung der Bauindustrie beschäftigen,  
+kommen wir an BIM nicht vorbei. Ein ganz wesentlicher Bestandteil von BIM ist  
+die Informatik. Während die Software bei CAD eher die Rolle eines Werkzeuges 
+einnimmt, geht es bei BIM um die Eingabe, die Verarbeitung und die Auswertung 
+der einzelnen Daten. 
+Die Daten und Datensätze stecken in Datenbanken, die nun hinter bzw. in den 
+diversen Softwareprodukten und Dateien stecken. Im Idealfall sollten sich diese 
+Daten kontinuierlich über alle Projektphasen hinweg durch den ganzen Lebens­
+zyklus eines Projektes fortschreiben.
+BIM-Software
+Kapitel 3
+MARCUS WALLNER
+
+
+===== PAGE 120/348 =====
+Softwarelandschaft  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+120
+Lebenszyklus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+124
+Die „Big Player“ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+126
+Softwareversion  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+132
+Software-Kategorien  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+134
+Modelliersoftware  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+136
+Viewer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+140
+Prüfsoftware  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+144
+Software für Auswertungen und  
+Simulationen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+146
+Kollaborationsplattformen  . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+147
+Lizenzpolitik  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+148
+Mieten oder kaufen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+149
+Einzelplatzlizenz oder Netzwerklizenz  . . . . . . . . . . . . . . . .	
+153
+Literaturverzeichnis  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+157
+119
+BIM-Software

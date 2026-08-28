@@ -1,0 +1,1767 @@
+
+
+===== PAGE 81/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+81/137 
+TEIL C: DARSTELLUNG 
+Im nächsten Teil des Kurses möchten wir unseren Entwurf auf unterschiedliche Art und Weise darstellen. Unser Ge-
+bäudemodell dient dabei als Grundlage. Du kannst die bisher bearbeitete Kursdatei nun sichern und schließen. 
+Öffne stattdessen die Kursdatei gk_ac26_kursdatei02.pln. 
+5 Grundlagen der Darstellung 
+Zuerst lernst du einige Grundlagen kennen. 
+5.1 
+Darstellungs-Schnell-Optionen 
+Was sind die Schnell-Optionen? 
+Unterschiedliche Pläne erfordern oft unterschiedliche Darstellungen. In deiner Projektpräsentation möchtest du bei-
+spielsweise sowohl ein vereinfachtes Entwurfskonzept, als auch einen detaillierten Grundriss vorstellen, der die Um-
+setzung deines Entwurfes darstellt. 
+Dafür musst du auf keinen Fall den Grundriss doppelt zeichnen. Stattdessen kannst du deinen Grundriss unter-
+schiedlich anzeigen lassen, sodass auch bei Änderungen alle Zeichnungen immer aktuell sind - so sparst du viel Ar-
+beit. 
+Um deine Zeichnungen auf unterschiedliche Art und Weise darstellen zu lassen, nutzt du die Schnell-Optionen. Du 
+findest die Schnell-Optionen am unteren Bildschirmrand in der Schnell-Optionen-Leiste. 
+ 
+Hinweis: Sollte die Schnell-Optionen-Leiste bei dir nicht angezeigt werden können, so liegt dies an einer zu gerin-
+gen Bildschirmauflösung. Gehe stattdessen zu Menü Fenster > Paletten > Schnell-Optionen, um die Schnell-Optio-
+nen als Palette anzeigen zu lassen. 
+Durch Anklicken der einzelnen Symbole in der Schnell-
+Optionen-Leiste oder -Palette gelangst du in das jewei-
+lige Einstellungsfenster. 
+ 
+Durch einen Klick auf den Text kannst du eine Vorein-
+stellung auswählen. 
+ 
+Du kannst diese Schnell-Optionen in allen Fenstern (Grundriss, Ansicht, Schnitte, Detail, Arbeitsblatt, 3D-Fenster) an-
+wenden. 
+Schnell-Optionen und Ausschnitte 
+Die Schnell-Optionen zeigen die momentan gültigen Einstellungen des aktiven Fensters an. Um diese Einstellungen 
+so zu speichern, dass du diese zu einem späteren Zeitpunkt schnell wieder abrufen oder beispielsweise auf einem 
+Layout platzieren kannst, musst du Ausschnitte der jeweiligen Einstellungen anlegen. 
+Was Ausschnitte sind, wie sie funktionieren und wie du ein Fenster als Ausschnitt sicherst, sehen wir uns in Kapitel 8 
+an. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 82/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+82/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Überblick über die Schnell-Optionen 
+Maßstab 
+In welchem Maßstab soll das Fenster dargestellt werden? Die Schriftgröße von Texten so-
+wie die Darstellung von Raumstempeln passt sich automatisch an. 
+Ebenenkombination 
+Welche Ebenen werden in dem Fenster wie (Drahtmodell, schattiert) dargestellt? 
+Strukturdarstellung 
+Wird von mehrschichtigen Bauteilen die komplette Struktur, der Aufbau ohne Bekleidun-
+gen oder nur der Kern dargestellt? 
+Stift-Set 
+Mit welchem Stift-Set (Farben und Strichstärken) wird das Fenster dargestellt?  
+Modelldarstellung 
+In welchem Detaillierungsgrad wird dein Gebäudemodell dargestellt? 
+Grafische Überschrei-
+bung 
+Hier stellst du ein, ob bestimmte Elemente grafisch hervorgehoben oder einfach nur an-
+ders dargestellt werden sollen – und das, ohne deren Grundeinstellungen zu ändern. 
+Umbau-Filter 
+Falls es sich bei deinem Projekt um einen Umbau handelt, kannst du hier filtern, welche 
+Phase dargestellt werden soll (z.B. Bestand, Abbruch, Neubau, Endzustand). 
+Bemaßung 
+Welche Einstellungen für die Bemaßung gelten für das jeweilige Fenster? Sollen die Maße 
+nach DIN / ÖNORM dargestellt werden oder anders? 
+5.2 
+Ebenenkombination 
+Was ist eine Ebenenkombination? 
+Ebenen werden verwendet, um Elemente logisch zu sortieren. Zusammengehörende Elementgruppen wie z. B. Be-
+maßungen, Möbel, Außenwände, Innenwände usw. werden auf einer gemeinsamen Ebene platziert. So kannst du 
+die Elemente sehr leicht filtern und bei Bedarf ein- oder ausblenden. 
+Klicke auf das Ebenen-Symbol in den Schnell-Optio-
+nen, um die Ebeneneinstellungen zu öffnen. 
+ 
+Es öffnet sich ein neues Fenster. Hier kannst du wahlweise die Verzeichnisansicht oder die Listenansicht wählen. 
+• 
+In der Verzeichnisansicht kannst du Ordner hinzufügen und Ebenen per Drag&Drop einsortieren, um deine 
+Ebenen zu organisieren. 
+• 
+In der Listenansicht siehst du alle Ebenen aus allen Ordner in einer alphabetischen Übersicht. 
+Auf der rechten Seite findest du ggf. die 
+Verzeichnisstruktur (in der Verzeichnisan-
+sicht) sowie alle im Projekt bestehenden 
+einzelnen Ebenen. Jede Ebene kannst du 
+hier: 
+• 
+sperren/entsperren (Schloss-Symbol) 
+• 
+ein-/ausblenden (Augen-Symbol) 
+• 
+in 3D als Drahtmodell/schattiert dar-
+stellen (3D-Symbol) 
+• 
+festlegen, mit welchen anderen Ebe-
+nen sich Bauteile verschneiden sollen 
+(Zahl) 
+Auf der linken Seite siehst du die vorhan-
+denen Ebenenkombinationen. Hier sind 
+die verschiedenen Einstellungen für die 
+einzelnen Ebenen als Kombination abge-
+speichert. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 83/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+83/137 
+Eigene Ebenenkombination erstellen 
+ 
+Wenn du eine neue Ebenenkombination anlegen 
+möchtest, stellst du zunächst einmal alle Ebenen in 
+deinem aktuellen Fenster so ein, wie du sie sehen 
+möchtest.  
+Orientiere dich an diesem Screenshot: 
+ 
+Öffne anschließend die Ebe-
+neneinstellungen. 
+Nun siehst du auf der rech-
+ten Seite die aktuellen Ebe-
+neneinstellungen des Grund-
+rissfensters. Klicke auf der 
+linken Seite im Bereich der 
+Ebenenkombinationen auf 
+Neu... (1), um eine neue Ebe-
+nenkombination zu erstellen. 
+Vergib nun einen passenden 
+Namen für die neue Ebenen-
+kombination (2). 
+Klicke zweimal auf OK (3 und 
+4), um die Fenster wieder zu 
+schließen. 
+ 
+Die neue Ebenenkombination ist nun gespeichert. 
+Klicke auf die Liste der Ebenenkombination, um zu 
+sehen, dass die neue Kombination nun direkt in den 
+Schnell-Optionen ausgewählt werden kann. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 84/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+84/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Eine Ebenenkombination anpassen 
+Möchtest du nachträglich Änderungen an 
+der Ebenenkombination vornehmen, so 
+gehe wie folgt vor: 
+1. 
+Öffne die Ebenen-Einstellungen. 
+2. 
+Wähle auf der linken Seite die 
+Ebenen-Kombination aus, die du 
+verändern möchtest. 
+3. 
+Nimm nun im Bereich der Ebe-
+nen die gewünschten Einstellun-
+gen vor. Blende beispielsweise 
+die Ebene 85 Schnitt Marker 
+aus. Du kannst auch mehrere 
+Ebeneneinstellungen verändern. 
+4. 
+Klicke dann auf Aktualisieren. 
+Schließe die Ebeneneinstellungen an-
+schließend mit OK. 
+ 
+5.3 
+Stift-Set 
+Was ist ein Stift-Set? 
+In Archicad ist jeder Stift durch eine Nummer, eine Strichstärke sowie eine Stiftfarbe definiert. Gleiche Stiftnummern 
+können in unterschiedlichen Stift-Sets mit unterschiedlichen Strichstärken und Farben dargestellt werden. Es emp-
+fiehlt sich, zumindest für die ersten 9 Stifte konsequent die Strichstärken der Tuschestifte zu verwenden und dies in 
+allen verwendeten Stift-Sets. 
+Tipp: Die Strichstärke kannst du dir anzeigen lassen, indem 
+du in einem leeren Bereich ohne ausgewählte Elemente mit 
+einem Rechtsklick das Kontextmenü öffnest. Wähle hier den 
+Befehl Echte Linienstärke. 
+ 
+Wenn du deine Zeichnungen also in unterschiedlichen Farben und/oder Strichstärken darstellen möchtest, verwen-
+dest du einfach verschiedene Stift-Sets. So musst du keine Einstellungen in den Bauteilen ändern.  
+Du kannst beliebige eigene Stift-Sets anlegen und auch die vorhandenen Stift-Sets nach deinen Wünschen anpas-
+sen. 
+Eigenes Stift-Set anlegen 
+Nun möchten wir beispielhaft die Farbe der Schraffuren in unserem Grundriss ändern, indem wir ein eigenes Stift-Set 
+erstellen. 
+Öffne dazu zunächst das zugehörige Fenster über die Schnell-
+Optionen: 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 85/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+85/137 
+1. 
+Wähle nun den Stift Nr. 10 im Stift-Set 02 S/W 1:100/1:200 
+an. Dies ist der Stift, der in der deutschen Archicad-
+Sprachversion standardmäßig in allen Baustoffschraffuren 
+hinterlegt ist. 
+2. 
+Klicke auf das Farbfeld. 
+3. 
+Stelle nun eine gewünschte Farbe ein (z.B. einen Grau-
+ton). Dazu stehen dir unterschiedliche Methoden zur Aus-
+wahl (z.B. Eingabe von RGB-Werten, Farbspektrum etc.). 
+Je nach Betriebssystem kann die Darstellung des Farb-
+wahl-Fensters abweichen. 
+4. 
+Klicke auf OK. 
+ 
+ 
+5. 
+Der Stift Nr. 10 ist jetzt grau eingefärbt.  
+6. 
+Klicke nun auf Speichern als...  
+7. 
+... und wähle Individuelles Stift-Set speichern als. Vergib 
+einen passenden Namen für das Stift-Set.  
+8. 
+Klicke auf Speichern. 
+ 
+Das Stift-Set wurde nun erstellt. 
+Übernimm die Einstellungen mit OK 
+(9), um zurück ins Grundrissfenster 
+zu gelangen. Das Stift-Set ist nun in 
+den Schnell-Optionen verfügbar. 
+Wählst du es aus, so werden sämtli-
+che Baustoffschraffuren grau darge-
+stellt: 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 86/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+86/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Stift-Set anpassen 
+Du kannst Stift-Sets auch nachträglich anpassen. 
+Für Entwurfspräsentationen während deines Studiums wirken Haarlinien, also sehr feine Linien, als dünnste Linien-
+stärke besonders elegant. Für dieses Beispiel passen wir deshalb die Stärke der beiden dünnsten Stifte - Nr. 1 (Stan-
+dard für Objekte und Aufsichtslinien) und Nr. 10 (Standard für Schraffuren) - an. 
+ 
+1. 
+Gehe dazu erneut in die Einstellungen der Stifte & Farben 
+und wähle das Stift-Set aus, das geändert werden soll. 
+2. 
+Markiere die Stifte, die du ändern möchtest (Nr. 1 und Nr. 
+10). Halte die Cmd- (MAC) bzw. Strg-Taste (WIN) gedrückt, 
+um mehrere Stifte auf einmal auszuwählen. 
+3. 
+Ändere die Strichstärke auf 0,25 Pt. 
+ 
+Klicke anschließend auf Speichern als... 
+Statt ein neues Stift-Set zu erstellen, überschreibst du diesmal 
+dein zuvor erstelltes Stift-Set. 
+ 
+Übernimm die Einstellungen beider Fenster mit Überschreiben 
+und OK. 
+Nun werden mit diesem Stift-Set zusätzlich die Stifte Nr. 1 und 10 
+besonders dünn dargestellt. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 87/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+87/137 
+5.4 
+Modelldarstellung 
+Was ist die Modelldarstellung? 
+Mit Hilfe der Modelldarstellung legst du fest, wie detailliert Konstruktionselemente oder Objekte im Bearbeitungs-
+fenster (Grundriss, Schnitt, 3D-Fenster etc.) dargestellt werden. 
+Ein Beispiel 
+Modelldarstellung 01 Beispiel Entwurf 
+Modelldarstellung 05 Beispiel Ausführungsplanung 
+ 
+ 
+Eigene Modelldarstellung erstellen 
+Nun wollen wir eine eigene Modelldarstellung erstellen. 
+Öffne dazu die Modelldarstellungs-Einstellungen über das 
+entsprechende Symbol in der Schnell-Optionen-Leiste. 
+ 
+Die Einstellungen der Modelldarstellung sind sehr umfangreich. Am besten startest du mit einer voreingestellten Mo-
+delldarstellung, die deinen Vorstellungen am nächsten kommt, duplizierst diese und passt sie entsprechend an. 
+Achte darauf, dass die Modelldarstellung 04 Beispiel Genehmigungsplanung ausgewählt ist, bevor du fortfährst. 
+1. 
+Erstelle zuerst eine 
+neue Modelldarstel-
+lung, indem du auf 
+Neu... klickst.  
+2. 
+Vergib einen Namen...  
+3. 
+... und klicke auf OK. 
+ 
+Die Einstellungen der Modelldarstellung 04 Beispiel Genehmigungsplanung wurden dadurch dupliziert. Im nächs-
+ten Schritt passt du die Einstellungen dieser neuen Modelldarstellung an. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 88/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+88/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Eine Modelldarstellung anpassen 
+Nun passen wir die Einstellungen der neuen Modelldarstellung Projekt-Präsentation an. Stelle dazu sicher, dass 
+diese Modelldarstellung im linken Bereich ausgewählt ist. 
+1. 
+Nimm im Bereich Treppen-Optionen fol-
+gende Anpassungen vor: 
+ 
+2. 
+Passe außerdem die Darstellung der Türöff-
+nungslinie im Bereich Weitere Einstellun-
+gen der Bibliothekselemente an: 
+ 
+Übernimm die Einstellungen mit OK. Sie werden damit automatisch in der Modelldarstellung Projekt-Präsentation 
+gespeichert. 
+Du siehst nun die Unterschiede im Grundriss. Die Treppen werden ohne Text und die Türen mit gerader, dünner Öff-
+nungslinie dargestellt: 
+Vorher (Modelldarstellung 02 Beispiel Genehmigungspla-
+nung) 
+Nachher (Modelldarstellung Projekt-Präsentation) 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 89/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+89/137 
+5.5 
+Grafische Überschreibung 
+Was ist die Grafische Überschreibung? 
+Als Nächstes schauen wir uns die Grafischen Überschreibungen an. Mit diesen hast du die Möglichkeit, Bauteile mit 
+bestimmten Kriterien grafisch hervorzuheben oder einfach nur anders darzustellen. 
+Zwei Beispiele 
+Wenn du die Einstellung 70 Raum Kategorien-
+farbe wählst... 
+... werden die Räume entsprechend ihrer Kate-
+gorie eingefärbt: 
+ 
+ 
+Die Grafische Überschreibung 60 Bauteile 
+schwarz hingegegen färbt alle geschnittenen 
+Elemente schwarz ein: 
+ 
+ 
+Über die Grafischen Überschreibungen wer-
+den keine Bauteileinstellungen geändert! Es 
+wird einfach nur die Art und Weise der Darstel-
+lung im aktuellen Fenster überschrieben. 
+Wähle jetzt wieder Keine Überschreibungen, 
+bevor du fortfährst. 
+ 
+ 
+Eigene Grafische Überschreibung erstellen 
+Im nächsten Schritt sollst du eine individuelle Einstellung für die Grafische Überschreibung erstellen. 
+Wir werden einen Überschreibungsstil erstellen, bei dem alle Elemente der Außenanlagen grau dargestellt werden, 
+unabhängig von den jeweiligen Elementeinstellungen. 
+Blende zunächst die Ebene 60 Ausstattung außen ein, um die Außenanlagen im Grundriss anzuzeigen. Sie beste-
+hen aus Gartenwänden und Bodenbelagsschraffuren. Aktualisiere auch gleich die Ebenenkombination Grundriss-
+ohne-Bemaßung. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 90/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+90/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Öffne nun das Einstellungsfenster der 
+Grafischen Überschreibung. 
+Auf der linken Seite des Einstellungsfens-
+ters (1) siehst du alle bestehenden Grafi-
+schen Überschreibungen. Auf der rech-
+ten Seite (2) siehst du, welche Regeln der 
+jeweiligen Grafischen Überschreibung zu-
+geordnet sind. 
+ 
+Als Erstes erstellen wir eine neue Grafi-
+sche Überschreibung. Dazu klickst du un-
+ten links im Einstellungsfenster auf Neu... 
+und im sich daraufhin öffnenden Fenster 
+wählst du Neue Kombination und trägst 
+den Namen "Entwurf - Außenanlagen 
+grau" ein. Klicke anschließend auf OK, um 
+die neue Kombination zu erstellen. 
+ 
+ 
+Als Nächstes müssen dieser neuen Grafischen Überschreibung Regeln zugeordnet werden. Die Überschreibungsre-
+geln für unsere Zwecke müssen wir zunächst noch erstellen. 
+Stelle sicher, dass du dich in der soeben 
+erstellten Grafischen Überschreibung Ent-
+wurf - Außenanlagen grau befindest und 
+klicke dann auf die Schaltfläche Neue Re-
+gel hinzufügen. Wähle im daraufhin geöff-
+neten Fenster Neue Regel die Option 
+Neue Regel und trage bei dem Namen 
+die Bezeichnung "Außenanlagen grau" 
+ein. Bestätige die Eingabe mit OK. 
+ 
+Klicke auf die Schaltfläche mit den drei 
+Punkten rechts neben der gerade erstell-
+ten Regel, um die Einstellungen für diese 
+Regel anzupassen. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 91/137 =====
+Grundlagen der Darstellung 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+91/137 
+Es öffnet sich das Dialogfenster Grafische 
+Überschreibungsregeln. Hier findest du 
+auf der linken Seite alle verfügbaren 
+Überschreibungsregeln (1). Rechts (2A+B) 
+siehst du die jeweiligen Einstellungen der 
+ausgewählten Regel. Hier werden zu-
+nächst Kriterien definiert, die festlegen, 
+welche Elemente von der Überschrei-
+bungsregel betroffen sein sollen (2A). An-
+schließend kannst du einstellen, wie 
+diese Elemente grafisch überschrieben 
+werden sollen (2B). 
+ 
+ 
+Überprüfe, dass links die Regel Außenan-
+lagen grau gewählt ist. Wähle dann als 
+Kriterium unter Element-Typ die Option ist 
+gleich und den Wert Alle Typen, da sich 
+unsere Regel auf alle Bauteiltypen bezie-
+hen soll. Allerdings sollen nur die Ele-
+mente der Außenanlagen überschrieben 
+werden. Diese können wir anhand der 
+Ebene von dem Rest unseres Projektes 
+abgrenzen. Klicke also auf Hinzufügen..., 
+suche hier nach "Ebene" und füge dieses 
+Kriterium hinzu. 
+ 
+Stelle hier Ist gleich Ebene 60 Ausstat-
+tung außen ein. 
+Wir haben nun festgelegt, dass alle Ele-
+mente der Ebene 60 Ausstattung außen 
+grafisch überschrieben werden sollen. 
+Nun müssen wir noch einstellen, wie die 
+Überschreibung aussehen soll. Alle Ele-
+mente sollen in grauer Farbe erscheinen. 
+Setze dafür den Haken bei Linie / Marker 
+/ Textstift und wähle den Stift Nr. 93 (hell-
+grau) aus. Überschreibe außerdem den 
+Schraffurvordergrundstift mit dem Stift Nr. 
+93. Dies soll für Zeichnungsschraffuren 
+(erstes Symbol) und Schnittschraffuren 
+(drittes Symbol) gelten. Wähle außerdem 
+die Option Nur Stiftfarbe überschreiben. 
+Schließe das Einstellungsfenster dann mit 
+einem Klick auf OK. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 92/137 =====
+ 
+ 
+Grundlagen der Darstellung 
+92/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Du gelangst zurück zu den Grafischen 
+Überschreibungen. Du könntest nun wei-
+tere Regeln hinzufügen. In unserem Fall 
+sind die Einstellungen fertig und du 
+kannst das Fenster über OK schließen. 
+ 
+ 
+Die Außenanlagen sind nun optisch zu-
+rückgenommen, während dein Entwurf im 
+Vordergrund steht. 
+ 
+Grafische Überschreibung anpassen 
+Möchtest du die Grafische Überschreibung anpassen, so gehe einfach wieder in das Einstellungsfenster. 
+Hier kannst du weitere bereits ange-
+legte Regeln hinzufügen (A) oder eine 
+neue Regel erstellen (B). Bereits hinter-
+legte Regeln kannst du über die drei 
+Punkte (C) bearbeiten. Die Einstellun-
+gen aller Regeln kannst du auch über 
+die Schaltfläche Regeln bearbeiten... (D) 
+erreichen. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 93/137 =====
+Schnitte und Ansichten 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+93/137 
+6 Schnitte und Ansichten 
+Nun wollen wir uns die Darstellung der Schnitte und Ansichten noch einmal genauer ansehen. Da sich Schnitte und 
+Ansichten in der Funktionsweise gleichen, sehen wir uns die verschiedenen Möglichkeiten anhand von Schnitten an. 
+Alle Einstellungen sind aber ebenso auf Ansichten anwendbar. 
+6.1 
+Schnitt- und Ansichts-Einstellungen 
+Du kannst eine(n) bereits angelegte(n) Schnitt bzw. Ansicht über einen Doppelklick im Navigator öffnen. 
+Öffne den Schnitt A-A über einen Doppelklick im Navigator und stelle die Ebenenkombination Schnitte/Ansichten 
+ein, damit das Gelände eingeblendet und die Möblierung ausgeblendet sind. 
+Was sind die Schnitt-Einstellungen? 
+In den Schnitt-Einstellungen legst du die wichtigsten Optionen deines Schnittes fest. Du gelangst du über mehrere 
+Wege zu diesen Einstellungen: 
+• 
+Erstellst du einen neuen Schnitt und möchtest die Einstellungen vorab anpassen, so öffne die Grundeinstel-
+lungen des Schnitt-Werkzeuges. 
+• 
+Du kannst die Schnitt-Einstellungen auch nachträglich anpassen, indem du im Navigator mit der rechten 
+Maustaste auf den entsprechenden Schnitt klickst und dort den Befehl Schnitt-Einstellungen... wählst. 
+Allgemeine Schnitt-Einstellungen 
+Zu den wichtigsten Einstellungsmöglichkeiten des Schnitt-Werkzeugs im Bereich Allgemein gehören: 
+Art des Schnitt-Markers 
+• 
+Der Quell-Marker erzeugt einen Schnitt. Diesen Mar-
+ker wirst du hauptsächlich für die Erstellung von 
+Schnitten in Archicad verwenden. 
+• 
+Der Verknüpfte Marker erzeugt keinen Schnitt, son-
+dern dient als Referenz auf einen anderen Aus-
+schnitt, einen anderen Blickpunkt oder eine andere 
+Zeichnung. 
+• 
+Der Nicht-verknüpfte Marker enthält individuellen 
+Text und erzeugt keinen Schnitt. 
+ 
+Schnitt-Status (nur für Quell-Schnittmarker) 
+Wähle eine Option aus, um den Status der Verknüpfung zwischen Schnitt und Grundriss zu definieren. 
+• 
+Automatisches Wiederaufbauen (Modell): Falls sich 
+der Grundriss geändert hat, wird der Schnitt jedes 
+Mal automatisch neu aufgebaut (aktualisiert), wenn 
+er geöffnet wird. 
+• 
+Manuelles Wiederaufbauen (Modell): Der Schnitt 
+wird bei dieser Einstellung nicht automatisch wieder-
+aufgebaut. Er kann nur über den Befehl Anhand des 
+Modells neu aufbauen im Kontextmenü des geöffne-
+ten Schnittes anhand des Gebäudemodells wieder-
+aufgebaut werden. 
+• 
+2D-Zeichnung: Im Status 2D-Zeichnung werden die 
+Elemente in 2D-Zeichnungselemente zerlegt, die 
+nicht mit dem Grundriss verknüpft sind und nicht au-
+tomatisch auf Grundlage des Modells wiederaufge-
+baut werden. Du kannst die Zeichnung jedoch 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 94/137 =====
+ 
+ 
+Schnitte und Ansichten 
+94/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+aktualisieren, damit die am Modell vorgenommenen 
+Änderungen aktualisiert werden. 
+Auf Geschoss zeigen (nur für Quell-Schnittmarker) 
+Über diese Popup-Liste kannst du auswählen, auf wel-
+chen Geschossen der Schnitt-Marker und die Schnittlinien 
+gezeigt werden sollen. 
+ 
+ 
+Horizontaler Bereich (nur für Quell-Schnittmarker) 
+ 
+Der horizontale Bereich definiert die Tiefe des Grundriss-
+abschnitts, die das Schnittfenster umfassen soll.  
+• 
+Unendlich: Alle Elemente hinter der Schnittlinie wer-
+den im Schnittfenster angezeigt, vorausgesetzt, sie 
+werden nicht durch andere Elemente verdeckt. 
+• 
+Begrenzt: Nur die Elemente zwischen der Schnittli-
+nie und der Begrenzungslinie werden im Schnitt-
+fenster angezeigt.  
+• 
+Keine Tiefe: Es werden nur Elemente angezeigt, 
+durch die die Schnittlinie verläuft. 
+ 
+Vertikaler Bereich (nur für Quell-Schnittmarker) 
+Der vertikale Bereich definiert die Höhe des Grundrissab-
+schnitts, die das Schnittfenster umfassen soll. 
+• 
+Unendlich: Der Schnitt umfasst die gesamte 
+Höhe des Projekts. 
+• 
+Begrenzt: Der Sichtbereich des Schnittes lässt 
+sich auch vertikal begrenzen. Wenn du diese 
+Option wählst, kannst du Höhenwerte für die 
+obere und untere Begrenzung des Schnittes ein-
+geben. 
+ 
+Modelldarstellung von Schnitten 
+Im Bereich Modelldarstellung legst du fest, wie dein 
+Schnitt dargestellt werden soll. Hier definierst du bei-
+spielsweise, wie und mit welchen Stiften geschnittene 
+und ungeschnittene Elemente dargestellt werden sollen, 
+ob im Schnitt Schatten enthalten sein sollen oder ob un-
+terschiedliche Sichtbereiche auch unterschiedlich ange-
+zeigt werden sollen. 
+Probiere unbedingt die unterschiedlichen Einstellungen 
+und deren Auswirkung auf die Darstellung aus! Du wirst 
+sehen, dass durch die Einstellungsmöglichkeiten hier ei-
+niges an 2D-Nachbearbeitung entfallen kann. 
+Stelle die Schnitt-Einstellungen anschließend wie im 
+Screenshot gezeigt ein. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 95/137 =====
+Schnitte und Ansichten 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+95/137 
+6.2 
+Staffage 
+Um deinen Schnitt oder deine Ansicht zu beleben, kannst du Staffage hinzufügen – beispielsweise einen Hinter-
+grund, Bäume, Menschen oder andere Objekte.  
+Vervollständige die Zeichnungen mit Hilfe von Schraffuren, Linien, Objekten, Beschriftungen und Bildern, sodass sie 
+deinen Vorstellungen entsprechen. Nutze zusätzlich die Möglichkeiten des Bereiches Modelldarstellung in den 
+Schnitt-Einstellungen. 
+Hintergrund einfügen 
+Um den Schnitt weiter zu gestalten, werden wir zuerst einen Hintergrund einfügen. Du kannst Fotos, Texturen, oder 
+auch Schraffuren als Hintergrund verwenden. 
+ 
+Um ein Bild als Hintergrund 
+hinzuzufügen, gehe wie 
+folgt vor: 
+1. 
+Aktiviere das Zeich-
+nungs-Werkzeug. 
+2. 
+Klicke mit dem Cursor 
+in die Zeichenfläche. 
+ 
+ 
+3. 
+Wähle im nun geöffne-
+ten Auswahlfenster die 
+Option Lokales Datei-
+system und klicke auf 
+Suchen. 
+4. 
+Suche auf deinem 
+Rechner nach dem ge-
+wünschten Hinter-
+grundbild und klicke 
+auf Öffnen, um es in 
+den Schnitt zu laden. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 96/137 =====
+ 
+ 
+Schnitte und Ansichten 
+96/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Klicke einen Eckpunkt des 
+Bildes an, um die Pet-Pa-
+lette zu öffnen. Mithilfe der 
+Befehle in der Pet-Palette 
+kann dann noch die Posi-
+tion, Größe und Form des 
+Hintergrundbildes verän-
+dert werden. 
+ 
+ 
+Sollte das Hintergrundbild 
+vor dem Schnitt liegen, 
+kannst du mit Rechtsklick 
+auf das Bild das Kontext-
+menü öffnen und das Bild 
+in der Darstellungsreihen-
+folge in den Hintergrund 
+schieben. 
+ 
+Möchtest du das Bild trans-
+parenter gestalten, so füge 
+einfach eine weiße trans-
+parente Schraffur hinzu 
+und lege sie mit den Be-
+fehlen im Kontextmenü 
+über das Hintergrundbild 
+und unter deinen Gebäu-
+deschnitt.  
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 97/137 =====
+Schnitte und Ansichten 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+97/137 
+Bäume einfügen 
+So fügst du deiner Zeichnung Bäume hinzu: 
+1. 
+Rufe zuerst die Objekt-Werk-
+zeug-Einstellungen durch Dop-
+pelklick auf das Objekt-Werk-
+zeug auf. 
+2. 
+Öffne den Bibliotheksordner 
+1.03 Aussenbereich und Staf-
+fage (Deutschland) bzw. 7. Um-
+gebung (Österreich) und gehe 
+dann in den Unterordner Pflan-
+zen 26. 
+3. 
+Wähle hier die Laubbäume 26. 
+4. 
+Suche dir dann im Bereich Laub-
+baum-Einstellungen einen Laub-
+baum-Typ aus, z.B. Ahorn. 
+5. 
+Stelle die Ebene auf 60 Pflanzen 
+außen. 
+6. 
+Stelle die gewünschten Dimensi-
+onen des Baumes ein. 
+ 
+7. 
+Wähle im Bereich 2D-Darstellung unter 
+Ansichtstypen die symbolische Seitenan-
+sicht aus. (Alternativ kannst du die Seiten-
+ansicht wählen, um eine realistische Dar-
+stellung zu erhalten.)  
+8. 
+Nun kannst du einen Symboltyp auswäh-
+len..  
+9. 
+...und die Darstellung, also Kontur und 
+Schraffur des Baumes, bestimmen.  
+10. Bestätige die Eingaben mit einem Klick 
+auf OK. 
+ 
+ 
+Der Baum hängt als Rahmen am Cursor. Klicke 
+dorthin, wo der Baum eingefügt werden soll. 
+Anschließend kannst du den Baum mithilfe der 
+Befehle aus dem Kontextmenü hinter dein Ge-
+bäude legen und die Größe des Baumes mit-
+hilfe der pinken editierbaren Hotspots intuitiv 
+anpassen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 98/137 =====
+ 
+ 
+Schnitte und Ansichten 
+98/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Menschen einfügen 
+Wichtig für die Illustration von Ansichten und Schnitten sind menschliche Figuren. Mit diesen Figuren kann die Nut-
+zungsart eines Gebäudes oder Raumes erklärt werden. Außerdem werden die Dimensionen des Gebäudes leichter 
+verständlich. 
+1. 
+Rufe wieder die Objekt-Werkzeug-
+Einstellungen auf.  
+2. 
+Gehe in der deutschen Archicad-
+Sprachversion in den Ordner 1.04 
+2D Planung und Symbole 26 und 
+öffne die Unterordner Aussenbe-
+reich und Staffage 26 und Men-
+schen 26. In der österreichischen 
+Archicad-Sprachversion gehst du 
+zum Ordner 8. Menschen und Fahr-
+zeuge > Menschen Kontur 26. 
+3. 
+Wähle eine beliebige Figur aus. 
+4. 
+Bei Ansichtstyp wählst du Vorderan-
+sicht aus.  
+5. 
+Nun stellst du im Bereich 2D-Dar-
+stellung die gewünschten Stifte und 
+Einstellungen für Kontur und Schraf-
+fur ein.  
+6. 
+Wähle die Ebene 50 Staffage.  
+7. 
+Bestätige die Einstellungen mit OK. 
+ 
+Das Objekt hängt als Rahmen am Cursor. 
+Klicke dorthin, wo der Mensch eingefügt 
+werden soll. 
+ 
+Der Mensch wurde im Schnitt platziert. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 99/137 =====
+Schnitte und Ansichten 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+99/137 
+6.3 
+Beispiele 
+Hier siehst du einige Beispiele für die Gestaltung von Schnitten und Ansichten, die mithilfe der Schnell-Optionen, 
+Schnitt- bzw. Ansichtseinstellungen sowie Staffage erstellt wurden. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 100/137 =====
+ 
+ 
+3D-Darstellungen und Arbeitsblätter 
+100/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+7 3D-Darstellungen und Arbeitsblätter 
+7.1 
+3D-Fenster einrichten 
+Die Grundlage unseres Konzeptmodells bildet das 3D-Modell. Öffne daher zuerst das 3D-Fenster (Allgemeine Per-
+spektive). Um dein Modell auszurichten, kannst du die schon bekannten Navigationsoptionen (Orbit, Pan-Funktion, 
+Rundgang etc.) nutzen. Für eine genauere Ausrichtung dient das Einstellungsfenster Standort & Projektionsart. 
+Mit einem Rechtsklick in einem leeren Bereich des 3D-
+Fensters öffnest du das Kontextmenü. Wähle hier Stand-
+ort & Projektionsart.  
+ 
+Du gelangst in die Perspektiv-Einstellungen und kannst 
+hier die Position deines Blickpunktes einstellen. 
+Möchtest du stattdessen eine Axonometrie erzeugen, 
+so wechsle zu den Axonometrie-Einstellungen.  
+ 
+Hier kannst du Winkel und Achsenlängen für deine Exo-
+nometrie sowie den Sonnenstand exakt festlegen. 
+ 
+Wechsle zurück zur perspektivischen Darstellung und richte das Modell nach deinen Vorstellungen aus. 
+In diesem Kapitel möchten wir auf Basis unseres 3D-Modells eine 
+Konzeptzeichnung unseres Gebäudes erstellen. Dazu sehen wir 
+uns 3D-Schnitte, 3D-Dokumente und Arbeitsblätter genauer an. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 101/137 =====
+3D-Darstellungen und Arbeitsblätter 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+101/137 
+7.2 
+3D-Schnitte 
+3D-Schnitt erstellen 
+Zuerst lernst du, wie du einen 3D-Schnitt in Archicad erstellst. Das geht sowohl im 3D-Fenster, als auch in 2D-Fens-
+tern wie Grundriss, Schnitt oder Ansicht. In diesem Beispiel erstellst du den 3D-Schnitt im 3D-Fenster. 
+Um einen 3D-Schnitt zu erstellen, gehe wie folgt vor: 
+1. 
+Aktiviere die Schaltfläche 3D-Schnitt ausführen in der Standard-Symbolleiste.  
+2. 
+An den Rändern des Arbeitsbereiches erscheinen nun Scheren-Symbole, die für die Erzeugung eines 3D-
+Schnittes verwendet werden können. 
+ 
+3. 
+In manchen Fällen musst du jedoch eine individuelle Schnittebene erstellen. Klicke dazu mit der rechten Maus-
+taste auf eine der Scheren-Symbole und wähle den Befehl Eigene Schnittebene erstellen.  
+ 
+4. 
+Anschließend legst du die Ausrichtung die-
+ser Schnittebene fest. Klicke dazu auf die 
+Seitenwand des 3D-Modells, wie in diesem 
+Bild gezeigt: 
+ 
+ 
+6. 
+Fahre mit dem Mauszeiger, um die vio-
+lett gefärbte Schnittebene zu bewegen. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 102/137 =====
+ 
+ 
+3D-Darstellungen und Arbeitsblätter 
+102/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+7. 
+Klicke mit der linken Maustaste, wenn 
+du mit der Lage der Schnittebene zu-
+frieden bist. Bestätige die Lage ab-
+schließend mit einem Klick auf Fertig-
+stellen. 
+ 
+ 
+8. 
+Der 3D-Schnitt wurde ausgeführt.  
+ 
+Keine Angst, dieser Schnitt ist nur temporär. Der Rest deines 3D-Modells ist nicht verloren. Du kannst den 3D-Schnitt 
+jederzeit über einen Klick auf die Schaltfläche 3D-Schnitt ausführen deaktivieren und wieder das komplette 3D-Mo-
+dell anzeigen lassen. 
+ 
+Erstelle auf die gleiche Art und Weise einen zweiten 3D-Schnitt, um die Freifläche zu kürzen. Klicke diesmal auf das 
+Scherensymbol am rechten Rand des Arbeitsbereiches (das Scherensymbol verwandelt sich in ein Papierkorb-Sym-
+bol) und fahre dann mit dem Mauszeiger in den Arbeitsbereich, um die Schnittebene zu bewegen. Mit einem Maus-
+klick sowie einem Klick auf Fertigstellen erstellst du auch diesen 3D-Schnitt. 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 103/137 =====
+3D-Darstellungen und Arbeitsblätter 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+103/137 
+7.3 
+3D-Dokumente 
+Im nächsten Schritt erstellen wir ein 3D-Dokument aus dem zuvor eingerichteten 3D-Fenster 
+Allgemeines zu 3D-Dokumenten 
+Bei einem 3D-Dokument handelt es sich um eine Projektsicht auf das 3D-Modell, die als Dokument abgespeichert 
+wird. Das bedeutet, dass du der 3D-Darstellung 2D-Elemente wie Bemaßungen, Etiketten, Text, Schraffuren usw. 
+hinzufügen kannst. Da sich das 3D-Dokument auf das 3D-Modell bezieht, werden Änderungen am 3D-Modell auto-
+matisch in das 3D-Dokument übertragen. Ähnlich wie Schnitte und Ansichten hat auch das 3D-Dokument eine ei-
+gene Modelldarstellung, mit der du das Erscheinungsbild schnell anpassen kannst, ohne dein Modell zu verändern. 
+3D-Dokumente können aus dem 3D-Fenster oder aus dem Grundriss erstellt werden. 
+3D-Dokument erstellen 
+Jetzt legst du ein 3D-Dokument des 3D-Schnittes 
+an. Klicke dazu mit der rechten Maustaste in ei-
+nen leeren Bereich des Fensters und wähle den 
+Befehl Neues 3D-Dokument aus 3D... 
+ 
+Vergib die Referenz-ID "2.4" und den Namen 
+"3D-Schnitt 3D-Dokument" und klicke auf Erstel-
+len. 
+ 
+Das 3D-Dokument wurde erstellt und geöffnet. 
+3D-Dokumente findest du im Ordner 3D-Doku-
+mente in der Projektmappe des Navigators. 
+ 
+Jetzt passen wir die Darstellung des 3D-Doku-
+mentes noch an. Rufe mit einem Rechtsklick das 
+Kontextmenü auf und öffne die 3D-Dokument-
+Einstellungen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 104/137 =====
+ 
+ 
+3D-Darstellungen und Arbeitsblätter 
+104/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Stelle den Bereich Modelldarstellung wie folgt 
+ein. Bestätige anschließend mit OK. 
+ 
+So wurde die Darstellung des 3D-Dokuments 
+schnell und einfach geändert, ohne die Einstel-
+lungen der Bauteile zu ändern. 
+ 
+7.4 
+Arbeitsblätter 
+Um die Zeichnung zu finalisieren, möchtest du möglicherweise einzelne Linien entfernen oder Schraffuren ändern. 
+Für eine solche 2D-Nachbearbeitung ist es hilfreich, ein Arbeitsblatt deiner Zeichnung zu erstellen. 
+Allgemeines zu Arbeitsblättern 
+Arbeitsblätter dienen in Archicad der Erstellung oder Bearbeitung von 2D-Zeichnungen. Es stehen nur 2D-Werk-
+zeuge zur Verfügung. 
+Du kannst Arbeitsblätter beispielsweise dazu verwenden, um... 
+• 
+externe 2D-Zeichnungen zu platzieren. Erhältst du von deinem Lehrstuhl beispielsweise einen Vermes-
+sungs- oder Lageplan des Entwurfsprojektes, den du als Grundlage deiner Arbeit benötigst, kannst du ihn 
+hier ablegen. Über die Transparentpause kannst du den Plan dann einfach bei Bedarf unter deinen Zeich-
+nungen einblenden. 
+• 
+eigene 2D-Zeichnungen anzufertigen - beispielsweise Diagramme, Legenden etc. 
+• 
+modellbasierte Zeichnungen in 2D zu bearbeiten - diesen Anwendungsfall lernst du im folgenden Ab-
+schnitt kennen. Hier werden die Konstruktions-Elemente in 2D-Elemente zerlegt. Die Zeichnung auf dem 
+Arbeitsblatt besteht also nur noch aus 2D-Linien, Schraffuren und Text. 
+Arbeitsblätter, die auf deinem Gebäudemodell basieren, werden bei Änderungen am Modell nicht automatisch aktu-
+alisiert. Deshalb empfehlen wir dir, deine Zeichnungen so weit wie möglich im Modellbereich zu bearbeiten. Auch 
+in Geschossen, Ansichten, Schnitten und 3D-Dokumenten kannst du 2D-Elemente hinzufügen. Ein Arbeitsblatt deiner 
+Zeichnung solltest du dann erst erstellen, wenn du hier an die Grenzen der Bearbeitung stößt. 
+Wenn sich dein 3D-Modell geändert hat und diese Änderung auch auf dem Arbeitsblatt erscheinen soll, kannst du 
+das Arbeitsblatt mit dem Befehl Anhand des Ursprungs-Ausschnittes neu aufbauen manuell aktualisieren. Durch 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 105/137 =====
+3D-Darstellungen und Arbeitsblätter 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+105/137 
+diesen Neuaufbau werden Elemente, die du zuvor gelöscht oder geändert hattest, wieder in den ursprünglichen 
+Zustand entsprechend des Modells zurückgesetzt. Das bezieht sich nur auf Elemente, die mit dem Modell zusam-
+men hängen - neu hinzugefügte Elemente werden nicht verändert. 
+Arbeite deshalb beispielsweise mit Ebenen, die du ein- und ausblenden kannst, wenn du noch wichtige Änderungen 
+erwartest. 
+Arbeitsblatt erstellen 
+Um ein Arbeitsblatt zu erstellen, gehe wie 
+folgt vor: 
+1. 
+Wähle das Arbeitsblatt-Werkzeug 
+aus dem Bereich Sichten des Werk-
+zeugkastens aus und öffne die 
+Grundeinstellungen. 
+2. 
+Vergib die Referenz-ID "AB-01" und 
+den Namen "3D-Schnitt Arbeits-
+blatt". 
+3. 
+Achte darauf, dass der Status auf 
+Ein neues Arbeitsblatt erstellen 
+festgelegt ist. 
+4. 
+Bestätige die Einstellungen mit OK. 
+ 
+ 
+5. 
+Wähle die Geometriemethode 
+Rechteckig...  
+6. 
+... und ziehe ein Rechteck auf, das 
+die komplette Zeichnung des 3D-
+Dokumentes beinhaltet. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 106/137 =====
+ 
+ 
+3D-Darstellungen und Arbeitsblätter 
+106/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+7. 
+Mit dem letzten Klick platzierst 
+du den Arbeitsblatt-Marker. 
+ 
+ 
+ 
+ 
+Es wurde ein neues Arbeitsblatt erstellt, 
+das du in der Projekt-Mappe des Naviga-
+tors findest: 
+ 
+ 
+Zeichnung nachbearbeiten 
+Die Zeichnung wurde in 2D-Elemente 
+zerlegt, sodass du sie jetzt nach Belieben 
+nachbearbeiten kannst. Lösche beispiels-
+weise störende Linien oder ändere ein-
+zelne Schraffuren.  
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 107/137 =====
+Ausschnitte 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+107/137 
+TEIL D: PLÄNE ERSTELLEN 
+Im letzten Teil des Kurses möchten wir Pläne auf Basis unserer zuvor erstellten Zeichnungen erstellen. 
+8 Ausschnitte 
+8.1 
+Allgemeines zu Ausschnitten 
+Was sind Ausschnitte? 
+Es gibt innerhalb von Archicad zahlreiche Möglichkeiten, die erzeugten Ele-
+mente darzustellen. Um möglichst wenig Aufwand zu haben, solltest du dich 
+unbedingt mit den Ausschnitten vertraut machen. Die Ausschnitte legen 
+fest, was in Archicad wie dargestellt wird. In einem Ausschnitt ist also eine 
+spezielle Sichtweise auf dein Projekt gespeichert. Das eigentliche Projekt 
+wird dafür nicht verändert. In den Ausschnitten werden unter anderem fol-
+gende Darstellungs-Optionen festgelegt und gespeichert: 
+• 
+Ebenenkombination 
+• 
+Maßstab 
+• 
+Strukturdarstellung 
+• 
+Stift-Set 
+• 
+Modelldarstellung 
+• 
+Grafische Überschreibung 
+• 
+Umbau-Filter 
+Ausschnitte werden in der zweiten Registerkarte des Navigators abgespei-
+chert, der sogenannten Ausschnitt-Mappe. 
+Du kannst an deinem Projekt also sowohl in der Projekt-, als auch in der Aus-
+schnitt-Mappe arbeiten, denn das Modell ist das gleiche! 
+ 
+Wofür brauche ich Ausschnitte? 
+Es gibt zwei gute Gründe, Ausschnitte in Archicad zu verwenden: 
+1. Zeitersparnis während des Arbeitens 
+In Teil C hast du bereits verschiedene Möglichkeiten kennen gelernt, wie du deine Zeichnungen für bestimmte Zwe-
+cke unterschiedlich darstellen kannst. Von besonderer Bedeutung sind dabei die Darstellungs-Schnell-Optionen. 
+Hiermit kannst du das Erscheinungsbild deiner Zeichnung schnell verändern. 
+Arbeitest du in der Projekt-Mappe, so musst du diese Darstellungs-Schnell-Optionen jedes Mal neu auswählen, wenn 
+du sie ändern möchtest - zum Beispiel beim Wechsel vom Grundriss in den Schnitt. Das kostet viel Zeit. Stattdessen 
+kannst du dir verschiedene Ausschnitte anlegen, die bereits die von dir gewünschten Darstellungs-Schnell-Optionen 
+hinterlegt haben. Dann benötigst du nur noch einen Doppelklick, um die jeweilige Darstellung aufzurufen und alle 
+Darstellungs-Schnell-Optionen sind bereits richtig eingestellt! 
+2. Layouts erstellen 
+Du benötigst Ausschnitte außerdem, um Layouts zu erstellen. Wie das genau funktioniert, sehen wir uns etwas spä-
+ter an. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 108/137 =====
+ 
+ 
+Ausschnitte 
+108/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+… und wo zeichne ich nun? 
+Oft taucht die Frage auf, wo man denn nun an seinem Entwurf arbeitet - in der Projekt- oder der Ausschnittmappe. 
+Tatsächlich ist das zunächst einmal nicht so wichtig. In beiden Mappen arbeitest du an deinem zentralen Gebäude-
+modell. Du kannst also sowohl in der Projekt-Mappe, als auch in der Ausschnitt-Mappe Anpassungen an deinem 3D-
+Modell vornehmen, Bemaßungen oder 2D-Elemente hinzufügen etc. Zur Erinnerung: Der Ausschnitt legt nur fest, 
+wie und mit welchen Filtern du die Zeichnung aus der Projektmappe siehst. 
+Wenn du beispielsweise im Erdgeschoss der Projekt-Mappe dein Modell veränderst, wird diese Änderung auch in 
+den zugehörigen Ausschnitten auftauchen. Fügst du neue Elemente hinzu, kann es sein, dass diese im Ausschnitt 
+zunächst nicht sichtbar sind. Dann liegt das daran, dass im Ausschnitt eine andere Darstellung eingestellt ist, als in 
+der Projektmappe zuvor, und die hinzugefügten Elemente beispielsweise auf einer Ebene liegen, die im Ausschnitt 
+ausgeblendet ist. 
+Für ein bequemes und schnelles Arbeiten empfehlen wir dir aber, alle benötigten Ausschnitte frühzeitig anzulegen 
+und mit diesen zu arbeiten - du kannst die Ausschnitt-Einstellungen jederzeit anpassen. 
+8.2 
+Ausschnitte erstellen und bearbeiten 
+Einzelne Ausschnitte erstellen 
+Um einen einzelnen Ausschnitt anzulegen, gehst du wie folgt vor: 
+1. 
+Öffne die gewünschte Zeichnung, beispielsweise das Arbeitsblatt AB-01 Konzept in der Projektmappe des 
+Navigators. 
+2. 
+Stelle die Zeichnung mit Hilfe der Schnell-Optionen nun so ein, wie du sie als Ausschnitt abspeichern möchtest: 
+•  Maßstab: 1:200 
+•  Stift-Set: Stift-Set braun 
+•  Grafische Überschreibungen: keine Überschreibungen 
+3. 
+Zoome außerdem auf das linke Piktogramm. 
+ 
+4. 
+Wechsle nun in die Ausschnitt-Mappe in deinem Navigator. 
+5. 
+Klicke dort auf die Schaltfläche Aktuellen Ausschnitt sichern... 
+6. 
+Es öffnet sich ein neues Fenster namens Ausschnitt sichern. Wähle hier einen eigenen Namen und tippe "Kon-
+zept Modulbau" ein. Der gewählte Name sollte für dich und gegebenenfalls andere Personen, die mit dir im 
+Projekt arbeiten, nachvollziehbar sein. 
+7. 
+Die Darstellungs-Schnell-Optionen kannst du im Bereich Allgemein nun noch einmal überprüfen und bei Bedarf 
+korrigieren. Sie lassen sich jederzeit auch nachträglich ändern. 
+Hinweis: Wenn du Ausschnitte anlegst, sollte niemals das Wort „Individuell“ in den Eistellungen stehen. Da eine 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 109/137 =====
+Ausschnitte 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+109/137 
+individuelle Kombination nur temporär gilt und verschiedene Einstellungen beinhalten kann, musst du deine 
+Einstellungen unter einer neuen Kombination abspeichern. Nur so kannst du wissen, welche Einstellungen ge-
+rade auf den Ausschnitt wirken und kannst diese nachträglich leicht ändern. 
+8. 
+Entferne das Häkchen bei 
+Zoom und Drehung beim 
+Öffnen dieses Ausschnitts ig-
+norieren im Bereich 2D/3D-
+Dokumente. (Diese Option 
+bewirkt, wenn aktiviert, dass 
+der Ausschnitt jeweils im zu-
+letzt aktiven Zoom geöffnet 
+wird und nicht in dem ge-
+speicherten Zoom-Aus-
+schnitt.) 
+9. 
+Wenn du fertig bist, klicke 
+auf Erstellen. 
+ 
+Der erstellte Ausschnitt erscheint nun am Ende der Liste in der Ausschnitt-
+Mappe. 
+ 
+ 
+Zoome nun auf das zweite Piktogramm des Arbeitsblattes AB-01 Konzept 
+und erstelle einen weiteren Ausschnitt mit denselben Einstellungen, den 
+du "Konzept Erweiterbarkeit" benennst. Achte auch hier unbedingt darauf, 
+das Häkchen bei Zoom und Drehung beim Öffnen dieses Ausschnitts ig-
+norieren zu entfernen. 
+Du kannst nun mit einem Doppelklick auf den jeweiligen Ausschnitt zwi-
+schen den beiden Ausschnitten hin und her wechseln. Das Fenster wird 
+immer auf die jeweilige Zeichnung zoomen. 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 110/137 =====
+ 
+ 
+Ausschnitte 
+110/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Ausschnitt aus dem 3D-Fenster erstellen 
+Ausschnitte kannst du aus allen Fenstern erstellen, also aus Grundrissen, Ansichten, Schnitten, Arbeitsblättern, De-
+tails etc. Auch aus dem 3D-Fenster kannst du einen Ausschnitt abspeichern. 
+1. 
+Gehe dazu ins 3D-Fenster. 
+2. 
+Aktiviere die Ebenenkombination 
+Schnitte/Ansichten sowie das Stift-Set 
+Schraffuren grau und stelle das 3D-
+Fenster wie gewünscht ein. 
+3. 
+Klicke in der Ausschnitt-Mappe auf Ak-
+tuellen Ausschnitt sichern... 
+4. 
+Auch hier kannst du deinen Ausschnitt 
+eindeutig benennen und die gewählten 
+Schnell-Optionen überprüfen. 
+5. 
+Erzeugst du einen Ausschnitt aus dem 
+3D-Fenster, so wird der Reiter Nur 3D 
+interessant: Wähle hier 3D-Fenster aus. 
+6. 
+Klicke anschließend auf Erstellen. 
+ 
+Erstelle einen weiteren Ausschnitt namens 
+"Außenperspektive Rendering" und den fol-
+genden Einstellungen im Bereich Nur 3D: 
+ 
+Du erkennst nun den Unterschied dieser beiden Einstellungen: Wenn du den Ausschnitt Außenperspektive 3D-Fens-
+ter öffnest, erscheint dein Modell im 3D-Fenster. Öffnest du hingegen den Ausschnitt Außenperspektive Rendering, 
+so wird ein aktuelles Rendering (in unserem Fall im Stile einer Bleistiftzeichnung) auf Basis deines Modells erzeugt. 
+ 
+ 
+Natürlich kannst du so auch automatisch photorealistische Renderings erzeugen lassen. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 111/137 =====
+Ausschnitte 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+111/137 
+Ausschnitte ordnen 
+Je mehr Ausschnitte du anlegst, desto unübersichtlicher wird deine Ausschnitt-Mappe. Deshalb lernst du nun, wie du 
+Ordnung in deine Ausschnitt-Mappe bringst. 
+Ausschnitte und Ordner löschen  
+Lösche die Beispielausschnitte, indem du zunächst alle Ausschnitte außer die 
+gerade erstellten markierst. Halte die Umschalt-Taste gedrückt, um mehrere 
+Ausschnitte oder Ordner auf einmal zu markieren. Klicke dann auf Löschen. 
+ 
+Hinweis: Durch das Löschen von Ausschnitten verlierst du keine Inhalte dei-
+nes Modells. Die Grundrisse, Schnitte etc. sind noch immer in der Projekt-
+mappe verfügbar, du löscht lediglich die voreingestellte Darstellung dieser 
+Zeichnung. Wenn du hingegen Zeichnungen aus der Projektmappe löscht, so 
+gehen diese Zeichnungen unwiederbringlich verloren! 
+ 
+Ordner erstellen 
+Klicke auf Neuer Ordner..., um neue Ordner oder Unterordner hinzuzufügen. 
+Erstelle einen Ordner namens „Konzeptdarstellung“. 
+ 
+Ausschnitte sortieren  
+Per Drag&Drop kannst du ganz einfach deine Ordner und Ausschnitte sortie-
+ren. Markiere die beiden Ausschnitte AB-01 Konzept Erweiterbarkeit und AB-
+01 Konzept Modulbau und ziehe sie mit der linken Maustaste in den Ordner 
+Konzeptdarstellung. 
+ 
+Du kannst auch die Reihenfolge von Ausschnitten oder Ordner per 
+Drag&Drop verändern. 
+ 
+Über den kleinen grauen Pfeil lassen sich Ordner auf- und zuklappen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 112/137 =====
+ 
+ 
+Ausschnitte 
+112/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Ordner klonen 
+Statt einzelne Ausschnitte zu erstellen, kannst du auch ganze Ordner (z.B. Geschosse, Schnitte, Ansichten, Arbeits-
+blätter etc.) klonen. Dies bewirkt Folgendes: Wenn du in der Projektmappe einen Schnitt oder ein Geschoss hinzu-
+fügst bzw. löschst, wird dieser Schnitt auch im Ordner der Ausschnittmappe gelöscht bzw. hinzugefügt. Du bist also 
+auf der sicheren Seite, wenn du ganze Ordner klonst, da diese sich selbst aktualisieren. 
+Um den Ordner Geschosse zu klonen, gehe wie folgt vor: 
+1. 
+Öffne über die Projekt-Mappe einen der Grundrisse (z.B. EG). 
+2. 
+Stelle den Grundriss wie gewünscht ein: 
+•  Maßstab: 1:100 
+•  Ebenenkombination: Grundriss-
+ohne-Bemaßung 
+•  Strukturdarstellung: Komplettes 
+Modell 
+•  Stift-Set: Stift-Set braun 
+•  Modelldarstellung: Projekt-Prä-
+sentation 
+•  Grafische Überschreibung: 
+Keine Überschreibungen 
+•  Zoome auf den Grundriss. 
+3. 
+Klicke in der Ausschnitt-Mappe auf 
+Ordner klonen. 
+4. 
+Wähle den zu klonenden Ordner 
+in der Projekt-Mappe, in diesem 
+Fall den Ordner Geschosse. 
+5. 
+Im unteren Bereich kannst du nun 
+wieder die Darstellungs-Schnell-
+Optionen und die Zoom-Einstellun-
+gen überprüfen und ggf. korrigie-
+ren. Beachte bitte, dass diese für 
+alle Grundrisse gelten, die sich in 
+diesem Ordner befinden. 
+6. 
+Klicke dann auf Klonen. 
+ 
+Wie du siehst, wurde der Ordner Geschosse mit allen enthaltenen Grundris-
+sen geklont. So hast du mit wenigen Klicks vier Ausschnitte mit denselben 
+Einstellungen erstellt. Durch die Verwendung eines geklonten Ordners wird 
+automatisch ein Ausschnitt von jedem neuen Geschoss erzeugt, dass du zu-
+künftig anlegst. An dem kleinen schwarzen Pfeil unten links an dem Ver-
+zeichnissymbol erkennst du, dass es sich um einen geklonten Ordner han-
+delt. 
+ 
+Klone auf dieselbe Art und Weise die Verzeichnisse Schnitte und Ansichten. Ändere hier die Ebenenkombination auf 
+Schnitte/Ansichten. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 113/137 =====
+Ausschnitte 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+113/137 
+Ausschnitt-Einstellungen bearbeiten 
+Möchtest du die Ausschnitt-Einstellungen nachträglich ändern, so gibt es zwei Wege, dies zu tun: 
+A: Über die Ausschnitt-Einstellungen 
+Über einen Rechtsklick auf den jeweiligen Ausschnitt im Navigator ge-
+langst du wieder zu den Ausschnitt-Einstellungen. 
+ 
+Diese kannst du auch nachträglich noch anpassen, indem 
+du die Einstellungen änderst und anschließend auf OK 
+klickst. 
+Ändere hier beispielsweise das Stift-Set auf Schraffuren 
+grau und bestätige mit OK. 
+ 
+Wenn du den Ausschnitt mit einem Doppelklick öffnest, 
+wird nun immer automatisch das Stift-Set Schraffuren grau 
+verwendet und deine Zeichnung erscheint in Grautönen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 114/137 =====
+ 
+ 
+Ausschnitte 
+114/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+B: Ausschnitte neudefinieren 
+Alternativ kannst du Ausschnitte neudefinieren. Dazu öffnest du den je-
+weiligen Ausschnitt und stellst das Fenster nach deinen Vorstellungen 
+ein. Anschließend klickst du mit der rechten Maustaste auf den Aus-
+schnitt, der angepasst werden soll, und wählst Neudefinieren mit aktu-
+ellen Fenster-Einstellungen. 
+Tipp: Diese Vorgehensweise bietet sich insbesondere an, wenn du 
+den Zoom des Ausschnittes verändern möchtest, denn das ist bei Vari-
+ante A nur eingeschränkt möglich. 
+ 
+Ein Beispiel: Öffne erneut den Ausschnitt 
+AB-01 Konzept Modulbau. Ändere dann 
+das Stift-Set in den Schnell-Optionen wie-
+der auf Stift-Set braun. Ändere außerdem 
+den Fenster-Zoom etwas, indem du bei-
+spielweise noch näher an die Zeichnung 
+heranzoomst. 
+ 
+Klicke dann mit der rechten Maustaste auf den Ausschnitt AB-01 Konzept Modulbau und wähle Neudefinieren mit 
+aktuellen Fenster-Einstellungen. 
+Die Ausschnitt-Einstellungen wurden dadurch angepasst. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 115/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+115/137 
+9 Planlayouts 
+Nun möchten wir unsere eigenen Pläne in Archicad erstellen. 
+9.1 
+Vorbereitung 
+Bevor du mit dem Layouten deines Plans beginnst, solltest du Folgendes beachten: 
+• 
+Befreie deine Archicad-Datei von allen Optionen und Varianten, dies vergrößert nur unnötig deine Datei. Spei-
+chere deine Datei sicherheitshalber unter einem neuen Namen ab. 
+• 
+Achte darauf, dass du im Lageplan bzw. Landschaftsplan möglichst nur 2D-Bäume verwendest (Symbolhafte 
+Ansichten). Die Verwendung vieler 3D-Bäume beeinträchtigt die Leistungsfähigkeit deines Computers. Wenn 
+du trotzdem 3D-Bäume nutzt, empfehlen wir dir die Verwendung eines entsprechend leistungsstarken Compu-
+ters, der ein flüssiges Arbeiten gewährleistet. 
+• 
+Du hast dich für ein geeignetes Papierformat entschieden und hast ein Layoutschema skizziert (oder wenigs-
+tens im Kopf). 
+• 
+Du hast alle benötigten Zeichnungen als Ausschnitte angelegt. 
+ 
+ 
+Arbeitseinheit 
+Im bisherigen Projekt haben wir stets in der Einheit Meter 
+gearbeitet. Tippst du also beispielsweise beim Zeichnen 
+einer Wand "3,00" als Abstand ein, so wird eine 3 Meter 
+lange Wand erstellt. 
+Die Arbeitseinheit im Layout-Bereich kann jedoch separat 
+festgelegt werden. Die Möglichkeit findest du im Menü 
+Optionen > Projektpräferenzen > Arbeitseinheiten. In der 
+Kursdatei ist hier Millimeter als Einheit festgelegt. Alle Zah-
+lenwerte werden also in Millimeter angegeben. 
+Bevor du deine Planlayouts erstellst, sieh also am besten 
+einmal kurz in den Projektpräferenzen nach, in welcher 
+Einheit du im Layout-Bereich arbeitest! 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 116/137 =====
+ 
+ 
+Planlayouts 
+116/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+9.2 
+Das Masterlayout 
+Dein skizziertes Layoutschema liegt jetzt vor dir und du hast dich für das For-
+mat A1 entschieden. Es stehen dir zwei A1 Blätter zur Verfügung, um alle Plan-
+inhalte unterzubringen. Alle von dir erstellten Ausschnitte sowie externe Zeich-
+nungen und Bilder können zusammen mit 2D-Elementen und Objekten auf 
+dem Layout angeordnet werden. 
+Jedes Layout basiert auf einem Masterlayout. Dieses legt die Blattgröße fest 
+und enthält all jene Elemente, die auf allen Layout-Blättern enthalten sein sol-
+len. Also beispielsweise den Plankopf, ein Logo, deinen Namen und vieles 
+mehr. 
+Wechsle ins Layoutbuch des Navigators. Dort findest du beispielhaft bereits 
+einige vorangelegte Ordner („Untergruppen“) und Layouts, sowie vordefinierte 
+Masterlayouts. Letztere werden mit einem grauen Layout-Symbol gekenn-
+zeichnet, während Layouts ein weißes Symbol aufweisen. 
+ 
+Masterlayout erstellen 
+Als Erstes erstellen wir ein Masterlayout 
+für unsere Pläne. 
+1. 
+Klicke dazu im Layoutbuch auf 
+Neues Masterlayout... 
+2. 
+Vergib einen passenden Namen, 
+z.B. "Endabgabe Projekt". 
+3. 
+Wähle das Blattformat A1 und die 
+Ausrichtung Querformat. 
+4. 
+Stelle die Layout-Ränder gleichmä-
+ßig auf 30mm ein. 
+5. 
+Über die Option Als Grundeinstel-
+lung für neue Layouts verwenden 
+legst du fest, dass alle neu erstell-
+ten Layouts auf diesem Masterlay-
+out basieren sollen. So sparst du 
+später Zeit. 
+6. 
+Klicke abschließend auf Erstellen. 
+ 
+Das neue Masterlayout wird jetzt ange-
+zeigt. Rechts in Navigator erscheint der 
+Name des Masterlayouts. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 117/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+117/137 
+Gestaltungsraster einrichten 
+Damit wir Zeichnungen und Texte auf unseren Plänen später leichter ordnen können, werden wir zuerst ein Gestal-
+tungsraster erstellen. Anhand unserer Layout-Skizzen können wir bereits ein Raster erkennen: 
+ 
+ 
+Wir benötigen also ein Raster, das unser Masterlayout in 4 Spalten und 3 Zeilen/Reihen einteilt. Einen gleichmäßigen 
+Rand (blaue Linie) von 30mm hatten wir zuvor in den Masterlayout-Einstellungen bereits definiert. 
+Um ein Gestaltungsraster einzurichten, gibt es unterschiedliche Möglichkeiten, wobei wir für unser Beispiel nur die 
+Methode A verwenden werden: 
+A: 
+In den Masterlayout-Einstellungen kann ein Einrichtungs-Raster definiert werden. 
+B: 
+Du kannst das Konstruktionsraster verwenden. Blende es unter Menü Ansicht > Konstruktionsraster darstellen 
+ein und passe es unter Menü Ansicht > Raster- & Bearbeitungsebenen-Optionen > Raster-Einstellungen an. 
+C: 
+Verwende die orangen Hilfslinien... 
+D: ... oder zeichne selbst ein Raster mit dem Linien-Werkzeug. 
+Für unseren Zweck eignet sich die Methode A am besten. 
+1. 
+Öffne erneut die Einstellungen deines Masterlayouts, indem du mit der 
+rechten Maustaste auf das Masterlayout Endabgabe Projekt klickst und 
+dort die Masterlayout-Einstellungen aufrufst. 
+ 
+ 
+2. 
+Aktiviere im Reiter Zeichnungsplatzierung die Option 
+Zeichnungen an einem Raster ausrichten und zuord-
+nen. 
+3. 
+Klicke anschließend auf die Schaltfläche Einrichtungs-
+Raster... 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 118/137 =====
+ 
+ 
+Planlayouts 
+118/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+4. 
+Es öffnen sich die Raster-Einstellungen des Masterlay-
+outs. Gib für das Raster 4 Spalten und 3 Reihen an... 
+5. 
+... und wähle für die Rasterliniendarstellung die Option 
+Alle sichtbar. 
+6. 
+Bestätige anschließend mit OK ... 
+7. 
+... und schließe auch die Masterlayout-Einstellungen 
+mit OK. 
+ 
+Du siehst in deinem Masterlayout nun ein Raster mit 4 Spal-
+ten und 3 Reihen. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 119/137 =====
+Planlayouts 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+119/137 
+9.3 
+Das Layout 
+Im nächsten Schritt möchten wir die beiden Pläne anlegen, die wir später präsentieren wollen. Dazu müssen wir zwei 
+Layouts erstellen. 
+1. 
+Klicke dazu im Layoutbuch auf 
+die Schaltfläche Neues Layout. 
+2. 
+Wähle Eigene ID-Nr., wenn du 
+eine eigene ID-Nr. vergeben 
+oder sie leer lassen möchtest. 
+3. 
+Gib dem Layout einen passen-
+den Namen, z.B. "Titelseite". 
+4. 
+Wähle dein Masterlayout End-
+abgabe Projekt als Grundlage 
+aus. 
+5. 
+Bestätige die Einstellungen mit 
+einem Klick auf Erstellen. 
+ 
+Das Layout wird jetzt angezeigt und kann im Navigator aufgerufen werden. 
+ 
+Führe die Schritte 1-5 erneut durch, um ein zweites Layout namens Grund-
+risse-Schnitte-Ansichten zu erstellen. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 120/137 =====
+ 
+ 
+Planlayouts 
+120/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+9.4 
+Layoutbuch ordnen 
+Um die Übersicht über deine Layouts zu behalten, kannst du das Layoutbuch - ähnlich wie die Ausschnitt-Mappe - 
+sortieren und mittels sogenannter Untergruppen ordnen. 
+Untergruppe erstellen 
+Eine neue Untergruppe erstellst 
+du wie folgt: 
+1. 
+Klicke im Layoutbuch auf 
+die Schaltfläche Neue Un-
+tergruppe... 
+2. 
+Wähle Eigene ID-Nr. und 
+lasse diese frei. 
+3. 
+Vergib einen passenden 
+Namen für die Untergruppe, 
+zum Beispiel "Endabgabe"... 
+4. 
+...und klicke auf Erstellen. 
+ 
+Die neue Untergruppe erscheint nun in deinem Layoutbuch. 
+Layoutbuch sortieren  
+Über Drag&Drop kannst du Layouts in Untergruppen einsortieren und die Rei-
+henfolge von Layouts und Untergruppen ändern. Wähle das entsprechende 
+Element dazu aus und ziehe es mit gedrückter linker Maustaste an die ge-
+wünschte Stelle. Halte die Umschalt- oder die Cmd- bzw. Strg-Taste gedrückt, 
+um mehrere Elemente auf einmal auszuwählen. 
+ 
+Elemente löschen  
+Du kannst die Beispiel-Layouts und -Untergruppen löschen. Wähle sie dazu im 
+Layoutbuch aus und klicke auf Löschen. Das Löschen von Elementen im Lay-
+outbuch ist nicht widerrufbar. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!

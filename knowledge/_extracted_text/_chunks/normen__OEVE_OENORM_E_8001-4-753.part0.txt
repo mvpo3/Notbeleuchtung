@@ -1,0 +1,1200 @@
+
+
+===== PAGE 1/18 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8001-4-753 
+ 
+Ausgabe: 2009-04-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis AC 1000 V und DC 1500 V 
+Teil 4-753: Elektrische Heizanlagen mit Heizleitungen und 
+Flächenheizelemente 
+ 
+Erection of electrical installations with rated voltages up to AC 1000 V and  
+DC 1500 V –  Part 4-753: Electrical heating systems with heating cable and flexible 
+sheet heating element 
+ 
+Réalisation des installations électriques de tension nominale jusqu'à AC 1000 V et 
+DC 1500 V – Partie 4-743: Électrique systèmes de chauffage câble chauffant et 
+film souple chauffant 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.020; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ungleich (NEQ) 
+HD 384.7.753 S1:2002 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2009. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 2/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................3 
+1 
+Anwendungsbereich .............................................................................................................................4 
+2 
+Normative Verweisungen......................................................................................................................4 
+3 
+Begriffe ...................................................................................................................................................5 
+4 
+Allgemeines............................................................................................................................................6 
+5 
+Schutz gegen elektrischen Schlag ......................................................................................................7 
+6 
+Schalt- und Regelungseinrichtungen..................................................................................................8 
+7 
+Anschluss von Heizleitungen...............................................................................................................8 
+8 
+Besondere Anforderungen bei der Errichtung von Flächenheizanlagen in Gebäuden .................9 
+9 
+Besondere Anforderungen bei der Errichtung von Fußboden-, Wand- und Decken-
+Flächenheizanlagen im Schutzbereich in Räumen mit Bade-, Schwimm- oder 
+Duscheinrichtungen..............................................................................................................................9 
+10 
+Besondere Anforderungen bei der Errichtung von Dachrinnenheizanlagen und 
+Rohrbegleitheizungen...........................................................................................................................9 
+Anhang A (informativ) Information für den Betreiber der Heizanlage ........................................................11 
+Literaturhinweise ..............................................................................................................................................12 
+Anhang NZ (informativ) Referenztabelle HD 384.7.753 S1:2002 zu ÖVE/ÖNORM E 8001-4-753:2009 .....13 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 3/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+3 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß 
+ETG 1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterung zur Einarbeitung der nationalen Ergänzungen 
+Diese ÖVE/ÖNORM basiert auf HD 384.7.753 S1:2002. Sie ist unter Berücksichtigung nationaler Aspekte 
+technisch gleichwertig mit dem genannten Harmonisierungsdokument. 
+Mit dem HD 384.7.753 S1:2002 übereinstimmende Abschnitte sind am rechten Rand durch Angabe der 
+Harmonisierungsdokument-Abschnittsnummer gekennzeichnet zB [753.2.7]. Modifizierte Textteile des 
+Harmonisierungsdokumentes werden mit [753.2.7, modifiziert] und nationale Ergänzungen mit [–] kenntlich 
+gemacht. 
+Aufgrund des Anwendungsbereiches dieser ÖVE/ÖNORM wurde auch ein Verweis auf HD 60364-7-701:2007 
+eingefügt. 
+Um eine Verknüpfung zwischen den Harmonisierungsdokumenten und der Reihe ÖVE/ÖNORM E 8001 
+herstellen zu können, ist im Anhang NZ eine Referenztabelle beigefügt. 
+In dieser Referenztabelle sind nur jene nationalen, internationalen bzw. europäischen Publikationen 
+angeführt, die in dieser ÖVE/ÖNORM zur Anwendung kommen. 
+Eine kumulierende Referenztabelle mit allen Verweisen der nationalen Normen auf die Harmonisierungs-
+dokumente ist im Internet unter www.ove.at/oek/referenz.pdf zum Download bereitgestellt. 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende ÖVE/ÖNORM ersetzt ÖVE-EN 1 Teil 2:1993-04 § 34a, ÖVE-EN 1 Teil 2:1993-04 § 34b, 
+ÖVE-EN 1 Teil 2a:1996-03 § 34a und ÖVE-EN 1 Teil 2a:1996-03 § 34b. Da die zu ersetzenden Normen mit 
+der ETV 2002 verbindlich erklärt sind, kann die Zurückziehung dieser ÖVE erst mit Erscheinen einer neuen 
+ETV erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 4/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+4 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM gilt für die Errichtung von Heizanlagen mit elektrischen Heizleitungen und 
+Flächenheizelementen, 
+einschließlich 
+selbstbegrenzenden 
+Heizleitungen, 
+sogenannten 
+Parallel-
+Heizleitungen. 
+Sie gilt für 
+– 
+Flächenheizanlagen in Gebäuden, zB auf und in Wänden, Fußböden und Decken, 
+– 
+Freiflächenheizanlagen, 
+– 
+Heizanlagen für Dachrinnen- bzw. Entwässerungsrinnen, 
+– 
+Dachflächenheizanlagen, 
+– 
+Rohrbegleitheizanlagen, 
+– 
+sonstige Heizanlagen mit Heizleitungen, zB Heizanlagen zur Erzielung bestimmter Oberflächen-
+temperaturen (zB Prozesstemperatur oder Vermeidung von Kondensation). 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖVE/ÖNORM E 8001-1, Errichtung elektrischer Anlagen mit Nennspannungen bis AC 1000 V und  
+DC 1500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8001-6-63, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1000 V und 
+DC 1500 V – Teil 6-63: Prüfungen – Anlagenbuch und Prüfbefund 
+ÖVE/ÖNORM EN 60335-2-96, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke – 
+Teil 2-96: Besondere Anforderungen für Flächenheizgeräte 
+ÖVE/ÖNORM EN 60529, Schutzarten durch Gehäuse (IP-Code) 
+DIN VDE 0253, Isolierte Heizleitungen 
+DIN VDE 0254 (Entwurf), Parallel-Heizleitungen 
+IEC 60800, Heating cables with a rated voltage of 300/500 V for comfort heating and prevention of ice 
+formation 
+IEC 61423 Reihe, Heating cables for industrial applications 
+[753.1.1, modifiziert]
+[753.1.2, modifiziert]
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 5/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+5 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM E 8001-1 und die 
+folgenden Begriffe: 
+3.1 
+[–] 
+Heizanlage; Heizsystem 
+Gesamtheit aus Heizeinheiten und allen für den ordnungsgemäßen Betrieb erforderlichen Regelungs- und 
+Schalteinrichtungen 
+3.2 
+[753.2.1, modifiziert] 
+Speicherheizanlage 
+Heizanlage, bei der mit elektrischer Energie eine Speichermasse aufgeheizt und Wärme mit einer zeitlichen 
+Verzögerung abgegeben wird 
+3.3 
+[753.2.2, modifiziert] 
+Direktheizanlage 
+Heizanlage, die aus elektrischer Energie Wärme erzeugt und diese mit geringer zeitlicher Verzögerung abgibt 
+3.4 
+[–] 
+beheizter Bereich; beheizte Länge 
+jener Bereich, in welchem Heizleitungen installiert sind 
+3.5 
+[753.2.5, modifiziert] 
+Heizleitung 
+elektrisch isolierte Widerstandsleitung mit oder ohne Schirm bzw. Metallmantel um Wärme für Heizzwecke 
+abzugeben  
+3.6 
+[–] 
+Parallel-Heizleitung 
+Heizleitung bestehend aus zwei Versorgungsleitungen und dazwischen angeordneten Festwiderständen 
+(metallisch, anorganisch) oder elektrisch leitenden, auch selbstbegrenzend wirkenden Materialien  
+3.7 
+[753.2.6] 
+Flächenheizelement 
+Heizelement, das entweder aus flächenförmig ausgebildeten, mit elektrischem Widerstandsmaterial 
+beschichteten Isolationsmatten oder aus einem Grundmaterial besteht, auf dem elektrisch isolierte Heizdrähte 
+befestigt sind 
+3.8 
+[753.2.8, modifiziert] 
+Kaltleitung; „kaltes Ende“ 
+der Heizleitung oder dem Flächenheizelement angepasste Leitung zur Verbindung derselben mit der 
+ortsfesten elektrischen Anlage oder einer geeigneten Anschlussleitung 
+ANMERKUNG 
+Die Anpassung der Leitung betrifft die Isolation und den Schirm. 
+3.9 
+[753.2.7, modifiziert] 
+Heizeinheit 
+Heizleitung oder Flächenheizelement mit fest verbundenen Kaltleitungen oder passenden Kaltverbindungen 
+bis zur Anschlussstelle 
+ANMERKUNG 
+Die Kaltverbindungen können zur Verlängerung erforderliche Leitungen sein. 
+3.10 
+[–] 
+Bemessungswiderstand 
+auf die Längeneinheit bezogener Widerstand der Heizleitung bzw. auf die Flächeneinheit bezogener 
+Widerstand des Flächenheizelementes für eine bestimmte Leitertemperatur 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 6/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+6 
+3.11 
+[–] 
+Bemessungsleistung 
+auf die Längeneinheit bezogene Leistung der Heizleitung, angegeben in W/m oder auf die Flächeneinheit 
+bezogene Leistung des Flächenheizelementes, angegeben in W/m2 
+3.12 
+[753.2.4] 
+heizungsfreie Fläche 
+unbeheizte Fußboden- oder Deckenfläche, die vollflächig von aufgestellten Möbeln abgedeckt ist oder für 
+Einbaumöbel frei gehalten ist 
+3.13 
+[–] 
+selbstbegrenzende Eigenschaft 
+Eigenschaft eines Widerstandelementes, dessen Heizleistung bei Bemessungsspannung mit ansteigender 
+Temperatur der Umgebung abnimmt, bis das Heizelement eine Temperatur erreicht, bei der seine 
+Heizleistung auf einen Wert verringert wird, bei dem keine weitere Erwärmung auftritt 
+4 
+Allgemeines 
+[–] 
+ 
+[753.511, modifiziert] 
+4.1 
+Heizleitungen müssen den zutreffenden technischen Bestimmungen gemäß DIN VDE 0253, 
+DIN VDE 0254, IEC 60800 oder bei Anwendung in der Industrie gemäß IEC 61423 entsprechen. Für 
+Flächenheizgeräte gilt ÖVE/ÖNORM EN 60335-2-96. 
+ 
+[753.424.3.1, modifiziert] 
+Die Verlegung der Heizeinheiten muss gemäß Herstellerangaben erfolgen. 
+ 
+[753.512.2.5, modifiziert] 
+Heizeinheiten für die Errichtung in Decken müssen mindestens IPX1, für die Errichtung in Fußböden aus 
+Beton oder ähnlichem Material IPX7 und für die Außeninstallation mindestens IPX4 gemäß ÖVE/ÖNORM 
+EN 60529 entsprechen. 
+ 
+[–] 
+4.2 
+Elektrische Heizanlagen gemäß dieser ÖVE/ÖNORM müssen unter Beachtung der bautechnischen, 
+heizungstechnischen, brandschutztechnischen und elektrotechnischen Sicherheitserfordernissen errichtet 
+werden. 
+ANMERKUNG Im Allgemeinen ist eine enge Zusammenarbeit der beteiligten Fachleute sowohl im Planungs- als auch im 
+Ausführungsstadium notwendig. 
+4.3 Dokumentation der Heizanlage 
+[753.514, modifiziert] 
+In der Dokumentation der Heizanlage müssen folgende Einzelheiten enthalten sein: 
+– 
+Art der Heizanlage, 
+– 
+Zahl der errichteten Heizeinheiten, 
+– 
+Lage und Größe der beheizten Fläche, 
+– 
+Anordnung der Heizeinheiten einschließlich Lage der Übergangsstelle von der Heizleitung auf die 
+Kaltleitung und Lage der Kaltleitung im Bereich der beheizten Fläche, sowie Verlegetiefe der 
+Heizeinheiten, 
+– 
+Besonderheiten, die bei der Verlegung der Heizeinheiten berücksichtigt wurden, zB heizungsfreie 
+Flächen oder ausgesparte unbeheizte Flächen für in den Bodenbelag eindringende Befestigungsmittel, 
+– 
+Lage der Verbindungsdosen, 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 7/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+7 
+– 
+für jede Heizeinheit die Art der Heizleitung, die Heizleistung, die Bemessungsspannung und – 
+ausgenommen für selbstbegrenzende Parallel-Heizleitungen – der Bemessungswiderstand sowie der 
+Gesamtwiderstand der Heizeinheit, 
+– 
+Bemessungsströme von Überstrom-Schutzeinrichtungen, 
+– 
+Zuordnung der Schalt-, Regelungs-, und Schutzeinrichtungen zu den einzelnen Abschnitten der Anlage 
+sowie – falls vorhanden – die Lage von Temperatur- und Witterungsfühlern. 
+Die Dokumentation ist zur Aufnahme in das Anlagenbuch gemäß ÖVE/ÖNORM E 8001-6-63 bestimmt. 
+Die Angaben der Herstellerkennzeichnung (Typenschild) der Heizeinheiten müssen im Anlagenbuch 
+angeführt werden und sind zusätzlich in geeigneter Form in der Anschlussdose anzubringen. 
+ANMERKUNG  Informationen an den Betreiber der Heizanlage siehe Anhang A. 
+4.4 Warnhinweise 
+[–] 
+Im Verteiler, in dem eine Flächenheizanlage angeschlossen ist, müssen sinngemäß folgende Hinweise 
+deutlich sichtbar angebracht sein: 
+– 
+„Achtung elektrische Fußbodenheizung!“, 
+– 
+„Bohrarbeiten nur eingeschränkt möglich! Gebrauchsanleitung beachten und im Zweifelsfall einen 
+Heizungsfachmann befragen.“ 
+Im Verteiler, in dem eine Dachrinnenheizanlage angeschlossen ist, müssen sinngemäß folgende Hinweise 
+deutlich sichtbar angebracht sein:  
+– 
+„Achtung Dachrinnenheizanlage!“, 
+– 
+„Bei Arbeiten im Bereich der Heizanlage diese unbedingt abschalten!“. 
+Diese Warnhinweise sind auch bei den Öffnungen zum Besteigen des Daches anzubringen. 
+Wenn die Heizanlage in einem eigenen Unterverteiler angeschlossen ist, müssen diese Warnhinweise auch 
+im ersten, dem Zähler der Verbraucheranlage nachgeordneten Verteiler angebracht werden. 
+Bei anderen Heizanlagen wird empfohlen, die Angaben sinngemäß auszuführen. 
+5 
+Schutz gegen elektrischen Schlag 
+[753.41] 
+Für den Schutz gegen elektrischen Schlag gelten die Bestimmungen gemäß ÖVE/ÖNORM E 8001-1. 
+5.1 Basisschutz (Schutz gegen direktes Berühren)  
+[753.412.3, modifiziert] 
+Ein Basisschutz mittels Absperrungen oder Abdeckungen ist nicht zulässig. 
+5.2 Fehlerschutz (Schutz bei indirektem Berühren)  
+[–] 
+Eine Maßnahme des Fehlerschutzes mit Schutzleiter 
+– 
+Nullung oder 
+– 
+Fehlerstrom-Schutzschaltung 
+ist bevorzugt anzuwenden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 8/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+8 
+ 
+[753.413.1.6, modifiziert] 
+Heizeinheiten die in Fußböden, Decken oder Wänden eingebettet werden, müssen entweder ein 
+konzentrisches Metallgeflecht oder -rohr besitzen welches an den Schutzleiter des zugeordneten 
+Stromkreises anzuschließen ist, oder es muss für jede Heizeinheit eine elektrisch leitfähige Abdeckung oder 
+ein feinmaschiges leitfähiges Netz (Maschenweite maximal 3 mm x 3 mm) mit einer geeigneten 
+Anschlussfahne zum Anschluss an den Schutzleiter vorgesehen werden. 
+ 
+[–] 
+Der Querschnitt dieser Anschlussfahne ist entsprechend seiner Funktion als Potenzialausgleichleiter gemäß 
+ÖVE/ÖNORM E 8001-1:2000, Abschnitt 21.5 auszuführen. Besteht zum Material des Außenleiters des 
+zugeordneten Stromkreises ein Unterschied, so ist die unterschiedliche Leitfähigkeit bei der Auswahl des 
+Querschnittes der Anschlussfahne zu berücksichtigen. 
+Der Anschluss an den Schutzleiter hat mittels Potenzialausgleichsleiter zu erfolgen. 
+ 
+[753.413.5, modifizert] 
+Wird in besonderen Fällen die Schutztrennung als Maßnahme des Fehlerschutzes angewendet, darf an 
+jeweils einem Trenntransformator nur eine Heizeinheit angeschlossen werden. 
+5.3 Zusatzschutz 
+[753.413.1, modifiziert; 753.413.2, modifiziert] 
+Ausgenommen bei Anwendung der Maßnahmen des Fehlerschutzes Schutztrennung ist ein Zusatzschutz 
+durch Fehlerstrom-Schutzeinrichtungen mit einem Nennfehlerstrom IΔN ≤ 0,03 A vorzusehen. 
+6 
+Schalt- und Regelungseinrichtungen 
+[–] 
+Die Heizanlage muss stromkreisweise allpolig abschaltbar sein. Schalter und Regler sind unter 
+Bedachtnahme auf Funktionserfordernisse anzuordnen und zu kennzeichnen. 
+7 
+Anschluss von Heizleitungen  
+[–] 
+7.1 Anschluss der Kaltleitungen an die Heizleitung bzw. an das  
+Flächenheizelement 
+[753.424.3.1, modifiziert] 
+Sofern die Heizleitungen bzw. das Flächenheizelement nicht fabriksmäßig mit Kaltleitungen versehen sind, 
+sind die Kaltleitungen gemäß der Anleitung des Herstellers anzuschließen. 
+Wenn dies vom Hersteller vorgesehen ist, können Heizleitungen unmittelbar, d. h. ohne eigene Kaltleitungen, 
+in Anschlussdosen geführt werden. Dies ist gemäß der Anleitung des Herstellers durchzuführen. 
+7.2 Schutz gegen Überhitzung 
+[753.424] 
+ 
+[753.424.3.1] 
+Zur Vermeidung von Überhitzungen von Fußboden- oder Decken-Flächenheizungen in Gebäuden muss 
+zumindest eine der folgenden Maßnahmen zur Begrenzung der Temperatur in den beheizten Bereichen auf 
+maximal 80 °C angewendet werden: 
+– 
+geeignete Auslegung des Heizungssystems, 
+– 
+geeignete Errichtung des Heizungssystems unter Berücksichtigung der Herstellerangaben, 
+– 
+Verwendung von Schutzeinrichtungen. 
+ 
+[–] 
+Dabei besteht der beheizte Bereich aus den die Heizleitung umgebenden Medien bis zur Wärme abgebenden 
+Oberfläche. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 9/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+9 
+ 
+[–] 
+Zur Vermeidung von Überhitzung bei anderen Heizanlagen gemäß dem Anwendungsbereich ist unter 
+Berücksichtigung der die Heizleitung umgebenden Medien die Einhaltung der Herstellerangaben zur 
+Begrenzung der Temperatur erforderlich. 
+ 
+[–] 
+Der Abstand zwischen den Heizleitungen/Heizeinheiten darf den vom Hersteller angegebenen 
+Mindestabstand nicht unterschreiten. 
+[753.522.1.3, modifiziert] 
+Der Übergang von der Heizleitung auf die Kaltleitung muss so angeordnet werden, dass auch in diesem 
+Bereich keine Überhitzung auftreten kann. 
+ 
+[–] 
+Heizleitungen, ausgenommen selbst begrenzende Parallel-Heizleitungen, dürfen nicht unter ihre 
+Bemessungslänge verkürzt werden. 
+8 
+Besondere Anforderungen bei der Errichtung von Flächenheizanlagen in 
+Gebäuden 
+[–] 
+ 
+[753.424.3.1] 
+Heizeinheiten dürfen Dehnungsfugen nicht kreuzen. 
+[753.520.3, modifiziert] 
+Um die Funktion der Flächenheizanlage sicherzustellen, müssen nach Bedarf  heizungsfreie Flächen 
+vorgesehen werden. 
+ANMERKUNG Heizungsfreie Flächen sind zB für Einrichtungsgegenstände erforderlich, die die Wärmeabgabe an den 
+Raum einschränken, sowie für Einbauten oder Montageteile, die in den beheizten Bereich eindringen. 
+9 
+Besondere Anforderungen bei der Errichtung von Fußboden-, Wand- und Decken-
+Flächenheizanlagen im Schutzbereich in Räumen mit Bade-, Schwimm- oder 
+Duscheinrichtungen 
+[701.753, modifiziert ] 
+Für elektrische Flächenheizungen in Räumen mit Bade-, Schwimm- oder Duscheinrichtungen dürfen nur 
+Heizleitungen oder Flächenheizelemente entsprechend den einschlägigen Produktnormen verwendet werden, 
+wobei diese entweder einen Metallschirm oder eine Metallumhüllung aufweisen müssen oder durch ein 
+darüberliegendes feinmaschiges leitfähiges Netz geschützt werden müssen. 
+Das Metallnetz bzw. die Metallschirme oder Metallumhüllungen müssen mit dem Schutzleiter des speisenden 
+Stromkreises verbunden sein. Ausgenommen von diesen Anforderungen sind Flächenheizungen für welche 
+die Schutzkleinspannung als Maßnahme des Fehlerschutzes zur Anwendung kommt. 
+Für elektrische Flächenheizungen in derartigen Räumen ist die Schutztrennung als Maßnahme des 
+Fehlerschutzes nicht zulässig. 
+10 Besondere Anforderungen bei der Errichtung von Dachrinnenheizanlagen und 
+Rohrbegleitheizungen 
+[–] 
+10.1 Bei 
+der 
+Auswahl 
+der 
+Heizleitungen 
+muss 
+Rücksicht 
+auf 
+deren 
+UV-Beständigkeit, 
+die 
+Wärmebeständigkeit des Werkstoffes der Dachrinne bzw. des Rohres und auf die Korrosionsgefahr 
+genommen werden. 
+10.2 Die höchsten durch Erwärmung von außen zu erwartenden Temperaturen an der Oberfläche der 
+Heizleitungen sind bei deren Auswahl zu berücksichtigen. 
+10.3 Beim Verlegen müssen die Montageanweisungen der Hersteller beachtet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 10/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+10 
+10.4 Die Verbindungsmuffen zwischen Heizleitungen und kalten Enden dürfen nicht auf Zug oder Biegung 
+beansprucht werden. 
+10.5 Die Heizleitungen, ausgenommen selbst begrenzende Parallel-Heizleitungen, sind so zu verlegen, dass 
+parallel liegende Heizleitungen einander nicht auf längeren Strecken berühren können. Dies kann zB durch 
+aufgesetzte Abstandshalter oder durch im Gerinne fest angebrachte Befestigungslaschen erreicht werden. 
+10.6 Bei Fallrohren oder Ableitungskanälen müssen hinsichtlich der Zugentlastung für die Heizleitungen die 
+Herstellerangaben berücksichtiget werden. 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 11/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+11 
+Anhang A 
+(informativ) 
+Information für den Betreiber der Heizanlage 
+Der Errichter der Heizanlage sollte nach deren Fertigstellung dem Auftraggeber zur Weitergabe an den 
+Betreiber eine Beschreibung des Heizsystems und eine Gebrauchsanleitung übergeben. 
+Die Gebrauchsanleitung sollte beispielsweise folgende Angaben enthalten: 
+– 
+Gebrauchsanleitungen von Komponenten der Heizanlage, 
+– 
+im Falle von Flächenheizanlagen Informationen über Einschränkungen beim Aufstellen von Möbeln oder 
+bei Abdeckungen des Bodens, zB durch Teppiche, 
+– 
+bei Decken-Flächenheizanlagen Einschränkungen der Möbelhöhe, 
+– 
+Hinweise, dass bei Flächenheizanlagen je nach zutreffen in den Boden, die Wand und/oder die Decke 
+eindringende Befestigungsmittel in der beheizten Fläche nicht verwendet werden sollen. 
+ 
+[753 – Anhang A, modifiziert]
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 12/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+12 
+Literaturhinweise 
+ÖVE EN 1, Teil 4 § 49, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1000 V und  
+DC 1500 V – Teil 4: Besondere Anlagen – § 49: Baderäume, Duschecken, Schwimmbecken- und 
+Saunaanlagen 
+ÖVE/ÖNORM EN 60417 DB, Graphische Symbole für Betriebsmittel 
+IEC 60364-7-701, Low-voltage electrical installations – Part 7-701: Requirements for special installations or 
+locations – Locations containing a bath or shower 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 13/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+13 
+Anhang NZ 
+(informativ) 
+Referenztabelle  
+HD 384.7.753 S1:2002 zu ÖVE/ÖNORM E 8001-4-753:2009 
+HD 384.7.753 S1 
+Hinweis zur 
+ÖVE/ÖNORM 
+ÖVE/ÖNORM E 8001-4-753 
+753.1.1 
+Anwendungsbereich 
+modifiziert – in 
+Abschnitt 1 
+wiedergegeben 
+1 
+Anwendungsbereich 
+753.1.2 
+Normative Verweisungen 
+ 
+2 
+Normative Verweisungen 
+753.2 
+Begriffe 
+modifiziert – in 
+Abschnitt 3 
+wiedergegeben 
+3 
+Begriffe 
+ 
+Nationale Ergänzung 
+3.1 
+Heizanlage (Heizsystem) 
+753.2.1 
+Fußboden-Speicherheizung 
+modifiziert – in 
+Abschnitt 3.2 
+technisch gleichwertig 
+wiedergegeben 
+3.2 
+Speicherheizanlage 
+753.2.2 
+Direktheizung 
+modifiziert – in 
+Abschnitt 3.3 
+technisch gleichwertig 
+wiedergegeben 
+3.3 
+Direktheizanlage 
+753.2.3 
+Fußboden-
+Ergänzungsheizung 
+nicht übernommen 
+ 
+753.2.4 
+heizungsfreie Fläche 
+ 
+3.12 
+heizungsfreie Fläche 
+753.2.5 
+Heizleitung 
+modifiziert – in 
+Abschnitt 3.5 
+technisch gleichwertig 
+wiedergegeben 
+3.5 
+Heizleitung 
+753.2.6 
+Flächenheizelement 
+ 
+3.7 
+Flächenheizelement 
+753.2.7 
+Heizeinheit 
+modifiziert – in 
+Abschnitt 3.9 
+technisch gleichwertig 
+wiedergegeben 
+3.9 
+Heizeinheit 
+753.2.8 
+Kaltleitung 
+modifiziert – in 
+Abschnitt 3.8 
+technisch gleichwertig 
+wiedergegeben 
+3.8 
+Kaltleitung („kaltes Ende“) 
+753.2.9 
+selbsttätig Temperatur –
+begrenzende Heizleitung 
+EN 50019 bereits 
+ersetzt durch  
+EN 60079-7 – gilt für 
+erhöhte Sicherheit 
+„e“; keine Festlegung 
+von 70 °C 
+ 
+ 
+Nationale Ergänzung 
+3.4 
+beheizter Bereich; beheizte Länge 
+ 
+Nationale Ergänzung 
+3.6 
+Parallel-Heizleitung 
+ 
+Nationale Ergänzung 
+3.10 
+Bemessungswiderstand 
+ 
+Nationale Ergänzung 
+3.11 
+Bemessungsleistung 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 14/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+14 
+Referenztabelle – (fortgesetzt) 
+HD 384.7.753 S1 
+Hinweis zur 
+ÖVE/ÖNORM 
+ÖVE/ÖNORM E 8001-4-753 
+ 
+nationale Ergänzung 
+3.13 
+selbstbegrenzende Eigenschaft 
+753.4 
+Schutzmaßnahmen 
+ 
+ 
+753.41 
+Schutz gegen elektrischen 
+Schlag 
+ 
+5 
+Schutz gegen elektrischen Schlag 
+753.412 
+Schutz gegen direktes 
+Berühren 
+ 
+ 
+753.412.3 
+Schutz durch Hindernisse 
+modifiziert – in 
+Abschnitt 5.1 
+technisch gleichwertig 
+wiedergegeben 
+5.1 
+Basisschutz (Schutz gegen direktes 
+Berühren) 
+753.412.4 
+Schutz durch Abstand 
+nicht übernommen; in 
+ÖVE/ÖNORM  
+E 8001-1:2000, 
+Abschnitt 4 
+„Basisschutz“ nicht 
+explizit genannt. 
+Angeführt wird Schutz 
+durch indirektes 
+Berühren durch Lage, 
+Bauart (siehe auch 
+Definition 
+Handbereich 
+ÖVE/ÖNORM  
+E 8001-1:2000, 
+Abschnitt 3.8.6) 
+ 
+753.413 
+Schutz bei indirektem 
+Berühren 
+ 
+ 
+753.413.1 
+Schutz durch automatische 
+Abschaltung der 
+Stromversorgung 
+modifiziert – in 
+Abschnitt 5.3 
+technisch gleichwertig 
+wiedergegeben 
+5.3 
+Zusatzschutz 
+753.413.1.6 
+zusätzlicher 
+Potentialausgleich 
+modifiziert – in 
+Abschnitt 5.2 
+technisch gleichwertig 
+wiedergegeben 
+5.2 
+Fehlerschutz (Schutz bei indirektem 
+Berühren) 
+753.413.2 
+Schutz durch Verwendung 
+von Betriebsmitteln der 
+Schutzklasse II oder durch 
+gleichwertige Isolierung 
+modifiziert – in 
+Abschnitt 5.3 
+technisch gleichwertig 
+wiedergegeben 
+5.3 
+Zusatzschutz 
+753.413.3 
+Schutz durch nicht leitende 
+Räume 
+nicht übernommen, 
+da als „nicht 
+anwendbar“ 
+gekennzeichnet 
+ 
+753.413.4 
+Schutz durch erdfreien 
+örtlichen Potentialausgleich 
+nicht übernommen, 
+da als „nicht 
+anwendbar“ 
+gekennzeichnet 
+ 
+753.413.5 
+Schutztrennung 
+modifiziert – in 
+Abschnitt 5.2 
+technisch gleichwertig 
+wiedergegeben 
+5.2 
+Fehlerschutz (Schutz bei indirektem 
+Berühren) 
+753.42 
+Schutz gegen thermische 
+Auswirkungen 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 15/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+15 
+Referenztabelle – (fortgesetzt) 
+HD 384.7.753 S1 
+Hinweis zur 
+ÖVE/ÖNORM 
+ÖVE/ÖNORM E 8001-4-753 
+753.424 
+Schutz gegen Überhitzung 
+ 
+7.2 
+Schutz gegen Überhitzung 
+753.424.3 
+Heizeinheiten 
+ 
+ 
+ 
+modifiziert – in 
+Abschnitt 7.2 
+technisch gleichwertig 
+wiedergegeben 
+7.2 
+Schutz gegen Überhitzung 
+ 
+modifiziert – in 
+Abschnitt 7.1 
+technisch gleichwertig 
+wiedergegeben 
+7.1 
+Anschluss der Kaltleitungen an die 
+Heizleitung bzw. an das 
+Flächenheizelement 
+ 
+modifiziert – in 
+Abschnitt 8 technisch 
+gleichwertig 
+wiedergegeben 
+8 
+Besondere Anforderungen bei der 
+Errichtung von Flächenheizanlagen 
+in Gebäuden 
+753.424.3.1 
+ 
+modifiziert – in 
+Abschnitt 4.1 
+technisch gleichwertig 
+wiedergegeben 
+4.1 
+ 
+753.5 
+Auswahl und Errichtung der 
+elektrischen Betriebsmittel 
+ 
+ 
+753.51 
+Allgemeine Bestimmungen 
+ 
+ 
+ 
+nationale Ergänzung 
+4 
+Allgemeines 
+753.511 
+Übereinstimmung mit Normen 
+modifiziert – in 
+Abschnitt 4.1 
+technisch gleichwertig 
+wiedergegeben 
+4.1 
+ 
+753.512 
+Betriebsbedingungen und 
+äußere Einflüsse 
+ 
+ 
+753.512.2 
+Äußere Einflüsse 
+ 
+ 
+753.512.2.5 
+ 
+modifiziert – in 
+Abschnitt 4.1 
+technisch gleichwertig 
+wiedergegeben 
+4.1 
+ 
+ 
+Nationale Ergänzung 
+4.2 
+ 
+753.514 
+Kennzeichnung 
+modifiziert – in 
+Abschnitt 4.3 
+technisch gleichwertig 
+wiedergegeben 
+4.3 
+Dokumentation der Heizanlage 
+ 
+nationale Ergänzung 
+4.4 
+Warnhinweise 
+753.52 
+Kabel- und Leitungsanlagen 
+ 
+ 
+753.520 
+Allgemeines 
+ 
+ 
+753.520.3 
+Heizungsfreie Flächen 
+modifiziert – in 
+Abschnitt 8 technisch 
+gleichwertig 
+wiedergegeben 
+8 
+Besondere Anforderungen bei der 
+Errichtung von Flächenheizanlagen 
+in Gebäuden 
+753.522 
+Auswahl und Errichtung in 
+Abhängigkeit von Äußeren 
+Einflüssen 
+ 
+ 
+753.522.1 
+Umgebungstemperatur (AA) 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 16/18 =====
+ÖVE/ÖNORM E 8001-4-753:2009 
+16 
+Referenztabelle – (fortgesetzt) 
+HD 384.7.753 S1 
+Hinweis zur 
+ÖVE/ÖNORM 
+ÖVE/ÖNORM E 8001-4-753 
+753.522.1.3 
+ 
+modifiziert – in 
+Abschnitt  7.2 
+technisch gleichwertig 
+wiedergegeben 
+7.2 
+Schutz gegen Überhitzung 
+753.522.4 
+Auftreten von festen 
+Fremdkörpern 
+nicht übernommen 
+ 
+753.522.4.3 
+ 
+nicht übernommen; 
+nicht der Errichter 
+sollte informieren, 
+sondern zB 
+Bauaufsicht 
+ 
+ 
+nationale Ergänzung 
+6 
+Schalt- und Regelungseinrichtungen 
+ 
+nationale Ergänzung 
+7 
+Anschluss von Heizleitungen 
+ 
+nationale Ergänzung 
+10 
+ 
+ 
+nationale Ergänzung 
+10.1 
+ 
+ 
+nationale Ergänzung 
+10.2 
+ 
+ 
+nationale Ergänzung 
+10.3 
+ 
+ 
+nationale Ergänzung 
+10.4 
+ 
+ 
+nationale Ergänzung 
+10.5 
+ 
+ 
+ 
+ 
+ 
+ 
+Anhang A 
+modifiziert – in 
+Anhang A technisch 
+gleichwertig 
+wiedergegeben 
+ 
+Anhang A 
+ 
+ 
+Referenztabelle  
+HD 60364-7-701:2007 zu ÖVE/ÖNORM E 8001-4-753:2009 
+ 
+ 
+nationale Ergänzung 
+9 
+Besondere Anforderungen bei der 
+Errichtung von Fußboden-, Wand- 
+und Decken-Flächenheizanlagen im 
+Schutzbereich in Räumen mit Bade-, 
+Schwimm- oder Duscheinrichtungen 
+701.753 
+Elektrische 
+Fußbodenheizungssystem 
+modifiziert – in 
+Abschnitt 9 technisch 
+gleichwertig 
+wiedergegeben 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 17/18 =====
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 18
+www.ris.bka.gv.at
+
+
+===== PAGE 18/18 =====
+Wichtige Informationen für Norm-Anwender
+ÖVE/ÖNORMEN  sind Regeln, die im Dialog und Konsens
+aller Betroffenen und Interessierten entwickelt werden. Sie legen im elektro-
+technischen Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen,
+Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser
+Anforderungen überprüft wird.
+Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit
+freiwillig, aber naheliegend, da Normen den aktuellen Stand der Technik do-
+kumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür
+bürgen das hohe Fachwissen und die Erfahrung der Experten und Expertin-
+nen in den zuständigen Komitees auf nationaler, europäischer und internatio-
+naler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elek-
+trotechnik (OVE) und seiner Referenten.
+Aktualität des Normenwerks. Analog zur technischen und
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierli-
+chen Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Ak-
+tualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig,
+immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu
+haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren
+bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen. Um zuverlässig über Änderungen
+in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils
+gültigen Fassungen zu haben, bietet „Austrian Standards plus Publishing“
+gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote.
+Das reicht von klassischen Fachgebiets-Abonnements bis hin zu innovativen
+kundenspezifischen Online-Lösungen und Update-Services.
+Ausländische Normen & Regelwerke: Über »AS+P« können auch
+Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Län-
+dern der Welt bezogen werden – ein besonders wichtiger Service für die
+exportorientierte Wirtschaft.
+Ebenso sind Dokumente anderer österreichischer Regelsetzer bei »AS+P«
+erhältlich.
+Die »Austrian Standards plus GmbH« ist ein
+Unternehmen des Österreichischen Normungsinstituts
+Austrian Standards plus Publishing
+(AS+P)
+Heinestraße 38, 1020 Wien
+E-Mail:
+sales@as-plus.at
+Internet: www.as-plus.at/shop
+Fax:
++43 1 213 00-818
+Tel.:
++43 1 213 00-805
+Informationen über Dienstleistungen und Angebote von
+Austrian Standards plus Publishing und OVE bei:
+OVE Normung
+OVE Österreichischer Verband für
+Elektrotechnik
+Eschenbachgasse 9, 1010 Wien
+E-Mail:
+ove@ove.at
+Internet: www.ove.at
+Fax:
++43 1 586 74 08
+Tel.:
++43 1 587 63 73
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 18
+www.ris.bka.gv.at

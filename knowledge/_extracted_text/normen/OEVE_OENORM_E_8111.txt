@@ -1,0 +1,4939 @@
+
+
+===== PAGE 1/47 =====
+ 
+ÖVE/ÖNORM 
+ 
+E 8111 
+Ausgabe: 2002-09-01 
+ 
+Auch Normengruppe 330 
+ 
+Zusammen mit ÖVE/ÖNORM EN 50341:2002-09  
+Ersatz für  ÖVE-L 11/1979, 
+ 
+ÖVE-L 11a/1980,  
+ 
+ÖVE-L 11b/1982,  
+ 
+ÖVE-L 11c/1983,  
+ 
+ÖVE-L 11d/1986,  
+ 
+ÖVE-L 11e:1997-11 und 
+ 
+ÖVE/ÖNORM E 8111/A6:1999-12 
+ICS 29.240.20 
+Errichtung von Starkstromfreileitungen  
+über AC 1 kV bis AC 45 kV 
+ 
+Construction of overhead power lines exceeding AC 1 kV up to AC 45 kV 
+ 
+Construction de lignes aériennes à courant fort de plus de AC 1 kV à AC 45 kV 
+ 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8111 Seiten 2 bis 47  
+Fach(normen)ausschuss 
+FA/FNA L 
+Starkstromfreileitungen und  
+Verlegung von Starkstromkabeln 
+ 
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2002. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 23  
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+1 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 2/47 =====
+Seite 2     
+ÖVE/ÖNORM E 8111 
+Inhaltsverzeichnis 
+Seite 
+ 
+ 
+Vorbemerkung .....................................................................................................................................................................2 
+Erläuterungen ......................................................................................................................................................................3 
+1 
+ 
+Anwendungsbereich ...........................................................................................................................................4 
+2 
+ 
+Normative Verweisungen....................................................................................................................................4 
+3 
+ 
+Begriffe ...............................................................................................................................................................4 
+4 bis 9 
+ Bleiben frei.  
+10 
+ 
+Ausführung der Leiter .........................................................................................................................................6 
+11 
+ 
+Mechanische und thermische Bemessung der Leiter .........................................................................................9 
+12 
+ 
+Isolatoren ..........................................................................................................................................................10 
+13 
+ 
+Armaturen .........................................................................................................................................................12 
+14 bis 19 Bleiben frei. 
+20  
+ 
+Führung und Anordnung der Leitungen, Abstände und  
+ 
+ 
+Leiterbefestigungen –  Grundsätzliche Bestimmungen.....................................................................................14 
+21 
+ 
+Abstände im Spannfeld und am Tragwerk ........................................................................................................15 
+22 
+ 
+Abstände vom Gelände ....................................................................................................................................17 
+23 
+ 
+Leitungsführung im Bereich von Objekten ........................................................................................................18 
+24 
+ 
+Maßnahmen für erhöhte Sicherheit...................................................................................................................19 
+25 
+ 
+Zusätzliche Anforderungen bzw. Maßnahmen für erhöhte Sicherheit...............................................................20 
+26 bis 27 Bleiben frei.  
+28 
+ 
+Objekte erhöhter Bedeutung.............................................................................................................................21 
+29 
+ 
+Bleibt frei.  
+30 
+ 
+Leitungstragwerke – Grundlagen für die Bemessung, äußere Kräfte ...............................................................29 
+31 
+ 
+Belastungsannahmen .......................................................................................................................................31 
+32 bis 39  Bleiben frei.  
+40 
+ 
+Tragwerke aus Holz..........................................................................................................................................34 
+41 
+  
+Tragwerke und Tragwerksteile aus Stahl..........................................................................................................35 
+42 
+ 
+Tragwerke aus Stahlbeton ................................................................................................................................35 
+43 bis 49 Bleiben frei.  
+50 
+ 
+Fundierungen der Tragwerke – Grundsätzliche Bestimmungen .......................................................................35 
+51  
+ 
+Fundierungen – Bemessung.............................................................................................................................35 
+52 
+ 
+Fundierungen – Ausführung .............................................................................................................................40 
+53 bis 59 Bleiben frei.  
+60  
+ 
+Erdungen – Bemessung und Ausführung .........................................................................................................40 
+61 bis 69 Bleiben frei.  
+70 
+ 
+Fernmeldeleitungen an Tragwerken von Hochspannungsfreileitungen – Anordnung und Ausführung.............41 
+71 bis 79  Bleiben frei.  
+80 
+ 
+Bezeichnung der Tragwerke .............................................................................................................................42 
+81 
+ 
+Bekanntmachung der Inbetriebnahme..............................................................................................................42 
+Anhang A (informativ): Literaturhinweise ...........................................................................................................................43 
+Anhang B (Informativ): Sachverzeichnis............................................................................................................................45 
+ 
+Vorbemerkung 
+Um der CENELEC-Übernahmeverpflichtung für die Europäische Normenreihe EN 50341 „Freileitungen mit Nennspan-
+nungen über AC 45 kV“ (als konsolidierte Fassung ÖVE/ÖNORM EN 50341:2002-09 veröffentlicht) nachzukommen, 
+wurde die vorliegende ÖVE/ÖNORM als Neuausgabe zu ÖVE-L 11 herausgegeben. Die Neuausgabe beinhaltet nur 
+mehr diejenigen Passagen, die nicht durch ÖVE/ÖNORM EN 50341:2002-09 abgedeckt werden, also den Bereich 1 kV 
+bis einschließlich 45 kV. Um das ursprüngliche Gliederungskonzept der ÖVE-L 11 hinsichtlich einer besseren Lesbarkeit 
+nicht gravierend ändern zu müssen, wurde von den ÖVE/ÖNORM-Gestaltungsregeln in einzelnen Punkten abgewichen. 
+ 
+Der Rechtsstatus dieser ÖVE/ÖNORM ist den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum Zeit-
+punkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle 
+Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht ver-
+bindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+2 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 3/47 =====
+Seite 3 
+ ÖVE/ÖNORM E 8111 
+ 
+Erläuterungen 
+Veranlassung 
+Auszug aus dem Protokoll der Expertenkonferenz der Amtssachverständigen, Mai 1999: 
+„Um handhabbare Bestimmungen für Freileitungen für den Bereich bis 45 kV zu erhalten, stellen die Experten einhel-
+lig den Antrag, die Verbindungsstelle der Bundesländer möge den Fachausschuss L des ÖVE ersuchen, dass bis 
+zum Erscheinen der Europanorm für Freileitungen über 45 kV (Anmerkung: ÖVE/ÖNORM EN 50341), die ÖVE-L 11 
+für den Bereich bis 45 kV so überarbeitet und neu aufgelegt wird, dass eine leicht lesbare und übersichtliche Vor-
+schrift, in die die einzelnen Nachträge eingearbeitet sind, den Anwendern zur Verfügung steht.“ 
+Dem Ansuchen entsprechend wurde in der 80. Sitzung des Fach(normen)ausschusses L (FA-L) am 19. Oktober 1999 
+mit Beschluss L 148 eine neue Arbeitsgruppe AG-L4 mit der Überarbeitung der ÖVE-L 11 beauftragt.  
+ 
+Ergebnisse der Überarbeitung 
+Allgemeine Änderungen: 
+− 
+Einarbeitung der Nachträge zur Ausgabe ÖVE-L11/1979 + ÖVE-L 11a/1980:  
+- 
+ÖVE-L 11b/1982, Nachtrag b zu ÖVE-L11/1979, 
+- 
+ÖVE-L 11c/1983, Nachtrag c zu ÖVE-L11/1979, 
+- 
+ÖVE-L 11d/1986, Nachtrag d zu ÖVE-L11/1979, 
+- 
+ÖVE-L 11e, Ausgabe 1997-11, Nachtrag e zu ÖVE-L11/1979, 
+- 
+ÖVE/ÖNORM E 8111/A6, Ausgabe 1999-12-01 (ursprünglich als Nachtrag f zu ÖVE-L11/1979 geplant). 
+− 
+Einarbeitung der Abänderung von „besonders erhöhte Sicherheit“ auf „erhöhte Sicherheit“ in Übereinstimmung mit 
+ÖVE/ÖNORM EN 50341. Die Überarbeitung war ursprünglich als Nachtrag g zu ÖVE-L 11/1979 geplant. 
+− 
+Einarbeitung der Information des FA-L „Außenantennenanlagen auf Tragwerken von Starkstromfreileitungen über 
+1 kV“ veröffentlicht in der ÖVE-Verbandszeitschrift e&i, 116. Jg.(1999) Heft 1, Seite 93. Die Überarbeitung war ur-
+sprünglich als Nachtrag h zu ÖVE-L 11/1979 geplant. 
+− 
+Aktualisierung der Verweise auf Europäische Normen bzw. internationale Dokumente (siehe Normative Verweisun-
+gen und Anhang A (informativ) Literaturhinweise).  
+ 
+Erläuterungen zu inhaltlich wesentlichen Punkten der ÖVE/ÖNORM E 8111: 
+− 
+Abschnitt 12 Isolatoren: 
+Im Hinblick auf die Zurückziehung sämtlicher relevanten Österreichischen Bestimmungen und Ersatz durch EN oder 
+IEC-Dokumente wurde der Abschnitt 12 den internationalen Normen angepasst. 
+− 
+Im Sinne der Anpassung an die bei der Erstellung der ÖVE/ÖNORM E 8111 bereits im Entwurf vorhandene und 
+jetzt bereits existierende EN 50341-3-1 wurden die Maßnahmen für die „besonders erhöhte Sicherheit“ in die „er-
+höhte Sicherheit“ aufgenommen. Der Begriff „besonders erhöhte Sicherheit“ konnte somit entfallen. 
+− 
+Eine parallele Vorgangsweise wurde demgemäß bei den Begriffen „Objekte besonders erhöhter Bedeutung“ und 
+„Objekte erhöhter Bedeutung“ durchgeführt (Entfall des Begriffes „Objekte besonders erhöhter Bedeutung“). 
+− 
+Für den „erweiterten Schutzbereich“ gibt es nur mehr den Begriff „Schutzbereich“. 
+− 
+Bezüglich der Einheit der Kraft wurde von „daN“ auf „N“ umgestellt, wodurch sich die Kennwerte entsprechend ge-
+ändert haben. 
+ 
+Hinweis 
+Bei CENELEC wurde bereits im November 2001 mit der Arbeit einer EN für Freileitungen 1 kV bis 45 kV begonnen, die 
+bis September 2004 abgeschlossen sein soll. 
+ 
+Resümee 
+Zusammenfassend wird festgehalten, dass durch die Zusammenstellung und Zusammenführung von einzelnen Doku-
+menten und Entfall der Leitungsgruppen II bis IV eine Erleichterung in der Handhabung und Lesbarkeit erreicht wurde. In 
+Hinblick auf leitungsbautechnische Maßnahmen haben sich keine nennenswerten Änderungen ergeben. Sicherheits-
+technisch sind durch die Überarbeitung keine Nachteile gegeben. 
+ 
+Ersatzvermerk 
+Mit Inkrafttreten der ÖVE/ÖNORM EN 50341 (dow 2004-01-01) und der ÖVE/ÖNORM E 8111 wird die ÖVE-L 11 als 
+Regel der Technik abgelöst. Der Rechtsstatus der ÖVE/ÖNORM E 8111 ist den jeweils geltenden Verordnungen zum 
+Elektrotechnikgesetz zu entnehmen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+3 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 4/47 =====
+Seite 4     
+ÖVE/ÖNORM E 8111 
+1 
+Anwendungsbereich 
+1.1 
+Diese ÖVE/ÖNORM gilt für Starkstromfreileitungen mit Nennspannung über AC 1 kV bis einschließlich AC 45 kV 
+und einer höchsten Spannung für Betriebsmittel von 52 kV gemäß ÖVE EN 60071-1. Im Folgenden werden diese als 
+Hochspannungsfreileitungen der Leitungsgruppe I bezeichnet. 
+ 
+Diese ÖVE/ÖNORM gilt auch für die Leiter, die Tragwerke der Leiter samt ihren Fundamenten, Erdungen, Isolatoren und 
+Armaturen. Freileitungen mit kunststoffumhüllten Leitern dürfen verwendet werden.  
+ 
+1.2 
+Diese ÖVE/ÖNORM gilt auch für Fernmeldeleitungen, die auf Tragwerken von Hochspannungsfreileitungen mit-
+geführt werden. 
+ 
+Diese ÖVE/ÖNORM gilt nicht für Seil- oder Kabelkonstruktionen mit integrierten Lichtwellenleitern, unbeschadet ihrer 
+Verwendung, die keine Funktion als Erd- oder Leiterseil erfüllen. Bei derartigen Seil- oder Kabelkonstruktionen mit metal-
+lischem Aufbau ist 20.1 (1) anzuwenden. 
+ 
+1.3 
+Diese ÖVE/ÖNORM gilt nicht für alle anderen Fernmeldeleitungen, für Fahrleitungen aller Art sowie für Hoch-
+spannungsfreileitungen der Eisenbahnen, soweit diese am Fahrleitungsgestänge mitgeführt werden, und für Hochspan-
+nungsfreileitungen mit freigespannten oder aufgehängten Lufthängekabeln zur Übertragung von Starkstrom mit einer 
+Nennspannung über 1 kV bis 45 kV. 
+ 
+2 
+Normative Verweisungen 
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil dieser 
+ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen nicht. Vertragspartner, 
+die diese ÖVE/ÖNORM anwenden, werden jedoch aufgefordert, die Möglichkeit zu prüfen, die jeweils neuesten Ausga-
+ben der nachfolgend angegebenen normativen Dokumente anzuwenden. Bei undatierten Verweisungen ist die letzte 
+Ausgabe des in Bezug genommenen normativen Dokumentes anzuwenden. Rechtsvorschriften sind immer in der jeweils 
+geltenden Fassung anzuwenden. 
+ 
+ÖVE-L 1 
+Errichtung von Starkstromfreileitungen bis 1000 V 
+ÖVE EN 50110-1 
+Betrieb von elektrischen Anlagen 
+ÖVE EN 60071-1 
+Isolationskoordination – Teil 1: Begriffe, Grundsätze und Anforderungen 
+ÖVE/ÖNORM EN 50341 
+Freileitungen über 45 kV 
+ÖNORM B 4007 
+Gerüste – Allgemeines – Verwendung, Bauart und Belastung 
+ÖNORM B 4605 
+Stahlbau; Maste; Berechnung und Ausführung der Tragwerke 
+ 
+3 
+Begriffe 
+3.1 
+Leiter  
+die zwischen den Tragwerken einer Hochspannungsfreileitung frei gespannten, blanken, isolierten oder umhüllten Drähte 
+und Seile, unabhängig davon, ob sie unter Spannung stehen oder nicht. 
+Hierzu gehören auch Leiter mit mehrfacher Funktion (Phasenseil- und Erdseil-Luftkabel). 
+Kunststoffumhüllte Leiter sind nicht berührungssicher, d.h., sie gelten hinsichtlich des Schutzes gegen direktes Berühren 
+als blanke Leiter. Die Mindestanforderungen an die Ausführung kunststoffumhüllter Leiter sind ÖVE/ÖNORM E 8227 zu 
+entnehmen. 
+ 
+3.2 
+Sollquerschnitt eines Leiters  
+der gemäß den Konstruktionsdaten ermittelte Metallquerschnitt. Als Sollquerschnitt eines Luftkabels gilt nur der tragende 
+Anteil desselben. 
+ 
+3.3 
+Nennquerschnitt  
+die zur Bezeichnung der Leiter dienende Querschnittsangabe. 
+ 
+3.4 
+Mindestbruchlast eines Leiters  
+das 0,95fache seiner rechnerischen Bruchlast. 
+ 
+3.5 
+Dauerzugspannung eines Leiters  
+größte, konstant gehaltene Zugspannung, die der Leiter ein Jahr lang aushält, ohne zu reißen. 
+ 
+3.6 
+Spannfeld  
+Leitungsstrecke zwischen zwei aufeinanderfolgenden Tragwerken einer Leitung. 
+ 
+3.7 
+Spannweite  
+waagrechte Entfernung zwischen zwei aufeinanderfolgenden Tragwerken einer Leitung. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+4 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 5/47 =====
+Seite 5 
+ ÖVE/ÖNORM E 8111 
+ 
+3.8 
+Abspannabschnitt  
+Leitungsstrecke einer Hochspannungsfreileitung mit einem Spannfeld oder mehreren Spannfeldern, die zwischen zwei 
+aufeinanderfolgenden Abspanntragwerken liegt. 
+ 
+3.9 
+ein Leiter kreuzt ein Objekt,  
+wenn der Grundriss des vom Wind gegen das Objekt ausgelenkten Leiters den Grundriss des Objektes schneidet. 
+ 
+3.10 Kreuzungsspannfeld  
+Spannfeld, für welches die Bedingung gemäß 3.9 zutrifft. 
+ 
+3.11 Schutzbereich eines Objektes 
+bestimmt durch jene Grundrissfläche, die entsteht, wenn der Grundriss des Objektes allseitig gleichmäßig nach außen 
+um jenes Maß vergrößert wird, das in den Abschnitten 23 und 28 für das jeweilige Objekt, für das der Schutzbereich 
+bestimmt wird, als seitlicher Abstand angegeben ist. 
+ 
+3.12 Leiter im Schutzbereich 
+Ein Leiter einer Hochspannungsfreileitung liegt im Schutzbereich eines Objektes, wenn der Grundriss des vom Wind 
+gegen das Objekt ausgelenkten Leiters den gemäß 3.11 definierten Schutzbereich des Objektes schneidet. 
+ 
+3.13 Schutzabstand  
+kürzeste zulässige Entfernung zwischen einem Leiter einer Hochspannungsfreileitung und einem Objekt, wenn die 
+Hochspannungsfreileitung im Schutzbereich desselben verläuft. Der Schutzabstand kann im Raum jede beliebige Lage 
+haben. Das Objekt kann auch ein zweiter Leiter sein. 
+ 
+3.14 Leiterzug  
+Produkt aus dem Sollquerschnitt des Leiters und der in diesem Querschnitt in der Tangentenrichtung der Durchhangs-
+kurve wirkenden Zugspannung. 
+ 
+3.15 Durchhang eines Leiters  
+lotrecht gemessene Abstand eines Punktes der Leiterachse von der Verbindungsgeraden der beiden zugehörigen Auf-
+hängepunkte. 
+ 
+3.16 Ausgangszustand  
+jener der beiden Zustände, -5 °C und Belastung durch die Regelzusatzlast oder -20 °C ohne Zusatzlast, bei dem im 
+Scheitelpunkt der Durchhangskurve die höhere Zugspannung auftritt. 
+ 
+3.17 Ausgangszugspannung  
+waagrechte Komponente der Zugspannung im Leiter beim Ausgangszustand. 
+ 
+3.18 Höchstzugspannung  
+im oberen Aufhängepunkt eines Leiters beim Ausgangszustand auftretende Zugspannung. 
+ 
+3.19 Regelzusatzlast 
+lotrecht wirkende und längs eines Leiters gleichmäßig verteilt angenommene Belastung, die für den Regellastfall gemäß 
+11.2 anzusetzen ist. 
+ 
+3.20 Ausnahmszusatzlast  
+lotrecht wirkende und längs eines Leiters gleichmäßig verteilt angenommene Belastung, die für den Ausnahmslastfall 
+gemäß 11.2 anzusetzen ist. 
+ 
+3.21 Armaturen  
+Bauelemente, die einzeln oder in Kombination an oder zwischen Leitern, Isolatoren sowie zwischen Leitern bzw. Isolato-
+ren und Tragwerken eingebaut werden. 
+ 
+3.22 Holzmaste  
+Tragwerke, deren Mastkörper aus Holz bestehen. 
+ 
+4 bis 9 Bleiben frei. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+5 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 6/47 =====
+Seite 6     
+ÖVE/ÖNORM E 8111 
+10 
+Ausführung der Leiter 
+10.1 
+Für Hochspannungsfreileitungen dürfen nur mehrdrähtige, verseilte Leiter verwendet werden. 
+Für Leiter, die ausschließlich der Nachrichtenübertragung dienen, gelten jedoch die Bestimmungen gemäß Abschnitt 70. 
+ 
+10.2 
+Die nachstehenden Bestimmungen gelten für blanke Leiter, kunststoffumhüllte Leiter und sinngemäß auch für 
+Leiter mit mehrfacher Funktion (Phasenseil- und Erdseil-Luftkabel). 
+ 
+10.3 
+Bei der Auswahl der Leiter, der Leiterwerkstoffe und der Ausführung ist auf Beständigkeit gegen chemische Ein-
+flüsse und Korrosion zu achten. 
+ 
+10.4 
+Für blanke Seile und kunststoffumhüllte Leiter bestehen die in der Tabelle 10-1, Fußnote 1), angeführten techni-
+schen Bestimmungen. Werden nicht genormte Leiter verwendet, so ist nachzuweisen, dass ihre Eigenschaften die ge-
+forderte Sicherheit bieten. Ein rechnerischer Nachweis ist zulässig. 
+ 
+10.5 
+Mindestwerte der Nennquerschnitte für Seile von Hochspannungsfreileitungen: 
+ 
+Aluminium-Stahl-Seile und E-AlMgSi-Stahl-Seile sowie  
+Aluminium-Stalum-Seile und E-AlMgSi-Stalum-Seile.......................... 35/6 mm
+2, 
+Aluminiumseile ................................................................................... 50 mm
+2, 
+E-AlMgSi-Seile .................................................................................... 35 mm
+2, 
+Kupferseile........................................................................................... 25 mm
+2, 
+Stalumseile.......................................................................................... 16 mm
+2, 
+Stahlseile............................................................................................. 25 mm
+2. 
+ 
+Der Querschnitt nicht genormter Leiter muss so groß sein, dass die rechnerische Bruchlast mindestens 8 500 N beträgt. 
+Er darf 16 mm² nicht unterschreiten. 
+ 
+10.6 
+Die der Berechnung zugrundezulegenden Kennwerte und Größen sind für genormte Seile in Tabelle 10-1 ange-
+geben. Für Leiter, die in Tabelle 10-1 nicht angeführt sind, beträgt die zulässige Ausgangszugspannung 45 % ihrer Dau-
+erzugspannung. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+6 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 7/47 =====
+Seite 7 
+ ÖVE/ÖNORM E 8111 
+ 
+Tabelle 10-1 – Leiterwerkstoffe: Seile-Kennwerte und Größen1) 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+Leiterwerkstoff 
+Draht-
+anzahl 
+spez. 
+Leitereigen-
+gewicht2) 
+Zug- 
+festigkeit
+gerundet  
+3) 
+zulässige 
+Ausgangs-
+zugspannung
+Dauer-
+zug-
+spannung 
+Elastizi-
+tätsmodul
+Temperatur-
+dehnzahl 
+ 
+ 
+ 
+ 
+N/(m⋅mm2) 
+N/mm2 
+N/mm2 
+N/mm2 
+N/mm2 
+1/°C 
+36/7 
+90 000 
+1 
+E-Al/St 3:1 
+78/19 
+41 × 10-3 
+395 
+120 
+280 
+84 000 
+1,67 × 10-5 
+2 
+E-Al/St 4,3:1 
+30/7 
+37,5 × 10-3 
+330 
+110 
+240 
+82 000 
+1,78 × 10-5 
+6/1 
+81 000 
+1,92 × 10-5 
+3 
+E-Al/St 6:1 
+26/7 
+35 × 10-3 
+285 
+90 
+200 
+77 000 
+1,89 × 10-5 
+54/7 
+70 000 
+1,93 × 10-5 
+4 
+E-Al/St 7,7:1 
+54/19 
+33,6 × 10-3 
+260 
+85 
+189 
+68 000 
+1,94 × 10-5 
+5 
+Aluminium-
+Stahl-
+Seile 
+E-Al/St 11,3:1 
+48/7 
+32 × 10-3 
+230 
+75 
+165 
+62 000 
+2,09 × 10-5 
+36/7 
+90 000 
+6 
+E-AlMgSi/St 
+3:1 
+78/19 
+41 × 10-3 
+490 
+160 
+360 
+84 000 
+1,67 × 10-5 
+7 
+E-AlMgSi/St 
+4,3:1 
+30/7 
+37,5 × 10-3 
+445 
+140 
+330 
+82 000 
+1,78 × 10-5 
+6/1 
+81 000 
+1,92 × 10-5 
+8 
+E-AlMgSi/St 
+6:1 
+26/7 
+35 × 10-3 
+400 
+120 
+300 
+77 000 
+1,89 × 10-5 
+54/7 
+70 000 
+1,93 × 10-5 
+9 
+E-AlMgSi/St 
+7,7:1 
+54/19 
+33,6 × 10-3 
+380 
+115 
+284 
+68 000 
+1,94 × 10-5 
+10 
+ 
+AIMgSi- 
+Stahl-
+Seile 
+E-AlMgSi/St 
+11,3:1 
+48/7 
+32 × 10-3 
+350 
+105 
+265 
+62 000 
+2,09 × 10-5 
+11 
+7 
+60 000 
+12 
+19 
+57 000 
+13 
+37 
+155 
+57 000 
+14 
+61 
+55 000 
+15 
+Aluminium-Seile 
+91 
+27,5 × 10-3 
+140 
+60 
+120 
+55 000 
+2,3 × 10-5 
+16 
+7 
+60 000 
+17 
+19 
+57 000 
+18 
+37 
+270 
+57 000 
+19 
+61 
+55 000 
+20 
+AlMgSi-Seile  
+91 
+27,5 × 10-3 
+260 
+95 
+240 
+55 000 
+2,3 × 10-5 
+Fußnoten siehe nächste Seite. 
+Fortsetzung nächste Seite. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+7 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 8/47 =====
+Seite 8     
+ÖVE/ÖNORM E 8111 
+Tabelle 10-1 – Leiterwerkstoffe: Seile-Kennwerte und Größen1) (Fortsetzung) 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+Leiterwerkstoff 
+Draht-
+anzahl 
+spez. 
+Leitereigen-
+gewicht2) 
+Zug- 
+festigkeit 
+gerundet  
+3) 
+zulässige 
+Ausgangs-
+zugspannung
+Dauerzug-
+spannung
+Elastizi-
+tätsmodul 
+Temperatur-
+dehnzahl 
+ 
+ 
+ 
+ 
+N/(m⋅mm2) 
+N/mm2 
+N/mm2 
+N/mm2 
+N/mm2 
+1/°C 
+21 
+7 
+180 000 
+22 
+19 
+175 000 
+23 
+37 
+360 
+175 000 
+24 
+Stahl I4) 
+61 
+79,4 × 10-3 
+340 
+145 
+320 
+175 000 
+1,1 × 10-5 
+25 
+7 
+180 000 
+26 
+19 
+175 000 
+27 
+37 
+630 
+175 000 
+28 
+Stahl II4) 
+61 
+79,4 × 10-3 
+595 
+250 
+560 
+175 000 
+1,1 × 10-5 
+29 
+7 
+180 000 
+30 
+19 
+175 000 
+31 
+37 
+1 210 
+175 000 
+32 
+Stahl III 
+61 
+79,4 × 10-3 
+1 140 
+400 
+900 
+175 000 
+1,1 × 10-5 
+33 
+7 
+180 000 
+34 
+19 
+175 000 
+35 
+37 
+1 440 
+175 000 
+36 
+Stahl- 
+seile   
+Stahl IV 
+61 
+79,4 × 10-3 
+1 370 
+500 
+1 100 
+175 000 
+1,1 × 10-5 
+37 
+7 
+90 × 10-3 
+113 000 
+38 
+19 
+105 000 
+39 
+37 
+105 000 
+40 
+Kupferseile 
+61 
+91 × 10-3 
+380 
+180 
+300 
+100 000 
+1,7 × 10-5 
+1) Kennwerte und Größen für Seile und Drähte werden in getrennten Normen angeführt. Es bestehen die im Folgenden 
+genannten Normen: 
+ 
+Drähte aus Alumimium und Aluminium-Knetlegierung E-AlMgSi  
+(AAAC - all aluminium alloy) für Leiterseile...............................ÖVE/ÖNORM EN 50183, ÖVE/ÖNORM EN 60889
+verzinkte Stahldrähte für Leiterseile ..................................................................................ÖVE/ÖNORM EN 50189
+Drähte aus Stalum (aluminiumummanteltem Stahl) für Leiterseile ....................................ÖVE/ÖNORM EN 61232
+Drähte aus Kupfer für Leiterseile ..........................................................................................................DIN 48200-1
+Drähte und Seile aus E-Aluminium, E-AlMgSi, Stahl und Stalum,  
+sowie deren Kombinationen – Technische Lieferbedingungen..........................................ÖVE/ÖNORM EN 50182
+ 
+2) Mittelwert, bezogen auf den Sollquerschnitt. 
+ 
+ 
+3) Die dem jeweiligen Seilquerschnitt zugeordnete Zugfestigkeit wird gemäß der Beziehung 
+ 
+ 
+ 
+aus den Seilnormen errechnet. Die in der Tabelle angegebenen gerundeten Werte dienen lediglich zur größenord-
+nungsmäßigen Information und stellen die untere Grenze für die jeweilige Seilkategorie dar. 
+ 
+4) Stahl I und Stahl II sind nicht durch ÖVE/ÖNORM EN 50189 abgedeckt. 
+ 
+ 
+ 
+ 
+hnitt
+Sollquersc
+Bruchlast
+he
+rechnerisc
+s
+⋅
+=
+95
+,0
+Z
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+8 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 9/47 =====
+Seite 9 
+ ÖVE/ÖNORM E 8111 
+ 
+11 
+Mechanische und thermische Bemessung der Leiter 
+11.1 
+Der Berechnung der mechanischen Beanspruchung der Leiter und der Bestimmung des Durchhanges sind die 
+Lastfälle gemäß Tabelle 11-1 zugrunde zu legen. 
+ 
+Tabelle 11-1 – Lastfälle 
+ 
+ 
+1 
+2 
+3 
+4 
+ 
+Lastfall 
+Temperatur 
+°C1) 
+Lotlast 
+zulässige Beanspruchung 
+1 
+-5 
+Leitereigengewicht 
++ Regelzusatzlast 
+2 
+-20 
+Leitereigengewicht 
+siehe 11.3 
+3 
+Regellastfälle 
++402) 
+Leitereigengewicht 
+--- 
+4 
+Ausnahmslastfall 
+-5 
+Leitereigengewicht 
++ Ausnahmszusatzlast 
+siehe 11.4 
+1) Unter außergewöhnlichen klimatischen Verhältnissen (z.B. im Hochgebirge) kann es erforderlich werden, die 
+obere und untere Temperaturgrenze (+40 °C bzw. -20 °C) den auf Grund langjähriger Beobachtungen festgestell-
+ten Werten anzugleichen. 
+ 
+2) Bei Leitungen, die auch im Sommer mit sehr hoher spezifischer Strombelastung beansprucht sind, ist mit einer 
+Temperatur von +60 °C zu rechnen. Gleichermaßen sind bei Verwendung von Hochtemperaturseilen Leitererwär-
+mungen durch den höchsten Betriebsstrom zu berücksichtigen. 
+ 
+11.2 
+Die Höhe der Regel- und der Ausnahmszusatzlast ist unter Beachtung der jeweiligen klimatischen Verhältnisse 
+zu wählen; es ist mindestens anzunehmen: 
+ 
+(1) 
+die Regelzusatzlast mit............................................ (4 + 0,2⋅d) N/m  
+ 
+(wobei d der Leiterdurchmesser in mm ist) 
+ 
+(2) 
+die Ausnahmszusatzlast mit .................................... 25 N/m 
+ 
+(3) 
+Für Seil- oder Kabelkonstruktionen mit integriertem Lichtwellenleitern, unbeschadet ihrer Verwendung, die 
+keine Funktion als Erd- oder Leiterseil erfüllen ist eine Regelzusatzlast gemäß (1) und eine Mindestaus-
+nahmszusatzlast von 12 N/m anzunehmen. 
+ 
+(4) 
+Für Warnkugel und Radarmarker sind im Regellastfall mindestens 120 N/m² auf die gesamte Oberfläche, im 
+Ausnahmslastfall mindestens 250 N/m² auf die gesamte Oberfläche anzunehmen.  
+ 
+11.3 
+Für den Ausgangszustand sind folgende Bedingungen einzuhalten: 
+ 
+(1) 
+Die Ausgangszugspannung darf den Wert der Tabelle 10-1, Spalte 5, nicht überschreiten. 
+ 
+(2) 
+Die Höchstzugspannung darf den Wert gemäß Tabelle 10-1, Spalte 5, um höchstens 5 % überschreiten. 
+ 
+11.4  Die beim Ausnahmslastfall gemäß Tabelle 11-1, Zeile 4, im oberen Aufhängepunkt auftretende Zugspannung darf 
+die Dauerzugspannung (Tabelle 10-1, Spalte 6) nicht überschreiten. 
+ 
+11.5 
+Werden an Leitern Schwingungen festgestellt, welche die Leiter gefährden, so sind Maßnahmen zur Unterdrü-
+ckung der Schwingungen zu treffen. 
+ 
+11.6 
+Soweit es die Geländegestaltung zuläßt, sind größere Unterschiede in den Spannweiten benachbarter Spannfel-
+der, insbesondere bei Anwendung von Stützisolatoren, zu vermeiden. 
+ 
+11.7 
+Der Leiterquerschnitt ist so zu wählen, dass die Leiter durch den durchfließenden Strom nur so weit erwärmt 
+werden, dass die mechanische Festigkeit nicht unzulässig vermindert wird.  
+Durch den höchsten Betriebsstrom dürfen Kupfer und seine Legierungen bis 70 °C, Aluminium und seine Legierungen 
+sowie Stahl und Stalum bis 80 °C erwärmt werden. Bei kunststoffumhüllten Leitern muss der Isolierwerkstoff für diese 
+Temperaturen ausgelegt sein. 
+ 
+Die in Tabelle 11-2 angegebenen zulässigen Dauerstromstärken gelten unter folgenden Voraussetzungen: 
+- Maximale Frequenz 60 Hz, 
+- Sonneneinstrahlung, 
+- Luftausgangstemperatur 35 °C, 
+- Windgeschwindigkeit 0,6 m/s, 
+- Erwärmung der Leiter bis zur zulässigen Grenze. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+9 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 10/47 =====
+Seite 10     
+ÖVE/ÖNORM E 8111 
+Für andere Luftausgangstemperaturen ist gemäß folgenden Formeln umzurechnen: 
+ 
+ 
+für Kupfer: 
+35
+70
+35
+t
+/
+)
+(
+t
+I
+I
+−
+⋅
+=
+ 
+ 
+für Al und Al-Legierungen mit und ohne Stahl- oder Stalum-Kern: 
+45
+80
+35
+t
+/
+)
+(
+t
+I
+I
+−
+⋅
+=
+ 
+ 
+Für Hochtemperaturseile sind höhere Werte zulässig. 
+Vollständige Windstille, die im Freien allerdings nur ausnahmsweise vorhanden ist, erfordert eine Verminderung der 
+zulässigen Dauerstromstärken um rund 30 %. 
+ 
+Tabelle 11-2 – Zulässige Dauerstromstärken in A 
+ 
+Nennquer- 
+schnitt 
+mm² 
+Alumi-
+nium-
+Stahl 
+AlMgSi-
+Stahl 
+Nennquer-
+schnitt 
+mm² 
+Alumi-
+nium-
+Stahl 
+AlMgSi-
+Stahl 
+Nennquer-
+schnitt 
+mm² 
+Alumi-
+nium 
+AlMgSi 
+Nennquer-
+schnitt 
+mm² 
+Stahl 
+I - IV 
+Kupfer 
+35/6 
+180 
+170 
+125/30 
+425 
+400 
+35 
+---- 
+170 
+16 
+---- 
+---- 
+50/8 
+220 
+205 
+150/25 
+470 
+440 
+50 
+225 
+210 
+25 
+40 
+160 
+70/12 
+290 
+270 
+150/53 
+480 
+450 
+70 
+270 
+255 
+35 
+50 
+200 
+94/22 
+350 
+330 
+170/40 
+515 
+485 
+95 
+340 
+320 
+50 
+60 
+250 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+95/15 
+350 
+330 
+185/30 
+535 
+500 
+120 
+390 
+365 
+70 
+70 
+310 
+95/34 
+360 
+335 
+210/35 
+590 
+550 
+150 
+455 
+425 
+95 
+80 
+380 
+120/20 
+410 
+385 
+210/50 
+610 
+575 
+185 
+520 
+490 
+120 
+95 
+440 
+120/42 
+415 
+390 
+240/40 
+640 
+605 
+240 
+625 
+585 
+150 
+110 
+510 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+185 
+130 
+585 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+240 
+150 
+700 
+ 
+ 
+12 
+Isolatoren  
+12.1 Allgemeines  
+Die Ausführungsformen von Isolatoren umfassen Isolatorketten aus Kappenisolatoren oder Langstabisolatoren sowie 
+Stützisolatoren. Diese können aus keramischem Material oder aus Glas oder auch als Verbundisolatoren hergestellt 
+werden. 
+ 
+ANMERKUNG:  
+Alle diese lsolatorarten werden in EN- und/oder IEC-Veröffentlichungen behandelt. 
+ 
+Isolatoren müssen so bemessen, ausgeführt, ausgewählt und geprüft werden, dass sie die elektrischen und mechani-
+schen Anforderungen erfüllen, wie sie durch die Auslegungsparameter der Freileitung bestimmt sind. 
+Isolatoren müssen gegen Einflüsse aller Art infolge von im Freien anzutreffenden Klimabedingungen einschließlich der 
+Sonnenstrahlung beständig sein. Sie müssen außerdem atmosphärischen Verschmutzungen widerstehen und unter den 
+in der Projektspezifikation beschriebenen Verschmutzungsbedingungen ein zufriedenstellendes Verhalten aufweisen. 
+Bei geerdeten Stützpunkten ist bei Einsatz von Stützenisolatoren auf deren ausreichende Durchschlagsfestigkeit zu 
+achten. 
+ 
+12.2 Genormte elektrische Anforderungen 
+Isolatoren sind so zu bemessen und auszuführen, dass die geforderten elektrischen Stehspannungen erreicht werden. 
+Diese Anforderungen sind in Tabelle 12-1 zusammengefasst. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+10 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 11/47 =====
+Seite 11 
+ ÖVE/ÖNORM E 8111 
+ 
+Tabelle 12-1 – Genormte elektrische Anforderungen abhängig von der lsolatorart 
+ 
+Isolatorketten 
+Festgelegte  
+Anforderungen 
+Kappen- 
+isolatoren1) 
+Langstab- 
+isolatoren1) 
+Verbund- 
+isolatoren2) 
+Stützisolatoren1) 
+Betriebsfrequente 
+Stehspannung, 
+beregnet 
+ 
+X 
+ 
+X 
+ 
+X 
+ 
+X 
+Steh-Blitzstoßspannung, 
+trocken 
+X 
+X 
+X 
+X 
+Durchschlagsspannung 
+(Einzelisolator) 
+ 
+X 
+ 
+- 
+ 
+- 
+ 
+   X3) 
+x .. festgelegte Anforderungen sind zu berücksichtigen. 
+1) Prüfungen sind in ÖVE EN 60383-1 und ÖVE EN 60383-2 beschrieben. 
+2) Prüfungen sind in IEC 61109 (nur für die Einzelisolatoren anwendbar) beschrieben. 
+3) An solchen Stützisolatoren, die durchschlagbar sind. 
+ 
+In Höhen von mehr als 1000 m über NN sind für je angefangene 100 m Höhendifferenz die geforderte betriebsfrequente 
+Stehspannung (Prüfwechselspannung) und die Steh-Blitzstoßspannung um 1,3 % zu erhöhen. 
+ 
+12.3 Mechanische Anforderungen 
+12.3.1 Isolatoren müssen die festgelegten mechanischen Bemessungsanforderungen erfüllen. Der Teilsicherheitsbei-
+wert muss für Isolatoren aus Glas oder Porzellan mindestens 
+ 
+ 
+γm = 2,0  
+sein. 
+ 
+Für Verbundisolatoren ist der Teilsicherheitsbeiwert gemäß den Datenblättern des Herstellers zu ermitteln. 
+ 
+Der Teilsicherheitsbeiwert ist auf die festgelegte mechanische oder elektromechanische Nennkraft (siehe ÖVE 
+EN 60383-1 oder IEC 61109) entsprechend anzuwenden. 
+ 
+12.3.2 Für die mechanische Bemessung von Isolatoren ist sowohl der ungünstigste Regellastfall als auch der Aus-
+nahmslastfall zu berücksichtigen. 
+Sind Maßnahmen für erhöhte Sicherheit gemäß 24 vorzusehen, so sind auch die Bedingungen gemäß 24.2.2 und 24.2.3 
+zu berücksichtigen. 
+ 
+12.3.3 Stützisolatoren dürfen für Abspannungen nicht verwendet werden. 
+ 
+12.3.4 Die zulässige Belastung einer n-fach-Kette darf dem n-fachen Wert der zulässigen Belastung einer Einzelkette 
+gleichgesetzt werden, wenn sichergestellt ist, dass 
+(1)  im Normalzustand die einzelnen Ketten gleichmäßig belastet sind und 
+(2)  bei Bruch einer Einzelkette in einer n-fach-Kette mit n > 2 die verbleibenden Ketten möglichst gleichmäßig 
+belastet werden. 
+  
+12.4 Kennwerte und Maße von Isolatoren 
+Die Kennwerte und Maße von Isolatoren für den Freileitungsbau sind in folgenden Bestimmungen beschrieben: 
+ 
+(1) 
+Kettenisolatoren..........ÖVE EN 60305 und ÖVE/ÖNORM EN 60433, 
+(2) 
+Stützisolatoren ............ÖNORM E 4101, ÖNORM E 4102, IEC 60720, 
+(3) 
+Verbundisolatoren.......ÖVE EN 61466-1 und ÖVE/ÖNORM EN 61466-2. 
+ 
+Das Erfüllen der obigen Bestimmungen verlangt auch das Erfüllen von ÖVE HD 474, IEC 60372 und IEC 60471. Aner-
+kannte lsolatorarten, deren Kennwerte von den in obigen Normen festgelegten Werten abweichen, dürfen in der Projekt-
+spezifikation enthalten sein.  
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+11 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 12/47 =====
+Seite 12     
+ÖVE/ÖNORM E 8111 
+12.5 Anforderungen an das Verhalten unter Verschmutzung 
+Besteht die Gefahr einer raschen Isolationsminderung durch Fremdschichtbelag infolge von Umwelteinflüssen (klima-
+tisch bedingt: Tau, Nebel usw., oder durch Verschmutzung: Verunreinigung durch Staub, Rauch, aggressive Gase und 
+Dämpfe, Salzgehalt usw.), so sind Spezialisolatoren zu verwenden, oder es ist ein höheres Isolationsniveau zu wählen. 
+In solchen Fällen kann auch eine zusätzliche Behandlung der Oberfläche (z.B. mit Spezial- oder Silikonfett) das Be-
+triebsverhalten verbessern. 
+ 
+ANMERKUNG:  
+Hinweise für die Auslegung und Auswahl von Keramik- und Glasisolatoren für die Verwendung in Verschmut-
+zungsgebieten sind in IEC 60815 enthalten 
+ANMERKUNG: 
+Eine Fremdschichtprüfung von Verbundisolatoren wurde zum Zeitpunkt der Drucklegung der vorliegenden 
+ÖVE/ÖNORM durch das IEC Komitee TC 36 und CIGRE 33.04 untersucht. 
+ 
+13 
+Armaturen 
+13.1 Allgemeines 
+13.1.1 Form, Konstruktion und Werkstoffe der Armaturen müssen so gewählt werden, dass sie gegen atmosphärische 
+Einflüsse und aggressive Verunreinigungen der Umgebung und elektrolytische Zerstörungen widerstandsfähig sind. 
+ 
+13.1.2 Armaturen aus nicht rostfreiem Stahl, Temper- und Stahlguss sind durch Feuerverzinkung oder ein gleichwertiges 
+Verfahren zuverlässig gegen Rost zu schützen. 
+ 
+13.1.3 Für die Prüfung der Armaturen bestehen technische Bestimmungen (siehe ÖVE EN 61284). 
+ 
+13.2 Elektrische Bemessung 
+13.2.1 Armaturen, die dem Übergang des Betriebsstromes dienen (z.B. Stromklemmen, Verbinder), dürfen beim zuläs-
+sigen Dauerstrom des Leiters keine höheren Temperaturen annehmen als der der Armatur zugeordnete Leiter und müs-
+sen den zu erwartenden Kurzschlussbeanspruchungen standhalten. Der Spannungsabfall an der Armatur muss kleiner 
+sein als an einem Leiterstück gleicher Länge. 
+ 
+13.2.2 Armaturen, die in die Ableitung von Erdschlussströmen einbezogen sind (z.B. Lichtbogenschutzarmaturen), müs-
+sen für die jeweilige Stromstärke und Abschaltzeit ausgelegt werden. 
+ 
+13.3 Mechanische Bemessung, Allgemeines 
+13.3.1 Armaturen sind für jene Lasten zu bemessen, die in den Regellastfällen und im Ausnahmslastfall gemäß den 
+Abschnitten 30 und 31 auf sie einwirken, und zwar mit den in 13.5 angegebenen Sicherheiten. 
+Sind Maßnahmen für erhöhte Sicherheit gemäß Abschnitt 24 vorzusehen, so sind für alle mechanisch beanspruchten 
+Armaturen auch die Bedingungen gemäß 24.2.2 und 24.2.3 einzuhalten. 
+ 
+13.3.2 Bei genormten Armaturen sind die in der Norm angegebenen Werte für die zulässige Belastung bzw. für die 
+Grenzlast gemäß 13.4 maßgebend. 
+ 
+13.4 Grenzlasten 
+Die Versagekriterien der Armaturen sind durch folgende Grenzlasten gekennzeichnet: 
+ 
+13.4.1 Bruchlast 
+ist jene Last, bei der der Bruch eintritt, also die kraftschlüssige Verbindung unterbrochen wird. 
+ 
+13.4.2 Höchstlast 
+ist jene Last, bei der trotz fortschreitender Verformung keine weitere Belastung mehr aufgenommen wird. 
+ 
+13.4.3 Strecklast 
+ist jene Last, bei der nach weiteren Belastungssteigerungen bleibende Verformungen entstehen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+12 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 13/47 =====
+Seite 13 
+ ÖVE/ÖNORM E 8111 
+ 
+13.5 Mechanische Bemessung der verschiedenen Armaturen, Sicherheiten 
+Sicherheit ist der Quotient aus Grenzlast gemäß 13.4, dividiert durch die Last gemäß 13.3.1. 
+Die angegebenen Sicherheiten beziehen sich auf die nachgewiesenen oder garantierten Mindestwerte der Grenzlasten 
+gemäß 13.4. 
+Nach der Art der mechanischen Beanspruchung werden folgende Armaturen unterschieden: 
+ 
+(1)  Armaturen und Armaturenteile, die mit dem Leiter in direkter Berührung sind und unter Leiterzug stehen (z.B. 
+Klemmkörper von Abspannklemmen, zugfeste Verbinder). Derartige Armaturen und sind so zu bemessen, 
+dass die Bruch- oder Höchstlast mindestens dem r-fachen Wert der in den Regellastfällen und mindestens 
+dem a-fachen Wert der in dem Ausnahmslastfall auf sie wirkenden Last entspricht. Hierbei ist: 
+ 
+Leiters
+des
+gspannung
+Ausgangszu
+zulässige
+Leiters
+des
+eit
+Zugfestigk
+k
+r
+⋅
+⋅
+=
+05
+,1
+ 
+ 
+Leiters
+des
+annung
+Dauerzugsp
+Leiters
+des
+eit
+Zugfestigk
+k
+a
+⋅
+=
+ 
+ 
+ 
+ 
+k = 0,85 
+für Seile aus: 
+Aluminium-Stahl 
+E-AlMgSi-Stahl 
+Aluminium 
+Stahl III und IV 
+Kupfer 
+Aluminium-Stalum 
+) mit einem Querschnitt- 
+E-AlMgSi-Stalum 
+) verhältnis m > 6,2 
+ 
+k = 1,00 
+für Seile aus: 
+E-AlMgSi 
+Stahl I und II 
+Stalum 
+Aluminium-Stalum 
+) mit einem Querschnitt- 
+E-AlMgSi-Stalum 
+) verhältnis m < 6,2 
+ 
+Für nicht genormte oder aber nicht angeführte Leiter (z.B. Luftkabel) wird der Wert k gemäß dem Verhältnis 
+Dauerzugspannung/Zugfestigkeit wie folgt festgelegt: 
+ 
+- 
+Dauerzugspannung/Zugfestigkeit < 0,81 
+k = 0,85, 
+- 
+Dauerzugspannung/Zugfestigkeit > 0,81 
+k = 1,00. 
+ 
+Als zusätzliche Kriterien, für welche die Sicherheiten r und a gelten, sind auch das Durchgleiten des Leiters 
+und Brüche von Einzeldrähten im Sinne einer Grenzlast zu betrachten. Die übrigen Armaturenteile (z.B. Bol-
+zen und Laschen von Abspannklemmen) sind je nach der in Betracht kommenden Grenzlast gemäß (3) oder 
+(4) zu bemessen. 
+ 
+(2) Armaturen, die mit dem Leiter in direkter Berührung stehen und auch durch Leiterdifferenzzüge belastet wer-
+den (z.B. Tragklemmen, Stützklemmen). Derartige Armaturen müssen den in Abschnitt 31 festgelegten Belas-
+tungen standhalten und sind nach den in Betracht kommenden Grenzlasten gemäß 13.5 (3) oder (4) zu be-
+messen. 
+Als zusätzliches Kriterium ist zu beachten, dass die Leiter nicht vor Erreichen einer definierten Kraft durchglei-
+ten dürfen, sofern dies nicht funktionsbedingt vorgesehen ist. 
+Armaturen zur Verbindung von Beiseilen mit Leiterseilen müssen mindestens den Leiterzug im Ausgangszu-
+stand aushalten. 
+ 
+(3) Armaturen und Armaturenteile, bei denen das Versagekriterium eine Bruchlast oder Höchstlast ist (z.B. Ab-
+standhalter, Armaturen mit Klöppeln, Pfannen und Ösen). 
+Die Sicherheit dieser Armaturen, bezogen auf die Bruchlast bzw. Höchstlast, muss mindestens 2,5 in den Re-
+gellastfällen und mindestens 1,9 in den Ausnahmslastfällen betragen. 
+Die Sicherheiten, bezogen auf die Strecklast, müssen dabei mindestens den in 13.5 (4) angegebenen Werten 
+entsprechen. 
+(4) Armaturen und Armaturenteile, bei denen die Verformung für die Belastbarkeit maßgebend ist, da sie keine 
+als Kriterium brauchbare Bruch- oder Höchstlast aufweisen (z.B. solche, die vorwiegend auf Biegung bean-
+sprucht sind, wie Bolzen, Abspannbügel, Isolatorenstützen). 
+Die Sicherheit dieser Armaturen, bezogen auf die Strecklast, muss mindestens 1,5 in den Regellastfällen und 
+mindestens 1,15 in den Ausnahmslastfällen betragen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+13 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 14/47 =====
+Seite 14     
+ÖVE/ÖNORM E 8111 
+(5) Lichtbogenschutzarmaturen müssen den zu erwartenden Montagelasten ohne Beeinträchtigung der Funktion 
+standhalten. 
+ 
+(6) Schwingungsdämpfer, Feldabstandhalter, zugentlastete Verbinder, Stromklemmen, Reißglieder, Streckbänder 
+und ähnliche Armaturen brauchen mechanisch nicht gemäß 13.5 (1) bis (4) bemessen zu werden. 
+ 
+(7) Bauteile, die erst durch Montagevorgänge an Ort und Stelle die Funktion von Armaturen erhalten (z.B. Leiter-
+bünde, Spiralarmaturen), sind sinngemäß mit jenen Sicherheiten zu bemessen, die ihrer Grenzlast gemäß 
+13.4 entsprechen. 
+ 
+ 
+14 bis 19 Bleiben frei. 
+ 
+20  
+Führung und Anordnung der Leitungen, Abstände und Leiterbefestigungen –  
+Grundsätzliche Bestimmungen 
+20.1 
+Hochspannungsfreileitungen sind so auszuführen, dass 
+(1) Leiter, die unter Spannung stehen, in einem solchen Abstand voneinander und von geerdeten Bauteilen ihrer 
+Tragwerke angeordnet werden, dass ein elektrischer Überschlag vermieden wird. 
+Diese Bedingung gilt als erfüllt, wenn die in Abschnitt 21 geforderten Abstände nicht unterschritten werden. 
+ 
+(2) die zufällige Berührung von Teilen, die unter Spannung stehen, ohne besondere Mittel ausgeschlossen ist.  
+Diese Bedingung gilt als erfüllt, wenn  
+(2.1) die Abstände der unter Spannung stehenden Leiter vom Gelände die in Abschnitt 22 geforderten Werte 
+nicht unterschreiten und 
+(2.2) die seitlichen Abstände der unter Spannung stehenden Leiter von Objekten die in den Abschnitten 23 
+und 28 geforderten Werte nicht unterschreiten. 
+Werden diese seitlichen Abstände unterschritten, so dass die Leitung im Bereich von Objekten der Ab-
+schnitte 23 oder 28 verläuft, so sind die unter Spannung stehenden Leiter so anzuordnen, dass der in 
+den Abschnitten 23 und 28 geforderte Schutzabstand nicht unterschritten wird. 
+ 
+(3) ihre Tragwerke oder deren Fundamente in ausreichender Entfernung von bestimmten Objekten errichtet wer-
+den. 
+Die Bedingung gilt als erfüllt, wenn die in den Abschnitten 23 und 28 für diese seitlichen Abstände geforderten 
+Maße mindestens eingehalten werden. 
+ 
+(4) die für die Leitungsführung im Bereich bestimmter Objekte gegebenenfalls geforderten zusätzlichen Maßnah-
+men eingehalten werden. Hierbei werden je nach Art der Objekte unterschieden: 
+(4.1) die in Abschnitt 23 genannten Objekte, für die keine zusätzlichen Maßnahmen gefordert werden, 
+(4.2)  die in Abschnitt 28 genannten Objekte erhöhter Bedeutung, für die die Bedingung als erfüllt gilt, wenn 
+Abschnitt 24 (Maßnahmen für erhöhte Sicherheit) und soweit erforderlich Abschnitt 25 (Zusätzliche 
+Maßnahmen bzw. Forderungen für erhöhte Sicherheit) eingehalten werden. 
+ 
+(5) Für Objekte, die in den Abschnitten 23 und 28 nicht genannt sind, sind die gegenständlichen Bestimmungen 
+für die Festlegung von Abständen und Maßnahmen sinngemäß anzuwenden. 
+Die Anforderungen bezüglich der bei Arbeiten in der Nähe von Hochspannungsfreileitungen einzuhaltenden 
+Abstände und Schutzmaßnahmen sind in ÖVE EN 50110-1 und ÖNORM B 4007 festgelegt. 
+ 
+(6) Freileitungen mit kunststoffumhüllten Leitern sind so auszuführen, dass das Eindringen von Wasser in den 
+Leiter vermieden wird. 
+20.2 
+Abstände der Leiter vom Gelände und von Objekten sind wie folgt zu bestimmen (zu überprüfen): 
+(1) Abstände vom Gelände, gemessen rechtwinkelig zur Geländeoberfläche, 
+(1.1) für den ungünstigeren der Regellastfälle gemäß Tabelle 11-1, Zeilen 1 und 3, gemessen von nicht aus-
+gelenkten Leitern, 
+(1.2) für den Regellastfall gemäß Tabelle 11-1, Zeile 3 bei Auslenkung der Leiter durch Wind in jene Richtung, 
+welche den kleineren Abstand ergibt, 
+(1.3) für den Ausnahmslastfall gemäß Tabelle 11-1, Zeile 4, gemessen vom nicht ausgelenkten Leiter. 
+ 
+(2) Seitliche Abstände der Leiter von Objekten, gemessen zwischen Leitergrundriss und Grundriss des nächstge-
+legenen Objektteiles, für den Regellastfall gemäß Tabelle 11-1, Zeile 3, bei der Auslenkung des Leiters durch 
+Wind in jene Richtung, welche den kleineren Abstand ergibt. Dieser seitliche Abstand gilt auch als Maß für die 
+Bestimmung des Schutzbereiches (siehe 3.11). 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+14 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 15/47 =====
+Seite 15 
+ ÖVE/ÖNORM E 8111 
+ 
+(3) Schutzabstand der Leiter vom Objekt (der in beliebiger Richtung im Raum liegen kann), 
+(3.1) für den ungünstigsten der Regellastfälle gemäß Tabelle 11-1, Zeilen 1, 2 und 3, gemessen von nicht 
+ausgelenkten Leitern, 
+(3.2) für den Regellastfall gemäß Tabelle 11-1, Zeile 3, bei Auslenkung der Leiter durch Wind in jene Rich-
+tung, welche den kleineren Abstand ergibt, 
+(3.3) für den Ausnahmslastfall gemäß Tabelle 11-1, Zeile 4, gemessen vom nicht ausgelenkten Leiter. 
+ 
+20.3 
+Die Größe der gemäß 20.2 zu überprüfenden Abstände ist in den Abschnitten 22, 23 und 28 angegeben. 
+ 
+21 
+Abstände im Spannfeld und am Tragwerk 
+21.1 Abstände im Spannfeld 
+21.1.1 Der Abstand zwischen Leitern im Spannfeld ist an Hand eines Auslenkbildes festzustellen. Es ist hierbei die An-
+näherung benachbarter Leiter bei den verschiedenen Belastungsverhältnissen bei gleichsinniger Auslenkung durch Wind 
+zu überprüfen. Auch die gegenseitige Annäherung der Leiter beim Hochschnellen des tiefergelegenen Leiters durch 
+Abwurf der Zusatzlast sowohl im nicht ausgelenkten als auch im ausgelenkten Zustand ist zu untersuchen. 
+Auch im ungünstigsten Fall darf der Abstand die Größe Z gemäß Tabelle 21-1 nicht unterschreiten. 
+ 
+21.1.2 Bei Leitern aus gleichen Werkstoffen, mit gleichem Querschnitt und gleichem Durchhang ist es jedoch zulässig, 
+den Mindestabstand D der nicht ausgelenkten Leiter in Spannfeldmitte aus der Formel 
+ 
+Z
+l
+f
+k
+D
++
++
+⋅
+=
+ 
+zu bestimmen, wobei jedoch der Wert 0,8 m nicht unterschritten werden darf. 
+Es bedeuten: 
+D 
+Leiterabstand in Spannfeldmitte in m, 
+f 
+Leiterdurchhang in Spannfeldmitte in m für jenen der Regellastfälle gemäß Tabelle 11-1, Zeile 1 oder 3, der den 
+größeren Wert ergibt, 
+l 
+Länge der Isolatorenkette in m (werden die Leiter am Tragwerk so befestigt, dass das Auslenken der Isolatoren 
+senkrecht zur Leitungsachse verhindert wird, so ist l = 0 zu setzen), 
+Z 
+Zuschlag in m, der in Abhängigkeit von der Nennspannung der Leitung in Tabelle 21-1 angegeben ist, 
+k 
+Faktor aus Tabelle 21-2, der vom Auslenkwinkel des Leiters und von der Leiteranordnung am Tragwerk abhängt. 
+ 
+Bei Freileitungen mit kunststoffumhüllten Leitern gemäß 3.1 darf der gemäß 21.1.2 errechnete Leiterabstand D in Spann-
+feldmitte auf 40 % reduziert werden, wobei 0,5 m nicht unterschritten werden dürfen. 
+ 
+21.1.3 Werden Leiter, die gegeneinander unter Spannung stehen, im freien Spannfeld durch isolierende Abstandhalter 
+distanziert, wodurch Teilspannweiten entstehen, so können die Abstände gemäß 21.1.1 und 21.1.2 verringert werden. 
+Die Anwendung der Formel in 21.1.2 für die Ermittlung der erforderlichen Leiterabstände ist zulässig, wenn jener Leiter-
+durchhang zugrunde gelegt wird, der beim 1,6fachen Wert der jeweiligen Teilspannweite auftreten würde. 
+ 
+21.1.4 Werden Leitungen gleicher oder verschiedener Spannung von getrennter Leitungsführung auf ein gemeinsames 
+Tragwerk zusammengeführt, so sind die gegenseitigen Abstände der einzelnen Leitungssysteme in den jeweils letzten 
+Spannfeldern der zusammenzuführenden Leitungen vor dem gemeinsamen Tragwerk gemäß 21.1.1 zu ermitteln und 
+nicht gemäß 28.1.6 auszulegen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+15 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 16/47 =====
+Seite 16     
+ÖVE/ÖNORM E 8111 
+Tabelle 21-1 – Abstände in m 
+ 
+ 
+Leitungsgruppe I 
+Verwendung gemäß 
+Nennspannung in kV 
+10 
+15 
+20 
+25 
+30 3) 
+45 
+ 
+Höchste Betriebsspannung für 
+Betriebsmittel in kV 
+(Effektivwert) 
+12 
+17,5 
+24 
+30 
+36 
+37,5 
+52 
+ 
+Z in Abhängigkeit von der Nenn-
+spannung  
+0,12 
+0,17 
+0,20 
+0,30 
+21.1.1 bis 21.1.4 
+nicht ausgelenkte 
+Teile oder Leiter 
+0,12 
+0,17 
+0,22 
+0,26 
+0,30 
+0,40 
+Abstand 
+E  
+von 
+Bau-
+teilen 
+durch Wind ausge-
+lenkte Teile oder 
+Leiter 
+0,12 
+0,17 
+0,20 
+0,30 
+21.2.2 
+Normale Luftstrecke1) 
+0,12 
+0,17 
+0,22 
+0,26 
+0,32 
+0,48 
+21.2.1 
+Erhöhte Luftstrecke2) 
+0,15 
+0,205 
+0,26 
+0,32 
+0,38 
+0,57 
+21.2.1 
+1)  Mindestabstand zwischen Leitern des selben Systems. 
+2)  Mindestabstand zwischen Leitern verschiedener Systeme. 
+3)  Bei Erweiterung bestehender 35-kV-Netze mit höchster Betriebsspannung 37,5 kV darf nach Nennspannung 30 kV 
+isoliert werden. 
+ 
+ 
+ 
+ 
+Tabelle 21-2 – Faktor k 
+ 
+Auslenkwinkel des Leiters 
+bei Wind gemäß 30.51) 
+über 65° 
+über 55° 
+bis 65° 
+über  40° 
+bis 55° 
+bis 40° 
+Leiter übereinander 
+angeordnet 
+> 60° bis 90° 
+ 
+ 
+ 
+ 
+0,95 
+0,85 
+0,75 
+0,7 
+Leiter schräg  
+zueinander 
+angeordnet 
+> 25° bis 60° 
+ 
+ 
+ 
+ 
+0,75 
+0,70 
+0,65 
+0,62 
+Leiteranordnung 
+Leiter nebeneinander  
+angeordnet 
+0° bis 25° 
+ 
+ 
+ 
+0,70 
+0,65 
+0,62 
+0,60 
+1)  Der Auslenkwinkel bezieht sich auf den unvereisten Leiter, wobei der Tangens des Auslenkwinkels als Quotient aus 
+Winddruck durch Leitereigengewicht errechnet wird. 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+16 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 17/47 =====
+Seite 17 
+ ÖVE/ÖNORM E 8111 
+ 
+21.2 Abstände am Tragwerk 
+21.2.1 Leiter und sonstige Teile (z.B. Seilschlaufen, Strombügel zu Geräten usw.), die gegeneinander unter Spannung 
+stehen, sind so anzuordnen, dass ihr Abstand voneinander mindestens der jeweils anzuwendenden Luftstrecke ent-
+spricht (siehe Tabelle 21-1). 
+ 
+21.2.2 Leiter und Teile, die unter Spannung stehen, müssen von Bauteilen, die nicht unter Spannung stehen, mindes-
+tens den Abstand E gemäß Tabelle 21-1 haben. 
+Für die Ermittlung der Auslenkung von Hängeketten mit Belastungsgewichten oder ohne Belastungsgewichte darf für die 
+Windkraft auf die Leiter bei Spannweiten über 200 m ein verminderter Wert in Rechnung gestellt werden, wobei 
+)
+6,0
+80
+(
+m
+W
+L
+a
+P
+W
+⋅
++
+⋅
+=
+ 
+ist.  
+Es bedeuten: 
+WL 
+Windkraft auf den Leiter in N, 
+PW 
+längenbezogene Windkraft in N/m, 
+am 
+arithmetische Mittel der Längen der beiden angrenzenden Spannfelder in m. 
+ 
+21.2.3 Für die Zuspannung von Leitungen an Kraftwerken, Transformatorstationen, Freiluftschaltanlagen, Abzweigmas-
+ten u.ä. gelten für die Abstände der Befestigungspunkte und der Seilführung (Seilschlaufen, Strombügel usw.) die Anfor-
+derungen gemäß 21.2.1 und 21.2.2. 
+ 
+22 
+Abstände vom Gelände 
+22.1 Geländeoberfläche 
+Die Abstände der Leiter sind rechtwinkelig zur Geländeoberfläche zu messen. Geringe Unebenheiten können dabei 
+unberücksichtigt bleiben. 
+ 
+Abstand der Leiter 
+(1)  im Regellastfall 
+(1.1) von normalem Gelände ................................................................................5 m 
+(1.2) von Gelände, das mit hochbeladenen Wagen nicht befahrbar ist ................5 m 
+(1.3) von Steilgelände, normalerweise nicht begangen ........................................4 m 
+(1.4) von Felswänden seitlich (im rechten Winkel zur Felswand gemessen)........3 m 
+ 
+(2) 
+im Ausnahmslastfall in den Fällen (1.1) bis (1.4) ..................................................3 m 
+ 
+22.2 Waldschneisen und einzelstehende Bäume und Sträucher 
+Die nachfolgenden Abstände dürfen nicht unterschritten werden. Sie gelten für den astfreien Raum, d.h., dass auch 
+durch die Wipfel und Äste diese Abstände nicht unterschritten werden dürfen. Diese Abstände sind, wenn die Betriebssi-
+cherheit der Leitung dies erfordert, gegebenenfalls zu vergrößern (kranke, hängende oder flach wurzelnde Bäume, an 
+Steilhängen oder Rutschhängen usw.). Der Höhenzuwachs der Bäume, die Bodenbeschaffenheit, Bestandsverhältnisse 
+und die vorherrschenden Windrichtungen sind zu berücksichtigen. 
+ 
+Abstände 
+(1) 
+seitlich der Leiter ..................................................................................................3 m 
+ 
+(2) 
+unterhalb der Leiter 
+(2.1) im Regellastfall.............................................................................................3 m 
+(2.2) im Ausnahmslastfall .....................................................................................0,5 m 
+ 
+Bei der Querung von Wäldern (Waldschneisen) oder bei der Entlangführung an Waldbestand darf der seitliche Abstand 
+für Freileitungen mit kunststoffumhüllten Leitern auf 1,5 m reduziert werden. Dieser Abstand gilt auch zu den blanken, 
+spannungsführenden Teilen im unmittelbaren Bereich des Stützpunktes (z.B. Leiterbefestigung, Erdungsanschlüsse, 
+Klemmen). 
+ 
+Für die Revision und Reparatur von Leitungen muss in Waldbeständen nötigenfalls durch entsprechende Schlägerungen 
+und Ausästungen Vorsorge getroffen werden. 
+Sofern es sich nicht um Freileitungen mit kunststoffumhüllten Leitern handelt, ist der durch den seitlichen Abstand ge-
+mäß 22.2 (1) bestimmte Schutzraum oberhalb der Leiter auf volle Baumhöhe astfrei zu halten. Bei Freileitungen mit 
+kunststoffumhüllten Leitern ist ein astfreier Raum oberhalb der Leiter von mindestens 3 m einzuhalten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+17 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 18/47 =====
+Seite 18     
+ÖVE/ÖNORM E 8111 
+23 
+Leitungsführung im Bereich von Objekten 
+23.1 Allgemeines 
+Wird der jeweils geforderte seitliche Abstand der Hochspannungsfreileitung von den in 23.2 bis 23.8 genannten Objekten 
+unterschritten, verläuft somit ein Leiter im Schutzbereich (siehe 3.12) eines Objektes, so dürfen die in den Abschnitten 
+23.2 bis 23.8 angegebenen Schutzabstände nicht unterschritten werden. 
+ 
+23.2 Gemeindestraßen außerhalb von Ortsgebieten und sonstige Fahrwege 
+(1) 
+Seitlicher Abstand der Leiter vom Fahrbahnrand..................................................4 m 
+ 
+(2) 
+Schutzabstand der Leiter von der Fahrbahn 
+(2.1) im Regellastfall .............................................................................................6 m 
+(2.2) im Ausnahmslastfall......................................................................................5 m 
+ 
+(3) 
+Seitlicher Abstand der Fundamente der Tragwerke vom Fahrbahnrand...............1 m 
+ 
+23.3 Brücken 
+Für im Brückenbereich vorhandene Objekte (z.B. Verkehrsflächen, Beleuchtungsanlagen usw.) sind außerdem die je-
+weils für diese Objekte geforderten Abstände zu berücksichtigen. 
+Im Übrigen gilt: 
+ 
+(1) 
+Seitlicher Abstand der Leiter von der Brücke ........................................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter über der Brücke 
+(2.1) im Regellastfall .............................................................................................3 m 
+(2.2) im Ausnahmslastfall......................................................................................2,5 m 
+ 
+(3) 
+Schutzabstand der Leiter unter einer Brücke, 
+(3.1) sofern die Brücke als Tragwerk für die  
+ 
+Hochspannungsfreileitung benützt wird,............... Abstände gemäß Abschnitt 21 
+(3.2) sofern die Brücke nicht als Tragwerk für die  
+ 
+Hochspannungsfreileitung benützt wird 
+(3.2.1) im Regellastfall..................................................................................3 m 
+(3.2.2) desgleichen, jedoch bei hochgeschnelltem Leiter .............................1 m 
+(3.3) Liegt die Verkehrsfläche einer Brücke weniger als 5 m oberhalb der 
+spannungsführenden Leiter, so sind in Höhe der Verkehrsfläche oder 
+knapp darunter in der Breite der Hochspannungsfreileitung zuzüglich je 
+2 m an beiden Seiten der Brücke Schutzdächer anzubringen, die min-
+destens 1 m über die Verkehrsfläche hinausragen. 
+ 
+23.4 Bauwerke 
+Für Bauwerke, soweit sie nicht in 28.1.3 behandelt werden, gilt: 
+ 
+(1) 
+seitlicher Abstand der Leiter vom nächsten Bauwerksteil .....................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter vom nächsten Bauwerksteil 
+(2.1) im Regellastfall .............................................................................................3 m 
+(2.2) im Ausnahmslastfall......................................................................................2,5 m 
+ 
+(3) 
+Schutzabstand der Leiter von Flachdächern bis 15° Neigung  
+und von Standflächen (z.B. Terrassen und Balkone usw.) 
+(3.1) im Regellastfall .............................................................................................4 m 
+(3.2) im Ausnahmslastfall......................................................................................2,5 m 
+ 
+23.5 Strohtristen 
+(1) 
+Seitlicher Abstand der Leiter von der Triste ..........................................................10 m 
+ 
+(2) 
+Schutzabstand der Leiter von der Triste im Regellastfall ......................................20 m 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+18 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 19/47 =====
+Seite 19 
+ ÖVE/ÖNORM E 8111 
+ 
+23.6 Gewässer 
+Ausgenommen Wasserstraßen, die in 28.2.4 behandelt werden. 
+ 
+23.6.1 Schutzabstand der Leiter im Regellastfall 
+ 
+(1) 
+von nicht schiffbaren oder nicht flößbaren Gewässern 
+(1.1) über Mittelwasser .........................................................................................5 m 
+(1.2) über höchstem Wasserstand........................................................................3 m 
+ 
+(2) 
+von schiffbaren oder flößbaren Gewässern 
+(2.1) über höchstem schiffbarem Wasserstand (HSW).........................................5 m 
+(2.2) über dem höchsten Bauteil der Wasserfahrzeuge........................................2 m 
+ 
+(3) 
+über der Krone von befahrbaren Hochwasserschutzdämmen .............................6 m 
+ 
+23.6.2 Seitlicher Abstand der Fundamente der Tragwerke vom Ufergrat oder vom 
+land- oder wasserseitigen Fuß von Hochwasserschutzdämmen oder Bermen ........................3 m 
+Eine Unterschreitung der vorstehenden Abstände ist an die Zustimmung der zuständigen Gewässeraufsichtsbehörde 
+gebunden. Die bestimmungsgemäße Benützung von Treidelwegen darf durch Tragwerke und deren Fundamente nicht 
+beeinträchtigt werden. 
+ 
+23.7 Fernmeldekabel des öffentlichen Netzes 
+(1) 
+Seitlicher Abstand der Fundamente der Tragwerke und deren 
+ 
+Ausschachtungen von Kabeln ..............................................................................0,8 m 
+ 
+(2) 
+desgleichen, sofern die Kabel einen allseitigen mechanischen 
+ 
+nichtmetallenen Schutz erhalten...........................................................................0,3 m 
+ 
+Wird das Fernmeldekabel durch Erderspannungen oder durch Blitzeinwirkung gefährdet oder wird ein Koaxialkabel oder 
+ein Fernmeldekabel gleicher Bedeutung betroffen oder werden Einbauten von Fernmeldeanlagen (Raum für Spleißgru-
+ben) berührt, so können größere als die vorstehend genannten Abstände oder besondere Schutzmaßnahmen erforder-
+lich werden, die im Einzelfall an die Zustimmung der Fernmeldebehörde gebunden sind. 
+ 
+23.8 Ortsveränderliche Bodenseilzüge 
+Bei der Ermittlung der Abstände von diesen Arbeitsgeräten ist gegebenenfalls Abheben und Hochschnellen des Boden-
+seilzuges, insbesondere in muldenförmigem Gelände, zu berücksichtigen. 
+ 
+Schutzabstand der Leiter vom Bodenseilzug im Regellastfall.......................................3 m 
+ 
+Werden Führungsrollen, Fangjoche, Prellseile u.dgl. vorgesehen, so sind die Schutzabstände von diesen von Fall zu Fall 
+so festzulegen, dass die elektrotechnische Sicherheit sichergestellt wird. 
+ 
+24 
+Maßnahmen für erhöhte Sicherheit  
+24.1  Leitungsführung 
+Wird der jeweils geforderte seitliche Abstand von den in Abschnitt 28 genannten Objekten erhöhter Bedeutung unter-
+schritten, verläuft daher ein Leiter im Schutzbereich gemäß 3.12 des Objektes, gleichgültig, ob das Objekt gekreuzt wird 
+oder nicht, so müssen die jeweils im Abschnitt 28 geforderten Schutzabstände eingehalten werden. Maßnahmen für 
+erhöhte Sicherheit gemäß Abschnitt 24 und Abschnitt 25 sind in dem in der Tabelle 28-1 angegebenen Umfang vorzuse-
+hen. 
+ 
+24.2  Leiterbefestigung 
+24.2.1 Stützenisolatoren an Tragmasten 
+24.2.1.1 Der unter Spannung stehende Leiter ist an einem Stützenisolator mittels Klemmkonstruktion, Bügelbund oder 
+Isolatorenbundspirale zu befestigen. Die bloße Befestigung mittels Drahtbundes ist unzulässig. 
+ 
+24.2.1.2 Bei Winkeltragmasten ist der Leiter so anzuordnen, dass der resultierende Leiterzug direkt oder mittels Armatu-
+ren eingeleitet wird. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+19 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 20/47 =====
+Seite 20     
+ÖVE/ÖNORM E 8111 
+24.2.2 Isolatorketten in Abspannlage  
+24.2.2.1 Im Kreuzungsspannfeld sind an Abspannmasten an der dem gekreuzten Objekt zugewandten Seite Mehrfach-
+ketten gemäß 24.2.2.2 vorzusehen. 
+ 
+24.2.2.2 An Mehrfachketten ist so abzuspannen, dass bei Ausfall einer Einzelkette die elektromechanische oder mecha-
+nische Nennlast der verbleibenden Isolatoren und die Grenzlasten gemäß 13.4 der verbleibenden Armaturen mindestens 
+dem Leiterzug im Ausnahmslastfall gleich sind. 
+ 
+24.2.3 Isolatorketten an Tragmasten 
+Im Kreuzungsspannfeld sind Mehrfachketten zu verwenden. Bei Ausfall einer Einzelkette müssen die elektromechani-
+sche oder mechanische Nennlast der verbleibenden Isolatoren und die Grenzlasten gemäß 13.4 der verbleibenden Ar-
+maturen mindestens der Belastung im Ausnahmslastfall gleich sein. 
+ 
+25 
+Zusätzliche Anforderungen bzw. Maßnahmen für erhöhte Sicherheit 
+ 
+25.1  Zusätzliche Anforderungen und Maßnahmen für Objekte erhöhter Bedeutung gemäß 28.2 
+ 
+25.1.1 (1) 
+An Abspannmasten sind bei den dem Kreuzungsspannfeld bzw. den dem Kreuzungsabspannabschnitt 
+zugewandten Spannfeldern Mehrfachketten gemäß 24.2.2.2 vorzusehen. 
+ 
+(2) 
+Die Leiter sind an Tragmasten gemäß 24.2.1 und 24.2.3 zu befestigen, wenn die Tragmaste 
+- 
+ein Kreuzungsspannfeld begrenzen oder  
+- 
+ein Spannfeld im Schutzbereich (siehe 3.11) von Objekten gemäß 28.2 und 28.3 begrenzen. 
+Bei geerdeten Tragwerken mit Stützen- oder Vollkernstützisolatoren sind zwei Isolatoren senkrecht zur Lei-
+tungsrichtung bzw. in Richtung der Winkelhalbierenden anzuordnen. Die Befestigung des Leiters und des 
+Sicherheitsbügels (aus gleichem Werkstoff und Querschnitt wie der Leiter) an den Isolatoren erfolgt gemäß 
+24.2.1.1 und 24.2.1.2. 
+ 
+(3) 
+Erdseile sind an den Abspannmasten der Abspannabschnitte abzuspannen.  
+ 
+25.1.2 Für Holzmaste gilt: 
+ 
+(1)  Sie sind mit Mastfüßen auszurüsten, die nicht aus Holz sein dürfen. 
+ 
+(2)  Abspannmaste müssen A-Maste (A-Mast-Ebene in Leitungsrichtung) oder eine Kombination aus A-Masten 
+sein. 
+ 
+(3)  Winkeltragmaste müssen A-Maste (A-Mast-Ebene in der Winkelhalbierenden) sein. 
+ 
+(4)  Die Mastkopfausrüstung muss als Stahlkonstruktion ausgeführt sein. Sie darf nicht mit Holzgewindeschrau-
+ben befestigt werden. Gebogene Stützen sind nicht zulässig. 
+ 
+(5)  Ölschalter und Transformatoren dürfen auf Tragmasten nicht angeordnet werden. 
+Auf Abspannmasten dürfen sie angeordnet werden, wenn die Verbindungsleiter nicht an die unter Zug ste-
+henden Leiter angeschlossen werden. 
+ 
+25.2  Zusätzliche Anforderungen bei Kreuzung von Objekten gemäß 28.3 
+Bei Kreuzung von Objekten gemäß 28.3 dürfen auch bei folgender außergewöhnlicher Lage der Leiter die hiefür jeweils 
+geforderten Schutzabstände nicht unterschritten werden: 
+ 
+(1)  Das Kreuzungsspannfeld der Hochspannungsfreileitung ist mit Regelzusatzlast belastet, alle übrigen Spann-
+felder der Hochspannungsfreileitung sind unbelastet (ungleiche Aneisung). 
+ 
+(2)  Bruch eines Isolators bei Mehrfachabspannketten im Regellastfall. Hierbei braucht die Auslenkung der Leiter 
+durch Wind nicht berücksichtigt zu werden. 
+ 
+26 bis 27 Bleiben frei. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+20 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 21/47 =====
+Seite 21 
+ ÖVE/ÖNORM E 8111 
+ 
+28 
+Objekte erhöhter Bedeutung 
+ 
+28.1 
+Im Schutzbereich der Objekte erhöhter Bedeutung (Objekte gemäß 28.1.1 bis 28.1.10) gelten die Maßnahmen 
+gemäß Abschnitt 24. 
+ 
+28.1.1 Bundesstraßen S (Schnellstraßen), Bundesstraßen B und Landesstraßen 
+ 
+(1) 
+Seitlicher Abstand der Leiter vom Fahrbahnrand..................................................4 m 
+ 
+(2) 
+Schutzabstand der Leiter von der Fahrbahn 
+(2.1) im Regellastfall.............................................................................................6 m 
+(2.2) im Ausnahmslastfall .....................................................................................5 m 
+ 
+(3) 
+Seitlicher Abstand der Fundamente der Tragwerke vom  
+Fahrbahnrand, sofern eine Unterschreitung der gesetzlich  
+festgelegten Schutzzone genehmigt wird .............................................................2 m 
+ 
+28.1.2  Verkehrsflächen innerhalb von Ortsgebieten, in industriellen und gewerblichen Anlagen sowie in öffentli-
+chen Gartenanlagen 
+ 
+(1) 
+Seitlicher Abstand der Leiter vom Fahrbahnrand..................................................4 m 
+ 
+(2) 
+Schutzabstand der Leiter von der Fahrbahn 
+(2.1) im Regellastfall.............................................................................................6 m 
+(2.2) im Ausnahmslastfall .....................................................................................5 m 
+ 
+28.1.3  Wohn- oder Schulgebäude, Gebäude industrieller oder gewerblicher Anlagen u.dgl. 
+ 
+(1) 
+Seitlicher Abstand der Leiter vom nächsten Bauwerksteil ....................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter vom nächsten Bauwerksteil 
+(2.1) im Regellastfall.............................................................................................3 m 
+(2.2) im Ausnahmslastfall .....................................................................................2,5 m 
+ 
+(3) 
+Schutzabstand der Leiter von Flachdächern bis 15° Neigung 
+und von der Standfläche von Terrassen, Balkonen usw. 
+(3.1) im Regellastfall ............................................................................................4 m 
+(3.2) im Ausnahmslastfall .....................................................................................2,5 m 
+ 
+(4) 
+Bei der Zuspannung von Hochspannungsfreileitungen zu Umspann- und Schaltanlagen (Einbaustationen) 
+die bei Wohn- oder Schulgebäuden, Gebäuden industrieller oder gewerblicher Art u.dgl. ein- oder angebaut 
+sind, brauchen im Bereich der Freileitungsabspannung die oben geforderten Abstände von den Objekten 
+selbst nicht eingehalten zu werden. 
+Am jeweiligen Objekt ist jedoch durch geeignete Maßnahmen, die im einzelnen auf die örtlichen Gegeben-
+heiten abzustimmen sind (z.B. Warntafeln an der Wand, Abschrankungen mit Warntafeln auf dem Dach), 
+auf die bei einer Annäherung an die Hochspannungsfreileitung gegebene Gefahr hinzuweisen. 
+Tür- und Fensteröffnungen (letztere, sofern sie nicht fix abgeschlossen sind oder durch geeignete Maßnah-
+men ein Berühren hochspannungsführender Teile sicher verhindert wird) dürfen innerhalb der oben festge-
+legten Abstände nicht vorhanden sein. 
+ 
+Für Bauwerke, die hier nicht behandelt werden, gilt 23.4. 
+Gehören die Gebäude zur gleichen Stromversorgungsanlage wie die Leitung (Kraftwerke, Umspann- oder Schalt-
+stationen), so sind auch kleinere Abstände zulässig. 
+Bei industriellen und gewerblichen Anlagen ist auf die Besonderheit des Betriebes (z.B. bei feuer- oder explosi-
+onsgefährdeten Anlagen) sowie auf den Arbeitsraum von Verladeeinrichtungen, Kränen u.dgl. zu achten. 
+ 
+28.1.4  Straßenbahnen, Obuslinien, Materialbahnen und elektrische Treidelanlagen 
+Für Speiseleitungen auf eigenen Tragwerken gelten die Bestimmungen gemäß 28.1.6.  
+ 
+(1) 
+Seitlicher Abstand der Leiter vom Lichtraumprofil, bei Obuslinien 
+vom Fahrbahnrand, sowie von Fahrleitungstragwerken ................................. 4 m 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+21 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 22/47 =====
+Seite 22     
+ÖVE/ÖNORM E 8111 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung von 
+Fahrleitungen und von Speiseleitungen auf Fahrleitungstragwerken 
+(2.1) im Regellastfall .............................................................................................4 m 
+(2.2) im Ausnahmslastfall......................................................................................0,5 m 
+ 
+(3) 
+Schutzabstand der Leiter von der Schienenoberkante (wenn 
+keine Fahrleitung oder Speiseleitung auf Fahrleitungstragwerken  
+vorhanden ist) 
+(3.1) im Regellastfall .............................................................................................7 m 
+(3.2) im Ausnahmslastfall......................................................................................5 m 
+ 
+(4) 
+Seitlicher Abstand der Tragwerke der Hochspannungsfreileitung 
+(4.1) vom Lichtraumprofil und von Fahrleitungstragwerken, sofern 
+ 
+die Unterschreitung des Bauverbotsbereiches von der  
+ 
+Aufsichtsbehörde genehmigt wird.................................................................5 m 
+(4.2) bei Obuslinien vom Fahrbahnrand und von Fahrleitungen ...........................2 m 
+ 
+28.1.5  Sportanlagen 
+Sportanlagen im Sinne dieser Vorschrift sind Stätten, die der Sportausübung im Freien dienen und in einem behördli-
+chen Verfahren einer Genehmigung als Sportanlagen bedürfen. 
+Hierzu zählen auch öffentliche Schwimmbadanlagen und Campingplätze, sofern sie gleichfalls genehmigungspflichtig 
+sind. 
+Bei Kreuzung von Sportanlagen sind die nachstehenden Abstände von jenen Flächen einzuhalten, die der aktiven 
+Sportausübung dienen. Für die übrigen Flächen sowie für Objekte im Bereich von Sportanlagen sind die einschlägigen 
+Bestimmungen sinngemäß anzuwenden. 
+Schießstätten dürfen nur außerhalb des durch die Blendenöffnungen gegebenen Streubereichs gekreuzt werden. 
+Schisprunganlagen sind von der Absprung- bis zur Aufsprungstelle möglichst nicht zu kreuzen. Ist dies nicht zu vermei-
+den, ist der Schutzabstand gemäß (2.4) zur theoretischen Flugbahn einzuhalten. 
+ 
+(1) 
+Seitlicher Abstand der Leiter von Sportanlagen ....................................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter im Regellastfall von 
+(2.1)  Sportflächen, die der Ausübung bodengebundener Sportarten 
+ 
+oder Ballspielen mit kleinen, leichten, weichen Bällen dienen  
+ 
+(wie Laufen, Weitsprung, Eisschießen, Tennis u.ä.).....................................6 m 
+(2.2) Sportflächen, die der Ausübung nicht bodengebundener  
+ 
+Sportarten oder Ballspielen mit größeren oder härteren Bällen  
+ 
+dienen (wie alle Wurfsportarten, Schlagball, Stabhochsprung, 
+ 
+Fuß- und Handball u. ä.) ............................................................................ ..9 m 
+ 
+Für bestimmte Sportarten, wie Golf, Diskus-, Hammer-, Speer- 
+ 
+wurf u.ä., ist es erforderlich, die Überspannungshöhe entspre- 
+ 
+chend der zu erwartenden Gefährdung gesondert festzulegen. 
+(2.3) Öffentliche Schwimmbadeanlagen und Campingplätze................................6 m 
+ 
+Für jene Flächen, die der aktiven Sportausübung dienen,  
+ 
+gilt (2.1) und (2.2). 
+(2.4) Schisprunganlagen.......................................................................................7 m 
+ 
+28.1.6 Starkstromfreileitungen 
+Für die Abstände, ausgenommen jene gemäß (2), ist die Hochspannungsfreileitung der höheren Leitungsgruppe maß-
+gebend. Starkstromfreileitungen bis 1000 V dürfen von Hochspannungsfreileitungen nicht unterkreuzt werden. 
+Maßnahmen gemäß Abschnitt 24 sind nur an der überkreuzenden Leitung zu treffen. 
+Die Anforderungen bezüglich der Führung von Starkstromfreileitungen bis 1000 V auf dem Gestänge von Hochspan-
+nungsfreileitungen sind in ÖVE-L 1 festgelegt. Die gemeinsame Führung ist auf Hochspannungsfreileitungen der Lei-
+tungsgruppe I zulässig. 
+ 
+(1) 
+Seitlicher Abstand zwischen den Leitern von zwei auf getrennten 
+Masten geführten Starkstromfreileitungen, wobei die Leiter 
+einer Leitung nicht ausgelenkt, jene der zweiten durch Wind  
+gegen die erste ausgelenkt anzunehmen sind......................................................1,5 m 
+ 
+(2) 
+Schutzabstand der Tragwerke 
+(2.1) einer Leitung von den ausgelenkten Leitern der anderen  
+ 
+Leitung im Regellastfall.................................................................................3 m 
+ 
+Maßgebend ist die Leitungsgruppe der gegen das Tragwerk  
+ 
+ausgelenkten Leitung. 
+(2.2) von den ausgelenkten Leitern einer Starkstromfreileitung  
+ 
+bis 1000 V.....................................................................................................1,5 m 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+22 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 23/47 =====
+Seite 23 
+ ÖVE/ÖNORM E 8111 
+ 
+(3) 
+Schutzabstand einander kreuzender Leiter 
+(3.1) in den Regellastfällen gemäß Abschnitt 11 ..................................................2 m 
+(3.2) oberer Leiter in allen Spannfeldern des Abspannabschnittes 
+ 
+mit Regelzusatzlast belastet, unterer nicht ausgelenkter Leiter 
+ 
+in allen Spannfeldern des Abspannabschnittes ohne  
+ 
+Zusatzlast bei -5 °C......................................................................................2 m 
+(3.3) wie (3.2), jedoch oberer Leiter mit Ausnahmszusatzlast  
+ 
+belastet bei -5 °C..........................................................................................0,5 m 
+(3.4) bei Hochspannungsfreileitungen mit Isolatorketten an den  
+ 
+Tragmasten 
+oberer Leiter im Kreuzungsspannfeld mit Regelzusatzlast 
+belastet, alle anderen Spannfelder des Abspannabschnittes 
+ohne Zusatzlast, unterer nicht ausgelenkter Leiter im  
+gesamten Abspannabschnitt ohne Zusatzlast bei -5 °C...............................0,5 m 
+ 
+28.1.7 Materialseilbahnen, land- und forstwirtschaftliche Seilwege 
+Die Abstände der überkreuzenden Hochspannungsfreileitung sind für die ungünstigste Lage der Seilbahn (Hochschnel-
+len u.dgl.) zu ermitteln. 
+Bei der Überkreuzung von Materialseilbahnen, sofern diese nicht für Personenbeförderung zugelassen sind, und von 
+land- und forstwirtschaftlichen Seilwegen kann auf die erhöhte Sicherheit gemäß Abschnitt 24 verzichtet werden, wenn: 
+ 
+(1) 
+durch Bewilligungsbescheid oder behördliche Entscheidung oder Verfügung sichergestellt ist, dass bei Ka-
+tastrophenwetter (starkem Schneefall, Aneisung, Sturm, Gewitter) diese nicht betrieben werden dürfen, oder 
+ 
+(2) 
+Schutzgerüste, Prellseile u.dgl. angeordnet werden, die eine Berührung zwischen den Leitern der Hoch-
+spannungsfreileitung und Teilen der Seilbahnanlage mit Sicherheit verhindern. 
+ 
+Für die zu den land- und forstwirtschaftlichen Seilwegen gehörenden und längs derselben geführten Fernmeldeleitungen 
+gelten die vorstehenden Bestimmungen ebenfalls. 
+Eine Unterkreuzung dieser Anlagen und von allenfalls zu diesen gehörenden Fernmeldeleitungen durch eine Hochspan-
+nungsfreileitung ist nur in unvermeidlichen Ausnahmefällen zulässig. In solchen sind die ungünstigste Lage der Leiter der 
+Hochspannungsfreileitung (Hochschnellen bei Wegfall der Ausnahmszusatzlast) sowie die tiefste Lage der Seile oder 
+Fahrbetriebsmittel der Seilbahn und des Fördergutes zu berücksichtigen. Erhöhte Sicherheit der Hochspannungsfreilei-
+tung gemäß Abschnitt 24 ist nicht erforderlich. 
+ 
+(1) 
+Seitlicher Abstand 
+(1.1) zwischen den Leitern der Hochspannungsfreileitung und den 
+ 
+Seilbahnseilen, beide durch Wind gegeneinander ausgelenkt .....................2 m 
+(1.2) zwischen den ausgelenkten Leitern der Hochspannungsfrei- 
+ 
+leitung und den Bauteilen der Seilbahn........................................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung zur Seilbahn 
+(2.1) im Regellastfall.............................................................................................2 m 
+(2.2) im Ausnahmslastfall .....................................................................................0,5 m 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke der Hochspannungsfreileitung  
+von Bauteilen der Seilbahn und vom ausgelenkten Seilbahnseil..........................2 m 
+ 
+Können die oben angegebenen Abstände nicht einwandfrei sichergestellt werden, so sind Schutzgerüste, Prellseile, 
+Fangjoche oder dgl. anzuordnen. Die Abstände der Hochspannungsfreileitung von diesen sind von Fall zu Fall so festzu-
+legen, dass die elektrotechnische Sicherheit sichergestellt ist. 
+ 
+28.1.8  Standseilbahnen für Güterbeförderung 
+Zu diesen zählen Schrägaufzüge, Bremsberge, Haspelberge, Seilförderungen u.dgl. (auch für Werksverkehr). Bei mul-
+denförmigem Längenprofil der Standseilbahnanlage ist das Hochschnellen des Zugförderseiles zu berücksichtigen. 
+ 
+(1) 
+Seitlicher Abstand der Leiter der Hochspannungsfreileitung vom  
+ 
+Lichtraumprofil ......................................................................................................2 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung vom 
+Lichtraumprofil und vom hochgeschnellten Zugseil 
+(2.1) im Regellastfall.............................................................................................1,5 m 
+(2.2) im Ausnahmslastfall .....................................................................................0,5 m 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke vom Lichtraumprofil.........................................2 m 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+23 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 24/47 =====
+Seite 24     
+ÖVE/ÖNORM E 8111 
+28.1.9  Oberirdische Fernmeldeleitungen, Gruppe A 
+Das sind Fernmeldeleitungen, welche weder mit dem öffentlichen Fernmeldenetz noch mit anderen Fernmeldeanlagen in 
+Verbindung stehen, in ihrem Verlaufe auch nicht in Linien des öffentlichen Fernmeldenetzes geführt werden und 
+ 
+(1) 
+die Grenzen eines Grundstückes oder einer zusammen hängenden Liegenschaft ein und desselben Eigen-
+tümers nicht verlassen oder 
+ 
+(2) 
+zu einer Materialseilbahn gemäß 28.1.7, zu einem land- und forstwirtschaftlichen Seilweg gemäß 28.1.7  
+oder zu einer Standseilbahn für Güterbeförderung gemäß 28.1.8 gehören. 
+ 
+Diese Fernmeldeleitungen dürfen mit der in 28.1.7 genannten Ausnahme nicht unterkreuzt werden. 
+Mit Ausnahme der in 28.1.7 genannten Fernmeldeleitungen sind die gleichen Abstände, die in 28.3.2 für oberirdische 
+Fernmeldeleitungen, Gruppe B, festgelegt sind, einzuhalten. 
+Für die unter 28.1.7 genannten Fernmeldeleitungen gelten die gleichen Bestimmungen wie für die zugehörige Seilbahn-
+anlage. 
+ 
+28.1.10  Außenantennenanlagen 
+(1) 
+Außenantennen, nicht auf Leitungstragwerken montiert: 
+ 
+Hierzu zählen: Im Freien liegende Antennengebilde, Antennenträger, Antennenleitungen, zusätzliche Bau-
+elemente und Erdungsanlagen derselben. 
+Außenantennenanlagen dürfen durch Hochspannungsfreileitungen nicht unterkreuzt werden. 
+(1.1) Seitlicher Abstand der Leiter von der Außenantennenanlage.......................2 m 
+(1.2) Schutzabstand der Leiter von der Außenantennenanlage 
+(1.2.1) im Regellastfall ..................................................................................2 m 
+(1.2.2) im Ausnahmslastfall ..........................................................................0,5 m 
+(1.3) Schutzabstand der Leiter von besteigbaren Antennentrag- 
+werken im Regellastfall.................................................................................3 m 
+(1.4) Liegt eine Außenantennenanlage seitlich der Hochspannungs- 
+freileitung, aber höher als diese, so muss ihr seitlicher Abstand 
+von den Leitern der Hochspannungsfreileitung so groß sein,  
+dass bei allfälligem Umstürzen der Antennenträger zwischen der  
+Außenantennenanlage und der Hochspannungsfreileitung noch  
+ein Abstand verbleibt von .............................................................................1 m 
+Dies ist nicht erforderlich, wenn durch geeignete Maßnahmen 
+(Anker oder dgl.) ein Umstürzen der Außenantennenanlage in Richtung  
+zur Hochspannungsfreileitung zuverlässig verhindert wird. 
+ 
+(2) 
+Außenantennen, auf Leitungstragwerken montiert: 
+ 
+Für auf Tragwerken von Starkstromfreileitungen über 1 kV montierte Außenantennenanlagen sind die Be-
+stimmungen gemäß 28.1.10 (1) nicht anzuwenden. 
+Für diese Anwendungsform gilt: 
+(2.1) Bei der Anbringung von Außenantennenanlagen auf Tragwerken von Starkstromfreileitungen über 1 kV 
+bleiben diese weiterhin Tragwerke für Starkstromfreileitungen über 1 kV, ihre Bemessungen unterlie-
+gen der zum Zeitpunkt ihrer Errichtung jeweils gültigen Bestimmung. 
+(2.2) Die Antennentragkonstruktion zur Anbringung der Antennen, sowie allfällige Steighilfen, Standroste, 
+Podeste etc., sind Teile des Tragwerkes und sind gemäß der vorliegenden ÖVE/ÖNORM auszulegen. 
+(2.3) Die Ermittlung der von den Antennen ausgehenden, auf die Antennentragkonstruktion und das Trag-
+werk wirkenden Lasten, hat auch gemäß der vorliegenden ÖVE/ÖNORM zu erfolgen. 
+(2.4) Als Schutzabstände gelten:  
+(2.4.1) Schutzabstand der spannungsführenden Leiter (Phasen) von  
+der Antenne im Regellastfall..............................................................2 m 
+(2.4.2) Schutzabstände der nicht spannungsführenden Leiter, die mit  
+den geerdeten Bauteilen des Tragwerkes verbunden sind, von 
+der Antenne im Regellastfall..............................................................0,5 m  
+ 
+ANMERKUNG:  
+Für die Gestaltung und Situierung von Steighilfen, Standflächen und Podesten wird auf ÖVE EN 50110 ver-
+wiesen. 
+ 
+Das die Antennenanlage speisende Niederspannungsnetz darf nicht unzulässig beeinflusst werden.  
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+24 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 25/47 =====
+Seite 25 
+ ÖVE/ÖNORM E 8111 
+ 
+28.2  Für die Leitungsführung im Schutzbereich der nachfolgend genannten Objekte erhöhter Bedeutung (Objekte 
+gemäß 28.2.1 bis 28.2.4) gelten die zusätzlichen Maßnahmen gemäß Abschnitt 24 und Abschnitt 25.1. 
+ 
+28.2.1  Seilliftanlagen zur öffentlichen Personenbeförderung 
+Seilliftanlagen dürfen durch Hochspannungsfreileitungen nicht unterkreuzt werden. Die Abstände sind bei ungünstigster 
+Seillage der Seilliftanlage (Hochschnellen der Seile u.dgl.) zu ermitteln. 
+ 
+(1) 
+Seitlicher Abstand 
+(1.1) zwischen den Leitern der Hochspannungsfreileitung und dem Seil  
+ 
+der Liftanlage einschließlich der Fahrbetriebsmittel, beide durch 
+ 
+Wind gegeneinander ausgelenkt..................................................................2 m 
+(1.2) zwischen den ausgelenkten Leitern der Hochspannungsfreileitung  
+ 
+und Bauteilen der Seilliftanlage....................................................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung von 
+ 
+der Seilliftanlage 
+(2.1) im Regellastfall.............................................................................................3 m 
+(2.2) im Ausnahmslastfall .....................................................................................2 m 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke der Hochspannungsfrei- 
+ 
+leitung von den Bauteilen der Seilliftanlage, sofern die  
+ 
+Unterschreitung des im Eisenbahngesetz festgelegten 
+ 
+Bauverbotsbereiches von 12 m genehmigt wird ...................................................5 m 
+ 
+28.2.2 Seilschwebebahnen zur öffentlichen Personenbeförderung 
+Unterkreuzungen von Seilschwebebahnen mit öffentlichem Personenverkehr durch Hochspannungsfreileitungen sind nur 
+in unvermeidbaren Ausnahmefällen zulässig. Die Hochspannungsfreileitung ist in diesem Falle durch ein Bauwerk 
+(Schutzgerüst, Tunnel u.dgl.) zu schützen. Das Bauwerk darf den Seilbahnbetrieb auch bei der ungünstigsten Seillage 
+nicht behindern. Es muss das Auflegen der Seilbahnseile und der Leiter einer zur Seilbahn gehörenden oberirdischen 
+Fernmeldeleitung bei Revisions- und Instandsetzungsarbeiten ermöglichen und dabei verhindern, dass die Seilbahnseile 
+und Fernmeldeleiter sich der Hochspannungsfreileitung unzulässig nähern. 
+Bei Überkreuzung durch die Hochspannungsfreileitung ist die ungünstigste Seillage (Hochschnellen der Seile u.dgl.) zu 
+berücksichtigen. 
+ 
+(1) 
+Seitlicher Abstand 
+(1.1) zwischen den Leitern der Hochspannungsfreileitung und dem 
+ 
+Seilbahnseil einschließlich der Fahrbetriebsmittel, beide durch 
+ 
+Wind gegeneinander ausgelenkt..................................................................2 m 
+(1.2) zwischen den ausgelenkten Leitern der Hochspannungsfreilei- 
+ 
+tung und den Bauteilen der Seilschwebebahn .............................................3 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung von 
+der Seilschwebebahn 
+(2.1) im Regellastfall.............................................................................................3 m 
+(2.2)  im Ausnahmslastfall .....................................................................................2 m 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke der Hochspannungsfrei- 
+ 
+leitung von den Bauteilen der Seilschwebebahn, sofern die  
+ 
+Unterschreitung des im Eisenbahngesetz festgelegten 
+ 
+Bauverbotsbereiches von 12 m genehmigt wird ...................................................5 m 
+ 
+28.2.3 Standseilbahnen zur öffentlichen Personenbeförderung 
+Bei muldenförmigem Längenprofil der Standseilbahn ist ein Hochschnellen des Zugseiles zu berücksichtigen. 
+ 
+(1) 
+Seitlicher Abstand der durch Wind ausgelenkten Leiter der 
+ 
+Hochspannungsfreileitung vom Lichtraumprofil ....................................................2 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung vom 
+Lichtraumprofil und vom hochgeschnellten Zugseil 
+(2.1) im Regellastfall.............................................................................................2 m 
+(2.2) im Ausnahmslastfall .....................................................................................1 m 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke der Hochspannungsfrei- 
+ 
+leitung von Bauteilen der Standseilbahn, sofern die Unter- 
+ 
+schreitung des im Eisenbahngesetz festgelegten 
+ 
+Bauverbotsbereiches von 12 m genehmigt wird ...................................................5 m 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+25 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 26/47 =====
+Seite 26     
+ÖVE/ÖNORM E 8111 
+28.2.4 Wasserstraßen  
+(1) 
+Seitlicher Abstand der Leiter vom Ufergrat oder von der Krone 
+ 
+von Hochwasserschutzdämmen ...........................................................................4 m 
+ 
+(2) 
+Schutzabstand der Leiter vom höchsten schiffbaren Wasser- 
+ 
+stand gemäß § 21(2) und § 21(3) der Schiffahrtsanlagen- 
+ 
+verordnung............................................................................................................19 m 
+ 
+(3) 
+Schutzabstand der Leiter über der Krone von Hochwasser- 
+ 
+schutzdämmen im Regellastfall.............................................................................6 m 
+ 
+(4) 
+Seitlicher Abstand der Fundamente der Tragwerke 
+(4.1) vom Fuß der Hochwasserschutzdämme ......................................................5 m 
+(4.2) von Schutzdämmen gegen  
+ 
+Katastrophen-Hochwasser ...........................................................................Masthöhe + 5 m 
+(4.3) vom Ufergrat.................................................................................................gemäß Vorschreibung der  
+ 
+ 
+ 
+Wasserstraßenverwaltung 
+ 
+28.3 
+Für die Leitungsführung im Schutzbereich der nachfolgend genannten Objekte erhöhter Bedeutung (Objekte 
+gemäß 28.3.1 bis 28.3.3) gelten die zusätzlichen Maßnahmen gemäß Abschnitt 24 und Abschnitt 25. 
+ 
+28.3.1 Schienenbahnen für öffentlichen Verkehr 
+Die freie Sicht auf Signale und Wegübergänge darf durch Hochspannungsfreileitungen nicht beeinträchtigt werden. 
+Im Bereich von Bahnhöfen, d. i. im Raum zwischen den Einfahrtsignalen, sowie im Bereich der Bahnsteige von Eisen-
+bahnhaltestellen sind Kreuzungen nach Möglichkeit zu vermeiden. 
+Bei Kreuzung von Fahrleitungsanlagen ist die Verwendung von Holzmasten im Abspannabschnitt verboten.  
+Für Speiseleitungen auf eigenen Tragwerken gelten die Bestimmungen gemäß 28.1.6. 
+ 
+28.3.1.1 Seitlicher Abstand der durch Wind ausgelenkten Leiter der Hochspan- 
+ 
+nungsfreileitung vom Lichtraumprofil und von Tragwerken der  
+ 
+Fahrleitungen und der Signalanlagen.........................................................................4 m 
+ 
+28.3.1.2  Elektrifizierte Strecken, Fahrleitungen und Speiseleitungen auf Fahrleitungstragwerken 
+ 
+(1)  Schutzabstand der Leiter der Hochspannungsfreileitung  
+ 
+ von Fahrleitungen 
+(1.1) im Regellastfall .............................................................................................3 m 
+(1.2) im Ausnahmslastfall......................................................................................2 m 
+(1.3) bei außergewöhnlicher Lage der Leiter der Hochspannungsfrei- 
+ 
+leitung gemäß 25.2.......................................................................................2 m 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung  
+ 
+ von Speiseleitungen 
+(2.1) im Regellastfall .............................................................................................2 m 
+(2.2) im Ausnahmslastfall......................................................................................0,5 m 
+ 
+(3) 
+Schutzabstand der Leiter der Hochspannungsfreileitungen von  
+ 
+ den Tragwerken 
+(3.1) im Regellastfall .............................................................................................3 m 
+(3.2) im Ausnahmslastfall......................................................................................2 m 
+ 
+28.3.1.3 Wenn Elektrifizierung in Aussicht genommen ist, wird für die freie Strecke empfohlen: 
+ 
+Schutzabstand der Leiter der Hochspannungsfreileitung von 
+der Schienenoberkante im Regellastfall .................................................................12,5 m 
+ 
+28.3.1.4 Wenn keine Elektrifizierung in Aussicht genommen ist: 
+ 
+(1) 
+Schutzabstand der Leiter der Hochspannungsfreileitung von 
+ 
+der Schienenoberkante 
+(1.1) im Regellastfall .............................................................................................7 m 
+(1.2) im Ausnahmslastfall......................................................................................6 m 
+(1.3) bei außergewöhnlicher Lage der Leiter der Hochspannungsfrei- 
+ 
+leitung gemäß 25.2.......................................................................................6 m 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+26 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 27/47 =====
+Seite 27 
+ ÖVE/ÖNORM E 8111 
+ 
+28.3.1.5 Seitlicher Abstand der Tragwerke der Hochspannungsfreileitung vom 
+ 
+Lichtraumprofil und von Tragwerken der Fahrleitungen und der  
+ 
+Signalanlagen, sofern die Unterschreitung des im Eisenbahngesetz  
+ 
+festgelegten Bauverbotsbereiches von 12 m genehmigt wird .......................................5 m 
+ 
+28.3.2 Oberirdische Fernmeldeleitungen, Gruppe B 
+Dazu gehören alle in 28.1.9 und Abschnitt 70 nicht genannten oberirdischen Fernmeldeleitungen einschließlich jener der 
+Eisenbahnen. Gehört jedoch eine Fernmeldeleitung zu einer Seilliftanlage zur öffentlichen Personenbeförderung gemäß  
+28.2.1 und verläuft sie längs dieser, so sind die für die Seilliftanlage vorgesehenen Maßnahmen auch für die Fernmelde-
+leitung anzuwenden. 
+Oberirdische Fernmeldeleitungen, Gruppe B, dürfen nicht unterkreuzt werden. 
+Als Bezugslinie für das Ermitteln der Abstände gilt im Allgemeinen die Verbindungsgerade der Befestigungspunkte der 
+Fernmeldeleiter. Bei Fernmeldeleitungen im Weitspannsystem ist die ungünstigste Lage der Fernmeldeleiter zu berück-
+sichtigen. 
+ 
+(1)  Seitlicher Abstand der Leiter der Hochspannungsfreileitung von 
+ 
+den Leitern der Fernmeldeleitung .........................................................................2 m 
+ 
+(2)  Schutzabstand der Leiter der Hochspannungsfreileitung von  
+ 
+den Leitern der Fernmeldeleitung 
+(2.1)  im Regellastfall.............................................................................................2 m 
+(2.2)  im Ausnahmslastfall .....................................................................................0,5 m 
+(2.3)  bei außergewöhnlicher Lage der Leiter der  
+ 
+Hochspannungsfreileitung gemäß 25.2........................................................1 m 
+ 
+(3)  Schutzabstand der Leiter der Hochspannungsfreileitung von  
+ 
+den Tragwerken der Fernmeldeleitung 
+(3.1)  im Regellastfall.............................................................................................3 m 
+(3.2)  bei außergewöhnlicher Lage der Leiter der  
+ 
+Hochspannungsfreileitung gemäß 25.2........................................................2 m 
+ 
+(4)  Seitlicher Abstand der Tragwerke der Hochspannungsfreileitung  
+ 
+von der Fernmeldeleitung .....................................................................................2 m 
+ 
+Bei der Kreuzung von am Gestänge von Starkstromfreileitungen bis 1000 V unterhalb zugespannten Fernmeldeluftka-
+beln mit  thermoplastischer Isolation gelten für die Maßnahmen an der überkreuzenden Hochspannungsleitung die Be-
+stimmungen gemäß Abschnitt 24 wie für die Überkreuzung von Starkstromfreileitungen. 
+Bei der Parallelführung von Starkstromfreileitungen über 1 kV mit Starkstromfreileitungen bis 1000 V, auf denen ein 
+Fernmeldeluftkabel zugespannt ist, gelten nur Maßnahmen gemäß Abschnitt 24. 
+ 
+Wird eine Fernmeldefreileitung oder ein Fernmeldeluftkabel mit blanken tragenden Elementen mittelbar durch elektrisch 
+leitende Drähte oder Seile gefährdet, weil diese im selben Spannfeld über der Fernmeldeleitung und unter der Hoch-
+spannungsfreileitung verlaufen, so sind Maßnahmen gemäß 25.1 nur im betreffenden Spannfeld der Hochspannungsfrei-
+leitung vorzusehen. 
+Wird ein Fernmeldeluftkabel mit thermoplastischer Isolation in gleicher Weise mittelbar gekreuzt, genügen im betreffen-
+den Spannfeld der Hochspannungsfreileitung Maßnahmen gemäß Abschnitt 24 für die Kreuzung einer Starkstromfreilei-
+tung. 
+ 
+28.3.3 Bundesstraßen A (Autobahnen) 
+ 
+(1) 
+Seitlicher Abstand der Leiter vom Fahrbahnrand bzw. vom 
+ 
+Außenrand des äußeren Seitenstreifens ..............................................................4 m 
+ 
+(2) 
+Schutzabstand der Leiter von der Fahrbahn 
+(2.1) im Regellastfall.............................................................................................6 m 
+(2.2) im Ausnahmslastfall .....................................................................................5 m 
+(2.3) bei außergewöhnlicher Lage der Leiter gemäß 25.2....................................5 m 
+ 
+(3) 
+Seitlicher Abstand der Fundamente der Tragwerke vom Fahrbahnrand, 
+ 
+sofern eine Unterschreitung der gesetzlich festgelegten Schutzzone  
+ 
+genehmigt wird .....................................................................................................5 m 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+27 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 28/47 =====
+Seite 28     
+ÖVE/ÖNORM E 8111 
+Tabelle 28-1 – Maßnahmen bei Objekten erhöhter Bedeutung (Abschnitt 28) 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+1 
+ 
+ 
+Schutz-
+bereich und 
+Kreuzung 
+Schutz- 
+bereich 
+Kreuzung 
+2 
+für 
+erhöhte Sicherheit 
+3 
+Maßnahmen 
+gemäß 
+Abschnitt 24
+Abschnitt 25.1 
+4 
+Abschnitt 
+bei den Objekten 
+im betroffenen Spannfeld
+im Abspannab-
+schnitt, der das 
+betroffene Spann-
+feld einschließt 
+im betrof-
+fenen 
+Spannfeld
+5 
+28.1.1 
+Bundesstraßen S und B, Landesstraßen 
+ja 
+- 
+- 
+- 
+- 
+6 
+28.1.2 
+Verkehrsflächen, etc. 
+ja 
+- 
+- 
+- 
+- 
+7 
+28.1.3 
+Wohn- oder Schulgebäude, Gebäude industrieller 
+oder gewerblicher Anlagen u.dgl. 
+ja 
+- 
+- 
+- 
+- 
+8 
+28.1.4 
+Straßenbahnen, Obuslinien, Materialbahnen und e-
+lektrische Treidelanlagen 
+ja 
+- 
+- 
+- 
+- 
+9 
+28.1.5 
+Sportanlagen 
+ja 
+- 
+- 
+- 
+- 
+10 
+28.1.6 
+Starkstromfreileitungen 
+ja 
+- 
+- 
+- 
+- 
+11 
+28.1.7 
+Materialseilbahnen, 
+land- 
+und 
+forstwirtschaftliche 
+Seilwege 
+ja 
+- 
+- 
+- 
+- 
+12 
+28.1.8 
+Standseilbahnen für Güterbeförderung 
+ja 
+- 
+- 
+- 
+- 
+13 
+28.1.9 
+Oberirdische Fernmeldeleitungen, Gruppe A 
+ja 
+- 
+- 
+- 
+- 
+14 
+28.1.10 
+Außenantennenanlagen 
+ja 
+- 
+- 
+- 
+- 
+15 
+28.2.1 
+Seilliftanlagen 
+ja 
+ja 
+- 
+- 
+ja 
+16 
+28.2.2 
+Seilschwebebahnen 
+ja 
+ja 
+ja 
+ja 
+ja 
+17 
+28.2.3 
+Standseilbahnen 
+zur öffentlichen 
+Personen- 
+beförderung 
+ja 
+ja 
+- 
+ja 
+ja 
+18 
+28.2.4 
+Wasserstraßen 
+ja 
+ja 
+- 
+- 
+ja 
+19 
+28.3.1 
+Schienenbahnen für öffentlichen Verkehr 
+ja 
+ja 
+ja 
+ja 
+ja 
+20 
+- 
+Anschlussbahnen 
+ja 
+ja 
+- 
+- 
+ja 
+21 
+28.3.2 
+Oberirdische Fernmeldeleitungen 
+Gruppe B  
+ja 
+ja 
+ja 
+ja 
+ja 
+22 
+- 
+Oberirdische Fernmeldeleitungen 
+für Seilliftanlagen gemäß 28.2.1 
+ja 
+ja 
+- 
+- 
+ja 
+23 
+28.3.3 
+Bundesstraßen A (Autobahnen)  
+ja 
+ja 
+- 
+- 
+ja 
+ 
+29 
+Bleibt frei.
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+28 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 29/47 =====
+Seite 29 
+ ÖVE/ÖNORM E 8111 
+ 
+30 
+Leitungstragwerke – Grundlagen für die Bemessung, äußere Kräfte 
+30.1 Die Tragwerke sind für folgende äußere Kräfte (Lasten) zu bemessen: 
+(1) 
+Eigengewicht des Tragwerkes, 
+(2) 
+ständige Lasten, 
+(3) 
+Zusatzlasten, 
+(4) 
+Montagelasten, 
+(5) 
+Windlasten, 
+(6) 
+Leiterzüge. 
+ 
+30.2 Ständige Lasten 
+Als ständige Lasten sind zu berücksichtigen die Gewichte 
+(1) 
+der Ausrüstung und 
+(2) 
+der Leiter der anschließenden Spannfeldhälften. 
+ 
+30.3 Zusatzlasten 
+30.3.1 Für die Regellastfälle sind anzunehmen: 
+(1) 
+für die Leiter: die Regelzusatzlast, 
+(2) 
+für Isolatorketten aus Glas oder Porzellan: mindestens 20 % des Eigengewichtes (für Verbundisolatorketten 
+sind gegebenenfalls höhere Prozentsätze anzunehmen), 
+(3) 
+für den Mastkörper: keine Zusatzlast, 
+(4) 
+für Ausleger aus Stahlprofilen: mindestens 40 % des Auslegergewichtes, 
+(5) 
+für Ausleger aus anderem Material: mindestens 120 N/m² auf die gesamte Oberfläche aller Auslegerbau-
+teile. 
+ 
+30.4 Montagelast 
+Die Montagelast ist alternierend als Einzellast mit mindestens 1000 N, lotrecht wirkend, anzunehmen: 
+(1) 
+bei Auslegern, die mehr als 1,2 m auskragen, am Auslegerende, 
+(2) 
+bei Horizontalstäben der Auslegeruntergurtebene in freier Stabmitte (Auslegerobergurte müssen nicht auf 
+Montagelast bemessen werden), 
+(3) 
+bei weniger als 30° gegen die Horizontale geneigten Stäben von Tragwerkskörpern in freier Stabmitte. 
+In jenen Bereichen, wo Steighilfen (z.B. Leitern oder Steigsprossen in den Eckstielen) auf Tragwerken vor-
+handen sind, müssen solche Stäbe der Tragwerkskörper nicht auf Montagelast bemessen werden. 
+(4) 
+Bei allen horizontalen Stäben der Tragwerkskörper (z.B. Querscheiben, Nullstäbe) in freier Stabmitte. 
+ 
+Bei (1) und (2) sind die übrigen Belastungen der Regellastfälle gemäß Abschnitt 31 gleichzeitig wirkend anzunehmen; 
+bei (3) und (4) ist dies nicht erforderlich. 
+Für die Materialbeanspruchung gelten die für die Regellastfälle zulässigen Werte gemäß ÖNORM B 4605. 
+Bei Holzmasten muss für den Mastkörper keine Montagelast angenommen werden.  
+ 
+30.5 Windlast 
+30.5.1 Windlasten sind bei der Bemessung der Leitungstragwerke im Allgemeinen nur für Regellastfälle zu berücksichti-
+gen, wobei die vom Wind getroffenen Bauteile unvereist anzunehmen sind. Für außergewöhnliche Fälle gilt 31.6. 
+ 
+30.5.2 Die Richtung des Windes ist waagrecht anzunehmen. Die Windlast ist, rechtwinkelig zu der vom Wind getroffenen 
+Fläche wirkend, anzunehmen. 
+ 
+30.5.3 Die Windkraft (siehe auch Tabelle 30-1) auf die vom Wind unmittelbar getroffenen Bauteile beträgt 
+ 
+W = c⋅q⋅A. 
+ 
+Es bedeuten: 
+W 
+Windkraft in N, 
+A 
+Fläche der Projektion der vom Wind getroffenen Fläche auf eine zur Windrichtung senkrechte Ebene in m², 
+c 
+Windwiderstandsbeiwert, der von der Gestalt, Ausdehnung und Oberflächenbeschaffenheit des vom Wind getrof-
+fenen Körpers abhängig ist. 
+ 
+Der Windwiderstandsbeiwert c ist der Tabelle 30-1 zu entnehmen. Die dort angegebenen Werte für c⋅q120 ent-
+sprechen einer Windgeschwindigkeit von 120 km/h und einem Staudruck von 695 N/m². 
+q 
+Staudruck q = v²/1,6  in N/m², wobei v die Windgeschwindigkeit in m/s ist, die für Höhen über 15 m bis 40 m über 
+Boden mit mindestens 33,33 m/s (120 km/h) angenommen werden muss. Für Höhen bis 15 m und über 40 m gilt  
+30.5.7. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+29 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 30/47 =====
+Seite 30     
+ÖVE/ÖNORM E 8111 
+ 
+Tabelle 30-1 – Spezifischer Winddruck, auf unmittelbar getroffene Bauteile wirkend 
+ 
+Bauteile 
+ 
+Windwider-
+stands-
+beiwert 
+c 
+spezifischer
+Winddruck 
+c⋅q120 
+N/m² 
+Abminderungs-
+faktor 
+ 
+volle ebene Flächen 
+1,6 
+1 112 
+1 
+aus Winkelprofilen 
+1,4 
+973 
+1 
+ebene Fachwerkwände 
+aus Rohren 
+1,1 
+765 
+1 
+Holzmaste, Stahlrohrmaste, Stahlbetonmaste mit 
+kreisförmigem bzw. annähernd kreisförmigem Quer-
+schnitt 
+0,7 
+487 
+1 
+Stahlrohr- und Stahlbetonmaste mit sechs- und acht-
+eckigem Querschnitt 
+1,0 
+695 
+1 
+in der Stangenebene  
+0,7 
+487 
+1 
+Doppelmaste aus Holz, 
+Stahl bzw. Stahlbeton 
+ 
+dm 
+ 
+ 
+ 
+ 
+                     e 
+ 
+ 
+rechtwinkelig zur 
+Stangenebene,          
+wobei e < dm
+1) 
+0,8 
+556 
+1 
+d < 15,8 mm  
+1,15 
+6002) 
+0,75 
+Drähte und Seile mit kreis-
+förmigem 
+oder elliptischem Querschnitt 
+d > 15,8 mm  
+1,0 
+5212) 
+0,75 
+Warnkugeln und Radar-
+marker (Rotationskörper) 
+d < 1,0 m 
+0,4 
+278 
+1 
+1) e...innerer Abstand der Einzelstangen, dm...mittlerer Stangendurchmesser. 
+2) Abminderungsfaktor bereits berücksichtigt. 
+ 
+ 
+30.5.4 Für Bauteile, die im Windschatten liegen, ist die Windlast gemäß Tabelle 30-2 anzunehmen. 
+ 
+30.5.5 Ebene Flächen und Fachwerkwände, die in Windrichtung liegen, dürfen bei der Ermittlung der Windlast vernach-
+lässigt werden. 
+ 
+30.5.6 Die Werte c⋅q120 gemäß Tabelle 30-1 dürfen für Höhen bis 15 m über Boden um 30 % vermindert werden. Sie 
+sind für Höhen über 40 m über Boden – auf die höher gelegenen Teile der Leitung – für je angefangene 50 m zusätzli-
+cher Höhe um 30 % zu vergrößern. 
+ 
+Tabelle 30-2 – Windlast, auf im Windschatten liegende Bauteile wirkend 
+ 
+Bauteil 
+Windlast gemäß 30.5 
+Rückwand von Fachwerkmasten und fachwerkartigen Auslegern
+80 % der Windkraft auf die vordere Fachwerk-
+fläche 
+A-Maste (Wind in Richtung der A-Ebene auf die hintere Stange) 
+50 % der Windkraft auf die vordere Stange 
+Bündelleiter mit horizontal nebeneinanderliegenden Einzelleitern 
+für die vom Wind abgekehrten Einzelleiter 
+80 % der Windkraft auf den vorderen Leiter 
+x < B 
+keine Windlast 
+x = B  bis 
+x = 20 B 
+50 % 
+Bauteile, die im Windschatten liegen, in Abhän-
+gigkeit vom lichten Abstand x dieser Bauteile und 
+von der Breite B des vorderen Bauteiles 
+x > 20 B 
+100 % 
+  der Windkraft 
+  auf den vorderen Bauteil 
+ 
+30.5.7 In besonderen Fällen kann es erforderlich sein, eine höhere Windgeschwindigkeit als die in 30.5.3 genannte 
+(120 km/h) anzunehmen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+30 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 31/47 =====
+Seite 31 
+ ÖVE/ÖNORM E 8111 
+ 
+30.6 Leiterzüge 
+30.6.1 Horizontaler Leiterzug ist die Horizontalkomponente des Leiterzuges. 
+ 
+30.6.2 Hoch- oder Tiefzug ist das Produkt aus dem horizontalen Leiterzug und dem Tangens des Neigungswinkels der 
+Verbindungsgeraden der Aufhängepunkte gegen die Waagrechte. 
+ 
+30.6.3 In den Regellastfällen sind die Leiterzüge beim Ausgangszustand anzunehmen. 
+ 
+31 
+Belastungsannahmen 
+ 
+Tabelle 31-1 – Lastfälle für die Bemessung der Leitungstragwerke 
+ 
+ 
+1 
+2 
+3 
+1 
+Tragwerke 
+Holzmaste 
+Tragwerke mit Ausnahme 
+von Holzmasten 
+2 
+Tragmaste und Winkel-
+tragmaste 
+Tabelle 31-2 
+A, B, C 
+Tabelle 31-2 
+A, B, C, D 
+3 
+Abspannmaste und  
+Winkelabspannmaste 
+Tabelle 31-3 
+A, B/C 
+Tabelle 31-3 
+A, B/C, D 
+4 
+Abzweigmaste und  
+Verteilmaste 
+Tabelle 31-4 
+A, B, C 
+Tabelle 31-4 
+A, B, C, D 
+ 
+ 
+ 
+Tabelle 31-2 – Lastfälle für Trag- und Winkeltragmaste 
+ 
+Last- 
+fall 
+ 
+Regellastfälle 
+ 
+Horizon-
+talkräfte 
+Windlast: Wind senkrecht zur Leitungsrichtung, bei Winkeltragmasten in Richtung der Win-
+kelhalbierenden, wirkend auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+A 
+Vertikal-
+kräfte 
+Ständige Lasten 
+Hoch- und Tiefzüge 
+ 
+Gewicht der Regelzusatzlast auf 
+die Ausleger, 
+die Ausrüstung und 
+die Leiter der anschließenden 
+Spannfeldhälften 
+Montagelast 
+ 
+Eigengewicht des Tragwerkes. 
+ 
+ 
+ 
+Regelzusatzlast und Montagelast sind für 
+die Bemessung von jenen Bauteilen zu 
+berücksichtigen, für welche die zusätzliche 
+Berücksichtigung dieser Lastanteile neben 
+den übrigen Lotlasten die ungünstigere 
+Beanspruchung ergibt. 
+ 
+Horizon- 
+talkräfte 
+Windlast: Wind in Leitungsrichtung, bei Winkeltragmasten senkrecht zur Winkelhalbieren-
+den, wirkend auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+B 
+Vertikal-  
+kräfte 
+Wie Lastfall A. 
+Horizon-
+talkräfte 
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spannfeld 
+auf 95 %.  
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+C 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Horizon-
+talkräfte 
+Entfall des horizontalen Leiterzuges eines Leiters bzw. eines Bündelleiters in einem an-
+schließenden Spannfeld und Verminderung des horizontalen Leiterzuges dieses Leiters 
+oder Bündelleiters im anderen anschließenden Spannfeld auf die folgenden Prozentsätze: 
+für  Einzelleiter 40 %, für Bündelleiter 20 % des gesamten Bündelleiters. 
+Horizontaler Leiterzug in allen übrigen Leitern. 
+D 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Für den Leiter oder Bündelleiter mit entfallendem horizontalem Leiterzug entfällt der Hoch- 
+bzw. Tiefzug. 
+Für den Leiter oder Bündelleiter mit vermindertem horizontalem Leiterzug ist der Hoch- bzw. 
+Tiefzug im selben Prozentsatz wie die horizontalen Leiterzüge zu vermindern. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+31 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 32/47 =====
+Seite 32     
+ÖVE/ÖNORM E 8111 
+Tabelle 31-3 – Lastfälle für Abspann- und Winkelabspannmaste 
+ 
+Last- 
+fall 
+Regellastfälle 
+Horizon-
+talkräfte 
+Windlast: Wind senkrecht zur Leitungsrichtung, bei Winkelabspannmasten in Richtung der 
+Winkelhalbierenden oder in jener Hauptachse des Tragwerkes, die von der Richtung des 
+resultierenden horizontalen Leiterzuges am wenigsten abweicht, 
+wirkend auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+A 
+Vertikal- 
+kräfte 
+Ständige Lasten 
+Hoch- und Tiefzüge 
+ 
+Gewicht der Regelzusatzlast auf 
+die Ausleger, 
+die Ausrüstung und 
+die Leiter der anschließenden 
+Spannfeldhälften 
+Montagelast 
+ 
+Eigengewicht des Tragwerkes. 
+ 
+ 
+ 
+Regelzusatzlast und Montagelast sind für 
+die Bemessung von jenen Bauteilen zu 
+berücksichtigen, für welche die zusätzliche 
+Berücksichtigung dieser Lastanteile neben 
+den übrigen Lotlasten die ungünstigere 
+Beanspruchung ergibt. 
+ 
+Horizon-
+talkräfte 
+Windlast: Wind in Leitungsrichtung, bei Winkelabspannmasten senkrecht zur Winkelhalbie-
+renden oder senkrecht zu jener Hauptachse des Tragwerkes, die von der Richtung des resul-
+tierenden horizontalen Leiterzuges am wenigsten abweicht, wirkend auf: Mast, Ausrüstung 
+und unvereiste Leiter.  
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spannfeld 
+auf 50 %. 
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+B/C 
+Vertikal-  
+kräfte 
+Wie Lastfall A. 
+Bei den Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- und Tiefzüge auf 
+50 % zu vermindern. 
+Horizon-
+talkräfte 
+Entfall des horizontalen Zuges eines abgespannten Leiters oder Bündelleiters, während in 
+allen übrigen am Mast abgespannten Leitern der volle horizontale Leiterzug wirkt.  
+D 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Für den Leiter oder Bündelleiter mit entfallendem horizontalem Leiterzug entfällt der Hoch- 
+bzw. Tiefzug. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+32 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 33/47 =====
+Seite 33 
+ ÖVE/ÖNORM E 8111 
+ 
+Tabelle 31-4 – Lastfälle für Abzweig- und Verteilmaste 
+ 
+Last- 
+fall 
+Regellastfälle 
+Horizon-
+talkräfte 
+Windlast: Wind in jener Hauptachse des Mastes, die von der Richtung der Resultierenden 
+der horizontalen Leiterzüge am wenigsten abweicht, wirkend auf: Mast, Ausrüstung und 
+unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+A 
+Vertikal- 
+kräfte 
+Ständige Lasten 
+Hoch- und Tiefzüge 
+ 
+Gewicht der Regelzusatzlast auf 
+die Ausleger, 
+die Ausrüstung und  
+die  Leiter der anschließenden 
+Spannfeldhälften 
+Montagelast 
+ 
+Eigengewicht des Tragwerkes. 
+ 
+ 
+ 
+Regelzusatzlast und Montagelast sind für 
+die Bemessung von jenen Bauteilen zu 
+berücksichtigen, für welche die zusätzliche 
+Berücksichtigung dieser Lastanteile neben 
+den übrigen Lotlasten die ungünstigere 
+Beanspruchung ergibt. 
+ 
+Horizon- 
+talkräfte 
+Windlast: Wind senkrecht zu jener Hauptachse des Mastes, die von der Richtung der Resul-
+tierenden der horizontalen Leiterzüge am wenigsten abweicht, wirkend auf: Mast, Ausrüs-
+tung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+B 
+Vertikal-  
+kräfte 
+Wie Lastfall A. 
+Horizon-
+talkräfte 
+Windlast: Wind in jener Hauptachse des Mastes, die von der Richtung der Resultierenden 
+der horizontalen Leiterzüge am wenigsten abweicht, wirkend auf: Mast, Ausrüstung und 
+unvereiste Leiter. 
+ 
+Abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem an-
+schließenden Spannfeld oder mehreren anschließenden Spannfeldern auf 50 %. Bei als A-
+Masten ausgebildeten Holzabzweigmasten braucht für die durchgehende Leitung nur die 
+Verminderung der Leiterzüge wie für nicht abgespannte Leiter berücksichtigt zu werden. 
+Horizontale Leiterzüge aller Leiter in allen anderen anschließenden Spannfeldern. 
+ 
+Nicht abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem 
+anschließenden Spannfeld oder mehreren anschließenden Spannfeldern auf 95 %. 
+Horizontaler Leiterzug aller Leiter in den anderen anschließenden Spannfeldern. 
+C 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Bei den abgespannten Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- und 
+Tiefzüge auf 50 % zu vermindern. 
+Horizon-
+talkräfte 
+Abgespannte Leiter: Entfall des horizontalen Leiterzuges eines Leiters oder Bündelleiters in 
+einem Spannfeld der durchlaufenden Leitungssysteme, während im anderen Spannfeld der 
+volle horizontale Leiterzug wirkt, und allenfalls gleichzeitiger Entfall des horizontalen Leiter-
+zuges eines Leiters oder Bündelleiters des abzweigenden Systems. 
+Horizontaler Leiterzug in allen übrigen Leitern der anschließenden Spannfelder. 
+ 
+Nicht abgespannte Leiter: Entfall des horizontalen Leiterzuges eines Leiters oder Bündellei-
+ters in einem anschließenden Spannfeld und Verminderung des horizontalen Leiterzuges 
+dieses Leiters oder Bündelleiters im anderen anschließenden Spannfeld je Leitungssystem 
+auf die folgenden Prozentsätze: 
+für Einzelleiter 40 %, für Bündelleiter 20 % des gesamten Bündelleiters. 
+Horizontaler Leiterzug in allen übrigen Leitern. 
+D 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Bei den abgespannten Leitern mit entfallendem horizontalem Leiterzug entfällt der Hoch- 
+bzw. Tiefzug. 
+Bei den nicht abgespannten Leitern, bei denen der horizontale Leiterzug entfällt, entfallen 
+auch die Hoch- bzw. Tiefzüge. 
+Bei Leitern mit vermindertem horizontalem Leiterzug sind die Hoch- bzw. Tiefzüge auf die-
+selben Prozentsätze wie bei den horizontalen Leiterzügen zu vermindern. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+33 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 34/47 =====
+Seite 34     
+ÖVE/ÖNORM E 8111 
+31.1 
+Nach dem Verwendungszweck werden unterschieden: 
+ 
+(1) 
+Trag- und Winkeltragmaste, 
+(2) 
+Abspann- und Winkelabspannmaste, 
+(3) 
+Abzweig- und Verteilmaste. 
+ 
+31.2 
+Tabelle 31-1 gibt an, für welche Lastfälle diese Tragwerke zu bemessen sind. Den Tabellen 31-2 bis 31-4 sind die 
+Belastungsannahmen für diese Lastfälle zu entnehmen. 
+ 
+31.3 
+Ist bei einzelnen Lastfällen anzunehmen, dass Leiterzüge vermindert werden oder vollkommen entfallen, so ist 
+die Annahme so zu treffen, dass hierdurch die jeweils ungünstigste Beanspruchung des zu bemessenden Bauteiles 
+entsteht. 
+ 
+31.4 
+Ist durch geeignete Maßnahmen bei Trag- und Winkeltragmasten sichergestellt, dass eine Beanspruchung ge-
+mäß Lastfall D (Entfall des Zuges eines Leiters) oder Lastfall C (Differenzzug) nicht auftritt, so müssen diese Lastfälle 
+nicht berücksichtigt werden. Sichern diese Maßnahmen nur eine teilweise Entlastung, so sind die in Tabelle 31-2 ange-
+gebenen Prozentsätze im Ausmaß der tatsächlichen Entlastung zu ändern. Dem Nachweis für Lastfall C ist dabei die 
+Annahme zugrunde zu legen, dass die Leitung auf der einen Seite des Mastes mit Regelzusatzlast bei -5 °C belastet ist, 
+während auf der anderen Seite keine Zusatzlast vorhanden ist. Beim Nachweis für Lastfall D ist anzunehmen, dass auf 
+der einen Seite des Mastes ein Leiter oder ein Seil eines Bündels gerissen ist, während auf der anderen Seite der ge-
+genüber dem Regellastfall durch die besondere Maßnahme verminderte Leiterzug in Rechnung zu stellen ist. 
+Bei Hängekettenleitungen darf ferner für den Nachweis der Lastfälle C und D vorausgesetzt werden, dass sich zwischen 
+dem betrachteten Mast und der nächsten Leiterabspannung noch drei ebene Spannfelder mit Regelspannweiten und 
+gleich ausgerüsteten Tragmasten befinden. 
+ 
+31.5 
+Werden Maste einer Mehrfachleitung vorerst nur teilweise bespannt, so ist dies bei der Bemessung zu berück-
+sichtigen. 
+ 
+31.6 
+In außergewöhnlichen Fällen, bei besonders ungünstigen klimatischen Verhältnissen, kann es erforderlich sein, 
+einen zusätzlichen Lastfall vorzusehen, bei dem Winddruck auf die vereisten Bauteile anzunehmen ist. 
+ 
+31.7 
+Werden für die Befestigung der Leiter am Tragwerk Mehrfachketten verwendet, so ist für die Bemessung der 
+Tragwerke und der Bauteile dieser Tragwerke auch der Fall des Risses einer Einzelkette in der ungünstigsten Lage zu 
+berücksichtigen. 
+ 
+ 
+32 bis 39  Bleiben frei. 
+ 
+40 
+Tragwerke aus Holz 
+40.1 
+Technische Bestimmungen bestehen für die Berechnung, Konstruktion, für die Werkstoffauswahl und die Ausfüh-
+rung (siehe ÖNORM E 4200 und ÖNORM E 4202) von Tragwerken aus Holz für Holzmaste (siehe ÖNORM E 4201) und 
+für Holzgittermaste (siehe ÖNORM B 4100 Teil 2). 
+ 
+40.2 
+Die zulässigen Spannungen für Holzmaste, Holzgittermaste und für Konstruktions- und Verbindungsteile aus 
+Stahl sind in ÖNORM B 4605 festgelegt. 
+ 
+40.3 
+Mindestzopfstärken der Holzstangen für Hochspannungsfreileitungsmaste: 
+für Einfachmaste .................................................................17 cm, 
+für Doppelmaste, A-Maste und sonstige Kombinationen.....16 cm. 
+ 
+40.4 
+Holzstangen und sonstige Bauteile aus Holz für Hochspannungsfreileitungen, die länger als 3 Jahre verwendet 
+werden, müssen über ihre ganze Länge durch ein bewährtes Verfahren gegen Fäulnis geschützt werden. Winter-
+geschlägerte engringige Gebirgslärchen dürfen ohne Fäulnisschutz verwendet werden. 
+ 
+40.5 
+Alle Maste sind am Zopfende gegen Fäulnis zusätzlich zu schützen. 
+ 
+40.6 
+Anschnittflächen von Holzstangen und Holzbauteilen müssen gegen Fäulnis geschützt sein. 
+ 
+40.7 
+Verankerungen dürfen nur bei der Abspannung von Prellseilen, bei schwierigen Geländeverhältnissen und für 
+Provisorien verwendet werden. Werden Verankerungen ausgeführt, so gelten folgende Bedingungen: 
+(1) 
+Der Anker darf keinen unter Spannung stehenden Leiter überkreuzen, 
+(2) 
+Metallteile die zur Isolatorenbefestigung dienen, dürfen vom Anker nicht berührt werden, 
+(3) 
+für den Mindestabstand des Ankers von Teilen, die unter Spannung stehen, gilt 21.2.2, 
+(4) 
+im Anker ist zwischen Mast und Bodenverankerungsstelle ein Isolator entsprechend der Nennisolation der 
+Hochspannungsfreileitung anzuordnen. Dieser Isolator darf ohne besondere Hilfsmittel vom Boden aus nicht 
+berührt werden können. Der Isolator muss von der Mastachse mindestens ebensoweit entfernt sein wie je-
+der über dem Anker angeordnete Leiter. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+34 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 35/47 =====
+Seite 35 
+ ÖVE/ÖNORM E 8111 
+ 
+41 
+Tragwerke und Tragwerksteile aus Stahl 
+41.1 
+Für die Berechnung und Ausführung der Tragwerke und Tragwerksteile aus Stahl bestehen technische Bestim-
+mungen (siehe ÖNORM B 4605).  
+Schraubverbindungen brauchen nicht gesichert zu werden.  
+ 
+41.2 
+Teile, die einbetoniert werden, müssen roh oder verzinkt sein. 
+ 
+41.3 
+Es wird empfohlen, in der Erde liegende Teile, auch wenn sie verzinkt sind, mit einem gegen Bodensäuren wider-
+standsfähigen Anstrich zu schützen. 
+ 
+41.4 
+Freiliegende Teile, bei Stahlrohren auch die Innenflächen, selbst wenn sie luftdicht abgeschlossen sind, sind 
+gegen Korrosion zuverlässig zu schützen. 
+ 
+41.5 
+Verankerungen sind nur in Ausnahmefällen zu verwenden. 
+ 
+42 
+Tragwerke aus Stahlbeton 
+Technische Bestimmungen bestehen für die Berechnung und Ausführung von Stahlbetonmasten (siehe ÖNORM B 4200 
+Teil 5) und von Spannbetonmasten (siehe DIN 4228 und ÖNORM B 4750). Weiters gelten ÖNORM B 4700 sowie die 
+relevanten Teilsicherheitsbeiwerte für Einwirkungen gemäß ÖVE/ÖNORM EN 50341:2002-09-01, Abschnitt 4.3.11. 
+ 
+ANMERKUNG:  
+Es wird außerdem auf folgende Veröffentlichung verwiesen: "Richtlinien für die Bemessung und Ausführung von 
+Spannbetontragwerken" herausgegeben vom Österreichischem Komitee für Spannbeton, Heft 3 der Schriftenrei-
+he des Österreichischen Betonvereines. 
+ 
+43 bis 49 Bleiben frei. 
+50 
+Fundierungen der Tragwerke – Grundsätzliche Bestimmungen 
+50.1 
+Leitungstragwerke sind im Boden so zu befestigen, dass bei den Belastungsannahmen gemäß Abschnitt 31 keine 
+unzulässige Schiefstellung auftritt und die Standsicherheit sichergestellt ist. 
+ 
+50.2 
+Bei der Festlegung der Fundierung ist auf die Art und Beanspruchung des Tragwerkes sowie die örtlich vorgefun-
+denen Gegebenheiten Rücksicht zu nehmen. Die technischen Bestimmungen für Erd- und Grundbau (siehe ÖNORM 
+B 4430 Teil 1) beziehen sich nicht auf die herkömmlichen Fundierungen von Leitungstragwerken und sind daher für 
+deren Bemessung nicht uneingeschränkt anwendbar. 
+ 
+50.3 
+Der Abstand der Mastfundamente von Kabeln, Rohrleitungen und anderen Leitungssystemen, insbesondere von 
+Ferngasleitungen, muss so groß sein, dass Errichtung und Instandhaltung der Mastfundamente ohne Beschädigung der 
+Fremdanlagen möglich sind. Ist eine Annäherung oder eine Überbauung nicht vermeidbar, so sind die Fremdanlagen 
+verlässlich zu schützen. 
+Fernmeldekabel des öffentlichen Netzes dürfen nicht überbaut werden. Die in 23.7 angegebenen seitlichen Abstände 
+sind einzuhalten. 
+ 
+51  
+Fundierungen – Bemessung 
+51.1 Allgemeine Bestimmungen 
+51.1.1 Für die Bemessung der Fundierungen ist eine anerkannte oder durch Erprobung bestätigte Berechnungsmethode 
+anzuwenden. 
+ 
+51.1.2 Für die Berechnung der Fundierungen sind die für den jeweiligen Baugrund in Tabelle 51-1 angegebenen Boden-
+kennwerte zu verwenden. 
+Werden andere Werte angewendet, so können diese aus ÖNORM B 4430 Teil 1 abgeleitet werden, oder sie sind durch 
+Untersuchungen nachzuweisen. 
+ 
+51.1.3 Bei der Berechnung von Betonfundamenten darf die Wichte des unbewehrten Betons mit höchstens 22,0 kN/m³, 
+die des bewehrten Betons mit höchstens 24,0 kN/m³ angenommen werden. 
+ 
+51.1.4 In den Regellastfällen gemäß Abschnitt 31 darf die rechnerische Schiefstellung 0,67 % nicht überschreiten. Diese 
+Bedingung gilt auch dann als erfüllt, wenn die Bodenpressung an der Sohle und an den Seitenflächen des Fundamentes 
+die in Tabelle 51-1 (Spalte 6 in Verbindung mit Spalte 7 und zugehörigen Anmerkungen) angegebenen Werte nicht  
+überschreitet. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+35 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 36/47 =====
+Seite 36     
+ÖVE/ÖNORM E 8111 
+51.1.5 Die Standsicherheit einer Fundierung wird dadurch nachgewiesen, dass sie den in den nachfolgenden Fundie-
+rungsbestimmungen angegebenen Vielfachen der in den Regellastfällen auftretenden Belastungen noch standhält. 
+ 
+51.1.6 Schließt ein Berechnungsverfahren im Nachweis der Einhaltung der zulässigen Schiefstellung auch den Standsi-
+cherheitsnachweis ein (z.B. Sulzberger) oder umgekehrt (z.B. Grenzlastverfahren nach Bürklin), so ist im ersten Fall kein 
+Nachweis für die Standsicherheit und im zweiten Fall kein Nachweis der Schiefstellung erforderlich. 
+ 
+51.1.7 Der Nachweis der Schiefstellung und der Standsicherheit durch Versuche anstelle von Berechnungen (z.B. für 
+Fertigfundamente) ist zulässig. Die Versuchswerte sind als Mittelwert aus mindestens drei gleichartigen naturgetreuen 
+Versuchen, deren Streuung 25 % des Mittelwertes nicht überschreiten darf, zu bestimmen. 
+Beim Schiefstellungsnachweis darf der Mittelwert der gemessenen Schiefstellungen bei den in 51.1.4 festgelegten Be-
+lastungen 0,54 % nicht überschreiten. 
+Beim Standsicherheitsnachweis muss der Versuchsmittelwert mindestens dem 1,25fachen der sich gemäß 51.1.5 erge-
+benden Belastungen entsprechen. 
+ 
+51.1.8 Die Höhe der Stufe unbewehrter Betonstufenfundamente muss an der Ansatzstelle mindestens das 1,5fache der 
+Ausladungen dieser Betonstufenfundamente betragen. Abweichungen sind zulässig, wenn nachgewiesen wird, dass die 
+gemäß 51.1.9 zulässigen Betonspannungen nicht überschritten werden. 
+ 
+51.1.9 In unbewehrten Betonfundamenten sind bei den den Regellastfällen gemäß Abschnitt 31 entsprechenden Kräften 
+für die Druckspannungen im Beton 1/4 W28, höchstens jedoch 500 N/cm², für die Zugspannungen im Beton 1/40 W28, 
+höchstens jedoch 40 N/cm² zulässig. Dabei bedeutet W28 die Würfelfestigkeit des Betons nach 28 Tagen. 
+ 
+51.1.10 Für die Festigkeitsberechnung der Stahlbetonfundamente bestehen technische Bestimmungen (siehe ÖNORM 
+B 4200 Teil 7 und ÖNORM B 4700).  
+ 
+51.1.11 Für die Berechnung der Haftspannungen von Stahlprofilen, die in Beton verankert sind, ist bei einspringenden 
+Konturen der umschriebene Polygonzug (Fadenmaß des Umfanges) anzunehmen. Überschreitet die errechnete Haft-
+spannung den Wert von 60 N/cm² bei einer Festigkeitsklasse B 160 (siehe ÖNORM B 4200-10) oder von 80 N/cm² bei 
+Festigkeitsklassen B 225 und darüber, so ist die gesamte Eckstielkraft durch Haftwinkel, Knaggen oder dergleichen 
+aufzunehmen. Hierfür bestehen technische Bestimmungen (siehe ÖNORM ENV 1994-1-1). 
+In dem von der Fundamentsohle gezählten, rechnerisch erforderlichen Haftbereich der Eckstiele von Zugfundamenten 
+darf in unbewehrten Zugfundamenten die Zugspannung des Betons in den aus Eckstiel und Beton gebildeten Verbund-
+querschnitten die Werte aus 51.1.9 nicht überschreiten. 
+Andernfalls ist die auf den Beton entfallende Zugkraft zur Gänze durch die unter den Außenflächen des Fundamentkör-
+pers anzubringende Bewehrung aufzunehmen. 
+Bei gestuften Zugfundamenten von Abspannmasten sind die in dem erwähnten Haftbereich befindlichen Querschnitte in 
+Stufenoberkante stets durch Steckeisen zu sichern. 
+Für die Verankerungslänge der Bewehrungs- und Steckeisen bestehen technische Bestimmungen (siehe ÖNORM 
+B 4700), wobei bei Einbringung des Betons in offener und trockener Baugrube Festigkeitsklassen bis B 300 in Rechnung 
+gestellt werden dürfen. In allen übrigen Fällen darf mit Festigkeitsklassen bis höchstens B 225 gerechnet werden.  
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+36 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 37/47 =====
+Seite 37 
+ ÖVE/ÖNORM E 8111 
+ 
+Tabelle 51-1 – Bodenkennwerte für die Berechnung von Mastfundamenten 
+ 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+Erdauflastwinkel β 
+Fundament an 
+gewachsenen 
+Boden 
+ 
+Gruppe 
+Bodenart 
+ 
+Wichte 
+erdfeucht 
+ 
+ 
+ 
+ 
+ 
+γ 
+kN/m
+3 
+ 
+Wichte 
+unter 
+Auftrieb 
+ 
+ 
+ 
+ 
+γ‘ 
+kN/m
+3 
+ 
+Winkel ϕ 
+der  
+inneren 
+Reibung 
+ 
+ 
+ 
+ 
+Grad 
+ 
+Zulässige 
+Boden- 
+pressung in
+1,5 m Tiefe 
+σzul. 1,5 
+ 
+ 
+ 
+N/cm
+2 
+ 
+Faktor n 
+ 
+Bettungs- 
+modul in  
+2 m Tiefe 
+ks 
+ 
+ 
+ 
+ 
+N/cm
+3 
+anbe-
+toniert 
+ 
+ 
+ 
+Grad 
+nicht 
+anbetoniert 
+ 
+ 
+ 
+Grad 
+1 
+2 
+ 
+3 
+a 
+   a1 
+ 
+  
+   a2 
+Nicht gewachsene Böden: 
+Angeschüttete, nicht künstlich 
+verdichtete Böden je nach 
+Lagerungsdichte, 
+Hinterfüllungsmaterial in 
+Baugruben bei mittlerer bis 
+guter Verdichtung. 
+ 
+ 
+ 
+14 bis 16 
+ 
+ 
+16 bis 17 
+ 
+ 
+ 
+8 bis 9,5 
+ 
+ 
+9 bis 9,5 
+ 
+ 
+ 
+20 bis 25 
+ 
+ 
+15 bis 30 
+ 
+ 
+ 
+3 bis 10 
+ 
+ 
+3 bis 10 
+ 
+ 
+ 
+2,0 
+ 
+ 
+2,0 
+ 
+ 
+ 
+10 bis 20 
+ 
+ 
+25 bis 40 
+ 
+ 
+ 
+5 bis 10
+ 
+ 
+5 bis 10
+ 
+ 
+ 
+3 bis 7 
+ 
+ 
+3 bis 7 
+4 
+b 
+Gewachsene, vorwiegend 
+organische Böden (Torf, 
+Moor, Faulschlamm) 
+ 
+6,5 
+ 
+1 
+ 
+--- 
+ 
+bis 3 
+ 
+1,0 
+ 
+bis 7 
+ 
+bis 5 
+ 
+bis 3 
+5 
+ 
+6 
+7 
+8 
+9 
+c 
+ 
+   c1 
+   c2 
+   c3 
+   c4 
+Gewachsene, vorwiegend 
+nichtbindige Böden:  
+Sand, mitteldicht gelagert, 
+Sand, dicht gelagert, 
+Kiessand, 
+Schotter, dicht gelagert. 
+ 
+ 
+18 
+19 
+19 
+18 
+ 
+ 
+10 
+11 
+11 
+10 
+ 
+ 
+32 
+35 
+35 
+38 
+ 
+ 
+bis 22 
+bis 30 
+bis 35 
+bis 45 
+ 
+ 
+4,0 
+5,0 
+5,0 
+6,0 
+ 
+ 
+50 bis 80 
+80 bis 120 
+120 bis 170 
+170 bis 200 
+ 
+ 
+8 bis 13
+17 
+20 
+22 
+ 
+ 
+6 bis 10 
+14 
+16 
+18 
+10 
+ 
+11 
+12 
+13 
+14 
+15 
+d 
+ 
+   d1 
+    
+   d2 
+    
+   d3 
+  
+d4 
+   d5 
+Gewachsene, vorwiegend 
+bindige Böden: 
+Ton und Lehm, weich (leicht 
+knetbar) 
+Ton und Lehm, steif (noch 
+knetbar) 
+Ton und Lehm, halbfest (nicht 
+mehr knetbar) 
+sandiger Ton, steif bis fest 
+Schluff 
+Wasser-
+gesättigt 
+ 
+16 bis 18 
+ 
+17 bis 19 
+ 
+18 bis 20 
+18 bis 20 
+16 bis 19 
+Wasser-
+gesättigt 
+ 
+8 
+ 
+9 
+ 
+10 
+10 
+9 
+ 
+ 
+ 
+15 
+ 
+18 
+ 
+22 
+27 
+22 
+ 
+ 
+ 
+bis 5 
+ 
+bis 9 
+ 
+bis 20 
+bis 30 
+bis 10 
+ 
+ 
+ 
+2,0 
+ 
+2,5 
+ 
+3,0 
+4,0 
+3,0 
+ 
+ 
+ 
+10 bis 20 
+ 
+20 bis 30 
+ 
+40 bis 50 
+60 bis 80 
+10 bis 20 
+ 
+ 
+ 
+5 
+ 
+10 
+ 
+15 
+18 
+5 bis 8 
+ 
+ 
+ 
+3 
+ 
+8 
+ 
+12 
+15 
+3 bis 5 
+16 
+17 
+18 
+e 
+   e1 
+  
+   e2 
+Fels: 
+Fels, stärker zerklüftet oder 
+ungünstig gelagert 
+Fels, gesund, wenig zerklüftet 
+und günstig gelagert 
+ 
+ 
+23 
+ 
+25 
+ 
+ 
+--- 
+ 
+--- 
+ 
+ 
+--- 
+ 
+--- 
+ 
+ 
+bis 100 
+ 
+bis 250 
+ 
+ 
+6,0 
+ 
+6,0 
+ 
+ 
+--- 
+ 
+--- 
+ 
+ 
+--- 
+ 
+--- 
+ 
+ 
+--- 
+ 
+--- 
+Anmerkungen: 
+ 
+(1)  Für bindige Böden sind unter dauernd wirkenden Lasten (Regellastfälle der Leiterseile gemäß Abschnitt 11 ohne die 
+vorübergehenden Differenzzüge und Seilrissfälle) die Kennwerte der Spalten 5, 6, 8, 9 und 10 um 30 % zu verringern. 
+(2)  Für die im Grundwasser befindlichen Flächen sind die Werte des Bettungsmoduls und der zulässigen Bodenpressung 
+bei nichtbindigen Böden um 20 % zu verringern. 
+(3)  Für die im Grundwasser befindlichen Bereiche der Erdauflastkörper sind die Werte β der Spalten 9 und 10 bei nichtbin-
+digen Böden um 15 % zu verringern. 
+(4)  Liegt die Gründungssohle tiefer als 1,5 m unter Gelände, so dürfen die in Spalte 6 angegebenen zulässigen Pressun-
+gen um den Wert  n⋅p  vergrößert werden, wobei n der Spalte 7 zu entnehmen ist und sich auf jene Bodenart bezieht, in 
+der die Pressung ausgeübt wird. Der Wert p ist die Pressung zufolge Eigengewichts des Bodens zwischen dem Niveau 
+1,5 m unter Gelände und der Fundamentsohle, wobei Auftriebswirkungen zu berücksichtigen sind. 
+(5)  Die Werte β der Spalten 9 und 10 gelten nicht für Verfahren, welche die seitlichen horizontalen Pressungen bei der 
+Einspannwirkung berücksichtigen (z.B. Verfahren nach Bürklin). 
+(6)  Die Werte des Winkels ϕ der inneren Reibung gelten nur unter der Voraussetzung, dass die Kohäsion (Scherfestigkeit) 
+nicht in Rechnung gestellt wird. 
+(7)  Die zulässigen Werte der Kantenpressungen dürfen in gewachsenen, nichtbindigen Böden um 30 % höher angenom-
+men werden als die gemäß Spalte 6 und Anmerkung (2) und (4) ermittelten zulässigen Bodenpressungen. 
+(8)  Bei bindigen Böden, deren Wassergehalt ständig geringer als der der vollständigen Sättigung ist, dürfen je nach dem 
+Trockenheitsgrad der Bettungsmodul und die zulässige Bodenpressung bis zu 30 % erhöht werden. 
+(9)  Als Bettungsmodul bzw. zulässige Spannung in horizontaler Richtung sind die um 20 % verkleinerten Werte der Spalten 
+8 und 6 (in Verbindung mit Spalte 7) zu wählen. 
+(10)  Wird das Füllungsmaterial in den Baugruben derart maschinell verdichtet, dass die natürliche Lagerungsdichte des 
+gewachsenen Bodens wieder voll erreicht wird, so darf als Raumgewicht das des ursprünglichen Bodens gewählt wer-
+den. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+37 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 38/47 =====
+Seite 38     
+ÖVE/ÖNORM E 8111 
+51.2 Fundierung von Holzmasten 
+51.2.1 Die Standsicherheit von Holzmasten (siehe ÖNORM E 4201) ist für das 1,2fache der gemäß Abschnitt 31 auftre-
+tenden Belastungen nachzuweisen. Bei Berechnungsverfahren, die denen von Einblockgründungen entsprechen, sind 
+die Lotlasten von der Vervielfachung ausgeschlossen. 
+ 
+51.2.2 Der Nachweis der Standsicherheit und der zulässigen Schiefstellung von Holzmasten (Einfach- und Doppeltrag-
+masten sowie von A-Masten bei Belastung senkrecht zur A-Ebene) gilt in Böden mittlerer Beschaffenheit (Bodenart c1 bis 
+c4, d3, d4, e1, e2 gemäß Tabelle 51-1) als erbracht, wenn die Maste mindestens auf ein Sechstel ihrer Gesamtlänge, 
+jedoch nicht weniger als 1,6 m eingegraben sind. Das Füllmaterial der Baugrube ist sorgfältig zu verdichten. 
+ 
+51.2.3 In wenig tragfähigen Böden ist durch Anordnung von Steinkränzen oder Fußplatten, soweit notwendig durch 
+Schwellen, die Tragfähigkeit sicherzustellen. 
+ 
+51.2.4 Für die Beanspruchung in Richtung der A-Ebene dürfen bei Holz-A-Masten mit Grundzangen allein oder mit zu-
+sätzlichen Schwellen für die Ermittlung der wirksamen Flächen auf der Zug- und Druckseite die Grundzangen mit je 
+einem Drittel ihrer Länge in Rechnung gestellt werden. 
+Auf der Zugseite darf für die Errechnung der Erdauflastfläche der Zwischenraum zwischen den Zangen bzw. Schwellen 
+als voll angenommen werden, wenn er nicht größer ist als der Durchmesser des angeschlossenen Maststieles. 
+Als Reibungskraft kann das doppelte Gewicht des gedachten zusätzlichen Erdkörpers in Rechnung gestellt werden. 
+Dieser zusätzliche seitliche Erdkörper ist gemäß den in 51.5.1 angegebenen Grundsätzen mit dem Winkel β aus Spalte 
+9 oder 10 der Tabelle 51-1 zu ermitteln. 
+Es darf auch mit der Mantelreibung des Erdprismas gerechnet werden. Wird diese aus der Erdwiderstandslast Ep er-
+rechnet, so darf nur ein Drittel derselben eingesetzt werden. 
+ 
+Erdwiderstandsbeiwert Kp = tan² (45°+ϕ/2) 
+ 
+51.2.5 Für die Druckseite sind nur die tatsächlichen Zangen- und Schwellenauflageflächen maßgebend. Auf ihr darf die 
+in Tabelle 51-1 angegebene zulässige Bodenpressung unter Beachtung des anteiligen Mastgewichtes, der lotrechten 
+Belastungen und des Gewichtes des auflastenden Erdreiches nicht überschritten werden. Das auflastende Erdreich ist 
+als prismatischer Körper über der nicht durchbrochenen Fläche, die durch die anteilige Zangenlänge und die Schwelle 
+begrenzt ist, zu berechnen. 
+ 
+51.2.6 Bei Verwendung von Mastfüßen aus Fertigteilen (z.B. Mastfüßen aus Stahlbeton) sind die Abschnitte 51.2.4 und 
+51.2.5 sinngemäß anzuwenden. 
+ 
+51.2.7 Das Einbetonieren von Holzmasten ist verboten. 
+ 
+51.3 Mastfüße aus Stahlbeton 
+51.3.1 Mastfüße aus Stahlbeton müssen in den Regellastfällen gemäß Abschnitt 31 folgende Sicherheiten gegen Bruch 
+aufweisen: 
+ 
+für Tragmaste .................................2,0fache Sicherheit, 
+für Abspann- und Abzweigmaste....2,5fache Sicherheit. 
+ 
+Nachweis durch Versuche ist zulässig. 
+Soweit die vorliegenden Vorschriften nichts anderes bestimmen, wird auf die für die Ausführung der Versuche bestehen-
+den technischen Bestimmungen (siehe ÖNORM B 4200 Teil 5) verwiesen. 
+ 
+51.3.2 Bei der Bemessung der Verbindungsschrauben zwischen Holzmast und Mastfuß darf die Biegung unberücksich-
+tigt bleiben, wenn dafür gesorgt wird, dass ein Lockern der Verbindung zufolge des Schwindens des Holzes erforderli-
+chenfalls durch späteres Nachziehen der Schraubenmutter verhindert wird. Die Schrauben brauchen dann nur auf Ab-
+scherung unter Zugrundelegung einer höchstzulässigen Scherbeanspruchung (siehe ÖNORM B 4605) berechnet zu 
+werden. 
+ 
+51.4 Schwellenroste und Zangen 
+51.4.1 Bei dieser Gründungsart sind die Werte gemäß Tabelle 51-1 sowohl für die Bestimmung der größten Bodenpres-
+sung auf der Druckseite als auch für die Ermittlung des auflastenden Erdkörpers auf der Zugseite maßgebend. 
+Auf der Zugseite dürfen für die Ermittlung der Erdauflast Zwischenräume zwischen den Einzelschwellen bis zur Schwel-
+lenbreite, jedoch höchstens bis 15 cm als voll angenommen werden. 
+Auf der Druckseite ist für die Ermittlung der Bodenpressung die tatsächliche Schwellenauflagefläche anzusetzen; hierbei 
+ist das auflastende Erdreich als prismatischer Erdkörper über der nichtdurchbrochenen Fläche des Schwellenrostes 
+zugrundezulegen. 
+ 
+51.4.2 Bei eingegrabenen, fachwerkartig aufgelösten Fundamentkonstruktionen oder einzelnen eingegrabenen Kon-
+struktionsstäben darf keine Stützwirkung des Füllmaterials berücksichtigt werden. Stäbe mit mehr als 15° Neigung gegen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+38 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 39/47 =====
+Seite 39 
+ ÖVE/ÖNORM E 8111 
+ 
+die Lotrechte sind als zusätzlich belastet durch das darüberliegende Erdreich anzunehmen. Die Zusatzlast ist mindes-
+tens gleich dem Gewicht eines prismatischen Erdkörpers mit lotrechten Kanten über der dreifachen Stabbreite. 
+ 
+51.4.3 Der Standsicherheits- und Schiefstellungsnachweis ist bei der einer Einblockfundierung entsprechenden Ausfüh-
+rung gemäß 51.5, bei der einer Mehrblockfundierung entsprechenden Ausführung gemäß 51.6 zu erbringen. 
+ 
+51.5 Einblockfundierung 
+51.5.1 Der Nachweis gegen unzulässige Schiefstellung sowie der Standsicherheitsnachweis ist unter Beachtung von  
+51.1.4 und 51.1.5 zu führen. 
+ 
+51.5.2 Wird bei einem Berechnungsverfahren die seitliche Einspannwirkung des Baugrundes unmittelbar berücksichtigt 
+(z.B. Sulzberger oder Bürklin), so gelten für den Schiefstellungs- und Standsicherheitsnachweis die verfahrensbezoge-
+nen Regeln unter Beachtung von 51.1.6. 
+ 
+51.5.3 Wird hingegen bei einem Berechnungsverfahren (z.B. Mohr) die seitliche Einspannwirkung des Baugrundes nicht 
+unmittelbar berücksichtigt, so darf bei Einblockfundierungen (abgestuft oder ungestuft) außer den Auflagekräften des 
+Mastes das Gewicht des Fundamentes und des lotrecht darüber befindlichen Erdreiches um das eines gedachten zu-
+sätzlichen Erdkörpers (Erdauflastkörpers) vermehrt werden. Dieser Erdkörper wird nach außen durch Flächen begrenzt, 
+die von der Sohle des Fundamentes ausgehend, um den Winkel β  gemäß Tabelle 51-1 gegen die Lotrechte geneigt 
+sind. Die innere Begrenzung wird durch die Lotrechten an die Fundamentsohle gebildet. 
+ 
+51.5.3.1  Bei derartigen Bemessungsverfahren gilt der Schiefstellungsnachweis als erbracht, wenn unter den auftreten-
+den Lasten die zulässigen Bodenpressungen gemäß Tabelle 51-1 nicht überschritten werden. 
+ 
+51.5.3.2 Die Standsicherheit darf in folgender Weise nachgewiesen werden:  
+Unter den 1,5fachen Lasten der Regellastfälle, wobei die Lotlasten von der Vervielfachung ausgeschlossen sind, darf die 
+größte Bodenpressung bei bindigen Böden die 2fachen, bei rolligen Böden die 2,3fachen zulässigen Werte gemäß Ta-
+belle 51-1 nicht überschreiten. 
+ 
+51.6 Mehrblockfundierung 
+51.6.1 Der Nachweis gegen unzulässige Schiefstellung ist für die Regellastfälle gemäß Abschnitt 31 zu führen. Er darf in 
+folgender vereinfachter Weise erbracht werden: 
+ 
+51.6.1.1 Bei Druckfundamenten dürfen die Bodenpressungen an der Fundamentsohle die in Tabelle 51-1 (Spalte 6, in 
+Verbindung mit Spalte 7 und zugehörigen Anmerkungen) angegebenen Werte nicht überschreiten. Für die Ermittlung der 
+Bodenpressungen ist außer den Auflagedrücken des Mastes das Gewicht des Fundamentes und das des lotrecht darü-
+berliegenden Erdreiches zu berücksichtigen. 
+ 
+51.6.1.2 Bei Zugfundamenten müssen die auf sie wirkenden Zugkräfte kleiner sein als die Summe aus dem Eigenge-
+wicht des Fundamentes, dem Gewicht des lotrecht darüberliegenden Erdreiches und dem Gewicht eines gedachten 
+zusätzlichen Erdkörpers. Dieser Erdkörper ist gemäß den in 51.5.1 angegebenen Grundsätzen mit dem Winkel β der 
+Spalte 9 oder Spalte 10 der Tabelle 51-1 zu ermitteln. 
+ 
+51.6.2 Beim Standsicherheitsnachweis darf der Widerstand der Zugfundamente gegen das Herausziehen aus dem Bo-
+den nicht kleiner sein als das 1,5fache der in den Regellastfällen auf das Fundament wirkenden Zugkräfte. Der Wider-
+stand der Zugfundamente gegen Herausziehen aus dem Boden darf vereinfacht errechnet werden als Summe der Ge-
+wichte des Fundamentes, des lotrecht darüberliegenden Erdreiches und des Doppelten des gemäß 51.5.1 festgelegten, 
+gedachten seitlichen Erdkörpers. 
+ 
+51.6.3 Für Gründungskörper, deren Eingrabtiefe größer ist als das Dreifache der kleinsten Breite bzw. des kleinsten 
+Durchmessers an den Fundamentsohle, gilt: 
+ 
+51.6.3.1  Die in Tabelle 51-1 angeführten Werte für den Erdauflastwinkel β sind in Abhängigkeit von der Gründungstiefe 
+zu verringern. 
+ 
+51.6.3.2 Es darf mit der Mantelreibung gemäß den in 51.7.2(1) festgelegten Grundsätzen gerechnet werden. Hierbei ist 
+für die gemäß 51.6.1 ermittelten Belastungen eine Standsicherheit von 2 nachzuweisen. Damit ist auch der Schiefstel-
+lungsnachweis erbracht. 
+Wird der Nachweis durch Probebelastungen erbracht, sind die in 51.7.1.2 geforderten Sicherheiten anzuwenden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+39 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 40/47 =====
+Seite 40     
+ÖVE/ÖNORM E 8111 
+51.7 Pfahlfundierungen und pfahlartige Tiefgründungen 
+51.7.1 Bei Pfahlfundierungen und pfahlartigen Tiefgründungen kann sowohl der Schiefstellungsnachweis gemäß 51.1.4 
+als auch der Standsicherheitsnachweis gemäß 51.1.5 durch den Nachweis ausreichender Tragsicherheit der Pfähle 
+ersetzt werden. 
+ 
+51.7.1.1 Bei der Ermittlung der unter Einwirkung der Regellastfälle auftretenden Pfahlbelastungen sind Auftriebswirkun-
+gen und sonstige sicherheitsvermindernde Einflüsse zu berücksichtigen. Bei druckbeanspruchten Fundamenten darf die 
+entlastende Wirkung des Auftriebes nicht in Rechnung gestellt werden. 
+ 
+51.7.1.2 Erfolgt die Ermittlung der Grenzlast (Traglast) eines Pfahles auf rechnerischem Wege, so ist für die gemäß 
+51.7.1.1 ermittelten Pfahllasten eine mindestens zweifache Sicherheit gegen Erreichen der Grenzbelastung nachzuwei-
+sen. 
+Erfolgt hingegen der Nachweis der Grenzlast durch Belastungsversuche an einem Probepfahl im Bereich des Mast-
+standortes, genügt eine 1,8fache Sicherheit gegen Erreichen der Grenzlast, wobei abweichend von 51.1.7 ein Ver-
+suchswert ausreicht und die dort festgelegten Bestimmungen für den Schiefstellungs- und Standsicherheitsnachweis 
+nicht angewendet zu werden brauchen. 
+Der Nachweis ausreichender Sicherheit gilt ferner als erbracht, wenn Bauwerkspfähle einer stufenweisen Probebelas-
+tung bis zum 1,2fachen der gemäß 51.7.1.1 ermittelten Pfahllasten unterworfen werden und die hierbei auftretenden 
+Setzungen bzw. Hebungen in Grenzen verlaufen, die auf Grund von Erfahrungen aus Versuchen an gleichwertigen Pro-
+bepfählen sowie im Hinblick auf die Mastkonstruktion selbst zulässig sind. 
+ 
+51.7.2 Soweit die vorliegenden Bestimmungen für Entwurf, Bemessung und Ausführung von Pfahlgründungen, insbe-
+sondere Pfahlgruppen, keine Abweichungen festlegen, wird auf die auf Belange des Freileitungsbaues anwendbare 
+ÖNORM B 4430 Teil 2 verwiesen. 
+Zusätzlich gilt: 
+(1) 
+Bei homogenen Böden darf über die ganze Pfahllänge mit einer konstanten Mantelreibung gerechnet wer-
+den. 
+Bei inhomogenen Böden darf die gesamte Mantelreibung als Summe der Reibungswiderstände der einzel-
+nen Schichten ermittelt werden. 
+(2) 
+Bis 1,0 m unter Bodenoberkante darf mit keiner Mantelreibung gerechnet werden. 
+(3) 
+Eine vergleichende Beurteilung des Zugwiderstandes von Pfählen mit Bezugnahme auf an anderen Pfählen 
+vorgenommenen Probebelastungen ist zulässig, wenn durch ausreichende Ähnlichkeit der Baugrundver-
+hältnisse, Gleichheit der Pfahlherstellung und ein verlässliches Vergleichskriterium, z.B. Rammergebnisse, 
+eine eindeutige Zuordnung möglich ist. 
+ 
+52 
+Fundierungen – Ausführung 
+52.1 
+Soweit die vorliegenden Bestimmungen für die Ausführung der Fundamente aus Beton und Stahlbeton keine 
+Abweichungen festlegen, wird auf die zutreffenden technischen Bestimmungen verwiesen (siehe ÖNORM B 3304,  
+ÖNORM B 3307 und ÖNORM B 4200 Teil 10). 
+Für Fundamente ist mindestens die Festigkeitsklasse B 160 vorzusehen. 
+ 
+52.2 
+Betonfundamente sollen möglichst in einem Zuge hochbetoniert werden. Der Zusammenhang bei Arbeitsfugen in 
+unbewehrten Fundamenten ist durch entsprechend verteilte und bemessene Steckeisen sicherzustellen. 
+ 
+53 bis 59 Bleiben frei. 
+ 
+60  
+Erdungen – Bemessung und Ausführung 
+60.1 
+Für Bemessung, Umfang und Ausführung der Erdungsanlagen bestehen technische Bestimmungen (siehe 
+ÖVE-EH 41). 
+ 
+60.2 
+Bei Holzmasten ist außerdem zu beachten: 
+ 
+60.2.1 Im Allgemeinen sind die Isolatorenträger an Holzmasten nicht zu erden, um das Isoliervermögen des Holzes 
+gegen Stoßspannungen auszunützen. 
+ 
+60.2.2 Sind auf einer Holzmastfreileitung Erdseile vorhanden, so sind die Erdungsleitungen an das Erdseil hinreichend 
+weit vom Mast entfernt anzuschließen und frei bis unterhalb des unteren Isolatorenträgers zu führen. Zwischen Erdungs-
+leitung und Isolatorenträgern ist ein Abstand einzuhalten, der eine ausreichende Festigkeit gegen Stoßspannungen 
+sicherstellt. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+40 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 41/47 =====
+Seite 41 
+ ÖVE/ÖNORM E 8111 
+ 
+60.3 
+Bei Stahl- und Stahlbetonmasten ist außerdem zu beachten: 
+ 
+60.3.1 Bei Stahlbetonmasten darf die Längsarmierung unter Beachtung des erforderlichen Querschnittes als Teil der 
+Erdungsleitung benutzt werden. Eine ausreichende gegenseitige Verbindung der einbezogenen Stäbe sowie fixe An-
+schlussstellen müssen vorgesehen sein. Falls kein der ganzen Länge nach durchlaufender Bewehrungsstahl verfügbar 
+ist, muss für eine gut leitende Verbindung vom Mastkopf bis zur Anschlussstelle des Erders gesorgt werden. Die zur 
+Isolatorenbefestigung dienenden Metallteile sind an die längs des Mastkörpers verlaufende leitende Verbindung (allen-
+falls unter Mitbenutzung der Auslegerarmierung) gut leitend anzuschließen. 
+ 
+60.3.2 Bei Mastschaltern auf Stahl- oder Stahlbetonmasten darf der Einbau von Isolatoren im Betätigungsgestänge 
+entfallen. 
+ 
+60.4 
+Bei Freileitungen mit kunststoffumhüllten Leitern sind Erdungspunkte für das Erden der kunststoffumhüllten Leiter 
+vorzusehen. Diese Erdungspunkte müssen gut sichtbar oder gekennzeichnet sein. 
+ 
+61 bis 69 Bleiben frei. 
+ 
+70 
+Fernmeldeleitungen an Tragwerken von Hochspannungsfreileitungen – Anordnung 
+und Ausführung 
+70.1 
+Fernmeldeleitungen dürfen an Tragwerken von Hochspannungsfreileitungen mitgeführt werden und unterliegen 
+dann den Bestimmungen für Hochspannungsfreileitungen. Die Abschnitte 70.2 bis 70.10 enthalten ergänzende Bestim-
+mungen. 
+ 
+70.2 
+Für solche Fernmeldeleitungen dürfen eindrähtige oder mehrdrähtige blanke Leiter oder Luftkabel verwendet 
+werden. Eindrähtige Leiter aus Aluminium und seinen Legierungen sind jedoch nicht zugelassen. 
+Fernmeldeleitungen mit eindrähtigen Leitern sind an Hochspannungsfreileitungen unterhalb deren Leiter anzuordnen. 
+ 
+70.3 
+Für blanke Leiter beträgt der Mindestquerschnitt 10 mm². 
+ 
+70.4 
+Die Ausnahmszusatzlast für die Leiter bzw. Luftkabel ist gemäß 11.2(2) zu bemessen. Für Fernmeldeleitungen 
+auf Tragwerken von Hochspannungsfreileitungen ist es außerhalb von Abspannabschnitten gemäß 24.1(1) zulässig, die 
+Ausnahmszusatzlast mit 12 N/m zu bemessen, sofern die Fernmeldeleitung unterhalb der Leiter der Hochspannungsfrei-
+leitung angeordnet wird. 
+ 
+70.5 
+(1) 
+Die Fernmeldeleitung muss den durch elektrische Beeinflussung seitens der Hochspannungsfreileitung zu 
+ 
+ 
+erwartenden Spannung entsprechen. 
+ 
+(2) 
+Zur Herabsetzung der zu erwartenden Spannungen wird empfohlen: 
+ 
+(2.1) bei blanken Leitern der Einbau von Erdungsdrosselspulen, 
+ 
+(2.2) bei Luftkabeln die Anordnung eines geerdeten Metallmantels oder statischen Schirmes. 
+ 
+70.6 
+Der Mindestabstand blanker Fernmeldeleiter oder Luftkabel zu den spannungsführenden Leitern der Hochspan-
+nungsfreileitung ist gemäß Abschnitt 21 festzulegen. Diese Forderung gilt als erfüllt, wenn in Spannfeldmitte folgende 
+Mindestabstände eingehalten werden: 
+(1) im Regellastfall ...............................1,2 m, 
+(2) im Ausnahmslastfall........................0,5 m. 
+Darüber hinaus sind diese Abstände sowie der Abstand blanker Fernmeldeleiter voneinander den Erfordernissen der 
+Fernmeldetechnik anzupassen. 
+ 
+70.7 
+Für die Abstände vom Gelände und von Objekten gelten die Angaben in den Abschnitten 22, 23 und 28. 
+ 
+70.8 
+Luftkabel müssen folgenden Bedingungen entsprechen: 
+(1) 
+Die tragenden Bauteile sind für die auftretenden Zugkräfte zu bemessen, 
+(2) 
+Luftkabel sind an den Tragwerken so zu befestigen, dass auch bei Wind ein Scheuern des Luftkabels an 
+Tragwerksteilen vermieden wird, 
+(3) 
+Die Abspann- und Aufhängevorrichtungen müssen den Bestimmungen für Armaturen (Abschnitt 13) ent-
+sprechen, 
+(4) 
+Verbindungsmuffen in Spannfeldern müssen in mechanischer Hinsicht Abschnitt 13 entsprechen. Die Über-
+tragung von Zugkräften auf die Kabeladern oder die Isolation ist zu verhindern. Die Verbindungsmuffen 
+müssen gegebenenfalls eine mechanisch und elektrisch einwandfreie Verbindung der Kabelmäntel aus Me-
+tall, der Bewehrung und der statischen Schirme ermöglichen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+41 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 42/47 =====
+Seite 42     
+ÖVE/ÖNORM E 8111 
+70.9 
+Wechseln Fernmeldeleitungen vom Tragwerk einer Hochspannungsfreileitung auf die Tragwerke einer Fernmel-
+delinie, so gelten für die Weiterführung: 
+(1) 
+die Vorschriften für Fernmeldeleitungen, sofern die Fernmeldeleitung beim Verlassen der Tragwerke der 
+Hochspannungsfreileitung durch Schutzübertrager unterbrochen wird, die von der Fernmeldebehörde hierfür 
+zugelassen sind, 
+(2) 
+die Vorschriften für Starkstromfreileitungen bis 1000 V, sofern die Fernmeldeleitung ohne galvanische Un-
+terbrechung weitergeführt wird. Die gemeinsame Führung mit anderen Fernmeldeleitungen in einer Fern-
+meldelinie ist jedoch unzulässig. 
+ 
+70.10 Fernsprecher, Signalapparate oder sonstige Einrichtungen, die ohne Zwischenschaltung eines von der Fernmel-
+debehörde hierfür zugelassenen Schutzübertragers an eine an Tragwerken von Hochspannungsfreileitungen mitgeführte 
+Fernmeldeleitung angeschlossen werden, müssen so beschaffen und angeordnet sein, dass bei Übertritt der Hochspan-
+nung auf die Fernmeldeleitung weder Personen noch Sachen gefährdet werden. 
+ 
+71 bis 79  Bleiben frei. 
+ 
+80 
+Bezeichnung der Tragwerke 
+Tragwerke von Hochspannungsfreileitungen sind mit einer Mastnummer zu bezeichnen. Bei mehrsystemigen Leitungen 
+müssen die einzelnen Systeme bezeichnet werden. 
+ 
+81 
+Bekanntmachung der Inbetriebnahme 
+Von der Inbetriebnahme fertiggestellter Hochspannungsfreileitungen ist die Bevölkerung der Anliegergemeinden in orts-
+üblicher Weise zu unterrichten. Auf die Gefahren, welche mit dem Bestand und Betrieb dieser Leitung verbunden sein 
+können, ist hierbei hinzuweisen (siehe ÖVE-L 5, Teil I). 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+42 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 43/47 =====
+Seite 43 
+ ÖVE/ÖNORM E 8111 
+ 
+Anhang A (informativ):  Literaturhinweise 
+ÖVE-EH 41 
+Erdungen in Wechselstromanlagen mit Nennspannungen über 1 kV 
+ÖVE-L 5, Teil 1 
+Inbetriebnahmemeldung für Freileitungen (Merkblatt) 
+ÖVE EN 60305 
+Isolatoren für Freileitungen mit Nennspannung über 1 kV – Keramik- oder Glasisolatoren 
+für Wechselspannungssysteme – Kenngrößen von Kappenisolatoren 
+ÖVE EN 60383-1 
+Isolatoren für Freileitungen mit einer Nennspannung über 1 kV – Teil 1: Keramik- oder 
+Glas-Isolatoren für Wechselstromsysteme – Begriffe, Prüfverfahren und Annahmekrite-
+rien  
+ÖVE EN 60383-2 
+Isolatoren für Freileitungen mit einer Nennspannung über 1000 V – Teil 2: Isolatorsträn-
+ge und Isolatorketten für Wechselstromsysteme – Begriffe, Prüfverfahren und Annahme-
+kriterien 
+ÖVE EN 61284 
+Freileitungen – Anforderungen und Prüfungen für Armaturen 
+ÖVE EN 61466-1 
+Verbund-Kettenisolatoren für Freileitungen mit einer Nennspannung über 1 kV –  
+Teil 1: Genormte Festigkeitsklassen und Endarmaturen 
+ÖVE HD 474 
+Maße von Klöppel-und Pfannen-Verbindungen von Kettenisolatoren 
+ÖVE/ÖNORM EN 50182 
+Leiter für Freileitungen – Leiter aus konzentrisch verseilten runden Drähten  
+ÖVE/ÖNORM EN 50183 
+Leiter für Freileitungen – Drähte aus Aluminium-Magnesium-Silizium-Legierung  
+ÖVE/ÖNORM EN 50189 
+Leiter für Freileitungen – Verzinkte Stahldrähte  
+ÖVE/ÖNORM EN 60433 
+Isolatoren für Freileitungen mit einer Nennspannung über 1 kV – Keramik-Isolatoren für 
+Wechselspannungssysteme – Kenngrößen von Kettenisolatoren in Langstabausführung 
+ÖVE/ÖNORM EN 60889 
+Hartgezogene Aluminiumdrähte für Leiter von Freileitungen 
+ÖVE/ÖNORM EN 61232 
+Aluminium-ummantelte Stahldrähte für die Elektrotechnik 
+ÖVE/ÖNORM EN 61466-2 
+Verbund-Kettenisolatoren für Freileitungen mit einer Nennspannung über 1 kV –  
+Teil 2: Maße und elektrische Kenngrößen 
+ÖVE/ÖNORM E 8227 
+Kunststoffumhüllte Freileitungsseile 
+ÖNORM B 3304 
+Betonzuschläge aus natürlichem Gestein; Begriffe, Anforderungen, Prüfungen, Lieferung 
+und Güteüberwachung 
+ÖNORM B 3307 
+Transportbeton 
+ÖNORM B 4100, Teil 2 
+Holzbau – Holztragwerke – Berechnung und Ausführung 
+ÖNORM B 4200, Teil 5 
+Fertigteile aus Beton, Stahlbeton und daraus hergestellte Tragwerke für vorwiegend 
+ruhende Belastung 
+ÖNORM B 4200, Teil 7 
+Massivbau; Stahleinlagen 
+ÖNORM B 4200, Teil 10 
+Beton; Herstellung, Verwendung und Gütenachweis 
+ÖNORM B 4430, Teil 1  
+Erd- und Grundbau; Zulässige Belastungen des Baugrundes, Flächengründungen 
+ÖNORM B 4430, Teil 2 
+Erd- und Grundbau; Zulässige Belastung des Baugrundes, Pfahlgründungen 
+ÖNORM B 4700 
+Stahlbetontragwerke – EUROCODE-nahe Berechnung, Bemessung und konstruktive 
+Durchbildung 
+ÖNORM B 4750 
+Spannbetontragwerke – EUROCODE-nahe Berechnung, Bemessung und konstruktive 
+Durchbildung 
+ÖNORM E 4101 
+Elektrische Freileitungen; Stützenisolatoren VHD und VHD-G 
+ÖNORM E 4102 
+Elektrische Freileitungen; Vollkern-Stützisolatoren VKSt und VKS 
+ÖNORM E 4125  
+Elektrische Freileitungen; Klöppel und Pfanne; IEC-Anschlußmaße 
+ÖNORM E 4200 
+Elektrische Freileitungen; Holzmaste; Übernahmebedingungen und Behandlung 
+ÖNORM E 4201 
+Elektrische Freileitungen; Holzmaste; Berechnung und Konstruktion 
+ÖNORM E 4202 
+Elektrische Freileitungen; Holzmaste; Tragfähigkeit der Grundformen 
+ÖNORM ENV 1994-1-1 
+Eurocode 4: Bemessung und Konstruktion von Verbundtragwerken aus Stahl und Beton 
+Teil 1-1: Allgemeine Bemessungsregeln – Bemessungsregeln für den Hochbau 
+DIN 48200-1 
+Drähte für Leitungsseile; Drähte aus Kupfer 
+DIN 4228 
+Werkmäßig hergestellte Betonmaste 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+43 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 44/47 =====
+Seite 44     
+ÖVE/ÖNORM E 8111 
+IEC 60372 
+Locking devices for ball and socket couplings of string insulator units – Dimensions and 
+tests 
+IEC 60471 
+Dimensions of clevis and tongue couplings of string insulator units 
+IEC 60720 
+Characteristics of line post insulators 
+IEC 60815 
+Guide for the selection of insulators in respect of polluted conditions 
+IEC 61109 
+Composite insulators for a.c. overhead lines with a nominal voltage greater than 
+1000 V – Definitions, test methods and acceptance criteria  
+„Richtlinien für die Bemessung und Ausführung von Spannbetontragwerken“ herausgegeben vom Österreichischem 
+Komitee für Spannbeton, Heft 3 der Schriftenreihe des Österreichischen Betonvereines. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+44 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 45/47 =====
+Seite 45 
+ ÖVE/ÖNORM E 8111 
+ 
+Anhang B (Informativ): Sachverzeichnis 
+ 
+Thema 
+Abschnitt 
+Abspannabschnitt 
+3.8; 28.1.6; 25.1.1; 28.3.1; 70.4 
+Abspannmaste 
+ 
+24.2.2; 25.1.1; 25.1.2; Tabelle 31-1; Tabelle 31-3; 31.1; 51.1.11 
+Abspanntragwerk  
+3.8 
+Abzweigmaste 
+ 
+21.2.3; Tabelle 31-1; Tabelle 31-4; 31.1; 51.3.1 
+A-Maste  
+25.1.2; Tabelle 30-2; Tabelle 31-4; 40.3; 51.2.2; 51.2.4 
+Armaturen 
+ 
+1.1; 3.21; 13; 24.2; 70.8 
+Ausgangszugspannung 
+3.17; 10.6; Tabelle 10-1; 11.3; 13.5 
+Auslenkbild 
+21.1.1 
+Ausnahmszusatzlast 
+ 
+3.20; Tabelle 11-1; 11.2; 28.1.6; 28.1.7; 70.4 
+Außenantennenanlagen 
+28.1.10; Tabelle 28-1 
+Autobahnen 
+ 
+28.3.3; Tabelle 28-1 
+Belastungsannahmen 
+31; 50.1 
+Betriebsstrom 
+ 
+Tabelle 11-1; 11.7; 13.2 
+Bodenkennwerte 
+51.1.2; Tabelle 51-1 
+Bodenseilzüge 
+23.8 
+Bruchlast 
+3.4; 10.5; Tabelle 10-1; 13.5 
+Brücken 
+23.3 
+Bundesstraßen 
+28.1.1; 28.3.3; Tabelle 28-1 
+Dauerstromstärke 
+ 
+11.7; Tabelle 11-2 
+Dauerzugspannung 
+ 
+ 
+3.5; 10.6; Tabelle 10-1; 11.4; 13.5 
+Durchhang 
+ 
+3.15; 11.1; 21.1.2; 21.1.3 
+Einblockfundierung 
+ 
+51.2.1; 51.4.3; 51.5 
+Einfachmaste 
+ 
+40.3; 51.2.2 
+Einzelkette 
+ 
+12.3.4; 24.2.2; 24.2.3; 31.7 
+Erdauflastkörper  
+Tabelle 51-1; 51.5.3 
+Erdseile  
+3.1; 10.2; 25.1.1; 60.2.2 
+Erdung  
+1.1; 22.2; 28.1.10; 60 
+Erhöhte Sicherheit 
+12.3.2; 13.3; 20.1; 24; 28.1.7; Tabelle 28-1 
+Fahrleitungen 
+ 
+1.3; 28.1.4; 28.3.1 
+Fahrleitungstragwerke 
+28.1.4; 28.3.1 
+Fäulnisschutz 
+40.4; 40.5; 40.6 
+Ferngasleitungen 
+50.3 
+Fernmeldekabel 
+23.7; 50.3 
+Fernmeldeleitungen 
+1.2; 1.3; 28.1.7; 28.1.9; 28.3.2; Tabelle 28-1; 70 
+Fundamente 
+1.1; 20.1; 23.2; 23.6.2; 23.7; 28.2.4; 50.3; 51; Tabelle 51-1; 52 
+Fundierung 
+50; 51 
+Gebäude 
+28.1.3; Tabelle 28-1  
+Geländeoberfläche 
+20.2; 22.1 
+Gemeindestraßen 
+23.2  
+Gewässer 
+23.6 
+Gründungen 
+51.2.1; 51.7  
+Hochspannungsfreileitungen  
+1 
+Höchstzugspannung 
+3.18; 11.3  
+Holzgittermaste 
+40.1; 40.2 
+Holzmaste 
+3.22; 25.1.2; 28.3.1; 30.4; Tabelle 30-1; Tabelle 31-1; 40; 51.2; 51.3.2; 
+60.2 
+Inbetriebnahmemeldung 
+81 
+Isolatoren 
+1.1; 3.21; 12; 21.1.2; 24.2.2; 24.2.3; 25.1.1; 60.3.2 
+Isolatorketten           
+12.1; Tabelle 12-1; 24.2.2; 24.2.3; 28.1.6; 30.3.1 
+Kappenisolatoren 
+12.1; Tabelle 12-1; 12.3.2  
+Korrosion 
+10.3; 41.4 
+Kreuzungen 
+ 
+28.1.5; 28.1.6; 25.2; 28.3.1; 28.3.2; Tabelle 28-1 
+Kreuzungsspannfeld 
+3.10; 24.2.2; 24.2.3; 28.1.6; 25.1.1; 25.2; Tabelle 28-1 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+45 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 46/47 =====
+Seite 46     
+ÖVE/ÖNORM E 8111 
+Sachverzeichnis (Fortsetzung) 
+ 
+Thema 
+Abschnitt 
+Landesstraßen 
+28.1.1; Tabelle 28-1 
+Langstabisolatoren 
+12.1; Tabelle 12-1; 12.3.2 
+Lastfälle 
+11.1; Tabelle 11-1; Tabelle 31-1 bis Tabelle 31-4; 31.2; 31.3; 31.4; 31.6 
+Leiter 
+3.1 
+Leiterabstand 
+21.1.1; 21.1.2 
+Leiterdurchhang 
+3.15; 21.1.2; 21.1.3 
+Leiterzug 
+3.14; 13.5; 24.2.1; 24.2.2; 30.1; 30.6; Tabelle 31-1 bis Tabelle 31-4; 31.3; 
+31.4 
+Leitungsführung 
+20; 23; 24; 28 
+Leitungstragwerke 
+30; 31; Tabelle 31-1; 40; 41; 50; 51 
+Lichtbogenschutzarmaturen 
+13.2; 13.5 
+Luftkabel  
+3.1; 3.2; 10.2; 13.5; 28.3.2; 70.2; 70.4; 70.5; 70.6; 70.8 
+Luftstrecke 
+Tabelle 21-1; 21.2.1  
+Mastfüße 
+ 
+25.1.2; 51.2.6; 51.3  
+Mastnummer 
+80 
+Materialbahnen 
+28.1.4; Tabelle 28-1 
+Materialseilbahnen 
+28.1.7; 28.1.9; Tabelle 28-1 
+Mehrblockfundierung 
+51.4.3; 51.6  
+Mehrfachabspannketten  
+25.2 
+Mehrfachkette 
+24.2.2; 24.2.3; 25.1.1; 31.7  
+Mindestquerschnitte 
+10.5; 70.3 
+Montagelasten 
+13.5; 30.1; 30.4; Tabelle 31-2 bis Tabelle 31-4  
+Nennisolation 
+40.7 
+Nennlast 
+24.2.2; 24.2.3 
+n-fach-Kette 
+12.3.4 
+Obuslinien 
+ 
+28.1.4; Tabelle 28-1  
+Regelzusatzlast  
+3.16; 3.19; Tabelle 11-1; 11.2; 28.1.6; 25.2; 30.3.1;  
+Tabelle 31-2 bis Tabelle 31-4; 31.4  
+Schienenbahnen  
+28.3.1; Tabelle 28-1 
+Schutzabstand 
+ 
+3.13; 20.1; 20.2; 23.1; 23; 24.1; 28 
+Schutzbereich 
+ 
+3.11 bis 3.13; 20.2; 23.1; 24.1; 28.1 bis 28.3  
+Schutzübertrager  
+70.9; 70.10 
+Schwellenroste 
+ 
+51.4 
+Seilbahnen 
+28.1.7; 28.1.8; 28.2.3; Tabelle 28-1 
+Seile 
+ 
+3.1; 10.4; 10.5; 10.6; Tabelle 10-1; 11.1; 11.7; 13.5; 23.8; 28.1.7; 28.1.8; 
+25.1.1; 28.2.1; 28.2.2; 28.3.2; Tabelle 30-1; 40.7; 60.2.2   
+Seilliftanlagen 
+ 
+28.2.1; 28.3.2; Tabelle 28-1  
+Seilschwebebahnen 
+ 
+28.2.2; Tabelle 28-1  
+Seilwege 
+ 
+28.1.7; Tabelle 28-1 
+Sicherheit, erhöhte 
+ 
+12.3.2; 13.3; 20.1; 24; 28.1.7; Tabelle 28-1  
+Spannbetonmaste 
+ 
+42 
+Spannfeld 
+ 
+3.6; 3.8; 3.10 
+Spannweite 
+ 
+3.7; 11.6; 21.1.3; 21.2.2; 31.4  
+Speiseleitungen  
+28.1.4; 28.3.1 
+Sportanlagen 
+ 
+28.1.5; Tabelle 28-1 
+Stabisolatoren 
+ 
+12.1; 12.3.2 
+Stahlbetonmaste  
+Tabelle 30-1; 42; 60.3  
+Stahlmaste 
+ 
+60.3 
+Stahlrohrmaste 
+ 
+Tabelle 30-1; 41.4 
+Standseilbahnen         
+28.1.8; 28.1.9; 28.2.3; Tabelle 28-1 
+Starkstromfreileitungen 
+ 
+1.1; 28.1.6; 28.1.10; 28.3.2; Tabelle 28-1; 70.9  
+Straßenbahnen  
+28.1.4; Tabelle 28-1  
+Strohtristen 
+ 
+23.5 
+Stützenisolatoren 
+12.1; Tabelle 12-1; 24.2.1  
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+46 von 47
+www.ris.bka.gv.at
+
+
+===== PAGE 47/47 =====
+Seite 47 
+ ÖVE/ÖNORM E 8111 
+ 
+Sachverzeichnis (Fortsetzung) 
+ 
+Thema 
+Abschnitt 
+Tragmaste 
+24.2.1; 24.2.3; 28.1.6; 25.1.1; 25.1.2; Tabelle 31-1; Tabelle 31-2; 31.1; 
+31.4; 51.2.2; 51.3.1 
+Treidelanlagen 
+28.1.4; Tabelle 28-1  
+Treidelwege 
+ 
+23.6 
+Überkreuzung, überkreuzen 
+28.1.6; 28.1.7; 28.2.2; 28.3.2; 40.7  
+Unterkreuzung, unterkreuzen 
+28.1.6; 28.1.7; 28.1.9; 28.1.10; 28.2.1; 28.2.2; 28.3.2  
+Verbinder 
+ 
+ 
+13.2; 13.5 
+Verteilmaste 
+ 
+ 
+Tabelle 31-1; Tabelle 31-4; 31.1  
+Vollkernisolatoren 
+ 
+ 
+12.3.2; 25.1.1 
+Waldschneisen 
+ 
+ 
+22.2 
+Wasserstraßen 
+ 
+ 
+28.2.4; Tabelle 28-1  
+Winddruck 
+ 
+ 
+Tabelle 21-2; Tabelle 30-1; 31.6  
+Windgeschwindigkeit 
+ 
+ 
+11.7; 30.5.3; 30.5.7 
+Windkraft 
+ 
+ 
+21.2.2; 30.5.3; Tabelle 30-2 
+Windlasten 
+30.1; 30.5; Tabelle 30-2; Tabelle 31-2 bis Tabelle 31-4  
+Windwiderstandsbeiwert  
+30.5.3; Tabelle 30-1 
+Winkelabspannmaste 
+Tabelle 31-1; Tabelle 31-3; 31.1  
+Winkeltragmaste 
+24.2.1; 25.1.2; Tabelle 31-1; Tabelle 31-2; 31.1; 31.4  
+Zangen  
+51.2.4; 51.2.5; 51.4  
+Zugfestigkeit 
+ 
+Tabelle 10-1; 13.5  
+Zusatzlast 
+ 
+3.19; 3.21; Tabelle 11-1; 11.2; 30.1; 30.3; Tabelle 31-2 bis Tabelle 31-4; 
+31.4; 70.4  
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+47 von 47
+www.ris.bka.gv.at

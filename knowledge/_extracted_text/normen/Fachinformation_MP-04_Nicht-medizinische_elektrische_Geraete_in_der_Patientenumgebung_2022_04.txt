@@ -1,0 +1,153 @@
+
+
+===== PAGE 1/3 =====
+Seite 1 von 3 
+ 
+ 
+ 
+OVE-Fachinformation MP04 
+ 
+Ausgabe: 2022-04-21 
+ 
+ 
+ 
+ 
+Nicht-medizinische elektrische Geräte in der Patientenumgebung 
+ 
+Ersatz für 
+Ausgabe 2014-10 
+Zuständig 
+OVE/TK MP Medizinprodukte 
+ICS 
+11.040 
+ 
+ 
+ 
+Einleitung 
+Im Allgemeinen sind die Ableitstromgrenzwerte von medizinischen elektrischen Geräten und medizinischen 
+elektrischen Systemen in ÖVE/ÖNORM EN 60601-1und in ÖVE/ÖNORM EN 62353 geregelt, die Kenntnis 
+dieser Normen wird vorausgesetzt. 
+In diesen Bestimmungen sind in der Regel niedrigere Grenzwerte für Berührungsströme (Gehäuseableitströme) 
+und Geräteableitströme festgelegt als in den Bestimmungen für nicht-medizinische Geräte. 
+Zum Beispiel sind für den Berührungsstrom medizinischer elektrischer Geräte folgende Grenzwerte festgelegt: 
+• 
+0,1 mA unter Normalbedingung und  
+• 
+0,5 mA im ersten Fehlerfall (z. B. Unterbrechung eines nicht fest angeschlossenen Schutzleiters).  
+Bedingt durch den Anwendungsbereich der Bestimmungen werden z. B. Leuchten, Haushaltsgeräte, Geräte 
+zur Informationsverarbeitung oder Laborgeräte nur dann erfasst, wenn sie mit zumindest einem medizinischen 
+elektrischen Gerät gekoppelt sind und daher in den Anwendungsbereich der Bestimmungen für medizinische 
+elektrische Systeme fallen. 
+Diese Fachinformation stellt klar, dass zum Schutz des Patienten innerhalb der Patientenumgebung1) auch für 
+alle 
+nicht-medizinischen 
+elektrischen 
+Betriebsmittel 
+dieselben 
+Grenzwerte 
+für 
+Berührungsströme 
+(Gehäuseableitströme) und Geräteableitströme gelten wie für medizinische elektrische Geräte. Dies gilt auch 
+für Kopplungen derartiger Geräte untereinander.  
+Bei Versorgung von nicht-medizinischen elektrischen Betriebsmitteln über eine ortsveränderliche 
+Mehrfachsteckdose gelten die Bestimmungen für medizinische elektrische Systeme sinngemäß. 
+Um die gleiche Sicherheit auch bei nicht-medizinischen elektrischen Geräten zu erreichen, sind folgende 
+Maßnahmen geeignet: 
+• 
+Überprüfung der Ableitströme auch nicht-medizinischer Geräte. 
+Bei Nicht-Einhaltung, wahlweise: 
+• 
+Tausch auf Geräte, die die oben angeführten Ableitstromgrenzwerte einhalten, 
+• 
+Aufstellung außerhalb der Patientenumgebung, 
+• 
+geschützte Aufstellung, die eine Berührung von Teilen mit zu hohen Ableitströmen verhindert, 
+• 
+Anbringen eines zusätzlichen Schutzleiters (beidseitig fest angeschlossen, nur mit Werkzeug lösbar), 
+• 
+Vorschalten eines Trenntransformators, 
+• 
+erforderlichenfalls auch Trennvorrichtung bei Gerätekopplung über eine Datenleitung. 
+Neben der elektrischen Sicherheit können auch andere Aspekte, wie z. B. Hygiene zu berücksichtigen sein. 
+Bei nicht fest angeschlossenen Geräten mit geschützt verlegter Netzanschlussleitung darf sich die Prüfung der 
+elektrischen Sicherheit auf folgende Punkte beschränken, damit z. B. Einbaukühlschränke nicht bei jeder 
+wiederkehrenden Prüfung ausgebaut werden müssen. 
+1) Definition Patientenumgebung siehe ÖVE/ÖNORM E 8007 bzw. ÖVE/ÖNORM EN 60601-1 bzw. 
+ÖVE/ÖNORM EN 62353 
+
+
+===== PAGE 2/3 =====
+OVE-Fachinformation MP04:2022-04 
+Seite 2 von 3 
+Erstprüfung vor dem Einbau der Geräte: 
+• 
+Vollständige Prüfung gemäß ÖVE/ÖNORM EN 62353 unter Beachtung, dass die oben angegebenen 
+Ableitstromgrenzwerte eingehalten werden, erforderlichenfalls unter Anwendung von Zusatzmaßnahmen 
+wie Trenntrafo, zusätzlicher Schutzleiter, Trenneinrichtung (z. B. Netzwerkisolatoren bei EDV-Geräten). 
+ 
+Wiederkehrende Prüfung: 
+• 
+Sichtprüfung, insbesondere auch wegen Überhitzungs- und Brandgefahr bei Verschmutzung, 
+• 
+Messung des Schutzleiterwiderstandes von berührbaren leitfähigen Teilen, die für den Anschluss an den 
+Schutzleiter vorgesehen sind (diese sind im Zweifelsfall bei der Erstprüfung zu dokumentieren und/oder 
+die Messpunkte am Gerät zu kennzeichnen) und die bei bestimmungsgemäßer Aufstellung des Gerätes 
+berührbar bleiben. Bei dieser Messung ist der Schutzleiterwiderstand zu einem mit dem PE-Leiter 
+verbundenen Teil des Versorgungsnetzes zu messen, analog zu fest an das Versorgungsnetz 
+angeschlossenen elektrischen Geräten nach ÖVE/ÖNORM EN 62353 und 
+• 
+Messung des Berührungsstromes (Gehäuseableitstromes) im Normalfall von allen berührbaren leitfähigen 
+Teilen des Gerätes im Einbauzustand. 
+• 
+Die Messung des 
+o 
+Schutzleiterstromes (gemäß ÖVE/ÖNORM E 8701-1) oder des  
+o 
+Erdableitstromes (gemäß ÖVE/ÖNORM EN 60601-1) oder eines  
+o 
+Geräteableitstromes, bei dem der Strom durch den Schutzleiter mitgemessen wird (gemäß 
+ÖVE/ÖNORM EN 62353 Ersatzmessung bzw. Differenzstrommessung),  
+entfällt bei wiederkehrenden Prüfungen (ist nur bei der Erstprüfung erforderlich). 
+ 
+HINWEIS: Die Messschaltung „Geräteableitstrom–Direktmessung“ kann zur Ermittlung des Berührungsstromes 
+(Gehäuseableitstromes) im Normalfall verwendet werden, indem mit der Messspitze alle berührbaren leitfähigen 
+Teile des Gerätes im Einbauzustand abgetastet werden, ohne dass das Gerät an den Tester angeschlossen 
+ist.  
+• 
+OVE E 8101 Kapitell 710-600.5 Wiederkehrende Überprüfung  
+in der ersetzten ÖVE/ÖNORM E 8007 Tabelle 4 – Überprüfung von Betriebsmitteln, Prüfintervalle. 
+ 
+ 
+
+
+===== PAGE 3/3 =====
+OVE-Fachinformation TK MP04:2022-04 
+Seite 3 von 3 
+Literaturhinweise 
+ÖVE/ÖNORM E 8007, Starkstromanlagen in Krankenhäusern und medizinisch genutzten Räumen außerhalb 
+von Krankenhäusern 
+OVE E 8101, Elektrische Niederspannungsanlagen (Teil 7- 710) 
+ÖVE/ÖNORM E 8701-1, Prüfung nach Instandsetzung und Änderung und Wiederkehrende Prüfung 
+elektrischer Geräte – Teil 1: Allgemeine Anforderungen 
+OVE EN 50699, Wiederholungsprüfung für elektrische Geräte 
+OVE EN 50678; Allgemeines Verfahren zur Überprüfung der Wirksamkeit der Schutzmaßnahmen von 
+Elektrogeräten nach der Reparatur 
+OVE EN 60335-1, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke – Teil 1: 
+Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 60601-1, Medizinische elektrische Geräte – Teil 1: Allgemeine Festlegungen für die 
+Sicherheit einschließlich der wesentlichen Leistungsmerkmale 
+ÖVE/ÖNORM EN 62353, Medizinische elektrische Geräte – Wiederholungsprüfungen und Prüfung nach 
+Instandsetzung von medizinischen elektrischen Geräten 
+ 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2022. Alle Rechte vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu  
+und ohne Auslassung oder Zusatz wiedergegeben werden. 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 

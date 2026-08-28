@@ -1,0 +1,2427 @@
+
+
+===== PAGE 401/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 33 
+Tabelle 536.1 – Einrichtungen und deren Funktionen (1 von 2) 
+Einrichtungen 
+Funktion 
+Produkt 
+OCPD b 
+SCPD b 
+RCD b 
+Norm 
+Überlast-
+schutz 
+Kurzschluss- 
+schutz 
+Fehlerstrom- 
+schutz 
+Nur  
+schalten 
+Leistungsschalter/ 
+Leitungsschutzschalter 
+X 
+ 
+ 
+OVE EN 60947-2 
+OVE EN 60898-1 
+OVE EN 60898-2 
+X 
+X 
+– 
+– 
+RCCB 
+Fehlerstrom-
+/Differenzstrom-
+Schutzschalter ohne 
+eingebauten 
+Überstromschutz 
+ 
+ 
+X 
+OVE EN 61008-1 
+OVE EN 62423 
+– 
+– 
+X 
+– 
+RCBO 
+Fehlerstrom-
+/Differenzstrom-
+Schutzschalter mit 
+eingebautem 
+Überstromschutz 
+X 
+ 
+X 
+OVE EN 61009-1 
+OVE EN 62423 
+X 
+X 
+X 
+– 
+CBR 
+Leistungsschalter mit 
+Fehlerstromschutz 
+X 
+ 
+X 
+OVE  
+EN 60947-2:2018, 
+Anhang B 
+X 
+X 
+X 
+– 
+MRCD 
+modulare Fehlerstrom-
+Schutzeinrichtung c 
+X 
+ 
+X 
+OVE  
+EN 60947-2:2018, 
+Anhang M 
+X 
+X 
+X 
+– 
+ICB 
+unverzögert auslösende 
+Leistungsschalter 
+ 
+X 
+ 
+OVE  
+EN 60947-2:2018, 
+Anhang O 
+– 
+X 
+– 
+– 
+Sicherung mit 
+Ausschaltvermögen über 
+den gesamten Bereich 
+(z. B. gG, gM) a 
+X 
+ 
+ 
+ÖVE/ÖNORM  
+EN 60269 Reihe 
+X 
+X 
+– 
+– 
+ÖVE/ÖNORM  
+E 8669 Reihe 
+Sicherung mit 
+Ausschaltvermögen über 
+einen partiellen Bereich 
+(z. B. aM) a 
+ 
+X 
+ 
+ÖVE/ÖNORM  
+EN 60269 Reihe 
+– 
+X 
+– 
+– 
+ÖVE/ÖNORM  
+E 8669 Reihe 
+CPS 
+Steuer- und Schutz-
+Schaltgeräte 
+X 
+ 
+ 
+OVE  
+EN IEC 60947-6-2 
+X 
+X 
+– 
+– 
+Schütz 
+ 
+ 
+ 
+OVE  
+EN IEC 60947-4-1 
+ÖVE/ÖNORM  
+EN 61095 
+– 
+– 
+– 
+X 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 402/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 34 
+Tabelle 536.1 – Einrichtungen und deren Funktionen (2 von 2) 
+Einrichtungen 
+Funktion 
+Produkt 
+OCPD b 
+SCPD b 
+RCD b 
+Norm 
+Überlast-
+schutz 
+Kurzschluss- 
+schutz 
+Fehlerstrom- 
+schutz 
+Nur  
+schalten 
+Überlastrelais  
+oder -auslöser 
+ 
+ 
+ 
+OVE EN  
+IEC 60947-4-1 
+X 
+– 
+– 
+– 
+Schalter, 
+Trennschalter 
+ 
+ 
+ 
+OVE EN IEC 60947-3 
+ÖVE/ÖNORM  
+EN 60669-2-2 
+ÖVE/ÖNORM 
+EN 60669-2-4 
+– 
+– 
+– 
+X 
+TSE 
+Netzumschalter 
+ 
+ 
+ 
+OVE EN  
+IEC 60947-6-1 
+– 
+– 
+– 
+X 
+a 
+Schalter-Sicherungs-Einheiten gemäß OVE EN IEC 60947-3 werden in dieser Zeile berücksichtigt. 
+b 
+Allgemeine Abkürzungen, die in diesem Dokument für Einrichtungen verwendet werden. 
+c 
+Wenn mit einem Leistungsschalter kombiniert. 
+ 
+536.3 
+Aspekte für die Koordination von Einrichtungen 
+536.3.1 
+Grundlagen einer richtigen Koordination 
+Grundlage der Koordination elektrischer Betriebsmittel ist die vorteilhafte Nutzung der richtigen Kombination 
+elektrischer Charakteristiken, um Folgendes nicht zu beeinträchtigen: 
+– 
+die Sicherheit einer Anlage (d. h. den Schutz vor einer Entzündung elektrischer Betriebsmittel durch einen 
+elektrischen Fehler); 
+ 
+Der kombinierte Kurzschlussschutz durch Überstrom-Schutzeinrichtungen (OCPD) und der Back-up-
+Schutz durch eine Überstrom-Schutzeinrichtung (OCPD) dienen der Anlagensicherheit. 
+– 
+die Ausfallsicherheit der Versorgung, falls erforderlich (d. h. Begrenzung der Ausschaltung auf den 
+fehlerbehafteten Stromkreis im Fall eines Überstroms oder eines Fehlers gegen Erde). 
+ 
+Selektivität zwischen elektrischen Einrichtungen dient der Versorgungssicherheit und vermeidet dadurch 
+Gefahren, die durch den Ausfall der Versorgung bestimmter Stromkreise entstehen können. 
+536.3.2 
+Kenngrößen 
+Die Kenngrößen für eine richtige Koordination zwischen elektrischen Einrichtungen können sein: 
+– 
+Bemessungsstrom; 
+– 
+unbeeinflusster Kurzschluss- oder Fehlerstrom; 
+– 
+Ansprechzeit/Ausschaltzeit von Einrichtungen; 
+– 
+Systemspannung/Nennspannung; 
+– 
+Durchlassenergie (I2t); 
+– 
+maximaler Spitzen-Durchlassstrom. 
+Zusätzlich müssen für Sicherungen die folgenden Kenngrößen berücksichtigt werden: 
+– 
+Schmelzintegral I2t und Schmelzzeit; 
+– 
+Abschaltintegral I2t und Ausschaltzeit. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 403/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 35 
+536.3.3 
+Koordinationstabelle 
+Tabelle 536.2 zeigt die unterschiedlichen Kombinationsmöglichkeiten von Einrichtungen und wie sich diese auf 
+die Sicherheit auswirken. 
+Tabelle 536.2 – Koordination von Einrichtungen in einer elektrischen Niederspannungsanlage 
+Bedingung 
+Unter-
+abschnitt 
+Koordinations-
+möglichkeiten 
+Betroffene Einrichtungen 
+Sicherheit  
+der Anlage 
+Ausfall-
+sicherheit der 
+Versorgung 
+Strom- oder 
+zeitbasierend 
+536.4.2.2 
+536.4.2.3 
+Selektivität 
+Zwischen Überstrom-
+Schutzeinrichtungen (OCPD) 
+ 
+X 
+536.4.2.4 
+Zwischen Fehlerstrom-
+Schutzeinrichtungen (RCD) 
+ 
+X 
+536.4.2.5 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD) 
+und Fehlerstrom-
+Schutzeinrichtung (RCD) 
+ 
+X 
+536.4.3.1 
+Kombinierter 
+Kurzschlussschutz  
+Überstrom-Schutzeinrichtungen 
+(OCPD) 
+X 
+ 
+536.4.3.2 
+Back-up-Schutz bei 
+einem Kurzschluss 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Schütz, Überlastrelais oder  
+-auslöser 
+X 
+ 
+536.4.3.3 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Schaltern, Netzumschalter 
+(TSE) oder Impulsrelais 
+X 
+ 
+536.4.3.4 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Fehlerstrom-Schutz 
+-schalter (RCCB) 
+X 
+ 
+536.4.4.1 
+Schutz bei Überlast 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Schütz oder 
+Kurzschlussschutz 
+-einrichtung (SCPD)  
+X  
+ 
+536.4.4.2 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Schaltern, Netzumschalter 
+(TSE) oder Impulsrelais 
+X  
+ 
+536.4.4.2 
+Zwischen Überstrom-
+Schutzeinrichtung (OCPD)  
+und Fehlerstrom-Schutzschalter 
+(RCCB) 
+X  
+ 
+Spannungs-
+basierend 
+536.4.5 
+Selektivität 
+Zwischen Überstrom-
+Schutzeinrichtungen (OCPD) mit 
+Unterspannungsauslöser  
+ 
+X 
+ 
+536.4 
+Anforderungen an die Koordination 
+536.4.1 
+Allgemeines 
+Für die Auswahl der in den folgenden Abschnitten behandelten elektrischen Einrichtungen muss die 
+wechselseitige Beeinflussung der Einrichtungen berücksichtigt werden, damit diese die Sicherheit der 
+elektrischen Anlage nicht beeinträchtigen.  
+Die Koordination von elektrischen Einrichtungen berücksichtigt Anforderungen im Fall des Auftretens von: 
+– 
+Kurzschluss; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 404/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 36 
+– 
+Überlast; 
+– 
+Fehlerströmen. 
+Aspekte für die Koordinierung elektrischer Einrichtungen sind: 
+– 
+Selektivität; 
+– 
+Kurzschlussschutz; 
+– 
+Überlastschutz. 
+Bei der Auswahl von elektrischen Einrichtungen müssen die von den Herstellern angegebenen Kenndaten zur 
+Koordinierung berücksichtigt werden. 
+536.4.2 
+Anforderungen für die Selektivität 
+536.4.2.1 
+Allgemeines 
+Die Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) wird in 536.4.2.2 für Überlastbedingungen 
+und in 536.4.2.3 für Kurzschlussbedingungen beschrieben. Die Selektivität zwischen Fehlerstrom-
+Schutzeinrichtungen (RCD) wird in 536.4.2.4, und die Selektivität zwischen Überstrom-Schutzeinrichtung 
+(OCPD) und Fehlerstrom-Schutzeinrichtung (RCD) ist in 536.4.2.5 beschrieben. 
+Für den Kurzschlussschutz kann in diesem Abschnitt der Begriff „Überstrom-Schutzeinrichtung (OCPD)“ durch 
+den Begriff „Kurzschluss-Schutzeinrichtung (SCPD)“ ersetzt werden. 
+ 
+ANMERKUNG AT 
+Hinweise zur Anwendung für Niederspannungssicherungen siehe auch OVE IEC TR 60269-5. 
+536.4.2.2 
+Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) unter Überlastbedingungen 
+536.4.2.2.1 
+Allgemeine Anforderungen 
+Wenn Selektivität, wie in Bild 536.1 dargestellt, gefordert ist, muss der Nachweis entweder erfolgen durch: 
+– 
+eine theoretische Beurteilung unter Berücksichtigung der relevanten Produktnorm und der 
+Herstellerangaben, oder  
+ 
+ANMERKUNG AT Diese Herstellerangaben enthalten z. B. Bemessungsstrom, unbeeinflusster Kurzschluss- oder 
+Fehlerstrom, Ansprechzeit von Einrichtungen, Systemspannung, Energie (Durchlasswerte von I2t), Spitzen-
+Durchlassstrom. 
+– 
+geeignete Software, wobei Informationen des Herstellers für diesen speziellen Zweck bereitgestellt 
+werden, oder 
+– 
+Prüfungen entsprechend der anzuwendenden Norm (zur Sicherstellung des korrekten Verhaltens und der 
+Reproduzierbarkeit), oder 
+– 
+Herstellerangaben zur Koordination. 
+Wird bei der Abschätzung des Verhaltens die Zeit-/Strom-Charakteristik für einen Selektivitätsnachweis 
+verwendet, sollten die für die Auslösecharakteristik angegebene Referenzumgebungstemperatur sowie die 
+Lastbedingung vor dem Überstrom berücksichtigt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 405/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 37 
+ 
+Bild 536.1 – Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) 
+536.4.2.2.2 
+Selektivität von Leistungsschaltern/Leitungsschutzschaltern untereinander oder 
+zwischen Leistungsschaltern/Leitungsschutzschaltern und Steuer- und Schutz-
+Schaltgerät (CPS) oder Überlastrelais oder -auslöser oder Motorstarter 
+Selektivität im Fall von Überlast (siehe Begriff 826-11-15) wird durch den Vergleich der Zeit-/Strom-Kennlinien 
+der betroffenen Einrichtungen nachgewiesen. Die maximale Ausschaltzeit der Einrichtung auf der Lastseite 
+muss für alle Überlaststromwerte kürzer sein als die Nicht-Auslösezeit des Leistungsschalters/ 
+Leitungsschutzschalters. Der Abstand der Kennlinien auf der Zeit- und Stromachse stellt eine selektive 
+Auslösung in diesem Bereich sicher. 
+536.4.2.2.3 
+Selektivität zwischen Sicherungen 
+Selektivität im Fall von Überlast wird durch den Vergleich der Zeit-/Strom-Kennlinien der betroffenen 
+Sicherungen nachgewiesen. Die maximale Gesamtausschaltzeit der Sicherung auf der Lastseite muss kürzer 
+sein als die minimale Schmelzzeit der Sicherung auf der Versorgungsseite. Sicherungen gemäß ÖVE/ÖNORM 
+EN 60269-1, die der gleichen Betriebsklasse (z. B. gG) angehören und einen Bemessungsstrom von 16 A und 
+höher haben, bieten volle Selektivität, wenn das Verhältnis der Bemessungsströme 1,6:1 oder höher ist. Der 
+Abstand der Kennlinien auf der Zeit- und Stromachse stellt eine selektive Auslösung in diesem Bereich sicher. 
+536.4.2.2.4 
+Selektivität zwischen Leistungsschalter/Leitungsschutzschalter (vorgeschaltet) und 
+Sicherung (nachgeschaltet) 
+Selektivität im Fall von Überlast wird durch den Vergleich der Zeit-/Strom-Kennlinien, gegebenenfalls unter 
+Berücksichtigung der Auslöseeinstellwerte (bei Leistungsschaltern), nachgewiesen. Die maximale 
+Gesamtausschaltzeit der Sicherung entsprechend der Produktnorm muss kürzer sein als die minimale 
+Auslösezeit des Leistungsschalters/Leitungsschutzschalters entsprechend den Herstellerangaben. Der 
+Abstand der Kennlinien auf der Zeit- und Stromachse stellt eine selektive Auslösung in diesem Bereich sicher. 
+536.4.2.2.5 
+Selektivität zwischen Sicherung (vorgeschaltet) und Leistungsschalter 
+/Leitungsschutzschalter (nachgeschaltet) 
+Selektivität im Fall von Überlast wird durch den Vergleich der Zeit-/Strom-Kennlinien, gegebenenfalls unter 
+Berücksichtigung der Auslöseeinstellwerte (bei Leistungsschaltern), nachgewiesen. Die maximale 
+Ausschaltzeit des Leistungsschalters/Leitungsschutzschalters entsprechend den Herstellerangaben muss 
+kürzer sein als die minimale Schmelzzeit der Sicherung entsprechend der Produktnorm. Der Abstand der 
+Kennlinien auf der Zeit- und Stromachse stellt eine selektive Auslösung in diesem Bereich sicher. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 406/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 38 
+536.4.2.3 
+Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) unter 
+Kurzschlussbedingungen 
+536.4.2.3.1 
+Allgemeine Anforderungen  
+Wenn Selektivität, wie in Bild 536.1 dargestellt, gefordert ist, muss der Nachweis erfolgen durch: 
+– 
+eine theoretische Beurteilung unter Berücksichtigung der relevanten Produktnorm und der 
+Herstellerangaben, oder 
+– 
+geeignete Software, wobei Informationen vom Hersteller speziell für diesen Zweck bereitgestellt werden, 
+oder 
+– 
+Prüfungen entsprechend der anzuwendenden Norm (zur Sicherstellung des korrekten Verhaltens und der 
+Reproduzierbarkeit), oder 
+– 
+Herstellerangaben zur Koordination. 
+Werden bei einer theoretischen Beurteilung die Durchlassenergie-Kennlinien (I2t) für einen Selektivitäts-
+nachweis verwendet, sollte die Spannung berücksichtigt werden, auf die sich die Kennlinien beziehen. 
+In den in 536.4.2.3.2 und 536.4.2.3.5 angegebenen Fällen wird eine Selektivität für Kurzschlussströme bis zu 
+einem bestimmten Wert, dem Selektivitäts-Grenzstrom, erreicht. Dieser Grenzstrom wird vom Hersteller 
+angegeben. In einer Anlage kann eine volle Selektivität oder Teilselektivität vorhanden sein. 
+Im Allgemeinen geben Hersteller Selektivitätstabellen zur Ermittlung der Kurzschlussselektivität an. 
+536.4.2.3.2 
+Selektivität zwischen Leistungsschaltern/Leitungsschutzschaltern 
+Im Allgemeinen sind die Unterlagen der Hersteller zu berücksichtigen. 
+Grundsätzlich ist Selektivität bis zu jenem Kurzschlussstrom sichergestellt, bei dem der Spitzen-
+Durchlassstrom des nachgeschalteten Leistungsschalters/Leitungsschutzschalters kleiner ist als der 
+Spitzenstrom, der dem kleinsten unverzögerten Auslösestrom des vorgeschalteten Leistungsschalters/ 
+Leitungsschutzschalters entspricht. Wenn der vorgeschaltete Leistungsschalter/Leitungsschutzschalter ein 
+bestimmtes selektives Verhalten hat, kann der Selektivitäts-Grenzstrom höher sein. 
+536.4.2.3.3 
+Selektivität zwischen Sicherungen 
+Selektivität im Fall von Kurzschluss wird durch den Vergleich der I2t-Werte nachgewiesen. Der maximale 
+Gesamtausschalt-I2t-Wert der Sicherung auf der Lastseite muss kleiner als der minimale Schmelz-I2t-Wert der 
+Sicherung auf der Versorgungsseite sein. Sicherungen gemäß ÖVE/ÖNORM EN 60269-1, die der gleichen 
+Betriebsklasse (z. B. gG) angehören und einen Bemessungsstrom von 16 A und höher haben, bieten volle 
+Selektivität, wenn das Verhältnis der Bemessungsströme 1,6:1 oder höher ist. 
+536.4.2.3.4 
+Selektivität zwischen Leistungsschalter/Leitungsschutzschalter (vorgeschaltet) und 
+Sicherung (nachgeschaltet) 
+Der Spitzen-Durchlassstrom der Sicherung muss niedriger sein als der kleinste unverzögerte Auslösestrom 
+des Leistungsschalters/Leitungsschutzschalters. Werte für den Spitzen-Durchlassstrom von Sicherungen 
+müssen den entsprechenden Normen oder den Unterlagen der Hersteller entnommen werden. Werden 
+Herstellerangaben verwendet, muss dies in der Dokumentation der Anlage festgehalten werden. 
+536.4.2.3.5 
+Selektivität zwischen Sicherung (vorgeschaltet) und Leistungsschalter/Leitungs-
+schutzschalter (nachgeschaltet) 
+Der minimale Schmelz-I2t-Wert der Sicherung muss für alle Kurzschlussströme bis zum maximalen zu 
+betrachtenden unbeeinflussten Kurzschlussstrom der Anlage höher sein als der maximale Durchlass-I2t-Wert 
+des Leistungsschalters/Leitungsschutzschalters. I2t-Werte von Sicherungen müssen den entsprechenden 
+Normen oder den Unterlagen der Hersteller entnommen werden. Werden Herstellerangaben verwendet, muss 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 407/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 39 
+dies in der Dokumentation der Anlage festgehalten werden. Der maximale Durchlass-I2t-Wert des 
+Leistungsschalters/Leitungsschutzschalters muss den Unterlagen der Hersteller entnommen werden. 
+536.4.2.4 
+Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) 
+536.4.2.4.1 
+Allgemeine Anforderungen 
+Wenn Selektivität, wie in Bild 536.1 dargestellt, gefordert ist, muss der Nachweis erfolgen durch: 
+– 
+eine theoretische Beurteilung unter Berücksichtigung der relevanten Produktnorm und der 
+Herstellerangaben, oder 
+– 
+geeignete Software, wobei Informationen vom Hersteller speziell für diesen Zweck bereitgestellt werden, 
+oder 
+– 
+Prüfungen entsprechend der anzuwendenden Norm (zur Sicherstellung des korrekten Verhaltens und der 
+Reproduzierbarkeit), oder 
+– 
+Herstellerangaben zur Koordination. 
+Im Allgemeinen stellen Hersteller Informationen zur Selektivität zwischen Fehlerstrom-Schutzeinrichtungen 
+(RCD) zur Verfügung. 
+536.4.2.4.001.AT Bei zwei in Serie geschalteten Fehlerstrom-Schutzeinrichtungen (RCD), z. B. für den 
+Fehlerschutz und den zusätzlichen Schutz (Zusatzschutz), ist dies sichergestellt, wenn: 
+– 
+eine zeitverzögerte Fehlerstrom-Schutzeinrichtung (RCD) vom Typ S einer unverzögerten Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+allgemeiner 
+Bauart 
+oder 
+einer 
+kurzzeitverzögerten 
+Fehlerstrom-
+Schutzeinrichtung (RCD) vom Typ G vorgeschaltet ist; 
+– 
+eine zeitverzögerte Fehlerstrom-Schutzeinrichtung (RCD) vom Typ M einer zeitverzögerten Fehlerstrom-
+Schutzeinrichtung (RCD) vom Typ S vorgeschaltet ist 
+und der Bemessungsfehlerstrom IΔn der vorgeschalteten Fehlerstrom-Schutzeinrichtung (RCD) mindestens 
+dreimal so groß ist wie der Bemessungsfehlerstrom IΔn der nachgeschalteten Fehlerstrom-Schutzeinrichtung 
+(RCD). 
+536.4.2.4.2 
+Selektivität bei Fehlerströmen 
+Selektivität bei Fehlerströmen ist, wie in Bild 536.2 dargestellt, unter den folgenden Bedingungen gegeben: 
+– 
+die vorgeschaltete Fehlerstrom-Schutzeinrichtung (RCD) ist selektiv (Typ S oder zeitverzögert mit 
+entsprechender Einstellung) und 
+– 
+das Verhältnis der Bemessungsfehlerströme der vorgeschalteten Fehlerstrom-Schutzeinrichtung (RCD) 
+zur nachgeschalteten Fehlerstrom-Schutzeinrichtung (RCD) beträgt mindestens 3:1. 
+Im Fall von Fehlerstrom-Schutzeinrichtungen (RCD) mit einstellbarem Bemessungsfehlerstrom und 
+einstellbarer Zeitverzögerung müssen Herstellerangaben zur Selektivität berücksichtigt werden. 
+ANMERKUNG 1  
+Fehlerstrom-Schutzeinrichtungen (RCD) vom Typ S nach OVE EN 61008-1, OVE EN 61009-1 
+oder OVE EN 60947-2 sind mit dem Symbol 
+ („S im Quadrat“) gekennzeichnet. 
+ANMERKUNG 2  
+Zeitverzögerte Fehlerstrom-Schutzeinrichtungen (RCD) sind nach OVE EN 60947-2:2020, 
+Anhang B oder Anhang M mit dem Symbol Δt, gefolgt von der Grenznichtansprechzeit in ms, gekennzeichnet. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 408/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 40 
+ 
+ANMERKUNG 3  
+RCD 1 ist Typ S oder zeitverzögert. 
+Bild 536.2 – Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) bei Fehlerströmen 
+536.4.2.5 
+Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD) und Fehlerstrom-
+Schutzeinrichtungen (RCD) 
+536.4.2.5.1 
+Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) und vorgeschalteter 
+Überstrom-Schutzeinrichtung (OCPD) 
+Im Fall eines Erdschlusses kann der Strom einen hohen Wert erreichen, der den Sofortauslösestrom der 
+vorgeschalteten Überstrom-Schutzeinrichtung (OCPD) übersteigt. Daher muss, wenn Selektivität zwischen 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+und 
+vorgeschalteter 
+Überstrom-Schutzeinrichtung (OCPD) 
+erforderlich ist, ein Fehlerstrom-Schutzschalter mit Überstromauslöser (RCBO) oder Leistungsschalter mit 
+integriertem Fehlerstromschutz (CBR) eingesetzt werden, wie in Bild 536.3 dargestellt, und die Selektivitäts-
+anforderungen entsprechend 536.4.2.2 müssen eingehalten werden. 
+ 
+Bild 536.3 – Selektivität zwischen vorgeschalteter Überstrom-Schutzeinrichtung (OCPD) und 
+Fehlerstrom-Schutzeinrichtung (RCD) durch den Einsatz von Fehlerstrom-Schutzschaltern mit 
+Überstromauslöser (RCBO) 
+Wenn Fehlerstrom-Schutzschalter ohne eingebauten Überstromschutz (RCCB) anstelle von Fehlerstrom-
+Schutzschalter mit eingebautem Überstromschutz (RCBO) wie in Bild 536.3 eingesetzt werden, kann die 
+Selektivität nicht garantiert werden. In diesem Fall kann Selektivität erreicht werden, wenn dem Fehlerstrom-
+Schutzschalter ohne eingebauten Überstromschutz (RCCB) Überstrom-Schutzeinrichtungen (OCPD), wie in 
+Bild 536.4 dargestellt, nachgeschaltet sind, vorausgesetzt die Anforderungen von 536.4.2.2 und 536.4.2.3 sind 
+eingehalten. Außerdem müssen die Verbindungen/Leitungen zwischen Fehlerstrom-Schutzschalter (RCCB) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 409/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 41 
+und nachgeschalteten Überstrom-Schutzeinrichtungen (OCPD) so ausgewählt und installiert werden, dass die 
+Gefahr von Erdschlüssen minimiert wird. 
+Um das Risiko von Erdschlüssen zwischen Fehlerstrom-Schutzschalter ohne eingebauten Überstromschutz 
+(RCCB) und nachgeschalteten Überstrom-Schutzeinrichtungen (OCPD) zu minimieren, kann spezielles 
+Verkabelungszubehör eingesetzt werden (z. B. spezielle Verschienungen). 
+ 
+Bild 536.4 – Selektivität zwischen vorgeschalteter Überstrom-Schutzeinrichtung (OCPD)  
+und Fehlerstrom-Schutzeinrichtung (RCD) beim Einsatz von Fehlerstrom-Schutzschaltern 
+536.4.2.5.2 
+Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) und nachgeschalteten 
+Überstrom-Schutzeinrichtungen (OCPD) 
+Im Fall eines Erdschlusses kann der Erdschlussstrom niedriger sein als der Sofortauslösestrom der 
+nachgeschalteten Überstrom-Schutzeinrichtung (OCPD). In diesem Fall löst die vorgeschaltete Fehlerstrom-
+Schutzeinrichtung (RCD) aus, und die Selektivität ist nicht sichergestellt. Wenn Selektivität zwischen einer 
+Fehlerstrom-Schutzeinrichtung (RCD) 
+und 
+nachgeschalteten 
+Überstrom-Schutzeinrichtungen 
+(OCPD) 
+erforderlich ist, müssen Fehlerstrom-Schutzschalter mit Überstromauslöser (RCBO) als Überstrom-
+Schutzeinrichtung (OCPD) eingesetzt werden, wie in Bild 536.5 dargestellt, und die Selektivitäts-
+anforderungen gemäß 536.4.2.4 müssen eingehalten werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 410/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 42 
+ 
+Bild 536.5 – Selektivität zwischen vorgeschaltetem Fehlerstrom-Schutzschalter (RCCB)  
+und Fehlerstrom-Schutzschaltern mit Überstromauslöser (RCBO) 
+536.4.3 
+Anforderungen an den Schutz bei Kurzschluss 
+536.4.3.1 
+Kombinierter Kurzschlussschutz mit Überstrom-Schutzeinrichtungen (OCPD) 
+ 
+In diesem Abschnitt kann der Begriff „Überstrom-Schutzeinrichtung (OCPD)“ durch den Begriff „Kurzschluss-
+Schutzeinrichtung (SCPD)“ ersetzt werden. 
+Der kombinierte Kurzschlussschutz erlaubt die Verwendung von Kurzschluss-Schutzeinrichtungen mit einem 
+kleineren Ausschaltvermögen als in Teil 4-43 grundsätzlich gefordert ist. Er ist nur für den Kurzschlussschutz 
+anwendbar. 
+ 
+Bild 536.6 – Typische Konfiguration für kombinierten Kurzschlussschutz mit  
+Überstrom-Schutzeinrichtungen (OCPD) 
+Gemäß 434.5.1 ist es zulässig, unter bestimmten Umständen eine Einrichtung mit einem Bemessungs-
+ausschaltvermögen, das niedriger ist als der unbeeinflusste Kurzschlussstrom am Einbauort, einzusetzen. Im 
+Fall einer Schaltung entsprechend Bild 536.6 muss die Überstrom-Schutzeinrichtung 1 (OCPD1) das für den 
+Einbauort notwendige Kurzschluss-Ausschaltvermögen aufweisen, und die Kombination der Überstrom-
+Schutzeinrichtungen 1 und 2 (OCPD1 + OCPD2) muss ein (kombiniertes) Kurzschlussausschaltvermögen für 
+Fehler hinter der Überstrom-Schutzeinrichtung 2 (OCPD2) aufweisen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 411/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 43 
+Bei der Auswahl von zwei Überstrom-Schutzeinrichtungen (OCPD) für den kombinierten Kurzschlussschutz 
+müssen die Anweisungen des Herstellers der nachgeschalteten Überstrom-Schutzeinrichtung (OCPD) 
+berücksichtigt werden. Diese Anweisungen müssen auf Prüfungen entsprechend den zutreffenden 
+Produktnormen (z. B. ÖVE/ÖNORM EN 60269 Reihe, OVE EN 60898-1, OVE EN 60947-2) beruhen. Wenn 
+keine Herstellerangaben verfügbar sind, darf der kombinierte Kurzschlussschutz von Überstrom-
+Schutzeinrichtungen (OCPD) nicht angewendet werden, und jede Überstrom-Schutzeinrichtung (OCPD) muss 
+das erforderliche Kurzschlussausschaltvermögen am Einbauort aufweisen. 
+Falls dies vom Hersteller beider Einrichtungen so angegeben ist, kann das (kombinierte) Kurzschluss-
+ausschaltvermögen der Kombination von Überstrom-Schutzeinrichtungen 1 und 2 (OCPD1 + OCPD2) höher 
+sein als das Ausschaltvermögen jeder einzelnen Überstrom-Schutzeinrichtung (OCPD). In diesem Fall muss 
+die Verbindung zwischen den beiden Überstrom-Schutzeinrichtungen kurzschluss- und erdschlusssicher 
+ausgeführt sein, und es dürfen keine Kurzschlussstrombeiträge über andere, zur Überstrom-
+Schutzeinrichtung 1 (OCPD1) parallel geschaltete, Einrichtungen möglich sein. 
+Die Kombination einer Überstrom-Schutzeinrichtung (OCPD) mit einer getrennten Strombegrenzungs-
+einrichtung zur Erhöhung des Kurzschluss-Ausschaltvermögens der Überstrom-Schutzeinrichtung (OCPD) 
+kann entsprechend den Anweisungen des Herstellers eingesetzt werden. 
+Der kombinierte Kurzschlussschutz kann auch für Motorschutzschalter (Motorstarter) mit Handbetätigung, die 
+gemeinsam mit einer Überstrom-Schutzeinrichtung (OCPD) eine entsprechende Kurzschlussfestigkeit 
+aufweisen, angewendet werden, wenn dies in den Herstellerunterlagen so angegeben ist. 
+536.4.3.2 
+Back-up-Schutz von Schützen oder Überlastrelais oder -auslösern 
+ 
+In diesem Abschnitt kann der Begriff „Überstrom-Schutzeinrichtung (OCPD)“ durch den Begriff „Kurzschluss-
+Schutzeinrichtung (SCPD)“ ersetzt werden. 
+Schütze gemäß OVE EN IEC 60947-4 Reihe oder ÖVE/ÖNORM EN 61095 werden zum Steuern von Lasten 
+eingesetzt (z. B. Elektromotoren, Heizwiderstände, Beleuchtungsstromkreise). Diese Einrichtungen bieten 
+keinen Schutz bei Kurzschluss und müssen daher durch eine vorgeschaltete Überstrom-Schutzeinrichtung 
+(OCPD) geschützt werden. 
+ANMERKUNG 1  
+Steuer- und Schutz-Schaltgeräte (CPS) verfügen über einen integrierten Kurzschlussschutz. 
+Bild 536.7 zeigt ein typisches Beispiel für die Koordination zwischen einem Schütz und einer Kurzschluss-
+schutzeinrichtung (SCPD). 
+ 
+Bild 536.7 – Koordination zwischen vorgeschalteter Überstrom-Schutzeinrichtung (OCPD)  
+und Schütz bei einem Kurzschluss 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 412/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 44 
+Gemäß 512.1.2 müssen Geräte für den Betriebsstrom im bestimmungsgemäßen Betrieb ausgelegt sein. 
+Außerdem müssen sie den Strom führen können, der im gestörten Betrieb fließen kann. 
+Im Falle eines Kurzschlusses kann das Durchlassverhalten (Durchlassenergie, Spitzenstrom) der 
+vorgeschalteten Schutzeinrichtung dazu führen, dass die Schützkontakte bei einem Stromwert, der über dem 
+Einschalt- und Ausschaltvermögen des Schützes liegt, öffnen. 
+Die Koordination zwischen einem Schütz und einer Überstrom-Schutzeinrichtung (OCPD) ist, je nach Zutreffen, 
+durch 
+Kurzschlussprüfungen 
+gemäß 
+OVE EN IEC 60947-4 Reihe 
+oder 
+ÖVE/ÖNORM EN 61095 
+nachzuweisen. 
+Für ergänzende Anforderungen zur Koordination von Schützen siehe 55N01.9.AT. 
+Bild 536.8 zeigt ein Beispiel für die Koordination zwischen einem Überlastrelais, einem Schütz und einer 
+Überstrom-Schutzeinrichtung (OCPD) (z. B. Sicherung/Leistungsschalter/Leitungsschutzschalter) im Fall 
+eines Überstroms. 
+ 
+Legende 
+a 
+Zeit-/Strom-Kennlinie eines Überlastrelais aus dem kalten Zustand 
+b 
+Thermische Zeit-/Strom-Grenzkennlinie des Schützes 
+tc 
+Auslösezeit des Überlastrelais bei Ico 
+Ico Schnittpunktstrom 
+Ir 
+Unbeeinflusster Strom „r“ 
+Iq 
+Bedingter Bemessungs-Kurzschlussstrom 
+Bild 536.8 – Koordination zwischen einem Schütz, einem Überlastrelais und  
+einer Überstrom-Schutzeinrichtung (OCPD) 
+Schütze müssen in Verbindung mit der vom Hersteller angegebenen Kurzschluss-Schutzeinrichtung 
+ausgewählt und installiert werden, um sicherzustellen, dass der bedingte Bemessungs-Kurzschlussstrom 
+größer oder gleich dem unbeeinflussten Kurzschlussstrom am Einbauort ist. 
+Der bedingte Bemessungs-Kurzschlussstrom kann nur durch Typprüfungen ermittelt werden, daher müssen 
+die Daten für die Auswahl der Überstrom-Schutzeinrichtung (OCPD) vom Hersteller des Schützes angefordert 
+werden, wobei der Bemessungsbetriebsstrom, die Bemessungsbetriebsspannung und zugehörige Gebrauchs-
+kategorie zu berücksichtigen sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 413/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 45 
+ANMERKUNG 2  
+Diese Informationen werden im Allgemeinen in Koordinationstabellen bereitgestellt, welche die 
+Kombination von Einrichtungen (Überstrom-Schutzeinrichtung (OCPD), Schütz oder Motorstarter) aufführen, die ein 
+sicheres Verhalten bei einem bestimmten bedingten Bemessungs-Kurzschlussstrom aufweisen. 
+Bei Motorstromkreisen kann der Schutz vor Überlastströmen durch ein getrenntes Überlastrelais, das mit dem 
+Schütz elektrisch verbunden ist, erreicht werden. In diesem Fall muss auch der Schutz des Überlastrelais 
+sichergestellt werden, da dieses durch die Durchlassenergie (I2t) der Überstrom-Schutzeinrichtung (OCPD) 
+beschädigt werden kann. Diese Informationen werden im Allgemeinen in Koordinationstabellen bereitgestellt. 
+536.4.3.3 
+Back-up-Schutz von Schaltern, Netzumschaltern (TSE) oder Fernschaltern 
+ 
+In diesem Abschnitt kann der Begriff „Überstrom-Schutzeinrichtung (OCPD)“ durch den Begriff „Kurzschluss-
+schutzeinrichtung (SCPD)“ ersetzt werden. 
+Schalter gemäß OVE EN IEC 60947-3 oder ÖVE/ÖNORM EN 60669-2-4, Netzumschalter (TSE) gemäß 
+OVE EN IEC 60947-6-1 und Fernschalter (Stromstoßschalter) gemäß ÖVE/ÖNORM EN 60669-2-2 werden 
+zum Schalten von Lasten oder Stromkreisen eingesetzt (z. B. in Verteilern, für Lichtstromkreise, für spezielle 
+Lasten). Diese Einrichtungen bieten keinen Kurzschlussschutz und müssen daher durch eine Überstrom-
+Schutzeinrichtung (OCPD) geschützt werden. 
+ANMERKUNG 
+Schalter-Sicherungs-Einheiten nach OVE EN IEC 60947-3 bestehen aus einem Schalter und einer oder 
+mehreren integrierten Sicherung(en) und haben ein vom Hersteller ausgewiesenes Kurzschluss-Ausschaltvermögen. Sie 
+benötigen deshalb keine vorgeschaltete Überstrom-Schutzeinrichtung (OCPD). 
+Im Falle eines Kurzschlusses auf der Lastseite eines Schalters fließt der Strom durch beide Einrichtungen 
+(Überstrom-Schutzeinrichtung (OCPD) und Schalter); daher müssen die Durchlassenergie und der von der 
+Überstrom-Schutzeinrichtung (OCPD) begrenzte Spitzenstrom auf die Kurzschlussfestigkeit des Schalters, des 
+Netzumschalters (TSE) oder des Fernschalters abgestimmt sein. 
+Bild 536.9 zeigt ein typisches Beispiel für die Koordination zwischen einem Schalter und einer Überstrom-
+Schutzeinrichtung (OCPD). 
+ 
+Bild 536.9 – Koordination zwischen Überstrom-Schutzeinrichtung (OCPD) und Schalter 
+Die Überstrom-Schutzeinrichtung (OCPD) kann dem Schalter, dem Netzumschalter (TSE) oder dem 
+Fernschalter auch nachgeschaltet sein, vorausgesetzt, dass die Verbindungen zwischen Schalter und 
+nachgeschalteter Überstrom-Schutzeinrichtung (OCPD) kurzschluss- und erdschlusssicher ausgeführt 
+werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 414/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 46 
+Schalter, Netzumschalter (TSE) und Fernschalter müssen in Verbindung mit der vom Hersteller angegebenen 
+Kurzschluss-Schutzeinrichtung ausgewählt und installiert werden, um sicherzustellen, dass ihr bedingter 
+Bemessungs-Kurzschlussstrom größer oder gleich dem unbeeinflussten Kurzschlussstrom am Einbauort ist. 
+Der bedingte Bemessungs-Kurzschlussstrom des Schalters, Netzumschalters (TSE) oder Fernschalters kann 
+nur durch Typprüfungen ermittelt werden, daher müssen die Daten für die Auswahl der Überstrom-
+Schutzeinrichtung (OCPD) vom Hersteller angefordert werden, wobei der Bemessungsbetriebsstrom und die 
+Bemessungsbetriebsspannung zu berücksichtigen sind. 
+Wenn bei Schaltern gemäß OVE EN IEC 60947-3 die Überstrom-Schutzeinrichtung (OCPD) nicht 
+entsprechend den Anweisungen des Schalterherstellers ausgewählt wird, ist das folgende Alternativverfahren 
+für die Koordination Überstrom-Schutzeinrichtung (OCPD) und Schalter anwendbar: 
+– 
+das Bemessungskurzschlusseinschaltvermögen des Schalters ist höher als der Maximalwert des 
+unbeeinflussten Kurzschlussstroms am Einbauort und 
+– 
+die Ausschaltzeit/Strom-Kennlinie der Überstrom-Schutzeinrichtung (OCPD) liegt innerhalb des vom 
+Hersteller angegebenen Icw des Schalters. 
+536.4.3.4 
+Back-up-Schutz von Fehlerstrom-Schutzschaltern (RCCB) 
+ 
+In diesem Abschnitt kann der Begriff „Überstrom-Schutzeinrichtung (OCPD)“ durch den Begriff „Kurzschluss-
+Schutzeinrichtung (SCPD)“ ersetzt werden. 
+Fehlerstrom-Schutzschalter (RCCB) gemäß OVE EN 61008-1 dienen dem Schutz von Personen gegen 
+elektrischen Schlag. Sie dürfen auch für den vorbeugenden Brandschutz eingesetzt werden. Diese 
+Einrichtungen haben eine begrenzte Kurzschlussfestigkeit und müssen daher durch eine vorgeschaltete 
+Überstrom-Schutzeinrichtung (OCPD) geschützt werden. 
+Im Falle eines Kurzschlusses auf der Lastseite des Fehlerstrom-Schutzschalters (RCCB) fließt der Strom durch 
+beide Einrichtungen (Überstrom-Schutzeinrichtung (OCPD) und Fehlerstrom-Schutzschalter (RCCB)); daher 
+müssen die Durchlassenergie und der von der Überstrom-Schutzeinrichtung (OCPD) begrenzte Spitzenstrom 
+auf die Kurzschlussfestigkeit des Fehlerstrom-Schutzschalters (RCCB) abgestimmt sein. 
+Bild 536.10 zeigt ein typisches Beispiel für die Koordination zwischen einem Fehlerstrom-Schutzschalter 
+(RCCB) und einer Kurzschluss-Schutzeinrichtung (OCPD). 
+ 
+Bild 536.10 – Koordination zwischen Überstrom-Schutzeinrichtung (OCPD)  
+und Fehlerstrom-Schutzschalter (RCCB) 
+Fehlerstrom-Schutzschalter (RCCB) müssen in Verbindung mit der vom Hersteller angegebenen Überstrom-
+Schutzeinrichtung (OCPD) ausgewählt und installiert werden, um sicherzustellen, dass ihr bedingter 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 415/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 47 
+Bemessungs-Kurzschlussstrom (Inc) größer oder gleich dem unbeeinflussten Kurzschlussstrom am Einbauort 
+ist. 
+Der bedingte Bemessungs-Kurzschlussstrom (Inc) des Fehlerstrom-Schutzschalters (RCCB) mit der 
+Überstrom-Schutzeinrichtung (OCPD) in Abhängigkeit vom entsprechenden Bemessungsstrom und der 
+entsprechenden Bemessungsspannung wird vom Hersteller auf Basis von Prüfungen gemäß OVE  
+EN 61008-1 angegeben. 
+Die Überstrom-Schutzeinrichtung (OCPD) kann dem Fehlerstrom-Schutzschalter (RCCB) auch nachgeschaltet 
+sein, vorausgesetzt, dass 
+die 
+Verbindungen zwischen Fehlerstrom-Schutzschalter (RCCB) 
+und 
+nachgeschalteter Überstrom-Schutzeinrichtung (OCPD) kurzschluss- und erdschlusssicher ausgeführt 
+werden. 
+536.4.4 
+Anforderungen an den Schutz bei Überlast 
+536.4.4.1 
+Überlastschutz von Schützen oder Kurzschluss-Schutzeinrichtungen (SCPD) 
+Schütze gemäß OVE EN IEC 60947-4-1 oder ÖVE/ÖNORM EN 61095 und Kurzschluss-Schutzeinrichtungen 
+(SCPD) ohne integrierten Überlastschutz, wie beispielsweise unverzögert auslösende Leistungsschalter (ICB) 
+gemäß OVE EN 60947-2, müssen durch eine Überlast-Schutzeinrichtung geschützt werden. 
+Gemäß 433.1 werden Einrichtungen für den Überlastschutz ausgewählt, um den Schutz von Kabeln und 
+Leitungen sicherzustellen. Um den Überlastschutz von Schützen oder Kurzschluss-Schutzeinrichtungen 
+(SCPD) sicherzustellen, muss der Bemessungsstrom der Überstrom-Schutzeinrichtung (OCPD) entsprechend 
+den Herstellerangaben ausgewählt werden. 
+ANMERKUNG 
+In jenen Fällen, in denen nach 433.3 Einrichtungen zum Schutz bei Überlast nicht erforderlich sind, treffen 
+die Anforderungen an den Schutz bei Überlast nicht zu. 
+536.4.4.2 
+Überlastschutz von Fehlerstrom-Schutzschaltern (RCCB), Schaltern, Netzumschaltern 
+(TSE) oder Fernschaltern 
+Fehlerstrom-Schutzschalter (RCCB) gemäß OVE EN 61008-1 dienen dem Schutz von Personen gegen 
+elektrischen Schlag. Schalter gemäß OVE EN IEC 60947-3 oder ÖVE/ÖNORM EN 60669-2-4, Fernschalter 
+(Stromstoßschalter) gemäß ÖVE/ÖNORM EN 60669-2-2, und Netzumschalter (TSE) gemäß OVE EN 
+IEC 60947-6-1 werden zum Schalten von Lasten oder Stromkreisen eingesetzt. Diese Einrichtungen bieten 
+keinen Überlastschutz und müssen daher durch eine Überstrom-Schutzeinrichtung (OCPD) geschützt werden. 
+Gemäß 433.1 werden Einrichtungen für den Überlastschutz ausgewählt, um den Schutz von Kabeln und 
+Leitungen sicherzustellen. Um den Überlastschutz von Fehlerstrom-Schutzschaltern (RCCB), Schaltern, 
+Fernschaltern oder Netzumschaltern (TSE) sicherzustellen, muss der Bemessungsstrom der Überstrom-
+Schutzeinrichtung (OCPD) entsprechend den Herstellerangaben ausgewählt werden. Im Allgemeinen wird die 
+Überstrom-Schutzeinrichtung (OCPD) diesen Betriebsmitteln vorgeschaltet. 
+Für ergänzende Anforderungen zum Überlastschutz von Schaltern (z. B. Lichtschalter gemäß OVE  
+EN 60669-1, Lastschalter gemäß OVE EN IEC 60947-3) siehe 55N01.6.AT. 
+Der 
+Bemessungsstrom 
+von 
+Fehlerstrom-Schutzschaltern 
+(RCCB), 
+Schaltern, 
+Fernschaltern 
+oder 
+Netzumschaltern (TSE) darf auch auf dem Gleichzeitigkeitsfaktor der nachgeschalteten Stromkreise basieren 
+(siehe 433.1 und 311), und der Bemessungsstrom der Überstrom-Schutzeinrichtung (OCPD) muss 
+entsprechend den Herstellerangaben ausgewählt werden. 
+ANMERKUNG 
+Wird ein Fehlerstrom-Schutzschalter mit eingebautem Überstromschutz (RCBO) anstelle eines 
+Fehlerstrom-Schutzschalters ohne eingebauten Überstromschutz (RCCB) eingesetzt, ist keine weitere Betrachtung des 
+Überlastschutzes für den Fehlerstrom-Schutzschalter mit eingebautem Überstromschutz (RCBO) erforderlich. 
+In jenen Fällen, in denen gemäß 433.3 Einrichtungen zum Schutz bei Überlast nicht erforderlich sind, treffen 
+die Anforderungen an den Schutz bei Überlast nicht zu. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 416/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 48 
+536.4.4.2.001.AT  
+Fehlt in den Herstellerangaben eines Fehlerstrom-Schutzschalters (RCCB) die Angabe 
+des höchstzulässigen Bemessungsstroms der Überlast-Schutzeinrichtung, dann gilt der Bemessungsstrom der 
+Fehlerstrom-Schutzeinrichtung als deren dauernd zulässiger Überlaststrom. Es ist durch geeignete Überlast-
+Schutzeinrichtungen sicherzustellen, dass der Bemessungsstrom der Fehlerstrom-Schutzeinrichtung (RCD) 
+größer/gleich dem großen Prüfstrom der Überstrom-Schutzeinrichtung (OCPD) ist. 
+ANMERKUNG AT 
+Der große Prüfstrom ist für gG Sicherungen nach ÖVE/ÖNORM EN 60269-1 gleich dem  
+1,6-Fachen Nennstrom, entspricht für Leitungsschutzschalter nach OVE EN 60898-1 dem festgelegten Auslösestrom It und 
+damit dem 1,45-Fachen Nennstrom und entspricht für Leistungsschalter dem Auslösestrom nach Herstellerangabe. 
+536.4.5 
+Anforderungen zur Selektivität zwischen Überstrom-Schutzeinrichtungen (OCPD)  
+mit Unterspannungsauslösung 
+Im Fall eines Fehlers kann ein hoher Kurzschluss- oder Erdschlussstrom einen Spannungseinbruch innerhalb 
+der Anlage verursachen. Spannungseinbrüche in der Anlage können auch aus anderen Gründen auftreten 
+(z. B. durch das Aus- und Wiedereinschalten von Hochspannungsschaltgeräten (Netzschalthandlungen)). 
+Wenn ein Unterspannungsauslöser in der Überstrom-Schutzeinrichtung (OCPD) auf der Versorgungsseite 
+oder an anderer Stelle in der Anlage installiert ist, darf das Ansprechen des Unterspannungsauslösers die 
+Selektivität zwischen in Reihe geschalteten Überstrom-Schutzeinrichtungen (OCPD) und/oder Fehlerstrom-
+Schutzeinrichtungen (RCD) nicht beeinträchtigen (siehe dazu Bild 536.11). 
+ 
+Bild 536.11 – Selektivität bei Überstrom-Schutzeinrichtung (OCPD) und Unterspannungsauslöser 
+Um Selektivität sicherzustellen, muss die Auslösung von Unterspannungsauslösern entsprechend der 
+maximalen Ausschaltzeit bei Kurz- oder Erdschlüssen zeitverzögert stattfinden. In allen Fällen müssen die 
+Anweisungen des Herstellers befolgt werden, um die Sicherheit der elektrischen Anlage nicht zu 
+beeinträchtigen. 
+536.4.6 
+Niederspannungs-Schaltgerätekombinationen gemäß OVE EN 61439 Reihe 
+Die Merkmale von Schaltgerätekombinationen gemäß der Normenreihe OVE EN 61439 müssen an die 
+Bemessungswerte der anzuschließenden Stromkreise und die Installationsverhältnisse angepasst sein. Die 
+Merkmale der Schaltgerätekombination müssen vom Hersteller ausgewiesen sein, wobei die in 536.4.2 bis 
+536.4.5 spezifizierten Kriterien zu berücksichtigen sind. 
+536.5 
+Dokumentation und Nachweise 
+Die erforderlichen Angaben für die Koordination von Betriebsmitteln entsprechend den vorigen Abschnitten 
+sind den Datenblättern und technischen Unterlagen der Hersteller (z. B. Kataloge, Installationsanleitungen, 
+Projektierungsunterlagen und -software) zu entnehmen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 417/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 49 
+Aus Sicherheitsgründen sind nur Kombinationen von Betriebsmitteln zulässig, die innerhalb der Angaben oder 
+Bemessungswerte der Hersteller betrieben werden. 
+Die Dokumentation zur Auswahl und Koordination der Betriebsmittel ist in die Anlagendokumentation 
+aufzunehmen. 
+537 Geräte zum Trennen und Schalten 
+ 
+537.1 
+Allgemeines 
+537.1.1 Jedes Gerät zum Trennen und Schalten gemäß den Abschnitten 462 bis 465 muss den zutreffenden 
+Anforderungen dieses Abschnitts entsprechen. 
+Zusätzlich sind die allgemeinen Anforderungen gemäß 530.4 anzuwenden. 
+Unter bestimmten Voraussetzungen können für kombinierte Funktionen zusätzliche Festlegungen notwendig 
+sein. 
+ANMERKUNG 1  
+Tabelle 53.E.1 fasst die von den Geräten zum Trennen und Schalten bereitgestellten Funktionen 
+mit dem Hinweis auf die zutreffende Produktnorm zusammen. 
+ANMERKUNG 2  
+Für einige Anwendungen, wie zum Beispiel zur Steuerung von Motoren, ist bei der Auswahl der 
+Schaltgeräte der Einschaltstrom zu berücksichtigen. 
+537.1.2 Wenn eine elektrische Anlage, ein elektrisches Betriebsmittel oder eine Umhüllung aktive Teile 
+enthält, die mit mehr als einer Versorgung verbunden sind, muss entweder 
+– 
+ein Warnhinweis dauerhaft und so angebracht werden, dass jede Person auf die Notwendigkeit der 
+Trennung dieser Teile von den verschiedenen Versorgungen hingewiesen wird, bevor sie Zugang zu den 
+aktiven Teilen erlangt, oder 
+– 
+eine Verriegelungsvorrichtung bestehen, die die Trennung aller betreffenden Stromkreise sicherstellt. 
+ANMERKUNG AT 
+Diese Anforderung betrifft z. B. elektrische Anlagen mit zusätzlichen Einspeisungen aus 
+alternativen Energiequellen (z. B. Photovoltaik, Energiespeicher) oder aus Notstromversorgungen. 
+537.1.3 Stecker und Steckdosen, Steckvorrichtungen und Einrichtungen für den Anschluss von Leuchten 
+gemäß Anhang 53.E können als Trenn- und Schalteinrichtung benutzt werden. 
+Die Trenn- und Schaltfunktion wird je nach Zutreffen durch Abstecken des Steckers von der Steckdose oder 
+des Steckverbinders vom Gerätestecker ausgeführt. 
+537.2 
+Einrichtungen zum Trennen 
+537.2.1 Zum Trennen müssen Einrichtungen ausgewählt werden, für die entsprechend der zutreffenden 
+Produktnorm die Trennfunktion ausdrücklich ausgewiesen wird. 
+Geräte mit Trennfunktion müssen gemäß Anhang 53.E ausgewählt werden. 
+Für ergänzende Anforderungen siehe 55N01.8.AT. 
+537.2.2 Halbleiterbauelemente dürfen nicht zum Trennen eingesetzt werden. 
+537.2.3 Geräte, die zum Trennen geeignet sind, müssen auf Basis der Anforderungen entsprechend den an 
+ihrem Einbauort anzuwendenden Überspannungskategorien ausgewählt werden. 
+Nur Geräte, die für Überspannungskategorie III oder IV klassifiziert sind, dürfen zum Trennen verwendet 
+werden, ausgenommen Stecker von Steckvorrichtungen, die in Tabelle 53.E.1 als zum Trennen geeignet 
+angeführt sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 418/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 50 
+ANMERKUNG 
+Beispiele für Überspannungskategorien für Geräte sind in Abschnitt 443 wiedergegeben. 
+Geräte zum Trennen müssen 537.2.4 bis 537.2.8 entsprechen. 
+537.2.4 Geräte zum Trennen müssen so ausgeführt oder montiert werden, dass ein versehentliches oder 
+unbeabsichtigtes Schließen verhindert wird (siehe 462.3). 
+Dies kann durch den Einbau der Geräte in einen verschließbaren Raum, eine verschließbare Umhüllung, durch 
+ein Vorhängeschloss oder andere geeignete Maßnahmen erreicht werden. 
+537.2.5 Für Geräten zum Trennen, die kein Lastschaltvermögen aufweisen, müssen Maßnahmen gegen 
+zufälliges oder unbefugtes Öffnen vorgesehen werden. 
+Dies kann durch den Einbau der Geräte in einen verschließbaren Raum oder eine verschließbare Umhüllung, 
+oder durch ein Vorhängeschloss erreicht werden. Alternativ ist es möglich, das Gerät zum Trennen mit einem 
+Lastschalter zu verriegeln. 
+537.2.6 Als Mittel zum Trennen sollen vorzugsweise mehrpolige Schaltgeräte verwendet werden, die alle zu 
+schaltenden Leiter von der Versorgung trennen, jedoch sind unmittelbar nebeneinander angeordnete einpolige 
+Schaltgeräte nicht ausgeschlossen, wenn die Anforderungen von 461.2 eingehalten werden. 
+Einpolige Schutzeinrichtungen (z. B. Leitungsschutzschalter oder Sicherungen) dürfen nicht im Neutralleiter 
+angeordnet werden. 
+ANMERKUNG 1.AT 
+Bei Verwendung von Sicherungen oder Verteilern mit senkrecht angeordneten Montageschienen 
+können die einpoligen Schaltgeräte auch übereinander angeordnet werden. 
+ANMERKUNG 2.AT 
+Bei Verwendung von einpoligen Schaltgeräten ist auf eine eindeutige Zuordnung und Beschriftung 
+zu achten. 
+537.2.7 Alle Geräte, die zum Trennen verwendet werden, müssen eindeutig zugeordnet werden können, z. B. 
+durch ihre Anordnung oder dauerhafte Kennzeichnung, damit erkennbar ist, welche Anlage oder welcher 
+Stromkreis durch sie getrennt werden kann. 
+537.2.8 Wenn im Neutralleiter ein Trennelement (z. B. Trennklemme, Trennlasche) eingebaut ist, müssen 
+folgende Anforderungen erfüllt sein: 
+– 
+es darf nur mit Werkzeug zu öffnen sein; 
+– 
+es darf für elektrotechnische Laien nicht zugänglich sein. 
+537.3 
+Geräte zum Schalten 
+537.3.1 
+Geräte für betriebsmäßiges Schalten und Steuergeräte 
+537.3.1.1 
+Geräte zum betriebsmäßigen Schalten und Steuergeräte müssen in Übereinstimmung mit 
+Anhang 53.E ausgewählt werden. 
+537.3.1.2 
+Geräte zum betriebsmäßigen Schalten müssen für die härtesten zu erwartenden Belastungen 
+ausgelegt sein. Die Charakteristik der zu schaltenden Last ist zu beachten (z. B. Gebrauchskategorie). 
+537.3.1.3 
+Geräte zum betriebsmäßigen Schalten dürfen den Strom unterbrechen, ohne notwendiger-
+weise Kontakte zu öffnen. 
+ANMERKUNG 
+Halbleiter-Schaltgeräte und einige Steuereinrichtungen sind ein Beispiel für Geräte, die den Stromkreis 
+unterbrechen können, ohne Kontakte zu öffnen. 
+537.3.2 
+Geräte zum Ausschalten für mechanische Instandhaltung 
+537.3.2.1 
+Die Auswahl und der Einbau von Geräten zum Ausschalten für mechanische Instandhaltung 
+müssen in Übereinstimmung mit den folgenden Unterabschnitten und mit 537.2 erfolgen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 419/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 51 
+537.3.2.2 
+Geräte zum Ausschalten für die mechanische Instandhaltung müssen im versorgenden 
+Stromkreis eingesetzt werden. 
+Wenn zu diesem Zweck Schalter eingesetzt werden, müssen diese so ausgelegt sein, dass sie den vollen 
+Laststrom des betreffenden Anlagenteils ausschalten können. Sie müssen nicht unbedingt den Neutralleiter 
+schalten. 
+Das Ausschalten durch Unterbrechung eines Steuerstromkreises eines Antriebs ist nur zulässig, wenn 
+– 
+zusätzliche Schutzvorrichtungen, wie eine mechanische Verriegelung des Antriebs, oder 
+– 
+die Anforderungen der entsprechenden Produktnormen für die verwendeten Steuergeräte 
+eine dem direkten Unterbrechen des Hauptstromkreises gleichwertige Maßnahme darstellen. 
+537.3.2.3 
+Geräte zum Ausschalten für die mechanische Instandhaltung oder Steuerschalter für solche 
+Geräte müssen Handbetätigung erfordern. 
+Die geöffnete Stellung der Kontakte des Geräts zum Ausschalten für die mechanische Instandhaltung muss 
+sichtbar oder eindeutig und zuverlässig angezeigt werden. 
+ANMERKUNG AT 
+Die in diesem Unterabschnitt geforderte Anzeige kann durch die Verwendung der Symbole „O“ 
+und „I“ zur Anzeige der geöffneten bzw. der geschlossenen Position erfolgen. 
+537.3.2.4 
+Geräte zum Ausschalten für mechanische Instandhaltung müssen durch ihre Anordnung oder 
+dauerhafte Kennzeichnung so eindeutig zuordenbar sein, dass sie für ihre Verwendung leicht erkannt werden 
+können. 
+537.3.3 
+Geräte für die Not-Ausschaltung 
+ANMERKUNG 
+Not-Ausschaltung ist eine Handlung im Notfall, um die elektrische Energieversorgung zu einer 
+elektrischen Anlage oder einem Teil einer elektrischen Anlage zu unterbrechen, wenn das Risiko eines elektrischen 
+Schlages oder andere Risiken durch elektrische Einrichtungen bestehen. 
+ANMERKUNG AT 
+Wenn Geräte für die Not-Ausschaltung einem Betriebsmittel im Anwendungsbereich von 
+OVE EN 60204-1 dienen, sind die Anforderungen gemäß OVE EN 60204-1 anzuwenden. 
+537.3.3.1 
+Die Auswahl und der Einbau von Geräten für Not-Ausschaltung müssen gemäß den folgenden 
+Unterabschnitten, gemäß 537.2 und gemäß Anhang 53.E erfolgen. 
+537.3.3.2 
+Die Geräte für Not-Ausschaltung müssen den vollen Laststrom der zugeordneten Anlagenteile 
+unterbrechen können, wo zutreffend unter Berücksichtigung der Ströme von festgebremsten Motoren. 
+537.3.3.3 
+Geräte für Not-Ausschaltung dürfen bestehen aus: 
+– 
+einem Schaltgerät, das die Versorgung direkt unterbrechen kann, oder 
+– 
+einer Gerätekombination, bei der das Unterbrechen der Versorgung durch eine einzige Schalthandlung 
+ausgelöst wird. 
+Steckvorrichtungen dürfen nicht als Einrichtung für Not-Ausschaltung verwendet werden. 
+537.3.3.4 
+Geräte für Not-Ausschaltung müssen die Ausschaltung der Hauptstromkreise der 
+zugeordneten Anlagenteile sicherstellen. 
+Wenn ausführbar, müssen handbetätigte Schaltgeräte zur direkten Unterbrechung des Hauptstromkreises 
+eingesetzt werden. 
+Leistungsschalter/Leitungsschutzschalter, Schütze, Steuer- und Schutz-Schaltgeräte (CPS) oder RCD mit 
+Fernbetätigung müssen durch Spannungsunterbrechung oder durch gleichwertig ausfallsichere Techniken 
+öffnen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 420/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 52 
+537.3.3.5 
+Die Vorrichtungen zur Betätigung (Betätigungsgriffe, Drucktaster usw.) der Geräte zur Not-
+Ausschaltung müssen eindeutig gekennzeichnet sein, vorzugsweise durch eine Farbe. Wenn eine Farbe zur 
+Identifizierung verwendet wird, muss Rot mit einem kontrastreichen Hintergrund (z. B. Gelb) verwendet werden. 
+ANMERKUNG 
+Ein Text auf dem kontrastreichen Hintergrund ist nicht sinnvoll. 
+537.3.3.6 
+Betätigungseinrichtungen müssen von Gefahrenstellen leicht erreichbar sein und, falls 
+zweckdienlich, auch an zusätzlichen Stellen montiert sein, von denen aus die Gefahr erkannt werden kann. 
+Diese müssen so angebracht und dauerhaft gekennzeichnet sein, dass sie leicht erkennbar und für die 
+Verwendung leicht zugänglich sind. 
+537.3.3.7 
+Die Betätigungseinrichtung eines Geräts für Not-Ausschaltung muss in „AUS“-Position 
+einrasten oder verriegeln, außer wenn die Einrichtungen für Not-Ausschaltung und für Wiedereinschalten unter 
+Kontrolle derselben Person sind. 
+Das Rücksetzen oder Loslassen der Betätigungseinrichtung eines fernbedienten Geräts für Not-Ausschaltung 
+darf den zugeordneten Anlagenteil nicht selbsttätig wieder unter Spannung setzen. 
+Die Betätigung des Geräts für Not-Ausschaltung muss Vorrang vor allen anderen sicherheitsbezogenen 
+Funktionen haben und darf durch andere Handlungen in der Anlage nicht behindert werden. 
+537.4 
+Feuerwehrschalter 
+Der Unterabschnitt aus dem Harmonisierungsdokument kommt in Österreich nicht zu Anwendung. 
+538 Einrichtungen zur Überwachung 
+538.1 
+Isolationsüberwachungsgeräte (IMD) für IT-Systeme 
+538.1.1 
+Allgemeines 
+Isolationsüberwachungsgeräte 
+(IMD) 
+müssen 
+mit 
+den 
+Anforderungen 
+gemäß 
+ÖVE/ÖNORM  
+EN 61557-8 übereinstimmen. 
+Ein Isolationsüberwachungsgerät (IMD) dient dazu, den Isolationswiderstand eines IT-Systems ständig zu 
+überwachen und eine Fehlermeldung abzugeben, wenn der Isolationswiderstand RF unter den 
+Ansprechwert Ra fällt. 
+ANMERKUNG 1.AT 
+Ra ist jener Wert des Isolationswiderstands, bei dem das Gerät unter festgelegten Bedingungen 
+anspricht (siehe ÖVE/ÖNORM EN 61557-8). 
+ANMERKUNG 2.AT 
+RF ist der Isolationswiderstand des überwachten Systems einschließlich aller daran 
+angeschlossenen Betriebsmittel gegen Erde bzw. die Potentialausgleichsanlage (siehe ÖVE/ÖNORM EN 61557-8). 
+ANMERKUNG 
+Anwendungsbeispiele sind z. B. elektrische Anlagen als IT-System, mobile Generatoren, Einrichtungen 
+für Sicherheitszwecke. 
+Ein Isolationsüberwachungsgerät (IMD) muss in IT-Systemen in Übereinstimmung mit den Anforderungen 
+gemäß 411.6.3.1 installiert werden. 
+Isolationsüberwachungsgeräte (IMD) müssen so nahe wie möglich am Anfang des zu überwachenden Teils 
+der Anlage installiert werden. 
+Es müssen Anweisungen vorliegen, dass bei der Detektion eines Isolationsfehlers dieser lokalisiert und 
+beseitigt werden muss, um in kürzest möglicher Zeit normale Betriebsbedingungen wiederherzustellen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 421/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 53 
+Wird das IT-System aus Gründen der Aufrechterhaltung der Versorgung angewendet, so ist der erste 
+Isolationsfehler an einem geeigneten Ort hörbar und/oder sichtbar für elektrotechnisch unterwiesene Personen 
+(BA4) oder Elektrofachkräfte (BA5) zu melden. Maßnahmen zur Fehlerbehebung durch eine Elektrofachkraft 
+(BA5) oder elektrotechnisch unterwiesene Person (BA4) sind unverzüglich einzuleiten. 
+ANMERKUNG 3.AT 
+Diese Meldung kann über ein Gebäude-Management-System weitergeleitet werden. 
+Es wird empfohlen, ein Isolationsüberwachungsgerät (IMD) einzusetzen, die eine Unterbrechung der 
+Messanschlüsse zu den aktiven Leitern und zur Erde/Potentialausgleichsanlage meldet. 
+538.1.2 
+Installation von Isolationsüberwachungsgeräten (IMD) 
+Wenn ein Neutralleiter verteilt ist, kann das Isolationsüberwachungsgerät (IMD) nach Herstellerangabe mit dem 
+Neutralleiter verbunden werden. In diesem Fall darf zwischen Isolationsüberwachungsgerät (IMD) und 
+Neutralleiter keine Überstrom-Schutzeinrichtung vorhanden sein. 
+Wenn kein Neutralleiter verteilt ist, muss ein Isolationsüberwachungsgerät (IMD) entweder symmetrisch oder 
+einpolig zwischen einem Außenleiter und Erde/Potentialausgleichsanlage angeschlossen werden. Weist das 
+Isolationsüberwachungsgerät (IMD) nur eine „Außenleiterklemme“ auf, so darf in diesem Fall das 
+Isolationsüberwachungsgerät (IMD) entweder: 
+– 
+mit einem künstlichen Neutralpunkt, der über drei Impedanzen mit den Außenleitern verbunden ist, oder 
+– 
+mit einem der Außenleiter verbunden werden. 
+Wenn in einem mehrphasigen System das Isolationsüberwachungsgerät (IMD) zwischen einem Außenleiter 
+und Erde angeschlossen ist, muss das Isolationsüberwachungsgerät (IMD) zwischen Außenleiterklemme und 
+Erdungsklemme mindestens eine Spannungsfestigkeit entsprechend der Außenleiter-Außenleiter-Spannung 
+aufweisen. 
+ANMERKUNG 
+Diese Spannung steht zwischen den Klemmen an, wenn ein einzelner Isolationsfehler eines anderen 
+Außenleiters auftritt. 
+Für Gleichstromanlagen muss die Außenleiterklemme bzw. müssen die Außenleiterklemmen der 
+Isolationsüberwachungsgeräte (IMD) entweder direkt mit dem Mittelpunkt, falls vorhanden, oder mit einem bzw. 
+den Versorgungsleitern verbunden werden. 
+Der Versorgungsstromkreis der Isolationsüberwachungsgeräte (IMD) muss 
+– 
+entweder so nahe wie möglich am Speisepunkt des Systems und an dem gleichen Stromkreis der Anlage 
+angeschlossen sein, an dem auch eine Außenleiterklemme angeschlossen ist, oder 
+– 
+an einer Hilfsstromquelle angeschlossen sein. 
+Der Anschlusspunkt an der Anlage muss so gewählt werden, dass das Isolationsüberwachungsgerät (IMD) in 
+der Lage ist, die Isolation der Anlage unter allen Betriebsbedingungen zu überwachen. 
+Wenn die Anlage von mehreren parallel geschalteten Stromquellen versorgt wird, muss für jede Stromquelle 
+ein Isolationsüberwachungsgerät (IMD) installiert werden. Diese Isolationsüberwachungsgeräte (IMD) müssen 
+auf eine Weise verriegelt sein, dass nur ein Isolationsüberwachungsgerät (IMD) mit dem System verbunden 
+bleibt. 
+Isolationsüberwachungsgeräte (IMD) von weg-/abgeschalteten Stromquellen müssen die jeweils zugeordnete 
+Stromversorgung überwachen, damit das Wiederzuschalten dieser Stromversorgungen verhindert werden 
+kann, falls dort ein Isolationsfehler vorliegt. 
+Wenn mit Gleichstromanteilen im Fehlerstrom zu rechnen ist, müssen entsprechende Isolationsüberwachungs-
+geräte (IMD) gewählt werden, die in der Lage sind, den Isolationswiderstand des Systems bei Vorhandensein 
+solcher Gleichstromkomponenten (durch elektronische Geräte, z. B. Gleichrichter oder Umrichter) zu messen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 422/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 54 
+538.1.3 
+Einstellung der Isolationsüberwachungsgeräte (IMD) 
+Das Isolationsüberwachungsgerät (IMD) muss einstellbar ausgeführt sein und für die betreffende Anlage 
+geeignet eingestellt werden. 
+Im Normalbetrieb mit dem Maximum angeschlossener Lasten muss das Isolationsüberwachungsgerät (IMD) 
+auf einen Wert eingestellt werden, der niedriger als der normale Isolationswert des Systems ist. 
+ANMERKUNG 
+Ein Wert von 100 Ω/V (300 Ω/V zur Vorwarnung) der Netznennspannung ist ein typischer Einstellwert. 
+Die Einstellung eines IMD darf nur durch elektrotechnisch unterwiesene Personen (BA4) oder Elektrofachkräfte 
+(BA5) erfolgen.  
+Isolationsüberwachungsgeräte (IMD), zu denen auch andere Personen als elektrotechnisch unterwiesene 
+Personen (BA4) oder Elektrofachkräfte (BA5) Zugang haben, müssen so ausgewählt und/oder installiert 
+werden, dass eine Veränderung der Einstellung ohne Schlüssel, Werkzeug oder Passwort nicht möglich ist. 
+538.2 
+Einrichtungen zur Isolationsfehlersuche (IFLS) in IT-Systemen 
+Einrichtungen zur Isolationsfehlersuche müssen ÖVE/ÖNORM EN 61557-9 entsprechen. 
+Wenn die Anwendung des IT-Systems aus Gründen der Versorgungssicherheit ausgewählt worden ist, so wird 
+empfohlen, die Isolationsüberwachungsgeräte (IMD) mit solchen Einrichtungen zur Isolationsfehlersuche 
+(IFLS) zu kombinieren, die eine Fehlersuche unter Last ermöglichen. Deren Aufgabe ist es, den fehlerhaften 
+Stromkreis anzuzeigen, wenn die Isolationsüberwachungsgeräte (IMD) einen Isolationsfehler erkannt hat. 
+538.3 
+Isolationsüberwachungsgeräte (IMD) zur Überwachung ausgeschalteter Stromkreise 
+Die Isolationsüberwachung ausgeschalteter Stromkreise darf in TN-, TT- und IT-Systemen mit Isolations-
+überwachungsgeräte (IMD) durchgeführt werden, vorausgesetzt die Isolationsüberwachungseinrichtung (IMD) 
+wird automatisch deaktiviert, wenn die überwachten Stromkreise aktiviert werden. Eine Voraussetzung dafür 
+ist, dass alle aktiven Leiter der überwachten Stromkreise vom Netz getrennt werden. 
+ANMERKUNG 
+Das kann z. B. für Stromkreise mit Sicherheitseinrichtungen erforderlich sein, die üblicherweise 
+spannungslos sind, um sicherzustellen, dass die Sicherheitseinrichtung im Notfall keinen Isolationsfehler aufweist. 
+Eine Verschlechterung des Isolationszustands muss vor Ort durch eine optische oder akustische Meldung 
+angezeigt werden und kann wahlweise eine Fernmeldung bewirken. 
+Wenn Stromkreise im ausgeschalteten Zustand überwacht werden, weisen sie üblicherweise sehr hohe 
+Isolationswerte auf. Die Alarmschwelle sollte daher über 300 kΩ liegen. 
+538.4 
+Differenzstrom-Überwachungsgeräte (RCM) 
+538.4.1 
+Allgemeines 
+Differenzstrom-Überwachungsgeräte (RCM) müssen OVE EN IEC 62020-1 entsprechen. 
+Ein Differenzstrom-Überwachungsgerät (RCM) überwacht ständig Ableit- und Fehlerströme in der 
+nachgeschalteten Anlage bzw. in nachgeschalteten Stromkreisen und dient dazu, über die Höhe dieser Ströme 
+im überwachten Teil der Anlage zu informieren. 
+Differenzstrom-Überwachungsgeräte (RCM) haben nur Überwachungsfunktion und dürfen nicht für den Schutz 
+gegen elektrischen Schlag eingesetzt werden. 
+Wenn auf der Speiseseite eines Differenzstrom-Überwachungsgerätes (RCM) eine Fehlerstrom-
+Schutzeinrichtung (RCD) installiert ist, wird empfohlen, den Bemessungsfehlerstrom IΔn des Differenzstrom-
+Überwachungsgerätes (RCM) nicht höher als entsprechend dem halben Bemessungsfehlerstrom der 
+vorgeschalteten Fehlerstrom-Schutzeinrichtung (RCD) einzustellen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 423/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 55 
+Es wird empfohlen, Differenzstrom-Überwachungsgeräte (RCM) am Anfang der abgehenden Stromkreise zu 
+installieren. 
+Eine Überschreitung des eingestellten Bemessungsfehlerstroms muss durch eine optische oder akustische 
+Meldung angezeigt werden, die für die Dauer des Fehlers bestehen bleibt. 
+538.4.2 
+Differenzstrom-Überwachungsgeräte (RCM) in IT-Systemen 
+Wenn in IT-Systemen die Unterbrechung der Versorgung im Falle eines ersten Fehlers gegen Erde nicht 
+notwendig oder nicht zulässig ist, darf ein Differenzstrom-Überwachungsgeräte (RCM) installiert werden, um 
+das Auftreten eines ersten Fehlers von einem aktiven Teil zu Körpern oder zur Erde anzuzeigen (siehe auch 
+411.6.3.1). 
+ANMERKUNG AT 
+Auf die Möglichkeit, richtungsselektive Differenzstrom-Überwachungsgeräte einzusetzen, wird 
+hingewiesen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 424/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 56 
+Anhang 53.A 
+(informativ) 
+ 
+Gegenüberstellung der SPD-Typen und Prüfklassen  
+gemäß der Produktnorm OVE EN 61643-11 
+Tabelle 53.A.1 – Typ 1, Typ 2 und Typ 3 Überspannungs-Schutzeinrichtungen (SPD) 
+und die dazugehörigen Prüfklassen I, II und III 
+SPD-Typen 
+Prüfklasse 
+Referenzparameter 
+Typ 1 T1 
+Prüfklasse I 
+Iimp 
+Typ 2 T2 
+Prüfklasse II 
+In 
+Typ 3 T3 
+Prüfklasse III 
+Uoc 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 425/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 57 
+Anhang 53.B 
+(informativ) 
+ 
+Mögliche Fehlerströme in Systemen mit Halbleitern 
+In den Diagrammen von Tabelle 53.B.1 sind Stromkreisbeispiele mit Halbleiterschaltungen und möglichen, 
+daraus resultierenden Fehlerstromformen dargestellt. 
+Tabelle 53.B.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (1 von 3) 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslöse-
+charakteristik  
+der Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+1 
+Phasenanschnittssteuerung
+ 
+ 
+AC, A, F, B 
+2 
+Paketsteuerung  
+(Burst-Steuerung)
+ 
+ 
+AC, A, F, B 
+3 
+Einphasig 
+ 
+ 
+A, F, B 
+4 
+Zweipuls-Brückenschaltung 
+ 
+ 
+A, F, B 
+5 
+Zweipuls-Brückenschaltung, 
+halbgesteuert 
+ 
+ 
+A, F, B 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 426/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 58 
+Tabelle 53.B.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (2 von 3) 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslöse-
+charakteristik  
+der Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+6 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung 
+ 
+ 
+F, B 
+7 
+Einphasig mit Glättung 
+ 
+ 
+B 
+8 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung und PFC 
+ 
+ 
+B 
+9 
+Zweipuls-Brückenschaltung 
+zwischen Außenleitern 
+ 
+ 
+B 
+10 
+Frequenzinverter mit Zweipuls-
+Brückenschaltung zwischen 
+den Außenleitern 
+ 
+ 
+ 
+B 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 427/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 59 
+Tabelle 53.B.1 – Mögliche Fehlerströme in Systemen mit Halbleitern (3 von 3) 
+ 
+Schaltung mit Fehlerort 
+Form des Laststroms IL 
+Fehlerstrom IF gegen Erde 
+Auslöse-
+charakteristik  
+der Fehlerstrom-
+Schutzeinrichtung 
+(RCD) 
+11 
+Drehstrom-Sternschaltung 
+ 
+ 
+B 
+12 
+Sechspuls-Brückenschaltung 
+ 
+ 
+B 
+13 
+Frequenzinverter mit 
+Sechspuls-Brückenschaltung 
+ 
+ 
+ 
+B 
+ANMERKUNG 
+Diese Übersicht berücksichtigt nur Fehler auf der Lastseite der Halbleiterschaltung, d. h. in der 
+elektrischen Anlage. 
+Legende 
+IL 
+ 
+Laststrom 
+IF 
+ 
+Fehlerstrom 
+t 
+ 
+Zeit 
+PFC  
+Power Factor Correction 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 428/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 60 
+Anhang 53.C 
+(informativ) 
+ 
+Beispielhafte Darstellung von Standardinstallationen von 
+Überspannungs-Schutzeinrichtungen 
+Zusammenfassende beispielhafte Darstellung von Standardinstallationen und Angabe der wichtigsten 
+Auswahlparameter von Überspannungsschutzgeräten in 230/400 V-Netzen für den Schutz gegen indirekte 
+Blitzeinwirkungen. 
+Die Anordnung der Zähleinrichtung kann je nach Netzbetreiber unterschiedlich sein. 
+ANMERKUNG AT 
+Überstrom-Schutzeinrichtungen können als ein- oder mehrpolige Geräte ausgeführt sein. 
+53.C.1 
+Verbraucheranlage mit Nullung und PEN-Leiter – Anschlussart 1 
+ 
+Legende 
+1 
+Sicherung 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation zwischen 
+Außenleiter und PEN-Leiter/Neutralleiter, Dauerspannung Uc ≥ 253 V, Schutzpegel Up ≤ 2 500 V, 
+Nennableitstoßstrom In ≥ 5 kA 
+3 
+wahlweise Verbindung zur Haupterdungsschiene oder Schutzleiter(schiene), je nachdem, wo der 
+ankommende PEN-Leiter angeschlossen ist und welche Verbindung kürzer ist 
+4 
+kWh-Zähler, wahlweise 
+5 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) für den zusätzlichen Brandschutz, wahlweise 
+6 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise u. dgl. 
+7 
+Schutzleiter(schiene) im Verteiler 
+8 
+Haupterdungsschiene 
+Bild 53.C.001.AT – Beispiel für eine Verbraucheranlage mit Nullung und mit PEN-Leiter 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 429/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 61 
+53.C.2 
+Verbraucheranlage mit Nullung und getrennt geführtem Schutzleiter – 
+Anschlussart 2 
+ 
+Legende 
+1 
+Sicherung 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation zwischen 
+Außenleiter und Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TN-Systeme (Nullung) für die Installation zwischen 
+Neutralleiter und Schutzleiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom In ≥ 20 kA 
+4 
+wahlweise Verbindung zur Haupterdungsschiene oder Schutzleiter(schiene), je nachdem, welche 
+Verbindung kürzer ist 
+5 
+kWh-Zähler, wahlweise 
+6 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) für den zusätzlichen Brandschutz, wahlweise 
+7 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise u. dgl. 
+8 
+Schutzleiter(schiene) im Verteiler 
+9 
+Haupterdungsschiene 
+ 
+ANMERKUNG AT 
+Serienschaltung von SPD mit Index 3 + 4 – Schutzpegel Up ≤ 2 500 V. 
+Bild 53.C.002.AT – Beispiel für eine Verbraucheranlage mit Nullung  
+und mit getrennt geführtem Schutzleiter 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 430/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 62 
+53.C.3 
+Verbraucheranlage mit Fehlerstrom-Schutzschaltung – Anschlussart 2 
+ 
+Legende 
+1 
+Sicherung 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für die 
+Installation zwischen Außenleiter und Neutralleiter, Dauerspannung Uc ≥ 253 V, Nennableitstoßstrom 
+In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für TT-Systeme (Fehlerstrom-Schutzschaltung) für die 
+Installation zwischen Neutralleiter und Schutzleiter, Dauerspannung Uc ≥ 230 V, Nennableitstoßstrom 
+In ≥ 20 kA 
+4 
+wahlweise Verbindung zur Haupterdungsschiene oder Schutzleiter(schiene), je nachdem, welche 
+Verbindung kürzer ist 
+5 
+kWh-Zähler, wahlweise 
+6 
+selektive Fehlerstrom-Schutzeinrichtung (RCD) als Fehlerschutzvorkehrung 
+7 
+Fehlerstrom-Schutzeinrichtung (RCD) als zusätzliche Schutzvorkehrung für Steckdosenstromkreise u. dgl. 
+8 
+Schutzleiter(schiene) im Verteiler 
+9 
+Haupterdungsschiene 
+ 
+ANMERKUNG AT 
+Serienschaltung von SPD mit Index 2 + 3 – Schutzpegel Up ≤ 2 500 V. 
+Bild 53.C.003.AT – Beispiel für eine Verbraucheranlage  
+mit Fehlerstrom-Schutzschaltung 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 431/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 63 
+53.C.4 
+Verbraucheranlage mit Isolations-Überwachungssystem – Anschlussart 1 
+ 
+Legende 
+1 
+Sicherung 
+2 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für IT-Systeme für die Installation zwischen 
+Außenleiter 
+und 
+Schutzleiter, 
+Dauerspannung 
+Uc ≥ 400 V, 
+Schutzpegel 
+Up ≤ 2 500 V, 
+Nennableitstoßstrom In ≥ 5 kA 
+3 
+Überspannungs-Schutzeinrichtung (SPD), geeignet für IT-Systeme für die Installation zwischen 
+Neutralleiter 
+und 
+Schutzleiter, 
+Dauerspannung 
+Uc ≥ 
+230 V, 
+Schutzpegel 
+Up ≤ 2 500 V, 
+Nennableitstoßstrom In ≥ 5 kA 
+4 
+wahlweise Verbindung zur Haupterdungsschiene oder Schutzleiter(schiene), je nachdem, welche 
+Verbindung kürzer ist 
+5 
+Isolationsüberwachungsgerät (IMD) 
+6 
+Schutzleiter(schiene) im Verteiler 
+7 
+Haupterdungsschiene 
+Bild 53.C.004.AT – Beispielhafte Darstellung für eine Verbraucheranlage mit  
+Isolations-Überwachungssystem 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 432/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 64 
+Anhang 53.D 
+(informativ) 
+ 
+Anlagen mit Freileitungseinspeisung 
+Wenn Gebäude über eine Freileitungseinspeisung versorgt werden und wenn der direkte Blitzeinschlag in den 
+letzten Mast der Freileitung nahe dem Gebäude berücksichtigt wird, müssen die Überspannungs-
+Schutzeinrichtungen (SPD), die so nahe wie möglich am Einführungspunkt der Speiseleitung in die bauliche 
+Anlage installiert werden, gemäß Tabelle 53.D.1 ausgewählt werden. 
+Weitere Informationen siehe Normenreihe ÖVE/ÖNORM EN 62305. 
+Tabelle 53.D.1 – Auswahl des Blitzstoßstroms (Iimp) 
+Anschluss 
+Iimp 
+kA 
+Einphasen-System 
+Dreiphasen-System 
+Anschlussart 1 
+Anschlussart 2 
+Anschlussart 1 
+Anschlussart 2 
+L – N 
+ 
+5 
+ 
+5 
+L – PE 
+5 
+ 
+5 
+ 
+N – PE 
+5 
+10 
+5 
+20 
+ANMERKUNG 
+Diese Tabelle gilt für die Blitzschutzklassen (LPL) III und IV. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 433/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 65 
+Anhang 53.E 
+(normativ) 
+ 
+Geräte zum Trennen und Schalten 
+Tabelle 53.E.1 – Geräte zum Trennen und Schalten (1 von 2) 
+Gerät 
+Norm 
+Geeignet für 
+Trennen 
+Betriebsmäßiges 
+Schalten und Steuern 
+Not- 
+Ausschaltung 
+Lasttrennschalter 
+OVE EN IEC 60947-3 a 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 62626-1 a 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 60669-2-4 
+Ja 
+Ja 
+Ja 
+ÖVE/ÖNORM  
+EN 60669-2-6 
+Ja 
+Nein 
+Ja 
+Trennschalter 
+ÖVE/ÖNORM  
+EN 60669-2-4 b 
+OVE EN IEC 60947-3 b 
+Ja 
+ 
+Ja 
+Nein 
+ 
+Nein 
+Nein 
+ 
+Nein 
+Schalter 
+OVE EN 60669-1 
+Nein 
+Ja 
+Nein 
+ 
+OVE EN IEC 60669-2-1 
+Nein 
+Ja 
+Nein 
+ 
+ÖVE/ÖNORM  
+EN 60669-2-2 
+Nein 
+Ja 
+Nein 
+ 
+ÖVE/ÖNORM  
+EN 60669-2-3 
+Nein 
+Ja 
+Nein 
+ 
+OVE EN IEC 60947-3 c 
+Nein 
+Ja 
+Nein 
+ 
+OVE EN 60947-5-1 
+Nein 
+Ja 
+Nein 
+Schütze 
+OVE EN IEC 60947-4-1 
+ÖVE/ÖNORM EN 61095 
+Ja b 
+Ja 
+Ja 
+Relais 
+OVE EN 61810 Reihe 
+Nein 
+Ja 
+Nein 
+Motorstarter 
+OVE EN IEC 60947-4-1 
+Ja b 
+Ja 
+Ja 
+OVE EN IEC 60947-4-2 
+Nein 
+Ja 
+Nein 
+ÖVE/ÖNORM  
+EN 60947-4-3 
+Nein 
+Ja 
+Nein 
+Leistungsschalter/ 
+Leitungsschutzschalter 
+OVE EN 60898-1 
+Ja 
+Ja d 
+Ja 
+OVE EN 60898-2 
+Ja 
+Ja d 
+Ja 
+OVE EN 60947-2 
+Ja b 
+Ja d 
+Ja 
+Fehlerstrom-Schutzschalter 
+OVE EN 60947-2 
+Ja b 
+Ja d 
+Ja 
+OVE EN 61008-1 
+Ja 
+Ja d 
+Ja 
+OVE EN 61009-1 
+Ja 
+Ja d 
+Ja 
+OVE EN 62423 
+Ja 
+Ja d 
+Ja 
+Fehlerlichtbogen-
+Schutzeinrichtungen (AFDD) 
+ÖVE/ÖNORM EN 62606 
+Ja 
+Nein 
+Ja 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 434/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 66 
+Tabelle 53.E.1 – Geräte zum Trennen und Schalten (2 von 2) 
+Gerät 
+Norm 
+Geeignet für 
+Trennen 
+Betriebsmäßiges 
+Schalten und Steuern 
+Not- 
+Ausschaltung 
+Stecker und Steckdosen 
+OVE EN IEC  
+EN 60309 Reihe 
+Ja 
+Ja e 
+Nein 
+OVE E 8684-1 
+Ja 
+Ja e 
+Nein 
+IEC 60906 Series 
+Ja 
+Ja e 
+Nein 
+ÖVE-IG/EN 50075 
+Ja 
+Ja e 
+Nein 
+Vorrichtungen für den  
+Anschluss von Leuchten 
+OVE EN 61995 Reihe 
+Ja f 
+Nein 
+Nein 
+Netzumschalter 
+OVE EN IEC 60947-6-1 
+Ja b 
+Ja 
+Ja 
+Steuer- und Schutz- 
+Schaltgeräte (CPS) 
+OVE EN IEC 60947-6-2 
+Ja b 
+Ja 
+Ja 
+Sicherungen 
+ÖVE/ÖNORM  
+EN 60269 Reihe 
+Ja g 
+Nein 
+Nein 
+ÖVE/ÖNORM  
+E 8669 Reihe 
+Ja g 
+Nein 
+Nein 
+Schalter-Sicherungs-Einheiten 
+OVE EN IEC 60947-3 
+Ja b 
+Ja a 
+Ja a 
+Reihenklemmen für Kupferleiter 
+ÖVE/ÖNORM  
+EN 60947-7-1 
+Ja 
+Nein 
+Nein 
+Steckverbinder h 
+ÖVE/ÖNORM EN 61984 
+Ja i 
+Nein 
+Nein 
+Ja 
+ 
+Funktion bereitgestellt. 
+Nein  
+Funktion nicht bereitgestellt. 
+a 
+Wenn mit dem Symbol 
+ (siehe IEC 60617 DB-S00290) gekennzeichnet oder in Kombination mit anderen Symbolen 
+gemäß OVE EN IEC 60947-3 oder ÖVE/ÖNORM EN 62626-1. 
+b 
+Funktion ist nur dann bereitgestellt, wenn das Gerät zum Trennen geeignet und mit dem Symbol für Trenneigenschaften 
+gekennzeichnet ist (siehe IEC 60617 DB-S00288 
+). 
+c 
+Wenn mit dem Symbol 
+ (siehe IEC 60617 DB-S00250) gekennzeichnet oder in Kombination mit anderen Symbolen. 
+d 
+Das Gerät wird für häufiges betriebsmäßiges Schalten nicht empfohlen. 
+e 
+Nur AC-Stecker und -Steckdosen mit einem Bemessungsstrom von höchstens 16 A können zum betriebsmäßigen Schalten 
+verwendet werden. 
+f 
+Gerät ist zum lastlosen Trennen geeignet. 
+g 
+Wenn vom Hersteller angegeben. 
+h 
+Verbindungs- 
+oder 
+Verdrahtungsklemmen 
+können 
+entsprechend 
+den 
+Herstellerangaben/Konstruktionsangaben 
+Trenneigenschaften bereitstellen. 
+i 
+Nur Steckverbinder mit Ausschaltvermögen (CBC) sind zum Zusammenstecken und zum Ausstecken unter Spannung oder 
+Last konstruiert, siehe ÖVE/ÖNORM EN 61984:2010, 3.8. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 435/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 67 
+Anhang 53.F 
+(informativ) 
+ 
+Feuerwehrschalter 
+Dieser informative Anhang aus dem Harmonisierungsdokument kommt in Österreich nicht zu Anwendung. 
+ 
+ 
+Anhang 53.G 
+(informativ) 
+ 
+Zusätzliche Hinweise zur Anwendung von Überspannungs-
+Schutzeinrichtungen (SPD) in DC-Systemen 
+53.G.1 
+Einleitung 
+Da in DC-Systemen eine Vielzahl von Spannungsebenen angewendet werden, können andere System-
+parameter je nach Anwendung verwendeter Betriebsmittel und Komponenten in einem weiten Bereich 
+variieren. 
+Aufgrund der unterschiedlichen Kennwerte solcher DC-Systeme sollten nur besonders für den Einsatz in  
+DC-Systemen gekennzeichnete Überspannungs-Schutzeinrichtungen (SPD) verwendet werden. Der 
+Hersteller der Überspannungs-Schutzeinrichtungen (SPD) sollte die entsprechenden Informationen zur 
+Verfügung stellen. 
+Abschnitt 442 ist nur für AC-Systeme anwendbar. Bei DC-Systemen, die galvanisch an ein AC-System 
+angebunden sind, ist zu berücksichtigen, wie entsprechend Abschnitt 442 mögliche zeitweilige (temporäre) 
+Überspannungen (TOV) vom AC-System in das DC-System übertragen werden. Bei zeitweiligen (temporären) 
+Überspannungen (TOV), die aufgrund von Fehlern innerhalb eines DC-Systems erzeugt werden, sind die 
+dazugehörigen Angaben entsprechend der Charakteristik des DC-Systems zu berücksichtigen. 
+ANMERKUNG 
+IEC 61936-2 Starkstromanlagen mit Nennwechselspannungen über AC 1 kV und DC 1,5 kV befindet sich 
+in Ausarbeitung. 
+Abschnitt 443 ist sowohl für AC-Systeme als auch für DC-Systeme anwendbar. Für DC-Systeme bestehen 
+keine zusätzlichen Anforderungen. 
+Daher sind in 53.G.2 Kenngrößen zur Auswahl und Errichtung von Überspannungs-Schutzeinrichtungen (SPD) 
+und die entsprechende Auslegung der Anlage aufgeführt. 
+53.G.2 
+Kenngrößen zur Auswahl von Überspannungs-Schutzeinrichtungen (SPD) in  
+DC-Systemen 
+Die nachfolgenden Kenngrößen sollten berücksichtigt werden: 
+– 
+Maximale Betriebsspannung des DC-Systems; 
+– 
+Nenngleichspannung des DC-Systems; 
+– 
+Minimaler und maximaler unbeeinflusster Kurzschlussstrom am Einbauort der Überspannungs-
+Schutzeinrichtung (SPD); 
+– 
+Art der Quelle (linear/nichtlinear) und Eigenschaft der nicht-linearen Quelle; 
+– 
+DC-Nennstrom der Versorgung(en) des DC-Systems; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 436/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-53 – Seite 68 
+– 
+Zu erwartende zeitweilige (temporäre) Überspannungen (TOV) die im DC-System auftreten können, 
+entweder aus dem AC-System, das mit dem DC-system galvanisch verbunden ist, oder verursacht durch 
+einen Fehler innerhalb des DC-Systems; 
+– 
+Zu erwartende Amplitude und Energieinhalt von Schaltüberspannungen durch Schalten von 
+Einspeisungen oder Lasten; 
+– 
+Übertragungseffekte durch Schalten von Einspeisungen oder Lasten; 
+– 
+Konfiguration des DC-Systems im Hinblick auf die Anbindung an das Wechselspannungs-system und der 
+Erdungsanlage; 
+– 
+Zu erwartende Belastung durch AC/DC-Spannung zwischen aktiven Leitern und Erder unter Normal- und 
+Fehlerbedingungen; 
+– 
+Zu erwartende Wellenform des Fehlerstroms unter Fehlerbedingung; 
+– 
+Anzuwendende Überspannungskategorie. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 437/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-54 – Seite 1 
+Teil 5-54 Erdungsanlagen und Schutzleiter 
+Inhalt Teil 5-54 
+541.1 
+Anwendungsbereich 
+541.2 
+Normative Verweisungen 
+541.3 
+Begriffe 
+542 
+Erdungsanlagen 
+542.1 
+Allgemeine Anforderungen 
+542.2 
+Erder 
+542.3 
+Erdungsleiter 
+542.4 
+Haupterdungsschiene 
+543 
+Schutzleiter 
+543.1 
+Mindestquerschnitte 
+543.2 
+Arten der Ausführung von Schutzleitern 
+543.3 
+Elektrische Durchgängigkeit von Schutzleitern 
+543.4 
+PEN-, PEL- oder PEM-Leiter 
+543.5 
+Kombinierte Schutzerdungs- und Funktionserdungsleiter 
+543.6 
+Ströme in Schutzerdungsleitern 
+543.7 
+Verstärkte Schutzerdungsleiter für Schutzerdungsleiterströme größer 10 mA 
+543.8 
+Anordnung von Schutzleitern 
+544 
+Schutzpotentialausgleichsleiter 
+544.1 
+Schutzpotentialausgleichsleiter für die Verbindung mit der Haupterdungsschiene 
+544.2 
+Schutzpotentialausgleichsleiter für den zusätzlichen Schutzpotentialausgleich 
+545 
+Funktionserdung und Funktionspotentialausgleich für Anlagen der Informations- und 
+Kommunikationstechnik (IKT) 
+545.1 
+Funktionspotentialausgleich für Anlagen der Informationstechnik und Kommunikationseinrichtungen 
+(IKT) 
+545.2 
+Hauptfunktionserdungsschiene 
+545.3 
+Potentialausgleichsringleiter 
+Anhang 54.A (normativ)  Verfahren zur Berechnung des Faktors k in 543.1.2 (siehe auch IEC 60724 und 
+IEC 60949) 
+Anhang 54.B (informativ)  Beispielhafte Darstellung von Erdungsanlagen,  Schutzleitern und 
+Schutzpotentialausgleichsleitern 
+Anhang 54.C (informativ)  Errichten von in Beton gebetteten Erdern 
+Anhang 54.D (informativ)  Errichten von in Erde gebetteten Erdern 
+ 
+ 
+541.1 
+Anwendungsbereich 
+Dieser Teil gilt für Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter mit dem Ziel, die 
+Sicherheit elektrischer Anlagen zu gewährleisten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 438/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-54 – Seite 2 
+Darüber hinaus enthält dieser Teil auch Anforderungen an die Erdung und den Potentialausgleich für 
+Informations- und Kommunikationstechnologie (IKT) mit dem Ziel: 
+– 
+das Risiko elektrischer Gefährdungen für die ordnungsgemäße Funktion dieser Geräte und der 
+informationstechnischen Verkabelung zu verringern; 
+– 
+den telekommunikationstechnischen Anlagen eine zuverlässige Signalbezugsebene bereitzustellen, die 
+die Störfestigkeit gegen elektromagnetische Störungen (EMV) verbessern kann unter Bezugnahme auf 
+ISO/IEC 30129 bzw. OVE EN 50310. 
+ANMERKUNG 
+Beispiele für Informations- und Kommunikationstechnologie (IKT) sind: 
+– 
+Gleichstromversorgungsnetze (-anlagen) für die Stromversorgung von Betriebsmitteln der Informationstechnik und 
+Kommunikationstechnik (IKT) innerhalb eines Gebäudes; 
+– 
+automatische Nebenstellenanlagen (PABX) oder deren Betriebsmittel; 
+– 
+lokale (Informations- und Kommunikations-) Netze (LAN); 
+– 
+Brand- und Einbruchmeldeanlagen; 
+– 
+Gebäudeautomationssysteme; 
+– 
+Anlagen für die rechnergestützte Fertigung (CAM) und andere rechnergestützte Dienste; 
+– 
+Rundfunk- und Kommunikationstechnik. 
+ANMERKUNG 1.AT 
+Anforderungen an die Ausführung einer Fundamenterdungsanlage siehe OVE E 8014. 
+ANMERKUNG 2.AT 
+Die in diesem Teil verwendeten Begriffe „Erdungsanlage“, „Schutzleiter“ und „Schutzpotential-
+ausgleichsleiter“ sind im Anhang 54.B grafisch dargestellt. 
+541.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+541.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+542 Erdungsanlagen 
+542.1 
+Allgemeine Anforderungen 
+542.1.1 Erdungsanlagen dürfen für Schutz- und Funktionszwecke, entsprechend den Anforderungen der 
+elektrischen Anlage, gemeinsam oder getrennt verwendet werden. Die Festlegungen für Schutzzwecke 
+müssen immer Vorrang haben. 
+542.1.2 Wenn in der elektrischen Anlage ein Erder vorhanden ist, muss dieser durch einen Erdungsleiter mit 
+der Haupterdungsschiene verbunden werden. 
+542.1.3 Wenn die Einspeisung der elektrischen Anlage aus einem Hochspannungsnetz erfolgt, müssen für 
+den Fall eines Fehlers zwischen der Hochspannungsanlage und Erde Schutzmaßnahmen gemäß 
+Abschnitt 442 und OVE EN 50522 vorgesehen werden. 
+542.1.001.AT 
+Werden Einrichtungen der Informationstechnik/Telekommunikationstechnik mit geschirmten 
+Verkabelungssystemen installiert, gelten ergänzend die Anforderungen gemäß OVE EN 50310 sowie die 
+Anforderungen gemäß OVE E 8014. Bei ungeschirmten Verkabelungssystemen können diese Anforderungen 
+sinngemäß angewendet werden. 
+542.1.4 Die beschriebenen Anforderungen an Erdungsanlagen dienen dazu, eine Verbindung zur Erde 
+herzustellen, 
+– 
+die für die Schutzanforderungen der elektrischen Anlage geeignet und zuverlässig ist; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 439/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-54 – Seite 3 
+– 
+die Erdfehlerströme und Schutzleiterströme zur Erde führen kann, ohne dass eine Gefahr durch 
+thermische, thermomechanische oder elektromechanische Beanspruchungen und durch einen 
+elektrischen Schlag, hervorgerufen durch diese Ströme, entsteht; 
+– 
+die gegenüber möglichen äußeren Einflüssen widerstandsfähig oder mechanisch geschützt und 
+entsprechend widerstandsfähig gegen Korrosion ist (siehe Teil 5-51); 
+– 
+die, wenn erforderlich, auch für Funktionsanforderungen geeignet ist. 
+542.1.5 Besonders betrachtet werden müssen Erdungsanlagen, in denen Ströme mit hohen Frequenzen 
+erwartet werden (siehe Abschnitt 444). 
+542.1.6 Durch eine vorhersehbare Änderung des Erdungswiderstandes (z. B. aufgrund von Korrosion, Frost) 
+dürfen die Maßnahmen für den Schutz gegen elektrischen Schlag, wie in Teil 4-41 gefordert, nicht ungünstig 
+beeinflusst werden. 
+542.1.001.AT 
+Verwenden von Gas- und Wasserleitungen als Erder, Erdungsleitung oder 
+Schutzerdungsleiter 
+541.1.001.1.AT Unabhängig von den Anforderungen hinsichtlich des Schutzpotentialausgleichs (Haupt-
+potentialausgleich) gemäß 544.1 dürfen Gas- und Wasserleitungen nicht als Schutzerdungsleiter, 
+Erdungsleiter, Schutzpotentialausgleichsleiter oder Erder verwendet werden. Ihre natürliche Wirksamkeit 
+(Erderwirksamkeit, Stromtragfähigkeit bei Parallelschaltung) darf bei der Dimensionierung der elektrischen 
+Anlage nicht berücksichtigt werden. 
+541.1.001.2.AT In bestehenden Verbraucheranlagen ist bei wesentlichen Erweiterungen oder wesentlichen 
+Änderungen darauf zu achten, dass die Wirksamkeit des Fehlerschutzes ohne Benutzen des 
+Wasserrohrnetzes und der Wasserverbrauchsleitungen als Erder und Schutzerdungsleiter sichergestellt ist. 
+541.1.001.3.AT Bei Gleichstromanlagen ist ÖVE/ÖNORM EN 50162 zu beachten. 
+542.2 
+Erder 
+542.2.1 Ausführungen, Werkstoffe und Abmessungen der Erder müssen so ausgewählt werden, dass sie der 
+Korrosion widerstehen und eine dementsprechende mechanische Festigkeit besitzen. 
+ANMERKUNG 1  
+Zur Vermeidung von Korrosion sollten folgende Eigenschaften betrachtet werden: der pH-Wert 
+des Erdreichs, der Widerstand und die Feuchtigkeit des Erdreichs, Streuströme und Ableitströme (AC und DC), die 
+chemische Belastung des Bodens und die örtliche Nähe von unterschiedlichen Materialien. 
+Für Erder, die in Erde oder in Beton verlegt werden, müssen die gebräuchlichen Werkstoffe und die 
+Mindestmaße unter Berücksichtigung von Korrosion und mechanischer Festigkeit der Tabelle 54.1 
+entsprechen. 
+ANMERKUNG 2  
+Aufgrund der größeren mechanischen Beanspruchung während der Errichtung ist die 
+Mindestdicke der Beschichtung/Umhüllung bei senkrechter Verlegung des Erders größer als bei waagrechter Verlegung. 
+Wenn ein Blitzschutzsystem (LPS) gefordert ist, gelten für Erdungsanlagen auch die Anforderungen gemäß 
+ÖVE/ÖNORM EN 62305-3 und, wenn zutreffend, ÖVE/ÖNORM EN 62305-4. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 440/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-54 – Seite 4 
+Tabelle 54.1 – Mindestmaße für gebräuchliche Erder, eingebettet in Erde oder in Beton, unter 
+Berücksichtigung von Korrosion und mechanischer Festigkeit (1 von 2) 
+Werkstoff und  
+Oberfläche 
+Form 
+Mindestmaße 
+Durch-
+messer 
+Quer-
+schnitt 
+Dicke 
+Masse der 
+Schutzschicht 
+Dicke der 
+Beschichtung/ 
+Umhüllung 
+mm 
+mm2 
+mm 
+g/m2 
+m 
+Stahl in Beton verlegt f 
+(blank, feuerverzinkt  
+oder nichtrostend) 
+massives Rundmaterial 
+10 
+ 
+ 
+ 
+ 
+Bandstahl oder 
+Flachmaterial 
+ 
+75 
+3 
+ 
+ 
+Stahl feuerverzinkt c 
+Bandstahl b oder 
+Stahlplatte 
+ 
+90 
+3 
+500 
+63 
+Rundstange senkrecht 
+errichtet 
+16 
+ 
+ 
+350 
+45 
+massives Rundmaterial 
+waagrecht errichtet 
+10 
+ 
+ 
+350 
+45 
+Rohr 
+25 
+ 
+2 
+350 
+45 
+Seil (in Beton verlegt) 
+ 
+70 
+ 
+ 
+ 
+Profil senkrecht errichtet, 
+z. B. Kreuzprofil 
+ 
+(290) 
+3 
+ 
+ 
+Stahl mit 
+Kupferumhüllung 
+Rundstange senkrecht 
+errichtet 
+(15) 
+ 
+ 
+ 
+2 000 
+Stahl elektrolytisch 
+verkupfert 
+Rundstange senkrecht 
+errichtet 
+14 
+– 
+– 
+ 
+250 e 
+massives Rundmaterial 
+waagrecht errichtet 
+(8) 
+ 
+ 
+ 
+70 
+Bandstahl waagrecht 
+errichtet 
+ 
+90 
+3 
+ 
+70 
+Nichtrostender Stahl a 
+Bandstahl b oder 
+Stahlplatte 
+ 
+90 
+3 
+ 
+ 
+Rundstange senkrecht 
+errichtet 
+16 
+ 
+ 
+ 
+ 
+massives Rundmaterial 
+waagrecht errichtet 
+10 
+ 
+ 
+ 
+ 
+Rohr 
+25 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

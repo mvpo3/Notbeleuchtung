@@ -1,0 +1,3517 @@
+
+
+===== PAGE 281/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 35 
+Es wird empfohlen, an den Übergangsstellen die Leiterenden der vorhandenen Leitungen mit abweichender 
+Farbkennzeichnung gemäß 514.3 zu kennzeichnen. 
+51.NE.4.2 
+Hinsichtlich der Farbkennzeichnung von Leitern in elektrischen Anlagen, die auf das  
+TN-S-System umgestellt werden, sind die Anforderungen gemäß 514.3.2.001.AT zu beachten. 
+Tabelle 51.NE.001.AT – Farben, alphanumerische Zeichen und graphische Symbole  
+zur Kennzeichnung von Leitern/Anschlüssen (1 von 2) 
+Bestimmte Leiter/Anschlüsse 
+Kennzeichnung von Leitern/Anschlüssen durch 
+Alphanumerische Zeichen a 
+Farben 
+graphische 
+Symbole b 
+Leiter 
+Anschlüsse 
+Wechselstromleiter 
+AC 
+AC 
+– 
+ 
+– Außenleiter 1 
+L1 
+U 
+ 
+BK d   oder 
+– Außenleiter 2 
+L2 c 
+V 
+ 
+BR d   oder 
+– Außenleiter 3 
+L3 c 
+W 
+ 
+GR d 
+– Mittelleiter 
+M 
+M 
+BU e 
+keine Empfehlung 
+– Neutralleiter 
+N 
+N 
+Gleichstromleiter 
+DC 
+DC 
+– 
+ 
+– Positiv 
+L+ 
++ 
+RD 
+ 
+– Negativ 
+L- 
+- 
+WH 
+ 
+– Mittelpunktsleiter oder geerdeter 
+Systemleiter 
+M 
+M 
+BU e 
+keine Empfehlung 
+Schutzleiter 
+PE 
+PE 
+GNYE 
+ 
+– PEN-Leiter 
+PEN 
+PEN 
+ 
+GNYE f 
+ 
+keine Empfehlung 
+– PEL-Leiter 
+PEL 
+PEL 
+– PEM-Leiter 
+PEM 
+PEM 
+Schutzpotentialausgleichsleiter g 
+PB 
+PB 
+GNYE 
+ 
+– Geeredet 
+PBE 
+PBE 
+keine Empfehlung 
+– Ungeerdet 
+PBU 
+PBU 
+Funktionserdungsleiter h 
+FE 
+FE 
+ 
+PK 
+ 
+Funktionspotentialausgleichsleiter 
+FB 
+FB 
+keine Empfehlung 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 282/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 36 
+Tabelle 51.NE.001.AT – Farben, alphanumerische Zeichen und graphische Symbole  
+zur Kennzeichnung von Leitern/Anschlüssen (2 von 2) 
+a 
+Siehe 51.NE.3. 
+b 
+Die wiedergegebenen Symbole haben folgende Symbolnummern gemäß ÖVE/ÖNORM IEC 60417 DB. 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5032 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5019 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5031 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5018 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5005 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5020 
+ 
+ ÖVE/ÖNORM IEC 60417 DB-5006 
+ 
+ÖVE/ÖNORM IEC 60417 DB-5021 
+c 
+Nur in Systemen mit mehr als einer Phase notwendig. 
+d 
+Diese Reihenfolge der Farbkennzeichnung ist nur eine alphabetische Reihenfolge. Sie beinhaltet keine empfohlene 
+Reihenfolge für die Phasen bzw. den Drehsinn. 
+e 
+Siehe 51.NE.2.1. 
+f 
+Siehe OVE EN 60445:2018 Abschnitte 6.3.3 bis 6.3.5. 
+g 
+Ein Schutzpotentialausgleichsleiter wird in den meisten Fällen ein geerdeter Schutzpotentialausgleichsleiter sein. Es ist 
+nicht notwendig, diesen mit PBE zu kennzeichnen. In den Fällen, in denen eine Unterscheidung zwischen einem 
+geerdeten und einem ungeerdeten Schutzpotentialausgleichsleiter Anwendung findet, müssen diese deutlich 
+unterschieden werden (zB Installationen in der Elektromedizin), und die Kennzeichnungen PBE und PBU sollten 
+angewandt werden. 
+h 
+Für Leiter oder Anschlüsse mit Schutzfunktion darf weder die Kennzeichnung „FE“ noch das graphische Symbol 5018 
+aus ÖVE/ÖNORM IEC 60417 DB angewandt werden. Die Zwei-Farben-Kombination Grün-Gelb darf nicht für Leiter ohne 
+Schutzfunktion angewandt werden (zB für andere Leiter als PE, PEN, PEL, PEM, PB, PBE, PBU). Siehe nationale 
+Ergänzung 51.NE.1. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 283/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 1 
+Teil 5-52 Kabel- und Leitungsanlagen 
+Inhalt 52 
+521 
+Arten von Kabel- und Leitungsanlagen 
+522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+523 
+Strombelastbarkeit 
+524 
+Querschnitte von Leitern 
+525 
+Spannungsabfall in Verbraucheranlagen 
+526 
+Elektrische Verbindungen 
+527 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen zur Begrenzung der Ausbreitung von 
+Bränden 
+528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+529 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen im Hinblick auf Instandhaltung einschließlich 
+Reinigung 
+Anhang 52.A (normativ)  Verlegearten 
+Anhang 52.B (informativ)  Strombelastbarkeiten 
+Anhang 52.C (informativ)  Beispiel für eine vereinfachte Darstellung einer Strombelastbarkeitstabelle 
+Anhang 52.D (informativ)  Gleichung zur Bestimmung von Strombelastbarkeiten 
+Anhang 52.E (normativ)  Auswirkungen von Oberschwingungsströmen auf  symmetrisch belastete 
+Drehstromsysteme 
+Anhang 52.F (informativ)  Auswahl von Elektroinstallationsrohrsystemen 
+Anhang 52.G (informativ)  Spannungsabfall in Verbraucheranlagen 
+Anhang 52.H (informativ)  Beispiele für die Anordnung paralleler Kabel und Leitungen 
+Nationale Ergänzung 52.NE (informativ)  Kurzschluss- und erdschlusssichere Verlegung 
+ 
+ 
+520.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Auswahl und die Errichtung von Kabel- und Leitungsanlagen. 
+ANMERKUNG 
+Im Allgemeinen gilt dieser Teil auch für den Schutzleiter, wobei Teil 5-54 noch weitere Anforderungen 
+für diese Leiter enthält. 
+520.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+520.3 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+520.4 
+Allgemeine Anforderungen 
+Bei der Auswahl und der Errichtung von Kabel- und Leitungsanlagen müssen die allgemeinen Grundsätze 
+von Teil 1 für Kabel, Leitungen und Leiter, ihre Anschlüsse und/oder Verbindungen, die zugehörigen 
+Befestigungs- oder Abhängemittel und ihre Umhüllungen oder Maßnahmen zum Schutz gegen äußere 
+Einflüsse berücksichtigt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 284/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 2 
+ANMERKUNG 1.AT 
+In einem Wechselspannungssystem muss nach ÖVE/ÖNORM EN 50525-1 und ÖVE/ÖNORM 
+E 8200-603 die Nennspannung der Leitung/des Kabels mindestens gleich der Nennspannung des Systems sein, in dem 
+sie/es eingesetzt wird. Diese Bedingung gilt sowohl für den Wert U0 als auch für den Wert U. 
+Die Nennspannung einer Leitung/eines Kabels ist die Spannung, für die die Leitung/das Kabel ausgelegt ist und wird in 
+einem Wechselspannungssystem durch die Angabe von zwei Spannungswerten für U0/U in Volt ausgedrückt, wobei 
+a) 
+U0 der Effektivwert zwischen einem Außenleiter und „Erde“ (metallene Umhüllungen der Leitungen oder das 
+umgebende Medium) ist; 
+b) 
+U der Effektivwert zwischen zwei Außenleitern einer mehradrigen Leitung oder eines Systems von einadrigen 
+Leitungen ist. 
+ANMERKUNG 2.AT 
+System für Typkurzzeichen von isolierten Leitungen siehe ÖVE/ÖNORM E 8200-361. 
+521 Arten von Kabel- und Leitungsanlagen 
+521.1 
+Die Verlegeart von Kabel- und Leitungsanlagen (außer von Schienenverteilern und Stromschienen-
+systemen gemäß 521.4) muss, in Abhängigkeit von der Bauart der Kabel oder Leitungen, Tabelle 52.A.1 
+entsprechen, wobei die äußeren Einflüsse gemäß 522 zu berücksichtigen sind. 
+521.2 
+Dieser Absatz wurde in Österreich nicht übernommen. 
+521.3 
+Beispiele zur Ermittlung der Strombelastbarkeit für Kabel- und Leitungsanlagen, mit Verweis auf die 
+Referenzverlegeart, sind in Tabelle 52.A.3 angegeben. Schienenverteiler- und Stromschienensysteme 
+gemäß 521.4 sind bei den Beispielen nicht berücksichtigt. 
+ANMERKUNG 
+Tabelle 52.A.3 macht Angaben zur Referenzverlegeart, bei der die gleiche Strombelastbarkeit sicher 
+angewendet 
+werden 
+kann. 
+Das 
+bedeutet 
+nicht, 
+dass 
+alle 
+Verlegearten 
+notwendigerweise 
+in 
+den 
+Errichtungsbestimmungen aller Länder anerkannt sind oder dass andere Verlegearten unzulässig sind. 
+521.4 
+Schienenverteiler- und Stromschienensysteme 
+Schienenverteilersysteme 
+müssen 
+ÖVE/ÖNORM EN 61439-6 
+und 
+Stromschienensysteme 
+müssen 
+ÖVE/ÖNORM EN 61534 Reihe entsprechen. Schienenverteiler und Stromschienensysteme müssen nach 
+den Angaben des Herstellers unter Berücksichtigung der äußeren Einflüsse errichtet werden. 
+ANMERKUNG AT 
+Anforderungen an elektrische Stromschienensysteme für Leuchten siehe ÖVE/ÖNORM 
+EN 60570. 
+521.5 
+Wechselstromkreise – Elektromagnetische Beeinflussung (Vermeidung von Wirbelströmen) 
+521.5.1 Leiter und einadrige Kabel oder Leitungen in Wechselstromkreisen, die in Umhüllungen aus 
+ferromagnetischen Werkstoffen verlegt werden, müssen so angeordnet werden, dass sich alle Leiter eines 
+Stromkreises einschließlich des Schutzleiters in derselben Umhüllung befinden. Kabel und Leitungen müssen 
+an der Einführungsstelle in einer Umhüllung aus ferromagnetischem Werkstoff derart angeordnet sein, dass 
+die Leiter nur gemeinsam von eisenhaltigem magnetischem Metall umschlossen werden. 
+521.5.2 Einadrige Kabel und Leitungen mit Armierung aus Stahldraht oder metallener Ummantelung dürfen 
+nicht in Wechselstromkreisen eingesetzt werden. 
+ANMERKUNG 
+Der Stahldraht oder die metallene Ummantelung eines einadrigen Kabels/einer einadrigen Leitung wird 
+als Umhüllung aus ferromagnetischem Material angesehen. Im Fall von einadrigen armierten Kabeln/einadrigen 
+armierten Leitungen wird der Einsatz einer Armierung aus Aluminium empfohlen. 
+521.6 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme, zu öffnende 
+Elektroinstallationskanalsysteme, Kabelträgersysteme 
+Mehrere Stromkreise in einem Elektroinstallationsrohrsystem oder in abgetrennten Bereichen eines 
+geschlossenen bzw. zu öffnenden Elektroinstallationskanalsystems sind zulässig, wenn alle Leiter für die 
+höchste vorkommende Nennspannung isoliert sind. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 285/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 3 
+Elektroinstallationsrohrsysteme müssen ÖVE/ÖNORM EN 61386 Reihe, geschlossene oder zu öffnende 
+Elektroinstallationskanalsysteme müssen ÖVE/ÖNORM EN 50085 Reihe und Kabelträgersysteme müssen 
+ÖVE/ÖNORM EN 61537 entsprechen. 
+ANMERKUNG 
+Hinweise zur Auswahl von Elektroinstallationsrohrsystemen siehe OVE-Richtlinie R 14. 
+ANMERKUNG AT 
+Ein 
+Kabelträgersystem 
+ist 
+ein 
+System, 
+bestehend 
+aus 
+Kabelträgern 
+und anderen 
+Systembauteilen (Formteile, Träger- und Montageelemente, Systemzubehör). Bauformen von Kabelträgern sind 
+Kabelwannen (ungelocht/nicht perforiert, gelocht/perforiert) und Kabelpritschen. Es werden dafür auch die Begriffe 
+Kabelrinne, Kabelleiter, Kabelgitter, Gitterrinne oder Kabeltrasse verwendet. 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme und zu öffnende Elektro-
+installationskanalsysteme mit der Klassifizierung „flammenausbreitend“ dürfen in und an Gebäuden nicht 
+verwendet werden. 
+521.7 
+Mehrere Stromkreise in einem Kabel/einer Leitung 
+Mehrere Stromkreise in einem Kabel/einer Leitung sind zulässig, wenn alle Leiter für die höchste 
+vorkommende Nennspannung isoliert sind. 
+521.8 
+Anordnung von Stromkreisen 
+521.8.1 Leiter eines Stromkreises dürfen nicht auf verschiedene mehradrige Kabel oder Leitungen, 
+Elektroinstallationsrohre, 
+zu 
+öffnende 
+Elektroinstallationskanalsysteme 
+oder 
+geschlossene 
+Elektro-
+installationskanalsysteme verteilt werden. 
+Dies gilt nicht, wenn mehrere mehradrige Kabel oder Leitungen, die einen Stromkreis bilden, parallel verlegt 
+sind. Wenn mehradrige Kabel oder Leitungen parallel verlegt sind, muss jedes Kabel/jede Leitung einen 
+Leiter jeder Phase und den Neutralleiter, falls vorhanden, führen. 
+521.8.2 Die Zuordnung eines gemeinsamen Neutralleiters für mehrere Hauptstromkreise ist nicht zulässig. 
+Aus einem Drehstromkreis mit einem Neutralleiter dürfen jedoch Einphasen-Wechselstromkreise aus je 
+einem Außenleiter und dem Neutralleiter gebildet werden, wenn die Anordnung der Stromkreise erkennbar 
+bleibt. Dieser Drehstromkreis muss durch eine Einrichtung zum Trennen gemäß 537.2 getrennt werden 
+können, die alle Außenleiter trennt. 
+ANMERKUNG AT 
+Das Trennen muss nicht zum gleichzeitigen Ausschalten aller Außenleiter führen. 
+ANMERKUNG 
+Für die Zuordnung eines gemeinsamen Schutzleiters für mehrere Stromkreise siehe Teil 5-54. 
+521.8.3 Wenn mehrere Stromkreise in einer Verbindungsdose enden, müssen die Klemmen für jeden 
+Stromkreis durch isolierende Trennwände abgeteilt werden, außer bei Verbindungsmaterial gemäß 
+ÖVE/ÖNORM EN 60998 Reihe und Reihenklemmen gemäß OVE EN 60947-7 Reihe. 
+ANMERKUNG AT 
+ÖVE/ÖNORM EN 60998 
+gilt 
+für 
+Verbindungsmaterial 
+als 
+selbständiges 
+elektrisches 
+Betriebsmittel für das Verbinden von zwei oder mehr elektrischen Kupferleitern, wie zB Schraubklemmstellen, 
+schraubenlosen Klemmstellen, Durchdringklemmstellen. 
+Die Enden der Leitungen sind mit einer dauerhaften Kennzeichnung zu versehen, die eine Zuordnung zum 
+entsprechenden Stromkreis eindeutig erkennen lässt. Falls die Leitungen ungeschnitten durchgeführt 
+werden, brauchen sie nicht gekennzeichnet zu werden. 
+521.9 
+Verwendung flexibler Kabel/Leitungen 
+521.9.1 Flexible Kabel/Leitungen dürfen für das feste Verlegen verwendet werden, wenn die Bestimmungen 
+dieser Norm berücksichtigt werden. 
+ANMERKUNG 
+Isolierte flexible Leiter (Adern) nach ÖVE/ÖNORM EN 50565 Reihe dürfen ebenfalls fest verlegt 
+werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 286/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 4 
+521.9.2 Betriebsmittel, die bei bestimmungsgemäßem Gebrauch Bewegungen ausgesetzt sind, müssen mit 
+flexiblen Kabeln/Leitungen angeschlossen werden. Dies gilt nicht für Betriebsmittel, die über Schleifleitungen 
+versorgt werden. 
+521.9.3 Ortsfeste Betriebsmittel, deren Standort zum Zwecke des Anschließens, Reinigens oder 
+dergleichen vorübergehend geändert wird, zB Herde, Waschmaschinen oder Einbaueinheiten von Unterflur-
+Installationen in Doppelböden, müssen mit flexiblen Kabeln/Leitungen angeschlossen werden. 
+521.9.4 Flexible Elektroinstallationsrohrsysteme dürfen zum Schutz flexibler isolierter Leiter verwendet 
+werden. 
+521.10 Verlegung von Kabeln/Leitungen 
+Aderleitungen für die feste Verlegung dürfen nur in Elektroinstallationsrohren, geschlossenen Elektro-
+installationskanälen oder zu öffnenden Elektroinstallationskanälen, deren Zugangsabdeckung bestimmungs-
+gemäß nur mit Werkzeug zu öffnen ist, verlegt werden. 
+Diese Anforderungen gelten nicht für Schutzleiter gemäß Teil 5-54. 
+521.10.001.AT 
+Freigespannte Kabel und Leitungen bis 20 m Stützpunktentfernung 
+521.10.001.1.AT Ausreichende Zugentlastung ist vorzusehen. Diese ist sichergestellt bei Verwendung von 
+frei gespannten Tragelementen mit geeigneten Stützpunkten, PVC-Mantelleitungen mit Tragseil  
+(AT-N05VVD7-U bzw. -R), PE-isolierten Freileitungsleitern (E-A2Y) und Ähnlichem. 
+521.10.001.2.AT Frei gespannte Kabel und Leitungen müssen außerhalb des Handbereichs mit dem tiefsten 
+Punkt mindestens 3 m über der Standfläche liegen. Vom Rand lichter Fensteröffnungen müssen sie 
+mindestens nach oben 0,3 m, seitlich und nach unten 1 m, von Balkonen und Terrassen mindestens 3 m 
+über und 0,5 m unter der Standfläche sowie 1,5 m seitlich von Brüstungen entfernt sein. 
+Kleinere Abstände sind nur in Ausnahmefällen bei Verwendung von Kabeln, Mantelleitungen und wetterfest 
+isolierten Leitungen zulässig. Die Höhe von 3 m über der Standfläche ist in jedem Fall einzuhalten. Auf 
+ausreichende Entfernung zu Bäumen und Sträuchern ist zu achten. 
+Über befahrbaren Flächen müssen die Kabel und Leitungen mit ihrem tiefsten Punkt mindestens 5 m vom 
+Erdboden entfernt sein. 
+ANMERKUNG AT 
+Anforderungen an die Errichtung von Starkstromfreileitungen bis 1 000 V siehe ÖVE-L 1. 
+521.10.002.AT 
+Stegleitungen 
+Anforderungen für die Verwendung von Stegleitungen AT-N05VVH-U: 
+a) 
+Stegleitungen dürfen nur in trockenen Räumen und nur in oder unter Putz verlegt werden; 
+b) 
+Stegleitungen müssen in ihrem ganzen Verlauf von Putz bedeckt sein, ausgenommen in Hohlräumen 
+von Decken und Wänden, die aus Beton, Stein oder ähnlichen nicht brennbaren Baustoffen bestehen; 
+c) 
+Stegleitungen dürfen auch bei Putzabdeckung nicht auf brennbaren Baustoffen, zB Holz, verlegt werden; 
+d) 
+Anhäufung durch Bündelung von Stegleitungen ist unzulässig; 
+ 
+ANMERKUNG AT  
+Die Zusammenfassung von Stegleitungen an EinführungssteIlen von elektrischen 
+Betriebsmitteln (zB Dosen, Kästen und Verteiler) gilt nicht als Bündelung. 
+e) 
+Nicht zulässig ist die Verlegung von Stegleitungen 
+ 
+– 
+in Holzhäusern (auch dann nicht, wenn deren Innenwände mit Putz bedeckt sind); 
+ 
+– 
+in Hohlräumen von Holzbalkendecken; 
+ 
+– 
+unter Gipskartonplatten, es sei denn, diese werden ausschließlich mit Gipspflaster befestigt; 
+ 
+– 
+unmittelbar auf oder unter Drahtgeweben, Streckmetallen und dergleichen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 287/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 5 
+f) 
+Zur Befestigung von Stegleitungen dürfen nur solche Mittel und Verfahren angewendet werden, die eine 
+Formänderung oder Beschädigung der Isolierung ausschließen. 
+g) 
+Verbindungen von Stegleitungen dürfen nur in Installationsdosen gemäß ÖVE/ÖNORM EN 60670-1 aus 
+Isolierstoff vorgenommen werden. 
+ANMERKUNG AT 
+Prüfanforderungen an Stegleitungen AT-N05VVH-U siehe ÖVE/ÖNORM E 8242. 
+521.10.003.AT 
+Verlegen in Beton 
+521.10.003.1.AT Kabel und Leitungen 
+Die in den Aufzählungen a) bis c) angegebenen Kabel und Leitungen sind zulässig. 
+a) 
+Aderleitungen (zB H07V) in Elektroinstallationsrohren. 
+ 
+Bei der Verlegung von Aderleitungen in Elektroinstallationsrohren müssen die Rohre in isolierende 
+Dosen oder Gehäuse gemäß ÖVE/ÖNORM EN 60670 Reihe eingeführt werden. 
+ 
+Bei Verwenden von Aderleitungen ist sicherzustellen, dass Rohre, Dosen und Gehäuse ein lückenlos 
+geschlossenes System bilden. 
+b) 
+Mantelleitungen (zB PVC-Mantelleitung Typ AT-N05VV), Schlauchleitungen (zB mittlere PVC-
+Schlauchleitung Typ AT-N05VV-F), ausgenommen der Beton wird einem Schüttel-, Rüttel- oder 
+Stampfprozess unterzogen. 
+c) 
+Kabel, zB E-YY gemäß ÖVE/ÖNORM E 8200-603, ausgenommen der Beton wird einem Schüttel-, 
+Rüttel- oder Stampfprozess unterzogen. 
+ANMERKUNG AT 
+Anforderungen an Elektroinstallationsrohrsysteme siehe 521.6. 
+Kabel und Leitungen sind an Übergängen zwischen Bauelementen, zB an Dehnungsfugen, vor 
+mechanischer Beschädigung zu schützen. 
+521.10.003.2.AT Zubehör 
+Gerätedosen, Geräteverbindungsdosen, Leuchten-Anschlussdosen sowie Verbindungsdosen und -kästen 
+müssen für die Installation in Beton geeignet sein. Sie müssen ÖVE/ÖNORM EN 60670-1 entsprechen und 
+sollten die Information zur maximalen Temperatur während des Abbindeprozesses führen (maximal 90 °C; 
+frühere Kennzeichnung B). 
+522 Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+Die Verlegeart muss so ausgewählt werden, dass der Schutz gegen die zu erwartenden äußeren Einflüsse in 
+allen zugehörigen Teilen der Kabel- und Leitungsanlage sichergestellt ist. Dabei sind Richtungsänderungen 
+(Biegungen) sowie Einführungen von Kabeln und Leitungen in Betriebsmittel besonders zu beachten. 
+ANMERKUNG 
+In diesem Abschnitt werden nur die nach Tabelle 51.ZA.1 kategorisierten äußeren Einflüsse behandelt, 
+die für Kabel- und Leitungsanlagen von Bedeutung sind. 
+522.1 
+Umgebungstemperatur (AA) 
+522.1.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass sie für jede 
+Temperatur zwischen der höchsten und niedrigsten örtlichen Umgebungstemperatur geeignet sind und 
+sichergestellt ist, dass die zulässige Grenztemperatur im bestimmungsgemäßen Gebrauch (siehe 
+Tabelle 52.1) und die höchst zulässige Temperatur im Fehlerfall nicht überschritten werden. 
+ANMERKUNG 
+„Grenztemperatur“ bedeutet die andauernde höchstzulässige Betriebstemperatur. 
+522.1.2 Kabel- und Leitungsanlagen einschließlich Zubehör dürfen nur bei Umgebungstemperaturen 
+installiert oder bewegt werden, die innerhalb der in der entsprechenden Produktnorm oder vom Hersteller 
+angegebenen Grenzwerte liegen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 288/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 6 
+522.2 
+Äußere Wärmequellen 
+522.2.1 Zum Schutz gegen schädliche thermische Einwirkungen äußerer Wärmequellen muss eine oder 
+müssen mehrere der folgenden oder eine gleichermaßen wirksame Maßnahme zum Schutz der Kabel- und 
+Leitungsanlage ergriffen werden: 
+– 
+Abschirmung gegenüber Wärmequellen; 
+– 
+Anordnung in ausreichendem Abstand zur Wärmequelle; 
+– 
+Auswahl der Teile der Kabel- und Leitungsanlage unter Berücksichtigung der zu erwartenden 
+Temperaturerhöhung; 
+– 
+örtliche Verstärkung des Isoliermaterials, zB durch Verwendung von hitzebeständigen Isolierschläuchen. 
+ANMERKUNG 
+Wärmeeinwirkung kann durch Strahlung, Konvektion oder Ableitung erfolgen, zB 
+– 
+von Warmwasser-Versorgungsanlagen; 
+– 
+von Fertigungseinrichtungen, Betriebs- und Verbrauchsmitteln; 
+– 
+von Verarbeitungsprozessen; 
+– 
+durch wärmeleitende Materialien; 
+– 
+durch Sonneneinwirkung entweder auf die Kabel- und Leitungsanlagen oder das umgebende Medium. 
+522.3 
+Auftreten von Wasser (AD) oder hoher Feuchtigkeit (AB) 
+522.3.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass ein Schaden durch 
+Kondensation oder Eindringen von Wasser nicht hervorgerufen wird. Die Kabel- und Leitungsanlagen 
+müssen im errichteten Zustand die IP-Schutzart erfüllen, die für den jeweiligen Ort erforderlich ist. 
+ANMERKUNG 
+Im Allgemeinen dürfen Ummantelung und Isolierung von Kabeln und Leitungen für feste Verlegung im 
+unbeschädigten Zustand als beständig gegen das Eindringen von Feuchtigkeit angesehen werden. Besonders zu 
+betrachten sind Kabel und Leitungen, die häufig Spritzwasser ausgesetzt sind bzw. die häufig ein- oder untergetaucht 
+werden. 
+522.3.2 Wenn sich Wasser ansammeln oder Kondensation von Wasser innerhalb von Kabel- und 
+Leitungsanlagen auftreten kann, müssen Vorkehrungen für die Wasserabführung getroffen werden. 
+522.3.3 Wenn Kabel- und Leitungsanlagen Bewegungen durch Wellen (AD6) ausgesetzt sein können, sind 
+sie gegen mechanische Beschädigung durch eine oder mehrere der Maßnahmen gemäß 522.6, 522.7 oder 
+522.8 zu schützen. 
+522.4 
+Auftreten von festen Fremdkörpern (AE) 
+522.4.1 Kabel- und Leitungsanlagen sind so auszuwählen und zu errichten, dass die Gefahr, die von der 
+Beschädigung durch feste Fremdkörper verursacht wird, auf ein Minimum reduziert wird. Die Kabel- und 
+Leitungsanlagen müssen im errichteten Zustand die IP-Schutzart erfüllen, die für den jeweiligen Ort 
+erforderlich ist. 
+Bei Hohlwandinstallationen müssen Dosen und Gehäuse mit einem Schutzgrad von mindestens IP30 
+verwendet werden. 
+522.4.2 An Orten, an denen sich Staub oder ähnliche Stoffe in solch großer Menge ansammeln können, die 
+die Wärmeableitung der Kabel- und Leitungsanlage verringern, müssen Maßnahmen gegen das Ansammeln 
+von Staub oder ähnlichen Stoffen getroffen werden. 
+ANMERKUNG 
+Gegebenenfalls kann eine Verlegeart, die die Entfernung von Staub erleichtert, erforderlich sein (siehe 
+Abschnitt 529). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 289/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 7 
+522.5 
+Auftreten von korrosiven oder verschmutzenden Substanzen (AF) 
+522.5.1 Beim Auftreten von korrosiven oder verschmutzenden Substanzen, einschließlich Wasser, die die 
+Korrosion oder Alterung begünstigen, müssen die der Schädigung ausgesetzten Teile der Kabel- und 
+Leitungsanlagen geeignet geschützt werden oder aus einem korrosions- bzw. alterungsbeständigen 
+Werkstoff bestehen. 
+ANMERKUNG 
+Geeignete Schutzmaßnahmen zur Anwendung während der Errichtung können schützende Bänder, 
+Anstriche oder Fett sein. Diese Maßnahmen sollten mit dem Hersteller abgestimmt werden. 
+522.5.2 Unterschiedliche Metalle, die bei gegenseitiger Berührung elektrolytisch reagieren können, dürfen 
+keinen Kontakt zueinander haben, es sei denn, es werden besondere Maßnahmen zur Vermeidung der 
+Reaktionen getroffen. 
+522.5.3 Werkstoffe, die wechselseitig oder individuell eine Verschlechterung ihrer Eigenschaften oder eine 
+gefährliche Reduzierung ihrer Güte verursachen, dürfen keinen Kontakt zueinander haben. 
+522.6 
+Mechanische Beanspruchung: zB Schlag (AG) 
+522.6.1 Kabel- und Leitungsanlagen sind so auszuwählen und zu errichten, dass der Schaden, der durch 
+mechanische Beanspruchung, zB durch Schlag, Eindringen oder Druck während der Errichtung, der Nutzung 
+oder der Instandhaltung verursacht wird, auf ein Minimum reduziert wird. 
+522.6.2 Bei ortsfest errichteten Kabel- und Leitungsanlagen, bei denen eine mittlere (AG2) oder hohe (AG3) 
+Beanspruchung auftreten kann, muss der Schutz sichergestellt werden durch 
+– 
+die mechanischen Eigenschaften der Kabel- und Leitungsanlagen, oder 
+– 
+die Auswahl des Errichtungsortes, oder 
+– 
+zusätzlichen lokalen oder umfassenden mechanischen Schutz, oder 
+– 
+durch eine Kombination dieser Maßnahmen. 
+ANMERKUNG 1  
+Beispiele sind Bereiche mit Fußboden-Durchführungen und Bereiche mit Gabelstaplerverkehr. 
+ANMERKUNG 2  
+Zusätzlicher mechanischer Schutz kann durch Verwendung geeigneter zu öffnender 
+Elektroinstallationskanalsysteme, geschlossener Elektroinstallationskanalsysteme oder Elektroinstallationsrohrsysteme 
+erreicht werden. 
+522.6.3 Kabel oder Leitungen, welche unter einem Fußboden (Doppelboden) oder oberhalb einer 
+abgehängten Decke verlegt sind, müssen so verlegt werden, dass die Gefahr einer Beschädigung durch den 
+Boden oder die Decke oder deren Befestigungsmittel auf ein Minimum reduziert wird. 
+ANMERKUNG AT 
+Allenfalls vorhandene brandschutztechnische Maßnahmen sollten dabei berücksichtigt werden. 
+522.6.4 Die Schutzart der elektrischen Betriebsmittel muss nach dem Einführen der Kabel oder Leitungen 
+erhalten bleiben. 
+522.7 
+Beanspruchung durch Schwingungen (AH) 
+522.7.1 Kabel- und Leitungsanlagen, getragen von oder befestigt an Konstruktionsteilen von Betriebs- und 
+Verbrauchsmitteln, die Schwingungen von mittlerer (AH2) oder von hoher (AH3) Beanspruchung ausgesetzt 
+sind, müssen für diese Bedingungen geeignet sein. Dies gilt besonders für einzelne Kabel/Leitungen sowie 
+für die Kabel- und Leitungsverbindungen. 
+ANMERKUNG 
+Besonders ist der Anschluss von schwingenden Betriebs- und Verbrauchsmitteln zu beachten. 
+Besondere lokale Maßnahmen, wie zB flexible Leitungen, können erforderlich sein. 
+522.7.2 Der feste Anschluss von abgehängten elektrischen Verbrauchsmitteln, zB Leuchten, muss durch 
+flexible Kabel und Leitungen erfolgen. Wenn keine Schwingungen oder Bewegungen erwartet werden 
+können, dürfen Kabel und Leitungen mit starren Leitern verwendet werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 290/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 8 
+522.8 
+Andere mechanische Beanspruchungen (AJ) 
+522.8.1 Kabel- und Leitungsanlagen müssen so ausgewählt und errichtet werden, dass während der 
+Errichtung, dem Betrieb und der Instandhaltung eine Schädigung von Kabeln und Leitungen und ihren 
+Anschlüssen vermieden wird. 
+Die Verwendung von Schmiermitteln, die Silikonöl enthalten, zum Einziehen von Kabeln und Leitungen in 
+Elektroinstallationsrohrsysteme, geschlossene Elektroinstallationskanalsysteme, zu öffnende Elektro-
+installationskanalsysteme oder Kabelträgersysteme ist nicht zulässig. 
+522.8.2 Elektroinstallationsrohrsysteme oder geschlossene Elektroinstallationskanalsysteme innerhalb von 
+Gebäudeteilen müssen zwischen den Zugangspunkten vollständig verlegt sein, bevor Kabel oder Leitungen 
+eingezogen werden. 
+Dies gilt nicht für vorgefertigte Baueinheiten, bestehend aus einem Elektroinstallationsrohr mit eingezogenen 
+Leitungen, die speziell für diesen Zweck entwickelt wurden. 
+ANMERKUNG AT 
+Bei solchen vorgefertigten Baueinheiten kann die Auswechselbarkeit der Leitungen 
+beeinträchtigt sein. 
+522.8.3 Der Biegeradius muss so gewählt werden, dass Leiter oder Kabel und Leitungen nicht beschädigt 
+werden und Anschlüsse nicht übermäßig beansprucht werden. 
+ANMERKUNG AT 
+Weitere Informationen zum kleinsten empfohlenen Biegeradius siehe in ÖVE/ÖNORM 
+EN 50565-1 bzw. OVE E 8120. 
+522.8.4 An den Stellen, an denen Kabel oder Leitungen aufgrund ihrer Verlegeart nicht durchgehend 
+gestützt werden, müssen sie durch geeignete Maßnahmen in Abständen befestigt werden, dass eine 
+Beschädigung durch ihr Eigengewicht oder durch elektromagnetische Kräfte aufgrund eines Kurzschlusses 
+vermieden wird. 
+ANMERKUNG 
+Vorkehrungen in Bezug auf elektromagnetische Kräfte aufgrund eines Kurzschlusses brauchen nur bei 
+einadrigen Kabeln/Leitungen mit einem Querschnitt über 50 mm2 berücksichtigt werden. 
+522.8.5 Wenn die Kabel- und Leitungsanlage einer andauernden Zugbeanspruchung unterworfen ist  
+(zB durch eigenes Gewicht bei senkrechter Verlegung), müssen Kabel- oder Leitungsbauart, Querschnitt und 
+Befestigungsart dafür geeignet sein, eine Beschädigung der Leitungen oder Kabel durch übermäßige 
+Zugbeanspruchung zu vermeiden. 
+ANMERKUNG AT 
+Weitere Informationen zur Zugbeanspruchung siehe in ÖVE/ÖNORM EN 50565-1. 
+522.8.6 Für das Ein- oder Ausziehen von Kabeln und Leitungen muss ausreichender Zugang zum 
+Ausführen dieser Tätigkeiten vorhanden sein. 
+522.8.7 In Fußböden verlegte Kabel und Leitungen müssen, um Schäden zu verhindern, entsprechend der 
+vorgesehenen Nutzung des Fußbodens ausreichend geschützt sein. 
+ANMERKUNG AT 
+Dieser Schutz kann zB durch übergeschobene Kunststoff- oder Stahlrohre oder durch 
+Verkleidungen, die sicher befestigt sein müssen, erreicht werden. 
+522.8.8 Fest in Wänden verlegte Kabel- und Leitungsanlagen müssen waagrecht, senkrecht oder parallel 
+zu den Raumkanten geführt werden. 
+Kabel- und Leitungsanlagen in der Decke oder im Fußboden dürfen dem kürzest geeigneten Weg folgen. 
+ANMERKUNG 1.AT 
+Weitere Anforderungen an die Leitungsführung und Anordnung von elektrischen Betriebsmitteln 
+in Wohngebäuden siehe ÖVE/ÖNORM E 8015 Reihe bzw. für barrierefreies Bauen siehe ÖNORM B 1600. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 291/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 9 
+ANMERKUNG 2.AT 
+Bei der Herstellung der baulichen Maßnahmen für die Verlegung von Kabeln und Leitungen in 
+Wänden siehe ergänzende Anforderung nach ÖNORM B 2206, ÖNORM B 3358-1, ÖNORM B 1996-3 und ÖNORM 
+EN 1996-1-1. 
+522.8.9 Kabel- 
+und 
+Leitungsanlagen 
+müssen 
+so 
+verlegt 
+werden, 
+dass 
+eine 
+mechanische 
+Überbeanspruchung der Leiter und Verbindungen vermieden wird. 
+Bei Hohlwandinstallationen müssen Dosen und Gehäuse mit Rückhaltung der Leitung oder des Kabels 
+verwendet werden. 
+522.8.10 Erdverlegte Kabel und Leitungen, Elektroinstallationsrohre oder Elektroinstallationskanäle müssen 
+entweder gegen mechanische Beschädigung geschützt sein oder in einer Tiefe verlegt sein, die die Gefahr 
+der Beschädigung minimiert. Erdverlegte Kabel/Leitungen müssen durch eine Kabelabdeckung oder ein 
+brauchbares Markierungsband gekennzeichnet werden. Im Erdreich verlegte Rohre und Kanäle müssen 
+geeignet gekennzeichnet sein. 
+ANMERKUNG 1  
+Für erdverlegte Elektroinstallationsrohre gilt ÖVE/ÖNORM EN 61386-24. 
+ANMERKUNG 2  
+Mechanischer Schutz kann erreicht werden durch die Verwendung von erdverlegten 
+Elektroinstallationsrohrsystemen nach ÖVE/ÖNORM EN 61386-24 oder armierten Kabeln oder anderen geeigneten 
+Methoden wie Abdeckplatten. 
+ANMERKUNG 1.AT 
+Anforderungen für die Verlegung von Energie-, Steuer- und Messkabeln siehe OVE E 8120. 
+ANMERKUNG 2.AT 
+Elektroinstallationsrohre gemäß ÖVE/ÖNORM EN 61386-22 können auch in Erde verlegt 
+werden, wenn die Materialien für die Erdverlegung geeignet sind und mindestens Druckfestigkeit „mittel“ (750 N) 
+aufweisen. 
+522.8.11 Kabel- und Leitungszubehör und Umhüllungen dürfen keine scharfen Kanten haben, die 
+Kabel/Leitungen oder isolierte Leiter beschädigen können. 
+522.8.12 Kabel und Leitungen dürfen durch das Befestigungsmaterial nicht beschädigt werden. 
+522.8.13 Kabel und Leitungen, Stromschienen und andere elektrische Leiter, welche Dehnungsfugen 
+kreuzen, sind derart auszuwählen und zu verlegen, dass die zu erwartenden Bewegungen keine 
+Beschädigungen der elektrischen Betriebsmittel verursachen, zB durch die Verwendung flexibler Kabel- und 
+Leitungsanlagen. 
+ANMERKUNG AT 
+Siehe dazu auch OVE E 8120. 
+522.8.14 Kabel und Leitungen, die durch feste Unterteilungen verlaufen, sind gegen mechanische 
+Beschädigung zu schützen, zB durch die Verwendung von metallummantelten oder armierten Kabeln und 
+Leitungen oder durch die Verwendung von Elektroinstallationsrohren oder Steckstutzen. 
+ANMERKUNG 
+Kabel- und Leitungsanlagen sollten nicht durch Elemente der Gebäudestruktur geführt werden, welche 
+als tragende Elemente vorgesehen sind, es sei denn, die Funktion des tragenden Elements kann nach der Durchführung 
+sichergestellt werden. 
+522.9 
+Vorhandensein von Pflanzen- und/oder Schimmelbewuchs (AK) 
+522.9.1 Wo erfahrungs- oder erwartungsgemäß Pflanzen- und/oder Schimmelbewuchs (AK2) Schäden 
+hervorrufen können, muss die Kabel- und Leitungsanlage entsprechend ausgewählt oder es müssen 
+besondere Schutzmaßnahmen vorgesehen werden. 
+ANMERKUNG 1  
+Um eine entsprechende Entfernung eines solchen Bewuchses zu ermöglichen, kann es 
+notwendig sein, eine entsprechende Verlegeart zu wählen (siehe Abschnitt 529). 
+ANMERKUNG 2  
+Mögliche Maßnahmen zur Vorbeugung sind geschlossene Verlegearten (Elektroinstallations-
+rohre oder geschlossene Elektroinstallationskanäle oder zu öffnende Elektroinstallationskanäle) oder die Einhaltung von 
+Abständen zu Pflanzen sowie regelmäßige Reinigung der betroffenen Kabel- und Leitungsanlage. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 292/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 10 
+522.10 Anwesenheit von Tieren (Fauna) (AL) 
+Wo erfahrungs- oder erwartungsgemäß Tiere Schäden hervorrufen können, muss die Kabel- und 
+Leitungsanlage entsprechend ausgewählt oder es müssen besondere Schutzmaßnahmen vorgesehen 
+werden, zum Beispiel durch die Auswahl 
+– 
+der Kabel- und Leitungsanlage mit erhöhten mechanischen Eigenschaften, oder 
+– 
+des Verlegeortes, oder 
+– 
+eines zusätzlichen lokalen oder umfassenden mechanischen Schutzes, oder 
+– 
+durch eine Kombination dieser Maßnahmen. 
+522.11 Sonnenstrahlung (AN) und ultraviolette Strahlung 
+Wenn erhebliche Sonneneinwirkung oder ultraviolette Strahlung zu erwarten ist, muss eine geeignete Kabel- 
+und Leitungsanlage ausgewählt und errichtet werden, oder es ist ein entsprechender Schutz gegen diese 
+Sonneneinwirkung vorzusehen. Für elektrische Betriebsmittel, die ionisierender Strahlung ausgesetzt sind, 
+können besondere Vorkehrungen notwendig sein. 
+ANMERKUNG 
+Siehe auch 522.2.1. 
+522.12 Auswirkungen von Erdbeben (AP) 
+522.12.1 Wenn am Errichtungsort eine Gefährdung der Kabel- und Leitungsanlage durch Erdbeben zu 
+erwarten ist, muss dies bei der Auswahl und Errichtung der Kabel- und Leitungsanlage berücksichtigt 
+werden. 
+522.12.2 Wo erfahrungsgemäß die Erdbebengefährdung von geringer Stärke (AP2) oder höher sein kann, 
+muss Folgendes besonders betrachtet werden: 
+– 
+die Befestigung der Kabel- und Leitungsanlage am Gebäude, 
+– 
+die Verbindungen zwischen den fest verlegten Kabeln und Leitungen und allen wesentlichen elektrischen 
+Betriebsmitteln, zB Einrichtungen für Sicherheitszwecke, müssen ausreichend beweglich sein. 
+522.13 Beanspruchung durch Luftbewegung (AR) 
+522.13.1 Bei Zutreffen sind 522.7 „Schwingungen“ (AH) und 522.8 „Andere mechanische Beanspruchungen“ 
+(AJ) zu berücksichtigen. 
+522.14 Art der bearbeiteten oder gelagerten Stoffe (BE) 
+Bei Zutreffen ist Abschnitt 422 „Maßnahmen bei besonderen Brandrisiken“ und Abschnitt 527 „Auswahl und 
+Errichtung von Kabel- und Leitungsanlagen zur Begrenzung von Bränden“ zu berücksichtigen. 
+522.15 Gebäudestruktur (CB) 
+522.15.1 Wo Gefahren infolge baulicher Bewegungen (CB3) bestehen, müssen die vorgesehenen Kabel- 
+und Leitungsbefestigungen und Schutzmaßnahmen sich diesen Bewegungen anpassen können, sodass die 
+Leiter nicht außergewöhnlichen mechanischen Beanspruchungen ausgesetzt werden. 
+522.15.2 Für elastische oder für Bewegung (CB4) vorgesehene Bauweisen müssen flexible Kabel- und 
+Leitungsanlagen verwendet werden. 
+523 Strombelastbarkeit 
+523.1 
+Der Strom, der dauernd von einem Leiter unter normalen Bedingungen geführt wird, darf nur so 
+groß sein, dass die durch ihn hervorgerufene Temperatur die höchstzulässige Betriebstemperatur der 
+Isolierung gemäß Tabelle 52.1 nicht überschreitet. Die Größe des Stroms muss gemäß 523.2 ausgewählt 
+oder gemäß 523.3 bestimmt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 293/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 11 
+Tabelle 52.1 – Höchstzulässige Betriebstemperaturen für Isolierstoffe 
+Isolierstoff 
+Höchstzulässige 
+Betriebstemperatur a, d 
+Polyvinylchlorid (PVC) 
+Vernetztes Polyethylen (VPE), Ethylen-Propylen-Kautschuk (EPR) 
+Mineral (mit PVC-Schutzhülle oder blank im Handbereich) 
+Mineral (blank, nicht im Handbereich und nicht in Kontakt mit brennbaren Stoffen) 
+70 °C am Leiter 
+90 °C am Leiter 
+70 °C am Mantel 
+105 °C am Mantel b, c 
+a 
+Die höchstzulässigen Betriebstemperaturen der Tabelle 52.1, auf welcher die Strombelastbarkeitstabellen in 
+Anhang 52.B basieren, wurden IEC 60502 und ÖVE/ÖNORM EN 60702 Reihe entnommen. 
+b 
+Wenn ein Leiter mit einer Betriebstemperatur über 70 °C betrieben wird, muss sichergestellt werden, dass die 
+Anschlussstelle des elektrischen Betriebsmittels für diese Temperatur geeignet ist. 
+c 
+Bei mineralisolierten Kabeln dürfen höhere Betriebstemperaturen zugelassen werden, die von der 
+Bemessungstemperatur des Kabels/der Leitung, seinen Anschlussstellen und anderen äußeren Einflüssen 
+abhängen. 
+d 
+Bestätigt der Hersteller eine höhere zulässige Betriebstemperatur für Drähte und Kabel/Leitungen, kann diese 
+angewendet werden. 
+ANMERKUNG 1 
+Diese Tabelle enthält nicht alle Arten von Kabeln und Leitungen. 
+ANMERKUNG 2 
+Diese 
+Tabelle 
+gilt 
+nicht 
+für 
+Schienenverteilersysteme, 
+Stromschienensysteme 
+oder 
+Stromschienensysteme für Leuchten, für welche die Stromtragfähigkeit vom Hersteller gemäß ÖVE/ÖNORM 
+EN 61439-6, ÖVE/ÖNORM EN 61534-1 bzw. ÖVE/ÖNORM EN 60570 zur Verfügung gestellt werden sollte. 
+ANMERKUNG 3 
+Betriebstemperaturen von anderen Isolierstoffen sind der Kabel/Leitungs-Spezifikation oder den 
+Herstellerangaben zu entnehmen. 
+ 
+523.2 
+Die Anforderung gemäß 523.1 gilt als erfüllt, wenn der Strom von isolierten Kabeln und Leitungen 
+ohne Bewehrung die jeweils zutreffende Strombelastbarkeit gemäß den Tabellen in Anhang 52.B, unter 
+Bezugnahme auf Tabelle 52.A.3 und unter Berücksichtigung der erforderlichen Umrechnungsfaktoren in 
+Anhang 52.B, nicht überschreitet. 
+ANMERKUNG 1  
+In Abhängigkeit von den äußeren Einflüssen und dem genauen Aufbau der Kabel und Leitungen 
+kann es Toleranzen bei den Strombelastbarkeitswerten geben. 
+523.3 
+Die entsprechenden Werte der Strombelastbarkeit dürfen auch 
+– 
+gemäß IEC 60287 Series, oder 
+– 
+durch Versuch, oder 
+– 
+durch Rechnung, wobei eine anerkannte Berechnungsmethode zu verwenden ist, 
+bestimmt werden. 
+Gegebenenfalls sind die Lastverläufe, und für Erdkabel der effektive Wärmewiderstand des Bodens, zu 
+berücksichtigen. 
+523.4 
+Die Umgebungstemperatur ist die Temperatur des umgebenden Mediums, wenn die betrachteten 
+Kabel/Leitung oder isolierten Leiter nicht belastet werden (siehe Anhang 52.B.2). 
+523.5 
+Umrechnungsfaktoren für Häufung 
+Umrechnungsfaktoren für Häufungen (siehe Tabelle 52.B.17 bis Tabelle 52.B.21) sind anzuwenden für 
+Häufungen (Gruppen) isolierter Leiter oder Kabel/Leitungen mit gleicher maximaler Betriebstemperatur. 
+Bei 
+Häufungen 
+von 
+Kabeln/Leitungen 
+oder 
+isolierten 
+Leitern 
+mit 
+unterschiedlichen 
+maximalen 
+Betriebstemperaturen muss die Strombelastbarkeit aller Kabel/Leitungen oder isolierter Leiter in der Häufung 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 294/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 12 
+auf der niedrigsten maximalen Betriebstemperatur aller Kabel oder Leitungen in der gemeinsamen Häufung 
+und dem entsprechenden Umrechnungsfaktor für Häufung basieren. 
+Falls ein Leiter mit einem Strom von höchstens 30 % seiner Strombelastbarkeit bei Häufung belastet wird, ist 
+es zulässig, diesen bei der Bestimmung des Umrechnungsfaktors für die restlichen Kabel oder Leitungen 
+dieser Häufung zu vernachlässigen. 
+ANMERKUNG AT 
+Weitere Hinweise zu Umrechnungsfaktoren für Häufungen in Abhängigkeit der Referenz-
+verlegearten siehe Anhang 52.B.4. 
+523.6 
+Anzahl der belasteten Leiter 
+523.6.1 Bei der Ermittlung der Anzahl der belasteten Leiter in einem Stromkreis sind nur jene Leiter zu 
+berücksichtigen, die einen Belastungsstrom führen. Wenn in einem Mehrphasen-Stromkreis eine 
+symmetrische Belastung angenommen werden kann, braucht der zugehörige Neutralleiter nicht 
+berücksichtigt zu werden. 
+Daher gilt für Vier- und Fünfleiter-Kabel/Leitungen die gleiche Strombelastbarkeit wie für ein Dreileiter-
+Kabel/Leitung mit dem gleichen Leiternennquerschnitt für jeden Außenleiter. Vier- und Fünfleiter-
+Kabel/Leitungen können höhere Strombelastbarkeiten aufweisen, wenn nur drei Leiter belastet werden. 
+Diese Annahmen gelten nicht, wenn der Oberschwingungsstrom der 3. Ordnung und dessen Vielfaches, 
+größer als 15 % ist. 
+Bei Oberschwingungsbelastung müssen gegebenenfalls alle Leiter als stromdurchflossen angesehen 
+werden. 
+523.6.2 Wo der Neutralleiter in einem mehr- oder vieladrigem Kabel/Leitung aufgrund einer 
+unsymmetrischen Belastung der Außenleiter einen Strom führt, wird der Temperaturanstieg im Neutralleiter 
+durch die reduzierte Wärmeentwicklung in einem oder mehreren Außenleitern ausgeglichen. In diesem Fall 
+ist der Querschnitt des Neutrallleiters auf Basis des höchsten Außenleiterstromes zu wählen. 
+Auf alle Fälle ist der Querschnitt des Neutralleiters in Übereinstimmung mit 523.1 zu bestimmen. 
+523.6.3 Wenn der Neutralleiter belastet wird, ohne dass die Außenleiter entsprechend entlastet werden, 
+muss der Neutralleiter bei der Festlegung der Strombelastbarkeit des Stromkreises mit berücksichtigt 
+werden. 
+Solche 
+Ströme 
+können 
+beispielsweise 
+durch 
+ausgeprägte 
+Oberschwingungsströme 
+in 
+Drehstromkreisen verursacht werden. Wenn der Anteil der Oberschwingungsströme größer als 15 % ist, darf 
+der Nennquerschnitt des Neutralleiters nicht kleiner als der des Außenleiters sein. Die zusätzliche 
+Erwärmung durch das Vorhandensein von Oberschwingungsströmen der 3. Ordnung oder deren Vielfachen 
+und die entsprechenden Umrechnungsfaktoren für größere Oberschwingungsströme werden im Anhang 52.E 
+behandelt. 
+523.6.4 Leiter, die nur Schutzleiterfunktion haben, werden nicht berücksichtigt. PEN-Leiter müssen in der 
+gleichen Weise wie Neutralleiter behandelt werden. 
+523.7 
+Parallel geschaltete Leiter 
+Wenn zwei oder mehr aktive Leiter oder PEN-Leiter parallel geschaltet sind, müssen 
+a) 
+Maßnahmen zur gleichmäßigen Aufteilung des Belastungsstromes auf die Leiter getroffen werden. 
+ 
+Diese Forderung gilt als erfüllt, wenn die Leiter einer Leitung aus demselben Werkstoff bestehen, den 
+gleichen Nennquerschnitt, etwa die gleiche Länge und keine Verzweigungen auf der gesamten 
+Stromkreislänge aufweisen, und ob 
+ 
+– 
+die parallel geschalteten Leiter in mehradrigen oder verseilten einadrigen Kabeln oder Leitungen 
+enthalten sind, oder 
+ 
+– 
+die parallel geschalteten Leiter in einadrigen Kabeln oder Leitungen bei gebündelter oder ebener 
+Anordnung einen Nennquerschnitt von höchstens 50 mm2 Cu oder von höchstens 70 mm2 Al 
+aufweisen, oder 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 295/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 13 
+ 
+– 
+die parallel geschalteten Leiter in einadrigen Kabeln oder Leitungen bei eng gebündelter oder 
+ebener Anordnung einen Nennquerschnitt über 50 mm2 Cu oder über 70 mm2 Al aufweisen und 
+gleichzeitig besondere Verlegemaßnahmen getroffen sind. Diese Verlegemaßnahmen bestehen aus 
+einer geeigneten Phasenfolge und räumlichen Anordnung der unterschiedlichen Außenleiter oder 
+Pole (siehe Anhang 52.H), 
+oder 
+b) 
+es muss der Belastungsstrom zur Erfüllung der Anforderungen von 523.1 besonders beachtet werden. 
+Wo keine entsprechende Stromaufteilung erreicht werden kann, oder wo vier oder mehr Leiter parallel 
+geschalten werden müssten, ist die Verwendung von Stromschienensystemen in Betracht zu ziehen. 
+523.8 
+Änderung der Verlegebedingungen im Verlauf einer Verlegestrecke 
+Wenn im Verlauf einer Verlegestrecke eines Kabels oder der Leitung die Wärmeableitung differiert, ist die 
+Strombelastbarkeit nach den ungünstigsten Verlegebedingungen zu ermitteln. 
+ANMERKUNG 
+Diese Anforderung kann für gewöhnlich vernachlässigt werden, wenn sich die Wärmeableitung nur 
+dadurch unterscheidet, dass die Verkabelung durch eine Wand mit einer Dicke kleiner 0,35 m geführt wird. 
+523.9 
+Einleiter Kabel/Leitungen mit Metallmantel 
+Metallmäntel und/oder nicht magnetische Bewehrungen von einadrigen Kabeln und Leitungen innerhalb des 
+gleichen Stromkreises müssen entweder an beiden Kabel-/Leitungsenden miteinander verbunden werden, 
+oder es dürfen alternativ zur Verbesserung der Strombelastbarkeit die Mäntel und Bewehrungen dieser 
+Kabel/Leitungen bei Leiternennquerschnitten über 50 mm2 und einem nicht leitenden äußeren Mantel an 
+einem Kabel-/Leitungsende verbunden werden, wobei an den nicht verbundenen Enden eine geeignete 
+Isolierung vorzusehen ist. In diesem Fall muss die Länge der Kabel/Leitungen vom Verbindungspunkt 
+gemessen derart begrenzt werden, dass Spannungen vom Mantel und/oder von der Bewehrung zur Erde 
+a) 
+keine Korrosion verursachen, wenn die Kabel/Leitungen mit voller Last betrieben werden, zB durch 
+Begrenzung der Spannung auf 25 V und 
+b) 
+keine Gefahr oder Schäden an Eigentum verursachen, wenn die Kabel/Leitungen den Kurzschlussstrom 
+führen. 
+524 Querschnitte von Leitern 
+524.1 
+Die Querschnitte von Außenleitern in Wechselstromkreisen und von aktiven Leitern in 
+Gleichstromkreisen dürfen aus mechanischen Gründen nicht kleiner sein als die in Tabelle 52.2 
+angegebenen Werte. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 296/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 14 
+Tabelle 52.2 – Mindestquerschnitt von Leitern aus mechanischen Gründen 
+Arten von Kabel- und 
+Leitungsanlagen 
+Anwendung des Stromkreises 
+Leiter 
+Werkstoff 
+Mindestquerschnitt 
+mm2 
+Feste 
+Verlegung 
+Kabel und 
+Leitungen 
+Leistungs- und 
+Beleuchtungsstromkreise 
+Cu 
+1,5 
+Al 
+in Übereinstimmung mit 
+ÖVE/ÖNORM EN 60228 
+(10 mm2) 
+(siehe Anmerkung 1) 
+Hilfsstromkreise 
+Cu 
+0,5 
+(siehe Anmerkung 2) 
+blanke Leiter 
+Leistungsstromkreise 
+Cu 
+10 
+Al 
+16 
+Hilfsstromkreise 
+Cu 
+4 
+Verbindungen mit flexiblen Kabeln 
+und Leitungen 
+für ein besonderes 
+Betriebsmittel 
+Cu 
+wie in der entsprechenden 
+Betriebsmittelnorm 
+angegeben 
+für andere Anwendungen 
+0,75 a 
+Schutz- und 
+Funktionskleinspannung für 
+besondere Anwendung 
+0,75 
+ANMERKUNG 1 
+ 
+Verbinder zum Anschluss von Aluminiumleitern sollten für diesen Werkstoff geprüft 
+und zugelassen sein. 
+ANMERKUNG 2 
+ 
+In Hilfsstromkreisen für elektronische Betriebsmittel ist ein Mindestquerschnitt von 
+0,1 mm2 zulässig. 
+ANMERKUNG 3 
+ 
+Besondere Anforderungen an Beleuchtungsstromkreise mit Kleinspannung siehe 
+Teil 7-715. 
+a 
+Für vieladrige flexible Leitungen mit 7 oder mehr Adern gilt Anmerkung 2. 
+ 
+524.2 
+Querschnitt des Neutralleiters 
+Falls detaillierte Angaben nicht vorliegen, gelten Folgende Unterabschnitte: 
+524.2.1 Der Neutralleiter, soweit vorhanden, muss mindestens den gleichen Querschnitt haben wie die 
+Außenleiter: 
+– 
+in einphasigen Wechselstromkreisen mit zwei Leitern, unabhängig vom Querschnitt des Leiters; 
+– 
+in mehrphasigen Wechselstromkreisen, wenn der Außenleiterquerschnitt höchstens 16 mm2 für Kupfer 
+oder 25 mm2 für Aluminium ist; 
+– 
+in dreiphasigen Wechselstromkreisen, wenn voraussichtlich Oberschwingungen 3. Ordnung und 
+ungerade Vielfache 3. Ordnung zum Fließen kommen und die Gesamt-Oberschwingungsverzerrung 
+zwischen 15 % und 33 % liegt. 
+ANMERKUNG 
+Die genannten Oberschwingungsanteile sind zB zu erwarten, wenn Verteilungsstromkreise 
+Endstromkreise versorgen, die nicht lineare Verbraucher (zB elektronische Schaltnetzteile, elektronische Vorschaltgeräte) 
+enthalten. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 297/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 15 
+524.2.2 Wenn die Oberschwingung 3. Ordnung und ungerade Vielfache der Oberschwingung 3. Ordnung 
+mehr als 33 % Gesamt-Oberschwingungsverzerrung betragen, kann es notwendig sein, den Querschnitt des 
+Neutralleiters zu vergrößern (523.6.3 und Anhang 52.E): 
+ANMERKUNG 1  
+Derartige Oberschwingungsanteile treten zB in Stromkreisen auf, die nicht lineare Verbraucher 
+enthalten oder für IT-Komponenten bestimmt sind. 
+a) 
+Bei Mehrleiterkabeln/-leitungen ist der Querschnitt der Außenleiter gleich dem Querschnitt des 
+Neutralleiters, wobei der für den Neutralleiter gewählte Querschnitt 1,45 · IB des Außenleiters führen 
+können muss. 
+b) 
+Bei Einleiterkabeln/-leitungen darf der Querschnitt der Außenleiter kleiner als der Querschnitt des 
+Neutralleiters sein. Die Berechnung wird unter folgenden Bedingungen durchgeführt: 
+ 
+– 
+für den Außenleiter: bei IB; 
+ 
+– 
+für den Neutralleiter: bei einem Strom, der 1,45 · IB beträgt. 
+ANMERKUNG 2  
+Für eine Erläuterung von IB (Betriebsstrom für diesen Stromkreis) siehe 433.1. 
+524.2.3 Bei mehrphasigen Stromkreisen, in denen der Querschnitt der Außenleiter über 16 mm2 für Kupfer 
+und 25 mm2 für Aluminium ist, darf der Neutralleiter einen kleineren Querschnitt als die Außenleiter haben, 
+wenn die folgenden Bedingungen gleichzeitig erfüllt sind: 
+– 
+Der im bestimmungsgemäßen Betrieb zu erwartende Strom im Stromkreis ist auf die Außenleiter 
+symmetrisch 
+verteilt, 
+und 
+die 
+Oberschwingung 
+3. Ordnung 
+sowie 
+ungerade 
+Vielfache 
+der 
+Oberschwingung 3. Ordnung sind nicht größer als 15 % des Außenleiterstroms. 
+ 
+ANMERKUNG 
+Üblicherweise ist der reduzierte Neutralleiterquerschnitt nicht kleiner als 50 % des Außenleiter-
+querschnitts. 
+– 
+Der Neutralleiter ist bei Überstrom durch Maßnahmen gemäß 431.2 geschützt. 
+– 
+Der Querschnitt des Neutralleiters ist mindestens 16 mm2 für Kupfer oder 25 mm2 für Aluminium. 
+525 Spannungsabfall in Verbraucheranlagen 
+525.001.AT  
+Der gesamte Spannungsabfall für den Bereich von der Übergabestelle des Netzbetreibers 
+bis zum letzten Verbrauchsgerät ist mit 4 % der Nennspannung begrenzt. Von diesen 4 % 
+Gesamtspannungsabfall ist 1 % für den Spannungsabfall im Bereich von der Übergabestelle des 
+Netzbetreibers bis zur Messeinrichtung reserviert. Für die Berechnung des Spannungsabfalls ist der 
+Nennstrom der vorgeschaltenen Überstrom-Schutzeinrichtung zu Grunde zu legen. 
+525.002.AT  
+Ein höherer Spannungsabfall ist zulässig 
+– 
+beim Anlauf von Motoren; 
+– 
+für andere Verbrauchsmittel mit hohen Einschaltströmen 
+vorausgesetzt, dass sichergestellt ist, dass sich in beiden Fällen die Spannungsschwankungen innerhalb der 
+in der jeweiligen Betriebsmittelnorm genannten Grenzen bewegt. 
+Die folgenden zeitbegrenzten Fälle sind ausgeschlossen: 
+– 
+transiente Überspannungen; 
+– 
+Spannungsschwankungen durch gestörten Betrieb. 
+Spannungsabfälle können mittels der nachstehenden Gleichungen näherungsweise bestimmt werden: 
+Bei einphasigem Wechselstrom: 
+∆𝑈 ≤ 
+𝐼𝐵 ∙ 2 ∙ 𝑙 ∙ cos 𝜑
+𝛾 ∙ 𝐴
+ 
+(F 52.1.AT)
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 298/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 16 
+Bei Drehstrom: 
+∆𝑈 ≤ 
+𝐼𝐵 ∙ √3 ∙ 𝑙 ∙ cos 𝜑
+𝛾 ∙ 𝐴
+ 
+(F 52.2.AT)
+ 
+ 
+Der entsprechende Spannungsabfall in Prozent (∆u) ergibt sich nach der Gleichung 
+ 
+∆𝑢 = 100 ∙ 
+∆U
+U0  
+(F 52.3.AT) 
+Dabei ist (Formel F 52.1.AT bis F 52.3.AT) 
+∆U  
+der in der Leitung auftretende Spannungsabfall; 
+IB 
+ 
+der Betriebsstrom; 
+cos  
+der Leistungsfaktor der Verbrauchsmittel; 
+l 
+ 
+die Länge der Kabel-/Leitungsstrecke, in m; 
+ 
+ 
+ANMERKUNG AT 
+Nicht die Summen der Längen der einzelnen Leiter. 
+γ 
+ 
+der spezifische Leitwert; 
+ 
+ 
+für Kupfer = 57 Sm/mm2 (bei 20 °C, Mittelwert); 
+ 
+ 
+für Aluminium = 35,4 Sm/mm2 (bei 20 °C, Mittelwert); 
+A 
+ 
+der Querschnitt der Leiter, in mm2; 
+U0  
+die Spannung Außenleiter gegen Neutralleiter. 
+In Kleinspannungsstromkreisen, ausgenommen Beleuchtungsstromkreise, müssen die in 525.001.AT 
+genannten Grenzwerte für den Spannungsabfall bei Anwendungen wie zB Klingel, Steuerung, Türöffner nicht 
+eingehalten werden, vorausgesetzt, dass die ordnungsgemäße Funktion dieser Betriebsmittel überprüft wird. 
+526 Elektrische Verbindungen 
+526.1 
+Verbindungen zwischen Leitern sowie zwischen Leitern und Anschlussstellen an elektrischen 
+Betriebsmitteln müssen für dauerhafte Stromübertragung und angemessene mechanische Festigkeit und 
+Schutz bemessen sein. 
+526.2 
+Bei der Auswahl der Verbindungsmittel ist, soweit zutreffend, zu berücksichtigen: 
+– 
+der Werkstoff des Leiters und seiner Isolierung; 
+– 
+die Anzahl und Form der Drähte, die den Leiter bilden; 
+– 
+der Querschnitt des Leiters; 
+– 
+die Anzahl der Leiter, die miteinander zu verbinden sind. 
+ANMERKUNG 1  
+Lötverbindungen sollten vermieden werden, ausgenommen in Kommunikations-Stromkreisen. 
+Werden sie angewendet, müssen die Verbindungen so gestaltet sein, dass das Fließen des Lötmittels, mechanische 
+Belastungen und Temperaturerhöhung im Fehlerfall berücksichtigt sind (siehe 522.6, 522.7 und 522.8). 
+ANMERKUNG 2  
+Normen für Verbindungsmaterial sind zB ÖVE/ÖNORM EN 61535 und ÖVE/ÖNORM EN 60998 
+Reihe, ÖVE/ÖNORM EN 60999 Reihe, OVE EN 60947-7 Reihe. 
+ANMERKUNG 3  
+Klemmen ohne die Aufschriften „r“ (nur starre Leiter), „f“ (nur flexible Leiter), „s“ oder „sol“ (nur 
+massive Leiter) können zur Verbindung aller Leiterarten eingesetzt werden. 
+526.3 
+Alle Verbindungen müssen 
+zur Besichtigung, 
+Prüfung und Wartung zugänglich sein, 
+ausgenommen: 
+– 
+Muffen zur Verlegung im Erdreich; 
+– 
+mit Isoliermasse gefüllte oder gekapselte Muffen; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 299/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 17 
+– 
+Verbindungen zwischen der Anschlussleitung und dem Heizelement für Deckenheizsysteme, Fußboden-
+heizsysteme und Rohrheizsysteme; 
+– 
+Schweiß-, Löt-, Hartlöt- oder mit einem geeigneten Werkzeug hergestellte Crimpverbindungen; 
+– 
+Verbindungen, die Teil eines einer Produktnorm entsprechenden Betriebsmittels sind. 
+ANMERKUNG 
+Eine mit Isoliermasse gefüllte Muffe ist zB eine mit Gießharz gefüllte Muffe. 
+526.4 
+Falls erforderlich, müssen Vorkehrungen getroffen werden, dass im bestimmungsgemäßen Betrieb 
+auftretende Temperaturen an den Klemmen nicht die Wirksamkeit der Isolierung der angeschlossenen Leiter 
+oder der Befestigungsmittel mindern. 
+526.5 
+Elektrische 
+Verbindungen 
+(Betriebsmittelanschlüsse 
+und 
+Leiterverbindungen) 
+müssen 
+in 
+geeigneten Umhüllungen erfolgen, zB in Verbindungsdosen, Gehäusen, Geräteanschlussdosen. 
+ANMERKUNG AT 
+Anforderungen an Dosen und Gehäuse für Installationsgeräte, zB Verbindungsdosen zur 
+Unterbringung von Klemmen, Steckdosen oder Schaltern, siehe ÖVE/ÖNORM EN 60670 Reihe. 
+Verbindungen dürfen auch, falls vom Hersteller zu diesem Zweck Raum vorgesehen wurde, an Klemmen von 
+elektrischen Betriebsmitteln (zB Steckdosen, Schaltern) erstellt werden, sofern die Übersichtlichkeit der 
+elektrischen Anlagen und die Sicherheit der Verbindungsstellen der Leiter gewahrt bleiben. In diesem Fall 
+müssen Betriebsmittel mit fest montiertem Verbindungsmaterial oder mit Möglichkeiten zur Befestigung von 
+Verbindungsmaterial verwendet werden. Die Leiter von Endstromkreisen müssen in einer Umhüllung enden. 
+526.6 
+Anschluss- und Verbindungsstellen von Kabeln und Leitungen sind von mechanischer 
+Beanspruchung zu entlasten. Zugentlastungsmittel müssen derart gestaltet sein, dass jegliche mechanische 
+Beschädigung der Kabel, Leitungen oder Leiter vermieden wird. 
+526.7 
+Wenn eine Verbindung in einer Umhüllung hergestellt wurde, muss die Umhüllung einen 
+ausreichenden mechanischen Schutz und Schutz gegen äußere Einflüsse sicherstellen. 
+526.001.AT Dosen/Gehäuse sind mittels Werkzeug öffenbaren Deckeln, Abdeckungen oder Abdeckplatten 
+auszuführen. 
+526.8 
+Anschluss von mehr-, fein- und feinstdrähtigen Leitern 
+526.8.1 Zum Schutz gegen Abspleißen und Abquetschen einzelner Drähte von mehr-, fein- und 
+feinstdrähtigen Leitern müssen geeignete Klemmen verwendet oder die Leiterenden besonders vorbereitet 
+werden. 
+Als geeignete Behandlung von Leiterenden gilt zB das Verwenden von Kabelschuhen und Aderendhülsen. 
+526.8.2 Das Verlöten des gesamten Leiterendes von mehr-, fein- und feinstdrähtigen Leitern ist nur dann 
+zulässig, wenn für den Anschluss der Leiter Klemmen verwendet werden, die vom Hersteller dafür 
+vorgesehen sind. 
+526.8.3 Verlötete (verzinnte) Leiterenden von fein- und feinstdrähtigen Leitern sind bei Anschluss- und 
+Verbindungsstellen, die betrieblichen relativen Bewegungen zwischen verlötetem und nicht verlötetem 
+Leiterteil ausgesetzt sind, nicht zulässig. 
+ANMERKUNG 
+Fein- und feinstdrähtig entspricht ÖVE/ÖNORM EN 60228, Klasse 5 und Klasse 6. 
+526.9 
+Adern ummantelter Kabel/Leitungen, von denen der Mantel entfernt wurde, und nicht ummantelte 
+Kabel/Leitungen am Endpunkt eines Elektroinstallationsrohrs, geschlossenen Elektroinstallationskanals oder 
+zu öffnenden Elektroinstallationskanals müssen in Umhüllungen, wie in 526.5 gefordert, enden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 300/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 18 
+527 Auswahl und Errichtung von Kabel- und Leitungsanlagen zur Begrenzung der 
+Ausbreitung von Bränden 
+527.1 
+Vorkehrungen innerhalb eines Brandabschnitts 
+527.1.1 Die Ausdehnung eines Brandes muss durch die Auswahl geeigneter Materialien und durch die 
+Berücksichtigung der Anforderungen gemäß 527.1.2 bis 527.1.6 bei der Errichtung minimiert werden. 
+527.1.2 Kabel- und Leitungsanlagen müssen so errichtet werden, dass die allgemeine Gebäudebetriebs- 
+und Feuersicherheit nicht verringert wird. 
+527.1.3 Kabel und Leitungen, die mindestens OVE EN 60332-1-2 entsprechen, und Erzeugnisse, die als 
+nicht flammenausbreitend klassifiziert sind (siehe 527.1.4), dürfen ohne besondere Maßnahmen verlegt 
+werden. 
+ANMERKUNG 
+Bei Anlagen, in denen eine erhöhte Brandgefahr zu erwarten ist, können Kabel und Leitungen 
+erforderlich sein, die den erhöhten Anforderungen für gebündelt verlegte Kabel nach OVE EN 60332-3 Reihe bzw. 
+OVE EN 50399 entsprechen. Diese Festlegung wird durch die zuständige Behörde oder ein Brandschutzkonzept 
+getroffen. 
+527.1.4 Kabel und Leitungen, die nicht mindestens die Anforderungen an die Prüfung der vertikalen 
+Flammenausbreitung gemäß OVE EN 60332-1-2 erfüllen, müssen auf kurze Anschlusslängen von 
+Verbrauchsmitteln zu den festen Kabel- und Leitungsanlagen begrenzt sein. Diese Anschlussleitungen 
+dürfen in jedem Fall nur innerhalb eines Brandabschnitts angewendet werden. 
+527.1.5 Produkte, die als nicht flammenausbreitend gemäß ÖVE/ÖNORM EN 61439-6, ÖVE/ÖNORM 
+EN 61537 und ÖVE/ÖNORM EN 50085 Reihe, ÖVE/ÖNORM EN 61386 Reihe und ÖVE/ÖNORM EN 61534 
+Reihe klassifiziert sind, dürfen ohne besondere Maßnahmen verlegt werden. Andere Erzeugnisse nach 
+Normen, welche ähnliche Anforderungen bezüglich der vertikalen Flammenausbreitung haben, dürfen ohne 
+besondere Maßnahmen verlegt werden. 
+527.1.6 Teile von Kabel- und Leitungsanlagen, ausgenommen Kabel und Leitungen, die nicht als nicht 
+flammenausbreitend gemäß ÖVE/ÖNORM EN 61439-6, ÖVE/ÖNORM EN 60570, ÖVE/ÖNORM EN 61537 
+und ÖVE/ÖNORM EN 50085 Reihe, ÖVE/ÖNORM EN 61386 Reihe und ÖVE/ÖNORM EN 61534 Reihe 
+klassifiziert sind, jedoch in allen anderen Beziehungen die Anforderungen ihrer jeweiligen Produktnormen 
+erfüllen, müssen vollständig von geeigneten nicht brennbaren Baustoffen umschlossen sein. 
+527.2 
+Verschluss (Abschottung) von Kabel- und Leitungsdurchführungen 
+527.2.1 Durchführungen für Kabel und Leitungen in Teilen der Gebäudekonstruktion, wie zB Wände, 
+Dächer, Decken, Fußböden, Zwischenwände, Hohlwände, müssen nach der Durchführung der Kabel und 
+Leitungen entsprechend der Feuerwiderstandsdauer (falls vorhanden) des jeweiligen Gebäudeelements 
+abgeschottet werden. 
+ANMERKUNG 1  
+Während 
+der 
+Errichtung 
+von 
+Kabel- 
+und 
+Leitungsanlagen 
+können 
+vorübergehende 
+Vorkehrungen zum Abschotten erforderlich sein. 
+ANMERKUNG 2  
+Bei Änderungsarbeiten sollte die Abschottung so schnell wie möglich wieder hergestellt werden. 
+Der Abschnitt wird erfüllt, wenn typgeprüfte Kabelabschottungen verwendet werden. 
+ANMERKUNG AT 
+Bei Schlitzen und Aussparungen in Wänden ist hinsichtlich der Feuerwiderstandsdauer ÖNORM 
+EN 1996-1-2:2013 Abschnitt 5.3 zu beachten. 
+527.2.2 Teile von Kabel- und Leitungsanlagen, wie zB Elektroinstallationsrohre, geschlossene Elektro-
+installationskanäle, 
+zu 
+öffnende 
+Elektroinstallationskanäle, 
+Stromschienen 
+oder 
+Stromschienen-
+kanalsysteme, die durch Gebäudeelemente mit vorgegebener Feuerwiderstandsdauer geführt werden, 
+müssen im Inneren entsprechend der Feuerwiderstandsdauer abgeschottet werden, wie sie für das 
+betreffende Gebäudeelement vor der Durchführung und für den äußeren Bereich gemäß 527.2.1 gefordert 
+wird. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 301/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 19 
+527.2.3 Elektroinstallationsrohrsysteme, zu öffnende Elektroinstallationskanalsysteme und geschlossene 
+Elektroinstallationskanalsysteme, die entsprechend ihrer Produktnorm als nicht flammenausbreitend 
+klassifiziert sind und einen maximalen inneren Querschnitt von 710 mm2 haben, brauchen im Innern nicht 
+abgeschottet zu werden, vorausgesetzt, 
+– 
+das System erfüllt die Prüfung gemäß ÖVE/ÖNORM EN 60529 für IP33 und 
+– 
+alle Endabschlüsse des Systems innerhalb eines Brandabschnitts erfüllen die Prüfung gemäß 
+ÖVE/ÖNORM EN 60529 für IP33. 
+527.2.4 Kabel- und Leitungsanlagen dürfen nicht durch tragende Gebäudeelemente geführt werden, es sei 
+denn, die Statik des tragenden Elements wird durch das Hindurchführen nicht beeinträchtigt. 
+ANMERKUNG AT 
+Hierfür ist die Bestätigung eines Statikers einzuholen. 
+527.2.5 Abschottungen gemäß 527.2.1 oder 527.2.2 müssen die gleiche Beständigkeit gegen äußere 
+Einflüsse wie die Kabel- und Leitungsanlage aufweisen, in der sie eingesetzt werden. Zusätzlich müssen sie 
+folgende Anforderungen erfüllen: 
+– 
+Sie müssen die gleiche Widerstandsfähigkeit gegen Verbrennungsprodukte aufweisen wie die Bauteile 
+der Gebäudekonstruktion, die sie durchstoßen. 
+– 
+Wenn für das durchdrungene Bauteil der Gebäudekonstruktion eine Wasserbeständigkeit gefordert ist, 
+müssen die Vorrichtungen zur Abdichtung im selben Umfang wasserbeständig sein. 
+– 
+Sofern nicht alle verwendeten Abschottmaterialien im eingebauten Zustand feuchtigkeitsbeständig sind, 
+müssen die Abschottungen und die Kabel- und Leitungsanlage vor Tropfwasser geschützt werden, das 
+an der Kabel- und Leitungsanlage entlanglaufen kann oder das sich in anderer Weise um die Abdichtung 
+herum ansammeln kann. 
+– 
+Sie müssen verträglich sein mit den Werkstoffen der Kabel- und Leitungsanlage, mit denen sie in 
+Berührung kommen. 
+– 
+Sie müssen die thermischen Bewegungen der Kabel- und Leitungsanlage ohne Verringerung der 
+Abschottqualität zulassen. 
+– 
+Sie müssen eine angemessene mechanische Festigkeit haben, um den Beanspruchungen 
+standzuhalten, die durch Zerstörung der Befestigungen der Kabel- und Leitungsanlage infolge eines 
+Brands entstehen können. 
+Die Anforderungen gemäß 527.2.5 sind erfüllt, wenn 
+– 
+entweder Kabelschellen oder Halterungen in einem Abstand von höchstens 750 mm zur 
+Kabelabschottung angebracht sind, die den zu erwartenden mechanischen Beanspruchungen infolge 
+einer Zerstörung der Befestigungen auf der Feuerseite der Kabelabschottung so standhalten, dass keine 
+Belastung auf das Schott übertragen wird, oder 
+– 
+die Konstruktion der Abschottung selbst ausreichenden Halt bietet. 
+ANMERKUNG AT 
+Die Abschottungen sollten zum entsprechenden Zeitpunkt während der Errichtung durch 
+Besichtigung geprüft werden, um nachzuweisen, dass sie den Errichtungsbedingungen und der IEC-Typprüfung für das 
+betreffende Abschottsystem entsprechen. 
+528 Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+Bei Kreuzungen und Näherungen von Energie-, Steuer- und Messkabeln an die folgenden Anlagen gelten 
+zusätzlich zu den folgenden Abschnitten die Anforderungen gemäß OVE E 8120. 
+528.1 
+Nähe zu elektrischen Anlagen 
+Stromkreise für Niederspannung (LV; Spannungsbereich AC bis höchstens (≤) 1 000 V und DC bis höchstens 
+(≤) 1 500 V) und Hochspannung (HV; Spannungsbereich AC über (>) 1 000 V und DC über (>) 1 500 V) 
+gemäß OVE EN 61140 dürfen nicht in derselben Kabel- und Leitungsanlage verlegt sein, es sei denn, eine 
+der folgenden Maßnahmen wird angewendet: 
+– 
+jedes Kabel oder jede Leitung ist für die höchste vorkommende Spannung isoliert, oder 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 302/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 20 
+– 
+jeder Leiter eines mehradrigen Kabels/einer mehradrigen Leitung ist für die höchste in dem Kabel/der 
+Leitung vorkommende Spannung isoliert, oder 
+– 
+die Kabel/Leitungen sind entsprechend ihrer Nennspannung isoliert und in getrennten Abschnitten eines 
+geschlossenen oder zu öffnenden Elektroinstallationskanals verlegt, oder 
+– 
+die Kabel/Leitungen sind in einer Kabelwanne angeordnet, bei der eine Trennung durch eine 
+Zwischenwand gegeben ist, oder 
+– 
+es werden getrennte Elektroinstallationsrohrsysteme, zu öffnende Elektroinstallationskanalsysteme und 
+geschlossene Elektroinstallationskanalsysteme verwendet. 
+Für Stromkreise mit SELV und PELV gelten die Anforderungen gemäß Abschnitt 414. 
+ANMERKUNG 1  
+Besondere Maßnahmen betreffend elektrische Beeinflussung, sowohl elektromagnetische als 
+auch elektrostatische, können für Fernmeldestromkreise, Datenübertragungsstromkreise u. Ä. erforderlich sein. 
+ANMERKUNG 2  
+Bei 
+Näherungen 
+von 
+Energieverteilungsanlagen 
+an 
+Blitzschutzanlagen 
+siehe 
+auch 
+ÖVE/ÖNORM EN 62305 Reihe. 
+528.2 
+Nähe zu Kommunikationskabeln/-leitungen 
+Bei Näherungen von Kabelnetzen für Fernseh- und Tonsignale sowie interaktive Dienste an Starkstrom-
+anlagen sind die Abstände gemäß ÖVE/ÖNORM EN 60728-11 zu beachten. 
+ANMERKUNG 
+Für den Anschluss von kombinierten Steckdosen für Telekommunikation (auch Antennenanlagen) und 
+Starkstromanlagen siehe OVE EN 62949. 
+Bei Näherung von informationstechnischen Kabeln/Leitungen an Stromversorgungskabel ist die Mindest-
+trennanforderung A gemäß ÖVE/ÖNORM EN 50174-2 zu beachten. 
+ANMERKUNG AT 
+Für elektrische Systemtechnik für Heim und Gebäude siehe ÖVE/ÖNORM EN 50090 Reihe. 
+528.3 
+Nähe zu nicht elektrischen Anlagen 
+528.3.1 Kabel- und Leitungsanlagen dürfen nicht in der Nähe von anderen technischen Anlagen errichtet 
+werden, die Wärme, Rauch oder Dämpfe mit wahrscheinlich schädlichem Einfluss auf die Kabel und 
+Leitungen erzeugen, es sei denn, sie sind gegen diese schädigenden Einflüsse durch Schirmung geeignet 
+geschützt. Diese Schirmung darf die Wärmeableitung der Kabel und Leitungen nicht behindern. 
+In Bereichen, die nicht nur zur Aufnahme von Kabeln und Leitungen vorgesehen sind, zB Versorgungs-
+schächte, stillgelegte Kamine und Hohlräume, müssen Kabel und Leitungen so verlegt werden, dass sie im 
+bestimmungsgemäßen Betrieb der benachbarten Anlagenteile (zB Gas-, Wasser-, Dampfleitungen) einem 
+schädigenden Einfluss nicht ausgesetzt sind. 
+ANMERKUNG AT 
+Hinweise zur Koordinierung unterirdischer Einbauten (zB Abwasserbeseitigung, Wasser-, 
+Fernwärmeversorgung) im Bereich von Straßen und in öffentlichen Gebieten siehe ÖNORM B 2533. Hinweise zu 
+gastechnischen Anlagen siehe zB ÖVGW G K21, ÖVGW G K51, ÖVGW G B430. 
+528.3.2 Wird eine Kabel- und Leitungsanlage unterhalb einer technischen Anlage errichtet, welche 
+Kondensation hervorruft (wie zum Beispiel Wasser-, Dampf- oder Gasleitungen), müssen Maßnahmen 
+ergriffen werden, die die Kabel- und Leitungsanlage vor schädlichen Auswirkungen schützen. 
+528.3.3 Elektrische Anlagen müssen so angeordnet werden, dass jeder voraussehbare Betriebszustand in 
+der Nähe befindlicher nicht elektrischer technischer Anlagen keine Schädigung an den elektrischen Anlagen 
+oder umgekehrt hervorruft. 
+ANMERKUNG 
+Dies kann erreicht werden durch 
+– 
+ausreichenden Abstand zwischen den verschiedenen technischen Anlagen, oder 
+– 
+die Verwendung von mechanischer oder thermischer Abschirmung. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 303/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 21 
+528.3.4 Wenn elektrische Anlagen in unmittelbarer Nähe zu nicht elektrischen technischen Anlagen 
+angeordnet werden, sind die beiden folgenden Bedingungen einzuhalten: 
+– 
+Kabel- und Leitungsanlagen müssen in geeigneter Weise gegen Gefahren geschützt werden, die 
+voraussichtlich im bestimmungsgemäßen Betrieb von den anderen technischen Anlagen ausgehen und 
+– 
+der Fehlerschutz muss nach den Anforderungen von Abschnitt 413 ausgeführt werden, wobei nicht 
+elektrische metallene Anlagen als fremde leitfähige Teile betrachtet werden. 
+528.3.5 Kabel- und Leitungsanlagen dürfen nicht in Aufzugsschächten verlegt werden, es sei denn, sie sind 
+Bestandteil der Aufzugsanlage. 
+ANMERKUNG AT 
+Siehe dazu ÖNORM EN 81 Reihe. 
+529 Auswahl und Errichtung von Kabel- und Leitungsanlagen im Hinblick auf 
+Instandhaltung einschließlich Reinigung 
+529.1 
+Bezüglich der Häufigkeit und des Umfangs der Instandhaltungsarbeiten von Kabel- und Leitungs-
+anlagen müssen die Hinweise gemäß Abschnitt 34 beachtet werden. 
+529.2 
+Wenn zu Instandhaltungsarbeiten eine Schutzmaßnahme aufgehoben werden muss, ist Vorsorge 
+zu treffen, dass diese Schutzmaßnahme ohne Verringerung des ursprünglich vorgesehenen Schutzgrades 
+wieder hergestellt werden kann. 
+529.3 
+Für die Instandhaltung ist ein sicherer und angemessener Zugang zu allen Teilen der Kabel- und 
+Leitungsanlage sicherzustellen, die Instandhaltung benötigen. 
+ANMERKUNG 
+In besonderen Fällen kann es notwendig sein, für dauerhafte Zugänglichkeit durch Leitern, Gehwege  
+u. Ä. zu sorgen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 304/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 22 
+Anhang 52.A 
+(normativ) 
+ 
+Verlegearten 
+Tabelle 52.A.1 – Verlegearten für Leiter sowie für Kabel und Leitungen  
+in Abhängigkeit von der Bauart 
+Kabel/Leitungen und Leiter 
+Verlegeart 
+Ohne Befestigungsmittel 
+Mit Schellen offen verlegt 
+Elektroinstallationsrohrsysteme 
+zu öffnende 
+Elektroinstallationskanalsysteme 
+(einschließlich Sockelleisten und 
+Unterflur-Fußbodenkanal) 
+Geschlossene 
+Elektroinstallationskanalsysteme 
+Kabelpritsche, Kabelwanne, 
+Ausleger, Gitterrinne 
+Auf Isolatoren 
+mit Tragseil 
+Blanke Leiter b 
+– 
+– 
+– 
+– 
+– 
+– 
++ 
+– 
+Isolierte Leiter (Aderleitungen) b 
+– 
+– 
++ 
++ a 
++ 
+– 
++ 
+– 
+Kabel und 
+Mantelleitungen 
+(einschließlich 
+geschirmt und 
+mineralisoliert) 
+mehradrig 
++ 
++ 
++ 
++ 
++ 
++ 
+0 
++ 
+einadrig 
+0 
++ 
++ 
++ 
++ 
++ 
+0 
++ 
++ 
+Zulässig. 
+0 
+Nicht anwendbar oder in der Praxis nicht üblich. 
+– 
+Nicht zulässig. 
+a 
+Isolierte Leiter (Aderleitungen) sind zulässig, wenn die zu öffnenden Elektroinstallationskanalsysteme wenigstens die Schutzart 
+IP4X oder IPXXD haben und wenn der Deckel nur mit Hilfe von Werkzeug oder mit besonderer Anstrengung der Hand geöffnet 
+werden kann. 
+b 
+Blanke oder isolierte Leiter (Aderleitungen), die als Schutzleiter oder Schutzpotentialausgleichsleiter benutzt werden, dürfen mit 
+jeder geeigneten Verlegeart installiert werden und müssen nicht in Elektroinstallationsrohrsystemen, geschlossenen 
+Elektroinstallationskanalsystemen oder zu öffnenden Elektroinstallationskanalsystemen verlegt werden. 
+ 
+ 
+Tabelle 52.A.2 – Verlegeart in Abhängigkeit des Verlegeortes 
+Die Tabelle A.52.2 von IEC 60364-5-52:2009 wurde von CENELEC nicht übernommen. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 305/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 23 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (1 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit 
+(siehe Anhang 52.B) 
+1 
+ 
+Aderleitungen oder einadrige Kabel  
+im Elektroinstallationsrohr in einer 
+wärmegedämmten Wand a, c 
+A1 
+2 
+ 
+Mehradriges Kabel oder mehradrige 
+ummantelte Installationsleitung im 
+Elektroinstallationsrohr in einer 
+wärmegedämmten Wand a, c 
+A2 
+3 
+ 
+Mehradriges Kabel oder mehradrige 
+ummantelte Installationsleitung direkt  
+in einer wärmegedämmten Wand a, c 
+A1 
+4 
+ 
+Aderleitungen oder einadrige Kabel  
+im Elektroinstallationsrohr auf einer 
+Holzwand oder Mauerwerk oder mit 
+einem Abstand kleiner als der 0,3-fache 
+Außendurchmesser des 
+Elektroinstallationsrohrs c 
+B1 
+5 
+ 
+Mehradriges Kabel im 
+Elektroinstallationsrohr oder 
+mehradrige ummantelte 
+Installationsleitung auf einer Holzwand 
+oder Mauerwerk oder mit einem 
+Abstand kleiner als der 0,3-fache 
+Außendurchmesser des 
+Elektroinstallationsrohrs c 
+B2 
+6 
+                 
+ 
+6 
+ 
+ 
+7 
+Aderleitungen oder einadrige Kabel  
+im geschlossenen 
+Elektroinstallationskanal auf einer 
+Holzwand oder Mauerwerk 
+– 
+horizontaler Verlauf b 
+– 
+vertikaler Verlauf b, c 
+B1 
+7 
+8 
+                 
+ 
+8 
+ 
+ 
+9 
+Mehradrige Kabel oder mehradrige 
+ummantelte Installationsleitung im 
+geschlossenen 
+Elektroinstallationskanal auf einer 
+Holzwand oder Mauerwerk 
+– 
+horizontaler Verlauf b 
+– 
+vertikaler Verlauf b, c 
+(in Bearbeitung) 
+Werte für Referenzverlegeart 
+B2 dürfen verwendet werden 
+9 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 306/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 24 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (2 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit  
+(siehe Anhang 52.B) 
+10 
+                 
+ 
+10 
+ 
+ 
+11 
+Aderleitung oder einadrige Kabel  
+in einem abgehängten 
+Elektroinstallationskanal b 
+B1 
+11 
+Mehradrige Kabel oder mehradrige 
+ummantelte Installationsleitung  
+in einem abgehängten 
+Elektroinstallationskanal b 
+B2 
+12 
+ 
+Aderleitung oder einadrige Kabel in 
+Formleisten/-teilen c, e 
+A1 
+15 
+ 
+Aderleitungen oder einadrige Kabel  
+in Elektroinstallationsrohren oder ein- 
+oder mehradrige Kabel in  
+Türrahmen c, f 
+A1 
+16 
+ 
+Aderleitungen oder einadrige Kabel  
+in Elektroinstallationsrohren oder ein- 
+oder mehradrige Kabel/Leitungen  
+in Fensterrahmen c, f 
+A1 
+20 
+ 
+Ein- oder mehradriges Kabel oder 
+mehradrige ummantelte 
+Installationsleitung installiert auf einer 
+Holzwand oder Mauerwerk oder mit 
+einem Abstand kleiner als der  
+0,3-fache Außendurchmesser des 
+Kabels/der Leitung c 
+C 
+21 
+ 
+Ein- oder mehradriges Kabel oder 
+mehradrige ummantelte 
+Installationsleitung direkt auf einer 
+Holzdecke oder Betondecke installiert 
+C, mit Zeile 3 von  
+Tabelle 52.B.17 
+22 
+ 
+Ein- oder mehradriges Kabel oder 
+mehradrige ummantelte 
+Installationsleitung: 
+– 
+installiert mit Abstand von einer 
+Decke 
+(in Bearbeitung) 
+Werte für Referenzverlegeart 
+E dürfen verwendet werden 
+23 
+ 
+Feste Installation von abgehängten 
+Betriebsmitteln 
+C, mit Zeile 3 von  
+Tabelle 52.B.17 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 307/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 25 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (3 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit  
+(siehe Anhang 52.B) 
+30 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+auf nicht gelochter Kabelwanne, 
+horizontal oder vertikal c, h 
+einlagig – C, mit Zeile 2 von 
+Tabelle 52.B.17 
+bzw. 
+mehrlagig – E oder F 
+31 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+auf gelochter Kabelwanne, 
+horizontal oder vertikal c, h 
+ANMERKUNG Siehe 52.B.6.2 
+E oder F 
+32 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+auf Auslegern oder Gitterrinne, 
+horizontal oder vertikal c, h 
+E oder F 
+33 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+mit einem Abstand von mehr  
+als dem 0,3-fachen Außen-
+durchmesser des Kabels/der 
+Leitung von einer Wand 
+E oder F  
+oder Werte für  
+Referenzverlegeart G g 
+34 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+auf Kabelpritsche c 
+E oder F 
+35 
+  
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung, aufgehängt an 
+einem Tragseil oder mit eingebautem 
+Tragseil 
+E oder F 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 308/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 26 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (4 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit  
+(siehe Anhang 52.B) 
+36 
+ 
+Blanke Leiter oder Aderleitungen  
+auf Isolatoren 
+G 
+40 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung in einem 
+Gebäudehohlraum c, h, i 
+1,5 ∙ De  ≤ V <  5 ∙ De 
+Referenzverlegeart B2 
+5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B1 
+41 
+ 
+Aderleitungen oder einadrige Kabel  
+im Elektroinstallationsrohr in einem 
+Gebäudehohlraum c, i, j, k 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+42 
+ 
+Ein- oder mehradrige Kabel oder  
+ein- oder mehradrige ummantelte 
+Installationsleitung im 
+Elektroinstallationsrohr in einem 
+Gebäudehohlraum c, k 
+(in Bearbeitung) 
+Folgende Werte können 
+verwendet werden 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+43 
+ 
+Aderleitungen oder einadrige Kabel  
+im geschlossenen Elektro-
+installationskanal in einem 
+Gebäudehohlraum c, i, j, k 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+44 
+ 
+Ein- oder mehradrige Kabel oder  
+ein- oder mehradrige ummantelte 
+Installationsleitung im geschlossenen 
+Elektroinstallationskanal in einem 
+Gebäudehohlraum 
+(in Bearbeitung) 
+Folgende Werte können 
+verwendet werden 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+45 
+ 
+Aderleitungen oder einadrige Kabel  
+in einem geschlossenen 
+Elektroinstallationskanal im  
+Mauerwerk mit einem spezifischen 
+Wärmewiderstand von höchstens  
+2 K · m/W c, h, i 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+5 ∙ De  ≤ V <  50 ∙ De 
+Referenzverlegeart B1 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 309/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 27 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (5 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit  
+(siehe Anhang 52.B) 
+46 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung in einem 
+geschlossenen 
+Elektroinstallationskanal im  
+Mauerwerk mit einem spezifischen 
+Wärmewiderstand von höchstens  
+2 K · m/W c 
+(in Bearbeitung) 
+Folgende Werte können 
+verwendet werden 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+47 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung 
+– 
+im Deckenhohlraum 
+– 
+im Hohlboden h, i 
+1,5 ∙ De  ≤ V <  5 ∙ De 
+Referenzverlegeart B2 
+5 ∙ De  ≤ V <  50 ∙ De 
+Referenzverlegeart B1 
+50 
+ 
+Aderleitungen oder einadrige Kabel  
+in einem Elektroinstallationskanal  
+für Unterflurverlegung 
+B1 
+51 
+ 
+Mehradrige Kabel oder mehradrige 
+ummantelte Installationsleitung in 
+einem Elektroinstallationskanal für 
+Unterflurverlegung 
+B2 
+52 
+                 
+ 
+52 
+ 
+ 
+53 
+Aderleitungen oder einadrige Kabel  
+in einem bündig eingelassenen 
+Elektroinstallationskanal c 
+B1 
+53 
+Mehradrige Kabel oder mehradrige 
+ummantelte Installationsleitung in 
+einem bündig eingelassenen 
+Elektroinstallationskanal c 
+B2 
+54 
+ 
+Aderleitungen oder einadrige Kabel  
+in einem unbelüfteten Kabelkanal, 
+horizontal oder vertikal verlegt c, i, l, n 
+1,5 ∙ De  ≤ V <  20 ∙ De 
+Referenzverlegeart B2 
+V ≥ 20 ∙ De 
+Referenzverlegeart B1 
+55 
+ 
+Aderleitungen oder einadrige Kabel  
+in einem Elektroinstallationsrohr in 
+einem offenen oder belüfteten 
+Kabelkanal im Fußboden m, n 
+B1 
+56 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitungen in einem offenen 
+oder belüfteten Kabelkanal mit 
+horizontalem oder vertikalem Verlauf 
+B1 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 310/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 28 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (6 von 7) 
+1 
+2 
+3 
+4 
+Kennziffer 
+Verlegeart 
+Beschreibung 
+Referenzverlegeart zur 
+Ermittlung der 
+Strombelastbarkeit  
+(siehe Anhang 52.B) 
+57 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung direkt im  
+Mauerwerk mit einem spezifischen 
+Wärmewiderstand von höchstens  
+2 K · m/W ohne zusätzlichen 
+mechanischen Schutz o, p 
+C 
+58 
+ 
+Ein- oder mehradrige Kabel oder 
+mehradrige ummantelte 
+Installationsleitung direkt im  
+Mauerwerk mit einem spezifischen 
+Wärmewiderstand von höchstens  
+2 K ∙ m/W mit zusätzlichem 
+mechanischem  Schutz o, p 
+C 
+59 
+ 
+Aderleitungen oder einadrige Kabel  
+im Elektroinstallationsrohr im 
+Mauerwerk p 
+B1 
+60 
+ 
+Mehradriges Kabel im 
+Elektroinstallationsrohr im  
+Mauerwerk p 
+B2 
+70 
+ 
+Mehradrige Kabel oder mehradrige 
+ummantelte Installationsleitung  
+in einem Kabelschutzrohr oder 
+Kabelschutzkanal im Erdreich verlegt 
+D1 
+71 
+ 
+Einadrige Kabel in einem 
+Kabelschutzrohr oder Kabelschutzkanal 
+im Erdreich verlegt 
+D1 
+72 
+ 
+Ein- oder mehradrige Kabel mit 
+Schutzmantel direkt im Erdreich  
+verlegt 
+– 
+ohne zusätzlichem mechanischem 
+Schutz 
+D2 
+73 
+ 
+Ein- oder mehradrige Kabel mit 
+Schutzmantel direkt im Erdreich  
+verlegt 
+– 
+mit zusätzlichem mechanischem 
+Schutz 
+D2 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 311/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 29 
+Tabelle 52.A.3 – Verlegearten für Kabel und Leitungen für feste Verlegung  
+zur Ermittlung der Strombelastbarkeit (7 von 7) 
+a 
+Die Wandinnenseite hat eine Wärmeleitfähigkeit von höchstens 10 W/m2 · K. 
+b 
+Werte für die Referenzverlegeart B1 und B2 von Anhang 52.B gelten für einen einzelnen Stromkreis. Wenn im 
+Elektroinstallationskanal mehr als ein Stromkreis verlegt ist, müssen die Umrechnungsfaktoren für Häufung gemäß 
+Tabelle 52.B.17 angewandt werden, unabhängig davon, ob eine innere Unterteilung oder Abtrennung im Kanal vorhanden ist. 
+c 
+Bei vertikaler Verlegung von Kabeln oder Leitungen mit eingeschränkter Belüftung müssen besondere Überlegungen getroffen 
+werden. Die Umgebungstemperatur im Kanal am oberen Ende der vertikalen Verlegung kann beträchtlich erhöht sein. 
+d 
+Wird noch untersucht; Werte für die Referenzverlegeart B2 dürfen verwendet werden. 
+e 
+Die thermische Leitfähigkeit der Umhüllung wird wegen des verwendeten Materials und der möglichen Lufteinschlüsse als sehr 
+schlecht angenommen. Bei einer Bauausführung, die thermisch einer der Verlegearten mit den Kennziffern 6 oder 7 entspricht, darf 
+die Referenzverlegeart B1 angewendet werden. 
+f 
+Die thermische Leitfähigkeit der Umhüllung wird wegen des verwendeten Materials und der möglichen Lufteinschlüsse als sehr 
+schlecht angenommen. Bei einer Bauausführung, die thermisch einer der Verlegearten mit den Kennziffern 6, 7, 8 oder 9 
+entspricht, dürfen die Referenzverlegearten B1 oder B2 angewendet werden. 
+g 
+Wird noch untersucht; Werte für Referenzverlegeart C dürfen verwendet werden. 
+h 
+De ist der Außendurchmesser eines/einer mehradrigen Kabels/Leitung: 
+– 
+2,2-fache des Außendurchmessers, wenn drei einadrige Kabel/Leitungen zum Dreieck gebündelt sind; 
+– 
+3-fache des Außendurchmessers, wenn einadrige Kabel/Leitungen flach in einer Ebene verlegt sind. 
+i 
+V ist das kleinere Maß oder der Durchmesser eines Gebäudekanals oder eines Gebäudehohlraums oder die innere Höhe eines 
+rechtwinkligen, geschlossenen Elektroinstallationskanals, Fußboden- oder Deckenhohlraums. Die innere Höhe des Hohlraums ist 
+entscheidender als die Breite. 
+j 
+De ist der Außendurchmesser eines Elektroinstallationsrohrs oder die innere Höhe eines geschlossenen Elektroinstallationskanals. 
+l 
+De ist der Außendurchmesser eines Elektroinstallationsrohrs. 
+m 
+Für eine mehradrige Kabel/Leitung, welche in der Verlegeart 55 verlegt wurde, sind die Werte der Referenzverlegeart B2 zu 
+verwenden. 
+n 
+Es wird empfohlen, diese Verlegeart nur dort zu verwenden, wo der Zugang auf befugte Personen beschränkt ist und die 
+Reduzierung der Strombelastbarkeit sowie das Feuerrisiko aufgrund einer Anhäufung von Ablagerungen vermieden werden 
+können. 
+o 
+Bei Kabeln und Leitungen mit einem Leiternennquerschnitt ≤ 16 mm2 kann die Belastbarkeit bei dieser Verlegeart höher sein. 
+p 
+Der spezifische Wärmewiderstand des Mauerwerks/Betons beträgt höchstens 2 K · m/W. Der Begriff „Mauerwerk/Beton“ umfasst 
+Mauerwerk, Beton, Putz und dergleichen (ausgenommen thermisch isolierende Materialien). 
+q 
+Die Anforderung von erdverlegten Kabeln in diesem Punkt ist erfüllt, wenn der spezifische Wärmewiderstand des Erdbodens 2,5 K · m/W 
+beträgt. Bei kleineren Erdwärmewiderständen ist die Strombelastbarkeit für erdverlegte Kabel deutlich höher als für Kabel in verlegt in 
+Elektroinstallationskanälen. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 312/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 30 
+Anhang 52.B 
+(informativ) 
+ 
+Strombelastbarkeiten 
+52.B.1.001.AT 
+Anwendungsbereich von Anhang 52.B 
+Dieser Anhang gilt für 
+– 
+Starkstromleitungen gemäß ÖVE/ÖNORM E 8242, 
+– 
+Starkstromleitungen gemäß ÖVE/ÖNORM EN 50525 Reihe, 
+– 
+Mineralisolierte Leitungen gemäß ÖVE/ÖNORM EN 60702 Reihe. 
+Anhang 52.B gilt nicht für 
+– 
+flexible Leitungen für leichte, mittlere und schwere Beanspruchung, verlegt frei in Luft bei normaler 
+Temperatur; Anforderungen dazu siehe ÖVE/ÖNORM EN 50565-1; 
+– 
+Schweißleitungen gemäß ÖVE/ÖNORM EN 50565-1; 
+– 
+Energieverteilungskabel mit Nennspannung 0,6/1 kV mit folgenden Verlegebedingungen: Kabel in Erde, 
+Kabel in Kabelkanal, Kabel frei in Luft und Kabel auf Gerüst und Wanne; Anforderungen dazu siehe 
+ÖVE/ÖNORM E 8200-603; 
+– 
+Starkstromkabel mit besonderen Eigenschaften im Falle eines Brandes für Kraftwerke und einer 
+Nennspannung von 0,6/1 kV und 1,9/3,3 kV mit folgenden Verlegebedingungen: Kabel in Erde, Kabel frei 
+in Luft und Kabel auf Gerüst und Wanne; Anforderungen dazu siehe ÖVE/ÖNORM E 8200-604; 
+– 
+Vieladrige und vielpaarige Kabel für die Verlegung in Luft und in Erde; Anforderungen dazu siehe 
+ÖVE/ÖNORM E 8200-627; 
+– 
+Schienenverteiler 
+gemäß 
+ÖVE/ÖNORM EN 61439-6, 
+Stromschienensysteme 
+gemäß 
+ÖVE/ÖNORM EN 61534 Reihe 
+und 
+elektrische 
+Stromschienensysteme 
+für 
+Leuchten 
+gemäß 
+ÖVE/ÖNORM EN 60570. 
+Für andere Installationen von Kabeln, wo zB genauere Angaben zu lastabhängigen Wärmewiderständen des 
+Erdbodens vorliegen, müssen die Strombelastbarkeiten aus den zutreffenden Dokumenten oder durch 
+Berechnung gemäß IEC 60287 abgeleitet werden. 
+52.B.1 
+Einleitung 
+Die Anforderungen dieses Anhangs dienen dazu, eine ausreichende Lebensdauer der Leiter und der 
+Isolierung von Kabeln und Leitungen zu gewährleisten, die bei bestimmungsgemäßer Verlegung für einen 
+längeren Zeitraum (Dauerbetrieb) den thermischen Auswirkungen bei der jeweils höchstzulässigen 
+Betriebstemperatur unterworfen sind. 
+Auch andere Einflussgrößen sind für die Auswahl des Leiternennquerschnitts gegebenenfalls zu 
+berücksichtigen, zB die Anforderungen für den Schutz gegen elektrischen Schlag (siehe Teil 4-41), für den 
+Schutz gegen thermische Einflüsse (siehe Teil 4-42), für den Schutz bei Überstrom (siehe Teil 4-43), den 
+Spannungsabfall (siehe Abschnitt 525) und für die Grenztemperaturen von Anschlussklemmen, an denen die 
+Leiter angeschlossen sind (siehe Abschnitt 526). 
+Dieser Anhang gilt für unbewehrte Kabel/Leitungen sowie für isolierte Leitungen für Nennspannungen bis zu 
+1 000 V AC oder 1 500 V DC. Er gilt auch für bewehrte, mehradrige Kabel/Leitungen, jedoch nicht für 
+bewehrte einadrige Kabel/Leitungen. 
+ANMERKUNG 1  
+Bei bewehrten einadrigen Kabeln/Leitungen kann eine merkliche Herabsetzung der im 
+vorliegenden Teil angegebenen Strombelastbarkeit erforderlich sein. ln diesem Falle sollte beim Kabellieferanten 
+nachgefragt 
+werden. 
+Dies 
+gilt 
+auch 
+für 
+unbewehrte 
+einadrige 
+Kabel/Leitungen, 
+verlegt 
+in 
+metallischem 
+Elektroinstallationsrohr. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 313/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 31 
+ANMERKUNG 2  
+Bei bewehrten mehradrigen Kabeln/Leitungen ist eine Herabsetzung der im vorliegenden Teil  
+angegebenen Strombelastbarkeit nicht erforderlich. 
+ANMERKUNG 3  
+Die Dauerstrombelastbarkeit von isolierten Leitern ist gleich wie für Einleiter-Kabel. 
+Die Werte der Tabellen 52.B.2 bis Tabelle 52.B.13 gelten für unbewehrte Kabel und Leitungen und wurden in 
+Übereinstimmung gemäß IEC 60287 Series gemeinsam mit IEC 60502 Series und IEC 60287 Series 
+abgeleitet. Aus der Praxis bekannte Unterschiede in den Kabel- bzw. Leitungskonstruktionen, wie zB 
+Leiterabmessungen und Fertigungstoleranzen, führen zu einer Streuung der möglichen Strombelastbarkeiten 
+bei jedem Querschnitt der Leiter. Die tabellarisch aufgeführten Werte wurden so ausgewählt, dass sie 
+innerhalb des Toleranzbereichs auf der sicheren Seite liegen. ln einer grafischen Darstellung, in der die 
+Strombelastbarkeit über dem Querschnitt der Leiter aufgetragen ist, liegen diese Werte auf einer stetigen 
+Kurve. 
+Für mehradrige Kabel/Leitungen mit Leitern mit einem Querschnitt von mindestens 25 mm2 sind Rundleiter 
+oder Sektorleiter zulässig. Die tabellierten Werte wurden von passenden Querschnitten von Sektorleitern 
+abgeleitet. 
+52.B.2 
+Umgebungstemperatur 
+B.52.2.1 Die 
+in 
+diesem 
+Anhang 
+angegebenen 
+Strombelastbarkeiten 
+gelten 
+für 
+nachfolgende 
+Umgebungstemperaturen: 
+– 
+für isolierte Leitungen und Kabel ungeachtet der Verlegeart: 30 °C, 
+– 
+für erdverlegte Kabel und Leitungen, direkt im Erdreich oder im Kabelschutzrohr: 20 °C. 
+B.52.2.2 Bei abweichenden Umgebungstemperaturen sind die Strombelastbarkeitswerte der Tabellen 52.B.2 
+bis Tabelle B.52.13 mit den Umrechnungsfaktoren gemäß den Tabellen 52.B.14 und Tabelle 52.B.15 zu 
+multiplizieren. Dies gilt auch bei Überschreitung der Referenztemperatur an einzelnen Stellen der Kabel- oder 
+Leitungsstrecke. 
+B.52.2.3 Die angegebenen Umrechnungsfaktoren für Umgebungstemperaturen berücksichtigen nicht den 
+Temperaturanstieg, der durch Sonneneinstrahlung oder andere Infrarotstrahlung verursacht wird. Wenn 
+Kabel oder Leitungen einer solchen Strahlung ausgesetzt sind, müssen die Strombelastbarkeiten nach 
+bekannten Verfahren gemäß IEC 60287 Series, ermittelt werden. 
+52.B.3 
+Spezifischer Wärmewiderstand des Erdbodens 
+Die Tabellenwerte der Strombelastbarkeit von erdverlegten Kabeln/Leitungen des Anhangs beziehen sich auf 
+einen spezifischen Wärmewiderstand des Erdbodens von 2,5 K · m/W. Dieser Wert wird als vorsichtiger Wert 
+bei weltweiter Anwendung betrachtet, wenn Bodenart und geographische Lage des Verlegeortes nicht 
+bekannt sind (siehe IEC 60287-3-1). 
+An Orten, an denen der effektive spezifische Wärmewiderstand des Erdbodens über 2,5 K · m/W liegt, sollte 
+die Strombelastung herabgesetzt werden oder das Erdreich rund um das Kabel/die Leitung sollte durch ein 
+geeigneteres Material ersetzt werden. Dies kann bei sehr trockenen Bodenverhältnissen zutreffen. ln 
+Tabelle 52.B.16 sind Umrechnungsfaktoren für von 2,5 K · m/W abweichende spezifische Wärmewiderstände 
+des Erdbodens angegeben. 
+ANMERKUNG 
+Die Werte für die Strombelastbarkeit für erdverlegte Kabel/Leitungen in den Tabellen des Anhangs 
+gelten nur für Kabel-/Leitungsführungen in oder rund um Gebäude. Bei anderen Anlagen, bei denen durch 
+Untersuchungen genauere Werte des spezifischen Wärmewiderstandes des Erdbodens ermittelt wurden, können die 
+Werte der Strombelastbarkeit nach den in der IEC 60287 angegebenen Berechnungsverfahren ermittelt oder vom 
+Kabelhersteller angefordert werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 314/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 32 
+52.B.4 
+Umrechnungsfaktoren für Häufung in Abhängigkeit von der Referenzverlegeart 
+52.B.4.1 
+Referenzverlegearten Typ A bis D der Tabelle 52.B.1 
+Die Strombelastbarkeiten in den Tabellen 52.B.2 bis Tabelle 52.B.7 beziehen sich, wie nachfolgend 
+beschrieben, auf einzelne Stromkreise, wobei alle Leiter belastet sind. 
+– 
+zwei Aderleitungen, zwei einadrige Kabel/Leitungen oder ein zweiadriges Kabel/Leitung, 
+– 
+drei Aderleitungen, drei einadrige Kabel/Leitungen oder ein dreiadriges Kabel/Leitung. 
+Wenn mehr als ein Stromkreis in einer Häufung (Gruppe) verlegt ist, müssen die Strombelastbarkeiten der 
+Tabellen 52.B.2 bis Tabelle 52.B.7 mit den jeweils zutreffenden Umrechnungsfaktoren für Häufung gemäß 
+Tabellen 52.B.17 bis Tabelle 52.B.19 multipliziert werden. 
+ANMERKUNG 
+Die Umrechnungsfaktoren für Häufung wurden auf der Grundlage eines Dauerbetriebes mit einem 
+Belastungsgrad von 100 % für alle aktiven Leiter berechnet. Wenn die Belastung für alle aktiven Leiter auf Grund der 
+Betriebsbedingungen (zB Aussetzbetrieb oder veränderliche Belastung) kleiner ist als 100 %, können die 
+Umrechnungsfaktoren höher sein. 
+52.B.4.2 
+Referenzverlegearten Typ E bis F der Tabelle 52.B.1 
+Die Strombelastbarkeiten in den Tabellen 52.B.8 bis Tabelle 52.B.13 beziehen sich auf die jeweilige 
+Referenz-verlegeart. 
+Bei Verlegung auf gelochten Kabelwannen, Kabelhaltern (Kabelschellen) und dergleichen ergibt sich die 
+Strombelastbarkeit für beide einzelnen Stromkreise und für Häufungen durch Multiplikation der 
+Umrechnungsfaktoren (Tabellen 52.B.20 und 52.B.21) für die jeweilige Anordnung von isolierten Leitern oder 
+Kabeln frei in Luft (wie in den Tabellen 52.B.8 bis Tabelle 52.B.13 beschrieben). Für blanke mineralisolierte 
+Kabel und Leitungen außerhalb des Handbereichs ist kein Umrechnungsfaktor zu berücksichtigen, siehe 
+Tabellen 52.B.7 und Tabelle 52.B.9. 
+52.B.5 
+Häufung (Gruppen) unterschiedlicher Nennquerschnitte der Leiter 
+Die tabellierten Umrechnungsfaktoren gelten für Häufungen, die aus nahezu gleich belasteten 
+Kabeln/Leitungen bestehen. Die Berechnung der Umrechnungsfaktoren für Häufungen die gleich belastete, 
+isolierte Leiter oder Kabel/Leitungen unterschiedlichen Querschnitts enthalten, ist abhängig von deren 
+Gesamtzahl und der Zusammensetzung der Querschnitte. Derartige Faktoren können nicht in Tabellen 
+erfasst werden, sondern müssen getrennt für jede Häufung berechnet werden. Die Berechnungsverfahren für 
+diese Faktoren sind außerhalb des Anwendungsbereichs des vorliegenden Teils. Einige spezielle Beispiele, 
+in denen eine solche Berechnung empfehlenswert sein kann, sind nachfolgend aufgeführt. 
+ANMERKUNG 
+Als eine Häufung unterschiedlicher Nennquerschnitte kann eine Häufung von Kabeln oder Leitungen 
+betrachtet werden, deren Außenleiternennquerschnitte mehr als zwei benachbarte Normnennquerschnitte überspannt. 
+Eine Häufung gleicher Kabel/Leitungen wird dann als Häufung gewertet, wenn die Strombelastbarkeit aller Kabel auf der 
+gleichen höchstzulässigen Leitertemperatur basiert und der Bereich der Querschnitte nicht mehr als drei benachbarte 
+Normnennquerschnitte umfasst. 
+52.B.5.1 
+Häufung in Elektroinstallationsrohren oder Elektroinstallationskanälen 
+Der Umrechnungsfaktor für Häufung unterschiedlicher Nennquerschnitte von Kabeln/Leitungen oder 
+isolierten Leitern in Elektroinstallationsrohren, in zu öffnenden Elektroinstallationskanälen oder in 
+geschlossenen Elektroinstallationskanälen liegt dann auf der sicheren Seite, wenn 
+ 
+F = 
+1
+√𝑛  
+(F.52.B.1) 
+Dabei ist 
+F 
+der Umrechnungsfaktor für Häufung; 
+n 
+die Anzahl mehradriger Kabel/Leitungen oder Stromkreise in der Häufung. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 315/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 33 
+Der mit dieser Gleichung abgeleitete Umrechnungsfaktor für Häufung reduziert die Gefahr der Überlastung 
+kleinerer Querschnitte, kann aber zu einer geringeren Belastung der größeren Querschnitte führen. Solch 
+eine Unterbelastung kann vermieden werden, wenn große und kleine Querschnitte von Kabeln/Leitungen 
+oder isolierten Leitern nicht in einer Häufung verlegt werden. 
+ANMERKUNG AT 
+Ein spezielles Verfahren zur Berechnung genauerer Umrechnungsfaktoren für Häufung, die 
+Kabel/Leitungen oder isolierte Leiter unterschiedlichen Nennquerschnitts enthalten, wird derzeit geprüft. 
+52.B.5.2 
+Häufung auf Kabelwannen 
+Wenn in einer Häufung von Kabeln/Leitungen oder isolierten Leitern unterschiedliche Nennquerschnitte 
+enthalten sind, muss die Strombelastbarkeit der kleineren Querschnitte berücksichtigt werden. Es wird 
+empfohlen, ein entsprechendes Berechnungsverfahren zu verwenden. 
+Der Umrechnungsfaktor für Häufung in 52.B.5.1 liegt auf der sicheren Seite. 
+ANMERKUNG AT 
+Diese Thematik wird von CENELEC noch untersucht. 
+52.B.6 
+Verlegearten 
+52.B.6.1 
+Beschreibung der Referenzverlegearten 
+Die Referenzverlegearten sind jene Verlegearten, für die die Belastbarkeitsangaben durch Prüfung oder 
+Berechnung ermittelt wurden. 
+a) 
+Referenzverlegeart A1, gemäß Kennziffer 1 der Tabelle 52.A.3 (Aderleitungen bzw. einadrige Kabel im 
+Elektroinstallationsrohr in einer wärmegedämmten Wand) und A2, gemäß Kennziffer 2 der 
+Tabelle 52.A.3, (mehradriges Kabel bzw. mehradrige ummantelte Installationsleitung im Elektro-
+installationsrohr in einer wärmegedämmten Wand): 
+ 
+Die Wand besteht aus einer äußeren Platte, einer Wärmedämmung und einer inneren Platte. Die 
+Wärmeleitfähigkeit dieser inneren Platte beträgt 10 W/m2 ∙ K. Das Elektroinstallationsrohr ist so auf der 
+inneren Wand angebracht, dass es dicht an diese Wand anschließt, sie aber nicht unbedingt berühren 
+muss. Es wird angenommen, dass die Verlustwärme nur über die innere Platte abgeleitet wird. Das 
+Elektroinstallationsrohr kann aus Metall oder Kunststoff sein. 
+b) 
+Referenzverlegeart B1, gemäß Kennziffer 4 der Tabelle 52.A.3 (Aderleitungen bzw. einadrige Kabel im 
+Elektroinstallationsrohr auf einer Holzwand) und B2, gemäß Kennziffer 5 der Tabelle 52.A.3 
+(mehradriges Kabel bzw. mehradrige ummantelte Installationsleitung im Elektroinstallationsrohr auf einer 
+Holzwand): 
+ 
+Das Elektroinstallationsrohr ist so auf einer Holzwand befestigt, dass der Abstand zwischen 
+Elektroinstallationsrohr und Wandoberfläche kleiner ist als der 0,3-fache Außendurchmesser des 
+Elektroinstallationsrohres. Das Elektroinstallationsrohr kann aus Metall oder Kunststoff sein. Dort, wo das 
+Elektroinstallationsrohr unmittelbar auf Mauerwerk (oder Putz) verlegt ist, kann die Strombelastbarkeit 
+der Kabel oder Leitungen höher sein. 
+c) 
+Referenzverlegeart C, gemäß Kennziffer 20 der Tabelle 52.A.3 (ein- oder mehradriges Kabel oder ein- 
+oder mehradrige ummantelte Installationsleitung auf einer Holzwand): 
+ 
+Das Kabel ist so auf einer Holzwand befestigt, dass der Abstand zwischen Kabel/Leitung und der 
+Wandoberfläche kleiner ist als der 0,3-fache Außendurchmesser des Kabels. Dort, wo das Kabel/die 
+Leitung unmittelbar auf oder im Mauerwerk (unter Putz) verlegt ist, kann die Strombelastbarkeit höher 
+sein. 
+ 
+ANMERKUNG 1 
+Der Fachausdruck „Mauerwerk“ umfasst Backstein-, Beton- sowie Gipswände und dgl. – also 
+keine Wände aus wärmedämmendem Material. 
+d) 
+Referenzverlegeart D1, gemäß Kennziffer 70 und 71 der Tabelle 52.A.3 (ein- oder mehradriges Kabel 
+bzw. mehradrige ummantelte Installationsleitung in einem Kabelschutzrohr oder Kabelschutzkanal im 
+Erdreich verlegt) und D2, gemäß Kennziffer 72 und 73 der Tabelle 52.A.3 (ein- oder mehradriges Kabel 
+direkt im Erdreich gemäß den Herstellerangaben). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 316/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 34 
+ 
+Kabel eingezogen in Kunststoff-, Steingut- oder Metall-Kabelschutzrohren mit 100 mm Durchmesser, die 
+in direktem Kontakt mit Erde verlegt sind, die einen spezifischen Wärmewiderstand von 2,5 K ∙  m/W und 
+eine Tiefe von 0,7 m aufweisen (siehe auch 52.B.3). 
+e) 
+Referenzverlegearten E, F und G, gemäß Kennziffer 32 und 33 der Tabelle 52.A.3 (ein- oder 
+mehradriges Kabel bzw. ein- oder mehradrige ummantelte Installationsleitung frei in Luft): 
+ 
+Ein Kabel bzw. die Leitung ist so verlegt, dass die Wärmeabfuhr nicht behindert wird. Eine Erwärmung 
+durch Sonneneinstrahlung oder andere Wärmequellen ist zu berücksichtigen. Es sollte darauf geachtet 
+werden, dass die natürliche Konvektion der Luft nicht behindert ist. In der Praxis ist es ausreichend, 
+wenn der Abstand zwischen Kabel/Leitung und jeder angrenzenden Fläche größer ist als das 0,3-fache 
+des Außendurchmessers eines mehradrigen Kabels/Leitung. Bei einadrigen Kabeln/Leitungen ist ein 
+Abstand vom 1,0-fachen Außendurchmesser ausreichend, um die Strombelastbarkeitsangaben für die 
+Verlegung frei in Luft anzuwenden. 
+52.B.6.2 
+Andere Verlegearten 
+a) 
+Kabel/Leitung verlegt auf Boden oder unter einer Decke entspricht der Referenzverlegeart C mit der 
+Ausnahme, dass die Belastungswerte von Kabeln/Leitungen für die Deckenmontage wegen der 
+verringerten Luftkonvektion leicht reduziert sind (Tabelle 52.B.17) verglichen mit den Werten für Wand- 
+oder Bodenmontage. 
+b) 
+Kabelwanne: eine gelochte Kabelwanne hat eine regelmäßige Anordnung von Löchern, um die 
+Verwendung von Befestigungen der Kabel/Leitungen zu erleichtern. Bei der Ermittlung der 
+Strombelastbarkeit wird eine Kabelwanne als nicht gelocht betrachtet, wenn die Löcher weniger als 30 % 
+der Gesamtfläche umfassen. 
+c) 
+Kabelpritsche: Eine Kabelpritsche ist ein metallenes Kabeltragsystem, bei dem die Auflagefläche 
+weniger als 10 % der Gesamtfläche beträgt. 
+d) 
+Kabelhalter (Kabelschellen): Vorrichtung zum Halten/Befestigen/Fixieren von Kabeln/Leitungen auf 
+einer Montagefläche (zB Kabelwanne). 
+ 
+Kabelbinder: Vorrichtung zum Bündeln oder Binden von Gruppen von Kabeln/Leitungen, zum 
+Befestigen und/oder Tragen der Kabel/Leitungen. 
+e) 
+Klemm- und Hängebefestigungen sind Kabeltragsysteme an denen das Kabel/die Leitung in gewissen 
+Abständen in seiner/ihrer ganzen Länge befestigt wird und die im Wesentlichen eine völlig freie 
+Luftzirkulation rund um das Kabel/die Leitung zulassen. 
+Allgemeine ANMERKUNGEN zu den Tabellen 52.B.1 bis Tabelle 52.B.21. 
+ANMERKUNG 2  
+Die Strombelastbarkeiten sind tabellarisch für solche Kabel-/Leitungsbauarten sowie für solche 
+Verlegearten angegeben, die üblicherweise bei der festen Verlegung angewendet werden. Die tabellierten 
+Belastbarkeiten beziehen sich auf Dauerbetrieb mit einem Belastungsgrad von 100 % für AC mit einer Frequenz von 
+50 Hz bis 60 Hz und mit Gleichstrom. 
+ANMERKUNG 3  
+Tabelle 52.B.1 stellt einen Zusammenhang zwischen den Referenzverlegearten und den 
+Strombelastbarkeitstabellen her. 
+f) 
+Kabel/Leitung in der Decke: Diese Verlegeart ist ähnlich der Referenzverlegeart A. Da bei in der Decke 
+montierten Anschlussdosen u. dgl. höhere Temperaturen auftreten können, ist es zulässig die 
+Umrechnungsfaktoren für andere Umgebungstemperaturen anzuwenden. 
+ANMERKUNG 4  
+Wo in der Decke eine Anschlussdose für eine Leuchte verwendet wird, kann die Wärmeabfuhr 
+der Leuchten höheren Umgebungstemperaturen als in den Tabellen 52.B.2 zu Tabelle 52.B.5 vorgeschriebenen 
+hervorrufen (siehe auch 522.2.1). Die Temperatur kann zwischen 40 °C und 50 °C betragen, und daher sollte ein 
+entsprechender Umrechnungsfaktor nach Tabelle 52.B.14 angewendet werden. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 317/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 35 
+Tabelle 52.B.1 – Referenzverlegearten für die tabellierten Strombelastbarkeiten (1 von 2) 
+Verlegebedingungen und  
+Referenzverlegart a 
+Tabelle und Spalte 
+Strombelastbarkeitswerte für einzelne Stromkreise 
+Umrechnungsfaktor für 
+PVC-isoliert 
+VPE/EPR-isoliert 
+Mineral
+-isoliert 
+Umgebungs-
+temperatur 
+Häufung 
+Anzahl der Leiter 
+2 
+3 
+2 
+3 
+2 und 3 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+ 
+Aderleitungen oder 
+einadrige Kabel im 
+Elektroinstallations-
+rohr in einer 
+wärmegedämmten 
+Wand 
+A1 
+52.B.2 
+Spalte 2 
+52.B.4 
+Spalte 2 
+52.B.3 
+Spalte 2 
+52.B.5 
+Spalte 2 
+– 
+52.B.14 
+B.52.17 
+ 
+Mehradriges Kabel 
+oder mehradrige 
+ummantelte 
+Installationsleitung 
+in einem Elektro-
+installationsrohr in 
+einer wärme-
+gedämmten Wand 
+A2 
+52.B.2 
+Spalte 3 
+52.B.4 
+Spalte 3 
+52.B.3 
+Spalte 3 
+52.B.5 
+Spalte 3 
+– 
+52.B.14 
+B.52.17 mit 
+Ausnahmen 
+D (B.52.19) 
+ 
+Aderleitungen oder 
+einadrige Kabel im 
+Elektroinstallations-
+rohr auf einer 
+Holzwand 
+B1 
+52.B.2 
+Spalte 4 
+52.B.4 
+Spalte 4 
+52.B.3 
+Spalte 4 
+52.B.5 
+Spalte 4 
+– 
+52.B.14 
+B.52.17 
+ 
+Mehradriges Kabel 
+oder mehradrige 
+ummantelte 
+Installationsleitung 
+in einem Elektro-
+installationsrohr auf 
+einer Holzwand 
+B2 
+52.B.2 
+Spalte 5 
+52.B.4 
+Spalte 5 
+52.B.3 
+Spalte 5 
+52.B.5 
+Spalte 5 
+– 
+52.B.14 
+B.52.17 
+ 
+Ein- oder 
+mehradriges Kabel 
+oder ein- oder 
+mehradrige 
+ummantelte 
+Installationsleitung 
+auf einer Holzwand 
+C 
+52.B.2 
+Spalte 6 
+52.B.4 
+Spalte 6 
+52.B.3 
+Spalte 6 
+52.B.5 
+Spalte 6 
+70 °C 
+Mantel 
+52.B.6 
+105 °C 
+Mantel 
+52.B.7 
+52.B.14 
+B.52.17 
+ 
+Mehradrige Kabel 
+oder mehradrige 
+ummantelte 
+Installationsleitung 
+in einem 
+Kabelschutzrohr 
+oder Kabelschutz-
+kanal im Erdreich 
+verlegt 
+D1 
+52.B.2 
+Spalte 7 
+52.B.4 
+Spalte 7 
+52.B.3 
+Spalte 7 
+52.B.5 
+Spalte 7 
+– 
+52.B.15 
+B.52.19 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 318/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 36 
+Tabelle 52.B.1 – Referenzverlegearten für die tabellierten Strombelastbarkeiten (2 von 2) 
+Verlegebedingungen und  
+Referenzverlegart a 
+Tabelle und Spalte 
+Strombelastbarkeitswerte für einzelne Stromkreise 
+Umrechnungsfaktor für 
+PVC-isoliert 
+VPE/EPR-isoliert 
+Mineral
+-isoliert 
+Umgebungs-
+temperatur 
+Häufung 
+Anzahl der Leiter 
+2 
+3 
+2 
+3 
+2 und 3 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+ 
+Ein- oder 
+mehradrige Kabel 
+mit Schutzmantel 
+direkt im Erdreich 
+verlegt  
+D2 
+52.B.2 
+Spalte 8 
+52.B.4 
+Spalte 8 
+52.B.3 
+Spalte 8 
+52.B.5 
+Spalte 8 
+– 
+– 
+– 
+ 
+Abstand zur 
+Wand nicht 
+weniger als 
+0,3 · De 
+Mehradriges Kabel 
+oder mehradrige 
+ummantelte 
+Installationsleitung 
+frei in Luft b 
+E 
+Kupfer 52.B.10 
+Aluminium B52.11 
+ 
+ 
+70 °C 
+Mantel 
+52.B.8 
+105 °C 
+Mantel 
+52.B.9 
+52.B.14 
+52.B.20  
+ 
+Abstand zur 
+Wand nicht 
+weniger als  
+1 · De 
+Einadrige Kabel 
+oder ein- oder 
+mehradrige 
+ummantelte 
+Installationsleitung 
+mit Berührung frei 
+in Luft b 
+F 
+Kupfer 52.B.10 
+Aluminium 52.B.11 
+ 
+ 
+70 °C 
+Mantel 
+52.B.8 
+105 °C 
+Mantel 
+52.B.9 
+52.B.14 
+52.B.21 
+ 
+Abstand zur 
+Wand nicht 
+weniger als 
+0,3 · De 
+Einadrige Kabel 
+oder einadrige 
+ummantelte 
+Installationsleitung 
+mit Abstand frei in 
+Luft 
+G 
+Kupfer 52.B.10 
+Aluminium 52.B.11 
+ 
+ 
+70 °C 
+Mantel 
+52.B.8 
+105 °C 
+Mantel 
+52.B.9 
+52.B.14 
+– 
+a 
+Erläuterungen dazu siehe 52.B.6.1. Werden in Abhängigkeit von Verlegeort/Verlegeart des Kabel gemäß ÖVE/ÖNORM E 8200-603, 
+bzw. ÖVE/ÖNORM E 8200-604 verwendet, so sind die Strombelastbarkeitswerte der jeweiligen Produktnorm zu entnehmen. 
+b 
+Gemäß 52.B.6.1 beschreiben die Referenzverlegearten E und F, dass das Kabel bzw. die Leitung so zu verlegen ist, dass die 
+Wärmeabfuhr nicht behindert wird. Dazu gehört gemäß Tabelle 52.A.3 zB auch Verlegeart auf gelochter Kabelwanne, auf 
+Kabelpritsche, auf Gitterrinne. 
+ANMERKUNG AT 
+De ist der Außendurchmesser des Kabels/der Leitung. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 319/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 37 
+Tabelle 52.B.2 – Strombelastbarkeit in Ampere für Verlegearten gemäß Tabelle 52.B.1 
+PVC-Isolierung, zwei belastete Adern, Kupfer oder Aluminium 
+Leitertemperatur 70 °C, Umgebungstemperatur 30 °C, Erdreich 20 °C 
+Material und 
+Nenn-
+querschnitt 
+mm2 
+Referenzverlegeart gemäß Tabelle 52.B.1 
+A1 
+A2 
+B1 
+B2 
+C 
+D1 
+D2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+Kupfer 
+ 
+1,5 
+14,5 
+14 
+17,5 
+16,5 
+19,5 
+22 
+22 
+2,5 
+19,5 
+18,5 
+24 
+23 
+27 
+29 
+28 
+4 
+26 
+25 
+32 
+30 
+36 
+37 
+38 
+6 
+34 
+32 
+41 
+38 
+46 
+46 
+48 
+10 
+46 
+43 
+57 
+52 
+63 
+60 
+64 
+16 
+61 
+57 
+76 
+69 
+85 
+78 
+83 
+25 
+80 
+75 
+101 
+90 
+112 
+99 
+110 
+35 
+99 
+92 
+125 
+111 
+138 
+119 
+132 
+50 
+119 
+110 
+151 
+133 
+168 
+140 
+156 
+70 
+151 
+139 
+192 
+168 
+213 
+173 
+192 
+95 
+182 
+167 
+232 
+201 
+258 
+204 
+230 
+120 
+210 
+192 
+269 
+232 
+299 
+231 
+261 
+150 
+240 
+219 
+300 
+258 
+344 
+261 
+293 
+185 
+273 
+248 
+341 
+294 
+392 
+292 
+331 
+240 
+321 
+291 
+400 
+344 
+461 
+336 
+382 
+300 
+367 
+334 
+458 
+394 
+530 
+379 
+427 
+Aluminium 
+ 
+2,5 
+15 
+14,5 
+18,5 
+17,5 
+21 
+22 
+ 
+4 
+20 
+19,5 
+25 
+24 
+28 
+29 
+ 
+6 
+26 
+25 
+32 
+30 
+36 
+36 
+ 
+10 
+36 
+33 
+44 
+41 
+49 
+47 
+ 
+16 
+48 
+44 
+60 
+54 
+66 
+61 
+63 
+25 
+63 
+58 
+79 
+71 
+83 
+77 
+82 
+35 
+77 
+71 
+97 
+86 
+103 
+93 
+98 
+50 
+93 
+86 
+118 
+104 
+125 
+109 
+117 
+70 
+118 
+108 
+150 
+131 
+160 
+135 
+145 
+95 
+142 
+130 
+181 
+157 
+195 
+159 
+173 
+120 
+164 
+150 
+210 
+181 
+226 
+180 
+200 
+150 
+189 
+172 
+234 
+201 
+261 
+204 
+224 
+185 
+215 
+195 
+266 
+230 
+298 
+228 
+255 
+240 
+252 
+229 
+312 
+269 
+352 
+262 
+298 
+300 
+289 
+263 
+358 
+308 
+406 
+296 
+336 
+ANMERKUNG 
+In den Spalten 3, 5, 6, 7 und 8 werden runde Leiter mit Querschnitten bis einschließlich 16 mm2 angenommen. Werte für 
+größere Querschnitte beziehen sich auf Sektorleiter und können sicher auch für runde Leiter angewendet werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 320/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-52 – Seite 38 
+Tabelle 52.B.3 – Strombelastbarkeit in Ampere für die Verlegearten gemäß Tabelle 52.B.1 
+VPE- oder EPR-Isolierung, zwei belastete Leiter, Kupfer oder Aluminium 
+Leitertemperatur 90 °C, Umgebungstemperatur 30 °C, Erdreich 20 °C 
+Material und 
+Nenn-
+querschnitt 
+mm2 
+Referenzverlegeart gemäß Tabelle 52.B.1 
+A1 
+A2 
+B1 
+B2 
+C 
+D1 
+D2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+Kupfer 
+ 
+1,5 
+2,5 
+4 
+6 
+19 
+26 
+35 
+45 
+18,5 
+25 
+33 
+42 
+23 
+31 
+42 
+54 
+22 
+30 
+40 
+51 
+24 
+33 
+45 
+58 
+25 
+33 
+43 
+53 
+27 
+35 
+46 
+58 
+10 
+16 
+25 
+35 
+61 
+81 
+106 
+131 
+57 
+76 
+99 
+121 
+75 
+100 
+133 
+164 
+69 
+91 
+119 
+146 
+80 
+107 
+138 
+171 
+71 
+91 
+116 
+139 
+77 
+100 
+129 
+155 
+50 
+70 
+95 
+120 
+158 
+200 
+241 
+278 
+145 
+183 
+220 
+253 
+198 
+253 
+306 
+354 
+175 
+221 
+265 
+305 
+209 
+269 
+328 
+382 
+164 
+203 
+239 
+271 
+183 
+225 
+270 
+306 
+150 
+185 
+240 
+300 
+318 
+362 
+424 
+486 
+290 
+329 
+386 
+442 
+393 
+449 
+528 
+603 
+334 
+384 
+459 
+532 
+441 
+506 
+599 
+693 
+306 
+343 
+395 
+446 
+343 
+387 
+448 
+502 
+Aluminium 
+ 
+2,5 
+4 
+6 
+20 
+27 
+35 
+19,5 
+26 
+33 
+25 
+33 
+43 
+23 
+31 
+40 
+26 
+35 
+45 
+26 
+33 
+42 
+ 
+10 
+16 
+25 
+35 
+48 
+64 
+84 
+103 
+45 
+60 
+78 
+96 
+59 
+79 
+105 
+130 
+54 
+72 
+94 
+115 
+62 
+84 
+101 
+126 
+55 
+71 
+90 
+108 
+ 
+76 
+98 
+117 
+50 
+70 
+95 
+120 
+125 
+158 
+191 
+220 
+115 
+145 
+175 
+201 
+157 
+200 
+242 
+281 
+138 
+175 
+210 
+242 
+154 
+198 
+241 
+280 
+128 
+158 
+186 
+211 
+139 
+170 
+204 
+233 
+150 
+185 
+240 
+300 
+253 
+288 
+338 
+387 
+230 
+262 
+307 
+352 
+307 
+351 
+412 
+471 
+261 
+300 
+358 
+415 
+324 
+371 
+439 
+508 
+238 
+267 
+307 
+346 
+261 
+296 
+343 
+386 
+ANMERKUNG 
+In den Spalten 3, 5, 6, 7 und 8 werden runde Leiter mit Querschnitten bis einschließlich 16 mm2 angenommen. Werte für 
+größere Querschnitte beziehen sich auf Sektorleiter und können sicher auch für runde Leiter angewendet werden. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

@@ -1,0 +1,1705 @@
+
+
+===== PAGE 121/348 =====
+120
+BIM-Software
+Softwarelandschaft
+Erst eine entsprechend BIM-fähige Software 
+macht es möglich, BIM auch zu praktizieren. Aller-
+dings stehen wir noch mitten in der Entwicklung. 
+Auch die am Markt geläufigen BIM-Software-
+Produkte bieten bei Weitem nicht alle Funktio­
+nalitäten, die für einen über alle Phasen durch-
+gängigen BIM-Workflow nötig wären. Ob es diese 
+„eierlegende Wollmilchsau“ je geben wird, darf 
+auch bezweifelt werden. BIM selbst muss erst 
+noch vollständig definiert werden und dann 
+bedarf es auch noch der Implementierung in all 
+die entsprechenden Software-Produkte. Dieser 
+Weg wird noch eine Weile dauern. 
+Die Umstellung von Tusche zu CAD hat sich 
+mehr als 20 Jahre hingezogen, und von CAD zu 
+BIM wird es sicher mindestens genauso lange 
+dauern. Zur Orientierung kann man davon 
+ausgehen, dass wir wahrscheinlich noch nicht 
+einmal die Hälfte dieses Weges hinter uns haben. 
+Je nach Einsatzbereich der Software sind die ver-
+schiedenen Produkte bezüglich ihrer BIM-Kom-
+patibilität ganz unterschiedlich weit entwickelt.
+Es steht die Frage im Raum: Welche Software 
+gilt als BIM-Software? 
+Ein eindeutiges Kriterium gibt es leider nicht. 
+Es gibt nur mehr oder weniger BIM-fähige Soft-
+wareprogramme für die unterschiedlichen 
+Anforderungen entlang des Projektverlaufs. 
+Manche Programme decken auch mehrere 
+Anforderungen ab, aber keines wird nur annä-
+hernd alle benötigten Funktionalitäten erfassen.
+Das zentrale Kriterium ist eindeutig die 
+Interoperabilität, also die Fähigkeit der Daten-
+übernahme und Übergabe an andere Program-
+me.94 Nun könnte man auf die Idee kommen, dass 
+nur Software mit einer entsprechend zertifizier-
+ten Datenschnittstelle als BIM-Software gilt. Dafür 
+kommt dann eigentlich nur die IFC-Zertifizierung 
+von buildingSMART infrage.
+94	 Hausknecht, Liebich 2016.
+
+
+===== PAGE 122/348 =====
+121
+Softwarelandschaft
+„BIM wird für alle Ziviltechniker:innen im großen Stil kommen. Nicht 
+nur in der Architektur oder im Hochbau generell, sondern auch in speziel-
+len Bereichen wie der Tragwerksplanung oder der Gebäudetechnik weisen 
+Fachplaner:innen schon jetzt große Erfahrung mit BIM auf. 
+Im Infrastrukturbereich wurden zwar bereits einige BIM-basierte 
+Pilotprojekte gestartet, die Planung von Tunnels, Brücken, Straßen und 
+Schienen wird derzeit aber noch überwiegend konventionell abgewickelt – 
+auch, weil auf diesem Gebiet noch einige Grundlagen genauer ausge-
+arbeitet werden müssen. So wird die Optimierung der entsprechenden 
+Software für den Infrastrukturbereich sowie die Softwareintegration der 
+IFC-Spezifikation noch etwas Zeit in Anspruch nehmen und der Bund 
+sowie die Länder, als Eigentümer, müssen Umfang und genaue Anfor-
+derungen und Standards definieren. 
+Positiv ist, dass die großen Auftraggeber:innen, wie z. B. die ÖBB und 
+die ASFINAG, aber auch die zuständigen Abteilungen der Länder ob dieser 
+Gegebenheiten in der Regel mit realistischen Erwartungshaltungen 
+herantreten.“
+DI GUSTAV SPENER 
+„Die BIM-Planungsmethode ist der digitale Weg der Bauplanung und 
+des Gebäudebetriebs. Wir machen gerade die ersten Schritte in diese 
+Richtung und sehen neue Betätigungsfelder für Softwarespezialisten 
+entstehen. 
+Schnittstellenentwickler, Datenlogistiker, BIM-Manager usw. schrei-
+ben uns vor, wie wir planen müssen und wie Projekte abgewickelt werden 
+müssen.  Hier liegt der strukturelle Fehler in dieser Entwicklung. Nicht der 
+Anwender wird gefragt, was er benötigt, sondern die Software gibt vor, 
+was geht. Da liegt der Fehler begraben.“
+DI ARCH. BMSTR. DI WOLFGANG KURZ
+
+
+===== PAGE 123/348 =====
+122
+BIM-Software
+Beschäftigen wir uns einmal mit der Herstel-
+lerstruktur. Warum ist das interessant für uns? Sie 
+kann uns schon einen ersten Anhaltspunkt be-
+züglich Verbreitung, lokaler Anpassung, Kompati-
+bilität mit anderen Produkten usw. liefern. In der 
+IT-Welt kristallisiert sich im Laufe der Jahre oft ein 
+„Marktführer“ für ein ganz bestimmtes Thema 
+heraus. So denkt man bei Officeanwendungen an 
+Microsoft, bei sozialen Netzwerken an Facebook, 
+bei PDF an Adobe. Dies ist in der Baubranche 
+eher noch nicht passiert, bzw. der Kampf um 
+Marktanteile ist noch in vollem Gange. Zum  
+einen ist zu hoffen, dass uns die Vielfalt an Soft-
+wareanbietern noch lange erhalten bleibt, zum 
+anderen macht es uns diese Vielfalt aber auch 
+nicht so leicht, den Überblick zu behalten.
+Aber so leicht ist das nicht. Zum einen sind 
+noch viel zu wenige Programme zertifiziert und 
+zum anderen gibt es auch Hersteller, die zwar 
+den Import und den Export für IFC anbieten, aber 
+keine buildingSMART-Zertifizierung haben oder 
+gar nicht erst anstreben. 
+Eines der Hindernisse dabei ist, dass der Her-
+steller nach einer Zertifizierung verständlicher 
+Weise nichts mehr an seiner Softwareversion 
+ändern darf. Was aber soll der Hersteller machen, 
+wenn beispielsweise ein Servicepack oder Ähn­
+liches ansteht? 
+Für unser Kapitel können wir also nur die 
+Software betrachten, die in BIM-Prozessen zur 
+Zeit mehr oder weniger BIM-konform eingesetzt 
+wird.
+ 
+ Kapitel 4, S. 190 
+IFC-Zertifizierung
+
+
+===== PAGE 124/348 =====
+123
+Softwarelandschaft
+Die BIM-Software ist die geistige 
+Schöpfung ihres Urhebers (Software-Entwickler) 
+und genießt regelmäßig urheberrechtlichen 
+Schutz (§ 40a iVm § 2 UrhG). Planungsleistungen 
+des Architekten sind als Werk der bildenden  
+Kunst (§ 3 UrhG) urheberrechtlich geschützt, so-
+fern diese eine eigentümliche geistige Schöpfung 
+darstellen. Das Urheberrechtsgesetz schützt den 
+Urheber vor unbefugter Verwendung des Werks 
+und sichert seine wirtschaftliche Beteiligung 
+daran. 
+Bearbeitungen eines Werks können 
+Schutz wie Originalwerke genießen; dies unbe­
+schadet des am bearbeiteten Werk bestehenden 
+ursprünglichen Urheberrechtes (§ 5 UrhG).  
+Zur Verwertung bedarf der Bearbeiter der Zu­
+stimmung des Urhebers des Originalwerkes 
+(§ 14 UrhG). Wird ein Werk von mehreren Per­
+sonen geschaffen, liegt Miturheberschaft vor;  
+ein Verfügen darüber bedarf der Einstimmigkeit. 
+Schutz für Know-how bietet das UWG:  
+Das Nachahmen fremder Leistungen, die keinen 
+Sonderrechtsschutz genießen, ist unlauter, wenn 
+Umstände hinzutreten, aus denen die Sitten­
+widrigkeit der Handlung resultiert. Projekt­
+beteiligte (wie Subunternehmer, Mitarbeiter etc.) 
+sollten durch Verschwiegenheitsvereinbarungen 
+zur Vertraulichkeit hinsichtlich im Rahmen des 
+Bauprojektes zugänglich gemachter Informa­
+tionen verpflichtet werden. Verstöße dagegen 
+sollten pönalisiert, sensible Daten durch Zugriffs-
+rechte geschützt werden. 
+DR. VOLKER MOGEL, LL.M. EUR.
+Rechtstipp
+
+
+===== PAGE 125/348 =====
+124
+BIM-Software
+Lebenszyklus	
+In einem idealtypischen BIM-Workflow 
+werden die Daten entlang des gesamten Lebens-
+zyklus des Bauwerks weitergegeben und stetig 
+verfeinert. Sie werden nicht jedes Mal wieder neu 
+eingegeben, sondern mit einem geeigneten 
+Dateiformat in die folgende Software über­
+nommen. 
+Momentan ist BIM immer noch in der 
+Entwicklung. Es gibt schon sehr viele Software-
+produkte, mit denen man diesem Ideal sehr 
+nahe kommt, vor allem in den ersten Phasen. 
+Aber je mehr man zur Software für spätere 
+Projekt­phasen kommt, desto weniger lässt sich 
+ein Produkt finden, das diesen Anforderungen 
+wirklich gerecht wird. 
+Die großen Konzerne haben zwar schon 
+alle ein (fast gleiches) Bild, wie die jewei­ligen 
+Softwareanforderungen entlang des Lebens­
+zyklus aussehen sollen, aber es fehlen ihnen 
+dafür entweder noch einige Produkte oder die 
+zugekaufte Software ist noch nicht richtig 
+integriert.
+
+
+===== PAGE 126/348 =====
+125
+Lebenszyklus
+ Abbildung 30: Sehr ähnliches Idealbild Lebenszyklus Nemetschek (oben) und Autodesk (unten)95 
+95	 Autodesk und Grafisoft.
+
+
+===== PAGE 127/348 =====
+126
+BIM-Software
+Die „Big Player“	
+Neben unzähligen kleineren Anbietern  
+gibt es weltweit ein paar Großkonzerne, die 
+Software für die Baubranche anbieten. Sobald 
+eines der „kleineren“ Softwareprodukte drauf 
+und dran ist, sich einen beachtenswerten Markt-
+anteil zu erkämpfen, kommt meist einer der 
+Großkonzerne und kauft den Anbieter ganz ein-
+fach auf. 
+Step-by-step versuchen die großen Kon­
+zerne, für alle Anforderungen entlang des BIM-
+Workflows eines Bauwerks entsprechende 
+Software in ihr Port­folio aufzunehmen. In einem 
+aus Konzernsicht idealen Szenario könnten dann 
+die Daten im vom Konzern bevorzugten (even­
+tuell auch proprie­tären) Dateiformat entlang  
+des kompletten Lebenszyklus weitergegeben 
+werden. Dann könnte das Projekt komplett im 
+closedBIM des Konzerns abgewickelt werden.  
+Ob das generell wünschenswert ist, ist eine an­
+dere Frage.
+Die vier Großkonzerne Autodesk, Trimble, 
+Nemetschek und Bentley stecken hinter den 
+meisten Softwareprodukten im BIM-Bereich, 
+wobei Trimble und Bentley eher in Nordamerika 
+oder Australien stark vertreten sind. Den deutsch-
+sprachigen Markt dominieren die beiden großen 
+Firmen Nemetschek und Autodesk. Diese bieten 
+eine Unmenge an Produkten, Varianten und 
+Bundels an.
+Zudem gibt es einen Shop, in dem Produkte 
+von Drittanbietern angeboten werden. Innerhalb 
+des Nemetschek-Konzerns gibt es eine Besonder-
+heit, hier konkurrieren sich zwei sehr ähnliche 
+Produktschienen gegenseitig: die Produkt­
+schiene rund um Allplan und die rund um 
+Archicad, von der vor langer Zeit aufgekauften 
+Firma Graphisoft.
+Um einen Überblick zum Status quo hinsicht-
+lich der Anwendung von BIM-Software bei 
+Planer:innen zu gewinnen, wurde in der Zeit 
+ 
+ Kapitel 4, S. 162 
+Proprietäres 
+Dateiformat
+
+
+===== PAGE 128/348 =====
+127
+96	 Beispielsweise bietet Autodesk allein rund 
+100 verschiedene Produkte inklusive Varianten für 
+verschiedenste Branchen und Schwerpunkte an.
+Die „Big Player“
+zwischen Jänner und Oktober 2021 jeweils eine 
+Umfrage unter den Mitgliedern der ZT Kammer, 
+des Fachverbandes Ingenieurbüros sowie der 
+Bundesinnung Bau durchgeführt. 
+Ziel des Umfrageblocks zur Software­
+nutzung war es, einerseits die im Umfeld öster-
+reichischer Ziviltechniker:innen, Ingenieurbüros 
+und Baumeisterbetriebe dominierenden Soft-
+warehersteller sowie deren Produkte zu iden­
+tifizieren und andererseits mögliche „Hidden 
+Champions“ herauszufiltern, die eventuell we­
+niger bekannt sind.
+Den Umfrageteilnehmer:innen wurde dazu 
+eine Liste mit einer Auswahl an Softwareunter-
+nehmen vorgelegt, wobei der Fokus bewusst auf 
+die Softwarehersteller gelegt und nur beispiel-
+haft Produkte der einzelnen Hersteller als Hilfe-
+stellung für die Umfrageteilnehmer:innen 
+angeführt wurden.96 Die Teilnehmer:innen sollten 
+angeben, von welchen Softwareherstellern sie
+Produkte in ihrem Unternehmen verwenden. 
+Mehrfachnennungen waren möglich.
+Lediglich für das Programm Autodesk Auto-
+CAD wurde bei den angeführten Auswahlmög-
+lichkeiten eine Ausnahme gemacht. Es ist das ein-
+zige Programm des Herstellers Autodesk, das als 
+eigene Antwortmöglichkeit angeführt wurde, da 
+es sich hierbei um ein allgemein bekanntes 
+Programm mit hoher Verbreitung in Österreich 
+handelt und durch die gezielte Abfrage dieses 
+Programmes eine differenziertere Auswertung 
+der Verbreitung einzelner Softwareanbieter mög-
+lich wird. Die anderen Programme von Autodesk 
+wurden unter der Kategorie „Autodesk“ zusam-
+mengefasst.
+
+
+===== PAGE 129/348 =====
+128
+BIM-Software
+Für die Ermittlung des Status quo hinsicht-
+lich des Einsatzes von BIM bei den befragten 
+Unternehmen geben die genutzten Software­
+produkte inkl. der entsprechenden Hersteller 
+einen guten Überblick (siehe Abbildung 31).
+Die am häufigsten bereits in Verwendung 
+befindlichen Softwareprodukte stammen bei den 
+Mitgliedern der ZT Kammer und auch bei den 
+Baumeisterbetrieben von den Unternehmen 
+„Nemetschek Group“ und „Autodesk“ (siehe 
+Abbildung 31). 
+Bei den Mitgliedern der Ingenieurbüros sind 
+die Produkte der „Nemetschek Group“ deutlich 
+weniger oft vertreten – hier wird die Liste von 
+„Autodesk“-Produkten angeführt. Bereits auf 
+dem zweiten Platz sind bei den Ingenieurbüros 
+„Andere“ Softwarehersteller zu finden. Auch bei 
+den Mitgliedern der ZT Kammer und den  
+Baumeisterbetrieben wurde relativ häufig die 
+Kategorie „Andere“ Softwarehersteller ange­
+geben. 
+Um welche anderen Softwarehersteller es 
+sich bei diesen Nennungen explizit handelt, 
+wurde in der Umfrage nicht erhoben. Es liegt 
+allerdings der Schluss nahe, dass es sich dabei  
+um spezifische Softwarelösungen aus dem je-
+wei­ligen Fachbereich handelt bzw. hier z.B.  
+auch Office-Programme enthalten sind. 
+Aufgrund der Annahme, dass es sich dabei 
+um viele unterschiedliche Hersteller und deren 
+Produkte handeln dürfte, wird ersichtlich, wie 
+breit gefächert die Softwarelandschaft in öster-
+reichischen Ziviltechniker:innen-, Ingenieur-  
+und Baumeisterbüros tatsächlich ist.
+
+
+===== PAGE 130/348 =====
+129
+Die „Big Player“
+ Abbildung 31: Softwarehersteller – in Verwendung97 
+97	 Insgesamt wurden 26 Softwarehersteller abgefragt. Folgende Hersteller weisen jedoch in allen Befragungsgruppen 
+Anteile von unter 4 % auf und wurden daher aus Gründen der Lesbarkeit nicht in das Diagramm aufgenommen: 
+SOFTTECH, BAUSOFT INFORMATIK AG, ACCASOFTWARE, BAUPLUS, DATAFLOR AG, CADWORK INFORMATIK, XEOME-
+TRIC, DIETRICH‘S, BEXEL CONSULTING, IT-CONCEPT SOFTWARE, SIEMENS, DICAD, NOVA Building, BENTLEY SYSTEMS, 
+TRANSSOFT SOLUTIONS
+
+
+===== PAGE 131/348 =====
+130
+BIM-Software
+ Abbildung 32: Konzept zentrale gemeinsam genutzte Datenbank98 
+98	 Vgl. Autodesk screen shots reprinted courtesy of Autodesk, Inc.
+99	 https://www.finanzen.at/bilanz_guv/autodesk, Datum des Zugriffs: 13. 1. 2022.
+100	 https://www.finanzen.at/bilanz_guv/trimble_navigation, Datum des Zugriffs: 13. 1. 2022.
+101	 https://www.finanzen.net/bilanz_guv/bentley_systems, Datum des Zugriffs: 13. 1. 2022.
+	
+https://de.marketscreener.com/kurs/aktie/BENTLEY-SYSTEMS-INCORPOR-112833782/fundamentals/,  
+Datum des Zugriffs: 13. 1. 2022.
+102	 https://ir.nemetschek.com/websites/nemetschek/German/2200/finanzberichte.html, Datum des Zugriffs:  
+8. 6. 2022. 
+103	 https://bankenverband.de/service/waehrungsrechner/, Datum des Zugriffs: 13. 1. 2022.
+ 
+Umsatz (2020)
+Mitarbeiter:innen
+Hauptsitz 
+Autodesk99 
+	
+ca.	 3,26 Mrd. $
+10.100
+San Rafael (USA)
+Trimble100 
+	
+ca.	 3,15 Mrd. $
+11.402
+Sunnyvale (USA)
+Bentley Systems101 
+	
+ca.	 800 Mio. $
+4.104
+Exton (USA)
+Nemetschek Group102 
+	
+ca.	596,9 Mio. €
+	
+(ca. 680,5 Mio. $103)
+3.074
+München (D)
+Tabelle 9:  Die „größten“ Softwarehersteller
+
+
+===== PAGE 132/348 =====
+131
+Softwareversion
+Diese Big Player dominieren den Markt nicht 
+nur mit ihren konzerneigenen Produkten. Es gibt 
+viele Hersteller, die ganz unterschiedlich auf einer 
+Software dieser Konzerne aufsetzen. Hier gibt es 
+die verschiedensten Modelle, aber je enger die 
+Produkte aufeinander abgestimmt sind, desto 
+besser funktioniert die Datenübergabe. 
+Im Optimalfall sind die Softwareprodukte  
+so gut miteinander verbunden, dass es zum  
+Aktualisieren neuer Elemente und Attribute  
+nicht mehr nötig ist, die Daten aus der Erstel-
+lungssoftware jedes Mal neu zu exportieren  
+und in die Ziel­software wieder extra zu impor­
+tieren. Es genügt dann, die schon verlinkte Datei 
+einfach durch einen „Refresh-Klick“ quasi in  
+Echtzeit in der verbundenen Software zu  
+aktua­lisieren.
+Ein kurzer Blick auf das gesamtheitliche 
+Konzept eines Herstellers kann nicht schaden. 
+Der klassische Weg im BIM ist die Datenübergabe 
+per Datei von Software zu Software. Die High-
+End-Vision ist aber eine gemeinsame Datenbank, 
+auf die alle Softwareprogramme über eine Cloud 
+zugreifen. Auf kurz oder lang wird auch in der 
+Baubranche die Software mehr und mehr auf der 
+Cloud basieren. Die verschiedenen Eingabe­
+programme liefern dann die entsprechenden 
+Daten in diese Datenbank. Auf der Datenbank 
+setzen dann andere Softwareprogramme zur 
+Weiterverarbeitung, Auswertung oder Analyse 
+auf. Hinter der Datenbank befindet sich noch eine 
+Entwicklerplattform (in der Grafik ist es Forge), 
+die es Drittanbietern ermöglicht, kleine Zusatz-
+tools zu erstellen.
+
+
+===== PAGE 133/348 =====
+132
+BIM-Software
+Softwareversion	
+ Abbildung 33: Neuere Dateiversion kann nicht in älteren Softwareversionen geöffnet werden104 
+Einige Anwender:innen wollen immer mit 
+der neuesten Version arbeiten. Dies kann aber oft 
+zu Problemen führen. Zum einen dauert es meist 
+ein wenig, bis die Plugins, mit denen man arbei-
+tet, auch für die neue Version verfügbar sind. Und 
+zum anderen ist da das Problem mit fehlender 
+Abwärtskompatibilität.
+Eine Software wird als abwärtskompatibel 
+bezeichnet, wenn sie nicht nur Dateiversionen 
+einer älteren Version lesen, sondern auch Dateien 
+in der älteren Version abspeichern kann. Kann 
+eine Software nur ältere Dateiversionen einlesen 
+und nicht als solche ausgeben, ist die Software 
+lediglich aufwärtskompatibel.
+Wenn eine BIM-Datei einmal in einer aktuel­
+leren Softwareversion geöffnet und abgespei-
+chert worden ist, gibt es kein Zurück mehr. Im 
+104	 Autodesk screen shots reprinted courtesy of 
+Autodesk, Inc.
+
+
+===== PAGE 134/348 =====
+133
+Softwareversion
+Praxistipp
+Dies ist dann besonders diffizil, wenn 
+mehrere Personen in/mit der gleichen Datei (gilt 
+auch für verknüpfte Dateien) arbeiten, denn dann 
+müssen alle Beteiligten unbedingt die gleiche 
+Softwareversion verwenden. Angenommen alle 
+Arbeitsplätze arbeiten in der 2019er-Version und 
+nur einer ist schon auf die 2020er-Version umge-
+stellt. Bearbeitet jene Person mit der neueren 
+Softwareversion die Datei und speichert diese 
+auch wieder in der neueren Version ab, kann diese 
+von den anderen Anwender:innen nicht mehr 
+geöffnet werden, da die Kompatibilität zwischen 
+älterer Softwareversion und neu abgespeicherter 
+Datei nicht gegeben ist. In mancher Software ge-
+nügt sogar nur das einmalige Öffnen der Datei in 
+einer aktuelleren Version, um nicht mehr zurück 
+zu können. Das Problem ist sogar noch sensibler. 
+Es sollte nicht nur die Version, in der ein Team 
+arbeitet, gleich sein, sondern sogar die jeweilige 
+Software-Build. Jede Version durchläuft aufgrund 
+von Updates, Bugfixes und Servicepacks mehrere 
+Builds. Leider kann schon die Verwendung von 
+unterschiedlichen Builds zum Scheitern der 
+Zusammenarbeit führen.
+Zieht sich ein Projekt über mehrere Jahre, 
+muss das zwischenzeitliche Hochziehen der 
+Softwareversion sorgfältig geplant und mit allen 
+Beteiligten abgestimmt werden. Von einem 
+Schritt-für-Schritt-Hochziehen ist dringend abzu-
+raten! Währenddessen darf niemand an der Datei 
+arbeiten. Zuerst müssen die Softwareprodukte 
+hochgezogen und dann die alte Datei in der neu-
+en Softwareversion geöffnet und abgespeichert 
+werden. Erst dann sollte man wieder alle auf die 
+Datei loslassen. Am besten macht das der Admin 
+mit dem BIM-Manager über ein Wochenende in 
+Ruhe. Im schlimmsten Fall muss dieser Schritt bei 
+wenigen Softwareprodukten wiederholt werden, 
+da diese eine Datei nur um drei Versionen auf 
+einmal updaten können.
+Falls an einem Arbeitsplatz an zwei oder 
+mehreren Projekten in unterschiedlichen Soft-
+wareversionen gearbeitet werden soll, bieten 
+viele Softwarelizenzen die Möglichkeit an, am 
+gleichen Rechner auch ältere Versionen der 
+gleichen Software zu installieren. Meist kann  
+die vorher­gehende Version oder die letzten  
+drei Versionen (jeweils nur eine Build) parallel in­
+stalliert werden. So kann beispielweise Projekt A 
+am Vormittag in der 2019er Version bearbeitet 
+werden und Projekt B am Nachmittag in der 
+2020er Version.
+Gegensatz zu den meisten CAD-Software­
+produkten ist BIM-Software leider so gut wie nie 
+abwärtskompatibel (siehe Abb. 33). 
+Bei vielen CAD-Programmen ist es möglich, 
+eine Datei nicht in der aktuellen dwg-Version der 
+verwendeten Software abzuspeichern. Es kann 
+gewählt werden, ob man beispielsweise ein 
+2007er-dwg oder ein 2013er-dwg abspeichern 
+will. Bei BIM-Software ist dies im Normalfall nicht 
+mehr möglich. Wenn einmal in der Version „n“ 
+gearbeitet wurde, kann die Datei nicht mehr in 
+Version „n-x“ abgespeichert werden.
+
+
+===== PAGE 135/348 =====
+134
+BIM-Software
+Es gibt inzwischen sehr viele BIM-Software-
+produkte, die in den verschiedensten Bereichen 
+für ganz unterschiedliche Anforderungen einge-
+setzt werden. Je nach Land setzen sich oft ganz 
+unterschiedliche Hersteller in den jeweiligen Be-
+reichen durch. Das lässt sich auch erklären: Soft-
+ware ist meist in jenen Regionen stark vertreten, 
+in denen sie zu Beginn entwickelt wurde. So ist 
+beispielsweise die geografische Nähe von Gra-
+phisoft (Ungarn) ein Grund für die relativ große 
+Verbreitung von Archicad in Österreich.
+Ein weiterer Grund ist die Lokalisierung. Die-
+se beginnt mit der Frage, ob es die Software auch 
+in meiner Sprache gibt. Aber auch die Frage, ob 
+die Software auch landesspezifische Anforde­
+rungen berücksichtigt, ist ein starkes Argument. 
+So sucht man nach Software, die spezifische 
+Ausschreibungsregeln berücksichtigen kann,  
+die geforderte Plandarstellungen beherrscht 
+oder in der Lage ist, nötige Berechnungen nach 
+den lokalen Regeln auszugeben. Hierin besteht 
+auch für viele kleine Hersteller die große Chance, 
+sich gegen die großen Konzerne zu behaupten, 
+zumindest in einer bestimmten Region.
+Die einzelnen Produkte kann man nach 
+diversen Kriterien einteilen. Denkbar ist eine 
+Betrachtung entlang des Projektverlaufs. Wenn 
+man sich also ansieht, in welcher Projektphase 
+welche Software verwendet wird, erkennt man 
+schnell, dass je nach Anwendungsart gewisse 
+Softwaretypen in unterschiedlichen Phasen zum 
+Einsatz kommen. Am häufigsten werden BIM-
+Softwareprodukte nach der Kategorie der An-
+wendung unterschieden. 
+In der Praxis kursieren ganz unterschied- 
+liche Einteilungen und Gewichtungen. Wie  
+kann man sich nun einen groben Überblick 
+verschaffen?
+Soweit sich die einzelnen Anwendungen ab-
+grenzen lassen, wollen wir mit einer Einteilung 
+auf Basis der wichtigsten Anwendungskategorien 
+versuchen, einen groben Überblick, natürlich 
+ohne Anspruch auf Vollständigkeit, zu geben.  
+Nur wenige Produkte beschränken sich auf die 
+Funktionalitäten ihrer Kategorie. Die meisten  
+Produkte bieten auch einen Teil der Funktionali-
+täten anderer Kategorien an.
+Software-Kategorien	
+
+
+===== PAGE 136/348 =====
+135
+Software-Kategorien
+ Abbildung 34: Software nach Phasen105 
+105	 Vgl. Baldwin 2019, S. 131.
+
+
+===== PAGE 137/348 =====
+136
+BIM-Software
+Modelliersoftware
+Im vorhergehenden Kapitel wurde die so­
+genannte Modelliersoftware schon oft erwähnt. 
+Sie wird zum richtigen Modellieren gebaucht. Im 
+Normalfall beginnt ein BIM-Prozess mit der Mo-
+delliersoftware. Schon für die ersten konzeptio-
+nellen Entwurfsvarianten entstehen Kuben mit 
+ein paar Merkmalen. Sowohl die geometrischen 
+Körper als auch die Attribute (Merkmale) werden 
+im Laufe der Planung dann mit Hilfe der Model-
+liersoftware Schritt für Schritt verfeinert.
+Viele dieser Produkte (AutoCAD, Vector-
+works, Allplan …) waren ursprünglich eigentlich 
+CAD-Softwareprodukte, die dann Stück für Stück 
+umgebaut wurden. Dabei sind manche schon zu 
+voll BIM-fähiger Software geworden und manche 
+sind doch eher noch „BIM-light“. Eine Software-
+architektur derartig umzubauen, ist nicht gerade 
+der leichteste Weg. So hatten Produkte, die spä-
+ter auf den Markt kamen, einen kleinen Vorteil, 
+da ihre Softwarearchitektur schon von Beginn an 
+BIM-konformer war. Die ersten BIM-Produkte 
+kamen aus dem Bereich der Modelliersoftware. 
+So ist es auch nicht verwunderlich, dass hier im-
+mer noch der Schwerpunkt auf fortgeschrittenen 
+BIM-Produkten liegt.
+Speziell im Bereich der Modelliersoftware 
+unterscheidet sich der Einsatz der verschiedenen 
+Produkte sehr nach Fachdisziplin und Region. Die 
+Architektur interessiert die Heizlastberechnung 
+meist nicht, die Haustechnik will nichts mit der 
+Bewehrung zu tun haben und die Statik sieht 
+nichttragende Bauteile gar nicht gerne in ihrem 
+Modell. So ist es nicht verwunderlich, dass sich 
+die jeweilige Modelliersoftware meist schwer-
+punktmäßig an eine bestimmte Fachdisziplin 
+richtet. Autodesk dagegen versucht, den ge­
+samten AEC-Bereich (Architecture, Engineering & 
+Construction) inzwischen sogar samt Stahlbau zu 
+adressieren.
+So gibt es je nach Region Produkte, die mehr 
+von der Architektur, von der Statik, von der Haus-
+technik oder von der Infrastrukturplanung bevor-
+zugt werden. Natürlich gibt es auch speziellere 
+Produkte für die Anforderungen im Holzbau, im 
+Stahlbau, in der Fertigteilindustrie usw. Während 
+in Österreich der größere Teil der Architektur mit 
+Archicad arbeitet, ist im Vergleich dazu der Anteil 
+von Revit für die Architektur in Deutschland 
+schon deutlich größer. Dagegen wird Revit in 
+Österreich gerne von der Haustechnik verwendet, 
+
+
+===== PAGE 138/348 =====
+137
+Software-Kategorien
+während die Haustechnik wiederum in Deutsch-
+land eher noch mehr mit Nova arbeitet.
+Betrachtet man den aktuellen Einsatz von 
+speziellen BIM-Softwareprodukten, bündeln sich 
+die Antworten bei den Mitgliedern der ZT  Kam-
+mer um die Produkte Archicad (102 Nennungen = 
+57 %) und Revit (67 Nennungen = 37 %). Darauf 
+folgt mit 30 Nennungen die Software Allplan 
+(17 %). Tekla und MicroStation werden von den 
+befragten Ziviltechniker:innen aktuell kaum ge-
+nutzt (siehe Abbildung 35). Auffällig ist, dass Revit 
+mit etwa 56 % bei den Ingenieurbüros stark ver-
+treten ist (54 Nennungen), Archicad (19 Nennun-
+gen = 20 %) aber bei der Anzahl der Nennungen 
+nur an dritter Stelle (hinter Allplan: ca. 22 %) liegt. 
+Archicad kommt damit in den Ingenieurbüros 
+deutlich seltener zum Einsatz als bei den Mit­
+gliedern der ZT Kammer. 
+In den Baumeisterbetrieben werden 
+vornehmlich Archicad (54 %), Allplan (33 %) und 
+Revit (30 %) eingesetzt.
+Von jenen Befragten, die eines der angeführ-
+ten Softwareprodukte nutzen, gaben ca. 87 % 
+(ZT Kammer), 91 % (Ingenieurbüros) bzw. 84 % 
+(Baumeisterbetriebe) an, auch nur eines dieser 
+Programme in Verwendung zu haben. Der 
+gleichzeitige Einsatz mehrerer der angeführten 
+speziellen BIM-Softwareprodukte ist damit in 
+allen Befragungsgruppen eher der Ausnahme-
+fall.
+ Abbildung 35: Einsatz spezifischer Softwareprodukte
+
+
+===== PAGE 139/348 =====
+138
+BIM-Software
+Werden die Teilnehmer:innen der ZT Kam-
+mer in Architekt:innen (ZT Arch) und sonstige 
+Befragte (ZT Ing) differenziert, zeigt sich, dass 
+besonders die befragten Architekt:innen für die 
+häufigen Nennungen von Archicad verantwort-
+lich sind (siehe Abbildung 35). Bei den restlichen 
+Befragten der ZT Kammer führen Revit und All-
+plan die Liste vor Archicad an.
+Dass die Gesamtanzahl der Nennungen von 
+ZT Arch und ZT Ing zusammen eine größere Sum-
+me ergeben als ZT insgesamt in Abbildung 35, ist 
+den Mehrfachnennungen bei den Fachgebieten 
+geschuldet.
+Wenn man will, kann man im Bereich der 
+Modelliersoftware noch ein oder zwei Sonder­
+kategorien herausnehmen. So gibt es Modellier-
+software speziell für die generische Formfin-
+dung, um beispielsweise zu Projektbeginn 
+konzep­tionell Varianten gegenüber zu stellen. 
+Hier stellt sich allerdings die viel diskutierte 
+Frage, ob es sinnvoll ist, so früh im Projekt schon 
+mit BIM zu starten. Eine weitere Spezialform sind 
+Programme, die über eine grafische Program-
+miersprache die zu modellierende Geometrie 
+parametrisch oder über Algorithmen steuern.
+ Abbildung 36: Einsatz spezifischer Softwareprodukte – getrennt in ZT Arch und ZT Ing
+
+
+===== PAGE 140/348 =====
+139
+Software-Kategorien
+Software
+Hersteller 
+Schwerpunkt 
+Archicad 
+Nemetschek (Graphisoft)
+Architektur
+Revit 
+Autodesk 
+AEC, Stahlbau
+Allplan
+Nemetschek
+Statik, Architektur
+Civil 3D
+Autodesk
+Infrastruktur
+AECOsim Building Designer 
+Bentley
+AEC
+Vectorworks
+Nemetschek
+Architektur
+AutoCAD
+Autodesk
+Architektur
+Tekla Structure
+Trimble
+Statik
+RFEM/RSTAB
+Dlubal 
+Statik
+SOFiSTiK
+Mensch und Maschine 
+Statik
+Nova
+Trimble (Plancal) 
+Haustechnik
+DDS-CAD 
+Nemetschek
+Haustechnik
+MagiCAD
+Glodon 
+Haustechnik
+LiNear 
+LiNear
+Haustechnik
+Rhinocerus
+McNeel
+Generische Formfindung
+Grasshoper
+McNeel 
+Graph. Programmiersprache
+Dynamo 
+Autodesk
+Graph. Programmiersprache
+Tabelle 10:  Beispiele Modelliersoftware
+Arbeits-
+materialien 
+ 
+  
+Erweiterte Liste mit 
+Softwareherstellern 
+
+
+===== PAGE 141/348 =====
+140
+BIM-Software
+Viewer
+Die meisten Viewer sind kostenlos bzw. ab-
+gespeckte Versionen von Vollversionen (Solibri, 
+Navisworks, …). Manchmal kann auch die ab­
+gelaufene Testversion einer Software (Archicad, 
+Allplan, Revit, …) als kostenloser Viewer benutzt 
+werden. Üblicherweise werden in einem Viewer 
+die einzelnen Teilmodelle der verschiedenen 
+Fachbereiche zu einem Koordinations- bzw. Ge-
+samtmodell zusammengeführt. Meistens handelt 
+es sich dabei um IFC-Viewer, die vor allem Daten 
+im IFC-Format einlesen können. Der Viewer bietet 
+nach dem Einlesen die verschiedensten Ansichts-
+möglichkeiten für das Modell, bis hin zum vir­
+tuellen „walk-through“.
+Meistens bieten die Viewer noch einige 
+zusätzliche Funktionalitäten an. Klickt man ein 
+Bauteil im Viewer an, sollten dessen Attribute an-
+gezeigt werden. Oft kann man auch mit Markern, 
+Pfeilen oder der Textfunktion eigene Anmerkun-
+gen hinterlegen. Auch das schnelle Prüfen von 
+„Wie in allen Arbeitsbereichen ist es auch bei der Modellerstellung 
+wichtig, seine eigene Arbeit regelmäßig zu überprüfen. 
+Eine gute Möglichkeit bieten dazu die erwähnten IFC-Viewer. In 
+diesen kann durch Filtern und Isolieren z.B. die richtige Zuordnung der 
+Bauelemente zu Klassen, die richtige Belegung mit Merkmalen wie 
+isexternal, loadbearing oder anderen visuell überprüft werden. Aber 
+auch die richtige Typisierung der Bauelemente ist mithilfe dieser Methode 
+schnell erkennbar.“ 
+DI MELANIE WÖLWITSCH
+
+
+===== PAGE 142/348 =====
+141
+Software-Kategorien
+Maßen über ein mobiles Display kann zu diesen 
+Benefits gehören. Bei Viewern wird in der Praxis 
+eine große Bandbreite an ganz unterschiedlichen 
+Produkten eingesetzt.
+Trotz der Tatsache, dass jeweils etwa die 
+Hälfte der Befragten der ZT Kammer und 
+Ingenieurbüros angegeben hat, IFC-Dateiformate 
+zu verwenden, verwenden aber nur 29 % 
+(Ingenieurbüros) bzw. 32 % (ZT Kammer) der Be-
+fragten im Unternehmen IFC-Viewer-Software. 
+Bei den Baumeisterbetrieben sind es knapp 42 % 
+(siehe Abbildung 37). 
+Die Viewer sind zwar je nach Tiefe der An-
+wendung bzw. je nach Inhalt, der ausgetauscht 
+wird, nicht zwangsläufig erforderlich, hinsichtlich 
+eines „Good-Practice Workflows“ sind diese aber 
+im Grunde notwendig, um die IFC-Modelle zu be-
+trachten und mögliche Abweichungen zwischen 
+der Darstellung im Viewer und der Modelliersoft-
+ware visuell oder automatisch zu kontrollieren.
+ Abbildung 37: Verwendung von IFC-Viewer Software
+
+
+===== PAGE 143/348 =====
+142
+BIM-Software
+Von den verwendeten IFC-Viewern wird in 
+allen Befragungsgruppen durchwegs Solibri am 
+häufigsten genutzt, gefolgt vom Autodesk 
+Viewer, BIMcollab ZOOM, Navisworks und 
+BIMVision (wobei die drei Letztgenannten bei 
+den Ingenieurbüros jeweils gleich viele (14) Nen-
+nungen aufweisen). 
+BIMVision sticht besonders bei den Bau­
+meisterbetrieben als der Viewer hervor, der am 
+zweithäufigsten genannt wurde. 
+Trimble Connect wird etwas häufiger von 
+Ingenieurbüros, open IFC Viewer eher von Mit-
+gliedern der ZT Kammer eingesetzt (siehe Ab­
+bildung 38). 
+Dahinter folgen noch weitere Viewer, die 
+vereinzelt verwendet werden. Bei dieser Frage 
+war wieder eine Mehrfachauswahl zulässig.
+ 
+ Arbeits-
+materialien
+Viewer zum 
+Download Linkliste
+
+
+===== PAGE 144/348 =====
+143
+Software-Kategorien
+ Abbildung 38: Umfrage, verwendete Viewer 
+
+
+===== PAGE 145/348 =====
+144
+BIM-Software
+Prüfsoftware
+Jede Prüfsoftware, oft auch „Model Checker“ 
+genannt, baut auf einem Viewer auf. Über den 
+Viewer werden dann die einzelnen Prüfroutinen 
+gestartet. Die bekannteste Prüfung im BIM-Work-
+flow ist die Kollisionserkennung (im Englischen 
+Clash Detection). Dabei werden meist Modelle 
+aus verschiedenen Fachbereichen zusammen­
+geführt. Mit der Kollisionserkennung kann man 
+dann frühzeitig erkennen, ob Rohre mit Unter­
+zügen kollidieren oder ob beispielsweise noch 
+Durchbrüche für Leitungen fehlen. Dies wären 
+sogenannte „Hard Clashes“. Daneben gibt es 
+auch noch die „Soft Clashes“, bei welchen die 
+Objekte nicht direkt miteinander kollidieren.  
+Hier steht dann beispielweise eine Stütze im  
+Öffnungsradius eines Fensters oder der War-
+tungsbereich einer haustechnischen Anlage  
+wird nicht frei gehalten.
+Die Kollisionserkennung ist einer der ganz 
+großen Vorteile der BIM-Arbeitsweise im 
+Vergleich zu jener mit CAD. Hier werden viele 
+Planungsfehler vermieden und somit definitiv 
+Kosten und Ärger gespart. 
+Die Kollisionserkennung ist Hauptbestand- 
+teil von Prüfsoftwareprodukten, die Funktion 
+wird aber auch oft in Produkten für Modellier-
+software oder Zusammenarbeitsplattformen  
+angeboten.
+Praxistipp
+Die sogenannten „SOFT CLASHES“ werden 
+nur allzu oft in der Planung übersehen. Sie werden 
+meist erst dann bemerkt, wenn der Bau schon um-
+gesetzt ist und es zu Schwierigkeiten im Betrieb 
+kommt. Deshalb sollten in den entsprechenden 
+Modellierelementen die freizuhaltenden Bereiche 
+immer in irgendeiner Form enthalten sein. Diese 
+könnten als halbtransparenter Kubus dargestellt 
+werden (mit Grafik: Freizuhaltender Raum vor den 
+Türen der Lüftungsanlage).
+
+
+===== PAGE 146/348 =====
+145
+Software-Kategorien
+Arbeits- 
+materialien 
+ 
+  
+Erweiterte Liste mit 
+Software­herstellern
+Kapitel 4, S. 179  
+ 
+   
+ 
+ 
+Klassifizierung
+Kapitel 2, S. 74 
+ 
+   
+ 
+ 
+Attribute
+Software 
+Hersteller
+Schwerpunkt 
+Solibri
+Nemetschek
+Modellzusammenführung, Qualitätsprüfung
+Navisworks
+Autodesk
+Modellzusammenführung, 4D 
+BIMcollab Zoom
+Kubus 
+Modellzusammenführung, Qualitätsprüfung
+Tabelle 11:  Beispiele Prüfungssoftware
+Die Prüfsoftware ist aber auch das Haupt­
+instrument für ein gutes Qualitätsmanagement. 
+Zum einen werden die Modelle, bevor sie an die 
+anderen Planungspartner gehen, nochmal auf 
+die Modellierungsqualität, vor allem dahin­
+gehend, ob alles IFC-konform modelliert ist, ge-
+prüft. Hier wird geprüft, ob alle Klassifizierungen 
+und Attribute richtig zugewiesen wurden, damit 
+die diversen späteren Auswertungen auch richtig 
+sind. Auch versehentlich doppelt übereinander-
+liegende Elemente können erkannt werden. Zum 
+andern werden aber auch die Teilmodelle, die  
+die BIM-Koordination bekommt, dahingehend 
+geprüft, inwiefern sie ins Gesamtmodell passen.
+Neben Kollisionserkennung und dem IFC-
+konformen Modellieren gibt es aber noch sehr 
+viele allgemeine Prüfkriterien, die man anwen-
+den sollte. Man kann prüfen, ob Barrierefreiheit 
+gegeben ist, ob die Fluchtwegslängen passen, 
+Brandschutzvorschriften eingehalten werden,  
+ob Wände übereinander stehen und vieles mehr. 
+Auch die Einhaltung verschiedenster Bauvor-
+schriften ist meist einfach zu prüfen. So ist es nur 
+logisch, dass Prüfsoftware bei zukünftigen 
+digitalen Einreichungen (beispielsweise BRISE 
+Projekt in Wien) eine zentrale Rolle spielen wird.
+Bei der Prüfsoftware herrscht im Moment 
+leider eine Quasi-Monopolsituation zugunsten 
+von Solibri. Prüfsoftware arbeitet meist mit IFC-
+Dateien. Nur wenige Prüfsoftware-Produkte  
+(z.B. Navisworks) sind in der Lage, die unter-
+schiedlichsten Dateiformate einzulesen. Um seine 
+Marktchancen zu erhöhen, bieten manche Anbie-
+ter im Bereich der Prüfungssoftware erweiterte 
+Funktionen an. Das Unternehmen Trimble 
+Connect hat bereits einige Funktionalitäten für 
+die Zusammenarbeit implementiert, der Anbieter 
+BIMcollab Zoom sticht durch ein Issue-Manage-
+ment hervor und Bexel Manager bietet 4D und 
+5D an.
+
+
+===== PAGE 147/348 =====
+146
+BIM-Software
+ 
+ Kapitel 7, S. 305 
+Mengen-
+ermittlung
+Software für Auswertungen 
+und Simulationen
+Eine weitere große Gruppe an Software­
+produkten findet sich im Bereich der Auswertung 
+und Simulation. Hier gibt es sehr unterschied- 
+liche Anwendungen, die aber alle auf Daten aus 
+geprüften Modellen zurückgreifen. Die erste 
+Auswertung ist eigentlich schon die Mengen­
+ermittlung. Was früher langes Suchen und 
+Addieren bedeutet hat, wird heute mehr oder 
+weniger automatisch ermittelt, aber natürlich nur 
+dann, wenn vorher sauber modelliert wurde. Im 
+BIM kann man sehr leicht wunschgemäß unter-
+teilte Bauteillisten erstellen.
+Viele technische Berechnungen fallen in 
+diese Kategorie. Eine häufige Anwendung in  
+der Statik ist FEM-Software (Finite-Elemente- 
+Methode). In der Haustechnik gibt es Heiz- und 
+Kühllastberechnungen. Die Bauphysik bedient 
+sich unterschiedlicher Software für Tageslicht­
+simulationen, Energieausweise, Strömungs­
+simulationen, Wärmebrückenberechnungen usw. 
+Auch das Rendern ist eine Simulation auf Basis 
+des Modells.
+Ein weitere Gruppe in der Kategorie der 
+Simulationssoftware ist im 4D- und 5D-Bereich 
+zu finden. Importiert man den Projektzeitplan 
+und das zugehörige Modell in eine 4D-Software, 
+sind nur ein paar kleine Anpassungen nötig. 
+Manchmal genügt es schon, einen weiteren 
+Parameter einzufügen und schon kann man  
+Bauablaufsimulationen für eine visuelle Über­
+prüfung der Machbarkeit generieren. 
+Im 5D-Bereich handelt es sich meist um  
+Software für AVA (Ausschreibung, Vergabe und 
+Abrechnung). Die Mengen aus der Modellier- 
+software können – je nach Kompatibilität der 
+Softwareprodukte zueinander – vom ganz  
+einfachen tabellarischen Einlesen bis hin zum  
+stetigen Refreshing des eingelesenen Modells  
+in die AVA-Software übergeben werden.
+Generell gibt es bei den Auswertungen  
+noch des Öfteren Schwierigkeiten. Zuerst muss 
+natürlich sauber modelliert worden sein, aber  
+das allein hilft oft noch nicht. Das verwendete 
+Ausgangsmodell muss auch für die jeweilige 
+Auswertung passen. So sind beispielsweise  
+die Räume im Architekturmodell für die Aus­
+wertungen in der Bauphysik nicht geeignet.  
+In der Architektur wird der Schacht pro Geschoss 
+
+
+===== PAGE 148/348 =====
+147
+Software-Kategorien
+in einzelne Räume unterteilt, im Haustechnik­
+modell dagegen bildet der Schacht einen durch-
+gehenden Raum über alle Geschosse. Umgekehrt 
+gibt es im Architekturmodell für abgehängte  
+Decken keinen extra Raum. Die Wände des 
+Architekturmodells passen auch oft nicht.  
+Wird in Einzelschichten modelliert, befinden  
+sich mehrere „Außenwände“ mit einzelnen  
+U-Werten aneinander, damit kommen die  
+Energieberechnungen meist auch nicht  
+zurecht.
+Eine Kellerwand wäre für die Bauphysik 
+horizontal in einen erdanliegenden und einen 
+oberirdischen Anteil geteilt. Solch eine Zerteilung 
+bringt für Architekturpläne wiederum eine 
+Arbeitserschwernis mit sich, da nun statt einem 
+einzigen Wandobjekt eine mehrteilige Wand 
+manipuliert und für die Datenbank gepflegt 
+werden muss, ohne für die Architekturdisziplin 
+selbst einen Mehrwert zu bringen. Fenster kön-
+nen in solch zerteilten Wände nur mit einem 
+Workaround gesetzt werden. Generell ist anzu-
+merken, dass z.B. Bauphysikwerte, die in Archi-
+tekturmodelle eingepflegt werden, nur schwer 
+einen Weg zurück in die Bauphysikprogramme 
+finden, da die Programme meist nicht kompatibel 
+und auch die Arbeitsabläufe noch nicht auf die 
+BIM-Welt angepasst sind.106
+Kollaborationsplattformen
+Zur Zusammenarbeit braucht es eine Art 
+Datendrehscheibe. Im Bereich der Kollaborations-
+plattformen wird sich in Zukunft wohl noch am 
+meisten entwickeln. Im Moment werden noch 
+viele dieser Funktionen in „stand-alone“-Produk-
+ten abgearbeitet. In Zukunft werden diese immer 
+öfter in cloudbasierte Gesamtlösungen mit zen­
+traler Datenbank integriert werden. Diese Platt-
+formen bezeichnet man als CDE (common data 
+environment). So werden Funktionen wie Doku-
+mentenmanagement, Projektmanagement, 
+Controlling usw. in Zukunft Stück für Stück 
+Bestandteil des CDE werden.
+106	 Arch. DI Christine Horner.
+Kapitel 5, S. 224 
+ 
+   
+ 
+  
+CDE
+
+
+===== PAGE 149/348 =====
+148
+BIM-Software
+Früher oder später werden so gut wie alle 
+von uns nicht umhinkommen, die für BIM 
+benötigte Software anzuschaffen. Im Normalfall 
+handelt es sich bei BIM-fähiger Software nicht 
+um irgendwelche Formen von kostenlosen 
+Lizenzen wie beispielsweise Freeware oder Open 
+Source, sondern um kommerzielle Software. 
+Sowohl die Anschaffungskosten als auch die 
+jährlichen Servicekosten sind eine teure Ange­
+legenheit, die sorgfältig überlegt werden muss. 
+Und als ob es nicht schon schwierig genug wäre, 
+sich aus fachlichen bzw. technischen Gründen für 
+ein oder mehrere Produkte zu entscheiden, sind 
+die Lizenzmodelle alles andere als einfach und 
+klar zu verstehen.
+Die Lizenzmodelle der einzelnen Hersteller 
+sind völlig unterschiedlich, teils auch sehr kom-
+plex und ändern sich manchmal schon beinahe 
+monatlich. Die Hersteller verfolgen damit auch 
+durchaus verschiedene marktpolitische Strate-
+gien. Für ein kleines Büro ist es kaum mehr 
+möglich, diesen Lizenzdschungel zu durch­
+blicken. Wir können hier natürlich keinen kom-
+pletten Überblick geben. Dies wäre zum einen 
+aus Aktualitätsgründen nicht möglich und zum 
+anderen würde es den Rahmen des Handbuchs 
+sprengen. Aber wir wollen versuchen, die Grund-
+lagen der Lizensierung derart kompakt zu 
+erklären, dass es möglich ist, eine fundiertere 
+Entscheidung zu treffen.
+Lizenzpolitik
+
+
+===== PAGE 150/348 =====
+149
+Lizenzpolitik
+Mieten oder kaufen
+Man kann Software entweder mieten oder 
+kaufen. Hinter dem Entschluss sollte eine kauf-
+männische Entscheidung der Geschäftsführung 
+stehen. Klar, kaufen ist naturgemäß billiger als 
+mieten, aber es gibt noch mehr Kriterien als nur 
+den Preis. So ist aus kaufmännischer Sicht interes-
+sant, ob die Kosten in der vollen Höhe sofort 
+steuerlich abschreibbar sind. Genauso ist zu 
+bedenken, dass eine sofortige Zahlung des  
+vollen Kaufpreises die momentane Liquidität des 
+Unternehmens schwächt. Manchmal spielt es 
+auch eine Rolle, ob die Software beim jeweiligen 
+Lizenzformat ins Eigentum des Büros übergeht. 
+Dies kann bei Förderungen sehr wichtig sein, die 
+an Eigentum gebunden sind.
+Ein großer Vorteil des Mietens gegenüber 
+dem Kaufen liegt in der größeren Flexibilität.  
+Im Idealfall wird nur das bezahlt, was auch tat-
+sächlich genutzt wird.107 Mieten kann man Soft-
+ware meist schon ab einem Monat. Leider ist der 
+Mietpreis umso höher, je kürzer die Laufzeit der 
+Mietvereinbarung ist. Zudem ist bei Mietmodel-
+len die Kostentransparenz oft nicht ganz gege-
+ben, und man ist nicht sicher vor Mietpreiserhö-
+hungen. Man muss ja nicht gleich alle Lizenzen 
+mieten. Zum Abfedern von Auftragsflauten und 
+ebenso beim Bewältigen von Auftragsspitzen 
+sind Mietlizenzen aber sehr geeignet.
+Bei Softwaremiete ist es üblich, dass alle Up-
+dates und Erweiterungen während der Mietzeit 
+inkludiert sind. Meist muss man sich auch nicht 
+mehr um die Konfiguration und Installation 
+kümmern, die IT-Dienstleistungen sollten mit der 
+Miete größtenteils ausgelagert sein. In anderen 
+Branchen ist man hier schon viel weiter, und eine 
+spezielle Form der Miete setzt sich immer mehr 
+durch: SaaS  (Software as a Service). Bei SaaS 
+wird die Software browserbasiert über die Cloud 
+zur Verfügung gestellt. Voraussetzung hierfür ist 
+aber eine gute Internetverbindung. Bei einem 
+Infrastrukturprojekt mitten am Land kann dies 
+bei Einsatz mobiler Geräte aber schon zum 
+Problem werden.
+Bei Mietmodellen ist darauf zu achten, wel-
+che Leistungen im erworbenen Paket wirklich 
+enthalten sind. Meist wird die Miete als eine  
+Art „all inclusive“ angeboten. 
+107	 https://www.architektur-online.com/kolumnen/
+edv/buero-software-mieten-oder-kaufen.
+
+
+===== PAGE 151/348 =====
+150
+BIM-Software
+Mieten
+Kaufen
+ Mieten 
+ Mietkauf 
+ Leasing 
+ Finanzkauf 
+(Raten­
+zahlung 
+Hersteller) 
+Finanzkauf 
+(Bankkredit)
+Kauf auf 
+Rechnung
+Gesamt­
+kosten 
+ teurer 
+eher 
+billiger 
+eher 
+billiger 
+eher 
+billiger 
+eher 
+billiger 
+am 
+billigsten 
+Auslastungs-
+schwankun-
+gen
+schnelles und 
+flexibles 
+Reagieren 
+möglich
+schnelles und 
+flexibles 
+Reagieren 
+kaum 
+möglich
+schnelles und 
+flexibles 
+Reagieren 
+kaum 
+möglich
+schnelles und 
+flexibles 
+Reagieren 
+kaum 
+möglich
+schnelles und 
+flexibles 
+Reagieren 
+kaum 
+möglich
+schnelles und 
+flexibles 
+Reagieren 
+kaum 
+möglich
+Steuerlich  
+absetzbar
+laufende 
+Betriebs­
+ausgabe
+laufende 
+Betriebs­
+ausgabe
+laufende 
+Betriebs­
+ausgabe
+evtl. möglich
+nur länger-
+fristig
+nur länger-
+fristig
+Liquidität 
+verbessert
+verbessert
+verbessert
+gering 
+verbessert
+kaum 
+verbessert
+nachteilig
+Eigentum 
+nein
+ja
+nein (meist 
+Leasing-
+gesellschaft)
+ja
+ja
+ja
+Tabelle 12:  Vereinfachte Übersicht über die Software-Lizenzformate
+
+
+===== PAGE 152/348 =====
+151
+Lizenzpolitik
+Sie bekommen nicht nur die nackte Soft-
+ware, die Hersteller bieten meist auch Service 
+und Update, ja manchmal auch zusätzlichen 
+Speicherplatz auf der Cloud oder Rechen- 
+leistung fürs Rendern, im Zeitraum der Miete  
+an. Wenn Sie also Miete und Kauf vergleichen, 
+sollten Sie dies beim Gegenüberstellen berück-
+sichtigen.
+So schön es bei Softwaremiete auch ist, dass 
+man sich gar nicht um die Installation kümmern 
+muss und immer die neueste Version zur Verfü-
+gung hat, so schwierig kann es auch sein, wenn 
+man nicht mehr selbst wählen kann, auf welcher 
+Version man gerade arbeitet. Dies kann beim 
+Arbeiten im Team oder beim gleichzeitigen 
+Arbeiten an verschiedenen Projekten aber sehr 
+problematisch sein.
+Wer sparen will oder muss, für den gibt es 
+mehr Gelegenheiten, als man denken würde. 
+Man muss lediglich etwas Zeit für die Anschaf-
+fung haben. Dann kann man sich in Ruhe am 
+Markt umsehen. Die Hersteller bieten immer 
+wieder besondere Aktionen. Wenn sie überlegen, 
+auf ein Konkurrenzprodukt umzusteigen, werden 
+sie immer wieder Umsteigerrabatte in irgend­
+einer Form finden. 
+Wechselt der Hersteller seine Lizenzmodelle, 
+eröffnet sich auch oft eine Gelegenheit. Manche 
+Hersteller bieten für neue Büros Existenzgründer-
+rabatte an. Man sollte nicht nur den nackten 
+Softwarepreis im Auge haben, sondern auch  
+auf die zusätzlichen Services (Hotline, Cloud, …) 
+und auch darauf achten, ob zukünftige Updates 
+integriert sind.
+Man kann auch mal Gebrauchtsoftware in 
+Betracht ziehen. Software wird meist nur mit 
+einer Lizenz zur Nutzung verkauft. Das heißt,  
+das Eigentum bleibt beim Hersteller. Bei Ge-
+brauchtsoftware übernimmt man also eigentlich 
+nur das Nutzungsrecht. Der Kauf ist nicht ganz  
+so einfach, da heißt es genau prüfen, was man  
+da kauft, es ist durchaus möglich, 25 bis 70 % zu 
+sparen.
+Manchmal reagieren Hersteller nicht immer 
+begeistert. Sie versuchen, ab und zu über 
+gewisse geforderte Bescheinigungen, Gebühren 
+Kapitel 3, S. 224 
+ 
+   
+ 
+  
+Softwareversion
+
+
+===== PAGE 153/348 =====
+152
+BIM-Software
+und Ähnliches neue Wartungsverträge für die 
+gebrauchte Software abzulehnen. 
+Aber laut einem Grundsatzurteil des Euro­
+päischen Gerichtshofs hat der Gebraucht­
+softwarekäufer auch Anspruch auf Updates 
+und Support.108 Um aber nicht an Raubkopien zu 
+kommen, sollte man Gebrauchtsoftware nur aus 
+bekannten Quellen oder einer der darauf speziali-
+sierten größeren Internetplattformen kaufen. 
+Hier ein paar geeignete Plattformen:
+	
+www.2ndsoft.at
+	
+www.lizenzdirekt.com
+	
+www.software-reuse.eu 
+	
+www.softwarebuddies.eu/
+	
+www.usedsoft.com
+108	 https://www.architektur-online.com/kolumnen/
+edv/buero-software-mieten-oder-kaufen.
+Der Bauherr und alle Projektbeteiligten 
+sollten über Lizenzen zur Nutzung der BIM-
+Planungssoftware verfügen, die sich auf alle 
+Nutzer sowie genutzten Endgeräte beziehen. 
+Software kann gekauft oder gemietet 
+werden. Wird dem Anwender eine zeitlich un­
+beschränkte Werknutzungsberechtigung 
+eingeräumt, liegt ein Softwarekaufvertrag vor. 
+Wird eine zeitlich beschränkte „Lizenz“ erteilt, 
+liegt ein Softwaremietvertrag vor. Bei der Soft-
+waremiete ist sicherzustellen, dass die Software 
+während der gesamten Projektlaufzeit verfügbar 
+ist. Die Anwendung des Mietrechts bewirkt, dass 
+der Vermieter dem Mieter die Software in einem 
+für den vertragsgemäßen Gebrauch geeigneten 
+Zustand überlassen muss; diesen muss er 
+während der Mietdauer aufrechterhalten. Eine 
+gesonderte Wartungs- bzw. Pflegevereinbarung 
+ist nicht notwendig. Wartungsverträge wären 
+aber für weitergehende Leistungsinhalte sinnvoll 
+(Weiterentwicklungen, Upgrades etc). Der Soft-
+wareanbieter kann für ihn günstigere Regelungen 
+treffen; etwa die Softwareüberlassung an den 
+Abschluss eines Wartungsvertrages koppeln. 
+Softwarenutzern ist nahezulegen, sich 
+vertraglich und praktisch Zugriff auf den Quell-
+code einzuräumen. Um dem Insolvenzverwalter 
+den Zugriff auf die Quellcodekopie zu entziehen, 
+kann dieser bei einem „Escrow Agent“ hinterlegt 
+werden (bei Cloud-Anwendungen in Form eines 
+gespiegelten Servers). 
+DR. VOLKER MOGEL, LL.M. EUR.
+Rechtstipp
+
+
+===== PAGE 154/348 =====
+153
+Lizenzpolitik
+Einzelplatzlizenz oder  
+Netzwerklizenz
+Ein weiteres Unterscheidungsmerkmal von 
+Softwarelizenzen ist, ob es sich um eine Einzel-
+platzlizenz oder um eine Netzwerklizenz (floating 
+licence) handelt. Die einfachste Form der Einzel-
+platzlizenz kennen wir alle aus unserem Alltag. 
+Diese wird über einen Endbenutzer-Lizenz­
+vertrag (EULA)  abgeschlossen. 
+Während früher noch oft Hardware- (Dongel) 
+oder Software- (virtueller Schlüssel) Keys nötig 
+waren, reicht heutzutage meist ein „Klick“ zum 
+Annehmen des EULA. Klicken Sie diesen nicht an, 
+wird entweder nur eine befristete Testversion 
+installiert oder sogar die Installation abge­
+brochen. Die Einzelplatzlizenz ist für einen genau 
+definierten Arbeitsplatz gedacht. Manche Firmen 
+erlauben allerdings einen stetigen Wechsel 
+zwischen Workstation im Büro und mobilem 
+Laptop mit dieser einen Lizenz.
+Bei Netzwerklizenzen handelt es sich um 
+volumensbezogene Lizenzen. Vereinfacht erklärt, 
+werden über einen Lizenzserver die verschiede-
+nen Lizenzen entlehnt und wieder zurückgege-
+ben. Somit kann beispielsweise am Vormittag 
+eine Person mit der gleichen Lizenz arbeiten,  
+mit der am Nachmittag eine andere Halbtags-
+kraft arbeitet. Bei Netzwerklizenzen sollte aber 
+immer darauf geachtet werden, dass eine Ober-
+grenze an gleichzeitigen Lizenzentlehnungen  
+für das jeweilige Büro am Server hinterlegt ist, 
+sonst könnte es zu bösen Nachzahlungen 
+kommen. 
+Falls Mitarbeiter:innen im Homeoffice 
+arbeiten und nicht über die nötige Hardware 
+verfügen, kann alternativ über eine Remote-
+Desktop-Lösung auf die Rechenleistung des 
+Servers zurückgegriffen werden.
+Es braucht eine gewisse Disziplin der Mit­
+arbeiter:innen beim Entlehnen und dann speziell 
+wieder beim Zurückgeben der Software, denn 
+auch wenn ein Limit eingestellt wurde, ist es sehr 
+ärgerlich, wenn eine Person weniger arbeiten 
+kann. Man macht sich also keine Freunde, wenn 
+man die Lizenz vor seinem Urlaub nicht zurück-
+gibt und dann nicht erreichbar ist. Hat man diese 
+Disziplin im Büro, kann man auch überlegen, mit 
+einer Mischung aus Volllizenzen und „light“-
+Lizenzen (falls der Hersteller solche anbietet) am 
+Server zu fahren. Manche Software ist auch nach 
+Ablauf der Testzeit noch als kostenloser Viewer 
+zu benutzen.
+
+
+===== PAGE 155/348 =====
+154
+BIM-Software
+Autodesk hat jetzt allerdings gerade sein 
+Lizenzmodell auf sogenannte „named-user“-
+Lizenzen umgestellt. 
+Bei „named-user“-Lizenzen läuft die Iden­
+tifizierung über ein Userkonto (Benutzername 
+und Passwort) und eventuell eine Mobilnummer 
+(Zwei-Faktor-Identifizierung), also nicht mehr 
+über eine Seriennummer. Hier sollte man viel-
+leicht nicht unbedingt die Mailadresse einer 
+bestimmten Person verwenden, sondern bei-
+spielsweise arbeitsplatz1@unserbuero.at. Es 
+könnte ja sein, dass diese Person beispiels­weise 
+kündigt.
+Ja, es ist schon ein kleines Katz-und-Maus-
+Spiel, zu welcher Zeit man gerade günstig Soft-
+ware erwerben kann. Die vielen Änderungen bei 
+den Herstellern können sowohl ein Schnäppchen 
+bieten, als auch in den Folgejahren Mehrkosten 
+bedeuten. Ein vertrauenswürdiger Reseller, der 
+bei den Modellen seines Herstellers noch durch-
+blickt, ist hier Gold wert.
+Da sich BIM-Software noch laufend ent­
+wickelt, unterliegt auch die Produktpolitik einzel-
+ner Hersteller häufigen Umstrukturierungen.  
+So werden Produkte zusammengelegt, es gibt 
+fast gleiche Produkte von ein und demselben 
+Hersteller, Produkte bekommen neue Namen, 
+Produkt-Bundels werden immer wieder neu zu-
+sammengesetzt, neue Produkte kommen hinzu, 
+deren Funktionalitäten überschneiden sich mit 
+alten Produkten usw. Zudem ändern einige 
+Hersteller dann auch noch ab und zu ihre eige-
+nen Lizenzmodelle. 
+Die Lizenzmodelle sind je nach Hersteller 
+mehr oder weniger kompliziert geworden. So 
+ist es kaum verwunderlich, dass viele Büros den 
+Überblick über Lizenzen und Bedingungen der 
+jeweiligen Lizenzserver ver­loren haben. Dies 
+führte schon so weit, dass die Firma Artaker eine 
+eigene Schulung zu „Autodesk-Lizenzen“109 an-
+geboten hat.
+109 https://www.artaker.com/de/veranstaltungen/ 
+kurse/event.autodesk-lizenzrecht-schulung.html.
+
+
+===== PAGE 156/348 =====
+155
+Lizenzpolitik
+Praxistipp
+Auch wenn Sie zu Ihrer Softwarelizenz einen 
+Servicevertrag abschließen bzw. ein solcher in 
+Ihrer Mietsoftware enthalten ist, haben Sie noch 
+lange nicht das Rundum-Sorglos-Paket. Sie brau-
+chen unbedingt noch ein Umfeld, das Sie unter-
+stützt. Ihre Mitarbeiter:innen müssen immer 
+wieder mal geschult werden, Sie müssen lang­
+fristig einen Bürostandard aufbauen oder Sie 
+haben „nur“ ein aktuelles Problem, bei dem Sie  
+im Moment gerade nicht weiter wissen.
+Manchmal kann die Hotline des Software­
+herstellers schon weiterhelfen. Aber nach unserer 
+Erfahrung ist es meist viel hilfreicher, einen guten 
+Reseller und/oder erfahrenen BIM-Berater:in an 
+der Hand zu haben, als auf den oft mühsamen 
+Support des Herstellers zu warten. Zudem sollten 
+Sie sich auch in den für Ihre Software führenden 
+Community Pages einschreiben. Eine gute Um­
+gebung ist die halbe Miete auf dem Weg zur 
+Problemlösung, allein schafft man es heutzutage 
+nicht mehr.
+community pages Revit:
+	
+https://blogs.autodesk.com/revit/
+	
+https://blogs.autodesk.com/bimblog/
+community pages Archicad:
+	
+https://hey-Archicad.de
+	
+https://www.a-null.com/blog/
+community pages Allplan:
+ https://blog.allplan.com/de
+ https://connect.allplan.com/de/forum/ 
+forum-start.html
+ https://www.allplan.com/at/bim/bim-
+guides/
+
+
+===== PAGE 157/348 =====
+156
+BIM-Software
+Checkliste
+X	Was ist bei einer Software zu beachten (Zeitpunkt Kauf)?
+X	Was soll die Software können?
+X	Können mehrerer (ältere) Versionen von der gleichen Software installiert werden? 
+X	Welche Dateiformate können importiert werden?
+X	Welche Dateiformate können exportiert werden?
+X	Ist die Software für Import und Export von IFC zertifiziert?
+X	Welche direkten Schnittstellen gibt es zu anderen Softwareprodukten oder Datenbanken?
+X	Welche Lizenzverträge gibt es?
+X	Kann die Lizenz wechselseitig zwischen Workstation und Laptop genutzt werden? 
+X	Wie weit geht die Software auf lokale Besonderheiten ein?
+X	Welche Bibliotheken gibt es schon?
+
+
+===== PAGE 158/348 =====
+157
+Literaturverzeichnis
+	
+Baldwin, Mark, Der BIM-Manager, Praktische 
+Anleitung für das BIM-Projektmanagement, 
+2. Auflage (2019), DIN Deutsches Institut für 
+Normung e.V., Mensch und Maschine (Hrsg.); 
+Beuth Verlag Berlin (ISBN 978-3-410-29440-5)
+	
+Hausknecht, Kerstin, Liebich, Thomas (2016), 
+BIM-Kompendium: Building Information Mode-
+ling als neue Planungsmethode; Fraunhofer IRB 
+Verlag (ISBN 978-3-8167-9489-9)
+	
+https://www.architektur-online.com/kolum-
+nen/edv/buero-software-mieten-oder-kaufen; 
+Datum des Zugriffs 10. 12. 2021
+Literaturverzeichnis
+	
+
+
+===== PAGE 159/348 =====
+158
+BIM – Building Information Modeling – in der BIG
+BIM – Building Information Modeling –  
+in der BIG	
+Die Bundesimmobiliengesellschaft m.b.H. 
+(BIG) beschäftigt sich schon über längere Zeit 
+intensiv mit BIM und dessen Anwendung bei 
+Projekten. Beobachtungen und die Analysen 
+zeigen, dass langfristig im Immobiliensektor die 
+BIM-Methode eine immer wichtigere Rolle ein-
+nehmen wird.
+Bevor Pilotprojekte dazu gestartet wurden, 
+gab es umfangreiche Vorbereitungen zu BIM- 
+Grundlagen im Unternehmen. Dabei ist wesent-
+lich für die BIG, dass dazu die internen Vorgaben 
+österreichweit einheitlich gehalten werden, um 
+den mit der Planung betrauten Dienstleistern 
+Sicherheit für gleichartige Standards zu geben. 
+Weiters muss die große Zahl an Bestandsobjek-
+ten im BIG-Konzern Portfolio – von Schulen über 
+Universitäten bis hin zu Spezialimmobilien wie 
+bspw. Justizanstalten, Gerichts- und Polizei­
+gebäude sowie etwaig auch Büro- und Wohn-
+bauten – Berücksichtigung finden.
+In den derzeitigen BIG-Architekturwett­
+bewerben zu Pilotprojekten ist BIM noch keine 
+Anforderung an die Wettbewerbsarbeit, auch 
+nicht in Form von Zugangskriterien. Ziel ist hier, 
+die beste architektonische Lösung für die ge­
+stellte Bauaufgabe zu finden. Die Teilnehmer am 
+Wettbewerb verpflichten sich jedoch, im Fall des 
+BIG
+Auftrags das Projekt von Beginn an bis zur Fertig-
+stellung entsprechend den BIM-Vorgaben der 
+BIG zu planen und abzuwickeln. Das ausgewählte 
+Projekt wird als „openBIM“-Projekt über alle 
+Leistungsphasen abgewickelt.
+Die BIG unterstützt Auftragnehmer bereits 
+am Anfang des BIM-Prozesses, indem auf BIG- 
+Seite eine BIM-Projektsteuerung tätig ist sowie 
+durch die gemeinsame Durchführung von 
+Modellierkolloquien mit dem BIM-Gesamt­
+koordinator und den BIM-Fachkoordinatoren  
+des Auftragnehmers, insbesondere um die Mo-
+delliervorgaben konsequent zu implementieren 
+und somit allen Beteiligten eine gleichartige 
+Arbeitsbasis zu schaffen. Die in der BIG ver­
+wendeten Prüfregeln werden nach Beauftra-
+gung dem Auftragnehmer zur Verfügung ge-
+stellt. Dies hilft dem Auftragnehmer, um für  
+seine Planungsleistungen im eigenen Verant­
+wortungsbereich die Qualitätssicherung vorzu-
+nehmen.
+Daraus ergeben sich aber auch Erwartungen 
+an die Auftragnehmer, sich im Sinne einer unter-
+nehmerischen Weiterentwicklung in diese 
+Prozesse einzubringen, in das erforderliche 
+„Know-how“ aktiv zu investieren und positiv 
+mitzuwirken.
+
+
+===== PAGE 160/348 =====
+159
+BIG
+Aus Sicht der BIG kann die Planungsmethode 
+BIM nur erfolgreich umgesetzt werden, wenn es 
+keine „Einschränkungen“ im Zuge der Planung 
+gibt, d.h. es muss in „openBIM“ gedacht und ge-
+lebt werden. Geschuldete Leistungen sind über IFC 
+(Industry Foundation Classes) bereitzustellen. Die 
+beteiligten Planungsbüros arbeiten in ihrer ge-
+wohnten Planungssoftware an den Fachmodel-
+len, die in Koordinations- bzw. Gesamt­modellen 
+aufeinander abgestimmt und optimiert werden.
+Die Standardunterlagen der BIG wurden 
+unter den genannten Prämissen erstellt und die 
+damit verbundenen Prozesse klar geregelt.
+Alle BIM-Projekte in der BIG befinden sich im 
+Status „Pilotprojekt“. Derzeit laufen in der BIG 
+mehrere Pilotprojekte. Hauptaugenmerk liegt 
+hier auf einem durchgängigen BIM-basierten 
+Planungsprozess, der die Anforderungen aus 
+dem Objekt- und Facilitymanagement von Be-
+ginn an berücksichtigt. Daten für die Betriebs-
+phase stellen den Kern unserer Informations­
+anforderung dar.
+Ziel der Pilotprojekte ist, entsprechendes 
+Wissen in diesem Bereich aufzubauen, den Mehr-
+wert zu generieren und sich als innovatives Un-
+ternehmen zu positionieren. Es gilt, Erfahrungen 
+zu sammeln, die Grundlagen anzuwenden und 
+diese aus den gewonnenen Erkenntnissen anzu-
+passen bzw. zu ergänzen.
+Hohe Erwartungen werden in die nun zur 
+Verfügung stehenden Werkzeuge innerhalb der 
+schon bekannten Prozesse gesetzt. Die Prozesse 
+wie Modellkoordination mit Koordinations­
+sitzungen sind grundsätzlich nicht neu in einem 
+Planungs- und Errichtungsprozess, sind aber nun 
+im gemeinsamen Einvernehmen strukturiert und 
+festgeschrieben in den Regelwerken zu BIM.
+Im Zuge der Entwicklung ist auch wesentlich, 
+dass die ausführenden Unternehmen ihr Interes-
+se vorantreiben und gleichzeitig auf die Struk­
+turen der österreichischen Wirtschaft Rücksicht 
+genommen wird. Voraussetzung für die Weiter-
+entwicklung der österreichischen KMU-Land-
+schaft ist jedenfalls das aktive Interesse und 
+Einbringen durch die ausführenden Unter­
+nehmen.
+Des Weiteren ist für die BIG essentiell, dass 
+die Datenhoheit jedenfalls im Verantwortungs-
+bereich der BIG verbleibt.
+Über die beschriebenen Aktivitäten hinaus 
+wirken Vertreter der BIG in den verschiedensten 
+Arbeitsgruppen zum Thema BIM und auch bei 
+Austrian Standards aktiv mit und bringen ihre 
+gewonnenen Erfahrungen ein.

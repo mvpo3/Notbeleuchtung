@@ -1,0 +1,1916 @@
+
+
+===== PAGE 681/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 7 
+718.NE.1.560.9.003.AT 
+Antipanikbeleuchtung 
+Folgende Anforderungen sind einzuhalten: 
+a) 
+Die Antipanikbeleuchtung muss in betriebsmäßig verdunkelbaren Räumen unabhängig von der 
+Verdunkelungssteuerung vom verdunkelten Raum aus eingeschaltet werden können. Eine Helligkeits-
+regelung ist nicht zulässig. 
+b) 
+Die Schaltstellen müssen in Versammlungsstätten in der Nähe von mindestens je einem Ausgang jeder 
+Platzfläche so angebracht sein, dass sie für Aufsichtspersonen jederzeit leicht zugängig, aber einer 
+unbeabsichtigten Betätigung entzogen sind. Die Schaltstellen für die Antipanikbeleuchtung der Bühne 
+müssen an geeigneter Stelle auf der Bühne in der Nähe der Zugangstür angebracht sein. 
+c) 
+Die Schaltstellen der Antipanikbeleuchtung sind zu beleuchten. Die durch die Betätigung eines Schalters 
+bewirkte Einschaltung darf nicht durch die Betätigung eines anderen Schalters aufgehoben werden 
+können. Eine Ausschaltmöglichkeit im Lichtregieraum (Bühnenlichtstellwarte) ist zulässig. 
+718.NE.1.560.9.4 
+Füge hinzu: 
+Zusätzlich sind folgende Anforderungen einzuhalten: 
+1) 
+Die Sicherheitsbeleuchtung ist in Dauerbetrieb auszuführen bei allen 
+ 
+a) 
+Fluchtwegen außerhalb von Versammlungsräumen, Bühnen und Szenenflächen; 
+ 
+b) 
+Fluchtwegen außerhalb von nicht überdachten Platzflächen von Versammlungsstätten mit nicht 
+überdachten Spielflächen; 
+ 
+c) 
+Hinweisen auf Fluchtwegen. 
+2) 
+In betriebsmäßig verdunkelten Räumen kann, mit Ausnahme der Sicherheitsleuchten mit Sicherheits-
+zeichen, für die Sicherheitsbeleuchtung der Bereitschaftsbetrieb angewendet werden, wobei die 
+Erkennbarkeit von Fluchttüren, Gängen und Stufen gegeben sein muss. 
+ 
+Die 
+Sicherheitsbeleuchtung 
+in 
+Bereitschaftsbetrieb 
+darf 
+bei 
+Wiederkehr 
+der 
+allgemeinen 
+Stromversorgung nicht von selbst ausschalten. Sie darf nur von Hand auf dem Bedienteil der 
+Sicherheitsbeleuchtung ausgeschaltet werden können. 
+718.NE.2 Garagen 
+718.NE.2.1 Anwendungsbereich 
+Füge hinzu: 
+Diese Anforderungen gelten für Garagen, überdachte Stellplätze und Parkdecks mit einer Nutzfläche über 
+1 600 m2. 
+718.NE.2.55  
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+718.NE.2.55.001.AT Zu- und Abluftanlagen 
+Ventilatoren von maschinellen Zu- und Abluftanlagen müssen jeweils von einem eigenen Stromkreis 
+unmittelbar von der Schaltanlage für die Zu- und Abluftanlage versorgt werden. Soll das Lüftungssystem 
+zeitweise nur mit einem Ventilator betrieben werden, müssen die Ventilatoren so geschaltet sein, dass sich 
+bei Ausfall eines Ventilators der andere selbsttätig einschaltet. 
+Wenn für Abfertigungsräume, Pförtnerlogen und ähnliche Räume nur ein Zuluftventilator verwendet wird, 
+muss der Ausfall dieses Ventilators an geeigneter Stelle durch ein optisches und/oder akustisches 
+Warnsignal angezeigt werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 682/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-718 – Seite 8 
+718.NE.2.55.002.AT Steckdosen 
+Im Bereich von Garageneinstellplätzen und Verkehrsflächen dürfen Steckdosen nicht an Stromkreise der 
+allgemeinen Beleuchtung angeschlossen werden. Steckdosen sind gegen mechanische Beschädigung zu 
+schützen. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 683/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 1 
+Teil 7-721  
+Elektrische Anlagen in Caravans und Motorcaravans 
+721.1 
+Anwendungsbereich 
+Dieser Teil gilt für die elektrische Anlage in Caravans und Motorcaravans. 
+Sie sind für solche elektrische Stromkreise und elektrischen Betriebsmittel anzuwenden, die zur Verwendung 
+für Wohnzwecke in Caravans und Motorcaravans vorgesehen sind. 
+Dieser Teil gilt nicht für die den Fahrbetrieb betreffenden elektrischen Stromkreise und elektrischen 
+Betriebsmittel. 
+Sie sind nicht für die innere elektrische Anlage von Mobilheimen, Parkwohnheimen und transportablen 
+Einheiten anzuwenden. 
+ANMERKUNG 1  
+Für Mobilheime, Parkwohnheime sind die allgemeinen Anforderungen von OVE E 8101 
+anzuwenden. 
+ANMERKUNG 2  
+Für transportable Einheiten siehe Teil 7-717. 
+ANMERKUNG 3  
+Für den Zweck dieses Dokuments werden Caravans und Motorcaravans als „Caravans“ 
+bezeichnet. 
+ANMERKUNG Z1 
+Für Kleinspannungsgleichstromanlagen (ELV) mit DC 12 V sind ÖNORM EN 1648-1 oder 
+ÖNORM EN 1648-2 anzuwenden. 
+Die besonderen Anforderungen von anderen Teilen 7 (zB nach Teil 7-701, Teil 7-722) sind in Caravans auch 
+anzuwenden. 
+721.3 
+Bestimmungen allgemeiner Merkmale 
+721.31 
+Zweck, Stromversorgung und Aufbau 
+721.313 
+Stromversorgungen 
+Füge hinzu: 
+721.313.1.2  
+Die Nennspannung der Stromversorgung muss gemäß ÖVE/ÖNORM E 1100-2 bzw. 
+ÖVE/ÖNORM EN 60038 ausgewählt werden. 
+Bei Wechselspannung darf die Nennversorgungsspannung der Anlage des Caravans nicht höher sein als 
+einphasig AC 230 V/50 Hz oder dreiphasig AC 400 V/50 Hz. 
+ANMERKUNG AT 
+Bei Motorcaravans können auch höhere Spannungen zur Anwendung kommen. 
+Bei Gleichspannung darf die Nennversorgungsspannung der Anlage des Caravans nicht höher als DC 48 V 
+sein. 
+721.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+721.41 
+Schutz gegen elektrischen Schlag 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 684/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 2 
+721.410.3 
+Allgemeine Anforderungen 
+Ersetze die Anforderungen durch: 
+721.410.3.5 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des 
+Handbereichs gemäß Teil 4-41 Anhang 41.B dürfen nicht angewendet werden. 
+721.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung) und Schutz durch 
+erdfreien örtlichen Schutzpotentialausgleich gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+ANMERKUNG 
+Die Ausnahme zur Standortisolierung schließt die Verwendung von elektrischen Betriebsmitteln der 
+Schutzklasse 0 aus. 
+721.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+721.411.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+721.411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+721.411.3.1.2 Schutzpotentialausgleich (Hauptpotentialausgleich) 
+Füge hinzu: 
+Metallene Konstruktionsteile, die vom Inneren des Caravans aus berührbar sind, müssen über einen 
+Schutzpotentialausgleichleiter mit der Haupterdungsschiene des Caravans verbunden werden. 
+721.413 
+Schutzmaßnahme: Schutztrennung 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahme Schutztrennung darf nicht angewendet werden, ausgenommen für Rasiersteckdosen. 
+721.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+Füge hinzu: 
+Alle mit Kleinspannung betriebenen Teile der elektrischen Anlage des Caravans müssen mit den 
+Anforderungen von Abschnitt 414 übereinstimmen. 
+Für Kleinspannungsgleichstromversorgungen sind die folgenden Nennspannungen zulässig: DC 12 V, 
+DC 24 V, DC 42 V und DC 48 V. 
+Wenn in außergewöhnlichen Fällen eine Wechsel-Kleinspannung gefordert ist, sind die folgenden 
+Nennspannungen (Effektivwerte) zulässig: AC 12 V, AC 24 V, AC 42 V und AC 48 V. 
+ANMERKUNG 
+Die Anforderungen von Teil 7-721 sind auch für Kleinspannungsanlagen mit Gleichspannung 
+anwendbar. Siehe Anhang 721.B mit Empfehlungen, die zusätzlich angewendet werden dürfen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 685/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 3 
+721.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+721.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Wenn Schutz durch automatische Abschaltung der Stromversorgung zur Anwendung kommt, muss eine 
+Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,03 A verwendet werden. 
+Diese Fehlerstrom-Schutzeinrichtung (RCD) muss OVE EN 61008-1 oder OVE EN 61009-1 entsprechen und 
+muss alle aktiven Leiter abschalten und mit einer Eigenschaft wie in 415.1.1 ausgeführt sein. 
+Jede Einspeisung einer Stromversorgung muss direkt mit der zugeordneten Fehlerstrom-Schutzeinrichtung 
+(RCD) verbunden werden. 
+ANMERKUNG 
+Dies bedeutet, dass keine Abzweig- oder Verbindungsstellen vor der zugeordneten Fehlerstrom-
+Schutzeinrichtung vorhanden sein dürfen. 
+721.43 
+Schutz bei Überstrom 
+721.43.101 
+Endstromkreise 
+Jeder Endstromkreis muss durch eine Überstrom-Schutzeinrichtung, die alle aktiven Leiter des Stromkreises 
+abschaltet, geschützt werden. 
+721.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+721.51 
+Allgemeine Bestimmungen 
+721.510 
+Einleitung 
+721.510.3 
+Allgemeines 
+Füge hinzu: 
+Wenn mehr als eine elektrische Anlage innerhalb des Caravans vorhanden ist, muss jede Anlage durch einen 
+getrennten Anschluss versorgt werden. 
+721.512 
+Betriebsbedingungen und äußere Einflüsse 
+721.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+ANMERKUNG 
+Die vorhersehbaren äußeren Einflüsse (zB Temperatur, mechanische Belastungen, UV-Belastung, 
+Feuchtigkeit), die auf den Caravan einwirken können, sollten beachtet werden. 
+721.514 
+Kennzeichen 
+721.514.1 
+Allgemeines 
+Füge hinzu: 
+Für die sichere Verwendung der elektrischen Anlage des Caravans muss eine Bedienungsanleitung 
+vorhanden sein. 
+Diese Bedienungsanleitung muss enthalten: 
+– 
+eine Beschreibung der Anlage; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 686/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 4 
+– 
+eine Beschreibung der Funktion der Fehlerstrom-Schutzeinrichtung(en) (RCD) und die Verwendung der 
+Betätigungstaste der Prüfeinrichtung (Prüftaste zB „T“); 
+– 
+eine Beschreibung der Funktion des Haupttrennschalters; 
+– 
+den Text der Anweisungen von Anhang 721.A. 
+Wenn Vorkehrungen für die Wartung notwendig sind, müssen entsprechende Details vorgegeben werden. 
+721.52 
+Kabel- und Leitungsanlagen 
+721.521 
+Arten von Kabel- und Leitungsanlagen 
+721.521.101  
+Folgende Kabel- und Leitungen bzw. Kabel- und Leitungsanlagen dürfen verwendet 
+werden: 
+a) 
+isolierte einadrige Kabel/Leitungen mit feindrähtigen Leitern (Klasse 5 gemäß ÖVE/ÖNORM EN 60228) 
+in Elektroinstallationsrohren oder in Elektroinstallationskanälen; 
+b) 
+isolierte einadrige Kabel/Leitungen mit mehrdrähtigen Leitern (Klasse 2 gemäß ÖVE/ÖNORM EN 60228) 
+(mit mindestens 7 Drähten) in Elektroinstallationsrohren oder in Elektroinstallationskanälen; 
+c) 
+umhüllte flexible Leitungen. 
+Alle Kabel/Leitungen müssen ÖVE/ÖNORM EN 50525 Reihe bzw. ISO 6722 Series entsprechen und 
+zumindest die Anforderungen der vertikalen Flammenausbreitung gemäß OVE EN 60332-1-2 erfüllen. 
+ANMERKUNG AT 
+Bei der Auswahl der Leitungen sind besonders die äußeren Einflüsse Umgebungstemperatur 
+(AA), Auftreten von korrosiven oder verunreinigenden Substanzen (AF; wie zB Salz) und Schwingungen (AH; siehe 
+721.522.7) zu berücksichtigen. 
+Elektroinstallationsrohrsysteme müssen mit den zutreffenden Teilen der Normen der Reihe ÖVE/ÖNORM 
+EN 61386 übereinstimmen. 
+Elektroinstallationskanäle müssen mit den zutreffenden Teilen der Normen der Reihe ÖVE/ÖNORM 
+EN 50085 übereinstimmen. 
+721.522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+721.522.7 
+Beanspruchung durch Schwingungen (AH) 
+721.522.7.101 
+Da Kabel-/Leitungsanlagen Schwingungen (Vibrationen) ausgesetzt sind, muss jede Kabel-
+/Leitungsanlage gegen mechanische Beschädigung geschützt werden, entweder durch Anordnung oder 
+durch einen zusätzlichen Schutz. Die folgenden Anforderungen müssen erfüllt sein: 
+– 
+Vorkehrungen müssen getroffen werden, um mechanische Beschädigungen durch scharfe Kanten oder 
+scheuernde Teile zu verhindern. 
+– 
+Kabel und Leitungen, die durch Metallteile durchgeführt werden, müssen durch geeignete Tüllen 
+und/oder Ösen geschützt sein, um durch diese in einer sicheren Position gehalten zu werden. 
+721.522.8 
+Andere mechanische Beanspruchungen (AJ) 
+712.522.8.101 
+Alle Kabel und Leitungen und alle flexiblen Elektroinstallationsrohre müssen bei 
+senkrechter Verlegung im Abstand von höchstens 40 cm, bei waagrechter Verlegung im Abstand von 
+höchstens 25 cm befestigt werden. Ausgenommen davon sind Verlegungen in formbeständigen Elektro-
+installationsrohren. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 687/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 5 
+721.524 
+Querschnitte von Leitern 
+721.524.1 
+Füge hinzu: 
+Der Querschnitt eines jeden Leiters muss mindestens 1,5 mm2 betragen. 
+721.526 
+Elektrische Verbindungen 
+721.526.1 
+Füge hinzu: 
+Verbindungen zwischen Kabeln/Leitungen oder Leitern dürfen nur in Verbindungsdosen oder in dafür 
+geeigneten elektrischen Betriebsmitteln hergestellt werden. 
+ANMERKUNG 
+Verbindungen schließen auch Anschluss- und Verbindungsstellen mit ein. 
+721.526.3 
+Füge hinzu: 
+Alle Verbindungen müssen zugänglich sein. 
+721.528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+721.528.3 
+Nähe zu nicht elektrischen Anlagen 
+721.528.3.101 
+Elektrische Betriebsmittel einschließlich Kabel- und Leitungsanlagen dürfen in Fächern, die 
+der Lagerung von Gasflaschen dienen, nicht errichtet werden. Davon ausgenommen sind: 
+a) 
+Kleinspannungsbetriebsmittel für die Überwachung der Gasversorgung. 
+ 
+ELV-Kabel/Leitungen und elektrische Betriebsmittel dürfen nur dann innerhalb der Fächer, die der 
+Lagerung von Flüssiggasflaschen dienen, errichtet werden, wenn sie dem Betrieb der Gasflasche (zB 
+Erkennung von leeren Gasflaschen) dienen oder für die Verwendung in solchen Fächern vorgesehen 
+sind. Solche elektrischen Anlagen und deren Komponenten müssen so gebaut und errichtet werden, 
+dass sie keine potenzielle Zündquelle darstellen. 
+b) 
+Kabel/Leitungen, die durch Fächer, die der Lagerung von Gasflaschen dienen, durchgeführt werden. 
+ 
+Wo Kabel/Leitungen durch solche Fächer durchgeführt werden, müssen die Kabel/Leitungen gegen 
+mechanische Beschädigungen durch Elektroinstallationsrohre oder geschlossene Elektroinstallations-
+kanäle in den Bereichen, in denen sie durch solche Fächer geführt werden, geschützt werden. 
+ 
+Solche Elektroinstallationsrohre oder Elektroinstallationskanäle müssen mindestens einer hohen 
+mechanischen Beanspruchung (mindestens AG3) ohne sichtbare materielle Beschädigung widerstehen. 
+721.53 
+Schalt- und Steuergeräte 
+721.537 
+Geräte zum Trennen und Schalten 
+721.537.2 
+Einrichtungen zum Trennen 
+721.537.2.101 
+Für jede elektrische Anlage muss ein Haupttrennschalter vorgesehen werden, der alle 
+aktiven Leiter abschalten muss und der so angeordnet sein muss, dass eine Bedienung im Caravan leicht 
+möglich ist. In einer Anlage mit nur einem Endstromkreis darf als Trennschalter die Überstrom-
+Schutzeinrichtung verwendet werden, vorausgesetzt, diese Einrichtung erfüllt die Anforderungen für das 
+Trennen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 688/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 6 
+721.537.2.102 
+Ein Hinweis mit einem Text, wie im Anhang 721.A gezeigt, in der/den Muttersprache(n) des 
+Landes, in welchem der Caravan das erste Mal in den Verkehr gebracht wird, muss abriebfest auf 
+dauerhaftem Material und in leicht lesbarer Ausführung in der Nähe der Haupttrenneinrichtung innerhalb des 
+Caravans angebracht werden. 
+721.54 
+Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+721.543 
+Schutzleiter 
+721.543.2 
+Arten der Ausführung von Schutzleitern 
+721.543.2.101 
+Schutzleiter eines Stromkreises müssen gemeinsam mit den aktiven Leitern in einem 
+Elektroinstallationsrohr oder in einem mehradrigen Kabel/einer mehradrigen Leitung verlegt werden. 
+721.55 
+Andere elektrische Betriebsmittel 
+721.55.101 Anschlüsse 
+721.55.101.1 Alle elektrischen Wechselspannungsanschlüsse an einem Caravan müssen als Steckdosen für 
+industrielle Anwendung gemäß ÖVE/ÖNORM EN 60309-2 ausgeführt werden. 
+721.55.101.2 Falls ein Anschluss vorgesehen wird, muss er wie folgt errichtet werden: 
+a) 
+nicht mehr als 1,8 m über dem Boden und 
+b) 
+in einer gut erreichbaren Position und 
+c) 
+mit mindestens einem Schutz von IP44, mit oder ohne gesteckter Kupplung und 
+d) 
+der Anschluss darf nicht erheblich über die Hülle des Caravans hinausragen. 
+721.55.102 Zubehör 
+721.55.102.1 Jede Niederspannungssteckdose muss einen Schutzkontakt haben, ausgenommen sind 
+Steckdosen, die mit Schutztrennung mit nur einem elektrischen Verbrauchsmittel geschützt sind. 
+721.55.102.2 An jeder Steckdose, die durch Kleinspannung versorgt wird, muss die Spannung sichtbar 
+angegeben sein. 
+721.55.102.3 Wo Zubehör in einer Position angeordnet ist, bei der mit Feuchtigkeit zu rechnen ist, muss das 
+Zubehör so gebaut oder umhüllt sein, dass ein Schutz von nicht weniger als IP44 erreicht wird. 
+721.55.102.4 Jede Leuchte in einem Caravan muss vorzugsweise direkt an dessen Konstruktion oder an der 
+Verkleidung des Caravans befestigt sein. Wo eine Hängeleuchte in einem Caravan errichtet wird, müssen 
+Vorkehrungen zur Sicherung der Leuchte getroffen werden, um eine Beschädigung bei Bewegungen des 
+Caravans zu verhindern. 
+Zubehör für die Aufhängung der Hängeleuchte muss für das Gewicht und die Kräfte, die durch die 
+Fahrzeugbewegung entstehen, geeignet sein. 
+721.55.102.5 Eine Leuchte, die für zwei unterschiedliche Spannungen vorgesehen ist, muss mit den 
+entsprechenden Normen übereinstimmen. 
+721.55.102.6 Die Verbindungsleitung zur Steckdose am Caravanstellplatz, die den Caravan versorgt, muss 
+aus Folgendem bestehen: 
+a) 
+einem Stecker gemäß ÖVE/ÖNORM EN 60309-2 und 
+b) 
+einer flexiblen Leitung, 
+ 
+– 
+von höchstens 25 m (± 2 m) Länge, 
+ 
+– 
+entsprechend der Kennzeichnung H07RN-F, AT-N07V3V3 oder gleichwertig, 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 689/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 7 
+ 
+– 
+mit Schutzleiter, mit der Farbkennzeichnung gemäß 514.3, 
+ 
+– 
+mit einem Querschnitt gemäß Tabelle 721.A und 
+c) 
+einer Kupplung für industrielle Anwendung gemäß ÖVE/ÖNORM EN 60309-2. 
+Tabelle 721.A – Querschnitte von flexiblen Verbindungsleitungen  
+für den Anschluss des Caravans 
+Bemessungsstrom 
+Mindestquerschnitt 
+A 
+mm2 
+16 
+2,5 
+25 
+4 
+32 
+6 
+63 
+16 
+100 
+35 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 690/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 8 
+Anhang 721.A 
+(normativ) 
+ 
+Anweisung für die elektrische Stromversorgung 
+Beim Anschließen 
+a) 
+Prüfen Sie vor der Verbindung des Caravans mit der elektrischen Stromversorgung, ob 
+ 
+1) 
+die zur Verfügung stehende Steckverbindung am Caravanstellplatz mit jener der Verbindungsleitung 
+des Caravans übereinstimmt und 
+ 
+2) 
+die Kabel/Leitungen und die Verbindungen für den Anwendungsbereich geeignet sind und 
+ 
+3) 
+die Haupttrenneinrichtung des Caravans in der Aus-Stellung ist. 
+ 
+DIE 
+FLEXIBLE 
+VERBINDUNGSLEITUNG 
+DES 
+CARAVANS 
+SOLLTE 
+VOLLSTÄNDIG 
+ABGEWICKELT SEIN, UM BESCHÄDIGUNG DURCH ÜBERHITZUNG ZU VERMEIDEN. 
+b) 
+Überprüfen Sie die Kabel/Leitungen, die Stecker und die Verbindungen auf Beschädigungen. Prüfen Sie 
+die Verbindungsleitungen und deren Steckverbindungen auf Beschädigungen. 
+c) 
+Stecken Sie zuerst die Verbindungsleitung an der dafür vorgesehenen Steckdose am Caravan an. 
+d) 
+Stecken Sie danach die Verbindungsleitung an der dafür vorgesehenen Steckdose am Caravanstellplatz 
+an. 
+e) 
+Schalten Sie den Haupttrennschalter am Caravan ein. 
+f) 
+Testen Sie die Ausschaltfunktion der im Caravan installierten Fehlerstrom-Schutzeinrichtungen (RCD) 
+durch Betätigen der Betätigungstaste der Prüfeinrichtung (Prüftasten, zB „T“) und schalten Sie danach 
+wieder ein. 
+WENN NACH DURCHFÜHRUNG DES VORGENANNTEN VERFAHRENS DIE VERSORGUNG NICHT 
+VERFÜGBAR IST, SETZEN SIE SICH MIT DEM BETREIBER DES CARAVAN-STELLPLATZES IN 
+VERBINDUNG. 
+Beim Trennen der Verbindung 
+Schalten Sie die Haupttrenneinrichtung des Caravans aus und entfernen Sie die Verbindungsleitung zuerst 
+an der Stromversorgungseinrichtung am Caravanstellplatz und danach am Caravan-Anschluss. 
+Wiederkehrende Prüfung 
+Die elektrische Anlage des Caravans sollte mindestens alle drei Jahre und bei häufigerer Benützung jährlich 
+durch eine Elektrofachkraft (BA5) geprüft werden. Über die Prüfung soll ein Prüfbericht erstellt werden. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 691/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 9 
+Anhang 721.B 
+(informativ) 
+ 
+Kleinspannungsgleichstromanlage 
+ANMERKUNG 
+Dieser Anhang ist für Kleinspannungsgleichstromanlagen mit 12 V gemäß ÖNORM EN 1648-1 oder 
+ÖNORM EN 1648-2 nicht anzuwenden. 
+Für die Errichtung von Kleinspannungsgleichstromanlagen mit anderen Spannungen gemäß Abschnitt 
+721.414 sind, ergänzend zu diesem Teil, die Anforderung gemäß ÖNORM EN 1648-1 und ÖNORM 
+EN 1648-2 sinngemäß anzuwenden. 
+721.B.31 Zweck, Stromversorgung und Aufbau 
+721.B.313 
+Stromversorgungen 
+721.B.313.4 
+Stromquellen zur Elektroversorgung 
+Die Stromversorgung größer 12 V sollte von einer oder mehreren der folgenden Stromquellen vorgenommen 
+werden: 
+a) 
+der elektrischen Anlage des Zugfahrzeuges, 
+b) 
+einer Hilfsbatterie montiert im Caravan, 
+c) 
+einer Niederspannungs-Gleichspannungsversorgung über ein Netzgerät gemäß ÖVE/ÖNORM 
+EN 60335-1 und ÖVE/ÖNORM EN 61558-2-6, 
+d) 
+einem Gleichspannungsgenerator, der durch irgend eine Form von Energie angetrieben wird, 
+e) 
+einem Photovoltaik-(PV)-Energiestromversorgungssystem oder Ähnlichem. 
+721.B.514 
+Kennzeichen 
+721.B.514.1 
+Allgemeines 
+Die folgenden Informationen sollten in der Gebrauchsanweisung vorgesehen sein und sollten in der/den 
+Amtssprache(en) des Landes sein, in der der Caravan gekauft wird: 
+a) 
+Folgender Warnhinweis: „Eine Hilfsbatterie sollte nur ersetzt werden durch eine des gleichen Typs und 
+der gleichen Spezifikation, wie die ursprünglich eingebaute“. 
+b) 
+Anweisungen für die Wartung und Aufladung einer Hilfsbatterie. Wenn ein Batterieladegerät vorgesehen 
+ist, sollten Anweisungen für die sichere Verwendung desselben enthalten sein. 
+c) 
+Hinweise für die Auswahl und Errichtung einer Hilfsbatterie in einem Gehäuse, wenn der Caravan für die 
+Errichtung einer Hilfsbatterie vorgesehen ist. 
+d) 
+Details der Warnhinweise, die in 721.B.55.103.5 festgelegt sind, und deren Bedeutung für die Sicherheit. 
+e) 
+Eine einfache Darstellung der Kabel-/Leitungsanlage der Niederspannungs- und Kleinspannungsanlage 
+mit Details zu den Kabel-/Leitungsfarben und/oder der Kennzeichnung und den Nennwerten der 
+Überstrom-Schutzeinrichtungen. 
+f) 
+Der Anschlusswert und die Art des Gerätes und von welcher Stromquelle es versorgt werden kann. 
+g) 
+Anweisungen für den richtigen Betrieb und die richtige Wartung von eingebauten Geräten, entsprechend 
+dem Lieferumfang des Geräteherstellers. 
+h) 
+Warnhinweis: „Trennen Sie immer die elektrische Verbindung zwischen dem Zugfahrzeug und dem 
+Caravan, bevor Sie eine andere Spannungsversorgung zum Caravan herstellen und auch bevor die 
+Caravan-Batterie durch andere Mittel aufgeladen wird“. 
+Ergänzend gelten die Anforderungen gemäß ÖNORM EN 1648-1 bzw. ÖNORM EN 1648-2. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 692/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 10 
+721.B.515 
+Vermeidung gegenseitiger nachteiliger Beeinflussung 
+721.B.515.2  
+Es sollte sichergestellt werden, dass Betriebsströme der Kleinspannungsanlage nicht über 
+die Schutzleiter der Niederspannungsanlage fließen. 
+Die Kleinspannungsanlage ist so zu errichten, dass die Schutzmaßnahmen der Niederspannungsanlage 
+gegen direktes Berühren oder bei indirektem Berühren nicht beeinträchtigt werden. 
+721.B.521 
+Arten von Kabel- und Leitungsanlagen 
+712.B.521.2  
+Kabel/Leitungen sollten mehrdrähtiger oder flexibler Art sein und müssen mit 
+ÖVE/ÖNORM EN 50525 Reihe bzw. ISO 6722 Series übereinstimmen. 
+721.B.523 
+Strombelastbarkeit 
+721.B.523.1  
+Die Querschnitte der Leiter, die für die feste Kabel-/Leitungsverlegung ausgewählt wurden, 
+sollten mit Anhang 721.C übereinstimmen. Anhang 721.C ist nicht für Sensor- und Datenleitungen 
+anzuwenden. 
+721.B.525 
+Spannungsabfall in den Verbraucheranlagen 
+Unter normalen Betriebsbedingungen sollte die Spannung an den Klemmen eines fest angeschlossenen 
+elektrischen Verbrauchsmittels größer sein als die untere Grenze, die in Übereinstimmung mit den Normen, 
+die für diese elektrischen Betriebsmittel zutreffend sind, festgelegt ist. Wenn für das Betriebsmittel keine 
+Norm besteht, sollte die Spannung an den Klemmen so sein, dass die sichere Funktion dieses 
+Betriebsmittels nicht beeinträchtigt wird. Beim Fehlen von genauen Daten ist ein Spannungsabfall von 0,8 V 
+von der Stromversorgung bis zum elektrischen Betriebsmittel zulässig. 
+Der Spannungsabfall zwischen dem Stecker des Anschlusses zum Zugfahrzeug oder zwischen dem 
+Niederspannungs-Batterie-Ladegerät und der Hilfsbatterie sollte 0,3 V nicht übersteigen. 
+Der Ladestrom Ic für die Festlegung des Spannungsabfalls wird mit der Formel (F 721.B.1) ermittelt 
+ 
+Ic = 
+c ∙ 0,1
+T  
+(F 721.B.1) 
+Dabei ist 
+Ic 
+der Ladestrom; 
+c 
+die Kapazität der Batterie, in Ah; 
+T 
+die Ladezeit, in h. 
+721.B.528 
+Nähe von Kabel- und Leitungsanlagen zu anderen technischen Anlagen 
+721.B.528.3 
+Nähe zu nicht elektrischen technischen Anlagen 
+721.B.528.3.5 Kabel-/Leitungswege und Flüssiggas-Anlagen 
+Kabel/Leitungen, einschließlich solcher für die Automobil-Anwendung, sollten nicht durch einen Raum, ein 
+Fach oder Gehäuse geführt werden, das der Lagerung von Flüssiggasflaschen dient. Wo Kabel/Leitungen 
+durch einen solchen Raum, ein Fach oder Gehäuse geführt werden müssen, sollten sie in einer Höhe von 
+nicht weniger als 50 cm über der Aufstellung der Gasflasche geführt werden, und solche Kabel/Leitungen 
+sollten vor mechanischer Beschädigung durch die Errichtung in einem durchgehend gasdichten 
+Elektroinstallationsrohr oder geschlossenen Elektroinstallationskanal durch diesen Raum, dieses Fach oder 
+Gehäuse geführt werden. 
+Das Elektroinstallationsrohr oder der geschlossene Elektroinstallationskanal, wenn vorgesehen, sollte in der 
+Lage sein, einer Beanspruchung gleichwertig zu AG3 ohne sichtbare materielle Schäden standzuhalten. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 693/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 11 
+Kabel/Leitungen für Kleinspannung und elektrische Betriebsmittel dürfen im Fach oder Gehäuse für die 
+Gasflaschen nur errichtet werden, wenn die Errichtung dem Betrieb der Gasflaschen (zB zur Anzeige von 
+leeren Gasflaschen) oder für die Verwendung innerhalb des Raums, Fachs oder Gehäuses dient. Solche 
+elektrischen Anlagen und Komponenten sollten so ausgeführt und errichtet sein, dass sie nicht eine 
+Zündquelle darstellen und sollten in Übereinstimmung mit den zutreffenden Normen für die Einteilung der  
+Ex-Bereiche des Raums, Fachs oder Gehäuses sein. 
+721.B.533 
+Einrichtungen zum Schutz bei Überstrom 
+721.B.533.1 
+Allgemeine Anforderungen 
+721.B.533.1.5 
+Die Leitungslänge zwischen der Überstrom-Schutzeinrichtung und Hilfsbatterie darf 
+höchstens 100 cm lang sein. Die Überstrom-Schutzeinrichtung für die Hilfsbatterie sollte am Ende des 
+Batteriekabels/der Batterieleitung und vor der ortsfest errichteten elektrischen Anlage errichtet werden. 
+Der Kleinspannungsausgang der Transformator-/Gleichrichter-Einheit oder des Gleichspannungsgenerators 
+sollte mit einer Überstrom-Schutzeinrichtung versehen werden. Diese Schutzeinrichtung sollte an oder direkt 
+bei der Einheit oder beim Generator installiert werden; in allen Fällen vor den Verteilungsstromkreisen. 
+721.B.533.1.6 
+Als Überstrom-Schutzeinrichtung sollten entweder Sicherungen nach ISO 8820 Reihe oder 
+Leitungsschutzschalter gemäß ÖVE/ÖNORM EN 60898 vorgesehen werden. 
+721.B.533.1.7 
+Sicherungen sollten baulich gegen unbeabsichtigte mechanische Beschädigungen 
+geschützt werden. 
+721.B.533.1.8 
+Überstrom-Schutzeinrichtungen dürfen in einem Raum oder Fach für Brennstofflagerung 
+oder in einem Gehäuse für die Lagerung von Flüssiggas-Flaschen oder in dem Raum oder Fach für die 
+Hilfsbatterie nicht errichtet werden. 
+721.B.55 
+Andere elektrische Betriebsmittel 
+721.B.55.101 Anschlüsse 
+Die Anschlüsse am Caravan sollten bei abgezogenen Kupplungen (Niederspannungs- und Kleinspannungs-
+Netzversorgung) gegen das Eindringen von Wasser, Fremdkörpern und unbeabsichtigte Beschädigungen 
+geschützt werden. 
+721.B.55.102 Zubehör 
+721.B.55.102.6 
+Die Einrichtungen für die Verbindung zur Zugmaschine sollten aus Folgendem bestehen: 
+a) 
+einem Stecker in Übereinstimmung mit ISO 1724 und ISO 3732 oder EN ISO 11446 und 
+b) 
+einer flexiblen Leitung oder einem Kabel mit der Anzahl der Adern mit dem kleinsten Querschnitt und der 
+Zuordnung gemäß Tabelle 721.B.1 und einer geeigneten Länge und 
+c) 
+einer Kupplung in Übereinstimmung mit ISO 1724 und ISO 3732 oder EN ISO 11446. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 694/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 12 
+Tabelle 721.B.1 – Funktionale Aufteilung und Querschnitte der Adern  
+für die Caravankupplung 
+Ader Nr. 
+Funktion 
+Nummer des Kontakts 
+Mindestquerschnitt 
+ 
+ 
+EN ISO 11446 
+ISO 1724 
+mm2 
+1 
+Fahrtrichtungsanzeige links 
+1 
+1 
+1,5 
+2 
+Nebelschlussleuchte 
+2 
+2 
+1,5 
+3 
+Gemeinsamer Rückleiter für 1, 2, 3, 4, 5, 6, 7, 8 
+3 a 
+3 a 
+2,5 
+4 
+Fahrtrichtungsanzeige rechts 
+4 
+4 
+1,5 
+5 
+Rechtes Schlusslicht und Seitenmarkierung und 
+hintere Nummernschildbeleuchtung  
+5 
+5 
+1,5 
+6 
+Bremsleuchten 
+6 
+6 
+1,5 
+7 
+Linkes Schlusslicht und Seitenmarkierung und 
+hintere Nummernschildbeleuchtung  
+7 
+7 
+1,5 
+ 
+ 
+ 
+ISO 3732 
+ 
+8 
+Rückfahrscheinwerfer 
+8 
+1 
+1,5 
+9 
+Unterbrochene Stromversorgung 
+9 
+4 
+2,5 
+10 
+Durch Zündung geschaltete Stromversorgung 
+10 
+6 
+2,5 
+11 
+Rückleiter für Ader 10 b 
+11 a 
+7 a 
+2,5 
+12 
+Codierung für gekuppelten Anhänger 
+12 
+2 
+– 
+13 
+Rückleiter für Ader 9 c 
+13 a 
+3 a 
+2,5 
+14 
+Ohne Zuordnung 
+– 
+5 
+1,5 
+a 
+Diese Rückleiter sollten im Anhänger nicht elektrisch miteinander verbunden sein. 
+b 
+In ISO 3732 heißt es „Masse für Kontakt Nr. 6”. 
+c 
+In ISO 3732 heißt es „Masse für Kontakt Nr. 4”. 
+721.B.55.103 Hilfsbatterien 
+721.B.55.103.1 
+Arten von Batterien 
+Die Hilfsbatterie muss wiederaufladbar sein. 
+ANMERKUNG 
+Batterien mit Primärzellen (nicht wiederaufladbar) sind keine Hilfsbatterien. Sie dürfen in Caravans 
+eingesetzt werden, wenn sie in Stromkreisen verwendet werden, die getrennt sind von anderen Stromquellen der 
+elektrischen Versorgung. 
+721.B.55.103.2 
+Kapazität 
+Die Hilfsbatterie muss bei einer Entladezeit von 20 Stunden mindestens eine Kapazität von 40 Ah haben. 
+Bei Motorcaravans muss die Hilfsbatterie bei einer Entladezeit von 20 Stunden eine Nennkapazität von 
+mindestens 60 Ah haben. 
+721.B.55.103.3 
+Klemmen 
+Die Klemmen der Hilfsbatterien sollten deutlich und dauerhaft mit „+“ und „–“ gekennzeichnet werden. 
+Verbindungen zu den Anschlüssen der Hilfsbatterie sollten sicher geklemmt oder verschraubt werden, um 
+ununterbrochenen Kontakt sicherzustellen, und sie sollten isoliert werden, es sei denn, die Hilfsbatterie ist mit 
+einem isolierten Gehäuse versehen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 695/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 13 
+721.B.55.103.4 
+Anordnung 
+Die Hilfsbatterie muss in einem separaten Raum oder Fach mit leichtem Zugang für die Wartung oder zum 
+Herausnehmen untergebracht werden. Die Batterie sollte gesichert werden, um Eigen-Bewegungen zu 
+verhindern, zB wenn sich der Caravan in Bewegung befindet. 
+721.B.55.103.5 
+Fach für die Hilfsbatterie 
+Unter einer Hilfsbatterie, deren Elektrolyt flüssig ist, muss eine säurebeständige, flüssigkeitsdichte Auffang-
+wanne angebracht sein, die mindestens 20 % des Elektrolyts der Batterie fassen kann. 
+Das Innere eines Hilfsbatteriefachs sollte belüftet und gegen die korrosive Wirkung der säurehaltigen 
+Ladegase durch eine der folgenden Methoden geschützt sein: 
+a) 
+Errichten einer luftdicht verschlossenen Hilfsbatterie, welche eine externe Lüftungseinrichtung auf der 
+Außenseite des Caravans enthält, oder 
+b) 
+Errichten einer Hilfsbatterie in einem geschlossenen Batterieraum, der intern gegen Korrosion geschützt 
+ist und an der Oberkante des Hilfsbatteriegehäuses durch ein geeignetes Rohr mit einem Innen-
+durchmesser von mindestens 10 mm, das zur Außenseite des Caravans geführt ist, im Einklang mit der 
+Anleitung des Herstellers oder wie durch den Hersteller der Hilfsbatterie vorgesehen belüftet ist oder 
+c) 
+Belüften des Raums oder Fachs auf der unteren und oberen Ebene zur Außenseite des Caravans und 
+Konstruktion des Inneren dieses Raums oder Fachs einschließlich der Seiten mit den Ventilator-
+öffnungen aus säurefestem Material oder Vorsehen eines Korrosionsschutzanstrichs. Wenn sich der 
+Raum oder das Fach in das Innere des Caravans öffnet, sollte der Deckel luftdicht sein. Die Mindest-
+größe der Belüftung sollte nicht weniger als 80 mm2 an der unteren Ebene und nicht weniger als 80 mm2 
+an der oberen Ebene aufweisen. 
+Wenn eine Hilfsbatterie nicht vorgesehen ist, sollten die Position und die Anweisungen für die Errichtung der 
+Batterie und des Raums oder Fachs in Einklang mit a), b) oder c) dieses Unterabschnittes sein und in der 
+Gebrauchsanweisung oder in der Nähe des vorgeschlagenen Standortes angegeben sein: „Die Anleitung zur 
+Errichtung einer Hilfsbatterie finden Sie in der Gebrauchsanweisung“. 
+Die Anforderungen an den Schutz vor Korrosion und an die Belüftung sind nicht anzuwenden, wenn 
+gasdichte Batterien verwendet werden. 
+Wenn der Hersteller Vorkehrungen für den Einbau einer Hilfsbatterie nicht vorgesehen hat, sollte der 
+folgende Hinweis in der Gebrauchsanweisung vorgesehen werden: „Dieser Caravan ist nicht dafür 
+vorgesehen, eine Hilfsbatterie aufzunehmen. Bauen Sie keine ein.“ 
+721.B.55.103.6 
+Kabel/Leitungen für die Hilfsbatterie 
+Kabel/Leitungen für eine Hilfsbatterie sollten durch zusätzliche Umhüllung oder Umwickeln (elektrische 
+Isolation) bis zur Überstrom-Schutzeinrichtung mechanisch geschützt werden. 
+721.B.55.103.7 
+Warnhinweise 
+Warnhinweise sollten in der Nähe der Hilfsbatterie in einer auffallenden Position befestigt oder auf dem 
+Deckel des Hilfsbatterieraumes angebracht werden. Diese Warnhinweise sollten in der/den Amtssprache(n) 
+des Landes, in dem der Caravan zugelassen wird, verfasst sein. 
+Auf einem Warnhinweis sollte: „Schalten Sie alle elektrischen Verbraucher aus, bevor Sie die Hilfsbatterie 
+trennen“ vermerkt sein. 
+Zusätzlich ist ein Warnhinweis mit „Rauchen verboten“ in Übereinstimmung mit ÖNORM EN ISO 7010 im 
+Raum oder Fach für die Hilfsbatterie anzubringen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 696/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 14 
+721.B.55.104 Andere Stromquellen für die Stromversorgung 
+721.B.55.104.1 
+Generatoren und Transformator-/Gleichrichter-Einheiten 
+Wenn eine Stromversorgung aus einem Generator oder aus einer Niederspannungs-Stromversorgung über 
+eine Transformator-/Gleichrichter-Einheit erfolgt, sollte bei üblichen Belastungen von 0,5 A bis zur maximalen 
+Bemessungslast der Stromversorgungseinheit die Kleinspannung an den Ausgangsklemmen der 
+Stromversorgungseinheit zwischen 11 V und 14 V betragen. 
+Über dem gleichen Lastbereich sollte die Wechselspannungswelligkeit 1,2 V Spitze zu Spitze nicht 
+überschreiten. 
+721.B.55.104.2 
+Stromquellen für erneuerbare Energie 
+Stromquellen aus erneuerbarer Energie, wie Windkraft, Solarenergie usw., sollten nur zum Aufladen von 
+Batterien errichtet werden und nur Kleinspannungen erzeugen. 
+Stromquellen aus erneuerbarer Energie sollten mit Einrichtungen betrieben werden, die das Überladen der 
+Batterie(n) verhindern. 
+721.B.55.105 Laden der Hilfsbatterie und Betreiben des Kühlschranks 
+721.B.55.105.1 
+Der Stromkreis zum Laden der Hilfsbatterie sollte vom Stromkreis des Kühlschranks 
+getrennt ausgeführt werden. 
+721.B.55.105.2 
+Bei nicht vorhandener externer Versorgung sollte der Stromkreis zum Laden der 
+Hilfsbatterie nur dann geschlossen werden, wenn der Generator der Zugmaschine zur Ladung der 
+Hilfsbatterie genutzt wird. 
+721.B.55.105.3 
+Bei nicht vorhandener externer Versorgung sollte der Betrieb des Kühlschranks mit 12 V 
+nur möglich sein, wenn der Generator der Zugmaschine dafür genutzt wird. Dies kann durch eine im 
+Kühlschrank eingebaute Einrichtung erreicht werden. 
+721.B.55.106 Klemmleiste 
+Wenn 
+die 
+Verbindung 
+zwischen 
+Anschlusskabel(n)/Anschlussleitung(en) 
+und 
+der 
+festen 
+Kabel-
+/Leitungsanlage des Caravans über eine Klemmleiste erfolgt, sollte diese eine Schutzabdeckung haben. 
+Wenn die Klemmleiste außerhalb angeordnet ist, sollte eine Abdeckung vorgesehen werden, die einen 
+Schutz von nicht weniger als IP34, gemäß ÖVE/ÖNORM EN 60529, erfüllt. 
+721.B.55.107 Geräte 
+721.B.55.107.1 
+Allgemeines 
+Die technische Dokumentation des Caravans, die von dessen Hersteller zur Verfügung gestellt wird, soll 
+klarstellen, ob für eine externe Einspeisung auch ein Gleichspannungsgenerator oder eine Transformator-
+/Gleichrichtereinheit geeignet ist. 
+Elektrische Verbraucher, die für den Betrieb mit AC 12 V und DC 12 V geeignet sind, sind zulässig, wenn das 
+Zusammenschalten der Spannungssysteme verhindert wird. 
+721.B.55.107.2 
+Auswahl und Anschluss der Geräte 
+Alle Verbraucher sollten in Übereinstimmung mit den Angaben des Herstellers montiert und angeschlossen 
+werden. Anschlüsse von Verbrauchern, die von der Polarität abhängig sind, sollten entsprechend 
+gekennzeichnet sein. Dies kann durch Farbe oder Kennzeichnung zB mit Schildern, Hülsen, Bedruckung 
+erfolgen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 697/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 15 
+721.B.55.108 Steckdosen 
+Steckdosen für Kleinspannung sollten unverwechselbar und von einer anderen Ausführung sein als jene, die 
+für Niederspannungsanlagen vorgesehen sind. 
+Die Spannung und die maximale Bemessungsleistung des Stromkreises sollten auf oder neben den 
+Steckverbindungen angegeben sein. 
+721.B.55.109 Batterieladegerät 
+Wenn ein Batterieladegerät mit der Wechselspannungs-Niederspannungsstromversorgung verbunden ist, 
+sollte es mit den zutreffenden Anforderungen gemäß ÖVE/ÖNORM EN 60335-2-29 übereinstimmen. 
+Der Gleichspannungsausgang des Batterieladegeräts sollte entweder elektronisch geregelt oder mit den 
+Parametern der Hilfsbatterie abgestimmt werden. 
+721.B.55.110 Äußere Beleuchtung 
+Beleuchtungen, wie Türlampen, an einem Caravan befestigt sollten so gebaut und montiert sein, dass ein 
+angemessener Schutz gegen das Eindringen von Wasser mit einer Schutzart von mindestens IP34 gemäß 
+ÖVE/ÖNORM EN 60529 erreicht wird. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 698/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 16 
+Anhang 721.C 
+(informativ) 
+ 
+Stromtragfähigkeit 
+721.C.1 Die Mindest-Leiterquerschnitte sollten aus den Kurven ausgewählt (siehe 721.C.1.1) oder mit der 
+Formel F 721.C.1 (siehe 721.C.1.2) berechnet werden. 
+721.C.1.1 
+Kurven zur Ermittlung der Mindestquerschnitte 
+ 
+Gesamtlänge für beide Leiter (Plus und Minus) in m (Streckenlänge ist die Hälfte der oben ermittelten Länge) 
+Bild 721.C.1 – Diagramm für die Ermittlung von Mindestquerschnitten für Leiter zur festen Verlegung 
+mit einem Spannungsabfall von 0,8 V 
+ANMERKUNG 
+Aus dem obigen Bild 721.C.1 sollte, falls gefordert, der Querschnitt für einen Stromkreis mit einem 
+vorgesehenen Strom von 5 A und einer Gesamtlänge von 24 m (12 m Streckenlänge) mindestens 4 mm2 betragen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 699/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 17 
+ 
+Gesamtlänge für beide Leiter (Plus und Minus) in m (Streckenlänge ist die Hälfte der oben ermittelten Länge). 
+Bild 721.C.2 – Diagramm für die Ermittlung von Mindestquerschnitten für Leiter  
+zum Batterieanschluss mit einem Spannungsabfall von 0,3 V 
+721.C.1.2 
+Berechnung der Mindestquerschnitte 
+Der Querschnitt darf mit folgender Formel ermittelt werden: 
+ 
+A = 
+ρ ∙ L  ∙ I
+Uv  
+(F 721.C.1) 
+Dabei ist: 
+A 
+der Querschnitt des Leiters, in mm2; 
+ρ 
+der Widerstand von Kupfer (0,01989 Ωmm2/m bei 50 °C), in Ωmm2; 
+L 
+die Gesamtlänge (Hin- und Rückleiter) der Leiter, in m; 
+I 
+der Gesamtstrom; 
+Uv der zulässiger Spannungsabfall (0,3 V für das Hilfsbatterie-Ladekabel, 0,8 V für die fest verlegten 
+Kabeln/Leitungen). 
+Bei Zwischenwerten sollte das Ergebnis der Berechnung auf den nächsthöheren Querschnitt aufgerundet 
+werden. 
+721.C.2 Die Kurven in den Bildern 721.C.1 und 721.C.2 und die Formel F 721.C.1 basieren auf einer 
+Leiteranfangstemperatur von 50 °C. 
+Wenn Kabel/Leitungen für Temperaturen höher als 50 °C verlegt werden, sollte der Mindestquerschnitt der 
+Leiter erhöht werden. 
+721.C.3 Wenn der Gerätehersteller einen Spannungsabfall angibt, der von 0,3 V oder 0,8 V abweicht, muss 
+dieser Wert für Uv in die Formel F 721.C.1 eingesetzt werden.  
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 700/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-721 – Seite 18 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 701/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 1 
+Teil 7-722  
+Stromversorgung von Elektrofahrzeugen 
+722.1 
+Anwendungsbereich 
+Dieser Teil gilt für 
+– 
+Stromkreise zur Versorgung von Elektrofahrzeugen, für Ladezwecke, 
+– 
+Stromkreise 
+für 
+die 
+Rückspeisung 
+von 
+elektrischer 
+Energie 
+von 
+Elektrofahrzeugen 
+zum 
+Versorgungsnetz. 
+ANMERKUNG 
+Die Anforderungen für die Rückspeisung von elektrischer Energie von Elektrofahrzeugen zum 
+Versorgungsnetz sind in Beratung. 
+Induktives Laden fällt nicht in den Anwendungsbereich dieses Teils. 
+722.3 
+Bestimmungen allgemeiner Merkmale 
+722.31 
+Zweck, Stromversorgung und Aufbau 
+722.311 
+Leistungsbedarf und Gleichzeitigkeitsfaktor 
+Füge hinzu: 
+Es ist zu berücksichtigen, dass im normalen Gebrauch jeder einzelne Anschlusspunkt mit seinem 
+Bemessungsstrom betrieben wird. 
+Da alle Anschlusspunkte der Anlage gleichzeitig genutzt werden können, muss der Gleichzeitigkeitsfaktor 
+des Verteilerstromkreises als 1 angenommen werden. Dieser Faktor kann jedoch bei Vorhandensein einer 
+Laststeuerung reduziert werden. 
+722.312 
+Leiterkonfiguration und Erdung der Systeme 
+722.312.2 
+System nach Art der Erdverbindung (Netzsysteme) 
+722.312.2.1 
+TN-System 
+Füge hinzu: 
+In einem TN-System muss der Endstromkreis, der den Anschlusspunkt versorgt, ein TN-S-System sein. 
+722.314 
+Aufteilung der Anlage 
+722.314.101  
+Für den Anschluss von Elektrofahrzeugen muss ein eigener Stromkreis bereitgestellt 
+werden. 
+722.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+722.41 
+Schutz gegen elektrischen Schlag 
+722.410.3 
+Allgemeine Anforderungen 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 702/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 2 
+722.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des 
+Handbereichs gemäß Teil 4-41 Anhang 41.B dürfen nicht angewendet werden. 
+722.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung für die Versorgung mit mehr als einem 
+Verbrauchsmittel (Elektrofahrzeug) gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+722.413 
+Schutzmaßnahme: Schutztrennung 
+722.413.3 
+Anforderungen an den Fehlerschutz (Schutz bei indirektem Berühren) 
+Füge hinzu: 
+722.413.3.001.AT 
+Der Stromkreis muss mit einem Trenntransformator mit festem Übersetzungsverhältnis 
+gemäß ÖVE/ÖNORM EN 61558-2-4 versorgt werden. 
+ANMERKUNG AT 
+In Ladebetriebsart 4 (Gleichstromladen) sind Anforderungen an einen Trenntransformator in 
+Beratung. 
+722.443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+722.443.1 
+Allgemeines und Anwendungsbereich 
+Füge hinzu: 
+Um das Elektrofahrzeug vor möglichem Schaden, verursacht durch Überspannungen, zu schützen, muss ein 
+Überspannungsschutz für den versorgenden Stromkreis wirksam sein. 
+722.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+722.51 
+Allgemeine Bestimmungen 
+722.511 
+Übereinstimmung mit Normen 
+722.511.101  
+Ladestationen für Elektrofahrzeuge müssen den jeweiligen Teilen gemäß ÖVE/ÖNORM 
+EN 61851 Reihe entsprechen. 
+722.512 
+Betriebsbedingungen und äußere Einflüsse 
+722.512.2 
+Äußere Einflüsse 
+722.512.2.101  
+Auftreten von Wasser (AD) 
+Falls der Anschlusspunkt im Freien installiert ist, müssen die Betriebsmittel mit einer Schutzart von 
+mindestens IPX4 ausgewählt werden, um gegen Spritzwasser zu schützen. 
+Falls bei eingesteckten Steckern (gemäß ÖVE/ÖNORM E 8684-1) der Schutzgrad IPX4 nicht erreicht wird, 
+sind zusätzliche Maßnahmen zu ergreifen, um den Anschlusspunkt allseitig gegen Spritzwasser zu schützen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 703/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 3 
+722.512.2.102  
+Auftreten von festen Fremdkörpern (AE) 
+Falls der Anschlusspunkt im Freien installiert ist, müssen die elektrischen Betriebsmittel mit einer Schutzart 
+von mindestens IP4X ausgewählt oder versehen werden, um einen Schutz gegen Eindringen von sehr 
+kleinen Fremdkörpern sicherzustellen. 
+722.512.2.103  
+Mechanische Beanspruchung: Schlag (AG) 
+Betriebsmittel, die in öffentlich zugänglichen Bereichen und auf öffentlich zugänglichen Parkplätzen errichtet 
+werden, müssen gegen mechanische Beanspruchung (mittlere mechanische Beanspruchung) geschützt sein. 
+Der Schutz muss durch eine oder mehrere der nachfolgenden Maßnahmen erreicht werden: 
+– 
+die Position oder der Standort der elektrischen Betriebsmittel muss so ausgewählt werden, dass 
+Beschädigungen durch jede angemessen vorhersehbare Beanspruchung vermieden werden; 
+– 
+Vorsehen eines örtlichen oder eines allgemeinen mechanischen Schutzes (zB Anfahrschutz); 
+– 
+elektrische Betriebsmittel müssen errichtet werden in Übereinstimmung mit einem minimalen Schutz 
+gegen äußere mechanische Beanspruchung IK07 (siehe ÖVE/ÖNORM EN 62262). 
+722.53 
+Schalt- und Steuergeräte 
+722.530 
+Einleitung 
+722.530.4 
+Allgemeine und gemeinsame Anforderungen 
+722.530.4.101 
+Die Anforderungen dieses Abschnittes müssen erfüllt werden entweder 
+– 
+durch Auswahl und Errichtung geeigneter Einrichtungen in der ortsfesten Installation, oder 
+– 
+durch die Auswahl einer EV-Ladestation, die diese enthält, oder 
+– 
+durch eine Kombination von beiden. 
+722.531 
+Einrichtungen zum Schutz gegen elektrischen Schlag durch automatische Abschaltung 
+der Stromversorgung 
+722.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+722.531.3.1 
+Füge hinzu: 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen alle aktiven Leiter abschalten. 
+722.531.3.101 
+Mit Ausnahme von Stromkreisen, die als Schutzmaßnahme Schutztrennung anwenden, 
+muss jeder Anschlusspunkt durch eine eigene Fehlerstrom-Schutzeinrichtung (RCD) von mindestens Typ A 
+mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein. 
+Falls die EV-Ladestation mit einer Steckdose oder Fahrzeugkupplung gemäß ÖVE/ÖNORM EN 62196 Reihe 
+ausgestattet ist, müssen Schutzvorkehrungen gegen Gleichfehlerströme vorgesehen werden, es sei denn, 
+diese sind in die EV-Ladestation integriert. Geeignete Einrichtungen für jeden Anschlusspunkt sind: 
+– 
+Fehlerstrom-Schutzeinrichtung (RCD) Typ B, oder 
+– 
+Fehlerstrom-Schutzeinrichtung (RCD) Typ A in Verbindung mit einer geeigneten Einrichtung zur 
+Abschaltung der Stromversorgung im Fall von Gleichfehlerströmen >6 mA. 
+Fehlerstrom-Schutzeinrichtungen (RCD) müssen OVE EN 61008-1, OVE EN 61009-1, OVE EN 60947-2 oder 
+ÖVE/ÖNORM EN 62423 entsprechen. 
+ANMERKUNG 
+Anforderungen für die Auswahl und Errichtung von Fehlerstrom-Schutzeinrichtungen (RCD) für die 
+Stromversorgung mit DC-Fahrzeugkupplungen entsprechend ÖVE/ÖNORM EN 62196 Reihe sind in Beratung. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 704/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 4 
+722.533 
+Einrichtungen zum Schutz bei Überstrom 
+722.533.101  
+Jeder Stromkreis, der einen Anschlusspunkt versorgt, muss durch eine eigene Überstrom-
+Schutzeinrichtung gemäß OVE EN 60947-2, OVE EN 60947-6-2 oder OVE EN 61009-1 oder den 
+entsprechenden Teilen von ÖVE/ÖNORM EN 60898 Reihe, ÖVE/ÖNORM E 8669 Reihe oder ÖVE/ÖNORM 
+EN 60269 Reihe geschützt sein. 
+ANMERKUNG 
+Die 
+Überstrom-Schutzeinrichtung 
+kann 
+Teil 
+des 
+Verteilers, 
+der 
+Festinstallation 
+oder 
+der  
+EV-Ladeeinrichtung sein. 
+722.536 
+Koordination von Schutz-, Trenn-, Schalt- und Steuereinrichtungen 
+722.536.4 
+Anforderungen an die Koordination  
+722.536.4.1 
+Anforderungen für die Selektivität 
+722.536.4.1.4 Selektivität zwischen Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Falls für den Betrieb erforderlich, muss Selektivität zwischen der Fehlerstrom-Schutzeinrichtung (RCD) des 
+Anschlusspunktes und der Fehlerstrom-Schutzeinrichtung (RCD) des vorgeschalteten Stromkreises erreicht 
+werden. 
+722.538 
+Einrichtungen zur Überwachung 
+722.538.1 
+Isolationsüberwachungseinrichtungen (IMD) für IT-Systeme 
+722.538.1.101 
+Für Stromkreise in IT-Systemen, vorgesehen zur Versorgung von Elektrofahrzeugen, zB durch einen 
+Trenntransformator oder durch ein Batteriesystem, muss eine Isolationsüberwachungseinrichtung (IMD) 
+gemäß ÖVE/ÖNORM EN 61557-8 vorgesehen werden. 
+Eine Isolationsüberwachungseinrichtung (IMD) ist nicht notwendig für diejenigen Stromkreise, für die Schutz 
+durch automatische Abschaltung im ersten Fehlerfall gegeben ist. 
+Es wird empfohlen, eine Isolationsüberwachungseinrichtung (IMD) mit folgenden Ansprechwerten 
+einzusetzen: 
+– 
+Vorwarnung, 
+ 
+Falls der Isolationswiderstand unter 300 Ω/V fällt, sollte eine optische und/oder akustische Meldung für 
+den Anwender ausgegeben werden. Das Laden ausschließlich für den laufenden Ladezyklus kann 
+fortgesetzt werden, ein neuer Ladezyklus ist nicht zulässig. 
+– 
+Alarm. 
+ 
+Falls der Isolationswiderstand unter 100 Ω/V fällt, sollte eine optische und/oder akustische Meldung für 
+den Anwender ausgegeben werden. Der Ladestromkreis darf innerhalb von 10 s abgeschaltet werden. 
+722.538.2 
+Einrichtungen zur Isolationsfehlersuche (IFLS) in IT-Systemen 
+722.538.2.101 
+Für Stromkreise gemäß 722.538.1.101 und falls mehr als ein Elektrofahrzeug von derselben nicht geerdeten 
+Quelle versorgt wird, wird empfohlen, eine Einrichtung zur Isolationsfehlersuche gemäß ÖVE/ÖNORM 
+EN 61557-9 anzuwenden, um den fehlerhaften Stromkreis in kürzest möglicher Zeit zu finden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 705/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 5 
+722.54 
+Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+722.543 
+Schutzleiter 
+722.543.101  
+Steuersignale auf dem Schutzleiter dürfen nicht in die ortsfeste elektrische Anlage 
+gelangen. Die elektrischen Betriebsmittel müssen entsprechend gewählt werden. 
+ANMERKUNG 
+Diese Anforderung kann durch Einsatz einer galvanischen Trennung der Steuerelektronik erreicht 
+werden. 
+Derartige Signale und die zugehörigen Einrichtungen dürfen die korrekte Funktion der Geräte, die den Schutz 
+durch automatische Abschaltung der Stromversorgung sicherstellen, nicht beeinträchtigen (zB Fehlerstrom-
+Schutzeinrichtung (RCD)). 
+722.55 
+Andere elektrische Betriebsmittel 
+722.55.101 Steckdosen und Fahrzeugkupplungen 
+722.55.101.1 Jeder Anschlusspunkt muss mit mindestens einer Steckdose oder einer Fahrzeugkupplung zB 
+gemäß ÖVE/ÖNORM EN 60309-1 und/oder ÖVE/ÖNORM EN 62196-1 ausgestattet sein, falls Kompatibilität 
+nicht erforderlich ist. 
+Ist Austauschbarkeit gefordert, müssen Steckdosen oder Fahrzeugkupplungen zB gemäß ÖVE/ÖNORM 
+EN 60309-2, OVE EN 62196-2 oder ÖVE/ÖNORM EN 62196-3 verwendet werden. Steckdosen gemäß 
+ÖVE/ÖNORM E 8684-1 mit einem Bemessungsstrom von höchstens 16 A dürfen ebenfalls verwendet 
+werden. 
+Mit Ausnahme der Schutzmaßnahme Schutztrennung muss jede Steckdose einen Schutzkontakt haben, der 
+mit Schutzleiter verbunden sein muss. 
+722.55.101.2 Jede Steckdose oder jede Fahrzeugkupplung muss so nahe wie möglich am Parkplatz, der 
+versorgt werden soll, angeordnet sein. 
+722.55.101.3 Je eine Steckdose oder Fahrzeugkupplung darf nur ein einzelnes Elektrofahrzeug versorgen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 706/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-722 – Seite 6 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 707/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 1 
+Teil 7-729  
+Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit  
+ 
+ 
+eingeschränkter Zugangsberechtigung 
+729.1 
+Anwendungsbereich 
+Dieser Teil gilt für Bedienungsgänge und Instandhaltungsgänge sowie für den Basisschutz und weitere 
+Gesichtspunkte in Bereichen mit eingeschränkter Zugangsberechtigung. 
+ANMERKUNG 1 AT 
+Dieser Teil enthält Anforderungen zu den Breiten der Gänge, die in Richtung zum Fluchtweg 
+führen, ohne selbst Fluchtweg zu sein. Für Mindestbreiten für Fluchtwege sind die gesetzlichen Arbeitsschutz- und 
+Bauvorschriften zu beachten.  
+ANMERKUNG 2 AT 
+Bei Räumen mit Niederspannungs- und Hochspannungsanlagen sind die Anforderungen nach 
+ÖVE/ÖNORM EN 61936-1 vorrangig zu beachten. Für „fabrikfertige Stationen“ ist zusätzlich ÖVE/ÖNORM 
+EN 62271-202 zu beachten. 
+729.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+729.41 
+Schutz gegen elektrischen Schlag 
+729.410.3 
+Allgemeine Anforderungen 
+729.410.3.5 
+Füge hinzu: 
+In abgeschlossenen elektrischen Betriebsstätten sind Mindestabstände (Schutz durch Abstand) im Rahmen 
+der Schutzvorkehrungen für den Basisschutz Schutz durch Hindernisse oder Schutz durch Anordnung 
+außerhalb des Handbereichs erforderlich, wenn andere Schutzvorkehrungen für den Basisschutz (Schutz 
+gegen direktes Berühren) gemäß Teil 4-41 nicht sinnvoll anwendbar sind. 
+ANMERKUNG AT 
+Hierbei ist zu beachten, dass die Gänge gegebenenfalls breiter gewählt werden müssen, damit 
+sich die Schranktüren und Schwenkrahmen vollständig öffnen lassen und Einschübe sich vollständig ausziehen lassen. 
+In allen anderen Bereichen mit eingeschränkter Zugangsberechtigung ist die Anwendung der 
+Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+als alleinige Schutzvorkehrung für den Basisschutz nicht zulässig. 
+729.410.3.5.101 
+Wenn in Bedienungs- und Instandhaltungsgängen ungeschützte aktive Teile nur auf einer Seite angeordnet 
+sind (siehe Bild 729.1), müssen folgende Mindestabstände eingehalten werden: 
+a) 
+Breite des Gangs zwischen der Wand und aktiven Teilen 
+900 mm 
+b) 
+freier Durchgang vor Steuer- oder Bedienelementen usw. 
+700 mm 
+c) 
+Höhe von aktiven Teilen über dem Fußboden 
+2 500 mm 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 708/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 2 
+ 
+Maße in mm. 
+ANMERKUNG 
+Die Höhe von 2 500 mm über dem Boden als Mindestabstand zu aktiven Teilen gilt nur für die 
+Bedienungs- und Instandhaltungsgänge, in denen Personen stehen oder gehen können. 
+Bild 729.1 – Bedienungs- und Instandhaltungsgänge in Räumen, wenn ungeschützte aktive Teile nur 
+auf einer Seite angeordnet sind 
+729.410.3.5.102 
+Wenn in Bedienungs- und Instandhaltungsgängen ungeschützte aktive Teile auf beiden Seiten angeordnet 
+sind (siehe Bild 729.2), müssen folgende Mindestabstände eingehalten werden: 
+a) 
+Breite des Gangs zwischen aktiven Teilen 
+1 300 mm 
+b) 
+Mindestabstand zwischen Bedienelementen und aktiven Teilen auf der 
+gegenüberliegenden Seite des Ganges 
+1 100 mm 
+c) 
+Mindestbreite des freien Durchgangs zwischen gegenüberliegenden Steuer- 
+oder Bedienelementen, Leistungsschaltern in Trennstellung usw. 
+900 mm 
+d) 
+Höhe von aktiven Teilen über dem Fußboden 
+2 500 mm 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 709/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 3 
+ 
+Maße in mm. 
+ANMERKUNG 
+Die Höhe von 2 500 mm über dem Boden als der Mindestabstand zu aktiven Teilen gilt nur für die 
+Bedienungs- und Instandhaltungsgänge, in denen Personen stehen oder gehen können. 
+Bild 729.2 – Bedienungs- und Instandhaltungsgänge, wenn in Räumen  
+ungeschützte aktive Teile auf beiden Seiten angeordnet sind 
+729.5 
+Auswahl und Installation elektrischer Betriebsmittel 
+729.51 
+Allgemeine Bestimmungen 
+729.513 
+Zugänglichkeit 
+729.513.102 
+Anforderungen an Bedienungs- und Instandhaltungsgänge 
+Die Breite von Bedienungs- und Instandhaltungsgängen und Zugangsbereichen muss für angemessenes 
+Arbeiten, für den Zugang zum Bedienen, für den Zugang und das Verlassen in Notfällen sowie für den 
+Transport von elektrischen Betriebsmitteln geeignet sein. 
+Die Breite von Bedienungs- und Instandhaltungsgängen muss das Öffnen von Türen oder Schwenkrahmen 
+um mindestens 90° ermöglichen (siehe auch Anhang 729.A Unterabschnitt 729.A.1). 
+729.513.102.1  
+Schutz durch Abdeckungen oder Umhüllungen als Schutzvorkehrung 
+Wenn die Schutzvorkehrung Schutz durch Abdeckungen oder Umhüllungen gemäß Teil 4-41 angewandt 
+wird, müssen folgende Mindestabstände eingehalten werden (siehe Bild 729.3): 
+a) 
+Breite 
+von 
+Bedienungs- 
+und 
+Instandhaltungsgängen 
+zwischen 
+gegenüberliegenden Steuer- oder Bedienelementen, Leistungsschaltern in 
+Trennstellung usw. sowie zwischen solchen Elementen und der Wand 
+600 mm 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 710/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 4 
+b) 
+Breite von Bedienungs- und Instandhaltungsgängen zwischen Abdeckungen 
+oder Umhüllungen und gegenüberliegenden Abdeckungen oder Umhüllungen 
+sowie Abdeckungen oder Umhüllungen und der Wand 
+700 mm 
+c) 
+Höhe der Deckenverkleidung über dem Fußboden 
+ 
+2 000 mm 
+d) 
+Höhe der ungeschützten aktiven Teile über dem Fußboden (nur in 
+abgeschlossenen elektrischen Betriebsstätten zulässig) 
+2 500 mm 
+ANMERKUNG 1  
+Dort, wo zusätzlicher Bewegungsraum für Arbeiten benötigt wird, zB bei speziellen 
+Schaltgeräten oder Schaltgerätekombinationen, können größere Abstände erforderlich sein. 
+ 
+Maße in mm. 
+Bild 729.3 – Bedienungs- und Instandhaltungsgänge in Räumen mit  
+Schutz durch Abdeckungen oder Umhüllungen als Schutzvorkehrung 
+ANMERKUNG 2  
+Die oben genannten Abstände gelten, nachdem alle Teile der Deckenverkleidung montiert sind 
+und die Verkleidung geschlossen ist und sich die Leistungsschalter in Trennstellung befinden. 
+729.513.102.2  
+Abgeschlossene elektrische Betriebsstätten mit Schutz durch Hindernisse als 
+Schutzvorkehrung 
+Wenn die Schutzvorkehrung Schutz durch Hindernisse gemäß Teil 4-41, angewandt wird, müssen folgende 
+Mindestabstände eingehalten werden (siehe Bild 729.4): 
+a) 
+Breite von Bedienungs- und Instandhaltungsgängen zwischen Hindernissen 
+und Steuer- oder Bedienelementen, Leistungsschaltern in Trennstellung usw. 
+oder Hindernissen und der Wand oder Steuer- oder Bedienelementen, 
+Leistungsschaltern in Trennstellung usw und der Wand 
+700 mm 
+b) 
+Höhe der Deckenverkleidung über dem Fußboden 
+ 
+2 000 mm 
+c) 
+Höhe der ungeschützten aktiven Teile über dem Fußboden 
+2 500 mm 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 711/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 5 
+ 
+Maße in mm. 
+Bild 729.4 – Bedienungs- und Instandhaltungsgänge in Räumen mit  
+Schutz durch Hindernisse als Schutzvorkehrung 
+ANMERKUNG 
+Die oben genannten Abstände gelten, nachdem alle Teile der Deckenverkleidung montiert sind und die 
+Verkleidung geschlossen ist und sich die Leistungsschalter in Trennstellung befinden. 
+729.513.102.3  
+Zugang zu Bedienungs- und Instandhaltungsgängen 
+Bedienungs- und Instandhaltungsgänge, die länger als 10 m sind, müssen von beiden Seiten zugänglich 
+sein. 
+ANMERKUNG 1  
+Dies kann erreicht werden durch das Aufstellen der elektrischen Betriebsmittel mit einem 
+Mindestabstand von 700 mm zu den Stirnwänden (siehe Bild 729.5) oder, wenn notwendig, durch eine weitere 
+Zugangstür in der gegenüberliegenden Stirnwand. 
+Bedienungs- und Instandhaltungsgänge in Bereichen, die länger als 20 m sind, müssen von beiden Seiten 
+durch Türen zugänglich sein. 
+ANMERKUNG 2  
+Bei Bedienungs- und Instandhaltungsgängen, die länger als 6 m sind, wird die Zugänglichkeit 
+von beiden Seiten empfohlen. 
+ANMERKUNG AT 
+Bei beidseitigem Zugang müssen beide Fluchtrichtungen berücksichtigt werden. 
+Türen zu den Bedienungs- und Instandhaltungsgängen müssen sich nach außen (in Fluchtrichtung) öffnen 
+lassen (siehe Bild 729.5) und müssen folgende Mindestabmessung haben: 
+– 
+Breite: 
+700 mm; 
+– 
+Höhe: 
+2 000 mm. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 712/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 6 
+ 
+Bild 729.5 – Beispiele für die Anordnung von Türen für den Zugang zu  
+Bedienungs- und Instandhaltungsgängen 
+729.56 
+Einrichtungen für Sicherheitszwecke 
+729.560.9 
+Allgemeine Anforderungen für Sicherheitsbeleuchtungsanlagen 
+Füge hinzu: 
+In abgeschlossenen elektrischen Betriebsstätten kann es, in Abhängigkeit der Größe der Betriebsstätte, 
+erforderlich sein, eine Notbeleuchtung zu errichten oder oragnisatorische Maßnahmen zu treffen. 
+ANMERKUNG AT 
+Anforderungen an eine Sicherheitsbeleuchtung in Arbeitsstätten siehe Arbeitsstättenverordnung. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 713/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 7 
+Anhang 729.A 
+(normativ) 
+ 
+Zusätzliche Anforderungen für  
+Bedienungs- und Instandhaltungsgänge 
+729.A.1 
+Verlassen im Gefahrenfall 
+Um ein leichtes Verlassen im Gefahrenfall zu ermöglichen, müssen sich die Türen aller Einrichtungen 
+innerhalb der Betriebsstätte in Bewegungsrichtung (Fluchtrichtung) schließen lassen oder sich so weit öffnen 
+lassen, dass die absolute Mindestdurchgangsbreite von 500 mm nicht unterschritten wird. In Bedienungs- 
+und Instandhaltungsgängen müssen sich die Türen aller Einrichtungen und schwenkbarer Baugruppenträger 
+um mindestens 90° öffnen lassen (siehe Bilder 729.A.1). 
+ANMERKUNG 
+Die Bilder 729.A.1, 729.A.2 und 729.A.3 zeigen die Mindestbreite von Bedienungs- und 
+Instandhaltungsgängen und Mindestabstände. 
+ 
+Legende 
+* 
+Mindestabstand von 600 mm zwischen der Wand und dem Leistungsschalter in Trennstellung. 
+ 
+1 
+Leistungsschalter in Trennstellung 
+2 
+Bedienelemente (zB zur Steuerung oder für elektrische Betriebsmittel) 
+Bild 729.A.1 – Mindestgangbreite für das Verlassen im Gefahrenfall – Fall 1 
+Bei Türen, die in geöffneter Position arretiert werden können, oder bei Leistungsschaltern oder elektrischen 
+Betriebsmitteln, die zu Wartungszwecken komplett herausgezogen werden können (Position: vollständig 
+herausgezogen), muss eine Mindestdurchgangsbreite von 500 mm zwischen der Türkante oder der Kante 
+von Leistungsschaltern/Betriebsmitteln/Abdeckungen und der gegenüberliegenden Seite des Bedienungs- 
+oder Instandhaltungsgangs eingehalten werden (siehe Bilder 729 A.2 und 729.A.3). 
+ANMERKUNG 
+Mindestabstand für Leistungsschalter in vollständig herausgezogener Position, siehe Bild 729.A.3. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 714/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 8 
+ 
+Legende 
+1 
+ausgeklappter Schwenkrahmen 
+Bild 729.A.2 – Mindestabstand für das Verlassen im Gefahrenfall – Fall 2 
+ 
+ 
+Legende 
+* 
+Bei Bedienungs- und Instandhaltungsgängen muss eine Mindestdurchgangsbreite von 500 mm zwischen 
+der Wand und dem Leistungsschalter, der vollständig herausgezogen ist, oder der Tür in arretierter 
+Stellung verbleiben. 
+ 
+1 
+Vollständig herausgezogener Leistungsschalter 
+2 
+Tür in arretierter Stellung 
+Bild 729.A.3 – Mindestgangbreite für das Verlassen im Gefahrenfall – Fall 3 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 715/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 9 
+Anhang 729.B 
+(informativ) 
+ 
+Zusätzliche Hinweise zu den Anforderungen 
+für elektrische Betriebsstätten 
+729.B.1 
+Lüftung und Kühlung 
+Elektrische Betriebsstätten sollten 
+– 
+mit einer Entlüftung nach außen (natürliche oder mit Gebläse), oder 
+– 
+mit einer Klimaanlage 
+ausgestattet sein. 
+Soweit erforderlich, sollten Klimaanlagen zur Aufrechterhaltung einer geeigneten Umgebungstemperatur für 
+die elektrischen Einrichtungen eingesetzt werden. 
+ANMERKUNG 
+Schalt- und Steuergeräte von Verteilern und Batterien sind von den Herstellern für bestimmte 
+Umgebungstemperaturbereiche ausgelegt. 
+Für elektrische Betriebsstätten im Freien müssen die äußeren Einflüsse (klimatische Bedingungen) beachtet 
+werden. 
+729.B.2 
+Beschaffenheit und Beleuchtung 
+Bedienungs- und Instandhaltungsgänge und Zugangsbereiche sollten einen festen und ebenen Fußboden 
+und eine angemessene Beleuchtung haben (siehe auch 729.560.9). 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 716/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 10 
+Nationale Ergänzung 729.NE 
+(normativ) 
+ 
+Zusätzliche Anforderungen an abgeschlossene 
+elektrische Betriebsstätten 
+Folgende Anforderungen gelten zusätzlich zu den Anforderungen von Teil 7-729 für abgeschlossene 
+elektrische Betriebsstätten. Die Nummerierung der Abschnitte dieser nationalen Ergänzung entspricht der 
+Nummerierung von Teil 7-729. 
+729.NE.1  Anwendungsbereich 
+Diese nationale Ergänzung gilt für die Planung und Errichtung von elektrischen Anlagen und Anlagenteilen in 
+begehbaren abgeschlossenen elektrischen Betriebsstätten in Ergänzung zu den allgemeinen Anforderungen 
+von Teil 729. 
+ANMERKUNG AT 
+Mit Ausnahme von 729.NE.41.101 und 729.NE.421.3 gelten die nachfolgenden Anforderungen 
+nicht für Hochspannungsanlagen. 
+729.NE.31  
+Zweck, Stromversorgung und Aufbau der Anlage 
+729.NE.31.101  
+Anordnung von elektrischen Betriebsmitteln 
+Steckdosen, Leuchten und zugehörige Schalter sowie andere elektrische Betriebsmittel für allgemeine 
+Zwecke sind so anzubringen, dass bei ihrer Nutzung und Instandhaltung eine Berührung aktiver Anlagenteile 
+zuverlässig verhindert ist. 
+Bei Anordnung von Betätigungselementen in der Nähe von aktiven Teilen sind die Anforderungen gemäß 
+ÖVE/ÖNORM EN 50274 zu berücksichtigen. 
+729.NE.31.102  
+Beleuchtungsstromkreise 
+Beleuchtungsstromkreise müssen in Bezug auf Überstromschutz und Schutz gegen elektrischen Schlag über 
+eigene Stromkreise versorgt werden, wenn deren Ausfall zu einer Gefährdung führen kann. 
+729.NE.31.103  
+Andere Einrichtungen 
+In abgeschlossenen elektrischen Betriebsstätten sollten sich keine nicht-elektrischen Einrichtungen wie zB 
+Sanitäranlagen, Wasserleitungen, Abwasserleitungen befinden. 
+729.NE.4  Schutzmaßnahmen und Schutzvorkehrungen 
+729.NE.41  
+Schutz gegen elektrischen Schlag 
+729.NE.41.101  
+Kombination von Hochspannungs- und Niederspannungsanlagen 
+Hochspannungsanlagen dürfen mit Niederspannungsanlagen zusammen in einer abgeschlossenen 
+elektrischen Betriebsstätte errichtet werden, wenn folgende Bedingungen erfüllt sind: 
+1) 
+Bei einem gemeinsamen Kabelboden, der sowohl die Elektroinstallation des Niederspannungsbereichs 
+als auch die des Hochspannungsbereichs enthält, ist auf der Niederspannungsseite im Kabelboden ein 
+Schutz gegen das Hineingreifen in den Hochspannungsbereich vorzusehen, wenn sonst ein Eindringen 
+in die Gefahrenzone möglich wäre. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 717/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 11 
+ 
+ANMERKUNG AT Im Hochspannungsbereich kommt das Eindringen in die Gefahrenzone (ÖVE/ÖNORM 
+EN 50110-1:2014 Tabelle 101) dem direkten Berühren gleich. Das gilt auch für das Berühren von Hochspannungs-
+kabeln, sofern diese keinen vor Ort geerdeten Metallmantel oder -schirm aufweisen. 
+2) 
+Der Basisschutz (Schutz gegen direktes Berühren) der Hochspannungsanlage, zB Hochspannungs-
+transformator, ist gemäß ÖVE/ÖNORM EN 61936-1:2015 Abschnitt 8.2 auszuführen. 
+729.NE.Anhang 41.B 
+ 
+Hindernisse und Anordnung außerhalb des Handbereichs 
+729.NE.41.B.2 
+Hindernisse 
+Hindernisse sind zuverlässig zu befestigen und müssen gegen Verformung ausreichend widerstandsfähig 
+sein. Hindernisse aus nichtleitfähigen Werkstoffen dürfen ohne Schlüssel oder Werkzeug entfernbar sein. 
+ANMERKUNG AT 
+Als widerstandsfähig gegen Verformung kann angesehen werden, wenn bei 500 N die 
+Durchbiegung an Hindernissen 20 mm beträgt. 
+Schutzleisten, Geländer und nichtleitende Ketten und Seile sind in einer Höhe von 1 100 mm bis 1 300 mm 
+über der Zugangsebene anzubringen. Der Abstand zwischen festen Hindernissen und aktiven Teilen muss 
+mindestens 500 mm (gemäß ÖVE/ÖNORM EN 50110-1:2014 Tabelle 102) betragen. 
+Bei Verwendung von Ketten und Seilen muss die maximale Auslenkung beachtet werden. 
+Abgeschlossene elektrische Betriebsstätten sind in geeigneter Weise (zB Wände, Zäune) gegen andere 
+Bereiche abzugrenzen.  
+An den Zugängen ist das Warnzeichen W012 „Warnung vor elektrischer Spannung“ gemäß ÖNORM 
+EN ISO 7010 anzubringen. An äußeren Umzäunungen ist das Warnzeichen in ausreichender Anzahl zu 
+wiederholen. 
+ANMERKUNG AT 
+Das betrifft zB alle Zugänge zu Räumen oder Bereichen, Masten und Türmen. 
+Zeichen, Schilder und Hinweise müssen dauerhaft und korrosionsbeständig ausgeführt sein. 
+729.NE.42  
+Schutz gegen thermische Einflüsse 
+729.NE.421 Schutz gegen Brände, verursacht durch elektrische Betriebsmittel 
+729.NE.421.3 Schutz bei Störlichtbögen 
+Abgeschlossene elektrische Betriebsstätten sind so zu errichten, dass Personen infolge auftretender 
+Störlichtbögen nicht gefährdet werden. 
+ANMERKUNG 1 AT 
+Siehe auch OVE TR 61641. 
+Abdeckplatten von Kabelböden dürfen durch Druckbeanspruchung infolge von Störlichtbögen nicht zu einer 
+Gefährdung führen (zB Versperren des Fluchtweges, Verletzung durch fliegende Teile). Dies gilt auch für den 
+Fall, wenn aus Niederspannungsanlagen und -verteilern der Druck von Störlichtbögen in den 
+Kabelzwischenboden abgeleitet wird. Die Verwendung von Gitterrosten als Abdeckung ist nicht zulässig. 
+ANMERKUNG 2 AT 
+Dieses kann durch störlichtbogensichere Schaltanlagen, zB durch Abschottung zum Bediener 
+mit gleichzeitigen Druckausgleichsmöglichkeiten oder durch entsprechende Raumgestaltung, zB Ableitung des Druckes 
+und heißer Gase nach oben, unten oder nach außen, erreicht werden. 
+Besteht die abgeschlossene elektrische Betriebsstätte aus einer fabrikfertigen Station gemäß ÖVE/ÖNORM 
+EN 62271-202 oder einem ähnlichen frei aufstellbaren Gebäude, so ist sicherzustellen, dass im Fall eines 
+Druckanstiegs durch einen Störlichtbogen keine Gebäudeteile wegfliegen bzw. sich keine Türen oder andere 
+Zugangsteile öffnen können. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 718/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-729 – Seite 12 
+Im Fall von gemeinsamen elektrischen Betriebsstätten mit Anlagen über 1 kV gelten die Anforderungen für 
+den Schutz bei Störlichtbogen gemäß ÖVE/ÖNORM EN 61936-1:2015 Abschnitt 8.5. 
+729.NE.5  Auswahl und Installation elektrischer Betriebsmittel 
+729.NE.51 
+Allgemeine Bestimmungen 
+UV-empfindliche Materialien dürfen dem einfallenden Tageslicht nicht ausgesetzt sein. 
+729.NE.512 
+Betriebsbedingungen und äußere Einflüsse 
+729.NE.512.2  
+Äußere Einflüsse 
+729.NE.512.2.101 
+ 
+Sonnenstrahlung (AN) und ultraviolette Strahlung 
+Wenn erhebliche Sonneneinwirkung (AN2) oder ultraviolette Strahlung zu erwarten ist, müssen geeignete 
+Betriebsmittel ausgewählt und errichtet werden oder es ist ein entsprechender Schutz gegen diese 
+Sonneneinwirkung vorzusehen. Für Betriebsmittel, welche ionisierender Strahlung ausgesetzt sind, können 
+besondere Vorkehrungen notwendig sein. 
+729.NE.513 
+Zugänglichkeit 
+729.NE.513.101 Transport/Demontage 
+Wenn abgeschlossene elektrische Betriebsstätten zum Transport vorgesehen sind, müssen die Angaben des 
+Herstellers berücksichtigt werden (Gewicht, Abmessungen, maximale Beschleunigungswerte etc). Beim 
+Transportieren sind nur geeignete Hilfsmittel (zB Anschlagmittel) zu verwenden. 
+Für Großkomponenten der elektrischen Ausrüstung, die innerhalb der abgeschlossenen elektrischen 
+Betriebsstätte aufgebaut sind und zu Instandhaltungszwecken ausgebaut werden müssen, sind 
+entsprechend dem Gewicht und der Größe geeignete Transportwege und Öffnungen (zB für einen 
+Kraneinsatz) vorzusehen. 
+729.NE.7  Räume und Anlagen besonderer Art 
+729.NE.7.729 Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit eingeschränkter 
+Zugangsberechtigung 
+Der Zugang zu abgeschlossenen elektrischen Betriebsstätten darf nur durch verschließbare Türen möglich 
+sein. Zugangstüren müssen: 
+– 
+nach außen (in Fluchtrichtung) aufschlagen; 
+– 
+von innen ohne Schlüssel jederzeit zu öffnen sein; 
+ 
+ANMERKUNG 1 AT 
+Die Anforderungen können entfallen, wenn die Tür aufgrund der Größe der elektrischen 
+Betriebsstätte während der Bedienung oder Instandhaltung geöffnet bleibt. 
+– 
+ein Sicherheitsschloss enthalten. 
+Bei Türen zwischen verschiedenen Räumen einer abgeschlossenen elektrischen Betriebsstätte sind 
+Schlösser grundsätzlich nicht erforderlich. 
+Fenster müssen gegen Einstieg gesichert sein. 
+ANMERKUNG 2 AT 
+Die Anforderung ist erfüllt, wenn zB die Fenster vergittert sind oder die Unterkante des Fensters 
+mindestes 1,8 m über der Zugangsebene ist oder das Gebäude mit einer mindestens 1,8 m hohen Abgrenzung umgeben 
+ist. 
+ANMERKUNG 3 AT 
+Die Anforderung gilt nicht, wenn die abgeschlossenen elektrischen Betriebsstätten sich in einem 
+umschlossenen Betriebsbereich oder gesichertem Gelände befinden. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 719/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-730 – Seite 1 
+Teil 7-730  
+Elektrischer Landanschluss für Fahrzeuge der Binnenschifffahrt 
+730.1 
+Anwendungsbereich 
+Dieser Teil gilt für die elektrische Anlage des landseitigen Teils (ortsfesten Teils) von Landanschlüssen in 
+Häfen oder an Liegeplätzen für Fahrzeuge der Binnenschifffahrt für gewerbliche Zwecke und Zwecke der 
+öffentlichen Verwaltung. 
+Dieser Teil gilt für ein- und dreiphasige Anlagen mit einer Nennspannung AC 400/230 V, 50 Hz. 
+Zusätzliche Anforderungen, die sich nicht auf elektrische Sicherheit beziehen, sind in ÖNORM EN 15869-1 
+(Allgemeine Anforderungen) und ÖNORM EN 15869-2 (Stromversorgungsstation) enthalten. 
+Dieser Teil gilt nicht für die Errichtung des bordseitigen Teils des Landanschlusses von Fahrzeugen der 
+Binnenschifffahrt einschließlich deren Landanschlussleitung. Zusätzliche Anforderungen dafür siehe ÖNORM 
+EN 15869-3. 
+Für elektrische Landanschlüsse mit einer Stromstärke über 125 A, wie sie zB für Fahrgastschiffe mit 
+Hotelbetrieb in Betracht kommen, siehe ergänzend ÖNORM EN 16840. Dabei werden auch Anforderungen 
+bei erforderlichen Übergabestationen beschrieben. 
+ANMERKUNG 1.AT 
+Anforderungen an Landanschlüsse für Wassersportfahrzeuge (Sportboote) und Hausboote 
+siehe Teil 7-709. 
+ANMERKUNG 2.AT 
+Beispielbilder für eine Stromversorgungsstation für Fahrzeuge der Binnenschifffahrt siehe 
+Anhang 730.A. 
+730.3 
+Bestimmungen allgemeiner Merkmale 
+730.31 
+Zweck, Stromversorgung und Aufbau  
+730.312 
+Leiterkonfiguration und Erdung der Systeme 
+730.312.2 
+Systeme nach Art der Erdverbindungen (Netzsysteme) 
+Füge hinzu: 
+ANMERKUNG 
+In Übereinstimmung mit der EU-Richtlinie 2008/59/EU sind für Binnenschiffe die folgenden Wechsel-
+strom-Bordnetzsysteme erlaubt: TN-S, TT, IT. 
+730.313 
+Stromversorgungen 
+730.313.1 
+Allgemeines 
+730.313.1.101  
+Nennspannung 
+Die Nennspannung (Versorgung von einer Trafostation) der Stromversorgungsstation muss dreiphasig  
+AC 400 V, 50 Hz sein. 
+ANMERKUNG 1.AT 
+Einen Übersichtsplan eines elektrischen Landanschlusses siehe Bild 730.001.AT und ÖNORM 
+EN 15869-1. Einen Übersichtsschaltplan einer Stromversorgungsstation mit einer Landanschlusseinheit siehe ÖNORM 
+EN 15869-2. 
+ANMERKUNG 2.AT 
+Ein Beispiel für Stromversorgungen siehe Anhang 730.A. 
+ANMKERUNG 3.AT 
+Gemäß ÖNORM EN 15869-1 ist ein elektrischer Landanschluss eine elektrische Anlage zur 
+Versorgung von Fahrzeugen der Binnenschifffahrt mit elektrischer Energie in Häfen und an Liegestellen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 720/758 =====
+OVE E 8101:2019-01-01 
+Teil 7-730 – Seite 2 
+ 
+Legende 
+1 
+Stromversorgungsstation 
+2 
+Bedienungsanleitung 
+3 
+Landanschlusseinheit 
+4 
+Landanschlussleitung 
+5 
+Bordeinspeiseeinheit  
+6 
+Fahrzeug der Binnenschifffahrt 
+Bild 730.001.AT – Übersichtsplan eines elektrischen Landanschlusses  
+[Quelle: ÖNORM EN 15869-1:2018 Bild 1] 
+730.313.1.102  
+Galvanische Trennung 
+ANMERKUNG AT 
+Wenn für den Landanschluss ein fest installierter Trenntransformator verwendet wird, um 
+galvanische Ströme zwischen dem Schiffskörper und den metallenen Teilen der Landseite zu verhindern, muss dieser 
+gemäß ÖVE/ÖNORM EN 61558-2-4 ausgeführt werden. 
+Der Schutzleiter der Versorgung zum Trenntransformator darf nicht mit der Erdungsklemme der Steckdose, 
+die das Fahrtzeug der Binnenschifffahrt versorgt, verbunden werden. 
+730.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+730.41 
+Schutz gegen elektrischen Schlag 
+730.410.3 
+Allgemeine Anforderungen 
+730.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des 
+Handbereichs gemäß Teil 4-41 Anhang 41.B dürfen nicht angewendet werden. 
+730.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung) und Schutz durch 
+erdfreien örtlichen Schutzpotentialausgleich gemäß Teil 4-41 Anhang 41.C dürfen nicht angewendet werden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

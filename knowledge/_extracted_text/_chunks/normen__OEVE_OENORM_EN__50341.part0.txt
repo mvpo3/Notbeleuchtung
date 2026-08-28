@@ -1,0 +1,2772 @@
+
+
+===== PAGE 1/273 =====
+ 
+ÖVE/ÖNORM 
+ 
+EN 50341 
+Ausgabe: 2002-09-01 
+ 
+Normengruppen 330 und E 
+ 
+Ident (IDT) mit  EN 50341-1:2001 und 
+ 
+EN 50341-2:2001 (eingearbeitet) und 
+ 
+EN 50341-3-1:2001 (eingearbeitet) 
+ 
+Zusammen mit ÖVE/ÖNORM E 8111:2002-09 
+Ersatz für ÖVE-L 11/1979, ÖVE-L 11a/1980, 
+ÖVE-L 11b/1982, ÖVE-L 11c/1983, ÖVE-L 11d/1986, 
+ÖVE-L 11e:1997-11 und ÖVE/ÖNORM E 8111/A6:1999-12 
+ 
+ICS  29.240.20 
+Freileitungen über AC 45 kV 
+Teil 1: Allgemeine Anforderungen – Gemeinsame 
+Festlegungen 
+Teil 2: Index der Nationalen Normativen Festlegungen (NNA) 
+ 
+(eingearbeitet) 
+Teil 3: Nationale Normative Festlegungen (NNA) für 
+Österreich (eingearbeitet) 
+ 
+Overhead electrical lines exceeding AC 45 kV  
+Part 1: General requirements – Common specifications 
+Part 2: Index of National Normative Aspects (incorporated) 
+Part 3-1: National Normative Aspects (NNA) for Austria (incorporated) 
+ 
+Lignes électriques aériennes dépassant AC 45 kV  
+Partie 1: Règles générales – Spécifications communes 
+Partie 2: Liste des Aspects Normatifs Nationaux (incorporé) 
+Partie 3-1: Aspects Normatifs Nationaux pour l’Autriche (incorporé) 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+Die ÖVE/ÖNORM EN 50341 besteht aus 
+• 
+dem nationalen Deckblatt sowie 
+• 
+der offiziellen deutschsprachigen Fassung der EN 50341-1:2001, in die die 
+offiziellen deutschsprachigen Fassungen EN 50341-2:2001 und  
+EN 50341-3-1:2001 eingearbeitet sind. 
+ 
+Fortsetzung 
+ÖVE/ÖNORM EN 50341 Seiten 2 und 3 und 
+EN 50341 Seiten 1 bis 269 
+Fach(normen)ausschuss 
+FA/FNA L 
+Starkstromfreileitungen und 
+Verlegung von Starkstromkabeln 
+ 
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2002. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 73 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+1 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 2/273 =====
+Seite 2 
+ÖVE/ÖNORM EN 50341 
+Nationales Vorwort 
+ 
+Diese Europäische Norm EN 50341:2001 hat sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK gemäß ETG 1992 als auch den einer ÖNORM gemäß NG 1971. Bei ihrer Anwendung ist dieses 
+Nationale Vorwort zu berücksichtigen. 
+ 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des Ausgabedatums 
+und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die Verweisung auf die jeweils 
+neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug genommene 
+Ausgabe des Standards. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den jeweils 
+geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum Zeitpunkt 
+der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch 
+die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu be-
+rücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Europäische Normen (EN) werden gemäß den „Gemeinsamen Regeln“ von CEN/CENELEC durch Veröffentlichung eines 
+identen 
+Titels 
+und 
+Textes 
+in 
+das 
+Gesamtwerk 
+der 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORMEN übernommen, wobei der Nummerierung der Zusatz ÖVE/ÖNORM bzw. ÖNORM 
+vorangestellt wird. Die nachstehende Tabelle listet jene ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK/ÖNORMEN auf, die in Titel, Nummerierung und/oder Inhalt (nicht ident) von den zitierten 
+internationalen bzw. europäischen Standards abweichen.  
+ 
+ 
+Europäische Norm  
+ 
+Internationale Norm  
+ÖSTERREICHISCHE BESTIMMUNGEN 
+FÜR DIE ELEKTROTECHNIK bzw. 
+ÖNORM 
+HD 637 S1:1999 
+- 
+ÖVE/ÖNORM E 8383:2001-03-01 
+HD 474 S1:1987  
+IEC 60120:1984 
+ÖNORM E 4125:1988-04 (teilweise ident) 
+ 
+ 
+Erläuterung zum Ersatzvermerk 
+ 
+Gemäß Vorwort zur EN wird das späteste Datum, zu dem nationale Normen, die der vorliegenden Norm entgegenstehen, 
+zurückgezogen werden müssen, mit dow (date of withdrawal) festgelegt. Bis zum Zurückziehungsdatum (dow) 2004-01-01 
+ist somit die Anwendung folgender Norm(en) noch erlaubt: 
+ 
+ÖVE-L 11/1979, 
+ÖVE-L 11a/1980, 
+ÖVE-L 11b/1982, 
+ÖVE-L 11c/1983, 
+ÖVE-L 11d/1986, 
+ÖVE-L 11e:1997-11, 
+ÖVE/ÖNORM E 8111/A6:1999-12-01. 
+ 
+Mit Inkrafttreten der ÖVE/ÖNORM EN 50341 (dow 2004-01-01) und der ÖVE/ÖNORM E 8111 wird die ÖVE-L 11 als Regel 
+der Technik abgelöst. Der Rechtsstatus der genannten Normen ist den jeweils geltenden Verordnungen zum 
+Elektrotechnikgesetz zu entnehmen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+2 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 3/273 =====
+Seite 3 
+ÖVE/ÖNORM EN 50341 
+ 
+Hinweise  
+ 
+Die EN 50341 ist in 3 Teile gegliedert. Diese Struktur ist erforderlich, da in den einzelnen CENELEC-Mitgliedsländern 
+unterschiedliche Errichtungsvorschriften für Freileitungen existieren und eine vollständige Harmonisierung nicht zu erreichen 
+war. 
+Teil 1 enthält allgemeine Bemessungs- und Konstruktionsanforderungen für Freileitungen über 45 kV und gilt für alle 
+CENELEC-Mitgliedsländer. 
+Teil 2 enthält eine Übersicht über die in den einzelnen Ländern geltenden, im Teil 3 enthaltenen, nationalen normativen 
+Festlegungen (NNA, National Normative Aspects). Der Teil 2 wurde in dieser ÖVE/ÖNORM eingearbeitet und findet 
+sich im Vorwort der EN. 
+Teil 3 enthält nationale normative Festlegungen (NNA) in Ergänzung zu Teil 1. Der Teil 3-x dieser Norm gilt nur im 
+jeweiligen, durch die letzte Ziffer (x) gekennzeichneten Land. Der österreichische Teil trägt die Bezeichnung 
+EN 50341-3-1. 
+  
+Hinsichtlich einer besseren Lesbarkeit wurde der nationale Teil 3-1 in dieser ÖVE/ÖNORM in den Teil 1 eingearbeitet. Die 
+NNA sind durch einen Längsstrich am Seitenrand markiert.  
+Um Missverständnissen vorzubeugen, sind jene Passagen von Teil 1, die in Österreich durch die NNA ersetzt werden, 
+durchgestrichen. 
+ 
+  
+Anmerkung zu Abschnitt 5.4 „innere und äußere Abstände“ 
+ 
+Das Österreichische Nationalkomitee (NC) hat umfangreiche Vergleichsberechnungen angestellt, um die Situation 
+entsprechend ÖVE-L 11 mit jenen nach dem „3rd (und somit auch dem 4th) pre-draft“  zu EN 50341 zu vergleichen. Es 
+wurden größtenteils übereinstimmende Schutzabstände festgestellt, in einigen Fällen jedoch unerklärbare Abweichungen um 
+bis zu 3 m Unterschied (für äußere Abstände). Nachdem der Grund für derartige Differenzen im Moment unklar ist und 
+nachdem auch Sicherheitsaspekte zu berücksichtigen sind, hat das Österreichische NC im gegenwärtigen Stand die 
+unveränderten Schutzabstände aus der ÖVE-L 11 in die NNA übernommen. Aus den gleichen Gründen werden auch die 
+internen Abstände beibehalten. Weitere Vergleichsberechnungen werden ausgearbeitet. Der erwähnte Vergleich kann im 
+Dokument CLC/TC11(AT)10 - Dezember 98 gefunden werden. 
+ 
+ 
+    
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+3 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 4/273 =====
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+4 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 5/273 =====
+EUROPÄISCHE NORM 
+EN 50341 
+EUROPEAN STANDARD 
+Teile 1, 2 und 3-1 
+NORME EUROPÉENNE 
+(Konsolidierte Fassung) 
+ 
+Oktober 2001 
+ 
+CENELEC 
+Europäisches Komitee für Elektrotechnische Normung 
+European Committee for Electrotechnical Standardization 
+Comité Européen de Normalisation Electrotechnique 
+ 
+Zentralsekretariat: rue de Stassart 35, B - 1050 Brüssel 
+ 
+ 
+© 2001 CENELEC -  Alle Rechte der Verwertung, gleich in welcher Form und in welchem Verfahren, 
+ 
+sind weltweit den Mitgliedern von CENELEC vorbehalten. 
+Ref. Nr. EN 50341-1:2001 D 
+ 
+ICS 29.240.20 
+ 
+Deutsche Fassung 
+ 
+Freileitungen über AC 45 kV 
+Teil 1: Allgemeine Anforderungen – Gemeinsame Festlegungen 
+Teil 2: Index der Nationalen Normativen Festlegungen (NNA) 
+Teil 3-1: Nationale Normative Festlegungen (NNA) für Österreich  
+ 
+Overhead electrical lines exceeding  
+AC 45 kV 
+Part 1: General requirements –  
+Common specifications 
+Part 2: Index of National Normative 
+Aspects 
+Part 3-1: National Normative Aspects 
+(NNA) for Austria 
+ 
+Lignes électriques aériennes dépassant 
+AC 45 kV 
+Partie 1: Règles générales – 
+Spécifications communes 
+Partie 2: Liste des Aspects Normatifs 
+Nationaux 
+Partie 3-1: Aspects Normatifs Nationaux 
+pour l’Autriche 
+ 
+Diese Europäische Norm wurde von CENELEC am 2001-01-01 angenommen. Die CENELEC-Mitglieder 
+sind gehalten, die CEN/CENELEC-Geschäftsordnung zu erfüllen, in der die Bedingungen festgelegt sind, 
+unter denen dieser Europäische Norm ohne jede Änderung der Status einer nationalen Norm zu geben ist. 
+ 
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren bibliographischen Angaben sind 
+beim Zentralsekretariat oder bei jedem CENELEC-Mitglied auf Anfrage erhältlich. 
+ 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Französisch). Eine 
+Fassung in einer anderen Sprache, die von einem CENELEC-Mitglied in eigener Verantwortung durch 
+Übersetzung in seine Landessprache gemacht und dem Zentralsekretariat mitgeteilt worden ist, hat den 
+gleichen Status wie die offiziellen Fassungen. 
+ 
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, Dänemark, Deutsch-
+land, Finnland, Frankreich, Griechenland, Irland, Island, Italien, Luxemburg, Malta, Niederlande, Norwe-
+gen, Österreich, Portugal, Schweden, Schweiz, Spanien, Tschechische Republik und dem Vereinigten Kö-
+nigreich. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+5 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 6/273 =====
+Seite 2 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Vorwort zu EN 50341-1 
+ 
+Diese Europäische Norm wurde vom Technischen Komitee CENELEC TC 11 "Freileitungen für über 1 kV AC 
+(1,5 kV DC)" ausgearbeitet.  
+ 
+Der Text des Entwurfs wurde dem Einstufigen Annahmeverfahren unterworfen und von CENELEC am 
+2001-01-01 als EN 50341-1 angenommen. 
+ 
+Nachstehende Daten wurden festgelegt: 
+ 
+ 
+- spätestes Datum, zu dem die EN auf nationaler Ebene 
+ 
+ 
+durch Veröffentlichung einer identischen nationalen Norm 
+ 
+ 
+oder durch Anerkennung übernommen werden muss 
+ 
+(dop) 
+2002-05-01 
+ 
+ 
+- spätestes Datum, zu dem nationale Normen, die der EN 
+ 
+ 
+entgegenstehen, zurückgezogen werden müssen 
+ 
+(dow) 
+2004-01-01 
+ 
+Anhänge, die als „normativ“ bezeichnet sind, gehören zum Norminhalt. 
+Anhänge, die als „informativ“ bezeichnet sind, enthalten nur Informationen. 
+ 
+In dieser Norm sind die Anhänge E, G, J und K normativ und die Anhänge A, B, C, D, F, H, L, M, N, O, P, Q 
+und R informativ. 
+ 
+In Bezug auf Freileitungsmasten darf der Konstrukteur gegebenenfalls auf prEN 1993-7-1, zurzeit 
+ENV 1993-3-1, erarbeitet von CEN/TC 250, verweisen.  
+ 
+____________ 
+ 
+ 
+Vorwort zu EN 50341-2 
+ 
+Diese Europäische Norm wurde vom Technischen Komitee CENELEC TC 11 "Freileitungen für über 1 kV AC 
+(1,5 kV DC)" ausgearbeitet.  
+ 
+Der Text des Entwurfs wurde dem Einstufigen Annahmeverfahren unterworfen und von CENELEC am 
+2001-01-01 als EN 50341-2 angenommen. 
+ 
+Nachstehende Daten wurden festgelegt: 
+ 
+ 
+- spätestes Datum, zu dem die EN auf nationaler Ebene 
+ 
+ 
+durch Veröffentlichung einer identischen nationalen Norm 
+ 
+ 
+oder durch Anerkennung übernommen werden muss 
+ 
+(dop) 
+2002-05-01 
+ 
+ 
+- spätestes Datum, zu dem nationale Normen, die der EN 
+ 
+ 
+entgegenstehen, zurückgezogen werden müssen 
+ 
+(dow) 
+2004-01-01 
+ 
+____________ 
+ 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+6 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 7/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 3 
+ 
+Text der EN 50341-2: 
+ 
+Land 
+Ursprung 
+Verweisung 
+Bezeichnung 
+ 
+ 
+AT 
+Österreichisches Nationale Komitee 
+EN 50341-3-1 
+BE 
+Belgisches Nationale Komitee 
+EN 50341-3-2 
+CH 
+Schweizerisches Nationale Komitee 
+EN 50341-3-3 
+DE 
+Deutsches Nationale Komitee 
+EN 50341-3-4 
+DK 
+Dänisches Nationale Komitee 
+EN 50341-3-5 
+ES 
+Spanisches Nationale Komitee 
+EN 50341-3-6 
+FI 
+Finnisches Nationale Komitee 
+EN 50341-3-7 
+FR 
+Französisches Nationale Komitee 
+EN 50341-3-8 
+GB 
+Britisches Nationale Komitee 
+EN 50341-3-9 
+GR 
+Griechisches Nationale Komitee 
+EN 50341-3-10 
+IE 
+Irisches Nationale Komitee 
+EN 50341-3-11 
+IS 
+Isländisches Nationale Komitee 
+EN 50341-3-12 
+IT 
+Italienisches Nationale Komitee 
+EN 50341-3-13 
+LU 
+Luxemburgisches Nationale Komitee 
+Kein NNA 
+NL 
+Niederländisches Nationale Komitee 
+EN 50341-3-15 
+NO 
+Norwegisches Nationale Komitee 
+EN 50341-3-16 
+PT 
+Portugiesisches Nationale Komitee 
+EN 50341-3-17 
+SE 
+Schwedisches Nationale Komitee 
+EN 50341-3-18 
+CZ 
+Tschechisches Nationale Komitee 
+EN 50341-3-19 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+7 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 8/273 =====
+Seite 4 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Vorwort zu EN 50341-3 
+ 
+Die verschiedenen Teile der Europäischen Norm EN 50341-3 wurden von den jeweiligen CENELEC Natio-
+nal Komitees in Zusammenarbeit mit dem Technischen Komitee CENELEC TC 11 "Freileitungen für über 
+1 kV AC (1,5 kV DC)" ausgearbeitet.  
+ 
+Der Text der Entwürfe wurde dem Einstufigen Annahmeverfahren unterworfen und von CENELEC am 
+2001-01-01 als EN 50341-3 angenommen. 
+ 
+Nachstehende Daten wurden festgelegt: 
+ 
+ 
+- spätestes Datum, zu dem die EN auf nationaler Ebene 
+ 
+ 
+durch Veröffentlichung einer identischen nationalen Norm 
+ 
+ 
+oder durch Anerkennung übernommen werden muss 
+ 
+(dop) 
+2002-05-01 
+ 
+ 
+- spätestes Datum, zu dem nationale Normen, die der EN 
+ 
+ 
+entgegenstehen, zurückgezogen werden müssen 
+ 
+(dow) 
+2004-01-01 
+ 
+____________ 
+ 
+ 
+Vorwort zu EN 50341-3-1 
+ 
+1. 
+Das Österreichische Nationalkomitee (NC) hat die folgende Adresse:  
+ 
+Österreichisches Elektrotechnisches Komitee (ÖEK) 
+im Österreichischen Verband für Elektrotechnik (ÖVE) 
+Eschenbachgasse 9, A-1010 Wien 
+Tel. +43.1.587.63.73 
+Fax +43.1.586.74.08 
+Name des zuständigen Unterkomitees: Fach(normen)ausschuss L 
+ 
+2. 
+Das Österreichische NC hat Teil 3-1 der EN 50341, in dem die österreichischen NNA angeführt sind, 
+unter eigener Verantwortung erarbeitet. Teil 3-1 hat die notwendigen Prozeduren bei CENELEC und 
+CENELEC TC 11 ordnungsgemäß durchlaufen. 
+ 
+ANMERKUNG: Der Schlussentwurf EN 50341-3-1:2000 war auf österreichischer Ebene als Entwurf 
+ÖVE/ÖNORM EN 50341-3-1:2000-08 veröffentlicht. Mit Ende der Einspruchsfrist, 2000-09-15, wurden die Än-
+derungsvorschläge bei der 82. Sitzung des Fach(normen)ausschusses L beraten. Die zugestimmten Änderun-
+gen sind in der vorliegenden Fassung des Teiles 3-1 eingearbeitet.  
+ 
+3. 
+EN 50341-3-1 ist normativ für Österreich und informativ für andere Staaten.  
+ 
+4. 
+Teil 3-1 muss in Zusammenhang mit der EN 50341-1 gesehen werden, im folgenden „Teil 1“ genannt. 
+Die mit der Vorsilbe „AT“ gekennzeichneten Abschnitte sind als Ergänzungen zu den relevanten 
+Texten des Teiles 1 anzusehen. Jede erforderliche Klärung betreffend die Anwendung des Teiles 3-1 
+in Verbindung mit dem Teil 1 soll an das Österreichische NC adressiert werden, das in Zusammenar-
+beit mit CENELEC TC 11 die erforderliche Klarstellung vornehmen wird.   
+ 
+Wenn in Teil 3-1 keine Bezüge zu besonderen Abschnitten zu finden sind, so gilt für diese Abschnitte 
+alleine Teil 1.  
+ 
+3. 
+Im Falle von “eingerahmten Werten”  wie sie im Teil 1 vorgefunden werden, sind die für Österreich 
+anzunehmenden Werte (falls angegeben) dem Teil 3-1 zu entnehmen. 
+ 
+In Projektspezifikationen dürfen “eingerahmte Werte” keinesfalls weder im Teil 1 noch im Teil 3-1 in 
+Richtung größerer Risken adaptiert werden.  
+ 
+4. 
+Das Österreichische NC erklärt in Übereinstimmung mit Abschnitt 3.1 des Teiles 1, dass Teil 3-1 den 
+„Einwirkungen, empirische Vorgangsweise“ (Abschnitt 4.3) folgt, und dass konsequenterweise der 
+Abschnitt 4.2 „Allgemeine Vorgangsweise“ in Österreich nicht angewendet werden darf.  
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+8 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 9/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 5 
+ 
+5. 
+Die nationalen Österreichischen Bestimmungen mit Bezug auf Freileitungen über 1kV (AC) sind im 
+Abschnitt 2.3 angeführt.  
+ 
+ANMERKUNG: Alle nationalen Normen, auf die in diesem Teil 3-1 Bezug genommen wird, werden durch relevante 
+europäische Normen ersetzt, sobald diese verfügbar sind, durch das Österreichische NC angenommen wurden und 
+dies dem Sekretär von CENELEC/TC 11 mitgeteilt wurde.  
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+9 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 10/273 =====
+Seite 6 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Inhalt 
+Einführung ........................................................................................................................................................17 
+1 
+Anwendungsbereich............................................................................................................................19 
+2 
+Begriffe, Symbole und Verweisungen................................................................................................19 
+2.1 
+Begriffe ...................................................................................................................................................19 
+2.2 
+Symbole..................................................................................................................................................33 
+2.3 
+Normative Verweisungen .......................................................................................................................38 
+3 
+Grundlagen für Auslegung und Bemessung ....................................................................................44 
+3.1 
+Allgemeines............................................................................................................................................44 
+3.2 
+Anforderungen........................................................................................................................................45 
+3.2.1 
+Grundlegende Anforderungen ..........................................................................................................45 
+3.2.2 
+Zuverlässigkeit von Freileitungen .....................................................................................................45 
+3.2.3 
+Anforderungen an die Betriebssicherheit..........................................................................................46 
+3.2.4 
+Anforderungen an die Personensicherheit während der Errichtung und Instandhaltung.................46 
+3.2.5 
+Abstimmung der Beanspruchbarkeit.................................................................................................47 
+3.2.6 
+Zusätzliche Betrachtungen................................................................................................................47 
+3.2.7 
+Geplante Lebensdauer......................................................................................................................47 
+3.2.8 
+Dauerhaftigkeit ..................................................................................................................................47 
+3.2.9 
+Qualitätssicherung ............................................................................................................................47 
+3.3 
+Grenzzustände.......................................................................................................................................47 
+3.3.1 
+Allgemeines.......................................................................................................................................47 
+3.3.2 
+Grenzlastzustände ............................................................................................................................48 
+3.3.3 
+Grenzzustände der Gebrauchstauglichkeit.......................................................................................48 
+3.3.4 
+Auslegung im Hinblick auf Grenzzustände .......................................................................................48 
+3.4 
+Einwirkungen..........................................................................................................................................49 
+3.4.1 
+Einteilung in Hauptklassen................................................................................................................49 
+3.4.2 
+Charakteristische Werte der Einwirkungen.......................................................................................49 
+3.4.3 
+Kombinationswerte für veränderliche Einwirkungen.........................................................................50 
+3.5 
+Werkstoffeigenschaften..........................................................................................................................50 
+3.6 
+Modellbildung für Tragwerksberechnung und Tragwerksbeanspruchbarkeit........................................51 
+3.6.1 
+Allgemeines.......................................................................................................................................51 
+3.6.2 
+Zusammenwirken zwischen Tragwerksgründungen und Boden......................................................51 
+3.7 
+Bemessungswerte und Nachweismethode............................................................................................51 
+3.7.1 
+Allgemeines.......................................................................................................................................51 
+3.7.2 
+Bemessungswerte.............................................................................................................................52 
+3.7.3 
+Grundlegende Bemessungsgleichung..............................................................................................52 
+3.7.4 
+Kombination von Einwirkungen.........................................................................................................53 
+4 
+Einwirkungen auf Freileitungen..........................................................................................................53 
+4.1 
+Einführung ..............................................................................................................................................53 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+10 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 11/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 7 
+ 
+4.2 
+Einwirkungen, allgemeine Vorgehensweise ..........................................................................................54 
+4.2.1 
+Ständige Lasten ................................................................................................................................54 
+4.2.2 
+Windlasten.........................................................................................................................................54 
+4.2.3 
+Eislasten............................................................................................................................................62 
+4.2.4 
+Gleichzeitige Wind- und Eislasten ....................................................................................................63 
+4.2.5 
+Temperatureinwirkungen ..................................................................................................................65 
+4.2.6 
+Lasten aus Errichtung und Instandhaltung .......................................................................................66 
+4.2.7 
+Lasten im Hinblick auf die Betriebssicherheit ...................................................................................66 
+4.2.8 
+Kurzschlusslasten .............................................................................................................................67 
+4.2.9 
+Andere Sonderlasten ........................................................................................................................67 
+4.2.10 
+Lastfälle.............................................................................................................................................68 
+4.2.11 
+Teilsicherheitsbeiwerte für Einwirkungen..........................................................................................71 
+4.3 
+Einwirkungen, empirische Vorgehensweise ..........................................................................................72 
+4.3.1 
+Ständige Lasten ................................................................................................................................72 
+4.3.2 
+Windlasten.........................................................................................................................................72 
+4.3.3 
+Eislasten............................................................................................................................................74 
+4.3.4 
+Gleichzeitige Wind- und Eislasten ....................................................................................................75 
+4.3.5 
+Temperatureinwirkungen ..................................................................................................................75 
+4.3.6 
+Lasten aus Errichtung und Instandhaltung .......................................................................................75 
+4.3.7 
+Lasten im Hinblick auf die Betriebssicherheit ...................................................................................76 
+4.3.8 
+Kurzschlusslasten .............................................................................................................................76 
+4.3.9 
+Andere Sonderlasten ........................................................................................................................76 
+4.3.10 
+Lastfälle.............................................................................................................................................76 
+4.3.11 
+Teilsicherheitsbeiwerte für Einwirkungen..........................................................................................82 
+5 
+Elektrische Anforderungen .................................................................................................................85 
+5.1 
+Einteilung nach Spannungen .................................................................................................................85 
+5.2 
+Ströme....................................................................................................................................................86 
+5.2.1 
+Betriebsstrom ....................................................................................................................................86 
+5.2.2 
+Kurzschlussstrom..............................................................................................................................86 
+5.3 
+Isolationskoordination.............................................................................................................................86 
+5.3.1 
+Allgemeines.......................................................................................................................................86 
+5.3.2 
+Ursprung und Einteilung der Spannungsbeanspruchung von Freileitungen und Ermittlung 
+der repräsentativen Überspannungen ..............................................................................................86 
+5.3.3 
+Bestimmung der Koordinationsstehspannung (Ucw) .........................................................................87 
+5.3.4 
+Bestimmung der erforderlichen Stehspannung (Urw)........................................................................89 
+5.3.5 
+Elektrische Abstände zum Vermeiden von Überschlägen................................................................89 
+5.4 
+Innere und äußere Abstände .................................................................................................................94 
+5.4.1 
+Einführung.........................................................................................................................................94 
+5.4.2 
+Allgemeine Überlegungen und Lastfälle ...........................................................................................94 
+5.4.3 
+Abstände im Spannfeld und am Mast...............................................................................................98 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+11 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 12/273 =====
+Seite 8 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.4.4 
+Abstände zum Boden in Gebieten außerhalb von Gebäuden, Straßen, Eisenbahnen und 
+schiffbaren Wasserwegen...............................................................................................................102 
+5.4.5 
+Abstände zu Gebäuden, Verkehrswegen, anderen Freileitungen und Erholungsflächen..............104 
+5.5 
+Auswirkungen der Korona....................................................................................................................123 
+5.5.1 
+Funkstörungen ................................................................................................................................123 
+5.5.2 
+Koronageräusche............................................................................................................................124 
+5.5.3 
+Koronaverluste ................................................................................................................................125 
+5.6 
+Elektrische und magnetische Felder....................................................................................................125 
+5.6.1 
+Elektrische und magnetische Felder unter einer Freileitung ..........................................................125 
+5.6.2 
+Induktion infolge elektrischer und magnetischer Felder .................................................................126 
+5.6.3 
+Beeinflussung von Fernmeldestromkreisen....................................................................................126 
+6 
+Erdungsanlagen .................................................................................................................................126 
+6.1 
+Zweck ...................................................................................................................................................126 
+6.2 
+Auslegung von Erdungsanlagen bei Betriebsfrequenz........................................................................127 
+6.2.1 
+Allgemeines.....................................................................................................................................127 
+6.2.2 
+Auslegung bezüglich Korrosion und mechanischer Festigkeit .......................................................127 
+6.2.3 
+Auslegung bezüglich thermischer Festigkeit ..................................................................................128 
+6.2.4 
+Auslegung bezüglich Personensicherheit.......................................................................................128 
+6.3 
+Erstellen von Erdungsanlagen .............................................................................................................133 
+6.3.1 
+Einbau von Erdern und Erdungsleitungen ......................................................................................133 
+6.3.2 
+Potentialverschleppungen...............................................................................................................133 
+6.4 
+Erdungsmaßnahmen gegen Blitzauswirkungen ..................................................................................134 
+6.5 
+Messungen für und an Erdungsanlagen ..............................................................................................134 
+6.6 
+Inspektion von Erdungsanlagen vor Ort und Dokumentation ..............................................................134 
+7 
+Stützpunkte.........................................................................................................................................134 
+7.1 
+Einführende Überlegungen zur Bemessung........................................................................................134 
+7.2 
+Werkstoffe ............................................................................................................................................134 
+7.2.1 
+Stahlwerkstoffe, Schrauben, Muttern und Unterlegscheiben, Schweißwerkstoffe.........................134 
+7.2.2 
+Kaltverformter Stahl.........................................................................................................................135 
+7.2.3 
+Anforderungen an zum Verzinken geeignete Stahlgüten ...............................................................135 
+7.2.4 
+Ankerschrauben ..............................................................................................................................135 
+7.2.5 
+Beton und Bewehrungsstahl ...........................................................................................................135 
+7.2.6 
+Holz .................................................................................................................................................135 
+7.2.7 
+Werkstoffe für Abspannungen ........................................................................................................135 
+7.2.8 
+Andere Werkstoffe ..........................................................................................................................135 
+7.3 
+Stahlgittermaste ...................................................................................................................................135 
+7.3.1 
+Allgemeines.....................................................................................................................................135 
+7.3.2 
+Grundlagen für Bemessung und Konstruktion (Abschnitt 2) ..........................................................136 
+7.3.3 
+Werkstoffe (Abschnitt 3)..................................................................................................................136 
+7.3.4 
+Grenzzustände der Gebrauchstauglichkeit (Abschnitt 4) (siehe auch NNA)..................................136 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+12 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 13/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 9 
+ 
+7.3.5 
+Grenzlastzustände der Tragfähigkeit (Abschnitt 5).........................................................................137 
+7.3.6 
+Verbindungen (Abschnitt 6).............................................................................................................138 
+7.3.7 
+Fertigung und Montage (Abschnitt 7)..............................................................................................139 
+7.3.8 
+Versuchsgestützte Bemessung (Abschnitt 8) .................................................................................139 
+7.4 
+Einstielige Stahlmaste..........................................................................................................................139 
+7.4.1 
+Allgemeines.....................................................................................................................................139 
+7.4.2 
+Grundlagen für die Bemessung und Konstruktion (Abschnitt 2).....................................................140 
+7.4.3 
+Werkstoffe (Abschnitt 3)..................................................................................................................140 
+7.4.4 
+Grenzzustände der Gebrauchstauglichkeit (Abschnitt 4) (siehe auch NNA)..................................140 
+7.4.5 
+Grenzzustände der Beanspruchbarkeit (Abschnitt 5).....................................................................140 
+7.4.6 
+Verbindungen (Abschnitt 6).............................................................................................................141 
+7.4.7 
+Fertigung und Montage (Abschnitt 7)..............................................................................................142 
+7.4.8 
+Versuchsgestützte Bemessung (Abschnitt 8) .................................................................................143 
+7.5 
+Holzmaste.............................................................................................................................................143 
+7.5.1 
+Allgemeines.....................................................................................................................................143 
+7.5.2 
+Grundlagen für Auslegung und Berechnung ..................................................................................143 
+7.5.3 
+Werkstoffe .......................................................................................................................................143 
+7.5.4 
+Grenzzustand der Gebrauchstauglichkeit (siehe auch NNA).........................................................144 
+7.5.5 
+Grenzzustand der Beanspruchbarkeit ............................................................................................144 
+7.5.6 
+Beanspruchbarkeit von Verbindungen............................................................................................145 
+7.5.7 
+Versuchsgestützte Bemessung (Abschnitt 8) .................................................................................145 
+7.6 
+Betonmaste ..........................................................................................................................................145 
+7.6.1 
+Allgemeines.....................................................................................................................................145 
+7.6.2 
+Grundlagen für Berechnung und Konstruktion ...............................................................................145 
+7.6.3 
+Werkstoffe .......................................................................................................................................146 
+7.6.4 
+Grenzzustand der Gebrauchstauglichkeit (siehe auch NNA).........................................................146 
+7.6.5 
+Grenzlastzustände ..........................................................................................................................146 
+7.6.6 
+Versuchsgestützte Bemessung ......................................................................................................146 
+7.7 
+Abgespannte Tragwerke ......................................................................................................................147 
+7.7.1 
+Allgemeines.....................................................................................................................................147 
+7.7.2 
+Grundlagen der Bemessung und Konstruktion...............................................................................147 
+7.7.3 
+Werkstoffe .......................................................................................................................................147 
+7.7.4 
+Grenzzustand der Gebrauchstauglichkeit.......................................................................................147 
+7.7.5 
+Grenzlastzustände ..........................................................................................................................147 
+7.7.6 
+Einzelheiten der Ankerausführung..................................................................................................148 
+7.8 
+Andere Tragwerke................................................................................................................................149 
+7.9 
+Korrosionsschutz und Endbehandlung ................................................................................................149 
+7.9.1 
+Allgemeines.....................................................................................................................................149 
+7.9.2 
+Verzinkung ......................................................................................................................................149 
+7.9.3 
+Metallspritzverzinkung.....................................................................................................................149 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+13 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 14/273 =====
+Seite 10 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+7.9.4 
+Beschichtung verzinkter Teile in der Werkstatt (Duplex-System)...................................................149 
+7.9.5 
+Farbliche Endbehandlung ...............................................................................................................150 
+7.9.6 
+Verwendung von wetterfesten Stählen ...........................................................................................150 
+7.9.7 
+Schutz von Holzmasten ..................................................................................................................150 
+7.10 Instandhaltungseinrichtungen ..............................................................................................................150 
+7.10.1 
+Besteigen ........................................................................................................................................150 
+7.10.2 
+Instandhaltbarkeit............................................................................................................................151 
+7.10.3 
+Anforderungen an die Personensicherheit .....................................................................................151 
+7.11 Belastungsprüfungen ...........................................................................................................................151 
+7.12 Zusammenbau und Errichtung.............................................................................................................151 
+8 
+Gründungen........................................................................................................................................151 
+8.1 
+Einführung ............................................................................................................................................151 
+8.2 
+Allgemeine Anforderungen...................................................................................................................152 
+8.3 
+Baugrunderkundungen.........................................................................................................................153 
+8.4 
+Auf die Gründungen einwirkende Lasten.............................................................................................153 
+8.5 
+Geotechnische Bemessung .................................................................................................................154 
+8.5.1 
+Allgemeines.....................................................................................................................................154 
+8.5.2 
+Geotechnische Bemessung durch Berechnung .............................................................................154 
+8.5.3 
+Geotechnische Bemessung mit praktisch bewährten Methoden....................................................158 
+8.6 
+Belastungsprüfungen ...........................................................................................................................158 
+8.7 
+Bautechnische Bemessung und Ausführung.......................................................................................159 
+8.8 
+Herstellung und Einbringung................................................................................................................162 
+9 
+Leiter und Erdseile mit oder ohne Telekommunikations-Komponenten .....................................163 
+9.1 
+Einführung ............................................................................................................................................163 
+9.2 
+Leiter mit Aluminium als Leitmaterial ...................................................................................................163 
+9.2.1 
+Kennwerte und Maße......................................................................................................................163 
+9.2.2 
+Elektrische Anforderungen..............................................................................................................164 
+9.2.3 
+Leiterbetriebstemperaturen und Eigenschaften des Fettes............................................................164 
+9.2.4 
+Mechanische Anforderungen ..........................................................................................................164 
+9.2.5 
+Korrosionsschutz.............................................................................................................................165 
+9.2.6 
+Prüfungsanforderungen ..................................................................................................................165 
+9.3 
+Leiter aus Stahldrähten ........................................................................................................................165 
+9.3.1 
+Kennwerte und Maße......................................................................................................................165 
+9.3.2 
+Elektrische Anforderungen..............................................................................................................165 
+9.3.3 
+Leiterbetriebstemperaturen und Kennwerte des Fettes..................................................................165 
+9.3.4 
+Mechanische Anforderungen ..........................................................................................................166 
+9.3.5 
+Korrosionsschutz.............................................................................................................................166 
+9.3.6 
+Prüfanforderungen ..........................................................................................................................166 
+9.4 
+Leiter aus Kupferdrähten......................................................................................................................166 
+9.5 
+Leiter und Erdseile mit optischen Fasern für Telekommunikationskreise ...........................................166 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+14 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 15/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 11 
+ 
+9.5.1 
+Kennwerte und Maße......................................................................................................................166 
+9.5.2 
+Elektrische Anforderungen..............................................................................................................167 
+9.5.3 
+Leiterbetriebstemperatur.................................................................................................................167 
+9.5.4 
+Mechanische Anforderungen ..........................................................................................................167 
+9.5.5 
+Korrosionsschutz.............................................................................................................................167 
+9.5.6 
+Prüfanforderungen ..........................................................................................................................167 
+9.6 
+Allgemeine Anforderungen...................................................................................................................170 
+9.6.1 
+Vermeiden von Beschädigungen ....................................................................................................170 
+9.6.2 
+Teilsicherheitsbeiwert für Leiter ......................................................................................................171 
+9.7 
+Prüfberichte und -zertifikate .................................................................................................................171 
+9.8 
+Auswahl, Lieferung und Verlegung von Leitern ...................................................................................171 
+10 
+Isolatoren ............................................................................................................................................171 
+10.1 Allgemeines..........................................................................................................................................171 
+10.2 Genormte elektrische Anforderungen ..................................................................................................172 
+10.3 Anforderungen an die Funkstörfestigkeit und Koronaaussetzspannung.............................................172 
+10.4 Anforderungen an das Verhalten unter Verschmutzung......................................................................172 
+10.5 Anforderungen an das Leistungslichtbogenverhalten..........................................................................173 
+10.6 Anforderungen an das Geräuschverhalten..........................................................................................173 
+10.7 Mechanische Anforderungen ...............................................................................................................173 
+10.8 Anforderungen an die Dauerhaftigkeit .................................................................................................174 
+10.8.1 
+Allgemeine Anforderungen an die Dauerhaftigkeit von Isolatoren .................................................174 
+10.8.2 
+Schutz gegen Vandalismus.............................................................................................................174 
+10.8.3 
+Schutz der Eisenwerkstoffe.............................................................................................................174 
+10.8.4 
+Zusätzlicher Korrosionsschutz........................................................................................................174 
+10.9 Werkstoffwahl und -festlegung.............................................................................................................174 
+10.10 Kennwerte und Maße von Isolatoren ...................................................................................................175 
+10.11 Anforderungen an Typprüfungen .........................................................................................................175 
+10.11.1 Genormte Typprüfungen.................................................................................................................175 
+10.11.2 Wahlfreie Typprüfungen..................................................................................................................175 
+10.12 Anforderungen an die Stichprobenprüfung..........................................................................................176 
+10.13 Anforderungen an die Stückprüfung ....................................................................................................176 
+10.14 Zusammenfassung der Prüfanforderungen .........................................................................................176 
+10.15 Prüfberichte und -zertifikate .................................................................................................................176 
+10.16 Auswahl, Lieferung und Einbau von Isolatoren....................................................................................176 
+11 
+Freileitungszubehör – Freileitungsarmaturen.................................................................................177 
+11.1 Allgemeines..........................................................................................................................................177 
+11.2 Elektrische Anforderungen...................................................................................................................177 
+11.2.1 
+Für alle Armaturen geltende Anforderungen...................................................................................177 
+11.2.2 
+Für stromfeste Armaturen geltende Anforderungen .......................................................................177 
+11.3 Anforderungen an Funkstörspannungen und Koronaaussetzspannungen .........................................177 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+15 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 16/273 =====
+Seite 12 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+11.4 Magnetische Eigenschaften .................................................................................................................177 
+11.5 Anforderungen hinsichtlich Kurzschluss- und Lichtbogenfestigkeit.....................................................177 
+11.6 Mechanische Anforderungen ...............................................................................................................178 
+11.7 Anforderungen an die Dauerbeständigkeit ..........................................................................................179 
+11.8 Werkstoffauswahl und -spezifikation....................................................................................................180 
+11.9 Kennwerte und Maße von Armaturen ..................................................................................................180 
+11.10 Anforderungen an Typprüfungen .........................................................................................................180 
+11.10.1 Genormte Typprüfungen.................................................................................................................180 
+11.10.2 Wahlfreie Typprüfungen..................................................................................................................180 
+11.11 Anforderungen an Stichprobenprüfungen............................................................................................180 
+11.12 Anforderungen an Stückprüfungen ......................................................................................................180 
+11.13 Prüfberichte und Zertifikate ..................................................................................................................181 
+11.14 Auswahl, Lieferung und Einbau von Armaturen...................................................................................181 
+12 
+Qualitätssicherung, Prüfungen und Abnahmen .............................................................................181 
+12.1 Qualitätssicherung................................................................................................................................181 
+12.2 Prüfungen und Abnahmen ...................................................................................................................182 
+Mitführung von Fernmeldeleitungen an Tragwerken von Hochspannungsfreileitungen.....................183 
+Anhang A (informativ)  Abstimmung der Beanspruchbarkeit .................................................................184 
+A.1 
+Empfohlene Auslegungskriterien .........................................................................................................184 
+A.2 
+Vorschlag für Abstimmung der Beanspruchbarkeit..............................................................................184 
+Anhang B (informativ)  Extreme Windgeschwindigkeiten und Eislasten...............................................186 
+B.1 
+Definition von im Anhang B verwendeten Symbolen...........................................................................186 
+B.2 
+Auswertung von extremen Windgeschwindigkeiten.............................................................................186 
+B.3 
+Definition der extremen Eislast ............................................................................................................187 
+B.4 
+Statistische Eisparameter.....................................................................................................................188 
+B.4.1 Grundeislast .........................................................................................................................................188 
+B.4.2 Größte jährliche Eislast Im ....................................................................................................................188 
+B.4.3 Größte Eislast während mehrerer Jahre Imax........................................................................................188 
+B.4.4 Mittelwert Imm der größten jährlichen Eislasten ....................................................................................188 
+B.4.5 Variationskoeffizient vl für größte jährliche Eislasten...........................................................................188 
+B.5 
+Auswertung der größten Eislasten, die aus unterschiedlichen Datenquellen stammen......................188 
+B.5.1 Datenquellen für die statistische Auswertung......................................................................................188 
+B.5.2 Jährliche Größtwerte der Eislasten während einer Periode von wenigstens  10 Jahren sind 
+verfügbar ..............................................................................................................................................188 
+B.5.3 Nur die größte Eislast Imax ist für eine bestimmte Anzahl von Jahren bekannt....................................189 
+B.5.4 Ermittlung der größten jährlichen Eislast durch Auswertung von meteorologischen Daten................189 
+B.6 
+Gleichzeitige Wind- und Eisbelastung..................................................................................................189 
+B.6.1 Größte Eislast IL gleichzeitig mit einer mäßigen Windgeschwindigkeit VIH .........................................189 
+B.6.2 Hohe Windgeschwindigkeit VIL gleichzeitig mit mäßiger Eislast IH ......................................................189 
+Anhang C (informativ)  Sonderlasten.........................................................................................................191 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+16 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 17/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 13 
+ 
+C.1 
+Definition von im Anhang C verwendeten Symbole.............................................................................191 
+C.2 
+Lasten infolge von Kurzschlüssen........................................................................................................191 
+C.3 
+Lawinen, rutschender Schnee..............................................................................................................192 
+C.4 
+Erdbeben..............................................................................................................................................192 
+Anhang D (informativ)  Statistische Daten für die Gumbel-Extremwertverteilungen ...........................193 
+D.1 
+Definition der in diesem Anhang verwendeten Symbole .....................................................................193 
+D.2 
+Gumbelverteilung .................................................................................................................................193 
+D.3 
+Beispiel für die Verwendung von C1 und C2 .........................................................................................197 
+D.4 
+Berechnung von C1 und C2...................................................................................................................197 
+Anhang E (normativ)  Elektrische Anforderungen....................................................................................201 
+E.1 
+Definition der in diesem Anhang verwendeten Symbole .....................................................................201 
+E.2 
+Isolationskoordination...........................................................................................................................202 
+E.2.1 Entwicklung theoretischer Formeln für die Berechnung elektrischer Abstände ..................................202 
+E.2.2 Erforderliche Stehspannung in Luft Urw................................................................................................202 
+E.2.3 Zu berücksichtigende Überspannungen ..............................................................................................205 
+E.2.4 Berechnungsformeln ............................................................................................................................206 
+E.2.5 Höhenfaktor..........................................................................................................................................207 
+Anhang F (informativ)  Elektrische Anforderungen..................................................................................209 
+F.1 
+Definition der in diesem Anhang verwendeten Symbole .....................................................................209 
+F.2 
+Isolationskoordination. Beispiele für die Berechnung von Del, Dpp und D50Hz für 
+unterschiedliche Netzspannungen.......................................................................................................209 
+F.2.1 Bereich I: 90-kV-Stromkreis ausgerüstet mit Isolatorketten aus 6 Kappenisolatoren .........................209 
+F.2.2 Bereich I: 90-kV-Stromkreis ausgerüstet mit Isolatorketten aus 9 Kappenisolatoren .........................211 
+F.2.3 Bereich II: 400-kV-Stromkreis ..............................................................................................................212 
+Anhang G (normativ)  Erdungsanlagen .....................................................................................................214 
+G.1 
+Definition der in diesem Anhang verwendeten Symbole .....................................................................214 
+G.2 
+Mindestmaße von Erdern und Schutzüberzügen, um mechanische Festigkeit und 
+Korrosionsbeständigkeit sicherzustellen..............................................................................................215 
+G.3 
+Berechnung der Stromtragfähigkeit .....................................................................................................216 
+G.4 
+Berührungsspannung und Körperstrom...............................................................................................219 
+G.4.1 Zusammenhang zwischen Berührungsspannung und Körperstrom....................................................219 
+G.4.2 Berechnung mit Berücksichtigung zusätzlicher Widerstände..............................................................220 
+G.5 
+Messung von Berührungsspannungen ................................................................................................221 
+G.6 
+Reduktionsfaktor durch Erdseile auf Freileitungen ..............................................................................222 
+G.6.1 Allgemeines..........................................................................................................................................222 
+G.6.2 Werte für den Reduktionsfaktor von Freileitungen...............................................................................222 
+Anhang H (informativ)  Erdungsanlagen ...................................................................................................223 
+H.1 
+Definition der in diesem Anhang verwendeten Symbole .....................................................................223 
+H.2 
+Grundlagen für den Nachweis..............................................................................................................223 
+H.2.1 Spezifischer Erdwiderstand..................................................................................................................223 
+H.2.2 Erdausbreitungswiderstand..................................................................................................................224 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+17 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 18/273 =====
+Seite 14 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+H.3 
+Einbau von Erdern und Erdungsleitern ................................................................................................226 
+H.3.1 Einbau von Erdern................................................................................................................................226 
+H.3.1.1 Oberflächenerder ............................................................................................................................226 
+H.3.1.2 Lotrecht oder schräg eingetriebene Tiefenerder.............................................................................226 
+H.3.1.3 Verbindung der Erder......................................................................................................................226 
+H.3.2 Einbau von Erdungsleitern ...................................................................................................................226 
+H.3.2.1 Verlegen von Erdungsleitern...........................................................................................................226 
+H.3.2.2 Verbinden von Erdungsleiter...........................................................................................................227 
+H.4 
+Messungen für und an Erdungsanlagen ..............................................................................................227 
+H.4.1 Messung der spezifischen Erdwiderstände .........................................................................................227 
+H.4.2 Messung von Ausbreitungswiderständen und Erdungsimpedanzen...................................................227 
+H.4.3 Bestimmung der Erdungsspannung.....................................................................................................228 
+Anhang J (normativ)  Stahlgittermaste ......................................................................................................229 
+J.1 
+Definition von im Anhang J verwendeten Symbolen............................................................................229 
+J.2 
+Einstufung in Querschnittsklassen (Abschnitt 5.3)...............................................................................230 
+J.2.1 Grundlagen...........................................................................................................................................230 
+J.2.2 Einstufung.............................................................................................................................................230 
+J.2.3 
+Wirksame Querschnittswerte für druckbeanspruchte Stäbe (Abschnitt 5.3.5)...............................230 
+J.3 
+Querschnitt (Abschnitt 5.4.2)................................................................................................................231 
+J.3.1 Bruttoquerschnitt (Abschnitt 5.4.2.1)....................................................................................................231 
+J.3.2 Nettofläche (Abschnitt 5.4.2.2).............................................................................................................231 
+J.4 
+Nachweis der Querschnittsbeanspruchbarkeit ....................................................................................232 
+J.4.1 Zugbelastung........................................................................................................................................232 
+J.4.2 Druckbelastung (Abschnitt 5.4.4).........................................................................................................232 
+J.4.3 Biegemoment (Abschnitt 5.4.5)............................................................................................................233 
+J.4.4 Biegung und axiale Kräfte (Abschnitt 5.4.8.3)......................................................................................233 
+J.5 
+Nachweis der Knickbeanspruchbarkeit von Stäben (Abschnitt 5.5) ....................................................233 
+J.5.1 Druckbeanspruchte Stäbe (Abschnitt 5.5.1) ........................................................................................233 
+J.5.1.1 
+Biegeknicken...................................................................................................................................233 
+J.5.1.2 
+Biegedrillknicken .............................................................................................................................234 
+J.5.2 
+Biegedrillknicken von Biegeträgern (Abschnitt 5.5.2) .....................................................................234 
+J.5.3 
+Biegung und axiale Zugkraft (Abschnitt 5.5.3)................................................................................234 
+J.5.4 
+Biegung und axiale Druckkraft (Abschnitt 5.5.4).............................................................................234 
+J.6 
+Knicklänge von Stäben.........................................................................................................................235 
+J.6.1 Allgemeines..........................................................................................................................................235 
+J.6.2 Eckstiele und Gurte..............................................................................................................................235 
+J.6.2.1 
+Allgemeines.....................................................................................................................................235 
+J.6.2.2 
+Einfache Stäbe................................................................................................................................235 
+J.6.3 Ausfachungsarten ................................................................................................................................235 
+J.6.3.1 
+Allgemeines.....................................................................................................................................235 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+18 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 19/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 15 
+ 
+J.6.3.2 
+Einfache Diagonalen.......................................................................................................................236 
+J.6.3.3 
+Gekreuzte Diagonalen ....................................................................................................................237 
+J.6.3.4 
+Gekreuzte Diagonalen mit Aussteifungsstäben..............................................................................238 
+J.6.3.5 
+Unterbrochene, gekreuzte Diagonalen mit durchgehendem Horizontalstab am 
+Schnittpunkt (siehe Bild J.6)............................................................................................................238 
+J.6.3.6 
+Mehrfache Gitterdiagonalen............................................................................................................239 
+J.6.3.7 
+Gekreuzte Diagonalen mit diagonalen Eckverbindungen...............................................................239 
+J.6.3.8 
+K-Ausfachung (siehe Bild J.5 (h und i)) ..........................................................................................239 
+J.6.4 Zusammengesetzte Stäbe ...................................................................................................................240 
+J.6.4.1 
+Allgemeines.....................................................................................................................................240 
+J.6.4.2 
+Einzelheiten.....................................................................................................................................240 
+J.6.4.3 
+Bemessung .....................................................................................................................................240 
+J.7 
+Zusätzliche Empfehlungen für Ausfachungsformen ............................................................................241 
+J.7.1 Waagrechte Randstäbe mit waagrechten Querverbänden (Bild J.9) ..................................................241 
+J.7.2 Waagrechte Randstäbe ohne waagrechten Querverband ..................................................................242 
+J.7.3 Geknicktes K-Fachwerk .......................................................................................................................243 
+J.7.4 
+Portalrahmen...................................................................................................................................243 
+J.8 
+Berechnung der wirksamen Schlankheit 
+eff
+λ
+(durch Belastungsprüfungen unterstützte 
+Tragwerksbemessung).........................................................................................................................244 
+J.9 
+Wahl 
+des 
+Knickfalles 
+für 
+Winkelprofile 
+(durch 
+Belastungsprüfungen 
+gestützte  
+Tragwerksberechnung) ........................................................................................................................244 
+J.9.1 Einfachwinkel .......................................................................................................................................244 
+J.9.2 Mehrteilige Stäbe/Gitterstäbe...............................................................................................................245 
+J.10 Sekundärstäbe (Null-Stäbe).................................................................................................................246 
+J.11 Schraubverbindungen ..........................................................................................................................246 
+Anhang K (normativ)  Einstielige Stahlmaste............................................................................................248 
+K.1 
+Definitionen von im Anhang K verwendeten Symbolen.......................................................................248 
+K.2 
+Einstufung in Querschnittsklassen (Abschnitt 5.3)...............................................................................249 
+K.3 
+Wirksame Querschnittswerte für Querschnitte der Klasse 4 (Abschnitt 5.3.5)....................................250 
+K.4 
+Beanspruchbarkeit von kreisförmigen Querschnitten ohne Öffnungen mit  überwiegendem 
+Biegemoment .......................................................................................................................................250 
+K.5 
+Beanspruchbarkeit von polygonalen Querschnitten ohne Öffnungen mit  überwiegendem 
+Biegemoment .......................................................................................................................................251 
+K.5.1 Querschnitte der Klasse 3 (Abschnitt 5.4.8.2) .....................................................................................251 
+K.5.2 Querschnitte der Klasse 4 (Abschnitt 5.4.8.3) .....................................................................................251 
+K.6 
+Bemessung von Ankerschrauben ........................................................................................................252 
+Anhang L (informativ)  Bemessungsanforderungen für Tragwerke und Gründungen ........................256 
+L.1 
+Das Tragwerk betreffende Anforderungen:..........................................................................................256 
+L.2 
+Anforderungen an die Anordnung: Arten der Stützpunkte und ihr Verwendungszweck .....................256 
+L.3 
+Befestigung für Leiter und Erdseile......................................................................................................258 
+L.4 
+Stahlkonstruktion in der Gründung.......................................................................................................258 
+L.5 
+Einrichtungen für Errichtung und Instandhaltung.................................................................................258 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+19 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 20/273 =====
+Seite 16 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+L.6 
+Einschränkungen bezüglich Massen und Maße ..................................................................................258 
+Anhang M (informativ)  Typische Werte für geotechnische Parameter von Böden und Felsen..........259 
+M.1 
+Allgemeines..........................................................................................................................................259 
+M.2 
+Definitionen...........................................................................................................................................259 
+M.3 
+Einheiten...............................................................................................................................................259 
+Anhang N (informativ)  Leiter und Erdseile ...............................................................................................262 
+N.1 
+Festlegungen für Leiter und Erdseile ...................................................................................................262 
+N.1.1 Bedingungen, die die Leiter- und Erdseilwahl und -bemessung beeinflussen ....................................262 
+N.1.2 Betriebliche Einflüsse...........................................................................................................................262 
+N.1.3 Anforderungen hinsichtlich Instandhaltung...........................................................................................262 
+N.1.4 Umweltparameter.................................................................................................................................262 
+N.2 
+Leiter- und Erdseilauswahl...................................................................................................................262 
+N.3 
+Verpackung und Lieferung von Leitern und Erdseilen.........................................................................263 
+N.4 
+Vorkehrungen während des Verlegens von Leitern und Erdseilen .....................................................263 
+Anhang P (informativ)  Prüfungen an Freileitungsisolatoren und Isolatorketten aus 
+Porzellan- und Glasisolierwerkstoffen.............................................................................................264 
+Anhang Q (informativ)  Isolatoren ..............................................................................................................266 
+Q.1 
+Spezifikation von Isolatoren .................................................................................................................266 
+Q.1.1 Bedingungen, die die Isolatorspezifikation beeinflussen .....................................................................266 
+Q.1.2 Betriebliche Faktoren ...........................................................................................................................266 
+Q.1.3 Anforderungen hinsichtlich Instandhaltung...........................................................................................266 
+Q.1.4 Umweltparameter.................................................................................................................................266 
+Q.2 
+Isolatorauswahl ....................................................................................................................................267 
+Q.3 
+Verpackung und Lieferung ...................................................................................................................267 
+Q.4 
+Vorsichtsmaßnahmen während des Einbaus ......................................................................................267 
+Anhang R (informativ)  Freileitungszubehör – Freileitungsarmaturen...................................................268 
+R.1 
+Festlegung und Auswahl von Armaturen .............................................................................................268 
+R.1.1 Einflussfaktoren, die die Armaturenauslegung und -auswahl beeinflussen ........................................268 
+R.1.2 Betriebliche Einflussfaktoren................................................................................................................268 
+R.1.3 Anforderungen hinsichtlich der Instandhaltung....................................................................................268 
+R.1.4 Umwelteinflüsse ...................................................................................................................................268 
+R.2 
+Verpackung und Lieferung von Armaturen ..........................................................................................269 
+R.3 
+Vorsichtsmaßnahmen während des Einbaus von Armaturen..............................................................269 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+20 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 21/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 17 
+ 
+Einführung 
+Detaillierter Aufbau der Norm 
+Die Norm umfasst drei Teile: 
+Teil 1: 
+Allgemeine Anforderungen – Gemeinsame Festlegungen 
+Dieser Teil, der auch als Hauptteil bezeichnet wird, umfasst die für alle Länder gemeinsamen Abschnitte. 
+Diese Abschnitte wurden von Arbeitsgruppen erstellt und von CLC/TC 11 angenommen. 
+Der Hauptteil ist in englischer, französischer und deutscher Sprache verfügbar. 
+Teil 2: 
+Index der NNA (Nationale Normative Festlegungen) 
+Dieser Index umfasst die Liste aller Nationalen Normativen Festlegungen (NNA) - siehe Bezeichnung und 
+Inhalt der NNA nachfolgend unter „Teil 3: Nationale Normative Festlegungen“. 
+Der Index ist in englischer, französischer und deutscher Sprache verfügbar. 
+Teil 3: 
+Nationale Normative Festlegungen 
+Die Nationalen Normativen Festlegungen (NNA) geben die nationalen Verfahrensweisen wieder. Sie ent-
+halten im Allgemeinen A-Abweichungen, Besondere Nationale Bedingungen und Nationale Ergänzungen: 
+A-Abweichungen (A-dev): 
+A-Abweichungen werden aufgrund bestehender nationaler Gesetze oder Vorschriften notwendig, die zum 
+Zeitpunkt der Normerstellung nicht geändert werden können. 
+Es wird auf die internen CENELEC-Regeln Teil 2, Festlegung 3.1.9 verwiesen. 
+Besondere Nationale Bedingungen (snc): 
+Besondere Nationale Bedingungen sind nationale Charakteristiken oder Vorgehensweisen, die auch lang-
+fristig nicht geändert werden können, z.B. solche in Folge der klimatischen Bedingungen, des Bodenwider-
+standes usw. 
+Es wird auf die internen CENELEC-Regeln Teil 2, Festlegung 3.1.7/3.1.9 verwiesen. 
+Nationale Ergänzungen (ncpt): 
+Nationale Ergänzungen geben nationale Vorgehensweisen wieder, die weder A-Abweichungen noch Be-
+sondere Nationale Bedingungen darstellen. Im CLC/TC 11 wurde vereinbart, dass NCPT schrittweise an den 
+Hauptteil angepasst werden sollten mit dem Ziel der üblichen Struktur von europäischen Normen, die nur 
+einen Hauptteil, A-Abweichungen und Besondere Nationale Bedingungen umfassen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+21 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 22/273 =====
+Seite 18 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Die NNA werden wie folgt nummeriert: 
+AT 
+Österreich 
+EN 50341-3-1 
+BE 
+Belgien 
+EN 50341-3-2 
+CH 
+Schweiz 
+EN 50341-3-3 
+DE 
+Deutschland 
+EN 50341-3-4 
+DK 
+Dänemark 
+EN 50341-3-5 
+ES 
+Spanien 
+EN 50341-3-6 
+FI 
+Finnland 
+EN 50341-3-7 
+FR 
+Frankreich 
+EN 50341-3-8 
+GB 
+Großbritannien 
+EN 50341-3-9 
+GR 
+Griechenland 
+EN 50341-3-10 
+IE 
+Irland 
+EN 50341-3-11 
+IS 
+Island 
+EN 50341-3-12 
+IT 
+Italien 
+EN 50341-3-13 
+LU 
+Luxemburg 
+EN 50341-3-14 
+NL 
+Niederlande 
+EN 50341-3-15 
+NO 
+Norwegen 
+EN 50341-3-16 
+PT 
+Portugal 
+EN 50341-3-17 
+SE 
+Schweden 
+EN 50341-3-18 
+CZ 
+Tschechische Republik EN 50341-3-19 
+x 
+xxx 
+EN 50341-3-xx usw. 
+Sprache 
+Die NNA werden in Englisch und in der/den Landessprache(n) des entsprechenden Landes veröffentlicht. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+22 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 23/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 19 
+ 
+1 
+Anwendungsbereich 
+Diese Norm gilt für elektrische Freileitungen mit Nennspannungen über AC 45 kV und Nennfrequenzen un-
+ter 100 Hz. 
+Diese Norm legt die allgemeinen Anforderungen fest, die bei der Planung und Errichtung neuer Freileitungen 
+erfüllt werden müssen, um sicherzustellen, dass die Freileitung ihren Zweck in Bezug auf Personensicher-
+heit, Instandhaltung, Betrieb und Umweltfragen erfüllt. 
+ 
+ANMERKUNG 1: Die Anwendung dieser Norm auf bestehende Freileitung ist in jedem Land entsprechend den 
+dort geltenden nationalen normativen Festlegungen (NNA) zu regeln. 
+ 
+ANMERKUNG 2: Planung und Errichtung von Freileitungen mit kunststoffumhüllten Leitern, für die die inneren 
+und äußeren Abstände kleiner als die in dieser Norm festgelegten sein können, sind nicht inbegriffen. Alle ande-
+ren Anforderungen können auf Freileitungen mit kunststoffumhüllten Leitern angewandt werden. Falls erforder-
+lich können die NNA Anforderungen für Abstände vorgeben. 
+ 
+ANMERKUNG 3: Dieser Teil der Norm gilt für Erdseile und Leiter mit Lichtwellenleitern; er gilt jedoch nicht für 
+Einrichtungen der Telekommunikation, die an Freileitungen entweder angefügt an das Leiter-/Erdseilsystem 
+(z.B. um Leiter gewickelte Kabel...) oder als eigene, auf den Freileitungsstützpunkten verlegte Kabel, z.B. voll-
+dielektrische, selbsttragende Kabel (ADSS), geführt oder an einzelnen Freileitungsstützpunkten angebracht 
+werden. Die NNA können gegebenenfalls Anforderungen vorgeben. 
+Diese Norm gilt nicht für: 
+- 
+Freileitungen innerhalb abgeschlossener Gelände mit elektrischen Anlagen, wie in HD 637 festgelegt, 
+- 
+Oberleitungen elektrischer Bahnen. 
+ 
+(A-dev) AT.1:  Die Anmerkungen 1, 2 und 3 sind normativ in Österreich.  
+ 
+ANMERKUNG 1: Der Anwendungsumfang dieser Norm ist in der österreichischen „Elektrotechnikverordnung – 
+ETV“ festgelegt. 
+ 
+ANMERKUNG 2: Kunststoffumhüllte Freileitungen (KUF) mit verringerten internen oder externen Abständen 
+dürfen nicht verwendet werden. Für KUF-Leitungen gelten ebenfalls die Anforderungen an Schutzabstände ge-
+mäß 5.4.2.1 der NNA. 
+ 
+ANMERKUNG 3: Zusätzlich zum Text des Teiles 1 gilt:  
+Diese Bestimmungen gelten auch für Fernmeldeleitungen, die auf Tragwerken von Hochspannungsfreileitungen 
+mitgeführt werden. Sie gelten nicht für Seil- oder Kabelkonstruktionen mit integrierten Lichtwellenleitern, unbe-
+schadet ihrer Verwendung, die keine Funktion als Erd- oder Leiterseil erfüllen. Für diese Seil- oder Kabelkon-
+struktionen ist jedoch eine Regelzusatzlast gemäß 4.3.3 und eine Mindestausnahmszusatzlast von 12 N/m an-
+zunehmen.  
+Bei derartigen Seil- oder Kabelkonstruktionen mit metallischem Aufbau sind die internen Abstände nach 5.4.2.1 
+einzuhalten. 
+2 
+Begriffe, Symbole und Verweisungen 
+2.1 
+Begriffe 
+Für die Anwendung dieser europäischen Norm gelten die im Internationalen Elektrotechnischen Wörterbuch 
+IEC 60050-441, -466, -471, -601 und -604 enthaltenen Begriffe und Definitionen sowie die nachfolgenden. 
+Um ein besseres Verständnis der Definition bestimmter in dieser Norm verwendeter Begriffe zu erreichen, 
+werden einige Wörter in den Definitionen kursiv gedruckt. Definitionen dieser Begriffe sind ebenfalls in  
+diesem Abschnitt enthalten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+23 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 24/273 =====
+Seite 20 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.1 
+Einwirkung 
+a) 
+Kraft (Last), die auf ein (mechanisches) System wirkt (direkte Einwirkung) 
+ANMERKUNG: Eine Einwirkung kann ständig, veränderlich oder ausnahmsweise auftreten. 
+b) 
+aufgezwungene oder verhinderte Deformation oder aufgezwungene Beschleunigung beispielsweise 
+verursacht durch Temperaturänderungen, durch Veränderung der Feuchtigkeit, durch ungleichförmige 
+Setzung oder durch Erdbeben (indirekte Einwirkung) 
+2.1.2 
+Ausnahmeeinwirkung 
+Einwirkung von gewöhnlicherweise kurzer Dauer, deren Auftreten während der Auslegungslebensdauer im 
+hohen Maß unwahrscheinlich ist 
+ANMERKUNG: Es kann erwartet werden, dass eine Ausnahmeeinwirkung in vielen Fällen schwere Konsequen-
+zen nach sich zieht, wenn nicht besondere Maßnahmen ergriffen werden. 
+2.1.3 
+Potentialausgleichsleiter 
+Leiter, der den Potentialausgleich herstellt 
+2.1.4 
+eingerahmte Werte 
+mit        als eingerahmter Wert gekennzeichnete Größen dienen als Anhalt. Andere Werte können durch die 
+NC in den NNA festgelegt werden 
+2.1.5 
+charakteristische Beanspruchbarkeit 
+Wert der mechanischen Beanspruchbarkeit, der unter Benutzung charakteristischer Werte der Werkstoff-
+eigenschaften berechnet wird 
+Diese Werte können aus ENV 1992-1-1, ENV 1993-1-1 oder ENV 1995-1-1 entnommen werden.  
+2.1.6 
+Wert einer mechanischen Werkstoffeigenschaft 
+Wert einer Werkstoffeigenschaft, der eine vorgeschriebene Wahrscheinlichkeit dafür besitzt, dass er in einer 
+hypothetischen, unbegrenzten Prüfreihe nicht erreicht wird 
+Dieser Wert entspricht im Allgemeinen einer festgelegten Fraktile der angenommenen statistischen Vertei-
+lung der betreffenden Werkstoffeigenschaft. Ein Nennwert wird in einigen Fällen als charakteristischer Wert 
+verwendet. 
+2.1.7 
+charakteristischer Wert einer Einwirkung 
+repräsentativer Hauptwert einer Einwirkung 
+Wenn dieser charakteristische Wert auf statistischer Basis festgelegt werden kann, wird er so gewählt, dass 
+er mit einer vorgegebenen Wahrscheinlichkeit während einer „Bezugsperiode“ nicht nach der ungünstigen 
+Seite überschritten wird, wobei die geplante Lebensdauer der Anlage und die Dauer der Auslegungssituati-
+on berücksichtigt werden. 
+2.1.8 
+Schlagweite, Luftstrecke 
+Abstand zwischen zwei leitfähigen Teilen längs eines Fadens, der auf dem kürzesten Weg zwischen diesen 
+Teilen gespannt ist [IEV 441-17-31]  
+2.1.9 
+Variationskoeffizient 
+Verhältnis der Standardabweichung zum Mittelwert 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+24 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 25/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 21 
+ 
+2.1.10 
+Kombination von Einwirkungen 
+Satz von Bemessungswerten für Einwirkungen, der zum Nachweis der Tragwerkszuverlässigkeit für einen 
+Grenzzustand in einem Lastfall benützt wird 
+2.1.11 
+Kombinationsbeiwert für eine Einwirkung 
+Beiwert, der für die Bestimmung des Kombinationswertes einer Einwirkung verwendet wird 
+2.1.12 
+Kombinationswert für eine Einwirkung 
+Wert, der der Verwendung von Kombinationen von Einwirkungen zugeordnet ist und der verminderten Wahr-
+scheinlichkeit des gleichzeitigen Auftretens der ungünstigsten Werte mehrerer unabhängiger Einwirkungen 
+Rechnung trägt 
+Werte werden durch Multiplikation des charakteristischen Wertes einer Einwirkung mit dem Kombinations-
+beiwert für eine Einwirkung oder in besonderen Fällen durch direkte Bestimmung erhalten. 
+2.1.13 
+Komponente 
+eines der unterschiedlichen Teile in dem System einer elektrischen Freileitung mit einem festgelegten  
+Anwendungszweck 
+Typische Komponenten sind Stützpunkte, Gründungen, Leiter, Isolatorketten und Armaturen. 
+2.1.14 
+Leiter 
+einer oder mehrere Drähte aus Aluminium, Aluminiumlegierung, Kupfer, verzinktem oder aluminium- 
+ummanteltem Stahl oder Kombinationen hiervon, die miteinander verseilt sind und gemeinsam dem Leiten 
+des elektrischen Stromes dienen [IEV 466-01-15: Zum Führen des elektrischen Stromes geeigneter Draht 
+oder eine Kombination nicht gegeneinander isolierter Drähte] (siehe auch NNA 2.1/AT.3, Seite 30)  
+2.1.15 
+Korona 
+leuchtende Entladung infolge der Ionisation der eine Elektrode umgebenden Luft, die durch die einen  
+bestimmten kritischen Wert überschreitende Randfeldstärke verursacht wird 
+ANMERKUNG: Elektroden können Leiter, Armaturen, Zubehörteile oder Isolatoren sein. 
+2.1.16 
+Erdungsstrom 
+Strom, der über die Erdimpedanz zur Erde fließt 
+2.1.17 
+Bemessungsbeanspruchbarkeit 
+Beanspruchbarkeit eines Tragwerks, die alle Tragfähigkeitseigenschaften den entsprechenden Bemes-
+sungswerten der Werkstoffeigenschaften zuordnet 
+2.1.18 
+Auslegungssituation 
+Gruppe physikalischer Bedingungen, die einen bestimmten Zeitraum wiedergeben, während dessen die 
+Auslegung nachweist, dass die einschlägigen Grenzzustände nicht überschritten werden 
+2.1.19 
+Bemessungswert (einer Werkstoffeigenschaft) 
+Wert, der durch Teilen des charakteristischen Wertes einer Werkstoffeigenschaft mit einem Teilsicherheits-
+beiwert für die Werkstoffeigenschaft oder, unter besonderen Bedingungen, durch unmittelbare Bestimmung 
+erhalten wird 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+25 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 26/273 =====
+Seite 22 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.20 
+Bemessungswert einer Einwirkung 
+Wert, der durch Multiplizieren des charakteristischen Wertes einer Einwirkung mit dem Teilsicherheitsbei-
+wert für eine Einwirkung erhalten wird  
+2.1.21 
+Bemessungslebensdauer 
+angenommene Zeitdauer, während der ein Tragwerk  für den geplanten Zweck mit der vorgesehenen  
+Instandhaltung aber ohne die Notwendigkeit einer wesentlichen Reparatur verwendet werden kann  
+2.1.22 
+dynamische Einwirkung 
+Einwirkung, die wesentliche Beschleunigungen des Tragwerks oder von Tragwerkselementen hervorruft  
+2.1.23 
+Erde 
+Begriff für die Erde sowohl als Ort als auch für Erde als leitende Masse 
+Bodenarten sind z.B. Humus, Lehm, Sand, Kies und Steine. 
+2.1.24 
+Erder 
+Leiter, der in Erde eingebettet und leitend mit der Erde verbunden ist, oder ein Leiter, der in Beton einge-
+bettet ist, der über eine große Oberfläche in Kontakt mit der Erde steht (z.B. Fundamenterder) 
+2.1.25 
+Erdfehler 
+leitende Verbindung, die durch einen Fehler zwischen einem Außenleiter eines Hauptstromkreises und der 
+Erde oder einem geerdeten Teil verursacht wird  
+Die leitende Verbindung kann auch durch einen Lichtbogen entstehen. Erdfehler von zwei oder mehreren 
+Außenleitern des gleichen Stromkreises an unterschiedlichen Orten werden als Doppel- oder Vielfacherd-
+fehler bezeichnet. 
+2.1.26 
+Erdfehlerstrom 
+Strom, der von einem Hauptstromkreis zur Erde oder einem geerdeten Teil fließt, wenn nur ein Erdfehler-
+punkt am Fehlerort (Erdfehlerort) vorhanden ist 
+2.1.27 
+Erdungsspannung 
+Spannung zwischen einer Erdungsanlage und der Bezugserde 
+2.1.28 
+Tiefenerder 
+Erder, der im Allgemeinen lotrecht in größere Tiefe eingegraben oder eingetrieben wird 
+Dieser kann aus einem Rohr, einem runden Stab oder einem anderen Profilmaterial bestehen. 
+2.1.29 
+Erdoberflächenpotential 
+Spannung zwischen einem Punkt auf der Erdoberfläche und der Bezugserde 
+2.1.30 
+Erdung 
+Gesamtheit aller Mittel und Maßnahmen für eine ausreichend leitende Verbindung zur Erde 
+2.1.31 
+Erdungsleiter 
+Leiter, der die zu erdenden Anlagenteile mit einem Erder verbindet, soweit dieser außerhalb des Bodens 
+verlegt (Erdseil) oder im Boden eingegraben ist 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+26 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 27/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 23 
+ 
+2.1.32 
+Erdungsanlage 
+örtlich begrenzte Anlage von leitfähig verbundenen Erdern, Erdungsleitern oder Potentialausgleichsleitern 
+oder in gleicher Weise wirkender Metallteile, z.B. Mastfüße, Bewehrungen, metallene Kabelmäntel 
+2.1.33 
+Erdseil 
+Leiter, der an einigen oder allen Stützpunkten mit Erde verbunden ist, und gewöhnlich, aber nicht unbedingt, 
+oberhalb der Außenleiter aufgehängt ist, um einen gewissen Schutz gegen Blitzeinschlag zu erreichen 
+[IEV 466-10-25] 
+ANMERKUNG: Ein Erdseil kann auch metallene Drähte für Telekommunikationszwecke enthalten. 
+2.1.34 
+effektive Feldstärke 
+Wurzel aus der Summe der Quadrate der drei Effektivwerte gegeneinander orthogonaler Komponenten des 
+Feldes 
+2.1.35 
+Auswirkung einer Einwirkung 
+Auswirkung von Einwirkungen auf Tragwerkselemente, z.B. Schnittgrößen, Spannungen und Dehnungen 
+Der Bemessungswert ist die gesamte Auswirkung der entsprechenden Bemessungswerte der Einwirkungen. 
+2.1.36 
+elektrisches Feld 
+elektrisches Feld, das in der Nähe eines aufgeladen Leiters entsteht, ist der Vektor gemessen mit der     
+elektrischen Feldstärke E 
+Dieser Vektor stellt die Kraft dar, die ein elektrisches Feld auf eine Einheitsladung ausübt, und wird in Volt je 
+Meter (V/m) gemessen. 
+2.1.37 
+Element 
+eines von unterschiedlichen Teilen einer Komponente 
+Zum Beispiel sind die Elemente eines Stahlgittermastes Stahlwinkel, Bleche und Schrauben.  
+2.1.38 
+Potentialausgleichsleiter 
+leitende Verbindung zwischen leitenden Teilen zur Verminderung der Potentialdifferenzen zwischen diesen 
+Teilen 
+2.1.39 
+Wahrscheinlichkeit der Ausschlussgrenze einer Veränderlichen 
+Wert einer Veränderlichen, der aus der Verteilungsfunktion entnommen wird und einer zugeordneten Wahr-
+scheinlichkeit dafür entspricht, dass der Wert nicht überschritten wird 
+2.1.40 
+äußere Abstände 
+alle Abstände, die nicht „innere Abstände“ sind 
+Sie umfassen die Abstände zum Gelände, zu Straßen, Gebäuden und Anlagen (wenn sie durch nationale 
+Regeln zugelassen sind) und zu Objekten, die sich auf diesen befinden können. 
+2.1.41 
+Versagen (eines Tragwerks) 
+Zustand eines Tragwerks, dessen Funktion nicht mehr sichergestellt ist, z.B. nach dem Versagen einer 
+Komponente durch überhöhte Verformung, durch Verlust der Stabilität, durch Umkippen, durch Bruch, durch 
+Knicken usw. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+27 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 28/273 =====
+Seite 24 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.42 
+feste Einwirkung 
+Einwirkung, die eine feste Verteilung über das Tragwerk hat, so dass Größe und Richtung der Einwirkung 
+eindeutig für das gesamte Tragwerk festgelegt sind, wenn Größe und Richtung an einem Punkt des Trag-
+werks gegeben sind  
+2.1.43 
+Fundamenterder 
+Leiter, der in Beton eingebettet ist und mit der Erde über eine große Oberfläche in Verbindung steht 
+2.1.44 
+freie Einwirkung 
+Einwirkung, die innerhalb gegebener Grenzen irgendeine räumliche Verteilung über das Tragwerk haben 
+kann 
+2.1.45 
+häufig frequentierter Bereich 
+Bereich, der von Personen so häufig benutzt wird, dass die Gefahr des gleichzeitigen Erdfehlers in Betracht 
+gezogen werden muss (Beispiele: Spielplätze, Gehwege öffentlicher Straßen, große Nähe zu Wohngebäu-
+den usw.) 
+ANMERKUNG: Energieversorgungsunternehmen sollten diese Bereiche festlegen. 
+2.1.46 
+höchste Betriebsspannung 
+höchster effektiver Betriebswert der Spannung, der zu irgendeiner Zeit an irgendeinem Punkt der Leitung  
+unter normalen Betriebsbedingungen auftreten kann und für den die elektrische Freileitung auszulegen ist  
+2.1.47 
+Oberflächenerder 
+Erder, der üblicherweise in geringer Tiefe eingegraben ist 
+Beispielsweise kann er aus einem Flachband, einem runden Stab oder einem Seil bestehen und als radialer, 
+als Ring- oder Maschenerder oder als eine Kombination hiervon ausgeführt werden. 
+2.1.48 
+Erdungsimpedanz 
+Impedanz zwischen der Erdungsanlage und der Bezugserde 
+2.1.49 
+innerer Abstand 
+Abstände zwischen den Außenleitern und geerdeten Teilen, z.B. Tragwerkselementen aus Stahl und Erd-
+seilen, und auch solche zwischen den Außenleitern 
+Auch Abstände zu anderen Stromkreisen auf dem gleichen Stützpunkt sind eingeschlossen. 
+2.1.50 
+Grenzzustand (eines Tragwerks) 
+Zustand, bei dessen Überschreiten das Tragwerk nicht länger den Auslegungsanforderungen genügt 
+2.1.51 
+Lastanordnung 
+Beschreibung der Lage, der Größe und der Richtung einer freien Einwirkung 
+2.1.52 
+Lastfall 
+verträgliche Lastanordnungen, Verformungsansätze und Imperfektionen, die gleichzeitig mit festgelegten 
+veränderlichen Einwirkungen und ständigen Einwirkungen für einen bestimmten Nachweis betrachtet wer-
+den 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+28 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 29/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 25 
+ 
+2.1.53 
+magnetisches Feld 
+das magnetische Feld ist eine Vektorgröße. Die magnetische Feldstärke H wird in Ampere je Meter (A/m) 
+ausgedrückt. 
+2.1.54 
+magnetische Flussdichte 
+die magnetische Flussdichte, die auch als magnetische Induktion bezeichnet wird, ist die Kraft, die auf eine 
+sich im Feld bewegende Ladung ausgeübt wird, und hat die Einheit Tesla (T) 
+Ein Tesla ist gleich 1 Vs/m2 oder 1 Weber je Quadratmeter (Wb/m2).  
+2.1.55 
+Instandhaltung 
+alle Aktivitäten, die während der geplanten Lebensdauer der Anlage ausgeführt werden, um deren Verwen-
+dungszweck aufrechtzuerhalten 
+2.1.56 
+Nennspannung 
+Spannung, mit der die elektrische Freileitung bezeichnet wird und auf die bestimmte Betriebseigenschaften 
+bezogen werden 
+2.1.57 
+Lichtwellenleiter-Leiterseil (OPCON) 
+Leiter, der optische Fasern für die Telekommunikation enthält 
+2.1.58 
+Lichtwellenleiter-Erdseil (OPGW) 
+Lichtwellenleiterseil, das nur als Erdseil verwendet wird 
+Die Telekommunikationskomponente kann verseilt, röhrchenförmig oder eine Kombination von beiden sein. 
+2.1.59 
+Teilsicherheitsbeiwert für Einwirkungen 
+Beiwert, der von der gewählten Zuverlässigkeitsstufe abhängt, wobei die Möglichkeit von ungünstigen Ab-
+weichungen vom charakteristischen Wert von Einwirkungen, von ungenauer Modellbildung und von  
+Unsicherheiten in der Beurteilung der Auswirkungen von Einwirkungen berücksichtigt wird 
+2.1.60 
+Teilsicherheitsbeiwert für eine Werkstoffeigenschaft 
+Beiwert, der ungünstige Abweichungen vom charakteristischen Wert einer Werkstoffeigenschaft, Unge-
+nauigkeiten in den verwendeten Umrechnungsfaktoren und Unsicherheiten in den geometrischen Eigen-
+schaften und dem Modell der Beanspruchbarkeit berücksichtigt 
+2.1.61 
+ständige Einwirkung 
+Einwirkung, für die es wahrscheinlich ist, dass sie während einer gegebenen Auslegungssituation dauernd 
+wirkt, und bei der die Änderung der Größe mit der Zeit im Vergleich zum Mittelwert vernachlässigbar ist oder 
+für die die Änderung immer in die gleiche Richtung verläuft (monoton) bis die Einwirkung einen bestimmten 
+Grenzwert erreicht 
+2.1.62 
+gestörtes/ungestörtes elektrisches Feld 
+elektrisches Feld in der Nähe eines leitenden Gegenstandes, das durch das Vorhandensein eines solchen 
+Gegenstandes „gestört“ wird 
+In diesem Fall wird für praktische Zwecke Bezug auf das „ungestörte elektrische Feld“ genommen (d.h., je-
+nes Feld, das bei Abwesenheit des Gegenstandes vorhanden sein würde). 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+29 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 30/273 =====
+Seite 26 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.63 
+Potentialsteuerung 
+Beeinflussung des Erdpotentials, insbesondere des Erdoberflächenpotentials, durch Erder 
+2.1.64 
+Potentialsteuerungserder 
+Leiter, der wegen seiner Form und seiner Anordnung eher für die Potentialsteuerung als für das Erreichen 
+eines bestimmten Widerstandes zur Erde verwendet wird 
+2.1.65 
+Projektspezifikation 
+Schriftstück, das der Auftraggeber dem Auftragnehmer zur Verfügung stellt und das in angemessener Form 
+Einzelheiten aller Anforderungen für Werkstoffe, Bemessung und Konstruktion, Herstellung und Errichtung 
+einer bestimmten Anlage oder einer Komponente einer Freileitung enthält 
+Die Projektspezifikation kann die Anforderungen dieser Norm ergänzen, aber sie darf die technischen An-
+forderungen nicht ermäßigen und die minimalen Anforderungen, wie sie in dieser Norm vorgegeben sind, 
+nicht ersetzen. Sie sollte für jedes Projekt auf ein Kleinstmaß, d.h. auf etwaige Besonderheiten oder spezifi-
+sche Einzelheiten, beschränkt werden. 
+2.1.66 
+Zweck 
+Funktion der Anlage (elektrische Freileitung), d.h., elektrische Energie zwischen ihren beiden Enden oder 
+Teilen des Netzes zu übertragen 
+2.1.67 
+quasi-statische Einwirkung 
+dynamische Einwirkung, die durch statische Modelle beschrieben werden kann, wobei dynamische Auswir-
+kungen eingeschlossen sind 
+2.1.68 
+Funkstörungen 
+alle Auswirkungen auf den Empfang eines erforderlichen Funksignals infolge von unerwünschten Störungen 
+mit dem Funkfrequenzspektrum 
+Funkstörungen sind vor allem für amplituden-modulierte Systeme (AM-, Radio- und Fernsehsignale) von 
+Belang, da andere Formen der Modulation (wie Frequenzmodulation (FM), die für VHF-, Radio- und Fern-
+sehsignale verwendet wird) im Allgemeinen weit weniger durch von Freileitungen ausgehenden Störungen 
+beeinflusst werden. 
+2.1.69 
+Reduktionsfaktor einer Drehstromleitung 
+Verhältnis r des Erdfehlerstromes (oder des Erdrückstroms) zur Summe der Nullströme in den Außenleitern 
+des Hauptstromkreises 
+2.1.70 
+Bezugserde (ferne Erde) 
+jener Teil der Erde außerhalb des Einflussbereiches eines Erders oder einer Erdungsanlage, für den zwi-
+schen zwei beliebigen Punkten keine wahrnehmbaren Spannungen infolge von Erdströmen auftreten 
+2.1.71 
+Bezugszeitraum 
+Zeitraum, der die geplante Lebenszeit der Anlage oder eines ihrer Elemente und/oder die Wirkungsdauer 
+des charakteristischen Wertes einer Einwirkung berücksichtigt 
+2.1.72 
+Zuverlässigkeit (elektrische) 
+Fähigkeit einer Anlage, ihre Versorgungsaufgabe unter festgelegten Bedingungen während eines vorgege-
+benen Zeitintervalls zu erfüllen 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+30 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 31/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 27 
+ 
+2.1.73 
+Zuverlässigkeit (des Tragwerks) 
+Wahrscheinlichkeit, dass eine Anlage einen gegebenen Zweck unter vorgegebenen Bedingungen während 
+einer festgesetzten Zeit erfüllt 
+Zuverlässigkeit ist daher ein Maß für den Erfolg einer Anlage hinsichtlich des Erreichens seines Zweckes.  
+2.1.74 
+Beanspruchbarkeit (eines Tragwerks) 
+mechanische Eigenschaft einer Komponente, eines Querschnitts oder eines Elementes eines Tragwerks, 
+z.B. Biegebeanspruchbarkeit, Knickbeanspruchbarkeit. Beanspruchbarkeit ist die Fähigkeit, dem Zusam-
+menbruch oder irgendeiner anderen Form eines Tragwerksversagens standzuhalten, der die Personensi-
+cherheit gefährden würde oder schädliche Auswirkungen auf die Funktion der Anlage hätte. 
+ 
+ANMERKUNG: Beanspruchbarkeit in Bezug auf folgende Auswirkungen kann in Betracht gezogen werden: 
+- 
+Verlust des Gleichgewichtszustandes des Tragwerks oder irgendeines Teiles hiervon, wenn dieses als star-
+rer Körper betrachtet wird; 
+- 
+Versagen durch übergroße Verformung, durch Bruch oder Verlust der Stabilität des Tragwerkes oder eines 
+Teils davon einschließlich Maste und Gründungen. 
+2.1.75 
+Ausbreitungswiderstand eines Erders 
+Widerstand der Erde zwischen dem Erder und der Bezugserde 
+In der Praxis ist das ein ohmscher Widerstand. 
+2.1.76 
+Wiederkehrperiode 
+mittleres Intervall zwischen der aufeinander folgenden Wiederkehr einer klimatischen Einwirkung einer defi-
+nierten Größe 
+Die Inverse der Wiederkehrperiode ergibt die Wahrscheinlichkeit für das Überschreiten der Einwirkung wäh-
+rend eines Jahres wieder.  
+2.1.77 
+Personensicherheit 
+Fähigkeit einer Anlage, keine Verletzungen von Personen oder tödlichen Unfälle während der Errichtung, 
+des Betriebes und der Instandhaltung zu verursachen 
+2.1.78 
+Sicherheit (eines Tragwerkes) 
+Fähigkeit einer Anlage, vor größeren Zusammenbrüchen mit kaskadenartigen Auswirkungen geschützt zu 
+sein, wenn ein Versagen einer bestimmten Komponente ausgelöst wird 
+Dieses Versagen kann elektrische und mechanische Ursachen haben. 
+2.1.79 
+Grenzzustand der Gebrauchstauglichkeit 
+Zustand, bei dessen Überschreiten festgelegte Betriebsanforderungen für ein Tragwerk oder ein Tragwerks-
+element nicht länger erfüllt werden 
+2.1.80 
+Erdwiderstand, spezifischer 
+spezifischer elektrischer Widerstand der Erde 
+2.1.81 
+Überschlag 
+Durchschlagsentladung 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+31 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 32/273 =====
+Seite 28 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.82 
+statische Einwirkung 
+Einwirkung, die keine wesentliche Beschleunigung des Tragwerks oder von Tragwerkselementen hervorruft 
+2.1.83 
+Schrittspannung 
+Teil der Erdungsspannung, die von einer Person mit einer Schrittweite von 1 m abgegriffen werden kann, 
+d.h. der Strom fließt von Fuß zu Fuß durch den menschlichen Körper 
+2.1.84 
+Festigkeit 
+mechanische Eigenschaft eines Werkstoffes, üblicherweise angegeben in Einheiten für mechanische Span-
+nungen 
+2.1.85 
+Tragwerk 
+geordnete Kombination von zusammengesetzten Elementen, die dem Zweck dient, ein bestimmtes Maß an 
+Steifigkeit sicherzustellen 
+2.1.86 
+Stützpunkt (Mast) 
+allgemeiner Begriff der unterschiedlichen Arten von Tragwerken, die die Leiter einer elektrischen Freileitung 
+tragen 
+2.1.87 
+Winkelstützpunkt 
+Trag- oder Abspannstützpunkt, der an einen Winkelpunkt einer Leitung verwendet wird 
+2.1.88 
+Festpunkt-Stützpunkt 
+Stützpunkt mit oder ohne Leitungswinkel, der zusätzlich als Festpunkt in einer Leitung dient, um kaskaden-
+förmige Schäden zu begrenzen 
+2.1.89 
+Tragstützpunkt 
+Stützpunkt, der mit Tragisolatorketten ausgerüstet ist 
+2.1.90 
+Stützpunkt in gerader Leitungsrichtung 
+Stützpunkt mit Trag- oder Abspannisolatorketten, der in gerader Leitungsrichtung verwendet wird 
+2.1.91 
+Stützpunkt mit Abspannketten 
+Stützpunkt, der mit Abspannisolatorketten ausgerüstet ist 
+2.1.92 
+Endstützpunkt 
+Stützpunkt mit Abspannisolatorketten, der die gesamten, in einer Leitungsrichtung wirkenden Leiterzugkräfte 
+aufnehmen kann 
+2.1.93 
+System (mechanisches) 
+Anordnung von miteinander verbundenen Komponenten, die zusammen eine elektrische Freileitung bilden 
+2.1.94 
+Netz (elektrisches) 
+alle Ausrüstungsgegenstände, die zusammenwirkend für die Erzeugung, Übertragung und Verteilung der       
+elektrischen Energie verwendet werden 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+32 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 33/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 29 
+ 
+2.1.95 
+Netz mit isoliertem Sternpunkt 
+Netz, in welchem die Sternpunkte der Transformatoren, Generatoren und Erdspulen nicht absichtlich mit 
+Erde verbunden sind, ausgenommen Verbindungen mit hoher Impedanz für Zwecke der Signalübertragung, 
+der Messung oder des Schutzes 
+2.1.96 
+Netz mit niederohmiger Sternpunkterdung 
+Netz, wobei mindestens ein Sternpunkt eines Transformators, einer Erdspule oder eines Generators direkt 
+oder über eine Impedanz so geerdet ist, dass der Fehlerstrom infolge eines Erdfehlers an irgendeinem Ort 
+zu einer zuverlässigen automatischen Abschaltung führt 
+2.1.97 
+Netz mit niederohmiger Sternpunkt- oder Leitererdung 
+Netz mit isoliertem Sternpunkt oder mit Erdschlusskompensation, wobei im Falle von nicht selbstlöschenden 
+Erdfehlern ein Sternpunkt- oder ein Außenleiter des Hauptstromkreises direkt oder niederohmig wenige Se-
+kunden nach dem Auftreten eines Erdfehlers geerdet wird 
+2.1.98 
+Netz mit Erdschlusskompensation 
+Netz, bei dem mindestens ein Sternpunkt eines Transformators oder einer Erdspule über eine Lichtbogen-
+löschspule geerdet wird und die Summe der Induktivitäten aller Löschspulen wesentlich auf die Erdkapazität 
+des Netzes und die Betriebsfrequenz abgestimmt ist 
+2.1.99 
+Fernsehinterferenz 
+Sonderfall der Funkstörungen, die sich auf den Frequenzbereich auswirken, der für Fernsehübertragungen 
+verwendet wird 
+2.1.100 
+Berührungsspannung 
+der Teil der Erdungsspannung, der längs des menschlichen Körpers von der Hand zum Fuß (angenommen 
+mit 1 m waagrechtem Abstand vom ausgesetzten Teil der Anlage) abgegriffen werden kann 
+2.1.101 
+Potentialverschleppung 
+durch einen Erdstrom verursachte Potentialerhöhung einer Erdungsanlage, die durch einen Leiter (z.B. me-
+tallener Kabelmantel, Rohrleitung, Schiene) in Abschnitte verschleppt wird, die nur geringe oder keine Po-
+tentialerhöhung zur Bezugserde aufweisen 
+2.1.102 
+Grenzzustand der Beanspruchbarkeit 
+Zustand, der mit dem Zusammenbruch oder mit anderen Formen des Tragwerksversagens verbunden ist 
+ANMERKUNG: Dieser Zustand entspricht allgemein der größten Lastbeanspruchbarkeit eines Tragwerks oder 
+eines Tragwerkselements. 
+2.1.103 
+Nichtverfügbarkeit 
+Unfähigkeit einer Anlage, ihren Zweck zu erfüllen 
+Nichtverfügbarkeit einer elektrischen Freileitung ergibt sich sowohl aus dem Versagen der Tragwerke oder 
+ungenügender elektrischer Zuverlässigkeit als auch infolge des Versagens wegen anderer unvorhergesehe-
+ner Ereignisse wie Erdrutsche, Auftreffen von Gegenständen, Sabotage, Werkstofffehlern usw. 
+2.2.104 
+Unzuverlässigkeit (eines Tragwerks) 
+komplementäre Eigenschaft zur Tragwerkszuverlässigkeit und zur Fehlerwahrscheinlichkeit 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+33 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 34/273 =====
+Seite 30 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+2.1.105 
+veränderliche Einwirkung 
+Einwirkung, für die es unwahrscheinlich ist, dass sie während einer gegebenen Auslegungssituation dau-
+ernd wirkt oder für die die Änderung ihrer Größe im Verhältnis zum Mittelwert mit der Zeit weder vernachläs-
+sigbar noch monoton ist 
+2.1.106 
+Potentialdifferenz 
+Potentialunterschied, der als Spannungsquelle in einem Berührungsstromkreis wirkt und einen Grenzwert 
+aufweist, der die Personensicherheit sicherstellt, wenn zusätzlich bekannte Widerstände (z.B. Schuhwerk, 
+Stand auf oberflächenisolierenden Werkstoffen) einbezogen werden 
+ 
+(A-dev) AT.1: Dauerzugspannung eines Leiters ist jene größte, konstant gehaltene Zugspannung, die der 
+Leiter ein Jahr lang aushält, ohne zu reißen. 
+ 
+(A-dev) AT.2: Ein Leiter kreuzt ein Objekt, wenn der Grundriss des vom Wind gegen das Objekt ausge-
+lenkten Leiters den Grundriss des Objektes schneidet. 
+ 
+(A-dev) AT.3: In Ergänzung zu 2.1.14 gilt: 
+ 
+Leiter sind die zwischen den Tragwerken einer Hochspannungsfreileitung frei gespannten, blanken, 
+isolierten oder umhüllten Drähte und Seile, unabhängig davon, ob sie unter Spannung stehen oder 
+nicht. 
+ 
+Hierzu gehören auch Leiter mit mehrfacher Funktion (Phasenseil- und Erdseil-Luftkabel). OPCON 
+und OPGW gelten in diesem Sinn ebenfalls als Leiter. 
+ 
+(A-dev) AT.4: Der Schutzbereich eines Objektes ist bestimmt durch jene Grundrissfläche, die entsteht, 
+wenn der Grundriss dieses Objektes allseitig gleichmäßig nach außen um jenes Maß vergrößert 
+wird, das für das jeweilige Objekt und für jene Gruppe der Hochspannungsfreileitungen, für die der 
+Schutzbereich bestimmt wird, als seitlicher Abstand angegeben ist. 
+ 
+(A-dev) AT.5: Leiter im Schutzbereich. Ein Leiter einer Hochspannungsfreileitung liegt im Schutzbereich 
+eines Objektes, wenn der Grundriss des vom Wind gegen das Objekt ausgelenkten Leiters den nach 
+AT.4 zuvor definierten Schutzbereich des Objektes schneidet. 
+ 
+(A-dev) AT.6: Schutzabstand ist die kürzeste zulässige Entfernung zwischen einem Leiter einer Hochspan-
+nungsfreileitung und einem Objekt, wenn die Hochspannungsfreileitung im Schutzbereich desselben 
+verläuft. Der Schutzabstand kann im Raum jede beliebige Lage haben. Das Objekt kann auch ein 
+Leiter einer anderen Leitung sein. 
+ 
+(A-dev) AT.7: Regelzusatzlast ist jene lotrecht wirkende und längs eines Leiters gleichmäßig verteilt ange-
+nommene Belastung, die für den Regellastfall gemäß 4.3.3 anzusetzen ist. 
+ 
+(A-dev) AT.8: Ausnahmszusatzlast ist jene lotrecht wirkende und längs eines Leiters gleichmäßig verteilt 
+angenommene Belastung, die erfahrungsgemäß nur ausnahmsweise vorkommt und für den Aus-
+nahmslastfall gemäß 4.3.3 anzusetzen ist. 
+ 
+(A-dev) AT.9: Regellastfälle sind Lastfälle ohne Zusatzlasten im Temperaturbereich -20 °C bis +40 °C so-
+wie unter -5 °C + Regelzusatzlast wie in der Tabelle 4.3.10.3/AT.2 genannt. 
+ 
+(A-dev) AT.10: Ausnahmslastfälle sind Lastfälle bei -5 °C + Ausnahmszusatzlast wie in der Tabelle 
+4.3.10.3/AT.2 genannt. 
+ 
+(A-dev) AT.11: Die Gruppeneinteilung der Hochspannungsfreileitungen ist in der folgenden Tabel-
+le 2.1/AT.11 genannt. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+34 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 35/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 31 
+ 
+Tabelle 2.1/AT.11 – Gruppeneinteilung der Hochspannungsfreileitungen 
+ 
+Leitungs- 
+gruppe 
+Nennisolation 
+(Reihe) 
+Höchste  
+Betriebsspannung,  
+Effektivwert in kV 
+Prüfwechselspannung A 
+(Wechselstromhaltespg.) 
+Effektivwert in kV 
+Normaler Stoßpegel 
+(Stoßhaltespannung)  
+Scheitelwert in kV 
+I 
+bis 45 kV 
+siehe ÖVE-L 11 c)  
+bis 45 kV 
+siehe ÖVE-L 11 c)  
+bis 45 kV 
+siehe ÖVE-L 11 c) 
+bis 45 kV 
+ 
+60 N 
+72,5 
+140 
+325 
+II 
+110 NE a) 
+123 
+185 
+450 
+ 
+110 N 
+123 
+230 
+450 b) 
+ 
+150 NE a) 
+170 
+275 
+650 
+III 
+150 N 
+170 
+325 
+750 
+ 
+220 NE a) 
+245 
+395 
+900 
+ 
+220 N 
+245 
+460 
+1050 
+IV 
+380 NE a) 
+420 
+630 
+1425 
+a) Der Buchstabe „E“ bedeutet, dass es sich um ein System mit wirksam geerdetem Sternpunkt handelt. 
+b) Gilt nur für Freileitungen, für andere Anlagen sind 550 kV anzusetzen. 
+c) Neuauflagen der ÖVE-L 11 werden künftig unter „ÖVE/ÖNORM E 8111“ veröffentlicht. 
+ 
+ 
+(ncpt)   
+AT.12: Mindestbruchlast eines Leiters ist das 0,95fache seiner rechnerischen Bruchlast. 
+ 
+(ncpt)   
+AT.13: Sollquerschnitt eines Leiters ist der nach den Konstruktionsdaten ermittelte Metallquer-
+schnitt. 
+Als Sollquerschnitt eines Luftkabels gilt nur der tragende Anteil desselben.  
+ 
+(ncpt)   
+AT.14: Spannfeld ist die Leitungsstrecke zwischen zwei aufeinander folgenden Tragwerken einer 
+Leitung. 
+ 
+(ncpt)   
+AT.15: Spannweite ist die waagrechte Entfernung zwischen zwei aufeinanderfolgenden Tragwerken 
+einer Leitung. 
+ 
+(ncpt)  
+AT.16: Abspannabschnitt ist jene Leitungsstrecke einer Hochspannungsfreileitung mit einem 
+Spannfeld oder mehreren Spannfeldern, die zwischen zwei aufeinanderfolgenden Abspanntragwer-
+ken liegt. 
+ 
+(ncpt)   
+AT.17: Leiterzug ist das Produkt aus dem Sollquerschnitt des Leiters und der in diesem Querschnitt 
+in der Tangentenrichtung der Durchhangskurve wirkenden Zugspannung. 
+ 
+(ncpt)   
+AT.18: Hoch- oder Tiefzug ist das Produkt aus dem horizontalen Leiterzug und dem Tangens des 
+Neigungswinkels der Verbindungsgeraden der Aufhängepunkte gegen die Waagrechte. 
+ 
+(ncpt)  
+AT.19: Durchhang eines Leiters ist der lotrecht gemessene Abstand eines Punktes der Leiterachse 
+von der Verbindungsgeraden der beiden zugehörigen Aufhängepunkte. 
+ 
+(ncpt)   
+AT.20: Ausgangszustand ist jener der beiden Zustände, -5 °C und Belastung durch die Regelzu-
+satzlast oder -20 °C ohne Zusatzlast, bei dem im Scheitelpunkt der Durchhangskurve die höhere 
+Zugspannung auftritt. 
+ 
+(ncpt)   
+AT.21: Ausgangszugspannung ist die waagrechte Komponente der Zugspannung im Leiter beim 
+Ausgangszustand. 
+ 
+(ncpt)   
+AT.22: Höchstzugspannung ist die im oberen Aufhängepunkt eines Leiters beim Ausgangszustand 
+auftretende Zugspannung. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+35 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 36/273 =====
+Seite 32 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   
+AT.23: Zugfestigkeit eines Leiters 
+ 
+hnitt
+Sollquersc
+Bruchlast
+he
+rechnerisc
+sz
+⋅
+= 0,95
+ 
+    
+         
+(ncpt)  
+AT.24: Armaturen sind Bauelemente, die einzeln oder in Kombination an oder zwischen Leitern,       
+Isolatoren sowie zwischen Leitern bzw. Isolatoren und Tragwerken eingebaut werden. 
+ 
+Solange IEC TC 11 das Dokument über die Tests von Armaturen nicht fertiggestellt hat, werden die Versa-
+ge-kriterien nach den folgenden Grenzlasten festgelegt: 
+ 
+(A-dev) AT.25: Bruchlast ist jene Last, bei der der Bruch eintritt, also die kraftschlüssige Verbindung unter-
+brochen wird. 
+ 
+(A-dev) AT.26: Höchstlast ist jene Last, bei der trotz fortschreitender Verformung keine weitere Belastung 
+mehr aufgenommen wird. 
+ 
+(A-dev) AT.27: Strecklast ist jene Last, bei der nach weiteren Belastungssteigerungen bleibende Verfor-
+mungen entstehen. 
+ 
+(ncpt) 
+AT.28: Sicherheit ist der Quotient aus Grenzlast dividiert durch die Last aus Regel- bzw. Aus-
+nahmszusatzlast. 
+ 
+(ncpt) 
+AT.29: Nennquerschnitt ist die zur Bezeichnung der Leiter dienende Querschnittsangabe. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+36 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 37/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 33 
+ 
+2.2 
+Symbole 
+Symbol 
+Bezeichnung 
+Bezug 
+A 
+Ausnahmeeinwirkung 
+3.4.1 
+A 
+dem Wind ausgesetzte Fläche 
+4.2.2.3 
+AK 
+Ausnahmeeinwirkung, charakteristischer Wert 
+3.4.2 
+AK 
+Leiterrestzugkraft, charakteristischer Wert 
+4.2.7 
+Ains 
+projizierte Fläche einer Isolatorkette 
+4.2.2.4.2 
+Apol 
+projizierte Fläche eines Einstielmastes 
+4.2.2.4.4 
+At 
+wirksame Fläche eines Mastschaftabschnittes 
+4.2.2.4.3 
+Atc 
+wirksame Fläche einer Gitterquerträgerwand 
+4.2.2.4.3 
+Atn 
+wirksame Fläche der Wand des Gittermastschusses n 
+4.2.2.4.3 
+aso 
+kleinster Abstand zwischen spannungsführenden und geerdeten Teilen an einem 
+Mast 
+5.3.5.1 
+asom 
+kleinster Wert vom aso 
+5.3.5.1 
+b1, b2 
+Mastschussbreite 
+4.2.2.4.3 
+Cc 
+Windwiderstandsbeiwert für Leiter 
+4.2.2.4.1 
+CcI 
+Windwiderstandsbeiwert für Leiter mit Eisansatz 
+4.2.4.2 
+Cins 
+Windwiderstandsbeiwert für Isolatorketten 
+4.2.2.4.2 
+Cpol 
+Windwiderstandsbeiwert für Einstielmaste 
+4.2.2.4.4 
+Ctc 
+Windwiderstandsbeiwert für einen Gitterquerträger bei Wind rechtwinklig zum Quer-
+träger 
+4.2.2.4.3 
+Ctm 
+Windwiderstandsbeiwert für die Wand m eines Gittermastschusses 
+4.2.2.4.3 
+Cx 
+Windwiderstandsbeiwert einer Komponente 
+4.2.2.3 
+D 
+äquivalenter Durchmesser für Leiter mit Eisansatz 
+4.2.4.4 
+Del 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen Außen-
+leitern und Gegenständen auf Erdpotential während schnell oder langsam anstei-
+genden Überspannungen zu verhindern. Del kann entweder ein innerer Abstand 
+sein, wenn die Abstände zwischen Außenleiter und den Mastteilen betrachtet wer-
+den, oder ein äußerer, wenn die Abstände zwischen Außenleiter und einem Hinder-
+nis betrachtet werden. 
+5.3.5.1 
+Dpp 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen den 
+Außenleitern während schnell oder langsam ansteigender Überspannungen zu ver-
+hindern. Dpp ist ein innerer Abstand. 
+5.3.5.1 
+D50 Hz_p_e 
+Mindestabstand in Luft, der erforderlich ist, um bei betriebsfrequenter Spannung 
+einen Durchschlag zwischen Außenleitern und Gegenständen mit Erdpotential zu 
+verhindern. D50 Hz_p_e ist ein innerer Abstand. 
+5.3.5.1 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+37 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 38/273 =====
+Seite 34 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Symbol 
+Bezeichnung 
+Bezug 
+D50 Hz_p_p 
+Mindestabstand in Luft, der erforderlich ist, um bei betriebsfrequenter Spannung 
+einen Durchschlag zwischen den Außenleitern zu verhindern. D50Hz_p_p ist ein innerer 
+Abstand. 
+5.3.5.1 
+d 
+Durchmesser eines Leiters 
+4.2.2.4.1 
+d 
+Abstand von der Mastspitze 
+7.6.2.2 
+E 
+elektrische Feldstärke 
+2.1.36 
+E 
+Gesamtwert der Auswirkung von Einwirkungen 
+- 
+Ed 
+Gesamtbemessungswert der Auswirkung von Einwirkungen 
+3.7.3 
+F 
+Einwirkung (Kraft oder erzwungene Verformung) 
+3.4.1 
+Fd 
+Auslegungswert einer Einwirkung 
+3.7.2 
+FK 
+charakteristischer Wert einer Einwirkung 
+3.4.2 
+FR,d 
+Auslegungswert einer Einwirkung im Grenzlastzustand 
+7.3.8 
+Ftest,R 
+kleinste Prüflast 
+7.3.8 
+FT 
+charakteristischer Wert einer Einwirkung mit der Wiederkehrdauer T 
+3.7.2 
+G 
+Ständige Einwirkung 
+3.4.1 
+GK 
+charakteristischer Wert einer ständigen Einwirkung 
+3.4.2 
+GK 
+charakteristischer Wert des Eigengewichtes von Leitern, Isolatoren und Stützpunk-
+ten 
+4.3.11 
+Gc 
+Reaktionsbeiwert oder Spannweitenbeiwert für Leiter 
+4.2.2.4.1 
+Gins 
+Reaktionsbeiwert für Isolatoren 
+4.2.2.4.2 
+Gpol 
+Tragwerksreaktionsbeiwert für einstielige Maste 
+4.2.2.4.4 
+Gq 
+Böenfaktor 
+4.2.2.3 
+Gt 
+Tragwerksreaktionsbeiwert für Gittermaste 
+4.2.2.4.3 
+Gx 
+Tragwerksreaktionsbeiwert einer Komponente 
+4.2.2.3 
+g 
+Spitzenbeiwert für Wind 
+4.2.2.3 
+H 
+Bezugs-NN-Höhe für die Bestimmung der Luftdichte 
+4.2.2.2 
+H 
+magnetische Feldstärke 
+2.1.53 
+H 
+Gesamtlänge eines Betonmastes 
+7.6.4 
+h 
+Höhe über Boden  
+4.2.2.1.4 
+h 
+Länge eines Schusses eines Gittermastes 
+4.2.2.4.3 
+I 
+längebezogene Eislast an den Leitern 
+4.2.3.3 
+IK 
+charakteristischer Wert der längenbezogenen Eislast an den Leitern 
+4.2.3.2 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+38 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 39/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 35 
+ 
+Symbol 
+Bezeichnung 
+Bezug 
+IR 
+Bezugswert der längenbezogenen Eislast an den Leitern 
+4.2.3.2 
+Ka 
+Höhenfaktor 
+5.3.4 
+Kg 
+Funkenstreckenfaktor 
+5.3.5.2 
+Kg_sf 
+Funkenstreckenfaktor für die Funkenstrecke bei Schaltstoßspannung 
+5.3.5.2 
+kT 
+Geländefaktor  
+4.2.2.1.5 
+kg 
+Böenfaktor für die Windgeschwindigkeiten 
+4.2.2.1.4 
+k1 
+Abminderungsfaktor für die Mindestabstände 
+5.4.3 
+L 
+Spannweite  
+4.2.2.4.1 
+L 
+Länge eines Mastfußes 
+7.7.5.3 
+LR 
+Regelspannweite 
+4.2.10 
+LW 
+Beitrag zur Gewichtsspannweite 
+4.2.3.3 
+Ln 
+Spannweite des Feldes n 
+4.2.2.4.1 
+N 
+Laufvariable der Einwirkungen 
+3.7.4 
+Q 
+variable Einwirkung 
+3.4.1 
+QCK 
+charakteristischer Wert der von Leiterzugkräften herrührenden Einwirkungen 
+4.3.11 
+QI 
+Leiterbelastung aus Eisansatz 
+4.2.3.3 
+QIK 
+charakteristischer Wert der Eislast auf Leiter 
+4.2.4.1 
+QK 
+charakteristischer Wert einer veränderlichen Einwirkung 
+3.4.2 
+QP 
+Last aus Errichtung und Instandhaltung 
+4.2.6.1 
+QPK 
+charakteristischer Wert der Lasten aus Errichtung und Instandhaltung 
+4.3.11 
+QWK 
+charakteristischer Wert der Windeinwirkung 
+4.2.4.1 
+QWc 
+resultierende Windlast auf einen Stützpunkt in gerader Strecke 
+4.2.2.4.1 
+QWins 
+Windlast auf eine Isolatorkette 
+4.2.2.4.2 
+QWpol 
+Windkraft auf einen einstieligen Mast 
+4.2.2.4.4 
+QWt 
+Windlast auf einen Gittermastschuss 
+4.2.2.4.3 
+QWtc 
+Windlast auf einen Gitterquerträger 
+4.2.2.4.3 
+QWx 
+Windlast auf irgendein Element der Leitung 
+4.2.2.3 
+Qn 
+Veränderliche Einwirkung n 
+3.7.4 
+QnK 
+charakteristischer Wert der veränderlichen Einwirkung n 
+3.7.4 
+Q0 
+Hintergrundreaktionsanteil 
+4.2.2.3 
+QI 
+überwiegende veränderliche Einwirkung 
+3.7.4 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+39 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 40/273 =====
+Seite 36 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Symbol 
+Bezeichnung 
+Bezug 
+q 
+Staudruck 
+4.3.2 
+qc 
+Staudruck auf Leiter in der Höhe h über Boden 
+4.3.2 
+qh 
+Staudruck in der Höhe h über Boden 
+4.2.2.2 
+qx 
+Staudruck auf ein Element eines Stützpunktes oder einer Isolatorkette 
+4.3.2 
+R 
+Tragwerksbeanspruchbarkeit 
+- 
+Ra 
+zusätzlicher elektrischer Widerstand 
+6.2.4.3 
+Rb 
+Rate für rückwärtige Überschläge 
+5.3.3.5 
+Rd 
+Bemessungswert der Tragwerksbeanspruchbarkeit 
+3.7.3 
+Rk 
+charakteristischer Wert der Gründungsbeanspruchbarkeit 
+8.5.2.1 
+Rsf 
+Rate für Überschläge infolge Versagens der Abschirmung 
+5.3.3.5 
+Rx 
+Resonanzreaktionsanteil 
+4.2.2.3 
+r 
+Reduktionsfaktor einer Drehstromleitung 
+2.1.69 
+T 
+Wiederkehrdauer eines klimatischen Ereignisses 
+3.2.2 
+Tn 
+Wiederkehrdauer einer variablen Einwirkung n 
+3.7.4 
+T0 
+anfängliche Horizontalzugkraft in einem Leiter 
+4.2.7 
+T1 
+Wiederkehrdauer für eine dominante Einwirkung 
+3.7.4 
+T‘ 
+absolute Temperatur in der Höhe H 
+4.2.2.2 
+tF 
+Fehlerdauer (des Fehlerstroms) 
+6.2.4.3 
+UD 
+Potentialdifferenz wirkend als Spannungsquelle in einem Berührungsstromkreis mit 
+einem Grenzwert, der die Personensicherheit sicherstellt, wenn zusätzliche bekann-
+te Widerstände (z.B. Schuhwerk, Standfläche mit isolierendem Material) einbezogen 
+werden 
+6.2.4.2 
+UE 
+Erdungsspannung 
+6.2.4.2 
+UT 
+Berührungsspannung 
+6.2.4.2 
+UTp 
+zulässige Berührungsspannung, d.h. die Spannung längs des menschlichen Körpers 6.2.4.2 
+Ucw 
+Koordinationsstehspannung 
+5.3.1 
+Urp 
+repräsentative Überspannung 
+5.3.1 
+Urw 
+erforderliche Stehspannung 
+5.3.1 
+Us 
+Höchste Betriebsspannung 
+5.3.2.2 
+U90 %_ff_is 
+90-%-Blitzstehspannung der in der Leitung verwendeten Isolatorketten 
+5.3.3.3 
+V 
+Windgeschwindigkeit 
+4.2.2.1.1 
+Vich 
+Windgeschwindigkeit in einer Höhe h über Grund verbunden mit Eisansatz 
+4.2.4.3 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+40 von 273
+www.ris.bka.gv.at

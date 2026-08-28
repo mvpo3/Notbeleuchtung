@@ -1,0 +1,978 @@
+
+
+===== PAGE 1/17 =====
+1 
+ 
+ 
+ 
+ 
+Herausgeber: 
+ 
+ 
+ 
+OVE Österreichischer Verband für Elektrotechnik 
+ 
+ 
+ 
+Eschenbachgasse 9 | 1010 Wien 
+T: +43 1 587 63 73-0 
+ove@ove.at | www.ove.at 
+Fachinformation 
+des Österreichischen Elektrotechnischen Komitees – OEK  
+ 
+BL-01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Fachinformation des Technischen Komitee TK BL – Blitzschutz 
+Im Falle eines Nachdruckes darf der Inhalt nur wortgetreu und ohne Auslassung oder Zusatz wiedergegeben werden.  
+Ausgabe: April 2019 
+Vorwort 
+Mit dieser Fachinformation beantwortet das TK BL häufig gestellte Fragen zum Thema Errichtung von 
+Blitzschutzsystemen. Dieses Dokument wird bei Bedarf laufend angepasst und ergänzt. 
+ 
+Änderungen 
+Dieses Dokument ersetzt die Fachinformation „Informationen zur Errichtung von Blitzschutzsystemen (LPS)“ 
+Ausgabe November 2016. 
+Gegenüber der Ausgabe November 2016 wurden folgende Änderungen vorgenommen: 
+– 
+Ergänzung bei Abschnitt 1.3 
+– 
+Ergänzung bei Abschnitt 3.2 
+– 
+Neuformulierung von Abschnitt 3.3 
+– 
+Ergänzung bei Abschnitt 3.4 
+– 
+Neuformulierung von Abschnitt 3.5 
+– 
+Ergänzung bei Abschnitt 3.6 
+– 
+Neuformulierung von Abschnitt 3.7 
+– 
+Ergänzung bei Abschnitt 3.8 
+– 
+Ergänzung bei Abschnitt 3.9 
+– 
+Neuer Abschnitt 4.3 und Neunummerierung der bestehenden Nummerierungen. 
+– 
+Ergänzung bei Abschnitt 4.8 
+–- 
+Ergänzung bei Abschnitt 5.3 
+– 
+Ergänzung bei Abschnitt 5.4 
+– 
+Neuer Abschnitt 5.5 
+ 
+ 
+
+
+===== PAGE 2/17 =====
+2 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+Inhalt 
+Seite 
+1 
+Fangeinrichtungen ................................................................................................................................. 4 
+1.1 
+Muss beim Fehlen einer metallenen Dachrinne eine Querleitung an der Traufenkante 
+errichtet werden (Bildung einer Masche nach dem Maschenverfahren)? ............................................. 4 
+1.2 
+Sind Gebäude gegen Seiteneinschläge zu schützen? .......................................................................... 4 
+1.3 
+Wie müssen Dachein-/aufbauten in das Blitzschutzsystem eingebunden werden? ............................. 5 
+1.4 
+Wann ist der Schutz von Blechdächern gegen Durchschmelzen notwendig? ...................................... 5 
+1.5 
+Dürfen benachbarte Objekte für die Projektierung der Fangeinrichtungen nach dem 
+Schutzwinkel- oder Blitzkugelverfahren herangezogen werden? ......................................................... 5 
+2 
+Ableitungseinrichtungen ........................................................................................................................ 6 
+2.1 
+Ist der typische Abstand zwischen den Ableitungen gemäß ÖVE/ÖNORM EN 62305-
+3:2008, Tabelle 4 bzw. ÖVE/ÖNORM EN 62305-3:2012, Tabelle 4 genau einzuhalten? .................... 6 
+2.2 
+Welcher Umfang ist für die Aufteilung von Ableitern heranzuziehen (ÖVE/ÖNORM  EN 
+62305-3:2008, Abschnitt 5.3.3 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.3) –  Der 
+Grundrissumfang oder der Umfang der projizierten Dachfläche? ......................................................... 6 
+2.3 
+Was ist bei der Verlegung von Aluminium-Runddraht zu befolgen? ..................................................... 6 
+2.4 
+Was ist bei der Verlegung von Ableitungen hinter einer Gebäudedämmung (WDVS – 
+Wärmedämmverbundsysteme) zu beachten? ....................................................................................... 6 
+2.5 
+Sind vertikal durchgehende Metallteile (zB Regenfallrohre, Metallfassade) auf Erdniveau an 
+die Erdungsanlage anzuschließen? ...................................................................................................... 7 
+3 
+Erdungsanlage ...................................................................................................................................... 7 
+3.1 
+Ist der empfohlene niedrige Erdungswiderstand von kleiner als 10 Ohm für jeden einzelnen 
+Erder einzuhalten? ................................................................................................................................ 7 
+3.2 
+Was gilt in Österreich als frostfreie Tiefe in Bezug auf die gemeinsame integrierte 
+Erdungsanlage (Blitzschutzerdung, Anlagenerdung, u. dgl.)? .............................................................. 7 
+3.3 
+Welchen minimalen Abstand sollten Tiefenerder (Erder Typ A) zueinander haben? ........................... 7 
+3.4 
+Ist unterhalb von Wannenabdichtungen (Wärmedämmung, isolierende Folie, weiße Wanne 
+u. dgl.) die Erdungsanlage zu vermaschen? ......................................................................................... 8 
+3.5 
+Wann ist das Fundament zur Errichtung einer Erdungsanlage geeignet? ............................................ 8 
+3.6 
+Ist bei einer „braunen Wanne“ die Ausführung eines Fundamenterders zulässig? .............................. 8 
+3.7 
+Welcher Werkstoff ist für die Erdungsanlage bei Faserbeton zu verwenden? ..................................... 8 
+3.8 
+Darf die Erdungsanlage von einer Baufirma errichtet werden? ............................................................ 8 
+3.9 
+Welcher Wert gilt als „annähernd gleicher“ Erderwiderstand von benachbarten Erdern? .................... 9 
+3.10 
+Sind die in ÖVE/ÖNORM EN 62305-3:2008, Bild 2 bzw. ÖVE/ÖNORM EN 62305-3:2012,  
+Bild 3 geforderten Mindestlängen der Erder in jedem Fall ausreichend? ............................................. 9 
+4 
+Inneres Blitzschutzsystem ..................................................................................................................... 9 
+4.1 
+Kann der Trennungsabstand in Gebäuden mit Stahlbewehrung vernachlässigt werden? ................... 9 
+4.2 
+Kann der Trennungsabstand an Stahlkonstruktionen vernachlässigt werden? .................................... 9 
+4.3 
+Welche Länge „l“ ist für die Berechnung des Trennungsabstandes im Falle von mehreren 
+Ableitungen die durch Ringleiter verbunden sind zu berücksichtigen ................................................. 11 
+4.4 
+Welche Schutzmaßnahmen sind für informationstechnische und sicherheitstechnische 
+Einrichtungen notwendig? ................................................................................................................... 13 
+4.5 
+Was ist bei der Installation von Potentialausgleichsschienen zu beachten? ...................................... 13 
+
+
+===== PAGE 3/17 =====
+3 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+Seite 
+4.6 
+Wie ist die Verbindung zwischen Blitzschutzerdung und Potentialausgleich herzustellen? ............... 13 
+4.7 
+Wo sind im Falle von Trennungsabstandsunterschreitungen Blitzschutz-Potential-
+ausgleichsverbindungen notwendig? .................................................................................................. 13 
+4.8 
+Wie sind Kabelschirme in den Potentialausgleich einzubeziehen? .................................................... 13 
+4.9 
+Wie ist der Blitzschutz-Potentialausgleich bei baulichen Anlagen mit einer Stahlarmierung in 
+der Geschoßdecke durchzuführen wenn der Trennungsabstand zur Blitzschutzanlage nicht 
+eingehalten werden kann? .................................................................................................................. 13 
+4.10 
+Wo muss der Blitzschutzpotentialausgleich bei geschirmten Leitungen oder Metallkanälen 
+ausgeführt werden? ............................................................................................................................. 14 
+4.11 
+Müssen elektrische Betriebsmittel an der Aussenfassade (zB Fühler, Jalousie, Kameras, 
+Wandleuchten) generell mit SPDs geschützt werden? ....................................................................... 15 
+5 
+Verschiedenes ..................................................................................................................................... 16 
+5.1 
+Welche Feuerwiderstandsdauer ist einzuhalten, um ein separates Blitzschutz-
+Risikomanagement von verschiedenen Gebäudeteilen durchführen zu können? .............................. 16 
+5.2 
+Wie sind Verbindungen und Anschlüsse an Flachleiter bzw. Bleche auszuführen?........................... 16 
+5.3 
+Welche Werte sind für die Blitzdichte bei der Schutzklassenbestimmung zu verwenden .................. 16 
+5.4 
+Schutz vor Berührungs- und Schrittspannung ..................................................................................... 17 
+5.4.1 
+Berührungsspannung ....................................................................................................................... 17 
+5.4.2 
+Schrittspannung ................................................................................................................................ 17 
+5.5 
+Wie sind Seil-Absturzsicherungen in das Blitzschutzsystem zu integrieren ....................................... 17 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4/17 =====
+4 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+1 
+Fangeinrichtungen 
+1.1 
+Muss beim Fehlen einer metallenen Dachrinne eine Querleitung an der Traufenkante 
+errichtet werden (Bildung einer Masche nach dem Maschenverfahren)? 
+Das Fehlen einer metallenen Dachrinne (Querleitung bzw. Vermaschung) ist bei der Trennungsabstands-
+berechnung zu berücksichtigen. Es ist nicht zwangsläufig erforderlich eine fehlende metallene Dachrinne durch 
+eine Querleitung zu ersetzen. Der Faktor kc ist entsprechend zu berechnen, siehe ÖVE/ÖNORM  
+EN 62305-3:2008, Anhang E.4.2.4.1 bzw. Bild E.2 bzw. ÖVE/ÖNORM EN 62305-3:2012, Anhang C bzw. 
+Bild C.3. 
+ANMERKUNG 
+Eine Dachrinne kann in der Trennungsabstandsberechnung nur dann berücksichtigt werden, wenn sie eine 
+dauerhaft und sichere Verbindung durch Hartlöten, Schweißen, Klemmen, Quetschen, Falzen, Schrauben oder Nieten gemäß 
+ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.5.2 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.5.3 aufweist. 
+1.2 
+Sind Gebäude gegen Seiteneinschläge zu schützen?  
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.2.3 sind bei Gebäudehöhen über 60 m die oberen 20 % der 
+Höhe der baulichen Anlagen gegen Seiteneinschläge zu schützen. Dieser Schutz ist jedoch nur für Gebäudeteile 
+über 60 m erforderlich. Darüber hinaus sollten bei Gebäuden über 120 m alle gefährdeten Teile über dieser Höhe 
+geschützt werden. 
+Bei baulichen Anlagen mit einer Höhe bis zu 60 m ist die Wahrscheinlichkeit eines Seiteneinschlages 
+vernachlässigbar (siehe ÖVE/ÖNORM EN 62305-3:2008, Anhang A.2 bzw. ÖVE/ÖNORM EN 62305-3:2012, 
+Abschnitt 5.2.3.1).  
+Bei derartigen Gebäuden mit einer Höhe bis zu 60 m, die aber höher sind als der Blitzkugelradius gemäß der 
+zutreffenden Blitzschutzklasse ist obwohl die Blitzkugel die Seitenflächen des Gebäudes berührt, demnach „nur“ 
+ein Schutz gegen „Blitzeinschläge von oben“ erforderlich, und daher ist es ausreichend, Kanten von 
+Dachaufbauten bzw. Dachkanten mit Fangeinrichtungen gegen Einschläge von oben zu schützen. Für diese 
+muss zumindest ein Mindestschutzbereich gemäß dem kleinsten in ÖVE/ÖNORM EN 62305-3:2012, Bild 1 
+gegebenen Schutzwinkel von 23° vorhanden sein. Dieser Schutzbereich gilt jedoch nur für jede einzelne 
+Dachebene des betrachteten Gebäudes und nicht für niedrigere Gebäudeteile bzw. Nachbarobjekte (siehe  
+Bild 1).  
+ANMERKUNG 
+Diese Höhenangaben sind unabhängig von der errichteten Blitzschutzklasse. Sensible Teile an 
+Gebäudeseitenflächen über dem Blitzkugelradius sollten geschützt werden. 
+ 
+Bild 1 – Attika noch im tolerierbaren Abstand zur Fangeinrichtung  
+
+
+===== PAGE 5/17 =====
+5 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+1.3 
+Wie müssen Dachein-/aufbauten in das Blitzschutzsystem eingebunden werden? 
+Alle Dachein-/aufbauten unabhängig von der Aufbauhöhe und Flächenausdehnung aus isolierendem oder 
+leitendem Material, mit leitender Verbindung in das Innere der baulichen Anlage (zB elektrische und/oder 
+informationstechnische Leitungen), sind vorrangig durch Fangeinrichtungen vor direkten Blitzschlägen zu 
+schützen und der geforderte Trennungsabstand ist einzuhalten (ÖVE/ÖNORM EN 62305-3:2008, Abschnitt E.5.2 
+bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt E.5.2). 
+Sollte aus baulichen Gründen der erforderliche Trennungsabstand (zB Metalldach, Metallattika) nicht eingehalten 
+werden können, ist der Dachein-/aufbau mit einer Fangeinrichtung vor direktem Blitzschlag zu schützen und 
+zusätzlich mit dem LPS an der Näherungsstelle zu verbinden und es sind Maßnahmen des inneren Blitzschutzes 
+zu realisieren. (Siehe auch ÖVE/ÖNORM EN 62305-3:2008, Abschnitt E.5.2.4.2.5 bzw. ÖVE/ÖNORM  
+EN 62305-3:2012, Abschnitt E.5.2.4.2.5). 
+ANMERKUNG 
+Die eingebrachten Teilblitzströme müssen berücksichtigt werden. 
+Metallene Dachaufbauten ohne leitende Verbindungen in das Innere der baulichen Anlage, die nicht im 
+Schutzbereich von Fangeinrichtungen liegen, erfordern keinen zusätzlichen Schutz durch Fangeinrichtungen, 
+wenn ihre Abmessungen keinen der folgenden Werte übersteigen:  
+– 
+Höhe über Dachniveau 0,3 m, 
+– 
+Gesamtfläche des Aufbaus 1,0 m2, 
+– 
+Länge des Aufbaus 2,0 m. 
+Nicht leitende Dachaufbauten, die höchstens 0,5 m über das Dachniveau hinausragen, erfordern keinen 
+zusätzlichen Schutz durch Fangeinrichtungen.  
+1.4 
+Wann ist der Schutz von Blechdächern gegen Durchschmelzen notwendig? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.2.4 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.2.4 
+ist das Durchschmelzen von Blechdächern zu verhindern, wenn 
+– 
+die Dicke des Metallbleches kleiner ist als der Wert t′ in ÖVE/ÖNORM EN 62305-3:2008, Tabelle 3 bzw. 
+ÖVE/ÖNORM EN 62305-3:2012, Tabelle 3, 
+– 
+sich leicht entflammbare Teile direkt unter einer Dachdeckung befinden, die bei Blitzeinschlag durchlöchert 
+werden kann (siehe ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.2.5 bzw. ÖVE/ÖNORM EN 62305-3:2012, 
+Abschnitt 5.2.5), 
+– 
+sich unmittelbar unterhalb des Daches Räume mit besonderer Gefährdung befinden (zB EX-Bereiche, 
+Menschenansammlungen gemäß ÖVE/ÖNORM E 8002 Reihe bzw. OVE E 8101 Teil 718), muss dies auch 
+bei weniger leicht entflammbarem Werkstoff, wie zB Holzbrettern, beachtet werden. 
+An der Einschlagsstelle können Blechdächer aufgrund des Blitzstromes durchlöchert werden. Der Auftraggeber 
+(Bauherr) oder der Betreiber der baulichen Anlage muss auf diese mögliche Auswirkung eines Blitzeinschlages 
+hingewiesen werden. Das Durchlöchern kann mit der Aus-führung von Fangspitzen (dimensioniert nach dem 
+Blitzkugelverfahren, ohne dass das Blechdach von der Blitzkugel berührt wird) verhindert werden. 
+1.5 
+Dürfen benachbarte Objekte für die Projektierung der Fangeinrichtungen nach dem 
+Schutzwinkel- oder Blitzkugelverfahren herangezogen werden? 
+Gemäß Risikobetrachtung nach ÖVE/ÖNORM 62305-2 wird der Umgebungsfaktor bereits berücksichtigt. Somit 
+können benachbarte Objekte eine Reduktion des Blitzrisikos bewirken und ggf. eine geringere Blitzschutzklasse 
+zur Folge haben.  
+Technisch 
+betrachtet 
+ist 
+die 
+Berücksichtigung 
+von 
+Nachbarobjekten 
+bei 
+der 
+Projektierung 
+von 
+Blitzschutzsystemen (zB Fangeinrichtungen) in Ordnung, jedoch aufgrund der rechtlichen Grundlagen (zB 
+Eigentumsrecht) ist jedes Objekt als eigenständig zu betrachten.  
+
+
+===== PAGE 6/17 =====
+6 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+Wenn sich jedoch zB auf einem Firmengelände mehrere Objekte eines Eigentümers befinden, so wäre denkbar, 
+dass ein Gebäude mit Blitzschutzklasse III den äußeren Blitzschutz gemäß Blitzkugelverfahren für ein 
+benachbartes, aber brandschutztechnisch getrenntes Gebäude mit der Anforderung der Blitzschutzklasse I 
+bietet. Die Prüfintervalle sind an die höherwertige Blitzschutzklasse anzupassen. 
+2 
+Ableitungseinrichtungen 
+2.1 
+Ist der typische Abstand zwischen den Ableitungen gemäß ÖVE/ÖNORM EN 62305-3:2008, 
+Tabelle 4 bzw. ÖVE/ÖNORM EN 62305-3:2012, Tabelle 4 genau einzuhalten? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.3 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3 sind 
+die Ableitungen in den typischen Abständen gemäß Tabelle 4 gleichmäßig am Umfang zu verteilen. 
+Abweichungen bis zu ±20 % sind gemäß ÖVE/ÖNORM EN 62305-3:2008, Anhang E.5.3.1 bzw. ÖVE/ÖNORM 
+EN 62305-3:2012, Anhang E.5.3.1 zulässig. Bei baulichen Anlagen bei denen diese Toleranz nicht eingehalten 
+werden kann, ist dies bei der Trennungsabstandsberechnung zu berücksichtigen (siehe in der Anmerkung in 
+ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.3.3 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.3) Die 
+entsprechende Mindestanzahl der Ableitungen gemäß der Schutzklasse ergibt sich aus Gebäudeumfang dividiert 
+durch den typischen Abstand.  
+ANMERKUNG 
+Der typische Abstand und der Trennungsabstand sind miteinander „verknüpft“. 
+2.2 
+Welcher Umfang ist für die Aufteilung von Ableitern heranzuziehen (ÖVE/ÖNORM  
+EN 62305-3:2008, Abschnitt 5.3.3 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.3) –  
+Der Grundrissumfang oder der Umfang der projizierten Dachfläche? 
+Für die Aufteilung der Ableitungen ist im Allgemeinen der Umfang des Grundrisses zu verwenden. Große 
+Änderungen der Geschossgrundrisse über die Gebäudehöhe (zB größere Gebäudevorsprünge) sind in der 
+Planung zu berücksichtigen (zB Ringleitungen). 
+2.3 
+Was ist bei der Verlegung von Aluminium-Runddraht zu befolgen? 
+Bei Verlegung von Aluminium (Al)-Runddraht ist ÖVE/ÖNORM EN 62305-3:2008, Tabelle 5, Abschnitt E.5.6.2.2 
+und Abschnitt E.5.6.2.2.1 bzw. ÖVE/ÖNORM EN 62305-3:2012, Tabelle 5, Abschnitt E.5.6.2.2 und Abschnitt 
+E.5.6.2.2.1 zu beachten, d.h. Al-Runddraht darf nicht in und unter Putz, unmittelbar auf Putz (alkalische bzw. 
+kalkhältige Putze) oder in Beton oder Erdreich verlegt werden es sei denn, sie sind vollständig mit einer 
+dauerhaften eng umschließenden Isolierhülse umhüllt. 
+2.4 
+Was ist bei der Verlegung von Ableitungen hinter einer Gebäudedämmung (WDVS – 
+Wärmedämmverbundsysteme) zu beachten? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.4 dürfen leicht 
+entflammbare Teile (gemäß ÖNORM EN 13501-1 Klasse des Brandverhalten F) der zu schützenden baulichen 
+Anlage nicht in direktem Kontakt mit Teilen des äußeren LPS stehen. 
+Gemäß ÖNORM B 6400:2011 „Außenwand-Wärmedämm-Verbundsysteme (WDVS) – Planung“, Abschnitt 4.7.2 
+gilt »Blitzableiter sowie Elektro- und andere Zu- und Ableitungen sind außerhalb des WDVS oder im Wandbildner 
+zu planen. Ein Schlitzen des Dämmstoffes ist nicht zulässig.« 
+Des Weiteren ist gemäß der Tabellen A.2 bis A.6 für Dämmstoffe eine Klasse des Brandverhaltens mindestens E 
+(normal entflammbar nach ÖNORM EN 13501-1) erforderlich. 
+Somit ist eine Verlegung von Blitzschutz-Ableitungen hinter einer Gebäudedämmung mit der Klasse des Brand-
+verhaltens von mindestens E möglich. 
+ANMERKUNG 
+Für notwendige Durchdringungen oder Schwächungen (Revisionstüren, Leitungseinführungen bei 
+Regenfallrohren, etc.) des WDVS sind die Montageanleitungen der Hersteller zu beachten. 
+
+
+===== PAGE 7/17 =====
+7 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+2.5 
+Sind vertikal durchgehende Metallteile (zB Regenfallrohre, Metallfassade) auf Erdniveau 
+an die Erdungsanlage anzuschließen? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.3.4 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.4 
+müssen Ableitungen gerade und senkrecht verlegt werden, sodass sie die kürzest mögliche direkte Verbindung 
+zur Erde darstellen. 
+Vertikal durchgehende Metallteile innerhalb oder außerhalb der baulichen Anlage (zB Regenfallrohre, 
+Metallfassade, …), die  
+– 
+mit dem äußeren Blitzschutzsystem verbunden sind, ODER  
+– 
+einen möglichen Einschlagspunkt darstellen, ODER  
+– 
+den Trennungsabstand zur äußeren Blitzschutzanlage nicht einhalten  
+stellen zwangsläufig eine natürliche Ableitungseinrichtung dar, und müssen (möglichst bodennah) an die 
+Erdungsanlage angeschlossen werden (Personenschutz), auch wenn sie nicht als Ableitungseinrichtung benötigt 
+werden würden.  
+Metallfassaden, die als natürliche Ableitungseinrichtung verwendet werden, sind im typischen Abstand der 
+jeweiligen Blitzschutzklasse blitzstromtragfähig an die Fangeinrichtungen und die Erdungsanlage anzuschließen. 
+Wenn eine Metallfassade nicht als natürliche Ableiteinrichtung verwendet wird, muss diese in Anlehnung an 
+ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.2.2 a) bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 6.2.2 a)  
+ca. alle 20 m möglichst bodennahe an die Erdungsanlage angeschlossen werden. 
+3 
+Erdungsanlage 
+3.1 
+Ist der empfohlene niedrige Erdungswiderstand von kleiner als 10 Ohm für jeden 
+einzelnen Erder einzuhalten? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.4.1 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.4.1 
+ist zum Einleiten des Blitzstromes in die Erde ein niedriger Gesamterdungswiderstand kleiner 10 Ohm 
+anzustreben, gemessen ohne Verbindung zum PEN-Leiter oder PE-Leiter.  
+ANMERKUNG 
+Dieser Wert kann aufgrund schlechter Bodenverhältnisse (zB Regionen der Urgesteinszone) nicht überall 
+erreicht werden. 
+3.2 
+Was gilt in Österreich als frostfreie Tiefe in Bezug auf die gemeinsame integrierte 
+Erdungsanlage (Blitzschutzerdung, Anlagenerdung, u. dgl.)? 
+Wenn der Erder auch als Anlagenerder verwendet wird, gelten die Anforderungen gemäß ÖVE/ÖNORM  
+E 8001-1:2010, Abschnitt 20.5.2 bzw. gemäß OVE E 8101:2019 Unterabschnitt 542.2.002.AT und somit eine 
+Mindesttiefe von 0,8 m. Sollte der Erder ausschließlich als Blitzschutzerder verwendet werden so genügt die 
+Mindesttiefe von 0,5 m gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 5.4.3 und Abschnitt E.5.4.1 bzw. 
+ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.4.3 und Abschnitt E.5.4.1.  
+Bei Vertikalerder wird empfohlen, den ersten Meter unter Frostbeeinflussung als unwirksam zu betrachten. 
+Mindestens eine Verbindung von der Blitzschutzerdung zum Potentialausgleich ist immer herzustellen. 
+3.3 
+Welchen minimalen Abstand sollten Tiefenerder (Erder Typ A) zueinander haben? 
+Als Richtwert für den Abstand einzelner Tiefenerder zueinander sollte mindestens die einzelne Eintreibtiefe der 
+Erder eingehalten werden. Je geringer der Abstand der Tiefenerder zueinander ist, desto höher ist der Gesamt-
+erdungswiderstand dieser Tiefenerderanordnung. 
+
+
+===== PAGE 8/17 =====
+8 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+3.4 
+Ist unterhalb von Wannenabdichtungen (Wärmedämmung, isolierende Folie, weiße Wanne 
+u. dgl.) die Erdungsanlage zu vermaschen? 
+Gemäß OVE E 8014:2019, Unterabschnitt 5.5.2 ist bei Gebäuden mit Abdichtung gegen von außen drückendes 
+Wasser, oder bei gegenüber dem Erdreich mit einer Perimeterdämmung versehenen Fundamenten zusätzlich 
+zum Fundamenterder in Beton ein Fundamenterder in Erde mit einer Maschenweite von höchstens 10 m x 20 m 
+unter Beachtung der Erfordernisse des Korrosionsschutzes gemäß Anhang A unterhalb oder außerhalb der 
+Abdichtung oder Wärmeisolierung zu verlegen. 
+Gemäß ÖVE/ÖNORM E 8014-2:2006, Abschnitt 4.4.2 ist bei Gebäuden mit Abdichtung gegen von außen 
+drückendes Wasser und bei gegenüber dem Erdreich mit einer Wärmeisolierung versehenen Fundamenten der 
+Fundamenterder in der Betonschicht unterhalb der Abdichtung oder Wärmeisolierung zu verlegen.  
+Wird unterhalb der Abdichtung keine Betonschicht errichtet, in die ein wirksamer Fundamenterder eingebaut 
+werden kann, kann ein Ringerder oder entsprechende Einzelerder außerhalb der Wannenabdichtung errichtet 
+werden. Eine Vermaschung ist in diesem Fall unterhalb der Wannenabdichtung nicht erforderlich. Aus Gründen 
+der Potentialsteuerung sind oberhalb der Wannenabdichtung Maßnahmen zu treffen zB Einbindung der 
+Bewehrung oder Ausführung eines Maschennetzes (siehe ÖVE/ÖNORM E 8014 Reihe). 
+ANMERKUNG 
+Gebäude mit EMV-Anforderungen siehe ÖVE/ÖNORM E 8014-3:2006, Abschnitt 5.1. bzw. OVE 
+E 8014:2019, Abschnitt 7. 
+Die Stahlbewehrung des Fundamentes ist gemäß ÖVE/ÖNORM E 8014-2:2006, Abschnitt 4.4.3 bzw. OVE 
+E 8014:2019, Abschnitt 5.2.4 an den Potentialausgleich anzuschließen um diesen eine möglichst gute Basis zu 
+geben. 
+3.5 
+Wann ist das Fundament zur Errichtung einer Erdungsanlage geeignet? 
+Siehe OVE E 8014:2019, Abschnitt 6, Fundamenterderbeton inklusive Tabelle 1. 
+Wenn sich unterhalb des Fundamentes eine elektrische Isolierung zB Wärmedämmung, Kunststofffolien 
+(verschweißt oder verklebt), Glasschaumgranulat, Wärmedämmleichtbeton befindet, ist das Fundament nicht für 
+die Errichtung eines Fundamenterders geeignet. Ausführungsanforderungen siehe OVE E 8014:2019, 
+Abschnitt 5.5. 
+3.6 
+Ist bei einer „braunen Wanne“ die Ausführung eines Fundamenterders zulässig?  
+Bei diesem Abdichtungssystem wird Bentonit (bzw. Bentonitmatten) an der Außenhaut des Betonbauwerkes 
+aufgebracht. Bentonit stellt keine elektrische Isolierung dar, daher kann ein herkömmlicher Fundamenterder 
+errichtet werden. Wichtig ist, dass der verwendete Beton den Anforderungen gemäß OVE E 8014:2019, 
+Tabelle 1 „Übersicht und Eignung von Beton an Fundamenterderbeton“ entspricht.  
+3.7 
+Welcher Werkstoff ist für die Erdungsanlage bei Faserbeton zu verwenden? 
+In Stahlfaserbeton ist die Verwendung von Erdungsleitungen nicht zulässig, wenn nicht gewährleistet werden 
+kann, dass die Erdungsleitungen allseits mit mindestens 50 mm Beton umhüllt sind. Ansonsten ist eine 
+Verlegung in korrosionsbeständiger Ausführung (zB V4A) erforderlich (siehe OVE E 8014:2019, Abschnitt 5.9 
+und ÖVE/ÖNORM EN 62305-3, Abschnitt E.5.6.2.2.2). 
+3.8 
+Darf die Erdungsanlage von einer Baufirma errichtet werden? 
+Vor dem Verfüllen des Erders (zB Einbringung des Betons oder Erdreiches) sind die korrekte Lage des Erders 
+und seiner Anschlussfahnen sowie die Zuverlässigkeit aller Verbindungen von einem dazu befugten 
+Elektrotechniker zu kontrollieren und freizugeben. 
+Die gesamte Erdungsanlage ist nachvollziehbar zu dokumentieren (Erdungsplan, Fotos). 
+
+
+===== PAGE 9/17 =====
+9 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+3.9 
+Welcher Wert gilt als „annähernd gleicher“ Erderwiderstand von benachbarten Erdern? 
+Als annähernd gleicher Wert von Einzelerdern ist höchstens der doppelte Wert des benachbarten Erders  
+(Faktor 2) zu verstehen. Die Messung der Einzelerder ist ohne Verbindung zum Anlagenerder bzw. Betriebserder 
+des Energieversorgungsunternehmens vorzunehmen. (Siehe ÖVE/ÖNORM EN 62305-3:2012, Tabelle 12). 
+3.10 Sind die in ÖVE/ÖNORM EN 62305-3:2008, Bild 2 bzw. ÖVE/ÖNORM EN 62305-3:2012,  
+Bild 3 geforderten Mindestlängen der Erder in jedem Fall ausreichend? 
+Für den Einzelerder gelten die Mindestlängen gemäß ÖVE/ÖNORM EN 62305-3:2008, Bild 2 bzw. ÖVE/ÖNORM 
+EN 62305-3:2012, Bild 3 oder unabhängig von der Länge ein Erdungswiderstand kleiner 10 Ohm. 
+Für die gesamte Erdungsanlage ist ein maximaler Erdungswiderstand von 10 Ohm (ohne Verbindung zum PEN 
+oder PE) anzustreben. 
+4 
+Inneres Blitzschutzsystem 
+4.1 
+Kann der Trennungsabstand in Gebäuden mit Stahlbewehrung vernachlässigt werden? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.3 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 6.3 ist in 
+baulichen Anlagen mit metallener oder elektrisch durchverbundener Stahlbewehrung ein Trennungsabstand nicht 
+notwendig. 
+Dies gilt sowohl innerhalb von Gebäuden mit bewehrten, durchverbundenen Wänden und Dächern bzw. mit 
+durchverbundenen metallenen Fassaden und Dächern als auch für Stahlskelettbauten bzw. Stahlbeton-
+skettbauten. 
+Bei einzelnen Ortbetonbauteilen bzw. Fertigbetonbauteilen (zB Wandelemente, Säulen, Aufzugsschächte) mit 
+elektrisch leitend verbundener Bewehrung, kann der Trennungsabstand in und an diesen bewehrten Bauteilen 
+vernachlässigt werden (Verbindungen siehe ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 4.3 und E 4.3.6). 
+Wenn die Bewehrung die Anforderungen an natürliche Ableitungen nach ÖVE/ÖNORM EN 62305-3:2008, 
+Abschnitt 5.3.5 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 5.3.5 nicht erfüllt, dann müssen Ableitungen in 
+entsprechender Anzahl errichtet werden. Wenn diese mehrfach elektrisch leitend (geklemmt, geschweißt) mit 
+den Bewehrungen verbunden werden, insbesondere im Bereich der „Einleitung“ des Blitzstoßstromes, ist 
+ebenfalls kein Trennungsabstand notwendig.  
+ANMERKUNG 
+Diese Maßnahme reduziert die Wahrscheinlichkeit einer gefährlichen Funkenbildung und dient dem Schutz 
+von inneren Installationen (siehe ÖVE/ÖNORM EN 62305-4). 
+Bei anderen Ausführungen (zB nicht durchverbundene Betonfertigteile, Faserbeton) muss der Trennungsabstand 
+eingehalten werden. Aus diesem Grund ist es erforderlich das Blitzschutzsystem bereits in der Planungsphase 
+des Gebäudes zu berücksichtigen.  
+4.2 
+Kann der Trennungsabstand an Stahlkonstruktionen vernachlässigt werden? 
+Bei Konstruktionen mit querschnitts-starken Stahlsäulen bzw. Stahlträgern kann unter der Voraussetzung einer 
+guten Blitzstromaufteilung (kc <<; hoher Querschnitt bzw. große Oberfläche führt zu geringer Stromdichte) und 
+einer geringen Impedanz der Trennungsabstand an derartigen Stahlsäulen vernachlässigt werden.  
+Oben im Einschlagsbereich (zB Dachbereich) ist je nach Ausführung der Konstruktion bzw. Fangvorrichtungen 
+der Trennungsabstand aber trotzdem zu berücksichtigen, wenn bzw. falls sich insbesondere im Bereich des 
+Einschlagspunktes noch keine gute Stromaufteilung erzielen lässt.  
+Als Beispiel siehe die folgend angeführten zwei Trennungsabstandsberechnungs-Varianten eines  
+– 
+metallenen Flugdaches auf zwei als natürliche Ableitung genutzten massiven Stahlsäulen (siehe Bild 2), 
+verglichen mit jener eines  
+
+
+===== PAGE 10/17 =====
+10 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+– 
+metallenen Flugdaches mit zwei diskreten Ableitungen Runddraht Ø 8 mm (siehe Bild 3).  
+Aufgrund des hohen Querschnittes, bzw. der großen Oberfläche der massiven Stahlsäulen ergibt sich im Bild 2 
+eine deutlich bessere Blitzstrom-Aufteilung, und somit eine geringe Stromdichte und eine niedrige Impedanz als 
+im Bild 3, was in einem geringen Trennungsabstand resultiert (siehe Bild 2 und 3).  
+Dieser relativ geringe Trennungsabstand an der massiven Stahlsäulen von < 1 cm laut Bild 2 (zB etwa zu an der 
+Stahlsäule installierten Elektroleitungen kann insofern vernachlässigt werden, da für PVC-Leitungsisolation in der 
+Trennungsabstandsberechnung der Materialfaktor km = 20 angesetzt werden kann.  
+ 
+Trennungsabstandsberechnung gemäß ÖVE/ÖNORM EN 62305-3, BSK II für ein metallenes Flugdach mit den 
+Abmessungen B x T = 8 m x 8 m, H = 5,5 m auf zwei massiven Stahlsäulen (natürliche Ableiter – in der 
+Berechnung simuliert mit mehreren diskreten Ableitungen Ø 8 mm; in Summe Querschnittsgleich mit den 
+Stahlsäulen).  
+Resultierender Trennungsabstand max. 6 cm an der Einschlagsstelle (berechnet mit einer Software).  
+ANMERKUNG 
+Erkennbar wird im Bild 2, dass aufgrund der niedrigen Impedanz der beiden als natürliche Ableitung 
+verwendeten massiven Stahlsäulen faktisch das „Erdpotential“ (s ~ 0 cm) bis ans obere Ende der zwei Stahlsäulen „projiziert 
+wird“ (vgl. vernachlässigbarer Trennungsabstand bei Gebäuden mit elektrisch durchverbundener Stahlbewehrung gemäß 
+ÖVE/ÖNORM EN 62305-3:2012, Pkt. 6.3.1).  
+Bild 2 – Beispiel einer Trennungsabstandsberechnung für ein Flugdach und Darstellung  
+zweier Stahlsäulen (natürliche Ableiter) 
+
+
+===== PAGE 11/17 =====
+11 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+ 
+Trennungsabstandsberechnung gemäß ÖVE/ÖNORM EN 62305-3, BSK II für ein metallenes Flugdach mit den 
+Abmessungen B x T = 8 m x 8 m, H = 5,5 m mit nur zwei „konkreten“ Ableitungen Runddraht Ø 8. Berechneter 
+Trennungsabstand max. 24 cm an der Einschlagsstelle (berechnet mit einer Software).  
+Bild 3 – Beispiel einer Trennungsabstandsberechnung für ein Flugdach und Darstellung  
+mit nur zwei „konkreten“ Ableitungen  
+4.3 
+Welche Länge „l“ ist für die Berechnung des Trennungsabstandes im Falle von mehreren 
+Ableitungen die durch Ringleiter verbunden sind zu berücksichtigen 
+ÖVE/ÖNORM EN 62305-3:2012, Anhang C „Bewertung des Trennungsabstandes“. 
+Als Länge „l“ ist die Länge, in Meter, entlang der Ableitung von dem Punkt aus, an dem der Trennungsabstand 
+berücksichtigt werden soll, bis zum nächsten Punkt des Potentialausgleichs zu berücksichtigen. 
+Der notwendige Trennungsabstand hängt ab vom Spannungsabfall entlang des kürzesten Weges von dem Punkt 
+der Ableitung, an dem der Trennungsabstand betrachtet wird, bis zum nächsten Punkt des Potentialausgleichs.  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12/17 =====
+12 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+da ≥ sa= ki
+𝑘𝑘𝑚𝑚∙ kC1 ∙ la                                        db ≥ sb= ki
+km ∙(kC2∙ lb+ kC3 ∙ h3+ kC4 ∙ h4) 
+ 
+ 
+kc1 = 
+1
+2n  + 0,1 + 0,2  ∙  ඨc
+h1
+3
+ 
+ 
+ 
+kc2 =  
+1
+n  + 0,1 
+ 
+ 
+kc3 =  
+1
+n  + 0,01 
+ 
+ 
+ 
+kc4 =  1
+n 
+ 
+ 
+kcm =  kc4 =  
+1
+n 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ANMERKUNG 
+Sind innere Ableitungen vorhanden, sollen sie bei der Anzahl n berücksichtigt werden. 
+Bild 4 – Beispiele für die Berechnung des Trennungsabstands im Falle von mehreren Ableitungen 
+und durch Ringleiter verbundene Ableitungen in jeder Ebene 
+Legende 
+n 
+Gesamtzahl der Ableitungen 
+c 
+Abstand zwischen Ableitungen 
+h 
+Abstand (Höhe) zwischen Ringleitern 
+m 
+Gesamtzahl der Ebenen 
+d 
+Abstand zur nächsten Ableitung 
+l 
+Länge entlang der Ableitung vom Punkt 
+der Näherung bis zur Verbindung mit 
+dem Potentialausgleich 
+
+
+===== PAGE 13/17 =====
+13 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+4.4 
+Welche Schutzmaßnahmen sind für informationstechnische und sicherheitstechnische 
+Einrichtungen notwendig?  
+Bei Gebäuden mit umfangreichen informationstechnischen Anlagen (zB strukturierte Gebäudeverkabelung für 
+Informationstechnik, sicherheitstechnische Anlagen wie Rauch- und Wärmeabzugsanlagen, Brandmeldeanlagen, 
+Sprinkleranlagen, Notbeleuchtung) ist die Verfügbarkeit dieser Anlagenteile aufrecht zu erhalten und sind 
+Maßnahmen zum Potentialausgleich gemäß ÖVE/ÖNORM E 8014-3 bzw. OVE E 8014:2019, Abschnitt 7und 
+Schutzmaßnahmen des inneren Blitzschutzes gemäß ÖVE/ÖNORM EN 62305-4 notwendig.  
+Sollte kein rechnerischer Nachweis für die Notwendigkeit von Überspannungsschutzgeräten (SPDs) erfolgen, so 
+sind Schutzbeschaltungen bei allen oben genannten Anlagenteilen erforderlich. 
+4.5 
+Was ist bei der Installation von Potentialausgleichsschienen zu beachten? 
+Bei vorhandenem äußeren Blitzschutz müssen Potentialausgleichsschienen teilblitzstromtragfähig sein (Prüfung 
+gemäß ÖVE/ÖNORM EN 50164-1). 
+4.6 
+Wie ist die Verbindung zwischen Blitzschutzerdung und Potentialausgleich herzustellen? 
+Blitzschutz-Potentialausgleichsverbindung von der Blitzschutzerdung ist auf möglichst kurzem Weg zur 
+Potentialausgleichsschiene oder Haupterdungsklemme herzustellen. Bei mehreren Einzelerdern genügt die 
+Verbindung von der Potentialausgleichsschiene zum nächstgelegenen Erder auf kürzesten Weg. Bei 
+ausgedehnten baulichen Anlagen (mehrere Potentialausgleichsschienen) sind örtliche Potentialausgleiche in der 
+unmittelbaren Nähe der Haupt- und Subverteiler, sowie MSR-Verteiler und Verteiler der Informationstechnik 
+gegebenenfalls über entsprechende SPDs (zB indirekte Schirmerdung) herzustellen. Diese sind mit dem 
+örtlichen PE und der Blitzschutzerdung auf kurzem Weg zu verbinden. 
+Die Mindestquerschnitte für Potentialausgleichsleiter gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.2.2, 
+Tabellen 8 und 9 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 6.2.2 und Tabelle 8 und 9 sind einzuhalten. 
+4.7 
+Wo sind im Falle von Trennungsabstandsunterschreitungen Blitzschutz-Potential-
+ausgleichsverbindungen notwendig? 
+Direkte Verbindungen zur Blitzschutzanlage sind überall auszuführen wo die Anforderungen des 
+Trennungsabstandes nicht erfüllt werden (siehe ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6 bzw. ÖVE/ÖNORM 
+EN 62305-3:2012, Abschnitt 6). 
+Bei Näherungen (Trennungsabstand nicht erfüllt) zwischen energietechnischen oder informationstechnischen 
+Leitungen und der Blitzschutzanlage ist der Blitzschutz-Potentialausgleich mit SPD Typ 1 (bzw. Kombiableiter) 
+und dem örtlichen Potentialausgleich herzustellen (siehe ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.2.4 und 
+6.2.5 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 6.2.4 und 6.2.5). 
+4.8 
+Wie sind Kabelschirme in den Potentialausgleich einzubeziehen? 
+Kabelschirme sind in der Regel mindestens beidseitig in den Potentialausgleich einzubinden. Sollte aus EMV-
+Gründen ein beidseitiger Anschluss nicht möglich sein, so ist der Anschluss auf einer Seite direkt und auf der 
+anderen Seite indirekt (offener Potentialausgleich, galvanisch getrennt zB über einen Gasentladungsableiter) 
+auszuführen.  
+4.9 
+Wie ist der Blitzschutz-Potentialausgleich bei baulichen Anlagen mit einer Stahlarmierung 
+in der Geschoßdecke durchzuführen wenn der Trennungsabstand zur Blitzschutzanlage 
+nicht eingehalten werden kann? 
+Bei Gebäuden ohne Stahlarmierung in den Wänden (zB Ziegelwände) und stahlarmierten Geschoßdecken ist 
+der Blitzschutz-Potentialausgleich zwischen der Stahlarmierung und der Blitzschutzanlage herzustellen. Bei allen 
+Elektroverteilern ist ein örtlicher Potentialausgleich mit der Stahlarmierung der Geschoßdecke und ggfs. mit 
+anderen metallisch leitfähigen Installationen (Heizungsrohre, u. dgl.) bei denen der Trennungsabstand nicht 
+eingehalten wird herzustellen.  
+
+
+===== PAGE 14/17 =====
+14 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+ANMERKUNG 
+Dies gilt auch für für Holz-Beton-Verbundsystem (inkl. Stahlbewehrung). 
+Ein Mindestschutz der Elektroinstallationen ist dann nur mit einer Ableiterbeschaltung mittels Typ 1 
+Überspannungsschutzgeräten in den jeweiligen Elektroverteilern gegeben. Weiterführende Schutzmaßnahmen 
+für die Elektroinstallationen sind in der ÖVE/ÖNORM EN 62305-4 enthalten. 
+4.10 Wo muss der Blitzschutzpotentialausgleich bei geschirmten Leitungen oder Metallkanälen 
+ausgeführt werden? 
+Gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 4.2 bzw. ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 4.3 ist 
+der Blitzschutzpotentialausgleich grundsätzlich an den Übergängen der einzelnen Blitzschutzzonengrenzen 
+auszuführen (siehe Bild 5), wobei durch geeignete Schirmungsmaßnahmen die Zonengrenze vom 
+Gebäudeeintritt ausgestülpt bzw. eingestülpt werden kann (siehe Bild 6). 
+Die eingeführten Leitungen mit entsprechendem Schirm, Metallkanal oder Schutzrohr müssen bis zum nächsten 
+Punkt des Potenzialausgleiches geführt werden. Damit wird die Zonengrenze nach außen bzw. innen verlagert. 
+ 
+Bild 5 – Beispiel für die Verbindung von Blitzschutzzonen mit geschirmten Kabeln oder 
+geschirmten Kabelkanälen 
+ 
+Bild 6 – Beispiel für die Aus- bzw. Einstülpung von Blitzschutzzonen 
+Legende zu Bild 5 und Bild 6: 
+i1, i2 
+anteilige Blitzströme 
+LPS 
+Blitzschutzzone 
+SPD 
+Überspannungsschutzgerät 
+
+
+===== PAGE 15/17 =====
+15 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+Trennungsabstand gemäß 
+ÖVE/ÖNORM EN 62305-3:2008 
+bzw.  
+ÖVE/ÖNORM EN 62305-3:2012 
+eingehalten? 
+4.11 Müssen elektrische Betriebsmittel an der Aussenfassade (zB Fühler, Jalousie, Kameras, 
+Wandleuchten) generell mit SPDs geschützt werden? 
+Die Beurteilung der Schutzmaßnahmen von Einrichtungen der elektrischen Energie- und Informationstechnik an 
+einer Aussenfassade, die mit ausreichender Wahrscheinlichkeit nicht von einem direktem Blitzschlag getroffen 
+werden kann, erfolgt gemäß ÖVE/ÖNORM EN 62305-3:2008 Abschnitt 6 (ÖVE/ÖNORM EN 62305-3:2012, 
+Abschnitt 6), sowie ÖVE/ÖNORM EN 62305-4:2008 Abschnitt 4 und Anhang D (ÖVE/ÖNORM EN 62305-4:2012, 
+Abschnitt 4 und Anhang C). 
+Wenn der Trennungsabstand nicht eingehalten werden kann 
+Blitzschutzpotentialausgleich gemäß ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 6.2 (ÖVE/ÖNORM EN 62305-
+3:2012, Abschnitt 6.2). 
+Wenn der Trennungsabstand eingehalten werden kann 
+Beurteilung ob in Abhängigkeit eines eventuell gewählten Blitzschutzzonenkonzeptes SPDs an den 
+Zonengrenzen installiert werden müssen und/oder Beurteilung der Installation von SPDs aufgrund der 
+Ausführung eines koordinierten SPD-Systems gemäß ÖVE/ÖNORM EN 62305-4:2008, Abschnitt 4 bzw. 
+Anhang D (ÖVE/ÖNORM EN 62305-4:2012, Abschnitt 4 bzw. Anhang C). 
+Siehe dazu Bild 7. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bild 7 – Beurteilung der Schutzmaßnahmen 
+Installation von SPDs gemäß 
+ÖVE/ÖNORM EN 62305-3:2008 
+bzw.  
+ÖVE/ÖNORM EN 62305-3:2012 
+Absatz 6.1 und 6.2 
+Blitzschutzzonen-
+konzept 
+erforderlich? 
+(siehe Einleitung 
+von ÖVE/ÖNORM  
+EN 62305-4) 
+Beurteilung ob zusätzliche 
+Überspannungsmaßnahmen 
+zB aufgrund langer Leitungen oder 
+großer Schleifenbildung notwendig  
+oder sinnvoll sind (siehe  
+ÖVE/ÖNORM EN 62305-4:2008, 
+Absatz D.2.3 und D.2.4 
+bzw. 
+ÖVE/ÖNORM EN 62305-4:2012, 
+Anhang C)
+Installation von SPDs an allen 
+Zonengrenzen (zB 
+Gebäudeaußenwand) gemäß 
+ÖVE/ÖNORM EN 62305-4:2008 
+bzw. 
+ÖVE/ÖNORM EN 62305-4:2012, 
+Absatz 4 und folgend 
+Nein 
+Nein 
+Ja 
+Ja 
+
+
+===== PAGE 16/17 =====
+16 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+5 
+Verschiedenes 
+5.1 
+Welche Feuerwiderstandsdauer ist einzuhalten, um ein separates Blitzschutz-
+Risikomanagement von verschiedenen Gebäudeteilen durchführen zu können? 
+Gemäß ÖVE/ÖNORM EN 62305-2:2013, Abschnitt A.2.2 wird eine Feuerwiderstandsdauer von mindestens 
+120 Minuten gefordert. Diese Forderung ist in Österreich unüblich, grundsätzlich wird eine Feuerwiderstands-
+dauer von bis zu 90 Minuten gefordert (in Ausnahmefällen durch behördliche Forderungen bis zu 120 Minuten). 
+Grundsätzlich ist die Feuerwiderstandsdauer, die von der Behörde gefordert wird ausreichend. 
+5.2 
+Wie sind Verbindungen und Anschlüsse an Flachleiter bzw. Bleche auszuführen? 
+Für Verbindungen und Anschlüsse mittels Schrauben an Flachleitern sowie von Flachleitern an 
+Stahlkonstruktionen müssen mindestens zwei Schrauben M8 oder eine Schraube M10 verwendet werden. 
+Anschlüsse von Flachleitern an Blechen mit weniger als 2 mm Dicke müssen mit Gegenplatten mit mindestens 
+10 cm2 Fläche unterlegt und mit zwei Schrauben mindestens M8 verschraubt werden. 
+Sind Bleche nur einseitig zugänglich, so ist ein Anschluss von Flachleitern mittels Blindnieten, Blindnietmuttern 
+oder bei Blechen mit mindestens 2 mm Dicke auch mittels Blechtreibschrauben zulässig. Dazu sind mindestens 
+– 
+5 Blindnieten von 3,5 mm Durchmesser, oder 
+– 
+4 Blindnieten von 5 mm Durchmesser, oder 
+– 
+2 Blindnieten von 6 mm Durchmesser, oder 
+– 
+2 Schrauben M6, oder 
+– 
+2 Blechtreibschrauben 6,3 mm Durchmesser 
+Aus nichtrostendem Stahl (mindestens V2A) zu verwenden (siehe Bild 8). Schweißverbindungen sollen 
+mindestens 50 mm lang und etwa 3 mm dick sein (in Anlehnung an ÖVE/ÖNORM E 8049:2001, Abschnitt 8.6). 
+Bild 8 - Beispiele für die Ausführung von Verbindungen 
+5.3 
+Welche Werte sind für die Blitzdichte bei der Schutzklassenbestimmung zu verwenden 
+Für die Werte der Blitzdichte können sowohl die Werte aus ÖVE/ÖNORM E 8001-1:2010, Tabelle A.3 oder nach 
+ÖVE/ÖNORM EN 62305-2:2013, 
+Anhang  
+A, 
+als 
+auch 
+die 
+Ergebnisse 
+der 
+Online-Abfrage 
+auf 
+https://www.aldis.at/blitzschutz/blitzdichte-fuer-risikobewertung-nach-oveoenorm-en62305-2/abfrage-starten/?ADMCMC_noBeUser=278 
+herangezogen werden. Eine genaue Quellenangabe ist notwendig. Allerdings muss darauf hingewiesen werden, 
+dass aufgrund unterschiedlicher Berechnungsbasis dieser Abfragesysteme verschiedene Werte für die 
+Blitzdichte an einem Ort ausgewiesen werden können – die Online-Abfrage liefert die genaueren Werte.  
+Je 2 Blindnieten 
+
+
+===== PAGE 17/17 =====
+17 
+ 
+ 
+ 
+BL- 01 – Informationen zur Errichtung von Blitzschutzsystemen (LPS) 
+Ausgabe April 2019 
+www.ove.at 
+ 
+5.4 
+Schutz vor Berührungs- und Schrittspannung 
+5.4.1 
+Berührungsspannung 
+Information zu ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 8.1 b), Fußnote N5): 
+Unter der Formulierung „mindestens zehn Ableitungen die Punkt 5.3.5 entsprechen“, versteht man mindestens 
+zehn Stützen eines ausgedehnten Metallgerüstes der baulichen Anlage oder mindestens zehn bewehrte Stahl-
+betonsäulen eines elektrisch leitend durchverbundenen Stahlbetonskelettbaues. 
+5.4.2 
+Schrittspannung 
+Unabhängig von den beschriebenen Schutzmaßnamen nach ÖVE/ÖNORM EN 62305-3:2008, Abschnitt 8 bzw. 
+ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 8 sollte unter Berücksichtigung der technisch bzw. wirtschaftlich 
+zumutbaren Möglichkeiten der Erder (Erdung Typ A oder B) so tief wie möglich eingebracht werden. 
+Information zu ÖVE/ÖNORM EN 62305-3:2012, Abschnitt 8.2 b), Fußnote N5): 
+Unter der Formulierung „mindestens zehn Ableitungen die Punkt 5.3.5 entsprechen“, versteht man mindestens 
+zehn Stützen eines ausgedehnten Metallgerüstes der baulichen Anlage oder mindestens zehn bewehrte Stahl-
+betonsäulen eines elektrisch leitend durchverbundenen Stahlbetonskelettbaues. 
+5.5 
+Wie sind Seil-Absturzsicherungen in das Blitzschutzsystem zu integrieren 
+Gemäß ÖVE/ÖNORM EN 62305-3 sind metallische Dachaufbauten die länger als 2 m oder höher als 0,3 m sind 
+und sich nicht im Schutzbereich von Fangeinrichtungen befinden, in das Blitzschutzsystem einzubeziehen. 
+Die Seil-Absturzsicherung darf nicht als natürliche Fangeinrichtung verwendet werden, da sie eine Personen-
+schutzeinrichtung ist. Sie ist durch eine Fangeinrichtung vor direktem Blitzschlag zu schützen und muss, wenn 
+der Trennungsabstand zum Blitzschutzsystem nicht eingehalten wird, an allen Näherungspunkten mit der 
+Fangeinrichtung elektrisch sicher verbunden werden (Blitzschutzpotentialausgleich). 
+Diese flexiblen Verbindungen des Blitzschutzpotentialausgleichs zur Seilanlage der Seil-Absturzsicherung 
+müssen für den Seilgleiter überrollbar und nach ÖVE/ÖNORM EN 62561-1 geprüft sein. 
+Bei Dächern mit metallener Eindeckung ist das Seil der Seil-Absturzsicherung mindestens am Anfang und am 
+Ende mit dem Metalldach zu verbinden. Bei größeren Seillängen sind die Verbindungen ca. alle 20 m 
+auszuführen. Befestigungsstützen der Seil-Absturzsicherung die nicht blitzstromtragfähig mit dem Metalldach 
+verbunden sind, müssen mit dem Metalldach blitzstromtragfähig verbunden werden. 
+Die Fangeinrichtungen sind so zu positionieren, dass eine möglichst ungehinderte Nutzung der Absturzsicherung 
+aufrecht bleibt. 
+Blitzstromgeprüfte 
+(gemäß 
+ÖVE/ÖNORM EN 62561-Reihe) 
+Seil-Absturzsicherungen 
+sind 
+gemäß 
+den 
+Herstellerangaben in das Blitzschutzsystem einzubinden. 
+Einzelanschlagpunkte, die höher als 0,5 m (gemäß ÖVE-E 49) oder 0,3 m (gemäß ÖVE/ÖNORM EN 62305-3) 
+sind, müssen in das Blitzschutzsystem eingebunden werden. Etwaige Herstellerangaben sind zu 
+berücksichtigen. 
+ 

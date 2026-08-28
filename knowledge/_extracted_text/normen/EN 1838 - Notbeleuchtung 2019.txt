@@ -1,0 +1,902 @@
+
+
+===== PAGE 1/22 =====
+ 
+ 
+ 
+ 
+                       
+ÖNORM 
+EN 1838 
+Ausgabe: 2019-11-15 
+ 
+ 
+Angewandte Lichttechnik — Notbeleuchtung 
+      
+      
+Lighting applications — Emergency lighting 
+Éclairagisme — Éclairage de secours 
+ 
+ 
+Medieninhaber und Hersteller 
+Austrian Standards International 
+Standardisierung und Innovation 
+Heinestraße 38, 1020 Wien  
+Copyright © Austrian Standards International 2019 
+Alle Rechte vorbehalten. Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige  
+Medien oder Datenträger nur mit Zustimmung 
+gestattet! 
+E-Mail: service@austrian-standards.at 
+Internet: www.austrian-standards.at/nutzungsrechte  
+Verkauf von in- und ausländischen Normen und  
+Regelwerken durch 
+Austrian Standards plus GmbH 
+Heinestraße 38, 1020 Wien 
+E-Mail: service@austrian-standards.at  
+Internet: www.austrian-standards.at 
+Webshop: www.austrian-standards.at/webshop 
+Tel.: +43 1 213 00-300 
+Fax: +43 1 213 00-355 
+ 
+ 
+ICS 
+91.160.10 
+ 
+ 
+ 
+ 
+Ident (IDT) mit 
+EN 1838:2013-07 
+ 
+ 
+      
+ 
+ 
+ 
+ 
+Ersatz für 
+ÖNORM EN 1838:2013-09 
+ 
+ 
+ 
+ 
+zuständig 
+Komitee 047 
+ 
+ 
+Optik und Lichttechnik 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 2/22 =====
+ÖNORM EN 1838:2019-11 
+2 
+Nationales Vorwort 
+Die vorliegende ÖNORM EN wurde ohne formelles Verfahren neu herausgegeben, da seitens des CEN-
+CENELEC Management-Zentrums eine korrigierte deutschsprachige Fassung der EN 1838 ausgesandt 
+wurde. 
+Gegenüber ÖNORM EN 1838:2013-09 wurden folgende Änderungen durchgeführt: 
+− Änderung der Definitionen 3.2 und 3.7; 
+− Unterabschnitt 4.1.1, 3. Absatz: Änderung der Modalverben „ist zu“ und „sind zu“ zu „sollte“ und 
+„sollten“; 
+− Unterabschnitt 4.2.4: Löschung des Wortes „eindeutig“; 
+− Unterabschnitt 4.3.1: Änderung von „auf der freien Bodenfläche“ zu „auf der freien Bodenfläche im 
+Kernbereich“; 
+− Unterabschnitte 4.3.4 und 4.4.4: Löschung des Wortes „eindeutig“; 
+− Unterabschnitt 4.4.5: Änderung von „– dies fällt in den Aufgabenbereich des Betreibers“ zu „– dies 
+sollte vom Betreiber angegeben werden“; 
+− Unterabschnitt 4.5: Änderung von „Ersatzbeleuchtung als Notbeleuchtung“ zu „Ersatzbeleuchtung 
+als Sicherheitsbeleuchtung“; 
+− Unterabschnitt A.1: Änderung von „sollte die Leuchtdichte im Abstand von 15 mm“ zu „sollte die 
+Leuchtdichte auf beiden Seiten im Abstand von 15 mm“. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 3/22 =====
+ 
+ 
+ 
+EUROPÄISCHE NORM 
+EUROPEAN STANDARD 
+NORME EUROPÉENNE 
+ 
+ EN 1838 
+ 
+ 
+ 
+ 
+Juli 2013 
+ICS 91.160.10 
+Ersatz für EN 1838:1999
+Deutsche Fassung 
+ 
+Angewandte Lichttechnik - Notbeleuchtung 
+ 
+Lighting applications - Emergency lighting 
+ 
+Éclairagisme - Éclairage de secours 
+Diese Europäische Norm wurde vom CEN am 15. Juni 2013 angenommen.  
+ 
+Die CEN-Mitglieder sind gehalten, die CEN/CENELEC-Geschäftsordnung zu erfüllen, in der die Bedingungen festgelegt sind, unter denen 
+dieser Europäischen Norm ohne jede Änderung der Status einer nationalen Norm zu geben ist. Auf dem letzten Stand befindliche Listen 
+dieser nationalen Normen mit ihren bibliographischen Angaben sind beim Management-Zentrum des CEN-CENELEC oder bei jedem CEN-
+Mitglied auf Anfrage erhältlich. 
+ 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Französisch). Eine Fassung in einer anderen Sprache, 
+die von einem CEN-Mitglied in eigener Verantwortung durch Übersetzung in seine Landessprache gemacht und dem Management-
+Zentrum mitgeteilt worden ist, hat den gleichen Status wie die offiziellen Fassungen. 
+ 
+CEN-Mitglieder sind die nationalen Normungsinstitute von Belgien, Bulgarien, Dänemark, Deutschland, der ehemaligen jugoslawischen 
+Republik Mazedonien, Estland, Finnland, Frankreich, Griechenland, Irland, Island, Italien, Kroatien, Lettland, Litauen, Luxemburg, Malta, 
+den Niederlanden, Norwegen, Österreich, Polen, Portugal, Rumänien, Schweden, der Schweiz, der Slowakei, Slowenien, Spanien, der 
+Tschechischen Republik, der Türkei, Ungarn, dem Vereinigten Königreich und Zypern. 
+ 
+ 
+ 
+ 
+EUROPÄISCHES KOMITEE FÜR NORMUNG 
+EUROPEAN COMMITTEE FOR STANDARDIZATION  
+COMITÉ EUROPÉEN DE NORMALISATION
+ 
+ 
+CEN-CENELEC Management-Zentrum:  Avenue Marnix 17,  B-1000 Brüssel 
+© 2013 CEN 
+Alle Rechte der Verwertung, gleich in welcher Form und in welchem 
+Verfahren, sind weltweit den nationalen Mitgliedern von CEN vorbehalten.
+Ref. Nr. EN 1838:2013 D
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 4/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+2 
+Vorwort ...................................................................................................................................................................................... 3 
+Einleitung .................................................................................................................................................................................. 4 
+1 
+Anwendungsbereich ............................................................................................................................................... 6 
+2 
+Normative Verweisungen ..................................................................................................................................... 6 
+3 
+Begriffe ........................................................................................................................................................................ 6 
+4 
+Sicherheitsbeleuchtung ......................................................................................................................................... 8 
+4.1 
+Allgemein .................................................................................................................................................................... 8 
+4.1.1 
+Anforderungen an die Errichtung ..................................................................................................................... 8 
+4.1.2 
+Hervorzuhebende Stellen ..................................................................................................................................... 8 
+4.2 
+Sicherheitsbeleuchtung für Rettungswege .................................................................................................... 9 
+4.3 
+Antipanikbeleuchtung ......................................................................................................................................... 11 
+4.4 
+Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung ........................................... 12 
+4.5 
+Ersatzbeleuchtung ................................................................................................................................................. 12 
+5 
+Sicherheitszeichen ................................................................................................................................................ 12 
+5.1 
+Allgemeines ............................................................................................................................................................. 12 
+5.2 
+Zu berücksichtigende Sicherheitszeichen .................................................................................................... 13 
+5.3 
+Anforderungen an Sicherheitszeichen .......................................................................................................... 13 
+5.4 
+Leuchtdichte von Sicherheitszeichen ............................................................................................................. 13 
+5.5 
+Erkennungsweite ................................................................................................................................................... 13 
+Anhang A (normativ)  Messung von Leuchtdichte und Beleuchtungsstärke ................................................... 15 
+A.1 
+Messung der Leuchtdichte von Zeichen ........................................................................................................ 15 
+A.2 
+Geräte für Vor-Ort-Messungen ......................................................................................................................... 15 
+Anhang B (informativ)  A–Abweichung .......................................................................................................................... 16 
+Literaturhinweise ................................................................................................................................................................. 18 
+ 
+Inhalt 
+Seite 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 5/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+3 
+Dieses Dokument (EN 1838:2013) wurde vom Technischen Komitee CEN/TC 169 „Light and lighting“ 
+erarbeitet, dessen Sekretariat vom DIN gehalten wird. 
+Diese Europäische Norm muss den Status einer nationalen Norm erhalten, entweder durch Veröffentlichung 
+eines identischen Textes oder durch Anerkennung bis Januar 2014, und etwaige entgegenstehende nationale 
+Normen müssen bis Januar 2014 zurückgezogen werden. 
+Es wird auf die Möglichkeit hingewiesen, dass einige Elemente dieses Dokuments Patentrechte berühren 
+können. CEN [und/oder CENELEC] sind nicht dafür verantwortlich, einige oder alle diesbezüglichen 
+Patentrechte zu identifizieren. 
+Dieses Dokument ersetzt EN 1838:1999. 
+Anwender dieser Europäischen Norm, dessen Anwendungen im Bereich des Artikels 153 des Vertrags über 
+die Arbeitsweise der Europäischen Union AEUV fallen, werden darauf hingewiesen, dass Normen keine 
+gesetzliche Beziehung zu Richtlinien haben, die Artikel 153 des Vertrags über die Arbeitsweise der 
+Europäischen Union AEUV folgen. 
+Gegenüber EN 1838:1999 wurden folgende wesentlichen Änderungen vorgenommen: 
+a) die hervorzuhebenden Stellen wurden klarer gefasst und verbessert und es wurde klargestellt, dass die 
+externe Beleuchtung bis zu einem sicheren Bereich zu berücksichtigen ist. Die Beleuchtung von 
+Brandbekämpfungs- und Meldeeinrichtungen und Erste-Hilfe-Stellen ist jetzt aufeinander abgestimmt 
+worden, unabhängig von ihrer Lage, und ist auf den Betrieb der Ausrüstung bezogen worden; 
+b) die Farbe und die Gestaltung von Sicherheitszeichen wurden an das korrigierte ISO-Format angepasst; 
+c) 
+die A-Abweichung für bestimmte Länder wurde angepasst. 
+Entsprechend der CEN-CENELEC-Geschäftsordnung sind die nationalen Normungsinstitute der folgenden 
+Länder gehalten, diese Europäische Norm zu übernehmen: Belgien, Bulgarien, Dänemark, Deutschland, die 
+ehemalige jugoslawische Republik Mazedonien, Estland, Finnland, Frankreich, Griechenland, Irland, Island, 
+Italien, Kroatien, Lettland, Litauen, Luxemburg, Malta, Niederlande, Norwegen, Österreich, Polen, Portugal, 
+Rumänien, Schweden, Schweiz, Slowakei, Slowenien, Spanien, Tschechische Republik, Türkei, Ungarn, 
+Vereinigtes Königreich und Zypern. 
+Vorwort
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 6/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+4 
+Notbeleuchtung wird wirksam, wenn die Stromversorgung der allgemeinen künstlichen Beleuchtung 
+ausfällt. Sie wird daher von einer von der Allgemeinversorgung unabhängigen Stromquelle gespeist.  
+Im Rahmen dieser Norm ist Notbeleuchtung ein übergeordneter Begriff, der mehrere Arten umfasst, wie in 
+Bild 1 dargestellt. 
+ 
+Bild 1 — Arten der Notbeleuchtung 
+Das umfassende Ziel der Sicherheitsbeleuchtung ist, beim Ausfall der allgemeinen Stromversorgung ein 
+gefahrloses Verlassen eines Raumes oder Gebäudes zu ermöglichen. Das Ziel jeder einzelnen Art in dieser 
+Kategorie ist wie folgt: 
+ Ziel der Sicherheitsbeleuchtung für Rettungswege ist es, Personen das gefahrlose Verlassen eines 
+Raumes oder Gebäudes zu ermöglichen, indem für ausreichende Sehbedingungen und Orientierung auf 
+Rettungswegen und in besonderen Bereichen gesorgt wird, und dass Brandbekämpfungs- und 
+Sicherheitseinrichtungen leicht aufgefunden und bedient werden können; 
+ Ziel der Notbeleuchtung von Sicherheitszeichen für Rettungswege ist es, ausreichende Seh-
+bedingungen und Orientierung zu ermöglichen, um Rettungswege leicht zu finden und zu benutzen; 
+ Ziel der Antipanikbeleuchtung ist, möglichst Paniksituationen zu vermeiden und Personen ein 
+sicheres Erreichen der Rettungswege zu ermöglichen, indem für ausreichende Sehbedingungen und 
+Orientierung gesorgt wird. Das Licht der Rettungsweg- und Antipanikbeleuchtung sollte nach unten auf 
+die Bezugsebene gerichtet sein, aber auch Hindernisse bis zu 2 m über dieser Ebene beleuchten; 
+ Ziel der Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung ist, zur Sicherheit 
+von Personen beizutragen, die sich in einem potentiell gefährlichen Arbeitsablauf oder Arbeitssituation 
+befinden, um angemessene Abschaltmaßnahmen zur Sicherheit weiterer vor Ort befindlicher Personen 
+zu unterstützen. 
+Es gibt Techniken, die als Ergänzung angewendet werden können und bei zusätzlicher Anwendung in 
+Rettungswegen die Wirksamkeit von konventionellen Notleuchten erhöhen. Diese Techniken werden in 
+dieser Norm nicht behandelt. 
+Einleitung
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 7/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+5 
+Die Sehleistung ist von Person zu Person unterschiedlich, sowohl in Bezug auf das erforderliche 
+Beleuchtungsniveau zur deutlichen Wahrnehmung eines Gegenstandes als auch auf die Zeit zur Adaptation 
+bei Änderungen der Beleuchtungsstärke. Ältere Menschen benötigen im Allgemeinen mehr Licht und mehr 
+Zeit, um sich auf eine niedrige Beleuchtungsstärke an einer Gefahrenstelle oder auf einem Rettungsweg 
+einzustellen. 
+Durch die eindeutige Kennzeichnung von Flucht- und Rettungswegen können Angst und Irritationen 
+verringert werden. Es ist sehr wichtig, dass die Ausgänge eines Raumes oder Gebäudes stets klar 
+gekennzeichnet und sichtbar sind, wenn sie von Personen genutzt werden. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 8/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+6 
+1 
+Anwendungsbereich 
+Diese Europäische Norm legt die lichttechnischen Anforderungen an Sicherheitsbeleuchtungs- und Ersatz-
+beleuchtungssysteme fest, die in Anlagen und Räumlichkeiten installiert werden, in denen derartige Systeme 
+erforderlich sind. Sie ist grundsätzlich anwendbar für Räume oder Gebäude, die der Öffentlichkeit oder 
+Arbeitnehmern zugänglich sind. 
+2 Normative Verweisungen 
+Die folgenden Dokumente, die in diesem Dokument teilweise oder als Ganzes zitiert werden, sind für die 
+Anwendung dieses Dokuments erforderlich. Bei datierten Verweisungen gilt nur die in Bezug genommene 
+Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe des in Bezug genommenen Dokuments 
+(einschließlich aller Änderungen). 
+EN 12665:2011, Licht und Beleuchtung — Grundlegende Begriffe und Kriterien für die Festlegung von 
+Anforderungen an die Beleuchtung 
+EN 50172, Sicherheitsbeleuchtungsanlagen 
+EN 60598-2-22, Leuchten — Teil 2-22: Besondere Anforderungen — Leuchten für Notbeleuchtung 
+(IEC 60598-2-22) 
+EN 62034, Automatische Prüfsysteme für batteriebetriebene Sicherheitsbeleuchtung für Rettungswege 
+(IEC 62034) 
+EN ISO 7010, Graphische Symbole — Sicherheitsfarben und Sicherheitszeichen — Registrierte Sicherheits-
+zeichen (ISO 7010) 
+ISO 3864-1, Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs 
+and safety markings 
+ISO 3864-4 Graphical symbols — Safety colours and safety signs — Part 4: Colorimetric and photometric 
+properties of safety sign materials 
+3 
+Begriffe 
+Für die Anwendung dieses Dokuments gelten die Begriffe nach EN 12665:2011 und die folgenden Begriffe. 
+3.1 
+Notbeleuchtung 
+Beleuchtung, die bei Störung der Stromversorgung der allgemeinen künstlichen Beleuchtung wirksam wird 
+[QUELLE: IEC 60050-845] 
+3.2 
+Rettungsweg 
+Weg, der im Notfall zum Verlassen genutzt wird, vom Startpunkt der Evakuierung bis zu dem sicheren 
+Bereich 
+3.3 
+Sicherheitsbeleuchtung 
+Teil der Notbeleuchtung, der Personen das sichere Verlassen eines Raumes oder Gebäudes ermöglicht, oder 
+der es Personen ermöglicht, vor dem Verlassen einen potentiell gefährlichen Arbeitsablauf zu beenden 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 9/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+7 
+3.4 
+Sicherheitsbeleuchtung für Rettungswege 
+Teil der Sicherheitsbeleuchtung, der es ermöglicht, Rettungseinrichtungen eindeutig zu erkennen und sicher 
+zu benutzen, sofern Personen anwesend sind 
+3.5 
+Antipanikbeleuchtung 
+Teil der Sicherheitsbeleuchtung, der der Panikvermeidung dienen soll, und der es Personen erlaubt, eine 
+Stelle zu erreichen, von der aus ein Rettungsweg eindeutig als solcher erkannt werden kann 
+Anmerkung 1 zum Begriff: 
+In einigen Ländern ist dies als „Open-Area-Beleuchtung“ bekannt. 
+3.6 
+Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung 
+Teil der Sicherheitsbeleuchtung, der der Sicherheit von Personen dienen soll, die sich in potentiell gefähr-
+lichen Arbeitsabläufen oder Situationen befinden, und der es ermöglicht, notwendige Abschaltmaßnahmen 
+zur Sicherheit des Bedienungspersonals und anderer in den Räumlichkeiten befindlicher Personen zu treffen 
+3.7 
+Ersatzbeleuchtung 
+Teil der Notbeleuchtung, der vorgesehen ist, um normale Tätigkeiten im Wesentlichen unverändert 
+fortsetzen zu können 
+[QUELLE: IEC 60050-845] 
+3.8 
+Notausgang 
+Weg nach außen, der dafür vorgesehen ist, im Notfall benutzt zu werden 
+3.9 
+Sicherheitszeichen 
+Zeichen, das mittels einer Kombination von Farbe und geometrischer Form eine allgemeine Sicherheits-
+information vermittelt und das durch die Hinzufügung eines graphischen Symbols eine spezielle Sicherheits-
+information vermittelt 
+[QUELLE: ISO 3864-1] 
+3.10 
+beleuchtetes Sicherheitszeichen 
+Zeichen, das, wenn es erforderlich ist, von einer externen Lichtquelle beleuchtet wird 
+3.11 
+hinterleuchtetes Sicherheitszeichen 
+Zeichen, das, wenn es erforderlich ist, von einer internen Lichtquelle beleuchtet wird 
+3.12 
+sicherer Bereich 
+ausgewiesener Bereich an dem sich flüchtende Personen sicher versammeln können und nicht durch die 
+Notsituation gefährdet werden 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 10/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+8 
+4 
+Sicherheitsbeleuchtung 
+4.1 
+Allgemein 
+4.1.1 
+Anforderungen an die Errichtung 
+Um sicherzustellen, dass die Sicherheitsbeleuchtung bei Bedarf die gesetzlichen Bestimmungen erfüllt, muss 
+diese entsprechend EN 60598-2-22, EN 50172 und EN 62034 errichtet, überwacht und gewartet werden. 
+Die Anforderungen dieser Norm sind (Mindest-) Wartungswerte. Sie sind für den kompletten Zeitraum bis 
+zum Ende der Lebensdauer der einzelnen Bestandteile anzusetzen. Anteile reflektierten Lichtes sind zu 
+vernachlässigen. 
+Die Planung der Notbeleuchtung sollte unter Ansetzung der schlechtesten Umgebungsbedingungen (z. B. 
+geringster abgegebener Lichtstrom, größte Blendwirkung) und unter Einberechnung nur des direkt abge-
+strahlten Lichts der Leuchten während der Lebensdauer erstellt werden. Der Beitrag reflektierten Lichts der 
+Raumbegrenzungsflächen sollte vernachlässigt werden. Sofern indirekt strahlende Leuchten oder 
+Deckenfluter (die als Notfallbeleuchtung im Selbsterhaltungsmodus) eingesetzt werden, bei denen die 
+Leuchten zusammen mit der reflektierenden Fläche wirken, kann die erste Reflexion (basierend auf dem 
+Wartungswert des Reflexionsgrades der Flächen) berücksichtigt werden, und weitere Reflexionen sind zu 
+vernachlässigen. 
+Um die notwendige Sichtbarkeit für Evakuierungsmaßnahmen zu erreichen, ist eine räumliche Ausleuchtung 
+erforderlich. Zeichen, die an allen Notausgängen und Ausgängen entlang des Rettungsweges vorzusehen 
+sind, müssen beleuchtet/hinterleuchtet sein, um den Rettungsweg zu einem sicheren Bereich eindeutig 
+anzuzeigen. In dieser Norm ist diese Anforderung erfüllt, wenn die Leuchten für die Ausleuchtung und für 
+die Sicherheitszeichen für die Rettungswege mindestens 2 m über dem Boden installiert sind. 
+Falls möglich sollte wegen der Sichtbarkeit das Sicherheitszeichen nicht höher als 20° über der horizontalen 
+Blickrichtung bei der maximalen Erkennungsweite des Zeichens angebracht werden. 
+Um sicherzustellen, dass die Notbeleuchtung im Bedarfsfall funktioniert, ist sie entsprechend EN 50172 zu 
+errichten, zu überwachen und zu warten. Automatische Test-Möglichkeiten, falls vorgesehen, müssen 
+entsprechend EN 62034 ausgeführt werden. 
+Wenn eine direkte Sicht auf einen Notausgang nicht möglich ist, müssen ein oder mehrere beleuchtete oder 
+hinterleuchtete Rettungszeichen angebracht werden, um das Erreichen des Notausgangs zu erleichtern. 
+Sicherheitsleuchten, die EN 60598-2-22 entsprechen, müssen um das notwendige Beleuchtungsniveau zu 
+erzielen, zur Hervorhebung nahe jeder Ausgangstür und an potentiellen Gefahrenstellen oder 
+Sicherheitseinrichtungen angebracht werden. Die hervorzuhebenden Stellen umfassen die folgenden Punkte. 
+4.1.2 
+Hervorzuhebende Stellen 
+Stellen, die durch Beleuchtung hervorzuheben sind: 
+a) nahe (siehe ANMERKUNG 1) jeder im Notfall zu benutzenden Ausgangstür; 
+b) nahe (siehe ANMERKUNG 1) Treppen, um auf diese Weise jede Treppenstufe direkt zu beleuchten; 
+c) 
+nahe (siehe ANMERKUNG 1) jeder anderen Niveauänderung; 
+d) beleuchtete Sicherheitszeichen an Rettungswegen, Richtungszeichen an Rettungswegen und andere 
+Sicherheitszeichen müssen bei Notbeleuchtungsbedingungen beleuchtet werden; 
+e) bei jeder Richtungsänderung (siehe ANMERKUNG 2); 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 11/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+9 
+f) 
+bei jeder Kreuzung der Gänge/Flure (siehe ANMERKUNG 2); 
+g) nahe (siehe ANMERKUNG 1) jedem letzten Ausgang und außerhalb des Gebäudes bis zu einem sicheren 
+Bereich; 
+h) nahe (siehe ANMERKUNG 1) jeder Erste-Hilfe-Stelle, so dass 5 lx vertikale Beleuchtungsstärke am Erste-
+Hilfe-Kasten erreicht werden; 
+i) 
+nahe (siehe ANMERKUNG 1) jeder Brandbekämpfungs- und Meldeeinrichtung, so dass 5 lx vertikale 
+Beleuchtungsstärke an den Melde-, den Brandbekämpfungseinrichtungen und der Anzeigen der Brand-
+meldeanlage erreicht werden; 
+j) 
+nahe (siehe ANMERKUNG 1) Fluchtgeräten für Menschen mit Behinderung; und 
+k) nahe (siehe ANMKERUNG 1) Schutzbereichen für Menschen mit Behinderung und nahe Rufanlagen. 
+Ebenso sind zwei-Wege-Kommunikationseinrichtungen für diese Bereiche sowie Alarmeinrichtungen in 
+Toiletten für Menschen mit Behinderung zu berücksichtigen. 
+ANMERKUNG 1 
+Im Sinne dieses Abschnittes ist unter „nahe“ üblicherweise ein Abstand von nicht mehr als 2 m in 
+der Horizontalen gemessen zu verstehen. 
+ANMERKUNG 2 
+Für Stellen entsprechend e) und f) bedeutet „bei“, dass die Sicherheitsleuchte beide Richtungen 
+einer Richtungsänderung oder einer Kreuzung ausleuchtet. 
+4.2 
+Sicherheitsbeleuchtung für Rettungswege 
+4.2.1 Bei Rettungswegen mit einer Breite bis zu 2 m müssen die horizontalen Beleuchtungsstärken auf 
+dem Boden entlang der Mittellinie des Rettungsweges mindestens 1 lx betragen. Der Mittelbereich, der nicht 
+weniger als der Hälfte der Breite des Weges entspricht, muss mindestens mit 50 % dieses Wertes beleuchtet 
+sein. Breitere Rettungswege können  als mehrere 2 m breite Streifen betrachtet werden oder mit einer 
+Antipanikbeleuchtung ausgerüstet werden. 
+ANMERKUNG Länder, in denen ein anderes Beleuchtungsniveau erforderlich ist, sind im Anhang B aufgeführt. 
+4.2.2 Die Ungleichmäßigkeit Ud, Verhältnis der kleinsten zur größten Beleuchtungsstärke nach EN 12665, 
+darf 1 : 40 entlang der Mittellinie des Rettungsweges nicht unterschreiten. 
+4.2.3 Physiologische Blendung muss durch Begrenzung der Lichtstärke der Leuchten innerhalb des 
+Gesichtsfeldes niedrig gehalten werden. 
+Für Rettungswege, die horizontal verlaufen, darf die Lichtstärke innerhalb der Zone von 60° bis 90° gegen 
+die Vertikale für alle Azimuthwinkel die Werte in Tabelle 1 nicht überschreiten (siehe Bild 2). 
+Für alle anderen Rettungswege und Bereiche dürfen die Grenzwerte bei keinem Winkel überschritten 
+werden (siehe Bild 3). 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 12/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+10 
+ 
+Legende 
+1 
+Bereich, in dem die maximale Lichtstärke die Werte in Tabelle 1 nicht überschreiten darf 
+Bild 2 — Horizontal verlaufende Rettungswege 
+ 
+Legende 
+1 
+Bereich, in dem die maximale Lichtstärke die Werte in Tabelle 1 nicht überschreiten darf  
+Bild 3 — Andere Rettungswege und Flächen 
+ANMERKUNG Hoher Kontrast zwischen einer Leuchte und ihrem Hintergrund kann Blendung zur Folge haben. Das 
+Hauptproblem bei der Beleuchtung von Rettungswegen ist die physiologische Blendung, bei der die Helligkeit der 
+Leuchten stark blenden und dadurch das Erkennen von Hindernissen oder Zeichen verhindern kann. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 13/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+11 
+Tabelle 1 — Grenzwerte der physiologischen Blendung 
+Befestigungshöhe des 
+Lichtpunkts über dem 
+Boden 
+Maximale Lichtstärke für 
+Sicherheitsbeleuchtung für 
+Rettungswege und 
+Antipanikbeleuchtung 
+Maximale Lichtstärke für 
+Sicherheitsbeleuchtung für 
+Arbeitsplätze mit besonderer 
+Gefährdung 
+h 
+Imax 
+Imax 
+m 
+cd 
+cd 
+h < 2,5 
+2,5 ≤ h < 3,0 
+3,0 ≤ h < 3,5 
+3,5 ≤ h < 4,0 
+4,0 ≤ h < 4,5 
+h ≥ 4,5 
+500 
+900 
+1 600 
+2 500 
+3 500 
+5 000 
+1 000 
+1 800 
+3 200 
+5 000 
+7 000 
+10 000 
+ 
+4.2.4 Um Sicherheitsfarben als solche erkennen zu können, muss der Farbwiedergabe-Index Ra einer 
+Lichtquelle mindestens 40 betragen. Die Leuchte darf diesen Wert nicht wesentlich herabsetzen. 
+4.2.5 Die Betriebsdauer der Sicherheitsbeleuchtung für Rettungswege muss mindestens 1 h betragen. 
+4.2.6 Die Sicherheitsbeleuchtung für Rettungswege muss 50 % der geforderten Beleuchtungsstärke 
+innerhalb von 5 s und 100 % der geforderten Beleuchtungsstärke innerhalb von 60 s erreichen. 
+4.2.7 Übereinstimmung mit 4.2.1 bis 4.2.4 und 4.2.6 kann durch Messung oder durch Vergleich mit 
+verbindlichen Angaben des Herstellers geprüft werden. 
+4.3 
+Antipanikbeleuchtung 
+4.3.1 Die horizontale Beleuchtungsstärke darf 0,5 lx auf der freien Bodenfläche im Kernbereich nicht 
+unterschreiten, wobei Randbereiche mit einer Breite von 0,5 m nicht berücksichtigt werden. 
+4.3.2 Die Ungleichmäßigkeit Ud, Verhältnis der kleinsten zur größten Beleuchtungsstärke (nach 
+EN 12665), darf 1 : 40 nicht unterschreiten. 
+4.3.3 Die physiologische Blendung muss durch Begrenzung der Lichtstärke der Leuchten innerhalb des 
+Gesichtsfeldes niedrig gehalten werden. Die Werte in Tabelle 1 innerhalb der Zone von 60° bis 90° gegen die 
+Vertikale dürfen für alle Azimuthwinkel nicht überschritten werden (siehe Bild 2). 
+4.3.4 Um Sicherheitsfarben als solche erkennen zu können, muss der Farbwiedergabe-Index Ra einer 
+Lichtquelle mindestens 40 betragen. Die Leuchte darf diesen Wert nicht wesentlich herabsetzen. 
+4.3.5 Die Betriebsdauer für Rettungszwecke muss mindestens 1 h betragen. 
+4.3.6 Die Antipanikbeleuchtung muss 50 % der geforderten Beleuchtungsstärke innerhalb von 5 s und 
+100 % der geforderten Beleuchtungsstärke innerhalb von 60 s erreichen. 
+4.3.7 Übereinstimmung mit 4.3.1 bis 4.3.4 und 4.3.6 kann durch Messung oder durch Vergleich mit 
+verbindlichen Angaben des Herstellers geprüft werden. 
+4.3.8 Antipanikbeleuchtung ist in Toiletten für Menschen mit Behinderung erforderlich. 
+4.3.9 Antipanikbeleuchtung/Rettungswege: Falls Sicherheitsbeleuchtung in einem Raum erforderlich ist 
+und dieser Raum keinen direkten Zugang zu den Rettungswegen im angrenzenden Brandabschnitt hat, muss 
+der Rettungsweg dazwischen auch beleuchtet werden. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 14/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+12 
+4.4 
+Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung 
+4.4.1 In Bereichen von Arbeitsplätzen mit besonderer Gefährdung muss der Wartungswert der Beleuch-
+tungsstärke auf der Arbeitsfläche mindestens 10 % des für die Aufgabe erforderlichen Wartungswertes der 
+Beleuchtungsstärke betragen und darf nicht unter 15 lx fallen. Störende stroboskopische Effekte müssen 
+ausgeschlossen werden. 
+4.4.2 Die Gleichmäßigkeit Uo der Beleuchtungsstärke der Sicherheitsbeleuchtung für Arbeitsplätze mit 
+besonderer Gefährdung darf 0,1 nicht unterschreiten. 
+4.4.3 Physiologische Blendung muss durch Begrenzung der Lichtstärke der Leuchten innerhalb des 
+Gesichtsfeldes niedrig gehalten werden. Die Werte in Tabelle 1 dürfen innerhalb der Zone von 60° bis 90° 
+gegen die Vertikale für alle Azimuthwinkel nicht überschritten werden. 
+4.4.4 Um Sicherheitsfarben als solche erkennen zu können, muss der Farbwiedergabe-Index Ra einer 
+Lichtquelle mindestens 40 betragen. Die Leuchte darf diesen Wert nicht wesentlich herabsetzen. 
+4.4.5 Die Betriebsdauer muss mindestens der Dauer entsprechen, während der eine Gefährdung für 
+Personen besteht — dies sollte vom Betreiber angegeben werden. 
+4.4.6 Bei Sicherheitsbeleuchtung für Arbeitsplätze mit besonderer Gefährdung muss die geforderte 
+Beleuchtungsstärke dauernd vorhanden sein oder innerhalb von 0,5 s erreicht werden, abhängig von der 
+jeweiligen Anwendung. 
+4.4.7 Übereinstimmung mit 4.4.1 bis 4.4.4 und 4.4.6 kann durch Messung oder durch Vergleich mit 
+verbindlichen Angaben des Herstellers geprüft werden. 
+4.5 
+Ersatzbeleuchtung 
+Wenn Ersatzbeleuchtung als Sicherheitsbeleuchtung eingesetzt wird, so muss sie alle relevanten Anforde-
+rungen dieser Norm erfüllen. 
+Falls die Ersatzbeleuchtung ein Beleuchtungsniveau unter dem Minimum der allgemeinen Beleuchtung 
+erzeugt, darf sie nur benutzt werden, um einen Arbeitsprozess herunterzufahren oder zu beenden. 
+5 
+Sicherheitszeichen 
+5.1 
+Allgemeines 
+Sicherheitszeichen und ergänzende Richtungspfeile, die in der Fluchtsituation benötigt werden, müssen die 
+Anforderungen nach ISO 3864-1, ISO 3864-4 (Photometrie) und EN ISO 7010 (Gestaltung) erfüllen. 
+Alle Schilder und Hinweise sind zu beleuchten, um die Auffälligkeit und Lesbarkeit sicherzustellen. Es gibt 
+eine Reihe von Möglichkeiten um dies sicherzustellen, wie z. B. folgende: 
+ externe Beleuchtung; 
+ Hinterleuchtung. 
+Es ist wichtig sicherzustellen, dass bei Notbeleuchtung das Zeichen ausreichend beleuchtet ist, um sichtbar 
+zu sein, und dass die Sicherheitsfarbe grün und die weiße Kontrastfarbe weiterhin in den Farbgrenzen nach 
+ISO 3864-4 liegen. 
+ANMERKUNG Unter Allgemeinbeleuchtung gelten andere Anforderungen. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 15/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+13 
+5.2 
+Zu berücksichtigende Sicherheitszeichen 
+Als Sicherheitszeichen sind hier Richtungszeichen für Rettungswege, Zeichen zur Kennzeichnung des 
+Notausgangs und andere Sicherheitszeichen, die nach der Gefährdungsabschätzung bei Notbeleuchtung 
+erkennbar sein müssen, zu berücksichtigen. 
+5.3 
+Anforderungen an Sicherheitszeichen 
+Sicherheitszeichen 
+müssen 
+ISO 3864-1, 
+ISO 3864-4 (Photometrie) 
+und 
+EN ISO 7010 (Gestaltung) 
+entsprechen. 
+ANMERKUNG Die Bedeutung von Richtungszeichen für Rettungswege und Zeichen zur Kennzeichnung des Notausgangs 
+mit einem zusätzlichen Richtungspfeil und mit oder ohne zusätzlichem Text ist in EN ISO 7010 beschrieben.  
+5.4 
+Leuchtdichte von Sicherheitszeichen 
+5.4.1 Die Leuchtdichte der Sicherheitsfarbe muss an jeder Stelle des Zeichens mindestens 2 cd/m2 
+betragen. 
+5.4.2 Das Verhältnis der größten zur kleinsten Leuchtdichte darf weder innerhalb der weißen Kontrast-
+farbe noch innerhalb der Sicherheitsfarbe größer als 10 : 1 sein. Große Unterschiede bei angrenzenden 
+Stellen sollten vermieden werden. 
+5.4.3 Das Verhältnis der Leuchtdichte LKontrastfarbe zur Leuchtdichte LSicherheitsfarbe muss mindestens 5 : 1 
+betragen und darf nicht größer als 15 : 1 sein (siehe Anhang A). 
+5.4.4 Die Sicherheitsfarbe und die Kontrastfarbe müssen den Anforderungen in ISO 3864-1 und 
+ISO 3864-4 entsprechen und müssen nach ISO 3864-4 gemessen werden. 
+5.4.5 Die Beleuchtungsdauer der Sicherheitszeichen muss mindestens 1 h betragen. 
+5.4.6 Sicherheitszeichen müssen mindestens 50 % der geforderten Leuchtdichte innerhalb von 5 s und 
+100 % der geforderten Leuchtdichte innerhalb von 60 s erreichen. 
+5.4.7 Die Übereinstimmung zu 5.4.1 bis 5.4.6 kann durch Messung oder durch Vergleich mit verbindlichen 
+Angaben des Herstellers erfolgen. 
+5.5 
+Erkennungsweite 
+Da ein hinterleuchtetes Zeichen aus größerer Entfernung erkennbar ist als ein beleuchtetes Zeichen gleicher 
+Größe, muss die maximale Erkennungsweite (siehe Bild 4) nach folgender Gleichung bestimmt werden: 
+𝑙𝑙= 𝑧𝑧⋅ℎ 
+Dabei ist 
+l 
+die Erkennungsweite, 
+h 
+die Höhe des Zeichens, 
+z 
+der Distanzfaktor (z ist eine Konstante: 100 für beleuchtete Zeichen, 200 für hinterleuchtete 
+Zeichen). 
+Die Maßeinheit von h und l muss gleich sein. 
+Für die eindeutige Lesbarkeit des Sicherheitszeichens sollte das Zeichen nicht höher als 20° über der 
+horizontalen Blickrichtung des Betrachters montiert sein. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 16/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+14 
+ 
+Bild 4 — Erkennungsweite 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 17/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+15 
+Anhang A 
+(normativ) 
+ 
+Messung von Leuchtdichte und Beleuchtungsstärke 
+A.1 Messung der Leuchtdichte von Zeichen 
+Leuchtdichten werden senkrecht zur Oberfläche in einem Messfeld mit einem Durchmesser von 10 mm auf 
+der Oberfläche für jede farbige Fläche des Zeichens gemessen. Die minimale und die maximale Leuchtdichte 
+werden für die Flächen jeder Farbe bestimmt. Für den farbigen Hintergrund wird ein 10 mm breiter 
+Randbereich von den Messungen ausgeschlossen. Um das Leuchtdichteverhältnis von zwei aneinander-
+grenzenden Farben zu bestimmen, sollte die Leuchtdichte auf beiden Seiten im Abstand von 15 mm von der 
+Trennlinie der zwei Farben gemessen werden. Die maximalen und minimalen Verhältnisse sind zu ermitteln. 
+Falls der Durchmesser der Farbfläche kleiner als 30 mm ist, muss der Messfelddurchmesser entsprechend 
+verkleinert werden. Die Größe des Messfeldes muss in die ausgewählte Fläche passen. Sie muss wenigstens 
+in einem Abstand eines Messfelddurchmessers vom Rand der gemessenen Fläche entfernt liegen. Für 
+Sicherheitszeichen, bei denen die Länge der kürzeren Seite kleiner als 100 mm beträgt, ist der Durchmesser 
+des Messfeldes und die Breite der nicht zu berücksichtigenden Umrandung auf höchstens 10 % der kürzeren 
+Seitenlänge zu reduzieren. 
+A.2 Geräte für Vor-Ort-Messungen 
+Alle Beleuchtungsstärkemessungen müssen mit einem kosinus- und V(λ)-korrigierten Messgerät und alle 
+Leuchtdichtemessungen mit einem V(λ)-korrigierten Messgerät durchgeführt werden. 
+Die Fehlergrenze des Messgerätes darf 10 % nicht übersteigen. 
+Die Messungen der Beleuchtungsstärke dürfen bis zu 20 mm über dem Boden durchgeführt werden. 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 18/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+16 
+Anhang B 
+(informativ) 
+ 
+A–Abweichung 
+Länder, in denen ein anderes Beleuchtungsniveau erforderlich ist 
+A-Abweichung: Nationale Abweichung, die auf Vorschriften beruht, deren Veränderung zum gegenwärtigen 
+Zeitpunkt außerhalb der Kompetenz des CEN/CENELEC-Mitglieds liegt. 
+Diese Europäische Norm fällt nicht unter eine EU-Richtlinie. In den betreffenden CEN/CENELEC-Ländern 
+gelten diese A-Abweichungen anstelle der Festlegungen der Europäischen Norm so lange bis sie zurück-
+gezogen sind. 
+Abschnitt 
+Abweichung 
+1 
+Frankreich1 
+ 
+Beleuchtungsstärken und Leuchtdichte werden nicht bei der Planung berücksichtigt. 
+4 
+Italien2 
+ 
+Für Kinos, Theater und ähnliche Veranstaltungsorte muss die Beleuchtungsstärke in der Nähe 
+von Treppen und Ausgängen mindestens 5 lx betragen, gemessen 1 m über dem Boden. Ent-
+lang von Rettungswegen sind mindestens 2 lx erforderlich. Sofern Beleuchtungsstärkewerte 
+durch Vorschriften vorgegeben sind, sind sie nicht als Planungswerte zu betrachten, sondern 
+müssen vor Ort einschließlich Reflexion messbar sein. 
+4.1.2 
+Frankreich1 
+Die Punkte g), h), i) und j) werden in den französischen Regelungen nicht 
+berücksichtigt. 
+4.2 
+Frankreich1 
+ 
+Auf Rettungswegen müssen zertifizierte Notleuchten in einem Abstand von nicht mehr als 
+15 m angebracht sein. 
+                                                                
+1 
+Die Abweichungen aus Frankreich basieren auf folgenden nationalen Regelungen: 
+ 
+Règlement de sécurité contre l’incendie dans les ERP, arrêté du 25 juin 1980 modifie, livre II, Chapitre VIII, section III. 
+ 
+Arrêté du 14 décembre 2011 relatif aux circuits et installations de sécurité dans les établissements soumis au code du travail. 
+2 
+Die Abweichungen aus Italien basieren auf folgenden nationalen Regelungen: 
+ 
+Decree of the Ministry of the Interior dtd. 1986-02-01 (Garages) 
+ 
+Decree of the Ministry of Transport dtd. 1988-01-11 (Underground) 
+ 
+Decree of the Ministry of the Interior dtd. 1992-08-26 (Schools) 
+ 
+Decree of the Ministry of the Interior dtd. 1994-04-09 (Hotels) 
+ 
+Decree of the Ministry of the Interior dtd. 1996-03-18 (Sports premises) 
+ 
+Decree of the Ministry of the Interior dtd. 1996-08-19 (Cinemas, theatres and public entertainment) 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 19/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+17 
+4.2.6/4.3.6 
+Deutschland 
+(Technische Regeln für Arbeitsstätten — Sicherheitsbeleuchtung, optische 
+Sicherheitsleitsysteme — ASR A3.4/3) 
+ 
+Nach Ausfall der Allgemeinbeleuchtung muss die geforderte 
+Beleuchtungsstärke der Sicherheitsbeleuchtung für Fluchtwege innerhalb 
+von 15 s erreicht werden. 
+4.3 
+Niederlande 
+ 
+Das kleinste Beleuchtungsniveau für Antipanikbeleuchtung beträgt 1 lx. (Bouwbesluit) 
+4.3 
+Frankreich1 
+ 
+Zertifizierte Notleuchten müssen 5 lm/m2 Bodenfläche erbringen. Um eine angemessene 
+Gleichmäßigkeit zu erreichen, muss der Abstand zwischen den Leuchten geringer sein als das 
+Vierfache der Höhe, in der sie montiert sind (mit mindestens zwei Leuchten je Raum). 
+4.4 
+Frankreich1 
+ 
+Diese Kategorien sind nicht in den französischen Anforderungen enthalten, die auf einer 
+Risikobewertung basieren. 
+5 
+Frankreich1 
+ 
+Die französischen Regelungen nehmen Bezug auf die Französische Norm NF X 08-003 (oder 
+übereinstimmende Normen anderer europäischer Länder). 
+Allgemein 
+Frankreich1 
+ 
+Die Beleuchtungsstärke als photometrischer Aspekt wird nicht in öffentlichen Gebäuden und 
+Arbeitsstätten genutzt. 
+ 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 20/22 =====
+ÖNORM
+EN 1838:2013 (D) 
+18 
+Literaturhinweise 
+[1] 
+CIE 121-SP1, The Photometry and Goniophotometry of Luminaires — Supplement 1: Luminaires for 
+Emergency Lighting 
+[2] 
+CIE 39-2, Recommendations for Surface Colours for Visual Signalling 
+[3] 
+CR 14380, Lighting applications — Tunnel lighting 
+[4] 
+EN 12193, Licht und Beleuchtung — Sportstättenbeleuchtung 
+[5] 
+EN 13032-1, Licht und Beleuchtung — Messung und Darstellung photometrischer Daten von Lampen 
+und Leuchten — Teil 1: Messung und Datenformat 
+[6] 
+EN 13032-3, Licht und Beleuchtung — Messung und Darstellung photometrischer Daten von Lampen 
+und Leuchten — Teil 3: Darstellung von Daten für die Notbeleuchtung von Arbeitsstätten 
+[7] 
+IEC 60050-845, International electrotechnical vocabulary — Chapter 845: Lighting 
+[8] 
+ISO 9186-2, Graphical symbols — Test methods — Part 2: Methods for testing perceptual quality 
+[9] 
+ISO 16069, Graphical symbols — Safety signs — Safety way guidance systems (SWGS) 
+[10] 
+ISO 17724:2003,Graphical symbols — Vocabulary 
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 21/22 =====
+ÖNORM
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714
+
+
+===== PAGE 22/22 =====
+WICHTIGE INFORMATIONEN FÜR ANWENDER VON ÖNORMEN
+Standards/Normen
+Standards sind von Fachleuten erarbeitete Empfehlungen. Sie dienen dem Wohl und der Sicherheit aller und machen 
+das Leben einfacher. Standards, wie z. B. Öǆ NORMEN, stehen für Qualität und damit für Vertrauen in Produkte und 
+Leistungen.
+Sie werden in Dialog und Konsens aller Betroffenen und Interessierten entwickelt, legen ­Anforderungen an 
+­Produkte, Dienstleistungen, Systeme und Qualifikationen fest und definieren Kriterien für deren Üǆ berprüfung.
+Aktualität des Normenwerks/Wissen um Veränderungen
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Standards/Normen einem kontinuier­
+lichen Wandel. Sie werden vom zuständigen Komitee regelmäßig auf Aktualität, Notwendigkeit sowie Zweckmäßig­
+keit überprüft und bei Bedarf ­überarbeitet. Für den Anwender von Standards/Normen ist es daher ­wichtig, ­immer 
+Zugriff auf die jeweils gültigen Fassungen zu haben, um sicherzustellen, dass Produkte und Produktions­verfahren 
+bzw. Dienstleistungen und Prozesse den aktuellen Markterfordernissen entsprechen.
+Austrian Standards International bietet kundenspezifische Lösungen für ein professionelles Standards-Management.
+Informationen über die Angebote von Austrian Standards finden Sie hier: 
+http://www.austrian-standards.at/produkte-leistungen/standards-professionell-managen/
+Internationale und ausländische Standards
+Bei Austrian Standards können Sie auch Internationale Normen (ISO) beziehen, ebenso nationale Normen und Regel­
+werke aus anderen Ländern und Dokumente anderer in- und ausländischer Organisationen, die Regeln veröffentlichen.
+Weiterbildung und Know-how-Transfer
+Austrian Standards bietet zahlreiche Informations- und Weiterbildungsmöglichkeiten rund um Standards: Fach­
+literatur zu einzelnen Standards, Seminare, Lehrgänge oder Fachkongresse. ­Autorinnen/Autoren und Vor­tragende 
+wirken oft selbst an der Entwicklung der Standards mit und vermitteln Informationen und Know-how aus erster 
+Hand. Mehr dazu auf: 
+http://www.austrian-standards.at/fachliteratur | http://www.austrian-standards.at/seminare 
+Kontakt
+Customer Service 
+Tel.: +43 1 213 00-300
+Fax: +43 1 213 00-355
+E-Mail: service@austrian-standards.at
+Austrian Standards
+Heinestraße 38 | 1020 Wien
+Österreich
+www.austrian-standards.at
+ISO 9001:2015
+MeinNormenPaket 07.10.2020 2008801, TGB Technische Gebäudebetreuung GesmbH, Breitenfurter Straße 118,1230-Wien
+02dfc348-54f6-5416-e053-3a0da8c06714

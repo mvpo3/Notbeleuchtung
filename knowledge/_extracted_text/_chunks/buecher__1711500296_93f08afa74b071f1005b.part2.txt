@@ -1,0 +1,2453 @@
+
+
+===== PAGE 81/298 =====
+Exercise 3 Practice
+Use COPY, ROTATE, MIRROR, and MOVE to complete these drawings.
+Do not put in the dimensions.
+I---
+-
+-
+.-.....
+-
+I-~
+-
+1--
+-
+1--
+-
+1--
+(u
+-
+I
+I
+1-,...
+~
+1-1-
+-
+,...-
+-
+1-1-
+.....
+'-'-
+'-
+I---
+10-
+81
+_--'3o:.....:....'O'_-J~
+5'
+CQSeMen-t
+window
+2'-11'
+30.00
+Lancet
+'Window
+60,00
+I
+2'-8'
+I
+m~m
+IE!9IE]
+It---
+1'-10'_1~6'-4#_I
+4'1
+Double
+Hung
+window
+~20
+Guide
+~
+RI
+ill
+LJ=d
+Bushing
+Rocker ArM
+64
+CHAPTER THREE
+
+
+===== PAGE 82/298 =====
+Exercise 3 Architectural
+Use Architectural Units to draw this elevation.
+~I
+I
+Jo;:----;:-~~~~~~~~~~
+Finish
+d Floor
+St eps 7'J
+each
+EJrade
+~=t=----,-------+--------+----------,---,,-----,--
+ELEVATION
+THIS IS AN ELEVATION OF THE FRONT FACADE OF A HOUSE.
+IT IS A SCALE DRAWING OF THE FRONT; ALL LINES ARE VIEWED AS IF FROM "STRAIGHT ON".
+SOME NOTATIONS ARE PARTICULAR TO ELEVATIONS: NOTE THE ROOFLINE ON THE PORCH.
+ROOFLINES IN IMPERIAL ARE NOTED WITH AN INCH VALUE RELATIVE TO 12" OR PER FOOT - 6/12 OR 45 DEGREES.
+THE FOUNDATION IS NOT ALWAYS SHOWN. HERE IT IS 8' DEEP, SHOWN IN HIDDEN LINE, BROKEN.
+THE HEIGHTS OF
+CEILINGS, DOORS, WINDOWS, ETC. ARE GENERALLY SHOWN IN THE SECTION DRAWINGS.
+ANOTHER HIDDEN LINE SHOWS THE BOTTOM OF THE FINISHED CEILING.
+THE OVERALL HEIGHT IS OFTEN NEEDED FOR A BUILDING PERMIT.
+ELEVATIONS SHOULD BE LABELED WITH THE COMPASS DIRECTION, SOUTH, NORTH, EAST, ETC.
+GOOD PLACEMENT OF WINDOWS AND SOLAR PANELS IS CRITICAL FOR SUSTAINABLE ARCHITECTURE.
+Object Selection and Modify Commands
+65
+
+
+===== PAGE 83/298 =====
+Exercise 3 Mechanical
+Use COPY, MIRROR, MOVE and TRIM to complete these drawings.
+See page 58 for hidden and center lines.
+These drawings are not drawn to scale within the page. Draw at 1 = 1.
+06
+04
+021
+016
+6
+64
+~--- 19 ~----.l
+64
+I
+-,-__~~
++--11--- __ +
++-.--+
+---..+
+.1..-
+I
+Base
+R10
+12
+Foot Reel Side
+66
+CHAPTER THREE
+
+
+===== PAGE 84/298 =====
+Exercise 3 Challenger
+Set Architectural Units, SNAP to 3, GRID to 6 and draw in these three desks.
+Note that you can copy the desk and modify it, then copy again to make the office.
+This is a plan of modular furniture.
+Once these desks are completed, assemble them as in the plan on the next page.
+3"IA
+)
+2'-6"
+~ r
+1
+11-6'/
+10------
+w
+C\J
+3/1
+w
+(\J
+Lo.rge Desk
+SMo.ll Desk
+Filing Cabinet
+12/1
+x
+18
+1
+'
+I
+~
+..
+'"
+I
+(Y)
+\.0
+~
+I
+I
+_L __
+ru
+....
+I
+M
+(lJ
+i---
+I
+-'---
+I
+-
+- - - __/
+1'-6'
+M
+(IJ
+-I--
+I
+3'
+I
+3/
+'"
+'"
+I
+I
+(Y)
+M
+I
+~
+Office
+Object Selection and Modify Commands
+67
+
+
+===== PAGE 85/298 =====
+Exercise 3 Challenger (continued>
+Doors are 3
+1 long, aisle distances should not be less than 24".
+Don't forget OSNAP.
+t~
+5'-9'
+7'
+'I
+5'-9'
+11'
+29'-7'
+FLOOR PLAN
+A FLOOR PLAN OR PLAN GIVES A LAYOUT
+OF WALLS OR, IN THIS CASE t FURNITURE.
+68
+CHAPTER THREE
+
+
+===== PAGE 86/298 =====
+STRETCH, TRIM, EXTEND,
+OFFSET, and ARRAY
+should be able to:
+Set options
+Removing and
+Adding Obiects
+Chapter 3 looked at identifying objects for a selection set using Window and Crossing,
+Window Polygon, Crossing Polygon, Fence, Previous and Last. Now we will discuss
+removing objects from the selection set.
+REMOVE Option
+To remove objects from your selection set you can hold the Shift button down while
+picking them or use the REMOVE option. Use REMOVE when a group ofobjects has
+been identified and just a few need to be removed from this selection set.
+Once this option is chosen, the Select objects: prompt changes to a Remove objects:
+prompt. Note that you can use Window and Crossing within the REMOVE option.
+To copy just the lines and solids in the electrical symbol in Figure 4.1 you could pick
+each object separately (four picks) or identify the whole set with Window, then re-
+move the circle (three picks).
+1
+Figure 4.1
+Command: COpy
+Select objects: (pick 1)
+Select opposite corner: (pick 2)
+Select objects:R
+Remove objects: (pick 3)
+Remove
+objects:~
+Specify base point or displacement, or
+[Multiple]: (pick 4)
+Specify second point of displacement
+or <use first point as displacement>: (pick 5)
+This option can be used with any Select objects: prompt.
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+69
+
+
+===== PAGE 87/298 =====
+Add Option
+Ifobjects have been removed and should be added back into the selection set, use Add.
+Use Add to change the prompt from Remove objects: to Select objects:, then continue
+to add objects to the selection set. The command line equivalent is ADD or A.
+4
+3
+More Modify
+Commands
+70
+CHAPTER FOUR
+2
+Figure 4.2
+Command:COPY
+Select objects: (pick 1)
+Specify opposite corner: (pick 2)
+Select objects:R
+Remove objects: (pick 3)
+Other corner: (pick 4)
+Remove objects:A
+Select objects: (pick 5)
+Select objects:..J
+Specify base point or displacement,
+or
+[Multiple]: (pick 6)
+Specify second point of displacement
+or <use first point as displacement>: (continue with
+command)
+You may alternate between Remove and Add as shown in Figure 4.2 until you are
+satisfied with the objects in the selection set. Again the hot key is Shift while you are
+picking.
+These Modify commands are similar to those discussed in Chapter 3, but have a more
+intricate structure. Keep reading the prompts for maximum efficiency.
+Like the commands offered in Chapter 3, REMOVE and ADD can be found under the
+Modify pull-down menu and under the Modify toolbar, and by typing them in with
+aliases.
+The STRETCH Command
+The STRETCH command is used to make lines, plines, and other linear objects either
+shorter or longer. It repositions the selected side of an existing object or group of ob-
+jects relative to a new point or position.
+Practice STRETCH to make sure you know how it works. It is very useful.
+The command line equivalent is STRETCH.
+
+
+===== PAGE 88/298 =====
+You must use a Crossing
+Window with STRETCH.
+1,1
+4
+)
+Figure 4.3
+1,1
+x
+4
+1,1
+7 )1
+Command: STRETCH
+~..
+Select objects to stretch by crossing-window or polygon ...
+Select objects: (pick 1)
+Other corner: (pick 2)
+(crossing the right side)
+Select objects:.J
+Specify base point or displacement: (pick 3)
+Speci fy second point of displacement: (pick 4)
+(3 units)
+Note that the Crossing option is automatic. You must pick your Crossing Window
+from right to left as shown in Figure 4.3. All objects in the Crossing are highlighted
+when they are chosen.
+Stretching Circles and Arcs
+Circles are moved as full circles - stretching a circle does not create an ellipse. One
+end ofan arc can be picked up and stretched into a different radius. Ifthe arc is fully en-
+closed, there is no change in the radius.
+X
+4
+Figure 4.4
+~-­
+I
+i
+r-l
+'-----1r=J----1
+f--I----1
+1.~_
+If you pick all the objects with
+your Crossing selection, you will
+MOVE
+the
+objects
+instead
+of
+STRETCHing them. Choose only
+the side of the object that you
+would like to stretch.
+Command: STRETCH
+Select objects to stretch by crossing-window or polygon ...
+Select objects: (pick 1)
+Other corner: (pick 2)
+Select objects:.J
+Specify base point or displacement: (pick 3)
+Specify second point of displacement: (pick 4)
+In Figure 4.4 the objects within the Crossing Window are the line for the door and the
+arc of the door, both ofwhich will effectively be moved, and the two lines indicating
+the walls around the door, which will be stretched to accommodate the new position of
+the door.
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+71
+
+
+===== PAGE 89/298 =====
+The TRIM Command
+The TRIM commandis used to cut offan object or a series ofobjects at their intersection
+with a boundary or cutting edge. While you have already used TRIM on individual ob-
+jects, you can also use it on multiple objects.
+The command line equivalent is TRIM.
+The cutting edge or boundary must already exist on the drawing before you can use
+TRIM. You can use TRIM on lines, as in Figure 4.5, or arcs as in Figure 4.6.
+Figure 4.5
+x
+-----....",--------,..-..--. ·"'''''''''3
+---~·---x-
+, x
+" 2
+Command: TRIM
+Current settings Projection=UCS,
+Edge=None
+Select cutting edges ...
+Select objects or <select all>: (pick 1)
+Select
+objects:~ (no more cutting edges are needed)
+Select object to trim or shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/UndoJ : (pick 2,
+3
+)
+Select object to trim or
+IUndo] : (pick 3)
+Select object to trim or
+IUndo]
+:~
+The Fence option, being sold as a
+new feature, has been around since
+Release 12.
+2
+72
+CHAPTER FOUR
+Figure 4.6
+Command: TRIM
+Current settings Projection=UCS,
+Edge=None
+Select cutting edges ...
+Select objects or <select all>: (pick 1)
+Select
+objects:~ (no more cutting edges are needed)
+Select object to trim or shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/Undo]: (pick 2, 3, 4,
+5)
+Select object to trim or
+ge/UndoJ:
+~
+The arcs in Figure 4.6 are trimmed to the edges of the circle.
+
+
+===== PAGE 90/298 =====
+You can also choose multiple objects as the cutting edges. In Figure 4.7 all ofthe ob-
+jects are considered to be cutting edges.
+In
+both TRIM and EXTEND,
+<seled all> means type in the
+word All if you want everything
+to be an edge.
+Figure 4.7
+Comrnand:TRIM
+Current settings Projection=UCS,
+Edge=None
+Select cutting edges ...
+Select objects or <select all>: (pick 1)
+Other corner: (pick 2)
+Select objects:.J
+Select object to trim or shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/Undo] : (pick 3 to 10)
+Select object to trim or
+IUndo]:~
+The EXTEND Command
+The EXTEND command also uses a boundary (or boundaries), but uses it as the item to
+extend objects to. In Figure 4.8, the boundary is clearly the diagonal line. Once picked,
+it will be highlighted.
+The command line equivalent is EXTEND.
+In Figure 4.8 small lines within the circle are extendedto the perimeter ofthe circle.
+1
+.' x.
+~
+::' x,---:x
+....
+5
+4
+~
+.
+'.
+,
+.
+.
+.
+.~.
+.
+.
+.
+.
+.
+.
+The Fence option, as well as all
+the others, are also part of the
+EXTEND command string. Still
+very useful, not new.
+Figure 4.8
+Command: EXTEND
+Current settings Projection=DCS,
+Edge=None
+Select boundary edges ...
+Select objects or <select all>: (pick 1)
+Select objects:.J
+Select object to trim or shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/Undo] : (pick 3 to 10)
+Select object to trim or
+IUndo]:~
+STRETCH, TRIM, EXTEND, OFfSET, and ARRAY
+73
+
+
+===== PAGE 91/298 =====
+TRIM and EXTEND with Implied Intersections
+Implied intersections are the points where two objects would intersect ifthey were ei-
+ther extended or trimmed. You can trim objects using their implied intersections as
+cutting edges for the trim as shown in Figure 4.9, and extend objects using their im-
+plied intersection as the boundary as shown in Figure 4.10.
+Figure 4.9
+Command: TRIM
+Current settings Projection=UCS,
+Edge=None
+Select cutting edges ...
+Select objects or <select all>: (pick 1)
+Select
+objects:~ (no more cutting edges are needed)
+Select object to trim or shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/Undo:E
+Enter an implied edge extension mode
+[Extend/No extend]:E
+Select object to trim or [Project/Edge/Undo]: (pick 2, 3,
+4)
+Select object to trim or
+[Project/Edge/Undo]:~
+If AutoCAD responds 'no cutting
+edges selected' it means that the
+objects would not intersect. Try Fillet
+IRadius O.
+Figure 4.10
+3
+X
+2
+4
+X
+1
+c=--
+."'7""(
+Command: EXTEND
+Current settings Projection=UCS,
+Edge=None
+Select boundary edges ...
+Select objects <select all>: (pick 1)
+Select
+objects:~
+Select object to extend shift select to extend or
+[Fence/Crossing/Project/Edge/eRase/Undo] :E
+Enter an implied edge extension mode
+[Extend/No extend] :E
+Select object to extend or
+/Undo]: (pick 2, 3,
+4)
+Select object to extend or
+Undo]:~
+Figure 4.10 shows the last three objects extended to where the intersection with the
+vertical line might be.
+Explore the other options of TRIM and EXTEND in the Help files.
+74
+CHAPTER FOUR
+
+
+===== PAGE 92/298 =====
+The OFFSET Command
+OFFSET is arguably the most often used editing command on the system. OFFSET cop-
+ies an object parallel to an existing object at a given distance. Note that the OFFSET
+command works only in theX-Yplane.
+The command line equivalent is OFFSET,
+Offset first requires the offset distance - the distance that all ofthe objects will be off-
+set by. It doesn't matter how far away the direction pick point is from the offset object;
+only the side is important, as shown in Figure 4.11. Earlier releases ofAutoCAD have
+less words in the command strings, and are generally easier to understand, but the ac-
+tual command sequence has not changed.
+4
+x
+figure 4.11
+~J
+X
+Command:OFFSET
+Specify Current settings: Erase sQurce=NO Layer=Source
+OFFSETGAPTYPE=O
+Specify offset distance or
+[Through/Erase/Layer]<Through>:8
+Select object to offset or
+[exit/Ondo]<exit>: (pick 1)
+Specify point on side to offset: (pick 2)
+Select object to offset or
+[exit/Undo] <exit>: (p~ck 3)
+Specify point on side to offset: (pick 4)
+Select object to offset or
+[exit/Undo]<exit>
+: (continue to
+pick points and sides)
+The prompts for the objects to offset and the side to offset will continue in a paired se-
+quence until you press .J.
+As can be seen in Figure 4.12, ARCs, CIRCLEs and PUNEs will maintain the same cen-
+7
+3
+Figure 4.12
+ter point and have an offset radius.
+The Through option in OFFSET, once used to specify a point through which you would
+like subsequent offsets calculated, now functions as the COpy command. Each object
+picked up can be placed according to a separate distance, as shown in Figure 4.13.
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+75
+
+
+===== PAGE 93/298 =====
+4
+3
+5
+6
+Figure 4.13
+The Undo option lets you undo
+the previous pick while still in the
+command.
+Command:OFFSET
+Specify Current settings: Erase =NO .... ,
+OFFSETGAPTYPE=O
+Specify offset distance or
+[Through/Erase/Layer]<Through>:t
+Select object to offset or
+[exit/Undo] <exit>: (pick 1)
+Specify through point: (pick 2)
+Select object to offset or
+[exit/Undo] <exit>: (pick 3)
+Specify through point: (pick 4)
+Select object to offset or
+[exit/Undo] <exit>: (pick 3)
+Specify through point: (pick 4)
+Select object to offset or
+[exit/Undo]<exit>:~
+Use OFFSET with FILLET radius 0 to create objects with parallel lines at many distances,
+as shown in Figure 4.14. Figure 4.14a is the final part. A vertical line is OFFSET at the
+various distancesin4.14b. Then the horizontal lines are OFFSET in Figure 4. 14c.Finally
+FILLET with radius 0 is used to 'clean up' the comers (Figure 4.l4d). Diagonal lines can
+then be added.
+~--------.,----,
+UU~
+~======
+(D
+co
+(")
+l\I
+co
+a>
+""
+(")
+l\I
+C\J
+M
+J
+4
+48
+70
+]
+i
+1'\
+..0
+lI"l
+'---
+1/
+1- ~
+~
+-~~
+48
+70
+""
+a>
+a
+b
+c
+d
+Figure 4.14
+The ARRAY Command (Polar)
+The ARRAY command rnakes circular (Polar) or rectangular patterns of selected ob-
+jects by copying them along or around an identified point.
+If you find the dialog boxes slo
+and cumbersome, type in - befor
+the
+ARRAY
+command
+for
+th
+command without the dialog box.
+The command line equivalent is -ARRAY,
+Command: -ARRAY
+Select objects: (pick 1)
+Other corner: (pick 2)
+Select
+objects:~ (indicates that no more are needed)
+Enter the type of array
+[Rectangular/Polar]<R>:P
+Specify center point of array:CENter of (pick 3)
+Enter the number of items in the array:8
+Specify the angle to fill
+{+=CCW,-=CW)<360>:~ (accepts 360)
+Rotate arrayed objects
+[Yes/No]<Y>:~ (accepts default)
+76
+CHAPTER FOUR
+
+
+===== PAGE 94/298 =====
+In Figure 4.15 the object (a chair) is arrayed around the center ofthe larger circle (a ta-
+ble) at equal distances through 360 degrees, rotating each object. To acheive this ar-
+rangement in the ARRAY dialog box you must pick the objects, then pick the center
+point, then specify the number ofitems and the rotation angle.
+Figure 4.15
+Since you are not prompted, make
+sure that you have made a selection
+from every area of the screen. If your
+objects end up in places that you did
+not expect, it is probably your center
+point that is incorrect.
+Command:U
+To Undo a bad ARRAY.
+,.~
+~
++
+~
+"~/'
+With apolarARRAY, as seen in Figure 4.16, you can also specify the incremental angle
+between each object rather than the total distance ifyou prefer. Just choose that option
+in the dialog box.
+2
+Figure 4.16
+It is always a good idea to use the
+Preview button ifthere is one on a
+dialog box. This will stop you
+from making a mistake and hav-
+ing to correct it later.
+Again, ifyour objects are going in
+unexpected places, it is probably
+the center point that is incorrect.
+Generally speaking, the objects
+are rotated as they are arrayed
+relative to the rotation angle. If
+you do not want them rotated,
+simply remove the check in the
+'Rotate items as copied' box.
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+77
+
+
+===== PAGE 95/298 =====
+The ARRAY Command (Rectangular)
+The Rectangular option ofthe ARRAY command prompts for the number ofrows (cop-
+ies in the Ydirection) and the number ofcolumns (copies in the X direction). Then you
+are prompted for the distance between the copies in rows and columns. This is the
+center-ta-center distance, useful for both building trades and mechanical engineering.
+The command line equivalent is ARRAY.
+In Figure 4.17, the objects are ARRAYed along X or in columns. Note that the distance
+2
+Figure 4.17
+between the columns includes the half-
+width of the item itself.
+ARRAY can be used to go in either one di-
+rection or two. In this case, the array is
+creating a series ofobjects going in the X
+direction at a distance of .5625 units.
+Again, ifyou don't like dialog boxes, the
+options can be typed in. Many people
+find this faster.
+78
+CHAPTER FOUR
+Command: -ARRAY
+Select objects: (pick 1)
+Other corner: (pick 2)
+Select objects:.J
+Enter the type of array [Rectangular/Polar]<R>:.J
+Enter the number of
+rows(--)<l>:~ (accepts the default of 1)
+Enter the number of columns (
+)<1>:7
+Enter the distance between the columns:.5625
+When doing layouts that contain many objects in both the X and Ydirections, specify
+both rows and columns. In specifying the number of rows and colmnns, the total
+number is indicated; ifyou have 1, and want 6 more, the total is 7.
+Be sure to useasNAP where possible to make sure that your entries are as accurate as
+possible.
+Once the objects are ARRAYed, they are accessible as individual itelTIS and can be
+modified individually.
+
+
+===== PAGE 96/298 =====
+ARRAY: Multiple Rows and Columns
+Ifyou have a chair that is 24 inches wide and you want an aisle of 18 inches between it
+and the next chair, the spacing would be the width of the chair plus the width of the
+aisle (24 + 18 = 3'6").
+T [Q] [Q] ~e [Q] [Q]
+1 [Q] [Q] [Q] [Q] [QJ
+o.islE?
+[Q][QJ[Q][Q][Q]
+--1Af-
+Figure 4.18
+In Figure 4.18 the chairs are placed in both rows and columns.
+Command: -ARRAY
+Select objects: (pick 1)
+Other corner: (pick 2)
+Select
+objects:~
+Enter the type of array
+[Rectangular/PolarJ<R>:~
+Enter the number of rows{--)<1>:3
+Enter the number of columns (
+)<1>:5
+Enter the distance between the rows:60
+(distance B)
+Enter the distance between the columns:42
+(distance A)
+A negative distance will place
+the ARRAY in a negative direc-
+tion: to the left if columns, and
+down frOln the original ifrows.
+d:ll::n::Il::l 0
+c!:1l::ll:::ll:::1I::l
+"--'---'-~i!!!I-
+What can go wrong with ModifY commands?
+When entering commands from the Modify menus make sure that you follow the
+prompts and supply all the necessary infonnation. The typed-in commands are easier
+to get right than the dialog boxes because the dialog boxes assume defaults.
+If your command goes terribly wrong, simply use Undo to correct the situation.
+Command:U
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+79
+
+
+===== PAGE 97/298 =====
+Step]
+This exatnple will illustrate how to use ARRAY, TRIM, EXTEND,
+and OFFSET to create a backyard hot tub.
+Don't use LIMITS, GRID or SNAP. Tum DYNamic off.
+IIIII
+--
+f-
+~O~
+f-
+I---
+-
+-
+-
+-
+-
+-
+-
+~
+/
+-
+-
+I
+IIIII
+Step 2
+Create a line from 0,0 to 0,28, and ARRAY it to make 16. Use POLAR for your LINE, or
+type in the coordinates as shown.
+Command:L
+Specify start point:O,O
+Specify next point or
+[Undo] :0,28
+Specify next point or
+[Undo]:~
+Command:Zoom All
+Corrunand:ARRAY
+Select objeets on the up-
+per right corner to pick
+the
+line.
+When com-
+pleted, use.J to return to
+the dialog box, then OK
+to accept the array.
+Step 3
+80
+CHAPTER FOUR
+Create a line from 0,0 to 30,0 and ARRAY it by 15 to nlake a rectangular grid (the patio
+stones). Use the command line version.
+Corrunand:L
+Specify start point:O,O
+Specify next point or
+[Undo] :30,0
+Specify next point or
+[Undo]:~
+Command: -ARRAY
+Select objects:L
+Select
+objects:~
+Enter the type of array
+[Rectangular/Polar]<R>:~
+Enter the number of rows
+(---)<1>:15
+Enter the number of columns
+(
+)<1>:~
+Enter the distance between rows
+(
+) :2
+
+
+===== PAGE 98/298 =====
+Step 4
+Make a CIRCLE to create a hot tub shape and OFFSET
+it to make a ridge.
+Command:C
+Specify center point for circle or
+[3P/2P/Ttr(tan tan rad)]: (pick 1)
+Specify Radius of circle or
+[Diameter] :6
+.... .....
+I"
+r-...
+I'\.
+1/
+1\
+I
+,1
+1\
+~
+\
+l~ }
+I"'\:
+10-
+L..-
+I){
+I.,
+I-
+Command:OFFSET
+Specify Current settings:
+Erase sQurce=NO Layer=Source
+OFFSETGAPTYPE=O
+Specify offset distance or
+[Through/Erase/Layer]<Through>:1
+Select object to offset or
+[exit/Undo] <exit>: (pick 2)
+Specify point on side to offset: (pick 3)
+Select object to offset or
+[exit/Undo]<exit>:~
+Use TRIM with individual object picks ifthere are some objects not
+trimmed.
+'-""'10-
+to
+~,
+,
+r..... ."
+/
+"
+1
+\
+3f\
+I
+\
+I
+......
+Ik.
+iJ.S
+~
+A
+Command: TRIM
+Current settings Projection=UCS,
+Edge=None
+Select cutting edges ...
+Select objects or <select all>: (pick 1)
+Select objects or <select
+all>:~
+Select object to trim or
+_.... eRase/Undo:F
+Specify first fence point or
+[Undo]: (pick 2)
+Specify first fence point or
+[Undo]: (pick 3)
+Specify first fence point or
+[Undo]: (pick 4)
+Specify first fence point or
+[Undo]:~
+Select object to trim or
+[Project/Edge/Undo]:~
+Now trim out the lines inside the outer circle. Use Fence to
+pick up the parts to be trimmed.
+Step 5
+Step 6
+Use OFFSET to create a set oflarger patio stones on the outside ofthe original stones as
+a border.
+Command: OFFSET
+Specify Current ... E=O
+Specify offset distance or
+[Through/Erase/Layer] <Through>:4
+Select object to offset or
+[exit/Undo] <exit>: (pick 1)
+Specify point on side to offset: (pick 2)
+Select object to offset or
+[exit/Undo] <exit>: (pick 3,4,5,6,7(8)
+Use the roller ball on your mouse or ZOOM with a scale factor to keep the objects on
+the screen.
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+81
+
+
+===== PAGE 99/298 =====
+Trim,Radius
+Step 7
+Use FILLET to make comers.
+Cornmand:FILLET
+Current settings:
+Mode
+=
+<5.0000>
+Select first object or
+[Undo/polyline/Radius/Trirn/Multipl
+e] :r
+Specify fillet radius:O
+Select first object or
+[Undo/ ... Multiple]: (pick 1)
+Specify second object: (pick 2)
+FILLET all four comers.
+Wi
+rE)~
+------
+~
+L"L
+-
+T'
+1IIIIII1
+12
+7
+2
+5
+6
+3
+10
+9
+v
+~U
+> !
+}
+~
+~
+"
+8
+11
+Command:EXTEND
+Current settings ... edges ...
+Select objects: (pick 1 to 4)
+Select objects:.J
+Select object to extend or [Project/
+Edge/Undo] :F
+Specify first fence point: (pick 5)
+Specify next fence point or
+[Undo]:
+(pick 6, 7,
+8) .J
+Specify next fence point or
+[Undo]: (9,
+10, 11,
+12).J
+Specify next fence point or
+[Undo]:.J
+Select object to extend or [Project/
+Edge/Undo]:
+.J
+Use EXTEND to create a set of larger patio stones on the
+outside of the original stones as a border.
+StepS
+2
+I1III I
+~
+l~O
+--
+1-
+-
+-
+---
+"""'-
+./
+-rT
+IIIIII
+~"
+I "
+I I I
+~~
+~,O}
+-!---..--
+I"'...
+./
+T'"T
+II fill
+Command: STRETCH
+Select objects to stretch by
+crossing-window or polygon ...
+Select objects:C
+First corner: (pick 1)
+Other corner: (pick 2)
+Select objects:.J
+Specify base point or displacement: (pick
+3)
+Specify second point of displacement:@l,O
+Now you have a completed exterior hot tub area with 2x2
+stones,
+2x3 stones and 2x5 stones.
+Finally use STRETCH to· make the stones on the right
+extend two units further.
+Step 9
+82
+CHAPTER FOUR
+
+
+===== PAGE 100/298 =====
+Exercise 4a Practice
+Use the Modify commands to complete these parts.
+oraw at a sca Ie of 1=1.
+These parts are not drawn to scale within the page.
+6.50x3.25
+K\d
+¢25,4
+4A
+1
+1
+:-.
+O
+j
+I
+,50R
+\
+/
+l.OOR
+---- 8,00 -------l
+2,25
+r,50
+,
+I
+-+-
+I
+I
+I
+1.25
+f----- 3.25------1
+4B
+4,50
+1.50
+-
+1.50
+250
+!
+,50
+3.75
+¢L6
+') holes
+RO,75
+3.500
+4D
+2,25
+4C
+2,50
+4E
+1.50
+R1.25
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+83
+
+
+===== PAGE 101/298 =====
+Exercise 4b Practice
+OFFSET and ARRAY will be useful for drawing these objects.
+~­
+~j',
+~=
+'6",-
+J"1 __
+R5"
+ELEVATION
+~
+~
+1
+12
+"l.n
+I
+In
+I--
+-
+0 mm ; ~
+D
+~
+r---
+I
+~
+~-
+~
+0
+I
+I
+~
+M
+('lJ
+/
+f\
+/
+V
+\
+V
+J
+1\
+J
+/
+\
+/
+0..-.
+I
+1\
+/
+1\
+~
+\
+V
+\
+\.
+I
+\.
+mJ
+\
+V
+\
+.L-
+6'-9#
+t
+22j~6"
+R
+Cho..l"1fer (3)
+1/8 x 45"
+Groove .375 'WIDE
+096 DEEP
+DETAIL
+~==:fC_===t=r:-l r r
+1
+0.625
+0,875
+1.125
+1.375
+1.625
+Il====~-""""---·-~t-----Ll
+L
+L
+j
+IbJ
+1.375--
+L750
+2.375 -----1
+i
+-3.375 -----1
+I. I.
+3.~~~O -~-_~
+1-------4,625 ---------1
+1-------5.375 -----~
+Cho..l"1fer 1/8 x 45"
+NOZZLE
+84
+CHAPTER FOUR
+
+
+===== PAGE 102/298 =====
+Exercise.4 Architectural
+Use OFFSET to place the LINEs for the walls. Use FILLET radius 0 to clean them up.
+The indow measurements are on the first floor plan on page 137.
+Section A-A is on page 11 7.
+ateh added later
+A
+l' -5"
+IS'-i7"
+1'-4'1
+D
+9 D
+r
+1= =====
+Y
+\{-.
+I
+\i'\
+?'-O"
+\
+II'~BII
+Closet
+-
+~
+I-- ~
+~-
+\
+'------'
+'~.,-
+~
+co
+6'-4"
+0
+\
+------'--
+11'-0
+1
+Q
+-
+~-~
+~
+8'-0'
+('W\
+~
+,.J
+--]~
+...-
+Q
+[,
+4'-0'
+\
+1
+F====
+~ ==
+~
+\
+~ 9
+(
+\
+~
+14R
+~
+~
+0
+DN
+r
+-
+L:
+II
+~ ...-
+I
+1-1
+.. '--
+II
+I
+I
+I
+II
+0
+I
+II
+Ci?
+b
+•
+0
+\
+\
+~II
+~
++---
+~
+l'-.
+0
+N
+I
+ve;
+~II
+I"""
+CJ
+b
+I
+\...)11
+-
+I
+II
+-
+II
+i
+B'-B'I
+'?'-6 11
+6 -1"
+8'-0'1
+\ i
+II
+i
+-,-
+~_.~~
+~
+I
+II
+\
+-
+~
+0
+i
+19'-1 '1
+II1-t
+24'-0'1
+6'-0"
+I
+H
+I
+?O'-Ol
+A
+Second floor
+~~~~~~~ 4" to 10'1 veneer
+~ space for vapalr barrier
+rr========#~-----+
+6
+11
+e~terlor stud
+drtjwall or C14proc
+WORKING FLOOR PLANS
+PRESENTATION DRAWINGS ARE USED TO SELL THE IDEA TO THE CLIENT.
+WORKING DRAWINGS ARE MADE FOR THE CONSTRUCTION CREW.
+MEASUREMENTS ARE FROM THE OUTSIDE OF THE FRAME BECAUSE
+THE CARPENTER IS THE FIRST ONE TO USE THEM.
+EXTERIOR WALLS ARE 6" STUD WALLS, WITH A 4 TO 10" VENEER.
+~K1:eriOr Wall
+STRETCH, TRIM, EXTEND, OFFSET, and ARRAY
+85
+
+
+===== PAGE 103/298 =====
+Exercise 40 Mechanical
+Use the commands on the facing page to create this gear.
+Save your file so you can add the dimensions to it later.
+¢34,5
+¢36,00
+9 50 +0.02
+,
+-0,00
+11,00
+2 000+0,002
+,
+-0,000
+033,00
+¢30,OO
+¢29,OO
+014,00
+---=----=--- ----
+09,00
+R3,53
+TOOTH
+86
+CHAPTER FOUR
+WORM AND PINION
+
+
+===== PAGE 104/298 =====
+Exercise 4b Mechanical
+3,125
+a.
+b
+c
+d
+e
+a. Draw the first line
+b. OFFSET at the specified distance
+c. Add the bottom line and top line
+d. OFFSET to the top
+e. Use FILLET radius ato clean up the ends
+f. ARRAY
+h
+9
+f
+J
+k
+n
+STRETCH, TRIM, EXTEND, OFFSET,and ARRAY
+87
+
+
+===== PAGE 105/298 =====
+O!
+::)o
+LL
+O!
+LU
+........
+0..«
+Iu
+RO,807
+1.000
+1.000
++
+II.
+Rl.OOO
+"- R1.803
+1.500
+R1.250 --
+R1,250
+0,500
+~
+0,500 \
+I
+RO,300
+RO,250
+RO,500
+RO,875
+RO,500
+1.000
+RO,125
+RO,375
+1.000
+0,750 -I-
+1.250--1- 100011"
+2.000
+-:"
+10~~250
+T
+"~-"""
+1 Fi X
+'>
+0.250
+I
+R1250
+RO,37S--
+I
+2,500
+RO,875
+RO,750
+Don/t forget
+Circle
+2P
+Circle Ttr
+t
+.:2o
+(Y)
+c:
+'-
+.-
+(I)~
+0)0
+c:
+~
+(I)
+8
+-
+::::>
+-
+0
+c
+>-
+-C]
+u~oc.
+~
+~
+(I)
+~
+en
+.&
+.-
+c:
+U
+.-
+'-
+§
+CI)
+.~
+><
+.~
+w~
+RO.l25
+=
+
+
+===== PAGE 106/298 =====
+The PLINE
+Command
+Entity Commands with
+Width
+A PLiNE orpolyline is a single-drawing entity that includes line and curve sections that
+may vary in thickness, and may be edited using PEDIT (polyline edit) for the Spline and
+Fit curve options to create contour lines or airfoils. The individual segments are
+connected atvertices; the direction, tangency, and line width are storedat each vertex.
+The PLiNE command can create rectangles as single entities as well as curved segments
+of varying thickness.
+The command line equivalent is PLlNE.
+Command:PLlNE
+Specify start point: (pick a point)
+Current line width is 0.0000
+Specify next point or
+[Arc/Close/Halfwidth/Length!Ondo/Width] :
+Where: Arc
+Close
+Halfwidth
+Length
+Undo
+Width
+a change from line entry to arc entry
+a closed pline, in which the first point will be joined to
+the last entered point in the pline to make a closed
+object; more than two points are needed to have a
+closed pline
+a specified halfwidth on either side of the pline vector
+the length ofthe pime
+an undo ofthe last point entered
+a specified width ofthe line or arc segments on either
+side of the pline vector
+The first PLiNE command prompt asks for a point at which the polyline will start.
+Command:PLlNE
+Specify start point: (pick a point)
+Entity Commands with Width
+89
+
+
+===== PAGE 107/298 =====
+You must enter the first point, after which you can choose one ofthe options (Width,
+Arc, etc.). Ifyou want to change the width, note that you must change the start andthe
+end width to create a wide line as in Figure 5.1.
+~
+-=:r'SO
+I
+}(o
+~
+Figure 5.1
+Command:PLlNE
+Specify start point: (pick a point)
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :W
+Specify starting width<O.OOOO>: .50
+Specify ending
+width<O.500>:~
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :11,0
+The command default is to enter the second point. Ifyou pick a second point, this as-
+sumes a straight segment or a line. Ifyou continue picking points, the object created
+will look like a series oflines, but it will be a single object that can be edited using PE-
+OIT or other editing commands.
+PLiNE is often used to create borders around views or drawings, as in Figure 5.2.
+Cornmand:PLlNE
+Specify start point:O,O
+Current line width is 0.0000 units
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/
+Width] :W
+Specify starting width<O.OOOO>:.25
+Specify ending
+width<O.2500>:~
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/
+Width] :11,0
+0,8.5
+-~
+00
+Figure 5.2
+11,8.5
+11,0
+90
+CHAPTER FIVE
+You can continue drawing with this line at the current thickness or change it at any
+time. POLAR, OTRACK, and ORTHO work the same on PLiNE as on LINE.
+Specify next point or
+[Arc/Close/
+/Undo/Width] :11,8.5
+Specify next point or [Arc/Close/
+/Undo/Widthj :0,8.5
+Specify next point or
+[Arc/Close/
+/Undo/Width]:C
+To achieve aperfect comeron a box or rectangle, use the Close option. This will attach
+the first point to the last entered point and create a clean, beveled comer.
+When changing the width both start and end points must be entered.
+Command:PLlNE
+Specify start point: (pick 1)
+Current line width is 4.00 units
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :W
+Specify starting width<4.00>:.25
+Specify ending
+width<O.25>:~ (don't pick!)
+
+
+===== PAGE 108/298 =====
+Do notpickfIfyou pick, you will create an object similar to that inFigure 5.3. This is a
+cornnlon mistake. AutoCAD will measure the distance from your first pick to your
+second and use that as the end width of your PUNE.
+Pick 2 is generally inside
+3
+the triangle.
+Figure 5.3
+Pline with Varying Width
+You can create objects such as arrows using one PUNE with a series ofdifferent seg-
+ments with varying widths. You can change the width at every vertex, as in Figure 5.4.
+Figure 5.4
+Command;PLlNE
+Specify start point: (pick 1)
+Current line width is 4.00 units
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :W
+Specify starting width<4.00>:0
+Specify ending width<4.00>: .35
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/width] : (pick 2)
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :W
+Specify starting width<0.35>: .10
+Specify ending width<O.lO>: .10
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] : (pick 3)
+PLINE Corners
+The endofeach pline is calculated relative
+2
+1
+2
+to the points or vertices used to create it. If1.-3
+..,
+the pline has a width, the ends are perpen-
+dicular to the pline itself. Pline comers
+must be smooth, or a gap will result, as in
+4
+3
+Figure 5.5.
+When making plines, use a continuous se-
+ries of points as in Figure 5.5b, don't pick
+twice in the same spot as in Figure S.Sa.
+a
+Figure 5.5
+b
+Entity Commands with Width
+91
+
+
+===== PAGE 109/298 =====
+figure 5.6
+Editing the polyline curve options with PE DIT
+will override these line and arc segments.
+Po/yares
+The PLINE command can be used to create arcs within polyline seglnents or on their
+own, as shown in Figure 5.6.
+Simply type in the letterA to toggle to the arc
+mode, then type in the letter Lto get back to
+straight line segments. The resulting polyline
+will be one entity with arc and line segments.
+Command:PLlNE
+Specify start point: (pick a point)
+Current line width is 0.1000
+Specify next point or
+[Arc/Close/
+Halfwidth/Length/Undo/Width] :A
+[Angle/CEnter/CLose/Direction/Halfwidth/
+Line/Radius/Second point/Undo/Width] :
+The command default is to create a two-point arc. Once the first arc segment is in, the
+system assumes that you want to continue with a series ofarcs until the Loption is en-
+tered, which will return you to a line segment.
+The PEDIT
+Command
+One ofthe great advantages ofPLlNE is that, once the pline is entered, it can be modified
+using PEDIT,
+In the introductory stages, this command sequence is used most often to change the
+width of a pline. In Figure 5.7, the border is edited from .25 units to .10 units.
+The PE DIT command changes the width of all the segments of the identified pline.
+The command line equivalent is PEDIT.
+Figure 5.7
+Command:PEDIT
+Select polyline: (pick the polyline)
+Enter an option
+[Close/Join/Width/Edit Vertex/Fitcurve/Spline/Decurve/Ltype
+gen/Undo:W
+Specify new width for all segrnents:.l0
+Enter an option
+[Close/Join/Width/Edit Vertex/Fitcurve/Spline/Decurve/Ltype
+gen/Undo] :.J
+92
+CHAPTER FIVE
+
+
+===== PAGE 110/298 =====
+3
+Figure 5.8
+Command:PEDIT
+Select polyline: (pick 1)
+Enter an option
+[Close!Join/Width/Edit
+Vertex/Fit
+curve/Spline/Decurve!Ltype
+gen/UndoJ :J
+Select objects: (pick 2)
+Select objects: (pick 3)
+Select objects: (pick 4)
+Select object:.J
+Enter an option
+[Close/Join/Width/Edit
+Vertex/Fit curve/Spline/DecurveLtype
+gen/Undo]:~
+More segments can be added to the pline by using the Join option. This will add lines or
+arcs to a pline which can then be edited for width.
+In Figure 5.8, the arc and the two lines identified by
+picks 2,3, and 4 are added to the pline selected with
+the first pick before the command option Join. Only
+4
+segments with a common end point can be joined.
+2
+You can change polylines back to regular lines by using the command EXPLODE. This
+will also remove the width given.
+If you apply PEDIT to an object that is not a polyline, you will be given the option of
+turning it into one. Then use Join.
+PEDIT with Spline and Fit Curve
+To create contour lines and other items used in
+surveying, among other fields, a polyline can be
+modified to become a spline or fit a curve
+through a series ofpoints or vertices.
+The Spline curve option of PEDIT will edit the
+pline according to the series of points used to
+create it. Make sure you use the Close option
+when entering the pline to get a continuous
+spline as seen in Figure 5.9.
+FIT CURVE
+Figure 5.9
+PUNE with PEDIT can also be used to show wood grain as in reverse sections for wood-
+working or molding, as can be seen in Figure 5.10. First put in a PUNE. Then use PEDIT
+with either the Fit Curve or Spline options.
+Figure 5.10
+Entity Commands with Width
+93
+
+
+===== PAGE 111/298 =====
+The POLYGON
+Command
+The POLYGON command is like PLINE in that you are creating an object that has many
+vertices.
+The command line equivalent is POLYGON.
+Figure 5.11
+Command: POLYGON
+Enter number of sides<4>:5
+Specify center of polygon or
+[Edge]: (pick a center point)
+Enter an option
+[Inscribed in circle/ Circumscribed about
+circle]
+<I>:I
+Specify radius of circle:l.5
+Figure 5.11 illustrates a five sided-polygon.
+Hexagons
+In mechanical drawing, hexagons (six-sided
+regular polygons) are quite common.
+Ifyou need to draw a hexagon that is measured
+by the distance across the flats choose the op-
+tion Circumscribed about circle. The diameter
+across the circle will equal the distance across
+the flats, as shown in Figure 5.12.
+Figure 5.12
+94
+CHAPTER FIVE
+Cornmand:POLYGON
+Enter number of sides<4>:6
+Specify center of polygon or
+[Edge]: (pick
+Enter an option
+[Inscribed in circle/
+Circumscribed about circle]
+<I>:C
+Radius of circle: (pick 2)
+You can also use the POLYGON command to draw
+regular polygons by specifying the length ofan edg,e
+as shown in Figure 5.13.
+Command: POLYGON
+Enter number of sides<4>:6
+Specify center of polygon or
+[Edge]:E
+Specify first endpoint of edge: (pick 1)
+Specify second endpoint of edge:@4<O
+center)
+1><
+><2
+Figure 5.13
+
+
+===== PAGE 112/298 =====
+The SOLID
+Command
+SOLID and DONUT are commands that have a filled-in area or solid mass. This can also
+be achieved with the BHATCH command with the solid fill hatch. These commands are
+always available when you type them in, and can be found in some AutoCAD Releases
+(not Releases 2007 or 2008) on the pull-down menus and toolbars.
+The command line equivalent is SOLID.
+1
+2
+''''3.4
+2
+4
+10
+12
+6
+Figure 5.14
+Figure 5.15
+Corrunand:SOLID
+Specify first point: (pick 1)
+Specify second point: (pick 2)
+Specify third point: (pick 3)
+Specify fourth point: (pick 4)
+Third point:.J
+Figure
+5.14 illustrates
+the order in which points
+are entered. If you con-
+tinue to digitize after the
+fourth entry, the system
+will add in a paired se-
+quence until you termi-
+nate with ~. To create a
+triangle, use .J after the
+third point prompt.
+The order in whichpoints are entered is very important. Figure 5.15 provides some ex-
+amples.
+Do not confuse SOLID with the
+SOLIDS option given under the
+Draw menus.
+The DONUT
+Command
+The DONUT command is used to create a thick or
+solid circle. The inside diameter is used to
+determine the hole ofthe doughnut. Use an inside
+diameter of zero to create a solid circle; use a
+larger diameter to create a ring. Once DONUT is
+active, a donut will be drawn every time you
+digitize until you press .J.
+1.00
+Figure 5.16 illustrates the inside and outside di-
+ameters of a DONUT .
+Figure 5.16
+DONUT is useful for surveying and civil engineering applications for property and po-
+sition markers. It is also useful within dimensioning ifthe options available aren't giv-
+ing you what you think you want.
+Corrunand: DONUT
+Specify inside diameter of donut<.5>:O
+Specify outside diameter<1.0>:2
+Specify center of donut or <exit>: (pick 1)
+Specify center of donut or <exit>: (pick 2)
+Specify center of donut or
+<exit>:~
+Like the SOLID command, DONUT has been replaced by CIRCLE and BHATCH. For
+many applications, however, DONUT is a faster solution for a solid circle.
+Entity Commands with Width
+95
+
+
+===== PAGE 113/298 =====
+The TEXT
+Command
+Chapter 8 deals withmany aspects oftext, including text style, editing, fonts, paragraph
+text, and a wide variety of text alignments. Here we introduce simple, one-line text
+entry. The MTEXT command will make paragraphs and large text formats easier. The
+TEXT command is useful for title blocks and view titles.
+When entering TEXT, AutoCAD will prompt you to choose a height for each character,
+a rotation angle for your string, and a point at which to place the text string on the
+model or drawing.
+The command line equivalent is TEXT.
+Figure 5.17 illustrates the justification ofthe TEXT command. The default is leftjustifi-
+cation at the baseline ofthe text string. The other options will center, rightjustify, or fit
+to either top or bottom comers.
+DEFAULT
+Figure 5.17
+CENT~RED
+RIGH1<
+96
+CHAPTER FIVE
+Comrnand:TEXT
+Current text style: "Standard" Text height 0.200
+Specify start point [Justify/Style]:J
+Align/Fit/Center/Middle/Right/TL/TC/TR/ML/MC/MR/BL/BC/BR:
+Once you have chosen a point at which to place your
+text, the command will prompt you for the height ofthe
+SeALE:
+letters, the rotation angle, and the text or string ofchar-
+IX
+acters itself. Figure 5.18 illustrates the placement of
+2 xl / 4 II -_IIaII
+single line text.
+Command: TEXT
+Figure 5.18
+Current style: "Standard" Text height
+0.200
+Specify start point [Justify/Style]: (pick 1)
+Specify height <.2000>:.15
+Specify rotation angle of text
+<O>:~ (to accept the default)
+Enter text:Scale:
+Enter
+text:~
+Command:~
+Current text style: "Standard" Text height 0.150
+Specify start point [Justify/Style]: (pick 2)
+Specify height<.2000>: .25
+Specify rotation angle of text
+<O>:~
+Enter text:1/4"=1'O"
+Enter
+text:~
+
+
+===== PAGE 114/298 =====
+Multilines
+The MLINE or multiline command is used to create multiple, parallel lines.
+The command line equivalent is MLiNE.
+MLiNE is particularly useful for drawing walls and other architectural features. From a speci-
+fied point, AutoCAD draws a multiline segment using the current multiline style, and contin-
+ues to prompt for other points. Like LINE, using Undo undoes the last vertex point on the
+multiline. If you create a multiline with two or more segments, the Close option will be in-
+cluded in the command string as seen in Figure 5.19.
+3
+2
+1.00,
+Figure 5.19
+4
+Command:MLlNE
+Current settings; Justification
+= Top,
+Scale
+Style = Standard
+Specify start point or [Justification
+/Scale/STyle] : (pick 1)
+Specify next point: (pick 2)
+Specify next point or
+[Close/Undo] : (pick 3)
+Specify next point or
+[Close/Undo] : (pick 4)
+Specify next point or
+[Close/Undo] :C
+Justification
+This option determines how the multiline is drawn between the points you specify.
+Enter Justification type Top, Zero, or Bottom, as shown in Figure 5.20.
+Top
+Zero
+Bottom
+Figure 5.20
+Scale
+This option detcnnines the distance be-
+tween the two lines of the multiline.
+The scale is based on the width established
+in the multiline style, as shown in Figure
+5.21. All lines in the MLiNE will be scaled
+to the entered scale factor.
+Figure 5.21
+Entity Commands with Width
+97
+
+
+===== PAGE 115/298 =====
++By using PLINEand SOLIDeffectively, we can create
+a presentation view ofa small cabin with a staircase
+and a fireplace. Like many architectural applica-
+tions, this is more easily drawn with SNAP on be-
+cause it is in regular intervals.
+Step]
+First change the units to Architectural. At the command prOlupt type UNITS.
+Command: UNITS
+Architectural
+Precision:
+O'-O~
+Step 2
+Make your LIMITS -1',-1' and 24',18'. Set SNAP to 4/t.
+Command: LIMITS
+Reset model space limits
+Specify lower left corner or
+[ON/OFF]
+<0'-0",0'-0">:-1' ,-1'
+Specify upper right corner <12.0000,9.0000>:24' ,18'
+1J'
+J'
+-I
+T
+Note:
+PUNEs
+are
+gen-
+erated through the center
+b
+line.
+The
+Dimensions
+include PLiNE width.
+1-
+iu
+...J~~
+The polyline width is 8
+1t
+, the size of a
+regular exterior wall.
+Add the
+PLiNEs as
+shown on the
+illustration.
+This is a presentation drawing not a
+construction drawing, the dimensions
+are from the middle ofthe plines on the
+comers. Note how to start the PLlNE so
+that your corner is correct in the com-
+mand string below.
+Set your SNAP and GRID to 4 to make it
+eaSIer.
+When
+entering
+co-ordinates,
+DYNamic gets in the way. Using
+GRID and SNAP is the fastest
+way to do this.
+Step 3
+Command:PLlNE
+Specify start point:4' ,0
+Current line width is 0.00 units
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :W
+Specify starting width<O.OO>:8
+Specify ending
+width<8.00>:~
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo!Width] :0,0
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Widthj :0,4'
+Specify next point or
+[Arc/Close/Halfwidth/Length/Undo/Width] :~
+Repeat PLiNE for the exterior walls. Use the spacebar to bring back the PUNE com-
+mand to make it faster.
+98
+CHAPTER FIVE
+
+
+===== PAGE 116/298 =====
+Step 4
+Now use ZOOM Window to get a closer look at the
+northeast corner of the building. Add the lines as shown,
+with the pline width at 2".
+Once sufficiently zoomed, enterthe staircase with PLiNE.
+Command:PLlNE
+Specify start point:NEAR to (pick 1)
+Current line width is 8.00 units
+Specify next point or
+[Arc/Close/
+Halfwidth/Length/Undo/Width] :W
+Specify starting width<8.00>:2
+Specify ending
+width<2.00>:~
+Specify next point or
+[Arc/Close/
+Halfwidth/Length/Undo/Width] : (pick 2)
+1/ r-..
+-
+-
+Co
+-
+I
+~
+tB'/
+t/
+2 3,
+Step 5
+Now use PLiNE to place an arrow pointing up the stairs. The dimensions in the
+command string below are simply a guide. You can use your co-ordinate readout to
+place these rather than typing them in. Just make the arrow look like the one shown.
+Command:PLlNE
+Specify start point:18'2",4'6"
+Current line width is 2.00 units
+Specify next point or
+[Arc/Close/Halfwidth
+/Length/Undo/Width] :18'2",7'
+Specify next point or
+[Arc/Close/Halfwidth
+/Length/Undo/Width] :W
+Specify starting width <2.00>:7
+Specify ending width<7.00>:O
+Specify next point or [Arc/Close/Halfwidth
+/Length/Undo/Width] :18'2",8'
+Specify next point or [Arc/Close/Halfwidth
+/Length/Undo/Width]
+:~
+Step 6
+Now use PUNE to create a break line on the staircase. A break line is used on floor plans
+to indicate that the stairs extend up or down to another level.
+I
+Since PLiNEs are created along
+a center line with width added to
+'I· both sides, be sure to deduct
+half the wall thickness to obtain
+I the correct wall length.
+Command:PLlNE
+Specify start point: (pick 1)
+Current line width is 0.00 units
+Specify next point or [Arc/Close/
+Halfwidth/Length/Undo/Width} : (pick 2,
+3,
+4, 5,
+6,
+7 in sequence)
+A break line in a staircase is always necessary on a floor
+plan. The plan view shows only one floor or level in the
+building. The stairs extend up to another level. The break
+line is the visual image that tells the viewer that the stairs
+continue.
+6
+4
+Entity Commands with Width
+99
+
+
+===== PAGE 117/298 =====
+Step 7
+Now use PAN to move the drawing to the right, at the same scale factor, and then use
+SOLID to create a fIreplace. You should have
+SNAP on and OSNAP off for this
+command.
+1
+3
+5
+7
+9
+11
+2
+4
+6
+8
+10
+12
+PUNEs are entered from their
+MIDDLE
+paint,
+so
+calculotions
+will need to be adjusted.
+Step 8
+Step 9
+100
+CHAPTER FIVE
+Command: SOLID
+Specify first point: (pick 1)
+Specify second point: (pick 2)
+Specify third point: (pick 3)
+Specify fourth point or [Exit]: (pick 4)
+Specify third point: (pick 5)
+Specify fourth point or [Exit]: (pick 6)
+Specify third point: (pick 7)
+Specify fourth point or [Exit]: (pick 8)
+Specify third point: (pick 9)
+Specify fourth point or [Exit]: (pick 10)
+Specify third point: (pick 11)
+Specify fourth point or [Exit]: (pick 12)
+Specify third
+point:~
+Use PAN again to move the drawing over to the
+left so that you can create a North arrow outside
+the building. Draw in a vertical line at 3 " and a
+horizontal line at ].5' across the lower section as
+shown. Then draw in two smaller lines to make
+an x. Use the ends of these lines and OSNAP
+ENDpoint to draw in a North arrow.
+North arrows are used on floor plans to show the
+direction that the house is facing. In the northern
+hemisphere, the north side ofthe building will be
+cooler than the south, so the fireplace is often
+placed on that wall.
+Then, with your SNAP still set to 2, draw in two
+diagonal lines through the intersection. Now use
+SOUD to fill in the sides of the North arrow.
+Command: SOLID
+Specify first point: (pick 1)
+Specify second point: (pick 2)
+Specify third point: (pick 3)
+Specify fourth point or
+[Exit]:~
+Specify third
+point:~
+2
+
+
+===== PAGE 118/298 =====
+Step 10
+3
+Continue adding solids until you have a North arrow.
+1 2
+Finally, add lines for windows and doors, and your simple floor plan is complete.
+Once the first window is drawn in, use COPY, ROTATE, and STRETCH to make the oth-
+ers. Note that you can adjust the size ofthe window openings with STRETCH to make
+the window on the south side longer, taking advantage of the sun and solar energy.
++
++
+PRESENTATION DRAWINGS
+PRESENTATION DRAWINGS, GENERALLY DRAWN IN PUNEs, ARE USED TO SHOW A CLI-
+ENT THE
+GENERAL LAYOUT
+OF
+A
+BUILDING.
+THE
+POSITIONS
+OF
+WINDOWS,
+DOORS,
+STAIRCASES, AND FIREPLACES ARE SHOWN, BUT THERE ARE NO DEFINITE DIMENSIONS,
+NO NOT ATIONS OF MATERIALS, AND NO STRUCTURAL INFORMATION. THESE WOULD BE
+ON THE CONSTRUCTION DRAWINGS (SEE PAGE 85).
+Entity Commands with Width
+101
+
+
+===== PAGE 119/298 =====
+>
+u:
+~
+wli:«
+Iua...
+ooo
+I.rim
+:£
+RAWN:
+10m Van lUiden
+BVILD
+R1S,0
+DATE:
+ICHECKED
+Jan,2006 Suzanne Roblcheau
+~;:/
+R20,O
+18,7
+1>
+(5
+II)
+I
+Q..
+~m
+J
+};I'
+<
+1'J
+J
+(
+{\)
+cIt4 of Hamilton
+13.7
+LOCATION
+Aberdeen and ulen51de
+CLIENT
+.~
+R2a,o
+45,0
+...
+BLVD
+~~~-----
+......-~-._--_._---
+.~
+Glenside Avenue
+30.0
+--- --==---==- ,
++",
+___~
+-
+====f-
+f-.------."""......-=-::::-- -
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- -+1-----------------------1
+c
+~0
+...c::
+CI)
+CI)
+Q)a.
+;:-
+""0
+C
+.
+o
+CI)
+CI)
+~
+.£ e
++-
+lo.-
+(I)
+""0
+0
+.~
+C
+U
+(1) .2
+.-
+.~ u I
+0
+.....
+0
+U
+-
+(1)
+0
+Q)
+.:::
+t.ri
+C
+.£ ""0
+t{)
+-;(1)
+0
+'-
++
+a..
+c-£
+..-
+'in 0
+=>'-+-
+a.n
+C..s:::. I I
+trI
+o
+of-
+:U:9
+..;
+Q)
+Q)
+~
+It'I
+~-o
+M
+V)
+Q)
+C
+.-
+C c
+U
+.- w
+I
+'"
+~
+'-
+·!:!?Z
+.£
+-
+Q)
+of- -J
+><
+~o... I ~I
+q
+o
+Q)
+In
+W
+I...
+CI)
+O::J
+;;!
+In
+M
+Ifl
+<of
+
+
+===== PAGE 120/298 =====
+Exercise 5 Architectural
+To appreciate architecture you must have some knowledge of architectural styles.
+Here are two examples. Use PLiNE for the acanthus leaves.
+Set PDMODE to 34, then use DIVIDE to place the bricks along the arc.
+MIRROR, COPY, and SCALE will also be useful.
+TRIGLYPHS
+EGG AND DART
+ECHINUS
+\--1-__
+ACANTHUS LEAVES
+~----TORUS
+'r-----------r'
+BYZANTINE AND ROMANESQUE
+CENTER ALWAYS
+ON SPRING LINE
+jointeb 1linrseshne
+ARCHITECTURAL DETAILS
+THE ARCHITECTURAL DETAILS
+AROUND DOORS AND WINDOWS ARE
+USED TO DETERMINE THE
+BUILDING'S STYLE AND DATE. THIS
+IS WHERE CRAFTSMANSHIP AND A
+SENSE OF PROPORTION ARE
+IMPORTANT.
+WHERE STRUCTURAL DETAILS
+SHOW THE STRUCTURE OF A
+BUILDING, ARCHITECTURAL DETAILS
+DETERMINE THE STYLE.
+SEE
+WWW.ONTARIOARCHITECTURE.COM
+FOR MORE INFORMATION ABOUT
+THESE STYLES.
+NOTE
+POINTED
+HORSESHOE ARCHES ARE FOUND
+PRIMARILY IN VENETIAN
+GOTHIC ARCHITECTURE.
+STONE JOINTS
+MAY BE HANDLED
+IN A VARiETY OF WAYS
+Entity Commands with Width
+103

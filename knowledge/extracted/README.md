@@ -75,6 +75,17 @@ bis dahin gilt der konservativere Wert.
 Digests markiert — sie sind Referenz-Praxis-Anhaltspunkte, niemals AT-Normersatz.
 AT-Rangfolge: OVE E 8101 + OIB-RL 2 + AStV vor allen DE-Quellen.
 
+## Aus dem elektro-planer-Projekt gefiltert (`aus_elektroplaner/`)
+
+Der Wissens-Rohimport aus elektro-planer (`../knowledge/_extracted_text/`, ~1140
+Dokumente) wurde nach Notbeleuchtungs-Relevanz gefiltert → 5 fokussierte Digests +
+[Index](aus_elektroplaner/README.md). Neu gewonnen: **Schrack-Katalog** (echte
+Erkennungsweiten je Leuchtenfamilie — unsere Render-Marke!), **OVE E 8101:2025**
+(neuer als 2019; neues Verbot RCD/AFDD in Sicherheitskreisen, Versammlungs-Schwelle
+400→240), **E 8002** (AT-Erforderlichkeit „WANN"), **E 8007** (medizinische
+SV-Klassen), **Fachinfo E-05/06/07** (AT-Funktionserhalt 30 min). Details:
+[`aus_elektroplaner/README.md`](aus_elektroplaner/README.md).
+
 ## Rand-Relevanz (bewusst NICHT ins NormRegelwerk)
 
 | Digest | Inhalt | Einordnung |

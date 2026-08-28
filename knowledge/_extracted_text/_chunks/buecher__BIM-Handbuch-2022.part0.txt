@@ -1,0 +1,1818 @@
+
+
+===== PAGE 1/348 =====
+Bundeskammer der Ziviltechniker:innen
+Bundesinnung Bau 
+Fachverband Ingenieurbüros
+HANDBUCH 
+2022
+Start & 
+Überblick
+Beispiele 
+Vorlagen 
+Online-Arbeits-
+materialien
+Inkl.
+E-Book
+
+
+===== PAGE 2/348 =====
+BIM-Handbuch 2022
+Marcus Wallner
+Christian Hofstadler
+Markus Kummer
+Verlag der Technischen Universität Graz
+in Kooperation mit
+Wien 2022
+
+
+===== PAGE 3/348 =====
+Impressum
+Herausgeber
+Bundeskammer der Ziviltechniker:innen
+www.arching.at
+Bundesinnung Bau
+www.bau.or.at
+Fachverband Ingenieurbüros
+www.ingenieurbueros.at
+Layout
+EXAKTA GmbH, Wien; www.exakta.at
+Cover, Druck und Gestaltung
+MANZ‘sche Verlags- und Universitätsbuchhandlung GmbH
+1010 Wien
+www.manz.at
+2022 Verlag der Technischen Universität Graz
+www.tugraz-verlag.at
+ISBN (print) 978-3-85125-881-3
+ISBN (e-book) 978-3-85125-882-0
+DOI 10.3217/978-3-85125-881-3
+Dieses Werk – ausgenommen das Cover und anders gekennzeichnete Teile – ist lizenziert unter einer Creative Commons Lizenz 
+„Namensnennung-Nicht kommerziell-Keine Bearbeitungen 4.0 International“
+https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de
+Bibliografische Information der Deutschen Nationalbibliothek 
+Die Deutsche Nationalbibliothek verzeichnet diese Publikation in der Deutschen Nationalbibliografie; detaillierte bibliografische 
+Daten sind im Internet über http://www.dnb.de abrufbar.
+
+
+===== PAGE 4/348 =====
+
+
+===== PAGE 5/348 =====
+4
+BIM-Handbuch 2022
+I.  Vorwort
+Gustav Spener
+
+
+===== PAGE 6/348 =====
+5
+Vorwort Dipl.-Ing. Gustav Spener
+Sehr geehrte Planerinnen und Planer,
+liebe Kolleginnen und Kollegen,
+die meisten Publikationen rund um das Thema 
+BIM vermitteln den Eindruck, dass die Anwen-
+dung dieser digitalen Methode der vernetzten 
+Planung, Ausführung und Bewirtschaftung von 
+Gebäuden nur für Großprojekte, große Planungs-
+büros und die Bauindustrie geeignet ist. Tatsache 
+ist jedoch, dass immer mehr Auftraggeber:innen 
+bei ihren Ausschreibungen BIM-gestützte Pla-
+nung und Projektabwicklung sowie BIM-Modelle 
+bei Projektvergaben fordern und BIM-Kenntnisse 
+als Bestbieterkriterien definieren. Auch Behörden 
+haben Pilotprojekte in Richtung digitaler Ein­
+reichung gestartet, die in Zukunft BIM-basiert 
+erfolgen sollen. Kurzum: BIM wird früher oder 
+später jede:r von uns brauchen!
+Für uns Planerinnen und Planer bedeutet die 
+Umstellung natürlich zu Beginn einen erheblichen 
+Mehraufwand, der vor allem kleinere Büros vor 
+Herausforderungen stellt. BIM erfordert eine 
+neue, prozessorientierte und IT-affine Denkweise. 
+Als Berufsvertretung der Ziviltechniker:innen sind 
+wir überzeugt, dass BIM eine große Chance für 
+Planerinnen und Planer darstellt. Die Anwendung 
+der BIM-Methodik stärkt die Rolle der Planenden 
+im Bereich der Kooperation und Koordination 
+weit über die reine Erstellung von Einzelplanun-
+gen hinaus. 
+Mit unserem übersichtlich gestalteten Leit-
+faden möchten wir allen, vor allem aber Klein- 
+und Kleinstbüros, den Einstieg in das Thema 
+erleichtern und aufzeigen, wie die erfolgreiche 
+Implementierung von BIM im eigenen Büro mög-
+lichst reibungslos gelingen kann. 
+Ausgangspunkt sind kompakte Abhandlun-
+gen zu Fragen wie:  Was kann BIM? Was nützt mir 
+BIM? Wo steht BIM derzeit? Closed oder open-
+BIM? Welche Spannungsfelder gibt es und welche 
+Software ist die geeignete?
+Auf unserer projektbegleitenden Website 
+finden Sie nützliche Tools, Templates, Muster­
+verträge etc. zum Download und können so 
+theoretisch erlangtes Wissen anhand von kon­
+kreten Praxisbeispielen üben. 
+Dieser Leitfaden ist das Ergebnis einer inten-
+siven Zusammenarbeit von Berufsvertretung, 
+Auftraggeberseite und Planer:innen. Wir hoffen, 
+dass Ihnen die Erkenntnisse der aus den unter-
+schiedlichen Bereichen kommenden Projekt­
+mitwirkenden mit ihren jeweils individuellen 
+Anforderungen wertvolle Einblicke in die BIM-
+basierte Arbeitsweise geben und wünschen 
+Ihnen viel Erfolg bei der Umsetzung Ihrer BIM-
+Projekte in die Praxis. 
+Herzlich,
+Ihr Dipl.-Ing. Gustav Spener
+Projektverantwortlicher der Bundeskammer 
+der Ziviltechniker:innen
+
+
+===== PAGE 7/348 =====
+6
+BIM-Handbuch 2022
+II.  Vorwort
+Robert Jägersberger
+
+
+===== PAGE 8/348 =====
+Sehr geehrte Damen und Herren,
+liebe Kolleginnen und Kollegen,
+Die Digitalisierung im Bauwesen schreitet 
+mit großen Schritten voran. Die Verwendung von 
+spezieller Software ist in praktisch allen Fachbe-
+reichen, wie z.B. Tragwerksplanung, Bauphysik, 
+oder bei Ausschreibung und Abrechnung längst 
+eine Selbstverständlichkeit. Die Technologie 
+„Building Information Modeling (BIM)“ ist im 
+Rahmen der Digitalisierung im Bauwesen ein 
+wesentlicher Bestandteil, der sich international 
+kontinuierlich etabliert. Aus heutiger Sicht wird 
+BIM die Wertschöpfungskette im Baubereich 
+wesentlich beeinflussen und dabei zu organisa­
+torischen Veränderungen der Abläufe im Bau­
+prozess führen.
+Die Etablierung von BIM bedeutet für Planer 
+und Ausführende Chance und Herausforderung 
+zugleich. Wenn künftig Bauprojekte von der Pla-
+nung bis zur Ausführung in einem digitalen Ge-
+bäudemodell abgebildet werden, müssen alle  
+am Bau Beteiligten noch stärker als bisher zusam-
+menarbeiten. Sämtliche Planungs- und Ausfüh-
+rungsschritte werden mit BIM noch transparenter 
+und nachvollziehbarer. Der Planungsprozess 
+kann im Hinblick auf eine möglichst hohe Quali-
+tät der Bauausführung durch BIM weiter opti-
+miert werden, um den hohen Anforderungen  
+der Bauherren noch stärker gerecht zu werden. 
+Daher sollten sich alle Bauschaffenden so früh 
+wie möglich mit dieser Technologie auseinander-
+setzen, um für die Herausforderungen der Zu-
+kunft gewappnet zu sein.
+Das vorliegende BIM-Handbuch 2022 soll allen 
+interessierten Baupraktikern einerseits einen Über-
+blick über den Status quo der BIM-Technologie 
+bieten. Andererseits soll es auch als Nachschlage-
+werk für spezielle Themen und Aspekte in diesem 
+komplexen und neuen Themenfeld dienen. Beson-
+ders freut mich beim vorliegenden Handbuch, dass 
+die Vertretungen der Ziviltechniker:innen, der 
+Ingenieurbüros und des Baugewerbes in diesem 
+Bereich ein gemeinsames Ziel verfolgen, nämlich 
+ihre Mitgliedsbetriebe „BIM-fit“ zu machen. Bei 
+der Umsetzung von BIM im Bauprozess sollten 
+wir stets bedenken, dass neben den unbestritte-
+nen Vorteilen dieser neuen Technologie auch ein-
+hergehende Risiken bedacht werden sollten, und 
+daher stets kritisch und wachsam sein. Ich wün-
+sche allen Lesern des BIM-Handbuchs 2022 viel 
+Erfolg bei der Anwendung und alles Gute!
+Bmstr. Ing. Robert Jägersberger
+Bundesinnungsmeister der Bundesinnung Bau
+7
+Vorwort Bmstr. Ing. Robert Jägersberger
+
+
+===== PAGE 9/348 =====
+8
+BIM-Handbuch 2022
+III.  Vorwort
+Rainer Gagstädter
+
+
+===== PAGE 10/348 =====
+9
+Vorwort TR DI Dr. Rainer Gagstädter
+Die Digitalisierung der Baubranche schreitet 
+immer weiter voran, das Thema BIM wird immer 
+präsenter. Städte und Länder in Österreich, 
+Deutschland und der Schweiz setzen die Planung 
+mit BIM bei öffentlichen Vergaben bereits oft 
+voraus. Immer mehr Projekte sehen daher BIM-
+Lösungen vor, Planer:innen fühlen sich selbst 
+allerdings häufig als unzureichend geschult und 
+informiert.
+Im Frühjahr 2021 wurde eine Umfrage zur 
+Erhebung des Status quo hinsichtlich der An­
+wendung von BIM unter den Mitgliedern des 
+Fachverbandes Ingenieurbüros durchgeführt.
+Das Hauptziel der Umfrage war, zu hinter­
+fragen, inwieweit Ingenieurbüros bereits BIM ein-
+setzen, welche Software zur Anwendung kommt 
+und welche Erfahrungen bislang gesammelt 
+werden konnten. Als größte Hürde, sich mit BIM 
+überhaupt auseinanderzusetzen, wurden zusätz-
+liche Kosten, fehlende Zeit und Mangel an quali-
+fiziertem Personal identifiziert.
+Oft wissen die Leser:innen nach der Lektüre 
+diverser BIM-Literatur nicht, wie sie das Gelernte 
+in ihrem Arbeitsalltag einbinden und anwenden 
+können oder wie die Umsetzung funktionieren 
+soll.
+Das BIM-Handbuch 2022 soll kein Nach­
+schlagewerk und keine wissenschaftliche Publi-
+kation sein, sondern ein praxistauglicher Leit­
+faden für alle an der Planung und Umsetzung 
+Beteiligten. Vorrangiges Ziel ist, die am Prozess 
+der Planung und deren nachfolgender Umset-
+zung Beteiligten und deren Mitarbeiter:innen 
+BIM-fit zu machen, sowie die Befähigung der 
+Leser:innen, die behandelte Theorie sofort in 
+ihrer Arbeitsumgebung anwenden zu können. 
+Mit möglichst wenig Zeitaufwand soll den Pla-
+ner:innen das Verständnis rund um das Thema 
+BIM in möglichst kurzer Zeit vermittelt werden. 
+So soll das BIM-Handbuch 2022 grundlegend 
+dazu beitragen, die Umstellungszeit auf BIM 
+deutlich zu verkürzen.
+Der Fachverband Ingenieurbüros hofft,  
+Ihnen mit dem „BIM – Handbuch für die Praxis“ 
+ein gutes Instrument zur Verfügung gestellt zu 
+haben, um Sie tatkräftig bei der Implementie-
+rung von BIM in Ihrem Unternehmen zu unter-
+stützen! 
+TR DI Dr. Rainer Gagstädter
+Obmann des Fachverbandes Ingenieurbüros
+Sehr geehrte Damen und Herren,
+liebe Mitglieder des Fachverbandes Ingenieurbüros!
+
+
+===== PAGE 11/348 =====
+10
+BIM-Handbuch 2022
+IV.  Danksagung
+Rudolf Kolbe
+
+
+===== PAGE 12/348 =====
+11
+Danksagung BR h.c. Dipl.-Ing. Rudolf Kolbe
+Liebe Kolleginnen und Kollegen,
+BIM ist die logische Fortführung dessen, was 
+ohnehin schon in vollem Gange ist – die Verla­
+gerung der Welt in den virtuellen Raum. Unser 
+Berufsstand steht vor der Aufgabe, den Start von 
+BIM richtig zu organisieren und Realität werden 
+zu lassen. Nach den ersten Gehversuchen mit BIM 
+ist klar geworden, dass wir noch einen weiten 
+Weg vor uns haben.  
+Der hier vorliegende Leitfaden soll dazu 
+dienen, den Überblick zu bewahren angesichts 
+der Vielzahl an Software-Anbietern, Vertrags­
+modellen und Planungsstrategien. Er soll Planen-
+den eine Hilfestellung bei der Umstellung und 
+ihrer täglichen Arbeit mit BIM leisten.
+Die Inhalte des BIM-Handbuchs 2022 wurden 
+auf Initiative der ZT-Bundeskammer gemeinsam 
+mit der TU Graz als wissenschaftlicher Partnerin 
+entwickelt und mit der Bundesinnung Bau und 
+dem Fachverband Ingenieur­büros herausgege-
+ben. Mitgewirkt haben außerdem die ASFiNAG, 
+die ÖBB Infrastruktur, die BIG, der Österreichische 
+Verband gemeinnütziger Bau­vereinigungen, 
+sowie die Länder Steiermark und Kärnten. Wir 
+bedanken uns für diese vorbildlich konstruktive 
+und engagierte Zusammenarbeit.
+Besonders herzlich bedanken möchte ich 
+mich beim Projektteam und insbesondere bei 
+unserem Kollegen DI Gustav Spener für sein 
+enormes Engagement als ehrenamtlicher Projekt-
+leiter in dieser Sache!
+Abschließend möchte ich festhalten, dass in 
+der in Österreich typischen kleinteiligen Büro-
+struktur und Planungs­kultur eine offene Soft-
+ware-Konstellation (openBIM) die Grund­
+voraussetzung für den erfolgreichen Einsatz von 
+BIM ist. Ein nicht-diskriminierender, allgemeiner 
+Zugang zu elektronischer Planungssoftware über 
+offene, normierte Schnittstellen, die die erzeug-
+ten Daten verlustfrei übergeben können, stellt 
+faire Marktbedingungen her und kommt sowohl 
+den Planenden, als auch den (öffentlichen) 
+Auftrag­gebern zu Gute. Die ZT-Bundeskammer 
+setzt sich weiterhin dafür ein, dass diese Voraus-
+setzungen österreich- und europaweit forciert 
+werden.
+Mit kollegialen Grüßen
+Ihr BR h.c. Dipl.-Ing. Rudolf Kolbe
+Präsident der Bundeskammer 
+der Ziviltechniker:innen
+
+
+===== PAGE 13/348 =====
+12
+BIM-Handbuch 2022
+Das Schlagwort „Digitalisierung“ ist in aller 
+Munde und auch in der Baubranche werden Ab-
+läufe, Prozesse sowie Planung, (Vor-)Fertigung, 
+Montage und Betrieb zunehmend „digitaler“.  
+Im Zusammenhang mit diesem Wandel in den 
+Prozessen, Methoden und Arbeitsweisen findet 
+Building Information Modeling (BIM) zunehmend 
+den Weg von Forschungs- und Pilotprojekten in 
+die tägliche Praxis. Dass ein solcher Wandlungs-
+prozess nicht „nebenbei“ funktioniert und sich 
+die Beteiligten aktiv und bewusst mit der Thema-
+tik auseinandersetzen müssen, erscheint dabei 
+wenig überraschend. Von der neuen Methode 
+„Building Information Modeling“ (BIM) wird ein 
+erhöhter Nutzen über den gesamten Lebens­
+zyklus (Planen, Bauen und Betreiben) erwartet, 
+wobei mit erhöhter Qualität, niedrigeren Kosten 
+und neuen Möglichkeiten im Umgang mit den 
+verknüpften Daten im BIM-Modell geworben 
+wird. 
+Ob diese Erwartungen an BIM bereits erfüllt 
+werden, wo noch Handlungsbedarf besteht und 
+wie besonders für Einsteiger:innen im eigenen 
+Unternehmen/Büro bereits mit kleinen Schritten 
+in Richtung BIM ein Nutzen (Quick-Wins) gene-
+riert werden kann, wird im vorliegenden Buch nä-
+her erläutert. Dabei werden die nachstehenden 
+Themenkomplexe behandelt:
+1.  Grundlagen
+Im Buch werden zunächst die Grundlagen 
+zur Entwicklung von BIM erläutert und eine 
+gemeinsame Verstehensumgebung geschaffen.  
+Zudem wird der Frage nachgegangen, wo BIM 
+bereits gefordert wird und welche Standards 
+aktuell existieren. Abschließend werden die mög-
+lichen Vorteile und Aspekte der Einführung von 
+BIM im eigenen Unternehmen beleuchtet. 
+2.  Richtiges Modellieren	
+Im Gegensatz zu 2D-Zeichnungen werden 
+bei BIM 3D-Modelle erstellt. Die einzelnen Ele-
+mente (Objekte) sind dabei durch ihre Geometrie 
+und weitere Attribute (auch als Merkmale oder 
+Eigenschaften bezeichnet) definiert. Im Buch 
+wird richtiges Modellieren systematisch anhand 
+von einfachen Beispielen gezeigt. Es wird dabei 
+auf die geometrischen Grundlagen sowie die Po-
+sitionierung und Nordung des Modells eingegan-
+gen. Dies ist nicht zuletzt für die Kompatibilität 
+V.  Einleitung
+CHRISTIAN HOFSTADLER UND MARKUS KUMMER
+
+
+===== PAGE 14/348 =====
+13
+Einleitung
+einzelner Fachmodelle entscheidend und für den 
+späteren Datenaustausch wichtig. Weiters wer-
+den Modelliertechniken und unterschiedliche 
+Detaillierungsgrade sowie Objektbibliotheken 
+erläutert und diskutiert.
+3.  BIM-Software
+Für den Einsatz von BIM bzw. BIM-Methoden 
+sind die entsprechenden Softwarelösungen ent-
+scheidend. Zunächst wird dazu ein Überblick 
+über die vorhandene Softwarelandschaft und die 
+„Big Player“ geschaffen sowie eine Kategorisie-
+rung vorgenommen. Dabei wird zwischen Mo-
+dellierungssoftware, Viewern, Prüfsoftware, Soft-
+ware für Auswertungen und Simulationen sowie 
+Kollaborationsplattformen unterschieden und 
+auf die Lizenzpolitik und unterschiedliche Lizenz-
+formate (Kaufen oder mieten? Einzelplatz- oder 
+Netzwerklizenzen?) eingegangen. 
+4.  Datenaustausch
+Für die Zusammenarbeit verschiedener 
+Akteure mit BIM ist der Austausch von Daten 
+wesentlich und erfordert ein grundlegendes Ver-
+ständnis für Dateiformate sowie deren Vor- und 
+Nachteile. Dabei wird der Bogen von den be-
+kannten Dateiformaten wie DWG bis hin zu BIM-
+spezifischen Dateiformaten wie IFC gespannt.  
+Zusätzlich wird das Zusammenspiel von BIM und 
+GIS bzw. die Verwendung von Punktwolken the-
+matisiert. In diesem Zusammenhang ist auch das 
+Thema der Klassifizierung besonders wichtig und 
+wird im vorliegenden Buch entsprechend be-
+leuchtet. Ohne eine Klassifizierung sind keine sys-
+tematische Filterung und Auswahl sowie auch 
+kein praxisgerechter Datenaustausch möglich.
+5.  Zusammenarbeit
+Die Zusammenarbeit beginnt bei BIM-Pro-
+jekten genauso wie bei klassischen CAD-Projek-
+ten im eigenen Büro. Bereits hier müssen Regeln 
+definiert werden, um das simultane, geordnete 
+Arbeiten mehrerer Personen am gleichen Bauvor-
+haben zu ermöglichen. Diese Herausforderung 
+nimmt bei der büro- und fachbereichsübergrei-
+fenden Zusammenarbeit nochmals zu. Hierzu ist 
+es erforderlich, Rollen zu definieren und Berech­
+tigungssysteme einzuführen. In diesem Zusam-
+menhang wird außerdem erläutert, was unter 
+„Single Source of Truth“ zu verstehen ist und wie 
+
+
+===== PAGE 15/348 =====
+14
+BIM-Handbuch 2022
+das Versionsmanagement aufgebaut werden 
+kann. 
+6.  BIM-Projektorganisation
+Durch eine geänderte Arbeitsweise ergeben 
+sich nicht nur neue Rollen und unter Umständen 
+auch Leistungsbilder, sondern es treten in BIM-
+Projekten zudem gänzlich neue Akteure auf.  
+Die Zusammenarbeit zwischen den handelnden 
+Personen wird neu definiert und gegenüber der 
+klassischen Projektorganisation kommt es zu 
+neuartigen Schnittstellen und Koordinations­
+aufgaben. Dazu werden im vorliegenden Werk 
+exemplarisch unterschiedliche Konstellationen 
+der Projektorganisation beschrieben und zentrale 
+Aufgaben, wie etwa die Erstellung und Abstim-
+mung von Auftraggeber-Informations-Anforde-
+rungen (AIA) und der BIM-Abwicklungsplanung 
+(BAP), erläutert. Auch die Einrichtung einer Aus-
+tauschplattform (Common Data Environment – 
+CDE) sowie die Erstellung von Fachmodellen  
+bzw. eines Koordinationsmodelles wird anhand 
+von Prozessabläufen dargestellt und beschrie-
+ben. 
+Im Zentrum des Kapitels stehen die aus Sicht 
+der Akteure wichtigen Fragen: 
+ Welche Rolle(n) habe ich? 
+ Welche Aufgaben und Verantwortlich­keiten 
+sind mit dieser(n) Rolle(n) verbunden? 
+ Wie erfolgt der Informationsfluss?
+7.  Auswertungen
+Für die Auswertung und Analyse von BIM-
+Projekten stehen verschiedene Möglichkeiten  
+zur Verfügung. Sei es das Auswählen und Hervor-
+heben bestimmter Elemente (Filtern, Überschrei-
+ben [= farbliche Markierung] sowie Definitionen 
+unterschiedlicher Sichtbarkeiten) oder der Versi-
+onsvergleich, um zu erkennen, was sich in einem 
+neuen Planungsstand gegenüber der letzten Ver-
+sion verändert hat. Hinzu kommen weitere Werk-
+zeuge z.B. im Bereich des 4D oder 5D.
+Umfragedaten zum Thema BIM
+Wie weit ist BIM bereits in den Planungs­
+büros verbreitet? Wie schätzen sich diese im Zu-
+sammenhang mit ihren BIM-Kenntnissen selbst 
+
+
+===== PAGE 16/348 =====
+15
+Einleitung
+ein? Welche Hard- bzw. Softwareausstattung 
+liegt aktuell in den Planungsbüros vor? Diese  
+und andere Fragen wurden im Rahmen von  
+Umfragen unter den Mitgliedern der Bundes­
+kammer der Ziviltechniker:innen, des Fach­
+verbandes Ingenieurbüros und der Bundes­
+innung Bau gestellt. Die Auswertung der 
+wesentlichsten Ergebnisse wird im letzten 
+Abschnitt des Handbuches dargestellt, die ge-
+samte Umfrageauswertung findet sich unter: 
+www.bimhandbuch.at/materialien
+Das BIM-Handbuch 2022 richtet sich an all 
+jene, die sich als Anfänger/Neulinge mit dem 
+Thema Building Information Modeling (BIM) aus-
+einandersetzen möchten und soll einen praxis-
+gerechten Einstieg in die Thematik ermöglichen. 
+Das Buch dient dabei als Ausgangsbasis mit er-
+gänzenden und weiterführenden Unterlagen 
+(ausführliche Statements von Experten und Ex-
+pert:innen, Vorlagen, Probedateien, Videos etc.). 
+Damit soll der BIM-Start gelingen und der Nutzen 
+sowohl für Planende als auch für deren Kunden 
+und Kundinnen gesteigert werden.
+Es werden keine Schritt-für-Schritt-Anleitun-
+gen für bestimmte Frage- und/oder Problemstel-
+lungen geliefert, vielmehr soll ein genereller und 
+praxistauglicher Überblick über die BIM-Methode 
+gegeben werden. Vor- und Nachteile werden un-
+abhängig aufgezeigt und „Zukunftsmusik“ vom 
+aktuell Machbaren differenziert.
+Neben Praxisbeispielen und -tipps werden 
+auch „Reality Checks“ sowie Kommentare und 
+Zitate von Experten und Expertinnen aus den Be-
+reichen der Planung, Ausschreibung und Vergabe 
+sowie von großen öffentlichen Auftraggebern 
+und Jurist:innen präsentiert. 
+Im Vordergrund steht dabei die direkte 
+Anwendbarkeit sowie das Aufzeigen möglichst 
+früh generierbarer Resultate (Quick-Wins). Das 
+Verständnis für die Thematik soll erhöht und in 
+kurzer Lesezeit ein breiter Überblick über das 
+Thema BIM vermittelt werden. Um das Gelernte 
+direkt im eigenen Tätigkeitsbereich anwenden  
+zu können, verzichtet das BIM Handbuch 2022 
+bewusst auf die Darstellung komplexer und 
+detailorientierter Hintergrundinformationen und 
+theore­tischer Ansätze. 
+
+
+===== PAGE 17/348 =====
+16
+BIM-Handbuch 2022
+Dieses Buch ist ein Einsteigerhandbuch.  
+Am Anfang ist es nicht so leicht, sich in eine neue 
+Materie einzuarbeiten. Deshalb haben wir be-
+wusst versucht, das Buch in einem sehr frischen 
+und leicht zugänglichen Stil zu gestalten. Damit 
+das Lesen angenehmer wird, wurden zum einem 
+die Seiten in zwei Spalten geteilt und zum ande-
+ren mit vielen verschiedenen Funktionseinheiten 
+angereichert. Über diese Funktionseinheiten wird 
+ein direkter Praxisbezug aufgezeigt.
+Funktionseinheiten
+ Zitate von Fachleuten  
+(immer zwischen zwei roten Linien)
+ Praxistipp  
+(Funktionsbox mit Rahmen)
+ Realitycheck  
+(Funktionsbox mit Rahmen)
+ Gastkommentar  
+(Funktionsbox mit Rahmen)
+ Rechtstipp  
+(Funktionsbox mit Rahmen)
+ Stakeholder-Input  
+Bericht aus der Praxis zwischen den 
+­einzelnen Kapiteln
+Links
+Im Buch gibt es verschiedene Hyperlinks,  
+die in der Marginalspalte erscheinen. Grafisch 
+sind diese mit einem oder zwei roten Dreiecken 
+(je nach Bezug zur inneren oder äußeren Text-
+spalte) gekennzeichnet. Sie sind immer zweizeilig 
+und interaktiv.
+ YouTube Channel  
+(Verweise auf Video-Tutorials im eigenen 
+Channel)
+ Normen (ÖNORM, ISO, VDI, …)
+ Verweis auf andere Stellen im Buch
+ Link auf die zum Buch gehörenden Arbeits-
+materialien
+ Hyperlink ins Internet (dieser ist als einziger 
+nicht in der Marginalspalte, sondern bildet 
+einen eigenen Absatz im Fließtext)
+VI.  Orientierung
+MARCUS WALLNER
+
+
+===== PAGE 18/348 =====
+17
+Orientierung
+ 
+  
+	
+YouTube Channel
+	
+Ziehharmonikaprinzip
+ 
+  
+ 	 Norm: ÖNORM A 6241-2
+ 
+ 	
+Kapitel 4, S. xy
+	
+Klassen und Objekte
+ 
+ 	
+Arbeitsmaterialien
+Modellierleitfäden
+Links zu Internetseiten sind nicht in der  
+Marginalspalte, sondern im Fließtext rot hinter-
+legt eingebunden.
+http://www.buildingsmart.co.at/wp-content/ 
+uploads/2021/07/BIMcert-Handbuch-2021-eBook.
+pdf
+Damit dieses Buch den Einstieg in BIM er-
+leichtert, gibt es eine begleitende Landingpage, 
+einen eigenen Channel auf YouTube und einen 
+Bereich im Internet mit Arbeitsmaterialien. 
+www.bimhandbuch.at
+Die Arbeitsmaterialien bieten viele hilfreiche 
+Zusatzmaterialien. 
+So sind dort aktualisierte Linklisten, Muster-
+dokumente, Checklisten, Übungsdateien, zusätz-
+liche Texte, die komplette Dokumentation der 
+Umfrage und vieles mehr zu finden. 
+www.bimhandbuch.at/materialien
+Auf dem begleitenden YouTube Channel 
+sind einige Videotutorials zu finden. Diese für das 
+Buch produzierten Kurzvideos sollen anhand von 
+konkreten Beispielen beim Einstieg mit der BIM-
+Software helfen. So werden auf dem Channel bei-
+spielsweise Tutorials für den Im- und Export von 
+IFC-Dateien in und aus verschiedenen Software-
+produkten gezeigt.
+www.bimhandbuch.at/videos
+
+
+===== PAGE 19/348 =====
+18
+BIM-Handbuch 2022
+VII. Inhaltsverzeichnis
+I.
+Vorwort  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+4
+II.
+Vorwort  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+6
+III.
+Vorwort  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+8
+IV.
+Danksagung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+10
+V.
+Einleitung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+12
+VI.
+Orientierung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+16
+VII.
+Inhaltsverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+18
+VIII.
+Glossar . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+20
+IX.
+Abkürzungsverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+26
+ 
+28
+	
+30
+66
+ . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .
+	
+68
+Richtiges Modellieren in Infrastrukturprojekten . . . . . . . . . . . .	
+108
+
+
+===== PAGE 20/348 =====
+19
+Inhaltsverzeichnis
+3.	
+BIM-Software  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+118
+BIM – Building Information Modeling –  
+in der BIG . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+158
+4.	
+Datenaustausch  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+160
+BIM und LM.VM.2022  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+200
+5.	
+Zusammenarbeit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+206
+Anwendung der BIM-Methode im Pilotprojekt 
+„LFS Grottenhof Modernisierung“ . . . . . . . . . . . . . . . . . . . . . . . . .	
+238
+6.	
+BIM-Projektorganisation  . . . . . . . . . . . . . . . . . . . . . . .	
+242
+BIM-Projektorganisation in der ASFiNAG  . . . . . . . . . . . . . . . . . .	
+288
+7.	
+Auswertungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+292
+Anhang
+	
+BIM-Handbuch 2022
+	
+Praxis-Impulse für planende Berufe  . . . . . . . . . . . . . . . . .	
+316
+	
+Umfragedaten zum Thema BIM . . . . . . . . . . . . . . . . . . . . .	
+322
+	
+Abbildungsverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+334
+	
+Tabellenverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+340
+	
+Stichwortverzeichnis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+342
+
+
+===== PAGE 21/348 =====
+20
+BIM-Handbuch 2022
+3D 
+Realitätsnahes, digitales Abbild des Gebäudes.1 
+4D 
+Zeit als vierte Dimension.2
+5D 
+Kosten als fünfte Dimension 
+Die Baukosten entwickeln sich von der Kosten-
+schätzung zu den tatsächlich abgerechneten 
+Kosten des Bauwerks. Enthalten sind die im 
+Prozess notwendigen Datensätze.3
+6D 
+Information zur Nachhaltigkeit eines Gebäudes 
+über seinen Lebenszyklus als sechste Dimension.
+Dazu zählen z.B. ökologischer Fußabdruck, War-
+tungskosten, Wartungsintervalle einschließlich 
+allfälligen Austauschs.4 
+ASI-Merkmalserver 
+Datenbank, in der die Struktur der Eigenschaften 
+von Bauelementen und Materialien beschrieben 
+ist.5
+Attribut (→ Abstimmung mit Merkmalen)
+alphanumerisches Element, bestehend aus einer 
+immer gleich bleibenden Bezeichnung und 
+variablem Inhalt.6
+Auftraggeber-Informationsanforderungen 
+(AIA)
+Konkrete Beschreibung der Informationsbedürf-
+nisse des Auftraggebers, die als Anforderung für 
+den AN beschrieben werden und als Grundlage 
+für den BAP im jeweiligen Projekt dienen. Die AIA 
+beinhaltet insbesondere die BIM-Anforderungen, 
+BIM-Prozesse und BIM-Anwendungen, um die 
+Ziele des Auftraggebers zu erreichen.7
+ 
+VIII.  Glossar
+1	
+ÖNORM A6241-2:2015.
+2	
+ÖNORM A6241-2:2015.
+3	
+ÖNORM A6241-2:2015.
+4	
+ÖNORM A6241-2:2015.
+5	
+ÖNORM A6241-1:2015.
+6	
+ÖNORM A6241-1:2015.
+7	
+Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+
+
+===== PAGE 22/348 =====
+21
+Glossar
+Modelliersoftware
+Manchmal auch als Autorensoftware bezeichnet, 
+Programm zur Erzeugung und Verarbeitung von 
+Planungsinhalten. Weitergabe auf Grundlage  
+offener oder proprietärer Schnittstellen.8
+Bauwerk 
+Gebäudeeinheiten, Gebäude bzw. Gebäudeteile, 
+die genutzt und zu bestimmten Zwecken bewirt-
+schaftet werden sollten.9
+BIM Collaboration Format (BCF)
+Austauschformat. Ein offenes Dateiformat, 
+welches den Austausch von Nachrichten und 
+Änderungsanforderungen zwischen BIM‐Viewern 
+und BIM‐Modelliersoftware unterstützt.10
+BIM-Fachkoordination
+Verifiziert fachdisziplinspezifische BIM-Inhalte der 
+jeweiligen Planungsteams.11
+BIM-Gesamtkoordination
+Koordiniert und verifiziert interdisziplinäre BIM-
+Inhalte der Planungsbeteiligten auf Grundlage 
+der Vorgaben der BIM-Projektsteuerung. Trägt 
+die Verantwortung für das Koordinationsmodell. 
+Überwacht die Durchführung der vorgegebenen 
+Aufgaben der Fachkoordination und ist primärer 
+Ansprechpartner der digitalen Planung gegen-
+über der BIM-Projektsteuerung.12
+ 
+BIM-Projektabwicklungsplan (BAP)
+Der BIM-Projektabwicklungsplan ist ein Richt­
+liniendokument, welches die Grundlage einer BIM‐ 
+basierten Zusammenarbeit definiert. Er legt die 
+organisatorischen Strukturen und die Verantwort­
+lichkeiten fest, stellt den Rahmen für die BIM-
+Leistungen dar und definiert die Prozesse und die 
+Anforderungen an die Kollaboration der einzelnen 
+Beteiligten. Die Modelle und Prozesse werden 
+hierbei in Bezug auf Strukturen, Elemente und In-
+formationen vereinheitlicht. Der BAP legt weiter-
+hin die projektbezogenen Ausprägungen fest und 
+definiert das Maß der Informations- und Detaillie-
+rungstiefe und deren Qualitäten. Der BIM-Pro-
+jektabwicklungsplan sollte Vertragsbestandteil 
+zwischen AG und Projektteilnehmern werden.13
+ 
+BIM-Projektleitung
+Qualifikation auf der Ebene der Bestellung.  
+Die BIM-Projektleitung ist die verantwortliche 
+Stelle beim AG für die generelle Spezifizierung 
+der Rahmenbedingungen eines Projekts, für die 
+Definition der verwendeten Leistungsbilder der 
+jeweiligen Akteure sowie für die Durchsetzung 
+der Anforderungen des AG an die verwendete 
+Datenstruktur im Projekt.14
+BIM-Projektsteuerung
+Qualifikation auf der Ebene der Projektsteuerung. 
+Die BIM-Projektsteuerung vertritt die Interessen 
+des AG bei der konkreten Spezifizierung und der 
+operativen Durchführung eines BIM-Projekts im 
+Rahmen der Vorgaben der BIM-Projektsteue-
+rung.15  
+8	
+Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+9	
+ÖNORM A6241-1:2015.
+10	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+11	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+12	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+13	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+14	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+15	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+
+
+===== PAGE 23/348 =====
+22
+BIM-Handbuch 2022
+Building Information Modeling Level 0  
+(BIM Level 0) 
+Unkoordiniertes CAD potenziell in 2D.16
+ 
+Building Information Modeling Level 1  
+(BIM Level 1) 
+Synonym: little BIM
+Koordiniertes CAD im 2D- oder 3D-Format.  
+Abgestimmte Zusammenarbeit auf Basis einer 
+Kollaborationsplattform mit einheitlichen  
+Datenstrukturen und -formaten.17
+  
+Building Information Modeling Level 2  
+(BIM Level 2) 
+Koordinierte 3D-Umgebung, aufgeteilt in  
+sepa­rate disziplinspezifische, elementbasierte, 
+datenreiche Fachmodelle. Integration und 
+Qualitäts­sicherung auf der Basis einer maß­
+geschneiderten Integrationsplattform.18
+ 
+Building Information Modeling Level 3  
+(BIM Level 3, iBIM) 
+Synonym: big BIM
+Vollständig integraler, gemeinschaftlicher  
+Prozess der Modellierung eines digitalen  
+Modells in Übereinstimmung mit der Aus- 
+führung für die Datenpflege über den ge- 
+samten Lebenszyklus, in einem gemeinsamen 
+zentralen Datenmodell unter Einarbeitung  
+von Sachdaten für weiter­führende Informatio-
+nen, die als zusätzliche Dimensionen beschrie-
+ben werden. Ist derzeit technisch noch nicht 
+umgesetzt.19
+buildingSmartDataDictionary (bSDD)
+Offenes Klassifizierungssystem für das Bauwesen 
+auf Grundlage von ISO 12006-3 für die Benen-
+nung von Bauteilen, Materialien und deren  
+Merkmalen.20
+CAD-Zeichnung 
+Zweidimensionale, zum Ausdruck auf Papier 
+bestimmte Darstellung eines CAD-Modells.21
+   
+closedBIM
+Beschreibt einen modell‐ und informations­
+basierten Datenaustausch innerhalb eines 
+Projekts unter Verwendung einer einheitlichen 
+Softwarelösung und einer proprietären Schnitt-
+stelle.22
+ 
+Common Data Environment (CDE)
+Synonym: Datenraum, Plattform
+Eine Plattform zum projektbezogenen Austausch 
+von Informationen aller Projektbeteiligter auf 
+Grundlage der Vorgaben aus dem BAP.23
+Computer Aided Design (CAD) 
+Computer-unterstütztes Zeichnen von Konstruk-
+tionsunterlagen für bauliche, mechanische, 
+elektrische oder elektronische Erzeugnisse mit 
+Hilfe von spezieller Software.24
+16	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+17	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+18	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+19	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+20	 ÖNORM A6241-2:2015.
+21	 ÖNORM A6241-1:2015.
+22	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+23	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+24	 ÖNORM A6241-1:2015.
+
+
+===== PAGE 24/348 =====
+23
+Glossar
+Externe Referenzen (X-Ref) 
+Dateien, die mit dem aktiven CAD-Modell 
+verknüpft sind und gleichzeitig mit diesem 
+angezeigt werden können.25
+Fachmodell
+Ist ein allgemeiner Begriff für das disziplinen‐ bzw. 
+gewerkespezifische digitale Modell eines einzel-
+nen Projektbeteiligten. Die darin befind­lichen 
+Modellinhalte werden gezielt für einen bestimm- 
+ten Zweck erstellt und entwickeln sich in ihrer Re-
+alitätsnähe entlang der einzelnen Projektphasen.26
+Facility Information Management (FIM)
+Beschreibt den Prozess der bauelementorien­
+tierten Gebäudeverwaltung, basierend auf den 
+Informationen des BIM-Prozesses.27
+ 
+Gesamtmodell
+Zusammengefügte Einheit aller Fachmodelle im 
+aktuellen Entwicklungsstand oder Revisionsstand 
+zum Zweck der gesamtheitlichen Übergabe eines 
+Projekts.28
+  
+Geschoss
+Bauwerksebene, die einen oder mehrere Bauteile 
+(Trakte) umfasst.29
+ 
+Globally Unique Identifier (GUID) 
+Automatisch generierter, weltweit eindeutiger 
+Code als offener Standard im Bauwesen zur 
+digitalen Kennzeichnung von Bauelementen in 
+digitalen Modellen.30
+ 
+Industry Foundation Classes (IFC)
+Offener Standard im Bauwesen zum Aus- 
+tausch von digitalen Modellen. Der Standard  
+wird von buildingSMART definiert und weiterent-
+wickelt.
+Koordinationsmodell
+Zusammengefügte Einheit aller Fachmodelle im 
+aktuellen Entwicklungsschritt zum Zweck der 
+Gesamtkoordination eines Projekts.31
+Level of Development (LOD) 
+Steht für den Ausarbeitungsgrad eines Bau­
+elements bzw. Modells in Abhängigkeit von der 
+Projektphase.
+Level of Coordination (LoC) 
+Gibt Auskunft über den Abstimmungsgrad eines 
+Bauelements in Abhängigkeit zur Projektphase. 
+Dieser wird teilmodellintern und übergeordnet 
+festgelegt. Es gibt nur zwei Varianten des LoC, 
+nämlich wahr oder falsch.32
+Level of Geometry (LoG)
+Beschreibt Tiefe der geometrischen Darstellung, 
+bzw. den Grad der Detaillierung von Bauelemen-
+ten.
+ 
+Level of Information (LoI)
+Bezieht sich auf die alphanumerische Anfor­
+derung an Bauelemente. Diese können über 
+25	 ÖNORM A6241-1:2015.
+26	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+27	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+28	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+29	 ÖNORM A6241-1:2015.
+30	 Plattform 4.0.
+31	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+32	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+
+
+===== PAGE 25/348 =====
+24
+BIM-Handbuch 2022
+zentrale Stellen, wie den ASI Merkmalserver, 
+normativ definiert sein. Die Spezifikationen des 
+LoI  geben Anwendern von BIM‐Software genaue 
+Vorgaben über den Informationsgrad der Bau­
+elemente eines Planungsmodells in Abhängigkeit 
+zur Projektphase.33
+  
+Merkmal
+Alphanumerisches Element, bestehend aus einer 
+immer gleich bleibenden Bezeichnung und 
+variablem Inhalt im BIM-Level 2/3 Umfeld.34
+ 
+Model View Definition (MVD)
+Definiert die Teilmengen des IFC-Datenmodells, 
+die notwendig sind, um die spezifischen Daten-
+austausch-Anforderungen im Bauwesen während 
+eines Bauvorhabens zu unterstützen. Die Modell-
+ansichtsdefinition stellt eine Anleitung für alle 
+IFC-Ausdrücke (Klassen, Attribute, Beziehungen, 
+Eigenschaftssätze, Mengendefinitionen etc.) zur 
+Verfügung, die in einem bestimmten Anwen-
+dungsbereich verwendet werden und vorhanden 
+sein müssen. Sie beschreibt auch das Pflichten-
+heft für die Umsetzung der IFC-Schnittstelle in 
+einer bestimmten Software.35
+Projektphasen 
+Entwicklungsstand des virtuellen Gebäude­
+modells inklusive Aussagen hinsichtlich des 
+Ausarbeitungsgrades und des Detaillierungs­
+grades.36 
+Prüfsoftware
+Synonym: Checkingtool, Modelchecker
+Programm zur disziplinspezifischen Prüfung  
+von Modellinhalten bzw. interdisziplinären Ko­
+ordinationen.37  
+Raum
+Teil eines Bauwerks, der vollständig oder teil­
+weise von Trennelementen begrenzt ist, und 
+dessen Fußboden und/oder Decke einen Teil der 
+Konstruktion des Bauwerks bildet/bilden.38 
+ 
+Simulations- und Berechnungssoftware
+Programm zur Analyse und Anreicherung von 
+Planungsinhalten.39
+  
+Teilmodell
+(Bau-)Abschnittsbezogenes Teilstück eines Fach-
+modells.40 
+33	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+34	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+35	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+36	 ÖNORM A6241-2:2015.
+37	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+38	 ÖNORM A6241-1:2015.
+39	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+40	 Plattform 4.0, Begriffe zu BIM und Digitalisierung.
+
+
+===== PAGE 26/348 =====
+25
+Glossar
+
+
+===== PAGE 27/348 =====
+26
+BIM-Handbuch 2022
+AG	
+Auftraggeber:in 
+AIA	
+Auftraggeber-Informations­
+anforderungen
+ALS	
+Airbone Laserscanning 
+AN	
+Auftragnehmer:in 
+ASI	
+Austrian Standards Institute 
+AVA	
+Ausschreibung, Vergabe und 
+Abrechnung 
+BAP	
+BIM-Abwicklungsplanung 
+BCF	
+BIM Collaboration Format
+BE	
+BIM-Ersteller:in 
+BEP	
+BIM Execution Plan 
+BFK	
+BIM-Fachkoordinator:in
+BGK	
+BIM-Gesamtkoordinator:in 
+BH	
+Bauherr 
+BIA	
+Betreiber Informationsanforderungen 
+BIG	
+Bundesimmobliengesellschaft m.b.H.
+BIM	
+Building Information Modeling
+BIM-ÖBA	 BIM-Örtliche Bauaufsicht 
+BK	
+begleitende Kontrolle 
+BKS	
+Benutzerkoordinatensystem 
+BPL	
+BIM-Projektleitung 
+BPMN	
+Business Process Model and Notation
+Brep	
+Boundary Representation 
+bSDD	
+buildingSmartDataDictionary
+IX.  Abkürzungsverzeichnis
+BVB	
+Besondere Vertragsbedingungen
+BVergG	
+Bundesvergabegesetz
+CAD	
+Computer Aided Design
+CAFM	
+Computer Aided Facility Management 
+CDE	
+Common Data Enviroment
+CEN	
+Comité Européen de Normalisation
+CSG	
+Constructive Solid Geometry 
+DBV	
+Deutscher Beton- und Bautechnik-
+Verein
+DSGVO	
+Datenschutzgrundverordnung 
+EU	
+Europäische Union
+EULA	
+Endbenutzer Lizenzvertrag 
+FEM	
+Finite-Elemente-Methode 
+FIM	
+Facility Information Management
+FM	
+Facility Management 
+FP	
+Fachplaner:innen 
+GOA	
+Gebührenordnung für Architekten 
+GP	
+Generalplaner:in 
+GSA	
+General Services Administration 
+GUID	
+Globally Unique Identifier
+HKLS	
+Heizung, Klimatechnik, Lüftung, 
+Sanitär 
+HOAI	
+Honorarabrechnung für Architekten 
+und Ingenieure 
+IDM	
+Information Delivery Manual 
+
+
+===== PAGE 28/348 =====
+27
+Abkürzungsverzeichnis
+IFC	
+Industry Foundation Classes
+ISO	
+Internationale Organisation für 
+Normung 
+KPI	
+Kennzahlen  
+(Key Performance Indicator)
+LM.VM	
+Leistungsmodelle.Vergütungsmodelle 
+LoC	
+Level of Coordination
+LoD	
+Level of Detail
+LoG	
+Level of Geometry
+LOIN	
+Level of Information Needed 
+Lol	
+Level of Information
+LoX	
+Level of anything 
+LPH	
+Leistungsphasen 
+MVD	
+Model View Definition
+NU	
+Nutzer:innen des Bauwerks 
+ÖBA	
+Örtliche Bauaufsicht 
+OKRD	
+Oberkante Rohdecke 
+OOM	
+objektorientierte Modellierung 
+PDF	
+Portables Dokumentenformat 
+PL	
+Projektleitung 
+PPH	
+Projektphasen 
+PS	
+Projektsteuerung 
+QG	
+Quality Gates 
+RGB	
+Rot-Grün-Blau 
+RL	
+Richtlinie 
+SaaS	
+Software as a Service 
+SUB	
+Subunternehmer 
+TGA	
+Technische Gebäudeausrüstung 
+TLS	
+Terrestrisches Laserscanning 
+TU	
+Technische Universität 
+TZ	
+Technische Zeichner:in 
+UrhG	
+Urheberrechtsgesetz 
+UWG	
+Bundesgesetz gegen den unlauteren 
+Wettbewerb 
+VR	
+Virtual-Reality 
+WKS	
+Weltkoordinatensystem 
+X-Ref	
+Externe Referenzen
+ZT	
+Ziviltechniker:in 
+
+
+===== PAGE 29/348 =====
+28
+BIM ist keine Mammutaufgabe und trotzdem Teil eines Mammutprojektes
+BIM ist keine Mammutaufgabe und 
+trotzdem Teil eines Mammutprojektes
+Die Methodik BIM ist unzweifelhaft kurz-, 
+mittel- und langfristig der „Enabler“ der Immo­
+bilienbranche. Dies gilt auf vielen Ebenen, von 
+denen drei besondere Bedeutung haben:
+a.
+Digitalisierung
+b.
+Klimaneutralität
+c.
+Work-Life-Balance
+Bei allen drei Ebenen geht es nicht darum, 
+ob die Transformation stattfindet, sondern nur 
+mehr, wie sie stattfindet.
+Und beim „wie“ gilt eine Feststellung gleich-
+mäßig auf allen Ebenen: TRANSFORMATION 
+braucht AKZEPTANZ.
+Die Innovationskraft jedes einzelnen Mit­
+arbeiters, jedes Gewerbebetriebes und der In­
+dustrie wird es möglich machen, gesellschaftli-
+chen Wohlstand mit nachhaltigem Wirtschaften 
+zu verbinden. Damit werden für alle Erwerbs­
+tätigen Perspektiven geschaffen, die zur Akzep-
+tanz der Transformation führen.
+Die Immobilienbranche hat starken Einfluss 
+auf die Agenda 2050 Ziele und damit auch große 
+Verantwortung beim Erreichen dieser Ziele. Die 
+Corona-Pandemie hat zwar das Bewusstsein der 
+Datennutzung geschärft, aber das Verständnis 
+für den Mehrwert von (automatisierten) Daten-
+analysen ist noch stark ausbaufähig.
+Im gesamten Lebenszyklus einer Immobilie 
+fallen große Mengen Daten an, bei der Planung, 
+der Errichtung, der Bewirtschaftung und beim 
+Rückbau. Um diese Daten im Sinne der Eigen­
+tümer und Investoren, sowie der EU-Taxonomie 
+zielführend, jederzeit und dezentral nutzen zu 
+können, müssen sie jedoch zentralisiert und 
+systematisch erfasst, aufbereitet und verfügbar 
+gemacht werden. 
+Genau dafür ist die Methodik BIM, wie sie 
+von buildingSMART verstanden wird – offene 
+Datenformate (IFC) –, der Enabler.
+Wir müssen klar sehen und klar kommunizie-
+ren: die Klimaschutzziele von Glasgow werden 
+wir ohne flächendeckende, digitale Infrastruktur 
+– dazu gehört auch Ausbildung – nicht erreichen. 
+Denn um Reduktionspotentiale in der Immobi-
+lien- und Baubranche überhaupt identifizieren zu 
+ALFRED WASCHL 
+
+
+===== PAGE 30/348 =====
+29
+Alfred Waschl
+können, braucht es eine ausreichend breite und 
+tiefe standardisierte Datengrundlage. Mit Akten-
+ordnern auf der Europalette und vielen Excel- 
+Sheets ist dies natürlich nicht zu bewerkstelligen.
+Smartphones, Tablets, Sensoren, digitale 
+Zwillinge und Apps bieten Möglichkeiten, Infor-
+mationen auf der Baustelle oder im Gebäude zu 
+erfassen und unmittelbar zur Auswertung in eine 
+zentrale Datenbank (BIM-Modell) einzuspeisen. 
+Die gewonnenen Erkenntnisse bieten dann auf 
+Knopfdruck und in Echtzeit diverse Ansatzpunkte 
+für zielgerichtete Handlungen. Das geht im 
+Übrigen bis in den Bereich der Finanzierung.  
+Die neuen ESG-Anforderungen stellen nämlich 
+nichts anderes als den Umbau des Finanzierungs-
+systems für (nachhaltige) Immobilien (der soge-
+nannte „Artikel 8 Fonds“ ist dabei, bei institutio-
+nellen Investoren zum Standard zu werden) dar.
+Das Beherrschen der Methodik BIM ist also 
+deutlich mehr als die Nutzung eines CAD-, Word- 
+und Excel-Programms; es ist die Nutzung einer 
+Playstation über den Lebenszyklus eines ver­
+bauten Wertes mit voller Transparenz. Und mit 
+der Playstation fordern wir auch gerne die inter-
+nationale Community und nicht nur den Sitz-
+nachbarn. Und bei der Playstation wissen wir 
+auch über die Graphikkarte, über die Bildschirm-
+auflösung, über die Updates, über die Stamm­
+daten … genau Bescheid. Warum sollte dann die 
+Methodik BIM nicht selbstverständlich sein?
+
+
+===== PAGE 31/348 =====
+30
+Grundlagen
+Industrie 4.0, Big Data, E-Health, Smart Cities, Cloud Computing, Künstliche 
+Intelligenz. Das Schlagwort „Digitalisierung“ ist in aller Munde. Digitale Trans­
+formation ist ein Muss – auch in der Baubranche. Die Abläufe und Prozesse von 
+Bauprojekten sowie die Planung, (Vor-)Fertigung, Montage und auch der Betrieb 
+gestalten sich zunehmend „digitaler“. 
+Building Information Modeling (BIM) reiht sich dabei in die umfassende Liste 
+neuer Begrifflichkeiten der Digitalen Revolution ein. Durch den in der Digitalisie-
+rung verorteten, steten Wandel in den Prozessen, Methoden und Arbeitsweisen 
+der Baubranche findet Building Information Modeling zunehmend den Weg von 
+Forschungs- und Pilotprojekten in die tägliche Praxis. Dieser Transformationspro-
+zess passiert nicht nebenbei. Er bedarf einer aktiven und bewussten Auseinander-
+setzung aller Beteiligten mit den Heraus- und Anforderungen sowie Chancen und 
+Möglichkeiten der digitalen Welt. 
+Welche Ansprüche stellt BIM als Teil dieser digitalen Welt nun an die Akteure 
+innerhalb der Baubranche? Welcher Nutzen wird von der Anwendung dieser 
+neuen Methode erwartet? Was versteht man eigentlich unter BIM, wo stehen wir  
+in der Entwicklung und wo kann diese hingehen?
+Grundlagen
+Kapitel 1
+CHRISTIAN HOFSTADLER, MARKUS KUMMER UND MARCUS WALLNER
+
+
+===== PAGE 32/348 =====
+Wo stehen wir in der Entwicklung von BIM?  . . . . . .	
+32
+Was ist BIM eigentlich? Wie ist BIM zu verstehen? 	
+36
+Was bedeutet das „I“ in BIM  . . . . . . . . . . . . . . . . . . . . . . . . .	
+45
+Wird BIM schon gefordert?  . . . . . . . . . . . . . . . . . . . . . . . . . .	
+47
+Welche Standards gibt es bereits? . . . . . . . . . . . . . . . . . .	
+49
+(Erwartete) Vorteile durch den Einsatz von BIM . . .	
+52
+Fehlervermeidung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+54
+Kollaboration  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+55
+Visualisierung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+55
+Kollisionskontrolle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+56
+Verfügbarkeit  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+57
+Arbeits- und Zeitersparnisse . . . . . . . . . . . . . . . . . . . . . . . . . .	
+57
+Auswertungen und Simulationen . . . . . . . . . . . . . . . . . . . . .	
+58
+Kosten . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+60
+Transparenz . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+61
+BIM einführen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+62
+Literaturverzeichnis  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .	
+64
+31
+Grundlagen
+
+
+===== PAGE 33/348 =====
+32
+Grundlagen
+Wo stehen wir in der Entwicklung  
+von BIM?
+	
+Vielen dürften Studien bekannt sein, welche die 
+Produktivität des Baugewerbes bzw. der Bau­
+industrie mit anderen Branchen vergleichen und 
+zu dem Schluss gelangen, dass diese am Bau in 
+den letzten (etwa) 30 Jahren mehr oder weniger 
+stagniert.41 Obwohl die Vergleichsmethoden sol-
+cher verallgemeinernden Studien kritisch zu 
+sehen sind (z.B. wegen der Vergleichsbasis und 
+der Auffassung, welche Leistungen zur Ver-
+schwendung zählen), ist dennoch davon aus­
+zugehen, dass der Zuwachs an Produktivität in 
+der Baubranche geringer ausfällt als in anderen 
+Branchen. Die Gründe dafür sind mit Sicherheit 
+vielschichtig, allerdings liegt die Vermutung 
+nahe, dass die verhältnismäßig langsame Digi­
+talisierung der Baubranche als ein wesentlicher 
+Parameter zur Erklärung des geringeren Produk-
+tivitätszuwachses fungieren kann. 
+Während andere Branchen bereits seit ge-
+raumer Zeit an der Einführung und Nutzung von 
+Künstlicher Intelligenz (KI) und Maschinellem 
+Lernen arbeiten, befindet sich die Baubranche 
+gerade erst in der Einführung von Building 
+Information Modeling. Um die Produktivität mit-
+tel- und langfristig steigern zu können, stellt 
+BIM  sicherlich nicht das einzige Heilmittel dar, 
+es dürfte aber wesentlich dazu beitragen, gegen-
+über anderen Branchen aufzuholen. 
+Einige mögen sich noch an die Umstellung 
+von Tusche auf die ersten CAD-Programme erin-
+nern. Dieser Prozess – bis der Großteil der Büros 
+als „CAD-fit“ bezeichnet werden konnte – dauer-
+te in etwa zehn bis zwanzig Jahre. Mit der Um-
+stellung von CAD auf BIM verhält es sich nicht 
+anders. Auch dieser Wandel dürfte mindestens 
+genauso lange dauern, denn im Vergleich zur 
+Umstellung von Tusche auf CAD, bei der lediglich 
+41	 Vgl. ROLAND BERGER GMBH (2016). Digitalisierung 
+der Baubranche. Online unter: https://www.roland-
+berger.com/de/Media/Digitalisierung-der-Bau­
+branche.html, Datum des Zugriffs: 27.  10.  2021.
+	
+Vgl. McKinsey & Company (2017). Reinventing Con-
+struction: A Route to higher Productivity. Online 
+unter: https://www.mckinsey.com/de/~/media/ 
+mckinsey/locations/europe%20and%20middle 
+%20east/deutschland/news/presse/2017/2017-02-28/ 
+170228_mgi_construction.pdf, Datum des Zugriffs: 
+27.  10.  2021.
+	
+Vgl. EYGM Limited (2021). Hochbauprognose 2021.
+
+
+===== PAGE 34/348 =====
+33
+Wo stehen wir in der Entwicklung von BIM?
+das Werkzeug ausgewechselt wurde, ändert sich 
+mit BIM die komplette Arbeitsweise. Seit den 
+ersten „Gehversuchen“ mit BIM sind bereits eini-
+ge Jahre vergangen, aber die meisten Experten 
+und Expertinnen sind der Meinung, dass im  
+Jahr 2021 noch nicht einmal die Hälfte des  
+Weges in der BIM-Welt zurückgelegt ist. Der  
+Zeitpunkt für einen Einstieg in das Thema BIM 
+scheint somit günstig – und mit der Lektüre die-
+ses Buchs haben Sie bereits den ersten Schritt ge-
+setzt.
+Inzwischen besteht kein Zweifel mehr daran, 
+dass BIM die Zukunft wesentlich prägen wird. 
+Natürlich besteht in den nächsten Jahren noch 
+einiges an Handlungsbedarf, damit BIM in vielen 
+Bereichen der Bauwirtschaft zu einer ausgereif-
+ten Technologie bzw. Methode heranwachsen 
+kann, bereits jetzt sind die Entwicklungen – 
+speziell in jenen Bereichen, in denen es zuerst 
+Fuß gefasst hat – aber schon sehr weit fort­
+geschritten.
+So kann BIM beispielsweise im Bereich der 
+Planung bereits als weit ausgereift angesehen 
+werden, während jedoch im Bereich der Bau­
+ausführung und auch im Betrieb mit Sicherheit 
+noch Adaptierungs- und Optimierungsprozesse 
+notwendig sind. 
+Wenn man sich die Auftritte der diversen 
+großen Bauunternehmen ansieht, erhält man 
+einen anderen Eindruck. BIM scheint hier ge-
+meinsam mit Lean ein wesentliches Mittel zur 
+Optimierung der Prozesse zu sein. Ähnlich verhält 
+es sich bei der Betrachtung der Fachbereiche.  
+Da die ersten BIM-Projekte fast ausschließlich 
+Hochbauprojekte waren, haben die BIM- 
+Standards im Hochbau einen Vorsprung.  
+Im Bereich der Infrastruktur sind einige Standards 
+hingegen gerade erst im Entstehen – was der 
+Entwicklungsprozess in diesem Bereich mit sich 
+bringt, darf mit Spannung erwartet werden. 
+Gerade der Bereich Infrastruktur bzw. Tief-
+bau mit z.T. groß strukturierten Projekten und 
+sich wiederholenden Teilbereichen und wenigen 
+(öffentlichen) Bauherren kann als fruchtbarer  
+Boden für die Standardisierung gesehen werden. 
+Auch Vorteile in der Nutzung bzw. im Betrieb ha-
+ben das Potenzial, volkswirtschaftlichen Nutzen 
+zu generieren. 
+Mit ganz neuen Arbeitsweisen, Anwen-
+dungsfällen, Aufgaben und Verantwortlichkeiten 
+
+
+===== PAGE 35/348 =====
+34
+Grundlagen
+zum Teil schon ab 2025 zu erbringen. BIM liefert 
+hierbei die erforderlichen Werkzeuge, um diese 
+umfassenden Datenstrukturen bewäl­tigen und 
+zusammenführen und schließlich entsprechende 
+Analysen sowie Nachweise liefern zu können.
+Elemente der Digitalisierung finden mehr 
+und mehr Einzug in das ressourcenschonende 
+Planen, Bauen und Betreiben von Bauwerken. 
+Idealerweise werden fundierte Daten erhoben, 
+gefiltert, in brauchbare Kennzahlen (KPI) um­
+gewandelt und mit kontextbezogenen Informa-
+tionen verknüpft sowie stets wiederauffindbar, 
+optimal kommunizierbar und übertragbar ge-
+speichert. Dieser Prozess umfasst auch die Trans-
+formation von Verfügungs- in Orientierungswis-
+sen (kontextbezogene Verknüpfung von Prozess- 
+und Bauteilkennzahlen mit den Produktions­
+bedingungen). Durch die Bereitstellung des 
+quan­titativ immer stärker vertretenen 
+Verfügungs­wissens (besonders durch die digitale 
+Revolution) vergrößert sich der Ereignis- und 
+Möglichkeitsraum. Dies erfordert ein hohes Maß 
+an Orien­tierung, um das dadurch erlangte Wissen 
+und dessen Nutzung auf eine sinnbehaftete Basis 
+stellen und den Fokus auf das Relevante sowie 
+auf das ethisch und ökonomisch Gebotene legen 
+zu können. Durch implementierte und vordefi-
+nierte Filter für die Datenaufbereitung und  
+-bereinigung wird der Grad an Subjektivität in 
+der Datengenerierung und Datenanalyse auf ein 
+Mindestmaß reduziert und in manchen Bereichen 
+gänzlich ausgeschaltet. Zudem wird es möglich, 
+die Analysen auf validiertes, strukturiertes und 
+kontextualisiertes – also veredeltes – Orientie-
+rungswissen zu stützen.42
+wird über kurz oder lang auch die Honorierung 
+den veränderten Prozessen angepasst werden 
+müssen. Darüber hinaus entsteht im Rahmen die-
+ser Entwicklung ein großer Bedarf im juristischen 
+Bereich. Es muss Klarheit und Rechtssicherheit für 
+viele offene Fragen geschaffen werden. Allein die 
+Interpretation von als geläufig empfundenen 
+Fachbegriffen kann je nach Gesprächspartner:in 
+gewaltige Unterschiede aufweisen. Was planen-
+den und ausführenden Akteuren als selbst­
+verständlich erscheint, kann von Bauherren, 
+Nutzer:innen und insbesondere Jurist:innen  
+ganz unterschiedlich interpretiert werden. 
+Enorme Entwicklungen sind in naher Zu-
+kunft im Bereich der verwendeten Software zu 
+erwarten. Entwicklung neuartiger Software ist 
+gemäß ihrer Natur ein eher zeitintensiver Prozess. 
+So vergehen vom Wunsch einer Anpassung bis zu 
+deren Verfügbarkeit in der Praxis mehrere Jahre 
+(je nach Softwarehersteller und Grad der Anpas-
+sung). Man kann also davon ausgehen, dass hin-
+sichtlich Usability sowie neuer Funktionen und 
+Oberflächen bereits einiges in der „Pipeline“ der 
+Hersteller existent sein dürfte. Vor allem der 
+Datenaustausch zwischen den einzelnen Soft-
+wareanwendungen sollte nutzerfreundlich und 
+möglichst einfach in der Handhabung und be-
+sonders verlustfrei sein bzw. werden.
+Schließlich werden neue Entwicklungen auch 
+von den Aspekten der Nachhaltigkeit, Ressour­cen­
+­schonung und Ökobilanzierung getrieben. Die 
+Bauschaffenden (Bauherrn, Planer, ausführende 
+Baufirmen) werden zukünftig nachweisen müs-
+sen, wie umweltfreundlich bzw. -schädlich ein 
+Gebäude bzw. Bauteile oder auch die jeweiligen 
+Baumaßnahmen und letztlich auch der Betrieb 
+eines Gebäudes sind. Solche Nachweise gilt es 
+42	  Vgl. Hofstadler in Hofstadler/Motzko (2021) S. 40  f.
+
+
+===== PAGE 36/348 =====
+35
+Wo stehen wir in der Entwicklung von BIM?
+In Anbetracht der zunehmenden Fokussie-
+rung auf den Lebenszyklus werden immer mehr 
+Daten und Informationen erfassbar gemacht 
+bzw. erhoben. Diese gilt es, unmittelbar vom Pro-
+jekt- und Baustellenteam zu bearbeiten und zu 
+dokumentieren, um in Abstimmung mit dem AG 
+bzw. Betreiber der Immobilie den größten Nut-
+zen für den späteren Betrieb zu ermöglichen. Da-
+hingehend besteht zum aktuellen Zeitpunkt auf 
+jeden Fall noch Verbesserungsbedarf. Die Digita-
+lisierung kann und muss dabei einen Beitrag leis-
+ten, damit dies mit überschaubarem und leistba-
+rem Aufwand noch „zusätzlich“ abgewickelt 
+werden kann. Es gilt nicht nur, Daten und Infor-
+mationen zu sammeln und zu veredeln, sondern 
+diese auch wertschöpfend zu verknüpfen (Ver-
+meidung von ungenutzten Daten-Silos).45 Insge-
+samt stellt sich die wesentliche Frage, wie Daten 
+und Informationen kontextbezogen verbunden 
+werden können, um Vorgaben beispielsweise aus 
+der EU-Taxonomie46  zu erfüllen bzw. einen zu-
+sätzlichen Mehrwert zu generieren.
+In naher Zukunft wird es auch baupraktisch 
+möglich sein, aus in regelmäßigen Abständen 
+während des Bauens aufgenommenem Bild­
+material in Form von Fotos und Videos – sowie 
+anderen Techniken wie beispielsweise dem  
+Lidar43 – direkt in Echtzeit 3D-Modelle des Bau-
+fortschritts zu erstellen. Diese Modelle können 
+anschließend verwendet werden, um auto­
+matische Erfassungen sowie Messungen und Ver-
+gleiche mit dem erwarteten und angestrebten 
+Fortschritt auf der Baustelle durchzuführen. 
+Obwohl der aktuelle Stand der Forschung derzeit 
+noch keine vollständige Automatisierung dieses 
+Prozesses zulässt, hat sich gezeigt, dass ein 
+halbautomatisches System zur Überwachung 
+des Baufortschritts durchaus implementierbar ist 
+und viel Zeit und Mühe sparen kann. In weiterer 
+Folge führt dies zu einer Verbesserung der 
+Produk­tivität, der Arbeitssicherheit, der Qualität 
+und der Dokumentationsgenauigkeit sowie zu 
+einer Verringerung von Konflikten. All diese posi-
+tiven Aspekte tragen prinzipiell zur Reduktion 
+der Kosten und gleichzeitig zu einer erhöhten Zu-
+friedenheit bei den handelnden Akteuren und 
+Akteurinnen, Nutzern und Nutzerinnen der Bau-
+werke bei. Ein optimierter und systematischerer 
+Daten- und Informationsfluss stärkt als wesent-
+liche Komponente das Vertrauen zwischen den 
+Beteiligten des Projektteams.44
+43	 Lidar (Light imaging, detection and ranging) ist eine 
+Form des dreidimensionalen Laserscannings und 
+eine mit dem Radar verwandte Methode.
+44	 Vgl. Hofstadler in Hofstadler/Motzko (2021) S. 41.
+45	 Vgl. Hofstadler in Hofstadler/Motzko (2021) S. 43.
+46	 Vgl. weiterführend in Wiehager (2021).
+
+
+===== PAGE 37/348 =====
+36
+Grundlagen
+Was ist BIM eigentlich?  
+Wie ist BIM zu verstehen? 
+	
+Definitionen und Verständnis –  
+	
+Building Information Modeling (BIM)
+„Vollständig integraler, gemeinschaftlicher Prozess der Modellierung 
+eines virtuellen Gebäudemodells in Übereinstimmung mit der Ausführung 
+für die Datenpflege über den gesamten Lebenszyklus, in einem gemein-
+samen zentralen Datenmodell unter Einarbeitung von Sachdaten für  
+weiterführende Informationen, die als zusätzliche Dimensionen  
+beschrieben werden.“ 
+ÖNORM A 6241-247 
+„Building Information Modeling (BIM) ist eine Planungsmethode  
+im Bauwesen, die die Erzeugung und die Verwaltung von digitalen  
+virtuellen Darstellungen der physikalischen und funktionalen Eigen-
+schaften eines Bauwerks beinhaltet. Die Bauwerksmodelle stellen dabei 
+eine Informationsdatenbank rund um das Bauwerk dar, um eine  
+verlässliche Quelle für Entscheidungen während des gesamten Lebens-
+zyklus zu bieten; von der ersten Vorplanung bis zum Rückbau.“  
+BIM-LEITFADEN FÜR DEUTSCHLAND48/NBIMS49 
+
+
+===== PAGE 38/348 =====
+37
+Was ist BIM eigentlich? Wie ist BIM zu verstehen?
+BIM = (3D + ∑it + I) × n
+„Building Information Models bestehen aus einer gegebenen  
+Anzahl (n) von 3D Elementen, denen eine Summe von Informationen (i) 
+pro Lebenszyklusphase (t) zugeordnet wird und die eine programmierte 
+Intelligenz I besitzen.“ 
+BIMPEDIA50 
+„Building Information Modeling (BIM) steht für die Idee der  
+durchgängigen Nutzung digitaler Bauwerksmodelle für alle Bereiche  
+des Bauwesens – angefangen bei der Planung über die Ausführung und 
+den Betrieb bis hin zum Abriss.“
+BORRMANN/KÖNIG/KOCH/BEETZ51 
+„BIM wird von den Autoren des vorliegenden DBV-Merkblatts  als  
+Methode und Prozess der Erzeugung, Verwaltung und Verwendung von 
+digitalen Informationen im Planungs- und Lebenszyklus von Bauwerken 
+verstanden. Dementsprechend wird BIM als Building Information  
+Management verstanden, das Building Information Modeling einschließt. 
+Grundlage ist ein elektronisches Datenmodell (BIM-Modell) mit seman-
+tischen (bezeichnenden) Informationen.“
+DEUTSCHER BETON- UND BAUTECHNIK-VEREIN E.V., BIM-PROZESSQUALITAT52 
+47	 ÖNORM A 6241-2:2015. Digitale Bauwerksdokumentation – Teil 2: Building Information Modeling (BIM) – Level 
+3-iBIM, S. 4.
+48	 BIM-Leitfaden für Deutschland (2013), S. 18. https://www.akbw.de/fileadmin/download/Freie_Dokumente/Kam-
+mer/BIM_Leitfaden_f%C3%BCr_Deutschland_Endbericht.pdf, Datum des Zugriffs: 21.  10.   2021.
+49	 Das National Building Information Model Standard Project Committee  (NBIMS) ist der Fachausschuss des Facility 
+Information Council (FIC) des National Institute for Building Sciences (NIBS) der Vereinigten Staaten in Fragen 
+BIM und Standardisierung für den openBIM-basierten Datenaustausch, https://www.nationalbimstandard.org/
+faqs#faq1.
+50	 https://www.bimpedia.eu/artikel/1006-bim-definition-und-prinzip, Datum des Zugriffs: 21.  10.  2021.
+51	 Borrmann/König/Koch/Beetz (2015), Building Information Modeling, S. V.
+52	 Deutscher Beton- und Bautechnik-Verein E.V. (2021). DVB-Merkblatt – BIM-Prozessqualität, S. 14
+
+
+===== PAGE 39/348 =====
+38
+Grundlagen
+Die unterschiedlichen Definitionen zeigen, 
+dass jede:r BIM als etwas anderes definieren mag, 
+jede:r hat eine eigene fachspezifische Sicht,  
+jede:r setzt die Schwerpunkte anders, aber  
+einige Dinge sind für alle Beteiligten essenziell 
+und sollen an dieser Stelle festgehalten werden. 
+Der erste Fehler, der nur allzu oft gemacht 
+wird, ist die Auffassung, dass es sich bei BIM ledig-
+lich um das Arbeiten in einem 3D-Modell handelt. 
+Entscheidend ist, BIM sowohl als Technologie als 
+auch Methode anzusehen bzw. zu verstehen. 
+Vergleichen wir BIM mit CAD, so stellen wir 
+fest, dass sich die zu erbringenden Leistungen  
+im Großen und Ganzen nicht voneinander unter-
+scheiden, aber die Arbeitsweise eine komplett 
+neue ist. Das Ziel ist also im Wesentlichen das­
+selbe (abgesehen von evtl. neuen Anforderungen 
+z.B. in Bezug auf die Ökobilanzierung), nur der 
+Weg ist ein anderer. 
+In BIM-Prozessen ist es nötig, eine Vielzahl  
+an Überlegungen schon zu einem viel früheren 
+Zeitpunkt anzustellen, als dies in der CAD- 
+Planung vonnöten ist. Die BIM-Methode sieht 
+eine integrale und kooperative Planung vor.  
+So startet die Zusammenarbeit des Architekten 
+oder der Architektin mit den Fachplaner:innen 
+deutlich früher als in der CAD-Planung, wodurch 
+sich der Arbeitsaufwand in frühere Planungs­
+phasen verlagert. Im Idealfall wird erst die Pla-
+nung komplett abgeschlossen, bevor mit der 
+Umsetzung begonnen wird. Dies widerspricht 
+derzeit noch dem aktuell oft gelebten „baube-
+gleitenden Planen“ – das es normativ gesehen 
+gar nicht gibt.
+Eine Besonderheit von BIM ist die ange­streb­
+te Durchgängigkeit der Daten über den gesamten 
+Lebenszyklus eines Bauwerks. Dazu werden die 
+Daten idealerweise auf einer zentralen Plattform 
+abgelegt und können von einer Projektphase zur 
+nächsten übergeben werden. 
+BIM ist nicht gleich BIM. Manche Projekte 
+werden eher in einer Art „BIM light“ umgesetzt, 
+„BIM ist die digitale Manifestierung der Tätigkeit, die Architekten,  
+neben der Gestaltung und Vision, schon immer gemacht haben.  
+Koordinieren, Abstimmen, Qualität sichern und Inhalte an Dritte ver- 
+mitteln. BIM ist aber auch eine Möglichkeit, die Leistungsfähigkeit und  
+Datengenerierung im eigenen Büro zu erhöhen. Little happy BIM schafft 
+es, dass eine erhöhte Planungsqualität im eigenen Büro Umsätze  
+generiert, und ist damit eine Chance die notwendigen Mehrkosten  
+für Mitarbeiterschulungen und Software-Ausgaben zurück zu finanzieren. 
+Es ist kein Geschäftsfeld, aber eine Möglichkeit, die Qualität und Kontrolle 
+zu erhöhen.“  
+ARCH. DI THOMAS HOPPE 
+ Kapitel 6, S. 270
+CDE
+
+
+===== PAGE 40/348 =====
+39
+Was ist BIM eigentlich? Wie ist BIM zu verstehen?
+andere dagegen schon hoch entwickelt und aus-
+gefeilt. Als Büro sollte man bei der Umsetzung 
+von BIM von Projekt zu Projekt je nach Erforder-
+nis immer tiefer gehen. Dabei gilt es aber auch, 
+Auftraggeber (sofern noch keine BIM-Erfahrung 
+vorliegt) dahingehend zu beraten, welche Tiefe 
+für das jeweilige Projekt geeignet und sinnvoll er-
+scheint. Nicht jedes Projekt muss „geBIMt“ werden 
+und nicht jeder Bauherr benötigt BIM. Es gilt, das 
+richtige Maß für das Projekt und alle Beteiligten 
+zu finden. Generell unterscheidet man dabei in 
+folgende BIM-Level (siehe Abbildung 1):
+BIM-Level 0: 
+Konventionelles Arbeiten mit 2D-CAD sowie 
+Austausch von papiergedruckten Plänen bzw. 
+PDF-Dokumenten (= „No BIM“)
+BIM-Level 1: 
+Erstellung von 2D-Zeichnungen sowie  
+3D-Modellen für spezifische Bereiche; keine  
+Vorgaben für Datenformate; keine zentrale  
+Projektplattform; Datenaustausch durch das  
+Versenden einzelner Dateien
+BIM-Level 2: 
+Durchgängige Anwendung von 3D-BIM  
+von allen Beteiligten; Fachplaner:innen  
+erzeugen jeweils eigene, voneinander unab- 
+hängige Modelle, die regelmäßig abgeglichen 
+werden; Daten­austausch basiert auf dem  
+Austausch von Dateien (herstellerspezifische  
+Formate)
+BIM-Level 3: 
+Integriertes digitales Modell über den  
+gesamten Lebenszyklus; zentrales Daten­
+management über Cloud-Server; ISO-Standards 
+für den Datenaustausch und für die Beschreibung 
+der Prozesse
+„Building Information Modeling als Methode, eine objektorien-
+tierte dreidimensionale Planung mit allen erforderlichen Informatio-
+nen menschen- und maschinenlesbar aufzuladen, ermöglicht eine 
+dauerhaft zuverlässige Datenbasis für alle Planungs-, Bemessungs-, 
+Errichtungs-, Dokumentations- und Wartungsprozesse im gesamten 
+Lebenszyklus eines Gebäudes bis hin zum geordneten und ökologisch 
+optimierten Rückbau. Die Zuordnung von phasenbezogenen 
+Verantwortlichkeiten für zeitgerechte Informationsbereitstellung 
+vermeidet massive Störungen des Bauablaufes durch Informations-
+mängel („baubegleitendes Planen“) und erhöht die ökologische und 
+ökonomische Effizienz der Errichtung.“  
+BMSTR. ING. OTTO HANDLE

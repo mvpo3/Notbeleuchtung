@@ -1,0 +1,1984 @@
+
+
+===== PAGE 1/35 =====
+Schutzgebühr € 15,00/ Fr. 20.–
+TUTORIAL
+ARCHITEKTUR
+zickenheiner architekten gmbh höfler • leisinger • zickenheiner   Foto: © Rolf Frei
+
+
+===== PAGE 2/35 =====
+1
+Copyright© 2019 by ComputerWorks. Alle Rechte vorbehalten. Das Reproduzieren, Ändern, 
+Umschreiben oder Übersetzen ohne vorherige schriftliche Genehmigung ist untersagt.
+Fotos: Rolf Frei, www.inslandgeschaut.de; Visualisierungen: Stephan Mönninghoff
+Inhalt
+Einleitung ...................................................................................................................................
+ 2
+Fotos und Visualisierungen ........................................................................................
+4
+Die Benutzeroberfläche in Kürze ..........................................................................
+ 8
+Schritt 1: 
+Grundlagen importieren ................................................................
+10
+Schritt 2: 
+Wände zeichnen ..................................................................................
+12
+Schritt 3: 
+Fenster, Türen, Treppen ...............................................................
+15
+Schritt 4: 
+3D-Gebäudemodell ..................................................…...........……...
+22
+Schritt 5:	
+Schnitt/Ansicht anlegen .................................................................
+25
+Schritt 6: 
+Symbole einfügen ..............................................................................
+27
+Schritt 7: 
+Grafische Füllungen .........................................................................
+28
+Schritt 8: 
+Bemaßung und Beschriftung ....................................................
+33
+Schritt 9: 
+Räume und Flächen .........................................................................
+36
+Schritt 10: Visualisieren ............................................................................................
+39
+Schritt 11: Energos Energieanalyse................................................................
+44
+Schritt 12: Planlayout .................................................................................................
+46
+Werkzeuge und Arbeitsweisen ................................................................................
+50
+Was kann Vectorworks noch? .................................................................................
+58
+Freiform-Modellieren ........................................................................
+58
+Projekt Sharing .....................................................................................
+61
+Building Information Modelling (BIM) .................................
+62
+		
+BIMobject ..................................................................................................
+63
+		
+Marionette .................................................................................................
+64
+
+
+===== PAGE 3/35 =====
+3
+2
+Information zum Projekt
+Das Architektur-Tutorial behandelt das mit Vectorworks geplante Projekt eines 
+Wohnhauses in Süddeutschland. Das Wohnhaus wurde von zickenheiner 
+architekten gmbh – höfler • leisinger • zickenheiner aus Lörrach (www.zickenheiner.
+com) geplant. ComputerWorks bedankt sich beim Büro Zickenheiner und dem 
+Bauherrn für die Bereitstellung der Daten.
+Wo finden Sie die Tutorialdateien?
+Alle für das Tutorial benötigten Dateien finden Sie auch auf der ComputerWorks-
+Homepage: www.computerworks.eu/vwtutorials sowie in den Portalen 
+Vectorworks Service Select und Campus. Für die beschriebenen Schritte sind 
+Beispieldateien abgespeichert.
+Das Besondere an Vectorworks
+Wenn Sie die Schritte an Ihrem Computer durchgehen, werden Sie feststellen, dass 
+Vectorworks Architektur nicht nur ein CAD-Programm für alle planerischen Aufgaben 
+eines Architekten ist, sondern auch über herausragende grafische Möglichkeiten 
+und über modernste Funktionalitäten für das Arbeiten in Projektteams verfügt. Indivi­
+duell gestaltete Pläne sind ebenso ein Kinderspiel wie das räumliche Konstruieren.
+Und das Besondere bei Visualisierungen mit Vectorworks/Renderworks: Damit 
+erstellen Sie Top-Visualisierungen mit einfacher Bedienung durch die Cinema 4D 
+Render Engine.
+In Vectorworks Architektur müssen Sie nicht zwischen 2D- und 3D-Planung 
+unterscheiden. Jedes Objekt (Text, Bemassung usw.) kann beliebig im Raum 
+eingesetzt werden. Charakteristisch für Vectorworks Architektur ist auch seine 
+Flexibilität bei der Kombination von vordefinierten und frei gezeichneten Elemen­
+ten. So lässt sich zum Beispiel eine Tür mit dem dafür vorgesehenem Werkzeug 
+mit einem Klick in die Zeichnung einsetzen oder Sie zeichnen mit den Model­
+lierwerkzeugen eigene 3D-Objekte und speichern diese danach als Symbole im 
+Zubehör-Manager ab.
+Herzlich willkommen zum Tutorial Vectorworks Architektur
+Im Tutorial Architektur lernen Sie die wichtigsten Funktionen von Vectorworks 
+Architektur kennen, sowohl im 2D als auch im 3D. Wir haben dazu die wichtig-
+sten Aufgaben bei der Planung eines Wohnhauses Schritt für Schritt beschrieben. 
+Es wird gezeigt, wie Sie die verschiedenen Darstellungen in einem Plan verwalten 
+und die hervorragenden Möglichkeiten grafischer Gestaltungsmittel nutzen.
+Der Lösungsweg ermöglicht Ihnen, schnell ein Projekt vom Entwurf bis zur 
+Werkplanung und Kalkulation zu erstellen, indem Sie die wichtigsten Programm-
+bestandteile von Vectorworks einsetzen.
+Bad
+1
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.46m2
+Ankleide
+3
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 10.93m2
+Eltern
+4
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.53m2
+Flur
+5
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 15.72m2
+Kind 1
+6
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kind 2
+7
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kind 3
+8
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kinderflur
+9
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 8.85m2
+Kinderbad
+10
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 4.58m2
+Gäste WC
+11
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 2.83m2
+Garderobe
+12
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 7.51m2
+Gast
+13
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 36.48m2
+15STG 18,3 / 26,0
+2D-Entwurf
+Werkplanung
+3D-Modell
+Visualisierung
+Einleitung
+
+
+===== PAGE 4/35 =====
+5
+4
+Fotos und Visualisierungen
+Visualisierung: Stephan Mönninghoff
+Visualisierung: Stephan Mönninghoff
+Foto: Rolf Frei
+Foto: Rolf Frei
+Foto: Rolf Frei
+
+
+===== PAGE 5/35 =====
+7
+6
+Fotos und Visualisierungen
+Visualisierung: Stephan Mönninghoff
+Foto: Rolf Frei
+Foto: Rolf Frei
+Visualisierung: Stephan Mönninghoff
+Foto: Rolf Frei
+Foto: Rolf Frei
+
+
+===== PAGE 6/35 =====
+9
+8
+Die Benutzeroberfläche in Kürze
+Werfen Sie einen kurzen Blick auf die Benutzeroberfläche von Vectorworks, damit Sie 
+mit den wichtigsten Begriffen vertraut werden. Eine ausführliche Beschreibung dieser 
+Methodenzeile
+Bestimmen Sie hier, mit 
+welcher Methode des 
+gewählten Werkzeugs Sie 
+arbeiten wollen. 
+Konstruktionspalette
+Hier finden Sie alle grund­
+legenden Werkzeuge für 
+das Zeichnen.
+Werkzeuge
+Das sind die einzelnen 
+Werkzeuge einer 
+Werkzeuggruppe.
+Werkzeuggruppen
+Hier sind branchen-
+spezifische und 3D-Werk­
+zeuge untergebracht.
+Menübalken
+Zeigerfangpalette
+Legen Sie hier fest, an wel­
+chen Punkten, Kanten und 
+Winkeln ausgerichtet wird.
+Attributpalette
+Hier weisen Sie den Ob­
+jekten Farben, Füllungen, 
+Liniendicken, Deckkraft 
+etc. zu.
+Hier finden Sie die 
+Befehle.
+Elemente lesen Sie im Kapitel „Werkzeuge und Arbeitsweisen“. Im Vectorworks-Menü 
+„Hilfe“ → „Vectorworks-Hilfe“ finden Sie ein komplettes Vectorworks-Online-Handbuch.
+Darstellungszeile
+Hier können Sie Ebenen 
+und Klassen aufrufen, 
+zoomen, Ansichten und 
+Darstellungen aufrufen 
+usw.
+Infopalette
+Hier können Sie das 
+gerade aktivierte Objekt 
+bearbeiten.
+Navigationspalette
+Hier haben Sie direkten 
+Zugriff auf die Organisa­
+tion Ihres Dokuments:
+Klassen, 
+Konstruktionsebenen, 
+Layoutebenen usw.
+Zeichenfläche
+Hier zeichnen Sie Ihre 
+Pläne.
+Mitteilungszentrale
+Hier erhalten Sie wichti­
+ge Mitteilungen u.a. zu 
+Service Pack Updates.
+Zubehör-Manager
+Hier verwalten Sie Zubehör 
+wie Symbole, Schraffuren, 
+Tabellen, Bilder etc.
+
+
+===== PAGE 7/35 =====
+11
+10
+1	 Öffnen Sie die Datei „01 Grundlagen einlesen.vwx“ im Ordner 
+„Vectorworks_Dateien“.
+2	 Wählen Sie aus dem Menü „Datei“ den Befehl „Import“ → „Import DXF/DWG “ 
+und öffnen Sie „01 Katastergrundlage.dwg“.
+3	 Wählen Sie aus dem Menü „Datei“ den Befehl „Import“ → „Import Bild“ und 
+öffnen Sie „01 Handskizze.jpg“. Wählen Sie danach im Dialogfenster „Einstellungen 
+Import Bild“ als Kompressionsmethode „JPEG“ aus.
+Grundlagen importieren
+1
+Die in diesem Heft beschriebene Planung des Tutorial-Gebäudes erfolgt – von wenigen 
+Ausnahmen abgesehen – im Maßstab 1:100. Wir beginnen nun, indem wir zuerst einen 
+Katasterplan im DWG-Format und dann die gescannte Handskizze eines Grundrisses als 
+Vorlage für die Grundrissentwicklung in eine leere Zeichnung importieren.
+4	 Um die Skizze an die richtige Position zu schieben, wählen Sie das Werkzeug 
+„Verschieben“ 
+ aus der Konstruktionspalette und dort die erste Methode. Dazu 
+muss das Bild aktiviert sein. Anschließend klicken Sie nacheinander auf die rechte 
+obere Gebäudeecke in der 
+Skizze und die rechte obere 
+Ecke im Baufenster.
+Tipp: Grundlage für Konstruktionszeichnungen
+Vectorworks ermöglicht Ihnen eine ganz individuelle Planungs- und 
+Konstruktionsmethodik. Anstatt eine Skizze einzulesen und, wie im Folgenden 
+beschrieben, mit Wänden zu beginnen, können Sie natürlich auch Linien, Rechtecke, 
+Polygone, Hilfspunkte etc. als Grundlage für Ihre Konstruktionszeichnung benutzen.
+Bei importierten PDF-Dateien, die Vektoren enthalten, kann der Zeigerfang verwen­
+det werden.
+Zum Datenaustausch unterstützt Vectorworks nahezu jedes Format wie z. B. PDF, 
+Collada, DXF, DWG, DWF, IFC, SKP, GBXML, EPS, Rhino 3DM, 3DS, STEP uvm.
+Hinweis: Das Ergebnis des Imports finden Sie im Unterordner „Schritte Enddateien“. 
+Dort befinden sich auch die finalen Zustände anderer Schritte.
+Punkt 2
+Punkt 1
+
+
+===== PAGE 8/35 =====
+13
+12
+Wände zeichnen
+1	 Öffnen Sie die Datei „02 Wände zeichnen.vwx“ im Ordner 
+„Vectorworks_Dateien“.
+2	 Aktivieren Sie in der Werkzeuggruppe „Architektur“ das 
+Werkzeug „Wand, gerade“. Wählen Sie in der Methodenzeile 
+zum Wandwerkzeug die erste Methode „Linker Rand“ und die 
+achte Methode „Rechteck-Methode“ und als Wandstil „EG 
+Außenwand 1“.
+3	 Ziehen Sie von 
+Hilfspunkt X 1 links 
+oben zu Hilfspunkt 
+X 2 rechts unten ein Rechteck.
+Anschließend ziehen Sie bei ge­
+drückter Alt-Taste von Punkt 1 zu 
+Punkt 3 ein weiteres Rechteck.
+So werden die sich überlagernden 
+Wandstücke herausgeschnitten.
+Auf der Grundlage der importierten Handskizze wird der Grundriss mit den Außen- und 
+Innenwänden gezeichnet.
+2
+4	 Analog dazu ziehen Sie von Punkt 4 zu Punkt 
+5 ein Rechteck und halten dabei die Alt-Taste ge­
+drückt. Auch hier wird die Ecke abgeschnitten.
+5	 Bei gedrückter Alt-Taste zeichnen Sie nun 
+ein Rechteck vom unteren linken Eckpunkt der 
+Wand zu Punkt 6 hinzu. Die so gezeichnete 
+Wand wird dem Modell hinzugefügt.
+Damit haben Sie die Außenwände fertig 
+gezeichnet.
+Tipp: Innenwände erstellen
+Ähnlich wie die Außenwände können Sie auch 
+die Innenwände zeichnen. Dafür blenden Sie 
+die Klasse „Innenwand“ ein, indem Sie in der 
+Palette „Navigation“ bei der Klasse „Innen­
+wand“ in die erste Spalte klicken und 
+die Klasse damit sichtbar stellen. 
+
+
+===== PAGE 9/35 =====
+15
+14
+6	 Die Wände beinhalten 
+bereits Höheninformationen. 
+Wechseln 
+Sie 
+über 
+die 
+Darstellungszeile 
+zu 
+einer 
+3D-Ansicht, von „2D-Plan“ auf 
+z. B. „Rechts vorne oben“ 
+(oder über das Menü „Ansicht“ 
+→ „Standardansicht“).
+7	 Über die Darstellungszeile 
+→ 
+Einblendmenü 
+„Dar-
+stellungsart“ (erkennbar an der Teekanne) wählen Sie „OpenGL“ aus.
+Tipp: Wände einstellen
+Im Dialogfenster „Einstellungen Wand“ (letzte Methode beim Werkzeug „Wand, 
+gerade“) können Sie außer grafischen Attributen auch die Stärke und Höhe einer 
+Wand festlegen oder ob sich deren Höhe automatisch der Konstruktionsebene an­
+passen soll. Auch Einstellungen zu Wandschalen und ob diese unterschiedliche 
+Höhen zueinander aufweisen sollen, nehmen Sie hier vor.
+Fenster, Türen, Treppen
+Intelligente Objekte erleichtern das Zeichnen
+Fenster, Türen und Treppen sind Intelligente Objekte, die über die Eingabe von 
+Werten angelegt und jederzeit über die Infopalette bearbeitet werden können. Als 
+„intelligent“ werden diese Objekte deshalb bezeichnet, weil sie auf Änderungen 
+reagieren: Fenster passen sich der Wandstärke an, in die sie eingesetzt werden und 
+der Detaillierungsgrad der Darstellung ist maßstabsabhängig. Natürlich können Intelli­
+gente Objekte auch als Symbole abgespeichert werden, um diese Vorteile zu nutzen.
+Bei Fenstern und Türen haben Sie die Wahl zwischen unterschiedlichen Darstel­
+lungen. Es ist jederzeit möglich, die Darstellungen zu wechseln, um so dynamisch 
+mit dem Planungsfortschritt Informationen zu ergänzen. Die Werkzeuge bieten die 
+Option, 2D- und 3D-Inhalte unabhängig voneinander anzuzeigen.
+Ein in die Zeichnung oder in eine Wand eingesetztes Bauteil lässt sich sehr leicht 
+über die Infopalette verändern und so z. B. in seiner Position oder Größe korrigie­
+ren. Auch das Spiegeln von Objekten ist damit möglich. Ein Doppelklick auf ein 
+eingesetztes Objekt öffnet den Einstellungsdialog.
+3
+
+
+===== PAGE 10/35 =====
+17
+16
+Fenster anlegen und einfügen
+1	 Öffnen Sie die Datei „03 Fenster einfügen.vwx“.
+2	 Wählen Sie das Werkzeug „Fenster“ und führen Sie einen 
+Doppelklick darauf aus. Das Dialogfenster „Neues Fenster“ 
+erscheint.
+3	 Im Reiter „Basiseinstellungen“ wählen Sie unter „Vorgabe wäh­
+len“ den Fenstertyp „Fe Innen 2FlgS Eckig“ aus und stellen folgende 
+Werte ein:
+■
+■Breite außen: 2,310 m
+■
+■Höhe außen: 0,925 m
+■
+■Abstand Brüstungshöhe:1,53 m
+■
+■Einfügepunkt: Mitte
+Wechseln Sie zum Reiter „Weitere 
+Einstellungen“. Wählen Sie unter 
+“Rahmen“ die Option „Darstellung 
+vereinfacht“. Wählen Sie unter „All­
+gemein“ → „Rahmen“ → „Stan­
+dard“. Bestätigen Sie mit „OK“.
+Unter „Brüstung/Sturz“ deaktivieren 
+Sie die Option „Für alle Maßstäbe“ 
+und wählen „Darstellung verein­
+facht“. Unter „Allgemein“ wählen Sie 
+für „Außen“ und „Innen“ „Brüstung“ 
+anstelle von „Bank“. Bestätigen Sie 
+mit „OK“.
+4	 Bestätigen Sie das Dialogfenster 
+„Neues Fenster“ „mit „OK“ und wäh­
+len Sie dann in der Methodenzeile 
+die zweite Methode „In Bezug auf 
+Referenzpunkt einsetzen“.
+Tipp: Zoomen mit „Y“-Taste
+Für die folgenden Schritte ist die Taste „Y“ hilfreich. Sie bewirkt eine temporäre Ver­
+größerung am Mauszeiger. Somit fällt es leichter, einen Punkt genau anzuwählen.
+5	 1. Klick: Sie legen einen Referenzpunkt 
+fest. 2. Klick: Sie wählen die Wand, in die das 
+Fenster eingesetzt werden soll. 3. Klick: Damit 
+das Fenster korrekt eingesetzt wird, legen Sie 
+fest, auf welcher Seite des Fensters „Außen“ ist.
+6	 Nachdem Sie die Öffnungsrichtung des 
+Fensters gewählt haben, erscheint das folgende 
+Dialogfenster:
+7	
+Hier können Sie nun den Abstand zum 
+Referenzpunkt eingeben. Hier ist bereits eingestellt, 
+dass der Einfügepunkt des Fensters in der Mitte liegt. 
+Geben Sie im Feld „Abstand“ den Wert 3,50 m“ ein 
+und schließen Sie das Dialogfenster mit „OK“.
+8	
+Das eingesetzte Fenster lässt sich sehr ein­
+fach bearbeiten. Wählen Sie dazu das Werkzeug 
+„Aktivieren“ in der Palette „Konstruktion“ und aktivie­
+ren Sie das Fenster mit einem Klick.
+9	 Öffnen Sie, falls geschlossen, die Infopalette über das Menü 
+„Fenster“ → „Paletten“. In der Infopalette lassen sich nun alle 
+Grundwerte beliebig ändern. Verkleinern Sie die Fensterbreite 
+z. B. auf ein Maß von 1,00 m.
+10		 Um auf alle Details des eingesetzten Fensters zugreifen zu 
+können, führen Sie einfach einen Doppelklick auf das Fenster aus 
+oder klicken auf den Knopf „Bearbeiten“ in der Infopalette.
+Tipp: Objekte als Symbol anlegen
+Wollen Sie Ihre definierten Fenster später nochmals verwenden, 
+dann speichern Sie sie, indem Sie die Schaltfläche „Fenster spei­
+chern“ unten im Dialogfenster klicken. Sie können darüber hinaus 
+auch selbst erstellte Objekte als Fenster-Symbol anlegen (siehe 
+Schritt „Symbole einfügen“).
+Tipp: Einsetzen von Türen
+Das Einsetzen von Türen funktioniert genau so wie das Einsetzen 
+von Fenstern. Dazu doppelklicken Sie das Türwerkzeug aus der 
+Werkzeuggruppe „Architektur“, konfigurieren eine gewünschte Tür 
+und setzen diese in die Zeichnung ein. Wie ein Fenster lässt sich 
+auch eine Tür über einen Doppelklick oder die Infopalette nachträglich ändern.
+
+
+===== PAGE 11/35 =====
+19
+18
+Treppe einfügen
+In diesem Kapitel lernen Sie das Treppenwerkzeug kennen. Damit lässt sich die 
+Geometrie und Form einer Treppe einstellen und berechnen. Die Treppe wird als 
+2D- und wahlweise 3D-Objekt in die Zeichnung eingesetzt.
+1	 Öffnen Sie die Datei „03 Treppe einfügen.vwx“.
+2	 Nun gibt es wie beim Fenster- und Tür-Werkzeug die 
+Möglichkeit, eine Treppe mit dem dazugehörigen Treppen-
+Werkzeug aus der Werkzeuggruppe „Architektur“ anzulegen 
+und einzusetzen. Da Sie Fenster, Türen und Treppen auch 
+als Zubehör anlegen können, ist es auch möglich, diese direkt 
+aus dem Zubehör-Manager ins aktive Dokument einzusetzen.
+3	 Öffnen Sie dafür, wenn nötig, den Zubehör-Manager 
+im Menü „Fenster“ → „Paletten“ → „Zubehör-Manager“. 
+Begeben Sie sich dort in den Bereich „Symbole/Intelligente 
+Objekte“ und führen einen Doppelklick auf die „Treppe EG“ 
+aus.
+4	 Nun befinden Sie sich im Werkzeug 
+„Symbol“. Am besten lässt sich die 
+Treppe nun mit dem symboleigenen, 
+definierten Einfügepunkt einsetzen. 
+Dafür aktivieren Sie einfach die erste 
+und letzte Methode des Werkzeugs.
+5	 Klicken Sie nun auf den mit „Startpunkt 
+Treppe“ beschrifteten roten Hilfspunkt und 
+setzen die Treppe so an dieser Stelle ab. 
+Platzieren Sie die Treppe mit einem wei­
+teren Klick auf die linke Maustaste.
+6	 Die eingesetzte Treppe lässt sich über einen Doppelklick bearbeiten. Im nun 
+erscheinenden Fenster „Einstellungen Treppe“ ist es möglich, die Treppe umzukon­
+figurieren. Im Bereich „Basiseinstellungen“ können Sie hier entweder einen ande­
+ren Treppentyp wählen oder die Parameter der Treppe ändern.
+
+
+===== PAGE 12/35 =====
+21
+20
+7	 Im Bereich „Detaileinstellungen“ lässt sich die Treppe wie im Folgenden be­
+schrieben genauer einstellen:
+■
+■Geschosshöhe: 2,75 m → Verriegeln Sie das zugehörige 
+Schloss.
+■
+■Auftrittbreite: 0,26 m → Verriegeln Sie das zugehörige Schloss.
+■
+■Treppenbreite: 1,00 m
+■
+■Anzahl Steigungen: 15 → Verriegeln Sie das zugehörige Schloss.
+■
+■Aktivieren Sie „Austrittstufe“ mit einem Wert von 0,26 m.
+Tipp: Minimal-/Maximalwerte
+Die Option „Minimal-/Maximalwerte berücksichtigen“ erlaubt, bei der Berechnung 
+der Treppe voreingestellte Minimal- und Maximalwerte zu berücksichtigen. Im 
+Dialogfenster „Minimalwerte und Maximalwerte“ (Öffnen über Knopf „Bearbeiten“) 
+legen Sie fest, wie viel Spielraum für die Berechnung des Auftritts, der Steigung, 
+des Schrittmaßes und des Steigungswinkels zur Verfügung steht.
+8	
+Klicken Sie dann auf den Bereich „2D-Darstellung“. Im Bereich „Unteres Ge­
+schoss“ wählen Sie im Einblendmenü für den Treppenbruch „Unten durchgezogen, 
+oben gestrichelt“. Im Bereich „Oberes Geschoss“ setzen Sie den Haken und wäh­
+len im Einblendmenü Ebene „OG“ und für den Treppenbruch „kein Treppenbruch“. 
+Weitere Einstellungen, z. B. zu Handläufen oder Beschriftungen, treffen Sie nach 
+Belieben.
+9	 Schließen Sie das Fenster „Einstellungen Treppe“ mit „OK“.
+
+
+===== PAGE 13/35 =====
+23
+22
+3D-Gebäudemodell
+1	 Öffnen Sie die Datei „04 3D_Modell.vwx“.
+2	 Für komfortables Arbeiten am 3D-Modell bietet Vectorworks Architektur 
+vordefinierte Standardansichten. Diese sind über die Darstellungszeile oder über 
+das Menu „Ansicht“ → „Standardansichten“ aufrufbar.
+Für das folgende Kapitel soll in einer 3D-Ansicht gearbeitet werden. Begeben 
+Sie sich dafür in die gewünschte Ansicht, z. B. von oben rechts, indem Sie in der 
+Darstellungszeile die Ansicht 
+„Rechts vorne oben“ wählen 
+oder die Taste „3“ auf dem 
+Ziffernblock Ihrer Tastatur 
+drücken.
+Der gezeichnete Grundriss soll nun in Form eines Modells in einer 3D-Ansicht betrachtet 
+werden. Für diesen Schritt wurde das Beispielmodell um die fehlenden Geschosse ergänzt 
+und der Entwurf vervollständigt.
+4
+Das Erdgeschoss erscheint in einer perspektivischen Darstellung von oben rechts 
+und wird in der Darstellungsart „OpenGL“ angezeigt.
+3	 Wählen Sie im Menü „Ansicht“ → „Ebenendarstellung“ → „Zeigen und 
+ausrichten“.
+4	 Zum Betrachten oder Durchlaufen des Modells bietet Vector­
+works verschiedene Möglichkeiten an. Die wichtigsten Werkzeuge 
+dazu finden Sie in der Werkzeuggruppe „Visualisieren“: „Ansicht ro­
+tieren/durchlaufen/verschieben“… – einfach mal ausprobieren!
+Tipp: Virtual Reality - 3D erleben mit Vectorworks
+Verschaffen Sie Kunden und Partnern Zugang zu Ihren Projektideen mit den Web­
+view- und Virtual Reality-Funktionen von Vectorworks. Mit VR-Brillen können Sie 
+Ihre Modelle in 3D erleben!
+Weitere Informationen finden Sie unter: www.computerworks.eu/virtual-reality
+
+
+===== PAGE 14/35 =====
+25
+24
+Hinweis:
+Vectorworks Architektur unterstützt Building Information Modeling (BIM). Erstellen 
+Sie 3D-Gebäudemodelle und verknüpfen Sie die Gebäudeteile mit den gewünsch­
+ten Objektdaten. Das Open-BIM-Datenmodell basiert auf offenen Standards und 
+Arbeitsabläufen und sorgt für eine aktive Vernetzung aller am Bau Beteiligten. Mit 
+Unterstützung der IFC-Schnittstelle können weitere Beteiligte leicht in Ihre BIM-
+Projekte eingebunden werden. 
+Weitere Informationen finden Sie auf Seite 63 oder unter: 
+www.computerworks.eu/bim
+Schnitt/Ansicht anlegen
+Aus dem 3D-Gebäudemodell wird ein Schnitt erzeugt und mit zusätzlichen Informationen 
+versehen. Ansichten werden mit der gleichen Vorgehensweise erstellt.
+1	 Öffnen Sie die Datei „05 Schnitt anlegen.vwx”.
+2	 Wählen Sie im Menü „Ansicht” den Befehl „Schnitt anlegen”.
+3	 Klicken Sie auf den Punkt links vom Grundriss und zeichnen Sie von dort aus 
+die Schnittlinie.
+4	 Den zweiten Klick setzen Sie auf den zweiten Hilfspunkt rechts vom Gebäude.
+5	 Bewegen Sie nun die Maus nach oben, um die Blickrichtung festzulegen. Schließen 
+Sie mit einem Doppelklick ab.
+5
+
+
+===== PAGE 15/35 =====
+27
+26
+6	 Im nun erscheinenden Dialogfenster 
+„Schnitt anlegen“ wählen Sie unter „Ebe­
+ne“ die Layoutebene mit dem Namen 
+„110 Schnitt A-A“ und schalten Sie die 
+Option „Zeichnungsbeschriftung anle­
+gen“ aus.
+7	 Klicken 
+Sie 
+auf 
+den 
+Knopf 
+„Ebenensichtbarkeiten”. 
+Das 
+Dialogfenster 
+„Ebenensichtbarkeiten 
+des Ansichts­bereiches/Schnitts” 
+öff­
+net sich. Hier stellen Sie für alle mit 
+„(Zeichnungsebene)“ benannten Ebenen den Status auf „Sichtbar” 
+und schließen das Fenster. Wählen Sie unter Detaillierungsgrad 
+die gewünschte Darstellung des Schnitts.
+8 Klicken Sie auf den Knopf „Einstellungen” und wechseln Sie im 
+erscheinenden Dialogfenster in den Bereich „Attribute”. Aktivieren 
+Sie dort die Optionen „Schnittflächen 
+einzeln anzeigen“ und „Originalattribute der Objekte 
+verwenden“. Sowie wenn nötig, die Option „Schalen 
+mit gleicher Füllung zusammenfügen. Damit werden 
+im Schnitt, die bei den Bauteilen hinterlegten detail­
+lierten Darstellungsattribute wie z.B. Schraffuren, an­
+gezeigt und ggf. zusammengefügt. Bestätigen Sie das 
+Einstellungsfenster und verlassen Sie das Fenster 
+„Schnitt anlegen“ mit einem Klick auf „OK“.“
+Tipp: Ergänzungen einfach hinzufügen
+Nach einem Doppelklick auf den gerade erstellten Schnitt lassen sich Höhenkoten, 
+Bemaßungen, Beschriftungen uvm. als Ergänzung einfach hinzufügen.
+Höhenkoten hinzufügen
+Höhenkoten fügen Sie mit dem Werkzeug „Kotenbemaßung“ aus der 
+Werkzeuggruppe „Bemaßung/Beschriftung“ ein. Für 
+die erste Kote nehmen Sie die erste Methode 
+. 
+Zuerst legen Sie die Nullkote fest. Dazu klicken Sie an 
+die Stelle des zu bemaßenden Objektes, an welcher 
+der Referenzpunkt sein soll, auf den sich alle Maßwerte 
+beziehen. Nach dem Festlegen der Maßrichtung des 
+Referenzpunktes können Sie weitere Koten erstellen.
+Symbole einfügen
+In diesem Schritt soll der Grundriss möbliert werden, indem er mit den in Vectorworks 
+mitgelieferten Symbolen ausgestattet wird.
+1	 Öffnen Sie die Datei „06 Symbole einfügen.vwx“.
+2	 Öffnen Sie, falls geschlossen, den 
+Zubehör-Manager (Menü „Fenster“ → 
+„Paletten“). Achten Sie darauf, das Sie 
+das richtige „Offene Dokument“ anzei­
+gen“ und wählen Sie den Zubehörtyp 
+„Symbole/Intelligente Objekte“.
+3	 Aktivieren Sie per Doppelklick das Symbol „Bett 090x200 ModuQueen“ im 
+Zubehör-Manager. Das Werkzeug „Symbol“ wird daraufhin automatisch aktiviert.
+4	 Aktivieren Sie die erste Methode „Einfü­
+gen“, bewegen Sie die Vorschau des Sym­
+bols an die gewünschte Stelle und klicken Sie dort. Bewegen Sie den Mauszeiger 
+nun so, dass das Symbol in die gewünschte Lage gedreht wird. Verfahren Sie ebenso 
+mit der weiteren Möblierung.
+Tipp: Bearbeiten von Symbolen
+Ein großer Vorteil eines Symbols ist, dass es in einer Zeichnung nur einmal (in der Bi­
+bliothek als Symboldefinition) gespeichert wird. Dabei ist es egal, wie oft es als Sym­
+bol in der Zeichnung eingesetzt wurde. Um eines der Symbole aus der Zeichenfläche 
+heraus zu bearbeiten, genügt ein Doppelklick auf das eingefügte Symbol.
+Im Lieferumfang von Vectorworks sind bereits tausende vordefinierte Symbole für 
+die unterschiedlichsten Einsatzgebiete enthalten. Im Vectorworks Service-Select-
+Portal wird Zubehör namhafter Hersteller angeboten.
+6
+
+
+===== PAGE 16/35 =====
+29
+28
+Damit Sie einen Plan ansprechend gestalten können, bietet Ihnen Vectorworks eine viel­
+fältige Palette an geeigneten Grafikwerkzeugen. In diesem Kapitel lernen Sie ein paar 
+dieser Werkzeuge besser kennen.
+Grafische Füllungen
+Verläufe
+1	 Öffnen Sie die Datei „07 Grafische Fuellungen.vwx“.
+2	 Öffnen Sie, falls geschlossen, den Zubehör-Manager (Menü „Fenster“ → „Pa­
+letten“). Achten Sie darauf, das Sie das richtige „Offene Dokument“ anzeigen“ und 
+wählen Sie den Zubehörtyp „Verläufe“.
+3	 Aktivieren Sie die Wasserfläche des 
+Schwimmbeckens in der Zeichnung, indem Sie 
+mit dem Werkzeug „Aktivieren“ darauf klicken. 
+Doppelklicken Sie nun auf den Farbverlauf 
+„Verlauf Wasser“ im Zubehör-Manager.
+4	
+Um die Ausrichtung und die Größe des Farbverlaufs anzupassen, 
+klicken Sie auf den Knopf „Verlaufzuweisung“ in der Attributepalette.
+5	
+Es erscheint das Dialogfenster „Verlaufszuweisung“. Verändern Sie 
+folgende Werte: x-Startpunkt: 1 y-Startpunkt: -5 Rotation: 30°. Klicken 
+Sie „Vorschau“, um die Änderungen zu sehen.
+6	
+Ändern Sie die Art von „Linear“ auf „Radial“ und klicken Sie „Vor­
+schau“, um die Änderung zu sehen. Schließen Sie das Dialogfenster 
+mit „OK“.
+7
+7	Aktivieren 
+Sie 
+nun 
+das 
+Zimmer 
+rechts oben. Wählen Sie das Werkzeug 
+„Füllung und Material bearbeiten“ aus der 
+Konstruktionspalette. Ziehen Sie an den 
+Modifikationspunkten der roten Referenzlinie, 
+wenn Sie die Größe, Position und den Winkel des Verlaufs 
+mit der Maus verändern wollen.
+8	
+Innerhalb eines Farbverlaufs ist 
+es auch möglich, den einzelnen Reglern 
+unterschiedliche Deckkraft zuzuweisen. 
+So lässt sich zum Beispiel die 
+Lichtwirkung eines von Innen 
+beleuchteten Zimmers erzie­
+len. Verschieben und justieren 
+lässt sich dieser Verlauf eben­
+so durch das „Füllung und Ma­
+terial bearbeiten“ -Werkzeug.
+Bilder (Bildfüllungen)
+Stellen Sie mit Hilfe von Bildfüllungen den Belag der Bodenflächen dar.
+1 Arbeiten Sie in der Datei „07 Grafische Füllungen.vwx“ weiter.
+2	 Ziehen Sie das Bild „Terr.-Platten 
+50...“ unter Bilder aus dem Zubehör-Ma­
+nager mit gedrückter linker Maustaste 
+auf den Boden der Terrasse am 
+Schwimmbecken.
+3	
+Um Ausrichtung und Größe des Bildes an den Boden 
+anzupassen, aktivieren Sie nun das Werkzeug „Füllung 
+und Material bearbeiten“ in der Konstruktionspalette 
+und klicken damit auf den Boden.
+4	
+In der Mitte der Bodenfläche erscheint ein Recht­
+eck, das die Größe des Bildes repräsentiert. Dieses lässt 
+sich nun wie ein gewöhnliches Rechteck verschieben 
+und umformen. An den mittleren Modifikationspunkten 
+kann das Bild gedreht werden.
+
+
+===== PAGE 17/35 =====
+31
+30
+5	 Auf dem gleichen Weg können Sie dem Badezimmer oben links die Bildfüllung 
+„Keramik 14 RBF“ zuweisen. Skalieren Sie diesen dann wie bereits in Punkt 4 be­
+schrieben durch Anfassen der Modifikationspunkte.
+Mosaike
+Für sich wiederholende Muster, Farbflächen oder beliebige Füllungen eignet sich 
+die Füllart „Mosaik“ sehr gut. Sämtliche 2D-Objekte, auch Bilder, können im Mosaik 
+verwendet werden.
+1	 Arbeiten Sie in der Datei „07 Grafische Füllungen.vwx“ weiter.
+2	 Aktivieren Sie das grau umrandete Rechteck im Badezimmer unter der Ba­
+dewanne links oben. Im Zubehör-Manager befindet sich unter dem Zuberhörtyp 
+Mosaik ein „Mosaik“. Weisen Sie es mit einem Doppelklick auf das eben aktivierte 
+Rechteck zu.
+3	Führen Sie im Zubehör-Manager einen Rechtsklick auf 
+das Mosaik aus und wählen Sie „Bearbeiten“. Im folgen­
+den Dialogfenster wählen Sie „Geometrie“.
+4	Verändern Sie das Mosaik. Aktivieren Sie dazu eine 
+der Polylinien und wählen Sie in der Attributpalette 
+eine andere Füllfarbe. Das machen Sie indem Sie dort 
+im Einblendmenü „Füllung“ den Eintrag „Solid“ und da­
+nach im Einblendmenü „Farbe“ die gewünschte Farbe 
+auswählen.“
+5	 Verlassen Sie das neu gestaltete Mosaik 
+über den Knopf in der rechten oberen Ecke 
+des Arbeitsfensters.
+Tipp: Grafische Füllungen als Zubehör
+Wie bereits bei Verläufen und Bildfüllun­
+gen beschrieben, lassen sich auch Mosai­
+ke, Schraffuren und Materialien 3D mit dem 
+„Füllung und Material bearbeiten“-Werkzeug 
+anpassen.
+Der Lieferumfang von Vectorworks umfasst bereits Hunderte von Füll-Grafi­
+ken. Sie finden diese in der Attributpalette oder im Zubehör-Manager (unter 
+„Vectorworks-Bibliotheken“).
+Transparenz
+Ein weiteres Gestaltungsmittel ist die Deckkraft von Objekten. Hier sollen 
+Flächen transparent gestellt werden.
+1	 Arbeiten Sie in der Datei „07 Grafische Füllungen.vwx“ weiter.
+2	 Möchten Sie einen Helligkeitsverlauf inner­
+halb eines Raumes darstellen, können Sie z. B. 
+eine zweite Fläche mit einem radialen Verlauf 
+und einer reduzierten Deckkraft darüberlegen. 
+Aktivieren Sie das Polygon mit dem Farbverlauf, 
+das den Boden des Hobbyraumes oben rechts 
+darstellt und stellen Sie die Fülldeckkraft in der 
+Attributpalette auf 60 %. 
+3	 Aktivieren Sie nun das 
+Polygon, das den Schatten 
+des Gebäudes darstellt und 
+stellen dessen Fülldeckkraft 
+auf 30 %.
+Tipp: Objekte transparent stellen
+Sie können auch mehrere Objekte auf 
+einmal transparent stellen. Wenn Sie die 
+Deckkraft zentral in der Einstellung für 
+eine „Klasse“ ändern, dann werden die 
+Objekte dieser Klasse transparent.
+
+
+===== PAGE 18/35 =====
+33
+32
+Tipp: Farben verwenden
+Natürlich können Sie in Vectorworks alle Farben verwenden. Dazu einfach in der 
+Attributpalette über den Farbpaletten-Manager die Farben Ihres gewünschten 
+Farbfächers wählen.
+Das Bemaßen der Außen- und Innenwände erfolgt über die automatische Bemaßung. 
+In diesem Schritt soll der Grundriss im Maßstab 1:50 bemaßt und beschriftet werden. 
+Durch die maßstabsabhängige Darstellung in dieser Zeichnung werden die Wände nun 
+detailliert mit ihren einzelnen Schalen angezeigt.
+Bemaßung und Beschriftung
+15STG 18,3 / 26,0
+Die Pläne sind vom 
+Auftragnehmer verantwortlich zu prüfen. Maße sind am 
+Bau zu nehmen und zu kontrollieren. 
+Dieser Plan gilt nur in Verbindung mit den übrigen Ausführungsplänen des 
+Architekten, den Plänen des Statikers, der Projektingenieure und der Fachfirmen.
+16.07
+7.13
+8.94
+34
+6.79
+41
+8.12
+41
+1.99
+2.31
+925
+80
+2.03
+7
+4.625
+1.705
+925
+2.54
+9.40
+9.40
+34
+8.72
+34
+975
+1.00
+75
+2.215
+1.00
+75
+90
+1.65
+2.53
+1.66
+16.07
+5.24
+1.89
+8.94
+34
+4.56
+34
+1.89
+41
+8.12
+41
+2.49
+1.65
+2.53
+1.10
+1.89
+1.015
+1.705
+2.53
+1.035
+1.705
+2.53
+1.035
+1.705
+2.53
+74
+34
+4.56
+34
+1.89
+41
+2.64
+10
+2.64
+10
+2.64
+41
+13.76
+13.76
+41
+12.94
+41
+1.41
+1.705
+2.53
+1.21
+1.705
+2.53
+1.20
+1.09
+1.545
+5.44
+15STG 18,3 / 26,0
+1	 Öffnen Sie die Datei „08 Bemassung 
+Beschriftung.vwx”.
+2	 Wählen Sie in der Menüzeile un­
+ter „Text” , „Textformatierung“ die ge­
+wünschte Schrift und Schriftgröße aus, 
+zum Beispiel Arial, 12 Punkt. 
+3	 Wählen Sie in der Werkzeuggruppe „Bemaßung/Beschrif­
+tung” das Werkzeug „Bemaßung Automatisch”. Klicken Sie 
+dann auf das letzte Methodensymbol, um das Dialogfenster 
+„Einstellungen Bemaßung automatisch” zu öffnen. Deaktivie­
+ren Sie in diesem Fenster die Option „Schriftgröße anpassen”.
+8
+
+
+===== PAGE 19/35 =====
+35
+34
+4	 Aktivieren Sie in der Methodenzeile die fünfte Methode „Wände“.
+5	 Mit aktivierter Umschalttaste aktivieren Sie die zu bemassenden Wände. 
+Klicken Sie dann auf eine der aktivierten Wände und dann auf den vorplatzierten ro­
+ten Punkt. Wiederholen Sie die vorgenannten Schritte für die anderen Außenwände.
+6	 Um eine Innenbemaßung anzulegen, aktivieren Sie die erste und dritte Metho­
+de des Werkzeugs „Bemaßung automatisch”.
+7	 Mit zwei Klicks können Sie nun Anfangs- und Endpunkt einer Leitlinie bestim­
+men. Damit bestimmen Sie, welche Bauteile bemaßt werden. Mit dem nächsten 
+Klick legen Sie die Lage der Maßkette fest.
+Tipp: Bemaßungen
+In Vectorworks sind Bemaßungen assoziativ. Das bedeutet, sie passen sich 
+Objektänderungen an – und umgekehrt. So können Sie einfach eine Maßzahl 
+überschreiben, um z. B. den Abstand zweier Fenster zueinander zu erhöhen. 
+Doppelklicken Sie dazu auf die Maßzahl, um sie zu verändern, definieren Sie den 
+Referenzpunkt und geben den neuen Wert ein. Beim Bestätigen des Wertes wird 
+das Fenster automatisch an die gewünschte Position in der Wand verschoben.
+Ein rechter Mausklick auf eine 
+Kettenbemaßung 
+ermöglicht 
+das 
+Einfügen, Löschen oder Bearbeiten 
+einer einzelnen Bemaßung. Löschen 
+Sie beispielsweise ein Fenster aus 
+einer Wand heraus, passt sich die 
+Bemassung ebenfalls automatisch an.
+Manuelle Bemaßungen, von Punkt zu 
+Punkt gezogen, sind natürlich auch möglich. Dazu dient 
+das Werkzeug „Bemaßung horizontal und vertikal”.
+Text/Beschriftung
+Das 
+Textwerkzeug 
+von 
+Vectorworks 
+Architektur 
+bietet 
+komfortable 
+Beschriftungsoptionen. So können Sie Tabulatoren ähnlich wie in einem Textverarbei­
+tungsprogramm einrichten, Textfelder mit einem Blocksatz versehen oder hoch- und 
+tiefgestellte Zahlen und Buchstaben eingeben.
+Zudem können Sie über den Zubehör-Manager Textformatierungen als Zubehör anle­
+gen. So lassen sich unterschiedliche Einstellungen für Textformatierung speichern und 
+als Vorgaben für neue Textfelder verwenden oder auf bestehende Texte übertragen.
+
+
+===== PAGE 20/35 =====
+37
+36
+Räume und Flächen
+Nun ermitteln Sie die Wohnflächen des aktuellen Planungsstandes und bestempeln die 
+Räume.
+1	 Öffnen Sie die Datei „09 Raeume_Flaechen.vwx“.
+2	
+Aktivieren Sie in der Werkzeuggruppe „Architektur“ das Werk­
+zeug „Raum“. „Wählen Sie anschließend die dritte Methode „Anlegen“. 
+Klicken Sie auf die letzte Methode, um so in den Einstellungsdialog 
+des Raumwerkzeugs zu gelangen.
+Hier begeben Sie sich in den Bereich „Raumstempel 1“. Die Raum­
+stempel-Klasse für den Stempel wird auf „Raumstempel“ gesetzt und 
+als Raumstempel-Symbol „Raumstempel 10-SIA II“ gewählt. Bestäti­
+gen und verlassen Sie den Einstellungsdialog mit einem Klick auf „OK“.
+15STG 18,3 / 26,0
+13.76
+1.49
+1.055
+84
+75
+2.375
+84
+75
+1.06
+1.49
+2.53
+1.74
+2.87
+41
+1.08
+34
+8.72
+34
+2.46
+41
+1.49
+9.40
+2.87
+2.065
+2.15
+925
+98
+1.93
+4.755
+1.585
+925
+2.60
+34
+6.785
+41
+8.12
+41
+7.125
+8.94
+16.065
+1.47
+1.598
+1.318
+1.585
+2.53
+1.32
+97
+1.545
+5.50
+41
+12.94
+41
+2.565
+1.49
+2.53
+1.18
+845
+98
+2.75
+65
+1.075
+1.585
+2.53
+1.155
+1.585
+2.53
+1.155
+1.585
+2.53
+80
+34
+4.56
+34
+1.89
+41
+8.12
+405
+5.24
+1.89
+8.94
+16.07
+13.76
+Bad
+1
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.46m2
+Ankleide
+3
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 10.93m2
+Eltern
+4
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.53m2
+Flur
+5
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 15.72m2
+Kind 1
+6
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kind 2
+7
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kind 3
+8
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 13.02m2
+Kinderflur
+9
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 8.85m2
+Kinderbad
+10
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 4.58m2
+Gäste WC
+11
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 2.83m2
+Garderobe
+12
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 7.51m2
+Hobby
+13
++ 0,13
++/- 0,00
+B
+W
+D
+Pandomo/Fliesen
+Sichtbeton
+Abgehängte Bekleidung
+BF 36.48m2
+15STG 18,3 / 26,0
+13.76
+1.49
+1.055
+84
+75
+2.375
+84
+75
+1.06
+1.49
+2.53
+1.74
+2.87
+41
+1.08
+34
+8.72
+34
+2.46
+41
+1.49
+9.40
+2.87
+2.065
+2.15
+925
+98
+1.93
+4.755
+1.585
+925
+2.60
+34
+6.785
+41
+8.12
+41
+7.125
+8.94
+16.065
+1.47
+1.598
+1.318
+1.585
+2.53
+1.32
+97
+1.545
+5.50
+41
+12.94
+41
+2.565
+1.49
+2.53
+1.18
+845
+98
+2.75
+65
+1.075
+1.585
+2.53
+1.155
+1.585
+2.53
+1.155
+1.585
+2.53
+80
+34
+4.56
+34
+1.89
+41
+8.12
+405
+5.24
+1.89
+8.94
+16.07
+13.76
+9
+3	 Nun „füllt“ man das Raumobjekt in 
+den durch Wände umgrenzten Raum, in­
+dem man mit der linken Maustaste mitten 
+hinein klickt. Die Raumobjekte passen 
+sich automatisch an die umgrenzenden 
+Wände an und zeigen auch sofort die 
+richtige Fläche an. So können Sie, wie 
+eingangs im Bild ersichtlich, alle Räume 
+des Erdgeschosses mit Raumobjekten 
+versehen.
+4	 Wenn man in der Infopalette die 
+Einstellung „Beläge verwenden“ aktiviert, 
+lassen sich dessen Oberflächenmaterialien für Wände, Decken und Fußboden ganz 
+einfach einstellen und vergeben. Dazu genügt ein Klick auf „Beläge zuweisen“. 
+5	 In der Infopalette lässt sich nun im Bereich „Nummerierung“ 
+eine zum Raum zugehörige Raumnummer vergeben. Diese 
+kann entweder manuell vergeben oder automatisiert eingesetzt 
+werden.
+6	 Unter „Funktion“ können Sie für den aktivierten Stempel 
+eine Raumbezeichnung vergeben. Oben links befindet sich 
+z. B. ein Badezimmer. Unter „Liste bearbeiten“ lassen sich 
+auch eigene Funktionen definieren.
+
+
+===== PAGE 21/35 =====
+39
+38
+7	 Der Raumstempel kann über 
+seinen Modfikationspunkt nach­
+träglich mit dem Werkzeug „Aktivie­
+ren“ beliebig verschoben werden.
+8	 Mit dem Befehl „Tabelle an­
+legen“ aus dem Menü „Extras“ 
+können Sie nun eine Raumliste an­
+legen lassen. Dazu wählen Sie am 
+besten unter „Tabelle: aus Vorgabe“ 
+die „Arch-Raumliste vereinfacht“.
+Tipp: Tabelle einfügen und aktualisieren
+Dokumentspezifische Tabellen wie etwa Raumlisten oder Fensterlisten können 
+Sie wie andere Zubehörobjekte in Ih­
+ren Plan einfügen. Angelegt werden Sie 
+ganz einfach über den Befehl „Tabelle 
+anlegen“ aus dem Menü „Extras“. 
+Über einen rechten Mausklick auf die 
+Tabelle im Zubehör-Manager kann sie 
+jederzeit geöffnet werden.
+Mit dem Befehl „Aktualisieren“ im 
+Tabellenmenü „Datei“ wird die gan­
+ze Zeichnung nach Änderungen 
+abgesucht, die diese Tabelle beein­
+flussen. Diese Änderungen werden 
+dann in die Tabelle übertragen. Der 
+Inhalt sämtlicher Zellen wird damit 
+auf den neuesten Stand gebracht.
+1	 Öffnen Sie die Datei „10 Visualisieren.vwx“.
+2	 Im Zubehör-Manager finden Sie im Bereich „Materialien 3D“ die für das Modell 
+notwendigen Materialien.
+3	 Dort sehen Sie auch das Belagmaterial für die Terrasse am Schwimmbecken. 
+Klicken Sie mit der rechten Maustaste auf das Material „Beton - Terrassenplatten“ 
+und wählen den Befehl „Bearbeiten“.
+Visualisieren
+Die Objekte des 3D-Modells werden in diesem Schritt mit 3D-Material belegt und diverse 
+Visualisierungen erstellt. Lassen Sie sich überraschen: Bei den hier erstellten Renderings 
+wird die integrierte Rendersoftware Renderworks eingesetzt, welche auf einem Cinema 4D 
+Render-Kern basiert.
+10
+
+
+===== PAGE 22/35 =====
+41
+40
+Der Dialog „Material bearbeiten“ erscheint.
+Hier können Sie, wie in anderen 
+3D-Programmen gewohnt (z. B. 
+Cinema 4D), die Kanäle für Far­
+be, Spiegelung, Transparenz 
+und Relief einstellen.
+Vectorworks bietet hier die 
+Möglichkeit, sowohl ein Bild als 
+auch prozedurale Shader wie 
+etwa Noise, Fresnel, generier­
+tes Steinpflaster oder Ähnliches 
+zu verwenden. Da die Terras­
+sen kein Material haben, soll 
+ihnen nun noch das hier gerade gezeigte Betonsteinma­
+terial zugewiesen werden.
+4	 Verlassen Sie das Dialogfenster des 3D-Materials. 
+Aktivieren Sie die mit dem Pfeil gekennzeichnete 
+Terrasse.
+5	 Es ist jetzt möglich, die Materialien in der Infopalette 
+zuzuweisen. Wählen Sie dazu in der Infopalette den Be­
+reich „Rendern“. Wählen Sie im Einblendmenü „Material 
+auf“ die Option „Oben“ und danach im Einblendmenü 
+„Material“ das Material „Beton-Terrassenplatten“ aus.
+6	 Begeben Sie sich über den Menüpunkt „Ansicht“ → „Standardansichten“ 
+→ „Rechts vorne oben“ in eine 3D-Ansicht des Gebäudes. 
+Wählen Sie die Rendering-Einstellung „Renderworks“ aus 
+dem Menü „Ansicht“ → „Darstellungsart“. Warten Sie bis der 
+Rendervorgang abgeschlossen ist. 
+Siehe Info rechts unten.
+7	
+Neben den Darstellungsarten 
+„Drahtmodell“, 
+„OpenGL“ 
+und 
+„Renderworks schnell“ etc. gibt es 
+in Vectorworks noch „Renderstile“. 
+Speichern Sie damit häufig ver­
+wendete 
+oder 
+gelungene 
+Rendereinstellungen unter einem 
+Namen ab. Diese lassen sich anschließend per Drag-and-Drop 
+auf ein beliebiges Modell übertragen. Es werden bereits einige 
+Renderstile mit geliefert. Wählen Sie dazu im Einblendmenü 
+„Darstellungsarten“ 
+ z. B. „Renderworks Renderstil“ → 
+„Realistisch weisses Gipsmodell“.
+8	 Um eine Kameraperspektive anzulegen, wählen Sie als 
+aktive Ebene „EG-Fertigboden (Zeichnungsebene)“ und bei den 
+Standardansichten „2D-Plan“ in der Darstellungszeile aus.
+9	 Wählen Sie nun aus der Werkzeuggruppe „Visualisieren“ das 
+Werkzeug „Kamera“ und setzen Sie die Kamera wie im Bild vor­
+gesehen. Ziehen Sie dafür in der Ansicht „2D-Plan“ eine Leitlinie 
+vom Hilfspunkt A zum Hilfspunkt B. Dabei legt der Anfangspunkt 
+die Augenhöhe und der Endpunkt die Blickpunkthöhe fest. Alle 
+Kamera-Einstellungen lassen sich in der Infopalette 
+ändern.
+Erhöhen Sie in der Infopalette den Blickwinkel auf 90°, 
+wählen Sie z. B. die Darstellungsart „Renderworks“ 
+und klicken Sie zum Schluss auf „Kamera aktivieren“. 
+Tipp: Ansichtsbereich anlegen
+Sie können die aktivierte Kamera nun über den Befehl 
+„Ansichtsbereich anlegen“ aus dem Menü „Ansicht“ als 
+Ansichtsbereich auf einer Layoutebene anlegen. Mit 
+welcher Darstellungsart diese Perspektive dargestellt 
+wird, lässt sich dort in der Infopalette unter „Hinter­
+grund Darstellungsart“ einstellen.
+2
+3
+1
+
+
+===== PAGE 23/35 =====
+43
+42
+10		 Die auf Seite 4 bis 7 groß abgebildeten Visualisierungen wurden bereits als 
+Ansichtsbereiche in diesem Dokument angelegt und für dieses Tutorial gerendert.
+Am schnellsten gelangen Sie dorthin, 
+indem Sie in der Darstellungszeile in 
+die verschiedenen Layouts wechseln, 
+den zu rendernden Ansichtsbereich 
+(rot gestrichelt umrandet) aktivieren 
+und in der Infopalette auf „Aktualisie­
+ren“ klicken.
+Der Ansichtsbereich unter „Titel“ (auf 
+der nächsten Seite rechts oben) be­
+nötigt auf einem Computer mit einem Core-i7-Prozessor mit 2.8 GHz und 16 GB 
+Arbeitsspeicher ca. 95 Sekunden.
+Visualisierung: Vectorworks mit Renderworks
+
+
+===== PAGE 24/35 =====
+45
+44
+1	 Öffnen Sie die Datei „11 Energos.vwx“.
+2	 Aktivieren Sie das Energielabel und klicken in der Infopalette auf den Knopf 
+„Energos“. Im erscheinenden Dialog können Sie sich über die einzelnen Einträge 
+in der linken Spalte alle momentan gewählten Einstellungen des Projekts ansehen. 
+Verlassen Sie den Dialog mit „Abbrechen“
+Energos Energieanalyse
+Sie bekommen mit dem Energos-Modul ein dynamisches, intelligentes Messinstrument für 
+die Energieanalyse eines Gebäudes. Mittels aussagekräftiger, farbig kodierter Grafiken kann 
+die Energieeffizienz eines Projektes gemessen werden, so dass wichtige Entscheidungen 
+bezüglich der Nachhaltigkeit schon wärend der Entwurfsphase getroffen werden können.
+11
+3	 Aktivieren Sie das große Fens­
+ter des Wohnzimmers. Ändern Sie 
+in der Infopalette den Rahmentyp 
+auf: „Wiegand DW Plus“ und den 
+Verglasungstyp auf: „dreifach Ver­
+glasung 9 - 4:/15/4/15/:4 (Ar)
+4	 Aktivieren Sie die rechte Aus­
+senwand und deaktivieren in der 
+Infopalette die Checkbox: „Berech­
+neten U-Wert ignorieren“.
+5	 Aktivieren Sie erneut das Energielabel und klicken in der Infopalette auf den 
+Knopf „Aktualisieren“. Der Gesamtenergiebedarf ist jetzt deutlich reduziert.
+Tipp: Weitere Informationen zu Energos finden Sie hier: 
+www.computerworks.eu/energos
+
+
+===== PAGE 25/35 =====
+47
+46
+1	 Öffnen Sie die Datei „12 Planlayout.vwx”.
+2	 Sie befinden sich auf der Ebene „01 [Layout]”. 
+Es fehlt noch der Grundriss des Obergeschosses. 
+Um diesen einzublenden, wählen Sie als aktive 
+Ebene „OG-Fertigboden (Zeichnungsebene)”.
+3	 Wählen Sie aus dem Menü „Ansicht” den Be­
+fehl „Ansichtsbereich anlegen” und bestätigen Sie 
+das Dialogfenster „Ansichtsbereich anlegen“ mit 
+„OK“.
+Planlayout
+In Vectorworks erstellen Sie Planlayouts sehr komfortabel auf Layoutebenen. Diese dienen 
+dazu, ein Modell in verschiedenen Ausschnitten anzuzeigen, die unterschiedliche Maßstä­
+be, Ansichten, Darstellungsarten oder Perspektiven aufweisen können. Die Layoutebenen 
+definieren Ihre individuellen Druckeinstellungen.
+12
+4	 Automatisch wird die Layoutebene zur aktiven Ebene, 
+auf der der gerade angelegte Ansichtsbereich zu sehen ist. 
+Dieser Ansichtsbereich ist eine mit der Originalzeichnung ver­
+knüpfte Abbildung des Grundrisses. Da der Ansichtsbereich 
+noch aktiv ist, können Sie nun in der Infopalette unter 
+„Detaillierungsgrad“ die Option „Tief“ wählen. Anschließend 
+fassen Sie die linke obere Gebäudekante mit der Maus und 
+schieben den Ansichtsbereich auf den mit „OG“ beschrifteten 
+Punkt links oben.
+5	 Links oben sehen Sie 
+einen Ansichtsbereich mit 
+einer Dachaufsicht. Aktivie­
+ren Sie diesen und wählen Sie in der Infopalette 
+den Maßstab 1:500.
+6	 Klicken Sie in der Infopalette auf den Knopf 
+„Ebenensicht­barkeiten“ und stellen Sie zusätz­
+lich die Konstruktionsebene „Lageplan“ sichtbar. 
+Schließen Sie das Fenster mit „OK“.
+7	 Wechseln Sie nun in die Layoutebene „02 
+Baueingabe“ 
+
+
+===== PAGE 26/35 =====
+49
+48
+8	 Aktivieren Sie den hier angezeigten Ansichtsbereich 
+und wechseln Sie dessen Ansicht, indem Sie in der 
+Infopalette unter „Standardansichten“ von „2D-Plan“ auf 
+„Rechts vorne oben“ stellen.
+9	 Wechseln Sie dessen Rendereinstellung unter „Hin­
+tergrund Darstellungsart“ von „Drahtmodell“ auf „Open-
+GL“ und klicken auf „Aktualisieren“.
+
+
+===== PAGE 27/35 =====
+51
+50
+In diesem Kapitel lernen Sie die wichtigsten Elemente der Benutzeroberfläche und 
+wichtigsten Arbeitsweisen von Vectorworks in aller Kürze kennen.
+Die Elemente der Benutzeroberfläche
+In den Menüs sind die Befehle untergebracht. Mit den über hundert Befehlen in 
+Vectorworks werden in der Regel Aktionen und Veränderungen mit den bestehen­
+den aktivierten Objekten durchgeführt. Seltener werden mit Befehlen neue Objekte 
+angelegt.
+Paletten, die über das Menü „Fenster” aufgeru­
+fen werden können, beinhalten Werkzeuge oder 
+stellen Funktionen zur Verfügung. Werkzeuge 
+aktiviert man mit einem Klick darauf. Sie können 
+damit neue Objekte zeichnen oder bestehende 
+Objekte oder den Plan bearbeiten.
+Tipp zur Arbeitsumgebung:
+Sie können allen Werkzeugen und Befehlen eige­
+ne Tastenkürzel zuweisen mit dem Befehl „Arbeitsumgebung anpas­
+sen“ (Menü „Extras“ → „Arbeitsumgebung“).
+Die Darstellungszeile befindet sich unmittelbar unter dem 
+Titelbalken mit dem Dokumentnamen. Sie enthält zahlreiche 
+Funktionen, mit denen die Ansicht des Plans geändert werden 
+kann. So lassen sich z. B. mit ihr Klassen, Ebenen, Ansichten und 
+Darstellungsarten aufrufen und bearbeiten, Sie können zoomen, 
+den Plan drehen oder den Maßstab einstellen. Welche Knöpfe und 
+Einblendmenüs in der Darstellungszeile angezeigt werden, können 
+Sie über das kleine schwarze Dreieck am rechten Ende der Zeile 
+selbst konfigurieren.
+Unmittelbar unter der Darstellungszeile befindet sich die Methodenzeile. Sie zeigt 
+den Namen des gerade aktiven Werkzeugs an ggf. auch eine kurze Anleitung. 
+Bei den meisten Werkzeugen werden hier mehrere Symbole angezeigt, die un­
+terschiedliche Methoden zur Verfügung stellen, wie das Werkzeug benutzt werden 
+kann. So lässt sich z. B. ein Rechteck über eine Diagonale, von seinem Mittelpunkt 
+oder einer Seitenmitte aus oder als gedrehtes Rechteck zeichnen.
+Werkzeuge und Arbeitsweisen
+Wichtig: Zusätzliche Einstellungsmöglichkeiten können bei verschiedenen 
+Werkzeugen über das Symbol 
+ aufgerufen werden.
+Mit der Infopalette ist es ganz einfach, Objekte zu verändern, nachdem sie ge­
+zeichnet wurden. Aktivieren Sie und geben Sie die gewünschten Maße, eine neue 
+Position oder andere Einstellungen ein. Die angezeigten Felder variieren je nach 
+Objekttyp. Bei einem Kreis ist z. B. die Einstellung „Radius” zu finden, bei einer 
+Wand z. B. „Dicke” oder „Schalen” (Schichten).
+Über die Infopalette können Objekte auch mit einer Datenbank verknüpft oder zur 
+Visualisierung mit Texturen versehen werden. Die Infopalette 
+sollte stets in die Arbeitsoberfläche integriert sein. Sie kann über 
+das Menü „Fenster” → „Paletten” → „Informationen” geöffnet 
+und geschlossen werden.
+Über die Navigationspalette können Sie mit wenigen Klicks auf 
+die Strukturelemente (siehe Kap. Planstruktur) eines Dokuments 
+zugreifen und deren Einstellungen verändern. So lassen sich 
+z. B. Ebenen und Klassen ausblenden, gesicherte Darstellungen 
+aufrufen oder Referenzen auf andere Dokumente anlegen. Au­
+ßerdem können Sie neue Ebenen, Klassen, Ansichtsbereiche, 
+Darstellungen und Referenzen anlegen und bearbeiten, ohne 
+dass Sie dafür durch Menüs und Untermenüs navigieren müssen.
+
+
+===== PAGE 28/35 =====
+53
+52
+Im Zubehör-Manager verwalten und organisieren Sie Ihr Zubehör und haben Zu­
+gang zu Hunderten von Zubehör-Bibliotheken sowie zu Ihren eigenen Benutzer- 
+und Arbeitsgruppenbibliotheken. 
+Dazu gehören:
+■
+■grafische 
+Elemente 
+(Bilder, 
+Farbverläufe, 
+Schraffuren, 
+Mosaike, 
+Textformatierungen, Texturen, Renderstile)
+■
+■mehrfach in einem Plan verwendete Objekte (Fenster, Türen, Tische, Pflan­
+zen, Scheinwerfer und andere Symbole)
+■
+■mit Schalen verknüpfte Bauteile (Wände, Böden, Decken)
+■
+■mit der Zeichnung verknüpfte Datenbanken und Tabellen
+Alle diese Elemente werden über den Zubehör-Manager angelegt und unter einem 
+Namen gespeichert und können anschließend per Mausklick beliebig oft im Plan ver­
+wendet werden. Außerdem haben Sie Zugriff auf Zubehör in anderen Dateien und 
+auf die Zubehörbibliotheken von Vectorworks. Ein Symbol aus einem anderen Doku­
+ment kann z. B. ganz einfach importiert werden, indem Sie dessen Vorschau mit der 
+Maus aus dem Zubehör-Manager an die gewünschte Stelle Ihrer Zeichnung ziehen. 
+Den Zubehör-Manager öffnen Sie über Fenster > Paletten > Zubehör-Manager.
+Die Attributpalette stellt ein wichtiges Gestaltungswerkzeug in Vectorworks dar. 
+Hier definiert man Farben und grafische Attribute von Objekten (die Füllung von 
+Flächen, die Stiftfarbe, die Deckkraft sowie Liniendicken und Linienendzeichen wie 
+z. B. Pfeile u.ä.). Mit den Einstellungen, wie sie in der Abbildung zu sehen sind, wür­
+den also rot gefüllte Objekte mit einer schwarzen Kontur von 0.10 mm Stärke und 
+einer Deckkraft von 50 % der Füllung und 100% Deckkraft des Stiftes gezeichnet.
+Besonders vielfältig kann die Füllung von Flächen gestaltet werden. Die 
+Attributpalette stellt hierfür nicht nur Farben, Muster und Schraffuren zur Verfügung 
+sondern auch Farbverläufe, Füllungen aus beliebigen Bildern sowie Mosaike mit 
+sich wiederholenden Mustern und Strukturen.
+Tipp I: Farbverläufe, Bildfüllungen und Mosaike müssen über den Zubehör-Manager 
+angelegt werden, bevor sie in der Attributpalette zur Verfügung stehen.
+Tipp II: Ist kein Objekt aktiv, sind die in der Attributpalette vorgenommenen Einstel­
+lungen eine Grundeinstellung! Das bedeutet, dass alle Objekte, die im Folgenden 
+gezeichnet werden, diese Attribute erhalten.
+Die Zeigerfangpalette ist eine sehr wichtige Konstruktionshilfe, denn hier legen Sie 
+fest, auf welche Punkte des Zeichnungsinhalts der Mauszeiger reagieren soll. Das 
+automatische Einblenden von Hilfslinien steuern Sie hier ebenso wie das Ausrichten 
+an frei definierbaren Rastern.
+Füllfarbe
+Füllung
+Stift
+Stiftfarbe
+Deckkraft Füllung/Stift
+Linien
+Schlagschatten
+Linienendzeichen
+
+
+===== PAGE 29/35 =====
+55
+54
+Der Intelligente Zeiger verändert sich optisch während des Zeichnens z. B. wenn er 
+sich über einer gefüllten Fläche, einer Kante oder einem Punkt befindet. Direkt am 
+Mauszeiger werden ständig Informationen eingeblendet z. B. Koordinatenangaben, 
+der relative Winkel zur vorherigen Strecke oder die Dimensionen des gerade zu 
+zeichnenden Objekts. So haben Sie die wichtigsten Angaben immer im Blickfeld.
+Mit der Lupe können Sie die Zeichnung an der Stelle, an der sich der Zeiger gerade 
+befindet, durch Drücken der Taste „Y“ temporär vergrößern. Dadurch können Sie 
+z. B. besser sehen, an welchem Punkt Sie 
+ausrichten. Sobald Sie auf den gewünsch­
+ten Punkt oder eine andere Stelle in der 
+Zeichnung klicken, wird die temporäre Ver­
+größerung automatisch ausgeschaltet.
+Den Durchblick behalten mit dem Röntgenblick. Sie möchten ein Objekt aktivie­
+ren, das von einem anderen verdeckt wird? Drücken Sie einfach die R-Taste für 
+∆x:  2,00m   ∆y:  -3,00m
+L:  4,00m      W:  30°
+Ausrichten 90° / Ausrichten 0°
+Oben Links
+L: 1,17 m    W: 0,00°
+den Röntgenblick: Alles wird halbtransparent und Sie können auch alle verdeckten 
+Objekte aktivieren, verschieben etc.
+Planstruktur
+Wenn Sie in Vectorworks ein Objekt zeichnen, wird dieses automatisch auf einer 
+Ebene und in einer Klasse abgelegt. Aus diesem Grund existieren in jedem neuen 
+Dokument, das Sie in Vectorworks anlegen, bereits eine „Konstruktionsebene-1”, 
+und zwei Klassen, benannt mit „Keine” und „Bemaßung”. Diese beiden Systeme 
+dienen dazu, Planinhalte zu benennen, zu strukturieren und zu organisieren.
+Die Konstruktionsebene informiert darüber, wo sich ein Zeichnungselement be­
+findet. Typische Konstruktionsebenen sind z. B. „Erdgeschoss”, „Obergeschoss”, 
+„Dach” usw. Klassen dagegen geben Auskunft über das Objekt selbst oder seine 
+Verwendung. Typische Klassen sind z. B. „Außenwände”, „Möblierung”, „Sanitär”, 
+oder auch „Zuluft”, „Abluft”, „Gas-/Wasserinstallation” etc.
+Klassen und Konstruktionsebenen lassen 
+sich in beliebiger Kombination ein- und 
+ausblenden und sorgen so im Plan für 
+Übersichtlichkeit. Sie können z. B. mit nur 
+einem Klick ebenenübergreifend alle Anga­
+ben zur Elektroinstallation sichtbar machen 
+oder alle Informationen für den Rohbau 
+abrufen.
+Wenn Sie ein neues Element zeichnen, 
+wird dieses immer in der gerade aktiven 
+Klasse und auf der aktiven Ebene abgelegt. 
+Die gerade aktive Klasse und Ebene kön­
+nen in der Darstellungszeile abgelesen und 
+auch geändert werden. Über die Infopalette 
+kann man aktivierte Objekte einer anderen Ebene oder Klasse zuweisen.
+Klassen:
+Konstruktionsebenen:
+
+
+===== PAGE 30/35 =====
+57
+56
+Ebenen und Klassen können sichtbar sein, unsichtbar oder 
+grau (wenig sichtbar). Die generelle Sichtbarkeit einer Ebene/
+Klasse stellt man über deren Status im Fenster „Organisation” 
+(Menü „Extras”) ein. Wie sichtbare Ebenen in einer Kombinati­
+on miteinander dargestellt werden sollen, steuern Sie über die 
+Untermenüs „Ebenendarstellung” und „Klassendarstellung” im 
+Menü „Ansicht”.
+Tipp zur Klassendarstellung:
+Wir empfehlen wenig erfahrenen Vectorworks-Anwendern, die Klassendarstellung 
+auf „Zeigen, ausrichten und bearbeiten” zu belassen. Andernfalls werden 
+Zeichnungsinhalte zwar angezeigt, es kann aber nicht auf sie zugegriffen werden.
+Eine der wichtigsten Funktionen von CAD-Programmen ist es, beliebige Objek­
+te zusammen unter einem eigenen Namen abspeichern zu können. Sollen diese 
+Objekte mehrfach in die 
+Zeichnung eingesetzt wer­
+den, stellt Vectorworks da­
+für Symbole zur Verfügung. 
+Typische 
+Symbole 
+sind 
+z.  B. Möbel, Bäume, Perso­
+nen usw. Symbole gehören 
+zum Zubehör und werden 
+als Instanz in die Zeichnung 
+eingesetzt. Die eingefüg­
+ten Symbole benötigen im 
+Vergleich zu normalen Ob­
+jekten kaum Speicherplatz 
+und können so einen Plan 
+„schlank” halten. Ist z.B. ein 
+Café mit vielen Sitzgruppen, 
+bestehend aus Tisch und 
+vier Stühlen, auszustatten, 
+bietet es sich an, eine Sitzgruppe als Symbol anzulegen. Aktivieren Sie alle Objek­
+te der Sitzgruppe und wählen Sie den Befehl „Symbol anlegen” (Menü „Ändern”).
+Symbole können aber noch mehr: Änderungen an der Symboldefinition über­
+nehmen alle im Plan eingesetzten Symbole automatisch. Und Wände „erkennen” 
+Symbole, so dass Türen und Fenster automatisch in Wände eingesetzt werden.
+Eine andere Möglichkeit, Objekte zusammenzufassen, ist das Bilden einer Gruppe 
+(Menü „Ändern” → „Gruppen” → „Gruppieren”). Gruppierte Objekte können mit 
+einem Klick aktiviert, bearbeitet oder verschoben werden. 
+Intelligente Objekte sind parametrische Objekte, die über die 
+Eingabe von Werten angelegt und über die Infopalette jeder­
+zeit bearbeitet werden können. Dazu gehören z. B. Fenster, 
+Türen oder Treppen.
+Als „intelligent” werden diese Objekte deshalb bezeichnet, 
+weil sie auf Änderungen reagieren: Fenster passen sich 
+der Wandstärke an, in die sie eingesetzt werden, und der 
+Detaillierungsgrad der Darstellung ist maßstabsabhängig.
+Natürlich können Intelligente Objekte auch als Symbole abgespeichert werden, um 
+all deren Vorteile zu nutzen. Angelegt werden Intelligente Objekte häufig mit einem 
+eigenen Werkzeug, z. B. Treppen mit dem Treppenwerkzeug.
+Wenn Sie einmal nicht weiter wissen und Hilfe benötigen: Das komplette 
+Vectorworks
+®-Handbuch in elektronischer Form kann sehr schnell über den Befehl 
+„Vectorworks-Hilfe” (Menü „Hilfe”) aufgerufen werden. Über das Inhaltsverzeichnis 
+in der linken Leiste können Sie das gewünschte Kapitel auswählen und aufrufen. 
+Mit dem Befehl „Direkthilfe“ im Vectorworks-Menü „Hilfe“ können Sie eine Funktion 
+oder ein Werkzeug anklicken und so die entsprechen­de Stelle direkt im elektroni­
+schen Handbuch aufrufen, an der diese Funktion beschrieben wird.
+
+
+===== PAGE 31/35 =====
+59
+58
+1	 Öffnen Sie die Datei „13_Modellieren.vwx” im Ordner 
+„Vectorworks-Dateien“. Wir befinden uns in der Ansicht 
+„Rechts“.
+2	 Wählen Sie aus der Werkzeuggruppe „Modellieren” 
+das Werkzeug „NURBS-Kurve”.
+3	 Wählen Sie in der Methodenzeile die erste Me­
+thode und verändern Sie unter den „Einstellungen 
+NURBS-Kurve” den Wert auf 2°.
+4	 Klicken Sie anschließend, beginnend am linken 
+unteren Punkt, die fünf roten Punkte an, um die Seiten­
+ansicht der Liege zu zeichnen. Beenden Sie mit einem 
+Doppelklick.
+Was kann Vectorworks noch?
+Freiform-Modellieren
+Modellieren Sie freie und organische Formen schnell und einfach. Vectorworks setzt Maß­
+stäbe dank des integrierten Modellierkerns Parasolid. Anhand einer geschwungenen Liege 
+soll ein Einstieg ins Freiform-Modellieren aufgezeigt werden.
+5	 Wechseln Sie in die Ansicht „Oben” oder „2D-Plan”.
+6	 Beginnend am linken oberen Punkt zeichnen Sie mit dem 
+gleichen Werkzeug wie zuvor die Kontur der Liege, indem Sie 
+die fünf blauen Punkte anklicken. Beenden Sie die Definition der 
+Kontur mit einem Doppelklick.
+7	 Wechseln Sie in die Ansicht „Rechts vorne oben”. Wäh­
+len Sie aus der Werkzeuggruppe „Modellieren” das Werkzeug 
+„Kurvenverbindung” sowie dessen zweite Methode.
+8	 Klicken Sie zuerst auf den Pfad, dann auf die Kontur der 
+Liege, und bestätigen Sie mit der „Zeilenschaltertaste” (Enter) 
+oder dem grünen Häkchen in der Methodenzeile.
+9	 Im erscheinenden Fenster „Einstellungen 3D-Kurvenverbin­
+dung” wählen Sie „Vorschau” und bestätigen mit „OK”.
+10	Ändern Sie über die Darstellungszeile die Darstellungsart 
+von „Drahtmodell” auf „Open GL”. Die Liege benötigt noch eine 
+Materialstärke und anschließend sollen die Kanten verrundet 
+werden.
+
+
+===== PAGE 32/35 =====
+61
+60
+11	Wählen Sie aus der Werkzeuggruppe „Modellieren” 
+das Werkzeug „Hohlkörper” und nehmen Sie die Einstel­
+lungen zum 3D-Hohlkörper wie gezeigt vor.
+12	Klicken Sie nun einmal auf die Liege und 
+bestätigen Sie mit der „Zeilenschaltertaste” oder 
+dem grünen Häkchen in der Methodenzeile.
+13	Wählen Sie zum Verrunden aus der 
+Werkzeuggruppe „Modellieren” das Werkzeug 
+„Verrunden 3D”, nehmen Sie die gezeigten Ein­
+stellungen vor und bestätigen Sie den Dialog mit 
+„OK“. Klicken Sie nochmals auf die Liege und 
+bestätigen Sie mit der „Zeilenschaltertaste” oder 
+dem grünen Pfeil in der Methodenzeile.
+Viel Spaß beim Modellieren vieler weiterer Objekte!
+Projekt Sharing - Zusammenarbeit im Team
+Mit der Vectorworks Multi-User-Lösung Projekt Sharing arbeiten alle Teammitglie­
+der an derselben Projektdatei, verwenden alle automatisch die gleichen Klassen, 
+dieselben Symbole usw. Der Projektleiter regelt die Berechtigungen der einzelnen 
+Teammitglieder. So lassen sich auch große Projekte und BIM-Planungen effizient 
+strukturieren und organisieren.
+Projekt Sharing benötigt kein komplexes Regelwerk, keine zeitraubenden Abspra­
+chen, keine Extra-Server-Software und läuft auf ganz normaler Hardware. Ob Ihr 
+Team im Büro nebenan sitzt oder auf einem anderen Kontinent: Mit Projekt Sharing 
+sind alle Pläne immer auf dem aktuellen Stand.
+Weitere Informationen finden Sie unter www.computerworks.eu/projekt-sharing
+
+
+===== PAGE 33/35 =====
+63
+62
+Building Information Modeling (BIM)
+Vectorworks bietet Ihnen alle BIM-Funktionen, um ein Gebäudemodell optimal aufzu­
+bauen. Beim Building Information Modeling wird – vereinfacht gesagt – ein Gebäude 
+als 3D-Gebäudemodell konstruiert. Alle relevanten Gebäudedaten sind kombiniert 
+und vernetzt. Aus diesem Gebäudemodell entwickeln sich alle Grundrisse, Ansich­
+ten, Perspektiven, Schnitte, Mengen- und Massendokumentationen. Änderungen 
+am Modell führen zu einer Aktualisierung aller Zeichnungen und Auswertungen.
+Für bauteilorientiertes Planen stehen alle notwendigen Objekte wie Wände, Fens­
+ter, Türen, Böden, Decken, Treppen oder Räume zur Verfügung. Jedes dieser Ele­
+mente ist mit einer Datenbank verknüpft, und kann um individuell definierte Inhalte 
+und Informationen erweitert werden.
+Open BIM ist eine Initiative der unabhängigen Vereinigung „building­SMART“ und 
+mehreren führenden Softwareanbietern. Das Datenmodell basiert auf offenen 
+Standards und sorgt für eine aktive Vernetzung aller am Bau Beteiligten. Das 
+Austauschformat ist IFC (Industry Foundation Classes). In Vectorworks ist es mög­
+lich, jedem Objekt einen beliebigen IFC-Objekttyp zuzuweisen und dadurch mit 
+IFC-Eigenschaften zu versehen.
+Arbeiten mit Bauteilen (BIM) oder 2D-Zeichenbrett – Vectorworks kann beides.
+Weitere Informationen finden Sie unter www.computerworks.eu/bim
+BIMobject® – Herstellerobjekte mit BIM-Daten
+Mit dem Werkzeug BIMobject haben Sie in Vectorworks direkten Zugriff auf über 
+3 Millionen BIM-Objekte, die BIMobject zur Verfügung stellt. Dabei handelt es 
+sich um echte Herstellerobjekte, die neben der Geometrie alle BIM-relevanten 
+Daten wie die Artikel-Nr. usw. enthalten und jederzeit auf Knopfdruck aktualisier­
+bar sind. Dabei lassen sich nicht nur Vectorworks- Objekte, sondern auch Objek­
+te im AutoCAD-, SketchUp- und 3DS-Format herunterladen. Die Verwendung der 
+BIMobjects für Anwender ist kostenlos.
+Kostenlose Anmeldung und Informationen unter: www.bimobject.com
+
+
+===== PAGE 34/35 =====
+64
+Marionette - Das grafische Scripting-Tool
+Grafisches Scripting ist eine intuitive Methode, die fantastische Möglichkeiten 
+zum Testen von Varianten bietet. Mit Marionette wurde das erste und einzige 
+plattformübergreifende grafische Scripting-Tool für die Baubranche vollständig in 
+Vectorworks integriert.
+Marionette basiert auf der populären Script-Sprache Python. Damit erstellen Sie 
+kleine oder auch komplexe Scripts, ohne auch nur eine Zeile Code zu schreiben. 
+Mit Marionette lassen sich im Handumdrehen einfache parametrische Objekte er­
+zeugen oder hundert Varianten einer organischen Struktur testen.
+Weitere Informationen finden Sie unter www.computerworks.eu/marionette
+In der Marionette Galerie finden Sie eine Übersicht von Ergebnissen, die Vector­
+works-Anwender mit Marionette erstellt haben. Aus der Galerie leitet sie ein Link di­
+rekt ins Marionette-Forum. Dort finden Sie Beschreibungen und Dateien der Skripte.
+
+
+===== PAGE 35/35 =====
+©  Alle Rechte vorbehalten
+DEUTSCHLAND UND ÖSTERREICH
+ComputerWorks GmbH
+Schwarzwaldstraße 67
+79539 Lörrach
+Tel. +49 (0) 76 21 / 40 18 0
+info@computerworks.de
+www.computerworks.de
+SCHWEIZ
+ComputerWorks AG
+Florenz-Strasse 1e
+4142 Münchenstein
+Tel. +41 (0) 61 337 30 00
+info@computerworks.ch
+www.computerworks.ch
+Hersteller:
+Vectorworks ist eine eingetragene Marke von Vectorworks, Inc.  
+Vectorworks, Inc. ist Teil der Nemetschek Group.
+Systemanforderungen:
+Für Windows und Mac OS.
+www.computerworks.eu/vwsystemvoraussetzungen

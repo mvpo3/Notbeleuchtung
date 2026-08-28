@@ -1,0 +1,321 @@
+
+
+===== PAGE 1/5 =====
+ÖVE/ÖNORM
+ 
+E 1100-2
+Ausgabe: 2005-05-01
+ 
+Auch Normengruppe 330 
+ 
+Ungleich (NEQ) HD 472 S1:1989 + A1:1995 +  
+Corrigendum 2002 
+ 
+Ersatz für Ausgabe 2002-11 
+ 
+ICS  29.020 
+Normspannungen 
+Teil 2: Nennspannungen für Niederspannungs-
+Stromverteilungssysteme 
+ 
+Standard voltages – Part 2: Nominal voltages for low-voltage supply systems 
+ 
+Tensions normalisé – Partie 2: Tensions nominales des réseaux basse tension 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 1100-2 Seiten 2 bis 5 
+Fach(normen)ausschuss
+FA/FNA E
+Elektrische 
+Niederspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2005. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, 1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, 1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 7
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+1 von 5
+www.ris.bka.gv.at
+
+
+===== PAGE 2/5 =====
+Seite 2 
+ÖVE/ÖNORM E 1100-2 
+Inhaltsverzeichnis 
+Vorbemerkung ....................................................................................................................................................... 2 
+1 
+Anwendungsbereich ............................................................................................................................... 3 
+2 
+Begriffe ..................................................................................................................................................... 3 
+3 
+Genormte Werte der Nennspannungen ................................................................................................. 3 
+3.1 
+Allgemeine Übersicht................................................................................................................................. 3 
+3.2 
+Nennspannung in öffentlichen Niederspannungs-Verteilungsnetzen......................................................... 4 
+Anhang A (normativ): Ablauf der Umstellung zur Einführung der harmonisierten Nennspannung............... 5 
+Anhang B (normativ): Interpretation der Nennspannungs-Angaben in Publikationen.................................... 5 
+Anhang C (informativ): Literaturhinweise ........................................................................................................... 5 
+ 
+Vorbemerkung 
+Auf der Grundlage der IEC Publikation 60038:1983, hat CENELEC einen Teil der Begriffe sowie die Nennspannungen und 
+deren Harmonisierung für die Niederspannungs-Stromverteilungssysteme in CENELEC HD 472 S1:1989 übernommen. 
+Dieses Dokument wurde von CENELEC im Februar 2002 korrigiert.  
+Die ÖNORM E 1100 wurde im Jahre 1990 in zwei Teilen neu aufgelegt: Teil 1 beinhaltet IEC 60038, ausgenommen die 
+Niederspannungs-Wechselstromnetze, Teil 2 beinhaltet CENELEC HD 472 S1:1989 und die zugehörige Tabelle 1 aus  
+IEC 60038. 
+CENELEC hat mit der Annahme von HD 472 S1:1989 beschlossen, die bis zu diesem Zeitpunkt bestehenden, länderweise 
+verschiedenen Nennspannungen für Niederspannungsnetze unter Anwendung von Übergangsregelungen auf 3N 5400 V 
+(5230 V) zu harmonisieren. Nach den Regeln des CENELEC sind alle Mitgliedsorganisationen verpflichtet, dieses 
+Harmonisierungsdokument in ihrem nationalen Normenwerk zu berücksichtigen und entgegenstehende Bestimmungen 
+zurückzuziehen. Die vorliegende ÖVE/ÖNORM stellt die nationale Umsetzung von CENELEC HD 472 S1:1989 sowie des 
+zugehörigen Corrigendums Februar 2002 für Österreich dar. Der wesentliche Schritt für die damit beabsichtigte 
+Harmonisierung der Nennspannungen in Europa wurde im Jahre 1995 bereits erfolgreich vollzogen. 
+Für die Niederspannungen sind in IEC 60038 und CENELEC-HD 472 S1:1989 die Spannungswerte 380/220 V und  
+415/240 V für Drehstromnetze der elektrischen Energieversorgung durch einen einzigen, weltweit genormten Einheitswert 
+400/230 V ersetzt worden. Durch die für eine Übergangszeit – aufgrund des Corrigendums nunmehr bis zum Jahre 2008 – 
+vorgesehenen Toleranzen wird erreicht, dass für 380/220 V bemessene elektrische Betriebsmittel bis zum Ende ihrer 
+Lebensdauer sicher betrieben werden können. 
+ 
+Auf Grund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den einer 
+ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den jeweils 
+geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+–  Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum 
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM 
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte 
+aktuelle Stand zu berücksichtigen. 
+–  Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+2 von 5
+www.ris.bka.gv.at
+
+
+===== PAGE 3/5 =====
+Seite 3 
+ÖVE/ÖNORM E 1100-2 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM ist für öffentliche Niederspannungs-Verteilungsnetze mit Nennspannungen von 5100 V bis 51000 V 
+sowie für die Betriebsmittel, die mit diesen Netzen verbunden sind, sowie sinngemäß auch für private 
+Niederspannungsnetze anzuwenden. 
+Diese ÖVE/ÖNORM ist nicht für Signal- oder Messspannungen und nicht für Spannungen von Bauelementen und Teilen in 
+elektrischen Geräten oder Teilen von Betriebsmitteln vorgesehen. 
+Die wesentlichen Merkmale der Versorgungsspannung an der Übergabestelle zum Kunden in öffentlichen 
+Niederspannungsnetzen unter normalen Betriebsbedingungen sind in ÖVE/ÖNORM EN 50160 beschrieben. 
+2 
+Begriffe 
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten die folgenden Begriffe: 
+Bei den in dieser ÖVE/ÖNORM angegebenen Spannungen handelt es sich um Effektivwerte. 
+2.1 
+Nennspannung 
+Spannung, nach der ein Netz oder ein Betriebsmittel benannt ist und auf die bestimmte Betriebseigenschaften bezogen 
+werden 
+Bei Betriebsmitteln ist dies die Spannung, mit der das Betriebsmittel gekennzeichnet ist und die den geltenden 
+Prüfbestimmungen für das Betriebsmittel zugrunde gelegt wurde. 
+Es gilt als Konvention, dass Betriebsmittel unabhängig von den in den jeweiligen Prüfbestimmungen angegebenen 
+Prüfspannungen in Netzen gemäß dieser ÖVE/ÖNORM hinsichtlich ihrer Sicherheit uneingeschränkt und hinsichtlich ihrer 
+Funktion zufrieden stellend betreibbar sein müssen. 
+2.2 
+höchste Spannung eines Netzes 
+höchster Spannungswert, der unter normalen Betriebsbedingungen zu einem beliebigen Zeitpunkt an irgendeiner Stelle des 
+Netzes auftritt 
+Ausgenommen 
+sind 
+transiente 
+Spannungen 
+(z.B. 
+infolge 
+von 
+Schaltvorgängen 
+im 
+Netz), 
+zeitweilige 
+Spannungsschwankungen und anormale Betriebszustände. 
+2.3 
+niedrigste Spannung eines Netzes 
+niedrigster Spannungswert, der unter normalen Betriebsbedingungen zu einem beliebigen Zeitpunkt an irgendeiner Stelle 
+des Netzes auftritt 
+Ausgenommen 
+sind 
+transiente 
+Spannungen 
+(z.B. 
+infolge 
+von 
+Schaltvorgängen 
+im 
+Netz), 
+zeitweilige 
+Spannungsschwankungen und anomale Betriebszustände. 
+2.4 
+Übergabestelle 
+Stelle, an der elektrische Energie vom Verteilungsnetz an die Verbraucheranlage übergeben wird 
+3 
+Genormte Werte der Nennspannungen 
+3.1 
+Allgemeine Übersicht 
+Die weltweit genormten Werte der Nennspannungen sind in Tabelle 1 angeführt. In dieser Tabelle schließen die Drehstrom-
+Vierleiternetze und die Einphasen-Dreileiternetze auch Einphasen-Stromkreise (Anschlüsse, Abzweige u.dgl.) mit ein, die mit 
+diesen Netzen verbunden sind. 
+In Tabelle 1 sind die höheren Werte Spannungen zwischen den Außenleitern und die niedrigeren Werte Spannungen gegen 
+den Neutralleiter. Wenn nur ein Wert angegeben ist, bezieht er sich auf Dreileiternetze und gibt die Spannung zwischen den 
+Außenleitern an. 
+Höhere Spannungen als 400/230 V sind im Allgemeinen für die Anwendung in großen Industriebetrieben und Großbauten 
+vorgesehen. 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+3 von 5
+www.ris.bka.gv.at
+
+
+===== PAGE 4/5 =====
+Seite 4 
+ÖVE/ÖNORM E 1100-2 
+ 
+Tabelle 1 – Nennspannungen für Wechselstromnetze sowie 
+zugehörige Betriebsmittel 
+Drehstrom-Vierleiter- oder 
+Dreileiternetze 
+Einphasen-Dreileiternetze1) 
+Nennspannung 
+V 
+– 
+240/1201) 
+2302) 
+– 
+400/230 
+– 
+480/2771) 
+– 
+690/4003) 
+– 
+1000 
+– 
+1) Netze dieser Art sind in CENELEC HD 472 S1:1989 
+nicht erwähnt. 
+2) Nur für Sonderzwecke. 
+3) Der Übergang von der Nennspannung 660/380 V auf  
+690/400 V erfolgt analog zur Harmonisierung auf die 
+neue Nennspannung 400/230 V. 
+ 
+Für alle nicht unter 3.2 genannten Nennspannungen wird empfohlen, dass unter normalen Netzbedingungen die Spannung 
+an den Übergabestellen um nicht mehr als ± 10 % von der Nennspannung abweicht. 
+Es wird darauf hingewiesen, dass im Bereich zwischen der Übergabestelle und den Betriebsmitteln des Verbrauchers ein 
+zusätzlicher Spannungsabfall auftritt, der nicht Gegenstand der vorliegenden ÖVE/ÖNORM ist. 
+3.2 
+Nennspannung in öffentlichen Niederspannungs-Verteilungsnetzen 
+Bei der Nennspannung 400/230 V beträgt in Vierleiter-Drehstromnetzen die Spannung zwischen einem Außenleiter und dem 
+Neutralleiter 230 V und die Spannung zwischen zwei Außenleitern 400 V. 
+Die Übergangszeit für den Gesamtvorgang sollte so kurz wie möglich sein und darf nunmehr das Jahr 2008 nicht 
+überschreiten (Siehe Anhang A). 
+ANMERKUNG 1: 
+Bis zum 31. Dezember 1995 waren die 380/220 V-Netze zunächst auf 400/230 V +6 % /-10 % zu bringen. 
+In Ländern, die 415/240 V-Netze betrieben haben, wurde gleichzeitig die Spannung auf 400/230 V +10 % / -6 % 
+gebracht. 
+ANMERKUNG 2: 
+Bis zum Ende des Jahres 2008 sollten die Spannungstoleranzen 400/230 V ± 10 % erreicht sein. 
+ANMERKUNG 3: 
+Für den Zeitraum nach dem Jahre 2008 ist international eine Verkleinerung der Toleranzen in Erwägung gezogen. 
+Dieser Absichtserklärung wurde von Österreich wegen fehlender Relevanz zum normativen Inhalt des CENELEC 
+HD 472 S1:1989 nicht zugestimmt. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+4 von 5
+www.ris.bka.gv.at
+
+
+===== PAGE 5/5 =====
+Seite 5 
+ÖVE/ÖNORM E 1100-2 
+Anhang A (normativ):  Ablauf der Umstellung zur Einführung der harmonisierten 
+Nennspannung 
+Nachstehend wird der Ablauf der Umstellung in Österreich zusammenfassend dargestellt. 
+A.1 
+Netzsysteme 
+Öffentliche Niederspannungs-Verteilungsnetze sind ausschließlich als Drehstrom-Vierleitersysteme, früher 3N 5380/220 V, 
+nunmehr 3N 5400/230 V, zu errichten. Zum Zeitpunkt der vorangegangenen Ausgabe dieser ÖVE/ÖNORM im Jahre 1990 
+vorhandene Versorgungsnetze 3 5220 V oder 3N 5220/127 V durften als 3 5230 V weiter betrieben werden; Anschlüsse 
+mit 5127 V waren auf 5230 V umzustellen.  
+Private Niederspannungsnetze dürfen als Drehstrom-Vierleitersysteme 3N 5400/230 V und für Sonderzwecke auch als 
+Drehstrom-Dreileitersysteme 3 5400 V und 3 5230 V errichtet werden. 
+A.2 
+Nennspannungen der Netze und höchste und niedrigste Spannung eines Netzes an der 
+Übergabestelle 
+Die in 3.2 angegebenen Werte für die Nennspannung und die höchste und die niedrigste Spannung an den Übergabestellen 
+von den öffentlichen Niederspannungs-Verteilungsnetzen zu den Verbraucheranlagen in den verschiedenen Zeitabschnitten 
+der Umstellung sind in Tabelle A.1 enthalten. 
+ 
+Tabelle A.1 
+Zeitraum 
+Nennspannung 
+höchste Spannung 
+niedrigste Spannung 
+bis 31. Dezember 1995 
+380/220 V 
+418/242 V 
+342/198 V 
+ab 1. Jänner 1996 1)  
+bis 31. Dezember 2008 2) 
+400/230 V 
+424 bis 440/244 bis 253 V 
+360/207 V 
+ab 1. Jänner 2009 2) 
+400/230 V 
+440/253 V 
+360/207 V 
+1) Letzter Termin für das Erreichen der Werte für die niedrigste Spannung. Es war empfohlen, das in dieser 
+Zeile angegebene Spannungsband bereits ab 1. Jänner 1993 einzuhalten. 
+2) nach Maßgabe von ÖVE/ÖNORM EN 50160. 
+ 
+A.3 
+Nennspannung der Betriebsmittel 
+Seit 1. Jänner 1993 werden neue Betriebsmittel für 400/230 V ausgelegt und entsprechend gekennzeichnet. 
+Die Übergangszeit, in der Betriebsmittel mit einer Nennspannungs-Kennzeichnung 380/220 V noch in Verkehr gebracht 
+werden durften, war der jeweils gültigen Elektrotechnikverordnung zu entnehmen. 
+Vor dem 1. Jänner 1993 durften Betriebsmittel dann mit 400/230 V gekennzeichnet werden, wenn sie geeignet waren, auch 
+unter den Bedingungen von Tabelle A.1, Zeile „bis 31. Dezember 1995“, betrieben zu werden. 
+Auch nach Abschluss des Umstellungsvorganges dürfen Betriebsmittel, die mit 380/220 V gekennzeichnet sind, weiter 
+betrieben werden. 
+Anhang B (normativ): Interpretation der Nennspannungs-Angaben in Publikationen 
+In allen österreichischen Normen und elektrotechnischen Bestimmungen sind – wenn nicht ausdrücklich etwas anderes 
+angegeben ist – Angaben über die Nennspannung der Niederspannungs-Verteilungsnetze und Betriebsmittel entsprechend 
+den in Tabelle A.1 angegebenen Werten zu lesen. Dies gilt auch für Verträge über die Lieferung elektrischer Energie u.Ä. 
+Anhang C (informativ): Literaturhinweise 
+IEC 60038 
+IEC standard voltages 
+CENELEC HD 472 S1 
+Nennspannungen für öffentliche Niederspannungs-Stromverteilungssysteme 
+ÖVE/ÖNORM EN 50160 
+Merkmale der Spannung in öffentlichen Elektrizitätsversorgungsnetzen 
+ÖVE/ÖNORM EN 61000-4-30 Elektromagnetische Verträglichkeit (EMV) – Teil 4-30: Prüf- und Messverfahren –  
+Verfahren zur Messung der Spannungsqualität  
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+5 von 5
+www.ris.bka.gv.at

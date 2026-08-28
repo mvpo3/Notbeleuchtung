@@ -1,0 +1,3259 @@
+
+
+===== PAGE 201/298 =====
+1
+The WBLOCK
+Command
+You
+can
+insert a
+drawing
+file
+onto your current drawing at any
+time.
+184
+CHAPTER TEN
+Once the block or drawing has been inserted into the file, it is referred to as the block
+instance. The original still exists in memory, but a copy ofit has been put in the current
+drawing. This is similar to a rubber stamp and the stamp impression.
+Any file on disk can be inserted onto the current drawing. All layers, dimension styles
+and text files associated with this block will also be copied to the receiving file.
+Blocks created with the BLOCK command exist within the drawing and cannot be
+accessed except within the base drawing. This is why they are referred to as internal
+blocks.
+The WBLOCK command creates a separate file with the extension .dwg from a portion
+ofyour current drawing. For example, ifyou have drawn the steno chair from Figure
+10.2 on the desk layout and then want to copy it onto another layout use WBLOCK.
+WBLOCK should not be blocked with BLOCKfirst.
+WBLOCK is used when you want to take only a portion ofan existing file and use it on
+another file. Because the wblocks exist outside ofthe current file, they are referred to
+as external blocks.
+An example ofWBLOCK use is the ex-
+traction of a North arrow from one
+drawing for use on another drawing, as
+seen in Figure 10.4.
+To start, you must open the file that con-
+tains the information that you would
+like to export as a block. Then access the
+WBLOCK command through the com-
+mand line.
+Figure 10.4
+Command:-WBLOCK
+Enter name of existing block or
+[=(Block=olltput
+file)/*(whole
+drawing)]
+<define new
+drawing>:~ (you will be taken to a
+file menu)
+Block name
+(or
+?) :A:NORTH
+Specify insertion base point: (pick 1)
+Select objects: (pick 2)
+Specify opposite corner: (pick 3)
+Select obj ects : .,-.1
+Once you have chosen the WBLOCK command, the Create Drawing File dialog box
+will be invoked. Enter the name of the file in the File Name box.
+When you press.J, the dialog box will disappear and the command will continue.
+When you are identifying the file name, be sure to type in the drive or directory as well.
+Ifnot, the WBLOCK will go onto the default directory, and no-one will know how to get
+back to it.
+To place this file on another drawing, open the new drawing and use -INSERT or the In-
+sert dialog box.
+The North arrow will be inserted as a block. As in a regular insert, all layers, dimension
+styles and text files associated with this block will also be copied to the receiving file.
+
+
+===== PAGE 202/298 =====
+Figure 10.6
+-1
+1.4000 t-
+o
+Copy/Paste
+Another way to transfer graphics and data from one file to another is with copy and
+paste. Copy is an editing function that is global throughout most computer applica-
+tions. It is found under the Edit pull-down menu, as seen in Figure 10.5. The COpy
+command in AutoCAD is found under the Modify menu. They are not the same com-
+mand.
+CTRL+V
+CTRL+SHIFT+V
+Del
+CTRL+A
+Figure 10.5
+In Figure 10.5 the Copy with Base Point command from the Edit menu is being used.
+This is a standardcomputer command for copying text, graphics, or indeed anything at
+all from one screen to another. Copy with Base Point is used so that you can align the
+data with the receiving file. Once the data have been copied, switch to the receiving
+file and insert it with Paste.
+The function Copy with Base Point does not work the
+same way as the WBLOCI( command. In WBLOCK the
+data are taken as a closed unit. None ofthe infonnation
+within the block is affected by the parameters ofthe re-
+ceiving file.
+InFigure 10.6 a dimension has been placed on the steno
+chair to be copied along with the file to show the differ-
+ence between the WBLOCK command and the copy
+paste function.
+Figure 10.7 shows two steno chairs. Both have been taken from the first file andplaced
+into a second fil e.
+-1
+1.4000 r
+~ 1//
+o ' )
+,) 0
+WBLOCK
+Figure 10.7
+a
+COPY/PASTE
+b
+In Figure 10.7a the chair was first blocked using WBLOCK and thus there is a separate
+file called Steno in the directory. The dimension, in the layerDIM and set up according
+to a dimension style called Furniture, was blocked along with the graphics. When in-
+sertedinto the receiving file, the dimension shows up exactly as it was in the original.
+Figure IO.7b shows a chair and dimension that have been placed with Copy/ Paste. In
+the receiving file there was a layer called DIM and a dimension styIe called Furniture.
+Blocks and Wblocks
+185
+
+
+===== PAGE 203/298 =====
+The MINSERT
+Command
+Editing Blocks
+The dimension with the CopylPaste chair is updated to the receiving file's parameters.
+It is not a block, there is no file on the directory, all objects are individual.
+Inserting Existing Drawings as Blocks
+The origin or 0,0 ofthe drawing is the default base point for drawings inserted into the
+current drawing. To change the default, open the original drawing and use BASE to
+specify a different insertion base point. AutoCAD uses the new base point the next
+time the drawing is inserted.
+MINSERT is used to insert multiple block instances
+of a block in a rectangular array. The command
+melds the INSERT command with the ARRAY
+cOlnmand. If used properly, this can be a very
+useful command. It is only accessed through the
+command line.
+Command:MINSERT
+Enter block name or
+[?]<STENO>:~
+Specify insertion point or
+Figure 10.8
+[Scale/X/Y/Z/Rotate/PScale/PX/
+PY/PZ/PRotate] : (pick 1)
+Enter X scale factor,
+specify
+opposite corner,
+or
+[Corner/XYZ]:~
+Y scale factor
+<use
+X scale
+factor>:~
+Specify rotation angle <0>:90
+Enter number of rows
+(----)<1>:3
+Enter number of columns
+(
+):6
+Enter distance between rows
+Or specify unit cell
+(---) :4'
+Specify distance between columns:5'
+Minserted blocks like those shown in Figure 10.8 cannot be individually edited or ex-
+ploded. If you erase one, you erase them all.
+Once a block has been placed in a file, it is edited as a single entity. An entity select
+pick will pick the whole block. Ifyou pick up one object on the block, the whole block
+will be selected. If you erase a block, only one pick point is needed to identitY the
+block. Move the block back to its original position using U.J.
+Ifyou want to edit or change the block once it has been inserted, you will need to return
+the block to its original objects. The EXPLODE command is used for this purpose.
+The EXPLODE Command
+The EXPLODE command reduces an object to its original entities. A block can be ex-
+ploded into its original parts, apolyline or polygon canbe exploded into line or arc seg-
+ments, and a dimension can be exploded into lines, arrowheads, and text.
+186
+CHAPTER TEN
+....
+. r
+The command line equivalent is EXPLODE.
+..
+
+
+===== PAGE 204/298 =====
+Title blocks are usually saved with only the general information such as scale, date,
+etc., and not the information regarding the specific drawing. If you would like to
+change any of the information already on the drawing, use EXPLODE then DDEDIT.
+Updating Blocks
+There can be only one definition of a block under each specific name within a file.
+Should you change or update the original block, the new block instances will be the
+new block and the old block instances will update. This can be very useful, and very
+troublesome.
+Figure 10.9 shows four desk units and four stenochairs. These were inserted as inter-
+nal blocks making them easier to Inanipulate. The client wants a chair with arm rests
+on one desk, so the block is exploded.
+Command:EXPLODE
+Select objects: (pick the block instance 1 Figure 10.9)
+The block of the chair will now revert back to the original lines and arcs.
+Figure 10.9
+Figure 10.10
+Figure 10.11
+Blocks, Wblocks,
+Color, and
+Layers
+Figure 10.10 shows arm rests being added.
+In Figure 10.11 the chair is blocked again using the original name. Because this is the
+typed-in version, the original chair disappears. The other chairs have been updated
+with arms.
+Command:-BLOCK
+Enter block name or
+[?] :STENO
+Block STENO already exists. Redefine it?<N>:Y
+Insertion base point:MID of (pick 1)
+Select objects: (pick the objects)
+You may have noticed that the default layer is 0, and that this layer cannot be renamed
+or deleted. Layer 0, the universal layer, cannot be changed because it is used
+extensively with regard to ByBlock and ByLayer settings for color and linetype. The
+layers blocks sit on and the color of the block can be set either by layer or by block.
+Once you have created a number of blocks or wblocks, file management becomes
+more difficult because you must remember the directory and the layers used.
+Ifitems are created on a layer other than 0 in a wblock, these new layers will be added
+to the list of layers in tht~ current file when the wblock file is inserted.
+All objects on layer 0 will be automatically placed on the current layer ofthe drawing
+on screen, and will assume the current layer color and linetype when the block is in-
+serted. These are not necessarily added by layer. If color or linetype are not set by -
+layer, the current setting overrides the layer setting. To check to see what the current
+settings are type in STATUS.
+Blocks and Wblocks
+187
+
+
+===== PAGE 205/298 =====
+'F
+!a~
+=;l!'--
+-u--
+Analog
+AutoCAD
+Bas,c
+CMOS
+ElectrlC<ll
+Integrated...
+Te>tS\l'~a
+Electronics...
+Integrated.
+POwef_dwg
+f
+!';fiAtl ..
+~
+rlJi
+Fa~tene[s .
+Fasteners -
+Home - Space
+House
+HVAC-
+Melric.dwg
+USdwg
+PJanner.dwg oesigneLdwg
+HeatingVe.
+~-
+~
+~
+'''--
+~!iii
+188
+CHAPTER TEN
+Ifyou want a particular wblock to always have a specific layer, linetype, and color, as-
+sign it explicitly; do not leave it on layer O.
+When in doubt, use 0,0 as the insertionpoint. Ifall ofthe files are created at a 1: 1scale,
+the data will always fit.
+The BURST Command
+The BURST command works like the EXPLODE command, but it allows attributes to re-
+main as "values" instead of "tags". BURST is not available in all versions of Release
+2006.
+Removing Unwanted Blocks with the PURGE Command
+Each time a block or drawing file (wblock) is in-
+serted into a file, a copy ofit is placed in the draw-
+ing memory or default area. If you want to clean
+your file, you must PURGE the blocks. The
+PURGE command will erase all unused blocks,
+layers, text styles, linetypes, etc. from a file. Any
+blocks, layers, etc. that have been brought into the
+file but never used can be purged. It erases the in-
+formation from the file defaults and settings.
+When a drawing file or wblock is inserted, then
+erased, the copy of the wblock remains in the
+memory in case it is needed again. The original
+file must be purged in order to accept a new file.
+PURGE removes unused named references, such
+as unused blocks or layers from the database.
+Command: PURGE
+Enter type of unused objects to purge
+[Blocks/Dimstyles/LAyers/LTypes/PLotstyles/SHapes/textSTyl
+es/Mlinestyles/All] :A
+Enter names to purge <*>:
+The AutoCAD Design Center
+AutoCAD has an extensive database ofsaved
+blocks for your use saved in the ADCENTER.
+Use ADCENTER or Ctrl2 to access the design
+center. Under the Folders tab you will find a
+variety of categories for saved blocks.
+Pick the category that you would like to
+choose from, then pick the block that you
+need. Each block has a logical insertion base
+point. They are all drawn to a 1:1 scale.
+Some of these blocks are dynamic blocks.
+Figure 10.12
+Dynamic Blocks
+Autodesk has provided seven new software upgrades for AutoCAD since 2000. In
+2006, the big feature was dynamic blocks. For those who need such things, dynamic
+blocks provide flexible blocks that can be placed within drawings. There are tutorials
+on how to make and use these blocks under the Block Edit icon. Essentially they allow
+you to create a door, window, bolt, etc. that can be sized dynamically when placed on a
+drawing.
+
+
+===== PAGE 206/298 =====
+79
+specify
+opposite
+corner,
+or
+[Scale/X/Y/Z/Rotate/Pscale/PX/PY/
+Command:-INSERT
+Enter block name:chair
+Specify insertion point or
+PZ/PRotate] : (pick )
+Enter
+X
+scale
+factor,
+If you use the command line, the
+chair will
+disappear from the
+screen. Re-insert it.
+Now draw a table 1800mm by
+1250mm and insert the chairs
+around it.
+The command line equivalent is -BLOCK.
+Command:-BLOCK
+Enter block name or
+[?] :chair
+Specify insertion base
+point:O,O
+Select objects: (pick the chair and dimensions)
+Select objects:.J
+Make layer0current, then use BLOCK to create
+a block of this data.
+Make sure the center ofthe bottom left circle is
+at 0,0 - the origin.
+Create a dimension styIe called Furniture. Set
+it to an overall scale of 10 under the Fit tab and
+two decimal places of accuracy under the Pri-
+mary Units tab.
+Dimension the part on the Dims layer.
+Draw in the chair as shown on the Objects layer.
+In this tutorial we will draw a standard chair, block it, insert it, insert a title block onto
+it, and then see the difference between this and Copy/Paste.
+Use STARTUP or acadiso.dwt to start a metric
+drawing. Create a layer called Dims and another
+called Objects.
+Step]
+Step 2
+Step 3
+The insertion base
+point is REALLY
+important!
+[Corner/XYZ] :-1
+Y scale factor <use X scale factor>:-I
+Specify rotation angle <O>:90.J
+You can use MIRROR and ROTATE to place the
+chairs. Notice that the chair on the left has the dimen-
+sions in backwards -
+it was inserted with a 180- de-
+gree rotation. The bottom two chairs were mirrored.
+Freeze the Dims layer.
+Blocks and Wblocks
+189
+
+
+===== PAGE 207/298 =====
+Step 4
+Save the file as Dining room.
+StepS
+Open a new file in metric units. Create the title block below and name the file
+ChaplOtitle. (Draw the lines and the text of the title block, but do not dimension it.)
+m
+The outside line represents the
+outline of a 297 x 210 Inm pa-
+per. The title block fits inside
+it.
+Save the file as ChaplOtitle.
+-
+I
+-
+~
+I
+I
+1-
+......--.-- ..
+~,
+..- .-- F
+D
+When scaling, make sure that the scale is rea-
+sonable; 1:10 or 1:20, not 1: 17. For this drawing
+use 20.
+Now go back to the chairs and INSERT the title block in. Make sure you have layer 0
+current. If not, the title block will be placed in the current layer and will take on that
+layer's properties. Iflayer Dims is current (now frozen), the title block will simply not
+appear.
+You will notice that the title block is much too
+small.
+The scale that you will print the file at on a 297
+~
+by 210 sheet will be detennined by the scale that
+you must use to expand the title to fit the draw-
+ing.
+Step 6
+Step 7
+The title block here is scaled by 20. This means
+that when the title block is printed at its original
+size, the table and chairs will be 1/20 of their
+size or a scale of 1:20.
+Scales are discussed in Chapter 1] .
+Freeze the Dims layer. Copy one chair over to
+the side away from the table setting.
+---
+0
+II:~,
+"I"'" I......
+I
+SCAIo r--
+Step 8
+Now explode the chair that is not at the table,
+and add arms as shown.Then block the chair under the original name.
+Command:EXPLODE
+Select objects: (pick the chair)
+r
+366---,
+R2-4
+I
+2-4
+Draw in the anns as shown.
+Command:-BLOCK
+Enter block name or
+[?] :Chair
+Block Chair already exists. Redefine
+it?<N>:Y
+Insertion base point:CEN of (pick 1)
+Select objects: (pick everything)
+190
+CHAPTER TEN
+
+
+===== PAGE 208/298 =====
+Your chairs will now have updated to include the
+anTIS.
+This can be a very dangerous function. Always
+backup your files every few hours in case you
+really make a mess. Three copies is always best. 0
+0
+.-
+1-
+~ r-
+R579
+Si!73
+r
+L~+--
+We are now going to take a look at the difference betweenWBLOCK and Copy /Paste.
+Zoom into the chair placed away from the table or
+insert one away from your drawing. Thaw the
+R24 r
+366i
+Dims layer. EXPLODE the block.
+24 ~---...:...
+Make Dims current and add all the dimensions as
+shown here. Make sure you use the Furniture di-
+mension style.
+Command :WBLOCK
+Enter name of existing block or
+[=(Block=output
+file)/* (whole drawing)]
+<define new drawing>:TESTCHAIR
+Block name
+(or
+?):~
+Specify insertion base point: (pick the 0,0 area)
+Select objects: (pick all the objects show in Step 9)
+Select objects:.J
+Command:U"J
+Make a text style called Label and set the font to
+GothicE - (English Gothic). Add the text 0,0. Then
+WBLOCK it. Use U.J to bring it back.
+Step 9
+If you WBlOCK an existi ng
+block
+and
+use
+the
+same
+name, it will be unusable.
+AutoCAD will not be able to
+find the file. Always explode
+it or use another name.
+U will bring back your data but maintain the wblocked file.
+Step 10
+Finally we are going to open a new file, INSERT one chair from the hard drive and
+Copy/Paste another from the existing file. You will have two chairs on screen.
+Open a new file in metric units. Make a Dimension style called Furniture. Set the Fit
+size to 10. Underthe Primary Units tab, have no decimalplaces underprecision. Under
+the Alternate Units tab, tum on the Alternate Units. Make it current.
+r
+366---.,
+R24
+I
+24~----':'"
++ O,OR73
+46
+R579
+Make a text style called Label and set it to Gothic E.
+INSERT the file Testchair.
+Now go back to your Dining room file and under the Edit menu pick Copy. Select the
+objects shown in Step 9.
+Go to the new file and pick Paste from the Edit menu. See the difference? The dimen-
+sions are updated to the current file with Copyl Paste, the text style is updated inboth.
+Remember: Afile is nota block until it is insertedinto anotherfile. You do not need to
+block a drawing to insert it into another file.
+Blocks and Wblocks
+191
+
+
+===== PAGE 209/298 =====
+Exercise 10 Practice
+Use INSERT to compile a set of drawings as shown here.
+Don't change the size of the floor plan or elevation, change the title block.
+A third page could include details, Heating, Ventilating and Air Conditioning
+(HVAC), a Section, or electrical plans.
+•
+t
+II 0 Ff~
+Pl'li5rl% l lIPidF"
+All flevatl:ro
+I.fi¥.<:k3[;\"""JI">:B" d~ III
+2, fav8Wo,41, ALtn (I~)
+?,~rrtmPJ"",(ra.pe)
+4, Sif't,AJ1Jlr1 (1aJPi')
+'7. W~. a1d Oro-> In
+N.>bJralO<l<.
+North
+5cuth
+(f)
+1"'"
+Z
+1!J";;'j'
+(,"""
+<:(
+12'
+/5._....p'
+.....J
+0-
+cr:
+1/:2"EJ""aI
+0
+r"""....,f...
+0
+2"16"""".2~"OC
+~
+-.J
+R-:2(}(6"J """""'"
+~
+I?ln"'1Rron
+LL
+6 MlPd<VJJ,
+D~"""=F.bh
+(J)
+0
+g~..:::
+G.ta"D....
+(J)-- co
+f~iJ.>Jl.
+"0"'-
+·-°8
+Cl)Q)
+(J) ... c
+O::~.E
+Oro=
+wI E
+J!!(\j tlS
+Q..u>I
+~".::J
+MI'J""'-~~
+Cmtracta- .. o.t.I
+f~.Ala"..,>~
+!gn
+1"1'-'-Qu
+6'-2"
+'0'-0"
+B"'I"
+Drawlflgs Pc_red By
+'0'
+_6:tariC
+5ecund rim-
+rlrst rica-
+!l(5) 25- 123
+ll*
+~
+r></w""
+DalItfll
+PIW:
+1910019,
+192 CHAPTER TEN
+
+
+===== PAGE 210/298 =====
+Exercise 10 Mechanical
+Create the template, bushing and jiglegs as shown.
+The BLOCK them and place them onto the part to make the assembly.
+4.00
+¢3.00
+¢2,50
+-- 3.00 -------I
+0,50
+f------- 6,00 ------------.
+RO,25
+¢O,50
+¢0,60
+¢O,60
+¢O,90
+~
+;O'25
+¢O.22
+/':..
+¢0,45
+,,:/
+¢0,75
+950.90
+LOCK SCREW BUSHING
+PRESS FIT BUSHING
+¢O,30
+¢0,45
+Assembled Part
+ASSEMBLY DRAWINGS
+MACHINES AND MECHANICAL UNITS ARE
+GENERALLY COMPOSED OF NUMEROUS
+PARTS. A DRAWING THAT SHOWS ALL
+OF THE PARTS ASSEMBLED IN THE
+COMPLETED SHAPE IS CALLED AN
+ASSEMBLY DRAWING.
+AN ASSEMBLY DRAWING USUALLY
+SHOWS EACH INDIVIDUAL COMPONENT
+AS WELL AS ITS RELATION TO THE
+COMPILED PART AS SHOWN ON PAGE
+196. SOME ASSEMBLIES ARE COMPILED
+UNITS IN THEMSELVES t BUT WHEN
+FORMING PART OF ANOTHER ASSEMBLY t
+THESE ARE CALLED SUB-ASSEMBLIES,
+AS IN A DRIVE SHAFT IN A MOTOR.
+ASSEMBLIES CAN ALSO BE FOUND IN
+CABINETRY t FURNITURE, AND MODULAR
+DESIGNS.
+Blocks and Wblock
+193
+
+
+===== PAGE 211/298 =====
+Exercise 100
+Architectural
+This award winning building by Brian McKibbin illustrates the use
+of sections and details in creating an elevation and construction drawings.
+oo
+V
+-..
+.....
+. "'~
+5CALE::
+1:25>
+POOllNC1 t7~fAI~
+100mm CONmfe -
+'.-.;';~.;~.~'. f.:";.:" :. :';~~::,.•-
+200 mm Gl2AVEL -
+3796
+I
+I
+I
+I
+§
+N.
+VJ
+I
+1360
+I
+1400
+CD
+~
+C\J
+Cl
+c=:
+(I)
+ru
+'"
+()'I
+2ND FLDOR
+CD
+CD
+""J7
+9l:ruct:ITa
+II
+IWI
+V)
+(MIO-OOI7A J
+...0
+Bli
+~
+eCO-BWCK r;lCNJ, I
+D D
+D
+If)v
+CD
+C\J
+~
+GROUND fL
+.;~
+~
+-. ..
+1
+.-
+..
+"~."
+",. §~
+~
+~:
+t
+~.
+~..
+"
+~
+,
+..~~~~:,.:)
+.~.: ::.•...
+t...··~~_..'i.;i
+3990
+.1
+5~C1l0N @ N,f, CORNfR
+scale: I:?O
+7
+\D
+\D
+108
+ECO·~OCK ~AM 2
+EXrE:RlCl:
+SOFfif
+MIO-OQm
+DffAI~ 2ND f~OOR
+ROOf DffAI~
+5CALt:
+1:2?
+5CALE: 1:2?
+194 CHAPTER TEN
+
+
+===== PAGE 212/298 =====
+Exercise 1Db Architectural
+Use the section on page 194 to determine the height of this elevation.
+The building is 10 meters wide. You would get this from the plans.
+The windows would be on another drawing as well.
+Nc;
+wr,P5,
+tJINCiC/W
+Meflt or
+Ii
+~
+!
+J
+"
+/
+S11JCCO fiNISH
+INSllAIlNCi CLP55 iN CLfAf(
+CrJ(Nla MOUL
+ANOtJiZEV flUMiNUM fRAME5 \',,-
+PRe-PfJN1tD
+"
+fLA5HINc;
+E:XI5f1NCi
+LS11rWj
+- ------
+,ADJKfNf BUWINc;
+77l
+/
+v"-/'"
+V1\
+GJi.VANllrtl /""-/'"
+/
+RADIU:£tJ
+a-
+U\,.
+CiLlARl?
+GL.
+uL.
+/
+i\
+I
+/
+liT 11" '11' ~t~
+2NtJ fLOOR
+"I III II I
+/
+III I"
+I
+I
+I II
+=st/
+A
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+A
+/
+r====LS
+l--.).
+~
+~~
+5fAJNLf555reel.-
+/
+PANEL C/ WINC
+/
+L.iUHll1Nc;
+//
+/
+-
+/
+...---... ANODiZW flUM
+/
+CC\.-UMN CLI'VtJl
+/
+/
+(
+cAL.
+uL.
+a.
+a.
+(il..
+GiL.
+!:AL.
+/
+GK'OLNl? fLoa
+/
+,
+-
+"'1/
+I
+"---. aRAiV1IC...../
+I
+I
+eA5f e~~VAfION
+? MffRE5
+1490
+ELEVATIONS ARE INTENDED TO GIVE AN IDEA OF WHAT THE
+FINISHED BUILDING WILL LOOK LIKE. THERE ARE GENERALLY
+VERY FEW DIMENSIONS. THE HEIGHTS ARE GIVEN IN THE
+SECTION VIEWS. THE SIZE OF INDIVIDUAL PARTS OF THE
+DESIGN, FOR EXAMPLE THE CORNICE, WOULD BE GIVEN IN
+DETAIL DRAWINGS.
+ELEVATIONS SHOW THE FINAL FINISH MATERIALS OF THE
+BUILDING WHILE SECTIONS AND DETAILS SHOW THE
+CONSTRUCTION.
+2L
+o:l
+'--
+(Xl
+r-.
+0
+0
+(\j
+u[..
+1020
+I
+30
+Wlndow Upper fl(.l(j1'"
+ELEVATIONS
+I?alcony tJetall
+Blocks and Wblock
+195
+
+
+===== PAGE 213/298 =====
+l-- 2.0
+12.0
+-j r-
+2.0~
+l2,OJ I-- i I
+1--38,0-1
+Axle Support
+____________L__~:--l----J~ms~~
+------------ I r ! I
+I
+I ! I ...-------------
+1ll1LO X THRU
+1ll20,O SFACE
+2 HOLES
+\ll38.0
+58,0
+RI2,Q
+Bolt
+Bushing
+-1
+1901- ~34'O
+7.0-1 r-,
+1622.0
+~
++
+.IG,O
+[l'T
+GO ~
+L:
+6.0
+THREAD
+MlO X 1,0
+2 X 0 + 1/4 UP TO 6'
+2 X 0 + 1/2 OVER 6'
+16100,0
+1tI38.0
+022.0
+LA
+i
+A
+.-JL
+I
+136,Q------J
+~98.0-j
+r,38,~---t
+I-.L
+IIII'/
+I
+I
+)
+fHIj-d:o
+E
+12.0 I-J
+t
+44,0--1
+92,0
+Wheel
+Section
+'A-A'
+1ll1l,0
+4 HOLES
+12,0-1
+112,0
+1
+-.0o
+.~
+C:2
+O.
+-
+Q)
+-:=
+C
+CO
+0
+<D
+en
+-C .-
+...... £
+.~ J2
+-0 ..:..=
+~O)
+.!:!?
+c
+~
+.~
+Q)
+0
+rnlo..
+0-0
+a. >-
+Q)...o
+-c E
+-
+Q)
+C
+en
+o
+eno
+C
+c
+~
+0
+o
+-c
+Q)
+Vl-
+Vl
+0
+o
+~
+Vl u
+'t:
+c
+a
+Q)
+a.....c:
+<D-+:
+-C
+Q)
+....... -;=
+~
+'-+-
+o
+Q)
+cn
+c
+rnO
+.;;
+c
+~
+0
+0-
+-00
+Q) E
+-c
+Q)
+-....c:
+<D+-
+o 8
+~
+0
+ua::
+r--
+(1)
+en
+e_
+UL.
+~
+W
+L.
+(1)
+0)
+c:
+(1)--C
+.J:
+U
+o
+Top Plate
+2
+1Il135,O
+20.0 l--
+I
+60.0--1
+80.0
+Axle
+~
+1tI22'O
+1tI16,O
++
+BILL OF MATERIALS
+No
+ITEM
+QTY
+MATl
+DESCRIPTION
+PAGE
+1
+TOP PLATE
+1
+CAST IRON
+116
+2
+WHEEL
+1
+CAST IRON
+175
+3
+AXLE SPT.
+2
+CAST IRON
+138
+4
+AXLE
+1
+SAE
+1020
+45
+5
+BUSHING
+2
+BRONZE
+64
+6
+BOLT
+4
+PURCHASE
+M10X50MM HEX HD
+BOLT.
+104
+z
+UJ
+I--
+ex.
+UJ
+~
+U
+-0
+0-
+~
+
+
+===== PAGE 214/298 =====
+Set Up and Scale
+for Simple 20
+Drawings
+Setting Up Drawings and
+Plotting
+..•.•. >~~l'1 C(;)ffil:>le'tiOrlQ'tth.is chapter, you should be able to:
+single view
+and UNETYPE sizes for any drawing
+•.···•• •• ·~i.l.,lse bJ,)cks1(>c<::>mplle multi-view drawings
+4..l.)ses,ection c,rrrovvs·c)nd break lines
+·•····•• •.•·ii:'}.Ait:id rlofaticlOSbvifTmortmQ text
+plotting drawings
+fllc>tttle(jro'win~Q with plotters and PDFs.
+So far we have been working on creating AutoCAD models and drawings as individual
+sets of data. The geometry is entered relative to the origin (0,0).
+All AutoCAD drawings shouldbe entered at a scale of1: 1 and then the drawing infor-
+mation such as dimensions, notations, title blocks, etc., should be added according to
+the scale for printing.
+There are two ways of creating a scaled plot: with paper space and without paper
+space. Paper space drawing is covered in Chapter 12.
+To plot withoutpaper space, draw the model at I: I, then insert the title block at an ap-
+propriate scale factor and plot the file at a specific scale.
+For example, ifyou have a layout for a house that is 40' x 30' drawn in real units at a scale
+of 1:1, you want to have this plotted at 114'" = 1'- 0"'. As you can see from Chart 1 (page
+198), 1/4'" = 1'- 0'" isl/48 of the original size.
+In metric, a house that is 12 meters x 10 meters would be plotted at a scale of 1:50 or
+1/50 of the original size.
+Title Blocks
+Your title block should be drawn at 1: 1 as well. It must also be large enough to contain
+the floor plan. In this example it is set up for a 24 x36 sheet. In order to have this visible
+at the correct scale on the layout, you can insert the title block at a scale of48. Then,
+when plotting the model, use a plot scale of 1/48 or 114" = 1'-0".
+This is by far the best method ofplotting and scaling, as it allows you to maintain the
+model at a scale factor of 1:1. For all ofthe information that requires scaling such as
+overall scale in the dimension style, hatch, linetype, text size, etc., 48 can be used.
+Title Block, Dimension, Hatch, and Linetype Scale
+The ANSI standard for the text in dimensions is 3/16'"or 5 mm. This is also the default
+for the dimension text in AutoCAD. This will need to be changed, however, ifyou are
+plotting the part or view at a scale different to 1: 1. You want the part to be scaled, but
+you still want your dimension text to show up at 3/16" on the paper.
+To do this, you must determine the text size needed for each particular scale. Remem-
+ber, by resetting the overall scale under the Fit tab ofthe Dimension Style dialog box
+you can automatically change the size ofthe dimensions ifthey are notthe correct size
+for the plot ofyour drawing. The following is a chart ofsizes to be used in dimensions,
+linetypes and hatches.
+Setting Up Drawings and Plotting
+197
+
+
+===== PAGE 215/298 =====
+Chart 1: Determining Scale for Drawings
+Fraction
+Decimal Value
+Scale Factor
+Architectural or Imperial
+_._-_._-_._---_.__._--_.__."._----~_. __..~----------_.--------
+3" = 1'-0"
+3:12
+.25
+1" = 1'-0"
+1:12
+.0833333
+1/2"= 1'-0"
+.5:12
+.0416666
+114" = 1'-0"
+.25:12
+.0208333
+3116" = 1'-0"
+.1875: 12
+.0156246
+1/8" = 1'-0"
+.125: 12
+.0104166
+1116" = 1'-0"
+.0625: 12
+.0052083
+Mechanical
+3/4" = 1"
+.75:1
+.75
+112" = 1"
+.50:1
+.5
+114" = 1"
+.25:1
+.25
+Metric
+1: 10
+.1
+1:50
+.02
+1:100
+.01
+1:1000
+.001
+1/4
+1/12
+1/24
+1/48
+1/64
+1/96
+1/192
+The first step is to determine the scale factor for the plot, and change the overall dimen-
+sion scale factor under the Fit tab
+of the Dimension Style dialog
+box. Remember that it is not only
+the dimension text but the arrow-
+heads, overshoot, dimension text
+gap and other variables that need
+to be adjusted.
+Always change thefit size not the
+dimension text size.
+On a simple drawing with only
+one scale factor,. Chart 1 can be
+used to detennine the plotting
+scale factor and the block insertion
+factor for title blocks and other
+blocks.
+For example, if you are creating a
+plot or drawing that will be 3116"=
+l'-0", draw the floor plan at a scale
+of 1: 1. Add the dimensions at an
+overall scale, under the Fit tab, of64. Add the hatch at a scale of64 (unless it is an ar-
+chitectural hatch), then insert the title block at a scale of64. Finally, plot the drawing at
+a scale of 1/64 or 3/16" = 1'-0". Chart 1 will help you to scale the model correctly. The
+dimensions, text, hatch, and linetype must be scaled to fit the drawing.
+198
+CHAPTER ELEVEN
+
+
+===== PAGE 216/298 =====
+Scaling the Text and Annotations
+6'-()"
+!lO'-o'
+9'-0'
+Figure 11.1
+When creating text and dimensions, you must change the scale factors in order to see
+them on the screen. This is even more of a difficulty when working with very large
+drawings.
+If, for example, you want to make sure the text
+on a floor plan is at 118" on the final drawing,
+you would need to find 1he relationship be-
+tween 1/8" on the paper and the size ofthe text
+on the floor plan. If 114" on the paper will be
+equivalent to 12 inches on the model, then 118"
+or half of that value will he 6"on the model. If
+you create your notations and dimensions at 6",
+as shown inFigure 11.1, the final drawing plot-
+ted at 1/4" = 1'-0" will show text that is 1/8" in
+height.
+Text, dimensions, and related notations must be scaledto attain the appropriate size on
+the paper. You can always tell a novice AutoCAD user by the size of their text.
+Ifyou can read the text when you ZOOM
+All, the text is too big.
+!EL 31750
+FLOOR
+EL 32770
+Figure 11.2
+When creating metric drawings, use the
+same formulas. For 3 mm text on the final
+drawing, you will need to create the text at
+300mm high in order for it to print at the
+proper size when plotted at a scale of
+1: 100. See Figure 11.2.
+U/SIOE SASE PL
+EL 33100
+Chart 2 (see page 200) shows you at what sizes to scale your text to obtain the proper
+size on the final drawing. Find the size that you want your text to be, then the scale you
+intend to use, and make the text the suggested size.
+Ifyou take your final plot scale and multiply it by the default sizes and scale factors,
+you will arrive at workable scales and heights.
+LTSCALE and HATCH Scale
+While working with views to be placedon a drawing, you must also considerhatch and
+linetype. In creating these drawing aids for display on a screen, we determined that the
+scale for these functions should be the furthest value ofX onyour screen divided by 12.
+This provided a working area that was visible on the screen and easy enough to work
+with.
+To place views onto a sheet ofpaperwith the linetype andhatch at the properpaper for-
+mat, use the same setting thatyou would for dimension scale or final plot scale. Archi-
+tectural hatches such as arcane and arroof are set to be viewed on floor plans, so ascale
+of 4 can be used for a drawing to be plotted at 114" = 1'-0".
+Using Blocks to
+Compile
+Drawings
+For plotting different drawings at different scale factors, you can insert drawings as
+blocks on a title block or another accepted drawing sheet. However, although this will
+work, it is not recommended because any changes will have to be made in the original
+file.
+In Figure 11.3 there are two separate files inserted onto a drawing sheet that is 36" x
+24".
+Setting Up Drawings and Plotting
+199
+
+
+===== PAGE 217/298 =====
+200
+CHAPTER ELEVEN
+Chart 2: Dimension and Text Size
+Plotted Text Size
+Scale
+Text on the Model
+SCALE
+(Architectural or
+for Fit
+Imperial)
+To plot drawing at.
+tab
+~-~--~~--~_._~~--
+1/8"
+1/16"= 1~-O"
+24"
+192
+1/8"= 1~-0"
+12"
+96
+3/1 6"= 1~-0"
+8"
+64
+1/4"= 1~_0"
+6"
+48
+1/2"= 1~-o"
+3"
+24
+1"= 1'-a"
+1.5"
+12
+1/4
+11
+1/1 6"= 1'-0"
+48"
+192
+1/8"= 1~_0
+11
+24
+11
+96
+3/1 6"= 1~-0"
+16"
+64
+1/4"= 1~-0"
+12"
+48
+1/2"= 1~-0"
+6"
+24
+1"= 1'-0"
+3
+11
+12
+3/16"
+1/ 16
+11= 1'-0"
+36"
+192
+1/8"= 1'-0"
+18t!
+96
+3/16"= 1'-0"
+12'~
+64
+1/4"= 1'-0"
+8"
+48
+1/2"= 1~-0"
+4,5"
+24
+1"= 1~_0
+11
+2.25"
+12
+Mechanical
+.25"
+1:20
+.5
+2,0
+1:10
+25.0
+10.0
+2:10
+,125
+0,5
+.125"
+1:20
+.25
+2,0
+1:10
+12.50
+10,0
+2:10
+,0625
+0,5
+.1875"
+1:20
+.375
+2.0
+1:10
+18,75
+10,0
+2:10
+.09375
+0.5
+Metric
+3mm
+1:10
+30
+10
+1:25
+75
+25
+1:100
+300
+100
+1:250
+750
+250
+1:500
+1500
+500
+1:1000
+3000
+1000
+
+
+===== PAGE 218/298 =====
+F1reploee Detail
+t" - t' o·
+Figure 11.3
+The drawing shown in Figure 11.3 consists ofthree separate stored files:
+1,
+a title block at 36" x 24"
+2,
+a fireplace detail at 16' vertically
+3,
+a floor plan 35' x 30'.
+Since the floor plan is the most important view and the one most likely to have changes
+made, it is the base file. The other two files are inserted onto it. The title block was in-
+serted onto the floor plan at a scale of 48. The drawing will be plotted at 1/48, so the ti-
+tle will get back to its original size.The fireplace, being a detail, was inserted at a scale
+factor of4, four times its original size. It will be plotted at a scale of IN = 1'-0",
+Command:-INSERT
+Enter block name or
+[?] :Fireplace
+Specify insertion point or
+[Scale/X/Y/Z/Rotate/PScale/PX/
+PY/PZ/PRotate] : (pick a point)
+Enter
+X
+scale
+factor,
+specify
+opposite
+corner,
+or
+[Corner/XYZ] :4
+Y scale factor <use X scale
+factor>:~
+Specify rotation angle
+<O>:~
+o
+Ii
+11
+1-0.0-00-0----1
+r Linear dimensions---------~
+I Unit format:
+'I' Precision
+I
+Fraction format:
+DecimaJ separator:
+I Round off:
+I Prefix:
+II
+RO
+I Suffix:
+IIrAn
+Ir~::~=: >C~·-----I0-'2~5-00---1""""".1."1~!... U,
+I
+I mr1
+.
+.
+I .•
+PrE
+l 6 Apply tolayouH:limensionsonfy
+!
+!'
+"
+Ifany dimensions need to be added
+at this time, the fireplace is four
+times its original size, so the Meas-
+urement Scale factor under the Pri-
+mary Units tab of the Dimension
+Style dialog box will need to be
+changed to .25.
+If a drawing is to be plotted at
+many different scale factors, cre-
+ate different dimension styles for
+each different size.
+You can insert drawings at the
+fractions noted in Chart 2 onto the
+title block and plot at a scale of 1:1,
+but this allows for no changes in
+text or dimensions.
+Setting Up Drawings and Plotting
+201
+
+
+===== PAGE 219/298 =====
+View Titles and
+Drawing-Related
+Notations
+Once you have created your drawings and are ready to plot, you will want to add the
+[mal drawing-related information. Each view should have a title. If there are section
+drawings, these sections must be noted on the plan, front or elevation view. Finally, if
+you are showing details, the place where the detail attaches to the main portion of the
+object lnust be shown with a break line.
+Figure 11.5
+Figure 11.4
+ggl
+'~'
+R12.f/'
+....
+."JIOX1lRJ
+•
+llIBlJIII8fW:I!.
+~
+IlE
+_
+211l1l.E11
+rt
+12
+... \~( J-
+.
+. j
+.
+~1l2~
+a"
+Section views are for all types of drawings, and these
+show a vertical or horizontal slice through the object to
+show how it fits together and what is used in the construc-
+tion or manufacture of the object in question.
+In Figure 11.5, the view title indicates where the object is
+cut, in this case through the hinged shelf (page 177).
+When the title for the section view is not sufficient to de-
+scribe where the section is taken from, a section line is
+used.
+The same orientations are used in civil and architec-
+tural applications, but the views are labeled differ-
+ently.
+The Top view becomes a Plan or Floor Plan, the Front
+view becomes an Elevation, and the Side is also an Eleva-
+tion. These are labeled North Elevation, West Elevation,
+etc. for those buildings where the designer has actually
+taken the trouble to orient the building on the lot. Other-
+wise theyare called Front Elevation, etc.
+In applications with orthographic projection, as
+shown in Figure 11.4 (from page 138), the views are
+lined up andthe titles are directly beneath each view.
+This is fairly straightforward in a simple part like this,
+but there are times when the parts are difficult to dis-
+tinguish if they are not properly labeled.
+View Titles
+View titles are always shown below the view. These
+canbe slightly to the left or the right, butnever above.
+111100.0
+022.0
+11139.0
+Wheel
+Figure 11.6
+Section
+'A-A'
+Section Lines
+Section lines are used to show where a cut
+goes through an object. Figure 11.6 shows
+a simple mechanical part cut through to
+show where the section is. A more compli-
+cated mechanical part with several section
+lines is shown on page 238.
+In civil and architectural applications, sec-
+tion lines are most often shown on floor
+plans. The section is often jagged so that
+the section of the building (page 1] 7) is
+taken through all the 'difficult' parts, or the
+parts where the builder may want more
+clarification. Note the section lines on the
+floor plans on page 192. The section in ar-
+chitectural drawings is often used to find
+the height ofobjects on the elevation since
+these are not generally added to the eleva-
+tion views. To see how this works, look at
+pages 194 and 195.
+Section lines are made with PUNEs at varying widths (page 91).
+202
+CHAPTER ELEVEN
+
+
+===== PAGE 220/298 =====
+Break Lines
+Break lines are used at the edge ofobjects to show that there is some material extend-
+ing beyond what is being shown. In Figure 11.7athe stone at the top ofthe fireplace ex-
+tends beyond the detail up to the roofline.
+NTS
+o
+.1
+3/4
+'-----d---ir----r-----',
+PEDIT
+PLINE
+AND
+R1I2
+I
+I
+I
+----\t-
+--v-
+I
+I
+i
+,_...J
+I
+IL
+_
+Q
+b
+Figure 11.7
+Break lines are also used to show that the full length ofan object is not being shown, as
+in Figure 11.7b. Here the foundation ofthe building, under ground, is a full 8', but only
+a portion is shown. Both of these applications are lised in every discipline.
+In mechanical applications, the break shown in Figure 11.7c is typical because it illus-
+trates that the object being broken is cylindrical.
+Importing
+Notations
+Often you have notations on drawings that are standard or typical of many drawings
+such as manufacturing requirements, notations concerning adherence to building code
+or national code requirements, or materials requirements. If this is the case, you can
+type these up in a word processor and import them onto your file using MTEXT.
+le~n about MTEXT
+..
+.
+i ~ show Toolbar
+.
+... .
+! ~ Show Options
+~ Show Ruler
+Figure 11.9
+To test this out, type up a few sen-
+tences
+in Wordpad or Notepad.
+Open either ofthese programs under
+the Programs area of the start menu
+on your computer.
+Save the data as a .txt file or simple
+ASCII text file format, as shown in
+Figure 11.8.
+Make sure you are
+aware of what directory the text is
+being saved to. If you have a flash
+drive or floppy disk, that is the best
+place to put it. The extension will be
+.txt. The .rtf (rich text format) files
+work as well.
+Figure 11.8
+Invoke MTEXT or multiline text,
+pick the location for your nota-
+tion, and then right-click to get
+the Import Text function, as
+shown in Figure 11.9.
+Find the directory that contains
+your .txt file, and bring the file
+onto the current drawing.The
+text will be imported onto your
+file where required. You can
+change the size and font once it
+is in by highlighting it and ad-
+jlisting the properties on the
+MTEXTmenu.
+Seiting Up Drawings and Ploiting
+203
+
+
+===== PAGE 221/298 =====
+Using
+Lineweights
+To have a professional-looking plot, you must have different line weights for each
+type ofinformation. The object lines will be the darkest. The dimension lines will be
+lighter, and the hatch lines should be lighter still. The lineweights ofyour objects are
+best set up within the Layer Properties Manager.
+Lineweights and the Layer Properties Manager
+You will want to spend some time finding out what lineweights work best with your
+plotter. Do a few test runs to make sure the settings are correct, then make note ofthem.
+Each plotter will plot at a slightly different scale.
+•
+white CON_OUS ~- Default
+•
+white CON_OlJS ~- O.13mm
+•
+white CON.GUS ~- 009mm
+III m.ta CON.GLlS -- Defau.:ll
+~~
+Q
+~. wMe CON_OLlS -- DefaIljI
+~
+Q
+Jlh
+Cl 9-"
+CON ..GUS -- Defaull
+;;
+0
+tID. white CON.GUS --~._- 013mm
+Plotting
+I
+IDo not leave the plotting of your
+idrawing to the day
+it is due. Any
+Isystem will have difficulty printing
+'the first time. You need to know the
+final plotter destination and have
+the necessary driver before you can
+even
+start to plot. Practice some
+plots first.
+204
+CHAPTER ELEVEN
+Before you plot, in the Layer Properties Manager, set all your layers that you want to
+print to black. The Defpoints layer, which appears automatically with dimensioning,
+will not print. The other layers used for page set up you can toggle to unprintable as
+shown on the right above.
+Leave the object lines and text as default or increase them to .3, as in the examples in
+this book. Change the lineweight ofyour dimensions and hatches to be much smaller.
+Try 0.13 for dimensions and 0.09 for hatch. By making a .pdfofthe page you can test
+these lineweights out before sending them to paper (see page 206).
+Plotting is only easy after you've done it a few times. Ifyour text sizes, notations, and
+lineweights are all good, you should get a good plot.
+There are three main ways to plot: directly to a plotter or printer, plotting to a .plt file,
+then taking this .pltto a plotter, orprinting to a .pdffile, which can thenbe sent overthe
+Internet. The way you plot will depend on how your system is set up.
+Plotting Directly to a Plotter
+Ifyour printer or plotter is hooked up directly to your computer and working properly,
+you should have no trouble printing. Simply pick the PLOT command from the File
+menu or type in the word PLOT.
+Comrnand : PLOT
+Ifyou are working with an older version ofAutoCAD, the command listed under the
+File menu may be Print. It changes every few versions. BothPrint and Plot do the same
+thing.
+Once you have accessed the PLOT command, you will get the Plot menu. The title on
+this dialog box will say Plot-Model unless you are in paper space (see Chapter 12).
+
+
+===== PAGE 222/298 =====
+( ..prev.iew.., 1
+If your page is smaller than
+this, choose the expand arrow
+in the lower right corner.
+]
+Ifyou want to accept all ofthe defaults, press OK and your plot, ifthe plotter is set up,
+will be produced. The system defaults to printing the display from the screen. Ifyour
+system is set up to a laser or inkjet printer, then you should be able to simply pick up
+your print. Should you wish to change any of the defaults or print to another plotter,
+another size, or another area ofthe screen, pick the relatedbutton. Always Preview be-
+fore printing.
+Printer/Plotter Selection
+The PrinterlPlotter tab lets you direct your plot to a series ofplot devices. The one you
+are set up to should plot directly. It also allows you to have the plot written to a file as
+opposed to being sent straight to the plotter. The file types are .pIt, which will allow
+you to take this to another printer and get a hardcopy, or .pdf, which is a portable docu-
+ment file for Internet use.
+Use the down arrow beside the Printer/plotter name to choose a plotter. Ifthe one you
+want to use is not configured, you need to add it to the list.
+Configuring a New Plotter
+Ifthe plotter you need is not on the list provided,
+use the CONFIG command to load a new one. At
+the command prompt, type in CONFIG, or go to
+the Tools menu and choose Options at the bot-
+tom ofthe list.
+Add-A-Plotter Wizard
+Shortcut
+1 KB
+Command: PLOT
+Then choose Add or Configure a Plotter, as in
+Figure 11.10.
+You will get a choice ofplotting options. Choose
+the Add-A-Plotter Wizard.
+Choose the plotter you want from the many listed
+(Figure 11.11) and work your way through all the
+dialog boxes. Ifthe plotter you need is not there,
+you can generally get the plot driver from the
+Internet.
+Figure 11.10
+:~~~-5i;pT;:l~s~rPl;;t'~~~rp~bii~hT
+Defau~ plot settings for new drawings
+e Use as default output deyice
+!'* \\FE·WIGNALG·01 \HP LaserJel 6P
+o Use last successful plot settings
+Figure 11.11
+Setting Up Drawings and Plotting
+205
+
+
+===== PAGE 223/298 =====
+206
+CHAPTERELEVEN
+Once the plotter driver is loaded, go back to the Plot menu and change the
+Printer/plotter to the one you have just loaded.
+Plot to File
+Plot to File will create a .plt file for transfer either into a word processing file using a
+HP driver or to a plotter not connected to your machine. Always take a copy ofyour
+drawing file with you if you are plotting off-site in case there are errors.
+Paper Size
+The paper size can only be changed once the plot device has been chosen. Ifyou have a
+laserprinter as your plot device, you can only get a small paper size. Change to another
+plotter to get a larger size ofpaper.
+Plot Area
+The system is set to Display. Window gives you more control. Choose the window,
+then Preview.
+Plot Preview
+This will give you an idea ofhow big your plot is, and how it fits on paper. Use either
+the Full Preview or the Partial Preview before you spend the time or money on a paper
+plot. Always preview your plot before clicking OK.
+Plot Scale
+The drawing will be set in terms ofplotted inches = drawing inches or plotted milli-
+metres =: drawing units. Use Fit only when the actual scale of the drawing is not
+needed.
+Use Chart 1 to determine the plot scale. For a drawing at 1I4
+u = 1/-0", make the scale
+1/48. To make a drawing that is 1:50, use a scale of .02. Always preview before you
+plot.
+The plot origin is always assumed to be the bottom left comer ofthe paper. Ifyou want
+to relocate the origin ofthe plot to another portion ofthe paper, reset this parameter by
+changing the X and Yvalues in the edit box. This is usually done to place a title block
+onto an existing drawing or to place a missing view onto an otherwise cOlnpleted
+drawing. Some skill is needed here, so try placing the view or plot onto a test sheet bef-
+ore placing it on the final papere, especially if there are drawings on the paper that
+could be ruined.
+PDFs
+PDF files (Portable DocumentFiles by Adobe) are a quick and easy way to both check
+the lineweights and quality ofyour plots prior to printing, and sendplots over the inter-
+net.
+InReleases 2007 and 2008 AutoCAD has added a built- in PDF driver. Configure this
+driver using AutoCAD e-PLOT under the Add-a-Plotter wizard Manufacturer's list,
+then from the Models list choose PDF.
+In Release 2006 and earlier, try the PDF995 software available on the internet.
+
+
+===== PAGE 224/298 =====
+In this example we will take a tloorplan ofa house, copy a window, and plot so that the
+floor plan is at a scale of 118" = 1'-0" and the window is at a scale of 114"=1'-0".
+Step]
+Retrieve the file for Tutorial 3b.
+Ifyou haven't got it, quickly draw it up. It isOnlY/, I I
+about 20 commands, see page 61.
+~
+~r---50__
+' ?
+Once in, draw aline from the MIDpointofthe central
+window to the right 50'. ARRAY this window unit
+around the central spot. This will make anice second
+story or well-lit tower.
+Now just add some lines to place walls between
+these windows, and a smallopening for a staircase.
+Make sure all of your lines are on Layer O.
+SCALE it by 2.
+The Inain object that you are concentrating
+on is the floor plan. The window is a detail
+added to it.
+COpy the window unit on the right over to
+the right.
+Step 2
+~ 15'-6' ~
+Step 3
+First dimension the floor plan. Make a
+new style called Eighth for 1/8"= 1'- 0".
+Set the Overall scale to 96. Just add a few
+overall dimensions (the dimensions in this
+image are larger than on your drawing).
+44'-6'
+Make sure you put the dimensions on a sepa-
+rate layer.
+Now we are going to add some dimen-
+sions on the detail view. The view has
+been scaledby 2, so you want the Meas-
+urement scale to be .5.
+Measurement scale
+Scale factor:
+o Appl,y to layout dimensions only
+Make a new dimension layer called
+Quarter, and change the measurement scale to .5.
+Setting Up Drawings and Plotting
+207
+
+
+===== PAGE 225/298 =====
+l) 13mm
+!0nIFree~eILockl Color ~ tLinetype
+iUneweight
+t11J •
+white Corttinoous
+Default
+•
+'l.'lhite Continuous
+Defawt
+•
+When you are setting up your layers,
+change the lineweight ofthe Dims layer to
+0.13.
+Notice that your dimensions for the detail
+show up at the same size as your other di-
+mensions' but the readout reflects the
+changed measurement size.
+Step 4
+Ifyou have an 8.5 x I] title block, use it. Ifnot,just make a simple title block 10.75
+x8.25 in size. INSERT it onto the drawing at a scale of 96.
+~ Insert
+11J[~
+Name:
+~felabtjtle
+Path:
+.~
+.Ij [..Browse...
+DO
+r
+OK
+I r
+Cancel l (
+Help
+Insertion poinl
+l.EJ Specify On·screen
+Scale
+o Specil9 Olrscreen
+X:
+l96
+I
+~--~
+Y: lS6
+r
+2
+ISS
+I
+~ Uniform Scale
+Rotetion
+.'·0.Specify OO'"screen
+Angle:!'---0
+_
+Block Unit
+Unit;
+~~
+Faclor:
+.L....11__~
+StepS
+208
+CHAPTER ELEVEN
+The views fit well within the title block. If
+they don't, you have the imperial/metric
+problem. Ifyou have started in metric, all
+the numbers will be wrong, regardless of
+the fact that you may have changed your
+units.
+Scale the title block by metric numbers -
+25.4, 2.54, etc. and it should eventually
+fit.
+Look on Chart 2 for the size of text that
+you want for your titles. Since you will be
+plotting at a scale factor of 1/96, you will
+want text that is 12" high to show up as
+118" on the final drawing.
+The title should be underlined. Under the
+title should be the scale of the view:
+Floor Plan
+Scale 1/8" = 1'-0"
+
+
+===== PAGE 226/298 =====
+Step 6
+Plotting the Views
+Use the default printer that is set to your machine. This will be plotted at a scale of1/8"
+= 1'-0". Set up the plot file as shown below. Using the option Window in the Plot area
+section will allow you to pick which area you would like plotted.
+Once everything is set up, be sure to use Preview to get a preliminary view ofthe plot.
+Zoom Window
+Zoom Original
+At this point you may notice any errors in placement,
+line quality, or size that have been overlooked in the
+menu. Use the roller ball on your mouse to zoom into
+the drawing and check out the lineweights.
+If there are errors pick Exit to get back to the Plot
+menu.
+Ifthere are no errors pick Plot to continue with the plot.
+IE~-~
+I
+Plot
+I---~--~=~~
+I
+Pan
+I" Zoom
+i!I1
+Ifyour plot works the firsttime,
+consider yourself a genius.
+Allow a few hours to get your
+first plot. Get someone to help
+you who has experience on
+THAT plotter. If anyone else
+uses it, you can assume that
+the plotterwiJl be messed up.
+The menu choice Plot to file can be used to make a .pIt file that can be taken to a plotter
+for printing. Not every plotter accepts .pIt files, so unless you are certain that the plot-
+ter will accept these files, making a .pdf is probably a better choice.
+Setting Up Drawings and Plotting
+209
+
+
+===== PAGE 227/298 =====
+In this example we will take a mechanical part and plot it at a scale of 1:40. The final
+drawing will be plotted on a letter-size sheet (8 1/2" xlI" or 297 X 210).
+Stepl
+Open a new file in metric using acadiso.dwt. Set up your layers as shown below. Don't
+forget about the lineweight. Different plotters print at different weights. These li-
+neweights are good for some printers. Others print well at a larger lineweight.
+The standard is minimum 0.30 mm, with thicker lines at 0.60 mm. The plots in this
+book are printed with objects and 0 layer at 0.30 mm. Try this, but ifit's too dark, set
+up as shown below.
+,
+ayer
+roper les
+anager
+~~.
+~
+~)( +J
+Currenlla)'er: DIMENSION
+•
+white Cootinoous -- 1109 mm
+•
+white HIDDEN -- 0.13 mm
+HATCHF
+HIDDEN
+: Name
+: On; Freeze j Lockl Color
+l Linetype
+1Lineweight
+~
+··D-·······J~·-O . :l'tD -'·i~Wnjte· Cootinoous '-=:=-OefauJt ----.--
+CENTRE
+"" a
+1jt). white CENTER -- n.13 mID
+DEFPOINTS
+)
+0
+Jr:.
+0
+Y-.•w
+eootinoous -- Default
+•
+Status
+Now draw up the objects below.
+R20
+101
+Step 2
+Make a new dimension style for these dimensions called Forty because it is being
+plotted at a scale of 1:40. When you open the Dimension Style dialog box, ifthe basic
+dimension style is Standard, you have started the drawing in imperial units.
+The base style should be ISO-25.
+~,~--....~..
+~
+~
+~
+~,-.
+II] Create New Dimension Style
+W]~I
+J
+1
+•
+.
+Use for: !All dimenSions
+New Style Name:!\....F_or..::.;t~~
+_
+SlarlWith:
+~,_SO_'2_5
+----,-,,;,=;m
+Ifyou are in the wrong units, open a
+file in metric using acadiso.dwt.
+Youmight need to SCALE the draw-
+ing until the dimensions are correct.
+Continue
+Cancel
+Help
+210
+CHAPTER ELEVEN
+
+
+===== PAGE 228/298 =====
+!Side
+oth texl and
+:1 thing 10
+(' Scale fOI dimension features~.•_~.~ .. w.<._.<_.
+~~"\
+! E> Use overalf scale of:
+~Il
+:'~.:':':::.~.:~:~.::~:"=::: i 0 Scale dimensions to layout
+j
+L.._~.__~
+._.~..__ .~~.~~_.._.w.~-j
+Many people set their text height, arrow-
+head size, gap, overshoot, etc. If you
+have a template file - a base file that al-
+ways has your settings - this is a good
+idea. It is difficult, however, to remem-
+3S
+ber to change all the settings each time,
+so an overall scale is a lot simpler. The
+graphic image will reflect what settings
+you have.
+Now change your Primary Units so there
+are no decimal places.
+Change the overall scale under the Fit tab
+to 40.
+Dimension the object as shown above.
+210-3 UNC-2
+485 DEEP
+R92S
+105/165 DIA
+2 HOLES THRU
+Note: Fillets Qnd
+Rounds
+R20
+RiOlO
+R1170
+101
+Section A-A
+Step 3
+In mechanical applications, often the notations for threaded fasteners:screws, bolts,
+etc., are not shown with a diameter. Instead they are shown with class notations.
+For example, the top left thread is
+shown in this diagram. The diame-
+ter and depth ofthe fastener are thus
+not needed in the drawing. This no-
+tation says it all.
+210 - 3 UNC - 2A
+Update your drawing using the no-
+tations above. The height ofthe text
+should be 120. Then add:
+~
+NOHINAL DIAMETER
+l
+NUMBER OF THREADS PER CENTIMETER
+~
+THREAD FORM AND SERIES
+CLASS OF FIT
+.f;-A IS EXTERNAL. B IS INTERNAL
+10-3 UN -21¥
+485
+DEEP'--DEPTH AND NUMBER OF HOLES
+View titles
+Section A-A using PLlNE and TEXT
+Notations for both sets of 'holes', as shown
+The notation for all fillets and rounds.
+Erase the dimensions that are better shown in notation
+Setting Up Drawings and Plotting
+211
+
+
+===== PAGE 229/298 =====
+Step 4
+Zoom into a small portion of your screen. Make a PLiNE rectangle 265 X 185 units
+which will fit onto a 297 x 210 paper.
+TITLE
+MECHAN~CAL PART
+DATE
+~7/03/08
+SCALE
+~:40
+PROJECT
+SECT~ON
+DRAWNBoB EDMONDS
+NUMBER
+M~
+Zoom into the right COIner and cre-
+ate the title block shown at the side.
+The
+distance
+between
+the
+lines
+should be 6 mm.
+Now scale this block by 40. You
+drew it at the size it will be when
+plotted. Then you scaled it to fit the
+image. The objects will be plotted at
+a scale of 1:40.
+Move the title block over so that it
+fits the image.
+".~es
+105/165 DlA
+194
+2 HCIlES THRU
+,a{J ",.'"'"" ~
+Rounds
+R20
+1=
+IJ
+,,'.",
+Step 5
+If your linetypes don't show up hidden and centered, use LTSCALE to change the dis-
+play. Just change it until it looks good.
+Double check your layer lineweights as in Step 1.
+Step 6
+Set to the default printer, use a scale of 1:40 and a paper size ofA4, and you should be
+fine. You may need to Window and Preview a few times to get the image properly on
+the page.
+~Plot
+Model
+t~l~]
+Learn <wout Plotting
+Plot style table (pen assignments:)
+---~
+.. --_."
+'1
+···IL-<_No_ne_>
+~
+............;;~,M
+Add".
+Plot.optioo$
+Dplot in bad<.ground
+~}Plot with plot ~Jf';S
+o Plot st.emp 00
+DSavechangesro.1aycut
+Or~irIQ(ll'"lentation
+OPortrJ!lit
+o Landscape
+OPlotUP~ide"down
+Number of copies.
+i 1
+.•i&~.
+~._Junits
+oCenter the plot
+x. 1-13,65
+Imm
+•
+,=l
+..,.J
+Name:
+Plot offset (qrigin set to printable area)
+Printerjplotter
+·'~i••••!I-g"'''I·I••••-••••I(j!.I .Properties".
+PlQtarea
+Wnattopfot:
+fw~~il
+( Preview:." .1
+Apply to layout 11·
+OK
+J(
+Cancel
+JI
+Help
+J.<i
+212
+CHAPTER ELEVEN
+
+
+===== PAGE 230/298 =====
+UJ"=
+t;ic3
+c c
+.c.8
+0=
+., E
+Ln
+as
+NJ: I zo m
+~a
+><
+-+~
+CD
+::r-
+(l)
+~
+..,
+o-cn
+n
+~ 0-
+-.
+~~'
+tn
+=:§
+CD
+~
+a...
+_.::;:. .....
+::
+~
+.....
+::ro
+(l)
+a...
+a-a...
+.."
+_CD
+..,
+~'O-
+0
+...en
+n
+Q
+..p
+0...
+-.
+a...
+n
+~
+CD
+=+
+CD
+c-o
+()?'
+o
+:Ja...
+.."5
+;-i
+• SCALE
+U)
+1:)
+S:2u...
+e:(
+1:)
+~
+Q)
+D.
+....~
+o
++-J
+Q)
+o
+o
++-J
+(j)
+DATE:
+21/03/01 various
+NAME IDRAW
+Z.P.
+1
+"IJ)
+m
+I
+I
+ri-----.J
+l"ii1
+I
+I
+-.J
+ll~
+f>
+I
+_-1
+~
+Metal Hat'1{;jer
+Alternate to ledCier
+Scale 111=11011
+Wooden 5tair Detail
+~--
+PI4wood freads
+and Risers
+I.
+10'9"
+.1
+r~1
+5u~:a?{ )
+~Lill
+floorit1C1
+"(lJ
+"-..
+..-1
+Wood finish
+I'--
+fread Detail
+Scale 21!=::::IIOII
+0----~:----
+"I
+I
+1/2"J
+I I
+I
+,05R
+:~tl~
+~
+-
+~
+-..Ii
+(,,»
+(/)
+CIl:4:5'
+co
+C
+"0
+oa
+::E5'
+co
+II)
+o
+:::::l
+0...
+-0
+~
+:::::l
+co
+
+
+===== PAGE 231/298 =====
+Exercise 11 Architectural
+This illustrates four types of drawings made for commercial applications.
+Use ARRAY for the curved text.
+Print it out with differing lineweights on a letter sized or A4 sheet.
+@
+@
+©
+6000
+6000
+2000SQX450
+oo
+Q
+CX)
+o
+3
+CX)
+MANAGEMENT
+~
+--------
+I
+4#6CONT,
+TOP
+350X700 FTG
+#S@200 HOR, EF
+#6@250 VERT EF
+350
+--:j- - - -- - - -I-
+i(/)
+L-J
+/{' -1
+I
+/
+/0
+I
+I
+/
+I ~ { #8@150BVI
+: I
+~
+--1
+/
+/2/
+\~
+:
+/
+\r-
+BASIC SLAB =180:
+A'0~
+\-1\
+I
+\V/
+\'
+I
+~~/
+\~
+I
+S
+1\<.'JC:~ /
+\1J
+DROP PANEL:
+1-
+2200SQX150
+! I
+----/
+Sl
+S2 \~
+~I
+~
+\
+r-
+I" Y'
+I
+I
+-+----F-+--_+_
+~(:
+\=-= ---C..-l-+-I--I---+-
+~
+---1
+I
+~'~
+~ Al
+2
+"'"L_~,
+I
+.6
+\~
+A
+OoR ,,-I
+.,: I
+\~
+~\.- -- -
+~
+/'J
+I
+\\?-~~ ~ oJ:
+I ~ I~
+r-
+,\v/
+I.
+"'- FDUNDATION
+'\ oJ
+I
+< '\~S-
+...
+~,
+\ </)
+f0\./
+OFFICE
+: ,
+'; /
+BASEMENT
+\~ / ~I
+~
+I/
+RECEPTION
+~~:::z::lJ I
+I ~0
+UP I
+-- -
+®
+....
+6000
+'1000
+/
+2000
+2000
+.. I
+6000
+-J
+~475
+214 CHAPTER ELEVEN
+
+
+===== PAGE 232/298 =====
+,63-11UNC-3B
+----l
+m
+::::r
+><
+in'
+'U
+CD
+Q
+..,
+4
+n
+VI --
+:::r-
+CA
+0c
+CD
+a:::::
+0- ....
+([)
+0.. ....
+a
+~
+~
+::l
+S-a
+CD
+VI
+n
+n
+::r
+a
+CD
+Q
+Q.. ::s
+--' --
+II
+n
+--'
+Q
+t
+o'33
+0,20
+II
+0.94
+~
+Pin
+Scale 1=.5
+-1 1
+0.88 0.64
+J_
+hctA
+I ~
+I ~ .n,. .
+Various
+Full
+John Ripley
+~
+d11f
+I Cfa.4A.
+I
+SHEET 1 of 1
+Ben Drummond
+2AR23
+APPROVALS I DATE I COMpo.ny
+iIlarria
+ilJarnpl1 ,]fnr.
+~~~:Q~~SS~~~fED ITit l e
+FRACH[J.IS +/- 1/32
+BOD Y
+AND
+PIN
+DECIMALS +/- . 005
++~-
+r
+0,38
+0,38
+01,124
+Body
+Scale 1=1
+,.
+4,00
+.1
+~
+\-
+5.40
+"I
+(/)
+m::i"
+co
+c
+"'0
+oa
+:Es'
+coen
+o
+::l0-
+""0
+~s·
+ec
+to..)
+......
+t1I
+
+
+===== PAGE 233/298 =====
+'-
+\
+co
+•
+45
+C)
+IRO,50
+c:
+(1)--C
+.J:
+U
+I
+r--
+r--
+CO
+(I)--
+U'-
+CO
+><
+w
+I
+0,3[50
+I
+lieS (0,1495) DRILL -
+15/32 DEEP
+#10 <0,190) -
+24 NC -
+2 -
+13/32 DEEP
+718 -
+8 ACME
+I
+2,6253
+1/2 NPSH
+1 7/16
+1-118 UN-2/\
+'[
+7/8 -
+B ACME
+0,9072
+15/16 ACROSS FLATS
++
+~~~~
+~J'%%?W~'
+'///>/Z
+I
+I
+1/32 X 45" CHAM,
+I"
+~
+2.50
+r
+TDLERANCES UNLEESS
+OTHERErSE SPECIF"ED
+FRACTIDNS +/- 1/32
+DECIMALS +1- ,005
+ANGLES +/- 5 DEGREES
+SHEET 1 OF 1
+COMPANY
+2)~
+uU~ival
+z
+~
+.....J
+U.J
+~
+U.Jiu
+-0...
+"
+~~~
+DRA'w'ING NO.
+SIZE
+FAUCET
+TITLE
+SCALE
+AIvrd
+1/ 96
+DATE
+,~
+211 06
+APPROVALS
+Y.'!}
+:1.2J.X.
+#29 (0.136) DRILL -
+17132 DEEP
+is '0,164) 32 NC -
+2 -
+15/32 DEEP
+11/16 C BORE -
+1/8 DEEP
+I
+!
+'~t
+~
+..
+0.3748-t:r
+O
+J{%F{'/1;;1F~Y/4"41 0.2498
+1/8
+
+
+===== PAGE 234/298 =====
+Paper Space for 2
+Dimensional Drawings
+Paper Space
+QI1Cjom,pJ~~tiQn¢lttrljslchc)pt~~r you should be able to:
+••••...•,.</.•.•••..••'••..••.•••••• < Y <
+••·.·,1·••• !..l:sepolPefcSf;:lcOCe to access Q paper environment
+i< ••••••·•• ••••·••.'•••/i<i:ii;;<:i2j, ~:~~iM~{'~'tt1'f.f~~~tup 0 drawing with four views on a standard title sheet
+i:(( /.j•..••j.jil.!•••~[.:~~!;~~~~~ ::;:dl~::lv~:i:.S:i~blle in selected viewports only
+•••.••..••••
+to layout a drawing.
+So far you have been working in model space, the part ofAutoCasd that creates designs
+or models. In Chapter 11 we discussed creating drawings in model space by adjusting
+the title block size. In this chapter we will use paper space to create drawings. Paper
+space is much easier to use when you are dealing with multiple views.
+The most efficient way to compile a drawing that has details to be shown at different
+scale factors is through paper space.
+Essentially, paper space is a 2D document layout facility. Once the views are com-
+pleted with all the dimensioning required, paper space takes these views and places
+them on a 'paper' much like a cut-and-paste routine, so that they can be compiled as a
+drawing.
+Paper space makes use ofthe multiple viewport facility. Multiple viewports are used
+to place the various views ofthe objects onto different portions ofpaper layout both in
+3D and2D.
+Figure 12.1
+Model space
+Paper space
+In Figure 12.1, the object on the left is in model space and the layout on the right is in
+paper space. Both are filled with the same drawing. One has one view, the other has
+three views at different scale factors and different dimension styles.
+The image on the left is in a tiled space, the TILEMODE system variable is on. The im-
+age on the right is in a non-tiled environment: the views can be anywhere.
+Note that the view title and scale are always shown beneath the view in a drawing.
+In paper space the crosshairs cover the screen. On the left in Figure 12.1 is a regular
+DeS icon; on the right is the paper space icon.
+Paper Space
+217
+
+
+===== PAGE 235/298 =====
+Accessing
+Paper Space
+Getting from model space to paper space is quite
+simple. Pick Layoutl from the Layout tab, shown
+in Figure 12.2, at the bottom of your graphics
+screen. If this tab is not at the bottom of your
+screen, type in the word TILEMODE and then enter
+o(see bottom ofpage).
+Figure 12.2
+Once in paper space, right-click the Lay-
+out! tab for the Page Setup Manager. This
+will allow you to set up the page that you
+are working with. Either make a new page
+or accept the current layout.
+Similar to the Dimension style and Text
+style menus, it is always a good idea to set
+up a new page so that you never lose the
+defaults of the original page setup.
+The next screen is the Page Setup dialog
+box. It looks much like the Plot dialog
+box. You must set your paper size before
+you begin. Ifyou do not, you will waste a
+lot of time later adjusting the views.
+First pick your plotting device from the Plot tab, then pick your paper size from the
+Layout tab. Ifyou are trying to set up a drawing, and all you have loaded are laser print-
+ers, you will need to get another plotter driver loaded before you can access any paper
+bigger than 297 x 420 mm (11 x 17 imperial). In AutoCAD, at the command prompt,
+type in CONFIG, then choose Load a Plotter to add a plotter.
+OPorl:r,,1t
+@L<W1ds<:ap<;
+OPlotupsjde-dOfflt
+0f'lotwithplot~
+o Plot l'bPI.!I'IP/lCI.! l{,~t
+OHItW PllPE,np~.eobjW$
+prot <tyle t~bll' (pen "5s19nments)
+~erJet 6P (missing)
+~p
+DDiSPlllY plot styles
+I'Jo(';I;-Il!e
+~Fittop~r
+Window<
+Plotter:
+DWF6 ePlot D\o\If ePfot • by Autodesk
+Where;
+Flie
+P1at.area
+Whlll: to plot:
+!WindoVl -in
+Plot offset (Cl'igin Si1t t<:>prlntab!e area)
+x: I0.00
+I rom
+D Center the plot
+Y: c~~J
+rrrn
+"Printer/plotter
+~:
+!!ar DWF6 ePlotpc3_~~_ ~.~.__.~_~'j
+Propertles
+Your page will now have the correct size. Return to the paper space layout to compile
+the various views in your drawing.
+Setting up a paperspace environment toggles the TILEMODE system variable to off.
+You can access the paper space mode through the command TILEMODE as well as the
+Layout tab. You will still needto set up your paper size in the Page Layout Manager.
+Command:TILEMODE
+Enter new value for TILEMODE <1>:0
+Regenerating drawing.
+218
+CHAPTER TWELVE
+
+
+===== PAGE 236/298 =====
+Floating Viewports or MVIEW
+The MVIEW orFloating Viewports command is usedto identify views that will be used
+in paper space. The Page Setup Manager dialog box forces you to pick a paper size,
+then fits whatever is currently on screen within a border on that paper. You can adjust
+the size of the view using the comer grips, then add more views with MVIEW.
+Figure 12.3
+In Figure 12.3, the left screen has the model space object. The central screen has the
+paper space views, two new ones have been added with MVIEW. The third screen
+shows the three views in model space with some layers frozen in two ofthe views. To
+add new views use MVIEW.
+The command line equivalent is MVIEW.
+The pull-down menu offers the same choices as the command line: 1 Viewport, 2
+Viewports, Restore, etc. The border for the viewport will be in the current layer. Make
+sure you have a new layer for the borders.
+Once paper space has been accessed and the views have been made, you can toggle
+between model space and paper space quite readily. The Layout tab means the system
+variable TILEMODE is off, you can place your views anywhere, they don't need to be
+placed like ceramic tiles, side by side. When you return to TILEMODE on, AutoCAD
+restores the drawing as it was before paper space was entered.
+When using the Floating Viewports or MVIEW command, you can create various con-
+figurations of viewports and have different layers active in specific viewports.
+Using Model Space and Paper Space
+When the Layoutl tab is on, you are creating a drawing in pa-
+"j'~ Layout1r
+per space. The TILEMODE system variable is off. The model is
+still accessible.
+When the model tab is on you are working in model space. TI-
+~.i
+j Model,(Layoutl/
+LEMODE is on.This means eithera paperor non-paperenviron-·
+--
+-
+ment.
+When working in paper space (TILEMODE is off), each view can be accessed as if in
+model space by using the MODEL/PAPER toggle.
+In the Layout mode you can toggle from paper space to model space in order to access
+your model for dimensioning. You can type in MSPACE or MS and PSPACE or PS, or
+use the toggle switch.
+Paper Space
+219
+
+
+===== PAGE 237/298 =====
+,····'l\VI•••••·tpAPER,···
+Command:MS
+(toggles back to model space)
+Command:PS (toggles back to paper space)
+Scaling Views
+Within a
+Drawing
+Paper space (PSPACE) only lets you access the paper view ofthe model. Model space
+(MSPACE) lets you access the modeL These can both be used in the Layoutl tab.
+When you use the ZOOM command in paper space, it affects the entire page or paper.
+A ZOOM .5X will result in the paper with the views intact at half the size that it was
+before.
+When you use the ZOOM command in model space, the model or drawing within the
+view will be affected. Be careful not to ZOOM the views in model space after you have
+scaled them with ZOOM XP.
+In model space you can PAN the objects within the viewports; in paper space the PAN
+command will affect the view of your paper environment.
+In model space the MOVE command will move the objects within the views. In paper
+space the MOVE command will move the views relative to the other views.
+Manipulating the Views
+Any of the ModifY commands will work on the viewports in paper space in the same
+way that they work on the objects in model space. You can use MOVE, COPY/
+STRETCH, etc. to place the viewports where you want with the necessary infonnation.
+In model space, the command ZOOM All causes you to lose any relation to the actual
+scale ofthe part being designed; the image expands to fit the space provided. Use the
+ZOOM "times paper space" XP option to set the drawing size relative to the paper.
+Command:MS
+Command: ZOOM
+Specify corner of
+window, enter a scale factor
+(nX or nXP)
+or
+[All/Center/Dynamic/
+Object]
+<real time>:.5XP
+220
+CHAPTER TWELVE
+If you are creating a standard page setup for use
+with many objects of similar layout, this page
+layout zoom factors can be saved with the layout.
+In paper space you want the views to be scaled to a
+relative size. Use the ZOOM XP option to scale the
+object relative to the paper scale units.
+While the ZOOM X option scales the object rela-
+tive to its current size within the viewport, the
+scale factor of XP gives you a zoom factor times
+the paper scale or relative to the paper and also
+relative to the actual part. Zoom XP scales can be
+seen in Chart 12.1.
+""b~!J••fPAfiR"'·'-
+You can also scale with the Properties menu as
+shown on the right.
+Pick the Viewport border, then Modify, Proper-
+ties. You must be in paper space to do this.
+
+
+===== PAGE 238/298 =====
+Layers Within
+Viewports
+Chart 12.1
+For a Scale of
+Use
+Size Relative to Actual
+1:1
+ZOOM lXP
+1/2 =1
+ZOOM .5XP
+1/2
+1:50
+ZOOM .02XP
+1/50
+1/4 = 1 -0
+ZOOM lj48XP
+1/48 or ( % x 12)
+The easiest way to control your layers is within the active viewport. Viewport-
+dependent layers are only possible in a non-tiled environment, with the Layout tab
+showing that you have TILEMODE off.
+Both in the layer pull-down menu
+shown on the left and the Layer
+Properties Manager dialog box shown
+below, you can set the layers to be
+viewport dependent. Some layers are
+visible in some viewports but not in all.
+StalU$ _i N<1lllle
+~
+{)
+•
+BORDERS
+~
+CENTER
+"'*"
+DEFPOINTS
+J
+DIM1
+"$'
+DIM2
+-%iI
+UNES
+OBJECTS
+fOrti f)~~1 LockiColor J LineWPei lineweight: PIe<tStyle! PloI{CUllenl.VPI NewVPFre"~L2~
+oJ
+Q
+If[) • ....nne CON_OUS -
+DefauJt (;>:_7'
+t1
+Q.l
+o
+fO. 'hMe CON_OUS -
+Default
+{;fu
+Q]
+'#'
+Q
+"b. v-Me CENTER
+-
+Default
+'i!J
+(2:1
+j
+Q
+~. wtme CON_GUS -
+DefaLilt
+(2.),~
+~)
+Q
+"W. 'Nhi1e CON_GUS -
+Defawt
+~
+,~.~
+.•.
+Q
+•
+v.tlite CON_OUS -
+Default
+<,l· •
+Q
+•
+wMe CON_nUS -
+Default
+o
+• white CON_GUS -
+Deflrult
+This allows you to have dimensions in different scale factors as well as notations and
+geometry that are not visible in all views.
+I~IIA
+,~IA
+Paper Space
+Three viewports
+Figure
+12.4
+Paper Space
+Zoomed views
+Model Space
+Layers frozen in viewports
+In Figure 12.4, the first view shows three viewports in paper space. In the middle view,
+the two details have been zoomed with 2XP to be twice the size of the full part. The
+third view shows the non-relevant layers frozen in the two detail views.
+Once the layers are frozen, a new layer for dimensioning is added and the dimensions
+are addedto the various views. This dimension layerwill then be frozen in the other two
+views. Dimensions are added in model space because it is the actual size ofthe model
+that is to be recorded with the dimensions.
+Paper Space
+221
+
+
+===== PAGE 239/298 =====
+The VPLAYER
+Command
+VPLAYER is useful for manipulating many viewports. The Layer functions are easier for
+just one or two viewports. You can set the visibility oflayers with the Layer dialog box
+and the Layer pull-down menu or you can use the VPLAYER command for a large
+number of views.
+As with the Floating Viewports or MVIEW command, this command only shows up in
+paper space.
+The command line equivalent is VPLAYER.
+Command:VPLAYER
+Enter an option
+[?/Freeze/Thaw/Reset/Newfrz/VpvisdfltJ:
+Where: ?
+Freeze
+Thaw
+Newfrz
+Reset
+Vpvisdflt
+lists the LAYERs that are frozen in any selected
+viewport
+freeze a LAYER or LAYERs in selected viewports
+the reverse of freeze; turns on selected LAYERs in
+selected viewports
+creates a new LAYER that is frozen in all viewports,
+and is primarily used for creating a LAYER to be viewed
+only in one viewport ever.
+the default display for layers created in the LAYER
+command is thawed; with the Reset option, the layers
+are returned to their original default setting
+set a default visibility for any layer in any viewport.
+Command:VPLAYER
+Enter an option
+[Freeze/Thaw/Reset/Newfrz/Vpvisdflt]:F
+Enter Layer names to freeze or select objects:DIMl
+(name of
+the LAYER)
+Enter an option
+[All/Select/Current]<Current>:S
+Select
+objects: (here you can pick any number of viewports
+by their frames)
+Dimensioning in
+Paper Space
+Your final drawing, regard-
+less ofthe scale factors ofthe
+views, should have all text
+and arrowheads
+the
+same
+SIze.
+In Figure 12.5 the dimension
+arrow and text size are the
+same in each of these views.
+The part is shown in four dif-
+ferent viewports with four
+different scale factors. The
+dimension text reads
+the
+same dimension regardless
+of
+the
+dimension
+scale
+factor.
+-1
+6.00 r
+~RI.22
+SCALE .75
+RI.22
+SCALE I
+Figure 12.5
+~ 6.00 r-
+IC:B~RI.ZZ
+SCALE .5
+--T-t-6.00
+~RI.ZZ
+SCALE .25
+222
+CHAPTERTWELVE
+To use different scales in different viewports on the same drawing, set the DIMSCALE
+value to O.
+
+
+===== PAGE 240/298 =====
+In the
+Modify
+Dimension
+Style dialog box, set the over-
+all scale in the Fit tab to O.
+This paper space scale will
+automatically cause all di-
+mensions to be shown in the
+default size regardless of the
+scale of the view. A dimen-
+sion scale or fit size of 0 is
+useful if you are happy with
+the defaults ofthe system, ie,
+the size of text/arrows/gaps
+and offshoots.
+There are some cases where
+another size ofdimensioning
+would give a better result. In
+this case, always create a
+new layer, then set the fit size
+to be a fraction of the zoom
+factor.
+If Ihe:r. 1Sn' enough roOOl to place both teKt ood
+"rrol"l~ inside eHleOSlon lin~, the fO.1 thing '0
+move out-ide the eHtension lines j.:
+, @ E~her lexl or alrows Ibest fill
+:o Anows
+'0 Tel!!
+o Bolh lexl and "rrow~
+.: 0 Alwa~ keep teHt between ext rnes
+.0 Suppress alrows II they don't iii inside
+exlemion lines
+'-I~;.,;~~:-~""~=-~~ ...-
+When text i3. nol in t~ default position, p!acel
+Scale for dimension tl'!~blJlp.:<:
+.
+.
+o Use overall scale of:
+o Scale dimensions to layout
+Scale ofview
+~
+= 1-0
+1:100
+ZoomXP
+1I48XP
+1/100
+Fit
+48
+100
+Dimensions can be adjustedto
+40 - 48
+90 - 110
+Ifyour dimensions just do not look right, you can adjust the size ofa custom dimen-
+sion. Changing the zoom factor on a drawing to adjust the automatic paper space size
+will not help. The scales for a drawing must be standard. A view scale of 1:46 or 1;4 =
+1 -2 is just not going to work. Flexibility is only on the dimension scale factor.
+You can use these, or you can set up your own
+template file that also has layers and dimension
+styles. Simply set it up and save it as Mytemplate.
+Once the bugs are worked out, you can use it every
+time you start a drawing.
+AutoCAD's
+Template
+Drawings
+AutoCAD has a series ofdrawing templates that
+canbe used. These title blocks are set up in paper
+space and will not interfere with your drawing as
+you develop it. For a list of AutoCAD's
+templates, use NEW as in Figure 12.6.
+Command: NEW
+The ANSI (American National Standards Insti-
+tute) templates are imperial, the ISO (Interna-
+tional Standards Organization) and JIS are
+metric. All are professional layouts like the one
+in Figure 12.7.
+IIANSlB ..NameciPlot Stoyles.dwt
+ilANSI.t: ~Color. i)epengenl:PJot..•.
+IIal\NSIC~f\@J1leclPlotStyl~.gwt
+AN$f.)~Color.Dep~nc1ent~Jot ••..
+ilA.[\JS10~Nami::d.PlotStyles·dy.t
+lE"ColorD~pen.ntPtot, ...
+ANSIE -Narned Plot Styles.dwt
+II·AN51~9Yout teropl.at~.dWt
+AfchitecturalJEngfisb.units ..C•••
+I?d'chite~turall.···EngJisb .·units ...N•..•
+IIOIN Afl;'Color DeperlclentPfot. '.'
+iiiDIN AO."Namegp.lot Sty1es.dwt
+r::::I: ...... ~._,...:.' 4.
+.Jt- ~_ • _ '.' -,f""\.; .. .......
+~J ....... ....., L
+r-.I _ L
+Figure
+12.6
+Figure 12.7
+Paper Space
+223

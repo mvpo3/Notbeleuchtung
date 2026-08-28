@@ -1,0 +1,482 @@
+
+
+===== PAGE 1/9 =====
+ÖVE-EN 31/1981
+ÖSTERREICHISCHE BESTIMMUNGEN
+FÜR DIE ELEKTROTECHNIK
+Errichtung
+von Elektrozaunanlagen
+DK 621.3.004.2
+ÖSTERREICHISCHER VERBAND FÜR ELEKTROTECHNIK
+Fachausschuß EN
+"Elektrische Niederspannungsanlagen U
+1, Eschenbachgasse 9, A-1010 Wien
+Herausgegeben im Eigenverlag am 1981 0801
+Nachdruck, auch aClszugsweise, verboten!
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+1 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 2/9 =====
+Im Eigenverlag des österreichischen Verbandes für Elektrotechnik
+1, Eschenbachgasse 9, A-1010 Wien, Fernruf: 0222/57 63 73
+Printed in Austria
+Druck: Gustav Gruber,A-1050 Wien
+•
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+2 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 3/9 =====
+ÖVE-EN 31/1981
+Inhaltsübersicht, Einleitung
+Inhaltsübersicht
+Seite
+Einleitung.
+.
+.
+.
+.
+.
+.
+.
+.
+§ 1
+Geltung.......
+§ 2
+Begriffe und Benennungen
+§ 3
+Anforderungen
+.
+.
+.
+.
+3
+5
+5
+6
+Einleitung
+(1)
+Diese Österreichischen Bestimmungen für die Elektrotech-
+nik wurden vom Lenkungsausschuß der Sektion "Elektro-
+technische Bestimmungen" des Österreichischen Verban-
+des für Elektrotechnik zum
+Druck und zur Anwendung
+freigegeben.
+(2)
+Diese Österreichischen Bestimmungen für die Elektrotech-
+nik werden vom Bundesministerium für Bauten und Technik
+mit der 2. Durchführungsverordnung zum
+Elektrotechnik-
+gesetz 1981 in Kraft gesetzt werden. Gleichzeitig werden
+ÖVE-E 31/1957 und ÖVE-E 31 a/1964 außer
+Kraft gesetzt
+werden. In der gegebenenfalls angegebenen übergangs-
+zeit
+gelten
+die
+diesbezüglichen
+Sonderregelungen
+des
+Elektrotechnikgesetzes
+und
+der
+zugehörigen
+Durchfüh-
+rungsverordnungen.
+Insbesondere kann in dieser Zeit unter den dort näher
+festgelegten Voraussetzungen sowohl die ältere als auch
+die neuere der oben angeführten Österreichischen Bestim-
+mungen für die Elektrotechnik der rechtlichen Beurteilung
+zugrunde gelegt werden.
+Der Rechtsstatus dieser österreichischen Bestimmungen
+für die Elektrotechnik kann
+darüber hinaus mit später
+erscheinenden
+Durchführungsverordnungen zum
+Elektro-
+technikgesetz weiter festgelegt werden. Insbesondere ist
+3
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+3 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 4/9 =====
+ÖVE-EN 31/1981
+Einleitung
+ÖVE-L 1,
+ÖVE-EN 310,
+ÖVE-K 41,
+(3)
+diesbezüglich
+jeweils die zuletzt erschienene
+Durchfüh-
+rungsverordnung zu beachten.
+In diesem Heft wird auf folgende Österreichische Bestim-
+mungen für die Elektrotechnik Bezug genommen:
+ÖVE-E 5,
+Betrieb von Starkstromanlagen
+ÖVE-E 49,
+Blitzschutzanlagen
+ÖVE-EN 1,
+Errichtung
+von
+Starkstromanlagen
+bis
+,...,1000 V· und
+= 1500 V
+Errichtung
+von
+Starkstromfreileitungen
+bis 1000 V
+Elektrozaungeräte
+Energieleitungen mit einer Isolierung aus
+PVC
+•
+(4)
+In diesem Heft werden folgende ÖNORMEN angeführt:
+ÖNORM A 6010,
+Normschriften
+ÖNORM E 1362,
+Blitzpfeile, Warnzeichen
+(5)
+Die Hinweise auf andere Veröffentlichungen in den Fuß-
+noten beziehen sich, sofern. nicht anders angegeben, auf
+den Stand zum Zeitpunkt der Herausgabe dieses Heftes.
+Zum Zeitpunkt der Anwendung dieses Heftes ist der durch
+DurchführungsverordnungenzumElektrotechnikgesetz oder
+gegebenenfalls auf andere Weise festgelegte aktuelle Stand
+zu berücksichtigen.
+(6)
+In diesem Heft sind Erläuterungen durch Kleindruck ge-
+kennzeichnet.
+(7)
+Die in diesem Heft angeführten Österreichischen Bestim-
+mungen für die Elektrotechnik, ÖNORMEN der Elektro-
+technik und sonstigen technischen Veröffentlichungenkön-
+nen vom ÖVE, 1, Eschenbachgasse 9, A-1010 Wien, bezo-
+gen werden.
+(8)
+Rechtsbelehrungen, •Einleitungen, Fußnoten, Hinweise auf
+FundsteIlen
+in
+anderen. Texten
+(nicht aber in anderen
+Teilen der vorliegenden Österreichischen . Bestimmungen
+für die Elektrotechnik) und Anhänge gelten nicht als Be-
+standteil
+der
+österreichischer
+Bestimmungen
+für
+die
+Elektrotechnik, wohl aber Vorworte und Kleingedrucktes.
+4
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+4 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 5/9 =====
+öVE-EN 31/1981
+§ 1, § 2
+§ 1. Geltung
+Diese Bestimmungen gelten für das Errichten von
+Elektrozaun-
+anlagen, deren spannungführende Teile der Berührung zugänglich
+sind.
+§ 2. Begriffe und Benennungen
+2.1
+Eine Elektrozaunanlage ist eine Schranke für Tiere und
+besteht im wesentlichen aus folgenden Teilen:
+(1) Elektrozaungerätl),
+(2) überspannungsschutzeinrichtung
+(geschlossene
+Fun-
+kenstrecke),
+(3) Betriebserdung,
+(4) Zaunzuleitung,
+(5) einem oder mehreren auf geeigneten Isolatoren ver-
+legten Zaundrähten.
+2.2
+Bei Elektrozaunanlagen unterscheidet man:
+(1) Elektroweidezaun, ist eine Schranke für Nutztiere unter
+Verwendung vorwiegend eines Zaundrahtes;
+(2) Elektrowildsperrzaun, ist eine Schranke für Wild unter
+Verwendung vorwiegend mehrerer übereinander ange-
+ordneter gegeneinander isolierter Zaundrähte;
+(3) Elektroweideschranke,
+ist
+eine
+Schranke
+für
+einen
+durch
+Weideland
+führenden
+Weg
+oder
+eine
+durch
+Weideland führende Straße.
+2.3
+Der Zaundraht ist der abgrenzende Teil der Elektrozaun-
+anlage. Er ist ein elektrischer Leiter, der durch ein Elektro-
+zaungerät unter Spannungsimpulse gesetzt wird und gegen
+Berühren nicht isoliert ist.
+2.4
+Die Zaunzuleitung ist die elektrische Verbindung zwischen
+denzaunseitigen Anschlußklemmen des Elektrozaungerä-
+tes und dem Elektrozaun sowie die Verbindung zwischen
+den Zaundrähten.
+1) Siehe öVE-EN 310.
+5
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+5 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 6/9 =====
+ÖVE-EN 31/1981
+§2, §3
+2.5
+Der Zaunstromkreis umfaßt alle leitenden Teile, die mit
+dem Zaun verbunden sind.
+2.6
+Isolatoren
+halten
+und führen
+die Zaundrähte
+oder die
+Zaunzuleitungen.
+2.7
+Der Netzstromkreis umfaßt alle leitenden Teile, die mit
+dem Netz verbunden sind.
+§ 3. Anforderungen
+3.1
+Allgemeines
+Elektrozaunanlagen müssen so errichtet werden, daß sie
+keine Gefahr für Menschen, Tiere oder Sachen verursachen
+können.
+3.2
+Anforderungen für die Errichtung von Elektrozaunanlagen
+3.2.1
+Eine
+Elektrozaunanlage
+darf
+nur
+aus
+einem
+einzigen
+Elektrozaungeräte versorgt werden. Für Elektrozaungeräte
+bestehen gesonderte technische Bestimmungen1).
+Eindrähtige
+Elektroweidezäune
+dürfen
+aus
+nur
+einem
+Sekundärteil eines Elektrozaungerätes versorgt werden.
+Mehrdrähtige Elektroweidezäune dürfen dagegen aus ver-
+schiedenen Sekundärteilen desselben Elektrozaungerätes
+versorgt werden, wenn
+jedem einzelnen Draht ein Se-
+kundärteil zugeordnet wird.
+3.2.2
+Der Abstand zwischen Zaundrähten oder Zaunzuleitungen
+verschiedener Elektrozaunanlagen muß mindestens 2,0 m
+betragen. Soll die dadurch entstehende Lücke, z. B. bei
+Elektrowildsperrzäunen,
+geschlossen
+werden,
+so
+muß
+dieses durch elektrisch nicht leitendes Material geschehen.
+3.2.3
+Bei Annäherung von Elektrozäunen an Verkehrswege sind
+an gut sichtbarer Stelle dauerhafte Warnschilder, Blitz-
+pfeil mit Aufschrift "Vorsicht Elektrozaun!" anzubringen.
+Bei Wildsperrzäunen und Weideschranken muß die War-
+nung von beiden Seiten sichtbar sein.
+Schildgröße 105 mm X 210 mm, Schrifthöhe 25 mm2), Blitz-
+pfeil gemäß den hierfür bestehenden gesonderten Bestim-
+mungen3) 4).
+1) Fußnote auf Seite 5.
+2) Siehe öNORM A 6010.
+3) Siehe öNORM E 1362.
+4) Siehe öVE-E 5.
+6
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+6 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 7/9 =====
+ÖVE-EN 31/1981
+§3
+3.2.4
+Kreuzen Zaunzuleitungen öffentliche Straßen und Wege,
+Seilbahnen, land- und forstwirtschaftliche Seilförderanlagen,
+Hausgärten und Höfe, so sind sie im Kreuzungsbereich zu
+verkabeln oder als Freileitungen gemäß den hierfür be-
+stehenden gesonderten technischen Bestimmungen5) aus-
+zuführen.
+3.2.5
+Werden Zaundrähte in der Nähe von Freileitungen entlang-
+geführt oder kreuzen sie dieselben, so darf die Bauhöhe
+von 2 m nicht überschritten werden.
+In der Nähe von Freileitungen mit Betriebsspannungen bis
+1 000 V darf im Schutzstreifen von 2 m beiderseits der
+äußeren Leiter und bei Freileitungen mit Betriebsspannung
+über 1000 V innerhalb eines Schutzstreifens von 15m
+beiderseits
+der äußeren
+Leiter eine
+Bauhöhe von
+2 m
+nicht überschritten werden.
+In diesem Bereich wird die Verwendung einer Weidezaunlitze (Kunststoff-
+Niro) an Steile von starren Eisendrähten empfohlen.
+Kreuzungen mit Freileitungen sind möglichst zu vermeiden,
+andernfalls ist die Freileitung möglichst im rechten Winkel
+zu unterkreuzen.
+Bei Annäherung an Fernmeldefreileitungen durch Elektro-
+zäune oder Zaunzuleitungen darf ein Abstand von 2 m
+nach allen Seiten nicht unterschritten werden.
+3.2.6
+Teile einer Elektrozaunanlage, die zur Handhabung dienen,
+z. B. an Toren, Weideschranken, müssen gegen die unter
+Spannung stehenden Teile isoliert sein, z. B. durch isolierte
+Torgriffe.
+3.2.7
+Die Zaundrähte und die Zaunzuleitungen dürfen nicht mit
+Metallteilen in Verbindung stehen, die nicht zur Elektro-
+zaunanlage gehören, z. B. metallener Gartenzaun.
+Elektrozäune und Zaunzuleitungen sind auf Isolatoren zu
+befestigen, wenn nicht für Zaunzuleitungen entsprechende
+Hochspannungskabel verwendet werden.
+Zaunzuleitungen sind zwischen Gerät und überspannungs-
+schutzeinrichtung als Hochspannungskabel (z. B. YHN, Prüf-
+spannung
+15 kV)6)
+auszuführen
+und
+dürfen
+nicht durch
+brandgefährdete Räume geführt werden. Ausnahme siehe
+§ 3.2.13.
+3.2.8
+Elektrozäune und Zaunzuleitungen dürfen nicht an Frei:
+leitungsmasten aller Art befestigt werden.
+----
+') Siehe OVE-L 1.
+') Siehe OVE-K 41.
+7
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+7 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 8/9 =====
+ÖVE-EN 31/1981
+§3
+3.2.9
+Bei Wegführung der Zaunzuleitung von einem Gebäude ist
+eine überspannungsschutzeinrichtung (Ableiter mit Erder)
+auf nicht brennbarer Unterlage außerhalb des Gebäudes
+anzubringen. Falls an Gebäuden eine
+Blitzschutzanlage
+vorhanden ist, muß die Erdung der überspannungsschutz-
+einrichtung an die Erdungsanlage der Blitzschutzanlage
+gemäß den hierfür bestehenden gesonderten technischen
+Bestimmungen7) verbunden werden.
+Falls
+ein
+Anschluß
+des
+Oberspannungsableiters
+an
+eine
+vorhandene
+Erdungsanlage nicht möglich ist, ist ein Vertikalerder, z. B. ein Staberder
+von mindestens 1 m Länge einzubringen oder ein Horizontalerder. z. B.
+ein Banderder von mindestens 3 m Länge zu verlegen.
+3.2.10
+Bei Erdverlegung der Zaunzuleitung muß ein hoher Iso-
+lationswiderstand vom unter Spannung stehenden Draht
+zum umgebenden Erdreich sichergestellt werden.
+3.2.11
+Elektrozaungeräte,
+die
+im
+landwirtschaftlichen
+Anwesen
+aufgestellt
+werden,
+sind
+an
+dessen
+Anlagenerdung
+zu
+erden.
+3.2.12
+Elektrozaunanlagen sind so zu errichten, daß Funkstörun-
+gen vermieden werden.
+Insbesondere ist auf die Verwendung einwandfreier Wand-
+durchführungen,
+überspannungsschutzeinrichtungen,
+Er-
+dungsschalter und Isolatoren zu achten und bei Leitungs-
+verbindungen
+an
+Zaunzuleitungenund
+Zaundrähten für
+einwandfreie
+Kontaktgabe
+zu
+sorgen
+(Vermeidung
+von
+Wackelkontakten und Funkenbildung).
+3.2.13
+Elektrozaungeräte für Elektroweidezäune oder Wildsperr-
+zäune dürfen
+nicht
+in
+brandgefährdeten
+Räumen,
+z. B.
+Scheunen, Tennen, Stallungen usw., angebracht werden.
+Dies gilt nicht für Elektrozaunanlagen, die innerhalb eines
+Gebäudes betrieben werden.
+Von einem Elektrozaungerät dürfen nicht gleichzeitig Elek-
+trozaunanlagen außerhalb und innerhalb eines Gebäudes
+(z. B. Kuherzieher) betrieben werden.
+3.2.14
+Elektrozaungeräte mit Netzanschluß müssen allpolig ab-
+schaltbar sein. Für die Insta.llation netzgespeister Elektro-
+zaungeräte bestehen gesonderte technische Bestimmun-
+genS).
+') Siehe öVE-E 49.
+') Siehe öVE-EN 1.
+8
+BGBl. II - Ausgegeben am 8. Juli 2020 - Nr. 308
+8 von 8
+www.ris.bka.gv.at
+
+
+===== PAGE 9/9 =====
+Unterzeichner
+serialNumber=932783133,CN=Bundeskanzleramt,C=AT
+Datum/Zeit
+2020-07-08T10:16:11+02:00
+Prüfinformation
+Informationen zur Prüfung des elektronischen Siegels bzw. der elektronischen
+Signatur finden Sie unter: https://www.signaturpruefung.gv.at
+Informationen zur Prüfung des Ausdrucks finden Sie unter:
+https://www.bundeskanzleramt.gv.at/verifizierung
+Hinweis
+Dieses Dokument wurde amtssigniert.

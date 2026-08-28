@@ -1,0 +1,1774 @@
+
+
+===== PAGE 1/137 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ARCHICAD 26 
+GRUNDKURS 
+BIM ORIENTIERTE PLANUNG 
+ 
+ 
+ 
+
+
+===== PAGE 2/137 =====
+ 
+ 
+2/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3/137 =====
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+3/137 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Archicad Grundkurs – BIM orientierte Planung  
+Copyright © 2022 by GRAPHISOFT, alle Rechte vorbehalten. Die Reproduktion, Änderung oder Umschreibung oder Übersetzung 
+ohne vorherige schriftliche Genehmigung ist ausdrücklich untersagt.  
+Diese Kursunterlagen dürfen ausschließlich von zertifizierten Archicad Tutor:innen und Lehrenden an eigene Kursteilnehmer:innen 
+weitergegeben werden.  
+Warenzeichen  
+Archicad ist ein eingetragenes Warenzeichen und Virtual Building und GDL sind Warenzeichen von GRAPHISOFT.  
+Alle anderen Warenzeichen sind Warenzeichen ihrer entsprechenden Eigentümer:innen. 
+
+
+===== PAGE 4/137 =====
+ 
+ 
+Inhaltsverzeichnis 
+4/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Inhaltsverzeichnis 
+Teil A: Die Grundlagen ................................................................................................................................................................. 6 
+1 
+Archicad Grundlagen ................................................................................................................................................................... 6 
+1.1 
+Die Arbeitsweise von Archicad .................................................................................................................................. 6 
+1.2 
+Die Archicad Benutzeroberfläche ............................................................................................................................. 8 
+1.3 
+Die Archicad Konstruktionselemente ...................................................................................................................... 11 
+1.4 
+Auswählen von Elementen ......................................................................................................................................... 12 
+1.5 
+Der Zauberstab .............................................................................................................................................................. 16 
+1.6 
+Tastaturkürzel ................................................................................................................................................................. 16 
+TEIL B: Modellierung ................................................................................................................................................................... 17 
+2 
+Über das Projekt ........................................................................................................................................................................... 17 
+3 
+Der Start ins Projekt ..................................................................................................................................................................... 18 
+3.1 
+Ein neues Archicad-Projekt erstellen ...................................................................................................................... 18 
+3.2 
+Projektpräferenzen ..................................................................................................................................................... 20 
+3.3 
+Geschosseinstellungen ............................................................................................................................................. 20 
+4 
+3D-Gebäudemodell erstellen .................................................................................................................................................. 23 
+4.1 
+Wände .............................................................................................................................................................................. 23 
+4.2 
+Decken ............................................................................................................................................................................. 37 
+4.3 
+Schnitte und Ansichten ............................................................................................................................................... 42 
+4.4 
+Dach .................................................................................................................................................................................. 46 
+4.5 
+Fenster, Türen und Fassade .................................................................................................................................... 50 
+4.6 
+Treppe und Geländer ................................................................................................................................................. 62 
+4.7 
+Möblierung ..................................................................................................................................................................... 69 
+4.8 
+Räume .............................................................................................................................................................................. 72 
+4.9 
+Bemaßung ....................................................................................................................................................................... 78 
+TEIL C: Darstellung ...................................................................................................................................................................... 81 
+5 
+Grundlagen der Darstellung ..................................................................................................................................................... 81 
+5.1 
+Darstellungs-Schnell-Optionen ................................................................................................................................. 81 
+5.2 
+Ebenenkombination .................................................................................................................................................... 82 
+5.3 
+Stift-Set ............................................................................................................................................................................. 84 
+5.4 
+Modelldarstellung ......................................................................................................................................................... 87 
+5.5 
+Grafische Überschreibung ........................................................................................................................................ 89 
+6 
+Schnitte und Ansichten ............................................................................................................................................................. 93 
+6.1 
+Schnitt- und Ansichts-Einstellungen ....................................................................................................................... 93 
+6.2 
+Staffage ........................................................................................................................................................................... 95 
+6.3 
+Beispiele ......................................................................................................................................................................... 99 
+7 
+3D-Darstellungen und Arbeitsblätter .................................................................................................................................. 100 
+7.1 
+3D-Fenster einrichten ................................................................................................................................................ 100 
+7.2 
+3D-Schnitte .................................................................................................................................................................... 101 
+7.3 
+3D-Dokumente ............................................................................................................................................................ 103 
+7.4 
+Arbeitsblätter ................................................................................................................................................................ 104 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 5/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+5/137 
+TEIL D: Pläne erstellen ............................................................................................................................................................. 107 
+8 
+Ausschnitte .................................................................................................................................................................................. 107 
+8.1 
+Allgemeines zu Ausschnitten ................................................................................................................................. 107 
+8.2 
+Ausschnitte erstellen und bearbeiten .................................................................................................................. 108 
+9 
+Planlayouts ................................................................................................................................................................................... 115 
+9.1 
+Vorbereitung ................................................................................................................................................................. 115 
+9.2 
+Das Masterlayout ......................................................................................................................................................... 116 
+9.3 
+Das Layout ..................................................................................................................................................................... 119 
+9.4 
+Layoutbuch ordnen .................................................................................................................................................... 120 
+9.5 
+Inhalte hinzufügen und bearbeiten ........................................................................................................................ 121 
+9.6 
+Zeichnungen bearbeiten und ausrichten ........................................................................................................... 123 
+9.7 
+Vorbereitung für den Druck .................................................................................................................................... 126 
+10 
+Exportieren und Drucken ....................................................................................................................................................... 127 
+10.1 
+Was ist der Publisher? ............................................................................................................................................... 127 
+10.2 
+Publisher-Set einrichten ........................................................................................................................................... 127 
+10.3 
+Pläne publizieren ........................................................................................................................................................ 129 
+10.4 
+Pläne drucken .............................................................................................................................................................. 132 
+11 
+Hilfe ................................................................................................................................................................................................ 133 
+12 
+Notizen ......................................................................................................................................................................................... 136 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 6/137 =====
+ 
+ 
+Archicad Grundlagen 
+6/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+TEIL A: DIE GRUNDLAGEN 
+Öffne auf deinem Rechner mit einem Doppelklick die Kursdatei gk_ac26_kursdatei01.pln. Die Datei öffnet sich 
+dann in Archicad. 
+1 Archicad Grundlagen 
+1.1 
+Die Arbeitsweise von Archicad 
+Zuerst möchten wir dir ein paar Grundlagen der Arbeitsweise von Archicad erklären. 
+BIM und Archicad 
+In der Baubranche hört und liest man immer öfter 
+über das sogenannte BIM (Building Information Mo-
+del). BIM ist keine Software, sondern eine Planungs- 
+und Arbeitsmethode. Die Grundlage des BIM be-
+steht in der Erstellung eines digitalen Gebäudemo-
+dells aus 3D-Bauteilen. Der Vorteil dieser Planungs-
+methode besteht darin, dass diese Bauteile alle Ei-
+genschaften wie Material, Dimension und Kosten in 
+sich tragen und bei Änderungen automatisch aktua-
+lisiert werden. Das erleichtert den Informationsaus-
+tausch zwischen den Planern, Bauunternehmern 
+und Bauherren. 
+ 
+Die Staaten der EU fordern inzwischen den Einsatz von BIM für die Planung und Umsetzung aller öffentlichen Bau-
+projekte. Deshalb sind unsere Lernangebote auch auf ein BIM-gerechtes Arbeiten mit Archicad-Bauteilen ausgerich-
+tet. Natürlich bietet Archicad alle bekannten 2D-CAD-Werkzeuge, aber wir empfehlen dir die Arbeit in 3D mit den 
+Archicad Bauteilen. Mit dem Arbeiten in 3D lassen sich Fehler bei der Planung vermeiden und du sparst Zeit, denn 
+alle Änderungen werden in Schnitt, Ansicht und Kalkulationstabellen automatisch übernommen. Mit Archicad ist 
+BIM nicht nur einfach, es macht sogar Spaß. Probiere es aus! 
+Das virtuelle Gebäudemodell 
+Die Arbeitsweise in Archicad dreht sich rund um das 
+virtuelle Gebäudemodell. Dieses bildet die Grund-
+lage für die BIM-orientierte Planung und somit die 
+Basis für den erfolgreichen Datenaustausch mit an-
+deren Projektpartnern. 
+Und hier liegt schon der wichtigste Grundsatz: Mit 
+Archicad wird das Gebäude so modelliert, wie es 
+gebaut wird! Archicad simuliert das Bauen - mit 
+Werkzeugen wie Wänden, Decken, Dächern etc. 
+Vielleicht hast du bisher Grundrisse, Ansichten und 
+Schnitte von Hand oder digital in 2D gezeichnet. In 
+Archicad entfällt das. Alle Pläne werden aus dem 
+virtuellen Gebäudemodell generiert. 
+ 
+Mit der Planung deines virtuellen Gebäudemodells erhältst du also gleichzeitig Grundrisse, Schnitte, Ansichten, Per-
+spektiven, Mengenberechnungen, Stücklisten, Raumbücher, Volumenberechnungen und vieles mehr. Du solltest 
+deshalb, bevor du mit der Planung beginnst, entscheiden, wie weit du die Informationen, die dir BIM bietet, später 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 7/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+7/137 
+nutzen willst. Davon hängt es ab, wie detailliert du dein Gebäude konstruierst. Natürlich kannst du dennoch mit 2D-
+Werkzeugen wie Schraffuren und Linien nacharbeiten. 
+Wenn du nur für einen Wettbewerb die Entwurfspläne benötigst, ist es sicherlich nicht notwendig, so detailliert zu 
+arbeiten wie für ein Modell, aus dem du später auch sämtliche Massen herausziehen willst. Allerdings solltest du 
+dennoch immer sorgfältig arbeiten und darauf achten, dass die eingegebenen Maße korrekt sind und alle Bauteile 
+exakt platziert werden. 
+Du kannst ganz einfach damit beginnen, zunächst einmal nur die Baukörper zu entwerfen und diese dann Stück für 
+Stück detaillierter auszuarbeiten und mit weiteren Informationen zu versehen. 
+In Archicad fügst du die Bauelemente geschossweise zusammen. Aus den einzelnen Geschossen wird dann das 
+gesamte Gebäude zusammengefügt oder bei sehr großen Projekten auch aus einzelnen Gebäuden die gesamte 
+Gebäudegruppe. Bei Bedarf ergänzt du deine Gebäude noch für die Dokumentation um zweidimensionale Elemente 
+wie Bemaßung oder Etiketten. 
+Für die BIM orientierte Planung sollte dein Gebäudemodell so viele Informationen wie möglich enthalten, damit diese 
+möglichst übergreifend auch von anderen Projektpartnern genutzt und die Daten untereinander ausgetauscht wer-
+den können. 
+Der Navigator 
+Im Navigator am rechten Bildschirmrand hast du die Auswahl zwischen vier verschiedenen Reitern: Die Projekt-
+Mappe, die Ausschnitt-Mappe, das Layoutbuch und die Publisher-Sets. 
+ 
+Projekt-Mappe 
+In der Projekt-Mappe findest du 
+das rohe Gebäudemodell, inklusive 
+aller daraus generierten Sichten 
+(Grundrisse, Schnitte, Ansichten), 
+sowie weitere BIM-relevante Doku-
+mente wie Listen, Auswertungen 
+usw. 
+Im Gegensatz zu Ausschnitten sind 
+darstellungsrelevante Einstellungen 
+wie Maßstab und sichtbare Ebenen 
+nicht vordefiniert, können aber ma-
+nuell angepasst werden. Öffnest du 
+beispielsweise ein Geschoss oder 
+eine Ansicht in der Projekt-Mappe, 
+so werden die zuletzt verwendeten 
+Darstellungseinstellungen über-
+nommen. 
+ 
+Ausschnitt-Mappe 
+In Ausschnitten kann die Darstel-
+lung eines bestimmten Teils des 
+virtuellen Gebäudemodells vordefi-
+niert werden. Wenn du einen Aus-
+schnitt festlegst, definierst du 
+gleichzeitig: 
+• 
+die sichtbaren Ebenen 
+• 
+den Maßstab 
+• 
+das Stift-Set 
+• 
+Bemaßungseinstellungen 
+• 
+Modelldarstellung 
+• 
+uvm. 
+Im Vergleich zur Projekt-Mappe 
+sind hier keine ANDEREN Informati-
+onen enthalten, sondern es ändert 
+sich lediglich der ANGEZEIGTE IN-
+HALT und die ART DER DARSTEL-
+LUNG der im Projekt enthaltenen 
+Informationen. Das zugrundelie-
+gende Gebäudemodell ist in bei-
+den Fällen das gleiche. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 8/137 =====
+ 
+ 
+Archicad Grundlagen 
+8/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Layoutbuch 
+Layouts kannst du dir wie Pläne 
+vorstellen. Hier kannst du eine be-
+stimmte Größe für deinen Plan fest-
+legen (z.B. DIN A0) und den Plan 
+anschließend mit Inhalten aus dem 
+Projekt befüllen. Dafür platzierst du 
+einen oder mehrere zuvor erstellte 
+Ausschnitte aus der Ausschnitt-
+Mappe auf dem Layout, ordnest 
+diese nach Belieben an und ver-
+siehst deinen Plan mit einem Plan-
+kopf und ggf. weiterer Beschriftung. 
+ 
+Publisher-Set 
+Der Publisher ist ein zeit- und ar-
+beitssparendes Tools, um schnell 
+viele Layouts an einen zuvor defi-
+nierten Ort zu exportieren oder zu 
+drucken. Es stehen verschiedene 
+Dateiformate wie zum Beispiel PDF, 
+DWG, DXF und JPEG zur Auswahl. 
+ 
+1.2 
+Die Archicad Benutzeroberfläche 
+Die Archicad Benutzeroberfläche und Grundlegendes 
+Als erstes lernst du die Benutzeroberfläche von Archicad und die wichtigsten Werkzeuge kennen, damit du dich 
+schnell zurechtfindest. 
+Hinweis: In der österreichischen Archicad-Sprachversion wird im Arbeitsumgebungsprofil Profil Architektur 26 die 
+Transparentpausenpalette nicht angezeigt. Du findest sie im Menü Fenster > Paletten > Transparentpausenpalette. 
+ 
+Paletten und Symbolleisten können über das Menü Fenster ein- bzw. ausgeblendet werden. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 9/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+9/137 
+Konstruktionsraster 
+Je nach Grundeinstellung kann es sein, dass du nicht nur ei-
+nen weißen Hintergrund siehst, sondern zusätzlich ein 
+graues Raster. Dieses Raster ist das Konstruktionsraster und 
+beträgt in der Grundeinstellung 1m x 1m. Es dient unter an-
+derem der Orientierung beim Zeichnen. 
+Du kannst das Konstruktionsraster über das Menü Ansicht > 
+Konstruktionsraster darstellen jederzeit ein- oder ausschal-
+ten. 
+ 
+Rasterfang 
+Zusätzlich lässt sich über das Menü Ansicht > Rasterfang der Raster-
+fang ein- und ausschalten. Falls der Rasterfang eingeschaltet ist, 
+kannst du nur noch Rasterpunkte fangen. Dies solltest du also nur 
+machen, wenn du dich nur auf Rasterpunkte beziehen möchtest.  
+Der Rasterfang sollte normalerweise ausgeschaltet sein. Du schaltest 
+ihn nur ein, wenn du ihn auch wirklich benötigst. 
+ 
+Paletten vergrößern / verkleinern 
+Der Werkzeugkasten auf der linken Seite lässt sich größer oder kleiner 
+ziehen. Hierfür legst du deinen Cursor an die rechte Kante des Werkzeug-
+kastens, bis sich die Form des Cursors verändert. Klicke nun und ziehe 
+diese Palette mit gedrückter Maustaste größer oder kleiner. 
+Auf die gleiche Weise kannst du auch andere Paletten verkleinern und 
+vergrößern. 
+ 
+Untermenüs 
+Einige Menüs besitzen ein Untermenü. Diese Menüs sind 
+durch ein kleines graues Dreieck gekennzeichnet. Wenn du 
+mit der linken Maustaste auf den Menüpunkt mit dem Dreieck 
+klickst, öffnet sich das jeweilige Untermenü. Hier einige Bei-
+spiele: 
+Im verbreiterten Werkzeugkasten können über das kleine 
+Dreieck die verschiedenen Werkzeuge auf- bzw. zugeklappt 
+werden. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 10/137 =====
+ 
+ 
+Archicad Grundlagen 
+10/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Navigation 
+Die Maus 
+Das Zoomen in Archicad erfolgt mittels Maus-Scrollrad. 
+Drehe das Scroll-Rad nach oben oder nach unten, um in 
+den Plan hinein bzw. heraus zu zoomen.  
+Halte das Scrollrad gedrückt, um den Bildschirminhalt 
+zu verschieben. Der Cursor wird dabei zu einer Hand. 
+ 
+Für die Arbeit mit Archicad empfehlen wir deshalb die 
+Verwendung einer Drei-Tasten-Maus. Insbesondere von 
+der Arbeit mit dem Touchpad raten wir ab, da du mit die-
+ser Arbeitsweise weniger effizient bist.  
+ 
+ 
+3D-Fenster 
+Das 3D-Fenster öffnest du über… 
+• 
+einen Klick auf den Tab 3D,  
+• 
+den Shortcut Cmd+3 (MAC) bzw. Strg+3 (WIN) oder  
+• 
+einen Doppelklick auf Allgemeine Perspektive oder Allgemeine Axonometrie im Navigator. 
+Am unteren linken Bildschirmrand befinden sich alle Befehle, die du für 
+die Navigation im 3D-Fenster brauchst: 
+• 
+Zoom: Mit den Zoom-Befehlen kannst du Zeichnungsbereiche ver-
+größern oder verkleinern.  
+Tipp: Scrolle alternativ auf dem Mausrad. 
+• 
+Optimieren: Die Größe der Darstellung wird so angepasst, dass 
+alle Elemente des Projektes zu sehen sind.  
+Tipp: Alternativ kannst du die Tastaturkürzel Cmd+0 (MAC) bzw. 
+Strg+0 (WIN) nutzen. 
+• 
+Orbit: Das Modell wird um einen Zielpunkt gedreht.  
+Tipp: Die Orbit-Funktion kannst du auch temporär aktivieren, indem 
+du die Umschalt-/Shift-Taste gedrückt hältst, sowie das Mausrad 
+drückst und ziehst. 
+• 
+Verschieben: Der Darstellungsausschnitt des Projektes wird ver-
+schoben. Halte dazu das Mausrad gedrückt und ziehe. 
+ 
+Wenn du zurück ins 2D-Fenster wechseln möchtest, kannst du die Tastaturkürzel Cmd+2 (MAC), bzw. Strg+2 (WIN) 
+nutzen oder auf den entsprechenden Tab klicken. 
+Die Statusanzeige 
+Um dir die Erstellung und Bearbeitung von Elementen zu erleichtern, gibt dir Archicad Hinweise zu den nächsten 
+Arbeitsschritten. Diese Hinweise findest du in der Statusanzeige. Die horizontale Leiste befindet sich ganz unten am 
+Bildschirmrand. Die Statusanzeige kann über das Menü Fenster > Paletten > Statusanzeige ein- und ausgeschaltet 
+werden.  
+Die Statusanzeige ist also gerade am Anfang ein hilfreiches Tool, um die Verwendung von Werkzeugen zu verste-
+hen. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 11/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+11/137 
+Intelligenter Cursor 
+In Archicad gibt dir der Cursor ein grafisches Feedback, an welcher Stelle du dich gerade befindest und was du ma-
+chen kannst. Hier eine kleine Auswahl an Cursorformen, die der Archicad-Cursor beim Entwerfen oder Bearbeiten 
+von Elementen annimmt, wenn ein Werkzeug mit Ausnahme des Pfeil-Werkzeugs aktiv ist: 
+ Pfeil-Werkzeug: 
+Dient zur Auswahl und Aktivierung von Bauteilen, Objek-
+ten und Linien. Es gibt ein weißes und ein schwarzes 
+Pfeil-Werkzeug. Das weiße Pfeil-Werkzeug kann aus-
+schließlich bei Morph-Objekten verwendet werden und 
+dient da zur Markierung von Morph-Unterelementen. 
+ Fadenkreuz: 
+Erscheint in einem leeren Bereich im Bearbeitungsfens-
+ter. 
+ Weißer Bleistift: 
+Erscheint beim Zeichnen von Bauteilen und Linien über 
+freien Stellen. 
+ Längsgestreifter Bleistift: 
+Erscheint, wenn sich der Cursor beim Zeichnen von 
+Bauteilen (z.B.: Wänden, Decken, Dächern, etc.) über 
+einer Kante befindet. 
+ Dickes Häkchen: 
+Erscheint, wenn der Cursor auf einem Knotenpunkt auf 
+einer Referenzlinie eines Bauteils liegt. 
+ 
+ Schwarzer Bleistift: 
+Erscheint, wenn der Cursor während dem Zeichnen an 
+einem Knotenpunkt eines Bauteils liegt. 
+ 
+Dünner Mercedesstern: 
+Erscheint an einer beliebigen Kante anderer Elemente. 
+ 
+ Dicker Mercedesstern: 
+Erscheint auf der Referenzlinie einer Wand oder auf der 
+Referenzachse eines Unterzugs. 
+1.3 
+Die Archicad Konstruktionselemente 
+Was sind Archicad Konstruktionselemente? 
+Dein virtuelles Gebäude in Archicad 
+wird aus verschiedenen Konstrukti-
+onselementen wie Wänden, Decken, 
+Dach, Fenstern etc. zusammenge-
+setzt. Zu jedem dieser Konstruktions-
+elemente gibt es ein entsprechendes 
+Werkzeug im Archicad-Werkzeug-
+kasten. 
+In diesem Kapitel möchten wir dir die 
+Grundsätze von Konstruktionsele-
+menten vermitteln. Wie du die ver-
+schiedenen Konstruktionselemente 
+in Archicad erstellst, lernst du in Kapi-
+tel 4. 
+Hier siehst du beispielhaft, aus wel-
+chen Konstruktionselementen ein 
+Gebäudemodell bestehen kann. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 12/137 =====
+ 
+ 
+Archicad Grundlagen 
+12/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Werkzeug-Grundeinstellungen 
+Die Einstellungen jedes Konstrukti-
+onselementes kannst du über die 
+Werkzeug-Grundeinstellungen 
+festlegen. Die Grundeinstellungen 
+öffnest du,  indem du das entspre-
+chende Werkzeug im Werkzeug-
+kasten auswählst und im Infofens-
+ter links oben auf den Einstellungs-
+dialog klickst (A). Alternativ öffnest 
+du die Einstellungen durch einen 
+Doppelklick auf das Werkzeug im 
+Werkzeugkasten (B). 
+Hier kannst du alle verfügbaren 
+Parameter für das Konstruktions-
+element festlegen. 
+Ganz unten in den Werkzeug-
+Grundeinstellungen legst du die 
+Ebene fest, auf der sich das Ele-
+ment befinden wird. Ebenen helfen 
+dir, die Elemente deines Gebäude-
+modells logisch zu trennen und zu 
+ordnen. 
+ 
+1.4 
+Auswählen von Elementen 
+Auswahl mit dem Pfeil-Werkzeug 
+Für die nächste Übung zeichnest du dir jetzt selbstständig einige Elemente in beliebiger Anzahl und Form. 
+Um gezeichnete Elemente zu aktivieren bzw. auszuwählen, verwendest du das 
+Pfeil-Werkzeug. 
+Tipp: Wenn du ggf. mehrfach die Esc-Taste drückst, kommst du immer wieder zu-
+rück zum Pfeilwerkzeug. Auch das Tastaturkürzel P führt zum Pfeil-Werkzeug. 
+ 
+Bauteil aktivieren  
+Klicke auf eine Kante oder einen Eckpunkt des 
+gewünschten Bauteils, um es zu aktivieren. 
+Wenn das Bauteil aktiviert ist, bekommt es eine 
+grüne Farbe. Wurde bereits ein Bauteil akti-
+viert, musst du diese Auswahl zuerst mit der 
+Esc-Taste abbrechen oder an eine leere Stelle 
+in deinem Bearbeitungsfenster klicken. Danach 
+kannst du das Pfeil-Werkzeug wie gewohnt 
+nutzen. Mehrere Elemente kannst du auswäh-
+len, indem du die Umschalt-/Shift-Taste ge-
+drückt hältst. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 13/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+13/137 
+Schnellauswahl 
+Wenn die Schnellauswahl (Magnet-Symbol) aktiviert ist, kannst du ein 
+Bauteil an jeder beliebigen Stelle markieren. Ist die Schnellauswahl 
+nicht aktiviert, musst du ein Bauteil an seinen Außenkanten oder an 
+seinen Eckpunkten markieren. Meist ist es sinnvoll, wenn die Schnel-
+lauswahl dauerhaft aktiviert ist. 
+Tipp: Um die Schnellauswahl temporär zu deaktivieren, halte die Leer-
+taste gedrückt! 
+Die temporäre Deaktivierung der Schnellauswahl ist besonders hilf-
+reich, wenn du beispielsweise einfach in die Fläche einer Decke, 
+Schraffur oder Ähnliches im Hintergrund liegen, die nicht angewählt 
+werden soll. 
+ 
+Tab-Taste 
+Bewegst du den Cursor über ein Element, so wird ein Infofenster 
+mit den wichtigsten Informationen zu diesem Element eingeblendet. 
+Liegen an einer Stelle mehrere Elemente übereinander, so kannst 
+du mit der Tab-Taste (=Taste links neben dem Q) das gewünschte 
+wählen. (Hierfür muss der Magnet für die Schnellauswahl aktiviert 
+sein!) Durch Anklicken mit der linken Maustaste, wird das hervorge-
+hobene Element ausgewählt und kann bearbeitet werden. Wenn du 
+aktivierte Elemente wieder deaktivieren möchtest, klicke einfach in 
+einen leeren Bereich auf dem Bildschirm oder drücke die Esc-
+Taste. 
+ 
+ 
+Auswahl in 3D anzeigen 
+Wenn du nur ausgewählte Elemente in 3D sehen möchtest, musst du mit dem Pfeil-Werkzeug die gewünschten Ele-
+mente aktivieren. Wenn du jetzt mit Cmd+3 (MAC) bzw. Strg+3 (WIN) ins 3D-Fenster wechselst, siehst du nur die akti-
+vierten Elemente. 
+ 
+ 
+Man kann auch über das Kontextmenü ins 3D-Fenster wechseln. Hier stehen die Befehle Auswahl/Markierungsrah-
+men im 3D anzeigen sowie Alles in 3D anzeigen zur Verfügung. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 14/137 =====
+ 
+ 
+Archicad Grundlagen 
+14/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Auswahlrahmen 
+Um mehrere Elemente gleichzeitig auszuwählen, kannst du mit 
+dem Pfeil-Werkzeug auch einen Rahmen um die entsprechenden 
+Elemente ziehen. 
+1. 
+Zuerst aktivierst du das Pfeil-Werkzeug. 
+2. 
+Klicke auf eine beliebige Stelle außerhalb der Element-
+gruppe. 
+3. 
+Ziehe jetzt den Cursor nach unten rechts. Entlang der Cur-
+sorbewegung entsteht ein Rahmen. Achte darauf, dass sich 
+alle zu wählenden Elemente innerhalb des Rahmens befin-
+den. Dann klickst du, um die Auswahl zu bestätigen. 
+Daraufhin werden alle sich in dem Rahmen befindlichen Elemente 
+aktiviert.  
+ 
+Alle Elemente auswählen 
+Du kannst auch alle Elemente in einem Schritt 
+aktivieren. Dazu gehst du ins Menü Bearbeiten 
+> Alle Elemente aktivieren. Beachte bitte, dass 
+du dabei auch die Elemente aktivierst, die au-
+ßerhalb deines sichtbaren Arbeitsbereiches 
+liegen. (Das Pfeil-Werkzeug muss hierbei akti-
+viert sein!). Alternativ dazu kannst du die Tasta-
+turkürzel Cmd+A (MAC), bzw. Strg+A (WIN) nut-
+zen. 
+ 
+Alle Elemente einer Werkzeugart auswählen 
+Du kannst auch alle Elemente einer Art auswählen. 
+Wenn du z.B. alle Wände auswählen möchtest, akti-
+viere zuerst das Wand-Werkzeug in der Werkzeug-
+leiste. Dann nutzt du das Tastaturkürzel Strg+A (WIN) / 
+Cmd+A (MAC). Auf diesem Wege werden alle Ele-
+mente des aktivierten Werkzeugs ausgewählt (in die-
+sem Fall alle Wände). 
+Das funktioniert auch mit jedem anderen Werkzeug. 
+Probiere es gleich einmal aus. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 15/137 =====
+Archicad Grundlagen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+15/137 
+Auswahl mit dem Markierungsrahmen 
+Mit dem Markierungsrahmen definierst du eine Fläche, mit der du Teilbereiche von Bauteilen bearbeiten oder im 3D-
+Fenster anzeigen kannst. Der Auswahlrahmenbereich dieser Fläche wird mit einer gestrichelten Linie angezeigt. 
+Wenn du versehentlich mit dem Zeichnen des Auswahlrahmenbereichs an einem falschen Punkt begonnen hast, 
+kannst du mit der Esc-Taste die aktuelle Auswahl aufheben. Für den Markierungsrahmen gibt es im Infofenster zwei 
+Einstellungen, die deine Auswahl beeinflussen. Das sind die Auswahlmethoden und die Geometriemethoden. 
+Markierungsrahmen – Auswahlmethoden 
+Ein Geschoss (dünner Markierungsrahmen): Innerhalb der Kontur 
+mit der gestrichelten Linie kannst du die Elemente des aktuellen 
+Geschosses auswählen. 
+ 
+ 
+Alle Geschosse (dicker Markierungsrahmen): Mit der Kontur der 
+dicken gestrichelten Linie kannst du die Elemente aller Ge-
+schosse des Projektes auswählen. 
+ 
+ 
+Markierungsrahmen – Geometriemethoden 
+Um die Form des Markierungsrahmens zu erstellen, stehen dir unsere drei klassischen Geometriemethoden zur Ver-
+fügung. 
+• 
+Mit der Polygon-Methode kannst du die Form des Aus-
+wahlrahmens frei bestimmen. 
+• 
+Mit der Methode Rechteck wird ein rechtwinkliges Mar-
+kierungs-Rechteck definiert. 
+• 
+Mit der Methode Gedrehtes Rechteck definierst du ein 
+Markierungsrechteck in einem beliebigen Winkel. 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 16/137 =====
+ 
+ 
+Archicad Grundlagen 
+16/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+1.5 
+Der Zauberstab 
+Mit dem Zauberstab kannst du neue Elemente in einer zeitsparen-
+den Arbeitsweise erstellen. Der Zauberstab zeichnet die Form ei-
+nes vorhandenen Elementes nach und erstellt auf diesem Wege 
+ein neues Element. Gerade beim Erstellen von Bauteilen anhand 
+von speziellen Formen wie Kurven und Kreisen erleichtert der Zau-
+berstab die Arbeit enorm. 
+Wenn du ein Bauteil (z.B. eine Decke) mit dem Zauberstab zeich-
+nen willst, aktivierst du zuerst das Decken-Werkzeug und hältst an-
+schließend die Leertaste gedrückt. Der Cursor ändert sich dann in 
+ein Zauberstab-Symbol. 
+ 
+1.6 
+Tastaturkürzel 
+Wer mit Tastaturkürzeln (Shortcuts) arbeitet, der arbeitet schneller und einfacher. Wo findest du nun die Tastaturkür-
+zel für Archicad? 
+Wenn du Befehle über die Menüleiste aufrufst, werden auch die entsprechenden Tastaturkürzel angezeigt. 
+ 
+Die wichtigsten Tastaturkürzel für Windows und Mac kannst du dir HIER auch als PDF-Datei herunterladen und auf 
+Wunsch ausdrucken. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 17/137 =====
+Über das Projekt 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+17/137 
+TEIL B: MODELLIERUNG 
+Nun starten wir mit unserem Beispielprojekt. Der erste Schritt ist dabei, ein 3D-Gebäudemodell des Entwurfs zu er-
+stellen. 
+2 Über das Projekt 
+Unser Beispielprojekt, anhand dessen du die wichtigsten Funktionen von Archicad erlernen wirst, basiert auf dem 
+Projekt Quinta Monroy des chilenischen Architekten und Pritzker-Preisträgers Alejandro Aravena und seines Stu-
+dios ELEMENTAL. Quinta Monroy ist eines der vier Projekte, deren Pläne und Entwurfsgedanken von ELEMENTAL 
+im Zuge einer Open-Source-Nutzung veröffentlicht wurden. Andere Architekten sollen dadurch einen Leitfaden für 
+die Entwicklung von Wohnprojekten erhalten, der als Vorbild für effizientes Bauen dient und auf die spezifische Bau-
+situation angepasst werden kann. 
+In diesem Sinne werden wir das Projekt auf ein fiktives Baufeld im deutschsprachigen Raum übertragen, auf die ent-
+sprechenden klimatischen und baukulturellen Gegebenheiten anpassen und ganz nebenbei die Anwendung von 
+Archicad erlernen. 
+ 
+Über QUINTA MONROY 
+Das Ziel dieses Social-Housing-Projektes war die Unterbringung von einhundert informell angesiedelten Familien in 
+Iquique, Chile, ohne Umsiedelung. Eine besondere Herausforderung war dabei die finanzielle Ausgangslage. Die 
+vorgesehene finanzielle Förderung des Projektes reichte nur für etwa 30m2 Wohnraum pro Familie. Auch das 
+Grundstück selbst war wesentlich teurer als dies normalerweise für sozialen Wohnungsbau der Fall war. 
+Der Entwurf der Architekten hatte deshalb folgende Anforderungen: 
+• 
+Zum einen musste das Grundstück aufgrund der hohen Kosten effizient genutzt werden. Das Projekt sollte also 
+eine hohe Dichte haben. 
+• 
+Gleichzeitig war es wichtig, keine Überbevölkerung zu schaffen. 
+• 
+Zum anderen sollte es der Entwurf den Bewohnern ermöglichen, die anfänglichen 30qm Wohnfläche, die mit-
+hilfe der Fördermittel errichtet werden können, mit der Zeit selbst zu erweitern - zu 72qm großen Wohnungen. 
+Dieses Prinzip nennt sich "Incremental housing". 
+Quinta Monroy vereint diese Entwurfsprinzipien durch dreistöckige Gebäude, die von je zwei Familien bewohnt wer-
+den. Die Gebäude sind mit allem ausgestattet, um sofort bewohnt zu werden, bieten in ihren Zwischenräumen je-
+doch auch Platz für Erweiterungen. Im Laufe der Zeit können die Bewohner so ihr Heim den sich ändernden Lebens-
+bedingungen und den wachsenden finanziellen Möglichkeiten anpassen. 
+Weitere Informationen zu dem Projekt und der Open-Source-Nutzung: 
+Webseite von ELEMENTAL 
+Quinta Monroy bei ArchDaily.com 
+ 
+Über den Architekten 
+Alejandro Aravena wurde 1967 in Santiago de Chile geboren. Nach einem Architekturstudium an der Universidad 
+Católica de Chile gründete er 1994 zunächst sein eigenes Büro, Alejandro Aravena Architects und leitet seit 2001 
+zusammen mit Gonzalo Arteaga, Juan Cerda, Victor Oddó und Diego Torres das Büro ELEMENTAL. Die Architekten 
+fokussieren sich auf Projekte von öffentlichem Interesse und sozialer Bedeutung. Inzwischen wurden soziale Wohn-
+bauten in Chile, den Vereinigten Staaten, Mexiko, China und der Schweiz realisiert. Neben der Tätigkeit als Architekt 
+ist und war Alejandro Aravena unter anderem als Direktor der Architekturbiennale Venedig, Mitglied der Jury des 
+Pritzker-Architekturpreises sowie als Professor in Harvard, Venedig, London und Santiago de Chile tätig. 
+Weitere Informationen zum Architekten: Alejandro Aravena bei PritzkerPrize.com 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 18/137 =====
+ 
+ 
+Der Start ins Projekt 
+18/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+3 Der Start ins Projekt 
+Zu Beginn des Projektes erstellen wir zunächst einmal ein neues Archicad-Projekt und sehen uns einige Grundein-
+stellungen an. 
+3.1 
+Ein neues Archicad-Projekt erstellen 
+Archicad starten 
+Wenn du Archicad startest, erscheint folgendes Startfenster: 
+Du hast hier nun mehrere 
+Möglichkeiten. 
+• 
+Neu… - Hier kannst du ein 
+neues Archicad Projekt 
+öffnen. 
+• 
+Suchen… - Du kannst auf 
+deinem Rechner nach ei-
+ner Archicad Datei su-
+chen, die du öffnen möch-
+test. 
+• 
+Teamwork… - Öffne ein 
+Teamwork-Projekt oder 
+tritt einem neuen Team-
+work-Projekt bei. 
+ 
+Zudem werden dir in diesem Fenster deine zuletzt geöffneten Archicad Projekte angezeigt. Bei erstmaligem Öffnen 
+sieht das Startfenster wie hier im Beispiel aus. 
+Klickst du auf ERSTE SCHRITTE?, so gelangst du zu Onlinekursen und Beispielprojekten für die Archicad Vollversion 
+für kommerzielle Nutzer. Umfangreiche Onlinekurse für die Archicad Bildungsversion findest du auf GRAPHISOFT 
+Learn. 
+Ein neues Projekt erstellen 
+Um ein neues Archicad-Projekt zu erstellen, klicke auf Neu.... Es erscheint dann folgendes Fenster: 
+ 
+Hier kannst du zunächst einmal eine Projektvorlage auswählen. Standardmäßig hast du in der deutschen Sprachver-
+sion von Archicad zwei Vorlagen zur Auswahl: 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 19/137 =====
+Der Start ins Projekt 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+19/137 
+• 
+Geschoss OK FF: Hier liegt die Unterkante jedes Geschosses auf der Oberkante des Fertigfußbodens. 
+• 
+Geschoss OK RD: Hier liegt die Unterkante jedes Geschosses auf der Oberkante der Rohdecke. 
+Mehr dazu erfährst du etwas später im Kapitel "Geschosshöhen". 
+Wähle die Vorlage 01 Archicad Beispiel-Vorlage - Geschoss OK FF.tpl aus. 
+Hinweis: In der österreichischen Archicad-Sprachversion kannst du die Vorlage 01 Archicad 26 Vorlage.tpl verwen-
+den. 
+Außerdem kannst du hier ein sogenanntes Arbeitsumgebungs-Profil auswählen. 
+Die Arbeitsumgebung 
+Mit der Auswahl des Arbeitsumgebungs-Profils legst du fest, welche Menüs und Werkzeuge in Archicad zur Verfü-
+gung stehen und wie diese dargestellt werden. 
+Am Anfang solltest du immer mit einer Standardeinstellung arbeiten. Wenn du später etwas mehr Erfahrung mit Ar-
+chicad hast, kannst du auch eigene Arbeitsumgebungen definieren, die genau deinen Anforderungen entsprechen. 
+Du kannst ein Arbeitsumgebungs-Profil bereits beim Erstellen eines neuen Archicad-Projektes auswählen: 
+ 
+Wähle hier für diesen Kurs das Arbeitsumgebungsprofil Profil Architektur 26. Klicke anschließend auf Neu. 
+Arbeitsumgebungs-Profil nachträglich ändern 
+Du kannst das Arbeitsumgebungs-Profil jederzeit ändern, wenn das Projekt bereits geöffnet ist. Klicke hierzu auf Op-
+tionen > Arbeitsumgebung > Profil Anwenden > Profil Architektur 26. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 20/137 =====
+ 
+ 
+Der Start ins Projekt 
+20/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+3.2 
+Projektpräferenzen 
+Als Nächstes werfen wir einen kurzen Blick 
+in die Projektpräferenzen. 
+Im Menü Optionen > Projektpräferenzen 
+kannst du grundlegende Einstellungen zur 
+Bemaßung, Berechnung, Konstruktion, etc. 
+festlegen. Dieses Menü solltest du, bevor 
+du mit der Konstruktion beginnst, einmal 
+geöffnet und die darin enthaltenen Anga-
+ben überprüft haben.  
+ 
+Arbeitseinheiten 
+Die für den Anfang wichtigste Einstellmög-
+lichkeit betrifft die Arbeitseinheiten. Hier 
+definierst du, in welcher Einheit Längen und 
+Winkel eingegeben werden sollen. Die 
+Standardeinstellung für den Modellbereich 
+ist Meter. Die Einheit für die Arbeit im Lay-
+out-Bereich kannst du separat festlegen. 
+Die Arbeitseinheiten beziehen sich immer 
+auf das gesamte Projekt. 
+ 
+3.3 
+Geschosseinstellungen 
+Das virtuelle Gebäudemodell in Archicad ist nach Geschossen organisiert, die alle eine bestimmte Geschosshöhe 
+haben. Übereinander gestapelt ergeben diese Geschosse unser fertiges Modell. 
+Um in Archicad richtig zu modellieren, sehen wir uns zunächst einmal den Geschossaufbau an. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 21/137 =====
+Der Start ins Projekt 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+21/137 
+Welches Bauteil gehört in welches Geschoss? 
+Der folgenden Grafik kannst du entnehmen, welche Bauteile jeweils zu welchem Geschoss gehören bzw. in wel-
+chem Geschoss gezeichnet werden. 
+• 
+In die einzelnen Geschosse gehö-
+ren jeweils alle Bauteile von UK 
+Rohdecke unter dem aktuellen Ge-
+schoss bis UK Rohdecke über dem 
+Geschoss. 
+• 
+Im Dachgeschoss werden alle Bau-
+teile gezeichnet, die zwischen der 
+UK der Rohdecke des darunterlie-
+genden Geschosses und der OK 
+des Firstes liegen. 
+• 
+Meist ist es ratsam, für die Funda-
+mente ein eigenes Geschoss zu er-
+stellen (grau). 
+ 
+ 
+ 
+Geschossaufbau und Geschosshöhen 
+Als Nächstes musst du wissen, wo jedes Geschoss beginnt und endet, sowie die resultierende Höhe. 
+Dabei kann OKFF = 0,00 oder OKRD = 0,00 sein. Dies legst du so fest, wie du es gewohnt bist. Wichtig ist nur, dass 
+du diese Einstellung projektübergreifend verwendest. In diesem Projekt legen wir OKFF = 0,00 fest. 
+Tipp: Ob in deinem Projekt OKFF oder OKRD auf der Höhenkote 0,00 liegen sollen, entscheidest du am besten, 
+wenn du die Projektvorlage auswählst, denn hier sind bereits zahlreiche entsprechende Voreinstellungen enthalten.  
+Die Wände beginnen und enden immer auf der OK der Rohdecke, also beispielsweise bei -0,10 im aktuellen Ge-
+schoss und enden auf -0,10 im darüberliegenden Geschoss. Eine Ausnahme bildet das oberste Geschoss. Hier en-
+den die Wände an der OK des Firstes oder darüber. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 22/137 =====
+ 
+ 
+Der Start ins Projekt 
+22/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Geschosseinstellungen für unser Projekt 
+Als nächstes stellen wir die Geschosse für unser Projekt ein. Gehe dazu auf Planung > Geschosseinstellungen.  
+Passe die vorhandenen Geschosse wie folgt an: 
+ 
+• 
+Geschosshöhe OG : 2,65m 
+• 
+Geschosshöhe EG : 2,65m 
+• 
+Geschosshöhe Fundamente : 
+1,50m 
+Dies stellt eine erste Abschätzung un-
+serer Geschosshöhen dar. Natürlich 
+können die Höhen auch im Laufe des 
+Entwurfes noch angepasst werden. 
+Füge als nächstes ein weiteres Geschoss hinzu, indem du das OG markierst und dann auf Darüber einfügen klickst. 
+Stelle das Geschoss wie folgt ein: 
+ 
+Geschosshöhe DG : 3,10m 
+ 
+Bestätige die Geschosseinstellungen 
+anschließend mit OK. Deine Archicad-
+Datei ist nun bereit für die Modellie-
+rung des Projektes! 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 23/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+23/137 
+4 3D-Gebäudemodell erstellen 
+Nun starten wir mit der Modellierung des Gebäudemodells und lernen dabei die wichtigsten Werkzeuge kennen. 
+4.1 
+Wände 
+Im ersten Schritt lernst du das Wand-Werkzeug kennen. Dazu solltest du einige Grundlagen vorab kennen. 
+Allgemeines zur Wand-Referenzlinie 
+Jede Wand besitzt eine Referenzlinie und eine Richtung. Die Wand-Referenzlinie ist im Grundriss als dicke blaue Li-
+nie sichtbar, wenn du die Wand aktiviert hast. 
+ 
+Die Referenzlinie hilft dir, Wände mit sauberen Verschneidungen (bezüglich der Schraffuren) zu erzeugen. Die Refe-
+renzlinien der Wände sollten immer aufeinandertreffen. 
+ 
+Die Position der Referenzlinie bestimmt außerdem die Oberflächenmaterialien der Außen- und Innenseite der 
+Wand. Weiterhin bestimmt sie die Fangpunkte und Kanten zum Auswählen, Verschieben und Verändern der 
+Wände. 
+Verwende das Infofenster oder das Teilfenster Lage der Referenzlinie der Wandeinstellungen, um die Position der 
+Referenzlinie festzulegen. Alternativ kannst du die C-Taste tippen, um während des Zeichnens der Wand durch die 
+Referenzlinienoptionen im Wand-Infofenster zu schalten. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 24/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+24/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Die Außenwände im EG 
+Wir beginnen mit dem Erstellen der Wände. Zuerst werden die Außen- und Innenwände im Erdgeschoss gezeichnet, 
+danach folgen die Wände in Ober- und Dachgeschoss.  
+ 
+Wandeinstellungen 
+Stelle sicher, dass du dich im EG 
+befindest. Um die Wände zu 
+zeichnen, gehe folgendermaßen 
+vor: 
+1. 
+Rufe die Wandeinstellungen 
+mit einem Doppelklick auf 
+das Wand-Werkzeug auf. 
+2. 
+Stelle die Wandoberkante 
+auf verknüpft mit 1.OG und 
+einem Abstand von -0,10 und 
+das Ursprungsgeschoss auf 
+0. EG, mit einem Abstand 
+von -0,10. 
+3. 
+Wähle den Baustoff TRA-
+GENDE BAUTEILE.  
+4. 
+Die Wandstärke soll 0,245 
+betragen.  
+5. 
+Überprüfe, ob du auf der 
+Ebene 10 Wand außen arbei-
+test.  
+6. 
+Bestätige danach die Einstel-
+lungen mit OK. 
+ 
+ 
+ 
+ 
+Zur Erklärung: 
+Außenwände konstruierst du immer von 
+OK Rohdecke bis OK Rohdecke.  
+Im Normalfall stehen Außenwände auf dem 
+Rohboden auf. Außerdem wird dadurch die 
+Wandbekleidung über die Deckenkante 
+hinweggeführt. 
+Den Abstand von 10cm zum Geschossan-
+ker wählen wir, da der Bodenaufbau später 
+10cm stark sein soll. Die OK des Rohbo-
+dens liegt also bei -0,10. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 25/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+25/137 
+Es gibt verschiedene Geometriemethoden, um Wände zu erzeugen. 
+Klicke auf die entsprechende Schaltfläche im Infofenster, um eine Geometriemethode zu wählen. Halte die linke 
+Maustaste so lange auf dem kleinen schwarzen Pfeil gedrückt, bis das Pop-Up-Menü erscheint. 
+ 
+ 
+1. 
+Stelle die Geometrieme-
+thode auf Rechteckig...  
+2. 
+... und die Lage der Re-
+ferenzlinie auf Außen. 
+3. 
+Klicke jetzt auf die 
+obere linke Ecke des in-
+neren roten Rechtecks.  
+4. 
+Ziehe danach den Cur-
+sor auf die untere 
+rechte Ecke des Recht-
+ecks und klicke erneut.  
+ 
+ 
+Die Außenwände des Erdgeschosses sind jetzt fertig. 
+Das rote Rechteck wird nun nicht mehr benötigt und 
+kann gelöscht werden. Wähle dazu wieder das Pfeil-
+werkzeug aus und fahre mit dem Mauszeiger auf die 
+rote Linie. Wird die Wand blau hervorgehoben, so drü-
+cke die Tab-Taste, bis die rote Linie hervorgehoben 
+wird. Das blaue Vorschau-Fenster zeigt nun an, dass 
+eine Polylinie angewählt wird. Klicke jetzt, um die Po-
+lylinie auszuwählen und drücke die Entf-Taste deiner 
+Tastatur, um die Linie zu löschen. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 26/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+26/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Die Innenwände im EG 
+Als Nächstes erstellen wir einige nichttragende Trennwände. Bevor diese Innenwände gezeichnet werden können, 
+musst du die Wandeinstellungen anpassen. 
+Rufe erneut die Wand-Einstellun-
+gen mit einem Doppelklick auf das 
+Wand-Werkzeug auf. 
+1. 
+Rufe erneut die Wand-Ein-
+stellungen mit einem Dop-
+pelklick auf das Wand-Werk-
+zeug auf.  
+2. 
+Der Abstand der Oberkante 
+der Wand zum 1. OG soll  
+-0,24 betragen. 
+3. 
+Ändere den Baustoff auf 
+BAUTEIL.  
+4. 
+Die Wandstärke soll 0,10 be-
+tragen.  
+5. 
+Stelle die Ebene auf 10 
+Wand innen.  
+6. 
+Schließe die Einstellungen 
+mit OK. 
+ 
+ 
+ 
+Zur Erklärung: 
+Innenwände werden meist von OK Rohboden bis UK Roh-
+decke konstruiert. 
+Das entspricht der realen Bauausführung. Zur Erinnerung: Mit 
+Archicad wird das Gebäude so modelliert, wie es gebaut wird! 
+Der Wert von –0,24 ergibt sich, da später der Bodenaufbau 
+10cm und die Decke 14cm dick sein werden. Die Oberkante 
+der Wand liegt also 24cm unter dem OG. 
+ 
+ 
+Elemente können auch in einem definierten Abstand zu einem Bezugspunkt erstellt werden. Das bedeutet, dass du 
+ein Bauteil mitten im Raum erstellen kannst, ohne dass du vorher eine Hilfskonstruktion erstellen musst. Du benötigst 
+nur einen Bezugspunkt. Das wollen wir dir anhand der Innenwände verdeutlichen: 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 27/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+27/137 
+Stelle die Geometriemethode auf Poly und die 
+Lage der Referenzlinie auf Innen. Um die Innen-
+wand an der richtigen Stelle zu erstellen, legst du 
+den Cursor in die rechte obere Innenecke (Nicht 
+klicken) und wartest. Ein kleiner blauer Kreis er-
+scheint und die Ecke wurde dadurch als Bezugs-
+punkt markiert. Drücke jetzt die X-Taste. Gib dann 
+über die Tastatur den Wert 1,45 ein und drücke da-
+nach auf die  
+„-“-Taste, um den Cursor 1,45 Meter nach links zu 
+bewegen. 
+Hinweis: Es ist sehr wichtig, das Vorzeichen in die-
+sem Fall immer nach dem eingegebenen Zahlen-
+wert einzugeben. Das Vorzeichen nach der Zahl 
+bestimmt den Abstand vom aktuellen Bezugs-
+punkt. Wenn das Vorzeichen vergessen wird, wird 
+der Abstand zum absoluten Nullpunkt berechnet. 
+ 
+Jetzt erscheinen zwei sich kreuzende Hilfslinien, 
+die den Startpunkt der Wand markieren. Bestätige 
+den Startpunkt der Wand an dieser Stelle mit der 
+Enter-Taste. 
+ 
+Ziehe den Cursor nach unten (entlang der blauen 
+Hilfslinie) und stelle sicher, dass die Wand nach 
+links wegklappt (Referenzlinie ist rechts). Wenn das 
+nicht der Fall ist, drücke die C-Taste, um die Lage 
+der Referenzlinie zu ändern. Du kannst die Taste 
+auch mehrfach betätigen, bis die gewählte Lage 
+passt. Gib den Wert „3,6“ für die Wandlänge ein 
+und bestätige diese mit Enter. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 28/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+28/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Ziehe danach den Cursor waagrecht nach links 
+und gib für den Abstand den Wert „0,7“ ein.  
+ 
+Bestätige den Wert mit der Enter-Taste und stelle 
+die Wand fertig, indem du nochmals auf den letz-
+ten Punkt klickst. 
+  
+ 
+Die ersten zwei Innenwände sind nun fertig. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 29/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+29/137 
+Erstelle die nächste Wand jetzt eigenständig mit 
+denselben Einstellungen. Die Maße kannst du der 
+Abbildung entnehmen. 
+ 
+Nun soll das Gebäude um einen Schacht ergänzt 
+werden. Ändere die Wanddicke auf 0,15 ...  
+ 
+... und entnimm die Maße der folgenden Zeich-
+nung. Achte dabei auf die Position der Referenzli-
+nie. 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 30/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+30/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Die Transparentpause 
+Als Nächstes werden wir die Außenwände des Obergeschosses erstellen. Wechsle über den Navigator in das Ober-
+geschoss. Da noch keine Elemente in diesem Geschoss gezeichnet wurden, sehen wir zunächst einen leeren Ar-
+beitsbereich. Damit wir unser Obergeschoss genau über dem Erdgeschoss konstruieren können, nehmen wir die 
+Transparentpause zur Hilfe. 
+Transparentpause einblenden 
+Klicke im Navigator mit der rechten Maustaste auf das Erdgeschoss 
+und wähle den Befehl Als Transparentpause anzeigen. 
+ 
+Nun wird im Arbeitsbereich das Erdgeschoss dargestellt. Die Elemente 
+im EG können hier nicht verändert werden, sie dienen aber als Zeich-
+nungsgrundlage. So kannst du jetzt mit Hilfe der Erdgeschosswände 
+die Außenwände des Obergeschosses zeichnen. 
+ 
+Die Transparentpausenpalette 
+Außerdem ist nun die Transparentpausenpa-
+lette am rechten unteren Bildschirmrand aktiv. 
+Hinweis: Sollte die Transparentpausenpalette 
+bei dir nicht angezeigt werden, so aktiviere 
+diese im Menü Fenster > Paletten > Transpa-
+rentpausenpalette. 
+Hier kannst du die Transparentpause ein- und 
+ausschalten. Außerdem findest du zwei Schie-
+beregler, um die Intensität der Transparent-
+pause (in unserem Fall das Erdgeschoss) und 
+des aktiven Fensters (in unserem Fall das 
+Obergeschoss) anzupassen. Du kannst auch 
+die Farbe, in der die Transparentpause ange-
+zeigt wird, ändern. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 31/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+31/137 
+Die Außenwände im OG erstellen 
+Um dieselben Einstellungen für die Außenwände 
+wie im Erdgeschoss zu verwenden, kannst du die 
+Eigenschaften dieser Wände einfach übernehmen. 
+Stelle sicher, dass das Erdgeschoss als Transpa-
+rentpause angezeigt wird (hier rot dargestellt). 
+Durch Drücken der Alt-Taste rufst du den Befehl 
+der Pipette auf. Klicke also eine der Erdgeschoss-
+Außenwände (hier rot) mit gedrückter Alt-Taste an. 
+Das Wand-Werkzeug wird aktiviert, und alle Ein-
+stellungen werden in die Grundeinstellungen des 
+Wand-Werkzeuges übernommen. 
+ 
+1. 
+Wähle die Geometriemethode Rechteckig. 
+2. 
+Klicke auf den Außenwand-Eckpunkt oben 
+links... 
+3. 
+...und fahre mit dem Mauszeiger auf die un-
+tere Wandkante. 
+4. 
+Benutze die Tab-Taste, um zur Eingabe der 
+Länge zu gelangen. Gib den Wert „3,49“ über 
+deine Tastatur ein und bestätige mit Enter. 
+ 
+Die Außenwände des Obergeschosses sind nun erstellt: 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 32/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+32/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Die Außenwände im DG erstellen 
+Auf die gleiche Art und Weise erstellen wir nun auch die Außenwände des Dachgeschosses. Wechsle über den Na-
+vigator in das Dachgeschoss. 
+Auch hier blenden wir das darunterliegende Geschoss als Transparentpause ein. 
+Übernimm mithilfe der Pipette (Alt-Taste) erneut 
+die Wandeinstellungen der Außenwände im OG. 
+ 
+Verändere jetzt in den Wandeigenschaften (1) die 
+Wandhöhe entsprechend den Vorgaben (2). 
+Wenn alle Einstellungen übereinstimmen, bestä-
+tige mit OK (3). 
+ 
+ 
+1. 
+Die Außenwände zeichnest du wieder mit der Geometriemethode Rechteckig. 
+2. 
+Klicke auf den Außenwand-Eckpunkt oben links ... 
+3. 
+... und dann auf den Außenwand-Eckpunkt unten rechts. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 33/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+33/137 
+Die Innenwände in OG und DG 
+Innenwände im OG 
+Jetzt beginnen wir mit dem Erstellen der Innenwände im 
+Obergeschoss. Elemente können auch von einem Ge-
+schoss ins andere kopiert werden. Das bietet sich auch 
+in unserem Projekt an, da ein Teil der Innenwände über-
+einander liegen. Dabei bleiben die Höhen in Bezug auf 
+das Geschoss erhalten. Du wirst dies mit dem grün mar-
+kierten Schacht aus dem Erdgeschoss ausprobieren. 
+ 
+Wechsle ins Erdgeschoss und wähle zunächst den 
+Schacht in der linken oberen Gebäudeecke aus. Ver-
+wende den Befehl Kopieren aus dem Menü Bearbeiten 
+bzw. einfach den Kurzbefehl Strg+C (WIN) bzw. Cmd+C 
+(MAC). 
+ 
+ 
+Wechsle danach in das Obergeschoss und verwende 
+den Befehl Einfügen aus dem Archicad Menü Bearbei-
+ten oder das Tastenkürzel Strg+V (WIN) bzw. Cmd+V 
+(MAC). 
+Die Wand wird an ihrer Originalposition innerhalb eines 
+„Ameisenrahmens“ eingefügt. Sie kann noch verscho-
+ben werden, indem man mit dem Cursor innerhalb des 
+Rahmens klickt und dann mit einem zweiten Klick den 
+eingefügten Inhalt des Rahmens verschiebt. Um die 
+Wand an dieser Position endgültig zu platzieren, klicke 
+einfach außerhalb des umlaufenden Rahmens. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 34/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+34/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Innenwände im DG 
+Wechsle anschließend in das Dachgeschoss 
+und füge den Schacht auch hier ein, indem du 
+erneut den Befehl Einfügen oder das Tastatur-
+kürzel Strg+V (WIN) bzw. Cmd+V (MAC) verwen-
+dest. Klicke außerhalb des laufenden Rahmens, 
+um die Wand endgültig zu platzieren. 
+Markiere die neu eingefügte Wand im DG und 
+ändere die Wandhöhe entsprechend der fol-
+genden Abbildung: 
+1. 
+Wähle bei Oberkante verknüpft mit die 
+Option Nicht verknüpft... 
+2. 
+... und trage eine Wandhöhe von 3,2 Meter 
+ein. 
+3. 
+Bestätige deine Einstellungen mit OK. 
+ 
+Als Nächstes fügen wir im Dachgeschoss eine 
+Innenwand hinzu. 
+1. 
+Benutze die Pipette, um die Einstellungen 
+des Schachtes im DG aufzunehmen. 
+ 
+2. 
+Öffne die Grundeinstellungen.  
+3. 
+Ändere die Wanddicke auf 0,10 ...  
+4. 
+... und bestätige die Einstellungen mit OK. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 35/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+35/137 
+5. 
+Wähle die Geometriemethode Ge-
+rade/Einfach. 
+Als Nächstes nutzen wir wieder unsere 
+Koordinateneingabe, um die Wand an der 
+korrekten Stelle zu platzieren.  
+6. 
+Platziere den Mauszeiger in der Innen-
+ecke rechts oben.  
+7. 
+Tippe auf deiner Tastatur "Y 1,9 - " ein, um 
+deinen Cursor 1,9 Meter nach unten zu be-
+wegen. Drücke Enter, um mit dem Zeich-
+nen der Wand zu beginnen. 
+ 
+ 
+8. 
+Achte darauf, dass die Wandstärke nach 
+oben hin abgetragen wird. In dies nicht 
+der Fall, tippe C auf der Tastatur oder 
+nutze die Einstellungen der Infoleiste, um 
+die Lage der Referenzlinie anzupassen. 
+ 
+ 
+9. 
+Verlängere die Wand anschließend bis zur 
+gegenüberliegenden Außenwand. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 36/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+36/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Die Innenwände des Dachgeschosses sind nun 
+fertig. 
+ 
+So sollte dein Gebäudemodell jetzt aussehen: 
+ 
+Trimmen, Splitten, Anpassen und Verbinden 
+Im Menü Bearbeiten bzw. in der Standard-Symbolleiste findest du hilfreiche Befehle, die dir die Arbeit in Archicad 
+erleichtern. 
+ 
+Trimmen: Tastaturkürzel Cmd- (Mac) bzw. Strg-Taste (WIN) gedrückt halten 
+Schneidet ein überstehendes Stück eines linearen Elements ab. 
+ 
+Splitten: Tastaturkürzel Cmd+Ö (Mac) bzw. Strg+Ö (WIN) 
+Teilt ein Element entlang einer Achse oder Kante. 
+ 
+Anpassen: Tastaturkürzel Cmd+Ä (Mac) bzw. Strg+Ä (WIN) 
+Kürzt oder verlängert ein Element bis zu einer vorgegebenen Achse oder Kante. 
+ 
+Verbinden: Tastaturkürzel Ctrl+V (Mac) bzw. Alt+V (WIN) 
+Verlängert bzw. kürzt zwei lineare Elemente, sodass sich diese verschneiden. 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 37/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+37/137 
+4.2 
+Decken 
+Als Nächstes wollen wir unser Projekt um Decken ergänzen. 
+Eine Decke besteht normalerweise aus 
+Rohdecke und Bodenaufbau. Wände ste-
+hen dabei meist auf der Rohdecke, wäh-
+rend sich der Bodenaufbau und der Boden-
+belag je nach Raumnutzung (z.B. Bad, Kü-
+che, Wohnzimmer) unterscheiden. Deshalb 
+macht es Sinn, Rohdecke und Bodenauf-
+bau separat zu modellieren. Für beides 
+kannst du das Decken-Werkzeug verwen-
+den. 
+ 
+Rohdecken erstellen 
+Wir beginnen nun mit der Erstellung der Rohdecken und der Bodenplatte. 
+Bodenplatte Erdgeschoss 
+Gehe ins Erdgeschoss. 
+1. 
+Rufe das Decken-Werkzeug auf und öffne 
+die Grundeinstellungen. 
+2. 
+Wähle eine Deckenstärke von 0,20 und ei-
+nen Abstand zum Ursprungsgeschoss von  
+-0,10. 
+3. 
+Stelle die Struktur auf Einfach und den Bau-
+stoff auf TRAGENDE BAUTEILE. 
+4. 
+Wähle die Ebene 20 Decke... 
+5. 
+... und bestätige die Eingaben mit OK. 
+ 
+6. 
+Drücke die Leertaste deiner Tastatur. Der 
+Cursor verwandelt sich nun in einen Zau-
+berstab. Klicke einmal mit dem Zauberstab 
+auf eine beliebige Außenkante einer Au-
+ßenwand. Die Decke wird daraufhin auto-
+matisch entlang der Außenkante des Ge-
+bäudes erstellt.  
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 38/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+38/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Danach kannst du die gerade erstellte Decke im 
+3D-Fenster überprüfen. Aktiviere das Pfeilwerk-
+zeug und wähle mit Strg+A (WIN) bzw. Cmd+A 
+(MAC) alle Elemente im EG aus. Wechsle danach 
+mit Strg+3 (WIN), bzw. Cmd+3 (MAC) ins 3D-Fens-
+ter. 
+ 
+Momentan verdeckt die Freifläche hier noch die eben er-
+stellte Decke. Um die Freifläche auszublenden, wähle sie aus 
+und öffne mit einem Rechtklick das Kontextmenü. Wähle hier 
+den Befehl Auswahl ausblenden.  
+Hinweis: Diesen Befehl gibt es erst seit Archicad 25.  
+ 
+Die Freifläche wurde nun ausgeblendet und du kannst die 
+eben erstellte Bodenplatte sehen und anwählen. 
+ 
+Übrigens: Wie alle Bauteile, können Decken auch im 3D-
+Fenster erstellt werden. Das gilt sowohl für das manuelle Er-
+stellen, als auch für den Zauberstab. 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 39/137 =====
+3D-Gebäudemodell erstellen 
+ 
+ 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+39/137 
+Rohdecke zwischen EG und OG 
+Als Nächstes werden wir die Decke im Obergeschoss erstellen. Wechsle über den Navigator in das Obergeschoss.  
+Da die Decke auch den überstehenden Teil des Erdge-
+schosses bedecken soll, musst du für die Erstellung der 
+Decke das Erdgeschoss als Transparentpause anzeigen 
+lassen. 
+Klicke dazu mit der rechten Maustaste im Navigator auf 
+das 0. EG und wähle Als Transparentpause anzeigen. 
+ 
+Anhand des farbig angezeigten Erdge-
+schosses können wir nun die Decke er-
+stellen. 
+1. 
+Wähle erneut das Deckenwerk-
+zeug aus... 
+2. 
+... und öffne die Deckeneinstellun-
+gen. Wie du siehst, wurde als Ur-
+sprungsgeschoss automatisch das 
+1. OG eingetragen. 
+3. 
+Ändere nun die Deckenstärke auf 
+0,14. 
+4. 
+Übernimm die Einstellungen mit 
+OK. 
+ 
+5. 
+Stelle die Geometriemethode auf 
+Rechteckig.  
+6. 
+Wenn du den Cursor über die Ge-
+bäudeecken hältst, verändert sich 
+der Cursor zum Fangpunktsymbol 
+Knotenpunkt (Häkchen). Klicke auf 
+den Außenwand-Eckpunkt links 
+oben...  
+7. 
+...und dann auf den Eckpunkt des 
+Erdgeschosses rechts unten.  
+Die Decke wurde erstellt. Du kannst die 
+Transparentpause nun wieder deakti-
+vieren. 
+ 
+ 
+ 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!
+
+
+===== PAGE 40/137 =====
+ 
+ 
+3D-Gebäudemodell erstellen 
+40/137 
+GRAPHISOFT Deutschland GmbH  •  Landaubogen 10  •  81373 München  •  Tel. +49 89 746 43-0  •  E-Mail: mail@graphisoft.de  
+Rohdecke zwischen OG und DG 
+Wechsle nun über den Navigator ins Dachgeschoss. Nutze dieselben De-
+ckeneinstellungen und den Zauberstab, um die Decke zwischen OG und 
+DG zu erstellen. 
+ 
+Ergebnis 
+Gehe ins das 3D-Fenster (Tastaturkürzel Cmd+3 (MAC) 
+bzw. Strg+3 (WIN)), um die fertig erstellten Decken zu be-
+trachten. 
+ 
+Nur für Kursteilnehmer, Weitergabe 
+an Dritte nicht zulässig!

@@ -1,0 +1,3936 @@
+
+
+===== PAGE 81/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 77 
+ 
+(ncpt)   
+AT.1: Der Berechnung der mechanischen Beanspruchung der Leiter und der Bestimmung des 
+Durchhanges sind die Lastfälle nach Tabelle 4.3.10.3/AT.2 zugrunde zu legen. 
+ 
+(ncpt)   
+AT.2: Lastfälle 
+ 
+Tabelle 4.3.10.3/AT.2 – Lastfälle 
+ 
+Lastfall 
+Temperatur 
+°C a) 
+Lotlast 
+zulässige Beanspruchung 
+ 
+ 
+Regellastfälle 
+ 
+ 
+-5 
+ 
+Leitereigengewicht 
++ Regelzusatzlast 
+Die Ausgangszugspannung darf die zuläs-
+sigen Werte aus Tabelle 9.5/AT.2 nicht 
+überschreiten. 
+Die Höchstzugspannung darf diesen Wert 
+um höchstens 5 % überschreiten. 
+ 
+-20 
+Leitereigengewicht 
+ 
+ 
++40 b) 
+Leitereigengewicht 
+--- 
+ 
+Ausnahmslastfall 
+ 
+-5 
+Leitereigengewicht 
++ Ausnahmszusatzlast 
+Die beim Ausnahmslastfall im oberen Auf-
+hängepunkt auftretende Zugspannung darf 
+die Dauerzugspannung nicht überschrei-
+ten. 
+a)  Unter außergewöhnlichen klimatischen Verhältnissen (z.B. im Hochgebirge) kann es erforderlich werden, die obere 
+und untere Temperaturgrenze (+40 °C bzw. -20 °C) den auf Grund langjähriger Beobachtungen festgestellten Wer-
+ten anzugleichen. 
+b) Bei Leitungen, die auch im Sommer mit sehr hoher spezifischer Strombelastung beansprucht sind, ist mit einer 
+Temperatur von +60 °C zu rechnen. Gleichermaßen sind bei Verwendung von Hochtemperaturseilen Leitererwär-
+mungen durch den höchsten Betriebsstrom zu berücksichtigen. 
+ 
+(ncpt) 
+AT.3: In den Regellastfällen sind die Leiterzüge beim Ausgangszustand anzunehmen. 
+ 
+(ncpt)   
+AT.4: In den Ausnahmslastfällen sind die Leiterzüge bei -5 °C und Ausnahmszusatzlast anzuneh-
+men. Unterschiede in den Leiterzügen zu beiden Seiten von Abspanntragwerken bis 10 % des 
+größeren Leiterzuges dürfen vernachlässigt werden. 
+ 
+(ncpt)   
+AT.5: Ist bei einzelnen Lastfällen anzunehmen, dass Leiterzüge vermindert werden oder vollkom-
+men entfallen, so ist die Annahme so zu treffen, dass hierdurch die jeweils ungünstigste Beanspru-
+chung des zu bemessenden Bauteiles entsteht. 
+ 
+(ncpt)   
+AT.6: Horizontaler Leiterzug ist die Horizontalkomponente des Leiterzuges. 
+ 
+Hoch- oder Tiefzug ist das Produkt aus dem horizontalen Leiterzug und dem Tangens des Nei-
+gungswinkels der Verbindungsgeraden der Aufhängepunkte gegen die Waagrechte. 
+4.3.10.4 Standardlastfälle 
+Vorgaben für Normallastfälle, Errichtungs- und Unterhaltungslastfälle und Ausnahmelastfälle sind in den 
+NNA enthalten. 
+Falls maßgebend und in einer Projektspezifikation festgelegt, müssen Lastfälle für Kurzschlussbelastungen 
+oder andere Sonderlasten entsprechend 4.3.8 bzw. 4.3.9 untersucht werden. 
+(ncpt)  
+AT.1: Es sind die Lastfälle entsprechend Tabelle 4.3.10.4/AT.1 (Tragmaste und Winkeltragmaste) 
+und Tabelle 4.3.10.4/AT.2 (Abspannmaste) und Tabelle 4.3.10.4/AT.3 (Abzweigmaste) anzuneh-
+men. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+81 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 82/273 =====
+Seite 78 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   AT.1: 
+Tabelle 4.3.10.4/AT.1 – Lastfälle für Trag- und Winkeltragmaste 
+ 
+ 
+Regellastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Windlast: Wind senkrecht zur Leitungsrichtung, bei Winkeltragmasten in Richtung der 
+Winkelhalbierenden, wirkend auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter 
+ 
+A 
+Vertikal- 
+kräfte 
+Ständige Lasten, 
+Hoch- und Tiefzüge, 
+Gewicht der Regelzusatzlast auf 
+     die Ausleger, die Ausrüstung und die  
+     Leiter der anschl. Spannfeldhälften, 
+Montagelast, 
+Eigengewicht des Tragwerkes. 
+Regelzusatzlast und Montagelast sind für 
+die Bemessung von jenen Bauteilen zu be-
+rücksichtigen, für die die zusätzliche Berück-
+sichtigung dieser Lastanteile neben den 
+übrigen Lotlasten die ungünstigere 
+Beanspruchung ergibt. 
+ 
+B 
+Horizon- 
+talkräfte 
+Windlast: Wind in Leitungsrichtung, bei Winkeltragmasten senkrecht zur Winkelhalbie-
+renden, wirkend auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+ 
+Vertikal  
+kräfte 
+wie Lastfall A. 
+ 
+ 
+C 
+Horizon-
+talkräfte 
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spann-
+feld auf die nachstehenden Prozentsätze:   Leitungsgruppe       II          III          IV 
+                                                     
+für Leiterseile         85         90         90   
+                                                     
+für Erdseile            80         80         80  
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+ 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+ 
+ 
+ 
+ 
+D 
+Horizon-
+talkräfte 
+Entfall des horizontalen Leiterzuges eines Leiters bzw. eines Bündelleiters in einem an-
+schließenden Spannfeld und Verminderung des horizontalen Leiterzuges dieses Leiters 
+oder Bündelleiters im anderen anschließenden Spannfeld auf die  folgenden Prozent-
+sätze: 
+     
+für  Einzelleiter 40 %,  
+ 
+für Bündelleiter 20 % des gesamten Bündelleiters. 
+Horizontaler Leiterzug in allen übrigen Leitern. 
+ 
+Vertikal- 
+kräfte 
+wie Lastfall A. 
+Für den Leiter oder Bündelleiter mit entfallendem horizontalem Leiterzug entfällt der 
+Hoch- bzw. Tiefzug. 
+Für den Leiter oder Bündelleiter mit vermindertem horizontalem Leiterzug ist der Hoch- 
+bzw. Tiefzug im selben Prozentsatz wie die horizontalen Leiterzüge zu vermindern. 
+ 
+ 
+E 
+Horizon-
+talkräfte 
+Windlast: Wind über Eck in Richtung senkrecht zu den gedachten Diagonalen des Mast-
+körperquerschnittes, wirkend auf Mast, Ausrüstung und die unvereisten Leiter. Dieser 
+Lastfall braucht nur bei Masten mit einer Gesamthöhe über Gelände von mehr als 40 m 
+berücksichtigt zu werden. 
+ 
+Vertikal- 
+kräfte 
+wie Lastfall A. 
+ 
+Ausnahmslastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Horizontaler Leiterzug aller Leiter in beiden Spannfeldern. 
+ 
+K 
+Vertikal-
+kräfte 
+Ständige Lasten, Hoch- und Tiefzüge, 
+Gewicht der Ausnahmszusatzlast auf die Ausleger, die Ausrüstung und die Leiter der 
+anschließenden  Spannfeldhälften, 
+Eigengewicht des Tragwerkes. 
+ 
+L 
+Horizon- 
+talkräfte 
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spann-
+feld auf dieselben Prozentsätze wie im Regellastfall C. 
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+ 
+Vertikal- 
+kräfte 
+Wie Lastfall K. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+82 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 83/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 79 
+ 
+(ncpt)  
+AT.2: Tabelle 4.3.10.4/AT.2 – Lastfälle für Abspann- und Winkelabspannmaste (analog für 
+Endabspannmaste) 
+ 
+ 
+Regellastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Windlast: Wind senkrecht zur Leitungsrichtung, bei Winkelabspannmasten in Richtung 
+der Winkelhalbierenden oder in jener Hauptachse des Tragwerkes, die von der Richtung 
+des resultierenden horizontalen Leiterzuges am wenigsten abweicht, wirkend auf: Mast, 
+Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+A 
+Vertikal- 
+kräfte 
+Ständige Lasten, 
+Hoch- und Tiefzüge, 
+Gewicht der Regelzusatzlast auf die  
+    Ausleger, die Ausrüstung und die Leiter  
+    der anschließenden Spannfeldhälften, 
+Montagelast, 
+Eigengewicht des Tragwerkes. 
+Regelzusatzlast und Montagelast sind für 
+die Bemessung von jenen Bauteilen zu 
+berücksichtigen, für die die zusätzliche 
+Berücksichtigung dieser Lastanteile neben 
+den übrigen Lotlasten die ungünstigere 
+Beanspruchung ergibt. 
+ 
+ 
+ 
+ 
+B/C 
+Horizon-
+talkräfte 
+Windlast: Wind in Leitungsrichtung, bei Winkelabspannmasten senkrecht zur Winkelhal-
+bierenden oder senkrecht zu jener Hauptachse des Tragwerkes, die von der Richtung 
+des resultierenden horizontalen Leiterzuges am wenigsten abweicht, wirkend auf: Mast, 
+Ausrüstung und unvereiste Leiter.  
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spann-
+feld auf 50 %. 
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+ 
+Vertikal-  
+kräfte 
+Wie Lastfall A. 
+Bei den Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- und Tiefzüge 
+auf 50 % zu vermindern. 
+ 
+D 
+Horizon-
+talkräfte 
+Entfall des horizontalen Zuges eines abgespannten Leiters oder Bündelleiters, während 
+in allen übrigen am Mast abgespannten Leitern der volle horizontale Leiterzug wirkt.  
+ 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Für den Leiter oder Bündelleiter mit entfallendem horizontalem Leiterzug entfällt der 
+Hoch- bzw. Tiefzug. 
+ 
+Ausnahmslastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Horizontaler Leiterzug aller Leiter. 
+ 
+K 
+Vertikal- 
+kräfte 
+Ständige Lasten, 
+Hoch- und Tiefzüge, 
+Gewicht der Ausnahmszusatzlast auf die Ausleger, die Ausrüstung und die Leiter  
+     der anschließenden Spannfeldhälften, 
+Eigengewicht des Tragwerkes. 
+ 
+Horizon- 
+talkräfte 
+Verminderung der horizontalen Leiterzüge aller Leiter in einem anschließenden Spann-
+feld auf 50 %. 
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+L 
+Vertikal- 
+kräfte 
+Wie Lastfall K. 
+Bei den Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- und Tiefzüge 
+auf 50 % zu vermindern. 
+ 
+Horizon-
+talkräfte 
+Verminderung des horizontalen Leiterzuges eines abgespannten Leiters oder Bündellei-
+ters auf 50 %, während in allen übrigen am Mast abgespannten Leitern der volle horizon-
+tale Leiterzug wirkt. 
+M 
+Vertikal- 
+kräfte 
+Wie Lastfall K. 
+Für den Leiter oder Bündelleiter mit vermindertem horizontalem Leiterzug ist der Hoch- 
+bzw. Tiefzug auf 50 % zu vermindern. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+83 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 84/273 =====
+Seite 80 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   
+AT.3:  
+Tabelle 4.3.10.4/AT.3 – Lastfälle für Abzweig- und Verteilmaste  
+ 
+ 
+ 
+Regellastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Windlast: Wind in jener Hauptachse des Mastes, die von der Richtung der Resultieren-
+den der horizontalen Leiterzüge am wenigsten abweicht, wirkend auf: Mast, Ausrüstung 
+und unvereister Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+ 
+A 
+Vertikal- 
+kräfte 
+Ständige Lasten, 
+Hoch- und Tiefzüge, 
+Gewicht der Regelzusatzlast auf 
+die Ausleger, 
+die Ausrüstung und die Leiter 
+der anschl. Spannfeldhälften, 
+Montagelast, 
+Eigengewicht des Tragwerkes. 
+Regelzusatzlast und Montagelast sind für die 
+Bemessung von jenen Bauteilen zu berück-
+sichtigen, für die die zusätzliche Berück-
+sichtigung dieser Lastanteile neben den übri-
+gen Lotlasten die ungünstigere Beanspru-
+chung ergibt. 
+ 
+B 
+Horizon- 
+talkräfte 
+Windlast: Wind in Leitungsrichtung zu jener Hauptachse des Mastes, die von der Rich-
+tung der Resultierenden der horizontalen Leiterzüge am wenigsten abweicht, wirkend 
+auf: Mast, Ausrüstung und unvereiste Leiter. 
+Horizontaler Leiterzug aller Leiter. 
+ 
+Vertikal  
+kräfte 
+wie Lastfall A. 
+ 
+ 
+C 
+Horizon-
+talkräfte 
+Windlast: Wind in jener Hauptachse des Mastes, die von der Richtung der Resultieren-
+den der horizontalen Leiterzüge am wenigsten abweicht, wirkend auf: Mast, Ausrüstung 
+und unvereister Leiter. 
+Abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem an-
+schließenden Spannfeld oder mehreren anschließenden Spannfeldern auf 50 %. 
+Horizontale Leiterzüge aller Leiter in allen anderen anschließenden Spannfeldern. 
+Nicht abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem 
+anschließenden Spannfeld oder mehreren anschließenden Spannfeldern auf die nach-
+stehenden Prozentsätze: 
+ 
+Leitungsgruppe II 
+III 
+IV 
+für Leiterseile 
+ 
+85 
+90  
+90   
+für Erdseile                                 
+80      80 
+80   
+Horizontaler Leiterzug aller Leiter im anderen anschließenden Spannfeld. 
+ 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Bei den abgespannten Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- 
+und Tiefzüge auf 50 % zu vermindern. 
+ 
+(Fortsetzung nächste Seite)
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+84 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 85/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 81 
+ 
+ 
+Fortsetzung der Tabelle 4.3.10.4/AT.3 
+ 
+ 
+ 
+D 
+Horizon-
+talkräfte 
+Abgespannte Leiter: Entfall des horizontalen Leiterzuges eines Leiters oder Bündelleiters 
+in einem Spannfeld der durchlaufenden Leitungssysteme, während im anderen Spann-
+feld der volle horizontale Leiterzug wirkt, und allenfalls gleichzeitiger Entfall des horizon-
+talen Leiterzuges eines Leiters oder Bündelleiters des abzweigenden Systems. 
+Horizontaler Leiterzug in allen übrigen Leitern der anschließenden Spannfelder. 
+Nicht abgespannte Leiter: Entfall des horizontalen Leiterzuges eines Leiters oder Bündel-
+leiters in einem anschließenden Spannfeld und Verminderung des horizontalen Leiterzu-
+ges dieses Leiters oder Bündelleiters im anderen anschließenden Spannfeld je Leitungs-
+system auf die folgenden Prozentsätze: 
+für Einzelleiter 40 %,  
+für Bündelleiter 20 % des gesamten Bündelleiters. 
+Horizontaler Leiterzug in allen übrigen Leitern. 
+ 
+Vertikal- 
+kräfte 
+Wie Lastfall A. 
+Bei den abgespannten Leitern mit entfallendem horizontalem Leiterzug entfällt der Hoch- 
+bzw. Tiefzug. 
+Bei den nicht abgespannten Leitern, bei denen der horizontale Leiterzug entfällt, entfallen 
+auch die Hoch- bzw. Tiefzüge. 
+Bei Leitern mit vermindertem horizontalem Leiterzug sind die Hoch- bzw. Tiefzüge auf 
+dieselben Prozentsätze wie bei den horizontalen Leiterzügen zu vermindern. 
+ 
+ 
+Ausnahmslastfälle 
+ 
+ 
+Horizon-
+talkräfte 
+Horizontaler Leiterzug in den Leitern aller anschließenden Spannfelder. 
+ 
+ 
+K 
+Vertikal- 
+kräfte 
+Ständige Lasten, 
+Hoch- und Tiefzüge 
+Gewicht der Ausnahmszusatzlast auf die Ausleger, die Ausrüstung und die Leiter der 
+anschließenden Spannfeldhälften, 
+Eigengewicht des Tragwerkes. 
+ 
+ 
+ 
+ 
+ 
+ 
+L 
+Horizon-
+talkräfte 
+Abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem an-
+schließenden Spannfeld auf 50 %. Horizontale Leiterzüge aller Leiter in allen anderen 
+anschließenden Spannfeldern. 
+Nicht abgespannte Leiter: Verminderung der horizontalen Leiterzüge aller Leiter in einem 
+der anschließenden Spannfelder auf die nachstehenden Prozentsätze: 
+ 
+Leitungsgruppe II 
+III 
+IV 
+für Leiterseile   
+ 
+85 
+90 
+90 
+für Erdseile                               
+80       80 
+80 
+ 
+Horizontaler Leiterzug aller Leiter in den anderen anschließenden Spannfeldern. 
+ 
+Vertikal- 
+kräfte 
+wie Lastfall K. 
+Bei den abgespannten Leitern mit verminderten horizontalen Leiterzügen sind die Hoch- 
+und Tiefzüge auf 50 % zu vermindern. 
+ 
+ 
+ 
+ 
+M 
+Horizon-
+talkräfte 
+Abgespannte Leiter: Verminderung des horizontalen Leiterzuges eines Leiters oder Bün-
+delleiters in einem anschließenden Spannfeld eines durchlaufenden Leitungssystems auf 
+50 %, während im anderen anschließenden Spannfeld der volle horizontale Leiterzug 
+wirkt, und allenfalls gleichzeitig Verminderung des horizontalen Leiterzuges eines Leiters 
+oder Bündelleiters des abzweigenden Systems auf 50 %. 
+Horizontaler Leiterzug in allen Leitern der übrigen anschließenden Spannfelder. 
+Nicht abgespannte Leiter: Horizontaler Leiterzug in allen Leitern. 
+ 
+Vertikal-  
+kräfte 
+wie Lastfall K. 
+Bei allen Leitern mit vermindertem horizontalem Leiterzug ist der Hoch- bzw. Tiefzug auf 
+50 % zu vermindern. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+85 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 86/273 =====
+Seite 82 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   AT.4: Für Holzmaste der Leitungsgruppe II für die Nennspannung 45 kV gilt: 
+ 
+ 
+Tabelle  4.3.10.4/AT.4 – Lastannahmen für Holzmaste 
+ 
+Holzmaste für die Leitungsgruppe II,  
+Nennisolation 45 kV a) 
+Lastfälle 
+Trag- und Winkeltragmaste 
+Tabelle 4.3.10.4/AT.1  A, B, C 
+Abspann- und Winkelabspannmaste 
+Tabelle 4.3.10.4/AT.2  A, B/C 
+Abzweigmaste 
+Tabelle 4.3.10.4/AT.3  A, B, C 
+a)  Für die Bemessung von Holzmasten anderer Leitungen der Gruppe II (über 45 kV) mit kurzfristigem Be-
+stand, soweit diese nicht im Schutzbereich von Objekten erhöhter Bedeutung verlaufen, gilt diese Tabelle  
+ebenso. In diesem Schutzbereich sind die Lastfälle nach 4.3.10.4/AT.1 bis AT.3 auch für Holzmaste von 
+Leitungen der Gruppe II mit kurzfristigem Bestand anzuwenden. 
+ 
+(ncpt)  
+AT.5: Ist durch geeignete Maßnahmen bei Trag- und Winkeltragmasten sichergestellt, dass eine 
+Beanspruchung nach Lastfall D (Entfall des Zuges eines Leiters) oder Lastfall C (Differenzzug) nicht 
+auftritt, so müssen diese Lastfälle nicht berücksichtigt werden. Sichern diese Maßnahmen nur eine 
+teilweise Entlastung, so sind die in Tabelle 4.3.10.4/AT.1 angegebenen Prozentsätze im Ausmaß 
+der tatsächlichen Entlastung zu ändern. Dem Nachweis für Lastfall C ist dabei die Annahme zugrun-
+de zu legen, dass die Leitung auf der einen Seite des Mastes mit Regelzusatzlast bei -5 °C belastet 
+ist, während auf der anderen Seite keine Zusatzlast vorhanden ist. Beim Nachweis für Lastfall D ist 
+anzunehmen, dass auf der einen Seite des Mastes ein Leiter oder ein Teilleiter eines Bündels geris-
+sen ist, während auf der anderen Seite der gegenüber dem Regellastfall durch die besondere Maß-
+nahme verminderte Leiterzug in Rechnung zu stellen ist. Bei Hängekettenleitungen darf ferner für 
+den Nachweis der Lastfälle C und D vorausgesetzt werden, dass sich zwischen dem betrachteten 
+Mast und der nächsten Leiterabspannung noch drei ebene Spannfelder mit Regelspannweiten und 
+gleich ausgerüsteten Tragmasten befinden. 
+ 
+(ncpt)   
+AT.6: Werden Maste einer Mehrfachleitung vorerst nur teilweise bespannt, so ist dies bei der Be-
+messung zu berücksichtigen. 
+ 
+(ncpt)   
+AT.7: Werden für die Befestigung der Leiter am Tragwerk Mehrfachketten verwendet, so ist für die 
+Bemessung der Tragwerke und der Bauteile dieser Tragwerke auch der Fall des Risses einer Ein-
+zelkette in der ungünstigsten Lage zu berücksichtigen. 
+4.3.11 Teilsicherheitsbeiwerte für Einwirkungen 
+Teilsicherheitsbeiwerte werden bei der empirischen Vorgehensweise im Allgemeinen auf die Reaktionen der 
+Einwirkungen angewandt, z.B. im Falle von Leitern auf die hervorgerufenen Reaktionskräfte (lotrecht, quer 
+und längs zur Freileitung). Lastfälle setzen sich aus Lasten mit unterschiedlichem Ursprung zusammen. 
+Des Weiteren werden die grundlegenden Auslegungsgleichungen auf der Basis von 3.7.3 und 3.7.4 wie folgt 
+vereinfacht, sie müssen in Verbindung mit den in den NNA angegebenen Werten betrachtet werden: 
+{
+}
+K
+A
+,
+PK
+P
+CK
+C
+,
+IK
+I
+WK
+W
+K
+G
+d
+A
+γ
+Q
+Q
+γ
+Q
+Q
+γ
+G
+γ
+f
+E
+⋅
+⋅
+⋅
+⋅
+⋅
+⋅
+=
+γ
+γ
+,
+,
+,
+ 
+Dabei ist 
+Ed 
+der gesamte Auslegungswert der Reaktionen von Einwirkungen, siehe 3.7.3; 
+GK 
+der charakteristische Wert des Eigengewichtes der Leiter, Isolatoren und Stützpunkte; 
+QWK der charakteristische Wert der Windeinwirkung nach 4.3.2; 
+QIK 
+der charakteristische Wert der Eiseinwirkung auf die Leiter nach 4.3.3; 
+QCK 
+der charakteristische Wert der Lasten, herrührend aus den Leiterzugkräften unter Betrachtung der 
+Temperaturveränderung sowie von Wind- und Eiseinwirkung; 
+QPK 
+der charakteristische Wert der Lasten aus Errichtung und Instandhaltung nach 4.3.6; 
+AK 
+Ausnahmeeinwirkungen, festgelegt nach 4.3.6 (Betriebssicherheitslasten) und nach 4.3.10. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+86 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 87/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 83 
+ 
+Die Gesamtreaktion der Einwirkungen ist eine Kombination der oben festgelegten Einwirkungen. 
+Die Teilsicherheitsbeiwerte γG, γW, γI, γC, γP und γA berücksichtigen: 
+- 
+Zuverlässigkeitsgesichtspunkte; 
+- 
+Kombinationen von Einwirkungen; 
+- 
+die Abstimmung der Tragfähigkeiten; 
+- 
+die Festlegung von Lastfällen. 
+Teilsicherheitsbeiwerte berücksichtigen Normal- und Ausnahmelastfälle. Die Werte der Teilsicherheitsbei-
+werte hängen von den Lastfällen ab und schließen die Kombinationsbeiwerte ψ ein.  
+Empfohlene Werte für Teilsicherheitsbeiwerte für die in 4.3.1 bis 4.3.10 festgelegten Einwirkungen sind in 
+der folgenden Tabelle 4.3.2 angegeben. Geänderte Teilsicherheitsbeiwerte können in den NNA enthalten 
+sein, siehe 3.1. 
+Tabelle 4.3.2 – Teilsicherheitsbeiwerte für Einwirkungen – Grenzlastzustände 
+Einwirkung 
+Symbol 
+Teilsicherheitsbeiwert 
+Normallastfall 
+- Veränderliche Einwirkungen 
+- Ständige Einwirkungen 
+ 
+Soweit ungünstig 
+ 
+Soweit günstig 
+ 
+γW, γT, γC 
+ 
+γG 
+γG 
+ 
+1,3 
+ 
+1,1 
+1,0 
+Lasten aus Errichtung und In-
+standhaltung 
+- Veränderliche Einwirkungen 
+- Ständige Einwirkungen 
+ 
+Soweit ungünstig 
+ 
+Soweit günstig 
+ 
+ 
+γP 
+ 
+γG 
+γG 
+ 
+ 
+1,0 
+ 
+1,1 
+1,0 
+Ausnahmelastfall 
+- Veränderliche Einwirkungen 
+- Einwirkungen aus Schäden 
+- Ständige Einwirkungen 
+ 
+γW, γI, γC 
+γA 
+γG 
+ 
+1,0 
+1,0 
+1,0 
+ANMERKUNG: Die oben erwähnten Teilsicherheitsbeiwerte sollten im Zusammenhang mit den Teilsicherheits-
+beiwerten für Werkstoffe betrachtet werden, die in anderen Abschnitten dieser Norm festgelegt sind. 
+ 
+Nationale Anforderungen können in den NNA festgelegt werden und treten anstelle der entsprechenden Ab-
+schnitte in 4.3.11. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+87 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 88/273 =====
+Seite 84 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt) 
+AT.1:  Tabelle 4.3.11/AT.1 – Teilsicherheitsbeiwerte für Lasten auf Maste 
+ 
+Mastart 
+Teil- 
+sicherheits-
+beiwert γ 
+Lastfall 
+ 
+A 
+B 
+C 
+D 
+E 
+K 
+L 
+γG 
+1,3 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+γW 
+1,3 
+1,3 
+n.a. 
+n.a. 
+1,3 
+n.a. 
+n.a. 
+γI 
+1,3 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+γA 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+1,0 
+1,0 
+Trag- und Winkel-
+tragmaste 
+γC 
+1,3 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+ 
+A 
+B/C 
+D 
+K 
+L 
+M 
+ 
+γG 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+- 
+γW 
+1,3 
+1,3 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+- 
+γI 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+- 
+γA 
+n.a. 
+n.a. 
+n.a. 
+1,0 
+1,0 
+1,0 
+- 
+Abspann- und 
+Winkelabspann-
+maste 
+γC 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+- 
+ 
+A 
+B 
+C 
+D 
+K 
+L 
+M 
+γG 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+γW 
+1,3 
+1,3 
+1,3 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+γI 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+γA 
+n.a. 
+n.a. 
+n.a. 
+n.a. 
+1,0 
+1,0 
+1,0 
+Abzweigmaste 
+γC 
+1,3 
+1,3 
+1,3 
+1,3 
+1,0 
+1,0 
+1,0 
+ 
+ 
+ 
+Anmerkung: 
+γG =
+Teilsicherheitsbeiwert für Eigengewicht 
+ 
+γW =
+Teilsicherheitsbeiwert für Windlasten 
+ 
+γI =
+Teilsicherheitsbeiwert für Zusatzlasten 
+ 
+γA =
+Teilsicherheitsbeiwert für Ausnahmebelastung 
+ 
+γC =
+Teilsicherheitsbeiwert für Leiterzugkräfte 
+ 
+n.a. 
+nicht anwendbar 
+ 
+(ncpt)    AT.2:  
+Tabelle 4.3.11/AT.2 – Teilsicherheitsbeiwerte für Baumaterialien 
+ 
+EUROCODE 
+Material 
+γM 
+EC 2,  Beton 
+Druckfestigkeit Beton 
+1,5 
+ 
+Armierungen, Streckgrenze oder σ0,2 
+1,15 
+EC 3,  Stahl 
+Querschnitts-Tragfähigkeit und Stabilität (Streckgrenze) 
+1,1 
+ 
+Widerstand von Verschraubungen und Schweißverbin-
+dungen (Grenzlasten) 
+1,25 
+Holz- und holzähnliche Materialien 
+a) 
+ 
+Stahlteile in Verbindungen 
+1,1 
+Fundierungen 
+ 
+b) 
+a) ist nach Erscheinen des betreffenden EUROCODES festzulegen. 
+b) besondere Maßnahmen für die Dimensionierung von Fundierungen sind in 8.7 der NNA genannt. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+88 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 89/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 85 
+ 
+(ncpt) 
+AT.3: Tabelle 4.3.11/AT.3 – Teilsicherheitsbeiwerte für Isolatoren, Zubehörteile und Leiter 
+ 
+ 
+Material (Versagensgrenze) 
+γM 
+Glas- und Porzellan-Kappenisolatoren 
+2,0 
+Porzellan-Langstabisolatoren 
+2,0 c) 
+Isolator 
+Verbundisolatoren 
+d) 
+Kettenarmaturen 
+geschmiedeter Stahl, Baustahl, Gusseisen, Gussteile aus 
+Aluminium und Legierungen  
+a) 
+Leiter, Erdseile, 
+OPGWs 
+alle Typen  
+b) 
+a)  Die Festigkeit von Kettenarmaturen ist nach 11.6 zu ermitteln. 
+b)  Diese Werte sind nach 4.3.10.3, oder nach Abschnitt 9 oder nach Seildatenblättern von Herstellern zu 
+ermitteln.  
+c)  Die bisher in der ÖVE-L 11 genannten Werte wurden verändert. Die Lastberechnung in der vorliegen-
+den Bestimmung basiert auf Mindestbruchlasten entsprechend IEC, während sie in der ÖVE-L 11 auf 
+Mittelwerten aufgebaut war. 
+d)  Dieser Wert ist nach Datenblättern von Herstellern zu ermitteln.  
+ 
+5 
+Elektrische Anforderungen 
+5.1 
+Einteilung nach Spannungen 
+Die Freileitung muss in der Lage sein, mit einer annehmbaren Zuverlässigkeit ihrer betriebsfrequenten 
+Nennspannung, zeitweiligen betriebsfrequenten Überspannungen sowie Schalt- und Blitzstoßspannungen 
+standzuhalten. Jeweils anzusetzende Spannungs- und Isolationspegel müssen in einer Projektspezifikation 
+festgelegt werden. Die in den folgenden Abschnitten enthaltenen Anforderungen und Richtlinien stellen Hin-
+weise dar, um die erforderlichen und allgemein gebilligten Zuverlässigkeitsstufen zu erreichen. 
+Tabelle 5.1 enthält Nennspannungen und die zugeordneten höchsten Betriebsspannungen. 
+Tabelle 5.1 – Nennspannungen und zugeordnete höchste Betriebsspannungen 
+Nennspannung (kV) 
+Höchste Betriebsspannung  (kV) 
+45 
+52 
+50 
+72,5 
+60 
+72,5 
+63 
+72,5 
+66 
+72,5 
+70 
+82,5 
+90 
+100 
+110 
+123 
+132 
+145 
+150 
+170 
+220 
+245 
+225 
+245 
+275 
+300 
+380 
+420 
+400 
+420 
+480 
+525 
+700 
+765 
+ANMERKUNG: Fettgedruckte Werte entsprechen IEC 60038. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+89 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 90/273 =====
+Seite 86 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.2 
+Ströme 
+5.2.1 
+Betriebsstrom 
+Der Betriebsstrom hängt von der übertragenen Leistung und der Betriebsspannung ab. Der Leiterquerschnitt 
+muss so gewählt werden, dass die höchste Auslegungstemperatur des Leiterwerkstoffes unter in den NNA 
+oder der Projektspezifikation festgelegten Bedingungen nicht überschritten wird. 
+5.2.2 
+Kurzschlussstrom 
+Die Freileitung muss so ausgelegt und errichtet werden, dass sie ohne Schaden den mechanischen und 
+thermischen Auswirkungen infolge von in der Projektspezifikation festgelegten Kurzschlussströmen stand-
+hält. 
+Der Kurzschluss kann 
+- 
+dreipolig; 
+- 
+zweipolig; 
+- 
+einpolig gegen Erde; 
+- 
+zweipolig gegen Erde 
+auftreten. Beispiele für die Kurzschlussdauer für Auslegungszwecke sind: 
+- 
+Erd- und Leiterseile 0,5 s; 
+- 
+Zubehörteile 
+1,0 s. 
+Es ist jedoch wichtig, die tatsächliche Kurzschlussdauer zu berücksichtigen, da diese von der Auslösezeit 
+des Freileitungsschutzes abhängt. Die Kurzschlussdauer kann daher im Einzelfall länger oder kürzer sein 
+als die oben genannten beispielhaften Werte. 
+Verfahren zur Berechnung von Kurzschlussströmen in Drehstromnetzen sind in IEC 60909 enthalten, Ver-
+fahren zur Berechnung der Auswirkungen von Kurzschlussströmen in EN 60865-1. Alternativ können andere 
+Berechnungsverfahren in den NNA oder der Projektspezifikation vorgegeben werden. 
+5.3 
+Isolationskoordination 
+5.3.1 
+Allgemeines 
+Die Grundlagen und Regeln der Isolationskoordination sind in EN 60071-1 und EN 60071-2 beschrieben. 
+Die Vorgehensweise bei der Isolationskoordination sieht zunächst die Wahl einer Gruppe von Stehspannun-
+gen vor, die die Isolation kennzeichnen. Bei einer Freileitung besteht diese Vorgehensweise aus folgenden 
+Schritten: 
+- 
+Bestimmung der repräsentativen Überspannungen (Urp); 
+- 
+Bestimmung der Koordinationsstehspannung (Ucw); 
+- 
+Bestimmung der erforderlichen Stehspannungen (Urw). 
+5.3.2 
+Ursprung und Einteilung der Spannungsbeanspruchung von Freileitungen und Ermittlung 
+der repräsentativen Überspannungen 
+5.3.2.1 
+Einteilung der Überspannungen 
+Die die Isolation im Betrieb beanspruchenden Spannungen und Überspannungen werden wie folgt eingeteilt: 
+- 
+ständige betriebsfrequente Spannungen; 
+- 
+zeitweilige Überspannungen; 
+- 
+langsam ansteigende Überspannungen; 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+90 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 91/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 87 
+ 
+- 
+schnell ansteigende Überspannungen. 
+Empfehlungen für das Ermitteln repräsentativer Überspannungen sind in EN 60071-2, Abschnitt 2, enthal-
+ten. 
+5.3.2.2 
+Ständige betriebsfrequente Spannungen 
+Die repräsentative ständige betriebsfrequente Spannung wird als konstant betrachtet und gleich der höchs-
+ten Betriebsspannung (Us) gesetzt; das ist der höchste Wert der Betriebsspannung, der unter normalen Be-
+triebsbedingungen an irgendeiner Stelle zu irgendeiner Zeit im Netz auftritt. [IEV 601-01-23] (Leiter-Leiter-
+Spannung). 
+5.3.2.3 
+Zeitweilige Überspannungen 
+Zeitweilige Überspannungen sind oszillierende Überspannungen mit Betriebsfrequenz an einem bestimmten 
+Ort mit relativ langer Dauer, die ungedämpft oder nur schwach gedämpft sind [IEV 604-03-12]. Sie rühren 
+üblicherweise her von Fehlern, Schalthandlungen (wie Lastabwurf), Resonanzzuständen, Nichtlinearitäten 
+(Ferro-Resonanz) oder einer Kombination hiervon. Die repräsentative Überspannung ist eine Spannung mit 
+1 min Dauer bei Betriebsfrequenz; sie wird aber im Allgemeinen bei der Festlegung elektrischer Abstände in 
+einer Freileitung nicht berücksichtigt. 
+5.3.2.4 
+Langsam ansteigende Überspannungen 
+Diese können von Fehlern, Schalthandlungen oder weiter entfernten direkten Blitzeinschlägen in die Frei-
+leitung herrühren. Für Freileitungen bedeutsame, langsam ansteigende Überspannungen sind Erdfehler-
+überspannungen sowie Einschalt- und Ausschaltüberspannungen. Die repräsentative Spannungsbean-
+spruchung wird gekennzeichnet durch: 
+- 
+die genormte Schaltstoßform (250/2500 µs), 
+- 
+eine repräsentative Amplitude, die entweder eine angenommene höchste Überspannung sein kann oder 
+aus der Wahrscheinlichkeitsverteilung der Überspannungsamplituden abgeleitet werden kann. 
+5.3.2.5 
+Schnell ansteigende Überspannungen 
+Für Freileitungen wichtige schnell ansteigende Überspannungen sind hauptsächlich Blitzüberspannungen 
+infolge von direkten Einschlägen in die Leiter oder von rückwärtigen Überschlägen oder sie werden, im unte-
+ren Nennspannungsbereich (< 245 kV), durch Blitzeinschläge in die Erde nahe der Freileitung induziert.  
+Die repräsentative Spannungsform ist der genormte Blitzstoß-Wellenform (1,2/50 µs). Die repräsentative 
+Amplitude wird entweder mit dem angenommenen höchsten Wert oder durch eine Wahrscheinlichkeitsver-
+teilung der Höchstwerte angegeben. Die zum Zweck der Festlegung der Funkenstrecken zu berücksichti-
+gende repräsentative Überspannung ist diejenige, die sich vom Blitzeinschlagsort über einige wenige Maste 
+ausbreiten kann. 
+5.3.3 
+Bestimmung der Koordinationsstehspannung (Ucw) 
+5.3.3.1 
+Allgemeine Empfehlung 
+Empfehlungen für die Bestimmung der Koordinationsstehspannungen sind in EN 60071-2, Abschnitt 3, ent-
+halten. 
+5.3.3.2 
+Isolationskoordination bei betriebsfrequenter Spannung und zeitweiligen Überspannungen 
+Die ständige betriebsfrequente Spannung und die zeitweiligen Überspannungen bestimmen die erforderliche 
+Kleinstlänge der Isolatorkette. Die Form der Isolatoren muss häufig im Hinblick auf den örtlichen Ver-
+schmutzungsgrad gewählt werden.  
+Bei direkt geerdeten Sternpunkten mit Erdfehlerfaktoren von 1,3 und niedriger genügt es im Allgemeinen, die 
+Isolation so auszulegen, dass sie der höchsten Betriebsspannung zwischen Leiter und Erde standhält. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+91 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 92/273 =====
+Seite 88 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Bei höheren Erdfehlerfaktoren und insbesondere bei isolierten oder erdschlusskompensierten Sternpunkten 
+kann die Berücksichtigung der vorübergehenden Überspannungen notwendig werden.  
+Die Koordinationsstehspannung für die ständige betriebsfrequente Spannung ist für die Isolation zwischen 
+den Leitern gleich der höchsten Betriebsspannung und für die Isolation zwischen Leitern und Erde gleich 
+dieser Spannung geteilt durch
+3 . 
+Die Koordinationskurzzeitstehspannung ist gleich der repräsentativen zeitweiligen Überspannung. 
+Wenn Verschmutzung vorliegt, wird das Verhalten der Freiluftisolation unter betriebsfrequenter Spannung 
+wichtig. Für Normungszwecke sind vier Verschmutzungsgrade qualitativ festgelegt. Tabelle 1 von 
+EN 60071-2 enthält für jeden Verschmutzungsgrad eine Beschreibung einiger zugeordneter beispielhafter 
+Umgebungen. Die Isolatoren müssen der höchsten Betriebsspannung unter Verschmutzung mit einer an-
+nehmbaren Überschlagswahrscheinlichkeit dauernd standhalten. Die Koordinationsstehspannungen werden 
+den repräsentativen zeitweiligen Überspannungen gleichgesetzt; die Kriterien für das Verhalten der Freilei-
+tung werden durch Wahl einer dem örtlichen Verschmutzungsgrad angemessenen Verschmutzungsvorgabe 
+für Prüfungen erfüllt. Daher sollte die betriebsfrequente Koordinations-Dauerstehspannung für Isolation zwi-
+schen den Leitern der höchsten Betriebsspannung entsprechen; für die Isolation zwischen Leitern und Erde 
+gilt dieser Wert geteilt durch 
+3 . Der örtliche Verschmutzungsgrad kann entsprechend der oben erwähnten 
+Tabelle 1 von EN 60071-2 bestimmt werden. Für die quantitative Bestimmung des örtlichen Verschmut-
+zungsgrades durch Messungen sind Angaben in IEC 60815 enthalten. 
+5.3.3.3 
+Isolationskoordination bei langsam ansteigenden Überspannungen 
+Die langsam ansteigenden Überspannungen bilden einen der Einflussfaktoren, die die elektrischen Ab-
+stände in Netzen über 245 kV bestimmen. Bei einigen Isolatorarten (z.B. Kettenisolatoren) können die Zu-
+behörteile für Isolatoren eine kritische Auslegungseigenschaft darstellen. 
+Die Koordinationsstehspannung kann entweder durch eine deterministische Methode oder, wie in 
+EN 60071-2 beschrieben, mit statistischen Methoden bestimmt werden. 
+5.3.3.4 
+Isolationskoordination bei schnell ansteigenden Überspannungen 
+Die zu verwendende Koordinationsstehspannung muss gleich der oder höher als die Überspannung ange-
+setzt werden, die vom Ort des Blitzeinschlages über einige wenige Maste hinaus wandern kann. Falls keine 
+genauere Berechnungshilfe vorhanden ist, kann die Leiter-Erde-Überspannung (die 90-%-Blitzstehspannung 
+der Isolatorketten U90%_ff_is) als Blitzstoßspannung aller Isolatorketten angenommen werden. Dies ist einer 
+der Hauptfaktoren, die das Blitzverhalten einer Freileitung bestimmen. 
+5.3.3.5 
+Verhalten von Freileitungen unter Blitzeinwirkungen 
+Dieses Verhalten lässt sich mit der Schirmfehler-Überschlagsrate Rsf und der rückwärtigen Überschlagsrate 
+Rb beschreiben. Es wird durch Betriebsüberlegungen bestimmt und hängt, außer von der Isolationsfestigkeit 
+der Freileitung, von folgenden Parametern ab: 
+- 
+Blitzdichte je Flächeneinheit; 
+- 
+Leitungshöhe; 
+- 
+Leiteranordnung; 
+- 
+Schutz durch Erdseile; 
+- 
+Masterdung; 
+- 
+Vorhandensein von Ableitern in der Freileitung. 
+Annehmbare Pegel für Schirmfehler-Überschlagsraten und rückwärtige Überschlagsraten können in der 
+Projektspezifikation festgelegt werden. 
+ANMERKUNG: Eine Anleitung zur Berechnung von Schirmfehler-Überschlagsraten und von rückwärtigen Über-
+schlagsraten ist in der CIGRE-Veröffentlichung Nr. 63 „Anleitung für Methoden zum Abschätzen des Blitzverhal-
+tens von Freileitungen“ enthalten: Abschnitt 4 behandelt Rsf, Abschnitt 6 Rb. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+92 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 93/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 89 
+ 
+5.3.4 
+Bestimmung der erforderlichen Stehspannung (Urw) 
+Die erforderliche Stehspannung wird aus der Koordinationsstehspannung unter Berücksichtigung eines von 
+den atmosphärischen Bedingungen abhängen Korrekturfaktors abgeleitet. Die dielektrische Festigkeit der 
+Freileitungsisolation wird durch die Höhe über NN beeinflusst. Diesem Einfluss, der sich in einem gewissen 
+Maß mit der Funkenstreckenlänge ändert, wird durch einen von der Koordinationsstehspannung abhängigen 
+Höhenfaktor Ka Rechnung getragen. 
+a
+cw
+rw
+K
+U
+U
+/
+=
+ 
+Der Faktor Ka ist im Allgemeinen der für NN-Höhen bis 1000 m gültige Wert. Alle Ka-Werte sind in Tabelle 
+E.4 in Anhang E „Elektrische Anforderungen“ (normativ) angegeben. 
+5.3.5 
+Elektrische Abstände zum Vermeiden von Überschlägen 
+5.3.5.1 
+Allgemeines 
+In dieser Norm werden fünf Arten elektrischer Abstände betrachtet (siehe auch 5.4): 
+Del 
+Mindestluftstrecke, die erforderlich ist, um einen Überschlag zwischen Außenleitern und Ge-
+genständen mit Erdpotential während des Auftretens von schnell oder langsam ansteigenden 
+Überspannungen zu verhindern. Del kann entweder ein innerer Abstand, wenn die Abstände 
+zwischen Leitern und Mastteilen betrachtet werden, oder ein äußerer Abstand sein, wenn ein 
+Abstand zwischen einem Leiter und einem Hindernis betrachtet wird.  
+Dpp 
+Mindestabstand in Luft, der erforderlich ist, um einen Durchschlag zwischen den Außenleitern 
+während schnell oder langsam ansteigender Überspannungen zu verhindern. Dpp ist ein innerer 
+Abstand. 
+D50Hz_p_e 
+Mindestabstand in Luft, der erforderlich ist, um bei betriebsfrequenter Spannung einen Durch-
+schlag zwischen Außenleitern und Gegenständen mit Erdpotential zu verhindern. D50Hz_p_e ist ein 
+innerer Abstand. 
+D50Hz_p_p 
+Mindestabstand in Luft, der erforderlich ist, um bei betriebsfrequenter Spannung einen Durch-
+schlag zwischen den Außenleitern zu verhindern. D50Hz_p_p ist ein innerer Abstand. 
+asom 
+kleinster aso-Wert der Freileitung. Dies ist der kleinste Wert des kürzesten, geradlinigen Ab-
+standes zwischen spannungsführenden und geerdeten Teilen. 
+Für die Ableitung von Del und Dpp wird eine der folgenden Methoden empfohlen: 
+- 
+Im Anhang E beschriebene Methode 
+In diesem Fall reichen die in 5.4.3 und 5.4.4 angegebenen äußeren Abstände aus, um die öffentliche 
+Personensicherheit sicherzustellen. Das Ergebnis eines Anwendungsbeispiels für diese Methode ist in 
+5.3.5.2 enthalten. 
+- 
+Auf der Erfahrung gründende Methode 
+ 
+Mit den in Tabelle 5.5 angegebenen Werten für Del und Dpp bestehen in Europa gute Betriebserfahrun-
+gen. Hinsichtlich der Verwendung dieser Werte zum Bestimmen der äußeren Abstände entsprechend 
+5.4.3 sind besondere, in 5.3.5.3 angegebene Überlegungen, erforderlich. 
+5.3.5.2 
+Berechnungsergebnis bei Verwendung der im Anhang E enthaltenen Methode 
+Der Anhang E enthält eine theoretische Methode zum Bestimmen des elektrischen Mindestabstandes für 
+jede Art von transienten Überspannungen (schnell und langsam ansteigend) und für die betriebsfrequente 
+Spannung, der notwendig ist, um die erforderliche Stehspannung für bestimmte Funkenstreckenanordnun-
+gen und für einen bestimmen Bereich atmosphärischer Bedingungen sicherzustellen. 
+Eine zahlenmäßige Anwendung der Formeln aus Anhang E enthält Tabelle 5.2 für den allgemeinen Fall der 
+zwischen Leiter und Hindernis erforderlichen Abstände Del (Funkenstreckenfaktor Kg = 1,3) und der Ab-
+stände Dpp zwischen den Leitern (Funkenstreckenfaktor Kg = 1,6), um schnell ansteigenden Überspannun-
+gen infolge von Blitzeinwirkungen standzuhalten. Dieses Berechnungsbeispiel deckt die meisten der in der 
+Praxis auftretenden Fälle ab. Es gibt viele mögliche Überschlagsabstände aso, wobei die zugehörige Steh-
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+93 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 94/273 =====
+Seite 90 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+spannung nicht die gleiche ist wie die genormte Stoßspannung, die für Geräte in EN 60071-1 angegeben ist. 
+Entsprechend den unterschiedlichen Formen von Isolatoren- und Lichtbogenschutzeinrichtungen kann der 
+für diesen Anwendungsfall erforderliche Isolationspegel der Freileitung viele Werte annehmen und sogar 
+außerhalb der in EN 60071-1 für Geräte angegebenen Liste von genormten Stehstoßspannungen liegen. 
+Daher werden für den Bereich der Blitzstehspannung die Abstände in Stufen von 50 kV angegeben. 
+Es ist erforderlich, dass der eine Freileitung auslegende Projekteur sich davon überzeugt, dass die Summe 
+aus Del und dem Sicherheitsabstand ausreicht, um die öffentliche Personensicherheit sicherzustellen. 
+Abschnitt F.2 „Elektrische Anforderungen“ (informativ), F.2 enthält Berechnungsbeispiele für Del, Dpp, D50Hz 
+für unterschiedliche Spannungsebenen. 
+ANMERKUNG: Die Funkenstreckenfaktoren Kg, die zur Berechnung der Werte in den folgenden Tabellen ver-
+wendet werden, sind immer Kg_sf. Der Wert Kg_sf  ist im Anhang E erläutert. 
+Eine zahlenmäßige Anwendung der Formeln ist in Tabelle 5.3 für den allgemeinen Fall der zwischen Leiter 
+und Hindernis erforderlichen Abstände (Funkenstreckenfaktor Kg_sf = 1,3) und der Abstände zwischen den 
+Leitern (Funkenstreckenfaktor Kg_sf = 1,6) dargestellt, die erforderlich sind, um langsam ansteigenden, von 
+Schalthandlungen herrührenden Überspannungen standzuhalten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+94 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 95/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 91 
+ 
+Tabelle 5.2 – Abstände Del und Dpp, die Blitzüberspannungen standhalten 
+Blitzstehspannung 
+U90%_ff_is der Isolatorkette 
+(kV) 
+Del (m) 
+Kg = 1,3 
+Ka (1000 m) 
+Dpp (m) 
+Kg =1,6 
+Ka (1000 m) 
+250 
+0,48 
+0,54 
+300 
+0,58 
+0,65 
+350 
+0,67 
+0,74 
+400 
+0,77 
+0,85 
+450 
+0,85 
+0,96 
+500 
+0,95 
+1,06 
+550 
+1,04 
+1,17 
+600 
+1,14 
+1,26 
+650 
+1,23 
+1,37 
+700 
+1,33 
+1,47 
+750 
+1,41 
+1,58 
+800 
+1,50 
+1,68 
+850 
+1,60 
+1,79 
+900 
+1,69 
+1,89 
+950 
+1,78 
+2,00 
+1000 
+1,88 
+2,08 
+1050 
+1,97 
+2,19 
+1100 
+2,05 
+2,29 
+1150 
+2,14 
+2,40 
+1200 
+2,23 
+2,50 
+1250 
+2,33 
+2,60 
+1300 
+2,42 
+2,71 
+1350 
+2,51 
+2,81 
+1400 
+2,61 
+2,92 
+1450 
+2,70 
+3,02 
+1500 
+2,79 
+3,13 
+1550 
+2,89 
+3,23 
+1600 
+2,98 
+3,33 
+1650 
+3,07 
+3,44 
+1700 
+3,17 
+3,54 
+1750 
+3,26 
+3,65 
+1800 
+3,35 
+3,75 
+1850 
+3,45 
+3,86 
+1900 
+3,54 
+3,96 
+1950 
+3,63 
+4,06 
+2000 
+3,72 
+4,17 
+2050 
+3,82 
+4,27 
+2100 
+3,91 
+4,38 
+2150 
+4,00 
+4,48 
+ANMERKUNG: Diese Tabelle enthält Werte der Abstände für 1000 m über NN. 
+Wenn die NN-Höhe ständig niedriger oder höher als 1000 m ist, können die Ab-
+stände mit dem Höhenbeiwert nach E.4 korrigiert werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+95 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 96/273 =====
+Seite 92 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Tabelle 5.3 enthält eine numerische Anwendung für die Formeln für den allgemeinen Fall der Abstände zwi-
+schen Leitern und Hindernissen (Funkenstreckenfaktor Kg_sf = 1,3) und die Abstände zwischen Außenleitern 
+(Funkenstreckenfaktor Kg_sf = 1,6), die im Hinblick auf langsam ansteigende Überspannungen als Folge von 
+Schalthandlungen erforderlich sind. 
+Tabelle 5.3 – Abstände Del und Dpp, die Schaltüberspannungen standhalten 
+Schaltüberspannung 
+U2%_sf (kV) 
+Del (m) 
+Kg = 1,3 
+Ka  (1000 m) 
+Dpp (m) 
+Kg = 1,6 
+Ka  (1000 m) 
+400 
+0,88 
+1,02 
+450 
+1,01 
+1,18 
+500 
+1,14 
+1,32 
+550 
+1,29 
+1,49 
+600 
+1,44 
+1,67 
+650 
+1,59 
+1,86 
+700 
+1,73 
+2,06 
+750 
+1,90 
+2,24 
+800 
+2,07 
+2,45 
+850 
+2,25 
+2,67 
+900 
+2,44 
+2,91 
+950 
+2,64 
+3,15 
+1000 
+2,84 
+3,41 
+1050 
+3,02 
+3,68 
+1100 
+3,24 
+3,96 
+1150 
+3,47 
+4,26 
+1200 
+3,71 
+4,57 
+1250 
+3,96 
+4,90 
+1300 
+4,22 
+5,24 
+1350 
+4,49 
+5,60 
+1400 
+4,77 
+5,97 
+1450 
+5,06 
+6,36 
+1500 
+5,37 
+6,78 
+1550 
+5,69 
+7,21 
+1600 
+6,02 
+7,66 
+1650 
+6,37 
+8,14 
+1700 
+6,73 
+8,63 
+1750 
+7,11 
+9,16 
+1800 
+7,50 
+9,70 
+ANMERKUNG: Diese Tabelle enthält Werte der Abstände für 1000 m über NN. 
+Wenn die NN-Höhe ständig niedriger oder höher als 1000 m ist, können die Ab-
+stände mit dem Höhenbeiwert nach E.4 korrigiert werden. 
+ 
+Der einzuhaltende elektrische Mindestabstand ist der größere der beiden im Hinblick auf das Standhalten 
+bei Blitz- bzw. bei Schaltüberspannungen berechneten Abstände. 
+Die elektrischen Abstände bezüglich des Stehvermögens bei betriebsfrequenten Spannungen sind innere 
+Abstände, die nur für extreme Windeinwirkung angewandt werden. Eine zahlenmäßige Auswertung der 
+Formeln aus Anhang E für D50Hz_p_e mit einem Funkenstreckenfaktor Kg = 1,45 und für D50Hz_p_p mit einem 
+Funkenstreckenfaktor Kg = 1,60 ist in Tabelle 5.4 enthalten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+96 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 97/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 93 
+ 
+Tabelle 5.4 – Elektrische Mindestabstände in Luft im Hinblick 
+auf das Stehvermögen bei betriebsfrequenter Spannung 
+(zu verwenden bei extremer Windeinwirkung) 
+Höchste Betriebsspan-
+nung Us (kV) 
+D50Hz_p_e (m) 
+Kg = 1,45 
+Leiter – Tragwerk 
+D50Hz_p_p (m) 
+Kg = 1,60 
+Leiter – Leiter 
+52 
+0,11 
+0,17 
+72,5 
+0,15 
+0,23 
+82,5 
+0,16 
+0,26 
+100 
+0,19 
+0,30 
+123 
+0,23 
+0,37 
+145 
+0,27 
+0,42 
+170 
+0,31 
+0,49 
+245 
+0,43 
+0,69 
+300 
+0,51 
+0,83 
+420 
+0,70 
+1,17 
+525 
+0,86 
+1,47 
+765 
+1,28 
+2,30 
+ 
+Alle elektrischen Mindestabstände haben nur die Anforderungen aus der Isolationskoordination zur Grund-
+lage. Andere Anforderungen können zu wesentlich größeren Abständen führen. Andere Werte sind in den 
+NNA zusammen mit einer Erläuterung ihrer Ableitung festzulegen. 
+5.3.5.3 
+Empirische Methode 
+Die in der Tabelle 5.5 enthaltenen Werte beruhen auf einer Auswertung in Europa allgemein verwendeter 
+Werte, von denen nachgewiesen ist, dass sie ausreichen, um die öffentliche Personensicherheit zu ge-
+währleisten. 
+Falls diese Werte für die Ableitung äußerer Abstände dienen, muss nachgewiesen werden, dass der be-
+rechnete Abstand zu einer Person oder einem Gegenstand im Zeitpunkt des Auftretens einer Überspannung 
+größer als 110 % von asom ist. In den meisten Fällen stellen Wahrscheinlichkeitsüberlegungen dieses sicher. 
+Die NNA können dies genauer festlegen. 
+Tabelle 5.5 – Abstände Del und Dpp 
+Höchste Betriebsspannung 
+Us (kV) 
+Del (m) 
+Dpp (m) 
+52 
+0,60 
+0,70 
+72,5 
+0,70 
+0,80 
+82,5 
+0,75 
+0,85 
+100 
+0,90 
+1,05 
+123 
+1,00 
+1,15 
+145 
+1,20 
+1,40 
+170 
+1,30 
+1,50 
+245 
+1,70 
+2,00 
+300 
+2,10 
+2,40 
+420 
+2,80 
+3,20 
+525 
+3,50 
+4,00 
+765 
+4,90 
+5,60 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+97 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 98/273 =====
+Seite 94 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.4 
+Innere und äußere Abstände 
+5.4.1 
+Einführung 
+Die inneren und äußeren in den Tabellen 5.4.3 und 5.4.4 angegebenen Abstände wurden aus technischer 
+Sicht festgelegt; es besteht Einverständnis damit, dass nationale Vorschriften unterschiedliche Werte, so-
+wohl höhere als auch niedrigere, verwenden können und diese in den NNA festgelegt werden müssen. 
+Die angegebenen inneren Abstände dienen nur zur Auslegung für eine annehmbare Festigkeit, um Über-
+spannungen standzuhalten (EN 60071-2 und EN 60071-1 lassen zu, dass die wirtschaftliche Auslegung 
+eines Versorgungsnetzes zu einer begrenzten Anzahl von Überschlägen über kritische innere Abstände, 
+z.B. denen zwischen Leitern und Masten, führen wird). Der Zweck der äußeren Abstände ist das Vermeiden 
+der Gefahr von Überschlägen für die allgemeine Öffentlichkeit, für in der Nähe von Freileitungen arbeitende 
+Personen und für die das Netz instandhaltenden Personen. Die in diesem Abschnitt angegebenen Abstände 
+gelten nicht für Instandhaltungsarbeiten unter Spannung, wofür besondere Regeln angewandt werden müs-
+sen (siehe 5.4.2.1). 
+Die Abstände beziehen sich auf Freileitungen, die blanke Leiter verwenden. Freileitungen mit Leitern mit 
+fester Isolierschicht um den Leiter, um durch vorübergehenden Kontakt zu geerdeten Objekten oder mit an-
+deren Leitern hervorgerufene Fehler zu vermeiden, werden in dieser Norm nicht behandelt. 
+Es besteht auch Einverständnis damit, dass der Projekteur die Auslegung im Hinblick auf einen vorherseh-
+baren Bereich der Wetterparameter wie Windgeschwindigkeiten und Eislasten zu optimieren hat, um eine 
+wirtschaftliche Auslegung von Übertragungsnetzen zu erreichen. Außergewöhnliche Wetterereignisse kön-
+nen auftreten, wobei es als annehmbar angesehen wird, dass die in diesem Abschnitt enthaltenen Abstände 
+nicht eingehalten werden. Bei diesen außergewöhnlichen Zuständen ist die Personensicherheit übergeord-
+net; es muss nach Alternativen gesucht werden, um diese sicherzustellen. In diesem Zusammenhang wird 
+ein Ereignis als Ausnahme angesehen, wenn es einmal in einer längeren Zeitspanne als 50 Jahre zu er-
+warten ist. 
+Größere, projektbezogene Werte für Mindestabstände können in Projektspezifikationen festgelegt werden 
+und haben Vorrang vor den in dieser Norm und deren Anhängen festgelegten Werten. Die Abstände sind 
+unter den Lastannahmen nach 5.4.2.2 zu prüfen. 
+Wenn ein Abstand nicht als „waagrecht“ oder „lotrecht“ festgelegt ist, ist der kürzeste Abstand zwischen un-
+ter Spannung stehenden Teilen und dem betrachteten Objekt heranzuziehen. 
+(A-dev) AT.1: Alle Sicherheitsabstände sind A-dev, nachdem sich mehrere andere Gesetze und Bestim-
+mungen auf diese beziehen. 
+5.4.2 
+Allgemeine Überlegungen und Lastfälle 
+5.4.2.1 
+Allgemeine Überlegungen und zugrundeliegende Prinzipien 
+Abstände im Hinblick auf das Arbeiten unter Spannung werden nicht in dieser Norm, sondern durch IEC 
+TC 78 und CENELEC TC 78 behandelt und empfohlen. 
+Die in diesem Abschnitt verwendete Vorgehensweise ist die folgende: 
+(a) Es gibt einen elektrischen Grundabstand Del, der Überschläge zwischen spannungsführenden Teilen 
+und geerdeten Objekten (äußere Abstände) bei normalem Netzbetrieb (normaler Betrieb beinhaltet 
+Schalthandlungen, Blitzeinschläge und Überspannungen infolge von Netzfehlern) verhindert. Für innere 
+Abstände sind niedrigere Werte als Del erlaubt, da dies nur die Zuverlässigkeit des Netzes beeinflusst. 
+Für äußere Abstände muss Del verwendet werden. 
+ 
+Es gibt einen weiteren elektrischen Grundabstand Dpp, der Überschläge zwischen Außenleitern während 
+Schalt- und Blitzüberspannungen verhindert und nahe beim kleinsten, zwischen den Leitern geltenden 
+Abstand liegt, der zu verwenden ist, wenn die Freileitung nicht ungünstigen Wetterlagen ausgesetzt ist. 
+Für innere Abstände sind niedrigere Werte als Dpp erlaubt, da dies nur die Zuverlässigkeit des Netzes 
+beeinflusst. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+98 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 99/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 95 
+ 
+(b) Mit einem zusätzlichen Abstand gegenüber dem Boden oder Gebäuden usw. wird beabsichtigt, sicher-
+zustellen, dass keine Person oder ein leitender Gegenstand den elektrischen Abstand Del verletzt, auch 
+nicht wenn Personen Arbeiten oder Freizeitbeschäftigungen ausführen, die als einigermaßen wahr-
+scheinlich anzusehen sind. 
+(c) Die inneren Abstände zu geerdeten Teilen können während seltener Ereignisse, z.B. hervorgerufen 
+durch das größte Ausschwingen der Leiter unter Windbelastung, geringer sein als die weiter oben unter 
+(a) angegeben, weil nur eine geringe Wahrscheinlichkeit einer gleichzeitigen Überspannung gegeben ist 
+und dies bei irgendeinem Ereignis nur zur einer Versorgungsunterbrechung führen und keine Gefahr für 
+Personen darstellen würde. 
+ 
+In ähnlicher Weise können die Abstände zwischen Außenleitern während seltener Ereignisse, z.B. wäh-
+rend des größten Leiterausschwingens infolge Windbelastung, geringer sein als oben unter (a) an-
+gegeben, da nur eine geringe Wahrscheinlichkeit einer gleichzeitigen vorübergehenden Überspannung 
+vorhanden ist und dies in jedem Fall nur zu einer Versorgungsunterbrechung führen und keine Gefahr 
+für Personen darstellen würde. 
+(d) Bei sehr langen Isolatorketten muss das Risiko eines Überschlags immer über den inneren Abstand asom 
+gegeben sein und nicht zu irgendeinem äußeren Gegenstand oder zu Personen. 
+ 
+(A-dev) AT.1: Hochspannungsfreileitungen sind so auszuführen, dass  
+ 
+(1)  Leiter, die unter Spannung stehen, in einem solchen Abstand voneinander und von geerdeten 
+Bauteilen ihrer Tragwerke angeordnet werden, dass ein elektrischer Überschlag vermieden 
+wird. 
+Diese Bedingung gilt als erfüllt, wenn die in 5.4.3 geforderten Abstände nicht unterschritten wer-
+den. 
+ 
+(2)  die zufällige Berührung von Teilen, die unter Spannung stehen, ohne besondere Mittel ausge-
+schlossen ist. Diese Bedingungen gilt als erfüllt, wenn  
+(2.1)  die Abstände der unter Spannung stehenden Leiter vom Gelände die in den relevanten 
+Abschnitten geforderten Werte nicht unterschreiten und 
+(2.2)  die seitlichen Abstände der unter Spannung stehenden Leiter von Objekten die in den re-
+levanten Abschnitten geforderten Werte nicht unterschreiten. Werden diese seitlichen 
+Abstände unterschritten, so dass die Leitung im Bereich von Objekten (gemäß 5.4.5.2 bis 
+5.4.5.5) verläuft, so sind die unter Spannung stehenden Leiter so anzuordnen, dass die 
+in den relevanten Abschnitten geforderten Schutzabstände nicht unterschritten werden. 
+ 
+(3)  ihre Tragwerke oder deren Fundamente in ausreichender Entfernung von bestimmten Objekten 
+errichtet werden. Die Bedingung gilt als erfüllt, wenn die in den relevanten Abschnitten für diese 
+seitlichen Abstände geforderten Maße mindestens eingehalten werden. 
+ 
+(4)  die für die Leitungsführung im Bereich bestimmter Objekte gegebenenfalls geforderten zusätzli-
+chen Maßnahmen eingehalten werden. 
+  
+(5)  Für Objekte, die in 5.4.5.2 bis 5.4.5.5 nicht genannt sind, sind die gegenständlichen Bestim-
+mungen für die Festlegung von Abständen und Maßnahmen sinngemäß anzuwenden. Bezüg-
+lich der bei Arbeiten in der Nähe von Hochspannungsfreileitungen einzuhaltenden Abstände 
+und Schutzmaßnahmen bestehen technische Bestimmungen (ÖVE-E 5 bzw. Nachfolgedoku-
+ment ÖVE EN 50110-1). 
+ 
+(A-dev) AT.2: Abstände der Leiter vom Gelände und von Objekten sind wie folgt zu bestimmen (zu überprü-
+fen): 
+(1) 
+Abstände vom Gelände, gemessen rechtwinkelig zur Geländeoberfläche, 
+(1.1) 
+für den ungünstigeren der Regellastfälle nach Tabelle 4.3.10.3/AT.2 gemessen von 
+nicht ausgelenkten Leitern, 
+(1.2) 
+für den Regellastfall nach Tabelle 4.3.10.3/AT.2 für +40 °C bzw. erhöhter Temperatur 
+bei Auslenkung der Leiter durch Wind in jene Richtung, die den kleineren Abstand er-
+gibt, 
+(1.3) 
+für den Ausnahmslastfall nach Tabelle 4.3.10.3/AT.2 gemessen vom nicht ausgelenk-
+ten Leiter. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+99 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 100/273 =====
+Seite 96 
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+ 
+(2) 
+Seitliche Abstände der Leiter von Objekten, gemessen zwischen Leitergrundriss und Grund-
+riss des nächstgelegenen Objektteiles, für den Regellastfall nach Tabelle 4.3.10.3/AT.2 für 
++40 °C bzw. erhöhter Temperatur, bei der Auslenkung des Leiters durch Wind in jene Rich-
+tung, die den kleineren Abstand ergibt. Dieser seitliche Abstand gilt auch als Maß für die Be-
+stimmung des Schutzbereiches. 
+ 
+ 
+(3) 
+Schutzabstand der Leiter vom Objekt (der in beliebiger Richtung im Raum liegen kann) 
+ 
+(3.1) 
+für den ungünstigsten der Regellastfälle nach Tabelle 4.3.10.3/AT.2 gemessen von 
+nicht ausgelenkten Leitern, 
+ 
+(3.2) 
+für den Regellastfall nach Tabelle 4.3.10.3/AT.2 für +40 °C bzw. erhöhter Temperatur, 
+bei Auslenkung der Leiter durch Wind in jene Richtung, die den kleineren Abstand er-
+gibt, 
+ 
+(3.3) 
+für den Ausnahmslastfall nach Tabelle 4.3.10.3/AT.2, gemessen vom nicht ausgelenk-
+ten Leiter. 
+ 
+ 
+(4) 
+Abstände für Sonderfälle nach den in 5.4.5.2 bis 5.4.5.5 für den jeweiligen Sonderfall festge-
+legten Angaben. 
+ 
+(A-dev) AT.3: In Ergänzung zu den Festlegungen der relevanten Punkte des Abschnittes 5 gilt folgendes: 
+ 
+ 
+Bei Kreuzungen oder der Führung von Leitern im Schutzbereich zu bestimmten Objekten oder Ein-
+richtungen sind die folgenden Maßnahmen für „erhöhte Sicherheit“ zu treffen, sofern in den rele-
+vanten Abschnitten angeführt. 
+ 
+ 
+Maßnahmen für erhöhte Sicherheit:  
+ 
+ 
+(1) Isolatorketten in Abspannlage 
+ 
+An Abspannmasten sind bei den dem Kreuzungsspannfeld bzw. den dem Kreuzungsabspannab-
+schnitt zugewandten Spannfeldern Mehrfachketten vorzusehen. 
+ 
+Die mechanische Dimensionierung erfolgt wie in Abschnitt 10 „Isolatoren“ angegeben. 
+ 
+ 
+(2) Isolatorketten an Tragmasten 
+ 
+Im Kreuzungsspannfeld sind Mehrfachketten zu verwenden.  
+ 
+Die mechanische Dimensionierung erfolgt wie in Abschnitt 10 „Isolatoren“ angegeben. 
+ 
+ 
+(3) Leitungsführung  
+ 
+Maßnahmen für erhöhte Sicherheit bei der Leiterbefestigung brauchen dann nicht vorgesehen zu 
+werden, wenn auf Grund der vom Objekt weggerichteten Leiterzüge, selbst bei regelwidriger Lage 
+der Leiter, z.B. Kettenriss bzw. Isolatorbruch, eine Unterschreitung des Schutzabstandes ausge-
+schlossen ist.  
+ 
+ 
+ 
+(4) Ölschalter und Transformatoren auf Masten 
+ 
+Ölschalter und Transformatoren dürfen auf Tragmasten nicht angeordnet werden. 
+ 
+Auf Abspannmasten dürfen sie angeordnet werden, wenn die Verbindungsleiter nicht an die unter 
+Zug stehenden Leiter angeschlossen werden. 
+5.4.2.2 
+Lastfälle für die Berechnung von Abständen 
+(A-dev) AT.1: Die Lastfälle für die Berechnung von Abständen sind jene aus der Tabelle 4.3.10.3/AT.2. 
+5.4.2.2.1 
+Höchste Auslegungstemperatur 
+Die lotrechten Abstände müssen die größte ständige Betriebstemperatur der Leiter zur Grundlage haben, 
+die in den NNA oder in der Projektspezifikation festgelegt wird. 
+ANMERKUNG: Länder können den Wunsch haben, höhere Kurzzeittemperaturbelastungen und in diesen Fällen 
+verminderte Abstände zu berücksichtigen. Dieses sollte in den NNA enthalten sein. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+100 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 101/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 97 
+ 
+5.4.2.2.2 
+Eislast für die Festlegung von elektrischen Abständen 
+Die anzusetzende charakteristische Eislast ist direkt aufgrund der Erfahrungen in jedem Land festzulegen. 
+Hinweise zur anzusetzenden Eislast werden in 4.2 (Allgemeine Vorgehensweise), in 4.3 (Empirische Vor-
+gehensweise) und in Anhang B gegeben. Nationale Anforderungen müssen in den NNA festgelegt werden. 
+5.4.2.2.3 
+Windlast für die Auslegung von elektrischen Abständen 
+Drei Fälle sind zu betrachten: 
+- 
+kein Wind; 
+- 
+Windlast mit einer Wiederkehrperiode von 3 Jahren; 
+- 
+Windlast mit einer Wiederkehrperiode von 50 Jahren für Böen, wobei das gleichzeitige Auftreten von 
+transienten Überspannungen als hinnehmbar klein betrachtet wird. 
+Angaben hierzu sind in 4.2 (Allgemeine Vorgehensweise), in 4.3 (empirische Vorgehensweise) und Anhang 
+B enthalten. 
+Bei Windeinwirkung nimmt die Leitertemperatur ab. Die Abnahme der Temperatur hängt von der elektri-
+schen Belastung, der Windgeschwindigkeit, der Windrichtung, der Umgebungstemperatur usw. ab. Beim 
+Auslegen einer Freileitung dürfen diese Umstände berücksichtigt werden, wenn die tatsächliche Leiterlage 
+berechnet wird. Nationale Anforderungen müssen in den NNA festgelegt werden. 
+Folgendes muss beachtet werden, wenn innere und äußere Abstände betrachtet werden: 
+- 
+Ohne Wind müssen die inneren Abstände größer oder gleich Del oder Dpp sein. 
+- 
+Bei der Auslegungswindbelastung für die elektrischen Abstände (d.h. mit Drei-Jahres-Wiederkehrpe-
+riode) können die inneren Abstände vermindert werden, da nur eine geringe Wahrscheinlichkeit besteht, 
+dass in diesem Zustand eine Überspannung auftreten wird und ein Überschlag zu einer Gefahr für Per-
+sonen oder Sachen führen würde. Das mögliche Maß der Abminderung muss von den nationalen Komi-
+tees festgelegt werden und spiegelt die geforderte Zuverlässigkeitsstufe der Freileitung wider. Nationale 
+Anforderungen müssen in den NNA festgelegt werden. 
+- 
+Bei extremer Windbelastung (d.h. mit 50-Jahres-Wiederkehrperiode) müssen die inneren Abstände der 
+höchsten Leiter-Erde-Spannung bei direkt geerdetem Sternpunkt mit einem Erdfehlerfaktor von 1,3 und 
+niedriger standhalten. Für höhere Erdfehlerfaktoren, insbesondere in Netzen mit getrennten und ge-
+löschten Sternpunkten, kann die Betrachtung von zeitweiligen Überspannungen erforderlich werden. 
+- 
+Im Bereich zwischen dem Zustand ohne Wind und dem Zustand mit der für die Festlegung der elektri-
+schen Abstände angesetzten Auslegungswindlast ohne Eis (d.h. Drei-Jahres-Wiederkehrperiode) müs-
+sen die äußeren Abstände die Werte einhalten, die in den folgenden Abschnitten festgelegt sind. Bei 
+höheren Windgeschwindigkeiten und bei Leitern mit Eis dürfen die Abstände vermindert werden. Für 
+diesen Fall müssen nationale Anforderungen in den NNA festgelegt werden. 
+5.4.2.2.4 
+Gleichzeitige Wind- und Eisbelastung 
+In einigen Ländern sollte die gleichzeitige Einwirkung von Wind- und Eislasten berücksichtigt werden. Die 
+Berechnungsmethoden für die zugehörigen Lastfälle müssen in den NNA festgelegt werden. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+101 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 102/273 =====
+Seite 98  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.4.3 
+Abstände im Spannfeld und am Mast 
+Tabelle 5.4.3 – Mindestabstände im Feld und am Mast 
+Abstandsfälle im Feld und am Mast 
+im Feld 
+am Mast 
+Lastfall 
+Außenleiter – 
+Außenleiter 
+Außenleiter – 
+Erdseil 
+zwischen den 
+Leitern und/oder 
+Stromkreisen 
+zwischen Leiter 
+und geerdeten 
+Teilen 
+Bemerkungen 
+höchste Leiter-
+temperatur 
+Dpp 
+Del 
+Dpp 
+Del 
+Belastungszustand ohne Wind 
+Eislast 
+Dpp 
+Del 
+Dpp 
+Del 
+Belastungszustand ohne Wind 
+Windlast außer 
+extremer Wind-
+last 
+k1⋅Dpp 
+k1⋅Del 
+k1⋅Dpp 
+k1⋅Del 
+Wegen der geringen Wahrscheinlichkeit des gleichzeiti-
+gen Auftretens einer Überspannung während der Leiter 
+durch Windbelastung ausgelenkt ist, kann der Abstand 
+durch den Faktor k1 vermindert werden; k1 muss in den 
+NNA festgelegt werden. 
+extreme Wind-
+lasten 
+D50_Hz_p_p 
+D50_Hz_p_e 
+D50_Hz_p_p 
+D50_Hz_p_e 
+ 
+Wenn das Erdseil am Mast höher aufgehängt ist als die Außenleiter, darf das Erdseil nicht unter die Außenleiter durchhängen. 
+ANMERKUNG: Für Freileitungen mit ähnlichen Leitern (gleiche Querschnittsfläche, gleicher Werkstoff, Aufbau und Durchhang) gibt es Näherungsverfahren zur 
+Berechnung des erforderlichen Abstandes im Feld ohne Wind, die sicherstellen, dass die erforderlichen Abstände bei Windeinwirkung nicht unterschritten werden. 
+Diese Verfahren sollten in den NNA oder in der Projektspezifikation festgelegt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+102 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 103/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 99 
+ 
+ 
+(A-dev) AT.1: Der Abstand zwischen Leitern im Spannfeld ist an Hand eines Auslenkbildes festzustellen. 
+Es ist hierbei die Annäherung benachbarter Leiter bei den verschiedenen Belastungs-
+verhältnissen bei gleichsinniger Auslenkung durch Wind zu überprüfen. Auch die gegenseitige 
+Annäherung der Leiter beim Hochschnellen des tiefergelegenen Leiters durch Abwurf der Zusatz-
+last sowohl im nicht ausgelenkten als auch im ausgelenkten Zustand ist zu untersuchen. Auch im 
+ungünstigsten Fall darf der Abstand die Größe Z nach Tabelle 5.4.3/AT.10 nicht unterschreiten. 
+ 
+(ncpt)   AT.2: Bei Leitern aus gleichen Werkstoffen, mit gleichem Querschnitt und gleichem Durchhang 
+ist es jedoch zulässig, den Mindestabstand D der nicht ausgelenkten Leiter in Spannfeldmitte aus 
+der Formel 
+ 
+ 
+ 
+D = k
+l
+f +
+⋅
+ + Z 
+ 
+ 
+ 
+zu bestimmen, wobei jedoch der Wert von 0,8 m nicht unterschritten werden darf. 
+Dabei ist: 
+D 
+Leiterabstand in Spannfeldmitte in m; 
+f 
+Leiterdurchhang in Spannfeldmitte in m für jenen der Regellastfälle nach Tabelle 
+4.3.10.3/AT.2 der den größeren Wert ergibt; 
+l 
+Länge der Isolatorenkette in m (werden die Leiter am Tragwerk so befestigt, dass das Aus-
+lenken der Isolation senkrecht zur Leitungsachse verhindert wird, so ist l = 0 zu setzen); 
+Z 
+Zuschlag in m, der in Abhängigkeit von der Nennisolation der Leitung in Tabelle 5.4.3/AT.10 
+angegeben ist; 
+k 
+Faktor aus Tabelle 5.4.3/AT.3, der vom Auslenkwinkel des Leiters und von der Leiteranord-
+nung am Tragwerk abhängt. 
+ 
+(ncpt)   AT.3: Faktor k 
+ 
+Tabelle 5.4.3/AT.3 – Faktor k 
+ 
+Auslenkwinkel des Leiters 
+bei Wind nach 4.3.2 a) 
+über 65°
+über 55° 
+bis 65° 
+über  40° 
+bis 55° 
+bis 40° 
+ 
+Leiter übereinander 
+angeordnet 
+ 
+ 
+> 60° bis 90° 
+ 
+ 
+0,95 
+0,85 
+0,75 
+0,7 
+ 
+Leiter schräg zueinander 
+angeordnet 
+ 
+ 
+> 25° bis 60° 
+ 
+ 
+0,75 
+0,70 
+0,65 
+0,62 
+Leiteranordnung 
+Leiter nebeneinander  
+angeordnet 
+ 
+ 
+0° bis 25° 
+ 
+0,70 
+0,65 
+0,62 
+0,60 
+a)  Der Auslenkwinkel bezieht sich auf den unvereisten Leiter, wobei der Tangens des Auslenkwinkels als 
+Quotient aus Winddruck durch Leitereigengewicht errechnet wird. 
+ 
+(ncpt) 
+AT.4: Übereinander angeordnete, nicht ausgelenkte Leiter von Leitungen der Gruppen II bis IV 
+sind: 
+(1)  entweder mindestens um den Wert Z nach Tabelle 5.4.3/AT.10 waagrecht gegeneinander zu 
+versetzen oder 
+(2)  so weit voneinander anzuordnen, dass ihr Abstand nicht kleiner ist als Z nach Tabelle 
+5.4.3/AT.10 zuzüglich des 1,7fachen Unterschiedes der Durchhänge eines unbelasteten und 
+eines mit Ausnahmszusatzlast belasteten Leiters bei -5 °C. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+103 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 104/273 =====
+Seite 100  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(ncpt)   
+AT.5: Werden Leiter, die gegeneinander unter Spannung stehen, im freien Spannfeld durch iso-
+lierende Abstandhalter distanziert, wodurch Teilspannweiten entstehen, so dürfen die Abstände 
+nach 5.4.3/AT.1 und AT.2 verringert werden. Die Anwendung der Formel 5.4.3/AT.2 für die Er-
+mittlung der erforderlichen Leiterabstände ist zulässig, wenn jener Leiterdurchhang zugrunde ge-
+legt wird, der beim 1,6fachen Wert der jeweiligen Teilspannweite auftreten würde. 
+ 
+(ncpt) 
+AT.6: Werden Leitungen gleicher oder verschiedener Spannung von getrennter Leitungsführung 
+auf ein gemeinsames Tragwerk zusammengeführt, so sind die gegenseitigen Abstände der ein-
+zelnen Leitungssysteme in den jeweils letzten Spannfeldern der zusammenzuführenden Leitun-
+gen vor dem gemeinsamen Tragwerk gemäß 5.4.3/AT.1 zu ermitteln und nicht gemäß 
+5.4.5.4/AT.1 auszulegen. 
+ 
+(A-dev) AT.7: Abstände am Tragwerk: Leiter und sonstige Teile (z.B. Seilschlaufen, Strombügel zu Gerä-
+ten usw.), die gegeneinander unter Spannung stehen, sind so anzuordnen, dass ihr Abstand von-
+einander mindestens der jeweils anzuwendenden Luftstrecke entspricht (siehe Tabelle 
+5.4.3/AT.10). 
+ 
+(A-dev) AT.8: Abstände am Tragwerk: Leiter und Teile, die unter Spannung stehen, müssen von Bautei-
+len, die nicht unter Spannung stehen, mindestens den Abstand E nach Tabelle 5.4.3/AT.10 ha-
+ben.  
+ 
+(A-dev) AT.9: Abstände am Tragwerk: Für die Zugspannung von Leitungen an Kraftwerken, Transforma-
+torstationen, Freiluftschaltanlagen, Abzweigmasten u.ä. gelten für die Abstände der Befesti-
+gungspunkte und der Seilführung (Seilschlaufen, Strombügel usw.) die Festlegungen gemäß 
+5.4.3/AT.7 und AT.8. 
+ 
+(A-dev) AT.10: Abstände 
+ 
+Tabelle 5.4.3/AT.10 – Abstände (alle Abstände in m) 
+ 
+Gruppe 
+II 
+III 
+IV 
+Nennisolation 
+60N 
+110NE 
+110N
+150NE
+150N
+220NE
+220N 
+380NE 
+höchste 
+Betriebsspg. in kV 
+(Effektivwert) 
+72.5 
+123 
+170 
+245 
+420 
+Verwendung 
+gemäß 
+Z in Abhängigkeit 
+von der Nenn- 
+isolation 
+0,40 
+0,73 
+1,00 
+1,50 
+2,50 
+5.4.3 
+Spannfeld 
+Abstand 
+E von 
+Bauteilen 
+nicht 
+ausge-
+lenkte 
+Teile  
+oder 
+Leiter 
+0,50 
+0,73 
+0,88 
+1,00 
+1,20 
+1,50 
+1,76 
+2,50 
+ 
+durch 
+Wind 
+ausge-
+lenkte 
+Teile  
+oder 
+Leiter 
+0,40 
+0,73 
+1,00 
+1,50 
+2,50 
+5.4.3 
+Mast 
+normale  
+Luftstrecke a) 
+0,63 
+0,92 
+1,15 
+1,38 
+1,62 
+1,96 
+2,30 
+3,05 
+erhöhte  
+Luftstrecke b) 
+0,74 
+1,08 
+1,35 
+1,62 
+1,87 
+2,28 
+2,65 
+3,50 
+5.4.3/AT.7 
+a)  Mindestabstand (innerer Abstand) zwischen Leitern desselben Systems. 
+b)  Mindestabstand (innerer Abstand) zwischen Leitern verschiedener Systeme. 
+ 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+104 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 105/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 101 
+ 
+ 
+(snc)   
+AT.11: Für die Ermittlung der Auslenkung von Hängeketten mit Belastungsgewichten oder ohne 
+Belastungsgewichte darf für die Windkraft auf die Leiter bei Spannweiten über 200 m ein vermin-
+derter Wert in Rechnung gestellt werden: 
+ 
+GC= 0,6 + 80/L 
+ 
+Wobei L das arithmetische Mittel der Längen der beiden angrenzenden Spannfelder in m ist. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+105 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 106/273 =====
+Seite 102  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.4.4 
+Abstände zum Boden in Gebieten außerhalb von Gebäuden, Straßen, Eisenbahnen und schiffbaren Wasserwegen 
+Tabelle 5.4.4 – Mindestabstände zum Boden abseits von Gebäuden, Straßen, Eisenbahnen  
+und schiffbaren Wasserstraßen 
+Abstand zum Boden im Gelände ohne 
+Hindernisse 
+Abstand zu Bäumen 
+Übliches Bodenprofil
+Felsen oder 
+Steilhänge 
+Unter der Leitung 
+Neben der Leitung 
+Lastfall 
+ 
+ 
+nicht besteigbare 
+Bäume 
+besteigbare Bäume 
+nicht besteigbare 
+Bäume (waag-
+rechter Abstand) 
+besteigbare Bäume 
+(waagrechter Ab-
+stand) 
+Höchste  
+Leitertemperatur 
+5 m + Del 
+2 m + Del, 
+aber mehr als 3 m 
+Del 
+1,5 m + Del 
+Del 
+1,5 m + Del 
+Eislast 
+5 m + Del 
+2 m + Del,  
+aber mehr als 3 m 
+Del 
+1,5 m + Del 
+Del 
+1,5 m + Del 
+Windlast 
+5 m + Del 
+2 m + Del,  
+aber mehr als 3 m 
+Del 
+1,5 m + Del 
+Del 
+1,5 m + Del 
+Bemerkungen 
+Die Grundanforderung ist, dass Fahr-
+zeuge, Personen usw. unter der Leitung 
+gefahrlos passieren können. Wo das nicht 
+möglich ist (Steilhänge usw.), kann der 
+Abstand im Einklang mit der Forderung, 
+dass die Personensicherheit sichergestellt 
+sein muss, vermindert werden. 
+Wo Bäume oder Leitern unter der Leitung 
+bestiegen werden (z.B. in Obstgärten und 
+Hopfengärten), muss eine Höhe über der 
+Leiter oder dem Baum so festgesetzt wer-
+den, dass Arbeiten in der Nähe der Leitung 
+gefahrlos ausgeführt werden können. 
+Wenn die Gefahr eines Erdfehlers infolge 
+eines umfallenden Baumes nicht hinnehm-
+bar ist, muss die Höhe der Bäume gekürzt 
+oder ihr waagrechter Abstand  Freileitung 
+begrenzt werden. 
+ANMERKUNG 1: In einigen Ländern ist es übliche Praxis, Wälder zu überspannen, um Schneisen zu vermeiden. In diesem Fall muss die Endwuchshöhe der Bäume 
+berücksichtigt werden. 
+ANMERKUNG 2: Diese Abstände haben ein 5 m hohes Fahrzeug zur Grundlage. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+106 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 107/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ Seite 103 
+ 
+(A-dev) AT.1: Geländeoberfläche   
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+Die Abstände der Leiter sind rechtwinkelig zur Geländeoberfläche zu messen. Geringe Unebenhei-
+ten dürfen dabei unberücksichtigt bleiben. 
+ 
+ 
+ 
+ 
+Abstände in m  
+ 
+ 
+ 
+Leitungsgruppe 
+II 
+III 
+IV 
+(1) 
+im Regellastfall 
+ 
+(1.1) von normalem Gelände 
+ 
+6 
+7 
+8 
+(1.2) von Gelände, das mit hochbeladenen Wagen  
+nicht befahrbar ist 
+ 
+5 
+6 
+7 
+(1.3) von Steilgelände, normalerweise nicht begangen  
+4 
+5 
+6 
+(1.4) von Felswänden seitlich (im rechten Winkel  
+ 
+zur Felswand gemessen) 
+ 
+3,5 
+4 
+5 
+ 
+(2) 
+im Ausnahmslastfall in den Fällen (1.1) bis (1.4)  
+3,5 
+4 
+5 
+ 
+ 
+(A-dev) AT.2: Strohtristen 
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe 
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand der Leiter von der Triste 
+ 
+10 
+15 
+15 
+ 
+(2) 
+Schutzabstand der Leiter von der Triste  
+ 
+im Regellastfall 
+ 
+20 
+20 
+20 
+ 
+ 
+(A-dev) AT.3: Waldschneisen und einzelstehende Bäume und Sträucher  
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+Grundsätzlich ist anzustreben, Waldschneisen so anzulegen und einzelstehende Bäume soweit zu 
+schlägern, dass die Leitungen der Gruppen II bis IV durch Windbrüche, Windwürfe, Schlägerungen, 
+Schneedruck auf Stamm oder Äste u.dgl. nicht gefährdet werden. Der Höhenzuwachs der Bäume 
+bis zur Endnutzung, die Bodenbeschaffenheit, Bestandsverhältnisse und die vorherrschenden Wind-
+richtungen  sind zu berücksichtigen. 
+Folgende Mindestabstände dürfen nicht unterschritten werden. Sie gelten für den astfreien Raum, 
+d.h., dass auch durch die Wipfel und Äste diese Abstände nicht unterschritten werden dürfen. Diese 
+Abstände sind, wenn die Betriebssicherheit der Leitung dies erfordert, gegebenenfalls zu vergrößern 
+(kranke, hängende oder flach wurzelnde Bäume, an Steilhängen oder Rutschhängen usw.). 
+ 
+ 
+ 
+ 
+Mindestabstände in m 
+ 
+ 
+Leitungsgruppe 
+II 
+III 
+IV 
+(1) 
+seitlich der Leiter 
+ 
+4 
+5 
+6 
+ 
+(2) 
+unterhalb der Leiter 
+(2.1) im Regellastfall 
+ 
+4 
+5 
+6 
+(2.2) im Ausnahmslastfall 
+ 
+0,8 
+1,5 
+2,5 
+ 
+Der durch den seitlichen Abstand nach (1) bestimmte Schutzraum ist oberhalb der Leiter auf volle 
+Baumhöhe astfrei zu halten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+107 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 108/273 =====
+Seite 104  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+5.4.5 
+Abstände zu Gebäuden, Verkehrswegen, anderen Freileitungen und Erholungsflächen 
+5.4.5.1 
+Allgemeines 
+Das Ziel dieser Abstände ist zu vermeiden, dass Personen oder irgendwelche Gegenstände, die von Per-
+sonen möglicherweise getragen werden näher als der Abstand Del an die Freileitung kommen können. Die 
+folgenden Fälle werden berücksichtigt. 
+(a) Abstände zu Wohn- und anderen Gebäuden, wenn sich die Freileitung über oder neben den Gebäuden 
+oder in der Nähe von Antennen oder ähnlichen Aufbauten befindet (siehe Tabelle 5.4.5.2); 
+(b) Abstände zu Freileitungen, die Straßen, Eisenbahnen und Schifffahrtswege kreuzen (siehe Tabelle 
+5.4.5.3.1); 
+(c) Abstände zu Freileitungen in der Nähe von Straßen, Eisenbahnen und Schifffahrtswegen (siehe Tabelle 
+5.4.5.3.2); 
+(d) Abstände zu Freileitungen, die andere Starkstromfreileitungen oder Fernmeldeleitungen kreuzen oder 
+parallel hierzu verlaufen (siehe Tabelle 5.4.5.4); 
+(e) Abstände zu Erholungsflächen bei Kreuzung von oder Näherung zu Freileitungen (siehe Tabelle 
+5.4.5.5). 
+ANMERKUNG: Wegen der erhöhten Personensicherheitsanforderungen bei der Kreuzung von Gebäuden, Er-
+holungsflächen, Verkehrswegen und anderen Freileitungen sollte die Verwendung von Mehrfach-Isolatorketten 
+dort in Betracht gezogen werden, wo die Möglichkeit eines mechanischen Versagens eines Isolatorkettenstran-
+ges gegeben ist. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+108 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 109/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 105  
+ 
+5.4.5.2 
+Wohn- und andere Gebäude 
+Tabelle 5.4.5.2 – Mindestabstände zu Wohn- und anderen Gebäuden 
+Abstandsfälle: Wohn- und andere Gebäude 
+Freileitung über Gebäuden 
+Freileitung neben 
+Gebäuden 
+Antennen, Straßenleuchten, Fahnen-
+maste, Werbeschilder und ähnliches 
+Lastfall 
+Mit feuerhemmenden 
+Dächern und Dachnei-
+gung größer 15° gegen 
+die Waagrechte 
+Mit feuerhemmenden 
+Dächern und Dachnei-
+gung kleiner oder 
+gleich 15° gegen die 
+Waagrechte 
+Ohne feuerhemmende 
+Dächer und über feuer-
+gefährdeten Einrichtun-
+gen wie Tankstellen 
+usw. 
+ 
+Antennen und Blitz-
+schutzeinrichtungen 
+Straßenleuchten, 
+Fahnenmaste, Wer-
+beschilder und ähn-
+liches, auf denen 
+man nicht stehen 
+kann 
+Höchste Leiter-
+temperatur 
+2 m + Del,  
+aber mehr als 3 m 
+4 m + Del,  
+aber mehr als 5 m 
+10 m + Del 
+2 m + Del, aber mehr 
+als 3 m (waag-
+rechter Abstand) 
+2 m + Del 
+2 m + Del 
+Eislast 
+2 m + Del,  
+aber mehr als 3 m 
+4 m + Del,  
+aber mehr als 5 m 
+10 m + Del 
+2 m + Del, aber mehr 
+als 3 m (waag-
+rechter Abstand) 
+2 m + Del 
+2 m + Del 
+Windlast 
+2 m + Del,  
+aber mehr als 3 m 
+4 m + Del,  
+aber mehr als 5 m 
+10 m + Del 
+2 m + Del, aber mehr 
+als 3 m (waag-
+rechter Abstand) 
+2 m + Del 
+2 m + Del 
+Extreme Eislast 
+Del 
+Del 
+- 
+- 
+- 
+- 
+Bemerkungen 
+Es wird berücksichtigt, 
+dass eine Person bei 
+der Instandhaltung auf 
+einem 
+Dach 
+stehen 
+kann und ein Hand-
+werkzeug 
+verwendet. 
+Bei schwerer Aneisung 
+wird 
+angenommen, 
+dass niemand die Dä-
+cher in diesem Zustand 
+begeht. 
+Es wird angenommen, 
+dass eine Person zur 
+Instandhaltung auf dem 
+Dach stehen kann und 
+eine kleine Leiter ver-
+wendet. Bei schwerer 
+Aneisung wird ange-
+nommen, 
+dass 
+nie-
+mand in diesem Zu-
+stand die Dächer be-
+geht. 
+Der Abstand muss aus-
+reichend sein, um der 
+Möglichkeit zu begeg-
+nen, 
+dass 
+induzierte 
+Spannungen zur Ent-
+zündung führen könn-
+ten. 
+Wenn dieser waag-
+rechte Abstand nicht 
+eingehalten werden 
+kann, müssen die 
+vertikalen Abstände 
+für den Fall der Frei-
+leitung 
+über 
+Ge-
+bäuden eingehalten 
+werden. 
+Der Abstand Del muss eingehalten werden, 
+auch wenn das Gebilde in Richtung der 
+Leiter der Freileitung fällt. 
+ANMERKUNG: In einigen Ländern ist es allgemein verboten, Freileitungen über oder in der Nähe von Gebäuden zu führen; die in diesem Abschnitt enthaltenen Abständen gelten 
+für diese Länder nicht. Diese Länder müssen in den NNA festlegen, wie nahe die Freileitungen an Gebäude kommen dürfen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+109 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 110/273 =====
+Seite 106  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(A-dev) AT.1: Wird der jeweils geforderte seitliche Abstand der Hochspannungsfreileitung eines der un-
+ten genannten Objekte unterschritten, verläuft somit ein Leiter im Schutzbereich (2.1/AT.4) eines 
+Objektes, so dürfen die in den relevanten Punkten von 5.4.5.2 angegebenen Schutzabstände 
+nicht unterschritten werden. 
+ 
+(A-dev) AT.2: Für Bauwerke andere als Wohn- oder Schulgebäude, industrielle oder Handels-
+komplexe und ähnliche; zusätzliche Anforderungen: keine. Schutzabstände sind nach 
+5.4.5.2/AT.4 anzunehmen. 
+ 
+(A-dev) AT.3: Für Wohn- oder Schulgebäude, industrielle oder Handelskomplexe und ähnlichem;  
+zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. Schutzabstände sind nach 
+5.4.5.2/AT.4 anzunehmen. 
+ 
+(A-dev) AT.4: Für alle in 5.4.5.2/AT.2 und AT.3 genannten Gebäude gilt: 
+ 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe 
+II 
+III 
+IV 
+ 
+(1) 
+Seitlicher Abstand der Leiter  
+ 
+ 
+vom nächsten Bauwerksteil 
+ 
+ 4 
+5 
+6 
+ 
+ 
+(2)  
+Schutzabstand der Leiter vom nächsten  Bauwerksteil 
+ 
+(2.1) im Regellastfall 
+ 
+ 4 
+5 
+6 
+ 
+(2.2) im Ausnahmslastfall 
+ 
+3,5 
+4 
+5 
+ 
+ 
+(3) 
+Schutzabstand der Leiter von Flachdächern bis 15° Neigung 
+und von der Standfläche von Terrassen, Balkonen usw. 
+ 
+(3.1) im Regellastfall 
+ 
+ 5 
+6 
+7 
+ 
+(3.2) im Ausnahmslastfall 
+ 
+3,5 
+4 
+5 
+ 
+ 
+(4)  
+Bei der Zuspannung von Hochspannungsfreileitungen bei Wohn- oder Schulgebäuden, 
+Gebäuden industrieller oder gewerblicher Art u.dgl. ein- oder angebauten Umspann- und 
+Schaltanlagen (Einbaustationen) brauchen im Bereich der Freileitungsabspannung die  
+oben geforderten Abstände von den Objekten selbst nicht eingehalten werden. 
+ 
+ 
+Am jeweiligen Objekt ist jedoch durch geeignete Maßnahmen, die im einzelnen auf die 
+örtlichen Gegebenheiten abzustimmen sind (z.B. Warntafeln an der Wand, Abschrankun-
+gen mit Warntafeln auf dem Dach), auf die bei einer Annäherung an die Hochspannungs-
+freileitung gegebene Gefahr hinzuweisen. 
+ 
+ 
+Tür- und Fensteröffnungen (letztere, sofern sie nicht fix abgeschlossen sind oder durch 
+geeignete Maßnahmen ein Berühren hochspannungsführender Teile sicher verhindert 
+wird) dürfen innerhalb der oben festgelegten Abstände nicht vorhanden sein. 
+ 
+ 
+(5) 
+Gehören die Gebäude zur gleichen Stromversorgungsanlage wie die Leitung (Kraftwerke, 
+Umspann- oder Schaltstationen), so sind auch kleinere Abstände zulässig. 
+ 
+ 
+Bei industriellen und gewerblichen Anlagen ist auf die Besonderheit des Betriebes (z.B. bei 
+feuer- oder explosionsgefährdeten Anlagen) sowie auf den Arbeitsraum von Verladeein-
+richtungen, Kränen u.dgl. zu achten. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+110 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 111/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 107
+ 
+(A-dev) AT.5: Straßenlampen, Fahnenmaste, Werbeschilder und ähnliches 
+ 
+ 
+Zusätzliche Anforderungen: keine.  
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand der Leiter 
+ 
+vom nächsten Bauwerksteil 
+ 
+4 
+5 
+6 
+ 
+(2)  
+Schutzabstand der Leiter vom nächsten  Bauwerksteil 
+(2.1) im Regellastfall 
+ 
+4 
+5 
+6 
+(2.2) im Ausnahmslastfall 
+ 
+3,5 
+4 
+5 
+ 
+(A-dev) AT.6: Außenantennen 
+ 
+(1)  Außenantennen (nicht auf Leitungstragwerken montiert):   
+Hierzu zählen: Im Freien liegende Antennengebilde, Antennenträger, Antennenleitungen, 
+zusätzliche Bauelemente und Erdungsanlagen derselben. 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Außenantennenanlagen dürfen durch Hochspannungsfreileitungen nicht unterkreuzt wer-
+den. 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1.1) 
+Seitlicher Abstand der Leiter von  
+ 
+der Außenantennenanlage 
+ 
+2 
+3 
+5 
+(1.2) 
+Schutzabstand der Leiter von  
+ 
+der Außenantennenanlage 
+(1.2.1) im Regellastfall 
+ 
+2 
+3 
+5 
+(1.2.2) im Ausnahmslastfall 
+ 
+0,8 
+1,5 
+2,5 
+(1.3) 
+Schutzabstand der Leiter von besteigbaren 
+ 
+Antennentragwerken im Regellastfall 
+ 
+3 
+4 
+6 
+(1.4) 
+Liegt eine Außenantennenanlage seitlich der Hochspan-
+nungsfreileitung, aber höher als diese, so muss ihr seitli-
+cher Abstand von den Leitern der Hochspannungsfreilei-
+tung so groß sein, dass bei allfälligem Umstürzen der An-
+tennenträger zwischen der Außenantennenanlage und 
+der  Hochspannungsfreileitung noch ein Abstand ver-
+bleibt von 
+ 
+1 
+2 
+ 3 
+ 
+Dies ist nicht erforderlich, wenn durch geeignete Maßnahmen (Anker oder dgl.) ein Um-
+stürzen der Außenantennenanlage in Richtung zur Hochspannungsfreileitung zuverlässig 
+verhindert wird. 
+ 
+(2)  Außenantennen (auf Leitungstragwerken montiert): 
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+ 
+Für auf Tragwerken von Starkstromfreileitungen über 1 kV montierte Außenantennenanla-
+gen sind die Bestimmungen gemäß 5.4.5.2/AT.6 (1) nicht anzuwenden. 
+ 
+ 
+Für diese Anwendungsform gilt: 
+(2.1) 
+Bei der Anbringung von Außenantennenanlagen auf Tragwerken von Starkstromfreilei-
+tungen über 1 kV bleiben diese weiterhin Tragwerke für Starkstromfreileitungen über 
+1 kV und ihre Bemessungen unterliegen der zum Zeitpunkt ihrer Errichtung jeweils gülti-
+gen technischen Bestimmung. 
+(2.2)   Die Antennentragkonstruktion zur Anbringung der Antennen, sowie allfällige Steighilfen, 
+Standroste, Podeste, etc., sind Teile des Tragwerkes und sind nach den jeweils aktuellen 
+Errichtungsbestimmungen für Starkstromfreileitungen über 1 kV auszulegen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+111 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 112/273 =====
+Seite 108  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(2.3)   Die Ermittlung der von den Antennen ausgehenden, auf die Antennentragkonstruktion 
+und das Tragwerk wirkenden Lasten, hat auch nach der jeweils aktuellen Errichtungsbe-
+stimmung für Starkstromfreileitungen über 1 kV zu erfolgen.    
+(2.4) 
+Als Schutzabstände gelten: 3) 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abstände in m 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+ 
+(2.4.1) Schutzabstand der spannungsführenden 
+Leiter (Phasen) von der Antenne im Regellastfall  
+ 
+2 
+3          4 
+(2.4.2) Schutzabstände der nicht spannungsführenden Leiter, 
+die mit den geerdeten Bauteilen des Tragwerkes  
+verbunden sind, von der Antenne im Regellastfall  
+ 
+0,5 
+0,5 
+0,5  
+ 
+Das die Antennenanlage speisende Niederspannungsnetz darf nicht unzulässig beeinflusst wer-
+den. 
+                                                
+3)  Nationale Fußnote: Für die Gestaltung und Situierung von Steighilfen, Standflächen und Podesten wird 
+auf ÖVE EN 50110-1 verwiesen. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+112 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 113/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 109  
+ 
+5.4.5.3 
+Verkehrswege 
+Tabelle 5.4.5.3.1 – Mindestabstände von Freileitungen zu Straßen, Eisenbahnen und schiffbaren Wasserwegen 
+Abstandsfälle: Freileitung kreuzt Straßen, Eisenbahnen und schiffbare Wasserwege 
+Lastfall 
+Straßenoberfläche 
+oder 
+Schienen-
+oberkante 
+(wenn 
+die Strecke elekt-
+rifiziert ist) (siehe 
+Anmerkung 1) 
+Zu Teilen der elek-
+trischen Energie-
+versorgung von  
+Eisenbahnen, 
+O-Buslinien oder 
+zu Seilbahnen 
+Zugseile von  
+Seilbahnen 
+Zu einem verein-
+barten Lichtraum 
+einer anerkannten 
+schiffbaren  
+Wasserstraße 
+Feste Teile einer 
+Seilbahn oder  
+einer Bahn-
+energieversor-
+gungsanlage 
+Maste oder Trag- 
+und Zugseile einer 
+Seilbahnanlage 
+Zu Seilbahnanla-
+gen im Falle einer 
+Unterkreuzung 
+Höchste Leiter-
+temperatur 
+6 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+4 m + Del 
+2 m + Del 
+Eislast 
+6 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+4 m + Del 
+2 m + Del 
+Windlast 
+6 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+2 m + Del 
+4 m + Del 
+2 m + Del 
+Sonderlastfall 1 
+- 
+2 m + Del 
+2 m + Del 
+- 
+- 
+- 
+- 
+Sonderlastfall 2 
+- 
+- 
+2 m + Del 
+- 
+- 
+- 
+- 
+Sonderlastfall 3 
+- 
+- 
+- 
+- 
+- 
+- 
+2 m + Del 
+Bemerkungen 
+Für untergeordnete Straßen, wie in 
+den NNA festgelegt, darf der Abstand 
+um 1 m verringert werden. 
+ 
+ 
+waagrechter  
+Abstand 
+waagrechter 
+Abstand 
+ 
+Der Sonderlastfall 1 betrifft das Ausschwingen des überkreuzenden Leiters infolge unterschiedlicher Windlasten bei einer in den NNA festzulegenden Temperatur und bei gleich-
+zeitiger Belastung des unterkreuzenden Leiters der Bahnenergieversorgungsanlage bei dessen geringstem Durchhang. 
+Der Sonderlastfall 2 betrifft das Ausschwingen des überkreuzenden Leiters infolge unterschiedlicher Windlasten bei einer in den NNA festzulegenden Temperatur und bei um 25 % 
+erhöhter maximaler Zugkraft des Zugseiles. Bei der Bestimmung der waagrechten Abstände müssen die folgenden Lastfälle betrachtet werden: 
+- 
+Ausschwingen des Leiters infolge Wind in Richtung der festen Teile der Seilbahnanlage; 
+- 
+Ausschwingen der Seile der Seilbahnanlage mit einem größten Schwingwinkel von 45° gegen die Teile der Freileitung. 
+Der Sonderlastfall 3 betrifft den kleinsten Durchhang der unterkreuzenden Leiter und den größten Durchhang des Zugseils. Zusätzlich muss die Kabinenhöhe berücksichtigt wer-
+den. 
+ANMERKUNG 1: Die Abstände zu Eisenbahnanlagen sollten bevorzugt zum Lichtraumprofil der Fahrzeuge als zur Schienenoberkante selbst festgelegt werden. 
+ANMERKUNG 2: Wenn gelegentlich sehr hohe Eislasten auftreten, können dabei kleinere Abstände verwendet werden. Wenn eine nicht elektrifizierte Eisenbahn gekreuzt wird, 
+müssen die Abstände von der Bahnverwaltung genehmigt werden, wenn eine Umstellung auf Oberleitungsbetrieb geplant ist. 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+113 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 114/273 =====
+Seite 110  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(A-dev)  AT.7 bis AT.22 siehe unten, nach Tabelle 5.4.5.3.2. 
+Tabelle 5.4.5.3.2 – Mindestabstände bei Näherungen zu Straßen, Eisenbahnen und schiffbaren Wasserwegen 
+ 
+Abstandsfälle: Freileitung nahe Straßen, Eisenbahnen und schiffbaren Wasserwegen 
+Lastfall 
+Zum Lichtraumprofil oder zu 
+Teilen der elektrischen Ober-
+leitungsanlage einer Eisen-
+bahn oder einer O-Buslinie 
+Zu Bauteilen einer  
+Seilbahnanlage 
+Zum äußeren Rand eines 
+Fahrweges (einschließlich 
+festem Bankett), einer Auto-
+bahn, einer Fernstraße, einer 
+Landstraße oder einer  
+Wasserstraße 
+Waagrechter Abstand  
+zwischen nächstem Teil der 
+Freileitung und dem äußeren 
+Rand des nächsten Eisen-
+bahngleises 
+Höchste Leiter-
+temperatur 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m + Del 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m 
+Eislast 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m + Del 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m 
+Windlast 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m + Del 
+0,5 m + Del,  
+aber mehr als 1,5 m 
+4 m 
+Sonderlastfall 4 
+- 
+4 m + Del 
+- 
+- 
+Bemerkungen 
+Wenn dieser waagrechte Abstand nicht eingehalten werden kann, gelten die Abstände für die 
+Kreuzung von Bahnanlagen nach Tabelle 5.4.5.3.1. 
+Wenn die Elektrifizierung ge-
+plant ist, 15 m. 
+Sonderlastfall 4: Es ist zusätzlich anzunehmen, dass Trag- und Zugseil einer Seilbahnanlage mit einem Winkel von 45° in Richtung der Freilei-
+tung schwingen. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+114 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 115/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 111
+ 
+(A-dev) AT.7: Brücken 
+ 
+Zusätzliche Anforderungen: keine. 
+Für im Brückenbereich vorhandene Objekte (z.B. Verkehrsflächen, Beleuchtungsanlagen usw.) 
+sind die jeweils für diese geforderten Abstände zu berücksichtigen. Im Übrigen gilt: 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand der Leiter von der Brücke 
+ 
+4 
+5 
+6 
+ 
+(2) 
+Schutzabstand der Leiter über der Brücke 
+(2.1) 
+im Regellastfall 
+ 
+4 
+5 
+6 
+(2.2) 
+im Ausnahmslastfall 
+ 
+3,5 
+4 
+5 
+ 
+(3) 
+Schutzabstand der Leiter unter einer Brücke 
+(3.1) 
+sofern die Brücke als Tragwerk für die 
+ 
+Hochspannungsfreileitung benützt wird, 
+ 
+Abstände gemäß 5.4.3 
+(3.2) 
+sofern die Brücke nicht als Tragwerk für  
+ 
+die Hochspannungsfreileitung benützt wird 
+(3.2.1)  im Regellastfall 
+ 
+5 
+10 
+10 
+(3.2.2) desgleichen, jedoch bei hochgeschnelltem Leiter 
+2 
+5 
+6 
+(3.3) 
+Liegt die Verkehrsfläche einer Brücke weniger als 5 m oberhalb der spannungsführenden 
+Leiter, so sind in Höhe der Verkehrsfläche oder knapp darunter in der Breite der Hoch-
+spannungsfreileitung zuzüglich je 2 m an beiden Seiten der Brücke Schutzdächer anzu-
+bringen, die mindestens 1 m über die Verkehrsfläche hinausragen. 
+ 
+(A-dev) AT.8: Gemeindestraßen außerhalb von Ortsgebieten und sonstige Fahrwege  
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+Es gelten die Sicherheitsabstände gemäß 5.4.5.3.2/AT.11.  
+ 
+(A-dev) AT.9: Bundesstraßen S (Schnellstraßen), Bundesstraßen B und Landesstraßen, Verkehrs-
+flächen innerhalb von Ortsgebieten, in industriellen und gewerblichen Anlagen sowie in  
+öffentlichen Gartenanlagen 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Es gelten die Sicherheitsabstände gemäß 5.4.5.3.2/AT.11. 
+ 
+(A-dev) AT.10: Bundesstraßen A (Autobahnen) 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Es gelten die Sicherheitsabstände gemäß 5.4.5.3.2/AT.11. 
+ 
+ 
+Bei Kreuzungen von Autobahnen dürfen auch bei folgender außergewöhnlicher Lage der Leiter 
+die hierfür jeweils geforderten Schutzabstände nicht unterschritten werden: 
+(a)  Das Kreuzungsspannfeld der Hochspannungsfreileitung ist mit Regelzusatzlast belastet, alle 
+übrigen Spannfelder der Hochspannungsfreileitung sind unbelastet (ungleiche Aneisung), 
+(b) Bruch eines Isolators bei Mehrfachabspannketten im Regellastfall. Hierbei braucht die Aus-
+lenkung der Leiter durch Wind nicht berücksichtigt zu werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+115 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 116/273 =====
+Seite 112  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(A-dev) AT.11: Für alle Kategorien von Straßen, wie in 5.4.5.3.2/AT.8, AT.9 und AT.10 oben erwähnt, gilt: 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand der Leiter vom Fahrbahnrand 
+  
+(im Falle von Autobahnen vom Außenrand des  
+ 
+äußeren Seitenstreifens) 
+ 
+4 
+5 
+6 
+ 
+(2) 
+Schutzabstand der Leiter von der Fahrbahnoberfläche 
+(2.1) im Regellastfall 
+ 
+7 
+8 
+9 
+(2.2) im Ausnahmslastfall 
+ 
+5,5 
+6 
+7 
+(2.3) nur für Autobahnen: bei außergewöhnlicher Lage  
+ 
+der Leiter nach (a) und (b) wie oben erwähnt 
+ 
+5,5 
+6 
+7 
+ 
+(3) 
+nur für Gemeindestraßen außerhalb von Ortsgebieten  
+ 
+und sonstige Fahrwege: 
+ 
+Seitlicher Abstand der Fundamente der Tragwerke  
+ 
+vom Fahrbahnrand: 
+ 
+1 
+1 
+1 
+ 
+(4)  
+nur für Bundesstraßen „S“ und „B“ und für  
+ 
+Landesstraßen:  
+ 
+Seitlicher Abstand der Fundamente der Tragwerke  
+ 
+vom Fahrbahnrand, sofern eine Unterschreitung der  
+ 
+gesetzlich festgelegten Bauverbotszone genehmigt wird 
+2 
+2 
+2 
+ 
+(5)  
+nur für Autobahnen: 
+ 
+Seitlicher Abstand der Fundamente der  Tragwerke vom  
+ 
+Fahrbahnrand, sofern eine Unterschreitung der im  
+ 
+Bundesstraßengesetz festgelegten Bauverbotszone von  
+ 
+der Bundesstraßenbehörde genehmigt wird 
+ 
+5 
+5 
+5 
+ 
+(A-dev) AT.12: Gewässer 
+ 
+Ausgenommen Wasserstraßen, die in AT.13 behandelt werden.  
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+Schutzabstand der Leiter im Regellastfall   
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe 
+II 
+III 
+IV 
+(1) 
+von nicht schiffbaren oder nicht  flößbaren  
+ 
+Gewässern 
+(1.1) über Mittelwasser 
+ 
+5 
+6 
+7 
+(1.2) über höchstem Wasserstand 
+ 
+3,5 
+4 
+5 
+ 
+(2) 
+von schiffbaren oder flößbaren Gewässern 
+(2.1) über höchstem schiffbarem Wasserstand (HSW)  
+6 
+7 
+8 
+(2.2) über dem höchsten Bauteil der  Wasserfahrzeuge 
+2 
+3 
+5 
+ 
+(3) 
+über der Krone von befahrbaren 
+ 
+Hochwasserschutzdämmen 
+ 
+7 
+8 
+9 
+ 
+(4) 
+Seitlicher Abstand der Fundamente der Tragwerke  
+ 
+vom Ufergrat oder vom land- oder wasserseitigen  
+ 
+Fuß von Hochwasserschutzdämmen oder Bermen  
+3 
+3 
+3 
+Eine Unterschreitung der vorstehenden Abstände ist an die Zustimmung der zuständigen Ge-
+wässeraufsichtsbehörde gebunden. Die bestimmungsgemäße Benützung von Treidelwegen darf 
+durch Tragwerke und deren Fundamente nicht beeinträchtigt werden. 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+116 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 117/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 113
+ 
+(A-dev) AT.13: Wasserstraßen 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppen II 
+III  
+IV 
+(1) 
+Seitlicher Abstand der Leiter vom Ufergrat oder  
+ 
+von der Krone von Hochwasserschutzdämmen 
+ 
+4 
+5  
+6 
+ 
+(2) 
+Schutzabstand der Leiter vom höchsten schiffbaren  
+ 
+Wasserstand gemäß § 21(2) und § 21(3) der  
+ 
+Schiffahrtsanlagenverordnung 
+ 
+19 
+20,5 
+22 
+ 
+(3) 
+Schutzabstand der Leiter über der Krone von  
+ 
+Hochwasserschutzdämmen im Regellastfall 
+ 
+7 
+8  
+9 
+ 
+(4) 
+Seitlicher Abstand der Fundamente der Tragwerke 
+(4.1) vom Fuß der Hochwasserschutzdämme 
+ 
+5 
+5  
+5 
+(4.2) von Schutzdämmen gegen Katastrophenhochwasser:   
+Masthöhe+5 m 
+(4.3) vom Ufergrat: nach Vorschreibung der Wasserstraßenverwaltung. 
+ 
+(A-dev)  AT.14: Schienenbahnen für öffentlichen Verkehr 
+ 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Die freie Sicht auf Signale und Wegübergänge darf durch Hochspannungsfreileitungen nicht be-
+einträchtigt werden. Im Bereich von Bahnhöfen, d.i. im Raume zwischen den Einfahrtsignalen, 
+sowie im Bereiche der Bahnsteige von Eisenbahnhaltestellen sind Kreuzungen zu vermeiden. Bei 
+Kreuzung von Fahrleitungsanlagen ist die Verwendung von Holzmasten im Abspannabschnitt 
+verboten.  
+Für Speiseleitungen auf eigenen Tragwerken gelten die Bestimmungen gemäß 5.4.5.4. 
+ 
+Bei Kreuzungen dürfen auch bei folgender außergewöhnlicher Lage der Leiter die hierfür jeweils 
+geforderten Schutzabstände nicht unterschritten werden: 
+(a)  Das Kreuzungsspannfeld der Hochspannungsfreileitung ist mit Regelzusatzlast belastet, alle 
+übrigen Spannfelder der Hochspannungsfreileitung sind unbelastet (ungleiche Aneisung). 
+(b) Bruch eines Isolators bei Mehrfachabspannketten im Regellastfall. Hierbei braucht Auslen-
+kung der Leiter durch Wind nicht berücksichtigt zu werden. 
+ 
+ 
+ 
+ 
+Angaben in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1)  
+Seitlicher Abstand der durch Wind ausgelenkten Lei-
+ter der Hochspannungsfreileitung vom Lichtraumprofil 
+und von Tragwerken der Fahrleitungen und der Sig-
+nalanlagen 
+ 
+4 
+5 
+6 
+ 
+(2)  
+Elektrifizierte Strecken, Fahrleitungen und Speiselei-
+tungen auf Fahrleitungstragwerken  
+(2.1) 
+Schutzabstand der Leiter der Hochspannungs- 
+ 
+freileitung von Fahrleitungen 
+(2.1.1) im Regellastfall 
+ 
+3 
+4 
+6 
+(2.1.2) im Ausnahmslastfall 
+ 
+2 
+3 
+5 
+(2.1.3) bei außergewöhnlicher Lage der Leiter der  
+ 
+Hochspannungsfreileitung nach  
+ 
+(a) und (b) wie oben genannt 
+ 
+2 
+3 
+5 
+(2.2) 
+Schutzabstand der Leiter der Hochspannungs- 
+ 
+freileitung von Speiseleitungen 
+(2.2.1) im Regellastfall 
+ 
+2 
+3 
+5 
+(2.2.2) im Ausnahmslastfall 
+ 
+0,8 
+1,5 
+2,5 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+117 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 118/273 =====
+Seite 114  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+(2.3) 
+Schutzabstand der Leiter der Hochspannungs- 
+ 
+freileitungen von den Tragwerken 
+(2.3.1) im Regellastfall 
+ 
+3 
+4 
+6 
+(2.3.2) im Ausnahmslastfall 
+ 
+2 
+3 
+5 
+ 
+(3)  
+Wenn Elektrifizierung in Aussicht genommen ist, wird 
+für die freie Strecke empfohlen: 
+ 
+Schutzabstand der Leier der Hochspannungsfrei- 
+ 
+leitung von der Schienenoberkante im Regellastfall 
+12,5 
+13,5 
+15,5 
+ 
+(4)  
+Wenn keine Elektrifizierung in Aussicht genommen ist: 
+(4.1) 
+Schutzabstand der Leiter der Hochspannungsfreileitung  
+ 
+von der Schienenoberkante 
+(4.1.1) im Regellastfall 
+ 
+7 
+8 
+10 
+(4.1.2) im Ausnahmslastfall 
+ 
+6 
+7 
+9 
+(4.1.3) bei außergewöhnlicher Lage der Leiter der  
+ 
+ 
+Hochspannungsfreileitung nach (a) und (b)  
+ 
+wie oben genannt 
+ 
+6 
+7 
+9 
+ 
+(5)  
+Seitlicher Abstand der Tragwerke der Hochspannungs- 
+freileitung vom Lichtraumprofil und von Tragwerken der  
+Fahrleitungen und der Signalanlagen, sofern die Unter- 
+schreitung des Bauverbotsbereiches von 12 m (Eisenbahn- 
+ 
+gesetz) von der Eisenbahnaufsichtsbehörde genehmigt wird 5 
+5 
+5 
+ 
+(A-dev) AT.15: Straßenbahnen, Obuslinien, Materialbahnen und elektrische Treidelanlagen  
+ 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+ 
+Für Speiseleitungen auf eigenen Tragwerken gelten die Bestimmungen gemäß 5.4.5.4. 
+ 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1)  
+Seitlicher Abstand der Leiter vom Lichtraumprofil, bei 
+Obuslinien vom Fahrbahnrand sowie von Fahrleitungs-
+tragwerken 
+ 
+4 
+5 
+6 
+ 
+(2)  
+Schutzabstand der Leiter der Hochspannungsfreileitung 
+von Fahrleitungen und von Speiseleitungen auf Fahrlei-
+tungstragwerken  
+(2.1) im Regellastfall 
+ 
+4 
+5 
+7 
+(2.2) im Ausnahmslastfall 
+ 
+0,8 
+1,5 
+2,5 
+ 
+(3) 
+Schutzabstand der Leiter von der Schienenoberkante 
+(wenn keine Fahrleitung oder Speiseleitung auf Fahrlei-
+tungstragwerken vorhanden ist) 
+(3.1) im Regellastfall 
+ 
+7 
+8 
+10 
+(3.2) im Ausnahmslastfall 
+ 
+5,5 
+6 
+7 
+ 
+(4)  
+Seitlicher Abstand der Tragwerke der Hochspannungs- 
+ 
+freileitung  
+(4.1)  vom Lichtraumprofil und von Fahrleitungstragwerken,  
+ 
+sofern die Unterschreitung des Bauverbotsbereiches von  
+ 
+der Aufsichtsbehörde genehmigt wird. 
+ 
+5 
+5 
+5 
+(4.2) bei Obuslinien vom Fahrbahnrand und von Fahr-
+leitungen 
+ 
+2 
+2 
+2 
+ 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+118 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 119/273 =====
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+Seite 115
+ 
+(A-dev) AT.16: Ortsveränderliche Bodenseilzüge 
+ 
+ 
+Zusätzliche Anforderungen: keine. 
+ 
+Bei der Ermittlung der Abstände von diesen Arbeitsgeräten ist gegebenenfalls Abheben und 
+Hochschnellen des Bodenseilzuges, insbesondere in muldenförmigem Gelände, zu berücksichti-
+gen. 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) Schutzabstand der Leiter vom Bodenseilzug 
+ 
+im Regellastfall 
+ 
+3 
+4 
+5 
+ 
+(2) Werden Führungsrollen, Fangjoche, Prellseile u.dgl. vorgesehen, so sind die Schutz-
+abstände von diesen von Fall zu Fall so festzulegen, dass die elektrotechnische Sicherheit 
+sichergestellt wird. 
+ 
+(A-dev) AT.17: Materialseilbahnen, land- und forstwirtschaftliche Seilwege 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Die Abstände der überkreuzenden Hochspannungsfreileitung sind für die ungünstigste Lage der 
+Seilbahn (Hochschnellen u.dgl.) zu ermitteln. 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III  
+IV 
+(1) 
+Seitlicher Abstand 
+(1.1) zwischen den Leitern der Hochspannungsfreileitung und 
+den Seilbahnseilen, beide Wind durch gegeneinander 
+ausgelenkt 
+ 
+4 
+5  
+6 
+(1.2) zwischen den ausgelenkten Leitern der Hochspannungs-
+freileitung und den Bauteilen der Seilbahn 
+ 
+4 
+5  
+6 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung 
+zur Seilbahn 
+(2.1)  im Regellastfall 
+ 
+2 
+3  
+4 
+(2.2)  im Ausnahmslastfall 
+ 
+0,8 
+1,5 
+2,5 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke der Hochspannungs-
+freileitung von Bauteilen der Seilbahn und vom ausge-
+lenkten Seilbahnseil 
+ 
+2 
+2  
+2 
+ 
+Können die oben angegebenen Abstände nicht einwandfrei sichergestellt werden, so sind 
+Schutzgerüste, Prellseile, Fangjoche oder dgl. anzuordnen. Die Abstände der Hochspannungs-
+freileitung von diesen sind von Fall zu Fall so festzulegen, dass die elektrotechnische Sicherheit 
+sichergestellt ist. 
+ 
+Bei der Überkreuzung von Materialseilbahnen, sofern diese nicht für Personenbeförderung zuge-
+lassen sind, und von land- und forstwirtschaftlichen Seilwegen kann auf die erhöhte Sicherheit 
+verzichtet werden, wenn: 
+(1)  durch Bewilligungsbescheid oder behördliche Entscheidung oder Verfügung sicherge-
+stellt ist, dass bei Katastrophenwetter (starkem Schneefall, Aneisung, Sturm, Gewitter) 
+diese nicht betrieben werden dürfen, oder 
+(2)  Schutzgerüste, Prellseile und dgl. angeordnet werden, die eine Berührung zwischen den 
+Leitern der Hochspannungsfreileitung und Teilen der Seilbahnanlage mit Sicherheit ver-
+hindern. 
+ 
+Für die zu den land- und forstwirtschaftlichen Seilwegen gehörenden und längs derselben ge-
+führten Fernmeldeleitungen gelten die vorstehenden Bestimmungen ebenfalls. 
+Eine Unterkreuzung dieser Anlagen und von allenfalls zu diesen gehörenden Fernmeldeleitungen 
+durch eine Hochspannungsfreileitung ist nur in unvermeidlichen Ausnahmefällen zulässig. 
+In solchen sind die ungünstigste Lage der Leiter der Hochspannungsfreileitung (Hochschnellen 
+bei Wegfall der Ausnahmszusatzlast) sowie die tiefste Lage der Seile oder Fahrbetriebsmittel der 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+119 von 273
+www.ris.bka.gv.at
+
+
+===== PAGE 120/273 =====
+Seite 116  
+EN 50341-1:2001 + EN 50341-2:2001 + EN 50341-3-1:2001 
+ 
+Seilbahn und des Fördergutes zu berücksichtigen. Erhöhte Sicherheit der Hochspannungsfreilei-
+tung ist nicht erforderlich. 
+ 
+ 
+ 
+ 
+(A-dev)   AT.18: Standseilbahnen für Güterbeförderung 
+ 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Zu diesen zählen Schrägaufzüge, Bremsberge, Haspelberge, Seilförderungen u.dgl. (auch für 
+Werksverkehr). Bei muldenförmigem Längenprofil der Standseilbahnanlage ist das Hochschnel-
+len des Zugförderseiles zu berücksichtigen. 
+ 
+ 
+ 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand der Leiter der Hochspannungs- 
+4 
+5 
+6 
+ 
+freileitung vom Lichtraumprofil 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung 
+vom Lichtraumprofil und vom hochgeschnellten Zugseil 
+(2.1) im Regellastfall 
+2 
+3 
+4 
+(2.2) im Ausnahmslastfall 
+0,8 
+1,5 
+2,5 
+ 
+(3) 
+Seitlicher Abstand der Tragwerke vom Lichtraumprofil 
+2 
+2 
+2 
+ 
+(A-dev)   AT.19: Seilliftanlagen zur öffentlichen Personenbeförderung 
+ 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+ 
+Seilliftanlagen dürfen durch Hochspannungsfreileitungen nicht unterkreuzt werden. Die Abstände 
+sind bei ungünstiger Seillage der Seilliftanlage (Hochschnellen der Seile u.dgl.) zu ermitteln. Die 
+Bedingungen gemäß 5.4.5.3.2/AT.21 sind zu berücksichtigen. 
+ 
+(A-dev) AT.20: Seilschwebebahnen zur öffentlichen Personenbeförderung 
+ 
+Zusätzliche Anforderungen: Maßnahmen für erhöhte Sicherheit. 
+ 
+Unterkreuzungen von Seilschwebebahnen mit öffentlichem Personenverkehr durch Hochspan-
+nungsfreileitungen sind nur in unvermeidbaren Ausnahmsfällen zulässig. Die Hochspannungs-
+freileitung ist in diesem Falle durch ein Bauwerk (Schutzgerüst, Tunnel u.dgl.) zu schützen. Das 
+Bauwerk darf den Seilbahnbetrieb auch bei der ungünstigsten Seillage nicht behindern. Es muss 
+das Auflegen der Seilbahnseile und der Leiter einer zur Seilbahn gehörenden oberirdischen 
+Fernmeldeleitung bei Revisions- und Instandsetzungsarbeiten ermöglichen und dabei verhindern, 
+dass die Seilbahnseile und Fernmeldeleiter sich der Hochspannungsfreileitung unzulässig nä-
+hern. 
+Bei Überkreuzung durch die Hochspannungsfreileitung ist die ungünstigste Seillage (Hoch-
+schnellen der Seile u.dgl.) zu berücksichtigen. Die Bedingungen gemäß  5.4.5.3.2/AT.21 sind zu 
+berücksichtigen. 
+ 
+(A-dev) AT.21: Für Seilliftanlagen und für Seilschwebebahnen wie in 5.4.5.3.2/AT.19 und AT.20 ge-
+nannt gilt 
+ 
+ 
+Abstände in m 
+ 
+ 
+Leitungsgruppe  
+II 
+III 
+IV 
+(1) 
+Seitlicher Abstand 
+(1.1) zwischen den Leitern der Hochspannungsfreileitung 
+und dem Seilbahnseil einschließlich der Fahrbetriebs-
+mittel, beide durch Wind gegeneinander ausgelenkt 
+4 
+5 
+6 
+(1.2) zwischen den ausgelenkten Leitern der Hochspan-
+nungsfreileitung und den Bauteilen der Seilschwebe-
+bahn 
+4 
+5 
+6 
+ 
+(2) 
+Schutzabstand der Leiter der Hochspannungsfreileitung 
+von der Seilschwebebahn 
+BGBl. II - Ausgegeben am 30. Jänner 2006 - Nr. 33
+120 von 273
+www.ris.bka.gv.at

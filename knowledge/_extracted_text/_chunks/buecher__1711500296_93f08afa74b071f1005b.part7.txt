@@ -1,0 +1,1617 @@
+
+
+===== PAGE 281/298 =====
+CHANGE and DDEDIT alter the
+Attribute
+Definitions,
+not
+the
+attributed block.
+The Edit Attribute Definition dialog box will offer you three inputboxes to change the
+tag, prompt, or default value. Note how the default value is here called the Default.
+II Edit A;Hribute Definilion'
+"
+' '
+11111
+Tag:
+Prompt
+Default:
+OK
+l I
+Cancel I I
+Help
+Press OK to complete the change.
+SLOCKing the Attributes
+Once the attributes are all defined, you must BLOCK the information. Pick the attribute
+definitions in the order that you want your prompts to appear by picking each attribute
+in order. If you use Window, you may be prompted in the reverse order.
+Inserting the Attributed Blocks
+Having createdthe attributed block, now use INSERT to place it on your drawing. Once
+inserted, the block will contain the values for each attribute in that particular instance
+or application.
+Ifyou use -INSERT you will be prompted for the information on the command line. If
+you use INSERT, you will get the Insert dialog box. You can also use the ATTDIA dialog
+box for inserting attributes. If this dialog box does not appear, toggle ATTDIA on.
+Command:ATTDIA
+Enter new value for ATTDIA<O>:l
+Changing Attribute Definitions
+While inserting the block, you may notice some errors in the block definitions. To
+change the attribute definitions at this point, use EXPLODE and then CHANGE or
+DDEDIT. When you EXPLODE the attributed block, it will revert back to the tag format.
+r
+"
+BEACH DESIGNS
+COMPUTER AIDED DESIGN SERVICES
+M'IlIQ
+-'"
+CUSTOMER
+DRAWN
+IIIC .. ,..,.
+'IOU
+PART
+SCALE
+...
+~-
+DATE
+DRWNO
+Attribute definition with tags
+Figure 14.3
+r
+'""
+BEACH DESIGNS
+COMPUTER AIDED
+DESIGN SERVICES
+-
+.... '"
+Skylab lnd:u.stries
+B. Ch.aUis
+IIIC IF NIn'.
+mu:
+Hook Link
+t:500
+..Ito
+---
+March 17 2008
+DFC-1003
+Attributed block instance
+264
+CHAPTER FOURTEEN
+In Figure 14.3 the graphics with attribute tags before they are all blocked are shown on
+the left, and the inserted block with the instance values on the right. If you want to
+change any of the default values once they have been entered, use EXPLODE then
+CHANGE or DDEDIT.
+
+
+===== PAGE 282/298 =====
+Displaying
+Attributes
+When attributes are added to objects, they can be nlade universally invisible by setting
+the Invisible mode in the ATIDEF command, or you can make them invisible later using
+the ATIDISP command.
+The ATTDISP Command
+ATIDISP controls the display ofattributes. It is only available on the commandline.
+Command:ATTDISP
+Enter attribute visibility setting
+[Normal/ON/OFF] <Normal>:OFF
+Where: ON
+OFF
+Normal
+all attributes visible
+all attributes invisible
+normal visibility, set individually
+Attribute Modes
+Ifyou want to INSERT the attributed blocks without having to tum the display off, you
+can set the attribute mode to invisible. You can set these as follows to make attributed
+block insertion easier:
+INVISIBLE
+CONSTANT
+VERIFY
+PRESET
+makes all attributes invisible
+makes an attribute uneditable; for example, the president's desk is
+always the president's desk even though the president may change
+allows you to take a final look at what you have entered prior to
+having it added to the drawing
+is used when creating attributes that will always have the same
+value
+Creating
+Attributes for
+Data Extraction
+Attributes can be used both for title blocks and drawing notations, and for occasions
+where the information can be downloaded to a price list or bill of materials. The
+attributes are all defined in the same way, and the extractions take place once the
+attributed blocks are all inserted.
+When attributes are used for drawing notations they are almost always visible on the
+drawing. When they are used for bill ofmaterials, parts list or schedules, the attributes
+are usually invisible on the drawing but shown on the Attribute Extract Table, as ex-
+plained on page 267.
+Attributes are always associated with blocks. Ifyou want an attributed block, first cre-
+ate the geometry for the final block, if there is any, then add the attributes. You will
+need to have lines and text as well as attributes in a title block, butyou will not need ge-
+ometry in an attributed block that is meant, for example, to extract room colors.
+Tutorial14b gives an example ofattributes used for extractiontoaBillofMaterials.
+The concepts for attributes are relatively difficult for non-computer users. The only
+way to see how they are used is with practice. There are three tutorials at the end ofthis
+chapter starting on page 268. Ifyou do all ofthem, you should understand better how
+attributes work.
+Attributes
+265
+
+
+===== PAGE 283/298 =====
+Editing
+Attributes
+There are two ways ofediting attributes:one at a time or in groups. For one at a time use
+ATIEDIT or the Enhanced Attribute Editor.
+You will be prompted to choose the block to edit. Then you will get this screen.
+You can change the value ofthe attribute on this tab, the size and quality ofthe text on
+the next, and the properties (layer, color, linetype) on the last. Make changes then click
+OK.
+f-------------------------------------------------x 2
+:,
+.
+st...
+:
+.ell x.~
+I
+us
+II
+I
+I
+I,,::,
+1 :x-------------------------------------------------
+Before ATTEDIT
+Figure 14.4
+After ATIEDIT
+266
+CHAPTER FOURTEEN
+Cornmand:-ATTEDIT
+Edit attributes one at a time?
+[Yes/No]<Y>:N
+Performing global editing of attribute values
+Edit only attributes visible on screen?
+[Yes/No]<Y>:~
+Enter block name specification <*>:JIGLEG
+Enter attribute tag specification <*>:Material
+Enter attribute value specification
+<*>:~
+Select Attributes: (pick 1 pick 2)
+Enter string to change:Steel
+Enter new string value:Bronze
+Figure 14.4 show a global change on a number of attributes. The value is case sensi-
+tive, i.e. Steel will work, STEEL won't. Make sure that you have typed the infomlation
+in correctly or you will have problems.
+Ifyou need to change a lot ofthe information on an attributed block, another way of
+doing this is to EXPLODE the block, redefine it, then re-block it under the same name.
+All ofthe block instances will be updated.
+
+
+===== PAGE 284/298 =====
+Data Extraction
+Now that the data have been entered correctly, you can have the file printed out onto a
+spreadsheet or materials list by using the command ATIEXT. This operation does not
+change the drawing in any way, but takes the attribute data to applications such as
+Excel, Lotus 1-2-3, or your favorite word processor. You can either export the data, or
+have it written immediately on your drawing with EAnEXT.
+ATTEXT and Template Files
+To extract data with ATIEXT you must create
+a template file in .txt; Wordpad or Notepad
+are the easiest to use.The template file might
+look like this:
+PARTNO C008000
+DESCRIPT C0150DO
+MATERIAL C0080Da
+SIZE C00800a
+PRICE C008000
+The template file is set up with the tag plus
+the code:
+PARTNO C008000
+TAG
+Where: PARTNO
+C
+008
+000
+character
+8 characters maximum in the jig name (COOSOOO)
+number of decimal places ( none are needed for a
+character field)
+Once the template file is created, invoke the AnEXT command and you will get the At-
+tribute Extraction dialog box. The template file is the one you have just created. The
+extract file is the one you are trying to make. View the extract file in Wordpad orNote-
+pad.
+EATTEXT
+Ifwhat you are after is a compiled listing ofyour attributes on screen, use the EATIEXT
+command. This will walk you through the process of extracting all of your attribute
+data and placing it on your screen. This is a new command with Release 2006. In Re-
+lease 2008 it has become much more complicated. Simply remove all references to ob-
+jects other than attributes when prommpted and it will work beautifully.
+You will be prompted for such things as a table heading, in this case the heading Jig
+Assembly was chosen. Figure 14.5 shows an extraction from quite a large drawing.
+The lists can be numbered according to any of the tags.
+hardware
+Quantity
+DESCRIPT
+MATERIAL
+NaMe
+PARTND
+PRICE
+PRODND
+SIZE
+1
+Jig Leg
+Bronze
+Jl
+JIG135
+5.26
+.60 X 1.25
+1
+brass
+jigleg
+none
+2
+Jig Leg
+Steel
+Jl
+JIG135
+5.26
+.60 X 1.25
+-4
+1
+-4
+Jig Leg
+Bronze
+J1
+JIG125
+5.26
+.60 X 1.25
+-4
+Stnnc:t Bushing
+Steel
+B1
+BU135
+3.29
+.125 X .55
+12
+Stand. Bushing
+Steel
+B1
+BUl25
+3.29
+.125 X .55
+19
+Jig Leg
+SteEtl
+Jl
+JIG125
+5.26
+.60 X 1.25
+31
+2
+Figure 14.5
+Attributes
+267
+
+
+===== PAGE 285/298 =====
+Step]
+Use LINE and PLiNE to create the design for a standard title block. Use TEXT to enter the
+headings for each area. Use imperial or metric sizes.
+CUSTlINER
+DRAVN BY'
+1
+NAME OF p.r.
+~~ --r0.lO (23
+I)/IT£.
+!RA....INCi NO<
+Your title block should be in
+a layer called title. If it is on
+Layer 0, it will pick up the
+linetype, layer and color of
+the
+layer current
+in
+the
+receiving file when it is
+inserted.
+--------6-00[1523--------:1
+1-1---3.00 [76]------·
+I
+1.50 CJ8l
+~I~l
+Step 2
+Add the attribute definition for the
+date.
+l:USTDIlElt
+DRA\Il'II IIY,
+DRAWN
+IWIE IT P.T,
+SCAI.£
+DA,
+D~TFJ< 1
+DRAVINIi to
+'--
+\.-.
+First use the SlYLE command to set a
+new text style for the attributes. Use the typed-in version ofATTDEF for this one.
+Command:STYLE (set a new text style with the name attributes
+using a different font)
+Command:-ATTDEF
+Current attribute modes:lnvisible-N Constant-N Verify-V
+Preset-P
+Enter an option to change
+[Invisible/Constant/Verify/PresetJ
+<done>:.J
+Enter attribute tag name:Date
+Enter attribute prompt:Enter today's date
+Enter default attribute value:
+Justify/Style/<start point>:J
+Align/Center/Fit/Middle/Right/TL/TC/TR/ML/MC/MR/BL/BC/BR:R
+Right point: (pick 1)
+Specify height <5.0000>: .15
+Specify rotation angle <O>:.J
+Step 3
+Now enter the attribute for the
+designer
+using
+the
+Attribute
+Definition dialog box.
+DRAWNI
+Mod"
+D!nvisible
+o Constant
+D~81jfJl
+o Eresel
+Insertion Pain!
+[;2] SpeclJl .Qn·~feen
+Mobute
+lag
+Vajue:
+Use your own name as the default.
+o 8ign below previous atbibute definition
+E:l Lock. p~n in block
+OKl j
+Cancel I [JieCJ
+268
+CHAPTER FOURTEEN
+Ifyour attribute is not where you want it, the Insertion Point area cannot have been set
+up right. Use Undo to undo this command, andtry again being sure to specify the inser-
+tion point on screen by first choosing Insertion point from the dialog box.
+
+
+===== PAGE 286/298 =====
+alSlIIO CUSTOMER
+...w .....
+DRAWN
+tWC or PMr.
+~
+PART
+SCALE
+D'Tto
+_vlNG ..
+DRWNO
+DATE
+Step 4
+Step 5
+Use either the command line or the dialog box method ofdefming the other attributes
+so that each area has an attribute tag.
+Once these are in, the title block can be inserted onto other drawings.
+Title blocks are meant to be used
+on many different drawings. Save
+this file under the name of Titlel
+just to see ifit works. Be sure you
+know what directory it is going to.
+When in doubt use the A: drive or
+your flash drive.
+Command: SAVE
+TITLE1
+Step 6
+Open a new file and test the block out. Use either the dialog box or the command line
+form ofthe INSERT command. Keep the Title1 file open as well.
+Command:New
+Command:-INSERT
+Enter block name or
+[?] :TITLE
+Specify insertion point or
+[Scale/X... /PRotate] :0,0
+Enter X scale factor, specify opposite corner,or
+[Corner/XYZ] :.J
+Enter Y scale factor <use X scale
+factor>:~
+Specify rotation angle
+<O>:~
+Customer name <Skylab
+Industries>:~
+Name of Part <>:Hook Link
+Enter the current date
+(DD/MM/YY) :17/03/06
+Drawn by <S.R.Kyles>:Bill Challis
+Scale <1:50>:.J
+Drawing no.
+DFC-####<>:DFC-1003
+With the ATTDIA system variable on, you will get this dialog box to let you see all of
+your attributes. To change the defaults, simply type over them.
+Turn on ATIDIA as shown.
+Step 7
+Command:ATTDIA
+Enter new value for
+ATTDIA<O>:1
+Click OK to place them on screen.
+A good way of checking your attributed
+block is to have a fellow student insert the
+block and fill in the details of the attrib-
+utes without your help. If he/she has any
+problem understanding the prompts, go
+back and edit them. While you may un-
+derstand your prompts now, the fact that
+someone else doesn't understand them
+may indicate that you won't either after a
+few days.
+a;STOMfR
+Attributes
+269
+
+
+===== PAGE 287/298 =====
+Other areas you may want to adjust are the attribute text sizes or justifications.
+Go to the file Title1. Use CHANGE, DDEDIT , or the Properties menu shown on the left
+to make necessary changes.
+Command:-justifytext
+Select objects:
+(pick the text)
+Select objects:.J
+n
+~xternal Reference
+Image
+mf t!atch...
+h
+f?olyJine
+dt) ~line
+Multiline, •.
+8,ttribute
+'6 liIock Description".
+CUSTIKR
+DRAWN BY.
+Skylab Industries
+Brian Crippin
+NAME IlF' PART,
+SCALE 1:50
+Hook Link
+DAn;· 17/03/06
+IlRAVINCi to DFe -
+1003
+"T M0:te
+o Rotate
+5] Scale
+Dlk Stretcb.
+~Ijp
+.ti.. ~rase
+'Q Cop~
+t11~ Mlrror
+~ Offiet
+g~ ~rray...
+For the justification ofattributes such as in Skylab Industries andDFC - 1003, shown
+below, neither CHANGE nor DDEDil will help. Use the Properties bar under the Mod-
+ify menu shown on the left or
+i PositiOn X -'18.04
+•Position Y28.45
+Position 20.00
+«<,~,B,y,Layer<
+o
+,~in.,~~~P~c<,,===,~~~y~r,
+Linetyp... 1.00
+'pfotstYI8';E3YC~I~;
+i li~~~~i•.. <==Bye;y~;
+< Hyperllnk' ..... ,.
+'Thicl;;~sso:o6
+: Contents DATE
+[:~~til~<>C< ;IT~I~~
+:.~s~i~¥.< ,~~ft
+:~~~h.tH 0:3.5
+.R.:~,t~t~n
+0
+Width f". 1.00
+'6bliq~ing"0
+'T~~t~ii:.:'·o:O(i
+rT~~t'~li.::'o:oo .
+r
+'
+~
+"
+,
+_
+~
+,
+·_···_,
+·.., __ ,,__ ,,
+,
+'Text ali... 0.00
+Once changed, save the file again and reinsert it.
+Step 8
+Ifyou have updated the file, resaved
+it, and reinserted it and the same
+problems still exist, erase the Title1
+block, then use PURGE to erase it
+from memory. Sometimes, even if
+you have updated the file, it will
+bring back the old file instead ofthe
+new one. Purge is a great way to
+clean up your files ofunwanted data.
+0&l~~iiffi!~l~~~
+o Vie!,! items you cannot PLllge
+Items not u$ed in drawing:
+I SJ •
+All items
+!
+iil@ Blocks
+,
+"~ Dimension styles
+;:B~ Layers
+::;:::: Linetype$
+j<R: Mline st,YlllS
+. III Plot styles
+.If£. Shapes
+Iml Table st)lles
+•
+Telll styles
+Command: PURGE
+;
+(
+~~.~~~~~~~~_~_~
+~__'_A..-J
+f2] Qlnfinn e<ICh item to be purged
+o Pulga nested iterrn;
+Close
+Help
+270
+CHAPTER FOURTEEN
+
+
+===== PAGE 288/298 =====
+Inthis tutorial, you will create ajig with a bushing andjigleg. In a manufacturing envi-
+ronment, it is usual to have items such as bushings purchased rather than made on-site
+to save both time and money. Ifyou were to create a drawing ofthis part using these
+items, you could also have the ordering information stored as attributes with the block
+before it is inserted into the drawing.
+Step 1
+Step 2
+Draw up these very simple parts in imperial measures on different areas of your
+screen. Make separate layers for the bushing and the jigleg.
+I:
+6.00
+"I
+3.00
+al
+~~~
+{ff
+lDO.3'O
+eo.15
+02.00
+t:
+.0.30
+RO.25
+.0....0
+~2.50
+.0.60
+...... ";1
+.0.50
+10.60
+~3.50
+If you wanted to create a bill of materials for these items, the information could in-
+clude:
+•
+Part Number
+•
+Description
+•
+Material
+•
+Size
+•
+Price
+Then you would add the quantity and order the parts. The information listed above will
+be added as attributes to the block before it is blocked and then extracted later.
+The words in this illustration are attribute tags, not
+text. No text is needed in this exercise.
+PARTNO
+DESCRIPT
+MATERIAL
+SIZE
+PRICE
+Attributes
+271
+
+
+===== PAGE 289/298 =====
+272
+CHAPTER FOURTEEN
+Add the attributes for the part using these default factors:
+Tag
+Prompt
+Default Value
+Partno
+Enter Part Number
+JIG125
+Descript
+Enter Part Description
+Jigleg
+Material
+Enter Material
+Steel
+Size
+Enter Part Size
+.60 x 1.25
+Price
+Enter Current Price
+5.26
+Enter the information for thejig with the -ATTDEF command. Use the Attribute Defini-
+tion dialog box for the bushing.
+Command:-ATTDEF
+Current attribute modes:Invisible-N Constant-N Verify-V
+Preset-P
+Enter an option to change
+[Invisible/Constant/Verify/Preset]
+<done>:.J
+Enter attribute tag name:PARTNO
+Enter attribute prompt:Enter Part Number
+Enter default attribute value:JIG125
+Justify/Style/<start point>: (pick a spot beside the part)
+Specify height <5.0000>: .03
+Specify rotation angle <O>:.J
+When entering the next line for the attribute, the attribute definition will line up with
+the last entered line ifyou press.J at the text justification line or simply choose OK on
+the dialog box. The attribute definitions will line up perfectly.
+Command: -ATTDEF
+Current attribute modes:Invisible-N
+Preset-P
+Enter an option to change [Invisible
+/PresetJ
+<done>:~
+Enter attribute tag name:DESCRIPT
+Enter attribute prompt:Enter Part Description
+Enter default attribute value:JIGLEG
+Justify/Style/<start point>:.J
+Command:
+.J
+ATTDEF
+Current attribute modes:Invisible-N
+Preset-P
+Enter an option to change
+[Invisible
+Preset]
+<done>:.J
+Enter attribute tag:MATERIAL
+Enter attribute prompt:Enter Material
+Enter default attribute value:Steel
+Justify/Style/<start point>:.J
+Continue with the final two definitions until all five are complete. It's simply a matter
+oftyping.
+Use
+~ at the JustifY text prompt to line the attribute up with the previous definition.
+Also use -J to bring back the previous command to make the attribute definition more
+rapid.
+
+
+===== PAGE 290/298 =====
+Step 3
+When all ofthe information has been added, create a block ofthe part with a new name
+to help you identify it as an attributed block.
+Command:-BLOCK
+Block name
+(or ?) :ATTJIGLG
+Insertion base point:CENter of (pick 1)
+Select objects: (pick 2, 3)
+Remember that the block will disappear.
+,--------Jf,." 2
+.... f'
+PARTNO
+•
+~~~~
+SIZE
+PRICE
+,l/ 1
+Step 4
+Do the same with the bushing using the dialog box. Use the values listed below.
+Tag
+Prompt
+Default Value
+Partno
+Enter Part Number
+BUl25
+Descript
+Enter Part Description
+Stand. Bushing
+Material
+Enter Material
+Steel
+Size
+Enter Part Size
+.125 x .55
+Price
+Enter Current Price
+3.29
+Use the dialog box by either typing inATTDEF or on the Draw menu, choose Blockthen
+Define Attributes.
+Mode
+D!nvisible
+DI;;onstant
+DY:eril,Y
+Dfreset
+Attribute
+lag:
+PromPt
+Vajue:
+Insertion Point
+G2J Specif,Y .on-screen
+Text Optiom
+Justification:
+Text~t'yle:
+H~ight <
+flotation <
+D align below previous attribute definition
+~ Loc1, position in block
+OK) I
+Cancel I {
+Help
+After the first definition is entered you can pick the'Align under previous defmition'
+button to have the attribute definitions line up.
+Your part should look like this.
+~
+PARTNO
+DESCRIPT
+MATERIAL
+-
+SIZE
+(0\
+PRICE
+'-/
+Attributes
+273
+
+
+===== PAGE 291/298 =====
+StepS
+Use the BLOCK command with the dialog box to save the geometry and attributes as a
+block.
+Name:
+o ~cale uniformly
+[t] Allow eXj;![oding
+Objects
+~ Selecl objects Ij]
+Ofietain
+CD Convert to block
+o Qelete
+ill No objects selected
+Settings
+Block y~~:..,__.__.~
+.__
+jUnitless
+~:i
+jBushing125
+._-----_...._--_.._.-----------._-._-
+Base point
+E!) Pic~ point
+~:
+X~
+~:
+The important thing to remember with
+this is to pick the insertion base point.
+You are not prompted for it, so often
+people forget to pickit. The default 0,0
+will make placing the bushings on the
+part quite difficult.
+HyperJink...
+O.Qpen in block eclitOl
+OK·I [
+Cancel
+1\
+Help
+Step 6
+Use ZOOM All to get the original file back onto the screen. Add four circles for the
+jiglegs at 0.50 from the edge ofthe part in each comer. Add four circles at the QUAD-
+rant ofthe center line circle on the inside. Now insert four jiglegs and four bushings
+onto the file.
+RO.30
+Command:-INSERT
+Block name
+(or
+?) :ATTJIGLG
+Insertion point:CEN of (pick 1)
+X scale factor
+<l>/Corner/XYZ:~
+Y scale factor
+(default = X)
+:~
+Rotation angle
+<O>:~
+Enter Part Number <JIG125>:G
+Enter Part Description<
+Jigleg>:~
+Enter Material
+<Steel>:~
+Enter Part Size <.60 x
+1.25>;~
+Enter Current Price
+<5.26>:~
+To get all four ofthese jiglegs placed, you could insert the object three more times or
+you could copy the existing block.
+274
+CHAPTER FOURTEEN
+
+
+===== PAGE 292/298 =====
+Step 7
+Use the Attribute Dialog box to enter the final four parts.
+INSERT the four bushings, making sure to rotate each one by 90 degrees so they line up
+correctly.
+Command: INSERT
+Name:
+Path:
+Browse... I
+I·.
+OKI [
+Cancel I I
+Help
+Rotation
+o Specify 0 n·screen
+Angle:
+G2J Uniform Scale
+Scale
+o Specify Orr-screen
+X:
+Insertion point
+[!j Specify 0n-screen
+o Exp!ode
+When all four bushing blocks
+have been entered, your file will
+look like this:
+Notice that when you insert the bushings, the attributes will be rotated along with the
+geometry. This is ofno importance becausethe attributes will not be part ofan overall
+drawing. In an electrical drawing, however, the attributes must be visible and legible;
+in this case, you should create attributed blocks for both directions. When attributes
+are added to parts in mechanical or architectural applications, they· are not usually
+printed or plotted.
+StepS
+If you were just making a drawing, it would never look like this. Use ATTDISP to turn
+all ofthe attributes off.
+Command:ATTDISP
+Normal/On/Off <current value>:OFF
+Step 9
+Finally create an attribute table containing the Bill ofMaterials. Use EATTEXT and sim-
+ply follow the menus.
+Command: EATTEXT
+Attributes
+275
+
+
+===== PAGE 293/298 =====
+In this Tutorial we will create attributes for the footings in Tutorial12b page 229.
+Step]
+Open Tutorial12b and save it as Tutorial 14c. Make one copy offooting A and one of
+Footing B outside the grid.
+~
+bd
+Default Value
+Prompt
+Use theATTDEF command to define attributes with the same defaults as shown below.
+Footing A
+Tag
+Name
+Enter Footing Designation
+Footing A
+Size
+Enter Size
+4000x2000x2300
+Volume
+Enter Volume
+7 cubic meters
+Pins
+Enter Pin description
+4 X 250 projection
+Footing B
+Tag
+Prompt
+Default Value
+Name
+Size
+Enter Footing Designation
+Enter Size
+Footing B
+2000xlOOOx1300
+Volume
+Enter Volume
+3.5 cubic Dleters
+Pins
+Enter Pin description
+4 x 125 projection
+Step 2
+Block the footings and insert them into the grid layout as they were before.
+Step 3
+Use ATIDISP to tum the Attribute Display off.
+Step 4
+Use EATTEXT to get a list ofthe footings on the part placed on the drawing. Simply open
+the dialog box, use Next for every entry, add the title'Footings' where required. In Re-
+lease 2008, you will nedd to remove any information not related to the attributes.
+Footings
+Quantity I
+No.l"'lE.> 1
+NAME(D
+I
+PINS
+I
+SIZE
+I
+VOLUME
+6
+I f'ootinglo1 Footing A I <4 x 250 projection 1<4000 x 2000 x 2300 I 7 cubic t'leters
+16
+I f'ootingo. I rooting A I <4 x 250 projection 14000 x 2000 x 2300 I 7 cubic Meters
+276
+CHAPTER FOURTEEN
+
+
+===== PAGE 294/298 =====
+Exercise 14 Architectural
+First create this title block with attributes as shown. Save the file.
+Draw the two sample windows shown. Add the attributes. BLOCK them.
+Draw the simple layout shown. INSERT the attributed windows.
+Use EATTEXT to get a window schedule. Insert the attributed title block.
+TlUIItI
+~lIn ByI
+~..
+RrMIorlI
+TITLE
+DRAWN By
+SCALE
+REV
+ProJectJ
+ICMcked By1
+Ik'tei
+illrw •
+PROJECT
+CHECKED By
+DATE
+DRW.#
+21 '
+~=-
+I
+I
+lUI
+Itll
+I
+4'-9"
+I
+PRODND
+pello.36o.
+1
+1::
+::[;.,(i[
+FINISH
+wo.Lnut
+TYPE
+doubLe gto.zed
+lUI
+COST
+450.00
+I
+4'-6"
+I-I
+I
+rui
+ItII
+~
+CD
+I
+9'-3"
+·---1
+I
+pello.60o.
+I
+till
+1::
+,:~
+wo.lnut
+1111
+oIouble glo.zed
+I
+875.00
+. -_.!.-
+=-
+=-
+=-
+=-
+Second Floor 'WIndow Schedule
+Quo.ntity
+COST
+FINISH
+Na.Me
+PRDDND
+TYPE
+3
+875.00
+wa.lnut
+wlndowl
+pello.GOa.
+double glo.zed
+10
+450,00
+wo.lnut
+wlndowl
+pelta.360
+double glozed
+TJtw.
+~Q.n Iy'
+SCo.l..
+Revlslonl
+WINDOW PLAN
+JAMIE JONES
+NOTED
+5
+ProJectJ
+lCMcked I)q
+Do."tea
+Dr••
+WESTOVER HOUSE
+WENDY BENEDETTI
+01/04/08
+A2
+Attributes
+277
+
+
+===== PAGE 295/298 =====
+Exercise 14 Challenger
+Draw these desks, the dimensions are on page 67.
+Attribute as shown. BLOCK them and then make the room layout.
+Create a Furniture Schedule using EATIEXT.
+Cho.irA
+DeskB
+Supplier
+POortdes
+Po.rtno
+F"o.brlc:
+:BOose
+F"lnlsh
+Cost
+I
+I
+_L_
+I
+I
+I
+I
+I
+I
+I
+DeskA
+Supplier
+POortdes
+POor'tno
+F"o.brlc
+Bo.se
+F"lnJsh
+Cost
+I
+I
+_L_
+I
+I
+I
+Cho.irB
+Supplier
+POortdes
+Po.r1:no
+FOobrlc
+BOose
+Finish
+Cos1:
+Supplier
+POortcies
+Po.rtno
+rOobrlc
+BOose
+Finish
+Cost
+1-------16'-6"------~
+-----11'-----1·
+I
+I
+_L._
+I
+I
+I
+I
+I
+_.J_
+I
+I
+I
+W
+I
+I ~
+I
+I
+I
+I
+-.--
+-,-
+32'-10'
+I
+I
+I
+I
+~Q~
+I
+-
+_.J ___
+I
+a
+V
+I
+I 0
+-.--
+-,-
+I
+I
+I
+I
+27'-6"
+278 CHAPTER FOURTEEN
+
+
+===== PAGE 296/298 =====
+Index
+A
+absolute coordinates, 6
+acad.dwt file, xiii
+aligned dimensions, 123
+angle brackets, 30
+angles
+cjegrees/minutes/seconds, 17
+dimensioning, 125
+putting lines in at 8
+ANGULAR dimensions, 125
+ARC command, 12, 24, 31
+AREA commandl 247
+ATIDEF,262
+AITDISP, 265
+ATIEDlt 266
+ATIEXt 267
+attributesl 261
+B
+BASELINE dimensionsl 124
+begin AutoCAD sessionl 1
+BHATCH command, 165
+BLOCK commandl 181
+blocks
+attributed, 264
+(jefining, 181
+editing, 186
+external, 183
+borders
+in paper spacel 21 8
+brackets, 30
+BREAK command, 36
+C
+cartesian coordinates, 6
+center lines, 58
+center marksl 132
+CHANGE commandl 147 1 263
+CHPr<Op command, 110
+CIRCLE commandl 11, 19, 23
+circles
+creating/ 11
+tangent tal 23 1 33
+COLOR command, 11 0
+color
+blocks and, 187
+layers and I 109 1 110
+commands
+entering from keyboard, Ix
+entry, 1
+command lines, ix
+configure plotterl 205
+coordinates
+absolute/ 6
+incrementaL 7
+polar/ 8
+relative, 7
+COpy command, 51
+crosshatchingl 165
+crossing polygon system variable, 50
+D
+DDEDIT command, 147,263
+DEFPOINTS layer,129
+delete
+objects, 36
+unused blocks, 188
+DIAMETER dimensions,
+125
+digitizingl 6
+dimensioningl
+and paper space scalingl
+220/222
+basic, 122
+center Iinesl 58
+editing, 129
+leaders, 148
+stretching, 129
+text, 126
+dimension styles, 126
+dimension text 126
+angle, 134
+editing, 147
+displaying toolbars, x
+DISTANCE command, 249
+DIVIDE command, 242
+DONUT commandl 95
+drafting standards, 202
+drawing
+compiling, 197
+inserting, 183
+Isometric, 149, 164
+opening existingl x
+scale, 206
+units, 1
+dynamic
+block/ 188
+zoom/ 4
+DYNamic option, 10
+E
+EATTEXT command I 267
+ED, 147,263
+editing
+commands, 51
+dimensions, 129
+hatches, 170
+ENDpoint object snap, 32
+ERASE commandl 36
+exiting AutoCAD. vi
+EXPLODE command, 186
+EXTEND command, 73
+F
+feet and inches, 1, 2
+Fence, 51, 81
+file names, xii
+file
+plotting to, 206
+recovery, xiii
+saving, xiii
+FILLET commandl 13,
+20
+fractional units displaYI 17
+freezing layers
+in paper space, 221
+in single views, 108
+frozen layers, 108
+function keys, xi
+G
+geometry commands, 11
+GRADIENT, 171
+grid
+isometric, 149
+standard. 5
+GRID command, 5
+grips, 37 1 56
+H
+HATCH commandl 165
+HATCHEDIT commandl 170
+HELP command, 29
+hidden lines, 58
+I
+imperial/metric/ 1
+incremental point entry, 7
+inquiry commandsl 246
+INSERT command, 182
+isometric
+grid and snap, 149
+text, 152
+J
+joining PUNEs, 89
+justificaiion of text, 146
+K
+keyboard entryl 1
+keys (funciion)1 xi
+L
+last entity selection method, 49
+LAYER commandl 107
+layers
+changingl 108
+colors/ 109
+defpoints, 129
+Index 219
+
+
+===== PAGE 297/298 =====
+filtering, 111
+freeze and thaw in paper space,
+221
+linetypes, 110
+lock and unlock, 108, 115
+thaw and freeze, 115
+LEADER command, 148
+LIMITS command, 4
+LINE commandJ 11, 18
+lines
+center, 58
+extension, 122
+filleting, 13
+freehand, 170
+mUltiple, 97
+using and entering, 11
+Iinetypes
+and layers, 11 0
+assigning, 58
+changing, 110
+scaling, 58
+LIST command,250
+Jineweights, 204
+Iinewidth, 204
+LTSCALE command, 58
+M
+MEASURE command, 243
+MIDpoint object snap, 32, 44
+MINSERT command, 186
+MIRROR command, 53
+MLiNE command, 97
+model space,
+dimensioning in, 121
+switching to, 21 9
+modify polyline, 92
+modify toolbar, 51
+mouse, x
+MOVE command, 52
+moving objects to 0,0, 53
+moving viewports, 220, 228
+MSPACE command, 219
+MTEXT command, 144
+MVIEWcommand,219
+N
+NEARest object snap, 32
+NEW command, xiii
+NODE object snap, 32
+NONE object snap, 32
+o
+object selection methods, 49, 69
+object snap, 32
+OFFSET command, 75
+orthographic projection, 138
+ORTHO option, 9
+OSNAP command, 32, 39, 42
+OTRACK option, 35, 42
+280
+Index
+P
+PAN command, 4, 16
+paper space
+dimensioning, 220
+floating viewports, 21 9
+freezing layers, 221
+scaling views in, 220
+switching to, 21 7
+paragraph text, 144
+PDMODE system variable, 214
+PEDIT command, 92
+PUNE command, 89
+plot
+with paper space, 204
+without paper space, 219
+PLOT command, 204
+POINT command, 241
+POLAR, 9
+polar arrays, 77
+POLYGON command, 94
+polylines, 89
+preview
+hatch, 166
+plot 205, 212
+print dialog box, 204
+properties, 115, 148
+PSPACE command, 219
+pull-down menus, x
+PURGE command, 188
+Q
+QUIT command, xiv
+R
+RADIAL dimensions, 125
+radius
+are, 12
+circle, 11
+setting for fillets, 13
+rectangUlar arrays, 76, 78
+REDO command, 37
+REGEN command, 16
+relative coordinates, 7
+remove entity selection method, 69
+rotate and copy, 54
+ROTATE command, 54
+running object snap dialog box, 35
+S
+SAVE command, xiii
+SAVE AS command, xiii
+SCALE command, 55
+scaling
+dimensions, 127
+draWIngs, 199
+hatches, 167
+linetypes, 58
+plots, 206
+text, 142, 198
+title blocks, 201, 208
+scroll bars, 16
+sections, 202
+SKETCH command,
+170
+snap
+basIc, 5
+Isometric or rotated, 149
+SNAP command, 5
+SOLID command, 95
+SPLINE command, 245
+STRETCH command,
+70
+STATUS command, 251
+STYLE command, 145
+T
+TANgent object snap, 32, 33
+text
+editing, 147
+height, 142
+importing, 203
+justification, 142
+paragraph, 144
+special characters, 143
+styles, 146
+underscored, 143
+TEXT command, 96, 141
+TILEMODE command, 21 8
+toolbars
+moving, xi
+restoring, xii
+transparent commands,
+14
+TRIM command, 34, 36, 72
+TrueType Fonts,
+146
+U
+UNDO command, 37
+UNITS command, 2, 17
+units of measure,
+alternate, 17
+surveyors, 17
+V
+values
+absolute, 6
+relative, 6
+VPLAYER command, 222
+W
+WBLOCK command, 184
+width of lines, 204
+width of polylines, 89
+window entity selection method, 38,
+50
+Z
+ZOOM command, 14,15,
+ZOOM in paper space, 220
+
+
+===== PAGE 298/298 =====
+Drawings
+Architecture, CiviL
+and Transportation
+Details
+arches, 103, 119, 120
+bench, 162, 163
+bookshelf, 177
+capital, 103
+doorway, 106
+Insulated Concrete Forms, 240
+stairs, 175, 213
+wall assembly, 85
+windows, 61, 84,137
+Drawing sets
+commerciaL 237
+res1dential, 192
+Elevation
+commercial, 194, 195, 237
+interior, 162, 163, 177
+residential, 65, 84, 176
+Lot plans, 46
+Pictorial views
+cavaller, 163
+isometric, 164
+Plan
+floor, 85, 98, 134, 137,207,257
+kitchen, 26
+Presentation, 101
+Profile moulding, 106
+Rendering, 180
+Section
+details, 106, 177
+Insulated Concrete Form, 240
+rE!sidential, 11 7
+stair, 175
+structural, 194
+wood,177
+Structural
+aiL 214
+concrete, 136, 172
+footings, 136
+roof layout, 257
+steel beams, 160, 258
+Transportation, 102
+Mechanical
+Applied geometry
+hook, 47,48
+Assembies
+template, bushing and jigleg, 193
+vise, 178
+wheel, 196
+axle, 45
+axle support 138
+bolt 104
+bushing,64
+top plate 116
+wheel, 1i5
+Complete
+body and pin, 215
+faucet, 216
+gasket, 161
+pedestal, 238
+Fasteners
+bolt, 102, 104
+Gear
+gear with threading, 86, 87
+Orthographic projection
+axle support, 138
+Pictorial views
+coupling, link, swivel hanger, 116
+rocker arm, 66
+rocker arm, top plate, 11 6
+various, 118
+Section
+die ring, 175
+fastener, 210
+vice, 178, 179
+Single view geometry
+nozzle, 84
+template, 27, 66
+various, 25,45,47,83
+Wood
+Cabinets
+front 28
+side, 45
+Clock
+base and body, clock a, 105
+bonnet and face, clock a, 139
+full assembly, clock b, 239
+Fireplace
+mantel,236
+Orthographic projection
+bookcase, 177
+Reverse section
+base, 105
+Saw handle, 88
+Shelving
+bookcase, 177
+Stairs
+detail, 175
+full, 213
+Wood grain detail, 93
+Compiled Drawings
+Commercial
+complete, 237
+front elevation, 195
+sections and details, 194
+side elevation, 237
+Furniture, 67, 68
+Residential
+complete, 192
+elevations, 65, 84, 176
+first floor, 98, 134, 137
+full layout 192
+kitchen, 26
+second floor, 85
+section, 117
+Index
+281

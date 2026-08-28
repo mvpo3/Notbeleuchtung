@@ -1,0 +1,1178 @@
+
+
+===== PAGE 321/348 =====
+320
+Anhang: BIM-Handbuch 2022
+HABAU Hoch- und Tiefbaugesellschaft m.b.H. 
+www.habau.at
+Dipl.-Ing. Lukas Hochreiter
+Wir danken für den fachlichen Austausch
+buildingSMART Austria
+Zentrum für offene Datenformate und Digitalisierung
+www.buildingsmart.co.at
+Ing. Mag. Alfred Waschl, Vorstandsvorsitzender
+Wir danken für den juristischen Fachdialog
+Kaan Cronenberg & Partner Rechtsanwälte 
+www.kcp.at
+Dr. Volker Mogel, LL.M.
+KPK Pochmarski Kober Rechtsanwälte 
+www.kpk-law.at
+Dr. Konstantin Pochmarski
+Scherbaum Seebacher Rechtsanwälte 
+www.scherbaum-seebacher.at
+Dr. Georg Seebacher
+Mag. Lukas Andrieu, LL.M., BSc.
+Mag. Thomas Schwab
+Wir danken für die Kooperation der Verlage
+Indem der Manz Verlag als Hersteller und Vertriebspartner des Verlages der TU Graz auftritt, 
+ist das BIM-Handbuch 2022 auch im Buchhandel erhältlich.
+
+
+===== PAGE 322/348 =====
+321
+Praxis-Impulse für planende Berufe
+
+
+===== PAGE 323/348 =====
+322
+Anhang: BIM-Handbuch 2022
+Um einen Überblick über den Status quo 
+hinsichtlich der Anwendung von BIM-Software 
+bei Planer:innen geben zu können, wurde in der 
+Zeit zwischen Jänner und Oktober 2021 jeweils 
+eine Umfrage unter den Mitgliedern der ZT Kam-
+mer, des Fachverbandes Ingenieurbüros sowie  
+der Bundesinnung Bau durchgeführt. Nach­
+folgend findet sich eine Zusammenfassung der 
+wichtigsten Umfrageergebnisse.182
+Ziel der Umfragen war es, zu erheben, inwie-
+weit die Planenden innerhalb der Branche bereits 
+mit dem Thema BIM vertraut sind, welche Soft-
+warelösungen eingesetzt werden und in welchen 
+Bereichen bislang Erfahrungen gesammelt wer-
+den konnten.
+Die teilnehmenden Unternehmen weisen 
+großteils eine Mitarbeiter:innenanzahl von 
+weniger als 21 Personen auf (92 % ING | 83 % ZT | 
+56 % BAU), was auf eine gewisse Kleinteiligkeit 
+der Branche schließen lässt. Nur bei den Unter-
+nehmen aus dem Bereich der Bauinnung liegt 
+innerhalb der vorliegenden Stichprobe des Öf­
+teren ein höherer Personalstand vor (44 % BAU | 
+17 % ZT | 8 % ING). Weil ausführende Unterneh-
+men für gewöhnlich einen höheren Personal-
+stand aufweisen als rein planende bzw. dispositiv 
+tätige Unternehmen, wurde in der Bauinnungs-
+Umfrage zusätzlich nach der Anzahl der Mitar­
+beiter:innen gefragt, die Berührungspunkte mit 
+BIM aufweisen (könnten). In etwa die Hälfte der 
+Befragten gab hier eine Mitarbeiter:innenzahl 
+zwischen 1 und 4 an und niemand eine Mit­
+arbeiter:innenanzahl über 100. 
+Softwareunternehmen
+Um einen groben Überblick über die domi-
+nierenden Softwarehersteller zu erlangen und 
+mögliche, weniger bekannte „Hidden Champions“ 
+herauszufiltern, wurden die Teilnehmer:innen 
+gefragt, welche Softwareprodukte sie verwenden 
+und ob sie Interesse an anderen Produkten ha-
+ben. Hierfür wurde eine Liste mit 26 verschiede-
+nen Softwarenanbietern inklusive beispielhafter 
+Softwareprodukte bereitgestellt.
+Christian Hofstadler, Markus Kummer und RAPHAEL WIESER
+Umfragedaten zum  
+Thema BIM
+Kurzzusammenfassung
+182	 Die gesamte Auswertung der Umfrage ist unter 
+www.bimhandbuch.at/materialien nachzulesen.
+
+
+===== PAGE 324/348 =====
+323
+Umfragedaten zum Thema BIM
+ Abbildung 119:  Anzahl der Mitarbeiter:innen 
+Das Produkt Autodesk AutoCad183  weist eine 
+sehr hohe Verbreitung unter den Befragten auf 
+(48,8 % ING; 44,2 % ZT; 37,7 % BAU).
+Im Großen und Ganzen teilen sich die Her-
+steller Nemetschek Group (21,7 bis 68,8 %) und 
+Autodesk (23,4 bis 35,1 %) die Spitze, dicht gefolgt 
+von der Auswahlmöglichkeit „Andere“ (23,4 bis 
+43,8 %). Aufgrund der Annahme, dass es sich 
+dabei um viele unterschiedliche Hersteller und 
+deren Produkte handeln dürfte, wird ersichtlich, 
+wie breit gefächert die Softwarelandschaft in 
+österreichischen Ziviltechniker:innen-, Ingenieur- 
+und Baumeisterbüros tatsächlich ist.
+Trimble, Hexagon AB und Thinkprojekt 
+weisen in allen drei Umfragegruppen Anteile von 
+4,2 bis 12,1 % auf. Weitere hervorzuhebende Ant-
+worten zeigen sich nur in einzelnen Umfrage-
+gruppen. McNeel (u.a. Rhino) erreicht beispiels-
+weise 11 % unter ZT-Befragten, während es bei 
+ING und BAU kaum oder gar nicht angewendet 
+wird. Selbes gilt für die RIB Group (BIM, CAD, 
+CDE und AVA-Lösungen) und SEMA (u.a. Holz-
+bau, Fassaden), die vor allem von Befragten der 
+Baumeisterbetriebe verwendet werden.
+183	 Aufgrund der vermuteten Dominanz des Software-
+produktes Autodesk AutoCAD wurde dieses als 
+einziges Produkt direkt abgefragt.
+
+
+===== PAGE 325/348 =====
+324
+Anhang: BIM-Handbuch 2022
+Einsatz spezieller BIM- 
+Softwareprodukte
+Um die Verbreitung einzelner Software­
+produkte zu ermitteln, wurden die Teilnehmen-
+den gefragt, ob sie eines oder mehrere der fünf 
+zur Auswahl stehenden Softwareprodukte ver-
+wenden. 
+Es ist anzumerken, dass je nach Umfrage-
+gruppe zwischen rund einem Drittel bis zu zwei 
+Drittel der Teilnehmer:innen keines der zur 
+Auswahl stehenden Softwareprodukte gewählt 
+haben.
+Das Bild der Doppelspitze bestehend aus 
+den Herstellern Nemetschek Group und Auto-
+desk setzt sich auch in dieser Auswertung fort. 
+Die Produkte Archicad (Graphisoft / Nemetschek 
+Group), Revit (Autodesk), Allplan (Allplan /  
+Nemetschek Group) finden innerhalb der Stich-
+probe am häufigsten Anwendung, die Dominanz 
+der einzelnen Produkte unterscheidet sich aber 
+je nach Umfragegruppe. Aus den abgefragten 
+Softwareprodukten zeigt sich Archicad bei Bau-
+meisterbetrieben (54 %) und ZT Kammer-Mit­
+gliedern (57 %) am dominantesten.
+Bei den ZT Kammer-Mitgliedern kommen in 
+weiterer Folge vor allem Revit (37,4 %) und All-
+plan (16,8 %) zum Einsatz. Bei den Baumeister­
+betrieben liegen Allplan (33,3 %) und Revit  
+(30,2 %) in etwa gleich auf. Teilt man die Befrag-
+ten der ZT Kammer in die beiden Fachbereiche 
+Architektur und Ingenieurwesen, so zeigt sich,  
+dass Archicad bei Architekt:innen 65 % erreicht, 
+während sich bei ZT Ingenieur:innen ein homo-
+generes Bild der Verbreitung von Revit, Allplan 
+und Archicad zeigt (rund 55 %, 54 %, 34 %). Bei 
+den Ingenieurbüros ist Revit mit rund 56 % am 
+stärksten verbreitet. Das Produkt Tekla (Trimble) 
+ist hier mit ca. 12 % stärker vertreten als in den 
+beiden anderen Befragungsgruppen.
+IFC- Format, Version, Viewer
+Gefragt nach der Verwendung des IFC- 
+Dateiformats (Industry Foundation Classes) für 
+den Austausch von Bauwerksmodellen gaben  
+ca. 34 % (Ingenieurbüros), 43 % (ZT Kammer) bzw. 
+39 % (Baumeisterbetriebe) der Teilnehmer:innen 
+an, dieses einzusetzen:
+IFC 2x3 wird unter den Umfrageteilnehmen-
+den von ca. 44–52 % verwendet. 
+IFC 4 zeigt ähnliche Anteile bei ING- und ZT-
+Befragten auf (44 % bzw. 49,5 %). Nur Teilneh-
+mer:innen der Umfrage BAU weisen mit 59,3 % 
+eine deutlich höher verbreitete Verwendung des 
+neueren Formates auf.
+
+
+===== PAGE 326/348 =====
+325
+Umfragedaten zum Thema BIM
+ Abbildung 120:  Verwendung des IFC-Dateiformats für den Austausch von Bauwerksmodellen
+ Abbildung 121:  Verwendete IFC-Versionen
+18,5 bis 28 % geben an, nicht zu wissen, wel-
+che IFC-Version sie verwenden. Es ist anzumer-
+ken, dass Fragen zum Thema IFC-Format und Ver-
+sion nur von rund einem Drittel oder einem noch 
+geringeren Anteil der Befragten beantwortet 
+wurden.
+
+
+===== PAGE 327/348 =====
+326
+Anhang: BIM-Handbuch 2022
+Bezüglich IFC-Viewern weisen die Produkte 
+Solibri, Autodesk Viewer, BIMcollabZoom, Navis-
+works, BIMVision, open IFC Viewer und Trimble 
+Connect Anteile von über 10 % auf, wobei sich 
+die Anteile je nach Umfragegruppe stark unter-
+scheiden.
+BCF-Format
+Das BCF-Format wird nur von etwa jedem 
+Zehnten der Befragten verwendet. Den höchsten 
+Anteil weisen die Teilnehmer:innen der Umfrage-
+gruppe BAU mit etwa 16 % auf.
+ Abbildung 122:  Verwendung des BCF-Formats
+
+
+===== PAGE 328/348 =====
+327
+Umfragedaten zum Thema BIM
+PSets
+PSets spielen eine zentrale Rolle beim Aus-
+tausch von IFC-Dateien im openBIM-Prozess. Mit 
+ihrer Hilfe werden Informationen zwischen ver-
+schiedenen Softwarelösungen klassifiziert sowie 
+ein geordneter Export und Import ermöglicht.
+Trotz ihres hohen Stellenwerts für den open-
+BIM-Austausch sind sie mit 14,0 % und 22,3 % bei 
+Befragten der ING und ZT nur sehr wenig ver­
+breitet. Die Befragten der Umfragegruppe BAU 
+ Abbildung 123:  Erweiterte Funktionen
+verwenden PSets den Antworten nach mit 78 % 
+um ein Vielfaches öfter.
+Bei der Erstellung der PSets gibt es keine ein-
+deutigen Präferenzen für Richtlinien oder Quel-
+len, an denen sich die verwendeten PSets orien-
+tieren. Außerdem wurde die Frage nach den 
+verwendeten Vorlagen für die Erstellung von 
+PSets von nur sehr wenigen Teilnehmer:innen be-
+antwortet.
+
+
+===== PAGE 329/348 =====
+328
+Anhang: BIM-Handbuch 2022
+ Abbildung 124:  Quellen/Vorlagen/Richtlinien für die Erstellung von PSets
+Da ein Austausch von BIM-Modellen – egal 
+ob openBIM oder closedBIM – andere Ansprüche 
+mit sich bringt als ein Austausch vergleichsweise 
+einfacher Dokumente wie PDFs und DWGs kön-
+nen AIA und BAP einen wichtigen Grundstein für 
+die erfolgreiche Abwicklung eines BIM-Projektes 
+legen.
+Auftraggeber-Informations-Anforderun- 
+gen bzw. BIM-Abwicklungsplanung werden  
+von rund einem Viertel bis zu einem Drittel  
+der an der Umfrage Teilnehmenden eingesetzt. 
+Der überwiegende Teil der Befragten gab  
+aber an, diese aktuell nicht in ihren Projekten  
+zu nutzen.
+Auftraggeber-Informations-Anforderungen (AIA) bzw.  
+BIM-Abwicklungsplanung (BAP) 
+
+
+===== PAGE 330/348 =====
+329
+Umfragedaten zum Thema BIM
+ Abbildung 125:  Nutzung AIA und BEP bzw. BAP
+Im Anschluss an die Frage, ob AIA und BAP 
+von den Teilnehmer:innen der Umfrage genutzt 
+werden, wurde die Möglichkeit gegeben, ihre 
+bisherigen Erfahrungen mit ebendiesen Doku-
+menten in Form von Textantworten mitzuteilen. 
+Die eingegangenen Antworten sind breit ge­
+fächert und zeigen Chancen und Herausforde-
+rungen, die die Nutzung dieser Dokumente mit 
+sich bringen.
+Teilnehmer:innen, die noch nicht mit AIA 
+bzw. BAP/BEP)  (englisch: BIM Execution Plan bzw. 
+deutsch: BIM-Projektabwicklungsplan) vertraut 
+sind, empfinden die Dokumente teilweise als 
+hinderlich. Andere Teilnehmer:innen berichten 
+hingegen, dass die Dokumente eine sinn- 
+volle Ergänzung darstellen, insbesondere wenn 
+mehrere Projekte für denselben AG abgewickelt 
+werden.
+Vorteile werden vor allem dann gesehen, 
+wenn mehrere Büros zusammenarbeiten. In 
+diesem Fall wird es als sinnvoll erachtet, wenn 
+Fachplaner:innen diese Dokumente gemeinsam 
+entwickeln.
+Im Idealfall kommt vom AG eine Rohfassung, 
+die als Basis herangezogen wird. Werden BAP/
+BEP in Projekten verwendet und weiterent­
+wickelt, wird die zu Projektende existierende 
+Schlussfassung als Basis für weitere Projekte mit 
+denselben AG herangezogen bzw. im internen 
+Wissensmanagement verwertet. 
+
+
+===== PAGE 331/348 =====
+330
+Anhang: BIM-Handbuch 2022
+Die Ausarbeitung der Dokumente erfolgt 
+teilweise aus Eigeninitiative zur Verwendung 
+innerhalb des eigenen Unternehmens. Die 
+Teilnehmer:innen der Umfrage geben auch an, 
+dass große österreichische Unternehmen  
+wie die ÖBB und ASFiNAG bereits solche oder 
+ähn­liche Dokumente ihren Auftragnehmern  
+bereitstellen, und dass diese auch im Laufe des 
+Projekts zum Einsatz kommen und angepasst 
+werden.
+Im Gegensatz dazu berichten andere Um­
+frageteilnehmer:innen, dass manche AG sich auf 
+die Bekanntgabe eines gewünschten LOD (Level 
+of Development) beschränken, ohne weitere 
+Angaben zu machen. Weiter wird berichtet, dass 
+AG AIA bzw. BAP teils von externen Dienstleistern 
+beziehen, wobei diese einer Wunschliste gleichen 
+und wenig Praxisbezug aufweisen oder im Worst-
+Case sogar einer effizienten Planung hinderlich 
+ent­gegenwirken.
+Common Data Environments (CDE)
+Zurzeit werden Common Data Environments 
+(CDE) von weniger als jedem zehnten Befragten 
+aus den Gruppen ING und ZT eingesetzt. Die Teil-
+nehmer:innen der Gruppe BAU geben aber zu ei-
+nem Viertel an, CDE zu verwenden.
+Es lässt sich die These aufstellen, dass ins­
+besondere ausführende Unternehmen mit den
+ Abbildung 126:  Nutzung CDE
+
+
+===== PAGE 332/348 =====
+331
+Umfragedaten zum Thema BIM
+ Abbildung 127:  Einzug von BIM in der eigenen Organisation
+momentan am Markt befindlichen Software­
+produkten Nutzen aus CDE ziehen bzw. sich der 
+größte Nutzen in der Ausführungsphase realisie-
+ren lässt (SOLL-IST Vergleiche, Lieferscheine, 
+Issue-Management). 
+Um größtmögliche Synergie für alle Projekt-
+beteiligten zu erreichen, wäre aber eine Form der 
+Einbindung aller wesentlichen Projektbeteiligten 
+in die Nutzung von CDE erstrebenswert. Ob die 
+derzeitigen vertraglichen, rechtlichen und soft-
+wareseitigen Rahmenbedingungen für alle Ak-
+teure gleichermaßen attraktiv sind, gilt es in einer 
+gesonderten Betrachtung näher zu analysieren.
+Zeitraum der BIM Anwendung
+Während je nach befragter Gruppe rund  
+ein Drittel bis knapp unter die Hälfte der Teil­
+nehmer:innen angibt, bereits BIM zu verwenden, 
+glauben 8 bis 18 % nicht, dass BIM in Ihrer Organi-
+sation Anwendung finden wird. Die verbleibende 
+Menge der Befragten gibt an, dass innerhalb von 
+ein bis fünf Jahren BIM in ihren Unternehmen An-
+wendung finden wird.
+
+
+===== PAGE 333/348 =====
+332
+Anhang: BIM-Handbuch 2022
+ Abbildung 128:  Eigene Erfahrungen und Fähigkeiten
+
+
+===== PAGE 334/348 =====
+333
+Umfragedaten zum Thema BIM
+
+
+===== PAGE 335/348 =====
+334
+Anhang: BIM-Handbuch 2022
+Abbildungsverzeichnis
+Abbildung 1:  
+BIM-Level und Einsatzformen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+40
+Abbildung 2:  
+ÖBB BIM-Reifegradwürfel  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+42
+Abbildung 3:  
+Schematischer Vergleich einer Planung mit und ohne BIM . . . . . . . . . . . . . . . . 	
+46
+Abbildung 4:  
+Wirkungsebenen, Bedeutung und Kategorie von BIM-Standards inkl. 
+ 
+wesentlicher Fragestellungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+49
+Abbildung 5:  
+Standards und Normen – Auswahl . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+51
+Abbildung 6:  
+BIM-Anwendungsfelder und ökonomische Effekte  . . . . . . . . . . . . . . . . . . . . . . . 	
+61
+Abbildung 7:  
+Traditionelle und BIM-fähige Planung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+70
+Abbildung 8:  
+In der BIM-fähigen Planung ist der 2D-Plan mit dem BIM-Modell 
+ 
+verknüpft  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+71
+Abbildung 9:  
+Die BIM-Software erkennt anhand der Hierarchie der einzelnen Schichten,  
+wie sich diese an der Ecke verschneiden  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+72
+Abbildung 10: 
+Durch Anklicken eines Elements (Wand) können (in den Eigenschafts-
+ 
+fenstern für Element und Typ) automatisch die zum Objekt gehörigen 
+ 
+Attribute abgerufen werden und müssen nicht mehr mühselig 
+ 
+zusammengesucht werden  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+75
+Abbildung 11:  
+Boundary Representation (Brep)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+76
+Abbildung 12:  
+Geländeoberfläche als typische Brep  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+76
+Abbildung 13:  
+Körper über Boolesche Operationen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+77
+Abbildung 14:  
+Extrusion, Sweep, Rotation und Lofting  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+78
+Abbildung 15: 
+T-Stoß mit richtiger und falsch berechneter Geometrie  . . . . . . . . . . . . . . . . . . . 	
+79
+Abbildung 16:  
+Beispiel eines Koordinationskörpers von Autodesk  . . . . . . . . . . . . . . . . . . . . . . . 	
+83
+Abbildung 17:   
+Verortungsstruktur im IFC-Dateiformat  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+85
+Abbildung 18: 
+OKRD als geschossbildende Ebene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+86
+Abbildung 19: 
+Geschosseinstellungen am Beispiel des Starttemplates von Archicad 14    . 	
+86
+Abbildung 20:  
+Richtige Zuweisung zum Geschoss ohne Versatz  . . . . . . . . . . . . . . . . . . . . . . . . . 	
+88
+
+
+===== PAGE 336/348 =====
+335
+Abbildungsverzeichnis
+Abbildung 21:  
+Mögliche Geschosseinteilung bei Hangbauten über zwei Gebäude  . . . . . . 	
+89
+Abbildung 22:  
+Ausblick auf die Neustrukturierung des IfcSpatialStructureElement 
+ 
+(Verortungsstruktur) in IFC4.3  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+91
+Abbildung 23: 
+Zusammensetzung LOD  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+97
+Abbildung 24: 
+LOD-Definition, Beispiel Wandkonstruktion in Ortbeton  . . . . . . . . . . . . . . . . . 	
+99
+Abbildung 25: 
+Übersicht über Lieferobjekte (Teil- & Fachmodelle), exemplarisch . . . . . . . . . 	
+109
+Abbildung 26: 
+IFC-Strukturbaum eines Infrastrukturprojekts  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+111
+Abbildung 27: 
+Detaillierung bzw. „Tessellierung“ von Bauteilen . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+114
+Abbildung 28: 
+Überblick über die Bauteile eines Straßenquerschnitts im Dammbereich   . 	
+116
+Abbildung 29: 
+Überblick über die Bauteile eines Straßenquerschnitts im Dammbereich   . 	
+117
+Abbildung 30: 
+Sehr ähnliches Idealbild Lebenszyklus Nemetschek (oben) und 
+ 
+Autodesk (unten)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+125
+Abbildung 31: 
+Softwarehersteller – in Verwendung  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+129
+Abbildung 32: 
+Konzept zentrale gemeinsam genutzte Datenbank  . . . . . . . . . . . . . . . . . . . . . . 	
+130
+Abbildung 33: 
+Neuere Dateiversion kann nicht in älteren Softwareversionen 
+ 
+geöffnet werden  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+132
+Abbildung 34: 
+Software nach Phasen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+135
+Abbildung 35:  
+Einsatz spezifischer Softwareprodukte . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+137
+Abbildung 36: 
+Einsatz spezifischer Softwareprodukte – getrennt in ZT Arch und ZT Ing    . 	
+138
+Abbildung 37:  
+Verwendung von IFC-Viewer Software . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+141
+Abbildung 38: 
+Umfrage, verwendete Viewer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+143
+Abbildung 39: 
+Proprietäres und offenes Umfeld bei hybridBIM . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+166
+Abbildung 40: 
+Oberflächenmodell  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+169
+Abbildung 41: 
+Digitales Geländemodell (DGM) mit ALS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+169
+Abbildung 42: 
+Terrestrischer Laserscanner auf Stativ mit Zielmarken  . . . . . . . . . . . . . . . . . . . . 	
+170
+Abbildung 43: 
+Die Scanner müssen so positioniert werden, dass es zu 
+ 
+keinen Verschattungen kommt.  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+170
+Abbildung 44: 
+Darstellung der unterschiedlichen Modellierungsparadigmen 
+ 
+am Beispiel eines Modell­ausschnitts mit den entsprechenden 
+ 
+Objektklassen in IFC- und CityGML  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+174
+Abbildung 45: 
+Implizite Geometrieerstellung in BIM durch parametrische Elemente 
+ 
+(CSG im Beispiel links) und explizite Geometrieerstellung in GIS 
+ 
+durch Akkumulation aller umschließenden Begrenzungsflächen 
+ 
+(B-Rep im Beispiel rechts)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+175
+Abbildung 46: 
+Bei der Umwandlung von BIM-Objekten in GIS-Objekten verliert man 
+ 
+viele Informationen. So macht es beispielsweise keinen Sinn mehr, 
+ 
+den einzelnen Wandflächen eine Wärme­leitfähigkeit zu attributieren. . . . . 	
+177
+
+
+===== PAGE 337/348 =====
+336
+Anhang: BIM-Handbuch 2022
+Abbildung 47: 
+Bei der Umwandlung von GIS-Objekten in BIM-Objekte lässt sich leider 
+nicht abklären, zu welcher Wand der Überschneidungsbereich 
+im T-Stoß gehört. Ein weiteres Problem kann die Frage sein, 
+welche Wandflächen zu welcher Wand gehören.  . . . . . . . . . . . . . . . . . . . . . . . . . 	
+177
+Abbildung 48: 
+GIS- und BIM-Daten in einem Modell  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+178
+Abbildung 49: 
+Obwohl alle drei In Revit als Geschossdecke erstellt wurden, 
+müssen sie bei ifc-Export in unterschiedliche Klassen zugeordnet  
+werden: IfcRoof (Flachdach), IfcSlab (Geschossdecke) und IfcFooting 
+(Fundamentplatte)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+180
+Abbildung 50: 
+Objekte am Beispiel einer Wand  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+181
+Abbildung 51: 
+Klassendiagramm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+182
+Abbildung 52: 
+Objektdiagramm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+182
+Abbildung 53: 
+Vererbung am Beispiel Wand → Betonwand → über 3 m → 
+Außenwand  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+184
+Abbildung 54:  
+185
+Abbildung 55: 
+185
+Abbildung 56: 
+185
+Abbildung 57: 
+187
+Abbildung 58: 
+189
+Abbildung 59: 
+189
+Abbildung 60: 
+192
+Abbildung 61: 
+193
+Abbildung 62: 
+193
+Abbildung 63: 
+194
+Abbildung 64: 
+	
+195
+Abbildung 65: 
+Verschiedene MVDs desselben Gebäudes  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+196
+Abbildung 66: 
+Mappingtables für den Export und Import bei IFC . . . . . . . . . . . . . . . . . . . . . . . . 	
+197
+Abbildung 67: 
+Verteilung der Leistungsteile gemäß GOA, HOAI und LM.VM 
+zwischen 1991 und 2014 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+202
+Abbildung 68: 
+Autodesk Revit, Arbeiten im Firmennetzwerk mit Accelerator  . . . . . . . . . . . . 	
+209
+Abbildung 69: 
+Entlehnen und Teamwork  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+210
+Abbildung 70: 
+Achsenwunsch je nach Fachplaner:innen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+213
+Abbildung 71: 
+Architektur und Haustechnik haben eine unterschiedliche 
+Raumeinteilung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+213
+Abbildung 72: 
+Struktur und Rollen der BIM-bezogenen Organisationseinheiten  . . . . . . . . . 	
+217
+Abbildung 73: 
+Auszug Teilmodelle, am Beispiel B[R]G Sillgasse  . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+220
+
+
+===== PAGE 338/348 =====
+337
+Abbildungsverzeichnis
+Abbildung 74: 
+Unterteilung nach Fachrichtungen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+222
+Abbildung 75: 
+Zusammensetzung des Koordinationsmodells am Beispiel des Projekts 
+ 
+Bio-Institut Raumberg  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+223
+Abbildung 76: 
+Nutzung CDE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+225
+Abbildung 77: 
+Das CDE übernimmt als zentrale Plattform viele Funktionen . . . . . . . . . . . . . . 	
+225
+Abbildung 78: 
+ÖNORM ISO 19650-1 CDE Konzept  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+228
+Abbildung 79: 
+BIM-Regelwerk in ihrer Entstehungsreihenfolge . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+232
+Abbildung 80: 
+Wirkungsbereiche der BIM-Regelwerke  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+232
+Abbildung 81: 
+Pilotprojekt LFS Grottenhof  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+239
+Abbildung 82: 
+Testmodell bestehend aus den Teilmodellen Architektur und 
+ 
+Gebäudetechnik  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+239
+Abbildung 83: 
+Koordinationsmodell aus BIMPLUS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+241
+Abbildung 84: 
+Projektphasen (PPH)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+248
+Abbildung 85: 
+Projektphasen (PPH) und Leistungsphasen (LPH)  . . . . . . . . . . . . . . . . . . . . . . . . . 	
+250
+Abbildung 86:  
+Leistungsbeschreibung und Beeinflussbarkeit mit fortlaufender 
+ 
+Projektdauer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+251
+Abbildung 87: 
+Vergleich der Akteure  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+255
+Abbildung 88: 
+BIM-Rollen mit möglichen Projektbeteiligten  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+256
+Abbildung 89: 
+Klassisch – Einzelplanervergabe . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+259
+Abbildung 90: 
+Klassisch – Generalplanervergabe . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+260
+Abbildung 91:  
+BIM-Planung – Einzelplanervergabe  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+261
+Abbildung 92:  
+BIM-Planung – Generalplanervergabe  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+263
+Abbildung 93:  
+Finalisierung des BAP bei bereits vorhandenen AIA und BAP . . . . . . . . . . . . . . 	
+265
+Abbildung 94: 
+Erstellung der AIA und des BAP  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+267
+Abbildung 95: 
+Inhalte einer CDE (idealtypisch in einer Plattform vereint)  . . . . . . . . . . . . . . . . 	
+270
+Abbildung 96: 
+Adaptierung einer vorhandenen Kollaborationsplattform (CDE) . . . . . . . . . . 	
+272
+Abbildung 97: 
+Erstellung der Kollaborationsplattform (CDE)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+273
+Abbildung 98: 
+Erstellung der Fachmodelle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+276
+Abbildung 99: 
+Erstellung des Koordinationsmodells . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+278
+Abbildung 100: 
+Einbindung eines CAFM-Systems  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+283
+Abbildung 101: 
+BIM-Rollen aus Sicht der Auftraggeber . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+289
+Abbildung 102: 
+Projektorganigramm A26 Linz Umfahrung Etappe 2 . . . . . . . . . . . . . . . . . . . . . . 	
+290
+Abbildung 103: 
+Leistungsbeschreibung und Beeinflussbarkeit mit fortlaufender 
+ 
+Projektdauer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+295
+Abbildung 104:  
+Teamwork in Archicad: farbliche Unterteilung in Arbeitsbereiche  . . . . . . . . . 	
+296
+Abbildung 105: 
+Entwicklung des Brandschutzplans durch Überschreibung des 
+ 
+Grundrisses  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+297
+
+
+===== PAGE 339/348 =====
+338
+Anhang: BIM-Handbuch 2022
+Abbildung 106: 
+Eindeutig bessere Erkennbarkeit in der farblich hervorgehobenen 
+ 
+Systemdarstellung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+298
+Abbildung 107: 
+Sichtbarkeitseinstellung der aktiven Ansicht in Revit nach Disziplin  . . . . . . . 	
+299
+Abbildung 108: 
+Archicad bietet mit seinem Umbaufilter weitreichende Einstellungs-
+ 
+möglichkeiten  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+300
+Abbildung 109: 
+Allplan, Planzusammenstellung mit Bewehrung und Biegeliste 
+ 
+mit Layerfilter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+301
+Abbildung 110: 
+Versionsvergleich in BIM 360  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+303
+Abbildung 111: 
+In der Modelliersoftware wurde der Parameter „MY_Classificator“ 
+ 
+angelegt, um Elemente später bei der Zuweisung zu einem Zeitbalken 
+ 
+identifizieren zu können.  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+304
+Abbildung 112: 
+Über den in Revit und MS-Project angelegten Parameter werden in 
+ 
+Navisworks Element und Aufgabe zusammengeführt.  . . . . . . . . . . . . . . . . . . . 	
+304
+Abbildung 113: 
+Mengenzuweisung im Modell-Beispiel iTwo  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+306
+Abbildung 114: 
+Eine Wand weist ganz unterschiedliche Längen auf, da heißt es 
+ 
+aufpassen, welche Länge jeweils gebraucht wird.  . . . . . . . . . . . . . . . . . . . . . . . . 	
+308
+Abbildung 115: 
+Report in Allplan, Mengen Rohbau Wände, Mengen Wandschalung  . . . . . . 	
+309
+Abbildung 116: 
+Erste Aussagen zu Kosten über Kenngrößen wie ÖNORM B 1800  . . . . . . . . . 	
+310
+Abbildung 117: 
+Simulation der Deckendurchbiegung in dlubal  . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+312
+Abbildung 118: 
+Energieanalyse in Autodesk insight  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+313
+Abbildung 119: 
+Anzahl der Mitarbeiter:innen  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+323
+Abbildung 120: 
+Verwendung des IFC-Dateiformats für den Austausch von 
+ 
+Bauwerksmodellen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+325
+Abbildung 121: 
+Verwendete IFC-Versionen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+325
+Abbildung 122: 
+Verwendung des BCF-Formats . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+326
+Abbildung 123: 
+Erweiterte Funktionen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+327
+Abbildung 124: 
+Quellen/Vorlagen/Richtlinien für die Erstellung von PSets . . . . . . . . . . . . . . . . 	
+328
+Abbildung 125: 
+Nutzung AIA und BEP bzw. BAP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+329
+Abbildung 126: 
+Nutzung CDE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+330
+Abbildung 127: 
+Einzug von BIM in der eigenen Organisation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+331
+Abbildung 128: 
+Eigene Erfahrungen und Fähigkeiten . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+332
+
+
+===== PAGE 340/348 =====
+339
+Abbildungsverzeichnis
+
+
+===== PAGE 341/348 =====
+340
+Anhang: BIM-Handbuch 2022
+Tabellenverzeichnis
+Tabelle 1:	
+Vorschlag für Angabe Nullpunkt und Projektbasispunkt in AIA bzw. BAP . . . . . . 	
+81
+Tabelle 2: 	
+Benennungsvorschlag Geschosse Ebenen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+87
+Tabelle 3:	
+LOD 100–500 (350) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+98
+Tabelle 4:	
+Bezeichnung von BIM-Objekten in unterschiedlichen Softwareprodukten  . . . 	
+102
+Tabelle 5:	
+Modelldetaillierung und LOD . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+108
+Tabelle 6:	
+Überblick über strukturgebende Merkmale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+111
+Tabelle 7:	
+Definition Projektbasispunkt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+112
+Tabelle 8:	
+Unterteilung des Modells nach Straßenkilometer  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+113
+Tabelle 9:	
+Die „größten“ Softwarehersteller . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+130
+Tabelle 10:	
+Beispiele Modelliersoftware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+139
+Tabelle 11:	
+Beispiele Prüfungssoftware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+145
+Tabelle 12:	
+Vereinfachte Übersicht über die Software-Lizenzformate . . . . . . . . . . . . . . . . . . . . . 	
+150
+Tabelle 13:	
+Was sind nun die Vor- und Nachteile des jeweiligen Formates? . . . . . . . . . . . . . . . 	
+163
+Tabelle 14:	
+Kostenlose 3D-Viewer für Punktwolken . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+171
+Tabelle 15: 	
+Unterschiede zwischen BIM und GIS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+178
+Tabelle 16:	
+Datentypen und deren zulässige Einheiten . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+183
+Tabelle 17:	
+Nebem dem IFC betreut bSI viele weitere Standards . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+191
+Tabelle 18:	
+Von Autodesk wird beispielsweise empfohlen, Bearbeitungsbereiche 
+	
+hauptsächlich zur Trennung verschiedener Bereiche in der Konzeption 
+	
+eines Projekts zu nutzen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+211
+Tabelle 19:	
+BIM-Rollen nach VDI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+215
+Tabelle 20:	
+Auflistung Fachmodelle und deren Teilmodelle  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+221
+Tabelle 21:	
+Auswahl von CDE-Anbietern . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+226
+Tabelle 22:	
+Beispiel für Berechtigungsstufen in BIM 360 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+227
+Tabelle 23:	
+Zusammenfassung der Vorteile eines CDE  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+230
+Tabelle 24:	
+Inhaltliche Bereiche AIA/BAP  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+233
+Tabelle 25:	
+Zusammenhang zwischen Projektphasen und Detaillierungsgrad . . . . . . . . . . . . 	
+252
+Tabelle 26:	
+Beispiele für AVA-Software . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 	
+306
+
+
+===== PAGE 342/348 =====
+341
+Tabellenverzeichnis
+
+
+===== PAGE 343/348 =====
+342
+Anhang: BIM-Handbuch 2022
+Stichwortverzeichnis
+3
+3D-BIM-Modell 45
+3D-Laserscan 168, 171, 172, 173
+3D-Modell 12, 35, 38, 39, 54, 57, 68, 71
+A
+AIA 14, 20, 26, 61, 81, 95, 96, 97, 216, 231, 233, 234, 
+240, 244, 252, 253, 256, 257, 262, 264, 265, 
+266, 267, 268, 269, 270, 271, 275, 277, 282, 
+284, 285, 328, 329, 330
+Allplan 102, 126, 136, 137, 138, 139, 140, 155, 196, 
+301, 308, 309, 324
+Archicad 86, 102, 126, 134, 136, 137, 138, 140, 155, 
+196, 295, 296, 300, 308, 324
+ASI-Merkmalserver 20, 50, 66, 188
+As-Planned-Modell 219
+Attribut 12, 24, 45, 68, 72, 74, 75, 96, 100, 101, 102, 
+104, 131, 136, 140, 145, 171, 175, 176, 178, 182, 
+184, 188, 294, 299, 307
+Auswertungsmodelle 222
+Autodesk 323, 324, 326
+B
+BAP 14, 20, 21, 22, 26, 61, 81, 82, 96, 97, 216, 231, 
+233, 234, 244, 252, 253, 256, 257, 262, 264, 
+265, 266, 267, 268, 269, 271, 273, 275, 277, 285, 
+328, 329, 330
+BCF 20, 26, 55, 191, 193, 279, 288, 326
+Berechtigungssyteme 13, 214, 226
+Bezüge 92, 93, 94, 214
+BIA 26, 231
+big BIM 22, 41
+BIM Regelwerke 231, 232, 244, 253
+BIM-Leistungsbilder 216
+BIM-Level 24, 39, 40
+BIM-Management 49, 214, 216, 256, 261, 281,  
+291
+BIM-Methode 13, 15, 38, 44, 45, 52, 53, 54, 57, 63, 
+158, 238, 241, 242, 249, 257, 288, 313
+BIM-Norm 50
+BIM-Objekt 74, 75, 79, 93, 96, 97, 99, 102, 103, 172, 
+176, 177, 178, 181, 184, 186, 191
+BIM-Örtliche Bauaufsicht 217
+BIM-Rollen 215, 216, 217, 231, 233, 256, 288, 289
+BIM-Software 13, 41, 43, 57, 62, 72, 81, 118, 120, 
+123, 126, 133, 224, 305, 322
+BIM-Softwareprodukte 71, 134, 137, 154
+BKS 26, 80, 81, 82
+Brep 26, 76, 195
+bSDD 22, 26, 74, 186, 188, 191, 216
+
+
+===== PAGE 344/348 =====
+343
+Stichwortverzeichnis
+buildingSMART 17, 23, 28, 50, 67, 74, 84, 120, 122, 
+166, 186, 188, 190, 191, 192, 194, 195, 216, 217, 
+234, 244, 253
+C
+CAFM 26, 201, 281, 282, 283, 284, 
+CDE 14, 22, 26, 38, 46, 147, 219, 224, 225, 226, 227, 
+228, 229, 230, 240, 244, 264, 270, 271, 272, 
+273, 275, 277, 279, 285, 323, 330, 331
+closedBIM 22, 41, 63, 126, 162, 164, 165, 166, 190, 
+328
+D
+Datenaustausch 13, 22, 24, 34, 39, 62, 63, 67, 160, 
+164, 166, 179, 186, 190, 192, 193, 206, 238,  
+242
+Datenbank 20, 45, 46, 66, 75, 118, 131, 147, 156, 
+188, 226, 264, 270, 271
+Detaillierungsgrad 96, 97, 99, 102, 175, 176, 178, 
+211, 233, 252, 253, 308
+Dynamisches Modellieren 94
+E
+Ebene 21, 23, 28, 43, 49, 84, 85, 87, 89, 92, 93, 94, 
+204, 211, 214, 216, 227, 247, 258, 284, 307
+Eigenschaft 12, 20, 36, 49, 66, 74, 75, 182, 188,  
+294
+Einzelplanervergabe 259, 261, 263, 279
+Endbenutzer-Lizenzvertrag 26, 153
+explizites Verfahren 76, 78, 175, 176, 178
+F
+Fachmodelle 13, 14, 23, 24, 55, 56, 71, 85, 87, 92, 
+94, 95, 96, 98, 101, 109, 110, 116, 117, 159, 214, 
+216, 220, 221, 222, 229, 230, 235, 244, 264, 
+271, 275, 276, 277, 279, 282, 285
+freeBIM 50, 188
+G
+Generalplanervergabe 258, 260, 263
+geografischer Norden 82
+Gesamtmodell 23, 55, 140, 145, 235
+Geschoss 23, 84, 85, 87, 88, 146, 212
+GIS 13, 90, 167, 173, 174, 175, 176, 177, 178
+H
+Herstellerbibliotheken 105
+Hochbau 33, 84, 90, 110, 121, 188, 200, 263
+hybridBIM 165, 166
+I
+IFC-Zertifizierung 120, 122
+implizite Verfahren 77, 78, 175, 178
+Infrastrukturbereich 90, 121
+K
+Klassifizierungsmodell 50
+Knotenausbildung 79
+Kollaboration 21, 49, 55
+Kollisionserkennung 144, 145, 192
+Kollisionskontrolle 56, 101, 112, 222, 229
+Koordinationskörper 83
+Koordinationsmodell 14, 21, 23, 55, 112, 203, 216, 
+222, 223, 241, 244, 264, 271, 277, 278, 279, 285, 
+288 
+Kosten 12, 20, 35, 38, 52, 54, 56, 60, 100, 101, 103, 
+110, 112, 140, 144, 148, 149, 150, 153, 154, 162, 
+163, 171, 192, 200, 202, 229, 245, 247, 248, 251, 
+281, 283, 284, 292, 307, 308, 310
+L
+Lebenszyklus 12, 20, 22, 28, 35, 36, 37, 39, 42, 58, 
+110, 118, 124, 125, 126, 224
+Leistungsphasen 27, 41, 66, 96, 158, 201, 202, 204, 
+250, 251, 257, 264, 267, 275, 281, 283, 284
+
+
+===== PAGE 345/348 =====
+344
+Anhang: BIM-Handbuch 2022
+little BIM 22, 41
+Lizenzmodelle 148, 150, 154
+Lizenzpolitik 13, 148
+LoC 23, 27, 96, 97, 98, 101, 111, 252
+LOD 23, 27, 96, 97, 98, 99, 101, 104, 108, 175, 176, 
+178, 181, 229, 252, 253, 308, 330
+LoG 23, 27, 96, 97, 98, 99, 108, 252
+LoI 23, 24, 96, 97, 98, 100, 101, 108, 181, 252, 253
+LoX 27, 97
+M
+Mengenermittlung 146, 305, 307, 308
+Merkmalserver 20, 24, 50, 66, 74, 188
+Modellierregeln 94, 95
+Modelliersoftware 21, 62, 71, 75, 79, 80, 81, 95, 
+102, 136, 138, 139, 141, 144, 146, 172, 173, 179, 
+181, 185, 188, 208, 211, 292, 302, 304, 305, 
+309, 311
+MVD 24, 27, 67, 191, 195, 196, 222
+N
+named-user 154
+Nomenklatur 84, 104, 186, 271
+O
+Objektbibliotheken 13, 102
+Offene Formate 164
+OOM-Konzept 27, 180
+openBIM 11, 41, 42, 43, 44, 50, 158, 159, 162, 163, 
+165, 166, 188, 190, 192, 305, 327, 328
+P
+Parameter 32, 72, 102, 104, 146, 176, 303, 304,  
+305, 
+Praxistipp 16, 74, 81, 83, 87, 103, 133, 144, 155, 168, 
+214, 216, 234
+Projektbasispunkt 80, 81, 82, 90, 93, 112
+Projektkonstellationen 254, 255, 258, 260, 261, 
+262, 281
+Projektmodell 220
+Projektnorden 82
+Projektphasen 23, 24, 27, 96, 108, 118, 124, 181, 
+224, 229, 241, 244, 245, 246, 247, 248, 250, 
+252, 253
+Proprietäre Formate 162
+Prüfsoftware 13, 24, 54, 62, 144, 145
+Punktwolke 13, 167, 171, 172, 173, 218, 282
+Q
+Qualitätsmanagement 145, 203, 204, 230
+Quality Gates 27, 244, 247, 249, 252
+R
+Raster 83, 92, 93, 94, 211, 214
+Rechtstipp 16, 48, 123, 152, 165, 167, 235, 257, 269, 
+275, 280
+Reality-Check 166, 172, 176, 181, 218
+Reference View 67, 195, 222
+Referenzmodell 163, 222
+Revit 85, 99, 102, 103, 136, 137, 138, 139, 140, 155, 
+180, 196, 209, 299, 303, 304, 308, 324
+S
+Softwarehersteller 34, 42, 127, 128, 129, 130, 163, 
+172, 322 
+Softwareprodukte 41, 62, 63, 71, 124, 126, 128, 131, 
+133, 134, 136, 137, 138, 146, 162, 173, 190, 224, 
+233, 309, 311, 322, 324
+Softwareversion 122, 132, 133
+T
+Teilmodell 24, 41, 44, 67, 75, 80, 83, 85, 97, 98, 101, 
+110, 111, 112, 140, 145, 192, 201, 204, 220, 221, 
+222, 233, 238, 239, 240, 253
+
+
+===== PAGE 346/348 =====
+345
+Stichwortverzeichnis
+Transparenz 47, 61, 264, 281
+Trimble 126, 139, 142, 145, 226, 323, 324, 326
+V
+VDI-Richtlinien 215
+Vererbung 184
+Versionsmanagement 14, 228, 229, 230
+Verortungsstruktur 84, 85, 91, 194 
+Vertikale Gliederung 84
+Viewer 140, 141, 142, 143, 144, 153, 171, 324, 326
+W
+WKS 80, 82
+Z
+Zentraldatei 208, 209
+
+
+===== PAGE 347/348 =====
+
+
+===== PAGE 348/348 =====
+bimhandbuch.at 
+Das BIM-Handbuch 2022 bietet:
+ 
+... Erleichterungen (Informationen, Tipps und Tricks) im BIM-Arbeitsalltag
+... eine unabhängige Sichtweise statt Marketing
+... ehrliche Ansagen „Was geht und noch nicht geht“ 
+ 
+Das BIM-Handbuch 2022 beantwortet Praxisfragen und ist als Arbeitsbehelf strukturiert. Zusätzlich erhalten Sie 
+Zugang zu Online-Arbeitsmaterialien (Downloads, Tools, Musterverträgen etc.) und auf Wunsch, via Newsletter, 
+auch Updates.
+ 
+Unabhängige Expertinnen und Experten aus den Interessensvertretungen der planenden Berufe steuerten 
+ehrenamtlich die inhaltliche und redaktionelle Gestaltung des BIM-Handbuches 2022. Zusätzlich wurden 
+wichtige institutionelle Partner bei der Erstellung einbezogen, siehe die transparente Listung im Buch. 
+Es garantiert einen unabhängig-inhaltlichen Fokus auf die Anforderungen in der planenden Praxis. 
+Das BIM-Handbuch 2022 wurde nach einer Idee der Kammer der Ziviltechniker:innen branchenübergreifend 
+als gemeinsames Projekt mit der Bundesinnung Bau und dem Fachverband Ingenieurbüros realisiert. Wissen-
+schaftlicher Partner ist das Institut für Baubetrieb und Bau­wirtschaft der Technischen Universität Graz.
+ 
+Das BIM-Handbuch 2022 wird von den Herausgebern als E-Book der Fachöffentlichkeit kostenfrei zur 
+Verfügung gestellt. Eine Kooperation mit dem Verlag der TU Graz und dem MANZ Verlag macht es möglich, 
+dass das BIM-Handbuch 2022 auch im Buchhandel erhältlich ist.
+Herausgeber
+Bundeskammer der Ziviltechniker:innen
+Bundesinnung Bau
+Fachverband Ingenieurbüros
+Autoren
+Marcus Wallner, Christian Hofstadler, Markus Kummer

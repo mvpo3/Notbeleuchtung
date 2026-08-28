@@ -1,0 +1,627 @@
+
+
+===== PAGE 41/48 =====
+ARP
+Address Resolution Protocol
+Ein Netzwerkprotokoll, welches die mit einer Netzwerkadresse (IP-Adresse) 
+verbundene physische Adresse (MAC-Adresse) ermittelt und danach in den 
+ARP-Tabellen der beteiligten Rechner diese Zuordnung einträgt. Das ARP 
+wird fast ausschließlich zur Ermittlung von MAC-Adressen im Zusammenhang 
+zu vergebenen IPv4-Adressen verwendet, es ist jedoch nicht auf diese 
+Funktion beschränkt. Im Bezug auf IPv6-Adressen wird diese Funktionalität 
+jedoch nicht von ARP, sondern von einem anderen Protokoll bereitgestellt.
+IPv4/IPv6
+Internet Protocol Version 4/Internet Protocol Version 6
+IPv4 Adressen sind 32 Bit lang, es sind daher maximal 4.294.967.296 
+Adressen verfügbar (in der Realität aber nicht alle zur Verteilung an Rechner 
+verfügbar, da einige Adressblöcke für spezielle Zwecke reserviert wurden).
+IPv6 Adressen sind 128 Bit lang, davon bilden die ersten 64 Bit das 
+sogenannte Präfix und die letzten 64 Bit bilden (bis auf seltene Ausnahmen) 
+einen für die Netzwerkschnittstelle eindeutigen Interface-Identifier.
+SMTP
+Simple Mail Transfer Protocol (Einfaches-E-Mail-Transportprotokoll)
+Bei SMTP handelt es sich um ein Protokoll der Internetprotokollfamilie, 
+welches für den Austausch von E-Mails in Computernetzen verwendet wird. 
+Vorrangig wird dieses Protokoll dabei zum Einspeisen und zum Weiterleiten 
+von E-Mails benutzt. Das Abholen von Nachrichten wird jedoch nicht von 
+SMTP, sondern von anderen, spezialisierten Protokollen erledigt.
+API
+Application Programming Interface (wörtlich übersetzt Anwendungs-
+programmierschnittstelle, meistens aber Programmierschnittstelle oder 
+Anwendungsschnittstelle genannt)
+Eine API ist ein Programmteil, welcher von einem Softwaresystem 
+anderen Programmen zur Verfügung gestellt wird, damit diese an das 
+System angebunden werden können. Diese Schnittstelle definiert die 
+Programmanbindung nur auf Quelltext-Ebene und benötigt, damit sie 
+bereitgestellt werden kann, eine detaillierte Dokumentation der  
+Schnittstellen-Funktionen mitsamt ihren Parametern entweder auf Papier  
+oder als elektronisches Dokument.
+PPPoE
+Point-to-Point over Ethernet (Punkt-zu-Punkt über Ethernet)
+Unter PPPoE versteht man die Verwendung des Netzwerkprotokolls PPP 
+(Point-to-Point Protocol) über eine Ethernet-Verbindung. Dieses Protokoll 
+besteht aus zwei Phasen: der PPPoE Discovery und der PPP Session. In 
+der PPPoE Discovery Phase wird die MAC-Adresse von einem Access 
+Concentrator ermittelt, welcher den logischen Endpunkt von PPP-Sitzungen 
+bildet und für Aufgaben wie die Zuweisung von Sitzungsparameter wie  
+IP-Adressen zuständig ist. In der zweiten Phase, der sogenannten PPP-
+Session, werden dann Daten nach PPP ausgetauscht.
+CBR/VBR
+Constant Bit Rate: Egal was sich im Bild ändert, die Bitrate bleibt immer gleich
+Variable Bit Rate: Die Bitrate kann sich anpassen und damit Speicherplatz 
+sparen. (Qualitätsverlust möglich)
+WAN
+Wide Area Network (Weitverkehrsnetz)
+Das WAN ist ein Rechnernetz, welches sich im Gegensatz zu einem 
+LAN oder MAN über einen sehr großen geografischen Bereich erstreckt 
+(über mehrere Länder oder möglicherweise sogar mehrere Kontinente). 
+WANs werden eingesetzt, um verschiedene LANs (aber auch einzelne 
+Rechner) miteinander zu vernetzen. Es gibt einige WANs, die bestimmten 
+Organisationen angehören und nur von diesen verwendet werden, aber 
+andere WANs werden von Internetanbietern errichtet bzw. erweitert, um 
+einen Zugang an das Internet zu gewähren.
+UPnP
+Universal Plug and Play
+UPnP dient zur herstellerübergreifenden Ansteuerung von Geräten (wie 
+z.B. Audio-Geräten, Routern und Druckern) über ein auf IP basierendes 
+Netzwerk, unabhängig davon, ob das Netzwerk über eine zentrale 
+Kontrolle durch ein Residential Gateway (die technische Schnittstelle 
+zwischen einer Wohnumgebung und der Außenwelt) verfügt, oder nicht.
+41
+
+
+===== PAGE 42/48 =====
+Begriffserklärung
+SERIE NEXT/ADVANCED
+P2P
+Peer-to-Peer/Rechner-Rechner-Verbindung (peer = Gleichgestellter) sind 
+synonyme Bezeichnungen und stehen für die Kommunikation unter Gleichen, 
+in diesem Kontext ist dies auf ein Rechnernetz bezogen. Bei einem reinen 
+Peer-to-Peer-Netz sind alle Computer gleichberechtigt und können Dienste 
+sowohl in Anspruch nehmen als auch zur Verfügung stellen.
+FTP
+File Transfer Protocol (Dateiübertragungsprotokoll)
+Das FTP ist ein Netzwerkprotokoll, welches dazu dient, Daten über IP-
+Netzwerke zu übertragen. Genauer gesagt wird es benutzt, um Dateien 
+von einem Client zu einem Server (Hochladen), von einem Server zu 
+einem Client (Herunterladen) oder clientgesteuert zwischen zwei FTP-
+Servern (File Exchange Protocol) zu übertragen. Zusätzlich dazu kann FTP 
+verwendet werden, um Verzeichnisse anzulegen und auszulesen, sowie um 
+Verzeichnisse und Dateien umzubenennen oder zu löschen.
+SNMP
+Simple Network Management Protocol (Einfaches Netzwerk-
+verwaltungsprotokoll)
+Das SNMP ist ein Netzwerkprotokoll, das entwickelt wurde, damit 
+Netzwerkelemente (wie z.B. Router, Server, Switches, usw.) von einer 
+zentralen Station aus überwacht und gesteuert werden können. Die 
+Kommunikation zwischen den Geräten, welche überwacht werden, und  
+der Überwachungsstation werden dabei durch das Protokoll geregelt.
+ 
+CVBS
+Composite Video
+CVBS ist ein analoges Verfahren, welches zur Übertragung eines Bildkanals 
+verwendet wird, dies ist vergleichbar mit einem einzelnen Fernsehkanal. 
+Allerdings geschieht diese Übertragung ohne Audio bzw. Ton.
+Bei Composite Video wird die gesamte Bildinformation über eine einzige 
+Leitung übertragen, wodurch jedoch die Bildqualität vergleichsweise 
+schlecht ist. Bei CVBS kann das verwendete Bildformat PAL, SECAM 
+oder NTSC sein, es ist also stets ein analoges Fernsehsignal in normaler 
+Auflösung, also niemals ein HDTV-Signal.
+PAL/NTSC
+PAL = Phase-Alternating-Line
+NTSC = National Television Systems Committee
+PAL und NTSC sind zwei Verfahren zur Farbübertragung beim analogen 
+Fernsehen.
+NTSC wurde in weiten Teilen Amerikas und in einigen Länder Ostasiens 
+eingesetzt, während PAL vor allem in Europa, aber auch in Australien und 
+in vielen Länder in Afrika, Asien und Südamerika benutzt wurde. Beide 
+Verfahren wurden jedoch gegen Ende der 2000er Jahre größtenteils durch 
+digitales Fernsehen ersetzt.
+Das PAL-Verfahren wurde mit dem Ziel entwickelt, die bei NTSC 
+auftretenden, störenden Farbton-Fehler automatisch zu kompensieren, da 
+dies bei NTSC nur manuell möglich war und die Fehler nur unbefriedigend 
+ausgeglichen werden konnten.
+NTP
+Network Time Protocol
+Das NTP ist ein Standard, welcher dazu dient, intelligenten Endgeräten 
+über das Internet die aktuelle Uhrzeit mitzuteilen. Zum Beispiel wird die 
+Synchronisierung von Echtzeituhren in Computersystemen über NTP mithilfe 
+von paketbasierten Kommunikationsnetzen umgesetzt. Zusätzlich zu NTP  
+gibt es auch noch das SNTP (Simple Network Time Protocol), bei welchem 
+es sich um eine vereinfachte Version von NTP handelt.
+ISP
+Internet Service Provider (Internetdienstanbieter, oft auch nur Provider 
+genannt)
+Bei einem ISP handelt es sich um einen Anbieter von Diensten, Inhalten 
+oder technischen Leistungen, welche für die Nutzung oder den Betrieb von 
+Inhalten und Diensten im Internet erforderlich sind. Einige Leistungen von 
+ISPs sind z.B. die Bereitstellung von Internetzugang und Domain-Hosting, 
+Server-Hosting, usw.
+ 
+42
+
+
+===== PAGE 43/48 =====
+43
+BEZEICHNUNG
+VERFÜGBAR
+BEST. NR.
+PREG
+UVP
+IP Kameras - NEXT
+BASIC Bullet colour 4MP IP Kamera, 2.8mm, IR20m, IP67, AI
+CTIBN4F1A-
+3600
+164,10
+PRO Bullet colour 4MP IP Kamera, 2.8mm, IR50m, IP67, AI
+CTIBN4FA--
+3600
+329,00
+PRO Bullet colour 4MP IP Kamera, 2.8‑12mm, IR50m, IP67, AI
+CTIBN4ZA--
+3600
+458,90
+4K Bullet colour 8MP IP Kamera, 2.8mm, IR50m, IP67, AI
+CTIBN8FA--
+3600
+536,40
+4K Bullet colour 8MP IP Kamera, 2,8‑12mm, IR50m, IP67, AI
+CTIBN8ZA--
+3600
+698,20
+BASIC Turret colour 4MP IP Kamera, 2.8mm, IR20m, IP67,AI
+CTITN4F1A-
+3600
+164,10
+PRO Turret colour 4MP IP Kamera, 2.8mm, IR30m, IP67, AI
+CTITN4FA--
+3600
+314,00
+PRO Turret colour 4MP IP Kamera, 2.8‑12mm, IR50m, IP67, AI
+CTITN4ZA--
+3600
+460,70
+4K Turret colour 8MP IP Kamera, 2.8mm, IR30m, IP67, AI
+CTITN8FA--
+3600
+489,80
+4K Turret colour 8MP IP Kamera, 2.8‑12mm, IR50m, IP67, AI
+CTITN8ZA--
+3600
+699,70
+NVR Recorder - NEXT
+Video Recorder‑NVR NEXT Serie 4CH, 6MP, 4 POE, 1 TB HDD
+CTN4N6PA--
+3600
+618,70
+Video Recorder-NVR 8CH, 4K, 8 POE, NO TB HDD, 8MP
+CTN4N6PASL
+3600
+359,00
+Video Recorder‑NVR NEXT Serie 8CH, 6MP, 8 POE, 1TB HDD
+CTN8N6PA--
+3600
+785,90
+IP Kameras - ADVANCED
+4K Bullet colour 8MP IP Kamera, 2.8‑12mm, IR70m, IP67, AI
+CTIBA8Z1B-
+3600
+982,80
+4K Turret colour 8MP IP Kamera, 2.8‑12mm, IR50m, IP67, AI
+CTITA8ZB--
+3600
+881,50
+Kennzeichenerkennungs‑IP Kamera, 7‑22mm, IR50m, IP67, AI
+CTILPA02ZA
+3600
+1.651,00
+PTZ IP‑Kamera, 4.8‑120mm, IR150m, IP67, 25x Opt. Zoom, AI
+CTIPT2Z25A
+3600
+1.489,00
+NVR Recorder - ADVANCED
+Video Recorder‑NVR ADVANCED Serie 4CH, 8MP, 4 POE, 1TB HDD
+CTN4A8PB--
+3600
+882,60
+Video Recorder‑NVR ADVANCED Serie 8CH, 8MP, 8 POE, 1TB HDD
+CTN8A8PB--
+3600
+1.414,00
+Video Recorder-NVR ADVANCED Serie 32CH, 8MP, NO HDD, AI
+CTN32A8SL-
+3600
+2.118,00
+Video Recorder-NVR ADVANCED Serie 64CH, 8MP, NO HDD, AI
+CTN64A8SL-
+3600
+4.440,00
+AHD Kameras - SMART
+BASIC Bullet colour 5MP AHD Kamera, 3,6mm, IR25m, IP67
+CTABS5FB--
+3600
+143,38
+PRO Minidome colour 5MP AHD Kamera, 3,6mm, IR20m, IP67
+CTADS5FB--
+3600
+143,38
+XVR Recorder - SMART
+Video Recorder‑XVR NEXT Serie 4 BNC/2IP, 5MP, 1TB HDD
+CTD4N5A---
+3600
+572,60
+IP/AHD Kamera Zubehör
+Kunststoff-Anschlussdose für IP Kameras, weiß
+CTJS1PA---
+3600
+10,32
+Metall-Anschlussdose für Kameras, weiß
+CTJSF66A--
+3600
+41,26
+Rückwand zur Montage von Kameras
+CTPS1A----
+3600
+61,85
+Grundplatte für Minidome Kamera, Druckguß Aluminium, weiß
+CTWSF1A---
+3600
+46,43
+Mastbefestigung zur Montage von NEXT/ADVANCED‑IP Kameras
+CTPMAA----
+3600
+102,10
+Metall‑Anschlussdose, Bullet IP Kameras, IP66, weiß
+CTJBABA---
+3600
+70,84
+Metall‑Anschlussdose, Turret IP Kameras, IP66, weiß
+CTJBATVA--
+3600
+90,19
+Metall‑Anschlussdose für ADVANCED IP Kameras, IP66, weiß
+CTJBATBBA-
+3600
+79,90
+Deckenmonatge Zubehör für IP PTZ Kameras, weiß
+CTCMAPTZA-
+3600
+96,75
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!
+W PRODUKTÜBERSICHT
+
+
+===== PAGE 44/48 =====
+BEZEICHNUNG
+VERFÜGBAR
+BEST. NR.
+PREG
+UVP
+Installationszubehör
+S/FTP Kabel Cat.7, 4x2xAWG23/1, 1000Mhz, PE OUTDOOR, schwarz
+HCKP10N04E
+5100
+479,50
+F/FTP Kabel Cat.6a, 4x2xAWG23/1, 500MHz, LS0H-3, Dca, blau
+HSEKP423HA
+5120
+77,16
+TOOLLESS LINE Buchse RJ45 geschirmt Cat.6 (SFB)
+HSEMRJ6GBS
+5100
+7,39
+Feldkonfektionierbarer RJ45 Stecker geschirmt Cat.6a, Gerade
+HSISR6SI3A
+5390
+30,91
+Durchführungskupplung RJ45 geschirmt Klasse Ea 10GB (SFA)
+HSEMRKRGWS
+5100
+11,09
+Patchkabel Flach RJ45 ungeschirmt Cat.6, PVC, grau, 0,15m
+H6UXG00K1G
+5100
+7,87
+PoE Injektor (802.3af),Fast Ethernet, Netzteil intern, 15,4W
+QLPOI2002
+5900
+67,66
+Krimpzange für BNC
+CT43670---
+3600
+99,46
+BNC Stecker zum Krimpen
+SP43661---
+3600
+2,24
+Steckerbuchse zum Krimpen
+CTCONAL01A
+3600
+4,14
+Koaxialkabel RG-59/U, 75Ohm, 100m
+HRG59BU000
+6600
+98,88
+Koaxialkabel RG-59/U + 2x 1mm², 75Ohm, 100m
+CT43755---
+3600
+186,9
+Einphasiges Netzgerät, geregelt, REG, 230/12VDC, 2A
+LP743201-A
+2320
+87,97
+Serviceleistungen
+Fahrtkostenpauschale pro KM
+CT-FAHRT--
+3690
+0,54
+Fahrzeit für An- und Abreise
+CT-FAHRTKO
+3690
+89,20
+Remote-Inbetriebnahme CCTV
+CT-IBR-IP-
+3690
+148,20
+Inbetriebnahme CCTV-Analog
+CT-INB-ANA
+3690
+297,50
+Inbetriebnahme Technikerstunde
+CT-INBETR-
+3690
+148,20
+Inbetriebnahme CCTV IP-System
+CT-INB-IP-
+3690
+314,30
+44
+W PRODUKTÜBERSICHT
+Best. Nr. blau: Lagerware, d.h. üblicherweise versandbereit am Bestelltag!
+
+
+===== PAGE 45/48 =====
+DSGVO (Datenschutz-Grundverordnung):
+Vor Installation ist eine Abklärung mit der Datenschutzgrundverordnung notwendig.
+Weitere Informationen unter: https://www.dsb.gv.at/recht-entscheidungen/gesetze-in-oesterreich.html  (6.4.2022)
+45
+W SCHRACK STORE – IHRE TOP-VERFÜGBARKEIT VOR ORT
+Wir haben für Sie in allen unseren Geschäftsstellen einen SCHRACK STORE eingerichtet. Außerdem haben wir unser duales
+System – lokale und zentrale Verfügbarkeit – weiter perfektioniert und bieten Ihnen: Versandzustellung oder Storeabholung.
+Damit können Sie deutlich ihre Lagerhaltungskosten reduzieren.
+w Regionale Verfügbarkeit von mehr als 3.000 Artikeln für Sofortabholung
+w Top-kompetente Beratung
+w Begehbarer Katalog
+Achten Sie auf das Symbol für Storeabholung
+Achten Sie auf das Symbol für prompte Bereitschaft zur Versandzustellung
+W PREISE UND LIEFERBEDINGUNGEN
+Die angegebenen Preisinformationen sind unverbindliche Schrack Technik Preisempfehlungen (UVP) in EUR exkl. MWSt., gültig 
+ab sofort und ersetzen alle bisherigen Preisangaben für die darin enthaltenen Bestellnummern. PREG ist die Angabe der Preis-
+gruppe die dem jeweiligen Artikel zugordnet ist. Alle UVP und PREG Angaben sind gültig bis auf Widerruf bzw. bis Erscheinen 
+eines Folgekataloges oder einer neuen Preisliste. Eine Änderung der in dieser Preisliste angegebenen Daten und Preise bleibt 
+jederzeit vorbehalten.
+Aufgrund der aktuellen Weltmarktsituation können sich alle Preise dynamisch ändern. Tagesaktuelle Preise finden Sie auf  
+www.schrack.at oder durch Download der Datanorm Datei im Bereich „Mein Konto“.
+Es gelten ausschließlich die Allgemeinen Lieferbedingungen des Fachverbandes der Elektro- und Elektronikindustrie Österreichs. 
+Diese finden Sie auf www.feei.at oder werden auf Anfrage gerne zugesandt.
+Irrtümer und Satzfehler im Text, Abbildungen bzw. Änderungen der Produktpalette in technischer Ausführung vorbehalten.
+
+
+===== PAGE 46/48 =====
+Anspruchsvolle Zeiten erfordern  
+einen starken Partner
+Wir bieten Ihnen:
+Unsere mobile Webseite mit Scanfunktion
+Unsere elektronischen Schnittstellen
+Schrack Design, unserem Tool für Verteilerplanung
+Nutzen Sie auch unsere Schrack Digital Tools
+Top Warenverfügbarkeit
+Schnellen Versand
+Bestellannahmezeit bis 18:00 Uhr
+Umfangreiche Beratung
+www.schrack.at
+Get Ready. Get Schrack
+
+
+===== PAGE 47/48 =====
+www.schrack.at
+Get Ready. Get Schrack
+Schrack Technik Online Shop
+Schrack Technik bietet Produkte und Lösungen für Energietechnik, Industrieanwendungen, 
+Gebäudetechnik, Notbeleuchtung, Netzwerktechnik, Beleuchtung und alternative Energie. 
+Einfach und sicher online einkaufen. 
+ONLINE BESTELLEN & VORTEILE NUTZEN
+Next Day Delivery 
+Persönliche Beratung 
+& Top Vorteilspreise! 
+Online bestellen  
+& Zeit sparen
+Persönlicher Kontakt
+
+
+===== PAGE 48/48 =====
+F-CCTV-AT2
+SCHRACK TECHNIK GMBH
+Seybelgasse 13, 1230 Wien
+TEL
++43(0)1/866 85-5900
+FAX
++43(0)1/866 85-98800
+E-MAIL info@schrack.at
+SCHRACK TECHNIK ENERGIE GMBH
+Seybelgasse 13, 1230 Wien
+TEL
++43(0)1/866 85-5058
+E-MAIL energie@schrack.com
+KÄRNTEN
+Ledererstraße 3
+9020 Klagenfurt
+TEL
++43(0)463/333 40-0
+FAX
++43(0)463/333 40-15
+E-MAIL klagenfurt@schrack.com
+OBERÖSTERREICH
+Franzosenhausweg 51b
+4030 Linz
+TEL
++43(0)732/376 699-0
+FAX
++43(0)732/376 699-5151
+E-MAIL linz@schrack.com
+SALZBURG
+Bachstraße 59-61
+5023 Salzburg
+TEL 
++43(0)662/650 640-0
+FAX 
++43(0)662/650 640-26
+E-MAIL salzburg@schrack.com
+STEIERMARK, BURGENLAND
+Kärntnerstraße 341
+8054 Graz
+TEL 
++43(0)316/283 434-0
+FAX 
++43(0)316/283 434-64
+E-MAIL graz@schrack.com
+TIROL
+Richard Bergerstraße 12
+6020 Innsbruck
+TEL 
++43(0)512/392 580-5300
+FAX 
++43(0)512/392 580-5350
+E-MAIL innsbruck@schrack.com
+VORARLBERG
+Wallenmahd 23
+6850 Dornbirn
+TEL 
++43(0)5572/238 33-0
+FAX 
++43(0)5572/238 33-5514
+E-MAIL dornbirn@schrack.com
+WIEN, NIEDERÖSTERREICH,
+BURGENLAND
+Seybelgasse 13
+1230 Wien
+TEL 
++43(0)1/866 85-5700
+FAX 
++43(0)1/866 85-98805
+E-MAIL wien@schrack.com
+WWW.SCHRACK.AT
+BELGIEN
+SCHRACK TECHNIK B.V.B.A 
+Twaalfapostelenstraat 14
+BE-9051 St-Denijs-Westrem 
+TEL 
++32 9/384 79 92 
+FAX 
++32 9/384 87 69
+E-MAIL info@schrack.be
+BOSNIEN-HERZEGOWINA 
+SCHRACK TECHNIK BH D.O.O. 
+Put za aluminijski kombinat bb 
+BH-88000 Mostar
+TEL 
++387/36 352 895  
+FAX 
++387/36 352 893     
+E-MAIL schrack@schrack.ba
+BULGARIEN
+SCHRACK TECHNIK EOOD 
+Prof. Tsvetan Lazarov 162 
+Druzhba - 2
+BG-1582 Sofia
+TEL 
++359 2/890 79 13 
+FAX  
++359 2/890 79 30 
+E-MAIL sofia@schrack.bg
+DEUTSCHLAND
+SCHRACK TECHNIK GMBH
+Thomas-Wimmer-Ring 17
+D-80539 München
+TEL 
++49 89/999 533 900
+FAX 
++49 89/999 533 902
+E-MAIL info@schrack-technik.de
+KROATIEN
+SCHRACK TECHNIK D.O.O.
+Zavrtnica 17
+HR-10000 Zagreb
+TEL 
++385 1/605 55 00
+FAX 
++385 1/605 55 66
+E-MAIL schrack@schrack.hr
+POLEN
+SCHRACK TECHNIK POLSKA
+SP.ZO.O.
+ul. Staniewicka 5
+PL-03-310 Warschau
+TEL 
++48 22/205 31 00
+FAX 
++48 22/205 31 01
+E-MAIL kontakt@schrack.pl
+RUMÄNIEN
+SCHRACK TECHNIK SRL
+B-dul Iuliu Maniu nr 453-457, sect. 6
+RO-061101 Bukarest
+TEL
++40 21/317 02 35 42
+FAX
++40 21/317 02 62
+E-MAIL bucuresti@schrack.ro
+SERBIEN
+SCHRACK TECHNIK D.O.O.
+Bulevar Peka Dapčevića 42
+RS-11000 Belgrad
+TEL 
++38 1/11 309 2600
+FAX 
++38 1/11 309 2620
+E-MAIL office@schrack.rs
+SLOWAKEI
+SCHRACK TECHNIK S.R.O.
+Ivanská cesta 10/C
+SK-82104 Bratislava 
+TEL 
++421 (02)/491 081 01
+FAX 
++421 (02)/491 081 99
+E-MAIL info@schrack.sk
+SLOWENIEN
+SCHRACK TECHNIK D.O.O.
+Pameče 175
+SLO-2380 Slovenj Gradec
+TEL 
++38 6/2 883 92 00
+FAX 
++38 6/2 884 34 71
+E-MAIL schrack.sg@schrack.si
+TSCHECHIEN
+SCHRACK TECHNIK SPOL. SR.O.
+Dolnomecholupska 2
+CZ-10200 Prag 10 – Hostivar
+TEL 
++420 (0)2/810 08 264
+FAX 
++420 (0)2/810 08 462
+E-MAIL praha@schrack.cz
+UNGARN
+SCHRACK TECHNIK KFT.
+Vidor u. 5
+H-1172 Budapest
+TEL 
++36 1/253 14 01
+FAX 
++36 1/253 14 91
+E-MAIL schrack@schrack.hu
+SCHRACK TOCHTERGESELLSCHAFTEN
+ZENTRALE
+ÖSTERREICHISCHE NIEDERLASSUNGEN
+DAS UNTERNEHMEN

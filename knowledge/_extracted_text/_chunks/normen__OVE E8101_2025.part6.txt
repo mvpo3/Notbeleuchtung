@@ -1,0 +1,2308 @@
+
+
+===== PAGE 241/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 29 
+ 
+ANMERKUNG 
+Diese Methode verursacht unerwünschte elektromagnetische Felder durch Rückströme im Neutralleiter 
+des abgeschalteten Stromkreises. Diese Ströme können auch zu Fehlauslösungen von Fehlerstrom-Schutzeinrichtungen 
+(RCD) führen. 
+Bild 444.9B – Unzulässige Umschaltung zwischen zwei Drehstromquellen  
+mit einem dreipoligen Schalter 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 242/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 30 
+ 
+Legende 
+Q1, Q2 
+Vierpoliger Einspeiseschalter 
+Bild 444.9.001.AT – Ordnungsgemäße Umschaltung von Verbrauchsmitteln oder Gruppen  
+von Verbrauchsmitteln zwischen zwei verschiedenen Stromquellen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 243/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 31 
+ 
+ANMERKUNG 
+Die Verbindung „1“ der Sekundärseite des Transformators mit dem Schutzerdungsleiter ist nicht 
+zwingend erforderlich. Wenn diese Verbindung nicht ausgeführt wird, ist die Stromversorgung im USV-Betrieb als IT-
+System ausgeführt und ein Isolationsüberwachungsgerät kann erforderlich sein.  
+Im Netzparallelbetrieb ist das Netzsystem durch das Stromversorgungssystem vorgegeben. 
+Bild 444.9C – Beispiel für Alternative Einphasen-Stromversorgung mit einem zweipoligem Schalter 
+444.4.8 
+In einem Gebäude eingeführte Versorgungseinrichtungen 
+Metallrohre und metallene Armierungen von Kabeln müssen mit der Haupterdungsschiene oder, falls 
+vorhanden, mit der vermaschten Potentialausgleichsanlage niederimpedant (mit kleiner Reaktanz) verbunden 
+sein. 
+ANMERKUNG 1.AT 
+Dies kann z. B. dadurch erreicht werden, dass die Haupterdungsschiene in der Nähe der 
+Gebäudeeinführung dieser Versorgungseinrichtungen errichtet wird, oder die Versorgungseinrichtungen werden am 
+Gebäudeeintritt mit der vermaschten Potentialausgleichsanlage verbunden (siehe z. B. ÖVE/ÖNORM EN 62305 Reihe, 
+OVE EN 50174 Reihe). 
+Metallrohre (z. B. für Wasser, Gas oder Fernwärme) und eingeführte Stromversorgungs- und Datenkabel 
+sollten vorzugsweise an derselben Stelle in das Gebäude eingeführt werden. 
+ANMERKUNG 2.AT 
+Die Mindestabstände zu anderen nicht elektrischen Anlagen sind zu berücksichtigen  
+(siehe 528.3). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 244/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 32 
+Allgemeine Anforderungen betreffend die Verbindung der eingeführten Versorgungseinrichtungen siehe  
+Teil 5-54. 
+ANMERKUNG 
+In besonderen Fällen kann der Betreiber der Versorgungseinrichtung die Zustimmung zur Verbindung 
+verweigern (z. B. Gasleitungen mit kathodischem Korrosionsschutz). 
+444.4.9 
+Getrennte Gebäude 
+Wenn verschiedene Gebäude separate Potentialausgleichsanlagen haben, können für Signal- und 
+Datenübertragung metallfreie Glasfaserkabel oder andere Systeme, wie z. B. Transformatoren für HF-Signal-
+übertragung, zur Trennung verwendet werden. 
+ANMERKUNG 1  
+Das Problem unterschiedlicher Erderspannungen in großen öffentlichen Telekommunikations-
+netzen liegt in der Verantwortlichkeit des Netzbetreibers, der andere Methoden vorgeben kann. 
+ANMERKUNG 2  
+Im Fall von nicht leitenden Datenübertragungssystemen ist die Verwendung eines parallelen 
+Erdungsleiters nicht notwendig. 
+ANMERKUNG AT 
+Für Glasfaserleitungen mit metallenem Außenmantel siehe OVE EN 50174-3. 
+444.4.10 Innerhalb von Gebäuden 
+Bei Problemen durch elektromagnetische Beeinflussungen in bestehenden Anlagen innerhalb von Gebäuden 
+können die folgenden Maßnahmen zu einer Verbesserung führen (siehe Bild 444.10): 
+1) 
+Verwendung metallfreier Glasfaserverbindungen für Signal- und Datenkabel/-leitungen, siehe 444.4.9; 
+2) 
+Verwendung von elektrischen Betriebsmitteln der Schutzklasse II; 
+3) 
+Verwendung von Transformatoren mit getrennten Wicklungen in Übereinstimmung mit ÖVE/ÖNORM 
+EN 61558-2-1 oder ÖVE/ÖNORM EN 61558-2-4 oder ÖVE/ÖNORM EN 61558-2-6 oder ÖVE/ÖNORM 
+EN 61558-2-15. Der Sekundärstromkreis sollte vorzugsweise als TN-S-System ausgeführt sein, bei 
+besonderen Anwendungen darf ein IT-System verwendet werden. 
+ANMERKUNG 1.AT 
+Beispiele 
+für 
+Maßnahmen 
+in 
+einem 
+bestehenden 
+Gebäude 
+sind 
+in 
+ÖVE/ÖNORM  
+EN 62305-4:2012, Bild B.8 dargestellt. 
+ 
+ANMERKUNG 2.AT 
+Wenn der Netzwerkabschluss oder die Endeinrichtung nicht leitende Umhüllungen (Gehäuse) hat, 
+wird der Schutzleiter nicht mit der Umhüllung verbunden. 
+Bild 444.10 – Beispiel für den Einsatz eines Funktionserdungsleiters zur Verbesserung bei 
+elektromagnetischen Beeinflussungen für Leiter für Telekommunikationszwecke  
+in bestehenden Anlagen [Quelle: ÖVE/ÖNORM EN 50310:2011, Bild 4] 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 245/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 33 
+Legende zu Bild 444.10 
+TE  
+Endeinrichtung 
+NT  
+Netzwerkabschluss 
+CBN 
+Gemeinsame Potentialausgleichsanlage 
+HES 
+Haupterdungsschiene 
+SPD 
+Überspannungs-Schutzeinrichtung 
+ 
+a 
+Verbindung mit niedriger Impedanz so kurz wie möglich halten 
+b 
+Schutzleiter eng am Signalkabel führen, um die Schleifenfläche zu minimieren 
+c 
+Funktionserdungsleiter (FE), z. B. Signalerdungsleiter, wahlweise für Einrichtungen mit Signalrückleitung 
+durch Erde 
+d 
+falls erforderlich 
+e 
+Verbindung so kurz wie möglich zum örtlichen CBN-Anschluss oder Kabelschirm der TE 
+f 
+Kabelschirm (wahlweise) 
+444.4.11 Schutzeinrichtungen 
+Zusätzlich zu den Anforderungen für Schutzeinrichtungen aus anderen Teilen der OVE E 8101 sollen 
+Schutzeinrichtungen mit geeigneter EMV-Funktionalität ausgewählt werden, um ein unerwünschtes Auslösen 
+durch transiente Ströme zu vermeiden. 
+444.4.12 Signalkabel und -leitungen 
+Signalkabel und -leitungen sollten mit verdrillten Adernpaaren (geschirmt oder ungeschirmt) verwendet 
+werden. 
+444.4.001.AT 
+Verbindung des Schutzleiters mit der örtlichen Potentialausgleichsanlage 
+Der Schutzleiter ist in jedem Verteiler mit der örtlichen Potentialausgleichsanlage des jeweiligen Geschoßes 
+zu verbinden (siehe Bild 444.10). 
+444.5 
+Erdung und Potentialausgleich 
+444.5.1 
+Verbinden von Erdern untereinander 
+Wenn IKT-Verbindungen zwischen mehreren Gebäuden errichtet werden sollen, kann das Konzept getrennter 
+Erdungs- und Potentialausgleichsanlagen aus nachstehenden Gründen ungeeignet sein: 
+– 
+eine Kopplung zwischen den verschiedenen Erdern führt zu Potentialunterschieden; 
+– 
+miteinander verbundene elektrische Betriebsmittel in verschiedenen Gebäuden können unterschiedliches 
+Potential zur Erde haben; 
+– 
+das Risiko eines elektrischen Schlags kann bestehen, z. B. im Fall atmosphärischer Überspannungen. 
+Deshalb kann es zweckmäßig sein, zwischen den Erdungs- und Potentialausgleichsanlagen der einzelnen 
+Gebäude geeignete Erdungs- und Potentialausgleichsverbindungen herzustellen. 
+Im Fall mehrerer Gebäude, bei denen eine Verbindung zwischen den Erdern nicht möglich oder nicht 
+praktikabel ist, wird empfohlen, entweder eine galvanische Trennung der Kommunikationsnetze, z. B. durch 
+Trenntransformatoren, Verwenden von Glasfaserverbindungen oder ungeschirmten Systemen, anzuwenden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 246/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 34 
+Alle 
+Schutzerdungsleiter 
+und 
+Funktionserdungsleiter 
+innerhalb 
+einer 
+Anlage 
+müssen 
+an 
+die 
+Haupterdungsschiene angeschlossen werden (siehe Teil 5-54). Darüber hinaus müssen alle dem Gebäude 
+zugehörigen Erdungsleiter, d. h. Schutzerdungsleiter und Funktionserdungsleiter, miteinander verbunden sein. 
+Schutzpotentialausgleichsleiter und Funktionspotentialausgleichsleiter müssen mit dem Hauptpotential-
+ausgleich so verbunden werden, dass, wenn ein Leiter getrennt wird, die Verbindungen aller anderen Leiter 
+sichergestellt bleiben. 
+444.5.2 
+Verbindung von IKT-Netzwerken und Erdungs- und Potentialausgleichsanlagen in 
+Gebäuden 
+In kleinen Anlagen, wie z. B. Wohnungen, Ein- und Mehrfamilienhäusern oder kleinen Gewerbegebäuden, in 
+denen ein IKT-Netzwerk mit einer begrenzten Zahl von elektronischen Geräten, die nicht durch Signalkabel/ 
+-leitungen miteinander verbunden sind, verwendet wird, kann die Verwendung einer sternförmig errichteten 
+Potentialausgleichsanlage ausreichend sein (siehe Bild 444.12). 
+ANMERKUNG AT 
+Schleifenbildungen bei Geräten der Schutzklasse I sind zu vermeiden. 
+Für gewerbliche, industrielle und ähnliche Gebäude, in denen sich eine Vielzahl elektronischer Geräte im 
+Einsatz befindet, kann es zur Erfüllung der vorgegebenen EMV-Anforderungen der Geräte notwendig sein, 
+eine gemeinsame vermaschte Erdungs-, Potentialausgleichs- und Blitzschutzanlage auszuführen (siehe 
+Bild 444.13). 
+EMV-Anforderungen an die Störfestigkeit der Geräte können entweder den Herstellerangaben der Geräte oder 
+den Produktnormen entnommen werden. Diese müssen bereits bei der Planung der elektrischen Anlage 
+berücksichtigt werden. 
+ANMERKUNG AT 
+Allgemeine Anforderungen an die Störfestigkeit von Geräten können der Normenreihe OVE 
+EN 61000 entnommen werden (z. B. OVE EN IEC 61000-6-1 und OVE EN IEC 61000-6-2). 
+444.5.3 
+Verschiedene Strukturen für Erdung und Potentialausgleich 
+Je nach EMV-Anforderungen für den störungsfreien Betrieb der elektrischen Betriebsmittel und den 
+elektromagnetischen Beeinflussungsmöglichkeiten kann grundsätzlich eine der in den folgenden 
+Unterabschnitten beschriebenen Erdungs- und Potentialausgleichsstruktur oder eine geeignete Kombination 
+davon ausgewählt werden, wobei die Wichtigkeit und Empfindlichkeit der Betriebsmittel berücksichtigt werden 
+sollte. 
+444.5.3.1 
+Ringförmige Potentialausgleichsanlage 
+Eine Potentialausgleichsanlage in Form eines Potentialausgleichsringleiters (BRC) ist im Bild 444.11.001.AT 
+dargestellt. Der Potentialausgleichsringleiter sollte vorzugsweise aus Kupfer sein, blank oder isoliert, und so 
+errichtet werden, dass er leicht zugänglich ist, z. B. durch Verlegung auf einer Kabelwanne, in einem 
+metallenen Elektroinstallationskanal (siehe Normenreihe OVE EN 61386), durch Auf-Putz-Montage oder in 
+einem zu öffnenden Elektroinstallationskanal. Alle Schutzerdungsleiter oder Funktionserdungsleiter dürfen mit 
+dem Potentialausgleichsringleiter verbunden werden. 
+ 
+Bild 444.11.001.AT – Ringförmige Potentialausgleichsanlagen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 247/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 35 
+Legende zu Bild 444.11.001.AT 
+1 
+ 
+Erdungsleiter  
+VM  
+Elektrisches Verbrauchsmittel 
+ 
+Potentialausgleichsleiter (für Schutz- und Funktionszwecke) 
+444.5.3.2 
+Sternförmige Potentialausgleichsanlage mittels Schutzerdungsleiter 
+Eine derartige sternförmige Potentialausgleichsanlage ist bei kleinen Anlagen, wie z. B. Wohnungen, Ein- und 
+Mehrfamilienhäusern, kleinen Gewerbegebäuden grundsätzlich für Betriebsmittel anwendbar, die nicht durch 
+Signalkabel/-leitungen miteinander verbunden sind (z. B. WLAN, siehe Bild 444.12). 
+ 
+Legende 
+1 
+ 
+Erdungsleiter 
+VM  
+Elektrisches Verbrauchsmittel 
+ 
+Schutzerdungsleiter 
+Bild 444.12 – Beispiel für Schutzleiter in einer sternförmigen Potentialausgleichsanlage 
+444.5.3.3 
+Örtliche vermaschte sternförmige Potentialausgleichsanlage 
+Eine derartige Potentialausgleichsanlage ist anwendbar bei kleinen Anlagen mit verschiedenen Gruppen von 
+örtlich untereinander verbundenen elektrischen Verbrauchsmitteln. Dies ermöglicht die örtliche Ableitung von 
+Strömen, die durch elektromagnetische Beeinflussung verursacht werden, siehe Bild 444.13. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 248/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 36 
+ 
+Legende 
+1 
+ 
+Erdungsleiter 
+FB 
+Funktionspotentialausgleichsleiter; die Länge dieser Leiter muss so kurz wie möglich sein  
+(z. B. < 50 cm) 
+VM  
+Elektrisches Verbrauchsmittel (Schutzerdungsleiter für die Verbrauchsmittel nicht dargestellt) 
+HES 
+Haupterdungsschiene 
+ 
+Schutzerdungs- sowie Potentialausgleichsleiter (für Schutz- und Funktionszwecke) 
+Bild 444.13 – Beispiele einer durch Mehrfachverbindung vermaschten,  
+sternförmigen Potentialausgleichsanlage 
+444.5.3.4 
+Vermaschte sternförmige Potentialausgleichsanlage 
+Eine derartige Potentialausgleichsanlage ist für Anlagen mit kritischen Anwendungen mit einer großen Anzahl 
+von Geräten, die miteinander über Daten- oder Signalleitungen verbunden sind (siehe Bild 444.14), geeignet. 
+Diese Potentialausgleichsanlage besteht aus den Verbindungsleitungen für Schutz- und Funktionszwecke und 
+wird um die vorhandene Metallkonstruktion des Gebäudes erweitert. Sie wird durch ein maschenförmiges 
+Gitternetzwerk ergänzt. 
+Die Maschenweite hängt ab von der ausgewählten Blitzschutzklasse, von der Störfestigkeit der eingesetzten 
+elektrischen Betriebsmittel und von den für die Datenübertragung verwendeten Frequenzen. 
+Die Maschenweite muss an die Abmessungen der zu schützenden Anlage angepasst sein, aber darf in 
+Bereichen, in denen hinsichtlich elektromagnetischer Störungen empfindliche elektrische Betriebsmittel 
+installiert sind, nicht größer als 2 m × 2 m sein. 
+Diese Methode ist z. B. für den Schutz von Nebenstellenanlagen und zentralen Datenverarbeitungssystemen 
+geeignet. 
+In manchen Fällen sind zur Erfüllung von besonderen Anforderungen für Teile des Gitternetzes engere 
+Maschen erforderlich. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 249/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 37 
+ 
+Legende 
+1 
+ 
+Erdungsleiter 
+ 
+Schutzerdungs- sowie Potentialausgleichsleiter (für Schutz- und Funktionszwecke) 
+FB 
+Funktionspotentialausgleichsleiter; die Länge dieser Leiter muss so kurz wie möglich sein  
+(z. B. < 50 cm) 
+VM  
+Elektrisches Verbrauchsmittel 
+HES 
+Haupterdungsschiene 
+Bild 444.14 – Beispiel einer vermaschten Potentialausgleichsanlage mit einer  
+sternförmigen Potentialausgleichsanlage 
+444.5.4 
+Potentialausgleichsanlagen in Gebäuden mit mehreren Geschoßen 
+Für mehrstöckige Gebäude ist in jeder Etage eine Potentialausgleichsanlage zu errichten. Die Potential-
+ausgleichsanlagen zwischen den verschiedenen Geschoßen sollten an mindestens zwei örtlich verschiedenen 
+Stellen untereinander verbunden sein. 
+Es wird empfohlen, im Rastermaß des Gebäudes mehrere Potentialausgleichsverbindungen zwischen den 
+Geschoßen auszuführen, um eine niederimpedante Potentialausgleichsanlage zu erhalten. 
+Ein gegebenenfalls erforderliches Blitzschutzsystem muss in geeigneter Weise berücksichtigt werden (siehe 
+Normenreihe ÖVE/ÖNORM EN 62305). 
+Bild 444.15 zeigt Beispiele für allgemein verwendete Potentialausgleichsanlagen, wobei für jedes Geschoß 
+eine andere Form der Potentialausgleichsanlage dargestellt wird. 
+Legende zu Bild 444.15 
+a 
+Potentialausgleichsanlage durch geschlossene Leiterschleife als Potentialausgleichsringleiter (BRC) 
+(siehe 444.5.3.1) 
+b 
+Vermaschte sternförmige Potentialausgleichsanlage (siehe 444.5.3.4) 
+c 
+Mehrfachverbindung; vermaschte, sternförmige Potentialausgleichsanlage (siehe 444.5.3.3) 
+d 
+Sternförmige Potentialausgleichsanlage (siehe 444.5.3.2) 
+ 
+Erdungs-, Schutzerdungs- sowie Potentialausgleichsleiter (für Schutz- und Funktionszwecke) 
+FB Funktionspotentialausgleichsleiter; die Länge dieser Leiter muss so kurz wie möglich sein (z. B. < 50 cm) 
+VM elektrisches Verbrauchsmittel (Schutzerdungsleiter für die Verbrauchsmittel nicht dargestellt) 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 250/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 38 
+ 
+Bild 444.15 – Beispiele von Potentialausgleichsanlagen in Gebäuden  
+(Blitzschutzsystem nicht dargestellt) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 251/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 39 
+444.5.5 
+Funktionserdungsleiter 
+Einige elektrische Betriebsmittel benötigen für ihren korrekten Betrieb ein Bezugspotential, das ungefähr dem 
+Potential der Erde entspricht. Dieses Bezugspotential wird durch den Funktionserdungsleiter sichergestellt. 
+Funktionserdungsleiter können z. B. Metallstreifen, flache Geflechte oder Kabel/Leitungen mit rundem 
+Querschnitt sein. 
+Für Betriebsmittel, die mit Hochfrequenz arbeiten, sind Metallstreifen oder flache Geflechte zu bevorzugen, 
+und die Funktionserdungsleiter müssen so kurz wie möglich ausgeführt werden. 
+Für Funktionserdungsleiter ist die Farbkennzeichnung in der Nationalen Ergänzung 51.NE mit „Rosa“, 
+Kurzbezeichnung „PK“, festgelegt. Die Farbkombination grün/gelb, die für Schutzleiter festgelegt ist, darf nicht 
+verwendet werden. 
+Die Leiterenden der Funktionserdungsleiter müssen alphanumerisch mit der Buchstabenkombination FE 
+dauerhaft gekennzeichnet werden. 
+Bei gemäß ÖVE-F 1 Teil 2 errichteten Erdungen für Fernmeldeanlagen wird für den Funktionserdungsleiter 
+teilweise die Zweifarbenkombination Schwarz/Gelb verwendet (siehe Nationale Ergänzung 51.NE). 
+Bei Betriebsmitteln, die mit Niederfrequenz arbeiten, kann angenommen werden, dass unabhängig von der 
+Leiterform die im 544.1 angegebenen Leiterquerschnitte für die Funktionserdungsleiter ausreichend sind. 
+444.5.6 
+Gewerbliche oder industrielle Gebäude mit IKT-Betriebsmitteln 
+Die folgenden Maßnahmen sind dafür vorgesehen, die Beeinflussungen durch elektromagnetische Störungen 
+in Gebäuden mit informationstechnischen Betriebsmitteln auf ein vertretbares Maß zu reduzieren. 
+In diesen Gebäuden wird empfohlen, die in 444.5.3.3 oder 444.5.3.4 beschriebenen vermaschten Potential-
+ausgleichsanlagen anzuwenden. 
+Diese Empfehlung gilt für geschirmte und ungeschirmte informationstechnische Verkabelungssysteme und 
+Glasfaserverkabelungssysteme. 
+444.5.6.1 
+Dimensionierung und Errichtung von Potentialausgleichsringleitern (BRC) 
+Wird der Potentialausgleich durch einen Potentialausgleichsringleiter realisiert, müssen folgende Mindest-
+abmessungen eingehalten werden: 
+– 
+Flachkupfer 30 mm × 2 mm; 
+– 
+Rundkupfer Durchmesser 8 mm; 
+– 
+Kupferseil 50 mm2; 
+– 
+Nichtrostender Stahl Durchmesser 10 mm; 
+– 
+Eisen verzinkt 30 mm × 3 mm. 
+Blanke Leiter müssen, um Querschnittsminderungen durch Korrosion zu verhindern, bei Wanddurchführungen 
+oder an den Befestigungseinrichtungen gegen Korrosion geschützt werden. 
+444.5.6.2 
+Teile, die mit der Potentialausgleichsanlage verbunden werden 
+Die folgenden Teile müssen ebenfalls mit der Potentialausgleichsanlage verbunden werden: 
+– 
+leitfähige Schirme, leitfähige Mäntel oder die Armierung von Datenkabeln/-leitungen oder informations-
+technischen Betriebsmitteln an den Kabel-/Leitungsenden (siehe z. B. OVE EN 50174-2:2018, 4.7.1.2); 
+– 
+Erdungsleiter der Antennenanlagen (siehe z. B. OVE EN IEC 60728-11); 
+– 
+Erdungsleiter des geerdeten Pols der Gleichstromversorgung für IKT-Betriebsmittel; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 252/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 40 
+– 
+Funktionserdungsleiter. 
+444.5.7 
+Erdung und Potentialausgleich für funktionelle Zwecke bei Anlagen der IKT 
+444.5.7.1 
+Funktionserdungsschiene 
+Wenn eine Erdungsschiene für funktionelle Zwecke erforderlich ist, kann die Haupterdungsschiene des 
+Gebäudes um eine Erdungsschiene oder einen Potentialausgleichsringleiter (BRC) erweitert werden. Dies 
+ermöglicht, dass IKT-Anlagen von jedem Punkt des Gebäudes an die Erdung- und Potentialausgleichsanlage 
+anschließbar sind. 
+ANMERKUNG 1  
+Diese Erdungsschiene kann blank oder isoliert sein. 
+ANMERKUNG 2  
+Diese Erdungsschiene sollte vorzugsweise so installiert werden, dass sie auf ihrer gesamten 
+Länge zugänglich ist. Um Korrosion zu verhindern, kann es notwendig sein, blanke Leiter an den Befestigungs-
+/Auflagestellen und in Wanddurchbrüchen gegen Korrosion zu schützen. 
+444.5.7.2 
+Querschnitt der Funktionserdungsschiene 
+Die Wirkung der Funktionserdungsschiene hängt von deren Ausführung und der Impedanz der 
+angeschlossenen Leiter ab. Für Anlagen, die an eine Stromversorgung mit einem Strom von weniger als 200 A 
+pro Außenleiter angeschlossen sind, gelten die Anforderungen gemäß Teil 5-54. Für Anlagen, die an eine 
+Stromversorgung mit einer Leistung von mindestens 200 A pro Außenleiter angeschlossen sind, muss der 
+Querschnitt der Erdungsschiene mindestens 50 mm2 Kupfer und in Übereinstimmung mit 444.4.2 k) ausgeführt 
+sein. Die Anforderungen gemäß Teil 5-54 sind jedoch ebenfalls zu berücksichtigen. 
+ANMERKUNG 1  
+Diese Feststellung gilt für Frequenzen bis 10 MHz. 
+ANMERKUNG AT 
+Die Wirkung der Erdungs- und Potentialausgleichsanlage hängt von der Impedanz des 
+Schutzerdungs-, Potentialausgleichs- und Erdungsleiternetzes und somit z. B. von der Maschenweite, der Trassenführung 
+der Leiter bzw. der Schirmbehandlung der Leiter ab. 
+Wird die Funktionserdungsschiene als Teil eines Gleichstromrückleiters verwendet, muss ihr Querschnitt 
+entsprechend den erwarteten Rückströmen dimensioniert werden. Die Funktionserdungsschiene, die als 
+Rückleiter der Gleichstromversorgung mit verwendet wird, muss so dimensioniert sein, dass der maximale 
+Spannungsabfall auf der Erdungsschiene kleiner als DC 1 V ist. 
+444.5.7.Z1 Erdungsverbindungen in Kommunikations-Schränken und -Rahmen 
+Um Potentialunterschiede zwischen dem vorhandenen Erder und einer neu errichteten Anlage zu vermeiden, 
+müssen geeignete Maßnahmen angewendet werden. 
+Anforderungen dazu siehe OVE EN 50310:2020, 7.5. 
+444.6 
+Getrennte Verlegung von Stromkreisen 
+444.6.1 
+Allgemeines 
+Kabel und Leitungen der Stromversorgung (Niederspannung) und Kabel und Leitungen der Informations-
+technik (Kleinspannung (ELV)), die in demselben Kabelverlegesystem oder in demselben Kabelführungs-
+system untergebracht sind, müssen die folgenden Anforderungen erfüllen. 
+Bei der Prüfung der Schutzmaßnahme für den Schutz gegen elektrischen Schlag durch automatische 
+Abschaltung der Stromversorgung muss Abschnitt 411, und bei der Überprüfung der Trennungsabstände von 
+elektrischen Stromkreisen muss 528.1 berücksichtigt werden. 
+Die elektrische Sicherheit und die elektromagnetische Verträglichkeit können unterschiedliche Anforderungen 
+in Bezug auf elektrische Trennung durch Abstand oder durch mechanische Abtrennung ergeben. Die 
+elektrische Sicherheit hat immer Vorrang. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 253/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 41 
+Körper (eines elektrischen Betriebsmittels) von Kabel- und Leitungssystemen, z. B. Kabelkanäle, Befestigungs-
+teile und Abtrennungen, müssen entsprechend den Anforderungen für den Fehlerschutz geschützt sein (siehe 
+Abschnitt 413). 
+444.6.2 
+Festlegung von Trennanforderungen 
+Die Verlegung von Kabeln und Leitungen der Stromversorgung und Kabeln und Leitungen der Informations-
+technik und die Einhaltung der erforderlichen Mindestabstände muss gemäß der Normenreihe OVE EN 50174 
+erfolgen. Siehe dazu auch 528.2. 
+444.6.3 
+Lockerung der Trennanforderungen 
+Bedingungen für Lockerungen der Trennanforderungen von 444.6.2 zwischen der informationstechnischen 
+Verkabelung und den Stromversorgungsleitungen siehe OVE EN 50174-2. 
+444.7 
+Kabelführungssysteme 
+444.7.1 
+Allgemeines 
+Kabelführungssysteme gibt es in metallener und nichtmetallener Ausführung. Metallene Systeme bieten 
+unterschiedliche Grade eines Schutzes gegen elektromagnetische Störungen (EMI), wobei sie in 
+Übereinstimmung mit den Anforderungen gemäß 444.6 bzw. Normenreihe OVE EN 50174 errichtet werden 
+müssen. 
+444.7.2 
+Leitlinien für die Auswahl von Kabelführungssystemen 
+Bei der Auswahl von Kabelführungssystemen nach „Art, Material, Form“ sollte Folgendes berücksichtigt 
+werden: 
+a) 
+die Stärke des elektromagnetischen Felds entlang des Verlegewegs (Nähe von Quellen leitungs-
+gebundener und ausgestrahlter elektromagnetischer Störungen); 
+b) 
+die zulässigen Pegel leitungsgebundener und ausgestrahlter Störaussendungen; 
+c) 
+die Bauart der Kabel- oder Leitungen (geschirmt, verdrillt, Glasfaser); 
+d) 
+die elektromagnetische Störfestigkeit der angeschlossenen Betriebsmittel; 
+e) 
+andere umgebungsbedingte Beanspruchungen (chemisch, mechanisch, klimatisch, Feuer, usw.); 
+f) 
+zukünftige Erweiterungen der Kabel- und Leitungsanlage der Informationstechnik. 
+Nichtmetallene Kabel- und Leitungsführungssysteme sind in folgenden Fällen geeignet: 
+– 
+wenn entsprechend der elektromagnetischen Umgebung die angeschlossenen Betriebsmittel nach der 
+Normenreihe OVE EN IEC 61000-6 mit der geforderten Festigkeit ausgewählt werden und bei 
+Verwendung metallischer Ummantelungen nach den Anforderungen in 444.6.2 oder 444.6.3; 
+– 
+Lichtwellenleiter. 
+Werden Lichtwellenleiter nicht verwendet und können für die entsprechende elektromagnetische Umgebung 
+die angeschlossenen Betriebsmittel nach der Normenreihe OVE EN IEC 61000-6 mit der geforderten 
+Festigkeit nicht erfüllt werden, ist der elektromagnetische Schutz durch ein Kabelführungssystem 
+sicherzustellen. 
+Für metallene Bauteile der Tragsysteme von Kabeln und Leitungen bestimmt mehr die Form (eben, U-Form, 
+Rohr usw.) als der Querschnitt die charakteristische Impedanz des Kabelführungssystems. Geschlossene 
+Formen sind am besten, weil sie die allgemeine Einkopplung reduzieren. 
+Der nutzbare Raum innerhalb des Kabelführungssystems sollte die Verlegung einer vereinbarten Menge 
+zusätzlicher Kabel und Leitungen erlauben. Die Höhe des Kabel- und Leitungsbündels muss niedriger sein als 
+die Seitenwände des Kabelführungssystems (siehe Bild 444.16). Die Verwendung überlappender Klappen 
+verbessert die Eignung des Kabelführungssystems im Hinblick auf elektromagnetische Verträglichkeit. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 254/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 42 
+Bei einem Kabelführungssystem in U-Form ist das magnetische Feld in der Nähe der beiden Ecken kleiner. 
+Aus diesem Grund werden hohe Seitenwände bevorzugt. 
+ 
+Bild 444.16 – Kabel- und Leitungsanordnungen in metallenen Kabelführungssystemen 
+Die Auswahl von Kabelführungssystemen und die getrennte aber auch die gemeinsame Verlegung von Kabeln 
+und Leitungen der Stromversorgung und Kabeln und Leitungen der Informationstechnik muss gemäß der 
+Normenreihe OVE EN 50174 erfolgen. 
+ANMERKUNG AT 
+Bei der Auswahl von Kabelführungssystemen sind insbesondere folgende Gesichtspunkte 
+wesentlich: 
+– 
+MICE-Umweltklassifizierung nach OVE EN 50173-1; 
+–  
+Art der Kabel und Leitungen, die darin verlegt werden sollen; 
+–  
+elektromagnetische Eigenschaften des Kabelführungssystems; 
+–  
+Anforderungen an Trennabstände siehe OVE EN 50173-1:2018, 6. 
+444.Z1 Errichtung metallener oder kombinierter Kabelführungssysteme vorgesehen als 
+EMV-Maßnahme 
+Speziell für elektromagnetische Verträglichkeit entwickelte oder konstruierte metallene oder aus 
+Verbundwerkstoffen (kombiniertes Metall-Nichtmetall) bestehende Kabelführungssysteme müssen immer an 
+beiden Enden an die örtliche Potentialausgleichsanlage angeschlossen werden. Bei langen Verlegewegen, 
+d. h. > 50 m, sind zusätzliche Verbindungen mit der Potentialausgleichsanlage empfohlen. Alle Verbindungen 
+müssen so kurz wie möglich sein. In Fällen, wo Kabelführungssysteme aus mehreren Bauteilen bestehen, 
+sollte Sorge dafür getragen werden, dass die Durchgängigkeit durch wirksame Verbindungen zwischen 
+benachbarten Bauteilen sichergestellt ist. Vorzugsweise sollten die Bauteile über ihren gesamten Umfang 
+zusammengeschweißt werden. Verbindungen durch Nieten, Bolzen oder Schrauben sind erlaubt, 
+vorausgesetzt, die Oberflächen sind gute Leiter, d. h. sie haben keinen Farbanstrich und keine isolierende 
+Abdeckung, sie sind gegen Korrosion geschützt, und ein elektrisch guter Kontakt zwischen benachbarten 
+Bauteilen ist sichergestellt. 
+Die Form der metallenen Abschnitte des Kabelführungssystems sollte über die gesamte Länge gleichbleibend 
+sein. Alle Verbindungen untereinander müssen eine niedrige Impedanz haben. Einzelne kurze 
+Verbindungsleitungen zwischen zwei Teilen eines Kabelführungssystems führen örtlich zu einer hohen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 255/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 43 
+Impedanz 
+und 
+dadurch 
+zu 
+einer 
+Abschwächung 
+der 
+elektromagnetischen 
+Schirmwirkung 
+des 
+Kabeltragesystems (siehe Bild 444.17). 
+a 
+ungeeignet 
+ 
+b 
+geeignet 
+ 
+c 
+empfohlen 
+ 
+Bild 444.17 – Beispiele von Ausführungen der Durchgängigkeit metallener Bauteile des 
+Kabeltragsystems zur Erreichung elektromagnetischer Verträglichkeit 
+Für Frequenzen von wenigen MHz aufwärts schwächt eine 10 cm lange Flechtverbindung zwischen zwei Teilen 
+eines Kabelverlegungssystems die Schirmwirkung um mehr als den Faktor 10 (20 dB) ab. Bei jeder 
+Erweiterung oder Änderung des Kabelführungssystems muss die elektromagnetische Verträglichkeit 
+beibehalten werden. 
+ANMERKUNG 
+Es wird darauf hingewiesen, dass in Teil 1 der OVE E 8101 Anforderungen für Erweiterung oder 
+Änderungen enthaltenen sind. 
+Wo metallene Abdeckungen bei metallenen Kabelführungssystemen verwendet werden, sind die Abdeckungen 
+an möglichst vielen Stellen über die gesamten Längen mit dem metallenen Kabelführungssystem zu verbinden. 
+Wenn diese Verbindungen nicht möglich sind, sollten die Abdeckungen mit dem Kabelführungssystem 
+mindestens an beiden Enden durch kurze Anschlüsse von weniger als 10 cm Länge, z. B. durch feindrähtige 
+Leitungen oder Flechtverbindungen, verbunden sein. 
+Bild 444.18 zeigt Kabelführungssysteme, die durch eine Mauer mit Brandschottung geführt werden. Wenn es 
+erforderlich ist, Kabelführungssysteme zu unterbrechen, um sie durch Gebäudeteile zu führen (z. B. Böden, 
+Wände), müssen die metallenen Abschnitte des Kabelführungssystems miteinander verbunden werden.  
+ 
+Bild 444.18 – Unterbrechung metallener Kabelführungssysteme in Brandabschottungen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 256/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 44 
+Vorschriften für Brandschottungen haben Vorrang. 
+Die Errichtung metallener oder kombinierter Kabelführungssysteme für Kabel und Leitungen der 
+Informationstechnik als EMV-Maßnahme muss gemäß der Normenreihe OVE EN 50174 erfolgen. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 257/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-45 – Seite 1 
+Teil 4-45 Schutz gegen Unterspannung 
+Inhalt Teil 4-45 
+450.001.AT 
+Anwendungsbereich 
+450.002.AT 
+Normative Verweisungen 
+450.003.3.AT 
+Begriffe 
+451 
+Allgemeine Anforderungen 
+ 
+ 
+450.001.AT Anwendungsbereich 
+Dieser Teil gilt für Schutzvorkehrungen gegen Unterspannung in elektrischen Niederspannungsanlagen. 
+450.002.AT Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+450.003.AT Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+451 Allgemeine Anforderungen 
+451.1 
+Wenn ein Spannungseinbruch oder ein Spannungsausfall mit anschließender Spannungs-
+wiederkehr zu Gefahren für Personen oder Sachen führen kann, müssen hiergegen geeignete Abhilfe-
+maßnahmen getroffen werden. Solche Maßnahmen müssen auch getroffen werden, wenn durch den 
+Spannungseinbruch Teile der elektrischen Anlage oder einzelne Verbrauchsmittel beschädigt werden können. 
+Unterspannungs-Schutzeinrichtungen werden nicht gefordert, wenn das Risiko einer Beschädigung der 
+elektrischen Anlage oder von Verbrauchsmitteln als tragbar angesehen wird, vorausgesetzt, hieraus entstehen 
+keine Gefahren für Personen. 
+451.2 
+Es dürfen zeitverzögerte Unterspannungs-Schutzeinrichtungen verwendet werden, wenn der Betrieb 
+der zu schützenden Geräte eine kurze Spannungsunterbrechung oder einen kurzen Spannungseinbruch 
+gefahrlos gestattet. 
+451.3 
+Werden Schütze verwendet, darf eine Abfall- oder Anzugsverzögerung die sofortige Ausschaltung 
+durch Steuer- oder Schutzeinrichtungen nicht verhindern. 
+451.4 
+Die Kenngrößen der Unterspannungs-Schutzeinrichtungen müssen auf die Anforderungen für das 
+Zuschalten (den Anlauf) und den Betrieb der elektrischen Betriebsmittel entsprechend den Produkt-
+bestimmungen abgestimmt sein. 
+451.5 
+Wenn damit gerechnet werden muss, dass durch das Wiedereinschalten durch die Schutzeinrichtung 
+eine Gefahr verursacht werden kann, darf die Wiedereinschaltung nicht automatisch erfolgen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 258/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-45 – Seite 2 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 259/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 1 
+Teil 4-46 Trennen und Schalten 
+Inhalt Teil 4-46 
+460.1 
+Anwendungsbereich 
+460.2 
+Normative Verweisungen 
+461 
+Allgemeines 
+462 
+Trennen 
+463 
+Betriebsmäßiges Schalten (Steuern) 
+463.1 
+Allgemeines 
+463.2 
+Hilfsstromkreise 
+463.3 
+Motorsteuerungen 
+464 
+Ausschalten für mechanische Instandhaltung 
+465 
+Not-Ausschaltung (Ausschalten im Notfall) 
+Anhang 46.A (informativ)  Erläuterungen bezüglich Handlungen im Notfall 
+ 
+ 
+460.1 
+Anwendungsbereich 
+Dieser Teil gilt 
+– 
+für das nicht-automatische örtliche und dezentrale Trennen und Schalten, um Gefahren im 
+Zusammenhang mit elektrischen Anlagen und elektrisch versorgten Betriebsmitteln und Maschinen zu 
+verhindern oder zu beseitigen; 
+– 
+für das betriebsmäßige Schalten von Stromkreisen und elektrischen Betriebsmitteln. 
+ANMERKUNG AT 
+Geräte zum Schalten und Trennen siehe Abschnitt 537. 
+460.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+461 Allgemeines 
+461.1 
+Entsprechend der (den) vorgesehenen Funktion(en) muss jede Einrichtung zum Trennen und 
+Schalten mit den entsprechenden Anforderungen von Abschnitt 537 übereinstimmen. 
+ANMERKUNG AT 
+Wird ein Gerät für mehr als eine Funktion eingesetzt, so muss es den Anforderungen für jede 
+dieser Funktionen genügen. Unter bestimmten Voraussetzungen können für kombinierte Funktionen zusätzliche 
+Anforderungen notwendig sein. 
+461.2 
+Im Allgemeinen darf in TN-C-Systemen und im TN-C-Teil des TN-C-S-Systems im PEN-Leiter keine 
+Einrichtung zum Trennen oder Schalten eingebaut werden. 
+ANMERKUNG 1.AT 
+Andere Teile bzw. Abschnitte von OVE E 8101, z. B. Abschnitt 551, können Ausnahmen von 
+dieser Anforderung enthalten. 
+ANMERKUNG 2.AT 
+Das Schalten eines Schutzleiters ist grundsätzlich nicht zulässig, siehe 543.3.3. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 260/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 2 
+In TN-C-S- und TN-S-Systemen muss der Neutralleiter nicht getrennt oder geschaltet werden, wenn ein 
+Schutzpotentialausgleich errichtet ist und entweder 
+– 
+der Neutralleiter zuverlässig und so niederohmig mit Erde verbunden ist, dass die Ausschaltzeiten der 
+Schutzeinrichtungen den Anforderungen von Teil 4-41 entsprechen, oder 
+– 
+wenn das Stromversorgungsunternehmen erklärt, dass entweder der PEN-Leiter oder der Neutralleiter 
+zuverlässig und so niederohmig mit Erde verbunden ist, dass die Ausschaltzeiten der Schutzeinrichtungen 
+den Anforderungen von Teil 4-41 entsprechen. 
+462 Trennen 
+462.1 
+Jede elektrische Anlage muss mit Einrichtungen zum Trennen von allen Versorgungen ausgestattet 
+sein. 
+462.2 
+Jeder Stromkreis muss mit einer Einrichtung ausgestattet sein, die alle aktiven Leiter von der 
+Stromversorgung trennen kann, ausgenommen wie in 461.2 beschrieben. 
+Eine Gruppe von Stromkreisen darf durch eine gemeinsame Einrichtung getrennt werden, wenn die 
+Betriebsbedingungen dies erlauben. 
+462.3 
+Es sind geeignete Mittel anzuwenden oder Maßnahmen zu treffen, die eine unbeabsichtigte oder 
+versehentliche Versorgung/Inbetriebnahme von Betriebsmitteln verhindern. 
+462.4 
+Wo möglicherweise gespeicherte elektrische Energie oder Restladung vorhanden ist oder 
+Einkopplung erfolgt, muss durch geeignete Maßnahmen eine Entladung sichergestellt sein. 
+Wenn zutreffend, muss ein Warnschild die Entladungszeit oder die erforderliche Zeitspanne ausweisen, die 
+einzuhalten ist, bevor das elektrische Betriebsmittel oder die Umhüllung geöffnet werden darf. 
+ANMERKUNG 
+Speichereinheiten brauchen nicht entladen zu werden, weil sie als Einspeisequellen betrachtet werden. 
+463 Betriebsmäßiges Schalten (Steuern) 
+463.1 
+Allgemeines 
+463.1.1 Für jeden Teil eines Stromkreises, der unabhängig von anderen Anlagenteilen geschaltet werden 
+soll, muss eine Einrichtung zum betriebsmäßigen Schalten vorhanden sein. 
+463.1.2 Schaltgeräte zum betriebsmäßigen Schalten müssen nicht unbedingt alle aktiven Leiter eines 
+Stromkreises schalten. 
+Das Schalten des Neutralleiters muss gemäß 530.4.2 erfolgen. 
+Ein einpoliges Schaltgerät darf nicht im Neutralleiter eingesetzt werden, ausgenommen in Steuerstromkreisen 
+für Beleuchtung, siehe Bild 46.1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 261/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 3 
+ 
+Legende 
+1 
+Steuerstromkreis für Beleuchtung 
+2 
+Stromkreis für Beleuchtung 
+3 
+Steuergerät 
+Bild 46.1 – Steuerstromkreis für Beleuchtung mit Taster im Neutralleiter 
+463.1.001.AT 
+Einpolige Wechselschalter müssen bei einer Wechselschaltung im (selben) Außenleiter 
+angeschlossen sein (siehe Bild 46.001.AT). 
+ 
+Bild 46.001.AT – Zulässige und unzulässige Ausführung der Wechselschaltung 
+463.1.3 Im Allgemeinen müssen alle elektrischen Verbrauchsmittel, für die ein betriebsmäßiges Schalten 
+gefordert wird, durch ein dafür geeignetes Schaltgerät geschaltet werden. 
+Ein einzelnes Schaltgerät zum betriebsmäßigen Schalten darf mehrere Verbrauchsmittel schalten, die für 
+gleichzeitigen Betrieb vorgesehen sind. 
+463.1.4 Schaltgeräte zum betriebsmäßigen Schalten, die das Umschalten alternativer Versorgungen 
+sicherstellen, müssen alle aktiven Leiter ausschalten und dürfen die Parallelschaltung mehrerer 
+Einspeisequellen nicht zulassen, es sei denn, die Anlage ist speziell für diese Betriebsart ausgelegt. 
+463.2 
+Hilfsstromkreise 
+Hilfsstromkreise müssen so geplant, angeordnet und geschützt sein, dass Gefahren begrenzt werden, die 
+durch einen Fehler innerhalb des Hilfsstromkreises oder durch einen Isolationsfehler zwischen dem 
+Hilfsstromkreis und anderen leitfähigen Teilen sowie daraus resultierende Fehlfunktionen (z. B. 
+unbeabsichtigter Betrieb) des gesteuerten Geräts entstehen können (siehe auch Abschnitt 557). 
+463.3 
+Motorsteuerungen 
+463.3.1 Motorsteuerstromkreise müssen so ausgelegt sein, dass sie den automatischen Wiederanlauf eines 
+Motors nach einem Stillstand durch Einbruch oder Ausfall der Spannung verhindern, wenn dieser Wiederanlauf 
+eine Gefahr hervorrufen kann. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 262/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 4 
+Erdschlüsse in Steuerstromkreisen dürfen keinen ungewollten Wiederanlauf oder möglicherweise Gefahr 
+hervorrufende Bewegungen verursachen oder die Stillsetzung eines Motors verhindern. 
+463.3.2 Wenn Motor-Gegenstrombremsung vorgesehen ist, müssen Vorkehrungen zur Vermeidung der 
+Drehrichtungsumkehr nach Beendigung des Bremsvorgangs getroffen werden, wenn eine Umkehr Gefahr 
+hervorrufen kann. 
+463.3.3 Wenn eine falsche Drehrichtung eines Motors eine Gefahr hervorrufen kann, müssen Vorkehrungen 
+zur Verhinderung der falschen Drehrichtung infolge einer Phasenumkehr getroffen werden. 
+ANMERKUNG 
+Es wird auf die Gefahr hingewiesen, die durch einen Phasenausfall entstehen kann. 
+464 Ausschalten für mechanische Instandhaltung 
+464.1 
+Wenn die mechanische Instandhaltung ein Verletzungsrisiko einschließt, müssen Einrichtungen zum 
+Ausschalten vorhanden sein. 
+Diese Einrichtungen zum Ausschalten müssen zum Trennen geeignet sein und alle aktiven Leiter ausschalten, 
+ausgenommen wie in 461.2 beschrieben. 
+ANMERKUNG 1.AT 
+Elektrisch versorgte mechanische Betriebsmittel können sowohl drehende Maschinen als auch 
+Heizelemente und elektromagnetische Geräte einschließen. 
+Für elektrisch versorgte Betriebsmittel, die in den Anwendungsbereich der OVE EN 60204-1 fallen, gelten die 
+dort enthaltenen Anforderungen. 
+ANMERKUNG 2.AT 
+Systeme, die mit anderen Energien betrieben werden, z. B. Pneumatik, Hydraulik, Dampf, sind 
+durch diese Anforderung nicht abgedeckt. In solchen Fällen kann die alleinige Ausschaltung einer zugeordneten 
+elektrischen Versorgung unzureichend sein. 
+464.2 
+Es müssen geeignete Einrichtungen oder Maßnahmen vorhanden sein, die ein unbeabsichtigtes 
+Wiedereinschalten elektrisch versorgter Betriebsmittel während der mechanischen Wartung verhindern, es sei 
+denn die Einrichtung zum Ausschalten ist unter der dauernden Kontrolle einer Person, die diese Wartung 
+durchführt. 
+465 Not-Ausschaltung (Ausschalten im Notfall) 
+ANMERKUNG 
+Im informativen Anhang 46.A sind Erläuterungen bezüglich Handlungen im Notfall enthalten. 
+465.1 
+Für jeden Anlagenteil, bei dem es notwendig sein kann, auf die Versorgung Einfluss zu nehmen, um 
+eine unerwartete Gefährdung abzuwenden, müssen Einrichtungen für das Ausschalten im Notfall vorhanden 
+sein. 
+465.2 
+Wenn die Gefahr eines elektrischen Schlags besteht, muss die Einrichtung zum Ausschalten im 
+Notfall alle aktiven Leiter ausschalten, ausgenommen wie in 461.2 beschrieben. 
+465.3 
+Einrichtungen zum Ausschalten im Notfall müssen so direkt wie möglich auf die betreffenden 
+Versorgungsleiter einwirken. 
+Die Einrichtung muss so ausgeführt sein, dass eine einzige Handlung die betreffenden Versorgungen 
+unterbricht. 
+465.4 
+Die Einrichtung zum Schalten im Notfall muss so ausgeführt sein, dass ihre Betätigung (Ein- und 
+Ausschalten) weder eine weitere Gefahr hervorruft noch den vollständigen Prozess beeinträchtigt, der 
+notwendig ist, die Gefahr zu beseitigen. 
+Die Wirkungsweise der Einrichtung zum Schalten im Notfall darf die Wirksamkeit von Schutzeinrichtungen 
+sowie andere Sicherheitsfunktionen nicht beeinträchtigen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 263/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 5 
+Anhang 46.A 
+(informativ) 
+ 
+Erläuterungen bezüglich Handlungen im Notfall 
+46.A.1 
+Allgemeines 
+Dieses Konzept dient dazu, den Gebrauch von Begriffen im Zusammenhang mit „Notfällen“ zu vereinheitlichen. 
+Sie werden hier angeführt, um dem Leser das Verständnis für den Anwendungsbereich solcher Begriffe zu 
+erleichtern, obwohl in dieser Norm nur einer von ihnen benutzt wird. 
+46.A.2 
+Handlung im Notfall 
+Eine Handlung, die vorgesehen ist, so schnell wie möglich eine Gefahr, die unerwartet aufgetreten ist, zu 
+beseitigen. 
+Eine Handlung im Notfall schließt einzeln oder in Kombination ein: 
+– 
+Not-Halt (Stillsetzen im Notfall); 
+– 
+Ingangsetzen im Notfall; 
+– 
+Not-Ausschaltung (Ausschalten im Notfall); 
+– 
+Einschalten im Notfall. 
+46.A.3 
+Not-Halt (Stillsetzen im Notfall) 
+Eine Handlung im Notfall, die dazu bestimmt ist, einen Prozess oder eine Bewegung anzuhalten, der (die) 
+gefahrbringend wurde. 
+46.A.4 
+Ingangsetzen im Notfall 
+Eine Handlung im Notfall, die dazu bestimmt ist, einen Prozess oder eine Bewegung zu starten, um eine 
+gefahrbringende Bedingung zu beseitigen oder zu verhindern. 
+46.A.5 
+Not-Ausschaltung (Ausschalten im Notfall) 
+Eine Handlung im Notfall, die dazu bestimmt ist, die Versorgung mit elektrischer Energie zu einer ganzen 
+Anlage oder zu einem Teil einer Anlage abzuschalten, falls ein Risiko für einen elektrischen Schlag oder ein 
+anderes Risiko elektrischen Ursprungs besteht. 
+46.A.6 
+Einschalten im Notfall 
+Eine Handlung im Notfall, die dazu bestimmt ist, die Versorgung mit elektrischer Energie zu einem Teil einer 
+Anlage einzuschalten, die für Notfall-Situationen vorgesehen ist. 
+ANMERKUNG 
+Die Worte „Schalten im Notfall“ können sowohl ein Ausschalten im Notfall als auch ein Einschalten im 
+Notfall beinhalten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 264/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-46 – Seite 6 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 265/852 =====
+OVE E 8101:2025-10-01 
+Teil 5 – Seite 1 
+Teil 5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+Teil 5-51  
+Allgemeine Bestimmungen 
+Teil 5-52  
+Kabel- und Leitungsanlagen 
+Teil 5-53  
+Schalt- und Steuergeräte 
+Teil 5-54  
+Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+Teil 5-55  
+Andere elektrische Betriebsmittel 
+Teil 5-56  
+Einrichtungen für Sicherheitszwecke 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 266/852 =====
+OVE E 8101:2025-10-01 
+Teil 5 – Seite 2 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 267/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 1 
+Teil 5-51 Allgemeine Bestimmungen 
+Inhalt Teil 5-51 
+510.1 
+Anwendungsbereich 
+510.2 
+Normative Verweisungen 
+510.3 
+Allgemeine Anforderungen 
+511 
+Übereinstimmung mit Normen 
+511.1 
+Allgemeines 
+511.2 
+Zusätzliche Anforderungen bezüglich Erklärung des Herstellers 
+512 
+Betriebsbedingungen und äußere Einflüsse 
+512.1 
+Betriebsbedingungen 
+512.2 
+Äußere Einflüsse 
+513 
+Zugänglichkeit 
+514 
+Kennzeichen 
+514.1 
+Allgemeines 
+514.2 
+Kabel- und Leitungsanlagen 
+514.3 
+Kennzeichnung von Leitern 
+514.4 
+Schutzeinrichtungen 
+514.5 
+Schaltpläne und Dokumentation 
+515 
+Vermeidung gegenseitiger nachteiliger Beeinflussung 
+515.3 
+Elektromagnetische Verträglichkeit 
+516 
+Maßnahmen bezüglich Schutzleiterströmen 
+516.1 
+Transformatoren 
+516.2 
+Informationssysteme 
+Anhang 51.A (informativ)  Kurzfassung der äußeren Einflüsse (Umgebungseinflüsse) 
+Anhang 51.ZA (informativ)  Äußere Einflüsse (Umgebungseinflüsse) 
+Anhang 51.ZB (informativ)  Kennzeichnung von PEN-Leitern in verschiedenen Ländern 
+Anhang 51.ZC (informativ)  Kennzeichnung von Adern 
+Nationale Ergänzung 51.NE (normativ)  Kennzeichnung von Leitern – Ergänzende Anforderungen zu 514.3 
+sowie ergänzende nationale Anforderungen 
+ 
+ 
+510.1 
+Anwendungsbereich 
+Dieser Teil behandelt die Auswahl von elektrischen Betriebsmitteln und deren Installation. 
+Er enthält gemeinsame Regeln und Anforderungen 
+– 
+zur Einhaltung von Schutzmaßnahmen, 
+– 
+hinsichtlich des zufriedenstellenden Betriebs der Anlage bei bestimmungsgemäßer Verwendung und 
+– 
+entsprechend den vorhersehbaren äußeren Einflüssen. 
+ANMERKUNG 
+Das schließt nicht aus, dass für die Auswahl und Installation von elektrischen Betriebsmitteln für 
+bestimmte Anlagen ergänzende Anforderungen gelten (wie z. B. OVE-Richtlinie R 7 für eine luftdichte Gebäudehülle). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 268/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 2 
+510.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+510.3 
+Allgemeine Anforderungen 
+Elektrische Betriebsmittel müssen so ausgewählt und installiert werden, dass die Anforderungen der folgenden 
+Abschnitte dieses Teils und die relevanten Anforderungen anderer Teile von OVE E 8101 eingehalten werden. 
+511 Übereinstimmung mit Normen 
+511.1 
+Allgemeines 
+Jedes elektrische Betriebsmittel muss mit den gesetzlichen Bestimmungen, unter vorzugsweiser Anwendung 
+der entsprechenden Europäischen Normen (EN) oder entsprechenden Harmonisierungsdokumente (HD) oder 
+entsprechenden nationalen Normen, übereinstimmen. Bestehen keine geeigneten europäischen oder 
+nationalen Normen oder Harmonisierungsdokumente, können IEC-Normen oder nationale Normen anderer 
+Länder angewandt werden. Wenn es für ein bestimmtes elektrisches Betriebsmittel keine anwendbaren 
+Normen gibt, muss die Auswahl auf Basis einer besonderen Vereinbarung zwischen dem Errichter und der 
+Person, die die elektrische Anlage geplant hat, erfolgen. 
+ 
+511.2 
+Zusätzliche Anforderungen bezüglich Erklärung des Herstellers 
+Wenn es für ein bestimmtes elektrisches Betriebsmittel keine anwendbaren Normen gibt (z. B. neu entwickeltes 
+Produkt), muss der Hersteller dieses Betriebsmittels der für die Anlagenplanung zuständigen Person oder dem 
+Errichter der Anlage eine entsprechende Dokumentation und Konformitätsnachweise entsprechend den 
+gesetzlichen Bestimmungen zur Verfügung stellen. 
+512 Betriebsbedingungen und äußere Einflüsse 
+512.1 
+Betriebsbedingungen 
+512.1.1 
+Spannung 
+Elektrische Betriebsmittel müssen für die Nennspannung (bei Wechselspannung für den Effektivwert) des Teils 
+der betreffenden Anlage ausgelegt sein. 
+Ist in Drehstromsystemen, die als IT-System ausgeführt sind, ein Neutralleiter vorhanden, so müssen die 
+elektrischen Betriebsmittel, die zwischen einem Außenleiter und dem Neutralleiter angeschlossen sind, 
+grundsätzlich für die verkettete Spannung isoliert sein. 
+ANMERKUNG AT 
+Diese Anforderung resultiert aus dem Betrieb eines IT-Systems bei Auftreten eines ersten Fehlers 
+(Erdschluss) in einem Außenleiter und betrifft ausschließlich die Isolierung der Außenleiter gegen Erde und geerdete Teile. 
+ANMERKUNG 
+Bei bestimmten elektrischen Betriebsmitteln kann es erforderlich sein, die höchste und/oder niedrigste 
+Spannung, die bei bestimmungsgemäßem Betrieb auftreten kann, zu berücksichtigen. 
+Von dieser Forderung zur Auslegung der Isolierung für die verkettete Spannung kann abgesehen werden, 
+wenn beim ersten Fehler in einem IT-System eine automatische Abschaltung gemäß 411.6.3.2.001.AT 
+sichergestellt ist. 
+512.1.2 
+Strom 
+Elektrische Betriebsmittel müssen für den vorgesehenen Betriebsstrom (bei Wechselstrom für den 
+Effektivwert), den sie bei bestimmungsgemäßem Betrieb führen, ausgelegt sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 269/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 3 
+Elektrische Betriebsmittel müssen außerdem geeignet sein, jene Ströme für eine Dauer gemäß der 
+Ansprechkennlinien der verwendeten Schutzeinrichtungen zu führen, die im gestörten Betrieb auftreten 
+können. 
+512.1.3 
+Frequenz 
+Wenn die Frequenz Einfluss auf die Eigenschaften eines elektrischen Betriebsmittels hat, so muss die 
+Bemessungsfrequenz des elektrischen Betriebsmittels der Frequenz des Stroms in dem betreffenden 
+Stromkreis entsprechen. 
+512.1.4 
+Leistung 
+Elektrische Betriebsmittel, die aufgrund ihrer Leistungskenndaten ausgewählt wurden, müssen für die 
+bestimmungsgemäßen Betriebsbedingungen unter Berücksichtigung des Gleichzeitigkeitsfaktors geeignet 
+sein. 
+ANMERKUNG 
+Der Gleichzeitigkeitsfaktor (IEV 691-10-03) ist das Verhältnis des gleichzeitigen maximalen 
+Leistungsbedarfs einer Gruppe elektrischer Geräte oder Verbraucher innerhalb eines bestimmten Zeitabschnitts zur 
+Summe ihrer individuellen maximalen Leistungsbedürfnisse innerhalb desselben Zeitabschnitts als numerischer Wert oder 
+in Prozent ausgedrückt. 
+512.1.5 
+Verträglichkeit 
+Elektrische Betriebsmittel sind so auszuwählen, dass sie, auch unter Berücksichtigung von Schaltvorgängen, 
+weder schädliche Einflüsse auf andere Betriebsmittel verursachen noch die Versorgung während des normalen 
+Betriebs unzulässig beeinflussen, es sei denn, es werden andere geeignete Vorkehrungen während der 
+Errichtung getroffen. 
+ANMERKUNG 
+Informationen zu den zu berücksichtigenden Parametern sind in Abschnitt 444 zu finden. 
+ANMERKUNG AT 
+Siehe auch Nationale Ergänzung 1.NE in Teil 1 – Ergänzung zu 132.13 – Dokumentation der 
+elektrischen Anlagen – Mindestumfang gemäß OVE E 8101. 
+512.1.Z1 Bemessungs-Stoßspannung 
+Elektrische Betriebsmittel müssen so ausgewählt werden, dass ihre Bemessungs-Stoßspannung mindestens 
+so groß ist wie die zu erwartende Überspannung an ihrem Einbauort in der Anlage, entsprechend 
+Abschnitt 443. 
+512.2 
+Äußere Einflüsse 
+Siehe Anhang 51.A und Anhang 51.ZA. 
+ANMERKUNG AT 
+Die Forderung, äußere Einflüsse zu berücksichtigen, ergibt sich aus 133.3. 
+Elektrische Betriebsmittel müssen unter Berücksichtigung der äußeren Einflüsse, die charakteristisch für ihren 
+Aufstellungs- oder Anwendungsort sind, und der Beanspruchungen, denen sie ausgesetzt sind, so ausgewählt 
+und montiert werden, dass ihr ordnungsgemäßer Betrieb und die Wirksamkeit der geforderten Schutzart 
+sichergestellt sind. 
+Betriebsmittel, die aufgrund ihrer Bauweise den Bedingungen des Aufstellungs- oder Anwendungsorts nicht 
+entsprechen, dürfen dennoch verwendet werden, wenn sie beim Errichten der elektrischen Anlage mit einem 
+geeigneten Schutz vor diesen Beanspruchungen versehen werden. Dieser darf den einwandfreien Betrieb der 
+so geschützten Betriebsmittel nicht unzulässig beeinträchtigen. 
+513 Zugänglichkeit 
+Alle elektrischen Betriebsmittel einschließlich Kabel/Leitungen sind so anzuordnen, dass ihre Bedienung, 
+Inspektion, Instandhaltung und der Zugang zu den Verbindungen leicht möglich sind. Diese Anforderungen 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 270/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 4 
+dürfen durch den Einbau der elektrischen Betriebsmittel in Gehäuse oder andere Einbauräume nicht 
+nennenswert beeinträchtigt werden. Ausnahmen sind in 526.3 enthalten. 
+ 
+513.001.AT Anforderungen für Bedienungs- und Instandhaltungsgänge 
+Es gelten die Anforderungen gemäß Teil 7-729. 
+514 Kennzeichen 
+514.1 
+Allgemeines 
+Schilder oder andere geeignete Kennzeichen müssen vorgesehen werden, um den Zweck eines Schalt- oder 
+Steuergeräts auszuweisen, es sei denn, dass es keine Möglichkeit einer Verwechslung gibt. 
+Wenn die Funktion von Schalt- und Steuergeräten vom Bedienenden nicht beobachtet werden und sich hieraus 
+eine Gefahr ergeben kann, muss eine geeignete Anzeige für den Bedienenden sichtbar angebracht werden. 
+Diese muss, soweit anwendbar, mit ÖVE/ÖNORM EN 60073 und ÖVE/ÖNORM EN 60447 übereinstimmen. 
+514.2 
+Kabel- und Leitungsanlagen 
+Kabel und Leitungen müssen so angeordnet oder gekennzeichnet werden, dass sie bei Inspektion, Prüfung, 
+Reparatur oder Änderung der Anlage zugeordnet werden können. 
+ 
+514.3 
+Kennzeichnung von Leitern 
+514.3.1 
+Allgemeines 
+Sofern in 514.3.1.Z1 bis 514.3.Z3 nichts anderes festgelegt ist, muss die Kennzeichnung der elektrischen Leiter 
+der Nationalen Ergänzung 51.NE entsprechen. 
+514.3.1.Z1 
+Neutralleiter oder Mittelleiter 
+Neutralleiter oder Mittelleiter müssen über ihre gesamte Länge durch die Farbe Blau gekennzeichnet sein. 
+ANMERKUNG 
+Für bestimmte Arten von Neutral-/Mittelleitern, auch in speziellen Kabel-/Leitungstypen, siehe 514.3.Z2 
+bis 514.3.Z5. 
+ANMERKUNG AT 
+Werden in vorhandenen Anlagen mit anderen Farbkennzeichnungen gemäß früher geltenden 
+technischen Bestimmungen ersatzweise oder zusätzlich neue Kabel/Leitungen verlegt, so muss deren Neutral- bzw. 
+Mittelpunktleiter durchgehend blau gekennzeichnet sein. Zusätzlich wird empfohlen, an den Übergangsstellen zu 
+vorhandenen Anlagen deren Neutral- bzw. Mittelpunktleiter mit blauer Markierung nach 514.3.2.001.AT an den Leiterenden 
+zu versehen. 
+Isolierte Sternpunkt-Verbindungs-Leiter (SVL) müssen als Neutralleiter gekennzeichnet werden, wobei 
+zusätzlich eine alphanumerische Kennzeichnung gemäß 51.NE.3.2.5 an den Leiterenden anzubringen ist. 
+514.3.1.Z2 
+Schutzleiter 
+Schutzleiter müssen über ihre gesamte Länge durch die Zwei-Farben-Kombination Grün-Gelb gekennzeichnet 
+sein, ausgenommen, wenn vorhandene Leitungen mit geänderter Funktion genutzt werden müssen. 
+Diese Farbkombination darf für keinen anderen Zweck verwendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 271/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 5 
+Isolierte Schutzerdungsleiter und isolierte Schutzpotentialausgleichsleiter müssen als Schutzleiter 
+gekennzeichnet werden. 
+ANMERKUNG 
+Für bestimmte Arten von Schutzleitern, auch in speziellen Kabel-/Leitungstypen, siehe 514.3.Z2, 
+514.3.Z3 und 514.3.Z5. 
+ANMERKUNG AT 
+Werden in vorhandenen Anlagen mit Kabel-/Leitungs-Farbkennzeichnungen gemäß früher 
+geltender technischer Bestimmungen ersatzweise oder zusätzlich neue Kabel/Leitungen verlegt, so muss deren 
+Schutzleiter durchgehend grün-gelb gekennzeichnet sein. Zusätzlich wird empfohlen, an den Übergangsstellen zu 
+vorhandenen Anlagen deren Schutzleiter mit grün-gelber Markierung gemäß 514.3.Z6.001.AT an den Leiterenden zu 
+versehen. 
+514.3.2 
+PEN-Leiter, PEL-Leiter und PEM-Leiter 
+Isolierte PEN-Leiter müssen durch eines der folgenden Verfahren gekennzeichnet sein: 
+1) 
+Grün-Gelb durchgehend in ihrem gesamten Verlauf, zusätzlich mit blauer Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden (Verfahren 1), oder 
+2) 
+Blau durchgehend in ihrem gesamten Verlauf, zusätzlich mit grün-gelber Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden (Verfahren 2). 
+Verfahren 1 ist für die Farbkennzeichnung des PEN-Leiters zu bevorzugen. 
+PEL-Leiter und PEM-Leiter müssen, wenn sie isoliert sind, grün-gelb über die gesamte Länge, und zusätzlich 
+mit blauer Markierung gemäß 514.3.Z6.001.AT an den Leiterenden, gekennzeichnet sein. 
+Falls eine Verwechslung zwischen PEN-, PEL- oder PEM-Leitern möglich ist, muss zusätzlich die in 
+51.NE.3.2.4 bis 51.NE.3.2.7 festgelegte alphanumerische Kennzeichnung an den Leiterenden angebracht 
+werden. 
+514.3.2.001.AT Umstellung von Anlagen auf die Schutzmaßnahme Nullung im TN-C-System 
+Bei der Umstellung von Anlagen auf die Schutzmaßnahme Nullung dürfen vorhandene Neutralleiter mit 
+Querschnitten ab 10 mm2 Kupfer bzw. 16 mm2 Aluminium und mit durchgehend grauer oder blauer 
+Kennzeichnung als PEN-Leiter verwendet werden, wenn sie mit einer grün-gelben Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden versehen werden. 
+514.3.Z1 Sonstige Leiter 
+Sonstige Leiter müssen durch Farben oder alphanumerische Zeichen oder Symbole, unter Beachtung der 
+Anforderungen von 514.3.Z2 bis 514.3.Z5 und der Nationalen Ergänzung 51.NE, gekennzeichnet sein. 
+ANMERKUNG AT 
+Die Kennzeichnung von Leitern durch Farben wird im Allgemeinen bevorzugt, sofern die 
+alphanumerische Kennzeichnung nicht durch Teile der OVE E 8101 oder durch andere Bestimmungen verlangt wird. 
+514.3.Z2 Kennzeichnung von Adern in mehradrigen Kabeln/Leitungen und in flexiblen Leitungen 
+Die Kennzeichnung von isolierten Leitern in starren und flexiblen Kabeln und Leitungen mit zwei bis fünf Adern 
+muss ÖVE/ÖNORM E 8003 entsprechen. Die Außenleiter müssen durch die Farbe Schwarz oder Braun oder 
+Grau, der Neutralleiter durch die Farbe Blau und der Schutzleiter durch die Zwei-Farben-Kombination Grün-
+Gelb über die gesamte Länge gekennzeichnet sein. 
+Bei Kabeln/Leitungen mit zwei bis fünf Adern, die in Hilfs- oder Steuerstromkreisen verwendet werden, muss 
+jeder Leiter durch Farbe oder Beschriftung gekennzeichnet sein. 
+Bei Kabeln/Leitungen mit zwei bis fünf Adern, die in Hilfs- oder Steuerstromkreisen verwendet werden, die 
+keinen blauen Leiter besitzen, darf einer der Leiter mit blauer Markierung gemäß 514.3.Z6.001.AT an den 
+Leiterenden als Neutralleiter verwendet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 272/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 6 
+Die Aderkennzeichnung von Kabeln/Leitungen mit mehr als fünf Adern muss 51.NE.1 entsprechen, entweder 
+durch Farbe oder alphanumerische Zeichen oder Symbole. Leiter, die durch alphanumerische Zeichen 
+gekennzeichnet sind und als Schutzleiter oder Neutralleiter verwendet werden, müssen an jedem Leiterende 
+grün-gelb oder blau, je nachdem was zutreffend ist, gemäß 514.3.Z6.001.AT gekennzeichnet werden. Leiter, 
+die durch alphanumerische Zeichen gekennzeichnet sind und als PEN-Leiter, PEL-Leiter oder PEM-Leiter 
+verwendet werden, müssen an jedem Leiterende grün-gelb und blau gemäß 514.3.Z6.001.AT gekennzeichnet 
+werden. 
+514.3.Z3 Kennzeichnung von einadrigen Kabeln/Leitungen und Aderleitungen 
+Außenleiter müssen über die gesamte Länge durch die Farbe Braun oder Schwarz oder Grau gekennzeichnet 
+sein. Die Verwendung nur einer dieser Farben für alle Außenleiter eines Stromkreises ist zulässig. 
+Die Einzelfarben Grün und Gelb dürfen nicht verwendet werden. 
+Ummantelte, einadrige Kabel/Leitungen und Aderleitungen, die ihrer Betriebsmittelnorm entsprechen, jedoch 
+nicht mit grün-gelber oder blauer Isolierung erhältlich sind, z. B. bei Leiterquerschnitten größer als 16 mm2, 
+dürfen verwendet werden als 
+– 
+Schutzleiter, wenn eine grün-gelbe Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht 
+wird; 
+– 
+PEN-Leiter, wenn eine grün-gelbe Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht 
+wird. Eine zusätzliche blaue Markierung gemäß 514.3.Z6.001.AT an den Leiterenden ist zulässig; 
+– 
+PEL-Leiter und PEM-Leiter, wenn eine grün-gelbe und eine blaue Markierung gemäß 514.3.Z6.001.AT an 
+jedem Leiterende angebracht wird; 
+– 
+Neutralleiter, wenn eine blaue Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht wird. 
+514.3.Z4 Andere Verwendungsmöglichkeiten der Leiterfarbe Blau 
+Unter der Voraussetzung, dass kein Neutralleiter vorhanden ist und Verwechslungen nicht möglich sind, darf 
+ein blauer Leiter als Außenleiter oder für andere Zwecke verwendet werden, außer als Schutzleiter. 
+ANMERKUNG AT 
+In diesem Fall wird eine entsprechende Markierung gemäß 514.3.Z6.001.AT an den Leiterenden 
+empfohlen. 
+514.3.Z5 Ausnahmen von der Kennzeichnungspflicht 
+Die Kennzeichnung durch Farbe oder Beschriftung ist nicht gefordert für 
+– 
+konzentrische Leiter von Kabeln/Leitungen; 
+– 
+Metallmäntel oder Bewehrungen von Kabeln/Leitungen, die als Schutzleiter verwendet werden; 
+– 
+nicht isolierte Leiter, wenn eine dauerhafte Kennzeichnung aufgrund der äußeren Einflüsse, z. B. 
+aggressive Atmosphäre und Verschmutzung, nicht möglich ist; 
+– 
+metallene Konstruktionsteile von baulichen Anlagen oder fremde leitfähige Teile, die als Schutzleiter 
+verwendet werden; 
+– 
+Körper (eines elektrischen Betriebsmittels), die als Schutzleiter verwendet werden; 
+– 
+blanke Leiter von Freileitungen; 
+– 
+Leiter in Verteilernetzen. 
+Eine Kennzeichnung durch Farbe ist nicht gefordert für die Leiter von flachen flexiblen Kabeln/Leitungen ohne 
+Ummantelung oder für Kabel/Leitungen, die eine Isolierung haben, die nicht durch Farbe gekennzeichnet 
+werden kann, z. B. mineralisolierte Kabel/Leitungen. Bei diesen Kabeln/Leitungen sind die Leiter, die als 
+Schutzleiter, PEN-Leiter, PEL-Leiter oder PEM-Leiter oder als Neutralleiter verwendet werden, mit 
+entsprechenden farbigen Markierungen gemäß 514.3.Z6.001.AT an den Leiterenden zu versehen (siehe 
+514.3.Z3 letzter Absatz). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 273/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 7 
+514.3.Z6.001.AT Ausführung der Markierung an den Leiterenden 
+Endenkennzeichnungen, die im Zuge der Errichtung elektrischer Anlagen angebracht wurden, müssen 
+dauerhaft ausgeführt sein. Als dauerhaft gelten z. B. Schrumpfschlauch, selbstverschweißendes Klebeband, 
+Kabelbinder mit daran befestigtem Kennzeichnungsschild. 
+ANMERKUNG AT 
+Herkömmliche Isolierbänder genügen dieser Anforderung nicht. 
+Farbkennzeichnungen von Leiterenden müssen bei Leiterquerschnitten bis 6 mm2 mindestens 15 mm lang 
+sein. Bei größeren Leiterquerschnitten sind entsprechend größere Längen zu kennzeichnen, wobei eine Länge 
+von 100 mm jedenfalls ausreicht. Dabei sollte die Farbe der vorhandenen Leiterisolierung nach Möglichkeit 
+noch erkennbar bleiben. 
+514.4 
+Schutzeinrichtungen 
+Schutzeinrichtungen müssen so angeordnet und gekennzeichnet werden, dass die geschützten Stromkreise 
+leicht zugeordnet werden können. Hierfür kann eine gruppenweise Anordnung in Verteilungen zweckmäßig 
+sein. 
+514.5 
+Dokumentation 
+Siehe dazu Nationale Ergänzung 1.NE. 
+515 Vermeidung gegenseitiger nachteiliger Beeinflussung 
+515.1 
+Betriebsmittel müssen so ausgewählt und installiert werden, dass jede schädigende Beeinflussung 
+zwischen der elektrischen Anlage und den nicht elektrischen Einrichtungen ausgeschlossen ist. 
+Betriebsmittel ohne Gehäuserückwand dürfen nicht auf einer Montagefläche angebracht werden, es sei denn, 
+die folgenden Anforderungen werden erfüllt: 
+– 
+Verhinderung einer Spannungsverschleppung über die Montagefläche; 
+– 
+Anordnung einer geeigneten Zwischenlage gemäß 515.1 Anmerkung 2.AT zwischen elektrischen 
+Betriebsmitteln und einer brennbaren Oberfläche. 
+Wenn die Montagefläche nicht metallen und nichtbrennbar ist, werden keine zusätzlichen Maßnahmen 
+gefordert. In allen anderen Fällen können diese Anforderungen durch eine der folgenden Maßnahmen erfüllt 
+werden: 
+– 
+Wenn die Montagefläche metallen ist, muss sie mit dem Schutzleiter (PE) oder dem Schutzpotential-
+ausgleichsleiter der Anlage gemäß Teil 4-41 und Teil 5-54 verbunden werden; 
+– 
+Wenn die Montagefläche brennbar ist, muss das elektrische Betriebsmittel von ihr durch eine geeignete 
+Zwischenlage aus Isolierstoff mit einer Entflammbarkeit von FH 1 gemäß OVE EN 60695 Reihe getrennt 
+werden. 
+ 
+ANMERKUNG 1.AT 
+Das Prüfverfahren FH ist in einer zurückgezogenen Fassung der OVE EN 60695 enthalten. 
+Der Normungsgegenstand ist durch ÖVE/ÖNORM EN 60695-11-10 und OVE EN 60695-11-20 abgedeckt. 
+ 
+ANMERKUNG 2.AT 
+Als geeignete Zwischenlagen aus Isolierstoff werden z. B. angesehen: 
+ 
+– 
+Hartpapier auf Phenolharz-Basis PF CP 205 nach ÖVE/ÖNORM EN 60893-3-4 (V-1-Material); 
+ 
+– 
+Hartpapier auf Epoxidharz-Basis EP CP 201 nach ÖVE/ÖNORM EN 60893-3-2 (V-0-Material); 
+ 
+– 
+Hartglasgewebe auf Epoxidharz-Basis EP GC 202 nach ÖVE/ÖNORM EN 60893-3-2 (V-0-Material); 
+ 
+– 
+Glashartmatte auf Polyester-Basis UP GM 202 nach ÖVE/ÖNORM EN 60893-3-5 (V-0-Material). 
+515.2 
+Werden elektrische Betriebsmittel, die mit unterschiedlichen Stromarten oder Spannungen betrieben 
+werden, zusammen angeordnet (z. B. in Schalttafeln, Schaltschränken, Steuerpulten, Bedienungskästen), so 
+müssen die jeweils einer Stromart oder einer Spannung zugeordneten Betriebsmittel von anderen 
+Betriebsmitteln in dem Maße wirksam getrennt werden, wie dies zur Vermeidung gegenseitiger nachteiliger 
+Beeinflussung notwendig ist. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 274/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 8 
+ANMERKUNG AT 
+Dazu gehören auch geeignete Maßnahmen zur Vermeidung von z. B.: 
+– 
+übermäßigen Induktionsspannungen oder -strömen in parallel geführten Kabeln/Leitungen; 
+– 
+übermäßiger induktionsbedingter Erwärmung oder Verlusten z. B. in Befestigungselementen oder Durchführungen 
+von Einzelleitungen oder -kabeln. 
+515.3 
+Elektromagnetische Verträglichkeit 
+515.3.1 
+Auswahl der Störfestigkeitspegel und Aussendungspegel 
+515.3.1.1 
+Die Störfestigkeitspegel von Betriebsmitteln müssen entsprechend den elektromagnetischen 
+Einflüssen ausgewählt werden (siehe Tabelle 51.ZA.1), wie sie nach Montage und Anschluss der Betriebsmittel 
+für den bestimmungsgemäßen Gebrauch auftreten können, und es muss der vorgesehene Grad der 
+Betriebskontinuität, der für die Anwendung notwendig ist, berücksichtigt werden. 
+515.3.1.2 
+Es müssen Betriebsmittel mit ausreichend niedrigen Aussendungspegeln ausgewählt werden, 
+sodass andere Betriebsmittel innerhalb oder außerhalb des Gebäudes nicht durch elektromagnetische 
+Störaussendung beeinflusst werden. Falls erforderlich, müssen Maßnahmen durchgeführt werden, um die 
+Störaussendung auf einen verträglichen Pegel zu reduzieren (siehe Abschnitt 444). 
+ANMERKUNG 
+Elektrische Verbrauchsmittel oder Betriebsmittel sollten, soweit zutreffend, mit den Normen 
+OVE EN 55011, ÖVE/ÖNORM EN 55012, OVE EN IEC 55014-1, OVE EN IEC 55014-2, OVE EN IEC 55015, OVE 
+EN 55032, ÖVE/ÖNORM EN 50565-1 und OVE EN 61000 Reihe übereinstimmen. 
+516 Maßnahmen bezüglich Schutzleiterströmen 
+Schutzleiterströme, die von elektrischen Betriebsmitteln unter normalen Betriebsbedingungen erzeugt werden, 
+und die Ausführung der elektrischen Anlage müssen so aufeinander abgestimmt sein, dass ein sicherer und 
+bestimmungsgemäßer Betrieb gegeben ist. 
+Die zulässigen Schutzleiterströme der Betriebsmittel sind in OVE EN 61140:2016, 7.6.3 festgelegt und müssen 
+in Betracht gezogen werden, wenn vom Hersteller des Betriebsmittels keine Angaben verfügbar sind. 
+ANMERKUNG 1  
+Ein Schutzleiterstrom im Sinne von Abschnitt 516 ist ein Strom, der im Schutzleiter fließt, wenn 
+die Betriebsmittel fehlerfrei in Betrieb sind. 
+ANMERKUNG 2  
+Zur Vermeidung von unerwünschtem Auslösen von Fehlerstrom-Schutzeinrichtungen (RCD), 
+verursacht durch Schutzleiterströme, siehe 531.3.2. 
+ANMERKUNG 3  
+Der Errichter sollte den Anlagenbetreiber informieren, dass vorzugsweise solche Betriebsmittel 
+ausgewählt werden sollten, für die der Hersteller Angaben zu Schutzleiterströmen bereitstellt. Es sollten Betriebsmittel mit 
+niedrigen Werten ausgewählt werden, um ein ungewolltes Auslösen zu vermeiden. 
+ANMERKUNG 4  
+Bezüglich verstärkter Schutzleiterquerschnitte siehe 543.7. 
+516.1 
+Transformatoren 
+In elektrischen Anlagen können Maßnahmen zur Begrenzung der Schutzleiterströme erforderlich sein, indem 
+begrenzte Bereiche der Anlage durch Transformatoren mit getrennten Wicklungen versorgt werden. 
+516.2 
+Informationssysteme 
+Es ist für Informationssysteme nicht zulässig, aktive Leiter zusammen mit dem Schutzleiter als Rückleiter zu 
+nutzen. 
+ANMERKUNG 
+Für die Verwendung von Rückleitern bei Gleichspannung siehe die Anforderungen in 543.5. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 275/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 9 
+Anhang 51.A 
+(informativ) 
+ 
+Kurzfassung der äußeren Einflüsse (Umgebungseinflüsse) 
+Tabelle 51.A (1 von 2) 
+A 
+AA 
+Umgebungstemperatur 
+AF 
+Auftreten von korrosiven oder 
+verunreinigenden Substanzen 
+ 
+Gestrahlte Magnetfelder 
+Umgebungseinflüsse 
+AA1 
+–60 °C  
++5 °C  
+AF1 
+Vernachlässigbar 
+AM-8-1 
+Mittlerer Pegel 
+AA2 
+–40 °C  
++5 °C  
+AF2 
+Atmosphärisch 
+AM-8-2 
+Hoher Pegel 
+AA3 
+–25 °C  
++5 °C  
+AF3 
+Zeitweise oder zufällig 
+ 
+Elektrische Felder  
+AA4 
+–5 °C  
++40 °C  
+AF4 
+Dauernd 
+AM-9-1 
+Vernachlässigbarer Pegel 
+AA5 
++5 °C  
++40 °C  
+AG 
+Mechanische Beanspruchung: 
+Schlag 
+AM-9-2 
+Mittlerer Pegel 
+AA6 
++5 °C  
++60 °C  
+AG1 
+Niedrig 
+AM-9-3 
+Hoher Pegel 
+AA7 
+–25 °C  
++55 °C  
+AG2 
+Mittel 
+AM-9-4 
+Sehr hoher Pegel 
+AA8 
+–50 °C  
++40 °C  
+AG3 
+Hoch 
+AM21 
+Oszillierende Störgrößen 
+AB 
+Atmosphärische Luftfeuchte 
+AH 
+Beanspruchung durch 
+Schwingungen 
+ 
+Einseitige leitungs-
+gebundene Vorgänge im 
+Nanosekundenbereich 
+ 
+Lufttemperatur: 
+Relative  
+Luftfeuchte: 
+AH1 
+Niedrig 
+AM-22-1 
+vernachlässigbar 
+AB1 
+–60 °C 
++5 °C 
+3 % 
+100 % AH2 
+Mittel 
+AM-22-2 
+Mittlerer Pegel 
+AB2 
+–40 °C 
++5 °C 
+10 % 
+100 % AH3 
+Hoch 
+AM-22-3 
+Hoher Pegel 
+AB3 
+–25 °C 
++5 °C 
+10 % 
+100 % AJ 
+Andere mechanische 
+Beanspruchungen 
+AM-22-4 
+Sehr hoher Pegel 
+AB4 
+–5 °C 
++40 °C 
+5 % 
+95 % AK 
+Vorhandensein von Pflanzen 
+und/oder Schimmelwachstum 
+ 
+Einseitige leitungs-
+gebundene Vorgänge im 
+Millisekunden- bis 
+Mikrosekundenbereich 
+AB5 
++5 °C 
++40 °C 
+5 % 
+85 % AK1 
+Nicht gefährlich 
+AM-23-1 
+Kontrollierter Pegel 
+AB6 
++5 °C 
++60 °C 
+10 % 
+100 % 
+AM-23-2 
+Mittlerer Pegel 
+AB7 
+–25 °C 
++55 °C 
+10 % 
+100 % AK2 
+Gefährlich 
+AM-23-3 
+Hoher Pegel 
+AB8 
+–50 °C 
++40 °C 
+10 % 
+100 % AL 
+Anwesenheit von Tieren (Fauna) 
+ 
+Leitungsgebundene 
+oszillierende transiente 
+Vorgänge 
+AC 
+Seehöhe 
+AL1 
+Nicht gefährlich 
+AM-24-1 
+Mittlerer Pegel 
+AC1 
+≤ 2 000 m 
+AL2 
+Gefährlich 
+AM-24-2 
+Hoher Pegel 
+AC2 
+> 2 000 m 
+AM 
+Elektromagnetische, elektro-
+statische und ionisierende 
+Einflüsse 
+ 
+Gestrahlte hochfrequente 
+elektromagnetische 
+Störgrößen 
+AD 
+Auftreten von Wasser 
+ 
+Oberschwingung, 
+Zwischenharmonische 
+AM-25-1 
+Vernachlässigbarer Pegel 
+AD1 
+Vernachlässigbar 
+AM-1-1 
+Kontrollierter Pegel 
+AM-25-2 
+Mittlerer Pegel 
+AD2 
+Tropfwasser 
+AM-1-2 
+Normaler Pegel 
+AM-25-3 
+Hoher Pegel 
+AD3 
+Sprühwasser 
+AM-1-3 
+Hoher Pegel 
+ 
+Elektrostatische 
+Entladungen 
+AD4 
+Spritzwasser 
+ 
+Signalspannungen 
+AM-31-1 
+Kleiner Pegel 
+AD5 
+Strahlwasser 
+AM-2-1 
+Kontrollierter Pegel 
+AM-31-2 
+Mittlerer Pegel 
+AD6 
+Schwallwasser 
+AM-2-2 
+Normaler Pegel 
+AM-31-3 
+Hoher Pegel 
+AD7 
+Eintauchen 
+AM-2-3 
+Hoher Pegel 
+AM-31-4 
+Sehr hoher Pegel 
+AD8 
+Untertauchen 
+ 
+Amplitudenänderungen 
+AM-41-1 
+Ionisierende Strahlung 
+AE 
+Auftreten von festen Fremdkörpern AM-3-1 
+Kontrollierter Pegel 
+AN 
+Sonnenstrahlung 
+AE1 
+Vernachlässigbar 
+AM-3-2 
+Normaler Pegel 
+AN1 
+Niedrig 
+AE2 
+Kleine Gegenstände 
+AM-4 
+Spannungsunsymmetrie 
+AN2 
+Mittel 
+AE3 
+Sehr kleine Gegenstände 
+AM-5 
+Schwankungen der Netzfrequenz 
+AN3 
+Hoch 
+AE4 
+Kleine Staubmenge 
+AM-6 
+Induzierte niederfrequente 
+Spannungen 
+ 
+ 
+AE5 
+Mittlere Staubmenge 
+AM-7 
+Gleichströme in 
+Wechselstromnetzen 
+ 
+ 
+AE6 
+Bedeutende Staubmenge 
+ 
+ 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 276/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 10 
+Tabelle 51.A (2 von 2) 
+ 
+ 
+ 
+Umgebungseinflüsse 
+AP 
+Auswirkungen von Erdbeben 
+AQ 
+Blitze 
+AS 
+Wind 
+AP1 
+Vernachlässigbar 
+AQ1 
+Vernachlässigbar 
+AS1 
+Niedrig 
+AP2 
+Geringe Auswirkung 
+AQ2 
+Indirekte Wirkung 
+AS2 
+Mittel 
+AP3 
+Mittlere Auswirkung 
+AQ3 
+Direkte Wirkung 
+AS3 
+Hoch 
+AP4 
+Hohe Auswirkung 
+AR 
+Luftbewegung 
+ 
+ 
+ 
+ 
+AR1 
+Niedrig 
+ 
+ 
+ 
+ 
+AR2 
+Mittel 
+ 
+ 
+ 
+ 
+AR3 
+Hoch 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+B 
+BA 
+Personen, die Zutritt haben 
+BC 
+Verbindung mit Erdpotential 
+BE 
+Art der bearbeiteten oder 
+gelagerten Stoffe 
+Verwendung 
+BA1 
+Laien 
+ 
+BC1 
+Keine 
+BE1 
+Kein besonderes Risiko 
+BA2 
+Kinder 
+ 
+BC2 
+Selten 
+BE2 
+Besonderes Brandrisiko 
+BA3 
+Menschen mit einer Beeinträchtigung 
+BC3 
+Häufig 
+BE3 
+Explosionsrisiko 
+BA4 
+Elektrotechnisch unterwiesene 
+Person 
+BC4 
+Dauernd 
+BE4 
+Risiko durch Verunreinigung  
+(Kontamination) 
+BA5 
+Elektrofachkräfte 
+ 
+BD 
+Räumungsmöglichkeit bei Gefahr 
+ 
+ 
+BB 
+Elektrischer Widerstand des 
+menschlichen Körpers 
+BD1 
+Niedrige Personendichte/ 
+einfaches Verlassen 
+ 
+ 
+ 
+ 
+BD2 
+Niedrige Personendichte/ schwieriges 
+Verlassen 
+ 
+ 
+ 
+ 
+ 
+BD3 
+Hohe Personendichte/  
+einfaches Verlassen 
+ 
+ 
+ 
+ 
+ 
+BD4 
+Hohe Personendichte/  
+schwieriges Verlassen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+C 
+CA 
+Baustoffe 
+CB 
+Gebäudestruktur 
+ 
+ 
+Bauwerke 
+CA1 
+Nichtbrennbar 
+CB1 
+Vernachlässigbare Gefährdung 
+ 
+ 
+CA2 
+Brennbar 
+CB2 
+Gefährdung durch Brandausbreitung 
+ 
+ 
+ 
+ 
+CB3 
+Gefährdung durch 
+Gebäudebewegung 
+ 
+ 
+ 
+ 
+ 
+CB4 
+Elastisch oder instabil 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 277/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 11 
+Anhang 51.ZA 
+(informativ) 
+ 
+Äußere Einflüsse (Umgebungseinflüsse) 
+51.ZA.1 Elektrische Betriebsmittel sollten entsprechend den möglichen äußeren Einflüssen, wie in 
+Tabelle 51.ZA.1 angeführt, ausgewählt und installiert werden. 
+Die Tabelle 51.ZA.1 enthält die notwendigen Merkmale bezüglich äußerer Einflüsse, denen Betriebsmittel 
+ausgesetzt sein können. 
+Sind keine Angaben der Hersteller vorhanden, sollten diese durch Prüfung der Eignung festgestellt werden. 
+51.ZA.2 Wenn das elektrische Betriebsmittel nicht durch seine Bauweise die entsprechenden Merkmale 
+entsprechend den äußeren Einflüssen seines Einbauorts aufweist, darf es dennoch für solche Bedingungen 
+verwendet werden, wenn es mit einem geeigneten zusätzlichen Schutz versehen wird. Solch ein Schutz sollte 
+die Funktion des so geschützten Betriebsmittels nicht nachteilig beeinflussen. 
+51.ZA.3 Wenn verschiedene äußere Einflüsse gleichzeitig auftreten, können diese voneinander unabhängige 
+oder gegenseitige Wirkungen haben. Für den Schutz des elektrischen Betriebsmittels sollten alle Einflüsse 
+entsprechend berücksichtigt werden. 
+51.ZA.4 Die Auswahl der elektrischen Betriebsmittel entsprechend der äußeren Einflüsse ist nicht nur für die 
+richtige Funktion notwendig, sondern auch um die Zuverlässigkeit der Maßnahmen zum Schutz in 
+Übereinstimmung mit den allgemeinen Anforderungen von OVE E 8101 sicherzustellen. 
+Maßnahmen zum Schutz, die durch die Konstruktion der elektrischen Betriebsmittel erreicht werden, dürfen 
+nur für die angegebenen Bedingungen äußerer Einflüsse angewendet werden, für die diese Betriebsmittel auch 
+geprüft sind. 
+ANMERKUNG zu Tabelle 51.ZA.1 
+Das Wort „Normal“, das in der dritten Spalte der Tabelle 51.ZA.1 verwendet 
+wird, sagt aus, dass die ausgewählten elektrischen Betriebsmittel entsprechend ihrer jeweiligen allgemeinen Produktnorm 
+den Anforderungen dieser Tabelle genügen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 278/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 12 
+Tabelle 51.ZA.1 – Merkmale äußerer Einflüsse (1 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+A 
+Umgebungseinflüsse 
+AA 
+Umgebungstemperatur 
+Die Umgebungstemperatur ist die Temperatur der 
+umgebenden Luft an der Stelle, an der das Betriebsmittel 
+installiert wird. Dabei wird vorausgesetzt, dass die 
+Umgebungstemperatur die Einflüsse von anderen 
+Betriebsmitteln an derselben Stelle einschließt. 
+Die für das Betriebsmittel zu berücksichtigende 
+Umgebungstemperatur ist die Temperatur am Ort des zu 
+installierenden Betriebsmittels, die sich ergibt durch die 
+Einflüsse aller anderen Betriebsmitteln an derselben Stelle, 
+wenn diese in Betrieb sind, jedoch ohne Berücksichtigung 
+der Temperaturerhöhung durch das zu installierende 
+Betriebsmittel selbst.  
+Untere und obere Grenzen der Umgebungstemperatur-
+bereiche: 
+ 
+ 
+AA1 
+–60 °C 
++5 °C 
+ 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung a 
+Dieser Bereich schließt den 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K8,  
+ein, begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-4, Klasse 4K4, 
+begrenzt auf einen unteren Wert der 
+Lufttemperatur von –60 °C und auf 
+einen oberen Wert der 
+Lufttemperatur von +5 °C. 
+AA2 
+–40 °C 
++5 °C 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K7, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C.  
+Der Bereich schließt den 
+Temperaturbereich der OVE 
+EN IEC 60721-3-4, Klasse 4K3,  
+ein; begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+AA3 
+–25 °C 
++5 °C 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN 60721-3-3, Klasse 3K6, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C.  
+Der Bereich schließt den 
+Temperaturbereich der OVE 
+EN 60721-3-4, Klasse 4K1, ein; 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. 
+a 
+Ergänzende Vorkehrungen können erforderlich sein (z. B. spezielle Schmierung, Beschattung). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 279/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 13 
+Tabelle 51.ZA.1 (2 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+AA4 
+–5 °C 
++40 °C 
+Normal 
+(in besonderen Fällen 
+können spezielle 
+Vorkehrungen 
+erforderlich sein) 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K5, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +40 °C. 
+AA5 
++5 °C 
++40 °C 
+Normal 
+Identisch mit dem 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K3. 
+AA6 
++5 °C 
++60 °C 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung der 
+Betriebsmittel a 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K7, 
+begrenzt auf einen unteren Wert 
+von +5 °C und einen oberen Wert 
+von +60 °C Lufttemperatur. 
+Er schließt den Temperaturbereich 
+der OVE EN IEC 60721-3-4, 
+Klasse 4K4, ein; der untere Wert  
+ist jedoch auf +5 °C Lufttemperatur 
+begrenzt. 
+AA7 
+–25 °C 
++55 °C 
+ 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung der 
+Betriebsmittel a 
+Identisch mit dem 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K6. 
+AA8 
+–50 °C 
++40 °C 
+Identisch mit dem 
+Temperaturbereich der OVE 
+EN IEC 60721-3-4, Klasse 4K3. 
+ 
+Die Klassen der Umgebungstemperatur sind nur 
+anwendbar, wenn die Luftfeuchte keinen Einfluss hat. 
+Die Durchschnittstemperatur über 24 h muss mindestens 
+5 °C unter der oberen Grenze des Temperaturbereichs 
+liegen. 
+Es kann notwendig sein, zwei Temperaturbereiche zu 
+kombinieren, um einige äußere Einflüsse zu beschreiben. 
+Anlagen, die Temperaturen außerhalb der hier genannten 
+Temperaturbereiche ausgesetzt sind, erfordern besondere 
+Betrachtungen. 
+ 
+ 
+a 
+Ergänzende Vorkehrungen können erforderlich sein (z. B. spezielle Schmierung, Beschattung). 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 280/852 =====
+OVE E 8101:2025-10-01 
+Teil 5-51 – Seite 14 
+Tabelle 51.ZA.1 (3 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+AB 
+Atmosphärische Luftfeuchte 
+ 
+ 
+ 
+Luft-
+temperatur 
+Relative 
+Luftfeuchte 
+Absolute 
+Luftfeuchte 
+ 
+ 
+ 
+°C 
+% 
+g/m3 
+ 
+ 
+ 
+niedrig 
+hoch 
+niedrig 
+hoch 
+niedrig 
+hoch 
+ 
+ 
+AB1 
+–60 
++5 
+3 
+100 
+0,003 
+7 
+Innenräume und 
+Außenbereiche mit 
+extrem niedrigen 
+Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt werden 
+Dieser Bereich schließt den 
+Temperaturbereich der OVE 
+EN IEC 60721-3-3, Klasse 3K8,  
+ein, begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-4, Klasse 4K4; 
+begrenzt auf einen unteren Wert 
+von –60 °C und auf einen oberen 
+Wert der Lufttemperatur von +5 °C. 
+AB2 
+–40 
++5 
+10 
+100 
+0,1 
+7 
+Innenräume und 
+Außenbereiche mit 
+niedrigen Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K7, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-4, Klasse 4K4;  
+der untere Wert der Lufttemperatur 
+ist jedoch auf –60 °C und der obere 
+Wert ist auf +5 °C begrenzt. 
+AB3 
+–25 
++5 
+10 
+100 
+0,5 
+7 
+Innenräume und 
+Außenbereiche mit 
+niedrigen Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der OVE 
+EN IEC 60721-3-3, Klasse 3K6, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. Er 
+schließt den Temperaturbereich  
+der OVE EN IEC 60721-3-4, 
+Klasse 4K1 ein, begrenzt auf einen 
+oberen Wert der Lufttemperatur  
+von +5 °C. 
+AB4 
+–5 
++40 
+5 
+95 
+1 
+29 
+Wettergeschützte 
+Orte/Räume, wo weder 
+Temperatur- noch 
+Luftfeuchteregelung 
+vorhanden sind. Eine 
+Heizung darf zur 
+Erhöhung niedriger 
+Umgebungs-
+temperaturen verwendet 
+werden. 
+Normal 
+Identisch mit dem Temperatur-
+bereich der OVE EN  
+IEC 60721-3-3, Klasse 3K5.  
+Die obere Lufttemperatur ist auf 
++40 °C begrenzt. 
+b 
+Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, z. B. zwischen dem Planer der Anlage 
+und dem Hersteller der Betriebsmittel, wie z. B. speziell entworfene Betriebsmittel. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

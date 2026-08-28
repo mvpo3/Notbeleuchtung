@@ -1,0 +1,939 @@
+
+
+===== PAGE 1/15 =====
+Seite 1 von 15 
+ 
+ 
+ 
+OVE-Fachinformation E09 
+ 
+Ausgabe: 2022-03-01 
+ 
+ 
+ 
+ 
+Schutzbereich von SPD 
+ 
+Ersatz für 
+– 
+Zuständig 
+OVE/TSK E05 – Elektrische Betriebsmittel 
+ICS 
+13.260; 29.020; 29.100; 29.120; 91.120.40; 29.130; 91.140.50; 29.240.10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Inhalt 
+Seite 
+1 
+Einleitende Informationen ................................................................................................................... 2 
+1.1 
+Potentialausgleich................................................................................................................................ 2 
+1.2 
+Schirmung ............................................................................................................................................. 2 
+1.3 
+Indirekte und direkte Blitzeinwirkungen sowie Naheinschläge ...................................................... 3 
+1.4 
+Schutzpegel und in der Anlage wirksamer (effektiver) Schutzpegel .............................................. 4 
+1.5 
+Begriffe „One-Port SPD“ und „Two-Port SPD“ ................................................................................. 4 
+1.6 
+Was wird unter Reflexion verstanden ................................................................................................ 6 
+2 
+Zusammenhang zwischen Mindestableitstossstrom und Schutzpegel eines SPD ...................... 7 
+3 
+Beispiele zur Anwendung der 10 m-Regel ........................................................................................ 7 
+3.1 
+Schutz gegen indirekte Blitzeinwirkungen ........................................................................................ 7 
+3.2 
+Schutz gegen direkte und indirekte Blitzeinwirkungen ................................................................... 8 
+Anhang A  Schutzbereich aufgrund von Schwingungen ............................................................................ 11 
+Anhang B  Schutzbereich aufgrund von Induktion ..................................................................................... 12 
+Anhang C  Beispielhaft berechnete Schutzbereiche ................................................................................... 13 
+Literaturhinweise ............................................................................................................................................. 15 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 2 von 15 
+1 
+Einleitende Informationen 
+1.1 
+Potentialausgleich 
+Der Schutzpotentialausgleich (Hauptpotentialausgleich) nach Abschnitt 411.3.1.2 der OVE E 8101 und, soweit 
+erforderlich, der zusätzliche Schutzpotentialausgleich nach Abschnitt 415.2 von OVE E 8101 sind 
+Voraussetzung für die Realisierung eines wirkungsvollen Schutzes gegen transiente Überspannungen und 
+gegen Blitzeinwirkungen. 
+Die ergänzenden Anforderungen für den Blitzschutzpotentialausgleich sind ÖVE/ÖNORM EN 62305-3 zu 
+entnehmen. 
+1.2 
+Schirmung 
+Grundsätzliche Maßnahmen zum Schutz bei Störspannungen und elektromagnetische Störgrößen werden in 
+OVE E 8101 Teil 4-44 beschrieben. 
+Die Schirmung elektrotechnischer Geräte, Einrichtungen und Räume dient dazu, insbesondere bei höheren 
+Frequenzen auftretende elektrische und/oder magnetische Felder von diesen fernzuhalten oder umgekehrt die 
+Umgebung vor den von der Einrichtung ausgehenden Feldern zu schützen. 
+Schirmung ist eine Maßnahme, um elektrische bzw. elektromagnetische Felder zu reduzieren und die Induktion 
+von Spannungen in Kabel/Leitungen möglichst zu verhindern. 
+Dies wird beispielsweise erreicht durch: 
+a) 
+Verwendung von Kabeln/Leitungen mit metallenem Schirm mit vorzugsweise direkter beidseitiger 
+Schirmauflegung. Ist das aus betriebstechnischen Gründen nicht möglich soll der Schirm auf einer Seite 
+direkt und auf der anderen Seite über Überspannungs-Schutzeinrichtungen (indirekte Erdung) aufgelegt 
+werden. 
+b) 
+Schirmung der Kabel-/Leitungswege durch (vorzugsweise geschlossene) metallene, durchverbundene und 
+geerdete Kabelkanäle bzw. -trassen oder durchverbundene und geerdete metallene Installationsrohre. 
+c) 
+Verlegung von blanken parallelen Erdern bei erdverlegten Kabeln/Leitungen (empfohlener Abstand etwa 
+30 cm mittig über den Kabel-/Leitungssystemen). Bei breiteren Kabeltrassen sind ab einer Breite von 60 cm 
+zusätzliche parallele Erder zu verlegen (empfohlener Abstand der parallelen Erder etwa 60 cm – siehe  
+Bild 1). Die parallelen Erder sind an beiden Enden mit der übrigen Erdungsanlage zu verbinden. 
+ 
+ 
+Bild 1 – Schutz einer Kabeltrasse im Erdreich  
+durch die Verlegung eines parallelen Erders 
+Nähere Informationen zur Schirmwirkung von offenen Kabel-/Leitungsführungssystemen können OVE  
+EN 50174-2:2018 entnommen werden. 
+Nähere Informationen zum Mindestquerschnitt von Schirmen (zB Kabel-/Leitungsschirm oder Tragsystem) 
+können ÖVE/ÖNORM EN 60305-3 entnommen werden. 
+
+
+===== PAGE 3/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 3 von 15 
+An dieser Stelle sei darauf hingewiesen, dass nur ferromagnetische Werkstoffe bei Schirmungen auch gegen 
+elektromagnetische Felder wirksam sind und damit deren Einfluss reduzieren. 
+1.3 
+Indirekte und direkte Blitzeinwirkungen sowie Naheinschläge 
+Je nachdem ob nur mit indirekten oder mit direkten Blitzeinwirkungen bzw. Naheinschlägen zu rechnen ist 
+ergeben sich unterschiedliche Einflussparameter bezüglich des wirksamen Schutzbereiches von SPD. 
+a) 
+Auswirkungen bei indirekten Blitzeinwirkungen (leitungsgebundenen Störungen) auf den Schutzbereich 
+von SPD: 
+– Schwingungen mit zunehmender Leitungslänge und in Abhängigkeit der angeschlossenen Lasten 
+(induktiv, kapazitiv); 
+b) 
+Auswirkungen bei direkten Blitzeinwirkungen oder Naheinschlägen auf den Schutzbereich von SPD: 
+– Schwingungen mit zunehmender Leitungslänge und in Abhängigkeit der angeschlossenen Lasten 
+(induktiv, kapazitiv); 
+– Induktionen mit zunehmender Leiterschleifengröße (Schleifenfläche zwischen aktiven Leitern und 
+Schutzleiter/Potentialausgleich); 
+– Induktionen mit zunehmender Schleifengröße zwischen unterschiedlichen Leitungssystemen (zB 
+zwischen Energie- und Datenkabel/-leitungen); 
+– Auswirkung aufgrund galvanisch eingekoppelter Teilblitzströme infolge eines direkten Einschlages in ein 
+außen angebrachtes Betriebsmittel, in dessen Zuleitung ein SPD installiert ist. 
+ANMERKUNG 
+Beispiele für außen angebrachte Betriebsmittel sind jede Art von elektrischen, elektronischen oder 
+funktechnischen Betriebsmitteln zB Beleuchtung, Klimaanlagen, Sensoren (Temperatur, Druck, usw.), Antennen, 
+Überwachungskameras, die außen an baulichen Anlagen, an Masten oder an Prozessbehältern angebracht sind. 
+Diese Fachinformation beschränkt sich ausschließlich auf Schwingungen und Induktionen. 
+1.3.1 
+Begrenzung des Schutzbereichs von SPD aufgrund von Schwingungen 
+Ein SPD begrenzt beim Ansprechen die Überspannung an seinem Einbauort. Wenn die Leitungen zwischen 
+SPD und Betriebsmittel zu lang sind, kann die Ausbreitung von Stoßwellen zu Schwingungserscheinungen 
+führen. 
+An offenen Anschlussklemmen eines Betriebsmittels kann die Überspannung bis auf den doppelten  
+Begrenzungswert des SPD ansteigen und damit einen Ausfall des Betriebsmittels verursachen, auch wenn der 
+Schutzpegel des SPD nicht höher ist als die Stehstoßspannungsfestigkeit des Betriebsmittels. 
+Der wirksame Schutzbereich ist die zulässige Länge der Leitungen zwischen SPD und Betriebsmittel, bei der 
+die Schutzwirkung des SPD noch ausreichend ist, und hängt unter anderem von der SPD-Technologie, der 
+Ausführung der Anschluss-/Verbindungsleitungen und von den Lastimpedanzen ab. 
+Unter der Berücksichtigung all dieser Einflussfaktoren ergibt sich ein konventionell vereinbarter wirksamer 
+Schutzbereich eines SPD von 10 m, wenn der SPD einen Schutzpegel entsprechend der geforderten 
+Überspannungskategorie aufweist. 
+Der wirksame Schutzbereich kann vernachlässigt werden, wenn der Schutzpegel des SPD 50 % der 
+Stehstoßspannung entsprechend der geforderten Überspannungskategorie nicht überschreitet, da damit auch 
+unter Berücksichtigung des Schwingungsfaktors 2 (Reflexion – siehe Abschnitt 1.6) noch keine Überlastung der 
+angeschlossenen Betriebsmittel zu erwarten ist. 
+Wenn die Länge der Leitungen zwischen SPD und Betriebsmittel größer als 10 m ist, aber der Schutzpegel des 
+SPD 50% der Stehstoßspannung entsprechend der geforderten Überspannungskategorie überschreitet, so 
+kann der wirksame Schutzbereich aufgrund von Schwingungen (LPO) entsprechend Anhang A abgeschätzt 
+werden 
+1.3.2 
+Begrenzung des Schutzbereichs von SPD aufgrund von Induktion 
+Blitzeinschläge in die bauliche Anlage oder in die Erde neben einer baulichen Anlage können eine Über-
+spannung in die Leiterschleife des Stromkreises zwischen SPD und Betriebsmittel induzieren, die sich zum 
+Schutzpegel des SPD addiert und dadurch dessen Wirksamkeit verringert. 
+
+
+===== PAGE 4/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 4 von 15 
+Induzierte Überspannungen nehmen mit den Abmessungen der Leiterschleife (zB Leitungsführung, Länge des 
+Stromkreises, Abstand zwischen PE und aktiven Leitern, Schleifenfläche) zu und verringern sich mit der 
+Abschwächung der magnetischen Feldstärke zB durch (ferromagnetische) Schirmung oder Abstand. 
+Der wirksame Schutzbereich ist die zulässige Länge der Leitungen zwischen SPD und Betriebsmittel, bei der 
+die Schutzwirkung des SPD noch ausreichend ist, und hängt unter anderem von der verwendeten Leitungs-
+/Verlegeart und Schirmungsfaktoren ab. 
+Die Begrenzung dieses Schutzbereichs aufgrund von Induktion (Lpi) kann entsprechend Anhang B abgeschätzt 
+werden. Daraus ergibt sich für die folgenden beispielhaften Anwendungen 
+BAULICHE AUSFÜHRUNG: 
+a) 
+230 V AC Betriebsmittel (mindestens Überspannungskategorie II), die nur über eine Anspeisung verfügen; 
+b) 
+ungeschirmte Leitung; 
+c) 
+Potentialausgleichs-Netzwerk vorhanden, zB gemäß OVE-Richtlinie R 15; 
+d) 
+Vermeidung von Installationsschleifen durch Verwendung einer mehradrigen Leitung oder aller zum 
+Stromkreis gehörigen Leiter (inklusive Schutzleiter) innerhalb eines Installationsrohres oder Kanals, d. h. 
+Schleifenfläche nicht größer als etwa 0,5 m2; 
+e) 
+Für Betriebsmittel mit mehreren angeschlossenen Leitungen: Vermeidung von größeren Installations-
+schleifen durch parallele Verlegung und gleiche Leitungsführung (Installationswege) der verschiedenen 
+Leitungen, d. h. Schleifenfläche nicht größer als etwa 10 m2; 
+f) 
+Für Betriebsmittel mit mehreren angeschlossenen Leitungen: KEINE Vermeidung von größeren 
+Installationsschleifen, Schleifenfläche nicht größer als etwa 50 m2 
+eine Leitungslänge entsprechend Tabelle C.1 im Anhang C. 
+ANMERKUNG 
+Die Berechnungsbasis für obige Beispiele und die Werte in Tabelle C.1 im Anhang C wurde ÖVE/ÖNORM 
+EN 62305-4:2008, Anhang D entnommen und seit der Ausgabe ÖVE/ÖNORM EN 62305-4:2012 in diesem Detail nicht 
+mehr Bestandteil der Norm. 
+1.4 
+Schutzpegel und in der Anlage wirksamer (effektiver) Schutzpegel 
+Einrichtungen und Systeme gelten als ausreichend vor Überspannungen geschützt, wenn der Schutzpegel UP 
+des SPD 80 % der Bemessungs-Stehstoßspannung UW entsprechend Überspannungskategorie II nicht 
+überschreitet. Das entspricht bei einem 230/400 V Versorgungsystem 80 % einer Bemessungs-Stehstoß-
+spannung von 2 500 V, d. h. 2 000 V. 
+Diese Herabsetzung des maximal zulässigen Schutzpegels UP des SPD um 20 % gegenüber der Bemessungs-
+Stehstoßspannung der zu schützenden Einrichtungen und Systeme soll den induktiven Spannungsabfall ∆U an 
+den Anschlussleitungen des SPD und an allfälligen externen SPD-Abtrennvorrichtungen (zB Sicherung) 
+abdecken, da sich dieser Spannungsabfall ∆U zum Schutzpegel Up des SPD addiert. Er kann für ein 230/400 V 
+Versorgungssystem daher pauschal mit ∆U = 500 V angesetzt werden.  
+Der resultierende und in der Anlage wirksame (effektive) Schutzpegel UP/F, ergibt sich damit allgemein (ohne 
+SPD technologiespezifische Details) als Schutzpegel des SPDs zuzüglich dieses Spannungsabfalls ∆U mit: 
+ 
+UP/F = UP + ∆U 
+1.5 
+Begriffe „One-Port SPD“ und „Two-Port SPD“ 
+1.5.1 
+One-Port SPD 
+Ein SPD, das dem zu schützenden Stromkreis parallel geschalten ist.1) Es kann getrennte Ein- und 
+Ausgangsklemmen besitzen und weisen keine definierte Reihenimpendanz auf. 
+ 
+1) 
+Definition aus CLC/TS 61643-12:2009, Abschnitt 3.1.15. 
+
+
+===== PAGE 5/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 5 von 15 
+1.5.1.1 
+Anschluss von One-Port-SPD 
+ 
+Bild 2a – Beispiele für One-Port-SPD 
+ 
+Bild 2b – Beispiel für einen One-Port SPD mit separaten Eingangs- und Ausgangsklemmen 
+[Quelle: DEHN AUSTRIA GmbH.] 
+1.5.1.2 
+Vorteile von One-Port SPD 
+Die standardmäßige parallele Schaltung des One-Port-SPD (zu schützenden Betriebsmittel/der zu schützenden 
+Stromkreise) bringt schaltungsbedingte Vorteile: 
+– 
+Nennstrom der Anlage beeinflusst das SPD nicht; 
+– 
+Back-Up Sicherung des SPD kann im SPD-Abzweig selbst erfolgen; 
+– 
+Back-Up Sicherung kann unabhängig von der Sicherung des Hauptstromkreises bemessen werden; 
+– 
+Anlage muss bei Wartung und Austausch nicht zwingend freigeschalten werden; 
+– 
+Anlage kann bei Versagen des SPD in Betrieb bleiben. 
+1.5.1.3 
+Nachteile von One-Port SPD 
+Die standardmäßige parallele Schaltung des One-Port-SPD bringt schaltungsbedingte Nachteile: 
+– 
+Leitungslängen zu und von dem SPD können den in der Anlage wirksamen Schutzpegel drastisch 
+herabsetzen; 
+– 
+Parallele Verlegung von Zuleitung und/oder Ableitung des SPD mit der Anspeiseleitung oder mit 
+Abgangsstromkreisen (diese Zuleitung und/oder Ableitung des SPD kann Einkopplungen in geschützte 
+Abgangsstromkreise verursachen). 
+1.5.2 
+Two-Port SPD 
+Ein SPD, welche mit separaten Anschlussklemmen für Ein- und Ausgang ausgestattet ist, zwischen denen sich 
+eine definierte Reihenimpedanz befindet. 2) 
+ 
+2) 
+Definition aus CLC/TS 61643-12:2009, Abschnitt 3.1.16. 
+
+
+===== PAGE 6/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 6 von 15 
+1.5.2.1 
+Anschluss von Two-Port-SPD 
+Z
+Z
+Z
+ 
+ 
+Two-Port-SPD mit 4-Anschlüssen 
+Two-Port-SPD mit 3-Anschlüssen 
+Legende 
+Z 
+Reihenimpedanz zwischen Eingangs- und Ausgangsklemmen 
+Bild 3 – Beispiele für Two-Port SPD 
+1.5.2.2 
+Vorteile von Two-Port SPD 
+Die standardmäßige serielle Schaltung des Two-Port-SPD bringt schaltungsbedingte Vorteile: 
+– 
+Da bei einem Two-Port SPD keine separaten „Anschlussleitungen“ vorhanden sind und der gesamte 
+Laststrom über das SPD geführt wird, entspricht der Schutzpegel des SPD (UP) beim zu erwartenden 
+Ableitstoßstrom grundsätzlich dem in der Anlage wirksamen Schutzpegel (UP/F) (siehe 1.4). 
+– 
+Durch die eingebaute Reihenimpendanz wird eine signifikante Reduktion des Spannungsanstiegs (dU/dt) 
+erreicht und damit eine deutliche Verschiebung des Frequenzspektrums in den niederfrequenteren Bereich 
+ermöglicht, welche die Auftrittswahrscheinlichkeit von Reflektionen minimiert. 
+1.5.2.3 
+Nachteile von Two-Port SPD 
+Die standardmäßige serielle Schaltung des One-Port-SPD bringt schaltungsbedingte Nachteile: 
+– 
+Muss Nennstrom der Anlage führen können; 
+– 
+Muss den Kurzschluss der Anlage führen können; 
+– 
+Muss die Überlast der Anlage führen können; 
+– 
+Müssen Einschaltspitzen standhalten (Erwärmung, Belastung); 
+– 
+Erzeugt einen Spannungsabfall im Lastkreis (max. Spannungsabfall beachten); 
+– 
+Wartung und Überprüfung eines Two-Port SPD schwieriger realisierbar im Vergleich zu einem One-Port 
+SPD. 
+1.6 
+Was wird unter Reflexion verstanden 
+Die Ursache von Reflexionen ist eine Änderung des Ladungsflusses durch Änderung der Impedanz des Leiters. 
+Eine solche Änderung der Impedanz kommt durch Bauelemente (Widerstände, Kapazitäten, Induktivitäten), 
+durch offene (hochohmige) Leitungsenden oder durch eine Querschnittsänderung zustande. 
+Bei totaler Reflexion einer Welle kann die Ladung nicht abfließen. Dadurch wird die gesamte Welle „auf sich 
+selbst“ reflektiert und die Amplitude erhöht sich damit um den Faktor 2, d. h. sie wird verdoppelt – siehe Bild 4. 
+Jede sprunghafte Stromänderung, d. h. auch jeder Stoßstrom, erzeugt eine elektromagnetische Schwingung 
+(ein Spektrum), welche sich als Welle auf Leitungen (und im Raum  Effekt des Übersprechens) ausbreitet. 
+Eine auf der Leitung laufende elektromagnetische Welle wird an jeder Stelle, an der sich Leitungseigenschaften 
+verändern, teilweise oder ganz reflektiert. 
+Reflexionen entstehen daher zB: 
+– 
+an offene Leitungsenden (hochohmig); 
+– 
+bei Änderung des Leitungsquerschnittes; 
+– 
+bei Änderung der Leitungsimpedanz; 
+– 
+an Verbindungsstellen (zB Durchkontaktierungen, Steckverbindungen). 
+Es gilt, je höher die Anstiegssteilheit eines Stoßstromes bzw. je höher das Frequenzspektrum einer Welle ist, 
+umso eher treten Reflexionserscheinungen auf. 
+
+
+===== PAGE 7/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 7 von 15 
+ 
+Legende 
+Us  einlaufende Welle 
+Ur  reflektierte Welle 
+Bild 4 – Vereinfachte Darstellung der totalen Reflexion einer Welle  
+an einem offenen Leitungsende 
+[Quelle: S.100 in Biegelmeier/Kiefer/Krefter: Schutz in elektrischen Anlagen, Bd. 4, 
+VDE-Schriftenreihe 83] 
+2 Zusammenhang zwischen Mindestableitstossstrom und Schutzpegel eines SPD 
+Unterabschnitt 534.4.4 der OVE E 8101 legt das Mindest-Stoßableitvermögen für SPD fest. 
+In Unterabschnitt 534.4.4.2 von OVE E 8101 wird die Auswahl des Schutzpegels eines SPD bzw. einer  
+SPD-Kombination in Abhängigkeit der Nennspannung der Anlage beschrieben. 
+Da die meisten heute am Markt verfügbaren SPD bereits einen Nennableitstoßstrom deutlich über den in OVE 
+E 8101 Unterabschnitt 534.4.4.4.1, Tabelle 534.3 der geforderten Mindestwerten aufweisen und der nach 
+Produktnorm ÖVE/ÖNORM EN 61643-11 vom Hersteller auszuweisende Schutzpegel UP sich immer auf 
+diesen Nennableitstoßstrom bezieht, soll im Folgenden anhand von Beispielen erläutert werden, wie diese 
+Anforderungen aus OVE E 8101 zu interpretieren sind und im Sinne einer Mindestanforderung umgesetzt 
+werden können. 
+3 
+Beispiele zur Anwendung der 10 m-Regel 
+3.1 
+Schutz gegen indirekte Blitzeinwirkungen 
+Wohnbau/Büro/(Klein-)Gewerbe 
+3N 230/400 V AC TN-System 
+Schutz gegen indirekte Blitzeinwirkungen (Überspannungsschutz) nach OVE E 8101 Unterabschnitt 
+534.4.4.4.1. 
+ 
+ 
+
+
+===== PAGE 8/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 8 von 15 
+Anschlussart 1 
+Geforderter Schutzpegel nach OVE E 8101 Unterabschnitt 534.4.4.2 und Tabelle 534.1   
+2 500 V 
+Typ 2 SPD mit: 
+Nennableitstoßstrom In = 40 kA 
+ 
+ 
+ 
+Schutzpegel UP = 1 500 V 
+ 
+ 
+Zusätzliche Herstellerangabe: 
+Schutzpegel bei 1 kA 
+ 
+850 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 5 kA 
+ 
+1 000 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 10 kA 
+ 
+1 200 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 20 kA 
+  
+1 350 V 
+Geforderter Mindest-Nennableitstoßstrom nach OVE E 8101 Tabelle 534.3: 
+– 
+für den Schutzpfad L - PE 5 kA  Schutzpegel lt. Hersteller    1 000 V  
+– 
+für den Schutzpfad N - PE 5 kA  Schutzpegel lt. Hersteller   1 000 V 
+Damit ergibt sich in Bezug auf die Anforderungen aus Abschnitt 534.4.4.2: 
+Die Schutzpegelforderung nach OVE E 8101 Tabelle 534.1 und auch die Empfehlung, dass der Schutzpegel 
+der SPD nicht höher als 80 % der Bemessungs-Stoßspannung der Betriebsmittel (0,8 ∙ 2 500 V = 2 000 V) sein 
+soll ist mit großer Sicherheitsreserve eingehalten. 
+Ergänzend kann zu den Anforderungen aus OVE E 8101 Unterabschnitt 534.4.9 zum Schutzbereich abgeleitet 
+werden: 
+Da die gewählten SPD beim geforderten Ableitvermögen einen Schutzpegel von weniger als 50 % des nach 
+OVE E 8101 Tabelle 534.1 geforderten Wertes (2 500 V) aufweisen, kommt der zweite Thesenstrich in 
+OVE E 8101 Unterabschnitt 534.4.9 zur Anwendung und es sind keine weiteren SPD in der Installation 
+erforderlich, auch wenn die Leitungslänge zwischen diesen SPD und zu schützenden Betriebsmitteln mehr als 
+10 m beträgt. 
+3.2 
+Schutz gegen direkte und indirekte Blitzeinwirkungen 
+3.2.1 
+Wohnbau/Büro/(Klein-)Gewerbe 
+3N 230/400 V AC TN-System 
+Schutz gegen direkte Blitzeinwirkungen (innerer Blitzschutz) nach ÖVE/ÖNORM EN 62305-4 und OVE E 8101 
+Unterabschnitt 534.4.4.4.2. 
+Anschlussart 1 
+Geforderter Schutzpegel nach OVE E 8101 Unterabschnitt 534.4.4.2 und Tabelle 534.1   
+2 500 V 
+Typ 1 SPD mit: 
+Blitzstoßstrom Iimp = 12,5 kA 
+ 
+ 
+ 
+Nennableitstoßstrom In = 40 kA 
+ 
+ 
+ 
+Schutzpegel UP = 1 600 V 
+ 
+ 
+ 
+Zusätzliche Herstellerangabe: 
+Schutzpegel bei 1 kA 
+  
+800 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 5 kA 
+  
+900 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 10 kA 
+  
+1 000 V 
+ 
+ 
+ 
+ 
+Schutzpegel bei 20 kA 
+  
+1 200 V 
+Betriebsmittel und bauliche Ausführung: 
+a) 
+230 V AC Betriebsmittel (mindestens Überspannungskategorie II), die nur über eine Anspeisung verfügen; 
+b) 
+Ungeschirmte mehradrige Leitungen oder alle zum Stromkreis gehörigen Leiter (inklusive Schutzleiter) 
+innerhalb eines Installationsrohres oder Kanals, d. h. Schleifenfläche nicht größer als 0,5 m2; 
+c) 
+Potentialausgleichs-Netzwerk vorhanden, zB gemäß OVE-Richtlinie R 15; 
+
+
+===== PAGE 9/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 9 von 15 
+d) 
+Vermeidung von Installationsschleifen durch Verwendung einer mehradrigen Leitung oder aller zum 
+Stromkreis gehörigen Leiter (inklusive Schutzleiter) innerhalb eines Installationsrohres oder Kanals, d. h. 
+Schleifenfläche nicht größer als etwa 0,5 m2. 
+Geforderter Mindest-Blitzstoßstrom nach OVE E 8101 Tabelle 534.4: 
+– 
+für den Schutzpfad L - PE 12,5 kA   Schutzpegel lt. Hersteller  
+ ca. 1 050 V  
+– 
+für den Schutzpfad N - PE 12,5 kA   Schutzpegel lt. Hersteller  
+ ca. 1 050 V 
+Damit ergibt sich in Bezug auf die Anforderungen aus OVE E 8101 Unterabschnitt 534.4.4.2: 
+Die Schutzpegelforderung nach Tabelle 534.1 und auch die Empfehlung, dass der Schutzpegel der SPD nicht 
+höher als 80% der Bemessungs-Stoßspannung der Betriebsmittel (0,8 ∙ 2 500 V = 2 000 V) sein soll ist mit 
+großer Sicherheitsreserve eingehalten. 
+Ergänzend kann zu den Anforderungen aus OVE E 8101 Unterabschnitt 534.4.9 zum Schutzbereich abgeleitet 
+werden: 
+Da die gewählten SPD beim geforderten Ableitvermögen einen Schutzpegel von weniger als 50 % des nach 
+OVE E 8101 Tabelle 534.1 geforderten Wertes (2 500 V) aufweisen, kommt der zweite Thesenstrich in OVE  
+E 8101 Unterabschnitt 534.4.9 zur Anwendung und es sind keine weiteren SPD in der Installation erforderlich, 
+auch wenn die Leitungslänge zwischen diesen SPD und zu schützenden Betriebsmitteln mehr als 10 m beträgt. 
+Aufgrund der baulichen Ausführung und des Sachverhaltes, dass der ermittelte Schutzpegel nur bei etwa 40 % 
+des geforderten Schutzpegels von 2 500 V liegt, ergibt sich nach Tabelle C.1 im Anhang C (auf Basis 
+interpolierter Werte für UP = 1 050 V) ein wirksamer Schutzbereich: 
+– 
+bei Einschlägen nahe einer baulichen Anlage ohne räumliche Schirmung von größer 1 250 m, d. h. die 
+Leitungslänge kann vernachlässigt werden; 
+– 
+bei direkten Einschlägen in die bauliche Anlage ohne gitterförmig ausgeführtem LPS von etwa 21 m; 
+– 
+bei direkten Einschlägen in die bauliche Anlage und gitterförmig ausgeführtem LPS (zB Baustahlarmierung) 
+von etwa 79 m. 
+3.2.2 
+Einrichtungen für Sicherheitszwecke (OVE E 8101:2009 Abschnitt 35) 
+Bei der Auslegung der entsprechenden Schutzmaßnahmen gegen Überspannungen ist zu berücksichtigen, 
+dass im Regelfall derartige Anlagen oder Anlagenteile nicht nur mit Energieleitungen, sondern auch mit 
+Datenleitungen (Busleitungen) verbunden sind und dadurch eine erhebliche Schleifenbildung gegeben ist (zB 
+Schleifenbildung durch Installation eines Melde-Loop, Schleifenbildung zwischen Energieversorgung und 
+Leitungsanbindung der Rufweiterleitung bei Gefahrenmeldeanlagen). 
+Beispiel 
+einer 
+Sicherheitsbeleuchtungsanlage 
+mit 
+Netzzuleitung, 
+Datenanbindung, 
+Fernanzeigen, 
+Verbindungen zu Unterstationen usw. 
+Bauliche Ausführung gemäß Abschnitt 1.3.2 und Unterpunkte a), b) und c). 
+Gemäß Bild 5 ergibt sich bei der Installation zwischen den unterschiedlichen Leitungen (Netzzuleitung, LAN-
+Kabel/-leitung, Busleitung zur Unterstation, usw.) eine Schleifenbildung in Abhängigkeit der Ausführung gemäß 
+Abschnitt 1.3.2 und Unterpunkte e) oder f). 
+Somit beläuft sich die maximale Leitungslänge (wirksamer Schutzbereich) zwischen SPD und der Zentrale der 
+sicherheitstechnischen Anlage gemäß Tabelle C.1 im Anhang C wie aufgelistet. 
+Wirksamer Schutzbereich unter Betrachtung eines Einschlages nahe einer baulichen Anlage ohne räumliche 
+Schirmung und mit einem angenommenen Schutzpegel des SPDs von 1 100 V für folgende Listenpunkte in 
+Abschnitt 1.3.2: 
+e) 
+maximale Leitungslänge 60 m; 
+f) 
+maximale Leitungslänge 12 m. 
+Wirksamer Schutzbereich unter Betrachtung eines direkten Einschlages in eine bauliche Anlage mit 
+gitterförmigem LPS und mit einem angenommenen Schutzpegel des SPD von 1 100 V für folgende 
+Listenpunkte in Abschnitt 1.3.2: 
+e) 
+maximale Leitungslänge 3,7 m; 
+f) 
+Leitungslänge < 1 m. 
+
+
+===== PAGE 10/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 10 von 15 
+ 
+Bild 5 – Beispiel einer Sicherheitsbeleuchtungsanlage  
+[Quelle: DEHN AUSTRIA GmbH.] 
+ 
+Die Verwendung von Typ 1 SPD ist für alle Leitungen erforderlich in denen das Risiko einer galvanischen Ein-
+kopplung eines (Teil-)Blitzstromes besteht; zB Fernanzeigen und/oder Stromkreise für Betriebsmittel die im 
+Freien installiert sind oder Leitungsverbindungen zu Unterstationen, die gebäudeüberschreitend installiert sind. 
+ 
+ 
+ 
+
+
+===== PAGE 11/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 11 von 15 
+Anhang A 
+ 
+Schutzbereich aufgrund von Schwingungen 
+Wenn die Länge der Leitungen zwischen SPD und dem zu schützendem Betriebsmittel größer als 10 m ist, 
+aber der Schutzpegel des SPD 50 % der Stehstoßspannung entsprechend der geforderten Überspannungs-
+kategorie überschreitet, so kann der wirksame Schutzbereich aufgrund von Schwingungen (LPO) mit folgender 
+Formel abgeschätzt werden: 
+LPO = (UW −UP/F) / k  
+k = 25 V/m 
+Dabei ist 
+LPO  
+wirksamer Schutzbereich aufgrund von Schwingungen in m; 
+UW  
+Bemessungs-Stehstoßspannung des zu schützenden Betriebsmittels; 
+UP/F  
+in der Anlage wirksamer (effektiver) Schutzpegel; 
+k  
+ 
+erwartete Induktionsspannung je Meter Leitung in V/m. 
+ 
+ 
+ 
+
+
+===== PAGE 12/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 12 von 15 
+Anhang B 
+ 
+Schutzbereich aufgrund von Induktion 
+Der wirksame Schutzbereich aufgrund von Induktion kann mit folgender Formel abgeschätzt werden: 
+Lpi = (UW – UP/F) / h 
+h = 300 ⋅ KS1 ⋅ KS2 ⋅ KS3 bei Blitzeinschlägen nahe der baulichen Anlage in V/m oder 
+h = 30 000 ⋅ KS0 ⋅ KS2 ⋅ KS3 bei Blitzeinschlägen in die bauliche Anlage in V/m 
+ 
+Dabei ist 
+Lpi  
+wirksame Schutzbereich aufgrund von Induktion in m; 
+UW  
+Bemessungs-Stehstoßspannung des zu schützenden Betriebsmittels; 
+UP/F  
+in der Anlage wirksamer (effektiver) Schutzpegel; 
+KS1  
+räumliche Schirmung durch ein äußeres LPS oder andere Schirme an der Grenze LPZ 0 auf 1; 
+KS2  
+räumliche Schirmung durch Schirme an der Grenze LPZ 1 auf 2 oder höher; 
+KS3  
+Kennwerte der inneren Verkabelung; 
+KS0  
+ist ein Faktor, der die Schirmwirkung eines äußeren LPS an der Grenze LPZ 0 auf 1 berücksichtigt; 
+KS0 = 0,06 ∙ w0,5 für ein gitterförmiges äußeres LPS mit der Maschenweite w in m oder, 
+KS0 = kc   
+für ein nicht gitterförmiges äußeres LPS (siehe ÖVE/ÖNORM EN 62305-3:2012, Anhang C). 
+ANMERKUNG 1  
+Die Faktoren KS1, KS2, KS3 sind in der ÖVE/ÖNORM EN 62305-2:2012, Abschnitt B.5 näher  
+beschrieben. Der Faktor KS0 ist in der ÖVE/ÖNORM EN 62305-4:2008, Abschnitt D.2.4 näher beschrieben 
+Im ungünstigsten Fall sind die Faktoren KS1, KS2 und KS3 mit 1 anzunehmen (keine räumliche Schirmung durch 
+ein äußeres Blitzschutzsystem oder Schirmung an der Grenze LPZ 0A/B auf 1, keine räumliche Schirmung an 
+der Grenze LPZ 1 auf 2 oder höher, sowie ungeschirmte Verkabelung. 
+Bei vorhandenem maschenförmigen Potentialausgleichs-Netzwerk (zB gemäß OVE-Richtlinie R 15, 
+ÖVE/ÖNORM EN 62305-4, OVE E 8101:2019 Unterabschnitte 444.5.3.4 und 444.5.4) können die Werte von 
+KS1 und KS2 auf die Hälfte reduziert werden. 
+ANMERKUNG 2  
+Die beispielhaften Berechnungen für Tabelle C.1 im Anhang C erfolgten: 
+– 
+für Anlagen „ohne räumliche Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk nach Listenpunkt c)“ 
+unter Zugrundelegung eines zumindest sternförmigen Hauptpotentialausgleichs, daher wurde der anzusetzende 
+Höchstwert von KS1 = KS2 = 1 mit einem Abschlagsfaktor von 0,5 gleich 0,5 gesetzt, sowie mit KS0 = 0,3 (unter der 
+Annahme von vier oder mehr äußeren Ableitungen).  
+– 
+für Anlagen „mit räumlicher Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk nach Listenpunkt c)“ mit 
+einer Maschenweite w gleich 5,0 m und damit resultierend für KS1 und KS2 wiederum mit einem Abschlagsfaktor von 
+0,5 der Wert 0,3 (berechnet nach KS1 = KS2 = 0,12*w*0,5) und für KS0 = 0,06 ∙ w 0.5. 
+– 
+mit KS3 gleich 0,01, 0,2 oder 1, je nach Schleifengröße. 
+– 
+für Gebäudeschirmung mittels Metallblech mit KS1 und KS2 gleich 10-4. 
+– 
+für Leitungsschirmung mit KS3 gleich 10-4. 
+– 
+die Verlegung von Leiterschleifen nahe der räumlichen Schirmung (0,1 ∙ w bis 0,2 ∙ w) wurde nicht berücksichtigt. 
+ 
+
+
+===== PAGE 13/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 13 von 15 
+Anhang C 
+ 
+Beispielhaft berechnete Schutzbereiche 
+Tabelle C.1 – Beispielhaft berechnete Schutzbereiche für ein 230/400 V Versorgungssystem  
+in Abhängigkeit des wirksamen (effektiven) Schutzpegels (1 von 2) 
+ 
+ 
+ 
+Die angeführten Listenpunkte beziehen sich auf Abschnitt 1.3.2 dieser Fachinformation.
+1 500
+1 600
+1 700
+1 800
+1 900
+2 000
+2 100
+2 200
+2 300
+2 400
+2 500
+Schutzpegel des SPD (Herstellerangabe)   U P [V]
+beim geforderten Mindestableitstoßstrom nach Abschnitt 534.4.4.2 von OVE E 8101
+1 000
+1 100
+1 200
+1 300
+1 400
+1 500
+1 600
+1 700
+1 800
+1 900
+2 000
+Wenn der wirksame (effektive) Schutzpegel des SPD größer ist als 50 % der geforderten Stehstoßspannung für 
+Überspannungskategorie II (Schutz bei Schwingungen) 
+28
+24
+20
+16
+12
+10 b
+10 b
+10 b
+ohne räumliche Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk nach Listenpunkt c)
+Betriebsmittel mit nur einer angeschlossenen Leitung (zB Energieleitung) 
+nach Listenpunkt d)  c  -  Schleifenfläche nicht größer als etwa 0,5 m²
+133
+10 b
+Betriebsmittel mit mehreren angeschlossenen Leitungen (zB Energieleitungen + Datenleitungen) 
+nach Listenpunkt e)  -  Schleifenfläche nicht größer als etwa 10 m²
+66,7
+60,0
+53,3
+46,7
+40,0
+33,3
+26,7
+20,0
+13,3
+6,7
+0,0
+Betriebsmittel mit mehreren angeschlossenen Leitungen (zB Energieleitungen + Datenleitungen) 
+nach Listenpunkt f)  -  Schleifenfläche nicht größer als etwa 50 m²
+13,3
+12,0
+10,7
+9,3
+8,0
+6,7
+5,3
+4,0
+2,7
+1,3
+0,0
+mit räumlicher Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk nach Listenpunkt c), durchschnittliche 
+Maschenweite an der Zonengrenze LPZ 0/1 von 5 m
+Betriebsmittel mit nur einer angeschlossenen Leitung (zB Energieleitung) 
+nach Listenpunkt d)  c  -  Schleifenfläche nicht größer als etwa 0,5 m²
+10 b
+Betriebsmittel mit mehreren angeschlossenen Leitungen (z.B. Energieleitungen + Datenleitungen) 
+nach Listenpunkt e)  -  Schleifenfläche nicht größer als etwa 10 m²
+185,2
+166,7
+148,1
+129,6
+111,1
+92,6
+74,1
+55,6
+37,0
+18,5
+0,0
+Betriebsmittel mit mehreren angeschlossenen Leitungen (zB Energieleitungen + Datenleitungen) 
+nach Listenpunkt f)  -  Schleifenfläche nicht größer als etwa 50 m²
+37,0
+33,3
+29,6
+25,9
+22,2
+18,5
+14,8
+11,1
+7,4
+3,7
+0,0
+mit räumlicher Schirmung  an der Zonengrenze LPZ 0/1 mittels durchgängigem Metallblech (zB Industriebau mit 
+Metallfassade und Blechdach), unabhängig von den Listenpunkten d) bis f)
+ohne räumliche Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk, aber Leitungsschirmung (Verwendung 
+durchgehend geschirmter Kabel und/oder Kabelkanäle), unabhängig von den Listenpunkten d) bis f)
+Schutz gegen indirekte Blitzeinwirkungen (KEIN Blitzschutz)
+Leitungslänge ist aufgrund des errechneten Schutzbereichs 
+von 3 704 m bis 370 m nicht relevant
+Leitungslänge ist bei vollständiger ferromagnetischer Metallblechschirmung des Gebäudes aufgrund 
+des errechneten extrem großen Schutzbereichs nicht relevant
+Leitungslänge ist bei durchgängiger Kabelschirmung aufgrund des errechneten extrem großen 
+Schutzbereichs nicht relevant (Kabelschirme und/oder metallische Schirmungen sind an beiden 
+Enden in den Potentialausgleich einzubeziehen)
+Schutz gegen Einschläge nahe der baulichen Anlage (KEIN Schutz gegen direkte Blitzeinwirkungen in die bauliche Anlage)
+Leitungslänge ist aufgrund des errechneten Schutzbereichs 
+von 1 333 m bis 267 m nicht relevant
+Keine Berechnung erforderlich
+da U P < 50% der geforderten 
+Stehstoßspannung von 2 500 V
+SCHUTZZIEL / AUSFÜHRUNG
+wirksamer Schutzbereich in [m] Leitungslänge 
+in Abhängigkeit des wirksamen (effektiven) Schutzpegels U P/F  [V] a
+
+
+===== PAGE 14/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 14 von 15 
+Tabelle C.1 – Beispielhaft berechnete Schutzbereiche für ein 230/400 V Versorgungssystem  
+in Abhängigkeit des wirksamen (effektiven) Schutzpegels (2 von 2) 
+ 
+ 
+Die angeführten Listenpunkte beziehen sich auf Abschnitt 1.3.2 dieser Fachinformation.
+1 500
+1 600
+1 700
+1 800
+1 900
+2 000
+2 100
+2 200
+2 300
+2 400
+2 500
+Schutzpegel des SPD (Herstellerangabe)   U P [V]
+beim geforderten Mindestableitstoßstrom nach Abschnitt 534.4.4.2 von OVE E 8101
+1 000
+1 100
+1 200
+1 300
+1 400
+1 500
+1 600
+1 700
+1 800
+1 900
+2 000
+Betriebsmittel mit nur einer angeschlossenen Leitung (zB Energieleitung) 
+nach Listenpunkt d)  c  -  Schleifenfläche nicht größer als etwa 0,5 m²
+äußeres LPS mit mehreren Ableitungen d
+22,2
+20,0
+17,8
+15,6
+13,3
+11,1
+10 b
+10 b
+10 b
+10 b
+10 b
+gitterförmiges äußeres LPS (z.B. Baustahlarmierung mit einbezogen), durchschnittliche Maschenweite an der 
+Zonengrenze LPZ 0/1 mit 5 m
+82,8
+74,5
+66,3
+57,9
+49,7
+41,4
+33,1
+24,8
+16,6
+10 b
+10 b
+Betriebsmittel mit mehreren angeschlossenen Leitungen (zB Energieleitungen + Datenleitungen) 
+nach Listenpunkt e)  -  Schleifenfläche nicht größer als etwa 10 m²
+äußeres LPS mit mehreren Ableitungen d
+1,1
+1,0
+gitterförmiges äußeres LPS (zB Baustahlarmierung mit einbezogen), durchschnittliche Maschenweite an der 
+Zonengrenze LPZ 0/1 mit 5 m
+4,1
+3,7
+3,3
+2,9
+2,5
+2,1
+1,7
+1,2
+Betriebsmittel mit mehreren angeschlossenen Leitungen (zB Energieleitungen + Datenleitungen) 
+nach Listenpunkt f)  -  Schleifenfläche nicht größer als etwa 50 m²
+äußeres LPS mit mehreren Ableitungen d
+gitterförmiges äußeres LPS (zB Baustahlarmierung mit einbezogen), durchschnittliche Maschenweite an der 
+Zonengrenze LPZ 0/1 von 5 m
+mit räumlicher Schirmung an der Zonengrenze LPZ 0/1 mittels durchgängigem Metallblech (zB Industriebau mit 
+Metallfassade und Blechdach), unabhängig von den Listenpunkten d) bis f)
+ohne räumliche Schirmung durch maschenförmiges Potentialausgleichs-Netzwerk, aber Leitungsschirmung (Verwendung 
+durchgehend geschirmter Kabel und/oder Kabelkanäle), unabhängig von den Listenpunkten d) bis f)
+Lineare Interpolation des Schutzbereichs [m] Leitungslänge in Abhängigkeit des wirksamen (effektiven) Schutzpegels ist zulässig.
+c   Werte für Auflistung d) berechnet mit k S3 = 0,01 nach ÖVE/ÖNORM EN 62305-2:2013, Tabelle B.5 (= Änderung gegenüber Ausgabe 2008 wo der entsprechende Wert für k S3 = 0,02 war).
+a   wirksamer (effektiver) Schutzpegel siehe Abschnitt 1.4 dieser Fachinformation (U P/F = U P + ΔU ), wobei für ΔU pauschal ein Zuschlag von 500 V angesetzt wurde. 
+b   Leitungslänge basiert nicht auf Berechnung sondern auf dem Konsens, dass bis 10 m Leitungslänge keine zusätzlichen Massnahmen erforderlich sind.
+d   Blitzstromaufteilung k c ≤ 0,3
+Leitungslänge ist bei vollständiger ferromagnetischer Metallblechschirmung des Gebäudes aufgrund 
+des errechneten extrem großen Schutzbereichs nicht relevant
+Leitungslänge ist bei durchgängiger Kabelschirmung aufgrund deserrechneten extrem großen 
+Schutzbereichs nicht relevant  (Kabelschirme und/oder metallische Schirmungen sind an beiden 
+Enden in den Potentialausgleich einzubeziehen)
+Überspannungsschutz so nahe wie möglich  an den zu schützenden Einrichtungen ist immer erforderlich,
+da der berechnete Schutzbereich deutlich unter 1 m liegt
+Überspannungsschutz so nahe wie möglich  an den zu schützenden Einrichtungen 
+ist immer erforderlich, da der 
+berechnete Schutzbereich 
+unter 1 m liegt
+SCHUTZZIEL / AUSFÜHRUNG
+Schutz gegen direkte Einschläge in die bauliche Anlage (Schutz gegen direkte Blitzeinwirkungen)
+wirksamer Schutzbereich in [m] Leitungslänge 
+in Abhängigkeit des wirksamen (effektiven) Schutzpegels U P/F  [V] a
+
+
+===== PAGE 15/15 =====
+OVE-Fachinformation E09:2022-03-01 
+Seite 15 von 15 
+Literaturhinweise 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+ÖVE/ÖNORM EN 62305 Reihe, Blitzschutz 
+OVE EN 50174-2, Informationstechnik – Installation von Kommunikationsverkabelung –  
+Teil 2: Installationsplanung und Installationspraktiken in Gebäuden 
+OVE-Richtlinie R 15, EMV-, Potentialausgleichs-, Erdungs-, Blitzschutz und Überspannungsschutz-Konzept in 
+Gebäuden – Allgemeines 
+CLC/TS 61643-12:2009, Low-voltage surge protective devices – Part 12: Surge protective devices connected 
+to low-voltage power distribution systems – Selection and application principles 
+ÖVE/ÖNORM EN 61643-11, Überspannungsschutzgeräte für Niederspannung –  
+Teil 11: Überspannungsschutzgeräte für den Einsatz in Niederspannungsanlagen – Anforderungen und 
+Prüfungen 
+ 
+ 
+Quellenangabe zu den Bildern 
+Bild 1: OVE-Richtlinie R 6-3:2013, Blitz- und Überspannungsschutz – Teil 3: Zusätzliche Informationen für 
+besondere bauliche Anlagen 
+Bild 2a und 3: CLC/TS 61643-12:2009, Low-voltage surge protective devices – Part 12: Surge protective 
+devices connected to low-voltage power distribution systems – Selection and application principles 
+ 
+Die in der Richtlinie verwendeten Bilder 2b, 4 und 5 wurden mit freundlicher Unterstützung von folgenden 
+erwähnten Unternehmen zur Verfügung gestellt. 
+Bild 2b: DEHN AUSTRIA GmbH. 
+Bild 4: VDE VERLAG, VDE-Schriftenreihe 83, Biegelmeier/Kiefer/Krefter: Schutz in elektrischen Anlagen,  
+Bd. 4:2001, S.100 
+Bild 5: DEHN AUSTRIA GmbH. 
+ 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für 
+Elektrotechnik 
+ 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 | A-1010 Wien 
+Copyright © OVE – 2022. Alle Rechte 
+vorbehalten!  
+Im Falle eines Nachdruckes darf der Inhalt 
+nur wortgetreu und ohne Auslassung oder 
+Zusatz wiedergegeben werden. 
+ 
+Tel.: +43 1 587 63 73 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 
