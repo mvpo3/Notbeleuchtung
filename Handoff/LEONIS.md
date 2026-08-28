@@ -4,31 +4,29 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (zuletzt 2026-08-28 abends) — HIER WEITER
+## STAND (zuletzt 2026-08-28 nachts) — HIER WEITER
 
-**Slice 2 = gepusht, PR #4 offen** (github.com/mvpo3/Notbeleuchtung/pull/4,
-CODEOWNERS-Review + CI abwarten). **knowledge/ (14 Norm-PDFs) liegt auf main**
-(gitignore-Ausnahme `!knowledge/**`; Repo ist PRIVATE — wegen der lizenzpflichtigen
-Norm-PDFs NICHT public stellen).
+**Slice 2 (PR #4) + Slice 3 (PR #5) = GEMERGT nach `main`.** `pytest -q` auf main →
+**40 passed, 0 skipped**, `ruff check .` sauber, E2E `rendered: True`.
+Branches `leonis/slice2-platzierung` + `leonis/slice3-render` noch da (nicht gelöscht).
 
-**Slice 3 (Render) = DONE (Code), lokal auf `leonis/slice3-render`** (5 atomare
-Commits ab `5a86d8b`, zweigt vom Slice-2-Branch ab). `pytest -q` → **40 passed,
-0 skipped**, `ruff check .` sauber, E2E asserted `rendered: True`.
+**Wissensbasis auf main** (`knowledge/`): 20 Norm-/Praxis-PDFs + `extracted/` (18
+Digests, Regel-Tabellen), `extracted/bildlehren/` (visuelle Analyse), Synthese
+`extracted/PLATZIERUNGS_KONZEPTE.md`, `extracted/aus_elektroplaner/` (5 gefilterte
+elektro-planer-Digests inkl. Schrack-Katalog + OVE E 8101:2025-Deltas) + kompletter
+Rohimport `_extracted_text/`. Repo ist PRIVATE — lizenzpflichtige Norm-PDFs, NICHT
+public stellen.
 
-Gebaut: `symbols/{library.py, inserter.py}` (Port schrack_library/schrack_inserter,
-generativ verschlankt), `hauptengine/render/dxf_renderer.py` (Contract B +
-RaumModell → DXF: 5 RZ auf `E_Sicherheitsbeleuchtung`, F13-Stromkreis-Labels mit
-Anti-Kollision, Raum-Konturen, Fluchtweg-Segmente, VPORT), `pipeline.run(...,
-out_path=)` (ohne out_path weiter `rendered: False` — kompatibel), Tests
-`tests/render/` (15 Stück). KEIN Contract angefasst. Design-Entscheide +
-Herkunfts-Commits: `docs/PORT_LOG.md` Slice-3-Tabelle; Plan
-`~/.claude/plans/handoff-agile-summit.md`.
+Slice 3 gebaut: `symbols/{library.py, inserter.py}`, `hauptengine/render/dxf_renderer.py`
+(Contract B + RaumModell → DXF: 5 RZ auf `E_Sicherheitsbeleuchtung`, F13-Labels,
+Raum-Konturen, VPORT), `pipeline.run(..., out_path=)`. KEIN Contract angefasst.
+PORT_LOG Slice-3-Tabelle.
 
-**Offen für Slice-3-Abschluss:** (1) DoD-Sichtprüfung: generierten DXF gegen
-4OG-GU-PDF prüfen (Datei wurde dem User geschickt), (2) User-GO: Branch pushen +
-PR (nach/auf PR #4 gestackt). **Danach: Slice 5-Anteil** (dünne FastAPI
-`api/main.py POST /plan`) oder Port-Staging für Enis/Selman auf Zuruf.
-`layout_template` (Titelblock/PDF) bewusst deferred → PORT_LOG „Geplante Ports".
+**Nächste Leonis-Tasks:** (1) DoD-Sichtprüfung generierter DXF vs. 4OG-GU-PDF (offen),
+(2) **Slice 5-Anteil** dünne FastAPI `api/main.py POST /plan` → E2E, oder Port-Staging
+für Enis/Selman auf Zuruf. `layout_template` (Titelblock/PDF) deferred → PORT_LOG.
+Neue Erkenntnisse fürs Normwissen (Enis): OVE E 8101:2025 neues Verbot RCD/AFDD in
+Sicherheitskreisen (Hard-Stop), Schrack-Erkennungsweiten je Leuchtenfamilie.
 
 Offener Rest aus Slice 2 (kein Blocker, Enis' Slice 1): FakeNorm mappt
 `fuer_fluchtweg_abschnitt` auf die GANG-Regel → alle 5 RZ nutzen `notlicht_ks_stiege`;
