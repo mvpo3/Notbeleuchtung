@@ -1,7 +1,7 @@
 # knowledge/extracted — Norm-Digests für die Notbeleuchtungs-Engine
 
-Maschinen-orientierte Extraktion der 14 Norm-/Rechts-PDFs aus `knowledge/`
-(Volltext via pypdf, 2026-08-28). Jedes Digest: Regel-Tabelle mit ID,
+Maschinen-orientierte Extraktion der 20 Norm-/Rechts-/Praxis-PDFs aus
+`knowledge/` (Volltext via pypdf, 2026-08-28). Jedes Digest: Regel-Tabelle mit ID,
 §/Seite-Referenz, Werten und Typ (**Gebot / Verbot / Grenzwert / Definition /
 Empfehlung**). Verbote = Hard Stops der Engine (Entscheidungs-Hierarchie in
 `CLAUDE.md`: LB-explizit → Referenz-Praxis → EN-1838/ÖNorm-Default →
@@ -30,6 +30,27 @@ PDF-Original prüfen).
 | [Nullungsverordnung.md](Nullungsverordnung.md) | Nullung | TN-System-Default österreichischer Netze; für Platzierung irrelevant. |
 | [RIS_Standesregeln_Elektrotechnik.md](RIS_Standesregeln_Elektrotechnik.md) | Standesregeln Gewerbe | ETG/ETV/OVE/ÖNORM-Einhaltung = Standespflicht. |
 
+## Referenz-Praxis (2. Hierarchie-Ebene — Planungs-Blaupausen, nie alleinige norm_quelle)
+
+| Digest | Quelle | Regeln | Warum wichtig |
+|--------|--------|-------:|---------------|
+| [Fachinfo_E08_Arbeitsstaetten.md](Fachinfo_E08_Arbeitsstaetten.md) | OVE-Fachinfo E08 (2021, AT) | 39 | **AStV-§9-Pflichtmatrix** — WANN ist Sicherheitsbeleuchtung in AT-Arbeitsstätten Pflicht (fehlte bisher!): keine natürliche Belichtung, unzureichende Belichtung/Nachtarbeit, besondere Gefährdung (dort keine Substitution durch nachleuchtende Hilfen; ≤ 0,5 s, ≥ 15 lx). Tabelle 1 = Entscheidungsmatrix 30/100/1600 m². |
+| [ONL_Normen_AT.md](ONL_Normen_AT.md) | Zumtobel „Sicherheitsbeleuchtung Österreich" (2020, **AT**) | 88 | Bester AT-Lücken-Füller: **OVE R 12-2** (LPS > 100 Leuchten, 1600-m²-Brandabschnitt, E30), **OIB-RL 2 (2019)** Erforderlichkeits-/Betriebsdauer-Matrix je Gebäudetyp (1 h/3 h/8 h mit Schwellen), **EN 50172** Prüfregime + Pflicht-Planunterlagen (Auslasspläne mit Stromkreisbezeichnung → bestätigt Engine-Output). |
+| [Handbuch_NotSicherheitsbeleuchtung_2026.md](Handbuch_NotSicherheitsbeleuchtung_2026.md) | INOTEC Handbuch 2026 (DE) | 102 | Aktuellste Quelle: zitiert **EN 1838:2025-03** — Fluchtweg flächendeckend ≥ 1 lx statt Mittellinie, neue Pflicht-Stellen (Aufzugsflure, Türentriegelung 5 lx). Faustformeln: Wartungsfaktor 0,8 → 1,25 lx projektieren, min. 2 Leuchten je Weg, RZ je Etage im Treppenraum. |
+| [GSYSTEMS_Planungshandbuch.md](GSYSTEMS_Planungshandbuch.md) | GSYSTEMS 2026/27 (DE) | 118 | 16 Gebäudetyp-Anforderungsprofile (Dauer/Aktivierung/Emin/Versorgung), Systemintegrität ≥ 2 Leuchten je Bereich, Antipanik > 60 m², **Montagehöhen-Bänder** (RZ-Unterkante 2,0–2,5 m quer, 1,7–2,1 m wandparallel, 1,2–1,4 m barrierefrei). |
+| [Kaufel_Planungshandbuch.md](Kaufel_Planungshandbuch.md) | ABB Kaufel, 6. Aufl. 2016 (DE) | 49 | Kern-Erkenntnis: **Leuchtenabstände sind katalogspezifisch** (Montagehöhe → max. Abstand je Leuchte) — Engine braucht Abstandstabellen pro `catalog_key`, kein globaler Hardcode. 2-Leuchten/2-Kreise-Systemintegrität. |
+| [LichtWissen_10_Notbeleuchtung.md](LichtWissen_10_Notbeleuchtung.md) | licht.de/ZVEI Heft 10 (2016, DE) | 84 (33 DE-only) | RZ-Stückzahllogik: hinterleuchtet = Default (z=200); nur beleuchtetes Schild erzwingt eigene Dauerlicht-Leuchte ≤ 2 m (+1 Leuchte/Schild); nachleuchtend allein unzulässig. DE-only-Regeln markiert. |
+
+**⚠️ Versions-Warnung EN 1838:** Repo-PDF + Digest = Ausgabe 2019 (EN 1838:2013).
+INOTEC/GSYSTEMS zitieren **EN 1838:2025-03** mit geändertem Ausleuchtungs-Paradigma
+(flächendeckend ≥ 1 lx) und neuen Pflicht-Stellen. Deltas sind in beiden Digests
+dokumentiert. Vor Produktiv-Einsatz: 2025er-Ausgabe beschaffen und neu extrahieren;
+bis dahin gilt der konservativere Wert.
+
+**DE/AT-Regel:** DE-only-Inhalte (DIN VDE 0108-100, ASR, MLAR/MBO…) sind in den
+Digests markiert — sie sind Referenz-Praxis-Anhaltspunkte, niemals AT-Normersatz.
+AT-Rangfolge: OVE E 8101 + OIB-RL 2 + AStV vor allen DE-Quellen.
+
 ## Rand-Relevanz (bewusst NICHT ins NormRegelwerk)
 
 | Digest | Inhalt | Einordnung |
@@ -41,11 +62,13 @@ PDF-Original prüfen).
 
 ## Bekannte Lücken im Quellenbestand
 
-- **OVE-Richtlinie R 12-2** („wo ist Sicherheitsbeleuchtung erforderlich") — von
-  E 8101 referenziert, PDF nicht im Repo.
-- **EN 50172** (Betrieb/Prüfung Sicherheitsbeleuchtungsanlagen), **TRVB E 102 /
-  TRVB 123 S**, **OIB-Richtlinie 2** — mehrfach normativ referenziert, nicht im
-  Repo. Bei Bedarf nachlegen → gleiche Extraktion.
+- **EN 1838:2025-03** — aktuelle Ausgabe fehlt als PDF (nur via INOTEC/GSYSTEMS
+  sekundär erfasst, s. Versions-Warnung oben).
+- **OVE R 12-2, OIB-RL 2, EN 50172** — Originale fehlen, aber substanziell
+  sekundär abgedeckt (ONL/Zumtobel-Digest + Fachinfo E-08).
+- **TRVB E 102 / TRVB 123 S** — weiterhin nur namentlich referenziert, keine
+  Werte in keiner Quelle. **AStV-Volltext** — nur §9-Auszüge via Fachinfo E-08.
+  Bei Bedarf nachlegen → gleiche Extraktion.
 
 ## Nutzung
 
