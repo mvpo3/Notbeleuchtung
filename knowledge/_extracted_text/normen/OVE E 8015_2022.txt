@@ -1,0 +1,2271 @@
+
+
+===== PAGE 1/28 =====
+ 
+ 
+ 
+OVE E 8015 
+ 
+Ausgabe: 2022-07-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Elektrische Anlagen in Wohngebäuden 
+Art und Umfang der Mindestausstattung sowie zusätzliche 
+Anforderungen an Planung und Errichtung 
+ 
+Electrical installations in residential buildings – 
+Type and scope of the minimum equipment as well as additional requirements for 
+planning and construction 
+ 
+Installations électriques dans des immeubles d'habitation – 
+Type et étendue de l'équipement minimum ainsi que les exigences 
+supplémentaires pour la planification et la construction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.020; 91.040.30; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ 
+Copyright © OVE – 2022.  
+Alle Rechte vorbehalten! Nachdruck oder  
+Vervielfältigung, Aufnahme auf oder in sonstige Medien 
+oder Datenträger nur mit Zustimmung gestattet! 
+ 
+OVE Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Webshop: www.ove.at/webshop 
+Tel.: +43 1 587 63 73 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 2/28 =====
+OVE E 8015:2022-07-01 
+2 
+Inhalt 
+Seite 
+Vorwort ............................................................................................................................................................... 3 
+1 
+Anwendungsbereich ............................................................................................................................... 4 
+2 
+Normative Verweisungen ....................................................................................................................... 4 
+3 
+Begriffe ................................................................................................................................................... 5 
+4 
+Planungsgrundlagen .............................................................................................................................. 8 
+4.1 
+Allgemeines ............................................................................................................................................ 8 
+4.2 
+Planungshinweise für die Errichtung ...................................................................................................... 9 
+4.3 
+Zusätzliche Anforderungen für energietechnische Anlagen .................................................................. 9 
+4.4 
+Zusätzliche Anforderungen für die Gebäudesystemtechnik ................................................................ 10 
+4.5 
+Zusätzliche Anforderungen für Anlagen der Informationstechnik  (IuK- und RuK-
+Netzanwendungen) .............................................................................................................................. 10 
+5 
+Art und Umfang der Ausstattung .......................................................................................................... 12 
+5.1 
+Energietechnische Anlagen und Anlagen der Gebäudesystemtechnik ............................................... 12 
+5.2 
+Informationstechnische Anlagen .......................................................................................................... 16 
+5.3 
+Anzahl der Steckdosen und Auslässe.................................................................................................. 17 
+6 
+Kabel-/Leitungsführung und Anordnung der Betriebsmittel ................................................................. 22 
+Anhang A (informativ)  Ausführungsbeispiele für IuK- und RuK-Netzanwendungen ....................................... 23 
+Anhang B (informativ)  Installationsbereiche .................................................................................................... 24 
+B.1 
+Beschreibung der Installationsbereiche ............................................................................................... 24 
+B.2 
+Anordnung ............................................................................................................................................ 24 
+B.3 
+Ausnahmen .......................................................................................................................................... 25 
+ 
+ 
+ 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 3/28 =====
+OVE E 8015:2022-07-01 
+3 
+Vorwort 
+Diese Norm hat den Status einer nationalen elektrotechnischen Norm gemäß ETG 1992. Bei ihrer Anwendung 
+ist dieses Vorwort zu berücksichtigen. 
+Der Rechtsstatus dieser nationalen elektrotechnischen Norm ist den jeweils geltenden Gesetzen oder 
+Verordnungen zu entnehmen. 
+Für den Fall eines undatierten Verweises auf ein Dokument (zB Verweis auf eine Norm ohne Angabe des 
+Ausgabedatums) bezieht sich der Verweis auf die jeweils neueste Ausgabe dieses Dokuments. Für den Fall 
+eines datierten Verweises bezieht sich der Verweis immer auf die in Bezug genommene Ausgabe des 
+Dokuments. 
+Bei mittels Gesetz oder Verordnung verbindlich erklärten rein österreichischen elektrotechnischen Normen, 
+verbindlich erklärten elektrotechnischen Referenzdokumenten oder kundgemachten elektrotechnischen 
+Normen ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt der Herausgabe dieser Normen oder Referenzdokumente. Zum Zeitpunkt der Anwendung dieser 
+Normen oder Referenzdokumente ist der durch Gesetz oder Verordnung oder gegebenenfalls auf andere 
+Weise festgelegte aktuelle Stand zu berücksichtigen. 
+– 
+Die in diesen Normen enthaltenen Rechtsbelehrungen, Einleitungen, Fußnoten, Anhänge und Hinweise 
+auf Fundstellen und andere Texte werden von der Verbindlicherklärung oder von kundgemachten Normen 
+betreffenden Regelungen nicht erfasst. 
+Änderungen 
+Gegenüber der Normenreihe ÖVE/ÖNORM E 8015:2006 wurden folgende Änderungen und Anpassungen 
+vorgenommen, wobei diese Zusammenstellung keinen Anspruch auf Vollständigkeit erhebt: 
+– 
+Zusammenfassung der Teile 1 bis 3 aus der Normenreihe ÖVE/ÖNORM E 8015; 
+– 
+Überarbeitung der normativen und informativen Verweisungen; 
+– 
+Aktualisierung der Normenverweise; 
+– 
+Überarbeitung der Ausstattungsvariante; 
+– 
+Ergänzung um die Ausstattungsvariante Standard und Komfort; 
+– 
+Anpassung für Empfehlungen der Installationsbereiche an die bautechnischen Anforderungen. 
+ 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt die Normenreihe ÖVE/ÖNORM E 8015:2006. 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 4/28 =====
+OVE E 8015:2022-07-01 
+4 
+1 
+Anwendungsbereich 
+Diese OVE-Norm gilt für  
+– 
+die Art und den Umfang der Mindestausstattung elektrischer Anlagen in Wohngebäuden; sowohl für 
+Neubauten als auch in der Bestandsanierung. 
+ 
+Die Norm gilt auch für Anlagen mit Gebäudesystemtechnik, zB BUS-Technik. 
+– 
+die Planung und Errichtung von elektrischen Anlagen in Wohngebäuden. 
+ 
+Die Norm gilt auch für Wohngebäude mit teilweiser gewerblicher Nutzung. 
+ 
+Für andere Gebäude mit ähnlicher Nutzung und vergleichbaren Anforderungen an die elektrische 
+Ausrüstung ist sie sinngemäß anwendbar. 
+Diese OVE-Norm gilt nicht für die Ausstattung der technischen Betriebsräume und der betriebstechnischen 
+Anlage derartiger Wohngebäude.  
+In dieser OVE-Norm sind im Abschnitt 6 und Anhang B auch  
+– 
+Empfehlungen für die Anordnung von Auslässen (einschließlich der für Anlagen der Informationstechnik), 
+Schaltern und Steckdosen und 
+– 
+Empfehlungen für die Verlegung von nicht sichtbaren Kabel- und Leitungsanlagen enthalten. 
+ANMERKUNG 1 
+Mit diesen Empfehlungen wird das Ziel verfolgt, das Risiko einer Beschädigung bei 
+nachträglichen Arbeiten zu verringern. Außerdem wird durch die Einhaltung der Installationsbereiche Platz für andere 
+Installationen wie Gas, Wasser oder Heizung geschaffen. Eine Sicherheit, dass in den Flächen außerhalb der 
+Installationsbereiche keine elektrischen Kabel und Leitungen vorhanden sind, ist daraus nicht abzuleiten. 
+ANMERKUNG 2  
+Für die Errichtung von elektrischen Niederspannungsanlagen gelten grundsätzlich die 
+Anforderungen gemäß OVE E 8101. 
+ANMERKUNG 3  
+Für die Errichtung von Hauptleitungen und Messeinrichtung siehe OVE E 8016 (in Vorbereitung). 
+Für Anforderungen an die Fundamenterdungsanlagen siehe OVE E 8014. Für Blitzschutzsysteme siehe ÖVE/ÖNORM  
+EN 62305 Reihe. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Ausgabe 
+des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind immer in der 
+jeweils geltenden Fassung anzuwenden. 
+OVE E 8101, Elektrische Niederspannungsanlagen 
+OVE E 8014, Fundamenterder und ergänzende Maßnahmen mit Erdung und Potentialausgleich für 
+Einrichtungen der Informationstechnik 
+OVE EN 50174 Reihe, Informationstechnik – Installation von Kommunikationsverkabelung 
+OVE EN 50310, Telekommunikationstechnische Potentialausgleichsanlagen für Gebäude und andere 
+Strukturen 
+ÖVE/ÖNORM EN 60670-24, Dosen und Gehäuse für Installationsgeräte für Haushalt und ähnliche ortsfeste 
+elektrische Installationen – Teil 24: Besondere Anforderungen für Gehäuse zur Aufnahme von Schutzgeräten 
+und ähnlichen energieverbrauchenden Geräten 
+OVE EN 60728-11, Kabelnetze für Fernsehsignale, Tonsignale und interaktive Dienste –  
+Teil 11: Sicherheitsanforderungen 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 5/28 =====
+OVE E 8015:2022-07-01 
+5 
+OVE EN 60898 Reihe, Elektrisches Installationsmaterial – Leitungsschutzschalter für Hausinstallationen und 
+ähnliche Zwecke 
+ÖVE/ÖNORM EN 61439-3, Niederspannungs-Schaltgerätekombinationen – Teil 3: Installationsverteiler für  
+die Bedienung durch Laien (DBO) 
+ÖVE/ÖNORM EN 62305 Reihe, Blitzschutz 
+ÖVE-IM 12, Fabriksfertige Zählerschränke und Zählerverteilerschränke bis 250 V gegen Erde 
+ÖNORM B 1600, Barrierefreies Bauen – Planungsgrundlagen 
+ÖNORM B 2110, Allgemeine Vertragsbestimmungen für Bauleistungen – Werkvertragsnorm 
+ÖNORM EN 1996-1-1, Eurocode 6: Bemessung und Konstruktion von Mauerwerksbauten –  
+Teil 1-1: Allgemeine Regeln für bewehrtes und unbewehrtes Mauerwerk 
+OIB-Richtlinie 2, Brandschutz 
+TRVB 123 (S), Brandmeldeanlagen 
+3 
+Begriffe 
+Für die Anwendung dieser OVE-Norm gelten die Begriffe gemäß OVE E 8101 und die folgenden: 
+3.1 
+elektrische Anlagen in Wohngebäuden 
+ist die Gesamtheit folgender Anlagen: 
+– 
+Energietechnische Anlagen mit Nennspannungen bis AC 1 000 V; 
+– 
+Anlagen für die Informationstechnik (IuK- und RuK-Netzanwendungen);  
+– 
+Sicherheitstechnische Anlagen; 
+– 
+Anlagen der Systemtechnik für Heim und Gebäude bzw. Steuerungsanlagen, zB für Heizung, Klima, 
+Lüftung und Sanitär; 
+– 
+Besondere Steuerungsanlagen gemäß ElWOG. 
+3.2 
+elektrische Systemtechnik für Heim und Gebäude (ESHG) 
+Kommunikationssystem, in dem Elemente oder Instanzen verschiedener Anwendungen verteilt und über ein 
+Netzwerk oder mehrere Netzwerke logisch miteinander verknüpft sind 
+[QUELLE: ÖVE/ÖNORM EN 50090-1] 
+Anmerkung 1 zum Begriff: Dieser Begriff bezieht sich auf einfache Steuerung und Befehle, auf Ton und Bildübertragung, 
+auf komplexe Videoübertragung und auf die Steuerung von Heizungs-, Lüftungs- und Klimaanlagen. 
+Anmerkung 2 zum Begriff: Andere Bezeichnung dafür ist Gebäudesystemtechnik. 
+3.3 
+Netzbetreiber 
+Betreiber von Übertragungs- oder Verteilernetzen mit einer Nennfrequenz von 50 Hz 
+[QUELLE: ElWOG] 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 6/28 =====
+6 
+OVE E 8015:2022-07-01 
+3.4 
+energietechnische Anlage 
+Teil der elektrischen Anlage in einer abgeschlossenen Anlageneinheit (zB Wohnung, Haus, Gebäudekomplex), 
+die der Bereitstellung, dem Bezug und der Verrechnung von elektrischer Energie für die Kunden dienen 
+Anmerkung 1 zum Begriff:  Einschließlich Mess- und Tarifschalteinrichtungen und spezielle Steuerungsanlagen für 
+Elektroenergie gemäß ElWOG. 
+3.5 
+Auslass 
+Anschlussstelle für fest angeschlossene elektrische Betriebsmittel, zB für Leuchten, Elektroherd 
+3.6 
+Informationstechnik 
+Telekommunikation 
+Technologie, die sich mit der Übertragung, dem Senden und Empfangen von Zeichen, Signalen, Texten, Bildern 
+und Tönen über Draht, Funk, Licht oder andere elektromagnetische Systeme beschäftigt 
+Anmerkung 1 zum Begriff: Wenn in diesem Dokument der Begriff Telekommunikation verwendet wird, so ist damit keine 
+rechtliche Bedeutung verbunden. 
+[QUELLE: OVE EN 50173-1] 
+3.6.1 
+Diensteanbieter 
+Betreiber beliebiger Dienste, die Telekommunikationsinhalte (Übertragungen) enthalten, die über die 
+Einrichtungen von Zugangsanbietern bereitgestellt werden 
+[QUELLE: OVE EN 50174-1] 
+Anmerkung 1 zum Begriff:  Der Zugangsanbieter und der Diensteanbieter können ein einziges Unternehmen sein. 
+Anmerkung 2 zum Begriff:  Ein Zugangsanbieter gemäß OVE EN 50174-1:2018, 3.1.2 ist ein Betreiber oder eine andere 
+Organisation, die die Bereitstellung eines externen Telekommunikationsdienstes bei einem Teilnehmer ermöglicht. 
+3.6.2 
+Schnittstelle zum externen Netz 
+Abschlusspunkt, der die Trennlinie zu extern bereitgestellten Telekommunikationsdiensten darstellt 
+[QUELLE: OVE EN 50173-1] 
+3.6.3 
+Hausübergabepunkt 
+Einrichtung, die alle notwendigen mechanischen und elektrotechnischen Leistungsmerkmale aufweist, um 
+Nachrichtenkabel in ein Gebäude einzuführen und die den Übergang von Freiluft- auf Innenkabel erlauben  
+[QUELLE: OVE EN 50173-1] 
+3.6.4 
+primärer Wohnungsverteiler 
+Verteiler in einer Wohnung, an dem die Kabel, über die die Anwendungsanschlüsse (oder ein wahlweise 
+sekundärer Wohnungsverteiler) aufgelegt werden 
+[QUELLE: OVE EN 50173-4] 
+Anmerkung 1 zum Begriff:  Die Bezeichnung in ÖVE/ÖNORM E 8015 Reihe war Wohnungsübergabepunkt – WÜP. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 7/28 =====
+OVE E 8015:2022-07-01 
+7 
+3.6.5 
+Anwendungsanschluss 
+Punkt, an dem Endeinrichtungen zur Unterstützung einer Netzanwendung der Informations- und 
+Kommunikationstechnik und/oder der Rundfunk- und Kommunikationstechnik an die anwendungsneutrale 
+Kommunikationskabelanlage angeschlossen werden 
+[QUELLE: OVE EN 50173-4] 
+3.6.6 
+informationstechnischer Anschluss 
+fester Steckverbinder, der eine Verbindung zu Endeinrichtungen für IuK-Netzanwendungen herstellt 
+[QUELLE: OVE EN 50173-4, modifiziert] 
+Anmerkung 1 zum Begriff:  Gemäß OVE EN 50173-1, 3.1.48 umfasst der Begriff IuK eine Gruppe von Netzanwendungen, 
+die Informations- und (Tele-)Kommunikationstechniken benutzt 
+3.6.7 
+Rundfunkanschluss 
+fester Steckverbinder, der eine Verbindung zu Endeinrichtungen für RuK-Netzanwendungen herstellt 
+[QUELLE: OVE EN 50173-1] 
+Anmerkung 1 zum Begriff: Gemäß OVE EN 50173-1, 3.1.15 umfasst der Begriff RuK eine Gruppe von Netzanwendungen 
+einschließlich Rundfunk, Fernsehen und bidirektionaler Datendienste sowie zur Vernetzung in Wohnungen. 
+3.6.8 
+Netzanwendung 
+System mit dem zugehörigen Übertragungsverfahren und Stromversorgung, das von einer Tele-
+kommunikationsverkabelung unterstützt wird  
+[QUELLE: OVE EN 50173-1, modifiziert] 
+3.7 
+Hauskommunikationsanlage 
+Gesamtheit aller Betriebsmittel für Klingelanlagen, Türöffneranlagen einschließlich zugehöriger Sprech- und 
+Videoanlagen 
+3.8 
+Sicherheitstechnische Anlage 
+Gesamtheit aller Betriebsmittel für Brandüberwachung und -meldung, Notruf- und Alarmanlagen sowie Anlagen 
+für Zutrittskontrolle und -überwachung und ähnliche Zwecke 
+3.9 
+Gemeinschaftsverbraucheranlage 
+Elektrische Anlage in allgemein zugänglichen Räumen und Bereichen in Gebäuden mit als zwei Wohnungen 
+3.10 
+Aufenthaltsraum 
+Ein Raum der zum länger dauernden Aufenthalt von Personen bestimmt ist (zB Wohn- und Schlafraum, 
+Wohnküche, Arbeitsraum, Unterrichtsraum), nicht dazu zählen jedenfalls Badezimmer und Toiletten  
+[QUELLE: OIB Begriffsbestimmungen] 
+3.11 
+Wohngebäude  
+Gebäude, die ganz oder überwiegend zum Wohnen genutzt werden 
+[QUELLE: OIB Begriffsbestimmungen] 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 8/28 =====
+8 
+OVE E 8015:2022-07-01 
+3.12 
+Wohnung 
+Gesamtheit von einzelnen oder zusammenliegenden Räumen, die baulich in sich abgeschlossen und zu 
+Wohnzwecken bestimmt sind und die Führung eines eigenen Haushalts ermöglichen 
+[QUELLE: OIB Begriffsbestimmungen] 
+Anmerkung 1 zum Begriff:  Dazu zählen auch Einfamilien- und Reihenhäuser sowie gewerblich genutzte Einheiten in 
+Wohngebäuden. 
+3.13  
+Abkürzungen 
+Für die Anwendung dieses Dokuments gelten die folgenden Abkürzungen: 
+ENS 
+Schnittstelle zum externen informationstechnischen Netz 
+ESHG 
+elektrische Systemtechnik für Heim und Gebäude 
+HÜP 
+Hausübergabepunkt 
+IuK 
+Informations- und Kommunikationstechnik 
+IT 
+Informationstechnik 
+PWV 
+primärer informationstechnischer Wohnungsverteiler 
+RA 
+Rundfunkanschluss 
+RuK 
+Rundfunk- und Kommunikationstechnik 
+SPD 
+Überspannungs-Schutzeinrichtungen 
+TA 
+informationstechnischer Anschluss 
+4 
+Planungsgrundlagen 
+4.1 
+Allgemeines 
+Grundlage der Planung für elektrische Anlagen bilden die Anforderungen an das Gebäude entsprechend der 
+vorgesehenen Nutzung unter Beachtung der einschlägigen technischen und baurechtlichen Bestimmungen 
+(siehe auch OVE E 8101 Abschnitt 132).  
+Gemäß ÖNORM B 2110 ist eine Koordination mit anderen Gewerken im Baustellenbereich (Zusammenwirken) 
+durchzuführen. Im Besonderen sind die Anschlussvoraussetzungen für folgende Anlagen abzuklären: 
+–
+Energietechnische Anlage – mit dem zuständigen Netzbetreiber;
+–
+Anlage der Informationstechnik – mit dem/den zuständigen Diensteanbieter(n)/Zugangsanbieter(n);
+–
+Sicherheitstechnische Anlage – bei Bedarf einer externen Überwachung mit den zuständigen Dienste-
+anbieter(n)/Zugangsanbieter(n) für die Sicherheitstechnik.
+Darüber hinaus ist die Notwendigkeit weiterer Einrichtungen für Sicherheitszwecke wie zB Sicherheits- und 
+Ersatzstromquellen, Ersatzstromversorgung (Notstromanlage), Sicherheitsbeleuchtungsanlage, Brandmelde-
+anlage abzuklären. 
+Bereits bei der Planung ist zu beachten, dass die elektromagnetische Verträglichkeit (EMV) der gesamten 
+elektrischen Anlage einschließlich ihrer Betriebsmittel im bestimmungsgemäßen Betrieb gegeben ist. 
+ANMERKUNG 
+Siehe dazu Elektromagnetische Verträglichkeitsverordnung 2015 – EMVV 2015. 
+Weitere Punkte sind bei der Planung zu beachten: 
+–
+zeit- und fachgerechte Einbringung und Dokumentation von der Erdungsanlage – siehe OVE E 8014 und
+OVE E 8101,
+–
+Notwendigkeit eines Blitzschutzsystems – siehe ÖVE/ÖNORM EN 62305 Reihe,
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 9/28 =====
+OVE E 8015:2022-07-01 
+9 
+– 
+Anforderungen an Befestigungspunkte für Aufbauten (zB Antennenanlagen, PV-Anlagen) sowie 
+entsprechende Leitungseinführungen, insbesondere bei Flachdächern,  
+– 
+Anforderungen für Anschlussmöglichkeiten für zB Erzeugungsanlagen parallel zum öffentlichen Netz  
+(PV-Anlage, Niederspannungsstromerzeugungseinrichtungen), Antennenanlagen, 
+– 
+besondere Bestimmungen und gesonderte Vereinbarungen über deren Ausstattung bei vorgesehener 
+gewerblicher oder anderweitiger (zB medizinischer) Nutzung von Räumen in Wohnungen, 
+– 
+Anforderungen für barrierefreies Bauen – siehe zB ÖNORM B 1600, 
+– 
+Anforderungen aus Umgebungseinflüssen (zB Hochwasser, Schneelasten, Wind, Temperatur) oder aus 
+bautechnischen Gegebenheiten (zB luftdichte Gebäudehülle), 
+– 
+Anforderungen für Heizung, Klima, Lüftung und Sanitär, 
+– 
+Lademöglichkeiten für Elektrofahrzeuge, 
+– 
+Aufzüge, 
+– 
+Garagen, 
+– 
+allfällige Anforderungen für sicherheitstechnische Anlagen, wie zB Gefahrenmeldeanlagen für Brand und 
+Einbruch – siehe zB OVE-Richtlinie R 2, TRVB S 123, 
+– 
+bauliche und brandschutztechnische Maßnahmen – siehe auch zB ÖNORM EN 1996-1-1. 
+4.2 
+Planungshinweise für die Errichtung 
+Kabel- und Leitungsanlagen sind in den Wohnbereichen in Elektroinstallationsrohren, vorzugsweise unter Putz 
+oder in Teilen der Gebäudekonstruktion, wie zB Hohlwände, Zwischendecke zu verlegen. 
+Bei Änderungen und Erweiterungen von elektrischen Anlagen ist auch eine Installation auf Putz zB mit 
+Elektroinstallationskanälen zulässig.  
+Anforderungen für die räumliche Anordnung  
+– 
+von nicht sichtbar verlegten Kabel- und Leitungsanlagen siehe Anhang B;  
+– 
+von Auslässen, Schaltern, Steckdosen u. dgl. siehe Abschnitt 6. 
+Eine Leerverrohrung für zukünftige Infrastruktur zB für Informationstechnik wird empfohlen. 
+4.3 
+Zusätzliche Anforderungen für energietechnische Anlagen 
+4.3.1 
+Gemeinschaftsverbraucheranlage 
+In Wohngebäuden mit mehr als einer Wohnung ist die elektrische Anlage so zu planen, dass der Bezug von 
+elektrischer Energie für Gemeinschaftseinrichtungen gesondert gezählt werden kann. Für Verteiler ist ein 
+allgemein zugänglicher Bereich vorzusehen. Dabei sind die Umgebungsbedingungen, der Schutz gegen 
+unbefugte Bedienung sowie der benötigte Platzbedarf zu berücksichtigen. 
+ANMERKUNG 
+Geeignete, in allgemein zugänglichen Bereichen des Gebäudes, befindliche Räume/Aufstellungsorte sind 
+zB Zählerräume, Kellergänge, Gänge, Treppenhäuser. 
+4.3.2 
+Elektrische Anlage innerhalb der Wohnung 
+Innerhalb jeder Wohnung/Anlage ist vorzugsweise in der Nähe des Belastungsschwerpunktes ein Installations-
+verteiler für die Bedienung durch Laien für die erforderlichen Schutzeinrichtungen sowie gegebenenfalls weitere 
+elektrische Betriebsmittel vorzusehen.  
+ANMERKUNG 1  
+Je nach Grundriss bzw. Größe der Wohnung kann es erforderlich sein, mehrere elektrische 
+Verteiler vorzusehen (Ausschaltbedingung, Spannungsabfall, Betrieb der elektrischen Anlage). 
+Als Überstrom-Schutzeinrichtungen für Beleuchtungs- und Steckdosenstromkreise sind mindestens Leitungs-
+schutzschalter gemäß OVE EN 60898 Reihe zu verwenden. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 10/28 =====
+OVE E 8015:2022-07-01 
+10 
+ANMERKUNG 2  
+Gemäß OVE E 8101 Unterabschnitt 537.2.6 sollten vorzugsweise mehrpolige Schaltgeräte 
+verwendet werden. 
+Die Anzahl von Stromkreisen, Steckdosen, Auslässen und Schaltern muss mindestens Abschnitt 5 
+entsprechen.   
+4.3.3 
+Energieeffizienz und Energiemanagement 
+Bereits bei der Planung energietechnischer Anlagen sind Maßnahmen zur Steigerung der Energieeffizienz bzw. 
+zum Energiemanagement in Wohngebäuden zu berücksichtigen.  
+ANMERKUNG 
+Siehe dazu auch Anforderungen aus dem Elektrotechnikgesetz 1992. 
+Die nachfolgende Aufstellung gibt eine Übersicht über wesentliche Aspekte: 
+–
+Planung und Ausführung einer luftdichten und wärmebrückenfreien elektrischen Anlage;
+–
+Visualisierung von Verbrauchsinformationen sowie von Tarifinformationen;
+–
+tarifabhängiges Schalten von Verbrauchsgeräten;
+–
+Automatisierung von Abläufen mit hoher Energierelevanz (Heizung, Lüftung, Klimatisierung, Beleuchtung).
+4.4 
+Zusätzliche Anforderungen für die Gebäudesystemtechnik 
+Wenn das Schalten, Steuern und Regeln – zB von Beleuchtungsanlagen, Heizungs- und Belüftungsanlagen, 
+Klimaanlagen, Jalousien, Rollläden – mittels Gebäudesystemtechnik oder Fernsteuerungen erfolgen soll, ist 
+dies bei der Planung zu berücksichtigen. 
+ANMERKUNG 
+Die „Elektrische Systemtechnik für Heim und Gebäude“ (ESHG) gemäß OVE EN 63044 Reihe (und 
+ÖVE/ÖNORM EN 50090 Reihe) beschreibt die Vernetzung von Systemkomponenten und Teilnehmern über eine 
+Bustechnik zu einem auf die Elektroinstallation abgestimmten System, das Funktion und Abläufe sowie deren 
+gewerkeübergreifende Verknüpfung in einem Gebäude sicherstellt. Sie wird zum Überwachen, Anzeigen, Melden und 
+Bedienen eingesetzt. 
+Bei einer elektrischen Anlage in Bustechnik ist zusätzlich zur Übertragung von Energie auch die Übertragung 
+von Information notwendig.  
+Die Informationsübertragung kann dabei über verschiedene Medien, wie zB über separate Kabel und Leitungen, 
+drahtlos (zB Funk) oder über die Energieleitungen erfolgen. 
+Folgende Maßnahmen sind je nach Medium zu berücksichtigen. 
+–
+das Verlegen von Kabel und Leitungen zu den Sensoren und Aktoren;
+–
+das Verlegen von Energieleitungen zu den Aktoren;
+–
+die Installation von entsprechenden Verbindungsdosen.
+Um bei konventioneller Erstinstallation ein späteres Nachrüsten einer Businstallation ohne großen Aufwand zu 
+ermöglichen, ist die Entscheidung über eine zukünftige Infrastruktur zu treffen, wie zB die Anordnung der 
+Aktoren sowie die Ausführung von Leerrohren und Dosen. 
+4.5 
+Zusätzliche Anforderungen für Anlagen der Informationstechnik 
+(IuK- und RuK-Netzanwendungen) 
+4.5.1 
+Allgemeines 
+ANMERKUNG 
+Für Anlagen der Informationstechnik siehe OVE EN 50174 Reihe, OVE EN 50173 Reihe bzw. OVE 
+EN 60728-11. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 11/28 =====
+OVE E 8015:2022-07-01 
+11 
+4.5.1.1 
+Für die Schnittstelle zum externen Netz (ENS/HÜP) ist ein allgemein zugänglicher Bereich des 
+Gebäudes vorzusehen. Dabei sind die Umgebungsbedingungen, der Schutz gegen unbefugte Benutzung sowie 
+der benötigte Platzbedarf für die ENS/HÜP und der zugehörigen Einrichtungen, zB Überspannungs-
+Schutzeinrichtungen (SPD) zu berücksichtigen. 
+ANMERKUNG 
+Geeignete, in allgemein zugänglichen Bereichen des Gebäudes, befindliche Räume/Aufstellungsorte sind 
+zB Gänge, Kellergänge, Treppenhäuser, Zählerräume. Für Einfamilienhäuser und Reihenhäuser kann dies zB ein 
+geeigneter Kellerraum oder der Vorraum sein. 
+4.5.1.2 
+Für jede Wohnung/Anlage ist an geeigneter, möglichst zentraler Stelle, ein primärer 
+Wohnungsverteiler (PWV) vorzusehen, zB in der Nähe des elektrischen Verteilers (siehe 4.3.2). 
+ANMERKUNG 
+Je nach Grundriss bzw. Größe der Wohnung kann es erforderlich sein mehrere Wohnungsverteiler 
+(sekundäre Wohnungsverteiler) vorzusehen. 
+Der PWV ist grundsätzlich als Medienverteiler auszuführen. Für Wohnungen mit weniger als vier Aufenthalts-
+räumen kann dies jedoch in Form einer Dose, mit einer Mindestgröße von 150 mm x 150 mm, ausgeführt 
+werden.  
+4.5.1.3 
+Die Netzzugangsinstallation ab ENS/HÜP ist sternförmig zu den PWV auszuführen (siehe Bild A.1).  
+ANMERKUNG 
+Gemäß OVE EN 50174-3 stellt die Netzzugangsverkabelung die Verbindung zwischen der ENS und dem 
+PWV her. 
+Für 
+die 
+senkrechte 
+Kabelführung 
+der 
+Netzzugangsinstallation 
+sind 
+mindestens 
+folgende 
+Elektroinstallationsrohre zu verlegen: 
+– 
+zwei Rohre der Nenngröße 32 bis zu 4 PWV; 
+– 
+vier Rohre der Nenngröße 32 bis zu 8 PWV; 
+– 
+zwei Rohre der Nenngröße 40 bis zu 6 PWV; 
+– 
+vier Rohre der Nenngröße 40 bis zu 12 PWV 
+und zusätzlich immer ein Rohr mindestens der Nenngröße 32 als Verbindung von der Empfangsanlage im 
+Bereich des Daches zum HÜP/ENS für externe Dienste im Bereich des Untergeschoßes. 
+Diese Elektroinstallationsrohre sind vorzugsweise in Nischen oder Schächten anzuordnen.  
+Für die Installation zu einem PWV sind ab der senkrechten (geschoßübergreifenden) Kabelführung mindestens 
+zwei Elektroinstallationsrohre der Nenngröße 25 erforderlich. 
+In Gebäuden mit mehr als einer Wohnung sind auch dann Leerrohre ab ENS/HÜP bis in die einzelnen 
+Wohnungen bis zum PWV zu verlegen, wenn diese Netzanwendungen zunächst nicht oder nur in 
+eingeschränktem Umfang vorgesehen sind. Dies bezieht sich auch auf Leerrohre für Hauskommunikations-
+anlagen. 
+4.5.1.4 
+Die Installation ausgehend vom PWV zu den TA/RA ist immer sternförmig mit einem 
+Elektroinstallationsrohr der Nenngröße 20 auszuführen (siehe Bild A.1). 
+Bei gleichzeitigem Vorhandensein mehrerer Übertragungstechniken (symmetrisch, koaxial, Lichtwellenleiter) 
+innerhalb der Wohnung sind, soweit diese Netzanwendungen an die gleichen Punkte geführt werden, die 
+entsprechenden Anwendungsanschlüsse (TA/RA) jeweils nebeneinander oder untereinander anzuordnen. 
+Hierfür ist zumindest ein Elektroinstallationsrohr mit der Nenngröße 25 oder zwei Rohre mit der Nenngröße 20 
+sternförmig vom PWV zu den TA/RA zu verlegen. Wird nur ein TA bzw. RA vorgesehen, ist dieser zumindest 
+mit einem Elektroinstallationsrohr der Nenngröße 20 zu versorgen.  
+Verrohrungen und Verteiler können für alle Betriebsmittel und Kabel/Leitungen der IuK- und RuK-
+Netzanwendungen gemeinsam genutzt werden.  
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 12/28 =====
+OVE E 8015:2022-07-01 
+12 
+4.5.1.5 
+Besonders zu beachten sind: 
+–
+Anforderungen an die Trennung der energietechnischen von den Anlagen der Informationstechnik – siehe
+OVE EN 50174 Reihe;
+–
+Anforderungen an den Potentialausgleich bei geschirmter Ausführung der Telekommunikations-
+verkabelung – siehe OVE EN 50310. Dies betrifft auch den zusätzlichen Schutzpotentialausgleich für
+Verteiler und die Anwendungsanschlüsse;
+–
+die gegebenen äußeren Einflüsse (zB mechanische, thermische, chemische und elektromagnetische
+Bedingungen).
+4.5.2 
+Empfangsanlagen (zB Satellitenantenne) 
+Für die Auswahl des Standortes der Antenne sind folgende Kriterien zu beachten: 
+–
+Nutzfeldstärke,
+–
+Störeinflüsse, zB durch Reflexionen,
+–
+Abstand von Störquellen, zB Aufzug,
+–
+Montagemöglichkeit und Zugang.
+Der Zugang zu anderen Bauteilen, die einer vorbeugenden Instandhaltung (Wartung) bedürfen, wie zB 
+Abgasanlagen (Rauchfang), Abluftleitungen, Klimaanlagen, PV-Anlagen, darf durch Antennenanlagen nicht 
+behindert werden. 
+Anforderungen an den erforderlichen Sicherheitsabstand zu Energieleitungen, die Erdung und den 
+Potentialausgleich von Antennenanlagen siehe OVE EN 60728-11. 
+4.5.3 
+Verstärkeranlagen 
+Der Montageort für Verstärkeranlagen der Informationstechnik (IuK, RuK) muss trocken sowie allgemein 
+zugänglich sein. Wenn nicht anders vereinbart, ist für die Planung der Komponenten eine maximale 
+Raumtemperatur von +40 °C im Betrieb anzunehmen. 
+4.5.4 
+Hauskommunikationsanlagen 
+Bei Gebäuden mit mehr als zwei Wohnungen ist eine Hauskommunikationsanlage zumindest als 
+Türsprechanlage mit Türöffner auszuführen. 
+5 
+Art und Umfang der Ausstattung 
+5.1 
+Energietechnische Anlagen und Anlagen der Gebäudesystemtechnik 
+5.1.2 
+Gemeinschaftseinrichtungen 
+5.1.2.1 
+Zugangswege sowie Gebäudeeingangstüren einschließlich der Türsprechanlage oder Klingeltaster 
+und Treppe im Zugangs- und Eingangsbereich sind ausreichend zu beleuchten. Sofern die Beleuchtung nicht 
+ständig eingeschaltet ist, sind Einrichtungen wie Dämmerungsschalter, Bewegungsmelder oder vergleichbare 
+automatische Schalteinrichtungen vorzusehen. 
+ANMERKUNG 
+In Anlehnung dazu: Für Arbeitsplätze im Freien wird für Gehwege gemäß ÖNORM EN 12464-2 ein 
+Wartungswert der Beleuchtungsstärke (Ēm) = 5 lx festgelegt.
+5.1.2.2 
+Beleuchtungsanlagen 
+in 
+allgemein 
+zugänglichen 
+Bereichen 
+(Allgemeinbeleuchtung) 
+von 
+Mehrfamilienhäusern zB in Treppenhäuser, Gängen, Bereichen vor dem Aufzug sind vorzugsweise mit 
+einstellbarer Abschaltautomatik auszustatten. Wenn die Schaltung solcher Beleuchtungsanlagen über Schalter 
+und Taster erfolgt, so müssen diese bei Dunkelheit erkennbar sein zB durch Taster mit Orientierungslicht. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 13/28 =====
+OVE E 8015:2022-07-01 
+13 
+ANMERKUNG 
+In Anlehnung dazu: In Arbeitsstätten wird in Gängen und Treppen gemäß ÖNORM EN 12464-1 ein 
+Wartungswert der Beleuchtungsstärke (Ēm) = 100 lx festgelegt. 
+5.1.2.3 
+Zur Stromversorgung von Einrichtungen für den HÜP, der Schnittstelle zum externen 
+informationstechnischen Netz, der Empfangsanlage (zB Antennenanlage) und der Hauskommunikationsanlage 
+ist mindestens ein eigener Stromkreis der Gemeinschaftsverbraucheranlage auszuführen. 
+ANMERKUNG 
+Um diese Anforderungen sinnvoll erfüllen zu können sind vorzugweise für alle Endstromkreise kombinierte 
+Fehlerstrom-Schutzschalter mit Überstromauslöser (RCBO) einzusetzen. 
+5.1.2.4 
+Elektrische Verteiler sind gemäß ÖVE/ÖNORM EN 61439-3 (ggfs. komibiert mit Zählerplätzen gemäß 
+ÖVE-IM 12), oder nach ÖVE/ÖNORM EN 60670-24 zu errichten. 
+In elektrischen Verteilern für Endstromkreise ist eine Platzreserve von mindestens 30 % der gesamten 
+nutzbaren Einbaubreite freizuhalten.  
+5.1.2.5 
+Die Gemeinschaftsverbraucheranlage in Gebäuden mit mehreren Wohneinheiten, zB Kellergänge, 
+Treppenhäuser, Garagen, Heizhäuser, Aufzugsanlagen ist nach den Erfordernissen der Zweckmäßigkeit 
+auszustatten.  
+ANMERKUNG 
+Dies betrifft vor allem die Anzahl der Stromkreise und die Anzahl der Steckdosen und Auslässe zB 
+Steckdosen für Reinigungszwecke, Beleuchtungsanlagen, Schaltstellen. 
+Vorzugweise sind für alle Endstromkreise kombinierte Fehlerstrom-Schutzschalter mit Überstromauslöser 
+(RCBO) zu verwenden. 
+5.1.3 
+Sicherung gegen unbefugte Bedienung 
+Elektrische Verteiler in allgemein zugänglichen Bereichen sind bei Bedarf gegen unbefugte Bedienung zu 
+schützen. 
+Frei zugängliche Steckdosen sind bei Bedarf gegen unbefugte Benutzung zu sichern. 
+5.1.4 
+Ausstattung innerhalb der Wohnung 
+5.1.4.1 
+Stromkreise 
+Die erforderliche Mindestanzahl der Endstromkreise für Steckdosen für allgemeine Zwecke und der 
+Endstromkreise für Beleuchtung ist, abhängig von der Wohnfläche der Wohnung, in Tabelle 1 angegeben. 
+Kombinierte Beleuchtungs- und Steckdosenstromkreise sind aus Gründen der Verfügbarkeit und 
+Betriebssicherheit zu vermeiden. 
+Für jedes in der Planung vorgesehene besondere Verbrauchsmittel gemäß Punkt 4 der Tabelle 2, Tabelle 3 
+bzw. Tabelle 4, ist ein eigener Endstromkreis vorzusehen, auch wenn das Verbrauchsmittel über eine 
+Steckdose angeschlossen wird. 
+Wird eine über die Mindestanforderungen gemäß der Tabelle 2, Tabelle 3 bzw. Tabelle 4 hinausgehende Anzahl 
+von Steckdosen und Auslässen vorgesehen, ist auch eine entsprechende Erhöhung der Anzahl der Stromkreise 
+gemäß Tabelle 1 erforderlich. 
+Die den Wohnungen direkt zugeordneten Räume (zB Kellerräume, Einlagerungsräume) für individuelle Nutzung 
+sind mit zusätzlichen Stromkreisen der jeweiligen Wohnung auszustatten. Wenn diese Räume ausschließlich 
+als Lagerräume ohne Nutzung elektrischer Geräte vorgesehen sind, ist die Allgemeinbeleuchtung des 
+Gebäudes in den Gängen ausreichend. 
+Bei Verwendung elektrischer Durchlauferhitzer für Bade- und Duschzwecke ist ein Drehstromkreis mit einer 
+Nennstromstärke von mindestens 32 A vorzusehen.  
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 14/28 =====
+14 
+OVE E 8015:2022-07-01 
+Für einen Elektroherd ist ein Drehstromkreis mit einer Nennstromstärke von mindestens 16 A vorzusehen. 
+Elektrische Verteiler sind gemäß ÖVE/ÖNORM EN 61439-3, ÖVE/ÖNORM EN 60670-24 bzw. ÖVE-IM 12 zu 
+errichten. In elektrischen Verteilern für Endstromkreise ist eine Platzreserve von mindestens 30 % der gesamten 
+nutzbaren Einbaubreite freizuhalten.  
+Endstromkreise die durch Fehlerstrom-Schutzeinrichtungen (RCD) geschützt sind, sind in Wohnungen mit vier 
+oder mehr Aufenthaltsräumen sowie in Wohnungen mit mehr als einem Geschoß auf zumindest zwei 
+Fehlerstrom-Schutzeinrichtungen (RCD) aufzuteilen. 
+ANMERKUNG 1  
+Die Anforderung zur Aufteilung auf zwei Fehlerstrom-Schutzeinrichtungen (RCD) soll sicherstellen, 
+dass durch das Abschalten einer Fehlerstrom-Schutzeinrichtung nicht die gesamte elektrische Anlage innerhalb der 
+Wohnung ausfällt. 
+ANMERKUNG 2 
+Um diese Anforderungen sinnvoll erfüllen zu können sind vorzugweise für alle Endstromkreise 
+kombinierte Fehlerstrom-Schutzschalter mit Überstromauslöser (RCBO) einzusetzen. 
+Tabelle 1 – Anzahl der Endstromkreise für allgemein genutzte Steckdosen 
+und für die Beleuchtung 
+Wohnnutzfläche 
+Mindestanzahl der 
+Endstromkreise für 
+allgemein genutzte 
+Steckdosen  
+Mindestanzahl der 
+Endstromkreise für 
+Beleuchtung 
+m2 
+bis 50 
+2 
+2 
+über 50 bis 80 
+3 
+2 
+Über 80 bis 130 
+4 
+2 
+über 130 
+5 
+3 
+5.1.4.2  Steckdosen, Auslässe und Schaltstellen 
+Die in Tabelle 2, Tabelle 3 und Tabelle 4 angegebene Anzahl von Steckdosen und Auslässen stellen die 
+erforderliche Mindestausstattung in der jeweiligen Ausstattungsvariante dar.  
+Die Auslässe für Verbrauchsmittel mit eigenem Endstromkreis gemäß Tabelle 2, Tabelle 3 und Tabelle 4 sind 
+in den Planungsunterlagen als solche zu kennzeichnen. Es wird empfohlen, diese Steckdosen oder 
+Anschlussdosen in der Anlage entsprechend zu beschriften. 
+Steckdosen, Auslässe und Schaltstellen sind in nutzungsgerechter räumlicher Verteilung anzuordnen. Dabei ist 
+jedem Raumzugang eine Schaltstelle und jedem Bettplatz mindestens eine Steckdose zuzuordnen. 
+Für Arbeitsflächen zB in Küchen, Kochnischen ist unabhängig von der allgemeinen Raumbeleuchtung 
+mindestens ein Lichtauslass vorzusehen. 
+Wenn Jalousien, Rollläden, Türen und Tore motorisch angetrieben werden sollen, sind die dafür erforderlichen 
+Auslässe, zusätzlich zu den in Tabelle 2, Tabelle 3 und Tabelle 4 angegebenen, und deren Schaltstellen zu 
+errichten.  
+In Wohnungen mit mehreren Geschoßen muss die Beleuchtung für das Treppenhaus in jedem Geschoß in der 
+Nähe der Treppe schaltbar sein. 
+Bei Räumen mit mehr als einer Tür muss, innerhalb eines Abstandes von 2 m von jeder Tür aus, die Schaltstelle 
+für mindestens einen Lichtauslass vorgesehen werden. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 15/28 =====
+OVE E 8015:2022-07-01 
+15 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 16/28 =====
+16 
+OVE E 8015:2022-07-01 
+Beim PWV sowie neben jeder TA/RA ist eine Doppelsteckdose anzuordnen.  
+Bei Auslässen für Gasgeräte ist auf eine erforderliche Verriegelung mit Abluftgeräten zu achten. 
+5.2 
+Informationstechnische Anlagen 
+In jedem Aufenthaltsraum einer Wohnung ist zumindest eine TA/RA zu installieren.  
+Allgemein zugängliche sowie im Freien angeordnete TA/RA sind bei Bedarf gegen unbefugte Benutzung zu 
+sichern. 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 17/28 =====
+OVE E 8015:2022-07-01 
+17 
+5.3 
+Anzahl der Steckdosen und Auslässe 
+Tabelle 2 – Anzahl der Steckdosen und Auslässe–  
+Variante 1 – Grundausstattung (1 von 2) 
+ 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse  
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+ 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer  
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+1 
+Steckdosen 
+1.1 
+Steckdosen in Aufenthaltsräumen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+4 
+4 
+4 
+4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+5 
+5 
+5 
+5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.2 
+Steckdosen Allgemein 
+ 
+ 
+ 
+ 
+5 
+ 
+1 
+ 
+1 
+1 
+ 
+ 
+1.3 
+Steckdosen in Vorräumen und Gängen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤3 m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum-,  
+bzw. Ganglänge 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.4 
+Steckdosen für Anwendungsanschluss 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen neben TA/RA 
+2 
+2 
+2 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen im Medienverteiler oder  
+neben PWV 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+2 
+Lichtauslässe 
+2.1 
+Lichtauslass Decke 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+1 
+1 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+2 
+2 
+2 
+2 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤ 3m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum-  
+bzw. Ganglänge  
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+2.2 
+Lichtauslass Wand 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.3 
+Lichtauslass Decke oder Wand 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+1 
+1 
+1 
+1 
+ 
+ 
+  
+Nutzflächen >5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 18/28 =====
+OVE E 8015:2022-07-01 
+18 
+Tabelle 2 – Anzahl der Steckdosen und Auslässe– 
+Variante 1 – Grundausstattung (2 von 2) 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse 
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer 
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+3 
+Verbrauchsmittel ohne eigenem Endstromkreis 
+3.1 
+Kühlgerät 
+1 
+3.2 
+Mikrowelle 
+3.3 
+Dunstabzug 
+1 
+3.4 
+Lüfter mit Nachlauf in fensterlosen Räumen 
+1 
+1 
+4 
+Verbrauchsmittel mit eigenem Endstromkreis 
+4.1 
+Elektroherd, Kochfeld 
+1 
+4.2 
+Backrohr 
+4.3 
+Dampfgarer 
+4.4 
+Geschirrspüler 
+1 
+4.5 
+Waschmaschine  
+(entfällt bei Zentralwaschküchen) 
+1 
+4.6 
+Wäschetrockner 
+4.7 
+Warmwassergerät (sofern erforderlich) 
+1 
+1 
+4.8 
+Heizgerät (sofern erforderlich) 
+1 
+5 
+Rauchwarnmelder (wenn baurechtlich erforderlich) 
+Rauchwarnmelder 
+1 
+1 
+1 
+1 
+1 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 19/28 =====
+OVE E 8015:2022-07-01 
+19 
+Tabelle 3 – Anzahl der Steckdosen und Auslässe–  
+Variante 2 – Standardausstattung (1 von 2) 
+ 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse  
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+ 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer  
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+1 
+Steckdosen  
+1.1 
+Steckdosen in Aufenthaltsräumen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+5 
+5 
+5 
+5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+7 
+7 
+7 
+7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.2 
+Steckdosen Allgemein 
+ 
+ 
+ 
+ 
+6 
+ 
+2 
+1 
+1 
+1 
+1 
+ 
+1.3 
+Steckdosen in Vorräumen und Gängen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤3 m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum-  
+bzw. Ganglänge  
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+1.4 
+Steckdosen für Anwendungsanschluss 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen neben TA/RA 
+2 
+2 
+2 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen im Medienverteiler oder  
+neben PWV 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+2 
+Lichtauslässe 
+2.1 
+Lichtauslass Decke 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+2 
+1 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+2 
+2 
+2 
+2 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤3 m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum-  
+bzw. Ganglänge  
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+2.2 
+Lichtauslass Wand 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.3 
+Lichtauslass Decke oder Wand 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+1 
+1 
+1 
+1 
+ 
+  
+Nutzflächen >5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+1 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 20/28 =====
+OVE E 8015:2022-07-01 
+20 
+Tabelle 3 – Anzahl der Steckdosen und Auslässe– 
+Variante 2 – Standardausstattung (2 von 2) 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse 
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer 
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+3 
+Verbrauchsmittel ohne eigenem Endstromkreis 
+3.1 
+Kühlgerät 
+1 
+3.2 
+Mikrowelle 
+1 
+3.3 
+Dunstabzug 
+1 
+3.4 
+Lüfter mit Nachlauf in fensterlosen Räumen 
+1 
+1 
+4 
+Verbrauchsmittel mit eigenem Endstromkreis 
+4.1 
+Elektroherd, Kochfeld 
+1 
+4.2 
+Backrohr 
+1 
+4.3 
+Dampfgarer 
+4.4 
+Geschirrspüler 
+1 
+4.5 
+Waschmaschine  
+(entfällt bei Zentralwaschküchen) 
+1 
+4.6 
+Wäschetrockner 
+1 
+4.7 
+Warmwassergerät (sofern erforderlich) 
+1 
+1 
+4.8 
+Heizgerät (sofern erforderlich) 
+1 
+5 
+Rauchwarnmelder (wenn baurechtlich erforderlich) 
+Rauchwarnmelder 
+1 
+1 
+1 
+1 
+1 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 21/28 =====
+OVE E 8015:2022-07-01 
+21 
+Tabelle 4 – Anzahl der Steckdosen und Auslässe–  
+Variante 3 – Komfortausstattung (1 von 2) 
+ 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse  
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+ 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer  
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+1 
+Steckdosen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.1 
+Steckdosen in Aufenthaltsräumen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+8 
+8 
+8 
+8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+10 
+10 
+10 
+10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.2 
+Steckdosen Allgemein 
+ 
+ 
+ 
+ 
+10 
+ 
+2 
+2 
+2 
+2 
+2 
+ 
+1.3 
+Steckdosen in Vorräumen und Gängen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤3 m 
+ 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum- bzw. 
+Ganglänge  
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+1.4 
+Steckdosen für Anwendungsanschluss 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen neben TA/RA 
+3 
+3 
+3 
+3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Steckdosen im Medienverteiler oder  
+neben PWV 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3 
+2 
+Lichtauslässe 
+2.1 
+Lichtauslass Decke 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤20 m² 
+3 
+1 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen >20 m² 
+4 
+2 
+2 
+2 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge ≤3 m 
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Raum- bzw. Ganglänge >3 m und ≤8 m 
+ 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+zusätzlich je weitere 3 m Raum-  
+bzw. Ganglänge  
+ 
+ 
+ 
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+2.2 
+Lichtauslass Wand 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.3 
+Lichtauslass Decke oder Wand 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Nutzflächen ≤5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+1 
+1 
+1 
+1 
+ 
+  
+Nutzflächen >5 m² 
+ 
+ 
+ 
+ 
+ 
+ 
+3 
+1 
+1 
+1 
+1 
+ 
+ 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 22/28 =====
+OVE E 8015:2022-07-01 
+22 
+Tabelle 4 – Anzahl der Steckdosen und Auslässe– 
+Variante 3 – Komfortausstattung (2 von 2) 
+Elektrische Betriebs- und Verbrauchsmittel 
+Aufenthaltsräume 
+Vorraum/Gang 
+Badezimmer 
+Toilette 
+Abstellraum 
+Loggia, Balkon, Terrasse 
+Keller- Einlagerungsraum 
+Keine besondere Raumzuordnung 
+Wohnzimmer, Wohnküche 
+Schlafzimmer 
+Kinderzimmer 
+Arbeitszimmer, Büro 
+Küche, Kochnische 
+3 
+Verbrauchsmittel ohne eigenem Endstromkreis 
+3.1 
+Kühlgerät 
+1 
+3.2 
+Mikrowelle 
+1 
+3.3 
+Dunstabzug 
+1 
+3.4 
+Lüfter mit Nachlauf in fensterlosen Räumen 
+1 
+1 
+4 
+Verbrauchsmittel mit eigenem Endstromkreis 
+4.1 
+Elektroherd/Kochfeld 
+1 
+4.2 
+Backrohr 
+1 
+4.3 
+Dampfgarer 
+1 
+4.4 
+Geschirrspüler 
+1 
+4.5 
+Waschmaschine  
+(entfällt bei Zentralwaschküchen) 
+1 
+4.6 
+Wäschetrockner 
+1 
+4.7 
+Warmwassergerät (sofern erforderlich) 
+1 
+1 
+4.8 
+Heizgerät (sofern erforderlich) 
+1 
+5 
+Rauchwarnmelder (wenn baurechtlich erforderlich) 
+Rauchwarnmelder 
+1 
+1 
+1 
+1 
+1 
+6 
+Kabel-/Leitungsführung und Anordnung der Betriebsmittel 
+Für die Anordnung der elektrischen Betriebsmittel werden an den Wänden die in Anhang B.1.1 und B.1.2 
+angeführten Installationsbereiche (B) empfohlen (siehe Bild B.1). 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 23/28 =====
+OVE E 8015:2022-07-01 
+23 
+Anhang A 
+(informativ) 
+ 
+Ausführungsbeispiele für IuK- und RuK-Netzanwendungen 
+ 
+ 
+ 
+Legende 
+ENS 
+Schnittstelle zum externen Netz 
+HÜP 
+Hausübergabepunkt 
+PWV 
+Primärer Wohnungsverteiler 
+RA  
+Rundfunkanschluss 
+TA  
+Informationstechnischer Anschluss 
+Bild A.1 – Beispiel für die Verkabelung von IuK- und RuK-Netzanwendungen (Übersichtsplan) 
+ 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 24/28 =====
+OVE E 8015:2022-07-01 
+24 
+Anhang B 
+(informativ) 
+Installationsbereiche 
+B.1 Beschreibung der Installationsbereiche
+B.1.1 
+Installationsbereich waagrecht (BW), 20 cm breit:
+BW-o 
+Oberer waagrechter Installationsbereich von 15 cm bis 35 cm unter der fertigen Deckenunterkante 
+(FDUK) 
+BW-u 
+Unterer waagrechter Installationsbereich von 15 cm bis 35 cm über der fertigen Fußbodenoberkante 
+(FFOK) 
+BW-m  
+Mittlerer waagrechter Installationsbereich von 90 cm bis 110 cm über der fertigen Fußboden-
+ 
+oberkante (FFOK) 
+Der mittlere waagrechte Installationsbereich (BW-m) bezieht sich nur auf Räume, in denen Arbeitsflächen an 
+den Wänden vorgesehen sind, zB Küchen. 
+B.1.2 
+Installationsbereich senkrecht (BS), 20 cm breit:
+BS-t 
+Senkrechter Installationsbereich bei Türen von 15 cm bis 35 cm neben den Rohbaukanten 
+BS-f 
+Senkrechter Installationsbereich bei Fenstern von 30 cm bis 50 cm neben den Rohbaukanten 
+BS-e 
+Senkrechter Installationsbereich bei Wandecken von 15 cm bis 35 cm neben den Rohbauecken 
+Die senkrechten Installationsbereiche reichen jeweils von der Deckenunterkante bis zur Fußbodenoberkante. 
+Für Fenster, zweiflügelige Türen und Wandecken werden die senkrechten Installationsbereiche beidseitig, für 
+einflügelige Türen jedoch nur an der Schlossseite festgelegt. 
+ANMERKUNG 1   
+Bei Räumen mit schrägen Wänden, zB in ausgebauten Dachgeschossen, verlaufen die von oben 
+nach unten führenden Installationsbereiche parallel zu den Bezugskanten. Sie gelten als senkrechte Installationsbereiche 
+gemäß B.1.2, auch wenn sie nicht in jeder Betrachtungsebene senkrecht verlaufen. 
+ANMERKUNG 2 
+Für Fußboden- und Deckenflächen werden keine Installationsbereiche festgelegt. 
+B.2 Anordnung
+ANMERKUNG 
+Bautechnische Anforderungen aus ÖNORM EN 1996-1-1 und zugehörige nationale Festlegungen sind zu 
+beachten. Tragwerksteile (zB Wände, Pfeiler, Decken, Auflager, Überlager) erfordern eine besondere Aufmerksamkeit, im 
+Zweifelsfall ist der Tragwerksplaner bzw. ein Statiker hinzuzuziehen. 
+B.2.1 
+Kabel- und Leitungsanlagen
+Die elektrische Kabel- und Leitungsanlage ist, so weit wie möglich und sinnvoll, innerhalb der in Abschnitt B.1 
+festgelegten Installationsbereiche anzuordnen. An und in Decken sowie in Fußböden dürfen Kabel und 
+Leitungen auf dem kürzesten Weg verlaufen.  
+B.2.2 
+Auslässe, Schaltstellen, Steckdosen
+Schaltstellen sind neben den Türen in senkrechten Installationsbereichen vorzugsweise so anzuordnen, dass 
+die Mitte der obersten Schaltstelle nicht mehr als 105 cm über der Fußbodenoberkante liegt. Steckdosen und 
+Schalter über Arbeitsflächen an Wänden sollen innerhalb des mittleren waagrechten Installationsbereiches 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 25/28 =====
+OVE E 8015:2022-07-01 
+25 
+angeordnet werden. Auslässe, Schaltstellen und Steckdosen, die notwendigerweise außerhalb der 
+Installationsbereiche angeordnet werden müssen, sind mit senkrecht geführten Stichleitungen aus dem 
+nächstgelegenen waagrechten Installationsbereich vorzunehmen. 
+B.3 Ausnahmen 
+In Räumen, die für eine besondere Nutzung vorgesehen sind, zB Wohnungen für Menschen mit Behinderung, 
+sind dieser Nutzung entsprechende Installationsbereiche gemäß ÖNORM B 1600 zu berücksichtigen. 
+Maße in cm 
+ 
+Legende 
+FDUK 
+Fertige Deckenunterkante 
+FFOK 
+Fertige Fußbodenoberkante 
+Sofern über dem Fenster eine Wandfläche in ausreichendem Maße zur Verfügung steht, läuft der obere 
+waagrechte Installationsbereich über dem Fenster durch.  
+Bild B.1 – Installationsbereiche 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 26/28 =====
+OVE E 8015:2022-07-01 
+26 
+Literaturhinweise 
+OVE E 8016, Elektroinstallationen – Hauptleitungen, Messeinrichtungen (in Vorbereitung) 
+ÖVE/ÖNORM E 8390-1, Dokumente der Elektrotechnik – Teil 1: Umfang von Elektro-Installationsplänen 
+OVE/ÖNORM EN 50090 Reihe, Elektrische Systemtechnik für Heim und Gebäude (ESHG) 
+OVE EN 50173 Reihe, Informationstechnik – Anwendungsneutrale Kommunikationskabelanlagen 
+OVE EN IEC 63044 Reihe, Allgemeine Anforderungen an die Elektrische Systemtechnik für Heim und 
+Gebäude (ESHG) und an Systeme der Gebäudeautomation (GA) 
+ÖNORM EN 12464-1, Licht und Beleuchtung – Beleuchtung von Arbeitsstätten – Teil 1: Arbeitsstätten in 
+Innenräumen 
+OIB-Richtlinien Begriffsbestimmungen 
+BGBl. Nr. 106/1993, Bundesgesetz über Sicherheitsmaßnahmen, Normalisierung und Typisierung auf dem 
+Gebiete der Elektrotechnik (Elektrotechnikgesetz 1992 – ETG 1992) 
+BGBl. I Nr. 110/2010, Elektrizitätswirtschafts- und -organisationsgesetz 2010 – ElWOG 2010 
+BGBl. II Nr. 22/2016, Elektromagnetische Verträglichkeitsverordnung 2015 – EMVV 2015 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 27/28 =====
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.
+
+
+===== PAGE 28/28 =====
+ 
+ 
+ 
+ 
+WICHTIGE INFORMATIONEN FÜR ANWENDER VON NORMEN 
+ 
+Normen werden im Dialog und Konsens aller Betroffenen und Interessierten entwickelt. Sie legen im elektrotechnischen 
+Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen, Systeme und Qualifikationen fest und definieren, wie die 
+Einhaltung dieser Anforderungen überprüft wird. Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist 
+somit freiwillig (ausgenommen gesetzlich verbindliche Normen), aber naheliegend, da Normen den aktuellen Stand der 
+Technik dokumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür bürgen das hohe Fachwissen und 
+die Erfahrung der Expertinnen und Experten in den zuständigen Komitees auf nationaler, europäischer und internationaler 
+Ebene – sowie die Kompetenz des Österreichischen Verbands für Elektrotechnik (OVE) und seiner Referenten. 
+ 
+Aktualität des Normenwerks 
+ 
+Analog zur technischen und wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierlichen Wandel. Sie 
+werden vom zuständigen Komitee laufend auf Aktualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der 
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig, immer Zugriff auf die neuesten Ausgaben der 
+Normen seines Fachgebiets zu haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren bzw. 
+Dienstleistungen den Markterfordernissen entsprechen. 
+ 
+Wissen um Veränderungen 
+ 
+Um zuverlässig über Änderungen in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils gültigen 
+Fassungen zu haben, bietet der Österreichische Verband für Elektrotechnik gemeinsam mit der Austrian Standards plus 
+GmbH den Norm-Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote. Das reicht von klassischen 
+Fachgebiets-Abonnements bis hin zu innovativen kundenspezifischen Online-Lösungen und Update-Services. Die Austrian 
+Standards plus GmbH ist ein hundertprozentiges Tochterunternehmen von Austrian Standards International. 
+ 
+ 
+Kontakt 
+ 
+Weitere Informationen über Dienstleistungen und Angebote des OVE bietet Ihnen: 
+ 
+ 
+OVE Österreichischer Verband für Elektrotechnik 
+Eschenbachgasse 9 
+1010 Wien 
+E-Mail: ove@ove.at  
+Internet: www.ove.at  
+Tel.: +43 1 587 63 73 
+ 
+Lizenziert von Austrian Standards plus GmbH für WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97, AT-1180 Wien 7acf9ba1-0b6e-ec11-8943-000d3a23a72e zur Nutzung durch eine bestimmte physische Person (Single User).
+Webshop. 2023-01-31. Vervielfältigen, Weitergabe und Nutzung im Netzwerk sind nur im Rahmen einer aufrechten Mehrfachlizenz im davon abgedeckten Umfang zulässig.

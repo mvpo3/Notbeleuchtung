@@ -1,0 +1,1851 @@
+
+
+===== PAGE 81/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+69 
+18.5 
+Die Leiterbezeichnung 
+18.5.1 Kennzeichnung in Schaltplänen 
+ N = Neutralleiter 
+ PE = Protection Earth (SL = Schutzleiter) 
+ PEN Leiter = Kombination aus Schutz- und Neutralleiter 
+ 
+L = Line (Außenleiter) 
+ 
+18.5.2 Funktion der einzelnen Leiter 
+Jeder Leiter hat seine zugeteilte Funktion und darf auch nur für diese Verwendet werden. 
+Abweichungen in den Farbkennungen werden in der Ö-Norm E8001-3 Kabel und Leitungen 
+behandelt. 
+ 
+a) 
+Der Außenleiter 
+ 
+Leiter eines Systems, der im bliche Betrieb unter Spannung steht und in der Lage ist, zur 
+Übertragdung oder Verteilung elektrischer Energie beizutragen, aber kein Neutralleiter oder 
+Mittelleiter ist. 
+ 
+b) 
+Der Neutralleiter 
+ 
+Leiter der mit dem Neutralpunkt elektrisch verbunden und in der Lage ist, zur Verteilung 
+elektrischer Energie beizutragen. 
+ 
+c) 
+Der Schutzleiter 
+ 
+Leiter zum Zweck der Sicherheit, zum Beispiel zum Schutz gegen einen elektrischen Schlag. 
+(Kennzeichnung PE) 
+ 
+d) 
+Der Schutzerdungsleiter 
+ 
+Schutzleiter zum Zweck der Verbindung mit Erdpotentialen. 
+ 
+ 
+ 
+
+
+===== PAGE 82/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+70 
+ 
+e) 
+Der Potentialausgleichsleiter 
+ 
+elektrische Verbindung, die zum Herstellen des Potentialausgleiches dient. (PA-Leiter) 
+ 
+f) 
+Die Nullungsverbindung 
+ 
+möglichst kurze, elektrisch leitfähige Verbindung, mit welcher der PEN-Leiter im ersten dafür 
+geeigneten Sicherungs- oder Verteilerkasten einer Verbraucheranlage direkt oder über den 
+Hautpotentialausgleich mit dem Schutzerdungsleiter verbunden wird. 
+ 
+g) 
+Der PEN-Leiter 
+ 
+Leiter der zugleich die Funktion eines Schutzerdungsleiters und eines Neutralleiters erfüllt. 
+ 
+Zwei Leiterbezeichnungen die eher seltener vorkommen seien an dieser Stelle ebenfalls noch 
+erwähnt: 
+ 
+h) 
+Der PEM-Leiter 
+ 
+Leiter der zugleich die Funktion eines Schutzerdungsleiters und eines Mittelpunktleiters er-
+füllt. 
+ 
+i) 
+Der PEL-Leiter 
+ 
+Leiter der zugleich die Funktion eines Schutzerdungsleiters und eines Außenleiters erfüllt. 
+Z.B. eine geerdete Steuerspannung 
+ 
+ 
+ 
+
+
+===== PAGE 83/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+71 
+18.5.3 Farbkennzeichnung der Leiter 
+Um im normalen Betrieb die einzelnen Leiterarten unterscheiden zu können sind eigene 
+Farbkennzeichnungen notwendig. 
+ 
+a) 
+Grün/Gelb 
+(gn/ge) 
+ 
+Diese Farbkombination ist ausschließlich für Leiter mit Schutzfunktion wie z.B. Schutzleiter, 
+PEN-Leiter, Potentialausgleichsleiter zugelassen. 
+ 
+b) 
+helles Blau 
+(hbl) 
+ 
+Diese Farbe ist für den Neutralleiter vorgesehen und ausschließlich für diesen zu verwenden. 
+(auch nicht als Schalterdraht in 3poligen Leitungen) 
+ 
+c) 
+Schwarz, Braun, Grau 
+(sw, br, gr) 
+ 
+Diese Farben finden sich in den „neuen“ Drehstromkabeln. Es erleichtert die Einhaltung des 
+Drehfeldes, bei 4poligen Leitungen gibt es im Bereich der Nullung kein Problem mit dem 
+blauen Leiter. Für die Phasenfolge gibt es keine Vorschrift, jedoch sollte in einer Anlage im-
+mer die gleiche Kombination angewendet werden. Die Farbe Grau ist ausschließlich als Au-
+ßenleiter zu verwenden und nicht wie in Altanlagen als Neutralleiter. 
+ 
+Die Verwendung der Farbenfolge Braun (L1), Schwarz (L2) und Grau (L3) hat den Vorteil, da 
+dies der Anordnung im Kabel entspricht und somit bei einem Anschluss kein „auskreuzen“ 
+notwendig ist. Dies macht bei größeren Querschnitten die Anschlussarbeiten etwas leichter. 
+ 
+ 
+Altanlagen: 
+ 
+In Altanlagen sind die Leiterfarben teilweise anders in der Anwendung. So findet man je 
+nach Errichtungsjahr an Steckdosen die Farben Schwarz (L), Grau (N) und Rot (PE). Für die 
+drei Außenleiter wurden auch die Farben Gelb (L1), Grün (L2) und Violett (L3) verwendet. 
+Wurden die Leiter beschriftet so ist die ehemalige Beschriftung R (L1), S (L2) und T (L3). 
+ 
+ 
+
+
+===== PAGE 84/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+72 
+19 
+DER ÜBERSPANNUNGSSCHUTZ 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-1 
+Quelle BGBL II 33 / 2006 Ausgabe:30. Jänner 2006 – ÖVE/ÖNORM E8001-1 A2 
+ 
+Ein ganz besonderer Bereich der Elektrotechnik ist der Bereich des Überspannungsschutzes. 
+Dieser hat in den letzten 20ig Jahren wesentlich an Bedeutung gewonnen. So ist die Zahl der 
+Stromunfälle in den vergangenen Jahren relativ klein geblieben, so haben doch die Anlagen-
+schäden (Zerstörung, Produktionsausfall) stark zugenommen. 
+ 
+War in der EN1 über das Thema Überspannungsschutz kaum etwas zu finden, so hat man in 
+der ÖVE/ÖNORM E8001 den Überspannungsschutz ein ganzes Kapitel gewidmet. Dieser 
+Teil ist in den Jahren seit Erscheinen der E8001 stetig gewachsen. Nicht nur in der E8001, 
+auch in der E8049 bzw. EN62305 hat der Überspannungsschutz an Bedeutung und Umfang 
+zugenommen. 
+ 
+Der Schutz von Störspannungen und elektromagnetischen Störgrößen wird in der ÖVE 
+E8101 im Kapitel 4-44 behandelt. Einrichtungen zum Schutz bei Überspannung sind im Ab-
+schnitt 5.534 zu finden. 
+ 
+19.1 
+Überspannungsarten 
+Überspannung ist nicht gleich Überspannung. In der Überspannungsschutztechnik werden 
+die Überspannungen ist zwei Bereiche eingeteilt. 
+ 
+Man unterscheidet die so genannten: 
+ 
+ Inneren Überspannungen 
+ 
+ Äußeren Überspannungen 
+ 
+Die inneren Überspannungen entstehen zum Beispiel durch Schaltvorgänge in der elektri-
+schen Anlage. Auch der Energieversorger kann Schaltüberspannungen verursachen (Schal-
+tung von Transformatoren). In der Anlage können Maschinen Überspannungen durch z.B: 
+Bürstenfeuer hervorrufen. 
+ 
+Die äußeren Überspannungen werden auch als atmosphärische Entladungen (Gewitter) bzw. 
+als transiente Überspannungen bezeichnet. 
+ 
+ 
+ 
+
+
+===== PAGE 85/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+73 
+19.2 
+Überspannungsableiter Arten 
+Zum zuverlässigen Schutz vor Überspannungen sind mehrere Arten von Überspannungsab-
+leitern (SPD = Surge Protected Device) notwendig. Die Normenreihe der ÖVE-SN60 ist 
+durch die ÖVE/ÖNORM EN61643 ersetz worden. Durch diese Änderung haben sich die Be-
+zeichnungen der Überspannungsschutzgeräte verändert. 
+ 
+Gegenüberstellung der ÖVE-SN60 mit der ÖVE/ÖNORM EN61643-11 (2003): 
+ 
+19.2.1 Klassifikation ÖVE-SN60: 
+ 
+Ableiterklasse A 
+Überspannungsableiter zum Einsatz in Freileitungen 
+Ableiterklasse B 
+Blitzstromableiter für die Montage in Gebäuden 
+Ableiterklasse C 
+Überspannungsableiter für die Montage in Gebäuden 
+Ableiterklasse D 
+Ortsveränderliche Überspannungsschutzgeräte 
+Ableiterklasse E 
+Überspannungs-Feinschutzelemente 
+ 
+19.2.2 Überspannungsschutz ÖVE/ÖNorm EN 61643-11: 
+ 
+ 
+Type 1 
+Prüfstrom Imp definiert durch Amplitude, Ladung 
+und spezifische Energie (10/350 µs). 
+Entspricht etwa 
+Ableiterklasse B 
+ 
+Type 2 
+Prüfstrom In mit Wellenform 8/20 µs. Dieser Type ist 
+für SPDs ohne Reihenimpedanzen geeignet – soge-
+nannte One-Port-SPDs. 
+Entspricht etwa 
+Ableiterklasse A, 
+C und D 
+ 
+Type 3 
+Prüfung mit Hybridgenerator. 
+Leerlaufspannung Uoc 1,2/50 µs, Kurzschlussstrom 
+Isc 8/20 µs, wobei die Leerlaufspannung vorgegeben 
+ist und die Stromform sich je nach Prüflingsimpedanz 
+einstellt. 
+Diese Type ist vorwiegend für SPDs mit Reihenimpe-
+danzen gedacht – sogenannte Two-Port-SPDs. 
+Entspricht etwa 
+Ableiterklasse D 
+und E 
+ 
+
+
+===== PAGE 86/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+74 
+19.3 
+Verwendung von Überspannungsschutzgeräten 
+In der ÖVE/ÖNorm E8001 findet man eine Einteilung der Überspannungsschutzgeräte je 
+nach Verwendung in der Elektrotechnik. Es wird in drei Bereiche unterteilt: 
+ 
+ Überspannungsschutzgeräten im Verteilungsnetz 
+ Überspannungsschutzgeräten für die elektrische Installationen von Gebäuden zum 
+Schutz gegen indirekte Blitzeinwirkungen, d.h. zur Begrenzung transienter Überspan-
+nungen infolge atmosphärischer Entladungen, die über das Niederspannungs-
+Verteilungsnetz in die Verbraucheranlage gelangen, und gegen Schaltüberspannungen 
+ Überspannungsschutzgeräten für den Schutz gegen direkte Blitzeinwirkungen, d.h. 
+transiente Überspannungen, die durch direkte Blitzeinschläge in Gebäude oder Blitz-
+schläge in unmittelbarer Nähe von Gebäuden mit Blitzschutzanlage erzeugt werden. 
+ 
+Die Anforderungen an den Überspannungsschutz der ÖVE/ÖNorm E8001 gelten für Wech-
+selspannungsanlagen und Gleichspannungsanlagen. Für informationstechnische Anlagen 
+(Antennen,…) ist die ÖVE-F1 Teil 7 zu verwenden. 
+ 
+In bestimmten Bereichen und Anlagen (Bahn, Hochspannung) können andere oder weitere 
+Maßnahmen notwendig werden. 
+ 
+19.3.1 Installation von SPD‘s 
+Mindestens eine SPD-Kombination muss in der Anlage so nah wie möglich an der Einspei-
+sung installiert werden. 
+ 
+ Bei Blitz- und Schaltüberspannungen mind. Type 2 
+ 
+ Bei Anlagen mit einem äußeren Blitzschutzsystem mind. Type 1 
+ 
+Kann eine SPD Schutzeinrichtung den geforderten Schutzpegel nicht erreichen, so müssen 
+zusätzlich Überspannungsschutzeinrichtungen installiert werden. Dies kann auch durch die 
+Verwendung von sogenannten Kombiableitern erreicht werden.  
+ 
+Zusätzliche SPD’s können auch bei empfindlichen Geräten notwendig sein (z.B. Steckdosen-
+einbau). Werden solche in Endstromkreisen verbaut, so ist dauerhafter ein Hinweis im Vertei-
+ler notwendig. 
+ 
+ 
+ 
+
+
+===== PAGE 87/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+75 
+ 
+Um gegen transiente Überspannungen zu schützen sind folgende Ausführungen möglich: 
+ 
+ SPD’s zwischen aktiven Leitern (inkl. N) und Schutzleiter ist Pflicht 
+ 
+ SPD’s zwischen Außenleitern und Neutralleiter ist empfohlen zum Schutz von Be-
+triebsmitteln 
+ 
+ SPD’s zwischen Außenleitern ist optional 
+ 
+19.3.2 Anschlussbeispiele für SPD‘s 
+ 
+ 
+Abbildung 19 SPD Schaltung 3+0 
+ 
+ 
+Abbildung 20 SPD Schaltung 4+0 
+ 
+ 
+
+
+===== PAGE 88/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+76 
+ 
+ 
+Abbildung 21 SPD Schaltung 3+1 
+ 
+In einem TN-S bzw. TN-C-S Netz kann auf den SPD zwischen N und PE verzichtet werden, 
+wenn die Aufteilung in N und PE nicht weiter als 0,5m vom Überspannungsableiter entfernt 
+ist oder die Aufteilung im selben Schaltschrank erfolgt. 
+ 
+19.4 
+Auswahl für SPD‘s 
+Für die richte Auswahl sind folgende Kriterien einzuhalten: 
+ 
+ Auswahl des Schutzpegels (UP) 
+ Auswahl der höchsten Dauerspannung (UC) 
+ Nennableitstoßstrom (IN) und Blitzstoßstrom (IImp) 
+ Auswahl zur Koordination von Überspannungsschutzeinrichtungen 
+ Auswahl der Kurzschlussfestigkeit 
+ Folgestromlöschfähigkeit 
+ 
+ 
+ 
+
+
+===== PAGE 89/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+77 
+19.5 
+Koordination von Überspannungsschutzgeräten 
+Der Kurzschlussschutz wir durch die richtige Auswahl der Überstromschutzeinrichtung 
+(OCPD) sichergestellt. Diese Überstromschutzeinrichtungen sind kleiner oder gleich dem 
+maximal zulässigen Überstromschutz laut Herstellerangabe zu wählen. 
+ 
+Die Querschnitte der Anschlussleitungen müssen dem zu erwartenden Kurzschlussstrom 
+standhalten und sind entsprechen zu dimensionieren. Überlastströme können bei Überspan-
+nungsschutzgeräten gemäß ÖVE/ÖNORM EN61643-11 normalerweise nicht auftreten und 
+somit ist ein Schutz gegen Überlastschutz nicht erforderlich. 
+ 
+19.6 
+Fehlerschutz bei Verwendung von SPD‘s 
+Der Fehlerschutz darf durch defekte Überspannungsschutzgeräte nicht beeinträchtigt wer-
+den. 
+ 
+Bei der Installation von Überspannungsschutzgeräten und FI-Schutzschaltern gibt es geson-
+derte Festlegungen die zu beachten sind. 
+ 
+Der Einbau eines Typ1 Ableiters nach dem FI ist nicht zulässig. Es sei denn, die Überspan-
+nung ist Lastseitig zu erwarten. 
+ 
+Der Einbau eines Typ2 Ableiters nach dem FI ist nur dann zulässig, wenn bereits vor dem FI 
+ein Typ2 Ableiter verbaut ist oder die Überspannung Lastseite zu erwarten ist. 
+ 
+19.7 
+Anschluss und Querschnitt von SPD’s 
+Die Erforderlichen Anschlussquerschnitte ergeben sich aus dem verwendeten Typ und der 
+Überstromschutzeinrichtung. 
+ 
+Zwischen SPD und Haupterdungsschiene (Klemme) 
+ 
+ 6mm² bei Typ 2 
+ 16mm² bei Typ 1 
+ 
+Zwischen aktiven Leitern und SPD 
+ 
+ 2,5mm² bei Typ 2 
+ 6mm² bei Typ 1 
+ 
+Achtung – Der zu erwartenden Kurzschlussstrombelastung muss standgehalten werden kön-
+nen 
+ 
+ 
+
+
+===== PAGE 90/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+78 
+Die Verbindungsleitungen und Anschlussleitungen müssen möglichst kurz und gerade aus-
+geführt werden. 
+ 
+Die Gesamtlänge der Anschluss- und Ableitung darf dabei die Länge von 0,5m nicht über-
+schreiten. Ebenfalls sind Leiterschleifen zu vermeiden. 
+ 
+Eine V-Förmige Verdrahtung ist zur Erfüllung der Anforderungen von Vorteil. 
+ 
+ 
+ 
+Abbildung 22 Anschlusslängen ÜSA 
+ 
+ 
+Abbildung 23 – V-Förmige Verdrahtung ÜSA 
+ 
+
+
+===== PAGE 91/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+79 
+20 
+DIE EINTEILUNG DES SCHUTZKONZEPTES 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-1 
+ 
+Das in Österreich langjährige System der dreifachen Sicherheit findet sich auch in der ÖVE 
+E8101 wieder und ist somit auf europäischer Ebene überall anzuwenden. 
+ 
+ Basisschutz 
+ Fehlerschutz 
+ Zusätzlicher Schutz 
+ 
+Dieses Schutzsystem bietet einen hervorragenden Schutz gegen den Elektrounfall. Diese 3 
+Ebenen wirken hintereinander. Sollte die vorhergehende Schutzmaßnahme versagen so 
+kommt die Nächste zur Wirkung. 
+ 
+ 
+Abbildung 24 - Schutzkonzept 
+
+
+===== PAGE 92/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+80 
+20.1 
+Der Basisschutz 
+20.1.1 Anwendung 
+Der Basisschutz hat folgende Aufgaben: 
+ 
+ Verhindern, dass Strom durch den Körper (Mensch oder Nutztier) fließt. 
+ Begrenzen der Stromhöhe auf einen ungefährlichen Wert. 
+ 
+Üblicherweise wird das direkte Berühren, vor allem in Niederspannungsanlagen, verhindert. 
+ 
+Es können folgende Fehlerarten unterschieden werden: 
+ 
+ nichtsichtbare Fehler 
+ 
+Versagen der Basisisolation, äußere leitfähige Teile werden spannungsführend. 
+ 
+ sichtbare Fehler 
+ 
+Beschädigung der äußeren Umhüllungen (Gehäuse), Eindringen von Feuchtigkeit 
+bzw. Wasser, dadurch Versagen der Basisisolation. 
+ 
+ 
+20.1.2 Begriffe 
+ Basisisolierung  Isolierung von aktiven Teilen gegen Körper,  zum grundlegenden 
+Schutz gegen gefährliche Körperströme. 
+ Betriebsisolierung  die zum ordnungsgemäßen Betrieb erforderliche Isolierung eines 
+Gerätes. 
+ Handbereich  der Bereich, dessen Grenzen eine Person von üblicherweise betretenen 
+Standflächen aus mit den Händen erreichen kann. 
+ Standfläche  üblicherweise betretene Stellen. 
+ 
+ 
+ 
+
+
+===== PAGE 93/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+81 
+20.1.3 Durchführung 
+Für die Erreichung des Basisschutzes gibt es mehrere Möglichkeiten: 
+ 
+ Anbringung einer Basisisolierung 
+ Anbringung einer Abdeckung 
+ Anbringen von einer Abgrenzung 
+ Montage eines Schutzgitters 
+ Montage der aktiven Teile außerhalb des Handbereiches 
+ Abdeckungen dürfen nur mit Werkzeug oder Schlüssel entfernbar sein. 
+ Die Schutzart muss mindestens IP2X entsprechen (Ausnahmen wie z.B. Lampenfas-
+sung) 
+ 
+Für spezielle Bereiche die nur durch Elektrofachkräfte (BA5) oder unterwiesene Personen 
+(BA4) betreten werden können, gibt es Ausnahmeregelungen. 
+ 
+Für die Beschaffenheit und Montage von Abdeckungen und Schutzgittern gelten eigene Best-
+immungen die man lt. ÖVE/ÖNORM EN61140 (Schutz vor dem elektrischen Schlag) einhal-
+ten muss. Grundsätzliches ist in der ÖVE E8101 geregelt. Der Handbereich gilt für Nieder-
+spannungsanlagen bis 1000V AC und 1500V DC. Für den Bereich der Hochspannung (ab 
+1000V AC) gelten andere Abstände (Überschlagsgefahr) die in der ÖVE/ÖNORM E8383 ge-
+regelt sind. 
+ 
+ 
+Abbildung 25 - Handbereich 
+ 
+ 
+0,75m
+R = 2,5m
+R = 1,25m
+S
+R = 
+1,25m
+S: Standfläche von
+üblicherweise
+betretenen
+Bereichen
+
+
+===== PAGE 94/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+82 
+20.2 
+Der Fehlerschutz 
+20.2.1 Ziel 
+Der Fehlerschutz wirkt bei einem Fehler des Basisschutzes. Inaktive Teile können spannungs-
+führend werden. Personen und Nutztier müssen vor diesen Gefahren geschützt werden. Der 
+Fehlerschutz ist die Schutzmaßnahme in der Anlage bzw. am Betriebsmittel. 
+ 
+Der Fehlerschutz soll folgendes verhindern: 
+ 
+ Den Strom der durch eine Person oder Nutztier aufgrund eines Fehlers fließt verhin-
+dern 
+ Den Strom der durch eine Person oder Nutztier aufgrund eines Fehlers fließt auf einen 
+ungefährlichen Wert begrenzen 
+ Den Strom der durch eine Person oder Nutztier aufgrund eines Fehlers fließt auf eine 
+ungefährlichen Dauer begrenzen 
+ 
+20.3 
+Der zusätzliche Schutz (Zusatzschutz) 
+20.3.1 Anwendung 
+Der zusätzliche Schutz (Zusatzschutz) ist eine ergänzende Maßnahme zum Verringern der 
+Gefahren für Personen und Nutztiere, die sich ergeben können, wenn der Basisschutz 
+und/oder der Fehlerschutz nicht wirksam sind/ist. 
+ 
+Die erhöhte Gefährdung in besonderen Anlagen oder Räumen durch äußere Einflüsse oder 
+besonderer Nutzung soll somit auf einen gleichwertigen Schutz wie bei normaler Nutzung 
+gebracht werden. 
+ 
+Der zusätzliche Schutz kann erreicht werden durch: 
+ 
+ Den Strom der durch eine Person oder Nutztier aufgrund eines Fehlers fließt auf einen 
+ungefährlichen Wert begrenzen 
+ Den Strom der durch eine Person oder Nutztier aufgrund eines Fehlers fließt auf eine 
+ungefährlichen Dauer begrenzen 
+ 
+Üblicher Weise wird der zusätzliche Schutz durch den Einbau eines Fehlerstromschutzschal-
+ters mit I∆N ≤ 30mA und/oder durch einen zusätzlichen Potentialausgleich erreicht. 
+ 
+ 
+ 
+
+
+===== PAGE 95/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+83 
+20.3.2 Durchführung 
+Der Zusatzschutz ist in folgenden Bereichen zwingend vorgeschrieben: 
+ 
+ In Steckdosenkreisen bis 20A (lt. ÖVE-E8001 bis 16A) 
+ Für ortsveränderliche Betriebsmittel für die Verwendung im Freien bis 32A 
+ In landwirtschaftlichen Betriebsstätten 
+ In gartenbaulichen Anlagen 
+ In medizinisch genutzten Bereichen 
+ In Unterrichtsräumen mit Experimentierständen 
+ Auf Campingplätzen 
+ Auf Baustellen 
+ Bei Provisorien 
+ Bei Liegeplätzen für Wasserfahrzeuge 
+ In Schwimmbädern 
+ In Saunaanlagen 
+ In Baderäumen 
+ Bei Springbrunnen 
+ 
+Die einzelnen Unterschiede sind in den Installationsvorschriften der ÖVE E8101 Teil 7 fest-
+geschrieben. So ist der Zusatzschutz zum Beispiel bei Baustellen bis 32A Steckvorrichtungen 
+vorgeschrieben und in der Landwirtschaft für alle Steckvorrichtungen ohne Nennstrombe-
+grenzung. 
+ 
+Ein zusätzlicher Potentialausgleich wird z.B. in landwirtschaftlichen oder medizinischen Be-
+reichen gefordert. 
+ 
+Ausnahmeregelung zusätzlicher Schutz: 
+ 
+Unter speziellen Voraussetzungen darf der zusätzliche Schutz entfallen, sofern folgende Best-
+immungen erfüllt sind: 
+ 
+ Steckdosen nicht für Laien zugänglich 
+ An der Steckdose sind nur fest angebrachte oder ortsfeste Betriebsmittel angesteckt 
+ Steckdosen dauerhaft und eindeutig beschriftet 
+
+
+===== PAGE 96/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+84 
+21 
+SCHUTZ GEGEN DEN ELEKTRISCHEN SCHLAG 
+21.1 
+Anwendung 
+Es muss in einer elektrischen Anlage mindestens eine Schutzmaßnahme verwendet werden, 
+es dürfen aber mehrere Schutzmaßnahmen verwendet werden. 
+ 
+Eine Schutzmaßnahme besteht im Normalfall aus mehreren Schutzvorkehrungen: 
+ 
+ Aus einer Kombination aus einer Basisschutzvorkehrung und einer Fehlerschutzvor-
+kehrung oder verstärkten Schutzvorkehrung 
+ Bei Bedarf aus einer zusätzlichen Schutzvorkehrung 
+21.2 
+Durchführung 
+Für die Erreichung des Fehlerschutzes gibt es mehrere Möglichkeiten. Einerseits die richtige 
+Verwendung der Betriebsmittel und die Errichtung einer Fehlerschutzmaßnahme. Fehler-
+schutzmaßnahmen erreichen ihren Schutz durch folgende Maßnahmen: 
+ 
+ Automatische Abschaltung 
+ Schutzisolierte Ausführung 
+ Elektrische Trennung 
+ Verwendung einer Schutzkleinspannung 
+ dauerhafte Ausführung 
+ sinnvolle Anwendung 
+ richtige Schaltung 
+ gut leitende Verbindung aller berührbaren inaktiven Teile von Betriebsmitteln sowohl 
+miteinander als auch mit der Schutzleiteranschlussklemme und dem Schutzleiter. 
+ Schutzkontaktsteckdosen ohne angeschlossenen Schutzleiter dürfen nicht verwendet 
+werden. 
+ in Räumen mit Schutzkontaktsteckdosen oder mit Betriebsmitteln, die für eine 
+Schutzmaßnahme mit Schutzleiter vorgesehen sind, dürfen Schutzkontaktsteckdosen 
+ohne Schutzleiter nicht vorhanden sein (Ausnahme Schutztrennung und Schutzklein-
+spannung). 
+ Verhindern gegenseitiger negativer Beeinflussung 
+ Führen des Schutzleiters in der gemeinsamen Umhüllung von beweglichen An-
+schlussleitungen bei ortsveränderlichen Betriebsmitteln. 
+ Überprüfung der Schutzmaßnahme und des Isolationszustandes. 
+ 
+
+
+===== PAGE 97/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+85 
+21.2.1 Ausnahmen 
+Bei manchen Anwendungen bzw. Bereichen darf der Fehlerschutz entfallen. Einige Beispie-
+le: 
+ Metallstützen von Freileitungsisolatoren die am Gebäude befestigt und außerhalb des 
+Handbereiches sind 
+ Stahl- und Betonmaste in Verteilungsnetzen 
+ Elektrizitätszähler 
+ Hausanschlusskästen 
+ Metallrohre und Metallschläuche mit isolierender Auskleidung 
+ Dachständer 
+ … 
+ 
+21.3 
+Einteilung der Schutzmaßnahmen 
+In der ÖVE E8101 (Tabelle 41.001.AT) findet sich die Einteilung der Schutzmaßnahmen als 
+Tabelle mit einer Übersicht, welche Schutzvorkehrungen notwendig sind um die entspre-
+chende Schutzmaßnahme zur Erreichen. 
+ 
+Bei genauerer Betrachtung stellt man fest, dass die Schutzmaßnahmen mit Schutzleiter im-
+mer ein bestimmtes Netz benötigen, die Schutzmaßnahmen ohne Schutzleiter hingegen Netz 
+unabhängig verwendet werden können. 
+ 
+Im Gegensatz dazu ist erkennbar, dass sie Schutzmaßnahmen mit Schutzleiter eine gesamte 
+Anlage schützen können und die Schutzmaßnahmen ohne Schutzleiter nur einzelne Be-
+triebsmittel schützen. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 98/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+86 
+ 
+Basisschutz-
+vorkehrung
+Fehlerschutz-
+vorkehrung
+zusätzlicher
+Schutz
+Nullung
+Basisisolierung
+automatische
+Abschaltung beim
+ersten Fehler;
+Schutzpotentialausgl.
+RCD I∆N ≤ 30mA;
+zus. Schutzpotential-
+ausgleich
+Fehlerstrom-
+Schutzschaltung
+Basisisolierung
+automatische
+Abschaltung beim
+ersten Fehler;
+Schutzpotentialausgl.
+RCD
+I∆N ≤ 30mA;
+zus. Schutzpotential-
+ausgleich
+Überstrom-
+Schutzerdung
+Basisisolierung
+automatische
+Abschaltung beim
+ersten Fehler;
+Schutzpotentialausgl.
+RCD
+I∆N ≤ 30mA;
+zus. Schutzpotential-
+ausgleich
+Isolations-
+Überwachungs-
+system
+Basisisolierung
+Warnung beim
+ersten Fehler;
+aut. Abschaltung beim
+zweiten Fehler;
+Schutzpotentialausgl.
+Doppelte oder
+verstärkte
+Isolierung
+Basisisolierung
+Isolation zw.
+aktiven Teilen mit
+Basisisolierung und
+berührbaren Teilen
+Schutztrennung
+Basisisolierung
+Isolation zw.
+aktiven Teilen
+untersch. Stromkreise
+sowie Begrenzung
+der Längen  
+Schutzpotential-
+ausgleich für
+mehrere Betriebs-
+mittel
+SELV
+Basisisolierung
+oder Begrenzung
+der Spg. auf 25V/AC
+Spg. liegt im Normalb.
+unterhalb der Grenzw.
+für Kleinspg.;
+Frei von Erde
+PELV
+Basisisolierung
+oder Begrenzung
+der Spg. auf 25V/AC
+Spg. liegt im Normalb.
+unterhalb der Grenzw.
+für Kleinspg.
+Schutzvorkehrung
+Schutzmaßnahme
+ 
+ 
+Abbildung 26 – Einteilung Schutzmaßnahmen 
+ 
+ 
+
+
+===== PAGE 99/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+87 
+22 
+DIE FEHLERSCHUTZVORKEHRUNGEN 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-1 
+Quelle BGBL II 222 / 2002 Ausgabe:13. Juni 2002 – ÖVE/ÖNORM E8001-1 A1 
+Quelle BGBL II 33 / 2006 Ausgabe:30. Jänner 2006 – ÖVE/ÖNORM E8001-1 A2 
+Quelle BGBL II 223 / 2010 Ausgabe:12. Juli 2010 – ÖVE/ÖNORM E8001-1 A3 
+Quelle BGBL II 223 / 2010 Ausgabe:12. Juli 2010 – ÖVE/ÖNORM E8001-1 A4 
+ 
+Im Schutzkonzept ist bei Versagen der Basisschutzvorkehrung eine Fehlerschutzvorkehrung 
+vorgesehen. Die Fehlerschutzvorkehrungen können durch 8 unterschiedliche Maßnahmen 
+erreicht werden und müssen in einer elektrischen Anlage vorhanden sein. Die Fehlerschutz-
+vorkehrungen stellen somit einen wesentlichen Teil in der Sicherheit von elektrischen Anla-
+gen dar. 
+ 
+22.1 
+Schutz durch doppelte oder verstärkte Isolierung 
+In der ÖVE 8101 wird dieses Thema im Teil 4.412 behandelt. Der Grundgedanke der 
+Schutzisolierung besteht darin, zusätzlich zu der vorhandenen Basisisolierung eine weitere 
+Isolierung hinzuzufügen. Diese soll auch den Schutz sicherstellen, wenn die Basisisolierung 
+fehlerhaft wird. Erreicht wird dieses Ziel durch eine doppelte oder verstärkte Isolierung der 
+Geräte. 
+ 
+Die Schutzmaßnahme wird im Normalfall für elektrische Betriebsmittel verwenden. In be-
+stimmten Fällen darf die Schutzmaßnahme als alleinige Schutzmaßnahme für Stromkreise 
+oder Teile von Anlagen verwendet werden. 
+22.1.1 Allgemein 
+Ausführungsvarianten: 
+ 
+ Basisschutz durch Basisisolierung und Fehlerschutz durch zusätzliche Isolierung 
+ Basisschutz und Fehlerschutz durch verstärkte Isolierung zwischen aktiven und be-
+rührbaren Teilen 
+22.1.2 Anforderungen 
+Die Betriebsmittel müssen den einschlägigen Normen entsprechen und typgeprüft sein. So-
+mit Betriebsmittel der Schutzklasse II und mit Symbol gekennzeichnet: 
+ 
+ 
+ 
+ 
+ 
+Abbildung 27 – BM SK II 
+
+
+===== PAGE 100/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+88 
+Die leitfähigen Teile müssen in einer Umhüllung von mindestens IP2X sein oder der Schutz-
+zwischenisolierung gemäß ÖVE IM12 entsprechen. 
+ 
+Die Isolierung muss natürlich dem Zweck entsprechend standhaft sein: mechanische, elektri-
+sche oder auch thermische Belastung standhalten. 
+ 
+Ein Überzug aus Anstrich oder Farbe entspricht im Allgemeinen nicht dieser Anforderung. 
+Jedoch gibt es entsprechende typengeprüfte Überzüge. 
+ 
+Die doppelte oder verstärkte Isolierung darf an keine Stelle unterbrochen werden und dabei 
+Potential übertragen. Auch dürfen keine Befestigungen oder Schrauben angebracht werden, 
+durch deren Austausch auf Metall Potential übertragen werden kann. 
+ 
+Wenn der Schutz durch Abdeckungen erfüllt wird, die ohne Werkzeug entfernt werden kön-
+nen, so dürfen dahinter keine berührbaren Teile (mind. IP2X) liegen. 
+ 
+Es dürfen keine Schutzleiter angeschlossen werden, jedoch kann es notwendig sein, den 
+Schutzleiter durch ein Betriebsmittel zuführen. 
+ 
+Die Anschlussleitungen der Betriebsmittel der Schutzklasse II enthalten keinen Schutzleiter. 
+Wird jedoch bei Instandsetzung die Anschlussleitung auf 3polig geändert, so darf der Schutz-
+leiter im Gerät nicht angeschlossen werden. Im Stecker muss er angeschlossen werden. 
+ 
+Die Zuleitung zu Betriebsmitteln der Schutzklasse II muss einen durchgehenden Schutzleiter 
+enthalten, damit bei Austausch (zugänglich durch Laien) die Schutzmaßnahme nicht beein-
+trächtigt wird (z.B. Lichtauslass und Anschluss einer Schutzisolierten Lampe – Laie könnte 
+Lampe auf Schutzklasse 1 wechseln und es wäre dafür kein Schutzleiter vorhanden). 
+ 
+Schutzisolierte Geräte haben eine feste Anschlussleitung mit einem Stecker ohne Schutzkon-
+takt. Dies können Konturenstecker oder Flachstecker sein. Der Stecker des Betriebsmittel 
+muss mit der Anschlussleitung ein unteilbares Ganzes bilden z.B. angegossen aber nicht ge-
+schraubt. 
+ 
+Geräte mit kleinen Leistungen (Radio, TV, Video,…) werden über Flachstecker versorgt. Die 
+Stifte des Flachsteckers sind dünner als die von Konturensteckern. Die maximale Strombelas-
+tung von Flachsteckern liegt bei 2,5A und die von Konturensteckern bei 16A. Weiteres müs-
+sen die Stifte bis zur Hälfte isoliert ausgeführt sein, um bei Verwendung in Schukosteckdosen 
+einen Berührungsschutz zu gewährleisten. 
+ 
+ 
+ 
+
+
+===== PAGE 101/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+89 
+22.2 
+Schutz durch Kleinspannung mit SELV oder PELV 
+In der ÖVE E8101 ist diese Maßnahme im Punkt 4.414 beschrieben. 
+22.2.1 Allgemeines 
+Die effektivste Form jemanden zu Schützen ist die Verwendung von einer kleinen Spannung. 
+Nach diesem Prinzip funktioniert SELV bzw. PELV. Die Spannung bei dieser Maßnahme ist 
+begrenzt und muss durch geeignete Maßnahmen erzeugt werden. 
+ 
+ Begrenzung der Systemspannung 
+ Sichere Trennung von anderen Stromkreisen 
+ Basisisolierung zwischen SELV und Erde (nur bei SELV) 
+ 
+SELV – Safety Extra Low Voltage 
+PELV – Protect Extra Low Voltage 
+ 
+ 
+Abbildung 28 - Schutzkleinspannung 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 102/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+90 
+22.2.2 Erzeugung 
+Als wichtigste Maßnahme gilt die richtige Erzeugung. Die Erzeugung kann auf verschiedene 
+Arten erfolgen. Es muss auf jeden Fall eine sichere elektrische (galvanische) Trennung von 
+Primär und Sekundär sein. 
+ 
+Erzeugung durch: 
+ 
+ Sicherheitstransformator (ÖVE/ÖNORM EN61558) 
+ Generator für Kleinspannung 
+ Umformer mit galvanisch getrennten Wicklungen 
+ Akkumulatoren 
+ Elektronische Einrichtungen die durch ihre Bauart die Spannung begrenzen 
+ 
+Verboten sind Spannungsteiler, Vorwiderstände, Potentiometer bzw. Spartrafos. 
+ 
+22.2.3 Anforderungen 
+ 
+ Basisisolierung 
+ Sichere Trennung von aktiven Teilen anderer Stromkreise 
+ SELV isoliert gegen Erde 
+ PELV darf geerdet werden 
+ Sichere Trennung der Kabel- und Leitungsanlagen durch geeignet Maßnahmen 
+(z.B. räumliche Trennung, höherwertige Isolierung, ...) 
+ Verwendung von geeigneten Stecker- und Steckdosensystemen (Verwechslungs-
+schutz, ohne PE, ...) 
+ Es darf die Basisisolierung unter bestimmten Voraussetzungen entfallen (begrenzte 
+Spannung, normale äußere Einflüsse, …) 
+ 
+ 
+ 
+
+
+===== PAGE 103/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+91 
+22.3 
+Die Schutztrennung 
+Die Errichtung der Schutztrennung erfordert einen Basisschutz durch eine Basisisolierung 
+und einen Fehlerschutz durch Isolierung zwischen aktiven Teilen unterschiedlicher Strom-
+kreisen sowie die Begrenzung der gesamten Leitungslängen. 
+ 
+Grundsätzlich ist ein vom Erdpotential getrenntes Netz notwendig, wobei die höchstzulässi-
+ge Spannung sekundärseitig 500V beträgt. 
+ 
+Wenn nicht anders erlaubt, ist die Anwendung auf nur ein Betriebsmittel anzuwenden. Bei 
+mehreren Betriebsmitteln sind zusätzliche Anforderungen zu erfüllen. 
+ 
+ 
+Abbildung 29 - Schutztrennung 
+ 
+Die Schutzmaßnahme Schutztrennung trennt den Stromkreis der Verbrauchsmittel mit Hilfe 
+eines Trenntrafos oder einem bezüglich Trennung gleichwertigen Motorgenerator vom spei-
+senden Netz. 
+ 
+
+
+===== PAGE 104/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+92 
+Dadurch soll verhindert werden, dass beim Berühren aktiver Teile oder bei Körperschlüssen 
+an den Betriebsmitteln gefährliche Körperströme entstehen. Die Schutzmaßnahme ist nur 
+wirksam, solange auf der Sekundärseite kein Erdschluss besteht. 
+ 
+Es wird bei der Schutztrennung ein vom Netz und Erde getrennter Stromkreis geschaffen. Im 
+Fehlerfalle kann weiter gearbeitet werden. Jede Verbindung mit Erde und dem Sekundärkreis 
+muss vermieden werden, um den Schutz aufrecht zu erhalten. 
+ 
+ Bewegliche Leitungen müssen über die gesamte Länge sichtbar sein, wenn sie Bean-
+spruchungen ausgesetzt sind. 
+ Flexible Leitungen müssen mindestens schwere Gummischlauchleitungen oder mittle-
+re PVC Schlauchleitungen sein. 
+ Die Schutzerdung darf sekundärseitig nicht geerdet werden. 
+ Bei mehreren Geräten an einem Trenntransformator müssen die leitfähigen Gehäuse 
+über Schutzkontakte und Potentialausgleichsleitungen miteinander in Verbindung ste-
+hen. Es wird somit ein Potentialunterschied bei einem Doppelfehler an den Gehäusen 
+vermieden und es kommt zur Abschaltung der Sicherungen. 
+ Bei Auftreten eines Fehlers bei zwei unterschiedlichen Potentialen muss in einer an-
+gemessenen Zeit abgeschaltet werden. 
+ 
+Die maximal zulässige Leitungslänge sekundär ergibt sich aus folgender Gleichung: 
+ 
+ 
+U x l  ≤ 100.000 Vm 
+ 
+Maximale Gesamtleitungslänge 500m 
+ 
+ 
+Die Leitungslänge l ist hierbei die Hin- & Rückleitung. 
+ 
+ 
+ 
+
+
+===== PAGE 105/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+93 
+22.4 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+Bei einem Auftreten eines Fehlers muss in einer angemessenen Zeit eine zuverlässige Ab-
+schaltung erfolgen. Die geforderten Zeiten beziehen sich nicht nur auf eine Schutzmaßnah-
+me, sondern werden im TT Netz und im TN Netz angewendet. Weiteres gelten diese gefor-
+derten Zeiten für Überstromschutzeinrichtungen und auch für Fehlerstromschutzeinrichtun-
+gen. Je nach Verwendungszweck. 
+ 
+Für Endstromkreise bis inkl. 32A gelten folgende Zeiten nachstehender Tabelle: 
+ 
+AC
+DC
+AC
+DC
+AC
+DC
+AC
+DC
+TN
+0,8 s
+0,4 s
+5 s
+0,2 s
+0,4 s
+0,1 s
+0,1 s
+TT
+0,3 s
+0,2 s
+0,4 s
+50V < U0 ≤ 120V
+120V < U0 ≤ 230V
+230V < U0 ≤ 400V
+U0 > 400V
+System
+in Österreich nicht zulässig
+ 
+ 
+Abbildung 30 - Abschaltzeiten 
+ 
+In TN Netzen ist für Verteilungsstromkreise und Endstromkreise über 32A eine maximale Ab-
+schaltzeit von 5 s zulässig. 
+ 
+22.5 
+Automatische Abschaltung im TT Netz 
+Die Anforderungen der automatischen Abschaltung im TT Netz gelten für die Schutzmaß-
+nahme Schutzerdung und Fehlerstromschutzschaltung. Die detaillierten Anforderungen sind 
+im Abschnitt 4.411.5 in der ÖVE E8101 geregelt. 
+ 
+Bei dieser Maßnahme werden die zu schützenden Geräte über einen Schutzleiter mit einem 
+geeigneten Erder verbunden. Entsteht ein Körperschluss, so fließt über die Betriebserde und 
+dem Anlagenerder ein entsprechender Strom und bringt das vorgeschaltete Schutzorgan zum 
+Abschalten. 
+ 
+Vorzugsweise sind im TT Netz für die Abschaltung RCD’s (Fehlerstrom-Schutzschaltung) zu 
+bevorzugen. Es dürfen auch Überstrom-Schutzeinrichtungen verwendet werden (Überstrom-
+Schutzerdung) sofern eine dauerhafte, zuverlässige niederohmige Fehlerschleifenimpedanz 
+zur Verfügung steht. 
+ 
+Die Ausführung der Schutzerdung ist in Österreich im öffentlichen Netz jedoch nicht mehr 
+zulässig (ESV 2012). Anlagen müssen bei wesentlichen Änderungen und wesentlichen Erwei-
+terungen auf eine andere Schutzmaßnahme wie Überstromschutzerdung umgestellt werden. 
+ 
+ 
+
+
+===== PAGE 106/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+94 
+22.5.1 Forderung bei Verwendung einer Überstrom-Schutzeinrichtung: 
+ 
+Lt. E8001-1/A4 bzw. ÖVE-E8101  
+A
+N
+S
+I
+U
+Z
+
+ 
+ 
+m
+I
+I
+N
+A
+*
+=
+ 
+ 
+und dauerhafte zuverlässige Erdungsanlage 
+ 
+ 
+IA ist jener Strom der eine Abschaltung innerhalb der erforderlichen Zeiten ermöglicht. Ein-
+haltung mit entsprechenden Abschaltfaktoren m oder bei Verteilungsstromkreisen gilt max. 
+0,4 s und bei Endstromkreisen nicht über 32A gilt max. 0,2 s. (Nennspannung max. 230V 
+gegen Erde) 
+ 
+22.5.2 Forderung bei Verwendung einer Fehlerstrom-Schutzeinrichtung: 
+ 
+Lt. ÖVE-E8001-1/A3 bzw. ÖVE-E8101    
+N
+N
+I
+U
+Zs
+D
+
+*
+5
+ 
+W
+100
+Zs
+ 
+ 
+dauerhafte zuverlässige Erdungsanlage und entsprechende Ausschaltzeit 
+ 
+Gefordert wird dabei vorzugsweise ein Fundamenterder entsprechend ÖVE E8014 bzw. eine 
+Erdungsanlage gemäß ÖVE E8101 Teil 5-54 oder mit dem Mindestmaß in korrosionsbestän-
+diger Ausführung von folgenden Abmessungen: 
+ 
+Horizontalerder mindestens 10m Länge 
+ 
+Vertikalerder mindestens 4,5m Tiefe 
+ 
+Einhaltung der entsprechenden Abschaltzeitbedeutet bei Verteilungsstromkreisen max. 0,4 s 
+und bei Endstromkreisen nicht über 32A gilt max. 0,2 s. (Nennspannung max. 230V gegen 
+Erde) 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 107/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+95 
+22.6 
+Automatische Abschaltung im TN Netz 
+Im Allgemeinen ist dabei die Schutzmaßnahme Nullung gemeint. 
+ 
+In der ÖVE E8001 findet sich für die Nullung auch der Begriff der Neutralleiter-
+Schutzerdung. 
+ 
+Der Vorteil der Nullung liegt darin, dass der Fehlerkreis nicht nur über den Anlagenerder 
+sondern über den Betriebserder und den Anlagenerder gebildet. Die Verbindung zwischen 
+den Anlagenerder und Betriebserder wird im TN-C Netz über den PEN-Leiter und im TN-S 
+Netz über einen eigenen PE-Leiter gebildet. Durch den geringen Widerstand des PEN-Leiters 
+und der Parallelschaltung der Anlagenerder wird der Schleifenwiderstand wesentlich verrin-
+gert. Dadurch steigt der Kurzschlussstrom und der Abschaltstrom der Sicherung wird leichter 
+erreicht. 
+ 
+Technische Grundsätze für Verbraucheranlagen zur Anwendung der Schutzmaßnahme Nul-
+lung: 
+ 
+ Erfolgt der Anschluss an ein Verteilnetz, das für die Anwendung der Schutzmaßnahme 
+Nullung freigegeben ist, so ist die Schutzmaßnahme Nullung zu verwirklichen. 
+ Erfolgt der Anschluss an ein Verteilnetz, das für die Anwendung der Schutzmaßnahme 
+Nullung noch nicht freigegeben ist, so sind die Verbraucheranlagen so auszuführen, 
+dass die Umstellung auf die Schutzmaßnahme Nullung mit minimalen Kosten zu ver-
+wirklichen ist (Nullungsverordnung). 
+ Die Nullungsverbindung ist vorzubereiten, jedoch bis zur Freigabe der Schutzmaß-
+nahme Nullung nicht anzuschließen. 
+ Erfolgen in einer noch nicht genullten Verbraucheranlage wesentliche Änderungen 
+oder Erweiterungen, so ist dabei die Schutzmaßnahme Nullung zu realisieren bzw. 
+vorzubereiten. 
+ In neuen Verbraucheranlagen und in solchen, die auf die Schutzmaßnahme Nullung 
+umzustellen bzw. vorzubereiten sind, muss ein Hauptpotentialausgleich gemäß den 
+geltenden Vorschriften vorhanden sein. 
+ Sind an diesen noch nicht alle vorschriftsgemäß anzuschließenden Teile angeschlos-
+sen, so ist dies vor der Umstellung der Schutzmaßnahme nachzurüsten. 
+ Besondere Maßnahmen können bei Bahnanlagen, Hochspannungsanlagen oder Anla-
+gen des kathodischen Korrosionsschutzes  notwendig sein. 
+ 
+ 
+ 
+
+
+===== PAGE 108/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+96 
+22.6.1 1. Nullungsbedingung (Ausschaltbedingung) 
+Um eine Abschaltung bei einem Fehler zu erreichen, muss mindestens der Abschaltstrom der 
+Sicherung zum Fließen kommen. Der Abschaltstrom bzw. Kurzschlussstrom wird durch die 
+Schleifenimpedanz begrenzt. Die Schleifenimpedanz setzt sich aus der Trafoimpedanz, den 
+Leitungswiderstand im Außenleiter und im PEN-Leiter bis zur Fehlerstelle zusammen. 
+ 
+Es müssen folgende Bedingungen erfüllt sein: 
+ 
+A
+K
+I
+I
+
+ 
+S
+N
+K
+Z
+U
+I
+=
+ 
+N
+A
+I
+m
+I
+
+=
+ 
+ 
+Die Kennwerte der Überstromschutzeinrichtungen und die Querschnitte müssen so aufei-
+nander abgestimmt werden, dass beim Auftreten eines Fehlers mit vernachlässigbarer Impe-
+danz an beliebiger Stelle zwischen Außenleiter und Schutzleiter bzw. PEN-Leiter oder den 
+damit verbundenen Körpern die automatische Abschaltung erfolgt. 
+ 
+Kann die erste Nullungsbedingung nicht eingehalten werden, so ist der Einbau von Fehler-
+stromschutzschaltern zur Erfüllung dieser Bedingung zulässig. Dabei muss der Mindestkurz-
+schlussstrom der nächsten dem Fehlerstromschutzschalter vorgeschalteten Überstromschutz-
+einrichtung das 2, 5-fache ihres Bemessungsstromes betragen. 
+ 
+22.6.2 2. Nullungsbedingung (Erdungsbedingung) 
+Der PEN-Leiter ist in der Nähe der Stromquelle und in der Nähe der Netzausläufer zu erden. 
+Netzausläufer sind Abzweige und Stiche von mehr als 100m Länge. 
+ 
+Die Betriebserdung müssen den Bestimmungen der ÖVE-ÖNORM E8101 entsprechen. 
+ 
+Verbraucheranlagen in denen die Nullung angewendet wird, müssen eine dauerhafte Anla-
+generdung besitzen. Vorzugsweise einen Fundamenterder. Ist kein Fundamenterder vorhan-
+den, so ist eine Erdungsanlage in ausreichend korrosionsbeständiger Ausführung zu errich-
+ten. Die Mindestmaße hierfür betragen: 
+ 
+ 
+Horizontalerder von mindestens 10m Länge 
+ 
+Vertikalerder von mindestens 4,5m Tiefe 
+ 
+ 
+Längenangabe ist dabei die wirksame Erderlänge. 
+
+
+===== PAGE 109/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+97 
+22.6.3 3. Nullungsbedingung (Verlegebedingung) 
+Die Anforderungen an den PEN Leiter finden sich in der ÖVE E8101 im Teil 5 (514.3.2 bzw. 
+543.4). 
+ 
+Für die Verlegung des PEN Leiters ist folgendes zu beachten: 
+ 
+ Der PEN-Leiter darf weder einzeln gesichert noch einzeln geschalten werden (wie 
+PEN-Leiterbruch d.h. Spannungsverschleppung). 
+ Ein PEN Leiter ist nur in fest installierten Anlagen zulässig 
+ Schaltung nur mit den Außenleitern zusammen (Ein voreilend – Aus nacheilend). 
+ Der PEN-Leiter ist mit allen guten Erdern zu verbinden. 
+ Nach Aufteilung des PEN-Leiters auf N und PE dürfen diese nicht mehr miteinander 
+verbunden werden. 
+ Der PEN, Neutral und Schutzleiter dürfen beliebig oft vom PEN Leiter abgezweigt 
+werden. 
+ Der PEN-Leiter wird an die PAS angeschlossen. 
+ Konzentrische Leiter von Starkstromkabeln dürfen als PEN-Leiter verwendet werden. 
+ In Freileitungsnetzen mit blanken Leitern darf der PEN-Leiter nicht oberhalb der Au-
+ßenleiter verlegt werden 
+ Bei Querschnitten unter 10mm² CU (16mm² AL) ist der PEN-Leiter getrennt zu führen. 
+ Der PEN-Leiter ist durchgehend Grün-Gelb mit zusätzlicher blauer Markierung an den 
+Leiterenden (bei Umstellung von Altanlagen auch Blau mit Grün-Gelber Markierung 
+an den Leiterenden) 
+ Der PEN-Leiter ist folgen zu Dimensionieren (ÖVE E8101 Tabelle 54.2) zusätzlich 
+sind die Bemessungsregeln für Neutralleiter zu beachten (Oberschwingungsströme): 
+ 
+ 
+A = Querschnitt des Außenleiters 
+der Anlage 
+Mindestquerschnitt des PEN-
+Leiters bzw. Schutzleiters 
+1 
+A <= 16mm² 
+A 
+2 
+16mm² < A <= 35mm² 
+16mm² 
+3 
+A > 35mm² 
+A / 2 
+ 
+ 
+Die Wirksamkeit der Nullung ist vor der Inbetriebnahme zu prüfen. Durch Messen des 
+Schleifenwiderstandes ist der Kurzschlussstrom zu ermitteln. 
+ 
+
+
+===== PAGE 110/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+98 
+Nullung bei Nennspannung über 250 V gegen Erde 
+ 
+Wird die Schutzmaßnahme Nullung in Verbraucheranlagen angewendet, die mit Bemes-
+sungsspannungen über 250 V gegen Erde versorgt werden, (z.B. geerdete 500 V-Netze) dann 
+ist der zusätzliche Potentialausgleich gemäß E8001-1 anzuwenden. Damit wird erreicht, dass 
+die zulässigen Berührungsspannungsgrenzen bei Körperschluss nicht überschritten werden. 
+ 
+
+
+===== PAGE 111/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+99 
+22.7 
+Ausführung der Nullung seit 01.12.2008 
+Quelle BGBL II 223 / 2010 Ausgabe:12. Juli 2010 – ÖVE/ÖNORM E8001-1 A4 
+ 
+Am 1. Dezember 2008 ist ein neuer Nachtrag zur Ausführung der Nullung erschienen. Ab 
+diesem Zeitpunkt ist dieser Nachtrag für die Errichtung gültig. In diesem Nachtrag finden sich 
+auch einige Ergänzungen zu den Begriffsdefinitionen. Verbindlicht wurde der Nachtrag A4 
+mit der ETV 2010. 
+22.7.1 Neue Begriffe bzw. Änderungen 
+ 
+(elektrisch versorgtes) Objekt 
+Bauwerk einschließlich zugehöriger Außenanlagen mit gemeinsamer Versorgungseinrichtung 
+für elektrische Energie (Hausanschluss, Transformator, Generator) und Hauptpotentialaus-
+gleich. Als Objekt im Sinne dieser Bestimmung gelten auch Gebäudekomplexe, bestehend 
+aus mehreren Bauteilen, die sowohl gemeinsam mit elektrischer Energie versorgt werden als 
+auch ein gemeinsames System für den Hauptpotentialausgleich aufweisen. Auch elektrische 
+Verbraucheranlagen ohne Gebäude, jedoch mit einem gemeinsamen Anschluss gelten als 
+ein elektrisch versorgtes Objekt. 
+ 
+ 
+Verteilungsleitungen 
+Leitungen innerhalb eines elektrisch versorgten Objektes einschließlich aller Betriebsmittel 
+im Zuge dieser Leitungen zwischen den Abgangsklemmen der Überstromschutzeinrichtun-
+gen des Verteilers mit dem Anschlusspunkt der Nullungsverbindung und den Eingangsklem-
+men der Überstrom-Schutzeinrichtungen der Endstromkreise. 
+ 
+ 
+Hauptleitungen 
+Verteilungsleitungen einschließlich aller zugehörigen elektrischen Betriebsmittel ab dem 
+Hausanschluss bis zu den Messeinrichtungen (Zähler). 
+ 
+ 
+Verbraucheranlage 
+Gesamtheit aller elektrischen Betriebsmittel innerhalb eines elektrischen versorgten Objekts 
+ab der technischen Grenze des Verteilungsnetzes, ausgenommen die technisch dem Vertei-
+lungsnetz zuzurechnende Teile des Hausanschluss. Im Objekt anfällig vorhandene Strom-
+quellen gehören nicht zur Verbraucheranlage in diesem Sinne. 
+ 
+ 
+Endstromkreis 
+Stromkreis zu den Verbrauchsmitteln ab der letzten Überstrom-Schutzeinrichtung. 
+
+
+===== PAGE 112/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+100 
+ 
+Nullungsverbindung 
+Möglichst kurze, elektrisch gut leitfähige Verbindung, mit welcher der PEN-Leiter des Vertei-
+lungsnetzes im ersten dafür geeignetem Sicherungs- oder Verteilerkasten der Verbraucheran-
+lage direkt oder über den Hauptpotentialausgleich mit dem Schutzerdungsleiter der Anlage 
+verbunden wird. 
+ 
+ 
+Anschlusspunkt der Nullungsverbindung 
+Stelle, an der die Nullungsverbindung an den aus dem Verteilungsnetz kommenden PEN-
+Leiter angeschlossen wird. 
+ 
+ 
+Sternpunkt-Verbindungs-Leiter (SVL) 
+Isolierter Leiter, mit dem die Sternpunkte aller in einem lokalen Bereich parallel zu betrei-
+benden Stromquellen dauernd verbunden und an einem einzigen definiertem Punkt geerdet 
+werden. Der SVL erfüllt primär die Funktion eines N-Leiters, führt jedoch im Fehlerfall auch 
+die zu den Sternpunkten zurückfließenden Fehlerströme. Bei IT-Systemen darf ein anfällig 
+erforderlicher SVL systembedingt nicht geerdet werden. 
+ 
+ 
+Abbildung 31 – Versorgung Kleinanlage 
+ 
+ 
+
+
+===== PAGE 113/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+101 
+ 
+Abbildung 32 – Versorgung Großanlage 
+
+
+===== PAGE 114/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+102 
+22.7.2 Ausführung 
+Nullung als Maßnahme des Fehlerschutzes erfordert die Herstellung eines TN-Systems. 
+Bei Anschluss eines Objektes an ein Verteilungsnetz muss dieses vom zuständigen Netzbe-
+treiber für die Anwendung der Nullung als Maßnahme des Fehlerschutzes freigegeben sein. 
+Wird die Ausschaltung in einem Teil des Verteilungsnetzes nicht erfüllt, dann ist in den an 
+diesem Teil des Verteilungsnetzes angeschlossenen Verbraucheranlagen eine andere Maß-
+nahme des Fehlerschutzes, z.B. Fehlerstrom-Schutzschaltung, anzuwenden. 
+Eine Voraussetzung für die Nullung ist eine definierte, gut leitfähige Verbindung (die Nul-
+lungsverbindung) zwischen dem Schutzerdungsleiter im Objekt einerseits und PEN-Leiter des 
+das Objekt speisenden Netzes andererseits. Diese Verbindung wird für alle Verbraucheranla-
+gen im betreffenden Objekt gleichermaßen wirksam. 
+Innerhalb eines elektrisch versorgten Objekts ist für Neuanlagen die Verwendung des PEN-
+Leiters ab dem Anschlusspunkt der Nullungsverbindung nicht mehr zulässig. N- und PE-
+Leiter müssen ab diesem Punkt als getrennte Leiter ausgeführt werden. Der PEN-Leiter endet 
+am Anschlusspunkt der Nullungsverbindung. Diese Festlegung schließt nicht aus, dass in 
+bestehenden Anlagen ein PEN-Leiter über den Anschlusspunkt der Nullungsverbindung hin-
+aus ausgeführt ist. 
+Die Nullungsverbindung muss gemäß Bild A ausgeführt werden und muss als Schutzerdungs-
+leiter gemäß Tabelle 21-2 (E8001-1) dimensioniert werden. Aus EMV-Gründen wird eine 
+Dimensionierung mit einem Querschnitt entsprechend dem größten ankommenden Außen-
+leiter empfohlen. 
+Die Lage des Anschlusspunktes der Nullungsverbindung an den PEN-Leiter muss auf einer 
+Abdeckung der betreffenden Verteilung und beim Anschlusspunkt selbst sichtbar und dauer-
+haft mit dem nachfolgenden Symbol gekennzeichnet werden. Für im Freien angeordnete 
+Verbindungen darf die Kennzeichnung auf der Außenabdeckung entfallen. Für die Umstel-
+lung von vorhandenen Anlagen ist auch eine Ausführung gemäß Bild B noch gebräuchlich. 
+ 
+ 
+ 
+ 
+Abbildung 33 – Kennzeichen PEN 
+
+
+===== PAGE 115/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+103 
+Bild A 
+ 
+Abbildung 34 – Beispiel Nullungsverbindung A 
+Bild B 
+ 
+Abbildung 35 – Beispiel Nullungsverbindung B 
+
+
+===== PAGE 116/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+104 
+Ausführungsbeispiel Hauptleiterklemmblock 
+ 
+ 
+Abbildung 36 – Beispiel Hauptleiterklemmblock 
+ 
+ 
+ 
+
+
+===== PAGE 117/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+105 
+22.7.3 Ausschaltbedingung (ASB) 
+Fehlerbehaftete Stromkreise müssen bei Auftreten eines Kurz- oder Körperschlusses mit ver-
+nachlässigbarer Impedanz innerhalb angemessener Zeiten ausgeschaltet werden. Dies erfolgt 
+vorzugsweise mittels Überstrom-Schutzeinrichtungen. 
+ 
+Hinsichtlich der zulässigen Ausschaltzeit bzw. entsprechender Ausschaltbedingungen wer-
+den die Anlagen wie folgt unterschieden: 
+1. Verteilungsnetze unabhängig ihrer Eigentumssituation bis zur ersten Überstrom-
+Schutzeinrichtung in der ersten Verteilung bei bzw. nach der Nullungsverbindung des 
+zu speisenden Objekts. 
+2. Verteilungsleitungen in Verbraucheranlagen, unabhängig von ihrem Nennstrom, so-
+wie Endstromkreise mit mehr als 32 A Nennstrom. 
+3. Endstromkreise bis einschließlich 32 A Nennstrom 
+ 
+22.7.4 Ausschaltbedingungen in Verteilungsnetzen 
+Die Querschnitte und Längen der Leiter sowie der zugehörigen Überstromschutzeinrichtun-
+gen müssen so ausgelegt sein, dass bei Normalbetrieb die folgende Bedingung erfüllt ist: 
+ 
+Für Verteilungsnetze mit Nennspannung bis 400/230V gilt: 
+ 
+N
+N
+S
+U
+I
+Z
+
+
+6,1
+ 
+ 
+ 
+Für Verteilungsnetze mit höheren Nennspannung gilt: 
+ 
+N
+N
+S
+U
+I
+Z
+
+
+
+5,2
+ 
+ 
+ 
+Es bedeutet: 
+ 
+ZS  
+Impedanz der Fehlerschleife, ermittelt durch Rechnung oder Messung 
+IN  
+Nennstrom der jeweils vor gelagerten Überstromschutzeinrichtung 
+UN  
+Nennspannung gegen Erde 
+ 
+ 
+
+
+===== PAGE 118/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+106 
+22.7.5 ASB für Verteill. in Verbraucheranl. & Endstr.kr. über 32A Nennstrom 
+Für Verteilungsleitungen und für Endstromkreise mit einem Nennstrom über 32 A gilt eine 
+zulässige Ausschaltzeit von 5 sek. 
+ 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Mes-
+sung der Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit 
+muss durch Vergleich des Ergebnisses mit der Charakteristik der Überstromschutzeinrichtung 
+nachgewiesen werden. 
+ 
+Alternativ können zur Erfüllung dieser Forderungen Ausschaltstromfaktoren gemäß Tabelle A 
+zur Anwendung kommen. 
+ 
+22.7.6 ASB für Endstromkreise bis einschließlich 32 A Nennstrom 
+Für diese Stromkreise gilt eine zulässige Ausschaltzeit von 0,4 sek für Nennspannung bis 
+230V gegen Erde sowie 0,2 sek für Nennspannung bis 400V gegen Erde. 
+ 
+Der einpolige Kurzschlussstrom bei einem Körperschluss muss durch Berechnung oder Mes-
+sung der Impedanz der Fehlerschleife ermittelt werden. Die Einhaltung der Ausschaltzeit 
+muss durch Vergleich des Ergebnisses mit der Charakteristik der Überstromschutzeinrichtung 
+nachgewiesen werden. 
+ 
+Alternativ können zur Erfüllung dieser Forderungen Ausschaltstromfaktoren gemäß Tabelle A 
+zur Anwendung kommen. 
+ 
+22.7.7 Ausschaltstromfaktoren 
+Alternativ zu Ausschaltbedingung gemäß 20.6.5 und 20.6.6 kann folgende Bedingung zu 
+Anwendung kommen: 
+ 
+N
+A
+S
+U
+I
+Z
+
+
+ 
+ 
+Dabei wird der Ausschaltstrom IA mit Hilfe der Beziehung 
+ 
+N
+A
+I
+m
+I
+
+=
+ 
+ 
+unter Verwendung der Werte für m aus Tabelle A errechnet. 
+ 
+ 
+ 
+
+
+===== PAGE 119/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+107 
+Tabelle A 
+ 
+Art der Überstrom-Schutzeinrichtung 
+Endstromkreise 
+mit Nennstrom ≤ 
+32 A 
+Verteilungsleitungen 
+und Endstromkreise 
+Schmelzsicherungen bis 125 A gG 
+gemäß ÖVE/ÖNORM EN 60269 Reihe 
+10 
+3,5 
+Leitungsschutzschalter B gemäß Ö-
+VE/ÖNORM EN 60898 Reihe 
+5 
+3,5 
+Leitungsschutzschalter C gemäß Ö-
+VE/ÖNORM EN 60898 Reihe 
+10 
+3,5 
+Leitungsschutzschalter D gemäß Ö-
+VE/ÖNORM EN 60898 Reihe  
+20 
+3,5 
+ANMERKUNG: Für von B, C und D abweichende Kennlinien ist m so zu wählen, 
+dass die Magnetauslösung des Leitungsschutzschalters anspricht.  
+ 
+22.7.8 Ausschaltung mittels FI-Schutzeinrichtungen 
+Kann in einer Verbraucheranlage in langen Stromkreisen die zutreffende Ausschaltbedingung 
+gemäß 20.6.5 und 20.6.6 und der Ausschaltstromfaktor gemäß 20.6.7 wegen einer zu hohen 
+Impedanz der Fehlerschleifen im Verhältnis zum Nennstrom der Überstromschutzeinrichtun-
+gen nicht eingehalten werden, dann darf für den Fehlerschutz solcher Stromkreise eine Feh-
+lerstrom-Schutzeinrichtung gemäß E8001-12.1.1 unter Einhaltung der Bedingungen gemäß 
+Abschnitt E8001-12.1 verwendet werden, wenn für den betroffenen Stromkreis abweichend 
+von Tabelle A mindestens ein Ausschaltstromfaktor. 
+ 
+m = 2,5 
+ 
+bezogen auf die jeweils vorgelagerte Überstrom-Schutzeinrichtung wirksam ist. 
+ 
+Ein anfällig notwendiger Zusatzschutz ist durch eine weitere Fehlerstrom-Schutzeinrichtung 
+mit einem Nennfehlerstrom von IdN  ≤ 30 mA zu realisieren.  Der geforderte Ausschaltstrom-
+faktor m ≥ 2,5 ist notwendig, um auch bei einem Fehler zwischen Außenleiter und Neutral-
+leiter eine zeitgerechte automatische Ausschaltung zu bewirken. 
+ 
+ 
+ 
+
+
+===== PAGE 120/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+108 
+22.7.9 Ausschaltung mittels FI und zus. Potentialausgleich 
+Kann in einer Verbraucheranlage in langen Stromkreisen die zutreffende Ausschaltbedingung 
+mittels FI Schutzschalter auch nicht eingehalten werden, so darf man den Faktor m=1,6 wäh-
+len, sofern Vorort ein zusätzlicher Potentialausgleich errichtet wird. 
+ 
+m = 1,6 
+ 
+22.7.10 Erdungsbedingung in Verbraucheranlagen mit eigener Stromquelle 
+In Verbraucheranlagen mit einer einzigen Stromquelle (Transformator oder Generator), darf 
+der Sternpunkt nur an einem Punkt geerdet werden (Betriebserdung). Innerhalb des Objektes 
+sind N-Leiter und PE-Leiter getrennt zu führen (TN-S-System). 
+22.7.11 Ausführung mit Sternpunkt-Verbindungs-Leiter (SVL) 
+Werden innerhalb eines elektrisch versorgten Objekts mehrere Stromquellen (zB Transforma-
+toren, Generatoren) einzeln oder parallel betrieben, so sind die Sternpunkte dieser Strom-
+quellen vorzugsweise mittels eines Sternpunkt-Verbindungs-Leiter (SVL) zu verbinden. 
+ 
+Dieser Sternpunkt-Verbindungs-Leiter muss an einem einzigen Punkt geerdet werden. Ab 
+diesem Punkt muss die Anlage als TN-S-System errichtet werden. Der PE-Leiter darf beliebig 
+oft zusätzlich geerdet oder mit dem Potentialausgleich verbunden werden. 
+ 

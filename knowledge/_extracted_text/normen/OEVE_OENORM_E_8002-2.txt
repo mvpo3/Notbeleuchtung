@@ -1,0 +1,654 @@
+
+
+===== PAGE 1/10 =====
+ 
+ÖVE/ÖNORM 
+ 
+E 8002-2 
+Ausgabe: 2002-11-01 
+ 
+Auch Normengruppe 330 
+ 
+ 
+ 
+Ersatz für siehe Vorbemerkung 
+ 
+ICS  29.240.01 
+Starkstromanlagen und Sicherheitsstromversorgung 
+in baulichen Anlagen für Menschenansammlungen 
+Teil 2: Veranstaltungsstätten 
+ 
+Power installation and safety power supply in communal facilities – Part 2: Communal 
+facilities 
+ 
+Installations a courant fort en courant de sécurité des services dans les bâtiments des 
+lieux de réunion – Partie 2: Lieux de rassemblement 
+ 
+ 
+ 
+ 
+ 
+Dieses Dokument hat sowohl den Status von ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. 
+ 
+ 
+ 
+Fortsetzung 
+ÖVE/ÖNORM E 8002-2 Seiten 2 bis 10 
+Fach(normen)ausschuss
+FA/FNA E
+Elektrische Niederspannungsanlagen
+Medieninhaber und Hersteller: Österreichischer Verband für Elektrotechnik, 1010 Wien 
+Österreichisches Normungsinstitut, 1020 Wien 
+Copyright © ÖVE/ON - 2002. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in sonstige Medien oder Datenträger 
+nur mit Zustimmung des ÖVE/ON gestattet! 
+Verkauf von in- und ausländischen Normen und technischen Regelwerken durch:  
+Österreichisches Normungsinstitut (ON), Heinestraße 38, A-1020 Wien 
+Tel.: (+43 1) 213 00-805, Fax: (+43 1) 213 00-818, E-Mail: sales@on-norm.at, 
+Internet: http://www.on-norm.at 
+Alle Regelwerke für die Elektrotechnik auch erhältlich bei: Österreichischer Verband für 
+Elektrotechnik (ÖVE), Eschenbachgasse 9, A-1010 Wien, Telefon: (+43 1) 587 63 73, 
+Telefax: (+43 1) 586 74 08, E-Mail: verkauf@ove.at, Internet: http://www.ove.at 
+Preisgruppe 4 
+ 
+ 
+
+
+===== PAGE 2/10 =====
+Seite 2 
+ÖVE/ÖNORM E 8002-2 
+ 
+Inhaltsverzeichnis 
+ 
+ 
+Vorbemerkung ......................................................................................................................................................... 3 
+1 
+Anwendungsbereich ..................................................................................................................................... 4 
+2 
+Normative Verweisungen.............................................................................................................................. 4 
+3 
+Begriffe ......................................................................................................................................................... 4 
+4 
+Allgemeine Anforderungen ........................................................................................................................... 5 
+5 
+Brandschutz, Funktionserhalt ....................................................................................................................... 6 
+6 
+Allgemeine Stromversorgung ....................................................................................................................... 6 
+7 
+Sicherheitsstromversorgung......................................................................................................................... 8 
+8 
+Pläne und Betriebsanleitungen................................................................................................................... 10 
+9 
+Erstprüfungen............................................................................................................................................. 10 
+10 
+Instandhaltung............................................................................................................................................ 10 
+Anhang A (normativ): 
+Richtlinie über den Bau von Betriebsräumen für elektrische Anlagen ............................ 10 
+Anhang B (normativ):  
+Richtlinie über brandschutztechnische Anforderungen  
+ 
+ 
+ 
+an elektrische Leitungsanlagen ...................................................................................... 10 
+Anhang C (informativ):  Erläuterungen zu Anhang B ........................................................................................... 10 
+Anhang D (informativ):  Andere bauliche Anlagen mit Notbeleuchtung................................................................ 10 
+Anhang E (informativ):  Literaturhinweise ............................................................................................................ 10 
+ 
+
+
+===== PAGE 3/10 =====
+Seite 3 
+ÖVE/ÖNORM E 8002-2 
+ 
+Vorbemerkung 
+ 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden künftig alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als auch den 
+einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist den je-
+weils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich erklärten ÖSTERREICHISCHEN BESTIMMUNGEN FÜR 
+DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum Zeitpunkt der 
+Herausgabe dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM. Zum 
+Zeitpunkt der Anwendung dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK /ÖNORM 
+ist der durch die Verordnungen zum Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle 
+Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, nicht 
+verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk: 
+Diese ÖVE/ÖNORM ersetzt gemeinsam mit den Teilen 1, 3, 4, 5, 6, 8 und 9 ÖVE-EN 2 Teil 1 bis Teil 8:1993-02 und 
+ÖVE-EN 2 Teil 1a:1994-06. Da die zu ersetzenden ÖVE-Bestimmungen jedoch mit der ETV 2002 verbindlich erklärt 
+sind, kann die Zurückziehung dieser Bestimmungen erst mit Erscheinen einer neuen ETV erfolgen. 
+ÖVE-EN 2 Teil 7:1994-06 „Arbeitsstätten“ wird ersatzlos zurückgezogen. 
+Die Reihe ÖVE/ÖNORM E 8002 besteht aus folgenden Teilen: 
+Teil 1 
+Allgemeines 
+Teil 2 
+Veranstaltungsstätten 
+Teil 3 
+Verkaufsstätten und Ausstellungsstätten 
+Teil 4 
+Hochhäuser 
+Teil 5 
+Gaststätten 
+Teil 6 
+Großgaragen 
+Teil 7 
+Bleibt frei. 
+Teil 8 
+Fliegende Bauten als Veranstaltungsstätten, Verkaufsstätten, Ausstellungsstätten oder Schank- und 
+Speisewirtschaften 
+Teil 9 
+Schulen 
+ 
+Hinweis zur Anwendung 
+Bei Anwendung dieser ÖVE/ÖNORM ist zu beachten, dass darin bautechnische Anforderungen enthalten sind, weil 
+diese aus sicherheitstechnischen Gründen von den elektrotechnischen Anforderungen nicht zu trennen sind. 
+Die in dieser ÖVE/ÖNORM enthaltenen bautechnischen Anforderungen sind aus der Sicht elektrotechnischer Belange 
+als anerkannte Regeln der Technik zu betrachten. Jedoch kann es in einzelnen Bundesländern durch Inanspruchnahme 
+baurechtlicher Landeskompetenz Abweichungen geben, die jedoch keine unmittelbaren elektrotechnischen Festlegungen 
+enthalten dürfen. Diese Abweichungen können die Landesbehörden in eigener Verantwortung festlegen. Da solche 
+Abweichungen Auswirkungen auf die Anwendung elektrotechnischer Bestimmungen haben, sind sie gemäß § 3, Abs. 3, 
+ETG 1992 entsprechend zu veröffentlichen. 
+ 
+
+
+===== PAGE 4/10 =====
+Seite 4 
+ÖVE/ÖNORM E 8002-2 
+ 
+1 
+Anwendungsbereich 
+1.1 
+Diese ÖVE/ÖNORM ist gemeinsam mit ÖVE/ÖNORM E 8002-1 für das Errichten und Instandhalten von 
+Starkstromanlagen einschließlich der Sicherheitsstromversorgungsanlagen in Veranstaltungsstätten und zugehörenden 
+Rettungswegen anzuwenden.  
+Wo auf ÖVE/ÖNORM E 8002-1 verwiesen wird gilt immer die Ausgabe 2002-11. 
+Auf Sakralbauten ist die vorliegende ÖVE/ÖNORM nur soweit anwendbar, als im Einzelfall dies von der Landesbehörde 
+in entsprechenden behördlichen Genehmigungsverfahren festgelegt wird. 
+Diese ÖVE/ÖNORM ist nicht für Veranstaltungsstätten in Fliegenden Bauten anzuwenden. Hierfür gilt ÖVE/ÖNORM 
+E 8002-8. 
+1.2 
+Veranstaltungsstätten im Sinne dieser Bestimmungen sind: 
+– Veranstaltungsstätten in Gebäuden mit Bühnen oder Szenenflächen und Veranstaltungsstätten für 
+Filmvorführungen sowie für Bild- und Tonwiedergabe, wenn die zugehörenden Versammlungsräume mehr als 100 
+Personen fassen 
+– Veranstaltungsstätten in Gebäuden mit Versammlungsräumen, wenn die zugehörenden Versammlungsräume 
+einzeln oder zusammen mehr als 120 Personen fassen  
+– Veranstaltungsstätten in Gebäuden mit Versammlungsräumen, wenn die zugehörenden Versammlungsräume 
+einzeln oder zusammen mehr als 200 Personen fassen und Fluchtwege über beidseitig angeordnete 
+Ausgangstüren unmittelbar auf öffentlich beleuchtete Verkehrswege führen 
+– Veranstaltungsstätten außerhalb von Gebäuden mit Szenenflächen, wenn sie mehr als 1 000 Personen fassen  
+– Veranstaltungsstätten außerhalb von Gebäuden mit Sportflächen, wenn sie mehr als 5 000 Personen fassen, 
+Sportstätten für Rasenspiele jedoch nur, wenn mehr als 15 Steh- oder Sitzstufen angeordnet sind. 
+Mehrere Versammlungsräume in einem Gebäude sind als eine Veranstaltungsstätte anzusehen, wenn diese Räume 
+innerhalb des Gebäudes miteinander in Verbindung stehen, z.B. durch Türen oder durch gemeinsame Rettungswege. 
+Bei Veranstaltungsstätten mit unterschiedlichen Benutzungsarten ist die jeweils größte Besucheranzahl maßgebend. 
+2 
+Normative Verweisungen 
+Die folgenden normativen Dokumente enthalten Festlegungen, die durch Verweisung in diesem Text Bestandteil dieser 
+ÖVE/ÖNORM sind. Datierte Verweisungen erfassen spätere Änderungen oder Überarbeitungen nicht. Vertragspartner, 
+die diese ÖVE/ÖNORM anwenden, wird jedoch empfohlen, die Möglichkeit zu prüfen, die jeweils neuesten Ausgaben der 
+nachfolgend angegebenen normativen Dokumente anzuwenden. Bei undatierten Verweisungen ist die letzte Ausgabe 
+des in bezug genommenen normativen Dokumentes anzuwenden. Rechtsvorschriften sind immer in der jeweils 
+geltenden Fassung anzuwenden. 
+ÖVE-EN 1 Teil 4 (§ 97) 
+Errichtung von Starkstromanlagen mit Nennspannungen bis ∼ 1000 V und 4 1500 V –  
+Teil 4: Besondere Anlagen – § (97): Fliegende Bauten und Wagen nach Schaustellerart 
+sowie deren Stromversorgung 
+ÖVE-K 40 bzw.  
+ÖVE/ÖNORM E 8240 
+Energieleitungen mit einer Isolierung aus Gummi 
+ÖVE/ÖNORM EN 60529 
+Schutzarten durch Gehäuse (IP-Code) 
+ÖVE/ÖNORM IEC 60884-1 Stecker und Steckdosen für den Hausgebrauch und ähnliche Zwecke – Teil 1: Allgemeine 
+Anforderungen 
+ÖVE/ÖNORM EN 60309 (alle Teile) Stecker und Steckdosen und Kupplungen für industrielle Anwendungen 
+DIN VDE 0250-802 
+Isolierte Starkstromleitungen – Theaterleitung 
+DIN 15565 
+Elektrisches Energieverteilungssystem für Film- und Fernsehproduktionsstätten 
+3 
+Begriffe 
+Für den Anwendungsbereich dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM E 8002-1 und die folgenden 
+Begriffe: 
+In anderen gesetzlichen Bestimmungen, die gegebenenfalls für Anlagen gemäß dieser ÖVE/ÖNORM anzuwenden sind, 
+können diese Begriffe anders lautend definiert sein. 
+3.1 
+Veranstaltungsstätten 
+bauliche Anlagen oder Teile baulicher Anlagen, die für die gleichzeitige Anwesenheit vieler Personen bei 
+Veranstaltungen erzieherischer, geselliger, kultureller, künstlerischer, politischer, sportlicher oder unterhaltender Art 
+bestimmt sind 
+3.2 
+Veranstaltungsstätten mit nicht überdachten Spielflächen 
+bauliche Anlagen z.B. Freilichttheater für schauspielerische oder ähnliche Darbietungen und Freiluftsportstätten für 
+sportliche Übungen und Wettkämpfe 
+
+
+===== PAGE 5/10 =====
+Seite 5 
+ÖVE/ÖNORM E 8002-2 
+ 
+3.3 
+Versammlungsräume  
+innerhalb von Gebäuden gelegene Räume für Veranstaltungen. Hierzu gehören auch Rundfunk- und Fernsehstudios, die 
+für Veranstaltungen mit Besuchern bestimmt sind, sowie Vortragssäle, Hörsäle, Aulen, Festsäle, Turnsäle ua. 
+3.4 
+Bühnen 
+Räume, die für schauspielerische oder ähnliche künstlerische Darbietungen bestimmt sind und deren Decke gegen die 
+Decke des Versammlungsraumes durch Sturz oder Höhenunterschied abgesetzt ist  
+Zu unterscheiden sind: 
+3.4.1 
+Kleinbühnen 
+Bühnen, deren Grundflächen hinter dem Vorhang 100 m² nicht überschreiten, die keine Bühnenerweiterungen haben und 
+deren Decken höchstens 1 m über den Bühnenöffnungen liegen 
+3.4.2 
+Mittelbühnen 
+Bühnen, deren Grundfläche hinter dem Vorhang 150 m², deren Bühnenerweiterungen in der Grundfläche zusammen 
+100 m² und deren Höhe bis zur Decke oder bis zur Unterkante des Rollenbodens das Zweifache der Höhe der 
+Bühnenöffnung nicht überschreitet 
+3.4.3 
+Vollbühnen 
+alle anderen Bühnen 
+Bühnen, die ausschließlich der Aufnahme von Bildwänden für Bild und Tonwiedergabe dienen, sind keine Bühnen im 
+Sinne dieser ÖVE/ÖNORM. 
+3.5 
+Bühnenerweiterungen 
+Teile von Bühnen, die als Seitenbühnen oder Hinterbühnen der Hauptbühne zugeordnet sind 
+3.6 
+Vorbühnen 
+Teile von Bühnen, die vor dem Schutz- oder Spielvorhang der Hauptbühne liegen 
+3.7 
+Bühnenhaus 
+Teil von baulichen Anlagen einer Versammlungsstätte mit Mittel- oder Vollbühne 
+In diesem Gebäudeteil (Bühnenhaus) sind die unmittelbar für den Bühnenbetrieb notwendigen Räume und Einrichtungen 
+untergebracht. 
+3.8 
+Spielflächen 
+Flächen einer Versammlungsstätte, die für das spielerische Geschehen bestimmt sind 
+3.8.1 
+Szenenflächen 
+Spielflächen für schauspielerische oder für ähnliche künstlerische Darbietungen 
+3.8.2 
+Sportflächen 
+Spielflächen für sportliche Übungen und Wettkämpfe 
+3.9 
+Platzflächen 
+Flächen für Besucherplätze 
+3.10 
+Rettungsweg 
+im Notfall für Rettungszwecke vorgesehener Weg 
+Zu den Rettungswegen zählen neben den im Notfall vorgesehenen Wegen die Gänge in und die Ausgänge aus den 
+Versammlungsräumen, Bühnen und Bühnenerweiterungen (sowohl von Bühnenfußböden als auch von Galerien, Stegen 
+und Rollenböden aus), von über 60 m² großen Umkleideräumen, Probesälen und ähnlichen Räumen, sowie von über 
+100 m² großen Werkstätten und Magazinen.  
+4 
+Allgemeine Anforderungen 
+Es gilt ÖVE/ÖNORM E 8002-1 mit folgender Ergänzung: 
+Zusätzlich zu ÖVE/ÖNORM E 8002-1, Abschnitt 4.3.1 ist eine Antipanikbeleuchtung in Versammlungsräumen, auf Mittel- 
+und Vollbühnen einschließlich der Bühnenerweiterungen, in Bühnenbetriebsräumen über 20 m², z.B. Probebühnen, 
+Chor- und Ballettübungsräume, Orchesterübungsräume, Stimmzimmer, Aufenthaltsräume für Mitwirkende, in 
+Bildwerferräumen, in Manegen, in Sportrennbahnen sowie in Stehplatzbereichen von Veranstaltungsstätten mit nicht 
+überdachten Spielflächen zu errichten. 
+
+
+===== PAGE 6/10 =====
+Seite 6 
+ÖVE/ÖNORM E 8002-2 
+ 
+5 
+Brandschutz, Funktionserhalt 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6 
+Allgemeine Stromversorgung 
+6.1 
+Betriebsmittel mit Nennspannungen über 1 kV 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6.2 
+Betriebsmittel mit Nennspannungen bis 1000 V: 
+6.2.1 
+Elektrische Betriebsräume 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+6.2.2 
+Verteiler 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+Stellgeräte, Anlasser und Transformatoren müssen so beschaffen und aufgestellt sein, dass durch ihren Betrieb 
+keine gefährliche Wärmeentwicklung entsteht. Zu brennbaren Baustoffen sind ausreichende Abstände einzuhalten oder 
+eine Wärmeisolation mit nicht brennbaren Zwischenlagen vorzusehen. 
+(2) 
+Bei Veranstaltungsstätten mit Voll- oder Mittelbühnen muss das Verteilungsnetz ab dem Hauptverteiler in 
+mindestens folgende Gruppen, soweit vorhanden, abschaltbar unterteilt werden: 
+(a) 
+Bühnenhaus ohne Bühnen 
+(b) 
+Hauptbühne mit Bühnenerweiterungen 
+(c) 
+Zuschauerhaus ohne Zuschauerraum 
+(d) 
+Zuschauerraum 
+(e) 
+notwendige Sicherheitseinrichtungen. 
+6.2.3 
+Kabel- und Leitungsanlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+Im Bühnenhaus dürfen fest verlegte Kabel und Leitungen nur mit ausreichendem mechanischem Schutz verlegt 
+werden. 
+Die Verwendung von Kabel- und Leitungsbauarten mit verbessertem Verhalten im Brandfall (siehe Teil 1, Tabelle B.1) 
+wird empfohlen. 
+(2) 
+Die Leitungen zu Leuchten in Räumen für Besucher sind so zu verlegen, dass durch einen Brand auf der Bühne 
+diese Leitungen nicht gefährdet werden. 
+(3) 
+Als nicht fest verlegte Leitungen müssen Gummischlauchleitungen H05RR oder H07RN gemäß ÖVE-K 40 bzw. 
+ÖVE/ÖNORM E 8240, 
+Theaterleitungen 
+NTSK 
+gemäß 
+DIN VDE 0250-802 
+und 
+für 
+Aufzüge 
+gummiisolierte 
+Aufzugssteuerleitungen gemäß ÖVE-K 40 bzw. ÖVE/ÖNORM E 8240 oder gleichwertige Bauarten verwendet werden. 
+Außerhalb des Handbereiches dürfen für Lichterketten auch llluminations-Flachleitungen H05RNH2-F gemäß ÖVE-K 40 
+bzw. ÖVE/ÖNORM E 8240 verwendet werden. Weitere Festlegungen hierzu siehe ÖVE-EN 1 Teil 4 § 97. 
+(4) 
+Als Zuleitungen für beweglich aufgehängte Bühnenleuchten dürfen nur Theaterleitungen NTSK gemäß DIN 
+VDE 0250-802 oder Gummischlauchleitungen H07RN gemäß ÖVE-K 40 bzw. ÖVE/ÖNORM E 8240 oder Leitungen 
+gleichwertiger Bauart verwendet werden. 
+(5) 
+Bei Veranstaltungsstätten mit nicht überdachten Spielflächen müssen an Masten oder Mastkonstruktionen 
+herangeführte Leitungen und ihre Befestigungen unter Berücksichtigung der durch Winddruck zu erwartenden 
+Mastschwankungen gewählt werden. 
+An Masten hochgeführte Leitungen und Kabel müssen mindestens im Handbereich einen zusätzlichen dauerhaften 
+mechanischen Schutz haben (z.B. verzinktes Stahlrohr), wenn dieser Schutz nicht durch die Lage, z.B. innerhalb eines 
+geschlossenen Mastes, gegeben ist. 
+(6) 
+Blanke Leiter dürfen nicht über Spielflächen, Verkehrswege und Platzflächen für Besucher geführt werden. Ein 
+seitlicher Abstand von mindestens 5 m ist einzuhalten. 
+
+
+===== PAGE 7/10 =====
+Seite 7 
+ÖVE/ÖNORM E 8002-2 
+ 
+6.2.4 Verbraucheranlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+Die elektrische Anlage folgender Räume mit Ausnahme der allgemeinen Beleuchtung, die auch außerhalb der 
+Betriebszeit benötigt wird, und die Stromkreise der notwendigen Sicherheitseinrichtungen, müssen durch 
+Bereichsschalter geschaltet werden können: 
+(a) 
+Umkleideräume für Darsteller 
+(b) 
+Werkstätten 
+(c) 
+Feuergefährdete Lager- und Arbeitsräume 
+(d) 
+Kantinen 
+(e) 
+Fundusräume und Magazine. 
+Die Bereichsschalter sind dem Zugriff Unbefugter zu entziehen und an betrieblich geeigneter Stelle anzubringen. Ihre 
+Einschaltstellung muss durch eine weiß leuchtende Signallampe kenntlich sein. Nach Ausschalten der Bereichsschalter 
+müssen auch alle Steckdosen in den genannten Räumen spannungsfrei sein, ausgenommen Steckdosen für 
+Kühlanlagen und Datenverarbeitungsanlagen, die besonders gekennzeichnet sind. 
+(2) 
+Bei vorübergehenden Einbauten in Veranstaltungsstätten müssen alle Stromkreise jedes in sich geschlossenen 
+Anlagenteiles, z.B. Ausstellungsstand, durch einen gemeinsamen Lastschalter geschaltet werden können.  
+Die Trennung durch eine Steckvorrichtung bis 16 A ist zulässig. 
+Die Trennvorrichtung muss in der Nähe des betroffenen Anlagenteils angeordnet sein. 
+(3) 
+In Versammlungsräumen und zugehörenden Verkehrsflächen, auf Bühnen und Bühnenerweiterungen sowie in 
+Rettungswegen ist die allgemeine Beleuchtung auf mindestens zwei voneinander unabhängige Überstrom-
+Schutzeinrichtungen abwechselnd zu verteilen. Bei Einsatz von Fehlerstrom-Schutzschaltern ist eine Aufteilung auch auf 
+verschiedene Fehlerstrom-Schutzschalter vorzunehmen. 
+(4) 
+Für einphasige Verbraucher bis 16 A Nennstrom, die über Steckvorrichtungen angeschlossen werden, dürfen  
+Schutzkontaktsteckvorrichtungen gemäß ÖVE/ÖNORM IEC 60884-1 verwendet werden. 
+Für sonstige Verbraucherstromkreise sind Steckvorrichtungen gemäß ÖVE/ÖNORM EN 60309 (alle Teile) zu verwenden. 
+(5) 
+Transportable elektrische Verteilanlagen sind entsprechend DIN 15565 auszuführen.  
+Übergänge von Steckvorrichtungen höherer Strombelastbarkeit auf Steckvorrichtungen niederer Strombelastbarkeit 
+dürfen nur über tragbare Verteiler vorgenommen werden. 
+(6) 
+Die Querschnitte der Anschlussleitungen und die Steckvorrichtungen für ortsveränderliche Bühnenleuchten 
+(Versatzleitungen) sind gemäß dem Nennstrom der größten Überstrom-Schutzeinrichtung der Versatzstromkreise zu 
+bemessen. Versatzleitungen mit verjüngten Querschnitten dürfen nur über tragbare Verteiler, bestehend aus Steckdosen 
+mit vorgeschalteten Leitungsschutzschaltern, betrieben werden. 
+Die Überstrom-Schutzeinrichtungen müssen auf nicht brennbaren Unterlagen befestigt und in Schutzgehäusen aus 
+flammwidrigem, mechanisch widerstandsfähigem Werkstoff untergebracht sein. 
+(7) 
+Vorschaltgeräte, Stellgeräte und Überstrom-Schutzeinrichtungen für Bühnenleuchten müssen in einem 
+geschlossenen Schutzgehäuse aus flammwidrigem, mechanisch widerstandsfähigem Werkstoff untergebracht sein, 
+wenn sie außerhalb elektrischer Betriebsräume verwendet werden. Zündeinrichtungen von Leuchten mit 
+Hochdrucklampen müssen an- oder eingebaut sein. Für Stell-, Vorschalt- und Zündgeräte sind Metallgehäuse als äußere 
+Umhüllung erforderlich. Bei geöffnetem Lampenraum muss die Zuleitung zum Zündgerät unterbrochen sein. 
+(8) 
+Bei Bühnenleuchten (Fuß- und Oberlichter) darf ein gemeinsamer Neutralleiter verwendet werden. Er muss für 
+den höchstmöglichen Betriebsstrom bemessen sein. 
+(9) 
+In Umkleideräumen für Darsteller, in Friseur- und Maskenbildnerräumen, in Dekorationsarbeitsräumen und 
+Lagerräumen dürfen nur fest angebrachte und fest angeschlossene Leuchten verwendet werden. Im Handbereich 
+angebrachte Leuchten müssen durch eine Fehlerstrom-Schutzeinrichtung mit Nennfehlerstrom /∆N ≤ 30 mA geschützt 
+sein. Das Ablegen brennbarer Stoffe auf Leuchten muss durch Anbringung oder Formgebung erschwert sein. 
+(10) 
+Werden für szenische Zwecke Fassungen auf Holz oder anderen brennbaren Unterlagen angebracht, so sind 
+nicht brennbare Zwischenlagen erforderlich. 
+(11) 
+Scheinwerfer und lichttechnische Geräte, ausgenommen solche für szenische Zwecke, sind mit einem 
+mechanischen Schutz z.B. Schutzgitter oder Schutzkorb zu versehen, der das Herausfallen von Filtern, Glasteilen der 
+Lampe oder des optischen Systems verhindert. Die Schutzvorrichtungen dürfen nicht an den Fassungen befestigt sein. 
+(12) 
+Elektrische Maschinen, ausgenommen Stellantriebe bis 500 W und Elektrowerkzeuge müssen mindestens in 
+Schutzart IP4X gemäß ÖVE/ÖNORM EN 60529 ausgeführt sein. 
+
+
+===== PAGE 8/10 =====
+Seite 8 
+ÖVE/ÖNORM E 8002-2 
+ 
+(13) 
+In Veranstaltungsstätten mit nicht überdachten Spielflächen müssen Geräte, die auf Spielflächen von 
+Freilichttheatern oder ähnlichen Anlagen verwendet werden, mindestens der Schutzart IP44 entsprechen. 
+Treten höhere Beanspruchungen auf, ist eine entsprechend höhere Schutzart anzuwenden. Ist der erforderliche Schutz 
+nicht durch die Bauart der Geräte sichergestellt, muss er durch örtlich zu treffende Maßnahmen, wie Abdeckungen oder 
+Unterbringung in Räumen erreicht werden. 
+(14) 
+Leitfähige Teile von Bühneneinrichtungen, z.B. Beleuchtungsbrücken, Beleuchtungstürme, Leuchten, Züge, 
+Aufhängeseile, 
+Spannseile, 
+Flugdrähte, 
+Dekorationen, 
+Bühnenversenkeinrichtungen, 
+großflächige 
+Aufbauten, 
+Stahlkonstruktionen und Rohrleitungen sind durch zusätzlichen Potentialausgleich in die Maßnahmen zum Schutz bei 
+indirektem Berühren mit einzubeziehen. Hierzu sind die leitfähigen Teile über den Potentialausgleichsleiter untereinander 
+und mit dem Schutzleiter zu verbinden. 
+Als Mindestquerschnitt für den Potentialausgleichsleiter ist bei geschützter Verlegung 10 mm² Kupfer, bei ungeschützter 
+Verlegung 16 mm² Kupfer oder verzinkter Bandstahl von 50 mm² und mindestens 2,5 mm Dicke zu verwenden. 
+Die Verbindung mit dem Schutzleiter muss an geeigneter Stelle, z.B. an der Schutzleiterschiene, in mindestens einem 
+Verteiler vorgenommen werden. 
+7 
+Sicherheitsstromversorgung 
+7.1 
+Allgemeine Anforderungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gilt nachstehende Anforderung:  
+In Veranstaltungsstätten mit Mittel- oder Vollbühnen ist die Sicherheitsstromversorgung ab Hauptverteiler mindestens auf 
+den Zuschauerraum mit den zugehörenden Nebenräumen und Rettungswegen und auf die Bühne mit den zugehörenden 
+Betriebsräumen und Rettungswegen aufzuteilen. 
+7.2 
+Sicherheitsbeleuchtung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+Die Sicherheitsbeleuchtung ist in Dauerschaltung auszuführen bei allen 
+– 
+Rettungswegen außerhalb von Versammlungsräumen, Bühnen und Szenenflächen, 
+– 
+Rettungswegen außerhalb von nicht überdachten Platzflächen von Veranstaltungsstätten mit nicht überdachten 
+Spielflächen, 
+– 
+Hinweisen auf Rettungswegen. 
+(2) 
+In betriebsmäßig verdunkelten Versammlungsräumen sowie auf Bühnen, Bühnenerweiterungen und 
+Szenenflächen muss für die Sicherheitsbeleuchtung die Bereitschaftsschaltung angewandt werden. Türen, Gänge und 
+Stufen müssen jedoch auch bei Verdunklung durch die Sicherheitsbeleuchtung in Dauerschaltung erkennbar sein. 
+Die Sicherheitsbeleuchtung in Bereitschaftsschaltung darf abweichend von ÖVE/ÖNORM E 8002-1, Abschnitt 7.2.1.3 bei 
+Wiederkehr der allgemeinen Stromversorgung nicht von selbst ausschalten. Sie darf nur von Hand auf der Schalttafel der 
+Sicherheitsbeleuchtung ausgeschaltet werden können. Weitere Ausschaltstellen dürfen im Lichtregieraum vorhanden 
+sein. 
+(3) 
+ÖVE/ÖNORM E 8002-1, Abschnitt 7.2.1.6 gilt nicht für Veranstaltungsstätten. 
+(4) 
+Die Beleuchtungsstärke der Sicherheitsbeleuchtung gemäß ÖVE/ÖNORM E 8002-1, Abschnitt 7.2.3 muss auch 
+unter Berücksichtigung möglicher Einbauten von Dekorationen sichergestellt sein. 
+(5) 
+In Theatern und Veranstaltungsstätten für Filmvorführungen sowie für Bild- und Tonwiedergabe oder 
+gleichwertigen Einrichtungen mit nicht mehr als 200 Plätzen braucht in Versammlungsräumen, deren Fußböden nicht 
+mehr als 1 m über oder unter den als Rettungswege dienenden Verkehrsflächen liegen, die Sicherheitsbeleuchtung nur 
+so bemessen zu sein, dass bei Verdunklung und auch bei Ausfall des Netzes der allgemeinen Beleuchtung mindestens 
+Türen, Gänge und Stufen erkennbar sind. 
+
+
+===== PAGE 9/10 =====
+Seite 9 
+ÖVE/ÖNORM E 8002-2 
+ 
+(6) 
+Antipanikbeleuchtung (siehe Abschnitt 4) 
+Folgende Anforderungen sind einzuhalten: 
+(a) 
+Die Beleuchtungsstärke muss mindestens den Anforderungen an die Sicherheitsbeleuchtung gemäß 
+ÖVE/ÖNORM E 8002-1, Abschnitt 7.2.3 entsprechen. 
+(b) 
+Die Antipanikbeleuchtung muss aus dem Hauptverteiler der Sicherheitsbeleuchtung gespeist werden. 
+(c) 
+An die Stromkreise der Antipanikbeleuchtung dürfen sonstige Verbraucher (z.B. Steckdosen) nicht 
+angeschlossen werden. 
+(d) 
+Die 
+Antipanikbeleuchtung 
+muss 
+in 
+betriebsmäßig 
+verdunkelbaren 
+Räumen 
+unabhängig 
+von 
+der 
+Verdunkelungssteuerung vom verdunkelten Raum aus eingeschaltet werden können. Eine Helligkeitsregelung 
+ist nicht zulässig. 
+(e) 
+Die Schaltstellen müssen im Versammlungsraum in der Nähe von mindestens je einem Ausgang jeder 
+Platzfläche so angebracht sein, dass sie für Aufsichtspersonen jederzeit leicht zugängig, aber einer 
+unbeabsichtigten Betätigung entzogen sind. Die Schaltstellen für die Antipanikbeleuchtung der Bühne müssen 
+an geeigneter Stelle auf der Bühne in der Nähe der Zugangstür angebracht sein. 
+(f) 
+Die Schaltstellen der Antipanikbeleuchtung sind zu beleuchten, z.B. durch Glimmlampen. Die durch die 
+Betätigung eines Schalters bewirkte Einschaltung darf nicht durch die Betätigung eines anderen Schalters 
+aufgehoben werden können. Eine Ausschaltmöglichkeit im Lichtregieraum (Bühnenlichtstellwarte) ist zulässig. 
+7.3 
+Elektrische Betriebsräume 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.4 
+Sicherheitsstromquellen und zugehörige Einrichtungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+In Veranstaltungsstätten mit nicht überdachten Spielflächen sind, abweichend von ÖVE/ÖNORM E 8002-1, 
+Abschnitte 
+7.4.4 
+und 
+7.4.5, 
+andere 
+Stromerzeugungsaggregate 
+unter 
+folgenden 
+Bedingungen 
+als 
+Sicherheitsstromquellen zugelassen: 
+(a) 
+Das Stromerzeugungsaggregat muss während der betrieblich erforderlichen Zeiten ständig als einzige 
+Stromquelle der Sicherheitsbeleuchtung in Betrieb sein. Bei ungestörtem Netz der allgemeinen Beleuchtung 
+darf ein von diesem Netz gespeister Elektromotor den Generator des Aggregates antreiben, wenn sichergestellt 
+ist, dass bei Ausfall der allgemeinen Stromversorgung eine Kraftmaschine selbsttätig und unterbrechungsfrei 
+den Antrieb des Generators übernimmt (Sofortbereitschaftsanlage). 
+Die Speisung der Sicherheitsbeleuchtung aus dem Netz der allgemeinen Beleuchtung darf nicht möglich sein. 
+Auch bei Sicherheitsbeleuchtung in Bereitschaftsschaltung muss das Stromerzeugungsaggregat ständig 
+betrieben werden. 
+(b) 
+Das Stromerzeugungsaggregat muss eine selbsttätige Spannungsregelung haben mit Grenzabweichung +5 % 
+bezogen auf den Nennwert. Ein Spannungsmesser und ein Strommesser je Außenleiter müssen vorhanden 
+sein. 
+(c) 
+Der Kraftstoffbehälter muss mindestens für achtstündigen Betrieb des Aggregates bei Nennleistung bemessen 
+sein. Kraftstoffbehälter müssen Anzeige- oder Peileinrichtungen zur Füllstandskontrolle haben. 
+(d) 
+Stromerzeugungsaggregat und Kraftstoffbehälter sind so aufzustellen, dass sie dem Zugriff Unbefugter 
+entzogen sind. Aufstellungsort und Umwehrung sind so zu wählen, dass auch im Panik- oder Brandfall die 
+Sicherheitsbeleuchtung gespeist werden kann und der Betrieb des Aggregates nicht beeinträchtigt wird. Die 
+Abgase der Antriebsmaschine sind so zu leiten, dass Personen weder gefährdet noch belästigt werden. 
+7.5 
+Netzsysteme und Schutz gegen elektrischen Schlag 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.6 
+Verteiler (Niederspannungs-Schaltgerätekombinationen) 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+7.7 
+Kabel- und Leitungsanlage 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Zusätzlich gelten nachstehende Anforderungen:  
+(1) 
+An Sicherheitsbeleuchtungs-Stromkreise von Mittel- und Vollbühnen und Szenenflächen sowie der zugehörenden 
+Rettungswege dürfen Sicherheitsleuchten anderer Bereiche nicht angeschlossen werden. 
+(2) 
+Stromkreise der Sicherheitsbeleuchtung dürfen abweichend von ÖVE/ÖNORM E 8002-1, Abschnitt 7.7.4 in 
+Theaterleitungen NTSK gemäß VDE 0250-802 mit anderen Stromkreisen zusammengefasst werden. 
+7.8 
+Verbraucher und Wechselrichter der Sicherheitsstromversorgung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+
+
+===== PAGE 10/10 =====
+Seite 10 
+ÖVE/ÖNORM E 8002-2 
+ 
+8 
+Pläne und Betriebsanleitungen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+9  
+Erstprüfungen  
+Es gilt ÖVE/ÖNORM E 8002-1. 
+10  
+Instandhaltung 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+ 
+ 
+Anhang A (normativ):  
+Richtlinie über den Bau von Betriebsräumen für elektrische 
+Anlagen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang B (normativ): 
+Richtlinie über brandschutztechnische Anforderungen an 
+elektrische Leitungsanlagen 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang C (informativ):  Erläuterungen zu Anhang B 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang D (informativ):  Andere bauliche Anlagen mit Notbeleuchtung  
+Es gilt ÖVE/ÖNORM E 8002-1. 
+Anhang E (informativ):  Literaturhinweise 
+Es gilt ÖVE/ÖNORM E 8002-1. 
+ 
+ 
+ 

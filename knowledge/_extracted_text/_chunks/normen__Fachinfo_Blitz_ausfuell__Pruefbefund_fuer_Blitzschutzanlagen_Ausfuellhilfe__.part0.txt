@@ -1,0 +1,507 @@
+
+
+===== PAGE 1/24 =====
+Herausgeber:
+OVE Österreichischer Verband für Elektrotechnik
+Eschenbachgasse 9, 1010 Wien n Tel.: +43 1 587 63 73 n Fax: +43 1 586 74 08
+E-Mail: ove@ove.at n Internet: www.ove.at n ZVR: 327279890
+ATU36808601 n Banken: BA-CA Kto.-Nr. 0043-28423/00 n PSK Kto.-Nr. 1.935.655 
+Prüfbefund für Blitzschutzanlagen
+Ausfüllhilfe
+Zusammengestellt vom Technischen Komitee Blitzschutz (TK BL) des OVE
+Fachinformation
+des Österreichischen Elektrotechnischen Komitees – OEK
+Allgemeines
+Blitzschutzsysteme sind in regelmäßigen Abständen zu überprüfen, und das Ergebnis ist in Form eines Prüfbe-
+fundes zu dokumentieren. 
+Seit 2002 ist der Blitzschutz baulicher Anlagen gemäß ÖVE/ÖNORM E 8049-1:2001 neu geregelt. In dieser Norm 
+sind für Planung, Ausführung, Instandhaltung und Überprüfung der Anlagen teilweise andere und vielfach kom-
+plexere Regeln zu beachten. 
+Seit 2008-01-01 ist die Normenreihe ÖVE/ÖNORM EN 62305 in das österreichische Normenwerk übernommen 
+und spiegelt den aktuellen Stand der Technik wieder. Die Normenreihe ÖVE/ÖNORM EN 62305 stellt ein Gesamt-
+konzept zum Blitzschutz dar.
+Für die Prüfanforderungen liegt ein vom TK BL ausgearbeiteter Prüfbefund vor, der nicht nur für Überprüfungen 
+nach der verbindlichen Norm ÖVE/ÖNORM E 8049-1 geeignet ist, sondern darüber hinaus auch für Überprüfungen 
+nach ÖVE-E49 und der Normenreihe ÖVE/ÖNORM EN 62305.
+Struktur des Prüfbefundes
+Der Prüfbefund wurde mit dem Ziel entworfen, dass die Sammlung sämtlicher im Laufe der Zeit im Rahmen von 
+Überprüfungen entstandener Prüfbefunde inklusive der ihnen beigelegten Dokumente (z. B. Planungsdokumentati-
+on u. dgl.) eine vollständige Anlagendokumentation im Sinne eines Anlagenbuches ergibt. Daher wurde ein modu-
+larer Aufbau mit fünf Teilen gewählt (siehe Bild 1):
+
+
+===== PAGE 2/24 =====
+2
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ausfüllhilfe
+Das Deckblatt enthält allgemeine Angaben (Betreiber der Anlage, Eigentümer, Objektdaten) und ist nur bei der 
+ersten Überprüfung auszufüllen.
+Die Übersicht enthält eine fortgeschriebene Zusammenfassung aller im Lauf der Zeit durchgeführten Prü-
+fungen und deren Ergebnisse. Sie gibt auch dem Nicht-Fachmann die Information, ob die Anlage bei den ein-
+zelnen Überprüfungen den Anforderungen entsprach, welche Maßnahmen ergriffen werden mussten und nennt 
+die Fälligkeit der nächsten Überprüfung.
+Aufgrund der Tatsache, dass die einzelnen Teile eines Blitzschutzsystems oftmals zu verschiedenen Zeiten 
+oder von verschiedenen Prüfern befundet werden, werden die Details der Überprüfungen der drei Teilsysteme 
+in getrennten Teilprotokollen eingetragen.
+Das Protokoll Erdungsanlage berücksichtigt auch die Tatsache, dass diese nicht nur Teil des Blitzschutzsys-
+tems, sondern im Allgemeinen auch Teil der übrigen elektrischen Anlage ist. Es kann daher auch bei der Über-
+prüfung der Erdungsanlage im Rahmen der Überprüfung der elektrischen Anlage gemäß ÖVE/ÖNORM E 8001 
+verwendet werden und bildet auch dann einen Teil des oben angesprochenen Anlagenbuches.
+Auch die beiden Protokolle Ableitungs- und Fangeinrichtungen und Innerer Blitzschutz berücksichtigen die 
+Notwendigkeit der Beachtung weiterer Normen bei der Beurteilung des Blitzschutzsystems.
+Der Befund ist so konzipiert, dass er sowohl bei einfachen Objekten, wie Einfamilienhäusern, als auch bei kom-
+plexen Blitzschutzsystemen, wie bei Industrieanlagen oder explosionsgeschützten Objekten, verwendet werden 
+kann.
+Ausfüllhilfe
+Diese Ausfüllhilfe soll die Bearbeitung und die Befundung der einzelnen Teilbereiche des Prüfbefundes für Blitz-
+schutzanlagen erleichtern und näher erläutern.
+
+
+===== PAGE 3/24 =====
+3
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Deckblatt (Teil A)
+Blitzschutzsystem
+Prüfbefund – Deckblatt (Teil A)
+Im Allgemeinen Teil des Deckblattes sind Name und Anschrift des Anlagenbetreibers und/bzw. des Eigentümers 
+sowie deren Kontaktdaten anzugeben. Dies kann auch in Form einer Person (Anlagenverantwortlicher bzw. 
+Verfügungsberechtigter) erfolgen. 
+Diese Adressdaten müssen nicht mit den Objektdaten übereinstimmen.
+Die Objektdaten definieren den Standort des Blitzschutzsystems. Bei komplexeren, ausgedehnten Anlagen 
+können auch mehrere Prüfbefunddeckblätter erforderlich sein (z. B. Flughäfen, Bahnhöfe, Großbetriebe u. dgl.). 
+Die Objektdaten beinhalten die Anlagennummer, das Errichtungsdatum, die Gebäudebezeichnung, die Gebäu-
+denutzung sowie die Anschrift.
+Die Anlagennummer ist eine eindeutige, unternehmensinterne Bezeichnung (z. B. Halle 8, Hangar 1 u. dgl.) 
+innerhalb eines Betriebes für die betroffene Anlage oder den Anlagenteil und stellt eine Referenzkennzeichnung 
+für die Prüfbefunde im Anlagenbuch dar. Die Gebäudebezeichnung ist eine Bezeichnung und Benennung im 
+jeweiligen Firmensprachgebrauch (z. B. Fertigungshalle 2, Zubau, Bürotrakt u. dgl.). Die Gebäudenutzung soll 
+beschreiben, für welchen Zweck das Gebäude vornehmlich genutzt wird. 
+Die Befundnummer stellt die eindeutige Kennzeichnung des Dokumentes dar, auf welche im gesamten Prüfbe-
+fund referenziert wird. Die Befundnummer ist am linken Seitenrand des Deckblattes ersichtlich.
+
+
+===== PAGE 4/24 =====
+4
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Deckblatt (Teil A)
+Dieses Feld bietet Platz, um besondere, das Objekt betreffende Informationen anzuführen, die für die Beurtei-
+lung bzw. Ausführung des Blitzschutzsystems relevant sind. 
+Beispiele dafür wären explosionsgefährdete Bereiche, spezielle oder sensible Anlagenteile bzw. Anlagenbe-
+reiche.
+
+
+===== PAGE 5/24 =====
+5
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Übersicht (Teil B)
+Blitzschutzsystem
+Prüfbefund – Übersicht (Teil B)
+In der Übersicht des Prüfbefundes für Blitzschutzsysteme sind sämtliche durchgeführten Prüfungen bezüglich 
+der Erdungsanlage, des Äußeren Blitzschutzes sowie des Inneren Blitzschutzes einzutragen. Dies soll eine 
+übersichtliche Zusammenfassung der Prüfergebnisse einer Anlagennummer ermöglichen.
+Die Art der Prüfung ist dabei anzugeben. Es wird zwischen Erstprüfung, Wiederholungsprüfung, Außerordent-
+licher Prüfung, Baubegleitender Prüfung, Messtechnischer Prüfung, Sichtprüfung und Prüfung der Dokumenta-
+tion unterschieden. 
+Sollten Abweichungen auftreten, so ist dies mit „Ja“ oder „Nein“ einzutragen. Das Prüfungsergebnis der Einzel-
+prüfungen sowie der/die jeweilige Prüfer/Firma sind in die Prüfbefund-Übersicht zu übertragen. 
+Der Termin der nächsten Prüfung ist mit Monat und Jahr anzugeben.
+
+
+===== PAGE 6/24 =====
+6
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+Blitzschutzsystem
+Prüfbefund – Erdungsanlage (Teil C)
+In der Kopfzeile des Prüfbefundes – Erdungsanlage sind die Befundnummer, die Anlagennummer, die Ge-
+bäudebezeichnung sowie das Datum der Prüfung einzutragen. Diese Daten (ausgenommen Datum) sind vom 
+Prüfbefund-Deckblatt zu übertragen.
+Das Datum der Ausstellung des Prüfbefundes – Erdungsanlage kann vom Datum des Prüfbefund-Deckblattes 
+oder anderer Prüfbefundteile abweichen.
+ANMERKUNG: Dieser Prüfbefund ist auch für die Überprüfung von Erdungsanlagen allgemein geeignet.
+Es sind die zur Anwendung gekommenen Prüfgrundlagen anzukreuzen und durch weitere hier nicht angeführte 
+Prüfnormen zu ergänzen.
+Hierbei sind bei bestehenden Anlagen die bei der Anlagengenehmigung geltenden Normen und Vorschriften 
+anzuwenden. Bei Neuanlagen kommen die Vorschriften in der jeweils gültigen Fassung zur Anwendung (siehe 
+auch Elektrotechnikverordnung – ETV 2002/A1, BGBl. II Nr. 33/2006).
+Das Ausgabedatum bezieht sich auf das jeweilige Ausgabedatum der verwendeten Norm und muss vom Prüfer 
+eingetragen werden.
+Allfällig vorhandene Auflagen aus dem(n) Baubescheid(en) sind hier zu ergänzen.
+Es ist anzukreuzen, welche Unterlagen für die Überprüfung der Erdungsanlage zur Verfügung stehen, wobei 
+
+
+===== PAGE 7/24 =====
+7
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+Es ist anzukreuzen, ob nachweislich blitzstromgeprüfte Bauteile bei der Erdungsanlage verwendet wurden. 
+Vorhandene Prüfbefunde über blitzstromgeprüfte Bauteile sind bekannt zu geben.
+Falls während der Bauphase Teilabnahmen bzw. Bauüberwachungen durchgeführt und dokumentiert wurden, 
+sind diese hier einzutragen. Die Dokumentation kann z. B. in Form von Fotos oder Planunterlagen aufliegen.
+Sämtliche vorhandene Planunterlagen sind in dieser Tabelle mit Plannummer und Ausstellungsdatum einzutra-
+gen.
+Da der Erdungsplan eine wesentliche Beurteilungsgrundlage ist, soll das Fehlen eines Erdungsplanes im Prüf-
+ergebnis – Erdungsanlage vom Prüfer vermerkt werden. Messungen an der Erdungsanlage können eine Er-
+satzmaßnahme darstellen.
+Der Umfang der Prüfung ist im Zusammenhang mit dem Befund festzuhalten. Es sind Mehrfachnennungen 
+möglich. Der Prüfumfang muss in den Anmerkungen festgehalten werden.
+in einem Erdungsplan in jedem Fall Informationen wie z. B. Werkstoffe, Verbindungstechniken, Verlegungsart, 
+Querschnitte, Längen, Verbindungen zu anderen Gewerken (Infrastrukturen, Bestandsintegration), Anschlüsse 
+für den äußeren Blitzschutz, Potenzialausgleich der inneren Anlage, Erdungspunkte von Maschinenfundamen-
+ten, Stahlkonstruktionseinbindungen, Einbindung von Bewehrungen u. dgl. beinhaltet sein müssen.
+Sämtliche Planunterlagen sind dabei einzubinden. Eine Fotodokumentation der Erdungsanlage ist nach heu-
+tigem Stand der Technik anzustreben.
+
+
+===== PAGE 8/24 =====
+8
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+Die Tabelle beschreibt die Bestandteile und die Ausführungsform (Material) der gegebenen Erdungsanlage. Die 
+Erdungsanlage kann Typ A, Typ B oder ein Verbund aus mehreren Erdertypen sein (vermaschter Erder). Somit 
+sind auch Mehrfachnennungen möglich.
+Ebenso sind in dieser Tabelle natürliche Bestandteile der Erdungsanlage (wie z. B. Bewehrungen, Armierungen, 
+Köcherfundamente u. dgl.) eingetragen. Die Form der natürlichen Bestandteile der Erdungsanlage ist in der 
+Anmerkung zu beschreiben. 
+Anschlussfahnen und Verbindungsleitungen sind ebenso zu berücksichtigen und zu bewerten.
+Das Erdungssystem muss Anschlusspunkte zum Äußeren und zum Inneren Blitzschutz bieten.
+Die überprüften Anbindungspunkte sind in der Tabelle einzutragen bzw. zu ergänzen. Es ist die Übereinstim-
+mung zwischen Planunterlage und Ist-Zustand einzutragen.
+Hierbei werden Regenfallrohre, Einzelfundamente, Erdungs-Potenzialausgleichspunkte und Bewehrungseisen 
+angeführt. Unter Stahlkonstruktionen sind z. B. Stützen von Stahlkonstruktionen, Hilfskonstruktionen aus Stahl 
+u. dgl., die von Blitzteilströmen durchflossen werden können, zu verstehen. 
+Bei Maschinenfundamenten sind die Anschlüsse zu überprüfen, die für elektrische Betriebsmittel und Anlagen-
+
+
+===== PAGE 9/24 =====
+9
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+teile vorgesehen sind. Dies sind z. B. Aufzugsschienen, Verteilerstandorte, Technikzentralen u. dgl. Bei Metall-
+fassadensystemen sind die Erdungspunkte für Metallfassaden zu prüfen. Deren Abstände sind unter Einhaltung 
+der Abstände für Blitzschutzableitungen zu überprüfen. 
+In die Bewertung, ob die oben erwähnten Bestandteile in Ordnung oder nicht in Ordnung sind, soll un-
+ter anderem auch der Korrosionsschutz mit einfließen. Korrosionsschutz ist besonders im Bereich von 
+Übergängen von einem Werkstoff zu einem anderen Werkstoff, z. B. Beton – Erdreich, Beton – Luft, Erd-
+reich – Luft, zu berücksichtigen. Die Ausführung des Korrosionsschutzes (siehe dazu ÖVE/ÖNORM 
+E 8001-1:2000, Abschnitt 20.5.4) ist zu beschreiben.
+Die Daten des Messgerätes, mit welchem die Messungen durchgeführt wurden, sind hier zu ergänzen.
+Die Messergebnisse (Sondenverfahren, Schleifenmessung, Durchgängigkeit der Erdungsverbindungen) sind 
+einzutragen. Die Art des Erders z. B. Einzelerder (EE), Gesamterder (GE) (Fundamenterder oder Ringerder) ist 
+bei jedem Messpunkt anzugeben. Bei Einzelerdern (EE) sind zusätzlich auch die Erderlängen anzugeben.
+Der mittlere spezifische Bodenwiderstand kann entweder nach der Wenner-Methode oder mit Hilfe der Tiefen-
+erdermethode bestimmt werden. Es ist aber auch eine Einstufung des mittleren spezifischen Bodenwiderstan-
+des mit Hilfe einer Literaturtabelle zulässig (z. B. ÖVE/ÖNORM E 8001-1:2000, Tabelle 20-1). Die angewandte 
+Methode ist im Prüfbefund anzukreuzen, die Messwerte sind zu ergänzen.
+
+
+===== PAGE 10/24 =====
+10
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+In diesem Abschnitt sind die mechanische Beschaffenheit bzw. der Korrosionszustand der Erdungsanlage bzw. 
+des Erdungssystems zu überprüfen (Besichtigung, Probegrabung, Planübereinstimmung u. dgl.), zu bewerten 
+und zu dokumentieren (Fotos).
+Der Prüfer hat sich zu vergewissern, ob bei der Planung und Ausführung der Erdungsanlage die Bereiche mit 
+explosionsfähigen Atmosphären nach den gültigen Normen und Vorschriften berücksichtigt wurden.
+Die Ausführung der Erdungsanlage für den explosionsgefährdeten Bereich ist gemäß oben angeführter Punkte 
+zu bewerten.
+Unter C7 ist eine abschließende Bewertung der Erdungsanlage durchzuführen. Grundsätzlich ist die Frage zu 
+beantworten, ob die Erdungsanlage als in Ordnung oder nicht in Ordnung eingestuft werden kann.
+
+
+===== PAGE 11/24 =====
+11
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Erdungsanlage (Teil C)
+Treten bei der Überprüfung der Erdungsanlage Mängel auf, die die Erdungsanlage nur begrenzt funktionsfähig 
+machen oder Abweichungen zu den normativen Grundlagen darstellen, so sind diese zu vermerken. Die Mängel 
+sind vom Anlagenbetreiber zu beheben.
+In diesem Feld ist der Nachweis zu vermerken, wer die eindeutige Qualifikation der prüfenden Institution zur 
+Durchführung von Prüfungsarbeiten bestätigt. 
+Die Prüfergebnisse aus C7 sind in die Prüfbefund-Übersicht (Teil B) zu übertragen.
+
+
+===== PAGE 12/24 =====
+12
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Blitzschutzsystem
+Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+In der Kopfzeile des Prüfbefundes – Ableitungs- und Fangeinrichtungen sind die Befundnummer, die Anla-
+gennummer, die Gebäudebezeichnung sowie das Datum der Prüfung einzutragen. Diese Daten (ausgenommen 
+Datum) sind vom Prüfbefund-Deckblatt zu übertragen.
+Das Datum der Ausstellung des Prüfbefundes – Ableitungs- und Fangeinrichtungen kann vom Datum des Prüf-
+befund-Deckblattes oder anderer Prüfbefundteile abweichen.
+Es sind die zur Anwendung gekommenen Prüfgrundlagen anzukreuzen und durch weitere hier nicht angeführte 
+Prüfnormen zu ergänzen.
+Hierbei sind bei bestehenden Anlagen die bei der Anlagengenehmigung geltenden Normen anzuwenden. Bei 
+Neuanlagen kommen die Vorschriften in der jeweils gültigen Fassung zur Anwendung (siehe auch Elektrotech-
+nikverordnung – ETV 2002/A1, BGBl. II Nr. 33/2006).
+Das Ausgabedatum bezieht sich auf das jeweilige Ausgabedatum der verwendeten Norm und muss vom Prüfer 
+eingetragen werden.
+Allfällig vorhandene Auflagen aus dem(n) Baubescheid(en) sind hier zu ergänzen.
+Es ist die jeweils ausgeführte Blitzschutzklasse anzukreuzen, die aus der Dokumentation oder den Planungs-
+unterlagen entnommen werden kann.
+
+
+===== PAGE 13/24 =====
+13
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Es ist zu überprüfen, welche Unterlagen für die Überprüfung der äußeren Blitzschutzanlage zur Ver-
+fügung stehen, wobei in einem Plan der äußeren Blitzschutzanlage in jedem Fall Informationen wie 
+z. B. Werkstoffe, Längen von Fangvorrichtungen, Sicherheitsabstände, Messstellen, Verbindungspunkte zu 
+Erdern, Verbindungen zu natürlichen Fang- und Ableitungseinrichtungen, Schutzbereiche von Fangstangen, 
+Schutzwinkel der Fangstangen u. dgl. beinhaltet sein müssen. 
+Sämtliche Planunterlagen sind dabei einzubeziehen. Eine Fotodokumentation der äußeren Blitzschutzanlage 
+ist nach heutigem Stand der Technik anzustreben.
+Es ist anzukreuzen, ob nachweislich blitzstromgeprüfte Bauteile bei der äußeren Blitzschutzanlage verwen-
+det wurden. Bei Konstruktionen und natürlichen Bestandteilen der baulichen Anlage (z. B. Fassadenelemente, 
+Dachkonstruktionen), die als Bestandteile des Äußeren Blitzschutzes verwendet werden, kann auch ein Gut-
+achten über die Verwendbarkeit Auskunft geben. Vorhandene Prüfbefunde über blitzstromgeprüfte Bauteile sind 
+bekannt zu geben.
+Falls während der Bauphase Teilabnahmen bzw. Bauüberwachungen durchgeführt und dokumentiert wurden, 
+sind diese hier einzutragen. Die Dokumentation kann z. B. in Form von Fotos oder Planunterlagen aufliegen.
+Sämtliche vorhandenen Planunterlagen sind in dieser Tabelle mit Plannummer und Ausstellungsdatum einzu-
+tragen.
+Für einen positiven Prüfbefund ist in jedem Fall ein Plan der äußeren Blitzschutzanlage erforderlich!
+
+
+===== PAGE 14/24 =====
+14
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Der Umfang der Prüfung ist im Zusammenhang mit dem Befund festzuhalten. Es sind Mehrfachnennungen 
+möglich. Der Prüfumfang muss in den Anmerkungen festgehalten werden.
+Es sind die Art der Ausführung (Material) und Anzahl der Ableitungen anzugeben.
+„Auf Putz“ bedeutet, dass die Ableitungen auf der fertigen Oberfläche montiert sind; „Unter Putz“ hingegen be-
+deutet, dass die Ableitungen unterhalb der fertigen Oberfläche angebracht sind. Wurden Ableitungen im Beton 
+verlegt, so ist dies gesondert anzuführen. 
+Bei Einbindung von natürlichen Bestandteilen des Bauwerkes als Ableitungseinrichtung der äußeren Blitz-
+schutzanlage ist dies anzugeben. Es muss vor allem auch die Art der natürlichen Bestandteile (Regenfallrohre, 
+metallische Fassadenteile u. dgl.) angegeben werden. 
+Befinden sich Bäume im Nahbereich (Abstand < 3 m) des zu schützenden Objektes, so ist das Vorhandensein 
+von zusätzlichen Ableitungseinrichtungen an der Näherungsstelle zu prüfen.
+
+
+===== PAGE 15/24 =====
+15
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Bei Näherungen der Ableitungseinrichtungen zu elektrischen oder metallischen Installationen bzw. Einrichtungen 
+des Gebäudes ist der Trennungsabstand mit Hilfe einer Berechnung (z. B. ÖVE/ÖNORM E 8049-1:2001, Ab-
+schnitt 9.3) zu kontrollieren. Die Art und der Ort der Näherungen sind zu beschreiben.
+Die Abstände der Halterungen von Ableiteinrichtungen (Abstand < 1 m) sind zu kontrollieren.
+Die Daten des Messgerätes, mit welchem die Messungen durchgeführt wurden, sind hier zu ergänzen.
+Um sicher zu stellen, dass die Verbindung zwischen den Ableitungen und der Erdungsanlage in Ordnung ist, ist 
+bei jeder Anbindung der Ableitungseinrichtung zum Erdungssystem der Schleifenwiderstand zu messen und in 
+die Tabelle einzutragen. 
+Im Falle von Einzelerdern (Typ A) muss der Erdausbreitungswiderstand gemessen werden. Die Erderart – 
+Einzelerder (EE) oder Gesamterder (GE) (Fundamenterder oder Ringerder) – ist bei jeder Ableitung anzuge-
+ben. 
+Wurden die Erdausbreitungswiderstände bereits im Prüfbefund – Erdungsanlage angegeben, so können diese 
+in den Prüfbefund – Äußerer Blitzschutz übernommen werden.
+
+
+===== PAGE 16/24 =====
+16
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Das Material der verwendeten Fangeinrichtungen ist anzugeben. Sollten natürliche Bestandteile der baulichen 
+Anlage als Fangeinrichtungen verwendet worden sein, so sind deren Materialien anzugeben. Da das Fanglei-
+tungsnetz aus verschiedenen Bestandteilen bestehen kann (Fangstangen, überspannte Bereiche u. dgl.), sind 
+auch Mehrfachnennungen möglich.
+Je nach Blitzschutzklasse ist die ausgeführte Schutzklasse mit den Maschenweiten anzugeben. 
+Wurde die Blitzschutzanlage gemäß ÖVE-E 49 errichtet, so ist entsprechend der Dachform (Flachdach, Steil-
+dach) zwischen den verschiedenen Maschenweiten zu unterscheiden.
+Bei Näherungen der Fangeinrichtungen zu elektrischen oder metallischen Installationen bzw. Ein-
+richtungen des Gebäudes ist der Trennungsabstand mit Hilfe einer Berechnung (z. B. ÖVE/ÖNORM 
+E 8049-1:2001, Abschnitt 9.3) zu kontrollieren. Die Art und der Ort der Näherungen sind in den Anmerkungen 
+zu beschreiben.
+Die Abstände der Halterungen von Fangeinrichtungen (Abstand < 1 m) sind zu kontrollieren.
+Bei Anlagen, die gemäß ÖVE/ÖNORM E 8049-1 errichtet wurden, muss in den Planunterlagen das Planungs-
+verfahren (Blitzkugel-, Schutzwinkel- oder Maschenverfahren) nachvollziehbar sein. Mit Hilfe der Planungs-
+unterlagen ist die Übereinstimmung der ausgeführten Fangeinrichtungen mit dem Plan zu kontrollieren. Die 
+Schutzbereiche und Schutzwinkel, welche durch z. B. Fangstangen aufgespannt werden, müssen in den Plan-
+unterlagen eingetragen sein und vor Ort auf Nachvollziehbarkeit und Vollständigkeit kontrolliert werden. 
+Durch Schleifenbildungen können Spannungen induziert werden, welche bei zu geringen Abständen zu Über-
+schlägen führen. Diese Schleifenbildungen sind zu ermitteln und deren Gefährlichkeit abzuschätzen.
+
+
+===== PAGE 17/24 =====
+17
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Dachaufbauten wie Antennen, Dachfenster, Rauchfänge, Entlüftungen, Solaranlagen, Gaupen, elektrische 
+Betriebsmittel u. dgl. müssen bei der Planung und Ausführung berücksichtigt werden. Diese Aufbauten müs-
+sen gemäß den Vorschriften entweder in den Schutzbereich von Fangstangen bzw. Fangeinrichtungen gestellt 
+werden oder direkt bzw. über Funkenstrecken an die äußere Blitzschutzanlage angeschlossen werden.
+Abweichungen von den Vorschriften sind in den Feststellungen/Mängel anzuführen.
+Natürliche Bestandteile der baulichen Anlage können als Fang- bzw. Ableitungseinrichtungen der äußeren Blitz-
+schutzanlage verwendet werden. Dabei ist darauf zu achten, ob bei einem direkten Blitzeinschlag das Durch-
+schmelzen dieser natürlichen Bestandteile einen gefährlichen Zustand verursachen würde. Welche Bestandteile 
+in die Blitzschutzanlage miteingebunden wurden, muss in der Tabelle aufgelistet werden. Mehrfachnennungen 
+sind möglich.
+
+
+===== PAGE 18/24 =====
+18
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+In diesem Abschnitt sind die mechanische Beschaffenheit bzw. der Korrosionszustand der äußeren Blitzschutz-
+anlage zu überprüfen (Besichtigung, Planübereinstimmung u. dgl.), zu bewerten und zu dokumentieren (z. B. 
+Fotos).
+Bereiche mit explosionsfähigen Atmosphären sind im Prüfbefund zu berücksichtigen. 
+Zur Beurteilung der äußeren Blitzschutzanlage sind in jedem Fall Planunterlagen, in denen die Ex-Zonen genau 
+gekennzeichnet sind, erforderlich. Erst mit Hilfe dieser Planunterlagen ist eine Beurteilung der Maßnahmen für 
+den Äußeren Blitzschutz möglich. Die äußere Blitzschutzanlage ist gemäß den angeführten Punkten zu bewer-
+ten und zu dokumentieren.
+
+
+===== PAGE 19/24 =====
+19
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Ableitungs- und Fangeinrichtungen (Teil D)
+Unter D11 ist eine abschließende Bewertung der äußeren Blitzschutzanlage durchzuführen. Grundsätzlich ist 
+die Frage zu beantworten, ob die äußere Blitzschutzanlage als in Ordnung oder nicht in Ordnung eingestuft 
+werden kann.
+Treten bei der Überprüfung der äußeren Blitzschutzanlage Mängel auf, die die Blitzschutzanlage nur begrenzt 
+funktionsfähig machen oder Abweichungen der normativen Grundlagen darstellen, so sind diese zu vermerken. 
+Die Mängel sind vom Anlagenbetreiber zu beheben.
+In diesem Feld ist der Nachweis zu vermerken, wer die eindeutige Qualifikation der prüfenden Institution zur 
+Durchführung von Prüfungsarbeiten bestätigt. 
+Die Prüfergebnisse aus D11 sind in die Prüfbefund-Übersicht (Teil B) zu übertragen.
+
+
+===== PAGE 20/24 =====
+20
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Innerer Blitzschutz (Teil E)
+Blitzschutzsystem
+Prüfbefund – Innerer Blitzschutz (Teil E)
+In der Kopfzeile des Prüfbefundes – Innerer Blitzschutz sind die Befundnummer, die Anlagennummer, die Ge-
+bäudebezeichnung sowie das Datum der Prüfung einzutragen. Diese Daten (ausgenommen Datum) sind vom 
+Prüfbefund-Deckblatt zu übertragen.
+Das Datum der Ausstellung des Prüfbefundes – Innerer Blitzschutz kann vom Datum des Prüfbefund-Deck-
+blattes oder anderer Prüfbefundteile abweichen.
+Es sind die zur Anwendung gekommenen Prüfgrundlagen anzukreuzen und durch weitere hier nicht angeführte 
+Prüfnormen zu ergänzen.
+Hierbei sind bei bestehenden Anlagen die bei der Anlagengenehmigung geltenden Normen anzuwenden. Bei 
+Neuanlagen kommen die Vorschriften in der jeweils gültigen Fassung zur Anwendung (siehe auch Elektrotech-
+nikverordnung – ETV 2002/A1, BGBl. II Nr. 33/2006).
+Das Ausgabedatum bezieht sich auf das jeweilige Ausgabedatum der verwendeten Norm und muss vom Prüfer 
+eingetragen werden.
+Es ist die jeweils ausgeführte Blitzschutzklasse anzukreuzen, die aus der Dokumentation oder den Planungs-
+unterlagen entnommen werden kann.
+Es ist zu prüfen, welche Unterlagen für die Überprüfung der inneren Blitzschutzanlage zur Verfügung stehen, 
+wobei in einem Plan der inneren Blitzschutzanlage in jedem Fall Informationen wie Werkstoffe, Sicherheitsab-
+
+
+===== PAGE 21/24 =====
+21
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Innerer Blitzschutz (Teil E)
+stände, Näherungsstellen, Überspannungsschutzgeräte u. dgl. beinhaltet sein müssen. 
+Sämtliche Planunterlagen sind dabei einzubeziehen. Eine Fotodokumentation von anlagenspezifischen Details 
+der inneren Blitzschutzanlage ist nach heutigem Stand der Technik anzustreben.
+Falls während der Bauphase Teilabnahmen bzw. Bauüberwachungen durchgeführt und dokumentiert wurden, 
+sind diese hier einzutragen. Die Dokumentation kann z. B. in Form von Fotos oder Planunterlagen aufliegen.
+Allfällig vorhandene Auflagen aus dem(n) Baubescheid(en) sind hier zu ergänzen.
+Sämtliche vorhandene Planunterlagen sind in dieser Tabelle mit Plannummer und Ausstellungsdatum einzutragen.
+Eine Beurteilung der inneren Blitzschutzanlage ist nur auf Basis einer schlüssigen Gesamtdokumenta-
+tion möglich. Als wesentliche Teile werden z. B. Planunterlagen mit eingetragenen Verteilerstandorten 
+und Installationswegen, Blitzschutzkonzept, Potenzialausgleichsschema u. dgl. angesehen.
+Der Umfang der Prüfung ist im Zusammenhang mit dem Befund festzuhalten. Es sind Mehrfachnennungen 
+möglich. Der Prüfumfang muss in den Anmerkungen festgehalten werden. 
+In Tabelle E4 sind die eingebauten Überspannungs-Schutzeinrichtungen anzugeben.
+
+
+===== PAGE 22/24 =====
+22
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Innerer Blitzschutz (Teil E)
+Hierbei sind der Einbauort mit der Entfernung zur nächsten Potenzialausgleichsschiene sowie der verwendete 
+SPDs (Surge Protective Device) in Form der Klasse (Klasse 1, 2 oder 3, vormals B, C, D) einzutragen. Von den 
+eingebauten SPDs sind auch die Typenbezeichnung sowie deren Kennwerte (Nennableitstoßstrom, Schutzpe-
+gel) anzugeben. In der elektrischen Anlage sind die Vorsicherungen, die verwendeten Leiterquerschnitte (L1, 
+L2, L3, N, PE) und die Netzform (IT, TT, TN-S oder TN-C) zu beschreiben und auf Richtigkeit zu prüfen.
+Bei Näherungen der inneren Blitzschutzanlage zu elektrischen oder metallischen Installationen bzw. Einrich-
+tungen des Gebäudes ist der Trennungsabstand mit Hilfe einer Berechnung (z. B. ÖVE/ÖNORM E 8049-1:2001, 
+Abschnitt 9.3) zu kontrollieren. Die Art und der Ort der Näherungen sind zu beschreiben. Erforderlichenfalls ge-
+troffene Ersatzmaßnahmen sind anzugeben und zu prüfen.
+Die Anzahl der Blitzschutzpotenzialanbindungspunkte ist in der Tabelle anzugeben. Weiters ist zu bewerten, ob 
+die in den Planunterlagen eingetragenen Blitzschutzpotenzialanbindungspunkte vor Ort ausgeführt wurden. Die 
+augenscheinliche Kontrolle der Anschlusspunkte ist zu bewerten.
+Die Übereinstimmung der in den Planunterlagen angeführten und der tatsächlich ausgeführten Blitzschutzpo-
+tenzialanbindungspunkte ist zu bewerten.
+
+
+===== PAGE 23/24 =====
+23
+Ausgabe Februar 2009                    
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Innerer Blitzschutz (Teil E)
+In der oben angeführten Tabelle ist der Blitzschutzpotenzialausgleich zu beschreiben. Dabei sind die Schir-
+mungsart, die Potenzialausgleichsebenen bzw. die Orte des Potenzialausgleiches sowie die Leiterquerschnitte 
+anzugeben.
+Unter E8 ist eine abschließende Bewertung der inneren Blitzschutzanlage durchzuführen. Grundsätzlich ist die 
+Frage zu beantworten, ob die innere Blitzschutzanlage als in Ordnung oder nicht in Ordnung eingestuft werden 
+kann. 
+Treten bei der Überprüfung der inneren Blitzschutzanlage Mängel auf, die die innere Blitzschutzanlage nur 
+begrenzt funktionsfähig machen oder Abweichungen der normativen Grundlagen darstellen, so sind diese zu 
+vermerken. Die Mängel sind vom Anlagenbetreiber zu beheben.
+Die Prüfergebnisse aus E8 sind in die Prüfbefund-Übersicht (Teil B) zu übertragen.
+
+
+===== PAGE 24/24 =====
+24
+Ausgabe Februar 2009                     
+                                                         
+www.ove.at
+Blitzschutzsystem – Prüfbefund – Innerer Blitzschutz (Teil E)
+In diesem Feld ist der Nachweis zu vermerken, wer die eindeutige Qualifikation der prüfenden Institution zur 
+Durchführung von Prüfungsarbeiten bestätigt. 

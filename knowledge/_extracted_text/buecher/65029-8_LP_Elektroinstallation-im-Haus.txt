@@ -1,0 +1,1146 @@
+
+
+===== PAGE 1/34 =====
+ Leuchten abnehmen und anschließen
+ Steckdosen und Lichtschalter erneuern
+ Erweiterung elektrischer Leitungen 
+ Neue Elektroinstallationen in Haus und Garten
+Bo Hanus
+Elektro-Installationen
+im Haus
+FRANZIS
+P R A X I S B U C H
+
+
+===== PAGE 2/34 =====
+     
+5
+ 
+ 
+Vorwort  
+Nach dem Durchlesen dieses Buchs werden Sie vermutlich überrascht sein, wie wenig 
+man bei normalen Elektroinstallationen beachten muss und wie leicht sich vieles selbst 
+machen lässt. Wer eigenständig Aufgaben erledigen kann, für die andere einen Hand-
+werker brauchen, spart nicht nur Geld, sondern oft auch Stress und Ärger. 
+Noch immer kursiert die Vorstellung, einem »Laien« wäre es verboten, elektrische 
+Installationen selbst durchzuführen. Es gibt kein Gesetz, das diese »Eigenleistung« 
+verbietet – und hat es auch noch niemals gegeben. Es gibt nicht einmal einen 
+gesetzlichen Vorschriftenzwang, an den sich ein Heimwerker halten müsste. Theoretisch 
+dürften Sie in den eigenen vier Wänden die elektrischen Leitungen sogar wie 
+Wäscheschnüre kreuz und quer durch das Haus ziehen – sofern es sich um den 
+Eigenbedarf handelt. In der Praxis sollten Sie jedoch anstreben, Ihre Elektroinstallation 
+gewissenhaft und vorschriftsmäßig so auszuführen, wie es auch ein Profi machen würde 
+– und wie es in diesem Buch beschrieben wird. Das erleichtert sowohl Ihnen als auch 
+einem anderen eventuelle spätere Arbeiten (oder eine Fehlersuche) am elektrischen 
+Hausnetz und schützt Sie und Ihre Familie.  
+Elektroinstallationen gehören zu den einfachsten handwerklichen Tätigkeiten, denn sie 
+stellen keine besonderen Anforderungen an Erfahrung, Handfertigkeit oder Routine: 
+Alle Verbindungen werden nur mit handelsüblichen Schraub- oder Steckklemmen 
+erstellt, man muss nichts schweißen, feilen oder Bauteile in Handarbeit erstellen. Man 
+muss aber wissen, wie etwas gemacht wird, worauf es dabei ankommt und wie es 
+funktioniert. Das wird in diesem Buch Schritt für Schritt so erläutert, dass es auch 
+gänzlich unerfahrene Heimwerker(innen) problemlos in den Griff bekommen.  
+Viel Erfolg bei Ihren Elektroarbeiten wünschen Ihnen  
+Bo Hanus und seine Mitautorin (und Ehefrau) Hannelore Hanus-Walther  
+
+
+===== PAGE 3/34 =====
+     
+7
+ 
+ 
+Inhaltsverzeichnis 
+1 
+Kurz und bündig .......................................................................................... 11 
+1.1 
+Was dürfen Sie selbst machen?........................................................11 
+1.2 
+Das elektrische Hausnetz.................................................................11 
+1.3 
+Was muss gemessen werden?..........................................................16 
+2 
+Einfache Aufgabenbewältigungen................................................................ 19 
+2.1 
+Provisorische Beleuchtung...............................................................20 
+2.2 
+Anschluss/Auswechseln einer Leuchte ............................................22 
+2.3 
+Anschluss einer Leuchtstoff- oder LED-Leuchte ................................25 
+2.4 
+Anschluss eines Deckenleuchters mit zwei Lampensektionen..........27 
+2.5 
+Parallel verbundene Leuchten..........................................................30 
+2.6 
+Halogenleuchtmittel.........................................................................31 
+2.7 
+Feuchtraum- und Außenleuchten .....................................................32 
+3 
+Erneuerung von Lichtschaltern und Dimmern ............................................... 33 
+3.1 
+Erneuerung eines einfachen Lichtschalters ......................................39 
+3.2 
+Erneuerung eines Doppel-Lichtschalters ..........................................40 
+3.3 
+Erneuerung eines Wechselschalters.................................................41 
+3.4 
+Erneuerung eines Kreuzschalters .....................................................43 
+3.5 
+Lichtdimmer auswechseln................................................................44 
+3.6 
+Erneuerung eines Lichttasters (Stromstoßschalters).........................48 
+3.7 
+Erneuerung eines Treppenlichtautomaten........................................50 
+3.8 
+Erneuerung eines Dämmerungsschalters .........................................50 
+3.9 
+Erneuerung eines PIR-Annäherungsschalters 
+(Bewegungsmelders) .......................................................................52 
+3.10 
+Erneuerung eines Radar-Bewegungsmelders....................................54 
+3.11 
+Erneuerung von infrarot- oder funkgesteuerten Lichtschaltern & 
+Dimmern..........................................................................................56 
+4 
+Steckdose erneuern..................................................................................... 59 
+5 
+Einfache Elektroinstallationen ..................................................................... 65 
+5.1 
+Elektrische Leiter und Leitungen ......................................................65 
+5.2 
+Welche elektrischen Leiter brauchen Sie? ........................................71 
+5.3 
+Abzweigdosen und Gerätedosen......................................................76 
+5.4 
+Leiterklemmen .................................................................................81 
+
+
+===== PAGE 4/34 =====
+8 
+  Inhaltsverzeichnis   
+ 
+ 
+5.5 
+Der IP-Schutzgrad ............................................................................85 
+5.6 
+Werkzeuge und Montagematerialien................................................85 
+6 
+Erweiterung einer bestehenden Leitung....................................................... 87 
+6.1 
+Anschlüsse für neue Lichtschalter....................................................87 
+6.2 
+Anschluss für eine neue Steckdose..................................................87 
+6.3 
+Anschluss für eine neue Wandleuchte ...........................................100 
+6.4 
+Anschluss für eine neue Deckenleuchte.........................................107 
+6.5 
+Funk- und Infrarotschalter für die Beleuchtung...............................110 
+6.6 
+Unterputz-Elektroinstallationen im Wohnbereich ...........................115 
+7 
+Unterputz-Elektroinstallationen im Wohnbereich....................................... 117 
+7.1 
+Die Logistik einer Elektroinstallation..............................................117 
+7.2 
+Das elektrische Hausnetz...............................................................120 
+7.3 
+Der Verteilerschrank (Stromkreisverteiler)......................................124 
+7.4 
+Sicherungsautomaten (Leitungsschutzschalter).............................129 
+7.5 
+FI-Schutzschalter ...........................................................................133 
+7.6 
+Einteilung der Leitungen im Hausnetz ............................................143 
+7.7 
+Unterschiedlich kombinierte Leitungen..........................................162 
+7.8 
+Installationszonen für Unterputzleitungen .....................................163 
+8 
+Aufputz-Elektroinstallationen .................................................................... 169 
+8.1 
+Aufputz-Elektroinstallationen im Innenbereich...............................169 
+8.2 
+Aufputz-Elektroinstallationen im Außenbereich .............................175 
+9 
+Erdkabel im Außenbereich......................................................................... 177 
+10 Außenbeleuchtung .................................................................................... 183 
+10.1 
+Wand- und Decken-Außenleuchten................................................186 
+10.2 
+Sockelleuchten..............................................................................187 
+10.3 
+Standleuchten, Pfeilerleuchten und Kandelaber ............................189 
+10.4 
+Einbruchsschutz-Beleuchtung........................................................195 
+10.5 
+Elektrische Vorrichtungen im Außenbereich...................................197 
+10.6 
+Solarstrom im Außenbereich..........................................................199 
+11 Kommunikationsverbindungen.................................................................. 203 
+12 Hauserder und ihre Anschlüsse.................................................................. 205 
+13 Verputzen elektrischer Leitungen .............................................................. 207 
+
+
+===== PAGE 5/34 =====
+      Inhaltsverzeichnis  
+9
+ 
+ 
+14 Arbeitsschritte richtig ausführen................................................................ 211 
+14.1 
+Schraubenlose Steckklemmen.......................................................211 
+14.2 
+Abisolieren von Leitern...................................................................213 
+14.3 
+Schneiden und Abisolieren von Kabeln ..........................................215 
+14.4 
+Deckenleuchten einbauen..............................................................218 
+14.5 
+Halogendeckenleuchten ................................................................220 
+14.6 
+Leuchtdioden(LED)-Deckenleuchten...............................................221 
+14.7 
+Leuchtstofflampen .........................................................................224 
+14.8 
+Stromversorgung von Überwachungskameras im Außenbereich.....225 
+14.9 
+Einfacher Selbstbau-Dämmerungsschalter.....................................227 
+15 Spannung, Strom und Leistung.................................................................. 229 
+15.1 
+Leistungsverluste im Hausnetz.......................................................230 
+16 Sicherheitshinweise .................................................................................. 235 
+ 
+Stichwortverzeichnis ................................................................................. 237 
+
+
+===== PAGE 6/34 =====
+     
+11
+ 
+ 
+1 
+Kurz und bündig 
+1.1 
+Was dürfen Sie selbst machen? 
+Eigenhändige Elektroarbeiten am Hausnetz Ihres eigenen Hauses oder Ihrer eigenen 
+Wohnung unterliegen keinem gesetzlichen Vorschriftenzwang. Eine Ausnahme gibt es 
+nur bei Neubauten: Diese werden von dem Stromversorger nur dann an das elektrische 
+Netz angeschlossen, wenn die Installation von einem »berechtigten Elektromeister« mit 
+einem »Fertigstellungs-Anmeldeschein« angemeldet und unterschrieben wird. Sie 
+dürften in diesem Fall die Elektroarbeiten z. B. unter einer vereinbarten Fachaufsicht 
+mit einem »berechtigten Elektromeister« dennoch eigenhändig durchführen, wenn Sie 
+sich an die geltenden Vorschriften halten. Die Vorschriften sind auf diesem Gebiet ein-
+fach und logisch nachvollziehbar. In jeder unserer Anleitungen weisen wir auf den 
+jeweiligen vorgeschriebenen Spielraum hin.  
+Im Vergleich mit vielen anderen handwerklichen Tätigkeiten stellen einfachere Elektro-
+arbeiten keine besonderen Ansprüche an Handfertigkeit oder Routine. Alle benötigten 
+Materialien und Bauteile sind als Fertigprodukte erhältlich und mit Schraub- oder 
+Steckverbindungen versehen. Schwieriger sind bei Elektroinstallationen nur »Hilfs-
+arbeiten« wie z. B. das Stemmen, Fräsen oder Bohren im Mauerwerk und das anschlie-
+ßende Verputzen der Wände. Sie finden in diesem Buch aber auch zu diesen Themen 
+leicht verständliche Tipps, die Ihnen den Weg zum sicheren Erfolg zeigen.  
+Der elektrische Strom, die eigentliche Gefahrenquelle bei Elektroarbeiten, lässt sich 
+vorher abschalten. Es besteht hier also kein Stromschlag-Risiko, wenn man sich vor 
+jeder Arbeit vergewissert, dass alles – aber auch wirklich alles – tatsächlich stromfrei ist.  
+1.2 
+Das elektrische Hausnetz 
+Das elektrische Hausnetz besteht aus elektrischen Leitern, die als einzelne isolierte Leiter 
+in Rohrleitungen, Flachleitungen oder Kabeln untergebracht sind. In der Grundkonfigu-
+ration besteht das »Licht- und Steckdosennetz« aus drei Leitern, von denen zwei als die 
+eigentlichen Stromleiter dienen, und der dritte nur Schutzleiter ist (Abb. 1.1). Wir 
+werden in diesem Buch die in Fachkreisen etablierte Bezeichnung »Phase« anstelle der 
+etwas verwirrenden Bezeichnung »Außenleiter« verwenden. So beugen wir Missver-
+ständnissen vor.  
+
+
+===== PAGE 7/34 =====
+12 
+  Kapitel 1: Kurz und bündig   
+ 
+ 
+  
+Abb. 1.1: Ein Hausnetz-Stromanschluss besteht meist nur aus drei Leitern: Zwei davon 
+bilden die eigentliche Stromzuleitung, der dritte fungiert als Schutzleiter (Erder). 
+Der eigentliche Hausanschluss wird in der Regel als Drehstromanschluss (Drei-Phasen-
+Anschluss) ausgeführt (Abb. 1.2).  
+
+
+===== PAGE 8/34 =====
+1.2 Das elektrische Hausnetz 
+13
+ 
+ 
+ 
+Abb. 1.2: Der Hausanschluss         
+
+
+===== PAGE 9/34 =====
+14 
+  Kapitel 1: Kurz und bündig   
+ 
+ 
+In einem normalen Haushalt wird der Drehstrom meist nur für einen Elektroherd 
+benötigt – falls es keinen Gasanschluss für einen Gasherd gibt. Auch dann wird dennoch 
+das Hausnetz als Drehstrom-Hausnetz ausgelegt, denn das öffentliche elektrische Netz 
+ist ebenfalls als Drehstromnetz konzipiert. Der Stromversorger verlangt, dass der 
+elektrische Strom von allen drei Phasen möglichst ausgewogen bezogen wird. Aus 
+diesem Grund werden in jedem Haus die drei Phasen der Stromzuleitung so eingeteilt, 
+dass eine ausgewogene Belastung einzelner Phasen zumindest einigermaßen angestrebt 
+wird. Dies klappt natürlich in einem einzelnen Haus nicht perfekt, aber bei einer größe-
+ren Menge von Häusern geht die Rechnung zufriedenstellend auf.  
+Bei der ausgewogenen Nutzung einer Drehstrom-Hauszuleitung müssen die einzelnen 
+Phasen im Hausnetz unter den Steckdosen- und Lichtleitungen entsprechend durch-
+dacht eingeteilt werden: Die Steckdosen in der Küche hängen dann z. B. an einer ande-
+ren Phase als die Küchenlichtleitung usw. Ein konkretes Beispiel der Einteilung zeigt 
+Abb. 1.3.  
+Die Hausnetzspannung, die für einzelne Leuchten oder Steckdosen vorgesehen ist, 
+beträgt nur 230 Volt (V) (Wechselspannung), aber die Spannung zwischen einzelnen 
+Phasen beträgt stolze 400 V (ebenfalls Wechselspannung). Wie aus Abb. 1.2 hervorgeht, 
+beträgt die Spannung zwischen jeder der Phasen und dem Neutralleiter jeweils nur 
+230 V. Der Neutralleiter leitet zwar denselben Strom (zurück zum Transformator des 
+öffentlichen Netzes), ist aber, ähnlich wie der Schutzleiter, mit der Erde verbunden. 
+Daher kann man vom Neutralleiter oder vom Schutzleiter keinen elektrischen Schlag 
+bekommen (nur von der Phase). Zwischen den einzelnen Phasen und dem Schutzleiter 
+(oder gut geerdeten Wasserleitungs- oder Zentralheizungsrohren) beträgt die Wechsel-
+spannung ebenfalls 230 V. 
+  
+
+
+===== PAGE 10/34 =====
+1.2 Das elektrische Hausnetz 
+15
+ 
+ 
+ 
+Abb. 1.3: Beispiel der Einteilung einzelner Licht- und Steckdosensektionen im Verteilerschrank    
+ 
+
+
+===== PAGE 11/34 =====
+16 
+  Kapitel 1: Kurz und bündig   
+ 
+ 
+1.3 
+Was muss gemessen werden? 
+Vor jeder Berührung einer Stromleitung sollten Sie lieber zweimal prüfen, ob auch 
+wirklich nichts unter Strom steht. Genau genommen geht es in diesem Fall nur um die 
+Phase. Speziell zu diesem Zweck gibt es eine große Auswahl an Phasenprüfern.  
+ 
+Abb. 1.4: Phasenprüfer, Spannungstester und Multimeter sind für den Elektroinstallateur 
+unverzichtbar. 
+
+
+===== PAGE 12/34 =====
+1.3 Was muss gemessen werden? 
+17
+ 
+ 
+Die einfachsten Phasenprüfer (einpolige Spannungsprüfer) sind als kleine Schrauben-
+dreher (Abb. 1.4a) ausgeführt, in denen ein Glühlämpchen aufleuchtet, wenn ihre Klinge 
+in Berührung mit der Phase kommt. Die günstigsten batteriefreien Phasentester dieser 
+Art kosten etwa 2 €. Man muss hier mit dem Finger einen Kontakt am Schrau-
+bendrehergriff berühren, um über den eigenen Körper eine leitende Verbindung mit der 
+»Erde« (dem Fußboden) herzustellen. Diese Phasenprüfer haben den Nachteil, dass bei 
+hellem Licht das Leuchten des integrierten Glühlämpchens nur sehr schlecht erkennbar 
+ist. Man kann sich durch Beschattung dieser »Mini-Lichtquelle« helfen und praktisch 
+testen, wann und wo dieser Phasenprüfer einsetzbar ist.  
+Phasenprüfer in Schraubendreherausführung gibt es auch in gehobener Ausführung als 
+batteriebetriebene »Multitester«. Sie leuchten intensiver und zeigen (berührungslos) die 
+Phase auch dann an, wenn die Klinge des Testers z. B. nur die isolierte Ummantelung 
+eines Leiters berührt. Vorteilhafter sind jedoch Spannungsprüfer, die z. B. nach Abb. 
+1.4b neben dem Aufleuchten auch noch durch Piepen oder Summen das Vorhandensein 
+einer Spannung melden. Die meisten dieser Tester arbeiten berührungslos und nehmen 
+z. B. auch durch die Ummantelung eines Kabels die Spannung wahr.  
+Zweipolige Spannungsprüfer nach Abb. 1.4c können – im Gegensatz zu den einpoligen 
+Phasenprüfern – eine Phase als solche nicht finden, dafür aber zweipolig eine Spannung 
+messen. Das ist für einen Elektroinstallateur wichtig. Wenn z. B. bei der Zuleitung eines 
+Leuchten- oder Steckdosenanschlusses zwar die Phase vorhanden, aber der Neutralleiter 
+unterbrochen ist, hilft ein einpoliger Phasenprüfer nicht weiter. Abgesehen davon zeigt 
+dieser Spannungsprüfer auch die Höhe der Spannung an. So kann z. B. auch geprüft 
+werden, ob die Spannung zwischen zwei Anschlussklemmen 230 V oder 400 V beträgt. 
+Einfachere zweipolige Spannungsprüfer zeigen die Messwerte nur stufenweise über 
+Leuchtdioden, teurere Geräte gleitend über ein LCD-Display an. Manche von ihnen ver-
+fügen auch über einen Vibrationsalarm für Spannungserkennung und Durchgangs-
+prüfung.  
+Anstelle spezieller Spannungsprüfer für Elektriker eignen sich für Messungen an Elekt-
+roinstallationen kleinere Stiftmultimeter (Abb. 4.1d). Hier ist aber auf den maximalen 
+Spannungsmessbereich zu achten. Er endet oft bei ca. 250 V~, müsste jedoch für diese 
+Anwendungen auch 400 V~ anzeigen/verkraften können. Mit einem Tischmultimeter 
+(Abb. 4.1e) wird sich ein professioneller Elektroinstallateur nicht anfreunden wollen, 
+denn es fehlt hier beim Messen meist die dritte Hand. Ein Heimwerker aber, der 
+Messungen am Hausnetz nur gelegentlich vornimmt, dürfte sich mit einem Multimeter 
+zufriedengeben. Conrad Electronic vertreibt ein strapazierfähiges und kostengünstiges 
+Digital-Multimeter (Voltkraft-VC-12, Conrad-Bestell-Nummer: 12 30 59, Abb. 4.1f). Es 
+verfügt über eine automatische Wahl der Messfunktion von Spannung, Widerstand und 
+Durchgang und hat kleine Abmessungen.  
+
+
+===== PAGE 13/34 =====
+     
+87
+ 
+ 
+6 
+Erweiterung einer 
+bestehenden Leitung 
+6.1 
+Anschlüsse für neue Lichtschalter 
+Bei der Erweiterung einer bestehenden Leitung ist die erste Frage: Wo kann man den 
+Strom anzapfen? Am besten eignet sich zu diesem Zweck entweder die am nächsten 
+befindliche Abzweigdose, Steckdose oder die Gerätedose eines Lichtschalters. Vorausset-
+zung: Die Spannungsquelle muss über die benötigten Anschlüsse verfügen. Für den 
+Anschluss von Steckdosen oder Leuchten, die einen Schutzleiter benötigen, sind die 
+Phase, der Neutralleiter und der Schutzleiter erforderlich. Für den Anschluss von 
+Leuchten, die keinen Schutzleiter benötigen, kann auf die Zuleitung des Schutzleiters 
+eventuell verzichtet werden. Dieser Verzicht hat jedoch den Nachteil, dass die installierte 
+Leuchte bei Bedarf nur durch eine Leuchte ersetzt werden darf, die ebenfalls keinen 
+Schutzleiteranschluss benötigt. Abgesehen von der technischen Machbarkeit sollte bei 
+der Erweiterung einer Leitung auch die Logistik des Hausnetzes berücksichtigt werden. 
+Wird z. B. eine Steckdose an eine Leuchtenzuleitung angeschlossen, hängt sie am 
+Sicherungsautomaten der Leuchtensektion. Das bringt Chaos in die Zuordnung der 
+Sicherungsautomaten im Verteilerschrank.  
+6.2 
+Anschluss für eine neue Steckdose  
+Steht für den Anschluss der neuen Steckdose eine bestehende Steckdose in direkter Nähe 
+zur Verfügung, kann man einfach eine Parallelverbindung verlegen, um die neue Steck-
+dose anzuschließen. Da jede Steckdose jeweils über zwei Steck- oder Schraubklemmen 
+für jeden der Anschlussleiter (nach den Beispielen aus Abb. 6.1) verfügt, kann ein weite-
+rer Stromanschluss von ihr aus verlegt werden. Bei neueren Steckdosen sind die 
+Anschlussklemmen als Doppel-Steckklemmen (Abb. 6.1a), bei älteren als Schraub-
+klemmen (Abb. 6.1b) ausgelegt.  
+Bei manchen Klemmen kommt es vor, dass sie den dünneren von zwei unterschiedlich 
+starken Kupferleitern nicht fest genug einklemmen. Wenn z. B. ein Leiter einen Quer-
+schnitt von 2,5 mm² und der andere nur von 1,5 mm² hat, kann es vorkommen, dass 
+der dünnere nicht ausreichend festsitzt. So kann es früher oder später zu einem »kalten 
+Kontakt« kommen. Bei Steckklemmen kann diesem Problem einfach dadurch vorge-
+
+
+===== PAGE 14/34 =====
+88 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+beugt werden, dass der Leiterquerschnitt des neuen Anschlusses an den bestehenden 
+angepasst wird. Bei Schraubklemmen hängt es von ihrer Ausführung ab, ob z. B. zwei 
+Leiter identischer Querschnitte an beiden Seiten der Klemme nach Abb. 6.2a einge-
+klemmt werden können. An anderen lassen sich zwei Leiter ungleicher Querschnitte 
+besser nur an einer Seite der Klemme nach Abb. 6.2b befestigen. Ein Profi erkennt auf 
+einen Blick ob z. B. ein Kupferleiter einen Querschnitt von 1,5 mm², 2,5 mm² oder 
+4 mm² hat. Fehlt diese Erfahrung, lässt sich der Querschnitt als Durchmesserunterschied 
+der erwähnten beiden Leiter mit einem Messschieber nach Abb. 6.3 ermitteln.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.1: Steckdosen 
+verfügen in der Regel 
+über zwei Anschlüsse 
+pro Leiter: a) Steck-
+dose mit Steck-
+klemmen; b) Steck-
+dose mit Schraub-
+klemmen 
+
+
+===== PAGE 15/34 =====
+6.2 Anschluss für eine neue Steckdose 
+89
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.2: a) Zwei Leiter gleicher Querschnitte 
+lassen sich oft an beiden Seiten einer 
+Schraubklemme befestigen. b) Zwei Leiter 
+ungleicher Querschnitte müssen oft nur an 
+einer Seite der Klemme festgeschraubt 
+werden, da andernfalls der dünnere Leiter 
+möglicherweise nicht ausreichend fest in der 
+Klemme sitzen würde.  
+ 
+Abb. 6.3: Aus dem Leiterdurchmesser ergibt sich der Leiterquerschnitt.  
+
+
+===== PAGE 16/34 =====
+90 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.4: Aufputz-
+Steckdosen sind 
+üblicherweise für zwei 
+Kabelanschlüsse 
+ausgelegt. 
+ 
+Abb. 6.5: Eine Schlagbohrkrone fräst das passende Loch aus dem Mauerwerk  
+kreisförmig heraus. 
+
+
+===== PAGE 17/34 =====
+6.2 Anschluss für eine neue Steckdose 
+91
+ 
+ 
+ 
+Abb. 6.6: Steht keine Schlagbohrkrone zur Verfügung, kann das Loch für die Gerätedose 
+maßgerecht mit einem Steinbohrer vorgebohrt werden. 
+
+
+===== PAGE 18/34 =====
+92 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+Abb. 6.7: Die Zwischenwände zwischen den gerade geführten Bohrungen in der Wand (a) 
+können durch zusätzliche schräg geführte Bohrungen (b) mit demselben Steinbohrer 
+zumindest teilweise »herausgefräst« werden. Dann lässt sich das Mauerwerk mit einem 
+Meißel leichter ausstemmen. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.8: Für das 
+grobe Ausstemmen 
+des Mauerwerks 
+eignet sich am 
+besten ein 
+mittelgroßer 
+Flachmeißel mit 
+einem Gummischutz. 
+
+
+===== PAGE 19/34 =====
+6.2 Anschluss für eine neue Steckdose 
+93
+ 
+ 
+ 
+Abb. 6.9: Die maßgerechte Feinarbeit kann am besten mit einem dünnen Meißel vollendet 
+werden. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.10: Der obere Rand der 
+Gerätedose sollte aus einer Mauer, 
+die anschließend noch verputzt 
+wird, ca. 6 mm überstehen. In einer 
+bereits verputzten Wand darf die 
+Gerätedose nicht überstehen, kann 
+jedoch etwas tiefer in die Wand 
+eingesetzt werden.  
+ 
+
+
+===== PAGE 20/34 =====
+94 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.11: Vor dem Eingipsen 
+der Gerätedose sollte das 
+Mauerwerk mit Wasser 
+eingesprüht oder eingepinselt 
+werden, damit sich der Gips 
+besser mit dem Mauerwerk 
+verbindet. Wird anstelle von 
+Gips eine andere Spachtel-
+masse verwendet, ent-
+nehmen Sie der Bedienungs-
+anleitung, ob diese Masse 
+nicht ein trockenes (und 
+staubfreies) Mauerwerk 
+benötigt.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.12: Der mit Wasser 
+angerührte Gips (oder die 
+Spachtelmasse) wird nur so 
+dick an die Innenwände des 
+Lochs aufgetragen, dass er 
+der Gerätedose 
+ausreichenden Halt bietet. 
+
+
+===== PAGE 21/34 =====
+6.2 Anschluss für eine neue Steckdose 
+95
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.13: Die Gerätedose 
+wird anschließend in die 
+Wand gedrückt und 
+passgenau positioniert. 
+Am einfachsten lässt sich solch ein Vorhaben bewerkstelligen, wenn die neue Steckdose 
+gleich neben einer bestehenden Steckdose installiert wird. Handelt es sich dabei um eine 
+Aufputzsteckdose nach Abb. 6.4, kann an ihren freien Ausgang problemlos ein 
+Anschlusskabel für die neue Steckdose angeschlossen werden. In den Kunststoffver-
+schluss wird zu diesem Zweck ein passendes Loch vorgebohrt und evtl. mit einer Feile 
+etwas nachgebessert. Wird eine neue Unterputzsteckdose installiert, kann man die dafür 
+benötigte Gerätedose entweder direkt an die bestehende Gerätedose (oder Gerätedosen-
+reihe) anschließen oder an einer anderen Stelle platzieren.  
+Die Installation einer neuen Unterputzsteckdose fängt mit der Erstellung des Lochs für 
+die Gerätedose in der Mauer an. In einem Rohbau kann ein solches Loch maßgerecht 
+mit einer passenden Schlagbohrkrone (Durchmesser ca. 65 mm) nach Abb. 6.5 heraus-
+gefräst werden. Genau genommen fräst die Schlagbohrkrone nur einen Ring in die 
+Mauer. Steht keine Schlagbohrkrone zur Verfügung, kann das Loch nach den Beispielen 
+aus Abb. 6.6 und 6.7 mit einem Steinbohrer in einer Schlagbohrmaschine schrittweise 
+herausgebohrt werden. Diese Methode ist nur geringfügig arbeitsintensiver als die 
+Lösung mit einer Schlagbohrkrone und hat den Vorteil, dass es weniger staubt. 
+Abgesehen davon muss in der Wand ohnehin auch noch Platz für die Schnapptunnel-
+stutzen geschaffen werden – was ebenfalls durch Vorbohren und Ausstemmen erfolgt. 
+Endet die Installation an der neuen Gerätedose, kann einer ihrer Tunnelstutzen mit 
+einem Seitenschneider oder mit einem scharfen Messer abgeschnitten werden. Die 
+Stutzen haben zwei unterschiedliche Durchmesser – schneiden Sie daher nicht die ab, 
+
+
+===== PAGE 22/34 =====
+96 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+deren Durchmesser sich für Ihr Vorhaben besser eignet. Das Mauerwerk in der Mitte 
+des Lochs wird anschließend nach Abb. 6.8 mit einem größeren Flachmeißel von groben 
+Mauerresten befreit. Danach können bei Bedarf noch mit einem feineren Flachmeißel 
+(Abb. 6.9) kleinere Ziegelreste entfernt werden, damit die Gerätedose gut in die Mauer 
+passt (Abb. 6.10).  
+Am schnellsten lässt sich die Dose in der Wand mit Gips fixieren oder vollständig ein-
+putzen. Gips ist allerdings ein Billigmaterial. Es schwindet daher aus dem Fachhandel 
+und wird durch überteuerte Spachtelmassen ersetzt. Diese Spachtelmassen (Füll-
+spachtel) härten im Vergleich zu Gips langsamer. Das kann sich unter Umständen als 
+vorteilhaft erweisen: Alles kann bei Bedarf noch leichter korrigiert werden. Gips härtet 
+schneller und muss daher schnell verarbeitet werden. Es empfiehlt sich deshalb, nicht 
+mehr Gips anzurühren, als notwendig ist. Wenn Sie mit Gips arbeiten, sollte das 
+Mauerwerk vor dem Eingipsen nach Abb. 6.11 erst angefeuchtet werden.  
+Rühren Sie erst eine angemessen kleine Menge Gips oder Füllspachtel mit etwas Wasser 
+zu einer dickeren Masse an. Tragen Sie diese mit einem kleinen Spachtel auf die Innen-
+wände des Dosenlochs nach Abb. 6.12 auf. Drücken Sie dann die Dose nach Abb. 6.13 in 
+die Mauer hinein. Vergewissern Sie sich mithilfe einer kleinen Wasserwaage und eines 
+Lineals oder einer kurzen Latte, dass die Dose ausreichend tief und gerade sitzt. Sie darf 
+bei einer bereits verputzten Wand auf keinen Fall überstehen, denn dann würde auch 
+die später montierte Steckdose überstehen. Sie darf lieber ca. 2 mm unter dem Putz 
+sitzen als einen halben Millimeter überstehen. Sie sollte nur dann um ca. 6 bis 8 mm 
+überstehen, wenn sie in eine noch unverputzte Rohbauwand installiert wird. Moderne 
+Putze dürfen auf die Mauer relativ dünn (ab ca. 6 mm) aufgetragen werden. Kontrollie-
+ren Sie, welche Unebenheiten die betreffende Mauer im Rohzustand aufweist. Die 
+Putzschicht muss alle Unebenheiten auffangen und somit an manchen Stellen wesent-
+lich dicker sein als die theoretisch ausreichenden 6 mm. 
+Wird die Steckdose nicht mit Montagekrallen (nach Abb. 4.2a), sondern mit der Monta-
+geplatte (nach Abb. 4.2b) an der Gerätedose befestigt, ist beim Eingipsen der Gerätedose 
+auf die optimale Ausrichtung zu achten: Die Dose muss so in der Wand sitzen, dass ihre 
+beiden Löcher für die Montageschrauben am Rand angemessen senkrecht oder waage-
+recht positioniert sind. Gelingt es nicht, bleibt nur noch die Montage mit Montage-
+krallen.  
+Falls Ihnen das Vorhaben nicht beim ersten Anlauf gelingt, ziehen Sie die Gerätedose 
+wieder heraus, bevor Gips oder Füllspachtel abbinden. Kratzen Sie ihn etwas ab und 
+beginnen Sie erneut. Eine zu trockene Gips- oder Spachtelmasse lässt sich allerdings 
+nicht mehr mit Zugabe von Wasser regenerieren und daher nicht wieder verwenden. 
+Einmal angerührter Gips darf im Nachhinein nicht mehr verdünnt werden (nur 
+während der ersten halben Minute des Anrührens). Er würde nicht mehr härten. 
+Teurerer Füllspachtel verhält sich in dieser Hinsicht etwas kooperativer.  
+
+
+===== PAGE 23/34 =====
+6.2 Anschluss für eine neue Steckdose 
+97
+ 
+ 
+Tipp: Kleinere Mengen Gips oder Spachtelmasse können Sie in Plastikschalen 
+mischen, die als Einweg-Verpackungen von Quark oder Obst verwendet werden und 
+nach der Arbeit weggeworfen werden können. Damit erübrigt sich das Auswaschen.  
+ 
+Abb. 6.14: Nachdem der Gips oder die Spachtelmasse hart geworden ist und der Gerätedose 
+ausreichend festen Halt bietet, kann das Einputzen der Dose z. B. mit einem kleinen 
+(Stukkateur-)Spachtel vervollständigt werden. 
+
+
+===== PAGE 24/34 =====
+98 
+  Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.15: Beispiel des Anschlusses  
+einer neuen Steckdose an eine bereits 
+bestehende Steckdose 
+ 
+Abb. 6.16: Zusätzliche Steckdosenanschlüsse können sowohl von bestehenden Steckdosen 
+als auch von Abzweigdosen (Verteilerdosen) ihren Strom beziehen. 
+
+
+===== PAGE 25/34 =====
+6.2 Anschluss für eine neue Steckdose 
+99
+ 
+ 
+Mit einem kleinen Spachtel wird die Gerätedose in die Mauer oder in die Wand nach 
+Abb. 6.14 eingeputzt. Bei einer unverputzten Mauer kann dies nur provisorisch erfolgen, 
+bei einer bereits verputzten Wand sollte das neu Verputzte jedoch möglichst gut 
+geglättet werden (siehe hierzu auch das Kapitel 13 – Verputzen elektrischer Leitungen). 
+Wenn Sie beim Einspachteln auch den Eingangstunnelstutzen der Dose zu sehr ver-
+schmiert haben, sollte er gereinigt werden, bevor der Gips oder die Spachtelmasse hart 
+wird.  
+Für dünne Holz- oder Gipsplattenwände gibt es u. a. Hohlwand-Installationsdosen, die 
+nur ca. 35 mm tief sind. Hier muss üblicherweise nicht gehackt, sondern nur gesägt oder 
+gefräst werden. Das Angebot an Spezialzubehör im Baumarkt und im Elektro-Fach- und 
+Versandhandel ist groß.  
+Neben den hier aufgeführten Standardschalter- und Abzweigdosen gibt es etliche 
+Unterputzdosen in anderer Form oder Größe. Für gängige Installationen eignen sich die 
+hier beschriebenen Unterputzdosen am besten. Für speziellere Zwecke können Sie ohne 
+Weiteres auch andere Dosen verwenden, zu denen z. B. die extra tiefen Gerätedosen 
+gehören. Lassen Sie sich bei Bedarf zu diesem Thema von einem Elektrofachverkäufer 
+ausführlicher beraten, was er Ihnen anbieten kann. 
+Ist der mechanische Teil der Installation fertig, kommt der elektrotechnische Teil an die 
+Reihe. Worum es dabei geht, wurde bereits in Zusammenhang mit den Abbildungen 6.1 
+bis 6.3 teilweise erklärt. Abb. 6.15 zeigt das Prinzip der elektrischen Verbindung 
+zwischen der bestehenden und der neu installierten Steckdose. Offen bleibt die Wahl der 
+Verbindungsleitung. Handelt es sich nur um eine kurze Leitung zwischen zwei Unter-
+putz-Gerätedosen, die nebeneinanderstehen und nur durch ihre Tunnelstutzen verbun-
+den sind, benötigen die Leiter, da von der Mauer isoliert, keinen zusätzlichen Schutz. Zu 
+diesem Zweck können sowohl normale elektrische Leiter mit hartem Kupferkern als 
+auch Leiter, die als flexible Litzen ausgeführt sind, verwendet werden. Flexible Leiter 
+(Litzen) haben den Vorteil, dass sie sich in den Gerätedosen und hinter den Steckdosen-
+einsätzen leichter »formen« lassen. Zu diesem Zweck können z. B. Leiter aus einem 
+Stück Verlängerungskabel genommen werden (aber keine brüchigen Leiter aus einem 
+»uralten« Kabel, bei denen die Kupferlitzen schon schwarz sind).  
+Für längere Anschlüsse der neu installierten Steckdose(n) eignen sich alle Leiter, die im 
+Kap. 5.1 beschrieben wurden. Für eine bereits verputzte Wand eignet sich am besten eine 
+Flachkabel- oder Rundkabelleitung. Eine 3-×-1,5-mm²-Flachkabelleitung (Stegleitung) ist 
+zwar nur ca. 4 mm dick, aber ca. 18 mm breit. Ein Rundkabel von 3-×-1,5-mm² hat 
+einen Durchmesser von etwa 8 mm. Es benötigt daher zwar einen tieferen, aber 
+schmalen Schlitz im Putz und lässt sich leichter glätten als eine Stegleitung. Ein Rund-
+kabel hat in der Praxis den Vorteil, dass es unter dem Putz nicht so tief sitzen muss wie 
+eine »breite« Stegleitung. Die meisten Putzhersteller weisen darauf hin, dass die Dicke 
+der Putzschicht 6 mm nicht unterschreiten darf. Bei einem relativ dünnen Rundkabel 
+gibt es aber keine Risse im Putz, wenn die Putzsicht nur ca. 4 mm beträgt. Bei einer 
+
+
+===== PAGE 26/34 =====
+100   Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+Stegleitung kann es leichter zu Rissen im Putz kommen, wenn die Putzschicht über der 
+relativ breiten Leitung dünner als ca. 6 mm ist. Eine Rohrleitung, die wesentlich größere 
+Schlitze in der Mauer benötigt, käme für dieses Vorhaben nur dann infrage, wenn z. B. 
+noch Platz für zusätzliche Leiter (für z. B. Lichtschalter) bereitgehalten werden sollte. 
+Beachten Sie: Wie Sie in Ihrem eigenen Haus eine Leitung verlegen, liegt in Ihrem 
+Ermessen. Dabei die Vorschriften zu berücksichtigen kostet nichts extra. Es wäre 
+auch im Interesse Ihrer Familie oder Ihres Partners. Es könnte durchaus vorkommen, 
+dass irgendwann ein Fremder an Ihrer Elektroinstallation eine Reparatur vornehmen 
+muss. Die von Ihnen verrichteten Arbeiten sollten daher auch für einen Unein-
+geweihten übersichtlich sein.  
+6.3 
+Anschluss für eine neue Wandleuchte 
+Vom Prinzip her unterscheidet sich der Anschluss einer Wandleuchte nicht sehr von 
+dem zuvor beschriebenen Anschluss einer neuen Steckdose. Vorteilhaft ist es, wenn die 
+Wandleuchte nicht an einer Steckdose, sondern an einer Lichtleitung angeschlossen 
+wird, denn damit bleibt die Übersicht über das Hausnetz besser erhalten. Zum Anzapfen 
+von Strom eignen sich Abzweigdosen, die meist an der Wand unterhalb der Raumdecke 
+untergebracht sind.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.17: Ein Blick in die Unterputz-
+Abzweigdose (Verbindungsdose) genügt, um 
+festzustellen, ob die elektrische Leitung mit 
+Rohren oder mit Kabeln ausgeführt ist. 
+
+
+===== PAGE 27/34 =====
+6.3 Anschluss für eine neue Wandleuchte 101
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.18: a) Ausführungs-
+beispiel einer Nylon-Einziehfeder 
+(Einziehspirale), die für das 
+Einziehen elektrischer Leiter in 
+ein Installationsrohr vorgesehen 
+ist. b) Nachdem die Einziehfeder 
+durch die Rohrleitung geschoben 
+wurde, wird der elektrische Leiter 
+(oder auch mehrere elektrische 
+Leiter) an ihr befestigt und 
+durchgezogen. 
+
+
+===== PAGE 28/34 =====
+102   Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.19: Auf diese Weise  
+kann z. B. in eine bestehende 
+Deckenleuchtenzuleitung mithilfe 
+einer Einziehfeder ein weiterer 
+elektrischer Leiter eingezogen 
+werden. 
+
+
+===== PAGE 29/34 =====
+6.3 Anschluss für eine neue Wandleuchte 103
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abb. 6.20: Auch einer 
+der bestehenden 
+elektrischen Leiter 
+kann bei Bedarf für 
+den Einzug weiterer 
+Leiter verwendet 
+werden: Sein Ende, 
+das mit einer spitzen 
+Zange zu einer 
+provisorischen Öse 
+geformt wird, muss zu 
+diesem Zweck etwas 
+mehr abisoliert 
+werden. 
+
+
+===== PAGE 30/34 =====
+104   Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+Abb. 6.21: Das Einziehen von zwei (oder mehr) zusätzlichen Leitern in ein bestehendes 
+Installationsrohr gelingt am besten mit zwei Personen: Eine zieht an dem »Einziehleiter«,  
+die andere formt die Leiter am anderen Ende des Rohrs, damit sie besser in das Rohr 
+hineingleiten. 
+Dieser Anschluss setzt natürlich voraus, dass in der vorgesehenen Verbindungsdose 
+auch alle drei benötigten Leiter (L, N und PE) zur Verfügung stehen. Der L-Leiter 
+(Phase) darf nicht über einen Lichtschalter geschaltet werden, sondern muss laufend 
+vorhanden sein. Wenn die erforderliche Phase in der Verbindungsdose nicht vorhanden 
+ist, muss ein zusätzlicher Leiter L her. Wurde die Elektroinstallation mit Rohrleitungen 
+gemacht, kann der zusätzliche Leiter noch in die Rohrleitung hineingezogen werden. 
+Sind in der Wand keine Rohre, sondern nur Kabel, müsste zumindest eine Ader des 
+Flachkabels unter den Putz separat verlegt werden. Wenn Sie den Deckel der Verbin-
+dungsdose öffnen, können Sie sehen, ob die Zuleitungen in der Dose als Rohrleitungen 
+(mit einzelnen Leitern) oder mit Kabeln ausgeführt sind (Abb. 6.17).  
+Das Einziehen eines zusätzlichen elektrischen Leiters in ein bestehendes Leitungsrohr 
+kann auf verschiedene Arten erfolgen. Ein Handwerker bedient sich einer sogenannten 
+Einziehfeder, die als Nylon- oder Stahlfeder (Abb. 6.18a) kostengünstig erhältlich ist. Die 
+Feder hat eine Spitze, die in das Rohr eingeschoben wird. An ihrem anderen Ende ist sie 
+mit einer Öse für das Anbinden der Drähte versehen (Abb. 6.18b), die in das Leitungs-
+rohr eingezogen werden (Abb. 6.19). Wer solche Arbeiten nur selten vornimmt, kann 
+nach Abb. 6.20/6.21 einen der bestehenden Leiter verwenden. Er wird zwar in diesem 
+Fall aus dem Leitungsrohr herausgezogen, kann dabei aber einen »Ersatzleiter« für sich 
+und gleichzeitig einen weiteren Leiter in das Rohr hineinziehen. Alternativ kann dieser 
+Leiter auch erst nur eine Schnur in das Rohr ziehen, mit der er dann mit einem weiteren 
+Leiter in Gegenrichtung wieder in das Rohr gezogen wird.  
+
+
+===== PAGE 31/34 =====
+6.3 Anschluss für eine neue Wandleuchte 105
+ 
+ 
+Da eine Leuchte geschaltet werden muss, benötigt sie einen Schalter. In manchen 
+Leuchten ist der Schalter direkt integriert – bei Innenleuchten z. B. als Zugschalter, bei 
+Außenleuchten als Dämmerungsschalter. Es liegt im persönlichen Ermessen, ob man 
+sich bei einer Innenwandleuchte mit einem Zugschalter und bei einer Außenleuchte nur 
+mit einem Dämmerungsschalter zufriedengibt. Ansonsten kann man einen zusätzlichen 
+Lichtschalter installieren – was vor allem bei einer Außenleuchte mit Dämmerungs-
+schalter sinnvoll wäre. Die meisten Wandleuchten verfügen über keinen internen 
+Schalter. Dieser muss dann an einer passenden Stelle installiert werden. Der Wand-
+leuchtenanschluss benötigt somit zwei Zuleitungen: eine zur Leuchte und eine zweite zu 
+ihrem Lichtschalter. Vom Prinzip her ist ein solches Projekt einfach. Es geht nur darum, 
+wo man die Stromzuleitung zur Leuchte und die zum Lichtschalter an dem bestehenden 
+Hausnetz am besten anzapfen kann. Der Lichtschalter schaltet nur die Phase (L-Leiter) 
+und benötigt somit nur eine zweiadrige Stromleitung nach Abb. 6.22a. Die Anordnung 
+der neuen Leitungen kann – je nach Gegebenheiten – wahlweise nach dem Beispiel aus 
+Abb. 6.22b oder 6.22c erfolgen.  
+
+
+===== PAGE 32/34 =====
+106   Kapitel 6: Erweiterung einer bestehenden Leitung   
+ 
+ 
+ 
+Abb. 6.22: a) Leuchten werden im Hausnetz immer nur einpolig geschaltet. b) In den meisten 
+Fällen wird der Lichtschalter-Anschluss der Wandleuchte(n) von einer Verbindungsdose 
+(Abzweigdose) aus verlegt. c) Alternativ kann der Lichtschalter-Anschluss direkt von dem 
+Anschluss der Wandleuchte verlegt werden. 
+
+
+===== PAGE 33/34 =====
+6.4 Anschluss für eine neue Deckenleuchte 107
+ 
+ 
+Anstelle eines normalen Lichtschalters kann für die Fernbedienung der Wandleuchte ein 
+Funkschalter installiert werden (siehe hierzu Kap. 6.5). Sollen mehrere Wandleuchten 
+installiert und von mehreren Standorten aus geschaltet werden, kann die Installation 
+nach dem Beispiel aus Abb. 3.17 mit Stromsoßschaltern ausgelegt werden.  
+An den hier beschriebenen Konzeptlösungen ändert sich im Prinzip nichts, wenn es sich 
+um Außenwandleuchten oder Wandleuchten im Dachausbau handelt. In manchen 
+Fällen kann es sinnvoll sein, dass eine umfangreichere Wandleuchtensektion einen eige-
+nen Sicherungsautomaten erhält. Die neue Stromzuleitung sollte dann bevorzugt als 
+selbstständige »Dreileiter-Zuleitung« vom Verteilerschrank (Sicherungskasten) bis zu 
+den Leuchten verlegt werden. Das kann vor allem bei einem Neubau oder bei einer grö-
+ßeren Hausrenovierung infrage kommen. Andernfalls könnte unter Umständen von 
+dem Sicherungsautomaten nur die Phase (Leiter L) in bestehende Rohrleitungen einge-
+zogen werden. Die anderen beiden Leiter (der Neutral- und der Schutzleiter) könnten 
+von der bestehenden Lichtleitung angezapft werden. Diese Lösung setzt voraus, dass die 
+bestehenden Lichtleitungen ausreichend dimensioniert sind, was sich z. B. automatisch 
+ergibt, wenn die ursprünglichen Glühlampen durch energiesparende Lampen ersetzt 
+werden: Der Stromverbrauch (und somit auch die Belastung der Leitungen) sinkt 
+dadurch bis um ca. 80 %. Die bestehenden Leitungen sind demzufolge quasi auf einen 
+Schlag großzügig überdimensioniert (vorausgesetzt, sie waren solide dimensioniert).  
+6.4 
+Anschluss für eine neue Deckenleuchte 
+Der Anschluss einer Deckenleuchte unterscheidet sich rein theoretisch nicht von dem 
+einer Wandleuchte. Praktisch trifft dies jedoch nur dann zu, wenn es keine Schwie-
+rigkeiten mechanischer (baulicher) Art gibt, wie es z. B. bei Aufputzinstallationen mit 
+Kabeln der Fall ist. Kompliziert wird es bei bereits fertigen Wohnraum-Betondecken, 
+denn neue Unterputzleitungen lassen sich hier nur sehr schwer verlegen. Genau 
+genommen ist es schwierig oder in Hinsicht auf die Baustatik kritisch, in eine beste-
+hende Betondecke ausreichend tiefe Schlitze für die Zuleitungskabel hineinzufräsen.  
+
+
+===== PAGE 34/34 =====
+Bo Hanus
+Elektro-Installationen
+im Haus
+Einfache Elektroinstallationen wie z. B. das Ersetzen von Steckdosen,
+Lichtschaltern oder Leuchten sind einfach selber zu machen. Sie stellen nur
+geringe Anforderungen an Handfertigkeit, Fachwissen und Werkzeugausstattung.
+Sie werden staunen, wie einfach solche Arbeiten fachgerecht durchzuführen sind.
+Die dafür notwendigen Arbeitsschritte sowie die benötigten Werkzeuge und
+Materialen werden in diesem Praxisbuch, angereichert mit vielen Tipps und Tricks,
+beschrieben.
+In diesem Buch finden sowohl völlig unerfahrene Einsteiger als auch erfahrene Heimwerker
+leicht verständliche Anleitungen. Es beginnt mit einfachen Aufgaben und führt Schritt für
+Schritt bis zu aufwendigeren Elektroinstallationen. Jeder kann sich hier selbst aus den vielen
+Praxisanleitungen das aussuchen, was er gerade braucht und sich hinsichtlich des
+Arbeitsaufwands zumuten möchte.
+Zum Autor:
+Bo Hanus zählt zu den erfahrensten Autoren von „Do-it-yourself“-Büchern.
+Über 50 Ratgeber zu den verschiedensten Themen hat er bisher veröffentlicht,
+die immer wieder auf Bestsellerlisten an erster Stelle zu finden sind. 
+ISBN 978-3-645-65029-8
+Besuchen Sie uns im Internet: www.franzis.de
+Euro 19,95 [D]
+Aus dem Inhalt
+• Leuchten abnehmen, anschließen oder neu installieren
+• Steckdosen und Lichtschalter erneuern oder neu installieren
+• Erweiterung elektrischer Leitungen 
+• Neue Elektroinstallationen in Haus und Garten selbst entwerfen und ausführen
+• Lichtdimmer, Treppenautomaten, Stromstoß- und Funkschalter
+installieren/erneuern 
+• Ein Profi kann es auch nicht besser: nützliche Hinweise zum Selbermachen

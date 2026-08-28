@@ -1,0 +1,2806 @@
+
+
+===== PAGE 161/298 =====
+Paragraph Text
+Paragraph text or MTEXT is for long, complex entries that have many lines oftext. Any
+number of text lines or paragraphs can be entered to fit within a specified width. The
+paragraphs fonn a single object that can be moved, rotated, copied, erased, mirrored,
+stretched, or scaled. This is the default text command under the Draw toolbar in Re-
+lease 2000 and subsequent releases.
+You can apply overscoring, underlining, fonts, color, and text height to any individual
+character, word, or phrase of the paragraph.
+Creating paragraph text is a lot more flexible, but slightly more difficult than entering
+single line text. Text is entered in the Edit MText dialog box. This editor can be
+changed using the MTEXTED system variable. Use Preferences to setup a different edi-
+tor. Ifyou are using a system with limited RAM and limited speed, the ability to have
+your text spell-checked does not make up for the time necessary to access the MTEXT
+dialog box every time you want to add a string oftex!. For large paragraphs, however,
+this is a real advantage.
+Paragraph Text
+The Edit MText dialog box is a very efficient way to set properties that affect the entire
+paragraph or selected text. As in a word processor, you should set the width before you
+create the text. The paragraph will be displayed in a dialog box within the specified
+width. The text will wrap or spill in the direction defmed by the current attachment set-
+ting. The text boundary can be realigned. To create paragraph text, from the Text fly-
+out on the Draw pull-down menu, choose Multiline text, or the button shown on the
+toolbaLThis will invoke the MTEXT command.
+A
+144
+CHAPTER EIGHT
+The command line equivalent is MTEXT.
+You will be prompted to specify the insertion base point for the text as follows:
+Command:MTEXT
+Current text style:
+STANDARD Text height:
+0.2000
+Specify first corner or (Height/Justify/Line
+Spacing/Rotation/Style/Width] : (pick a point where the text
+will start)
+Next you specify the width of the text by using one of the following methods:
+•
+To define a diagonally opposite corner of a rectangular text boundary,
+specify a point.
+•
+To define only the width of the text boundary, enter Wand specify a width
+value. Entering 0 causes the text to extend horizontally until you press..J.
+•
+The Properties and Find/Replace tabs offer more settings.
+The Text Formatting box will appear and your text will be displayed within the box as
+you type it, as shown in Figure 8.6.
+The width ofthe text that you have chosen will be reflected on the dialog box. Type in
+the text you would like placed at the specified location on your file, then choose OK to
+write it to the file. Once there, you can highlight it to change the size or properties of
+the text.
+
+
+===== PAGE 162/298 =====
+Text Styles and
+Fonts
+hoose YOUr
+settings
+above;
+-then
+type
+in
+who t
+y_o~_u_.~.__w_o__u.l.d.....Lj_k_e",._,
+in
+Figure 8.6
+The text can be typed in as in a word processor; it will wrap according to the width cho-
+sen.
+To edit the color of one word or phrase, or to have it underlined or overscored, select
+the text using the mouse, then choose Overscore, Underline, or Color.
+Some fonts cannot be displayed in the Edit MText dialog box. Iftext isn't shown, se-
+lect a substitute font to represent the original font, then choose OK. When you are fin-
+ished editing, the original font selected appears in the graphics area.
+The text will wrap according to the size oflettering that you have chosen. When you
+have finished typing in the information you need, pick OK to have it placed in the area
+on your screen that you specified earlier.
+Text styles are what the user names the style ofthe lettering chosen. Fonts are the style
+or design of the letters and numbers used to create the text string. The fonts can be
+suppliedby AutoCAD or athird-party developer. A text style is stored with not only the
+lettering style but also a group of characteristic settings.
+The simplest font files are shape files or .shx files. True Type Fonts can be loaded as
+well. These are handy, but not always appropriate for drawing notation. They also use
+a lot of space on your file, so be careful when loading them.
+Using Text Styles
+Each text style takes a font file from the AutoCAD list.
+The default styIe is Standard using the txt.shx font. To use any other type oflettering
+you must load that style. To load a text font onto AutoCAD from another folder, find
+the path where the fonts are used in AutoCAD. On most systems this is C:\Program
+Files\AutoCAD 2007\Fonts. Copy the font file there and it will be available through
+the STYLE command.
+The command line equivalent is STYLE.
+Boththe pull-down menu and typing will give you the dialog box shown in Figure 8.7.
+Text and Pictorial Views
+145
+
+
+===== PAGE 163/298 =====
+['jill Text Style
+121~1
+Figure 8.7
+You can change the standard text font or add a new style. Next find a font that you
+would like to assign to this name. City Blueprint is fairly standard.
+Height can be specified in this style box or within the command itself. It is much better
+to assign the height in the TEXT or MTEXT command than here.
+To create anew text style, choose New, then pick a style from the font list. ChooseAp-
+ply and it will be loaded. The word Cancel will be replaced by the word Close. Choose
+Close and your style will be current.
+ROMANS
+AutoCAD
+Aut.oCAD
+AutoCAD
+~D\c:;~h.\J
+Figure 8.8
+width fQctor
+,5
+width fQctor
+1
+width
+fQctor
+1.5
+Oblique
+angle
+0
+Oblique
+angle
+30
+Oblique
+angle
+-30
+Upside
+down
+Bo.ckwo.rds
+VA
+e u
+AutoCAD
+r
++
+AutoCAD t 0
+iC
+C A
+~ 0
+VntOC\iD
+OAJoJuA
+Most ofthe options illustrated in Figure 8.8 you will never use; keep in mind it is com-
+puter people not designers who make the software. They make these option available
+simply because they can.
+s
+Monotext
+7 line segments
+Figure 8.9
+s
+Roman Simplex
+19 line segments
+English Gothic
+70 line segments
+146
+CHAPTER EIGHT
+Using Text Styles
+In Figure 8.9 you can see that the Gothic letter has 10 times the number oflines as the
+Monotext letter; it may be appropriate for a title, but not for a notation or a dimension.
+The text fonts marked TT are bitmap fonts, not made with lines. These are Microsoft
+True Type fonts. To make a style current, simply pick it from the list and then click Ap-
+ply.
+
+
+===== PAGE 164/298 =====
+Editing Text
+A text string is considered an object and can therefore be moved, copied, changed into
+different layers, and created in different colors. You can also alter the text string itself
+as well as the height, the rotation angle, and the style of the characters.
+Text objects also provide grips for moving, scaling, and rotating. A paragraph text has
+grips at the four comers of the text boundary and, in some cases, at the attachment
+point. Line text provides a grip at the lower left comer and another at the alignment
+point. (Review Chapter 4 for more information on grips.)
+When using Object Snaps, INSERT will snap to the insertion point you selected to cre-
+ate the text.
+Editing Line Text
+You can change both the text characteristics and the text string with the CHANGE
+command, as shown in Figure 8.10. This is useful for changing many lines oftext, par-
+ticularly when making charts.
+DDEDIT and DDMODIFY make editing
+single strings oftext much easier. DDEDIT
+can be invoked with the alias ED or sim-
+ply by double-clicking the text string.
+AutoCLAD
+AutoCLAD
+2
+Command: CHANGE
+Figure 8.10
+Select objects: (pick 1)
+Select objects:.J
+Specify change point or
+[Properties]:~
+Specify new TEXT insertion point <no change>:.J
+Enter new text style <STANDARD>:ROMANT (part 1, Figure8.13)
+Specify new height <5.0000>:10 (part 2)
+Specify new rotation angle <0>:30 (part 3)
+Enter new text <AutoCLAD>:AutoCAD (part 4)
+CHANGE gives you the options to change all ofthe variables in the TEXT command as
+shown in Figure 8.10.
+Ifyou pick more than one string, the commandwillrepeat the prompts for each string.
+The DDEDIT Command
+In long strings oftext, DDEDIT makes the editing process much easier. You can change
+only the text, not the formatting or properties of the text.
+To edit the text string content:
+The command line equivalent is DDEDIT or ED.
+Select the line text object that you would like to edit. Within the text string offered for
+editing, select the text where you want it to be changed, or type over or reenter the text,
+then choose OK to have it updated. Pressing Backspace will delete the highlighted
+text.
+Select another line of text or press .J to exit the command.
+Text and Pictorial Views
+147
+
+
+===== PAGE 165/298 =====
+Modifying other Properties
+Ifyou want to change more than the text line content, use Properties under the Modify
+menu. This works on only one string oftext at a time, but
+offers you a variety ofthings to change.
+~~..•.••.~I
+To edit the text string:
+!i:t !:ropertles
+\
+This works similarly to the CHANGE command inthat you can change all ofthe prop-
+erties associated with the line of text.
+To change either thejustification or the scale ofthe text using text paramaters choose:
+Iii
+Justify text
+!ill
+Scale text
+Using LEADER to
+Create Notations
+The LEADER command in the Dimension menu gives
+you the facility of creating text with a leader line or
+series of leader lines and an arrowhead as shown in
+Figure 8.11. The leader arrowhead emanates from the
+point picked. The command is as follows:
+2
+3
+24.00¢ to.02
+Figure 8.11
+Command: LEADER
+Specify leader start point: (pick 1)
+Specify next point: (pick 2)
+Specify next point or
+[Annotation/Format/Undo] <Annotation>:
+(pick 3)
+Specify next point or
+[Annotation/Format/Undo]<Annotation>:~
+Enter first line of annotation text:24.00%%c %%pO.02
+MText:~
+You can enter as many points on the leader line as are necessary.
+All special text characters can be used in this dimension as well.
+The arrowhead size is set in the dimension style or with DIMSCALE or DIMASZ.
+To enter multiple lines oftext, either keep typing at the MText: prompt or enter at the
+Annotation (or enter.J for options): prompt. Ifyou choose the latter, you will enter the
+text editor and can continue entering text using it.
+The options in LEADER include:
+Tolerance
+Copy
+Block
+Format
+offers a control frame containing geometric tolerances using the
+Geometric Tolerances dialog box
+copies text, a text paragraph, a block, or a feature control frame to the
+leader line
+inserts a block at the end ofthe leader line
+controls the way the leader is drawn and whether or not it has an
+arrowhead. Options include Spline, Straight, and Arrow
+148
+CHAPTER EIGHT
+To enter a leader line without related text, enter a single blank space when you are
+prompted for the dimension text. This can be done with all dimension entries.
+As in the LINE command, you can use Uto undo the previous point entry without exit-
+ing the command. Enter multiple arrows by starting another leader, then use the space
+bar for the annotation.
+
+
+===== PAGE 166/298 =====
+SNAP and GRID
+The SNAP and GRID Commands
+¢1.50
+RO.38
+2,00
+1..J8
+SNAP allows you to indicate
+points or positions on the
+screen at preset regular inte-
+gers. It also allows a rotated or
+isometric drawing to be en-
+tered. Set up your SNAP and
+GRID commands using the
+Drafting Settings dialog box
+under the Tools menu.
+First set SNAP and GRID to
+.25 units. Then draw in Figure
+8.12.
+Figure 8.12
+Next rotate SNAP by 45 degrees and set
+the base point in the center of the large
+circle, as shown in Figure 8.13. The
+GRID will follow the SNAP angle. The
+crosshairs will remain perpendicular,
+but are seen at an angle.
+It is possible to enter all ofthis data using
+lines at specified angles and offset, but
+using GRID and SNAP can be easier.
+!UOOJi}' I ..
+GIld"""
+..
+Gl1dx.pacing:
+S"'lllypa&O\YlfI·"
+0Gromap
+E>R~snop
+Ol>ornellicOMP
+O~IIOP
+Figure 8.13
+COffiInand: SNAP
+Specify snap spacing or
+[ON/OFF/Aspect/Rotate/Style/Type] <O.500>:R
+Specify base point<O'-O.OOu,O'-O.OO">:CEN of (pick the
+circle)
+Specify rotation angle<O.OO>:45
+Draw the other parts us-
+ing the new rotated SNAP
+as shown in Figure 8.14.
+To
+return
+to
+standard
+snap
+and
+grid
+values,
+choose 0 degrees and 0,0
+for the angle and base
+points. You can turn the
+SNAP, GRID, andORTHO
+modes on or offby select-
+ing or deselecting the
+relevant box.
+· .
+,:
+.:), .:
+T-R!J..7:5
+..
+-: ....
+"
+. -:/.' .,~~'
+.. -:'
+"":'R~.,3B
+.
+..,,2:50.,.
+. ..
+· , .:
+.-:/',:
+:-:->'.:~'''X.~:;.:-:,
+.: .: :'S~:'I"
+... /:;.'1,' >:. "
+·
+..
+/",'
+' ..
+'/
+.
+...... ..
+~"/.' .0,50.,
+..
+". \
+" ....
+:: {.~5 G:+. J. :.<: ..
+,
+.~
+· ....
+, ..
+, ''--....:.. ... ' ..
+, .. :-....
+Options on the bottom
+left will allow
+you to
+change
+OSNAP I
+and
+Figure 8.14
+many
+other
+settings.
+These options are only
+available if you have entered via the pull-down menu.
+GRID and SNAP can also be useful for placing dimensions at regular or graduated in-
+tervals around the drawing. In traditional drafting there are set distances that the di-
+mensions should be placed at. These are easier to arrange using SNAP.
+Text and Pictorial Views
+149
+
+
+===== PAGE 167/298 =====
+Step]
+Step 2
+In this tutorial we will create a title block.
+Use PLiNE and LINE to create this title block. Ifyou set
+the SNAP value to .25 to start, it will make drawing
+easier. Change the SNAP value as needed.
+The lower left area will be for Scale, Date, etc., the
+central area will be for the company title, which is '3D
+Design Studio' and the top area will be for revisions.
+Set up a text style.
+The command line equivalent is STYLE.
+=\
+1
+-,-
+0
+0,20
+:::l
+--
+Comrnand:STYLE
+Create a new text style. Make Futura the
+text font for it.
+Scroll the bar up until you find Futura.
+Choose this font, or another if this is not
+available. Then choose Apply and then
+Close to return to the command prompt.
+Step 3
+Use the TEXT command or, ifyou have an older version ofAutoCAD, the DTEXT com-
+mand to allow multiple dynamic entries.
+Make sure OSNAP is offand SNAP is set to .20. The pline distance is .40, so the text
+placed with SNAP will be exactly halfway between the pEnes.
+The command line equivalent is TEXT.
+Command: TEXT
+Current text style:
+"title
+U
+Text height
+Specify start point or [Justify/Style]: (pick
+Specify height <.5000>:.1
+Specify rotation angle <O>:..J
+~cale
+Enter text:Scale ..J
+0.00
+1)
+150
+CHAPTER EIGHT
+Command:TEXT
+(use ..J)
+Current text ... 0.00
+Specify start point or
+[Justify/Style] : (pick
+2)~
+Specify height <.1>:..J
+Specify rotation angle
+<O>:~
+Enter text:Drawn By
+Command:
+..J
+.....
+(pick
+3)~
+Enter text:Checked By..J
+..... (pick 4).J
+Enter
+text:Date~
+... (pick 5)
+Enter text:Date of Print..J.J
+2 ;Rrawn By
+7
+~hecked By
+-'\ ;k1ate
+~ Rate of Prjnt
+
+
+===== PAGE 168/298 =====
+The lettering is a bit large, so use the CHANGE command to make the letters smaller.
+You can change them with DDMODIFY, but for this operation CHANGE and Match-
+prop is quicker.
+Step 4
+:Cont~ntslDrawn By
+[~~i~,
+'-TTiTLE~c
+:Justify.
+-Left
+_r--o.o-s--II
+!R9~~JO
+!~~j~~~c.~,.:,:.,:.",~l:liJ
+[~'9~i~;O
+StepS
+Corrunand:CHANGE
+Select objects: (pick 1)
+Select
+objects:~
+Specify change point or
+[Properties]:~
+Specify new TEXT insertion point
+<no change>:.J
+Enter new text style
+<STANDARD>:~
+Specify new height <5.0000>:.08
+Specify new rotation angle
+<O>:~
+Enter new text <Scale>:.J
+Command:MATCHPROP
+Select source object: (pick 2)
+Select destination objects: (pick 3,4,S)
+Now use the MOVE command to move the text up a bit.
+~2
+~~By
+~By
+Dat~
+?
+Date of Print
+Step 6
+Command:MOVE
+Select objects:P
+Select objects:.J
+Specify base point or
+displacement: (pick 1)
+Specify second point as
+displacement: (pick 2)
+For the other text in this box, create a new
+text style and add the text as shown. The
+text font illustrated is CityBlueprint.
+The command line equivalent is STYLE.
+Then add the text as single-line text.
+For title blocks paragraph text is used only
+for large notations.
+Scale
+2x
+IX
+Drawn By
+Checked By
+SC&Je
+a5 noted
+Drawn By
+5, ~le5
+----_._--------""",,------
+ChedtedBy
+tI, ~Iackman
+Date
+04/01/08
+Dale of PrInt 04/21/08
+Text and Pictorial Views
+151
+
+
+===== PAGE 169/298 =====
+Step 7
+Step 8
+Now make a cube with isometric lettering. Change the
+SNAP and GRID values to draw in the cube. From the For-
+mat menu, pick Drawing Aids. Change the rotation angle of
+the SNAP to 30 degrees.
+Command: SNAP
+Specify snap spacing or
+[ON!OFF/Aspect/Rotate/Style/Type] :8
+Enter Snap grid style Standard/Isometric <Standard>:I
+Specify vertical spacing <0.01>:1
+(will rotate at 30
+degrees)
+The grid size will follow the snap size unless it is changed by the GRID command.
+Use the line command to draw in the cube.
+Now use the STYLE command to load the ROMANT font and change the obliquing an-
+gle in order to load letters onto an isometric plane.
+Note that the text font has changed.
+The oblique angle has also been
+placed at -30 degrees.
+Now add the text.
+Command: TEXT
+Specify Start point or [Justify/Style]:F
+Specify first endpoint of text baseline: (pick 1)
+Specify second endpoint of text baseline: (pick 2)
+Specify height<.2000>:.5
+Specify rotation angle <O>:.J (to accept the default)
+Enter text:3 .J
+Enter text:.J
+152
+CHAPTER EIGHT
+Now modify the text style to create the D. You
+will need to change the oblique angle.
+For practice you can copy this cube and place
+your initials on it as part of your personal title
+block. The top face is either a 30 degree oblieque
+angle or a -30 degree oblique angle, depending
+on the bottom orientation.
+
+
+===== PAGE 170/298 =====
+Step 9
+Change the oblique angle ofthe romant font to 0 and add the title and address using the
+Center option. Set SNAP back to nonnal before you start.
+Command: SNAP
+Specify snap spacing or
+[ON/OFF/Aspect/Rotate/Style/Type] :S.J
+Isornetric/Standard:S
+Incrernent<l.OO>:~
+Command: STYLE
+Change the oblique angle.
+Command: TEXT
+Specify start point or [Justify/Style]:C
+Specify Center point of text: (pick 1)
+Specify height <.5000>:.1
+Specify rotation angle
+<O>:~
+Enter text:Desiqn Studio
+@
+Enter text:Slip Gate Road
+~ ~
+Enter text:Frog Hollow
+~ ~
+Enter text:New
+Hampsh~re
+Enter text:.J
+Beach Design
+Slip Gate Road
+Reigate
+Surrey
+Step 10
+Use PAN to move the screen down so that you can change the STYLE to Italic and addthe
+notes regarding the revisions.
+Revisions
+Date
+Description
+I
+I
+I
+I
+Cornrnand:TEXT
+Specify start point or [Justify/Style]: (p~ck the first
+point)
+Specify height <1.5000>:
+.J
+Specify rotation angle<
+O>:~
+Enter text:Revisions
+Text:~
+Use the same command for
+Text:Date
+Text:Description
+Step 11
+Now create another box above the Revisions box, and add a paragraph oftext regard-
+ing the date oftender for the drawing. Use PUNE to quickly draw in a rectangle. Then
+change the style to romans. Finally add a paragraph of text using MTEXT.
+The command line equivalent is MTEXT.
+.•...••A··
+.••..•.i.·.....•....·.·.·•.·i
+...·
+.n
+Cornrnand:MTEXT
+I
+I
+I II
+I
+I II
+I
+I
+II
+I 111
+pra;f~gs;filbe..ser:i
+I
+k>ut
+for tender
+on
+}June
+7 2008. Any
+~honqe orders
+will
+!follow.
+_
+Text and Pictorial Views
+153
+
+
+===== PAGE 171/298 =====
+SOlIe
+as noted
+~~
+o-nBy
+5,~le5
+CtlecIGId By
+l?,~
+D8I&
+04/01/08
+Dlll&ofPlfnl 04/21/08
+drawings will be
+sent out10tender
+on June 2 08.
+Once the area has been picked, type in the text that you want, then highlight it to
+change the size of the text or the text font, as shown in this example.
+tmg
+Step 12
+I
+~ Futura U 8T
+as noted
+I...."BI S. Kyles
+Ch""i«ldlll
+D. Blackman
+04/01/08
+04121/08
+Use ZOOM All to view your title block.
+Id;;;;i~~~:;iill:>~....
+Isent OlJtto tender
+n June 208.
+Change some ofyour text using DDEDIT and file it
+for future use under the name Titleblock.
+Revisions
+Date
+Description
+~-
+-
+Beach Design
+Slip Gate Road
+Reigate
+Surrey
+Once you have a title block, you can insert it into
+drawings before printing, so don't lose it!
+You can get title blocks that are made up by Auto-
+desk on-line. Most companies, however, have
+their own title block.
+Attributes are very useful in title blocks for setting
+up the parameters for the size oflettering, the text
+font, the format, etc. So that the information on all
+drawings fits a format.
+-
+as noted
+-Br S. Kyles
+_.~
+a.r.oIBr D. Blackman
+-
+04101108
+_01...
+04121108
+cIrawlngrwdJ be
+_out101llnder
+onJunoo2OB.
+154
+CHAPTER EIGHT
+Make sure that your title block fits your discipline,
+i.e. Tfyou are making a mechanical drawing, don't use an architectural title block.
+
+
+===== PAGE 172/298 =====
+Step 1
+Start a new file in imperial units. You are making a rabbet corner for wood. No limits
+are needed, but you need to make sure you are in imperial, then set an isometric SNAP
+and GRID. Use acad.dwt or
+Command: NEW
+(Choose Imperial)
+or
+acad.dwt
+Command:UNITS
+Set units to architectural.
+Under the Tools pull-down menu, choose
+Drafting Settings and go to the Snap and Grid
+tab. Each release ofAutoCAD has a different
+layout for the dialog boxes. The infonnation
+is generally the same, but it is in a different
+place.
+GridspaClng
+GridX spacing-
+\1/4"
+!
+GridY spacing:
+Snap X ipaci1g:
+Snap Yspacing-
+Snap type
+@Gridmap
+o Re.ctangular snap
+@lsomfllric~nllp
+Major line evely:
+Grid behavior
+o Adapliytl grid
+o Allow $lJbdi."mion below grid
+spacing
+D Di;pk;y llli(j b~ond Limils
+[JFollowDynilJllicUCS
+Set the SNAP and GRID values as
+shown. Your spacing for the Y
+value will be
+~". TheXvalue will
+be relative to the Yonce isometric
+is chosen. Both GRID and SNAP
+should be on. Choose OK to exit
+this dialog box.
+!1J PoW TlocI«>!i Un (Fl01
+1'>101 A"!jl. ~ ,tOng,-
+Ir~~~
+~-·--1~J
+Set Polar Tracking to 30 degrees.
+Make sure you have POLAR, OSNAP and OTRACK on.
+Step 2
+Start by drawing LINEs. Start at 0,0, then move your cur-
+soralong the direction ofthe grid points and enter a polar
+value. Follow the direction of the arrow as shown.
+Command: LINE
+Specify first point:O,O
+Specify next point or
+[Undo] : 6 up
+Specify next point or
+[Undo] :3 across
+Specify next point or
+[Undo]:6 down
+Specify next point or
+[Undo] :c
+Text and Pictorial Views
+155
+
+
+===== PAGE 173/298 =====
+Step 3
+Now create lines in the opposite direction and use the ENDpoint OSNAP to close the
+object. If ENDpoint does not automatically come on with your OSNAP button de-
+pressed, right-click the word OSNAP, choose Settings,
+and indicate that you would like an ENDpoint setting.
+~
+2
+Command: LINE
+Specify first point: (pick 1)
+Specify next point or
+[Undo]:4 across
+Specify next point or
+[Undo]:6 up
+Specify next point or
+[Undo]: (pick 2)
+Specify next point or
+[Undo]:~
+Now create the top portion ofthe box. Follow the direc-
+tion of the arrow as shown.
+2
+Cornmand:LINE
+Specify first point: (pick 1)
+Specify next point or
+[Undo]:3 across
+Specify next point or
+[Undo] :END of
+(pick 2)
+Specify next point or
+[Undo]:~
+Step 4
+156
+CHAPTER EIGHT
+Now use the MIDpoint object snap to create the wedge.
+Type in MID if a triangle doesn't show up.
+Cornmand:LINE
+Specify first point:MID of
+(pick 1)
+Specify next point or
+[Undo]:2 down
+Specify next point or
+[Undo]:4 across
+Specify next point or
+[Undo]:~
+Use TRIM to remove the end ofthe line as shown.
+Cornmand:TRIM
+Current settings:
+Projection=UCS
+Edge=None
+Select cutting edges ...
+Select objects: (pick 1)
+Select objects:..J
+<Select object to trim> or
+shift-select to extend [Fence/
+Project/Edge/eRase/Undo] : (pick 2)
+It.........
+....
+................
+.... 2
+....x
+...........
+
+
+===== PAGE 174/298 =====
+Step 5
+Step 6
+Step7
+Use the LINE command to place the next two lines.
+Command: LINE
+Specify first point:END of (pick 1)
+Specify next point or
+[Undo]:4 across
+Specify next point or
+[Undo]:~
+Command:LINE
+Specify first point:END of (pick 2)
+Specify next point or
+[Undo]:4 across
+Specify next point or
+[Undo]:~
+Use the LINE command to place the next three lines.
+Command: LINE
+Specify first point:END of (pick 1)
+Specify next point or
+[Undo]:4 across
+Specify next point or
+[Undo]:~
+Command:LINE
+Specify first point:END of
+(pick 2)
+Specify next point or
+[Undo] :END of
+(pi.ck 3)
+Specify next point or
+[Undo] :END of
+(pick 4)
+Specify next point or
+[Undo]:~
+Now trim the line ends as shown and erase the line on
+pick 5.
+Command: TRIM
+Current settings:
+Projection=UCS
+Edge=None
+Select cutting edges ...
+Select objects: (pick 1,
+2)
+Select
+objects:~
+<Select object to trim> or
+shift-select to extend [Fence/
+Project!Edge/eRase/Undo] : (pick 3,4)
+Command:ERASE
+Select objects: (pick 5)
+Select objects:.J
+Use TRIM again to trim offthe last two lines so that the
+file looks like this. In woodworking, this is the first part
+ofa rabbet.
+Use PAN to get the objects fully on screen. Then move
+them a bit to the right for the next step.
+2
+2
+Text and Pictorial Views
+157
+
+
+===== PAGE 175/298 =====
+Step 8
+The GRID and SNAP should still be on. Use these to line up the next set oflines. Start at
+the top.
+Command:LINE
+Specify first point: (pick 1)
+Specify next point or
+[Undo]:2 down
+Specify next point or
+[Undo] :1.5
+across
+Specify next point or
+[Undo] :1 down
+Specify next point or
+[Undo] : 4 across
+Specify next point or
+[Undo] :3 up
+Specify next point or
+[Undo]:c
+Step 9
+Now draw lines in the opposite direction. Use the GRID as a guide or the lines will not
+be straight.
+158
+CHAPTER EIGHT
+Command:LlNE
+Specify first point: (pick 1)
+Specify next point or
+[Undo]:4
+across
+Specify next point or
+[Undo]:
+~
+Command:LlNE
+Specify first point: (pick 2)
+Specify next point or
+[Undo]:4
+across
+Specify next point or
+[Undo]:
+~
+Cornmand:LINE
+Specify first point: (pick 3)
+Specify next point or
+[Undo]:4
+across
+Specify next point or
+[Undo]:~
+Finally use ENDpoint in OSNAP to draw in the
+final two lines.
+Command: LINE
+Specify first point: (pick 1)
+Specify next point or
+[Undo] : (pick 2)
+Specify next point or
+[Undo] : (pick 3)
+Specify
+next
+point
+or
+(Undo) :.J
+Tutoria18b has illustrated how to
+rotate the SNAP and GRID, how to
+use POLAR with Object Snaps on
+a rotated SNAP, and how to TRIM.
+3
+2
+2
+
+
+===== PAGE 176/298 =====
+I
+~ I i
+Compa.ny
+Dawn BlacKmanDeSiqlll1c'
+Project
+4 Holhs Street
+...
+BriX1:on
+ROBICHEAU YACHT CLUB
+II
+I!
+R~
+RfItJ. No. DGH
+Dra.wing
+I
+floor Plan5
+~
+aaa
+(\j
+Exercise 8
+Practice
+Make a sample drawing using Iineweights with a lineweight key as shown in 8A.
+Then make a sample title block that you can use later as shown in 88 and 8e.
+-"'"'"""--1
+I
+OUTLINE .30
+WALLS
+DEFAULT
+VENEER/DIMENSIONS .18
+HATCH/DRYWALL .05
+8A
+PRACTICE
+TEXT WITH DIFFERENT L1NEWEIGHTS.
+ASSOCIATE THE LAYERS WITH THE L1NEWEIGHTS NOTED ABOVE
+YOUR L1NEWEIGHT WILL DISTINGUISH A GOOD DRAWING
+FROM A GREAT DRAWING.
+10 1/2'
+I
+-----3 1/4·------ir2·-lI-----3 1/4
+1 - - - - -r-
+..--t
+88
+Imperial
+-----110-----
+0+1---80---
+CLIENT
+MTL:
+TITLE
+FINISH:
+r 35-t-45--r-30-1
+65
+100MM CASTER ASS.
+SCALI:..: f:l
+TOl. UNLESS SPECIFIED
+DRN:
+I1J-y:. W'~
+DECIMAL
+O.O=tO.1
+DATE: Ron. q 1008
+0.00=+,0.05
+CHK. BY: ,b.rAX.
+Walker Inc.
+NUMBER
+R£V.
+lW'E
+ElY
+DESCRP110N
+J -
+2288A
+ae
+Metric
+--.E
+5
+10
+t
+Text and Pictorial Views
+159
+
+
+===== PAGE 177/298 =====
+Exercise 8 Architectural
+Notations are extremely important in steel shop drawings.
+80
+80
+80
+95
+....
+C)
+~
+t~
+I
+t-~H
+~
+I
+~
+(J\
+C)
+.......
+I
+I
+I
+I
+0
+,..-'--
+X
+IlJ
+451
+I-"
+r
+...0
+Ul
+I-"
+Ui
+C)
+r--
+U1
+C)
+Ul
+X
+0
+C)
+X
+50\50,
+159
+I-"
+I
+I
+I
+0
+X
+-o-e-o-
+w
+f\)
+C)
+to
+P
+w
+.j:>,
+U1
+'-/
+0
+\0
+0
+"
+Z
+CD
+0
+;r(
+r
+0
+C)
+4::-
+-<
+(J\=
+X
+OJ
+IlJ
+X
+J>
+.j:l.
+\D
+(/.l
+(J\
+0
+8
+---l
+I
+fTl
+;;0
+fTl
+Z
+t:::I
+~-,---
+I
+I
+I
+I
+++-+-+-+1
+:::j
+ru
+0
+p
+I
+I
+I
+-=-
+I
+0"
+td
+fTl
+J>
+3:(J\
+(/.)
+IfTl
+J>
+td3:
+W(/.l
+J>I
+(/.)
+td
+zru
+o
+---l
+fTl
+t:::I
+"-l
+~
+....
+~
+a
+.j:l.
+(J\
+O't
+.......
+0
+C)
+X
+X
+(J\
+~
+<Xl
+Ul
+~
+14_5_
+I
+I
+~
+I
+I
+80
+80
+80
+95
+.....
+a
+~
+131
+-} t-t-1>-~H
+;r(
+~
+CJ'I
+Cl
+.......
+0
+I
+I
+I
+I
+....
+L-
+X
+f\)
+451
+I-"
+r
+\D
+U1
+I-"
+0
+r--
+0
+X
+0
+0
+X
+I-"
+0
+X
+W
+f\)
+0
+r-,
+;r(
+.j:l.
+.j:>,
+U1
+(J\
+\0
+0
+CO
+0
+0
+W
+0
+X
+CD
+ru
+X
+f\)
+~
+r
+\D
+"'-J
+(J\
+(X)
+Ul
+'-/
+X
+"'-J
+Ul
+X
+0
+X
+.......
+nJ
+0
+I 1
+11
+I
+T
+YI
+!
+!
+~
+SHOP DRAWINGS: STRUCTURAL STEEL
+STEEL BEAMS SUCH AS THESE ARE MANUFACTURED IN THE PLANT WITH THE FASTENERS IN PLACE AND READY TO
+INSTALL.
+THE SHOP DRAWINGS TELL THE MANUFACTURERS WHAT FASTENERS - L BRACKETS - ARE NEEDED AND WHERE THEY GO.
+THE HORIZONTAL MEASUREMENTS ARE NOMINAL, BUT THE VERTICALS MUST BE DRAWN TO SCALE.
+ALL NOTATIONS MUST BE PUT IN EXACTLY AS SHOWN. BOTH THE MANUFACTURERS AND THE INSTALLERS WILL KNOW
+WHAT THEY MEAN. THE BEAM MARK W460 X 82 X 4960 MEANS THE VERTICAL HEIGHT X THE MASS X THE LENGTH OF
+THE BEAM WITHOUT THE FASTENERS. THESE PARAMETERS ARE MEASURED TO A CENTERLINE OF THE RECEIVING BEAM OR
+GIRDER.
+160
+CHAPTER EIGHT
+
+
+===== PAGE 178/298 =====
+Exercise 8 Mechanical
+Draw all of this example, including the title block.
+TYPE-A
+R1/4
+3.0058
+R15/16
+¢ 3/8 6 HOLES
+1 1/2
++
+02
+R3/16
+..:;t
+"-
+--+--+----7f------+ (Y)---l...--+----+-===-~=-:-=~+_--_._
+C\J
+R1/2
+1 5/8 -----+---1 1/8 -"--1 3/8
+1----------5---------J
+l----------6---------l
+PART
+REVISIONS
+The making of any portion of this drawing or any portion thereof by any means
+is expressly prohibited unless authorized in writing.
+Job
+Gasket
+Drwn
+Date
+Scale
+App
+Company
+Cribbin Limited
+OWG
+No.
+Text and Pictorial Views
+161
+
+
+===== PAGE 179/298 =====
+Exercise 8 Wood Millwork
+This page shows a section and side view of a train station bench.
+The wood hatch is made with plines.
+The concrete hatch can be found in Chapter 9.
+NOTE:
+ARMRESTS TO BE PROVIDED
+AT BENCH TYPE 2 ONLY
+25 CUBE ALUM
+GRILLE (TYP)
+19 HARDWOOD CAP
+CONTINUOUS
+38 THK HARDWOOD
+BENCH WI
+STAIN FIN ON
+WD FRAMING
+PS REQUIRED
+",--------
+~
+2S THKHRDWD
+ARMREST
+SEE NOTE
+ABOVE
+40 TERRON
+METAL LATH ON
+----?>
+90 CONC BLK
+varies
+125
+LIGHT FIXTURE AND
+MOUNTING BRACKET
+SEE ELEC. DRAWING.
+varies
+125
+425
+325
+25
+1
+"--~
+15...:.....:--.30~~!-_~
+~
+1680
+(FOR TYPE 1 ONLY)
+---J,
+Section
+scale 1:50
+BUILT-IN WOOD
+BENCH TYPE 2
+NOTE
+To show dimensions at twice
+the scale factor on the same
+page, create a new dimstyle.
+Under the Primary Units tab
+change the Measurement Scale.
+162 CHAPTER EIGHT
+SKTI
+NJOVf!.
+3000
+90 DIAHDWD
+/
+ARMREST CAP (TVP)
+o0.
+Side View
+scale 1:100
+
+
+===== PAGE 180/298 =====
+Exercise 8 Wood Millwork (continued)
+This pictorial view of the bench found on page 162 helps to describe it.
+A rotated SNAP makes this much easier.
+CAVALIER AND CABINET PROJECTIONS
+PICTORIAL VIEWS ARE USED TO HELP DESCRIBE AN
+OBJECT. THE CAVALIER VIEW, SHOWN BELOW, IS A
+STANDARD WOOD DETAILING PROTOCOL. THE
+FRONT PLANE IS SHOWN AT A SLIGHT ANGLE TO
+THE VIEWER WHILE THE BACK RECEEDS AT A 45
+DEGREE ANGLE.
+ISOMETRIC VIEWS, AS SHOWN ON THE NEXT PAGE,
+HAVE ALL ANGLES AT 30-35 DEGREES.
+OBLIQUED VIEW
+FRONT
+CLR ANOD 25 CUBE
+ALUM GRILLE
+(TYP)
+S. ST COVER TO
+SUIT OPENING 250 X375
+e/W 19 WIDE EDGE TRIM
+& ENGRAVED SIGNAGE
+BY SECTION 10800
+BULLET END
+(TYP)
+WASTE
+\
+\
+\
+\
+\
+\
+>
+I
+25
+;';50
+25
+I
+/
+EQ
+EO
+6 RADIUS (TYP
+ALL OUTSIDE
+EDGES)
+RECESSED TERR
+BASE
+--------Ir-----3>
+HDWR ARMREST ----
+~
+REMOVABLE SST
+CONTAINER, 250 WX
+4000 X550 H
+SHOWN DASHED
+5 5T PANEL C/W
+ACCESS DOOR
+LOCK & ENGRAVED
+SIGNAGE (TYP
+OPPOSITE SIDE TO
+NEWSPAPER
+RECEPTACLE)
+Cavalier View
+Text and Pictorial Views
+163
+
+
+===== PAGE 181/298 =====
+Insulated Concrete Form
+o
+N
+a::::
+~
+::>t;
+2
+1;;
+L..
+(l)
+•
+,,,
+E ~
+'"
+E~
+0') ~
+0
+,..
+O+-
+~
+go
+(1)
+:E ~
+_""'0
+_
+0'
+C
+.;: E
+,..
+(l)
+(;
+......
+-£ LL
+U
+~
+Cl)
+o
+11>
+-'=
+l.-
+V)
+Uc
+I'Y"\
+V)
+0
+'\AJ
+§ U
+11\
+:;:::"""'0
+'II'
+U
+Cl)
+*A
+(l)
++-
+V#
+V)
+0
+·u
+~
+~
+L..
+~.E
+(1)
+0
+Cl)
+><
+~-£
+W
+(l)"""'O
+....c.
+C
+I-
+0
+,~ ~
+~~~
+~
+Frame
+6 Double
+'2 x
+ToP plate
+~eill\\lttil\q
+\J(li~
+'~!IIIlI at ~' ..--..I......
+tal\~
+f%\\1iq
+510b~
+Of 2.5"
+65f111f1d pofYStYrene
+£tPOnd8
+Of 6"
+150(11((1 rete
+co(1C
+l-
+I
+(!)
+W
+a!
+~
+~u
+~
+"0-
+
+
+===== PAGE 182/298 =====
+The BHATCH
+Command
+HATCH, SKETCH, and
+GRADIENTS
+On completion of this chapter, you should be able to:
+f .. Use the BHATCH command
+"",",,,,",, .~. hatches
+command
+fhe;(jRA..DIE:NJ command
+This chapter will deal with graphic patterns that will make your drawings look more
+professional. Hatches are used in mechanical and civil drawings to show cross-sec-
+tions or the delineation ofdifferent materials. In architectural applications, hatches are
+used to show the types of material used e.g.brick/stonel wood/concrete/sand.
+The BHATCH command fills an enclosed area with an associative hatch patternthat will
+update when the boundaries are modified. In addition, BHATCH allows you to preview
+the hatch pattern and adjust the definition or options of the hatch such as scale and
+angle. BHATCH is accessed through a dialog box. To access BHATCH:
+.
+,
+.
+The command line equivalent is -HATCH for the command line, BHATCH for the dia-
+log box.
+Command:-HATCH
+Current hatch pattern:ANSI31
+Specify internal point or
+[Properties/Select objects/draw
+boundary/remove Boundaries/
+Advanced/DRaw order/Origin] : (pick 1)
+Figure 9.1
+The hatch will be drawn within the area specified. The area
+must be a closed boundary, as in Figure 9.1.
+When placing hatches, consider the boundary as containing something liquid: if the
+shape is not closed, the hatch will simply pour out until it meets with a boundary that
+will contain it. Close comers with Fillet radius 0 and try to avoid overlapping geome-
+try.
+In earlier releases there was a command called HATCH that created a hatch that was not
+associated with the boundary. This was useful particularly in architectural applica-
+tions for showing dappled light on textured surfaces. The boundary hatch could be
+copied to make several regular patterns.
+In Releases 2007 and 2008, this is under Options in the BHATCH menu.
+HATCH, SKETCH, and GRADIENTS
+165
+
+
+===== PAGE 183/298 =====
+The BHATCH dialog Box
+The BHATCH dialog box offers many good options.The GRADIENT command is under
+the same menu but has a different tab. Ifyou don't get the full menu below when you
+open the BHATCH command, use the small arrow on the bottom right.
+I~l!optioo$
+0u~<;l,ll'!I~,wongin
+o Vie' ~O\lfCe fh>llq;hOliSin
+opti=
+~A~ociaWe
+oCreate Sepal',*, h$Che~
+Scale:
+Predefined
+Sf:!
+ANSI31---'i~~Q
+W'/%?7)/j'
+Hatch Qflgin
+G Use cunel"ll origin
+o Specified origin
+Swatch:
+Type and pattern
+Angle and scale
+Pattern:
+Type:
+The BHATCH dialog box controls every aspect of the hatch pattern.
+Type
+tells you if it is a user-defined or an AutoCAD-defined hatch
+Pattern
+controls the ACAD standard hatch patterns. Hatch patterns are
+listed by name in the dialog box. Click on the down arrow to
+view the available patterns. This area lists only the names of
+the patterns
+Swatch
+illustrates the pattern
+Preview
+allows you to preview the hatch before applying it
+Angle
+controls the angle of the hatch patterns. Angles are generally
+counterclockwise
+Scale
+shows the scale of the pattern to be used. The default scale
+factor is 1. This means that the hatch is calculated to be
+displayed at the default screen size or an 11" x 8 1/2" sheet
+Hatch origin
+used for setting bricks or stone to start points
+Boundaries
+refers to the objects that are to be hatched; either closed
+objects, such as circles or ellipses, or sets of contiguous
+objects
+Options
+allows for the hatches to be non-associative
+Inherit properties
+acts like the MATCHPROPERTIES command, matching the
+pattern scale and angle of a chosen hatch and applying it to
+another hatch
+166
+CHAPTER NINE
+
+
+===== PAGE 184/298 =====
+Layers
+In Figure 9.2 the hatches are contained by boundaries
+that are placed on a different layer then frozen. Only
+the hatch is seen on the final drawing.
+Figure 9.2
+Scale
+Each hatch pattern has a specific number oflines per inch. For example, the ANSI3]
+pattern generates three lines per inch at a scale of I:1. Ifyou have changed the limits
+and the model is larger than 11 units in X, you must change the scale factor.
+When working in inch units, the scale factor of the hatch should be the lnaximum X
+value ofthe screen divided by 12, the same as the scale factor for LTSCALE. For exam-
+ple, limits at 0,0 and 24,18 would have a scale factor of 2.
+406,2:74
+?OII~(Y
+----_._._----
+Scale I
+Scale 2
+Scale I
+Scale 20
+Scale I
+Scale 48
+a
+b
+Figure 9.3
+Other scale sizes are shown in Figure 9.3. Remember, if you are using architectural
+units or feet and inches, each 11l1it is an inch, not a foot.
+Always use the Preview option on the bottom left ofthe BHATCH dialog box before ap-
+plying the hatch to see if it is correct.
+In Chapter 11 there is a discussion on scale with regard to the size ofthe hatch and line-
+type scales and the size of the drawing. Before producing the final drawings, check
+Chapter 11 to see that the hatch is accurate.
+Identifying the Boundary
+For many students, this is where the difficulties begin because objects must form a per-
+fect boundary.Lines, circles, and other objects are sometimes not entered accurately.
+SNAP and OSNAP are not always used effectively and consequently the lines are
+crooked, do not have tidy intersections with adjacent items, or are otherwise defective.
+This means that these objects do not provide an adequate boundary for hatching.
+Angle
+90
+b
+a
+Figure 9.4
+Angle
+If you are picking a hatch from the pull-down
+menu, the rotation angle will be exactly as
+shown. For example, Figure 9.4 a uses ANSI33,
+which is displayed at an angle of45 degrees. To
+pick this pattern as it appears on the screen, do
+not change the rotation angle; leave it at zero,
+because that is the angle ofthe pattern itself.
+Figure 9Ab has ANSI33 at the default rotation
+and at a rotation angle of 90 degrees.
+When using user-defined hatch patterns, the ro-
+tation angle is calculated at the horizontal, ro-
+tating counterclockwise.
+If you do not adjust your scale
+factor, AutoCAD will attempt to
+create the hatch at the default
+scale. There is a good chance
+you will run out of room on your
+floppy disk and be forced to exit
+from
+the
+file.
+Save
+your
+file
+before
+hatching,
+and
+preview
+the hotch just in case.
+HATCH j SKETCH, and GRADIENTS
+167
+
+
+===== PAGE 185/298 =====
+Use FILLET with Radius 0 to clean up your comers, or make the objects into a continu-
+ous boundary with the PEDIT command and the Join option.
+There are two basic ways of identifying the boundaries: by picking points and by se-
+lecting objects.
+Add: Pick points
+identifies a boundary from existing objects that form an
+enclosed area. AutoCAD defines the boundary by
+analyzing all the closed objects in the area. Once you
+have chosen the Pick points option, the dialog box
+disappears and AutoCAD prompts for point
+specification.
+In Figure 9.5, pick 1 is
+within the outer closed
+boundary and outside the
+circle, so the circle is
+Xl
+shown not hatched.
+Add: Objects
+Figure 9.5
+allows the user to identify the boundary by object
+selection rather than as an internal point. Sometimes
+both Select objects and Pick points can be used
+successfully to identify one batch boundary.
+2
+Figure 9. 6
+I@)(c?)ll~~l
+l[Cl1'G
+I
+i I Te~t
+I
+I
+i,.,',
+Test
+1,1
+"'~
+:
+-
+!
+,_~_
+l
+~_~
+In Figure 9.6, the objects are picked up with a window selection using Add: Select oh-
+j ects. In both cases the geometry must fonn a continuous boundary.
+Preview
+displays the hatching before it is applied. This can save a lot of
+time
+Advanced Options Dialog Box
+This dialog box controls the definition ofthe boundary set.
+168
+CHAPTER NINE
+Object type
+AutoCAD's hatches are created either in regions or in
+polylines.
+
+
+===== PAGE 186/298 =====
+2
+I
+~
+@
+1*-
+--l
+a
+b
+c
+Figure 9.7
+In Figure 9.7a, all ofthe objects were picked by Select objects. The resulting alternat-
+ing hatch is the saine as in Figure 9.7b where the hatch boundary was chosen by a Pick
+Points option.
+In Figure 9.7c, the second circle in from the center was re-
+moved from the selection using the Remove boundaries op-
+tion of the Boundaries section. This allows you to control
+which boundaries will be hatched.
+The resulting hatch will he associative. You can modifY or
+delete it as one object only; the individual areas cannot be
+modified by themselves.
+~. Add:.Pick point~
+[iJ Add.SeJectobjecls
+i'l
+Removeboundaries
+,~~emz!;:::r~<?a%fdl}'
+~
+View Selections
+Solid Hatches
+All Releases after 2006 allow for solids in undulating
+boundaries, such as that shown in Figure 9.8. Pick the
+Solid hatch pattern from the BHATCH dialog box under
+pattern.
+Solidhatches for circles are also a good idea when plot-
+ting; for SOlne reason a solid round hatch is easier for a
+Figure 9.8
+plotter to calculate than a donut.
+Editing Hatches
+There are two ways ofediting associative hatching. The first is to edit the boundaries;
+the second is to edit the actual hatch itself.
+Editing Boundaries
+With associative hatching, the hatch will update when the boundaries are changed.
+x 4
+r7"7""77";'777"-::>"77771
+>f:c---------, x3
+Figure 9.9
+Command: STRETCH
+Select objects: (pick 1)
+Other corner: (pick 2)
+Select
+objects:~
+Specify base point or
+displacement: (pick 3)
+Specify
+second point of
+displacement: (pick 4)
+In Figure 9.9 the hatch has updated along with the boundaries. Hatches will also
+MOVE/ ROTATE/ MIRROR and SCALE along with the boundary. The hatch layer must
+not be locked for the hatch to be edited.
+HATCH/ SKETCH/ and GRADIENTS
+169
+
+
+===== PAGE 187/298 =====
+Editing the Hatch Properties
+Figure 9.1Oa shows the base hatch.
+In Figure 9.10b, the pattern has been changed
+from ANSl35 to ANSI38.
+In Figure 9.1 Oc, the scale of the hatch in Fig-
+ure 9.1Oa has been changed.
+To edit a hatch, double-click the hatch and the
+BHATCH dialog box will appear. Change the
+properties there. (In Releases prior to 2007, a
+right-click is needed.)
+q
+Figure 9.10
+b
+The SKETCH
+Command
+SKETCH provides freehand sketching capabilities
+on a drawing. Ifyou want to be taken seriously as
+a designer, lolly-pop trees will not do. The tree in
+Figure 9.11 is shown in context on page 180.
+The motion ofthe mouse determines the position
+ofthe sketch segments; the accuracy ofthe sketch
+segments is determined within the command.
+The SKETCH command will prompt the user for
+the increment or the distance between segments;
+for smoother curves, use smaller increments.
+Segments are not recorded on the disk until you
+use the Record option.
+The command line equivalent is SKETCH.
+Figure 9.11
+Command: SKETCH
+Record increment <0.01>:.1
+Sketch,
+Pen eXit Quit Record Erase Connect:P
+Sketch:
+Where: Record
+QUit
+Pen
+eXit
+Erase
+a save of all the lines drawn so far. Rwill make a permanent
+record of your lines without exiting from the command.
+a cancellation of the segments to date. Q will leave SKETCH
+without saving the segments you have drawn.
+the pen is lowered. The system prompts to put your pen down;
+whatever move you make with your cursor will be recorded. P
+a second tinle will lift the pen up.
+the end of the command. Xwill exit from the Sketch
+command, retaining all segments created up to that point.
+an erasing ofsome of the line segments drawn. Ewill allow
+you to erase lines from a certain point; it acts as a
+"backspace" over segments created.
+170
+CHAPTER NINE
+Connect =
+a continuation of a previous sketch. C lets you pick up sketch
+again at the last entered endpoint after it has been ended.
+The SKETCH command is useful for making landscaping and rough-edged sketches.
+The number of lines created by the SKETCH command may be a problem. Be sure to
+save your file before you start to sketch.
+
+
+===== PAGE 188/298 =====
+Gradient
+GRADIENT, like HATCH, is used near the end ofa drawing session to add the finishing
+touches to a drawing. Like the SKETCH command, this is more ofan art than the normal
+AutoCAD process. Because ofthis, it is suggested that you use GRADIENT sparingly.
+What may look really fantastic to the unpracticed eye may seemjustsilly to people who
+have some experience of reading and looking at drawings.
+ie.
+~
+..
+The command line equivalent is GRADIENT.
+Most of the options of the GRADIENT dialog box are similar to those of the BHATCH
+dialog box. First you lnust identify a closedboundary. Once this is done, you choose the
+pattern that you would like to have shown within that boundary.
+The Pick points and Select objects
+options are the same as those for
+the HATCH command. The Inherit
+Properties option is also the same.
+Like hatch, the gradients can be
+either
+assocative
+or
+non-
+associative.
+Bounrillrie~
+!iii
+Adde Pick points
+l!i]
+Add Select obiects
+Angje:
+Shiode
+Tlnl
+1]
+;' J '_
+••.~
+:
+~
+:-
+'
+! J
+••'1
+~
+1111
+0Cenlered
+Col",
+Gnne colol
+0 Iwo ';;0101
+Ori~ntallon
+E
+[j
+11 Hatch dnd GrudJelit
+IIJ~I
+The major difference with gradi-
+ents is in the choosing of colors.
+Once you open the color section,
+you will see that this is more com-
+puter
+graphics
+than
+computer
+aided design.
+The GRADIENTS are loaded in a
+pixel address format as opposed to
+the usual vector format that Auto-
+CAD uses. This takes up a lot of
+space, and care is required for
+(i)
+plotting. Do a trial plot before sub-
+11...-
+--1
+mitting your drawing.
+The colors are also designer colors, and the palettes are RGB (red/greenlblue) and
+Pantone colors. Most students need little encouragement to 'play' with the color pal-
+ettes and tones. Keep in mind that there is a thin line between cutting edge design and
+overuse of colors.
+PrmtingyourGradkn~
+When choosing your color palette, be aware that the colors you see on screen are rarely
+the same as in a print-out. The final color depends on both resolution (dpi) andpalettes.
+RGB are on-screen colors. Printing machines are generally calibrated for CMYK
+(cyan, magenta, yellow and black). In addition, the Pantone colors are usually a bitdif-
+ferent to those seen on screen.
+Practice printing your gradients well before the time that your project is due. Each col-
+or printer will produce different results.
+HATCH, SKETCH, and GRADIENTS
+171
+
+
+===== PAGE 189/298 =====
+Veneer
+Veneer
+Pins
+Concrete
+Insulation
+Walls
+In order to make this cavity wall section, you need to have the outline ofthe sections
+drawn. See page 174 Step 6 for the final version. Open a metric file acadiso.dwt.
+Make up several layers:
+Stepl
+Draw the pin and the veneer on the respective layers. Make sure that the veneer layer
+has all the lines for a continuous boundary' i.e. the area where the pin is inserted into
+the veneer is part of the concrete layer, not the pin layer.
+The insulation layer is between the veneer layer and the concrete layer.
+~NSULAT~ON
+CONCRETE
+400
+Step 2
+Once these outlines have been drawn, the rest is relatively easy.
+Freeze all layers except the veneer.
+r----------------------¥2
+fDDLLJDD
+i[j
+DGq
+___________________ J
+172
+CHAPTER NINE
+
+
+===== PAGE 190/298 =====
+11
+Now access the BHATCH dialog box.
+Once in the BHATCH dialog box:
+• Choose the ANSI31 hatchpattern.
+• Change the scale to 10.
+• Choose the Add Select objects
+icon, then use a window to select the
+objects as shown above in picks I
+and 2 to place the veneer hatch pat-
+tern in the boundaries as shown.
+lfthe hatch does not look like the one
+on the facing page, some ofyour cor-
+ners are not closed. Window each
+brick individually and put hatches in
+one by one. You will soon find the
+faulty comer.
+Type and pattem
+Type:
+Step 3
+Make the insulation layer current.
+Pattern
+Swatch:
+Step 4
+Freeze all the layers except for the insula-
+tion.
+Using the Boundary hatch menu, add the
+insulation using the insulation hatch.
+Make sure that you have closed all the rec-
+tangles or the hatch will not work. Use FIL-
+LET Radius 0 to clean up comers.
+Now thaw your concrete layer. Notice that
+the pin layer shows the pin from the outside
+edge of the concrete. The concrete layer it-
+self is a continuous boundary with the area
+for the pin removed.
+Once the boundary is continuous, add in the
+text and PLiNEs as shown to indicate that this
+is the concrete column.
+~x
+r
+II
+.
+...... ]
+:",."":~~N:~~E~E
+·.·.··.C?l~N: .
+••
+:
+...
+J
+~..
+-# ...
+•
+011
+...
+..t
+t
+.....
+l_~'
+:
+.'
+:.,
+~~J
+Your hatch will leave a space for the text so
+that it can be properly read.
+Now go to the BHATCH dialog box.
+Change the hatch patternto ar-conc (architec-
+tural concrete.)
+You will also need to change the scale. The
+architectural patterns are 12 times larger than
+the mechanical patterns, so a scale of 1is fine.
+Choose the Pick points icon and pick a point within the concrete boundary as shown in
+pick 1 to identify the hatch boundary.
+HATCH, SKETCH, and GRADIENTS
+173
+
+
+===== PAGE 191/298 =====
+Preview the hatch.
+If the concrete hatch doesn't look like
+the one opposite, use ESCape to go
+back to the BHATCH menu and make the
+r
+~I·I
+necessary changes.
+~
+D 7
+I
+2.J
+Step 5
+Finally put ahatch inyour wall section.
+...
+I~~~-'
+"
+"'.d
+ill
+~ ~ Jj
+T~peand palteln
+T~p<I
+~~
+P..lIi"An
+~__!'JO
+S_ch
+1111111111111111
+Thaw all of your layers.
+In construction drawings, unless you
+are seeing the entire expanse ofan area,
+there is a break line as shown at the
+edges of the walls, insulation and
+veneer. Put in the break line on your wall sec-
+tions before hatching so that the ends of the
+walls are shown to be broken as well.
+As in the previous two hatches, you will
+need to copy some data over to the
+walls layer to make a complete bound-
+ary.
+Step 6
+The wall section is almost complete. All you need is to finish the drywall on the inside.
+Create
+another layer called
+drywall. Put in the boundary as
+shown, and find an appropriate
+hatch for it.
+I~-~--~ ~~
+.
+~.
+~.'(C~N'~~'E~Y-=[Elir
+. ": C~U'N ~
+i
+'G'
+J
+"
+...1
+..
+This is a construction detail of
+a concrete column.
+There is a thin layer of insula-
+tion on the outside of the exte-
+rior wall and the column.
+The veneer, in this case either
+brick or decorative concrete
+block, is pinned to the column,
+as is the wall itself.
+The inside finish is drywall.
+To do this kind of detail with-
+out using layers is possible, but
+much more difficult.
+A
+•
+.:
+174
+CHAPTER NINE
+
+
+===== PAGE 192/298 =====
+Exercise 9 Practice
+Sections are used to show what an object is made of
+as well as where the indentations and cuts are within it.
+In the case of the wheel, almost nothing can be gained
+from looking at the front view alone. The section tells everything.
+!II
+)
+~I 3'
+1v"1---9'--j
+!:II
+!:II -J11
+~~
+,.. }.7'5'
+~ l
+1
+II
+165 175
+Stair
+Fft
+·51
+1.5
+I-L
+Die Ring
+t
+420
+1~3B'O-1
+I
+Section
+'A-A'
+Plate Section
+9l100.0
+¢38,O
+l,ll22,O
+HATCH, SKETCH, and GRADIENTS
+175
+
+
+===== PAGE 193/298 =====
+Exercise 9 Architectural
+In architectural applications hatches and gradients are often used
+in elevations. These are elevations of the house shown in plan on pages 85 and 137.
+The foundation, shown in hidden lines, has a break line. Note that the
+elevations are lined up on the page.
+4'-0"
+rc
+11
+nJ+
+~~~
+~~
+\~
+~Ijl ~
+0
+~7~
+~
+~.~-
+0
+[
+~1~
+1/
+E§
+.
+~~
+a:
+i I"
+~
+I
+El3n~ ~F=
+I
+I
+I
+I
+I
+LJr+-
+i
+LJ~
+l.I.~
+I
+I
+I
+I
+Ii
+I
+I
+j
+I
+j
+I
+r8/- O",
+I
+I
+I
+I
+I
+1
+I
+1
+f---,
+l~
+!~
+e- n
+la
+'---
+:0
+\.f>
+!~
+I""
+~
+n~
+I"
+~l~
+:""
+3
+l~r
+:
+I
+iHEt
+r
+1-I=h
+r
+i=
+~~
+1"=
+~
+~'i.. I-
+'=
+I~~
+=
+=~
+~
+i=
+W
+'=
+1=6::
+=
+6::
+I-
+I
+I
+EI:EEm
+ILr I I
+--.n;;:::;
+u+
+11!j:f~
+1I1Q'
+!=
+11111=I l=t::
+~
+I---J:::J-
+~
+w-
+I<----, 4'-0"
+I
+I111111
+IIIII11
+:=
+~
+~
+I
+'-'~
+n
+Ir
+l)
+I~~
+--.=
+1=
+I-
+~
+IA~
+I~
+(J1
+§
+1\
+I
+IIIIIII
+~
+~
+EEEEE§
+j
+LJ
+V
+, 0" f---:
+1/<
+I
+I1l"""t
+II F1::j...lf1=
+§
+II~::J-
+U
+l'
+..
+I---
+~
+4
+ELEVATIONS
+ELEVATIONS ARE A VIEW OF EITHER THE EXTERIOR OR THE INTERIOR OF A BUILDING AS SEEN FROM ·STRAIGHT-ON", THE FINISH MATERIALS ARE
+INDICATED BOTH WITH HATCHES AND WITH NOTATIONS. THE
+HEIGHTS OF FINISHED FLOORS, CEILINGS AND/OR DOORS AND WINDOWS CAN BE
+SHOWN AS WELL. THIS GIVES AN INDICATION OF WHAT THE PROJECT WILL LOOK LIKE WHEN COMPLETED.
+176 CHAPTER NINE
+
+
+===== PAGE 194/298 =====
+m
+><
+(l).,
+n_e
+(I)
+(l)
+'0
+~
+ooc..
+~
+_e-
+~.,;\
+Z-I
+m
+;0
+o
+:::0
+om
+--I
+l>
+r
+Z
+G)
+CONrlNUOJ5
+5PNfR@BASE
+Of:;Hl.:l.f UNif
+no~c~
+O-il>~-l
+3: I
+-l-in
+-umm(l)I
+~::tl::2l>~
+-i°ml>::tl(l)
+m-i[;;m-
+(l)l>-
+oro
+mj=z~~
+-i(l)(I)l>I
+~~~~25
+omFo~
+~Zl>l>(I)
+:E ~ ::! (I) -
+zm~z~
+C'l(l)::U
+°
+~l>m:im
+::Uo- z
+-<c(l)-i
+,,:;omm
+~~~~
+m3:~
+l>z-uz
+~~~
+l>
+Z
+Z
+-i
+o
+IS~I
+292.11
+4
+--l\".\
+WOW\!lJt~R
+5'6
+11
+5'6
+11
+9S11
+2
+front rlevatiGr1
+I
+~I~
+29211
+4
+5Pl'AKfR
+')
+o
+~
+Section @ HinC1ed Shelf
+1~~~'6'
+h\]
+.~
+
+
+===== PAGE 195/298 =====
+Exercise 9 Mechanical
+Using the dimensions on this page, create the
+assembled section for the tool post shown on page 179.
+7/8-9UNC
+/
+SQ,
+HD,
+5/8 AlP
+J==~6
+,,-I---+-~c1-Y4
+~-l-~
+f
+6
+3
+7/8 -
+9 UNC
+BOLT
+wEDGE
+EDAl
+I
+R5%
+¢2
+\
+\
+\
+J
+/
+/
+/
+./
+i
+'-i--+--+-' --C~6 l
+....---- .........
+,/
+..........
+/
+/
+I
+I
+\
+\
+POST DETAIL
+----e-Y2
+~-r---+-----+---::::O ~
+1---4
+rj)------1./
+BASE RING DETAIL
+178 CHAPTER NINE
+
+
+===== PAGE 196/298 =====
+Exercise 9 Mechanical (continued)
+Using the dimensions on the previous page create a section of the toolpost as shown.
+Then try creating a section of the battery pulley.
+4 5/8
+PICTORIAL VIEW'
+SECTION
+TDDLPDST
+1/2 DIA
+3/32 DRILL
+/'
+........
+-"-.....
+17/64 DIA X 318
+All FILLETS AND
+ROUNDS l/8R
+BAT"TERY PULLEY
+SCl'ew
+/BI"D.Cket
+,
+Jo.w
+HATCH, SKETCH and GRADIENTS
+179
+
+
+===== PAGE 197/298 =====
+Example 9 - Challenger
+This is a stunning use of gradients. Try designing a facade yourself.
+180 CHAPTER NINE
+
+
+===== PAGE 198/298 =====
+Using Blocks
+Blocks and Wblocks
+Oncofflpletionof this chapter, you should be able to:
+Create o· block
+2.Creoteo·wblock
+3. lNSERTboth blocks and wblocks
+4,Use Copy/Paste
+5.t)se COLOR, LAYERS, and other data with blocks
+6. lJse blQcksform the AutoCAD Design Center.
+Blocks are a way ofcompiling lnany different drawings and drawing details onto one
+final drawing. By using BLOCKs on large projects, you can cut down design time by
+creating portions ofthe drawing separately and then assembling them on a final draw-
+Ing.
+There are two types of blocks used in AutoCAD. An internal block created with the
+BLOCK command is part ofthe base drawing and cannot be accessed except within the
+drawing. An external block or wblock is a drawing file.
+Any drawing file can be inserted onto another drawing file at any time. Drawing files
+are already external blocks.
+Dimensions and hatches are also considered blocks by AutoCAD because they are
+groups ofinfonnation, but these are not made with the BLOCK commands.
+The six commands that are connected with blocks are:
+BLOCK
+WBLOCK
+INSERT
+MINSERT
+BURST
+EXPLODE
+creates an internal block
+creates a .DWG file or external block
+inserts either a block or a wblock (external drawing file)
+inserts blocks in rectangular arrays like the ARRAY command
+reverts the blocked data back to individual objects
+reverts the blocked data back to individual objects
+The BLOCK
+Command
+The BLOCK command is used to create a group or set ofobjects that are identified by a
+given name. Once blocked, an object can be inserted into your drawing many times.
+Blocks created with the BLOCK command are internal.
+The command line equivalent is BLOCK or -BLOCK for no dialog box.
+When creating a block, you must identify three things. The name ofthe block, the in-
+sertion base point, and the objects contained within that block. The dialog box can be
+accessed either through the icon or by typing in BLOCK. If you find the dialog box
+cumbersome, type in -BLOCK. It is much quicker.
+Blocks and Wblocks
+181
+
+
+===== PAGE 199/298 =====
+Adding the (-) before the command brings up the command without the dialog box.
+If you don't like dialog boxes, most
+can be turned off by adding
+a
+hyphen,
+for
+example,
+-block,
+Command:-BLOCK
+Enter block name or
+[?) :STENO
+Specify insertion base point:
+MID of (pick 1)
+Select objects: (pick 2)
+Other corner: (pick 3)
+Select objects:..J
+2
+r -----------¥
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+3 I
+I
+*
+J
+Figure 10.1
+If you use .BLOCK, your block will
+disappear. With the dialog box, it
+will only change color.
+The INSERT
+Command
+182
+CHAPTER TEN
+Both the Block Definition dialog box and the command string above will create a
+block of information, as shown in Figure lO.l.
+The insertion base point on a block is
+particularly important, because it is the
+point of reference for inserting, much
+like the base point in the COpy or MOVE
+commands. If this point is placed logi-
+cally on the object, the insertion of the
+block should be perfect every time.
+The Pick point button on the dialog box
+DsC<lle urAfotmly
+is for you to pick the insertion base point.
+0Albwexpj~
+If you don't pick this point, your block
+will not show up where you want it.
+Once you have given the block a name,
+chosen the insertion Base point, and cho-
+sen the objects to create that block it is
+ready to insert into a drawing.
+With the Block Definition dialog box, the objects identified for the block are formed
+into a block and left on your screen. They can now be manipulated as one object. With
+the -BLOCK command, the block will disappear from the screen and you will then in-
+sert it where you would like it.
+The INSERT command is used to place previously defined blocks into the current
+drawing.
+The command line equivalent is INSERT or -INSERT for no dialog box.
+The INSERT command places the block on the drawing in its original size. The X scale
+factor defaults to 1. The Y scale factor defaults to X Ifyou make the X value 2, the Y
+value will also be 2, unless you change it. Changing the Yvalue relative to the X value
+will distort the image of the original block.
+The rotation angle is a counterclockwise rotation around the insertion base point. The
+insertion base point is the one you chose when blocking the items. If you have made
+the insertion base point in a bad place on the object, use EXPLODE and reBLOCK it.
+
+
+===== PAGE 200/298 =====
+Inserting blocks is much like using COPY, except that
+you identify objects by a given name and not a pick. In
+Figure 10.2 the steno chair is inserted at a desk.
+Figure 10.2
+Command:-INSERT
+Enter block name or
+[?] :Steno
+Specify insertion point or
+[Scale/X/Y/Z/Rot .... ate]: (pick 1)
+Enter X scale factor,
+specify
+opposite corner, or
+[Corner/XYZ]
+<1>:.J
+Enter Y scale factor <use X scale
+factor>:.J
+Specify rotation angle <0>: (move your cursor around until
+the chair is properly positioned, then pick)
+In the Insert dialog box the Browse op-
+tion
+allows
+you
+to
+insert
+external
+blocks. Use the down arrow to access
+all internal blocks or blocks already
+used on the current drawing.
+As an example take the title block
+from Chapter 8. The Browse option
+on the Insert dialog box will offer a
+list of all drawings on your C: or D:
+drive or on your floppy disks or stor-
+age cartridges.
+External blocks are AutoCAD files that
+have already been created. They are
+used to compile final drawings. Title
+blocks, drawing arrows, sections, no-
+tations, or views of objects that are
+used on more than one final drawing
+can all be used as external blocks.
+External Blocks
+Figure 10.3
+In Figure 10.3 we have opened the
+desk layout from page 68, created the
+steno block, inserted it, and then inserted a title block from Chapter 8.
+Use either the Insert dialog box or -INSERT to place the title block.
+Command:-INSERT
+EnLer block name
+(or ?)<STENO>:a:title
+Specify insertion point or
+[Scale/X/Y!Z/Rotate/PScale/PX!
+PY/PZ/PRotate] : (pick 1)
+Enter
+X
+scale
+factor,
+specify
+opposite
+corner,
+or
+[Corner /XYZ] :.J
+Y scale factor <use X scale factor:.J
+Specify rotation angle <O>::.J
+Blocks and Wblocks
+183

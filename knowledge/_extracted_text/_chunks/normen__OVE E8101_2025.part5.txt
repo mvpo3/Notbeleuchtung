@@ -1,0 +1,2074 @@
+
+
+===== PAGE 201/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 7 
+433.4 
+Schutz bei Überlast von parallel geschalteten Leitern 
+Wenn eine einzelne Schutzeinrichtung mehrere parallel geschaltete Leiter schützt, dürfen weder Abzweige 
+noch Einrichtungen zum Trennen oder Schalten in den einzelnen (parallel geschalteten) Leitern vorhanden 
+sein. 
+Dieser Abschnitt schließt die Anwendung von Endstromkreisen mit Ringleitungen nicht aus. 
+433.4.1 
+Gleichmäßige Stromaufteilung zwischen parallel geschalteten Leitern 
+Wenn eine einzelne Einrichtung parallel geschaltete Leiter mit gleicher Stromaufteilung schützt, ist der Wert IZ, 
+der gemäß 433.1 zur Anwendung kommt, die Summe der Strombelastbarkeit der einzelnen Leiter. 
+Es ist davon auszugehen, dass die Stromaufteilung gleich ist, wenn die parallel geschalteten Leiter in 
+mehradrigen oder verseilten einadrigen Kabeln oder Leitungen enthalten sind (siehe auch Anforderungen des 
+ersten Aufzählungsstrichs von 523.7 a). 
+433.4.2 
+Ungleichmäßige Stromaufteilung zwischen parallel geschalteten Leitern 
+Wenn die Verwendung eines Leiters pro Phase nicht praktikabel und der Strom in den parallelen Leitern 
+ungleichmäßig ist, müssen der Betriebsstrom und die Anforderungen zum Schutz bei Überlast für jeden Leiter 
+getrennt betrachtet werden. 
+ANMERKUNG 
+Der Strom in den parallelen Leitern wird als ungleich betrachtet, wenn die Differenz zwischen den 
+einzelnen Strömen mehr als 10 % des Betriebsstroms für jeden Leiter beträgt. Eine Anleitung ist in 43.A.2 enthalten. 
+434 Schutz bei Kurzschlussströmen 
+Dieser Abschnitt behandelt nur Kurzschlüsse zwischen Leitern, die zum gleichen Stromkreis gehören. 
+434.1 
+Bestimmung von unbeeinflussten Kurzschlussströmen 
+Der unbeeinflusste Kurzschlussstrom muss für jede relevante Stelle der elektrischen Anlage bestimmt werden. 
+Dies darf entweder durch Berechnung oder Messung erfolgen. 
+ANMERKUNG 
+Der unbeeinflusste Kurzschlussstrom am Speisepunkt kann beim Verteilernetzbetreiber erfragt werden. 
+434.2 
+Anordnung der Einrichtungen zum Schutz bei Kurzschluss 
+Eine Einrichtung, die den Schutz bei Kurzschluss sicherstellt, muss an dem Punkt angeordnet werden, an dem 
+eine Reduzierung des Querschnitts der Leiter oder eine andere Änderung erfolgt, die zu einer Änderung der 
+Strombelastbarkeit der Leiter führt, ausgenommen wenn 434.2.1, 434.2.2 oder 434.3 zur Anwendung kommt. 
+434.2.1 Die verschiedenen Fälle des folgenden Abschnitts dürfen nicht angewendet werden für Anlagen in 
+Räumen und Orten mit Brand- oder Explosionsrisiko, oder wenn in den Anforderungen für besondere Anlagen 
+und Räume und Orten abweichende Bedingungen festgelegt sind. Die Einrichtung zum Schutz bei Kurzschluss 
+darf unter den folgenden Bedingungen auch an anderen Stellen als in 434.2 festgelegt eingebaut werden. 
+Im Abschnitt des Leiters zwischen der Reduzierung des Querschnitts oder anderer Änderungen und der 
+Anordnung der Schutzeinrichtung dürfen Abzweige und Steckdosen nicht enthalten sein, und dieser Abschnitt 
+des Leiters 
+a) 
+darf nicht länger als 3 m sein und 
+b) 
+muss so errichtet werden, dass das Risiko eines Kurzschlusses auf ein Minimum reduziert wird und 
+ 
+ANMERKUNG 
+Diese Bedingung darf z. B. erfüllt werden durch Verstärkung des Schutzes der Kabel- und 
+Leitungsanlage gegen äußere Einflüsse. 
+c) 
+darf nicht in der Nähe von brennbarem Material errichtet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 202/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 8 
+434.2.2 Eine Schutzeinrichtung darf auf der Versorgungsseite des reduzierten Querschnitts oder bei anderen 
+Änderungen vorgesehen werden, vorausgesetzt die Auslösecharakteristik ist so, dass sie die Kabel/Leitungen, 
+die an der Lastseite angeordnet sind, gemäß den Anforderungen von 434.5.2, bei Kurzschluss schützt. 
+434.3 
+Verzicht auf Einrichtungen zum Schutz bei Kurzschluss 
+Unter der Voraussetzung, dass die beiden folgenden Anforderungen gleichzeitig erfüllt sind 
+– 
+das Kabel/die Leitung ist so verlegt, dass das Risiko eines Kurzschlusses auf ein Minimum reduziert ist 
+(siehe 434.2.1 b)) und 
+– 
+das Kabel/die Leitung ist nicht in der Nähe von brennbaren Materialien verlegt 
+müssen keine Einrichtungen zum Schutz bei Kurzschluss vorgesehen werden bei Anwendungen, wie z. B.: 
+a) 
+Leiter, die Generatoren, Transformatoren, Gleichrichter und Batterien mit Sekundärzellen mit ihren 
+zugehörigen Schalt- und Steuerschränken verbinden, wobei die Schutzeinrichtungen in diesen Schränken 
+angeordnet sind; 
+b) 
+Stromkreise, deren Unterbrechung den Betrieb der entsprechenden Anlagen gefährden könnte, wie sie in 
+433.3.3 zitiert sind; 
+c) 
+bestimmte Messstromkreise; 
+d) 
+beim Einspeisepunkt der Anlage, wenn der Netzbetreiber einwilligt, dass seine Einrichtung den Schutz bei 
+Kurzschluss den Schutz des Teils der Anlage zwischen der Einspeisung und der Hauptverteilung der 
+Anlage, bis zu den nachgeschalteten Schutzeinrichtungen bei Kurzschluss erfüllt. 
+434.4 
+Schutz bei Kurzschluss von parallel geschalteten Leitern 
+Eine einzelne Schutzeinrichtung darf parallel geschaltete Leiter vor den Auswirkungen bei Kurzschluss 
+schützen, vorausgesetzt, dass das Auslöseverhalten dieser Einrichtung ein wirksames Ansprechen sicherstellt, 
+wenn ein Fehler an der kritischsten Stelle in einem der parallel geschalteten Leiter auftritt. Die Aufteilung der 
+Kurzschlussströme zwischen den parallel geschalteten Leitern muss betrachtet werden. Ein Fehler kann von 
+beiden Enden der parallel geschalteten Leiter gespeist werden. 
+Falls die Auslösung einer einzelnen Schutzeinrichtung nicht wirksam ist, muss eine oder müssen mehrere der 
+folgenden Maßnahmen angewendet werden: 
+a) 
+Kabel/Leitungen müssen derart ausgewählt und verlegt werden, dass das Risiko eines Kurzschlusses in 
+jedem der parallel geschalteten Leiter auf ein Minimum reduziert ist, z. B. durch einen Schutz gegen 
+mechanische Beschädigung, und die Leiter müssen so verlegt sein, dass das Risiko eines Brands oder 
+eines Schadens von Personen auf ein Minimum reduziert ist. 
+b) 
+Für zwei parallel geschaltete Leiter muss an der Versorgungsseite eines jeden parallel geschalteten 
+Leiters eine Schutzeinrichtung zum Schutz bei Kurzschluss vorgesehen werden. 
+c) 
+Für mehr als zwei parallel geschaltete Leiter muss an der Versorgungsseite und an der Lastseite eines 
+jeden parallel geschalteten Leiters eine Schutzeinrichtung zum Schutz bei Kurzschluss vorgesehen 
+werden. 
+Eine Anleitung ist in 43.A.3 enthalten. 
+434.5 
+Kenngrößen von Schutzeinrichtungen zum Schutz bei Kurzschluss 
+Jede Schutzeinrichtung zum Schutz bei Kurzschluss muss die Anforderungen gemäß 434.5.1 erfüllen. 
+434.5.1 Ihr Bemessungsschaltvermögen darf nicht geringer sein als der zu erwartende maximale 
+Kurzschlussstrom am Einbauort in der Anlage, mit Ausnahme des folgenden Absatzes. 
+Ein geringeres Bemessungsschaltvermögen ist zulässig, wenn eine andere Schutzeinrichtung, die an der 
+Versorgungsseite errichtet wird, das geforderte Kurzschlussausschaltvermögen aufweist. In diesem Fall 
+müssen die Charakteristiken der Einrichtungen so aufeinander abgestimmt sein, dass die Gesamtdurchlass-
+energie beider Einrichtungen nicht jene Durchlassenergie überschreitet, die von der Einrichtung auf der 
+Lastseite und von den zu schützenden Leitern ohne Schaden überstanden wird. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 203/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 9 
+ANMERKUNG 1  
+In einigen Fällen kann es notwendig sein, andere Einflussgrößen, wie die dynamische 
+Beanspruchung und die Lichtbogenenergie, für die Einrichtung auf der Lastseite in Betracht zu ziehen. Für die Abstimmung 
+der Kenngrößen der beiden Schutzeinrichtungen sind die Herstellerangaben heranzuziehen. 
+ANMERKUNG 2  
+Technische Daten für die Auswahl von Schutzeinrichtungen bezüglich der Selektivität können 
+beim Hersteller angefordert werden. 
+434.5.2 Für Kabel/Leitungen und isolierte Leiter müssen alle Ströme, hervorgerufen durch einen Kurzschluss 
+an einem beliebigen Punkt des Stromkreises, in einer Zeit unterbrochen werden, bei der die Isolierung der 
+Leiter nicht die zulässige Grenztemperatur überschreitet. 
+Für Ansprechzeiten der Schutzeinrichtungen <0,1 s, wenn die Asymmetrie des Kurzschlussstromverlaufs von 
+Bedeutung ist, und für strombegrenzende Schutzeinrichtungen muss k2S2 größer sein als der vom Hersteller 
+der Schutzeinrichtung angegebene Wert der Durchlassenergie (I2t). 
+Tabelle 43.A – Werte von k für Leiter und gebräuchliche Leiterisolierungen 
+ 
+ 
+ 
+ 
+Werkstoff der Isolierung 
+Eigenschaft/ 
+Bedingung 
+PVC 
+PVC 
+EPR 
+XLPE 
+Gummi 
+mineralisoliert 
+thermoplastisch 
+thermoplastisch 
+90 °C 
+vernetzt 
+Vernetzt 
+60 °C 
+PVC 
+umhüllt 
+blank 
+nicht 
+umhüllt 
+Leiterquerschnitt S 
+mm2 
+≤ 300 
+> 300 
+≤ 300 
+> 300 
+ 
+ 
+ 
+ 
+Anfangstemperatur 
+°C 
+70 
+90 
+90 
+60 
+70 
+105 
+Endtemperatur 
+°C 
+160 
+140 
+160 
+140 
+250 
+200 
+160 
+250 
+Leitermaterial: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+– Kupfer 
+115 
+103 
+100 
+86 
+143 
+141 
+115 
+135/115 a 
+– Aluminium 
+76 
+68 
+66 
+57 
+94 
+93 
+– 
+– 
+– Zinn-Lötstellen in 
+ 
+Kupferleitern 
+115 
+– 
+– 
+– 
+– 
+– 
+– 
+– 
+a 
+Dieser Wert ist zu verwenden für blanke Kabel/Leitungen, wenn sie berührt werden können. 
+ANMERKUNG 1 
+Andere Werte für k sind in Bearbeitung für: 
+– 
+kleine Querschnitte (speziell für Querschnitte unter 10 mm2), 
+– 
+andere Arten von Verbindungen in den Leitern, 
+– 
+blanke Leiter. 
+ANMERKUNG 2 
+Der Bemessungsstrom der Schutzeinrichtung zum Schutz bei Kurzschluss darf größer sein als die Strombelastbarkeit 
+der Leiter. 
+ANMERKUNG 3 
+Die obigen Faktoren basieren auf IEC 60724. 
+ANMERKUNG 4 
+Siehe Anhang 54.A bezüglich der Berechnung von Faktor k. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 204/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 10 
+Bei Kurzschlüssen mit einer Dauer bis einschließlich 5 s darf die Zeit t, in der ein gegebener Kurzschlussstrom 
+die Isolierung der Leiter von der höchstzulässigen Temperatur im Normalbetrieb bis zur Grenztemperatur 
+erwärmt, in erster Näherung durch die folgende Gleichung berechnet werden: 
+ 
+𝑡= (𝑘 ∙ 
+𝑆
+𝐼)
+2
+ 
+(F 43.3) 
+Dabei ist 
+t 
+die Kurzschlussdauer, in Sekunden (s); 
+S 
+der Leiterquerschnitt, in Quadratmillimeter (mm2); 
+I 
+der wirksame Kurzschlussstrom, angegeben als Effektivwert, in Ampere (A); 
+k 
+der Faktor unter Berücksichtigung von Widerstand, Temperaturkoeffizient und Wärmekapazität des 
+Leitermaterials und der entsprechenden Anfangs- und Endtemperaturen. Für gebräuchliche Leiter-
+isolierungen ist der Wert k für Außenleiter in Tabelle 43.A angegeben. 
+434.5.3 Für Schienenverteiler in Übereinstimmung mit ÖVE/ÖNORM EN 61439-6 und für Stromschienen-
+systeme in Übereinstimmung mit der Normenreihe OVE EN 61534 muss eine der folgenden Anforderungen 
+erfüllt werden: 
+– 
+Die Bemessungskurzzeitstromfestigkeit (Icw) und die Bemessungsstoßstromfestigkeit eines Schienen-
+verteilers oder eines Stromschienensystems dürfen nicht kleiner sein als der unbeeinflusste 
+Kurzschlussstrom bzw. der zu erwartende Stoßkurzschlussstrom. Die maximale Zeit, die für den 
+Schienenverteiler oder das Stromschienensystem bezüglich Icw festgelegt ist, darf nicht kleiner sein als 
+die maximale Ansprechzeit der Schutzeinrichtung. 
+– 
+Der bedingte Bemessungskurzschlussstrom des Schienenverteilers oder des Stromschienensystems mit 
+der dazugehörigen festgelegten Schutzeinrichtung darf nicht kleiner sein als der unbeeinflusste 
+Kurzschlussstrom. 
+435 Koordination des Schutzes bei Überlast und Kurzschluss 
+435.1 
+Schutz durch eine gemeinsame Einrichtung 
+Eine Schutzeinrichtung, die zum Schutz bei Überlast- und Kurzschlussströmen vorgesehen ist, muss die 
+entsprechenden Anforderungen gemäß der Abschnitte 433 und 434 erfüllen. 
+435.2 
+Schutz durch getrennte Schutzeinrichtungen 
+Die Anforderungen der Abschnitte 433 und 434 sind für die Schutzeinrichtung zum Schutz bei Überlast und die 
+Schutzeinrichtung zum Schutz bei Kurzschluss entsprechend anzuwenden. 
+Die Eigenschaften der Einrichtungen müssen so aufeinander abgestimmt sein, dass die Durchlassenergie der 
+Schutzeinrichtungen zum Schutz bei Kurzschluss nicht den Wert überschreitet, welchen die Schutzeinrichtung 
+zum Schutz bei Überlast ohne Schaden aushalten kann. 
+ANMERKUNG 
+Diese Anforderungen schließen nicht die Art der Koordination aus, die in OVE EN IEC 60947-4-1 
+festgelegt ist. 
+436 Überstrombegrenzung durch die Art der Stromquelle 
+Leiter werden als bei Überlast- und Kurzschlussströmen geschützt angesehen, wenn sie aus einer Stromquelle 
+versorgt werden, die einen Strom nicht zu liefern vermag, der die Strombelastbarkeit der Leiter überschreitet 
+(z. B. bestimmte Klingeltransformatoren, bestimmte Schweißtransformatoren und bestimmte Arten 
+thermoelektrischer Generatoren). 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 205/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 11 
+Anhang 43.A 
+(informativ) 
+ 
+Schutz von parallel geschalteten Leitern bei Überstrom 
+43.A.1 
+Einleitung 
+Der Schutz bei Überstrom für parallel geschaltete Leiter sollte einen angemessenen Schutz für alle parallel 
+geschalteten Leiter sicherstellen. Für zwei Leiter mit gleichem Querschnitt, gleichem Leitermaterial, gleicher 
+Länge und gleicher Verlegeart, sodass sie annähernd gleiche Ströme führen, sind die Anforderungen zum 
+Schutz bei Überstrom einfach. Für komplexere Leiteranordnungen müssen weitergehende Betrachtungen über 
+eine ungleiche Stromaufteilung zwischen den Leitern und über die Strompfade bei Mehrfachfehlern angestellt 
+werden. Dieser Anhang gibt einen Leitfaden für die notwendigen Betrachtungen. 
+ANMERKUNG 
+Eine detailliertere Methode für die Kalkulation der Stromaufteilung zwischen parallel geschalteten Leitern 
+ist in IEC 60287-1-3 enthalten. 
+43.A.2 
+Schutz von parallel geschalteten Leitern bei Überlast 
+Wenn in einem Stromkreis, der parallel geschaltete Leiter von Mehrleiterkabeln/-leitungen enthält, eine 
+Überlast auftritt, wird der Strom in jedem Leiter im gleichen Verhältnis ansteigen. Unter der Voraussetzung, 
+dass der Strom sich zwischen den parallel geschalteten Leitern gleichmäßig aufteilt, darf eine gemeinsame 
+Schutzeinrichtung zum Schutz aller Leiter verwendet werden. Die Strombelastbarkeit der parallel geschalteten 
+Leiter (IZ) ist die Summe der Strombelastbarkeiten der einzelnen Leiter unter Beachtung des Faktors für 
+Häufung und anderer Faktoren. 
+Die Stromaufteilung zwischen den parallel geschalteten Kabeln/Leitungen ist abhängig von der Impedanz der 
+Kabel/Leitungen. Für Einleiterkabel/-leitungen mit großem Leiterquerschnitt ist der Blindanteil der Impedanz 
+größer als der Wirkanteil, was einen maßgeblichen Einfluss auf die Stromaufteilung hat. Der Blindanteil wird 
+von der örtlichen Lage eines jeden Kabels/einer jeden Leitung zueinander beeinflusst. Wenn z. B. ein 
+Stromkreis aus zwei Kabeln/Leitungen mit großem Leiterquerschnitt pro Außenleiter besteht, welche gleiche 
+Länge, gleichen Aufbau und gleichen Querschnitt haben, aber parallel in ungünstiger örtlicher Lage (z. B. 
+Kabel/Leitungen gleicher Außenleiter zusammengebunden) angeordnet sind, kann sich eine Stromaufteilung 
+70 % / 30 % anstelle von 50 % / 50 % ergeben. 
+Wenn die unterschiedlichen Impedanzen zwischen parallel geschalteten Leitern eine ungleiche 
+Stromaufteilung hervorrufen, z. B. mit mehr als 10 % Unterschied, sollten der Betriebsstrom und die 
+Anforderungen an die Schutzeinrichtung zum Schutz bei Überlast für jeden Leiter getrennt betrachtet werden. 
+Der Betriebsstrom für jeden Leiter kann aus der Gesamtbelastung und der Impedanz jedes Leiters berechnet 
+werden. 
+Für eine Gesamtzahl von m parallel geschalteten Leitern ist der Betriebsstrom IBk für den Leiter k gegeben 
+durch: 
+ 
+IBk = 
+IB
+|𝑍k
+𝑍1 +  𝑍k
+𝑍2 + … + 
+𝑍k
+𝑍k-1  + 
+𝑍k
+𝑍k + 
+𝑍k
+𝑍k+1 + … + 
+𝑍k
+𝑍m|  
+(F 43.A.1) 
+Dabei ist 
+IB 
+ 
+ 
+der Betriebsstrom des Stromkreises, in Ampere (A); 
+IBk  
+ 
+der Betriebsstrom für den Leiter k, in Ampere (A); 
+Zk  
+ 
+der komplexe Wert der Impedanz des Leiters k, in Ohm (Ω); 
+Z1, Z2 und Zm 
+der komplexe Wert der Impedanzen der Leiter, in Ohm (Ω). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 206/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 12 
+Bei parallel geschalteten Leitern bis einschließlich 120 mm2 desselben Werkstoffs ist der Betriebsstrom IBk für 
+den Leiter k gegeben durch: 
+ 
+IBk = IB ∙ 
+Sk
+(S1+ S2 + … + Sm )  
+(F 43.A.2) 
+Dabei ist 
+Sk 
+ 
+der Querschnitt von Leiter k, in Quadratmillimeter (mm2); 
+S1 … Sm der Querschnitt der Leiter, in Quadratmillimeter (mm2). 
+Bei einadrigen Kabeln/Leitungen ist die Impedanz abhängig von der Lage der Kabel/Leitungen zueinander und 
+deren Aufbau, z. B. ob armiert oder nicht armiert. Methoden für die Berechnung der Impedanz sind in 
+IEC 60287-1-3 enthalten. Es wird empfohlen, die Stromaufteilung zwischen parallel geschalteten Leitern durch 
+Messung zu überprüfen. 
+Der Betriebsstrom IBk wird anstelle von IB für die Bedingung (F 43.1) von 433.1 wie folgt verwendet: 
+ 
+IBk  ≤ In ≤ IZk 
+(F 43.A.3) 
+Der Wert für IZ in den Bedingungen (F 43.1) und (F 43.2) von 433.1 ist entweder 
+– 
+die dauernd zulässige Strombelastbarkeit eines jeden Leiters IZk, wenn für jeden Leiter eine 
+Schutzeinrichtung zum Schutz bei Überlast (siehe Bild 43.A.1) vorgesehen wird, daraus folgt: 
+ 
+IBk  ≤ Ink ≤ IZk 
+(F 43.A.4) 
+oder 
+– 
+die Summe der dauernd zulässigen Strombelastbarkeiten aller Leiter ∑𝐼ZK, wenn eine einzelne 
+Schutzeinrichtung zum Schutz bei Überlast für die parallel geschalteten Leiter vorgesehen wird (siehe 
+Bild 43.A.2); daraus folgt: 
+ 
+IB  ≤ In ≤ ∑IZk 
+(F 43.A.5) 
+Dabei ist 
+Ink  
+der Nennstrom der Schutzeinrichtung für den Leiter k, in Ampere (A); 
+IZk  
+die dauernd zulässige Strombelastbarkeit des Leiters k, in Ampere (A); 
+In 
+ 
+der Bemessungsstrom der Schutzeinrichtung, in Ampere (A); 
+∑IZk 
+die Summe der dauernd zulässigen Strombelastbarkeitswerte der m Leiter, die parallel geschaltet 
+sind, in Ampere (A). 
+ANMERKUNG 
+Für Stromschienensysteme sollten die entsprechenden Informationen den Herstellerangaben oder 
+ÖVE/ÖNORM EN 61439-6 entnommen werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 207/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 13 
+ 
+ 
+IBk  ≤ Ink ≤ IZk 
+(F 43.A.6) 
+Bild 43.A.1 – Stromkreis mit einer Schutzeinrichtung zum Schutz bei Überlast  
+in jedem der parallel geschalteten m Leiter 
+ 
+ 
+ 
+IB  ≤ In ≤ ∑IZk 
+(F 43.A.7) 
+ 
+∑IZk  = IZ1 + IZ2 + ⋯+ IZm 
+(F 43.A.8) 
+Bild 43.A.2 – Stromkreis mit einer einzigen Schutzeinrichtung zum Schutz bei Überlast  
+für die parallel geschalteten m Leiter 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 208/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 14 
+43.A.3 
+Schutz bei Kurzschluss von parallel geschalteten Leitern 
+Wenn Leiter parallel geschaltet sind, sollte die Auswirkung eines Kurzschlusses innerhalb des parallel 
+geschalteten Abschnitts unter Beachtung der Anordnung der Schutzeinrichtung betrachtet werden. 
+Einzelne Leiter in einer Parallelschaltung sind ggf. nicht wirksam geschützt, wenn unabhängig wirkende 
+Schutzeinrichtungen verwendet werden. Deshalb sollte erwogen werden, andere Anordnungen von Schutz-
+einrichtungen zu wählen. Dies könnte ergeben, individuelle Schutzeinrichtungen für jeden Leiter versorgungs- 
+und lastseitig vorzusehen, oder miteinander gekoppelte Schutzeinrichtungen versorgungsseitig einzusetzen. 
+Die Entscheidung für die jeweilige Anordnung der Schutzeinrichtungen ist abhängig von der Wahrscheinlichkeit 
+der Fehlerbedingungen. 
+Wenn Leiter parallel geschaltet sind, können Strompfade aufgrund von mehreren Fehlern auftreten, was zu 
+einer weiter andauernden Speisung der einen Seite des Fehlerorts führen kann. Dies kann vermieden werden, 
+wenn Schutzeinrichtungen zum Schutz bei Kurzschluss auf der Versorgungsseite (s; en  supply) und auf der 
+Lastseite (I; en  load) eines jeden parallel geschalteten Leiters vorgesehen sind. Diese Situation ist in 
+Bild 43.A.3 und Bild 43.A.4 dargestellt. 
+ 
+ 
+Bild 43.A.3 – Stromfluss bei Fehlerbeginn 
+Bild 43.A.4 – Stromfluss nach dem Ansprechen 
+der Schutzeinrichtung cs 
+Bild 43.A.3 zeigt, dass ein Überstrom in den Leitern 1, 2 und 3 fließt, wenn ein Fehler im parallel geschalteten 
+Leiter 3 an der Stelle x auftritt. Das Ausmaß des Überstroms und der Anteil des Überstroms, der über die 
+Schutzeinrichtungen cs und cl fließen wird, hängen vom Ort der Fehlerstelle ab. In diesem Beispiel wurde 
+angenommen, dass der höchste Anteil des Überstroms durch die Schutzeinrichtung cs fließt. 
+Bild 43.A.4 zeigt, dass nach Ansprechen von cs der Strom zur Fehlerstelle x weiter über die Leiter 1 und 2 
+fließen wird. Weil die Leiter 1 und 2 parallel geschaltet sind, könnte der sich aufteilende Strom durch die Schutz-
+einrichtungen as und bs nicht ausreichend sein, um die Schutzeinrichtung in der geforderten Zeit zum 
+Ansprechen zu bringen. Für diesen Fall ist die Schutzeinrichtung cl notwendig. Es sollte beachtet werden, dass 
+der Strom, der durch cl fließt, kleiner sein wird als der Strom, der cs zum Ansprechen bringt. Wenn die 
+Fehlerstelle nah genug bei cl liegt, wird cl zuerst ansprechen. Die gleiche Situation würde bestehen, wenn ein 
+Fehler in den Leitern 1 oder 2 auftritt. Darum sind die Schutzeinrichtungen al und bl gefordert. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 209/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 15 
+Das Verfahren mit den Schutzeinrichtungen an beiden Enden hat zwei Nachteile im Vergleich zu dem 
+Verfahren, bei dem die Schutzeinrichtungen nur an der Versorgungsseite vorgesehen sind. Erstens: Wenn ein 
+Fehler in x durch das Auslösen der Schutzeinrichtungen in cs und cl beseitigt wird, dann wird der Stromkreis 
+weiter betrieben, wobei die Last von den Leitern 1 und 2 getragen werden muss. Folglich könnten der Fehler 
+und die daraus entstehende Überlastung von Leiter 1 und 2 – abhängig von der Fehlerimpedanz – nicht erkannt 
+werden. Zweitens: Der Fehler an der Stelle x kann zum Abbrennen des Leiters zwischen cl und x führen, 
+wodurch die Fehlerstelle unentdeckt und weiterhin unter Spannung bleibt. 
+Eine Alternative zu den sechs Schutzeinrichtungen wären sich gegenseitig auslösende Schutzeinrichtungen 
+auf der Versorgungsseite, siehe Bild 43.A.5. Dies würde den weiteren Betrieb des Stromkreises unter 
+Fehlerbedingungen verhindern. 
+ 
+Bild 43.A.5 – Darstellung gekoppelter Schutzeinrichtungen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 210/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 16 
+Anhang 43.B 
+(informativ) 
+ 
+Bedingungen F 43.1 und F 43.2 von Unterabschnitt 433.1 
+ 
+ 
+𝐼B  ≤𝐼n  ≤ 𝐼Z 
+(F 43.B.1) 
+ 
+I2 ≤ 1,45 ∙ IZ 
+(F 43.B.2) 
+ 
+Bild 43.B.1 – Darstellung der Bedingungen F 43.B.1 und F 43.B.2 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 211/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 17 
+Anhang 43.C 
+(informativ) 
+ 
+Anordnung von oder Verzicht auf Einrichtungen  
+zum Schutz bei Überlast 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Anhang 43.D 
+(informativ) 
+ 
+Anordnung von oder Verzicht auf Einrichtungen  
+zum Schutz bei Kurzschluss 
+Dieser informative Anhang aus dem Harmonisierungsdokument wurde in Österreich nicht übernommen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 212/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-43 – Seite 18 
+Nationale Ergänzung 43.NE 
+(informativ) 
+ 
+Ergänzungen zu Abschnitt 433 gemäß OVE EN IEC 61439-1 
+43.NE.1 Bemessungsbelastungsfaktor und Aussetzbetrieb gemäß  
+OVE EN IEC 61439-1:2021, I.1 
+Die abgegebene Wärme von Stromkreisen aus verlustbehafteten Betriebsmitteln ist proportional zu dem realen 
+Effektivwert des Stroms. Ein äquivalenter Effektivwert des Stroms, der die Wärmewirkung des realen Stroms 
+im Aussetzbetrieb repräsentiert, kann mit der in Bild I.1 (Bild 43.NE.001.AT) angegebenen Gleichung 
+berechnet werden. Dies ermöglicht das Bestimmen des thermisch äquivalenten Effektivwerts des Stroms (Ieff) 
+im Aussetzbetrieb und so das Bestimmen des zulässigen Lastzyklus. Wenn keine weiteren Informationen 
+bezüglich der thermischen Zeitkonstante zur Verfügung stehen, sollten die Zeiten im eingeschalteten Zustand 
+nicht länger als 30 min und die Zeiten im eingeschalteten Zustand kürzer sein als die Zeiten im ausgeschalteten 
+Zustand, da kleine Geräte schon das thermische Gleichgewicht erreichen könnten. Für Gleichstrom-
+anwendungen gilt die gleiche Überlegung unter Verwendung des Strommittelwerts statt des Effektivwerts. Der 
+äquivalente thermische Strom für vorhersehbar variierende/intermittierende Lasten sollte den Bemessungs-
+betriebsstrom der Stromkreise Ing in der Schaltgerätekombination nicht überschreiten, es sei denn, es stehen 
+genaue Informationen für die Belastung benachbarter Stromkreise zur Verfügung. 
+ 
+ 
+Ieff = √I1
+2 ∙ t1 + I2
+2 ∙ t2 + I3
+2 ∙ t3 
+t1+ t2+ t3
+  
+(F 43.NE.1) 
+Legende 
+t1 
+Startzeit mit Strom I1 
+t2 
+Laufzeit mit Strom I2 
+t3 
+Pausenzeit mit I3 = 0 
+t1 + t2 + t3 
+Zykluszeit 
+Bild 43.NE.001.AT – Beispiel für die Berechnung des durchschnittlichen Erwärmungseffekts 
+(QUELLE: OVE EN IEC 61439-1:2021, Bild I.1) 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 213/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 1 
+Teil 4-44 Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+Inhalt Teil 4-44 
+442 
+Schutz von Niederspannungsanlagen bei vorübergehenden Überspannungen infolge von 
+Erdschlüssen im Hochspannungssystem und infolge von Fehlern im Niederspannungssystem 
+442.1 
+Anwendungsbereich 
+442.2 
+Überspannungen in Niederspannungsnetzen während eines Erdschlusses auf der 
+Hochspannungsseite 
+442.3 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Neutralleiterbruchs in einem TN- oder 
+TT-System 
+442.4 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Erdschlusses in einem IT-System mit 
+Neutralleiter 
+442.5 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Kurzschlusses zwischen einem 
+Außenleiter und dem PEN-Leiter oder dem Neutralleiter 
+Anhang 442.A (informativ)  Anmerkungen zu 442.1 und 442.2 
+443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von Schaltvorgängen 
+443.1 
+Anwendungsbereich und Allgemeines 
+443.2 
+Normative Verweisungen 
+443.3 
+Begriffe 
+443.4 
+Vorkehrungen zur Begrenzung von Überspannungen 
+443.5 
+Risikoanalyse 
+443.6 
+Klassifizierung der Bemessungs-Stoßspannungen (Überspannungskategorien) 
+Anhang 443.A (normativ)  Anleitung zur Begrenzung von Überspannungen durch Anwendung von 
+Überspannungs-Schutzeinrichtungen (SPD) in Freileitungen 
+444 
+Maßnahmen gegen elektromagnetische Einflüsse 
+444.0 
+Einleitung 
+444.1 
+Anwendungsbereich 
+444.2 
+Normative Verweisungen 
+444.3 
+Begriffe 
+444.4 
+Reduzierung elektromagnetischer Störungen 
+444.5 
+Erdung und Potentialausgleich 
+444.6 
+Getrennte Verlegung von Stromkreisen 
+444.7 
+Kabelführungssysteme 
+444.Z1 
+Errichtung metallener oder kombinierter Kabelführungssysteme vorgesehen als EMV-Maßnahme 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 214/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 2 
+442 Schutz von Niederspannungsanlagen bei vorübergehenden Überspannungen  
+infolge von Erdschlüssen im Hochspannungssystem und infolge von Fehlern  
+im Niederspannungssystem 
+442.1 
+Anwendungsbereich 
+Dieser Abschnitt enthält Anforderungen für die Sicherheit der Niederspannungsanlage im Falle 
+– 
+eines Fehlers zwischen dem Hochspannungsnetz und Erde in der Transformatorstation, welche die 
+Niederspannungsanlage versorgt; 
+– 
+einer Unterbrechung des Neutralleiters im Niederspannungsnetz; 
+– 
+eines Kurzschlusses zwischen einem Außenleiter und dem Neutralleiter; 
+– 
+einer versehentlichen Erdung eines aktiven Leiters im Niederspannungs-IT-System. 
+Anforderungen an die Erdungsanlage in der Transformatorstation sind in OVE EN 50522 bzw. OVE EN 
+IEC 61936-1 enthalten. 
+442.1.1 
+Allgemeine Anforderungen 
+Dieser Abschnitt betrachtet Fehler zwischen einem aktiven Leiter des Hochspannungsnetzes und Erde in der 
+HS/NS-Transformatorstation und enthält Regeln für den Planer und Errichter der Transformatorstation. 
+Dazu sind folgende Informationen über das Hochspannungsnetz erforderlich: 
+– 
+Beschaffenheit der Systemerdung des Hochspannungsnetzes; 
+– 
+Maximale Höhe des Erdfehlerstroms; 
+– 
+Erdungsimpedanz der Transformatorstation. 
+Die folgenden Abschnitte behandeln die vier Situationen, gemäß 442.1, die üblicherweise die höchsten 
+zeitweiligen Überspannungen verursachen: 
+– 
+Fehler zwischen Hochspannungsnetz und Erde (siehe 442.2); 
+– 
+Unterbrechung des Neutralleiters im Niederspannungsnetz (siehe 442.3); 
+– 
+Unbeabsichtigtes Erden eines Niederspannungs-IT-Systems (siehe 442.4); 
+– 
+Kurzschluss in der Niederspannungsanlage (siehe 442.5). 
+442.1.2 
+Zeichen in den Gleichungen 
+In Abschnitt 442 werden folgende Zeichen in den Gleichungen verwendet (siehe Bild 442.A1): 
+IE 
+Teil des Erdfehlerstroms im Hochspannungsnetz, der durch die Erdungsanlage der Transformatorstation 
+fließt, in Ampere (A); 
+RE Widerstand der Erdungsanlage der Transformatorstation, in Ohm (Ω); 
+RA Widerstand der Erdungsanlage der Körper der elektrischen Betriebsmittel in der Niederspannungsanlage, 
+in Ohm (Ω); 
+RB Widerstand der Betriebserdung des Niederspannungsnetzes, wobei die Erdungsanlage der 
+Transformatorstation und der Betriebserder elektrisch unabhängig voneinander sein können, in Ohm (Ω); 
+U0 in TN- und TT-Systemen: Nennwechselspannung Außenleiter gegen Erde, in Volt (V); 
+ 
+in IT-Systemen: Nennwechselspannung zwischen Außenleiter und dem Neutralleiter oder dem Mittelleiter, 
+je nach Zutreffen 
+Uf 
+betriebsfrequente Fehlerspannung im Niederspannungsnetz zwischen Körpern und Bezugserde während 
+der Fehlerdauer, in Volt (V); 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 215/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 3 
+U1 betriebsfrequente Beanspruchungsspannung zwischen dem Außenleiter und den Körpern der 
+Niederspannungsbetriebsmittel in der Transformatorstation während der Dauer des Hochspannungs-
+fehlers, in Volt (V); 
+U2 betriebsfrequente Beanspruchungsspannung zwischen dem Außenleiter und den Körpern der 
+Niederspannungsbetriebsmittel in der Niederspannungsanlage während der Dauer des Hochspannungs-
+fehlers, in Volt (V). 
+ANMERKUNG 1  
+Die betriebsfrequente Beanspruchungsspannung (U1 und U2) ist die Spannung, die an 
+Niederspannungsbetriebsmitteln und an im Niederspannungsnetz angeschlossenen Überspannungs-Schutzeinrichtungen 
+(SPD) anliegt. 
+Die folgenden zusätzlichen Zeichen in den Gleichungen werden für IT-Systeme verwendet, in denen die Körper 
+der elektrischen Betriebsmittel der Niederspannungsanlage mit einer Erdungsanlage verbunden sind, die 
+elektrisch unabhängig von der Erdungsanlage der Transformatorstation ist: 
+Ih 
+Fehlerstrom, der durch die Erdungsanlage der Körper der elektrischen Betriebsmittel der 
+Niederspannungsanlage während der Zeit fließt, in der gleichzeitig ein Fehler im Hochspannungsnetz und 
+ein erster Fehler in der Niederspannungsanlage vorliegen (siehe Tabelle 442.A1), in Ampere (A); 
+Id 
+Fehlerstrom gemäß 411.6.2, der durch die Erdungsanlage der Körper der Niederspannungsanlage 
+während eines ersten Fehlers im Niederspannungsnetz fließt (siehe Tabelle 442.A1), in Ampere (A); 
+Z 
+Impedanz (z. B. der Wechselstrominnenwiderstand des Isolationsüberwachungsgeräts (IMD) oder die 
+Impedanz des künstlichen Sternpunkts) zwischen dem Niederspannungsnetz und einer Erdungsanlage, 
+in Ohm (Ω). 
+ANMERKUNG 2  
+Eine Erdungsanlage darf von einer anderen Erdungsanlage als elektrisch unabhängig angesehen 
+werden, wenn ein Potentialanstieg gegen Erde in einer der Erdungsanlagen nicht zu einem inakzeptablen Potentialanstieg 
+gegen Erde in der anderen Erdungsanlage führt, siehe OVE EN 50522 bzw. OVE EN IEC 61936-1. 
+442.2 
+Überspannungen in Niederspannungsnetzen während eines Erdschlusses auf der 
+Hochspannungsseite 
+Im Falle eines Erdschlusses auf der Hochspannungsseite in der Transformatorstation können folgende Arten 
+von Überspannungen in der Niederspannungsanlage auftreten: 
+– 
+betriebsfrequente Fehlerspannung (Uf); 
+– 
+betriebsfrequente Beanspruchungsspannungen (U1 und U2). 
+Tabelle 442.A1 enthält geeignete Berechnungsmethoden für die verschiedenen Arten von Überspannungen. 
+ANMERKUNG 1  
+Tabelle 442.A1 betrachtet bei IT-Systemen nur IT-Systeme mit verteilten Neutralleiter. Für  
+IT-Systeme ohne verteiltem Neutralleiter sollte die Gleichung entsprechend angepasst werden. 
+Wenn Hoch- und Niederspannungserdungsanlagen in unmittelbarer Nähe zueinander bestehen, werden 
+derzeit zwei Vorgehensweisen angewendet: 
+– 
+Verbindung der Hochspannungserdungen (RE) und der Niederspannungserdungen (RB) untereinander; 
+– 
+Trennung der Hochspannungserdungen (RE) von den Niederspannungserdungen (RB). 
+Im Allgemeinen werden Hochspannungs- und Niederspannungserdungen miteinander verbunden (siehe 
+Bild 442.A1). Die Hochspannungs- und Niederspannungserdungen müssen untereinander verbunden sein, 
+wenn das Niederspannungsnetz sich insgesamt im Bereich der Hochspannungserdungsanlage befindet, siehe 
+OVE EN 50522 bzw. OVE EN IEC 61936-1. 
+ANMERKUNG 2  
+Angaben zu den verschiedenen Systemen nach Art der Erdverbindungen (TN, TT, IT) sind in 
+Teil 3 enthalten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 216/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 4 
+ 
+Legende 
+HS Hochspannung 
+NS Niederspannung 
+Bild 442.A1 – Repräsentative schematische Darstellung der Verbindungen  
+gegen Erde in der Transformatorstation und der Niederspannungsanlage und  
+der im Fehlerfall auftretenden Überspannungen 
+Tabelle 442.A1 – Betriebsfrequente Beanspruchungsspannungen und  
+betriebsfrequente Fehlerspannungen im Niederspannungsnetz 
+System  
+nach Art der 
+Erdverbindung 
+Arten der Erdungsverbindungen 
+U1 
+U2 
+Uf 
+TT 
+RE und RB miteinander verbunden 
+U0 a 
+RE · IE + U0 
+0 a 
+RE und RB getrennt 
+RE · IE + U0 
+U0 a 
+0 a 
+TN 
+RE und RB miteinander verbunden 
+U0 a 
+U0 a 
+RE · IE b 
+RE und RB getrennt 
+RE · IE + U0 
+U0 
+a 
+0 a 
+IT 
+RE und Z miteinander verbunden 
+RE und RA getrennt 
+U0 a 
+RE · IE + U0 
+0 a 
+U0 · 
+3  
+RE · IE + U0 · 
+3  
+RA · Ih 
+RE und Z miteinander verbunden 
+RE und RA miteinander verbunden 
+U0 a 
+U0 a 
+RE · IE 
+U0 · 
+3  
+U0 · 
+3  
+RE · IE 
+RE und Z getrennt 
+RE und RA getrennt 
+RE · IE + U0 
+U0 a 
+0 a 
+RE · IE + U0 · 
+3  
+U0 · 
+3  
+RA · Id 
+a 
+Kein Auftreten besonderer Überspannungen zu erwarten. 
+b 
+Siehe 442.2.1 zweiter Absatz. 
+ 
+Bei gleichzeitig bestehendem Erdschluss in der Niederspannungsanlage. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 217/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 5 
+ANMERKUNG 3  
+Die Anforderungen für U1 und U2 sind abgeleitet von den Auslegungskriterien für die Isolierung 
+der Niederspannungsbetriebsmittel im Hinblick auf betriebsfrequente vorübergehende Überspannungen (siehe auch 
+Tabelle 442.A2). 
+ANMERKUNG 4  
+In einem Netz, dessen Neutralleiter mit der Erdungsanlage der Transformatorstation verbunden 
+ist, sind solche betriebsfrequenten vorübergehenden Überspannungen auch an der Isolierung zu erwarten, wenn, soweit 
+sich das elektrische Betriebsmittel außerhalb eines Gebäudes befindet, die Isolierung nicht mit einer geerdeten Umhüllung 
+versehen ist. 
+ANMERKUNG 5  
+In TT- und TN-Systemen gilt die Angabe „miteinander verbunden“ und „getrennt“ für die 
+elektrische Verbindung zwischen RE und RB. Für IT-Systeme gilt die Angabe für die elektrische Verbindung zwischen RE 
+und Z sowie die Verbindung zwischen RE und RA. 
+442.2.1 
+Betriebsfrequente Fehlerspannung 
+ANMERKUNG AT 
+Hinsichtlich der Beurteilung von Berührungsspannungen und von Potentialverschleppungen bei 
+einem Fehler in der Hochspannungsanlage siehe OVE EN 50522 und OVE EN IEC 61936-1. 
+In einem TN-System, in dem RE und RB miteinander verbunden sind (siehe Tabelle 442.A1), kann deren 
+Verbindung mit einem globalen Erdungssystem nach OVE EN 50522:2023, 3.7 als Schutzmaßnahme bei 
+gefährlichen Fehlerspannungen betrachtet werden. 
+ 
+In Anlagen außerhalb eines globalen Erdungssystems muss der PEN-Leiter mindestens einmal zusätzlich 
+geerdet werden, siehe auch Anhang 442.A. Diese Bedingung ist gemäß 411.4.6.001.2.2.AT erfüllt. 
+ANMERKUNG 
+ 
+Gemäß OVE EN 50522 kann das Bestehen eines globalen Erdungssystems durch Referenz-
+messungen oder Berechnungen für typische Beispiele nachgewiesen werden. Typische Beispiele für globale Erdungs-
+systeme sind Stadtzentren; städtische oder industrielle Bereiche mit verteilten Nieder- und Hochspannungserdungen. 
+Andernfalls ist zu prüfen, ob Potentialverschleppungen aus der Hochspannungsanlage eine Gefährdung 
+innerhalb der Niederspannungsanlage darstellen. Falls ja, sind an den betreffenden Stellen Maßnahmen im 
+Bereich der Niederspannungsanlage wie z. B. Potentialsteuerung, Standortisolierung vorzusehen. 
+442.2.2 
+Größe und Dauer der betriebsfrequenten Beanspruchungsspannungen 
+Die Größe und die Dauer der betriebsfrequenten Beanspruchungsspannungen (U1 und U2) gemäß 
+Tabelle 442.A1 von Niederspannungsbetriebsmitteln darf in der Niederspannungsanlage aufgrund eines 
+Erdschlusses im Hochspannungsnetz die in Tabelle 442.A2 angegebenen Werte nicht überschreiten. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 218/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 6 
+Tabelle 442.A2 – Zugelassene betriebsfrequente Beanspruchungsspannung 
+Dauer des Erdschlusses im 
+Hochspannungsnetz 
+t 
+Zulässige betriebsfrequente Beanspruchungsspannung  
+für elektrische Betriebsmittel in der Niederspannungsanlage 
+U 
+> 5 s 
+≤ 5 s 
+U0 + 250 V 
+U0 + 1 200 V 
+In Systemen ohne Neutralleiter ist U0 die Spannung zwischen den Außenleitern. 
+ANMERKUNG 1 
+Die erste Zeile der Tabelle gilt für Hochspannungsnetze mit langen Ausschaltzeiten, z. B. 
+Hochspannungsnetze mit isoliertem Sternpunkt und Hochspannungsnetze mit Erdschlusskompensation. Die zweite 
+Zeile der Tabelle gilt für Hochspannungsnetze mit kurzen Ausschaltzeiten, z. B. Hochspannungsnetze mit niederohmiger 
+Sternpunkterdung. Beide Zeilen zusammen gelten für die Auslegung der Isolierung der Niederspannungsbetriebsmittel 
+hinsichtlich vorübergehender betriebsfrequenter Überspannung (siehe OVE EN IEC 60664-1). 
+ANMERKUNG 2 
+In einem Netzsystem, in dem der Neutralleiter mit der Erdungsanlage der Transformatorstation 
+verbunden ist, kann eine solche betriebsfrequente Überspannung 
+– 
+in einem TT-System auch an der Isolierung eines elektrischen Betriebsmittels innerhalb oder außerhalb eines 
+Gebäudes gegen Erde oder geerdete Umhüllungen auftreten; 
+– 
+in einem TN-System auch an der Isolierung eines elektrischen Betriebsmittels außerhalb eines Gebäudes gegen 
+lokale Erde auftreten. 
+ 
+442.2.3 
+Anforderungen zur Berechnung von Grenzwerten 
+Wenn die zulässige betriebsfrequente Beanspruchungsspannung gemäß Tabelle 442.A1 berechnet wird, darf 
+sie den Wert in der Tabelle 442.A2 nicht überschreiten. 
+Wenn die zulässige betriebsfrequente Fehlerspannung gemäß Tabelle 442.A1 berechnet wird, darf sie den 
+Wert in der Tabelle 442.A2 nicht überschreiten. 
+Es kann davon ausgegangen werden, dass die Anforderungen von 442.2.1 und 442.2.2 für Anlagen erfüllt sind, 
+die durch öffentliche Netze versorgt werden. 
+Um die obenstehenden Anforderungen zu erfüllen, ist eine Koordinierung zwischen dem Betreiber des 
+Hochspannungsnetzes und dem Errichter des Niederspannungsnetzes notwendig. Die Erfüllung der oben 
+genannten Anforderungen fällt hauptsächlich in die Verantwortung des Errichters/Eigners/Betreibers der 
+Transformatorstation, der gleichfalls die Anforderungen gemäß OVE EN 50522 zu erfüllen hat. Deshalb ist 
+üblicherweise die Berechnung von U1, U2 und Uf durch den Errichter des Niederspannungsnetzes nicht 
+notwendig. 
+Mögliche Maßnahmen zur Erfüllung der oben genannten Anforderungen sind z. B.: 
+– 
+Trennung der Erdungsanlagen zwischen Hochspannungsnetz und Niederspannungsnetz; 
+– 
+Änderung der Erdung des Niederspannungsnetzes; 
+– 
+Reduzierung des Erdungswiderstandes RE. 
+442.3 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Neutralleiterbruchs in einem  
+TN- oder TT-System 
+Es ist zu berücksichtigen, dass, wenn der Neutralleiter in einem Mehrphasen-TN-System oder Mehrphasen-
+TT-System unterbrochen wird, die Basisisolierung, die doppelte Isolierung und die verstärkte Isolierung, wie 
+auch Bauteile, die für die Spannung zwischen Außenleiter und Neutralleiter bemessen sind, vorübergehend 
+mit der Spannung zwischen den Außenleitern beansprucht werden können. Die Beanspruchungsspannung 
+kann Werte bis zu 𝑈= √3 ∙ 𝑈0  erreichen. 
+ANMERKUNG AT 
+Siehe auch 512.1.1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 219/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 7 
+442.4 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Erdschlusses in einem  
+IT-System mit Neutralleiter 
+Es ist zu berücksichtigen, dass, wenn ein Außenleiter eines IT-Systems im Fehlerfall geerdet wird, die 
+Isolierung sowie Bauteile, die für die Spannung zwischen Außenleiter und Neutralleiter bemessen sind, 
+vorübergehend mit der Spannung zwischen Außenleitern beansprucht werden können. Die Beanspruchungs-
+spannung kann Werte bis zu 𝑈= √3 ∙ 𝑈0 erreichen. 
+442.5 
+Betriebsfrequente Beanspruchungsspannung im Falle eines Kurzschlusses zwischen  
+einem Außenleiter und dem PEN-Leiter oder dem Neutralleiter 
+Es ist zu berücksichtigen, dass, wenn ein Kurzschluss in der Niederspannungsanlage zwischen einem 
+Außenleiter und dem PEN-Leiter oder dem Neutralleiter auftritt, die Spannung zwischen den anderen 
+Außenleitern und dem PEN-Leiter oder dem Neutralleiter den Wert von 1,45 · U0 für eine Zeitdauer bis zu 5 s 
+erreichen kann. 
+ANMERKUNG AT 
+Der Faktor 1,45 ergibt sich aus der Asymmetrie des Spannungsdreiecks (Nennspannung + 10 %) 
+im Drehstromsystem bei einem Kurzschluss zwischen einem Außenleiter und dem PEN-Leiter oder dem Neutralleiter. Der 
+tatsächliche Faktor ist abhängig von den Impedanzen des Systems. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 220/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 8 
+Anhang 442.A 
+(informativ) 
+ 
+Anmerkungen zu 442.1 und 442.2 
+442.A.1 
+Allgemeines 
+Die Anforderungen in diesen beiden Unterabschnitten betreffen die Sicherheit von Personen und der 
+elektrischen Ausrüstung in einem Niederspannungsnetz im Falle eines Erdschlusses im Hochspannungsnetz. 
+Betrachtet werden Fehler auf der Hochspannungsseite in der Transformatorstation, die ein Niederspannungs-
+netz versorgt. Bei solchen Fehlern fließt ein Strom über fremde leitfähige Teile der Transformatorstation zum 
+damit verbundenen Erder. 
+Die Höhe des Fehlerstroms ist abhängig von der Fehlerschleifenimpedanz, d. h. davon, wie der Sternpunkt der 
+Hochspannungsseite geerdet ist. 
+Der Fehlerstrom, der zum Erder der fremden leitfähigen Teile der Transformatorstation fließt, verursacht ein 
+Anheben des Potentials der fremden leitfähigen Teile der Transformatorstation in Bezug zur Erde. Diese 
+Potentialanhebung wird bestimmt durch 
+– 
+die Höhe des Fehlerstroms und 
+– 
+den Widerstand des Erders der fremden leitfähigen Teile der Transformatorstation. 
+Die Fehlerspannung kann mehr als tausend Volt betragen und kann, abhängig vom Erdungssystem der 
+Niederspannungsanlage, Folgendes bewirken: 
+– 
+ein Anheben des Potentials der fremden leitfähigen Teile des Niederspannungsnetzes im Bezug zur Erde, 
+was auch zu einem Anstieg der Fehler- und Berührungsspannung führen kann; 
+– 
+ein Anheben des Potentials im Niederspannungsnetz im Bezug zur Erde, was zu einem Ausfall der 
+elektrischen Betriebsmittel führen kann. 
+Es kann länger dauern, bis ein Fehler im Hochspannungsnetz abgeschaltet wird als in einem Nieder-
+spannungsnetz, da zeitverzögerte Überwachungsrelais zur Verhinderung einer unerwarteten Ausschaltung bei 
+Einschwingvorgängen eingesetzt werden. Die Fehler in Hochspannungsschaltanlagen dürfen auch länger 
+anstehen als Fehler in Niederspannungsschaltanlagen. Dies bedeutet, dass die Fehlerspannung und die 
+daraus resultierende Berührungsspannung an den fremden leitfähigen Teilen des Niederspannungsnetzes 
+länger anstehen kann, als es die geforderten Abschaltzeiten entsprechend den Anforderungen für 
+Niederspannungsanlagen erlauben. 
+442.A.2 
+Überspannungen im Niederspannungsnetz während eines Erdschlusses auf der 
+Hochspannungsseite 
+Bei der Beurteilung der Werte der Fehlerspannung sollte Folgendes mit in Betracht gezogen werden: 
+a) 
+das geringe Risiko eines Erdschlusses im Hochspannungsnetz; 
+b) 
+die Tatsache, dass die Berührungsspannung aufgrund des gemäß 411.3.1.2 geforderten Schutz-
+potentialausgleichs über die Haupterdungsschiene und durch das Vorhandensein zusätzlicher Erder in der 
+Verbraucheranlage immer niedriger ist als die Fehlerspannung. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 221/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 9 
+443 Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+443.1 
+Anwendungsbereich und Allgemeines 
+Dieser Abschnitt beschreibt die Anforderungen für den Schutz elektrischer Anlagen bei transienten 
+Überspannungen infolge atmosphärischer Einflüsse, die über das Stromversorgungsnetz übertragen werden 
+(indirekte Blitzeinwirkungen), inklusive direkter Blitzeinschläge in das Versorgungssystem und bei transienten 
+Überspannungen infolge von Schaltvorgängen. 
+Dieser Abschnitt beschreibt nicht die Anforderungen für den Schutz bei transienten Überspannungen infolge 
+direkter Blitzeinschläge in die bauliche Anlage oder infolge von Blitzeinschlägen nahe der baulichen Anlage 
+(direkte Blitzeinwirkungen). 
+ANMERKUNG 1  
+Für das Risikomanagement zum Schutz bei transienten Überspannungen infolge direkter 
+Blitzeinschläge in die bauliche Anlage oder infolge von Blitzeinschlägen nahe der baulichen Anlage siehe ÖVE/ÖNORM 
+EN 62305-2. 
+Im Allgemeinen weisen transiente Überspannungen infolge von Schaltvorgängen niedrigere Amplituden auf 
+als transiente Überspannungen infolge atmosphärischer Einflüsse. Deshalb decken die Anforderungen für den 
+Schutz bei transienten Überspannungen infolge atmosphärischer Einflüsse normalerweise den Schutz bei 
+transienten Überspannungen infolge von Schaltvorgängen mit ab. 
+Auch wenn kein Schutz vor transienten Überspannungen infolge atmosphärischer Einflüsse installiert ist, so 
+kann dennoch ein Schutz bei Schaltüberspannungen erforderlich sein. 
+ANMERKUNG 2  
+Schaltüberspannungen können transiente Überspannungen infolge atmosphärischer Einflüsse in 
+der Zeitdauer und im Energieinhalt übersteigen. Siehe 443.4. 
+Die Eigenschaften transienter Überspannungen infolge atmosphärischer Einflüsse hängen u. a. von folgenden 
+Faktoren ab: 
+– 
+der Ausführung des Stromversorgungsnetzes (Erdkabel oder Freileitungen); 
+– 
+dem Vorhandensein von zumindest einer Überspannungs-Schutzeinrichtung (SPD) vor dem Einführungs-
+punkt der Speiseleitung in die bauliche Anlage; 
+– 
+der Nennspannung des Versorgungsnetzes. 
+ANMERKUNG 3  
+Bei transienten Überspannungen infolge atmosphärischer Einflüsse wird nicht unterschieden, ob 
+sie in geerdeten oder nicht geerdeten Netzen auftreten. 
+Der Schutz bei transienten Überspannungen wird durch die Installation von Überspannungs-Schutz-
+einrichtungen (SPD) vorgesehen. 
+ANMERKUNG AT 
+Durch die Installation von Überspannungs-Schutzeinrichtungen (SPD) soll eine Spannungs-
+begrenzung entsprechend der Isolationskoordination sichergestellt werden, um gefährliche Funkenbildung und daraus 
+resultierende Brände zu vermeiden. 
+Die Auswahl und Installation von Überspannungs-Schutzeinrichtungen (SPD) muss gemäß Abschnitt 534 
+erfolgen. 
+Ist die Installation von Überspannungs-Schutzeinrichtungen (SPD) in der Niederspannungsanlage erforderlich, 
+dann wird die Installation von zusätzlichen Überspannungs-Schutzeinrichtungen (SPD) auch für andere 
+Systeme, wie z. B. Telekommunikationsleitungen, empfohlen. 
+Dieser Abschnitt enthält keine Anforderungen zum Schutz bei Überspannungen, die über informations-
+technische Systeme übertragen werden. Siehe CLC/TS 61643-22. 
+Dieser Abschnitt gilt nicht für bauliche Anlagen mit Explosionsrisiko oder Anlagen, bei denen im Schadensfall 
+Auswirkungen auf die Umwelt auftreten können (z. B. chemische oder radioaktive Emissionen). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 222/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 10 
+443.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+443.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+443.4 
+Vorkehrungen zur Begrenzung von Überspannungen 
+Die Anforderungen dieses Unterabschnitts gelten für Wechselspannungsanlagen und sinngemäß für 
+Gleichspannungsanlagen. 
+Bei Niederspannungsanlagen, die über einen eigenen Transformator aus dem Mittel- oder Hochspannungsnetz 
+versorgt werden (z. B. bei Industrieanlagen), sollten zusätzliche Vorkehrungen zum Schutz bei blitzbedingten 
+Überspannungen auf der Mittelspannungs- oder Hochspannungsseite des Transformators getroffen werden. 
+ANMERKUNG 1.AT 
+Für den Schutz von informationstechnischen Anlagen wird auf ÖVE-F 1 Teil 7 hingewiesen. 
+ANMERKUNG 2.AT 
+Ergänzend wird darauf hingewiesen, dass der Schutzpotentialausgleich und soweit erforderlich 
+der zusätzliche Schutzpotentialausgleich gemäß 415.2 wichtige Voraussetzungen bei der Realisierung eines wirkungs-
+vollen Schutzes gegen transiente Überspannungen darstellen. 
+443.4.001.AT 
+Verteilungsnetze 
+Überspannungs-Schutzeinrichtungen (SPD) 
+gegen 
+indirekte 
+Blitzeinwirkungen 
+sind 
+in 
+folgenden 
+Niederspannungs-Verteilungsnetzen zu installieren: 
+– 
+Freileitungsnetze; 
+– 
+gemischte Freileitungs-/Kabelnetze (im Freileitungsabschnitt bzw. im Bereich des Übergangs Freileitung 
+auf Kabel). 
+In gemischten Netzen, in denen der Kabelanteil überwiegt, bleiben dabei kurze Freileitungsabschnitte bis 
+höchstens 250 m Länge unberücksichtigt. 
+ANMERKUNG AT 
+Anhang 443.A enthält Hinweise zur Begrenzung von Überspannungen durch die Installation von 
+Überspannungs-Schutzeinrichtungen (SPD) in Freileitungen. 
+443.4.002.AT 
+Verbraucheranlagen 
+Überspannungs-Schutzeinrichtungen (SPD) gegen indirekte Blitzeinwirkungen sind in jeder Verbraucher-
+anlage zu installieren. 
+Sofern kein äußerer Blitzschutz gemäß der Normenreihe ÖVE/ÖNORM EN 62305 installiert ist und in der 
+Verbraucheranlage bereits zentrale Überspannungs-Schutzeinrichtungen (SPD) installiert sind, ist die 
+Installation von Überspannungs-Schutzeinrichtungen (SPD) in jeder Einzelverbraucheranlage nicht gefordert. 
+Ein Schutz bei Schaltüberspannungen sollte berücksichtigt werden, wenn die Möglichkeit besteht, dass 
+Betriebsmittel Schaltüberspannungen oder Störungen erzeugen, die die zugeordnete Überspannungs-
+kategorie der elektrischen Anlage übersteigen. Dies kann z. B. bei Generatoreinspeisungen in der 
+Niederspannungsanlage der Fall sein, oder wenn induktive oder kapazitive Lasten (z. B. Motoren, 
+Transformatoren, Kondensatorbänke usw.), Speichereinheiten oder elektrische Betriebsmittel mit hohen 
+Lastströmen in der elektrischen Anlage installiert sind. 
+ANMERKUNG 1.AT 
+Zur 
+Auswahl 
+und 
+Installation 
+von 
+Überspannungs-Schutzeinrichtungen (SPD) 
+siehe 
+Abschnitt 534. 
+ANMERKUNG 2.AT 
+Für Energiespeichersysteme, wie z. B. Batteriespeicheranlagen, und rückspeisefähige  
+EV-Ladestationen (mit einem verbundenen rückspeisefähigen Elektrofahrzeug), gelten diese Anforderungen sinngemäß. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 223/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 11 
+443.5 
+Risikoanalyse 
+ANMERKUNG 
+Für den Schutz einer baulichen Anlage und deren elektrische Systeme bei transienten Überspannungen 
+infolge direkter Blitzeinschläge in die bauliche Anlage oder infolge von Blitzeinschlägen nahe der baulichen Anlage (direkte 
+Blitzeinwirkungen) ist Normenreihe ÖVE/ÖNORM EN 62305 anzuwenden. 
+443.6 
+Klassifizierung der Bemessungs-Stoßspannungen (Überspannungskategorien) 
+443.6.1 
+Zweck der Klassifizierung von Bemessungs-Stoßspannungen (Überspannungskategorien) 
+Der Unterabschnitt 443.6 enthält Informationen zu den Überspannungskategorien von elektrischen 
+Betriebsmitteln. 
+ANMERKUNG 
+Überspannungskategorien sind für elektrische Betriebsmittel zum Zweck der Isolationskoordination in 
+elektrischen Anlagen festgelegt, und die entsprechende Klassifizierung von elektrischen Betriebsmitteln erfolgt durch 
+Angabe der Bemessungs-Stoßspannung, siehe 534.1. 
+Zur Klassifizierung von elektrischen Betriebsmitteln, die direkt an das Niederspannungs-Stromversorgungs-
+netz angeschlossen werden, wird die Bemessungs-Stoßspannung (Überspannungskategorie) verwendet. 
+Die Bemessungs-Stoßspannung für ein elektrisches Betriebsmittel wird entsprechend der Nennspannung 
+ausgewählt. Dabei wird in Abhängigkeit der Anforderungen an die Versorgungssicherheit der elektrischen 
+Anlage und des akzeptierbaren Ausfallrisikos zwischen verschiedenen Schutzniveaus unterschieden. 
+Die systemeigene Begrenzung von Überspannungen, nur auf Basis der Bemessungs-Stoßspannung der 
+elektrischen Betriebsmittel gemäß OVE EN IEC 60664-1, ist möglicherweise nicht ausreichend, weil 
+– 
+transiente über das Versorgungsnetz übertragene Überspannungen in den meisten elektrischen Anlagen 
+– in Energieflussrichtung gesehen – nicht nennenswert abgeschwächt oder gedämpft werden. 
+Isolationskoordination kann für die gesamte Anlage durch die Anwendung geeigneter Überspannungs-
+Schutzvorkehrungen entsprechend der ausgewiesenen Bemessungs-Stoßspannung der Betriebsmittel 
+(elektrischer Anlage) erreicht werden. Damit kann das Ausfallrisiko auf ein akzeptables Maß verringert 
+werden; 
+– 
+auch in elektrischen Anlagen, die von einem reinen Niederspannungs-Kabelnetz ohne Freileitungsanteil 
+versorgt werden, Stoßströme und Blitzteilströme über diese Erdkabel übertragen werden; 
+– 
+Betriebsmittel oft an zwei unterschiedliche Systeme, z. B. das Strom- und ein Datennetz, angeschlossen 
+sind. Erfahrungen zeigen, dass viele Überspannungsschäden an solchen Betriebsmitteln auftreten. 
+Es ist notwendig, die Bemessungs-Stoßspannung UW (siehe OVE EN IEC 60664-1) des empfindlichsten zu 
+schützenden elektrischen Betriebsmittels innerhalb der gesamten elektrischen Anlage oder, in Fällen, in denen 
+bereits ein zeitlich begrenzter Funktionsausfall von Anlagen oder Betriebsmitteln kritisch ist, die Störfestigkeit 
+des betreffenden Betriebsmittels oder Anlagenteils (siehe OVE EN 61000-4-5) zu berücksichtigen. 
+443.6.2 
+Zusammenhang zwischen der Bemessungs-Stoßspannung von elektrischen Betriebsmitteln 
+und Überspannungskategorien 
+Folgende Punkte müssen beachtet werden: 
+a) 
+Betriebsmittel mit einer Bemessungs-Stoßspannung entsprechend der Überspannungskategorie IV sind 
+für die Verwendung am Speisepunkt oder in der Nähe des Einführungspunkts der Speiseleitung in die 
+bauliche Anlage geeignet, z. B. in Stromflussrichtung gesehen vor dem Hauptverteiler. Betriebsmittel der 
+Überspannungskategorie IV besitzen eine sehr hohe Bemessungs-Stoßspannung, die den erforderlichen 
+hohen Zuverlässigkeitsgrad sicherstellt. Betriebsmittel der Überspannungskategorie IV müssen 
+mindestens eine Bemessungs-Stoßspannung entsprechend des in Tabelle 443.1 angegebenen Werts 
+aufweisen. 
+ 
+ANMERKUNG 1 
+Beispiele für solche elektrischen Betriebsmittel sind Elektrizitätszähler, Haupt-Überstrom-Schutz-
+einrichtungen (Hauptsicherungen) und Rundsteuergeräte. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 224/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 12 
+b) 
+Betriebsmittel mit einer Bemessungs-Stoßspannung entsprechend der Überspannungskategorie III sind 
+für die Verwendung in ortsfest errichteten elektrischen Anlagen geeignet, und zwar in Stromflussrichtung 
+ab dem Hauptverteiler, einschließlich des Hauptverteilers. Betriebsmittel mit einer Bemessungs-
+Stoßspannung entsprechend der Überspannungskategorie III stellen einen hohen Verfügbarkeitsgrad 
+sicher. Betriebsmittel der Überspannungskategorie III müssen mindestens eine Bemessungs-
+Stoßspannung entsprechend des in Tabelle 443.1 angegebenen Werts aufweisen. 
+ 
+ANMERKUNG 2 
+Beispiele für solche elektrischen Betriebsmittel sind Verteiler, Leistungsschalter, Kabel- und 
+Leitungsanlagen (siehe Begriff 826-15-01) einschließlich Kabel und Leitungen, Stromschienen, Verbindungsdosen 
+und -kästen, Schalter und Steckdosen in der ortsfest errichteten elektrischen Anlage und Betriebsmittel für industrielle 
+Verwendung sowie einige andere Betriebsmittel, z. B. stationäre Motoren mit einem dauernden Anschluss an die 
+ortsfest errichtete Anlage. 
+c) 
+Betriebsmittel mit einer Bemessungs-Stoßspannung entsprechend der Überspannungskategorie II sind 
+für den Anschluss in ortsfest errichteten elektrischen Anlagen geeignet und sehen einen normalen 
+Verfügbarkeitsgrad vor, wie er normalerweise für Strom verbrauchende Betriebsmittel verlangt wird. 
+Betriebsmittel der Überspannungskategorie II müssen mindestens eine Bemessungs-Stoßspannung 
+entsprechend des in Tabelle 443.1 angegebenen Werts aufweisen. 
+ 
+ANMERKUNG 3 
+Beispiele 
+für 
+solche 
+elektrischen 
+Betriebsmittel 
+sind 
+Haushaltsgeräte 
+und 
+ähnliche 
+Verbrauchsmittel. 
+d) 
+Betriebsmittel mit einer Bemessungs-Stoßspannung entsprechend der Überspannungskategorie I sind für 
+die Verwendung in ortsfest errichteten elektrischen Anlagen von Gebäuden nur dann geeignet, wenn 
+Überspannungs-Schutzeinrichtungen (SPD) außerhalb der Betriebsmittel installiert sind, um transiente 
+Überspannungen auf den festgelegten Pegel zu begrenzen. Betriebsmittel der Überspannungskategorie I 
+müssen mindestens eine Bemessungs-Stoßspannung entsprechend des in Tabelle 443.1 angegebenen 
+Werts aufweisen. Es sollten deshalb vorzugsweise Betriebsmittel mit einer Bemessungs-Stoßspannung 
+entsprechend der Überspannungskategorie I nicht am Speisepunkt oder in der Nähe des Speisepunkts 
+der elektrischen Anlage errichtet werden. 
+ 
+ANMERKUNG 4 
+Beispiele für solche elektrischen Betriebsmittel sind Geräte mit empfindlichen elektronischen 
+Stromkreisen wie z. B. Computer, Unterhaltungselektronik usw.. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 225/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 13 
+Tabelle 443.1 – Geforderte Bemessungs-Stoßspannung (UW) für elektrische Betriebsmittel 
+Nennspannung 
+der 
+elektrischen 
+Anlage a 
+ 
+ 
+V 
+Spannung Außenleiter 
+zu Neutralleiter, 
+abgeleitet von den 
+Nennwechsel- oder 
+Nenngleichspannungen 
+bis einschließlich 
+V 
+Geforderte Bemessungs-Stoßspannung  
+der elektrischen Betriebsmittel b 
+kV 
+Überspannungs-
+kategorie IV 
+(Betriebsmittel mit 
+sehr hoher 
+Bemessungs-
+Stoßspannung) 
+Überspannungs-
+kategorie III 
+(Betriebsmittel 
+mit hoher 
+Bemessungs-
+Stoßspannung) 
+Überspannungs-
+kategorie II 
+(Betriebsmittel 
+mit normaler 
+Bemessungs-
+Stoßspannung) 
+Überspannungs-
+kategorie I 
+(Betriebsmittel 
+mit geringer 
+Bemessungs-
+Stoßspannung) 
+z. B. 
+Elektrizitätszähler, 
+Rundsteuerempfänger 
+z. B. Verteiler, 
+Schalter, 
+Steckdosen 
+z. B. Haushalts-
+geräte, 
+Werkzeuge 
+z. B. empfindliche 
+elektronische 
+Geräte 
+120/208 
+120/240 
+150 
+4 
+2,5 
+1,5 
+0,8 
+230/400 c 
+277/488 b 
+300 
+6 
+4 
+2,5 
+1,5 
+400/690 
+600 
+8 
+6 
+4 
+2,5 
+1 000 
+1 000 
+12 
+8 
+6 
+4 
+1 250 nur DC 
+1 250 nur DC 
+12 
+8 
+6 
+4 
+1 500 nur DC 
+1 500 nur DC 
+15 
+10 
+8 
+6 
+a 
+Werte nach ÖVE/ÖNORM EN 60038. 
+b 
+Diese Bemessungs-Stoßspannung gilt zwischen den aktiven Leitern und Schutzleiter (Erde). 
+c 
+In IT-Systemen, die bei 220 V – 240 V betrieben werden, muss aufgrund der Spannung gegen Erde, die an einem Leiter bei 
+einem Erdfehler ansteht, die Zeile für 230/400 V angewendet werden. 
+ 
+ANMERKUNG AT 
+In dreiphasigen IT-Systemen ist aufgrund der Spannung gegen Erde, die an einem Leiter bei einem 
+Erdfehler ansteht, die Spannung zwischen den Außenleitern zugrunde zu legen. 
+ 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 226/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 14 
+Anhang 443.A 
+(normativ) 
+ 
+Anleitung zur Begrenzung von Überspannungen durch Anwendung von 
+Überspannungs-Schutzeinrichtungen (SPD) in Freileitungen 
+Folgende Maßnahmen sind anzuwenden: 
+a) 
+In Freileitungsnetzen sind Überspannungs-Schutzeinrichtungen (SPD) möglichst an Abzweigpunkten und 
+insbesondere am Ende jedes Freileitungsausläufers, der länger als 500 m ist, zu errichten. 
+Überspannungs-Schutzeinrichtungen (SPD) sollten im Verteilernetz in Abständen von höchstens 500 m 
+zu den Anschlüssen von Verbraucheranlagen errichtet werden. Der Abstand zwischen den 
+Überspannungs-Schutzeinrichtungen (SPD) sollte im Verlauf der Verteilernetzleitungen 1 000 m nicht 
+übersteigen. 
+b) 
+Wenn ein Verteilernetz der Stromversorgung teilweise als Freileitungsnetz und teilweise als Kabelnetz 
+errichtet ist, sollten Überspannungs-Schutzeinrichtungen (SPD) in Übereinstimmung mit a) an jedem 
+Übergangspunkt vom Freileitungsnetz in ein Kabelnetz installiert werden. 
+c) 
+In einem Freileitungsnetz sind die PE-Anschlüsse der Überspannungs-Schutzeinrichtungen (SPD), die 
+zum Schutz der Außenleiter installiert sind, mit dem PEN-Leiter bzw. dem Neutralleiter des Verteilernetzes 
+zu verbinden, und der PEN-Leiter bzw. Neutralleiter ist nach Möglichkeit zu erden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 227/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 15 
+444 Maßnahmen gegen elektromagnetische Einflüsse  
+444.0 
+Einleitung 
+Dieser Abschnitt enthält Anforderungen und Empfehlungen für die Vermeidung oder Reduzierung 
+elektromagnetischer Störungen. 
+Er richtet sich an Architekten und an Planer, Errichter, Instandhalter und Betreiber elektrischer Anlagen. 
+Elektromagnetische Einflüsse stören oder beschädigen z. B. Informations- und Kommunikationstechnik, 
+Rundfunkanlagen, Gebäudesystemtechnik, Prozessüberwachung, -steuerung und -automatisierung. Durch 
+Blitzeinwirkungen, Schaltvorgänge, Kurzschlüsse und andere elektromagnetische Ereignisse hervorgerufene 
+Ströme können Stör- und Überspannungen, elektromagnetische Störungen sowie Personen- und 
+Sachschäden verursachen. 
+Diese Wirkungen können auftreten, wo 
+– 
+ausgedehnte leitfähige Schleifen vorhanden sind; 
+ 
+ANMERKUNG AT Solche Schleifen können z. B. über Schutzleiter, Signal- oder Datenkabel/-leitungen samt den 
+Schirmen und Erdungs- und Potentialausgleichsverbindungen gebildet werden. 
+– 
+unterschiedliche elektrische Kabel- und Leitungssysteme gemeinsam verlegt sind, z. B. solche für die 
+Stromversorgung, Informationstechnik, Steuerung- und Signalstromkreise; 
+– 
+Kabel und Leitungen der Energieversorgungen Spannungen in Kabeln und Leitungen von Anlagen für die 
+Übertragung von Befehlen, Steuerung und Kommunikation induzieren können, welche die 
+angeschlossenen elektrischen Betriebsmittel störend beeinflussen oder beschädigen können. 
+444.1 
+Anwendungsbereich 
+Dieser Abschnitt legt Anforderungen und Empfehlungen für elektrische Anlagen fest, mit dem Ziel, den Einfluss 
+von elektromagnetischen Störungen zu vermeiden oder zu vermindern. 
+Die Anforderungen dieses Abschnitts gelten nicht für Verteilernetze, obwohl in der Verbraucheranlage 
+Spannungen und elektromagnetische Störungen zu berücksichtigen sind, die über diese Stromversorgungs-
+systeme übertragen oder induziert werden können. 
+Die Anwendung der von diesem Abschnitt beschriebenen EMV-Maßnahmen kann als ein Teil der anerkannten 
+Regeln der Technik gesehen werden, um Elektromagnetische Verträglichkeit der ortsfesten Anlagen zu 
+erreichen, wie durch die EMV-Richtlinie 2014/30/EU (nationale Umsetzung durch die EMVV 2015) gefordert. 
+ANMERKUNG AT 
+Der Begriff „Anerkannte Regel der Technik“ wird in diesem Abschnitt gemäß ÖVE/ÖNORM 
+EN 45020 verwendet. 
+444.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+444.3 
+Begriffe 
+Für die Anwendung dieses Abschnittes gelten die Begriffe gemäß Teil 2. 
+444.4 
+Reduzierung elektromagnetischer Störungen 
+Planer und Errichter der elektrischen Anlage müssen die nachfolgend beschriebenen Maßnahmen zur 
+Reduzierung der elektrischen und magnetischen Störungen auf elektrische Betriebsmittel berücksichtigen. 
+Es dürfen nur elektrische Betriebsmittel verwendet werden, die die Anforderungen der entsprechenden  
+EMV-Normen oder die EMV-Anforderungen für diese Betriebsmittel erfüllen, siehe auch 515.3. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 228/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 16 
+Beim Einsatz mehrerer elektrischer Betriebsmittel kann es erforderlich sein, Maßnahmen zu treffen, um die 
+Summe der Störaussendung auf einen Pegel zu reduzieren, sodass andere Betriebsmittel nicht unzulässig 
+gestört werden. Z. B. können entsprechend störunempfindliche Betriebsmittel verwendet werden oder andere 
+feldreduzierende Maßnahmen (z. B. Schirmung, Abstandsvergrößerung) getroffen werden. 
+444.4.1 
+Quellen elektromagnetischer Störungen 
+Elektrische Betriebsmittel, die gegen elektromagnetische Störungen empfindlich sind, sollen nicht in der Nähe 
+von Quellen starker elektromagnetischer Felder angeordnet werden. Solche Quellen sind z. B.: 
+– 
+Schaltgeräte für induktive Lasten; 
+– 
+Elektromotoren; 
+– 
+Entladungslampen; 
+– 
+Betriebsmittel für Leuchtmittel; 
+– 
+Schweißmaschinen; 
+– 
+Gleichrichter; 
+– 
+Schaltnetzteile; 
+– 
+Frequenzumrichter (z. B. Wechselrichter) und Regler; 
+– 
+Kompensationsanlagen; 
+– 
+Aufzüge; 
+– 
+Transformatoren; 
+– 
+Schaltanlagen; 
+– 
+Leistungsverteiler mit Stromschienen; 
+– 
+Ableitungseinrichtungen des Blitzschutzsystems (LPS); 
+– 
+Nieder- und Hochspannungsleitungen. 
+444.4.2 
+Maßnahmen zur Reduzierung elektromagnetischer Störungen 
+Die folgenden Maßnahmen reduzieren elektromagnetische Störungen: 
+a) 
+Elektrische Betriebsmittel, die gegen elektromagnetische Einflüsse empfindlich sind, können z. B. durch 
+Überspannungs-Schutzeinrichtungen (SPD), Filter und Schirmungsmaßnahmen geschützt werden. 
+b) 
+Leitfähige Mäntel von Nieder- und Hochspannungskabel (z. B. Armierungen, Schirme) sollten mit einer 
+vorhandenen gemeinsamen Potentialausgleichsanlage – im Allgemeinen beidseitig – verbunden werden 
+(für Signalkabel siehe OVE EN 50174). 
+c) 
+Induktionsschleifen sollten vermieden werden. 
+d) 
+Energie- und Signalkabel sollten mit Abstand verlegt werden, und wo sie sich kreuzen, sollte die Kreuzung, 
+wo immer praktikabel, unter einem rechten Winkel erfolgen (siehe 444.6.2 und OVE EN 50174-2). 
+e) 
+Verwendung von Kabeln und Leitungen mit konzentrischen Leitern, um die Induktion von Strömen in den 
+Schutzleiter zu reduzieren. 
+f) 
+Verwendung von symmetrischen Mehraderkabeln und -leitungen (z. B. geschirmte Kabel und Leitungen 
+mit getrennten Schutzleitern) sowie die Verwendung von Filtern für die elektrischen Verbindungen 
+zwischen Umrichtern und Motoren bei frequenzgesteuerten Antrieben. 
+g) 
+Verwendung von Signal- und Datenkabeln/-leitungen gemäß den EMV-Anforderungen in den 
+Betriebsanleitungen der Hersteller (siehe dazu auch Normenreihe OVE EN 50174). 
+h) 
+Wenn ein Blitzschutzsystem (LPS) errichtet wird oder vorhanden ist, müssen Energieversorgungs- und 
+Signalkabel und -leitungen mit einem Mindestabstand von den Blitzableitungen getrennt sein, oder es 
+muss eine engmaschige Erdungs- und Potentialausgleichsanlage errichtet werden. Der Mindestabstand 
+muss durch den jeweiligen Planer und Errichter gemäß ÖVE/ÖNORM EN 62305-3 bestimmt werden. 
+i) 
+Wenn beidseitig geerdete geschirmte Signal- oder Datenkabel und -leitungen verwendet werden und keine 
+engmaschige Erdungs- und Potentialausgleichsanlage vorhanden ist, ist auf die Tragfähigkeit der Schirme 
+oder der parallelen Erdungsleiter zu achten (siehe auch OVE EN 50174-2:2018, 7.1.3.4 bzw. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 229/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 17 
+OVE EN 50310). Zusätzliche Leiter können notwendig sein, z. B. ein paralleler Erdungsleiter zur 
+Entlastung des Schirms; siehe Bild 444.1. 
+ 
+Bild 444.1 – Paralleler Erdungsleiter zur Verstärkung des Schirms  
+zur Herstellung einer gemeinsamen Potentialausgleichsanlage 
+ 
+ANMERKUNG 1 
+ 
+Die Verlegung eines parallelen Erdungsleiters in der Nähe des Signal- oder Datenkabel/-
+leitungsmantels kann auch die Größe der Induktionsschleife bei elektrischen Betriebsmitteln, die nur durch einen 
+Schutzleiter mit Erde verbunden sind, reduzieren. Diese Vorgehensweise kann z. B. die Wirkung des 
+elektromagnetischen Blitzimpulses (LEMP) vermindern. 
+ 
+ANMERKUNG 1.AT 
+Siehe auch OVE EN 50174-2. 
+ 
+ANMERKUNG 2.AT 
+Es wird auch auf die induktive und ohmsche Beeinflussung durch den parallelen 
+Erdungsleiter hingewiesen. 
+ 
+ANMERKUNG 3.AT 
+Der Querschnitt des parallelen Erdungsleiters ist hinsichtlich Kurzschlussströme und 
+frequenzabhängiger Impedanzen korrekt zu dimensionieren. 
+j) 
+Werden geschirmte Signal- oder Datenkabel zwischen mehreren Gebäuden verwendet, die im TT-System 
+betrieben werden, sollte ein paralleler Erdungsleiter verlegt werden (siehe Bild 444.2). Der parallele 
+Erdungsleiter muss einen Mindestquerschnitt von 16 mm2 Kupfer oder vergleichbarer Leitfähigkeit haben. 
+Der Querschnitt vergleichbarer Leitfähigkeit muss gemäß 544.1 dimensioniert sein. Siehe auch 
+OVE EN 50174-2:2018, 7.1.3.4. 
+ 
+Legende 
+1 
+Paralleler Erdungsleiter 
+2 
+Geschirmtes Signalkabel/-leitung 
+Bild 444.2 – Beispiel eines parallelen Erdungsleiters in einem TT-System 
+ 
+ANMERKUNG 2 
+ 
+Im Fall der Verwendung der geerdeten Schirmung als Signalrückleiter sollte ein 
+Koaxialkabel/-leitung mit mehreren getrennten Schirmen verwendet werden. 
+ 
+ANMERKUNG 3 
+ 
+Es wird darauf hingewiesen, dass es grundsätzlich in der Verantwortung des Eigentümers 
+oder des Betreibers der Telekommunikationsanlage liegt, jedwede Gefahr zu vermeiden, die durch den Nicht-
+Anschluss der Potentialausgleichsleiter oder der Schirme dieser Telekommunikationskabel/-leitungen an den Schutz-
+potentialausgleich (Hauptpotentialausgleich) entsteht. 
+ 
+ANMERKUNG 4 
+ 
+Die 
+Probleme 
+unterschiedlicher 
+Erderspannungen 
+in 
+großen 
+öffentlichen  
+(Tele-)Kommunikationsnetzen liegen in der Verantwortlichkeit des Netzbetreibers, der andere Methoden vorgeben 
+kann. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 230/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 18 
+k) 
+Potentialausgleichsverbindungen sollten eine möglichst niedrige Impedanz haben, 
+ 
+– 
+indem sie so kurz wie möglich ausgeführt sind; 
+ 
+– 
+indem sie eine Querschnittsform mit auf die Leiterlänge bezogen niedriger induktiver Reaktanz und 
+Impedanz pro laufendem Meter haben, z. B. ein geflochtenes Metallband mit einem Verhältnis Breite 
+zu Dicke von 5:1. 
+l) 
+Wenn zur Unterstützung der Potentialausgleichsanlagen für informationstechnische Anlagen in einem 
+Gebäude eine Erdungsschiene vorgesehen ist (gemäß 444.5.7), darf diese als geschlossener Ring 
+errichtet werden. 
+ 
+ANMERKUNG 5 
+ 
+Diese Maßnahme wird bevorzugt in Gebäuden der Telekommunikationsindustrie 
+angewendet. 
+444.4.3 
+TN-System 
+Um die elektromagnetischen Beeinflussungen zu minimieren, gelten die folgenden Unterabschnitte. 
+444.4.3.1 
+Allgemeines 
+Gemäß 411.4.6.001.1.1.AT ist innerhalb eines elektrisch versorgten Objekts für Neuanlagen die Verwendung 
+eines PEN-Leiters ab dem Anschlusspunkt der Nullungsverbindung (siehe Begriff 204.NE.11) nicht mehr 
+zulässig. Neutralleiter und Schutzleiter müssen ab diesem Punkt als getrennte Leiter ausgeführt werden. Der 
+PEN-Leiter endet am Anschlusspunkt der Nullungsverbindung. 
+ANMERKUNG 1.AT 
+Der Vorteil eines TN-S-Systems liegt darin begründet, dass bei einphasiger oder unsymmetrischer 
+Belastung der Betriebsstrom nur in den Außenleitern und im Neutralleiter fließt, somit ergeben sich keine unerwünschten 
+Ströme über Schirme von Signal- und Datenkabel/-leitungen und miteinander verbunden leitfähigen Teilen der Gebäude-
+konstruktion, und es treten auch wesentlich geringere magnetische Beeinflussungen auf. 
+Bei einer Erweiterung, bei Renovierungsarbeiten oder einem Umbau von bestehenden Anlagen mit einem  
+TN-C-System wird empfohlen, auf ein TN-S-System und eine vermaschte Potentialausgleichsanlage 
+umzurüsten, wenn 
+– 
+diese Gebäude eine wesentliche Anzahl von informationstechnischen Betriebsmitteln mit geschirmten 
+Kabeln/Leitungen enthalten oder enthalten werden und 
+– 
+EMV-Störungen auftreten oder zu erwarten sind. 
+Alternativ zum Umbau auf ein TN-S-System können in bestehenden Anlagen mit einem TN-C-System z. B. 
+auch ungeschirmte Kabel-/Leitungsanlagen nach der Normenreihe OVE EN 50174, geeignete Kabelkanäle, 
+Glasfaserleitungen und Geräte für den industriellen Gebrauch nach IEC TR 61000-2-3 eingesetzt werden. 
+ANMERKUNG 
+In einer als TN-C-System errichteten Anlage sind über den Potentialausgleich anteilige Last- oder 
+Fehlerströme in metallenen Infrastrukturen (z. B. Rohrleitungen, metallene Konstruktionsteile) und fremden leitfähigen 
+Teilen der Gebäudekonstruktion zu erwarten. 
+ANMERKUNG 2.AT 
+In einem Gebäude mit vermaschter Erdungs- und Potentialausgleichsanlage teilen sich die Last- 
+und Fehlerströme so auf, dass keine unzulässigen Störungen zu erwarten sind, die durch diese Ströme verursacht werden. 
+ANMERKUNG 3.AT 
+Bei großflächigen Induktionsschleifen, die z. B. über Schutzleiter, Signal- oder geschirmten 
+Datenkabel/-leitungen gebildet werden, können hohe induzierte Spannungen oder Ströme zu Störungen bzw. Schäden 
+führen. 
+444.4.3.2 
+Verwendung des TN-S-Systems in einem Gebäude mit Anspeisung aus einem  
+TN-C-System – Transformatorstation liegt nicht im selben Gebäude 
+Bild 444.3A zeigt die Versorgung einer elektrischen Anlage durch Verwendung des TN-S-Systems ab der 
+Nullungsverbindung bei Anspeisung aus einem TN-C-System, womit Neutralleiterströme in miteinander 
+verbundenen leitfähigen Strukturen in Gebäuden (z. B. Schutzleiter, Konstruktionsteile, Kabeltragsysteme, 
+Systeme für Doppelböden) vermieden werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 231/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 19 
+ANMERKUNG AT 
+Die Erdungsanlagen der Transformatorstation und die Anlagenerdung sind räumlich getrennt, die 
+Anlagen sind z. B. über PEN-Leiter, parallelen Erdungsleiter oder Kabelschirme verbunden. 
+ 
+Legende 
+1 
+Induktionsschleife, die z. B. über den Schutzerdungsleiter und die Schirme von Signal- oder Datenkabel/-
+leitungen gebildet wird. Weitere Induktionsschleifen werden über Schutzerdungsleiter und miteinander 
+verbundene leitfähige Teile der Gebäudekonstruktion gebildet 
+2 
+Schutzpotentialausgleichsleiter zur Verringerung erhöhter Fehlerspannungen während der Dauer eines 
+Isolationsfehlers 
+3 
+miteinander verbundene leitfähige Teile der Gebäudekonstruktion 
+4 
+Nullungsverbindung 
+Bild 444.3A – Beispiel 1 zur Vermeidung von Neutralleiterströmen 
+444.4.3.3 
+Verwendung des TN-S-Systems in einem Gebäude mit Anspeisung aus einem  
+TN-C-System – Transformatorstation befindet sich im selben Gebäude 
+Das Bild 444.3B und das Bild 444.3B.001.AT zeigen die Versorgung einer elektrischen Anlage durch 
+Verwendung des TN-S-Systems ab der Transformatorstation 
+a) 
+ausschließlich als TN-S-System (Bild 444.3B); 
+b) 
+bei Anspeisung aus einem TN-C-System (Bild 444.3B.001.AT) 
+womit Neutralleiterströme in miteinander verbundenen leitfähigen Strukturen in Gebäuden (z. B. Schutzleiter, 
+Konstruktionsteile, Kabeltragsysteme, Systeme für Doppelböden) vermieden werden. 
+ANMERKUNG AT 
+In beiden Fällen werden im Allgemeinen nur eine einzige gemeinsame Erdungsanlage und nur 
+eine Verbindung zwischen Transformatorsternpunkt und Erdungsanlage ausgeführt. Wenn eine engmaschige Erdungs- 
+und Potentialausgleichsanlage ausgeführt wurde oder die Erdungsverbindungen räumlich nahe beieinander liegen, 
+niederinduktiv verbunden sind und dadurch keine unzulässige Beeinflussung durch magnetische Felder verursacht wird, 
+können mehrere Erdungsverbindungen ausgeführt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 232/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 20 
+ 
+Bild 444.3B – Beispiel 2 zur Vermeidung von Neutralleiterströmen  
+im TN-S-System 
+ 
+Bild 444.3B.001.AT – Beispiel 2 zur Vermeidung von Neutralleiterströmen  
+bei Anspeisung aus einem TN-C-System 
+Legende zu Bild 444.3B und Bild 444.3B.001.AT 
+1 
+Induktionsschleife, die z. B. über den Schutzleiter und die Schirme von Signal- oder Datenkabel/-leitungen 
+gebildet wird. Weitere Induktionsschleifen werden über Schutzleiter und miteinander verbundene leitfähige 
+Teile der Gebäudekonstruktion gebildet 
+2 
+Schutzpotentialausgleichsleiter zur Verringerung erhöhter Fehlerspannungen während der Dauer eines 
+Isolationsfehlers 
+3 
+Miteinander verbundene leitfähige Teile der Gebäudekonstruktion 
+4 
+Nullungsverbindung 
+5 
+Gemeinsame Erdungs- und Potentialausgleichanlage des elektrisch versorgten Objekts 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 233/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 21 
+444.4.3.4 
+Wenn eine bestehende Anlage als TN-C-S-System (siehe Bild 444.4; mehrere Nullungs-
+verbindungen; siehe ANMERKUNG 2.AT bei Bild 3.A.31B1) errichtet ist, sollten leitfähige Schleifen z. B. über 
+Signal- und Datenkabel/-leitungen vermieden werden, um hohe Ausgleichsströme durch Potentialdifferenzen 
+zu verhindern 
+– 
+durch Änderung aller in Bild 444.4 dargestellten TN-C-Anlagen in ein TN-S-System, siehe Bild 444.3A, 
+oder 
+– 
+wo die vorgenannte Änderung nicht möglich ist, durch Vermeidung von ungeeigneten Signal- und/oder 
+Datenkabel/-leitungsverbindungen zwischen Anlageteilen mit TN-S-System. 
+ANMERKUNG AT 
+Geeignete Verkabelungsmedien können z. B. Glasfasersysteme (metallfrei) oder ungeschirmte 
+Kabel/Leitungen sein. 
+ 
+Legende 
+1 
+Induktionsschleife, die z. B. durch einen Schutzleiter, den Schirm einer Signal- oder Datenkabel/-leitung 
+und dem Körper eines Verbrauchmittels gebildet wird 
+2 
+Spannungsabfall ΔU ist im bestimmungsgemäßen Betrieb nicht Null 
+3 
+Miteinander verbundene leitfähige Teile der Gebäudekonstruktion 
+ANMERKUNG 
+In einem TN-C-S-System fließt der Strom, der in einem TN-S-System nur durch den Neutralleiter fließt, 
+zum Teil auch durch die Schirme oder die entsprechenden Leiter der Signalkabel/-leitung, durch Körper (eines elektrischen 
+Betriebsmittels) und fremde leitfähige Teile, wie z. B. Kabelwanne und Metallteile der Gebäudekonstruktion. 
+Bild 444.4 – TN-C-S-System innerhalb einer bestehenden Gebäudeinstallation 
+444.4.4 
+TT-System 
+In einem TT-System, wie in Bild 444.5 gezeigt, müssen Überspannungen in Betracht gezogen werden, die 
+zwischen aktiven Teilen und Körpern (von elektrischen Betriebsmitteln) auftreten können, wenn die Körper (von 
+elektrischen Betriebsmitteln) verschiedener Gebäude an verschiedene Erder angeschlossen sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 234/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 22 
+ 
+Legende 
+1 
+Induktionsschleife, die z. B. durch einen Schutzleiter, den Schirm einer Signal- oder Datenkabel/-leitung 
+und dem Körper eines Verbrauchmittels gebildet wird 
+2 
+Schutzpotentialausgleichsleiter zur Verringerung erhöhter Fehlerspannungen während der Dauer eines 
+Isolationsfehlers 
+3 
+Miteinander verbundene leitfähige Teile der Gebäudekonstruktion 
+Bild 444.5 – TT-System innerhalb einer Gebäudeinstallation 
+444.4.5 
+IT-System 
+Es muss berücksichtigt werden, dass in einem dreiphasigen IT-System mit verteiltem Neutralleiter (siehe 
+Bild 444.6) die Spannung zwischen einem fehlerfreien Außenleiter und einem Körper (eines elektrischen 
+Betriebsmittels) auf den Wert der verketteten Spannung ansteigen kann, wenn ein Einzelfehler der Isolation 
+zwischen einem Außenleiter und einem Körper (eines elektrischen Betriebsmittels) auftritt. 
+ANMERKUNG 
+Zwischen dem Neutralleiter und einem Außenleiter angeschlossene elektrische Betriebsmittel sollten so 
+ausgelegt sein, dass sie der Spannungserhöhung im Fehlerfall zwischen Außenleiter und Körpern (von elektrischen 
+Betriebsmitteln) standhalten. Transiente Überspannungen, die zu Beginn eines Erdschlusses auftreten, müssen 
+berücksichtigt werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 235/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 23 
+ 
+Legende 
+1 
+Induktionsschleife, die z. B. durch einen Schutzleiter, den Schirm einer Signal- oder Datenkabel/-leitung 
+und dem Körper eines Verbrauchmittels gebildet wird 
+2 
+Schutzpotentialausgleichsleiter zur Verringerung erhöhter Fehlerspannungen während der Dauer eines 
+Isolationsfehlers 
+3 
+Miteinander verbundene leitfähige Teile der Gebäudekonstruktion 
+Bild 444.6 – IT-System innerhalb einer Gebäudeinstallation 
+444.4.6 
+Mehrfacheinspeisung 
+444.4.6.1 
+Allgemeine Anforderungen 
+Wenn keine vermaschte Erdungs- und Potentialausgleichsanlage vorhanden ist, darf zwischen dem SVL und 
+dem Schutzleiter nur eine Verbindung hergestellt werden (siehe z. B. Bild 444.7A.1) 
+ANMERKUNG AT 
+Mehrfachverbindungen zwischen dem PEN-Leiter und Erde sind nur bei Vorhandensein einer 
+vermaschten Erdungs- und Potentialausgleichsanlage zulässig. 
+ANMERKUNG 
+Durch Mehrfacherdung der Sternpunkte der Stromversorgungen können Neutralleiterströme zurück zu 
+dem entsprechenden Sternpunkt nicht nur über den Neutralleiter sondern auch über den Schutzleiter fließen, wie in 
+Bild 444.7A.2 dargestellt. Durch die im Schutzleiter und in den Potentialausgleichsleitern fließenden Anteile von 
+Betriebsströmen kann ein störendes magnetisches Feld erzeugt werden. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 236/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 24 
+ 
+Bild 444.7A.1 – Beispiel für eine TN-Mehrfacheinspeisung mit nur einer Verbindung  
+zwischen SVL und Erde 
+ 
+Bild 444.7A.2 – Beispiel für eine TN-Mehrfacheinspeisung mit nicht zulässigen Mehrfachverbindungen 
+zwischen den Sternpunkten der Stromquellen und Erde 
+444.4.6.2 
+TN-Mehrfacheinspeisung 
+444.4.6.2.001.AT  
+TN-Mehrfacheinspeisung in elektrischen Anlagen ohne vermaschte Erdungs- 
+und Potentialausgleichsanlage – Ausführung mit einem gemeinsamen SVL 
+Werden innerhalb eines elektrisch versorgten Objekts mehrere Stromquellen (z. B. Transformatoren, 
+Generatoren) parallel betrieben und ist keine vermaschte Erdungs- und Potentialausgleichsanlage vorhanden, 
+so sind die Sternpunkte dieser Stromquellen mittels eines Sternpunkt-Verbindungs-Leiters (SVL) zu verbinden. 
+Dieser SVL muss an einem einzigen Punkt geerdet werden. Ab diesem Punkt muss die Anlage als  
+TN-S-System errichtet werden (symbolische Darstellung siehe Bild 444.7B). 
+ANMERKUNG AT 
+Diese Lösung setzt voraus, dass die verschiedenen Stromquellen eng beieinander angeordnet 
+sind. Andernfalls kann die Abschaltbedingung im Fehlerfall einer Stromquelle wegen zu hoher Fehlerschleifenimpedanzen 
+nicht oder nur mit hohem Aufwand erfüllbar sein. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 237/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 25 
+ 
+Bild 444.7B – TN-Mehrfacheinspeisung einer elektrischen Anlage mit Verbindung der  
+Sternpunkte über den SVL zur Erde an nur einem Punkt, wenn keine  
+vermaschte Potentialausgleichsanlage vorhanden ist 
+Legende 
+a 
+Weder Transformator- noch Generatorsternpunkte werden direkt mit der Erdungsanlage verbunden. 
+b 
+Der SVL, der die Sternpunkte der Transformatoren oder Generatoren untereinander verbindet, wird isoliert 
+ausgeführt und muss an den Enden gemäß Teil 5-51 gekennzeichnet sein. Er darf nicht direkt mit Körpern 
+elektrischer Verbrauchsmittel verbunden werden und ein entsprechender Warnhinweis (z. B. mit „SVL, 
+hier nicht erden“) muss dauerhaft in der Nähe der Anschlusspunkte des SVL angebracht werden 
+ 
+Der SVL darf in der Hauptverteilungsanlage einen Teil der Neutralleiter-Schiene bilden (siehe  
+Bild 444.7B.001.AT). 
+c 
+Einzige Verbindungsstelle des SVL mit der Erdungsanlage des elektrisch versorgten Objekts und zugleich 
+Aufteilungspunkt Schutzleiter und Neutralleiter. Die Verbindungsstelle muss innerhalb der Haupt-
+verteilungsanlage angeordnet sein 
+d 
+Zusätzliche Verbindungen des Schutzerdungsleiters in der elektrischen Anlage mit der Erdungsanlage des 
+elektrisch versorgten Objekts dürfen hergestellt werden 
+ 
+ANMERKUNG 1.AT 
+Unerwünschte Ausgleichsströme im Schutzerdungsleiter können dabei auftreten. 
+ANMERKUNG 2.AT 
+Wenn die Anlage in mehrere Abschnitte unterteilt ist, müssen Maßnahmen getroffen werden, 
+damit im Falle von Wartungsarbeiten an einem Abschnitt oder mehreren Abschnitten die Verbindung des SVL mit der 
+Erdungsanlage für die in Betrieb befindlichen Abschnitte gesichert bleibt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 238/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 26 
+ANMERKUNG 3.AT 
+Auch bei einer Anlage mit nur einer Stromquelle wird diese Ausführung empfohlen, um Probleme 
+bei einer späteren Erweiterung der Anlage um eine weitere Stromquelle zu vermeiden. 
+ 
+Legende 
+1 
+Teil der Neutralleiter-Schiene in der Hauptverteilungsanlage, die gleichzeitig den Sternpunkt-Verbindungs-
+Leiter (SVL) bildet 
+2 
+Erdung der Stromquellen 
+3 
+Zusätzliche Verbindungen des Schutzerdungsleiters in der elektrischen Anlage mit der Erdungsanlage des 
+elektrisch versorgten Objekts dürfen vorgesehen werden 
+4 
+Einzige Verbindungsstelle des SVL mit der Erdungsanlage des elektrisch versorgten Objekts und zugleich 
+Aufteilungspunkt Schutzleiter und Neutralleiter. Die Verbindungsstelle muss innerhalb der Haupt-
+verteilungsanlage angeordnet sein 
+Q1, Q3 
+Dreipoliger Einspeiseschalter 
+Q2, Q4 
+Dreipoliger Kuppelschalter 
+Q5  
+Vierpoliger Einspeiseschalter 
+Q6  
+Generatorschalter 
+Bild 444.7B.001.AT – Beispiel für den Teil einer Hauptverteilungsanlage für ein TN-S-System  
+mit mehreren Stromquellen und SVL 
+444.4.6.2.002.AT  
+TN-Mehrfacheinspeisung in elektrischen Anlagen mit vermaschter Erdungs- und 
+Potentialausgleichsanlage – Ausführung mit mehreren Stromquellen mit direkt 
+geerdeten Sternpunkten 
+Werden innerhalb eines elektrisch versorgten Objekts, bei dem eine vermaschte niederimpedante Erdungs- 
+und Potentialausgleichsanlage vorhanden ist, mehrere Stromquellen (z. B. Transformatoren, Generatoren) 
+parallel betrieben, so dürfen die einzelnen Sternpunkte dieser Stromquellen vor Ort mit der Erdungs- und 
+Potentialausgleichsanlage verbunden werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 239/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 27 
+ 
+Legende 
+a 
+Jeder Transformator- oder Generatorsternpunkt wird vor Ort mit der Erdungs- und Potentialausgleichs-
+anlage verbunden 
+b 
+Nullungsverbindung; die Kennzeichnung erfolgt gemäß Bild 41.004.AT 
+ 
+Diese Verbindung muss im ersten dafür geeigneten Verteiler der Verbraucheranlage angeordnet sein 
+c 
+Zusätzliche Verbindungen des Schutzerdungsleiters in der elektrischen Anlage mit der vermaschten 
+Erdungs- und Potentialausgleichsanlage des elektrisch versorgten Objekts dürfen hergestellt werden 
+Bild 444.7B.002.AT – Mehrfache Verbindungen zwischen Transformator- und Generatorsternpunkten 
+und der vermaschten Erdungs- und Potentialausgleichsanlage 
+444.4.6.3 
+TT-Mehrfacheinspeisung 
+Im Falle eines Parallelbetriebs mehrerer Stromquellen zur Speisung von Verbraucheranlagen z. B. auf einem 
+anderen Grundstück, wird aus EMV-Gründen empfohlen, die Sternpunkte der verschiedenen Stromquellen 
+miteinander und zentral an nur einem Punkt mit Erde zu verbinden. 
+444.4.7 
+Umschaltung der Stromversorgung 
+In TN-Systemen muss die Umschaltung von einer Stromversorgung auf eine andere Stromversorgung mittels 
+eines Schaltgeräts erfolgen, das die Außenleiter und, wenn vorhanden, den Neutralleiter schaltet; siehe 
+Bild 444.9A, Bild 444.9C und Bild 444.9.001.AT. 
+Beim Umschalten dürfen die Neutralleiter der Anspeisungen nicht miteinander verbunden werden. Dies 
+erfordert jedenfalls Umschaltungen mit Unterbrechung („break before make“). Für diese Umschaltung sind 
+vierpolige Schaltgeräte erforderlich. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 240/852 =====
+OVE E 8101:2025-10-01 
+Teil 4-44 – Seite 28 
+ANMERKUNG 1.AT 
+Bild 444.9B zeigt zur Verdeutlichung eine unzulässige Anordnung mit dreipoligen Schaltgeräten. 
+ANMERKUNG 2.AT 
+„Break before make“ bedeutet, dass der öffnende Kontakt den Stromkreis unterbricht (mit 
+Lichtbogenlöschung), bevor der schließende Kontakt den Stromkreis schließt. 
+Die Schaltgeräte Q1 und Q2 müssen aus EMV-Gründen gegeneinander verriegelt werden. 
+ 
+Bild 444.9A ist als Beispiel zu betrachten. Andere Lösungen sind in der Praxis möglich. 
+ANMERKUNG 
+Diese Methode verhindert elektromagnetische Felder durch ungewollte Rückströme im Neutralleiter des 
+abgeschalteten Stromkreises. Zusätzlich muss beachtet werden, dass sich die Ströme der durch die Zahl 3 ganzzahlig 
+teilbaren Oberschwingungen (z. B. 150 Hz) im Neutralleiter addieren. 
+Bild 444.9A – Beispiel für eine Umschaltung zwischen zwei Drehstromquellen mit  
+einem vierpoligen Schalter 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

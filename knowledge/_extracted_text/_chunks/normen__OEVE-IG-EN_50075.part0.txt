@@ -1,0 +1,1285 @@
+
+
+===== PAGE 1/20 =====
+ÖVE-IG/EN 50 075/1990 N3
+
+(1)
+
+(8.2)
+
+(9)
+
+Einleitung
+
+Diese Österreichischen Bestimmungen für die Elektrotechnik wurden vom Lenkungsausschuß der Sektion
+Bestimmungen im ÖVE bei der 33. Sitzung am 25. Februar 1992 verabschiedet.
+
+Der Rechtsstatus dieser Österreichischen Bestimmungen für die Elektrotechnik ist der jeweils geltenden Elek-
+trotechnikverordnung zu entnehmen.
+
+Diese Bestimmungen enthalten die Europäische Norm EN 50 075/1990. Sie sind unter Berücksichtigung des
+Nationalen Vorwortes anzuwenden.
+
+Bleibt frei.
+
+Bleibt frei.
+
+Im Nationalen Vorwort, Punkt 3, sind die Bestimmungen bzw. Normen, auf die in dieser Europäischen Norm
+Bezug genommen wird, angeführt.
+
+Die Hinweise auf Veröffentlichungen in den Fußnoten beziehen sich, sofern nicht anders angegeben, auf den
+Stand zum Zeitpunkt der Herausgabe dieses Heftes. Zum Zeitpunkt der Anwendung dieses Heftes ist der
+durch Elektrotechnikverordnung oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berück-
+sichtigen.
+
+Bei mittels Elektrotechnikverordnung verbindlich erklärten Österreichischen Bestimmungen für die Elektro-
+technik ist zu beachten:
+
+Vorworte, Ergänzungen, Erläuterungen (im Kleindruck) und Hinweise auf Fundstellen in anderen, verbindlich
+erklärten Österreichischen Bestimmungen für die Elektrotechnik werden auch von der Verbindlicherklärung
+arfaßt
+
+Einleitungen, Rechtsbelehrungen, Anhänge, Fußnoten und Hinweise auf Fundstellen in anderen Texten wer-
+den von der Verbindlicherklärung nicht erfaßt.
+
+Dio in dioeem Hoft angeführten Ögstorreichischen Boestimmungoen für die Elektrotechnik, ÖNORMEN der Elok-
+trotechnik und sonstige technische Veröffentlichungen können vom ÖVE, Eschenbachgasse 9, A-1010 Wien,
+bezogen werden.
+
+
+===== PAGE 2/20 =====
+N4
+
+1.1
+
+1.2
+
+13
+
+1.4
+
+1.5
+
+1.6
+
+OVE-IG/EN 50 075/1990
+
+Nationales Vorwort
+
+Grundsitzliche Aussagen
+
+Die EN 50 075, vom Europaischen Komitee für Elektrotechnische Normung (CENELEC) am 11. September
+1989 angenommen, wurde vom LenkungsausschuB der Sektion Bestimmungen bei der 33. Sitzung am
+25. Februar 1992 in die Osterreichischen Bestimmungen fiir die Elektrotechnik übernommen und trégt als
+solche die Bezeichnung OVE-IG/EN 50 075/1990. Sie ist in Verbindung mit den Festlegungen dieses
+Nationalen Vorwortes anzuwenden.
+
+Allgemeines
+
+Europaische Normen (EN) sind nach den ,,Gemeinsamen Regeln“ von CEN/CENELEC, Unterabschnitt5.2.2,
+durch Versffentlichung eines identischen Textes oder durch Anerkennung in das Gesamtwerk der Osterreichi-
+schen Bestimmungen für die Elektrotechnik zu übernehmen.
+
+Für die vorliegenden Bestimmungen wurde in Osterreich die Herausgabe des identischen Textes in der offi-
+ziellen Sprache Deutsch von CEN/CENELEC gewählt und eine Nationale Titelseite, eine Einleitung und ein
+Nationales Vorwort hinzugefiigt.
+
+Bleibt frei.
+
+Verweise auf Fundstellen
+
+Bei Verweisen auf internationale Bestimmungen (IEC-Publ., HD, EN etc.) sind jene Osterreichischen Bestim-
+mungen für die Elektrotechnik anzuwenden, die diesen entsprechen. In Ermangelung solcher dsterreichischer
+Bestimmungen sind die angeflihrten européischen oder internationalen Bestimmungen unmittelbar als Stand
+der Technik heranzuziehen.
+
+Für solche Verweise wird in den Osterreichischen Bestimmungen fiir die Elektrotechnik jedoch eine einheitli-
+che Formulierung verwendet, und zwar:
+
+Fur diese . . . bestehen technische Bestimmungen),
+
+wobei durch das Symbol *) auf eine FuBnote mit genauem Zitat der herangezogenen Quelle hingewiesen wird.
+Uber den Charakter einer FuBnote siehe Einleitung. Punkt 8. Zitate von Publikationen im Text sind als dieser
+Form angepaBt zu verstehen.
+
+Diese Regel gilt insbesondere für die Verweise, die im Punkt 3 dieses Nationalen Vorwortes angeführt sind.
+
+Anhédnge
+Im deutschen Originaltext der EN 50 075 gibt es den Anhang A. Der Anhang A ist informativ.
+
+Bildor
+
+Sofern in diesen Bestimmungen nicht ausdriicklich anders verlangt (z. B. durch BemaBung), sind Abbildungen
+als Erlauterungen zum Text der Bestimmungen zu verstehen und definieren diese nicht zusétzlich und über
+den Text hinausgehend. Zusétzliche Interpretationen solcher Bilder sind in diesem Sinne daher nicht zulassig.
+
+Deutsche Fassung
+Sollte, z. B. durch Ubersetzungsfehler, die deutsche Fassung im Widerspruch zum englischen Originaltext
+stehen. so gilt im Zweifelsfall die englische Fassung.
+
+Bleibt frei.
+
+
+===== PAGE 3/20 =====
+ÖVE-IG/EN 50 075/1990 N5
+
+3
+
+Anhang NA (informativ)
+Gegenüberstellung der anzuwendenden internationalen bzw. regionalen Bestimmungen zu ÖVE-
+Bestimmungen bzw. ÖNORMEN oder als Regeln der Technik anzuwendenden Bestimmungen
+
+mod = durch gemeinsame CENELEC-Abänderungen modifiziert
+
+ÖVE-Bestimmungen
+ÖNORMEN
+Regeln der Technik
+
+Ausgabedaten
+
+IEC-Publikationen EN/HD der EN/HD
+
+IEC 227-5 (mod) HD21.582 1990 OVE-K 41
+Polyvinyl chloride insulated cables of rated
+
+voltages up to and including 450/750 V
+
+Part 5: Flexible cables (cords)
+
+Energieleitungen mit einer Isolierung aus PVC
+
+IEC 245-4 (mod) HD22.4 S2 1982 OVE-K 40
+Rubber insulated cables of rated voltages
+
+up to and including 450/750 V
+
+Part 4: Cords and flexible cables
+
+Energieleitungen mit einer Isolierung aus
+
+Gummi
+
+IEC 320-1 (mod) EN 60 320-1 1987 ÖVE-IG/EN 60 320 Teil 1
+Appliance couplers for household and similar
+
+general purposes
+
+Gerätesteckvorrichtungen für den Haus-
+
+gebrauch und ähnliche allgemeine Zwecke
+
+Teil 1: Allgemeine Anforderungen
+
+IEC 695-2-1 HD444.2.1S1 1983 DIN VDE 0471 Teil 2-1
+Fire hazard testing
+
+Part 2: Test methods
+
+Glow-wire test and guidance
+
+Prüfungen zur Renrteiliing der Rrandgefahr
+
+Teil 2: Priifverfahren
+
+Priifung mitdem Gliihdraht und Anleitung
+
+IEC 884-1 - - OVE-IG 31
+
+Plugs and socket-outlets for household (nichtident mit IEC)
+and similar purposes
+
+Part 1: General requirements
+
+Steckvorrichtungen für den Hausgebrauch
+
+und ähnliche Zwecke
+Teil 1: Allgemeine Anforderungen
+
+OVE-Bestimmungen
+ONORMEN
+
+Regelnder Technik
+
+Auggabodaton
+
+CEkE-Publikationen EN/HD der EN/HD
+
+CEE7 - - OVE-IG 31
+Specification for plugs and socket-outlets
+
+for domestic and similar purposes
+
+Anforderungen an Steckvorrichtungen fiir
+
+den Hausgebrauch und &hnliche Zwecke
+
+
+===== PAGE 4/20 =====
+N6
+
+ÖVE-IG/EN 50 075/1990
+
+ÖVE-Bestimmungen
+
+ISO-Publikationen EN/HD Ausgabedaten ©\NORMEN
+der EN/HD .
+Regeln der Technik
+ISO 1456 - - ONORM C 2505
+
+Metallic coatings —
+
+Electroplating coatings of nickel plus chromium
+Galvanische Uberziige; .
+Nickel-, Chromüberzüge
+
+1SO 2081 - - ONORM C 2502
+Metallic coatings —
+
+Electroplating coatings of zinc on iron or steel
+
+Galvanische Zinkuberziige auf Eisenwerk-
+
+stoffen
+
+ISO 2093 - - ONORMC 2506
+Electroplated coatings of tin —
+
+Specifications and test methods
+
+Galvanische Zinnüberzüge;
+
+Spezifikationen und Prufmethoden
+
+Bleibt frei.
+
+
+===== PAGE 5/20 =====
+EUROPÄISCHE NORM EN 50 075
+EUROPEAN STANDARD
+NORME EUROPEENNE Juli 1990
+
+DK 621.316.541.12:64.06-83 .
+Deskriptoren:  Elektrische Geréte, Haushaltgerate, Stecker, Bestimmung, Eigenschaft, Aufbau, Priifung
+
+Deutsche Fassung
+
+Flache, nichtwiederanschlieBbare zweipolige Stecker,
+2,5 A 250 V, mit Leitung, für die Verbindung von
+Klasse-Il-Geräten für Haushalt und ahnliche Zwecke
+
+Flat non-wirable two-pole plugs, 2,5 A 250 V, Fiche de prise de courant 2,5 A 250 V plate
+
+with curd, fur the sunnetivn uf Glass- bipulaire non demontable, avec cable, pour
+ll-equipment for household and similar la connexion des appareils de la classe II
+purposes pour usages domestiques et analogues
+
+Diese Européische Norm wurde von CENELEC am 1989.09.11 angenommen.
+
+Die CENELEC-Mitglieder sind gehalten, die CEN/CENELEC-Geschéftsordnung zu erfül-
+len, in dor dic Bedingungen feotgelegt sind, unter denen dieser Curopéischen Nurin uline
+jede Anderung der Status einer nationalen Norm zu geben ist.
+
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren bibliographi-
+schen Angaben sind beim CENELEC-Zentralsekretariat oder bei jedem CENELEC-Mit-
+gllea aut Anfrage ernaitiich.
+
+Diese Européische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Fran-
+zösisch). Eine Fassung in einer anderen Sprache, die von einem CENELEC-Mitglied in
+
+eigener Verantwortung durch Ubersetzung in die Landessprache gemacht und dem
+Zentralsekretariat mitgeteilt worden ist, hat den gleichen Status wie die offiziellen Fas-
+
+sungen.
+
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, Da-
+nemark. Deutschland. Finnland. Frankreich, Griechenland, Irland, lsland, Italien, Luxem-
+burg, Niederlande, Norwegen, Osterreich, Portugal, Schweden, Schweiz, Spanien und
+dem Vereinigten Konigreich.
+
+| CENELEC
+
+EUROPAISCHES KOMITEE FUR ELEKTROTECHNISCHE NORMUNG
+European Committee for Electrotechnical Standardization
+! Comite Europeen de Normalisation Electrotechnique
+
+Zentralsekretariat: rue de Stassart 35, B-1050 Brüssel
+
+© 1990. Das Copyright ist den CENELEC-Mitgliedern vorbehalten. Ref.-Nr. EN 50 075: 1990 D
+
+
+===== PAGE 6/20 =====
+Seite 2
+EN 50 075 : 1990
+
+Einleitung
+
+Dieses Schriftstück wurde durch CENELEC/TC 23X „Eurostecker und -steckdosen“ erstellt. In der Sitzung am
+18. und 19. November 1986 wurde entschieden, eine EN zu erarbeiten für flache, nichtwiederanschließbare
+Stecker 2,5 A 250 V für die Verbindung von Klasse-Il-Geräten, zu Normblatt XVI (Alternative Il) der CEE-Publika-
+tion 7 (2. Ausgabe 1963 und Anderungen 1, 2, 3 und 4) oder zu Normblatt C5 (Alternative Il) der IEC-Publi-
+kation 83.
+
+Dieser Stecker, auch als „Eurostecker“ bekannt, ist schon in den meisten europäischen Ländern (außer
+Großbritannien) genormt. Die zutreffenden nationalen Normen sind entweder Bestätigung der CEE-Publi-
+kation 7 oder basieren auf dieser Bestimmung.
+
+Der Eurostecker besteht nun schon seit mehr als 25 Jahren und wird durch eine große Anzahl von Herstellern
+produziert. Viele von diesen Eurosteckern wurden in Übereinstimmung mit den Anforderungen nach CEE-Publi-
+kation 7 oder entsprechenden nationalen Normen durch die Prüfstellen verschiedener europäischer Länder
+geprüft und approbiert.
+
+Da diese EN auf die bestehenden und approbierten Eurostecker (und natürlich auf neue Ausführungen)
+anwendbar sein muß, basiert dieses Schriftstück hauptsächlich auf den Anforderungen nach CEE-Publikation 7.
+Kleine Änderungen, die in der IEC-Publikation 884-1 inbegriffen sind, wurden auch mit in Betracht gezogen.
+Wenn diese EN im ganzen auf der IEC 884-1 basieren würde, bestünde das Risiko, daß vorhandene Stecker
+nicht mit den Anforderungen dieser Norm übereinstimmen würden.
+
+In diesem Schriftstück sind Anforderungen durch eine senkrechte Linie am Rand gekennzeichnet. Prüfanforde-
+rungen sind nicht gekennzeichnet. Erklärungen wurden eingerückt geschrieben.
+
+Der Text der prEN 50 075 (1. Ausgabe Januar 1989) wurde von allen CENELEC-Mitgliedern mit Ausnahme von
+Norwegen und Schweden am 11. September 1989 als Europäische Norm genehmigt und ratifiziert.
+
+Es gelten folgende Daten:
+
+— spatestes Datum der Ankündigung
+
+der EN auf nationaler Ebene (doa): 1990-05-01
+— _ Datum der spätesten Veröffentlichung
+
+einer ncucn harmonisierten nationalon Norm (dop): 1001-03-01
+— _ Datum der Zurückziehung von
+
+entgegenstehenden nationalen Normen (dow): 1993-03-01
+
+Für Erzeugnisse, die vor 1993-03-01 der einschlägigen nationalen Norm entsprochen haben, wie durch den
+Hersteller oder durch eine Zertifizierungsstelle nachgewiesen, darf diese vorhergehende Norm tur die Fertigung
+bis 1998-03-01 noch weiter angewendet werden.
+
+
+===== PAGE 7/20 =====
+Seite 3
+EN 50 075 : 1990
+
+Inhalt
+Seite
+Einleitung . . o o o e e K 2
+1 Anwendungsbereich . . . . . . .. ... 3
+Begriffe . . . ... ... ... 3
+3 Allgemeine Anforderungen 4
+4 Allgemeine Anmerkungen zu den Prifungen 4
+5 Nennwerte . ... ............... 4
+6 Aufschriften . . ... 4
+7 MaBe ......... 5
+8 Beruhrungsschutz . . 5
+9 Aufbau . .. ... 5
+10 Feuchtigkeitsbestandigkeit 6
+11 Isolationswiderstand und Spannungsfestigkeit . . . . .. ... 6
+12  Flexible Leitungen und ihr AnschiuB 7
+13 Mechanische Festigkeit . . . . .. ... .. 8
+14 Wärme- und Alterungsbestandigkeit 9
+15 Stromflhrende Teileund Verbindungen . . . . . . . .. ... 9
+
+16 Kriechstrecken, Luftstrecken und Abstände durch Isolierung . . . . . . . .. ... .. ... .. .. .. 10
+17 Bestandigkeit von Isolierstoff gegen übermäßige Warmeund Feuer . . . . .. ... ... ... .. 10
+Bilder . . . . e e 11
+Anhang A . . . . e 16
+
+1 Anwendungsbereich
+
+Diese Norm gilt für flache, nichtwiederanschlieBbare zweipolige Stecker ohne Schutzkontakt mit einer Nenn-
+spannung von 250 V Wechselspannung und einem Nennstrom von 2,5 A mIT einer Leitung, die zur verbinaung
+von Klasse-Il-Geräten für Haushalt und ahnliche Zwecke bestimmt sind. Diese Stecker haben keinen besonde-
+ren Schutz gegen Eindringen von Wasser und sind zur Verwendung in Innenrdumen vorgesehen.
+
+Stecker. die dieser Norm entsprechen, sind zur Verwendung bei Umgebungstemperaturen geeignet, die
+üblicherweise 25 ° C nicht (ibersteigen, aber gelegentlich 35 °C erreichen.
+
+Steckerpartien von Adaptern oder Geréten, wie Rasierapparate oder Lampen mit wiederaufladbaren Akku-
+mulatoren, einsteckbaren Transformatoren usw., müssen soweit wie sinnvoll zutreffend den Anforderun-
+gon diesor Norm entsprechen
+
+2 Begriffe
+
+Wo in dieser Norm der Ausdruck ,Stecker* verwendet wird, sind Stecker nach dieser Norm gemeint, sofern
+nicht anderweitig festgelegt.
+
+Sofern nicht anders angegeben, beziehen sich die verwendeten Ausdriicke Spannung und Strom auf Effektiv-
+werte.
+
+Folgende Begriffe gelten im Rahmon dicsor Norm.
+
+2.1 Ein Stecker ist eine Vorrichtung mit Stiften, so gebaut, daB er mit den Kontakten einer Steckdose
+zusammengefuhrt wird, und der auch Mittel zum elektrischen AnschluB und zum mechanischen Festhalten von
+Leitunaen enthalt.
+
+2.2 Ein nichtwiederanschlieBbarer Stecker ist ein Stecker, der so gebaut ist, daB er nach AnschluB und
+Zusammenbau durch den Hersteller eine bauliche Einheit mit der Leitung bildet (siehe auch Abschnitt 9.1).
+
+Der Hersteller, auf den in diesem Begriff Bezug genommen wird, ist entweder der Hersteller
+— des Steckers oder der GerateanschluBleitung (cord-set) oder
+
+— der Leitung oder
+— des Gerates oder der Einrichtung.
+
+2.3 Ein angeformter Stecker ist ein nichtwiederanschlieBbarer Stecker, dessen Herstellung durch Isolierma-
+terial vervollstandigt wird, das um die vorgefertigten Bauteile und die Anschlisse geformt wird.
+
+
+===== PAGE 8/20 =====
+Seite 4
+EN 50 075 : 1990
+
+3 Allgemeine Anforderungen
+
+Stecker müssen so gebaut sein, daß sie im bestimmungsgemäßen Gebrauch zuverlässig sind und keine Gefahr
+für den Benutzer oder die Umgebung darstellen.
+
+Im allgemeinen wird dies durch die Ausführung aller festgelegten Prüfungen nachgewiesen.
+
+4 Allgemeine Anmerkungen zu den Prüfungen
+4.1 Prüfungen nach dieser Norm sind Typprüfungen.
+
+4.2 Für die Prüfung müssen die Stecker mit einer für den vorgesehenen Zweck geeigneten Leitung ausge-
+rüstet sein. Die Leitung muß mindestens 1 m lang sein.
+
+4.3 Falls nichts anderes festgelegt ist, werden die Prüfungen in der Reihenfolge der Abschnitte bei einer
+Umgebungstemperatur von (20 + 5) °C ausgefiihrt.
+
+4.4 Ein Satz von drei Steckern wird allen zutreffenden Priifungen, mit Ausnahme der nach den Abschnitten
+12.2,12.3, 13.4 und 14.2, unterworfen.
+Ein zweiter Satz von drei Steckern wird den Prüfungen nach den Abschnitten 12.2, 13.4 und 14.2 unterworfen.
+Ein dritter Satz von drei Steckern ist für die Prifung nach Abschnitt 12.3 erforderlich.
+
+Insgesamt werden damit neun Stecker bendtigt.
+4.5 Stecker gelten als dieser Norm nicht entsprechend, wenn mehr als ein Stecker bei einer der Prifungen
+versagt. Versagt ein Stecker in einer Priifung, wird diese Prifung und die vorangehenden, die das Ergebnis der
+Prüfung beeinfluBt haben könnten, mit einem weiteren Satz von Steckern in der in Abschnitt 4.4 festgelegten
+Anzahl wiederholt. Es mussen dann alle Stecker den Wiederholungsprifungen gentgen.
+
+Im allgemeinen wird ea auareichen, nur dic Prifungen, dic das Veroagen bewirlkt haben, zu wiodorholon.
+
+Der Antragsteller kann zusammen mit der in Abschnitt 4.4 festgelegten Anzahl der Stecker die zusatzli-
+chen Satze von Steckern einreichen, die beim Versagen eines Steckers erforderlich werden konnten. Die
+Priifstelle wird dann ohne weiteres die zusétzlichen Stecker prüfen und wird nur dann eine Ablehnung
+aussprechen, wenn eın welterer Fenier aurtritt. Werden ale zusaizlicnen Saize Stecker nicht glelchzellg
+mit dem ersten Satz vorgelegt, führt das Versagen eines Steckers zur Ablehnung.
+
+5 Nennwerte
+Stecker nach dieser Norm miissen einen Nennwert von 2,5 A 250 V Wechselstrom haben.
+
+6 Aufschriften
+
+6.1 Stecker missen folgende Aufschriften tragen:
+— Nennstrom in Ampere,
+— Nennspannung in Volt,
+— Symbol fir die Stromart: —
+
+— enweder Name, Handelsmarke oder Ursprungszeichen des Heistlellers uder Jdes veranlwur tlivhien
+Héndlers,
+
+— Typzeichen, das eine Katalognummer sein kann.
+
+6.2 Werden Symbole verwendet, dann müssen ea folgende acin:
+— Ampere...A,
+
+— Volt...V.
+
+Die Aufschriften fur den Nennstrom. die Nennspannuna oder die Stromart missen in einer der folaenden Arten
+gemacht werden:
+
+25A 25
+~ oder
+50 V 250
+Linien, die durch die Art des Werkzeuges gebildet werden, werden nicht als Teil der Aufschrift angesehen.
+
+25A 250V~ oder25/250~ oder
+
+6.3 Stecker durfen nicht mit dem Symbol für Klasse-II-Bauart gekennzeichnet sein.
+
+6.4 Aufschriften müssen daucrhaft und lcicht lcobar acin.
+Prifung der Anforderungen nach Abschnitt 6.1 bis 6.4: Besichtigen und durch die foigende Prifung.
+Reiben der Aufschriften 15 s mit einem mit Wasser getränkten und anschlieBend 15 s mit einem mit Benzin
+getrénkten Lappen.
+Aufschriften, die durch Formen, Stanzen oder Eingravieren angebracht sind, werden dieser Prifung nicht
+unterworfen.
+
+
+===== PAGE 9/20 =====
+Seite 5
+EN 50 075 : 1990
+
+Das verwendete Benzin sollte aus dem Lösungsmittel Hexan mit einem Aromatenbestandteil von maximal
+0,1 Volumenprozent, einem Kauri-Butanol-Wert von 29, einem Anfangssiedepunkt von ungefähr 65 °C,
+einem Trockenpunkt von ungefahr 69 °C und einer Dichte von ungefahr 0,68 g/cm® bestehen.
+
+7 MaBe
+| Stecker miissen dem Normblatt 1 entsprechen.
+Prifung: Durch Messen und mit den in den Bildern 1 und 2 gezeigten Lehren.
+Der Gebrauch der Lehren, wie in Bild 1 gezeigt, zur Prifung der Stiftdurchmesser ist frei wählbar.
+
+8 Berithrungsschutz
+
+8.1 Spannungfiihrende Teile von Steckern, mit Ausnahme der blanken Metallteile der Stifte, diirfen nicht
+berihrbar sein.
+
+Prifung: Der Normpriffinger, wie in Bild 3 gezeigt, wird in jeder moglichen Stellung angewendet, auBer an den
+blanken Metallteilen der Stifte.
+
+Ein elektrisches Anzeigegerat mit einer Spannung zwischen 40 und 50 V wird verwendet, um Beriihrung
+mit dem entsprechenden Teil anzuzeigen.
+
+Bei Steckern, die aus einem Werkstoff hergestellt sind, der die Ergebnisse wahrscheinlich beeinflussen wiirde,
+wird die Priifung bei einer Umgebungstemperatur von (35 + 2) °C wiederholt, wobei die Stecker auch auf diese
+Temperatur gebracht werden.
+
+Wihrend dieser zusatzlichen Prifung werden die Stecker (60 *8) s einer Kraft von (75 *%) N ausgesetzt, die
+durch die Spitze eines geraden, nichtgegliederten Priffingers ausgeübt wird, der dieselben MaBe wie der
+
+Normpruffinger nach Bild 3 hat. Der gerade, nichtgegliederte Priffinger wird an allen Stellen angelegt, an denen
+sin Nachgeben des Isolisrmaterials die Sicherhsit des Oteckers beeinträchtigen konnte.
+
+Während dieser Priifung darf sich der Stecker nicht so verformen, daB die MaBe in dem betreffenden Normblatt,
+die der Sicherheit dienen, unzuldssig veréndert sind, und spannungfiihrende Teile dirfen nicht berührbar sein.
+8.2 Ee darf nicht méglich cein, Vorbindung zwicchen sinom Stift oinoe Stockore und oinom aktiven Stookkon
+takt einer Steckdose herzustellen, wéhrend der andere Stift berührbar ist.
+Prifung: Mit einer Lehre, wie in Bild 4 gezeigt.
+Bei Steckern mit Gehäusen oder Kérpern aus Thermoplast wird die Priifung bei einer Umgebungstemperatur
+von (35+2) ”C ausgefuhrt, wobei sich sowohl der Stecker als auch die Lehre bei dieser Temperatur befinden.
+
+1 8.3 AuBere Teile von Steckern, mit Ausnahme der Stifte, miissen aus Isolierstoff bestehen.
+Prifung: Besichtigen
+
+Lack oder Emaille gelten nicht als Isolierstoff im Sinne dieses Abschnittes.
+
+9 Aufbau
+
+9.1 Stecker nach dieser Norm mussen nichtwiederanschlieBbar sein, d. h., sie müssen so beschaffen sein,
+daB
+
+— die Leitung nicht von dem Stecker getrennt werden kann, ohne daB dieser dauernd unbrauchbar wird, und
+
+—  der Stecker nicht von Hand oder unter Verwendung eines üblichen Werkzeuges, 2. B. sinos Schraubondro-
+hers, gedffnet werden kann.
+
+Ein Stecker wird als dauernd unbrauchbar angesehen, wenn für den Wiederzusammenbau des Steckers andere
+Teile oder Materialien als die urspriinglichen verwendet werden miissen.
+Prutung: Besichtigen
+
+9.2 Schalter, Sicherungen und Lampenfassungen dirfen nicht in den Steckern eingebaut sein.
+Prifung: Besichtigen
+
+| 9.3 Stifte von Steckern miissen massiv sein und miissen ausreichende mechanische Festigkeit haben.
+Prifung: Besichtigen, Handprobe und durch die Prifungen nach Abschnitt 13.
+
+19.4 Steckerstife müssen gegen Verdrehen gesichert und ausreichend im Steckerkérper befestiat sein.
+Prifung: Besichtigen, Handprobe und durch die Priiftungen nach den Abschnitten 13.1 und 13.4.
+
+9.5 Stecker missen mit L6t-, SchweiB-, Crimp- oder gleichwertig dauerhaft wirksamen Verbindungen ausge-
+stattet sein. Schraub- oder Steckverbindungen diirfen nicht verwendet werden.
+
+Bei Crimpverbindungen ist ein vorverzinnter Leiter nicht gestattet, es sei denn, der Verzinnbereich liegt
+auBerhalb des Crimpbereiches.
+
+Prifung: Besichtigen
+
+9.6 Stecker müssen so geformt und aus solchem Werkstoff hergestellt sein, daB sie leicht von Hand aus einer
+Steckdose herausgezogen werden können.
+
+
+===== PAGE 10/20 =====
+1 Seite 6
+EN 50075 : 1990
+
+AuBerdem miissen die Griffflichen so gestaltet sein, daB der Stecker ohne an der Leitung zu ziehen herausge-
+zogen werden kann.
+
+Prüfung: Besichtigen, ob der Stecker entweder
+
+— eine nutzbare Grifflange von mindestens 55 mm in axialer Richtung hat oder
+
+— solche Einschniirung(en) hat, daB eine Kugel mit einem Durchmesser von (12+0,1) mm aus zwei gegen-
+Uberliegenden Richtungen um mindestens je 2 mm oder aus einer Richtung um mindestens 4 mm radial
+darin eindringen kann.
+
+In dem Fall, daB keine Ubereinstimmung mit den obigen Anforderungen erreicht wird, muB eine Griffigkeitspri-
+
+fung ausgefuhrt werden.
+Die Griffigkeitspriifung ist in Vorbereitung.
+
+10 Feuchtigkeitsbestéandigkeit
+| Stecker miissen gegen Feuchtigkeit, die im bestimmungsgem&Ben Gebrauch auftreten kann, beständig sein.
+Prifung: Durch die im folgenden beschriebene Feuchtigkeitsbehandlung, der die Messung des Isolationswi-
+derstandes und die Hochspannungsprifung, festgelegt in Abschnitt 11, unmittelbar folgt.
+Die Feuchtigkeitsbehandlung wird in einem Klimaschrank vorgenommen, der Luft mit einer relativen Feuchtig-
+{ keit enthält, die zwischen 91 % und 95 % gehalten wird.
+| Die Lufttemperatur wird dort, wo die Stecker untergebracht sind, innerhalb +1 °C eines passenden Wertes ¢
+zwischen 20 °C und 30 °C gehalten.
+Bevor die Stecker in den Klimaschrank eingebracht werden, miissen sie auf eine Temperatur zwischen ¢ und
+(t+4) °C gebracht werden.
+Die Stecker werden 48 h in dem Klimaschrank belassen.
+In den meisten Fallen konnen die Stecker aut die festgelegte lemperatur gepbracnt weraen, inaem sie
+mindestens 4 h vor der Feuchtigkeitsbehandlung auf dieser Temperatur gehalten werden.
+Eine relative Feuchte zwischen 91 % und 95 % kann erreicht werden durch Einbringen einer gesittigten
+
+waBrigen Lösung von Natriumsulfat (Na2SO«4) oder Kaliumnitrat (KNO3) in dem Klimaschrank, wobei eine
+geniigend groBe Berlhrungsflache mit der Luft vorhanden sein muB.
+
+Um die vorgeschriebenen Bedingungen in dem Klimaschrank zu erhalten, ist standige Luftumwiélzung im
+Raum erforderlich und im aligemeinen auch die Verwendung eines thermisch isolierten Raumes.
+Nach dieser Dehandlung dirfen die Stecker keinen Schaden im Sinne dieacr Norm aufweioen.
+
+11 Isolationswiderstand und Spannungsfestigkeit
+
+Der Isolationswiderstand und die Spannungsfestigkeit von Steckern missen ausreichend sein.
+
+Prifung: Durch die folgenden Prüfungen, die unmittelbar nach der Priifung nach Abschnitt 10 in dem Kli-
+maschrank durchgefiihrt werden oder in dem Raum, in dem die Stecker auf die vorgeschriebene Temperatur
+gebracht wurden.
+
+11.1  Der Isolationswiderstand wird mit Gleichspannung von ungefahr 500 V gemessen, und zwar (6U '§) s
+nach Anlegen der Spannung.
+
+Der Isolationswiderstand darf nicht kleiner als 5 MQ sein.
+
+Der lenlatinnewidereatand wird nachainandar gamassan 7wischen
+
+— den miteinander verbundenen Stiften und dem Kérper;
+
+— jedem Stift nacheinander und dem anderen, wobei dieser mit dem Kérper verbunden ist.
+
+Der Ausdruck „Körper“ bedeutet eine Metallfolie, die in Kontakt ist mit der AuBenflache des Steckers,
+ausgenommen der Eingriffsflache und der Isolierhilsen.
+Wihrend die Metallfolie um die AuBenflache gewickelt wird, wird sie gegen Locher oder Vertiefungen ohne
+nennenswerte Kraft gedriickt, und zwar mittels eines geraden ungegliederten Priffingers, der dieselben MaBe
+hat. wie der in Rild 3 gezeigte Normpriiffinger
+
+11.2 Eine im wesentlichen sinusférmige Spannung mit der Frequenz von 50 Hz wird 1 min zwischen den in
+Abschnitt 11.1 angegebenen Teilen angelegt.
+
+Die Prufspannung muB 2 000 V betragen.
+Zunächst werden nicht mehr als 1 000 V angelegt. Dann wird sie rasch auf die vollen 2 000 V erhöht.
+Wahrend der Prifung darf kein Uberschlag oder Durchschlag erfolgen.
+
+Der fir die Prifung verwendete Hochspannungstransformator muB so gebaut sein, daB der Ausgangsstrom
+mindesiens ZUU MA Detragt, wenn die Ausgangsklemmen kurzgeschiossen sind, nachdern die Ausyganygsspaii-
+nung auf die festgelegte Prifspannung eingestellt ist.
+
+Das Uberstromrelais darf nicht auslésen, wenn der Ausgangsstrom kleiner als 100 mA ist.
+
+Es ist dafür zu sorgen, daB der Effektivwert der angelegten Prifspannung mit einer Genauigkeit von +3 0o
+gemessen wird.
+
+Glimmentladungen ohne Absinken der Spannung werden vernachléssigt.
+
+
+===== PAGE 11/20 =====
+Seite 7
+EN 50 075 : 1990
+
+12 Flexible Leitungen und ihr Anschluß
+
+12.1 Stecker müssen mit einer zweiadrigen Leitung versehen sein, die entweder HD 21.5 oder HD 22.4
+entspricht.
+Leichte Zwillingsleitungen und Leitungen mit einem Querschnitt von 0,5 mm® sind nur bis zu einer Länge von
+2 m zulässig.
+Ein in einer Geräteanschlußleitung angebauter Stecker wird nach den Festlegungen dieser Norm, die
+Gerätesteckdose nach den Festlegungen in EN 60 320 Teil 1 geprüft.
+Jedes Gerät wird einzeln geprüft. ”
+Prüfung: Besichtigen
+
+12.2 Angeformte Stecker müssen so konstruiert sein, daß die Adern der Leitung von Zug entlastet sind, wo sie
+an die Anschlußstellen angeschlossen sind. Andere als angeformte Stecker müssen mit einer Zugentlastungs-
+vorrichtung versehen sein, so, daß die Adern der Leitung von Zug und Verdrehen entlastet sind, wo sie an die
+Anschlußstelle angeschlossen sind, und daB ihre Isolierung vor Abrieb geschützt ist.
+Der gegebenenfalls vorhandene Mantel der Leitung muß innerhalb der Zugentlastungsvorrichtung geklemmt
+werden.
+Prüfung: Besichtigen und durch die folgende Prüfung, die an neuen Steckern des zweiten Satzes ausgeführt
+wird.
+Der Stecker wird so in die Priifvorrichtung nach Bild 5 gebracht, daB die Achse der Leitung an der Eintrittsstelle
+des Steckers senkrecht verlauft.
+Die Leitung wird dann 100mal einem Zug von 50 N unterworfen. Der Zug wird praktisch ruckfrei jeweils 1s
+ausgeübt.
+1 Inmittelhar danach wird die Leitung 1 min einem Drehmoment unterworfen von
+— 0,1 Nm, wenn die angeschlossene Leitung einen Nennquerschnitt von 0,5 mm® hat,
+— 0,15 Nm, wenn die angeschlossene Leitung einen Nennquerschnitt von 0,75 mm? oder mehr hat.
+Stecker mit Leichter Zwillingsleitung HO3VH-Y werden der Drehmomentsprüfung nicht unterworfen.
+Nach den Prifungen darf sich die Leitung nicht um mehr als 2 mm verschoben haben, und die elektrischen
+Verbindungen dirfen nicht unterbrochen sein.
+Zur Messung der Langsverschiebung wird vor der Priifung an der belasteten Leitung in etwa 2 cm Abstand
+vom Ende des Steckers sina Markieriing angehracht Falls es hei angefarmten Steckern kein definiertes
+Ende des Steckers gibt, wird eine zusétzliche Markierung an dem Kdrper des Steckers angebracht.
+Nach den Prüfungen wird bei belasteter Leitung die Verschiebung der Markierung auf der Leitung gegen-
+über dem Stecker gemessen.
+
+12.3 Stecker müssen so gebaut sein, daB die Leitung an der Eintrittsstelle zum Stecker gegen UberméBiges
+Biegen geschitzt ist.
+Hierfir vorgesehene Schutztillen müssen aus Isolierstoff bestehen und zuverléssig befestigt sein.
+
+Blanke uder it Isulier sLulf überzugene Metallwendeln dirfen als Schutztillen nicht verwendet worden.
+Prüfung: Besichtigen und durch eine Biegeprifung in einem Prüfgerät, das einen Schwenkarm, ahnlich dem in
+Bild 6 gezeigten, hat. Die Prifung wird an Steckern des dritten Satzes durchgefuhrt. Der Stecker wird an dem
+Schwenkarm des Priifgerates so befestigt, daB die Leitung an der Eintrittsstelle zum Stecker senkrecht ist,
+wenn sich der Schwenkarm in der Mittelstellung betindet und durch die Schwenkacnse veriaurt.
+
+Stecker mit Flachleitungen werden so montiert, daB die Hauptachse des Querschnittes parallel zur Schwenk-
+achse verlauft.
+
+Dor Stockor muß im Prüfgerät an den Stiftan hafectigt warden
+
+Der Abstand zwischen dem Leitungseintritt des Steckers und der Achse der Bewegung wird so eingestelit, daB
+das Gewicht die kleinste seitliche Bewegung macht, wenn der Schwenkarm den vollen Hub ausfihrt.
+
+Die Leitung wird so mit einer Masse belastet, daB folgende Kraft ausgeübt wird:
+
+— 10 N bei Steckern, die eine Leitung haben, mit einem Nennquerschnitt von 0,75 mm“ oder weniger,
+
+— 20 N bei Steckern mit anderen Leitungen.
+
+Durch die Leiter flieBt ein Strom von (2,5+92) A, die Spannung zwischen den Leitern ist (250 + 15) V Wechsel-
+spannung.
+
+Der Schwenkarm wird um einen Winkel von 90° (45° nach beiden Seiten der Senkrechten) rückwärts und
+vorwarts bewegt. Die Zahl der Biegungen betragt 10 000 bei 60 Biegungen pro Minute.
+
+Eine Biegung ist eine Bewegung, entweder riickwarts oder vorwarts.
+
+Stecker mit Leitungen runden Querschnitts werden nach 5000 Biegungen in dem Schwenkarm um 90° gedreht.
+Stecker mit Flachleitungen werden nur in einer Richtung senkrecht zur Ebene, welche die Achse der Leiter
+enthalt, gebogen.
+Wihrend der Priifung diirfen keine Unterbrechungen des Prifstromes und kein KurzschluB zwischen den
+Leitern auftreten.
+
+
+===== PAGE 12/20 =====
+Seite 8
+EN 50 075 : 1990
+
+Nach dieser Prüfung darf der Stecker im Sinne dieser Norm keine Beschädigung aufweisen, eine gegebenen-
+falls vorhandene Schutztülle darf sich nicht von dem Körper gelöst haben, und die Isolierung der Leitung darf
+keine Zeichen von Abrieb oder Verschleiß aufweisen. Gebrochene Litzen der Leiter dürfen die Isolierung nicht
+durchbohrt haben, so daß sie berührbar werden.
+
+Es gilt als ein Kurzschluß zwischen den Leitern der Leitung, wenn der Strom einen Wert von 5 A erreicht.
+Der Spannungsfall zwischen einem Stift und dem entsprechenden Leiter darf 10 mV nicht überschreiten,
+gemessen bei einem Prüfstrom von
+(1*3") A bei Steckern mit Leichter Zwillingsleitung HO3VH-Y,
+(2,5*92) A bei Steckern mit anderer Leitung.
+
+13 Mechanische Festigkeit
+
+Stecker müssen ausreichende Festigkeit haben, damit sie den Beanspruchungen während des Gebrauchs
+standhalten können.
+
+Prüfung: Durch die Prüfungen nach den Abschnitten 13.1 bis 13.4.
+
+13.1 Die Stecker werden zwischen zwei ebenen Flächen mit einer Kraft von 150 N 5 min nach Bild 7 gepreßt.
+
+15 min nach Wegnahme der Kraft darf der Stecker keine derartige Verformung aufweisen, daß sich eine
+unzulässige Anderung der Maße nach Normblatt 1 ergibt, die die Sicherheit gewährleisten.
+
+13.2 Die Stecker werden in einer Falltrommel nach Bild 8 geprüft. Die Leitung wird abgeschnitten, so daß eine
+
+freie Länge von ungefähr 100 mm verbleibt, gemessen vom Stecker oder vom äußeren Ende der Schutztülle,
+
+Die Stecker werden aus einer Höhe von 500 mm auf eine 3 mm dicke Stahlplatte fallen gelassen, die Fallzahl
+
+beträgt:
+
+— 1000, wenn die Maese dee Steckere ohne Leitung 100 g nicht üborechreitet,
+
+— 500, wenn die Masse des Steckers ohne Leitung 100 g überschreitet.
+
+Die Falltrommel wird mit 5 Umdrehungen pro min gedreht, so daß 10 Fallbeanspruchungen pro min entstehen.
+
+Die Stecker werden einzeln in der Falltrommel geprüft.
+
+Nach der Prüfung dürfen die Stecker keinen Schaden im Sinne dieser Norm aufweisen, insbesondere
+
+— darf sich kein Teil abgelöst oder gelockert haben,
+
+— dürfen die Stifte nicht so verformt worden sein, daB der Stecker nicht in die Lehre nach Bild 2 eingeführt
+werden kann und daß er außerdem den Anforderungen napn aen Apschnitien 7 und 8.z nicht entspricnt,
+
+— durfen sich die Stifte nicht drehen, wenn ein Drehmoment von 0,4 Nm angewendet wird, und zwar zunéchst
+1 min in einer und dann 1 min in entgegengesetzter Richtung.
+Wiahrend der Beurteilung nach der Priifung ist besonders auf den AnschluB der Leituna zu achten. Kleine
+Stiicke konnen weggebrochen sein, ohne daB sie zur Beanstandung flihren, vorausgesetzt, daß der
+Berlihrungsschutz nicht beeintrachtigt ist.
+
+Beschadigungen des AuBeren und kleine Einbeulungen, welche die Kriech- und Luftstrecken nicht unter
+dic in Aboohnitt 16 fostgologton Worte herabsootzon, wordon nioht boanctandot.
+
+13.3 Die Steckerstifte werden der folgenden Priifung mit einem Gerät nach Bild 9 unterworfen.
+
+Das Prifgerat besteht aus einem waagerecht angeordneten, um seinen Mittelpunkt drehbar gelagerten Balken.
+Ein kurzer Stahldraht, (140.09) mm Nirchmeaeer 1ind 11-farmig gehngen, hei dem die Rasis das II garade
+verlauft, ist mit seinen Enden an einem Ende des Balkens starr angebracht, so daß der gerade Teil unter dem
+Balken herausragt und parallel zu der Achse des Balkendrehpunktes verlauft.
+
+Der Stecker wird mit einer geeigneten Halterung in einer solchen Lage gehalten, daB der gerade Teil des
+Stahldrahtes auf dem Oteckerstift ruht, und zwar rechtwinklig zu ihm. Der Otift neigt sich in einem Winkel
+zwischen 5° und 10° zur Waagerechten nach unten. Der Balken wird so belastet, daß der Draht eine Kraft von
+(4,84) N auf den Stift ausiibt. Der Stecker wird rückwärts und vorwarts in einer waagerechten Richtung in der
+Ebene der Achse des Balkens bewegt, so daB der Draht an dem Stift entlangreibt. Die Reiblange auf dem Stift
+Leliagt ungefähr 9 i, wovon 7 i über dem Isulierüberzug liegen. Die Zalil Usı Beweyunyen beliayt 20 000
+(10 000 in jeder Richtung) zwischen 25 und 30 Bewegungen pro Minute.
+
+Die Prifung wird an einem Stift von jedem Stecker vorgenommen.
+
+Nach der Prifung durfen die Stifte keine Beschadigung aufweisen, welche die Sicherheit oder den weiteren
+Gebrauch des Steckers beeintrdchtigen könnte, insbesondere darf die Isolierhiilse nicht durchgescheuert oder
+zuriickgestreift sein.
+
+13.4 Die Stecker werden auf eine starre Stahlplatte gesetzt, die zwei Locher mit einem Durchmesser von
+(5,2+0,2) MM mit einem Mittenabstand von (18,6 — 0,3) MM hat. Dle Stfte werden In die Locher so eingeranrt,
+daB die Eingriffsflache des Steckers auf der Platte liegt. Die Priifung wird an den Steckern des zweiten Satzes
+durchgefiihrt.
+
+Ein Zug von (40+}) N wird ohne Ruck (60*§) s an jedem Stift nacheinander in Richtung der Langsachse des
+Stiftes angewendet. Der Zug wird in einem Wameschrank bei einer Temperatur von (70+2) °C angelegt, und
+zwar (60*3) min nachdem der Stecker in den Warmeschrank gebracht wurde. Nach der Prifung wird der
+
+
+===== PAGE 13/20 =====
+Seite 9
+EN 50075 : 1990
+
+Stecker auf Umgebungstemperatur abgekühlt. Kein Stift darf sich dann um mehr als 1 mm im Steckerk&rper
+verschoben haben.
+
+14 Wärme- und Alterungsbestéandigkeit
+
+| 14.1  Stecker mussen hinreichend warmebestandig sein.
+
+Prifung: Soweit anwendbar, durch die Prifungen nach den Abschnitten 14.1.1 und 14.1.2.
+
+14.1.1 Andere als angeformte Stec\_(er werden 1h in einem Wärmeschrank bei einer Temperatur von
+(100+2) °C gelagert
+Sie dürfen während der Prüfung keine Veränderung erleiden, die ihren weiteren Gebrauch beeinträchtigen
+könnte. Nach der Prüfung dürfen die Stecker auf annähernd Raumtemperatur abkühlen.
+Die Aufschriften müssen dann noch lesbar sein.
+Verfärbungen oder Blasen werden nicht beanstandet, vorausgesetzt, daß die Sicherheit im Sinne dieser
+Norm nicht beeinträchtigt ist.
+
+14.1.2 Stecker werden einer Druckprüfung mit einem Gerät nach Bild 10 unterworfen. Die Prüfung wird in
+einem Wärmeschrank bei einer Temperatur von (80 + 2) °C durchgeführt.
+
+Das Prüfgerät besteht aus zwei Stahlbacken mit einer zylindrischen Stirnfläche von ungefähr 25 mm Radius,
+einer Breite von (15+0,1) mm und einer Länge von (50+0,3) mm. Die Kanten sind mit einem Radius von
+2,5 mm gerundet.
+
+Der Stecker wird so zwischen die Backen geklemmt, daß diese gegen ihn in einem Bereich drücken, wo er im
+bestimmungsgemäßen Gebrauch angefaßt wird. Die Mittellinie der Backen soll so nahe wie möglich in der Mitte
+dieses Bereiches zusammenfallen.
+
+Die über die Backen ausgeübte Kraft botrigt (20+]) N.
+
+Nach (60+8) min werden die Backen weggenommen. Die Stecker diirfen keine Beschädigung im Sinne dieser
+Norm aufweisen.
+
+14.2 Stecker miissen alterungsbestiandig sein.
+Priifung: Durch freies Aufhdngen von Steckern des zweiten Satzes in einem Warmeschrank mit einer Atmo-
+sphare, die die Zusammensetzung und den Druck der Umgebungsluft und naturliche Luftzirkulation hat.
+Die Temperatur im Schrank betragt (70+2) °C.
+Die Stecker verbleiben im Warmeschrank 168 h.
+Die Verwendung eines elektrisch beheizten Schrankes wird empfohlen.
+Naturliche Zirkulation kann durch Locher in den Schrankwénden herbeigefiihrt werden.
+Dic Gtecker werden dann aus dem Waérmeschrank genommen und bei Naumtemperatur mindestens 96 h
+gelagert.
+Nach der Prifung durfen die Stecker keine Risse, die mit normalem oder korrigiertem Auge ohne zusatzliche
+VergroBerung sichtbar sind, aufweisen, noch darf das Material klebrig oder fettig geworden sein, was wie foigt
+testgestelit wird:
+Der mit einem trockenen Stück grob gewebten Tuches umwickelte Zeigefinger wird auf den Stecker mit einer
+Kraft von 5 N gedriickt. Auf dem Stecker dirfen keine Spuren des Tuches zurlickbleiben, und das Material des
+Steckers darf nicht an dem Tuch kleben. Nach der Prifung diirfen die Stecker keine Beschéadigung aufweisen,
+die zum Nichteinhalten dieser Norm führen würde.
+Die Kraft von 5 N kann auf folgende Weise erreicht werden:
+Der Stecker wird auf eine der Schalen einer Waage gelegt, und die andere Waagschale wird mit einer
+Masse gleich der Masse des Gteckers plus 500 g belaotet.
+Dann wird das Gleichgewicht wieder hergestellt, indem der mit einem trockenen Stück grob gewebten
+Tuches umwickelte Zeigefinger auf den Prifling gedrückt wird.
+
+15 Stromfiihrende Teile und Verbindungen
+
+15.1 Elektrische und mechanische Verbindungen müssen den mechanischen Beanspruchungen, die im be-
+stimmungsgemaBen Gebrauch auftreten, standhalten.
+Prüfung: Besichtigen
+
+15.2 Elektrische Verbindungen missen so beschaffen sein, daß der Kontaktdruck nicht über Isolierstoff
+Ubertragen wird, sofern nicht in den Metallteilen geniigend Elastizitat vorhanden ist, um mégliches Schrumpfen
+wder Nachgeben des Isolierstoffes auszugleichen.
+
+Diese Anforderung schlieBt Konstruktionen mit Leichten Zwillingsleitungen HO3VH-Y nicht aus, bei denen der
+Kontaktdruck durch Isolierstoffteile erzielt wird. Diese Teile missen solche Eigenschaften haben, daB sie
+zuverlassigen und dauerhaften Kontakt unter allen Bedingungen des bestimmungsgeméBen Gebrauchs sicher-
+stellen, besonders im Hinblick auf Schrumpfen, Altern oder KaitfluB des isolierenden Teils.
+
+Schneidverbindungen bei leichten Zwillingsleitungen HO3VH-Y müssen zuverlassig sein.
+
+
+===== PAGE 14/20 =====
+Seite 10
+EN 50 075 : 1990
+
+Prüfung: Besichtigen und für die letzte Anforderung durch eine Prüfung, die in Vorbereitung ist.
+Die Eignung des Werkstoffes wird im Hinblick auf die Formstabilitat gesehen.
+
+15.3 Stromfuhrende Teile missen entweder sein aus:
+—  Kupfer,
+— einer Legierung, bestehend aus mindestens 58 % Kupfer fur Teile aus Walzblech (kalt gewalzt) oder
+mindestens 50 % Kupfer fir andere Teile oder
+— einem anderen Metall, das eine mechanische Festigkeit, eine elektrische Leitfahigkeit und eine Korrosions-
+festigkeit besitzt, ausreichend fur ihre vorgesehene Verwendung.
+Stromfihrende Teile_‚'die einem mechanischen Verschleiß ausgesetzt sein können, dürfen nicht aus Stahl mit
+einem galvanischen Überzug bestehen.
+Prüfung: Besichtigen und, falls notwendig, chemische Analyse.
+Beispiele von geeigneten Metallen, andere als Kupfer oder Kupferlegierungen, bei Verwendung innerhalb
+des zulässigen Temperaturbereichs und unter normalen Bedingungen von chemischer Verunreinigung
+sind:
+— rostfreier Stahl, bestehend aus mindestens 13 % Chrom und nicht mehr als 0,09 %0 Kohlenstoff;
+—  Stahl, versehen mit einem galvanischen Uberzug aus Zink nach ISO 2081, wenn der Uberzug eine
+Dicke von mindestens 5 um hat;
+— Stahl, versehen mit einem galvanischen Uberzug aus Nickel und Chrom nach ISO 1456, wenn der
+Uberzug eine Dicke von mindestens 20 um hat;
+—  Stahl, versehen mit einem galvanischen Uberzug aus Zinn nach ISO 2093, wenn der Uberzug eine
+Dicke von mindestens 12 um hat.
+
+16 Kriechstrecken, Luftstrecken und Absténde durch Isolierung
+
+Kriechstrecken und Luftstrecken zwischen spannungfiihrenden Teilen verschiedener Polaritat oder zwischen
+
+spannungfiihrenden Teilen und berlhrbaren äußeren Oberflachen diirfen nicht kleiner als 3 mm sein.
+
+Bei angsformten Steckern darf der Abstand durch lsolicratoff zwioohen spannungfiihrendon Toilon und borühr
+
+baren Oberflachen, mit Ausnahme der Eingriffsflache und der Isolierhülsen, nicht kleiner als 1,5 mm sein.
+Abstande durch Schlitze oder Offnungen in duBeren Teilen aus Isolierstoff werden zu einer Metallfolie
+
+gemessen, die mit der beriihrbaren Oberflache, ausgenommen der Eingriffsfldche, in Kontakt ist. Die Folie
+wird in Ecken und dergleichen mit dem geraden, ungegiieaerten Frurmnger nach ADschnit 8.1 gedrackt,
+
+aber sie wird nicht in Offnungen gepreBt.
+
+Eine Einsenkung von weniger als 1 mm Breite wird bei der Messung der Kriechstrecke nur mit ihrer Breite
+bewertet.
+
+Ein Luftspalt von weniger als 1 mm Breite wird bei der Bewertung der Gesamtluftstrecke nicht bertcksich-
+tigt.
+
+17 Bestandigkeil von Isolierstoff gegen übermäßige Wärme und Meuer
+
+Teile aus Isolierstoff, die infolge elektrischer Einwirkungen thermischen Beanspruchungen ausgesetzt sein
+könnten und deren Verschlechterung die Sicherheit der Stecker beeintrachtigen kénnte, dirfen nicht durch
+übermäßige Warme und Feuer unzuldssig beeintrachtigt werden.
+
+Priifung: Mit der Gluhdrahtpriifung nach den Abschnitten 4 bis 10 des HD 444.2.1. Die Priifung wird bei einer
+Temperatur ausgefiihrt von:
+
+— 750 °C bei Teilen aus Isolierstoff, die erforderlich sind, um stromflihrende Teile in ihrer Lage zu halten,
+
+— 650 *C belanderen Tellen.
+
+Die Prüfung wird an einem Stecker durchgeführt. Im Zweifelsfall muß die Prüfung an zwei weiteren Steckern
+wiederholt werden. Beide müssen dann die Wiederholungsprüfung bestehen.
+
+Die Prüfuna wird durchaeführt. indem der Glühdraht einmal angewendet wird.
+
+Der Stecker muß während der Prüfung so befestigt werden, daß sich die zu prüfende Fläche in senkrechter
+Lage befindet.
+
+Der Stecker hat die Glühdrahtprüfung bestanden, wenn
+
+—  kKeıne sichtbare Flamme oder Kein andauerndes Glunen aurgetreten ISı oder
+
+— Flammen und Gliihen an einem Stecker innerhalb 30 s nach Wegnehmen des Gliihdrahtes verléschen.
+
+Es darf kein Entziinden des Seidenpapiers oder Ansengen des Brettes auftreten.
+
+
+
+===== PAGE 15/20 =====
+Seite 11
+EN 50 075 : 1990
+
+Normblatt 1
+2,5 A, 250 V, zweipoliger Stecker für Klasse-Il-Geräte
+Maße in mm
+
+alternativ für
+Stiftende
+
+90°max
+
+| €y
+
+0,7 bis 1,7 | |
+
++0,71)
+
+13,7
+
+2max
+
+Kanten der Metallteile missen
+entweder angefast oder gerundet sein
+
+A — Isolierhulse
+
+B — Motallstift
+
+) Diese MaBe diirfen innerhalb eines Abstandes von 18 mm, von der Stirnflache des Steckers aus gemessen,
+nicht Uberschritten werden.
+
+2) MaBa:
+18 mm bis 19,2 mm in der Ebene der Stirnflache
+17 mm bis 18 mm am Ende der Stifte
+
+3) Dieses MaB darf auf 4 mm erweitert werden bis zu einem Abstand von 4 mm, von der Stirnflaiche des
+Sterkers alls gemessen
+
+Die Stiftenden miissen gerundet sein oder kegelig, wie in der Detailskizze gezeigt.
+
+Die Zeichnungen gelten nur in bezug auf darin angegebene MaBe als verbindlich.
+
+GréBtlohro
+Malse ın mm
+
+Kanten leicht gerundet
+
+S
+N
+ﬁ
+
+Klainstlehre
+
++0,01
+40670
+
+5+0,5 31%_8 o1  Kantenleicht gerundet
+
+9
+
+Es muB méglich sein, den Stift ohne übermäßige Kraft in die GréBtlehre einzuführen; es darf nicht möglich sein,
+den Stift ohne übermäßige Kraft durch das Maul der Kleinstlehre zu fuhren.
+
+Bild 1. Lehre für den Stiftdurchmesser
+
+
+===== PAGE 16/20 =====
+Seite 12
+EN 50 075 : 1990
+
+- 0,0
+= 65,5*0:05
+$
+
+- +
+
+1
+
+=l§=
+
+/
+//4/////
+
+\\\\\\iii\\\u
+
+s
++
+~
+
+MaBe in mm
+
+Kanten leicht gerundet
+
+Es muß möglich sein, die Stecker in die Lehre ohne übermäßige Kraft so einzuführen, daß Ihre Stirnfläche die
+Oberflache der Lehre berührt.
+
+Bld 2.
+
+Lenre tur die Auswechselbarkeit
+
+—
+
+5 10,5—-]-
+
+Pos. 3
+
+I
+
+Isolierstoff
+
+Toleranzen für MaBe ohne spezielle Toleranzen
+Tur winkel: — 10°
+
+für LangenmaBe: bis zu 25 mm: _$os
+
+über 25 mm: +0,2
+
+Werkstoff des Fingers: zum Beispiel heiBgeharteter Stahl
+
+Beide Gelenke dieses Fingers dürfen in einem Winkel von 90+19°
+
+Richtung.
+
+0
+
+MaBe in mm
+
+Schnitt
+
+ausgelenkt werden, jedoch nur in einer
+
+Die Benutzung von Stift und Nut ist nur eine der Möglichkeiten, die Auslenkung auf 90° zu beschränken. Aus
+diesem Grund sind Maße und Toleranzen für dieses Detail in der Zeichnung nicht angegeben. Die Konstruktion
+muß eine Auslenkung im Winkel von 90° mit einer Toleranz 0 bis 10° sicherstellen.
+
+Bild 3.
+
+Normprüffinger
+
+
+===== PAGE 17/20 =====
+Das Gewicht der Lehre beträgt 1000 g.
+
+5,5°9
+
+16,2005
+
+12,3205
+
+Seite 13
+EN 50075 : 1990
+
+MaBe in mm
+
+Die Lehre wird, wie dargestellt, 1 min lang zwischen die Stifte gestellt. Sie darf unter ihrem eigenen Gewicht
+nicht mit der Stirnflachc dos Stookere in Borihrung kommen.
+
+Bild4. Lehre zum Nachweis, daB die Stecker nicht einpolig in Steckdosen eingeflihrt werden kénnen
+
+Kurbel
+
+Exzenter /
+
+Die an der Leitung kraftausiibende
+Vorrichtung muB so beschaffen sein,
+
+daB der Zug auf die Leiter und den
+Mantel, talls vorhanden, gleichzeltg
+ausgeübt wird.
+
+Bild5. Zugentlastungs-Prufgerét
+
+MaBe in mm
+
+
+===== PAGE 18/20 =====
+Seite 14
+EN 50 075 : 1990
+
+Vorrichtung für die
+Befestigung des Steckers
+
+300 mm min
+
+Gewicht
+
+Bild6. Biegeprifgerat
+
+Unterlage aus Stahl
+
+Bild7. Anordnung für die Druckprifung
+
+MaBe in mm
+
+
+===== PAGE 19/20 =====
+i
+
+s
+
+Seite 15
+EN 50075 : 1990
+
+MaBe in mm
+
+Schichtpreßstoffplatte
+
+Gummi
+
+Stahl
+
+Hartholz
+
+zum Befestigen
+der Bodenenden
+
+Der Körper der Falltrommel muB aus 1,5 mm dickem Stahlblech bestehen.
+
+Die Fächer, in denen der Prüfling zwischen jeder einzelnen Fallprüfung liegt, müssen mit einer Gummi-Rück-
+
+wand aus spanfestem Gummi mit einer Härte von 80 IRHD versehen sein, und die Gleitflächen dieser Fächer
+müssen aus Schichtpreßstoff bestehen.
+
+Die Falltrommel muß mit einer Öffnung und einem Deckel aus durchsichtigem Acryl versehen sein.
+Die Welle der Falltrommel darf nicht in die Trommel selbst hineinragen.
+Bild8, Fallirommel
+
+Gewicht Maße in mm
+
+Hebel
+
+Halterung Drehpunkt
+
+Prifling
+
+Gewicht
+
+Hebel
+
+Stahldraht
+Steckerstift
+
+Schnitt
+
+VergroBerte Teilansicht des Schnittes A— A mit Darstellung des Stahlidrahtes
+Bild9. Gerat zur Abriebpriifung an Isolieriberziigen von Steckerstiften
+
+
+===== PAGE 20/20 =====
+Seite 16
+EN 50 075 : 1990
+
+Kraft Maße in mm
+Führung
+
+bewegliche Klemmbacke
+
+Bild 10. Gerät für die Druckprüfung zum Nachweis der Wärmebeständigkeit
+
+Anhang A (informativ)
+
+Nationale A-Abweichungen
+
+Diese europäische Norm fällt unter keine Richtlinie der Europäischen Gemeinschaft. In den entsprechenden
+CEN/CENELEC-Ländern sind diese A-Abweichungen rechtskräftig an Stelle der Bestimmungen der europäi-
+schen Norm, so lange, bis diese entfernt werden.
+
+Abschnitt Gesetz
+
+4.5 — Bei der Typprüfung ist kein Fehler zulässig. S1603:1987
+
+6 — Ein Eurostecker darf nur geliefert werden, wenn er mit SI 603: 1987
+einem elektrischen Gerät verbunden ist, das sich nach einer
+
+Norm richtot, die den Gebrauch oines Eurosteckers vor-
+
+sieht. Unter diesen Umständen muß das Gerät entweder ge-
+
+kennzeichnet sein oder von einem Warnvermerk begleitet
+
+werden, daß es nicht für den Gebrauch mit Netzsteckdosen
+
+in GB geoignot iot.

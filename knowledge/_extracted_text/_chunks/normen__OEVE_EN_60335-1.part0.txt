@@ -1,0 +1,2662 @@
+
+
+===== PAGE 1/166 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+EN 60335-1 
+ 
+Ausgabe: 2007-11-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sicherheit elektrischer Geräte für den Hausgebrauch 
+und ähnliche Zwecke 
+Teil 1: Allgemeine Anforderungen 
+(IEC 60335-1:2001, modifiziert + Corrigendum 1 (ed. 4.0):2002 + A1:2004  
++ Corrigendum 1 (ed. 4.1):2005 + A2:2006 + Corrigendum 1 (A2):2006) 
+ 
+Household and similar electrical appliances – Safety –  
+Part 1: General requirements 
+(IEC 60335-1:2001, modified + Corrigendum 1 (ed. 4.0):2002 + A1:2004  
++ Corrigendum 1 (ed. 4.1):2005 + A2:2006 + Corrigendum 1 (A2):2006) 
+ 
+Appareils électrodomestiques et analogues – Sécurité –  
+Partie 1: Prescriptions générales 
+(CEI 60335-1:2001, modifiée + Corrigendum 1 (ed. 4.0):2002 + A1:2004  
++ Corrigendum 1 (ed. 4.1):2005 + A2:2006 + Corrigendum 1 (A2):2006) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+13.120; 97.030 
+ 
+ 
+ 
+ 
+ 
+ 
+Ungleich (NEQ) 
+IEC 60335-1:2001 + Corrigendum 1 (ed. 4.0):2002 
+ 
+ 
++ A1:2004 + Corrigendum 1 (ed. 4.1):2005  
+ 
+ 
++ A2:2006 + Corrigendum 1 (A2):2006 
+ 
+ 
+(Übersetzung) 
+ 
+Ident (IDT) mit 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006  
+ 
+ 
++ Corrigendum:2006 + A2:2006 
+ 
+                      Ersatz für  
+ÖVE/ÖNORM EN 60335-1:2007-04-01 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK  G 
+ 
+Geräte 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2007. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: sales@on-norm.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 2/166 =====
+ÖVE/ÖNORM EN 60335-1:2007 
+2 
+Nationales Vorwort 
+ 
+Diese 
+Europäische 
+Norm 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + Corrigendum:2006 
++ A2:2006 wurde in Österreich als ÖVE/ÖNORM EN 60335-1:2007-04-01 übernommen und hat sowohl den 
+Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 1992 als 
+auch den einer ÖNORM gemäß NG 1971. Bei ihrer Anwendung ist dieses Nationale Vorwort zu 
+berücksichtigen. 
+ 
+Für den Fall einer undatierten normativen Verweisung (Verweisung auf einen Standard ohne Angabe des 
+Ausgabedatums und ohne Hinweis auf eine Abschnittsnummer, eine Tabelle, ein Bild usw.) bezieht sich die 
+Verweisung auf die jeweils neueste Ausgabe dieses Standards. 
+Für den Fall einer datierten normativen Verweisung bezieht sich die Verweisung immer auf die in Bezug 
+genommene Ausgabe des Standards. 
+ 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+ 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+– 
+Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu 
+berücksichtigen. 
+– 
+Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+ 
+Europäische Normen (EN) werden gemäß den „Gemeinsamen Regeln“ von CEN/CENELEC durch 
+Veröffentlichung eines identen Titels und Textes in das Gesamtwerk der ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN übernommen, wobei der Nummerierung der 
+Zusatz 
+ÖVE/ÖNORM 
+bzw. 
+ÖNORM 
+vorangestellt 
+wird. 
+Die 
+nachstehende 
+Tabelle 
+listet 
+jene 
+ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN auf, die in Titel, 
+Nummerierung und/oder Inhalt (nicht ident) von den zitierten internationalen bzw. europäischen Standards 
+abweichen.  
+ 
+ 
+Europäische Norm 
+ 
+Internationale Norm 
+ÖSTERREICHISCHE 
+BESTIMMUNGEN FÜR DIE 
+ELEKTROTECHNIK bzw. ÖNORM 
+HD 21 Reihe 
+IEC 60227 (modified) Reihe 
+ÖVE-K 41 Reihe 
+ÖVE/ÖNORM E 8241 Reihe 
+HD 22 Reihe 
+IEC 60245 (modified) Reihe 
+ÖVE-K 40 Reihe 
+ÖVE/ÖNORM E 8240 Reihe 
+ 
+ÖVE/ÖNORM E 8240 Reihe 
+Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 
+450/750 V 
+ÖVE/ÖNORM E 8241 Reihe 
+Starkstromleitungen mit thermoplastischer Isolierhülle für 
+Nennspannungen bis 450/750 V 
+ÖVE-K 40 Reihe 
+Energieleitungen mit einer Isolierung aus Gummi 
+ÖVE-K 41 Reihe 
+Energieleitungen mit einer Isolierung aus PVC 
+HD 21 Reihe 
+Starkstromleitungen mit thermoplastischer Isolierhülle für 
+Nennspannungen bis 450/750 V  
+HD 22 Reihe 
+Starkstromleitungen mit vernetzter Isolierhülle für Nennspannungen bis 
+450/750 V 
+IEC 60227 Reihe 
+Polyvinyl chloride insulated cables of rated voltages up to and including 
+450/750 V 
+IEC 60245 Reihe 
+Rubber insulated cables – Rated voltages up to and including 450/750 V 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 3/166 =====
+ÖVE/ÖNORM EN 60335-1:2007 
+3 
+Die gemeinsamen CENELEC-Abänderungen der IEC 60335-1:2001 sind am linken Seitenrand mit einer 
+senkrechten Linie gekennzeichnet. 
+ 
+ 
+Textstellen, die die CENELEC-Änderung A11 betreffen, sind eingearbeitet und am linken Seitenrand mit einer 
+senkrechten Linie und der Bezeichnung A11 gekennzeichnet. Die CENELEC-Änderung A11 entspricht dem 
+IEC-Corrigendum 1 (ed. 4.0):2002. 
+ 
+ 
+Textstellen, die die CENELEC-Änderung A1 betreffen, sind eingearbeitet und am linken Seitenrand mit einer 
+senkrechten Linie und der Zahl 1 gekennzeichnet. 
+ 
+ 
+Textstellen, die Änderungen durch IEC-Corrigendum 1 (ed. 4.1):2005 betreffen, sind eingearbeitet und am 
+linken Seitenrand mit einer senkrechten Linie und der Bezeichnung C1(4.1) gekennzeichnet. 
+ 
+ 
+Textstellen, die die CENELEC-Änderung A12 betreffen, sind eingearbeitet und am linken Seitenrand mit einer 
+senkrechten Linie und der Bezeichnung A12 gekennzeichnet. 
+ 
+ 
+Textstellen, die Änderungen durch Corrigendum zu A12 betreffen, sind eingearbeitet und am linken 
+Seitenrand mit einer senkrechten Linie und der Bezeichnung A12 Corr. gekennzeichnet. 
+ 
+ 
+Textstellen, die die CENELEC-Änderung A2 betreffen, sind eingearbeitet und am linken Seitenrand mit einer 
+senkrechten Linie und der Zahl 2 gekennzeichnet. 
+ 
+ 
+Textstellen, die Änderungen durch IEC-Corrigendum 1 (A2):2006 betreffen, sind eingearbeitet und am linken 
+Seitenrand mit einer senkrechten Linie und der Bezeichnung A2 Corr. gekennzeichnet. 
+ 
+ 
+Berichtigung 1:2007-07 der deutschen Fassung der EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 
++ Corrigendum:2006 + A2:2006 
+Seite 57, Abschnitt 19.11.2 
+Vor dem Absatz beginnend mit „Kaltleiter (PTCs) werden nicht überbrückt, ….“ ist der folgende Absatz zu 
+ergänzen: 
+Die Fehlerbedingung f) wird bei gekapselten und ähnlichen Bauteilen angewendet, falls eine Beurteilung nicht 
+durch andere Verfahren erfolgen kann. 
+ 
+Änderungen 
+Gegenüber ÖVE/ÖNORM EN 60335-1+A11+A1:2005-09-01 wurden folgende Änderungen vorgenommen: 
+a)  ÖVE/ÖNORM EN 60335-1+A11+A1:2005-09-01 wurde redaktionell überarbeitet und  
+EN 60335-1:2002/A12:2006, das Corrigendum:2006 zu EN 60335-1:2002/A12:2006 und  
+EN 60335-1:2002/A2:2006 wurden eingearbeitet. 
+b)  Der Anwendungsbereich wurde erweitert. 
+c)  Anforderungen für Fernwirken wurden aufgenommen. 
+d)  Die Prüfung an Flammbarrieren wurde präzisiert. 
+e)  Schlechte Verbindungen in Einzelteilen werden bewertet. 
+A11 
+1 
+C1(4.1) 
+A12 
+A12 Corr. 
+2 
+A2 Corr. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 4/166 =====
+ÖVE/ÖNORM EN 60335-1:2007 
+4 
+Erläuterung zum Ersatzvermerk 
+ÖVE/ÖNORM EN 60335-1:2007-04-01 wird durch Ausgabe 2007-11-01 ersetzt. 
+Gemäß Vorwort zur EN wird das späteste Datum, zu dem nationale Normen, die der vorliegenden Norm 
+entgegenstehen, zurückgezogen werden müssen, mit dow (date of withdrawal) festgelegt. Bis zum 
+Zurückziehungsdatum (dow) 2009-07-01 ist somit die Anwendung folgender Norm(en) noch erlaubt: 
+ÖVE/ÖNORM EN 60335-1+A11+A1:2005-09-01. 
+ 
+ 
+Anmerkung 
+Die Leitungsbauart 60245 IEC 51/H03RT-F (Gummiaderschnur) wurde gestrichen. Als vergleichbare 
+Leitungsbauart wurde H03RT-H in HD 22.14 S2 (entspricht ÖVE/ÖNORM E 8240-14:2003-11-01) neu 
+aufgenommen (siehe Anhang ZD). 
+ 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 5/166 =====
+ 
+ 
+EUROPÄISCHE NORM 
+ 
+EUROPEAN STANDARD 
+ 
+NORME EUROPÉENNE 
+ 
+EN 60335-1 
+Oktober 2002 
++ A11 Februar 2004 + A1 Dezember 2004 
++ A12 März 2006  
++ Corrigendum Juli 2006 
++ A2 August 2006 
+ICS 13.120; 97.030 
+ 
+Ersatz für EN 60335-1:1994 + A11:1995 + A12:1996 + A1:1996 + A13:1998 + A14:1998 + 
+A2:2000 + A15:2000 + A16:2001 
+ 
+Deutsche Fassung 
+ 
+Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke – 
+Teil 1: Allgemeine Anforderungen 
+(IEC 60335-1:2001, modifiziert + Corrigendum 1 (ed. 4.0):2002 + A1:2004 + Corrigendum 1 (ed. 4.1):2005 + 
+A2:2006 + Corrigendum 1 (A2):2006) 
+ Household and similar electrical appliances –  
+Safety –  
+Part 1: General requirements 
+(IEC 60335-1:2001, modified + Corrigendum 1 
+(ed. 4.0):2002 + A1:2004 + Corrigendum 1 
+(ed. 4.1):2005 + A2:2006 + Corrigendum 1 
+(A2):2006) 
+Appareils électrodomestiques et analogues –  
+Sécurité –  
+Partie 1: Prescriptions générales 
+(CEI 60335-1:2001, modifiée + Corrigendum 1 
+(ed. 4.0):2002 + A1:2004 + Corrigendum 1 
+(ed. 4.1):2005 + A2:2006 + Corrigendum 1 
+(A2):2006) 
+Diese Europäische Norm wurde von CENELEC am 2002-07-02, die A11 am 2003-09-23, die A1 am 
+2004-09-22, die A12 am 2005-12-01 und die A2 am 2006-07-01 angenommen. Die CENELEC-Mitglieder 
+sind gehalten, die CEN/CENELEC-Geschäftsordnung zu erfüllen, in der die Bedingungen festgelegt sind, 
+unter denen dieser Europäischen Norm ohne jede Änderung der Status einer nationalen Norm zu geben 
+ist. 
+Auf dem letzten Stand befindliche Listen dieser nationalen Normen mit ihren bibliographischen Angaben 
+sind beim Zentralsekretariat oder bei jedem CENELEC-Mitglied auf Anfrage erhältlich. 
+Diese Europäische Norm besteht in drei offiziellen Fassungen (Deutsch, Englisch, Französisch). Eine 
+Fassung in einer anderen Sprache, die von einem CENELEC-Mitglied in eigener Verantwortung durch 
+Übersetzung in seine Landessprache gemacht und dem Zentralsekretariat mitgeteilt worden ist, hat den 
+gleichen Status wie die offiziellen Fassungen. 
+CENELEC-Mitglieder sind die nationalen elektrotechnischen Komitees von Belgien, Dänemark, 
+Deutschland, Estland, Finnland, Frankreich, Griechenland, Irland, Island, Italien, Lettland, Litauen, 
+Luxemburg, Malta, den Niederlanden, Norwegen, Österreich, Polen, Portugal, Rumänien, Schweden, der 
+Schweiz, der Slowakei, Slowenien, Spanien, der Tschechischen Republik, Ungarn, dem Vereinigten 
+Königreich und Zypern. 
+ 
+CENELEC 
+Europäisches Komitee für Elektrotechnische Normung 
+European Committee for Electrotechnical Standardization 
+Comité Européen de Normalisation Electrotechnique 
+Zentralsekretariat: rue de Stassart 35, B-1050 Brüssel 
+ © 2006 CENELEC –  Alle Rechte der Verwertung, gleich in welcher Form und in welchem Verfahren, 
+sind weltweit den Mitgliedern von CENELEC vorbehalten. 
+Ref. Nr. EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 D
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 6/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+2 
+Vorwort 
+Der Text des Schriftstücks 61/1965/FDIS, zukünftige vierte Ausgabe von IEC 60335-1, erarbeitet vom 
+Technischen Komitee IEC/TC 61, wurde der IEC-CENELEC Parallelen Abstimmung im Januar 2001 unter-
+worfen. Die Stellungnahmen wurden auf der Sitzung des CENELEC/TC 61 in Delft im Mai 2001 beraten, auf 
+der beschlossen wurde, einige gemeinsame Abänderungen der formellen Abstimmung (2MV) zu unterwerfen. 
+Dieser Entwurf wurde im November 2001 in Umlauf gegeben, erhielt jedoch nicht genügend Zustimmung. Die 
+Stellungnahmen wurden auf der Sitzung des CENELEC/TC 61 in Kista im Mai 2002 beraten, auf der 
+beschlossen wurde, nur die gemeinsamen Abänderungen der vorherigen Ausgabe beizubehalten. Dieser 
+neue Entwurf wurde von CENELEC als EN 60335-1 am 2002-07-02 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die EN auf nationaler Ebene 
+durch Veröffentlichung einer identischen nationalen 
+Norm oder durch Anerkennung übernommen werden 
+muss 
+(dop): 
+2003-07-01 
+Diese Europäische Norm ersetzt EN 60335-1:1994 und ihre Änderungen, jedoch bleibt EN 60335-1:1994 
+weiterhin gültig, bis sämtliche Teile 2, die in Verbindung mit dieser Norm angewendet werden, zurück-
+gezogen sind. Aus diesem Grunde wurde kein Datum für die Zurückziehung entgegenstehender nationaler 
+Normen (dow) festgelegt. Wenn jedoch der Teil 1 für Geräte angewendet wird, die nicht in einem Teil 2 
+behandelt werden, darf EN 60335-1:1994 nach 2008-07-01 nicht mehr angewendet werden. 
+Dieser Teil von EN 60335 ist in Verbindung mit dem entsprechenden Teil 2 anzuwenden. Die Teile 2 enthal-
+ten Abschnitte zur Ergänzung oder Modifizierung der entsprechenden Abschnitte in Teil 1 und geben die 
+zutreffenden Anforderungen für jede Geräteart an. 
+ANMERKUNG 1 Den Bezeichnungen von Unterabschnitten, Anmerkungen und Anhängen, die zusätzlich zu denen in 
+IEC 60335-1 aufgenommen wurden, wird der Buchstabe Z vorangestellt. 
+Besondere nationale Bedingungen, die eine Abweichung von dieser Europäischen Norm bewirken, sind in 
+Anhang ZA aufgeführt. 
+Nationale Abweichungen von dieser Europäischen Norm sind im Anhang ZB aufgeführt. 
+Die Anhänge B, C, D, E, F, G, H, I, J, K, M, N, ZA und ZC sind normativ und bilden einen festen Bestandteil 
+dieser Norm. 
+Die Anhänge A, L, O, ZB und ZD sind informativ. 
+ANMERKUNG 2 Die folgenden Anhänge enthalten Bestimmungen aus anderen IEC-Normen, die passend geändert 
+wurden: 
+– 
+Anhang E 
+Nadelflammprüfung 
+IEC 60695-2-2 60695-11-5 
+– 
+Anhang F 
+Kondensatoren 
+IEC 60384-14 
+– 
+Anhang G 
+Sicherheitstransformatoren 
+IEC 61558-1 und IEC 61558-2-6 
+– 
+Anhang H 
+Schalter 
+IEC 61058-1 
+– 
+Anhang J 
+Leiterplatten 
+IEC 60664-3 
+– 
+Anhang N 
+Kriechstromfestigkeit 
+IEC 60112 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 7/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+3 
+ANMERKUNG 3 Folgende Schriftarten werden verwendet: 
+– 
+Anforderungen: in Normalschrift 
+– 
+Prüfungen: in Kursivschrift 
+– 
+Anmerkungen: in Kleinschrift 
+Wörter in Fettdruck im Text sind im Abschnitt 3 definiert. Wenn eine Definition ein Adjektiv betrifft, dann werden das 
+Adjektiv und das zugehörige Substantiv auch in Fettdruck wiedergegeben. 
+_______________ 
+Anerkennungsnotiz 
+Der Text der Internationalen Norm IEC 60335-1:2001 ausschließlich des Corrigendums von Januar 2002 
+wurde von CENELEC als Europäische Norm mit vereinbarten, gemeinsamen Abänderungen angenommen, 
+die eingearbeitet sind. 
+_______________ 
+GEMEINSAME ABÄNDERUNGEN 
+Einleitung 
+Es wird ergänzt: 
+Die Hauptziele der Niederspannungsrichtlinie, 72/23/EWG, werden in dieser Norm abgedeckt. Die 
+grundlegenden Sicherheitsanforderungen folgender Richtlinien, die für Geräte für den Hausgebrauch und 
+ähnliche Zwecke anwendbar sein könnten, wurden berücksichtigt: 
+– 
+98/37/EG – Maschinenrichtlinie; 
+– 
+89/106/EWG – Bauproduktenrichtlinie; 
+– 
+97/23/EG – Druckgeräterichtlinie. 
+6 
+Einteilung 
+6.1 
+Es werden gestrichen „Schutzklasse 0“ und „Schutzklasse 0I“. 
+7 
+Aufschriften und Anweisungen 
+7.1 
+Es wird ergänzt: 
+Die Aufschriften für Bemessungsspannung oder Bemessungsspannungsbereich für Geräte, die an die 
+Netzversorgung angeschlossen werden, müssen umfassen: 
+– 
+230 V für Einphasengeräte; 
+– 
+400 V für Mehrphasengeräte. 
+25 Netzanschluss und äußere Leitungen 
+25.6 
+Es wird ergänzt: 
+Netzanschlussleitungen von ortsveränderlichen Einphasengeräten mit einem Bemessungsstrom bis 
+16 A müssen mit einem Stecker versehen sein, der folgenden Normblättern in IEC 60083:1975 entspricht: 
+– 
+für Geräte der Schutzklasse I 
+Normblatt C 2b, C 3b oder C 4; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 8/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+4 
+– 
+für Geräte der Schutzklasse II 
+Normblatt C 5 oder C 6. 
+25.7 
+Nach dem zweiten Spiegelstrich wird ergänzt: 
+– 
+Gummischlauchleitung mit Polychloroprenmantel (Kurzzeichen 60245 IEC 57); 
+Vor der ANMERKUNG wird ergänzt: 
+Werden Netzanschlussleitungen hoher Flexibilität benutzt, dürfen sie nicht leichter sein als 
+– 
+Gummischlauchleitung (Kurzzeichen 60245 IEC 86); 
+– 
+gummiisolierte Leitung mit Mantel aus vernetztem PVC (Kurzzeichen 60245 IEC 87); 
+– 
+Schlauchleitung aus vernetztem PVC (Kurzzeichen 60245 IEC 88). 
+Nach der ANMERKUNG wird ergänzt: 
+ANMERKUNG Z1 Die harmonisierten Kurzzeichen, die den IEC-Leitungsarten entsprechen, sind in Anhang ZD 
+angegeben. 
+_______________ 
+Vorwort zu Änderung A11 
+EN 60335-1:2002 wurde ohne das Corrigendum 1 zu IEC 60335-1:2001 angenommen und veröffentlicht. 
+Ein Vorschlag zur Anpassung der Europäischen Norm an die Internationale Norm wurde auf der 
+CENELEC/TC 61-Tagung in Brüssel im November 2002 beraten. Dabei wurde beschlossen, den Text des 
+Corrigendums für die Annahme als Änderung zu EN 60335-1 der formellen Abstimmung zu unterwerfen. 
+Dieser Entwurf wurde im April 2003 verteilt und von CENELEC am 2003-09-23 als Änderung A11 zu 
+EN 60335-1:2002 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen natio-
+nalen Norm oder durch Anerkennung übernommen 
+werden muss 
+(dop): 
+2004-10-01 
+– 
+Datum, zu dem nationale Normen, die der Änderung 
+entgegenstehen, zurückgezogen werden müssen 
+(dow): 
+2006-10-01 
+_______________ 
+24 Einzelteile 
+Der zweite Absatz der Anforderungen wird gestrichen. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 9/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+5 
+Anhang G 
+(normativ) 
+ 
+Sicherheitstransformatoren/-übertrager 
+29 Luftstrecken, Kriechstrecken und feste Isolierung 
+29.1, 29.2 und 29.3 
+Der Text wird durch Folgendes ersetzt: 
+Es gelten die in Tabelle 13 Punkt 2a, 2c und 3 der IEC 61558-1 festgelegten Abstände. 
+ANMERKUNG 
+Es gelten die für Verschmutzungsgrad 2 festgelegten Werte. 
+Literaturhinweise 
+Der Verweis auf IEC 60745 und IEC 61029 wird durch Folgendes ersetzt: 
+IEC 60745 (all parts), Safety of hand-held motor-operated electric tools 
+IEC 61029 (all parts), Safety of transportable motor-operated electric tools 
+_______________ 
+Vorwort zu Änderung A1 
+Der Text des Schriftstücks 61/2569/FDIS, zukünftige Änderung A1 zu IEC 60335-1:2001, erarbeitet vom 
+Technischen Komitee IEC/TC 61, wurde der IEC/CENELEC Parallelen Abstimmung unterworfen und als 
+Änderung A1 zu EN 60335-1:2002 am 2004-09-22 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen natio-
+nalen Norm oder durch Anerkennung übernommen 
+werden muss 
+(dop): 
+2005-07-01 
+– 
+Datum, zu dem nationale Normen, die der Änderung 
+entgegenstehen, zurückgezogen werden müssen 
+(dow): 
+2007-10-01 
+Diese Änderung ergänzt oder ändert die entsprechenden Abschnitte von EN 60335-1:2002. 
+Der Anhang R ist normativ und bildet einen festen Bestandteil dieser Norm. 
+Die Anhänge P und Q sind informativ und dienen nur der Information. 
+Es gibt keine besonderen nationalen Bedingungen, die eine Abweichung von dieser Änderung bewirken. 
+Nationale Abweichnungen von dieser Änderung sind im Anhang ZB aufgeführt und gelten zusätzlich zu jenen 
+in EN 60335-1. 
+_______________ 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+A11 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 10/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+6 
+Anerkennungsnotiz der Änderung A1 
+Der Text der Änderung A1:2004 zur Internationalen Norm IEC 60335-1:2001 wurde von CENELEC als 
+Änderung zur Europäischen Norm ohne irgendeine Abänderung angenommen. 
+_______________ 
+Vorwort zu Änderung A12 
+Diese Änderung zu EN 60335-1:2002 wurde vom Technischen Komitee CENELEC/TC 61 auf Grundlagen 
+der Beratungen während der Sitzung in Balsthal im Juni 2004 erarbeitet. 
+Der Text der Änderung wurde dem Einstufigen Annahmeverfahren im Mai 2005 unterworfen und von 
+CENELEC am 2005-12-01 als Änderung A12 zu EN 60335-1:2002 angenommen. 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen natio-
+nalen Norm oder durch Anerkennung übernommen 
+werden muss 
+(dop): 
+2006-12-01 
+– 
+Datum, zu dem nationale Normen, die der Änderung 
+entgegenstehen, zurückgezogen werden müssen 
+(dow): 
+2007-10-01 
+Der Inhalt des im Juli 2006 veröffentlichten Corrigendums ist in dieser Fassung enthalten. 
+_______________ 
+29.3 
+Der Text des dritten Spiegelstriches wird ersetzt: 
+– 
+eine 
+Untersuchung 
+der 
+thermischen 
+Qualität 
+des 
+Werkstoffs 
+in 
+Verbindung 
+mit 
+einer 
+Spannungsfestigkeitsprüfung in Übereinstimmung mit 29.3.3 und bei berührbarer, verstärkter 
+Isolierung, die nur aus einer Lage besteht, Messungen in Übereinstimmung mit 29.3.Z1. 
+Ergänzung: 
+29.3.Z1 Falls die berührbare, verstärkte Isolierung aus einer Lage besteht, muss die Dicke dieser Lage mit 
+Tabelle Z1 übereinstimmen. 
+Tabelle Z1 – Mindeststärke für einlagige, berührbare, verstärkte Isolierung 
+Mindeststärke für einlagige, berührbare, verstärkte Isolierung  
+mm 
+Bemessungs- 
+spannung 
+V 
+Überspannungskategorie I 
+Überspannungskategorie 
+II 
+Überspannungskategorie 
+III 
+< 50 
+ 
+ 
+0,01 
+ 
+ 
+0,04 
+ 
+ 
+0,1 
+50 ≤ 150 
+ 
+ 
+0,1 
+ 
+ 
+0,3 
+ 
+ 
+0,6 
+150 ≤ 300 
+ 
+ 
+0,3 
+ 
+ 
+0,6 
+ 
+ 
+1,2 
+ANMERKUNG 
+Die Kriechstrecke durch ein möglicherweise vorhandenes Loch in der Isolierschicht wird vernachlässigt, 
+da diese nur beansprucht wird, wenn die zweite Elektrode (der menschliche Körper) vorhanden ist. 
+_______________ 
+1 
+1 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+A12 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 11/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+7 
+Vorwort zu Änderung A2 
+Der Text des Schriftstücks 61/2996/FDIS, künftige Änderung A2 zu IEC 60335-1:2001, ausgearbeitet vom 
+Technischen Komitee 61 der IEC „Safety of household and similar electrical appliances“, wurde der IEC-
+CENELEC Parallelen Abstimmung unterworfen und von CENELEC am 2006-07-01 als Änderung A2 zu 
+EN 60335-1:2002 angenommen 
+Nachstehende Daten wurden festgelegt: 
+– 
+spätestes Datum, zu dem die Änderung auf nationaler 
+Ebene durch Veröffentlichung einer identischen natio-
+nalen Norm oder durch Anerkennung übernommen 
+werden muss 
+(dop): 
+2007-04-01 
+– 
+Datum, zu dem nationale Normen, die der Änderung 
+entgegenstehen, zurückgezogen werden müssen 
+(dow): 
+2009-07-01 
+Diese Änderung ergänzt oder ändert die entsprechenden Abschnitte von EN 60335-1:2002. 
+Es bestehen keine besonderen nationalen Bedingungen, die eine Abweichung von dieser Änderung 
+verursachen. 
+Es bestehen keine nationalen Abweichungen von dieser Änderung. 
+_______________ 
+Anerkennungsnotiz zu Änderung A2 
+Der Text der Änderung A2:2006 zur Internationalen Norm IEC 60335-1:2001 und deren Corrigendum August 
+2006 wurde von CENELEC als Änderung zur Europäischen Norm ohne irgendeine Abänderung 
+übernommen. 
+Der Anhang ZC (in EN 60335-1:2002/A1:2004) ist durch den neuen Anhang ZC zu ersetzen. 
+_______________ 
+ 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 12/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+8 
+Inhalt 
+Seite
+Vorwort............................................................................................................................................................... 2 
+Vorwort zu Änderung A11.................................................................................................................................. 4 
+Vorwort zu Änderung A1.................................................................................................................................... 4 
+Vorwort zu Änderung A12.................................................................................................................................. 6 
+Vorwort zu Änderung A2.................................................................................................................................... 6 
+Einleitung.......................................................................................................................................................... 11 
+1 
+Anwendungsbereich ............................................................................................................................ 12 
+2 
+Normative Verweisungen..................................................................................................................... 12 
+3 
+Begriffe................................................................................................................................................. 16 
+4 
+Allgemeine Anforderungen .................................................................................................................. 24 
+5 
+Allgemeine Prüfbedingungen............................................................................................................... 24 
+6 
+Einteilung ............................................................................................................................................. 27 
+7 
+Aufschriften und Anweisungen ............................................................................................................ 27 
+8 
+Schutz gegen Zugang zu aktiven Teilen.............................................................................................. 34 
+9 
+Anlauf von Motorgeräten ..................................................................................................................... 36 
+10 
+Leistungs- und Stromaufnahme........................................................................................................... 36 
+11 
+Erwärmung........................................................................................................................................... 38 
+12 
+Frei....................................................................................................................................................... 42 
+13 
+Ableitstrom und Spannungsfestigkeit bei Betriebstemperatur............................................................. 43 
+14 
+Transiente Überspannungen ............................................................................................................... 45 
+15 
+Feuchtigkeitsbeständigkeit .................................................................................................................. 46 
+16 
+Ableitstrom und Spannungsfestigkeit .................................................................................................. 48 
+17 
+Überlastschutz von Transformatoren und zugehörigen Stromkreisen ................................................ 50 
+18 
+Dauerhaftigkeit..................................................................................................................................... 51 
+19 
+Unsachgemäßer Betrieb...................................................................................................................... 51 
+20 
+Standfestigkeit und mechanische Sicherheit....................................................................................... 60 
+21 
+Mechanische Festigkeit ....................................................................................................................... 61 
+22 
+Aufbau.................................................................................................................................................. 63 
+23 
+Innere Leitungen.................................................................................................................................. 73 
+24 
+Einzelteile............................................................................................................................................. 75 
+25 
+Netzanschluss und äußere Leitungen ................................................................................................. 79 
+26 
+Anschlussklemmen für äußere Leiter .................................................................................................. 87 
+27 
+Schutzleiteranschluss .......................................................................................................................... 89 
+28 
+Schrauben und Verbindungen............................................................................................................. 91 
+29 
+Luftstrecken, Kriechstrecken und feste Isolierung............................................................................... 94 
+30 
+Wärme- und Feuerbeständigkeit ....................................................................................................... 102 
+31 
+Rostschutz ......................................................................................................................................... 108 
+32 
+Strahlung, Giftigkeit und ähnliche Gefährdungen.............................................................................. 108 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 13/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+9 
+Seite
+Anhang A (informativ)  Stückprüfungen......................................................................................................... 119 
+Anhang B (normativ)  Geräte, die durch wiederaufladbare Batterien versorgt werden................................. 121 
+Anhang C (normativ)  Alterungsprüfung an Motoren..................................................................................... 124 
+Anhang D (normativ)  Thermische Motorschutzeinrichtungen ...................................................................... 125 
+Anhang E (normativ)  Nadelflammprüfung .................................................................................................... 126 
+Anhang F (normativ)  Kondensatoren............................................................................................................ 128 
+Anhang G (normativ)  Sicherheitstransformatoren/-übertrager ..................................................................... 130 
+Anhang H (normativ)  Schalter ...................................................................................................................... 131 
+Anhang I (normativ)  Motoren mit einer Basisisolierung, die nicht für die Bemessungsspannung des 
+Gerätes ausgelegt ist......................................................................................................................... 133 
+Anhang J (normativ)  Beschichtete Leiterplatten........................................................................................... 135 
+Anhang K (normativ)  Überspannungskategorien ......................................................................................... 136 
+Anhang L (informativ)  Anleitung für die Messung von Luft- und Kriechstrecken.......................................... 137 
+Anhang M (normativ)  Verschmutzungsgrad ................................................................................................. 139 
+Anhang N (normativ)  Kriechstromfestigkeitsprüfung.................................................................................... 140 
+Anhang O (informativ)  Auswahl und Reihenfolge der Prüfungen nach Abschnitt 30................................... 142 
+Anhang P (informativ)  Leitfaden für die Anwendung dieser Norm auf Geräte, die in ausgeglichenem 
+warmfeuchten Klima benutzt werden ................................................................................................ 145 
+Anhang Q (informativ)  Prüffolge für die Bewertung von elektronischen Stromkreisen ................................ 146 
+Anhang R (normativ)  Software-Bewertung................................................................................................... 149 
+Literaturhinweise............................................................................................................................................ 150 
+Begriffsindex .................................................................................................................................................. 152 
+Anhang ZA (normativ)  Besondere nationale Bedingungen .......................................................................... 153 
+Anhang ZB (informativ)  A-Abweichungen..................................................................................................... 156 
+Anhang ZC (normativ)  Normative Verweisungen auf internationale Publikationen mit ihren 
+entsprechenden europäischen Publikationen ................................................................................... 157 
+Anhang ZD (informativ)  IEC- und CENELEC-Kurzzeichen für Anschlussleitungen..................................... 161 
+ 
+Bild 1 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur für Einphasengeräte 
+der Schutzklasse II............................................................................................................................ 109 
+Bild 2 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von Einphasengeräten, 
+die nicht nach Schutzklasse II gebaut sind ....................................................................................... 109 
+Bild 3 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von Geräten der 
+Schutzklasse II für dreiphasigen Anschluss...................................................................................... 110 
+Bild 4 – Schaltbild für die Messung des Ableitstroms bei Betriebstemperatur von Geräten für 
+dreiphasigen Anschluss, ausgenommen der Schutzklasse II........................................................... 111 
+Bild 5 – Ungültig............................................................................................................................................. 111 
+Bild 6 – Beispiel einer elektronischen Schaltung mit Niederleistungspunkten .............................................. 112 
+Bild 7 – Prüffingernagel.................................................................................................................................. 114 
+Bild 8 – Biegeprüfgerät .................................................................................................................................. 115 
+Bild 9 – Schematische Darstellung von Zugentlastungen ............................................................................. 116 
+Bild 10 – Beispiel von Teilen der Schutzleiterklemme................................................................................... 117 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 14/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+10 
+Seite
+Bild 11 – Beispiele für Luftstrecken................................................................................................................ 118 
+Bild I.1 – Nachbildung von Fehlern ................................................................................................................ 134 
+Bild L.1 – Reihenfolge für die Auswahl von Luftstrecken............................................................................... 137 
+Bild L.2 – Reihenfolge für die Auswahl von Kriechstrecken .......................................................................... 138 
+Bild O.1 – Prüfung der Wärmebeständigkeit.................................................................................................. 142 
+Bild O.2 – Prüfung der Feuerbeständigkeit.................................................................................................... 144 
+ 
+Tabelle 1 – Abweichung der Leistungsaufnahme............................................................................................ 36 
+Tabelle 2 – Stromabweichung.......................................................................................................................... 37 
+Tabelle 3 – Maximale Temperaturerhöhungen im Normalbetrieb ................................................................... 40 
+Tabelle 4 – Spannungen bei der Spannungsfestigkeitsprüfung ...................................................................... 44 
+Tabelle 5 – Kennwerte von Hochspannungsquellen ....................................................................................... 45 
+Tabelle 6 – Prüfstoßspannung......................................................................................................................... 46 
+Tabelle 7 – Prüfspannungen............................................................................................................................ 50 
+Tabelle 8 – Maximale Wicklungstemperatur.................................................................................................... 54 
+Tabelle 9 – Maximale Temperaturerhöhung im unsachgemäßen Betrieb....................................................... 59 
+Tabelle 10 – Durchmesser Abmessungen von Leitungen und Rohren ........................................................... 80 
+Tabelle 11 – Kleinster Querschnitt der Leiter................................................................................................... 82 
+Tabelle 12 – Zugkraft und Drehmoment .......................................................................................................... 84 
+Tabelle 13 – Nennquerschnitt von Leitern ....................................................................................................... 88 
+Tabelle 14 – Drehmoment für die Prüfung von Schrauben und Muttern ......................................................... 93 
+Tabelle 15 – Bemessungsstoßspannung......................................................................................................... 95 
+Tabelle 16 – Mindestluftstrecken ..................................................................................................................... 96 
+Tabelle 17 – Mindestkriechstrecken für Basisisolierung.................................................................................. 99 
+Tabelle 18 – Mindestkriechstrecken für Funktionsisolierung......................................................................... 100 
+Tabelle Z1 – Mindeststärke für einlagige, berührbare, verstärkte Isolierung................................................. 102 
+Tabelle A.1 – Prüfspannungen....................................................................................................................... 120 
+Tabelle C.1 – Prüfbedingungen ..................................................................................................................... 124 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 15/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+11 
+Einleitung 
+Bei der Erstellung dieser Internationalen Norm wurde davon ausgegangen, dass die Ausführung ihrer 
+Bestimmungen Personen mit angemessener Qualifikation und Erfahrung übertragen wird. 
+Diese Norm erkennt das international akzeptierte Niveau des Schutzes gegen Gefahren wie zum Beispiel 
+solche elektrischer, mechanischer und thermischer Art sowie Brand- und Strahlungsgefahren von elektri-
+schen Geräten für den Hausgebrauch und ähnliche Zwecke an, die sachgemäß unter Berücksichtigung der 
+Gebrauchsanweisungen betrieben werden. Sie deckt auch ungewöhnliche Situationen ab, mit denen gleich-
+wohl in der Praxis zu rechnen sind, und berücksichtigt die Art und Weise, wie elektromagnetische Phäno-
+mene den sicheren Betrieb des Gerätes beeinflussen können. 
+So weit wie möglich berücksichtigt diese Norm die in der IEC 60364 angegebenen Anforderungen, damit ein 
+Gerät in Übereinstimmung mit diesen Errichtungsbestimmungen für Niederspannungsanlagen installiert 
+werden kann. Nationale Errichtungsbestimmungen können jedoch unterschiedlich sein. 
+Falls die Funktion eines Gerätes durch verschiedene Teile 2 abgedeckt ist, werden die zutreffenden Teile 2 
+für jede Funktion getrennt angewendet, soweit dies sinnvoll ist. Falls es möglich ist, wird die Beeinflussung 
+der Funktionen untereinander berücksichtigt. 
+ANMERKUNG 1 Für das gesamte Schriftstück gilt: Wenn „Teil 2“ erwähnt wird, so wird auf den entsprechenden Teil der 
+IEC 60335 verwiesen. 
+Diese Norm ist eine Produktfamilien-Norm, die die Sicherheit von Geräten behandelt und die Vorrang vor 
+Fachgrundnormen und Querschnittsnormen gleichen Gegenstandes hat. 
+Soweit es sinnvoll ist, kann in einzelnen Ländern die Anwendung dieser Norm bei Geräten, die in keinem 
+Teil 2 erwähnt sind, oder bei Geräten, die nach neuen Grundlagen entworfen wurden, gewünscht werden. 
+Ein Gerät, das mit dem Text dieser Norm übereinstimmt, wird nicht unbedingt als mit den Sicherheits-
+grundsätzen dieser Norm übereinstimmend betrachtet, wenn sich bei der Untersuchung und Prüfung heraus-
+stellt, dass es andere Merkmale hat, die das Sicherheitsniveau, das durch diese Anforderungen abgedeckt 
+ist, beeinträchtigen. 
+Ein Gerät, in dem Werkstoffe oder Bauformen eingesetzt werden, die von den in den Anforderungen dieser 
+Norm festgelegten abweichen, kann entsprechend dem Sinn der Anforderungen untersucht und geprüft 
+werden und, wenn es sich als im Wesentlichen gleichwertig erweist, als mit den Sicherheitsgrundsätzen der 
+Norm übereinstimmend angesehen werden. 
+ANMERKUNG 2 Normen, die keine Gesichtspunkte zur Sicherheit behandeln, sind 
+– 
+IEC-Normen, die das TC 59 zu Messverfahren der Gebrauchstauglichkeit veröffentlicht; 
+– 
+CISPR 11, CISPR 14-1, IEC 61000-3-2 und IEC 61000-3-3 bezüglich elektromagnetischer Aussendung; 
+– 
+CISPR 14-2 bezüglich elektromagnetischer Verträglichkeit. 
+Die Hauptziele der Niederspannungsrichtlinie, 72/23/EWG, werden in dieser Norm abgedeckt. Die grund-
+legenden Sicherheitsanforderungen folgender Richtlinien, die für Geräte für den Hausgebrauch und ähnliche 
+Zwecke anwendbar sein könnten, wurden berücksichtigt: 
+– 
+98/37/EG – Maschinenrichtlinie 
+– 
+89/106/EEG – Bauproduktenrichtlinie 
+– 
+97/23/EG – Druckgeräterichtlinie 
+1 
+ 
+ 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 16/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+12 
+1 
+Anwendungsbereich 
+Diese Internationale Norm behandelt die Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche 
+Zwecke, deren Bemessungsspannung nicht mehr als 250 V für Einphasengeräte und 480 V für andere 
+Geräte beträgt. 
+Nicht für den normalen Hausgebrauch bestimmte Geräte, die aber dennoch zu einer Gefahrenquelle für die 
+Allgemeinheit werden können, z. B. Geräte, die von Laien in Läden, in gewerblichen Betrieben und in der 
+Landwirtschaft verwendet werden, fallen in den Anwendungsbereich dieser Norm. 
+ANMERKUNG 1 Solche Geräte sind zum Beispiel Großküchengeräte, Reinigungsgeräte für industrielle und gewerbliche 
+Zwecke und Geräte für Friseure. 
+Soweit anwendbar, behandelt diese Norm die Gefahren, die üblicherweise von Geräten ausgehen, mit denen 
+alle Personen im Haus und dessen Umgebung umgehen. Diese Norm jedoch berücksichtigt im Allgemeinen 
+nicht: 
+– 
+die Benutzung von Geräten durch kleine Kinder oder gebrechliche Personen ohne Aufsicht; 
+– 
+das Spielen von kleinen Kindern mit den Geräten. 
+– 
+Personen (einschließlich Kinder), deren  
+• 
+physische, sensorische oder mentale Fähigkeiten oder 
+• 
+Mangel an Erfahrung und/oder Wissen 
+ 
+den sicheren Gebrauch der Geräte ohne Aufsicht oder Unterweisung verhindert. 
+– 
+Kinder, die mit dem Gerät spielen. 
+ANMERKUNG 2 Es wird darauf hingewiesen, dass 
+– 
+für Geräte, die zur Verwendung in Fahrzeugen oder an Bord von Schiffen oder Flugzeugen bestimmt sind, zusätz-
+liche Anforderungen notwendig sein können; 
+– 
+für Geräte, die zur Verwendung in tropischen Ländern bestimmt sind, besondere Anforderungen notwendig sein 
+können; 
+– 
+in vielen Ländern zusätzliche Anforderungen durch die nationalen Gesundheits- und Arbeitsschutzbehörden, die 
+Wasserversorgungsbehörden und ähnliche Behörden erlassen werden. 
+ANMERKUNG 3 Diese Norm gilt nicht für 
+– 
+Geräte, die ausschließlich für industrielle Zwecke bestimmt sind; 
+– 
+Geräte, die zur Verwendung in Räumen vorgesehen sind, in denen besondere Bedingungen vorherrschen, wie z. B. 
+korrosive oder explosionsfähige Atmosphäre (Staub, Dampf oder Gas); 
+– 
+Audio-, Video- und ähnliche elektronische Geräte (IEC 60065); 
+– 
+Geräte für medizinische Zwecke (IEC 60601); 
+– 
+handgeführte motorbetriebene Elektrowerkzeuge (IEC 60745); 
+– 
+Personalcomputer und ähnliche Geräte (IEC 60950); 
+– 
+ortsveränderliche motorbetriebene Elektrowerkzeuge (IEC 61029). 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte Aus-
+gabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). 
+IEC 60051-2:1984, Direct acting indicating analogue electrical-measuring instruments and their accessories – 
+Part 2: Special requirements for ammeters and voltmeters 
+2 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 17/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+13 
+IEC 60061-1, Lamp caps and holders together with gauges for the control of interchangeability and safety – 
+Part 1: Lamp caps 
+IEC 60065:1998, Safety requirements for mains operated electronic and related apparatus for household and 
+similar general use 
+IEC 60068-2-2, Environmental testing – Part 2: Tests – Tests B: Dry heat 
+IEC 60068-2-32, Environmental testing – Part 2: Tests – Test Ed: Free fall (Procedure 1) 
+IEC 60068-2-75, Environmental testing – Part 2-75: Tests – Test Eh: Hammer tests 
+IEC 60083, Plugs and socket-outlets for domestic and similar general use standardized in member countries 
+of IEC 
+IEC 60085, Thermal evaluation and classification of electrical insulation 
+IEC 60085:2004, Electrical insulation – Thermal classification 
+IEC 60112:2003, Method for determining of the proof and the comparative tracking indices of solid insulating 
+materials 
+IEC 60127 (all parts), Miniature fuses 
+IEC 60227 (all parts), Polyvinyl chloride insulated cables of rated voltages up to and including 450/750 V 
+IEC 60238, Edison screw lampholders 
+IEC 60245 (all parts), Rubber insulated cables – Rated voltages up to and including 450/750 V 
+IEC 60249-2-4:1987, Base materials for printed circuits – Part 2: Specifications – Specification No. 4: Epoxide 
+woven glass fabric copper-clad laminated sheet, general purpose grade 
+Amendment 1:1989 
+Amendment 2:1992 
+Amendment 3:1993 
+Amendment 4:1994 
+Amendment 5:2000 
+IEC 60249-2-5:1987, Base materials for printed circuits – Part 2: Specifications – Specification No. 5: Epoxide 
+woven glass fabric copper-clad laminated sheet, of defined flammability (vertical burning test) 
+Amendment 1:1989 
+Amendment 2:1992 
+Amendment 3:1993 
+Amendment 4:1994 
+Amendment 5:2000 
+ 
+IEC 60252, A.C. motor capacitors 
+IEC 60252-1, A.C. motor capacitors – Part 1: General – Performance Testing and rating – Safety 
+requirements – Guide for installation and operation 
+IEC 60320-1, Appliance couplers for household and similar general purposes – Part 1: General requirements 
+IEC 60320-2-2, Appliance couplers for household and similar general purposes – Part 2-2: Interconnection 
+couplers for household an similar equipment 
+IEC 60320-2-3, Appliance couplers for household and similar general purposes – Part 2-3: Appliance coupler 
+with a degree of protection higher than IPX0 
+1 
+1 
+2 
+2 
+1 
+1/2 
+1/2 
+1/2 
+1/2 
+2 
+2 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+17 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 18/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+14 
+IEC 60384-14:19932005, Fixed capacitors for use in electronic equipment – Part 14: Sectional specification: 
+Fixed capacitors for electromagnetic interference suppression and connection to the supply mains 
+IEC 60417-DB:20021, Graphical symbols for use on equipment 
+IEC 60529, Degrees of protection provided by enclosures (IP Code) 
+IEC 60598-1:2003, Luminaires – Part 1: General requirements and tests 
+IEC 60664-1:1992, Insulation coordination for equipment within low-voltage systems – Part 1: Principles, 
+requirements and tests 
+Amendment 1:2002 
+Amendment 2:20022 
+IEC 60664-3:1992, Insulation coordination for equipment within low-voltage systems – Part 3: Use of coatings 
+to achieve insulation coordination of printed board assemblies 
+IEC 60664-3:2003, Insulation coordination for equipment within low-voltage systems – Part 3: Use of coating, 
+potting or moulding for protection against pollution 
+IEC 60691:2002, Thermal-links – Requirements and application guide 
+IEC 60695-2-2:1991, Fire hazard testing – Part 2: Test methods – Section 2: Needle-flame test 
+IEC 60695-2-11, Fire hazard testing – Part 2-11: Glowing/hot wire based test methods – Glow-wire 
+flammability test method for end-products 
+IEC 60695-2-12, Fire hazard testing – Part 2-12: Glowing/hot wire based test methods – Glow-wire 
+flammability test method for materials 
+IEC 60695-2-13, Fire hazard testing – Part 2-13: Glowing/hot wire based test methods – Glow-wire ignitability 
+test method for materials 
+IEC 60695-10-2, Fire hazard testing – Part 10: Guidance and test methods for the minimization of the effects 
+of abnormal heat on electrotechnical products involved in fires – Section 2: Method for testing products made 
+from non-metallic materials for resistance to heat using the ball pressure test 
+IEC 60695-11-5:2004, Fire hazard testing – Part 11-5: Test flames – Needle-flame test method – Apparatus, 
+confirmatory test arrangement and guidance 
+IEC 60695-11-10, Fire hazard testing – Part 11-10: Test flames – 50 W horizontal and vertical flame test 
+methods 
+IEC 60730-1:1999, Automatic electrical controls for household and similar use – Part 1: General requirements 
+IEC 60730-1:1999, Automatic electrical controls for household and similar use – Part 1: General requirements 
+Amendment 1 (2003)3 
+IEC 60730-2-8:2000, Automatic electrical controls for household and similar use – Part 2-8: Particular 
+requirements for electrically operated water valves, including mechanical requirements 
+                                                     
+1 Verweis auf die IEC-online-Datenbank. 
+2 Es ist eine konsolidierte Fassung 1.2 (2002) vorhanden, die die erste Ausgabe und die Änderungen A1 
+und A2 enthält. 
+3 
+Es ist eine konsolidierte Fassung 3.1(2003) vorhanden, die die dritte Ausgabe und die Änderung A1 
+enthält. 
+2 
+1 
+1 
+1 
+2 
+2 
+2 
+2 
+1 
+2 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+18 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 19/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+15 
+IEC 60730-2-8:2000, Automatic electrical controls for household and similar use – Part 2-8: Particular 
+requirements for electrically operated water valves, including mechanical requirements 
+Amendment 1 (2002)4 
+IEC 60738-1, Thermistors – Directly heated positive step-function temperature coefficient – Part 1: Generic 
+specification 
+IEC 60906-1, IEC system of plugs and socket-outlets for household and similar purposes – Part 1: Plugs and 
+socket-outlets 16 A 250 V a. c. 
+IEC 60990:1999, Methods of measurement of touch-current and protective conductor current 
+IEC 60998-2-1, Connecting devices for low voltage circuits for household and similar purposes – Part 2-1: 
+Particular requirements for connecting devices as separate entities with screw-type clamping units. 
+IEC 60998-2-2, Connecting devices for low voltage circuits for household and similar purposes – Part 2-2: 
+Particular requirements for connecting devices as separate entities with screwless-type clamping units 
+IEC 60999-1:1999, Connecting devices – Electrical copper conductors – Safety requirements for screw-type 
+and screwless-type clamping units – Part 1: General requirements and particular requirements for clamping 
+units for conductors from 0,2 mm² up to 35 mm² (included) 
+IEC 61000-4-2, Electromagnetic compatibility (EMC) – Part 4: Testing and measurement techniques – 
+Section 2: Electrostatic discharge immunity test 
+IEC 61000-4-3, Electromagnetic compatibility (EMC) – Part 4-3: Testing and measurement techniques – 
+Radiated, radio-frequency, electromagnetic field immunity test 
+IEC 61000-4-4, Electromagnetic compatibility (EMC) – Part 4: Testing and measurement techniques – 
+Section 4: Electrical fast transient/burst immunity test 
+IEC 61000-4-5, Electromagnetic compatibility (EMC) – Part 4: Testing and measurement techniques – 
+Section 5: Surge immunity test 
+IEC 61000-4-6, Electromagnetic compatibility (EMC) – Part 4-6: Testing and measurement techniques – 
+Immunity to conducted disturbances, induced by radio-frequency fields 
+IEC 61000-4-11:1994, Electromagnetic compatibility (EMC) – Part 4: Testing and measurement techniques – 
+Section 11: Voltage dips, short interruptions and voltage variations immunity tests 
+Amendment 1:20005 
+IEC 61000-4-11:2004, Electromagnetic compatibility (EMC) – Part 4-11: Testing and measurement 
+techniques – Voltage dips, short interruptions and voltage variations immunity tests 
+IEC 61000-4-13, Electromagnetic compatibility (EMC) – Part 4-13: Testing and measurement techniques – 
+Harmonics and interharmonics including mains signaling at a.c. power port, low frequency immunity tests 
+IEC 61032:1997, Protection of persons and equipment by enclosures – Probes for verification 
+IEC 61058-1:2000, Switches for appliances – Part 1: General requirements 
+Amendment 1:20016 
+                                                     
+4 
+Es ist eine konsolidierte Fassung 2.1(2003) vorhanden, die die zweite Ausgabe und die Änderung A1 
+enthält. 
+5 Es ist eine konsolidierte Fassung 1.1 (2001) vorhanden, die die erste Ausgabe und die Änderung A1 
+enthält. 
+6 Es ist eine konsolidierte Fassung 3.1 (2001) vorhanden, die die erste Ausgabe und die Änderung A1 
+enthält. 
+2 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1/2 
+2 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+19 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 20/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+16 
+IEC 61180-1, High-voltage test techniques for low-voltage equipment – Part 1: Definitions, test and procedure 
+requirements 
+IEC 61180-2, High-voltage techniques for low-voltage equipment – Part 2: Test equipment 
+IEC 61558-1:1997, Safety of power transformers, power supply units and similar – Part 1: General 
+requirements and tests 
+IEC 61558-1:1997, Safety of power transformers, power supply units and similar – Part 1: General 
+requirements and tests 
+Amendment 1 (1998)7 
+IEC 61558-2-6:1997, Safety of power transformers, power supply units and similar – Part 2: Particular 
+requirements for safety isolating transformers for general use 
+IEC 61643-1, Surge protective devices connected to low-voltage power distribution systems – Part 1: 
+Performance requirements and testing methods 
+IEC 61770, Electric appliances connected to the water mains – Avoidance of backsiphonage and failure of 
+hose-sets 
+IEC 62151, Safety of equipment electrically connected to a telecommunication network 
+ISO 1463, Metallic and oxide coatings – Measurement of coating thickness – Microscopical method 
+ISO 2178, Non-magnetic coatings on magnetic substrates – Measurement of coating thickness – Magnetic 
+method 
+ISO 2768-1, General tolerances – Part 1: Tolerances for linear and angular dimensions without individual 
+tolerance indications 
+ISO 7000ISO 7000-DB:2004, Graphical symbols for use on equipment – Index and synopsis 
+ISO 9772:2001, Cellular plastics – Determination of horizontal burning characteristics of small specimens 
+subjected to a small flame 
+ISO 9772:2001, Cellular plastics – Determination of horizontal burning characteristics of small specimens 
+subjected to a small flame 
+Amendment 1 (2003) 
+3 
+Begriffe 
+Am Ende dieser Ausgabe wird ein Index der festgelegten Begriffe zur Verfügung gestellt. 
+3.1 
+bei den Begriffen „Spannung“ und „Strom“ bedeuten Zahlenwerte den Effektivwert, wenn nicht anders ange-
+geben 
+3.1.1 
+Bemessungsspannung 
+Spannung, die dem Gerät vom Hersteller zugeordnet ist 
+3.1.2 
+Bemessungsspannungsbereich 
+Spannungsbereich, der dem Gerät vom Hersteller zugeordnet ist, ausgedrückt durch seine obere und untere 
+Grenze 
+                                                     
+7 
+Es ist eine konsolidierte Fassung 1.1 (1998) vorhanden, die die erste Ausgabe und die Änderung A1 
+enthält. 
+2 
+2 
+1 
+1 
+2 
+1 
+1 
+2 
+1/2 
+2 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+20 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 21/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+17 
+3.1.3 
+Arbeitsspannung 
+höchste Spannung, der das betroffene Teil ausgesetzt ist, wenn das Gerät bei Bemessungsspannung und 
+unter den Bedingungen des Normalbetriebs in Betrieb ist 
+ANMERKUNG 1 Die unterschiedlichen Stellungen von Regel- und/oder Steuereinrichtungen und Schaltgeräten werden 
+berücksichtigt. 
+ANMERKUNG 2 Die Arbeitsspannung berücksichtigt Resonanzspannungen. 
+ANMERKUNG 3 Bei der Ermittlung der Arbeitsspannung wird die Auswirkung der transienten Überspannung nicht 
+berücksichtigt. 
+3.1.4 
+Bemessungsaufnahme 
+Leistungsaufnahme, die dem Gerät vom Hersteller zugeordnet ist 
+3.1.5 
+Bemessungsaufnahmebereich 
+Bereich der Leistungsaufnahme, der dem Gerät vom Hersteller zugeordnet ist, ausgedrückt durch seine 
+obere und untere Grenze 
+3.1.6 
+Bemessungsstrom 
+vom Hersteller dem Gerät zugeordneter Strom 
+ANMERKUNG 
+Falls dem Gerät kein Strom zugeordnet ist, so ist der Bemessungsstrom: 
+– 
+bei Wärmegeräten der aus der Bemessungsaufnahme und der Bemessungsspannung berechnete Strom; 
+– 
+bei motorbetriebenen Geräten und kombinierten Geräten der Strom, der bei Normalbetrieb des Gerätes und bei 
+Bemessungsspannung gemessen wird. 
+3.1.7 
+Bemessungsfrequenz 
+Frequenz, die dem Gerät vom Hersteller zugeordnet ist 
+3.1.8 
+Bemessungsfrequenzbereich 
+Frequenzbereich, der dem Gerät vom Hersteller zugeordnet ist, ausgedrückt durch seine obere und untere 
+Grenze 
+3.1.9 
+Normalbetrieb 
+Bedingungen, unter denen das an das Netz angeschlossene Gerät im sachgemäßen Gebrauch betrieben 
+wird 
+3.1.10 
+Bemessungsstoßspannung 
+Spannung, die von der Bemessungsspannung und der Überspannungskategorie abgeleitet ist. Sie be-
+schreibt das spezifische Widerstandsvermögen der Isolierung gegenüber transienten Überspannungen. 
+3.1.11 
+gefährliche Fehlfunktion 
+unerwartete Funktion des Gerätes, die die Sicherheit beeinträchtigen kann 
+3.1.12 
+Fernwirken 
+Einstellen, Steuern und/oder Regeln eines Gerätes durch einen Befehl, der außerhalb der Sichtweite eines 
+Gerätes vorgenommen werden kann, wobei Übertragungsmedien wie Telekommunikation, Tontechnik oder 
+Bussysteme angewendet werden 
+1 
+1 
+1 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+21 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 22/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+18 
+ANMERKUNG 
+Eine Infrarotsteuer- und/oder -regeleinrichtung wird nicht als eine Einrichtung angesehen, die für 
+Fernwirken benutzt wird. Sie kann jedoch als Teilsystem eingebunden sein wie bei der Telekommunikation, Tontechnik 
+oder bei einem Bussystem. 
+3.2 
+3.2.1 
+Geräteanschlussleitung 
+flexible Leitung zur Stromversorgung oder Verbindung, die dazu bestimmt ist, mit dem Gerät mittels einer 
+geeigneten Gerätesteckvorrichtung verbunden zu werden 
+3.2.2 
+Verbindungsleitung 
+als Teil des kompletten Gerätes mitgelieferte flexible Außenleitung, die für einen anderen Zweck als den 
+Anschluss an das Stromversorgungsnetz bestimmt ist 
+ANMERKUNG 
+Beispiele für Verbindungsleitungen sind eine Hand-Fernsteuerung, eine freiliegende Verbindung 
+zwischen zwei Teilen eines Gerätes und eine Leitung, mit der ein Zubehörteil an das Gerät oder eine getrennte Signal-
+schaltung angeschlossen wird. 
+3.2.3 
+Netzanschlussleitung 
+flexible Leitung zur Stromversorgung, die fest mit dem Gerät verbunden ist 
+3.2.4 
+Anschlussart X 
+Anschlussart der Netzanschlussleitung, die ein leichtes Ersetzen gestattet 
+ANMERKUNG 
+Es ist erlaubt, dass die Netzanschlussleitung besonders zugerichtet und nur vom Hersteller oder 
+seinem Kundendienstvertreter erhältlich ist. Eine besonders zugerichtete Leitung kann auch einen Teil des Gerätes ent-
+halten. 
+3.2.5 
+Anschlussart Y 
+Anschlussart der Netzanschlussleitung, bei der ein Ersetzen nur durch den Hersteller, seinen Kunden-
+dienstvertreter oder eine ähnlich qualifizierte Person vorgesehen ist 
+3.2.6 
+Anschlussart Z 
+Anschlussart der Netzanschlussleitung, bei der ein Ersetzen nicht möglich ist, ohne einen Teil des Gerätes 
+zu zerbrechen oder zu zerstören 
+3.2.7 
+Anschlussleiter 
+ein Satz Drähte, die zum Anschluss an festverlegte Leitungen bestimmt sind und in einem Anschlusskasten 
+oder -raum im oder am Gerät angebracht sind 
+3.3 
+3.3.1 
+Basisisolierung 
+Isolierung aktiver Teile zum grundlegenden Schutz gegen elektrischen Schlag 
+3.3.2 
+zusätzliche Isolierung 
+unabhängige Isolierung zusätzlich zur Basisisolierung, die im Falle des Versagens der Basisisolierung den 
+Schutz gegen elektrischen Schlag sicherstellt 
+3.3.3 
+doppelte Isolierung 
+Isolationssystem, bestehend aus Basisisolierung und zusätzlicher Isolierung 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+22 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 23/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+19 
+3.3.4 
+verstärkte Isolierung 
+eine einzige Isolierung aktiver Teile, die unter den in dieser Norm festgelegten Bedingungen einen gleich-
+wertigen Schutz gegen elektrischen Schlag gewährleistet wie doppelte Isolierung 
+ANMERKUNG 
+Das bedeutet nicht, dass die Isolierung ein homogenes Teil sein muss. Die Isolierung darf aus mehre-
+ren Schichten bestehen, die einzeln nicht wie eine zusätzliche oder Basisisolierung geprüft werden können. 
+3.3.5 
+Funktionsisolierung 
+Isolierung zwischen leitenden Teilen unterschiedlicher Potentiale, die nur für die ordnungsgemäße Funktion 
+des Gerätes notwendig ist 
+3.3.6 
+Schutzimpedanz 
+zwischen aktiven und berührbaren leitenden Teilen in Schutzklasse II-Anordnung angeschlossene Impe-
+danz, die den Strom bei sachgemäßem Gebrauch und bei den im Gerät wahrscheinlichen Fehlerbedingun-
+gen auf einen sicheren Wert begrenzt 
+3.3.7 
+Gerät der Schutzklasse 0 
+Gerät, bei dem der Schutz gegen elektrischen Schlag nur auf der Basisisolierung beruht; es ist keine Vor-
+kehrung für eine Verbindung von eventuell vorhandenen, berührbaren leitenden Teilen mit dem Schutzleiter 
+der festverlegten Installation vorgesehen, und der Schutz ist im Falle eines Versagens der Basisisolierung 
+durch die Umgebung zu geben 
+ANMERKUNG 
+Geräte der Schutzklasse 0 haben entweder ein Gehäuse aus Isolierstoff, das ganz oder teilweise die 
+Basisisolierung bildet, oder ein Metallgehäuse, das von aktiven Teilen durch eine angemessene Isolierung getrennt ist. 
+Enthält ein Gerät mit Isolierstoffgehäuse eine Vorrichtung zum Anschluss innerer Teile an einen Schutzleiter, so wird es 
+als ein Gerät der Schutzklasse I oder 0I betrachtet. 
+3.3.8 
+Gerät der Schutzklasse 0I 
+Gerät, das überall zumindest eine Basisisolierung hat und mit einer Schutzleiteranschlussklemme versehen 
+ist, jedoch eine Anschlussleitung ohne Schutzleiter und einen Stecker ohne Schutzkontakt hat 
+3.3.9 
+Gerät der Schutzklasse I 
+Gerät, bei dem der Schutz gegen elektrischen Schlag nicht nur von der Basisisolierung abhängt, sondern 
+eine zusätzliche Schutzmaßnahme einschließt durch die Verbindung berührbarer leitender Teile mit dem 
+Schutzleiter der festverlegten Leitungen, so dass im Falle des Versagens der Basisisolierung berührbare 
+leitende Teile nicht aktiv werden können 
+ANMERKUNG 
+Diese Schutzklasse bedingt einen Schutzleiter in der Netzanschlussleitung. 
+3.3.10 
+Gerät der Schutzklasse II 
+Gerät, bei dem der Schutz gegen elektrischen Schlag nicht nur auf der Basisisolierung beruht, sondern bei 
+dem eine zusätzliche Schutzmaßnahme wie doppelte oder verstärkte Isolierung vorhanden ist; es ist keine 
+Vorrichtung zum Anschluss eines Schutzleiters vorgesehen, und es wird nicht auf die Beschaffenheit der 
+Installation vertraut 
+ANMERKUNG 1 Ein solches Gerät kann zu einer der folgenden Arten gehören: 
+– 
+Ein Gerät mit einem im Wesentlichen durchgängigen, dauerhaften Gehäuse aus Isolierstoff, das alle Metallteile um-
+schließt, ausgenommen kleine Teile wie Leistungsschilder, Schrauben und Nieten, die von aktiven Teilen durch 
+eine der verstärkten Isolierung zumindest gleichwertige Isolierung getrennt sind; solch ein Gerät wird Gerät der 
+Schutzklasse II mit Isolierstoffumhüllung genannt. 
+– 
+Ein Gerät mit einem im Wesentlichen durchgängigen, dauerhaften Metallgehäuse, innerhalb dessen durchweg 
+doppelte Isolierung oder verstärkte Isolierung verwendet wird; solch ein Gerät wird Gerät der Schutzklasse II 
+mit Metallumhüllung genannt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+23 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 24/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+20 
+– 
+Ein Gerät, das eine Kombination aus Geräten der Schutzklasse II mit Isolierstoffumhüllung und mit Metall-
+umhüllung darstellt. 
+ANMERKUNG 2 Das Gehäuse eines Gerätes der Schutzklasse II mit Isolierstoffumhüllung kann teilweise oder ganz 
+die zusätzliche oder die verstärkte Isolierung bilden. 
+ANMERKUNG 3 Enthält ein Gerät mit vollständiger doppelter oder verstärkter Isolierung eine Schutzleiter-Anschluss-
+klemme oder einen Schutzkontakt, so gilt es als ein Gerät der Schutzklasse I oder als ein Gerät der Schutzklasse 0I. 
+3.3.11 
+Schutzklasse II-Anordnung 
+Aufbau eines Teils eines Gerätes derart, dass der Schutz gegen elektrischen Schlag auf doppelter oder ver-
+stärkter Isolierung beruht 
+3.3.12 
+Gerät der Schutzklasse III 
+Gerät, bei dem der Schutz gegen elektrischen Schlag durch Anschluss an SELV gegeben ist und in dem 
+Spannungen, die höher als SELV sind, nicht erzeugt werden 
+3.3.13 
+Schutzklasse III-Anordnung 
+Aufbau eines Teils eines Gerätes derart, dass der Schutz gegen elektrischen Schlag auf SELV beruht und in 
+dem Spannungen, die höher als SELV sind, nicht erzeugt werden 
+3.3.14 
+Luftstrecke 
+kürzester Abstand zwischen zwei leitenden Teilen oder zwischen einem leitenden Teil und der berührbaren 
+Oberfläche, gemessen durch die Luft 
+3.3.15 
+Kriechstrecke 
+kürzester Weg zwischen zwei leitenden Teilen oder zwischen einem leitenden Teil und der berührbaren 
+Oberfläche, gemessen entlang der Oberfläche der Isolierung 
+3.4 
+3.4.1 
+ELV (Kleinspannung) 
+Spannung, die von einer Spannungsquelle innerhalb des Gerätes geliefert wird und die 50 V zwischen den 
+Leitern sowie zwischen den Leitern und Erde nicht übersteigt, wenn das Gerät an Bemessungsspannung 
+betrieben wird 
+3.4.2 
+SELV (Sicherheitskleinspannung) 
+Spannung, deren Wert 42 V zwischen den Leitern sowie zwischen den Leitern und Erde nicht übersteigt, 
+wobei die Leerlaufspannung 50 V nicht übersteigt 
+Wird SELV dem Netz entnommen, muss dies über einen Sicherheitstransformator oder einen Umformer mit 
+getrennten Wicklungen erfolgen, dessen Isolierung den Anforderungen an doppelte oder verstärkte Isolierung 
+entspricht. 
+ANMERKUNG 1 Die angegebenen Spannungsgrenzen setzen voraus, dass der Sicherheitstransformator mit seiner 
+Bemessungsspannung arbeitet. 
+3.4.3 
+Sicherheitstransformator/-übertrager 
+Transformator, dessen Eingangswicklung elektrisch von der Ausgangswicklung durch eine Isolierung ge-
+trennt ist, die einer doppelten oder verstärkten Isolierung mindestens gleichwertig ist. Er ist zur Versorgung 
+eines Gerätes oder Stromkreises mit SELV bestimmt. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+24 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 25/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+21 
+3.4.4 
+PELV-Kreis 
+geerdeter Stromkreis, der mit SELV betrieben wird, der von anderen Kreisen durch Basisisolierung und 
+Schutzschirmung, doppelte Isolierung oder verstärkte Isolierung getrennt ist 
+ANMERKUNG 1 Schutzschirmung ist die Trennung von Stromkreisen und aktiven Teilen durch einen geerdeten Schirm. 
+3.5 
+3.5.1 
+ortsveränderliches Gerät 
+Gerät, das dazu bestimmt ist, während des Betriebes bewegt zu werden, oder ein Gerät außer einem befes-
+tigten Gerät mit einer Masse von weniger als 18 kg 
+3.5.2 
+Handgerät 
+ortsveränderliches Gerät, das während des sachgemäßen Gebrauchs in der Hand gehalten wird 
+3.5.3 
+ortsfestes Gerät 
+befestigtes Gerät oder ein Gerät, das kein ortsveränderliches Gerät ist 
+3.5.4 
+befestigtes Gerät 
+Gerät, das dazu bestimmt ist, während des Gebrauchs auf einer Unterlage befestigt oder auf andere Weise in 
+einer bestimmten Lage gesichert zu sein 
+ANMERKUNG 
+Klebstoffe werden nicht als ausreichendes Mittel zum Halten eines befestigten Gerätes an seinem 
+Standort anerkannt. 
+3.5.5 
+Einbaugerät 
+befestigtes Gerät, das zum Einbau in einen Schrank, in eine vorbereitete Wandnische oder in einen ähn-
+lichen Ort bestimmt ist 
+3.5.6 
+Wärmegerät 
+Gerät, das Heizelemente enthält, jedoch keinen Motor 
+3.5.7 
+Motorgerät 
+Gerät, das Motoren enthält, jedoch kein Heizelement 
+ANMERKUNG 
+Geräte mit Magnetantrieb gelten als Motorgeräte. 
+3.5.8 
+kombiniertes Gerät 
+Gerät, das Heizelemente und Motoren enthält 
+3.6 
+3.6.1 
+nichtabnehmbares Teil 
+Teil, das nur mit Hilfe eines Werkzeugs entfernt oder geöffnet werden kann, oder ein Teil, das die Prüfung 
+nach 22.11 erfüllt 
+3.6.2 
+abnehmbares Teil 
+Teil, das ohne Werkzeug entfernt werden kann, oder ein Teil, das entsprechend der Gebrauchsanweisung 
+entfernt wird, selbst wenn dafür ein Werkzeug benötigt wird, oder ein Teil, das die Prüfung nach 22.11 nicht 
+erfüllt 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+25 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 26/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+22 
+ANMERKUNG 1 Wenn ein Teil für die Installation entfernt werden muss, wird dieses Teil nicht als abnehmbar betrachtet, 
+auch wenn der Hersteller den Benutzer anweist, es zu entfernen. 
+ANMERKUNG 2 Bauteile, die ohne Zuhilfenahme eines Werkzeugs entfernt werden können, gelten als abnehmbare 
+Teile. 
+ANMERKUNG 3 Ein Teil, das geöffnet werden kann, wird als Teil angesehen, das entfernt werden kann. 
+3.6.3 
+berührbares Teil 
+Teil oder Oberfläche, das/die mit der Prüfsonde B nach IEC 61032 berührt werden kann, oder, falls aus 
+Metall, einschließlich aller leitenden Teile, die damit verbunden sind 
+ANMERKUNG 
+Berührbare nichtmetallische Teile mit einer leitfähigen Beschichtung werden als berührbare Metall-
+teile angesehen. 
+3.6.4 
+aktives Teil 
+jeder Leiter oder jedes leitende Teil, das dazu bestimmt ist, im sachgemäßen Gebrauch unter Spannung ge-
+setzt zu werden, einschließlich eines Neutralleiters, jedoch nach Übereinkommen kein PEN-Leiter 
+ANMERKUNG 1 Teile, ob berührbar oder nicht, die mit 8.1.4 übereinstimmen, gelten nicht als aktive Teile. 
+ANMERKUNG 2 Ein PEN-Leiter ist ein Schutzleiter, der in sich die Funktionen eines Schutzleiters und eines Neutral-
+leiters vereinigt. 
+3.6.5 
+Werkzeug 
+Schraubendreher, Münze oder ein anderer Gegenstand, der benutzt werden kann, um eine Schraube oder 
+ähnliche Befestigungsmittel zu betätigen 
+3.7 
+3.7.1 
+Temperaturregler 
+temperaturempfindliche Einrichtung mit fest eingestellter oder einstellbarer Ansprechtemperatur, die während 
+des Normalbetriebes die Temperatur eines Gerätes oder von Teilen desselben durch selbsttätiges Öffnen 
+oder Schließen eines Stromkreises zwischen bestimmten Grenzen hält 
+3.7.2 
+Betriebstemperaturbegrenzer 
+temperaturempfindliche Einrichtung mit fest eingestellter oder einstellbarer Ansprechtemperatur, die während 
+des Normalbetriebes einen Stromkreis öffnet oder schließt, wenn die Temperatur des geregelten Teiles 
+einen vorbestimmten Wert erreicht 
+ANMERKUNG 
+Er führt den umgekehrten Vorgang während des normalen Arbeitszyklus des Gerätes nicht aus. Er 
+kann Rückstellen von Hand erfordern oder nicht. 
+3.7.3 
+Schutztemperaturbegrenzer 
+Einrichtung, die bei unsachgemäßem Betrieb die Temperatur des überwachten Teiles durch selbsttätiges 
+Öffnen des Stromkreises oder Vermindern des Stromes begrenzt und die so gebaut ist, dass ihre Einstellung 
+vom Benutzer nicht geändert werden kann 
+3.7.4 
+selbsttätig rückstellender Schutztemperaturbegrenzer 
+Schutztemperaturbegrenzer, der den Strom selbsttätig wieder einschaltet, nachdem das entsprechende 
+Teil des Gerätes genügend abgekühlt ist 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+26 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 27/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+23 
+3.7.5 
+nichtselbsttätig rückstellender Schutztemperaturbegrenzer 
+Schutztemperaturbegrenzer, der eine Betätigung von Hand beim Rückstellen oder das Auswechseln eines 
+Teiles zum Wiedereinschalten des Stroms erfordert 
+ANMERKUNG 
+Die Betätigung von Hand schließt die Trennung vom Netz ein. 
+3.7.6 
+Schutzeinrichtung 
+Einrichtung, deren Ansprechen im unsachgemäßen Betrieb eine Gefahrensituation verhindert 
+3.7.7 
+Temperatursicherung 
+Schutztemperaturbegrenzer, der nur einmal anspricht und dann teilweise oder vollständig ersetzt werden 
+muss 
+3.8 
+3.8.1 
+allpoliges Abschalten 
+die Unterbrechung beider Netzleiter durch einen einzigen Schaltvorgang oder bei Mehrphasengeräten die 
+Unterbrechung der drei Netzleiter durch einen einzigen Schaltvorgang 
+ANMERKUNG 
+Bei Mehrphasengeräten gilt der Neutralleiter nicht als Netzleiter. 
+3.8.2 
+AUS-Stellung 
+stabile Stellung einer Schalteinrichtung, in der der von ihr geschaltete Stromkreis von der Stromversorgung 
+getrennt ist oder bei elektronischer Trennung spannungslos wird 
+ANMERKUNG 
+Die AUS-Stellung setzt kein allpoliges Abschalten voraus. 
+3.8.3 
+sichtbar glühendes Heizelement 
+Heizelement, das teilweise oder ganz von der Außenseite des Gerätes aus sichtbar ist und dessen Tempe-
+ratur mindestens 650 °C beträgt, nachdem das Gerät im Normalbetrieb bei Bemessungsaufnahme bis zum 
+Beharrungszustand betrieben wurde 
+3.8.4 
+PTC-Heizelement 
+Element für Heizzwecke, das hauptsächlich aus Widerständen mit positivem Temperaturkoeffizienten be-
+steht, deren Temperaturempfindlichkeit sich aus einer steilen nichtlinearen Erhöhung des Widerstandes bei 
+Temperaturerhöhung über einen bestimmten Bereich ergibt 
+3.8.5 
+Benutzerwartung 
+jede Wartungstätigkeit, zu der der Benutzer in der Gebrauchsanweisung oder durch Aufschriften auf dem 
+Gerät angewiesen wird 
+3.9 
+3.9.1 
+elektronisches Bauteil 
+Teil, in dem der leitende Zustand im Prinzip durch Elektronenbewegung im Vakuum, in einem Gas oder 
+einem Halbleiter erreicht wird 
+ANMERKUNG 
+Glimmlampen gelten nicht als elektronische Bauteile. 
+3.9.2 
+elektronischer Stromkreis 
+Stromkreis, der mindestens ein elektronisches Bauteil enthält 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+27 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 28/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+24 
+3.9.3 
+elektronischer Schutzstromkreis 
+elektronischer Stromkreis, der eine gefährliche Situation unter den Bedingungen des unsachgemäßen 
+Gebrauchs verhindert 
+ANMERKUNG 
+Teile des Stromkreises dürfen auch für funktionelle Zwecke benutzt werden. 
+3.9.4 
+Software der Klasse B 
+Software, die einen Programmabschnitt (Code) enthält, der dazu bestimmt ist, Gefahren zu verhindern, wenn 
+ein anderer Fehler als ein Softwarefehler im Gerät auftritt 
+3.9.5 
+Software der Klasse C 
+Software, die einen Programmabschnitt (Code) enthält, der dazu bestimmt ist, Gefahren zu verhindern, ohne 
+eine weitere Schutzeinrichtung zu benutzen 
+4 
+Allgemeine Anforderungen 
+Geräte müssen so gebaut sein, dass sie im sachgemäßen Gebrauch sicher arbeiten, so dass sie keine 
+Gefahr für den Benutzer oder die Umgebung verursachen, auch nicht in Fällen sorgloser Benutzung, wie sie 
+im sachgemäßen Gebrauch vorkommen kann. 
+Im Allgemeinen wird dieser Grundsatz erreicht, wenn die in dieser Norm festgelegten, jeweils zutreffenden 
+Anforderungen erfüllt werden und die Übereinstimmung durch Ausführung aller zutreffenden Prüfungen 
+nachgewiesen wird. 
+5 
+Allgemeine Prüfbedingungen 
+Wenn nicht anders angegeben, werden die Prüfungen nach diesem Abschnitt durchgeführt. 
+5.1 
+Die Prüfungen nach dieser Norm sind Typprüfungen. 
+ANMERKUNG 
+Stückprüfungen sind im Anhang A beschrieben. 
+5.2 
+Die Prüfungen werden an einem einzigen Gerät durchgeführt, das alle einschlägigen Prüfungen 
+bestehen muss. Jedoch können die Prüfungen der Abschnitte 20, 22 (außer 22.11 und 22.18) bis 26, 28, 30 
+und 31 an separaten Prüflingen durchgeführt werden. Die Prüfung nach 22.3 wird an einem neuen Prüfling 
+durchgeführt. 
+ANMERKUNG 1 Zusätzliche Prüflinge können erforderlich sein, wenn das Gerät unter unterschiedlichen Bedingungen, 
+z. B. mit verschiedenen Spannungen, betrieben werden kann. 
+Wenn eine beabsichtigte Schwachstelle während der Prüfungen nach Abschnitt 19 ausfällt, kann ein weiteres Gerät 
+benötigt werden. 
+Die Prüfung von Einzelteilen kann das Einreichen von zusätzlichen Prüflingen dieser Einzelteile erfordern. 
+Wenn die Prüfung nach Anhang C durchgeführt werden muss, werden sechs Prüflinge des Motors benötigt. 
+Wenn die Prüfung nach Anhang D durchgeführt werden muss, kann ein zusätzliches Gerät benutzt werden. 
+Wenn die Prüfungen nach Anhang G durchgeführt werden, werden vier zusätzliche Transformatoren benötigt. 
+Wenn die Prüfungen nach Anhang H durchgeführt werden, werden drei Schalter oder drei zusätzliche Geräte benötigt. 
+ANMERKUNG 2 Anhäufung von Beanspruchungen als Ergebnis von aufeinander folgenden Prüfungen an elektro-
+nischen Stromkreisen ist zu vermeiden. Es kann notwendig sein, Einzelteile auszutauschen oder zusätzliche Prüflinge 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+28 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 29/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+25 
+zu verwenden. Durch eine Bewertung der relevanten elektronischen Stromkreise sollte die Anzahl der zusätzlichen 
+Prüflinge auf ein Minimum begrenzt werden. 
+ANMERKUNG 3 Wenn ein Gerät zur Durchführung einer Prüfung auseinander genommen werden muss, ist darauf zu 
+achten, dass es so wie ursprünglich geliefert wieder zusammengebaut wird. Im Zweifelsfall können nachfolgende Prüfun-
+gen an einem separaten Prüfling durchgeführt werden. 
+5.3 
+Die Prüfungen werden in der Reihenfolge der Abschnitte vorgenommen, jedoch wird die Prüfung 
+nach 22.11 am Gerät bei Raumtemperatur vor den Prüfungen des Abschnitts 8 durchgeführt. Die Prüfungen 
+nach Abschnitt 14 und 22.24 werden nach den Prüfungen nach Abschnitt 29 durchgeführt. Die Prüfungen 
+nach Abschnitt 14, 21.2 und 22.24 werden nach den Prüfungen nach Abschnitt 29 durchgeführt. Die Prüfung 
+nach 19.14 wird vor den Prüfungen nach 19.11 durchgeführt. 
+Wenn es vom Aufbau des Gerätes offensichtlich ist, dass eine bestimmte Prüfung nicht zutreffend ist, wird sie 
+nicht durchgeführt. 
+5.4 
+Bei der Prüfung von Geräten, die auch mit anderen Energien wie zum Beispiel Gas betrieben wer-
+den, ist der Einfluss ihres Verbrauchs ebenfalls zu berücksichtigen. 
+5.5 
+Für die Prüfungen wird das Gerät oder jeder bewegliche Geräteteil, falls vorhanden, in die ungüns-
+tigste Stellung gebracht, die im sachgemäßen Gebrauch vorkommen kann. 
+5.6 
+Mit Regel- und/oder Steuereinrichtungen oder Schalteinrichtungen versehene Geräte werden bei 
+deren ungünstigster Einstellung geprüft, falls die Einstellung durch den Benutzer verändert werden kann. 
+ANMERKUNG 1 Wenn die Einstellmittel der Regel- und/oder Steuereinrichtung ohne Werkzeug zugänglich sind, gilt 
+dieser Abschnitt, unabhängig davon, ob die Einstellung von Hand oder mit Werkzeug verändert werden kann. Falls die 
+Einstellmittel nicht ohne Werkzeug zugänglich sind und die Einstellung vom Benutzer nicht verändert werden sollte, gilt 
+dieser Abschnitt nicht. 
+ANMERKUNG 2 Angemessene Lacksicherung wird als ausreichende Maßnahme betrachtet, um eine Veränderung der 
+Einstellung durch den Benutzer zu verhindern. 
+5.7 
+Die Prüfungen werden in einem zugfreien Raum und bei einer Raumtemperatur von (20 ± 5) °C 
+durchgeführt. 
+Wird die Temperatur, die ein Teil annimmt, durch eine temperaturempfindliche Einrichtung begrenzt oder wird 
+sie durch die Temperatur beeinflusst, bei der eine Zustandsveränderung eintritt, z. B. wenn Wasser kocht, so 
+wird die Raumtemperatur im Zweifelsfall bei (23 ± 2) °C gehalten. 
+5.8.1 
+Geräte, die nur für Wechselstrom bestimmt sind, werden mit Wechselstrom bei Bemessungs-
+frequenz geprüft. Geräte für Wechsel- und Gleichstrom werden mit der ungünstigeren Stromart geprüft. 
+Geräte für Wechselstrom, die nicht mit der Bemessungsfrequenz oder einem Frequenzbereich von 50 Hz 
+bis 60 Hz gekennzeichnet sind, werden mit 50 Hz oder 60 Hz geprüft, je nachdem was ungünstiger ist. 
+5.8.2 
+Geräte, die mehr als eine Bemessungsspannung haben, werden mit der ungünstigsten Spannung 
+geprüft. 
+Wenn für Motorgeräte und kombinierte Geräte, die mit dem Bemessungsspannungsbereich gekenn-
+zeichnet sind, festgelegt ist, dass die Versorgungsspannung gleich der Bemessungsspannung multipliziert 
+mit einem Faktor ist, so wird das Gerät versorgt mit: 
+– 
+der oberen Grenze des Bemessungsspannungsbereichs, multipliziert mit diesem Faktor, wenn er 
+größer ist als 1; 
+– 
+der unteren Grenze des Bemessungsspannungsbereichs, multipliziert mit diesem Faktor, wenn er 
+kleiner ist als 1. 
+Wenn kein Faktor angegeben ist, ist die Versorgungsspannung die ungünstigste Spannung innerhalb des 
+Bemessungsspannungsbereichs. 
+ 
+2/1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+29 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 30/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+26 
+ANMERKUNG 1 Falls ein Wärmegerät einen Bemessungsspannungsbereich hat, ist die obere Grenze des Span-
+nungsbereichs gewöhnlich die ungünstigste Spannung in diesem Bereich. 
+ANMERKUNG 2 Bei Motorgeräten und kombinierten Geräten und bei Geräten, die mehr als eine Bemessungs-
+spannung oder mehr als einen Bemessungsspannungsbereich haben, kann es notwendig sein, einige Prüfungen mit 
+dem Kleinst-, Mittel- und Höchstwert der Bemessungsspannung oder des Bemessungsspannungsbereichs durchzu-
+führen, um die ungünstigste Spannung festzustellen. 
+5.8.3 
+Wenn für Wärmegeräte und kombinierte Geräte, die mit dem Bemessungsaufnahmebereich 
+gekennzeichnet sind, festgelegt ist, dass die Leistungsaufnahme gleich der Bemessungsaufnahme ist, 
+multipliziert mit einem Faktor, so wird das Gerät betrieben bei: 
+– 
+der oberen Grenze des Bemessungsaufnahmebereichs, multipliziert mit diesem Faktor, wenn er 
+größer ist als 1; 
+– 
+der unteren Grenze des Bemessungsaufnahmebereichs, multipliziert mit diesem Faktor, wenn er 
+kleiner ist als 1. 
+Wenn kein Faktor angegeben ist, ist die Leistungsaufnahme die ungünstigste innerhalb des Bemessungs-
+aufnahmebereichs. 
+5.8.4 
+Wenn für Geräte, die mit dem Bemessungsspannungsbereich und einer Bemessungsaufnahme 
+entsprechend dem Mittelwert des Bemessungsspannungsbereichs gekennzeichnet sind, festgelegt ist, 
+dass die Leistungsaufnahme gleich der Bemessungsaufnahme ist, multipliziert mit einem Faktor, so wird 
+das Gerät betrieben bei: 
+– 
+der berechneten Leistungsaufnahme, die der oberen Grenze des Bemessungsspannungsbereichs 
+entspricht, multipliziert mit diesem Faktor, wenn er größer ist als 1; 
+– 
+der berechneten Leistungsaufnahme, die der unteren Grenze des Bemessungsspannungsbereichs 
+entspricht, multipliziert mit diesem Faktor, wenn er kleiner ist als 1. 
+Wenn kein Faktor angegeben ist, entspricht die Leistungsaufnahme der Leistungsaufnahme bei der ungüns-
+tigsten Spannung innerhalb des Bemessungsspannungsbereichs. 
+5.9 
+Geräte, für die von ihrem Hersteller verschiedene Heizelemente oder Zubehörteile erhältlich sind, 
+werden mit den Heizelementen oder Zubehörteilen geprüft, die die ungünstigsten Ergebnisse erbringen. 
+5.10 
+Die Prüfungen werden am Gerät im Anlieferzustand durchgeführt. Jedoch wird ein Gerät, das als 
+ein Einzelgerät ausgelegt ist, aber in mehreren Einheiten geliefert wird, nach dem nach mitgelieferter 
+Anweisung durchgeführten Zusammenbau geprüft. 
+Einbaugeräte und befestigte Geräte werden vor der Prüfung entsprechend den mitgelieferten Anweisungen 
+installiert. 
+5.11 
+Geräte, die zum Anschluss an eine festverlegte Leitung durch eine flexible Leitung bestimmt sind, 
+werden mit einer passenden flexiblen Leitung geprüft. 
+5.12 
+Wenn für Wärmegeräte und kombinierte Geräte festgelegt ist, dass das Gerät bei einer mit einem 
+Faktor multiplizierten Leistungsaufnahme betrieben werden muss, so gilt das nur für Heizelemente ohne 
+nennenswerten positiven Temperaturkoeffizienten des Widerstandes. 
+Bei Heizelementen mit nennenswerten positiven Temperaturkoeffizienten mit Ausnahme von PTC-Heiz-
+elementen wird die Spannung bestimmt, indem das Gerät mit Bemessungsspannung betrieben wird, bis 
+das Heizelement seine Betriebstemperatur erreicht. Dann wird die Spannung rasch auf den Wert erhöht, der 
+nötig ist, um die für die Prüfung geforderte Leistungsaufnahme zu erreichen, wobei dieser Wert der 
+Spannung während der gesamten Prüfung beibehalten wird. 
+ANMERKUNG 
+Im Allgemeinen gilt ein Temperaturkoeffizient als nennenswert, wenn bei Bemessungsspannung die 
+Leistungsaufnahme des Gerätes im kalten Zustand um mehr als 25 % von der Leistungsaufnahme bei Betriebstempera-
+tur abweicht. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+30 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 31/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+27 
+5.13 
+Die Prüfungen für Geräte mit PTC-Heizelementen werden mit einer Spannung durchgeführt, die 
+der festgelegten Leistungsaufnahme entspricht. Ist eine Leistungsaufnahme festgelegt, die größer ist als die 
+Bemessungsaufnahme, ist der Faktor für die Multiplikation der Spannung gleich der Quadratwurzel des 
+Faktors für die Multiplikation der Leistungsaufnahme. 
+5.14 
+Falls Geräte der Schutzklasse 0I oder der Schutzklasse I berührbare Metallteile haben, die 
+nicht geerdet sind und nicht durch ein geerdetes Metallzwischenstück von aktiven Teilen getrennt sind, wer-
+den diese Teile nach den zutreffenden Anforderungen für Schutzklasse II-Anordnung geprüft. 
+Wenn Geräte der Schutzklasse 0I oder der Schutzklasse I berührbare Nichtmetallteile haben, werden 
+diese Teile nach den zutreffenden Anforderungen für Schutzklasse II-Anordnung geprüft, es sei denn, 
+diese Teile sind von aktiven Teilen durch ein geerdetes Metallzwischenstück getrennt. 
+ANMERKUNG 
+Hinweise für erhöhte Anforderungen finden sich in Anhang P. Diese können benutzt werden, um einen 
+angemessenen Schutz gegen elektrische und thermische Gefährdungen für bestimmte Gerätearten sicherzustellen, die in 
+Installationen ohne Schutzleiter in Ländern mit ausgeglichenem Warmfeuchteklima benutzt werden. 
+5.15 
+Falls Geräte Teile haben, die mit SELV betrieben werden, so werden diese Teile nach den zu-
+treffenden Anforderungen für Schutzklasse III-Anordnung geprüft. 
+5.16 
+Bei der Prüfung elektronischer Stromkreise muss die Stromversorgung frei von Störungen aus 
+Fremdquellen sein, die die Ergebnisse der Prüfungen beeinflussen können. 
+5.17 
+Geräte, die von wiederaufladbaren Batterien versorgt werden, werden nach Anhang B geprüft. 
+5.18 
+Falls Längenmaße oder Winkelmaße ohne Grenzabweichungen festgelegt sind, gilt ISO 2768-1, 
+soweit anwendbar. 
+6 
+Einteilung 
+6.1 
+Die Geräte müssen einer der folgenden Schutzklassen bezüglich des Schutzes gegen elektrischen 
+Schlag entsprechen: 
+Schutzklasse 0, Schutzklasse 0I, Schutzklasse I, Schutzklasse II, Schutzklasse III. 
+Prüfung: Besichtigung und entsprechende Prüfungen. 
+6.2 
+Die Geräte müssen den angemessenen Schutzgrad gegen das schädliche Eindringen von Wasser 
+haben. 
+Prüfung: Besichtigung und entsprechende Prüfungen. 
+ANMERKUNG 
+Die Schutzgrade gegen das schädliche Eindringen von Wasser sind in IEC 60529 festgelegt. 
+7 
+Aufschriften und Anweisungen 
+7.1 
+Die Geräte müssen mit nachstehenden Aufschriften versehen sein: 
+– 
+Bemessungsspannung oder Bemessungsspannungsbereich in Volt; 
+– 
+Bildzeichen für die Stromart, wenn nicht die Bemessungsfrequenz angegeben ist; 
+– 
+Bemessungsaufnahme in Watt oder Bemessungsstrom in Ampere; 
+– 
+Name, Warenzeichen oder Kennzeichen des Herstellers oder des verantwortlichen Händlers; 
+– 
+Modell- oder Typbezeichnung; 
+– 
+Bildzeichen 5172 der IEC 60417 nur für Geräte der Schutzklasse II; 
+– 
+IP-Nummer für den Schutzgrad gegen Eindringen von Wasser außer IPX0. 
+1 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+31 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 32/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+28 
+Die Aufschriften für Bemessungsspannung oder Bemessungsspannungsbereich für Geräte, die an die 
+Netzversorgung angeschlossen werden, müssen umfassen: 
+– 
+230 V für Einphasengeräte; 
+– 
+400 V für Mehrphasengeräte. 
+Prüfung: Besichtigung. 
+ANMERKUNG 1 Die erste Ziffer der IP-Nummer braucht nicht auf dem Gerät angegeben zu sein. 
+ANMERKUNG 2 Zusätzliche Aufschriften sind erlaubt, sofern sie nicht Anlass zu Missverständnissen geben. 
+ANMERKUNG 3 Wenn Bauteile separat gekennzeichnet sind, sollen die Beschriftungen des Gerätes und diejenigen der 
+Bauteile so beschaffen sein, dass kein Zweifel hinsichtlich der Aufschrift des Gerätes selbst bestehen kann. 
+ANMERKUNG 4 Wird das Gerät mit Bemessungsdruck gekennzeichnet, darf die Einheit bar benutzt werden, jedoch nur 
+zusammen mit Pascal und in Klammern. 
+Gehäuse von elektrisch betriebenen Wasserventilen, die in äußeren Schlauchsätzen eingebaut sind, um ein 
+Gerät mit Wasserversorgungsanlagen zu verbinden, muss mit dem Bildzeichen IEC 60417-5036 
+(DB:2002-10) gekennzeichnet sein, wenn ihre Arbeitsspannung ELV (Kleinspannung) überschreitet. 
+7.2 
+Bei ortsfesten Geräten für den Anschluss an mehrere Netzstromkreise muss sinngemäß folgende 
+Warnung angebracht sein: 
+„ACHTUNG! Vor dem Zugang zu den Anschlussklemmen müssen alle Versorgungsstromkreise abge-
+schaltet sein.“ 
+Diese Warnung muss in der Nähe der Anschlussklemmen-Abdeckung angebracht werden. 
+Prüfung: Besichtigung. 
+7.3 
+Geräte mit einem Bereich von Bemessungswerten, die ohne Einstellung im gesamten Bereich 
+betrieben werden können, müssen eine Aufschrift mit der unteren und oberen Grenze des Bereiches tragen, 
+die durch einen Bindestrich getrennt sind. 
+ANMERKUNG 1 Beispiel: 115 V bis 230 V: Das Gerät ist für jeden Wert innerhalb des angegebenen Bereiches geeignet 
+(ein elektrischer Lockenstab mit einem PTC-Heizelement). 
+Geräte, die verschiedene Bemessungswerte besitzen, die für den Gebrauch bei einem bestimmten Wert 
+durch den Benutzer oder Installateur eingestellt werden müssen, müssen mit den verschiedenen Werten be-
+schriftet werden, die durch einen Schrägstrich getrennt sind. 
+ANMERKUNG 2 Beispiel: 115 V/230 V: Das Gerät ist nur für die angegebenen Werte geeignet (ein Rasierapparat mit 
+einem Wahlschalter). 
+ANMERKUNG 3 Diese Anforderung gilt auch für Geräte, die für den Anschluss sowohl an einphasige als auch an mehr-
+phasige Netze vorgesehen sind. 
+Beispiel: 230 V/400 V: Das Gerät ist nur für die angegebenen Spannungswerte geeignet, wobei 230 V für einphasigen 
+Betrieb und 400 V für mehrphasigen Betrieb gilt (eine Geschirrspülmaschine mit Anschlussklemmen für beide Stromver-
+sorgungsarten). 
+Prüfung: Besichtigung. 
+7.4 
+Wenn das Gerät auf verschiedene Bemessungsspannungen eingestellt werden kann, muss die 
+Spannung, auf die das Gerät eingestellt ist, leicht und deutlich erkennbar sein. 
+ANMERKUNG 
+Bei Geräten, bei denen häufige Änderungen der Spannungseinstellung nicht erforderlich sind, gilt diese 
+Anforderung als erfüllt, wenn die Bemessungsspannung, auf die das Gerät eingestellt ist, aus einem am Gerät befes-
+ 
+ 
+ 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+32 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 33/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+29 
+tigten Anschlussschema festgestellt werden kann. Das Anschlussschema darf auf der Innenseite einer Abdeckung sein, 
+die zum Herstellen des Netzanschlusses abgenommen werden muss. Es darf sich nicht auf einem Schild befinden, das 
+lose dem Gerät beigegeben ist. 
+Prüfung: Besichtigung. 
+7.5 
+Bei Geräten, die mit mehr als einer Bemessungsspannung oder mit mehr als einem Bemes-
+sungsspannungsbereich gekennzeichnet sind, muss die Bemessungsaufnahme oder der Bemessungs-
+strom für jede dieser Spannungen oder Spannungsbereiche angegeben werden. Wenn jedoch die Differenz 
+zwischen den Grenzen eines Bemessungsspannungsbereiches 10 % des Mittelwertes arithmetischen 
+Mittelwerts des Bereiches nicht überschreitet, kann sich die Kennzeichnung für die Bemessungsaufnahme 
+oder des Bemessungsstroms auf den Mittelwert arithmetischen Mittelwert des Bereiches beziehen. 
+Die obere und die untere Grenze der Bemessungsaufnahme oder des Bemessungsstroms müssen so auf 
+dem Gerät angegeben sein, dass die Beziehung zwischen Aufnahme und Spannung deutlich wird. 
+Prüfung: Besichtigung. 
+7.6 
+Bildzeichen sind wie folgt zu verwenden: 
+ 
+[Bildzeichen 5031 der IEC 60417] 
+Gleichstrom 
+ 
+[Bildzeichen 5032 der IEC 60417] 
+Wechselstrom 
+3 
+ 
+ 
+Dreiphasen-Wechselstrom 
+3N 
+ 
+Dreiphasen-Wechselstrom mit Neutralleiter 
+ 
+[Bildzeichen IEC 60417-5032-1 (DB:2002-10)] Dreiphasen-Wechselstrom 
+ [Bildzeichen IEC 60417-5032-2 (DB:2002-10)] Dreiphasen-Wechselstrom mit Neutralleiter 
+ [Bildzeichen 5016 der IEC 60417] 
+Sicherung 
+ANMERKUNG 1 Der Bemessungsstrom der Sicherung darf zusammen mit diesem Zeichen angegeben werden. 
+ 
+Träge Gerätesicherung, wobei X das Zeichen für 
+die Zeit/Strom-Kennlinie nach IEC 60127 ist 
+ 
+[Bildzeichen 5019 der IEC 60417] 
+Schutzerde 
+ 
+[Bildzeichen 5172 der IEC 60417] 
+Gerät der Schutzklasse II 
+ 
+[Bildzeichen 5012 der IEC 60417] 
+Lampe 
+ANMERKUNG 2 Die Bemessungsaufnahme der Lampe darf zusammen mit diesem Zeichen angegeben werden. 
+ 
+[Bildzeichen 1641 der ISO 7000] 
+Anweisungen lesen 
+ 
+[Bildzeichen ISO 7000-1641 (DB:2004-01)] 
+Bedienhandbuch; Bedienungsanleitung  
+ 
+[Bildzeichen ISO 7000-0790 (DB:2004-11)] 
+Anweisungen lesen 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+33 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 34/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+30 
+ 
+[Bildzeichen 0434 der ISO 7000] 
+Achtung 
+ 
+[Bildzeichen IEC 60417-5021 (DB:2002-10)] 
+Potentialausgleich 
+ 
+[Bildzeichen IEC 60417-5036 (DB:2002-10)] 
+Gefährliche Spannung 
+Das Bildzeichen für die Stromart muss direkt neben der Angabe der Bemessungsspannung angebracht 
+sein. 
+Das Bildzeichen für Geräte der Schutzklasse II muss so angebracht sein, dass seine Zugehörigkeit zu den 
+technischen Angaben offensichtlich und eine Verwechslung mit anderen Angaben unwahrscheinlich ist. 
+Maßeinheiten und ihre Bildzeichen müssen die des international genormten Systems sein. 
+Prüfung: Besichtigung. 
+ANMERKUNG 3 Zusätzliche Bildzeichen sind zugelassen, vorausgesetzt, dass sie keinen Anlass für Missverständnisse 
+geben. 
+ANMERKUNG 4 Die in IEC 60417 und ISO 7000 festgelegten Bildzeichen dürfen verwendet werden. 
+7.7 
+Geräte, die an mehr als zwei Netzleiter angeschlossen werden, und Geräte zum Anschluss an 
+mehrere Netzstromkreise müssen ein am Gerät angebrachtes Anschlussschema haben, es sei denn, die 
+richtige Anschlussweise ist offensichtlich. 
+Prüfung: Besichtigung. 
+ANMERKUNG 1 Die richtige Anschlussweise wird als offensichtlich angesehen, wenn bei Mehrphasengeräten die 
+Anschlussklemmen für die Netzleiter durch auf die Anschlussklemmen hinweisende Pfeile gekennzeichnet sind. 
+ANMERKUNG 2 Eine Aufschrift in Worten ist ein erlaubtes Mittel zur Angabe der richtigen Anschlussweise. 
+ANMERKUNG 3 Das Anschlussschema darf dasjenige sein, auf das in 7.4 Bezug genommen wird. 
+7.8 
+Mit Ausnahme der Anschlussart Z sind Anschlussklemmen wie folgt zu bezeichnen: 
+– 
+Ausschließlich für den Neutralleiter bestimmte Anschlussklemmen sind durch den Buchstaben „N“ zu 
+kennzeichnen; 
+– 
+Schutzleiterklemmen müssen durch das Bildzeichen 5019 der IEC 60417 gekennzeichnet sein. 
+Diese Kennzeichnungen dürfen nicht auf Schrauben, entfernbaren Unterlegscheiben oder anderen Teilen 
+angebracht sein, die beim Anschluss der Leitungen entfernt werden können. 
+Prüfung: Besichtigung. 
+7.9 
+Soweit dies nicht offensichtlich unnötig ist, müssen Schalter, deren Betätigung eine Gefahr hervor-
+rufen könnte, so gekennzeichnet oder angeordnet sein, dass klar erkennbar ist, welchen Geräteteil sie 
+schalten. Kennzeichnungen zu diesem Zweck müssen, soweit irgend durchführbar, ohne Kenntnis von 
+Sprachen oder nationalen Normen verständlich sein. 
+Prüfung: Besichtigung. 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+34 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 35/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+31 
+7.10 
+Die verschiedenen Stellungen von Schalteinrichtungen an ortsfesten Geräten und die verschiede-
+nen Stellungen von Steuer- und/oder Regeleinrichtungen müssen durch Zahlen, Buchstaben oder andere 
+sichtbare Mittel gekennzeichnet sein. 
+ANMERKUNG 1 Diese Anforderung gilt auch für Schalteinrichtungen, die Teil einer Steuer- und/oder Regeleinrichtung 
+sind. 
+Falls Ziffern zur Kennzeichnung der verschiedenen Stellungen benutzt werden, muss die AUS-Stellung 
+durch die Ziffer 0 und die Stellung für größere Werte wie Leistungsabgabe, Leistungsaufnahme, Geschwin-
+digkeit, Kühlwirkung usw. durch eine höhere Ziffer gekennzeichnet sein. 
+Die Ziffer 0 darf für keine andere Kennzeichnung benutzt werden, es sei denn, sie ist so angeordnet und 
+anderen Zahlen zugeordnet, dass es keinen Anlass zur Verwechslung mit der Kennzeichnung der AUS-
+Stellung geben kann. 
+ANMERKUNG 2 Die Ziffer 0 darf z. B. auch auf einem Digitaltastenfeld verwendet werden. 
+Prüfung: Besichtigung. 
+7.11 
+Steuer- und/oder Regeleinrichtungen, die dazu bestimmt sind, bei der Installation oder im sach-
+gemäßen Gebrauch eingestellt zu werden, müssen eine Kennzeichnung für die Richtung der Einstellung 
+haben. 
+ANMERKUNG 
+Eine Kennzeichnung durch „+“ und „–“ ist ausreichend. 
+Prüfung: Besichtigung. 
+7.12 
+Eine Gebrauchsanweisung muss mit dem Gerät zur Verfügung gestellt werden, so dass das Gerät 
+sicher benutzt werden kann. 
+ANMERKUNG 
+Die Gebrauchsanweisung kann auf dem Gerät angegeben werden, solange sie im sachgemäßen 
+Gebrauch sichtbar ist. 
+Falls es erforderlich ist, bei der Benutzerwartung besondere Vorsichtsmaßnahmen zu treffen, so müssen 
+Einzelheiten dazu angegeben werden. 
+Prüfung: Besichtigung. 
+Die Anweisungen müssen sinngemäß Folgendes angeben: 
+Dieses Gerät ist nicht dafür bestimmt, durch Personen (einschließlich Kinder) mit eingeschränkten 
+physischen, sensorischen oder geistigen Fähigkeiten oder mangels Erfahrung und/oder mangels Wissen 
+benutzt zu werden, es sei denn, sie werden durch eine für ihre Sicherheit zuständige Person beaufsichtigt 
+oder erhielten von ihr Anweisungen, wie das Gerät zu benutzen ist. 
+Kinder sollten beaufsichtigt werden, um sicherzustellen, dass sie nicht mit dem Gerät spielen. 
+7.12.1 
+Falls es erforderlich ist, bei der Installation besondere Vorsichtsmaßnahmen zu treffen, so müssen 
+Einzelheiten dazu angegeben werden. 
+Prüfung: Besichtigung. 
+7.12.2 
+Falls ein ortsfestes Gerät nicht mit einer Netzanschlussleitung und einem Stecker oder anderen 
+Mitteln zum Abschalten vom Netz ausgerüstet ist, die an jedem Pol eine Kontaktöffnungsweite entsprechend 
+den Bedingungen der Überspannungskategorie III für volle Trennung aufweist, so muss in den Anweisungen 
+gefordert werden, dass eine solche Trennvorrichtung in die festverlegte elektrische Installation nach den 
+Errichtungsbestimmungen einzubauen ist. 
+Prüfung: Besichtigung. 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+35 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 36/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+32 
+7.12.3 
+Wenn die Isolierung der Netzleiter eines Gerätes, das dauerhaft an festverlegte Leitungen ange-
+schlossen werden soll, in Berührung mit Teilen kommen kann, die während der Prüfung nach Abschnitt 11 
+eine Temperaturerhöhung von mehr als 50 K haben, dann müssen die Anweisungen festlegen, dass die 
+Isolierung der festverlegten Leiter geschützt werden muss, beispielsweise durch Isolierungsschläuche mit 
+einer angemessenen Temperaturbeständigkeit. 
+Prüfung: Besichtigung und während der Prüfung nach Abschnitt 11. 
+7.12.4 
+Die Anweisungen für Einbaugeräte müssen eindeutige Angaben zu folgenden Punkten enthalten: 
+– 
+Maße des für das Gerät vorzusehenden Raumes; 
+– 
+Maße und Lage der Halte- und Befestigungsmittel innerhalb dieses Raumes; 
+– 
+Mindestabstände zwischen den verschiedenen Teilen des Gerätes und den es umgebenden Einrich-
+tungsgegenständen; 
+– 
+Mindestabmessungen von Belüftungsöffnungen und deren richtige Anordnung; 
+– 
+Anschluss des Gerätes an das Netz und die Zwischenverbindungen einzelner Bauteile, falls vorhanden; 
+– 
+Notwendigkeit der Zugänglichkeit des Steckers nach dem Einbau, es sei denn, das Gerät ist mit einem 
+Schalter nach 24.3 ausgerüstet; 
+– 
+Notwendigkeit der Trennung des Gerätes vom Netz nach dem Einbau zu ermöglichen, es sei denn, das 
+Gerät ist mit einem Schalter nach 24.3 ausgerüstet. Diese Trennung kann dadurch erreicht werden, dass 
+der Stecker zugänglich ist, oder Einbau eines Schalters in die feste Installation in Übereinstimmung mit 
+den Errichtungsbestimmungen. 
+Prüfung: Besichtigung. 
+7.12.5 
+Bei Geräten mit Anschlussart X und einer besonders zugerichteten Leitung müssen die Anwei-
+sungen sinngemäß Folgendes enthalten: 
+Wenn die Netzanschlussleitung dieses Gerätes beschädigt wird, muss sie durch eine besondere 
+Anschlussleitung ersetzt werden, die vom Hersteller oder seinem Kundendienst erhältlich ist. 
+Bei Geräten mit Anschlussart Y müssen die Anweisungen sinngemäß Folgendes enthalten: 
+Wenn die Netzanschlussleitung dieses Gerätes beschädigt wird, muss sie durch den Hersteller oder 
+seinen Kundendienst oder eine ähnlich qualifizierte Person ersetzt werden, um Gefährdungen zu ver-
+meiden. 
+Bei Geräten mit Anschlussart Z müssen die Anweisungen sinngemäß Folgendes enthalten: 
+Die Netzanschlussleitung dieses Gerätes kann nicht ersetzt werden. Bei Beschädigung der Leitung ist 
+das Gerät zu verschrotten. 
+Prüfung: Besichtigung. 
+7.12.6 
+Die Anweisungen für Wärmegeräte mit einem eingebauten nichtselbsttätig rückstellenden 
+Schutztemperaturbegrenzer, der durch das Abschalten des Versorgungsnetzes zurückgesetzt wird, 
+müssen sinngemäß Folgendes enthalten: 
+VORSICHT: Um eine Gefährdung durch ein unbeabsichtigtes Rücksetzen des Schutztemperatur-
+begrenzers zu vermeiden, darf das Gerät nicht über eine externe Schaltvorrichtung wie bei-
+spielsweise eine Zeitschaltuhr versorgt werden oder mit einem Stromkreis verbunden sein, der 
+regelmäßig durch eine Einrichtung ein- und ausgeschaltet wird. 
+Prüfung: Sichtprüfung. 
+7.12.7 
+Die Anweisungen für befestigte Geräte müssen angeben, wie das Gerät auf seiner Unterlage 
+befestigt wird. 
+ANMERKUNG 
+Das Verfahren darf nicht auf der Benutzung von Klebstoffen beruhen, da diese nicht als ausreichende 
+Befestigungsmittel angesehen werden. 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+36 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 37/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+33 
+Prüfung: Sichtprüfung. 
+7.12.8 
+Die Anweisungen für Geräte zum Anschluss an die Wasserversorgungsanlage müssen angeben 
+– 
+den höchsten Einlasswasserdruck in Pascal; 
+– 
+den geringsten Einlasswasserdruck in Pascal, falls dies für den ordnungsgemäßen Betrieb des Gerätes 
+notwendig ist. 
+Die Anweisungen für Geräte zum Anschluss an die Wasserversorgungsanlage mittels abnehmbarer 
+Schlauchsätze müssen angeben, dass der neue Schlauchsatz, der mit dem Gerät geliefert wird, benutzt wer-
+den muss und alte Schlauchsätze nicht wiederverwendet werden dürfen. 
+Prüfung: Sichtprüfung. 
+7.13 
+Anweisungen und sonstige in der vorliegenden Norm geforderte Texte müssen in einer offiziellen 
+Amtssprache des Landes abgefasst sein, in dem das Gerät verkauft werden soll. 
+Prüfung: Besichtigung. 
+7.14 
+Aufschriften, die in dieser Norm gefordert werden, müssen klar lesbar und dauerhaft sein. 
+Prüfung: Besichtigung und durch Reiben der Aufschrift von Hand 15 s mit einem wassergetränkten Stoff-
+lappen und 15 s mit einem benzingetränkten Stofflappen. 
+Nach allen Prüfungen dieser Norm müssen die Aufschriften klar lesbar sein; es darf nicht leicht möglich sein, 
+Aufschriftenschilder zu entfernen, und sie dürfen keine Kräuselung zeigen. 
+ANMERKUNG 1 Bei der Beurteilung der Dauerhaftigkeit von Aufschriften müssen die Auswirkungen des sachgemäßen 
+Gebrauchs berücksichtigt werden. So werden z. B. Aufschriften mit Farbe oder Lack (außer Email) auf Behältern, bei 
+denen häufige Reinigung wahrscheinlich ist, nicht als dauerhaft betrachtet. 
+ANMERKUNG 2 Das für die Prüfung zu verwendende Benzin ist das aliphatische Lösungsmittel Hexan mit einem 
+maximalen Volumenanteil an Aromaten von 0,1 %, einem Kauri-Butanol-Wert von 29, einem Siedeanfangspunkt von 
+etwa 65 °C, einem Siedeendpunkt von etwa 69 °C und einer Dichte von etwa 0,66 kg/l. 
+7.15 
+Die in 7.1 bis 7.5 angegebenen Aufschriften müssen auf dem Hauptteil des Gerätes angebracht 
+sein. 
+Aufschriften auf dem Gerät müssen von außen klar erkennbar sein, falls erforderlich jedoch nach dem Ent-
+fernen einer Abdeckung. Bei ortsveränderlichen Geräten muss es möglich sein, diese Abdeckung ohne 
+Werkzeug zu öffnen oder zu entfernen. 
+Bei ortsfesten Geräten müssen mindestens der Name oder das Warenzeichen oder Kennzeichen des Her-
+stellers oder des verantwortlichen Verkäufers und die Modell- oder Typbezeichnung sichtbar sein, wenn das 
+Gerät für den sachgemäßen Gebrauch installiert ist. Diese Aufschriften dürfen sich unter einer abnehmbaren 
+Abdeckung befinden. Andere Aufschriften dürfen nur unter einer Abdeckung sein, wenn sie sich in der Nähe 
+der Anschlussklemmen befinden. Bei befestigten Geräten gilt diese Anforderung, nachdem das Gerät ent-
+sprechend den mitgelieferten Anweisungen installiert wurde. 
+Angaben für Schalteinrichtungen und Steuer- und/oder Regeleinrichtungen müssen auf oder nahe diesen 
+Bauteilen angebracht sein. Sie dürfen nicht auf Teilen angebracht werden, die so aufgesetzt oder wieder auf-
+gesetzt werden können, dass die Aufschrift irreleitet. 
+Prüfung: Besichtigung. 
+7.16 
+Wenn die Einhaltung dieser Norm von der Funktion einer ersetzbaren Temperatursicherung oder 
+Schmelzsicherung abhängt, muss die Bezugsnummer oder eine andere Kennzeichnung der Sicherung sich 
+an einer Stelle befinden, wo sie deutlich sichtbar ist, wenn das Gerät in dem Umfang demontiert wurde, der 
+notwendig ist, um die Sicherung auszutauschen. 
+1 
+1 
+1 
+1 
+1 
+1 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+37 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 38/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+34 
+ANMERKUNG 
+Eine Aufschrift auf der Sicherung ist zulässig, wenn die Aufschrift nach dem Ansprechen der Sicherung 
+lesbar ist. 
+Diese Anforderung gilt nicht für Sicherungen, die nur gemeinsam mit einem Teil des Gerätes ersetzt werden 
+können. 
+Prüfung: Besichtigung. 
+8 
+Schutz gegen Zugang zu aktiven Teilen 
+8.1 
+Geräte müssen so gebaut und umschlossen sein, dass ausreichender Schutz gegen zufällige 
+Berührung aktiver Teile besteht. 
+Prüfung: Besichtigung und durch die Prüfungen nach 8.1.1 bis 8.1.3, soweit zutreffend, wobei 8.1.4 und 8.1.5 
+zu berücksichtigen sind. 
+8.1.1 
+Die Anforderung von 8.1 gilt für alle Lagen des Gerätes, in denen es in sachgemäßem Gebrauch 
+betrieben werden kann, und nach dem Entfernen abnehmbarer Teile. 
+ANMERKUNG 1 Dies schließt die Verwendung von Einschraubsicherungen und Einschraubleitungsschutzschaltern aus, 
+die ohne Werkzeug zugänglich sind. 
+Lampen hinter einer abnehmbaren Abdeckung werden nicht entfernt, vorausgesetzt, das Gerät kann vom 
+Netz mittels eines Steckers oder allpoligen Schalters getrennt werden. Es muss jedoch während des Einset-
+zens oder Entfernens von Lampen hinter einer abnehmbaren Abdeckung auch Schutz gegen Berührung 
+von aktiven Teilen des Lampensockels sichergestellt sein. 
+Die Prüfsonde B nach IEC 61032 wird ohne merkliche Kraft angewendet, wobei sich das Gerät in jeder mög-
+lichen Lage befindet. Geräte mit einer Masse von mehr als 40 kg, die normalerweise auf dem Fußboden 
+benutzt werden, werden jedoch nicht gekippt. Die Prüfsonde wird durch Öffnungen so weit eingeführt, wie die 
+Sonde zulässt, und sie wird vor, während und nach dem Eindringen in jede mögliche Lage gedreht oder 
+gewinkelt. Wenn die Öffnung das Eindringen der Prüfsonde verhindert, wird die Kraft in der geraden Lage auf 
+20 N erhöht. Wenn die Prüfsonde dann in die Öffnung eindringt, wird die Prüfung mit der Prüfsonde in ange-
+winkelter Lage wiederholt. 
+ANMERKUNG 2 „Ohne merkliche Kraft“ beschreibt eine Kraft, die 1 N nicht überschreitet. 
+Es darf nicht möglich sein, mit der Prüfsonde aktive Teile oder nur mit Lack, Email, gewöhnlichem Papier, 
+Baumwolle, Oxidschichten oder Dichtmitteln mit Ausnahme selbsthärtender Harze geschützte aktive Teile zu 
+berühren. 
+8.1.2 
+Die Prüfsonde 13 nach IEC 61032 wird ohne merkliche Kraft durch Öffnungen von Geräten der 
+Schutzklasse 0, Geräten der Schutzklasse II oder von Schutzklasse II-Anordnungen angewendet, mit 
+Ausnahme derer, die Zugang zu Lampensockeln und aktiven Teilen in Steckdosen gewähren. 
+ANMERKUNG 1 Gerätesteckdosen werden nicht als Steckdosen angesehen. 
+Die Prüfsonde wird auch durch Öffnungen von geerdeten Metallgehäusen angewendet, die eine nichtleit-
+fähige Beschichtung wie Email oder Lack haben. 
+ANMERKUNG 2 „Ohne merkliche Kraft“ beschreibt eine Kraft, die 1 N nicht überschreitet. 
+Es darf nicht möglich sein, aktive Teile mit der Prüfsonde zu berühren. 
+8.1.3 
+Bei Geräten, ausgenommen solchen der Schutzklasse II, wird die Prüfung von aktiven Teilen 
+sichtbar glühender Heizelemente, die durch einen einzigen Schaltvorgang allpolig abgeschaltet werden 
+können, mit der Prüfsonde 41 nach IEC 61032 statt mit der Prüfsonde B oder der Prüfsonde 13 durchgeführt. 
+Sie wird auch an Teilen durchgeführt, die solche Heizelemente halten, vorausgesetzt, es ist von außen ohne 
+Entfernen von Abdeckungen und dergleichen erkennbar, dass solche haltenden Teile mit dem Heizelement in 
+Berührung stehen. 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+38 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 39/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+35 
+ANMERKUNG 1 „Ohne merkliche Kraft“ beschreibt eine Kraft, die 1 N nicht überschreitet. 
+Es darf nicht möglich sein, diese aktiven Teile zu berühren. 
+ANMERKUNG 2 Bei Geräten, die mit einer Netzanschlussleitung ausgestattet sind und die keine Schaltvorrichtung in 
+ihrem Netzstromkreis besitzen, gilt das Herausziehen des Steckers aus einer fest installierten Steckdose als ein einziger 
+Schaltvorgang. 
+8.1.4 
+Ein berührbares Teil gilt nicht als aktiv, wenn 
+– 
+das Teil mit SELV versorgt wird, vorausgesetzt dass: 
+• 
+bei Wechselstrom der Scheitelwert der Spannung 42,4 V nicht überschreitet; 
+• 
+bei Gleichstrom die Spannung 42,4 V nicht überschreitet; 
+oder 
+– 
+das Teil durch Schutzimpedanz von aktiven Teilen getrennt ist. 
+Im Falle einer Schutzimpedanz darf der Strom zwischen dem Teil und der Stromquelle bei Gleichstrom 
+2 mA und bei Wechselstrom sein Scheitelwert 0,7 mA nicht überschreiten. Darüber hinaus gilt: 
+– 
+Für Spannungen mit einem Scheitelwert über 42,4 V bis einschließlich 450 V darf die Kapazität 0,1 µF 
+nicht überschreiten; 
+– 
+für Spannungen mit einem Scheitelwert über 450 V bis einschließlich 15 kV darf die Entladung 45 µC 
+nicht überschreiten; 
+– 
+für Spannungen mit einem Scheitelwert über 15 kV darf die Energie der Entladung 350 mJ nicht über-
+schreiten. 
+Prüfung: Messung, wobei das Gerät mit Bemessungsspannung betrieben wird. 
+Spannungen und Ströme werden zwischen den entsprechenden Teilen und jedem Pol der Stromversor-
+gungsquelle gemessen. Entladungen werden unmittelbar nach der Unterbrechung der Stromversorgung 
+gemessen. Die Ladungsmenge bei der Entladung wird mittels eines Widerstands gemessen, der einen 
+nichtinduktiven Nennwiderstand von 2 000 Ω hat. Die Ladungsmenge und die Energie bei der Entladung 
+werden mittels eines Widerstands gemessen, der einen nichtinduktiven Nennwiderstand von 2 000 Ω hat.  
+ANMERKUNG 1 Einzelheiten eines geeigneten Messstromkreises sind in Bild 4 der IEC 60990 festgelegt. 
+ANMERKUNG 2 Die Ladungsmenge wird als Summe aller Flächen berechnet, die vom Spannungs-Zeit-Diagramm ein-
+geschlossen werden, wobei die Polarität der Spannung nicht berücksichtigt wird. 
+8.1.5 
+Aktive Teile von Einbaugeräten, befestigten Geräten und in separaten Einheiten gelieferten 
+Geräten müssen vor der Installation oder dem Zusammenbau mindestens durch Basisisolierung geschützt 
+sein. 
+Prüfung: Besichtigung und Prüfung nach 8.1.1. 
+8.2 
+Geräte der Schutzklasse II und Schutzklasse II-Anordnungen müssen so gebaut und um-
+schlossen sein, dass ein angemessener Schutz gegen zufällige Berührung von Basisisolierung und solchen 
+Metallteilen besteht, die nur durch Basisisolierung von aktiven Teilen getrennt sind.  
+Es darf nur möglich sein, Teile zu berühren, die durch doppelte Isolierung oder verstärkte Isolierung von 
+aktiven Teilen getrennt sind.  
+Prüfung: Besichtigung und Anwendung der Prüfsonde B nach IEC 61032 wie in 8.1.1 beschrieben. Besichti-
+gung und Anwendung der Prüfsonde B nach IEC 61032 in Übereinstimmung mit den Bedingungen von 8.1.1. 
+2 
+2 
+2 
+1 
+2 
+1 
+1 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+39 von 166
+www.ris.bka.gv.at
+
+
+===== PAGE 40/166 =====
+ 
+EN 60335-1:2002 + A11:2004 + A1:2004 + A12:2006 + A2:2006 
+36 
+ANMERKUNG 1 Diese Anforderung gilt für alle Lagen des Gerätes, in denen es in sachgemäßem Gebrauch betrieben 
+werden kann, und nach dem Entfernen abnehmbarer Teile. 
+ANMERKUNG 2 Einbaugeräte und befestigte Geräte werden nach der Installation geprüft. 
+9 
+Anlauf von Motorgeräten 
+ANMERKUNG 
+Soweit erforderlich sind Anforderungen und Prüfungen im Teil 2 festgelegt. 
+10 Leistungs- und Stromaufnahme 
+10.1 
+Falls ein Gerät mit der Bemessungsaufnahme gekennzeichnet ist, darf die Leistungsaufnahme bei 
+Normalbetriebstemperatur von der Bemessungsaufnahme um nicht mehr als in Tabelle 1 angegeben ab-
+weichen. Die zulässigen Abweichungen gelten für beide Grenzen des Bereichs bei Geräten mit Angabe eines 
+Bemessungsspannungsbereiches, dessen Grenzen um mehr als 10 % vom arithmetischen Mittelwert des 
+Bereiches abweichen. 
+Tabelle 1 – Abweichung der Leistungsaufnahme 
+Geräteart 
+Bemessungsaufnahme 
+W 
+Abweichung 
+alle Geräte 
+≤ 25 
++ 20 % 
+> 25 und ≤ 200 
+± 10 % 
+Wärmegeräte und kombinierte 
+Geräte 
+> 200 
++ 5 % oder 20 W 
+(je nachdem welcher Wert 
+größer ist) 
+– 10 % 
+> 25 und ≤ 300 
++ 20 % 
+Motorgeräte 
+> 300 
++ 15 % oder 60 W 
+(je nachdem welcher Wert 
+größer ist) 
+Für kombinierte Geräte gilt die Abweichung für Motorgeräte, wenn die Leistungsaufnahme des Motors 
+mehr als 50 % der Gesamtbemessungsaufnahme beträgt. 
+ANMERKUNG 1 Im Zweifelsfalle wird die Leistungsaufnahme von Motoren separat gemessen. 
+Prüfung: Messung, wenn sich die Leistungsaufnahme stabilisiert hat: 
+– 
+Alle Stromkreise, die gleichzeitig betrieben werden können, sind in Betrieb; 
+– 
+das Gerät wird mit Bemessungsspannung betrieben; 
+– 
+das Gerät wird im Normalbetrieb betrieben. 
+Wenn sich die Leistungsaufnahme während des Betriebsspiels ändert, wird die Leistungsaufnahme als 
+Mittelwert arithmetischer Mittelwert der Leistung bestimmt, die während eines repräsentativen Zeitraumes 
+aufgenommen wird. 
+Die Prüfung wird bei Geräten mit einem oder mehreren angegebenen Bemessungsspannungsbereichen 
+sowohl bei den unteren als auch den oberen Grenzen der Bereiche durchgeführt, es sei denn, die festgelegte 
+Bemessungsaufnahme bezieht sich auf den arithmetischen Mittelwert des entsprechenden Spannungs-
+bereiches. In diesem Falle wird die Prüfung bei einer Spannung durchgeführt, die gleich dem arithmetischen 
+Mittelwert dieses Bereiches ist. 
+2 
+2 
+2 
+2 
+2 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+40 von 166
+www.ris.bka.gv.at

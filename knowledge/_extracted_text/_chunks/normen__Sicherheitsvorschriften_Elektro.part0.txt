@@ -1,0 +1,2070 @@
+
+
+===== PAGE 1/167 =====
+ 
+ 
+ 
+ 
+ 
+Elektrotechnische 
+Sicherheitsvorschriften 
+ 
+als Voraussetzung für den Gewerbezugang 
+Dipl.-HTL-Ing. Ing. Dietmar Stöger      Auflage 4.0 / Juli 2019 
+
+
+===== PAGE 2/167 =====
+ 
+ 
+ 
+ 
+ 
+ 
+Impressum 
+Medieninhaber und Hersteller: 
+ 
+Wirtschaftsförderungsinstitut der Wirtschaftskammer Österreich 
+(WIFI Österreich) 
+ 
+WIFI Österreich Bildungsmanagement, Ing. Susanne Schilder 
+A-1045 Wien, Wiedner Hauptstraße 63 
+ 
+© 2019, alle Rechte vorbehalten 
+ 
+Auflage: 4.0 / Juli 2019 
+ 
+Manuskript:  
+ 
+Autor: Dipl.-HTL-Ing. Ing. Dietmar Stöger 
+ 
+Das Werk einschließlich aller seiner Teile ist urheberrechtlich geschützt. Jede Verwertung ohne Zu-
+stimmung des Wirtschaftsförderungsinstituts der Wirtschaftskammer Österreich ist unzulässig. 
+Das gilt insbesondere für Fotokopien, Vervielfältigungen, Übersetzung, Mikroverfilmung und die Ein-
+speicherung und Verarbeitung in elektronischen Systemen. Die mit „Wikipedia“ gekennzeichneten 
+Stellen dürfen unter Einhaltung der Lizenzen von Wikipedia frei vervielfältigt werden. 
+ 
+Soweit im Folgenden personenbezogene Bezeichnungen nur in der männlichen Form angeführt sind, 
+beziehen sie sich auf Frauen oder Männer in gleicher Weise. Bei der Anwendung auf bestimmte Per-
+sonen wird die jeweils geschlechtsspezifische Form verwendet. 
+ 
+Es wird darauf hingewiesen, dass alle Angaben trotz sorgfältiger Bearbeitung ohne Gewähr erfolgen. 
+Eine Haftung des WIFI Österreich ist ausgeschlossen. 
+Basiert auf WIFI Skriptenautor Version 12.0 (09.02.2012) 
+ 
+
+
+===== PAGE 3/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+ 
+Inhalt 
+Seite 
+ 
+1 
+Entstehung der Schutzmaßnahmen und Normen .................... 1 
+1.1 
+Warum Schutzmaßnahmen ..................................................................... 1 
+1.2 
+Entwicklung der Schutzmaßnahmen ....................................................... 1 
+1.3 
+Wann sind Schutzmaßnahmen wirksam .................................................. 1 
+1.4 
+Wo findet man Vorschriften .................................................................... 2 
+1.5 
+Woher kommt die Norm ......................................................................... 2 
+1.6 
+Entstehung einer Norm ........................................................................... 2 
+1.7 
+Mitarbeit an einer Norm.......................................................................... 2 
+2 
+Wirkungen des Stromes ......................................................... 3 
+2.1 
+Wirkung des Stromes auf den menschlichen Körper ................................ 3 
+2.2 
+Gefährliche Spannungen ......................................................................... 4 
+2.3 
+Stromstärke und Einwirkdauer ................................................................. 4 
+2.3.1 
+Die Wahrnehmbarkeitsschwelle .............................................................. 4 
+2.3.2 
+Die Krampfschwelle ................................................................................ 4 
+2.3.3 
+Die Gefahrenschwelle ............................................................................ 4 
+2.3.4 
+Die Todesschwelle .................................................................................. 4 
+2.5 
+Das Herzkammerflimmern ...................................................................... 2 
+2.6 
+Stromstärke und Frequenz ....................................................................... 2 
+2.7 
+Der Widerstand des menschlichen Körpers: ............................................ 2 
+2.8 
+Statistik der Elektrounfälle lt. BMWJF ...................................................... 3 
+3 
+Der Stromunfall ..................................................................... 5 
+3.1 
+Allgemeines zur Befreiung aus dem Stromkreis ....................................... 5 
+3.1.1 
+Grundregeln für die Bergung nach Elektrounfällen .................................. 5 
+3.1.2 
+Selbstbefreiung ....................................................................................... 5 
+3.1.3 
+Befreiung in Niederspannungsanlagen .................................................... 5 
+3.1.4 
+Befreiung bei Hochspannungsanlagen .................................................... 6 
+3.2 
+Defibrillator ............................................................................................ 6 
+3.3 
+Verbrennungen ....................................................................................... 6 
+3.4 
+EH - Maßnahmen bei einem Unfall ......................................................... 6 
+3.4.1 
+Bewusstseinskontrolle ............................................................................. 6 
+3.4.3 
+Atemkontrolle ......................................................................................... 7 
+3.4.4 
+Kreislauf.................................................................................................. 7 
+3.5 
+Schockbekämpfung ................................................................................. 7 
+4 
+Arbeiten an elektrischen Anlagen ........................................... 8 
+4.1.1 
+Die 5 Sicherheitsregeln ........................................................................... 8 
+4.1.2 
+Durchführung der Sicherheitsregeln ........................................................ 9 
+5 
+Einteilung des Fachpersonals ................................................ 10 
+5.1 
+Einteilung nach Qualifikation ................................................................ 10 
+5.1.1 
+Laie ...................................................................................................... 10 
+5.1.2 
+Unterwiesene Person ............................................................................ 10 
+5.1.3 
+Elektrofachkraft ..................................................................................... 10 
+5.2 
+Einteilung nach Aufgabe ....................................................................... 11 
+5.2.1 
+Arbeitsverantwortlich ABV .................................................................... 11 
+
+
+===== PAGE 4/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+5.2.2 
+Anlagenverantwortlich ALV .................................................................. 11 
+5.2.3 
+Anlagenbetreiber AB ............................................................................. 11 
+5.3 
+Anforderungen an einen Prüfer ............................................................. 12 
+6 
+Gesetzliche Grundlagen ....................................................... 13 
+6.1 
+Grundlagen ........................................................................................... 13 
+6.2 
+Abkürzungen ........................................................................................ 13 
+6.3 
+Das Elektrotechnikgesetz (ETG) ............................................................. 14 
+6.4 
+Die Elektrotechnikverordnung (ETV) ...................................................... 14 
+6.5 
+Die Elektroschutzverordnung (ESV) ....................................................... 14 
+6.6 
+Die SNT-Vorschriften ............................................................................ 14 
+6.6.1 
+Die ÖVE E8101 .................................................................................... 14 
+6.6.3 
+Die TAEV .............................................................................................. 15 
+6.6.4 
+Allgemeine Versorgungsbedingungen ................................................... 15 
+7 
+Elektrotechnikgesetz - Auszug .............................................. 16 
+7.1 
+Änderung zum ETG 1992 – 2015 und 2017 .......................................... 25 
+8 
+Die Elektrotechnikverordnung - Auszug ............................... 26 
+8.1 
+ETV2002 (13. Juni 2002) ....................................................................... 26 
+8.2 
+ETV2002-A1, ETV2002-A2 und ETV2014 ............................................. 29 
+9 
+Die Elektroschutzverordnung 2012 - Auszug........................ 30 
+10 
+Standesregeln für Elektrotechnik - Auszug ............................ 39 
+11 
+Normenkurzüberblick .......................................................... 42 
+12 
+Die ÖVE/ÖNORM E8001 .................................................... 43 
+13 
+ÖVE Richtlinien ................................................................... 45 
+14 
+Die ÖVE E8101 .................................................................... 47 
+14.1 
+Aufbau und Struktur der ÖVE E8101 ..................................................... 48 
+15 
+Die Einteilung der Betriebsmittel ......................................... 51 
+15.1 
+Allgemeines .......................................................................................... 51 
+15.2 
+Die Geräteschutzklassen ....................................................................... 51 
+15.2.1 
+Allgemeines .......................................................................................... 51 
+15.2.2 
+Schutzklasse I ....................................................................................... 51 
+15.2.4 
+Schutzklasse II ...................................................................................... 52 
+15.2.5 
+Schutzklasse III ..................................................................................... 52 
+15.3 
+Das IP-System ....................................................................................... 53 
+15.3.1 
+Der IP-Code nach EN60529 .................................................................. 54 
+15.3.2 
+Die IP-Symbole ..................................................................................... 55 
+16 
+Die Kennzeichnung der Betriebsmittel ................................. 56 
+16.1 
+Allgemeines .......................................................................................... 56 
+16.2 
+Die Prüfzeichen .................................................................................... 56 
+17 
+Begriffe lt. ÖVE E8101 bzw. ÖVE/ÖNORM E8001 ............... 58 
+17.1 
+Anlagenteile .......................................................................................... 58 
+17.2 
+Elektrische Größen, Gefährdungen und Risiken ..................................... 59 
+17.3 
+Erden, Mittel und Maßnahmen zum Erden ............................................ 59 
+17.4 
+Fehlerarten ............................................................................................ 60 
+17.5 
+Fehlerspannungen und Fehlerströme ..................................................... 60 
+18 
+Die Netzsysteme .................................................................. 64 
+
+
+===== PAGE 5/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+18.1 
+Starkstromanlage ................................................................................... 64 
+18.2 
+Netzsystem ........................................................................................... 64 
+18.3 
+Einteilung der Netzt nach der Erdung .................................................... 65 
+18.3.1 
+Erster Buchstabe .................................................................................... 65 
+18.3.2 
+Zweiter Buchstabe ................................................................................ 65 
+18.3.3 
+Weitere Buchstaben .............................................................................. 65 
+18.4 
+Einteilung der Systeme .......................................................................... 66 
+18.5 
+Die Leiterbezeichnung .......................................................................... 69 
+18.5.1 
+Kennzeichnung in Schaltplänen ............................................................ 69 
+18.5.2 
+Funktion der einzelnen Leiter ................................................................ 69 
+18.5.3 
+Farbkennzeichnung der Leiter ............................................................... 71 
+19 
+Der Überspannungsschutz ................................................... 72 
+19.1 
+Überspannungsarten ............................................................................. 72 
+19.2 
+Überspannungsableiter Arten ................................................................ 73 
+19.2.1 
+Klassifikation ÖVE-SN60: ...................................................................... 73 
+19.2.2 
+Überspannungsschutz ÖVE/ÖNorm EN 61643-11: ............................... 73 
+19.3 
+Verwendung von Überspannungsschutzgeräten .................................... 74 
+19.3.1 
+Installation von SPD‘s ........................................................................... 74 
+19.3.2 
+Anschlussbeispiele für SPD‘s ................................................................. 75 
+19.4 
+Auswahl für SPD‘s ................................................................................ 76 
+19.5 
+Koordination von Überspannungsschutzgeräten .................................... 77 
+19.6 
+Fehlerschutz bei Verwendung von SPD‘s .............................................. 77 
+19.7 
+Anschluss und Querschnitt von SPD’s ................................................... 77 
+20 
+Die Einteilung des Schutzkonzeptes ..................................... 79 
+20.1 
+Der Basisschutz .................................................................................... 80 
+20.1.1 
+Anwendung .......................................................................................... 80 
+20.1.2 
+Begriffe ................................................................................................. 80 
+20.1.3 
+Durchführung ....................................................................................... 81 
+20.2 
+Der Fehlerschutz ................................................................................... 82 
+20.2.1 
+Ziel ....................................................................................................... 82 
+20.3 
+Der zusätzliche Schutz (Zusatzschutz) .................................................. 82 
+20.3.1 
+Anwendung .......................................................................................... 82 
+20.3.2 
+Durchführung ....................................................................................... 83 
+21 
+Schutz gegen den elektrischen Schlag .................................. 84 
+21.1 
+Anwendung .......................................................................................... 84 
+21.2 
+Durchführung ....................................................................................... 84 
+21.2.1 
+Ausnahmen ........................................................................................... 85 
+21.3 
+Einteilung der Schutzmaßnahmen ......................................................... 85 
+22 
+Die Fehlerschutzvorkehrungen ............................................ 87 
+22.1 
+Schutz durch doppelte oder verstärkte Isolierung .................................. 87 
+22.1.1 
+Allgemein ............................................................................................. 87 
+22.1.2 
+Anforderungen ...................................................................................... 87 
+22.2 
+Schutz durch Kleinspannung mit SELV oder PELV ................................. 89 
+22.2.1 
+Allgemeines .......................................................................................... 89 
+22.2.2 
+Erzeugung ............................................................................................. 90 
+22.2.3 
+Anforderungen ...................................................................................... 90 
+
+
+===== PAGE 6/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+22.3 
+Die Schutztrennung .............................................................................. 91 
+22.4 
+Automatische Abschaltung der Stromversorgung im Fehlerfall ............... 93 
+22.5 
+Automatische Abschaltung im TT Netz ................................................. 93 
+22.5.1 
+Forderung bei Verwendung einer Überstrom-Schutzeinrichtung: ........... 94 
+22.5.2 
+Forderung bei Verwendung einer Fehlerstrom-Schutzeinrichtung: ......... 94 
+22.6 
+Automatische Abschaltung im TN Netz ................................................. 95 
+22.6.1 
+1. Nullungsbedingung (Ausschaltbedingung) ......................................... 96 
+22.6.2 
+2. Nullungsbedingung (Erdungsbedingung) ........................................... 96 
+22.6.3 
+3. Nullungsbedingung (Verlegebedingung) ............................................ 97 
+22.7 
+Ausführung der Nullung seit 01.12.2008 ............................................... 99 
+22.7.1 
+Neue Begriffe bzw. Änderungen ........................................................... 99 
+22.7.2 
+Ausführung ......................................................................................... 102 
+22.7.3 
+Ausschaltbedingung (ASB)................................................................... 105 
+22.7.4 
+Ausschaltbedingungen in Verteilungsnetzen ....................................... 105 
+22.7.5 
+ASB für Verteill. in Verbraucheranl. & Endstr.kr. über 32A Nennstrom 106 
+22.7.6 
+ASB für Endstromkreise bis einschließlich 32 A Nennstrom ................. 106 
+22.7.7 
+Ausschaltstromfaktoren ....................................................................... 106 
+22.7.8 
+Ausschaltung mittels FI-Schutzeinrichtungen ....................................... 107 
+22.7.9 
+Ausschaltung mittels FI und zus. Potentialausgleich ............................ 108 
+22.7.10 
+Erdungsbedingung in Verbraucheranlagen mit eigener Stromquelle ..... 108 
+22.7.11 
+Ausführung mit Sternpunkt-Verbindungs-Leiter (SVL) .......................... 108 
+22.8 
+Begrenzung der Fehlerspannung am geerdeten Systemleiter ................ 109 
+22.9 
+IT-Systeme .......................................................................................... 110 
+23 
+Der Fehlerstromschutzschalter .......................................... 112 
+23.1 
+Aufbau des FI ...................................................................................... 112 
+23.2 
+Wirkungsweise des FI ......................................................................... 112 
+23.3 
+Begriffe ............................................................................................... 113 
+23.3.1 
+Verträglichkeit .................................................................................... 113 
+23.3.2 
+Kurzschlussfestigkeit ........................................................................... 113 
+23.3.3 
+Überlastfestigkeit ................................................................................ 113 
+23.3.4 
+Stoßstromfestigkeit .............................................................................. 113 
+23.3.5 
+Selektivität .......................................................................................... 113 
+23.3.6 
+Zeitverzögerung .................................................................................. 113 
+23.3.7 
+Umrichterfestigkeit .............................................................................. 113 
+23.3.8 
+Temperaturbeständigkeit ..................................................................... 114 
+23.3.9 
+Auslösefehlerstrom .............................................................................. 114 
+23.3.10 
+Kurzzeichen ........................................................................................ 114 
+23.4 
+Anforderungen an den Fehlerstromschutzschalter ............................... 115 
+23.4.1 
+Allgemeine Anforderungen ................................................................. 115 
+23.4.2 
+Anforderungen für den Fehlerschutz ................................................... 116 
+23.4.3 
+Anforderungen für den Zusatzschutz ................................................... 116 
+23.4.4 
+Anforderungen für den Brandschutz .................................................... 116 
+23.4.5 
+Vermeidung von Fehlauslösungen ....................................................... 117 
+23.4.6 
+Auswahl nach Personengruppen ......................................................... 117 
+23.5 
+Ausführungsformen ............................................................................. 117 
+23.5.1 
+Wechselstromsensitivität (FI-Type AC) ................................................. 117 
+23.5.2 
+Pulsstromsensitivität (FI-Type A) .......................................................... 117 
+
+
+===== PAGE 7/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+23.5.3 
+Pulsstromsensitivität (FI-Type F) ........................................................... 117 
+23.5.4 
+Allstromsensitivität (FI-Type B) ............................................................ 117 
+23.5.5 
+Allstromsensitivität (FI-Type PD) .......................................................... 118 
+23.5.6 
+G-Type ............................................................................................... 118 
+23.5.7 
+S-Type ................................................................................................ 118 
+23.6 
+Einbau des FI-Schutzschalters .............................................................. 119 
+23.6.1 
+Vorsicherung des FI ............................................................................ 119 
+23.6.2 
+Staffelung der FI Schalter ..................................................................... 120 
+24 
+Der Brandschutzschalter AFDD ......................................... 121 
+24.1 
+Wirkungsweise ................................................................................... 121 
+24.1.1 
+Einbaupflicht in Wechselstromkreisen bis 16A Nennstrom .................. 122 
+24.1.2 
+Einbauempfehlung in Wechselstromkreisen bis 16A Nennstrom .......... 122 
+25 
+Der Potentialausgleich ....................................................... 123 
+25.1 
+Der Hauptpotentialausgleich ............................................................... 123 
+25.2 
+Der zusätzliche Potentialausgleich ...................................................... 125 
+25.2.1 
+Die Mindestquerschnitte der Potentialausgleichsleiters: ....................... 125 
+25.2.2 
+Querschnittdimensionierung bei 2 Körpern: ........................................ 125 
+25.2.3 
+Querschnittdim. zwischen Körper und fremden leitfähigen Teil: .......... 126 
+25.2.4 
+Die Ausführungen des Erdungsleiters .................................................. 126 
+25.4 
+Ausführung des Schutzleiters............................................................... 127 
+25.4.1 
+Schutzleiterquerschnitt ........................................................................ 127 
+25.4.2 
+Arten von Schutzleitern ....................................................................... 127 
+25.4.3 
+Sichere elektrische Verbindung der Schutzleiter .................................. 128 
+26 
+Dokumentation .................................................................. 129 
+26.1 
+Allgemeines ........................................................................................ 129 
+26.2 
+Mindestumfang der Dokumentation .................................................... 129 
+26.2.1 
+Allgemeine Angaben ........................................................................... 129 
+26.2.2 
+Technische Angaben ........................................................................... 130 
+26.2.3 
+Zusatzinformationen für Wartung ........................................................ 130 
+26.3 
+Der Prüfbericht ................................................................................... 131 
+26.3.1 
+Erstprüfung.......................................................................................... 131 
+26.3.2 
+Wiederkehrende Prüfung .................................................................... 131 
+27 
+Überprüfung der Schutzmaßnahmen ................................. 132 
+27.1 
+Allgemeines ........................................................................................ 132 
+27.2 
+Mängel aus der Sicht der Elektrotechniker ........................................... 134 
+27.3 
+Begriffe ............................................................................................... 135 
+27.3.1 
+Prüfen ................................................................................................. 135 
+27.3.2 
+Besichtigen ......................................................................................... 135 
+27.3.3 
+Erproben und Messen ......................................................................... 135 
+27.4 
+Die Besichtigung ................................................................................. 136 
+27.4.1 
+Punkte laut ÖVE E8001-6-61 .............................................................. 136 
+27.4.2 
+Beispiel bei Schutzmaßnahmen mit Schutzleiter ................................. 137 
+27.4.3 
+Beispiele bei Schutzmaßnahmen ohne Schutzleiter ............................. 137 
+27.5 
+Erproben und Messen ......................................................................... 138 
+27.5.1 
+Allgemeines ........................................................................................ 138 
+27.5.2 
+Durchgängigkeit der Leiter .................................................................. 139 
+
+
+===== PAGE 8/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+ 
+27.5.3 
+Der Isolationswiderstand ..................................................................... 140 
+a) 
+Der Isolationswiderstand eines Betriebsmittels (ÖVE-E 8701) .............. 140 
+b) 
+Der Isolationszustand der Anlage ........................................................ 140 
+27.5.4 
+Spannungspolarität ............................................................................. 141 
+27.5.5 
+Die Maßnahmen des Fehlerschutzes ................................................... 142 
+a) 
+Automatische Abschaltung im TN Netz ............................................... 142 
+b) 
+Automatische Abschaltung im TT Netz ............................................... 143 
+27.5.6 
+Die Maßnahmen des zusätzlichen Schutzes ........................................ 143 
+27.5.7 
+Messung der Fehlerschleifenimpedanz ................................................ 143 
+27.5.8 
+Funktionsprüfungen ............................................................................ 144 
+27.5.9 
+Prüfen des Drehfeldes ......................................................................... 144 
+27.5.10 
+Prüfen des Spannungsabfalles ............................................................. 144 
+27.6 
+Messmethoden .................................................................................... 144 
+27.6.1 
+Erdungsmessung ................................................................................. 144 
+28 
+Errichtung von Fundamenterdern ....................................... 149 
+28.1 
+Allgemeine Anforderungen ................................................................. 149 
+28.2 
+Ausführung ......................................................................................... 150 
+28.2.1 
+Allgemeines ........................................................................................ 150 
+28.2.2 
+Werkstoff ............................................................................................ 150 
+28.2.3 
+Anordnung in unbewehrtem Fundament ............................................. 150 
+28.2.4 
+Anordnung in bewehrtem Fundament sowie bei Wannenabdichtungen150 
+28.3 
+Kontrolle und Dokumentation ............................................................. 151 
+28.4 
+Fundamenterderbeton ......................................................................... 151 
+29 
+Quellennachweis ............................................................... 152 
+30 
+Abbildungsverzeichnis ....................................................... 153 
+31 
+Schlussbestimmung ............................................................ 155 
+
+
+===== PAGE 9/167 =====
+
+
+===== PAGE 10/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+1 
+1 
+ENTSTEHUNG DER SCHUTZMAßNAHMEN UND NORMEN 
+1.1 
+Warum Schutzmaßnahmen 
+Am Beginn des letzten Jahrhunderts war die Anwendung des Stromes noch sehr begrenzt. 
+Dies hat sich in den letzten hundert Jahren deutlich geändert. Je mehr der Endanwender Zu-
+gang zur Elektrizität erhalten hat, desto größer wurde die Unfallgefahr. Seit jeher gilt als 
+oberstes Gebot der Schutztechnik der Schutz von Lebewesen und Anlagen. In der heutigen 
+Zeit spielen die Schutzmaßnahmen eine noch wichtigere Rolle als damals. 
+1.2 
+Entwicklung der Schutzmaßnahmen 
+Mit Einführung der Elektrizität wurde bald ersichtlich, dass es Regelwerke geben muss, damit 
+nicht zu viele unterschiedliche Systeme entstehen. Die ersten Vorschriften sind entstanden. 
+Die erste Vorschrift war nur ein paar Seiten dick und es wurde sogar erklärt wie man fach-
+männisch eine Sicherung flickt. 
+ 
+Im Jahre 1926 ist die EVW (Sicherheitsvorschrift für elektrische Starkstromanlagen) veröffent-
+licht worden. In den Kriegszeiten und Nachkriegszeiten sind die Vorschriften an Deutschland 
+gekoppelt gewesen. Zu dieser Zeit war die VDE 0100 gültig. Nach der Kriegszeit begann Ös-
+terreich wieder eigene Wege zu gehen. 
+ 
+Im Laufe der Zeit haben sich unsere Schutzmaßnahmen bis zur heutigen Zeit weiterentwi-
+ckelt. Die Entwicklung ist vergleichbar mit dem Auto. Genügte am Anfang eine normale 
+Bremse, so kamen später Zweikreisbremssysteme und in neuerer Zeit das ABS und ESP hin-
+zu. In der Elektrotechnik fand diese Entwicklung ebenfalls statt (Sicherung, FI-Schutzschalter, 
+Überspannungsableiter, Brandschutzschalter). 
+1.3 
+Wann sind Schutzmaßnahmen wirksam 
+Oberste Aufgabe des Elektrotechnikers ist für die Sicherheit Sorge zu tragen. Dabei helfen 
+ihm die Vorschriften. Grundlegende Bedingung ist der zuverlässige Bau von Betriebsmittel 
+und Anlagen. Eine Garantie dafür, dass ein Betriebsmittel sicher ist, ist das ÖVE Prüfzeichen. 
+Der Elektrounfall entsteht meist durch schadhafte Geräte, Unachtsamkeit oder defekten Lei-
+tungen. 
+ 
+Die meisten tödlichen Unfälle entstehen, wenn der Mensch mit einem aktiven Teil in Berüh-
+rung kommt. Eine Vorbeugung gibt es durch eine ordnungsgemäße Instandhaltung. Eine wei-
+tere Gefahr ist auch der Elektrobrand. Dieser entsteht meist durch eine Kriechstrombildung 
+Aufgrund von Feuchtigkeit oder durch Lichtbogenbildung. 
+ 
+Sicheren Schutz können nur der zuverlässige Bau und der richtige Gebrauch der Geräte bie-
+ten. Für den zuverlässigen Bau der Geräte und der Anlage sind die Elektrotechniker verant-
+wortlich. Ihre Aufgabe ist die Kenntnis und die Einhaltung der Vorschriften. Handwerkliches 
+Können, der sichere Umgang mit dem Strom und die Beratung der Endkunden gehören eben-
+falls dazu. 
+ 
+
+
+===== PAGE 11/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+2 
+Ein Teil der Sicherheit liegt auch in Verantwortung der Konsumenten. Sie sollten regelmäßig 
+die elektrische Anlage überprüfen lassen und selbst keine Arbeiten an der Anlage vorneh-
+men. 
+ 
+1.4 
+Wo findet man Vorschriften 
+Für den Elektrotechniker im Bereich der Anlagenerrichtung ist seit Jänner 2019 die ÖVE-
+E8101 maßgebend. Sie beinhaltet die Begriffsbestimmungen und die Schutzmaßnahmen, 
+Beschaffenheit von Betriebsmitteln, die Dimensionierung von Leitungen und die Installati-
+onsvorschriften sowie deren Überprüfung. 
+ 
+Erhältlich sind die verbindlichen Vorschriften beim Rechtsinformationssystem des Bundes-
+kanzleramtes. Alle nichtverbindlichen Vorschriften sind beim Österreichischen Normungs-
+institut bzw. beim ÖVE erhältlich. Auch beim Kuratorium für Elektrotechnik und der Wirt-
+schaftskammer sind Vorschriften, welche für verbindlich erklärt wurden, verfügbar. Die ÖVE 
+E8101 ist nur käuflich zu erwerben, da diese Norm nicht für verbindlich erklärt wurde und 
+auch nicht für verbindlich erklärt wird. 
+ 
+1.5 
+Woher kommt die Norm 
+Normen werden nicht vom Gesetzgeber gemacht, sondern entstehen in der Praxis und wer-
+den dann für ein bestimmtes Thema vom Normungsinstitut und den ÖVE erarbeitet. Manche 
+Normen werden vom Gesetzgeber in die Verbindlichkeit verabschiedet. 
+ 
+1.6 
+Entstehung einer Norm 
+Die Normungsinstitutionen machen nicht selbst die Vorschläge zu Normen, sondern erarbei-
+ten die Vorschläge, die von Jedermann gemacht werden können. Bevor jedoch eine Bearbei-
+tung in Angriff genommen wird, wird die Machbarkeit überprüft. Ein Vorschlag kann nur 
+dann zu einer Ö-Norm werden, wenn sie für den täglichen Gebrauch geeignet ist. 
+ 
+1.7 
+Mitarbeit an einer Norm 
+Interessierte haben die Möglichkeit zur Mitarbeit an einer Norm. Es können unterschiedliche 
+Interessensgruppen an einer Norm mitarbeiten. Voraussetzung für die Aufnahme als Expertin 
+oder Experte ist für das jeweilige Fachgebiet entsprechendes Know-how und Erfahrung. 
+ 
+
+
+===== PAGE 12/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+3 
+2 
+WIRKUNGEN DES STROMES 
+2.1 
+Wirkung des Stromes auf den menschlichen Körper 
+Erfahrungsgemäß können die Wirkungen von elektrischen Strömen auf Menschen recht ver-
+schieden sein. So werden z.B. bei manchen Therapieformen Ströme eingesetzt, um Krankhei-
+ten zu heilen, verschiedene Waffen beruhen darauf, dass Elektrisierungen sehr schmerzhaft 
+sein können und schließlich wurde der elektrische Stuhl gebaut, um Menschen rasch und 
+sicher durch Elektrisieren zu töten. 
+Die Frage, wann Elektrizität zur tödlichen Gefahr für Menschen wird, konnte aber lange 
+nicht zufrieden stellend beantwortet werden. Es erwies sich bald, dass die Spannung allein 
+kein Maß dafür ist. So zeigt das Unfallgeschehen, dass Unfälle in Anlagen mit einer Nenn-
+spannung von 230V tödlich verlaufen können, hingegen Unfälle in Anlagen mit 110 kV und 
+mehr, trotz schwerer Verletzungen nicht immer tödlich verlaufen. Aus der Tatsache, dass 
+mehr als die Hälfte der vom Blitz getroffenen Personen überleben, folgt ferner, dass auch die 
+Stromstärke allein nur wenig über die Folgen einer Elektrisierung aussagen kann. 
+Erst als man erkannte, dass der Tod die Folge verschiedener Reaktionen sein kann erschienen 
+auch die Erfahrungen aus dem Unfallgeschehen nicht mehr so widersprüchlich. Man unter-
+scheidet nun folgende Wirkungen: 
+ 
+a) 
+energetische Reaktionen als Folge der Wärmeentwicklung im stromdurchflossenen 
+Gewebe (thermische Schäden, Strommarken, sekundäre Folgen) 
+ 
+b) 
+physiologische Reizwirkungen auf erregbare Strukturen wie Nerven und Muskeln 
+(Missempfindungen, Krämpfe, Herzkammerflimmern) 
+ 
+c) 
+pathophysiologische Reizwirkungen an Nerven und Muskeln (überdauernde Funkti-
+onsstörungen durch mehr oder weniger reversible Schäden). 
+ 
+Nach dem heutigen Stand des Wissens sind viele Faktoren für die Folgen einer Elektrisierung 
+von entscheidender Bedeutung. Heute wird angenommen, dass der Tod meistens als Folge 
+von Kammerflimmern des Herzens eintritt. Diese Reaktion kann die Folge einer Stromeinwir-
+kung sein, die so ,,gering" ist, dass noch keine energetischen Reaktionen (Verbrennungen, 
+Strommarken) oder pathophysiologische Reizwirkungen auftreten. Bei allen sicherheitstech-
+nischen Überlegungen steht daher die Frage, wann eine Elektrisierung Herzkammerflimmern 
+auslöst, im Vordergrund. 
+ 
+ 
+
+
+===== PAGE 13/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+4 
+2.2 
+Gefährliche Spannungen 
+In der ÖVE E8101 ist, wie auch in der Vorgängernorm ÖVE E8001, die Berührungsspannung 
+(UT) nicht mehr mit einem Grenzwert definiert. Es wird zur Beurteilung der Schutzmaßnah-
+men die Grenzfehlerspannung (UFL) herangezogen. Mit diesem Grenzwert werden die inter-
+nationalen Werte der Berührungsspannung von 50V/AC und 90V/DC erfüllt. 
+Ob eine Elektrisierung tödlich endet hängt aber immer von mehreren Faktoren ab. 
+Wie z.B.: 
+ Einwirkdauer 
+ Stromstärke 
+ Spannungshöhe 
+ Stromart 
+ Frequenz 
+ Berührungsdruck 
+ Berührungsfläche 
+ Feuchtigkeit 
+ Standort 
+ Stromweg über den Körper 
+ 
+2.3 
+Stromstärke und Einwirkdauer 
+Die Stromstärke die über den menschlichen Körper fließt darf nicht alleine betrachtet wer-
+den. Einen wesentlichen Teil für die Gefährdung des Menschen trägt die Einwirkdauer bei. 
+2.3.1 
+Die Wahrnehmbarkeitsschwelle 
+Ströme die mit den Fingern wahrgenommen werden können. Sie liegt bei rund 1mA/AC. 
+2.3.2 
+Die Krampfschwelle 
+Ein öffnen der Finger ist nicht mehr möglich. Der Bereich liegt bei rund 15mA/AC. 
+2.3.3 
+Die Gefahrenschwelle 
+Ab 40mA/AC spricht man von der Gefahrenschwelle. Diese Ströme können bereits eine töd-
+liche Wirkung zeigen. Sehr guter Schutz ist der 30mA FI-Schutzschalter. 
+2.3.4 
+Die Todesschwelle 
+Ab 100mA/AC. Das Risiko eines Herzstillstandes oder Herzkammerflimmern ist sehr hoch. 
+ 
+ 
+ 
+
+
+===== PAGE 14/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+2 
+2.5 
+Das Herzkammerflimmern 
+Der durchschnittliche Herzschlag dauert 750ms. In dieser Zeit hat das Herz die Aufgabe Blut 
+über die Lungen in den Körper zu pumpen. Das Herz durchschreitet verschiedene Vorgänge. 
+Im Bereich der vulnerablen Phase ist der Herzmuskel sehr empfindlich. Tritt in dieser Zeit ein 
+Stromschlag auf, so fällt des Herz außer Tritt – Herzkammerflimmern. 
+2.6 
+Stromstärke und Frequenz 
+Allgemein gilt: Gleichstrom ist weniger gefährlich als Wechselstrom. Die gefährlichste Fre-
+quenz liegt in den Bereich zwischen 0Hz und 400Hz, wobei das Maximum der Gefährdung 
+im Bereich von 50Hz – 60Hz liegt. 
+ 
+Frequenzbeispiele: 
+ 
+10kHz 
+Reizstromtherapie (Lähmungsbehandlung) 
+500kHz 
+Diathermie (Wärmewirkung im Körper) 
+10MHz 
+Kurzwellenbehandlung 
+2.7 
+Der Widerstand des menschlichen Körpers: 
+Der Körperwiderstand beträgt je nach Spannungshöhe zwischen 1000 Ohm und 3000 Ohm, 
+je nach Stromweg durch den Körper und der Spannungshöhe. 
+Der Körperinnenwiderstand ist ein nahezu rein ohmscher Widerstand. 
+Bei einem Durchschlag der Haut, sinkt der Körperwiderstand entsprechend. 
+ 
+ 
+ 
+
+
+===== PAGE 15/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+3 
+2.8 
+Statistik der Elektrounfälle lt. BMWJF 
+Quelle: Elektrounfallstatistik 2014 BMWFW 
+ 
+Abbildung 1 – Statistik Blitzunfall 
+
+
+===== PAGE 16/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+4 
+ 
+Abbildung 2 – Statistik E-Unfall 
+ 
+
+
+===== PAGE 17/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+5 
+3 
+DER STROMUNFALL 
+Die Unfälle können in zwei Bereiche unterteilt werden. 
+ 
+ bis 1000 V Niederspannungsunfälle 
+ über 1000 V Hochspannungsunfälle 
+ 
+Bei Hochspannungsunfällen sind besondere Maßnahmen erforderlich. 
+3.1 
+Allgemeines zur Befreiung aus dem Stromkreis  
+Als erstes muss der Verletzte aus dem Stromkreis befreit werden. Dabei ist auf andere Gefah-
+ren wie Absturz, Feuer und Sonstiges zu achten. 
+Maßnahmen sind wie folgt durchzuführen: 
+ 
+ Ohne Selbstgefährdung (Eigenisolation) 
+ So rasch wie möglich 
+ Notfallmaßnahmen einleiten 
+ Verunglückten nicht erneut gefährden 
+ 
+3.1.1 
+Grundregeln für die Bergung nach Elektrounfällen  
+Die Rettung und Behandlung des Verunglückten, soll so schonend wie möglich durchgeführt 
+werden. Die Rettungskräfte sind dementsprechend einzuweisen. 
+3.1.2 
+Selbstbefreiung 
+Es kann möglich sein sich auch selbst aus dem Stromkreis zu befreien wie z.B. durch: 
+ Stecker aus der Steckdose ziehen 
+ Sich fallen lassen 
+ Auf die Ferse stellen 
+3.1.3 
+Befreiung in Niederspannungsanlagen 
+ Bereich spannungslos machen. 
+ Geräte ausstecken 
+ Not Aus betätigen 
+ Hauptschalter betätigen 
+ Im Verteiler Schutzeinrichtungen betätigen 
+
+
+===== PAGE 18/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+6 
+ Rettungshacken oder ähnliches benützen 
+ Isolierhandschuhe anziehen 
+ Kein Kurzschluss herbeiführen 
+ Bei Freileitungen Verletzten sichern - üben 
+3.1.4 
+Befreiung bei Hochspannungsanlagen 
+ Es muss zuerst abgeschaltet werden – Spannungstrichter 
+ Rettungshacken benützen 
+3.2 
+Defibrillator 
+ Anwendung nach Gebrauchsanweisung 
+ Gerät öffnen 
+ Gerät gibt entsprechende Anweisungen 
+ 
+ 
+Nach einem Stromunfall ist eine ärztliche Untersuchung notwendig. 
+ 
+ 
+Elektrounfälle sind laut dem EGT1992 an der nächsten Behörde (Polizei) meldepflichtig. Soll-
+te es sich auch um einen Arbeitsunfall handeln, so ist auch bei der AUVA eine Meldung vor-
+zunehmen. 
+3.3 
+Verbrennungen 
+ Verbrennungen kühlen – mit Wasser 10 bis 15 Minuten 
+ Verbrennungen steril abdecken 
+ Keine Kleidungsstücke entfernen 
+3.4 
+EH - Maßnahmen bei einem Unfall 
+3.4.1 
+Bewusstseinskontrolle 
+ Ansprechen 
+ Fragen nach Schmerzen 
+ Wenn nötig Atemwege freimachen 
+ 
+ 
+
+
+===== PAGE 19/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+7 
+3.4.3 
+Atemkontrolle 
+ Kopf etwas überstrecken 
+ Hören – Sehen – Fühlen 
+ Genau beobachten – flache Atmung 
+3.4.4 
+Kreislauf 
+ Herzdruckmassage durchführen 
+ Feste Unterlage 
+ Rhythmus 30x Herzdruck – 2x Beatmen 
+ Rund 100x pro Minute 
+ 4-5cm Brustkorb eindrücken 
+ Bis Rettungskräfte eintreffen 
+ Bei mehreren Helfen regelmäßig abwechseln 
+ Zur Unterstützung einen Defibrillator benützen 
+3.5 
+Schockbekämpfung 
+ Beine anwinkeln oder hochlagern 
+ Unterlage benützen 
+ Zudecken 
+ Zuspruch leisten 
+ 
+
+
+===== PAGE 20/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+8 
+4 
+ARBEITEN AN ELEKTRISCHEN ANLAGEN 
+Um die Gefahren für Arbeiten an elektrischen Anlagen möglichst klein zu halten bzw. ganz 
+auszuschalten werden in der ÖVE-EN50110 die Arbeiten an elektrischen Anlagen geregelt. 
+Ein wichtiger Punkt in dieser Vorschrift sind die fünf Sicherheitsregeln die von jedermann 
+einzuhalten sind. 
+ 
+Für Arbeiten an elektrischen Maschinen, Geräten und Einrichtung gelten folgende Sicher-
+heitsregeln als oberstes Gebot der Elektrofachkraft. 
+ 
+ 
+4.1.1 
+Die 5 Sicherheitsregeln 
+lt. ESV2012 bzw. ÖVE/ÖNORM EN50110-1-2008 
+ 
+ 
+Abbildung 3 - 5 Sicherheitsregeln 
+ 
+Das Aufheben geschieht in umgekehrter Reihenfolge wobei Punkt 3 wegfallen kann. 
+ 
+ 
+ 
+
+
+===== PAGE 21/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+9 
+4.1.2 
+Durchführung der Sicherheitsregeln 
+ 
+Zu 1) Allpolig heißt auch den Neutralleiter abzuschalten. Allseitig trifft für Ringleitungen 
+bzw. zwei oder mehreren Anspeisungen zu (Notstromgenerator, 2 Trafos, PV Anlage, 
+Speichersysteme). Freischalten bedeutet Kapazitäten zu entladen (USV, Kondensato-
+ren) 
+ 
+Zu 2) Leitungsschutzschalter oder Hauptschalter müssen z. Bsp. durch ein Schloss oder an-
+dere Vorrichtungen geschützt sein, dass niemand anderer einschalten kann. Verbots-
+schild „Nicht Schalten“. Abkleben mit Isolierband ist nicht zulässig! 
+ 
+Zu 3) Vor Beginn der Arbeiten ist zu kontrollieren, ob auch tatsächlich keine Spannung 
+mehr vorhanden ist. Es könnt ja sein, dass eine Sicherung falsch beschriftet ist. Mes-
+sung mit einem geeigneten zweipoligen Messgerät (Messleitungen fix am Gerät ange-
+schlossen, Messbereichseinstellung erfolgt automatisch). Vor Messung, Messgerät auf 
+Funktion kontrollieren! 
+ 
+Zu 4) Erden und Kurzschließen bedeutet, dass alle aktiven Leiter mit Erde verbunden wer-
+den. Sollte jemand unbefugt oder unbeabsichtigt einschalten, so würde ein Kurz-
+schluss ausgelöst und die Sicherung schaltet ab. Die Spannung an der Fehlerstelle die 
+abgegriffen werden kann wird ebenfalls begrenzt. 
+ 
+Zu 5) Um bei Arbeiten in Schaltschränken nicht unbeabsichtigt spannungsführende Teile zu 
+berühren, müssen diese durch entsprechende Hilfsmittel wie z. Bsp. Gummimatten 
+abgedeckt werden. Auf Prüfzeichen achten! Abdecken ab einer Annäherung von 
+500mm. 
+ 
+
+
+===== PAGE 22/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+10 
+5 
+EINTEILUNG DES FACHPERSONALS 
+Quelle BGBL II 223 / 2010 Ausgabe:12. Juli 2010 – ÖVE/ÖNORM EN50110-1-2008 
+5.1 
+Einteilung nach Qualifikation 
+Laut der ÖVE/ÖNORM EN50110-1-2008 bzw. der Elektroschutzverordnung 2012 sind die 
+Qualifikationen und Aufgaben von Personal wie folgt eingeteilt: 
+5.1.1 
+Laie 
+Eine Person die weder elektrotechnisches Fachpersonal noch eine unterwiesene Person ist. 
+5.1.2 
+Unterwiesene Person 
+Eine Person, die durch Elektrofachkräfte entsprechend unterrichtet wurden, so dass sie Ge-
+fahren die von der Elektrizität ausgehen können vermeiden kann. 
+5.1.3 
+Elektrofachkraft 
+Eine Person mit geeigneter fachlicher Ausbildung, Kenntnissen und Erfahrungen, so dass sie  
+Gefahren Erkennen und Vermeiden kann, die von der Elektrizität ausgehen können. 
+ 
+Eine Elektrofachkraft muss folgende Voraussetzungen erfüllen: 
+ 
+ Kenntnisse der Elektrotechnik 
+ Erfahrung mit elektrotechnischer Arbeit 
+ Kenntnis der Anlage, an der zu arbeiten ist, oder ähnlichen Anlagen, sowie praktische 
+Erfahrung mit der vorgesehenen Arbeit 
+ Kenntnis der Gefährdungen, die während der Arbeit entstehen können, und der zu 
+beachtenden Sicherheitsmaßnahmen 
+ Die Fähigkeit, jederzeit zu erkennen, ob es sicher ist, die Arbeit fortzusetzen. 
+ 
+Eine weitere Definition findet man auch in der ÖVE-R16 (Richtlinie für Arbeiten unter Span-
+nung). 
+ 
+ 
+
+
+===== PAGE 23/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+11 
+5.2 
+Einteilung nach Aufgabe 
+5.2.1 
+Arbeitsverantwortlich ABV 
+Ist eine Person, die beauftragt ist, die unmittelbare Verantwortung für die Durchführung der 
+Arbeit an der Arbeitsstelle zu tragen 
+Es können einige mit dieser Verantwortung einhergehende Verpflichtungen auf andere Per-
+sonen übertragen werden. 
+5.2.2 
+Anlagenverantwortlich ALV 
+Ist eine Person, die beauftragt ist, während der Durchführung von Arbeiten, die unmittelbare 
+Verantwortung für den sicheren Betrieb der elektrischen Anlage zu tragen. 
+Der Anlagenverantwortliche hat in einer Gefährdungsbeurteilung die möglichen Auswirkun-
+gen der Arbeiten auf die elektrische Anlage oder die Teile davon, die in seine Verantwortung 
+stehen sowie die Auswirkungen der elektrischen Anlage auf die Arbeitsstelle und die arbei-
+tenden Personen zu beurteilen. 
+5.2.3 
+Anlagenbetreiber AB 
+„Ist eine Person mit der Gesamtverantwortung für den sicheren Betrieb der elektrischen An-
+lage, die Regeln und Randbedingungen der Organisation vorgibt. Diese Person kann Eigen-
+tümer, Unternehmer, Besitzer, Arbeitgeber oder eine benannte Person, die die Unternehmer-
+pflichten wahrnimmt sein.“ 
+ 
+Quelle ÖVE R16 
+ 
+Der Begriff Anlagenbetreiber ist auch in der aktuellen Ausgabe der ÖVE/ÖNORM EN50110 
+enthalten. 
+ 
+ 
+ 
+
+
+===== PAGE 24/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+12 
+5.3 
+Anforderungen an einen Prüfer 
+Welche Voraussetzungen werden an eine Person gestellt, die elektrische Anlagen zu über-
+prüfen hat bzw. überprüfen soll? 
+ 
+In der ÖVE/ÖNORM EN50110 werden einige Anforderungen an einen Prüfer aufgelistet 
+bzw. ergeben sich aus den darin enthaltenen Definitionen. Auch in der aktuellen ÖVE E8101 
+sind Anforderungen definiert (Pkt. 134.1.1). 
+ 
+ Prüfungen müssen von Elektrofachkräften durchgeführt werden, die Kenntnisse durch 
+Prüfungen vergleichbarer Anlagen haben. 
+ Prüfungen müssen mit geeigneter Ausrüstung und so durchgeführt werden, dass Ge-
+fahren vermieden werden. 
+ Das Prüfergebnis muss aufgezeichnet werden. 
+ Falls erforderlich sind Maßnahmen zur Mängelbeseitigung zu treffen. 
+ Messungen dürfen nur von Elektrofachkräften, elektrotechnisch unterwiesenen Perso-
+nen oder von Laien unter direkter Beaufsichtigung ausgeführt werden. 
+ Die verwendeten Messgeräte müssen den erforderlichen Anforderungen entsprechen. 
+(z.B. EN61557) 
+
+
+===== PAGE 25/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+13 
+6 
+GESETZLICHE GRUNDLAGEN 
+6.1 
+Grundlagen 
+Um in der heutigen Zeit einen Überblick über die geltenden Vorschriften zu behalten ist es 
+notwendig sich regelmäßig über Neuerungen bzw. Änderungen zu informieren. In diesem 
+Punkt bietet das Internet eine Unterstützung, da z.B. beim ÖVE oder Bundeskanzleramt Vor-
+schriften bzw. Bundesgesetzblätter und Verordnungen Online abgefragt werden können. 
+ 
+Mit jeder ETV werden eine Menge an Vorschriften unwirksam und neue Vorschriften wirk-
+sam. Österreichische Vorschriften werden aufgelassen, europäische Normen kommen hinzu. 
+Dazu kommen noch unterschiedliche Übergangszeiten die es dem Elektrotechniker zusätz-
+lich erschweren den Überblick zu behalten. 
+ 
+Natürlich müssen auch die entsprechenden ÖVE-Richtlinien, OIB-Richtlinien, TRVB Best-
+immungen usw. erfüllt werden. 
+ 
+Auch wenn man dies alles Berücksichtigt kommen noch 9 unterschiedliche Landesgesetze 
+und für jeden Energieversorger eigene Anschlussbestimmungen dazu. Die anschließende 
+Auflistung kann also nur einen kleinen Teil der Vorschriften abdecken. 
+ 
+6.2 
+Abkürzungen 
+ ETG 
+ 
+Elektrotechnikgesetz (Bundesgesetz) 
+ ETV 
+ 
+Elektrotechnikverordnung 
+ SNT 
+ 
+Elektrot. Sicherheitsvorschriften über Normalisierung und Typisierung 
+ ÖVE  
+Österreichscher Verband für Elektrotechnik 
+ ÖNORM 
+Österreichisches Normungsinstitut (ASI – Austrian Standard Institut) 
+ IEC 
+ 
+Internationale Elektrotechnische Kommission 
+ CENELEC 
+Europäisches Komitee für elektrotechnische Normung 
+ VDE  
+Verband deutscher Elektrotechniker 
+ DIN 
+ 
+Deutsches Institut für Normung 
+ TAEV 
+Technische Anschlussbedingungen mit Erläuterung der einschlägigen 
+Vorschriften für elektrische Starkstromanlagen mit Betriebsspannung un-
+ter 1000V/AC und 1500V/DC 
+ AB 
+ 
+Ausführungsbestimmungen der Energieversorger 
+ AVB 
+Allgemeine Bedingungen für die Versorgung mit elektr. Energie aus dem 
+Niederspannungsnetz 
+
+
+===== PAGE 26/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+14 
+6.3 
+Das Elektrotechnikgesetz (ETG) 
+Dieses Gesetz legt für die Herstellung bzw. die Erzeugung von elektrischen Anlagen und Be-
+triebsmitteln, sowie deren Instandhaltung Bedingungen fest, die eine Gefährdung bei der 
+Anwendung des elektrischen Stromes verhindern soll. Das ETG wird in etwas größeren Jah-
+resabständen erneuert und regelt die Verbindlichkeiten von Normen über die ETV. Das ETG 
+wird im Parlament beschlossen. 
+ 
+6.4 
+Die Elektrotechnikverordnung (ETV) 
+In der Elektrotechnikverordnung werden alle neuen verbindlichen Normen die zur Anwen-
+dung kommen müssen angeführt und alte Normen für ungültig erklärt. Eine ETV ist ca. alle 5  
+Jahre zu erwarten. Die ETV wird vom Bundesminister für Wirtschaft erlassen. 
+ 
+6.5 
+Die Elektroschutzverordnung (ESV) 
+Die ESV wird vom Bundesministerium für Arbeit erlassen und regelt einzelne Maßnahmen 
+zum Schutz der Sicherheit und der Gesundheit der Arbeitnehmer vor Gefahren durch den 
+elektrischen Strom. Grundlage der ESV sind meist die zurzeit gültigen Normen. 
+ 
+6.6 
+Die SNT-Vorschriften 
+Elektrische Betriebsmittel und elektrische Anlagen entsprechen dem ETG, wenn sie den SNT-
+Vorschriften gemäß hergestellt, errichtet, in den Verkehr gebracht, instand gehalten und be-
+trieben werden. 
+ 
+Gliederung: 
+ 
+ Österr. Bestimmungen für Elektrotechnik 
+ Österr. Normen 
+ 
+6.6.1 
+Die ÖVE E8101 
+In der ÖVE-E8101 sind alle für die Errichtung einer Starkstromanlage notwendigen Basisvor-
+schriften enthalten. Für die elektrotechnische Sicherheit und Anlagenausführung ist diese 
+Norm die Grundlage. 
+ 
+Für besondere Anlagen gibt es noch Ergänzungen in anderen Vorschriften wie z.B. ÖVE-
+E8065, usw. 
+ 
+ 
+
+
+===== PAGE 27/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+15 
+6.6.3 
+Die TAEV 
+Die TAEV legt fest, wie elektrische Anlagen an das öffentliche Anzuschließen sind. Die TAEV 
+werden von den Netzbetreibern veröffentlicht. 
+ 
+Die TAEV stellen unter anderem einen Auszug aus der ÖVE-E8001 zur Verfügung. Ebenfalls 
+werden detaillierte Angaben über die Ausführungsbestimmungen (AB) der einzelnen Netzbe-
+treibern gemacht. Manche AB können aber nicht mehr über die Energie Österreich bezogen 
+werden, sondern sind direkt beim Netzbetreiber online abrufbar. 
+ 
+Die TAEV stellen ein wichtiges Nachschlagewerk, für den täglichen Gebrauch dar. Sie kann 
+aber keinesfalls eine Ö-Norm ersetzen. 
+ 
+Die aktuelle Ausgabe ist die TAEV2016. Ob noch ein nachfolge Dokument veröffentlicht 
+wird ist derzeit noch offen. 
+ 
+6.6.4 
+Allgemeine Versorgungsbedingungen 
+In der österreichischen Rechtsordnung ist das Elektrizitätswesen hinsichtlich der Erlassung 
+von Ausführungsgesetzen und in der Vollziehung Landessache. 
+ 
+
+
+===== PAGE 28/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+16 
+7 
+ELEKTROTECHNIKGESETZ - AUSZUG 
+Quelle BGBL Nr. 106/1993 ST0045 / Ausgabe 12. Februar 1993 
+ 
+Bundesgesetz:  Elektrotechnikgesetz 1992  - ETG  1992  
+ 
+BGBl.Nr. 106/1993 ST0045 
+Bundesgesetz über Sicherheitsmaßnahmen, Normalisierung und Typisierung auf dem 
+Gebiete der Elektrotechnik (Elektrotechnikgesetz 1992- ETG  1992) 
+ 
+Begriffsbestimmungen 
+§ 1. 
+ 
+(1) Elektrische Betriebsmittel im Sinne dieses Bundesgesetzes sind Gegenstände, die als 
+Ganzes oder in einzelnen Teilen zur Gewinnung, Fortleitung oder zum Gebrauch elektri-
+scher Energie bestimmt sind. Betriebsmäßige Zusammenfassungen mehrerer elektrischer Be-
+triebsmittel, die als bauliche Einheit in Verkehr gebracht werden und zumindest zu diesem 
+Zeitpunkt als bauliche Einheit ortsveränderlich sind, gelten ebenfalls als elektrische Be-
+triebsmittel. 
+ 
+(2) Eine elektrische Anlage im Sinne dieses Bundesgesetzes ist eine ortsfeste betriebsmäßige 
+Zusammenfassung elektrischer Betriebsmittel, soweit diese Zusammenfassung nicht nach 
+Abs. 1 als Betriebsmittel zu betrachten ist. Als ortsfest gelten auch elektrische Anlagen auf 
+Fahrzeugen, transportablen Bauwerken und fliegenden Bauten. Anlagen zum Potentialaus-
+gleich, Erdungsanlagen, Blitzschutzanlagen und Anlagen zum kathodischen Korrosionsschutz 
+sind ebenfalls elektrische Anlagen. 
+ 
+(3) Eine wesentliche Änderung einer elektrischen Anlage liegt vor, wenn eine der folgenden 
+Bedingungen erfüllt ist: 
+ 
+1. Die Stromart(en) (Gleichstrom, Drehstrom, Wechselstrom) wird (werden) geändert. 
+2. Die Nennspannung(en) der Anlage wird (werden) um mehr als 20% geändert, es sei 
+denn, die Anlage wurde so errichtet, dass diese Änderung bei ihrer Konstruktion berücksich-
+tigt wurde und höchstens eines bereits bei der Auslegung vorgesehenen Austausches einzel-
+ner Betriebsmittel bedarf. 
+3. Durch Änderungen der Schutzmaßnahme bei indirektem Berühren in einem Anlagenteil 
+werden Auswirkungen in anderen Anlagenteilen ausgelöst. 
+4. Durch andere Maßnahmen werden die Voraussetzungen für die Wirksamkeit der Schutz-
+maßnahmen gegen direktes oder bei indirektem Berühren beeinträchtigt. 
+ 
+(4) Eine wesentliche Erweiterung einer elektrischen Anlage liegt vor, wenn eine der folgen-
+den Bedingungen erfüllt ist: 
+1. Die elektrische Anlage wird örtlich in Bereiche erweitert, in denen bisher keine elektri-
+sche Anlage oder eine solche mit einer anderen Anspeisung der Stromversorgung bestanden 
+hat. 
+ 
+
+
+===== PAGE 29/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+17 
+ 
+2. Die Leistung, die der Zuleitung maximal entnommen werden soll, erhöht sich so sehr, 
+dass eine Verstärkung der Zuleitung notwendig ist. 
+ 
+(5) Eine wesentliche Änderung eines elektrischen Betriebsmittels liegt vor, wenn eine der 
+folgenden Bedingungen erfüllt ist: 
+1. Eine oder mehrere der Größen oder Eigenschaften Stromart, Nennspannung, Nennstrom, 
+Nennleistung, Nennbetriebsart, Nenndrehzahl oder Nennfrequenz der Stromversorgung 
+werden geändert, es sei denn, das Betriebsmittel ist so gebaut, dass diese Änderung ohne 
+baulichen Eingriff möglich ist und die Auswirkungen dieser Änderung bereits bei der Kon-
+struktion des Betriebsmittels berücksichtigt wurden. 
+2. Teile des elektrischen Betriebsmittels, die dem Schutz des Benützers oder anderer Perso-
+nen dienen, werden geändert oder dauernd entfernt. 
+ 
+(6) Eine wesentliche Erweiterung eines elektrischen Betriebsmittels liegt vor, wenn dieses 
+mit zumindest einem anderen elektrischen Betriebsmittel betriebsmäßig zusammen gefasst 
+wird, aber dadurch weder eine elektrische Anlage nach Abs. 2 noch ein elektrisches Be-
+triebsmittel anderer Art entsteht, es sei denn, die Betriebsmittel sind so gebaut, dass diese 
+Zusammenfassung ohne wesentliche Änderung eines der Betriebsmittel möglich ist und die 
+Auswirkungen dieser Zusammenfassung bereits bei der Konstruktion der Betriebsmittel be-
+rücksichtigt wurden. 
+ 
+Normalisierung und Typisierung auf dem Gebiete der Elektrotechnik 
+§ 2. 
+ 
+Neue elektrische Anlagen und elektrische Betriebsmittel sowie wesentliche Änderungen und 
+Erweiterungen bestehender elektrischer Anlagen und elektrischer Betriebsmittel müssen in-
+nerhalb des ganzen Bundesgebietes in technischer Hinsicht nach den Grundsätzen der Nor-
+malisierung und Typisierung, soweit wie möglich einheitlich, namentlich hinsichtlich der 
+Stromart, der Frequenz und der Spannung, letztere abgestuft nach dem Zweck der Anlagen, 
+ausgeführt werden. Um dies zu gewährleisten hat der Bundesminister für wirtschaftliche An-
+gelegenheiten im Verordnungswege die erforderlichen Regelungen zu treffen. In diesen 
+Verordnungen können für besondere Verhältnisse auch andere als die einheitlich festgelegten 
+Frequenzen, Stromarten oder Spannungen für zulässig erklärt werden. Der Bundesminister 
+für wirtschaftliche Angelegenheiten kann hierbei auch ÖNORMEN, Normen internationaler 
+Normungsorganisationen, in denen das Österreichische Normungsinstitut oder der Öster-
+reichische Verband für Elektrotechnik vertreten sind sowie Österreichische Bestimmungen 
+für die Elektrotechnik oder Teile von ihnen für verbindlich erklären. 
+ 
+Diese sind entweder in ihrem vollen Wortlaut in der Verordnung wiederzugeben oder sie 
+sind dort zu bezeichnen und es ist anzugeben, wo sie erhältlich sind und zur öffentlichen 
+Einsicht aufliegen. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 30/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+18 
+ 
+Sicherheitsmaßnahmen auf dem Gebiete der Elektrotechnik 
+§ 3. 
+ 
+(1) Elektrische Betriebsmittel und elektrische Anlagen sind innerhalb des ganzen Bundesge-
+bietes so zu errichten, herzustellen, instand zu halten und zu betreiben, dass ihre Betriebs-
+sicherheit, die Sicherheit von Personen und Sachen, ferner in ihrem Gefährdungs- und Stö-
+rungsbereich der sichere und ungestörte Betrieb anderer elektrischer Anlagen und Be-
+triebsmittel sowie sonstiger Anlagen gewährleistet ist. Um dies zu gewährleisten, ist gegebe-
+nenfalls bei Konstruktion und Herstellung elektrischer Betriebsmittel nicht nur auf den nor-
+malen Gebrauch sondern auch auf die nach vernünftigem Ermessen zu erwartende Benut-
+zung Bedacht zu nehmen. In anderen Rechtsvorschriften enthaltene Bestimmungen über den 
+Schutz des Lebens und der Gesundheit von Personen werden durch diese Bestimmungen 
+nicht berührt. 
+ 
+(2) Im Gefährdungs- und Störungsbereich elektrischer Anlagen und elektrischer Betriebsmittel 
+sind jene Maßnahmen zu treffen, welche für alle aufeinander einwirkenden elektrischen und 
+sonstigen Anlagen sowie Betriebsmittel zur Wahrung der elektrotechnischen Sicherheit und 
+des störungsfreien Betriebes erforderlich sind. 
+ 
+(3) Der Bundesminister für wirtschaftliche Angelegenheiten kann durch Verordnung zu den 
+Abs. 1 und 2 nähere Regelungen treffen. Insbesondere kann er Bestimmungen für die Elekt-
+rotechnik für allgemeinverbindlich erklären (Elektrotechnische Sicherheitsvorschriften). 
+Diese müssen in deutscher Sprache vorliegen und sind entweder in ihrem vollen Wortlaut in 
+der Verordnung wiederzugeben oder sie sind dort zu bezeichnen und es ist anzugeben, wo 
+sie erhältlich sind und zur öffentlichen Einsicht aufliegen.  
+ 
+ 
+§ 4. 
+ 
+(1) Auf bestehende elektrische Anlagen und elektrische Betriebsmittel, welche nach den zur 
+Zeit ihrer Errichtung beziehungsweise Herstellung in Geltung gestandenen elektrotechni-
+schen Sicherheitsvorschriften errichtet beziehungsweise hergestellt wurden, finden neue 
+elektrotechnische Sicherheitsvorschriften keine Anwendung. Für diese Anlagen und Be-
+triebsmittel bleiben im Allgemeinen die zur Zeit ihrer Errichtung beziehungsweise Herstel-
+lung in Geltung gestandenen elektrotechnischen Sicherheitsvorschriften weiter in Kraft. 
+ 
+(2) Der Bundesminister für wirtschaftliche Angelegenheiten kann jedoch generell durch Ver-
+ordnung oder die Behörde (§ 13) individuell durch Bescheid bestehende elektrische Anlagen 
+oder elektrische Betriebsmittel in den Geltungsbereich neuer elektrotechnischen Sicher-
+heitsvorschriften einbeziehen, wenn 
+ 
+a) durch die Anwendung der neuen elektrotechnischen Sicherheitsvorschriften erhebliche 
+Missstände beseitigt werden, welche die Sicherheit von Personen oder Sachen, ferner die 
+Betriebs- und Störungssicherheit der elektrischen Anlagen und elektrischen Betriebsmittel 
+sowie sonstiger Anlagen in ihrer Umgebung gefährden oder, wenn 
+
+
+===== PAGE 31/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+19 
+ 
+b) die Umstellung auf die neuen elektrotechnischen Sicherheitsvorschriften ohne größere 
+Beeinträchtigung des Betriebes durchgeführt werden kann und die Kosten der Umstellung für 
+den Verpflichteten verhältnismäßig gering sind. 
+ 
+§ 5. 
+ 
+(1) Elektrische Anlagen und elektrische Betriebsmittel dürfen im allgemeinen noch während 
+eines Übergangszeitraumes von fünf Jahren nach dem Inkrafttreten neuer elektrotechnischer 
+Sicherheitsvorschriften nach den bisher in Geltung gestandenen elektrotechnischen Sicher-
+heitsvorschriften errichtet, hergestellt und in Verkehr gebracht werden. 
+ 
+(2) Der Bundesminister für wirtschaftliche Angelegenheiten kann unter den Voraussetzungen 
+des § 4 Abs. 2 lit. a und b anlässlich der Inkraftsetzung neuer elektrotechnischer Sicherheits-
+vorschriften den Entfall oder die Verkürzung des Übergangszeitraumes nach Abs. 2 verord-
+nen. 
+ 
+(3) Der Bundesminister für wirtschaftliche Angelegenheiten kann auf Antrag für einen länge-
+ren als den nach Abs. 1 und 2 festgelegten Zeitraum bewilligen, dass elektrische Anlagen 
+oder elektrische Betriebsmittel sowie deren Bestandteile oder Ersatzteile auch nach dem In-
+krafttreten neuer elektrotechnischer Sicherheitsvorschriften (§ 3 Abs. 3) noch nach den bisher 
+in Geltung gestandenen elektrotechnischen Sicherheitsvorschriften errichtet oder hergestellt 
+und in Verkehr gebracht und verwendet werden dürfen. 
+Dies ist zulässig, wenn es sich um elektrische Anlagen handelt, die sich im Zeitpunkt des 
+Inkrafttretens der neuen elektrotechnischen Sicherheitsvorschriften bereits im Bau oder in 
+einem so fortgeschrittenen Stadium der Projektierung befinden, dass dem Erbauer der Anlage 
+die durch Anwendung der neuen elektrotechnischen Sicherheitsvorschriften bedingte Um-
+stellung nicht zugemutet werden kann oder wenn dies für die Instandhaltung oder Aufrecht-
+erhaltung des Betriebes einer bestehenden elektrischen Anlage erforderlich ist und keiner der 
+in § 4 Abs. 2 lit. a angeführten erheblichen Missstände zu erwarten ist. 
+ 
+§ 6. 
+ 
+(1) Wer wesentliche Änderungen oder Erweiterungen an bestehenden elektrischen Anlagen 
+oder elektrischen Betriebsmitteln ausführt, hat dabei jene elektrotechnischen Sicherheits-
+vorschriften, welche im Zeitpunkt des Ausführungsbeginnes solcher Arbeiten in Kraft ste-
+hen, einzuhalten. Hierbei sind auch bestehende Anlagenteile mit unmittelbarem funktionel-
+len Zusammenhang insoweit an die neuen elektrotechnischen Sicherheitsvorschriften anzu-
+passen, als dies für die einwandfreie Funktion der elektrischen Schutzmaßnahmen erforder-
+lich ist. 
+ 
+(2) Die Bestimmungen des § 5 gelten für solche Änderungen oder Erweiterungen (Abs. 1) 
+sinngemäß. 
+ 
+(3) Die nachträgliche Zuspannung von Leitern oder Leitersystemen an nicht vollbespannten 
+Tragwerken von Leitungen unterliegt den Bestimmungen jener elektrotechnischen Sicher-
+heitsvorschriften, die auf die bereits bestehende Leitung (Leitersystem) anzuwenden waren. 
+
+
+===== PAGE 32/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+20 
+Das gleiche gilt für die nachträgliche Zulegung von Starkstromkabeln in Gräben, Kanälen 
+oder Rohren. 
+Nachweise der Erfüllung der Sicherheitsanforderungen 
+§ 7. 
+ 
+(1) Der Bundesminister für wirtschaftliche Angelegenheiten kann zur Vermeidung einer Ge-
+fährdung des Lebens oder der Gesundheit von Menschen oder zur Abwehr einer erhebli-
+chen Gefahr für Sachen oder zur Sicherung des ungestörten Betriebes anderer elektrischer 
+Anlagen oder wenn auf Grund internationaler Abkommen hierzu eine Verpflichtung besteht, 
+durch Verordnung elektrische Betriebsmittel bestimmen, für die ein Nachweis der Erfüllung 
+der Anforderungen gemäß § 3 Abs. 1 und 2 zu erbringen ist, bevor sie erstmalig in Verkehr 
+gebracht werden. 
+ 
+(2) Der Bundesminister für wirtschaftliche Angelegenheiten kann unter den Voraussetzungen 
+des Abs. 1 durch Verordnung elektrische Betriebsmittel bezeichnen, die ohne einen Nach-
+weis nach Abs. 1 in Verkehr gebracht werden dürfen, für die ein solcher Nachweis aber er-
+bracht werden kann. 
+ 
+(3) Dient die Verordnung nach Abs. 1 nicht dem Zweck der Erfüllung der Verpflichtungen 
+aus internationalen Abkommen, so ist ihre Geltungsdauer mit drei Jahren zu befristen. 
+ 
+(4) Nachweise nach Abs. 1 oder 2 sind: 
+1. Bescheinigungen unabhängiger österreichischer Stellen über die Erfüllung der Anforde-
+rungen gemäß § 3 Abs. 1 und 2. Diese Stellen müssen hierzu gesetzlich befugt sein (Akkredi-
+tierungsgesetz - AkkG, BGBl. Nr. 468/1992). Der Bundesminister für wirtschaftliche Angele-
+genheiten kann durch Verordnung oder Bescheid auch im Ausland ausgestellte Bescheini-
+gungen anerkennen, wenn sie den in Österreich ausgestellten gleichwertig sind und Gegen-
+seitigkeit besteht. 
+2. Vom Hersteller oder Importeur angebrachte Zeichen, die die Erfüllung der Anforderungen 
+gemäß § 3 Abs. 1 und 2 bestätigen. Der Bundesminister für wirtschaftliche Angelegenheiten 
+kann durch Verordnung oder Bescheid auch von ausländischen Herstellern oder Importeuren 
+angebrachte Zeichen anerkennen, wenn die Bedingungen, unter denen sie angebracht wer-
+den dürfen, den in Österreich geltenden gleichwertig sind und Gegenseitigkeit besteht. 
+3. Bestätigungen des Herstellers oder Importeurs über die Erfüllung der Anforderungen ge-
+mäß § 3 Abs. 1 und 2. Der Bundesminister für wirtschaftliche Angelegenheiten kann durch 
+Verordnung oder Bescheid auch von ausländischen Herstellern oder Importeuren abgegebe-
+ne Bestätigungen anerkennen, wenn die Bedingungen, unter denen sie abgegeben werden 
+dürfen, den in Österreich geltenden gleichwertig sind und Gegenseitigkeit besteht. 
+ 
+§ 8. 
+ 
+(1) (Verfassungsbestimmung) Beim Betrieb einer elektrischen Anlage oder eines elektrischen 
+Betriebsmittels ist, unter Bedachtnahme auf den Zweck des Betriebes, auf den geringstmög-
+lichen Energieverbrauch zu achten. 
+ 
+ 
+ 
+
+
+===== PAGE 33/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+21 
+ 
+Die Überwachung elektrischer Anlagen und elektrischer Betriebsmittel 
+§ 9. 
+ 
+(1) Elektrische Anlagen und das Inverkehrbringen elektrischer Betriebsmittel unterliegen hin-
+sichtlich der Einhaltung der Bestimmungen dieses Bundesgesetzes und der auf seiner Grund-
+lage erlassenen Verordnungen nach Maßgabe der folgenden Absätze der Überwachung 
+durch die zuständige Behörde (§ 13). In anderen Rechtsvorschriften enthaltene Bestimmun-
+gen über die Überwachung von Betriebseinrichtungen und Betriebsmitteln werden hierdurch 
+nicht berührt. Die das Inverkehrbringen elektrischer Betriebsmittel betreffenden Bestimmun-
+gen der Absätze 2 bis 10 sind auf elektrische Betriebsmittel, die im Rahmen einer gewerbs-
+mäßig ausgeübten Tätigkeit betrieben oder zum Betrieb bereitgehalten werden, sinngemäß 
+mit der Maßgabe anzuwenden, dass an die Stelle der im Abs. 4 Z 2 vorgesehenen Maßnah-
+me die Untersagung des Betriebes des betreffenden elektrischen Betriebsmittels tritt. 
+ 
+(2) Wer eine elektrische Anlage betreibt oder gewerbsmäßig elektrische Betriebsmittel in 
+Verkehr bringt (§ 3 Abs. 9), hat den mit der Überwachung und sicherheitstechnischen Prü-
+fung betrauten Personen Zutritt - bei Gefahr im Verzuge jederzeit - zu der elektrischen Anla-
+ge bzw. zu denjenigen Örtlichkeiten, an denen elektrische Betriebsmittel in Verkehr gebracht 
+werden, zu ermöglichen, jede erforderliche Unterstützung zu gewähren und ihnen die nöti-
+gen Auskünfte, insbesondere auch über die Herkunft und die Abnehmer elektrischer Be-
+triebsmittel, zu erteilen sowie die sicherheitstechnische Prüfung und eine zu ihrer Durchfüh-
+rung unerlässliche vorübergehende Inbetriebnahme oder Außerbetriebnahme der elektri-
+schen Anlage und elektrischer Betriebsmittel zu dulden. Bei der Überwachung und sicher-
+heitstechnischen Prüfung elektrischer Anlagen und elektrischer Betriebsmittel ist jede nicht 
+unbedingt notwendige Störung oder Behinderung des Geschäftsbetriebes oder Betriebsablau-
+fes zu vermeiden. 
+ 
+(3) Wird festgestellt, dass der Zustand oder Betrieb einer elektrischen Anlage oder dass ein 
+elektrisches Betriebsmittel diesem Bundesgesetz oder den auf seiner Grundlage erlassenen 
+Verordnungen nicht entspricht, hat die Behörde dem Betreiber der elektrischen Anlage oder 
+dem über das elektrische Betriebsmittel Verfügungsberechtigten mit Bescheid aufzutragen, 
+den gesetzmäßigen Zustand innerhalb einer gleichzeitig festzusetzenden angemessenen Frist 
+herzustellen. Als Verfügungsberechtigter gilt der Geschäfts- oder Betriebsinhaber, sein Stell-
+vertreter oder Beauftragter sowie jede sonstige, offenkundig mit der tatsächlichen Leitung des 
+Betriebes betraute Person, als Betreiber der Anlage, deren Eigentümer, dessen Stellvertreter 
+oder Beauftragte, subsidiär der Anlageninhaber sowie jede sonstige, offenkundig mit der tat-
+sächlichen Betriebsaufsicht betraute Person. 
+ 
+Ausnahmebewilligungen 
+§ 11. 
+ 
+Der Bundesminister für wirtschaftliche Angelegenheiten kann über begründetes Ansuchen in 
+einzelnen, durch örtliche oder sachliche Verhältnisse bedingten Fällen, Ausnahmen von der 
+Anwendung bestimmter elektrotechnischer Sicherheitsvorschriften bewilligen, wenn die 
+elektrotechnische Sicherheit im gegebenen Falle gewährleistet erscheint. 
+ 
+
+
+===== PAGE 34/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+22 
+ 
+Befugnis zur Herstellung, Änderung oder Instandhaltung von elektrischen Anlagen und 
+elektrischen Betriebsmitteln 
+§ 12. 
+ 
+(1) Die Befugnis zur gewerbsmäßigen Herstellung, Änderung oder Instandhaltung von 
+elektrischen Anlagen und Betriebsmitteln richtet sich nach den gewerberechtlichen Vor-
+schriften. Die Bestimmungen des Ziviltechnikergesetzes, BGBl. Nr. 146/1957 in der jeweils 
+geltenden Fassung, bleiben dadurch unberührt. 
+ 
+(2) Die nicht gewerbsmäßige Herstellung, Änderung oder Instandhaltung von elektrischen 
+Anlagen und elektrischen Betriebsmitteln ist nur solchen Personen gestattet, welche die hier-
+zu erforderlichen fachlichen Kenntnisse und Fähigkeiten besitzen oder die Arbeit wenigstens 
+unter der Aufsicht solcher Personen durchführen. 
+ 
+(3) Diese Kenntnisse und Fähigkeiten (Abs. 2) sind insbesondere bei jenen Personen anzu-
+nehmen, bei denen die Voraussetzungen für die Erlangung der Befugnis zur Installation der 
+betreffenden elektrischen Anlagen beziehungsweise der elektrischen Betriebsmittel gegeben 
+sind. 
+ 
+(4) Das Erfordernis einer Bewilligung zur Herstellung von Funkanlagen gemäß § 4 Abs. 2 des 
+Fernmeldegesetzes, BGBl. Nr. 170/1949, bleibt durch die Abs. 1 bis 3 unberührt. 
+ 
+Zentralstatistik elektrischer Unfälle 
+§ 15. 
+ 
+(1) Der Bundesminister für wirtschaftliche Angelegenheiten hat eine Zentralstatistik der 
+Personenunfälle durch elektrischen Strom oder Blitzschlag zu führen. Diese ist nach der 
+Unfallursache, dem Unfallhergang, dem Unfallort, den Unfallfolgen, den technischen Gege-
+benheiten der elektrischen Anlage und allgemeinen Merkmalen der Unfallopfer aufzuschlüs-
+seln. Sie ist jährlich abzuschließen und ihre Ergebnisse sind zu veröffentlichen. 
+ 
+(2) Die dem Bundesminister für wirtschaftliche Angelegenheiten zur Verfügung stehenden 
+Rohdaten und alle daraus abgeleiteten Daten über die Personenunfälle durch elektrischen 
+Strom oder Blitzschlag dürfen anderen Personen oder Institutionen, die ein begründetes Inte-
+resse nachweisen können, zur wissenschaftlichen Auswertung überlassen werden, wenn die-
+se in einer Form erfolgt die einen Rückschluss auf einzelne Personen nicht zulässt. 
+ 
+(3) Werden durch elektrischen Strom einer elektrischen Anlage, eines elektrischen Be-
+triebsmittels oder durch Blitzschlag Personen getötet oder gesundheitlich geschädigt, so ist 
+dies der nächsten Polizei- oder Gendarmeriedienststelle, bei den der bergbehördlichen Auf-
+sicht unterstehenden Betrieben der zuständigen Berghauptmannschaft, unverzüglich mitzu-
+teilen. 
+ 
+(4) Zur Mitteilung ist derjenige verpflichtet, der die elektrische Anlage oder das elektrische 
+Betriebsmittel betreibt. Wenn dieser dazu nicht in der Lage ist oder bei Unfällen durch Blitz-
+schlag ist jeder, der das Ereignis oder seine Folgen wahrnimmt, zur Mitteilung verpflichtet. 
+
+
+===== PAGE 35/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+23 
+ 
+Strafbestimmung 
+§ 17. 
+ 
+(1) Sofern die Tat nicht den Tatbestand einer in die Zuständigkeit der Gerichte fallenden 
+strafbaren Handlung bildet, begeht eine Verwaltungsübertretung und ist von der Bezirksver-
+waltungsbehörde (Berghauptmannschaft) mit Geldstrafe  
+ 
+1. bis 350 000 S zu bestrafen, wer 
+ 
+a) ein elektrisches Betriebsmittel oder eine elektrische Anlage, die (das) den Bestimmungen 
+des § 3 oder den Bedingungen einer gemäß § 5 Abs. 3 oder § 11 erteilten Bewilligung nicht 
+entspricht, herstellt bzw. errichtet, 
+b) ein elektrisches Betriebsmittel entgegen den Bestimmungen des § 3 Abs. 9 oder nach Ab-
+lauf der gemäß § 5 Abs. 1 und 2 festgesetzten Frist oder nicht in Übereinstimmung mit den 
+Bedingungen einer gemäß § 11 erteilten Bewilligung in Verkehr bringt, 
+c) einen der in § 7 Abs. 4 genannten Nachweise der Erfüllung der Sicherheitsanforderungen 
+anbringt, verwendet, vorlegt oder sonst führt, ohne hierzu berechtigt zu sein, 
+d) einer behördlichen Verfügung gemäß § 9 Abs. 3 auch nach Ablauf einer Nachfrist nicht 
+nachkommt, 
+e) ein elektrisches Betriebsmittel ungeachtet einer gemäß § 9 Abs. 3, Abs. 4 Z 2 oder Abs. 5 
+erlassenen Verfügung in Verkehr bringt oder betreibt, 
+f) eine elektrische Anlage unter Missachtung einer gemäß § 9 Abs. 4 Z 1 erlassenen Verfü-
+gung betreibt, 
+g) ein elektrisches Betriebsmittel oder eine elektrische Anlage entgegen den Bestimmungen 
+der Elektrotechnikverordnung 1990 - ETV 1990 betreibt, verwendet, errichtet, ändert oder 
+instand hält; 
+ 
+2. bis 200 000 S zu bestrafen, wer 
+ 
+a) eine elektrische Anlage oder ein elektrisches Betriebsmittel nicht in einer den Bestimmun-
+gen des § 3 Abs. 1 entsprechenden Weise betreibt oder instand hält oder die gemäß § 3 Abs. 
+2 erforderlichen Maßnahmen nicht trifft, 
+b) den sich aus § 9 Abs. 2 ergebenden Verpflichtungen nicht nachkommt; 
+ 
+3. bis 100 000 S zu bestrafen, wer 
+ 
+a) eine elektrische Anlage oder ein elektrisches Betriebsmittel unter Außerachtlassung der 
+Bestimmungen des § 6 wesentlich abändert oder erweitert, 
+b) ein elektrisches Betriebsmittel entgegen den Bestimmungen einer gemäß § 7 Abs. 1 erlas-
+senen Verordnung ohne die vorgeschriebenen Nachweise der Erfüllung der Sicherheitsanfor-
+derungen in Verkehr bringt, 
+c) eine elektrische Anlage oder ein elektrisches Betriebsmittel entgegen den Bestimmungen 
+des § 8 oder einer auf seiner Grundlage erlassenen Verordnung betreibt oder in Verkehr 
+bringt, 
+d) eine elektrische Anlage oder ein elektrisches Betriebsmittel errichtet bzw. herstellt, instand 
+hält oder ändert, ohne hierzu gemäß § 12 berechtigt zu sein, 
+
+
+===== PAGE 36/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+24 
+e) die Meldung eines Personenunfalles durch elektrischen Strom oder Blitzschlag unterlässt, 
+obwohl er gemäß § 15 Abs. 4 hierzu verpflichtet wäre. 
+ 
+(2) Bei der Bemessung der Geldstrafe gemäß Abs. 1 ist auf die mit der begangenen Tat ver-
+bundene Gefährdung und darauf, ob die Tat gewerbsmäßig begangen wurde, Bedacht zu 
+nehmen. 
+ 
+(3) Erfolgt die Anzeige durch die Behörde (§ 13), so kann mit der Anzeige zugleich ein Straf-
+ausmaß beantragt werden. Die Bezirksverwaltungsbehörde hat in diesem Fall ohne Verzug, 
+längstens jedoch binnen zwei Wochen, das Strafverfahren einzuleiten. Kommt die Bezirks-
+verwaltungsbehörde im Verfahren zu der Ansicht, dass das Strafverfahren einzustellen oder 
+eine niedrigere Strafe zu verhängen ist, als von der Behörde (§ 13) beantragt, so hat sie, bevor 
+das Strafverfahren eingestellt oder der Bescheid erlassen wird, der Behörde (§ 13) Gelegen-
+heit zur Stellungnahme zu geben. Eine schriftliche Ausfertigung des Bescheides ist der Be-
+hörde (§ 13) in 
+allen Fällen zuzustellen. 
+ 
+(4) Im Strafverfahren kommt der Behörde (§ 13) das Recht der Berufung zu. 
+ 
+Vollziehung 
+§ 20. 
+ 
+Mit der Vollziehung dieses Bundesgesetzes ist - soweit sich aus § 14 nichts anderes ergibt - 
+der Bundesminister für wirtschaftliche Angelegenheiten betraut, welcher Hierbei das Einver-
+nehmen mit dem nach der Art und Verwendung der elektrischen Anlage beziehungsweise 
+des elektrischen Betriebsmittels in Betracht kommenden Bundesminister herzustellen hat. 
+ 
+Klestil 
+ 
+Vranitzky 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 37/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+25 
+7.1 
+Änderung zum ETG 1992 – 2015 und 2017 
+Quelle BGBL Nr. 129 / ausgegeben  06. November 2015 
+Quelle BGBL Nr. 27 / ausgegeben 18. Jänner 2017 
+ 
+Um das Elektrotechnikgesetz an aktuelle Gegebenheiten anzupassen wurde in den vergan-
+genen Jahren das ETG zweimal geändert. Die entsprechenden Änderungen sind über das 
+Rechtsinformationssystem verfügbar. 
+ 
+So wurden z.B. Begriffsdefinitionen hinzugefügt, das Thema Normung bearbeitet und auch 
+die Strafbestimmungen in Euro umgerechnet. 
+ 
+
+
+===== PAGE 38/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+26 
+8 
+DIE ELEKTROTECHNIKVERORDNUNG - AUSZUG 
+Quelle BGBL Nr. 222 / ausgegeben 13. Juni 2002 
+8.1 
+ETV2002 (13. Juni 2002) 
+Verordnung: Elektrotechnikverordnung  2002 - ETV 2002 
+ 
+BGBl. II Nr. 222/2002 
+Verordnung des Bundesministers für Wirtschaft und Arbeit über Sicherheit, Normalisierung 
+und Typisierung elektrischer Betriebsmittel und Anlagen sowie sonstiger Anlagen im Gefähr-
+dungs- und Störungsbereich elektrischer Anlagen ( Elektrotechnikverordnung 2002 - ETV 
+2002) 
+ 
+Auf Grund des § 2, des § 3 Abs. 3, des § 4 Abs. 2, des § 5 Abs. 2 und des § 7 Abs. 2, 5 und 6 
+des Elektrotechnikgesetzes 1992 – ETG 1992, BGBl. Nr. 106/1993, in der Fassung des Bun-
+desgesetzes BGBl. I Nr. 136/2001 sowie des § 181 des Mineralrohstoffgesetzes, BGBl. I Nr. 
+38/1999, zuletzt geändert durch BGBl. I Nr. 98/2001, wird verordnet: 
+ 
+Gegenstand 
+§ 1. 
+ 
+(1) Gegenstand dieser Verordnung sind elektrische Betriebsmittel und elektrische Anlagen 
+sowie sonstige Anlagen im Gefährdungs- und Störungsbereich elektrischer Anlagen. 
+ 
+(2) Elektrische Betriebsmittel und elektrische Anlagen, die auch Gegenstand anderer auf der 
+Grundlage des ETG 1992 erlassener Verordnungen sind, unterliegen dieser Verordnung nur 
+hinsichtlich jener Anforderungen des § 3 Abs. 1 und 2 ETG 1992, die nicht durch diese an-
+deren Verordnungen geregelt sind. 
+ 
+Verbindliche Bestimmungen und Normen (SNT-Vorschriften) 
+§ 2. 
+ 
+(1) Die im Anhang III abgedruckten elektrotechnischen Sicherheitsvorschriften und Vorschrif-
+ten über Normalisierung und Typisierung (in dieser Verordnung als "SNT-Vorschriften" be-
+zeichnet) werden für verbindlich erklärt. 
+ 
+(2) Die gemäß Anhang I der ETV 1996, BGBl. Nr. 105/1996, verbindlichen und in den An-
+hängen zur ETV 1993, BGBl. Nr. 47/1994, und zur ETV 1996 abgedruckten SNT-Vorschriften 
+bleiben weiterhin verbindlich, ausgenommen die im Anhang II aufgezählten, deren Verbind-
+lichkeit aufgehoben wird. 
+ 
+(3) Die nach Abs. 1 und 2 verbindlichen SNT-Vorschriften sind in Anhang I zusammenge-
+fasst. 
+ 
+ 
+
+
+===== PAGE 39/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+27 
+ 
+§ 3. 
+ 
+Die in den SNT-Vorschriften enthaltenen Rechtsbelehrungen, Einleitungen, Fußnoten, An-
+hänge und Hinweise auf Fundstellen und andere Texte (zB technische Bestimmungen, Nor-
+men und Rechtsvorschriften), sowie die in der Inhaltsübersicht des Anhanges ausdrücklich 
+ausgenommenen Teile von SNT-Vorschriften werden von der Verbindlicherklärung nicht 
+erfasst. 
+ 
+ 
+Sichere elektrische Anlagen und elektrische Betriebsmittel 
+§ 5. 
+ 
+(1) Elektrische Betriebsmittel und elektrische Anlagen entsprechen den Erfordernissen des § 2 
+und des § 3 Abs. 1 und 2 ETG 1992 
+1. unter den im allgemeinen zu erwartenden örtlichen oder sachlichen Verhältnissen immer, 
+2. unter besonderen örtlichen oder sachlichen Verhältnissen, sofern diese in den SNT-
+Vorschriften berücksichtigt worden sind, wenn sie den jeweils für sie in Betracht kommenden 
+SNT-Vorschriften entsprechend hergestellt, errichtet, in Verkehr gebracht, instand gehalten 
+und betrieben werden. Andernfalls sind zur Erfüllung der Erfordernisse des ETG 1992 den 
+besonderen örtlichen oder sachlichen Verhältnissen jeweils Rechnung tragende Maßnahmen 
+zu treffen. 
+ 
+(2) Elektrische Betriebsmittel entsprechen den Erfordernissen des § 2 und des § 3 Abs. 1 und 
+2 ETG 1992 auch dann, wenn sie, unter Beachtung der übrigen Bedingungen des Abs. 1, 
+nach Normen eines anderen Mitgliedstaates der Europäischen Union oder einer Vertragspar-
+tei des Europäischen Wirtschaftsraumes hergestellt wurden, sofern diese Normen hinsichtlich 
+der Sicherheit, Normalisierung und Typisierung den in Betracht kommenden SNT-
+Vorschriften gleichwertig sind. 
+ 
+§ 6. 
+ 
+Nichtelektrische Anlagen im Gefährdungs- und Störungsbereich elektrischer Anlagen ent-
+sprechen den Erfordernissen des § 3 Abs. 2 ETG 1992 
+1. unter den im allgemeinen zu erwartenden örtlichen oder sachlichen Verhältnissen immer, 
+2. unter besonderen örtlichen oder sachlichen Verhältnissen, sofern diese in den SNT-
+Vorschriften berücksichtigt worden sind, wenn jene Maßnahmen getroffen werden, die in 
+den jeweils für sie in Betracht kommenden SNT-Vorschriften festgelegt sind. Andernfalls sind 
+zur Erfüllung der Erfordernisse des § 3 Abs. 2 ETG 1992 den besonderen örtlichen oder sach-
+lichen Verhältnissen jeweils Rechnung tragende Maßnahmen zu treffen. 
+ 
+§ 7. 
+ 
+Elektrischen Betriebsmitteln, die üblicherweise von elektrotechnisch Fachunkundigen be-
+nützt werden, ist eine Gebrauchsanweisung in deutscher Sprache beizufügen, die jedenfalls 
+Angaben über die Funktion des Betriebsmittels, die ordnungsgemäße Installation, Verwen-
+dung und Wartung zu enthalten hat. Kann das gleiche Ziel auch durch bildliche Darstellun-
+
+
+===== PAGE 40/167 =====
+ 
+ 
+ 
+ELEKTROTECHNISCHE SICHERHEITSVORSCHRIFTEN 
+ 
+ 
+www.wifi.at 
+28 
+gen erreicht werden, so ist dies ersatzweise oder zusätzlich ebenfalls zulässig. Von dieser 
+Bestimmung ausgenommen sind nur jene einfachen elektrischen Betriebsmittel, deren Ge-
+brauch auch elektrotechnisch Fachunkundigen geläufig ist, zB Glühlampen, Verlängerungs-
+leitungen, Tischleuchten. Aus Aufschriften an dem elektrischen Betriebsmittel oder auf der 
+Verpackung oder aus der Gebrauchsanweisung muss jedenfalls stets der Hersteller und, bei 
+Produkten, die weder in einem Mitgliedstaat der Europäischen Union noch in einer Vertrags-
+partei des Europäischen Wirtschaftsraumes hergestellt wurden, der für das erstmalige In-
+Verkehr-Bringen im Europäischen Wirtschaftsraum Verantwortliche ersichtlich sein. 
+ 
+Zertifizierungszeichen 
+§ 8. 
+ 
+(1) Bei elektrischen Betriebsmitteln und Anlagen ist die Übereinstimmung mit allen anzu-
+wendenden elektrotechnischen Sicherheitsvorschriften und Vorschriften über Normalisierung 
+und Typisierung (SNT-Vorschriften) anzunehmen, wenn diese das folgende Zeichen tragen: 
+(Anm.: Zeichen nicht darstellbar) 
+ 
+(2) Dem Zeichen des Abs. 1 sind Zertifizierungszeichen eines anderen Mitgliedstaates der 
+Europäischen Union oder einer Vertragspartei des Europäischen Wirtschaftsraumes gleichzu-
+halten, sofern diese Zertifizierungszeichen nach gleichwertigen Bedingungen wie das Zei-
+chen des Abs. 1 vergeben werden. 
+ 
+Sonderbestimmungen 
+§ 9. 
+ 
+(1) Elektrische Anlagen im Geltungsbereich der SNT-Vorschriften ÖVE-EN 1 bzw. Ö-
+VE/ÖNORM E 8001 sind ab einem Jahr nach In-Kraft-Treten dieser Verordnung nach die-
+sen SNT-Vorschriften zu errichten. 
+ 
+(2) Die SNT-Vorschrift ÖVE EN 1, Teil 3 (§ 41):1995-03 ist mit folgender Änderung anzu-
+wenden: 
+ 
+Abschnitt 41.8.4.3 (1) lautet: "(1) für Verbindungsleitungen oder -kabel, die Generatoren, 
+Transformatoren, Gleichrichter oder Akkumulatoren mit deren Schaltanlage verbinden. Der 
+Entfall des Kurzschlussschutzes darf nur dann in Anspruch genommen werden, wenn die 
+Verbindungsleitung den Nutzungsbereich der jeweiligen "abgeschlossenen elektrischen Be-
+triebsräume" nicht verlässt. Beim Verlassen des Bereiches ist jedoch immer ein Kurzschluss-
+schutz vorzusehen." 
+ 
+ 
+(4) Bei der Errichtung von Blitzschutzanlagen nach der SNT-Vorschrift ÖVE/ÖNORM E 
+8049-1:2001-04-01 sind diese mindestens nach Schutzklasse III auszuführen. 
+ 
+ 

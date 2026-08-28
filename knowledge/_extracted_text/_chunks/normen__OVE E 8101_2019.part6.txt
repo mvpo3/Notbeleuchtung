@@ -1,0 +1,3249 @@
+
+
+===== PAGE 241/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-46 – Seite 3 
+463.1.001.AT 
+Einpolige Wechselschalter müssen bei einer Wechselschaltung im (selben) Außenleiter 
+angeschlossen sein (siehe Bild 46.001.AT). 
+ 
+Bild 46.001.AT – Zulässige und unzulässige Ausführung der Wechselschaltung 
+463.1.3 Im Allgemeinen müssen alle elektrischen Verbrauchsmittel, für die ein betriebsmäßiges Schalten 
+gefordert wird, durch ein dafür geeignetes Schaltgerät geschaltet werden. 
+Ein einzelnes Schaltgerät zum betriebsmäßigen Schalten darf mehrere Verbrauchsmittel schalten, die für 
+gleichzeitigen Betrieb vorgesehen sind. 
+463.1.4 Schaltgeräte zum betriebsmäßigen Schalten, die das Umschalten alternativer Versorgungen 
+sicherstellen, müssen alle aktiven Leiter ausschalten und dürfen die Parallelschaltung mehrerer 
+Einspeisequellen nicht zulassen, es sei denn, die Anlage ist speziell für diese Betriebsart ausgelegt. 
+463.2 
+Hilfsstromkreise (Steuerstromkreise) 
+Hilfsstromkreise müssen so geplant, angeordnet und geschützt sein, dass Gefahren begrenzt werden, die 
+durch einen Fehler innerhalb des Hilfsstromkreises oder durch einen Isolationsfehler zwischen dem 
+Hilfsstromkreis 
+und 
+anderen 
+leitfähigen 
+Teilen 
+sowie 
+daraus 
+resultierende 
+Fehlfunktionen 
+(zB 
+unbeabsichtigten Betrieb) des gesteuerten Gerätes entstehen können (siehe auch Abschnitt 557). 
+463.3 
+Motorsteuerungen 
+463.3.1 Motorsteuerstromkreise müssen so ausgelegt sein, dass sie den automatischen Wiederanlauf eines 
+Motors nach einem Stillstand durch Einbruch oder Ausfall der Spannung verhindern, wenn dieser 
+Wiederanlauf eine Gefahr hervorrufen kann. 
+Erdschlüsse in Steuerstromkreisen dürfen keinen ungewollten Wiederanlauf oder möglicherweise Gefahr 
+hervorrufende Bewegungen verursachen oder die Stillsetzung eines Motors verhindern. 
+463.3.2 Wenn Motor-Gegenstrombremsung vorgesehen ist, müssen Vorkehrungen zur Vermeidung der 
+Drehrichtungsumkehr nach Beendigung des Bremsvorgangs getroffen werden, wenn eine Umkehr Gefahr 
+hervorrufen kann. 
+463.3.3 Wenn eine falsche Drehrichtung eines Motors eine Gefahr hervorrufen kann, müssen Vorkehrungen 
+zur Verhinderung der falschen Drehrichtung infolge einer Phasenumkehr getroffen werden. 
+ANMERKUNG 
+Es wird auf die Gefahr hingewiesen, die durch einen Phasenausfall entstehen kann. 
+464 Ausschalten für mechanische Instandhaltung 
+464.1 
+Wenn die mechanische Instandhaltung ein Verletzungsrisiko einschließt, müssen Einrichtungen 
+zum Ausschalten vorhanden sein. 
+Diese Einrichtungen zum Ausschalten müssen zum Trennen geeignet sein und alle aktiven Leiter abschalten, 
+ausgenommen wie in 461.2 beschrieben. 
+ANMERKUNG 1.AT 
+Elektrisch versorgte mechanische Betriebsmittel können sowohl drehende Maschinen als auch 
+Heizelemente und elektromagnetische Geräte einschließen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 242/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-46 – Seite 4 
+Für elektrisch versorgte Betriebsmittel, die in den Anwendungsbereich der ÖVE/ÖNORM EN 60204-1 fallen, 
+gelten die dort enthaltenen Anforderungen. 
+ANMERKUNG 2.AT 
+Systeme, die mit anderen Energien betrieben werden, zB Pneumatik, Hydraulik, Dampf, sind 
+durch diese Anforderung nicht abgedeckt. In solchen Fällen kann die alleinige Ausschaltung einer zugeordneten 
+elektrischen Versorgung unzureichend sein. 
+464.2 
+Es müssen geeignete Einrichtungen oder Maßnahmen vorhanden sein, die ein unbeabsichtigtes 
+Wiedereinschalten elektrisch versorgter Betriebsmittel während der mechanischen Wartung verhindern, es 
+sei denn die Einrichtung zum Ausschalten ist unter der dauernden Kontrolle einer Person, die diese Wartung 
+durchführt. 
+465 Not-Ausschaltung (Ausschalten im Notfall) 
+ANMERKUNG 
+Im informativen Anhang 46.A sind Erläuterungen bezüglich Handlungen im Notfall enthalten. 
+465.1 
+Für jeden Anlagenteil, bei dem es notwendig sein kann auf die Versorgung Einfluss zu nehmen, um 
+eine unerwartete Gefährdung abzuwenden, müssen Einrichtungen für das Ausschalten im Notfall vorhanden 
+sein. 
+465.2 
+Wenn die Gefahr eines elektrischen Schlags oder andere elektrisch verursachte Risiken bestehen, 
+muss die Einrichtung zum Ausschalten im Notfall zum Trennen geeignet sein und alle aktiven Leiter 
+abschalten, ausgenommen wie in 461.2 beschrieben. 
+465.3 
+Einrichtungen zum Ausschalten im Notfall müssen so direkt wie möglich auf die betreffenden 
+Versorgungsleiter einwirken. 
+Die Einrichtung muss so ausgeführt sein, dass eine einzige Handlung die betreffenden Versorgungen 
+unterbricht. 
+465.4 
+Die Einrichtung zum Schalten im Notfall muss so ausgeführt sein, dass ihre Betätigung (Ein- und 
+Ausschalten) weder eine weitere Gefahr hervorruft noch den vollständigen Prozess beeinträchtigt, der 
+notwendig ist, die Gefahr zu beseitigen. 
+Die Wirkungsweise der Einrichtung zum Schalten im Notfall darf die Wirksamkeit von Schutzeinrichtungen 
+sowie andere Sicherheitsfunktionen nicht beeinträchtigen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 243/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-46 – Seite 5 
+Anhang 46.A 
+(informativ) 
+ 
+Erläuterungen bezüglich Handlungen im Notfall 
+46.A.1 
+Allgemeines 
+Dieses Konzept dient dazu, den Gebrauch von Begriffen im Zusammenhang mit „Notfällen“ zu 
+vereinheitlichen. Sie werden hier angeführt, um dem Leser das Verständnis für den Anwendungsbereich 
+solcher Begriffe zu erleichtern, obwohl in dieser Norm nur einer von ihnen benutzt wird. 
+46.A.2 
+Handlung im Notfall 
+Eine Handlung, die vorgesehen ist, so schnell wie möglich eine Gefahr, die unerwartet aufgetreten ist, zu 
+beseitigen. 
+Eine Handlung im Notfall schließt einzeln oder in Kombination ein: 
+– 
+Not-Halt (Stillsetzen im Notfall), 
+– 
+Ingangsetzen im Notfall, 
+– 
+Not-Ausschaltung (Ausschalten im Notfall), 
+– 
+Einschalten im Notfall. 
+46.A.3 
+Not-Halt (Stillsetzen im Notfall) 
+Eine Handlung im Notfall, die dazu bestimmt ist, einen Prozess oder eine Bewegung anzuhalten, der (die) 
+gefahrbringend wurde. 
+46.A.4 
+Ingangsetzen im Notfall 
+Eine Handlung im Notfall, die dazu bestimmt ist, einen Prozess oder eine Bewegung zu starten, um eine 
+gefahrbringende Bedingung zu beseitigen oder zu verhindern. 
+46.A.5 
+Not-Ausschaltung (Ausschalten im Notfall) 
+Eine Handlung im Notfall, die dazu bestimmt ist, die Versorgung mit elektrischer Energie zu einer ganzen 
+Anlage oder zu einem Teil einer Anlage abzuschalten, falls ein Risiko für einen elektrischen Schlag oder ein 
+anderes Risiko elektrischen Ursprungs besteht. 
+46.A.6 
+Einschalten im Notfall 
+Eine Handlung im Notfall, die dazu bestimmt ist, die Versorgung mit elektrischer Energie zu einem Teil einer 
+Anlage einzuschalten, die für Notfall-Situationen vorgesehen ist. 
+ANMERKUNG 
+Die Worte „Schalten im Notfall“ können sowohl ein Ausschalten im Notfall als auch ein Einschalten im 
+Notfall beinhalten. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 244/758 =====
+OVE E 8101:2019-01-01 
+Teil 4-46 – Seite 6 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 245/758 =====
+OVE E 8101:2019-01-01 
+Teil 5 – Seite 1 
+Teil 5 Auswahl, Montage und Installation elektrischer Betriebsmittel 
+Teil 5-51  
+Allgemeine Bestimmungen 
+Teil 5-52  
+Kabel- und Leitungsanlagen 
+Teil 5-53  
+Schalt- und Steuergeräte 
+Teil 5-54  
+Erdungsanlagen, Schutzleiter und Schutzpotentialausgleichsleiter 
+Teil 5-55  
+Andere elektrische Betriebsmittel 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 246/758 =====
+OVE E 8101:2019-01-01 
+Teil 5 – Seite 2 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 247/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 1 
+Teil 5-51 Allgemeine Bestimmungen 
+Inhalt 51 
+510.1 
+Anwendungsbereich 
+510.2 
+Normative Verweisungen 
+510.3 
+Allgemeine Anforderungen 
+511 
+Übereinstimmung mit Normen 
+511.1 
+Allgemeines 
+511.2 
+Zusätzliche Anforderungen bezüglich Erklärung des Herstellers 
+512 
+Betriebsbedingungen und äußere Einflüsse 
+512.1 
+Betriebsbedingungen 
+512.2 
+Äußere Einflüsse 
+513 
+Zugänglichkeit 
+514 
+Kennzeichen 
+514.1 
+Allgemeines 
+514.2 
+Kabel- und Leitungsanlagen 
+514.3 
+Kennzeichnung von Leitern 
+514.4 
+Schutzeinrichtungen 
+514.5 
+Schaltpläne und Dokumentation 
+515 
+Vermeidung gegenseitiger nachteiliger Beeinflussung 
+515.3 
+Elektromagnetische Verträglichkeit 
+516 
+Maßnahmen bezüglich Schutzleiterströmen 
+516.1 
+Transformatoren 
+516.2 
+Informationssysteme 
+Anhang 51.A (informativ)  Kurzfassung der äußeren Einflüsse (Umgebungseinflüsse) 
+Anhang 51.ZA (informativ)  Äußere Einflüsse (Umgebungseinflüsse) 
+Anhang 51.ZB (informativ)  Kennzeichnung von PEN-Leitern in verschiedenen Ländern 
+Anhang 51.ZC (informativ)  Kennzeichnung von Adern 
+Nationale Ergänzung 51.NE (normativ)  Kennzeichnung von Leitern – Ergänzende Anforderungen zu 514.3 
+sowie ergänzende nationale Anforderungen 
+ 
+ 
+510.1 
+Anwendungsbereich 
+Dieser Teil behandelt die Auswahl von elektrischen Betriebsmitteln und deren Installation. 
+Er enthält gemeinsame Regeln und Anforderungen 
+– 
+zur Einhaltung von Schutzmaßnahmen, 
+– 
+hinsichtlich des zufriedenstellenden Betriebes der Anlage bei bestimmungsgemäßer Verwendung und 
+– 
+entsprechend den vorhersehbaren äußeren Einflüssen. 
+ANMERKUNG 
+Das schließt nicht aus, dass für die Auswahl und Installation von elektrischen Betriebsmitteln für 
+bestimmte Anlagen ergänzende Anforderungen gelten. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 248/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 2 
+510.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+510.3 
+Allgemeine Anforderungen 
+Elektrische Betriebsmittel müssen so ausgewählt und installiert werden, dass die Anforderungen der 
+folgenden Abschnitte dieses Teils und die relevanten Anforderungen anderer Teile von OVE E 8101 
+eingehalten werden. 
+511 Übereinstimmung mit Normen 
+511.1 
+Allgemeines 
+Jedes elektrische Betriebsmittel muss mit den gesetzlichen Bestimmungen, unter vorzugsweiser Anwendung 
+der entsprechenden Europäischen Normen (EN) oder entsprechenden Harmonisierungsdokumente (HD) 
+oder entsprechenden nationalen Normen, übereinstimmen. Bestehen keine geeigneten europäischen oder 
+nationalen Normen oder Harmonisierungsdokumente, können IEC-Normen oder nationale Normen anderer 
+Länder angewandt werden. Wenn es für ein bestimmtes elektrisches Betriebsmittel keine anwendbaren 
+Normen gibt, muss die Auswahl auf Basis einer besonderen Vereinbarung zwischen dem Errichter und der 
+Person, die die elektrische Anlage geplant hat, erfolgen. 
+Steckdosen für den Hausgebrauch und ähnliche Zwecke müssen ÖVE/ÖNORM E 8684-1 entsprechen. 
+511.2 
+Zusätzliche Anforderungen bezüglich Erklärung des Herstellers 
+Wenn es für ein bestimmtes elektrisches Betriebsmittel keine anwendbaren Normen gibt (zB neu entwickeltes 
+Produkt), muss der Hersteller dieses Betriebsmittels der für die Anlagenplanung zuständigen Person oder 
+dem Errichter der Anlage eine entsprechende Dokumentation und Konformitätsnachweise entsprechend den 
+gesetzlichen Bestimmungen zur Verfügung stellen. 
+512 Betriebsbedingungen und äußere Einflüsse 
+512.1 
+Betriebsbedingungen 
+512.1.1 
+Spannung 
+Elektrische Betriebsmittel müssen für die Nennspannung (bei Wechselspannung für den Effektivwert) des 
+Teils der betreffenden Anlage ausgelegt sein. 
+Ist in Drehstromsystemen, die als IT-System ausgeführt sind, ein Neutralleiter vorhanden, so müssen die 
+elektrischen Betriebsmittel, die zwischen einem Außenleiter und dem Neutralleiter angeschlossen sind, 
+grundsätzlich für die verkettete Spannung isoliert sein. 
+ANMERKUNG AT 
+Diese Anforderung resultiert aus dem Betrieb eines IT-Systems bei Auftreten eines ersten 
+Fehlers (Erdschluss) in einem Außenleiter und betrifft ausschließlich die Isolierung der Außenleiter gegen Erde und 
+geerdete Teile. 
+ANMERKUNG 
+Bei bestimmten elektrischen Betriebsmitteln kann es erforderlich sein, die höchste und/oder niedrigste 
+Spannung, die bei bestimmungsgemäßem Betrieb auftreten kann, zu berücksichtigen. 
+Von dieser Forderung zur Auslegung der Isolierung für die verkettete Spannung kann abgesehen werden, 
+wenn beim ersten Fehler in einem IT-System eine automatische Abschaltung innerhalb von 5 s sichergestellt 
+ist. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 249/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 3 
+512.1.2 
+Strom 
+Elektrische Betriebsmittel müssen für den vorgesehenen Betriebsstrom (bei Wechselstrom für den 
+Effektivwert), den sie bei bestimmungsgemäßem Betrieb führen, ausgelegt sein. 
+Elektrische Betriebsmittel müssen außerdem geeignet sein, jene Ströme für eine Dauer gemäß der 
+Ansprechkennlinien der verwendeten Schutzeinrichtungen zu führen, wie sie im gestörten Betrieb auftreten 
+können. 
+512.1.3 
+Frequenz 
+Wenn die Frequenz Einfluss auf die Eigenschaften eines elektrischen Betriebsmittels hat, so muss die 
+Bemessungsfrequenz des elektrischen Betriebsmittels der Frequenz des Stromes in dem betreffenden 
+Stromkreis entsprechen. 
+512.1.4 
+Leistung 
+Elektrische Betriebsmittel, die aufgrund ihrer Leistungskenndaten ausgewählt wurden, müssen für die 
+bestimmungsgemäßen Betriebsbedingungen unter Berücksichtigung des Gleichzeitigkeitsfaktors geeignet 
+sein. 
+ANMERKUNG 
+Der Gleichzeitigkeitsfaktor ist das Verhältnis des gleichzeitigen maximalen Leistungsbedarfs einer 
+Gruppe elektrischer Geräte oder Verbraucher innerhalb eines bestimmten Zeitabschnitts zur Summe ihrer individuellen 
+maximalen Leistungsbedürfnisse innerhalb desselben Zeitabschnitts als numerischer Wert oder in Prozent ausgedrückt. 
+512.1.5 
+Verträglichkeit 
+Elektrische Betriebsmittel sind so auszuwählen, dass sie, auch unter Berücksichtigung von Schaltvorgängen, 
+weder schädliche Einflüsse auf andere Betriebsmittel verursachen noch die Versorgung während des 
+normalen Betriebs unzulässig beeinflussen, es sei denn, es werden andere geeignete Vorkehrungen 
+während der Errichtung getroffen. 
+ANMERKUNG 
+Informationen zu den zu berücksichtigenden Parametern sind in Abschnitt 444 zu finden. 
+ANMERKUNG AT 
+Siehe auch Nationale Ergänzung 1.NE in Teil 1 – Ergänzung zu 132.13 – Dokumentation 
+elektrischer Anlagen (Anlagenbuch). 
+512.1.Z1 Bemessungs-Stoßspannung 
+Elektrische Betriebsmittel müssen so ausgewählt werden, dass ihre Bemessungs-Stoßspannung mindestens 
+so groß ist wie die zu erwartende Überspannung an ihrem Einbauort in der Anlage, entsprechend 
+Abschnitt 443. 
+512.2 
+Äußere Einflüsse 
+Siehe Anhang 51.A und Anhang 51.ZA. 
+ANMERKUNG AT 
+Die Forderung, äußere Einflüsse zu berücksichtigen, ergibt sich aus 133.3. 
+Elektrische Betriebsmittel müssen unter Berücksichtigung der äußeren Einflüsse, die charakteristisch für 
+ihren Aufstellungs- oder Anwendungsort sind, und der Beanspruchungen, denen sie ausgesetzt sind, so 
+ausgewählt und montiert werden, dass ihr ordnungsgemäßer Betrieb und die Wirksamkeit der geforderten 
+Schutzart sichergestellt sind. 
+Betriebsmittel, die auf Grund ihrer Bauweise den Bedingungen des Aufstellungs- oder Anwendungsorts nicht 
+entsprechen, dürfen dennoch verwendet werden, wenn sie beim Errichten der elektrischen Anlage mit einem 
+geeigneten Schutz vor diesen Beanspruchungen versehen werden. Dieser darf den einwandfreien Betrieb 
+der so geschützten Betriebsmittel nicht unzulässig beeinträchtigen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 250/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 4 
+513 Zugänglichkeit 
+Alle elektrischen Betriebsmittel einschließlich Kabel/Leitungen sind so anzuordnen, dass ihre Bedienung, 
+Inspektion, Instandhaltung und der Zugang zu den Verbindungen leicht möglich sind. Diese Anforderungen 
+dürfen durch den Einbau der elektrischen Betriebsmittel in Gehäuse oder andere Einbauräume nicht 
+nennenswert beeinträchtigt werden. Ausnahmen sind in 526.3 enthalten. 
+513.001.AT  
+Bei der Installation von Unterputzgeräten ist darauf zu achten, dass die (Ader-)Isolierung 
+der Anschlusskabel/-leitungen, insbesondere durch die Befestigungsmittel (zB Spreizkrallen), nicht 
+beschädigt wird. 
+513.002.AT  
+Anforderungen für Bedienungs- und Instandhaltungsgänge 
+Es gelten die Anforderungen gemäß Teil 7-729. 
+514 Kennzeichen 
+514.1 
+Allgemeines 
+Schilder oder andere geeignete Kennzeichen müssen vorgesehen werden, um den Zweck eines Schalt- oder 
+Steuergeräts auszuweisen, es sei denn, dass es keine Möglichkeit einer Verwechslung gibt. 
+Wenn die Funktion von Schalt- und Steuergeräten vom Bedienenden nicht beobachtet werden und sich 
+hieraus eine Gefahr ergeben kann, muss eine geeignete Anzeige für den Bedienenden sichtbar angebracht 
+werden. Diese muss, soweit anwendbar, mit ÖVE/ÖNORM EN 60073 und ÖVE/ÖNORM EN 60447 
+übereinstimmen. 
+514.2 
+Kabel- und Leitungsanlagen 
+Kabel und Leitungen müssen so angeordnet oder gekennzeichnet werden, dass sie bei Inspektion, Prüfung, 
+Reparatur oder Änderung der Anlage zugeordnet werden können. 
+Sofern dies nicht durch die Verlegeart oder entsprechende Befestigung in der Nähe von Einführungen und 
+Anschlussstellen ausreichend gegeben ist, müssen Anschlussleitungen von Zug und Schub entlastet, 
+Umhüllungen gegen Abstreifen und Adern gegen Verdrehen gesichert sein. 
+Der Schutzleiter der in Betriebsmittel eingeführten flexiblen Kabel/Leitung muss so lang sein, dass er beim 
+Versagen der Zugentlastung erst nach den stromführenden Adern auf Zug beansprucht wird. Verknoten der 
+Kabel/Leitungen in sich und Festbinden der Kabel/Leitungen am Betriebsmittel sind nicht zulässig. 
+514.3 
+Kennzeichnung von Leitern 
+514.3.1 
+Allgemeines 
+Sofern in 514.3.1.Z1 bis 514.3.Z3 nichts anderes festgelegt ist, muss die Kennzeichnung der elektrischen 
+Leiter der 51.NE.1 entsprechen. 
+514.3.1.Z1 
+Neutralleiter oder Mittelleiter 
+Neutralleiter oder Mittelleiter müssen über ihre gesamte Länge durch die Farbe Blau gekennzeichnet sein. 
+ANMERKUNG 
+Für bestimmte Arten von Neutral-/Mittelleitern, auch in speziellen Kabel-/Leitungstypen, siehe 514.3.Z2 
+bis 514.3.Z5. 
+ANMERKUNG AT 
+Werden in vorhandenen Anlagen mit anderen Farbkennzeichnungen gemäß früher geltenden 
+technischen Bestimmungen ersatzweise oder zusätzlich neue Leitungen verlegt, so muss deren Neutral- bzw. 
+Mittelpunktsleiter durchgehend Blau gekennzeichnet sein. Zusätzlich wird empfohlen an den Übergangsstellen zu 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 251/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 5 
+vorhandenen Anlagen deren Neutral- bzw. Mittelpunktsleiter mit blauer Markierung nach 514.3.001.AT an den 
+Leiterenden zu versehen. 
+Isolierte Sternpunkt-Verbindungs-Leiter (SVL) müssen als Neutralleiter gekennzeichnet werden, wobei 
+zusätzlich eine alphanumerische Kennzeichnung gemäß 51.NE.3.2.5 an den Leiterenden anzubringen ist. 
+514.3.1.Z2 
+Schutzleiter 
+Schutzleiter müssen über ihre gesamte Länge durch die Zwei-Farben-Kombination Grün-Gelb 
+gekennzeichnet sein, ausgenommen wenn vorhandene Leitungen mit geänderter Funktion genutzt werden 
+müssen. 
+Diese Farbkombination darf für keinen anderen Zweck verwendet werden. 
+Isolierte Schutzerdungsleiter und isolierte Schutzpotentialausgleichsleiter müssen als Schutzleiter 
+gekennzeichnet werden. 
+ANMERKUNG 
+Für bestimmte Arten von Schutzleitern, auch in speziellen Kabel-/Leitungstypen, siehe 514.3.Z2, 
+514.3.Z3 und 514.3.Z5. 
+ANMERKUNG AT 
+Werden in vorhandenen Anlagen mit Kabel/Leitungs-Farbkennzeichnungen gemäß früher 
+geltender technischer Bestimmungen ersatzweise oder zusätzlich neue Kabel/Leitungen verlegt, so muss deren 
+Schutzleiter durchgehend Grün-Gelb gekennzeichnet sein. Zusätzlich wird empfohlen, an den Übergangsstellen zu 
+vorhandenen Anlagen deren Schutzleiter mit grün-gelber Markierung gemäß 514.3.Z6.001.AT an den Leiterenden zu 
+versehen. 
+514.3.2 
+PEN-Leiter, PEL-Leiter und PEM-Leiter 
+Isolierte PEN-Leiter müssen durch eines der folgenden Verfahren gekennzeichnet sein: 
+1) 
+Grün-Gelb durchgehend in ihrem gesamten Verlauf, zusätzlich mit blauer Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden (Verfahren 1), oder 
+2) 
+Blau durchgehend in ihrem gesamten Verlauf, zusätzlich mit grün-gelber Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden (Verfahren 2). 
+Verfahren 1 ist für die Farbkennzeichnung des PEN-Leiters zu bevorzugen. 
+PEL-Leiter und PEM-Leiter müssen, wenn sie isoliert sind, grün-gelb über die gesamte Länge, und zusätzlich 
+mit blauer Markierung gemäß 514.3.Z6.001.AT an den Leiterenden, gekennzeichnet sein. 
+Falls eine Verwechslung zwischen PEN-, PEL- oder PEM-Leitern möglich ist, muss zusätzlich die in 
+51.NE.3.2.4 bis 51.NE.3.2.7 festgelegte alphanumerische Kennzeichnung an den Leiterenden angebracht 
+werden. 
+514.3.2.001.AT Umstellung von Anlagen auf die Schutzmaßnahme Nullung im TN-C-System 
+Bei der Umstellung von Anlagen auf die Schutzmaßnahme Nullung dürfen vorhandene Neutralleiter mit 
+Querschnitten ab 10 mm2 Kupfer bzw. 16 mm2 Aluminium und mit durchgehend grauer oder blauer 
+Kennzeichnung als PEN-Leiter verwendet werden, wenn sie mit einer grün-gelben Markierung gemäß 
+514.3.Z6.001.AT an den Leiterenden versehen werden. 
+514.3.Z1 Sonstige Leiter 
+Sonstige Leiter müssen durch Farben oder alphanumerische Zeichen oder Symbole, unter Beachtung der 
+Anforderungen von 514.3.Z2 bis 514.3.Z5 und 51.NE, gekennzeichnet sein. 
+ANMERKUNG AT 
+Die Kennzeichnung von Leitern durch Farben wird im Allgemeinen bevorzugt, sofern die 
+alphanumerische Kennzeichnung nicht durch Teile der OVE E 8101 oder durch andere Bestimmungen verlangt wird. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 252/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 6 
+514.3.Z2 Kennzeichnung von Adern in mehradrigen Kabeln/Leitungen und in flexiblen Leitungen 
+Die Kennzeichnung von isolierten Leitern in starren und flexiblen Kabeln und Leitungen mit zwei bis fünf 
+Adern muss ÖVE/ÖNORM E 8003 entsprechen. Die Außenleiter müssen durch die Farbe Schwarz oder 
+Braun oder Grau, der Neutralleiter durch die Farbe Blau und der Schutzleiter durch die Zwei-Farben-
+Kombination Grün-Gelb über die gesamte Länge gekennzeichnet sein. 
+Bei Kabeln/Leitungen mit zwei bis fünf Adern, die in Hilfs- oder Steuerstromkreisen verwendet werden, muss 
+jeder Leiter durch Farbe oder Beschriftung gekennzeichnet sein. 
+Bei Kabeln/Leitungen mit zwei bis fünf Adern, die in Hilfs- oder Steuerstromkreisen verwendet werden, die 
+keinen blauen Leiter besitzen, darf einer der Leiter mit blauer Markierung gemäß 514.3.Z6.001.AT an den 
+Leiterenden als Neutralleiter verwendet werden. 
+Die Aderkennzeichnung von Kabeln/Leitungen mit mehr als fünf Adern muss 51.NE.1 entsprechen, entweder 
+durch Farbe oder alphanumerische Zeichen oder Symbole. Leiter, die durch alphanumerische Zeichen 
+gekennzeichnet sind und als Schutzleiter oder Neutralleiter verwendet werden, müssen an jedem Leiterende 
+grün-gelb oder blau, je nach dem was zutreffend ist, gemäß 514.3.Z6.001.AT gekennzeichnet werden. Leiter, 
+die durch alphanumerische Zeichen gekennzeichnet sind und als PEN-Leiter, PEL-Leiter oder PEM-Leiter 
+verwendet werden, müssen an jedem Leiterende grün-gelb und blau gemäß 514.3.Z6.001.AT 
+gekennzeichnet werden. 
+514.3.Z3 Kennzeichnung von einadrigen Kabeln/Leitungen und Aderleitungen 
+Außenleiter müssen über die gesamte Länge durch die Farbe Braun oder Schwarz oder Grau gekenn-
+zeichnet sein. Die Verwendung nur einer dieser Farben für alle Außenleiter eines Stromkreises ist zulässig. 
+Die Einzelfarben Grün und Gelb dürfen nicht verwendet werden. 
+Ummantelte, einadrige Kabel/Leitungen und Aderleitungen, die ihrer Betriebsmittelnorm entsprechen, jedoch 
+nicht mit grün-gelber oder blauer Isolierung erhältlich sind, zB bei Leiterquerschnitten größer als 16 mm2, 
+dürfen verwendet werden als 
+– 
+Schutzleiter, wenn eine grün-gelbe Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht 
+wird; 
+– 
+PEN-Leiter, wenn eine grün-gelbe Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht 
+wird. Eine zusätzliche blaue Markierung gemäß 514.3.Z6.001.AT an den Leiterenden ist zulässig; 
+– 
+PEL-Leiter und PEM-Leiter, wenn eine grün-gelbe und eine blaue Markierung gemäß 514.3.Z6.001.AT 
+an jedem Leiterende angebracht wird; 
+– 
+Neutralleiter, wenn eine blaue Markierung gemäß 514.3.Z6.001.AT an jedem Leiterende angebracht 
+wird. 
+514.3.Z4 Andere Verwendungsmöglichkeiten der Leiterfarbe Blau 
+Unter der Voraussetzung, dass kein Neutralleiter vorhanden ist und Verwechslungen nicht möglich sind, darf 
+ein blauer Leiter als Außenleiter oder für andere Zwecke verwendet werden, außer als Schutzleiter. 
+ANMERKUNG AT 
+In diesem Fall wird eine entsprechende Markierung gemäß 514.3.Z6.001.AT an den Leiterenden 
+empfohlen. 
+514.3.Z5 Ausnahmen von der Kennzeichnungspflicht 
+Die Kennzeichnung durch Farbe oder Beschriftung ist nicht gefordert für 
+– 
+konzentrische Leiter von Kabeln/Leitungen; 
+– 
+Metallmäntel oder Bewehrungen von Kabeln/Leitungen, die als Schutzleiter verwendet werden; 
+– 
+nicht isolierte Leiter, wenn eine dauerhafte Kennzeichnung aufgrund der äußeren Einflüsse, zB 
+aggressive Atmosphäre und Verschmutzung, nicht möglich ist; 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 253/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 7 
+– 
+metallene Konstruktionsteile von baulichen Anlagen oder fremde leitfähige Teile, die als Schutzleiter 
+verwendet werden; 
+– 
+Körper (eines elektrischen Betriebsmittels), die als Schutzleiter verwendet werden; 
+– 
+blanke Leiter von Freileitungen; 
+– 
+Leiter in Verteilernetzen. 
+Eine Kennzeichnung durch Farbe ist nicht gefordert für die Leiter von flachen flexiblen Kabeln/Leitungen 
+ohne Ummantelung oder für Kabel/Leitungen, die eine Isolierung haben, die nicht durch Farbe 
+gekennzeichnet werden kann, zum Beispiel mineralisolierte Kabel/Leitungen. Bei diesen Kabeln/Leitungen 
+sind die Leiter, die als Schutzleiter, PEN-Leiter, PEL-Leiter oder PEM-Leiter oder als Neutralleiter verwendet 
+werden, mit entsprechenden farbigen Markierungen gemäß 514.3.Z6.001.AT an den Leiterenden zu 
+versehen (siehe 514.3.Z3 letzter Absatz). 
+514.3.Z6.001.AT Ausführung der Markierung an den Leiterenden 
+Endenkennzeichnungen, die im Zuge der Errichtung elektrischer Anlagen angebracht wurden, müssen 
+dauerhaft ausgeführt sein. Als dauerhaft gelten zB Schrumpfschlauch, selbstverschweißendes Klebeband, 
+Kabelbinder mit daran befestigtem Kennzeichnungsschild. 
+ANMERKUNG AT 
+Herkömmliche Isolierbänder genügen dieser Anforderung nicht. 
+Farbkennzeichnungen von Leiterenden müssen bei Leiterquerschnitten bis 6 mm2 mindestens 15 mm lang 
+sein. Bei größeren Leiterquerschnitten sind entsprechend größere Längen zu kennzeichnen, wobei eine 
+Länge von 100 mm jedenfalls ausreicht. Dabei sollte die Farbe der vorhandenen Leiterisolierung nach 
+Möglichkeit noch erkennbar bleiben. 
+514.4 
+Schutzeinrichtungen 
+Schutzeinrichtungen müssen so angeordnet und gekennzeichnet werden, dass die geschützten Stromkreise 
+leicht zugeordnet werden können. Hierfür kann gruppenweise Anordnung in Verteilungen zweckmäßig sein. 
+514.5 
+Schaltpläne und Dokumentation 
+514.5.1 Entsprechend dem Umfang der Anlage muss eine angemessene Dokumentation, zB Zeichnungen, 
+Pläne, Diagramme oder Tabellen gemäß ÖVE/ÖNORM EN 61082-1, ÖVE/ÖNORM E 8390-1 und 
+ÖVE/ÖNORM EN 81346-1 mitgeliefert werden, aus der insbesondere ersichtlich sind: 
+– 
+die Art und der Aufbau der Stromkreise (versorgte Verbraucher, Anzahl und Querschnitt der Leiter, Art 
+der Kabel und Leitungen); 
+– 
+die Merkmale und Parameter der Schutz-, Trenn- und Schalteinrichtungen (zB Art, Type, Bemessungs-
+ströme, Einstellwerte, zu erwartende Kurzschlussströme) sowie deren Einbauorte. Es sind auch die 
+Einbauorte aller nicht sichtbaren Geräte (zB in Unterputzdosen eingebaut) anzugeben. 
+Bei einfachen Anlagen dürfen diese Angaben in Form einer Liste gemacht werden. 
+Bei umfangreicheren Anlagen kann für Prüfungen, Fehlersuche und spätere Veränderungen eine Einzel-
+identifikation von Steckdosen und Auslässen in der Dokumentation sowie eine Einzelkennzeichnung vor Ort 
+erforderlich sein. 
+Die Dokumentation ist nach jeder Änderung der elektrischen Anlage zu aktualisieren. 
+ANMERKUNG AT 
+Siehe auch Ergänzung zu 132.13 – Dokumentation elektrischer Anlagen (Anlagenbuch) aus 
+Teil 1 Nationale Ergänzung 1.NE. 
+514.5.2 Die verwendeten grafischen Symbole für Schaltpläne sollen IEC 60617 DB entsprechen. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 254/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 8 
+515 Vermeidung gegenseitiger nachteiliger Beeinflussung 
+515.1 
+Betriebsmittel müssen so ausgewählt und installiert werden, dass jede schädigende Beeinflussung 
+zwischen der elektrischen Anlage und den nichtelektrischen Einrichtungen ausgeschlossen ist. 
+Betriebsmittel ohne Gehäuserückwand dürfen nicht auf einer Montagefläche angebracht werden, es sei denn, 
+die folgenden Anforderungen werden erfüllt: 
+– 
+eine Spannungsverschleppung über Montageflächen wird verhindert; 
+– 
+eine feuersichere Trennung zwischen elektrischen Betriebsmittel und einer brennbaren Montagefläche 
+ist vorhanden. 
+Wenn die Montagefläche nicht metallen und nicht brennbar ist, werden zusätzliche Maßnahmen nicht 
+gefordert. Wenn dies nicht zutrifft, können diese Anforderungen durch eine der folgenden Maßnahmen erfüllt 
+werden: 
+– 
+wenn die Montagefläche metallen ist, muss sie mit dem Schutzleiter (PE) oder dem Schutzpotential-
+ausgleichsleiter der Anlage gemäß Teil 4-41 und Teil 5-54 verbunden werden; 
+– 
+wenn die Montagefläche brennbar ist, muss das elektrische Betriebsmittel von ihr durch eine geeignete 
+Zwischenlage aus Isolierstoff mit einer Entflammbarkeit von FH 1 gemäß ÖVE/ÖNORM EN 60695 
+getrennt werden. 
+ 
+ANMERKUNG 1.AT 
+Das Prüfverfahren FH ist in einer zurückgezogenen Fassung der ÖVE/ÖNORM 
+EN 60695 enthalten. Der Normungsgegenstand ist durch ÖVE/ÖNORM EN 60695-11-10 und OVE EN 60695-11-20 
+abgedeckt. 
+ 
+ANMERKUNG 2.AT 
+Als geeignete Zwischenlagen aus Isolierstoff werden zB angesehen: 
+ 
+– 
+Hartpapier auf Phenolharz-Basis PF CP 205 nach ÖVE/ÖNORM EN 60893-3-4 (V-1-Material); 
+ 
+– 
+Hartpapier auf Epoxidharz-Basis EP CP 201 nach ÖVE/ÖNORM EN 60893-3-2 (V-0-Material); 
+ 
+– 
+Hartglasgewebe auf Epoxidharz-Basis EP GC 202 nach ÖVE/ÖNORM EN 60893-3-2 (V-0-Material); sowie 
+ 
+– 
+Glashartmatte auf Polyester-Basis UP GM 202 nach ÖVE/ÖNORM EN 60893-3-5 (V-0-Material). 
+515.2 
+Werden elektrische Betriebsmittel, die mit unterschiedlichen Stromarten oder Spannungen 
+betrieben werden, zusammen angeordnet (zB in Schalttafeln, Schaltschränken, Steuerpulten, Bedienungs-
+kästen), so müssen die jeweils einer Stromart oder einer Spannung zugeordneten Betriebsmittel von anderen 
+Betriebsmitteln in dem Maße wirksam getrennt werden, soweit dies zur Vermeidung gegenseitiger 
+nachteiliger Beeinflussung notwendig ist. 
+ANMERKUNG AT 
+Dazu gehören auch geeignete Maßnahmen zur Vermeidung von zB: 
+– 
+übermäßigen Induktionsspannungen oder -strömen in parallel geführten Kabeln/Leitungen; 
+– 
+übermäßiger induktionsbedingter Erwärmung oder Verlusten zB in Befestigungselementen oder Durchführungen von 
+Einzelleitungen oder -kabeln. 
+515.3 
+Elektromagnetische Verträglichkeit 
+515.3.1 
+Auswahl der Störfestigkeitspegel und Aussendungspegel 
+515.3.1.1 
+Die Störfestigkeitspegel von Betriebsmitteln müssen entsprechend den elektromagnetischen 
+Einflüssen ausgewählt werden (siehe Tabelle 51.ZA.1), wie sie nach Montage und Anschluss der 
+Betriebsmittel für den bestimmungsgemäßen Gebrauch auftreten können, und es muss der vorgesehene 
+Grad der Betriebskontinuität, der für die Anwendung notwendig ist, berücksichtigt werden. 
+515.3.1.2 
+Es müssen Betriebsmittel mit ausreichend niedrigen Aussendungspegeln ausgewählt werden, 
+sodass andere Betriebsmittel innerhalb oder außerhalb des Gebäudes nicht durch elektromagnetische 
+Störaussendung beeinflusst werden. Falls erforderlich, müssen Maßnahmen durchgeführt werden, um die 
+Störaussendung auf einen verträglichen Pegel zu reduzieren (siehe Abschnitt 444). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 255/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 9 
+ANMERKUNG 
+Elektrische Verbrauchsmittel oder Betriebsmittel sollten, soweit zutreffend, mit den Normen OVE 
+EN 55011, ÖVE/ÖNORM EN 55012, OVE EN 55013, ÖVE/ÖNORM EN 55014-1, ÖVE/ÖNORM EN 55014-2, OVE 
+EN 55015, ÖVE/ÖNORM EN 55022 und ÖVE/ÖNORM EN 61000 Reihe übereinstimmen. 
+516 Maßnahmen bezüglich Schutzleiterströmen 
+Schutzleiterströme, die von elektrischen Betriebsmitteln unter normalen Betriebsbedingungen erzeugt 
+werden, und die Ausführung der elektrischen Anlage müssen so aufeinander abgestimmt sein, dass ein 
+sicherer und bestimmungsgemäßer Betrieb gegeben ist. 
+Die zulässigen Schutzleiterströme der Betriebsmittel sind in OVE EN 61140:2016 Abschnitt 7.6.3 festgelegt 
+und müssen in Betracht gezogen werden, wenn vom Hersteller des Betriebsmittels keine Angaben verfügbar 
+sind. 
+ANMERKUNG 1  
+Ein Schutzleiterstrom im Sinne von Abschnitt 516 ist ein Strom, der im Schutzleiter fließt, wenn 
+die Betriebsmittel fehlerfrei in Betrieb sind. 
+ANMERKUNG 2  
+Zur Vermeidung von unerwünschtem Auslösen von Fehlerstrom-Schutzeinrichtungen (RCD), 
+verursacht durch Schutzleiterströme, siehe 531.3.2. 
+ANMERKUNG 3  
+Der Errichter sollte den Anlagenbetreiber informieren, dass vorzugsweise solche Betriebsmittel 
+ausgewählt werden sollten, für die der Hersteller Angaben zu Schutzleiterströmen bereitstellt. Es sollten Betriebsmittel mit 
+niedrigen Werten ausgewählt werden, um ein ungewolltes Auslösen zu vermeiden. 
+ANMERKUNG 4  
+Bezüglich verstärkter Schutzleiterquerschnitte siehe 543.7. 
+516.1 
+Transformatoren 
+In elektrischen Anlagen sollten Maßnahmen getroffen werden, um Schutzleiterströme zu beschränken, durch 
+Versorgung begrenzter Bereiche der Anlage durch Transformatoren mit elektrisch getrennten Wicklungen 
+(Volltransformatoren). 
+516.2 
+Informationssysteme 
+Es ist für Informationssysteme nicht zulässig, aktive Leiter zusammen mit dem Schutzleiter als Rückleiter zu 
+nutzen. 
+ANMERKUNG 
+Für die Verwendung von Rückleitern bei Gleichspannung siehe die Anforderungen in 543.5. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 256/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 10 
+Anhang 51.A 
+(informativ) 
+ 
+Kurzfassung der äußeren Einflüsse (Umgebungseinflüsse) 
+Tabelle 51.A (1 von 2) 
+A 
+AA 
+Umgebungstemperatur 
+AF 
+Auftreten von korrosiven oder 
+verunreinigenden Substanzen 
+ 
+Gestrahlte Magnetfelder 
+Umgebungseinflüsse 
+AA1 
+–60 °C  
++5 °C  
+AF1 
+Vernachlässigbar 
+AM-8-1 
+Mittlerer Pegel 
+AA2 
+–40 °C  
++5 °C  
+AF2 
+Atmosphärisch 
+AM-8-2 
+Hoher Pegel 
+AA3 
+–25 °C  
++5 °C  
+AF3 
+Zeitweise oder zufällig 
+ 
+Elektrische Felder  
+AA4 
+–5 °C  
++40 °C  
+AF4 
+Dauernd 
+AM-9-1 
+Vernachlässigbarer Pegel 
+AA5 
++5 °C  
++40 °C  
+AG 
+Mechanische  
+Beanspruchung: Schlag 
+AM-9-2 
+Mittlerer Pegel 
+AA6 
++5 °C  
++60 °C  
+AG1 
+Niedrig 
+AM-9-3 
+Hoher Pegel 
+AA7 
+–25 °C  
++55 °C  
+AG2 
+Mittel 
+AM-9-4 
+Sehr hoher Pegel 
+AA8 
+–50 °C  
++40 °C  
+AG3 
+Hoch 
+AM21 
+Oszillierende Störgrößen 
+AB 
+Atmosphärische Luftfeuchte 
+AH 
+Beanspruchung durch 
+Schwingungen 
+ 
+Einseitige leitungs-
+gebundene Vorgänge im 
+im Nanosekundenbereich 
+ 
+Lufttemperatur: 
+Relative  
+Luftfeuchte: 
+AH1 
+Niedrig 
+AM-22-1 
+vernachlässigbar 
+AB1 
+–60 °C 
++ 5 °C 
+3 % 
+100 % AH2 
+Mittel 
+AM-22-2 
+Mittlerer Pegel 
+AB2 
+–40 °C 
++ 5 °C 
+10 % 
+100 % AH3 
+Hoch 
+AM-22-3 
+Hoher Pegel 
+AB3 
+–25 °C 
++ 5 °C 
+10 % 
+100 % AJ 
+Andere mechanische 
+Beanspruchungen 
+AM-22-4 
+Sehr hoher Pegel 
+AB4 
+–5 °C 
++ 40 °C 
+5 % 
+95 % AK 
+Vorhandensein von Pflanzen 
+und/oder Schimmelwachstum 
+ 
+Einseitige leitungs-
+gebundene Vorgänge im 
+Millisekunden- bis 
+Mikrosekundenbereich 
+AB5 
++5 °C 
++40 °C 
+5 % 
+85 % AK1 
+Nicht gefährlich 
+AM-23-1 
+Kontrollierter Pegel 
+AB6 
++5 °C 
++60 °C 
+10 % 
+100 % 
+AM-23-2 
+Mittlerer Pegel 
+AB7 
+–25 °C 
++55 °C 
+10 % 
+100 % AK2 
+Gefährlich 
+AM-23-3 
+Hoher Pegel 
+AB8 
+–50 °C 
++40 °C 
+10 % 
+100 % AL 
+Anwesenheit von Tieren (Fauna) 
+ 
+Leitungsgebundene 
+oszillierende transiente 
+Vorgänge 
+AC 
+Seehöhe 
+AL1 
+Nicht gefährlich 
+AM-24-1 
+Mittlerer Pegel 
+AC1 
+≤2 000 m 
+AL2 
+Gefährlich 
+AM-24-2 
+Hoher Pegel 
+AC2 
+>2 000 m 
+AM 
+Elektromagnetische, elektro-
+statische und ionisierende 
+Einflüsse 
+ 
+Gestrahlte hochfrequente 
+elektromagnetische 
+Störgrößen 
+AD 
+Auftreten von Wasser 
+ 
+Oberschwingung, 
+Zwischenharmonische 
+AM-25-1 
+Vernachlässigbarer Pegel 
+AD1 
+Vernachlässigbar 
+AM-1-1 
+Kontrollierter Pegel 
+AM-25-2 
+Mittlerer Pegel 
+AD2 
+Tropfwasser 
+AM-1-2 
+Normaler Pegel 
+AM-25-3 
+Hoher Pegel 
+AD3 
+Sprühwasser 
+AM-1-3 
+Hoher Pegel 
+ 
+Elektrostatische 
+Entladungen 
+AD4 
+Spritzwasser 
+ 
+Signalspannungen 
+AM-31-1 
+Kleiner Pegel 
+AD5 
+Strahlwasser 
+AM-2-1 
+Kontrollierter Pegel 
+AM-31-2 
+Mittlerer Pegel 
+AD6 
+Schwallwasser 
+AM-2-2 
+Normaler Pegel 
+AM-31-3 
+Hoher Pegel 
+AD7 
+Eintauchen 
+AM-2-3 
+Hoher Pegel 
+AM-31-4 
+Sehr hoher Pegel 
+AD8 
+Untertauchen 
+ 
+Amplitudenänderungen 
+AM-41-1 
+Ionisierende Strahlung 
+AE 
+Auftreten von festen Fremdkörpern 
+AM-3-1 
+Kontrollierter Pegel 
+AN 
+Sonnenstrahlung 
+AE1 
+Vernachlässigbar 
+AM-3-2 
+Normaler Pegel 
+AN1 
+Niedrig 
+AE2 
+Kleine Gegenstände 
+AM-4 
+Spannungsunsymmetrie 
+AN2 
+Mittel 
+AE3 
+Sehr kleine Gegenstände 
+AM-5 
+Schwankungen der Netzfrequenz 
+AN3 
+Hoch 
+AE4 
+Kleine Staubmenge 
+AM-6 
+Induzierte niederfrequente 
+Spannungen 
+ 
+ 
+AE5 
+Mittlere Staubmenge 
+AM-7 
+Gleichströme in 
+Wechselstromnetzen 
+ 
+ 
+AE6 
+Bedeutende Staubmenge 
+ 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 257/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 11 
+Tabelle 51.A (2 von 2) 
+ 
+ 
+ 
+Umgebungseinflüsse 
+AP 
+Auswirkungen von Erdbeben 
+AQ 
+Blitze 
+AS 
+Wind 
+AP1 
+Vernachlässigbar 
+AQ1 
+Vernachlässigbar 
+AS1 
+Niedrig 
+AP2 
+Geringe Auswirkung 
+AQ2 
+Indirekte Wirkung 
+AS2 
+Mittel 
+AP3 
+Mittlere Auswirkung 
+AQ3 
+Direkte Wirkung 
+AS3 
+Hoch 
+AP4 
+Hohe Auswirkung 
+AR 
+Luftbewegung 
+ 
+ 
+ 
+ 
+AR1 
+Niedrig 
+ 
+ 
+ 
+ 
+AR2 
+Mittel 
+ 
+ 
+ 
+ 
+AR3 
+Hoch 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+B 
+BA 
+Personen, die Zutritt haben 
+BC 
+Verbindung mit Erdpotential 
+BE 
+Art der bearbeiteten oder 
+gelagerten Stoffe 
+Verwendung 
+BA1 
+Laien 
+ 
+BC1 
+Keine 
+BE1 
+Kein bedeutendes Risiko 
+BA2 
+Kinder 
+ 
+BC2 
+Selten 
+BE2 
+Brandrisiko 
+BA3 
+Menschen mit einer Beeinträchtigung 
+BC3 
+Häufig 
+BE3 
+Explosionsrisiko 
+BA4 
+Elektrotechnisch unterwiesene Person 
+BC4 
+Dauernd 
+BE4 
+Riskio durch Verunreinigung  
+(Kontamination) 
+BA5 
+Elektrofachkräfte 
+ 
+BD 
+Räumungsmöglichkeit bei Gefahr 
+ 
+ 
+BB 
+Elektrischer Widerstand des 
+menschlichen Körpers 
+BD1 
+Niedrige Personendichte/ 
+einfaches Verlassen 
+ 
+ 
+ 
+ 
+BD2 
+Niedrige Personendichte/ schwieriges 
+Verlassen 
+ 
+ 
+ 
+ 
+ 
+BD3 
+Hohe Personendichte/  
+einfaches Verlassen 
+ 
+ 
+ 
+ 
+ 
+BD4 
+Hohe Personendichte/  
+schwieriges Verlassen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+C 
+CA 
+Baustoffe 
+CB 
+Gebäudestruktur 
+ 
+ 
+Bauwerke 
+CA1 
+Nicht brennbar 
+CB1 
+Vernachlässigbare Gefährdung 
+ 
+ 
+CA2 
+Brennbar 
+CB2 
+Gefährdung durch Brandausbreitung 
+ 
+ 
+ 
+ 
+CB3 
+Gefährdung durch 
+GebäudebBewegung 
+ 
+ 
+ 
+ 
+ 
+CB4 
+Elastisch oder instabil 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 258/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 12 
+Anhang 51.ZA 
+(informativ) 
+ 
+Äußere Einflüsse (Umgebungseinflüsse) 
+51.ZA.1 Elektrische Betriebsmittel sollten entsprechend den möglichen äußeren Einflüssen, wie in 
+Tabelle 51.ZA1 angeführt, ausgewählt und installiert werden. 
+Die Tabelle 51.ZA1 enthält die notwendigen Merkmale bezüglich äußere Einflüsse, denen Betriebsmittel 
+ausgesetzt sein können. 
+Sind keine Angaben der Hersteller vorhanden sollten diese durch Prüfung der Eignung festgestellt werden. 
+51.ZA.2 Wenn das elektrische Betriebsmittel nicht durch seine Bauweise die entsprechenden Merkmale 
+entsprechend den äußeren Einflüssen seines Einbauortes aufweist, darf es dennoch für solche Bedingungen 
+verwendet werden, wenn es mit einem geeigneten zusätzlichen Schutz versehen wird. Solch ein Schutz 
+sollte die Funktion des so geschützten Betriebsmittels nicht nachteilig beeinflussen. 
+51.ZA.3 Wenn verschiedene äußere Einflüsse gleichzeitig auftreten, können diese voneinander 
+unabhängige oder gegenseitige Wirkungen haben. Für den Schutz des elektrischen Betriebsmittels sollten 
+alle Einflüsse entsprechend berücksichtigt werden. 
+51.ZA.4 Die Auswahl der elektrischen Betriebsmittel entsprechend der äußeren Einflüsse ist nicht nur für die 
+richtige Funktion notwendig, sondern auch um die Zuverlässigkeit der Maßnahmen zum Schutz in 
+Übereinstimmung mit den allgemeinen Anforderungen von OVE E 8101 sicherzustellen. 
+Maßnahmen zum Schutz, die durch die Konstruktion der elektrischen Betriebsmittel erreicht werden, dürfen 
+nur für die angegebenen Bedingungen äußerer Einflüsse angewendet werden, für die diese Betriebsmittel 
+auch geprüft sind. 
+ 
+ANMERKUNG zu Tabelle 51.ZA.1 
+Das Wort „Normal“, das in der dritten Spalte der Tabelle 51.ZA1 verwendet 
+wird, sagt aus, dass die ausgewählten elektrischen Betriebsmittel entsprechend ihrer jeweiligen allgemeinen Produktnorm 
+den Anforderungen dieser Tabelle genügen. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 259/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 13 
+Tabelle 51.ZA.1 – Merkmale äußerer Einflüsse (1 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+A 
+Umgebungseinflüsse 
+AA 
+Umgebungstemperatur 
+Die Umgebungstemperatur ist die Temperatur der 
+umgebenden Luft an der Stelle, an der das Betriebsmittel 
+installiert wird. Dabei wird vorausgesetzt, dass die 
+Umgebungstemperatur die Einflüsse von anderen 
+Betriebsmitteln an derselben Stelle einschließt. 
+Die für das Betriebsmittel zu berücksichtigende 
+Umgebungstemperatur ist die Temperatur am Ort des zu 
+installierenden Betriebsmittels, die sich ergibt durch die 
+Einflüsse aller anderen Betriebsmitteln an derselben Stelle, 
+wenn diese in Betrieb sind, jedoch ohne Berücksichtigung 
+der Temperaturerhöhung durch das zu installierende 
+Betriebsmittel selbst.  
+Untere und obere Grenzen der Umgebungstemperatur-
+bereiche: 
+ 
+ 
+AA1 
+–60 °C 
++5 °C 
+ 
+ 
+Dieser Bereich schließt den 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K8, 
+ein, begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der 
+OVE EN 60721-3-4, Klasse 4K4, 
+begrenzt auf einem unteren Wert 
+der Lufttemperatur von –60 °C  
+und auf einen oberen Wert der 
+Lufttemperatur von +5 °C. 
+AA2 
+–40 °C 
++5 °C 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung a 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der 
+OVE EN 60721-3-3, Klasse 3K7, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C.  
+Der Bereich schließt den 
+Temperaturbereich der  
+OVE EN 60721-3-4, Klasse 4K3, 
+ein; begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+AA3 
+–25 °C 
++5 °C 
+ 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der 
+OVE EN 60721-3-3, Klasse 3K6, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. Der 
+Bereich schließt den 
+Temperaturbereich der  
+OVE EN 60721-3-4, Klasse 4K1, 
+ein; begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+a 
+Ergänzende Vorkehrungen können erforderlich sein (zB spezielle Schmierung, Beschattung). 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 260/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 14 
+Tabelle 51.ZA.1 (2 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+AA4 
+–5 °C 
++40 °C 
+Normal 
+(in besonderen Fällen 
+können spezielle 
+Vorkehrungen 
+erforderlich sein) 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der 
+OVE EN 60721-3-3, Klasse 3K5, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +40 °C. 
+AA5 
++5 °C 
++40 °C 
+Normal  
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K3. 
+AA6 
++5 °C 
++60 °C 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung der 
+Betriebsmittel a 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der 
+OVE EN 60721-3-3, Klasse 3K7, 
+begrenzt auf einen unteren Wert 
+von +5 °C und einen oberen Wert 
+von +60 °C Lufttemperatur. 
+Er schließt den Temperaturbereich 
+der OVE EN 60721-3-4, 
+Klasse 4K4, ein; der untere Wert  
+ist jedoch auf +5 °C Lufttemperatur 
+begrenzt. 
+AA7 
+–25 °C 
++55 °C 
+ 
+Speziell ausgeführte 
+Betriebsmittel oder 
+geeignete Anordnung der 
+Betriebsmittel a 
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K6. 
+AA8 
+–50 °C 
++40 °C 
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-4, Klasse 4K3. 
+ 
+Die Klassen der Umgebungstemperatur sind nur 
+anwendbar, wenn die Luftfeuchte keinen Einfluss hat. 
+Die Durchschnittstemperatur über 24 Stunden muss 
+mindestens 5 °C unter der oberen Grenze des  
+Temperaturbereichs liegen. 
+Es kann notwendig sein, zwei Temperaturbereiche zu 
+kombinieren, um einige äußere Einflüsse zu beschreiben. 
+Anlagen, die Temperaturen außerhalb der hier genannten 
+Temperaturbereiche ausgesetzt sind, erfordern besondere 
+Betrachtungen. 
+ 
+ 
+a 
+Ergänzende Vorkehrungen können erforderlich sein (zB spezielle Schmierung, Beschattung). 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 261/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 15 
+Tabelle 51.ZA.1 (3 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+AB 
+Atmosphärische Luftfeuchte 
+ 
+ 
+ 
+Luft-
+temperatur 
+relative 
+Luftfeuchte 
+Absolute 
+Luftfeuchte 
+ 
+ 
+ 
+°C 
+% 
+g/m3 
+ 
+ 
+ 
+niedrig 
+hoch 
+niedrig 
+hoch 
+niedrig 
+hoch 
+ 
+ 
+AB1 
+–60 
++5 
+3 
+100 
+0,003 
+7 
+Innenräume und 
+Außenbereiche mit 
+extrem niedrigen 
+Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt werden 
+Dieser Bereich schließt den 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K8, 
+ein, begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der  
+OVE EN 60721-3-4) Klasse 4K4; 
+begrenzt auf einen unteren Wert 
+von –60 °C und auf einen oberen 
+Wert der Lufttemperatur von +5 °C. 
+AB2 
+–40 
++5 
+10 
+100 
+0,1 
+7 
+Innenräume und 
+Außenbereiche mit 
+niedrigen Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der  
+OVE EN 60721-3-3, Klasse 3K7, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der  
+OVE EN 60721-3-4, Klasse 4K4; 
+der untere Wert der Lufttemperatur 
+ist jedoch auf –60 °C und der  
+obere Wert ist auf +5 °C begrenzt. 
+AB3 
+–25 
++5 
+10 
+100 
+0,5 
+7 
+Innenräume und 
+Außenbereiche mit 
+niedrigen Umgebungs-
+temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der  
+OVE EN 60721-3-3, Klasse 3K6, 
+begrenzt auf einen oberen Wert  
+der Lufttemperatur von +5 °C. Er 
+schließt den Temperaturbereich  
+der OVE EN 60721-3-4, Klasse 4K1 
+ein, begrenzt auf einen oberen  
+Wert der Lufttemperatur von +5 °C. 
+AB4 
+–5 
++40 
+5 
+95 
+1 
+29 
+Wettergeschützte 
+Orte/Räume, wo weder 
+Temperatur- noch 
+Luftfeuchteregelung 
+vorhanden sind. Eine 
+Heizung darf zur 
+Erhöhung niedriger 
+Umgebungs-
+temperaturen verwendet 
+werden. 
+Normal 
+Identisch mit dem Temperatur-
+bereich der OVE EN 60721-3-3, 
+Klasse 3K5. Die obere 
+Lufttemperatur ist auf +40 °C 
+begrenzt. 
+b 
+Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, zB zwischen dem Planer der Anlage 
+und dem Hersteller der Betriebsmittel, wie zB speziell entworfene Betriebsmittel. 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 262/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 16 
+Tabelle 51.ZA.1 (4 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die 
+Auswahl und 
+Installation der 
+elektrischen 
+Betriebsmittel 
+Verweisung 
+ 
+Luft-
+temperatur 
+relative 
+Luftfeuchte 
+Absolute 
+Luftfeuchte 
+ 
+ 
+ 
+°C 
+% 
+g/m3 
+ 
+ 
+ 
+niedrig 
+hoch 
+niedrig 
+hoch 
+niedrig 
+hoch 
+ 
+ 
+AB5 
++5 
++40 
+5 
+85 
+1 
+25 
+Wettergeschützte 
+Orte/Räume mit 
+Temperaturregelung 
+Normal  
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K3. 
+AB6 
++5 
++60 
+10 
+100 
+1 
+35 
+Innenräume und 
+Außenbereiche mit 
+extrem hohen 
+Umgebungs-
+temperaturen; der 
+Einfluss von niedrigen 
+Umgebungstemperaturen 
+ist verhindert. Auftreten 
+von Sonnen- und 
+Wärmestrahlung 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Dieser Bereich ist ein Teil des 
+Temperaturbereichs der  
+OVE EN 60721-3-3, Klasse 3K7, 
+begrenzt auf einen unteren Wert  
+der Lufttemperatur von +5 °C und 
+einen oberen Wert von +60 °C. Er 
+schließt den Temperaturbereich  
+der OVE EN 60721-3-4, 
+Klasse 4K4, ein; der untere Wert 
+der Lufttemperatur ist auf +5 °C 
+begrenzt. 
+AB7 
+–25 
++55 
+10 
+100 
+0,5 
+29 
+Wettergeschützte 
+Innenräume, die weder 
+Temperatur- noch 
+Luftfeuchteregelung 
+haben. Die Räume 
+können Öffnungen  
+direkt zur Freiluftum-
+gebung haben und 
+Sonnenstrahlung  
+ausgesetzt sein 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-3, Klasse 3K6. 
+AB8 
+–50 
++40 
+15 
+100 
+0,04 
+36 
+Außenbereiche und  
+nicht wettergeschützte 
+Orte/Räume mit hohen 
+und niedrigen 
+Temperaturen 
+Geeignete Anordnungen 
+müssen gewählt  
+werden b 
+Identisch mit dem 
+Temperaturbereich der  
+OVE EN 60721-3-4, Klasse 4K3. 
+ANMERKUNG 1 
+Alle festgelegten Werte sind Maximal- oder Grenzwerte mit der geringen Möglichkeit des Überschreitens. 
+ANMERKUNG 2 
+Die untere und die obere relative Luftfeuchte ist begrenzt durch die untere und obere absolute Luftfeuchte, sodass 
+zB für die äußeren Einflüsse die angegebenen Grenzwerte der Lufttemperatur und der relativen Luftfeuchte nicht gleichzeitig auftreten 
+können. 
+b 
+Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, zB zwischen dem Planer der Anlage 
+und dem Hersteller der Betriebsmittel, wie zB speziell entworfene Betriebsmittel. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 263/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 17 
+Tabelle 51.ZA.1 (5 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AC 
+Seehöhe 
+AC1 
+2 000 m 
+Normal  
+ 
+AC2 
+2 000 m 
+Spezielle Vorkehrungen können erforderlich 
+sein, zB die Anwendung von 
+Reduktionsfaktoren 
+ANMERKUNG 
+Für einige Betriebsmittel 
+können spezielle Maßnahmen bereits für 
+Höhen ab 1 000 m erforderlich sein. 
+ 
+AD 
+Auftreten von Wasser 
+AD1 
+Vernachlässigbar 
+Die Wahrscheinlichkeit für das Auftreten  
+von Wasser ist vernachlässigbar. 
+Orte/Räume, in denen an Wänden im 
+Allgemeinen keine Spuren von Wasser 
+vorhanden sind, aber für kurze Zeit auftreten 
+können, zB in Form von Dunst, wenn eine  
+gute Lüftung diese schnell trocknet 
+OVE EN 60721-3-4, Klasse 4Z6 
+ 
+ 
+IPX0 
+ÖVE/ÖNORM EN 60529 
+AD2 
+Tropfwasser 
+Möglichkeit von senkrecht fallenden Tropfen 
+Orte/Räume, wo Wasserdampf gelegentlich  
+zu Tropfen kondensiert oder wo gelegentlich 
+Dampf vorhanden ist 
+OVE EN 60721-3-3, Klasse 3Z7 
+ 
+ 
+IPX1 oder IPX2 
+ÖVE/ÖNORM EN 60529 
+AD3 
+Sprühwasser 
+Möglichkeit, dass Sprühwasser in einem  
+Winkel von 60 ° zur Senkrechten auftritt 
+Orte/Räume, wo Sprühwasser einen 
+geschlossenen Wasserfilm auf Böden  
+und/oder Wänden bildet 
+OVE EN 60721-3-3, Klasse 3Z8 
+OVE EN 60721-3-4, Klasse 4Z7 
+ 
+ 
+IPX3 
+ÖVE/ÖNORM EN 60529 
+AD4 
+Spritzwasser 
+Möglichkeit von Spritzwasser aus allen 
+Richtungen 
+Orte/Räume, wo Betriebsmittel Spritzwasser 
+ausgesetzt sein können; dies trifft zB für 
+bestimmte Außenleuchten, Baustellen-
+ausrüstung zu 
+OVE EN 60721-3-3, Klasse 3Z9 
+OVE EN 60721-3-4, Klasse 4Z7 
+ 
+ 
+IPX4 
+ÖVE/ÖNORM EN 60529 
+AD5 
+Strahlwasser 
+Möglichkeit von Strahlwasser aus allen 
+Richtungen 
+Orte/Räume, wo regelmäßig mit einem 
+Schlauch abgespritzt wird, zB Höfe, 
+Autowaschplätze 
+OVE EN 60721-3-3, Klasse 3Z10 
+OVE EN 60721-3-4, Klasse 4Z8 
+ 
+ 
+IPX5 
+ÖVE/ÖNORM EN 60529 
+AD6 
+Schwallwasser 
+Möglichkeit von Schwallwasser 
+Orte/Räume an der Küste, wie Piers, Strände, 
+Kais, Stege u. dgl. 
+OVE EN 60721-3-4, Klasse 4Z9 
+ 
+ 
+IPX6 
+ÖVE/ÖNORM EN 60529 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 264/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 18 
+Tabelle 51.ZA.1 (6 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AD7 
+Eintauchen 
+Mögliches Eintauchen mit teilweiser oder 
+vollständiger Bedeckung mit Wasser 
+Orte/Räume, die überflutet werden können 
+und/oder wo die Betriebsmittel wie 
+nachfolgend beschrieben eingetaucht  
+werden können: 
+– 
+Betriebsmittel mit einer Höhe kleiner 
+850 mm, die so angeordnet sind, dass  
+ihr tiefster Punkt nicht mehr als 1 000 mm 
+unterhalb der Wasseroberfläche liegt; 
+– 
+Betriebsmittel mit einer Höhe gleich oder 
+größer 850 mm, die so angeordnet sind, 
+dass ihr höchster Punkt nicht mehr als 
+150 mm unterhalb der Wasseroberfläche 
+liegt. 
+ 
+ 
+ 
+IPX7 
+ÖVE/ÖNORM EN 60529 
+AD8 
+Untertauchen 
+Möglichkeit der dauernden und vollständigen 
+Bedeckung mit Wasser 
+Orte/Räume wie Schwimmbecken, wo 
+elektrische Betriebsmittel ständig und 
+vollständig unter Wasser sind 
+ 
+ 
+ 
+IPX8 
+ÖVE/ÖNORM EN 60529 
+AE 
+Auftreten von festen Fremdkörpern 
+AE1 
+Vernachlässigbar 
+Menge oder Art von Staub oder festen 
+Fremdkörpern ist vernachlässigbar 
+IP0X 
+OVE EN 60721-3-3, Klasse 3S1 
+OVE EN 60721-3-4, Klasse 4S1 
+ÖVE/ÖNORM EN 60529 
+AE2 
+Kleine Gegenstände 
+(2,5 mm) 
+Auftreten von festen Fremdkörpern, deren 
+kleinste Abmessung mindestens 2,5 mm ist. 
+IP3X 
+Werkzeuge und kleine Gegenstände sind 
+Beispiele von festen Fremdkörpern, deren 
+kleinste Abmessung nicht kleiner als 2,5 mm 
+ist 
+OVE EN 60721-3-3, Klasse 3S2 
+OVE EN 60721-3-4, Klasse 4S2 
+ÖVE/ÖNORM EN 60529 
+ 
+AE3 
+Sehr kleine Gegenstände 
+(1 mm) 
+Auftreten von festen Fremdkörpern, deren 
+kleinste Abmessung nicht kleiner als 1 mm ist 
+IP4X 
+Drähte sind ein Beispiel für Fremdkörper, 
+deren kleinste Abmessung nicht kleiner als 
+1 mm ist. 
+OVE EN 60721-3-3, Klasse 3S3 
+OVE EN 60721-3-4, Klasse 4S3 
+ÖVE/ÖNORM EN 60529 
+AE4 
+Kleine Staubmenge 
+Auftreten von Staub 
+Das Eindringen von Staub ist nicht schädlich 
+für die Funktion des Betriebsmittels 
+IP5X 
+OVE EN 60721-3-3, Klasse 3S2 
+OVE EN 60721-3-4, Klasse 4S2 
+ 
+ÖVE/ÖNORM EN 60529 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 265/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 19 
+Tabelle 51.ZA.1 (7 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AE5 
+Mittlere Staubmenge 
+Auftreten von Staub 
+Das Eindringen von Staub ist schädlich für  
+die Funktion des Betriebsmittels 
+IP6X 
+OVE EN 60721-3-3, Klasse 3S3 
+OVE EN 60721-3-4, Klasse 4S3 
+ 
+ÖVE/ÖNORM EN 60529 
+AE6 
+Bedeutende Staubmenge 
+Auftreten von Staub 
+Staub darf nicht in das Betriebsmittel 
+eindringen. 
+IP6X 
+OVE EN 60721-3-3, Klasse 3S4 
+OVE EN 60721-3-4, Klasse 4S4 
+ 
+ÖVE/ÖNORM EN 60529 
+AF 
+Auftreten von korrosiven oder verunreinigenden Substanzen 
+AF1 
+Vernachlässigbar 
+Menge oder Art von korrosiven oder 
+verunreinigten Substanzen ist 
+vernachlässigbar 
+Normal  
+OVE EN 60721-3-3, Klasse 3C1 
+OVE EN 60721-3-4, Klasse 4C1 
+AF2 
+Atmosphärisch 
+Menge von korrosiven oder verunreinigenden 
+Substanzen atmosphärischen Ursprungs  
+ist bedeutend 
+Anlagen, errichtet in Meeresnähe oder in  
+der Nähe von Industrien, die eine große 
+Luftverschmutzung produzieren, wie 
+chemische Industrie, Zementwerke; diese 
+Industrien verursachen scheuernde, 
+isolierende oder leitfähige Stäube. 
+Entsprechend der Art der Substanzen (zB 
+Bestehen des Salz-Nebel-Tests nach 
+ÖVE/ÖNORM EN 60068-2-11) 
+OVE EN 60721-3-3, Klasse 3C2 
+OVE EN 60721-3-4, Klasse 4C2 
+AF3 
+Zeitweise oder zufällig 
+Zeitweises oder zufälliges Auftreten von 
+korrosiven oder verschmutzten chemischen 
+Substanzen, die verwendet oder produziert 
+werden 
+Orte/Räume, wo mit einigen Chemikalien  
+in kleinen Mengen umgegangen wird und  
+wo diese nur zufällig in Berührung mit 
+elektrischen Betriebsmitteln kommen können; 
+solche Bedingungen gibt es in Fabriklabors, 
+anderen Laboratorien oder in Bereichen, in 
+denen Kohlenwasserstoffe zur Anwendung 
+kommen (Kesselräume, Garagen usw.). 
+Schutz gegen Korrosion entsprechend der 
+Betriebsmittelspezifikation 
+OVE EN 60721-3-3, Klasse 3C3 
+OVE EN 60721-3-4, Klasse 4C3 
+AF4 
+Dauernd 
+Dauerndes Auftreten von korrosiven oder 
+verschmutzten chemischen Substanzen in 
+beträchtlichen Mengen, zB chemische Werke 
+Speziell ausgeführte Betriebsmittel, 
+entsprechend der Art der Substanzen 
+OVE EN 60721-3-3, Klasse 3C4 
+OVE EN 60721-3-4, Klasse 4C4 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 266/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 20 
+Tabelle 51.ZA.1 (8 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AG 
+Mechanische Beanspruchung: zB Schlag 
+AG1 
+Niedrige Beanspruchung 
+Normal 
+zB Haushaltsgeräte und ähnliche 
+Betriebsmittel 
+OVE EN 60721-3-3, 
+Klassen 3M1/3M2/3M3. 
+OVE EN 60721-3-4), 
+Klassen 4M1/4M2/4M3 
+AG2 
+Mittlere Beanspruchung 
+Gebräuchliche Betriebsmittel für den 
+Industrieeinsatz, wenn anwendbar oder  
+mit verstärktem Schutz 
+OVE EN 60721-3-3, 
+Klassen 3M4/3M5/3M6 
+OVE EN 60721-3-4, 
+Klassen 4M4/4M5/4M6 
+AG3 
+Hohe Beanspruchung 
+Verstärkter Schutz 
+OVE EN 60721-3-3, 
+Klassen 3M7/3M8 
+OVE EN 60721-3-4, 
+Klassen 4M7/4M8 
+AH 
+Beanspruchung durch Schwingungen  
+AH1 
+Niedrige Beanspruchung 
+Bedingungen wie im Haushalt und  
+ähnlichen Bereichen, wo die Auswirkungen 
+von Schwingungen im Allgemeinen 
+vernachlässigbar sind 
+Normal  
+OVE EN 60721-3-3, 
+Klassen 3M1/3M2/3M3 
+OVE EN 60721-3-4 
+Klassen 4M1/4M2/4M3 
+AH2 
+Mittlere Beanspruchung 
+Gewöhnlich industrielle Bedingungen 
+Speziell ausgeführte Betriebsmittel oder 
+spezielle Vorkehrungen 
+OVE EN 60721-3-3 
+Klassen 3M4/3M5/3M6 
+OVE EN 60721-3-4 
+Klassen 4M4/4M5/4M6 
+AH3 
+Hohe Beanspruchung 
+Industrieanlagen mit hoher Beanspruchung 
+Speziell ausgeführte Betriebsmittel oder 
+spezielle Vorkehrungen 
+OVE EN 60721-3-3, 
+Klassen 3M7/3M8 
+OVE EN 60721-3-4, 
+Klassen 4M7/4M8 
+AJ 
+Andere mechanische Beanspruchungen: In Bearbeitung 
+AK 
+Vorhandensein von Pflanzen- und/oder Schimmelwachstum 
+AK1 
+Nicht gefährlich 
+Keine schädigende Gefahr durch Pflanzen 
+und/oder Schimmelwachstum 
+Normal  
+OVE EN 60721-3-3, Klasse 3B1 
+OVE EN 60721-3-4, Klasse 4B1 
+AK2 
+Gefährlich 
+Schädigende Gefahr durch Pflanzen-  
+und/oder Schimmelwachstum 
+Die Gefährlichkeit hängt von den örtlichen 
+Bedingungen ab und von der Art der  
+Pflanzen. Es sollte unterschieden werden 
+zwischen schädlichem Wachstum der 
+Vegetation und Bedingungen, die das 
+Wachstum von Schimmel begünstigen. 
+Spezielle Vorkehrungen wie zB: 
+– 
+erhöhte Schutzarten (siehe AE); 
+– 
+spezielles Material oder spezieller 
+Schutzanstrich der Umhüllung; 
+– 
+Vorkehrungen, die die Pflanzen vom 
+Ort/Raum fernhalten. 
+OVE EN 60721-3-3, Klasse 3B2 
+OVE EN 60721-3-4, Klasse 4B2 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 267/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 21 
+Tabelle 51.ZA.1 (9 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AL 
+Anwesenheit von Tieren (Fauna) 
+AL1 
+Nicht gefährlich 
+Keine schädigende Gefahr durch Tiere 
+Normal  
+OVE EN 60721-3-3, Klasse 3B1 
+OVE EN 60721-3-4, Klasse 4B1 
+AL2 
+Gefährlich 
+Schädigende Gefahr durch Tiere (Insekten, 
+Vögel, kleine Tiere) 
+Die Gefahr ist abhängig von der Art der Tiere 
+Es sollte unterschieden werden zwischen: 
+– 
+Vorhandensein von Insekten in 
+gefährlichen Mengen oder mit großer 
+Aggressivität; 
+– 
+Vorhandensein von kleinen Tieren  
+oder Vögeln in gefährlichen Mengen  
+oder mit großer Aggressivität. 
+Der Schutz kann einschließen: 
+– 
+eine geeignete Schutzart gegen 
+Eindringen von festen Fremdkörpern 
+(siehe AE); 
+– 
+ausreichend mechanischen Widerstand 
+(siehe AG); 
+– 
+Vorkehrungen, die die Tiere vom 
+Ort/Raum fernhalten (zB Sauberkeit, 
+Anwendung von 
+Schädlingsbekämpfungsmitteln); 
+– 
+spezielle Betriebsmittel oder spezieller 
+Schutzanstrich der Umhüllungen. 
+OVE EN 60721-3-3, Klasse 3B1 
+OVE EN 60721-3-4, Klasse 4B1 
+AM 
+Elektromagnetische, elektrostatische oder ionisierende Einflüsse 
+ 
+Niederfrequente elektromagnetische Störgrößen (leitungsgebunden oder gestrahlt) 
+ 
+Oberschwingungen, Zwischenharmonische  
+AM-1-1 
+Kontrollierter Pegel 
+Es sollte darauf geachtet werden, dass sich 
+die kontrollierte Situation nicht verschlechtert. 
+Niedriger als Tabelle 1 von 
+ÖVE/ÖNORM EN 61000-2-2 
+AM-1-2 
+Normaler Pegel 
+ 
+Spezielle Maßnahmen in der Ausführung  
+der elektrischen Anlage, zB Filter 
+Übereinstimmung mit Tabelle 1 von 
+ÖVE/ÖNORM EN 61000-2-2 
+AM-1-3 
+Hoher Pegel 
+Örtlich höher als Tabelle 1 von 
+ÖVE/ÖNORM EN 61000-2-2 
+ 
+Signalspannungen 
+AM-2-1 
+Kontrollierter Pegel 
+zB abgeschirmte Stromkreise 
+Niedriger als nachfolgend festgelegt 
+AM-2-2 
+Mittlerer Pegel 
+Keine zusätzliche Anforderung 
+ÖVE/ÖNORM EN 61000-2-1 und 
+ÖVE/ÖNORM EN 61000-2-2 
+AM-2-3 
+Hoher Pegel 
+Geeignete Maßnahmen 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 268/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 22 
+Tabelle 51.ZA.1 (10 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+ 
+Schwankungen der Spannungsamplitude (Amplitudenänderungen) 
+ 
+AM-3-1 
+Kontrollierter Pegel 
+zB überwacht durch USV 
+ 
+AM-3-2 
+Normaler Pegel 
+Übereinstimmung mit Abschnitt 444 
+ 
+AM-4 
+Spannungsunsymmetrie 
+Übereinstimmung mit 
+ÖVE/ÖNORM EN 61000-2-2 
+AM-5 
+Schwankungen der Netzfrequenz 
+±1 Hz entsprechend 
+ÖVE/ÖNORM EN 61000-2-2 
+AM-6 
+Induzierte niederfrequente Spannungen  
+ 
+ 
+Keine Klassifizierung 
+Verweis auf Abschnitt 444 
+Hohe Widerstandsfähigkeit von Melde- und 
+Steuersystemen der Schalt- und Steuergeräte 
+ITU-T (International 
+Telecommunication Union) 
+AM-7 
+Gleichströme in Wechselstromnetzen 
+ 
+Keine Klassifizierung 
+Maßnahmen zur Begrenzung des 
+Gleichstromanteils bezüglich Pegel und Zeit  
+im Verbrauchsmittel oder ihrer Nähe 
+ 
+ 
+Gestrahlte Magnetfelder 
+AM-8-1 
+Mittlerer Pegel 
+Normal  
+Pegel 2 von 
+ÖVE/ÖNORM EN 61000-4-8 
+AM-8-2 
+Hoher Pegel 
+Schutz durch geeignete Maßnahmen, zB 
+Schirmung und/oder Trennung 
+Pegel 4 von 
+ÖVE/ÖNORM EN 61000-4-8 
+ 
+Elektrische Felder 
+ 
+ 
+AM-9-1 
+Vernachlässigbarer Pegel 
+Normal  
+ 
+AM-9-2 
+Mittlerer Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+AM-9-3 
+Hoher Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+AM-9-4 
+Sehr hoher Pegel 
+ 
+Verweis auf IEC TR 61000-2-5 
+ 
+Hochfrequente elektromagnetische Störgrößen, leitungsgebunden, induziert oder gestrahlt (dauernd oder kurzzeitig) 
+AM-21 
+Induzierte schwingende Spannungen oder Ströme (Oszillierende Störgrößen) 
+ 
+ 
+Keine Klassifizierung 
+Normal  
+ÖVE/ÖNORM EN 61000-4-6 
+ 
+Einseitige leitungsgebundene gerichtete transiente Vorgänge im 
+Nanosekundenbereich 
+ÖVE/ÖNORM EN 61000-4-4 
+AM-22-1 
+Vernachlässigbarer Pegel 
+Maßnahmen zum Schutz sind notwendig 
+Pegel 1 
+AM-22-2 
+Mittlerer Pegel 
+Maßnahmen zum Schutz sind notwendig 
+Pegel 2 
+AM-22-3 
+Hoher Pegel 
+Normale Betriebsmittel 
+Pegel 3 
+AM-22-4 
+Sehr hoher Pegel 
+Betriebsmittel mit hoher Störfestigkeit 
+Pegel 4 
+ 
+Einseitige leitungsgebundene gerichtete transiente Vorgänge im Milli- bis Mikrosekundenbereich 
+AM-23-1 
+Kontrollierter Pegel 
+ 
+Die Überspannungsfestigkeit der 
+Betriebsmittel und die Mittel für den Schutz  
+bei Überspannungen müssen berücksichtigt 
+werden entsprechend der Nennversorgungs-
+spannung und Überspannungskategorie nach 
+Abschnitt 443 
+Abschnitt 443 
+ 
+AM-23-2 
+Mittlerer Pegel 
+AM-23-3 
+Hoher Pegel 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 269/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 23 
+Tabelle 51.ZA.1 (11 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+ 
+Leitungsgebundene oszillierende transiente Vorgänge 
+AM-24-1 
+Mittlerer Pegel 
+Verweis auf ÖVE/ÖNORM EN 61000-4-12 
+ÖVE/ÖNORM EN 61000-4-12 
+AM-24-2 
+Hoher Pegel 
+Verweis auf ÖVE/ÖNORM EN 60255-26 
+ÖVE/ÖNORM EN 60255-26 
+ 
+Gestrahlte hochfrequente elektromagnetische Störgrößen 
+ÖVE/ÖNORM EN 61000-4-3 
+AM-25-1 
+Vernachlässigbarer Pegel 
+ 
+Pegel 1 
+AM-25-2 
+Mittlerer Pegel 
+Normal 
+Pegel 2 
+AM-25-3 
+Hoher Pegel 
+verstärkter Pegel 
+Pegel 3 
+ 
+Elektrostatische Entladungen 
+ÖVE/ÖNORM EN 61000-4-2 
+AM-31-1 
+Kleiner Pegel 
+Normal 
+Pegel 1 
+AM-31-2 
+Mittlerer Pegel 
+Normal 
+Pegel 2 
+AM-31-3 
+Hoher Pegel 
+Normal 
+Pegel 3 
+AM-31-4 
+Sehr hoher Pegel 
+Verstärkt 
+Pegel 4 
+ 
+Ionisierung 
+ 
+AM-41-1 
+Keine Klassifizierung 
+Spezieller Schutz wie: 
+– 
+Abstand zu der Quelle; 
+– 
+Einfügen von Abschirmungen,  
+Umhüllung aus speziellen Materialien 
+ 
+AN 
+Sonnenstrahlung 
+AN1 
+Niedrig 
+Intensität ≤500 W/m2 
+Normal  
+OVE EN 60721-3-3 
+Klasse 3K1 
+AN2 
+Mittel 
+500 < Intensität ≤ 700 W/m2 
+Geeignete Anordnungen sind zu wählen b 
+OVE EN 60721-3-3 
+Klassen 3K2 bis 3K5 
+AN3 
+Hoch 
+700 < Intensität ≤ 1120 W/m2 
+Geeignete Anordnungen sind zu wählen b 
+Solche Anordnungen können sein: 
+– 
+ultraviolettbeständiges Material; 
+– 
+spezieller Farbanstrich; 
+– 
+Einfügen von Schirmungen. 
+OVE EN 60721-3-3 
+höher als Klasse 3K5 
+OVE EN 60721-3-4 
+AP 
+Auswirkungen von Erdbeben (Seismik) 
+AP1 
+Vernachlässigbar 
+Beschleunigung ≤30 Gal (1 Gal ist 1 cm/s2) 
+Normal  
+ 
+AP2 
+Geringe Auswirkung 
+30 Gal < Beschleunigung ≤ 300 Gal 
+In Beratung 
+ 
+AP3 
+Mittlere Auswirkung 
+300 Gal < Beschleunigung ≤ 600 Gal 
+In Beratung 
+ 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, zB zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie zB speziell entworfene Betriebsmittel. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 270/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 24 
+Tabelle 51.ZA.1 (12 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AP4 
+Hohe Auswirkung 
+Beschleunigung > 600 Gal 
+In Beratung 
+Schwingungen, die eine Zerstörung des 
+Gebäudes bewirken können, sind von dieser 
+Klassifikation nicht erfasst 
+Die Frequenz ist bei der Klassifizierung  
+nicht berücksichtigt. Wenn jedoch Gebäude-
+bewegungen mit der Erdbebenbeschleunigung 
+in Resonanz geraten, müssen die 
+Erdbebenauswirkungen besonders betrachtet 
+werden. Im Allgemeinen liegt die Frequenz  
+von Erdbebenbeschleunigungen zwischen 
+0 Hz und 10 Hz 
+ 
+AQ 
+Blitze; Blitztage (Nk) und Häufigkeit der Blitze (Ng) (siehe Abschnitt 443) 
+AQ1 
+Vernachlässigbar 
+Ng ≤ 2,5 und Nk ≤ 25 Tage im Jahr oder  
+das Ergebnis einer Risikobewertung in 
+Übereinstimmung mit Abschnitt 443 
+Normal  
+ 
+AQ2 
+Indirekte Wirkung 
+Ng > 2,5 und Nk > 25 Tage im Jahr oder  
+das Ergebnis einer Risikobewertung in 
+Übereinstimmung mit Abschnitt 443 
+Normal 
+ 
+AQ3 
+Direkte Wirkung 
+Risiko durch die Anordnung der Betriebsmittel 
+Bezüglich Anforderungen an den Blitzschutz 
+siehe ÖVE/ÖNORM EN 62305 Reihe 
+Teile der Anlage befinden sich außerhalb von 
+Gebäuden 
+ 
+AR 
+Beanspruchung durch Luftbewegung 
+AR1 
+Niedrig 
+Geschwindigkeit ≤1 m/s 
+Normal 
+ 
+AR2 
+Mittel 
+1 m/s < Geschwindigkeit ≤ 5 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+AR3 
+Hoch 
+5 m/s < Geschwindigkeit ≤ 10 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+AS 
+Wind 
+AS1 
+Niedrig 
+Geschwindigkeit ≤20 m/s 
+Normal  
+ 
+AS2 
+Mittel 
+20 m/s < Geschwindigkeit ≤ 30 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, zB zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie zB speziell entworfene Betriebsmittel. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 271/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 25 
+Tabelle 51.ZA.1 (13 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+AS3 
+Hoch 
+30 m/s < Geschwindigkeit ≤ 50 m/s 
+Geeignete Anordnungen sind zu wählen b 
+ 
+B 
+Verwendung 
+BA 
+Personen, die Zutritt haben 
+BA1 
+Laien 
+Person, die weder Elektrofachkraft noch 
+elektrotechnisch unterwiesene Person ist 
+ÖVE/ÖNORM EN 50110-1 
+BA2 
+Kinder 
+Orte, die für die Betreuung von Kindern, zB 
+Kinderkrippen, Kindergarten, vorgesehen sind 
+Betriebsmittel mit einer Schutzart gleich  
+oder größer als IP2XC 
+Keine Betriebsmittel mit einer äußeren 
+Oberflächentemperatur über 60 ºC c 
+ 
+ 
+BA3 
+Menschen mit einer  
+Beeinträchtigung 
+Personen, mit eingeschränkten physischen 
+oder intellektuellen Fähigkeiten (zB 
+behinderte, kranke und alte Menschen) 
+Entsprechend der Behinderung 
+BA4 
+Elektrotechnisch unterwiesene 
+Personen 
+Person, die durch eine Elektrofachkraft 
+ausreichend unterrichtet wurde, sodass  
+sie Gefahren vermeiden kann, die von der 
+Elektrizität ausgehen können 
+ÖVE/ÖNORM EN 50110-1 
+BA5 
+Elektrofachkräfte 
+Person mit geeigneter fachlicher Ausbildung, 
+Kenntnissen und Erfahrung, sodass sie 
+Gefahren erkennen und vermeiden kann,  
+die von der Elektrizität ausgehen können 
+ÖVE/ÖNORM EN 50110-1 
+BB 
+Elektrischer Widerstand des menschlichen Körpers (In Beratung) 
+BC 
+Verbindung von Personen mit Erdpotential 
+ 
+ 
+Schutzklasse des Betriebsmittels gemäß 
+OVE EN 61140 
+ 
+ 
+ 
+ 
+I          II          III 
+ 
+BC1 
+Keine 
+Personen in nicht leitfähigen Bereichen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+Teil 4-41 
+b 
+ Dies bedeutet, dass spezielle Maßnahmen oder Vereinbarungen getroffen werden sollten, zB zwischen dem Planer der Anlage  
+und dem Hersteller der Betriebsmittel, wie zB speziell entworfene Betriebsmittel. 
+c 
+ Siehe auch CENELEC Guide 29. 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 272/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 26 
+Tabelle 51.ZA.1 (14 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+ 
+ 
+Schutzklasse des Betriebsmittels gemäß 
+OVE EN 61140 
+ 
+I          II          III 
+ 
+BC2 
+Selten 
+Personen, die unter allgemeinen Bedingungen 
+keinen Kontakt mit fremden leitfähigen Teilen 
+bekommen und nicht auf leitfähigen 
+Oberflächen stehen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+ 
+BC3 
+Häufig 
+Personen, die häufig in Kontakt mit fremden 
+leitfähigen Teilen kommen oder auf leitfähigen 
+Oberflächen stehen 
+Bereiche mit fremden leitfähigen Teilen in 
+großer Anzahl oder in ausgedehnten 
+Bereichen 
+ 
+A          A          A 
+A … Betriebsmittel erlaubt 
+ 
+BC4 
+Dauernd 
+Personen, die in Wasser eingetaucht sind oder 
+lange Zeit dauernden Kontakt mit metallischer 
+Umgebung haben und für die die Möglichkeit, 
+diesen Kontakt zu unterbrechen, begrenzt ist 
+Metallische Umgebung wie Boiler und Tanks 
+(Merkmale in Beratung) 
+ 
+BD 
+Räumungsmöglichkeit bei Gefahr (bzw. Evakuierungsmöglichkeit im Notfall) 
+BD1 
+Niedrige Personendichte/ 
+einfaches Verlassen 
+Geringe Personendichte, einfache 
+Bedingungen für die Evakuierung 
+Normal  
+ 
+BD2 
+Niedrige Personendichte/  
+schwieriges Verlassen 
+Geringe Personendichte, schwierige 
+Bedingungen für die Evakuierung 
+Hochhäuser 
+ 
+BD3 
+Hohe Personendichte/  
+einfaches Verlassen 
+Große Personendichte, einfache Bedingungen 
+für die Evakuierung 
+Orte, die der Öffentlichkeit zugänglich sind (zB 
+Theater, Kinos, Kaufhäuser u. dgl.) 
+ 
+BD4 
+Hohe Personendichte/  
+schwieriges Verlassen 
+Große Personendichte, schwierige 
+Bedingungen für die Evakuierung 
+Hochhäuser, die der Öffentlichkeit zugänglich 
+sind (zB Hotels, Krankenhäuser usw.) 
+ 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 273/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 27 
+Tabelle 51.ZA.1 (15 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+BE 
+Art der bearbeiteten oder gelagerten Stoffe 
+BE1 
+Kein bedeutendes Risiko 
+Wohn- und Büronutzung 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+BE2 
+Brandrisiko  
+Herstellung, Bearbeitung oder Lagerung von 
+entflammbarem Material einschließlich 
+Vorhandensein/Auftreten von Staub 
+Scheunen, Werkstätten für Holzberarbeitung 
+bzw. Holzverarbeitung, Papier- und 
+Textilfabriken 
+Verwendung von Betriebsmitteln aus einem 
+Material, das eine Flammenausbreitung 
+verzögert 
+Anordnung so, dass eine deutliche 
+Temperaturerhöhung oder ein Funken in 
+einem elektrischen Betriebsmittel nicht einen 
+äußeren Brand entzünden kann 
+Teil 4-42 
+BE3 
+Explosionsrisiko 
+Bearbeitung oder Lagerung von explosivem 
+Material oder Material mit niedriger 
+Zündtemperatur; Auftreten von explosivem 
+Staub 
+Raffinerien, Lager für Kohlenwasserstoffe 
+Anforderungen für Betriebsmittel für 
+explosionsgefährliche Atmosphäre (siehe 
+ÖVE/ÖNORM EN 60079 Reihe) 
+In Beratung 
+BE4 
+Risiko durch Verunreinigung 
+(Kontamination) 
+Vorhandensein von ungeschützten 
+Nahrungsmitteln, Arzneimitteln und ähnlichen 
+Produkten ohne Schutz 
+Nahrungsmittelindustrie und Küchen 
+Spezielle Maßnahmen können notwendig  
+sein, um die Verunreinigung von verarbeiteten 
+Materialien durch elektrische Betriebsmittel 
+ bei Fehlern zu verhindern, zB gebrochene 
+Lampen. 
+Geeignete Anordnung, wie zB 
+– 
+Schutz gegen herausfallende Teile 
+zerbrochener Lampen und anderer 
+zerbrechlicher Teile; 
+– 
+Abschirmung schädlicher Strahlung wie 
+Infrarotstrahlung oder ultraviolette 
+Strahlung 
+In Beratung 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 274/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 28 
+Tabelle 51.ZA.1 (16 von 16) 
+Kurz-
+zeichen 
+Äußere Einflüsse 
+Merkmale für die Auswahl und Installation 
+der elektrischen Betriebsmittel 
+Verweisung 
+C 
+Bauweise von Bauwerken, Gebäudekonstruktion 
+CA 
+Baustoffe 
+ 
+CA1 
+Nicht brennbar 
+Gebäude hauptsächlich aus nichtbrennbaren 
+Baustoffen hergestellt 
+Massiv- und Stahlbauweise 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+CA2 
+Brennbar 
+Gebäude hauptsächlich aus brennbaren 
+Baustoffen hergestellt 
+(In Beratung) 
+ 
+ 
+Teil 4-42 
+CB 
+Gebäudestruktur 
+ 
+CB1 
+Vernachlässigbare Gefährdung 
+Keine besonderen Anforderungen an die 
+Auswahl und Installation von Betriebsmitteln 
+ 
+CB2 
+Gefährdung durch Brandausbreitung 
+Bauten, deren Form und Ausdehnung die 
+Ausbreitung eines Brandes erleichtert (zB 
+Kamineffekt) 
+Hochhäuser, Lüftungsanlage 
+Betriebsmittel aus Materialien, die die 
+Ausbreitung eines Brandes verzögern, auch 
+bei Bränden, die nicht durch die elektrische 
+Anlage verursacht sind 
+Brandschottungen d 
+ 
+ 
+ 
+ 
+Teil 4-42 
+Teil 5-52 
+CB3 
+Gefährdung durch 
+Gebäudebewegung 
+Gefährdung durch Gebäudebewegungen (zB 
+Verschiebung zwischen unterschiedlichen 
+Teilen des Gebäudes oder zwischen dem 
+Gebäude und dem Grund oder dem 
+Fundament) 
+Gebäude mit beträchtlicher Länge oder auf 
+unstabilem Grund errichtet 
+Schwindfugen oder Ausdehnungsfugen für 
+Kabel- und Leitungsanlagen 
+Schwindfugen oder 
+Ausdehnungsfugen (in Beratung) 
+Teil 5-52 
+CB4 
+Elastische oder instabile Bauweise 
+Strukturen, die empfindlich oder Bewegungen 
+ausgesetzt sind (zB Schwingung) 
+Zelte, Traglufthallen, abgehängte Decken, 
+veränderbare Wände 
+Selbsttragende Konstruktionen 
+(In Beratung) 
+Flexible Verdrahtung  
+(in Beratung) 
+ 
+ 
+ 
+Teil 5-52 
+d 
+Brandmelder dürfen vorgesehen werden. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 275/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 29 
+Anhang 51.ZB 
+(informativ) 
+ 
+Kennzeichnung von PEN-Leitern in verschiedenen Ländern 
+Land 
+Grün-gelb im gesamten Verlauf mit  
+blauer Markierung an den Leiterenden 
+Blau im gesamtem Verlauf mit grün-
+gelber Markierung an den Leiterenden 
+Belgien 
+ 
+Ja c 
+ Nicht zugelassen 
+Dänemark 
+ 
+Ja 
+ Ja 
+Deutschland 
+ 
+Ja 
+ Nicht zugelassen b 
+Finnland 
+ 
+Ja 
+ Nicht zugelassen 
+Frankreich 
+ 
+Ja c 
+ Nicht zugelassen 
+Irland 
+ 
+Ja 
+ Ja 
+Italien 
+ 
+Ja 
+ Ja 
+Niederlande 
+ 
+Ja 
+ Nicht zugelassen 
+Norwegen 
+ 
+Ja 
+ Nicht zugelassen 
+Österreich 
+ 
+Ja a 
+ Ja b 
+Polen 
+ 
+Ja 
+ Ja 
+Schweden 
+ 
+Ja 
+ Nicht zugelassen 
+Schweiz 
+ 
+Ja 
+ Nicht zugelassen 
+Slowakei 
+ 
+Ja 
+ Nicht zugelassen 
+Slowenien 
+ 
+Ja 
+ Nicht zugelassen 
+Spanien 
+ 
+Ja 
+ Nicht zugelassen 
+Tschechien 
+ 
+Ja 
+ Nicht zugelassen 
+Vereinigtes Königreich 
+ 
+Ja 
+ Ja 
+a 
+Blaue Markierungen an den Leiterenden sind nicht gefordert, sind aber erlaubt. 
+b 
+Nur erlaubt, wenn ein früher vorhandener Neutralleiter als PEN-Leiter verwendet wird. 
+c 
+Ohne blaue Markierungen an den Leiterenden. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 276/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 30 
+Anhang 51.ZC 
+(informativ) 
+ 
+Kennzeichnung von Adern 
+ANMERKUNG AT 
+Die Tabellen 51.ZC.1 und 51.ZC.2 stimmen mit den Tabellen 1 und 2 von ÖVE/ÖNORM 
+E 8003:2002 überein. 
+Tabelle 51.ZC.1 – Kabel und Leitungen mit grün-gelber Ader 
+Anzahl der 
+Adern 
+Farben der Adern b 
+Schutzleiter 
+Aktive Leiter 
+3 
+Grün-Gelb 
+Blau 
+Braun 
+– 
+– 
+4 
+Grün-Gelb 
+– 
+Braun 
+Schwarz 
+Grau 
+4 a 
+Grün-Gelb 
+Blau 
+Braun 
+Schwarz 
+– 
+5 
+Grün-Gelb 
+Blau 
+Braun 
+Schwarz 
+Grau 
+a 
+Nur für bestimmte Anwendungen. 
+b 
+Blanke, konzentrische Leiter, wie metallene Mäntel, Armierungen oder Schirme, werden in dieser Tabelle nicht 
+als Leiter betrachtet. Ein konzentrischer Leiter ist bereits durch seine Anordnung hinlänglich gekennzeichnet und 
+braucht deshalb nicht noch zusätzlich durch Farben gekennzeichnet zu werden. 
+ 
+Tabelle 51.ZC.2 – Kabel und Leitungen ohne grün-gelbe Ader 
+Anzahl der Adern 
+Farben der Adern b 
+2 
+Blau 
+Braun 
+– 
+– 
+– 
+3 
+– 
+Braun 
+Schwarz 
+Grau 
+– 
+3 a 
+Blau 
+Braun 
+Schwarz 
+ 
+– 
+4 
+Blau 
+Braun 
+Schwarz 
+Grau 
+– 
+5 
+Blau 
+Braun 
+Schwarz 
+Grau 
+Schwarz 
+a 
+Nur für bestimmte Anwendungen. 
+b 
+Blanke konzentrische Leiter wie metallene Mäntel, Armierungen oder Schirme werden in dieser Tabelle nicht als 
+Leiter betrachtet. Ein konzentrischer Leiter ist durch seine Anordnung hinlänglich gekennzeichnet und braucht 
+daher nicht durch Farben gekennzeichnet zu werden. 
+ 
+ 
+ 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 277/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 31 
+Nationale Ergänzung 51.NE 
+(normativ) 
+ 
+Kennzeichnung von Leitern – 
+Ergänzende Anforderungen zu 514.3 
+sowie ergänzende nationale Anforderungen 
+51.NE.1 Anwendung der Kennzeichnungsverfahren 
+Die Farbkennzeichnung, das graphische Symbol oder das alphanumerische Zeichen muss auf der Isolierung 
+des entsprechenden Leiters angebracht sein. 
+Wenn mehr als eines der Kennzeichnungsverfahren angewendet wird und Verwechslungsgefahr möglich ist, 
+muss der Zusammenhang zwischen den Kennzeichnungsverfahren aus der zugehörigen Dokumentation klar 
+hervorgehen. 
+Wenn keine Verwechslungsgefahr besteht, dürfen numerische und alphanumerische Bezeichnungen 
+nebeneinander angewandt werden. 
+Die für eine Erdung genutzten Anschlüsse/Leiter sind hinsichtlich ihres Zwecks der Erdung in die zwei 
+grundlegenden Konzepte der „Schutzerdung“ und der „Funktionserdung“ aufgegliedert. 
+– 
+Falls ein Anschluss oder ein Leiter die Anforderungen sowohl für eine Schutzerdung als auch für die 
+Funktionserdung erfüllt, muss er als Schutzerdungsleiter bzw. als Anschluss für einen Schutzerdungs-
+leiter gekennzeichnet werden. 
+– 
+Falls die Anforderungen für eine Schutzerdung von dem Funktionserdungsleiter bzw. dem Anschluss 
+hierfür nicht erfüllt sind, darf dieser nicht mit der Kennzeichnung eines Schutzerdungsleiters bzw. der für 
+den Anschluss eines Schutzerdungsleiters gekennzeichnet werden. 
+– 
+Die Anforderungen an eine Funktionserdung sind vom Hersteller oder dem zuständigen Produktkomitee 
+festzulegen und sollten in der Dokumentation des elektrischen Betriebsmittels spezifiziert sein. 
+ANMERKUNG AT 
+Zum Beispiel Anforderungen zur Handhabung der Belange der elektromagnetischen 
+Verträglichkeit. 
+51.NE.2 Kennzeichnung durch Farben 
+51.NE.2.1 
+Allgemeines 
+Für die Kennzeichnung von Leitern sind folgende Farben zulässig: 
+– 
+Schwarz, Braun, Rot, Orange, Gelb, Grün, Blau, Violett, Grau, Weiß, Pink, Türkis. 
+ANMERKUNG AT 
+Diese Zusammenstellung der Farben ist von IEC 60757 abgeleitet. 
+Die Farbkennzeichnung muss an den Anschlüssen und vorzugsweise durchgehend über die gesamte 
+Leiterlänge entweder durch die Farbe der Isolierung oder durch dauerhafte Farbmarken erfolgen. 
+Ausgenommen sind blanke Leiter, bei denen eine Kennzeichnung an den Enden und allen Anschlusspunkten 
+vorhanden sein muss. 
+Zusätzliche Kennzeichnungen, zB alphanumerische, sind zulässig, vorausgesetzt, dass die Farbkenn-
+zeichnung eindeutig bleibt. 
+ANMERKUNG AT 
+Um einer Verwechslung mit anderen dunklen Farben vorzubeugen, wird unter der 
+Farbbezeichnung „Blau“ ein helles Blau verstanden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 278/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 32 
+51.NE.2.2 
+Einzelfarben 
+Die Einzelfarben Grün und Gelb sind, mit Ausnahme der einadrigen Kabel/Leitungen und Aderleitungen, nur 
+dort zulässig, wo eine Verwechslungsgefahr mit der Farbkennzeichnung Grün-Gelb der Leiter gemäß 
+514.3.1.Z2 und 514.3.2 nicht zu erwarten ist. 
+ANMERKUNG AT 
+Wird bei Verwendung von Aderleitungen eine Farbkennzeichnung für geschaltete Leiter 
+ausgeführt, so können dafür zB Aderleitungen mit der Farbkennzeichnung Orange oder Violett verwendet werden. 
+51.NE.2.3 
+Zwei-Farben-Kombinationen 
+Andere Zwei-Farben-Kombinationen als Grün-Gelb sind in besonderen Fällen zulässig, vorausgesetzt, dass 
+keine Verwechslungsgefahr besteht. Dabei dürfen die Farbe Grün und die Farbe Gelb in solchen 
+Farbkombinationen nicht verwendet werden. 
+ANMERKUNG AT 
+Bei gemäß ÖVE-F 1 Teil 2 errichteten Erdungen für Fernmeldeanlagen wird für den 
+Funktionserdungsleiter teilweise die Zwei-Farben-Kombination Schwarz-Gelb verwendet. 
+51.NE.2.4 
+Farbkennzeichnung bestimmter Leiter 
+Wo in dieser Norm eine durchgehende Farbkennzeichnung über die gesamte Leiterlänge gefordert wird, gilt 
+diese nicht für Leitungen und Kabel, die nicht mit der geforderten Farbkennzeichnung hergestellt werden (zB 
+mineralisolierte Leitungen, Dachständereinführungsleitungen und isolierte Freileitungen). 
+Solche Leitungen und Kabel sind mit einer entsprechenden Markierung gemäß 514.3.Z6.001.AT an den 
+Leiterenden zu versehen. 
+51.NE.2.4.1 
+Blanke Leiter und Schienen 
+Bei Anwendung der Farbkennzeichnung müssen blanke Leiter und Schienen entweder mit einer 15 mm bis 
+100 mm breiten dauerhaften Kennzeichnung in jeder Einheit oder jedem Gehäuse oder an jeder 
+zugänglichen Stelle versehen oder über die ganze Länge gefärbt sein. 
+51.NE.2.4.2 
+Außenleiter in AC-Systemen 
+Gemäß 514.3.Z1 sind für Außenleiter in Verbraucheranlagen die Farben Schwarz, Braun und Grau zu 
+verwenden. 
+In neu zu errichtenden Verbraucheranlagen wird eine bestimmte, frei wählbare Zuordnung dieser Farben zu 
+den Außenleitern und deren Einhaltung über die gesamte Anlage empfohlen. Diese Farbzuordnung zu den 
+Außenleitern gilt nicht für einphasige Stromkreise. 
+51.NE.2.4.3 
+Außenleiter in DC-Systemen 
+Für Leiter in DC-Systemen sind in ungeerdeten DC-Systemen vorzugsweise folgende Farben zu verwenden: 
+– 
+Rot für den positiven Außenleiter (nicht geerdet); 
+– 
+Weiß für den negativen Außenleiter (nicht geerdet); 
+– 
+Blau für den Mittelleiter, wenn vorhanden, sonst für den geerdeten Systemleiter. 
+51.NE.2.4.4 
+Funktionserdungsleiter 
+Für Funktionserdungsleiter ist vorzugsweise die Farbe Pink zu verwenden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 279/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 33 
+51.NE.3 Kennzeichnung durch alphanumerische Zeichen 
+51.NE.3.1 
+Allgemeines 
+Falls Buchstaben und/oder Ziffern zur Kennzeichnung angewendet werden, müssen die Buchstaben 
+lateinische Großbuchstaben sein, die Ziffern müssen arabische Ziffern sein. 
+ANMERKUNG 1.AT 
+Es wird empfohlen, Buchstaben für Gleichstromelemente aus der ersten Hälfte des Alphabets 
+und Buchstaben für Wechselstromelemente aus der zweiten Hälfte des Alphabets zu wählen. 
+Um Verwechslungen mit den Ziffern „1“ und „0“ zu vermeiden, dürfen die Buchstaben „l“ und „O“ nicht 
+angewendet werden; die Symbole „+“ und „-“ dürfen angewendet werden. 
+Zur Vermeidung von Verwechslungen müssen die einzeln stehenden Ziffern „6“ und „9“ unterstrichen 
+dargestellt werden. 
+Alle alphanumerischen Zeichen müssen einen starken Kontrast zur Farbe der Isolierung aufweisen. 
+Die Kennzeichnung muss eindeutig unterscheidbar und dauerhaft sein. 
+ANMERKUNG 2.AT 
+Aussagen zur Dauerhaftigkeit enthält IEC 60227-2. 
+Das System der Kennzeichnung durch alphanumerische Zeichen wird zur Kennzeichnung von einzelnen 
+Leitern und von Leitern innerhalb einer Leitergruppe angewandt. 
+Die in 51.NE.3.2 spezifizierte Kennzeichnung durch alphanumerische Zeichen darf nicht für andere Zwecke 
+als den spezifizierten angewandt werden. 
+Falls keine Verwechslungsgefahr besteht, dürfen Teile der in den nachfolgenden Kennzeichnungs-
+grundsätzen festgelegten vollständigen alphanumerischen Bezeichnung ausgelassen werden. 
+51.NE.3.2 
+Kennzeichnung bestimmter Leiter 
+51.NE.3.2.1 
+Allgemeines 
+Die Enden bestimmter Leiter müssen gemäß Tabelle 51.NE.001.AT mit Buchstaben oder graphischen 
+Symbolen oder beidem gekennzeichnet sein. 
+51.NE.3.2.2 
+Neutralleiter 
+Die Kennzeichnung eines Neutralleiters durch alphanumerische Zeichen muss „N“ sein. 
+51.NE.3.2.3 
+Schutzleiter 
+Die Kennzeichnung eines Schutzleiters durch alphanumerische Zeichen muss „PE“ sein. Diese 
+Kennzeichnung findet ebenfalls für den Schutzerdungsleiter Anwendung. 
+51.NE.3.2.4 
+PEN-Leiter 
+Die Kennzeichnung eines PEN-Leiters durch alphanumerische Zeichen muss „PEN“ sein. 
+51.NE.3.2.5 
+Sternpunkt-Verbindungs-Leiter (SVL) 
+Die Kennzeichnung eines Sternpunkt-Verbindungs-Leiters durch alphanumerische Zeichen muss „SVL“ sein, 
+wobei zusätzlich eine Farbkennzeichnung gemäß 514.3.1.Z1 an den Leiterenden anzubringen ist, wenn der 
+Leiter nicht über die gesamte Länge durch die Farbe Blau gekennzeichnet ist. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach
+
+
+===== PAGE 280/758 =====
+OVE E 8101:2019-01-01 
+Teil 5-51 – Seite 34 
+Bei mehr als einer Stromquelle ist der SVL zusätzlich mit einer Zielkennzeichnung (zB „Transformator 1“) zu 
+versehen. 
+ANMERKUNG AT 
+Die zusätzliche Kennzeichnung ist auch sinnvoll, wenn nur eine Stromquelle vorhanden ist, 
+insbesondere wenn der Sternpunkt-Verbindungs-Leiter aus mehreren Einzelleitern besteht. 
+51.NE.3.2.6 
+PEL-Leiter 
+Die Kennzeichnung eines PEL-Leiters durch alphanumerische Zeichen muss „PEL“ sein. 
+51.NE.3.2.7 
+PEM-Leiter 
+Die Kennzeichnung eines PEM-Leiters durch alphanumerische Zeichen muss „PEM“ sein. 
+51.NE.3.2.8 
+Schutzpotentialausgleichsleiter 
+Die Kennzeichnung eines Schutzpotentialausgleichsleiters durch alphanumerische Zeichen muss „PB“ sein. 
+51.NE.3.2.9 
+Schutzpotentialausgleichsleiter, geerdet 
+Falls die Notwendigkeit einer Unterscheidung zwischen einem geerdeten Schutzpotentialausgleichsleiter und 
+einem ungeerdeten Schutzpotentialausgleichsleiter besteht, muss die Kennzeichnung eines geerdeten 
+Schutzpotentialausgleichsleiters durch alphanumerische Zeichen „PBE“ sein. 
+51.NE.3.2.10 Schutzpotentialausgleichsleiter, ungeerdet 
+Falls die Notwendigkeit einer Unterscheidung zwischen einem geerdeten Schutzpotentialausgleichsleiter und 
+einem ungeerdeten Schutzpotentialausgleichsleiter besteht, muss die Kennzeichnung eines ungeerdeten 
+Schutzpotentialausgleichsleiters durch alphanumerische Zeichen „PBU“ sein. 
+51.NE.3.2.11 Funktionserdungsleiter 
+Die Kennzeichnung eines Funktionserdungsleiters durch alphanumerische Zeichen muss „FE“ sein. 
+51.NE.3.2.12 Funktionspotentialausgleichsleiter 
+Die Kennzeichnung eines Funktionspotentialausgleichsleiters durch alphanumerische Zeichen muss „FB“ 
+sein. 
+51.NE.3.2.13 Mittelleiter 
+Die Kennzeichnung eines Mittelleiters durch alphanumerische Zeichen muss „M“ sein. 
+51.NE.3.2.14 Außenleiter 
+Die Kennzeichnung eines Außenleiters durch alphanumerische Zeichen muss mit „L“ beginnen, gefolgt von: 
+– 
+für Wechselstromkreise, einer laufenden Nummer der Außenleiter, beginnend mit der Zahl Eins „1“; 
+– 
+für Gleichstromkreise, dem Zeichen „+“ für den positiven Außenleiter und dem Zeichen „–“ für den 
+negativen Außenleiter. 
+Falls nur ein Außenleiter genutzt wird, darf das Suffix entfallen. 
+51.NE.4 Maßnahmen in bestehenden Anlagen 
+51.NE.4.1 
+Werden in bestehenden Anlagen mit abweichender Farbkennzeichnung abschnittsweise neue 
+Leitungen verlegt oder vorhandene Leitungen gegen neue ausgetauscht, so sind für diese neuen 
+Kabel/Leitungen die Anforderungen gemäß 514.3 anzuwenden. 
+AS+ Shop 11.04.2019 2304505, WIFI der Wirtschaftskammer Wien, Währinger Gürtel 97,1180-Wien
+Mag. (FH) Johann Plach

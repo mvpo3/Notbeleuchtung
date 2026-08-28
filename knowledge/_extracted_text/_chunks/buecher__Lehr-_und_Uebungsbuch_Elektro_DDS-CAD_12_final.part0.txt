@@ -1,0 +1,698 @@
+
+
+===== PAGE 1/36 =====
+Lehr- und Übungsbuch
+Elektro
+
+
+===== PAGE 2/36 =====
+Effizient lernen – effizient planen
+Unsicherheiten und Fragezeichen stehen immer am Anfang einer CAD-Ausbil-
+dung. Ein intuitives Planungswerkzeug ist daher Gold wert. Mit DDS-CAD 12 
+haben Sie jederzeit alles perfekt im Griff, verlieren nie den Überblick und haben 
+Spaß beim Planen. 
+Damit Sie Ihren Schülern und Studierenden einfach und nachhaltig den Um-
+gang mit einer CAD-Software vermitteln können, haben wir in diesem Lehr- und 
+Übungsbuch alles Wissenswerte zu den Neuerungen von DDS-CAD 12 zusam-
+mengefasst. Es ist somit als Ergänzung zu den praktischen Übungen Ihres Unter-
+richtes konzipiert und wird Sie dabei unterstützen, das von Ihnen beigebrachte 
+Wissen zur Installationsplanung mit DDS-CAD zu verfestigen. 
+Da Sie auf diese Weise die verbesserten Möglichkeiten von Version 12 sofort 
+und in vollem Umfang nutzen werden, trägt diese Dokumentation auch dazu 
+bei, dass Sie mit DDS-CAD das tun können, was Sie beabsichtigen: Starten – und 
+einfach planen!
+Viel Erfolg und Spaß beim Unterricht!
+Ihr DDS-Bildungsstättenteam
+
+
+===== PAGE 3/36 =====
+Inhalt
+Bemaßung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 4
+Bemaßungstext anpassen. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Einstellungen für Bemaßungsformate. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Einstellungen für Einheitenformate . .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Modell analysieren. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+Meldungen. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+Kollisionsprüfung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+Schnitte und Ausschnitte. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  12
+Vorlagen für Layouts. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Artikeldatenbank. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  13
+Elektromobilität . .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+Verteilerdokumentation. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  15
+Seitenumbruch für Stromkreise. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+Brandschutzschalter. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Elektroinstallation. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  18
+Abstand zu einer Referenz festlegen. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+Symbole neu ausrichten. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+Umgang mit unterschiedlichen Kabeleigenschaften in Verteiler und Arbeitsmodell. . . . 21
+Kabelsegmente bearbeiten. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+Kabeleigenschaften bei schreibgeschütztem Verteiler anpassen. .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . 23
+Etagenübergreifende Kabelverlegung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . 24
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Umfassende Rahmendarstellungen . .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+Objekte nummerieren lassen. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+Erweiterung der Legende um Verlegesysteme. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . 30
+Reporte. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  31
+Die Report-Vorschau. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+Schemata. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  33
+Automatische Systeme. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+Übung. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+
+
+===== PAGE 4/36 =====
+Bemaßung      Seite 4
+Bemaßung
+Bemaßungstext anpassen
+In DDS-CAD 12 wurden die bereits vorhandenen Möglichkeiten zur Anpassung 
+des Bemaßungstextes erweitert.
+Neben dem Überschreiben der Maßangabe können Sie einen ergänzenden Text 
+zur Bemaßung hinzufügen oder die vorhandene Maßangabe ersetzen.
+Wollen Sie zusätzlich zur Maßangabe einen Text darstellen, geben Sie diesen 
+in das Eingabefeld ‚Bemaßungstext‘ ein. Die Position dieses Textes können Sie 
+durch Auswahl von ‚Über‘, ‚Unter‘, ‚Vor‘ oder ‚Hinter‘ im Dropdown-Menü ‚Text-
+Position‘ festlegen.
+Die Schriftgröße der Bemaßungsangabe konnte bereits in DDS-CAD 11 projekt-
+übergreifend eingestellt werden. DDS-CAD 12 bietet darüber hinaus die Mög-
+lichkeit, jede Bemaßungsangabe mit einer anderen Schriftgröße darzustellen.
+ 
+ 
+
+
+===== PAGE 5/36 =====
+Bemaßung      Seite 5
+Übung
+Mit den nachfolgenden Übungen können Sie sich mit den neuen Vorge-
+hensweisen vertraut machen (Beachten Sie dabei auch die jeweiligen Infor-
+mationen/Anweisungen in der ‚Hinweiszeile‘).
+Erstellen Sie individuelle Bemaßungstexte:
+
+ platzieren Sie z. B. eine Steckdose und erstellen Sie eine ‚Bemaßung‘
+
+ mit einem Doppelklick auf den Bemaßungstext gelangen Sie in dessen 
+Eigenschaften
+
+ passen Sie das Dropdown-Menü ‚Text-Position‘ Ihren Vorgaben an
+
+ wählen Sie ‚Ersetzen‘, wenn die Maßangabe durch einen Text ersetzt wer-
+den soll
+
+ schließen Sie den Dialog ‚Bemaßungstext‘
+
+ anschließend führen Sie einen Doppelklick auf die Bemaßungslinie aus
+
+ es öffnet sich der Dialog ‚Bemaßung‘ mit den jeweiligen Einstellungen
+
+ entfernen Sie den Haken aus der Checkbox ‚Von Textstil‘
+
+ geben Sie einen Wert im Eingabefeld ‚Schriftgröße‘ ein
+
+ die Änderung des Fonts ‚Textstil 1‘ wird ignoriert und die eingegebene 
+Schriftgröße verwendet
+Einstellungen für Bemaßungsformate
+In DDS-CAD 11 konnten Sie bereits projektspezifische Bemaßungsformate er-
+zeugen.
+DDS-CAD 12 bietet nun die Möglichkeit, diese geänderten Bemaßungsformate 
+als Voreinstellung für alle neuen Projekte zu speichern.
+
+
+===== PAGE 6/36 =====
+Bemaßung      Seite 6
+Übung
+Speichern Sie Ihre Bemaßungsformate als Vorlage:
+
+ klicken Sie in der Menüzeile auf ‚Extras‘
+
+ wählen Sie ‚Optionen‘
+
+ öffnen Sie die ‚Einstellungen für Bemaßungsformate‘ durch einen Klick 
+auf den Eintrag
+
+ passen Sie die Einstellungen gemäß Ihren Anforderungen an
+
+ zur Anwendung der vorgenommenen Änderungen als Vorlage für alle 
+neuen Projekte, klicken Sie auf den Button ‚Einstellungen als Vorlage für 
+neue Projekte speichern‘
+Einstellungen für Einheitenformate
+Die Einheitenformate konnten in DDS-CAD 11 ebenfalls nur für das aktive Pro-
+jekt geändert werden.
+Mit DDS-CAD 12 haben Sie jetzt die Möglichkeit, die angepassten Einheitenfor-
+mate auch auf alle neuen Projekte zu übertragen.
+ 
+
+
+===== PAGE 7/36 =====
+Bemaßung      Seite 7
+Übung
+Speichern Sie Ihre Einheitenformate als Vorlage:
+
+ klicken Sie in der Menüzeile auf ‚Extras‘
+
+ wählen Sie ‚Optionen‘
+
+ öffnen Sie die ‚Einstellungen für Einheitenformate‘ durch einen Klick auf 
+den Eintrag
+
+ passen Sie die Einstellungen gemäß Ihren Anforderungen an
+
+ zur Anwendung der vorgenommenen Änderungen als Vorlage für alle 
+neuen Projekte, klicken Sie auf den Button ‚Einstellungen als Vorlage für 
+neue Projekte speichern‘
+
+
+===== PAGE 8/36 =====
+Modell analysieren      Seite 8
+Modell analysieren
+Meldungen
+Ab DDS-CAD 12 werden alle modellrelevanten Informationen im Dialog ‚Mel-
+dungen‘ aufgelistet. Die Einträge zeigen ‚Fehler‘, ‚Warnungen‘, ‚Mitteilungen‘ 
+und ‚Kollisionen‘ auf.
+Durch diese Auflistung von modellrelevanten Informationen werden Konflikte 
+(z. B. Kollisionen oder offene Enden) sofort erkannt. Die Korrekturen dieser Kon-
+flikte können direkt aus dem Meldungsfenster heraus durchgeführt werden. Die 
+Überprüfung erfolgt dabei gewerkeübergreifend für das aktive Modell.
+Die Plausibilitäts- und Kollisionsprüfungen können auch etagenübergreifend 
+ausgeführt werden. Im Fenster ‚Meldungen‘ ist es auch möglich, einen Konflikt 
+in einem anderen Modell über das Kontextmenü direkt aufzurufen. Dabei wird 
+das Modell geöffnet und der Konflikt herangezoomt.
+Sobald Sie eine Meldung angeklickt haben, wird diese als „Gelesen“ gekennzeich-
+net – die Schrift wird nicht mehr fett dargestellt. Mit einem Rechtsklick können 
+Sie Meldungen löschen, falls diese für Sie irrelevant sind.
+Weiterhin werden Ihnen im Dialog ‚Meldungen‘ das Gewerk, die Beschreibung, 
+der Modellname, der Raum, das Medium und ein Zeitstempel angezeigt.
+Die Buttons
+
+ Fehler
+
+ Warnungen
+
+ Mitteilungen
+
+ Kollisionen
+können zum Filtern der angezeigten Meldungen durch einen Klick aktiviert oder 
+deaktiviert werden.
+
+
+===== PAGE 9/36 =====
+Modell analysieren      Seite 9
+Der Dialog ‚Meldungen‘ ist standardmäßig aktiviert. Sie können diesen jedoch 
+auch deaktivieren bzw. wieder aktivieren. Klicken Sie dazu in der Menüzeile auf 
+‚Fenster‘ und passen Sie über ‚Symbolleisten‘ die Einstellungen an:
+Kollisionsprüfung
+Für das effiziente Projektieren ist die Kollisionsprüfung eine unverzichtbare Hilfe. 
+Diese prüft das Modell auf Kollisionen, z. B. Rohre gegen Kanäle eingeblendeter 
+Ebenen. 
+Diese Funktion ist in DDS-CAD 12 erweitert worden. Ab jetzt ist die Kollisionsprü-
+fung gegen jedes Bauteil und Objekt möglich, insbesondere auch gegen Bauteile 
+eines eingelesenen IFC-Modells. Weiterhin kann die Prüfung durch Angabe von 
+Abstandswerten eventuelle Kollisionen auch im Umkreis der zu prüfenden Ob-
+jekte erkennen, z. B. eine Steckdose, die hinter einem Heizkörper geplant wurde.
+Standardgemäß stehen Ihnen vorgefertigte Konfigurationen zur Verfügung. Die-
+se können von Ihnen kopiert und individuell angepasst, abgespeichert und auch 
+wieder gelöscht werden. Selbst angelegte Konfigurationen der Kollisionsprüfun-
+gen stehen in allen Projekten zur Verfügung, können dort aufgerufen und direkt 
+verwendet oder angepasst werden.
+
+
+===== PAGE 10/36 =====
+Modell analysieren      Seite 10
+Die überarbeitete Funktion ‚Kollisionsprüfung‘ können Sie über das Menü ‚Ext-
+ras‘, und ‚Modell analysieren‘ aufrufen:
+Zum sofortigen Prüfen wählen Sie die gewünschte Konfiguration und klicken Sie 
+auf ‚Ausführen‘.
+Nach dem Ausführen der Kollisionsprüfung werden im Meldungsfenster unter 
+dem Reiter ‚Kollision‘ alle gefundenen Kollisionen anhand der gewählten Ein-
+stellungen angezeigt.
+HINWEIS
+Die Funktion ‚OpenGL-Modus‘ muss aktiv sein, um den vollen Funktionsumfang 
+nutzen zu können.
+Übung
+Speichern Sie Ihre Konfigurationsformate als Vorlage:
+
+ zum Anlegen einer eigenen Konfiguration klicken Sie im Dialog ‚Kollisi-
+onsprüfung‘ auf ‚+‘ (Neu)
+
+ vergeben Sie einen Namen und klicken Sie auf ‚OK‘
+
+ es öffnet sich die Konfiguration und Sie können durch das Setzen der 
+Checkboxen wählen, welche Bauteile und Objekte geprüft werden sollen
+
+
+===== PAGE 11/36 =====
+Modell analysieren      Seite 11
+
+
+===== PAGE 12/36 =====
+Modell analysieren      Seite 12
+Schnitte und Ausschnitte
+Vorlagen für Layouts
+Aus Schnitten und Ausschnitten können Vorlagen für Plot-Layouts generiert wer-
+den. Hierfür war es bis zur Version 11 nötig, nach dem Erzeugen eines Schnitts 
+oder eines Ausschnitts eine solche Vorlage manuell zu erstellen.
+DDS-CAD 12 erzeugt diese automatisch nach dem Erstellen von Ausschnitten 
+und Schnitten. Sie erscheinen nach dem Anlegen direkt im DDS-Explorer.
+ 
+
+
+===== PAGE 13/36 =====
+Artikeldatenbank      Seite 13
+Artikeldatenbank
+Elektromobilität 
+In DDS-CAD 12 gibt es in der Artikelgruppe ‚Dose/Kasten/Hilfsobjekt‘ die neue 
+Auswahlmöglichkeit ‚Elektromobilität‘.
+Zusätzlich zu den DDS-Artikeln wurde die Herstellerdatenbank von ‚MENNEKES‘ 
+hinzugefügt. Diese kann manuell hinzugeladen werden.
+Übung
+Laden Sie die Herstellerdatenbank von MENNEKES:
+
+ zum Laden der Herstellerdatenbank ‚MENNEKES‘ klicken Sie in der 
+Menüzeile auf ‚Extras‘
+
+ wählen Sie ‚Herstellerdatenbank laden ‘
+
+ führen Sie einen Doppelklick auf den Dateinamen ‚MENNEKES‘ aus
+
+ bestätigen Sie mit ‚OK‘
+
+ Sie finden nun einen separaten Eintrag des Herstellers ‚MENNEKES‘ in der 
+Artikelgruppe ‚Dose/Kasten/Hilfsobjekt‘
+
+
+===== PAGE 14/36 =====
+Artikeldatenbank      Seite 14
+
+
+===== PAGE 15/36 =====
+Verteilerdokumentation      Seite 15
+Verteilerdokumentation
+Seitenumbruch für Stromkreise
+Stromkreise können in DDS-CAD 12 im Vergleich zu Vorgängerversionen auf 
+intuitivere Weise auf die nachfolgende Seite verschoben werden. Möglich wird 
+dies durch einen Seitenumbruch.
+Übung
+Erzeugen Sie einen Seitenumbruch in Ihrem Stromlaufplan:
+
+ zum Einfügen eines Seitenumbruches markieren Sie in einem Stromlauf-
+plan den Stromkreis, der auf die nächste Seite verschoben werden soll
+
+ öffnen Sie das Kontextmenü – Klicken Sie dazu auf die rechte Maustaste
+
+ wählen Sie ‚Seitenumbruch vor dem Stromkreis einfügen‘ 
+    
+
+ zum Entfernen eines Seitenumbruches markieren Sie den Stromkreis, bei 
+dem Sie den eingefügten Seitenumbruch entfernen möchten
+
+ öffnen Sie das Kontextmenü und wählen Sie ‚Seitenumbruch vor dem 
+Stromkreis entfernen‘
+   
+
+
+===== PAGE 16/36 =====
+Verteilerdokumentation      Seite 16
+   
+
+
+===== PAGE 17/36 =====
+Verteilerdokumentation      Seite 17
+Brandschutzschalter 
+In DDS-CAD 12 wurde der Brandschutzschalter in der Artikeldatenbank hinzuge-
+fügt. Sie können diesen zu jeder bestehenden Sicherung für die Darstellung im 
+allpoligen Stromlaufplan als Hilfsfunktion hinzufügen.
+Übung
+Fügen Sie einen Brandschutzschalter zu einem Sicherungsbauteil hinzu:
+
+ zum Einfügen eines Brandschutzschalters wählen Sie in der ‚Stromkreis-
+liste‘ einen vorhandenen Stromkreis aus
+
+ führen Sie einen Doppelklick auf die Sicherung des Stromkreises aus
+
+ klicken Sie im Dialog ‚Bauteil‘ auf ‚Hilfsfunktion‘
+
+ wählen Sie einen Brandschutzschalter aus
+
+ bestätigen Sie alle Dialoge mit ‚OK‘
+
+ der Brandschutzschalter ist nun der Sicherung zugewiesen und in der 
+Verteilerdokumentation sichtbar
+ 
+ 
+
+
+===== PAGE 18/36 =====
+Elektroinstallation      Seite 18
+Elektroinstallation
+Abstand zu einer Referenz festlegen
+Ab DDS-CAD 12 haben Sie die Möglichkeit, den oberen oder unteren Abstand der 
+Einbauhöhe von Objekten zu einer Referenz einzugeben. Bei Änderungen von 
+Referenzen, z. B. Änderungen der Fußbodenhöhe oder der Deckenhöhe, wird der 
+Abstand zu den Objekten beibehalten.
+Durch das Aktivieren der Funktion ‚Höhe sperren‘ bleibt das Objekt nach einer 
+Änderung an der Referenz (z. B. Änderung der Fußbodenhöhe) auf seiner vor-
+herigen Einbauhöhe. Demzufolge ändert sich der vorher definierte Abstand zur 
+Referenz.
+ 
+Wird nun eine Änderung an der Referenz ‚Fertigfußboden (OKFF)‘ vorgenom-
+men, behalten alle Objekte den Abstand zur Referenz bei und besitzen so die 
+korrekte Einbauhöhe.
+Im folgenden Bild wurde im rechten Raum der ‚Fußbodenaufbau‘ von 0,12m auf 
+0,2m geändert. Im linken Raum wurde dagegen keine Änderung vorgenommen.
+
+
+===== PAGE 19/36 =====
+Elektroinstallation      Seite 19
+Symbole neu ausrichten
+DDS CAD 11 bot bereits die Möglichkeit, Objekte auf einer Linie einzufügen. Spä-
+tere Änderungen an der Aufteilung waren jedoch nur über Umwege zu lösen.
+In DDS-CAD 12 wurde eine völlig neue Funktion zur Objektausrichtung imple-
+mentiert, wodurch ein deutlich effizienteres Neuausrichten von Objekten mög-
+lich ist.
+Als Beispiel wurden auf einer Wand Wandauslassleuchten platziert:
+Nach dem Löschen einzelner Objekte kann eine Neuausrichtung durchgeführt 
+werden.
+Übung
+Richten Sie mehrere Objekte auf einer Linie neu aus:
+
+ platzieren Sie mehrere Objekte auf einer Linie und löschen Sie anschlie-
+ßend einzelne Objekte dieser Gruppe
+
+ markieren Sie die Objekte, die Sie neu ausrichten möchten:
+   
+
+ klicken Sie auf die rechte Maustaste und öffnen Sie die Auswahl bei ‚Aus-
+richtung‘
+
+
+===== PAGE 20/36 =====
+Elektroinstallation      Seite 20
+
+ wählen Sie ‚Gleichmäßig horizontal‘
+    
+ 
+
+ die platzierten Objekte werden neu ausgerichtet:
+   
+
+
+===== PAGE 21/36 =====
+Elektroinstallation      Seite 21
+Umgang mit unterschiedlichen Kabeleigenschaften in 
+Verteiler und Arbeitsmodell
+Das Ändern von Kabeleigenschaften in Installationszeichnung und Verteilerdo-
+kumentation war bereits in DDS-CAD 11 möglich. Jedoch wurde nach Änderun-
+gen in der Verteilerdokumentation beim Öffnen der Installationszeichnung nur 
+eine Information angezeigt, ohne dass der Anwender in die Änderungen eingrei-
+fen konnte.
+In DDS-CAD 12 eröffnet uns der Dialog ‚Meldungen‘ mehr Möglichkeiten. Sobald 
+eine Installationszeichnung geöffnet wird, in der Kabel geplant wurden, die in 
+der Verteilerdokumentation zuvor geändert worden waren, erscheint eine Mel-
+dung. Nun können Sie selbst wählen, ob die Änderungen aus der Verteilerdoku-
+mentation übernommen werden sollen, oder ob die bestehenden Eigenschaften 
+in der Installationszeichnung beibehalten werden sollen.
+Sollen die Änderungen aus der Verteilerdokumentation übernommen werden, 
+klicken Sie im Fenster ‚Meldungen‘ auf die Beschreibung mit dem Verteilersym-
+bol und öffnen Sie das Kontextmenü. Wählen Sie anschließend ‚Kabeleigen-
+schaften übertragen: Stromkreisliste -> Installiertes Kabel‘.
+
+
+===== PAGE 22/36 =====
+Elektroinstallation      Seite 22
+Kabelsegmente bearbeiten
+In DDS-CAD 11 konnten Kabelsegmente nicht losgelöst vom ‚Zuleitungskabel‘ 
+verändert werden. Alle Änderungen an einem Segment haben sich auf das kom-
+plette gezeichnete Kabel ausgewirkt.
+DDS-CAD 12 bietet nun die Möglichkeit auch die Eigenschaften von Segmenten 
+anzupassen, ohne das ‚Zuleitungskabel‘ oder Abzweige zu ändern.
+Soll z. B. das Brückenkabel in ein Leerrohr eingezogen werden, führen Sie einen 
+Doppelklick auf das Kabel aus, aktivieren Sie die Checkbox ‚Leerrohr‘ und bestäti-
+gen Sie Ihre Änderung mit ‚OK‘. Die nachfolgende Abfrage wird mit ‚Ja‘ bestätigt:
+
+
+===== PAGE 23/36 =====
+Elektroinstallation      Seite 23
+DDS-CAD 12 fragt bei einer weiteren Änderung nicht erneut nach.
+Kabeleigenschaften bei schreibgeschütztem Verteiler 
+anpassen
+DDS-CAD 12 ermöglicht jederzeit das Ändern von Kabeleigenschaften in der In-
+stallationszeichnung, auch bei geöffneter Verteilerdokumentation. Der Schreib-
+schutz des Verteilers ist weiterhin im Kabel-Dialog sichtbar. Es ist aber dennoch 
+möglich, Eigenschaften zu editieren. Diese Änderungen werden als Meldung im 
+Dialog ‚Meldungen‘ gelistet.
+
+
+===== PAGE 24/36 =====
+Elektroinstallation      Seite 24
+Etagenübergreifende Kabelverlegung
+In DDS-CAD 12 wird für die etagenübergreifende Kabelverlegung kein Hilfssym-
+bol mehr benötigt. Eine etagenübergreifende Kabelverlegung erfolgt nun eben-
+so intuitiv wie bei der Kabeltrassenplanung.
+Ein Kabel/Kabelstrang kann im Kontextmenü in der oberen Etage oder in der un-
+teren Etage beendet werden.
+Diese neue Funktionalität ermöglicht eine korrekte Steigetrassenbelegung in al-
+len Etagen bei voller Spannungsfall- und Längenkontrolle. Selbstverständlich ist 
+die Vorgehensweise bei Kabel und Kabelstrang identisch.
+Durch diese Neuerung sind auch einige neue Symbole hinzugekommen. Im fol-
+genden Bild sehen Sie auf der linken Seite einen Kabelstrang, auf der rechten 
+Seite ein Kabel mit den jeweiligen Übergabepunkten. Diese Darstellung erhal-
+ten Sie in der Etage, in der Sie den Kabelstrang/das Kabel in die jeweilige Etage 
+übergeben.
+
+
+===== PAGE 25/36 =====
+Elektroinstallation      Seite 25
+Nachfolgende Ansicht erhalten Sie in einer Etage, in die ein Kabelstrang/ein Ka-
+bel übergeben wurde. Hier sehen Sie wiederum zwei neue Symbole. Die Farb-
+darstellung der Übergabepunkte ändert sich, nachdem Sie den Übergabepunkt 
+übernommen und den Kabelstrang/das Kabel beendet haben.
+In den Eigenschaften des Kabels kann die Gesamtlänge überprüft werden, auch 
+wenn sich Teilstrecken des Kabels auf mehreren Etagen befinden. Die Stückliste 
+erfasst nach wie vor nur die Kabel, die im Arbeitsmodell geplant wurden.
+ 
+Übung
+Übergeben Sie ein Kabel in die nächste Etage:
+
+ starten Sie die Funktion Kabel ‚Zeichnen‘ aus einem Verteiler – alternativ 
+können Sie auch einen Kabelstrang zeichnen
+
+ klicken Sie mit der linken Maustaste auf den Fixpunkt am Übergabepunkt
+
+ öffnen Sie das Kontextmenü und wählen Sie ‚In der oberen Etage been-
+den‘ bzw. ‚In der unteren Etage beenden‘
+    
+
+ beenden Sie die Funktion mit der ‚ESC‘-Taste
+
+ klicken Sie auf das erzeugte Symbol
+
+
+===== PAGE 26/36 =====
+Elektroinstallation      Seite 26
+
+ wählen Sie ‚Etage öffnen und Zoom auf Übergabepunkt‘
+    
+
+ markieren Sie den Übergabepunkt mit einem Linksklick
+
+ wählen Sie bei Kabelstrang ‚Kabelstrang aus der unteren Etage weiter-
+führen‘
+
+ wählen Sie bei Kabel ‚Kabel aus der unteren Etage weiterführen‘
+    
+ 
+
+ verlegen Sie den Kabelstrang/das Kabel zum Zielpunkt
+
+ beenden Sie mit der ‚ESC‘-Taste
+
+
+===== PAGE 27/36 =====
+Elektroinstallation      Seite 27
+Umfassende Rahmendarstellungen
+DDS-CAD 12 bietet die Möglichkeit mit umfassenden Rahmendarstellungen In-
+formationen an Objekten darzustellen, z. B. die Meldergruppe und -nummer für 
+BMA-Multisensoren. Für die neue Version wurden diese ebenso an die aktuellen 
+Normen angepasst. Die Rahmenauswahl steht Ihnen beim klassischen Symbol-
+text zur Verfügung.
+ 
+Auch die Nummerierung bietet die erweiterten Rahmendarstellungen zur Aus-
+wahl an.
+ 
+
+
+===== PAGE 28/36 =====
+Elektroinstallation      Seite 28
+Objekte nummerieren lassen
+Mit der Funktion ‚Symbolnummerierung‘ ist es möglich, Objekten eine Nummer 
+zuzuweisen.
+In DDS-CAD 12 können alle vergebenen Nummern angezeigt und per Drag & 
+Drop die Neusortierung aller Nummern vorgenommen werden. Eine Neunum-
+merierung ist damit in wenigen Schritten durchgeführt.
+Diese neue Funktion ist bei allen Objekten verwendbar, bei denen bereits eine 
+Nummerierung aktiviert ist, wie z. B. bei Steckdosen, Leuchten oder Datendosen.
+
+
+===== PAGE 29/36 =====
+Elektroinstallation      Seite 29
+Übung
+Nummerieren Sie vorhandene Objekte neu:
+
+ um eine Neunummerierung durchzuführen, markieren Sie ein platziertes 
+Objekt
+
+ öffnen Sie das Kontextmenü und wählen Sie ‚Markierten Typ aus Bereich 
+filtern‘
+
+ markieren Sie alle Objekte, die Sie neu nummerieren möchten
+
+ öffnen Sie erneut das Kontextmenü und wählen Sie ‚Neu nummerieren‘
+    
+
+ verschieben Sie die Einträge in der Liste per Drag & Drop, um die Num-
+mern an Ihre Vorgaben anzupassen
+
+ öffnen Sie erneut das Kontextmenü und wählen Sie ‚Alle neu nummerie-
+ren‘
+    
+ 
+
+
+===== PAGE 30/36 =====
+Elektroinstallation      Seite 30
+Erweiterung der Legende um Verlegesysteme
+Alle Objekte, die in einem Drucklayout sichtbar sind, können in einer Legende 
+gelistet werden.
+Die Inhalte der Legende wurden in DDS-CAD 12 um die Verlegesysteme erwei-
+tert. Das Verhalten bei den Verlegesystemen ist identisch zu denen der Objekte 
+im Installationsplan. Sobald diese im Drucklayout sichtbar sind, werden sie in 
+der ‚Legende‘ gelistet.
+ 
+
+
+===== PAGE 31/36 =====
+Reporte      Seite 31
+Reporte
+Die Report-Vorschau
+Das Erstellen von Reporten ermöglicht eine detaillierte Auflistung von Informa-
+tionen.
+Ab DDS-CAD 12 können in einer Vorschau bereits Inhalte erkannt und Anpas-
+sungen hinsichtlich der Darstellung der Reporte vorgenommen werden. So ist es 
+nun möglich, ein Deckblatt mit allen projektrelevanten Informationen zu jedem 
+beliebigen Report hinzuzufügen.
+In allen Dialogen, in denen ein Report aufgerufen werden kann, finden Sie den 
+entsprechenden Button ‚Reporte‘ – bis zur DDS-CAD-Version 11 hieß dieser ‚Dru-
+cken‘.
+ 
+
+
+===== PAGE 32/36 =====
+Reporte      Seite 32
+Übung
+Erstellen Sie einen Report:
+
+ öffnen Sie eine beliebige Zeichnung und wählen Sie in der Symbolleiste 
+‚Stückliste erstellen‘
+
+ klicken Sie auf ‚Reporte‘
+
+ wählen Sie einen Report und bestimmen Sie dessen Inhalt
+
+ exportieren Sie den Report in eine PDF-Datei bzw. senden Sie diesen an 
+Ihren Drucker
+
+
+===== PAGE 33/36 =====
+Schemata      Seite 33
+Schemata
+Automatische Systeme
+Zu den Highlights der Version 12 zählt die automatische Schemaerstellung für 
+verschiedene Systeme aus einer Installationszeichnung. Sie können automati-
+sche Schemazeichnungen für folgende Systeme erzeugen lassen:
+
+ Brandmelde-Systeme
+
+ Datennetzwerk-Systeme
+
+ Energieversorgungs-Systeme
+
+ Sicherheitsbeleuchtungs-Systeme
+In die automatisch generierten Schemazeichnungen werden Etagen, Raumna-
+men, Stromkreisnummern und ggf. vorhandene Nummerierungen übernom-
+men und angezeigt.
+Zudem zählen das Verschieben von Objekten und das Ergänzen zusätzlicher 
+Informationen zu den Möglichkeiten in einer automatisch erzeugten Schema-
+zeichnung. 
+Innerhalb des Dockingfensters finden Sie die Registerkarte ‚Systeme‘, die Sie 
+über das aktuelle System und alle Objekte sowie die Kabelverbindungen infor-
+miert. Es ist möglich, die hier angezeigten Objekte und Kabelverbindungen aus- 
+und anzuschalten. Klicken Sie hierzu einfach auf das Auge.
+
+
+===== PAGE 34/36 =====
+Schemata      Seite 34
+ 
+Übung
+Erstellen Sie ein automatisches Schema:
+
+ wählen Sie im Dockingfenster die Registerkarte ‚Systeme‘ (sollte die Re-
+gisterkarte ‚Systeme‘ nicht verfügbar sein, wählen Sie in der Menüleiste 
+‚Fenster‘, dann klicken Sie auf ‚Symbolleisten‘ und aktivieren Sie durch 
+einen Linksklick die ‚Systeme‘)
+    
+
+ zum Erstellen eines Schemas, z. B. für ‚Brandmelde-Systeme‘, aktiviere Sie 
+die Registerkarte ‚Systeme‘
+
+ wählen Sie ‚Brandmelde-System‘
+
+ öffnen Sie das Kontextmenü und klicken Sie auf ‚Schema generieren‘
+    
+
+
+===== PAGE 35/36 =====
+Schemata      Seite 35
+
+ bestätigen Sie die Abfrage zum Speichern mit ‚Ja‘
+
+ DDS-CAD 12 wird Ihnen daraufhin einen neuen Zeichnungsnamen für 
+das Schema vorschlagen. In diesem Beispiel ist dies der Name ‚05‘. Die 
+restlichen Werte des Namens sind an die Namenskonvention von DDS-
+CAD gebunden und können nicht geändert werden.
+
+ Sie können in die Eingabefelder ‚Beschreibung‘ zusätzlich eigene Kom-
+mentare hinzufügen
+    
+
+ nach dem Bestätigen mit ‚OK’ wird die Schemazeichnung geöffnet und 
+die schematische Darstellung des gewählten Systems ist sichtbar
+HINWEIS 
+Die automatische Schemagenerierung steht Ihnen ausschließlich in der Lizenz 
+E-11 zur Verfügung. Möchten Sie Ihre Lizenz erweitern? Dann melden Sie sich bei 
+unserem Ansprechpartner für Bildungsstätten.
+
+
+===== PAGE 36/36 =====
+DEUTSCHLAND
+Data Design System GmbH
+Lüdinghauser Straße 3
+59387 Ascheberg
+T    	+49 2593 8249 0 
+E    	lehrende@dds-cad.de
+W 	www.dds-cad.de
+ÖSTERREICH
+Data Design System GmbH
+Kornstraße 8/1
+4060 Leonding
+ 
+T    	+43 732 672 800
+E   	lehrende@dds-cad.at 
+W 	www.dds-cad.at
+DDS ist Mitglied der Open-BIM-Initiative.

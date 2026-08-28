@@ -1,0 +1,1859 @@
+
+
+===== PAGE 561/852 =====
+OVE E 8101:2025-10-01 
+Teil 7 – Seite 1 
+Teil 7 Räume und Anlagen besonderer Art 
+700 
+Einleitung 
+Für die Anwendung dieses Teils von OVE E 8101 gelten die allgemeinen Anforderungen der Teile 1 bis 6 von 
+OVE E 8101. 
+Die Teile 7-7xx und 7-7xx.AT von OVE E 8101 beinhalten besondere Anforderungen für Räume und Anlagen 
+besonderer Art basierend auf den Anforderungen der allgemeinen Teile 1 bis 6 von OVE E 8101. Diese Teile 
+7-7xx und 7-7xx.AT sind in Verbindung mit den Anforderungen der allgemeinen Teile zu betrachten. 
+Die besonderen Anforderungen dieses Teils von OVE E 8101 ergänzen, ändern oder ersetzen bestimmte 
+Anforderungen der allgemeinen Teile von OVE E 8101 zum Zeitpunkt der Veröffentlichung dieses Teils. 
+Fehlende Verweisungen darauf, dass ein Teil oder Abschnitt eines allgemeinen Teils ausgenommen sind, 
+bedeuten, dass die entsprechenden Abschnitte des allgemeinen Teils anzuwenden sind (undatierte 
+Verweisungen). 
+Anforderungen aus weiteren für die Errichtung relevante Teile von OVE E 8101, die in diesem Teil 
+berücksichtigt werden, gelten ebenfalls. Somit ergänzt, ändert oder ersetzt dieser Teil auch bestimmte dieser 
+Anforderungen, die zum Zeitpunkt der Veröffentlichung dieses Teils gültig sind. 
+Die Abschnittsnummerierung dieses Teils erfolgt nach dem Muster und den entsprechenden Verweisungen 
+von OVE E 8101. Die Abschnittsnummerierung hinter „7xx“ bzw. „7xx.AT“ (z. B. 7xx.415) bezieht sich auf 
+entsprechende Teile oder Abschnitte anderer Teile von OVE E 8101 (z. B. Teil 4-41, Abschnitt 415). 
+Wenn zusätzliche Anforderungen oder Erläuterungen notwendig sind, die keinen direkten Bezug zu den 
+allgemeinen Teilen oder anderen 7xx-Teilen haben, sind diese Abschnittsnummern mit 7xx.101, 7xx.102, 
+7xx.103, bzw. 7xx.001.AT, 7xx.002.AT usw. benannt. 
+Für eine elektrische Anlage können ein Teil oder mehrere Teile von OVE E 8101 Teil 7 gleichzeitig zutreffen. 
+Zum Beispiel kann der Teil 7-701 (Räume und Orte mit Badewanne oder Dusche) auch für elektrische Anlagen 
+in Caravans und Motorcaravans (Teil 7-721) zutreffen. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 562/852 =====
+OVE E 8101:2025-10-01 
+Teil 7 – Seite 2 
+Inhalt Teil 7 
+Teil 7-701 
+Räume und Orte mit Badewanne oder Dusche 
+Teil 7-702 
+Schwimmbecken und Springbrunnen 
+Teil 7-703 
+Räume und Kabinen mit Saunaheizgeräten 
+Teil 7-704 
+Baustellen 
+Teil 7-705 
+Elektrische Anlagen von landwirtschaftlichen und gartenbaulichen Betriebsstätten 
+Teil 7-706 
+Leitfähige Bereiche mit begrenzter Bewegungsfreiheit 
+Teil 7-708 
+Caravanplätze, Campingplätze und ähnliche Bereiche 
+Teil 7-709 
+Marinas und ähnliche Bereiche 
+Teil 7-710 
+Medizinisch genutzte Bereiche 
+Teil 7-711 
+Ausstellungen, Shows und Stände 
+Teil 7-712 
+Photovoltaische Anlagen (PV-Anlagen) 
+Teil 7-713 
+Möbel 
+Teil 7-714 
+Beleuchtungsanlagen im Freien 
+Teil 7-715 
+Kleinspannungsbeleuchtungsanlagen 
+Teil 7-716 
+Gleichstrom-Kleinspannungs-Energieverteilung über Informations- und Kommunikationskabel 
+und Leitungen (IKT) 
+Teil 7-717 
+Ortsveränderliche oder transportable Baueinheiten 
+Teil 7-718 
+Öffentliche Einrichtungen und Arbeitsstätten 
+Teil 7-721 
+Elektrische Anlagen in Caravans und Motorcaravans 
+Teil 7-722 
+Stromversorgung von Elektrofahrzeugen 
+Teil 7-729 
+Bedienungsgänge und Instandhaltungsgänge sowie Bereiche mit eingeschränkter 
+Zugangsberechtigung 
+Teil 7-730 
+Elektrischer Landanschluss für Fahrzeuge der Binnenschifffahrt 
+Teil 7-740 
+Vorübergehend errichtete elektrische Anlagen für Aufbauten, Vergnügungseinrichtungen und 
+Buden auf Veranstaltungsplätzen und für Zirkusse 
+Teil 7-753 
+Heizanlagen mit Heizleitungen und Flächenheizelementen 
+Teil 7-7N54 
+Stromversorgung von ortsfesten Experimentierständen in Unterrichtsräumen 
+Teil 7-7N90 
+Garagen, überdachte Stellplätze, Parkdecks sowie Arbeitsgruben oder Unterfluranlagen 
+Teil 7-7N95 
+Stromversorgung von Aufzügen 
+Teil 7-7N96 
+Stromversorgung von Fahrtreppen und Fahrsteige 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 563/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 1 
+Teil 7-701  
+Räume und Orte mit Badewanne oder Dusche 
+701.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in Räumen sowie an Orten im Freien mit fest errichteter Badewanne 
+oder Dusche einschließlich der diese umgebenden, speziellen (Schutz-)Bereiche, die in dieser Norm 
+beschrieben sind. 
+ANMERKUNG 1.AT 
+Die Anforderungen in diesem Teil beziehen sich überwiegend auf Badezimmer, jedoch auch auf 
+andere Orte mit Bade- oder Duschmöglichkeit, z. B. im Freien. Speziell hinsichtlich der Anwendung im Freien, aber auch 
+für größere Räume, die auch für andere Zwecke benutzt werden, wurde international der Anwendungsbereich enger 
+begrenzt. Dies hat vor allem praktische, erleichternde Auswirkungen auf die Anwendung von 701.415.1.101, siehe dazu 
+Bild 701.001.AT. 
+Die Ausdehnung des Anwendungsbereichs für Raume und Orte mit Badewanne oder Dusche im Sinne dieser 
+Norm ist wie folgt begrenzt:  
+– 
+durch das tiefste Niveau des fertigen Fußbodens; 
+– 
+durch eine horizontale, gedachte Ebene in Höhe von 3 m über dem fertigen Fußboden; 
+– 
+durch eine senkrechte gedachte Wand in 4 m Abstand als Fadenmaß (Umgreifradius oder Übergreifradius) 
+von dem/den festen Wasserauslass/Wasserauslässen für Badewanne und/oder Dusche (siehe 
+Bild 701.001.AT); 
+– 
+das Volumen von Wänden, Fußböden und Decken, die diesen Raum begrenzen, bis zu einer Tiefe von 
+6 cm (siehe Bild 701.4). 
+ANMERKUNG 2.AT 
+Befinden sich Wasserauslässe für Duschen höher als 225 cm über dem tiefsten Niveau des 
+fertigen Fußbodens, so gelten die Bedingungen für die Bereiche 0, 1 und die Ausdehnung sinngemäß auch bis zur 
+tatsächlichen Höhe dieser Wasserauslässe. 
+ANMERKUNG 1  
+Wenn der Duschkopf und sein flexibler Anschlussschlauch abnehmbar sind, gilt als fester 
+Wasserauslass der Anschlusspunkt für den flexiblen Anschlussschlauch an das feste Rohr. 
+Die Anforderungen dieses Teils gelten auch für feste elektrische Anlagen in mobilen Objekten, z. B. Caravans, 
+Mobilheime oder Duschcontainer. Dieser Teil gilt nicht für Einrichtungen, die nur für den Notfall vorgesehen 
+sind, z. B. Notduschen, wie sie mitunter in industriellen Bereichen oder Laboratorien zur Anwendung kommen. 
+ANMERKUNG 2  
+Für Räume und Orte mit Badewanne oder Dusche zur medizinischen Behandlung können 
+besondere, zusätzliche Anforderungen notwendig sein. 
+ANMERKUNG 3  
+Anforderungen an die Sicherheit von elektrischen (eigenständigen) multifunktionellen 
+Duscheinrichtungen 
+siehe 
+OVE EN IEC 60335-2-105. 
+Multifunktionelle 
+Duscheinrichtungen 
+sind 
+fabriksfertige 
+Duschkabinen, in die mindestens eine andere Funktionseinheit, wie beispielsweise ein Dampfbad, zusätzlich zur 
+Duschfunktion eingebaut ist. 
+701.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+701.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+701.3 
+Bestimmungen allgemeiner Merkmale 
+Füge hinzu: 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 564/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 2 
+701.30.101 Allgemeines 
+Bei der Anwendung dieses Teils sind die in 701.30.102 bis 701.30.104 festgelegten Bereiche zu 
+berücksichtigen. Für Bade- oder Duscheinrichtungen, die fest angeschlossen sind, jedoch in ihrer Lage 
+verändert werden können, beziehen sich diese Bereiche auf die jeweils vorgesehene Gebrauchslage der Bade- 
+oder Duschwanne. 
+Räume und Orte mit Badewanne oder Dusche sowie die festgelegten Bereiche werden durch waagrechte oder 
+schräge Decken, Wände (mit oder ohne Fenster), Türen, Fußböden und fest angebrachte Abtrennungen 
+begrenzt. Sind die Abmessungen fest angebrachter Abtrennungen kleiner als die Maße der jeweiligen 
+Bereiche, wie z. B. bei Abtrennungen, deren Höhe geringer als 225 cm ist, muss bei der Bereichsabgrenzung 
+der erforderliche Mindestabstand als Fadenmaß (Umgreifradius oder Übergreifradius) in waagrechter und 
+senkrechter Richtung berücksichtigt werden (Beispiele siehe Bild 701.1 und Bild 701.2). 
+Duschvorhänge und andere flexible Materialien gelten nicht als Begrenzung der Bereiche. 
+ANMERKUNG AT 
+Als „fest angebrachte Abtrennungen“ gelten auch Duschwände aus Glas oder ähnlichem festem 
+Material, wenn sie fest angebracht und lediglich schwenkbar sind. Es wird davon ausgegangen, dass bewegliche Türen 
+von Duschabdeckungen bei Gebrauch der Dusche geschlossen sind (siehe Bild 701.3). 
+Wo eine Dusche im Bereich 1 einer Bade- oder Duschwanne angeordnet ist oder sich ein fester Wasserauslass 
+für eine Dusche über einer solchen Wanne befindet, gelten jedenfalls nur die festgelegten Bereiche für eine 
+Badewanne. 
+Für Duschen ohne Duschwanne mit mehr als einem festen Wasserauslass ist für die Bestimmung der Grenzen 
+der Bereiche 0 und 1 die Kombination aller Wasserauslässe zu berücksichtigen. 
+701.30.102 Beschreibung von Bereich 0 
+Der Bereich 0 ist begrenzt durch 
+a) 
+das Innere der Badewanne oder der Duschwanne (siehe Bild 701.1). 
+ 
+ANMERKUNG AT  
+Der Bereich 0 gilt auch für gemauerte Bade- oder Duschwannen. 
+b) 
+für Duschen ohne Duschwanne: 
+ 
+– 
+vom tiefsten Niveau des fertigen Fußbodens bis zu einer gedachten Fläche in einer Höhe von 10 cm 
+darüber; 
+ 
+– 
+von einer senkrechten gedachten Fläche in einem Umkreis von 120 cm um den/die festen Duschköpfe 
+oder festen Wasserauslässe (siehe Bild 701.2), sofern diese Fläche nicht durch feste Abtrennungen 
+begrenzt wird, welche das Wasser daran hindern, sich auf der anderen Seite auszubreiten; 
+ 
+– 
+Duschtüren, die dafür bestimmt sind, während des Duschens geschlossen zu sein, gelten als 
+Abgrenzung (siehe Bild 701.2). 
+701.30.103 Beschreibung von Bereich 1 
+Der Bereich 1 ist begrenzt 
+a) 
+für eine Badewanne oder der Duschwanne durch: 
+ 
+– 
+das tiefste Niveau des fertigen Fußbodens unterhalb der Wanne; 
+ 
+– 
+eine gedachte waagerechte Fläche in 225 cm Höhe über dem Fußboden oder in Höhe eines eventuell 
+noch höher angebrachten festen Duschkopfs über der Wanne; 
+ 
+– 
+von einer senkrechten gedachten Fläche um die Badewanne oder Duschwanne (siehe Bild 701.1 und 
+Bild 701.2); 
+ 
+– 
+ausgenommen Bereich 0. 
+ 
+ANMERKUNG 1.AT 
+Der Bereich unter Bade- oder Duschwannen zählt auch zum Bereich 1. 
+b) 
+für Duschen ohne Duschwanne durch: 
+ 
+– 
+den Bereich 0; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 565/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 3 
+ 
+– 
+eine gedachte waagerechte Fläche in Höhe des höchsten festen Duschkopfs oder Wasserauslasses 
+oder eine gedachte waagerechte Fläche in 225 cm Höhe über dem fertigen Fußboden, je nachdem, 
+was höher ist; 
+ 
+– 
+von einer senkrechten gedachten Fläche in einem Umkreis von 120 cm um den/die festen Duschköpfe 
+oder festen Wasserauslässe, sofern diese Fläche nicht durch feste Abtrennungen begrenzt wird, 
+welche das Wasser daran hindern, sich auf der anderen Seite auszubreiten; 
+ 
+– 
+Duschtüren, die dafür bestimmt sind, während des Duschens geschlossen zu sein, gelten als 
+Abgrenzung (siehe Bild 701.3). 
+ 
+ 
+ANMERKUNG 2.AT  
+Als fest angebrachte Wasserauslässe finden sowohl fest angebrachte Brauseköpfe, fest 
+angebrachte Wasserauslässe für Schwallwasser von oben als auch Rohranschlüsse mit Gewinde oder Schnapp-
+verschluss für den Anschluss beweglicher Handbrausen mit handelsüblichem Brauseschlauch Verwendung. 
+ 
+ 
+ANMERKUNG 3.AT  
+In dieser Regelung ist auch berücksichtigt, dass an einem an der Wand fest 
+angebrachten Wasserauslass eine Handbrause mit Schlauchanschluss befestigt ist, die bestimmungsgemäß 
+benutzt wird. Bei Wasserauslässen mit größeren Abmessungen, z. B. Regenduschen, sollten die Abstände 
+entsprechend angepasst werden. 
+701.30.104 Beschreibung von Bereich 2 
+Der Bereich 2 ist begrenzt: 
+a) 
+für eine Badewanne oder eine Duschwanne durch: 
+ 
+– 
+das tiefste Niveau des fertigen Fußbodens; 
+ 
+– 
+eine gedachte waagerechte Fläche in 225 cm Höhe über dem Fußboden oder in Höhe eines eventuell 
+noch höher angebrachten festen Duschkopfs oder Wasserauslasses über der Wanne; 
+ 
+– 
+die senkrechte gedachte Fläche an der Grenze zu Bereich 1 und eine dazu parallele gedachte Fläche 
+im Abstand von 60 cm außerhalb Bereich 1 (siehe Bild 701.1 und Bild 701.2). 
+b) 
+für Duschen ohne Duschwanne gibt es keinen Bereich 2. 
+701.30.001.AT 
+Beispielbilder für die Beschreibung der Bereiche 
+Maße in cm 
+ 
+Bild 701.1 – Abmessungen der Bereiche 0, 1 und 2 an Orten  
+mit Badewanne oder Duschwanne – Beispiele (1 von 2) 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 566/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 4 
+Maße in cm 
+ 
+Bild 701.1 – Abmessungen der Bereiche 0, 1 und 2 an Orten  
+mit Badewanne oder Duschwanne – Beispiele (2 von 2) 
+Maße in cm 
+ 
+ 
+Bild 701.2 – Abmessungen der Bereiche 0 und 1 für Duschen ohne Wanne – Beispiele 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 567/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 5 
+ 
+Legende 
+1 
+Bereich 0 und Bereich 1 bei geschlossenen Duschtüren 
+A 
+geöffnete Duschtüren 
+B 
+Duschtüren bei Nichtbenutzung der Dusche raumsparend angeordnet 
+C 
+Duschtüren für die Benutzung geschlossen. 
+Bild 701.3 – Raumsparende Anordnung einer Dusche ohne Duschwanne  
+mit beweglichen Türen – Beispiel 
+ 
+Legende 
+1 
+Fester Wasserauslass für Badewanne oder Dusche (mit zugehöriger Wanne) 
+2 
+Fester Wasserauslass einer Dusche ohne Duschwanne 
+3 
+Fester elektrischer Anschluss eines Verbrauchmittels, welcher sich außerhalb des definierten 
+Anwendungsbereichs dieses Teils befindet 
+4 
+Grenze des Anwendungsbereichs dieser Norm in einem Abstand von 400 cm ab allen festen 
+Wasserauslässen für Badewannen oder Duschen (Kombination). Die Wände wirken ebenfalls begrenzend 
+5 
+Festgelegter Bereich 2 für Bade- oder Duschwannen, 60 cm ab dem äußeren Rand der jeweiligen Wanne 
+6 
+Festgelegter Bereich 1 für eine Dusche ohne Wanne, 120 cm um den festen Wasserauslass dieser einen 
+Dusche (oder auch um eine Kombination mehrerer Duschen) herum 
+7 
+Bereich in einem größeren Raum mit Badewanne oder Dusche, der sich außerhalb des Anwendungs-
+bereichs dieses Teils befindet 
+Bild 701.001.AT – Grenzen des Anwendungsbereichs dieser Norm  
+mit beispielhafter Darstellung der Grenzen der Bereiche 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 568/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 6 
+701.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+701.41 
+Schutz gegen elektrischen Schlag 
+701.410.3 
+Allgemeine Anforderungen 
+701.410.3.4 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahme Schutztrennung darf nur angewendet werden für: 
+– 
+Stromkreise, die nur ein einzelnes Verbrauchsmittel versorgen; 
+– 
+eine einzelne Steckdose. 
+Die Schutzmaßnahme Schutztrennung darf für Heizleitungen und eingebettete Heizsysteme nicht angewendet 
+werden. 
+701.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+701.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahmen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+701.411 Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+701.411.3 
+Anforderungen an den Fehlerschutz 
+701.411.3.1 
+Schutzerdung und Schutzpotentialausgleich 
+Füge hinzu: 
+701.411.3.1.101 
+Wenn im elektrisch versorgten Objekt kein Schutzpotentialausgleich vorhanden ist, muss ein lokaler 
+zusätzlicher Schutzpotentialausgleich gemäß 415.2 ausgeführt werden.  
+701.414 Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+701.414.1 
+Allgemeines 
+Füge hinzu: 
+701.414.1.101 
+Elektrische Betriebsmittel für SELV oder PELV müssen in den Bereichen 0 und 1 eine Basisisolierung 
+aufweisen, die einer Prüfwechselspannung von 500 V Effektivwert mindestens 1 min lang standhält. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 569/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 7 
+Für solche elektrischen Betriebsmittel im Bereich 2 ist gefordert: 
+– 
+Isolierung, die einer Prüfwechselspannung von 500 V Effektivwert mindestens 1 min lang standhält, oder 
+– 
+Abdeckungen oder Umhüllungen mit mindestens der Schutzart IPXXB oder IP2X gemäß ÖVE/ÖNORM 
+EN 60529. 
+ 
+701.415 Zusätzlicher Schutz (Zusatzschutz) 
+701.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+701.415.1.101 
+Ausgenommen für Stromkreise mit Schutzmaßnahme Kleinspannung SELV oder PELV oder mit 
+Schutzmaßnahme Schutztrennung muss der zusätzliche Schutz (Zusatzschutz) durch einen oder mehrere 
+Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A für folgende 
+Stromkreise ausgeführt sein: 
+– 
+alle Stromkreise, welche Verbrauchsmittel innerhalb des Anwendungsbereichs dieser Norm versorgen, 
+sowie 
+– 
+alle anderen Stromkreise, welche die Bereiche 1 und/oder 2 durchqueren. 
+701.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+Für Bestandsanlagen ohne Schutzpotentialausgleich siehe 701.411.3.1.101. 
+701.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+ 
+701.51 
+Allgemeine Bestimmungen 
+701.512 
+Betriebsbedingungen und äußere Einflüsse 
+701.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+701.512.2.101 Installation von Betriebsmitteln entsprechend den äußeren Einflüssen 
+ANMERKUNG AT 
+Die nachstehenden Anforderungen beziehen sich auf Betriebsmittel aller Art, somit sowohl auf 
+Verbrauchsmittel als auch auf Schalt-, Steuer- und Installationsgeräte in diesen Anlagen. 
+701.512.2.101.1 Allgemeines 
+Elektrische Betriebsmittel, die Strahlwasser ausgesetzt sind (z. B. für Reinigungszwecke), müssen einen 
+Schutzgrad von mindestens IPX5 aufweisen. 
+Für elektrische Betriebsmittel, die sich über mehr als einen Bereich erstrecken, gelten die jeweils höheren 
+Anforderungen. 
+BEISPIEL: Für eine Leuchte, die sich von Bereich 1 zu Bereich 2 erstreckt, gelten die Anforderungen für 
+Bereich 1. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 570/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 8 
+Für elektrische Betriebsmittel in Teilen von Wänden oder Decken (z. B. wandbündiger Einbau), welche die in 
+701.30.102 bis 701.30.104 festgelegten Bereiche begrenzen, gelten die Anforderungen für den 
+entsprechenden Bereich. 
+Für die Anordnung von Schaltgeräten, Steuergeräten und Installationsgeräten an der Außenseite der an die 
+Bereiche 0, 1 und 2 angrenzenden Wände gelten die Anforderungen von 701.522.8.101 b) bezüglich der 
+Restwanddicke bis zur Oberfläche der Bereiche sinngemäß (siehe Bild 701.4). 
+701.512.2.101.2 Bereich 0 
+Es dürfen nur fest angebrachte elektrische Verbrauchsmittel installiert werden, vorausgesetzt, dass diese alle 
+nachstehenden Anforderungen erfüllen: 
+– 
+Die Verbrauchsmittel müssen den für sie gültigen Produktnormen entsprechen und gemäß 
+Herstellerangaben eingesetzt und installiert werden. 
+– 
+Sie müssen ortsfest angebracht und fest angeschlossen sein. 
+– 
+Sie müssen mit der Schutzmaßnahme Kleinspannung SELV, jedoch maximal AC 12 V oder DC 30 V 
+geschützt sein, wobei die Stromquelle außerhalb der Bereiche 0 und 1 angebracht sein muss. 
+– 
+Sie müssen einen Schutzgrad von mindestens IPX7 aufweisen. 
+Schaltgeräte, Steuergeräte und Installationsgeräte für höhere Spannungen sind in diesem Bereich nicht 
+zulässig. 
+701.512.2.101.3 Bereich 1 
+Es dürfen nur die folgenden Betriebsmittel installiert werden: 
+– 
+Verbrauchsmittel geschützt durch SELV oder PELV mit einer Bemessungsspannung, die AC 25 V oder 
+DC 60 V nicht übersteigt, wobei die Stromquelle außerhalb der Bereiche 0 und 1 angebracht sein muss, 
+oder 
+– 
+Steckdosen für Stromkreise mit SELV oder PELV einschließlich Signal- und Kommunikationstechnik mit 
+einer Bemessungsspannung, die AC 25 V oder DC 60 V nicht übersteigt, wobei die Stromquelle außerhalb 
+der Bereiche 0 und 1 angebracht sein muss, oder 
+– 
+Fest angebrachte oder stationäre Verbrauchsmittel, welche fest angeschlossen sind, mit der 
+entsprechenden Produktnorm übereinstimmen, und nach Herstellerangaben für die Verwendung und 
+Montage im Bereich 1 geeignet sind, oder 
+– 
+Anschlusskästen und Verbindungsmittel, die für den Anschluss der unter a), b) und c) angeführten 
+Betriebsmittel notwendig sind. 
+Die Betriebsmittel müssen einen Schutzgrad von mindestens IPX4 aufweisen. 
+BEISPIELE: Solche Betriebsmittel, die in Bereich 1 angebracht werden, umfassen auch Whirlpool-
+einrichtungen, Duschpumpen, Belüftungsanlagen, Handtuchhalter 
+und 
+-trockner, Geräte für die 
+Wassererwärmung, Leuchten, Waschmaschinen, aktive Gläser, Infrarot- und Ultraviolett-Strahler. 
+701.512.2.101.4 Bereich 2 
+Es dürfen nur die folgenden Betriebsmittel installiert werden: 
+– 
+Fest angebrachte Verbrauchsmittel mit einem Schutzgrad von mindestens IPX4, die fest angeschlossen 
+sind; 
+– 
+Installationsgeräte einschließlich Steckdosen für SELV oder PELV mit einem Schutzgrad von IPX4, wobei 
+die Stromquelle außerhalb der Bereiche 0 und 1 angebracht sein muss; 
+– 
+Installationsgeräte, ausgenommen Steckdosen, sowie Zubehör der elektrischen Anlage mit einem 
+Schutzgrad von mindestens IPX4, die fest angeschlossen sind; 
+– 
+Rasiersteckdosen gemäß ÖVE/ÖNORM EN 61558-2-5. Wenn diese so angeordnet sind, dass sie direkt 
+vom Duschwasser getroffen werden können, müssen sie einen Schutzgrad von IPX4 aufweisen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 571/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 9 
+701.52 
+Kabel- und Leitungsanlagen 
+701.522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen unter Berücksichtigung  
+äußerer Einflüsse 
+701.522.3 
+Auftreten von Wasser (AD) oder hoher Feuchtigkeit (AB) 
+Füge hinzu: 
+701.522.3.101 
+Kabel- und Leitungsanlagen, die keine Betriebsmittel in Bereich 0 versorgen, dürfen nicht durch den Bereich 0 
+geführt werden. 
+701.522.8 
+Andere mechanische Beanspruchungen (AJ) 
+Füge hinzu: 
+701.522.8.101 
+ANMERKUNG 
+Durch die nachstehenden Anforderungen soll das Risiko einer Beschädigung von Leitungen verringert 
+werden. 
+Beim 
+späteren 
+Anbringen 
+von 
+Befestigungen 
+(z. B. 
+metallenen 
+Handgriffen 
+oder 
+metallenen 
+Aufhängevorrichtungen für die Handbrause) an Teilen von Wänden, welche die Bereiche 0, 1 oder 2 begrenzen, soll die 
+Isolierung von Kabeln, Leitungen oder von Wandeinbau-Gehäusen auf der Rückseite der Wand durch Anbohren nicht 
+beschädigt werden, damit die Befestigungsmittel aus Metall (z. B. Metalldübel, Schrauben, Griffe oder Halterungen) nicht 
+unter gefährlicher Spannung stehen. 
+Für jene Teile von Wänden, die die Bereiche 0, 1 und 2 begrenzen, gelten folgende Anforderungen: 
+a) 
+Kabel- und Leitungsanlagen, die elektrische Verbrauchsmittel in den Bereichen 0, 1 und 2 versorgen (siehe 
+Bild 701.4) und in den o. a. Wandteilen errichtet werden, müssen einen Schutzleiter enthalten, der mit dem 
+Schutzleiter der elektrischen Anlage verbunden ist. Dies gilt nicht für Stromkreise für SELV oder PELV mit 
+sicherer elektrischer Trennung sowie bei der Schutzmaßnahme Schutztrennung für Leitungen zwischen 
+Sicherheits-Trenntransformator und Verbrauchsmittel. 
+ 
+Kabel- und Leitungsanlagen, die Verbrauchsmittel in den Bereichen 0 und 1 versorgen, müssen dabei 
+ 
+– 
+senkrecht von oben oder waagrecht durch die Wand zur Rückseite des Verbrauchmittels verlaufen, 
+wenn dieses über der Wanne fest montiert ist (z. B. Wassererwärmer, Handtuchtrockner) sowie 
+ 
+– 
+senkrecht von unten oder waagrecht durch die Wand an der Rückseite des Verbrauchmittels 
+verlaufen, wenn das Verbrauchsmittel im Bereich unter der Wanne fest montiert ist. 
+b) 
+Alle anderen Kabel- und Leitungsanlagen, einschließlich deren Zubehör, müssen so in den o. a. 
+Wandteilen eingebettet sein, dass auf der Seite des Baderaums eine Mindest-Restwanddicke von 6 cm 
+vorhanden ist (siehe Bild 701.4). 
+c) 
+In Ausnahmefällen dürfen abweichend von b) andere Kabel- und Leitungsanlagen in diesen Wandteilen 
+dennoch errichtet werden, wenn: 
+ 
+– 
+die betreffenden Stromkreise durch eine der Schutzmaßnahmen SELV, PELV oder Schutztrennung 
+geschützt sind, oder 
+ 
+– 
+die Stromkreise durch zusätzlichen Schutz (Zusatzschutz) gemäß 415.1 geschützt sind und einen 
+Schutzleiter enthalten, oder 
+ 
+– 
+eingebettete Kabel, Leitungen oder Leiter mit einer geerdeten metallenen Abdeckung, die die 
+Anforderungen an einen Schutzleiter des betreffenden Stromkreises erfüllt, oder Kabel, Leitungen 
+oder Leiter, die in geerdete Elektroinstallationsrohre oder in geerdete zu öffnende oder geschlossene 
+Elektroinstallationskanalsysteme eingefügt sind, die die Anforderungen an einen Schutzleiter erfüllen, 
+oder geschirmte Kabel oder Leitungen verwendet werden, oder 
+ 
+– 
+eingebettete Kabel oder Leitungen einen mechanischen Schutz haben (z. B. durch Verlegung in 
+einem metallenen Installationsrohr), der voraussichtlich dafür geeignet ist, das Eindringen von Nägeln, 
+Schrauben, Bohrern und Ähnlichem in die Kabel oder Leitungen zu verhindern. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 572/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-701 – Seite 10 
+ANMERKUNG AT 
+Eine Ausführung gemäß den Aufzählungsstrichen 3 und 4 ist in Österreich nicht üblich. 
+ 
+Bild 701.4 – Mindest-Restwanddicke in den Begrenzungswänden der Bereiche 0, 1 und 2 
+701.53 
+Schalt- und Steuergeräte 
+701.531 
+Einrichtungen für den Schutz gegen elektrischen Schlag 
+701.531.3 
+Fehlerstrom-Schutzeinrichtungen (RCD) 
+701.531.3.101 
+Für die Auswahl der Fehlerstrom-Schutzeinrichtungen (RCD) siehe 531.3.3. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 573/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 1 
+Teil 7-702  
+Schwimmbecken und Springbrunnen 
+702.1 
+Anwendungsbereich 
+Dieser Teil gilt für die Errichtung von elektrischen Anlagen in: 
+– 
+Schwimmbecken und Planschbecken und deren umgebenden Bereichen, wie sie in diesem Teil der Norm 
+beschrieben sind; 
+ 
+Die Anforderungen dieses Teils sind auch bei der Errichtung von vorgefertigten oder fabrikfertigen 
+Schwimmbecken anzuwenden. 
+– 
+natürlichen Gewässern, z. B. Seen, Kiesgruben und ähnlichen Gewässern sowie deren Uferbereichen, 
+soweit dort bestimmte Bereiche ausdrücklich als Badebereiche ausgewiesen sind; 
+ 
+In diesem Fall gelten für die elektrischen Anlagen in den ausgewiesenen Bereichen die Bestimmungen für 
+Schwimm- und Planschbecken und deren umgebende Bereiche sinngemäß. 
+– 
+Becken von Springbrunnen und dekorativen Wasserbecken sowie deren umgebenden Bereichen, wie sie 
+in diesem Teil beschrieben sind. 
+ 
+ANMERKUNG AT Es kann auch Springbrunnen ohne ausgeprägten Beckenrand geben. Für solche können die 
+nachfolgenden Bestimmungen nur sinngemäß zur Anwendung kommen. 
+ANMERKUNG 
+In diesen Bereichen ist die Wirkung eines elektrischen Schlags für den Menschen wegen der verringerten 
+Körperimpedanz und durch den Körperkontakt mit dem Erdpotential stärker. 
+Dieser Teil enthält auch Hinweise für Schwimmhallen. 
+Dieser Teil gilt nicht für: 
+– 
+ortsveränderliche Betriebs- und Verbrauchsmittel, z. B. Reinigungsgeräte; 
+– 
+elektrische Anlagen in den umgebenden Bereichen von ortsveränderlichen Schwimm- und 
+Planschbecken, sofern deren Aufstellungsort nicht festgelegt ist; 
+– 
+steckerfertige Dekorationsbrunnen; 
+– 
+Dekorationsbrunnen sowie Wasserberieselungen an Wänden, Lufterfrischungsgeräte und dgl., die von 
+ihrer Art her nicht für Badezwecke vorgesehen sind; 
+– 
+Sprühgeräte mit feiner Wasservernebelung. 
+702.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+702.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+702.3 
+Bestimmungen allgemeiner Merkmale 
+702.30 
+Allgemeines 
+Füge hinzu: 
+702.30.101 Allgemeines zu Teil 7-702 
+Bei der Anwendung dieses Teils sind die in 702.30.102 bis 702.30.104 festgelegten Bereiche 0, 1 und 2 zu 
+berücksichtigen (siehe Bilder im Anhang 702.A). Soweit nachfolgend der Begriff „Schwimmbecken“ verwendet 
+wird, gelten die Anforderungen gleichlautend auch für Planschbecken einschließlich Fußwaschrinnen (siehe 
+Bild 702.A.001.AT). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 574/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 2 
+Für Becken von Springbrunnen, die für das Spielen, Planschen, Waten oder allgemein für ein Betreten 
+bestimmt sind, gelten die Festlegungen und Anforderungen für die Bereiche 0 und 1 von Schwimmbecken. 
+Für elektrische Betriebsmittel in Teilen von Wänden, Fußböden oder Decken, welche die in 702.30.102 bis 
+702.30.104 festgelegten Bereiche begrenzen, müssen die gleichen bereichsbezogenen Anforderungen erfüllt 
+werden, wenn diese elektrischen Betriebsmittel Teil der Oberfläche dieser Wände, Fußböden oder Decken 
+sind (z. B. bei wandbündigem Einbau), es sei denn, es existieren spezielle Anforderungen (siehe 702.55). 
+Die Breite von Bereich 1 oder Bereich 2 darf durch feste Abtrennungen mit einer Mindesthöhe von 2,5 m 
+begrenzt werden, wobei bei nicht ausreichender Breite der Begrenzungen Fadenmaße für den Mindestabstand 
+anzuwenden sind. 
+Im Außenbereich dürfen bei nicht ausreichender Höhe der Begrenzungen Fadenmaße für den Mindestabstand 
+angewendet werden. 
+ANMERKUNG 1  
+Als fest angebrachte Abtrennungen in Innenräumen gelten Trennwände einschließlich Fenster 
+und Türen. Die Bereiche werden auch durch Decken, Dachschrägen und Fußböden begrenzt. Fest angebrachte 
+Abtrennungen, die niedriger als 2,5 m sind, begrenzen die Bereiche nur dann, wenn sie an einer Decke oder einer 
+Dachschräge enden. Im Außenbereich gelten neben Trennwänden auch Zäune oder andere nicht wasserdichte 
+Abgrenzungen, die Personen ein Durchgreifen auf die Rückseite verwehren, als ausreichend. 
+ANMERKUNG 2  
+Die Auswirkungen einer innerhalb eines Bereichs fest angebrachten Abtrennung sind beispielhaft 
+in Bild 702.A.3 dargestellt. 
+ANMERKUNG 3  
+Im Anhang 702.A sind Beispiele für die Lage, Ausdehnung und Anordnung der Bereiche 
+dargestellt. Dabei wird national im Detail auch auf Schwimmbecken mit überströmtem Rand eingegangen. 
+ 
+702.30.102 Beschreibung von Bereich 0 
+Dieser Bereich umfasst: 
+– 
+das Innere von Becken, einschließlich allfälliger Aussparungen in deren Wänden oder Böden, sowie das 
+Innere angrenzender, auch abgedeckter Überlaufrinnen; 
+– 
+das Innere von Wasserfontänen oder Wasserfällen und deren Bereich darunter (siehe Bild 702.A.4); 
+– 
+das Innere eines fiktiven Kreises mit 2 m Durchmesser um den Mittelpunkt einer senkrechten Fontäne 
+oder ein vom Elektroplaner sinngemäß festgelegter Bereich 0 für Wasserfontänen zum Planschen ohne 
+Becken (z. B. Bild 702.A.002.AT). 
+ANMERKUNG 
+Wenn sich der Bereich unter Wasserfontänen oder unter Wasserfällen nicht genau bestimmen lässt, dann 
+kann der Rand des Beckens als Grenze des Bereichs in der waagrechten Ausdehnung betrachtet werden. Die die maximale 
+Höhe der Wasserfontäne oder des Wasserfalls kann als Begrenzung in der Höhe verwendet werden. 
+702.30.103 Beschreibung von Bereich 1 
+Dieser Bereich ist begrenzt durch: 
+– 
+die Grenzen von Bereich 0; 
+– 
+eine gedachte senkrechte Fläche im Abstand von 2 m vom Beckenrand oder jener Stelle, an der das 
+überlaufende Wasser in die abgedeckte Überlaufrinne gelangt (siehe Bild 702.A.001.AT); 
+– 
+den Fußboden innerhalb dieser gedachten senkrechten Fläche sowie jene Oberflächen in diesem Bereich, 
+bei denen zu erwarten ist, dass sie von Personen betreten werden; 
+– 
+eine gedachte waagrechte Fläche im Abstand von 2,5 m oberhalb von Bereich 0 sowie oberhalb jener 
+Flächen, von denen erwartet wird, dass sie von Personen betreten werden. 
+ANMERKUNG 
+Ein nicht unmittelbar zugängliches (d. h. nur mittels Werkzeug oder Schlüssel zugängliches) elektrisches 
+Betriebsmittel, das unterhalb der Oberfläche eines Fußbodens oder in einer Wand oder in einer Decke errichtet ist, wird 
+nicht als Teil betrachtet, das sich im Bereich 1 befindet (siehe dafür jedoch 702.55.101.3). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 575/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 3 
+Wenn zum Schwimmbecken Sprungtürme, Startblöcke, Rutschen oder andere Objekte gehören, von denen 
+erwartet wird, dass sie von Personen betreten werden, wird der Bereich 1 nach oben hin wie folgt erweitert: 
+– 
+eine gedachte senkrechte Fläche im Abstand von 1,5 m um diese Objekte herum, ebenso um dekorative 
+Becken und zugängliche künstlerische Objekte, wobei der Abstand von 2,0 m vom Beckenrand nicht 
+überschritten wird, 
+– 
+die gedachte waagrechte Fläche im Abstand von 2,5 m oberhalb der Flächen, von denen erwartet wird, 
+dass sie von Personen betreten werden. 
+ 
+702.30.104 Beschreibung von Bereich 2 
+Der Bereich 2 ist begrenzt durch: 
+– 
+die gedachte senkrechte Grenzfläche des Bereichs 1 und eine gedachte parallele Fläche im Abstand von 
+1,5 m außerhalb von dieser; 
+– 
+den Fußboden sowie die Flächen, von denen erwartet wird, dass sie von Personen betreten werden; 
+– 
+die gedachte waagrechte Fläche im Abstand von 2,5 m oberhalb der Flächen, von denen erwartet wird, 
+dass sie von Personen betreten werden. 
+ANMERKUNG 
+Ein nicht unmittelbar zugängliches (d. h. nur mittels Werkzeug oder Schlüssel zugängliches) elektrisches 
+Betriebsmittel, das unterhalb der Oberfläche eines Fußbodens oder in einer Wand oder in einer Decke errichtet ist, wird 
+nicht als Teil betrachtet, das sich im Bereich 2 befindet (siehe dafür jedoch 702.55.101.3). 
+Für Springbrunnen gibt es keinen Bereich 2. 
+702.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+702.41 
+Schutz gegen elektrischen Schlag 
+Füge hinzu: 
+ANMERKUNG 1  
+Für die Auswahl und Errichtung von Steckdosen innerhalb der in 702.30 festgelegten Bereiche 
+siehe 702.53. 
+ANMERKUNG 2  
+Für die Auswahl und Installation von anderen elektrischen Betriebsmitteln innerhalb der in 702.30 
+festgelegten Bereiche siehe 702.55. 
+702.410.3 
+Allgemeine Anforderungen 
+702.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen innerhalb der in 702.30 festgelegten Bereiche nicht angewendet werden. 
+702.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzmaßnahmen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen innerhalb der in 702.30 festgelegten Bereiche nicht angewendet 
+werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 576/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 4 
+Füge hinzu: 
+702.410.3.101 Besondere Anforderungen für die einzelnen Bereiche 
+702.410.3.101.1 Bereiche 0 und 1 von Schwimmbecken 
+ANMERKUNG AT 
+Diese Anforderungen für Schwimmbecken gelten gemäß Anwendungsbereich auch für Bereiche 
+in natürlichen Gewässern, soweit diese ausdrücklich als Badebereiche ausgewiesen sind. 
+In den Bereichen 0 und 1 ist nur der Schutz durch Kleinspannung mittels SELV mit einer Nennspannung nicht 
+größer als AC 12 V oder DC 30 V zulässig, ausgenommen, es kommt 702.55.104 zur Anwendung. Die 
+Stromquelle muss außerhalb der Bereiche 0 und 1 angeordnet sein. Wenn die Stromquelle im Bereich 2 
+angeordnet wird, muss 702.53 angewendet werden. 
+702.410.3.101.2 Bereiche 0 und 1 von Springbrunnen 
+In den Bereichen 0 und 1 von Springbrunnen dürfen nur die folgenden Schutzmaßnahmen angewendet 
+werden: 
+– 
+Schutz durch Kleinspannung mittels SELV, wobei die Stromquelle außerhalb der Bereiche 0 und 1 
+angeordnet sein muss, oder 
+– 
+Nullung oder Fehlerstrom-Schutzschaltung, wobei jeder Stromkreis einen zusätzlichen Schutz 
+(Zusatzschutz) mittels Fehlerstrom-Schutzeinrichtung mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A 
+aufweisen muss, oder 
+– 
+Schutztrennung, wobei jede Stromquelle nur ein einziges Verbrauchsmittel versorgen darf und außerhalb 
+der Bereiche 0 und 1 angeordnet sein muss. 
+702.410.3.101.3 Bereich 2 von Schwimmbecken 
+ANMERKUNG AT 
+Diese Anforderungen für Schwimmbecken gelten gemäß Anwendungsbereich auch für Bereiche 
+in natürlichen Gewässern, soweit diese ausdrücklich als Badebereiche ausgewiesen sind. 
+Im Bereich 2 dürfen nur die folgenden Schutzmaßnahmen angewendet werden: 
+– 
+SELV, wobei die Stromquelle außerhalb der Bereiche 0 und 1 angeordnet sein muss, oder 
+– 
+Nullung oder Fehlerstrom-Schutzschaltung, wobei jeder Stromkreis einen zusätzlichen Schutz 
+(Zusatzschutz) mittels Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom 
+IΔn ≤ 0,03 A aufweisen muss, oder 
+– 
+Schutztrennung, wobei jede Stromquelle nur ein einziges Verbrauchsmittel versorgen darf und außerhalb 
+der Bereiche 0 und 1 angeordnet sein muss. 
+ANMERKUNG 
+Für Springbrunnen gibt es keinen Bereich 2 (siehe 702.30.104). 
+702.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+702.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+Füge hinzu: 
+Der Schutz durch Kleinspannung mittels PELV darf nicht angewendet werden. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 577/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 5 
+702.414.4.5 
+Füge hinzu: 
+Bei Schutz durch Kleinspannung mittels SELV muss der Basisschutz ungeachtet der Höhe der Nennspannung 
+sichergestellt sein durch: 
+– 
+Abdeckungen oder Umhüllungen, mindestens in der Schutzart IP2X oder IPXXB gemäß ÖVE/ÖNORM 
+EN 60529, oder 
+– 
+eine Isolierung, die einer Prüfspannung von AC 500 V mindestens 1 min standhält. 
+702.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+702.415.2 
+Zusätzlicher Schutz (Zusatzschutz): Zusätzlicher Schutzpotentialausgleich 
+Füge hinzu: 
+Alle fremden leitfähigen Teile in den Bereichen 0, 1 und 2 müssen über Schutzpotentialausgleichsleiter 
+miteinander und mit dem Schutzleiter jener elektrischen Betriebsmittel verbunden werden, die in diesen 
+Bereichen angeordnet sind. 
+ANMERKUNG 1  
+Diese Verbindung mit dem Schutzleiter kann in der Nähe der Bereiche vorgenommen werden, 
+z. B. in einem Installationsgerät, in einem Verteiler oder in einem anderen elektrischen Betriebsmittel. 
+ANMERKUNG 2  
+Siehe auch 702.522.8 und 702.55.101. 
+ANMERKUNG AT 
+Details zur Ausführung des zusätzlichen Schutzpotentialausgleichs im Geltungsbereich dieses 
+Teils sind der Nationalen Ergänzung 702.NE1 zu entnehmen. 
+Fremde leitfähige Teile sind leitfähige Teile, die nicht zur elektrischen Anlage gehören, die jedoch ein 
+elektrisches Potential, einschließlich das einer örtlichen Erde (für den Anwendungsbereich dieser Norm von 
+außerhalb der Bereiche 0, 1 und 2 in die Bereiche 0, 1 oder 2), einführen können. 
+ANMERKUNG 3  
+Solche Teile können z. B. sein: 
+– 
+metallene Rohrleitungen, z. B. für Frischwasser, Abwasser, Gas, Heizung, Klima; 
+– 
+Metallteile der Gebäudekonstruktion; 
+– 
+Metallteile der Beckenkonstruktion; 
+– 
+metallene Bewehrungen von nicht-isolierenden Fußböden; 
+– 
+metallene Bewehrungen von Betonbecken. 
+Fußböden, die aus einzelnen Betonplatten bestehen, deren Armierungen vollständig in die Platten eingebettet 
+sind und nicht ohne Beschädigungen der Platten zugänglich sind, werden nicht als fremde leitfähige Teile 
+betrachtet und brauchen – auch wenn sie nicht isolierend sind – deshalb in den zusätzlichen 
+Schutzpotentialausgleich nicht einbezogen zu werden. 
+Betonplatten ohne Metallbewehrung, sonstige Plattenoberflächen sowie das Erdreich (z. B. Rasenflächen) 
+werden nicht als fremde leitfähige Teile betrachtet und brauchen – auch wenn sie nicht-isolierend sind – 
+deshalb in den zusätzlichen Schutzpotentialausgleich nicht einbezogen zu werden. 
+ANMERKUNG 4  
+Die folgenden leitfähigen Teile brauchen üblicherweise in den zusätzlichen Schutz-
+potentialausgleich nicht einbezogen werden: 
+– 
+Einstiegsleitern und Abdeckungen von Becken; 
+– 
+Leitern von Sprungtürmen; 
+– 
+Handläufe und Haltegriffe am Beckenrand; 
+– 
+Gitterabdeckungen einschließlich deren Einbaurahmen von Überlaufrinnen; 
+– 
+Fensterrahmen; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 578/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 6 
+– 
+Türzargen; 
+– 
+Startblöcke. 
+702.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+702.51 
+Allgemeine Bestimmungen 
+702.512 
+Betriebsbedingungen und äußere Einflüsse 
+702.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Die elektrischen Betriebsmittel in den Bereichen 0, 1 und 2 müssen mindestens die IP-Schutzarten gemäß 
+Tabelle 702.1 aufweisen. 
+Tabelle 702.1 – Mindest-IP-Schutzarten in den Bereichen 
+Bereich 
+Im Freien, für 
+Reinigungsarbeiten mit 
+Strahlwasser 
+Im Freien, ohne 
+Strahlwasser 
+Im Innenraum, für 
+Reinigungsarbeiten mit 
+Strahlwasser 
+Im Innenraum, ohne 
+Strahlwasser 
+0 
+IPX5/IPX8 
+IPX8 
+IPX5/IPX8 
+IPX8 
+1 
+IPX5 
+IPX4 
+IPX5 
+IPX4 
+2 
+IPX5 
+IPX4 
+IPX5 
+IPX2 
+ANMERKUNG 1  
+In ÖVE/ÖNORM EN 60529 ist festgelegt, dass die Prüfbedingungen für IPX8 zwischen Hersteller 
+und Anwender zu vereinbaren sind, es sei denn, sie sind in den relevanten Produktnormen festgelegt. 
+ANMERKUNG 2  
+Wenn bei Reinigungsarbeiten Wasserstrahlen zu erwarten sind, sind für Bereich 0 beide 
+Schutzarten IPX5 (um die Widerstandsfähigkeit beim Reinigen des Beckens mit Strahlwasser zu gewährleisten) und IPX8 
+(um 
+die 
+Widerstandsfähigkeit 
+beim 
+Eintauchen 
+ins 
+Wasser 
+zu 
+gewährleisten) 
+notwendig 
+(siehe 
+ÖVE/ÖNORM EN 60529:2014, 4.3). Beide, IPX5 und IPX8, sind notwendig, weil IPX8 nicht den Schutz gegen Strahlwasser 
+einschließt. 
+702.52 
+Kabel- und Leitungsanlagen 
+702.522 
+Auswahl und Errichtung von Kabel- und Leitungsanlagen nach den äußeren Einflüssen 
+702.522.8 
+Andere mechanische Beanspruchungen (AJ) 
+Füge hinzu: 
+702.522.8.101 Errichtung unter Berücksichtigung der Bereiche 
+In den Bereichen 0, 1 und 2 dürfen basisisolierte Leitungen keine berührbare metallene Umhüllung haben. 
+Metallene Umhüllungen für Kabel und Leitungen müssen in den zusätzlichen Schutzpotentialausgleich 
+einbezogen werden. 
+ANMERKUNG 
+Kabel und Leitungen sollten in Elektroinstallationsrohrsystemen errichtet werden, um ein Auswechseln 
+zu erleichtern. 
+702.522.8.102 Einschränkungen für Kabel- und Leitungsanlagen unter Berücksichtigung der Bereiche 
+In den Bereichen 0 und 1 dürfen nur Kabel und Leitungen verlegt werden, die zur Versorgung von elektrischen 
+Betriebsmitteln in diesen Bereichen notwendig sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 579/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 7 
+Im Bereich 2 ober Putz oder in Wänden, Decken und Fußböden, die die Bereiche 0, 1 oder 2 begrenzen, 
+müssen Stromkreise, die Verbrauchsmittel außerhalb dieser Bereiche versorgen, die nachfolgenden 
+Anforderungen erfüllen. Sie müssen 
+– 
+ausgenommen bei Verlegung ober Putz mindestens 6 cm tief eingebettet sein, oder 
+– 
+einen zusätzlichen Schutz (Zusatzschutz) mittels Fehlerstrom-Schutzeinrichtungen (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A aufweisen, oder 
+– 
+mit Schutz durch Kleinspannung mittels SELV betrieben werden, oder 
+– 
+durch Schutztrennung für nur ein Verbrauchsmittel geschützt sein. 
+ANMERKUNG AT 
+In Österreich ist die Führung von Kabel- und Leitungsanlagen ober Putz in diesen Bereichen 
+unüblich und sollte vermieden werden, insbesondere, um zu vermeiden, dass diese von Personen angefasst oder 
+beschädigt werden. 
+702.522.8.103 Zusätzliche Anforderungen betreffend Kabel und Leitungen für Springbrunnen 
+Es dürfen nur wasserbeständige schwere Schlauchleitungen gemäß ÖVE/ÖNORM EN 50525-2-21 oder 
+gleichwertige Kabel und Leitungen verwendet werden. Die Eignung für den dauernden Kontakt mit Wasser 
+muss vom Hersteller bestätigt werden. 
+Kabel/Leitungen müssen in Elektroinstallationsrohren geführt werden, um ein Auswechseln zu ermöglichen. 
+Es dürfen nur Elektroinstallationsrohre mit sehr schwerer Schlagfestigkeit (Klassifizierungscode X5XX) gemäß 
+OVE EN 61386-1 verwendet werden. 
+Für Springbrunnen müssen folgende zusätzlichen Anforderungen zum Schutz vor mutwilliger Beschädigung 
+eingehalten werden: 
+a) 
+Kabel und Leitungen für elektrische Betriebsmittel im Bereich 0 müssen, soweit möglich, außerhalb des 
+Beckens verlegt werden und innerhalb des Beckens auf dem kürzesten möglichen Weg zu den 
+elektrischen Betriebsmitteln im Becken geführt werden. 
+b) 
+In den Bereichen 0 und 1 müssen Kabel und Leitungen in Elektroinstallationsrohren, die einen geeigneten 
+mechanischen Schutz bieten, verlegt werden. 
+702.522.8.104 Abzweig-/Verbindungsdosen 
+Abzweig-/Verbindungsdosen dürfen im Bereich 0 nicht angeordnet werden. 
+Im Bereich 1 sind nur Abzweig-/Verbindungsdosen für Stromkreise mit SELV zulässig (siehe 702.410.3.101). 
+702.53 
+Schalt- und Steuergeräte 
+Füge hinzu: 
+Im Bereich 0 dürfen Schalt- oder Steuergeräte einschließlich Steckdosen nicht angeordnet werden. 
+Im Bereich 1 dürfen Schaltgeräte, Steuergeräte und Steckdosen nur dann angeordnet werden, wenn sie mit 
+Schutz durch Kleinspannung mittels SELV versorgt werden und die Stromquelle außerhalb der Bereiche 0  
+und 1 angeordnet ist. Wenn die Stromquelle für SELV im Bereich 2 angeordnet ist, muss der versorgende 
+Stromkreis mit einem zusätzlichen Schutz (Zusatzschutz) durch eine Fehlerstrom-Schutzeinrichtung (RCD) mit 
+einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein. 
+Im Bereich 2 sind Schaltgeräte, Steuergeräte und Steckdosen nicht zulässig, es sei denn, die 
+Versorgungsstromkreise sind durch eine der folgenden Schutzmaßnahmen geschützt: 
+a) 
+Schutz durch Kleinspannung mittels SELV, wobei die Stromquelle für SELV außerhalb der Bereiche 0  
+und 1 anzuordnen ist. Wenn die Stromquelle für SELV im Bereich 2 angeordnet ist, muss der versorgende 
+Stromkreis mit einem zusätzlichen Schutz (Zusatzschutz) durch eine Fehlerstrom-Schutzeinrichtung 
+(RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein, oder 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 580/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 8 
+b) 
+Nullung oder Fehlerstrom-Schutzschaltung mit zusätzlichen Schutz (Zusatzschutz) durch eine 
+Fehlerstrom-Schutzeinrichtung mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A, oder 
+c) 
+Schutztrennung, wobei die Stromquelle nur ein einziges Verbrauchsmittel versorgt und außerhalb der 
+Bereiche 0 und 1 angeordnet ist. Wenn die Stromquelle im Bereich 2 angeordnet ist, muss der 
+versorgende Stromkreis mit einem zusätzlichen Schutz (Zusatzschutz) durch eine Fehlerstrom-
+Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein. 
+702.55 
+Andere elektrische Betriebsmittel 
+Füge hinzu: 
+702.55.101 Elektrische Verbrauchsmittel für Schwimmbecken 
+702.55.101.1  
+In den Bereichen 0 und 1 dürfen unter Beachtung der Anforderungen von 702.55.102 und 
+702.55.104 nur fest angebrachte elektrische Verbrauchsmittel angeordnet werden, die für die besondere 
+Verwendung in diesen Bereichen von Schwimmbecken hergestellt sind. Dies muss vom Hersteller der 
+Verbrauchsmittel bestätigt sein. 
+702.55.101.2  
+Fest angeschlossene elektrische Schwimmbecken-Reinigungsgeräte zur Verwendung in 
+den Bereichen 0 und 1 müssen mit Schutz durch Kleinspannung mittels SELV mit einer Nennspannung nicht 
+größer als AC 12 V oder DC 30 V versorgt werden, wobei die Stromquelle außerhalb der Bereiche 0 und 1 
+anzuordnen ist. Wenn die Stromquelle im Bereich 2 angeordnet ist, muss der versorgende Stromkreis einen 
+zusätzlichen Schutz (Zusatzschutz) mittels einer Fehlerstrom-Schutzeinrichtung (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A aufweisen. 
+702.55.101.3  
+Elektrische Speisepumpen oder andere spezielle elektrische Betriebsmittel, die für die 
+besondere Verwendung in den Bereichen von Schwimmbecken vorgesehen sind und 
+– 
+in einem an das Becken angrenzenden Raum oder Bereich angeordnet sind und 
+– 
+über eine Luke oder Tür direkt aus den Bereichen 1 oder 2 um das Becken zugänglich sind (Beispiel siehe 
+Nationale Ergänzung 702.NE2), 
+müssen durch eine der folgenden Schutzmaßnahmen geschützt sein: 
+a) 
+SELV nicht größer als AC 12 V oder DC 30 V, wobei die Stromquelle außerhalb der Bereiche 0 und 1 
+anzuordnen ist. Wenn die Stromquelle im Bereich 2 angeordnet ist, muss der versorgende Stromkreis 
+einen zusätzlichen Schutz (Zusatzschutz) mittels einer Fehlerstrom-Schutzeinrichtung (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A aufweisen. 
+b) 
+Schutztrennung, wobei gleichzeitig die folgenden Bedingungen erfüllt sein müssen: 
+ 
+– 
+wenn die Pumpe oder andere Betriebsmittel über Rohre mit dem Schwimmbecken verbunden sind, 
+dürfen hierfür nur isolierende Rohre verwendet werden; 
+ 
+– 
+das Öffnen der Luke (oder Tür) darf nur mit Schlüssel oder Werkzeug möglich sein; 
+ 
+– 
+alle elektrischen Betriebsmittel, die in diesem Raum oder Bereich errichtet sind, müssen einen 
+Schutzgrad von mindestens IPX5 haben, oder dieser Schutzgrad muss durch ein zusätzliches 
+Gehäuse erreicht werden. 
+c) 
+Nullung oder Fehlerstrom-Schutzschaltung, wobei gleichzeitig die folgenden Bedingungen erfüllt sein 
+müssen: 
+ 
+– 
+wenn die Pumpe oder andere Betriebsmittel über Rohre mit dem Schwimmbecken verbunden sind, 
+muss die Verbindung entweder über elektrisch isolierende Rohre oder über metallene Rohre, die mit 
+dem zusätzlichen Schutzpotentialausgleich des Schwimmbeckens verbunden sind, ausgeführt 
+werden; 
+ 
+– 
+das Öffnen der Luke (oder Tür) darf nur mit einem Schlüssel oder Werkzeug möglich sein; 
+ 
+– 
+alle elektrischen Betriebsmittel, die in diesem Raum oder Bereich errichtet sind, müssen einen 
+Schutzgrad von mindestens IPX5 haben, oder dieser Schutzgrad muss durch ein zusätzliches 
+Gehäuse erreicht werden; 
+ 
+– 
+der zusätzliche Schutzpotentialausgleich muss gemäß 702.415.2 errichtet sein; 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 581/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 9 
+ 
+– 
+das elektrische Betriebsmittel muss mit einem zusätzlichen Schutz (Zusatzschutz) durch eine 
+Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A geschützt sein. 
+ANMERKUNG 
+Der Raum, in dem diese elektrischen Betriebsmittel installiert sind, wird als außerhalb der 
+Bereiche 1 und 2 betrachtet. 
+702.55.102 Unterwasserbeleuchtung für Becken von Schwimmbädern 
+Es dürfen nur Leuchten gemäß OVE EN IEC 60598-2-18 verwendet werden, die für die Verwendung im 
+Wasser oder in Berührung mit Wasser geeignet sind. 
+Unterwasserbeleuchtungen, die hinter wasserdichten Bullaugen angebracht sind, müssen von dort aus 
+gewartet werden können. Sie müssen so errichtet werden, dass keine absichtliche oder unabsichtliche 
+leitfähige Verbindung zwischen irgendeinem Körper der Unterwasserscheinwerfer und irgendeinem leitfähigen 
+Teil der Bullaugen auftreten kann. 
+702.55.103 Elektrische Verbrauchsmittel von Springbrunnen 
+Elektrische Verbrauchsmittel in den Bereichen 0 und 1 müssen angemessen vor mutwilliger Beschädigung 
+geschützt sein. Dies kann durch entsprechende Abdeckungen (z. B. Gitter) oder durch Drahtglas erreicht 
+werden. In öffentlichen Bereichen dürfen solche Verbrauchsmittel nicht ohne Werkzeug zugänglich sein. 
+Elektrische Pumpen müssen OVE EN IEC 60335-2-41 entsprechen. 
+702.55.104 Besondere Anforderungen für spezielle elektrische Anlagen und Verbrauchsmittel im 
+Bereich 1 von Schwimmbecken 
+702.55.104.1  
+Fest angebrachte Verbrauchsmittel (z. B. Filteranlagen, Gegenstromanlagen), die mit einer 
+maximalen Bemessungsspannung von AC 230 V gegen Erde betrieben werden und besonders für die 
+Verwendung in und bei Schwimmbecken ausgelegt sind, dürfen im Bereich 1 errichtet und verwendet werden, 
+wenn alle nachfolgenden Anforderungen gleichzeitig erfüllt sind: 
+a) 
+Die Verbrauchsmittel müssen in einem Gehäuse gleichwertig einer zusätzlichen Isolierung mit Schutz 
+gegen mittlere mechanische Beanspruchung (AG2) (siehe Anhang 51.ZA) angeordnet sein. 
+b) 
+Die Anforderungen von 702.55.101.3 sind einzuhalten. 
+c) 
+Das Öffnen des Gehäuses gemäß a) muss zur Trennung aller aktiven Leiter der Betriebsmittel in dem 
+Gehäuse führen. Ist die zugehörige Haupttrenneinrichtung innerhalb dieses Gehäuses angeordnet, so 
+muss bis zu dieser Haupttrenneinrichtung einschließlich ihrer Eingangsklemmen eine der Schutzklasse II 
+entsprechende Isolierung gegeben sein. 
+702.55.104.2  
+Für Schwimmbecken, bei denen es aus baulichen Gründen keinen Bereich 2 gibt, dürfen 
+Beleuchtungseinrichtungen im Bereich 1 abweichend von 702.410.3.101.1 mit einer maximalen 
+Bemessungsspannung von 230 V gegen Erde versorgt werden, wenn diese Anlagen an einer Wand oder an 
+der Decke errichtet werden, vorausgesetzt die beiden folgenden Anforderungen sind erfüllt: 
+– 
+der Stromkreis ist durch die Schutzmaßnahmen Nullung oder Fehlerstrom-Schutzschaltung geschützt und 
+der betreffende Stromkreis weist einen zusätzlichen Schutz (Zusatzschutz) mittels Fehlerstrom-
+Schutzeinrichtung mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A auf und 
+– 
+der Abstand des untersten Teils der Beleuchtungseinrichtung beträgt mindestens 2 m von der Standfläche 
+bzw. von der unteren Grenze von Bereich 1. 
+702.55.105 Heizanlagen mit Heizleitungen und Flächenheizelementen 
+ANMERKUNG 
+Siehe auch Teil 7-753. 
+In Fußböden eingebettete elektrische Heizungseinheiten dürfen errichtet werden, vorausgesetzt sie sind 
+geschützt durch 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 582/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 10 
+– 
+die Schutzmaßnahme SELV, wobei die Stromquelle außerhalb der Bereiche 0 und 1 anzuordnen ist. Wenn 
+die Stromquelle im Bereich 2 errichtet wird, muss 702.53 angewendet werden, oder 
+– 
+die Schutzmaßnahmen Nullung oder Fehlerstrom-Schutzschaltung, wobei der betreffende Stromkreis 
+einen zusätzlichen Schutz (Zusatzschutz) mittels Fehlerstrom-Schutzeinrichtung (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A aufweist und die Heizungseinheit über ein eingebettetes geerdetes 
+Metallgitter oder eine eingebettete geerdete metallene Umhüllung verfügt, das/die mit dem zusätzlichen 
+Schutzpotentialausgleich gemäß 702.415.2 verbunden ist. 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 583/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 11 
+Anhang 702.A 
+(informativ) 
+ 
+Beispiele für die Bereiche gemäß 702.30 
+ 
+ANMERKUNG 
+Die Bereiche werden durch Wände und feste Abtrennungen begrenzt. 
+Bild 702.A.1 – Abmessungen der Bereiche von Schwimmbecken und Planschbecken (Seitenansicht) 
+ 
+ 
+ANMERKUNG 
+Die Bereiche werden durch Wände und feste Abtrennungen begrenzt. 
+Bild 702.A.2 – Abmessungen der Bereiche für auf dem Boden aufgestellte Schwimmbecken 
+(Seitenansicht) 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 584/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 12 
+ 
+ANMERKUNG 
+Das Fadenmaß für den Abstand kann in diesem Falle eine Schnur mit festgelegter Länge sein. 
+Bild 702.A.3 – Beispiele für die Abmessungen der Bereiche (Draufsicht)  
+von Schwimmbecken bei festen Abtrennungen  
+(siehe Bild 701.A.1 von Teil 7-701 für Räume mit Badewanne) 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 585/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 13 
+ 
+Bild 702.A.4 – Beispiel für die Festlegung der Bereiche bei einem Schwimmbecken mit  
+zusätzlichen Springbrunnen (Seitenansicht) 
+ 
+Bild 702.A.001a.AT – Übliches Schwimmbecken ohne Überlaufrinne 
+ 
+Bild 702.A.001b.AT – Schwimmbecken mit überströmtem Rand und abgedeckter Überlaufrinne 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 586/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 14 
+ 
+Bild 702.A.001c.AT – Schwimmbecken mit überströmtem Rand und Ablauf  
+in einer offenen Rinne, z. B. Fußwaschrinne 
+Bild 702.A.001.AT – Beispiele für die Gestaltung des Schwimmbeckenrands 
+ 
+Legende 
+1 
+Senkrechte Wasserfontäne 
+2 
+Fiktiver Bereich 0 
+3 
+Ablauf des Wassers bis zur Wasserablaufrinne (Bereich 0) 
+4 
+Wasserablaufrinne 
+5 
+Bereich 1 
+Bild 702.A.002.AT – Beispiel für Bereiche bei Springbrunnen (Wasserfontänen)  
+zum Planschen ohne Becken 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 587/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 15 
+Nationale Ergänzung 702.NE1 
+(informativ) 
+ 
+Details zur Ausführung des zusätzlichen Schutzpotentialausgleichs 
+Bei der internationalen Bearbeitung des Teils IEC 60364-7-702 hat sich herausgestellt, dass die Bedeutung 
+dieses Schutzpotentialausgleichs in der Vergangenheit teilweise überbewertet wurde, weshalb die Härte der 
+Anforderungen etwas reduziert wurde. Es ist daher z. B. nicht mehr erforderlich, den Beckenrand wie früher 
+mit einem eigens dafür im Untergrund eingebauten Potentialsteuergitter zu umgeben. 
+Ziel des zusätzlichen Schutzpotentialausgleichs ist es nunmehr zu vermeiden, dass 
+1) 
+unterschiedliche fremde Potentiale über die fremden leitfähigen Teile in die Bereiche 0, 1 und 2 von 
+Schwimmbecken sowie in die Bereiche 0 und 1 von Springbrunnen verschleppt werden können und 
+2) 
+im Fehlerfall eines elektrischen Betriebsmittels der Schutzklasse I in diesen Bereichen gegenüber den mit 
+dem zusätzlichen Schutzpotentialausgleich zusammengeschlossenen leitfähigen Teilen eine gefährliche 
+Fehlerspannung auftritt. 
+Die erstgenannte Forderung bedingt, dass die „fremden leitfähigen Teile“, also jene, die tatsächlich in der Lage 
+wären, ein (unterschiedliches) fremdes Potential in den zu schützenden Bereich einzubringen, mit 
+Schutzpotentialausgleichsleitern zusammengeschlossen werden. 
+Hinsichtlich der zweiten Forderung ist festzustellen, dass elektrische Betriebsmittel der Schutzklasse I mit einer 
+Nennspannung von 230 V gegen Erde in den zu schützenden Bereichen 0, 1 und 2 oder in deren unmittelbarer 
+Nähe nur in ganz bestimmten und eindeutig geregelten Sonderfällen zulässig sind. Allerdings müssen 
+diesbezüglich allfällige Umwälzpumpen der Schutzklasse I ebenfalls berücksichtigt werden, auch wenn diese 
+außerhalb der Bereiche, jedoch in deren Nähe, angeordnet sind, da letztendlich auch das Wasser leitfähig ist.  
+Daraus resultiert die Forderung, den zusätzlichen Schutzpotentialausgleich mit dem/den Schutzleiter(n) in 
+diesem Bereich zusammenzuschließen. Nur damit kann gewährleistet werden, dass vor allem in den Bereichen 
+0 und 1 von Schwimmbecken keine Potentialdifferenzen auftreten, die größer als AC 12 V oder DC 30 V sind. 
+Für den Bereich 2 von Schwimmbecken und für Springbrunnen gemäß 702.410.3.101.3 ist dagegen, wenn 
+auch eingeschränkt und mit der Bedingung des zusätzlichen Schutzes (Zusatzschutz) durch Fehlerstrom-
+Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A, die Anwendung von elektrischen 
+Betriebsmitteln mit einer Nennspannung von 230 V gegen Erde erlaubt, wobei natürlich auch hier der 
+zusätzliche Schutzpotential-ausgleich eine wichtige Funktion zur Risikoverminderung hat. 
+Der beste Erfolg zur Erfüllung dieser zweiten Forderung ist erreichbar, wenn man den zusätzlichen 
+Schutzpotentialausgleich unmittelbar mit den Körpern der betreffenden elektrischen Betriebsmittel der 
+Schutzklasse I verbindet (siehe Bild 702.NE1.001.AT). 
+Diese Lösung bereitet jedoch in einigen Fällen der Praxis Schwierigkeiten, z. B. dadurch, dass die Körper der 
+elektrischen Betriebsmittel keine Anschlussklemme für den Schutzpotentialausgleichsleiter oder keine 
+entsprechende Durchführung zu den Anschlussklemmen des Schutzleiters aufweisen oder der 
+Schutzpotentialausgleichsleiter aus anderen Gründen dort nicht hingeführt werden kann. In einem solchen 
+Falle bietet sich an, den zusätzlichen Schutzpotentialausgleich mit dem zu diesem elektrischen Betriebsmittel 
+führenden Schutzleiter möglichst „in der Nähe“ zu verbinden. 
+Diese Verbindung muss für eine spätere Anlagenkontrolle überprüfbar und entsprechend dokumentiert sein. 
+Sie kann auch außerhalb der Bereiche 0, 1 oder 2 erfolgen, wenn sich aus dem erwartbaren Fehlerstrom bei 
+einem widerstandsfrei angenommenen Fehler des betreffenden elektrischen Betriebsmittels und der 
+Dimensionierung des Schutzleiters zu diesem und dessen Länge (Impedanz) keine höhere Spannungs-
+differenz im Fehlerfall als die o. a. AC 12 V oder DC 30 V ergibt. Mit dieser Bedingung lässt sich die notwendige 
+„Nähe“ in geeigneter Weise ermitteln. Bei Einhaltung dieser Bedingung kann der Zusammenschluss zwischen 
+dem zusätzlichen Schutzpotentialausgleich der fremden leitfähigen Teile mit dem/den Schutzleiter(n) durchaus 
+auch 
+an 
+der 
+Schutzleiter(schiene) 
+der 
+nächsten 
+vorgelagerten 
+Verteilung 
+erfolgen 
+(siehe 
+Bild 702.NE1.002.AT). 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 588/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 16 
+Kann die o. a. Bedingung für eine Vorgangsweise gemäß Bild 702.NE1.002.AT nicht erfüllt werden, so besteht 
+in Sonderfällen noch die Möglichkeit, die Zuleitung zum elektrischen Betriebsmittel in dessen unmittelbarer 
+Nähe, jedoch an einer Stelle, an der dies zulässig ist, in einer geeigneten Abzweigdose abzufangen und dort 
+die Verbindung zwischen Schutzleiter und zusätzlichem Schutzpotentialausgleich überprüfbar herzustellen. 
+Dabei muss ebenfalls eine Spannungsdifferenz im Fehlerfall von AC 12 V oder DC 30 V eingehalten werden 
+(siehe Bild 702.NE1.003.AT). 
+Legende zu Bild 702.NE1.001.AT, Bild 702.NE1.002.AT und Bild 702.NE1.003.AT: 
+1 
+Körper (eines elektrischen Betriebsmittels der Schutzklasse I) 
+2 
+Potentialausgleichsschiene für den zusätzlichen Schutzpotentialausgleich 
+3 
+metallene Rohrleitung, von außen kommend 
+4 
+metallene Rohrleitung zum Becken 
+5 
+Baustahlgitter, falls vorhanden 
+6 
+Schutzpotentialausgleichsleiter für den zusätzlichen Schutzpotentialausgleich 
+ 
+Bild 702.NE1.001.AT – Beispiel für zusätzlichen Schutzpotentialausgleich –  
+die Körper jedes zutreffenden elektrischen Betriebsmittels sind direkt  
+mit dem Schutzpotentialausgleich verbunden 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 589/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 17 
+ 
+Bild 702.NE1.002.AT – Beispiel für den zusätzlichen Schutzpotentialausgleich –  
+die Körper der elektrischen Betriebsmittel sind über den in der Zuleitung geführten  
+Schutzleiter mit der Schutzleiter(schiene) einer Verteilung verbunden 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 590/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 18 
+ 
+Bild 702.NE1.003.AT – Beispiel für zusätzlichen Schutzpotentialausgleich –  
+die Körper der elektrischen Betriebsmittel sind über den in der Zuleitung geführten  
+Schutzleiter und spezielle Verbindungsdosen mit dem zusätzlichen  
+Schutzpotentialausgleich verbunden 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 591/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 19 
+Nationale Ergänzung 702.NE.2 
+(informativ) 
+ 
+Beispielbild Pumpenraum 
+ 
+Bild 702.NE2.001.AT – Beispiel für Pumpenraum angrenzend an das Schwimmbecken 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 592/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-702 – Seite 20 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 593/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-703 – Seite 1 
+Teil 7-703  
+Räume und Kabinen mit Saunaheizgeräten 
+703.1 
+Anwendungsbereich 
+Dieser Teil gilt für elektrische Anlagen in folgenden Saunaanlagen: 
+– 
+in vor Ort errichteten Saunakabinen; 
+– 
+in Räumen, in denen Saunaheizgeräte errichtet und betrieben werden; 
+ 
+ANMERKUNG 1.AT 
+In diesen Fall wird der gesamte Raum als Sauna betrachtet. 
+– 
+in vor Ort errichteten Dampf-Saunen (Dampfbäder); 
+– 
+in Räumen, in denen Dampfgeneratoren errichtet und betrieben werden. 
+ 
+ANMERKUNG 2.AT 
+In diesem Fall wird der gesamte Raum als Dampf-Sauna (Dampfbad) betrachtet. 
+Dieser Teil gilt nicht für vorgefertigte Saunakabinen oder (eigenständige) multifunktionelle Dusch-
+einrichtungen, die mit den zutreffenden Produktnormen übereinstimmen. 
+Sind Einrichtungen wie Kaltwasserbecken oder Duschen u. dgl. vorhanden, müssen auch die Anforderungen 
+von Teil 7-701 und Teil 7-702 berücksichtigt werden. 
+Werden im nachfolgenden Text Anforderungen an die Errichtung der elektrischen Anlage und an die Auswahl 
+von elektrischen Betriebsmitteln für Saunakabinen bzw. an den Saunaofen getroffen, gelten diese sinngemäß 
+auch für Dampf-Saunen (Dampfbäder) bzw. für die Aufstellung von Dampfgeneratoren. 
+ANMERKUNG 3.AT 
+Anforderungen an die Sicherheit von elektrischen Saunaheizgeräten siehe OVE EN 60335-2-53. 
+Anforderungen an die Sicherheit von elektrischen (eigenständigen) multifunktionellen Duscheinrichtungen siehe 
+OVE EN IEC 60335-2-105. Anforderungen an die Sicherheit von elektrischen Luftbefeuchtern für den Hausgebrauch und 
+ähnlichen Zwecken (Dampfgeneratoren, Dampfbefeuchter) siehe OVE EN 60335-2-98. 
+703.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+703.3.AT 
+Begriffe 
+Für die Anwendung dieses Teils gelten die Begriffe gemäß Teil 2. 
+703.3 
+Bestimmung allgemeiner Merkmale 
+703.30 
+Allgemeines 
+703.30.1 Allgemeines zu Teil 7-703 
+Für Saunakabinen sind die in 703.30.2 bis 703.30.4 festgelegten Bereiche zu berücksichtigen (siehe auch 
+Bild 703.1). 
+703.30.2 Beschreibung von Bereich 1 
+Der Bereich 1 ist das Volumen um den Saunaofen, begrenzt durch den Fußboden, die kalte Seite der 
+Wärmeisolierung der Decke sowie eine gedachte senkrechte Fläche im Abstand von 50 cm um die Oberfläche 
+der Saunaheizung. Wenn der Saunaofen näher an der Wand steht, wird der Bereich 1 durch die kalte Seite 
+der Wärmeisolierung der Wand begrenzt. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 594/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-703 – Seite 2 
+703.30.3 Beschreibung von Bereich 2 
+Der Bereich 2 ist das Volumen außerhalb von Bereich 1, begrenzt durch den Fußboden, die kalte Seite der 
+Wärmeisolierung der Wände sowie durch eine gedachte waagrechte Fläche in einer Höhe von 100 cm über 
+dem Fußboden. 
+703.30.4 Beschreibung von Bereich 3 
+Der Bereich 3 ist das Volumen außerhalb von Bereich 1, begrenzt durch die kalte Seite der Wärmeisolierung 
+der Decke und der Wände sowie durch eine gedachte waagrechte Fläche in einer Höhe von 100 cm über dem 
+Fußboden. 
+Für den gesamten Raum von Dampf-Saunen (Dampfbädern) gelten die Anforderungen für den Bereich 3. 
+703.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+703.41 
+Schutz gegen elektrischen Schlag 
+703.410.3 
+Allgemeine Anforderungen 
+703.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+703.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+703.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+703.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+Füge hinzu: 
+703.414.4.5 Für alle Kleinspannungs-Betriebsmittel in den Bereichen 1, 2 und 3 muss der Basisschutz durch 
+folgende Maßnahmen gesichert sein: 
+– 
+Abdeckungen oder Umhüllungen mit mindestens der Schutzart IPXXB oder IP2X, oder 
+– 
+Isolierung, die einer Prüfwechselspannung von 500 V Effektivwert mindestens 1 min lang standhält (siehe 
+Herstellerangaben). 
+703.415 Zusätzlicher Schutz (Zusatzschutz) 
+703.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Alle Stromkreise müssen einen zusätzlichen Schutz (Zusatzschutz) mittels Fehlerstrom-Schutzeinrichtung 
+(RCD) mit einem Bemessungsfehlerstrom IΔn ≤ 0,03 A aufweisen. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 595/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-703 – Seite 3 
+Vom zusätzlichen Schutz (Zusatzschutz) durch Fehlerstrom-Schutzeinrichtungen (RCD) ausgenommen sind 
+Stromkreise 
+– 
+mit der Schutzmaßnahme Schutztrennung; 
+– 
+mit der Schutzmaßnahme Schutz durch Kleinspannung mittels SELV oder PELV. 
+703.5 
+Auswahl, Montage und Installation elektrischer Betriebsmittel 
+703.51 
+Allgemeine Bestimmungen 
+703.512 
+Betriebsbedingungen und äußere Einflüsse 
+703.512.2 
+Äußere Einflüsse 
+Füge hinzu: 
+Die elektrischen Betriebsmittel müssen mindestens der Schutzart IP24 entsprechen. 
+ANMERKUNG AT 
+Kondenswasser-Ablauföffnungen können unter Einhaltung der geforderten Schutzart erforderlich 
+sein. 
+Wenn bei der Reinigung die Verwendung eines Wasserstrahls zu erwarten ist, müssen elektrische 
+Betriebsmittel mindestens in Schutzart IPX5 ausgeführt sein. 
+Drei Bereiche, wie in Bild 703.1 gezeigt, sind festgelegt: 
+– 
+im Bereich 1 dürfen nur elektrische Betriebsmittel errichtet werden, die zur Saunaheizung gehören  
+z. B. Anschlussleitung, Sensoren; 
+– 
+im Bereich 2 bestehen keine besonderen Anforderungen hinsichtlich der Wärmebeständigkeit der dort 
+verwendeten elektrischen Betriebsmittel; 
+– 
+im Bereich 3 müssen elektrische Betriebsmittel einer Umgebungstemperatur von 125 °C unbeschadet 
+standhalten. Die Isolierung von Kabeln und Leitungen muss einer Temperatur von mindestens 170 °C 
+standhalten (siehe auch 703.52). 
+703.52 
+Kabel- und Leitungsanlagen 
+Füge hinzu: 
+Kabel- und Leitungsanlagen sollten vorzugsweise außerhalb der Bereiche 1, 2 und 3 errichtet werden, z. B. 
+auf der kalten Seite der Wärmeisolation. Innerhalb der Bereiche 1 und 3 sind Kabel- und Leitungsanlagen 
+wärmebeständig gemäß 703.512.2 auszuführen. 
+Metallene Umhüllungen von Kabel- und Leitungsanlagen und Elektroinstallationsrohrsysteme aus Metall dürfen 
+bei normalem Betrieb der Anlage nicht berührbar sein. 
+703.53 
+Schalt- und Steuergeräte 
+703.537 
+Geräte zum Trennen und Schalten 
+703.537.3.1 
+Geräte für betriebsmäßiges Schalten und Steuergeräte 
+Schalt- und Steuergeräte, die Teil des Saunaofens sind, oder andere fest angeschlossene elektrische 
+Betriebsmittel im Bereich 2, dürfen im Saunaraum oder in der Saunakabine nach den Herstellerangaben 
+errichtet werden. Andere Schalt- und Steuergeräte, z. B. für die Beleuchtung, müssen außerhalb des 
+Saunaraums oder der Saunakabine angeordnet werden. 
+Steckdosen sind in Räumen, in denen sich ein Saunaofen befindet, sowie in Dampf-Saunen (Dampfbädern) 
+nicht zulässig. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 596/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-703 – Seite 4 
+703.55 
+Andere elektrische Betriebsmittel 
+703.55.001.AT 
+Saunaheizgeräte bzw. Dampfgeneratoren 
+Saunaheizgeräte bzw. Dampfgeneratoren sind gemäß den Herstellerangaben (siehe auch OVE 
+EN 60335-2-53) zu installieren. 
+Maße in cm 
+ 
+Legende 
+b 
+Geräteanschlussdose an der kalten Seite der Wärmeisolierung 
+Bild 703.1 – Bereiche hinsichtlich der Umgebungstemperaturen 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 597/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-704 – Seite 1 
+Teil 7-704  
+Baustellen 
+704.1 
+Anwendungsbereich 
+704.1.1 Dieser Teil gilt für elektrische Anlagen, die zur Ausführung und für die Dauer von Bauarbeiten oder 
+Abbrucharbeiten errichtet und nach Abschluss der Arbeiten wieder außer Betrieb genommen sowie abgebaut 
+werden. 
+Beispiele dafür sind: 
+– 
+Bauarbeiten an neuen Bauwerken; 
+– 
+Reparatur, Umbau, Erweiterung, Abbruch vorhandener Bauwerke oder von Teilen vorhandener Bauwerke; 
+– 
+unter Bau- oder Projektleitung durchgeführte Arbeiten; 
+– 
+Erdarbeiten; 
+– 
+ähnliche Arbeiten. 
+Die Anforderungen sind für die ortsfest und die beweglich errichtete elektrische Anlage anzuwenden. 
+Dieser Teil gilt nicht für Anlagen in Verwaltungsräumen von Baustellen (z. B. Büros, Umkleideräume, 
+Sitzungsräume, Kantinen, Restaurants, Schlafräume, Toiletten). 
+ 
+704.2 
+Normative Verweisungen 
+Siehe Abschnitt Verweisungen. 
+704.3 
+Bestimmung allgemeiner Merkmale 
+704.30 
+Allgemeines 
+Füge hinzu: 
+704.30.101  
+Die Abstände zu Freileitungen, die über den Bereich der Baustelle führen, sind, bezogen auf die Abmessungen 
+der eingesetzten Baumaschinen und -geräte, wie z. B. Kräne, Leitern und Baugerüste und deren Bestandteile, 
+mit dem Betreiber der Freileitung abzustimmen. 
+704.31 
+Zweck, Stromversorgung und Aufbau 
+704.313 
+Stromversorgungen 
+Füge hinzu. 
+ANMERKUNG 
+Die Stromversorgung auf Baustellen kann aus mehreren Einzelstromversorgungen einschließlich 
+Stromerzeugungsanlagen (siehe Abschnitt 551) erfolgen. 
+704.4 
+Schutzmaßnahmen und Schutzvorkehrungen 
+704.41 
+Schutz gegen elektrischen Schlag 
+704.410.3 
+Allgemeine Anforderungen 
+ 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 598/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-704 – Seite 2 
+704.410.3.5 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch Hindernisse und Schutz durch Anordnung außerhalb des Handbereichs 
+gemäß Anhang 41.B dürfen nicht angewendet werden. 
+704.410.3.6 
+Ersetze die Anforderungen durch: 
+Die Schutzvorkehrungen Schutz durch nicht leitende Umgebung (Standortisolierung), Schutz durch erdfreien 
+örtlichen Schutzpotentialausgleich und Schutz durch Schutztrennung zur Versorgung von mehr als einem 
+elektrischen Verbrauchsmittel gemäß Anhang 41.C dürfen nicht angewendet werden. 
+704.410.3.101 
+Endstromkreise mit einem Bemessungsstrom bis einschließlich 32 A zur Versorgung von Steckdosen jeder Art 
+und andere Stromkreise, die fest angeschlossene handgeführte elektrische Verbrauchsmittel mit einem 
+Bemessungsstrom bis einschließlich 32 A versorgen, müssen geschützt sein: 
+– 
+Schutzmaßnahme: Nullung oder Fehlerstrom-Schutzschaltung mit zusätzlichem Schutz (Zusatzschutz) 
+durch Fehlerstrom-Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,03 A (siehe 
+415.1), oder 
+ 
+ANMERKUNG 1.AT 
+Auswahl der Fehlerstrom-Schutzeinrichtungen (RCD) nach Art des zu erwartenden 
+Fehlerstroms nach 531.3. 
+– 
+Schutzmaßnahme: Kleinspannung mittels SELV oder PELV, oder 
+– 
+Schutzmaßnahme: Schutztrennung, wobei jede Steckdose und jedes handgeführte elektrische 
+Verbrauchsmittel durch einen eigenen Trenntransformator gemäß ÖVE/ÖNORM EN 61558-2-4 versorgt 
+wird, oder 
+– 
+Schutzmaßnahme: Isolations-Überwachungssystem mit Isolationsüberwachungsgeräten (IMD) und 
+automatischer Abschaltung der Stromversorgung beim ersten Fehler innerhalb einer Zeit gemäß 
+411.6.3.2.001.AT. 
+ 
+ANMERKUNG 2.AT 
+Diese Schutzmaßnahme kann angewendet werden, wenn mehrere handgeführte 
+elektrische Verbrauchsmittel über einen einzelnen Transformator versorgt werden (siehe 411.6.3.2.001.AT).  
+704.411 
+Schutzmaßnahmen mit automatischer Abschaltung der Stromversorgung 
+704.411.3 
+Anforderungen an den Fehlerschutz 
+704.411.3.2 
+Automatische Abschaltung der Stromversorgung im Fehlerfall 
+Füge hinzu: 
+704.411.3.2.101  
+Bei 
+Schutzmaßnahme 
+Nullung 
+oder 
+Fehlerstrom-Schutzschaltung 
+müssen 
+Endstromkreise 
+mit 
+Bemessungsströmen über 32 A zur Versorgung von Steckdosen jeder Art durch Fehlerstrom-
+Schutzeinrichtungen (RCD) mit einem Bemessungsfehlerstrom I∆n ≤ 0,5 A geschützt sein. 
+ANMERKUNG 2.AT 
+Auswahl der Fehlerstrom-Schutzeinrichtungen (RCD) nach Art des zu erwartenden Fehlerstroms 
+siehe 531.2. 
+Bei Schutzmaßnahme Nullung oder Fehlerstrom-Schutzschaltung müssen alle Stromkreise ab der 
+Messeinrichtung (siehe Bild 704.1.AT) ergänzend durch eine Fehlerstrom-Schutzeinrichtung (RCD) geschützt 
+sein. 
+ 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 599/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-704 – Seite 3 
+ 
+Legende 
+1 
+Kabelverteilerschrank 
+2 
+Baustromverteiler – Hauptverteilung mit Messeinrichtung und Erdungsverbindung 
+3 
+Baustromverteiler – Unterverteilung (optional) 
+4 
+Kabel- und Leitungsanlage (3/PEN AC, 3/N/PE AC oder 1/N/PE AC) 
+Bild 704.1.AT – Beispiel für die Anordnung der ersten Fehlerstrom-Schutzeinrichtung (RCD) 
+704.411.4 
+Automatische Abschaltung der Stromversorgung in TN-Systemen 
+704.411.4.6.001.AT 
+Schutzmaßnahme Nullung 
+704.411.4.6.001.2.AT Erdungsbedingung für die Schutzmaßnahme Nullung 
+704.411.4.6.001.2.2.AT 
+Erdungsbedingung in Verbraucheranlagen 
+Füge bei der dritten Aufzählung „eine gleichwertige Erderkombination“ hinzu: 
+Bei Anwendung der automatischen Abschaltung der Stromversorgung ist beim ersten Baustromverteiler nach 
+dem Speisepunkt (siehe Bild 704.1.AT, Nr. 2) die Verbindung des Erdungsanschlusses mit einer geeigneten 
+Erdungsanlage erforderlich. Es bestehen folgende Möglichkeiten: 
+− 
+Verbindung mit einem Vertikalerder mit zumindest 0,8 m Einschlagtiefe oder mechanisch gleichwertig 
+ausgeführt in unmittelbarer Nähe des Baustromverteilers; 
+− 
+Bei Zustimmung durch den Netzbetreiber Verbindung mit dem Betriebserder des Netzes (PEN-Leiter im 
+Kabelverteilschrank oder am Freileitungsmast); 
+− 
+Verbindung mit einer in unmittelbarer Nähe bereits vorhandenen Erdungsanlage (Fundamenterder), z. B. 
+der Erdungsanlage des neu zu errichtenden Bauwerks. 
+Sobald im Zuge des Baufortschrittes die Erdungsanlage (Fundamenterder) eines neu zu errichtenden 
+Bauwerks dafür verfügbar ist, ist die Verbindung des Erdungsanschlusses bzw. der Schutzleiter(schiene) des 
+Baustromverteilers mit dieser Erdungsanlage herzustellen. 
+704.411.5 
+TT-Systeme 
+704.411.5.2 
+Füge hinzu: 
+Bei Anwendung der automatischen Abschaltung der Stromversorgung im TT-System und wenn kein 
+zusätzlicher Schutz (Zusatzschutz) gefordert ist, ist bei allen Stromkreisen sicherzustellen, dass zwei 
+Fehlerstrom-Schutzeinrichtungen (RCD) in Reihe wirksam sind. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted
+
+
+===== PAGE 600/852 =====
+OVE E 8101:2025-10-01 
+Teil 7-704 – Seite 4 
+704.411.5.3 
+Ersetze Aufzählung iii) durch Folgendes: 
+Bei Aufzählung iii) gelten die Anforderungen von 704.411.4.6.001.2.2.AT. 
+704.411.6 
+IT-Systeme 
+Füge hinzu: 
+704.411.6.3.001.AT 
+Bei tragbaren Generatoren darf auf das Isolationsüberwachungsgerät verzichtet werden. 
+704.414 
+Schutzmaßnahme: Schutz durch Kleinspannung mittels SELV oder PELV 
+704.414.4 
+Anforderungen an SELV- und PELV-Stromkreise 
+704.414.4.5 
+Ersetze durch: 
+Unabhängig von der Höhe der Nennspannung muss in Wechselstrom- oder Gleichstrom-Stromkreisen ein 
+Basisschutz vorgesehen werden durch: 
+– 
+eine Isolierung in Übereinstimmung Anhang 41.A.1, oder 
+– 
+Abdeckungen oder Umhüllungen in Übereinstimmung mit Anhang 41.A.2. 
+704.415 
+Zusätzlicher Schutz (Zusatzschutz) 
+704.415.1 
+Zusätzlicher Schutz (Zusatzschutz): Fehlerstrom-Schutzeinrichtungen (RCD) 
+Füge hinzu: 
+Erfolgt die Versorgung von elektrischen Verbrauchsmitteln nicht durch Baustromverteiler darf auch eine 
+bestehende elektrische Anlage zur Versorgung benutzt werden, wenn 
+a) 
+die verwendete Steckdose durch eine Fehlerstrom-Schutzeinrichtung (RCD) mit einem Bemessungs-
+fehlerstrom IΔn ≤ 0,03 A geschützt ist, oder 
+b) 
+ein ortsveränderlicher Adapter mit eingebauter Fehlerstrom-Schutzeinrichtung (RCD) mit einem 
+Bemessungsfehlerstrom IΔn ≤ 0,03 A verwendet wird. 
+704.44 
+Schutz bei Störspannungen und elektromagnetischen Störgrößen 
+704.443 
+Schutz bei Überspannungen infolge atmosphärischer Einflüsse oder von 
+Schaltvorgängen 
+704.443.1 
+Anwendungsbereich und Allgemeines 
+Füge hinzu: 
+704.443.1.101 
+Kräne, Aufzugsanlagen, Betonmischmaschinen und vergleichbare Betriebsmittel können Schaltüber-
+spannungen verursachen. Sind derartige Betriebsmittel vorhanden, sollte die Notwendigkeit eines Schutzes 
+gegen Schaltüberspannungen betrachtet werden. 
+Dieses Exemplar ist lizensiert für/this copy is licensed for: ECO Elektro GmbH, 1220, Wien, Österreich, 06.10.2025, Bezugsquelle/Source: OVE
+Vervielfältigung – auch für innerbetriebliche Zwecke – nicht gestattet / Reproduction is not permitted

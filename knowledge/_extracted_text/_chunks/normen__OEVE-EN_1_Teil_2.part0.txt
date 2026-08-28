@@ -1,0 +1,4960 @@
+
+
+===== PAGE 1/42 =====
+ÖVE-EN 1 Teil 2
+Ausgabe 1993-04
+
+ÖSTERREICHISCHE BESTIMMUNGEN
+FÜR DIE ELEKTROTECHNIK
+
+| Errichtung
+von Starkstromanlagen mit
+Nennspannungen bis ~ 1 000 V
+
+und — 1500V
+
+Elektrische Betriebsmittel
+
+DK: 621.31.027.4
+
+OSTERREICHISCHER VERBAND FUR ELEKTROTECHNIK
+
+Fachausschuß E
+Elektrische
+Niederspannungsanlagen
+
+OVE-EN 1 Teil 2/1993
+
+(1)
+
+2
+(3)
+
+(4)
+
+(5)
+
+(5.1)
+
+(5.2)
+
+(6)
+
+1993-04
+
+Einleitung
+
+%
+* _ Einleitung
+
+Diese Österreichischen Bestimmungen für die Elektrotechnik
+sind eine Zusammenfassung von ÖVE-EN 1 Teil 2/1978,
+OVE-EN 1 Teil 2a/1981, OVE-EN 1 Teil 2b/1983 und OVE-EN 1
+Teil 2¢/1992. Der Nachtrag OVE-EN 1 Teil 2¢/1992 wurde vom
+LenkungsausschuB der Sektion ,Osterreichische Bestimmungen
+fir die Elektrotechnik” im OVE bei der 35. Sitzung am 29. Sep-
+tember 1992 verabschiedet.
+Der Rechtsstatus dieser Osterreichischen Bestimmungen fir die
+Elektrotechnik ist den jeweils geltenden Verordnungen zum Elek-
+trotechnikgesetz zu entnehmen.
+Diese Bestimmungen wurden vom Fachausschuf} E „Elektrische
+Niederspannungsaniagen" selbstandig, d. h. ohne internationa-
+les Basisdokument, ausgearbeitet.
+Die Hinweise auf Veréffentlichungen in den FuBnoten beziehen
+sich, sofern nicht anders angegeben, auf den Stand zum Zeit-
+punkt der Herausgabe dieses Heftes. Zum Zeitpunkt der Anwen-
+dung dieses Heftes ist der durch die Verordnungen zum Elektro-
+technikgesetz oder gegebenenfalls auf andere Weise festgelegte
+aktuelle Stand zu beriicksichtigen.
+Bei mittels Verordnungen zum Elektrotechnikgesetz verbindlich
+erklarten Osterreichischen Bestimmungen fir die Elektrotechnik
+ist zu beachten:
+Vorworte, Ergänzungen, Erlauterungen (im Kleindruck) und Hin-
+weise auf Fundstellen in anderen, verbindlich erkiarten Osterrei-
+chischen Bestimmungen fir die Elektrotechnik werden von der
+Verbindlicherklarung erfafit.
+Einleitungen, Rechtsbelehrungen, Anhänge, FuBnoten und Hin-
+weise auf Fundstellen in anderen Texten werden von der Verbind-
+licherklarung nicht erfaßt.
+Die in diesem Heft angefiihrten Osterreichischen Bestimmungen
+für die Elektrotechnik, ONORMEN der Elektrotechnik und son-
+stige technische Veröffentlichungen können vom OVE, Eschen-
+bachgasse 9, A-1010 Wien, bezogen werden.
+
+¥ "IN — 9661 Puugf 07 we uaqadslsny — jomg /1
+
+146
+
+
+===== PAGE 2/42 =====
+ÖVE-EN 1 Teil 2
+Inhaltsübersicht
+Seite
+825  Aligemeine Anforderungen 25-1
+bis 25-5
+§26 Elektrische Maschinen, Transformatoren und Drossel- 26-1
+spulen
+
+827  Antriebe und Antriebsgruppen 271
+bis 27-4
+§28 Hebezeuge 28-1
+bis 28-18
+
+§29 Bleibt frei
+§30  Schaltanlagen und Verteiler ’ 30-1
+bis 30-7
+$31  Schaltgeréte 31-1
+bis 31-8
+832  Leuchten und Beleuchtungsanlagen 32-1
+_ bis 32-6
+§33  Elektromotorisch angetriebene Verbrauchsmittel, 33-1
+
+Elektrowerkzeuge
+
+§34  Elektrowarmegerite 34-1
+§34a Flachenheizungen 34a-1
+bis 34a-6
+§34b Dach- und Dachrinnenheizungen 34b-1
+bis 34b-4
+835  Elektrozaungerite 35-1
+§36  Geréate und Anlagen der Informationstechnik 36-1
+§36a Rundfunk- und verwandte Geréle sowie Funksende- 36a-1
+
+_ anlagen
+§37  Elektromedizinische Geräte 371
+§38  SchweiBgeréte 38-1
+839  Stromschienensysteme 39-1
+bis 39-3
+
+1993-04 . 2
+
+ÖVE-EN 1 Teil 2
+
+In diesem Teil wird auf folgende ÖVE-Bestimmungen Bezug genommen:
+
+OVE-A32
+OVE-AEN 60529
+OVE-AIEC73
+OVE-AIEC 447
+
+OVE-B/EN 60555
+
+OVE-E5Teil 1
+OVE-EH1
+
+OVE-EN1 Teil 1
+
+ÖVE-EN 1 Teil3
+
+ÖVE-EN 1 Teil 4
+
+ÖVE-EN6 Teil 100
+
+ÖVE-EN 13 Teil 1
+
+ÖVE-EN 31
+OVE-EN310
+OVEEN60073
+
+OVEEN 60 204-1
+
+1993-04
+
+Schraubklemmen
+
+Schutzarten durch Gehäuse (IP-Code)
+
+Kennfarben von Leuchtmeldern und Drucktastern
+Betétigungssinn und Anordnung von Bedienteilen für
+elektrische Betriebsmittel
+
+Rickwirkungen in Stromversorgungsnetzen, die
+durch Haushaltsgerédte und durch &hnliche elektri-
+sche Einrichtungen verursacht werden
+
+Betrieb von Starkstromaniagen
+
+Teil 1: Grundsatzliche Bestimmungen
+
+Errichtung von Starkstromanlagen mit Nennspan-
+nungen über 1 kV _
+
+Errichtung von Starkstromaniagen mit Nennspan-
+nungen bis — 1 000 V und ~ 1 500 V
+
+‘Teil 1: Begriffe und Schutz gegen gefahriche Körper-
+
+ströme (SchutzmaBnahmen)
+(§ 41) Errichtung von Starkstromanlagen mit Nenn-
+spannungen bis — 1000 V und = 1500V -
+Teil 3: Beschaffenheit, Bemessung und Verlegung
+von Leitungen und Kabeln. § 41 Bemessungen von
+Leitungen und Kabeln in mechanischer und elektri-
+scher Hinsicht, Uberstromschutz
+(& 56) Errichtung von Starkstromanlagen mit Nenn-
+spannungen bis — 1000 V und ~1 500 V
+Teil 4: Besondere Anlagen. § 56 Elektrische Anlagen
+in landwirtschaftlichen und gartenbaulichen Anwe-
+sen
+Schutz gegen geféhrliche Kdrperstréme
+Anordnung von Betitigungselementen in der Nihe
+beriihrungsgefahrlicher Teile
+Elektrische Ausrüstung von Industriemaschinen
+Teil 1: Allgemeine Festlegungen
+Errichtung von Elekirozaunaniagen
+Weidezaungeréte
+Codierung von Anzeigegeréten und Bedientsilen
+durch Farben und ergénzende Mittel
+Sicherheit von Maschinen
+Elektrische Ausrustung von Maschinen
+Teil 1: Allgemeine Anforderungen
+
+4
+
+746
+
+¥ AN — ¥661 Tduugf 07 we uaqadedsny — yomg /]
+
+
+===== PAGE 3/42 =====
+ÖVE-EN 1 Teil 2
+
+ÖVEEN 60 309
+ÖVE-EW 41
+
+ÖVE-EW 41
+Teil 2(1600)
+
+ÖVE-EW41
+Teil 2(1700)
+
+ÖVE-F 1
+ÖVE-F40
+
+ÖVE-G/EN 61011
+ÖVE-HG 43
+ÖVE-HG 335
+
+ÖVE-HG 335
+Teil 2 (2200)
+
+ÖVE-HG/EN 60 335 .
+
+ÖVE-HG/EN 60 967
+
+ÖVE-IG 31
+ÖVE-IG 33
+
+ÖVE-IG/EN 50 075
+ÖVE-IG/EN 60320
+Teil 1
+
+ÖVE-IM 12
+
+1993-04
+
+Steckvorrichtungen für industrielle Zwecke
+Elektrowärmegeräte für den Hausgebrauch und ähn-
+liche Zwecke
+
+Elektrowärmegeräte für den Hausgebrauch und ähn-
+liche Zwecke
+
+Teil 2 (1600): Elektrowärmegeräte zur Tieraufzucht
+und Tierhaltung
+
+Elektrowärmegeräte für den Hausgebrauch und ähn-
+liche Zwecke
+
+Teil 2 (1700): Flächenheizelemente für die Raumhei-
+zung
+
+Fernmeldeaniagen und -geräte
+Sicherheitsbestimmungen für netzbetriebene elek-
+tronische Geréte und deren Zubehdr für den Hausge-
+brauch und ähnliche aligemeine Anwendungen
+Elektrozaungeréte
+
+Handgefiihrte Elektrowerkzeuge
+Sicherheitsanforderungen fiir Elektrogeréte fir den
+Hausgebrauch und &hnliche Zwecke
+Sicherheitsanforderungen für Elektrogerate für den
+Hausgebrauch und &hnliche Zwecke
+
+Teil 2 (2200): Spielzeug für Sicherheits-Kleinspan-
+nung
+
+Sicherheit elektrischer Gerate für den Hausgebrauch
+und &hnliche Zwecke
+
+Sicherheit elektrischer Wa&rmezudecken, Warme-
+unterbetten, Heizkissen und &hnlicher schmiegsa-
+mer Wärmegeräte für den Hausgebrauch
+Steckvorrichtungen für Hausinstallationen und ähnli-
+che Zwecke
+
+Steckvorrichtungen für industrielle und ähnliche
+Zwecke
+
+Flache, nichtwiederanschließbare, zweipolige Stek-
+ker, 2,5 A 250 V, mit Leitung für die Verbindung von
+Klasse-Il-Geräten für den Haushalt und ähnliche
+Zwecke
+
+Gerätesteckvorrichtungen für den Hausgebrauch
+und ähnliche Zwecke
+
+Teil 1: Allgemeine Anforderungen
+
+Fabriksfertige Zählerschränke und Zählerverteiler-
+schränke bis 250 V gegen Erde
+
+4
+
+ÖVE-EN 1 Teil 2
+
+ÖVE-IM22 Verbindungsmaterial für elektrische Installationen
+
+bis 750 V
+
+ÖVE-IM/EN 60 439-1 Niederspannungs-Schaltgerätekombinationen
+Anforderungen an typgeprüfte und partiell typge-
+prüfte Kombinationen
+
+ÖVE-IMEN 60 439-2 Niederspannungs-Schaltgerätekombinationen
+Besondere Anforderungen an Schienenverieiler
+
+OVE-IMEN 60 439-3 Niederspannungs-Schaltgerätekombinationen
+Besondere Anfoderungen an Niederspannungs-
+Schaltgerätekombinationen zu deren Bedienung
+Laien Zutritt haben. Installationsverteiler
+
+OVE-IMEN 60 439-4 Niederspannungs-Schaltgerätekombinationen
+Besondere Anforderungen an Baustromvertsiler (BV)
+
+OVE-IMIEC 614 Elektroinstallationsrohre
+
+ÖVE-IT/EN 41003 Besondere Sicherheitsanforderungen an Geräte
+zum Anschluß an Fernmeldeneize
+
+OVE-ITEN60950 Sicherheit von Einrichtungen der Informationstech-
+nik einschlielich elektrischer Biromaschinen -
+
+OVE-K23 - Kunststoffisolierte Energiekabel
+
+OVE-K40 Energieleitungen mit einer Isolierung aus Gummi
+OVE-K#1 Energieleitungen mit einer Isolierung aus PVC
+OVE-K43 isolierte Heizleistungen für feste Veriegung
+OVE-K 50 Fernmeldedrahte mit PVC-Isolierung
+
+ÖVE-LVEN 60155  Starter fiir rohrenfdrmige Leuchistofflampen
+OVE-LVEN60400 . Lampenfassungen für röhrenförmige Leuchtstofi-
+. lampen und Starterfassungen
+ÖVE-LVEN60598 Leuchten
+OVE-M/EN50060 Schweißstromquellen zum Lichtbogenhandschwei-
+; Ben für begrenzten Betrieb
+
+OVE-MIEN50063 Sicherheitsanforderungen für den Bau und die Er-
+richtung von Einrichtungen zum Widerstandsschwei-
+Ben und für verwandte Verfahren
+
+OVE-MEN60742  Trenntransformatoren und Sicherheitstransforma-
+toren — Anforderungen
+
+OVE-M/EN60974-1 Sicherheitsanforderungen für Einrichtungen zum
+LichtbogenschweiBen — SchweiBstromquellen
+
+OVE-MG/EN 60 601-1 Medizinische elektrische Geräte
+Aligemeine Festlegungen fiir die Sicherheit
+
+OVE-MG/IEC601  Sicherheit elektromedizinischer Gerate
+
+Teil 1 Teil 1: Aligemeine Bestimmungen
+
+1993-04 5
+
+/F IN — p661 Iouug[ -0z we uaqoäsﬁsnv — mMS 'ZI
+
+€6
+
+
+===== PAGE 4/42 =====
+ÖVE-EN 1 Teil 2
+ÖVE-SN40
+
+ÖVE-SN 52
+
+Niederspannungssicherungen bis — 1 000 V und bis
+- 3000 V -
+
+Leitungsschutzschalter bis 63 A Nennstrom, — 415V,
+50 Hz
+
+OVE-SN/EN 60898 Leitungsschutzschalter für Wechselstrom
+
+ÖVE-WAIEC 707
+
+Prüfverfahren zur Ermittlung der Entflammbarkeit
+fester Elektroisolierstoffe bei Einwirkung von Zünd-
+quelien
+
+In diesem Teil wird auf folgende ONORMEN Bezug genommen:
+
+ONORM B 3800
+ÖNORME 1001
+bis E 1013
+
+ONORME 1271
+bis E 1277
+
+ONORME 1357
+ONORME 6661
+
+ONORM E 6664
+
+ONORM E 6622-5
+
+ONORM M 9600
+ONORM M 9602
+
+1993-04
+
+Brandverhalten von Baustoffen und Bauteilen
+Graphische Symbole fir Schaltungsunteriagen
+
+Schaltungsunterlagen der Elektrotechnik
+
+Erdungszeichen
+
+Steckvorrichtungen für industrielle Zwecke, Steck-
+dosen 16 A und 32 A, über 50 V drei-, vier- und fiinf-
+polige Ausführung
+
+Steckvorrichtungen für industrielle Zwecke, Steck-
+dosen 63 A und 125 A, über 50 V drei-, vier-, und fünf-
+polige Ausfihrung
+
+Steckvorrichtungen fir Hausinstallationen und dhnliche
+Zwecke, Adapter mit zwei Steckdosen 2,5 A, 250 V
+Krane und Winden, Bauvorschriften
+
+Krane und Hebezeuge, Prifvorschriften
+
+OVE-EN 1 Teil 2
+
+In diesem Teil wird auf die folgenden internationalen, regionalen, nationalen
+bzw. auslandischen Verdffentlichungen Bezug genommen:
+
+DIN 15560
+Teil 100
+
+DIN 43670
+DIN 43671
+
+EN 60215
+EN 60920
+
+EN 60 947-1
+
+EN 60 947-2
+
+EN 60 947-3
+
+EN 60 947-4-1
+
+EN 61 046
+
+HD 35982
+HD528S 1
+
+DIN VDE 0100
+
+DIN VDE 0110
+
+DIN VDE 0250
+Teil 405
+
+DIN VDE 0250
+Teil 809
+
+1993-04
+
+Scheinwerfer für Film, Fernsehen, Bühne und Photo-
+graphie; Sondernetze und Sondersteckverbinder
+Stromschienen aus Aluminium;
+
+Bemessung für Dauerstrom
+
+Stromschienen aus Kupfer;
+
+Bemessung für Dauerstrom
+
+Sicherheitsbestimmungen für Funksender
+Vorschaltgeräte für röhrenförmige Leuchtstofflampen
+Allgemeine und Sicherheitsanforderungen
+Niederspannungs-Schaltgeräte
+
+Aligemeine Festiegungen
+Niederspannungs-Schaltgeräte
+
+Leistungsschalter
+
+Niederspannungs-Schaltgeräte
+
+Lastschalter, Trenner, Lasttrenner und Schaltersiche-
+rungseinheiten
+
+Niederspannungs-Schaltgeräte
+
+Schütze und Motorschalter
+
+Elektromechanische Schütze und Motorstarter
+
+Gleich- oder Wechselstromversorgte elekironische
+Konverter für Glühlampen
+
+PVC-Flachleitungen für Aufzüge
+
+Verfahren zur Ermittlung der Erwärmung von partiell
+typgeprüften Niederspannungs-Schaltgerätekombina-
+tionen (PTSK) durch Ex‘trapolation
+
+Bestimmungen fiir das Errichten von Starkstromanla-
+gen bis 1 000 V .
+
+Teil 537: Auswah! und Errichtung elektrischer Betriebs-
+mittel; Geräte zum Trennen und Schalten
+Isolationskoordination fiir elektrische Betriebsmittel in
+Niederspannungsaniagen
+
+Isolierte Starkstromisitungen, PVC-Steuerleitung
+
+Isolierte Starkstronileitungen, Gummi-Flachleitung
+
+vi6
+
+LV IN — $661 Jouug( "0z we uagedasny — yomg /1
+
+
+===== PAGE 5/42 =====
+ÖVE-EN 1 Teil 2
+
+DIN VDE 0250
+Teil 813
+DIN VDE 0250
+Teil814
+
+DIN VDE 0284
+
+DIN VDE 0298
+Teil4
+
+DIN VDE 0721
+
+1993-04
+
+Isolierte Starkstromleitungen, Leitungstrosse
+
+Isolierte Starkstromleitungen, Gummischlauchteitüng
+NSHTÖU
+
+Mineralisolierte Leitungen mit Nennspannungen -bis
+750V
+
+Verwendung von Kabeln und isolierten Leitungen fiir
+Starkstromanlagen, empfohlene Werte fiir die Strombe-
+lastbarkeit von Leitungen
+
+Bestimmungen für industrielle Elektrowérmeanlagen
+(Einrichtungen und deren Zubehdr)
+
+b "IN — +661 9uuE( *07 we uagaSadsny — pms /1
+
+sZ6
+
+
+===== PAGE 6/42 =====
+ÖVE-EN 1 Teil 2 §25
+
+§ 25 Aligemeine Anforderungen
+
+25.1 Auswahl
+
+25.1.1 Betriebsmittel müssen so ausgewählt und eingebaut werden,
+daß die Wirksamkeit der Schutzmaßnahmen und die Einhaltung
+der technischen Bestimmungen hinsichtlich des zufriedenstel-
+lenden Betriebes der Anlage bei bestimmungsgemäßer Ver-
+wendung sowie hinsichtlich der jeweils zu erwartenden äußeren
+Einflüsse sichergestellt sind.
+Hersteilerangaben sind zu beachten.
+
+25.1.2 Betriebsmittel müssen so ausgewählt und eingebaut werden,
+daB die technischen Bestimmungen” erfüllt sind.
+
+2513 Betriebsmittel missen ein Ursprungszeichen aufweisen und,
+soweit erforderlich, mit den NenngréBen gekennzeichnet sein.
+
+25.1.4 Betriebsmittel missen den jeweils geltenden technischen Be-
+stimmungen entsprechen.
+
+25.1.5 Betriebsbedingungen
+
+25.151 Spannung
+Die Betriebsmittel milssen fir die Nennspannung (Effektlvwert
+bei Wechselspannung) der Anlage ausgelegt sein.
+Bei besimmten Betriebsmitteln kann es erforderlich sein, die hochste und/oder n-edefste
+bei bestmmungsgemaBem Betrieb auftrelende Spannung zu berlcksichtigen.
+Ist in sinem IT-System der Neutralleiter mitverlegt, so miissen
+zwischen einem AuBenieiter und dem Neutralleiter angeschlos-
+sene Betriebsmittel für die verkettete Spannung isoliert sein.
+
+25.1.52 Strom
+Bei der Auswahl der Betriebsmittel ist der Betriebsstrom (bei
+Wechselstrom der Effektivwert) zu berücksichtigen, den sie bei
+bestimmungsgemäßem Betrieb führen.
+Betriebsmittel müssen ebenfalls den Strom führen können, der
+unter anomalen Betriebsbedingungen während der durch An-
+sprechkennlinien der Schutzeinrichtung bestimmten Dauer flie-
+Ben kann.
+
+25.1.56.3 Frequenz
+Woerden die Kennwerte des Betriebsmittels durch die Frequenz
+beeinfluBt, so muB seine Bemessungsfrequenz der Nennfre-
+quenz des Stromes in dem betreffenden Stromkreis entspre-
+chen.
+
+25.1.54 Leistung
+Betriebsmittel, die aufgrund ihrer Lelstungscharaktenstnk als-
+
+') Siehe OVE-EN 1.
+1993-04 25-1
+
+OVE-EN 1 Teil 2 §25
+
+gewählt werden, müssen fir die im Anwendungsfall Gblichen
+Betriebsbedingungen unter Beriicksichtigung von Nutzungsfak-
+toren (z. B. Einschaltdauer, Gleichzeitigkeitsfaktor, Gebrauchs-
+kategorie, Betriebsart) geeignet sein.
+
+25.1.55 Vertraglichkeit
+Falls bei der Errichtung nicht andere geeignete MaBnahmen ge-
+troffen werden, sind Betriebsmitte! so auszuwählen, daB die von
+ihnen ausgehenden stdrenden Einflisse einschlieBlich der
+Schaltvorgange bei bestimmungsgem#Bem Betrieb andere Be-
+triebsmittel oder das Versorgungsnetz nicht unzul4ssig beein-
+trachtigen.
+Dieser Forderung wird durch Eirthaitung der technischen Bestimmungen? entsprochen,
+
+Falls bei der Errichtung nicht andere geeignete MaBnahmen ge-
+troffen werden, sind Betriebsmittel so auszuwahien, daB sie
+durch die iblicherweise auftretenden stérenden elektrischen
+oder elektromagnetischen Einflüsse in ihrer ordnungsgeméBen
+Funktion nicht unzuldssig beeintréchtigt werden.
+
+2516  AuBere Einflisse
+
+25.1.6.1 Elektrische Betriebsmittel miissen unter Beriicksichtigung der
+#uBeren Einflisse, denen sie ausgesetzt sein kdnnen, so aus-
+gewählt und eingebaut werden, daß ihr bestimmungsgemaBer
+Betrieb und die Wirksamkeit der geforderten Schutzarten si-
+chergestellt ist.
+Die durch die Baubestimmungen vorgegebenen Betriebsmittel-
+eigenschaften gelten nur unter den in diesen ausgewiesenen
+Bedingungen oder, falls dies durch geeignete Priifungen nach-
+gewiesen ist, für die duBeren EinfluBbedingungen der vorgese-
+henen Verwendung.
+Unfbr Prüfungen wird hier Erproben oder Messen verstanden.
+
+25.1.6.2 Betriebsmittel, die nicht bereits durch ihre Bauweise den äuße-
+ren Einflissen des Raumes oder der Betriebsstitte entspre-
+chende Eigenschaften aufweisen, dürfen dennoch verwendet
+werden, wenn sie beim Errichten der elektrischen Anlage mit
+einem geeigneten zusdtzlichen Schutz versehen werden. Die-
+ser darf den einwandfreien Betrigb der so geschiitzten Betriebs-
+mittel nicht beeintréchtigen.
+
+25.1.6.3 Treten verschiedene äußere Einfliisse gleichzeitig auf, so kdn-
+nen ihre Wirkungen unabhéngig voneinander sein oder sich ge-
+genseitig beeinflussen. In diesem Fall muB die Schutzart ent-
+sprechend gewahit werden.
+
+%) Siehe OVE-B/EN 60 555.
+1993-04 25-2
+
+946
+
+Lk IN — $661 Houug( ‘07 wre uaqaSalsny — soms /g
+
+
+===== PAGE 7/42 =====
+OVE-EN 1 Teil 2 825
+
+25.1.7
+
+25.1.7.1
+
+251.7.2
+
+25.2
+25.21
+
+2522
+
+25221
+
+Vermeidung gegenseitiger nachteiliger Beein-
+flussung
+
+Betriebsmittel miissen so ausgewdhit und eingebaut werden,
+daß jede unzuléssige Beeinflussung zwischen der elekirischen
+Anlage und den nicht elektrischen Einrichtungen ausgeschlos-
+senist.
+
+Werden Betriebsmittel, die mit unterschiedlichen Stromarten
+und Spannungen betrieben werden, zusammen angeordnet
+(z. B. in Schalttafeln, Schaltschranken, Steuerpulten, Bedie-
+nungstafeln), so miissen die jeweils einer Stromart oder einer
+Spannung zugeordneten Betriebsmittel in dem MaBe von den
+übrigen Betriebsmitteln wirksam getrennt werden, als dies zur
+Vermeidung gegenseitiger unzuléssiger Beeinflussung erfor-
+derlich ist.
+
+Einbau
+
+Betriebsmittel miissen so angeordnet und angebracht werden,
+
+daß weder die im Betrieb noch die im Uberlastungs- und Kurz-
+
+schiuBfall auftretenden Temperaturen die Anlage oder die Um-
+gebung gefahrden.
+
+Zählerschränke, Zahlerverteilerschranke, Installationsverteiler
+
+und Kleinverteiler, die zur Befestigungsflache hin offen sind,
+
+diirfen nur auf hicht brennbaren Baustoffen® angebracht wer-
+den.
+
+Bei Anbringung auf brennbaren Baustoffen müssen Verteiler
+
+von der Befestigungsfiéiche mindestens brandhemmend ge-
+
+trennt sein, z. B, durch ;
+
+(1) Einfügen einer mindestens 12 mm dicken Brandschutz-
+platte entsprechend der Brandwiderstandsklasse F 30
+gemäß den technischen Bestimmungen®
+oder
+
+(2) Einfügen eines mindestens 1 mm dicken Abdeckbleches
+und zusätzlich einer mindestens 5 mm dicken Brandschutz-
+platte entsprechend der Brandwiderstandsklasse F 30
+gemäß den technischen Bestimmungend.
+
+Beim Einbau von Betriebsmittein ist sicherzustelien, daß ihre
+
+_ einwandfreie Funktion erhalten bleibt.
+
+Auch an eingebauten Betriebsmitteln dirfen im fehlerireien Be-
+trieb die zuldssigen Grenztemperaturen nicht iiberschritten wer-
+den. Wenn erforderlich, sind besondere MaBnahmen zu treffen,
+z. B. zusétzliches Belüften.
+
+3) Siehe ONORM B 3800.
+
+1993-04
+
+25-3
+
+OVE-EN 1 Teil 2 §25
+
+25.2.2.2 Bei Schaltgeraten müssen gegebenenfalis die vom Hersteller
+
+26.23
+
+2524
+
+25.2.5
+
+25.2.6
+
+'26.2.6.1
+
+25262
+
+25263
+25.2.64
+
+angegebenen Sicherheitsabstdnde (Lichtbogenaustrittsbe-
+reich) eingehalten werden.
+
+Bei An- und Einbau von Betriebsmitteln ohne eigenen Berüh-
+rungsschutz muß zwischen blanken, aktiven Teilen und leitfahi-
+gen Teilen der Umgebung ein Abstand von mindestens 15 mm
+eingehalten werden.
+
+_ Die Betriebsmittel missen so angeordnet werden, daß das Ein-
+
+fihren der erforderlichen AnschiuBleitungen, das AufspleiBen
+
+der Adern und das AnschlieBenfachgerecht vorgenommen wer- —
+
+den kbnnen.
+
+Zug#ngigkeit
+
+Elekirische Betriebsmittel sind so anzuordnen, daß die betriebs-
+mäßige Bedienung, Inspektion, Wartung und der Zugang zu den
+Ksbaren Verbindungen leicht méglich sind. Diese Moglichkeit
+darf durch den Einbau der Betriebsmittel in Geh#use oder an-
+dere Einbauriume nicht nennenswert beeintrachtigt werden.
+
+Kennzeichnung
+
+Afigemeines
+
+Schilder und/oder Kennzeichnungen miissen den Zweck des
+Schalt- oder Steuergerétes angeben, es sei denn, jede Ver-
+wechslung ist ausgeschlossen.
+
+Wenn das Funktionieren von Schalt- und Steuergeriten vom
+Bedienenden nicht beobachtet werden kann und wenn sich hier-
+aus eine Gefahr ergeben kann, muB eine für den Bedienenden
+sichtbare Anzeige angebracht werden.
+
+Soweit anwendbar, milssen die technischen Bestimmungen®
+beachtet werden.
+
+Kabel- und Leitungsanlagen
+
+Kabel- und Leitungsanlagen miissen so angeordnet oder be-
+zeichnet werden, daB sie bei Inspektion, Prifung, Reparatur
+oder Anderung der Anlage zugeordnet werden kénnen.
+
+Blelbt frel.
+
+Schutzeinrichtungen
+
+Schutzeinrichtungen missen so angeordnet und gekennzeich-
+net werden, daB die geschiitzten Stromkreise ieicht zugeordnet
+werden können; hierfir kann gruppenweise Anordnung in Ver-
+teilern zweckmaBig sein.
+
+4) Sishe OVE-ANEC 73 baw. OVE-EN 60 073 und OVE-AMEC 447,
+
+1993-04
+
+25-4
+
+ZY "IN — %661 J0UURf ‘0z we uaqadadsny — IMS /1
+
+226
+
+
+===== PAGE 8/42 =====
+ÖVE-EN 1 Teil 2 ' §25
+
+25.26.5
+25.26.5.1
+
+Schaltungsunteriagen
+
+Soweit zweckméBig, sind Schaltplane, Diagramme oder Tabel-
+
+len gemäß den technischen Bestimmungen® mitzuliefern, aus
+
+denen insbesondere
+
+— Artund Aufbau der Stromkreise (Verbrauchsstellung, Anzahl
+und Querschnitt der Leiter, Art der Kabel- und Leitungsverle-
+gung)
+und . ;
+
+— die zur Identifizierung der Schutz-, Trenn- und Schalteinrich-
+tungen erforderlichen Kennbuchstaben bzw. Zählnummern
+sowie die Anordnung dieser Einrichtungen -
+
+ersichtlich sind.
+
+Bei einfachen Anlagen dürfen diese Angaben in Form einer Li-
+
+ste oder Tabelle gemacht werden.
+
+25.2.6.5.2 Die verwendeten Schaltzeichen sind den technischen Bestim-
+
+mungen® zu entnehmen.
+
+%) Siehe ONORMEN E 1271 bis E 1277.
+%) Siehe ONORMEN E 1001 bis E 1013.
+
+1993-04
+
+25-5
+
+OVE-EN 1 Teil 2 526
+
+§ 26 Elektrische Maschinen, Transformatoren und Drosselspulen
+
+26.1
+26.1.1
+
+26.1.2
+
+26.3
+
+26.4
+
+1993-04
+
+Anschidsse von elektrischen Maschinen
+
+AnschiuBleitungen sind so auszuwahlen und Leitungsan-
+schlisse so auszufGhren, daB sie auftrelenden Schwingungs-
+beanspruchungen ohne Schäden standhaiten.
+
+Sind zum mechanischen Schutz von AnschiuBieitungen be-
+triebsméBig bewegter Maschinen Metallschiduche erforderiich,
+dirfen nur solche mit innerer isolierender Auskleidung verwen-
+det werden. .
+
+Brandschutz bei Transformatoren
+
+Die Gefahr von Bränden und deren Ausbreitung muß berück-
+sichtigt werden, sofern nicht der Aufstellungsort oder die Bauart
+ein Übergreifen von Bränden ausschließt.
+
+Hiezu können z. B. eine oder mehrere der folgenden Maßnah-
+men dienen:
+
+(1) Ölabflußeinrichtungen oder mit Kies oder Schotter abge-
+
+deckte Ölauffanggruben; für Leistungen bis 630 kVA genü- .
+
+gen entsprechend hohe Tirschwellen,
+
+(2) fest eingebaute Ldscheinrichtungen für zerstéubtes Was-
+ser, Kohlensaure u. dgl., insbesondere fiir Transformatoren
+mit größerer Leistung,
+
+(3) Brandschutzwinde.
+
+Bei Transformatoren und Drosselspulen mit nicht brennbarer
+
+Füllung sind lediglich Vorkehrungen zur Aufnahme der Fiillung
+
+des Kessels erforderlich.
+
+Luftdrosselspulen sind so einzubauen, daß das Magnetield des
+
+KurzschluBstromes eiserne Gegensténde nicht in die Spule hin-
+
+einreißt und daB benachbarte Metallteile nicht unzulässig er-
+
+warmt werden.
+
+26-1
+
+846
+
+£y IN — ¥661 UUr *07 we uaqeSadsny — HIMS /|
+
+
+===== PAGE 9/42 =====
+ÖVE-EN 1 Teil 2 §27
+
+§ 27 Antriebe und Antriebsgruppen’)
+
+271 Bei Auswahl und Errichtung der Betriebsmitte! sind die techni-
+schen Bestimmungen gemäß § 25 anzuwenden.
+
+27.2 Anordnung, Ein- und Anbau von elektrischen Betriebs-
+mittein
+
+27.2.1 Bleibt frei.
+
+27.2.2 In Schréinken oder Késten eingebaute elektrische Betriebsmit-
+tel, die wihrend des Betriebes bedient oder überwacht werden
+missen, sind so anzuordnen, daß sie bei gedffneter Tür oder
+nach dem Abnehmen von Abdeckungen ohne Schwierigkeit zu-
+géngig sind.
+
+Als ohne Schwierigelt zugängig getten z. B. Stellen die mindestens 0,2 m und höchstens:
+2 m über der Zugangsebene llegen,
+
+27.23 Elektrische Betriebsmittel missen so eingebaut sein, daB ihr
+ordnungsgeméaBes Arbeiten lsicht kontrolliert werden kann, und
+daB Teile, Geräte oder ganze Einheiten leicht ausgetauscht
+werden.kénnen.
+
+Anschlußstellen müssen ohne Schwierigkeit zugängig sein.
+
+27.24 Einbaurdume, in denen elektrische Betriebsmittel unterge-
+bracht sind und in denen kein zusétzlicher Schutz gegen direk-
+tes Berlihren vorhanden ist, dürfen nur mittels Werkzeug oder
+Schlüssel gedffnet werden kdnnen.
+
+Wenn diese Einbaur&ume von auBen nicht als solche erkennbar
+sind, muB auf ihren Abdeckplatten oder Türen ein Warnschild?
+angebracht séin.
+
+Auf die technischen Bestimmungen?® wird hingewiesen.
+
+27.25  Eintichtungen zum Freischalten, z. B. Schalter, Trennlaschen,
+Steckvorrichtungen, Uberstrom-Schutzeinrichtyngen, miissen
+vorhanden sein.
+
+27.2.6 Zum Ingangsetzen dienende Befehlsgerate miissen 50 ausge-
+filhrt und angeordnet sein, daB sie nicht unbeabsichtigt betatigt
+werden kénnen.
+
+Befehisgerate miissen vom Standort des Bedienenden leicht er-
+reichbar sein. Fir den Betétigungssinn der Befehlsgeréte be-
+stehen technische Bestimmungen®.
+
+") Zu Antrieben und Antrisbsgruppen gehdren auch Be- und Verarbeitungsmaschinen, sofem sie nicht in
+den Gettungsbersich von OVE-EN 13 bzw. OVE EN 60 204-1 fallen. ;
+
+%) Blitzpieil, siehe OVE-E 5 Teil 1.
+
+) Siehe ÖVE-EN 6 Teil 100. .
+
+“) Siehe OVE-MEC 447.
+
+1993-04 I 27-1
+
+OVE-EN1Teil2 §27
+
+273 Festlegungen für Kupferieiter
+
+27.3.1 Aus Griinden der mechanischen Festigkeit d(irfen, abweichend
+von 8 41, die Querschnitte gemaB Tab. 27-1 nicht unterschritten
+werden.
+
+Tab. 27-1: Mindesiquerschnitte von Kupferieiter in mm?
+
+auBerhalb innerhalb
+von von Einbau-
+Steuerschrénken räumen u. dgl.
+
+ein- fein- ein-
+drähtig | drähtig | drähtig | drähtig
+
+m-n 075
+_5 ] 1
+
+0,5
+n drei- oder mehradrig 0,3
+E zweiadrig abgeschirmt 03
+
+27.3.2 Leiter mit kleinerem Querschnitt ais gemäß Tab. 27-1,
+Zeile 1 und Zeile 2, dürfen nur dann verwandet werden, wenn
+die verwendeten Betriebsmittel den AnschluB der genannten
+Querschnitte nicht gestatten. Es sind dann jedoch die Mindest-
+querschnitte gemäß Tab. 27-1, Zeile 3 bis Zelle 5, einzuhalten;
+für die Belastbarkeit bestehen technische Bestimmungen®.
+
+27.3.3 AnschluBstellen missen für Querschnitt und Art der anzuschlie-
+Benden Leiter geeignet sein.
+
+27.34 Verbindungen in elektronischen Einheiten
+Die Anforderungen geiten nicht für Leitungen innerhalb von
+Steuerungen oder Regelkombinationen, die als geschiossene
+Einheiten in die Gesamtsteuerung eingefligt werden und die
+vornehmlich aus elektronischen Bauelementen bestehen.
+
+27.4 Schutz beweglicher Leltungen
+
+27.4.1 Der innere Biegedurchmesser der Leitung darf an keiner Stelle
+den zehnfachen Durchmesser der Leitung unterschreiten.
+
+%) Siehe OVE-K 50.
+1993-04 27-2
+
+LF IN — 4661 39UUE[ ‘07 WE uaqaBTsny — MG 'L}
+
+646
+
+
+===== PAGE 10/42 =====
+ÖVE-EN 1 Teil 2 527
+
+27.4.2
+
+27.4.3
+
+27.4.4
+
+27.5
+
+2751
+
+27.5.2
+
+276
+
+276.1
+
+Leitungen in der Nähe bewegter Teile sind in ausreichendem
+Abstand von diesen anzubringen. Erforderlichenfalls sind
+Trennwande einzubauen.
+
+Kunsistoff- oder Metallschutzschiauche diirfen verwendet wer-
+den, Metallschutzschlduche ohne innere isolierende Ausklei-
+dung jedoch nur, sofern sie fabriksmaBig so ausgefihrt sind,
+daB sie in die jeweilige SchutzmaBnahme einbezogen werden
+konnen.
+
+Metallschutzschlauche diirfen nicht als Schutzleiter verwendet
+werden; sie müssen aber in die MaBnahme zum Schutz bei indi-
+rektem Beriihren einbezogen werden.
+
+Verhindern unbeabsichtigter Betriebszustande
+
+Bei Antrieben und Antriebsgruppen, durch deren Betriebsweise
+eine Gefahrdung von Personen und/oder des Betriebes hervor-
+gerufen werden kann, muß ein unbeabsichtigter Anlauf verhin-
+
+" dert sein, z. B. bei Spannungswiederkehr sowie nach Entriegeln
+
+der Not-Aus-Einrichtung.
+
+Werden Befehisgeréte über Steckvorrichtungen angeschlos-
+sen, so muf eine ungewolite Befehlsgabe durch Verwechseln
+von Steckvorrichtungen ausgeschlossen sein.
+
+In Fallen, in denen die Steckvorrichtungen nur gelegentiich, z. B.
+zum Zweck der Wartung, getrennt werden, genügt eine Kenn-
+zeichnung der Steckvorrichtungen.
+
+Steckvorrichtungen für den NetzanschiuB® sind für Befehlsge-
+rate unzulassig.
+
+Not-Aus-Einrichtung
+
+Wenn wahrend des Betriebes der Antriebe und Antriebsgrup-
+pen mit Gefahrentallen zu rechnen ist, muB eine Not-Aus-Ein-
+richtung vorgesehen werden.
+
+Die Not-Aus-Einrichtung muB Antriebe und Antriebsgruppen im
+Getahrentall so stillsetzen, daB Gefahren für Personen und
+Schaden an Maschinen und Geréaten vermieden werden.
+Diese Einrichtung muB auf jene Schaltgeréte oder Stromkreise
+einwirken, die im Gefahrenfall aus- oder eingeschaltet werden
+missen.
+
+%) Siehe OVE-IG 31, OVE-IG/EN 60 320 Tail 1 und OVE-IG 33 bzw. OVE EN 60 309.
+
+1993-04
+
+273
+
+OVE-EN 1 Teil 2 §27
+
+27.6.2
+
+27.6.3
+
+27.6.4
+
+27.6.5
+
+27.6.6
+
+27.6.7
+
+®
+
+Schaltgeräte der Hauptstromkreise müssen mindestens den
+Anforderungen für Motorschalter” genügen.
+
+Sollen mit einem Schaltgerät mehrere Antriebe und Antriebs-
+gruppen geschaltet werden, muß dessen Schaltvermögen so
+ausgelegt sein, daB gleichzeitig der Strom des größten Motors in
+festgebremstem Zustand und die Summe der Ströme aller übri-
+gen Verbrauchsmittel im Normalbetrieb abgeschaltet werden
+können.
+
+Das Betätigungselement des Befehlsgerätes Not-Aus muß auf-
+fällig rot® gekennzeichnet sein. ,
+
+Die Fläche unter dem Betätigungselement am Einbauort muß
+mit der Kontrastfarbe Gelb so gekennzeichnet sein, daß sich
+das Betätigungselement deutlich abhebt.
+
+Das Befehlsgerät Not-Aus muß vom Standort des Bedienenden
+aus leicht, schnell und gefahrlos erreichbar sein.
+
+Sind mehrere Arbeitsplätze oder Bedienungsstellen vorhanden,
+muB an jedem ein Befehisgerat Not-Aus vorhanden sein.
+
+Stromkreise, deren Unterbrechung Personen, Maschinen oder
+andere Einrichtungen gefahrden können, z. B. die Erregung
+magnetischer Spannplatten oder die Stromversorgung von
+Hilfseinrichtungen, die im Storungsfall aufrecht erhalten werden
+miissen, dirfen durch die Not-Aus-Einrichtung nicht abgeschal-
+tet werden.
+
+Die Wirkung von Bremseinrichtungen, durch die ain schnelies Stillsetzen der Maschine be-
+wirkt werden soll, darf durch die Betétigung der Not-Aus-Einrichtung nicht beeintréichtigt
+oder unwirksam werden. Ricklaufbewegungen missen durch Betétigung der Not-Aus-
+Einrichtung eingeleitet werden, wenn dies erforderlich ist. Sie dirfen eingeleitst werden,
+wenn keine Gefahr für Personen antsteht.
+
+Das Befehisgerat Not-Aus muB bei Handbetétigung ein auffalii-
+ges Betétigungselement, z. B. Pilzdruckknopf, haben; auch Be-
+tatigung über ReiBleinen, Trittleisten o. dgl. ist zulässig. Die
+Schaltstiicke miissen zwangsldufig betatigt werden. Als Be-
+fehlsgerat Not-Aus darf kein Leuchttaster verwendet werden. Ist
+nach der Betatigung der Not-Aus-Einrichtung von der Wieder-
+einschaltstelle nicht erkennbar, ob eine Getahr besteht, so darf
+das Wiedereinschalten erst nach Entriegein (oder Rilckstellen)
+des Befehlsgerates Not-Aus vor Ort möglich sein.
+
+7) Siehe EN 50 947-4-1.
+%) Rotgemas RAL 3000.
+
+1993-04
+
+27-4
+
+086
+
+Ly IN — $661 uug 107 we ueqedadsny — Yoms /]
+
+
+===== PAGE 11/42 =====
+ÖVE-EN 1 Teil 2 828
+
+28.1
+28.1.1
+
+28.1.2
+28.1.3
+
+28.1.4
+
+28.15
+28.1.6
+
+28.2
+
+28.3
+28.3.1
+
+1993-04
+
+$ 28 Hebezeuge
+Siehe Anhang A1 Erläuterungen zu $ 28
+
+Begriffe
+Hebezeuge sind z. B. Winden zum Heben von Lasten, Elektro-
+züge, Regalbediengeréte und Kräne aller Art.
+
+Flurbediente Hebezeuge sind Hebezeuge, die von herabhan-
+genden Bedienelementen, tragbaren Fernsteuerungen oder
+ortsfesten Steuerstanden bedient werden.
+
+Fiihrerhausbediente Hebezeuge sind Hebezeuge, die von ei-
+nem auf dem Hebezeug mitfahrenden Flihrerstand aus bedient
+werden.
+
+Not-Aus-Schaltung dient zur schnelistmoglichen Ausschal-
+tung bei Gefahren, die unerwartet auftreten konnen.
+
+Not-Halt bewirkt das Anhalten einer gefährlichen Bewegung.
+
+Sicherheltsstromkreise von Hebezeugen sind
+
+— Stromkreise fiir Not-Aus-Schaltung,
+
+— Stromkreise für Not-Halt,
+
+— Stiomkreise, die unzulassige Uberschreitungen von Wegen,
+Geschwindigkeiten, Lasten oder eine Kombination dieser
+Werte erfassen und den betreffenden Antrieb oder das Hebe-
+zeug abschalten.
+
+Aligemeine Anforderungen
+
+Elektrische Anlagen von Hebezeugen sind so zu errichten, daß
+von ihnen ausgehende Gefahren weitgehend vermieden wer-
+den.
+
+Schieifleitungen, Schieifringkdrper
+
+Aufbau der Schleifieitungen und Schleifring-
+kérper .
+Bei Energiezufuhr über Schleifleitungen oder Schleifringkörper
+muß der Schutzleiter eine besondere Schleifleitung oder einen
+besonderen Schleifring erhalten, deren Träger sich von denen
+der stromführenden Leitungen oder Schleifringe eindeutig sicht-
+bar unterscheiden müssen. '
+
+Schutzleiter diirlen betriebsm#Big keinen Strom filhren. Eine
+Verlegung auf Isofatoren wird nicht gefordert. Hebezeuge müs-
+sen mit dem Schutzleiter über Gleitschuhe verbunden werden.
+Rollen, Walzen usw. dürfen nicht verwendet werden. Strom-
+abnehmer für Schutzleiter miissen so beschaffen sein, daB sie
+gegenlber den übrigen Stromabnehmern nicht vertauschbar
+sind. Eine deutliche Kennzeichnung (griin-gelb) gilt als ausrei-
+chend.
+
+28-1
+
+OVE-EN 1 Teil 2 §28
+
+28.3.2
+
+28.3.3
+
+Der Stutzabstand der Schieifieitungen und Schieifringe muB so
+ausgefiihrt sein, daB sie den auftretenden mechanischen und
+elektrischen Kraften standhalten.
+
+Anordnung der Schleifleitungen und Schleif-
+ringkorper
+
+Schleifleitungen und Schieifringkérper miissen so verlegt oder
+verkleidst sein, daB beim Besteigen oder Begehen, z. B. der
+Fahrbahnlaufstege und Krantragerlaufbihnen einschiieBlich
+der Zugénge, der Schutz gegen direktes Berühren sichergestelit
+ist. .
+
+Dies darf bei Schleifleitungen ein teilweiser Schutz durch Abstand gemäß $ 4.1 sein, wenn
+$ 28.8 berücksichtigt wird. .
+
+Der Bereich unterhalb der Standfliche gehért entgegen
+8 3.8.3.3 hier nicht zum Handbereich (sieche Abb. 28-1 und
+Abb. 28-2).
+
+Z
+
+S. .. Standflache
+
+Grenze des Handbsreiches
+
+1993-04
+
+Abb. 28-2: Beigpiel fiir die Anordnung der Schieifleitungen in Kranträgern
+
+28-2
+
+¥ IN — 9661} 1ouug( ‘07 we usqadalsny — yoms /1
+
+186
+
+
+===== PAGE 12/42 =====
+ÖVE-EN 1 Teil 2 ; §28
+
+28.3.4
+
+28.35
+
+28.36
+28.3.6.1
+
+28.3.6.2
+
+28363
+
+28.3.7
+
+28.4
+28.4.1
+
+Schieifleitungen miissen so angéordnetodergeschitztsein,das
+sie von den Tragmittein auch bei pendelnder Last, von Steuer-
+ketten, Bedienungsschniiren, Zugentiastungsmitteln u. dgl., so-
+fern diese elektrisch leitend sind, nicht beriihrt werden kénnen.
+Mindestwerte der Luftstrecken
+
+Die Mindestwerte der Luftstrecken von unter Spannung stehen-
+den Teilen voneinander und von Kérpern müssen bei Schieiflei-
+tungen, Schieifringkdrpern und deren Stromabnehmern den
+technischen Bestimmungen'’ entsprechen. Die hierfir notwen-
+dige Bemessungs-StoBspannung ist fir Netzspannungen ge-
+mäß Uberspannungskategorie H1, festzulegen.
+
+Für andere Spannungen, oder wenn die StoBspannung höhere Werle annehmen kann, ist
+für die Bemessungs-StoBspannung die höchste nichtperiodische Spitzenspannung zu be-
+rücksichtigen. Für periodische Spitzenspannungen ist mit Hilfe von Tabeile 5 der techni-
+schen Bestimmungen” die Bemessungs-Stoßspannung zu ermitteln.
+Mindestwerte der Kriechstrecken
+
+Bei Schieifieitungen und Schleifringkörpern muß die Kriech-
+strecke der Isolation aktiver Teile gegeneinander und aktiver
+Teile gegen Körper Verschmutzungsgrad 32 entsprechen.
+
+Bei besonderen Umwelteinflüssen, z. B. Staub, Feuchtigkeit,
+aggressive Atmosphäre, .
+
+_ — missen bei offenen Schieifleitungen und Schleifﬂn@körpem
+
+Isolatoren mit mindestens 60 mm Kriechstrecke verwendet
+werden, ,
+
+— muB bei gekapselten Schieifleitungen, mehrpoligen Klein-
+schleifleitungen oder isolierten Einzelstromschienen die
+Kriechstrecke mindestens 30 mm betragen.
+
+Dem Absinken der Isolationswerte, z. B. durch Ablagerung von
+
+leitfahigem Staub, .chemische Einfliisse oder bei Zusammen-
+
+treffen mehrerer ungtinstiger Umwelteinfliisse, muB durch ent-
+sprechende MaBnahmen vorgebeugt werden.
+
+Es sind die Angaben der Hersteller zu beachten.
+
+Schleifleitungsabschnitte
+
+Eine Spannungsiibertragung durch Stromabnehmer auf ge-
+
+trennte Abschnitte muB verhindert werden.
+
+Flexible Leltungen
+
+Leitungsbauarten
+
+Als flexible Leitungen, die betriebsméBig bewegt werden, sind
+
+bei Hebezeugen wegen der mechanischen Beanspruchung
+
+mindestens Leitungen
+
+') Siehe DIN VDE 0110 Teil 1 Tab. 2a.
+2) Siehe DIN VDE 0110 Teil 1 Tab. 1 und Tab. 4.
+
+1893-04
+
+28-3
+
+OVE-EN 1 Teil 2 §28
+
+2842
+
+— HO7RN-F oder AO7RN-F gemäß den technischen Bestim-
+mungend,
+
+— HO7AT2D5-F oder HO7RND5-F geman den technischen Be-
+stimmungen?,
+
+— NGFLGOU (Gummi-Flachleitung mit Polychloropren-Mantel)
+gemäß den technischen Bestimmungen®,
+
+— HO7VVH6-F gemäß den technischen Betimmungen®,
+
+— PVC-Steuerleitungen NYSLYO und NYSLYCYO gemas den
+technischen Bestimmungen®, jedoch nicht für zwangsweise
+Fahrung,
+
+oder diesen mindestens gleichwertige zu verwenden.
+
+Bei hdheren mechanischen Beanspruchungen sind mindestens
+
+Leitungen
+
+— NSHTOU (schwere Gummischlauchleitung mit Zugentia-
+stungselement und Polychloropren-Mantel fiir Hebezeuge
+und Transport) gemäß den technischen Bestimmungen”,
+
+— GMSSuö (schwere Gummischiauchleitung für Bergwerke)
+gemäß den technischenn Bestimmungen®
+
+oder diesen mindestens gleichwertige zu verwenden.
+
+Beim Schieifen oder Ziehen auf dem Erdboden sind Leitungs-
+
+trossen NT . . . OU gemäß den technischen Bestimmungen®
+
+oder diesen gleichwertige zu verwenden.
+
+Beim Einsatz im Freien missen hierfür geeignete Leitungen
+
+verwendet werden.
+
+Bei Verwendung von Spezialleitungen für Signal-, Meß- und
+
+Meldestromkreise miissen für die Betriebsbedingungen geeig-
+
+nete Leitungen verwendet werden.
+
+Bei der Auswahl und Verlegung der Leitungen sind gegebenen-
+
+falls erschwerende Betriebsbedingungen zu beriicksichtigen.
+
+Bei Leitungen, die im Betrieb dynamischen Beanspruchungen
+unterliegen, z. B. in Krananlagen mit hoher Beschisunigung,
+sind bei höheren Zugbeanspruchungen als 15 N/mm? Leiter-
+querschnitt Cu geeignete MaBnahmen im Einzeifall festzulegen.
+
+In besondeten Einzetfilten darf eine BeeintrAchtigung der Gebrauchsdauser in Kauf ge-
+nommen werden.
+
+3) Siehe OVE-K 40.
+
+4) Siehe DIN VDE 0250 Teil 809.
+
+%) Siehe OVE-K 41 und HD 359 S2.
+%) Siahe DIN VDE 0250 Teil 405.
+
+7) Siehe DIN VDE 0250 Teil 814.
+
+% Siehe DIN VDE 0250 Teil813.
+
+1993-04
+
+28-4
+
+786
+
+LV "IN — ¥661 Fuug[ 07 wre UdqaBafsny — 3omg /]
+
+
+===== PAGE 13/42 =====
+ÖVE-EN 1 Teil 2 528
+
+28.4.3
+
+28.4.4
+
+Leitungstrommeln
+Rollenumienkungen
+Leitungswagen
+alle Gbrigen Falle
+
+Vorrichtungen für die Zwangsfuhrung von
+Leitungen
+
+Vorrichtungen, die der Führung und Aufnahme von Leitungen
+dienen, müssen so gestaltet sein, daB der innere Biegeradius an
+allen Stelien, über die die Leitungen gebogen werden, die Werte
+gemäß Tab. 28-1 nicht unterschreitet.
+
+Bei besonderen Betriebsbedingungen, z. B. hoher Beschleuni-
+gung, hoher Verzégerung, hoher Spielzahl, sind zusétzliche
+MafBnahmen zu treffen.
+
+Die Eignung der Leltungen für zwangsweise Fiihrung ist sicherzustelien, 2. B. durch beson-
+dere Aufbaumerkmale.
+
+Tab 28-1: Kleinste zulässige Biegeradien bei Zwangsfiihrung von Leitungen
+
+Leitungsdurchmesser oder Dicke
+
+der Flachleitung din mm
+d<8 |8<d<12 [12<d<20
+d d
+
+Das gerade Stück zwischen zwei Kriimmungen bei einer S-for-
+migen Umlenkung oder einer Umlenkung in eine andere Ebene
+muB mindestens gleich dem 20fachen Leitungsdurchmesser
+sein.
+
+Leitungstrommeln zum betriebsm#Bigen Auf- und Abtrommein
+von Leitungen müssen diese selbsttatig aufwickeln. -
+
+Strombelastbarkeit von Trommelleitungen
+Trommelieitungen sind so zu bemessen, daB auch bei voll auf-
+gewickeiten Leitungen und betriebsméBiger Belastung die fir
+die Leltungen zuldssige Erwärmung nicht Oberschritten wird.
+Die Strombelastbarkeit von aufgewickelten Leitungen ist den
+technischen Bestimmungen® zu entnehmen. Hierbei gilt spira-
+lige Aufwickiung wie einlagige zylindrische Wickiung.
+
+%) Sishe DIN VDE 0298 Teil 4.
+
+1993-04
+
+28-5
+
+OVE-EN 1 Teil 2 §28
+
+28.4.5
+
+28.5
+
+28.5.1
+
+2852
+
+286
+
+Schutz vor Besch#édigung durch &uBere
+
+Einflusse
+
+Bewagliche Leitungen von Hebezeugen miissen so angeordnet
+
+oder gefiihrt sein, daß Beschadigungen, z. B.
+
+— durch das Uberfahren von AnschluBleitungen,
+
+— durch Schieifen an Konstruktionsteilen,
+
+— durch Wind- oder Beschieunigungskréfte bei Leitungswagen-
+systemen oder bei herabhéngenden Leitungen,
+
+— durch Warmeeinwirkung,
+
+verhindert werden.
+
+Kabel und Leltungen fir feste Verlegung
+
+Kabel- und Leitungsbauarten
+
+Zur festen Verlegung sind mindestens
+
+— Mantelleitungen AO5VV-U, AOSVV-R (YM)'®,
+
+— Gummischlauchleitungen HO7RN-F  bzw.  AO7RN-F
+(GMSub)?,
+
+— PVC-Steuerleitungen NYSLYO und NYSLYCYO®,
+
+— Kabel E-YY, E-YCY, E-YFGY™),
+
+oder diesen mindestens gleichwertige zu verwenden,
+
+Bei Verwendung von Spezialleitungen fiir Signal-, Meß- und
+
+Meldestromkreise müssen fir die Betriebsbedingungen ge-
+
+ignete Leitungen verwendet werden.
+
+Bei der Auswahl und Verlegung der Leitungen und Kabel sind
+
+gegebenentalls erschwerende Betriebsbedingungen zu berück-
+
+sichtigen.
+
+Verlegen von Kabeln und Leitungen
+Leitungen und Kabel dürfen auch im Freien unmittelbar auf Kon-
+struktionsteilen usw. befestigt werden.
+
+Dabei ist sicherzustellen, daB fiir den Einsatz im Freien geeig-
+nete Kabel und Leitungen verwendet oder diese entsprechend
+geschiitzt werden.
+
+Trennen und Schalten und zugehdrige Geräte
+
+Geréte zum Trennen und Schalten missen rdumlich so ange-
+ordnet sein, daB Arbeiten an ihnen, insbesondere die Funktions-
+prifungen, gefahrios méglich sind.
+
+%) Siehe OVE-K 40.
+
+%) Siehe DIN VDE 0250 Teil 405.
+19) Siehe OVE-K 41.
+1) Siehe OVE-K 23.
+
+1993-04
+
+28-6
+
+4 "IN — 661 ToUUr[ 07 we udqadafsny — PMS /]
+
+£86
+
+
+
+===== PAGE 14/42 =====
+ÖVE-EN 1 Teil 2 §28
+
+28.6.1
+28.6.1.1
+
+28.6.1.2
+
+28.6.1.3
+
+28.6.1.4
+
+28.61.5
+
+1993-04
+
+Die Trennstrecke zwischen gedffneten Geratekontakten muß
+sichtbar sein oder es muB eine eindeutige Schaltstellungsan-
+zeige durch die Kennzeichnung „AUS“ oder ,OFFEN" vorhan-
+den sein.
+
+Diese Kennzeichnung dart erst angezelgt werden, wenn die er-
+forderliche Trennstrecke zwischen den offenen Kontakten an al-
+len Polen des Gerätes erreicht ist.
+
+Um die Ein- bzw. Aus-Stellung anzugeben, darf die Kennzeichnung durch Symbole „O”
+und „I“ erfolgen, wenn die Verwendung dieser Symbole in den gettenden Gerätebestim-
+mungen erlaubt ist.
+
+Halbleiter dürfen nicht als Geräte zum Trennen eingesetzt wer-
+den.
+
+Schütze sind als Schalter zulässig, jedoch nicht zum Trennen
+(Freischalten).
+
+Netzanschlußschalter
+
+Hauptschleifleitungen oder Hauptanschlußleitüngen müssen
+von der Anspeiseanleitung mittels Netzanschlußschalters ge-
+trennt werden können. Dieser muß mindestens ein Lastschalter
+sein.
+
+BeiHebezeugenwerdendiese Geräte zum Trennen als „Netzanschlußschalter“ bezeichnet.
+Das Einschalten einer offenen Schleifleitung darf nur von einer
+Stelle aus möglich sein. Diese Stelle muß so gewählt werden,
+daß ein größtmöglicher Teil der Schleifleitung im Sichtbereich
+liegt.
+
+Netzanschlußschalter oder Betätigungseinrichtungen zum Ein-
+schalten von Netzanschlußschaltern müssen eine Einrichtung
+zum Sichern gegen zufälliges oder unbefugtes Einschalten ha-
+ben.
+
+An Stelle von Netzanschlußschaltern dürfen auch Steckvorrich-
+tungen bis 32 A verwendet werden, sofern sie zum Trennen un-
+ter Last geeignet sind.
+
+Bei Hebezeugen auf Baustellen darf als Netzanschlußschalter
+der Hauptschalter des Speisepunktes verwendet werden. Die
+Anforderung, daß dieser Schalter durch eine Einrichtung gegen
+zufälliges oder unbefugtes Einschalten gesichert werden muß,
+gilt sinngemäß als erfüllt, wenn durch andere Maßnahmen ein
+Unterspannungsetzen der Zuleitung des Hebezeuges verhin-
+dert wird, z. B. durch eine sichere Verwahrung der Steckvorrich-
+tung.
+
+Bei Anspeisung einer Schieifleitung über mehrere Netzan-
+schiuBschalter müssen diese auch bei Ausschalten nur eines
+Schalters gleichzeitig ausschalten.
+
+28-7
+
+OVE-EN 1 Teil 2 §28
+
+28.6.1.6
+
+28.6.2
+
+28.6.2.1
+
+286.2.2
+
+28.6.2.3
+
+28.6.3
+
+1993-04
+
+In Sonderfallen, z. B. bei Anordnung von zwei Hauptschleifiei-
+tungen oder Schieifleitungssystemen, die wahiweise zum Spei-
+sen des Hebezeuges benutzt werden können, oder bei Eintei-
+lung einer Hauptschleifleitung in sicher getrennte Abschnitte
+darf von den Anforderungen gemäß § 28.6.1.1 bis $ 28.6.1.5 in
+Anpassung an die drtlichen Gegebenheiten abgewichen wer-
+den, wenn fir die notwendige Sicherheit durch mindestens
+gleichwertige MaBnahmen gesorgt wird.
+
+Trennschalter
+
+Jedes Hebezeug muB eine Einrichtung zum Trennen und zum
+Ausschatten fir mechanische Wartung haben.
+
+Bei Hebezeugen werden diese Einrichtungan als , Trennschalter” bezeichnet.
+
+Der Trennschalter
+
+— muB praktisch gleichzeitig afipolig unterbrechen können,
+
+— braucht kein Lastschaltvermdgen haben,
+
+— muB eine Einrichtung zum Sichern gegen irrtamliches oder
+unbefugtes Einschalten haben,
+
+— braucht keine Maßnahmen gegen unbefugtes Offnen zu
+haben.
+
+Abklappbare Stromabnehmer gelten als Trennschalter, wenn sie gleichwertige Funktionen
+
+ausüben.
+
+Bei Krananlagen, die mit Spannungen über 1 kV mit Energie
+
+versorgt werden und bei denen auf dem Kran einer oder meh-
+
+rere Transformatoren zur Erzeugung der Niederspannung in-
+
+stalliert sind, dürfen auf der Niederspannungsseite auch meh-
+
+rere Trennschalter verwendet werden. In diesen Fällen durfen
+
+keine offenen Schieifleitungen oder offenen Schieifringkbrper
+
+verwendet werden. Eine gegenseitige Verriegelung der Trenn-
+
+schalter wird nicht gefordert.
+
+Auf Trennschalter darf verzichtet werden, wenn im Zuge der
+Kabel und Leitungen zwischen Einspeisung (bzw. der Nieder-
+spannungsseite des Transformators bei Anlagen gemés
+$ 28.6.2.1) und dem Kranschalter gemäß $ 28.6.3 keine Verbin-
+dungs- und keine Abzweigstelien vorhanden sind und der Kran-
+schalter die Aufgaben des Trennschalters erfüllt.
+
+Wird nur ein einziges flurbedientes Hebezeug gespeist. so darf
+der Trennschalter entfalien, wenn der NetzanschiuBschalter
+dessen Aufgabe erfiillt.
+
+Kranschalter
+
+Jedes Hebezeug muB mit einem oder mehreren Geréten für
+Not-Halt und fiir betriebsméaBiges Schalten (mindestens Last-
+schalter) ausgestattet sein, mit denen vom Bedienungsstandort
+
+28-8
+
+¥86
+
+¥ IN — %661 Jouug( "07 we usqaBaSsny — }OMS "/
+
+
+===== PAGE 15/42 =====
+ÖVE-EN 1 Teil 2 528
+
+28.6.3.1
+
+28.7
+28.71
+
+28.7.2
+28.72.1
+
+28722
+
+28.8
+
+1993-04
+
+aus die elektrische Energiezufuhr zu allen Bewegungsantrieben
+
+unterbrochen werden kann.
+
+Bei Hebezeugen werden diese Gerate für Not-Halt und für betriebsmäßiges Schalten als
+
+„Kranschalter“ bezeichnet. Die Funktion Not-Halt ist gemäß § 28.7.2 zu erfülen.
+
+Der Kranschalter darf entfallen bei
+
+— Hebezeugen, bei denen nur das Hubwerk kraftbetrieben ist,
+
+— flurbedienten Schieneniaufkatzen, wenn das Katzfahrwerk
+von Hand oder mit einem Elektromotor bis 500 W angetrieben
+wird.
+
+Not-Schalteinrichtungen
+
+Not-Aus-Schaltung
+Für Schieifleitungen, bei denen der Schutz durch Abstand ange-
+wandt wird, muß der zugehdrige NetzanschluBschaiter gemäß
+$ 28.6.1 als Gerät für Not-Aus-Schaltung geeignet sein, wobei
+bei eindeutiger Kennzeichnung auf die tarbige Kennzeichnung
+verzichtet werden darf. Er muß im Bereich des Hebezeuges an
+leicht zuganglicher Stelle
+— unmittelbar
+
+oder
+— durch Fernbetätigung
+ausgeschaitet werden können. Der Netzanschlußschalter muß
+schnell erreichbar sein.
+
+Not-Halt
+
+Bei jedem Hebezeug muB es méglich sein, vom Bedienungs-
+standort aus die elekirische Energiezufubr zu allen Bewegungs-
+antrieben zu unterbrechen,
+
+Werden mehrere Kranschaliter eingesetzt, missen diese vom
+Bedienungsstandort aus gleichzeitig mit einer Schalthandiung
+ausschaltbar sein.
+
+Bei jeder Krananlage muB es möglich sein, vom Flur aus die
+elektrische Energiezufuhr zu allen Bewegungsantrieben auch
+unter Last zu unterbrechen. Diese Aufgabe darf vom Netzan-
+schluBschalter ibernommen werden, wenn er mindestens ein
+Lastschalter und schnell erreichbar ist. Sie darf ebenso vom
+Kranschalter oder Trennschalter {ibernommen werden, wenn
+dieser mindestens ein Lastschalter ist, und von einer allgemein
+zugéngigen Stelle am Kran vom Flur aus ausgeschaltet werden
+kann (z. B. Portalstiitze, Hängesteuertafel).
+
+Giinge In Schalt- und Verteilungsanlagen
+
+Abweichend von § 30 brauchen auf Hebezeugen die Génge in
+Schalt- und Verteilungsaniagen nur einen freien Durchgang von
+mindestens 0,4 m Breite und 1,8 m Héhe zu haben. Kann aus
+
+28-9
+
+OVE-EN 1 Teil 2 §28
+
+28.9
+
+28.9.1
+
+28.9.2
+
+28.9.3
+
+28.9.4
+
+1993-04
+
+konstruktiven Griinden die Höhe von 1,8 m nicht eingehalten
+werden, darf sie bis auf ein Mindestma8 von 1,4 m verringert
+werden. Hierbei muB entsprechend der natwendigen Verringe-
+rung die Breite der Génge vergréBert werden. Bei einem Min-
+destmaB der Höhe von 1,4 m muB die Breite mindestens 0,7 m
+betragen. Werden Gänge in Kastentragern aus konstruktiven
+Gründen durch Querwénde (Schotten), die zur Versteifung er-
+forderlich sind, eingeengt, miissen die verbleibenden Offnun-
+gen eine Mindesthdhe von 1,0 m und ‘eine Mindestbreite von
+0,6 m haben.
+
+Aufbau der Schaltungen und Steuerungen. Besondere
+SchutzmaBnahmen
+
+Unbeabsichtigter Anlauf
+Ein unbeabsichtigter Anlauf von Antrieben bei Spannungswie-
+derkehr nach Netzausfall oder beim Einschalten von Netzan-
+schluß-, Trenn- oder Kranschaltern muß verhindert sein, z. B.
+durch elektrische Verriegelung oder durch mechanische Rück-
+stellung der Schalteinrichtungen.
+
+Anforderungen an Sicherheitsstromkreise
+Fehler in Sicherheitsstromkreisen von Hebezeugen miissen er-
+kennbar sein.
+
+Das Erkennen von Fehlem kann geschehen, z. B. durch
+
+— selbsttatige Fehlererkennung und Meidung,
+
+— Betriebshernmung,
+
+- regeimaige Prifung.
+
+Bei Sicherheitsstromkreisen gilt ergdnzend für Antriebe mit
+elektronischen Steuerungen und/oder Regelungen:
+
+Bei Ansprechen eines Sicherheitsstromkreises muB sicherge-
+stelit sein, daB der entsprechende Antrieb und/oder das Hebe-
+zeug von der Energiezufuhr abgeschaltet wird. Fehler in der
+elektronischen Steuerung oder Regelung dürfen Sicherheits-
+stromkreise nicht unwirksam machen.
+
+Auswahl der Leistungsschitze’
+
+Schütze, weiche betriebsmiBig die Energie von Bewegungsan-
+trieben schalten, z. B. die Standerschiitze der Antriebsmotoren,
+oder die betriebsméBig sicherheitsrelevante Funktionen zu er-
+fülten haben, z. B. Betätigungsschütze für Bremslufter von Hub-
+werken, missen so dimensioniert sein, daB die mechanische
+und elektrische Lebensdauer eine den Betriebsbedingungen
+des Hebezeuges entsprechende Standzeit sicher erreicht.
+
+Die mechanische Lebensdauer muB mindestens drei Millionen
+Schaltspiele betragen.
+
+28-10
+
+ZY IN — $661 19uuEf 07 we uaqeSalsny — ypmg /1
+
+<86
+
+
+===== PAGE 16/42 =====
+ÖVE-EN 1 Teil 2 $ 28
+
+289.5
+
+28.9.6
+
+28.9.7
+28.9.71
+
+28.9.72
+
+1993-04
+
+Kurzschiufischutzeinrichtungen hierfiir miissen so ausgelegt
+sein, daB beim Schalten von Fehlerstrdmen héchstens leichte
+VerschweiBungen auftreten können. ;
+
+Schütze, welche beim Ansprechen von Sicherheitsstromkrei-
+sen das Ausschalten übernehmen, müssen so abgesichert sein,
+daß auch im Kurzschlußfall keine Verschweißungen auftreten
+können. Sie müssen so dimensioniert sein, daß sie auch beim
+Einschalten des betriebsmäßig belasteten Hebezeuges (Ein-
+schaltströme) nicht verschweißen. Wenn sich dies nicht errei-
+chen läßt, müssen schaltungstechnische Maßnahmen vorgese-
+hen sein, daß diese Lasten auch im Fehlerfall von diesen Schüt-
+zen nicht eingeschalten werden. Entsprechende Angaben der
+Hersteller sind zu beachten.
+
+AnschiuB von Lastaufnahmeeinrichtungen
+
+Der elektrische Anschluß von Lastaufnahmeeinrichtungen, die
+im spannungsfreien Zustand ihre Last nicht halten kdnnen, muB
+vor dem Kranschalter liegen. ;
+
+Schaltgeräte bei flurbedienten Hebezeugen
+
+Flurbediente Hebezeuge müssen sich beim Losiassen der Be-
+tätigungseinrichtungen selbsttätig stillsetzen. Dies gilt nicht bei
+programm- oder rechnergesteuerten Arbeitsablaufen, wenn die
+Gefahrenstellen gesichert sind.
+
+Steuergeréte, die bei Bedienen des Hebezeuges bestimmungs-
+gemäß in der Hand gehalten werden, dürfen nur mit Nennspan-
+nungen < 250 V betrieben werden. Bei Direktschaltung von Mo-
+toren und sonstigen Einrichtungen bis 7,5 kW durfen diese Ge-
+räte bis 500 V betrieben werden, wenn hierfür Betriebsmittel der
+Schutzklasse Il verwendet werden.
+
+Sonderstromkreise
+
+Sonderstromkrelse sind Stromkreise, die bei Instandhaltungs-
+
+und Anderungsarbeiten nicht ausgeschaltet werden diirfen.
+
+Sonderstromkreise kdnnen z. B. sein:
+
+— Steckdosen- und Beleuchtungsstromkreise,
+
+— Stromkreise für in Hebezeuge eingebaute Aufziige, Repara-
+tur-Elektro-Ziige und Reparaturkréne,
+
+— Stromkreise für kontinuierliches Temperieren und Belüften,
+
+— Stromkreise für durch Sicherheitsbestimmungen geforderte
+elektrische Einrichtungen.
+
+Sonderstromkreise sind so zu veriegen, daB ihr Betrieb ohne
+Verwendung von Schieifleitungen oder Schleifringkdrpern még-
+lich ist.
+
+28-11
+
+OVE-EN1 Teil 2 528
+
+28.9.7.3
+
+28.9.7.4
+
+28.10
+
+28.10.1
+
+28.10.2
+
+Zu828.3:
+
+1993-04
+
+Sonderstromkreise sind vor dem Trennschalter gemäß § 28.6.2
+anzuschließen, wenn sie mit Schutzkleinspannung gemäß $ 8
+Teil 1 dieser Bestimmungen betrieben werden.
+
+Wird Schutzkleinspannung nicht angewandt, so sind die Son-.
+
+derstromkreise über einen zweiten Trennschaiter anzuschlie-
+Ben, der eine Einrichtung zum Sichern gegen irrtümliches oder
+unbefugtes Einschalten haben muß.
+Krangerüst als Schutzleiter
+Wird dasKrangeriistals Schutzleiter verwendet, ist zu beachten:
+Bei Energiezufiihrung über Schielfleitungen ist vom Schutzlel-
+terstromabnehmer eine unmittelbare Verbindung zur Kran-
+geristkonstruktion zu legen. Diese Verbindung muB gegen
+Selbstlockern gesichert sein.
+Der SchutzieiteranschluB der elektrischen Betriebsmittel ist so
+vorzunehmen, daß entweder eine zusatzliche leitende Verbin-
+dung mit der Konstruktion hergestellt wird, z. B. flexible Kupf_er-
+leiter mit Kabelschuhen, oder daß die elektrischen Betriebsmit-
+tel dauerhaft gut leitend mit der Konstruktion verschraubt wer-
+den. ;
+Dies wird erreicht durch Verwendung geeigneter Hilfsmittel, z. B. Fächerscheiben.
+
+A1 Erläuterungen zu § 28: Hebezeuge -
+Es gelten die Begriffe gemäß Teil 1 dieser Bestimmungen. Sie
+werden durch spezielle Begriffe für Hebezeuge ergänzt.
+Der Betrieb von Hebezeugen ist aufgrund der technischen Ge-
+gebenheiten nicht ohne gewisse Gefahren möglich. Es ist daher
+nicht nur bei der Errichtung der elektrischen Anlage besondere
+Sorgfalt, sondern auch bei Betrieb und Wartung (siehe ÖVE-E 5
+Teil 1) erhöhte Aufmerksamkeit erforderlich,
+GroBanlagen werden heute entsprechend dem Stand der Tech-
+nik häufig mit Spannungen über 1 kV eingespeist. Solche Ania-
+gen erfordern gegebenentfalls auch auf der Niederspannungs-
+seite einen anderen Aufbau und sind erstmalig im § 28.6 „Tren-
+
+nen und Schalten und zugehdrige Gerate“ beriicksichtigt. Der ‘
+
+$ 28.1 ist jedoch grundsatzlich nur für den Niederspannungsteil
+des Hebezeuges gültig und darf auch nicht sinngemäß auf die
+Hochspannungsseite übertragen werden. Hierfiir ist OVE-EH 1
+mafBgebend.
+
+Schieifleitungen, Schleifringkörper
+
+$ 28 enthalt Errichtungsbestimmungen. Da jedoch fiir Schleiflei-
+tungen und Schleifringkdrper entsprechende Baubestimmun-
+gen fehlen, wurden im $ 28.3 bis zu deren Vorliegen für Hebe-
+zeuge praxisorientierte Anforderungen festgelegt.
+
+28-12
+
+986
+
+Ly IN — $661 19UUR( 07 WE usqagidsny — HOM /|
+
+
+===== PAGE 17/42 =====
+ÖVE-EN 1 Teil 2 528
+
+Zu§28.4:
+
+Heute sind Schieifleitungen und Schieifringkdrper für Hebe-
+zeuge héufig fabrikfertig hergestelite Betriebsmittel. Diese müs-
+sen bezuglich der Luft- und Kriechstrecken gemäß DIN-VDE
+0110 Teil 1 und Teil 2 bemessen sein.
+
+Für offene Schleifleitungen und Schleifringkdrper wurden be-
+sondere praxisbezogene Kriechstrecken sowie weitere MaB-
+nahmen und Bauvorschriften festgelegt (siehe § 28.3.5).
+
+Flexible Leitungen
+
+Flexible Leitungen werden auf Hebezeugen nicht allein zum An-
+schluB der Hebezeuge eingesetzt. Der § 28.4 wurde daher all-
+gemein „Flexible Leitungen” benannt. Die Aussagen gelten fiir
+alle flexiblen Leitungen auf dem Hebezeug, die betriebsmaBig
+bewegt werden. .
+
+Kleine Biegeradien, eine hohe Zahl von Biegewechseln, Umlen-
+kung in mehrere Ebenen und/oder hohe Zugbeanspruchung
+setzen die Gebrauchsdauer der Leitungen herab.
+
+Zu §28.4.1: Leitungsbauarten
+
+Nach der Harmonisierung der Leitungen ist der Typ HO7RN-F
+
+‘dem friiheren Typ GMSud vergleichbar. Es wurden daher be-
+
+wuBt gerade mit Riicksicht auf mechanische Beanspruchungen
+leichtere Typen als H07 ausgeschlossen (siehe $ 28.4.1). Es ist
+im Einzelfall nach den jeweiligen Einsatzkriterien zu entschei-
+den, ob eine Leitung H07 ausreichend ist oder ob eine hdher-
+wertige zum Einsatz kommen muB.
+
+Als frei bewegliche Steuerleitungen z. B. zum Anschluß von
+Hangesteuertafeln dirfen die PVC-Steuerleitungen NYSLYO
+bzw. die abgschirmten Varianten NYSLYCYO verwendet wer-
+den. Diese sind aber nicht für zwangswelse Führung geeignet,
+ausgenommen Leitungsgirlanden.
+
+Zu $ 28.4.2: Die genannte Zugbeanspruchung der Leiter mit 15 N/mm? Lei-
+
+1993-04
+
+terquerschnitt Cu gilt für Leilungen ohne Trageeinrichtung. Das
+bedeutet: Die Ziugbeanspruchung des Kupferleiters muß unter
+dem genannten Wert bleiben.
+
+Für Einsatzfaile, In denen dieser Wert nicht eingehalten werden
+kann, sind Leitungen mit Sonderkonstruktionen, z. B. mit Trage-
+einrichtung, die die hdheren Krafte aufnimmt, méglich, so daB
+die Beanspruchung des Kupferisiters wieder unter 15 N/mm?
+liegt. In diesem Zusammenhang ist nicht nur an die Kräfte durch
+Beschleunigungs- und Bewegungsvorginge des Hebezeuges,
+sondern auch andie Eigenmasse der Leitung, z. B. bei hoch an-
+gebrachten Leitungstrommein zu denken.
+
+28-13
+
+OVE-EN 1 Teil 2 §28
+
+Zu§2845: Schutz vor
+
+Zu§28.5:
+
+Beschadigung durch &uBere
+Einflüsse
+
+Eine mögliche Maßnahme, die das Überfahren der Leitung ver-
+hindert, besteht in der Ablage der Leitung in einer dafür vorgese-
+henen Wanne oder Rinne. Dabei ist zu beachten, daß diese
+Wanne oder Rinne entwässert werden kann, um das Festfrieren
+der Leitung zu verhindern.
+
+Trennen und Schalten und zugehörige Geräte
+
+Eine Aufgabe des Netzanschlußschalters (siehe § 28.6.1) ist
+das Trennen der Hauptschleifleitung oder Hauptanschlußlei-
+tung von der Netzanspeisung. Die gemäß $ 28.6.1.3 geforderte
+MaBnahme gegen zuféliiges und/oder unbefugtes Ausschalten
+kann dadurch erreicht werden, daB der NetzanschiuBschaiter
+nicht frei zugangig ist. Dies gilt nicht, wenn der NetzanschiuB-
+schalter auch für die Not-Aus-Schaltung (siehe § 28.7.1) einge-
+setzt wird,
+
+Der Trennschalter (siehe $ 28.6.2) auf dem Hebezeug hat die
+Aufgaben, dieses für Arbeiten in der elektrischen Anlage zu
+trennen und fiir die mechanische Wartung auszuschalten. Da
+man bei Hebezeugen davon ausgehen kann, daß diese Schait-
+vorgénge im Stillstand vorgenommen werden, braucht der
+Trennschalter kein Lastschaltvermdgen haben.
+
+Der Kranschalter dient zum Spannungsfreischalten aller Bewe-
+gungsantriebe vom Bedienungsstandort aus.
+
+Da ein Hebezeug atich nicht von Unbefugten betreten werden
+darf, reicht fiir den Trennschalter eine MaBnahme gegen zufälll-
+ges Ausschalten. Dies kann z. B. durch entsprechende Anord-
+nung auf dem Kran oder in einem Schaltschrank erreicht wer-
+den.
+
+Grundsatzlich gilt aber fir alle Schalter, die zum Trennen oder
+zum Ausschaiten fir mechanische Wartung benutzt werden,
+daB sie gegen unbefugtes oder zufälliges Einschaiten zu si-
+chern sind. Sie miissen eine entsprechende Einrichtung haben.
+
+Zu§28.7.1: Not-Aus-Schaltung
+
+1993-04
+
+Not-Aus ist eine Funktion, die dort vorzusehen ist, wo unvorher-
+sehbare Gefahren durch elektrische Energie auftreten kénnen.
+Dies ist z. B. bei offenen Anspeiseschleifleitungen (fehlender
+Bertihrungsschutz) der Fall. Das entsprechende Schaltgeréat
+muB in diesem Fall Lastschaltereigenschaften haben, die An-
+speisung im Gefahrenfall unterbrechen kdnnen und schnell er-
+reichbar sein. Hierbei miissen die drtlichen Verhaltnisse berück-
+sichtigt werden.
+
+28-14
+
+/F IN — $661 1ouugf *07 we usqadalsny — MOMIS /1
+
+2836
+
+
+===== PAGE 18/42 =====
+ÖVE-EN 1 Teil 2 828
+
+Auf die schnelle Erreichbarkeit und damit auf eine umfassende
+Not-Aus-Funktion kann nur dann verzichtet werden, wenn die
+vollsténdigen SchutzmaBnahmen gegen direktes Berihren ge-
+mäß Teil 1 dieser Bestimmungen eingehalten werden. Dies be-
+deutet die Verwendung von isolierten oder gekapselten Schieif-
+leitungen. )
+
+Die umfassende Not-Aus-Funktion kann nur mit dem Netzan-
+schluBschalter erfüllt werden. Grundsétzlich schließt die Not-
+Aus-Schaltung Not-Halt ein.
+
+Zu §28.7.2: Not-Halit
+
+1993-04
+
+Auf einem Hebezeug ist Not-Halt eine Funktion, die dazu dient,
+vom Fihrerstand aus im Gefahrenfall alle Bewegungen mit ei-
+nem Befehl stillzusetzen (siehe § 28.6.3und $& 28.7.2.1). Diese
+Funktion kann nur mit dem Kranschalter erfüllt werden.
+
+Die Maglichkeit, zusétzlich vom Flur aus (siehe $ 28.7.2.2) die
+Energiezufuhr zu allen Bewegungsantrieben zu unlerbrechen,
+darf vom Kranschalter, Trennschalter oder auch vom Netzan-
+schluBschalter, falls diese mindestens Lastschalter sind, vorge-
+nommen werden. Im Fall des Kranschalters handeit es sich um
+die Not-Halt-Funktion, die nur die Bewegungsantriebe stillsetzt.
+Im Fall des Trenners werden jedoch durch Unterbrechen der
+Energieanspeisung nicht nur die Bewegungsantriebe stillge-
+setzt, sondern der gesamte Kran spannungslos gemacht, im
+Fall des NetzanschluBschalters die gesamte Anlage (gegeben-
+enfalls mehrere Kräne). In den beiden letztgenannten Fällen
+handelt es sich um eine Not-Aus-Schaltung, die Not-Halt ein-
+schliefit.
+
+Die Anordnung der Not-Schalteinrichtungen muB so ausgelegt
+sein, daB ihre Betatigung keine weitere Gefahr hervorruft oder
+auf den Ablauf der Gefahrenbeseitigung nicht stérend einwirkt.
+Es ist hier die Verhaltnismasigkeit der Risken abzuschétzen
+(siehe § 28.7.2.2).
+
+Es ist zu entscheiden, ob bei Not-Halt vom Flur aus geméas
+§ 28.7.2.2 eine gesamte Anlage (Not-Aus-Schaltung) oder nur
+Teile einer Anlage abzuschalten sind. Das bedeutet, daB z. B.
+andere Hebezeuge oder Teile eines Hebezeuges wie
+
+— Hubmagnete bei Magnetkranen,
+
+— Kollisionsschutzeinrichtungen,
+
+— Flugsicherungsbeleuchtung,
+
+— Beleuchtung bei GroBanlagen,
+
+— Bordrechner
+
+nicht abgeschaltet werden darfen.
+
+28-15
+
+OVE-EN 1 Teil 2 §28
+
+Zu§28.8: Génge in Schaltanlagen und Verteiler
+
+Im $ 28.8 sind abweichend von $ 30 geringere Abmessungen für
+Gänge in Schaltanlagen auf Hebezeugen zugelassen. Es ist da-
+her besonderer Went darauf zu legen, daß Schalter auch in die-
+sen Fallen gefahrlos erreicht und bedient werden kénnen.
+
+Die gefahriose Bedienung, Wartung und Stérungssuche kann
+bei dem erschiitterungsreichen Betrieb auf Hebezeugen z. B.
+durch das Anbringen von Handläufen vor offenen Schaltschrén-
+ken oder Geriisten erreicht werden.
+
+Durch die abweichenden Angaben für Bedienungsginge in
+Schaltanlagen gemaB § 28 wird auf kleine Krananlagen Rück-
+sicht genommen. Dabei wurde bewußt auf den Zusammenhang
+von Höhe und Breite der Génge geachtet. Bei geringen Höhen-
+maßen sind die Breiten so angegeben, daB eine Person durch
+die Offnung in geblickter Haltung steigen kann.
+
+Bei mittleren und groBen Krananlagen, z. B. Hafenkrénen, soll-
+ten diese verminderien Maße nicht angewandt werden. Diese
+Erleichterung beriicksichtigt kleinere Krane, bei denen die Ein-
+haitung der MaBe gemäß § 30 wirtschaftlich und konstruktiv
+nicht zu vertreten waren. Es ist jedoch zweckmäßig, bei groBen
+Krananlagen die Gänge in Schalt- und Verteilungsanlagen ge-
+mäß 8 30 zu wahlen.
+
+Zu 8 28.9.2: Anforderungen an Sicherheitsstromkréise
+
+1993-04
+
+Ganz allgemein wird gefordert, daB die ordnungsgeméBe Funk-
+tion von Sicherheitseinrichtungen überprüfbar und Fehler er-
+kennbar sein missen. .
+
+Ergänzend zu dem in, z. B. Dienstnehmerschutäverordnung. .
+
+ONORMM 9602 bzw. OVE-E 5 Teil 1 vorgeschriebenen regel-
+méaBigen Prifungen z. B. der Not-End-Halteeinrichtungen, ist es
+sinnvoll, auch andere Sicherheitsstromkreise regelmaBig zu
+prifen, soweit sich Fehier nicht selbsttitig melden oder durch
+Betriebshemmung bemerkbar machen. Dies kann durch einfa-
+
+ches Betätigen oder sofern dies nicht mdglich ist (z. B. Hublast- *
+
+begrenzer), durch eine Prifvorrichtung geschehen.- Hierzu
+sollte die Moglichkeit zur Funktionsprifung bereits im Konzept
+des betreffenden Sicherheitsstromkreises oder des bstreffen-
+den Gerétes vorhanden sein.
+
+Dariiberhinaus wird gefordert, daß Sicherheitskreise autonom
+sein müssen und unabhängig von der Steuerung wirken sollen.
+Unerkannte Fehler in der Steuerung dirfen die Sicherheitsein-
+richtungen nicht unwirksam machen. Diese Forderung soll den
+typischen Stérmechanismen insbesondere von elektronischen
+
+28-16
+
+886
+
+¥ "IN — 661 1ouugf -0z we uaqaSodsny — somg /|
+
+
+===== PAGE 19/42 =====
+OVE-EN 1 Teil 2 ; 828
+
+*
+
+Steuerungen und Regelungen Rechnung tragen. (Siehe ÖVE
+EN 60 204-1 Abschnitt 9.4.)
+
+~Abschalten“ bedeutet in diesem Zusammenhang nicht aus-
+schiieBlich das Betétigen von mechanischen Schailtgerédten, es
+darf auch mittels elektronischer Mittel erfolgen.
+
+Zu §28.9.4: Auswahl von Leistungsschitzen
+
+Schitzenkontakte kénnen, sofern bei der Projektierung nicht
+alle relevanten Betriebsbedingungen berticksichtigt werden,
+verschweiBen, z. B. beim
+— Ausschalten hoher Stréme, die ihr Schaltvermdgen überstei-
+gen (Kurzschiisse), wenn keine entsprechende KurzschiuB-
+schutzeinrichtung zugeordnet ist,
+— Einschalten von induktiven Lasten durch hohe Rush-in-
+Strome wahrend der Prelizeit der Kontakte.
+Fiir eine verantwortungsbewuBte Projektierung sind daher die
+diesbeziglichen Angaben der Hersteller zu beachten.
+Diese Eifekte werden verstérkt, wenn die elektrische Lebens-
+dauergrenze der Kontakte erreicht oder (iberschritten wird. Der
+Wartung der elektrischen Ausriistung kommt daher eine groBe
+Bedeutung zu. Um diese jedoch in wirtschaftlich sinnvollen
+Grenzen zu halten und gleichzeitig ein hohes Maß an Sicherheit
+sicherzustellen, sind mindestens die sicherheitsrelevanten
+Schiitze auch auf ausreichende elektrische und mechanische
+Lebensdauer zu dimensionieren.
+Hierbei sollten die aus der betrieblichen Beanspruchung resul-
+tierende Standzeit der Kontakte und die Wartungsintervalle
+sinnvoll aufeinander abgestimmt werden. Dies erfordert unter
+Umsténden Absprachen zwischen Hersteller und Betreiber.
+Eine verantworlungsbewuBte Wartung muß grundsétzlich die
+Kontrolle der Schiitzkontakte nach einem Ansprechen der vor-
+geschaiteten Kurzschlulschutzeinrichtung einschlieBen, da auf
+jeden Fall mindestens ein erhöhter Kontaktabbrand, eventuell
+sogar ein VerschweiBen der Kontakte eingetreten sein kann.
+
+Zu §28.9.7: Sonderstromkreise .
+
+1993-04
+
+Die Forderund Sonderstromkreise so zu verlegen, daB ihr Be-
+trieb ohne Verwendung von Schieifleitungen oder Schisifring-
+kérper auf dem Hebezeug möglich ist, hat den Sinn, beim Ab-
+schalten des Kranes zu Wartungs- und Reparaturarbeiten die
+Spannungsfreiheit offener Stromzufiihrungen (Schleifleitun-
+gen) sicherzustellen. Dies kann durch Verwendung von beweg-
+lichen Leitungen zur Uberbriickung der Schieifleitung bei Ande-
+rungs-, Montage- und instandhaltungsarbeiten erfüllt werden
+(Vorsicht Rickspeisung).
+
+28-17
+
+OVE-EN 1 Teil 2 §28
+
+Zu 8 28.10: Krangerust als Schutzleiter und zum Potentialausgleich
+
+1993-04
+
+In der Vergangenheit waren Schwierigkeiten bei der Erstellung
+durchgangiger SchutzmaBnahmen auf Hebezeugen bekannt,
+da z. B.Lauferkreise von Schieifringlautermotoren nicht geerdet
+werden konnten. Dieses Problem kann nun gelöst werden,
+wenn gemäß OVE-EN 1 Teil 1 § 15.2.3 das Krangerist als zu-
+sétzlicher Potentialausgleich zum Schutz bei indirektem Beriih-
+ren verwendet wird. Dieser stelit sicher, daß im Fehlerfall zwi-
+schen allen gieichzeitig berührbaren Kdrpern ortsfester Be-
+triebsmittel keine gefahrlichen Spannungen auftreten können.
+
+28-18
+
+¥ IN — v661 Touugf 07 we uaqadsBsny — oMS /]
+
+686
+
+
+===== PAGE 20/42 =====
+ÖVE-EN 1 Teil 2
+
+1993-04
+
+829 Bleibt frei
+
+§29
+
+OVE-EN 1 Teil 2 §30
+
+§ 30 Schaltanlagen und Verteiler
+
+Schaitanlagen und Verteiler (z. B. Schalttafeln, Schaltgeriiste,
+Schaltschrénke) miissen allen im Betrieb zu erwartenden ther-
+mischen und mechanischen Beanspruchungen (z. B. im Kurz-
+schiuBfail) standhaiten. Gegebenenfalls sind besondere Umge-
+bungsbedingungen (Staub, Feuchtigkeit, Dampfe, Vibrationen)
+zu berlicksichtigen.
+
+30.1 Bestimmungen fiir die Errichtung fabriksfertiger Schaltan-
+lagen und Verteller (typgepriifte und partiell typgepriifte
+Niederspannungs-Schaltgerétekombinationen TSK und
+PTSK)
+
+Fir die Ausfihrung von fabriksfertigen Schaltanlagen und Ver-
+teilern bestehen technische Bestimmungen®.
+
+30.2 Bestimmungen fiir die Errichtung nicht fabriksfertiger
+
+Schaitanlagen und Verteiler
+
+Für die Ausführung von nicht fabriksfertigen Schaltanlagen, das
+sind vor Ort zu errichtende Schaltanlagen und Verteiler, sind die
+technischen Bestimmungen” sinngemdR und § 30.2.1 bis
+§ 30.2.8 sinzuhalten.
+
+30.2.1 Für Isclierstoffe, die als Werkstoff fir Bauteile und Ge-
+hduse verwendet werden, bestehen technische Bestimmun-
+gen?,
+
+30.2.2 Isolierte und blanke Leiter
+
+30.2.2.1 Isolierte Leitungen und Kabel sind gemäß § 40 auszuwahlen
+und zu kennzeichnen sowie gemäß § 41 zu bemessen. Sie müs-
+sen ferner gegen zu hohe Erwarmung durch Uberlast und Kurz-
+schluB gemäß § 41 geschiitzt sein. Bei Verwendung von Lei-
+stungsschaltern missen die Ausldsezeiten und -strome der
+KurzschluBausloser so gewählt und eingestelit werden, daß die
+thermische KurzschluBfestigkeit der Leitungen und Kabel im
+KurzschluBfall nicht überschritten wird.
+Leiter, deren Trager und alle Befestigungsmittel sind so auszu-
+wahlen, daB die bei KurzschluB auftretenden Krafte von allen
+Teilen ohne Beschadigung aufgenommen werden kénnen.
+
+30.22.2 Die AnschluBleiter auf der Anspeiseseite von Uberstromschutz-
+einrichtungen diirfen fir die durch die Schutzeinrichtung ver-
+minderte KurzschluBbeanspruchung bemessen werden, wenn
+
+') Siehe OVE-IM 12, OVE-IM 22, OVE-IM/EN 60 439-1, OVE-IM/EN 60 439-2, OVE-IM/EN 60 439-3,
+OVE-IM/EN 60 439-4 und HD 528 St.
+2) Siehe OVE-W/EC 707 - Gruppe FH2-35.
+
+1993-04 30-1
+
+066
+
+LF IN — ¥661 Touurf 07 we usqaSalsny — IMS /]
+
+
+===== PAGE 21/42 =====
+ÖVE-EN 1 Teil 2 830
+
+30.2.2.3
+30.2.3
+30.2.3.1
+
+30.2.3.2
+
+30.2.3.3
+30.2.4
+
+30.2.4.1
+30.2.4.2
+
+30.2.4.3
+
+30.2.4.4
+
+1993-04
+
+sie im Inneren der Schaltanlage oder des Verteilers angeordnet
+und kurzschluß- und erdschlußsicher ausgeführt sind.
+
+Kurzschluß- und erdschlußssicher sind z. B. Leitungsanordnungen aus starren Leitem
+oder aus Einaderleitungen, bei denen ein gegenseitiges Berühren und ein Beriihren geer-
+deter Teile durch Abstandshalter, durch Fiihrung in gelrennten Isoliersioftkandien oder
+-rohren oder durch geeignete Bauart verhindert wird.
+
+Leitungen von Hilfsstromkreisen miissen § 60 entsprechen.
+AnschluBstellen
+
+Anschlufstellen für die von auBen herangefilhrten Leitungen
+
+und Kabel missen im ortsfesten Teil der Schaltantagen und
+
+Verteiler eingebaut und nach deren Errichtung noch ohne
+
+Schwierigkeiten zugéngig sein.
+
+Für AnschluBstellen des neutralen Leiters gilt zusétzlich:
+
+(1) AnschluBmdglichkeiten fiir von auBen eingeführte Neutral-
+leiter sind entsprechend den AuBenleiterquerschnitten und
+der Anzahl der Zu-und Abgénge vorzusehen.
+
+(2) Klemmen far den Neutralleiter miissen. isoliert und in der
+Néhe der zugehbrigen Hauptleiteranschlilsse angeordnet
+sein. Bei Klemmen mit mehreren Kiemmstellen miissen die
+entsprechenden Neutralleiter stromkreisweise lösbar sein.
+
+(3) Konstruktionsteile diirfen nicht als Neutralleiter verwendet
+werden.
+
+AnschluBstellen miissen zugentiastet sein.
+
+MaBnahmen zum Schutz gegendirektes Beriihren
+(Basisschutz) und gegen Eindringen von
+Fremdkérpern
+
+Neben den MaBnahmen zum Schutz gegen direktes Ber(ihren
+aktiver Teile müssen gegebenenfalls auch MaBnahmen gegen
+Eindringen von Fremdkdrpern ergriffen werden.
+
+Abnehmbare Teile, die das direkte Berühren aktiver Teile ver-
+hindern sollen, diirfen nur mittels Werkzeug oder Schlüssel ent-
+fernbar sein.
+
+Abschrankungen, z. B. Holzleisten, als einzige Abgrenzung vor
+aktiven Teilen sind nur in elektrischen und in abgeschiossenen
+elektrischen Betrigbsstétten zulässig. In diesen Fällen müssen
+die aktiven Teile mindestens 200 mm hinter der Abschrankung
+angeordnet sein, wenn sie nicht durch Bauart, Anordnung oder
+besondere Vorrichtungen gegen zufälliges Berühren geschützt
+sind. .
+
+Die Schutzisolierumhilung darf an keiner Stelle von leitfähigen
+Teilen so durchbrochen werden, daB eine Spannung nach au-
+Ben verschleppt werden kann.
+
+30-2
+
+OVE-EN1 Teil 2 §30
+
+30.2.4.5 Nicht benutzte Einflihrungséffnungen sind zu verschlieBen. Der
+
+30.2.5
+
+30.2.5.1
+
+30.25.2
+
+VerschiuB darf nur mittels Werkzeug entfernbar sein.
+
+" MaBnahmen zum Schutz bei indirektem Berühren
+
+(Fehlerschutz)
+
+Einbeziehung des Körpers von Schaltanlagen und Verteilern in
+SchutzmaBnahmen mit Schutzleiter:
+
+(1) Schaltanlagen und Verteiler, deren Korper in eine Schutz-
+maBnahme mit Schutzleiter einbezogen werden solien,
+müssen mit einer AnschiuBstelle für den von außen kom-
+menden Schutzleiter versehen werden. Die AnschiuBstelle
+muB ausreichend dimensioniert sein und ist mit dem Symbol
+gemaB den technischen Bestimmungen® zu kennzeichnen.
+
+(2) BeiFl-geschitzten Schattanlagen und Verteilern ist von der
+Einfuhrung der AnschluBieitung bis zu den Fehlerstrom-
+schutzschaltern Schutzisolierung anzuwenden.
+
+Bei Schaltanlagen und Verteilern gréBeren Umfanges kann unter Umsténden die
+SchutzmaBnahme Schutzisolierung aus tertigungstechnischen oder betrebsbeding-
+ten Griinden nicht durchgefiihrt werden
+
+Falls auch die Voraussatzung fir die Anwendung der SchutzmaBnahme Schutzer-
+dung oder Nullung für diese Anlagenteile nicht gegebenist, kann die Sicherheit janer
+Anlagenteile durch Verwendung eines Fi-Relais, durch Anbringung von partielien
+Isolierungen, durch erd- und kurzschluBsichere Ausfihrung, durch Standortisolation
+oder durch andere geeignete MaRnahmen erreicht werden.
+
+(3
+
+~
+
+Kérper von Schaltanlagen und Verteilern missen durch
+Schutzleiter gemäß § 21.3 gut leitend miteinander verbun-
+den werden.
+
+Durchgeschleifter Schutzleiter zum Einbeziehen nachgeordne-
+ter Betriebsmitte! in die SchutzmaBnahme:
+
+(1) Wenn an nachgeordneten Betriebsmitteln SchutzmaBnah-
+men mit Schutzleiter angewandt werden mussen, so muB in
+den Schaltanlagen und in Verteilern ein Schutzleiter durch-
+geschleift werden. Konstruktionsteile dirfen für diesen
+Zweck als Schutzleiter nur bei Einhaltung von $ 21.3 ver-
+wendet werden.
+
+Der durchgeschleifte Schutzleiter braucht gegeniiber dem
+Kérper der Schaltanlagen und Verteiler nicht isoliert veriegt
+zu werden, wenn diese in eine SchutzmaBnahme mit
+Schutzleiter einbezogen werden. Dies gilt bei Nullung auch
+fur den PEN-Leiter. ;
+
+(2
+
+—
+
+3) Siehe ONORM E 1357.
+
+1993-04
+
+30-3
+
+¥ IN — b661 19UUR[ ‘07 we uaqadadsny — IMS /1
+
+166
+
+
+===== PAGE 22/42 =====
+ÖVE-EN 1 Teil 2 830
+
+30.2.6
+30.2.6.1
+
+30.2.6.2
+
+1993-04
+
+(3) Bei schutzisolierten Schaltanlagen und Verteilern muß der
+
+durchgeschleifte Schutzleiter gegenüber den aktiven Teilen
+und inaktiven Teilen ebenso isoliert sein wie die aktiven
+Teile.
+Davon abweichend dirfen inaktive Teile im Inneren der
+Schutzisolierumhdllung an den durchgeschleiften Schutz-
+leiter nur dann angeschlossen werden, wenn bereits auf der
+Speiseseite des Verteilers eine SchutzmaBnahme mit
+Schutzleiter wirksam ist.
+
+(4) Die Schutzleiterschiene bzw. die als Schutzleiter benützten
+Konstruktionsteile missen Anschiufteile für ankommende
+und abgehende Schutzleiter haben, die in der Nähe der zu-
+gehdrigen Hauptleiteranschlisse liegen. Die Anzahl der An-
+schiuBstellen muB ebenso groB sein wie die der Zu- und Ab-
+gange. Die Anschliilsse miissen stromkreisweise lösbar
+sein.
+
+Anbau von Betriebsmitteln an Türen und Deckeln
+
+Elektrische Betriebsmittel dürfen an Türen und Deckeln nur
+dann angebracht werden, wenn diese z. B. durch Scharniere mit
+dem Gehäuse oder ahnlichem fest verbunden sind und wenn
+die Betriebsmittel über bewegliche Leitungen angeschlossen
+werden, die so verlegt sind, daß sie durch Bewegen des Deckels
+oder der Tür nicht beschédigt werden kénnen. Diese bewegli-
+chen Anschluflleitungen müssen an ihrem ortsfesten Ende auf
+Klemmen gefiihrt werden, die nach dem Errichten der Schaltan-
+lage oder des Verteilers ohne Schwierigkeit zugéngig sind.
+
+Die Kérper elektrischer Betriebsmittel mit Betriebsspannungen
+uber — 50 V und == 120 V miissen über bewegliche Schutzlei-
+ter mitden leitféhigen Konstruktionsteilen oder dem Schutzleiter
+der Anlage leitend verbunden werden. Der Querschnitt des be-
+weglichen Schutzleiters muB der AnschluBleitung des Betriebs-
+mittels mit dem größten Nennstrom (siehe Tab. 21-2) angepaBt
+sein.
+
+(1) Wenn die Tür oder der Deckel aus Metall ist und wenn die
+Betriebsmittel mit der Tür oder dem Deckel eine leitfahige
+Einheit bilden, genügt es, einen gemeinsamen beweglichen
+Schutzleiter zur Tür zu verlegen, dessen Querschnitt ent-
+sprechend dem Betriebsmittel mit dem gréBten Nennstrom
+zu wählen ist.
+
+(2) Ein beweglicher Schutzleiter zur leitfähigen Tür ist auch
+dann erforderlich, wenn alle angebauten Betriebsmittel
+schutzisoliert, die Leitungen jedoch nur basisisoliert sind.
+
+30-4
+
+OVE-EN 1 Teil 2 §30
+
+30.2.7
+
+30.2.71
+
+30.2.7.2
+
+30.2.7.3
+
+Prüfungen
+Die Schaltanlagen und Verteiler sind nach ihrer Fertigstellung
+zu prüfen, und folgenden Einzelprüfungen zu unterziehen:
+
+Besichtigung
+
+Es muß festgestelit werden, ob
+
+(1) die vorgesehenen Betriebsmittel vorhanden, vollsténdig,
+ordnungsgemaf eingebaut und in Ubereinstimmung mit
+dem Schaltplan verdrahtet sind,
+
+(2) die Kriechstrecken und Abstande eingehalten sind,
+
+(3) die vorgesehene Schutzart eingehalten ist,
+
+(4) die MaBnahmen zum Schutz gegen getfahrliche Kérper-
+ströme (SchutzmaBnahmen: Basis- und Fehlerschutz) ord-
+nungsgemäß durchgefihrt sind,
+
+(6) die Bestiickung und/oder Justierung von Uberstrom- und
+Uberspannungs- oder sonstigen Schutzeinrichtungen den
+vorgegebenen Erfordernissen entspricht.
+
+Funktionspriifung
+
+Betriebsmittel und Funktionseinheiten, z. B. Antriebe, Steu- -
+
+erungen, Verriegelungen, sind einer Funktionspriifung zu unter-
+Ziehen.
+
+Spannungsprifung mit Wechselspannung
+
+Mit dieser Priifung muB vor dem AnschlieBen der Anspeise- und
+Abgangsleitungen die ausreichende Isolation der Schaltanlage
+nachgewiesen werden. Diese Priifung wird an Kieinverteilern
+nicht durchgefiihrt. Die Höhe der Priifspannung ist Tab. 30-1 zu
+entnehmen.
+
+Der Hochspannungstransformator fir diese Priifung muB bei
+eingestellter Prifspannung auf der Sekundérseite einen Kurz-
+schluBstrom von mindestens 200 mA liefern können.
+
+Das in den Priifkreis eingebaute Uberstromrelais darf bei Stro-
+men bis zu 100 mA nicht auslésen.
+
+Die Leistung des Priftransformators muß mindestens 500 VA,
+die Prifdauer 1 min betragen.
+
+Bei der Prüfung muß darauf geachtet werden, daB emgebaute
+Betriebsmittel nicht zu Schaden kommen.
+
+Die Priifung gilt als bestanden, wenn weder Durchschlag noch
+
+. Uberschlag auftritt.
+
+*) Siehe OVE-IM 22.
+
+1993-04
+
+266
+
+L¥ IN — #661 Iouug( "0z we uaqadadsny — HIMS /1
+
+
+===== PAGE 23/42 =====
+ÖVE-EN 1 Teil 2 §30
+
+Tab. 30-1: Priifwachselspannung -
+
+Nennisolationsspannung Prifwechselspannung
+UinV (Effektivwert)in V
+
+i T
+e @<= w0 | 260
+o] wm<l= w0 | 2800
+] em<t= @0 | s |
+S| sm<g<iw | 350
+o] Tom=g<ieor | 380 ]
+
+30.2.7.4 An Stelle der Spannungsprifung ist ersatzweise eine Messung
+des Isolationswiderstandes zulassig. Hierfir gilt:
+
+M Die"Prüfspa_nnpn:g des Isolationsmeßgerätes muß minde-
+stens 1 000 V Gleichspanniing betragen.
+(2) Der Isolationswiderstand zwischen aktivem Leiter und Kör-
+
+per muB mindestens 1 000 © je Volt der Nennspannung der
+aktiven Leiter gegen Erde betragen. ;
+
+30.2.8 Schaltanlagen und Verteiler müssen mitdem Namen bzw. Kurz- -
+
+zeichen des endgiiltigen Errichters sowie mit einer eindeutigen
+technischen Kennung versehen sein.
+
+30.3 Bestimmungen fir das Aufstellen
+Die folgenden Bestimmungen für das Aufstellen gelten sowohl
+für fabriksfertige als auch für nicht fabriksfertige Schaltanlagen
+und Verteiler. ;
+
+30.3.1 Bedienungs- und Wartungsgänge
+Breite und Höhe der Gänge dürfen die Maße gemäß Abb. 30-1
+nicht unterschreiten.
+
+Die Ausgänge müssen auch bei offenstehenden Schrank- und
+Gehäusetüren ohne Schwierigkeit erreicht werden können.
+
+Wartungs- und Bedienungsgänge mit einer Länge von mehr als
+20 m müssen von beiden Seiten zugängig sein; für kürzere
+Gänge, deren Länge jedoch 6 m überschreitet, wird ein beidsei-
+tiger Zugang empfohlen.
+
+1993-04 30-6
+
+OVE-EN 1 Teil 2 . ' §30
+
+30.3.2 Kennzeichnung
+Unabhangig von einer dauerhaften Kennzeichnung der Be-
+trisbsmitte! (z. B. Schaltgerate, Uberstromschutzeinrichtungen,
+Klemmen) innerhalb von Schaltanlage und Verteiler muB die Zu-
+ordnung zu den einzelnen Stromkreisen aus der technischen
+Dokumentation (Gerateverzeichnis, Klemmenpléane, Stromlaut-
+pläne . . .) eindeutig erkennbar sein. ;
+
+(1) Schutzart der Niederspannungs-Schaltgerätekombinationen minde-
+
+stens IP 2X®.,
+
+(2) Schutzart der Niederspannungs-Schaltgerätekombinationen geringer
+als IP 2X® (in elektrischen und abgeschlossenen elektrischen Betriebs-
+stätten).
+
+Zweiseitig ainseitig
+
+aktive Teile ...
+
+" Fir Wartungsgénge.
+
+2 Für Bedienungsgange.
+
+3 Betéatigungselemente in Betriebsstellung („Ein“ oder „Aus“).
+Abb. 30-1: MindestmaBe für Wartungs- und Bedienungsgénge
+
+%) Siehe OVE-A/EN 60 529. _
+1993-04 30-7
+
+L IN — 661 Jouug( 07 WE uaqaSedsny — YIMIS /I
+
+£66
+
+
+===== PAGE 24/42 =====
+ÖVE-EN 1 Teil 2 $ 31
+
+§ 31 Schaltgeräte
+(Schalter, Steckvorrichtungen, Uberstrom-Schutzeinrichtungen)
+
+31.1 Auswahl der Geräte
+
+31.1.1 Für die Auswahl der Geräte zum Trennen und Schalten beste-
+hen technische Bestimmungen®..
+Trennen bedeutet das Unterbrechen der Einspeisung von der
+gesamten oder von Teilen der Anlage durch Abschalten der An-
+lage oder des Anlagenteiles von jeder eiektrischen Energie-
+quelle, um Sicherheit zu erreichen.
+Der Begriff „Trennen“ ist inhaltlich mit dem Begriff , Freischal-
+ten“ bzw. „allpolig und allzeitig abschalten“? ident.
+
+31.1.1.1 Schalter
+
+31.1.1.1.1 Alle Pole von Schaltemn (L1,L2, L3, N), die zum Freischalten ver-
+wendet werden, miissen praktisch gleichzeitig schaiten. Dies
+gilt nicht für Trennschalter auBerhalb von Verbraucheranlagen.
+Das nacheilende Abschalten und voreilende Einschalten des
+betrisbsmaBig geerdeten Poles ist zulassig.
+Betreffend Trennen und Schalten des PEN-Leiters gilt
+$ 10.3.3.3.
+Unabhéngig vom Netzsystem darf der PE-Leiter nicht betriebs-
+mäßig getrennt oder geschaltet werden, siehe auch $ 21.3.5.3.
+In betrieblich erforderlichem Umfang sind vierpolige Freischalt-
+einrichtungen vorzusehen.
+
+31.1.1.1.2 In Stromkreisen, die durch Schalter, Steckvorrichtungen oder
+Uberstrom-Schutzeinrichtungen freigeschaltet werden kénnen,
+brauchen nachgeordnete Schalter nur soviele Leiter zu schal-
+ten, als zum AuBerbetriebsetzen der Verbrauchsmittel erforder-
+lich sind. Werden hierbei mehrpolige Schalter verwendet, so
+miissen deren Pole praktisch gleichzeitig schalten.
+
+31.1.1.1.3 Schalter missen ein ihrem Verwendungszweck entsprechen-
+des Schaltvermdgen haben und den betriebsmäßig auftreten-
+den Temperaturen standhalten.
+
+31.1.2 Steckvorrichtungen
+
+31.1.2.1 Für den NetzanschluB elektrischer Betriebsmittel diirfen nur
+Steckvorrichtungen gemäß den technischen Bestimmungen®
+verwendet werden. .
+
+') Siehe DIN VDE 0100 Teil 537.
+2f Siehe OVE-E 5 Teil 1 §13.3.1.
+%) Siehe OVE-IG 31, OVE-IG 33 bzw. ÖVE EN 60309, OVE-IG/EN 60 320 Teil 1 und OVE-IG/EN 50075.
+
+1993-04 31-1
+
+OVE-EN 1 Teil 2 §31
+
+Von dieser Forderung sind ausgenommen
+
+— Steckvorrichtungen, deren Nennstrom über den in den tech-
+nischen Bestimmungen® angegebenen Stromstarkeberei-
+chen liegt;
+
+— Steckvorrichtungen für besondere Anwendungsfélle, z. B.
+Uberfiutbare Ausfiihrungen, explosionsgeschitzte Austiih-
+rungen, Biihnensteckvorrichtungen®.
+
+31.1.22 Fir das Absichern von Steckdosenstromkreisen gilt § 41.3.
+
+31.1.23 Elektrische Verbindungen zwischen Steckvorrichtungsteilen,
+deren Stecker und Steckdosen verschiedenen Systemen ange-
+héren, dürfen Gber Adapter (siehe $ 31.3) hergestelit werden.
+
+31.1.24 Soweit an Verladeplatzen, Abfüllstellen, in der Landwirtschaft,
+auf Baustellen, sowie an &hnlichen Stromabnahmestellen zum
+Anschluß nicht arealgebundener Verbrauchsmittel der An-
+schluß beliebiger Drehstromverbrauchsmittel bis 32 A, 380 V,
+50 Hz, ermdglicht werden soll, sind hierfir finfpolige genormte
+Steckvorrichtungen für industrielle Zwecke® und eine finfadrige
+Installation vorzusehen.
+
+Drehstromveridngerungsleitungen bis 32 A für solche Einsatz-
+stellen miissen fiinfadrig und an beiden Enden mit fiinfpoligen
+Steckvorrichtungen ausgefiihrt sein.
+
+Bei der Erneuerung von Steckdosen in bestehenden elektri-
+schen Anlagen ist es zuldssig, finfpolige Steckdosen an eine
+vieradrige Installation anzuschlieBen, wobei der Anschluß des
+Neutralleiters entfallt.
+
+An diesen Steckdosen oder in der Nahe dieser ist eine Aufschrift
+anzubringen, z. B. ,,Achtung 4adrig — N fehlt!“, die darauf hin-
+weist, daß der Neutralleiter fehit.
+
+Durch das Fehlen des Neutralleiters kénnen z. B. Einschran-
+kungen in der Funktion von Betriebsmittein entstehen.
+
+Der Anlagenbetreiber ist vom Errichter hieriiber zu informieren.
+
+31.1.25 Steckdosen in Verbindung mit Lampensockein dürfen nicht ver-
+wendet werden.
+
+31.1.2.6 Mehrfachsteckdosen mit starr angebautem Stecker dürfen nur
+für das Anstecken von Steckern für Geréte der Klasse II, 2,5 A,
+250 V (Flachstecker) und für maximal einen Stecker 10/16 A
+250 V mit Schutzkontakt geeignet sein. Zuléssig sind Ausfiih-
+rungen für das Anstecken von zwei Flachsteckern gemäß den
+
+3) Siehe OVE-IG 31, OVE-IG 33 bzw. ÖVE EN 60 309, OVE-IG/EN 60 320 Tail 1 und ÖVE-IG/EN 50 075,
+*) Siehe DIN 15 560 Teil 100.
+%) Siehe OVE-IG 33 bzw. OVE EN 60 309.
+
+1993-04 31-2
+
+¥66
+
+Ly AN — ¥661 Jauugf ‘07 we uaqeSsdsny — HIMS /]
+
+
+===== PAGE 25/42 =====
+ÖVE-EN 1 Teil 2 831
+
+technischen Bestimmungen®, solche für mehr als zwei Flach-
+stecker und solche für zwei oder mehr Flachstecker und maxi-
+mal einen Schutzkontaktstecker, wobei die technischen Bestim-
+mungen” beachtet werden miissen.
+
+31.1.2.7 Befestigungsmittel von Steckdoseneinsätzen müssen so aus-
+geführt sein, daß die ordanungsgemäß montierte Steckvorrich-
+tung beim Ziehen des Steckers nicht aus ihrer Verankerung ge-
+rissen werden kann. Dies kann z. B. durch Schraubbefestigung
+erreicht werden.
+
+31.1.2.8 Gerätesteckvorrichtungen müssen den betriebsmäßig auftre-
+tenden Temperaturen standhalten.
+
+3113  Uberstrom-Schutzeinrichtungen
+31.131 Schmelzsicherungen?
+
+31.1.3.1.1 Sicherungssocke! dürfen nur in Verbindung mit einem PaBein-
+satz (PaBring oder Paßschraube) verwendet werden, der den
+gemaB $ 41 einzusetzenden Uberstrom-Schutzeinrichtungen
+entspricht, um das Einschrauben von Schmelzeinsatzen oder
+Schraub-Leitungsschutzschaltern für unzuléssig hohe Nenn-
+stréme zu verhindern.
+
+Wenn die Nennstrdme von Sicherungssockel und Uberstrom-
+Schutzeinrichtungen tibereinstimmen, darf der PaBeinsatz ent-
+fallen. Für Schmelzeinsétze und Schraub-Leitungsschutzschal-
+ter mit Nennströmen unter 10 A sind Paßeinsätze 10 A zulassig.
+
+31.1.3.1.2 NH-Sicherungen mlssen so angeordnet sein, daß das Einset-
+zen und Abziehen von einpoligen NH-Sicherungen in einem un-
+ter Spannung stehenden Anlagenteil fir die bedienende Person
+gefahrios erfolgen kann.
+
+Die Sicherungsbauteile müssen so beschaffen sein, daß beim
+Austausch eines NH-Schmelzeinsatzes das unbeabsichtigte
+KurzschlieBen zweier Teile, die gegeneinander Spannung füh-
+ren, verhindent ist.
+
+Dazu geeignete MaBnahmen sind z. B. Sicherungstrenner, An-
+bringen von Trennwanden, Isolierkappen oder Verwendung von
+Vorrichtungen fiir das Setzen und Trennen von NH-Schmelzein-
+satzen.
+
+% Sishe ONORM E 6622-5.
+
+7) Siehe OVE-IG 31, Abmessungen soweit anwendbar gemäß ONORM E 6622-5.
+®) Siehe OVE-SN 40.
+
+1993-04 31-3
+
+OVE-EN 1 Teil 2 § 31
+
+31.1.3.2 Leitungsschutzschalter
+Leitungsschutzschalter mussen gegen Besch#digung durch
+KurzschluBstréme, die höher sind als es ihrem Nennausschait-
+vermögen entspricht, durch vorgeschaltete Schmelzsicherun-
+gen mit entsprechender Nennstromstérke geschützt werden.
+
+31.1.3.3 Leistungsschalter®
+Leistungsschalter müssen den an ihrem Einbauort zu erwarten-
+den gréBtmdglichen KurzschluBstrom schalten können, soweit
+dieser nicht durch vorgeschaltete Schutzeinrichtungen, z. B.
+Schmelzsicherungen, zuverlässig abgeschaitet wird.
+
+31.2 Einbau
+
+31.21 Schalter
+
+31.2.1.1 Schaltgerite müssen so angebracht werden, daB sie weder
+durch betriebsmafige Erschitterungen noch .auf Grund der
+Masse ihrer beweglichen Teile selbsttatig schalten kdnnen.
+
+31.2.1.2 Schalter in einpolig geschalteten, fest verlegten Stromkreisen
+miissen im AuBBenleiter liegen.
+Zweipolige Selbstschalter mit nur einem Ausléser missen so
+geschaltet sein, daB der Ausldser im AuBenleiter liegt.
+Taster fur Betéatigungsspulen von Zeitautomaten (z. B. Trep-
+penlichiautomaten) dürfen auch im Neutralleiter liegen. Es gilt
+hier der Schalter im Zeitautomat, als Schalter im Sinne dieser
+Bestimmungen. _
+
+31.2.1.3 Einpolige Wechselschalter miissen bei einer Wechselschaltung
+im selben AuBenleiter angeschlossen sein (siehe Abb. 31-1).
+
+Nmuﬁl lelﬁ
+
+Abb. 31-1: Zulässige und unzulässige Ausführung der Wechselschaltung
+
+31.2.2 Steckvorrichtungen
+
+31.2.2.1 Steckdosen und Stecker müssen im Leitungszug in einer söl-
+chen Reihenfolge angebracht sein, daß die Steckerstifte in nicht
+gestecktem Zustand nicht unter Spannung stehen. Die Reihen-
+folge von Steckdosen und Stacker im Leitungszug wird durch
+die Richtung des Energieflusses bestimmt. Steckvorrichtungen
+für Akkumulatoreniadung sind ausgenommen.
+
+*) Siehe OVE-SN 52 bzw. OVE-SN/EN 60 898. _
+19) Siehe EN 60 847-1 und EN 60 847-2.
+
+1993-04 314
+
+¥ IN — p661 Iduug( (07 we usqadadsny — joms /1
+
+S66
+
+
+===== PAGE 26/42 =====
+OVE-EN 1 Teil 2 831
+
+31.2.2.2
+
+31.2.2.3
+
+31.2.2.4
+
+31.2.2.5
+
+31.2.3
+
+31.2.4
+31.2.4.1
+
+31.2.4.2
+
+31.2.4.3
+
+31.2.4.4
+
+1993-04
+
+Bei Akkumulatorenspannungen über 60 V müssen die Stecker-
+stifte gegen zufälliges Berühren geschützt sein; bei geringeren
+Nennspannungen wird dies wegen des Kurzschlußschutzes
+empfohlen.
+
+An Betriebsmittel dürfen soiche Stecker nicht angeschlossen
+werden, die in Steckdosen eingeführt werden können, welche
+für eine höhere Nennspannung oder eine andere Stromart als
+die des Betriebsmittels bestimmt sind.
+
+Drehstromsteckdosen müssen so angeschlossen werden, daß
+die Phasenfolge dem Uhrzeigersinn entspricht, wenn man dle
+Steckdose von vorne betrachtet.
+
+An jedem Stecker bzw. jeder Kupplungssteckdose (Geréte-
+steckdose) darf nur eine einzige flexible Leitung angeschiossen
+werden. Dies gilt nicht für Spezialstecker, die fir den Anschluß
+mehrerer beweglicher Leitungen gebaut sind.
+
+Beim Einbauen von Schalter- und Steckdoseneinsétzen ist dar-
+auf zu achten, daB die Aderisolierung der AnschiuBlleitungen,
+insbesondere durch die Befestigungsmittel (z. B. Spreizkrallen),
+nicht besché&digt wird.
+
+Uberstromschutzeinrichtungen .
+
+Bei einseitiger Einspeisung und Verwendung von Sicherungs-
+sockein muB die Zuleitung an den FuBkontakt oder an die Fuß-
+kontaktschiene angeschlossen werden.
+
+In zweiseitig eingespeisten Leitungen (Ringleitungen) dirfen nur
+NH-Sicherungen verwendel werden (Ausnahme siehe $ 60).
+Leiter zum Verbinden mehrerer Sicherungssockel missen für
+den höchsten zu erwartenden Betriebsstrom der angeschiosse-
+nen Stromkreise bemessen sein.
+Uberstromschutzeinrichtungen dirfen nicht Uberbriickt, Siche-
+rungen nicht geflickt und Gläser der Schraubkappen nicht ent-
+fernt werden.
+
+Oberbriicken heiBt, einen Nebenweg schaffen, durch den der
+Strom in der Schutzeinrichtung so herabgesetzt wird, daB des-
+sen Schutzcharakteristik unwirksam wird. Uberbriicken bedeu-
+tet somit Aufheben des durch die Schutzeinrichtung sicherge-
+stellten Schutzes.
+
+Das Parallelschalten besonderer Uberwachungsemnchtungen
+deren Innenwiderstand so hoch ist, daB das Ausldseverhalten
+der Uberstromschutzeinrichtung nicht beeintréchtigt wird, ist
+keine Uberbriickung im Sinne dieser Bestimmungen. Es muß je-
+doch sichergesteilt sein, daß beim Freischalten über den Paral-
+lelpfad keine geféhrliche Spannung an dem freigeschalteten
+Anlagenteil bestehen bleibt.
+
+31-5
+
+OVE-EN 1 Teil 2 §31
+
+313
+31.3.1
+
+1993-04
+
+Adapter
+
+Adapter ist ein Betriebsmittel, das die Steckverbindung zwi-
+schen zwei unterschiedlichen Steckvorrichtungssystemen glei-
+chen oder annéhernd gleichen Nennstromes, gleicher Nenn-
+spannung und gleicher Frequenz ermdglicht.
+
+Der Fehlerschutz darf durch Adapter weder autgehoben noch
+unwirksam werden, siehe auch § 5.6.3.
+
+(1) Adapter müssen so gebaut und bemessen sein, daB sie im
+normalen Gebrauch zuverlissig sind und keine Gefahr für
+den Beniitzer und die Umgebung darstellen.
+
+Im afigemeinen wird die Erfüllung dieser Forderung durch die Durchfithrung aller Pro-
+fungen nachgewiesen, die für die Teile des Adepters gemäß den für die Einzelteile
+geltonden Bestimmungen vorgeschrieben sind.
+
+(2) Die Bauteile des Adapters dirfen in unterschiedlichem
+Feuchtigkeitsschutzgrad ausgefuhrt sein. Der Adapter ent-
+spricht dann dem niedereren Feuchtigkeitsschutzgrad.
+
+(3) Adapter müssen so beschaffen sein, daB die erforderlichen
+mechanischen oder elektrischen Verriegelungen sowie die
+SchutzmaBnahmen jederzeit funktionstéhig bieiben.
+
+(4) Adapterausfiihrungen, die eine starre bauliche Einheit
+bilden und unmittelbar in eine Wandsteckdose eingefiihrt
+werden kdnnen, sind nicht zulässig.
+
+Solche Adapter beanspruchen die Wandsteckdose mechanisch unzuldssig und kön-
+nen überdies durch Einengen der Verkehrswege (z. B. offene Türen von Verteilern)
+und durch Herabseizen der Schutzarl von Betriebsmittein (2. B. nicht schlieBbare
+Baustromverteiler) eine Unfaligefahr darstelien.
+
+Ausgenommen von diesem Verbot sind Adapter fiir Steck-
+vorrichtungen für Hausinstallationen und ahnliche Zwek-
+ke, insoweit die technischen Bestimmungen erfillt sind.
+
+Für Kragensteckvorrichtungsadapter bis 125 A und 660 V ist
+zusétzlich zu beachten:
+
+(1) Adapter missen aus Stecker, Verbindungsleitung und
+Kupplungssteckdose bestehen.
+Auf Grund unterschiedlicher Nennstromstérke sind nur die
+Adapter gemäß Tab. 31-1 zulassig. Die Länge der Verbin-
+dungsleitung richtet sich nach den betrieblichen Erforder-
+nissen und muB zum Zweck ausreichender Flexibilitat min-
+destens 80 cm betragen. Auf ordnungsgeméfe Zugentla-
+
+” stung ist zu achten.
+
+1) Siehe ÖVE-IG 31, Abmessungen soweit anwendbar gemäß ONORM E 6622-5.
+
+31-6
+
+966
+
+¥ IN — #661 J9uug[ 07 WE uaqadaSsny — YOMIS /[
+
+
+===== PAGE 27/42 =====
+OVE-EN 1 Teil 2 $31 ÖVE-EN 1 Teil 2 §31
+
+(2) Die flexible Verbindungsieitung muß einen Leiterquerschnitt Tab. 31-1: Zulässige Adapter
+. gemäß Tab. 31-1 aufweisen und mindestens Typ HO7RN-F
+
+bzw. AO7RN-F'2 (GMSuö) sein, oder hinsichtlich ihrer Be-
+anspruchbarkeit gleichwertige Leitungen missen eine Kal-
+tebestandigkeit von mindestens —25 °C für Transport, Ver-
+legung und Bewegung im Betrieb haben und mit minde- sirom
+stens „K25“ gekennzeichnet sein. Falls nur einer der Steck- des
+vorrichtungsbauteile des Adapters fünfpolig (3 P + N +@)
+ausgeführt ist, muß die Verbindungsleitung vieradrig sein.
+Der N-Kontakt darf weder angeschlossen noch durch eine
+Brücke mit dem Schutzleiterkontakt verbunden werden.
+Dies gilt auch für die angeschlossenen Betriebsmittel.
+
+(3) Beispiele für die richtige Schaltung und Verwendung von
+Adaptern siehe Abb. 31-2 und Abb. 31-3.
+
+Durch die Abbildungen so# nicht ausgedrickt werden, daß finfpolige Adapter unzulässig
+sind.
+
+L1 L2LIPEN
+
+1) Drehstromsteckvorrichtungen mit Nennspannungen von 380 V und mit Nennstrdmen bis 32 A dürfen
+seit 1. Janner 1981 nur mehr als genormte Steckvorrichtungen in den Verkehr gebrachi werden.
+
+sites System
+
+Abb. 31-2: AnschluB eines symetrischen Drehstromverbrauchsmittels mittels Adapter bei
+SchutzmaBnahma Nullung
+
+Abb. 31-3: AnschiuB ehés Drahstromverbrauchsmittels mittels Adapter bei anderen
+
+SchutzmaBnahmen mit Schutzieiter
+
+'2) Siehe OVE-K 40,
+
+1993-04 - ) 31-7 1993-04 31-8
+
+b "IN — %661 Touug[ ‘0z we uagedadsny — HIMS /]
+
+166
+
+
+===== PAGE 28/42 =====
+OVE-EN 1 Teil 2 $ 32
+
+32.1
+
+32.2
+32.2.1
+
+32.2.2
+
+32.2.3
+
+3224
+32.241
+
+32242
+
+§ 32 Leuchten und Beleuchtungsanlagen
+
+Auswahl
+Für Leuchten und Zubehér für Entladungslampen bestehen
+technisthe Bestimmungen®.
+
+Errichtung
+
+Aufhéingevorrichtungen für Leuchten, z. B. Deckenhaken, müs-
+sen so ausgewählt und angebracht werden, daB sie die fünffa-
+che Masse der daran zu befestigenden Leuchte, mindestens
+aber 10 kg, ohne nennenswerte Formanderung tragen kdnnen.
+
+Leuchten für Leuchstofflampen mit eingebauten Vorschaltgeré-
+ten und Vorschaltgeréte auBerhalb von Leuchten milssen so an-
+gebracht werden, daB auch bei einem Fehier im Vorschaitgerat
+(Windungs- oder KérperschiuB) für die Befestigungsfiache
+keine Brandgefahr besteht.
+
+Wenn Leuchtstofflampenleuchten direkt auf brennbaren Bau-
+stoffen montiert werden, sind MaBnahmen gemäß $ 25.2 dieser
+Bestimmungen zu treffen. Ausgenommen sind Leuchten mit
+F-Kennzeichnung gemäß den technischen Bestimmungen?, die
+direkt auf normal brennbare oder schwer brennbare Baustoffe
+montiert werden dürfen.
+
+Leuchten mit F-Kennzeichnung sind nicht für das direkte Befestigen auf leicht brennbaren
+
+Baustotfen geeignet. Hinsichtlich der Anbringung auf Einrichtungsgegensténden u. dgl.
+siehe Teil 4 § 59 dieser Bastimmungen. .
+
+An Orten, wo leichtentztindbare Stoffe verwendet, ausgestelit
+
+oder gelagert werden, miissen Leuchten und auBerhalb von
+
+Leuchten angeordnete Vorschaltgeréte sowie Lichtquellen mit
+starker Warmestrahlung in ausreichend groBem Abstand von
+diesen Stoffen angebracht werden, um Brandgetahr zu vermei-
+den.
+
+Dies giltz. B. für Vorhang-, Schaufenster- und Lagerbeleuchtung.
+Durchgangsverdrahtung
+
+Werden Leitungen durch die Leuchte geführt, so ist folgendes
+zu beachten:
+
+Für die Durchgangsverdrahtung dürfen nur Hohiraume benutzt
+werden, die hierfir vorgesehen sind und in denen das Verlegen
+der Leitungen ohne Beschadigung der Isolierung möglich ist.
+
+In diesen Raumen dürfen die Leitungen mehrerer Lampen-
+strormkreise gemeinsam verlegt werden.
+
+1} Siehe OVE-LVEN 60598, OVE-LVEN 60 155, OVE-LVEN 60 400, EN 60 920.
+2) Sieha OVE-LI/EN 60598-1.
+
+1993-04
+
+32-1
+
+OVE-EN 1 Teil 2 §32
+
+32243
+
+32244
+
+32.25
+
+32.2.6
+
+3227
+
+323
+324
+32441
+32.4.1.1
+
+Für die Durchgangsverdrahtung miissen wirmebestandige Lei-
+tungen verwendet werden, deren Nennquerschnitte den Tabel-
+len gemäß $ 41 entsprechen.
+
+Wenn die vom Leuchtenhersteller angegebene Übertemperatur
+an der wärmsten Stelle des Verdrahtungsraumes so gering ist,
+daß die Temperatur an dieser Stelle unter 55 °C bleibt, dürfen
+nichtwärmebeständige Leitungen verwendet werden, deren
+Nennquerschnitte den Tabellen gemäß $ 41 entsprechen,
+Klemmen müssen gegen zufälliges Berühren ihrer aktiven Teile
+geschützt sein.
+
+Lampengruppen, die unter Mitführen nur eines gemeinsamen
+neutralen Leiters auf die drei Außenleiter eines Drehstromnet-
+zes verteilt werden, sind wie Drehstromverbrauchsmittel zu be-
+handeln (siehe § 31.1.1.1.2),
+
+Die zu einem Drehstromkreis gehérenden Leitungen missen in
+einer mehradrigen Leitung, in einem Rohr oder in denselben
+Hohiraumen von Lichtb&ndern oder Vouten verlegt werden.
+
+Bei der Beleuchtung von Maschinen mit sich bewegenden Tei-
+len und bei der Beleuchtung von Betriebsstétten, in denen sol-
+che Maschinen betrieben werden, missen MaBnahmen getrof-
+fen werden, um stroboskopische Effekte zu vermindem, z. B.
+Wahl geeigneter Lampen, Anwendung der Duo- oder Dreipha-
+senschaltung.
+
+Werden Schalter in Stromkreisen mit Leuchtstofflampen ver-
+wendet, in denen Kapazitaten zur Phasenkompensation liegen,
+muB daraut geachtet werden, daß der Strom bei Parailelschal-
+tung der Kapazitaten zu den Leuchtstofflampenieuchten den
+0,25fachen Wert des Nennstromes und bei Reihenschaitung
+der Kapazitaten mit den Leuchistofflampenleuchten den 0,5fa-
+chen Wert des Nennstromes nicht iibersteigt.
+
+Bleibt frei.
+
+Stromkreise fiir Kleinspannungs-(Niedervoit-)leuchten
+Stromquelilen
+
+Stromkreise fiir Kleinspannungsleuchten mit nichtisolierten be-
+rghrbaren aktiven Leitern oder Teilen sind aus Stromquelien für
+Schutzkleinspannung (SELV) (siche $ 8.1.3) mit U, < 25V
+Wechselspannung zu versorgen. Werden Transformatoren ver-
+wendet, miissen diese (bedingt oder unbedingt) kurzschiuB-
+feste Sicherheitstransformatoren® mit der Kennzeichnung @
+sein.
+
+3) Siehe OVE-M/EN 60 742,
+
+1993-04
+
+32-2
+
+866
+
+/W IN — #661 3ouugf 07 we uaqaSesny — WS /]
+
+
+===== PAGE 29/42 =====
+ÖVE-EN 1 Teil 2 832
+
+32.4.1.2
+
+32.4.1.3
+
+32.4.1.4
+
+32.4.2
+
+32.4.2.1
+
+32.4.3
+32.4.3.1
+
+Konverter (Schaltnetzteile)* für Glihlampen müssen den Anfor-
+derungen für unabhéngiges Zubehdr (Kennzeichnung @) ent-
+sprechen.
+
+Ortsveränderliche Stromquellen, z. B. Transformatoren und
+Konverter (Schaltnetzteile), müssen schutzisoliert und mit dem
+Symbol @] (siehe § 7.2.2) gekennzeichnet sein.
+
+Ortsfeste Stromquellen, z. B. Transformatoren und Konverter
+(Schaltnetzteile), miissen mindestens eine isolierte AnschluB-
+stelle je Stromkreis haben.
+
+Wird ein Stromkreis für Kleinspannungsleuchten van zwei oder
+mehreren Stromquellen versorgt, miissen diese primérseitig
+eine gemeinsame Einrichtung zum Trennen haben und fest,
+z. B. über eine Geräteanschlußdose, angeschlossen werden.
+Der Anschluß Gber Steckvorrichtungen ist unzulassig.
+
+Auswahl von Leitungen, Trégerleitungen und
+Profilleitern
+Zu verwenden sind
+(1) fir feste Verlegung
+— PVC-Aderieitungen in Elektro-Installationsrohren aus
+Kunststoff®,
+— flexible Schlauchleitungen, mindestens HO5VV-F oder
+HO5RR-F gemäß den technischen Bestimmungen®,
+— Stromschienen für Kleinspannungsleuchten,
+— Profilleiter (Sonderbauart) ohne Isolierung (Trägerleiter,
+starr),
+— Profilleiter (Sonderbauart) mit Isolierung (Trägerleiter,
+flexibel), ;
+(2) für das Verlegen als freihängende Leitungen (Trägerleiter,
+starr oder flexibel)
+— ohne Isolierung,
+— mit Isolierung.
+
+Mindestquerschnitte von Leitern
+
+Fest verlegte Kabel, Leitungen und Strom-
+schienen _
+
+Der Leiterquerschnitt muB mindestens 1,5 mm® Cu betragen.
+Ausnahme: Er darf auf 1 mm? Cu verringert werden, wenn fle-
+xible Leitungen verwendet werden und die Leltungslänge 3m
+nicht iiberschreitet.
+
+%) Siehe EN 61046.
+% Sieha OVE-IM/IEC 614.
+%) Siehe OVE-K 40 und OVE-K 41.
+
+1993-04
+
+32-3
+
+OVE-EN 1 Teil 2 §32
+
+32432 Freihdngende Leitungen
+
+3244
+32.4.4.1
+
+32.4.4.2
+
+1993-04
+
+Als Trägerleiter dürfen alle für die Stromführung geeigneten
+Werkstoffe verwendet werden. Für Trägerleiter aus Kupfer ist
+aus mechanischen Gründen ein Mindestquerschnitt von 4 mm?
+erforderlich. Der Querschnitt anderer Werkstoffe ist entspre-
+chend zu wählen.
+
+Errichtung
+
+Verlegung von Kabeln, Leitungen und Strom-
+
+schienen
+
+Je Leuchtenstromkreis
+
+(1) darf höchstens ein aktiver Leiter nichtisoliert sein, oder
+
+(2) müssen alle nichtisolierten aktiven Leiter durch eine Schutz-
+einrichtung gemäß § 32.4.4.2 überwacht werden, oder
+
+(3) miissenProfilschienengem#B§32.4.5.2verwendetwerden.
+
+In brandgeféhrdeten R&umen gemäß $ 50 dieser Bestimmun-
+
+gen ist nur die Verlegung gemäß (1) zulässig.
+
+Konstruktionsteile, z. B. die metaliene Einfassung einer Vitrine oder ein metalienes Regal,
+
+diirfen nicht als aktive Leiter benutzt werden.
+
+Schutzeinrichtungen zur Uberwachung nicht-
+
+isolierter aktiver Leiter
+
+Zur Minimierung des Brandrisikos sind Stromkreise mit nichtiso-
+
+lierten aktiven Teilen mit einer Schutzeinrichtung zu schitzen,
+
+die folgenden Anforderungen geniigen muB:
+
+(1) Die Schutzeinrichtung schaltet innerhalb 4 s ab, nachdem
+die vom Leuchtenstromkreis aufgenommene Leistung ei-
+nen einstelibaren Toleranzbereich von maximal 60 W ver-
+läßt. Die Einstellung darf manuell oder automatisch erfol-
+gen. Die Lage des handisch eingesteliten oder des sich
+automatisch einstellenden Sollwertes der aufgenommenen
+Leistung darf innerhalb des Toleranzbandes frei gewahit
+werden. Im Falle der automatischen Einstellung muB in je-
+dem Fall (auch im Dim-Betrieb) die geforderte Sicherheit
+gegeben sein.
+
+Es wird empfohlen, den Toleranzbereich so um den Leistungssoitwert zu legen, daß
+einzeine Lampenaustille nicht zur Abschaltung lihren.
+
+(2) Die Schutzeinrichtung mu8 für den vom Hersteller bezeich-
+neten Anwendungsbereich, z. B. auf der Netzseite und/oder
+auf der Kleinspannungsseite der Beleuchtungsanlage, ein-
+gesetzt werden und so ausgeführt sein, daß sie selbst keine
+Gefahr für Personen oder Sachen begründet.
+
+(3) Die Abschaltung der Beleuchtungsanlage darf mit der Ein-
+schränkung, daß dadurch alle nichtisolierten aktiven Leiter
+erfaBt sind, an beliebiger Stelle vorgenommen werden.
+
+32-4
+
+/V IN — ¥661 1ouur( ‘07 we udaqadadsny — Jomg /i
+
+
+===== PAGE 30/42 =====
+ÖVE-EN 1 Teil 2 832
+
+32.4.4.3
+
+32.4.43.1
+
+324432
+
+32.4.433
+
+32.443.4
+32.4.5
+
+32.4.51
+
+32452
+
+32453
+32454
+
+32.4.6
+
+32.4.6.1
+
+1993-04
+
+Verlegung von freihdngenden Leitungen
+
+(Tragerleitern)
+
+Freihéingende Leitungen missen durch isolierende Vorrichtun-
+gen an den Wanden und Decken befestigt werden und minde-
+stens einer senkrechten Zugkraft zur Befestigungsebene von
+100 N standhalten.
+
+Leiteranschlisse und -verbindungen miissen entweder durch
+Schraubklemmen oder durch schraubenlose Klemmtechnik er-
+folgen. Schneidklemmen sind nicht zulassig.
+
+AnschiuBseile mit Kontergewichten, die (iber die freihtingenden Leitungen gelegt werden,
+sind nicht zuléssig.
+
+Bei AnschluBvorrichtungen, z. B. Klemmen, darf nur eine An-
+schluß- oder Verbindungsstelle nichtisoliert sein, es sei denn,
+durch andere MaBnahmen wird ein mdglicher KurzschiuB mit
+der freihéngenden nichtisolierten Leitung verhindert.
+
+Als eine andere MaBnahme gilt z. B. Abstandhalter aus Isolierstoff.
+
+AnschluBstellen sind von Zug und Schub zu entlasten.
+
+Verlegen von Stromschienen und Profil-
+
+schienen
+
+Stromschienen für Kleinspannungsleuchten und Profilschienen
+miissen in ihrem ganzen Verlauf zugängig sein (siehe
+§39.3.1.4).
+
+Profilschienen (Sonderbauart) dirfen — auBer bei Anlagen in
+brandgeféhrdeten Räumen — an Decken in nichtisolierter Aus-
+führung angebracht werden, wenn gegeniiber dem Standort ein
+Abstand von 2,25 m eingehalten wird. Bei senkrechter Anord-
+nung muB ab einer Höhe von 2,25 m nach unten mindestens
+eine Schiene isoliert sein.
+
+AnschluBstellen sind von Zug und Schub zu entlasten.
+
+Stromschienen und Profilschienen in Zwischendecken- und
+Zwischenbodenbereichen diirfen nicht in blanker Ausfuhrung
+verlegt werden.
+
+Schutz von Kabeln, Leitungen, Stromschienen
+und Profilschienen bei Uberlast und KurzschluB
+
+Kabel, Leitungen, Stromschienen und Profilschienen sind
+gegen Uberlast und bei KurzschluB zu schiitzen. Dis zutreffen-
+den MaBnahmen missen Teil 3 $ 41 dieser technischen Be-
+stimmungen entsprechen. Die Strombelastbarkeitswerte sind
+Teil 3 § 41 dieser technischen Bestimmungen zu entnehmen.
+
+32-5
+
+OVE-EN 1 Teil 2 §32
+
+324.7
+
+Für die Dauerbelastung von Leitern in Stromschienensystemen
+sind entweder Herstellerangaben zu beachten oder die techni-
+schen Bestimmungen” zugrunde zu legen.
+
+Vermeiden von Heraus- bzw. Herabfallen von
+Lampenteilen und Lampen
+
+Leuchten und Lampen sind so auszuwéhlen und anzuordnen,
+daß keine Lampen oder Lampenteile aus ihnen herausfallen
+kénnen bzw. daB keine Lampen herabfallen konnen. ,
+
+7) Siehe DIN 43 670 und DIN 43 671.
+
+1993-04
+
+32-6
+
+0001
+
+Ly IN — #661 JOUUE[ "0 we uaqaSdsny — HIMS /|
+
+
+===== PAGE 31/42 =====
+ÖVE-EN 1 Teil 2 533
+
+§ 33 Elektromotorisch angetriebene Verbrauchsmittel,
+Elektrowerkzeuge
+
+33.1 Auswahl .
+
+Für elektromotorisch angetriebene Verbrauchsmmel und Elek-
+trowerkzeuge bestehen technische Bestimmungen®,
+
+33.2 Errichtung
+
+33.2.1 Fir handgefiihrte NaBschleifmaschinen ist Schutzkleinspan-
+
+i nung oder Schutztrennung anzuwenden.
+
+33.2.2 Betonmischmaschinen sind gemäß § 55 anzuschlieBen. Davon
+ausgenommen sind solche in stationéren Betrieben, z. B. in Be-
+tonwerken, sowie solche gemäß $ 3.6.9(4).
+
+33.3 Bleibt frei.
+
+33.4 Spielzeug
+
+33.4.1 Elektromotorisch angetriebenes Spielzeug darf nur mit Nenn-
+spannung bis 24 V betrieben werden. Fiir Spielzeug bestehen
+technische Bestimmungen?.
+
+33.4.2 Die Versorgung von elektromotorisch angetriebenem Splelzeug
+aus dem Netz muß mittels Spielzeugtransformatoren? erfolgen.
+
+33.43 Eine leitende Verbindung des Spielzeuges mit dem Netz, auch
+mit dem Schutzieiter oder über Widerstinde, z. B. Lampen-
+widersténde, ist unzulässig.
+
+1y
+f
+&
+
+') Siehe OVE-HG 43, OVE-HG 335 bzw. OVE-HG/EN 60 335.
+2) Siehe ÖVE-HG 335 Teil 2 (2200).
+3) Siehe OVE-M/EN 60 742,
+
+1993-04 331
+
+OVE-EN 1 Teil 2 §34
+
+§ 34 Elektrowiirmegeriite
+
+34.1 Auswahl
+
+34.1.1 Fir Elektrowdrmegerate für dan Hausgebrauch und &hnliche
+Zwecke bestehen technische Bestimmungen®.
+
+3412 Für schmiegsame Elektrowärmegeräte fir den Hausgebrauch
+und &hnliche Zwecke, z. B. Heizkissen, Bettwärmematten, be-
+stehen technische Bestimmungen?.
+
+34.1.3 Far Elektrowärmégeräte zur Tieraufzucht und Tierhaltung be-
+stehen technische Bestimmungen?.
+
+3414 Bleibt frei.
+
+34.15 Fir industrielle Elektrow&rmeeinrichtungen bestehen techni-
+sche Bestimmungen®.
+
+34.2 Errichtung
+
+34.2.1 Warmwasserspeicher und Durchlauferhitzer dürfen nur ortsfest
+angebracht werden.
+
+3422 Heizkörper mit Edison-Gewinde-Sockel diirfen nicht verwendet
+werden.
+
+34.23 Die vom Hersteller des Elektrowarmegerétes allenfalls angege-
+benen Bestimmungen fur die Montage sind einzuhaiten.
+
+34.3 Spielzeug
+
+34.31 Elektrisch beheiztes Spielzeug, wie Kinderkochherde, Kinder-
+backöfen und Kinderbiigeleisen, darf nur mit Nennspannungen
+bis 24 V und Nennstrdmen bis 6 A betrieben werden. Fiir Spiel-
+zeug bestehen technische Bestimmungen®.
+
+34.3.2 Die Versorgung von elektrisch beheiztem Spielzeug aus dem
+Netz muB mittels Spielzeugtransformatoren® erfoigen.
+
+34.3.3 Eine leitende Verbindung des Spielzeuges mit dem Netz, auch
+mit dem Schutzieiter oder über Widerstande, z. B. Lampen-
+widerstande, ist unzuldssig.
+
+") Siehe OVE-EW 41, OVE-HG 335 bzw. OVE-HG/EN 60 335.
+2) Sishe OVE-HG/EN 60 967.
+
+3) Siehe OVE-EW 41 Teil 2 (1800).
+
+4) Sighe DIN VDE 0721.
+
+%) Siehe OVE-HG 335 Teil 2 (2200).
+
+%) Siehe OVE-M/EN 60 742.
+
+1993-04 34-1
+
+ZV IN — #661 29UUR[ ‘07 we uagedalsny — MS /I
+
+1001
+
+
+===== PAGE 32/42 =====
+ÖVE-EN 1 Teil 2 8 34a
+
+34a.1
+
+34a.2
+
+34a.3
+34a.3.1
+
+34a.32
+
+34a.33
+
+34a.34
+
+$ 34a Flichenheizungen
+
+Geltung
+
+Diese Bestimmungen gelten fiir Innenraumfidchenheizungen
+
+bestehend aus
+
+— Heizleitungen",
+
+— Heizmatten, die aus Heizleitungen konfektioniert wurden,
+oder
+
+— Fldchenheizelsmenten? mit einer Spannung bis 250 V gegen
+Erde im normalen Bétrieb, bei denen das Heizsystem einen
+festen Bestandteil der Baukonstruktion bildet.
+Eine Folie mit einemin Form einer Metallbaschichtung aufgebrachten linearen Heizlei-
+ter fällt unter den Begriff Heizmatte.
+
+Aligemeine Bestimmung
+
+Flachenheizungen im Sinne dieser Bestimmungen miissen un-
+ter Beachtung der bautechnischen, heizungstechnischen,
+brandschutztechnischen und elektrotechnischen Sicherheitser-
+fordernissen errichtet werden,
+
+Hiezu iat im aligemeinen die enge Zusammenarbeit der Fachieute erforderlich.
+
+Begritfe und Benennungen
+
+Heizelement ist ein fiir sich selbstandig betriebsfihiger Heiz-
+kdrper in Form einer Heizleiterschleife, einer Heizmatte, eines
+Flachenheizelementes oder eines Heizpaneels.
+
+Ein Heizelement ist in seiner elektrischen Dimensionierung (Nennspannung, Nenniei-
+stung) und, ausgenommen für Heizleitungen, auch in seiner räumlichen Ausdshnung ein-
+deutig festgelegt. Diese Festiegung kann gegebenentalls erst beim Einbau erfoigen.
+
+Heizanlage (Heizsystem) ist die Gesamtheit aus den Heizele-
+menten einschlieBlich der zugehérigen Anspeiseleitungen, den
+besonderen baulichen Maßnahmen fir deren Einbau und den
+zugehdrigen Schalt-, Sicherungs- und Schutzeinrichtungen so-
+wie den zum einwandfreien Betrieb notwendigen Regeleinrich-
+tungen,
+
+Spezifische Flichenbelastung ist die auf die Heizflache bezo-
+gene installierte Leistung, angegeben in W/m?.
+
+Spezifische Léingenbelastung ist die auf die Länge einer Heiz-
+leitung bezogene Leistung, angegeben in W/m.
+Kalte Enden werden dabei nicht zur L&nge der Heizleitung gezihit.
+
+1) Siehe OVE-K 43.
+?) Siehe OVE-EW 41 Tei 2 (1700).
+
+1993-04
+
+34a-1
+
+OVE-EN 1 Teil 2 $ 34a
+
+34a.3.5
+
+34a.3.6
+
+34a.3.7
+
+34a4
+34a.4.1
+
+34a.4.2
+
+34a.4.3
+
+1993-04
+
+Beheizter Berelch einer Heizanlage ist jene Flache, in deren
+Bereich Heizelemente installiert sind.
+
+Flachenspeicherheizung ist eine Fléchenheizung, die den
+Wérmebedarf eines Raumes auch auBerhalb der begrenzten
+Aufladezeiten teilweise oder ganz deckt.
+
+Fiéchendirekthelzung ist eine Fliachenheizung, die den Wir-
+mebedarf eines Raumes nur wahrend der Zeit ganz oder teil-
+weise deckt, während der die Heizung eingeschaltet ist.
+
+Aufschriften
+
+Heizelemente
+
+Heizelemente missen mit Nennspannung und Nennleistung
+bezeichnet sein und Hinweise fiir Einbaubeschréinkungen auf-
+weisen. Diese Aufschriften können entweder auf dem Element
+selbst, an einer nach dem Einbau zugéinglichen Stelle oder an
+der Stelle des Uberganges zur regulären Installation angebracht
+sein. Die Aufschriften milssen dauerhaft und gut lesBar sein.
+Ein Beispiel für eine Einbaubeschrankung st der Hinweis: „Nur für trockene Räume.“
+
+Angaben für den beheizten Raum
+
+Die in einem Raum installierte Heizleistung muB auf dem zuge-
+ordneten Temperaturregler oder -schalter so angegeben sein,
+daB die Zuordnung eindeutig erkennbar ist.
+
+Dies kann z. B. durch ein geeignetes Klebeschild geschehen.
+
+Angaben im Verteiler
+
+In dem der Heizungsanlage zugeordneten Verteiler missen
+
+sinngemé&B folgende Hinweise deutlich sichtbar angebracht
+
+sein:
+
+(1) .Achtung Deckenheizung (Wandheizung, FuBbodenhei-
+zung), keine Nägel u. dgl. einschlagen; Achtung bei Stemm-
+und Bohrarbeiten.“
+
+(2) „Bei Handwerkerarbeiten unbedingt die Heizung allpolig
+ausschalten.”
+
+(3) „Vor dem Auflegen grbBerer Teppiche, Aufstellen von-
+
+Möbeln ohne FuBgestell oder anderen Einbauten einen Hei-
+zungsfachmann befragen.“
+Ferner ist ein Lage- und AnschiuBplan der Heizanlage, bei um-
+fangreichen Anlagen auch ein Schaitplan anzubringen.
+Der Hinweis gemaB (1) st auch im Wohnungsverteiier anzubringen, wenn für die Hei-
+zungsaniage ein zusitzlicher Verteller vorgesehen worden ist.
+
+34a-2
+
+T001
+
+44 "IN — 661 3ouux[ ‘o7 we uaqaSadsny — HMS /1
+
+
+===== PAGE 33/42 =====
+ÖVE-EN 1 Teil2 5 34a
+
+34a.5
+
+34a.6
+
+34a.7
+
+1993-04
+
+SchutzmaBnahmen
+
+Je nach Art der verwendeten Heizelemente sind folgende
+
+SchutzmaBnahmen beim Einbau herzustellen:
+
+(1) BeiHeizelementen mit nur Basisisolierung ist entweder eine
+metallene Abschirmung, die an den Schutzisiter anzu-
+schlieBen ist, erforderlich oder eine Abdeckung gegen die
+Baukonstruktion und die Rauminnenfldche durch Isolier-
+stoft, der die Anforderungen fiir zusétzliche Isolierung, wie
+sie für die SchutzmaBnahme Schutzisolierung erforderlich
+ist, erfüllt.
+
+Die zusätzliche Abdeckung gegen die Bauonstruktion kann entfalien, wenn keine
+leitlähigen Teile mit dem Heizelement in Berihrung kommen können.
+
+(2) Bei Heizelementen mit Basisisolierung und metallener Ab-
+
+~
+
+schirmung ist die Abschirmung an den Schutzleiter anzu- .
+
+schlieBen. Bei linearen Heizleitern (z. B. Heizleitungen) ist
+der Schutzleiter an beiden Enden des Schirmes anzuschlie-
+Ben. ;
+
+(3) Bei Heizelementen mit doppelter oder mit verstärkter Isolie-
+rung ist die Isolierung gegen mechanische Beschädigung
+zu schiitzen.
+
+(4) Bei Heizelementen, die mit Schutzkieinspannung betrieben
+werden, ist die Isolierung gegen mechanische Beschédi-
+gung zu schützen.
+
+Bei Heizelementen mit Abschirmung und bei Heizelementen,
+
+die mit Abschirmung verlegt werden, ist vorzugsweise Fehler-
+
+stromschutzschaltung anzuwenden. In feuchten und nassen
+
+Réumen sowie in Baderaumen und Duschecken dirfen in Hö-
+
+hen unter 2,25 m nur Heizelemente mit einer an den Schutzlei-
+
+ter angeschlossenen Abschirmung verwendet werden.
+
+Schutz gegen Brandgefahr
+
+Heizanlagen milssen so bemessen und errichtet werden, daB
+im normalen Betrieb die Temperatur benachbarter brennbarer
+Werkstoffe 80 °C nicht iberschreitet. Wird diese Bedingung mit-
+tels Regelungseinrichtung erfiillt, ist sicherzustelien, daB bei
+Versagen dieser Regelungseinrichtung benachbarte brennbare
+Werkstoffe hdheren Temperaturen, die jedoch 150 °C nicht
+überschreiten diirfen, nicht langer als 1 h ausgesetzt sind.
+
+Dies kann z. B. durch nicht selbst wiedereinschaltende Temperaturbegrenzer erreicht wer-
+den.
+
+Schalt- und Regeleinrichtungen
+
+Schalter und Regler sind unter Bedachtnahme auf Funktionser-
+fordernisse so anzuordnen, daB ihre Zugehérigkeit zur geschal-
+teten oder geregelten Anlage eindeutig erkennbar ist.
+
+34a-3
+
+OVE-EN 1 Teil 2 $ 34a
+
+34a.8
+
+34a.8.1
+
+34a.8.2
+
+34a.8.2.1
+
+34a.8.2.2
+
+34a.8.2.3
+34a.8.2.4"
+
+34a.9
+34a.9.1
+
+34a.9.2
+
+AnschluB der Heizelemente
+Heizelemente müssen fest angeschlossen sein.
+
+AnschluB der kalten Enden an das Heiz-
+element
+
+Sofern die Heizelemente nicht vom Hersteller mit kalten Enden
+ausgestattet sind, sind die kalten Enden gem#B Anleitung des
+Herstellers der Heizelemente anzuschlieBen.
+
+Werden Heizleitungen in Sonderfällen unmitteibar an die Installation angeschlossen, gitt
+diese Bestimmung für die Verbindung mit der Instatiation,
+
+AnschluB der Installation an die kalten
+Enden
+
+Fiir die Verbindung der kalten Enden mit der Instaliation sind An-
+schluBkasten oder AnschiuBdosen vorzusehen. Diese miissen
+mindestens 100 mm x 100 mm grof sein, um ausreichend Platz
+fiir AnschiuBkiemmen und Reserveléngen von kalten Enden zu
+bieten.
+
+Die Verbindung ist mittels geeigneter AnschluBklemmen? her-
+zustellen, wobei besonders auf die einwandfreie Verbindung
+des Schutzleiters mit einer alifaligen Abschirmung des Heizlei-
+ters zu achten ist.
+
+Drehklemmen und Buchsenklemmen sind nicht zulassig.
+
+In den AnschluBdosen gemäß § 34a.8.2.1 sind ebentalls die An-
+gaben von Nennspannung und Nennleistung der angeschlosse-
+nen Heizkreise anzubringen.
+
+Die AnschluBdosen sind mindestens 20 cm über dem endgülti-
+gen FuBbodenniveau so anzuordnen, daß sie für Prifzwecke
+leicht zugangig sind. -
+
+Besondere MaBnahmen bel der Errichtung der Heizanlage
+
+Eine Heizanlage darf nur gemäß den Angaben einer schriftlich
+vorliegenden Installationsanweisung des Herstellers der Heize-
+lemente oder eines Heizungsinstallationsunternehmens ausge-
+fahrt werden.
+
+Bei der Yerlegung vori Heizleitungen und sinngemäß bei Flä-
+chenheizelementen ist darauf zu achten, daB
+
+(1) die Leitung nicht unzulassig auf Zug beansprucht wird,
+
+(2) die Leitung abgerolit und nicht abgezogen wird,
+
+(3) beim Auslegen keine Schlingen auftreten,
+
+(4) die Leitung nicht geknickt wird,
+
+%) Siehe OVE-A 32.
+
+1983-04
+
+34a-4
+
+¥ IN — +661 J9UUEf "0z we uaqadadsny — MOMIS /|
+
+€001
+
+
+===== PAGE 34/42 =====
+ÖVE-EN 1 Teil 2 534a
+
+34a.9.3
+
+34a.94
+
+34a.9.5
+
+34a.9.6
+
+34a9.7
+
+34a.9.8
+
+34a.9.9
+
+34a.9.10
+
+34a.9.11
+
+1993-04
+
+(5) beim Verlegen über eine scharfe Kante geeignete Unterla-
+gen verwendet werden,
+
+(6) Dehnungsfugen nicht Uberschritten werden, und wenn das
+unvermeidlich ist. eine unzuldssige mechanische Bean-
+spruchung vermieden wird, '
+
+(7) beim Verlegen von FuBbodenheizungen ein Beschädlge_n
+des Heizelementes durch scharfkantige Gegenstände wie
+Steine u. dgl. wirksam verhindert wird.
+
+Die vom Hersteller angegebenen Mindestbiegeradien dürfen
+nicht unterschritten werden. ;
+
+Die Verbindungsmuffen zwischen Heizleiter und kalten Enden
+dürfen nicht auf Zug oder Biegung beansprucht werden.
+
+Heizleiterschleifen dürfen wegen der auftretenden Wärmedeh-
+nung nicht zu starr fixiert und keiner zu starken Pressung ausge-
+setzt werden.
+
+Die Verbindungsmuffen sind nahe an den AnschluBdosen anzu-
+ordnen. Wo dies nicht möglich ist, muß ihre Lage im Installa-
+tionsplan eingetragen sein. |
+Kalte Enden sind mindestens 20 cm über die Muffen hinaus
+ebenso einzubetten wie das Heizelement.
+
+Der aktive Teil eines Heizleiters oder eines anderen Iinearqn
+Heizelementes darf nicht verkiirzt werden, weil hiedurch die
+spezifische Belastung unzulassig verandert werden kann.
+
+Die kalten Enden diirfen, soweit vom Hersteller nicht anders an-
+gegeben, gemäß den Erfordernissen der installation gekürzt
+werden.
+
+Es wird empfohlen, ausreichende Reservelängen in der Anschlußdose zu belassen.
+Heizleitungsschleifen und Heizmatten sind so zu verlegen, daß
+Heizleitungen nie zu nahe nebeneinander zu liegen kommen
+und sich nicht überkreuzen. Wenn ausnahmsweise eine Uber-
+kreuzung nicht vermieden werden kann, muB fir einen gesi-
+cherten Abstand von mindestens 5 cm gesorgt werden. ”
+
+Vorgefertigte Heizmatten sind vor der Einbringung in den
+Estrich (z. B. NaB-auf-naB-Verlegung) so auszurichten, daB die
+Ebene der Heizleitung ungefähr in die Mitte der Estrichschicht
+zu liegen kommt und eine ausreichende Uberdeckung gesichert
+ist.
+
+Unmittelbar nach Fertigstellung des Estrichs im beheizten Be-
+reich sind alle Heizelemente einschlieBlich der Schutzleiter auf
+elektrischen Durchgang zu priifen. Der Isolationswiderstand ist
+zu messen und gemäß $ 34a.9.12 zu dokumentieren.
+
+34a-5
+
+OVE-EN1 Teil 2 834a
+
+34a.9.12
+
+34a.9.13
+
+34a.10
+
+1993-04
+
+Zur Konfrolle der Dichtheit der Verbindungsmuffen zwischen
+Heizleiter und kaltem Ende gegen das Eindringen von Feuch-
+tigkeit sowie zur Feststellung allfälliger Beschadigungen wird
+empfohlen, einige Tage nach AbschluB der Estricharbeiten, je-
+
+‘denfalls aber noch vor der Inbetriebnahme der Anlage, eine
+
+nochmalige Uberpriifung des Isolationswiderstandes durchzu-
+
+führen.
+
+Die gemessenen Werte des Isolationswiderstandes bei der Ver-
+
+legung und vor der Inbetriebnahme dürfen die Grenzwerte ge-
+
+mäß Teil 1 § 19 nicht unterschreiten. Sie sind im Lage- oder An-
+
+schlußplan bzw. Schaltplan gemäß § 34a.4.3 zu dokumentie-
+
+ren.
+
+Werden Heizleitungen ohne kalte Enden verwendet, ist die in
+
+den Anschlußdosen durch das Einführen der Heizleiter anfal-
+
+lende Wärme sicher abzuführen; dies kann durch folgende Maß-
+
+nahmen erreicht werden:
+
+(1) Verwendung möglichst kurzer AnschiuBenden der Heizlei-
+ter in der AnschiuBdose,
+
+(2) Verwendung von Anschlußdosen aus Metall,
+
+(3) Verwendung hochwertiger Klemmen, die bei héherer Dau-
+
+ertemperatur einen ausreichend niederen Ubergangswider-
+
+stand sicherstellen.
+Die Erwdarmung von Klemmen darf im Dauerbetrieb 45 K nicht
+überschreiten. ‘
+Wärmestau .
+Um einen unzulässigen Wärmestau zu vermeiden, sind Stelifla-
+chen größerer Einrichtungsgegenstände, die wärmedämmend
+wirken, sowie Flächen, die mit anderen Installationen belegt
+sind, nicht in den beheizten Bereich einzubeziehen. Das gleiche
+gilt für die Stellflächen von Großgeräten, z. B. in Küchen und
+Kaufhäusern. .
+Durch gleichmäßige Verlegung der Heizelemente ist die Bildung
+von Wärmestau zu vermeiden.
+Heizelemente dürfen nicht in unmittelbarer Nähe von Bauteilen
+angeordnet werden, die Holzspänefüllungen enthalten.
+Metallschirme von Heizleitungen dürfen nicht umittelbar mit Me-
+tallfolien, die als Dampfsperre dienen, in Berührung stehen.
+
+34a-6
+
+7001
+
+L¥ IN — +661 1ouugf "07 we uaqadodsny — HOMIS /|
+
+
+===== PAGE 35/42 =====
+ÖVE-EN 1 Teil 2 8 34b
+
+34b.1
+34b.1.1
+
+34b.1.2
+
+34b.2
+34b.2.1
+
+34b.2.2
+
+34b.2.3
+
+34b.24
+
+34b.25
+
+34b.3
+34b.3.1
+
+1993-04
+
+§34b Dach- und Dachrinnenheizungen
+Geltung
+
+Diese Bestimmungen gelten für elektrische Anlagen zur Entei-
+sung oder zum Freihalten von Eisbildung von Entwasserungs-
+rinnen und -flachen von Déchern oder anderen Bauwerken, bei
+denen Oberflächenwässer abgeleitet werden missen.
+
+Wasentliches Merkmal ist hiebei, daB das Heizungssystem nach Errichtung der entspre-
+chenden Bauwerksteile montiert wird und somit ohne Eingriff in den Baukorper voriberge-
+hend aus der bestimmungsgemaBen Lage gebracht werden kann, z. B. bei Reinigungs-
+und Instandhaltungsarbeiten.
+
+Es unterscheidet sich somit im Aufbau und in der installationstechnik von beheizbaren
+Bauteilen.
+
+Diese Bestimmungen gelten nicht bei Verwendung von selbst-
+regelnden Heizleitungen.
+
+Begriffe und Benennungen
+
+Enteisungsanlage besteht aus dem Heizsystem für die Ge-
+rinne, den Schalt-, Sicherungs- und Schutzeinrichtungen sowie
+den allenfalls zum seinwandfreien und wirtschaftlichen Betrieb
+notwendigen Regeleinrichtungen.
+
+Heizsystem ist die Gesamtheit der Heizelemente einschlieBlich
+der zugehdrigen Anspeiseleitungen sowie der besonderen bau-
+lichen MaBnahmen für den Einbau der Heizelemente.
+
+Helzelement ist ein in seiner elektrischen Bemessung (Nenn-
+spannung, Nennleistung) und in seiner Lange eindeutig festge-
+legter Teil der Enteisungsaniage, weicher der Warmeerzeu-
+gung dient. Die Festlegung der elektrischen Bemessung und
+der L&nge kann gegebenenfalls erst beim Einbau erfolgen.
+
+Kalte Enden sind ein Bestandteil des Hezetementes. '
+
+Spezifische Nennleistung ist die auf die Lange der Heizleitung
+bezogene Leistung, angegeben in W/m.
+Kafte Enden werden dabei nicht zur Länge der Haizleitung gezählt.
+
+Beheizter Bereich ist jener Bereich einer Enteisungsanlage, ei-
+nes Daches oder eines Bauwerkes, in welchem Heizelemente
+installiert sind.
+
+Aufschriften
+
+Heizelemente miissen ein Ursprungszeichen und eine Typen-
+bezeichnung tragen und mit Nennspannung und Nennleistung
+gekennzeichnet sein.
+
+34b-1
+
+OVE-EN 1 Teil 2 §34b
+
+34b.3.2
+
+34b.3.3
+
+34b.4
+
+1993-04
+
+Diese Aufschriften müssen entweder auf dem Heizelement
+selbst, an einer nach dem Einbau zugéngigen Stelle oder an der
+Stelle des Uberganges zur anspeisenden Installation angeord-
+net werden; sie müssen dauerhaft und gut iesbar sein.
+
+Angaben im Verteiler
+
+In dem der Heizungsanlage zugeordneten Verteiler sowie im
+Hauptverteiler des Bauwerkes und des Daches miissen sinnge-
+mäß folgende Hinweise und Plane deutlich sichtbar angebracht
+sein:
+
+(1) Achtung Dachrinnenheizung!
+(Enteisungsheizung, Dachheizung usw.);
+Vorsicht bei Dach- und Spenglerarbeiten und bei Reini-
+gungsarbeiten im Heizungsbereich!
+
+(2) Bei Handwerkerarbeiten im Heizungsbereich unbedingt die
+Heizung allpolig ausschalten! -
+
+(3) Ein Lage- und AnschluBplan der Heizungsaniage, bei um-
+fangreichen Anlagen auch ein Schaltplan.
+
+Die Zuordnung der Schalt-, Regei- und Schutzeinrichtungen zu den einzelnen Abschnitten
+
+der Anlage sowie die dazugehbrigen Nennlsistungen missen aus diesen Plänen ersicht-
+
+lich sein. '
+
+Bei Kleinanlagen mit nicht mehr als zwei Stromkreisen genügt die Angabe der Zuordnung
+
+und der Nennleistung durch Beschriftung der Steuer- und Schutzeinrichtungen (z. B. Kle-
+beschilder).
+
+Angaben bei Offnungen zum Besteigen des
+Daches
+
+Bei Ausstiegsiuken, Fensterdffnungen und Türen zum Bestei-
+gen des Daches sind Hinweise gemäß § 34b.3.2 (1) und (2) an-
+zubringen.
+
+SchutzmaBnahmen
+
+Als SchutzmaBnahme bei elektrischen Anlagen zur Enteisung
+von Dachrinnen und Entwasserungsrohren dürfen nur ange-
+wandt werden
+
+— Fehlerstromschutzschaltung,
+— Nullung mit zuséatzlicher Fehlerstromschutzeinrichtung,
+— Schutzkleinspannung.
+
+Wird Fehlerstromschutzschaltung oder Nullung mit zusatzlicher
+Fehlerstromschutzeinrichtung angewandt, dürfen nur Heizele-
+mente mit einer an den Schutzleiter angeschlossenen konzent-
+rischen Abschirmung, z. B. Geflechtoder Metallmante!, verwen-
+det werden.
+
+34b-2
+
+¥y IN — %661 Jouugf -0z we uaqadalsny — yoms /]
+
+<001
+
+
+===== PAGE 36/42 =====
+OVE-EN 1 Teil 2 $ 34b
+
+34b.5
+
+34b.6
+34b.6.1
+
+34b.6.2
+
+34b.6.2.1
+
+34b.6.2.2
+
+34b.6.2.3
+
+34b.6.2.4
+
+34b.7
+
+34b.7.1
+
+34b.7.2
+
+Schalt- und Regeleinrichtungen
+
+Schalter und Regler sind unter Bedachtnahme auf Funktionser-
+fordemisse so anzuordnen, daß inre Zugehdrigkeit zur geschal-
+teten oder geregelten Anlage eindeutig erkennbar ist. Der
+Schaltzustand muß erkennbar sein.
+
+AnschluB der Heizelemente
+
+AnschiuB der kalten Enden an das Heiz-
+element
+
+Sofern die Heizelemente nicht mit kalten Enden hergestelit sind,
+sind die kalten Enden gemaB der Einbauanleitung der Heizele-
+mente anzuschlieBen.
+
+Werden Heizleitungen in Sonderfällen unmittelbar an die Instaliation angeschiossen, so git
+diese Anforderung für die Verbindung mit der Installation.
+
+Anschluß der Installation an die kalten
+Enden E
+Für die Verbindung der kalten Enden mit der Installation sind
+entsprechend stabile Anschlußkästen oder Anschiußdosen in
+Feuchtraumausführung vorzusehen. Diese müssen minde-
+stens 100 mm x 100 mm groß sein, um ausreichend Platz für An-
+schlußklemmen und Reservelängen von kalten Enden zu bie-
+ten.
+
+Die Verbindung ist mittels geeigneter Anschlußklemmen”) her-
+zustellen, wobei besonders auf die einwandfreie Verbindung
+des Schutzleiters mit der Abschirmung des Heizleiters zu ach-
+ten ist.
+
+Drehklemmen und Buchsenklemme sind nicht zulässig.
+
+In den Anschlußdosen gemäß § 34b.6.2.1 sind ebenfalls die An-
+gaben von Nennspannung und Nennleistung der angeschlosse-
+nen Heizkreise anzubringen.
+
+Die AnschluBdosen sind so anzuordnen, daß sie für Prafzwecke
+leicht zugéngig sind.
+
+Besondere Maßnahmen bei der Errichtung von Enteisungs-
+anlagen
+
+Für Heizleitungen, aus denen Heizelemente aufgebaut sind, be-
+stehen technische Bestimmungen?.
+
+Bei der Auswahl der Heizelemente ist auf die Warmebestéandig-
+keit des Werkstoffes der Dachrinnen und aut die Korrosionsge-
+fahr Bedacht zu nehmen.
+
+") Siehe OVE-A 32
+2) Siehe OVE-K 43 und DIN VDE 0264.
+
+1993-04
+
+34b-3
+
+OVE-EN 1 Teil 2 § 34b
+
+34b.7.3
+
+34b.7.4
+
+34b.7.5
+
+34b.7.6
+
+34b.7.7
+
+34b.7.8
+
+34b.7.9
+
+34b.7.10
+
+1993-04
+
+Bei der Verlegung von Heizelementen fiir Enteisungsaniagen ist
+
+darauf zu achten, daß
+
+(1) das Heizelement nicht unzuldssig auf Zug beansprucht
+wird,
+
+(2) das Heizelement abgerolit und nicht abgezogen wird,
+
+(3) beim Auslegen keine Schlingen auftreten,
+
+(4) das Heizelement nicht geknickt wird,
+
+(5) beim Verlegen über scharle Kanten geeignete Unterlagen
+verwendet werden.
+
+Die vom Hersteller anzugebenden Mindestbiegeradien diirfen
+nicht unterschritten werden. Beim Biegen sind entsprechende
+Lehren zu verwenden.
+
+Die Verhindungsmuffen zwischan Heizleitung und kaiten Enden
+diirfen nicht auf Zug oder Biegung beanspruchtwerden. Sie sind
+mbglichst nahe den AnschluBdosen anzuordnen und gegen me-
+chanische Beschédigung (z. B. Dachbegehung bei Kaminreini-
+gung) zu schiitzen.
+
+Aus Montagegrinden darf das Heizelement, abgesehen von
+den kalten Enden, nicht verkürzt werden, weil dadurch die spezi-
+fische Heizleistung unzuléssig verandert werden kann.
+
+Es wird empfohlen, bei der Verlegung ausreichende Reservelangen in der Nahe der An-
+schiuBdose zu belassen.
+
+Die Heizélemente sind so zu veriegen, daB parallel liegende
+Heizleitungen einander nicht auf längere Strecken beriihren
+kénnen. Dies kann z. B. durch aufgesetzte Abstandshalter oder
+durch im Gerinne fest angebrachte Befestigungslaschen er-
+reicht werden.
+
+An Blechdicher sind vor der Montage der Heizelemente Befe-
+stigungslaschen anzuldten.
+Das unmittelbare Anléten der Heizelemente oder deren Ab-
+schirmung ist nicht zulässig.
+
+Bei der Einfuhrung von Heizelementen in Regenfalirohre oder
+bei Ubergéngen in iotrechte Wasserableitungsrohre ist durch
+die Verwendung geeigneter kleiner Aufhängesättel dafür zu sor-
+gen, daB die Heizleitungen nicht geknickt werden.
+
+Bei langeren lotrechten Fallrohren oder Ableitungskandlen ist
+fiir eine Zugentiastung der Heizelemente zu sorgen.
+
+Dies kann z. B. durch Mitfihren eines korrosionsbesténdigen Tragseiles geschehen, an
+dem das Heizelement gesignet befestigt ist,
+
+34b-4
+
+9001
+
+£y "IN — %661 J9uugf "07 we uaqaBadsny — YIMS /]
+
+
+===== PAGE 37/42 =====
+ÖVE-EN 1 Teil 2 §35
+
+$ 35 Elektrozaungerite®
+35.1 Für Elektrozaungeräte bestehen technische Bestimmungen?.
+
+35.2 Für die Errichtung und den Betrieb von Elektrozäunen bestehen
+technische Bestimmungen®,
+
+1) Siehe OVE-EN 1 Tell 4 § 56.
+?) Sieha QVE-EN 310 bzw. OVE-G/EN 61 011.
+%) Siehe OVE-EN 31.
+
+1993-04 I 35-1
+
+ÖVE-EN 1 Teil 2 836
+
+§ 36 Geräte und Anlagen der Informationstechnik
+36.1 Fiir Geréte und Anlagen der Informationstechnik, das sind Fern-
+meldegerate und- anlagen, Gerétg und Anlagen der Informa-
+tionsverarbeitungstechnik, besteh®n technische Bestimmun-
+gen'.
+
+'} Siehe OVE-F 1, OVE-IT/EN 41 003 und OVE-IT/EN 60 950.
+
+1993-04 . 36-1
+
+ZY IN — 4661 10UURf o7 wre uagadadsny — HIMS /1
+
+Z001
+
+
+===== PAGE 38/42 =====
+ÖVE-EN 1 Teil 2 §36a
+
+§ 36a Rundfunk- und verwandte Geräte sowie Funksendeanlagen
+36a.1 Für Rundfunk- und verwandte Geréte bestehen technische Be-
+stimmungen.
+36a.2 Für Funksendeanlage bestehen technische Bestimmungen?.
+
+'} Siehe OVE-F 40.
+2) Siehe EN 60215,
+
+1993-04 36a-1
+
+OVE-EN 1 Teil 2 837
+
+§ 37 Elektromedizinische Geräte
+
+37.1 Für elektromedizinische Geräte bestehen technische Bestim-
+mungen"),
+
+') Siehe OVE-MGAEC 601 bzw. OVE-MG/EN 60 601.
+1993-04 37-1
+
+8001
+
+¥ "IN — +661 1UURf gz we uaqadalsny — OMIS 'ZI
+
+
+===== PAGE 39/42 =====
+ÖVE-EN 1 Teil 2 / §38
+
+§ 38 SchweiBgerite
+
+38.1 Für LichtbogenschweiBgerite und Wlderstandsschwelßgeräte
+bestehen technische Bestimmungen”.
+38.2 Lichtbogenschweißgeräte, die auf verschiedene Nennein-
+
+gangsspannungen umschaltbar sind, müssen mit einem für die
+höchste Nenneingangsspannung geeigneten Stecker? ausge-
+rüstet sein. Fir den AnschiuB an niederere Nenneingangsspan-
+nungen sind für die entsprechende Nennemgangsspannung ge-
+eignete Adapter zu verwenden.
+38.3 Ein Adapter gemäß $ 38.2 besteht aus folgenden Teilen:
+. (1) Kupplungssteckdose®, die der héchsten Nenneingangs-
+spannung des zu adaptierenden Gerates entspricht,
+
+(2) genormter Stecker für die betreffende AnschiuBspannung
+(ortliche Netzspannung),
+
+(3) einer mindestens 80 cm langen Verbindungsleitung. Diese
+muß mindestens Typ HO7RN-F bzw. AO7RN-F* (GMSud)
+sein, oder hinsichtlich ihrer Beanspruchung gleichwertige
+Leitungen missen eine Kéltebestandigkeit von mindestens
+—25 °C fur Transport, Verlegung und Bewegung im Betrieb
+haben und mit mindestens , K 25“ gakennzeichnet sein.
+
+384 . LichthogenkleinschweiBtransformatoren®, welche auf zwei
+-Nenneingangsspannungen, z. B. 220 V und 380 V bzw. 230 V
+und 400 V, umschaltbar sind, müssen am SchweiBgerat einen
+genormten Stecker® haben. An diesen darf ein Adapter gemäß
+$ 38.3 für den Betrieb mit der niedereren Spannung ange-
+schlossen werden.
+
+") Siehe OVE-M/EN 50 060, OVE-M/EN 50 063 und OVE-M/EN 60 974-1.
+?) Siehe OVE-IG 31 und OVE-IG 33 bzw. OVE EN 60 308.
+
+3) Siehe ONORM E 8661 bzw. E 6664.
+
+*) Siehe OVE-K 40.
+
+%) Siehe OVE-M/EN 50 060.
+
+¢) Siehe ONORM E 6661.
+
+1993-04 I 38-1
+
+ÖVE-EN 1 Teil 2 8 39
+
+39.1
+
+39.2
+
+39.3
+39.3.1
+
+39.3.1.1
+
+39.3.1.2
+
+39.3.1.3
+
+§ 39 Stromschienensysteme
+
+" Aligemeines
+
+Für Stromschienensysteme und Schienenvertsiler (siehe Tab.
+39-1) gelten grundsétzlich die Bestimmungen für Betriebsmitte!
+gemäß $ 25 dieser Bestimmungen.
+
+Auswahl
+
+Bei der Auswahl der Stromschienensysteme sind zu beachten:
+
+(1) bauliche Gegebenheiten,
+
+(2) Zusatzbestimmungen fir Betriebsstétten und Räume sowie
+Anlagen besonderer Art,
+
+(3) Dauerstrombelastbarkeit der Leiter gemäß den technischen
+Bestimmungen?,
+
+(4) themische und dynamische Beanspruchung durch Kurz-
+schluBstrdme,
+
+(5) Schutz gegen direktes Berühren,
+
+(6) Einbeziehung in den Schutz bei indirektem Berühren,
+
+(7) Zahl der Leiter in Abhéngigkeit vom Schutz bei indirektem
+Berühren.
+
+Zum Beispiel ist in TT-Systemen ein Fünfleitersystem erforderlich.
+
+Errichtung
+
+Allgemeine Bestimmungen für‘ fabriksfertige
+Stromschienensysteme
+
+Stromschienensysteme sind gemäß § 25 und $ 30 zu kenn-
+zeichnen; für die ’Schutzleiterkennzeichnung siehe $ 21.6 die-
+ser Bestimmungen.
+
+Maßnahmen {für das Einbeziehen in den
+
+Schutz bei indirektem Berühren
+
+(1) Körper von Stromschienensystemen müssen bei fabriksfer-
+tigen Stromschienensystemen an der dafür vorgesehenen
+AnschluBstelle, bei nicht fabriksfertigen Stromschienen-
+systemen an der eigens dafiir herzurichtenden Anschluf-
+stelle mit dem Schutzieiter verbunden werden.
+
+(2) Für schutzisolierte Stromschienensysteme geiten die Be-
+stimmungen gemäß $ 30.2.4.4, $ 30.2.4.5 und § 30.2.5.2.
+
+Umhüllte Stromschienensysteme missen in ihrem gesamten
+Verlauf der erforderlichen Schutzart entsprechen, auch an den
+Enden und Abzweigen.
+
+') Siehe OVE-EN 1 Teil 3 $ 41, DIN 43 670 und DIN 43 671.
+
+1993-04
+
+39-1
+
+Ly IN — ¥661 10uug( ‘07 we usqedadsny — joms /]
+
+6001
+
+
+===== PAGE 40/42 =====
+OVE-EN 1 Teil 2 839
+
+39.3.14 Anschlußstellen fir Leitungen und Kabel müssen auch nach
+dem Errichten der Stromschienensysteme ohne Schwierigkeit
+zugängig sein,
+
+Anschiufistelien geften nach dem Errichien auch dann als ohne Schwierigkeit zugangig,
+wenn sie z. B. erst nach Entfernen einer abnehmbaren Abdeckung erreicht werden kön-
+nen.
+
+39.3.15 Stromschienensysteme missen in der bestimmungsgemaBen
+Gebrauchslage befestigt werden.
+
+39.3.16 Der zulassige Befestigungsabstand in Léngsrichtung fiir das
+Anbringen von Stromschienansystemen darf nicht Gberschritten
+werden. Die Leiter miissen gegen Verschieben infolge ihrer Ei-
+genmasse gesichert werden. ;
+
+39.3.1.7 Langs- und Querbeanspruchungen der Stromschienensysteme
+; sind durch den Einbau von mechanischen Elementen, z. B.
+durch Anwendung von Dehnungsbändem, zu berücksichtigen.
+
+39.3.1.8 Anschlüsse und Verbindungen, z. B. Anspeisungen, Abgänge,
+Abzweige, dürfen bei fabriksfertigen Stromschienensystemen
+nur mit für das System geeigneten Zubehörteilen und an den
+vorgesehenen Stellen hergestelit werden.
+
+39.3.1.9 Innerhalb zusammengehtrender Anwendungsbersiche sind
+Stromschienensysteme so anzuschlieBen, daB sich in der ge-
+samten Anlage sin einheitliches Drehfeld, vorzugsweise ein
+Rechtsdrehfeld, fir die verdnderbaren Abgänge ergibt.
+
+39.3.1.10 Stromschienensysteme-mussen aus Werkstoffen gebaut wer-
+den, welche nicht zur Brandausbreitung beitragen.
+
+39.3.1.11 In brandgefihrdeten Betriebsstitten müssen Stromschienensy-
+steme mindestens der Schutzart IP 4X? genügen.
+
+39.3.1.12 Stromschienensysteme im Handbereich missen mindestens
+der Schutzart IP 2X? entsprechen,
+
+39.3.2 Errichten nicht fabriksfertiger Stromschienen-
+systeme
+Für Abstéande und Kriechstrecken gelten die Bestimmungen ge-
+
+mäß 8 30.
+
+39.4' Prüfungen
+Vor Inbetriebnahme sind die Prüfungen gemäß § 30 sinngemäß
+durchzuführen,
+
+3 Siehe OVE-A/EN 60 529.
+1993-04 . 39-2
+
+OVE-EN 1 Teil 2 §39
+
+Tab. 39-1: Beispiele für Stromschienensysteme
+
+l Anwendungsbeispiele
+Fabriksfertige Stromschienensysteme
+
+Schienenverteiler ohne Abgénge | Stromversorgung in Gebauden
+sowohl in horizontaler als auch
+vertikaler Richtung an Stelle
+von Leitungen oder Kabeln;
+
+moniagezeitsparende Steiglei-
+tung für Stromversorgung in
+Hochhausern
+
+verénderbare Stromversorgung
+für Verbrauchsmittel, die oft
+den Standort wechseln
+
+Stromversorgung für Kréne
+und Laufkatzen
+
+mit Abgéngen
+
+Schienenverteiler mit verénder-
+baren Abgéngen
+
+Schileifleitungen
+(1) offen
+(2) abgedeckt
+
+Schienenverteiler mit Strom-
+abnehmerwagen
+
+Stromversorgung beweglicher
+Verbrauchsmittel, z. B.
+
+_ Elektrowerkzeuge
+Stromschienensysteme für
+
+veréinderbare Stromversorgung
+Leuchten - für Leuchten
+
+Nicht fabriksfertige Stromschienensysteme
+
+Verbindung zwischen Transfor-
+mator und Niederspannungs-
+hauptschaltanlage an Stelle
+von Kabeln, Steigleitungen in
+Hochhäusern
+
+Stromschienensysteme
+(1) offen
+
+(2) abgedeckt
+
+(3) umhüllt
+
+Schieifleitungen Stromversorgung für Kréne
+
+und Laufkatzen
+
+(2) abgedeckt
+
+1993-04 39-3
+
+0101
+
+¥ IN — %661 JoUuurf ‘07 we uaqaBedsny — HIMS /]

@@ -1,0 +1,771 @@
+
+
+===== PAGE 1/16 =====
+ 
+ 
+ÖVE/ÖNORM 
+ 
+E 8001-2-30 
+ 
+Ausgabe: 2008-12-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Errichtung von elektrischen Anlagen mit 
+Nennspannungen bis AC 1000 V und DC 1500 V –  
+Teil 2-30: Schaltanlagen und Verteiler  
+ 
+Erection of electrical installations with rated voltages up to AC 1000 V and  
+DC 1500 V – Part 2-30: Switchgear and controlgear and distribution boards 
+ 
+Réalisation des installations électriques de tension nominale jusqu'à AC 1000 V et 
+DC 1500 V – Partie 2-30: Appareillage et tableau de répartition 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ICS  
+29.240.01; 91.140.50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                      Ersatz für      siehe nationales Vorwort 
+ 
+ 
+ zuständig 
+OVE/ON-Komitee 
+ 
+ 
+TK E 
+ 
+Elektrische Niederspannungsanlagen 
+ 
+Medieninhaber und Hersteller:  
+OVE Österreichischer Verband für Elektrotechnik 
+ON Österreichisches Normungsinstitut 
+ 
+Copyright © OVE/ON – 2008. Alle Rechte vorbehalten; 
+Nachdruck oder Vervielfältigung, Aufnahme auf oder in 
+sonstige Medien oder Datenträger nur mit Zustimmung 
+des OVE/ON gestattet! 
+E-Mail: copyright@on-norm.at; ove@ove.at 
+ 
+Verkauf von in- und ausländischen Normen und 
+technischen Regelwerken durch:  
+ON Österreichisches Normungsinstitut 
+Heinestraße 38, 1020 Wien 
+E-Mail: office@as-plus.at  
+Internet: http://www.on-norm.at 
+Fax: (+43 1) 213 00-818 
+Tel.: (+43 1) 213 00-805 
+OVE  Österreichischer Verband für Elektrotechnik  
+Eschenbachgasse 9, 1010 Wien 
+E-Mail: verkauf@ove.at 
+Internet: http://www.ove.at 
+Telefax: (+43 1) 586 74 08 
+Telefon: (+43 1) 587 63 73 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+1 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 2/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+2 
+Inhalt 
+Vorwort ................................................................................................................................................................3 
+1 
+Anwendungsbereich .............................................................................................................................4 
+2 
+Normative Verweisungen......................................................................................................................4 
+3 
+Begriffe ...................................................................................................................................................5 
+4 
+Errichtung nicht fabriksfertiger Schaltanlagen und Verteiler...........................................................5 
+4.1 
+Gehäuse und IP-Schutzart....................................................................................................................5 
+4.2 
+Einbau von Betriebsmitteln ..................................................................................................................5 
+4.3 
+Elektrische Verbindungen ....................................................................................................................6 
+4.4 
+Anschlussstellen ...................................................................................................................................6 
+4.5 
+Überlast-, Kurzschlussschutz und Kurzschlussfestigkeit ................................................................7 
+4.6 
+Erwärmung und Verlustleistung ..........................................................................................................7 
+4.7 
+Schutz gegen elektrischen Schlag ......................................................................................................8 
+4.8 
+Kennzeichnung, Typenschild und Dokumentation............................................................................9 
+5 
+Aufstellen und Anschließen von Schaltanlagen und Verteilern.......................................................9 
+5.1 
+Geltungsbereich ....................................................................................................................................9 
+5.2 
+Allgemeine Anforderungen...................................................................................................................9 
+5.3 
+Aufstellung und Montage......................................................................................................................9 
+5.4 
+Anschluss von außen eingeführter Kabel und Leitungen...............................................................13 
+5.5 
+Kennzeichnung der Stromkreise .......................................................................................................13 
+5.6 
+Prüfung und Inbetriebnahme von Schaltanlagen und Verteilern ...................................................13 
+Literaturhinweise ..............................................................................................................................................15 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+2 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 3/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+3 
+Vorwort 
+Aufgrund der Vereinbarung zwischen dem ÖVE und dem Österreichischem Normungsinstitut werden alle 
+elektrotechnischen Dokumente als „Doppelstatusdokumente“ veröffentlicht. Diese Dokumente haben daher 
+sowohl den Status von ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK gemäß ETG 
+1992 als auch den einer ÖNORM gemäß NG 1971. 
+Der Rechtsstatus dieser ÖSTERREICHISCHEN BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist 
+den jeweils geltenden Verordnungen zum Elektrotechnikgesetz zu entnehmen. 
+Bei 
+mittels 
+Verordnungen 
+zum 
+Elektrotechnikgesetz 
+verbindlich 
+erklärten 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORMEN ist zu beachten: 
+− Hinweise auf Veröffentlichungen beziehen sich, sofern nicht anders angegeben, auf den Stand zum 
+Zeitpunkt 
+der 
+Herausgabe 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN 
+FÜR 
+DIE 
+ELEKTROTECHNIK/ÖNORM. 
+Zum 
+Zeitpunkt 
+der 
+Anwendung 
+dieser 
+ÖSTERREICHISCHEN 
+BESTIMMUNGEN FÜR DIE ELEKTROTECHNIK/ÖNORM ist der durch die Verordnungen zum 
+Elektrotechnikgesetz oder gegebenenfalls auf andere Weise festgelegte aktuelle Stand zu berücksichtigen. 
+− Informative Anhänge und Fußnoten sowie normative Verweise und Hinweise auf Fundstellen in anderen, 
+nicht verbindlichen Texten werden von der Verbindlicherklärung nicht erfasst. 
+Erläuterungen zum Ersatzvermerk 
+Die vorliegende Ausgabe ersetzt ÖVE-EN 1, Teil 2:1993, § 30 und ÖVE-EN 1, Teil 2a:1996, § 30 und § 30a, 
+die technisch überarbeitet wurde, wobei auch die normativen Verweisungen aktualisiert wurden. 
+ÖVE/ÖNORM E 8001-2-30:2008 ersetzt ÖVE-EN 1 Teil 2:1993, § 30 und ÖVE-EN 1, Teil 2a:1996, § 30 und  
+§ 30a. Da die zu ersetzende ÖNORMEN jedoch mit der ETV 2002/A1 verbindlich erklärt ist, kann die 
+Zurückziehung dieser Bestimmung erst mit Erscheinen einer neuen ETV erfolgen. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+3 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 4/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+4 
+1 
+Anwendungsbereich 
+Diese ÖVE/ÖNORM behandelt die Ausführung von nicht fabriksfertigen Schaltanlagen und Verteilern. 
+ANMERKUNG 1  
+Ergänzend wird auf die technischen Bestimmungen ÖVE-IM 12, ÖVE-IM 22, ÖVE/ÖNORM 
+EN 62208, IEC 60670-24, IEC 62103 und ÖVE/ÖNORM EN 60204-1 hingewiesen. 
+ANMERKUNG 2  
+Für fabriksfertige Schaltanlagen und Verteiler (typgeprüfte und partiell typgeprüfte Niederspannungs-
+Schaltgerätekombinationen TSK und PTSK) bestehen die technischen Bestimmungen der Reihe ÖVE/ÖNORM  
+EN 60439. 
+Abschnitt 4 dieser Bestimmung ist als Grundlage für die Errichtung von nicht fabriksfertigen Schaltanlagen 
+und Verteilern heranzuziehen. 
+Abschnitt 5 gilt für das Aufstellen und das Anschließen von Schaltanlagen und Verteilern. 
+2 
+Normative Verweisungen 
+Die folgenden zitierten Dokumente sind für die Anwendung dieses Dokuments erforderlich. Bei datierten 
+Verweisungen gilt nur die in Bezug genommene Ausgabe. Bei undatierten Verweisungen gilt die letzte 
+Ausgabe des in Bezug genommenen Dokuments (einschließlich aller Änderungen). Rechtsvorschriften sind 
+immer in der jeweils geltenden Fassung anzuwenden. 
+ÖNORM DIN 43670, Stromschienen aus Aluminium; Bemessung für Dauerstrom 
+ÖNORM DIN 43671, Stromschienen aus Kupfer; Bemessung für Dauerstrom 
+ÖVE/ÖNORM E 8001-1, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 1: Begriffe und Schutz gegen elektrischen Schlag (Schutzmaßnahmen) 
+ÖVE/ÖNORM E 8001-4-44, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1000 V und  
+DC 1500 V – Teil 4-44: Abgeschlossene elektrische Betriebsstätten 
+ÖVE/ÖNORM E 8001-6 Reihe, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V 
+ÖVE/ÖNORM EN 50110-1, Betrieb von elektrischen Anlagen – Teil 1:  Europäische Norm –  
+Teil 2-100: Nationale Ergänzungen 
+ÖVE/ÖNORM EN 60204-1, Sicherheit von Maschinen – Elektrische Ausrüstung von Maschinen –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE/ÖNORM EN 62208, Leergehäuse für Niederspannungs-Schaltgerätekombinationen – Allgemeine 
+Anforderungen 
+ÖVE/ÖNORM EN 60417-1, Grafische Symbole für Betriebsmittel – Teil 1: Übersicht und Anwendung 
+ÖVE/ÖNORM EN 60439 Reihe, Niederspannungs-Schaltgerätekombinationen 
+ÖVE/ÖNORM EN 60529, Schutzarten durch Gehäuse (IP-Code) 
+ÖVE-IM 12, Fabriksfertige Zählerschränke und Zählerverteilerschränke bis 250 V gegen Erde 
+ÖVE-IM 22, Verbindungsmaterial für elektrische Installationen 
+ÖVE-EN 1, Teil 2 Reihe, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 2: Elektrische Betriebsmittel 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+4 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 5/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+5 
+ÖVE-EN 1, Teil 3, § 40, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und Kabeln –  
+§ 40 Beschaffenheit und Verwendung von Leitungen und Kabeln 
+ÖVE-EN 1, Teil 3, § 41, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 3: Beschaffenheit, Bemessung und Verlegung von Leitungen und Kabeln –  
+§ 41 Bemessung von Leitungen und Kabeln in mechanischer und elektrischer Hinsicht, Überstromschutz 
+ÖVE-EN 1, Teil 4, § 60, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 4: Besondere Anlagen – § 60 Hilfsstromkreise 
+ÖVE EN 50178, Ausrüstung von Starkstromanlagen mit elektronischen Betriebsmitteln 
+ÖVE EN 60865-1 (DIN VDE 0103), Kurzschlußströme – Berechnung der Wirkung – Teil 1: Begriffe und 
+Berechnungsverfahren 
+HD 528 S2, Verfahren zur Ermittlung der Erwärmung von partiell typgeprüften Niederspannungs-Schaltgeräte-
+kombinationen (PTSK) durch Extrapolation 
+IEC 62103, Electronic equipment for use in power installations 
+IEC 60670-24, Boxes and enclosures for electrical accessories for household and similar fixed electrical 
+installations – Part 24: Particular requirements for enclosures for housing protective devices and similar power 
+consuming devices 
+3 
+Begriffe 
+Für die Anwendung dieser ÖVE/ÖNORM gelten die Begriffe gemäß ÖVE/ÖNORM EN 60439-1, ÖVE-IM 12 
+und der folgende Begriff: 
+3.1 
+nicht fabriksfertige Schaltanlage 
+Schaltanlage die vom Errichter nach Bedarf aus geeigneten Komponenten zusammengestellt und für die 
+bestimmungsgemäße Anwendung adaptiert wird 
+4 
+Errichtung nicht fabriksfertiger Schaltanlagen und Verteiler 
+Schaltanlagen und Verteiler (zB Schalttafeln, Schaltgerüste, Schaltschränke) müssen allen im Betrieb zu 
+erwartenden thermischen und mechanischen Beanspruchungen standhalten.  
+4.1 Gehäuse und IP-Schutzart 
+4.1.1 Für die Ausführung von nicht fabriksfertigen Schaltanlagen wird für Leerverteiler oder Gehäuse in 
+geschlossener Bauweise auf die technischen Bestimmungen ÖVE-IM 12, ÖVE-IM 22, ÖVE/ÖNORM  
+EN 62208 bzw. IEC 60670-24 verwiesen. 
+4.1.2 Für die Anforderungen an Teile aus Isolierstoff wird auf ÖVE/ÖNORM EN 62208:2005, Abschnitt 9.8 
+verwiesen. 
+4.1.3 Die Schutzart ist gemäß ÖVE/ÖNORM EN 60529 und entsprechend den zu erwartenden 
+Umgebungsbedingungen (zB Staub, Feuchtigkeit, Dämpfe, Vibrationen) zu wählen. 
+Nicht benutzte Einführungsöffnungen sind zu verschließen. Der Verschluss muss die vorgesehene Schutzart 
+erfüllen und darf nur mittels Werkzeug entfernbar sein. 
+4.2 Einbau von Betriebsmitteln 
+4.2.1 Betriebsmittel sind gemäß ÖVE-EN 1, Teil 2, § 25 auszuwählen und zu installieren. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+5 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 6/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+6 
+4.2.2 Anbau von Betriebsmittel an Türen und anderen Abdeckungen  
+4.2.2.1 
+Elektrische Betriebsmittel dürfen an Türen und anderen Abdeckungen nur dann angebracht 
+werden, wenn diese durch geeignete Mittel (zB Scharniere, Kettchen, Seile) mit dem Gehäuse fest verbunden 
+sind. Die Betriebsmittel müssen über flexible Leitungen angeschlossen werden, und die Leitungen sind so zu 
+verlegen und, wenn erforderlich, vor mechanischer Beschädigung (zB durch Schutzrohre oder Schläuche) im 
+Betrieb und bei allfälligen Wartungsarbeiten zu schützen.  Die Leitungen sollten an ihrem ortsfesten Ende auf 
+Klemmen geführt werden, die nach dem Errichten der Schaltanlage oder des Verteilers ohne Schwierigkeit 
+zugängig sind. 
+4.2.2.2 
+Die Körper elektrischer Betriebsmittel mit Betriebsspannungen über AC 50 V und DC 120 V 
+müssen über bewegliche Schutzleiter mit den leitfähigen Konstruktionsteilen oder dem Schutzerdungsleiter 
+der Anlage leitend verbunden werden. Der Querschnitt des beweglichen Schutzleiters muss der 
+Anschlussleitung 
+des 
+Betriebsmittels 
+mit 
+dem 
+größten 
+Nennstrom 
+gemäß 
+ÖVE/ÖNORM  
+E 8001-1:2000, Abschnitt 21.3, Tabelle 21-2 angepasst sein. 
+1) 
+Wenn die Tür oder der Deckel aus Metall ist und wenn die Betriebsmittel mit der Tür oder dem Deckel 
+eine leitfähige Einheit bilden, genügt es, einen gemeinsamen beweglichen Schutzleiter zur Tür zu 
+verlegen und mit dieser zu verbinden, dessen Querschnitt entsprechend dem Betriebsmittel mit dem 
+größten Nennstrom zu wählen ist, jedoch mindestens 4 mm2 betragen muss. 
+2) 
+Ein beweglicher Schutzerdungsleiter zur leitfähigen Tür ist auch dann erforderlich, wenn alle angebauten 
+Betriebsmittel schutzisoliert, die Leitungen jedoch nur basisisoliert sind. 
+4.3 Elektrische Verbindungen 
+4.3.1 Isolierte Leitungen und Kabel sind gemäß ÖVE-EN 1, Teil 3, § 40 auszuwählen. Die Verlegeart für rein 
+verteilerinterne 
+Verdrahtungen 
+ist 
+entsprechend 
+den 
+Verhältnissen 
+im 
+Verteiler 
+zu 
+wählen  
+(zB gebündelt, im Verdrahtungs- oder Kabelkanal). 
+4.3.2 Blanke und gestrichene Leiter sind hinsichtlich ihrer thermischen Beanspruchung gemäß den 
+technischen Bestimmungen ÖNORM DIN 43670 (für Aluminium) bzw. ÖNORM DIN 43671 (für Kupfer) zu 
+bemessen. 
+4.3.3 Leitungen von Hilfsstromkreisen müssen ÖVE-EN 1, Teil 4, § 60 entsprechen. 
+4.3.4 Die Isolierung zwischen Stromkreisen unterschiedlicher Nennspannung sowie zwischen sicher 
+getrennten Stromkreisen ist entsprechend den gesonderten technischen Bestimmungen ÖVE EN 50178 
+auszuführen. 
+ANMERKUNG Bei benachbarten Klemmen für unterschiedliche Spannungen ist ergänzend auf eine ausreichende 
+Kennzeichnung zu achten. 
+4.4 Anschlussstellen 
+4.4.1 Anschlussstellen für von außen eingeführte Leitungen und Kabel dürfen nicht an Türen oder anderen 
+beweglichen Teilen von Schaltanlagen oder Verteilern angeordnet werden und müssen nach deren Errichtung 
+noch ohne Schwierigkeiten zugängig sein. 
+4.4.2 Für Anschlussstellen des Neutralleiters gilt zusätzlich: 
+1) 
+Anschlussmöglichkeiten 
+für 
+von 
+außen 
+eingeführte 
+Neutralleiter 
+müssen 
+entsprechend 
+den 
+Außenleiterquerschnitten und der Anzahl der Zu- und Abgänge vorgesehen werden. Mehrere von außen 
+eingeführte Neutralleiter dürfen nicht an einer Klemme bzw. Klemmstelle geklemmt werden. 
+2) 
+Klemmen für den Neutralleiter müssen isoliert und in der Nähe der zugehörigen Hauptleiteranschlüsse 
+angeordnet sein. Bei Klemmen mit mehreren Klemmstellen müssen die entsprechenden Neutralleiter 
+stromkreisweise lösbar sein. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+6 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 7/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+7 
+3) 
+Konstruktionsteile dürfen nicht als Neutralleiter oder PEN-(PEM, PEL)-Leiter verwendet werden. 
+4.4.3 Für Anschlussstellen des Schutzerdungsleiters gilt zusätzlich: 
+1) 
+Die Anschlussstellen müssen den Querschnitten und der Anzahl der anzuschließenden Leiter 
+entsprechen. Die Anschlüsse müssen stromkreisweise lösbar sein. Mehrere von außen eingeführte 
+Schutzerdungsleiter dürfen nicht an einer Klemme bzw. Klemmstelle geklemmt werden. 
+2) 
+Klemmen für den Schutzerdungsleiter müssen in der Nähe der zugehörigen Hauptleiteranschlüsse 
+angeordnet sein. 
+4.4.4 Anschlussstellen für nicht fest verlegte Leitungen und Kabel müssen eine entsprechende 
+Zugentlastungsvorrichtung aufweisen. 
+4.4.5 Anschlussstellen für von außen eingeführte Leitungen und Kabel müssen in Übereinstimmung mit der 
+Dokumentation eindeutig gekennzeichnet bzw. dauerhaft beschriftet sein. 
+4.5 Überlast-, Kurzschlussschutz und Kurzschlussfestigkeit 
+4.5.1 Der Überlast- und Kurzschlussschutz muss ÖVE-EN 1, Teil 3, § 41 entsprechen. 
+4.5.2 Bei Verwendung von einstellbaren Überstrom-Schutzeinrichtungen müssen die Auslösezeiten und 
+Auslöseströme sowohl der Überlast- als auch der Kurzschlussauslöser so gewählt und eingestellt werden, 
+dass die zulässige thermische Beanspruchung der Leitungen und Kabel nicht überschritten wird. 
+4.5.3 Träger und alle Befestigungsmittel von Leitern müssen so ausgewählt werden, dass die bei 
+Kurzschluss auftretenden Kräfte von allen Teilen ohne Beschädigung aufgenommen werden können 
+(Berechnung der Wirkung von Kurzschluss-Strömen siehe technische Bestimmungen ÖVE EN 60865-1). 
+4.5.4 Für Verteiler mit einem Effektivwert der Kurzschlussfestigkeit bis 10 kA ist bei entsprechender Auswahl 
+der Betriebsmittel (Schaltgeräte, u. dgl.) kein Nachweis der Kurzschlussfestigkeit erforderlich.  
+Für Verteiler mit einem Effektivwert der Kurzschlussfestigkeit über 10 kA bestehen gesonderte technische 
+Bestimmungen (zB ÖVE/ÖNORM EN 60439 Reihe). 
+4.5.5 Die Verteilerverdrahtung auf der Speiseseite von Überstromschutzeinrichtungen darf für die durch die 
+Schutzeinrichtung verminderte Kurzschlussbeanspruchung bemessen werden, wenn sie kurzschluss- und 
+erdschlusssicher ausgeführt ist. 
+ANMERKUNG Kurzschluss- und erdschlusssicher sind zB Leitungsanordnungen aus Leitern, bei denen eine 
+Beschädigung der Basisisolierung und ein Berühren geerdeter Teile durch Abstandshalter, durch Führung in getrennten 
+Isolierstoffkanälen oder -rohren oder durch geeignete Bauart (entsprechend doppelter oder verstärkter Isolierung) 
+verhindert wird. 
+4.6 Erwärmung und Verlustleistung 
+Die Summe der Verlustleistungen aller eingebauten Betriebsmittel ist zu ermitteln und darf die maximal 
+zulässige Verlustleistung des Verteilergehäuses gemäß Herstellerangabe oder Berechnung (zB entsprechend 
+HD 528 S2:1997) nicht überschreiten. 
+Zusätzlich ist die maximal zulässige Umgebungstemperatur, aller Einbauten (Betriebsmittel, Verbrauchsmittel, 
+Leitungen, u. dgl.) einzuhalten. 
+ANMERKUNG Die Einhaltung der maximal zulässigen Verlustleistung des Verteilergehäuses gemäß Herstellerangabe ist 
+nicht geeignet dies sicherzustellen. Es muss auch die Wärmeverteilung im Verteiler beachtet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+7 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 8/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+8 
+4.7 Schutz gegen elektrischen Schlag 
+4.7.1 Maßnahmen zum Schutz gegen direktes Berühren (Basisschutz) 
+4.7.1.1 
+Ist der Zutritt zu Schaltanlagen oder Verteilern für Laien möglich, dürfen abnehmbare Teile, die das 
+direkte Berühren aktiver Teile verhindern nur mittels Werkzeug oder Schlüssel entfernbar sein. 
+4.7.1.2 
+Abschrankungen, zB Holzleisten, als einzige Abgrenzung vor aktiven Teilen dürfen nur in 
+abgeschlossenen elektrischen Betriebsstätten angewendet werden. 
+4.7.1.3 
+Wenn nicht durch Bauart, Anordnung oder besondere Vorrichtungen ein Schutz gegen zufälliges 
+Berühren vorhanden ist, so muss der Abstand zu aktiven Teilen hinter der Abschrankung mindestens 200 mm 
+betragen oder ÖVE/ÖNORM EN 50110-1:2007, Tabelle A.1 entsprechen, je nachdem welche Anforderung 
+höher ist. 
+4.7.1.4 
+Eine Schutzisolierumhüllung darf an keiner Stelle von leitfähigen Teilen (zB Befestigungsschrauben 
+oder andere Montageelemente) so durchbrochen oder geschwächt werden, dass eine Spannung nach außen 
+verschleppt werden kann. 
+ANMERKUNG Informationen 
+zur 
+Anwendung 
+der 
+Schutzzwischenisolierung 
+siehe 
+in 
+der 
+Fachinformation 
+Schutzzwischenisolierung. 
+4.7.2 Maßnahmen zum Schutz bei indirektem Berühren (Fehlerschutz) 
+4.7.2.1 
+Einbeziehung des Körpers von Schaltanlagen und Verteilern in Schutzmaßnahmen mit 
+Schutzleiter: 
+1) 
+Schaltanlagen und Verteiler, deren Körper in eine Schutzmaßnahme mit Schutzleiter einzubeziehen sind, 
+müssen mit einer Anschlussstelle für den Schutzleiter versehen sein. 
+ 
+Die Anschlussstelle muss entsprechend den zu erwartenden Kurzschlussströmen ausreichend 
+dimensioniert und dauerhaft gekennzeichnet sein (zB mit dem Symbol 
+ gemäß den technischen 
+Bestimmungen ÖVE/ÖNORM EN 60417-1, Reg.-Nr. 5019). 
+Verteilerkästen aus Metall, welche für Schutzzwischenisolierung geeignet sind, besitzen auch einen 
+Schutzleiteranschluss. Dieser ist bei Verwendung des Kastens als schutzzwischenisolierter Verteiler nicht 
+anzuschließen. 
+2) 
+Bei Anwendung der Schutzmaßnahme Fehlerstrom-Schutzschaltung muss in Schaltanlagen und 
+Verteilern von der Einführung der Anschlussleitung bis zu den Speiseklemmen der Fehlerstrom-
+Schutzeinrichtung, die den Schutz bei indirektem Berühren für den Verteiler mit übernimmt, die 
+Schutzmaßnahme Schutzisolierung angewendet werden. Das gilt auch für im Zuge dieser 
+Anschlussleitung angeordnete Betriebsmittel zB Vorsicherungen, Überspannungs-Schutzeinrichtungen 
+u. dgl. (siehe auch A.3). 
+3) 
+In Schaltanlagen und Verteilern müssen Körper gemäß ÖVE/ÖNORM E 8001-1:2000, Abschnitt 3.3.7 gut 
+leitend mit dem Schutzleiter verbunden werden. Der Querschnitt der Verbindung muss mindestens 4 mm2 
+Cu entsprechen. 
+ANMERKUNG Das kann durch geeignete Schraubverbindungen, Scharnieren, Nieten u. dgl. erreicht werden. 
+4.7.2.2 
+Für durchgeschleifte Schutzleiter zum Einbeziehen nachgeordneter Betriebsmittel in die 
+Schutzmaßnahme müssen folgende Anforderungen berücksichtigt werden: 
+1) 
+Wenn an nachgeordneten Betriebsmitteln Schutzmaßnahmen mit Schutzleiter angewendet werden, so 
+muss in den Schaltanlagen und in Verteilern ein Schutzerdungsleiter durchgeschleift werden. 
+Konstruktionsteile dürfen für diesen Zweck als Schutzerdungsleiter nur bei Einhaltung von ÖVE/ÖNORM 
+E 8001-1:2000, Abschnitt 21.3 verwendet werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+8 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 9/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+9 
+2) 
+Der durchgeschleifte Schutzerdungsleiter braucht gegenüber Körpern von Schaltanlage und Verteiler 
+nicht isoliert verlegt zu werden. Dies gilt auch für PEN-(PEL; PEM)-Leiter. 
+3) 
+Bei schutzisolierten Schaltanlagen und Verteilern muss im Allgemeinen der durchgeschleifte 
+Schutzerdungsleiter gegenüber den aktiven und inaktiven Teilen ebenso isoliert sein wie die aktiven 
+Teile. Inaktive Teile im Inneren der Schutzisolierumhüllung dürfen nur dann an den durchgeschleiften 
+Schutzerdungsleiter angeschlossen werden, wenn bereits auf der Speiseseite der Schaltanlage bzw. des 
+Verteilers eine Schutzmaßnahme mit Schutzleiter wirksam ist oder in der Schaltanlage bzw. im Verteiler 
+entsprechend 4.7.2.1, 2) realisiert ist. 
+4) 
+Die Schutzleiterschiene bzw. die als Schutzerdungsleiter benutzten Konstruktionsteile müssen geeignete 
+Anschlussstellen haben. 
+4.8 Kennzeichnung, Typenschild und Dokumentation 
+Schaltanlagen und Verteiler müssen mit dem Namen bzw. dem Kurzzeichen des Errichters sowie mit einer 
+eindeutigen Kennung und der erforderlichen Dokumentation gemäß ÖVE-EN 1, Teil 2:1993, § 25.2.6.5 bzw. 
+§ 25.2.6.6 unter Angabe aller erforderlichen technischen Daten (Bemessungsspannung, Bemessungsstrom, 
+Kurzschlussfestigkeit, ermittelte Verlustleistung, u. dgl.) versehen sein. 
+5 
+Aufstellen und Anschließen von Schaltanlagen und Verteilern 
+5.1 Geltungsbereich 
+Diese Bestimmungen gelten für die Auswahl, das Aufstellen, den Zusammenbau von Transporteinheiten, das 
+Befestigen, das Einbeziehen in eine Schutzmaßnahme bei indirektem Berühren (Fehlerschutz), das 
+Anschließen der von außen eingeführten Leiter und die Kennzeichnung der Stromkreise von Schaltanlagen 
+und Verteilern. 
+Die Anforderungen dieses Abschnittes gelten auch für nachträgliche Änderungen, Erweiterungen und die 
+Herstellung vor Ort. 
+5.2 Allgemeine Anforderungen 
+5.2.1 Schaltanlagen und Verteiler müssen so ausgewählt und aufgestellt werden, dass Gefährdungen von 
+Personen vermieden werden und ein hohes Maß an Betriebssicherheit erreicht wird. 
+Bei der Auswahl müssen insbesondere die Betriebs- und Umgebungsbedingungen am Aufstellungsort sowie 
+ÖVE-EN 1, Teil 2, § 25 berücksichtigt werden. 
+5.2.2 Schaltanlagen und Verteiler müssen nach dem Aufstellen und Anschließen die angegebene Schutzart 
+gemäß ÖVE/ÖNORM EN 60529 und den Schutz gegen direktes Berühren aufweisen. 
+Eine Schutzmaßnahme bei indirektem Berühren muss wirksam sein. 
+Geringere Schutzarten als IP2XC, zB IPX0 mit Abschrankungen entsprechend 4.7.1, dürfen nur in 
+elektrischen Betriebsstätten oder abgeschlossenen elektrischen Betriebsstätten gemäß ÖVE/ÖNORM 
+E 8001-4-44 gewendet werden. 
+5.3 Aufstellung und Montage 
+5.3.1 Schaltanlagen und Verteiler müssen verwindungsfrei zusammengebaut, aufgestellt und befestigt 
+werden, zB durch Verwendung von Fundamentschienen, Grundrahmen oder Traggerüsten bzw. sichere 
+Montage an Wänden und/oder Fußböden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+9 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 10/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+10 
+5.3.2 Die Eigenschaften der Schaltanlagen und Verteiler dürfen während der Zwischenlagerung und 
+Montage nicht nachteilig verändert werden, zB durch bauseitige Staub- und/oder Feuchtigkeitseinflüsse. 
+ANMERKUNG Die Herstellerangaben sind zu beachten. 
+5.3.3 Schaltanlagen und Verteiler müssen so angeordnet und aufgestellt werden, dass Breite und Höhe der 
+Gänge die Maße gemäß Bild 1, Bild 2 und Bild 3 nicht unterschreiten. 
+ANMERKUNG Hierbei ist zu beachten, dass die Gänge gegebenenfalls breiter gewählt werden müssen, damit sich die 
+Schranktüren und Schwenkrahmen vollständig öffnen lassen und Einschübe sich vollständig ausziehen lassen. 
+5.3.4 Es müssen Maßnahmen getroffen werden, damit in Notfällen auch bei offenstehenden Schrank- und 
+Gehäusetüren die Ausgänge ohne Schwierigkeiten erreicht werden können. Dies gilt als erfüllt, wenn zB 
+Schrank- bzw. Gehäusetüren in Fluchtrichtung zuschlagen oder sich so weit öffnen lassen, dass die 
+verbleibende Breite die Mindestdurchgangsbreite von 500 mm nicht unterschreitet (siehe Bild 4). 
+5.3.5 Gänge mit einer Länge von mehr als 20 m müssen von beiden Seiten zugängig sein. Für Gänge, die 
+länger als 6 m sind, wird ein beidseitiger Zugang empfohlen. 
+ANMERKUNG Bei beidseitigem Zugang müssen beide Fluchtrichtungen berücksichtigt werden. 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Mindestdurchgangshöhen unter Abdeckungen oder Umhüllungen 
+Bild 1 – Gänge für Niederspannungs-Schaltanlagen mit Schutzart ≥ IP 2X 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+10 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 11/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+11 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Mindestdurchgangshöhen unter blanken aktiven Teilen 
+Bild 2 – Gänge für Niederspannungs-Schaltanlagen mit Schutzart < IP 2X 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+11 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 12/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+12 
+Maße in mm 
+ 
+Es bedeutet: 
+a 
+Mindestdurchgangshöhen unter blanken aktiven Teilen 
+Bild 3 – Gänge für Niederspannungs-Schaltanlagen ohne jeglichen Schutz gegen direktes Berühren 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+12 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 13/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+13 
+Maße in mm 
+Es bedeutet: 
+a 
+Bei gegenüberliegenden Schaltanlagenfronten wird nur auf einer Seite mit Einengung durch offene Türen 
+(d. h. mit Türen, die nicht in Fluchtrichtung zuschlagen) gerechnet. 
+b 
+Türbreiten beachten, d. h. Tür muss sich mindestens 90° öffnen lassen. 
+Bild 4 – Reduzierte Gangbreiten im Bereich offener Türen 
+5.4 Anschluss von außen eingeführter Kabel und Leitungen 
+5.4.1 Von außen eingeführte Kabel und Leitungen müssen vor ihren Anschlussstellen so befestigt werden, 
+dass sie an den Anschlussstellen zug- und druckentlastet sind. 
+5.4.2 Die von außen eingeführten Leiter müssen in Übereinstimmung mit den Schaltungsunterlagen 
+angeschlossen werden. 
+5.4.3 Nach den Anschlussarbeiten müssen die Einführungsöffnungen, sofern nicht bereits vom Hersteller 
+vorbereitet, so verschlossen werden, dass die vorgesehene Schutzart für die gesamte Schaltanlage bzw. für 
+den Verteiler erfüllt wird. 
+5.5 Kennzeichnung der Stromkreise 
+Die Zuordnung der von außen eingeführten Leiter zu ihren Stromkreisen muss eindeutig und dauerhaft 
+ausgeführt sein, zB durch: 
+– 
+Anordnung (räumliche Einteilung) oder 
+– 
+Kennzeichnung der Kabel, Leitungen oder sonstiger Leiter in Übereinstimmung mit den 
+Schaltungsunterlagen (Kennzeichnung gemäß ÖVE-EN 1, Teil 2:1993, § 25.2.6.5). 
+Erforderlichenfalls sind die Stromkreiskennzeichnungen für den Anschluss vom Errichter zu ergänzen. 
+5.6 Prüfung und Inbetriebnahme von Schaltanlagen und Verteilern 
+5.6.1 Schaltanlagen und Verteiler müssen nach ihrer Fertigstellung bzw. nach Abschluss der Montage- und 
+Anschlussarbeiten vor Ort, je nach Zutreffen entweder gemäß ÖVE/ÖNORM EN 60439 Reihe oder gemäß 
+ÖVE/ÖNORM E 8001-6 Reihe geprüft und dokumentiert werden. 
+Das Ergebnis und der Umfang der Prüfung muss dokumentiert und dem Anlagenbuch beigefügt werden. 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+13 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 14/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+14 
+5.6.2 Besichtigung 
+Es muss festgestellt werden, ob 
+1) 
+die vorgesehenen Betriebsmittel vorhanden, vollständig und ordnungsgemäß eingebaut und in 
+Übereinstimmung mit dem Schaltplan verdrahtet sind. 
+2) 
+die Kriech- und Luftstrecken eingehalten sind, 
+3) 
+Schaltanlagen und Verteiler mit Namen oder Kennzeichnung des endgültigen Errichters sowie mit einer 
+eindeutigen Kennung versehen sind. 
+5.6.3 Die Prüfung muss gemäß ÖVE/ÖNORM E 8001-6-61 erfolgen. 
+ 
+ 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+14 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 15/16 =====
+ÖVE/ÖNORM E 8001-2-30:2008 
+15 
+Literaturhinweise 
+ÖVE/ÖNORM E 8001-4-44, Errichtung von elektrischen Anlagen mit Nennspannungen bis AC 1 000 V und 
+DC 1 500 V – Teil 4-44: Abgeschlossene elektrische Betriebsstätten 
+ÖVE/ÖNORM EN 60335-1, Sicherheit elektrischer Geräte für den Hausgebrauch und ähnliche Zwecke –  
+Teil 1: Allgemeine Anforderungen 
+ÖVE EN 1, Errichtung von Starkstromanlagen mit Nennspannungen bis AC 1 000 V und DC 1 500 V 
+TAEV, Technische Anschlussbedingungen für den Anschluss an öffentliche Versorgungsnetze mit 
+Betriebsspannungen bis 1 000 V1) 
+CLC/TR 60890, Verfahren zur Ermittlung der Erwärmung von partiell typgeprüften Niederspannungs-
+Schaltgerätekombinationen (PTSK) durch Extrapolation 
+IEC 60364-4-41, Low-voltage electrical installations – Part 4-41: Protection for safety – Protection against 
+electric shock 
+BGBl. Nr. 106/1993, Elektrotechnikgesetz 1992 – ETG 1992 
+Fachinformation Schutzzwischenisolierung, Schutzzwischenisolierung als Schutzmaßnahme des 
+Fehlerschutzes von betriebsfertigen Verteilern und Schaltgerätekombinationen mit Nennspannungen bis  
+250 V AC gegen Erde2) 
+                                                 
+1)  Herausgegeben vom Verband der Elektrizitätsunternehmen Österreichs (VEÖ), Brahmsplatz 3,  
+Postfach 123, A-1041 Wien 
+2)  Herausgegeben vom OVE – Österreichischer Verband für Elektrotechnik, Eschenbachgasse 9,  
+1010 Wien, http://www.ove.at/oek/fachinfo/OVE-IM12.pdf 
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+15 von 16
+www.ris.bka.gv.at
+
+
+===== PAGE 16/16 =====
+Wichtige Informationen für Norm-Anwender
+ÖVE/ÖNORMEN  sind Regeln, die im Dialog und Konsens
+aller Betroffenen und Interessierten entwickelt werden. Sie legen im elektro-
+technischen Bereich Anforderungen an Produkte, Anlagen, Dienstleistungen,
+Systeme und Qualifikationen fest und definieren, wie die Einhaltung dieser
+Anforderungen überprüft wird.
+Von Ihrem Wesen her sind Normen Empfehlungen. Ihre Anwendung ist somit
+freiwillig, aber naheliegend, da Normen den aktuellen Stand der Technik do-
+kumentieren: das, was in einem bestimmten Fachgebiet „Standard“ ist. Dafür
+bürgen das hohe Fachwissen und die Erfahrung der Experten und Expertin-
+nen in den zuständigen Komitees auf nationaler, europäischer und internatio-
+naler Ebene – sowie die Kompetenz des Österreichischen Verbands für Elek-
+trotechnik (OVE) und seiner Referenten.
+Aktualität des Normenwerks. Analog zur technischen und
+wirtschaftlichen Weiterentwicklung unterliegen Normen einem kontinuierli-
+chen Wandel. Sie werden vom zuständigen OVE/ON-Komitee laufend auf Ak-
+tualität überprüft und bei Bedarf überarbeitet und dem aktuellen Stand der
+Technik angepasst. Für den Anwender von Normen ist es daher wichtig,
+immer Zugriff auf die neuesten Ausgaben der Normen seines Fachgebiets zu
+haben, um sicherzustellen, dass seine Produkte und Produktionsverfahren
+bzw. Dienstleistungen den Markterfordernissen entsprechen.
+Wissen um Veränderungen. Um zuverlässig über Änderungen
+in den Normenwerken informiert zu sein und um stets Zugriff auf die jeweils
+gültigen Fassungen zu haben, bietet „Austrian Standards plus Publishing“
+gemeinsam mit dem Österreichischen Verband für Elektrotechnik den Norm-
+Anwendern zahlreiche und auf ihre Bedürfnisse zugeschnittene Angebote.
+Das reicht von klassischen Fachgebiets-Abonnements bis hin zu innovativen
+kundenspezifischen Online-Lösungen und Update-Services.
+Ausländische Normen & Regelwerke: Über »AS+P« können auch
+Internationale Normen (ISO) sowie Normen und Regelwerke aus allen Län-
+dern der Welt bezogen werden – ein besonders wichtiger Service für die
+exportorientierte Wirtschaft.
+Ebenso sind Dokumente anderer österreichischer Regelsetzer bei »AS+P«
+erhältlich.
+Die »Austrian Standards plus GmbH« ist ein
+Unternehmen des Österreichischen Normungsinstituts
+Austrian Standards plus Publishing
+(AS+P)
+Heinestraße 38, 1020 Wien
+E-Mail:
+sales@as-plus.at
+Internet: www.as-plus.at/shop
+Fax:
++43 1 213 00-818
+Tel.:
++43 1 213 00-805
+Informationen über Dienstleistungen und Angebote von
+Austrian Standards plus Publishing und OVE bei:
+OVE Normung
+OVE Österreichischer Verband für
+Elektrotechnik
+Eschenbachgasse 9, 1010 Wien
+E-Mail:
+ove@ove.at
+Internet: www.ove.at
+Fax:
++43 1 586 74 08
+Tel.:
++43 1 587 63 73
+BGBl. II - Ausgegeben am 12. Juli 2010 - Nr. 223
+16 von 16
+www.ris.bka.gv.at
