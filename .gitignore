@@ -24,3 +24,6 @@ out/
 # OS
 .DS_Store
 Thumbs.db
+
+# Baufeld E2: Rohordner lokal, gepusht wird die Zip (DXF komprimiert 6%)
+/Projekte/Baufeld E2/
