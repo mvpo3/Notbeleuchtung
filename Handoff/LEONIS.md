@@ -4,29 +4,31 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (zuletzt 2026-08-28) — HIER WEITER
+## STAND (zuletzt 2026-08-28 abends) — HIER WEITER
 
-**Slice 2 (Platzierung) = DONE, lokal committet, NOCH NICHT gepusht.**
-Branch `leonis/slice2-platzierung` (4 atomare Commits ab `08859f7`), working tree
-clean. `pytest -q` → **24 passed, 0 skipped**, `ruff check .` sauber.
+**Slice 2 = gepusht, PR #4 offen** (github.com/mvpo3/Notbeleuchtung/pull/4,
+CODEOWNERS-Review + CI abwarten). **knowledge/ (14 Norm-PDFs) liegt auf main**
+(gitignore-Ausnahme `!knowledge/**`; Repo ist PRIVATE — wegen der lizenzpflichtigen
+Norm-PDFs NICHT public stellen).
 
-Gebaut: `platzierung/{geometry.py, communal_stgh_strategy.py, platzierer.py}`,
-`symbols/{schrack_symbol_mapping.yaml, __init__.py}`, Tests in `tests/platzierung/`,
-`build_fake_bundle` nutzt echten `NotlichtPlatzierer`. Design (mit Owner bestätigt):
-**generativ statt faithful** — 1 RZ je Fluchtweg-Segment am Ausgangs-Endpunkt,
-Position matcht Fixture exakt; GT-Sub-Grad-Rotationen bewusst NICHT reproduziert.
-Details: `docs/PORT_LOG.md` (Slice-2-Tabelle) + Plan
-`~/.claude/plans/weiter-rippling-codd.md`.
+**Slice 3 (Render) = DONE (Code), lokal auf `leonis/slice3-render`** (5 atomare
+Commits ab `5a86d8b`, zweigt vom Slice-2-Branch ab). `pytest -q` → **40 passed,
+0 skipped**, `ruff check .` sauber, E2E asserted `rendered: True`.
 
-**Als Erstes morgen entscheiden (User-GO nötig):** `leonis/slice2-platzierung` →
-PR nach `main` pushen? (CODEOWNERS zieht Reviewer, CI `contract`+`ci`.) User wollte
-gestern erst NICHTS pushen.
+Gebaut: `symbols/{library.py, inserter.py}` (Port schrack_library/schrack_inserter,
+generativ verschlankt), `hauptengine/render/dxf_renderer.py` (Contract B +
+RaumModell → DXF: 5 RZ auf `E_Sicherheitsbeleuchtung`, F13-Stromkreis-Labels mit
+Anti-Kollision, Raum-Konturen, Fluchtweg-Segmente, VPORT), `pipeline.run(...,
+out_path=)` (ohne out_path weiter `rendered: False` — kompatibel), Tests
+`tests/render/` (15 Stück). KEIN Contract angefasst. Design-Entscheide +
+Herkunfts-Commits: `docs/PORT_LOG.md` Slice-3-Tabelle; Plan
+`~/.claude/plans/handoff-agile-summit.md`.
 
-**Danach: Slice 3 (Render, Hauptengine)** — nächster Leonis-Task. Port aus
-elektro-planer: `backend/engine/{dxf_writer,dxf_layers,layout_template}.py` +
-Insert-Infra `backend/symbols/{schrack_inserter,schrack_library}.py` +
-`CAD_Symbole/E-Symbole.dxf` → echter Notbeleuchtungs-DXF aus Contract B. Ergänzt das
-in Slice 2 gestartete `symbols/`. Board: `docs/PROGRAMM_NOTBELEUCHTUNG.md` Zeile 3.
+**Offen für Slice-3-Abschluss:** (1) DoD-Sichtprüfung: generierten DXF gegen
+4OG-GU-PDF prüfen (Datei wurde dem User geschickt), (2) User-GO: Branch pushen +
+PR (nach/auf PR #4 gestackt). **Danach: Slice 5-Anteil** (dünne FastAPI
+`api/main.py POST /plan`) oder Port-Staging für Enis/Selman auf Zuruf.
+`layout_template` (Titelblock/PDF) bewusst deferred → PORT_LOG „Geplante Ports".
 
 Offener Rest aus Slice 2 (kein Blocker, Enis' Slice 1): FakeNorm mappt
 `fuer_fluchtweg_abschnitt` auf die GANG-Regel → alle 5 RZ nutzen `notlicht_ks_stiege`;
