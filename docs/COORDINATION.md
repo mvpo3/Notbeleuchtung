@@ -52,7 +52,9 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
   Wände (= die 14k-LOC-Port-Maschinerie). Offene Design-Frage an F1/Owner (siehe unten).
 - [x] S4 `tueren` (TÜR-INSERTs → `Tuer`, Breite aus Blockname cm→mm) — **Mollgasse echt grün**
   (≥10 Türen, Achsmarker/Türöffner ausgeschlossen). Suite 75.
-- [ ] S3 raumtyp · [ ] S5 zirkulation · [ ] S6 provider full → READY
+- [x] S5 `zirkulation` (09-WEG → `FluchtwegSegment` + networkx-Graph + Ausgänge) —
+  **Mollgasse echt grün** (77 Weg-Polylinien → Segmente + Knoten/Kanten). Suite 77.
+- [ ] S3 raumtyp · [ ] S6 provider full → READY
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
 
 **OFFENE FRAGE (Owner):** Echte Raum-*Polygone* brauchen dicke-Wand-Handling. Türen
