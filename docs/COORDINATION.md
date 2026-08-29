@@ -45,7 +45,8 @@ Branch `selman/raumerkennung-dxf`. Baut echten `ArchitekturRaumProvider.parse(dx
 Primärziel Mollgasse (mm). **Kein Contract-Touch** (rein additiv). E2E bleibt vorerst
 auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice mit F1-Konsens.
 - [x] S0 Scaffold (`provider.py` Stub, `tests/raumerkennung/`) — Suite grün (69), committed
-- [ ] S1 dxf_load · [ ] S2 waende→räume · [ ] S3 raumtyp · [ ] S4 tueren · [ ] S5 zirkulation · [ ] S6 provider full → READY
+- [x] S1 `dxf_load` (öffnen + $INSUNITS→mm + `bounds_mm`) — Mollgasse-Test grün (71), committed
+- [ ] S2 waende→räume · [ ] S3 raumtyp · [ ] S4 tueren · [ ] S5 zirkulation · [ ] S6 provider full → READY
 
 ## Log (append-only, neueste oben)
 - <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
