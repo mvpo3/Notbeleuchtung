@@ -60,6 +60,35 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — FIX Ausgänge + Skala (nach Analyse ALLER 6 Projekte)
+User-Feedback: „Ausgänge falsch". Ursache: Heuristik „09-WEG-Endknoten nahe Bounding-Box"
+→ 88 fragmentierte 2-Punkt-Segmente, deren Enden am **Planrahmen** liegen (die 09-WEG-
+Annotation ist kein begehbarer Weg). Ergab 11 Müll-Ausgänge.
+
+**Projekt-Analyse (4 Agenten, alle Ordner):**
+- 3 Layer-Konventionen: Mollgasse (`02-TWA/09-WEG/TÜR-80`), Fischamender (`A_Waende/
+  A_Tueren/A_Raeume/A_Fluchtweg`), ArchiCAD-numerisch (`110/120/130 Wand`, `810/815 Raum`
+  + `ROOM_NAME`-ATTRIB) für Barawitzka/Herrenholz/Baufeld.
+- **`$INSUNITS` lügt überall**: leere Pläne in METERN, fertige in mm, beide oft Code 4/6.
+- **Kein Plan hat ein explizites Ausgang-Symbol.** Fertige Pläne: RZ/Sicherheitsleuchten
+  auf `E_Sicherheitsbeleuchtung` (ATTRIB `ANLAGE='Eak'`) bzw. `dp_GE_SIBEL` = OUTPUT.
+- **3 leere Inputs haben fertige Raum-Polygone** auf `_815`/`810 Raum`/`A_Raeume` → der
+  Schlitz-Problem-Killer (nächster Slice: Raum aus Layer statt Wand-Polygonisierung).
+- Ich hatte gegen die FALSCHE Datei getestet: `WHA_MOL_EG.dxf` = fertig (Output). Echter
+  Input = `Projekte/Mollgasse/Erdgeschoß.dxf` (Meter).
+
+**Gefixt (Owner-Wahl: Außentüren + Skala-Fix):**
+- `dxf_load._calibrate_factor`: mm-Faktor per Dekaden-Snap aus Wand-Ausdehnung (Input
+  Meter→×1000). `$INSUNITS` nur noch Fallback.
+- `tueren.ausgaenge_aus_dxf`: Ausgang = Außen-/Eingangstür (`WET_AUSSEN`/`WET`/`SCHIEBETÜR`/
+  `Fenstertür`), `typ=final_exit`; Außentüren tragen `ist_notausgang=True`.
+- `zirkulation`: Ausgang-Erzeugung entfernt (nur noch Segmente+Graph), `reason` ohne Rand.
+- Provider zieht Ausgänge aus Türen. Mollgasse: 11 Müll → **6 echte Außentüren**. Suite **86**.
+
+**Nächster Schritt (empfohlen):** Raum-Polygone aus den Raum-Layern (`_815`/`810`/
+`A_Raeume`) statt Wand-Polygonisierung — löst die 184-Schlitze für 3 Projekte. Danach
+Parser-Profile (Mollgasse / A_* / ArchiCAD-numerisch) trennen.
+
 ### 2026-08-29 — S3–S6 fertig: parse() steht, Teil-READY (Owner-Weg B)
 Owner-Entscheidung: **B** — erst die Teile bauen, die auf echten Plänen JETZT gehen.
 

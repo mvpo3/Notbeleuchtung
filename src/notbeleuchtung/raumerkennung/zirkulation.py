@@ -16,8 +16,6 @@ from itertools import pairwise
 import networkx as nx
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import (
-    Ausgang,
-    BBox,
     Edge,
     FluchtwegSegment,
     Node,
@@ -28,7 +26,6 @@ from .dxf_load import DxfPlan
 
 WEG_PREFIX = ("09-WEG",)
 _SNAP_MM = 100.0        # Endpunkte in diesem Raster fallen zusammen
-_RAND_TOL_MM = 2000.0   # „nahe Außenkante" für Ausgang-Erkennung
 _LONG_RUN_MM = 5000.0
 
 XY = tuple[float, float]
@@ -53,17 +50,7 @@ def _laenge(pts: list[XY]) -> float:
     return sum(math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1))
 
 
-def _am_rand(p: XY, bounds: BBox) -> bool:
-    (xmin, ymin), (xmax, ymax) = bounds.min_xy, bounds.max_xy
-    return (
-        abs(p[0] - xmin) <= _RAND_TOL_MM or abs(p[0] - xmax) <= _RAND_TOL_MM
-        or abs(p[1] - ymin) <= _RAND_TOL_MM or abs(p[1] - ymax) <= _RAND_TOL_MM
-    )
-
-
-def _reason(pts: list[XY], bounds: BBox) -> str:
-    if _am_rand(pts[0], bounds) or _am_rand(pts[-1], bounds):
-        return "exit"
+def _reason(pts: list[XY]) -> str:
     if _laenge(pts) >= _LONG_RUN_MM:
         return "long_run"
     if len(pts) > 2:
@@ -71,10 +58,12 @@ def _reason(pts: list[XY], bounds: BBox) -> str:
     return "direction_change"
 
 
-def zirkulation_aus_dxf(
-    plan: DxfPlan, bounds: BBox
-) -> tuple[ZirkulationsGraph, list[Ausgang]]:
-    """Fluchtweg-Segmente + Graph + Ausgänge aus den 09-WEG-Layern."""
+def zirkulation_aus_dxf(plan: DxfPlan) -> ZirkulationsGraph:
+    """Fluchtweg-Segmente + Knoten/Kanten-Graph aus den 09-WEG-Layern.
+
+    Ausgänge werden NICHT hier bestimmt (die 09-WEG-Annotation endet am
+    Planrahmen, nicht am Ausgang) — sie kommen aus den Außentüren (``tueren``).
+    """
     polylinien = _weg_polylinien(plan)
 
     segmente: list[FluchtwegSegment] = []
@@ -85,7 +74,7 @@ def zirkulation_aus_dxf(
                 segment_id=f"seg_{i}",
                 polyline_mm=[(float(x), float(y)) for x, y in pts],
                 laenge_mm=_laenge(pts),
-                reason=_reason(pts, bounds),
+                reason=_reason(pts),
             )
         )
         snapped = [_snap(p) for p in pts]
@@ -93,25 +82,15 @@ def zirkulation_aus_dxf(
             if a != b:
                 g.add_edge(a, b, len_mm=math.dist(a, b))
 
-    # Knoten-IDs vergeben
     node_id: dict[XY, str] = {p: f"n_{k}" for k, p in enumerate(g.nodes, start=1)}
-    nodes: list[Node] = []
-    ausgaenge: list[Ausgang] = []
-    for p in g.nodes:
-        deg = g.degree(p)
-        rand = _am_rand(p, bounds)
-        typ = "exit" if (deg == 1 and rand) else "junction"
-        nodes.append(Node(id=node_id[p], typ=typ, xy_mm=(float(p[0]), float(p[1]))))
-        if typ == "exit":
-            ausgaenge.append(
-                Ausgang(id=f"exit_{len(ausgaenge) + 1}",
-                        xy_mm=(float(p[0]), float(p[1])), typ="final_exit")
-            )
-
+    nodes = [
+        Node(id=node_id[p], typ="junction", xy_mm=(float(p[0]), float(p[1])))
+        for p in g.nodes
+    ]
     edges = [
         Edge.model_validate(
             {"from": node_id[a], "to": node_id[b], "len_mm": d["len_mm"]}
         )
         for a, b, d in g.edges(data=True)
     ]
-    return ZirkulationsGraph(nodes=nodes, edges=edges, segmente=segmente), ausgaenge
+    return ZirkulationsGraph(nodes=nodes, edges=edges, segmente=segmente)

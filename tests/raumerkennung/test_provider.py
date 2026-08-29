@@ -24,3 +24,14 @@ def test_mollgasse_parse_valid(mollgasse_eg):
     assert len(rm.tueren) >= 10
     assert len(rm.zirkulation.segmente) > 0
     RaumModell.model_validate(rm.model_dump(by_alias=True))
+
+
+def test_mollgasse_leer_parse_ausgaenge(mollgasse_blank_eg):
+    # Echter Input (Meter) → kalibriert; Ausgänge aus Außentüren, nicht Weg-Enden.
+    rm = ArchitekturRaumProvider().parse(str(mollgasse_blank_eg), "EG")
+    assert isinstance(rm, RaumModell)
+    assert len(rm.ausgaenge) >= 1
+    assert all(a.typ == "final_exit" for a in rm.ausgaenge)
+    # deutlich weniger als die alte Müll-Heuristik (11 Weg-Endpunkte).
+    assert len(rm.ausgaenge) <= 8
+    RaumModell.model_validate(rm.model_dump(by_alias=True))
