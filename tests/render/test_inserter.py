@@ -43,11 +43,20 @@ def test_insert_fixture_platzierungen(ergebnis):
     assert len(inserts) == 5
 
 
-def test_xor_mirror_mapping_entry():
-    # notlicht_ks_stiege_rechts trägt mirror_x im MAPPING; Contract-mirror_x
-    # obendrauf hebt die Spiegelung wieder auf (XOR).
+def test_xor_mirror_mapping_entry(monkeypatch):
+    # Mapping-Level mirror_x XOR Contract-mirror_x. Synthetischer Eintrag, damit
+    # der Test nicht davon abhängt, ob gerade ein kuratiertes Symbol mirror_x nutzt
+    # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
+    fake = dict(library.load_mapping())
+    fake["_mirror_probe"] = {
+        "block_name": "notbeleuchtung richtungspfeil nach unten",
+        "label": "probe",
+        "category": "notlicht",
+        "mirror_x": True,
+    }
+    monkeypatch.setattr(library, "load_mapping", lambda: fake)
     doc = ezdxf.new("R2018")
-    base = {"xy_mm": (0.0, 0.0), "catalog_key": "notlicht_ks_stiege_rechts", "kind": "rz"}
+    base = {"xy_mm": (0.0, 0.0), "catalog_key": "_mirror_probe", "kind": "rz"}
     nur_mapping = inserter.insert_platzierung(doc, Platzierung(**base))
     assert nur_mapping.dxf.xscale < 0
     beide = inserter.insert_platzierung(doc, Platzierung(**base, mirror_x=True))
