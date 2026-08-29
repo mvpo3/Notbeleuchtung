@@ -60,6 +60,59 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+---
+## ═══ SELMAN: HIER MORGEN WEITER (Zusammenfassung 2026-08-29) ═══
+
+**Branch:** `selman/raumerkennung-dxf` (gepusht). Setup: siehe oben §0. Test: `pytest -q`
+→ **95 passed**. Ruff sauber. Plan-Datei: `.claude/plans/du-bist-fenster-delightful-wozniak.md`.
+
+**Was steht — `ArchitekturRaumProvider.parse(dxf, floor) -> RaumModell`** liest 5 CAD-
+Familien (Mollgasse / Fischamender / Barawitzka / Herrenholz / Baufeld). Module in
+`src/notbeleuchtung/raumerkennung/`:
+- `dxf_load.py` — öffnen, **Wand-Layer per Muster** (`WALL_PATTERN`), **Skala aus Geometrie**
+  (Span-Gate 15–500 m + Tür-ARC-Radius; `$INSUNITS` ignoriert — lügt).
+- `waende.py` — Wand-Segmente → `extract_room_faces` (Port). Fallback-Raumquelle.
+- `raumlayer.py` — **echte Raum-Polygone aus Raum-Layern** (`81\d Raum`/`Raumbegrenzung`/
+  `A_Raeume`) + Name (`ROOM_NAME`-ATTRIB / MTEXT) → `classify_room`. Provider bevorzugt das.
+- `raumtyp.py` — Stempel→`raum_typ`+Flags (`raumtyp_flags` Helper).
+- `tueren.py` — Türen: benannte Blöcke `TÜR…`/`ÖFFNUNG…` + **ARC-Schwenkbogen-Fallback**
+  (ArchiCAD). Alle Familien liefern Türen (F1-Naht).
+- `zirkulation.py` — 09-WEG → Segmente + networkx-Graph.
+- `footprint.py` — **Raster-Flood-Fill Gebäude-Umriss**; Hauptausgang = Doppeltür (2 ARCs)
+  am Rand.
+- `provider.py` — verdrahtet alles.
+
+**Zahlen heute (EG je Projekt):** Räume — Fischamender 68 · Herrenholz 473 · Baufeld 220 ·
+Mollgasse 184 (Fallback, kein Raum-Layer) · Barawitzka 2 (schwach). Türen — Mollgasse 44 ·
+Fischamender 120 · Barawitzka 116 · Herrenholz 140 · Baufeld 191. Hauptausgänge — Mollgasse 4.
+
+**OFFENE PUNKTE (Priorität) — inkl. F1-Bugmeldungen (Board `docs/COORDINATION.md` §Bugs):**
+1. **B2 (F1, wichtig): `zirkulation` + Ausgänge nur Mollgasse-Layer.** `zirkulation_aus_dxf`
+   sucht `09-WEG`; Fischamender-Fluchtweg liegt auf **`A_Fluchtweg`** → 0 Segmente/0 Ausgänge,
+   F1-RZ-Routing unmöglich. FIX: **Fluchtweg-Layer per Muster** (wie `WALL_PATTERN`) +
+   Ausgang-Erkennung pro Familie. F1-Hinweis: Stiegenhaus BT1 aus `S-STRS`-Layer, Cluster
+   bei mm (20928, 85023).
+2. **B1 (F1): Tür-Doppelzählung.** Fischamender: jede Tür als 2 ARC-Schwenkbögen → ~42
+   Quasi-Duplikate <20 cm (102 statt ~60). FIX: Dedup-Cluster <300 mm je Tür-Position
+   (betrifft `_arc_tueren` UND ggf. Doppeltür-Paare in `footprint`).
+3. **Hauptausgang generalisieren** — Doppeltür-2-ARC nur Mollgasse (4). Fischamender/Baufeld 0.
+   Ggf. F1-seitig via `richtung_durch_tuer` an echten `tueren` — mit F1 abklären.
+4. **Baufeld Wände sind INSERT-Blöcke** (`Wand_*`) → Footprint sieht nur 126 Linien (99%
+   außen, kaputt). **Wand-Block-Descent** (INSERT-Transform) — hilft Footprint/Hauptausgang.
+5. **Barawitzka Räume (nur 2)** — Polygone auf `Icon`-Layern/LINE-Loops, nicht geschl. LWPOLY.
+6. **Mollgasse-Räume** (kein Raum-Layer) → Face-Clustering (Union-Find, NICHT DBSCAN —
+   auditierbarer, keine neue Dep). Nebenbefund F1: 20/59 Räume Fragmente (Gap-Healing-Grenze).
+7. **Fake-Swap E2E** offen (4OG-Golden ≠ echter DXF; mit F1 neue Golden abstimmen).
+
+**⚠️ GIT-TANGLE (Board-Log):** F1-Platzier-Commit `e87a745` liegt versehentlich auf diesem
+Branch `selman/raumerkennung-dxf`. Vor PR entwirren (F2-Raumerkennung von F1-Platzierung
+trennen) — mit F1 abstimmen.
+
+**Naht-Regeln:** nur `raumerkennung/` + `hauptengine.contracts`. Contract NICHT ändern.
+Renders (Beleg) via scratchpad-Skripte; Beispiel-Outputs lagen in `output/` (untracked).
+
+---
+
 ### 2026-08-29 — Türen über ALLE Familien (F1-Naht: `richtung_durch_tuer`)
 F1-Hinweis: `richtung_durch_tuer` greift automatisch, sobald echte `RaumModell.tueren`
 an den realen Öffnungen stehen. → F2-Job: `tueren` pro Familie vollständig.
