@@ -3,10 +3,9 @@ from __future__ import annotations
 
 from notbeleuchtung.raumerkennung.dxf_load import bounds_mm, lade_dxf
 from notbeleuchtung.raumerkennung.footprint import (
-    ausgaenge_aus_umriss,
     gebaeude_umriss,
+    hauptausgaenge,
 )
-from notbeleuchtung.raumerkennung.tueren import tueren_aus_dxf
 
 
 def test_synth_umriss_innen_aussen(synth_dxf):
@@ -16,16 +15,14 @@ def test_synth_umriss_innen_aussen(synth_dxf):
     # Es gibt sowohl Außen- als auch Innenbereich.
     assert umriss.aussen.any()
     assert (~umriss.aussen).any()
-    # Die einzelne Innentür (Trennwand-Mitte) ist KEIN Perimeter.
-    assert umriss.ist_perimeter((5000.0, 2500.0)) is False
+    # Außenwand-Mittelpunkt liegt am Rand, die Innentür (Mitte) nicht.
+    assert umriss.ist_am_rand((4000.0, 0.0)) is True      # Unterkante-Mitte
+    assert umriss.ist_am_rand((2500.0, 2500.0)) is False  # Raum-Inneres
 
 
 def test_mollgasse_leer_hauptausgaenge(mollgasse_blank_eg):
     plan = lade_dxf(mollgasse_blank_eg)
-    tueren = tueren_aus_dxf(plan)
-    ausg = ausgaenge_aus_umriss(plan, tueren, bounds_mm(plan))
-    # Wenige echte Hauptausgänge (Perimeter), nicht 44 Türen und nicht 11 Müll.
-    assert 1 <= len(ausg) <= 10
+    ausg = hauptausgaenge(plan, bounds_mm(plan))
+    # Wenige echte Hauptausgänge (Doppeltür am Rand), 1–2 je Gebäude/Stiegenhaus.
+    assert 1 <= len(ausg) <= 6
     assert all(a.typ == "final_exit" for a in ausg)
-    # Perimeter-Türen sind eine echte Teilmenge aller Türen.
-    assert len(ausg) < len(tueren)

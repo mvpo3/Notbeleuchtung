@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import re
 
-from notbeleuchtung.hauptengine.contracts.raum_modell import Ausgang, Tuer
+from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
 from .dxf_load import DxfPlan
 
@@ -68,12 +68,3 @@ def tueren_aus_dxf(plan: DxfPlan) -> list[Tuer]:
     return out
 
 
-def ausgaenge_aus_dxf(plan: DxfPlan) -> list[Ausgang]:
-    """Ausgänge = Außen-/Eingangstüren (``final_exit``)."""
-    out: list[Ausgang] = []
-    for e in plan.entities():
-        if e.dxftype() != "INSERT" or not _ist_aussentuer(e.dxf.name):
-            continue
-        (xy,) = plan.entity_points(e) or [(0.0, 0.0)]
-        out.append(Ausgang(id=f"exit_{len(out) + 1}", xy_mm=xy, typ="final_exit"))
-    return out

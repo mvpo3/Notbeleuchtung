@@ -13,7 +13,7 @@ from __future__ import annotations
 from notbeleuchtung.hauptengine.contracts import RaumModell
 
 from .dxf_load import bounds_mm, lade_dxf
-from .footprint import ausgaenge_aus_umriss
+from .footprint import hauptausgaenge
 from .raumtyp import beschrifte_raeume
 from .tueren import tueren_aus_dxf
 from .waende import raeume_aus_waenden
@@ -36,7 +36,7 @@ class ArchitekturRaumProvider:
         bounds = bounds_mm(plan)
         raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
         tueren = tueren_aus_dxf(plan)
-        ausgaenge = ausgaenge_aus_umriss(plan, tueren, bounds)
+        ausgaenge = hauptausgaenge(plan, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
         return RaumModell(
             floor=floor,
