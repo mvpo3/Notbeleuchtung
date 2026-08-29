@@ -15,9 +15,9 @@ def test_synth_umriss_innen_aussen(synth_dxf):
     # Es gibt sowohl Außen- als auch Innenbereich.
     assert umriss.aussen.any()
     assert (~umriss.aussen).any()
-    # Außenwand-Mittelpunkt liegt am Rand, die Innentür (Mitte) nicht.
-    assert umriss.ist_am_rand((4000.0, 0.0)) is True      # Unterkante-Mitte
-    assert umriss.ist_am_rand((2500.0, 2500.0)) is False  # Raum-Inneres
+    # Außenwand-Mittelpunkt liegt am Rand, das Raum-Innere nicht.
+    assert umriss.ist_am_rand((10000.0, 0.0)) is True     # Unterkante-Mitte
+    assert umriss.ist_am_rand((6000.0, 6000.0)) is False  # Raum-Inneres
 
 
 def test_mollgasse_leer_hauptausgaenge(mollgasse_blank_eg):

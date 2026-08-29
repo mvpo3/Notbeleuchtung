@@ -9,7 +9,7 @@ def test_synth_bounds(synth_dxf):
     assert plan.factor == 1.0  # mm
     bb = bounds_mm(plan)
     assert bb.min_xy == (0.0, 0.0)
-    assert bb.max_xy == (8000.0, 5000.0)
+    assert bb.max_xy == (20000.0, 12000.0)
 
 
 def test_mollgasse_fertig_ist_mm(mollgasse_eg):

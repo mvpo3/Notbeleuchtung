@@ -58,6 +58,12 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
 - [x] S6 `provider.parse` full → valides `RaumModell`, Contract-Roundtrip grün. Suite **80**.
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
 
+**Cross-Projekt-Fundament (alle 5 Familien):** Wand-Layer per Muster (`WALL_PATTERN`:
+`02-TWA/ZWA/WDA` · `A_Waende` · `1[123]0 Wand`) + Skala robust (Span-Gate 15–500 m +
+Tür-ARC-Radius-Tiebreak). Korrekt für Mollgasse/Fischamender/Barawitzka(80m, war 8m!)/
+Herrenholz. Hauptausgang-Doppeltür bisher nur Mollgasse kalibriert; Fischamender braucht
+Block-Descent (Tür-ARCs nested), Barawitzka schärferes Paar-Kriterium. Suite **91**.
+
 **FIX-2/3 Hauptausgänge = DOPPELTÜR am Rand (`footprint.py`):** Owner-Muster: Gebäude-
 Haupteingang wird als **Doppeltür** gezeichnet, 1–2 je Gebäude/Stiegenhaus. Naive Geometrie
 (Polygonize/Buffer/Hülle) scheitert am lückigen nicht-konvexen Wandwerk → **Raster-Flood-

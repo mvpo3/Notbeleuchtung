@@ -9,7 +9,7 @@ def test_synth_zwei_raeume(synth_dxf):
     raeume = raeume_aus_waenden(lade_dxf(synth_dxf))
     assert len(raeume) == 2
     flaechen = sorted(r.flaeche_m2 for r in raeume)
-    assert flaechen == [15.0, 25.0]  # rechter 3×5, linker 5×5 m
+    assert flaechen == [96.0, 144.0]  # rechter 8×12, linker 12×12 m
     for r in raeume:
         assert len(r.polygon_mm) >= 4
         assert r.raum_typ == ""  # Typ kommt in S3
