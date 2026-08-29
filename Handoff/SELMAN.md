@@ -60,6 +60,22 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — Türen über ALLE Familien (F1-Naht: `richtung_durch_tuer`)
+F1-Hinweis: `richtung_durch_tuer` greift automatisch, sobald echte `RaumModell.tueren`
+an den realen Öffnungen stehen. → F2-Job: `tueren` pro Familie vollständig.
+Vorher nur Mollgasse(44)+Fischamender(114); Barawitzka/Herrenholz/Baufeld = **0**.
+
+`tueren.py` erweitert (3 Darstellungen):
+1. Benannte Blöcke: `TÜR…` + jetzt auch `ÖFFNUNG` (Baufeld-Marker) + Außentür-Namen.
+2. **ARC-Fallback** (ArchiCAD ohne Türblöcke): je Schwenkbogen (r 600–1300mm) eine Tür
+   am Drehpunkt, Breite = Radius. Greift nur, wenn (1) leer.
+3. Breite: cm-Konvention (`TÜR-80`→800) ODER mm direkt (`_0800x2000`→800).
+
+**Ergebnis:** Mollgasse 44 · Fischamender 120 · Barawitzka **116** · Herrenholz **140** ·
+Baufeld **191** — alle Familien liefern echte Tür-Positionen → F1 entblockt. Suite 95.
+Caveat: ARC-Türen evtl. Doppelzählung (Doppeltür=2 ARCs); Baufeld-Öffnungen ggf. inkl.
+Fenster; Positionen aber real.
+
 ### 2026-08-29 — Raum-Layer-Reader: echte Raum-Polygone (löst Schlitz-Problem)
 Auf Basis des „Schritt-6"-Vorschlags (Face-Clustering), aber die auditierbarere/
 billigere Variante: **3 von 4 Input-Familien haben fertige Raum-Polygone auf eigenen
