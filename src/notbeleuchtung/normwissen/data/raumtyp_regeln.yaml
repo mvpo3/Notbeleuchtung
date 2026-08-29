@@ -22,18 +22,25 @@ default:
   quelle_ref: rettungsweg
   montagehoehe_mm: 2400
   mindest_anzahl: 1
-  symbol_katalog_keys: [notlicht_ks_stiege]
+  # Alle vier Pfeil-Varianten anbieten — die Laufrichtung kennt erst der
+  # Platzierer, er waehlt daraus den passenden Block (Norm gibt nur die Menge vor).
+  symbol_katalog_keys:
+    [notlicht_ks_stiege, notlicht_ks_stiege_unten,
+     notlicht_ks_stiege_links, notlicht_ks_stiege_rechts]
 
 regeln:
   # ── Fluchtwege (RZ-Pflicht GK3+, rz_coverage_oenorm::norm_pflicht) ──────────
+  # Der Stiegenhaus-RAUM selbst: Aufheller-Sicherheitsleuchte (§4.1 — Betonung
+  # von Stiegen/Richtungsaenderungen), NICHT nochmal ein Rettungszeichen. Die RZ
+  # haengen an den Fluchtweg-SEGMENTEN (siehe GANG bzw. fuer_fluchtweg_abschnitt).
   - raum_typ: STIEGENHAUS
     ist_fluchtweg: true
-    klassifikation: rz
-    min_lux_ref: rettungsweg
-    quelle_ref: rettungsweg
+    klassifikation: sicherheitsleuchte
+    min_lux_ref: rettungsweg      # 1,0 lx wie Rettungsweg (§4.2.1-Niveau)
+    quelle_ref: sicherheitsleuchte
     montagehoehe_mm: 2400
-    mindest_anzahl: 2            # oben + unten je Stiegenlauf
-    symbol_katalog_keys: [notlicht_ks_stiege, notlicht_ks_stiege_unten]
+    mindest_anzahl: 1
+    symbol_katalog_keys: [sicherheitsleuchte_aufheller]
 
   - raum_typ: GANG
     ist_fluchtweg: true
@@ -42,7 +49,9 @@ regeln:
     quelle_ref: rettungsweg
     montagehoehe_mm: 2400
     mindest_anzahl: 1
-    symbol_katalog_keys: [notlicht_ks_stiege]
+    symbol_katalog_keys:
+      [notlicht_ks_stiege, notlicht_ks_stiege_unten,
+       notlicht_ks_stiege_links, notlicht_ks_stiege_rechts]
 
   # ── Antipanik (§4.3.1 — große freie Bodenflächen, Sammelbereiche) ───────────
   - raum_typ: SAAL
@@ -51,8 +60,11 @@ regeln:
     min_lux_ref: antipanik
     quelle_ref: antipanik
     montagehoehe_mm: 2400
-    mindest_anzahl: 1
-    symbol_katalog_keys: [notlicht_antipanik]
+    # Antipanik ist eine FLAECHEN-Anforderung (0,5 lx auf der freien Bodenflaeche,
+    # Randstreifen 0,5 m ausgenommen) — eine Einzelleuchte schafft das im Saal
+    # nicht. mindest_anzahl = Raster-Stuetzstellen, die der Platzierer verteilt.
+    mindest_anzahl: 4
+    symbol_katalog_keys: [antipanik_leuchte]
 
   - raum_typ: AUFENTHALTSRAUM
     ist_fluchtweg: false
@@ -60,5 +72,5 @@ regeln:
     min_lux_ref: antipanik
     quelle_ref: antipanik
     montagehoehe_mm: 2400
-    mindest_anzahl: 1
-    symbol_katalog_keys: [notlicht_antipanik]
+    mindest_anzahl: 1            # kleinere Flaeche als SAAL -> eine Leuchte reicht
+    symbol_katalog_keys: [antipanik_leuchte]
