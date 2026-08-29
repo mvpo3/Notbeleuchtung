@@ -26,6 +26,17 @@ def mollgasse_eg() -> Path:
     return p
 
 
+# Echter LEERER Architektur-Input (in Metern!) — Gegenstück zum fertigen Plan.
+MOLLGASSE_BLANK = REPO_ROOT / "Projekte" / "Mollgasse" / "Erdgeschoß.dxf"
+
+
+@pytest.fixture
+def mollgasse_blank_eg() -> Path:
+    if not MOLLGASSE_BLANK.exists():
+        pytest.skip(f"Leerer Mollgasse-Input fehlt: {MOLLGASSE_BLANK}")
+    return MOLLGASSE_BLANK
+
+
 def build_synth_dxf(path: Path) -> Path:
     """Deterministische Mini-DXF (mm): zwei Räume, ein Stempel, eine Tür.
 

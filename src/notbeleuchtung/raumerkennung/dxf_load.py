@@ -27,7 +27,42 @@ _INSUNITS_TO_MM: dict[int, float] = {4: 1.0, 5: 10.0, 6: 1000.0}
 XY = tuple[float, float]
 
 
-def _factor_to_mm(doc: ezdxf.document.Drawing) -> float:
+# Plausible Ausdehnung eines Geschosses in mm (ein paar Meter … ~500 m).
+_SPAN_MIN_MM = 8_000.0
+_SPAN_MAX_MM = 500_000.0
+
+
+def _raw_wall_span(space) -> float:
+    """Größte Wand-Ausdehnung (dx/dy) in Quell-Einheiten (ohne Skalierung)."""
+    xs: list[float] = []
+    ys: list[float] = []
+    for e in space:
+        if not e.dxf.layer.startswith(WALL_PREFIXES):
+            continue
+        t = e.dxftype()
+        if t == "LINE":
+            xs += [e.dxf.start[0], e.dxf.end[0]]
+            ys += [e.dxf.start[1], e.dxf.end[1]]
+        elif t == "LWPOLYLINE":
+            for p in e.get_points("xy"):
+                xs.append(p[0]); ys.append(p[1])
+    if not xs:
+        return 0.0
+    return max(max(xs) - min(xs), max(ys) - min(ys))
+
+
+def _calibrate_factor(raw_span: float, doc: ezdxf.document.Drawing) -> float:
+    """mm-Faktor aus der Geometrie ableiten (Dekaden-Snap), NICHT aus $INSUNITS.
+
+    $INSUNITS ist in der Praxis unzuverlässig (leere Pläne stehen in Metern,
+    fertige in mm — beide deklarieren oft denselben Code). Wir wählen die
+    Zehnerpotenz, die die Geschoss-Ausdehnung in den plausiblen mm-Bereich legt.
+    """
+    if raw_span > 0:
+        for factor in (1.0, 10.0, 100.0, 1000.0, 10000.0):
+            if _SPAN_MIN_MM <= raw_span * factor <= _SPAN_MAX_MM:
+                return factor
+    # Fallback: $INSUNITS-Code.
     code = int(doc.header.get("$INSUNITS", 0) or 0)
     return _INSUNITS_TO_MM.get(code, 1.0)
 
@@ -74,10 +109,9 @@ class DxfPlan:
 
 
 def lade_dxf(pfad: str | Path) -> DxfPlan:
-    """Öffne die DXF, wähle den Architektur-Raum, bestimme den mm-Faktor."""
+    """Öffne die DXF, wähle den Architektur-Raum, kalibriere den mm-Faktor."""
     doc = ezdxf.readfile(str(pfad))
     msp = doc.modelspace()
-    factor = _factor_to_mm(doc)
     space = msp
     if not _has_walls(msp):
         # Wrapper-Mode: ersten INSERT suchen, dessen Block Wände trägt.
@@ -86,6 +120,7 @@ def lade_dxf(pfad: str | Path) -> DxfPlan:
             if blk is not None and _has_walls(blk):
                 space = blk
                 break
+    factor = _calibrate_factor(_raw_wall_span(space), doc)
     return DxfPlan(doc=doc, space=space, factor=factor)
 
 

@@ -58,6 +58,16 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
 - [x] S6 `provider.parse` full → valides `RaumModell`, Contract-Roundtrip grün. Suite **80**.
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
 
+**FIX (Ausgänge + Skala, nach Projekt-Analyse aller 6 Ordner):**
+- **Ausgänge neu = Außentüren** (`WET_AUSSEN`/`WET`/`SCHIEBETÜR`/`Fenstertür`, `final_exit`).
+  Alte Heuristik (09-WEG-Endknoten nahe Bounding-Box) war Müll (11 Punkte am Planrahmen)
+  → jetzt 6 echte Egress-Türen. Ground-Truth-Abgleich: sitzen an/nahe den RZ.
+- **Skala aus Geometrie kalibriert** (Dekaden-Snap), `$INSUNITS` ignoriert — leerer
+  Mollgasse-Input steht in METERN (×1000), fertiger in mm. Beide deklarieren fälschlich `4`.
+- Analyse aller Projekte: 3 Konventionen (Mollgasse `02-*`, Fischamender `A_*`, ArchiCAD
+  numerisch `1xx/8xx`), 3 leere Inputs haben **Raum-Polygone auf eigenen Layern**
+  (`_815`/`810 Raum`/`A_Raeume`) → löst Schlitz-Problem (nächster Slice). Suite **86**.
+
 **READY (Teil-Naht):** `ArchitekturRaumProvider.parse(dxf, floor) -> RaumModell` steht.
 Echte Mollgasse-EG: **40 Türen, 11 Ausgänge, 103 Fluchtweg-Segmente, Bounds** — echt
 nutzbar für Leonis/Render. ⚠️ **Raum-Polygone** (184 Wand-Schlitze) noch NICHT
