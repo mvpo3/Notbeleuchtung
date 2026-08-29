@@ -46,7 +46,17 @@ Primärziel Mollgasse (mm). **Kein Contract-Touch** (rein additiv). E2E bleibt v
 auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice mit F1-Konsens.
 - [x] S0 Scaffold (`provider.py` Stub, `tests/raumerkennung/`) — Suite grün (69), committed
 - [x] S1 `dxf_load` (öffnen + $INSUNITS→mm + `bounds_mm`) — Mollgasse-Test grün (71), committed
-- [ ] S2 waende→räume · [ ] S3 raumtyp · [ ] S4 tueren · [ ] S5 zirkulation · [ ] S6 provider full → READY
+- [x] S2 `waende` (Segmente → `extract_room_faces` → Räume) — **synth grün (2 Räume)**, aber
+  ⚠️ **echte Mollgasse = 184 Wand-Schlitze statt Räume** (Doppellinien-Wände + Türlücken).
+  Naive Polygonisierung UND shapely-Buffer-Difference scheitern ohne Gap-Healing/virtuelle
+  Wände (= die 14k-LOC-Port-Maschinerie). Offene Design-Frage an F1/Owner (siehe unten).
+- [ ] S3 raumtyp · [ ] S4 tueren · [ ] S5 zirkulation · [ ] S6 provider full → READY
+
+**OFFENE FRAGE (Owner):** Echte Raum-*Polygone* brauchen dicke-Wand-Handling. Türen
+(INSERT) + Fluchtweg (09-WEG) funktionieren dagegen JETZT auf echten Plänen. Optionen:
+(A) Port-Maschinerie reanimieren (virtuelle Wände/room-partition, ~14k LOC), (B) erst
+Türen+Fluchtweg+Bounds liefern, Raum-Polygone nur auf sauberen DXF, (C) mittlere
+Heuristik (Tür-Öffnungs-Virtualwände selektiv portieren).
 
 ## Log (append-only, neueste oben)
 - <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
