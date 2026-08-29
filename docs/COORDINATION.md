@@ -58,13 +58,12 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
 - [x] S6 `provider.parse` full → valides `RaumModell`, Contract-Roundtrip grün. Suite **80**.
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
 
-**FIX-2 Hauptausgänge (Raster-Umriss, `footprint.py`):** User-Feedback „Hauptausgänge
-nicht erkannt". Definition (aus 4 Beispielbildern): Hauptausgang = Tür in der Außenwand
-nach außen (Vorplatz/Hof). Namensheuristik (WET_AUSSEN) unzuverlässig; naive Geometrie
-(Polygonize/Buffer/konvexe Hülle) scheitert am lückigen nicht-konvexen Wandwerk.
-→ **Raster-Flood-Fill**: Wände rastern → Türlücken schließen → von außen fluten →
-Gebäude-Umriss; **Perimeter-Türen = Hauptausgänge** (`final_exit`). Mollgasse EG: 6,
-alle am Vorplatz/Hof — vom Owner bestätigt. Suite **88**.
+**FIX-2/3 Hauptausgänge = DOPPELTÜR am Rand (`footprint.py`):** Owner-Muster: Gebäude-
+Haupteingang wird als **Doppeltür** gezeichnet, 1–2 je Gebäude/Stiegenhaus. Naive Geometrie
+(Polygonize/Buffer/Hülle) scheitert am lückigen nicht-konvexen Wandwerk → **Raster-Flood-
+Fill** für Gebäude-Umriss. Hauptausgang = Paar gleich großer Tür-Schwenkbögen (ARCs,
+r≈600–1300mm, Drehpunkte 1.4–2.6m auseinander) **an der Außenkante**. Mollgasse EG:
+**4 Hauptausgänge**, beide Blöcke/Stiegenhäuser. Suite **87**. Cross-Projekt-Profile offen.
 
 **FIX-1 (Ausgänge + Skala, nach Projekt-Analyse aller 6 Ordner):**
 - **Ausgänge neu = Außentüren** (`WET_AUSSEN`/`WET`/`SCHIEBETÜR`/`Fenstertür`, `final_exit`).

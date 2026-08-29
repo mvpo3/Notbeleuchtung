@@ -60,6 +60,27 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — FIX-3 Hauptausgang = DOPPELTÜR am Rand (Fachmuster vom Owner)
+Owner-Regel: **Gebäude-Haupteingang wird als Doppeltür gezeichnet** (2 Flügel), 1–2 je
+Gebäude/Stiegenhaus; Muster über alle Projekte lernen. Perimeter-Tür allein war zu grob
+(18 inkl. Fassaden-Wohnungstüren).
+
+**Signatur Doppeltür (Mollgasse):** zwei Schwenkbögen (ARC, r≈600–1300mm = Tür-Blattbreite)
+gleicher Größe, Drehpunkte 1.4–2.6m auseinander (= Öffnungsbreite). ARC-Paar **an der
+Gebäude-Außenkante** (Raster-Umriss-Rand) = Hauptausgang. `türachse&qualität` (33×) =
+vollständige Tür-Positionsquelle (nicht Noise!) — für spätere Verfeinerung.
+
+`footprint.py::hauptausgaenge(plan, bounds)`: Raster-Umriss (mit Padding > Schließ-
+Dilatation!) → Rand-Band → Doppeltür-ARC-Paare am Rand. Mollgasse EG (leer + fertig):
+**4 Hauptausgänge** (1 links Hof + 3 rechts), deckt beide Stiegenhäuser/Blöcke. Provider:
+`ausgaenge = hauptausgaenge(plan, bounds)`. Alte Perimeter-/Namensheuristik entfernt.
+Suite **87**, ruff sauber. Viz: `output/hauptausgaenge_final_EG.png`.
+
+Offen: Rechter Block 3 (evtl. 1 Loggia-Doppeltür zu viel) — Rim-Toleranz feinjustieren.
+**Cross-Projekt:** Doppeltür-als-2-ARCs ist Mollgasse-Muster; Fischamender (`A_Tueren`
+benannte Blöcke `…Wohnungstür…`) + ArchiCAD (keine Türblöcke, nur ARC-Schwenk) brauchen
+je eigenes Doppeltür-Erkennungs-Profil. Muster-Lernen über Profile = nächster Schritt.
+
 ### 2026-08-29 — FIX-2 Hauptausgänge via Raster-Umriss (`footprint.py`)
 User: „du erkennst die Hauptausgänge nicht" + 4 Beispielbilder (Mollgasse EG).
 Definition bestätigt: **Hauptausgang = Tür in der Außenwand, die nach außen führt**
