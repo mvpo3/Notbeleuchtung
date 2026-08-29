@@ -7,7 +7,7 @@
   "regeln": [
     {"raum_typ": "STIEGENHAUS", "ist_fluchtweg": true, "anforderung": {"min_lux": 1.0, "klassifikation": "sicherheitsleuchte", "montagehoehe_mm": 2400, "erkennungsweite_m": null, "symbol_katalog_keys": ["sicherheitsleuchte_aufheller"], "mindest_anzahl": 1, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.1"}},
     {"raum_typ": "GANG", "ist_fluchtweg": true, "anforderung": {"min_lux": 1.0, "klassifikation": "rz", "montagehoehe_mm": 2400, "erkennungsweite_m": 30.0, "symbol_katalog_keys": ["notlicht_ks_stiege", "notlicht_ks_stiege_unten", "notlicht_ks_stiege_links", "notlicht_ks_stiege_rechts"], "mindest_anzahl": 1, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.2.1"}},
-    {"raum_typ": "SAAL", "ist_fluchtweg": false, "anforderung": {"min_lux": 0.5, "klassifikation": "antipanik", "montagehoehe_mm": 2400, "erkennungsweite_m": null, "symbol_katalog_keys": ["antipanik_leuchte"], "mindest_anzahl": 1, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.3.1"}}
+    {"raum_typ": "SAAL", "ist_fluchtweg": false, "anforderung": {"min_lux": 0.5, "klassifikation": "antipanik", "montagehoehe_mm": 2400, "erkennungsweite_m": null, "symbol_katalog_keys": ["antipanik_leuchte"], "mindest_anzahl": 4, "dauer_min": 60, "quelle": "ÖNORM EN 1838:2013 §4.3.1"}}
   ],
   "quellen": ["ÖNORM EN 1838:2013 §4.1", "ÖNORM EN 1838:2013 §4.2.1", "ÖNORM EN 1838:2013 §4.3.1"]
 }

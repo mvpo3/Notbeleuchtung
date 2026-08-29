@@ -20,15 +20,17 @@ from notbeleuchtung.hauptengine.contracts import (
 )
 
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
-from .geometry import find_center_visual
+from .geometry import find_center_visual, grid_points
 
 
 def _plan_raumleuchten(
     raum: RaumModell, norm: NormProvider, klassifikation: str
 ) -> list[Platzierung]:
-    """Je Raum, dessen Norm-Klassifikation `klassifikation` ist, 1 Leuchte am
-    visuellen Zentrum. `kind` == `klassifikation` (Kind- und Klassifikation-Literale
-    sind deckungsgleich: rz/sicherheitsleuchte/antipanik)."""
+    """Je Raum mit passender Norm-Klassifikation `norm.mindest_anzahl` Leuchten,
+    geometrisch über die Fläche verteilt (`grid_points`): 1 → visuelles Zentrum,
+    >1 → Raster (Antipanik-Fläche, EN 1838 §4.3). `kind` == `klassifikation`
+    (Kind- und Klassifikation-Literale deckungsgleich: rz/sicherheitsleuchte/antipanik).
+    Alle Leuchten eines Raums teilen dessen Stromkreis-Bauteil (A|B aus Zentroid-x)."""
     centroids = {
         r.id: find_center_visual(r.polygon_mm) for r in raum.raeume if r.polygon_mm
     }
@@ -41,20 +43,21 @@ def _plan_raumleuchten(
         anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
         if anf.klassifikation != klassifikation:
             continue
-        cx, cy = centroids[r.id]
-        out.append(
-            Platzierung(
-                xy_mm=(cx, cy),
-                catalog_key=anf.symbol_katalog_keys[0],
-                rotation_deg=0.0,
-                height_mm=float(anf.montagehoehe_mm),
-                kind=klassifikation,
-                richtung="gerade",
-                circuit_hint=f"AGV-{assign_building(cx)}-F{_AGV_SV_F}",
-                covers_segment=[],
-                norm_quelle=anf.quelle,
+        building = assign_building(centroids[r.id][0])
+        for px, py in grid_points(r.polygon_mm, max(1, anf.mindest_anzahl)):
+            out.append(
+                Platzierung(
+                    xy_mm=(px, py),
+                    catalog_key=anf.symbol_katalog_keys[0],
+                    rotation_deg=0.0,
+                    height_mm=float(anf.montagehoehe_mm),
+                    kind=klassifikation,
+                    richtung="gerade",
+                    circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
+                    covers_segment=[],
+                    norm_quelle=anf.quelle,
+                )
             )
-        )
     return out
 
 
