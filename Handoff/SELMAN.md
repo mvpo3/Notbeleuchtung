@@ -60,6 +60,27 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — S3–S6 fertig: parse() steht, Teil-READY (Owner-Weg B)
+Owner-Entscheidung: **B** — erst die Teile bauen, die auf echten Plänen JETZT gehen.
+
+**Fertig & echt grün auf Mollgasse-EG** (`ArchitekturRaumProvider.parse`):
+- `tueren.py` (S4): 40 Türen, Nennbreite aus Blockname (cm→mm, erste Zahl 60–130),
+  Achsmarker/Türöffner ausgeschlossen.
+- `zirkulation.py` (S5): 09-WEG LINE/LWPOLYLINE → 103 `FluchtwegSegment` + networkx-Graph
+  (gesnappte Knoten) + 11 `Ausgang` (grad-1 an Außenkante).
+- `raumtyp.py` (S3): MTEXT-Stempel → `classify_room` → `raum_typ`+Flags per Point-in-Polygon
+  (synth deterministisch; auf echt limitiert durch fehlende Raum-Polygone).
+- `provider.py` (S6): verdrahtet alles, `RaumModell.model_validate`-Roundtrip grün.
+  Volle Suite **80 passed**, ruff sauber.
+
+**Weiter offen — das harte Teil:** echte **Raum-Polygone** (184 Wand-Schlitze statt
+Räumen). Nächster Slice-Kandidat: Tür-Öffnungs-Virtualwände + Fragment-Bridge aus
+`_port/parsers/architecture_dxf.py` (`_build_virtual_walls_from_doors`,
+`_build_fragment_bridges`) selektiv portieren, ODER room-partition via Anker/`assign_room`.
+Erst DANN E2E-Fake-Swap (mit kuratierter neuer 4OG-Golden + F1-Konsens).
+
+Branch `selman/raumerkennung-dxf` — bereit für PR (User-GO nötig, nicht gepusht).
+
 ### 2026-08-29 — S1+S2 fertig, HARTES PROBLEM gefunden (Raum-Polygone)
 **S1** `dxf_load.py`: ezdxf öffnen, `$INSUNITS`→mm (Mollgasse=mm, factor 1.0),
 Direct-Mode (797 Wand-Ents direkt im msp; Wrapper-Fallback vorhanden), `bounds_mm`.

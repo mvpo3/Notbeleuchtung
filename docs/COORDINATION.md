@@ -54,8 +54,15 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
   (≥10 Türen, Achsmarker/Türöffner ausgeschlossen). Suite 75.
 - [x] S5 `zirkulation` (09-WEG → `FluchtwegSegment` + networkx-Graph + Ausgänge) —
   **Mollgasse echt grün** (77 Weg-Polylinien → Segmente + Knoten/Kanten). Suite 77.
-- [ ] S3 raumtyp · [ ] S6 provider full → READY
+- [x] S3 `raumtyp` (Stempel → raum_typ + Flags, Point-in-Polygon) — synth grün.
+- [x] S6 `provider.parse` full → valides `RaumModell`, Contract-Roundtrip grün. Suite **80**.
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
+
+**READY (Teil-Naht):** `ArchitekturRaumProvider.parse(dxf, floor) -> RaumModell` steht.
+Echte Mollgasse-EG: **40 Türen, 11 Ausgänge, 103 Fluchtweg-Segmente, Bounds** — echt
+nutzbar für Leonis/Render. ⚠️ **Raum-Polygone** (184 Wand-Schlitze) noch NICHT
+produktiv — brauchen Gap-Healing (Folge-Slice). E2E-Fake-Swap erst mit neuer Golden
+(F1-Konsens). Branch `selman/raumerkennung-dxf` bereit für PR (User-GO nötig).
 
 **OFFENE FRAGE (Owner):** Echte Raum-*Polygone* brauchen dicke-Wand-Handling. Türen
 (INSERT) + Fluchtweg (09-WEG) funktionieren dagegen JETZT auf echten Plänen. Optionen:
