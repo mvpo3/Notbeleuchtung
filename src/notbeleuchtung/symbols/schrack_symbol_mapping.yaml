@@ -2,9 +2,15 @@
 #
 # Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
 # backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
-# Notlicht-/Rettungszeichen-Keys, die die Notbeleuchtungs-Engine vergibt — nicht
-# der volle 109-Block-Katalog. Erweiterung um weitere Kategorien (Antipanik,
-# Sicherheitsleuchten) je Slice.
+# Notbeleuchtungs-Keys, die die Engine vergibt — nicht der volle 109-Block-Katalog.
+#
+# Kurations-Regel: nur Blocks mit „in-band"-Extents (max. Kantenlänge < 50 units)
+# aufnehmen — die Lib enthält korrupte/inkonsistent skalierte Blocks. Bekannt:
+#   • „richtungspfeil nach rechts" war korrupt (Extents 2606×2300); als sauberer
+#     X-Spiegel von „nach links" neu aufgebaut (3.13×1.57), jetzt direkt nutzbar.
+#   • „…SV_RETTUNGSZEICHEN" ist ein Legenden-Block (861×4945, 30 ATTDEF), KEIN
+#     platzierbares Punktsymbol.
+# Der Guard-Test tests/render/test_symbols_library.py erzwingt die In-Band-Regel.
 #
 # Pflichtfelder je Eintrag: block_name, label, category
 # Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, notes
@@ -30,22 +36,35 @@ notlicht_ks_stiege_unten:
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
 
-# Richtungs-Varianten. Der Library-Block 'nach rechts' ist korrupt (Pikto-Linien
-# 2603 units versetzt) → für BEIDE Seiten der wohlgeformte 'nach links'-Block;
-# "rechts" via Horizontal-Spiegelung (mirror_x).
+# Richtungs-Varianten — je ein eigener, sauberer Pfeil-Block (3.13×1.57 units).
+# 'nach rechts' als X-Spiegel von 'nach links' neu aufgebaut (war korrupt).
 notlicht_ks_stiege_links:
   block_name: "notbeleuchtung-richtungspfeil nach links"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
 
 notlicht_ks_stiege_rechts:
-  block_name: "notbeleuchtung-richtungspfeil nach links"
-  label: "Notlicht KS Rettungszeichen rechts (gespiegelt)"
+  block_name: "notbeleuchtung-richtungspfeil nach rechts"
+  label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
-  mirror_x: true
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
   block_name: "notbeleuchtung richtungspfeil nach unten"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
+
+# ── Sicherheitsleuchte ────────────────────────────────
+# Aufheller-Sicherheitsleuchte, zweckgebautes Notbeleuchtungs-Symbol (CIRCLE+HATCH),
+# Extents 4.7×4.7 units = in-band.
+sicherheitsleuchte_aufheller:
+  block_name: "sicherheitsleuchte aufheller"
+  label: "Sicherheitsleuchte (Aufheller)"
+  category: sicherheitsleuchte
+
+# ── Antipanik ─────────────────────────────────────────
+# Zweckgebautes Antipanik-Piktogramm (44 LWPOLYLINE), Extents 5.64×1.59 units = in-band.
+antipanik_leuchte:
+  block_name: "notbeleuchtung- antipanikleuchte"
+  label: "Antipanik-Leuchte"
+  category: antipanik

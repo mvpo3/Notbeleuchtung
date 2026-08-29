@@ -63,3 +63,38 @@ def test_import_unknown_block_raises():
     doc = ezdxf.new("R2018")
     with pytest.raises(KeyError):
         library.import_block(doc, "gibt-es-nicht")
+
+
+# In-Band-Extents-Grenze (units): die Lib enthält korrupte Blocks („nach rechts"
+# 2606×2300) und Legenden („RETTUNGSZEICHEN" 861×4945) — beide weit jenseits. Die
+# kuratierten Symbole liegen bei 1–11 units.
+_IN_BAND_MAX = 50.0
+
+
+def test_every_mapping_block_is_in_band():
+    # Kurations-Guard: kein Mapping-Key darf auf einen korrupten/Legenden-Block
+    # zeigen. Fängt versehentliches Mappen fehlskalierter Blocks.
+    doc = library.load_library()
+    for key, entry in library.load_mapping().items():
+        block = doc.blocks[entry["block_name"]]
+        extents = ezbbox.extents(block, fast=True)
+        assert extents.has_data, f"{key}: {entry['block_name']!r} ohne Geometrie"
+        size = extents.extmax - extents.extmin
+        assert max(size.x, size.y) < _IN_BAND_MAX, (
+            f"{key}: {entry['block_name']!r} out-of-band "
+            f"({size.x:.1f}×{size.y:.1f} units) — korrupt/Legende?"
+        )
+
+
+@pytest.mark.parametrize("catalog_key", ["sicherheitsleuchte_aufheller", "antipanik_leuchte"])
+def test_new_categories_import(catalog_key):
+    # Neue Kategorien (Kind sicherheitsleuchte/antipanik) laden echte Blocks +
+    # werden beim Import origin-normalisiert (INSERT-fähig am Platzierungspunkt).
+    block_name = library.load_mapping()[catalog_key]["block_name"]
+    doc = ezdxf.new("R2018")
+    library.import_block(doc, block_name)
+    assert block_name in doc.blocks
+    extents = ezbbox.extents(doc.blocks[block_name], fast=True)
+    assert extents.has_data
+    assert abs(extents.center.x) < 0.01
+    assert abs(extents.center.y) < 0.01
