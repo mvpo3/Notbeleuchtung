@@ -42,15 +42,18 @@ def test_sicherheitsleuchten_je_stiegenhaus():
         assert p.circuit_hint.endswith("-F13")
 
 
-def test_antipanik_im_saal_am_zentrum():
+def test_antipanik_raster_im_saal():
+    # SAAL mindest_anzahl=4 → 2×2-Raster über die Fläche (nicht 1 Zentroid).
     out = plan_antipanik(_raum_mit_saal(), FakeNormProvider())
-    assert len(out) == 1
-    p = out[0]
-    assert p.kind == "antipanik"
-    assert p.catalog_key == "antipanik_leuchte"
-    assert p.xy_mm == (5000.0, 4000.0)  # Rechteck-Zentrum des SAAL
-    assert p.covers_segment == []
-    assert p.norm_quelle == "ÖNORM EN 1838:2013 §4.3.1"
+    assert len(out) == 4
+    for p in out:
+        assert p.kind == "antipanik"
+        assert p.catalog_key == "antipanik_leuchte"
+        assert p.covers_segment == []
+        assert p.norm_quelle == "ÖNORM EN 1838:2013 §4.3.1"
+        # innerhalb des SAAL-Rechtecks (0..10000 × 0..8000)
+        assert 0.0 <= p.xy_mm[0] <= 10000.0 and 0.0 <= p.xy_mm[1] <= 8000.0
+    assert len({p.xy_mm for p in out}) == 4  # 4 verschiedene Positionen
 
 
 def test_keine_antipanik_ohne_qualifizierten_raum():
