@@ -4,7 +4,48 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (zuletzt 2026-08-28 Session-Ende) — HIER WEITER
+## STAND (2026-08-29 Session-Ende) — HIER WEITER
+
+**Platzier-Regeln aus dem Wissen kodiert** (Commit `e87a745`, `anker_strategy.py`):
+1. **RZ-Dichte = `l = z·h`** — `plan_rettungszeichen_sichtlinie` zieht `max_abstand_mm`
+   aus `norm.erkennungsweite_m` (z=200 hinterleuchtet/100 beleuchtet, h=Pikto-Höhe)
+   statt geratener 12-m-Konstante. Keine Überproduktion.
+2. **`richtung_durch_tuer(tuer_xy, ziel_xy)`** — RZ an Tür/Öffnung entlang der Schwelle,
+   Pfeil DURCH die Öffnung in Reiserichtung; überschreibt das Distanz-Gefälle
+   (Owner-Korrektur L-Knick). Tests +2, Suite 95 grün. Kein Contract berührt.
+
+⚠️ **Git-Tangle:** dieser Commit + die früheren Platzier-Module (graph/richtungsfeld/
+sichtlinie/mittellinie/lux/deckung) liegen auf Branch **`selman/raumerkennung-dxf`**
+(nicht `leonis/*`). Integration war als PR #12 geplant. PR #11 stale/superseded.
+Vor Weiterarbeit: entwirren — Platzier-Code gehört auf einen `leonis/*`-Branch.
+
+**Echter End-to-End-Durchstich auf Fischamender BT1 1.OG** (F2-Provider → F1-Engine →
+DXF in den echten Grundriss). Ergebnis ehrlich geprüft (Determinismus + Sanity):
+- ✅ Provider läuft: **59 Raum-Polygone** (39 getypt, 20 Fragmente), **102 Tür-INSERTs**.
+- ✅ Engine platziert 10 SL; RZ-Regeln laufen auf echter Geometrie.
+- ✅ **DXF-Overlay** (`output/Fischamender_BT1_1OG_MIT_Notbeleuchtung.dxf`, untracked):
+  Symbole IN den Original-Grundriss gezeichnet, Original-Einheiten (Meter → Pos+scale
+  ÷ factor=1000, scale 0,185), neuer Layer `E_Sicherheitsbeleuchtung`, Original
+  unangetastet. Per ezdxf-Preview verifiziert.
+- ❌ **2 F2-Bugs gefunden** (in `docs/COORDINATION.md` als Tickets dokumentiert):
+  (B1) Tür-**Doppelzählung** — 102 roh → ~60 dedup (jede Tür als 2 ARC-Schwenkbögen);
+  (B2) **A_Fluchtweg + Ausgänge werden für die Fischamender-Familie nicht gelesen**
+  (`zirkulation_aus_dxf` sucht Mollgasse `09-WEG`, footprint nur Mollgasse-kalibriert)
+  → 0 Ausgänge, 0 Zirkulation → RZ-Routing musste stiegenhaus-verankert improvisiert
+  werden (Stiegenhaus aus `S-STRS`-Layer lokalisiert, ×factor).
+
+**Erkenntnis:** Platzier-Regeln (l=z·h, Wasserscheide, Pfeil-durch-Tür) sind solide;
+der Engpass für vollautomatisch = **F2s Provider auf fremden CAD-Familien** (nicht die
+Platzierung). Placement kann erst voll geroutet werden, wenn F2 Fluchtweg/Ausgänge
+für die Fischamender-Konvention liefert.
+
+**Nächste Leonis-Tasks:** (1) Git entwirren (Platzier-Code auf `leonis/*`, PR #12/#11
+klären). (2) GANG-Raum→Graph-**Fallback** in `platzierung/` erwägen (RZ auch ohne
+F2-Fluchtweg-Layer, aus erkannten GANG-Räumen — macht Engine auf mehr Plänen sofort
+nutzbar). (3) SL-Symbolgröße justierbar + lux-Verifikation je realem Plan.
+Demo-Skripte in `scratchpad`/`output/` (nicht im Repo).
+
+## STAND (2026-08-28 Session-Ende) — Historie
 
 **Slice 2 (PR #4) + Slice 3 (PR #5) = GEMERGT nach `main`.** `pytest -q` auf main →
 **40 passed, 0 skipped**, `ruff check .` sauber, E2E `rendered: True`.

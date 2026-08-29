@@ -99,6 +99,28 @@ produktiv — brauchen Gap-Healing (Folge-Slice). E2E-Fake-Swap erst mit neuer G
 Türen+Fluchtweg+Bounds liefern, Raum-Polygone nur auf sauberen DXF, (C) mittlere
 Heuristik (Tür-Öffnungs-Virtualwände selektiv portieren).
 
+## Bugs an F2 (aus F1-Durchstich Fischamender BT1 1.OG, 2026-08-29)
+F1 hat den echten End-to-End (Provider → Platzierung → DXF) auf **Fischamender BT1
+1.OG** gefahren. Zwei reproduzierbare Provider-Bugs auf dieser CAD-Familie:
+
+- **B1 — Tür-Doppelzählung.** `tueren_aus_dxf` liefert **102** INSERTs, davon **~42
+  Quasi-Duplikate <20 cm** (jede Tür als 2 ARC-Schwenkbögen gezählt) → echte ~60.
+  Fix: Dedup-Cluster (<300 mm) je Tür-Position, ODER nur einen ARC/INSERT je Türblatt.
+- **B2 — A_Fluchtweg + Ausgänge werden nicht gelesen (Fischamender-Familie).**
+  `zirkulation_aus_dxf` sucht Mollgasse `09-WEG`; Fischamender-Fluchtweg liegt auf
+  **`A_Fluchtweg`** (23 Ent., HATCH-Pfeile + degenerierte Linien, Rohkoords Meter).
+  `hauptausgaenge` (footprint) ist nur Mollgasse-kalibriert. Folge: **0 Ausgänge,
+  0 Zirkulation** → RZ-Routing unmöglich, F1 musste das Stiegenhaus aus dem
+  **`S-STRS`**-Layer (×`plan.factor`) improvisieren. Fix: Layer-Muster + Ausgangs-
+  Erkennung pro Familie (wie Wand-Muster `WALL_PATTERN`). Ein Stiegenhaus-Cluster
+  für BT1 bei mm (20928, 85023).
+- Nebenbefund: **20 von 59 Raum-Polygonen** sind Fragmente/untypisiert (Median 6,6 m²,
+  9 unter 2 m²) — bekannte Gap-Healing-Grenze, hier bestätigt.
+
 ## Log (append-only, neueste oben)
+- <2026-08-29> F1: Platzier-Regeln l=z·h + `richtung_durch_tuer` kodiert (Commit
+  `e87a745`, Suite 95). Fischamender-Durchstich + DXF-Overlay in echten Grundriss.
+  2 F2-Bugs oben dokumentiert. ⚠️ F1-Platzier-Code liegt versehentlich auf
+  `selman/raumerkennung-dxf` (Git-Tangle) — Integration/Entwirrung offen.
 - <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
