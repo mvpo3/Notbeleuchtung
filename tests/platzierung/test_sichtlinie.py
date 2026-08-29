@@ -9,7 +9,10 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
     ZirkulationsGraph,
 )
-from notbeleuchtung.platzierung.anker_strategy import plan_rettungszeichen_sichtlinie
+from notbeleuchtung.platzierung.anker_strategy import (
+    plan_rettungszeichen_sichtlinie,
+    richtung_durch_tuer,
+)
 from notbeleuchtung.symbols import catalog_keys
 
 
@@ -68,3 +71,25 @@ def test_naht_catalog_keys_gueltig():
 def test_ohne_ausgang_leer():
     leer = RaumModell(floor="X", bounds_mm=BBox(min_xy=(0, 0), max_xy=(1, 1)))
     assert plan_rettungszeichen_sichtlinie(leer, FakeNormProvider()) == []
+
+
+def test_rz_dichte_folgt_erkennungsweite_l_gleich_z_mal_h():
+    # Default (kein max_abstand): l = z·h. Hinterleuchtet, h=0.15 → l=30 m > 16-m-Gang
+    # → KEINE Sichtlinien-Füllung, nur die 2 Stiegenhaus-RZ (norm-korrekt, keine Überprod.).
+    rz = plan_rettungszeichen_sichtlinie(_og(), FakeNormProvider())
+    assert len(rz) == 2
+    assert "gerade" not in {p.richtung for p in rz}
+    # Kleineres, nur beleuchtetes Pikto → l = 100·0.10 = 10 m < 16 m → Füllung an der
+    # Wasserscheide (beidseitig). Weniger Sichtweite → mehr RZ, direkt aus der Norm.
+    eng = plan_rettungszeichen_sichtlinie(
+        _og(), FakeNormProvider(), piktogramm_hoehe_m=0.10, hinterleuchtet=False
+    )
+    assert len(eng) == 3
+    assert "gerade" in {p.richtung for p in eng}
+
+
+def test_richtung_durch_tuer_zeigt_durch_die_oeffnung():
+    # Übergang vertikaler Arm → Gang: Öffnung oben, Ziel (Gang) darunter → Pfeil ↓.
+    assert richtung_durch_tuer((20000.0, 7000.0), (20000.0, 6000.0)) == "unten"
+    # Stiegenhaus-Tür rechts vom Stiegenhaus: Ziel (Stiegenhaus) links → Pfeil ←.
+    assert richtung_durch_tuer((3000.0, 6000.0), (2000.0, 6000.0)) == "links"
