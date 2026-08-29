@@ -57,17 +57,16 @@ notlicht_kw_garage:
   category: notlicht
 
 # ── Sicherheitsleuchte ────────────────────────────────
-# Stiegenhaus-Anbauleuchte (LED), Extents 1.67×1.67 units = in-band. Sauberes
-# Punktsymbol (LINE+CIRCLE), origin-normalisiert beim Import.
-sicherheitsleuchte_stiege:
-  block_name: "stiegenhaus anbauleuchte led"
-  label: "Sicherheitsleuchte Stiegenhaus (LED-Anbau)"
+# Aufheller-Sicherheitsleuchte, zweckgebautes Notbeleuchtungs-Symbol (CIRCLE+HATCH),
+# Extents 4.7×4.7 units = in-band.
+sicherheitsleuchte_aufheller:
+  block_name: "sicherheitsleuchte aufheller"
+  label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
 
 # ── Antipanik ─────────────────────────────────────────
-# FR-Wannenleuchte, Extents 10.25×0.72 units (lineare Leuchte). Bei DE_GLOBAL_SCALE
-# 185 ≈ 1.9 m Länge — plausibel für Antipanik-Flächenausleuchtung.
-antipanik_wannenleuchte:
-  block_name: "fr-wannenleuchte"
-  label: "Antipanik-Leuchte (FR-Wannenleuchte)"
+# Zweckgebautes Antipanik-Piktogramm (44 LWPOLYLINE), Extents 5.64×1.59 units = in-band.
+antipanik_leuchte:
+  block_name: "notbeleuchtung- antipanikleuchte"
+  label: "Antipanik-Leuchte"
   category: antipanik
