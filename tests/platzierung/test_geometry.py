@@ -35,3 +35,24 @@ def test_room_main_axis():
 def test_offset_point():
     assert geo.offset_point((0.0, 0.0), "horizontal", 5.0) == (5.0, 0.0)
     assert geo.offset_point((0.0, 0.0), "vertical", 5.0, positive=False) == (0.0, -5.0)
+
+
+def test_grid_points_n1_ist_zentrum():
+    assert geo.grid_points(SQUARE, 1) == [(5.0, 5.0)]
+    assert geo.grid_points(SQUARE, 0) == [(5.0, 5.0)]
+
+
+def test_grid_points_raster_liegt_innen_und_verteilt():
+    pts = geo.grid_points(SQUARE, 4)
+    assert len(pts) == 4
+    assert len(set(pts)) == 4                              # verschiedene Positionen
+    assert all(geo.point_in_polygon(p, SQUARE) for p in pts)  # alle im Raum
+    # 2×2 im Einheits-Quadrat 0..10 → Viertelpunkte
+    assert set(pts) == {(2.5, 2.5), (7.5, 2.5), (2.5, 7.5), (7.5, 7.5)}
+
+
+def test_grid_points_l_form_wirft_aussenpunkte_raus():
+    # L-Form: rechteck-Raster würde Punkte in die fehlende Ecke legen → müssen raus.
+    l_shape = [(0.0, 0.0), (10.0, 0.0), (10.0, 4.0), (4.0, 4.0), (4.0, 10.0), (0.0, 10.0)]
+    pts = geo.grid_points(l_shape, 4)
+    assert all(geo.point_in_polygon(p, l_shape) for p in pts)

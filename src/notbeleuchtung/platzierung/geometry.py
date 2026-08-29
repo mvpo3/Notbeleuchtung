@@ -258,3 +258,30 @@ def subdivide_halves_along_axis(polygon: Polygon, axis: str | None = None) -> li
     q1 = miny + (maxy - miny) * 0.25
     q3 = miny + (maxy - miny) * 0.75
     return [(cx, q1), (cx, q3)]
+
+
+def grid_points(polygon: Polygon, n: int) -> list[Point]:
+    """`n` möglichst gleichmäßig über die Raumfläche verteilte Punkte (Zell-Zentren).
+
+    Für flächige Beleuchtung (Antipanik-Raster, EN 1838 §4.3): das Raster wird an die
+    Raum-Proportion angepasst (rows·cols ≥ n, Seitenverhältnis der Bbox), Punkte
+    außerhalb des Polygons (L-Formen) fallen raus. `n ≤ 1` → visuelles Zentrum;
+    degeneriert (nichts innen) → Fallback Zentrum. Kein Photometrie-Anspruch — die
+    ANZAHL kommt von der Norm (`mindest_anzahl`), hier nur die Verteilung.
+    """
+    if n <= 1:
+        return [find_center_visual(polygon)]
+    minx, miny, maxx, maxy = _bbox(polygon)
+    w, h = maxx - minx, maxy - miny
+    aspect = (w / h) if h > 0 else 1.0
+    rows = max(1, round(math.sqrt(n / aspect)))
+    cols = max(1, math.ceil(n / rows))
+    pts = [
+        (minx + w * (c + 0.5) / cols, miny + h * (r + 0.5) / rows)
+        for r in range(rows)
+        for c in range(cols)
+    ]
+    inside = [p for p in pts if point_in_polygon(p, polygon)]
+    if not inside:
+        return [find_center_visual(polygon)]
+    return inside[:n]
