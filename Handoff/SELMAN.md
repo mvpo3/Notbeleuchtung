@@ -60,6 +60,27 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — S1+S2 fertig, HARTES PROBLEM gefunden (Raum-Polygone)
+**S1** `dxf_load.py`: ezdxf öffnen, `$INSUNITS`→mm (Mollgasse=mm, factor 1.0),
+Direct-Mode (797 Wand-Ents direkt im msp; Wrapper-Fallback vorhanden), `bounds_mm`.
+Tests grün gegen echte Mollgasse-EG.
+
+**S2** `waende.py`: Wand-Segmente (LINE + LWPOLYLINE explodiert) → Port-Helfer
+`extract_room_faces`. **Synth (Einzellinien-Wände) = exakt 2 Räume, 25+15 m² ✓.**
+ABER echte Mollgasse: 1005 Segmente → 184 „Räume" mit median 0.2 m² = **Wand-Schlitze**
+zwischen den Doppellinien (10er/20er-Wand), NICHT echte Räume. Zweiter Versuch
+shapely-Buffer-Difference (Wände puffern → aus Grundfläche subtrahieren): 1 Riesen-Blob
+2400 m² weil Türlücken alles verbunden lassen. → **Naive Geometrie reicht für echte
+Pläne NICHT.** Das ist genau das Problem, für das die `_port`-Maschinerie (virtuelle
+Wände an Tür-/Fensteröffnungen `_build_virtual_walls_from_doors`, `_build_fragment_bridges`,
+room-partition via `assign_room`, room-hatch-ranking) existiert. FIL-Hatches (LILA/ORANGE)
+sind Belag-Muster, KEINE Raum-Polygone.
+
+**ENTSCHEIDUNG offen (User gefragt):** (A) Port-Maschinerie reanimieren, (B) erst
+Türen/Fluchtweg/Bounds liefern (funktionieren auf echt) + Raum-Polygone nur clean-DXF,
+(C) mittlere Heuristik. `waende.raeume_aus_waenden` bleibt als clean-DXF-Pfad + Fallback.
+
+
 ### 2026-08-29 — S0 fertig (Branch `selman/raumerkennung-dxf`)
 **Ansatz (entschieden):** NICHT die 14.4k-LOC `_port/` reanimieren, sondern schlanker
 Neubau in `raumerkennung/`, der die *sauberen* Port-Helfer wiederverwendet:
