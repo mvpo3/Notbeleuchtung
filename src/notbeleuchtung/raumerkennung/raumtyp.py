@@ -57,15 +57,23 @@ def _stempel(plan: DxfPlan) -> list[tuple[str, tuple[float, float]]]:
     return out
 
 
+def raumtyp_flags(text: str) -> tuple[str, bool, bool] | None:
+    """Freitext-Label → (raum_typ, ist_fluchtweg, ist_communal); None bei UNKNOWN."""
+    rt = classify_room(text)
+    if rt is RoomType.UNKNOWN:
+        return None
+    return _TYP_MAP.get(rt, (text.upper(), False, False))
+
+
 def beschrifte_raeume(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
     """Setzt ``raum_typ`` + Flags je Raum aus dem enthaltenen Stempel."""
     stempel = _stempel(plan)
     polys = [(r, Polygon(r.polygon_mm)) for r in raeume if len(r.polygon_mm) >= 3]
     for txt, xy in stempel:
-        rt = classify_room(txt)
-        if rt is RoomType.UNKNOWN:
+        tf = raumtyp_flags(txt)
+        if tf is None:
             continue
-        label, flucht, communal = _TYP_MAP.get(rt, (txt.upper(), False, False))
+        label, flucht, communal = tf
         pt = Point(xy)
         for r, poly in polys:
             if r.raum_typ:  # bereits gesetzt

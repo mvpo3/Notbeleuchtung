@@ -58,6 +58,12 @@ auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice m
 - [x] S6 `provider.parse` full → valides `RaumModell`, Contract-Roundtrip grün. Suite **80**.
 - Reihenfolge: Owner wählte **B** — erst Türen/Fluchtweg (echt-nutzbar), Raum-Polygone später.
 
+**Raum-Layer-Reader (`raumlayer.py`) — echte Raum-Polygone:** 3 von 4 Familien haben
+fertige Raum-Polygone auf Layern (`81\d Raum`/`Raumbegrenzung`/`A_Raeume`) + Name via
+`ROOM_NAME`-ATTRIB oder MTEXT → `classify_room`. Löst das Schlitz-Problem auditierbar
+(kein ML). Fischamender **68**, Herrenholz **473**, Baufeld **220** echte typisierte Räume;
+Mollgasse Fallback Wand-Polygonize. Suite **93**. (Barawitzka 2 = Nacharbeit.)
+
 **Cross-Projekt-Fundament (alle 5 Familien):** Wand-Layer per Muster (`WALL_PATTERN`:
 `02-TWA/ZWA/WDA` · `A_Waende` · `1[123]0 Wand`) + Skala robust (Span-Gate 15–500 m +
 Tür-ARC-Radius-Tiebreak). Korrekt für Mollgasse/Fischamender/Barawitzka(80m, war 8m!)/
