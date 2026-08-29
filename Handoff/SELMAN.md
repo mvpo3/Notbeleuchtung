@@ -57,3 +57,27 @@ importierbar machen → Räume/Türen extrahieren → dann Fluchtweg-Zirkulation
 Nur `raumerkennung/` + `hauptengine.contracts` importieren (der `_port`-Code darf
 intern untereinander importieren). Contract ändern = version bump + gen_schema +
 3-Owner-Approval. Branch `selman/…` → PR.
+
+## STAND (append-only, neueste oben) — für nahtloses Weitermachen
+
+### 2026-08-29 — S0 fertig (Branch `selman/raumerkennung-dxf`)
+**Ansatz (entschieden):** NICHT die 14.4k-LOC `_port/` reanimieren, sondern schlanker
+Neubau in `raumerkennung/`, der die *sauberen* Port-Helfer wiederverwendet:
+- `._port.parsers.room_faces.extract_room_faces` — Wand-Segmente → Raum-Polygone (pure).
+- `._port.models.room.classify_room` + `GERMAN_ROOM_TYPE_MAP` — Stempel→RoomType (pure).
+Plan-Datei: `.claude/plans/du-bist-fenster-delightful-wozniak.md`.
+
+**Gebaut:** `provider.py` (`ArchitekturRaumProvider.parse` Stub, erfüllt Protocol),
+`__init__.py` export, `tests/raumerkennung/{conftest,test_scaffold}.py`. Suite grün
+(69 passed). Baseline-Info: volle Suite ist heute **69** (nicht mehr 13/1 aus Handoff).
+
+**Datenlage (DXF-Inspektion):** Mollgasse `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_*.dxf`
+= mm ($INSUNITS=4, Koords ~65k). Layer: Wände `02-TWA*/02-ZWA*/02-WDA*`, Text
+`01-/03-/05-TXT*` (MTEXT), Türen `TÜR-80_*` (INSERT auf `05-SYM*`), Fluchtweg `09-WEG*`.
+Baufeld E2 = Meter + andere Taxonomie (110/120/130-Blöcke) → deferred.
+
+**Nächster Schritt:** S1 `dxf_load.py` — ezdxf öffnen, Modelspace/Wrapper-INSERT,
+$INSUNITS→mm-Faktor, Layer-Prefix-Filter, `bounds_mm`. Test gegen `WHA_MOL_EG.dxf` (skipif).
+
+**Naht-Warnung:** E2E NICHT auf echten Provider umstellen — 4OG-Golden (neg. Koords,
+7 Symbole) matcht keinen echten DXF. Fake-Swap erst mit kuratierter neuer Golden + F1.
