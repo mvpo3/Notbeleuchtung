@@ -60,6 +60,26 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — Raum-Layer-Reader: echte Raum-Polygone (löst Schlitz-Problem)
+Auf Basis des „Schritt-6"-Vorschlags (Face-Clustering), aber die auditierbarere/
+billigere Variante: **3 von 4 Input-Familien haben fertige Raum-Polygone auf eigenen
+Layern** → direkt lesen statt clustern. `raumlayer.py::raeume_aus_layer(plan)`:
+- Raum-Poly-Layer per Muster (`81\d Raum` · `Raumbegrenzung` · `A_Raeume`, ohne Icon),
+  geschlossene LWPOLYLINE → Polygon + Fläche.
+- Name aus `ROOM_NAME`-ATTRIB (Herrenholz/Baufeld) ODER MTEXT im Polygon
+  (Barawitzka/Fischamender) → `raumtyp_flags` (neuer Public-Helper in `raumtyp.py`).
+- Provider: `raeume_aus_layer` bevorzugt, sonst Wand-Polygonize-Fallback (Mollgasse).
+
+**Output-Wandel (echte Räume + Typen statt Schlitze):**
+Fischamender **68** (45 typisiert: ZIMMER/GANG/BAD/WC/KÜCHE) · Herrenholz **473** ·
+Baufeld **220** · Mollgasse Fallback 184 (kein Raum-Layer) · Barawitzka nur **2**
+(Polygone liegen wohl auf Icon/LINE — Nacharbeit). Viz:
+`output/RaumModell_Fischamender_EG_HQ.png` (Gänge sauber als Erschließung erkannt).
+Suite **93**, ruff sauber.
+
+Offen: Barawitzka-Raum-Polygone (Icon-Layer/LINE-Loops); Mollgasse-Räume brauchen
+weiterhin Face-Clustering (Union-Find, nicht DBSCAN) da kein Raum-Layer.
+
 ### 2026-08-29 — Cross-Projekt-Fundament: Wand-Layer + Skala über alle 5 Familien
 Ziel (Owner): Muster über alle Projekte, Haupteingänge in JEDEM Projekt erkennen.
 

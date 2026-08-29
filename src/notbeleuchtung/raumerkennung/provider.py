@@ -14,6 +14,7 @@ from notbeleuchtung.hauptengine.contracts import RaumModell
 
 from .dxf_load import bounds_mm, lade_dxf
 from .footprint import hauptausgaenge
+from .raumlayer import raeume_aus_layer
 from .raumtyp import beschrifte_raeume
 from .tueren import tueren_aus_dxf
 from .waende import raeume_aus_waenden
@@ -34,7 +35,10 @@ class ArchitekturRaumProvider:
     def parse(self, dxf_path: str, floor: str) -> RaumModell:
         plan = lade_dxf(dxf_path)
         bounds = bounds_mm(plan)
-        raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
+        # Bevorzugt fertige Raum-Polygone (Raum-Layer); sonst Wand-Polygonisierung.
+        raeume = raeume_aus_layer(plan)
+        if not raeume:
+            raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
         tueren = tueren_aus_dxf(plan)
         ausgaenge = hauptausgaenge(plan, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
