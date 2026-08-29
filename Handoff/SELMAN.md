@@ -60,6 +60,33 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
+### 2026-08-29 — Cross-Projekt-Fundament: Wand-Layer + Skala über alle 5 Familien
+Ziel (Owner): Muster über alle Projekte, Haupteingänge in JEDEM Projekt erkennen.
+
+**Generalisiert (getestet, Suite 91):**
+- **Wand-Layer per Muster** statt fixem Prefix (`dxf_load.WALL_PATTERN`):
+  `02-TWA/ZWA/WDA` (Mollgasse) · `A_Waende` (Fischamender) · `1[123]0 Wand` (ArchiCAD:
+  Barawitzka/Herrenholz/Baufeld, auch mit `_Stift_Nr__N`). `DxfPlan.wall_entities()`.
+- **Skala robust** (`_calibrate_factor`): Span-Gate 15–500 m (killt falsche Klein-Dekade),
+  Tür-Schwenkbogen-Radius (~0.9 m) als Tiebreak. Ergebnis korrekt für ALLE:
+  Mollgasse leer 54.6×48.4m (×1000) · fertig (×1) · Fischamender 53×95m · Barawitzka
+  80×36m (vorher fälschlich 8m!) · Herrenholz 215×64m.
+- Synth auf 20×12 m vergrößert (Span-Gate braucht ≥15 m); Tests angepasst.
+
+**Hauptausgang-Status je Familie:**
+- Mollgasse: **4** (Doppeltür am Rand) ✓.
+- Barawitzka: 116 Tür-ARCs (800/900/1000mm ✓), 59 Doppeltür-Paare erkannt, aber alle
+  INNEN → 0 am Rand. Braucht eigene Kalibrierung (Paar-Kriterium enger; andere
+  Eingangs-Darstellung). Umriss OK (37% außen).
+- Fischamender: nur 7 Tür-ARCs top-level — Rest **nested in `A_Tueren`-Blöcken** →
+  `_schwenkboegen` muss in Tür-Blöcke absteigen (INSERT-Transform anwenden).
+- Herrenholz/Baufeld: analog ArchiCAD, noch offen.
+
+**Nächster Schritt:** (a) `_schwenkboegen` in Blöcke absteigen (Fischamender);
+(b) Doppeltür-Paar-Kriterium schärfen (gleiche Wand, gegenläufige Flügel) gegen die 59
+Barawitzka-Falschpaare; (c) je Familie an einem Geschoss validieren. Raum-Polygone aus
+Raum-Layern (`_815`/`810`/`A_Raeume`) bleibt ebenfalls offen.
+
 ### 2026-08-29 — FIX-3 Hauptausgang = DOPPELTÜR am Rand (Fachmuster vom Owner)
 Owner-Regel: **Gebäude-Haupteingang wird als Doppeltür gezeichnet** (2 Flügel), 1–2 je
 Gebäude/Stiegenhaus; Muster über alle Projekte lernen. Perimeter-Tür allein war zu grob

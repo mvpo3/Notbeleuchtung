@@ -40,9 +40,10 @@ def mollgasse_blank_eg() -> Path:
 def build_synth_dxf(path: Path) -> Path:
     """Deterministische Mini-DXF (mm): zwei Räume, ein Stempel, eine Tür.
 
-    Layout (mm): Außenrechteck 0..8000 × 0..5000, Trennwand bei x=5000 →
-    linker Raum (5×5 m) + rechter Raum (3×5 m). MTEXT 'STIEGENHAUS' im linken
+    Layout (mm): Außenrechteck 0..20000 × 0..12000, Trennwand bei x=12000 →
+    linker Raum (12×12 m) + rechter Raum (8×12 m). MTEXT 'STIEGENHAUS' im linken
     Raum. TÜR-80-INSERT in der Trennwand. Fluchtweg-Polyline auf 09-WEG.
+    (≥15 m Ausdehnung, damit die Skala-Kalibrierung greift.)
     """
     import ezdxf
 
@@ -55,22 +56,22 @@ def build_synth_dxf(path: Path) -> Path:
             doc.layers.add(lyr)
     W = "02-TWA-G00-LEG-M0"
     # Außenrechteck
-    corners = [(0, 0), (8000, 0), (8000, 5000), (0, 5000)]
+    corners = [(0, 0), (20000, 0), (20000, 12000), (0, 12000)]
     for i in range(4):
         a, b = corners[i], corners[(i + 1) % 4]
         msp.add_line(a, b, dxfattribs={"layer": W})
     # Trennwand
-    msp.add_line((5000, 0), (5000, 5000), dxfattribs={"layer": W})
+    msp.add_line((12000, 0), (12000, 12000), dxfattribs={"layer": W})
     # Raumstempel im linken Raum
     msp.add_mtext("STIEGENHAUS", dxfattribs={"layer": "01-TXT-G00-LEG-M0"}
-                  ).set_location((2500, 2500))
+                  ).set_location((6000, 6000))
     # Tür in der Trennwand
     if "TÜR-80_10er-WAND" not in doc.blocks:
         doc.blocks.new("TÜR-80_10er-WAND")
-    msp.add_blockref("TÜR-80_10er-WAND", (5000, 2500),
+    msp.add_blockref("TÜR-80_10er-WAND", (12000, 6000),
                      dxfattribs={"layer": "05-SYM-G00-LEG-M0"})
     # Fluchtweg
-    msp.add_lwpolyline([(2500, 2500), (6500, 2500), (6500, 500)],
+    msp.add_lwpolyline([(6000, 6000), (16000, 6000), (16000, 1000)],
                        dxfattribs={"layer": "09-WEG-G00-LEG-M0"})
     doc.saveas(str(path))
     return path

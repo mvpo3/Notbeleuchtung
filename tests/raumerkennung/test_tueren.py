@@ -10,7 +10,7 @@ def test_synth_eine_tuer(synth_dxf):
     assert len(tueren) == 1
     t = tueren[0]
     assert t.breite_mm == 800.0          # TÜR-80 → 800 mm
-    assert t.xy_mm == (5000.0, 2500.0)
+    assert t.xy_mm == (12000.0, 6000.0)
     assert t.ist_notausgang is False     # Innentür
 
 

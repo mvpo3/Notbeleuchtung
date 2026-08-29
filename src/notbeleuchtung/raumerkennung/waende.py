@@ -13,7 +13,7 @@ from __future__ import annotations
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
 from ._port.parsers.room_faces import Seg, extract_room_faces
-from .dxf_load import WALL_PREFIXES, DxfPlan
+from .dxf_load import DxfPlan
 
 XY = tuple[float, float]
 
@@ -21,7 +21,7 @@ XY = tuple[float, float]
 def wand_segmente(plan: DxfPlan) -> list[Seg]:
     """Alle Wand-Layer-Entities als Liste von (p0, p1)-Segmenten in mm."""
     segs: list[Seg] = []
-    for e in plan.entities(WALL_PREFIXES):
+    for e in plan.wall_entities():
         t = e.dxftype()
         if t == "LINE":
             pts = plan.entity_points(e)

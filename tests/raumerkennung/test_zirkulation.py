@@ -9,7 +9,7 @@ def test_synth_fluchtweg(synth_dxf):
     graph = zirkulation_aus_dxf(lade_dxf(synth_dxf))
     assert len(graph.segmente) == 1
     seg = graph.segmente[0]
-    assert seg.laenge_mm == 6000.0          # 4000 + 2000
+    assert seg.laenge_mm == 15000.0         # 10000 + 5000
     assert seg.reason == "long_run"         # >= 5 m
     assert len(graph.nodes) == 3
     assert len(graph.edges) == 2
