@@ -60,7 +60,28 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
-### 2026-08-29 — FIX Ausgänge + Skala (nach Analyse ALLER 6 Projekte)
+### 2026-08-29 — FIX-2 Hauptausgänge via Raster-Umriss (`footprint.py`)
+User: „du erkennst die Hauptausgänge nicht" + 4 Beispielbilder (Mollgasse EG).
+Definition bestätigt: **Hauptausgang = Tür in der Außenwand, die nach außen führt**
+(Vorplatz/Hof), im fertigen Plan mit grünem RZ + Richtungspfeil.
+
+Erprobt + verworfen (alle scheitern am lückigen, nicht-konvexen Wandwerk):
+Wand-Polygonize→Schlitze · Wand-Buffer-Union→239m²-Fragment · konvexe Hülle→Türen
+1.8–14m daneben · WET_AUSSEN-Namensheuristik→geraten · Fluchtrichtungspfeil-Block→im
+Plan 0 (Pfeil steckt im RZ). RZ sitzen an `türachse&qualität`-Markern (jede Tür), nicht
+nur an Hauptausgängen.
+
+**Lösung `footprint.py` (nur scikit-image):** Wände rastern (200mm) → `disk(5)` dilatieren
+(Türlücken schließen) → `label(~closed)`, Ecke=außen fluten → Gebäude-Innen/Außen.
+**Hauptausgang = Perimeter-Tür** (Türzelle ∈ dilatierter Außen-Maske). Mollgasse EG:
+**6 Perimeter-Türen, alle am Vorplatz/Hof — Owner bestätigt „im Wesentlichen richtig".**
+Provider: `ausgaenge = ausgaenge_aus_umriss(plan, tueren, bounds)`. Suite **88**, ruff sauber.
+Viz: `output/hauptausgaenge_perimeter_EG.png`.
+
+Offen: rechter Gebäudeblock hat 0 Kandidaten (eigener Eingang? prüfen); ggf. 6→4
+verschärfen (Türbreite). `footprint`-Umriss ist auch Basis für Raum-Extraktion (Innen-Blob).
+
+### 2026-08-29 — FIX-1 Ausgänge + Skala (nach Analyse ALLER 6 Projekte)
 User-Feedback: „Ausgänge falsch". Ursache: Heuristik „09-WEG-Endknoten nahe Bounding-Box"
 → 88 fragmentierte 2-Punkt-Segmente, deren Enden am **Planrahmen** liegen (die 09-WEG-
 Annotation ist kein begehbarer Weg). Ergab 11 Müll-Ausgänge.
