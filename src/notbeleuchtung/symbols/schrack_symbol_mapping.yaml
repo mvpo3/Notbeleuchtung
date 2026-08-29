@@ -2,9 +2,15 @@
 #
 # Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
 # backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
-# Notlicht-/Rettungszeichen-Keys, die die Notbeleuchtungs-Engine vergibt — nicht
-# der volle 109-Block-Katalog. Erweiterung um weitere Kategorien (Antipanik,
-# Sicherheitsleuchten) je Slice.
+# Notbeleuchtungs-Keys, die die Engine vergibt — nicht der volle 109-Block-Katalog.
+#
+# Kurations-Regel: nur Blocks mit „in-band"-Extents (max. Kantenlänge < 50 units)
+# aufnehmen — die Lib enthält korrupte/inkonsistent skalierte Blocks. Bekannt:
+#   • „richtungspfeil nach rechts" ist korrupt (Extents 2606×2300) → „rechts" via
+#     mirror_x auf den wohlgeformten „nach links"-Block (3.13×1.57).
+#   • „…SV_RETTUNGSZEICHEN" ist ein Legenden-Block (861×4945, 30 ATTDEF), KEIN
+#     platzierbares Punktsymbol.
+# Der Guard-Test tests/render/test_symbols_library.py erzwingt die In-Band-Regel.
 #
 # Pflichtfelder je Eintrag: block_name, label, category
 # Optional: mirror_x (Horizontal-Spiegelung des Blocks), scale, notes
@@ -49,3 +55,19 @@ notlicht_kw_garage:
   block_name: "notbeleuchtung richtungspfeil nach unten"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
+
+# ── Sicherheitsleuchte ────────────────────────────────
+# Stiegenhaus-Anbauleuchte (LED), Extents 1.67×1.67 units = in-band. Sauberes
+# Punktsymbol (LINE+CIRCLE), origin-normalisiert beim Import.
+sicherheitsleuchte_stiege:
+  block_name: "stiegenhaus anbauleuchte led"
+  label: "Sicherheitsleuchte Stiegenhaus (LED-Anbau)"
+  category: sicherheitsleuchte
+
+# ── Antipanik ─────────────────────────────────────────
+# FR-Wannenleuchte, Extents 10.25×0.72 units (lineare Leuchte). Bei DE_GLOBAL_SCALE
+# 185 ≈ 1.9 m Länge — plausibel für Antipanik-Flächenausleuchtung.
+antipanik_wannenleuchte:
+  block_name: "fr-wannenleuchte"
+  label: "Antipanik-Leuchte (FR-Wannenleuchte)"
+  category: antipanik
