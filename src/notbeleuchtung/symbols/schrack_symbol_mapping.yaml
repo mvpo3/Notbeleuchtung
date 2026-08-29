@@ -6,8 +6,8 @@
 #
 # Kurations-Regel: nur Blocks mit „in-band"-Extents (max. Kantenlänge < 50 units)
 # aufnehmen — die Lib enthält korrupte/inkonsistent skalierte Blocks. Bekannt:
-#   • „richtungspfeil nach rechts" ist korrupt (Extents 2606×2300) → „rechts" via
-#     mirror_x auf den wohlgeformten „nach links"-Block (3.13×1.57).
+#   • „richtungspfeil nach rechts" war korrupt (Extents 2606×2300); als sauberer
+#     X-Spiegel von „nach links" neu aufgebaut (3.13×1.57), jetzt direkt nutzbar.
 #   • „…SV_RETTUNGSZEICHEN" ist ein Legenden-Block (861×4945, 30 ATTDEF), KEIN
 #     platzierbares Punktsymbol.
 # Der Guard-Test tests/render/test_symbols_library.py erzwingt die In-Band-Regel.
@@ -36,19 +36,17 @@ notlicht_ks_stiege_unten:
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
 
-# Richtungs-Varianten. Der Library-Block 'nach rechts' ist korrupt (Pikto-Linien
-# 2603 units versetzt) → für BEIDE Seiten der wohlgeformte 'nach links'-Block;
-# "rechts" via Horizontal-Spiegelung (mirror_x).
+# Richtungs-Varianten — je ein eigener, sauberer Pfeil-Block (3.13×1.57 units).
+# 'nach rechts' als X-Spiegel von 'nach links' neu aufgebaut (war korrupt).
 notlicht_ks_stiege_links:
   block_name: "notbeleuchtung-richtungspfeil nach links"
   label: "Notlicht KS Rettungszeichen links"
   category: notlicht
 
 notlicht_ks_stiege_rechts:
-  block_name: "notbeleuchtung-richtungspfeil nach links"
-  label: "Notlicht KS Rettungszeichen rechts (gespiegelt)"
+  block_name: "notbeleuchtung-richtungspfeil nach rechts"
+  label: "Notlicht KS Rettungszeichen rechts"
   category: notlicht
-  mirror_x: true
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
