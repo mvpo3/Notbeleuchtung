@@ -34,3 +34,6 @@ lux:
 quellen:
   rettungsweg: "ÖNORM EN 1838:2013 §4.2.1"
   antipanik: "ÖNORM EN 1838:2013 §4.3.1"
+  # §4.1 — Sicherheitsleuchten (Aufheller) an Betonungspunkten: Stiegen,
+  # Richtungsänderungen, Ausgänge. Eigene Fundstelle im Audit-Trail.
+  sicherheitsleuchte: "ÖNORM EN 1838:2013 §4.1"
