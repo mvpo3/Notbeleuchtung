@@ -38,5 +38,15 @@ F1 tauscht dann in `platzierung/lux.py` das konstante `i_cd` gegen `Photometrie.
 - [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei)
 - [ ] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
+### F2 → umgelenkt auf Raumerkennung (Selman-Package)
+Branch `selman/raumerkennung-dxf`. Baut echten `ArchitekturRaumProvider.parse(dxf, floor)
+-> RaumModell` (ersetzt `FakeRaumProvider` schrittweise). Schlanker Neubau in
+`raumerkennung/`, wiederverwendet pure Port-Helfer (`room_faces`, `classify_room`).
+Primärziel Mollgasse (mm). **Kein Contract-Touch** (rein additiv). E2E bleibt vorerst
+auf Fake (4OG-Golden matcht keinen echten DXF) — Fake-Swap = späterer Slice mit F1-Konsens.
+- [x] S0 Scaffold (`provider.py` Stub, `tests/raumerkennung/`) — Suite grün (69), committed
+- [ ] S1 dxf_load · [ ] S2 waende→räume · [ ] S3 raumtyp · [ ] S4 tueren · [ ] S5 zirkulation · [ ] S6 provider full → READY
+
 ## Log (append-only, neueste oben)
+- <S0> F2 umgelenkt → Raumerkennung. Branch `selman/raumerkennung-dxf`, Scaffold + Test grün (69 passed).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
