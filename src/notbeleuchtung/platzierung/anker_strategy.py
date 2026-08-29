@@ -95,8 +95,30 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
 _MAX_RZ_ABSTAND_MM = 12000.0
 
 
+def richtung_durch_tuer(
+    tuer_xy: tuple[float, float], ziel_xy: tuple[float, float]
+) -> str:
+    """RZ an einer **Tür/Öffnung**: Pfeil zeigt **DURCH die Tür** in Reiserichtung.
+
+    Regel (Owner-Korrektur, PLATZIERUNGS_KONZEPTE Schicht-1-Anker): ein RZ, das an
+    einer Tür/Öffnung sitzt, wird **entlang der Schwelle** platziert und der Pfeil
+    zeigt **senkrecht durch die Öffnung** — von der Tür zum `ziel_xy` (die nächste Zone
+    Richtung Ausgang). Das **überschreibt** das reine Distanz-Gefälle: der Flüchtende
+    soll erst die Öffnung durchqueren, dann leitet das nächste RZ weiter. (Beispiel:
+    Übergang vertikaler Arm→Gang = Pfeil ↓ durch die Öffnung, nicht ← am Knick vorbei;
+    Stiegenhaus-Tür = Pfeil ← durch die Tür ins Stiegenhaus.)
+    """
+    richtung, _ = _richtung_und_rotation(ziel_xy[0] - tuer_xy[0], ziel_xy[1] - tuer_xy[1])
+    return richtung
+
+
 def plan_rettungszeichen_sichtlinie(
-    raum: RaumModell, norm: NormProvider, *, max_abstand_mm: float = _MAX_RZ_ABSTAND_MM
+    raum: RaumModell,
+    norm: NormProvider,
+    *,
+    max_abstand_mm: float | None = None,
+    piktogramm_hoehe_m: float = 0.15,
+    hinterleuchtet: bool = True,
 ) -> list[Platzierung]:
     """RZ nach der Sichtlinien-Regel — **so wenige wie nötig, so sichtbar wie möglich**.
 
@@ -110,6 +132,13 @@ def plan_rettungszeichen_sichtlinie(
        `max_abstand_mm`, ein RZ dazwischen; genau mittig zwischen zwei gleich weiten
        Ausgängen = Wasserscheide → `richtung='gerade'` (beidseitig).
 
+    **RZ-Dichte = Erkennungsweite `l = z·h`** (EN 1838 §4.1): `max_abstand_mm` wird,
+    wenn nicht explizit gesetzt, aus der Norm gezogen — `norm.erkennungsweite_m` mit
+    `z` = 200 (hinterleuchtet) / 100 (beleuchtet) und `h` = Piktogramm-Höhe. So folgt
+    die Anzahl der RZ dem Sichtbarkeits-Wissen statt einem geratenen Konstanten-Wert:
+    ein hinterleuchtetes 0,15-m-Pikto (l=30 m) deckt einen 16-m-Gang ohne Füllung, ein
+    kleineres beleuchtetes Pikto braucht Zwischen-RZ.
+
     So sieht man von jeder Wohnungstür sofort eine Notleuchte, ohne Überproduktion.
     Achse = x (Gang-Hauptrichtung).
     """
@@ -118,6 +147,8 @@ def plan_rettungszeichen_sichtlinie(
     ex = [(a.id, a.typ, pos[a.id]) for a in raum.ausgaenge if a.id in G and a.id in pos]
     if not ex:
         return []
+    if max_abstand_mm is None:
+        max_abstand_mm = norm.erkennungsweite_m(piktogramm_hoehe_m, hinterleuchtet) * 1000.0
     exit_xs = [p[0] for _, _, p in ex]
     all_xs = [pos[n][0] for n in pos]
     bcx = (min(all_xs) + max(all_xs)) / 2.0          # Gebäude-/Gang-Mitte
