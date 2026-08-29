@@ -45,15 +45,25 @@ def _richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:
     return ("oben", 90.0) if dy >= 0 else ("unten", 270.0)
 
 
-def _catalog_key(symbol_katalog_keys: list[str], richtung: str) -> str:
-    """Ersten Norm-Katalog-Key wählen; bei richtung 'unten' die _unten-Variante,
-    falls die Norm sie anbietet (Down-Pfeil = Ausgang erreicht)."""
+# Richtung → Key-Suffix des dediziert orientierten Pfeil-Blocks. 'oben' hat keinen
+# eigenen Block (kein „nach oben" in der Lib) → Fallback via Rotation.
+_RICHTUNG_SUFFIX = {"unten": "_unten", "links": "_links", "rechts": "_rechts"}
+
+
+def _select_key(symbol_katalog_keys: list[str], richtung: str) -> tuple[str, bool]:
+    """Richtungs-spezifischen Pfeil-Block wählen, falls die Norm ihn anbietet.
+
+    Rückgabe `(catalog_key, is_directional)`. `is_directional=True` heißt: der Block
+    zeigt bereits in die Laufrichtung (links/rechts/unten) → der Platzierer setzt
+    rotation/mirror auf 0/False. Sonst der erste Key + generative Rotation/Spiegelung.
+    """
     keys = symbol_katalog_keys or ["notlicht_ks_stiege"]
-    if richtung == "unten":
+    suffix = _RICHTUNG_SUFFIX.get(richtung)
+    if suffix:
         for k in keys:
-            if k.endswith("_unten"):
-                return k
-    return keys[0]
+            if k.endswith(suffix):
+                return k, True
+    return keys[0], False
 
 
 def _building_assigner(x_coords: list[float]):
@@ -84,14 +94,19 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
         anf = norm.fuer_fluchtweg_abschnitt(seg)
         # Laufrichtung aus dem letzten Polyline-Schenkel (Vorgänger → Endpunkt).
         px, py = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
-        richtung, rotation = _richtung_und_rotation(ex - px, ey - py)
+        richtung, fallback_rotation = _richtung_und_rotation(ex - px, ey - py)
+        catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
+        # Dedizierter Richtungs-Block zeigt schon richtig → keine Rotation/Spiegelung.
+        # Sonst (z.B. 'oben') generativ über Rotation, 'rechts' zusätzlich gespiegelt.
+        rotation = 0.0 if is_directional else fallback_rotation
+        mirror_x = False if is_directional else (richtung == "rechts")
         building = assign_building(ex)
         out.append(
             Platzierung(
                 xy_mm=(ex, ey),
-                catalog_key=_catalog_key(anf.symbol_katalog_keys, richtung),
+                catalog_key=catalog_key,
                 rotation_deg=rotation,
-                mirror_x=(richtung == "rechts"),
+                mirror_x=mirror_x,
                 height_mm=float(anf.montagehoehe_mm),
                 kind=anf.klassifikation,
                 richtung=richtung,

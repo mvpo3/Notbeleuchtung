@@ -66,9 +66,11 @@ Aufzugsflure (bis zum nächsten Rettungsweg), manuelle Türentriegelung (5 lx **
 Bedienelement**, vertikal), Flucht-/Rettungspläne (5 lx), Hauptverteiler Allgemein-/
 SiBe (5 lx), Technik-/Betriebsräume (0,5 lx flächig / 5 lx an Schalttafeln),
 Hallenbäder (5 lx auf **Wasserfläche** — Nachweisfläche ≠ Montagefläche, Leuchten am
-Beckenumgang), Toiletten nach Raumtyp (0,5/1 lx). **Achtung Versions-Delta:** unser
-EN-1838-PDF ist 2019; diese NEU-Stellen stammen aus der 2025er-Ausgabe (nur sekundär
-erfasst) → als „EN 1838:2025-Kandidat" kennzeichnen, bis Original vorliegt.
+Beckenumgang), Toiletten nach Raumtyp (0,5/1 lx). **Versions-Delta:** unser
+EN-1838-PDF ist 2019, aber alle NEU-Stellen sind im Repo mit Seiten-Refs belegt →
+`Handbuch_NotSicherheitsbeleuchtung_2026.md` (HB2026-R39…R45, DIN EN 1838:2025-03
+§4.2/5.4). Sekundärquelle (INOTEC-Hersteller-Handbuch) — nie alleinige `norm_quelle`,
+aber die 2025er-Werte sind damit belastbar erfasst.
 
 **Lehre:** Schild (RZ) und Leuchte (SL) sind an einer Tür **getrennte Anker** mit
 getrennten Regeln — im Datenmodell nicht vermischen. RZ = „so nah wie möglich an/über
@@ -258,13 +260,17 @@ am Ausgangs-Segment — die übrigen Schichten sind die Ausbaustufen.
 
 ## Offene Datenlücken (für spätere Beschaffung)
 
-1. **EN 1838:2025-03 Originaltext** — das Flächen-Paradigma + NEU-Stellen sind nur
-   sekundär (INOTEC/GSYSTEMS) erfasst.
-2. **Hersteller-Abstandstabellen** je Leuchte (h→Abstand) — herstellerspezifisch,
-   NICHT in den Norm-PDFs; nötig für die photometriefreie Linien-Verdichtung.
-3. **OVE R 12-2 / OIB-RL 2 / EN 50172 Originale** — substanziell via Zumtobel
-   abgedeckt, aber nicht primär.
-4. **TRVB E 102 / 123 S** — nur namentlich referenziert, keine Werte in irgendeiner Quelle.
+1. **EN 1838:2025-03 Kernwerte** — BELEGT via `Handbuch_NotSicherheitsbeleuchtung_2026.md`
+   (Lux-Tabelle R24, Offset-Formel R26, NEU-Stellen R39–R45, z-Faktoren R49,
+   Systembetriebsdauer Tab. A.1 R57 — alle mit Seiten-Refs). Rest-Lücke nur noch der
+   zitierbare Originaltext; die Sekundärerfassung reicht für die Engine.
+2. **Hersteller-Abstandstabellen** je Leuchte (h→Abstand) — OFFEN. Herstellerspezifisch,
+   NICHT im Norm-Handbuch gedruckt (HB2026-R27 nennt nur die INOTEC-Referenzbreite 2,0 m);
+   nötig für die photometriefreie Linien-Verdichtung. Beschaffung: Produktkataloge/Planungstools.
+3. **OVE R 12-2 / OIB-RL 2 Originale** — OFFEN (AT-spezifisch; HB2026 ist DE-only). EN 50172
+   dagegen via HB2026-R55–R58 (DIN EN 50172:2024-10) belegt.
+4. ~~TRVB E 102 / 123 S~~ — GESTRICHEN: TRVB E 102 seit 2019-02-14 zurückgezogen, ersetzt
+   durch ÖNORM E 8101 + OVE R 12-2 + EN 1838 + EN 50172 + OIB-RL 2 (→ deckt sich mit Lücke #3).
 
 ---
 

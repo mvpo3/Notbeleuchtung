@@ -27,6 +27,11 @@ Jede Zeile pinnt den Herkunfts-Commit + dokumentiert Divergenzen.
 | `hauptengine/render/dxf_renderer.py` | `backend/engine/dxf_writer.py` (Subset) | ab53d8a | Contract-Objekte statt Placement-/Arch-JSON; Raum-Konturen aus `RaumModell.polygon_mm` + Fluchtweg-Segmente statt Wände; Stromkreis-Label-Port (Normale + Anti-Kollision, Konstanten verbatim) ohne Kürzel-Stapel; VPORT-Block vereinfacht; **kein Port:** `dxf_layers.py`/`layer_convention` (fixe Layer `E_Sicherheitsbeleuchtung`/`E_Stromkreis_Label`/`ARCH_*` statt kind→layer-Maschine für 1 Symbolfamilie), Höhenkoten, Media-Labels, Overlap-Spirale, Hatch-Stripping |
 | `CAD_Symbole/E-Symbole.dxf` | `elektro-planer/CAD_Symbole/E-Symbole.dxf` | 6d5e865 | binär-identisch (schon vor Slice 3 gestaged) |
 
+## Katalog-Erweiterung (Symbole — Leonis)
+| Neu | Herkunft | Divergenz |
+|-----|----------|-----------|
+| `schrack_symbol_mapping.yaml` +2 Keys | **zweckgebaute Blocks** in `CAD_Symbole/E-Symbole.dxf` (Owner-gezeichnet) | **Sicherheitsleuchte** (`sicherheitsleuchte_aufheller` → „Sicherheitsleuchte Aufheller", CIRCLE+HATCH, 4.7×4.7 units) + **Antipanik** (`antipanik_leuchte` → „Notbeleuchtung- Antipanikleuchte", 44 LWPOLYLINE, 5.64×1.59). Kurations-Befund: „richtungspfeil nach rechts" war korrupt (Extents 2606×2300) → als sauberer **X-Spiegel von „nach links"** neu aufgebaut (3.13×1.57 units), `notlicht_ks_stiege_rechts` zeigt jetzt direkt darauf (mirror_x-Hack entfernt); „SV_RETTUNGSZEICHEN" ist Legenden-Block (861×4945, 30 ATTDEF), nicht platzierbar. In-Band-Guard-Test (`< 50 units`) in `tests/render/test_symbols_library.py`. **Noch kein Platzierer emittiert die Leuchten-Keys** — braucht Enis-Norm-`symbol_katalog_keys` + `plan_sicherheitsleuchten`/`plan_antipanik`-Strategie. |
+
 ## Geplante Ports (noch offen)
 | Ziel | Herkunft | Slice | Kopplung |
 |------|----------|-------|----------|

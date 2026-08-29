@@ -72,8 +72,10 @@ def test_positionen_und_mirror_matchen_fixture(rendered):
         ins = by_pos[key]
         assert ins.dxf.rotation == pytest.approx(p.rotation_deg)
         assert (ins.dxf.xscale < 0) == p.mirror_x  # Fixture-Keys ohne Mapping-mirror
+    # RZ nutzen seit dem Richtungs-Fix dedizierte links/rechts-Blöcke (rotation 0,
+    # keine Spiegelung) → kein negativer xscale mehr.
     n_mirrored = sum(1 for i in inserts if i.dxf.xscale < 0)
-    assert n_mirrored == 3
+    assert n_mirrored == 0
 
 
 def test_f13_stromkreis_labels_sichtbar(rendered):
