@@ -77,7 +77,7 @@ class FakePlatzierer:
     Slice 0-Referenz. Der E2E-Durchstich nutzt ab Slice 2 den echten
     `NotlichtPlatzierer` (siehe `build_fake_bundle`)."""
 
-    def place(self, raum: RaumModell, norm) -> PlatzierungsErgebnis:
+    def place(self, raum: RaumModell, norm, lb=None) -> PlatzierungsErgebnis:
         return PlatzierungsErgebnis.model_validate(_load("platzierung_4og.json"))
 
 
