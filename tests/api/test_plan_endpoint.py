@@ -43,9 +43,14 @@ def test_plan_ohne_datei_ist_422():
     assert _client().post("/plan", data={"floor": "4OG"}).status_code == 422
 
 
-def test_default_app_ohne_provider_ist_503():
-    # Default-App nutzt build_default_bundle → NotImplementedError → 503 (noch nicht verdrahtet).
-    r = TestClient(create_app()).post(
+def test_nicht_verdrahteter_provider_ist_503():
+    # Fehlt ein Provider-Package (ImportError aus build_default_bundle), übersetzt die
+    # API das in 503. Merge-stabil über eine injizierte Factory getestet — nicht über
+    # den aktuellen Scaffold-Zustand der Default-App.
+    def broken_factory():
+        raise ImportError("normwissen ist noch Scaffold (Enis #6 nicht gemergt)")
+
+    r = TestClient(create_app(bundle_factory=broken_factory)).post(
         "/plan", files={"datei": ("leer.dxf", b"x", "image/vnd.dxf")}, data={"floor": "EG"}
     )
     assert r.status_code == 503
