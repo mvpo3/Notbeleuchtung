@@ -98,7 +98,7 @@ def run(
     lb = bundle.lb.parse_lb(lb_path) if (bundle.lb is not None and lb_path is not None) else None
     platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     if out_path is not None:
-        render_summary = render_dxf(platzierung, raum, out_path)
+        render_summary = render_dxf(platzierung, raum, out_path, lb)
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit an beide Pfade anhängen (Warnungen fließen so auch in den API-Header).
