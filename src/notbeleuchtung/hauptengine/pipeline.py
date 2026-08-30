@@ -93,18 +93,20 @@ def run(
     floor: str,
     out_path: str | Path | None = None,
     lb_path: str | None = None,
+    plankopf: dict | None = None,
 ) -> Output:
     raum = bundle.raum.parse(dxf_path, floor)
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     lb = bundle.lb.parse_lb(lb_path) if (bundle.lb is not None and lb_path is not None) else None
     platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
+    pruef = pruefbericht(raum, platzierung, lb)
     if out_path is not None:
-        render_summary = render_dxf(platzierung, raum, out_path, lb)
+        render_summary = render_dxf(platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf)
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
     render_summary["coverage"] = _coverage(raum, platzierung, lb)
-    render_summary["pruefung"] = pruefbericht(raum, platzierung, lb)
+    render_summary["pruefung"] = pruef
     return Output(
         raum=raum,
         platzierung=platzierung,

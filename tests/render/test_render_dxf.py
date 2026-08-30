@@ -82,6 +82,41 @@ def test_plankopf_rahmen_und_felder(rendered):
     assert "Maßstab: 1:100" in txt
 
 
+def test_plankopf_metadaten_ueberschreiben(contracts, tmp_path):
+    platzierung, raum = contracts
+    out = tmp_path / "meta.dxf"
+    render_dxf(platzierung, raum, out,
+               plankopf={"projekt": "Wohnbau X", "datum": "2026-08-30", "ersteller": "Leonis"})
+    doc = ezdxf.readfile(str(out))
+    txt = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Plankopf']")[0].text
+    assert "Projekt: Wohnbau X" in txt
+    assert "Datum: 2026-08-30" in txt
+    assert "Erstellt: Leonis" in txt
+
+
+def test_pruefbericht_legende(contracts, tmp_path):
+    platzierung, raum = contracts
+    pruef = {"status": "warnung", "befunde": [
+        {"regel": "Montagehöhe ≥ 2000 mm (EN 1838 §4.1)", "status": "ok", "detail": "alle Symbole ≥ 2000 mm"},
+        {"regel": "Fluchtweg-Deckung durch Rettungszeichen", "status": "warnung", "detail": "1/5 Segment(e) ohne RZ"},
+    ]}
+    out = tmp_path / "pruef.dxf"
+    summary = render_dxf(platzierung, raum, out, pruefung=pruef)
+    assert summary["pruefbericht_drawn"] is True
+    doc = ezdxf.readfile(str(out))
+    pb = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Pruefbericht']")
+    assert len(pb) == 1
+    txt = pb[0].text
+    assert "PRÜFBERICHT (EN 1838): WARNUNG" in txt
+    assert "[WARNUNG]" in txt and "Fluchtweg-Deckung" in txt
+
+
+def test_ohne_pruefung_keine_pruefbericht_legende(rendered):
+    _, summary, doc = rendered
+    assert summary["pruefbericht_drawn"] is False
+    assert not doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Pruefbericht']")
+
+
 def test_lb_legende_traegt_system_spec(contracts, tmp_path):
     from notbeleuchtung.hauptengine.contracts import LBVorgabe
     platzierung, raum = contracts
