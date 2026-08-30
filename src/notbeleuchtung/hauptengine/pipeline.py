@@ -38,6 +38,40 @@ def _summary(raum: RaumModell, platzierung: PlatzierungsErgebnis) -> dict:
     }
 
 
+def _coverage(raum: RaumModell, platzierung: PlatzierungsErgebnis) -> dict:
+    """Audit der Planungs-Vollständigkeit — macht ein stummes RZ-only-Ergebnis LAUT.
+
+    Die Leuchten-Arten (Sicherheitsleuchte/Antipanik) sind norm-getrieben über
+    `raum_typ` (Enis). Liefert Selmans Raumerkennung untypisierte Räume (`raum_typ`
+    leer), fällt die Norm auf den Rettungsweg-Default → der Plan kommt RZ-only heraus,
+    ohne Fehler. Diese Warnungen surfacen das (auch im API-Response-Header), statt es
+    zu verschlucken — kein Provider wird „korrekt" nur weil er nichts typisiert hat.
+    """
+    n_untyped = sum(1 for r in raum.raeume if not (r.raum_typ or "").strip())
+    arten = {p.kind for p in platzierung.platzierungen}
+    warnungen: list[str] = []
+    if raum.raeume and n_untyped == len(raum.raeume):
+        warnungen.append(
+            f"Kein Raum typisiert ({n_untyped}/{len(raum.raeume)}) → Raumerkennung liefert "
+            "keine Raumtypen; Leuchten-Arten (Sicherheits-/Antipanik) nicht ableitbar."
+        )
+    elif n_untyped:
+        warnungen.append(
+            f"{n_untyped}/{len(raum.raeume)} Räume ohne Raumtyp → Leuchten-Arten evtl. unvollständig."
+        )
+    if raum.raeume and arten and arten <= {"rz"}:
+        warnungen.append(
+            "Nur Rettungszeichen platziert — keine Sicherheits-/Antipanik-Leuchten "
+            "(Raumtypen der Raumerkennung prüfen)."
+        )
+    return {
+        "n_raeume": len(raum.raeume),
+        "n_raeume_untypisiert": n_untyped,
+        "arten_platziert": sorted(arten),
+        "warnungen": warnungen,
+    }
+
+
 def run(
     bundle: ProviderBundle,
     dxf_path: str,
@@ -50,6 +84,8 @@ def run(
         render_summary = render_dxf(platzierung, raum, out_path)
     else:
         render_summary = _summary(raum, platzierung)
+    # Coverage-Audit an beide Pfade anhängen (Warnungen fließen so auch in den API-Header).
+    render_summary["coverage"] = _coverage(raum, platzierung)
     return Output(
         raum=raum,
         platzierung=platzierung,
