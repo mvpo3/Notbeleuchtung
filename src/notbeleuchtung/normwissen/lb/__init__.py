@@ -1,9 +1,17 @@
-"""LB (Leistungsbeschreibung) — 2. Engine-Input: Freitext → LBVorgabe (Enis).
+"""LB-Pfad (Enis) — Leistungsbeschreibung als 2. Engine-Input.
 
-Die projektspezifischen, EXPLIZITEN Auftraggeber-Vorgaben, die Norm-Defaults
-übersteuern (CLAUDE.md-Hierarchie). `LbTextProvider.parse_lb` erfüllt das
-`LBProvider`-Protocol.
+Deterministische, quellengebundene Extraktion expliziter Auftraggeber-Vorgaben,
+die Norm-Defaults übersteuern. Fail closed: lieber sichtbar Review verlangen als
+eine erkannte Anforderung still verlieren.
 """
-from notbeleuchtung.normwissen.lb.parser import LbTextProvider, parse_lb
+from .bericht import FeldBefund, LbBericht, LbFehler, LbNichtLesbar, LbReviewRequired
+from .parser import LbParser
 
-__all__ = ["LbTextProvider", "parse_lb"]
+__all__ = [
+    "FeldBefund",
+    "LbBericht",
+    "LbFehler",
+    "LbNichtLesbar",
+    "LbParser",
+    "LbReviewRequired",
+]
