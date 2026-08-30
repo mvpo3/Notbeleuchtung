@@ -1,0 +1,10 @@
+IESNA:LM-63-2002
+[TEST] SYNTH-001
+[LUMINAIRE] MINI Rettungszeichenleuchte IES
+[MANUFAC] Notbeleuchtung Testfixture
+TILT=NONE
+1 1000 1.0 7 1 1 2 0.0 0.0 0.0
+1.0 1.0 5.0
+0 15 30 45 60 75 90
+0
+200 190 160 120 80 30 0
