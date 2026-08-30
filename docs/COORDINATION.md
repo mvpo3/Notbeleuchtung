@@ -155,6 +155,7 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 (Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F2 ①(B3): `raumerkennung/geometrie_typ.py` — STIEGENHAUS (STIEGE-Blöcke) + GANG (09-WEG/A_Fluchtweg) geometrisch, ohne Text-Label. Grund: Mollgasse-EG trägt 0 Raum-Namen (566 Texte geprüft). provider.parse Mollgasse: 0→7 typisiert (2 STIEGENHAUS, 5 GANG). 286 grün, kein Contract-Touch. Branch `leonis/raumtyp-geometrie`.
 - 2026-08-30 F2: IES/LM-63-Import `photometrie/ies.py` (`lade_ies`) + Fixture `mini.ies` + `tests/normwissen/test_ies.py` (7). Gleicher `Photometrie`-Typ → F1-Naht unverändert. 170 Tests grün, ruff clean, schema in sync.
 - 2026-08-30 Enis: OIB-/OVE-/Rechtsquellen-PDFs ins Repo (`knowledge/`), Beleg-Status
   je Wert in `normwissen/data/*.yaml`, Spec auf PR #14 nachgezogen. Kein Code-Delta

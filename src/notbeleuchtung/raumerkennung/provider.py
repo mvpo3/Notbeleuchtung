@@ -14,6 +14,7 @@ from notbeleuchtung.hauptengine.contracts import RaumModell
 
 from .dxf_load import bounds_mm, lade_dxf
 from .footprint import hauptausgaenge
+from .geometrie_typ import typisiere_geometrisch
 from .raumlayer import raeume_aus_layer
 from .raumtyp import beschrifte_raeume
 from .tueren import tueren_aus_dxf
@@ -39,6 +40,9 @@ class ArchitekturRaumProvider:
         raeume = raeume_aus_layer(plan)
         if not raeume:
             raeume = beschrifte_raeume(plan, raeume_aus_waenden(plan))
+        # Geometrische Typ-Ableitung (STIEGENHAUS aus Treppen-Blöcken) — greift auch
+        # auf Plänen ohne Text-Labels (z.B. Mollgasse), ergänzt Text/Layer-Typisierung.
+        raeume = typisiere_geometrisch(plan, raeume)
         tueren = tueren_aus_dxf(plan)
         ausgaenge = hauptausgaenge(plan, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
