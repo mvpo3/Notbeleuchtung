@@ -23,9 +23,9 @@ from .mittellinie import leuchten_auf_linie
 
 _KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 _SL_KEY = "sicherheitsleuchte_aufheller"   # bis die Norm einen Fluchtweg-SL-Key liefert
-_MAX_HALBIERUNGEN = 4
+_MAX_HALBIERUNGEN = 3
 _START_ABSTAND_MM = 8000.0
-_MIN_ABSTAND_MM = 1500.0
+_MIN_ABSTAND_MM = 4000.0   # Fluchtweg-SL realistisch ≥ 4 m Abstand (nicht 1,5 m)
 
 
 def verdichte_fluchtweg(

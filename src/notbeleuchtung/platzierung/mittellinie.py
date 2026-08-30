@@ -51,9 +51,11 @@ def mittellinie(polygon: Polygon, raster_mm: float = 200.0) -> list[Point]:
 def leuchten_auf_linie(polygon: Polygon, abstand_mm: float, raster_mm: float = 200.0) -> list[Point]:
     """Kandidat-Positionen entlang der Mittelachse in ~`abstand_mm` Abstand.
 
-    Greedy: Achsen-Punkte der Reihe nach abgehen, neuen Punkt setzen, sobald der
-    Abstand zum letzten gesetzten ≥ `abstand_mm` ist. Grobe Verteilung für die
-    Linien-Verdichtung; der exakte Abstand folgt aus dem Lux-Nachweis (`lux.py`).
+    Greedy-räumliches Ausdünnen: Achsen-Punkte der Reihe nach abgehen, einen neuen
+    Punkt nur setzen, wenn er von **allen bereits gesetzten** ≥ `abstand_mm` entfernt
+    ist. Der Abgleich gegen alle (statt nur den letzten) verhindert Überproduktion bei
+    2D-verzweigten Skeletten (breite/offene Räume, deren Mittelachse kein einfacher
+    Strich ist). Der exakte Abstand folgt aus dem Lux-Nachweis (`lux.py`).
     """
     pts = mittellinie(polygon, raster_mm)
     if not pts:
@@ -61,7 +63,7 @@ def leuchten_auf_linie(polygon: Polygon, abstand_mm: float, raster_mm: float = 2
     pts = sorted(pts)  # entlang x (dominante Achse bei Gängen)
     gesetzt = [pts[0]]
     for p in pts[1:]:
-        lx, ly = gesetzt[-1]
-        if ((p[0] - lx) ** 2 + (p[1] - ly) ** 2) ** 0.5 >= abstand_mm:
+        if all(((p[0] - gx) ** 2 + (p[1] - gy) ** 2) ** 0.5 >= abstand_mm
+               for gx, gy in gesetzt):
             gesetzt.append(p)
     return gesetzt
