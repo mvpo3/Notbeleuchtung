@@ -1,0 +1,219 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# lb_extraktion.yaml — Vokabular + Muster für das LB-Parsing (2. Input)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Single Source für `normwissen/lb/` — der Parser hardcodet KEIN Fachwort, keine
+# Einheit und kein Muster. Python enthält nur die Mechanik (Text → Abschnitte →
+# Felder), alles Fachliche steht hier.
+#
+# GRUNDREGELN (Owner-Entscheidung 2026-08-30):
+#   1. FAIL CLOSED. Lieber sichtbar stoppen als eine projektspezifische Vorgabe
+#      still verlieren. Nicht lesbar / kein Notbeleuchtungs-Abschnitt / reiner
+#      Verweis auf ein fremdes Dokument / nicht abbildbarer Raumtyp
+#      -> blockierender Review, keine stille leere LBVorgabe.
+#   2. NORMVERWEISE ERZEUGEN NIE WERTE. Nennt eine LB nur „EN 1838", entsteht
+#      daraus KEIN 1,0 lx und KEINE 60 min. Nur explizit in der LB genannte
+#      Zahlen werden Werte; sonst `nicht_spezifiziert` -> None -> Norm-Default.
+#   3. NUR IM KONTEXT. Felder werden ausschliesslich in Abschnitten gelesen,
+#      deren Ueberschrift Notbeleuchtung betrifft. Das ist die Homonym-Abwehr:
+#      „Brausebatterie" (Sanitaer) und „Kabinennotbeleuchtung" (Aufzug) liegen
+#      ausserhalb und koennen keinen Systemtyp erzeugen.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  quelle: "Abgeleitet aus vier realen Leistungsbeschreibungen (Original-Gegenpruefung 2026-08-30)"
+  analyse: "knowledge/extracted/LB_ANALYSE_beispiele.md"
+  hinweis: >-
+    Fischa (§2.10/§2.11) traegt die BEREICHS-Logik (Exklusion/Inklusion, Systemtyp,
+    Ueberwachung, Pruefung, Fabrikat) und KEINE Skalare — dort steht weder eine
+    Betriebsdauer noch eine Umschaltzeit noch ein Lux-Wert. Die Skalare (8 Std,
+    < 0,5 s, 1 lx, 5 lx Feuerloescher, EN ISO 7010) stammen aus der mo-Elektro-LB.
+
+# ── Struktur-Erkennung ─────────────────────────────────────────────────────
+struktur:
+  # Ueberschrift: "2.10 LED-Sicherheitsbeleuchtung (Stiegen, Gängen)" / "5.1.23 …"
+  abschnitt_muster: '^\s*(\d+(?:\.\d+)*)\s+(\S.*?)\s*$'
+  # Fusszeilen-Seitenzahl: "… Seite 37 von 59" / "Seite 12/124"
+  seite_muster: 'Seite\s+(\d+)\s*(?:von|/)\s*\d+'
+  # Aufzaehlungszeile: "-in der Garage auf den Fluchtgängen" / "• …" / "– …"
+  bullet_muster: '^\s*[-–—•]\s*(\S.*)$'
+
+# ── Dokument-Klassifikation ────────────────────────────────────────────────
+# Die Notbeleuchtungs-Vorgaben stehen IMMER im Elektro-Dokument. Rahmen- und
+# Ausstattungsbeschreibungen enthalten nur Verweise bzw. Wartungs-Labels.
+dokument_arten:
+  elektro_lb:
+    anker: ["sicherheitsbeleuchtung", "rettungszeichenleuchte", "fluchtwegorientierung",
+            "sicherheitsstromversorgung", "notbeleuchtung"]
+    mindest_treffer: 3
+  gu_rahmen:
+    anker: ["leistungsbeschreibung gewerk", "vorbemerkungen", "einzelpreisliste",
+            "gewaehrleistung", "generalunternehmer"]
+    mindest_treffer: 2
+  bau_ausstattung:
+    anker: ["ausstattungsbeschreibung", "baubeschreibung", "wohnungsausstattung"]
+    mindest_treffer: 1
+
+# Unaufgeloester Verweis auf ein fremdes Dokument -> blockierender Review.
+verweis_muster:
+  - 'siehe\s*[-–—]?\s*Leistungsbeschreibung\s+Gewerk\s+Elektrotechnik'
+  - 'siehe\s+Legende\s+der\s+Projektpl[äa]ne'
+  - 'gem[äa][ßs]\s+(?:aktuellem\s+)?Brand-?\s?Schutz-?\s?Konzept'
+
+# ── Notbeleuchtungs-Abschnitte ─────────────────────────────────────────────
+# NUR in Abschnitten, deren Ueberschrift eines dieser Woerter traegt, werden
+# Felder gelesen. Ohne einen solchen Abschnitt: blockierender Review.
+sl_abschnitt_anker:
+  - "sicherheitsbeleuchtung"
+  - "fluchtwegorientierungsbeleuchtung"
+  - "fluchtwegbeleuchtung"
+  - "fluchtwegsbeleuchtung"
+  - "rettungszeichen"
+  - "sicherheitsstromversorgung"
+
+# Abschnitte, die trotz Treffer NICHT Gebaeude-Notbeleuchtung meinen.
+sl_abschnitt_ausschluss:
+  - "aufzug"
+  - "lift"
+  - "kabinen"
+
+# ── Skalare Felder ─────────────────────────────────────────────────────────
+# `gruppe` = Regex-Gruppe mit der Zahl. Dezimalkomma wird vom Parser normalisiert.
+felder:
+  betriebsdauer_min:
+    bezeichnung: "Betriebsdauer"
+    muster:
+      - regex: '(?:Akkus?|Batterieanlage|Nennbetriebsdauer|Betriebsdauer)[^.\n]{0,80}?(\d+(?:[.,]\d+)?)\s*(Std\.?|Stunden|h)\b'
+        einheit_gruppe: 2
+      - regex: '(\d+(?:[.,]\d+)?)\s*(Std\.?|Stunden)\b[^.\n]{0,40}(?:auszulegen|Betriebsdauer|Nennbetriebsdauer)'
+        einheit_gruppe: 2
+    einheiten:
+      "std": 60
+      "std.": 60
+      "stunden": 60
+      "h": 60
+      "min": 1
+      "minuten": 1
+  umschaltzeit_max_s:
+    bezeichnung: "Umschaltzeit"
+    muster:
+      - regex: 'Umschaltzeit[^.\n]{0,40}?[<≤]?\s*(\d+(?:[.,]\d+)?)\s*(sec\.?|s|Sekunden)\b'
+        einheit_gruppe: 2
+    einheiten:
+      "s": 1
+      "sec": 1
+      "sec.": 1
+      "sekunden": 1
+  mindest_lux_fluchtweg:
+    bezeichnung: "Mindest-Beleuchtungsstärke Fluchtweg"
+    muster:
+      - regex: '(?:Beleuchtungsst[äa]rke|Fluchtweg\w*)[^.\n]{0,80}?(?:mindestens|min\.?|betr[äa]gt)\s*(\d+(?:[.,]\d+)?)\s*(Lux|lx)\b'
+        einheit_gruppe: 2
+    einheiten:
+      "lux": 1
+      "lx": 1
+
+# ── Enum-Felder (reine Vorkommenspruefung im SL-Kontext) ───────────────────
+enums:
+  system_typ:
+    bezeichnung: "Art der Sicherheitsstromversorgung"
+    # DOKUMENTWEIT pruefen, nicht nur im SL-Abschnitt: reale LBs nennen den
+    # Systemtyp im Technikteil UND in der Fabrikatsliste — und widersprechen sich
+    # dort (Gruppenbatterie vs. „versorgt ueber Zentralbatterie"). Genau dieser
+    # Widerspruch darf nicht durchrutschen. Die Homonym-Ausschluesse unten sind
+    # dann die einzige Sicherung.
+    dokumentweit: true
+    werte:
+      gruppenbatterie: ["gruppenbatterie"]
+      zentralbatterie: ["zentralbatterie"]
+      einzelbatterie: ["einzelbatterie"]
+    # Homonyme: Sanitaerarmaturen, Rauchwarnmelder, PV-Speicher tragen ebenfalls
+    # das Wort „Batterie" — sie liegen ausserhalb der SL-Abschnitte, dieser
+    # Ausschluss ist die zweite Sicherung.
+    ausschluss: ["brausebatterie", "einlochbatterie", "thermostatbatterie",
+                 "wannenbatterie", "wannenfüll", "rauchwarnmelder", "lifepo4",
+                 "pv-anlage", "energie-speicher"]
+  ueberwachung:
+    bezeichnung: "Leuchten-Überwachung"
+    werte:
+      einzelleuchte: ["einzelleuchtenüberwachung", "einzelleuchten-überwachung"]
+      zentral: ["zentrale überwachung", "zentralüberwachung"]
+  pruefung:
+    bezeichnung: "Prüfeinrichtung"
+    # Mehrfachtreffer sind hier KEIN Widerspruch: reale LBs nennen automatische
+    # Pruefeinrichtung UND WEB-Aufschaltung nebeneinander. Erster Treffer in
+    # Deklarationsreihenfolge gewinnt (WEB ist die speziellere Aussage).
+    prioritaet: true
+    werte:
+      web: ["web-basierte", "webbasierte", "web basierte", "web-basierten"]
+      automatisch: ["automatische prüfeinrichtung", "automatischer prüfeinrichtung",
+                    "automatische einzelleuchtenüberwachung"]
+      manuell: ["manuelle prüfung", "manueller funktionstest"]
+
+# ── Rettungszeichen-Stellen (RzStelle-Literal des Contracts) ───────────────
+rz_stellen:
+  fluchttuer: ["über fluchttüren", "über fluchttüre", "fluchttür", "fluchttüren"]
+  kreuzung: ["kreuzungspunkt", "kreuzungspunkten", "an kreuzungen"]
+  richtungsaenderung: ["richtungsänderung", "richtungsänderungen"]
+  niveauaenderung: ["niveauänderung", "niveauänderungen"]
+  notausgang_aussen: ["außenbereich bei jedem notausgang", "im außenbereich bei notausgang"]
+
+# ── Sonder-Lux (erhöhte Mindestbeleuchtungsstärke an einem Ort) ────────────
+sonder_lux:
+  # Naehe-Regel statt Satzgrenze: der Lux-Wert steht real in einer Klammer NACH
+  # dem Satzende („… situiert werden. (mindestens 5 Lux)"), ein Muster ohne
+  # Punkt wuerde ihn verfehlen. 160 Zeichen begrenzen die Reichweite.
+  - ort: "feuerloescher_wandhydrant"
+    regex: '(?:Feuerlösch\w*|Wandhydrant\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+
+# ── Piktogramm-Norm + Normbezug ────────────────────────────────────────────
+piktogramm_muster: '((?:[ÖO]NORM\s+)?EN\s*ISO\s*7010)'
+norm_bezug:
+  "ÖVE E 8101": ['[ÖO]VE\s*-?\s*E?\s*8101']
+  "OVE R 12-2": ['(?:OVE|[ÖO]VE)?\s*R\s*12-2']
+  "EN 1838": ['(?:[ÖO]NORM\s+)?EN\s*1838', '(?<![\d-])1838(?![\d-])']
+  "ÖNORM Z 1000": ['[ÖO]NORM\s*Z\s*1000']
+  "ÖNORM EN ISO 7010": ['(?:[ÖO]NORM\s+)?EN\s*ISO\s*7010']
+  "ÖVE/EN IEC 62485-2": ['62485-2']
+  "ÖNORM DIN 4102-12": ['4102-12']
+
+# Funktionserhalt: extrahierbar, aber es gibt KEIN Contract-Feld dafuer.
+# Wandert ausschliesslich in den LbBericht (informativ).
+funktionserhalt_muster: '\b(E\s?30|E\s?90)\b'
+
+# ── Bereiche: welcher LB-Begriff meint welchen RaumModell-raum_typ ─────────
+raum_typ_vokabular:
+  STIEGENHAUS: ["stiegenhäuser", "stiegenhaus", "fluchtstiegenhaus", "fluchtstiegenhäuser",
+                "treppenhaus", "treppenhäuser", "stiegen"]
+  GANG: ["fluchtgängen", "fluchtgänge", "fluchtgang", "wohnungsgänge", "wohnungsgang",
+         "gängen", "gänge", "gang", "flur", "korridor"]
+  GARAGE: ["tiefgarage", "garage"]
+  TECHNIKRAUM: ["technikräume", "technikräumen", "technikraum"]
+  LAGER: ["lager- und müllräume", "lagerräume", "lagerraum", "müllräume", "müllraum"]
+# Der Aussenbereich ist bewusst KEIN raum_typ: das RaumModell kennt nur Raeume
+# innerhalb des Geschosses. „Im Aussenbereich bei jedem Notausgang" ist als
+# RZ-Stelle `notausgang_aussen` erfasst, nicht als Bereichsregel.
+
+# Was die Raumerkennung heute tatsaechlich erzeugt (raumerkennung/raumtyp.py:25-39).
+# Alles andere ist im Platzierer ein stiller No-op -> blockierender Review.
+unterstuetzte_raum_typen:
+  [STIEGENHAUS, GANG, VORRAUM, WOHNZIMMER, SCHLAFZIMMER, KINDERZIMMER, ZIMMER,
+   KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE]
+
+# Negation: „ist KEINE LED-Sicherheitsbeleuchtung herzustellen"
+negation_muster:
+  - '\bKEINE\b'
+  - '\bkeine\b[^.\n]{0,60}(?:Sicherheitsbeleuchtung|Fluchtweg\w*beleuchtung)'
+  - 'nicht\s+herzustellen'
+  - 'entf[äa]llt'
+
+# Positive Aussage: hier WIRD Sicherheitsbeleuchtung ausgefuehrt.
+inklusion_muster:
+  - 'werden\s+(?:Fluchtweg-?\s*und\s+)?Sicherheitsleuchten\s+installiert'
+  - 'Sicherheitsbeleuchtung\s+wird\s+in\s+'
+  - 'versorgt\s+die\s+Sicherheitsbeleuchtung\s+in\s+'
+  - 'ist\s+eine\s+Sicherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen|erforderlich)'
+  - 'Sicherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen)'
+
+# Begruendung aus der Klammer: „(GK4)"
+begruendung_muster: '\((GK\s?\d)\)'

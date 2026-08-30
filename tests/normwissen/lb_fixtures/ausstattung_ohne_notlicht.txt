@@ -1,0 +1,25 @@
+SYNTHETISCHES TEST-FIXTURE — kein Kundendokument.
+Nachgebildet ist die STRUKTUR einer Bau- und Ausstattungsbeschreibung. Sie
+enthält bewusst die klassischen FALSE-POSITIVE-Fallen: Sanitärarmaturen
+("Batterie"), Aufzugs-Kabinennotbeleuchtung und Fluchtweg-Türbeschläge.
+Keine davon darf eine Notbeleuchtungs-Vorgabe erzeugen.
+
+1.10 Hauseingänge
+Glastürkonstruktion mit Notausgangsfunktion (bei Fluchtweg).
+
+2.12 Rauchwarnmelder
+Es werden nicht vernetzte Rauchwarnmelder mit Batterie eingebaut.
+
+3.4 Sanitärausstattung
+Wannenfüll- und Brausebatterie, Marke Musterarmatur.
+Thermostatbatterie DN15, Einlochbatterie für Waschtisch.
+
+3.9 Aufzugsanlage
+Bei Stromausfall halten eine Notstrombatterie die Kabinennotbeleuchtung und die
+Notrufeinrichtung aufrecht.
+
+4.2 Stiegenhaus und Gänge
+Deckenbeleuchtung mit Bewegungsmelder.
+
+4.6 Garage
+Rauch- und Wärmeabzug laut OIB-Richtlinie 2.2.

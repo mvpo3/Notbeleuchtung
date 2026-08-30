@@ -1,146 +1,295 @@
-"""lb.parser — Leistungsbeschreibung → LBVorgabe (Fischa GK4: SL-Exklusion)."""
+"""LbParser — Leistungsbeschreibung (2. Input) → LBVorgabe.
+
+Schwerpunkt: **fail closed**. Der Parser muss lieber sichtbar Review verlangen,
+als eine erkannte projektspezifische Anforderung still zu verlieren.
+
+Alle Fixtures unter `lb_fixtures/` sind **synthetisch** — Struktur, Zeilenumbrüche,
+Dezimalkomma und Formulierungsformen sind realen LBs nachgebildet, aber kein
+Kundendokument ist übernommen. Die echten PDFs bleiben lokal/gitignored und
+dienen nur der manuellen Gegenprüfung.
+
+Die Trennung, die dieser Test festhält:
+* **Bereichs-LB** (Fischa-Muster) → Exklusion/Inklusion, Systemtyp, Überwachung,
+  Prüfung, Normbezug — und **keine** Skalare.
+* **Skalar-LB** (mo-Elektro-Muster) → 8 Std → 480 min, < 0,5 s, 1 lx, 5 lx
+  Feuerlöscher, RZ-Stellen, EN ISO 7010.
+"""
+import json
 from pathlib import Path
 
-from notbeleuchtung.hauptengine.contracts.lb_vorgabe import LBVorgabe
-from notbeleuchtung.normwissen.lb import LbTextProvider, parse_lb
+import jsonschema
+import pytest
 
-_FIX = Path(__file__).parent.parent / "fixtures" / "lb"
-FISCHA = _FIX / "fischa_lb.txt"
-MO_ELEKTRO = _FIX / "mo_elektro_ausschnitt.txt"
-BETRIEBSDAUER_DISTRAKTOREN = _FIX / "betriebsdauer_distraktoren.txt"
+from notbeleuchtung.hauptengine.contracts import LBProvider, LBVorgabe
+from notbeleuchtung.normwissen import LbParser
+from notbeleuchtung.normwissen.lb import LbNichtLesbar, LbReviewRequired
+
+FIXTURES = Path(__file__).parent / "lb_fixtures"
+SCHEMA = Path("src/notbeleuchtung/hauptengine/contracts/schema/lb_vorgabe.schema.json")
+
+PARSER = LbParser()
 
 
-def _fischa() -> LBVorgabe:
-    return parse_lb(str(FISCHA))
+def _pfad(name: str) -> str:
+    return str(FIXTURES / name)
 
 
-def test_provider_erfuellt_protocol():
-    lb = LbTextProvider().parse_lb(str(FISCHA))
+def _bericht(name: str):
+    return PARSER.parse_bericht(_pfad(name))
+
+
+def _kandidat(bericht, feld: str) -> str | None:
+    treffer = [b for b in bericht.fuer_feld(feld) if b.kandidat]
+    return treffer[0].kandidat if treffer else None
+
+
+# ── Protocol + Grundverhalten ───────────────────────────────────────────────
+def test_parser_erfuellt_lb_protocol():
+    assert isinstance(PARSER, LBProvider)
+
+
+def test_erfolgreicher_parse_ist_schema_valide():
+    lb = PARSER.parse_lb(_pfad("skalar_lb.txt"))
+    jsonschema.validate(
+        instance=lb.model_dump(mode="json"),
+        schema=json.loads(SCHEMA.read_text(encoding="utf-8")),
+    )
     assert isinstance(lb, LBVorgabe)
-    assert lb.lb_quelle == "fischa_lb.txt"
 
 
-def test_fischa_gk4_exklusion_stiegenhaus_und_gang():
-    lb = _fischa()
-    exkl = {b.raum_typ: b for b in lb.bereiche_exklusion}
-    assert "STIEGENHAUS" in exkl and "GANG" in exkl
-    assert exkl["STIEGENHAUS"].sicherheitsbeleuchtung is False
-    assert exkl["GANG"].sicherheitsbeleuchtung is False
-    assert exkl["STIEGENHAUS"].begruendung == "GK4"
+def test_deterministisch():
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")) == PARSER.parse_lb(_pfad("skalar_lb.txt"))
 
 
-def test_fischa_inklusion_garage():
-    lb = _fischa()
-    inkl = {b.raum_typ: b for b in lb.bereiche_inklusion}
-    assert "GARAGE" in inkl and inkl["GARAGE"].sicherheitsbeleuchtung is True
-    # kein Widerspruch inkl/exkl (Contract-Validator würde sonst werfen)
-    assert not ({b.raum_typ for b in lb.bereiche_inklusion}
-                & {b.raum_typ for b in lb.bereiche_exklusion})
+# ── Skalare: nur wo sie wirklich stehen ─────────────────────────────────────
+def test_acht_stunden_werden_zu_480_minuten():
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).betriebsdauer_min == 480
 
 
-def test_fischa_skalare_felder():
-    lb = _fischa()
-    assert lb.betriebsdauer_min == 480          # „8 Std" → 480
-    assert lb.umschaltzeit_max_s == 0.5         # „< 0,5 s"
-    assert lb.mindest_lux_fluchtweg == 1.0      # „1 lx"
-    assert lb.system_typ == "gruppenbatterie"
+def test_dezimalkomma_umschaltzeit():
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).umschaltzeit_max_s == 0.5
+
+
+def test_mindest_lux_fluchtweg():
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).mindest_lux_fluchtweg == 1.0
+
+
+def test_sonder_lux_feuerloescher():
+    lux = PARSER.parse_lb(_pfad("skalar_lb.txt")).sonder_lux
+    assert len(lux) == 1
+    assert lux[0].ort == "feuerloescher_wandhydrant"
+    assert lux[0].min_lux == 5.0
+
+
+def test_piktogramm_norm():
+    assert "7010" in PARSER.parse_lb(_pfad("skalar_lb.txt")).piktogramm_norm
+
+
+def test_rz_stellen_aus_prosa_und_bullets():
+    stellen = set(PARSER.parse_lb(_pfad("skalar_lb.txt")).rz_stellen)
+    assert {"fluchttuer", "kreuzung", "richtungsaenderung", "niveauaenderung",
+            "notausgang_aussen"} <= stellen
+
+
+def test_bereichs_lb_erzeugt_NIEMALS_die_skalarwerte():
+    """Der Kernfehler, den es zu verhindern gilt: Skalare aus einem anderen
+    Dokument in eine LBVorgabe schreiben, die eine Bereichs-LB als Quelle nennt."""
+    bericht = _bericht("bereichs_lb.txt")
+    for feld in ("betriebsdauer_min", "umschaltzeit_max_s", "mindest_lux_fluchtweg"):
+        befunde = bericht.fuer_feld(feld)
+        assert befunde, f"{feld} muss im Bericht auftauchen"
+        assert all(b.status == "nicht_spezifiziert" for b in befunde)
+        assert all(b.kandidat is None for b in befunde)
+    assert not [b for b in bericht.fuer_feld("sonder_lux") if b.status == "wert"]
+    assert not [b for b in bericht.fuer_feld("piktogramm_norm") if b.status == "wert"]
+
+
+def test_normverweis_allein_erzeugt_keinen_wert():
+    """Die LB nennt EN 1838 — daraus darf weder 1,0 lx noch 60 min entstehen."""
+    bericht = _bericht("bereichs_lb.txt")
+    normen = [b.kandidat for b in bericht.fuer_feld("norm_bezug")]
+    assert "EN 1838" in normen
+    assert _kandidat(bericht, "mindest_lux_fluchtweg") is None
+    assert _kandidat(bericht, "betriebsdauer_min") is None
+
+
+# ── Bereiche ────────────────────────────────────────────────────────────────
+def test_negation_ueber_zeilenumbruch_erzeugt_exklusion():
+    """Im Original steht „ist KEINE\\nLED- Sicherheitsbeleuchtung herzustellen"."""
+    bericht = _bericht("bereichs_lb.txt")
+    exkl = [b for b in bericht.fuer_feld("bereiche")
+            if b.kandidat and b.kandidat.startswith("exklusion")]
+    typen = {b.kandidat.split(": ")[1] for b in exkl}
+    assert typen == {"STIEGENHAUS", "GANG"}
+    assert all(b.status == "wert" for b in exkl)
+    assert any("GK4" in (b.begruendung or "") for b in exkl)
+
+
+def test_exklusion_landet_als_bereichsregel_mit_begruendung():
+    lb = PARSER.parse_lb(_pfad("skalar_lb.txt"))
+    assert lb.bereiche_exklusion == []          # diese LB schliesst nichts aus
+    typen = {r.raum_typ for r in lb.bereiche_inklusion}
+    assert {"STIEGENHAUS", "GANG"} <= typen
+
+
+def test_garage_ist_blockierender_review_kein_stiller_noop():
+    """Die Raumerkennung erzeugt `GARAGE` nicht — die Regel wäre im Platzierer
+    wirkungslos. Sie darf weder still verschwinden noch still 'angewendet' werden."""
+    with pytest.raises(LbReviewRequired) as exc:
+        PARSER.parse_lb(_pfad("bereichs_lb.txt"))
+
+    bericht = exc.value.bericht
+    garage = [b for b in bericht.blockierende if b.kandidat and "GARAGE" in b.kandidat]
+    assert garage, "GARAGE-Anforderung muss als blockierender Befund erhalten bleiben"
+    assert "inklusion" in garage[0].kandidat
+    assert "raum_typ nicht" in garage[0].begruendung or "No-op" in garage[0].begruendung
+    assert garage[0].abschnitt and garage[0].seite
+
+
+def test_nicht_unterstuetzte_typen_blockieren_auch_in_bullet_listen():
+    with pytest.raises(LbReviewRequired) as exc:
+        PARSER.parse_lb(_pfad("skalar_lb_mit_garage.txt"))
+    kandidaten = {b.kandidat for b in exc.value.bericht.blockierende if b.kandidat}
+    assert any("GARAGE" in k for k in kandidaten)
+    assert any("TECHNIKRAUM" in k for k in kandidaten)
+    assert any("LAGER" in k for k in kandidaten)
+
+
+def test_kandidatenwerte_bleiben_trotz_blockade_im_bericht():
+    """parse_bericht() liefert den vollen Befund — auch für blockierte Dateien."""
+    bericht = _bericht("skalar_lb_mit_garage.txt")
+    assert _kandidat(bericht, "betriebsdauer_min") == "480"
+    assert bericht.blockierende
+
+
+# ── Systemtyp: Widerspruch wird nicht geraten ───────────────────────────────
+def test_systemtyp_konflikt_ergibt_keinen_wert():
+    """Technikteil sagt Gruppenbatterie, die Fabrikatsliste Zentralbatterie."""
+    bericht = _bericht("bereichs_lb.txt")
+    befunde = bericht.fuer_feld("system_typ")
+    assert befunde and befunde[0].status == "review_informativ"
+    assert "gruppenbatterie" in befunde[0].kandidat
+    assert "zentralbatterie" in befunde[0].kandidat
+    assert "geraten" in befunde[0].begruendung
+
+
+def test_eindeutiger_systemtyp_wird_gesetzt():
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).system_typ == "gruppenbatterie"
+
+
+def test_ueberwachung_und_pruefung():
+    lb = PARSER.parse_lb(_pfad("skalar_lb.txt"))
     assert lb.ueberwachung == "einzelleuchte"
-    assert lb.pruefung == "web"
-    assert lb.piktogramm_norm == "EN ISO 7010"
-    assert lb.batterie_standort == "Technikraum"  # „Gruppenbatterie im Technikraum"
+    assert lb.pruefung == "automatisch"
 
 
-def test_fischa_sonderlux_und_normbezug():
-    lb = _fischa()
-    orte = {s.ort: s.min_lux for s in lb.sonder_lux}
-    assert orte.get("feuerloescher") == 5.0
-    assert "EN 1838" in lb.norm_bezug and "OVE E 8101" in lb.norm_bezug
+def test_web_pruefung_schlaegt_automatisch_kein_konflikt():
+    """Reale LBs nennen beides nebeneinander — das ist keine Widersprüchlichkeit."""
+    bericht = _bericht("bereichs_lb.txt")
+    befunde = [b for b in bericht.fuer_feld("pruefung") if b.status == "wert"]
+    assert befunde and befunde[0].kandidat == "web"
 
 
-def test_mo_elektro_lux_kontext_und_betriebsdauer():
-    # Härtung gegen reale Fehlparses (mo-Elektro): Fluchtweg-Lux als „1 Lux" (Wort),
-    # nicht der 200-lx-Aufzugsvorplatz; Feuerlöscher/Hydrant „5 Lux" über Umbruch;
-    # Betriebsdauer aus „8 Std."/„Nennbetriebsdauer … 8 Stunden".
-    lb = parse_lb(str(MO_ELEKTRO))
-    assert lb.mindest_lux_fluchtweg == 1.0       # NICHT 200.0 (Aufzugsvorplatz)
-    assert lb.betriebsdauer_min == 480
-    orte = {s.ort: s.min_lux for s in lb.sonder_lux}
-    assert orte.get("feuerloescher") == 5.0 and orte.get("hydrant") == 5.0
+# ── Homonym-Abwehr ──────────────────────────────────────────────────────────
+def test_sanitaerbatterien_erzeugen_keinen_systemtyp():
+    """„Brausebatterie", „Thermostatbatterie", „Rauchwarnmelder mit Batterie"."""
+    bericht = _bericht("ausstattung_ohne_notlicht.txt")
+    assert not [b for b in bericht.fuer_feld("system_typ") if b.status == "wert"]
 
 
-def test_betriebsdauer_distraktoren_keine_fehltreffer():
-    # Stunden-/„h"-Angaben ohne Notlicht-Kontext (Gewährleistung, Position „123 H",
-    # Austrocknung, Notrufsystem-Batterie) dürfen NICHT als Betriebsdauer gelten.
-    lb = parse_lb(str(BETRIEBSDAUER_DISTRAKTOREN))
-    assert lb.betriebsdauer_min is None
+def test_kabinennotbeleuchtung_erzeugt_keine_gebaeude_vorgabe():
+    bericht = _bericht("ausstattung_ohne_notlicht.txt")
+    assert bericht.dokument_art != "elektro_lb"
+    assert not [b for b in bericht.befunde if b.status == "wert"]
 
 
-def test_betriebsdauer_dezimal(tmp_path):
-    p = tmp_path / "dez.txt"
-    p.write_text("Die Akkus sind auf 8,5 Std auszulegen.\n", encoding="utf-8")
-    assert parse_lb(str(p)).betriebsdauer_min == 510
+def test_dokument_ohne_notbeleuchtungsabschnitt_ist_fail_closed():
+    with pytest.raises(LbReviewRequired) as exc:
+        PARSER.parse_lb(_pfad("ausstattung_ohne_notlicht.txt"))
+    gruende = [b.feld for b in exc.value.bericht.blockierende]
+    assert "notbeleuchtungs_abschnitt" in gruende
 
 
-def test_lux_wortform_und_plausibilitaetscap(tmp_path):
-    # „Lux" (Wort) wird erkannt; ein unplausibler Fluchtweg-Wert (> Cap) verworfen.
-    p = tmp_path / "lux.txt"
-    p.write_text("Im Fluchtweg ist mindestens 1 Lux sicherzustellen. "
-                 "Arbeitsplatzbeleuchtung 500 lx im Fluchtwegbereich.\n", encoding="utf-8")
-    assert parse_lb(str(p)).mindest_lux_fluchtweg == 1.0
+# ── Verweis auf ein fremdes Dokument ────────────────────────────────────────
+def test_rahmendokument_mit_verweis_ist_fail_closed():
+    with pytest.raises(LbReviewRequired) as exc:
+        PARSER.parse_lb(_pfad("rahmen_verweis.txt"))
+    bericht = exc.value.bericht
+    felder = {b.feld for b in bericht.blockierende}
+    assert felder & {"verweis", "notbeleuchtungs_abschnitt"}
 
 
-def test_fluchtweg_lux_nicht_von_antipanik_unterboten(tmp_path):
-    # Fluchtweg-Mittellinie 1 lx und Antipanik 0,5 lx im selben Satz: der Fluchtweg-
-    # Wert (1.0) gilt, NICHT der kleinere Antipanik-Wert (0.5).
-    p = tmp_path / "ap.txt"
-    p.write_text("Auf dem Fluchtweg 1 lx, in der Antipanikflaeche 0,5 lx.\n",
-                 encoding="utf-8")
-    assert parse_lb(str(p)).mindest_lux_fluchtweg == 1.0
+# ── Nicht lesbar ────────────────────────────────────────────────────────────
+def test_fehlende_datei():
+    with pytest.raises(LbNichtLesbar):
+        PARSER.parse_lb(str(FIXTURES / "gibtsnicht.txt"))
 
 
-def test_betriebsdauer_overflow_guard(tmp_path):
-    # Sehr lange Ziffernfolge darf nicht float()=inf → round(inf*60)-Crash auslösen;
-    # das Muster kappt die Ganzzahl auf 4 Stellen, der Cap 1440 fängt den Rest ab.
-    p = tmp_path / "of.txt"
-    p.write_text("Betriebsdauer " + "1" * 309 + " Stunden auszulegen.\n", encoding="utf-8")
-    assert parse_lb(str(p)).betriebsdauer_min is None  # kein Crash, kein Fehltreffer
+def test_nicht_unterstuetztes_format(tmp_path):
+    p = tmp_path / "lb.docx"
+    p.write_bytes(b"PK\x03\x04irgendwas")
+    with pytest.raises(LbNichtLesbar, match="Format nicht unterstützt"):
+        PARSER.parse_lb(str(p))
 
 
-def test_antipanik_fenster_60_zeichen(tmp_path):
-    # Antipanik-0,5-Wert bei ~52 Zeichen Abstand: das erweiterte Links-Fenster (60)
-    # disqualifiziert ihn — mindest_lux_fluchtweg wird NICHT 0.5.
-    p = tmp_path / "ap60.txt"
-    p.write_text("Antipanikbereich im Fluchtweg mit einer Stärke von 0,5 lux.\n",
-                 encoding="utf-8")
-    assert parse_lb(str(p)).mindest_lux_fluchtweg != 0.5
-
-
-def test_batterie_standort_extrahiert(tmp_path):
-    # „<...>batterie im <Raum>" → Standort; ohne belegtes Muster None (nicht raten).
-    p = tmp_path / "batt.txt"
-    p.write_text("Die Versorgung erfolgt als Gruppenbatterie im Technikraum.\n",
-                 encoding="utf-8")
-    assert parse_lb(str(p)).batterie_standort == "Technikraum"
-
-
-def test_batterie_standort_none_ohne_muster(tmp_path):
-    p = tmp_path / "batt_none.txt"
-    p.write_text("Eine Batterie ist vorzusehen, ohne Standortangabe.\n", encoding="utf-8")
-    assert parse_lb(str(p)).batterie_standort is None
-
-
-def test_leere_lb_bleibt_norm_default(tmp_path):
-    # Ohne explizite Vorgaben → alles None/leer → Norm greift.
+def test_leere_datei_ist_fail_closed(tmp_path):
     p = tmp_path / "leer.txt"
-    p.write_text("Allgemeine Baubeschreibung ohne Notbeleuchtungs-Angaben.\n")
-    lb = parse_lb(str(p))
-    assert lb.betriebsdauer_min is None
-    assert lb.bereiche_exklusion == [] and lb.bereiche_inklusion == []
+    p.write_text("   \n\n", encoding="utf-8")
+    with pytest.raises(LbNichtLesbar, match="Kein extrahierbarer Text"):
+        PARSER.parse_lb(str(p))
 
 
-def test_registry_bundle_hat_lb_provider():
-    from notbeleuchtung.hauptengine.registry import build_default_bundle
+def test_pdf_ohne_text_ist_fail_closed(tmp_path):
+    """Scan ohne Text-Layer: eine leere LBVorgabe wäre hier gefährlich."""
+    pypdf = pytest.importorskip("pypdf")
+    p = tmp_path / "scan.pdf"
+    writer = pypdf.PdfWriter()
+    writer.add_blank_page(width=595, height=842)
+    with open(p, "wb") as fh:
+        writer.write(fh)
+    with pytest.raises(LbNichtLesbar, match="Kein extrahierbarer Text"):
+        PARSER.parse_lb(str(p))
 
-    bundle = build_default_bundle()
-    assert bundle.lb is not None
-    assert hasattr(bundle.lb, "parse_lb")
+
+def test_defektes_pdf_ist_fail_closed(tmp_path):
+    p = tmp_path / "kaputt.pdf"
+    p.write_bytes(b"%PDF-1.4\nkein gueltiger Inhalt")
+    with pytest.raises(LbNichtLesbar):
+        PARSER.parse_lb(str(p))
+
+
+# ── Audit-Trail ─────────────────────────────────────────────────────────────
+def test_lb_quelle_nennt_datei_abschnitt_und_seite():
+    lb = PARSER.parse_lb(_pfad("skalar_lb.txt"))
+    assert "skalar_lb.txt" in lb.lb_quelle
+    assert "§5.1.23" in lb.lb_quelle
+    assert "S. 37" in lb.lb_quelle
+
+
+def test_jeder_befund_traegt_provenienz():
+    bericht = _bericht("skalar_lb.txt")
+    for b in (x for x in bericht.befunde if x.status == "wert"):
+        assert b.datei and b.abschnitt and b.anker
+        assert b.seite == 37
+        assert b.begruendung
+
+
+def test_funktionserhalt_nur_informativ():
+    """E30 ist extrahierbar, hat aber kein Contract-Feld — kein erfundenes Feld."""
+    bericht = _bericht("skalar_lb.txt")
+    befunde = bericht.fuer_feld("funktionserhalt")
+    assert befunde and befunde[0].status == "review_informativ"
+    assert "E30" in befunde[0].kandidat.replace(" ", "")
+    assert not befunde[0].blockierend
+
+
+def test_bericht_als_text_ist_lesbar():
+    text = _bericht("bereichs_lb.txt").als_text()
+    assert "LB-Bericht" in text
+    assert "BLOCKIEREND" in text
+    assert "GARAGE" in text
+
+
+def test_dokument_art_erkannt():
+    assert _bericht("skalar_lb.txt").dokument_art == "elektro_lb"
+    assert _bericht("rahmen_verweis.txt").dokument_art in {"gu_rahmen", "unbekannt"}

@@ -1,0 +1,39 @@
+SYNTHETISCHES TEST-FIXTURE — kein Kundendokument.
+Nachgebildet ist die STRUKTUR einer Elektro-Leistungsbeschreibung, die
+Bereiche regelt und bewusst KEINE Skalarwerte nennt (kein Lux, keine
+Betriebsdauer, keine Umschaltzeit). Namen, Objekt und Fabrikate sind erfunden.
+
+1 Allgemeines
+Musterprojekt Beispielweg 1, Bauteil A, Wohnhausanlage.
+
+1.9 Normen und Richtlinien
+Die Ausführung erfolgt nach ÖVE E8101 gemeinsam mit OVE R 12-2 und ÖNORM EN 1838.
+
+2.9 Beleuchtung-Konzept
+Die Allgemeinbeleuchtung wird mit Bewegungsmeldern ausgeführt.
+
+2.10 LED- Sicherheitsbeleuchtung (Stiegen, Gängen)
+Für die Stiegenhäuser und die an die Stiegenhäuser anschließenden Gänge ist KEINE
+LED- Sicherheitsbeleuchtung herzustellen (GK4).
+
+2.11 LED- Sicherheitsbeleuchtung (Garage)
+Das Gebäude wird mit einer batteriegestützten Sicherheitsstromversorgungsanlage für die
+Sicherheitsbeleuchtung entsprechend den Vorschriften (ÖVE8101, R12-2, 1838, ÖNORM Z1000)
+in letztgültiger Fassung ausgerüstet.
+Für das Wohnhaus wird eine Gruppenbatterieanlage errichtet, situiert im Technikraum.
+Die Gruppenbatterieanlage versorgt die Sicherheitsbeleuchtung in der Garage.
+Als Prüfeinrichtungen sind automatische Einzelleuchtenüberwachung (Strommessung innerhalb
+der Leuchten), Batteriekreisüberwachung und Prüfbuchspeicher vorgesehen.
+Eine web-basierte Prüfung und Wartung ist über den Controller vorzusehen.
+Endstromkreise in E30 (gemäß ÖNORM DIN 4102-12), soweit keine nachfolgenden Bereiche
+gefährdet werden.
+
+Musterbüro Seite 37 von 59
+2.12 Rauchabzugsanlage
+Die Rauchabzugsanlage wird nach den behördlichen Auflagen ausgeführt.
+
+2.21 Fabrikate
+Innen-Leuchten, Gänge und Stiegen: Musterlicht-LED.
+Notbeleuchtung, (Versorgt über Zentralbatterie): Musterschutz-Concept-LED, IP65, LED.
+
+Musterbüro Seite 42 von 59
