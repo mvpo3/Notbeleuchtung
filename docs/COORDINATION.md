@@ -24,19 +24,28 @@ F2 baut: `normwissen/photometrie/ldt.py` mit
 F1 tauscht dann in `platzierung/lux.py` das konstante `i_cd` gegen `Photometrie.intensitaet`.
 **Contract bleibt unberührt** (rein additives Modul). → wenn API steht, hier „READY" markieren.
 
+**READY** (F2, 2026-08-30): `normwissen/photometrie/{ldt.py,__init__.py}` steht.
+`lade_ldt(pfad) -> Photometrie` (EULUMDAT, alle Isym-Symmetrien) +
+`Photometrie.intensitaet(gamma_grad, c_grad=0.0) -> cd` (bilinear γ×C, cd über
+`lampen_lumen` skaliert). F1 kann `lux.py` umstellen. Noch offen: Test gegen echte
+Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixtures/photometrie/mini.ldt`.
+
 ## Status-Board (live — nach jedem Schritt updaten + committen)
 
 ### F1 (Platzierung)
 - [x] (a) Anker-Platzierer (`anker_strategy`) — committed
 - [x] (b-vorbereitet) `mittellinie` + `lux` — committed
 - [x] (c) `place()` Durchstich Anker→Linie→Fläche→Deckung (`deckung.py`) — committed
-- [ ] offen: PR für anker-platzierer-Branch; ggf. `lux.py` auf F2-Photometrie umstellen (nach READY)
+- [x] `lux.py`/`deckung.py` auf F2-Photometrie umstellbar: neues `i_cd_fn(γ)`-Callable
+  (Dependency-Injection, KEIN `normwissen`-Import → Import-Grenze gewahrt); Hauptengine
+  baut es aus `Photometrie.intensitaet`. Fallback bleibt konstant `i_cd`. (Branch `leonis/lux-photometrie`)
+- [ ] offen: PR für anker-platzierer-Branch; Hauptengine/pipeline: `i_cd_fn` real verdrahten
 
 ### F2 (Photometrie / LDT)
-- [ ] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser
-- [ ] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation
-- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei)
-- [ ] API READY-Meldung hier → F1 baut sie in `lux.py` ein
+- [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
+- [x] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation (bilinear γ×C, periodisch)
+- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture
+- [x] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
 ### F2 → umgelenkt auf Raumerkennung (Selman-Package)
 Branch `selman/raumerkennung-dxf`. Baut echten `ArchitekturRaumProvider.parse(dxf, floor)
@@ -118,6 +127,8 @@ F1 hat den echten End-to-End (Provider → Platzierung → DXF) auf **Fischamend
   9 unter 2 m²) — bekannte Gap-Healing-Grenze, hier bestätigt.
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F1-Naht: `lux.py`+`deckung.py` bekommen `i_cd_fn(γ)`-Callable (Photometrie-Injektion, grenz-sauber). 77 Tests grün. Verdrahtung in Hauptengine/pipeline noch offen.
+- 2026-08-30 F2: `photometrie/ldt.py` + `__init__.py` + Fixture `mini.ldt` + `tests/normwissen/test_ldt.py`. 74 Tests grün, ruff clean. Schnittstelle READY (siehe oben).
 - <2026-08-29> F1: Platzier-Regeln l=z·h + `richtung_durch_tuer` kodiert (Commit
   `e87a745`, Suite 95). Fischamender-Durchstich + DXF-Overlay in echten Grundriss.
   2 F2-Bugs oben dokumentiert. ⚠️ F1-Platzier-Code liegt versehentlich auf

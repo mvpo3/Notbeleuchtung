@@ -4,12 +4,12 @@ from pathlib import Path
 
 import jsonschema
 
-from fakes import FakeNormProvider
 from notbeleuchtung.hauptengine.contracts import (
     NormAnforderung,
     NormProvider,
     NormRegelwerk,
 )
+from notbeleuchtung.normwissen import En1838NormProvider
 
 SCHEMA = Path("src/notbeleuchtung/hauptengine/contracts/schema/norm_regelwerk.schema.json")
 FIXTURE = Path("tests/fixtures/norm_regelwerk_snapshot.json")
@@ -26,12 +26,12 @@ def test_snapshot_parses_and_validates():
 
 
 def test_provider_satisfies_protocol():
-    prov = FakeNormProvider()
+    prov = En1838NormProvider()
     assert isinstance(prov, NormProvider)   # runtime_checkable
 
 
 def test_provider_query_returns_typed_anforderung():
-    prov = FakeNormProvider()
+    prov = En1838NormProvider()
     a = prov.fuer_raum("STIEGENHAUS", True)
     assert isinstance(a, NormAnforderung)
     assert a.klassifikation in ("rz", "antipanik", "sicherheitsleuchte")
@@ -40,7 +40,7 @@ def test_provider_query_returns_typed_anforderung():
 
 
 def test_erkennungsweite_l_gleich_z_mal_h():
-    prov = FakeNormProvider()
+    prov = En1838NormProvider()
     # l = z*h; hinterleuchtet z=200, h=0.15 m -> 30 m
     assert prov.erkennungsweite_m(0.15, hinterleuchtet=True) == 30.0
     assert prov.erkennungsweite_m(0.15, hinterleuchtet=False) == 15.0
