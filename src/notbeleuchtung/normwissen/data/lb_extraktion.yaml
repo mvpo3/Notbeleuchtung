@@ -32,7 +32,14 @@ meta:
 # ── Struktur-Erkennung ─────────────────────────────────────────────────────
 struktur:
   # Ueberschrift: "2.10 LED-Sicherheitsbeleuchtung (Stiegen, Gängen)" / "5.1.23 …"
-  abschnitt_muster: '^\s*(\d+(?:\.\d+)*)\s+(\S.*?)\s*$'
+  # Segmente auf 3 Stellen begrenzt und Grossbuchstabe erzwungen, sonst werden
+  # Normnummern mitten im Fliesstext zu Abschnitten ("4108 und ÖNORM EN ISO …")
+  # und verfaelschen die Fundstellen im Audit-Trail.
+  abschnitt_muster: '^\s*(\d{1,3}(?:\.\d{1,3})*)\s+([A-ZÄÖÜ]\S*.*?)\s*$'
+  # Ueberschriften sind kurz. Ohne diese Grenze wird Fliesstext, der mit einer
+  # Zahl beginnt ("21 Tage vor dem beabsichtigten Beginn der Arbeiten …"), zur
+  # Abschnitts-Ueberschrift und steht dann falsch im Audit-Trail.
+  ueberschrift_max_laenge: 80
   # Fusszeilen-Seitenzahl: "… Seite 37 von 59" / "Seite 12/124"
   seite_muster: 'Seite\s+(\d+)\s*(?:von|/)\s*\d+'
   # Aufzaehlungszeile: "-in der Garage auf den Fluchtgängen" / "• …" / "– …"
@@ -54,11 +61,44 @@ dokument_arten:
     anker: ["ausstattungsbeschreibung", "baubeschreibung", "wohnungsausstattung"]
     mindest_treffer: 1
 
-# Unaufgeloester Verweis auf ein fremdes Dokument -> blockierender Review.
-verweis_muster:
-  - 'siehe\s*[-–—]?\s*Leistungsbeschreibung\s+Gewerk\s+Elektrotechnik'
-  - 'siehe\s+Legende\s+der\s+Projektpl[äa]ne'
-  - 'gem[äa][ßs]\s+(?:aktuellem\s+)?Brand-?\s?Schutz-?\s?Konzept'
+# Verweise auf andere Dokumente — in ZWEI Klassen, weil nicht jeder Querverweis
+# eine Luecke ist. Ob ein Verweis blockiert, entscheidet sich deterministisch aus
+# Klasse UND Abhaengigkeit (siehe lb/parser.py::_verweise):
+#
+#   ausgelagert + Dokument traegt KEINE eigene Vorgabe  -> blockierend
+#       Die Notbeleuchtungs-Vorgaben stehen ausdruecklich woanders; ohne dieses
+#       Dokument ist nichts sicher bestimmbar (GU-Rahmen ohne Elektro-LB).
+#   ausgelagert + Dokument traegt eigene Vorgaben       -> informativ
+#       Der Verweis ergaenzt, ersetzt aber nicht — die Vorgabe liegt hier vor.
+#   allgemein                                           -> immer informativ
+#       Brandschutzkonzept, Behoerdenauflagen, Normen, Planungsunterlagen:
+#       Koordinationsverweise, von denen keine erkannte LB-Vorgabe abhaengt.
+verweise:
+  ausgelagert:
+    begruendung: >-
+      Die Leistungsbeschreibung verlagert die Notbeleuchtungs-Vorgaben
+      ausdruecklich in ein anderes Dokument.
+    muster:
+      - 'siehe\s*[-–—]?\s*Leistungsbeschreibung\s+Gewerk\s+Elektrotechnik'
+      - 'siehe\s*[-–—]?\s*(?:separate|eigene)\s+Leistungsbeschreibung'
+      - 'Elektro(?:technik)?\s*[-–—:]?\s*siehe\s+Leistungsbeschreibung'
+  allgemein:
+    begruendung: >-
+      Allgemeiner Querverweis (Brandschutzkonzept, Behoerde, Norm,
+      Planungsunterlage) — ergaenzend, keine erkannte LB-Vorgabe haengt davon ab.
+    muster:
+      - 'gem[äa][ßs]\s+(?:aktuellem\s+)?Brand-?\s?Schutz-?\s?Konzept'
+      - 'siehe\s+Legende\s+der\s+Projektpl[äa]ne'
+      - 'nach\s+den\s+beh[öo]rdlichen\s+(?:Auflagen|Vorschriften)'
+      - 'laut\s+Baubescheid'
+      - 'zur\s+Freigabe\s+vorzulegen'
+
+# Felder, deren Wert-Befund als "das Dokument traegt eine eigene Vorgabe" zaehlt.
+# Bewusst OHNE norm_bezug und funktionserhalt: eine blosse Normnennung ist keine
+# projektspezifische Vorgabe (sonst wuerde ein Normverweis die Luecke kaschieren).
+eigene_vorgabe_felder:
+  [bereiche, betriebsdauer_min, umschaltzeit_max_s, mindest_lux_fluchtweg,
+   system_typ, ueberwachung, pruefung, rz_stellen, sonder_lux, piktogramm_norm]
 
 # ── Notbeleuchtungs-Abschnitte ─────────────────────────────────────────────
 # NUR in Abschnitten, deren Ueberschrift eines dieser Woerter traegt, werden

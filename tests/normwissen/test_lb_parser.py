@@ -210,13 +210,33 @@ def test_dokument_ohne_notbeleuchtungsabschnitt_ist_fail_closed():
     assert "notbeleuchtungs_abschnitt" in gruende
 
 
-# ── Verweis auf ein fremdes Dokument ────────────────────────────────────────
-def test_rahmendokument_mit_verweis_ist_fail_closed():
+# ── Verweise: nicht jeder Querverweis ist eine Lücke ────────────────────────
+def test_ausgelagerte_vorgaben_ohne_eigene_angaben_blockieren():
+    """GU-Rahmen verweist auf die separate Elektro-LB und trägt selbst nichts."""
     with pytest.raises(LbReviewRequired) as exc:
         PARSER.parse_lb(_pfad("rahmen_verweis.txt"))
-    bericht = exc.value.bericht
-    felder = {b.feld for b in bericht.blockierende}
-    assert felder & {"verweis", "notbeleuchtungs_abschnitt"}
+    verweise = [b for b in exc.value.bericht.blockierende if b.feld == "verweis"]
+    assert verweise and verweise[0].kandidat == "ausgelagert"
+    assert "Leistungsbeschreibung Gewerk Elektrotechnik" in verweise[0].anker
+
+
+def test_allgemeiner_verweis_blockiert_nicht():
+    """Brandschutzkonzept/Behörde/Norm sind Koordination, keine fehlende Vorgabe."""
+    bericht = _bericht("bereichs_lb.txt")
+    verweise = bericht.fuer_feld("verweis")
+    assert verweise, "der Verweis muss im Audit sichtbar bleiben"
+    assert all(v.status == "review_informativ" for v in verweise)
+    assert all(v.kandidat == "allgemein" for v in verweise)
+    # ... und er darf nicht der Grund für das Fail-Closed sein:
+    assert "verweis" not in {b.feld for b in bericht.blockierende}
+
+
+def test_bereichs_lb_blockiert_ausschliesslich_wegen_garage():
+    with pytest.raises(LbReviewRequired) as exc:
+        PARSER.parse_lb(_pfad("bereichs_lb.txt"))
+    blockierend = exc.value.bericht.blockierende
+    assert {b.feld for b in blockierend} == {"bereiche"}
+    assert all("GARAGE" in (b.kandidat or "") for b in blockierend)
 
 
 # ── Nicht lesbar ────────────────────────────────────────────────────────────
