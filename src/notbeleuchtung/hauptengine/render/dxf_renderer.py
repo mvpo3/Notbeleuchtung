@@ -27,10 +27,18 @@ LAYER_STROMKREIS = "E_Stromkreis_Label"
 LAYER_ARCH_RAUM = "ARCH_Raum"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
 LAYER_LEGENDE = "E_Notbeleuchtung_Legende"
+LAYER_STUECKLISTE = "E_Notbeleuchtung_Stueckliste"
 
 ROOM_LABEL_HEIGHT_MM = 120.0
 LEGENDE_HEIGHT_MM = 200.0
 LEGENDE_OFFSET_MM = 1000.0   # Abstand über der Grundriss-Oberkante
+
+# Menschenlesbare Symbol-Arten für die Stückliste.
+_KIND_LABEL = {
+    "rz": "Rettungszeichen",
+    "sicherheitsleuchte": "Sicherheitsleuchte (Aufheller)",
+    "antipanik": "Antipanik-Leuchte",
+}
 
 # Stromkreis-Label — Konstanten verbatim aus elektro-planer dxf_writer.py:
 # Offset folgt der Symbol-Normale (freie Raumseite), Text bleibt horizontal;
@@ -48,6 +56,7 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
     doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
     doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
+    doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
 
 
 def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
@@ -87,6 +96,40 @@ def _draw_lb_legende(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
     })
     mt.set_location((min_x, max_y + LEGENDE_OFFSET_MM),
                     attachment_point=MTextEntityAlignment.BOTTOM_LEFT)
+    return True
+
+
+def _stueckliste_text(platzierung: PlatzierungsErgebnis) -> str | None:
+    """Stückliste der platzierten Symbol-Arten (Art + Anzahl). None wenn leer."""
+    counts: dict[str, int] = {}
+    for p in platzierung.platzierungen:
+        counts[p.kind] = counts.get(p.kind, 0) + 1
+    if not counts:
+        return None
+    zeilen = ["STÜCKLISTE"]
+    for kind in ("rz", "sicherheitsleuchte", "antipanik"):
+        if counts.get(kind):
+            zeilen.append(f"{_KIND_LABEL[kind]}: {counts[kind]}")
+    # Etwaige unbekannte Arten defensiv anhängen.
+    for kind, n in counts.items():
+        if kind not in _KIND_LABEL:
+            zeilen.append(f"{kind}: {n}")
+    zeilen.append(f"Summe: {len(platzierung.platzierungen)}")
+    return "\\P".join(zeilen)
+
+
+def _draw_stueckliste(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
+    """Stückliste-Textblock unter der Grundriss-Unterkante."""
+    text = _stueckliste_text(platzierung)
+    if text is None:
+        return False
+    (min_x, min_y), (_max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    mt = msp.add_mtext(text, dxfattribs={
+        "layer": LAYER_STUECKLISTE,
+        "char_height": LEGENDE_HEIGHT_MM,
+    })
+    mt.set_location((min_x, min_y - LEGENDE_OFFSET_MM),
+                    attachment_point=MTextEntityAlignment.TOP_LEFT)
     return True
 
 
@@ -201,6 +244,7 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
+    stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
 
     by_kind: dict[str, int] = {}
     placed_labels: list[tuple[float, float]] = []
@@ -230,5 +274,6 @@ def render_dxf(
         "raum_konturen_drawn": n_raeume_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
+        "stueckliste_drawn": stueckliste_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
