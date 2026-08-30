@@ -13,6 +13,7 @@ import yaml
 
 from notbeleuchtung.hauptengine.contracts import (
     NormRegelwerk,
+    Platzierung,
     PlatzierungsErgebnis,
     RaumModell,
 )
@@ -32,6 +33,17 @@ def _load(p):
 def test_fixture_parses_and_validates():
     PlatzierungsErgebnis.model_validate(_load(PLATZ))
     jsonschema.validate(instance=_load(PLATZ), schema=_load(SCHEMA))
+
+
+def test_lb_quelle_default_leer_und_setzbar():
+    """1.1.0: Platzierung trägt LB-Provenienz (2. Input). Default leer = rein norm-getrieben."""
+    p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz")
+    assert p.lb_quelle == ""
+    p2 = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="sicherheitsleuchte",
+                     lb_quelle="LB Fischa §2.11")
+    assert p2.lb_quelle == "LB Fischa §2.11"
+    # Alte Fixture (ohne lb_quelle) bleibt gültig — additiv/abwärtskompatibel.
+    assert all(p.lb_quelle == "" for p in PlatzierungsErgebnis.model_validate(_load(PLATZ)).platzierungen)
 
 
 def test_naht_covers_segment_in_raummodell():
