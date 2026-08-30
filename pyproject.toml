@@ -19,7 +19,8 @@ dependencies = [
 
 [project.optional-dependencies]
 api = ["fastapi>=0.110", "uvicorn>=0.27", "python-multipart>=0.0.9"]
-dev = ["pytest>=8.0", "jsonschema>=4.0", "ruff>=0.5", "httpx>=0.27"]  # httpx: FastAPI-TestClient
+render = ["matplotlib>=3.7"]   # PDF-/PNG-Export via ezdxf-matplotlib-Backend
+dev = ["pytest>=8.0", "jsonschema>=4.0", "ruff>=0.5", "httpx>=0.27", "matplotlib>=3.7"]  # httpx: FastAPI-TestClient
 # 2. Input-Pfad IFC/BIM (IfcSpace/IfcDoor → RaumModell). Auf Python 3.14 (noch) kein
 # pip-Wheel → dann manuell von ifcopenshell.org/downloads vendoren (py3.14/win64).
 ifc = ["ifcopenshell>=0.8"]
