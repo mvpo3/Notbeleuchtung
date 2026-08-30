@@ -286,6 +286,33 @@ def test_lb_quelle_nennt_datei_abschnitt_und_seite():
     assert "S. 37" in lb.lb_quelle
 
 
+def test_treffer_traegt_die_seite_des_treffers_nicht_des_abschnittsbeginns():
+    """Ein Abschnitt kann über Seiten laufen. Die Überschrift steht auf S. 20,
+    die Werte auf S. 21 — ein Befund muss S. 21 melden, sonst ist die
+    Fundstelle wissentlich falsch."""
+    bericht = _bericht("langer_abschnitt.txt")
+    dauer = [b for b in bericht.fuer_feld("betriebsdauer_min") if b.status == "wert"]
+    umschalt = [b for b in bericht.fuer_feld("umschaltzeit_max_s") if b.status == "wert"]
+    assert dauer and dauer[0].seite == 21
+    assert umschalt and umschalt[0].seite == 21
+    # Abschnittsnummer und -titel bleiben die der Überschrift.
+    assert dauer[0].abschnitt == "5.1.23 Fluchtwegorientierungsbeleuchtung"
+
+
+def test_bereichstreffer_traegt_die_seite_seiner_aussage():
+    bericht = _bericht("langer_abschnitt.txt")
+    bereiche = [b for b in bericht.fuer_feld("bereiche") if b.status == "wert"]
+    assert bereiche
+    assert all(b.seite == 21 for b in bereiche)
+    assert all(b.abschnitt == "5.1.23 Fluchtwegorientierungsbeleuchtung" for b in bereiche)
+
+
+def test_einseitige_abschnitte_regressieren_nicht():
+    """Wo Überschrift und Treffer auf derselben Seite liegen, bleibt alles gleich."""
+    bericht = _bericht("skalar_lb.txt")
+    assert all(b.seite == 37 for b in bericht.befunde if b.status == "wert")
+
+
 def test_jeder_befund_traegt_provenienz():
     bericht = _bericht("skalar_lb.txt")
     for b in (x for x in bericht.befunde if x.status == "wert"):
