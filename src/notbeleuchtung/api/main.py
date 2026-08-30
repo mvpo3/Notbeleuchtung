@@ -27,6 +27,7 @@ from starlette.background import BackgroundTask
 from notbeleuchtung.hauptengine.contracts import ProviderBundle
 from notbeleuchtung.hauptengine.pipeline import run
 from notbeleuchtung.hauptengine.registry import build_default_bundle
+from notbeleuchtung.hauptengine.render import dxf_zu_pdf
 
 BundleFactory = Callable[[], ProviderBundle]
 
@@ -59,10 +60,13 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
         datei: UploadFile = File(..., description="Leerer Architekturplan (DXF)"),
         floor: str = Form("EG", description="Geschoss-Kennung, z.B. '4OG'"),
         lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
+        format: str = Form("dxf", description="Ausgabeformat: 'dxf' (CAD) oder 'pdf' (Dokument)"),
         bundle: ProviderBundle = Depends(get_bundle),
     ) -> FileResponse:
-        """DXF (+ optional LB) hoch → Notbeleuchtungsplan (DXF) zurück. Summary im
-        `X-Notbeleuchtung`-Header."""
+        """DXF (+ optional LB) hoch → Notbeleuchtungsplan zurück (DXF oder PDF). Summary
+        im `X-Notbeleuchtung`-Header."""
+        if format not in ("dxf", "pdf"):
+            raise HTTPException(status_code=422, detail="format muss 'dxf' oder 'pdf' sein")
         workdir = Path(tempfile.mkdtemp(prefix="notbel_"))
         cleanup = BackgroundTask(shutil.rmtree, workdir, ignore_errors=True)
         try:
@@ -79,10 +83,19 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
             summary = {k: ergebnis.render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in ergebnis.render_summary}
+            if format == "pdf":
+                try:
+                    resp_path = dxf_zu_pdf(out_path, workdir / f"{floor}_notbeleuchtung.pdf")
+                except Exception as exc:  # matplotlib fehlt (Extra `render`) o.ä.
+                    raise HTTPException(status_code=422, detail=f"PDF-Export fehlgeschlagen: {exc}") from exc
+                media = "application/pdf"
+            else:
+                resp_path = out_path
+                media = "image/vnd.dxf"
             return FileResponse(
-                out_path,
-                media_type="image/vnd.dxf",
-                filename=out_path.name,
+                resp_path,
+                media_type=media,
+                filename=resp_path.name,
                 headers={"X-Notbeleuchtung": json.dumps(summary, ensure_ascii=True)},
                 background=cleanup,
             )
