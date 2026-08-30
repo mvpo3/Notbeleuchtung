@@ -77,9 +77,12 @@ def run(
     dxf_path: str,
     floor: str,
     out_path: str | Path | None = None,
+    lb_path: str | None = None,
 ) -> Output:
     raum = bundle.raum.parse(dxf_path, floor)
-    platzierung = bundle.platzierer.place(raum, bundle.norm)
+    # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
+    lb = bundle.lb.parse_lb(lb_path) if (bundle.lb is not None and lb_path is not None) else None
+    platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     if out_path is not None:
         render_summary = render_dxf(platzierung, raum, out_path)
     else:

@@ -54,9 +54,16 @@ class NormProvider(Protocol):
 
 @runtime_checkable
 class Platzierer(Protocol):
-    """Leonis — Platzierer(Raum, Norm) -> PlatzierungsErgebnis."""
+    """Leonis — Platzierer(Raum, Norm[, LB]) -> PlatzierungsErgebnis.
 
-    def place(self, raum: RaumModell, norm: NormProvider) -> PlatzierungsErgebnis: ...
+    `lb` ist der optionale 2. Input: die explizite Leistungsbeschreibung, die
+    Norm-Defaults übersteuert (z.B. `bereiche_exklusion` → keine Sicherheitsleuchte
+    trotz Norm-Default). `lb=None` = kein 2. Input → reines Norm-Verhalten.
+    """
+
+    def place(
+        self, raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+    ) -> PlatzierungsErgebnis: ...
 
 
 @runtime_checkable
@@ -73,8 +80,13 @@ class OibProvider(Protocol):
 
 @dataclass
 class ProviderBundle:
-    """Das von registry.py verdrahtete Trio (echt oder Fake)."""
+    """Das von registry.py verdrahtete Trio (echt oder Fake) + optionaler LB-Parser.
+
+    `lb` ist optional: der 2. Input (Leistungsbeschreibung) ist projektspezifisch und
+    kann fehlen. Ohne LB-Provider läuft die Engine rein norm-getrieben (wie bisher).
+    """
 
     raum: RaumProvider
     norm: NormProvider
     platzierer: Platzierer
+    lb: LBProvider | None = None
