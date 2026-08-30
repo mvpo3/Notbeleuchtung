@@ -17,6 +17,7 @@ from notbeleuchtung.hauptengine.contracts import (
     ProviderBundle,
     RaumModell,
 )
+from notbeleuchtung.normwissen import En1838NormProvider
 from notbeleuchtung.platzierung import NotlichtPlatzierer
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -32,6 +33,12 @@ class FakeRaumProvider:
 
     def parse(self, dxf_path: str, floor: str) -> RaumModell:
         return RaumModell.model_validate(_load("raum_modell_4og.json"))
+
+
+# Enis' Norm-Provider ist ab Slice 1 echt: der Durchstich (build_fake_bundle) läuft
+# über En1838NormProvider aus normwissen/data/*.yaml. FakeNormProvider bleibt als
+# Nachbar-Double für Owner-Unit-Tests stehen (tests/platzierung), damit Leonis
+# gegen ein stabiles Snapshot-Double testet statt gegen Enis' echten Code.
 
 
 class FakeNormProvider:
@@ -75,9 +82,9 @@ class FakePlatzierer:
 
 
 def build_fake_bundle() -> ProviderBundle:
-    """Raum + Norm noch Fake (Slice 4/1), Platzierer ab Slice 2 ECHT."""
+    """Nur Raum noch Fake (Slice 4) — Norm ab Slice 1 und Platzierer ab Slice 2 ECHT."""
     return ProviderBundle(
         raum=FakeRaumProvider(),
-        norm=FakeNormProvider(),
+        norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(),
     )
