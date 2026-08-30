@@ -19,15 +19,18 @@ from pathlib import Path
 import ezdxf
 from ezdxf.enums import MTextEntityAlignment
 
-from notbeleuchtung.hauptengine.contracts import PlatzierungsErgebnis, RaumModell
+from notbeleuchtung.hauptengine.contracts import LBVorgabe, PlatzierungsErgebnis, RaumModell
 from notbeleuchtung.symbols import inserter, library
 
 LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER
 LAYER_STROMKREIS = "E_Stromkreis_Label"
 LAYER_ARCH_RAUM = "ARCH_Raum"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
+LAYER_LEGENDE = "E_Notbeleuchtung_Legende"
 
 ROOM_LABEL_HEIGHT_MM = 120.0
+LEGENDE_HEIGHT_MM = 200.0
+LEGENDE_OFFSET_MM = 1000.0   # Abstand über der Grundriss-Oberkante
 
 # Stromkreis-Label — Konstanten verbatim aus elektro-planer dxf_writer.py:
 # Offset folgt der Symbol-Normale (freie Raumseite), Text bleibt horizontal;
@@ -44,6 +47,47 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
     doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
+    doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
+
+
+def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
+    """SV-Anlagen-Kennzeichnung aus den gesetzten LB-Vorgaben (None = nichts zu zeigen)."""
+    if lb is None:
+        return None
+    zeilen = ["SICHERHEITSBELEUCHTUNG — Leistungsbeschreibung"]
+    _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
+            "zentralbatterie": "Zentralbatterie"}
+    if lb.system_typ:
+        zeilen.append(f"System: {_SYS.get(lb.system_typ, lb.system_typ)}")
+    if lb.betriebsdauer_min is not None:
+        zeilen.append(f"Betriebsdauer: {lb.betriebsdauer_min / 60:g} h")
+    if lb.umschaltzeit_max_s is not None:
+        zeilen.append(f"Umschaltzeit: < {lb.umschaltzeit_max_s:g} s")
+    if lb.mindest_lux_fluchtweg is not None:
+        zeilen.append(f"Fluchtweg: min. {lb.mindest_lux_fluchtweg:g} lx")
+    if lb.piktogramm_norm:
+        zeilen.append(f"Piktogramme: {lb.piktogramm_norm}")
+    if lb.norm_bezug:
+        zeilen.append("Normbezug: " + ", ".join(lb.norm_bezug))
+    if lb.lb_quelle:
+        zeilen.append(f"Quelle: {lb.lb_quelle}")
+    # Nur zeichnen, wenn über den Titel hinaus etwas Konkretes drinsteht.
+    return "\\P".join(zeilen) if len(zeilen) > 1 else None
+
+
+def _draw_lb_legende(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
+    """Legenden-Textblock (SV-System-Spec) über der Grundriss-Oberkante."""
+    text = _lb_legende_text(lb)
+    if text is None:
+        return False
+    (min_x, _min_y), (_max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    mt = msp.add_mtext(text, dxfattribs={
+        "layer": LAYER_LEGENDE,
+        "char_height": LEGENDE_HEIGHT_MM,
+    })
+    mt.set_location((min_x, max_y + LEGENDE_OFFSET_MM),
+                    attachment_point=MTextEntityAlignment.BOTTOM_LEFT)
+    return True
 
 
 def _draw_raeume(msp, raum: RaumModell) -> int:
@@ -141,8 +185,13 @@ def render_dxf(
     platzierung: PlatzierungsErgebnis,
     raum: RaumModell,
     out_path: Path | str,
+    lb: LBVorgabe | None = None,
 ) -> dict:
-    """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs."""
+    """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
+
+    `lb` (optional, 2. Input) fügt eine SV-Anlagen-Legende (System/Betriebsdauer/
+    Norm) über dem Grundriss ein — wie sie reale Notbeleuchtungspläne tragen.
+    """
     out_path = Path(out_path)
     doc = ezdxf.new("R2018", units=4)  # 4 = mm
     library.sync_layers(doc)
@@ -151,6 +200,7 @@ def render_dxf(
 
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
+    lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
 
     by_kind: dict[str, int] = {}
     placed_labels: list[tuple[float, float]] = []
@@ -179,5 +229,6 @@ def render_dxf(
         "circuit_labels_drawn": circuit_labels,
         "raum_konturen_drawn": n_raeume_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
+        "lb_legende_drawn": lb_legende_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
