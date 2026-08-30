@@ -63,7 +63,7 @@ def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
     """SV-Anlagen-Kennzeichnung aus den gesetzten LB-Vorgaben (None = nichts zu zeigen)."""
     if lb is None:
         return None
-    zeilen = ["SICHERHEITSBELEUCHTUNG — Leistungsbeschreibung"]
+    zeilen = ["SICHERHEITSBELEUCHTUNG (Leistungsbeschreibung)"]
     _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
             "zentralbatterie": "Zentralbatterie"}
     if lb.system_typ:
