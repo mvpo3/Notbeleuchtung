@@ -4,46 +4,52 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-08-29 Session-Ende) — HIER WEITER
+## STAND (2026-08-30 Session-Ende) — HIER WEITER
 
-**Platzier-Regeln aus dem Wissen kodiert** (Commit `e87a745`, `anker_strategy.py`):
-1. **RZ-Dichte = `l = z·h`** — `plan_rettungszeichen_sichtlinie` zieht `max_abstand_mm`
-   aus `norm.erkennungsweite_m` (z=200 hinterleuchtet/100 beleuchtet, h=Pikto-Höhe)
-   statt geratener 12-m-Konstante. Keine Überproduktion.
-2. **`richtung_durch_tuer(tuer_xy, ziel_xy)`** — RZ an Tür/Öffnung entlang der Schwelle,
-   Pfeil DURCH die Öffnung in Reiserichtung; überschreibt das Distanz-Gefälle
-   (Owner-Korrektur L-Knick). Tests +2, Suite 95 grün. Kein Contract berührt.
+**Der Nordstern läuft end-to-end auf echten Daten.** Alles unten ist auf `main`
+(313 Tests grün, ruff clean, Drift in sync). Beide Fenster (F1+F2) haben heute massiv
+geliefert.
 
-⚠️ **Git-Tangle:** dieser Commit + die früheren Platzier-Module (graph/richtungsfeld/
-sichtlinie/mittellinie/lux/deckung) liegen auf Branch **`selman/raumerkennung-dxf`**
-(nicht `leonis/*`). Integration war als PR #12 geplant. PR #11 stale/superseded.
-Vor Weiterarbeit: entwirren — Platzier-Code gehört auf einen `leonis/*`-Branch.
+**Voll-Real-E2E bewiesen:** echter Mollgasse-EG-Grundriss (`Projekte/Mollgasse/
+Erdgeschoß.dxf`, 192 Räume) **+ reale LB-PDF** (`Leistungsbeschreibungen BSP/mo-…Elektro…pdf`)
+durch `build_default_bundle()` → **12 RZ + 21 SL**, LB geparst+angewendet, gerendert als
+PDF mit Anlagenlegende + Stückliste + Plankopf + Prüfbericht. Reproduzieren:
+`run(build_default_bundle(), "Projekte/Mollgasse/Erdgeschoß.dxf", "EG", out_path=…, lb_path=<LB.pdf>)`
+→ `render.dxf_zu_pdf(...)`.
 
-**Echter End-to-End-Durchstich auf Fischamender BT1 1.OG** (F2-Provider → F1-Engine →
-DXF in den echten Grundriss). Ergebnis ehrlich geprüft (Determinismus + Sanity):
-- ✅ Provider läuft: **59 Raum-Polygone** (39 getypt, 20 Fragmente), **102 Tür-INSERTs**.
-- ✅ Engine platziert 10 SL; RZ-Regeln laufen auf echter Geometrie.
-- ✅ **DXF-Overlay** (`output/Fischamender_BT1_1OG_MIT_Notbeleuchtung.dxf`, untracked):
-  Symbole IN den Original-Grundriss gezeichnet, Original-Einheiten (Meter → Pos+scale
-  ÷ factor=1000, scale 0,185), neuer Layer `E_Sicherheitsbeleuchtung`, Original
-  unangetastet. Per ezdxf-Preview verifiziert.
-- ❌ **2 F2-Bugs gefunden** (in `docs/COORDINATION.md` als Tickets dokumentiert):
-  (B1) Tür-**Doppelzählung** — 102 roh → ~60 dedup (jede Tür als 2 ARC-Schwenkbögen);
-  (B2) **A_Fluchtweg + Ausgänge werden für die Fischamender-Familie nicht gelesen**
-  (`zirkulation_aus_dxf` sucht Mollgasse `09-WEG`, footprint nur Mollgasse-kalibriert)
-  → 0 Ausgänge, 0 Zirkulation → RZ-Routing musste stiegenhaus-verankert improvisiert
-  werden (Stiegenhaus aus `S-STRS`-Layer lokalisiert, ×factor).
+**Heute nach main gemergt (F1/Leonis):**
+- PDF-Export + `POST /plan?format=pdf` + Legende-Font-Fix (#30)
+- Prüfbericht/Validierung (`hauptengine/validierung.py`) — 7 EN-1838-Regeln, sichtbar als
+  Plan-Legende (#35/#37/#36)
+- Plankopf/Schriftfeld + Stückliste + LB-Anlagenlegende im Render, Metadaten via API (#36)
+- **Photometrie-Naht** (#38): `NotlichtPlatzierer(i_cd_fn=…)` + `registry.photometrie_i_cd_fn(ldt)`
+  — F2s LDT/Photometrie fließt in die Lux-Deckung (Konstruktor-Injektion, keine Port-Änderung)
+- **Multi-Geschoss** (#41): `hauptengine/projekt.py` `run_projekt` + `POST /projekt` →
+  Sammel-PDF (ein Blatt je Geschoss)
+- **SL-Dichte-Fix** (#42): `mittellinie.leuchten_auf_linie` dünnt gegen ALLE Punkte aus
+  (nicht nur den letzten) + `deckung`-Mindestabstand 4 m → Mollgasse 268 → 19 SL
 
-**Erkenntnis:** Platzier-Regeln (l=z·h, Wasserscheide, Pfeil-durch-Tür) sind solide;
-der Engpass für vollautomatisch = **F2s Provider auf fremden CAD-Familien** (nicht die
-Platzierung). Placement kann erst voll geroutet werden, wenn F2 Fluchtweg/Ausgänge
-für die Fischamender-Konvention liefert.
+**F2 (anderes Fenster) hat heute auf main gebracht:** B3 Raumtyp-Geometrie
+(`raumerkennung/raumtyp` greift jetzt → STIEGENHAUS/GANG typisiert), LB-Parser
+(`normwissen/lb/parser.py` → `LbTextProvider`, in `build_default_bundle` verdrahtet),
+OIB-Resolver (`normwissen/oib/`), IES-Import (`photometrie/ies.py`).
 
-**Nächste Leonis-Tasks:** (1) Git entwirren (Platzier-Code auf `leonis/*`, PR #12/#11
-klären). (2) GANG-Raum→Graph-**Fallback** in `platzierung/` erwägen (RZ auch ohne
-F2-Fluchtweg-Layer, aus erkannten GANG-Räumen — macht Engine auf mehr Plänen sofort
-nutzbar). (3) SL-Symbolgröße justierbar + lux-Verifikation je realem Plan.
-Demo-Skripte in `scratchpad`/`output/` (nicht im Repo).
+**Contracts-Stand:** `PlatzierungsErgebnis` 1.1.0 (+`lb_quelle`); neu ProjektKontext/
+OibBefund/LBVorgabe (alle 1.0.0, gemergt). Alle auf main.
+
+**Offene Feinschliff-Punkte (kein Blocker):**
+1. **LB-Parser Betriebsdauer** — F2s `parser.py` liest „8 Std" nicht (Legende zeigt „0 h").
+   F2-Ticket.
+2. **Raumtyp-Abdeckung** — nur 5 GANG + 2 STIEGENHAUS von 192 Mollgasse-Räumen getypt;
+   185 bleiben untypisiert (Coverage-Audit warnt). Mehr Abdeckung = F2 (raumerkennung).
+3. `sonder_lux` (Feuerlöscher ≥5 lx) — braucht Positionen aus F2s Raumerkennung.
+4. Echte Schrack-LDT ins Repo → `catalog_key→LDT`-Mapping (F2) → dann greift #38 real.
+
+**Nächste Leonis-Tasks (Vorschlag morgen):** (a) DoD-Sichtprüfung des Real-PDF gegen eine
+GU-Referenz; (b) weitere Render-Politur (Höhenkoten, Wände); (c) auf F2-Feinschliff
+reagieren. Chat-Interface existiert bereits separat (nicht bauen). Board:
+`docs/COORDINATION.md` (2-Fenster) + `docs/PROGRAMM_NOTBELEUCHTUNG.md`. Demo-Skripte +
+Real-PDFs liegen in `output/` (gitignored).
 
 ## STAND (2026-08-28 Session-Ende) — Historie
 
