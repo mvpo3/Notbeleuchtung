@@ -15,6 +15,7 @@ from pathlib import Path
 
 from .contracts import LBVorgabe, PlatzierungsErgebnis, ProviderBundle, RaumModell
 from .render import render_dxf
+from .validierung import pruefbericht
 
 
 @dataclass
@@ -101,8 +102,9 @@ def run(
         render_summary = render_dxf(platzierung, raum, out_path, lb)
     else:
         render_summary = _summary(raum, platzierung)
-    # Coverage-Audit an beide Pfade anhängen (Warnungen fließen so auch in den API-Header).
+    # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
     render_summary["coverage"] = _coverage(raum, platzierung, lb)
+    render_summary["pruefung"] = pruefbericht(raum, platzierung, lb)
     return Output(
         raum=raum,
         platzierung=platzierung,
