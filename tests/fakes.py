@@ -10,7 +10,9 @@ import json
 from pathlib import Path
 
 from notbeleuchtung.hauptengine.contracts import (
+    BereichsRegel,
     FluchtwegSegment,
+    LBVorgabe,
     NormAnforderung,
     NormRegelwerk,
     PlatzierungsErgebnis,
@@ -77,8 +79,24 @@ class FakePlatzierer:
     Slice 0-Referenz. Der E2E-Durchstich nutzt ab Slice 2 den echten
     `NotlichtPlatzierer` (siehe `build_fake_bundle`)."""
 
-    def place(self, raum: RaumModell, norm) -> PlatzierungsErgebnis:
+    def place(self, raum: RaumModell, norm, lb=None) -> PlatzierungsErgebnis:
         return PlatzierungsErgebnis.model_validate(_load("platzierung_4og.json"))
+
+
+class FakeLBProvider:
+    """Enis-Double für den 2. Input — parst „irgendeine LB-Datei" in eine feste
+    `LBVorgabe`, die Sicherheitsbeleuchtung im STIEGENHAUS ausschließt (Fischa-GK4-Fall).
+    Der Inhalt der Datei ist egal — geprüft wird nur, dass der LB-Pfad durch die
+    Pipeline bis in die Override-Schicht fließt."""
+
+    def parse_lb(self, lb_path: str) -> LBVorgabe:
+        return LBVorgabe(
+            projekt="Fake-GK4",
+            bereiche_exklusion=[
+                BereichsRegel(raum_typ="STIEGENHAUS", sicherheitsbeleuchtung=False, begruendung="GK4"),
+            ],
+            lb_quelle=lb_path,
+        )
 
 
 def build_fake_bundle() -> ProviderBundle:
@@ -88,3 +106,10 @@ def build_fake_bundle() -> ProviderBundle:
         norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(),
     )
+
+
+def build_fake_bundle_mit_lb() -> ProviderBundle:
+    """Wie `build_fake_bundle`, aber mit verdrahtetem LB-Provider (2. Input aktiv)."""
+    bundle = build_fake_bundle()
+    bundle.lb = FakeLBProvider()
+    return bundle

@@ -15,11 +15,13 @@ Alle Strategien sind norm-getrieben und render-frei.
 from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import (
+    LBVorgabe,
     NormProvider,
     PlatzierungsErgebnis,
     RaumModell,
 )
 
+from . import lb_override
 from .anker_strategy import plan_rettungszeichen_anker
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
@@ -47,11 +49,15 @@ def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
 class NotlichtPlatzierer:
     """Erfüllt `hauptengine.contracts.ports.Platzierer`."""
 
-    def place(self, raum: RaumModell, norm: NormProvider) -> PlatzierungsErgebnis:
+    def place(
+        self, raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+    ) -> PlatzierungsErgebnis:
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm),                 # Fläche
             *verdichte_fluchtweg(raum, norm),            # Linie + Deckung (Lux)
         ]
+        # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
+        platzierungen = lb_override.anwenden(platzierungen, raum, lb)
         return PlatzierungsErgebnis(floor=raum.floor, platzierungen=platzierungen)
