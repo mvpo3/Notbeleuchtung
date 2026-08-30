@@ -28,6 +28,7 @@ LAYER_ARCH_RAUM = "ARCH_Raum"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
 LAYER_LEGENDE = "E_Notbeleuchtung_Legende"
 LAYER_STUECKLISTE = "E_Notbeleuchtung_Stueckliste"
+LAYER_PLANKOPF = "E_Notbeleuchtung_Plankopf"
 
 ROOM_LABEL_HEIGHT_MM = 120.0
 LEGENDE_HEIGHT_MM = 200.0
@@ -57,13 +58,14 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
     doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
     doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
+    doc.layers.add(LAYER_PLANKOPF, color=7)     # weiß/schwarz
 
 
 def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
     """SV-Anlagen-Kennzeichnung aus den gesetzten LB-Vorgaben (None = nichts zu zeigen)."""
     if lb is None:
         return None
-    zeilen = ["SICHERHEITSBELEUCHTUNG — Leistungsbeschreibung"]
+    zeilen = ["SICHERHEITSBELEUCHTUNG (Leistungsbeschreibung)"]
     _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
             "zentralbatterie": "Zentralbatterie"}
     if lb.system_typ:
@@ -129,6 +131,50 @@ def _draw_stueckliste(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) 
         "char_height": LEGENDE_HEIGHT_MM,
     })
     mt.set_location((min_x, min_y - LEGENDE_OFFSET_MM),
+                    attachment_point=MTextEntityAlignment.TOP_LEFT)
+    return True
+
+
+# Schriftfeld-Geometrie (mm): Standard-Plankopf, rechts neben dem Grundriss.
+_PLANKOPF_B_MM = 14000.0
+_PLANKOPF_H_MM = 5600.0
+_PLANKOPF_ABSTAND_MM = 2000.0
+_PLANKOPF_PAD_MM = 400.0
+
+
+def _draw_plankopf(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis,
+                   lb: LBVorgabe | None) -> bool:
+    """Gerahmtes Schriftfeld (Plankopf) rechts unten neben dem Grundriss.
+
+    Projekt/Geschoss/Norm/Anlage aus RaumModell + LB; Datum/Ersteller als Leerfelder
+    zum Ausfüllen (kein nichtdeterministisches Datum im Render).
+    """
+    (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    x0 = max_x + _PLANKOPF_ABSTAND_MM
+    y0 = min_y
+    x1, y1 = x0 + _PLANKOPF_B_MM, y0 + _PLANKOPF_H_MM
+    # Rahmen.
+    msp.add_lwpolyline(
+        [(x0, y0), (x1, y0), (x1, y1), (x0, y1)],
+        close=True, dxfattribs={"layer": LAYER_PLANKOPF},
+    )
+    projekt = (lb.projekt if lb and lb.projekt else "—")
+    norm = ", ".join(lb.norm_bezug) if (lb and lb.norm_bezug) else "EN 1838 / ÖVE E 8101"
+    system = lb.system_typ if (lb and lb.system_typ) else "—"
+    zeilen = [
+        "NOTBELEUCHTUNGSPLAN",
+        f"Projekt: {projekt}",
+        f"Geschoss: {raum.floor}",
+        f"Norm: {norm}",
+        f"Anlage: {system}    Symbole: {len(platzierung.platzierungen)}",
+        "Maßstab: 1:100    Datum: __________",
+        "Erstellt: Engine (automatisch)    Geprüft: __________",
+    ]
+    mt = msp.add_mtext("\\P".join(zeilen), dxfattribs={
+        "layer": LAYER_PLANKOPF,
+        "char_height": LEGENDE_HEIGHT_MM * 0.85,
+    })
+    mt.set_location((x0 + _PLANKOPF_PAD_MM, y1 - _PLANKOPF_PAD_MM),
                     attachment_point=MTextEntityAlignment.TOP_LEFT)
     return True
 
@@ -245,6 +291,7 @@ def render_dxf(
     n_segmente = _draw_segmente(msp, raum)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
     stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
+    plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb)
 
     by_kind: dict[str, int] = {}
     placed_labels: list[tuple[float, float]] = []
@@ -275,5 +322,6 @@ def render_dxf(
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
         "stueckliste_drawn": stueckliste_drawn,
+        "plankopf_drawn": plankopf_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }

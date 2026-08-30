@@ -70,6 +70,27 @@ def test_plan_ohne_lb_provider_ignoriert_lb_upload():
     assert json.loads(r.headers["X-Notbeleuchtung"])["n_symbols"] == 7
 
 
+def test_plan_format_pdf_liefert_pdf():
+    r = _client().post(
+        "/plan",
+        files={"datei": ("leer.dxf", b"<architekturplan>", "image/vnd.dxf")},
+        data={"floor": "4OG", "format": "pdf"},
+    )
+    assert r.status_code == 200
+    assert r.headers["content-type"] == "application/pdf"
+    assert r.content[:5] == b"%PDF-"
+    assert r.headers["content-disposition"].endswith('filename="4OG_notbeleuchtung.pdf"')
+
+
+def test_plan_unbekanntes_format_ist_422():
+    r = _client().post(
+        "/plan",
+        files={"datei": ("leer.dxf", b"x", "image/vnd.dxf")},
+        data={"floor": "4OG", "format": "svg"},
+    )
+    assert r.status_code == 422
+
+
 def test_plan_ohne_datei_ist_422():
     # Pflicht-Upload fehlt → FastAPI-Validierung.
     assert _client().post("/plan", data={"floor": "4OG"}).status_code == 422

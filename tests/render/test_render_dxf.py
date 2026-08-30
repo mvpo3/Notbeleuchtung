@@ -68,6 +68,20 @@ def test_stueckliste_zaehlt_symbol_arten(rendered):
     assert "Summe: 5" in txt
 
 
+def test_plankopf_rahmen_und_felder(rendered):
+    _, summary, doc = rendered
+    assert summary["plankopf_drawn"] is True
+    msp = doc.modelspace()
+    # Rahmen (geschlossene LWPOLYLINE) + Text auf dem Plankopf-Layer.
+    assert msp.query("LWPOLYLINE[layer=='E_Notbeleuchtung_Plankopf']")
+    kopf = msp.query("MTEXT[layer=='E_Notbeleuchtung_Plankopf']")
+    assert len(kopf) == 1
+    txt = kopf[0].text
+    assert "NOTBELEUCHTUNGSPLAN" in txt
+    assert "Geschoss: 4OG" in txt
+    assert "Maßstab: 1:100" in txt
+
+
 def test_lb_legende_traegt_system_spec(contracts, tmp_path):
     from notbeleuchtung.hauptengine.contracts import LBVorgabe
     platzierung, raum = contracts
