@@ -25,6 +25,8 @@ Backend (Raumerkennung/Platzierung/Normwissen). Entscheiden, wenn Engine steht.
 | **RaumModell** | Selman | Leonis, Render | 1.0.0 | `contracts/schema/raum_modell.schema.json` | 2026-08-27 (Slice 0) |
 | **NormRegelwerk** | Enis | Leonis | 1.0.0 | `contracts/schema/norm_regelwerk.schema.json` | 2026-08-27 (Slice 0) |
 | **PlatzierungsErgebnis** | Leonis | Render | 1.0.0 | `contracts/schema/platzierung_ergebnis.schema.json` | 2026-08-27 (Slice 0) |
+| **ProjektKontext** | Enis (Input) | OibProvider | 1.0.0 | `contracts/schema/projekt_kontext.schema.json` | 2026-08-30 (OIB-Grundlage) |
+| **OibBefund** | OibProvider | Hauptengine | 1.0.0 | `contracts/schema/oib_ergebnis.schema.json` | 2026-08-30 (OIB-Grundlage) |
 
 Contract-Änderung → `contract_version` bumpen, `python scripts/gen_schema.py`,
 committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
