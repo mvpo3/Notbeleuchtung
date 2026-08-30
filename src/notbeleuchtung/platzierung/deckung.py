@@ -12,6 +12,8 @@ Polygon — Stiegenhäuser/Wohnräume bleiben unberührt. Render-frei, kein Cont
 """
 from __future__ import annotations
 
+from collections.abc import Callable
+
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
@@ -27,11 +29,14 @@ _MIN_ABSTAND_MM = 1500.0
 
 
 def verdichte_fluchtweg(
-    raum: RaumModell, norm: NormProvider, *, i_cd: float = 200.0
+    raum: RaumModell, norm: NormProvider, *,
+    i_cd: float = 200.0,
+    i_cd_fn: Callable[[float], float] | None = None,
 ) -> list[Platzierung]:
     """Sicherheitsleuchten entlang jeder Korridor-Mittellinie, verdichtet bis 1 lx / Ud≥1:40.
 
-    `i_cd` = Lichtstärke-Annahme fürs Lux-Modell (später aus IES/LDT, Teil b).
+    `i_cd` = konstante Lichtstärke-Annahme; `i_cd_fn(γ)` = richtungsabhängige Hersteller-
+    Photometrie (EULUMDAT/LDT, überschreibt `i_cd`), von der Hauptengine injiziert.
     """
     korridore = [
         r for r in raum.raeume if r.raum_typ.upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
@@ -50,7 +55,9 @@ def verdichte_fluchtweg(
         abstand = _START_ABSTAND_MM
         kandidaten = leuchten_auf_linie(r.polygon_mm, abstand)
         for _ in range(_MAX_HALBIERUNGEN):
-            res = lux_raster(kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, ziel_lux=1.0)
+            res = lux_raster(
+                kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn, ziel_lux=1.0
+            )
             if res.erfuellt_min and res.erfuellt_ud:
                 break
             abstand = max(_MIN_ABSTAND_MM, abstand / 1.5)
@@ -75,11 +82,14 @@ def verdichte_fluchtweg(
 
 
 def lux_bericht(
-    raum: RaumModell, ergebnis, *, i_cd: float = 200.0
+    raum: RaumModell, ergebnis, *,
+    i_cd: float = 200.0,
+    i_cd_fn: Callable[[float], float] | None = None,
 ) -> dict[str, LuxErgebnis]:
     """Je Korridor-Raum: Lux-Bewertung der darin liegenden Sicherheitsleuchten.
 
-    Reporting/Audit — verändert nichts. Schlüssel = Raum-ID.
+    Reporting/Audit — verändert nichts. Schlüssel = Raum-ID. `i_cd_fn` wie in
+    `verdichte_fluchtweg` (Hersteller-Photometrie statt konstant `i_cd`).
     """
     from .geometry import point_in_polygon
 
@@ -89,5 +99,7 @@ def lux_bericht(
         if r.raum_typ.upper() not in _KORRIDOR_TYPEN or len(r.polygon_mm) < 3:
             continue
         drin = [p.xy_mm for p in sl if point_in_polygon(p.xy_mm, r.polygon_mm)]
-        bericht[r.id] = lux_raster(drin, _bbox(r.polygon_mm), i_cd=i_cd, ziel_lux=1.0)
+        bericht[r.id] = lux_raster(
+            drin, _bbox(r.polygon_mm), i_cd=i_cd, i_cd_fn=i_cd_fn, ziel_lux=1.0
+        )
     return bericht
