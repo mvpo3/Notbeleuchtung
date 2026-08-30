@@ -52,6 +52,18 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
   Wohnung · F13-Wohnungs-Allokation · Erkennungsweite `l=z×h` (welche Höhe h) ·
   Antipanik 0,5 lx vs Rettungsweg 1 lx. (Übernommen aus elektro-planer H-20.)
 
+- (Enis→Leonis) **ProjektKontext-Contract fehlt (2026-08-30):** OIB-RL 2 Punkt 5.4 +
+  Tabelle 6 entscheidet, OB ein Bauvorhaben Sicherheitsbeleuchtung braucht
+  (eingeschränkt/uneingeschränkt). Dafür nötige Gebäudefakten (Nutzungsart,
+  Gebäudeklasse, Fluchtniveau, Betten/Personen/Flächen) kennt heute weder
+  `RaumModell` noch `pipeline.run()`. Spezifikation für Leonis:
+  `docs/SPEC_PROJEKTKONTEXT_OIB.md`; fachliche Grundlage `docs/OIB_RL2_TABELLE6.md`;
+  Quellen-/Belegstatus `docs/NORMQUELLEN_AT.md`. Contract-Anlage = 3-Owner-Approval.
+- (Enis) **Norm-Ausgabe-Drift:** `normwissen/data/en1838_grundwerte.yaml` zitiert
+  ÖNORM EN 1838:2013; im Repo liegt die Ausgabe **2019-11-15** (IDT EN 1838:2013-07).
+  Inhaltlich deckungsgleich, Bezeichnung offen. EN 1838:2025-03 und EN 50172:2024-11
+  fehlen (kostenpflichtig).
+
 - (Enis/Leonis) **Photometrie-Ausnahme (entschieden 2026-08-29):** Leonis baut
   `normwissen/photometrie/` (LDT/EULUMDAT → exakte Lux) im Enis-Package. Bewusste
   Ausnahme von der Owner-Grenze; rein additiv, kein Contract betroffen. Enis
