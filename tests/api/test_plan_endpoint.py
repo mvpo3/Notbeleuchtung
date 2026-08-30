@@ -103,6 +103,31 @@ def test_plan_pdf_mit_plankopf_metadaten():
     assert r.content[:5] == b"%PDF-"
 
 
+def test_projekt_mehrere_geschosse_sammel_pdf():
+    r = _client().post(
+        "/projekt",
+        files=[
+            ("dateien", ("eg.dxf", b"<eg>", "image/vnd.dxf")),
+            ("dateien", ("og.dxf", b"<og>", "image/vnd.dxf")),
+        ],
+        data={"floors": "EG, 1OG", "projekt_name": "Wohnbau X"},
+    )
+    assert r.status_code == 200
+    assert r.headers["content-type"] == "application/pdf"
+    assert r.content[:5] == b"%PDF-"
+    summary = json.loads(r.headers["X-Notbeleuchtung"])
+    assert summary["n_geschosse"] == 2
+
+
+def test_projekt_floors_mismatch_ist_422():
+    r = _client().post(
+        "/projekt",
+        files=[("dateien", ("eg.dxf", b"x", "image/vnd.dxf"))],
+        data={"floors": "EG, 1OG"},   # 1 Datei, 2 floors
+    )
+    assert r.status_code == 422
+
+
 def test_plan_ohne_datei_ist_422():
     # Pflicht-Upload fehlt → FastAPI-Validierung.
     assert _client().post("/plan", data={"floor": "4OG"}).status_code == 422
