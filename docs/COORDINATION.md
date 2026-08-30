@@ -44,7 +44,9 @@ Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixt
 ### F2 (Photometrie / LDT)
 - [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
 - [x] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation (bilinear γ×C, periodisch)
-- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture
+- [x] `normwissen/photometrie/ies.py` — IES/LM-63-Parser (`lade_ies`), gleicher `Photometrie`-Typ →
+  F1-Naht unverändert; horizontale Symmetrie-Expansion (rot./quadrant/bilateral), abs. Fotometrie
+- [ ] Test gegen eine echte Schrack-LDT/-IES (Owner besorgt Datei) — bis dahin synthetische Fixtures
 - [x] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
 ### F2 → umgelenkt auf Raumerkennung (Selman-Package)
@@ -127,6 +129,7 @@ F1 hat den echten End-to-End (Provider → Platzierung → DXF) auf **Fischamend
   9 unter 2 m²) — bekannte Gap-Healing-Grenze, hier bestätigt.
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F2: IES/LM-63-Import `photometrie/ies.py` (`lade_ies`) + Fixture `mini.ies` + `tests/normwissen/test_ies.py` (7). Gleicher `Photometrie`-Typ → F1-Naht unverändert. 170 Tests grün, ruff clean, schema in sync.
 - 2026-08-30 F1-Naht: `lux.py`+`deckung.py` bekommen `i_cd_fn(γ)`-Callable (Photometrie-Injektion, grenz-sauber). 77 Tests grün. Verdrahtung in Hauptengine/pipeline noch offen.
 - 2026-08-30 F2: `photometrie/ldt.py` + `__init__.py` + Fixture `mini.ldt` + `tests/normwissen/test_ldt.py`. 74 Tests grün, ruff clean. Schnittstelle READY (siehe oben).
 - <2026-08-29> F1: Platzier-Regeln l=z·h + `richtung_durch_tuer` kodiert (Commit
