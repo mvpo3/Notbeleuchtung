@@ -36,7 +36,10 @@ Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixt
 - [x] (a) Anker-Platzierer (`anker_strategy`) — committed
 - [x] (b-vorbereitet) `mittellinie` + `lux` — committed
 - [x] (c) `place()` Durchstich Anker→Linie→Fläche→Deckung (`deckung.py`) — committed
-- [ ] offen: PR für anker-platzierer-Branch; ggf. `lux.py` auf F2-Photometrie umstellen (nach READY)
+- [x] `lux.py`/`deckung.py` auf F2-Photometrie umstellbar: neues `i_cd_fn(γ)`-Callable
+  (Dependency-Injection, KEIN `normwissen`-Import → Import-Grenze gewahrt); Hauptengine
+  baut es aus `Photometrie.intensitaet`. Fallback bleibt konstant `i_cd`. (Branch `leonis/lux-photometrie`)
+- [ ] offen: PR für anker-platzierer-Branch; Hauptengine/pipeline: `i_cd_fn` real verdrahten
 
 ### F2 (Photometrie / LDT)
 - [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
@@ -45,5 +48,6 @@ Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixt
 - [x] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F1-Naht: `lux.py`+`deckung.py` bekommen `i_cd_fn(γ)`-Callable (Photometrie-Injektion, grenz-sauber). 77 Tests grün. Verdrahtung in Hauptengine/pipeline noch offen.
 - 2026-08-30 F2: `photometrie/ldt.py` + `__init__.py` + Fixture `mini.ldt` + `tests/normwissen/test_ldt.py`. 74 Tests grün, ruff clean. Schnittstelle READY (siehe oben).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
