@@ -18,7 +18,8 @@ from __future__ import annotations
 import re
 
 from ezdxf import bbox
-from shapely.geometry import Point, Polygon
+from shapely.geometry import LineString, Point, Polygon
+from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
@@ -27,6 +28,9 @@ from .dxf_load import DxfPlan
 XY = tuple[float, float]
 
 _STAIR_BLOCK = re.compile(r"stiege|stieg|trepp|stair", re.IGNORECASE)
+# Fluchtweg-Layer je CAD-Familie (Mollgasse 09-WEG, Fischamender A_Fluchtweg).
+_FLUCHTWEG_LAYER = re.compile(r"09-WEG|A_Fluchtweg|Fluchtweg", re.IGNORECASE)
+_GANG_PUFFER_MM = 750.0         # Halbbreite → ~1.5 m Korridor um die Fluchtweg-Achse
 _MIN_REALRAUM_M2 = 2.0          # kleiner = Fragment, kein „echter" Raum zum Typisieren
 
 
@@ -93,6 +97,65 @@ def typisiere_stiegenhaus(raeume: list[Raum], stiegen: list[tuple[list[XY], XY, 
     return raeume
 
 
+def gang_polygone(plan: DxfPlan, puffer_mm: float = _GANG_PUFFER_MM) -> list[list[XY]]:
+    """Korridor-Polygone (mm) aus der Fluchtweg-Achse (09-WEG / A_Fluchtweg) gepuffert."""
+    linien: list[LineString] = []
+    for e in plan.space:
+        if not _FLUCHTWEG_LAYER.search(e.dxf.layer):
+            continue
+        if e.dxftype() in ("LINE", "LWPOLYLINE", "POLYLINE"):
+            pts = plan.entity_points(e)
+            if len(pts) >= 2:
+                linien.append(LineString(pts))
+    if not linien:
+        return []
+    korridor = unary_union([ln.buffer(puffer_mm) for ln in linien])
+    teile = list(korridor.geoms) if hasattr(korridor, "geoms") else [korridor]
+    return [
+        [(float(x), float(y)) for x, y in p.exterior.coords[:-1]]
+        for p in teile
+        if p.area / 1_000_000.0 >= 1.0
+    ]
+
+
+def typisiere_gang(raeume: list[Raum], gang_polys: list[list[XY]]) -> list[Raum]:
+    """GANG setzen: echte Räume, deren Zentrum im Fluchtweg-Korridor liegt, sonst Korridor-Raum.
+
+    Läuft der Fluchtweg durch einen echten (≥2 m²) untypisierten Raum, wird dieser GANG;
+    trifft der Korridor keinen echten Raum (Fragmente/label-los), wird der Korridor selbst
+    ein GANG-Raum. Bereits typisierte Räume bleiben unangetastet.
+    """
+    if not gang_polys:
+        return raeume
+    korridore = [Polygon(p) for p in gang_polys]
+    getroffen = False
+    for r in raeume:
+        if (r.raum_typ or "").strip() or len(r.polygon_mm) < 3:
+            continue
+        poly = Polygon(r.polygon_mm)
+        if poly.area / 1_000_000.0 < _MIN_REALRAUM_M2:
+            continue
+        if any(k.covers(poly.centroid) for k in korridore):
+            r.raum_typ = "GANG"
+            r.ist_fluchtweg = True
+            r.ist_communal = True
+            getroffen = True
+    if not getroffen:
+        for i, p in enumerate(gang_polys, start=1):
+            raeume.append(
+                Raum(
+                    id=f"gang_{i}",
+                    raum_typ="GANG",
+                    polygon_mm=p,
+                    flaeche_m2=_flaeche_m2(p),
+                    ist_fluchtweg=True,
+                    ist_communal=True,
+                )
+            )
+    return raeume
+
+
 def typisiere_geometrisch(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
-    """Alle geometrischen Typ-Ableitungen anwenden (aktuell: STIEGENHAUS)."""
-    return typisiere_stiegenhaus(raeume, stiege_rechtecke(plan))
+    """Alle geometrischen Typ-Ableitungen: STIEGENHAUS (Treppen-Blöcke) + GANG (Fluchtweg)."""
+    raeume = typisiere_stiegenhaus(raeume, stiege_rechtecke(plan))
+    return typisiere_gang(raeume, gang_polygone(plan))

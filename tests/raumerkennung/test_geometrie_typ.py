@@ -2,7 +2,9 @@
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 from notbeleuchtung.raumerkennung.dxf_load import lade_dxf
 from notbeleuchtung.raumerkennung.geometrie_typ import (
+    gang_polygone,
     stiege_rechtecke,
+    typisiere_gang,
     typisiere_geometrisch,
     typisiere_stiegenhaus,
 )
@@ -49,6 +51,34 @@ def test_fragment_wird_nicht_typisiert_sondern_raum_angelegt():
     assert len(out) == 2 and any(r.raum_typ == "STIEGENHAUS" for r in out)
 
 
+_KORRIDOR = [(0.0, 0.0), (10000.0, 0.0), (10000.0, 5000.0), (0.0, 5000.0)]   # deckt (2500,2500)
+
+
+def test_gang_fluchtweg_durch_echten_raum_typisiert():
+    r = _raum("a", _QUAD)                      # Zentrum (2500,2500) liegt im Korridor
+    out = typisiere_gang([r], [_KORRIDOR])
+    assert len(out) == 1
+    assert out[0].raum_typ == "GANG" and out[0].ist_fluchtweg
+
+
+def test_gang_ohne_raum_legt_gang_an():
+    out = typisiere_gang([], [_KORRIDOR])
+    assert len(out) == 1 and out[0].raum_typ == "GANG"
+
+
+def test_gang_ruehrt_typisierten_raum_nicht_an():
+    r = _raum("a", _QUAD, typ="STIEGENHAUS")
+    out = typisiere_gang([r], [_KORRIDOR])
+    assert r.raum_typ == "STIEGENHAUS"        # bestehender Typ unangetastet
+    # kein echter Raum getroffen → Korridor wird separater GANG-Raum
+    assert any(x.raum_typ == "GANG" for x in out)
+
+
+def test_gang_polygone_mollgasse_echt(mollgasse_blank_eg):
+    plan = lade_dxf(str(mollgasse_blank_eg))
+    assert len(gang_polygone(plan)) >= 1       # 09-WEG-Fluchtweg → Korridor-Polygone
+
+
 def test_stiege_rechtecke_mollgasse_echt(mollgasse_blank_eg):
     plan = lade_dxf(str(mollgasse_blank_eg))
     rects = stiege_rechtecke(plan)
@@ -70,6 +100,6 @@ def test_provider_parse_mollgasse_hat_typisierte_raeume(mollgasse_blank_eg):
     from notbeleuchtung.raumerkennung.provider import ArchitekturRaumProvider
 
     raum = ArchitekturRaumProvider().parse(str(mollgasse_blank_eg), "EG")
-    typisiert = [r for r in raum.raeume if (r.raum_typ or "").strip()]
-    assert typisiert, "Mollgasse-parse muss ≥1 typisierten Raum liefern"
-    assert any(r.raum_typ == "STIEGENHAUS" for r in typisiert)
+    typen = {r.raum_typ for r in raum.raeume if (r.raum_typ or "").strip()}
+    assert "STIEGENHAUS" in typen              # aus STIEGE-Blöcken
+    assert "GANG" in typen                     # aus 09-WEG-Fluchtweg
