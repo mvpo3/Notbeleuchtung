@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "BereichsRegel": {
+      "description": "Explizite LB-Vorgabe OB ein Raumtyp Sicherheitsbeleuchtung erhält.\n\n`raum_typ` muss auf Selmans RaumModell-Vokabular mappen (STIEGENHAUS/GANG/GARAGE …),\nsonst greift die Regel im Platzierer nicht. `sicherheitsbeleuchtung=False` in\n`bereiche_exklusion` ist der Hard-Override gegen den Norm-Default.",
+      "properties": {
+        "raum_typ": {
+          "title": "Raum Typ",
+          "type": "string"
+        },
+        "sicherheitsbeleuchtung": {
+          "title": "Sicherheitsbeleuchtung",
+          "type": "boolean"
+        },
+        "begruendung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Begruendung"
+        }
+      },
+      "required": [
+        "raum_typ",
+        "sicherheitsbeleuchtung"
+      ],
+      "title": "BereichsRegel",
+      "type": "object"
+    },
+    "SonderLux": {
+      "description": "Erhöhte Mindest-Beleuchtungsstärke an einem Ort (z.B. Feuerlöscher ≥ 5 lx).",
+      "properties": {
+        "ort": {
+          "title": "Ort",
+          "type": "string"
+        },
+        "min_lux": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Lux"
+        }
+      },
+      "required": [
+        "ort"
+      ],
+      "title": "SonderLux",
+      "type": "object"
+    }
+  },
+  "description": "Explizite, projektspezifische Vorgaben aus der Leistungsbeschreibung (2. Input).",
+  "properties": {
+    "contract": {
+      "const": "LBVorgabe",
+      "default": "LBVorgabe",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "projekt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Projekt"
+    },
+    "system_typ": {
+      "anyOf": [
+        {
+          "enum": [
+            "einzelbatterie",
+            "gruppenbatterie",
+            "zentralbatterie"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "System Typ"
+    },
+    "batterie_standort": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Batterie Standort"
+    },
+    "betriebsdauer_min": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Betriebsdauer Min"
+    },
+    "umschaltzeit_max_s": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Umschaltzeit Max S"
+    },
+    "mindest_lux_fluchtweg": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Mindest Lux Fluchtweg"
+    },
+    "ueberwachung": {
+      "anyOf": [
+        {
+          "enum": [
+            "einzelleuchte",
+            "zentral"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ueberwachung"
+    },
+    "pruefung": {
+      "anyOf": [
+        {
+          "enum": [
+            "automatisch",
+            "web",
+            "manuell"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Pruefung"
+    },
+    "piktogramm_norm": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Piktogramm Norm"
+    },
+    "fabrikat_rz": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fabrikat Rz"
+    },
+    "fabrikat_sl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fabrikat Sl"
+    },
+    "bereiche_inklusion": {
+      "items": {
+        "$ref": "#/$defs/BereichsRegel"
+      },
+      "title": "Bereiche Inklusion",
+      "type": "array"
+    },
+    "bereiche_exklusion": {
+      "items": {
+        "$ref": "#/$defs/BereichsRegel"
+      },
+      "title": "Bereiche Exklusion",
+      "type": "array"
+    },
+    "rz_stellen": {
+      "items": {
+        "enum": [
+          "fluchttuer",
+          "kreuzung",
+          "richtungsaenderung",
+          "niveauaenderung",
+          "notausgang_aussen"
+        ],
+        "type": "string"
+      },
+      "title": "Rz Stellen",
+      "type": "array"
+    },
+    "sonder_lux": {
+      "items": {
+        "$ref": "#/$defs/SonderLux"
+      },
+      "title": "Sonder Lux",
+      "type": "array"
+    },
+    "norm_bezug": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Norm Bezug",
+      "type": "array"
+    },
+    "lb_quelle": {
+      "default": "",
+      "title": "Lb Quelle",
+      "type": "string"
+    }
+  },
+  "title": "LBVorgabe",
+  "type": "object"
+}

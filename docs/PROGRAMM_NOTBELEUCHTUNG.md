@@ -27,6 +27,7 @@ Backend (Raumerkennung/Platzierung/Normwissen). Entscheiden, wenn Engine steht.
 | **PlatzierungsErgebnis** | Leonis | Render | 1.0.0 | `contracts/schema/platzierung_ergebnis.schema.json` | 2026-08-27 (Slice 0) |
 | **ProjektKontext** | Enis (Input) | OibProvider | 1.0.0 | `contracts/schema/projekt_kontext.schema.json` | 2026-08-30 (OIB-Grundlage) |
 | **OibBefund** | OibProvider | Hauptengine | 1.0.0 | `contracts/schema/oib_ergebnis.schema.json` | 2026-08-30 (OIB-Grundlage) |
+| **LBVorgabe** (2. Input) | Enis (Parser) | Leonis | 1.0.0 | `contracts/schema/lb_vorgabe.schema.json` | 2026-08-30 (LB-Input-Grundlage) |
 
 Contract-Änderung → `contract_version` bumpen, `python scripts/gen_schema.py`,
 committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).

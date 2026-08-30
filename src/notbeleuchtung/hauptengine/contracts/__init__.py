@@ -2,6 +2,15 @@
 
 Owner-Module importieren NUR hieraus, nie voneinander.
 """
+from .lb_vorgabe import (
+    BereichsRegel,
+    LBVorgabe,
+    Pruefung,
+    RzStelle,
+    SonderLux,
+    SystemTyp,
+    Ueberwachung,
+)
 from .norm_regelwerk import (
     ErkennungsweiteParameter,
     Klassifikation,
@@ -16,7 +25,14 @@ from .platzierung_ergebnis import (
     PlatzierungsErgebnis,
     Richtung,
 )
-from .ports import NormProvider, OibProvider, Platzierer, ProviderBundle, RaumProvider
+from .ports import (
+    LBProvider,
+    NormProvider,
+    OibProvider,
+    Platzierer,
+    ProviderBundle,
+    RaumProvider,
+)
 from .projekt_kontext import (
     Bundesland,
     Gebaeudeklasse,
@@ -45,12 +61,14 @@ SCHEMA_MODELS = {
     "platzierung_ergebnis": PlatzierungsErgebnis,
     "projekt_kontext": ProjektKontext,
     "oib_ergebnis": OibBefund,   # Port-Output; OibErgebnis/RaumReferenz als $defs
+    "lb_vorgabe": LBVorgabe,
 }
 
 __all__ = [
     "SCHEMA_MODELS",
     "Ausgang",
     "BBox",
+    "BereichsRegel",
     "Bundesland",
     "Edge",
     "ErkennungsweiteParameter",
@@ -59,6 +77,8 @@ __all__ = [
     "Gebaeudeteil",
     "Kind",
     "Klassifikation",
+    "LBProvider",
+    "LBVorgabe",
     "LageZurWohnung",
     "Node",
     "NormAnforderung",
@@ -74,12 +94,17 @@ __all__ = [
     "PlatzierungsErgebnis",
     "ProjektKontext",
     "ProviderBundle",
+    "Pruefung",
     "Raum",
     "RaumModell",
     "RaumProvider",
     "RaumReferenz",
     "RaumRegel",
     "Richtung",
+    "RzStelle",
+    "SonderLux",
+    "SystemTyp",
     "Tuer",
+    "Ueberwachung",
     "ZirkulationsGraph",
 ]
