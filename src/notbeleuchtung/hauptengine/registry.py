@@ -20,7 +20,7 @@ from .contracts import ProviderBundle
 def build_default_bundle() -> ProviderBundle:
     """Das echte Owner-Trio: ArchitekturRaumProvider (Selman) + En1838NormProvider
     (Enis) + NotlichtPlatzierer (Leonis). Lazy-Import — s. Modul-Docstring."""
-    from notbeleuchtung.normwissen import En1838NormProvider
+    from notbeleuchtung.normwissen import En1838NormProvider, LbTextProvider
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
@@ -28,4 +28,5 @@ def build_default_bundle() -> ProviderBundle:
         raum=ArchitekturRaumProvider(),
         norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(),
+        lb=LbTextProvider(),
     )
