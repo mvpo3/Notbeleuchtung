@@ -149,7 +149,7 @@ zeilen:
     unsicherheiten:
       - kennung: netto_grundflaeche_definition
         wirkung: blockiert
-        text: "MANUELL PRÜFEN — die für Tabelle 6 maßgebliche Definition der 'Netto-Grundfläche' (OIB-Begriffsbestimmungen, PDF-S. 10) war im Textextrakt nicht sauber auslesbar und ist damit nicht fachlich abgesichert. Der Schwellenwert 3.200 m² kann nur ausgewertet werden, wenn die Bezugsfläche verifiziert ist."
+        text: "MANUELL PRÜFEN — die Netto-Grundfläche ist in den vorliegenden OIB-Dokumenten nirgends selbst definiert. Verweiskette (am Original geprüft 2026-08-30): Tabelle-6-Fußnote (1) lautet nur 'Netto-Grundfläche;' ohne eigenen Verweis (RL 2, Norm-S. 32 / PDF-S. 34) → RL 2 Punkt 1 'Es gelten die Begriffsbestimmungen des Dokumentes OIB-Richtlinien – Begriffsbestimmungen' (Norm-S. 2 / PDF-S. 4) → Begriffsbestimmungen, Stichwort 'Grundfläche' (Norm-S. 7 / PDF-S. 9): 'Brutto-Grundfläche bzw. Netto-Grundfläche entsprechend der Definition in der ÖNORM B 1800' — ein eigener Eintrag 'Netto-Grundfläche' existiert dort nicht → ÖNORM B 1800, Ausgabe 2013-08-01 ('Zitierte Normen und sonstige technische Regelwerke', Norm-S. 2 / PDF-S. 4). Diese Norm liegt NICHT im Repo; die Bezugsfläche des Schwellenwerts 3.200 m² ist damit nicht verifizierbar."
 
   # ── Zeile 3 + Ausnahme 7.9.12 ─────────────────────────────────────────────
   - zeile: "3"
@@ -348,7 +348,7 @@ zeilen:
         text: "MANUELL PRÜFEN — aus Zeile 10 ist bei > 200 m² Netto-Grundfläche MINDESTENS die eingeschränkte Sicherheitsbeleuchtung ableitbar; ob zusätzlich die uneingeschränkte Stufe greift, richtet sich nach der Arbeitsstättenverordnung (AStV), die im Repo nicht belegt ist. Ohne diesen Pfad wird keine definitive Stufe zurückgegeben."
       - kennung: netto_grundflaeche_definition
         wirkung: blockiert
-        text: "MANUELL PRÜFEN — die für Tabelle 6 maßgebliche Definition der 'Netto-Grundfläche' (OIB-Begriffsbestimmungen, PDF-S. 10) war im Textextrakt nicht sauber auslesbar und ist damit nicht fachlich abgesichert."
+        text: "MANUELL PRÜFEN — die Netto-Grundfläche ist in den vorliegenden OIB-Dokumenten nirgends selbst definiert. Verweiskette (am Original geprüft 2026-08-30): Tabelle-6-Fußnote (1) lautet nur 'Netto-Grundfläche;' ohne eigenen Verweis (RL 2, Norm-S. 32 / PDF-S. 34) → RL 2 Punkt 1 verweist auf die OIB-Begriffsbestimmungen (Norm-S. 2 / PDF-S. 4) → deren Stichwort 'Grundfläche' (Norm-S. 7 / PDF-S. 9) verweist weiter auf die ÖNORM B 1800, Ausgabe 2013-08-01. Diese Norm liegt NICHT im Repo; die Bezugsfläche des Schwellenwerts 200 m² ist damit nicht verifizierbar."
 
   # ── Gruppe 11: Garagen, überdachte Stellplätze, Parkdecks ────────────────
   - zeile: "11.1"
@@ -392,7 +392,7 @@ zeilen:
     unsicherheiten:
       - kennung: zeile_11_2_flaechen_fussnote
         wirkung: blockiert
-        text: "MANUELL PRÜFEN — Zeile 11.2 trägt im Original keinen Fußnoten-Marker für die Flächeneinheit (vermutlich '(3) Nutzfläche' wie Zeile 11.1). Welche Bezugsfläche der Schwellenwert 1.600 m² meint, ist damit nicht abgesichert."
+        text: "MANUELL PRÜFEN — am Original bestätigt (2026-08-30, RL 2 Norm-S. 32 / PDF-S. 34): Zeile 11.2 trägt TATSÄCHLICH keinen Fußnoten-Marker — sie lautet blank '> 1.600 m²', während Zeile 11.1 unmittelbar darüber zweimal '(3)' (Nutzfläche – Garagen, überdachte Stellplätze, Parkdecks) trägt und die Zeilen 2/4/10 ihre Marker (1)/(2) führen. Welche Bezugsfläche die 1.600 m² meinen, ist daher nicht belegt; die Nutzfläche-Definition (3) aus Zeile 11.1 zu übernehmen wäre Auslegung."
 
   # ── Gruppe 12: Gebäude mit Fluchtniveau > 22 m ────────────────────────────
   - zeile: "12.1"
