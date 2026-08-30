@@ -17,7 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 api = ["fastapi>=0.110", "uvicorn>=0.27", "python-multipart>=0.0.9"]
-dev = ["pytest>=8.0", "jsonschema>=4.0", "ruff>=0.5"]
+dev = ["pytest>=8.0", "jsonschema>=4.0", "ruff>=0.5", "httpx>=0.27"]  # httpx: FastAPI-TestClient
 # 2. Input-Pfad IFC/BIM (IfcSpace/IfcDoor → RaumModell). Auf Python 3.14 (noch) kein
 # pip-Wheel → dann manuell von ifcopenshell.org/downloads vendoren (py3.14/win64).
 ifc = ["ifcopenshell>=0.8"]
@@ -39,3 +39,7 @@ src = ["src", "tests", "scripts"]
 line-length = 100
 # Roh-Port-Code aus elektro-planer nicht linten (wird pro Slice adaptiert).
 extend-exclude = ["**/_port/**", "**/_port_source/**"]
+
+[tool.ruff.lint.per-file-ignores]
+# FastAPI-Defaults File()/Form()/Depends() im Signatur-Default sind idiomatisch (B008).
+"src/notbeleuchtung/api/main.py" = ["B008"]
