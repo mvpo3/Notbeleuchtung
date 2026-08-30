@@ -7,9 +7,10 @@ zurück. Die konkreten Provider (Selman/Enis/Leonis) kommen aus
 `registry.build_default_bundle`; über `create_app(bundle_factory=…)` lässt sich das für
 Tests gegen die Fakes austauschen (Dependency-Inversion wie im Rest der Engine).
 
-Der 2. Input (Leistungsbeschreibung/LB) ist noch nicht in `pipeline.run()` verdrahtet
-(Enis' `LBVorgabe`) — das Feld wird bewusst noch nicht angeboten, bis die Pipeline es
-konsumiert.
+Der 2. Input (Leistungsbeschreibung/LB) ist optional: liegt eine LB bei UND ist ein
+LB-Provider verdrahtet (`ProviderBundle.lb`, Enis), parst die Pipeline sie in eine
+`LBVorgabe`, die die norm-getriebene Platzierung übersteuert. Ohne LB (oder ohne
+LB-Provider) läuft die Engine rein norm-getrieben.
 """
 from __future__ import annotations
 
@@ -57,17 +58,24 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
     def plan(
         datei: UploadFile = File(..., description="Leerer Architekturplan (DXF)"),
         floor: str = Form("EG", description="Geschoss-Kennung, z.B. '4OG'"),
+        lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
         bundle: ProviderBundle = Depends(get_bundle),
     ) -> FileResponse:
-        """DXF hoch → Notbeleuchtungsplan (DXF) zurück. Summary im `X-Notbeleuchtung`-Header."""
+        """DXF (+ optional LB) hoch → Notbeleuchtungsplan (DXF) zurück. Summary im
+        `X-Notbeleuchtung`-Header."""
         workdir = Path(tempfile.mkdtemp(prefix="notbel_"))
         cleanup = BackgroundTask(shutil.rmtree, workdir, ignore_errors=True)
         try:
             dxf_in = workdir / (Path(datei.filename or "plan.dxf").name)
             dxf_in.write_bytes(datei.file.read())
+            lb_path: str | None = None
+            if lb_datei is not None:
+                lb_in = workdir / (Path(lb_datei.filename or "lb").name)
+                lb_in.write_bytes(lb_datei.file.read())
+                lb_path = str(lb_in)
             out_path = workdir / f"{floor}_notbeleuchtung.dxf"
             try:
-                ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path)
+                ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path, lb_path=lb_path)
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
             summary = {k: ergebnis.render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in ergebnis.render_summary}
