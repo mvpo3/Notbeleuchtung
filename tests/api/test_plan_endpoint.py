@@ -8,7 +8,7 @@ import json
 
 from fastapi.testclient import TestClient
 
-from fakes import build_fake_bundle
+from fakes import build_fake_bundle, build_fake_bundle_mit_lb
 from notbeleuchtung.api.main import create_app
 
 
@@ -36,6 +36,38 @@ def test_plan_liefert_dxf_zurueck():
     assert summary["n_symbols"] == 7
     assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
     assert summary["rendered"] is True
+
+
+def test_plan_mit_lb_uebersteuert_norm():
+    # 2. Input: LB schließt Sicherheitsbeleuchtung im STIEGENHAUS aus (Fischa GK4).
+    # → die 2 Aufheller-SL fallen weg, nur die 5 RZ bleiben.
+    client = TestClient(create_app(bundle_factory=build_fake_bundle_mit_lb))
+    r = client.post(
+        "/plan",
+        files={
+            "datei": ("leer.dxf", b"<architekturplan>", "image/vnd.dxf"),
+            "lb_datei": ("lb.txt", b"GK4 keine SL im Stiegenhaus", "text/plain"),
+        },
+        data={"floor": "4OG"},
+    )
+    assert r.status_code == 200
+    summary = json.loads(r.headers["X-Notbeleuchtung"])
+    assert summary["by_kind"] == {"rz": 5}          # SL durch LB-Exklusion entfernt
+    assert summary["n_symbols"] == 5
+
+
+def test_plan_ohne_lb_provider_ignoriert_lb_upload():
+    # Ohne verdrahteten LB-Provider bleibt eine mitgeschickte LB folgenlos (reine Norm).
+    r = _client().post(
+        "/plan",
+        files={
+            "datei": ("leer.dxf", b"x", "image/vnd.dxf"),
+            "lb_datei": ("lb.txt", b"egal", "text/plain"),
+        },
+        data={"floor": "4OG"},
+    )
+    assert r.status_code == 200
+    assert json.loads(r.headers["X-Notbeleuchtung"])["n_symbols"] == 7
 
 
 def test_plan_ohne_datei_ist_422():
