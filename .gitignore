@@ -13,6 +13,8 @@ __pycache__/
 reports/
 *.pdf
 out/
+# Engine-generierte Previews/Demos — jeder erzeugt sie selbst
+output/
 
 # Norm-PDFs für alle Owner (Repo ist privat — nicht public stellen!)
 !knowledge/**
