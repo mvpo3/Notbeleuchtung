@@ -1,0 +1,290 @@
+{
+  "$defs": {
+    "Gebaeudeteil": {
+      "description": "Ein OIB-Tabelle-6-Beurteilungseinheit (z.B. Wohnteil, Garage) eines Projekts.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "bezeichnung": {
+          "default": "",
+          "title": "Bezeichnung",
+          "type": "string"
+        },
+        "nutzungsart": {
+          "enum": [
+            "WOHNGEBAEUDE",
+            "SONSTIGES_GEBAEUDE",
+            "SCHULE_KINDERGARTEN",
+            "BEHERBERGUNG_STUDENTENHEIM",
+            "SCHUTZHUETTE_EXTREMLAGE",
+            "VERKAUFSSTAETTE_AUSSTELLUNGSSTAETTE",
+            "SCHANK_SPEISEWIRTSCHAFT",
+            "DISKOTHEK_TANZCAFE",
+            "ALTEN_SENIORENHEIM",
+            "PFLEGEHEIM",
+            "KRANKENHAUS",
+            "VERSAMMLUNG_INNERHALB_GEBAEUDE",
+            "VERSAMMLUNG_AUSSERHALB_GEBAEUDE",
+            "BETRIEBSBAU",
+            "GARAGE",
+            "PARKDECK",
+            "UEBERDACHTER_STELLPLATZ",
+            "VERKEHRSEINRICHTUNG",
+            "NICHT_IN_TABELLE_6"
+          ],
+          "title": "Nutzungsart",
+          "type": "string"
+        },
+        "gebaeudeklasse": {
+          "anyOf": [
+            {
+              "enum": [
+                "GK1",
+                "GK2",
+                "GK3",
+                "GK4",
+                "GK5"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gebaeudeklasse"
+        },
+        "fluchtniveau_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fluchtniveau M"
+        },
+        "lage_zur_wohnung": {
+          "anyOf": [
+            {
+              "enum": [
+                "INNERHALB_WOHNUNG",
+                "AUSSERHALB_WOHNUNG"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lage Zur Wohnung"
+        },
+        "netto_grundflaeche_m2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Netto Grundflaeche M2"
+        },
+        "verkaufsflaeche_m2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verkaufsflaeche M2"
+        },
+        "nutzflaeche_garage_m2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nutzflaeche Garage M2"
+        },
+        "betten_anzahl": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Betten Anzahl"
+        },
+        "schlafplaetze_anzahl": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schlafplaetze Anzahl"
+        },
+        "verabreichungsplaetze_anzahl": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verabreichungsplaetze Anzahl"
+        },
+        "personen_anzahl_bestimmt": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Personen Anzahl Bestimmt"
+        },
+        "arbeitsstaette_nach_aschg": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Arbeitsstaette Nach Aschg"
+        },
+        "raum_referenzen": {
+          "items": {
+            "$ref": "#/$defs/RaumReferenz"
+          },
+          "title": "Raum Referenzen",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "nutzungsart"
+      ],
+      "title": "Gebaeudeteil",
+      "type": "object"
+    },
+    "RaumReferenz": {
+      "description": "Verweis auf einen konkreten Raum im geschossweisen RaumModell.\n\nfloor + raum_id gemeinsam, damit die Zuordnung Raum↔Geschoss über mehrere\nGeschosse eindeutig bleibt (keine getrennten floors[]/raum_ids[]-Listen).",
+      "properties": {
+        "floor": {
+          "title": "Floor",
+          "type": "string"
+        },
+        "raum_id": {
+          "title": "Raum Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "floor",
+        "raum_id"
+      ],
+      "title": "RaumReferenz",
+      "type": "object"
+    }
+  },
+  "description": "Gebäudeweiter Kontext neben dem geschossweisen RaumModell.\n\nInput des OIB-Pfads (OibProvider.bewerte_oib). Enthält je Gebäudeteil die\nfachlichen Fakten, aus denen der (spätere) Resolver die Tabelle-6-Erforderlichkeit\nableitet.",
+  "properties": {
+    "contract": {
+      "const": "ProjektKontext",
+      "default": "ProjektKontext",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "jurisdiction": {
+      "anyOf": [
+        {
+          "const": "AT",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Jurisdiction"
+    },
+    "bundesland": {
+      "anyOf": [
+        {
+          "enum": [
+            "W",
+            "NOE",
+            "OOE",
+            "SBG",
+            "STMK",
+            "KTN",
+            "TIR",
+            "VBG",
+            "BGLD"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Bundesland"
+    },
+    "projekt_stichtag": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Projekt Stichtag"
+    },
+    "gebaeudeteile": {
+      "items": {
+        "$ref": "#/$defs/Gebaeudeteil"
+      },
+      "title": "Gebaeudeteile",
+      "type": "array"
+    }
+  },
+  "title": "ProjektKontext",
+  "type": "object"
+}

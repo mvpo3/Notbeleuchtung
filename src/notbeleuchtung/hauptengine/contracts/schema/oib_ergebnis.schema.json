@@ -1,0 +1,163 @@
+{
+  "$defs": {
+    "OibErgebnis": {
+      "description": "Erforderlichkeits-Befund für genau einen Gebäudeteil (mit Audit-Trail).",
+      "properties": {
+        "contract": {
+          "const": "OibErgebnis",
+          "default": "OibErgebnis",
+          "title": "Contract",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "gebaeudeteil_id": {
+          "title": "Gebaeudeteil Id",
+          "type": "string"
+        },
+        "stufe": {
+          "enum": [
+            "nicht_erforderlich",
+            "eingeschraenkt",
+            "uneingeschraenkt",
+            "review_required"
+          ],
+          "title": "Stufe",
+          "type": "string"
+        },
+        "zeile": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zeile"
+        },
+        "quelle": {
+          "title": "Quelle",
+          "type": "string"
+        },
+        "norm_ausgabe": {
+          "title": "Norm Ausgabe",
+          "type": "string"
+        },
+        "fundstelle_seite": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fundstelle Seite"
+        },
+        "angewandter_schwellenwert": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Angewandter Schwellenwert"
+        },
+        "eingangswerte": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Eingangswerte",
+          "type": "object"
+        },
+        "fehlende_fakten": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fehlende Fakten",
+          "type": "array"
+        },
+        "hinweise": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Hinweise",
+          "type": "array"
+        },
+        "ausfuehrungs_verweise": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ausfuehrungs Verweise",
+          "type": "array"
+        }
+      },
+      "required": [
+        "gebaeudeteil_id",
+        "stufe",
+        "quelle",
+        "norm_ausgabe"
+      ],
+      "title": "OibErgebnis",
+      "type": "object"
+    },
+    "RaumReferenz": {
+      "description": "Verweis auf einen konkreten Raum im geschossweisen RaumModell.\n\nfloor + raum_id gemeinsam, damit die Zuordnung Raum↔Geschoss über mehrere\nGeschosse eindeutig bleibt (keine getrennten floors[]/raum_ids[]-Listen).",
+      "properties": {
+        "floor": {
+          "title": "Floor",
+          "type": "string"
+        },
+        "raum_id": {
+          "title": "Raum Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "floor",
+        "raum_id"
+      ],
+      "title": "RaumReferenz",
+      "type": "object"
+    }
+  },
+  "description": "Gesamt-Output über alle Gebäudeteile eines ProjektKontext.",
+  "properties": {
+    "contract": {
+      "const": "OibBefund",
+      "default": "OibBefund",
+      "title": "Contract",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "1.0.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "ergebnisse": {
+      "items": {
+        "$ref": "#/$defs/OibErgebnis"
+      },
+      "title": "Ergebnisse",
+      "type": "array"
+    },
+    "nicht_zugeordnete_raum_referenzen": {
+      "items": {
+        "$ref": "#/$defs/RaumReferenz"
+      },
+      "title": "Nicht Zugeordnete Raum Referenzen",
+      "type": "array"
+    }
+  },
+  "title": "OibBefund",
+  "type": "object"
+}

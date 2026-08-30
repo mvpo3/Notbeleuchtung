@@ -9,13 +9,23 @@ from .norm_regelwerk import (
     NormRegelwerk,
     RaumRegel,
 )
+from .oib_ergebnis import OibBefund, OibErgebnis, OibStufe
 from .platzierung_ergebnis import (
     Kind,
     Platzierung,
     PlatzierungsErgebnis,
     Richtung,
 )
-from .ports import NormProvider, Platzierer, ProviderBundle, RaumProvider
+from .ports import NormProvider, OibProvider, Platzierer, ProviderBundle, RaumProvider
+from .projekt_kontext import (
+    Bundesland,
+    Gebaeudeklasse,
+    Gebaeudeteil,
+    LageZurWohnung,
+    Nutzungsart,
+    ProjektKontext,
+    RaumReferenz,
+)
 from .raum_modell import (
     Ausgang,
     BBox,
@@ -33,28 +43,41 @@ SCHEMA_MODELS = {
     "raum_modell": RaumModell,
     "norm_regelwerk": NormRegelwerk,
     "platzierung_ergebnis": PlatzierungsErgebnis,
+    "projekt_kontext": ProjektKontext,
+    "oib_ergebnis": OibBefund,   # Port-Output; OibErgebnis/RaumReferenz als $defs
 }
 
 __all__ = [
     "SCHEMA_MODELS",
     "Ausgang",
     "BBox",
+    "Bundesland",
     "Edge",
     "ErkennungsweiteParameter",
     "FluchtwegSegment",
+    "Gebaeudeklasse",
+    "Gebaeudeteil",
     "Kind",
     "Klassifikation",
+    "LageZurWohnung",
     "Node",
     "NormAnforderung",
     "NormProvider",
     "NormRegelwerk",
+    "Nutzungsart",
+    "OibBefund",
+    "OibErgebnis",
+    "OibProvider",
+    "OibStufe",
     "Platzierer",
     "Platzierung",
     "PlatzierungsErgebnis",
+    "ProjektKontext",
     "ProviderBundle",
     "Raum",
     "RaumModell",
     "RaumProvider",
+    "RaumReferenz",
     "RaumRegel",
     "Richtung",
     "Tuer",
