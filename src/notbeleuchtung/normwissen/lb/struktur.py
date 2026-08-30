@@ -19,12 +19,22 @@ from .text import Seite, als_satzblock
 
 @dataclass
 class Abschnitt:
-    """Ein nummerierter LB-Abschnitt mit Überschrift, Text und Fundstelle."""
+    """Ein nummerierter LB-Abschnitt mit Überschrift, Text und Fundstellen.
+
+    Jede Zeile trägt die Seite, auf der sie tatsächlich steht. Ein Abschnitt kann
+    über mehrere Seiten laufen — die Seite der Überschrift ist dann für einen
+    Treffer am Abschnittsende schlicht falsch. Deshalb liefert `seite_fuer()` zu
+    jeder Fundstelle im `block` die echte Seite zurück.
+    """
 
     nummer: str
     titel: str
-    seite: int
-    zeilen: list[str] = field(default_factory=list)
+    seite: int                                   # Seite der Überschrift
+    eintraege: list[tuple[str, int]] = field(default_factory=list)  # (Zeile, Seite)
+
+    @property
+    def zeilen(self) -> list[str]:
+        return [z for z, _ in self.eintraege]
 
     @property
     def text(self) -> str:
@@ -33,7 +43,52 @@ class Abschnitt:
     @property
     def block(self) -> str:
         """Text ohne Zeilenumbrüche — für Muster, die über Zeilen greifen."""
-        return als_satzblock(self.text)
+        return self._block_und_index()[0]
+
+    def seite_fuer(self, offset: int) -> int:
+        """Seite, auf der das Zeichen an `offset` im `block` steht."""
+        _, index = self._block_und_index()
+        seite = self.seite
+        for start, s in index:
+            if start > offset:
+                break
+            seite = s
+        return seite
+
+    def saetze(self) -> list[tuple[str, int]]:
+        """(Satz, Seite) — Auswertungseinheiten mit ihrer echten Fundstelle.
+
+        Gemessen wird ab dem ersten *echten* Zeichen: ein Satz beginnt nach dem
+        Punkt des vorigen mit einem Trennzeichen, das noch zur vorherigen Zeile
+        — und damit womöglich zur vorherigen Seite — gehört.
+        """
+        ergebnis: list[tuple[str, int]] = []
+        for m in re.finditer(r"[^.:]*[.:]|[^.:]+$", self.block):
+            roh = m.group(0)
+            satz = roh.strip()
+            if not satz:
+                continue
+            vorlauf = len(roh) - len(roh.lstrip())
+            ergebnis.append((satz, self.seite_fuer(m.start() + vorlauf)))
+        return ergebnis
+
+    def _block_und_index(self) -> tuple[str, list[tuple[int, int]]]:
+        """Block-Text + (Offset, Seite)-Index. Wird je Abschnitt einmal gebaut."""
+        if getattr(self, "_cache", None) is None or self._cache[2] != len(self.eintraege):
+            teile: list[str] = []
+            index: list[tuple[int, int]] = []
+            pos = 0
+            for zeile, seite in self.eintraege:
+                z = als_satzblock(zeile)
+                if not z:
+                    continue
+                if teile:
+                    pos += 1                     # Trenn-Leerzeichen
+                index.append((pos, seite))
+                teile.append(z)
+                pos += len(z)
+            self._cache = (" ".join(teile), index, len(self.eintraege))
+        return self._cache[0], self._cache[1]
 
     @property
     def fundstelle(self) -> str:
@@ -69,7 +124,8 @@ def baue_abschnitte(seiten: list[Seite], muster: dict) -> list[Abschnitt]:
                 abschnitte.append(aktuell)
                 continue
             if aktuell is not None:
-                aktuell.zeilen.append(zeile)
+                # Zeile MIT ihrer Seite — ein Abschnitt kann über Seiten laufen.
+                aktuell.eintraege.append((zeile, gedruckt))
     return abschnitte
 
 
@@ -118,23 +174,25 @@ def sl_abschnitte(abschnitte: list[Abschnitt], anker: list[str],
     return treffer
 
 
-def verweise(abschnitte: list[Abschnitt], klassen: dict) -> list[tuple[str, Abschnitt, str]]:
+def verweise(abschnitte: list[Abschnitt], klassen: dict) -> list[tuple[str, Abschnitt, str, int]]:
     """Verweise auf andere Dokumente, klassifiziert.
 
-    Rückgabe: (Klasse, Abschnitt, gefundener Text). Ob eine Klasse blockiert,
-    entscheidet der Parser — hier wird nur gefunden und benannt.
+    Rückgabe: (Klasse, Abschnitt, gefundener Text, **Seite des Treffers**). Ob
+    eine Klasse blockiert, entscheidet der Parser — hier wird nur gefunden.
     """
     kompiliert = {
         klasse: [re.compile(m, re.IGNORECASE) for m in cfg["muster"]]
         for klasse, cfg in klassen.items()
     }
-    gefunden: list[tuple[str, Abschnitt, str]] = []
+    gefunden: list[tuple[str, Abschnitt, str, int]] = []
     for a in abschnitte:
         block = a.block
         for klasse, muster in kompiliert.items():
             for rx in muster:
                 treffer = rx.search(block)
                 if treffer:
-                    gefunden.append((klasse, a, treffer.group(0).strip()))
+                    gefunden.append(
+                        (klasse, a, treffer.group(0).strip(), a.seite_fuer(treffer.start()))
+                    )
                     break
     return gefunden

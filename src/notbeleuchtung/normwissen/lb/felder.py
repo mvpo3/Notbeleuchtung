@@ -15,11 +15,16 @@ from .struktur import Abschnitt
 
 @dataclass(frozen=True)
 class Treffer:
-    """Ein extrahierter Kandidat mit Provenienz."""
+    """Ein extrahierter Kandidat mit Provenienz.
+
+    `seite` ist die Seite des TREFFERS, nicht die des Abschnittsanfangs — bei
+    seitenübergreifenden Abschnitten wäre letztere falsch.
+    """
 
     wert: object
     anker: str
     abschnitt: Abschnitt
+    seite: int
 
 
 def _zahl(roh: str) -> float:
@@ -44,7 +49,8 @@ def zahl_feld(abschnitte: list[Abschnitt], cfg: dict) -> Treffer | None:
                 if faktor is None:
                     continue          # unbekannte Einheit → lieber nichts als falsch
                 wert *= faktor
-            return Treffer(wert=wert, anker=treffer.group(0).strip(), abschnitt=a)
+            return Treffer(wert=wert, anker=treffer.group(0).strip(), abschnitt=a,
+                           seite=a.seite_fuer(treffer.start()))
     return None
 
 
@@ -64,7 +70,8 @@ def enum_feld(abschnitte: list[Abschnitt], cfg: dict) -> list[Treffer]:
                 umfeld = klein[max(0, pos - 60):pos + 60]
                 if any(x in umfeld for x in ausschluss):
                     continue          # Homonym (Sanitär, PV, Rauchmelder)
-                gefunden[wert] = Treffer(wert=wert, anker=anker, abschnitt=a)
+                gefunden[wert] = Treffer(wert=wert, anker=anker, abschnitt=a,
+                                         seite=a.seite_fuer(pos))
                 break
     return list(gefunden.values())
 
@@ -78,8 +85,10 @@ def stellen(abschnitte: list[Abschnitt], cfg: dict) -> list[Treffer]:
             if wert in gefunden:
                 continue
             for anker in anker_liste:
-                if anker in klein:
-                    gefunden[wert] = Treffer(wert=wert, anker=anker, abschnitt=a)
+                pos = klein.find(anker)
+                if pos >= 0:
+                    gefunden[wert] = Treffer(wert=wert, anker=anker, abschnitt=a,
+                                             seite=a.seite_fuer(pos))
                     break
     return list(gefunden.values())
 
@@ -94,7 +103,8 @@ def sonder_lux(abschnitte: list[Abschnitt], regeln: list[dict]) -> list[Treffer]
             if treffer:
                 ergebnis.append(
                     Treffer(wert=(regel["ort"], _zahl(treffer.group(1))),
-                            anker=treffer.group(0).strip(), abschnitt=a)
+                            anker=treffer.group(0).strip(), abschnitt=a,
+                            seite=a.seite_fuer(treffer.start()))
                 )
     return ergebnis
 
@@ -105,7 +115,7 @@ def erstes_muster(abschnitte: list[Abschnitt], muster: str) -> Treffer | None:
         treffer = re.search(muster, a.block, re.IGNORECASE)
         if treffer:
             return Treffer(wert=treffer.group(1).strip(), anker=treffer.group(0).strip(),
-                           abschnitt=a)
+                           abschnitt=a, seite=a.seite_fuer(treffer.start()))
     return None
 
 
@@ -125,7 +135,7 @@ def norm_bezug(abschnitte: list[Abschnitt], cfg: dict) -> list[Treffer]:
                 treffer = re.search(m, block, re.IGNORECASE)
                 if treffer:
                     gefunden[name] = Treffer(wert=name, anker=treffer.group(0).strip(),
-                                             abschnitt=a)
+                                             abschnitt=a, seite=a.seite_fuer(treffer.start()))
                     break
     return list(gefunden.values())
 
@@ -139,6 +149,7 @@ class BereichsTreffer:
     begruendung: str | None
     anker: str
     abschnitt: Abschnitt
+    seite: int
 
 
 _WORTANFANG = r"(?<![A-Za-zÄÖÜäöüß])"
@@ -181,13 +192,15 @@ def bereiche(abschnitte: list[Abschnitt], cfg: dict) -> list[BereichsTreffer]:
     ergebnis: dict[tuple[str, bool], BereichsTreffer] = {}
 
     for a in abschnitte:
-        einheiten: list[str] = [
-            m.group(1) for z in a.zeilen if (m := bullet.match(z))
+        # Auswertungseinheiten MIT ihrer Seite: Aufzählungszeilen direkt aus den
+        # Zeilen-Einträgen, Sätze über den Offset-Index des Blocks.
+        einheiten: list[tuple[str, int]] = [
+            (m.group(1), seite) for z, seite in a.eintraege if (m := bullet.match(z))
         ]
-        bullets = set(einheiten)
-        einheiten += [s.strip() for s in re.split(r"(?<=[.:])\s+", a.block) if s.strip()]
+        bullets = {t for t, _ in einheiten}
+        einheiten += a.saetze()
 
-        for einheit in einheiten:
+        for einheit, seite in einheiten:
             typen = _raum_typen(einheit, vokabular)
             if not typen:
                 # Die Überschrift kann den Bereich tragen: „…beleuchtung (Garage)".
@@ -209,5 +222,6 @@ def bereiche(abschnitte: list[Abschnitt], cfg: dict) -> list[BereichsTreffer]:
                     begruendung=grund.group(1).replace(" ", "") if grund else None,
                     anker=begriff,
                     abschnitt=a,
+                    seite=seite,
                 )
     return list(ergebnis.values())
