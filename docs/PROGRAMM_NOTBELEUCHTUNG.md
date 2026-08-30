@@ -34,8 +34,8 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Item | Slice | Owner | Status | Stand |
 |------|-------|-------|--------|-------|
 | Repo-Skelett + 3 Contracts + Fake-Durchstich | 0 | Leonis | **DONE** (13✓/1s) | 2026-08-27 |
-| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | TODO | — |
-| Leonis echt: `communal_stgh_strategy` + `geometry` + `NotlichtPlatzierer` (Fake-Raum/Norm) | 2 | Leonis | **MERGED** (PR #4, 24✓) | 2026-08-28 |
+| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | **DONE** (PR #6 offen, auf main nachgezogen, 55✓) | 2026-08-29 |
+| Leonis echt: `communal_stgh_strategy` + `geometry` + `NotlichtPlatzierer` (Fake-Raum, echte Norm ab PR #6) | 2 | Leonis | **MERGED** (PR #4, 24✓) | 2026-08-28 |
 | Render echt: `dxf_renderer` + Schrack-Infra (`symbols/{library,inserter}.py`) + `CAD_Symbole/E-Symbole.dxf` | 3 | Leonis/Render | **MERGED** (PR #5, 40✓; GU-PDF-Sichtprüfung offen) | 2026-08-28 |
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
@@ -48,6 +48,11 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 - (Enis) 4 Norm-Werte für Wohnungs-Fluchtweg ratifizieren: Fluchtweg-Definition
   Wohnung · F13-Wohnungs-Allokation · Erkennungsweite `l=z×h` (welche Höhe h) ·
   Antipanik 0,5 lx vs Rettungsweg 1 lx. (Übernommen aus elektro-planer H-20.)
+
+- (Enis/Leonis) **Photometrie-Ausnahme (entschieden 2026-08-29):** Leonis baut
+  `normwissen/photometrie/` (LDT/EULUMDAT → exakte Lux) im Enis-Package. Bewusste
+  Ausnahme von der Owner-Grenze; rein additiv, kein Contract betroffen. Enis
+  bleibt Owner von `normwissen/data/` + `provider.py`.
 
 ## Definition-of-Done je Slice
 - **1 (Enis):** `NormProvider`-Konformitätstest grün, Werte aus `normwissen/data/`.

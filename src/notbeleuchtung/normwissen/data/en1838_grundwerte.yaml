@@ -1,0 +1,39 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# en1838_grundwerte.yaml — Norm-Grundwerte Notbeleuchtung (ÖNORM EN 1838:2013)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Kuratiert aus _port_source/emergency_lighting_en1838.yaml — NUR die Werte, die
+# die Notbeleuchtungs-Engine braucht (nicht 1:1 die Norm-Extraktion). Glare-cd-
+# Tabelle, Ra/Farbwiedergabe, Einschaltzeiten, Uniformity etc. bewusst NICHT
+# portiert (für die Platzierungs-Engine irrelevant).
+#
+# Single Source für den En1838NormProvider — er hardcodet nichts, er liest hier.
+# Jede quelle_* ist eine echte Norm-Fundstelle (Audit-Trail → NormAnforderung.quelle).
+# ═══════════════════════════════════════════════════════════════════════════
+
+norm: "ÖNORM EN 1838:2013"
+
+# §4.1.1 — Leuchten mind. 2 m über Boden. Norm-Untergrenze (Hard Floor).
+montagehoehe_min_mm: 2000
+
+# §4.2.5 / §4.3.5 / §5.4.5 — Notbetriebsdauer mind. 1 Stunde.
+dauer_min: 60
+
+# §5.5 — Erkennungsweite l = z * h. z = Faktor, h = Piktogramm-Höhe [m].
+erkennungsweite:
+  z_hinterleuchtet: 200.0
+  z_beleuchtet: 100.0
+  piktogramm_hoehe_default_m: 0.15   # Standard-RZ 150 mm → l = 200·0,15 = 30 m
+
+# Horizontale Beleuchtungsstärke am Boden.
+lux:
+  rettungsweg: 1.0      # §4.2.1 — Mittellinie Rettungsweg
+  antipanik: 0.5        # §4.3.1 — freie Bodenfläche Kernbereich
+
+# Norm-Fundstellen (kommen als NormAnforderung.quelle in den Audit-Trail).
+quellen:
+  rettungsweg: "ÖNORM EN 1838:2013 §4.2.1"
+  antipanik: "ÖNORM EN 1838:2013 §4.3.1"
+  # §4.1 — Sicherheitsleuchten (Aufheller) an Betonungspunkten: Stiegen,
+  # Richtungsänderungen, Ausgänge. Eigene Fundstelle im Audit-Trail.
+  sicherheitsleuchte: "ÖNORM EN 1838:2013 §4.1"
