@@ -155,6 +155,7 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 (Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F2 ②: LB-Parser `normwissen/lb/` (`LbTextProvider.parse_lb`) — Freitext/PDF → LBVorgabe. Fischa GK4: Stiegenhaus+Gänge exkl (kein SL), Garage inkl; +Skalare (8 Std→480, Umschaltzeit, Lux, System, Prüfung, Sonder-Lux, Norm-Bezug). Registry `bundle.lb`. Kein Contract-Touch. 290 grün. Branch `leonis/lb-parser`.
 - 2026-08-30 F2: IES/LM-63-Import `photometrie/ies.py` (`lade_ies`) + Fixture `mini.ies` + `tests/normwissen/test_ies.py` (7). Gleicher `Photometrie`-Typ → F1-Naht unverändert. 170 Tests grün, ruff clean, schema in sync.
 - 2026-08-30 Enis: OIB-/OVE-/Rechtsquellen-PDFs ins Repo (`knowledge/`), Beleg-Status
   je Wert in `normwissen/data/*.yaml`, Spec auf PR #14 nachgezogen. Kein Code-Delta
