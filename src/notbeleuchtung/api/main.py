@@ -26,6 +26,7 @@ from starlette.background import BackgroundTask
 
 from notbeleuchtung.hauptengine.contracts import ProviderBundle
 from notbeleuchtung.hauptengine.pipeline import run
+from notbeleuchtung.hauptengine.projekt import ProjektPlan, run_projekt
 from notbeleuchtung.hauptengine.registry import build_default_bundle
 from notbeleuchtung.hauptengine.render import dxf_zu_pdf
 
@@ -108,6 +109,49 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
             )
         except HTTPException:
             cleanup()  # Fehlerpfad räumt sofort auf (FileResponse übernimmt das sonst).
+            raise
+
+    @app.post("/projekt")
+    def projekt(
+        dateien: list[UploadFile] = File(..., description="Architekturpläne (DXF), ein Blatt je Geschoss"),
+        floors: str = Form(..., description="Geschoss-Kennungen, komma-getrennt in Datei-Reihenfolge"),
+        lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
+        projekt_name: str | None = Form(None, description="Plankopf: Projektbezeichnung"),
+        bundle: ProviderBundle = Depends(get_bundle),
+    ) -> FileResponse:
+        """Mehrere Geschoss-DXF (+ optional LB) → ein Sammel-PDF (ein Blatt je Geschoss)."""
+        floor_list = [f.strip() for f in floors.split(",") if f.strip()]
+        if len(floor_list) != len(dateien):
+            raise HTTPException(status_code=422,
+                                detail=f"{len(dateien)} Dateien, aber {len(floor_list)} floors")
+        workdir = Path(tempfile.mkdtemp(prefix="notbel_proj_"))
+        cleanup = BackgroundTask(shutil.rmtree, workdir, ignore_errors=True)
+        try:
+            plaene = []
+            for datei, floor in zip(dateien, floor_list):
+                dxf_in = workdir / f"{floor}_{Path(datei.filename or 'plan.dxf').name}"
+                dxf_in.write_bytes(datei.file.read())
+                plaene.append(ProjektPlan(dxf_path=str(dxf_in), floor=floor))
+            lb_path = None
+            if lb_datei is not None:
+                lb_in = workdir / (Path(lb_datei.filename or "lb").name)
+                lb_in.write_bytes(lb_datei.file.read())
+                lb_path = str(lb_in)
+            plankopf = {"projekt": projekt_name} if projekt_name else None
+            try:
+                erg = run_projekt(bundle, plaene, out_dir=workdir, lb_path=lb_path,
+                                  plankopf=plankopf, pdf=True)
+            except Exception as exc:
+                raise HTTPException(status_code=422, detail=f"Projekt-Erzeugung fehlgeschlagen: {exc}") from exc
+            return FileResponse(
+                erg.combined_pdf,
+                media_type="application/pdf",
+                filename="projekt_notbeleuchtung.pdf",
+                headers={"X-Notbeleuchtung": json.dumps(erg.summary, ensure_ascii=True)},
+                background=cleanup,
+            )
+        except HTTPException:
+            cleanup()
             raise
 
     return app
