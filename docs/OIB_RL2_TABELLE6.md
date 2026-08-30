@@ -9,15 +9,17 @@ OIB-Resolver in `normwissen/`; die Contract-Spezifikation dazu liegt in
 
 | Kürzel | Pfad | Dok.-Nr. | Seiten-Offset |
 |---|---|---|---|
-| RL 2 | `knowledge/OIB-Richtlinien /OIB-Richtlinie 2 Brandschutz/oib-rl_2_ausgabe_mai_2023.pdf` | OIB-330.2-029/23 | PDF-Seite = Norm-Seite + 2 |
+| RL 2 | `knowledge/OIB-Richtlinien/OIB-Richtlinie 2 Brandschutz/oib-rl_2_ausgabe_mai_2023.pdf` | OIB-330.2-029/23 | PDF-Seite = Norm-Seite + 2 |
 | RL 2-Erl | `…/OIB-Richtlinie 2 Brandschutz/erlaeuterungen_oib-rl_2_ausgabe_mai_2023.pdf` | OIB-330.2-034/23 | PDF-Seite = Erl.-Seite + 2 |
 | Begriffe | `…/OIB Richtlinie Begriffsbestimmung/oib-rl_begriffsbestimmungen_ausgabe_mai_2023.pdf` | OIB-330-003/23 | PDF-Seiten direkt zitiert |
 | RL 2.1 | `…/OIB Richtline 2.1 Branschutz bei Betriebsbauten/oib-rl_2.1_ausgabe_mai_2023.pdf` | OIB-330.2-030/23 | |
 | RL 2.2 | `…/OIB Richtlinie 2.2 Branschutz bei Garagen…/oib-richtlinie_2.2_ausgabe_mai_2023.pdf` | OIB-330.2-031/23 | |
 | RL 2.3 | `…/OIB Richtlinie 2.3 Brandschutz bei Gebäuden…22m/oib-rl_2.3_ausgabe_mai_2023.pdf` | OIB-330.2-032/23 | |
 
-> ⚠ Der Ordnername `knowledge/OIB-Richtlinien ` endet auf ein **Leerzeichen**;
-> Umlaute in den Unterordnern sind NFD-kodiert. Beim Skripten `glob` statt
+> ⚠ Die Quell-PDFs liegen seit 2026-08-30 im Repo (getrackt). Der frühere
+> Trailing-Space im Ordnernamen ist beim Committen bereinigt worden; Umlaute in
+> den Unterordnern sind NFD-kodiert und die Schreibweisen der Originalordner
+> (`Branschutz`, `Richtline`) bewusst unverändert. Beim Skripten `glob` statt
 > handgetippter Pfade verwenden.
 
 ## Punkt 5.4 (RL 2, PDF-S.14 = Norm-S.12), vollständig

@@ -19,7 +19,7 @@ oder Rechtsvorschrift.*
 | OVE E 8015 / E 8350 / E 8351 / OVE E 8014 | 2022 / 2017 / 2016 / 2019 | | `knowledge/…` | Randbezug |
 
 ### B — OIB-Richtlinien (Ausgabe Mai 2023, komplett RL 1–7 + Sonderrichtlinien)
-`knowledge/OIB-Richtlinien /` — notbeleuchtungsrelevant: **RL 2** (Punkt 5.4 +
+`knowledge/OIB-Richtlinien/` — notbeleuchtungsrelevant: **RL 2** (Punkt 5.4 +
 Tabelle 6), **RL 2-Erläuterungen** (S.48 zu Punkt 5.4), **RL 2.1** (3.6.5),
 **RL 2.2** (4.3, 5.5.3, Tab. 3 Zeile 8.2), **RL 2.3** (2.14),
 **Begriffsbestimmungen**, **Zitierte Normen und sonstige technische Regelwerke**.
@@ -69,6 +69,28 @@ Geprüft am 2026-08-29 gegen `knowledge/EN 1838 - Notbeleuchtung 2019 (1).pdf`
 | `montagehoehe_mm: 2400` (raumtyp_regeln) | — | **unbelegt** — kein Notlicht-Eintrag in `heights_fachpraxis.yaml`; stammt aus der Slice-0-Fake-Fixture |
 | `mindest_anzahl: 1` / `4` | — | **Engineering-/Fixture-Annahmen**, keine Normwerte |
 | Zuordnung `STIEGENHAUS → sicherheitsleuchte`, Quelle „§4.1" | §4.1.2 b), Norm-S.8 | Art teilweise gestützt („nahe Treppen, um jede Treppenstufe direkt zu beleuchten"); die Regelform „eine Leuchte je Stiegenhaus-Raum" ist Auslegung, Quellenstring zu grob |
+
+## 2a. Entscheidung zur Ausgabe-Bezeichnung (2026-08-30, Owner)
+
+Der String `ÖNORM EN 1838:2013` **bleibt vorerst unverändert**, obwohl im Repo die
+Ausgabe 2019-11-15 liegt. Grund: er ist keine reine `normwissen/`-Angelegenheit,
+sondern **Naht-Invariante** (`Platzierung.norm_quelle ∈ NormRegelwerk.quellen`) und
+hängt an sechs Stellen quer durch fremde Zuständigkeiten:
+
+| Fundstelle | Eigentümer |
+|---|---|
+| `normwissen/data/en1838_grundwerte.yaml` (`norm:` + 3 `quellen`) | Enis |
+| `tests/fixtures/norm_regelwerk_snapshot.json` | 3-Owner (CODEOWNERS) |
+| `tests/fixtures/platzierung_4og.json` (5× `norm_quelle`) | 3-Owner (CODEOWNERS) |
+| `tests/fakes.py` (`FakeNormProvider`) | Leonis' Test-Double |
+| `tests/platzierung/test_flaechen_strategy.py` (harte Assertion) | Leonis |
+| `hauptengine/contracts/norm_regelwerk.py` (Default + Docstring) | 3-Owner + `contract_version`-Bump + Schema-Regen |
+
+⇒ Die Umstellung ist ein **eigener koordinierter Slice** (Fixture-Regen aus dem
+echten Provider + Leonis-Abstimmung), kein Housekeeping. Bis dahin ist der
+Beleg-Status direkt in `normwissen/data/*.yaml` als Kommentar markiert, damit kein
+Leser den String für belegt hält. Inhaltlich ist die Deckungsgleichheit gegeben
+(2019-11-15 ist IDT mit EN 1838:2013-07) — es geht rein um die **Bezeichnung**.
 
 ## 3. Fehlt — kostenlos beschaffbar
 1. **AStV, ASchG, KennV inkl. Anhang 1** als amtliche RIS-Ausdrucke (Gesetzesnummern s.o.).
