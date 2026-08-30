@@ -6,6 +6,8 @@ Norm-Default rz → Plan kommt RZ-only heraus. Die Coverage-Warnungen surfacen d
 from fakes import build_fake_bundle
 from notbeleuchtung.hauptengine.contracts import (
     BBox,
+    BereichsRegel,
+    LBVorgabe,
     Platzierung,
     PlatzierungsErgebnis,
     Raum,
@@ -58,3 +60,23 @@ def test_run_haengt_coverage_an(tmp_path):
               out_path=tmp_path / "x.dxf")
     assert "coverage" in out.render_summary
     assert out.render_summary["coverage"]["warnungen"] == []
+    assert out.render_summary["coverage"]["lb_angewendet"] is False
+
+
+def test_lb_ausschluss_unterdrueckt_rz_only_warnung():
+    # LB schließt SL aus → RZ-only ist gewollt: keine „Nur Rettungszeichen"-Warnung,
+    # stattdessen ein neutraler Hinweis.
+    lb = LBVorgabe(bereiche_exklusion=[
+        BereichsRegel(raum_typ="STIEGENHAUS", sicherheitsbeleuchtung=False, begruendung="GK4"),
+    ])
+    cov = _coverage(_raum("STIEGENHAUS"), _erg("rz"), lb)
+    assert not any("Nur Rettungszeichen" in w for w in cov["warnungen"])
+    assert any("per LB ausgeschlossen" in h for h in cov["hinweise"])
+    assert cov["lb_angewendet"] is True
+
+
+def test_ohne_lb_rz_only_bleibt_warnung():
+    # Ohne LB-Ausschluss bleibt RZ-only eine Warnung (Regressionsschutz).
+    cov = _coverage(_raum("STIEGENHAUS"), _erg("rz"))
+    assert any("Nur Rettungszeichen" in w for w in cov["warnungen"])
+    assert cov["hinweise"] == []
