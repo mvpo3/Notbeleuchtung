@@ -73,19 +73,8 @@ class LbParser:
             abschnitte, cfg["sl_abschnitt_anker"], cfg["sl_abschnitt_ausschluss"]
         )
 
-        # Unaufgelöste Verweise auf fremde Dokumente: ohne sie fehlen die Vorgaben.
-        # Nur dort prüfen, wo die Vorgaben stehen müssten — ein Verweis in einem
-        # fachfremden Abschnitt (z.B. Fabrikate der Allgemeinbeleuchtung) blockiert
-        # die Notbeleuchtung nicht.
-        for a, anker in struktur.offene_verweise(relevante or abschnitte, cfg["verweis_muster"]):
-            bericht.add(
-                feld="verweis", status="review_blockierend", abschnitt=a.fundstelle,
-                seite=a.seite, anker=anker,
-                begruendung="Verweist auf ein Dokument, das hier nicht vorliegt — die "
-                            "Vorgaben stehen dort, nicht in dieser Datei.",
-            )
-
         if not relevante:
+            self._verweise(abschnitte, bericht, hat_eigene_vorgaben=False)
             bericht.add(
                 feld="notbeleuchtungs_abschnitt", status="review_blockierend",
                 begruendung=f"Kein Abschnitt zur Notbeleuchtung gefunden (Dokument erkannt "
@@ -102,7 +91,42 @@ class LbParser:
             **self._bereiche(relevante, bericht),
         )
         self._funktionserhalt(relevante, bericht)
+        # Verweise erst JETZT bewerten: ob ein Auslagerungs-Verweis blockiert,
+        # hängt daran, ob dieses Dokument die Vorgaben selbst trägt.
+        self._verweise(relevante, bericht, hat_eigene_vorgaben=self._traegt_vorgaben(bericht))
         return vorgabe, bericht
+
+    def _traegt_vorgaben(self, bericht: LbBericht) -> bool:
+        """Enthält dieses Dokument mindestens eine eigene, explizite LB-Vorgabe?
+
+        Norm-Nennungen und Funktionserhalt zählen bewusst nicht — sonst könnte
+        eine bloße Normreferenz eine echte Lücke kaschieren.
+        """
+        zaehlt = set(self._cfg["eigene_vorgabe_felder"])
+        return any(b.status == "wert" and b.feld in zaehlt for b in bericht.befunde)
+
+    def _verweise(self, abschnitte, bericht: LbBericht, *, hat_eigene_vorgaben: bool) -> None:
+        """Querverweise klassifizieren — blockierend nur bei echter Lücke.
+
+        Ein allgemeiner Verweis (Brandschutzkonzept, Behörde, Norm, Planunterlage)
+        ist Koordination, keine fehlende Vorgabe: er bleibt informativ. Ein
+        Auslagerungs-Verweis blockiert nur, wenn das Dokument die
+        Notbeleuchtungs-Vorgaben nicht selbst trägt — dann ist ohne das externe
+        Dokument nichts sicher bestimmbar.
+        """
+        klassen = self._cfg["verweise"]
+        for klasse, a, anker in struktur.verweise(abschnitte, klassen):
+            blockiert = klasse == "ausgelagert" and not hat_eigene_vorgaben
+            zusatz = ("" if blockiert else
+                      " Dieses Dokument trägt die benötigten Vorgaben selbst — der Verweis "
+                      "ergänzt sie nur." if klasse == "ausgelagert" else "")
+            bericht.add(
+                feld="verweis",
+                status="review_blockierend" if blockiert else "review_informativ",
+                abschnitt=a.fundstelle, seite=a.seite, anker=anker,
+                kandidat=klasse,
+                begruendung=klassen[klasse]["begruendung"].strip() + zusatz,
+            )
 
     # ── Feldgruppen ─────────────────────────────────────────────────────────
     def _skalare(self, relevante, bericht: LbBericht) -> dict:

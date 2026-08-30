@@ -63,7 +63,7 @@ def baue_abschnitte(seiten: list[Seite], muster: dict) -> list[Abschnitt]:
             if seiten_nr.search(zeile):
                 continue
             kopf = ueberschrift.match(zeile)
-            if kopf and _ist_ueberschrift(kopf.group(2)):
+            if kopf and _ist_ueberschrift(kopf.group(2), muster["ueberschrift_max_laenge"]):
                 aktuell = Abschnitt(nummer=kopf.group(1), titel=kopf.group(2).strip(),
                                     seite=gedruckt)
                 abschnitte.append(aktuell)
@@ -73,28 +73,36 @@ def baue_abschnitte(seiten: list[Seite], muster: dict) -> list[Abschnitt]:
     return abschnitte
 
 
-def _ist_ueberschrift(rest: str) -> bool:
-    """Grenzt Überschriften gegen Aufzählungen und Mengenzeilen ab."""
+def _ist_ueberschrift(rest: str, max_laenge: int) -> bool:
+    """Grenzt Überschriften gegen Aufzählungen, Mengen- und Fließtextzeilen ab."""
     rest = rest.strip()
-    if not rest or len(rest) > 120:
+    if not rest or len(rest) > max_laenge:
         return False
     # „2 x Schuko …", „16A", „1 Stk. …" sind Stücklisten, keine Überschriften.
     return not re.match(r'^(?:x\s|Stk\.?|St\.?\s|\d)', rest)
 
 
 def klassifiziere(volltext: str, arten: dict) -> str:
-    """Elektro-LB / GU-Rahmen / Bau-Ausstattung — die Vorgaben stehen im Elektro-Dok."""
+    """Elektro-LB / GU-Rahmen / Bau-Ausstattung — die Vorgaben stehen im Elektro-Dok.
+
+    Es gewinnt die Art mit den MEISTEN belegten Ankern, nicht die erste, die ihre
+    Mindestzahl erreicht: ein GU-Rahmenvertrag erwähnt „Notbeleuchtung" durchaus
+    (als Wartungsposition) und würde sonst als Elektro-LB durchgehen.
+    """
     klein = volltext.lower()
-    treffer = {
-        art: sum(1 for a in cfg["anker"] if a in klein)
+    kandidaten = [
+        (sum(1 for a in cfg["anker"] if a in klein), art)
         for art, cfg in arten.items()
-    }
-    # Elektro gewinnt bei Gleichstand: nur dort stehen technische Vorgaben.
-    for art in ("elektro_lb", "gu_rahmen", "bau_ausstattung"):
-        cfg = arten.get(art)
-        if cfg and treffer.get(art, 0) >= cfg["mindest_treffer"]:
-            return art
-    return "unbekannt"
+    ]
+    erreicht = [
+        (n, art) for n, art in kandidaten if n >= arten[art]["mindest_treffer"]
+    ]
+    if not erreicht:
+        return "unbekannt"
+    # Bei Gleichstand gewinnt die spezifischere Art (mehr geforderte Anker).
+    hoechste = max(n for n, _ in erreicht)
+    gleichauf = [art for n, art in erreicht if n == hoechste]
+    return max(gleichauf, key=lambda art: arten[art]["mindest_treffer"])
 
 
 def sl_abschnitte(abschnitte: list[Abschnitt], anker: list[str],
@@ -110,15 +118,23 @@ def sl_abschnitte(abschnitte: list[Abschnitt], anker: list[str],
     return treffer
 
 
-def offene_verweise(abschnitte: list[Abschnitt], muster: list[str]) -> list[tuple[Abschnitt, str]]:
-    """Verweise auf fremde Dokumente, die hier nicht auflösbar sind."""
-    gefunden: list[tuple[Abschnitt, str]] = []
-    kompiliert = [re.compile(m, re.IGNORECASE) for m in muster]
+def verweise(abschnitte: list[Abschnitt], klassen: dict) -> list[tuple[str, Abschnitt, str]]:
+    """Verweise auf andere Dokumente, klassifiziert.
+
+    Rückgabe: (Klasse, Abschnitt, gefundener Text). Ob eine Klasse blockiert,
+    entscheidet der Parser — hier wird nur gefunden und benannt.
+    """
+    kompiliert = {
+        klasse: [re.compile(m, re.IGNORECASE) for m in cfg["muster"]]
+        for klasse, cfg in klassen.items()
+    }
+    gefunden: list[tuple[str, Abschnitt, str]] = []
     for a in abschnitte:
         block = a.block
-        for rx in kompiliert:
-            treffer = rx.search(block)
-            if treffer:
-                gefunden.append((a, treffer.group(0).strip()))
-                break
+        for klasse, muster in kompiliert.items():
+            for rx in muster:
+                treffer = rx.search(block)
+                if treffer:
+                    gefunden.append((klasse, a, treffer.group(0).strip()))
+                    break
     return gefunden
