@@ -57,6 +57,17 @@ def test_ohne_lb_keine_legende(rendered):
     assert not doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Legende']")
 
 
+def test_stueckliste_zaehlt_symbol_arten(rendered):
+    _, summary, doc = rendered
+    assert summary["stueckliste_drawn"] is True
+    sl = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Stueckliste']")
+    assert len(sl) == 1
+    txt = sl[0].text
+    assert "STÜCKLISTE" in txt
+    assert "Rettungszeichen: 5" in txt   # 4OG-Fixture = 5 RZ
+    assert "Summe: 5" in txt
+
+
 def test_lb_legende_traegt_system_spec(contracts, tmp_path):
     from notbeleuchtung.hauptengine.contracts import LBVorgabe
     platzierung, raum = contracts
