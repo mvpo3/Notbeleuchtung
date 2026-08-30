@@ -15,6 +15,10 @@ dependencies = [
     "networkx>=3.0",
     "numpy>=1.26",
     "scikit-image>=0.22",
+    # LB-Parsing (2. Input): echte Leistungsbeschreibungen kommen als PDF.
+    # Lazy-Import in normwissen/lb/text.py — kein Zwang auf ein lokales
+    # pdftotext-Binary.
+    "pypdf>=4.0",
 ]
 
 [project.optional-dependencies]
