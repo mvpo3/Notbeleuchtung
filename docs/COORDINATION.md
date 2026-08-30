@@ -44,7 +44,9 @@ Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixt
 ### F2 (Photometrie / LDT)
 - [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
 - [x] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation (bilinear γ×C, periodisch)
-- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture
+- [x] `normwissen/photometrie/ies.py` — IES/LM-63-Parser (`lade_ies`), gleicher `Photometrie`-Typ →
+  F1-Naht unverändert; horizontale Symmetrie-Expansion (rot./quadrant/bilateral), abs. Fotometrie
+- [ ] Test gegen eine echte Schrack-LDT/-IES (Owner besorgt Datei) — bis dahin synthetische Fixtures
 - [x] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
 ### F2 → umgelenkt auf Raumerkennung (Selman-Package)
@@ -153,6 +155,7 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 (Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F2: IES/LM-63-Import `photometrie/ies.py` (`lade_ies`) + Fixture `mini.ies` + `tests/normwissen/test_ies.py` (7). Gleicher `Photometrie`-Typ → F1-Naht unverändert. 170 Tests grün, ruff clean, schema in sync.
 - 2026-08-30 Enis: OIB-/OVE-/Rechtsquellen-PDFs ins Repo (`knowledge/`), Beleg-Status
   je Wert in `normwissen/data/*.yaml`, Spec auf PR #14 nachgezogen. Kein Code-Delta
   (144 passed / 5 skipped wie main, schema in sync).
