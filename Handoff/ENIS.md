@@ -1,61 +1,124 @@
 # Handoff — Enis (Normwissen + LB)
 
 > Claude: Du bist die Session von **Enis**. Owner-Package:
-> `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`. Task: **Issue #1**.
+> `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (zuletzt 2026-08-29)
+## Stand (zuletzt 2026-08-30, abends)
 
-**Slice 1 (NormRegelwerk) fertig, PR #6 auf aktuellem main** — Branch
-`enis/slice-1-normprovider`, PR https://github.com/mvpo3/Notbeleuchtung/pull/6.
-Wartet auf Reviews: der PR fasst `tests/fixtures/` an → CODEOWNERS verlangt
-**alle drei Owner** (@mvpo3, @polatselman). Merge erst nach Owner-GO.
+### Wiedereinstieg in 30 Sekunden
+1. Branch **`enis/normquellen-oib-docs`** (von aktuellem main). Der alte Branch
+   `enis/slice-1-normprovider` ist tot: **PR #6 ist gemerged** (`4c40050`), sein
+   Code liegt vollständig auf main.
+2. `.venv/bin/python -m pytest -q` muss **144 passed, 5 skipped** zeigen. Nach
+   einem Merge von main vorher `.venv/bin/python -m pip install -e ".[dev,api]"`
+   (main hat seit PR #6 `networkx`, `scikit-image`, `httpx` ergänzt).
+3. Nächster fachlicher Schritt: „Was als Nächstes" unten — **beide Contracts
+   liegen bereit, beide Implementierungen fehlen.**
 
-Gebaut: `En1838NormProvider` (`normwissen/provider.py`) liest
-`normwissen/data/en1838_grundwerte.yaml` + `raumtyp_regeln.yaml`, erfüllt das
-Protocol `NormProvider`, hardcodet nichts. `heights_fachpraxis`/`clearance_rules`
-bewusst NICHT portiert (Steckdosen-Höhen bzw. Track-A Wand-Mechanik, kein
-NB-Normwissen).
+### Slice 1 (NormRegelwerk) — abgeschlossen und auf main
+`En1838NormProvider` (`normwissen/provider.py`) liest `normwissen/data/
+en1838_grundwerte.yaml` + `raumtyp_regeln.yaml`, erfüllt das Protocol
+`NormProvider`, hardcodet nichts. Fachliche Ausprägung:
+- **STIEGENHAUS-Raum → `sicherheitsleuchte`** (Aufheller, EN 1838 §4.1) statt `rz`;
+  Rettungszeichen hängen an den Fluchtweg-**Segmenten**.
+- **GANG + `default`** bieten alle vier Pfeil-Keys an; Richtung wählt Leonis.
+- **Antipanik** auf Katalog-Key `antipanik_leuchte`; **SAAL `mindest_anzahl: 4`**
+  als Raster-Stützstellen (§4.3.1).
+- Snapshot-Fixture **immer** aus dem echten Provider generieren, nie handschreiben:
+  `En1838NormProvider().regelwerk_snapshot().model_dump()` → JSON, indent 2.
+`heights_fachpraxis`/`clearance_rules` bewusst NICHT portiert.
 
-**Nachzug auf main (PR #7–#10, Leonis):** main hatte den Symbol-Katalog umgebaut
-und dabei Enis' Fixture `norm_regelwerk_snapshot.json` fake-first vorweggenommen.
-Am 29.08. nachgezogen (Commits `d3cd9b7` + `b343fef`), damit der ECHTE Provider
-liefert, was Platzierer + Renderer heute erwarten:
-- **STIEGENHAUS-Raum → `sicherheitsleuchte`** (Aufheller, EN 1838 §4.1), nicht
-  mehr `rz`. Rettungszeichen hängen an den Fluchtweg-**Segmenten**
-  (`fuer_fluchtweg_abschnitt` → GANG-Regel) — der Raum selbst braucht die
-  Betonungs-Leuchte. Neue Audit-Quelle `§4.1` in `quellen`.
-- **GANG + `default`** bieten alle vier Pfeil-Keys an (`notlicht_ks_stiege`,
-  `_unten`, `_links`, `_rechts`); die Laufrichtung wählt Leonis
-  (`communal_stgh_strategy::_select_key`), die Norm gibt nur die Menge vor.
-- **Antipanik** auf den echten Katalog-Key `antipanik_leuchte`; **SAAL
-  `mindest_anzahl: 4`** = Raster-Stützstellen für die Flächen-Anforderung
-  §4.3.1 (`flaechen_strategy` verteilt sie über `grid_points`).
-- Snapshot-Fixture aus dem echten Provider neu generiert (nie handschreiben:
-  `En1838NormProvider().regelwerk_snapshot().model_dump()` → JSON, indent 2).
+### Was sich seit dem letzten Handoff geändert hat (wichtig!)
+Leonis hat **beide Contracts geliefert, auf die diese Lane gewartet hat** — jeweils
+bewusst **ohne Implementierung**, die ist Enis' Arbeit:
 
-Tests nach Merge: **55 passed**, ruff sauber, Schema in sync. E2E-Durchstich
-liefert 7 Symbole (5 rz + 2 sicherheitsleuchte) — genau das, was main erwartet.
-⚠ `pip install -e ".[dev,api]"` nach dem Merge nötig (main hat `networkx`
-ergänzt), sonst bricht die Test-Collection.
+| PR | Contract | Protocol | Implementierung |
+|---|---|---|---|
+| #14 | `ProjektKontext`, `Gebaeudeteil`, `RaumReferenz`, `OibErgebnis`, `OibBefund` | `OibProvider.bewerte_oib(projekt) -> OibBefund` | **fehlt** (`normwissen/oib/`) |
+| #22 | `LBVorgabe`, `BereichsRegel`, `SonderLux` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | **fehlt** (`normwissen/lb/`) |
 
-**Owner-Grenze Photometrie (Owner-Entscheid 2026-08-29):** Leonis darf das
-LDT/Photometrie-Modul unter `src/notbeleuchtung/normwissen/photometrie/` bauen
-(Branch `leonis/ldt-photometrie`, siehe `docs/COORDINATION.md` in PR #11) —
-bewusste Ausnahme von „ein Owner = ein Package". Enis bleibt Owner der
-Norm-Regeln (`data/`, `provider.py`); das Photometrie-Modul ist rein additiv und
-berührt keinen Contract.
+`ports.py` sagt bei `LBProvider` wörtlich „Enis implementiert in `normwissen/lb/`".
+Drei Abweichungen von der Spec sind in PR #14 eingeflossen (`RaumReferenz` statt
+`raum_ids`+`floors`; `arbeitsstaette_nach_aschg` pro Gebäudeteil; eigenes
+`OibProvider`-Protocol) — dokumentiert in `docs/SPEC_PROJEKTKONTEXT_OIB.md`
+Abschnitt 0. **Es gilt der Contract auf main, nicht der Entwurfstext.**
 
-**Nächster Slice — „LB-Input":** Material liegt jetzt vor in
-`Leistungsbeschreibung BSP/` (4 echte PDFs, untracked):
-`mo-leistungsbeschreibung_Elektro_240718.pdf` (Elektro-LV, der direkte
-Kandidat), `250116_GU Leistungsbeschreibung.pdf`, `20241209_E LV Fischa 46.pdf`,
-`mo-Bau-_und_Ausstattungsbeschreibung_…pdf`. Vorgehen: PDFs sichten → welche
-Aussagen sind EXPLIZITE Vorgaben (Produkt, Stückzahl, Dauer, Sonderwunsch) →
-daraus Contract `LBVorgabe` (3-Owner-Freeze + `gen_schema.py`) + Parser
-`normwissen/lb/`. Format aus den echten Dokumenten ableiten, nichts erfinden.
-Ergänzend: `knowledge/` (Norm-Digests + Referenz-Praxis-Analysen von Leonis).
-Beim Start klären: LB-PDFs ins Repo committen oder `.gitignore`?
+⚠ **Keiner der beiden Contracts hat heute einen Abnehmer:** `pipeline.run()` nimmt
+weder LB noch `ProjektKontext`, `ProviderBundle` hat weder `lb`- noch `oib`-Feld.
+Leonis' offener **PR #23** verdrahtet die LB-Hälfte (fasst `contracts/ports.py` an
+⇒ **dein Approval nötig**, 3-Owner-CODEOWNERS). **PR #24** (GANG-Fallback) ist
+reines Platzierungs-Paket, nur zur Kenntnis.
+
+### 2026-08-30 — Quellen im Repo + Beleg-Status
+- **`knowledge/OIB-Richtlinien/`** (45 Dateien, Mai 2023, RL 1–7 + Sonderrichtlinien),
+  **`knowledge/OVE-Fachinformation/`** (17, E01–E13 + H02),
+  **`knowledge/Österreichische Rechtsquelle/`** (1) sind jetzt **committet**
+  (Präzedenz: `knowledge/**` ist in `.gitignore` explizit freigegeben).
+  `Leistungsbeschreibung BSP/` bleibt untracked — dafür gibt es Leonis' Digest
+  `knowledge/extracted/LB_ANALYSE_beispiele.md`.
+- **`normwissen/data/*.yaml` trägt jetzt je Wert einen Beleg-Marker**
+  (`[BELEGT]` / `[PRAXIS]` / `[ANNAHME]` / `[UNSCHARF]`) mit Fundstelle. Kein Wert
+  geändert. Damit ist sichtbar: `montagehoehe_mm 2400` und `mindest_anzahl 1/4`
+  sind Annahmen, `piktogramm_hoehe 0,15` ist Praxis, nicht Norm.
+- Drei Analysedokumente: **`docs/NORMQUELLEN_AT.md`** (Quellenstatus, Ebenen A–D,
+  Blast-Radius der Ausgabe-Drift in Abschnitt 2a), **`docs/OIB_RL2_TABELLE6.md`**
+  (Tabelle 6 vollständig, Punkt 5.4, Erläuterungen S.48, Sonderrichtlinien),
+  **`docs/SPEC_PROJEKTKONTEXT_OIB.md`** (Contract-Spec, jetzt ratifiziert).
+
+### Entscheidungen
+- **Norm-Ausgabe-Drift bleibt vorerst stehen** (2026-08-30): `en1838_grundwerte.yaml`
+  sagt `ÖNORM EN 1838:2013`, im Repo liegt **2019-11-15** (IDT mit EN 1838:2013-07,
+  inhaltlich deckungsgleich). Nur gekennzeichnet, nicht umgestellt — der String ist
+  Naht-Invariante und hängt an `tests/fixtures/*` (3-Owner), `tests/fakes.py`, einer
+  Leonis-Assertion und dem Contract-Default. Umstellung = eigener koordinierter Slice.
+- **Photometrie-Ausnahme:** Leonis baut `normwissen/photometrie/` (LDT/EULUMDAT →
+  exakte Lux). Bewusste Ausnahme von der Owner-Grenze, rein additiv. Enis bleibt
+  Owner von `data/` + `provider.py`.
+- **`OibProvider` = Enis** (Zuständigkeits-Graubereich am 30.08. geschlossen): die
+  Tabelle-6-Schwellenwerte sind Normwissen. Der `ProjektKontext` ist dagegen
+  Projektinput, nicht Normwissen.
+- **Kein Umkehrschluss aus Tabelle 6:** Unterschreiten einer Eingangsschwelle darf
+  NIE automatisch „nicht erforderlich" bedeuten → `review_required`. Betroffene
+  Zeilen: 1.1, 1.2, 3, 4, 5.1, 6, 9.1, 9.2, 10, 11.1, 11.2 (Liste in der Spec).
+- **Keine Normwerte aus Modellwissen**, keine Internetquellen; nur Dokumente, die
+  tatsächlich im Repo liegen. Unklare Stellen als MANUELL PRÜFEN markieren.
+- **Fachinformation ≠ Norm ≠ Rechtsquelle** — Ebenen A–D getrennt führen.
+
+### Offene Punkte
+- **PR #23 fachlich prüfen + approven** (fasst `contracts/ports.py` an): passt
+  `parse_lb(lb_path: str) -> LBVorgabe` zum geplanten Parser, kippt
+  `bereiche_exklusion` wirklich den Norm-Default `STIEGENHAUS → sicherheitsleuchte`?
+- **Frage 2 an Leonis offen:** brauchen wir ein `GebaeudeModell` für
+  mehrgeschoßige Kennzahlen? (`RaumModell` ist geschoßweise.)
+- **LB-Vokabular festzurren:** `BereichsRegel.raum_typ` muss exakt Selmans
+  `RaumModell.raum_typ` treffen, sonst greift die Exklusion nie.
+- **Verbindlichkeitsanker OIB** (Übernahme ins Landesbaurecht) ungeklärt.
+- **Beschaffen:** kostenlos AStV/ASchG/KennV als RIS-Volltext, OVE R 12-2;
+  kostenpflichtig ÖNORM EN 1838:2025-03 und OVE/ÖVE EN 50172:2024-11.
+- Board-Frage weiterhin offen: 4 Norm-Werte für Wohnungs-Fluchtweg ratifizieren
+  (`docs/PROGRAMM_NOTBELEUCHTUNG.md`).
+
+### Was als Nächstes
+Zwei eigenständige Slices, beide ohne fremden Contract-Touch, frei wählbar:
+
+1. **OIB-Resolver** — `normwissen/data/oib_rl2_tabelle6.yaml` (20 Zeilen mit
+   Schwellenwerten, Fußnoten, Fundstelle + Seite) + Resolver `normwissen/oib/`
+   gegen `OibProvider`. Grenzwerte gehören in die YAML, der Provider hardcodet
+   nichts. Datenlücke ⇒ `review_required` + `fehlende_fakten`, nie eine Annahme.
+   `nicht_erforderlich` ist mit den heutigen Quellen unerreichbar. Alles Fachliche
+   liegt fertig in `docs/OIB_RL2_TABELLE6.md`. **Unabhängig von fremden PRs.**
+2. **LB-Parser** — `normwissen/lb/` gegen `LBProvider.parse_lb`. Golden-Fall:
+   Fischa §2.10/2.11 (GK4 → `bereiche_exklusion` STIEGENHAUS/GANG,
+   `bereiche_inklusion` GARAGE, `betriebsdauer_min=480`, `sonder_lux`
+   Feuerlöscher 5 lx, `system_typ`, `lb_quelle` als Audit-Trail). Abnehmer ist
+   Leonis' PR #23. Prosa-LB vs. Positions-LV brauchen verschiedene Extraktion —
+   halbautomatisch starten, kein Full-NLP.
+
+**⚠ Falle beim Skripten:** Umlaute in den `knowledge/`-Unterordnern sind
+NFD-kodiert, Originalschreibweisen (`Branschutz`, `Richtline`) sind absichtlich
+erhalten → mit `glob` arbeiten, keine handgetippten Pfade. (Der frühere
+Trailing-Space in `knowledge/OIB-Richtlinien ` ist beim Committen bereinigt.)
 
 **⚠ Setup-Falle (Mac):** Projekt braucht **Python ≥ 3.11** (System hatte nur
 3.9.6 → editable install bricht). Fix war `brew install python@3.12`, dann venv
@@ -71,10 +134,11 @@ Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach
    „Öffne den Ordner `Notbeleuchtung` (Cursor: File → Open Folder → Notbeleuchtung)
    und starte mich dort neu." Erst weiter, wenn der Ordner stimmt.
 2. **venv + Installation:**
-   - Windows: `python -m venv .venv` → `.venv\Scripts\python.exe -m pip install -e ".[dev,api]"`
    - Mac/Linux: `python3 -m venv .venv` → `.venv/bin/python -m pip install -e ".[dev,api]"`
-3. **Tests grün prüfen:** `.venv\Scripts\python.exe -m pytest -q` → muss zeigen
-   **`13 passed, 1 skipped`**. Wenn nicht → stopp + melde dem Nutzer den Fehler.
+   - Windows: `python -m venv .venv` → `.venv\Scripts\python.exe -m pip install -e ".[dev,api]"`
+3. **Tests grün prüfen:** `.venv/bin/python -m pytest -q` → muss zeigen
+   **`144 passed, 5 skipped`** (Stand 2026-08-30). Wenn nicht → stopp + melde dem
+   Nutzer den Fehler.
 4. **Cursor-Hinweis für den Nutzer:** Ordner `Notbeleuchtung` als Workspace öffnen
    und `.venv` als Python-Interpreter wählen (unten rechts / Command Palette
    „Python: Select Interpreter" → `.venv`).
@@ -84,36 +148,18 @@ Erst wenn Setup grün ist → weiter mit dem Auftrag unten.
 ## Wer du bist
 Du besitzt **beide Wissens-Inputs** für Leonis' Platzierung:
 1. **NormRegelwerk** — statisches EN-1838/ÖNorm-Wissen (Lux, Erkennungsweite l=z×h,
-   Montagehöhe, RZ-vs-Antipanik, Dauer).
+   Montagehöhe, RZ-vs-Antipanik, Dauer). **Steht** (`En1838NormProvider`).
 2. **LBVorgabe** — die Leistungsbeschreibung (2. Input) in explizite Vorgaben
    geparst, die Norm-Defaults übersteuern (Hierarchie: LB → Referenz → Norm → OVE).
+   **Fehlt noch** (`normwissen/lb/`).
 
-Leonis **fragt** dich über die Query-API — er parst nie YAML.
+Dazu die dritte, später entdeckte Ebene: **OIB-RL 2 Tabelle 6** — braucht dieses
+Gebäude überhaupt Sicherheitsbeleuchtung, und in welcher Stufe? (`normwissen/oib/`,
+fehlt ebenfalls.)
 
-## Dein Auftrag — Slice 1 (NormRegelwerk)
-1. **Port-Material sichten:** `normwissen/_port_source/` (von Leonis gestaged, roh
-   aus elektro-planer). Kern: `emergency_lighting_en1838.yaml` (l=z×h, z=200/100,
-   Lux 1.0/0.5, Höhe ≥2000, Dauer 60), `rz_coverage_oenorm.yaml`,
-   `heights_fachpraxis.yaml` (Notlicht-Höhen), `clearance_rules.yaml`.
-2. **Kuratieren** → `normwissen/data/` (nur was Notbeleuchtung braucht, nicht 1:1).
-3. **`En1838NormProvider`** (`normwissen/provider.py`) erfüllt das Protocol
-   `NormProvider` (`hauptengine/contracts/ports.py`):
-   `fuer_raum`, `fuer_fluchtweg_abschnitt`, `erkennungsweite_m`, `regelwerk_snapshot`.
-   Liest die YAMLs, hardcodet nichts. Jede `NormAnforderung.quelle` = echte
-   Norm-Fundstelle (Audit-Trail).
-4. **Fake ersetzen:** `tests/fakes.py` `FakeNormProvider` → echt (oder registry
-   verdrahten). `pytest -q` bleibt grün; `tests/contract/test_norm_regelwerk_contract.py`
-   grün.
-
-**DoD:** `NormProvider`-Konformität grün, Werte aus `data/`, E2E-Durchstich grün.
-
-## Danach — Slice „LB-Input" (dein 2. Contract)
-Neuer Contract `LBVorgabe` + LB-Parser (`normwissen/lb/`): LB (PDF/Text) → explizite
-Vorgaben. Contract erst mit Leonis+Selman freezen (CODEOWNERS auf `contracts/**` =
-alle drei). Referenz-LB-Parsing-Logik gibt es in elektro-planer — bei Bedarf
-Leonis um Staging bitten (du hast dort keinen Zugriff).
+Leonis **fragt** dich über die Query-APIs — er parst nie YAML.
 
 ## Regeln
 Nur `normwissen/` + `hauptengine.contracts` importieren. Contract ändern =
 `contract_version` bump + `python scripts/gen_schema.py` + 3-Owner-Approval.
-Branch `enis/…` → PR.
+Branch `enis/…` → PR. Irreversibles (Merge/Push) nur mit explizitem User-GO.

@@ -126,7 +126,36 @@ F1 hat den echten End-to-End (Provider → Platzierung → DXF) auf **Fischamend
 - Nebenbefund: **20 von 59 Raum-Polygonen** sind Fragmente/untypisiert (Median 6,6 m²,
   9 unter 2 m²) — bekannte Gap-Healing-Grenze, hier bestätigt.
 
+## Enis-Lane (Normwissen) — Naht-Erwartungen
+
+Enis arbeitet in einer eigenen Session auf `enis/…`-Branches. Zwei Provider aus
+`normwissen/` fehlen noch; beide Contracts stehen bereits auf main:
+
+| Zu bauen | Protocol (`ports.py`) | Datengrundlage | Status |
+|---|---|---|---|
+| `normwissen/oib/` | `OibProvider.bewerte_oib(projekt) -> OibBefund` | `normwissen/data/oib_rl2_tabelle6.yaml` (neu) | TODO |
+| `normwissen/lb/` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | reale LBs, Digest `knowledge/extracted/LB_ANALYSE_beispiele.md` | TODO |
+
+**Bitte an Leonis (blockiert den LB-Parser fachlich, nicht technisch):**
+`BereichsRegel.raum_typ` muss exakt Selmans `RaumModell.raum_typ`-Vokabular
+treffen (`STIEGENHAUS`/`GANG`/`GARAGE`, …). Wo ist die Liste kanonisch? Solange
+das offen ist, parst Enis die LB-Bereiche auf genau diese drei Strings und
+markiert alles andere als „nicht zuordenbar" statt zu raten.
+
+**Naht ohne Abnehmer:** `pipeline.run()` nimmt weder `ProjektKontext` noch LB;
+`ProviderBundle` hat weder `oib`- noch `lb`-Feld. PR #23 schließt die LB-Hälfte
+(`ports.py` + `pipeline.py`, 3-Owner) — die OIB-Hälfte bleibt danach offen.
+
+**Norm-Ausgabe-Bezeichnung:** `ÖNORM EN 1838:2013` bleibt vorerst stehen, obwohl
+im Repo 2019-11-15 liegt (inhaltlich deckungsgleich). Grund: der String ist
+Naht-Invariante und steckt auch in `tests/fakes.py` und
+`tests/platzierung/test_flaechen_strategy.py:53`. Umstellung nur gemeinsam
+(Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
+
 ## Log (append-only, neueste oben)
+- 2026-08-30 Enis: OIB-/OVE-/Rechtsquellen-PDFs ins Repo (`knowledge/`), Beleg-Status
+  je Wert in `normwissen/data/*.yaml`, Spec auf PR #14 nachgezogen. Kein Code-Delta
+  (144 passed / 5 skipped wie main, schema in sync).
 - 2026-08-30 F1-Naht: `lux.py`+`deckung.py` bekommen `i_cd_fn(γ)`-Callable (Photometrie-Injektion, grenz-sauber). 77 Tests grün. Verdrahtung in Hauptengine/pipeline noch offen.
 - 2026-08-30 F2: `photometrie/ldt.py` + `__init__.py` + Fixture `mini.ldt` + `tests/normwissen/test_ldt.py`. 74 Tests grün, ruff clean. Schnittstelle READY (siehe oben).
 - <2026-08-29> F1: Platzier-Regeln l=z·h + `richtung_durch_tuer` kodiert (Commit

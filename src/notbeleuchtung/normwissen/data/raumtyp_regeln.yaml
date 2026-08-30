@@ -12,7 +12,16 @@
 # l = z·h berechnet, nicht hier hartkodiert.
 #
 # Hierarchie (CLAUDE.md): diese Norm-Defaults werden von LB-explizit übersteuert
-# (LBVorgabe, eigener Slice). Hier stehen nur die EN-1838/ÖNorm-Defaults.
+# (LBVorgabe-Contract steht auf main; Parser = normwissen/lb/, eigener Slice).
+# Hier stehen nur die EN-1838/ÖNorm-Defaults.
+#
+# BELEG-STATUS (Quellenprüfung 2026-08-30, docs/NORMQUELLEN_AT.md Abschnitt 2).
+# Marker-Legende in en1838_grundwerte.yaml. Kurz für diese Datei:
+#   montagehoehe_mm: 2400  → [ANNAHME], siehe unten
+#   mindest_anzahl         → [ANNAHME], Engineering-Raster, kein Normwert
+#   min_lux_ref/quelle_ref → Verweise auf die dort belegten Werte
+# Die Zuordnung raum_typ → klassifikation ist ENGINEERING-AUSLEGUNG der Norm,
+# kein Norm-Zitat: EN 1838 kennt keine Raumtypen, sondern Situationen.
 # ═══════════════════════════════════════════════════════════════════════════
 
 # Greift, wenn kein spezifischer Eintrag matcht → Rettungsweg-Anforderung.
@@ -20,8 +29,12 @@ default:
   klassifikation: rz
   min_lux_ref: rettungsweg
   quelle_ref: rettungsweg
+  # [ANNAHME] 2400 mm ist NICHT belegt — kein Notlicht-Eintrag in
+  # _port_source/heights_fachpraxis.yaml; der Wert stammt aus der
+  # Slice-0-Fake-Fixture. Belegt ist nur der Floor 2000 (§4.1.1).
+  # Vor Praxiseinsatz gegen eine Fachquelle (OVE R 12-2 / Referenzplan) prüfen.
   montagehoehe_mm: 2400
-  mindest_anzahl: 1
+  mindest_anzahl: 1              # [ANNAHME] eine Stützstelle je Einheit
   # Alle vier Pfeil-Varianten anbieten — die Laufrichtung kennt erst der
   # Platzierer, er waehlt daraus den passenden Block (Norm gibt nur die Menge vor).
   symbol_katalog_keys:
@@ -33,13 +46,17 @@ regeln:
   # Der Stiegenhaus-RAUM selbst: Aufheller-Sicherheitsleuchte (§4.1 — Betonung
   # von Stiegen/Richtungsaenderungen), NICHT nochmal ein Rettungszeichen. Die RZ
   # haengen an den Fluchtweg-SEGMENTEN (siehe GANG bzw. fuer_fluchtweg_abschnitt).
+  # [UNSCHARF] quelle_ref sicherheitsleuchte = "§4.1"; belegbar waere §4.1.2 b).
+  # Die Regelform "eine Aufheller-Leuchte je Stiegenhaus-Raum" ist Auslegung.
+  # ACHTUNG LB-Naht: eine LB kann diesen Default kippen (Fischa GK4 §2.10 →
+  # bereiche_exklusion STIEGENHAUS) — LBVorgabe uebersteuert, siehe CLAUDE.md.
   - raum_typ: STIEGENHAUS
     ist_fluchtweg: true
     klassifikation: sicherheitsleuchte
     min_lux_ref: rettungsweg      # 1,0 lx wie Rettungsweg (§4.2.1-Niveau)
     quelle_ref: sicherheitsleuchte
-    montagehoehe_mm: 2400
-    mindest_anzahl: 1
+    montagehoehe_mm: 2400         # [ANNAHME] wie default
+    mindest_anzahl: 1             # [ANNAHME] Auslegung, kein Normwert
     symbol_katalog_keys: [sicherheitsleuchte_aufheller]
 
   - raum_typ: GANG
@@ -47,8 +64,8 @@ regeln:
     klassifikation: rz
     min_lux_ref: rettungsweg
     quelle_ref: rettungsweg
-    montagehoehe_mm: 2400
-    mindest_anzahl: 1
+    montagehoehe_mm: 2400         # [ANNAHME] wie default
+    mindest_anzahl: 1             # [ANNAHME] Abstand regelt l = z·h, nicht diese Zahl
     symbol_katalog_keys:
       [notlicht_ks_stiege, notlicht_ks_stiege_unten,
        notlicht_ks_stiege_links, notlicht_ks_stiege_rechts]
@@ -59,10 +76,13 @@ regeln:
     klassifikation: antipanik
     min_lux_ref: antipanik
     quelle_ref: antipanik
-    montagehoehe_mm: 2400
+    montagehoehe_mm: 2400         # [ANNAHME] wie default
     # Antipanik ist eine FLAECHEN-Anforderung (0,5 lx auf der freien Bodenflaeche,
     # Randstreifen 0,5 m ausgenommen) — eine Einzelleuchte schafft das im Saal
     # nicht. mindest_anzahl = Raster-Stuetzstellen, die der Platzierer verteilt.
+    # [ANNAHME] 4 ist ein Engineering-Raster, kein Normwert — die Norm fordert
+    # das Lux-Ergebnis, nicht eine Stueckzahl. Photometrischer Nachweis
+    # (normwissen/photometrie/) ist die eigentliche Pruefung.
     mindest_anzahl: 4
     symbol_katalog_keys: [antipanik_leuchte]
 
@@ -71,6 +91,7 @@ regeln:
     klassifikation: antipanik
     min_lux_ref: antipanik
     quelle_ref: antipanik
-    montagehoehe_mm: 2400
-    mindest_anzahl: 1            # kleinere Flaeche als SAAL -> eine Leuchte reicht
+    montagehoehe_mm: 2400        # [ANNAHME] wie default
+    # [ANNAHME] kleinere Flaeche als SAAL -> eine Leuchte reicht (Auslegung)
+    mindest_anzahl: 1
     symbol_katalog_keys: [antipanik_leuchte]
