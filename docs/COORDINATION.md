@@ -136,7 +136,47 @@ Enis arbeitet in einer eigenen Session auf `enis/…`-Branches. Zwei Provider au
 | Zu bauen | Protocol (`ports.py`) | Datengrundlage | Status |
 |---|---|---|---|
 | `normwissen/oib/` | `OibProvider.bewerte_oib(projekt) -> OibBefund` | `normwissen/data/oib_rl2_tabelle6.yaml` (neu) | TODO |
-| `normwissen/lb/` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | reale LBs, Digest `knowledge/extracted/LB_ANALYSE_beispiele.md` | TODO |
+| `normwissen/lb/` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | `data/lb_extraktion.yaml` + Digest `knowledge/extracted/LB_ANALYSE_beispiele.md` | **STEHT** (fail closed, s.u.) |
+
+### ⚠ Befund an @mvpo3: falsche Quellenzuordnung im LBVorgabe-Contract-Test
+
+`tests/contract/test_lb_vorgabe_contract.py::test_fischa_gk4_exklusion_stiegenhaus`
+baut eine `LBVorgabe` mit `betriebsdauer_min=480`, `umschaltzeit_max_s=0.5`,
+`mindest_lux_fluchtweg=1.0`, `SonderLux("feuerloescher", 5.0)` und
+`piktogramm_norm="EN ISO 7010"` — und schreibt als Quelle
+`lb_quelle="20241209_E LV Fischa 46.pdf §2.10/2.11"`.
+
+**Keiner dieser fünf Werte steht in Fischa.** Am Original nachgeprüft (2026-08-30):
+`lux`/`lx` = **0 Treffer im gesamten Dokument**, ebenso „Umschaltzeit",
+„Betriebsdauer", „Feuerlöscher" und „7010". Fischa nennt statt EN ISO 7010 die
+**ÖNORM Z 1000**. Die fünf Werte stammen aus `mo-leistungsbeschreibung_Elektro`
+(§5.1.23, S. 37–38). Derselbe Fehler stand in
+`knowledge/extracted/LB_ANALYSE_beispiele.md` und ist dort korrigiert.
+
+Was Fischa §2.10/§2.11 **wirklich** trägt: Exklusion STIEGENHAUS + GANG (GK4),
+Inklusion GARAGE, Gruppenbatterie im Technikraum, Einzelleuchtenüberwachung,
+automatische + WEB-Prüfung, Fabrikat DIN-Sicherheitstechnik Concept-LED,
+Normbezug ÖVE 8101 / R 12-2 / EN 1838 / ÖNORM Z 1000.
+
+Der Test liegt in deiner Lane — Enis hat ihn **nicht** angefasst. Vorschlag:
+entweder die Skalare entfernen oder `lb_quelle` auf die mo-Elektro-LB umstellen.
+Merksatz: **Fischa = Bereichslogik, mo-Elektro = Skalare.**
+
+### ⚠ Befund an @polatselman: `GARAGE` ist kein erzeugbarer `raum_typ`
+
+`raumerkennung/raumtyp.py` (`_TYP_MAP`) erzeugt 13 Werte — `GARAGE` ist keiner
+davon, `classify_room` liefert für einen Stempel „Garage" `UNKNOWN` und der Raum
+behält `raum_typ == ""`. Eine `BereichsRegel(raum_typ="GARAGE")` ist damit im
+Platzierer ein **stiller No-op**: `lb_override` findet kein Polygon, gibt die
+Liste unverändert zurück, kein Fehler, kein Log.
+
+Das trifft den kanonischen LB-Fall direkt — **beide** realen Elektro-LBs fordern
+Sicherheitsbeleuchtung in der Garage. Der LB-Parser behandelt das deshalb als
+**blockierenden Review** statt es still zu verschlucken. Dasselbe gilt für
+`TECHNIKRAUM` und `LAGER` (mo-Elektro §5.1.23).
+
+Zum Schließen wären `GERMAN_ROOM_TYPE_MAP` + `_TYP_MAP` (+ ein `RoomType`-Member)
+zu erweitern — deine Lane, deshalb hier nur der Befund.
 
 **Bitte an Leonis (blockiert den LB-Parser fachlich, nicht technisch):**
 `BereichsRegel.raum_typ` muss exakt Selmans `RaumModell.raum_typ`-Vokabular
@@ -144,9 +184,21 @@ treffen (`STIEGENHAUS`/`GANG`/`GARAGE`, …). Wo ist die Liste kanonisch? Solang
 das offen ist, parst Enis die LB-Bereiche auf genau diese drei Strings und
 markiert alles andere als „nicht zuordenbar" statt zu raten.
 
-**Naht ohne Abnehmer:** `pipeline.run()` nimmt weder `ProjektKontext` noch LB;
-`ProviderBundle` hat weder `oib`- noch `lb`-Feld. PR #23 schließt die LB-Hälfte
-(`ports.py` + `pipeline.py`, 3-Owner) — die OIB-Hälfte bleibt danach offen.
+**Naht ohne Abnehmer:** PR #23 hat die LB-Hälfte in `pipeline.py`/`ports.py`
+verdrahtet, aber `registry.build_default_bundle()` setzt `ProviderBundle.lb`
+weiterhin **nicht** — der Parser ist damit real noch nicht aktiv. Die
+Verdrahtung (`lb=LbParser()`) liegt in `hauptengine/` und kommt als eigener
+koordinierter Slice. Die OIB-Hälfte (`ProjektKontext` → `pipeline.run`,
+`ProviderBundle.oib`) ist ebenfalls offen.
+
+**Fail-closed-Verhalten, das die Verdrahtung kennen muss:** `parse_lb()` wirft
+`LbNichtLesbar` bzw. `LbReviewRequired` statt eine leere `LBVorgabe`
+zurückzugeben — eine leere wäre von „die LB macht keine Vorgaben" nicht
+unterscheidbar und ließe die Engine still norm-getrieben weiterlaufen. Alle vier
+realen LBs brechen heute ab (GARAGE nicht abbildbar bzw. reiner Verweis).
+`LbParser.parse_bericht()` liefert dazu den vollen Audit-Trail. Wer verdrahtet,
+sollte diese Exceptions in eine sichtbare Rückmeldung übersetzen (API: 422 mit
+Bericht), nicht verschlucken.
 
 **Norm-Ausgabe-Bezeichnung:** `ÖNORM EN 1838:2013` bleibt vorerst stehen, obwohl
 im Repo 2019-11-15 liegt (inhaltlich deckungsgleich). Grund: der String ist
