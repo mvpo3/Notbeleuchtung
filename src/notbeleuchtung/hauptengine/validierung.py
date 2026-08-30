@@ -18,6 +18,12 @@ from .contracts import LBVorgabe, PlatzierungsErgebnis, RaumModell
 
 _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
+_AUSGANG_RZ_RADIUS_MM = 4000.0  # RZ gilt als „am Ausgang", wenn ≤ 4 m entfernt
+_KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
+
+
+def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
+    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
 
 
 @dataclass
@@ -72,6 +78,47 @@ def pruefe(
                 "fehler",
                 "Fluchtwege vorhanden, aber kein Rettungszeichen platziert",
             ))
+
+    rz = [p for p in plzg if p.kind == "rz"]
+
+    # 5. Rettungszeichen an jedem Notausgang (EN 1838 §4.1.2 g).
+    notausgaenge = [a for a in raum.ausgaenge if a.typ in ("final_exit", "stair_exit")]
+    if notausgaenge:
+        ohne_rz = [
+            a for a in notausgaenge
+            if not any(_dist(a.xy_mm, p.xy_mm) <= _AUSGANG_RZ_RADIUS_MM for p in rz)
+        ]
+        befunde.append(Befund(
+            "Rettungszeichen an Notausgängen (EN 1838 §4.1.2 g)",
+            "warnung" if ohne_rz else "ok",
+            f"{len(ohne_rz)}/{len(notausgaenge)} Notausgang/-gänge ohne RZ in Reichweite" if ohne_rz
+            else f"alle {len(notausgaenge)} Notausgänge mit RZ",
+        ))
+
+    # 6. Jedes Rettungszeichen trägt eine Pfeilrichtung (EN ISO 7010, Erkennbarkeit).
+    if rz:
+        ohne_richtung = [p for p in rz if p.richtung is None]
+        befunde.append(Befund(
+            "Rettungszeichen-Richtung gesetzt",
+            "warnung" if ohne_richtung else "ok",
+            f"{len(ohne_richtung)} RZ ohne Pfeilrichtung" if ohne_richtung
+            else "alle RZ mit Pfeilrichtung",
+        ))
+
+    # 7. Keine Symbol-Kollision/Doppelplatzierung (unter Mindestabstand).
+    if len(plzg) > 1:
+        kollisionen = sum(
+            1
+            for i in range(len(plzg))
+            for j in range(i + 1, len(plzg))
+            if _dist(plzg[i].xy_mm, plzg[j].xy_mm) < _KOLLISION_MM
+        )
+        befunde.append(Befund(
+            "Keine Symbol-Kollision",
+            "warnung" if kollisionen else "ok",
+            f"{kollisionen} Symbol-Paar(e) unter {_KOLLISION_MM:g} mm" if kollisionen
+            else "keine Doppelplatzierungen",
+        ))
 
     return befunde
 

@@ -1,6 +1,7 @@
 """validierung — Prüfbericht gegen EN-1838-Hard-Stops."""
 from fakes import build_fake_bundle
 from notbeleuchtung.hauptengine.contracts import (
+    Ausgang,
     BBox,
     FluchtwegSegment,
     Platzierung,
@@ -12,10 +13,11 @@ from notbeleuchtung.hauptengine.pipeline import run
 from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
 
 
-def _raum(*segment_ids: str) -> RaumModell:
+def _raum(*segment_ids: str, ausgaenge=()) -> RaumModell:
     return RaumModell(
         floor="EG",
         bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        ausgaenge=list(ausgaenge),
         zirkulation=ZirkulationsGraph(segmente=[
             FluchtwegSegment(segment_id=s, polyline_mm=[(0.0, 0.0), (100.0, 0.0)], reason="exit")
             for s in segment_ids
@@ -23,8 +25,8 @@ def _raum(*segment_ids: str) -> RaumModell:
     )
 
 
-def _rz(height=2400.0, circuit="AGV-A-F13", covers=("s1",)) -> Platzierung:
-    return Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+def _rz(height=2400.0, circuit="AGV-A-F13", covers=("s1",), xy=(0.0, 0.0), richtung="unten") -> Platzierung:
+    return Platzierung(xy_mm=xy, catalog_key="k", kind="rz", richtung=richtung,
                        height_mm=height, circuit_hint=circuit, covers_segment=list(covers))
 
 
@@ -65,6 +67,34 @@ def test_fluchtweg_ohne_rz_ist_fehler():
     befunde = pruefe(_raum("s1"), _erg(sl))
     assert gesamtstatus(befunde) == "fehler"
     assert any("Rettungszeichen vorhanden" in b.regel for b in befunde)
+
+
+def test_notausgang_ohne_rz_ist_warnung():
+    # Notausgang weit weg vom einzigen RZ (bei 0,0) → keine RZ in Reichweite.
+    raum = _raum("s1", ausgaenge=[Ausgang(id="E", xy_mm=(50000.0, 0.0), typ="final_exit")])
+    befunde = pruefe(raum, _erg(_rz()))
+    b = next(b for b in befunde if "Notausgäng" in b.regel)
+    assert b.status == "warnung"
+
+
+def test_notausgang_mit_nahem_rz_ist_ok():
+    raum = _raum("s1", ausgaenge=[Ausgang(id="E", xy_mm=(1000.0, 0.0), typ="final_exit")])
+    befunde = pruefe(raum, _erg(_rz(xy=(0.0, 0.0))))  # RZ 1 m entfernt → in Reichweite
+    b = next(b for b in befunde if "Notausgäng" in b.regel)
+    assert b.status == "ok"
+
+
+def test_rz_ohne_richtung_ist_warnung():
+    befunde = pruefe(_raum("s1"), _erg(_rz(richtung=None)))
+    b = next(b for b in befunde if "Richtung" in b.regel)
+    assert b.status == "warnung"
+
+
+def test_kollision_ist_warnung():
+    befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0)), _rz(xy=(100.0, 0.0))))  # 100 mm < 250
+    b = next(b for b in befunde if "Kollision" in b.regel)
+    assert b.status == "warnung"
+    assert "1 Symbol-Paar" in b.detail
 
 
 def test_run_haengt_pruefung_an(tmp_path):
