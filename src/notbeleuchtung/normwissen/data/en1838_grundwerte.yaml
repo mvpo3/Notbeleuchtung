@@ -9,31 +9,55 @@
 #
 # Single Source für den En1838NormProvider — er hardcodet nichts, er liest hier.
 # Jede quelle_* ist eine echte Norm-Fundstelle (Audit-Trail → NormAnforderung.quelle).
+#
+# BELEG-STATUS (Quellenprüfung 2026-08-30, docs/NORMQUELLEN_AT.md Abschnitt 2):
+#   [BELEGT]   wörtlich in der vorliegenden EN-1838-Ausgabe nachgewiesen
+#   [PRAXIS]   Fachpraxis-Wert, steht so NICHT in EN 1838
+#   [ANNAHME]  Engineering-/Fixture-Übernahme, keine Norm-Deckung
+#   [UNSCHARF] belegt, aber die Fundstelle im String ist zu grob
+# Marker ändern keinen Wert — sie machen sichtbar, was geprüft ist.
 # ═══════════════════════════════════════════════════════════════════════════
 
+# [UNSCHARF] Ausgabe-Bezeichnung: im Repo liegt ÖNORM EN 1838:2019-11-15
+# (IDT mit EN 1838:2013-07, Ersatz für 2013-09) — die hier genannte Ausgabe
+# 2013 liegt NICHT vor. Inhaltlich deckungsgleich, nur die Bezeichnung ist alt.
+# Bewusst NICHT umgestellt: der String ist Naht-Invariante und hängt an
+# tests/fixtures/* (3-Owner), tests/fakes.py, einer Leonis-Assertion und dem
+# Contract-Default in norm_regelwerk.py → eigener koordinierter Slice.
+# Blast-Radius-Tabelle: docs/NORMQUELLEN_AT.md Abschnitt 2a.
 norm: "ÖNORM EN 1838:2013"
 
-# §4.1.1 — Leuchten mind. 2 m über Boden. Norm-Untergrenze (Hard Floor).
+# [BELEGT] §4.1.1, Norm-S.8 — Leuchten mind. 2 m über Boden.
+# Achtung: Normwortlaut ist ein Erfüllungs-Kriterium, kein absolutes Minimum —
+# „Hard Floor" ist strenger als die Norm (bewusst konservativ).
 montagehoehe_min_mm: 2000
 
-# §4.2.5 / §4.3.5 / §5.4.5 — Notbetriebsdauer mind. 1 Stunde.
+# [BELEGT] §4.2.5 / §4.3.5 / §5.4.5 — Notbetriebsdauer mind. 1 Stunde.
 dauer_min: 60
 
-# §5.5 — Erkennungsweite l = z * h. z = Faktor, h = Piktogramm-Höhe [m].
+# §5.5, Norm-S.13 — Erkennungsweite l = z * h. z = Faktor, h = Piktogramm-Höhe [m].
 erkennungsweite:
-  z_hinterleuchtet: 200.0
-  z_beleuchtet: 100.0
-  piktogramm_hoehe_default_m: 0.15   # Standard-RZ 150 mm → l = 200·0,15 = 30 m
+  z_hinterleuchtet: 200.0            # [BELEGT] §5.5, wörtlich
+  z_beleuchtet: 100.0                # [BELEGT] §5.5, wörtlich
+  # [PRAXIS] steht nicht in EN 1838; Standard-RZ 150 mm aus
+  # _port_source/rz_coverage_oenorm.yaml → l = 200·0,15 = 30 m
+  piktogramm_hoehe_default_m: 0.15
 
 # Horizontale Beleuchtungsstärke am Boden.
 lux:
-  rettungsweg: 1.0      # §4.2.1 — Mittellinie Rettungsweg
-  antipanik: 0.5        # §4.3.1 — freie Bodenfläche Kernbereich
+  # [BELEGT] §4.2.1, Norm-S.9 — Mittellinie Rettungsweg. Gebunden an Wegbreite
+  # ≤ 2 m + 50-%-Mittelbereich + Anhang-B-Länderabweichungen (hier nicht modelliert).
+  rettungsweg: 1.0
+  # [BELEGT] §4.3.1, Norm-S.11 — freie Bodenfläche im Kernbereich
+  # (Randstreifen 0,5 m ausgenommen; Randbereich hier nicht modelliert).
+  antipanik: 0.5
 
 # Norm-Fundstellen (kommen als NormAnforderung.quelle in den Audit-Trail).
 quellen:
-  rettungsweg: "ÖNORM EN 1838:2013 §4.2.1"
-  antipanik: "ÖNORM EN 1838:2013 §4.3.1"
-  # §4.1 — Sicherheitsleuchten (Aufheller) an Betonungspunkten: Stiegen,
-  # Richtungsänderungen, Ausgänge. Eigene Fundstelle im Audit-Trail.
+  rettungsweg: "ÖNORM EN 1838:2013 §4.2.1"      # [BELEGT]
+  antipanik: "ÖNORM EN 1838:2013 §4.3.1"        # [BELEGT]
+  # [UNSCHARF] §4.1 — Sicherheitsleuchten (Aufheller) an Betonungspunkten:
+  # Stiegen, Richtungsänderungen, Ausgänge. Gestützt ist §4.1.2 b) („nahe
+  # Treppen, um jede Treppenstufe direkt zu beleuchten"); „§4.1" ist zu grob.
+  # Schärfung gemeinsam mit der Ausgabe-Umstellung (gleicher Blast-Radius).
   sicherheitsleuchte: "ÖNORM EN 1838:2013 §4.1"
