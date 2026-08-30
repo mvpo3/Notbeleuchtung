@@ -11,8 +11,17 @@ Orchestriert den Fahrplan **Anker → Linie → Fläche → Deckung**:
 * **Sicherheitsleuchten + Antipanik:** raum-bezogen (`flaechen_strategy`).
 * **Deckung:** Lux-getriebene Verdichtung der Korridore (`deckung`).
 Alle Strategien sind norm-getrieben und render-frei.
+
+**Photometrie (F2→F1-Naht):** `NotlichtPlatzierer(i_cd_fn=…)` nimmt optional ein
+Lichtstärke-Callable `i_cd_fn(γ_grad) -> cd` — die richtungsabhängige Hersteller-
+Photometrie (EULUMDAT/LDT). Die Hauptengine (`registry`) baut es aus
+`normwissen.photometrie.Photometrie.intensitaet` und injiziert es beim Konstruieren;
+`platzierung` bleibt so frei von `normwissen`-Imports (Owner-Grenze). Fehlt es, rechnet
+die Deckung mit der konstanten isotropen Lichtstärke.
 """
 from __future__ import annotations
+
+from collections.abc import Callable
 
 from notbeleuchtung.hauptengine.contracts import (
     LBVorgabe,
@@ -49,6 +58,10 @@ def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
 class NotlichtPlatzierer:
     """Erfüllt `hauptengine.contracts.ports.Platzierer`."""
 
+    def __init__(self, i_cd_fn: Callable[[float], float] | None = None) -> None:
+        # Richtungsabhängige Hersteller-Lichtstärke (aus F2-Photometrie); None = konstant.
+        self._i_cd_fn = i_cd_fn
+
     def place(
         self, raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
     ) -> PlatzierungsErgebnis:
@@ -56,7 +69,7 @@ class NotlichtPlatzierer:
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm),                 # Fläche
-            *verdichte_fluchtweg(raum, norm),            # Linie + Deckung (Lux)
+            *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)
         ]
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
