@@ -61,6 +61,9 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
         floor: str = Form("EG", description="Geschoss-Kennung, z.B. '4OG'"),
         lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
         format: str = Form("dxf", description="Ausgabeformat: 'dxf' (CAD) oder 'pdf' (Dokument)"),
+        projekt: str | None = Form(None, description="Plankopf: Projektbezeichnung"),
+        datum: str | None = Form(None, description="Plankopf: Datum"),
+        ersteller: str | None = Form(None, description="Plankopf: Ersteller"),
         bundle: ProviderBundle = Depends(get_bundle),
     ) -> FileResponse:
         """DXF (+ optional LB) hoch → Notbeleuchtungsplan zurück (DXF oder PDF). Summary
@@ -78,8 +81,12 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                 lb_in.write_bytes(lb_datei.file.read())
                 lb_path = str(lb_in)
             out_path = workdir / f"{floor}_notbeleuchtung.dxf"
+            plankopf = {k: v for k, v in
+                        {"projekt": projekt, "datum": datum, "ersteller": ersteller}.items()
+                        if v}
             try:
-                ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path, lb_path=lb_path)
+                ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path,
+                               lb_path=lb_path, plankopf=plankopf or None)
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
             summary = {k: ergebnis.render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in ergebnis.render_summary}

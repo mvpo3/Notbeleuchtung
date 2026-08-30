@@ -91,6 +91,18 @@ def test_plan_unbekanntes_format_ist_422():
     assert r.status_code == 422
 
 
+def test_plan_pdf_mit_plankopf_metadaten():
+    # Plankopf-Metadaten (projekt/datum/ersteller) fließen bis in den gerenderten Plan.
+    r = _client().post(
+        "/plan",
+        files={"datei": ("leer.dxf", b"x", "image/vnd.dxf")},
+        data={"floor": "4OG", "format": "pdf", "projekt": "Wohnbau X",
+              "datum": "2026-08-30", "ersteller": "Leonis"},
+    )
+    assert r.status_code == 200
+    assert r.content[:5] == b"%PDF-"
+
+
 def test_plan_ohne_datei_ist_422():
     # Pflicht-Upload fehlt → FastAPI-Validierung.
     assert _client().post("/plan", data={"floor": "4OG"}).status_code == 422
