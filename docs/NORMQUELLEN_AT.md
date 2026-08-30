@@ -99,6 +99,16 @@ Leser den String für belegt hält. Inhaltlich ist die Deckungsgleichheit gegebe
 4. Landesbaurecht, das die OIB-Richtlinien verbindlich macht (Verbindlichkeitsanker).
 
 ## 4. Fehlt — kostenpflichtig
+0. **ÖNORM B 1800:2013-08-01** „Ermittlung von Flächen und Rauminhalten von
+   Bauwerken und zugehörigen Außenanlagen" — **blockiert aktiv den OIB-Resolver.**
+   Die OIB-Begriffsbestimmungen definieren die Netto-Grundfläche nicht selbst,
+   sondern verweisen auf diese Norm (Stichwort „Grundfläche", Norm-S. 7 /
+   PDF-S. 9); die Ausgabe 2013-08-01 ist in „Zitierte Normen und sonstige
+   technische Regelwerke" (Norm-S. 2 / PDF-S. 4) festgelegt. Ohne sie sind die
+   Tabelle-6-Schwellen **3.200 m² (Zeile 2)** und **200 m² (Zeile 10)** nicht
+   verifizierbar → beide Zeilen bleiben `review_required`. Von allen fehlenden
+   Dokumenten das mit dem unmittelbarsten Effekt: eine Norm schaltet zwei
+   Tabellenzeilen frei.
 1. **ÖNORM EN 1838:2025-03-01** — Nachfolgeausgabe der Kernnorm; laut den
    Hersteller-Digests mit platzierungsrelevanten Änderungen.
 2. **OVE/ÖVE EN 50172** (2024-11-01) — in EN 1838 §4.1.1 normativ verwiesen **und**

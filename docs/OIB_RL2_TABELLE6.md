@@ -70,11 +70,31 @@ Parkdecks (gemäß OIB-Begriffsbestimmungen).
 > 30 Schlafplätzen eine Sicherheitsbeleuchtung erforderlich."
 
 ### MANUELL PRÜFEN
-- Zeile 11.2: Flächeneinheit ohne Fußnoten-Marker im Original (vermutlich (3)).
-- Begriffe PDF-S.10: Definition „Netto-Grundfläche" war im Textextrakt nicht
-  sauber auslesbar — vor Verwendung am PDF gegenlesen.
+- **Zeile 11.2 — am Original bestätigt (2026-08-30):** die Zeile trägt tatsächlich
+  **keinen** Fußnoten-Marker; sie lautet blank `> 1.600 m²`, während Zeile 11.1
+  unmittelbar darüber zweimal `(3)` führt und die Zeilen 2/4/10 ihre Marker
+  `(1)`/`(2)` tragen. Die Bezugsfläche der 1.600 m² ist damit nicht belegt — die
+  Nutzfläche-Definition `(3)` aus 11.1 zu übernehmen wäre Auslegung.
+- **Netto-Grundfläche — Verweiskette geprüft (2026-08-30), Definition fehlt:**
+  Fußnote `(1)` lautet nur „Netto-Grundfläche;" **ohne** den Zusatz „(gemäß
+  OIB-Richtlinien – Begriffsbestimmungen)", den `(2)` und `(3)` führen. Gebunden
+  ist sie trotzdem, über RL 2 **Punkt 1** (Norm-S. 2 / PDF-S. 4): „Es gelten die
+  Begriffsbestimmungen des Dokumentes ‚OIB-Richtlinien – Begriffsbestimmungen'."
+  Dort gibt es **keinen** Eintrag „Netto-Grundfläche" — nur das Stichwort
+  **„Grundfläche"** (Norm-S. 7 / PDF-S. 9): „Brutto-Grundfläche bzw.
+  Netto-Grundfläche entsprechend der Definition in der **ÖNORM B 1800**."
+  Laut „Zitierte Normen und sonstige technische Regelwerke" (Norm-S. 2 / PDF-S. 4)
+  ist das die **Ausgabe 2013-08-01**. Diese Norm liegt **nicht im Repo** ⇒ die
+  Bezugsfläche der Schwellen 3.200 m² (Zeile 2) und 200 m² (Zeile 10) ist nicht
+  verifizierbar. Die Erläuterungen zu RL 2 enthalten dazu nichts.
 - Zeile 9.1 nennt zwei Personenzahlen (Anwendungsschwelle > 60, Stufenschwelle 240).
   Dass beide dieselbe Größe meinen, ist naheliegend, aber Auslegung.
+
+**Folge für den Resolver:** die Zeilen 2, 10 und 11.2 bleiben `review_required`,
+solange ÖNORM B 1800:2013-08-01 nicht als Primärquelle im Repo liegt bzw. die
+Bezugsfläche der Zeile 11.2 nicht geklärt ist. Die rechnerische Kandidatenstufe
+wird im Audit-Trail ausgewiesen, ist aber nicht verbindlich
+(`normwissen/data/oib_rl2_tabelle6.yaml`, `unsicherheiten: wirkung: blockiert`).
 
 ## Erläuterungen zu Punkt 5.4 (RL 2-Erl, PDF-S.50 = Erl.-S.48)
 
@@ -128,7 +148,7 @@ Für **Garagen und überdachte Stellplätze ≤ 250 m²** (RL 2.2 Kap. 2 und 3) 
 | Garage | 8 | Gebäude/Gebäudeteil zum Einstellen von Kraftfahrzeugen |
 | GK 4 | 8 | ≤ 4 oberirdische Geschoße, Fluchtniveau ≤ 11 m, mehrere Wohnungen/Betriebseinheiten à ≤ 400 m² Nutzfläche |
 | GK 5 | 8 | Fluchtniveau ≤ 22 m, nicht in GK 1–4 fallend |
-| Netto-Grundfläche | 10 | **MANUELL PRÜFEN** (Extrakt unvollständig) |
+| Grundfläche | 7 | „Brutto-Grundfläche bzw. Netto-Grundfläche entsprechend der Definition in der **ÖNORM B 1800**" — die Begriffsbestimmungen definieren die Netto-Grundfläche **nicht selbst**; ein eigener Eintrag „Netto-Grundfläche" existiert nicht (geprüft 2026-08-30) |
 | Nutzfläche – Garage/überd. Stellplatz/Parkdeck | 11 | Summe der Stellplatz- und Fahrflächen, ausgenommen Zu-/Abfahrten außerhalb |
 | Parkdeck | 11 | Bauwerk, das in allen Parkebenen an ≥ 2 Seiten unverschließbare Öffnungen ≥ ⅓ der Umfassungswandfläche aufweist |
 | Stellplatz, überdacht | 13 | überdachte Fläche, an höchstens zwei Seiten umschlossen |
