@@ -24,6 +24,12 @@ F2 baut: `normwissen/photometrie/ldt.py` mit
 F1 tauscht dann in `platzierung/lux.py` das konstante `i_cd` gegen `Photometrie.intensitaet`.
 **Contract bleibt unberührt** (rein additives Modul). → wenn API steht, hier „READY" markieren.
 
+**READY** (F2, 2026-08-30): `normwissen/photometrie/{ldt.py,__init__.py}` steht.
+`lade_ldt(pfad) -> Photometrie` (EULUMDAT, alle Isym-Symmetrien) +
+`Photometrie.intensitaet(gamma_grad, c_grad=0.0) -> cd` (bilinear γ×C, cd über
+`lampen_lumen` skaliert). F1 kann `lux.py` umstellen. Noch offen: Test gegen echte
+Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixtures/photometrie/mini.ldt`.
+
 ## Status-Board (live — nach jedem Schritt updaten + committen)
 
 ### F1 (Platzierung)
@@ -33,10 +39,11 @@ F1 tauscht dann in `platzierung/lux.py` das konstante `i_cd` gegen `Photometrie.
 - [ ] offen: PR für anker-platzierer-Branch; ggf. `lux.py` auf F2-Photometrie umstellen (nach READY)
 
 ### F2 (Photometrie / LDT)
-- [ ] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser
-- [ ] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation
-- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei)
-- [ ] API READY-Meldung hier → F1 baut sie in `lux.py` ein
+- [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
+- [x] `Photometrie.intensitaet(gamma, c)` mit Winkel-Interpolation (bilinear γ×C, periodisch)
+- [ ] Test gegen eine echte Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture
+- [x] API READY-Meldung hier → F1 baut sie in `lux.py` ein
 
 ## Log (append-only, neueste oben)
+- 2026-08-30 F2: `photometrie/ldt.py` + `__init__.py` + Fixture `mini.ldt` + `tests/normwissen/test_ldt.py`. 74 Tests grün, ruff clean. Schnittstelle READY (siehe oben).
 - <setup> F1 legt Worktree + dieses Board an. F2 startet mit (b) LDT.
