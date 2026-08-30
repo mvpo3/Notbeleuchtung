@@ -1,11 +1,40 @@
 # Spec — ProjektKontext + OibErgebnis (Enis → Leonis)
 
 **Absender:** Enis (`src/notbeleuchtung/normwissen/`) · **Adressat:** Leonis (Owner
-`hauptengine/contracts/`) · **Stand:** 2026-08-30 · **Status:** Entwurf zur
-Abstimmung — **nichts implementiert, kein Contract geändert**.
+`hauptengine/contracts/`) · **Stand:** 2026-08-30 · **Status:** **RATIFIZIERT** —
+die Contracts liegen auf main (PR #14), der Resolver fehlt noch.
 
 Fachliche Grundlage: [`OIB_RL2_TABELLE6.md`](OIB_RL2_TABELLE6.md) (Tabelle 6,
 Punkt 5.4, Erläuterungen, RL 2.1/2.2/2.3, Begriffsbestimmungen).
+
+## 0. Ratifizierung durch PR #14 — was gegenüber diesem Entwurf gilt
+
+PR #14 (`9376e5f`) hat `ProjektKontext`, `Gebaeudeteil`, `RaumReferenz`,
+`OibErgebnis`, `OibBefund` + `OibProvider` angelegt — bewusst **ohne Resolver und
+ohne Tabelle-6-Grenzwerte** (das ist Enis' Lane). Drei Punkte weichen vom Entwurf
+unten ab; **es gilt der Contract auf main**, nicht der Entwurfstext:
+
+| Entwurf (unten) | Contract auf main | Warum |
+|---|---|---|
+| `raum_ids: list[str]` + `floors: list[str]` | `raum_referenzen: list[RaumReferenz]` mit `RaumReferenz(floor, raum_id)` | Raum↔Geschoss bleibt über mehrere Geschosse eindeutig |
+| `arbeitsstaette_nach_aschg` auf `ProjektKontext` (global) | auf `Gebaeudeteil` | ein Gebäudeteil kann Arbeitsstätte sein, ein anderer nicht |
+| `nicht_zugeordnete_raum_ids` | `nicht_zugeordnete_raum_referenzen` | Folge von Punkt 1 |
+
+Analog heißt die Naht-Invariante jetzt: `∀ gt, ∀ rr ∈ gt.raum_referenzen:
+rr.floor == RaumModell.floor ∧ rr.raum_id ∈ {r.id}` (Testgrundlage liegt in
+`tests/contract/test_projekt_kontext_contract.py`).
+
+**Frage 1 ist beantwortet:** eigenes `OibProvider`-Protocol
+(`bewerte_oib(projekt) -> OibBefund`), `NormProvider` bleibt unberührt.
+**Frage 2 (`GebaeudeModell` für mehrgeschoßige Kennzahlen) bleibt offen** — der
+Contract kommentiert nur „gebäudeweit, NICHT geschossweise", ohne die Quelle der
+Kennzahlen zu klären. Solange niemand sie liefert, endet der Resolver bei
+`review_required` + `fehlende_fakten` — das ist gewollt, aber keine Antwort.
+
+**Noch offen (nicht Teil von PR #14):** `OibProvider` ist in keinem
+`ProviderBundle` verdrahtet und `pipeline.run()` nimmt keinen `ProjektKontext`
+entgegen. Der `OibBefund` hat also heute keinen Abnehmer — die Verdrahtung fasst
+`ports.py`/`pipeline.py` an und braucht 3-Owner-Konsens.
 
 **Problem:** Die Entscheidung „braucht dieses Bauvorhaben Sicherheitsbeleuchtung —
 und in welcher Stufe?" hängt an Gebäude- und Nutzungsfakten (Nutzungsart,
@@ -217,8 +246,15 @@ Fluchtniveau sind nicht geometrisch und für Selman nicht lieferbar. Außerdem i
 Projektkontext läuft in die Gegenrichtung.
 
 **Zwei Fragen an Leonis:**
-1. Methode auf `NormProvider` oder eigenes `OibProvider`-Protocol?
+1. ~~Methode auf `NormProvider` oder eigenes `OibProvider`-Protocol?~~
+   **Beantwortet (PR #14): eigenes `OibProvider`-Protocol.**
 2. Brauchen wir mittelfristig ein `GebaeudeModell` (mehrgeschoßige Kennzahlen)?
+   **Weiterhin offen** — siehe Abschnitt 0.
+
+**Erledigt durch PR #14:** `projekt_kontext.py`, `oib_ergebnis.py`, `__init__.py`,
+Schemas, `ports.py` (`OibProvider`), `tests/contract/`. **Noch offen:**
+`pipeline.py` (`run()` ohne `projekt`-Parameter), `ProviderBundle` (kein
+`oib`-Feld), Fake-Projektkontext in `tests/fakes.py`.
 
 ## 7. Beispiel
 

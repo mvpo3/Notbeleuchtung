@@ -37,14 +37,22 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Item | Slice | Owner | Status | Stand |
 |------|-------|-------|--------|-------|
 | Repo-Skelett + 3 Contracts + Fake-Durchstich | 0 | Leonis | **DONE** (13✓/1s) | 2026-08-27 |
-| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | **DONE** (PR #6 offen, auf main nachgezogen, 55✓) | 2026-08-29 |
+| Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | **MERGED** (PR #6 → `4c40050`) | 2026-08-30 |
 | Leonis echt: `communal_stgh_strategy` + `geometry` + `NotlichtPlatzierer` (Fake-Raum, echte Norm ab PR #6) | 2 | Leonis | **MERGED** (PR #4, 24✓) | 2026-08-28 |
 | Render echt: `dxf_renderer` + Schrack-Infra (`symbols/{library,inserter}.py`) + `CAD_Symbole/E-Symbole.dxf` | 3 | Leonis/Render | **MERGED** (PR #5, 40✓; GU-PDF-Sichtprüfung offen) | 2026-08-28 |
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
 | **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
+| Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | TODO (Contract steht, PR #14; Tabelle 6 extrahiert) | 2026-08-30 |
+| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | TODO (Contract steht, PR #22; Abnehmer = PR #23) | 2026-08-30 |
 
 **Legende:** TODO · WIP · BLOCKED · DONE.
+
+**Zuständigkeit `OibProvider` (2026-08-30 festgelegt):** Enis. Die
+Tabelle-6-Schwellenwerte sind Normwissen und gehören nach `normwissen/data/` —
+gleiche Begründung wie bei `NormProvider`. Der `ProjektKontext` ist dagegen
+**Projektinput** (Hauptengine/LB), nicht Normwissen: „Projektinput sagt, was
+gebaut wird; Normwissen sagt, was das bedeutet."
 
 ## Offene Cross-Naht-Fragen
 
@@ -52,17 +60,31 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
   Wohnung · F13-Wohnungs-Allokation · Erkennungsweite `l=z×h` (welche Höhe h) ·
   Antipanik 0,5 lx vs Rettungsweg 1 lx. (Übernommen aus elektro-planer H-20.)
 
-- (Enis→Leonis) **ProjektKontext-Contract fehlt (2026-08-30):** OIB-RL 2 Punkt 5.4 +
-  Tabelle 6 entscheidet, OB ein Bauvorhaben Sicherheitsbeleuchtung braucht
-  (eingeschränkt/uneingeschränkt). Dafür nötige Gebäudefakten (Nutzungsart,
-  Gebäudeklasse, Fluchtniveau, Betten/Personen/Flächen) kennt heute weder
-  `RaumModell` noch `pipeline.run()`. Spezifikation für Leonis:
-  `docs/SPEC_PROJEKTKONTEXT_OIB.md`; fachliche Grundlage `docs/OIB_RL2_TABELLE6.md`;
-  Quellen-/Belegstatus `docs/NORMQUELLEN_AT.md`. Contract-Anlage = 3-Owner-Approval.
+- (Enis→Leonis) ~~**ProjektKontext-Contract fehlt**~~ — **erledigt durch PR #14**
+  (`ProjektKontext`/`Gebaeudeteil`/`RaumReferenz`/`OibErgebnis`/`OibBefund` +
+  `OibProvider`). Abweichungen gegenüber der Spec und die verbleibenden offenen
+  Punkte stehen in `docs/SPEC_PROJEKTKONTEXT_OIB.md` Abschnitt 0. Fachliche
+  Grundlage `docs/OIB_RL2_TABELLE6.md`, Quellenstatus `docs/NORMQUELLEN_AT.md`
+  (Quell-PDFs liegen seit 2026-08-30 unter `knowledge/OIB-Richtlinien/` im Repo).
+
+- (Leonis→alle) **`LBVorgabe` und `OibBefund` haben keinen Abnehmer:**
+  `pipeline.run()` nimmt weder LB noch `ProjektKontext`, `ProviderBundle` hat
+  weder `lb`- noch `oib`-Feld. Selbst fertige Provider aus `normwissen/` könnten
+  heute nicht wirken. PR #23 verdrahtet die LB-Hälfte (`ports.py` + `pipeline.py`)
+  ⇒ 3-Owner-Approval; die OIB-Hälfte ist danach noch offen.
+
+- (Enis→Leonis) **LB-Vokabular:** `BereichsRegel.raum_typ` muss exakt auf Selmans
+  `RaumModell.raum_typ` mappen (`STIEGENHAUS`/`GANG`/`GARAGE`), sonst greift die
+  Exklusion im Platzierer nie. Vor dem LB-Parser-Slice festzurren.
+
 - (Enis) **Norm-Ausgabe-Drift:** `normwissen/data/en1838_grundwerte.yaml` zitiert
   ÖNORM EN 1838:2013; im Repo liegt die Ausgabe **2019-11-15** (IDT EN 1838:2013-07).
-  Inhaltlich deckungsgleich, Bezeichnung offen. EN 1838:2025-03 und EN 50172:2024-11
-  fehlen (kostenpflichtig).
+  Inhaltlich deckungsgleich, Bezeichnung offen. **Entschieden 2026-08-30:** vorerst
+  nur im YAML als Beleg-Status gekennzeichnet, nicht umgestellt — der String ist
+  Naht-Invariante und hängt an `tests/fixtures/*` (3-Owner), `tests/fakes.py`, einer
+  Leonis-Assertion und dem Contract-Default in `norm_regelwerk.py`
+  (Blast-Radius: `docs/NORMQUELLEN_AT.md` Abschnitt 2a) ⇒ eigener koordinierter
+  Slice. EN 1838:2025-03 und EN 50172:2024-11 fehlen weiterhin (kostenpflichtig).
 
 - (Enis/Leonis) **Photometrie-Ausnahme (entschieden 2026-08-29):** Leonis baut
   `normwissen/photometrie/` (LDT/EULUMDAT → exakte Lux) im Enis-Package. Bewusste
