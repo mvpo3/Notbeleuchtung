@@ -24,16 +24,24 @@ from .anker_strategy import plan_rettungszeichen_anker
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
+from .gang_strategy import plan_rettungszeichen_gang
 from .graph import build_circulation_graph, kreuzungs_anker
 
 
 def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
-    """Anker-Strategie, wenn der Graph Kreuzungen (degree>=3) hat — sonst Segment-
-    Fallback. So nutzt ein echter Zirkulationsgraph (Selman) die saubere Anker-
-    Platzierung, während das dünne Fixture die faithful 5-RZ-Reproduktion behält."""
+    """RZ-Strategie nach Verfügbarkeit des Fluchtweg-Wissens:
+
+    1. **Anker** (Graph-Kreuzungen degree>=3) — echter Zirkulationsgraph (Selman).
+    2. **Segment** — 1 RZ je Fluchtweg-Segment (dünnes 4OG-Fixture, faithful 5 RZ).
+    3. **GANG-Fallback** — weder Kreuzung noch Segment (fremde CAD-Familie ohne
+       erkannten Fluchtweg-Layer): RZ entlang der GANG-Mittelachsen, damit die
+       Engine auch ohne Fluchtweg-Layer RZ setzt (fischamender-Bug B2)."""
     if kreuzungs_anker(build_circulation_graph(raum)):
         return plan_rettungszeichen_anker(raum, norm)
-    return plan_rettungszeichen(raum, norm)
+    segment_rz = plan_rettungszeichen(raum, norm)
+    if segment_rz:
+        return segment_rz
+    return plan_rettungszeichen_gang(raum, norm)
 
 
 class NotlichtPlatzierer:
