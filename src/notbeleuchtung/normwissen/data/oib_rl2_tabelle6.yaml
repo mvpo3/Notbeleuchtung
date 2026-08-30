@@ -1,0 +1,429 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# oib_rl2_tabelle6.yaml — OIB-Richtlinie 2, Punkt 5.4 + Tabelle 6
+# „Braucht dieses Bauvorhaben Sicherheitsbeleuchtung — und in welcher Stufe?"
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Single Source für den OibRl2Provider (normwissen/oib/) — er hardcodet KEINEN
+# fachlichen Wert, alle Schwellen, Zeilenkriterien, Fundstellen und Fußnoten
+# stehen hier. Fachliche Herleitung Zeile für Zeile: docs/OIB_RL2_TABELLE6.md
+# (rein lesend aus den Original-PDFs unter knowledge/OIB-Richtlinien/).
+#
+# GRUNDREGELN (bindend, aus CLAUDE.md + Owner-Entscheidung 2026-08-30):
+#   1. KEIN UMKEHRSCHLUSS. Unterschreitet ein Projekt die Eingangsschwelle einer
+#      Zeile, schweigt Tabelle 6 — das heisst NICHT „nicht erforderlich".
+#      -> `unterhalb` liefert `review_required`, nie `nicht_erforderlich`.
+#   2. `nicht_erforderlich` NUR, wenn eine Quelle es woertlich sagt. Mit den
+#      heute im Repo liegenden Dokumenten ist dieser Fall unerreichbar — die
+#      Tabelle sagt „nicht erforderlich" ausschliesslich in der Spalte
+#      *uneingeschraenkt*, wo die eingeschraenkte Stufe gleichzeitig gilt.
+#   3. NICHTS RATEN. Fehlt ein Fakt (`None` = nicht erhoben), ist das Ergebnis
+#      `review_required` + der Fakt in `fehlende_fakten`.
+#   4. Jede `unsicherheit` mit `wirkung: blockiert` erzwingt `review_required`,
+#      auch wenn die Zahlen rechnerisch eindeutig waeren. Die rechnerische
+#      Kandidatenstufe erscheint dann nur als Hinweis im Audit-Trail, nie als
+#      verbindliche Stufe. `wirkung: informativ` darf neben einer definitiven
+#      Entscheidung stehen.
+#
+# SCHWELLEN-VOKABULAR (numerische Grenzen, einheitlich):
+#   ueber: X  ->  Wert > X   (exklusiv)
+#   ab:    X  ->  Wert >= X  (inklusiv)
+#   bis:   X  ->  Wert <= X  (inklusiv)
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  regelwerk: "OIB-Richtlinie 2"
+  norm_ausgabe: "Ausgabe Mai 2023 (OIB-330.2-029/23)"
+  quelle: "OIB-Richtlinie 2, Punkt 5.4 + Tabelle 6"
+  fundstelle_seite: "Norm-S. 32 / PDF-S. 34"
+  fundstelle_punkt_5_4: "Norm-S. 12 / PDF-S. 14"
+  erlaeuterungen: "OIB-RL 2 Erläuterungen (OIB-330.2-034/23), Erl.-S. 48 / PDF-S. 50"
+  quell_pdf: "knowledge/OIB-Richtlinien/OIB-Richtlinie 2 Brandschutz/oib-rl_2_ausgabe_mai_2023.pdf"
+  analyse: "docs/OIB_RL2_TABELLE6.md"
+  # Punkt 5.4 woertlich (RL 2, Norm-S. 12):
+  punkt_5_4_wortlaut: >-
+    Für die in der Tabelle 6 angeführten Nutzungen ist eine entsprechende
+    Sicherheitsbeleuchtung gemäß dieser Tabelle zu errichten. Bei Gebäuden bzw.
+    Bauwerken mit jeweils gemischter Nutzung gelten die für die jeweilige Nutzung
+    anzuwendenden Anforderungen.
+
+# Was die jeweilige Stufe in der Ausfuehrung bedeutet — woertlich aus den
+# Erlaeuterungen zu Punkt 5.4 (Erl.-S. 48). Wandert in OibErgebnis.ausfuehrungs_verweise.
+ausfuehrungs_verweise:
+  eingeschraenkt:
+    - "Sicherheitsbeleuchtung für Fluchtwege gemäß ÖNORM EN 1838 sowie ÖVE/ÖNORM EN 50172 (OIB-RL 2 Erläuterungen, Erl.-S. 48)"
+    - "Elektrische Anlage gemäß OVE E 8101 sowie – je nach Zutreffen – OVE-Richtlinie R 12-2 Punkte 3, 4 und 5.1 bis 5.3 (Erl.-S. 48)"
+    - "Betrieb im Brandfall (Funktionserhalt) gemäß OVE E 8101 sowie R 12-2 Punkt 6 — Abweichung möglich, wenn die Räume durch andere brandschutztechnische Maßnahmen (z.B. automatische Brandmeldeanlage) geschützt sind (Erl.-S. 48)"
+  uneingeschraenkt:
+    - "Sicherheitsbeleuchtung gemäß ÖNORM EN 1838 sowie ÖVE/ÖNORM EN 50172, NICHT auf Fluchtwege eingeschränkt (OIB-RL 2 Erläuterungen, Erl.-S. 48)"
+    - "Elektrische Anlage gemäß OVE E 8101 sowie – je nach Zutreffen – OVE-Richtlinie R 12-2 Punkte 3, 4 und 5.1 bis 5.3 (Erl.-S. 48)"
+    - "Betrieb im Brandfall (Funktionserhalt) gemäß OVE E 8101 sowie R 12-2 Punkt 6 — OHNE die bei der eingeschränkten Stufe vorgesehene Abweichungsmöglichkeit (Erl.-S. 48)"
+
+# Hinweise, die an JEDEM Ergebnis haengen (Kontext, kein Einfluss auf die Stufe).
+hinweise_global:
+  - "Verbindlichkeit: keines der geprüften Dokumente belegt, wodurch die OIB-Richtlinie 2 im konkreten Projekt verbindlich wird (Übernahme ins Landesbaurecht) — für den Audit-Trail offen."
+  - "Begriffsbrücke (Erl.-S. 48): mit 'Rettungsweg' in der ÖNORM EN 1838 ist der 'Fluchtweg' gemäß OIB-Begriffsbestimmungen gemeint."
+  - "Raumzuordnung NICHT geprüft: diese Schnittstelle (OibProvider.bewerte_oib) erhält kein RaumModell. Eine leere Liste 'nicht_zugeordnete_raum_referenzen' bedeutet daher NICHT, dass alle Räume zugeordnet sind — sie bedeutet 'auf dieser Schnittstelle nicht auswertbar'."
+
+# AStV-Parallelpfad (Erl.-S. 48). Kann Anforderungen nur ERGAENZEN, nie
+# entfallen lassen -> informativ, blockiert die Tabelle-6-Stufe nicht.
+astv_parallelpfad:
+  wenn_arbeitsstaette: "AStV-Parallelpfad (Erl.-S. 48): Gebäude/Räume, die nach ASchG Arbeitsstätte sind, sind gemäß AStV erforderlichenfalls mit Sicherheitsbeleuchtung auszustatten — auch wenn Tabelle 6 keine verlangt oder die Nutzung dort nicht enthalten ist. Der AStV-Volltext liegt nicht im Repo; dieser Pfad ist NICHT geprüft."
+  wenn_unbekannt: "'arbeitsstaette_nach_aschg' nicht erhoben — der AStV-Parallelpfad (Erl.-S. 48) wurde nicht geprüft. Er kann zusätzliche Anforderungen begründen, die Tabelle-6-Stufe aber nicht senken."
+
+# Ohne eindeutige Jurisdiktion keine OIB-RL-2-Entscheidung (Owner, 2026-08-30).
+jurisdiktion:
+  erforderlich: "AT"
+  fehlender_fakt: "jurisdiction"
+  grund: "Ohne eindeutig österreichische Jurisdiktion ('AT') ist die OIB-Richtlinie 2 nicht als anwendbar belegt."
+
+# Nutzungsarten, fuer die Tabelle 6 keine auswertbare Zeile hat.
+review_nutzungsarten:
+  VERKEHRSEINRICHTUNG:
+    grund: "Verkehrstechnische Einrichtungen (Flughäfen, Bahnhöfe): Zuständigkeit beim Bund, daher keine Werte in Tabelle 6."
+    hinweis: "Erl.-S. 48: 'sinngemäß KÖNNEN jedoch diese Nutzungen mit Punkt 4 gleichgestellt werden' — ausdrücklich eine Kann-Aussage, kein Automatismus. Gleichstellung ist eine Planer-Entscheidung."
+  NICHT_IN_TABELLE_6:
+    grund: "Nutzung ist in Tabelle 6 nicht angeführt — Punkt 5.4 greift nur für die dort angeführten Nutzungen."
+    hinweis: "Erl.-S. 48 verweist für nicht angeführte Nutzungen auf den AStV-Parallelpfad, sofern es sich um eine Arbeitsstätte nach ASchG handelt."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Tabelle 6 — auswertbare Zeilen.
+# Die Gruppenkoepfe 1 (Fluchtniveau <= 22 m), 5 (Gaststaetten), 9 (Raeume fuer
+# eine groessere Personenanzahl), 11 (Garagen/Stellplaetze/Parkdecks) und
+# 12 (Fluchtniveau > 22 m) tragen selbst keine Werte und sind daher keine
+# eigenen Eintraege — ihre Bedingungen stecken in `auswahl` der Unterzeilen.
+#
+# Aufbau eines Eintrags:
+#   nutzungsarten   welche ProjektKontext-Nutzungsarten auf diese Zeile zeigen
+#   auswahl         entscheidet, WELCHE Zeile gilt (nur `fluchtniveau_m`)
+#   voraussetzungen muss erfuellt sein, sonst „von Tabelle 6 nicht abgedeckt"
+#   kriterium       welches Gebaeudeteil-Feld die Stufe bestimmt
+#   entscheidung    `fest` (Zeile nennt die Stufe direkt) oder `baender`
+#   unsicherheiten  blockiert -> review_required; informativ -> nur Hinweis
+# ═══════════════════════════════════════════════════════════════════════════
+zeilen:
+
+  # ── Gruppe 1: Gebäude mit Fluchtniveau ≤ 22 m ──────────────────────────────
+  - zeile: "1.1"
+    bezeichnung: "Wohngebäude der GK 5, außerhalb von Wohnungen (Fluchtniveau ≤ 22 m)"
+    nutzungsarten: [WOHNGEBAEUDE]
+    auswahl:
+      fluchtniveau_m: {bis: 22.0}
+    voraussetzungen:
+      gebaeudeklasse_in: [GK5]
+      nicht_abgedeckt_text: "Tabelle 6 Zeile 1.1 nennt für Wohngebäude mit Fluchtniveau ≤ 22 m ausschließlich die Gebäudeklasse 5; Zeile 1.2 gilt nur für 'sonstige Gebäude'. Andere Gebäudeklassen sind von Tabelle 6 nicht abgedeckt (kein Umkehrschluss)."
+      lage_zur_wohnung: AUSSERHALB_WOHNUNG
+      lage_nicht_abgedeckt_text: "Zeile 1.1 gilt ausdrücklich 'außerhalb von Wohnungen'. Für Bereiche innerhalb von Wohnungen trifft Tabelle 6 keine Aussage."
+    entscheidung:
+      art: fest
+      stufe: eingeschraenkt
+      schwellenwert_text: "Wohngebäude der GK 5, Fluchtniveau ≤ 22 m, außerhalb von Wohnungen — Spalte 'eingeschränkt': erforderlich, Spalte 'uneingeschränkt': nicht erforderlich"
+
+  - zeile: "1.2"
+    bezeichnung: "sonstige Gebäude der GK 4 und 5 (Fluchtniveau ≤ 22 m)"
+    nutzungsarten: [SONSTIGES_GEBAEUDE]
+    auswahl:
+      fluchtniveau_m: {bis: 22.0}
+    voraussetzungen:
+      gebaeudeklasse_in: [GK4, GK5]
+      nicht_abgedeckt_text: "Tabelle 6 Zeile 1.2 nennt ausschließlich die Gebäudeklassen 4 und 5. Für GK 1–3 trifft Tabelle 6 keine Aussage (kein Umkehrschluss)."
+    entscheidung:
+      art: fest
+      stufe: eingeschraenkt
+      schwellenwert_text: "sonstiges Gebäude der GK 4 oder 5, Fluchtniveau ≤ 22 m — Spalte 'eingeschränkt': erforderlich, Spalte 'uneingeschränkt': nicht erforderlich"
+
+  # ── Zeile 2 ───────────────────────────────────────────────────────────────
+  - zeile: "2"
+    bezeichnung: "Schul- und Kindergartengebäude sowie vergleichbare Nutzung"
+    nutzungsarten: [SCHULE_KINDERGARTEN]
+    kriterium:
+      feld: netto_grundflaeche_m2
+      bezeichnung: "Netto-Grundfläche"
+      fussnote: "(1) Netto-Grundfläche"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {bis: 3200.0}
+      uneingeschraenkt: {ueber: 3200.0}
+      schwellentexte:
+        eingeschraenkt: "≤ 3.200 m² Netto-Grundfläche"
+        uneingeschraenkt: "> 3.200 m² Netto-Grundfläche"
+    unsicherheiten:
+      - kennung: netto_grundflaeche_definition
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — die für Tabelle 6 maßgebliche Definition der 'Netto-Grundfläche' (OIB-Begriffsbestimmungen, PDF-S. 10) war im Textextrakt nicht sauber auslesbar und ist damit nicht fachlich abgesichert. Der Schwellenwert 3.200 m² kann nur ausgewertet werden, wenn die Bezugsfläche verifiziert ist."
+
+  # ── Zeile 3 + Ausnahme 7.9.12 ─────────────────────────────────────────────
+  - zeile: "3"
+    bezeichnung: "Beherbergungsstätten, Studentenheime und vergleichbare Nutzungen"
+    nutzungsarten: [BEHERBERGUNG_STUDENTENHEIM]
+    kriterium:
+      feld: betten_anzahl
+      bezeichnung: "Betten"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 10, bis: 100}
+      uneingeschraenkt: {ueber: 100}
+      unterhalb:
+        text: "≤ 10 Betten — Tabelle 6 Zeile 3 trifft für diesen Bereich keine Aussage; daraus folgt NICHT 'nicht erforderlich' (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 10 und ≤ 100 Betten"
+        uneingeschraenkt: "> 100 Betten"
+
+  - zeile: "3 (i.V.m. 7.9.12)"
+    bezeichnung: "Schutzhütten in Extremlage — Ausnahme zu Punkt 3 der Tabelle 6"
+    nutzungsarten: [SCHUTZHUETTE_EXTREMLAGE]
+    fundstelle_seite: "RL 2 Punkt 7.9.12 / PDF-S. 22"
+    wortlaut: "Abweichend zu Punkt 3 der Tabelle 6 ist für Schutzhütten in Extremlage erst ab 30 Schlafplätzen eine Sicherheitsbeleuchtung erforderlich."
+    anwendungsschwelle:
+      feld: schlafplaetze_anzahl
+      bezeichnung: "Schlafplätze"
+      grenze: {ab: 30}
+      unterhalb_text: "< 30 Schlafplätze — Punkt 7.9.12 formuliert 'erst ab 30 Schlafplätzen erforderlich'. Ob daraus ein verbindliches 'nicht erforderlich' folgt, ist ein Negativschluss und als automatisierbare Regel nicht ratifiziert (Owner-Entscheidung 2026-08-30)."
+    kriterium:
+      feld: betten_anzahl
+      bezeichnung: "Betten"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 10, bis: 100}
+      uneingeschraenkt: {ueber: 100}
+      unterhalb:
+        text: "≤ 10 Betten — Tabelle 6 Zeile 3 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 10 und ≤ 100 Betten (Bänder der Zeile 3)"
+        uneingeschraenkt: "> 100 Betten (Bänder der Zeile 3)"
+    unsicherheiten:
+      - kennung: schutzhuette_stufenzuordnung
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — Punkt 7.9.12 verschiebt nur die Eingangsschwelle (30 Schlafplätze), nennt aber keine Stufe. Dass ab dieser Schwelle die Betten-Bänder der Zeile 3 gelten, ist Auslegung und in den vorliegenden Quellen nicht ausdrücklich getragen."
+
+  # ── Zeile 4 ───────────────────────────────────────────────────────────────
+  - zeile: "4"
+    bezeichnung: "Verkaufsstätten, Ausstellungsstätten"
+    nutzungsarten: [VERKAUFSSTAETTE_AUSSTELLUNGSSTAETTE]
+    kriterium:
+      feld: verkaufsflaeche_m2
+      bezeichnung: "Verkaufsfläche"
+      fussnote: "(2) Verkaufsfläche gemäß OIB-Begriffsbestimmungen (PDF-S. 14)"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 200.0, bis: 3000.0}
+      uneingeschraenkt: {ueber: 3000.0}
+      unterhalb:
+        text: "≤ 200 m² Verkaufsfläche — Tabelle 6 Zeile 4 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 200 m² und ≤ 3.000 m² Verkaufsfläche"
+        uneingeschraenkt: "> 3.000 m² Verkaufsfläche"
+
+  # ── Gruppe 5: Gaststätten ─────────────────────────────────────────────────
+  - zeile: "5.1"
+    bezeichnung: "Schank- oder Speisewirtschaften"
+    nutzungsarten: [SCHANK_SPEISEWIRTSCHAFT]
+    kriterium:
+      feld: verabreichungsplaetze_anzahl
+      bezeichnung: "Verabreichungsplätze"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 60, bis: 240}
+      uneingeschraenkt: {ueber: 240}
+      unterhalb:
+        text: "≤ 60 Verabreichungsplätze — Tabelle 6 Zeile 5.1 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 60 und ≤ 240 Verabreichungsplätze"
+        uneingeschraenkt: "> 240 Verabreichungsplätze"
+
+  - zeile: "5.2"
+    bezeichnung: "Diskotheken und Tanzcafés"
+    nutzungsarten: [DISKOTHEK_TANZCAFE]
+    kriterium:
+      feld: personen_anzahl_bestimmt
+      bezeichnung: "Personen"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {bis: 120}
+      uneingeschraenkt: {ueber: 120}
+      schwellentexte:
+        eingeschraenkt: "≤ 120 Personen"
+        uneingeschraenkt: "> 120 Personen"
+
+  # ── Zeilen 6 / 7 / 8 ──────────────────────────────────────────────────────
+  - zeile: "6"
+    bezeichnung: "Alters-, Alten- und Seniorenheime, Seniorenresidenzen und vergleichbare Nutzungen"
+    nutzungsarten: [ALTEN_SENIORENHEIM]
+    kriterium:
+      feld: betten_anzahl
+      bezeichnung: "Betten"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 10, bis: 100}
+      uneingeschraenkt: {ueber: 100}
+      unterhalb:
+        text: "≤ 10 Betten — Tabelle 6 Zeile 6 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 10 und ≤ 100 Betten"
+        uneingeschraenkt: "> 100 Betten"
+
+  - zeile: "7"
+    bezeichnung: "Pflegeheime"
+    nutzungsarten: [PFLEGEHEIM]
+    kriterium:
+      feld: betten_anzahl
+      bezeichnung: "Betten"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {bis: 16}
+      uneingeschraenkt: {ueber: 16}
+      schwellentexte:
+        eingeschraenkt: "≤ 16 Betten"
+        uneingeschraenkt: "> 16 Betten"
+
+  - zeile: "8"
+    bezeichnung: "Krankenhäuser"
+    nutzungsarten: [KRANKENHAUS]
+    entscheidung:
+      art: fest
+      stufe: uneingeschraenkt
+      schwellenwert_text: "Krankenhäuser — Spalte 'eingeschränkt': nicht zutreffend, Spalte 'uneingeschränkt': erforderlich (unabhängig von Kennzahlen)"
+
+  # ── Gruppe 9: Räume für eine größere Personenanzahl ───────────────────────
+  - zeile: "9.1"
+    bezeichnung: "Versammlungsstätten innerhalb von Gebäuden, Versammlungsräume und sonstige Räume, die für den Aufenthalt von mehr als 60 Personen bestimmt sind"
+    nutzungsarten: [VERSAMMLUNG_INNERHALB_GEBAEUDE]
+    anwendungsschwelle:
+      feld: personen_anzahl_bestimmt
+      bezeichnung: "Personen, für deren Aufenthalt der Raum bestimmt ist"
+      grenze: {ueber: 60}
+      unterhalb_text: "≤ 60 Personen — Zeile 9.1 gilt für Räume, die für den Aufenthalt von mehr als 60 Personen bestimmt sind; darunter trifft Tabelle 6 keine Aussage (kein Umkehrschluss)."
+    kriterium:
+      feld: personen_anzahl_bestimmt
+      bezeichnung: "Personen"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {bis: 240}
+      uneingeschraenkt: {ueber: 240}
+      schwellentexte:
+        eingeschraenkt: "≤ 240 Personen"
+        uneingeschraenkt: "> 240 Personen"
+    unsicherheiten:
+      - kennung: zeile_9_1_zwei_personenzahlen
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — Zeile 9.1 nennt zwei Personenzahlen: die Anwendungsschwelle 'mehr als 60 Personen bestimmt' und die Stufenschwelle 240. Dass beide dieselbe Größe meinen und beide auf 'personen_anzahl_bestimmt' abzubilden sind, ist naheliegend, aber Auslegung und in den vorliegenden Quellen nicht ausdrücklich getragen."
+
+  - zeile: "9.2"
+    bezeichnung: "Versammlungsstätten samt zugehörigen Bühnen- und Szeneflächen sowie Sportstätten außerhalb von Gebäuden"
+    nutzungsarten: [VERSAMMLUNG_AUSSERHALB_GEBAEUDE]
+    kriterium:
+      feld: personen_anzahl_bestimmt
+      bezeichnung: "Personen"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 120, bis: 5000}
+      uneingeschraenkt: {ueber: 5000}
+      unterhalb:
+        text: "≤ 120 Personen — Tabelle 6 Zeile 9.2 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 120 und ≤ 5.000 Personen"
+        uneingeschraenkt: "> 5.000 Personen"
+
+  # ── Zeile 10 ──────────────────────────────────────────────────────────────
+  - zeile: "10"
+    bezeichnung: "Betriebsbauten"
+    nutzungsarten: [BETRIEBSBAU]
+    hinweise:
+      - "OIB-Richtlinie 2.1 (Betriebsbauten) Punkt 3.6.5 / PDF-S. 7 stellt keine eigene Regel auf, sondern verweist ausschließlich auf Tabelle 6 der OIB-Richtlinie 2."
+    kriterium:
+      feld: netto_grundflaeche_m2
+      bezeichnung: "Netto-Grundfläche"
+      fussnote: "(1) Netto-Grundfläche"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 200.0}
+      uneingeschraenkt:
+        nicht_aufloesbar: "Spalte 'uneingeschränkt' der Zeile 10 lautet 'gemäß Arbeitsstättenverordnung (AStV)'. Der AStV-Volltext liegt nicht im Repo — die uneingeschränkte Stufe ist aus den vorhandenen Quellen nicht auflösbar."
+      unterhalb:
+        text: "≤ 200 m² Netto-Grundfläche — Tabelle 6 Zeile 10 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 200 m² Netto-Grundfläche"
+    unsicherheiten:
+      - kennung: zeile_10_astv_stufe
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — aus Zeile 10 ist bei > 200 m² Netto-Grundfläche MINDESTENS die eingeschränkte Sicherheitsbeleuchtung ableitbar; ob zusätzlich die uneingeschränkte Stufe greift, richtet sich nach der Arbeitsstättenverordnung (AStV), die im Repo nicht belegt ist. Ohne diesen Pfad wird keine definitive Stufe zurückgegeben."
+      - kennung: netto_grundflaeche_definition
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — die für Tabelle 6 maßgebliche Definition der 'Netto-Grundfläche' (OIB-Begriffsbestimmungen, PDF-S. 10) war im Textextrakt nicht sauber auslesbar und ist damit nicht fachlich abgesichert."
+
+  # ── Gruppe 11: Garagen, überdachte Stellplätze, Parkdecks ────────────────
+  - zeile: "11.1"
+    bezeichnung: "Garagen und Parkdecks"
+    nutzungsarten: [GARAGE, PARKDECK]
+    hinweise:
+      - "OIB-Richtlinie 2.2 Punkt 5.5.3 / PDF-S. 7: 'In Garagen mit einer Nutzfläche von mehr als 250 m² ist eine Sicherheitsbeleuchtung erforderlich, wobei die Anforderungen der Tabelle 6 … gelten.' — deckungsgleich mit dieser Zeile."
+      - "OIB-Richtlinie 2.2 Tabelle 3 Zeile 8.2 / PDF-S. 13 verweist für Parkdecks ausdrücklich auf 'Tabelle 6 der OIB-Richtlinie 2'."
+      - "Für Garagen und überdachte Stellplätze ≤ 250 m² (RL 2.2 Kapitel 2 und 3) gibt es keinen Sicherheitsbeleuchtungs-Punkt — Schweigen, kein 'nicht erforderlich'."
+    kriterium:
+      feld: nutzflaeche_garage_m2
+      bezeichnung: "Nutzfläche"
+      fussnote: "(3) Nutzfläche – Garagen, überdachte Stellplätze, Parkdecks (gemäß OIB-Begriffsbestimmungen, PDF-S. 11)"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 250.0, bis: 1600.0}
+      uneingeschraenkt: {ueber: 1600.0}
+      unterhalb:
+        text: "≤ 250 m² Nutzfläche — Tabelle 6 Zeile 11.1 trifft für diesen Bereich keine Aussage; RL 2.2 Kapitel 2 und 3 schweigen ebenfalls (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 250 m² und ≤ 1.600 m² Nutzfläche"
+        uneingeschraenkt: "> 1.600 m² Nutzfläche"
+
+  - zeile: "11.2"
+    bezeichnung: "überdachte Stellplätze"
+    nutzungsarten: [UEBERDACHTER_STELLPLATZ]
+    hinweise:
+      - "OIB-Richtlinie 2.2 Punkt 4.3 / PDF-S. 6 verweist für überdachte Stellplätze auf Tabelle 6; der Kapitel-Anwendungsbereich beginnt bei > 250 m²."
+    kriterium:
+      feld: nutzflaeche_garage_m2
+      bezeichnung: "Fläche"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 1600.0}
+      uneingeschraenkt:
+        entfaellt: "Spalte 'uneingeschränkt' der Zeile 11.2 lautet 'nicht erforderlich'."
+      unterhalb:
+        text: "≤ 1.600 m² — Tabelle 6 Zeile 11.2 trifft für diesen Bereich keine Aussage (kein Umkehrschluss)."
+      schwellentexte:
+        eingeschraenkt: "> 1.600 m²"
+    unsicherheiten:
+      - kennung: zeile_11_2_flaechen_fussnote
+        wirkung: blockiert
+        text: "MANUELL PRÜFEN — Zeile 11.2 trägt im Original keinen Fußnoten-Marker für die Flächeneinheit (vermutlich '(3) Nutzfläche' wie Zeile 11.1). Welche Bezugsfläche der Schwellenwert 1.600 m² meint, ist damit nicht abgesichert."
+
+  # ── Gruppe 12: Gebäude mit Fluchtniveau > 22 m ────────────────────────────
+  - zeile: "12.1"
+    bezeichnung: "Wohngebäude mit Fluchtniveau > 22 m, außerhalb von Wohnungen"
+    nutzungsarten: [WOHNGEBAEUDE]
+    hinweise:
+      - "OIB-Richtlinie 2.3 Punkt 2.14 / PDF-S. 8 stellt keine eigene Regel auf, sondern verweist ausschließlich auf Tabelle 6. RL 2.3 gliedert nach ≤ 32 / > 32 ≤ 90 / > 90 m; Tabelle 6 kennt nur die Grenze 32 m."
+    auswahl:
+      fluchtniveau_m: {ueber: 22.0}
+    voraussetzungen:
+      lage_zur_wohnung: AUSSERHALB_WOHNUNG
+      lage_nicht_abgedeckt_text: "Zeile 12.1 gilt ausdrücklich 'außerhalb von Wohnungen'. Für Bereiche innerhalb von Wohnungen trifft Tabelle 6 keine Aussage."
+    kriterium:
+      feld: fluchtniveau_m
+      bezeichnung: "Fluchtniveau"
+    entscheidung:
+      art: baender
+      eingeschraenkt: {ueber: 22.0, bis: 32.0}
+      uneingeschraenkt: {ueber: 32.0}
+      schwellentexte:
+        eingeschraenkt: "> 22 m und ≤ 32 m Fluchtniveau"
+        uneingeschraenkt: "> 32 m Fluchtniveau"
+
+  - zeile: "12.2"
+    bezeichnung: "sonstige Gebäude mit Fluchtniveau > 22 m"
+    nutzungsarten: [SONSTIGES_GEBAEUDE]
+    hinweise:
+      - "OIB-Richtlinie 2.3 Punkt 2.14 / PDF-S. 8 verweist ausschließlich auf Tabelle 6."
+    auswahl:
+      fluchtniveau_m: {ueber: 22.0}
+    entscheidung:
+      art: fest
+      stufe: uneingeschraenkt
+      schwellenwert_text: "sonstiges Gebäude mit Fluchtniveau > 22 m — Spalte 'eingeschränkt': nicht zutreffend, Spalte 'uneingeschränkt': erforderlich"
