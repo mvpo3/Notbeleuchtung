@@ -44,8 +44,9 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
     def get_bundle() -> ProviderBundle:
         try:
             return bundle_factory()
-        except NotImplementedError as exc:
-            # Registry noch nicht verdrahtet (echte Provider Slice 1/4 offen).
+        except (NotImplementedError, ImportError) as exc:
+            # Ein Provider-Package ist noch Scaffold (Enis' Norm #6 / Selman's Raum #13
+            # noch nicht gemergt) → build_default_bundle importiert nicht.
             raise HTTPException(status_code=503, detail=f"Engine noch nicht verdrahtet: {exc}") from exc
 
     @app.get("/health")
