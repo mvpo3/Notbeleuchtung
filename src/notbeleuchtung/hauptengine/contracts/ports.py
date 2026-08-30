@@ -12,6 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Protocol, runtime_checkable
 
+from .lb_vorgabe import LBVorgabe
 from .norm_regelwerk import NormAnforderung, NormRegelwerk
 from .oib_ergebnis import OibBefund
 from .platzierung_ergebnis import PlatzierungsErgebnis
@@ -24,6 +25,18 @@ class RaumProvider(Protocol):
     """Selman — Grundriss-DXF -> RaumModell."""
 
     def parse(self, dxf_path: str, floor: str) -> RaumModell: ...
+
+
+@runtime_checkable
+class LBProvider(Protocol):
+    """Enis — Leistungsbeschreibung (2. Input) -> LBVorgabe.
+
+    Parst die explizite Auftraggeber-LB in die strukturierten Vorgaben, die
+    Norm-Defaults übersteuern. Implementierung folgt (`normwissen/lb/`) — hier nur
+    das Protocol. Fehlt der 2. Input, gibt es keine LBVorgabe → reines Norm-Verhalten.
+    """
+
+    def parse_lb(self, lb_path: str) -> LBVorgabe: ...
 
 
 @runtime_checkable
