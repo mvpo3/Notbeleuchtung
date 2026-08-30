@@ -1,0 +1,13 @@
+Projekt Fischa 46 — GU-Leistungsbeschreibung Elektro
+
+2.10 Sicherheitsbeleuchtung
+Für die Stiegenhäuser und die an die Stiegenhäuser anschließenden Gänge ist keine
+LED-Sicherheitsbeleuchtung herzustellen (GK4).
+
+2.11 In der Garage ist eine LED-Sicherheitsbeleuchtung herzustellen.
+
+Die Sicherheitsstromversorgung erfolgt als Gruppenbatterie im Technikraum.
+Betriebsdauer 8 Std. Umschaltzeit < 0,5 s. Mindestbeleuchtungsstärke im Fluchtweg 1 lx.
+Einzelleuchtenüberwachung, WEB-basierte Prüfung über Controller (LAN).
+Piktogramme nach EN ISO 7010. Normen: ÖVE E8101, R12-2, EN 1838, ÖNORM Z1000.
+An Feuerlöschern ist eine Beleuchtungsstärke von 5 lx sicherzustellen.
