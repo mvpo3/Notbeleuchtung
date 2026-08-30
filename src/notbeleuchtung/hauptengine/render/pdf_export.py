@@ -33,10 +33,13 @@ def dxf_zu_pdf(
     from ezdxf.addons.drawing import Frontend, RenderContext
     from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 
-    # Schrift mit voller Glyph-Abdeckung (Umlaute etc.) für die Legenden-Texte.
-    matplotlib.rcParams["font.family"] = "DejaVu Sans"
-
     doc = ezdxf.readfile(str(dxf_path))
+    # Der DXF-Standard-Textstil nutzt die SHX-Schrift „txt" — deren Glyph-Abdeckung im
+    # matplotlib-Backend ist lückenhaft (Großbuchstaben-O/Umlaute → Kästchen). Für die
+    # PDF-/Bild-Ausgabe auf eine TTF mit voller Abdeckung umstellen (DXF selbst bleibt
+    # unangetastet — CAD rendert weiter mit seiner Standard-Schrift).
+    if "Standard" in doc.styles:
+        doc.styles.get("Standard").dxf.font = "DejaVuSans.ttf"
     bg = "black" if dunkel else "white"
     fig = plt.figure(figsize=(breite_zoll, hoehe_zoll), dpi=dpi)
     ax = fig.add_axes([0, 0, 1, 1])
