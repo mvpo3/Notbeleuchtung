@@ -4,7 +4,53 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-08-29 Session-Ende) — HIER WEITER
+## STAND (2026-08-30 Session-Ende) — HIER WEITER
+
+> Diese Session lief als **F2-Fenster** (Worktree `Notbeleuchtung-F2/`, Revier
+> `raumerkennung/` + `normwissen/`). F1 arbeitet parallel an `platzierung/` +
+> `hauptengine/`. Board: `docs/COORDINATION.md`.
+
+**Engine läuft jetzt echt end-to-end.** `registry.build_default_bundle()` bindet das
+volle Trio + LB: ArchitekturRaumProvider (Selman) + En1838NormProvider + LbTextProvider
+(Enis) + NotlichtPlatzierer (Leonis). F1 hat zudem die **Photometrie-Naht verdrahtet**
+(PR #42): `build_default_bundle(ldt_path=…)` → `photometrie_i_cd_fn` → Platzierer nutzt
+richtungsabhängige LDT-Lichtstärke statt Konstante.
+
+**Heute gemergt (F2):**
+- **① Raumtyp-Geometrie** (PR #39, `raumerkennung/geometrie_typ.py`): STIEGENHAUS aus
+  STIEGE-Blöcken, GANG aus `09-WEG`/`A_Fluchtweg`. Grund: echte Mollgasse-EG trägt
+  **0 Raum-Typ-Labels** (566 Texte geprüft) → Text-Matching unmöglich, Typisierung muss
+  aus Geometrie kommen. `provider.parse` Mollgasse: **0 → 7 typisiert** (2 STIEGENHAUS,
+  5 GANG).
+- **② LB-Parser** (PR #40, `normwissen/lb/`): `LbTextProvider.parse_lb(text/PDF) →
+  LBVorgabe`. Fischa GK4: Stiegenhaus+Gänge **exkl** (kein SL), Garage **inkl**; +Skalare
+  (8 Std→480, Umschaltzeit, Lux, System, Prüfung, Sonder-Lux). Registry `bundle.lb`.
+- Bereits fertig: ③ OIB-Resolver (`normwissen/oib/`), ④ IES-Import (`lade_ies`, PR #33).
+- ⑤ Echte Schrack-LDT + `catalog_key→LDT`-Mapping: **blockiert bis Owner eine reale
+  .ldt/.ies liefert**.
+
+**Verifizierter Kern-Blocker** (`[[echter-durchstich-verifikation]]`, docs): der echte
+Durchstich läuft, platziert aber je Plan wenig/nichts, weil **Selmans RaumProvider je
+CAD-Familie unvollständige Semantik** liefert (Mollgasse: Fragmente statt Räume, keine
+Typen; Herrenholz: Typen ok, 0 Ausgänge/Zirkulation). Kein Sprach-/ML-Rewrite nötig —
+Entscheidung dokumentiert in `docs/entscheidungen/0001-raumerkennung-sprache-python-und-ml.md`.
+
+**Morgen — konkrete nächste Tasks (Priorität):**
+1. **GARAGE-Typisierung** in `raumerkennung` (`raumtyp._TYP_MAP`/`classify_room` +
+   ggf. geometrisch): die LB-Inklusion „SL nur in Garage" (Fischa) greift erst, wenn
+   Räume als GARAGE typisiert werden. Kleiner, hoher Hebel.
+2. **Gap-Healing** Mollgasse-Raumpolygone (Doppellinien-Wände/Türlücken → echte Räume
+   statt 185 Fragmenten) — der harte Teil, macht auch Wohnräume typisierbar.
+3. **LB-Konsum im Platzierer** (F1-Lane, mit F1 abstimmen): `bereiche_exklusion` als
+   Hard-Override vor dem Norm-Default (Fischa: kein SL in Stiegenhaus/Gang trotz Norm).
+4. Ausgänge/Zirkulation pro CAD-Familie (Fischamender B2 rest) — Layer-Muster wie GANG.
+5. ⑤ sobald echte LDT/IES da: Real-Test + `catalog_key→Photometrie`-Lookup.
+
+Stand: **main grün** (290+ Tests), ruff clean, schema in sync, kein Contract-Touch.
+Setup: `.venv/Scripts/python.exe -m pytest -q` (venv im Haupt-Worktree; aus `Notbeleuchtung-F2`
+via `../Notbeleuchtung/.venv/Scripts/python.exe`).
+
+## STAND (2026-08-29 Session-Ende) — Historie
 
 **Platzier-Regeln aus dem Wissen kodiert** (Commit `e87a745`, `anker_strategy.py`):
 1. **RZ-Dichte = `l = z·h`** — `plan_rettungszeichen_sichtlinie` zieht `max_abstand_mm`
