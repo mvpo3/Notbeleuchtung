@@ -79,6 +79,11 @@
           "default": "",
           "title": "Norm Quelle",
           "type": "string"
+        },
+        "lb_quelle": {
+          "default": "",
+          "title": "Lb Quelle",
+          "type": "string"
         }
       },
       "required": [
@@ -99,7 +104,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.0.0",
+      "default": "1.1.0",
       "title": "Contract Version",
       "type": "string"
     },

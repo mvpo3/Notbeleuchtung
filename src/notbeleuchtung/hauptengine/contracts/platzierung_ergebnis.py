@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.0.0"
+CONTRACT_VERSION = "1.1.0"   # 1.1.0: +Platzierung.lb_quelle (LB-Provenienz, 2. Input)
 
 Kind = Literal["rz", "sicherheitsleuchte", "antipanik"]
 Richtung = Literal["links", "rechts", "gerade", "oben", "unten"]
@@ -33,6 +33,8 @@ class Platzierung(BaseModel):
     circuit_hint: str = ""               # z.B. "AGV-A-F13" (Sicherheitskreis)
     covers_segment: list[str] = Field(default_factory=list)  # FK -> RaumModell segment_id
     norm_quelle: str = ""                # welche NormAnforderung diese Platzierung begründet
+    lb_quelle: str = ""                  # LB-Provenienz (2. Input): welche LBVorgabe sie
+    #                                      erzwang/übersteuerte (leer = rein norm-getrieben)
 
 
 class PlatzierungsErgebnis(BaseModel):
