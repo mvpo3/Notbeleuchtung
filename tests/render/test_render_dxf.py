@@ -51,6 +51,32 @@ def test_summary_superset_und_rendered_true(rendered):
     assert Path(summary["output_path"]).is_file()
 
 
+def test_ohne_lb_keine_legende(rendered):
+    _, summary, doc = rendered
+    assert summary["lb_legende_drawn"] is False
+    assert not doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Legende']")
+
+
+def test_lb_legende_traegt_system_spec(contracts, tmp_path):
+    from notbeleuchtung.hauptengine.contracts import LBVorgabe
+    platzierung, raum = contracts
+    lb = LBVorgabe(
+        system_typ="gruppenbatterie", betriebsdauer_min=480, umschaltzeit_max_s=0.5,
+        mindest_lux_fluchtweg=1.0, norm_bezug=["EN 1838", "OVE R 12-2"],
+        lb_quelle="LB Fischa §2.11",
+    )
+    out = tmp_path / "mit_lb.dxf"
+    summary = render_dxf(platzierung, raum, out, lb)
+    assert summary["lb_legende_drawn"] is True
+    doc = ezdxf.readfile(str(out))
+    legenden = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Legende']")
+    assert len(legenden) == 1
+    txt = legenden[0].text
+    assert "Gruppenbatterie" in txt
+    assert "8 h" in txt                 # 480 min → 8 h
+    assert "EN 1838" in txt
+
+
 def test_fuenf_inserts_auf_sicherheitslayer(rendered):
     platzierung, _, doc = rendered
     inserts = doc.modelspace().query("INSERT")
