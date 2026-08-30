@@ -4,162 +4,189 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (zuletzt 2026-08-30, abends)
+## Stand (2026-08-30, abends — Tagesabschluss)
 
-### Wiedereinstieg in 30 Sekunden
-1. Branch **`enis/normquellen-oib-docs`** (von aktuellem main). Der alte Branch
-   `enis/slice-1-normprovider` ist tot: **PR #6 ist gemerged** (`4c40050`), sein
-   Code liegt vollständig auf main.
-2. `.venv/bin/python -m pytest -q` muss **144 passed, 5 skipped** zeigen. Nach
-   einem Merge von main vorher `.venv/bin/python -m pip install -e ".[dev,api]"`
-   (main hat seit PR #6 `networkx`, `scikit-image`, `httpx` ergänzt).
-3. Nächster fachlicher Schritt: „Was als Nächstes" unten — **beide Contracts
-   liegen bereit, beide Implementierungen fehlen.**
+### Wiedereinstieg in 60 Sekunden
+1. Branch **`enis/lb-parser`**, HEAD `86adfa9`, sauber auf `origin/main` (`b1a33e6`)
+   rebased. Working Tree clean, **kein Rebase aktiv, keine Konflikte offen.**
+2. ⚠ **Der Branch ist NICHT mergefähig und nicht lauffähig.** Die öffentliche API
+   steht auf der Enis-Fassung (`LbParser`), `registry.build_default_bundle()` auf
+   main importiert aber `LbTextProvider` → `import notbeleuchtung` bricht. Das ist
+   der bewusst offen gelassene Stopp-Punkt, **nicht** ein Fehler.
+3. Erster Schritt morgen: **API-Integration** (Abschnitt „MORGEN ZUERST").
+4. `enis/lb-parser` ist gegenüber `origin/enis/lb-parser` **divergiert** (der alte
+   Push saß auf altem main). Ein späterer Push braucht `--force-with-lease` —
+   heute bewusst NICHT gemacht.
 
-### Slice 1 (NormRegelwerk) — abgeschlossen und auf main
-`En1838NormProvider` (`normwissen/provider.py`) liest `normwissen/data/
-en1838_grundwerte.yaml` + `raumtyp_regeln.yaml`, erfüllt das Protocol
-`NormProvider`, hardcodet nichts. Fachliche Ausprägung:
-- **STIEGENHAUS-Raum → `sicherheitsleuchte`** (Aufheller, EN 1838 §4.1) statt `rz`;
-  Rettungszeichen hängen an den Fluchtweg-**Segmenten**.
-- **GANG + `default`** bieten alle vier Pfeil-Keys an; Richtung wählt Leonis.
-- **Antipanik** auf Katalog-Key `antipanik_leuchte`; **SAAL `mindest_anzahl: 4`**
-  als Raster-Stützstellen (§4.3.1).
-- Snapshot-Fixture **immer** aus dem echten Provider generieren, nie handschreiben:
-  `En1838NormProvider().regelwerk_snapshot().model_dump()` → JSON, indent 2.
-`heights_fachpraxis`/`clearance_rules` bewusst NICHT portiert.
+## MORGEN ZUERST
 
-### Was sich seit dem letzten Handoff geändert hat (wichtig!)
-Leonis hat **beide Contracts geliefert, auf die diese Lane gewartet hat** — jeweils
-bewusst **ohne Implementierung**, die ist Enis' Arbeit:
+1. `git fetch origin` — aktuellen `origin/main` prüfen.
+2. **KEINEN neuen Rebase** starten, solange sich main nicht erneut geändert hat.
+3. **API-Integration** (eigener Commit). Die fail-closed Enis-Implementierung
+   bleibt die fachliche Basis, die öffentliche main-API bleibt erhalten:
+   - `LbParser` → **`LbTextProvider`** umbenennen
+   - Modul-Funktion **`parse_lb(lb_path: str)`** ergänzen/erhalten
+   - `registry.build_default_bundle()` mit `lb=LbTextProvider()` **unverändert lassen**
+   - Registry-/Pipeline-Verdrahtung von Leonis **nicht** zurückdrehen
+   - zusätzlich exportieren: `LbBericht`, `FeldBefund`, `LbFehler`,
+     `LbNichtLesbar`, `LbReviewRequired`
+   - **keine** Contract-Änderung
+4. **Testdateien fachlich zusammenführen** (main + Enis).
+   Unbedingt erhalten: **`test_registry_bundle_hat_lb_provider`**, die sinnvollen
+   main-Regressionstests, und alle Enis-Tests (Fail-Closed, Audit, Seiten, Quellen).
+   Doppelte Tests zusammenführen statt beide behalten. Keine Tests still löschen.
+   **NICHT künstlich erfüllen** (alle fachlich widerlegt, siehe unten):
+   Fischa → 480 min · 0,5 s · 1 lx · 5 lx · EN ISO 7010 · 24 h → 1440 min.
+5. **Regressionstest:** ein synthetischer Text „Störung innerhalb 24 Stunden
+   beheben" darf **niemals** `betriebsdauer_min=1440` erzeugen; `betriebsdauer_min`
+   bleibt `None`, wenn keine Betriebsdauer im Notbeleuchtungs-Kontext steht.
+6. Verifizieren:
+   ```
+   .venv/bin/python -c "import notbeleuchtung; print('import ok')"
+   .venv/bin/python -m pytest tests/normwissen/test_lb_parser.py -q
+   .venv/bin/python -m pytest -q
+   .venv/bin/python scripts/gen_schema.py --check
+   .venv/bin/ruff check .
+   ```
+7. **Echte lokale PDFs gegenprüfen** (`Leistungsbeschreibung BSP/`, gitignored):
+   - *Fischa*: keine mo-Elektro-Skalare · kein 1440-min-False-Positive · GARAGE
+     blockiert · Systemtyp-Konflikt sichtbar · Seiten korrekt (§2.10/§2.11 = S. 37)
+   - *mo-Elektro*: 480 min · 0,5 s · 1,0 lx · Feuerlöscher/Wandhydrant 5 lx ·
+     EN ISO 7010 · Seiten korrekt
+8. Erst wenn alles grün: `git diff --stat origin/main...HEAD` prüfen.
+9. Erst mit **explizitem User-GO**: `git push --force-with-lease` (der Branch wurde
+   durch den Rebase neu geschrieben).
+10. Danach PR öffnen — **nicht** automatisch mergen.
 
-| PR | Contract | Protocol | Implementierung |
-|---|---|---|---|
-| #14 | `ProjektKontext`, `Gebaeudeteil`, `RaumReferenz`, `OibErgebnis`, `OibBefund` | `OibProvider.bewerte_oib(projekt) -> OibBefund` | **fehlt** (`normwissen/oib/`) |
-| #22 | `LBVorgabe`, `BereichsRegel`, `SonderLux` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | **fehlt** (`normwissen/lb/`) |
+## OIB-Resolver — fertig, auf main
+PR #32 gemerged (`564b7e9`). `normwissen/oib/` + `data/oib_rl2_tabelle6.yaml`
+implementieren OIB-RL 2 Punkt 5.4 + Tabelle 6 (18 auswertbare Zeilen), erfüllen
+`OibProvider.bewerte_oib`. Alle Schwellenwerte in YAML, nichts in Python hardcodiert.
+Fail-closed-Regeln: kein Umkehrschluss · `nicht_erforderlich` wird nie ausgegeben ·
+fehlender Fakt → `review_required` + `fehlende_fakten` · blockierende Unsicherheit
+schlägt Rechnen (Kandidatenstufe nur im Audit).
 
-`ports.py` sagt bei `LBProvider` wörtlich „Enis implementiert in `normwissen/lb/`".
-Drei Abweichungen von der Spec sind in PR #14 eingeflossen (`RaumReferenz` statt
-`raum_ids`+`floors`; `arbeitsstaette_nach_aschg` pro Gebäudeteil; eigenes
-`OibProvider`-Protocol) — dokumentiert in `docs/SPEC_PROJEKTKONTEXT_OIB.md`
-Abschnitt 0. **Es gilt der Contract auf main, nicht der Entwurfstext.**
+**Offene Primärquelle:** ÖNORM B 1800:2013-08-01 — die OIB-Dokumente definieren die
+Netto-Grundfläche nicht selbst, sondern verweisen dorthin (Begriffsbestimmungen
+Norm-S. 7). Solange sie fehlt, bleiben **Zeile 2 und Zeile 10** Review-Fälle.
+**Zeile 11.2** bleibt Review, weil sie im Original keinen Fußnoten-Marker trägt
+(am PDF bestätigt). Details: `docs/NORMQUELLEN_AT.md` Abschnitt 4 + Zeile-0-Eintrag.
 
-⚠ **Keiner der beiden Contracts hat heute einen Abnehmer:** `pipeline.run()` nimmt
-weder LB noch `ProjektKontext`, `ProviderBundle` hat weder `lb`- noch `oib`-Feld.
-Leonis' offener **PR #23** verdrahtet die LB-Hälfte (fasst `contracts/ports.py` an
-⇒ **dein Approval nötig**, 3-Owner-CODEOWNERS). **PR #24** (GANG-Fallback) ist
-reines Platzierungs-Paket, nur zur Kenntnis.
+## LB-Parser — implementiert, API-Integration offen
+Auf `enis/lb-parser` (5 Commits): `normwissen/lb/{text,struktur,felder,parser,
+bericht}.py` + `data/lb_extraktion.yaml`, PDF-Support über **pypdf** (in
+`pyproject.toml` ergänzt, Lazy-Import — kein Zwang auf ein `pdftotext`-Binary).
 
-### 2026-08-30 — Quellen im Repo + Beleg-Status
-- **`knowledge/OIB-Richtlinien/`** (45 Dateien, Mai 2023, RL 1–7 + Sonderrichtlinien),
-  **`knowledge/OVE-Fachinformation/`** (17, E01–E13 + H02),
-  **`knowledge/Österreichische Rechtsquelle/`** (1) sind jetzt **committet**
-  (Präzedenz: `knowledge/**` ist in `.gitignore` explizit freigegeben).
-  `Leistungsbeschreibung BSP/` bleibt untracked — dafür gibt es Leonis' Digest
-  `knowledge/extracted/LB_ANALYSE_beispiele.md`.
-- **`normwissen/data/*.yaml` trägt jetzt je Wert einen Beleg-Marker**
-  (`[BELEGT]` / `[PRAXIS]` / `[ANNAHME]` / `[UNSCHARF]`) mit Fundstelle. Kein Wert
-  geändert. Damit ist sichtbar: `montagehoehe_mm 2400` und `mindest_anzahl 1/4`
-  sind Annahmen, `piktogramm_hoehe 0,15` ist Praxis, nicht Norm.
-- Drei Analysedokumente: **`docs/NORMQUELLEN_AT.md`** (Quellenstatus, Ebenen A–D,
-  Blast-Radius der Ausgabe-Drift in Abschnitt 2a), **`docs/OIB_RL2_TABELLE6.md`**
-  (Tabelle 6 vollständig, Punkt 5.4, Erläuterungen S.48, Sonderrichtlinien),
-  **`docs/SPEC_PROJEKTKONTEXT_OIB.md`** (Contract-Spec, jetzt ratifiziert).
+- **Fail closed:** `parse_lb()` liefert eine `LBVorgabe` nur ohne blockierenden
+  Befund, sonst `LbReviewRequired` (mit vollem `LbBericht`) bzw. `LbNichtLesbar`.
+  Blockierend: nicht lesbar · kein Notbeleuchtungs-Abschnitt · ausgelagerter
+  Verweis ohne eigene Vorgaben · Raumtyp, den die Raumerkennung nicht erzeugt ·
+  Raumtyp gleichzeitig ein- und ausgeschlossen.
+- **Datengetrieben:** alle Anker, Muster, Einheiten und das Raumtyp-Vokabular in
+  `data/lb_extraktion.yaml` — Python enthält nur die Mechanik.
+- **Audit-Trail seitengenau:** jeder Befund trägt die Seite des **Treffers**, nicht
+  die des Abschnittsanfangs (`Abschnitt.seite_fuer(offset)`).
+- **Normverweise erzeugen nie Werte** · Systemtyp-Widerspruch → kein Wert, Review ·
+  Kontext-Gating als Homonym-Abwehr (Brausebatterie/Kabinennotbeleuchtung).
+- Test-Fixtures unter `tests/normwissen/lb_fixtures/` sind **synthetisch und
+  anonymisiert**. Kein Kundendokument im Repo; die echten PDFs bleiben gitignored.
+- Letzter grüner Stand **vor** dem Rebase: **296 passed / 5 skipped** (39 LB-Tests),
+  schema in sync, ruff sauber. Nach dem Rebase erst nach der API-Integration
+  wieder aussagekräftig (siehe Stopp-Punkt oben).
 
-### Entscheidungen
-- **Norm-Ausgabe-Drift bleibt vorerst stehen** (2026-08-30): `en1838_grundwerte.yaml`
-  sagt `ÖNORM EN 1838:2013`, im Repo liegt **2019-11-15** (IDT mit EN 1838:2013-07,
-  inhaltlich deckungsgleich). Nur gekennzeichnet, nicht umgestellt — der String ist
-  Naht-Invariante und hängt an `tests/fixtures/*` (3-Owner), `tests/fakes.py`, einer
-  Leonis-Assertion und dem Contract-Default. Umstellung = eigener koordinierter Slice.
-- **Photometrie-Ausnahme:** Leonis baut `normwissen/photometrie/` (LDT/EULUMDAT →
-  exakte Lux). Bewusste Ausnahme von der Owner-Grenze, rein additiv. Enis bleibt
-  Owner von `data/` + `provider.py`.
-- **`OibProvider` = Enis** (Zuständigkeits-Graubereich am 30.08. geschlossen): die
-  Tabelle-6-Schwellenwerte sind Normwissen. Der `ProjektKontext` ist dagegen
-  Projektinput, nicht Normwissen.
-- **Kein Umkehrschluss aus Tabelle 6:** Unterschreiten einer Eingangsschwelle darf
-  NIE automatisch „nicht erforderlich" bedeuten → `review_required`. Betroffene
-  Zeilen: 1.1, 1.2, 3, 4, 5.1, 6, 9.1, 9.2, 10, 11.1, 11.2 (Liste in der Spec).
-- **Keine Normwerte aus Modellwissen**, keine Internetquellen; nur Dokumente, die
-  tatsächlich im Repo liegen. Unklare Stellen als MANUELL PRÜFEN markieren.
-- **Fachinformation ≠ Norm ≠ Rechtsquelle** — Ebenen A–D getrennt führen.
+## ⚠ Kritischer Befund von heute — Kollision mit PR #40
 
-### Offene Punkte
-- **PR #23 fachlich prüfen + approven** (fasst `contracts/ports.py` an): passt
-  `parse_lb(lb_path: str) -> LBVorgabe` zum geplanten Parser, kippt
-  `bereiche_exklusion` wirklich den Norm-Default `STIEGENHAUS → sicherheitsleuchte`?
-- **Frage 2 an Leonis offen:** brauchen wir ein `GebaeudeModell` für
-  mehrgeschoßige Kennzahlen? (`RaumModell` ist geschoßweise.)
-- **LB-Vokabular festzurren:** `BereichsRegel.raum_typ` muss exakt Selmans
-  `RaumModell.raum_typ` treffen, sonst greift die Exklusion nie.
-- **Verbindlichkeitsanker OIB** (Übernahme ins Landesbaurecht) ungeklärt.
-- **Beschaffen:** kostenlos AStV/ASchG/KennV als RIS-Volltext, OVE R 12-2;
-  kostenpflichtig ÖNORM EN 1838:2025-03 und OVE/ÖVE EN 50172:2024-11.
-- Board-Frage weiterhin offen: 4 Norm-Werte für Wohnungs-Fluchtweg ratifizieren
-  (`docs/PROGRAMM_NOTBELEUCHTUNG.md`).
+Leonis hat **PR #40 „normwissen — ② LB-Parser"** nach main gemerged — in der
+CODEOWNERS-Lane `@EnisAMG` — und über `registry.build_default_bundle()` **aktiv
+verdrahtet**. Am **echten** Fischa-PDF erzeugt dieser Parser:
 
-### Was als Nächstes
-Zwei eigenständige Slices, beide ohne fremden Contract-Touch, frei wählbar:
+```
+betriebsdauer_min = 1440      ← FALSE POSITIVE, sicherheitsrelevant
+system_typ        = zentralbatterie   ← wählt still eine Seite des Widerspruchs
+bereiche_inklusion = [GARAGE]         ← stiller No-op im Platzierer
+```
 
-1. **OIB-Resolver** — `normwissen/data/oib_rl2_tabelle6.yaml` (20 Zeilen mit
-   Schwellenwerten, Fußnoten, Fundstelle + Seite) + Resolver `normwissen/oib/`
-   gegen `OibProvider`. Grenzwerte gehören in die YAML, der Provider hardcodet
-   nichts. Datenlücke ⇒ `review_required` + `fehlende_fakten`, nie eine Annahme.
-   `nicht_erforderlich` ist mit den heutigen Quellen unerreichbar. Alles Fachliche
-   liegt fertig in `docs/OIB_RL2_TABELLE6.md`. **Unabhängig von fremden PRs.**
-2. **LB-Parser** — `normwissen/lb/` gegen `LBProvider.parse_lb`. Golden-Fall:
-   Fischa §2.10/2.11 (GK4 → `bereiche_exklusion` STIEGENHAUS/GANG,
-   `bereiche_inklusion` GARAGE, `betriebsdauer_min=480`, `sonder_lux`
-   Feuerlöscher 5 lx, `system_typ`, `lb_quelle` als Audit-Trail). Abnehmer ist
-   Leonis' PR #23. Prosa-LB vs. Positions-LV brauchen verschiedene Extraktion —
-   halbautomatisch starten, kein Full-NLP.
+`_betriebsdauer_min()` sucht `(\d+)\s*(?:Std|Stunden|h)` im **gesamten** Dokument
+und trifft „Störungsbehebung binnen 24 h" (S. 12) → 24 × 60 = **1440**. Fischa
+spezifiziert **keine** Betriebsdauer. Als `LBVorgabe.betriebsdauer_min` übersteuert
+dieser erfundene Wert nach der Hierarchie `LB-explizit → Norm` den EN-1838-Default
+von 60 min. Die fail-closed Implementierung muss das verhindern.
 
-**⚠ Falle beim Skripten:** Umlaute in den `knowledge/`-Unterordnern sind
-NFD-kodiert, Originalschreibweisen (`Branschutz`, `Richtline`) sind absichtlich
-erhalten → mit `glob` arbeiten, keine handgetippten Pfade. (Der frühere
-Trailing-Space in `knowledge/OIB-Richtlinien ` ist beim Committen bereinigt.)
+**Belegte Quellenzuordnung (am Original geprüft):** Fischa enthält **keine**
+480 min, **keine** 0,5 s, **kein** 1 lx, **keine** 5 lx Feuerlöscher und **kein**
+EN ISO 7010 (`lux`/`lx`, „Umschaltzeit", „Betriebsdauer", „Feuerlöscher", „7010“ =
+je 0 Treffer; genannt ist ÖNORM Z 1000). Diese Werte stammen aus
+`mo-leistungsbeschreibung_Elektro_240718.pdf` §5.1.23.
 
-**⚠ Setup-Falle (Mac):** Projekt braucht **Python ≥ 3.11** (System hatte nur
-3.9.6 → editable install bricht). Fix war `brew install python@3.12`, dann venv
-mit `/opt/homebrew/bin/python3.12 -m venv .venv`. Auf Mac: `.venv/bin/python`
-(nicht `.venv\Scripts\python.exe` — das ist Windows).
+**Fischa liefert tatsächlich:** Exklusion STIEGENHAUS + GANG (GK4, §2.10 S. 37) ·
+Inklusion GARAGE (§2.11) · Überwachung Einzelleuchte · Prüfung WEB · Fabrikat
+DIN-Sicherheitstechnik Concept-LED (§2.21 S. 42) · Normbezüge ÖVE 8101 / R 12-2 /
+EN 1838 / ÖNORM Z 1000 · **widersprüchliche Systemtyp-Angaben** (Gruppenbatterie
+S. 19 vs. Zentralbatterie S. 42).
+
+`tests/fixtures/lb/fischa_lb.txt` und die zugehörigen main-Tests tragen diese
+falsche Quellenzuordnung. **Die Fixture wurde NICHT verändert** — sie liegt in der
+3-Owner-CODEOWNERS-Lane. Der Befund ist nur dokumentiert und **muss mit Leonis
+koordiniert werden** (Eintrag in `docs/COORDINATION.md`).
+
+## Rebase von heute — was passiert ist
+`enis/lb-parser` wurde auf `origin/main` (`b1a33e6`) rebased. Konflikte gab es
+ausschließlich im LB-Hauptcommit, in genau vier Dateien:
+
+| Datei | Auflösung |
+|---|---|
+| `src/notbeleuchtung/normwissen/__init__.py` | Enis-Version (Zwischenstand — API-Integration folgt) |
+| `src/notbeleuchtung/normwissen/lb/__init__.py` | Enis-Version (dito) |
+| `src/notbeleuchtung/normwissen/lb/parser.py` | **Enis fail-closed Implementierung** |
+| `tests/normwissen/test_lb_parser.py` | Enis-Version als Basis (Merge mit main-Tests folgt) |
+
+Die drei Folge-Commits (Docs · Verweis-Logik · Seiten-Audit) liefen **ohne neue
+Konflikte** durch. Die Umbenennung auf die main-API wurde bewusst **nicht** während
+des Rebase gemacht, um Folgekonflikte zu vermeiden.
+
+## Entscheidungen (weiterhin gültig)
+- **Norm-Ausgabe-Drift** (`ÖNORM EN 1838:2013` vs. real vorliegende 2019-11-15):
+  nur im YAML gekennzeichnet, nicht umgestellt — der String ist Naht-Invariante
+  (Blast-Radius: `docs/NORMQUELLEN_AT.md` Abschnitt 2a).
+- **Photometrie-Ausnahme:** Leonis baut `normwissen/photometrie/` im Enis-Package.
+- **`OibProvider` = Enis** (Tabelle-6-Schwellenwerte sind Normwissen).
+- **Kein Umkehrschluss**, **nichts raten**, **blockierende Unsicherheit schlägt
+  Rechnen** — gilt für OIB **und** LB.
+
+## Offene Punkte
+- **LB-API-Integration** (Stopp-Punkt, siehe „MORGEN ZUERST").
+- **Prozess:** `normwissen/` ist per CODEOWNERS Enis' Lane; #14, #22, #23 und #40
+  gingen ohne Enis-Approval durch. Team-Frage, keine technische.
+- **GARAGE/TECHNIKRAUM/LAGER** werden von der Raumerkennung nicht erzeugt
+  (`raumerkennung/raumtyp.py` kennt 13 Werte) → LB-Regeln dafür sind im Platzierer
+  wirkungslos. Befund liegt bei @polatselman.
+- **ÖNORM B 1800:2013-08-01** beschaffen → schaltet Tabelle-6-Zeilen 2 und 10 frei.
+- Weiter offen: AStV/ASchG/KennV als RIS-Volltext, OVE R 12-2, EN 1838:2025-03,
+  EN 50172:2024-11; 4 Norm-Werte für Wohnungs-Fluchtweg ratifizieren.
 
 ## 0. Setup — Claude, führe das ZUERST für den Nutzer aus
 
-Du bist ein Agent — **führe diese Schritte selbst aus**, frag nicht lang nach.
-
-1. **Prüfe den Arbeitsordner:** du musst im Repo-Root `Notbeleuchtung/` sein
-   (`pyproject.toml` + `CLAUDE.md` liegen hier). Wenn nicht → sag dem Nutzer:
-   „Öffne den Ordner `Notbeleuchtung` (Cursor: File → Open Folder → Notbeleuchtung)
-   und starte mich dort neu." Erst weiter, wenn der Ordner stimmt.
-2. **venv + Installation:**
-   - Mac/Linux: `python3 -m venv .venv` → `.venv/bin/python -m pip install -e ".[dev,api]"`
-   - Windows: `python -m venv .venv` → `.venv\Scripts\python.exe -m pip install -e ".[dev,api]"`
-3. **Tests grün prüfen:** `.venv/bin/python -m pytest -q` → muss zeigen
-   **`144 passed, 5 skipped`** (Stand 2026-08-30). Wenn nicht → stopp + melde dem
-   Nutzer den Fehler.
-4. **Cursor-Hinweis für den Nutzer:** Ordner `Notbeleuchtung` als Workspace öffnen
-   und `.venv` als Python-Interpreter wählen (unten rechts / Command Palette
-   „Python: Select Interpreter" → `.venv`).
-
-Erst wenn Setup grün ist → weiter mit dem Auftrag unten.
+1. **Arbeitsordner prüfen:** Repo-Root `Notbeleuchtung/` (`pyproject.toml` +
+   `CLAUDE.md` liegen hier). Sonst → Nutzer bitten, den Ordner zu öffnen.
+2. **venv + Installation:** Mac/Linux `python3 -m venv .venv` →
+   `.venv/bin/python -m pip install -e ".[dev,api]"` (Windows:
+   `.venv\Scripts\python.exe`). Python ≥ 3.11 nötig.
+3. **Achtung Testzahl:** auf `main` ist die Suite grün. Auf `enis/lb-parser`
+   schlägt sie bis zur API-Integration fehl (`registry` importiert
+   `LbTextProvider`, der Branch exportiert noch `LbParser`) — **das ist erwartet.**
+4. Cursor: Ordner als Workspace öffnen, `.venv` als Interpreter wählen.
 
 ## Wer du bist
-Du besitzt **beide Wissens-Inputs** für Leonis' Platzierung:
-1. **NormRegelwerk** — statisches EN-1838/ÖNorm-Wissen (Lux, Erkennungsweite l=z×h,
-   Montagehöhe, RZ-vs-Antipanik, Dauer). **Steht** (`En1838NormProvider`).
-2. **LBVorgabe** — die Leistungsbeschreibung (2. Input) in explizite Vorgaben
-   geparst, die Norm-Defaults übersteuern (Hierarchie: LB → Referenz → Norm → OVE).
-   **Fehlt noch** (`normwissen/lb/`).
-
-Dazu die dritte, später entdeckte Ebene: **OIB-RL 2 Tabelle 6** — braucht dieses
-Gebäude überhaupt Sicherheitsbeleuchtung, und in welcher Stufe? (`normwissen/oib/`,
-fehlt ebenfalls.)
+Du besitzt die Wissens-Inputs für Leonis' Platzierung:
+1. **NormRegelwerk** — EN 1838/ÖNorm (`En1838NormProvider`). **Steht, auf main.**
+2. **OibBefund** — OIB-RL 2 Tabelle 6 (`OibRl2Provider`). **Steht, auf main.**
+3. **LBVorgabe** — die Leistungsbeschreibung als 2. Input (`normwissen/lb/`).
+   **Implementiert auf `enis/lb-parser`, API-Integration offen.**
 
 Leonis **fragt** dich über die Query-APIs — er parst nie YAML.
 
 ## Regeln
 Nur `normwissen/` + `hauptengine.contracts` importieren. Contract ändern =
 `contract_version` bump + `python scripts/gen_schema.py` + 3-Owner-Approval.
-Branch `enis/…` → PR. Irreversibles (Merge/Push) nur mit explizitem User-GO.
+Branch `enis/…` → PR. Irreversibles (Merge/Push/Force-Push) nur mit explizitem
+User-GO.

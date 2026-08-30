@@ -162,6 +162,55 @@ Der Test liegt in deiner Lane — Enis hat ihn **nicht** angefasst. Vorschlag:
 entweder die Skalare entfernen oder `lb_quelle` auf die mo-Elektro-LB umstellen.
 Merksatz: **Fischa = Bereichslogik, mo-Elektro = Skalare.**
 
+### 🔴 Befund an @mvpo3 (2026-08-30 abends): PR #40 erzeugt am echten Fischa-PDF einen falschen LB-Wert
+
+**PR #40 („normwissen — ② LB-Parser") wurde in die CODEOWNERS-Lane `@EnisAMG`
+gemerged** und über `registry.build_default_bundle()` aktiv verdrahtet. Enis hatte
+zu diesem Zeitpunkt eine fail-closed Implementierung derselben Naht fertig
+(`enis/lb-parser`) — die Kollision wurde erst beim Rebase sichtbar.
+
+**Belegter False Positive.** Der gemergte Parser, gegen das echte
+`20241209_E LV Fischa 46.pdf` laufen gelassen:
+
+```
+betriebsdauer_min  = 1440            ← Fischa spezifiziert KEINE Betriebsdauer
+system_typ         = zentralbatterie ← waehlt still eine Seite eines Widerspruchs
+bereiche_inklusion = [GARAGE]        ← stiller No-op im Platzierer
+```
+
+Ursache: `_betriebsdauer_min()` sucht `(\d+)\s*(?:Std|Stunden|h)` im **gesamten**
+Dokumenttext und trifft „Störungsbehebung binnen 24 h" (S. 12) → 24 × 60 = 1440.
+
+**Warum das sicherheitsrelevant ist:** `LBVorgabe.betriebsdauer_min` ist eine
+*explizite Auftraggeber-Vorgabe* und übersteuert nach der CLAUDE.md-Hierarchie
+`LB-explizit → Norm` den EN-1838-Default von 60 min. Hier übersteuert ein Wert,
+den das Dokument nie enthalten hat.
+
+**Falsche Quellenzuordnung (am Original geprüft).** Fischa enthält **keine**
+480 min, **keine** 0,5 s, **kein** 1 lx, **keine** 5 lx Feuerlöscher und **kein**
+EN ISO 7010 — `lux`/`lx`, „Umschaltzeit", „Betriebsdauer", „Feuerlöscher" und
+„7010" haben je **0 Treffer**; genannt ist ÖNORM Z 1000. Diese fünf Werte stammen
+aus `mo-leistungsbeschreibung_Elektro_240718.pdf` §5.1.23 (S. 37–38).
+
+Fischa liefert tatsächlich: Exklusion STIEGENHAUS + GANG (GK4, §2.10 S. 37),
+Inklusion GARAGE (§2.11), Überwachung Einzelleuchte, Prüfung WEB, Fabrikat
+DIN-Sicherheitstechnik Concept-LED (§2.21 S. 42), Normbezüge — und
+**widersprüchliche Systemtyp-Angaben** (Gruppenbatterie S. 19 vs. Zentralbatterie
+S. 42), die nicht still aufgelöst werden dürfen.
+
+**Betroffen:** `tests/fixtures/lb/fischa_lb.txt` (synthetischer Text mit dem Titel
+„Projekt Fischa 46", der die mo-Elektro-Skalare trägt) und die darauf gestützten
+Tests `test_fischa_skalare_felder`, `test_fischa_sonderlux_und_normbezug`,
+`test_fischa_inklusion_garage`. **Enis hat die Fixture NICHT verändert** — sie liegt
+in der 3-Owner-CODEOWNERS-Lane. Auch `test_leere_lb_bleibt_norm_default` ist
+semantisch heikel: eine leere `LBVorgabe` ist von „die LB macht keine Vorgaben"
+nicht unterscheidbar und lässt die Engine still norm-getrieben weiterlaufen.
+
+**Vorschlag (Owner-GO steht aus):** Enis' fail-closed Implementierung ersetzt die
+Extraktionslogik, die öffentliche API (`LbTextProvider`, `parse_lb`) und die
+Registry-Verdrahtung von #40 bleiben **unverändert** erhalten. Fixture und
+Test-Korrektur macht Leonis in seiner Lane.
+
 ### ⚠ Befund an @polatselman: `GARAGE` ist kein erzeugbarer `raum_typ`
 
 `raumerkennung/raumtyp.py` (`_TYP_MAP`) erzeugt 13 Werte — `GARAGE` ist keiner

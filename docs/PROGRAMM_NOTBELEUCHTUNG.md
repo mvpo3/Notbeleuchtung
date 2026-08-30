@@ -44,7 +44,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
 | **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
 | Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | TODO (Contract steht, PR #14; Tabelle 6 extrahiert) | 2026-08-30 |
-| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | TODO (Contract steht, PR #22; Abnehmer = PR #23) | 2026-08-30 |
+| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | **WIP** — fail-closed Implementierung steht auf `enis/lb-parser`, Rebase auf main erledigt; **API-Integration gegen main offen** (`LbParser` → `LbTextProvider`). Kollision mit PR #40, s. `docs/COORDINATION.md` | 2026-08-30 |
 
 **Legende:** TODO · WIP · BLOCKED · DONE.
 
