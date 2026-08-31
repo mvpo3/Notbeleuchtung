@@ -20,6 +20,7 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 4000.0  # RZ gilt als „am Ausgang", wenn ≤ 4 m entfernt
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
+_MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
 
 
 def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -119,6 +120,28 @@ def pruefe(
             f"{kollisionen} Symbol-Paar(e) unter {_KOLLISION_MM:g} mm" if kollisionen
             else "keine Doppelplatzierungen",
         ))
+
+    # 8. Plan-Plausibilität (Vollständigkeit): ein Grundriss mit vielen Räumen, aber
+    #    (fast) ohne Notbeleuchtung ist kein valider Plan. Fängt den Fall, den die
+    #    Fluchtweg-Regeln (3/4) NICHT sehen — nämlich wenn gar keine Segmente erkannt
+    #    wurden (Raumerkennung liefert keine Fluchtwege/Typen): sonst bestünde ein
+    #    quasi-leeres Ergebnis (0-2 Symbole bei >100 Räumen) die Prüfung als „ok".
+    n_raeume = len(raum.raeume)
+    if n_raeume >= _MIN_RAEUME_PLAUSIBEL:
+        if not plzg:
+            befunde.append(Befund(
+                "Plan-Plausibilität (Vollständigkeit)",
+                "fehler",
+                f"{n_raeume} Räume, aber kein Notbeleuchtungs-Symbol platziert "
+                "(Raumerkennung liefert evtl. keine Fluchtwege/Raumtypen)",
+            ))
+        elif not rz:
+            befunde.append(Befund(
+                "Plan-Plausibilität (Vollständigkeit)",
+                "warnung",
+                f"{n_raeume} Räume, aber kein Rettungszeichen platziert "
+                "(kein erkannter Fluchtweg/Ausgang?)",
+            ))
 
     return befunde
 

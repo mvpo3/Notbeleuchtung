@@ -68,6 +68,15 @@ def test_stueckliste_zaehlt_symbol_arten(rendered):
     assert "Summe: 5" in txt
 
 
+def test_hoehenkoten_label_gezeichnet(rendered):
+    _, summary, doc = rendered
+    # 4OG-Fixture = 5 Symbole, alle mit Default-Montagehöhe 2400 mm.
+    assert summary["hoehenkoten_drawn"] == 5
+    koten = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Hoehenkote']")
+    assert len(koten) == 5
+    assert all(k.text == "h=2,40" for k in koten)
+
+
 def test_plankopf_rahmen_und_felder(rendered):
     _, summary, doc = rendered
     assert summary["plankopf_drawn"] is True
