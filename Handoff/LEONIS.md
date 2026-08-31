@@ -4,7 +4,56 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-08-29 Session-Ende) — HIER WEITER
+## STAND (2026-08-31 Session-Ende) — HIER WEITER
+
+**Alles auf `main` (166c234), 434 Tests grün, ruff clean, Drift-Gate sauber, kein
+Contract berührt.** Mollgasse EG ist ein **voll-konformer Plan** (Prüfbericht **ok**:
+15 RZ + 21 SL, 4/4 Notausgänge, 0 Kollisionen, 103 Segmente gedeckt, LB-Inklusion).
+OG/DG bleiben fast leer — **Wurzel = F2-Raumerkennung** liefert dort ~0 Typen/Fluchtwege
+(Gap-Healing-Blocker, Owner-Entscheidung), **kein F1-Fehler**.
+
+**Heute F1 gemergt (PRs #46–#64):** Höhenkoten (h=2,40) · DoD-Visual-Golden-Harness
+(`pytest -m visual`) + CI-Raster-Smoke · **covers_segment-Fix** (geometrische Deckung,
+real 0→103) · **Plausibilitäts-Regel + Symboldichte-Gate** (quasi-leer = fehler) ·
+**Farb-7-Fix** (Legende/Plankopf im Hell-PDF sichtbar) · **RZ an jedem Notausgang**
+(§4.1.2 g, auch graphlos) + sichtlinie-Symmetrie + **Anker-Dedup** (keine
+Doppelplatzierung) · **Schriftfeld-Leiste** (Info-Blöcke in gerahmter rechter Spalte) ·
+2× ultracode-**Gesamtaudit** (adversarial, 7+7 bestätigte Fixes) · **Auto-Prüfeinrichtungs-
+Hinweis** (EN 62034 > 20 Leuchten) · Norm-Sofort-Wins („nahe" < 2 m; z=100/200 single-source).
+
+**NEU: Wissensbasis für die Hauptengine** — `knowledge/extracted/
+PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md` (aus echtem Profi-DIN-Plan Barawitzkagasse +
+AT/DE-Vorschriften extrahiert). Enthält **15 priorisierte Engine-Empfehlungen** mit
+Owner + Aufwand — die Roadmap für den nächsten Hauptengine-Ausbau.
+
+### → Hauptengine-Roadmap für das Team (aus dem Digest, gemeinsames Package)
+
+Die Hauptengine (`src/notbeleuchtung/hauptengine/`) ist gemeinsam (alle 3 Owner). Nächste
+Ausbaustufen, damit Enis/Selman + Leonis integriert weiterbauen:
+
+- **Contract-Erweiterung (3-Owner-Konsens nötig, `hauptengine/contracts/`):**
+  Symbol-Datenmodell reicher — `Platzierung` um `TYPENAME`/`TYPENUMBER`(Legenden-Letter)/
+  `luminaire_ID`/`MountingMethod`/`Technology`/**`Schaltungsart`(DL/BL)** erweitern (Digest
+  #6). Speist Stückliste-als-Typ-Letter-Legende (#7) + QR/NODEID (#9). `richtung=beidseitig`
+  existiert bereits als `richtung="gerade"` → **kein Contract nötig**, nur Render-Symbol.
+- **Enis (normwissen):** EN-1838-Lux-Grenzwerte als `NormRegelwerk`-Werte kodieren (Digest #3:
+  1/0,5/15/5 lx + Gleichmäßigkeiten) · Anwendungsfall-Klassifikation GK/Nutzung/Fläche →
+  OIB-Stufe + Betriebsdauer (1/3/8/24 h) + Stromquelle aus LB (#11) · z pro Symbol liefern (#4).
+- **Selman (raumerkennung):** hervorzuhebende Stellen (BMZ/Erste-Hilfe/Löschgeräte) +
+  Pflicht-Platzierungspunkte (Treppen/Niveau-/Richtungsänderung/Aufzugsflur) im RaumModell
+  erkennen (#10) · flächenbasierte Trigger (Antipanik ≥ 60 m², WC > 8 m²) (#12) · **Mollgasse
+  Gap-Healing** (echte Raum-Polygone) = der Gebäude-Blocker.
+- **Render/Hauptengine (F1-nah):** DIN_SIBEL-Layer-Schema statt Ad-hoc-Layer (#2) ·
+  Beidseitig-Pfeil-Symbol für `richtung="gerade"` · getrennter Sicherheitskreis modellieren
+  (Geschoß/Brandabschnitt, NODEID, Stromkreis-Belegungsliste kompatibel zu `1.xlsx`) (#14).
+
+**Offene F1-Follow-ups (F2-abhängig):** Deckungs-LOS echt (Weglänge im Zirkulationsgraph
+statt Luftlinie — braucht Selmans Graph/Wände) · KELLER in LB-Naht adressierbar (Vokabular-
+Symmetrie). Gaps in der Wissens-Extraktion: `Stromkreisnummer.dwg` (ODA-Konverter nötig).
+
+---
+
+## STAND (2026-08-29 Session-Ende) — Historie
 
 **Platzier-Regeln aus dem Wissen kodiert** (Commit `e87a745`, `anker_strategy.py`):
 1. **RZ-Dichte = `l = z·h`** — `plan_rettungszeichen_sichtlinie` zieht `max_abstand_mm`
