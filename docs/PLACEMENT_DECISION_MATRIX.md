@@ -192,6 +192,11 @@ erzeugen, nicht raten.
 
 ### Contract-Vorschlag (3-Owner, blockiert 8 Regeln)
 
+> **Ausgearbeitet:** `docs/SPEC_SONDERSTELLEN_CONTRACT.md` — inkl. Datenquellen-Befund,
+> Optionen A/B/C mit Empfehlung und 3-Owner-Handoff. Ausführbar über
+> `normwissen.SonderstellenKatalog` (17 Tests).
+
+
 `RaumModell` braucht die hervorzuhebenden Stellen aus EN 1838 §4.1.2. Vorschlag,
 rein additiv, Contract 1:
 
