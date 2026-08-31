@@ -9,10 +9,15 @@ Kundendokument ist übernommen. Die echten PDFs bleiben lokal/gitignored und
 dienen nur der manuellen Gegenprüfung.
 
 Die Trennung, die dieser Test festhält:
-* **Bereichs-LB** (Fischa-Muster) → Exklusion/Inklusion, Systemtyp, Überwachung,
+* **Bereichs-LB** (GU-Muster) → Exklusion/Inklusion, Systemtyp, Überwachung,
   Prüfung, Normbezug — und **keine** Skalare.
-* **Skalar-LB** (mo-Elektro-Muster) → 8 Std → 480 min, < 0,5 s, 1 lx, 5 lx
+* **Skalar-LB** (Elektro-LB-Muster) → 8 Std → 480 min, < 0,5 s, 1 lx, 5 lx
   Feuerlöscher, RZ-Stellen, EN ISO 7010.
+
+Der letzte Abschnitt trägt die aus `origin/main` übernommenen Regressionen; das
+Mapping der main-Testnamen steht dort. Die geteilten Fixtures unter
+`tests/fixtures/lb/` gehören der 3-Owner-CODEOWNERS-Lane und werden hier nur
+gelesen, nie verändert.
 """
 import json
 from pathlib import Path
@@ -23,7 +28,12 @@ import yaml
 
 from notbeleuchtung.hauptengine.contracts import LBProvider, LBVorgabe
 from notbeleuchtung.normwissen import LbTextProvider
-from notbeleuchtung.normwissen.lb import LbNichtLesbar, LbReviewRequired
+from notbeleuchtung.normwissen.lb import (
+    LbNichtLesbar,
+    LbReviewRequired,
+    parse_bericht,
+    parse_lb,
+)
 from notbeleuchtung.normwissen.lb.parser import DATA_DIR, DATEI
 
 FIXTURES = Path(__file__).parent / "lb_fixtures"
@@ -43,6 +53,24 @@ def _bericht(name: str):
 def _kandidat(bericht, feld: str) -> str | None:
     treffer = [b for b in bericht.fuer_feld(feld) if b.kandidat]
     return treffer[0].kandidat if treffer else None
+
+
+def _lb_datei(tmp_path, koerper: str, name: str = "lb.txt") -> str:
+    """Textkörper in einen minimal gültigen Notbeleuchtungs-Abschnitt hüllen.
+
+    Die aus `origin/main` übernommenen Regressionen prüfen einzelne Extraktoren an
+    nackten Sätzen. Die fail-closed Fassung liest Felder ausschließlich in einem
+    Notbeleuchtungs-Abschnitt — ohne Hülle bräche der Parse schon davor ab, und der
+    Test prüfte nicht mehr, was er prüfen soll. Reale LBs haben diesen Abschnitt
+    immer.
+    """
+    p = tmp_path / name
+    p.write_text(
+        "5.1.23 Fluchtwegorientierungsbeleuchtung\n"
+        "Die Sicherheitsbeleuchtung wird in den Stiegenhäusern ausgeführt.\n"
+        f"{koerper}\n"
+        "Musterbüro Seite 12 von 40\n", encoding="utf-8")
+    return str(p)
 
 
 def _provider_ohne_typ(tmp_path, typ: str) -> LbTextProvider:
@@ -414,3 +442,144 @@ def test_bericht_als_text_ist_lesbar():
 def test_dokument_art_erkannt():
     assert _bericht("skalar_lb.txt").dokument_art == "elektro_lb"
     assert _bericht("rahmen_verweis.txt").dokument_art in {"gu_rahmen", "unbekannt"}
+
+
+
+# ── Übernommen aus origin/main (PR #40/#45/#56) ─────────────────────────────
+#
+# Die main-Fassung des LB-Parsers war best effort (wirft nie, fehlende Felder →
+# None), diese ist fail closed. Wo beide dasselbe wollen, steht der main-Test hier
+# unverändert; wo main eine nackte Satzprobe nutzt, hüllt `_lb_datei` sie in einen
+# Notbeleuchtungs-Abschnitt. Zwei main-Tests haben bewusst KEINE 1:1-Entsprechung:
+#
+# * `test_provider_erfuellt_protocol` → `test_parser_erfuellt_lb_protocol` +
+#   `test_parse_lb_modulfunktion` (die Modul-API von main ist mitgeprüft).
+# * `test_leere_lb_bleibt_norm_default` → `test_dokument_ohne_notbeleuchtungs-
+#   abschnitt_ist_fail_closed`. Das Verhalten ist absichtlich umgekehrt: eine leere
+#   `LBVorgabe` ist von „die LB macht keine Vorgaben" nicht unterscheidbar. Dass ein
+#   EINZELNES Feld ohne Angabe `None` bleibt und den Norm-Default greifen lässt,
+#   prüft `test_bereichs_lb_erzeugt_NIEMALS_die_skalarwerte`.
+GETEILT = Path(__file__).parent.parent / "fixtures" / "lb"
+
+
+def test_parse_lb_modulfunktion():
+    """main ruft `parse_lb(pfad)` auf Modulebene — die Naht muss beides tragen."""
+    assert parse_lb(_pfad("skalar_lb.txt")) == PARSER.parse_lb(_pfad("skalar_lb.txt"))
+
+
+def test_registry_bundle_hat_lb_provider():
+    from notbeleuchtung.hauptengine.registry import build_default_bundle
+
+    bundle = build_default_bundle()
+    assert bundle.lb is not None
+    assert hasattr(bundle.lb, "parse_lb")
+
+
+def test_geteilte_fixture_gk4_exklusion_und_garage_inklusion():
+    """`tests/fixtures/lb/fischa_lb.txt` liegt in der 3-Owner-Lane und ist bewusst
+    unverändert. Sie mischt Bereichslogik und Skalare in einer Formulierung, die
+    diese Fassung vorher nicht traf (`LED-Sicherheitsbeleuchtung` in der Überschrift,
+    Lux ohne Quantor, Sonder-Lux ohne `mindestens`)."""
+    lb = parse_lb(str(GETEILT / "fischa_lb.txt"))
+    exkl = {b.raum_typ: b for b in lb.bereiche_exklusion}
+    assert exkl["STIEGENHAUS"].sicherheitsbeleuchtung is False
+    assert exkl["GANG"].sicherheitsbeleuchtung is False
+    assert exkl["STIEGENHAUS"].begruendung == "GK4"
+    inkl = {b.raum_typ: b for b in lb.bereiche_inklusion}
+    assert inkl["GARAGE"].sicherheitsbeleuchtung is True
+    assert not (set(inkl) & set(exkl))
+
+
+def test_geteilte_fixture_skalare_und_sonderlux():
+    lb = parse_lb(str(GETEILT / "fischa_lb.txt"))
+    assert lb.betriebsdauer_min == 480           # „8 Std" → 480
+    assert lb.umschaltzeit_max_s == 0.5          # „< 0,5 s"
+    assert lb.mindest_lux_fluchtweg == 1.0       # „Mindestbeleuchtungsstärke … 1 lx"
+    assert lb.system_typ == "gruppenbatterie"
+    assert lb.batterie_standort == "Technikraum"
+    assert lb.ueberwachung == "einzelleuchte"
+    assert lb.pruefung == "web"
+    assert lb.piktogramm_norm == "EN ISO 7010"
+    assert {s.ort: s.min_lux for s in lb.sonder_lux} == {"feuerloescher": 5.0}
+    assert "EN 1838" in lb.norm_bezug and "OVE E 8101" in lb.norm_bezug
+
+
+def _geteilt_umhuellt(tmp_path, name: str) -> str:
+    """Geteilte Ausschnitts-Fixture (kein vollständiges Dokument) in einen Abschnitt
+    hüllen — die Datei selbst bleibt unangetastet (fremde CODEOWNERS-Lane)."""
+    return _lb_datei(tmp_path, (GETEILT / name).read_text(encoding="utf-8"), name)
+
+
+def test_mo_elektro_lux_kontext_und_betriebsdauer(tmp_path):
+    """Reale Fehlparses: Fluchtweg-Lux als „1 Lux" (Wort), NICHT der 200-lx-
+    Aufzugsvorplatz; Feuerlöscher/Hydrant „5 Lux" über Zeilenumbruch."""
+    lb = parse_lb(_geteilt_umhuellt(tmp_path, "mo_elektro_ausschnitt.txt"))
+    assert lb.mindest_lux_fluchtweg == 1.0
+    assert lb.betriebsdauer_min == 480
+    orte = {s.ort: s.min_lux for s in lb.sonder_lux}
+    assert orte.get("feuerloescher") == 5.0 and orte.get("hydrant") == 5.0
+
+
+def test_betriebsdauer_distraktoren_keine_fehltreffer(tmp_path):
+    """Stunden-/„h"-Angaben ohne Notlicht-Kontext (Gewährleistung, Position „123 H",
+    Austrocknung, Notrufsystem-Batterie) sind keine Betriebsdauer."""
+    assert parse_lb(_geteilt_umhuellt(tmp_path, "betriebsdauer_distraktoren.txt")
+                    ).betriebsdauer_min is None
+
+
+def test_betriebsdauer_dezimal(tmp_path):
+    assert parse_lb(_lb_datei(tmp_path, "Die Akkus sind auf 8,5 Std auszulegen.")
+                    ).betriebsdauer_min == 510
+
+
+def test_betriebsdauer_overflow_guard(tmp_path):
+    """Sehr lange Ziffernfolge darf keinen `OverflowError` auslösen (float()=inf).
+    Die Musterbreite kappt bei 4 Stellen, `plausibel_max` fängt den Rest ab."""
+    pfad = _lb_datei(tmp_path, "Betriebsdauer " + "1" * 309 + " Stunden auszulegen.")
+    assert parse_lb(pfad).betriebsdauer_min is None
+
+
+def test_lux_wortform_und_plausibilitaetscap(tmp_path):
+    """„Lux" ausgeschrieben zählt; ein unplausibler Fluchtweg-Wert (> Cap) nicht."""
+    pfad = _lb_datei(tmp_path, "Im Fluchtweg ist mindestens 1 Lux sicherzustellen. "
+                               "Arbeitsplatzbeleuchtung 500 lx im Fluchtwegbereich.")
+    assert parse_lb(pfad).mindest_lux_fluchtweg == 1.0
+
+
+def test_fluchtweg_lux_nicht_von_antipanik_unterboten(tmp_path):
+    """Fluchtweg-Mittellinie 1 lx und Antipanik 0,5 lx im selben Satz: es gilt der
+    Fluchtweg-Wert, nicht der kleinere Antipanik-Wert."""
+    pfad = _lb_datei(tmp_path, "Auf dem Fluchtweg 1 lx, in der Antipanikfläche 0,5 lx.")
+    assert parse_lb(pfad).mindest_lux_fluchtweg == 1.0
+
+
+def test_antipanik_allein_erzeugt_keinen_fluchtweg_wert(tmp_path):
+    """Steht NUR ein Antipanik-Wert da, ist die Fluchtweg-Größe nicht angegeben —
+    dann greift der Norm-Default, statt 0,5 lx als Fluchtweg-Wert auszugeben."""
+    pfad = _lb_datei(tmp_path, "Antipanikbereich im Fluchtweg mit einer Stärke von 0,5 lux.")
+    assert parse_lb(pfad).mindest_lux_fluchtweg is None
+
+
+def test_batterie_standort_extrahiert(tmp_path):
+    pfad = _lb_datei(tmp_path, "Die Versorgung erfolgt als Gruppenbatterie im Technikraum.")
+    assert parse_lb(pfad).batterie_standort == "Technikraum"
+
+
+# ── Regression: 24-Stunden-Fristen sind keine Betriebsdauer ─────────────────
+def test_stoerungsfrist_erzeugt_keine_betriebsdauer(tmp_path):
+    """Sicherheitsrelevant. Ein Parser, der „Störung innerhalb 24 Stunden beheben"
+    als Betriebsdauer liest, setzt `betriebsdauer_min=1440` — und dieser erfundene
+    Wert übersteuert nach `LB-explizit → Norm` den EN-1838-Default von 60 min.
+    Am echten Fischa-PDF ist genau das passiert (Befund 30.08.)."""
+    pfad = _lb_datei(tmp_path, "Störungen sind innerhalb von 24 Stunden zu beheben.")
+    assert parse_lb(pfad).betriebsdauer_min is None
+    befunde = parse_bericht(pfad).fuer_feld("betriebsdauer_min")
+    assert befunde and befunde[0].status == "nicht_spezifiziert"
+    assert befunde[0].kandidat is None, "1440 darf nicht einmal als Kandidat entstehen"
+
+
+def test_notruf_akku_ist_keine_notlicht_betriebsdauer(tmp_path):
+    """Ein fremdes Batteriesystem im selben Abschnitt bringt seine eigene Dauer mit."""
+    pfad = _lb_datei(tmp_path,
+                     "Die Batterie des Notrufsystems überbrückt 24 Stunden Betriebsdauer.")
+    assert parse_lb(pfad).betriebsdauer_min is None
