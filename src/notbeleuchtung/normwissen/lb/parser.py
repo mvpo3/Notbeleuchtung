@@ -100,7 +100,9 @@ def _betriebsdauer_min(text: str) -> int | None:
     direkt an der Ziffer (`8h`), nie `\\s+h`. Dezimal erlaubt (8,5 Std → 510). Werte
     über _BETRIEBSDAUER_CAP_MIN (24 h) sind implausibel.
     """
-    muster = r"(\d+(?:[.,]\d+)?)(?:\s*(?:Std\.?|Stunden)|h)\b"
+    # Ganzzahl auf 1–4 Stellen begrenzt: sonst macht eine sehr lange Ziffernfolge
+    # float()=inf → round(inf*60) crasht. Der Cap 1440 (24 h) fängt Reste ab.
+    muster = r"(\d{1,4}(?:[.,]\d{1,2})?)(?:\s*(?:Std\.?|Stunden)|h)\b"
     for m in re.finditer(muster, text, re.IGNORECASE):
         fenster = text[max(0, m.start() - 80): m.end() + 20]
         if not re.search(r"betriebsdauer|auszulegen", fenster, re.IGNORECASE):
@@ -141,7 +143,7 @@ def _mindest_lux_fluchtweg(text: str) -> float | None:
         if re.search(r"feuerl|hydrant", fenster, re.IGNORECASE):
             continue
         # Antipanik-Wert (0,5 lx) direkt links vom Zahlwert → nicht die Fluchtweg-Größe.
-        if re.search(r"antipanik", text[max(0, m.start() - 35): m.start()], re.IGNORECASE):
+        if re.search(r"antipanik", text[max(0, m.start() - 60): m.start()], re.IGNORECASE):
             continue
         wert = float(m.group(1).replace(",", "."))
         if wert <= _LUX_FLUCHTWEG_CAP:
@@ -156,6 +158,21 @@ def _system_typ(text: str) -> str | None:
         if re.search(surface, text, re.IGNORECASE):
             return canon
     return None
+
+
+def _batterie_standort(text: str) -> str | None:
+    """Standort der (Gruppen-/Zentral-)Batterie — nur wenn nahe `batterie` ein `im/in <Raum>`
+    steht (Fischa: „Gruppenbatterie im Technikraum" → „Technikraum"). Nichts raten: ohne
+    belegtes Muster None. Whitespace flach (LB-Sätze brechen um)."""
+    flach = re.sub(r"\s+", " ", text)
+    # Standort muss raum-artig sein (…raum / Keller…) — sonst greift „Batterien in
+    # Einzelleuchten" → „Einzelleuchten". Kein Raum-Wort in Reichweite → None.
+    m = re.search(
+        r"batterie\w*\s+(?:im|in\s+(?:dem|der)?)\s*([A-ZÄÖÜ][\wäöüß-]*raum|Keller[\wäöüß-]*)",
+        flach,
+        re.IGNORECASE,
+    )
+    return m.group(1) if m else None
 
 
 def _ueberwachung(text: str) -> str | None:
@@ -209,6 +226,7 @@ def parse_lb(lb_path: str) -> LBVorgabe:
     return LBVorgabe(
         projekt=Path(lb_path).stem,
         system_typ=_system_typ(text),
+        batterie_standort=_batterie_standort(text),
         betriebsdauer_min=_betriebsdauer_min(text),
         umschaltzeit_max_s=_umschaltzeit_s(text),
         mindest_lux_fluchtweg=_mindest_lux_fluchtweg(text),
