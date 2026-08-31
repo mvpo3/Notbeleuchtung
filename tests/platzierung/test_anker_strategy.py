@@ -88,6 +88,32 @@ def test_ausgang_ausserhalb_graph_bekommt_rz():
     assert bei_exit.richtung == "unten"  # graphlos → raus
 
 
+def _zwei_nahe_kreuzungen() -> RaumModell:
+    # J1 und J2 nur 100 mm auseinander, beide degree>=3 → ohne Dedup zwei RZ <250mm.
+    nodes = [
+        Node(id="J1", typ="junction", xy_mm=(0.0, 0.0)),
+        Node(id="J2", typ="junction", xy_mm=(100.0, 0.0)),
+        Node(id="A", typ="room", xy_mm=(0.0, 5000.0)),
+        Node(id="B", typ="room", xy_mm=(-5000.0, 0.0)),
+        Node(id="C", typ="room", xy_mm=(0.0, -5000.0)),
+        Node(id="D", typ="room", xy_mm=(100.0, 5000.0)),
+        Node(id="E", typ="room", xy_mm=(5100.0, 0.0)),
+        Node(id="F", typ="room", xy_mm=(100.0, -5000.0)),
+    ]
+    edges = ([Edge(**{"from": "J1", "to": n, "len_mm": 5000.0}) for n in ("A", "B", "C")]
+             + [Edge(**{"from": "J2", "to": n, "len_mm": 5000.0}) for n in ("D", "E", "F")])
+    return RaumModell(
+        floor="DEMO", bounds_mm=BBox(min_xy=(-5000.0, -5000.0), max_xy=(5100.0, 5000.0)),
+        zirkulation=ZirkulationsGraph(nodes=nodes, edges=edges),
+    )
+
+
+def test_nahe_anker_werden_verschmolzen():
+    # Zwei Kreuzungen 100 mm auseinander → genau EIN RZ (keine Doppelplatzierung <250mm).
+    out = plan_rettungszeichen_anker(_zwei_nahe_kreuzungen(), FakeNormProvider())
+    assert len(out) == 1
+
+
 def test_duenner_graph_nur_ausgaenge():
     # 4OG-Fixture: 2 Stich-Kanten, keine Kreuzung → nur die 2 Ausgänge als Anker.
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
