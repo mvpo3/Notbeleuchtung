@@ -1,0 +1,126 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# mollgasse_eg.yaml — Ground-Truth-Fälle aus dem echten Mollgasse-Erdgeschoss
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WAS DAS IST — und was es ausdrücklich NICHT ist.
+#
+# Im Repo liegt **kein professionell gezeichneter Mollgasse-Notbeleuchtungsplan**.
+# `Projekte/Mollgasse/*.dxf` sind leere Architekturpläne (0 Notbeleuchtungs-Layer,
+# geprüft 2026-08-31), und `Projekte/Mollgasse Notbeleuchtung/` enthält nur einen
+# 5,8-kB-Bildschirmausschnitt ohne verwertbare Symbolik. Es gibt also **keine
+# Fachplaner-Referenz**, gegen die sich „welche Leuchte wurde tatsächlich gesetzt"
+# prüfen ließe.
+#
+# Was stattdessen belegbar ist: die **Auslöser-Lage** des echten Gebäudes. Wie viele
+# Ausgänge, Kreuzungen, Richtungsänderungen und Stiegenhäuser der Plan hergibt —
+# also welche Regeln der Decision-Matrix auf einem realen Grundriss überhaupt
+# feuern. Das ist Ground Truth über die EINGABE, nicht über das Ergebnis.
+#
+# Ground Truth übersteuert keine Norm (CLAUDE.md): diese Datei begründet keine
+# Regel, sie prüft nur, ob die Regeln an echter Geometrie greifen.
+#
+# Gemessen mit `ArchitekturRaumProvider.parse()` am 2026-08-31 auf
+# `Projekte/Mollgasse/Erdgeschoß.dxf`.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  plan: "Projekte/Mollgasse/Erdgeschoß.dxf"
+  floor: EG
+  gemessen_am: "2026-08-31"
+  gemessen_mit: "notbeleuchtung.raumerkennung.ArchitekturRaumProvider"
+  hinweis: >
+    Die Zahlen sind ein Messwert, keine Norm. Verbessert sich die Raumerkennung,
+    dürfen sie steigen — der Test prüft deshalb Untergrenzen, nicht Gleichheit.
+
+# ── Was das EG hergibt (Messwerte) ─────────────────────────────────────────
+gemessen:
+  raeume_gesamt: 192
+  raeume_typisiert: 7            # 5 GANG + 2 STIEGENHAUS
+  raeume_fluchtweg: 7
+  tueren: 44
+  tueren_notausgang: 6
+  ausgaenge_final_exit: 4
+  ausgaenge_stair_exit: 0        # ← siehe GT-MOLL-EG-05
+  graph_knoten: 154
+  graph_knoten_stair: 0          # ← siehe GT-MOLL-EG-05
+  kreuzungen_grad_ge_3: 12
+  segmente_gesamt: 103
+  segmente_richtungswechsel: 81  # 68 direction_change + 13 corner
+  segmente_long_run: 22
+
+# ── Fälle: welche Matrix-Regel feuert hier, und feuert sie wirklich? ───────
+faelle:
+
+  - id: GT-MOLL-EG-01
+    regel: RZ-02-AUSGANG-INS-FREIE
+    beobachtung: "4 Ausgänge vom Typ final_exit"
+    erwartung: "je Ausgang ein Rettungszeichen mit Pfeil nach unten"
+    mindestens: 4
+    status: regel_greift
+
+  - id: GT-MOLL-EG-02
+    regel: RZ-01-NOTAUSGANG
+    beobachtung: "6 Türen mit ist_notausgang"
+    erwartung: "je Notausgangstür ein Rettungszeichen"
+    mindestens: 6
+    status: regel_greift
+
+  - id: GT-MOLL-EG-03
+    regel: RZ-04-KREUZUNG
+    beobachtung: "12 Graph-Knoten mit Grad >= 3"
+    erwartung: "je Kreuzung ein Rettungszeichen, Pfeil zum nächsten Ausgang"
+    mindestens: 5
+    status: regel_greift
+
+  - id: GT-MOLL-EG-04
+    regel: RZ-03-RICHTUNGSAENDERUNG
+    beobachtung: "81 Segmente mit reason direction_change/corner"
+    erwartung: >
+      Richtungszeichen an den Knickpunkten — aber NICHT 81 Leuchten: RZ-09
+      (Sichtachse) und die Ausgangs-Priorität dünnen aus. Die Rohzahl ist ein
+      Kandidatenvorrat, kein Stückzahl-Ziel.
+    mindestens: 10
+    status: regel_greift
+
+  - id: GT-MOLL-EG-05
+    regel: RZ-07-AUSGANG-STIEGENHAUS
+    beobachtung: >
+      2 Räume sind als STIEGENHAUS typisiert, aber die Raumerkennung erzeugt
+      0 Ausgänge vom Typ stair_exit und 0 Graph-Knoten vom Typ stair.
+    erwartung: "je Stiegenhaustür ein Rettungszeichen"
+    mindestens: 0
+    status: input_fehlt_auf_echtem_plan
+    befund_an: "@polatselman (F2/Raumerkennung)"
+    auswirkung: >
+      RZ-05 (Treppe) und RZ-07 (Stiegenhaus-Ausgang) sind auf echten Plänen
+      unerreichbar, obwohl der Platzierer den Code-Pfad hat. Beide Regeln sind
+      in der Matrix deshalb als `teilweise` geführt, nicht als `unterstuetzt`.
+
+  - id: GT-MOLL-EG-06
+    regel: [SL-05-ERSTE-HILFE-STELLE, SL-06-FEUERLOESCHER, SL-07-WANDHYDRANT, SL-08-BRANDMELDER]
+    beobachtung: >
+      Das RaumModell führt weder Feuerlöscher noch Wandhydranten, Erste-Hilfe-
+      Stellen oder Meldeeinrichtungen. Die betreffenden Merkmale existieren im
+      Contract nicht.
+    erwartung: "Betonungsleuchte <= 2 m vom Gerät (EN 1838 §4.1.2)"
+    mindestens: 0
+    status: input_fehlt_im_contract
+    befund_an: "3-Owner (Contract 1 — RaumModell)"
+    auswirkung: >
+      Vier belegte Pflichtstellen aus EN 1838 §4.1.2 sind heute strukturell nicht
+      planbar. Das ist kein Normwissens-Problem, sondern eine Contract-Lücke.
+
+  - id: GT-MOLL-EG-07
+    regel: RZ-11-FLUCHTWEG-UNKLAR
+    beobachtung: >
+      In 1OG und 1KG typisiert die Raumerkennung 2 von 254 bzw. 6 von 64 Räumen,
+      erzeugt 0 Ausgänge und 0 Fluchtweg-Segmente.
+    erwartung: >
+      Kein Plan mit geratener Fluchtrichtung, sondern ein Review-Befund. Ein
+      quasi-leerer Plan darf nicht als gültiges Ergebnis durchgehen.
+    mindestens: 0
+    status: review_fall
+    auswirkung: >
+      Deckt sich mit dem DoD-Audit (docs/DOD_GEBAEUDE_MOLLGASSE.md): 6 von 8
+      Geschossen sind faktisch leer. Das Symboldichte-Gate in
+      `hauptengine/validierung.py` fängt den Fall inzwischen ab.
