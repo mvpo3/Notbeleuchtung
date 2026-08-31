@@ -126,8 +126,10 @@ def pruefe(
     #    Fluchtweg-Regeln (3/4) NICHT sehen — nämlich wenn gar keine Segmente erkannt
     #    wurden (Raumerkennung liefert keine Fluchtwege/Typen): sonst bestünde ein
     #    quasi-leeres Ergebnis (0-2 Symbole bei >100 Räumen) die Prüfung als „ok".
+    #    Nur wenn KEINE Segmente erkannt wurden — sonst decken Regel 3/4 den Fall schon
+    #    ab und Regel 8 wäre eine redundante Doppelmeldung.
     n_raeume = len(raum.raeume)
-    if n_raeume >= _MIN_RAEUME_PLAUSIBEL:
+    if n_raeume >= _MIN_RAEUME_PLAUSIBEL and not segmente:
         if not plzg:
             befunde.append(Befund(
                 "Plan-Plausibilität (Vollständigkeit)",
