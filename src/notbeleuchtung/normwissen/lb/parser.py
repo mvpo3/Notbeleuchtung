@@ -33,6 +33,12 @@ _BEREICH_VOCAB: list[tuple[re.Pattern[str], str]] = [
 
 _SL = r"(?:sicherheitsbeleuchtung|sicherheitsleuchte|led-sicherheit|notbeleuchtung)"
 
+# Lux-Einheit: Abkürzung „lx" ODER ausgeschriebenes „Lux" (reale LBs mischen beides).
+_LUX = r"(?:lx|lux)"
+# Plausibilitäts-Caps gegen Fremdzahl-Treffer (s. Docstrings unten).
+_LUX_FLUCHTWEG_CAP = 20.0        # EN 1838: Fluchtweg-Mittellinie 1 lx, Antipanik 0,5 lx
+_BETRIEBSDAUER_CAP_MIN = 1440    # 24 h — darüber kein Notlicht-Betriebsdauerwert
+
 
 def _lies_text(pfad: str | Path) -> str:
     """LB-Text laden — PDF via pypdf, sonst Datei als Text."""
@@ -85,8 +91,30 @@ def _gebaeudeklasse(text: str) -> str | None:
 
 
 def _betriebsdauer_min(text: str) -> int | None:
-    m = re.search(r"(\d+)\s*(?:Std|Stunden|Std\.|h)\b", text, re.IGNORECASE)
-    return int(m.group(1)) * 60 if m else None
+    """Notlicht-Betriebsdauer (Minuten) — nur im Batterie-/Betriebsdauer-Kontext.
+
+    Härtet gegen Fremdzahlen ohne Notlicht-Bezug: „24 Stunden nach Verständigung"
+    (Gewährleistung), „123 H SCHLUSSER" (bare-`h` an Fremdwort) und „…Batterie des
+    Notrufsystems … 24 Stunden" (fremdes Batteriesystem) werden verworfen — im Fenster
+    muss `(nenn)betriebsdauer|auszulegen` stehen und **kein** `notruf`. Bare `h` nur
+    direkt an der Ziffer (`8h`), nie `\\s+h`. Dezimal erlaubt (8,5 Std → 510). Werte
+    über _BETRIEBSDAUER_CAP_MIN (24 h) sind implausibel.
+    """
+    # Ganzzahl auf 1–4 Stellen begrenzt: sonst macht eine sehr lange Ziffernfolge
+    # float()=inf → round(inf*60) crasht. Der Cap 1440 (24 h) fängt Reste ab.
+    muster = r"(\d{1,4}(?:[.,]\d{1,2})?)(?:\s*(?:Std\.?|Stunden)|h)\b"
+    for m in re.finditer(muster, text, re.IGNORECASE):
+        fenster = text[max(0, m.start() - 80): m.end() + 20]
+        if not re.search(r"betriebsdauer|auszulegen", fenster, re.IGNORECASE):
+            continue
+        # notruf nur lokal am Treffer prüfen (nicht über 80er-Fenster in Nachbarsatz bluten).
+        if re.search(r"notruf", text[max(0, m.start() - 40): m.end() + 10], re.IGNORECASE):
+            continue
+        minuten = round(float(m.group(1).replace(",", ".")) * 60)
+        if minuten > _BETRIEBSDAUER_CAP_MIN:
+            continue
+        return minuten
+    return None
 
 
 def _umschaltzeit_s(text: str) -> float | None:
@@ -94,9 +122,33 @@ def _umschaltzeit_s(text: str) -> float | None:
     return float(m.group(1).replace(",", ".")) if m else None
 
 
-def _mindest_lux(text: str) -> float | None:
-    m = re.search(r"(\d+(?:[.,]\d+)?)\s*lx\b", text, re.IGNORECASE)
-    return float(m.group(1).replace(",", ".")) if m else None
+def _mindest_lux_fluchtweg(text: str) -> float | None:
+    """Fluchtweg-Mindestbeleuchtungsstärke (lx) — nur im Fluchtweg-Kontext.
+
+    `_mindest_lux` alt griff das erste `\\d+ lx` im Doc (mo-Elektro: „200 lx"
+    Aufzugsvorplatz). Neu: der Wert muss im Fenster `fluchtweg|rettungsweg|
+    orientierungsbeleuchtung` stehen und darf nicht bei `feuerl|hydrant` liegen
+    (das ist Sonder-Lux). Ein direkt links vorangestelltes `antipanik` disqualifiziert
+    den Wert (Antipanik 0,5 lx ist eine andere Größe als die Fluchtweg-Mittellinie
+    1 lx) — sonst zöge `min()` den Antipanik-Wert. Nimmt das Minimum der verbleibenden
+    Kandidaten (EN-1838-Mindestwert; reale LBs nennen „1 Lux" mehrfach) und verwirft
+    Werte über _LUX_FLUCHTWEG_CAP.
+    """
+    kandidaten: list[float] = []
+    for m in re.finditer(r"(\d+(?:[.,]\d+)?)\s*" + _LUX + r"\b", text, re.IGNORECASE):
+        fenster = text[max(0, m.start() - 70): m.end() + 15]
+        if not re.search(r"fluchtweg|rettungsweg|orientierungsbeleuchtung",
+                         fenster, re.IGNORECASE):
+            continue
+        if re.search(r"feuerl|hydrant", fenster, re.IGNORECASE):
+            continue
+        # Antipanik-Wert (0,5 lx) direkt links vom Zahlwert → nicht die Fluchtweg-Größe.
+        if re.search(r"antipanik", text[max(0, m.start() - 60): m.start()], re.IGNORECASE):
+            continue
+        wert = float(m.group(1).replace(",", "."))
+        if wert <= _LUX_FLUCHTWEG_CAP:
+            kandidaten.append(wert)
+    return min(kandidaten) if kandidaten else None
 
 
 def _system_typ(text: str) -> str | None:
@@ -106,6 +158,21 @@ def _system_typ(text: str) -> str | None:
         if re.search(surface, text, re.IGNORECASE):
             return canon
     return None
+
+
+def _batterie_standort(text: str) -> str | None:
+    """Standort der (Gruppen-/Zentral-)Batterie — nur wenn nahe `batterie` ein `im/in <Raum>`
+    steht (Fischa: „Gruppenbatterie im Technikraum" → „Technikraum"). Nichts raten: ohne
+    belegtes Muster None. Whitespace flach (LB-Sätze brechen um)."""
+    flach = re.sub(r"\s+", " ", text)
+    # Standort muss raum-artig sein (…raum / Keller…) — sonst greift „Batterien in
+    # Einzelleuchten" → „Einzelleuchten". Kein Raum-Wort in Reichweite → None.
+    m = re.search(
+        r"batterie\w*\s+(?:im|in\s+(?:dem|der)?)\s*([A-ZÄÖÜ][\wäöüß-]*raum|Keller[\wäöüß-]*)",
+        flach,
+        re.IGNORECASE,
+    )
+    return m.group(1) if m else None
 
 
 def _ueberwachung(text: str) -> str | None:
@@ -125,9 +192,12 @@ def _pruefung(text: str) -> str | None:
 
 
 def _sonder_lux(text: str) -> list[SonderLux]:
+    # Whitespace flach: reale LBs brechen „…situiert werden.\n(mindestens 5 Lux)" um.
+    flach = re.sub(r"\s+", " ", text)
     out: list[SonderLux] = []
-    for surface, ort in ((r"feuerl[öo]scher", "feuerloescher"), (r"hydrant", "hydrant")):
-        m = re.search(surface + r"[^.\n]{0,60}?(\d+(?:[.,]\d+)?)\s*lx", text, re.IGNORECASE)
+    for surface, ort in ((r"feuerl(?:ö|oe|o)scher", "feuerloescher"), (r"hydrant", "hydrant")):
+        m = re.search(surface + r".{0,110}?(\d+(?:[.,]\d+)?)\s*" + _LUX + r"\b",
+                      flach, re.IGNORECASE)
         if m:
             out.append(SonderLux(ort=ort, min_lux=float(m.group(1).replace(",", "."))))
     return out
@@ -156,9 +226,10 @@ def parse_lb(lb_path: str) -> LBVorgabe:
     return LBVorgabe(
         projekt=Path(lb_path).stem,
         system_typ=_system_typ(text),
+        batterie_standort=_batterie_standort(text),
         betriebsdauer_min=_betriebsdauer_min(text),
         umschaltzeit_max_s=_umschaltzeit_s(text),
-        mindest_lux_fluchtweg=_mindest_lux(text),
+        mindest_lux_fluchtweg=_mindest_lux_fluchtweg(text),
         ueberwachung=_ueberwachung(text),
         pruefung=_pruefung(text),
         piktogramm_norm=_piktogramm(text),

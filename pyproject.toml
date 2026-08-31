@@ -36,6 +36,10 @@ exclude = ["notbeleuchtung.raumerkennung._port*", "notbeleuchtung.normwissen._po
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]
 testpaths = ["tests"]
+# Sicht-/Golden-Regressions-Tests sind langsam (Raster-Render) → default deselektiert;
+# gezielt via `pytest -m visual` (überschreibt das addopts-Filter).
+addopts = "-m 'not visual'"
+markers = ["visual: langsame Sicht-/Golden-Regressions-Tests (default deselektiert)"]
 
 [tool.ruff]
 src = ["src", "tests", "scripts"]
