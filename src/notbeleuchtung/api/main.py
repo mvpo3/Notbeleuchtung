@@ -11,6 +11,11 @@ Der 2. Input (Leistungsbeschreibung/LB) ist optional: liegt eine LB bei UND ist 
 LB-Provider verdrahtet (`ProviderBundle.lb`, Enis), parst die Pipeline sie in eine
 `LBVorgabe`, die die norm-getriebene Platzierung übersteuert. Ohne LB (oder ohne
 LB-Provider) läuft die Engine rein norm-getrieben.
+
+Bricht der LB-Parser fail closed ab (`LbReviewRequired`/`LbNichtLesbar`), liefert die
+Pipeline weiterhin einen Plan — aber einen rein norm-getriebenen. Das trägt der
+`X-Notbeleuchtung`-Header als `lb_review` nach außen; ohne dieses Feld wäre der Fall
+von einem regulären Plan nicht unterscheidbar.
 """
 from __future__ import annotations
 
@@ -33,7 +38,32 @@ from notbeleuchtung.hauptengine.render import dxf_zu_pdf
 BundleFactory = Callable[[], ProviderBundle]
 
 # Nur maschinen-lesbare, ASCII-sichere Felder in den Response-Header (kein temp-Pfad).
-_SUMMARY_HEADER_KEYS = ("floor", "n_symbols", "by_kind", "n_raeume", "rendered")
+#
+# `lb_review` MUSS dabei sein: die Pipeline setzt es, wenn Enis' LB-Parser fail closed
+# abbricht (`LbFehler`). Der Plan wird dann zwar geliefert, aber rein norm-getrieben —
+# die expliziten LB-Vorgaben sind NICHT angewendet. Fällt das Feld hier aus der Antwort,
+# bekommt der Client (und damit das Chat-Interface) einen normal aussehenden Plan und
+# erfährt nichts davon; das Fail-Closed endet dann an der API-Grenze.
+_SUMMARY_HEADER_KEYS = ("floor", "n_symbols", "by_kind", "n_raeume", "rendered", "lb_review")
+
+# HTTP-Header sind längenbegrenzt (uvicorn: ~8 KB je Zeile) und `ensure_ascii` bläht
+# Umlaute auf 6 Zeichen. Die Review-Meldung trägt alle blockierenden Befunde und kann
+# darum beliebig lang werden — im Header wird sie gekappt, der volle Befund bleibt über
+# `LbTextProvider.parse_bericht()` erreichbar.
+_LB_REVIEW_MELDUNG_MAX = 600
+
+
+def _header_summary(render_summary: dict) -> dict:
+    """Die Header-tauglichen Felder aus dem Pipeline-Summary — `lb_review` gekürzt."""
+    summary = {k: render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in render_summary}
+    review = summary.get("lb_review")
+    if isinstance(review, dict):
+        meldung = str(review.get("meldung", ""))
+        summary["lb_review"] = dict(review)
+        if len(meldung) > _LB_REVIEW_MELDUNG_MAX:
+            summary["lb_review"]["meldung"] = meldung[:_LB_REVIEW_MELDUNG_MAX] + "…"
+            summary["lb_review"]["gekuerzt"] = True
+    return summary
 
 
 def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
@@ -90,7 +120,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                                lb_path=lb_path, plankopf=plankopf or None)
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
-            summary = {k: ergebnis.render_summary[k] for k in _SUMMARY_HEADER_KEYS if k in ergebnis.render_summary}
+            summary = _header_summary(ergebnis.render_summary)
             if format == "pdf":
                 try:
                     resp_path = dxf_zu_pdf(out_path, workdir / f"{floor}_notbeleuchtung.pdf")
