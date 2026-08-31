@@ -26,9 +26,10 @@ _BEREICH_VOCAB: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"stiegenh|treppenh|\bstiege", re.IGNORECASE), "STIEGENHAUS"),
     (re.compile(r"g[aä]nge?\b|korridor|\bflur", re.IGNORECASE), "GANG"),
     (re.compile(r"garage|tiefgarage|einstellr|stellpl", re.IGNORECASE), "GARAGE"),
-    (re.compile(r"technikr", re.IGNORECASE), "TECHNIK"),
-    (re.compile(r"lagerr|abstellr", re.IGNORECASE), "LAGER"),
-    (re.compile(r"m[üu]llr", re.IGNORECASE), "MUELLRAUM"),
+    (re.compile(r"technik", re.IGNORECASE), "TECHNIK"),          # Technik(raum)/Haustechnik
+    (re.compile(r"\blager", re.IGNORECASE), "LAGER"),            # Lager(raum); NICHT einlager…
+    (re.compile(r"abstellr|einlager", re.IGNORECASE), "ABSTELLRAUM"),
+    (re.compile(r"m[üu]ll", re.IGNORECASE), "MUELLRAUM"),        # Müll(raum)/Restmüll
 ]
 
 _SL = r"(?:sicherheitsbeleuchtung|sicherheitsleuchte|led-sicherheit|notbeleuchtung)"
