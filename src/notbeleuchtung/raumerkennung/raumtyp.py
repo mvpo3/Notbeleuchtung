@@ -70,17 +70,34 @@ _EXTRA_LABELS: dict[str, RoomType] = {
 }
 _WORT = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 
+# LB-Vokabular-Typen OHNE Port-RoomType (GARAGE/TECHNIK/LAGER/MUELLRAUM aus
+# `_BEREICH_VOCAB` im LB-Parser). Token-exakt, direkt als (label, ist_fluchtweg,
+# ist_communal). Ohne diese Labels feuert die `lb_override`-Inklusion/Exklusion für
+# genau diese Raumtypen NIE (tote Regel — der kanonische „Garage → SL"-LB-Fall).
+_EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
+    "garage": ("GARAGE", False, True),
+    "tiefgarage": ("GARAGE", False, True),
+    "technik": ("TECHNIK", False, True),
+    "haustechnik": ("TECHNIK", False, True),
+    "lager": ("LAGER", False, True),
+    "müll": ("MUELLRAUM", False, True),
+    "müllraum": ("MUELLRAUM", False, True),
+    "restmüll": ("MUELLRAUM", False, True),
+}
+
 
 def raumtyp_flags(text: str) -> tuple[str, bool, bool] | None:
     """Freitext-Label → (raum_typ, ist_fluchtweg, ist_communal); None bei UNKNOWN."""
     rt = classify_room(text)
-    if rt is RoomType.UNKNOWN:
-        # Fallback: Wort-Token exakt gegen österr. Abkürzungen (kein Substring-Bleed).
-        tokens = {t.lower() for t in _WORT.findall(text)}
-        rt = next((v for k, v in _EXTRA_LABELS.items() if k in tokens), RoomType.UNKNOWN)
-    if rt is RoomType.UNKNOWN:
-        return None
-    return _TYP_MAP.get(rt, (text.upper(), False, False))
+    if rt is not RoomType.UNKNOWN:
+        return _TYP_MAP.get(rt, (text.upper(), False, False))
+    # Fallback token-exakt (kein Substring-Bleed): österr. Abkürzungen …
+    tokens = {t.lower() for t in _WORT.findall(text)}
+    rt = next((v for k, v in _EXTRA_LABELS.items() if k in tokens), None)
+    if rt is not None:
+        return _TYP_MAP[rt]
+    # … dann LB-Vokabular-Typen ohne Port-RoomType.
+    return next((v for k, v in _EXTRA_DIRECT.items() if k in tokens), None)
 
 
 def beschrifte_raeume(plan: DxfPlan, raeume: list[Raum]) -> list[Raum]:
