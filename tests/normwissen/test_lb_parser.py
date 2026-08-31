@@ -1,4 +1,4 @@
-"""LbParser — Leistungsbeschreibung (2. Input) → LBVorgabe.
+"""LbTextProvider — Leistungsbeschreibung (2. Input) → LBVorgabe.
 
 Schwerpunkt: **fail closed**. Der Parser muss lieber sichtbar Review verlangen,
 als eine erkannte projektspezifische Anforderung still zu verlieren.
@@ -21,13 +21,13 @@ import jsonschema
 import pytest
 
 from notbeleuchtung.hauptengine.contracts import LBProvider, LBVorgabe
-from notbeleuchtung.normwissen import LbParser
+from notbeleuchtung.normwissen import LbTextProvider
 from notbeleuchtung.normwissen.lb import LbNichtLesbar, LbReviewRequired
 
 FIXTURES = Path(__file__).parent / "lb_fixtures"
 SCHEMA = Path("src/notbeleuchtung/hauptengine/contracts/schema/lb_vorgabe.schema.json")
 
-PARSER = LbParser()
+PARSER = LbTextProvider()
 
 
 def _pfad(name: str) -> str:
