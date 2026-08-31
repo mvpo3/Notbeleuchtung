@@ -85,6 +85,15 @@ def test_hoehenkoten_label_gezeichnet(rendered):
     assert all(k.text == "h=2,40" for k in koten)
 
 
+def test_info_blocks_sind_gerahmte_boxen(rendered):
+    # Schriftfeld-Leiste: Stückliste ist jetzt eine gerahmte Box (Rahmen + Text auf
+    # demselben Layer), nicht mehr freier Text neben dem Grundriss.
+    _, _, doc = rendered
+    msp = doc.modelspace()
+    assert msp.query("LWPOLYLINE[layer=='E_Notbeleuchtung_Stueckliste']")
+    assert msp.query("MTEXT[layer=='E_Notbeleuchtung_Stueckliste']")
+
+
 def test_plankopf_rahmen_und_felder(rendered):
     _, summary, doc = rendered
     assert summary["plankopf_drawn"] is True
