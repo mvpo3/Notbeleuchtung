@@ -128,11 +128,19 @@ sl_abschnitt_ausschluss:
 felder:
   betriebsdauer_min:
     bezeichnung: "Betriebsdauer"
+    # Ganzzahl auf 1-4 Stellen begrenzt: eine sehr lange Ziffernfolge ergaebe
+    # float()=inf und damit einen OverflowError beim Runden.
     muster:
-      - regex: '(?:Akkus?|Batterieanlage|Nennbetriebsdauer|Betriebsdauer)[^.\n]{0,80}?(\d+(?:[.,]\d+)?)\s*(Std\.?|Stunden|h)\b'
+      - regex: '(?:Akkus?|Batterieanlage|Nennbetriebsdauer|Betriebsdauer)[^.\n]{0,80}?(\d{1,4}(?:[.,]\d{1,2})?)\s*(Std\.?|Stunden|h)\b'
         einheit_gruppe: 2
-      - regex: '(\d+(?:[.,]\d+)?)\s*(Std\.?|Stunden)\b[^.\n]{0,40}(?:auszulegen|Betriebsdauer|Nennbetriebsdauer)'
+      - regex: '(\d{1,4}(?:[.,]\d{1,2})?)\s*(Std\.?|Stunden)\b[^.\n]{0,40}(?:auszulegen|Betriebsdauer|Nennbetriebsdauer)'
         einheit_gruppe: 2
+    # 24 h ist die Obergrenze jeder realen Notlicht-Betriebsdauer. Alles darueber
+    # ist eine Fremdzahl (Gewaehrleistungs-, Stoerungs- oder Trocknungsfrist).
+    plausibel_max: 1440
+    # Ein Notruf-/Aufzugsakku ist ein anderes System mit eigener Dauer.
+    ausschluss:
+      - 'notruf'
     einheiten:
       "std": 60
       "std.": 60
@@ -155,9 +163,27 @@ felder:
     muster:
       - regex: '(?:Beleuchtungsst[äa]rke|Fluchtweg\w*)[^.\n]{0,80}?(?:mindestens|min\.?|betr[äa]gt)\s*(\d+(?:[.,]\d+)?)\s*(Lux|lx)\b'
         einheit_gruppe: 2
+      # "Mindestbeleuchtungsstaerke im Fluchtweg 1 lx" — Wert ohne Quantor davor.
+      # Das Fluchtweg-Wort ist Pflicht, sonst zoege "Mindestbeleuchtungsstaerke von
+      # 200 lx" (Aufzugsvorplatz) einen Fremdwert herein.
+      - regex: 'Mindestbeleuchtungsst[äa]rke\s+(?:im|auf|in)\s+\w*[Ff]luchtweg\w*\s+(\d+(?:[.,]\d+)?)\s*(Lux|lx)\b'
+        einheit_gruppe: 2
+      # "Auf dem Fluchtweg 1 lx" — knappe Aufzaehlungsform ganz ohne Quantor.
+      - regex: '[Ff]luchtweg\w*\s+(?:von\s+)?(\d+(?:[.,]\d+)?)\s*(Lux|lx)\b'
+        einheit_gruppe: 2
     einheiten:
       "lux": 1
       "lx": 1
+    # EN 1838: Fluchtweg-Mittellinie 1 lx. Ein Vielfaches davon ist eine andere
+    # Groesse (Arbeitsplatz-/Vorplatzbeleuchtung), keine Fluchtweg-Angabe.
+    plausibel_max: 20
+    # Antipanik (0,5 lx) ist eine ANDERE Groesse als die Fluchtweg-Mittellinie und
+    # steht in realen LBs im selben Satz. Ebenso Sonder-Lux an Loeschgeraeten.
+    ausschluss:
+      - 'antipanik'
+      - 'feuerl'
+      - 'hydrant'
+    ausschluss_fenster: 60
 
 # ── Enum-Felder (reine Vorkommenspruefung im SL-Kontext) ───────────────────
 enums:
@@ -214,10 +240,14 @@ sonder_lux:
   # einem Satz nennt („im Bereich von Feuerloeschern und Wandhydranten …
   # (mindestens 5 Lux)"). Der Platzierer verankert an jedem Geraet einzeln — ein
   # zusammengezogener Ort waere dort nicht aufloesbar.
+  #
+  # Der Quantor ist optional: real steht mal "(mindestens 5 Lux)", mal "… ist eine
+  # Beleuchtungsstaerke von 5 lx sicherzustellen". Die Einheit direkt hinter der
+  # Zahl bleibt Pflicht — sonst zoege eine Stueckzahl den Treffer.
   - ort: "feuerloescher"
-    regex: '(?:Feuerlösch\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+    regex: '(?:Feuerlösch\w*).{0,160}?(?:mindestens|min\.?|von)?\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)\b'
   - ort: "hydrant"
-    regex: '(?:Wandhydrant\w*|Hydrant\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+    regex: '(?:Wandhydrant\w*|Hydrant\w*).{0,160}?(?:mindestens|min\.?|von)?\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)\b'
 
 # ── Standort der Batterieanlage ────────────────────────────────────────────
 # „Gruppenbatterieanlage … situiert im Technikraum" / „wird im UG im Zaehlerraum
@@ -292,8 +322,9 @@ inklusion_muster:
   - 'werden\s+(?:Fluchtweg-?\s*und\s+)?Sicherheitsleuchten\s+installiert'
   - 'Sicherheitsbeleuchtung\s+wird\s+in\s+'
   - 'versorgt\s+die\s+Sicherheitsbeleuchtung\s+in\s+'
-  - 'ist\s+eine\s+Sicherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen|erforderlich)'
-  - 'Sicherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen)'
+  # Zusammensetzungen wie "LED-Sicherheitsbeleuchtung" meinen dieselbe Sache.
+  - 'ist\s+eine\s+[\w-]*[Ss]icherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen|erforderlich)'
+  - '[\w-]*[Ss]icherheitsbeleuchtung\s+(?:zu\s+errichten|herzustellen)'
 
 # Begruendung aus der Klammer: „(GK4)"
 begruendung_muster: '\((GK\s?\d)\)'

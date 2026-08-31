@@ -33,24 +33,42 @@ def _zahl(roh: str) -> float:
 
 
 def zahl_feld(abschnitte: list[Abschnitt], cfg: dict) -> Treffer | None:
-    """Zahl + Einheit im Umfeld eines Fachworts; erster Treffer gewinnt."""
+    """Zahl + Einheit im Umfeld eines Fachworts; erster Treffer gewinnt.
+
+    Zwei optionale Schutzgitter aus der Konfiguration:
+
+    * `ausschluss` — Regexe, die im Fenster um den Treffer NICHT vorkommen dürfen.
+      Damit lässt sich eine benachbarte, aber andere Größe abwehren (Antipanik
+      0,5 lx ist nicht die Fluchtweg-Mittellinie 1 lx).
+    * `plausibel_max` — Obergrenze in der Zielgröße. Was darüber liegt, ist keine
+      Notlicht-Angabe mehr, sondern eine Fremdzahl.
+
+    Ein verworfener Treffer beendet die Suche nicht — das nächste Muster bzw. der
+    nächste Abschnitt darf noch greifen.
+    """
     einheiten = {k.lower(): v for k, v in cfg.get("einheiten", {}).items()}
+    ausschluss = [re.compile(r, re.IGNORECASE) for r in cfg.get("ausschluss", [])]
+    fenster = cfg.get("ausschluss_fenster", 60)
+    grenze = cfg.get("plausibel_max")
     for a in abschnitte:
         block = a.block
         for m in cfg["muster"]:
-            treffer = re.search(m["regex"], block, re.IGNORECASE)
-            if not treffer:
-                continue
-            wert = _zahl(treffer.group(1))
-            gruppe = m.get("einheit_gruppe")
-            if gruppe:
-                einheit = (treffer.group(gruppe) or "").strip().lower()
-                faktor = einheiten.get(einheit)
-                if faktor is None:
-                    continue          # unbekannte Einheit → lieber nichts als falsch
-                wert *= faktor
-            return Treffer(wert=wert, anker=treffer.group(0).strip(), abschnitt=a,
-                           seite=a.seite_fuer(treffer.start()))
+            for treffer in re.finditer(m["regex"], block, re.IGNORECASE):
+                umfeld = block[max(0, treffer.start() - fenster): treffer.end()]
+                if any(rx.search(umfeld) for rx in ausschluss):
+                    continue
+                wert = _zahl(treffer.group(1))
+                gruppe = m.get("einheit_gruppe")
+                if gruppe:
+                    einheit = (treffer.group(gruppe) or "").strip().lower()
+                    faktor = einheiten.get(einheit)
+                    if faktor is None:
+                        continue      # unbekannte Einheit → lieber nichts als falsch
+                    wert *= faktor
+                if grenze is not None and wert > grenze:
+                    continue
+                return Treffer(wert=wert, anker=treffer.group(0).strip(), abschnitt=a,
+                               seite=a.seite_fuer(treffer.start()))
     return None
 
 
@@ -205,6 +223,10 @@ def bereiche(abschnitte: list[Abschnitt], cfg: dict) -> list[BereichsTreffer]:
         ]
         bullets = {t for t, _ in einheiten}
         einheiten += a.saetze()
+        # Die Überschrift ist selbst eine Auswertungseinheit: reale LBs stecken die
+        # ganze Aussage hinein („2.11 In der Garage ist eine LED-Sicherheits-
+        # beleuchtung herzustellen."). Sie steht dann in KEINEM Satz des Blocks.
+        einheiten.append((a.titel, a.seite))
 
         for einheit, seite in einheiten:
             typen = _raum_typen(einheit, vokabular)
