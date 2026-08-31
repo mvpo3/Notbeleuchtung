@@ -47,6 +47,15 @@ def test_teilweise_untypisiert_warnt_weicher():
     assert not any("Nur Rettungszeichen" in w for w in cov["warnungen"])
 
 
+def test_ueber_20_leuchten_hinweis_auto_pruefeinrichtung():
+    # OVE E 8101 560.9.001.AT: > 20 Leuchten → EN-62034-Prüfeinrichtung Pflicht (Hinweis).
+    cov = _coverage(_raum("GANG"), _erg(*(["sicherheitsleuchte"] * 21)))
+    assert any("Prüfeinrichtung" in h and "EN 62034" in h for h in cov["hinweise"])
+    # Nicht-blockierend: keine Warnung, gesamtstatus unberührt.
+    cov20 = _coverage(_raum("GANG"), _erg(*(["sicherheitsleuchte"] * 20)))
+    assert not any("Prüfeinrichtung" in h for h in cov20["hinweise"])   # genau 20 = noch nicht
+
+
 def test_voll_typisiert_mit_arten_keine_warnung():
     cov = _coverage(_raum("STIEGENHAUS", "SAAL"), _erg("rz", "sicherheitsleuchte", "antipanik"))
     assert cov["n_raeume_untypisiert"] == 0
