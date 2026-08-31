@@ -17,3 +17,8 @@ jobs:
         run: ruff check .
       - name: Full test suite
         run: pytest -q
+      - name: Visual render smoke (Raster-Pfad, plattform-tolerant)
+        # Regenerate-Modus: rendert DXF→PNG und übt den kompletten Raster-Pfad (fängt
+        # Crashes), OHNE plattform-abhängigen Pixel-Vergleich (Golden ist maschinen-
+        # spezifisch = lokales Regressions-Werkzeug, kein Cross-Plattform-Gate).
+        run: NOTBEL_UPDATE_GOLDEN=1 pytest -m visual -q
