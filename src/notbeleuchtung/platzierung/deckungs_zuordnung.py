@@ -8,9 +8,18 @@ liegen.
 
 Diese Schicht ordnet **nachträglich** zu: ein Fluchtweg-Segment gilt als gedeckt, wenn
 ein Rettungszeichen innerhalb der Norm-Erkennungsweite (l = z·h) an seiner Polylinie
-liegt — dann ist von jedem Punkt des Segments ein RZ sichtbar (EN 1838 §4.1.1). Jedes
-Segment wird dem **nächstliegenden** RZ in Reichweite zugeordnet; Segmente ohne RZ in
-Reichweite bleiben ungedeckt (echte Norm-Lücke, die die Prüfung zurecht meldet).
+liegt (EN 1838 §4.1.1). Jedes Segment wird dem **nächstliegenden** RZ in Reichweite
+zugeordnet; Segmente ohne RZ in Reichweite bleiben ungedeckt (echte Norm-Lücke, die die
+Prüfung zurecht meldet).
+
+**Grenze (bewusst konservativ, kein Freibrief):** gemessen wird der **euklidische**
+Abstand (Luftlinie) RZ→Segment, **ohne** Sichtlinien-/Wand-Prüfung — ein RZ kann so ein
+Segment „decken", das in Reichweite, aber hinter einer Wand/um eine Ecke liegt (real
+nicht sichtbar). Eine echte Line-of-Sight-Prüfung braucht Wandgeometrie bzw. Kopplung an
+die Weglänge im Zirkulationsgraph (Follow-up, siehe docs/DOD_SICHTPRUEFUNG.md). Die
+Erkennungsweite ist außerdem von der Beleuchtungsart abhängig (`hinterleuchtet`:
+z=200 → 30 m; beleuchtet: z=100 → 15 m); Default `hinterleuchtet=True`, weil die
+gesetzten RZ hinterleuchtete Rettungszeichenleuchten (`notlicht_ks…`) sind.
 
 Render-frei, kein Contract berührt: füllt nur das schon vorhandene Feld `covers_segment`
 und erfüllt damit die Naht-Invariante `covers_segment ⊆ RaumModell.segmente`.
@@ -52,25 +61,27 @@ def _dist_punkt_polyline(p: tuple[float, float], poly: list) -> float:
     )
 
 
-def _radius_mm(norm: NormProvider) -> float:
+def _radius_mm(norm: NormProvider, hinterleuchtet: bool) -> float:
     """Deckungs-Radius = Norm-Erkennungsweite (l = z·h) in mm; sonst Default."""
-    weite_m = norm.erkennungsweite_m(_PIKTO_HOEHE_M, True)
+    weite_m = norm.erkennungsweite_m(_PIKTO_HOEHE_M, hinterleuchtet)
     return weite_m * 1000.0 if weite_m and weite_m > 0 else _DEFAULT_RADIUS_MM
 
 
 def zuordnen(
-    placements: list[Platzierung], raum: RaumModell, norm: NormProvider
+    placements: list[Platzierung], raum: RaumModell, norm: NormProvider,
+    *, hinterleuchtet: bool = True,
 ) -> list[Platzierung]:
     """Füllt `covers_segment` der RZ geometrisch: jedes Segment → nächstes RZ in Reichweite.
 
-    Gibt eine neue Liste zurück (RZ mit gesetztem `covers_segment`, Rest unverändert);
-    mutiert die Eingabe nicht."""
+    `hinterleuchtet` wählt die Erkennungsweite (True=z·h mit z=200 → 30 m für
+    hinterleuchtete RZ-Leuchten; False=z=100 → 15 m). Gibt eine neue Liste zurück (RZ mit
+    gesetztem `covers_segment`, Rest unverändert); mutiert die Eingabe nicht."""
     segmente = raum.zirkulation.segmente
     rz_idx = [i for i, p in enumerate(placements) if p.kind == "rz"]
     if not segmente or not rz_idx:
         return placements
 
-    radius = _radius_mm(norm)
+    radius = _radius_mm(norm, hinterleuchtet)
     deckung: dict[int, list[str]] = {i: [] for i in rz_idx}
     for seg in segmente:
         beste_i, bester_d = None, radius

@@ -37,5 +37,15 @@ out_path=…, lb_path=…)` → `render.dxf_zu_pdf(...)`. Output-PDF/PNG bleiben
 ## Nächste F1-Schritte (aus dieser Prüfung)
 
 1. Befund #1 (covers_segment real füllen) — höchster Hebel, macht Regel #3 aussagekräftig.
+   **Erledigt** (`deckungs_zuordnung`), aber mit bewusster Grenze (siehe unten).
 2. Befund #6 (Liefer-Layout der Textblöcke) — Paperspace-Layout-Template (bisher deferred).
 3. Befund #5/#7 — Kleinigkeiten, gebündelt.
+
+## Bekannte Grenzen / Follow-ups
+
+- **Deckungs-Zuordnung ist Luftlinie, keine Sichtlinie:** `deckungs_zuordnung` misst den
+  euklidischen Abstand RZ→Segment innerhalb der Erkennungsweite — **ohne** Wand-/Line-of-
+  Sight-Prüfung. Ein RZ kann so ein Segment „decken", das in Reichweite, aber hinter einer
+  Wand/um eine Ecke liegt → Regel #3 ist tendenziell zu optimistisch. Echter Fix braucht
+  Wandgeometrie oder Kopplung an die **Weglänge im Zirkulationsgraph** (statt Luftlinie).
+  Follow-up, sobald Selmans echter Graph/Wände im Contract sind.
