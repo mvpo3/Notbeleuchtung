@@ -47,6 +47,7 @@ def test_fischa_skalare_felder():
     assert lb.ueberwachung == "einzelleuchte"
     assert lb.pruefung == "web"
     assert lb.piktogramm_norm == "EN ISO 7010"
+    assert lb.batterie_standort == "Technikraum"  # „Gruppenbatterie im Technikraum"
 
 
 def test_fischa_sonderlux_und_normbezug():
@@ -95,6 +96,37 @@ def test_fluchtweg_lux_nicht_von_antipanik_unterboten(tmp_path):
     p.write_text("Auf dem Fluchtweg 1 lx, in der Antipanikflaeche 0,5 lx.\n",
                  encoding="utf-8")
     assert parse_lb(str(p)).mindest_lux_fluchtweg == 1.0
+
+
+def test_betriebsdauer_overflow_guard(tmp_path):
+    # Sehr lange Ziffernfolge darf nicht float()=inf → round(inf*60)-Crash auslösen;
+    # das Muster kappt die Ganzzahl auf 4 Stellen, der Cap 1440 fängt den Rest ab.
+    p = tmp_path / "of.txt"
+    p.write_text("Betriebsdauer " + "1" * 309 + " Stunden auszulegen.\n", encoding="utf-8")
+    assert parse_lb(str(p)).betriebsdauer_min is None  # kein Crash, kein Fehltreffer
+
+
+def test_antipanik_fenster_60_zeichen(tmp_path):
+    # Antipanik-0,5-Wert bei ~52 Zeichen Abstand: das erweiterte Links-Fenster (60)
+    # disqualifiziert ihn — mindest_lux_fluchtweg wird NICHT 0.5.
+    p = tmp_path / "ap60.txt"
+    p.write_text("Antipanikbereich im Fluchtweg mit einer Stärke von 0,5 lux.\n",
+                 encoding="utf-8")
+    assert parse_lb(str(p)).mindest_lux_fluchtweg != 0.5
+
+
+def test_batterie_standort_extrahiert(tmp_path):
+    # „<...>batterie im <Raum>" → Standort; ohne belegtes Muster None (nicht raten).
+    p = tmp_path / "batt.txt"
+    p.write_text("Die Versorgung erfolgt als Gruppenbatterie im Technikraum.\n",
+                 encoding="utf-8")
+    assert parse_lb(str(p)).batterie_standort == "Technikraum"
+
+
+def test_batterie_standort_none_ohne_muster(tmp_path):
+    p = tmp_path / "batt_none.txt"
+    p.write_text("Eine Batterie ist vorzusehen, ohne Standortangabe.\n", encoding="utf-8")
+    assert parse_lb(str(p)).batterie_standort is None
 
 
 def test_leere_lb_bleibt_norm_default(tmp_path):
