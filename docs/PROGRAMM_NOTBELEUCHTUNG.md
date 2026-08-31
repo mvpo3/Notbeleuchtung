@@ -48,6 +48,8 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 
 | Enis: Placement-Decision-Matrix — `data/platzierung_regeln.yaml` + `PlatzierungsRegelwerk` | — | **Enis** | **DONE** — 25 Regeln + 4 Hard Stops, 27 Domain-Tests, 7 Ground-Truth-Fälle. Track-A-Vorrat + Contract-Vorschlag in `docs/PLACEMENT_DECISION_MATRIX.md` | 2026-08-31 |
 
+| Enis: Sonderstellen-Contract — Spec + Katalog + Tests | — | **Enis** (Entscheidung: 3 Owner) | **BLOCKED** — Vorschlag fertig (`docs/SPEC_SONDERSTELLEN_CONTRACT.md`), wartet auf 3-Owner-GO; schaltet 8 Placement-Regeln frei | 2026-08-31 |
+
 **Legende:** TODO · WIP · BLOCKED · DONE.
 
 **Zuständigkeit `OibProvider` (2026-08-30 festgelegt):** Enis. Die
