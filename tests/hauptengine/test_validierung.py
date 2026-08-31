@@ -3,9 +3,12 @@ from fakes import build_fake_bundle
 from notbeleuchtung.hauptengine.contracts import (
     Ausgang,
     BBox,
+    BereichsRegel,
     FluchtwegSegment,
+    LBVorgabe,
     Platzierung,
     PlatzierungsErgebnis,
+    Raum,
     RaumModell,
     ZirkulationsGraph,
 )
@@ -32,6 +35,60 @@ def _rz(height=2400.0, circuit="AGV-A-F13", covers=("s1",), xy=(0.0, 0.0), richt
 
 def _erg(*p: Platzierung) -> PlatzierungsErgebnis:
     return PlatzierungsErgebnis(floor="EG", platzierungen=list(p))
+
+
+def _raum_mit_raeumen(n: int) -> RaumModell:
+    """Grundriss mit n Räumen, aber ohne Fluchtweg-Segmente (Raumerkennung unvollständig)."""
+    poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
+    return RaumModell(
+        floor="OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id=f"r{i}", raum_typ="UNKNOWN", polygon_mm=poly) for i in range(n)],
+    )
+
+
+def test_leerer_plan_bei_vielen_raeumen_ist_fehler():
+    # 20 Räume, 0 Symbole, keine Segmente → Fluchtweg-Regeln schweigen, Plausibilität greift.
+    befunde = pruefe(_raum_mit_raeumen(20), _erg())
+    plaus = next(b for b in befunde if "Plausibilität" in b.regel)
+    assert plaus.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
+def test_viele_raeume_ohne_rz_ist_warnung():
+    # 20 Räume, nur SL (kein RZ), keine Segmente → warnung statt falschem "ok".
+    sl = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="sicherheitsleuchte",
+                     height_mm=2400.0, circuit_hint="AGV-A-F13")
+    befunde = pruefe(_raum_mit_raeumen(20), _erg(sl))
+    plaus = next(b for b in befunde if "Plausibilität" in b.regel)
+    assert plaus.status == "warnung"
+
+
+def test_wenige_raeume_ohne_symbole_kein_plausibilitaets_fehler():
+    # Unter der Schwelle (kleine Technik-Etage): Regel greift nicht.
+    befunde = pruefe(_raum_mit_raeumen(3), _erg())
+    assert not any("Plausibilität" in b.regel for b in befunde)
+
+
+def _raum_raeume_und_segmente(n: int, *segment_ids: str) -> RaumModell:
+    """Viele Räume UND erkannte Fluchtweg-Segmente (Regel 3/4 greifen)."""
+    poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
+    return RaumModell(
+        floor="OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id=f"r{i}", raum_typ="UNKNOWN", polygon_mm=poly) for i in range(n)],
+        zirkulation=ZirkulationsGraph(segmente=[
+            FluchtwegSegment(segment_id=s, polyline_mm=[(0.0, 0.0), (100.0, 0.0)], reason="exit")
+            for s in segment_ids
+        ]),
+    )
+
+
+def test_plausibilitaet_schweigt_wenn_segmente_erkannt():
+    # 20 Räume + Segment + 0 Symbole: Regel 4 (Pflicht-RZ) feuert fehler; Regel 8 darf
+    # NICHT zusätzlich feuern (sonst redundante Doppelmeldung).
+    befunde = pruefe(_raum_raeume_und_segmente(20, "s1"), _erg())
+    assert gesamtstatus(befunde) == "fehler"
+    assert any("Rettungszeichen vorhanden" in b.regel for b in befunde)
+    assert not any("Plausibilität" in b.regel for b in befunde)
 
 
 def test_konformer_plan_ist_ok():
@@ -95,6 +152,59 @@ def test_kollision_ist_warnung():
     b = next(b for b in befunde if "Kollision" in b.regel)
     assert b.status == "warnung"
     assert "1 Symbol-Paar" in b.detail
+
+
+_POLY = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
+
+
+def _raum_typ(raum_typ: str) -> RaumModell:
+    return RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id="r1", raum_typ=raum_typ, polygon_mm=_POLY)],
+    )
+
+
+def _sl(xy=(50.0, 50.0)) -> Platzierung:
+    return Platzierung(xy_mm=xy, catalog_key="k", kind="sicherheitsleuchte",
+                       height_mm=2400.0, circuit_hint="AGV-A-F13")
+
+
+def test_lb_exklusion_verletzt_ist_fehler():
+    # LB schließt STIEGENHAUS aus, es liegt aber eine SL im Stiegenhaus → Hard-Override verletzt.
+    lb = LBVorgabe(bereiche_exklusion=[BereichsRegel(raum_typ="STIEGENHAUS", sicherheitsbeleuchtung=False)])
+    befunde = pruefe(_raum_typ("STIEGENHAUS"), _erg(_sl((50.0, 50.0))), lb)
+    b = next(b for b in befunde if "LB-Exklusion" in b.regel)
+    assert b.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
+def test_lb_exklusion_respektiert_ist_ok():
+    # SL liegt AUSSERHALB des ausgeschlossenen Raums → Exklusion eingehalten.
+    lb = LBVorgabe(bereiche_exklusion=[BereichsRegel(raum_typ="STIEGENHAUS", sicherheitsbeleuchtung=False)])
+    befunde = pruefe(_raum_typ("STIEGENHAUS"), _erg(_sl((5000.0, 5000.0))), lb)
+    b = next(b for b in befunde if "LB-Exklusion" in b.regel)
+    assert b.status == "ok"
+
+
+def test_lb_inklusion_fehlt_ist_fehler():
+    # LB verlangt SL in der GARAGE (kanonischer Fall), keine platziert → Fehler.
+    lb = LBVorgabe(bereiche_inklusion=[BereichsRegel(raum_typ="GARAGE", sicherheitsbeleuchtung=True)])
+    befunde = pruefe(_raum_typ("GARAGE"), _erg(), lb)
+    b = next(b for b in befunde if "LB-Inklusion" in b.regel)
+    assert b.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
+def test_lb_inklusion_erfuellt_ist_ok():
+    lb = LBVorgabe(bereiche_inklusion=[BereichsRegel(raum_typ="GARAGE", sicherheitsbeleuchtung=True)])
+    befunde = pruefe(_raum_typ("GARAGE"), _erg(_sl((50.0, 50.0))), lb)
+    b = next(b for b in befunde if "LB-Inklusion" in b.regel)
+    assert b.status == "ok"
+
+
+def test_ohne_lb_keine_lb_befunde():
+    befunde = pruefe(_raum("s1"), _erg(_rz()))
+    assert not any(b.regel.startswith("LB-") for b in befunde)
 
 
 def test_run_haengt_pruefung_an(tmp_path):

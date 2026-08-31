@@ -1,0 +1,9 @@
+Reale Fremdzahl-Distraktoren (aus GU/Fischa-LBs): Zeit-/Positionsangaben mit
+Stunden/„h", die KEINE Notlicht-Betriebsdauer sind → Parser muss None liefern.
+
+Der Auftragnehmer hat Mängel an der Anlage innerhalb von 24 Stunden nach
+Verständigung zu beheben.
+Position 123 H SCHLUSSER ist gesondert auszuweisen.
+Austrocknungszeit 48 Stunden vor Weiterverarbeitung.
+Die eingebaute Batterie muss die Spannungsversorgung des Notrufsystems für bis zu
+24 Stunden übernehmen.
