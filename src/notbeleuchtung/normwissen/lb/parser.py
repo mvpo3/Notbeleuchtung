@@ -73,6 +73,12 @@ class LbTextProvider:
         relevante = struktur.sl_abschnitte(
             abschnitte, cfg["sl_abschnitt_anker"], cfg["sl_abschnitt_ausschluss"]
         )
+        # Inhaltsverzeichnis-Zeilen tragen dieselbe Überschrift wie der echte
+        # Abschnitt, aber keinen Inhalt. Ungefiltert landen sie mit ihrer
+        # Verzeichnis-Seite im `lb_quelle`-Audit-Trail und behaupten dort eine
+        # Fundstelle, an der nichts steht (real: Fischa §2.10/§2.11 auf S. 2).
+        mindest = cfg["struktur"].get("mindest_inhalt_zeichen", 0)
+        relevante = [a for a in relevante if len(a.block) - len(a.titel) >= mindest]
 
         if not relevante:
             self._verweise(abschnitte, bericht, hat_eigene_vorgaben=False)
@@ -82,10 +88,12 @@ class LbTextProvider:
                             f"als '{bericht.dokument_art}'). Eine leere LBVorgabe wäre hier "
                             "nicht von 'die LB macht keine Vorgaben' unterscheidbar.",
             )
-            return LBVorgabe(lb_quelle=name), bericht
+            return LBVorgabe(projekt=Path(lb_path).stem, lb_quelle=name), bericht
 
         vorgabe = LBVorgabe(
+            projekt=Path(lb_path).stem,
             lb_quelle=self._quelle(name, relevante),
+            batterie_standort=self._batterie_standort(relevante, bericht),
             **self._skalare(relevante, bericht),
             **self._enums(relevante, bericht, alle=abschnitte),
             **self._listen(relevante, bericht),
@@ -292,6 +300,28 @@ class LbTextProvider:
             bericht.add(feld="bereiche", status="nicht_spezifiziert",
                         begruendung="Keine bereichsbezogene LB-Vorgabe gefunden.")
         return {"bereiche_inklusion": inkl, "bereiche_exklusion": exkl}
+
+    def _batterie_standort(self, relevante, bericht: LbBericht) -> str | None:
+        """In welchem Raum steht die Batterieanlage? Nur bei belegtem Muster.
+
+        `LBVorgabe.batterie_standort` ist eine reine Dokumentations-Angabe für den
+        Plankopf — sie steuert keine Platzierung. Trotzdem gilt dieselbe Regel:
+        ohne Beleg kein Wert.
+        """
+        cfg = self._cfg["batterie_standort"]
+        treffer = felder.erstes_muster(relevante, cfg["muster"])
+        if treffer is None:
+            bericht.add(
+                feld="batterie_standort", status="nicht_spezifiziert",
+                begruendung=f"{cfg['bezeichnung']} nicht in der LB genannt.",
+            )
+            return None
+        bericht.add(
+            feld="batterie_standort", status="wert", kandidat=str(treffer.wert),
+            abschnitt=treffer.abschnitt.fundstelle, seite=treffer.seite,
+            anker=treffer.anker, begruendung=f"{cfg['bezeichnung']} explizit in der LB.",
+        )
+        return str(treffer.wert)
 
     def _funktionserhalt(self, relevante, bericht: LbBericht) -> None:
         """Kein Contract-Feld — der Befund wird nur dokumentiert."""
