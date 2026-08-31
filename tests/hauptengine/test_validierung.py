@@ -63,6 +63,16 @@ def test_viele_raeume_ohne_rz_ist_warnung():
     assert plaus.status == "warnung"
 
 
+def test_quasi_leerer_plan_bei_vielen_raeumen_ist_fehler():
+    # DoD Mollgasse 1OG: 254 Räume, 2 isolierte SL, 0 RZ → FEHLER (nicht nur warnung).
+    sl = [Platzierung(xy_mm=(float(i), 0.0), catalog_key="k", kind="sicherheitsleuchte",
+                      height_mm=2400.0, circuit_hint="AGV-A-F13") for i in range(2)]
+    befunde = pruefe(_raum_mit_raeumen(254), _erg(*sl))
+    plaus = next(b for b in befunde if "Plausibilität" in b.regel)
+    assert plaus.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
 def test_wenige_raeume_ohne_symbole_kein_plausibilitaets_fehler():
     # Unter der Schwelle (kleine Technik-Etage): Regel greift nicht.
     befunde = pruefe(_raum_mit_raeumen(3), _erg())
