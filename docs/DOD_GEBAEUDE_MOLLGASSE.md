@@ -4,9 +4,10 @@
 > Stand 2026-08-31, Prüfer: Leonis (F1) + 8 Audit-Subagenten.
 >
 > **Update seit Audit:** Der F1-Validierungs-Blocker (P0 #3 — quasi-leere Pläne als
-> „ok") ist in diesem Branch **behoben** (neue Regel „Plan-Plausibilität": DG→fehler,
-> OG→warnung). Die restlichen F1-Punkte (Legende/Plankopf-Sichtbarkeit im Raster,
-> RZ/SL-Unterscheidung, Höhenkoten-Sichtbarkeit) + alle F2-Punkte bleiben offen.
+> „ok") ist **behoben** (Regel „Plan-Plausibilität" mit Symboldichte-Gate: DG **und**
+> OG→**fehler** — 0-2 Symbole bei >100 Räumen = kein valider Plan). Die restlichen
+> F1-Punkte (Legende/Plankopf sichtbar ✓, RZ/SL ✓ verifiziert, Höhenkoten ✓, Schriftfeld-
+> Leiste ✓, RZ an Notausgängen ✓) sind erledigt; F2-Punkte (OG/DG-Raumerkennung) offen.
 
 # DoD-Sichtprüfungs-Bericht — Mollgasse Notbeleuchtungsplan (8 Geschosse)
 
