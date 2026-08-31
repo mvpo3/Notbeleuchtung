@@ -67,6 +67,28 @@ def test_wenige_raeume_ohne_symbole_kein_plausibilitaets_fehler():
     assert not any("Plausibilität" in b.regel for b in befunde)
 
 
+def _raum_raeume_und_segmente(n: int, *segment_ids: str) -> RaumModell:
+    """Viele Räume UND erkannte Fluchtweg-Segmente (Regel 3/4 greifen)."""
+    poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
+    return RaumModell(
+        floor="OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id=f"r{i}", raum_typ="UNKNOWN", polygon_mm=poly) for i in range(n)],
+        zirkulation=ZirkulationsGraph(segmente=[
+            FluchtwegSegment(segment_id=s, polyline_mm=[(0.0, 0.0), (100.0, 0.0)], reason="exit")
+            for s in segment_ids
+        ]),
+    )
+
+
+def test_plausibilitaet_schweigt_wenn_segmente_erkannt():
+    # 20 Räume + Segment + 0 Symbole: Regel 4 (Pflicht-RZ) feuert fehler; Regel 8 darf
+    # NICHT zusätzlich feuern (sonst redundante Doppelmeldung).
+    befunde = pruefe(_raum_raeume_und_segmente(20, "s1"), _erg())
+    assert gesamtstatus(befunde) == "fehler"
+    assert any("Rettungszeichen vorhanden" in b.regel for b in befunde)
+    assert not any("Plausibilität" in b.regel for b in befunde)
+
+
 def test_konformer_plan_ist_ok():
     befunde = pruefe(_raum("s1"), _erg(_rz()))
     assert gesamtstatus(befunde) == "ok"
