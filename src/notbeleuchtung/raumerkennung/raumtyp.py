@@ -86,7 +86,9 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     "tiefgarage": ("GARAGE", False, True),
     "technik": ("TECHNIK", False, True),
     "haustechnik": ("TECHNIK", False, True),
+    "technikraum": ("TECHNIK", False, True),   # Einzeltoken-Kompositum (LB matcht via Substring)
     "lager": ("LAGER", False, True),
+    "lagerraum": ("LAGER", False, True),
     "müll": ("MUELLRAUM", False, True),
     "müllraum": ("MUELLRAUM", False, True),
     "restmüll": ("MUELLRAUM", False, True),
