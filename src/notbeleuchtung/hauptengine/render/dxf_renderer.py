@@ -38,6 +38,39 @@ ROOM_LABEL_HEIGHT_MM = 120.0
 LEGENDE_HEIGHT_MM = 200.0
 LEGENDE_OFFSET_MM = 1000.0   # Abstand über der Grundriss-Oberkante
 
+# Schriftfeld-Leiste (rechts neben dem Grundriss): ALLE Info-Blöcke in EINER Spalte
+# gerahmter Boxen mit festen Höhen (deterministisch, kein fragiles Text-Messen), von
+# unten nach oben gestapelt — Plankopf unten (Konvention), darüber Prüfbericht,
+# Stückliste, Legende. Ersetzt die früher frei um den Grundriss verstreuten Blöcke.
+_PANEL_ABSTAND_MM = 2000.0   # Grundriss → Spalte
+_PANEL_B_MM = 16000.0        # Spaltenbreite
+_PANEL_PAD_MM = 400.0
+_PANEL_GAP_MM = 600.0        # Lücke zwischen Boxen
+_BOX_H_PLANKOPF_MM = 5600.0
+_BOX_H_PRUEF_MM = 8200.0
+_BOX_H_STUECK_MM = 3400.0
+_BOX_H_LEGENDE_MM = 4400.0
+# y-Unterkanten relativ zu min_y (bottom-up):
+_BOX_Y_PLANKOPF = 0.0
+_BOX_Y_PRUEF = _BOX_H_PLANKOPF_MM + _PANEL_GAP_MM
+_BOX_Y_STUECK = _BOX_Y_PRUEF + _BOX_H_PRUEF_MM + _PANEL_GAP_MM
+_BOX_Y_LEGENDE = _BOX_Y_STUECK + _BOX_H_STUECK_MM + _PANEL_GAP_MM
+
+
+def _draw_info_box(msp, raum: RaumModell, y_unten_rel: float, hoehe: float,
+                   layer: str, text: str, *, char_h: float = LEGENDE_HEIGHT_MM) -> None:
+    """Gerahmte Info-Box in der rechten Schriftfeld-Leiste (feste Größe, Text wrappt)."""
+    (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    x0 = max_x + _PANEL_ABSTAND_MM
+    y0 = min_y + y_unten_rel
+    x1, y1 = x0 + _PANEL_B_MM, y0 + hoehe
+    msp.add_lwpolyline([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], close=True,
+                       dxfattribs={"layer": layer})
+    mt = msp.add_mtext(text, dxfattribs={"layer": layer, "char_height": char_h})
+    mt.dxf.width = _PANEL_B_MM - 2 * _PANEL_PAD_MM   # Referenzbreite → Zeilenumbruch
+    mt.set_location((x0 + _PANEL_PAD_MM, y1 - _PANEL_PAD_MM),
+                    attachment_point=MTextEntityAlignment.TOP_LEFT)
+
 # Menschenlesbare Symbol-Arten für die Stückliste.
 _KIND_LABEL = {
     "rz": "Rettungszeichen",
@@ -99,17 +132,11 @@ def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
 
 
 def _draw_lb_legende(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
-    """Legenden-Textblock (SV-System-Spec) über der Grundriss-Oberkante."""
+    """Legenden-Box (SV-System-Spec) oben in der rechten Schriftfeld-Leiste."""
     text = _lb_legende_text(lb)
     if text is None:
         return False
-    (min_x, _min_y), (_max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-    mt = msp.add_mtext(text, dxfattribs={
-        "layer": LAYER_LEGENDE,
-        "char_height": LEGENDE_HEIGHT_MM,
-    })
-    mt.set_location((min_x, max_y + LEGENDE_OFFSET_MM),
-                    attachment_point=MTextEntityAlignment.BOTTOM_LEFT)
+    _draw_info_box(msp, raum, _BOX_Y_LEGENDE, _BOX_H_LEGENDE_MM, LAYER_LEGENDE, text)
     return True
 
 
@@ -133,25 +160,20 @@ def _stueckliste_text(platzierung: PlatzierungsErgebnis) -> str | None:
 
 
 def _draw_stueckliste(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
-    """Stückliste-Textblock unter der Grundriss-Unterkante."""
+    """Stückliste-Box in der rechten Schriftfeld-Leiste (über dem Prüfbericht)."""
     text = _stueckliste_text(platzierung)
     if text is None:
         return False
-    (min_x, min_y), (_max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-    mt = msp.add_mtext(text, dxfattribs={
-        "layer": LAYER_STUECKLISTE,
-        "char_height": LEGENDE_HEIGHT_MM,
-    })
-    mt.set_location((min_x, min_y - LEGENDE_OFFSET_MM),
-                    attachment_point=MTextEntityAlignment.TOP_LEFT)
+    _draw_info_box(msp, raum, _BOX_Y_STUECK, _BOX_H_STUECK_MM, LAYER_STUECKLISTE, text)
     return True
 
 
-# Schriftfeld-Geometrie (mm): Standard-Plankopf, rechts neben dem Grundriss.
-_PLANKOPF_B_MM = 14000.0
-_PLANKOPF_H_MM = 5600.0
-_PLANKOPF_ABSTAND_MM = 2000.0
-_PLANKOPF_PAD_MM = 400.0
+# Schriftfeld-Geometrie (mm): Plankopf = unterste Box der Schriftfeld-Leiste, an deren
+# Spaltenbreite/Abstand ausgerichtet.
+_PLANKOPF_B_MM = _PANEL_B_MM
+_PLANKOPF_H_MM = _BOX_H_PLANKOPF_MM
+_PLANKOPF_ABSTAND_MM = _PANEL_ABSTAND_MM
+_PLANKOPF_PAD_MM = _PANEL_PAD_MM
 
 
 def _draw_plankopf(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis,
@@ -206,14 +228,8 @@ def _draw_pruefbericht(msp, raum: RaumModell, pruefung: dict | None) -> bool:
     for b in pruefung.get("befunde", []):
         marke = _PRUEF_STATUS_LABEL.get(b.get("status", ""), "?")
         zeilen.append(f"[{marke}] {b.get('regel', '')} — {b.get('detail', '')}")
-    (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-    mt = msp.add_mtext("\\P".join(zeilen), dxfattribs={
-        "layer": LAYER_PRUEFBERICHT,
-        "char_height": LEGENDE_HEIGHT_MM * 0.85,
-    })
-    # Unter dem Plankopf (rechts neben dem Grundriss).
-    mt.set_location((max_x + _PLANKOPF_ABSTAND_MM, min_y - LEGENDE_OFFSET_MM),
-                    attachment_point=MTextEntityAlignment.TOP_LEFT)
+    _draw_info_box(msp, raum, _BOX_Y_PRUEF, _BOX_H_PRUEF_MM, LAYER_PRUEFBERICHT,
+                   "\\P".join(zeilen), char_h=LEGENDE_HEIGHT_MM * 0.85)
     return True
 
 
