@@ -5,13 +5,15 @@ die Norm-Defaults übersteuern. Fail closed: lieber sichtbar Review verlangen al
 eine erkannte Anforderung still verlieren.
 """
 from .bericht import FeldBefund, LbBericht, LbFehler, LbNichtLesbar, LbReviewRequired
-from .parser import LbParser
+from .parser import LbTextProvider, parse_bericht, parse_lb
 
 __all__ = [
     "FeldBefund",
     "LbBericht",
     "LbFehler",
     "LbNichtLesbar",
-    "LbParser",
     "LbReviewRequired",
+    "LbTextProvider",
+    "parse_bericht",
+    "parse_lb",
 ]

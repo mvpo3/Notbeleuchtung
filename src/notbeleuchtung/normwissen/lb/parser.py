@@ -1,4 +1,4 @@
-"""LbParser — Leistungsbeschreibung (2. Input) → LBVorgabe.
+"""LbTextProvider — Leistungsbeschreibung (2. Input) → LBVorgabe.
 
 Erfüllt `hauptengine.contracts.ports.LBProvider` (`parse_lb(lb_path) -> LBVorgabe`).
 Deterministisch, regelbasiert, quellengebunden — **kein NLP**. Alle Fachwörter,
@@ -24,6 +24,7 @@ wie es die Hierarchie `LB-explizit → Norm` vorsieht.
 """
 from __future__ import annotations
 
+from functools import lru_cache
 from pathlib import Path
 
 import yaml
@@ -37,7 +38,7 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 DATEI = "lb_extraktion.yaml"
 
 
-class LbParser:
+class LbTextProvider:
     """LBProvider-Impl gegen data/lb_extraktion.yaml."""
 
     def __init__(self, data_dir: Path | None = None) -> None:
@@ -308,3 +309,24 @@ class LbParser:
         """Audit-Trail: Datei + die tragenden Abschnitte + Seiten."""
         teile = [f"§{a.nummer} (S. {a.seite})" for a in relevante]
         return f"{name} {', '.join(teile)}" if teile else name
+
+
+@lru_cache(maxsize=1)
+def _default() -> LbTextProvider:
+    """Der Default-Provider — `lb_extraktion.yaml` wird genau einmal gelesen."""
+    return LbTextProvider()
+
+
+def parse_lb(lb_path: str) -> LBVorgabe:
+    """Leistungsbeschreibung (PDF/Text) → LBVorgabe.
+
+    Modul-Ebene Bequemlichkeits-API neben `LbTextProvider.parse_lb`. Fail closed:
+    wirft `LbNichtLesbar` bzw. `LbReviewRequired`, statt eine erkannte Vorgabe
+    still zu verlieren.
+    """
+    return _default().parse_lb(lb_path)
+
+
+def parse_bericht(lb_path: str) -> LbBericht:
+    """Vollständiger Audit-Trail inkl. Kandidatenwerten — auch für blockierte Fälle."""
+    return _default().parse_bericht(lb_path)
