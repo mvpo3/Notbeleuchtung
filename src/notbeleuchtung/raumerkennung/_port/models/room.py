@@ -7,6 +7,7 @@ serialisable and framework-free.
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -67,16 +68,36 @@ GERMAN_ROOM_TYPE_MAP: dict[str, RoomType] = {
 }
 
 
+# Komposita-Köpfe, die über die Wortgrenze hinaus matchen dürfen (Wohn-KÜCHE,
+# Gäste-ZIMMER) — und der Abstell-Prefix (Abstell-raum/-kammer/-fläche → STORAGE).
+_SUFFIX_SAFE = ("zimmer", "küche", "kueche")
+_PREFIX_SAFE = ("abstell",)
+_WORD_RE = re.compile(r"[a-zäöüß]+")
+
+
 def classify_room(label: str) -> RoomType:
-    """Classify a free-form German room label; fall back to UNKNOWN."""
+    """Classify a free-form German room label; fall back to UNKNOWN.
+
+    Token/Wortgrenze statt rohem Substring: `needle in key` würde „gang" in
+    „Ein**gang**"/„Zu**gang**"/„Aus**gang**" als CORRIDOR fehltypisieren — mit
+    Notlicht-Folge, da CORRIDOR=Fluchtweg (real beobachtet: „Zugang Müllraum"→GANG).
+    Nur Komposita-Köpfe (…zimmer/…küche) und der Abstell-Prefix matchen über die
+    Wortgrenze hinaus; alles andere muss ein eigenständiges Token sein.
+    """
     key = (label or "").strip().lower()
-    # direct hit
     if key in GERMAN_ROOM_TYPE_MAP:
         return GERMAN_ROOM_TYPE_MAP[key]
-    # substring hit — e.g. "Wohnzimmer 01" or "Bad EG"
-    for needle, rt in GERMAN_ROOM_TYPE_MAP.items():
-        if needle in key:
-            return rt
+    tokens = _WORD_RE.findall(key)
+    for t in tokens:                       # exaktes Token: Gang, Bad, WC, Wohnzimmer …
+        if t in GERMAN_ROOM_TYPE_MAP:
+            return GERMAN_ROOM_TYPE_MAP[t]
+    for t in tokens:                       # Komposita-Kopf/-Prefix
+        for needle in _SUFFIX_SAFE:
+            if t.endswith(needle):
+                return GERMAN_ROOM_TYPE_MAP[needle]
+        for needle in _PREFIX_SAFE:
+            if t.startswith(needle):
+                return GERMAN_ROOM_TYPE_MAP[needle]
     return RoomType.UNKNOWN
 
 
