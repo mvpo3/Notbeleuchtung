@@ -21,6 +21,8 @@ _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschalt
 _AUSGANG_RZ_RADIUS_MM = 4000.0  # RZ gilt als „am Ausgang", wenn ≤ 4 m entfernt
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
 _MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
+_QUASI_LEER_SYMBOLE = 2         # DoD: bis so wenige Symbole …
+_QUASI_LEER_RAEUME = 100        # … bei so vielen Räumen = quasi-leer → Fehler (nicht nur Warnung)
 _AUFHELLER_ARTEN = {"sicherheitsleuchte", "antipanik"}  # flächige LB-relevante Leuchten
 
 
@@ -151,6 +153,14 @@ def pruefe(
                 "Plan-Plausibilität (Vollständigkeit)",
                 "fehler",
                 f"{n_raeume} Räume, aber kein Notbeleuchtungs-Symbol platziert "
+                "(Raumerkennung liefert evtl. keine Fluchtwege/Raumtypen)",
+            ))
+        elif n_raeume > _QUASI_LEER_RAEUME and len(plzg) <= _QUASI_LEER_SYMBOLE:
+            # DoD-Kriterium: 0-2 Symbole bei >100 Räumen = kein valider Plan → Fehler.
+            befunde.append(Befund(
+                "Plan-Plausibilität (Vollständigkeit)",
+                "fehler",
+                f"nur {len(plzg)} Symbol(e) auf {n_raeume} Räumen — quasi-leerer Plan "
                 "(Raumerkennung liefert evtl. keine Fluchtwege/Raumtypen)",
             ))
         elif not rz:
