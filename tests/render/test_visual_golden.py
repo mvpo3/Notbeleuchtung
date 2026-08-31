@@ -33,7 +33,8 @@ pytestmark = pytest.mark.visual
 FIXTURES = Path(__file__).parent.parent / "fixtures"
 GOLDEN = FIXTURES / "golden"
 FAILURES = Path(__file__).parent.parent / "failures"
-TOLERANZ = 2.0  # mittlere absolute Abweichung je Kanal (0..255), matplotlib-jitter-tolerant
+PIXEL_SCHWELLE = 30.0  # je-Kanal-Abweichung (0..255), ab der ein Pixel als „verändert" gilt
+ANTEIL_MAX = 0.002     # max. Anteil veränderter Pixel (0,2 %) — tolerant ggü. Font-Jitter
 
 
 @pytest.fixture(autouse=True)
@@ -75,12 +76,29 @@ def test_visual_golden_4og(tmp_path):
         pytest.skip(f"Golden-Baseline (neu) geschrieben: {golden}")
 
     ist, soll = _rgb(png), _rgb(golden)
-    assert ist.shape == soll.shape, f"Render-Shape {ist.shape} != Golden {soll.shape}"
 
-    diff = np.abs(ist - soll)
-    mittel = float(diff.mean())
-    if mittel > TOLERANZ:
+    def _overlay(diff: np.ndarray) -> Path:
         FAILURES.mkdir(parents=True, exist_ok=True)
-        overlay = FAILURES / "4og_notbeleuchtung_diff.png"
-        mpimg.imsave(str(overlay), (diff / diff.max()).clip(0, 1))
-        pytest.fail(f"Sicht-Abweichung {mittel:.2f} > {TOLERANZ} (Toleranz). Diff: {overlay}")
+        pfad = FAILURES / "4og_notbeleuchtung_diff.png"
+        mx = float(diff.max()) or 1.0
+        mpimg.imsave(str(pfad), (diff / mx).clip(0, 1))
+        return pfad
+
+    # Shape-Mismatch: Diff auf der gemeinsamen Region schreiben, statt nur hart zu failen —
+    # so sieht man auch bei Größen-Drift, WAS sich geändert hat.
+    if ist.shape != soll.shape:
+        h, w = min(ist.shape[0], soll.shape[0]), min(ist.shape[1], soll.shape[1])
+        pfad = _overlay(np.abs(ist[:h, :w] - soll[:h, :w]))
+        pytest.fail(f"Render-Shape {ist.shape} != Golden {soll.shape}. Diff (Region): {pfad}")
+
+    # Lokalitäts-sensitiv: Anteil der Pixel mit spürbarer Abweichung (max je Kanal >
+    # Schwelle) — ein reiner Mittelwert über ALLE Pixel maskiert kleine, aber echte
+    # lokale Regressionen (verrutschte Legende) im großen weißen Hintergrund.
+    per_pixel = np.abs(ist - soll).max(axis=2)
+    anteil = float((per_pixel > PIXEL_SCHWELLE).mean())
+    if anteil > ANTEIL_MAX:
+        pfad = _overlay(np.abs(ist - soll))
+        pytest.fail(
+            f"Sicht-Abweichung: {anteil * 100:.3f}% Pixel > {PIXEL_SCHWELLE:g} "
+            f"(erlaubt {ANTEIL_MAX * 100:g}%). Diff: {pfad}"
+        )

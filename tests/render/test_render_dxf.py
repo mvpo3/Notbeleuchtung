@@ -68,6 +68,14 @@ def test_stueckliste_zaehlt_symbol_arten(rendered):
     assert "Summe: 5" in txt
 
 
+def test_hoehenkote_text_komma_notation():
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _hoehenkote_text
+    assert _hoehenkote_text(2400.0) == "h=2,40"
+    assert _hoehenkote_text(2000.0) == "h=2,00"
+    assert _hoehenkote_text(3000.0) == "h=3,00"
+    assert _hoehenkote_text(2250.0) == "h=2,25"
+
+
 def test_hoehenkoten_label_gezeichnet(rendered):
     _, summary, doc = rendered
     # 4OG-Fixture = 5 Symbole, alle mit Default-Montagehöhe 2400 mm.
