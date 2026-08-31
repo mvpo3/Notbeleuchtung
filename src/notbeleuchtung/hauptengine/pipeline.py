@@ -109,7 +109,17 @@ def run(
 ) -> Output:
     raum = bundle.raum.parse(dxf_path, floor)
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
-    lb = bundle.lb.parse_lb(lb_path) if (bundle.lb is not None and lb_path is not None) else None
+    # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
+    # Der Plan wird trotzdem erzeugt (Norm-Default greift), aber das `lb_review`-Flag macht
+    # sichtbar, dass die LB-Vorgaben NICHT angewendet wurden — sie werden nicht still verloren.
+    lb = None
+    lb_review: dict | None = None
+    if bundle.lb is not None and lb_path is not None:
+        from notbeleuchtung.normwissen.lb import LbFehler  # Provider-Ausnahme (lazy)
+        try:
+            lb = bundle.lb.parse_lb(lb_path)
+        except LbFehler as e:
+            lb_review = {"status": "review_erforderlich", "meldung": str(e)}
     platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     pruef = pruefbericht(raum, platzierung, lb)
     if out_path is not None:
@@ -119,6 +129,8 @@ def run(
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
     render_summary["coverage"] = _coverage(raum, platzierung, lb)
     render_summary["pruefung"] = pruef
+    if lb_review is not None:
+        render_summary["lb_review"] = lb_review
     return Output(
         raum=raum,
         platzierung=platzierung,
