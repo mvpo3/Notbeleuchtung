@@ -43,6 +43,26 @@ def _node_positions(raum: RaumModell) -> dict[str, tuple[float, float]]:
     return pos
 
 
+# Anker näher als das = eine Position (nahe-koinzidente Graph-Knoten sonst → zwei RZ
+# unter dem Kollisions-Mindestabstand, echte Doppelplatzierung).
+_MIN_RZ_MERGE_MM = 250.0
+
+
+def _dedupe_anker(anker, pos, exits, G):
+    """Near-coincident Anker verschmelzen: Ausgang gewinnt, sonst höherer Graph-Grad."""
+    def prio(nid):
+        return (0 if nid in exits else 1, -(G.degree(nid) if nid in G else 0), str(nid))
+    behalten: list = []
+    for nid in sorted(anker, key=prio):
+        if nid not in pos:
+            continue
+        if any(math.hypot(pos[nid][0] - pos[k][0], pos[nid][1] - pos[k][1]) < _MIN_RZ_MERGE_MM
+               for k in behalten):
+            continue
+        behalten.append(nid)
+    return behalten
+
+
 def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
     """RZ an Kreuzungs-Ankern (degree>=3) + Ausgängen, Richtung zum nächsten Ausgang."""
     G = build_circulation_graph(raum)
@@ -53,9 +73,10 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
     # Jeder Ausgang bekommt ein RZ (EN 1838 §4.1.2 g) — auch wenn er KEIN Knoten des
     # Zirkulationsgraphs ist (reale Pläne: Ausgänge liegen oft neben, nicht auf dem
     # Wegenetz). Position kommt aus `pos` (enthält alle ausgaenge), Richtung fällt für
-    # graphlose Ausgänge auf „unten" (raus) zurück.
+    # graphlose Ausgänge auf „unten" (raus) zurück. Nahe-koinzidente Anker werden vorher
+    # verschmolzen (sonst zwei RZ unter Mindestabstand).
     exits = {a.id for a in raum.ausgaenge}
-    anker = sorted(set(kreuzungs_anker(G)) | exits)
+    anker = _dedupe_anker(set(kreuzungs_anker(G)) | exits, pos, exits, G)
     assign_building = _building_assigner([pos[n][0] for n in anker if n in pos])
 
     out: list[Platzierung] = []
@@ -146,9 +167,9 @@ def plan_rettungszeichen_sichtlinie(
     So sieht man von jeder Wohnungstür sofort eine Notleuchte, ohne Überproduktion.
     Achse = x (Gang-Hauptrichtung).
     """
-    G = build_circulation_graph(raum)
     pos = _node_positions(raum)
-    ex = [(a.id, a.typ, pos[a.id]) for a in raum.ausgaenge if a.id in G and a.id in pos]
+    # Jeder Ausgang zählt, auch graphlos (§4.1.2 g) — Symmetrie zu plan_rettungszeichen_anker.
+    ex = [(a.id, a.typ, pos[a.id]) for a in raum.ausgaenge if a.id in pos]
     if not ex:
         return []
     if max_abstand_mm is None:
