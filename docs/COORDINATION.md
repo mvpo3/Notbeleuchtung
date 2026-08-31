@@ -136,7 +136,144 @@ Enis arbeitet in einer eigenen Session auf `enis/…`-Branches. Zwei Provider au
 | Zu bauen | Protocol (`ports.py`) | Datengrundlage | Status |
 |---|---|---|---|
 | `normwissen/oib/` | `OibProvider.bewerte_oib(projekt) -> OibBefund` | `normwissen/data/oib_rl2_tabelle6.yaml` (neu) | TODO |
-| `normwissen/lb/` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | reale LBs, Digest `knowledge/extracted/LB_ANALYSE_beispiele.md` | TODO |
+| `normwissen/lb/` | `LBProvider.parse_lb(lb_path) -> LBVorgabe` | `data/lb_extraktion.yaml` + Digest `knowledge/extracted/LB_ANALYSE_beispiele.md` | **STEHT** (fail closed, s.u.) |
+
+### ✅ Stand 2026-08-31 — LB-Naht geschlossen (Branch `enis/lb-parser`)
+
+Der Branch ist auf `origin/main` (`9d3c080`) rebased und wieder lauffähig. Die
+öffentliche API von PR #40 bleibt unverändert (`LbTextProvider`, Modul-`parse_lb`,
+`registry.build_default_bundle()` unangetastet); dahinter steht die fail-closed
+Extraktion mit seitengenauem Audit-Trail (`parse_bericht`).
+
+**Was sich dadurch gegenüber main ändert** (alles an den 4 realen LB-PDFs geprüft):
+
+| Fall | main `9d3c080` | dieser Branch |
+|---|---|---|
+| Fischa `system_typ` | `zentralbatterie` — wählt still eine Seite des Widerspruchs (Gruppenbatterie S. 19 vs. Zentralbatterie S. 42) | kein Wert + `review_informativ` mit beiden Fundstellen |
+| GU-Rahmen (kein Notbeleuchtungs-Abschnitt, reiner Verweis) | erfindet `bereiche_inklusion = [STIEGENHAUS, GARAGE, MUELLRAUM]` | blockierender Review |
+| mo-Bau (keine Elektro-Vorgaben) | leere `LBVorgabe` — von „die LB macht keine Vorgaben" nicht unterscheidbar | blockierender Review |
+| mo-Elektro `umschaltzeit_max_s` | `None` (Wert geht verloren) | `0.5` |
+| mo-Elektro Bereiche | ohne `LAGER` | mit `LAGER` |
+| `batterie_standort` | `None` an beiden Elektro-LBs (Muster verlangt `batterie im <Raum>`) | Fischa „Technikraum", mo-Elektro „Zählerraum" |
+| Audit-Trail | Dateiname | Datei + § + Seite des **Treffers**, plus voller Befund inkl. Kandidaten |
+
+Die Härtungen aus #45/#56 sind übernommen bzw. nachgebaut (Betriebsdauer-Kontext,
+Lux-Wortform, Antipanik-Fenster, Overflow-Guard, `batterie_standort`), alle
+16 main-Tests liegen wieder in `tests/normwissen/test_lb_parser.py`.
+
+**Offene Naht-Frage an @mvpo3:** `pipeline.py:100` ruft `bundle.lb.parse_lb()`
+ungeschützt. Fail closed heißt: der Aufruf **wirft** (`LbReviewRequired` /
+`LbNichtLesbar`) statt eine leere `LBVorgabe` zu liefern — heute schlägt das als
+HTTP 500 durch. Vorschlag: `api/main.py` fängt `LbFehler` und antwortet 422 mit
+`bericht.als_text()`. Liegt in der gemeinsamen Fläche, deshalb hier statt im PR.
+
+**Vokabular-Naht (@polatselman/@mvpo3):** `unterstuetzte_raum_typen` in
+`lb_extraktion.yaml` ist eine Kopie der Labels aus `raumerkennung/raumtyp.py` und
+war gedriftet. Neu `tests/contract/test_lb_raumtyp_naht.py` als Drift-Gate in
+beide Richtungen — wer dort ein Label ergänzt, sieht sofort, dass die LB-Seite
+nachzuziehen ist.
+
+
+### ⚠ Befund an @mvpo3: falsche Quellenzuordnung im LBVorgabe-Contract-Test
+
+`tests/contract/test_lb_vorgabe_contract.py::test_fischa_gk4_exklusion_stiegenhaus`
+baut eine `LBVorgabe` mit `betriebsdauer_min=480`, `umschaltzeit_max_s=0.5`,
+`mindest_lux_fluchtweg=1.0`, `SonderLux("feuerloescher", 5.0)` und
+`piktogramm_norm="EN ISO 7010"` — und schreibt als Quelle
+`lb_quelle="20241209_E LV Fischa 46.pdf §2.10/2.11"`.
+
+**Keiner dieser fünf Werte steht in Fischa.** Am Original nachgeprüft (2026-08-30):
+`lux`/`lx` = **0 Treffer im gesamten Dokument**, ebenso „Umschaltzeit",
+„Betriebsdauer", „Feuerlöscher" und „7010". Fischa nennt statt EN ISO 7010 die
+**ÖNORM Z 1000**. Die fünf Werte stammen aus `mo-leistungsbeschreibung_Elektro`
+(§5.1.23, S. 37–38). Derselbe Fehler stand in
+`knowledge/extracted/LB_ANALYSE_beispiele.md` und ist dort korrigiert.
+
+Was Fischa §2.10/§2.11 **wirklich** trägt: Exklusion STIEGENHAUS + GANG (GK4),
+Inklusion GARAGE, Gruppenbatterie im Technikraum, Einzelleuchtenüberwachung,
+automatische + WEB-Prüfung, Fabrikat DIN-Sicherheitstechnik Concept-LED,
+Normbezug ÖVE 8101 / R 12-2 / EN 1838 / ÖNORM Z 1000.
+
+Der Test liegt in deiner Lane — Enis hat ihn **nicht** angefasst. Vorschlag:
+entweder die Skalare entfernen oder `lb_quelle` auf die mo-Elektro-LB umstellen.
+Merksatz: **Fischa = Bereichslogik, mo-Elektro = Skalare.**
+
+### ✔ ERLEDIGT (2026-08-31) — Befund an @mvpo3 vom 30.08.: PR #40 erzeugte am echten Fischa-PDF einen falschen LB-Wert
+
+> **Beidseitig behoben.** Auf main durch `facabe0` (Kontext-Gating
+> `betriebsdauer|auszulegen`, `notruf`-Ausschluss, Cap 1440), auf `enis/lb-parser`
+> durch das Anker-Gating plus `plausibel_max`. Beide liefern für Fischa jetzt
+> `betriebsdauer_min = None`. Der Regressionstest steht als
+> `test_stoerungsfrist_erzeugt_keine_betriebsdauer`. Der Rest des Eintrags bleibt
+> als Beleg stehen.
+
+**PR #40 („normwissen — ② LB-Parser") wurde in die CODEOWNERS-Lane `@EnisAMG`
+gemerged** und über `registry.build_default_bundle()` aktiv verdrahtet. Enis hatte
+zu diesem Zeitpunkt eine fail-closed Implementierung derselben Naht fertig
+(`enis/lb-parser`) — die Kollision wurde erst beim Rebase sichtbar.
+
+**Belegter False Positive.** Der gemergte Parser, gegen das echte
+`20241209_E LV Fischa 46.pdf` laufen gelassen:
+
+```
+betriebsdauer_min  = 1440            ← Fischa spezifiziert KEINE Betriebsdauer
+system_typ         = zentralbatterie ← waehlt still eine Seite eines Widerspruchs
+bereiche_inklusion = [GARAGE]        ← stiller No-op im Platzierer
+```
+
+Ursache: `_betriebsdauer_min()` sucht `(\d+)\s*(?:Std|Stunden|h)` im **gesamten**
+Dokumenttext und trifft „Störungsbehebung binnen 24 h" (S. 12) → 24 × 60 = 1440.
+
+**Warum das sicherheitsrelevant ist:** `LBVorgabe.betriebsdauer_min` ist eine
+*explizite Auftraggeber-Vorgabe* und übersteuert nach der CLAUDE.md-Hierarchie
+`LB-explizit → Norm` den EN-1838-Default von 60 min. Hier übersteuert ein Wert,
+den das Dokument nie enthalten hat.
+
+**Falsche Quellenzuordnung (am Original geprüft).** Fischa enthält **keine**
+480 min, **keine** 0,5 s, **kein** 1 lx, **keine** 5 lx Feuerlöscher und **kein**
+EN ISO 7010 — `lux`/`lx`, „Umschaltzeit", „Betriebsdauer", „Feuerlöscher" und
+„7010" haben je **0 Treffer**; genannt ist ÖNORM Z 1000. Diese fünf Werte stammen
+aus `mo-leistungsbeschreibung_Elektro_240718.pdf` §5.1.23 (S. 37–38).
+
+Fischa liefert tatsächlich: Exklusion STIEGENHAUS + GANG (GK4, §2.10 S. 37),
+Inklusion GARAGE (§2.11), Überwachung Einzelleuchte, Prüfung WEB, Fabrikat
+DIN-Sicherheitstechnik Concept-LED (§2.21 S. 42), Normbezüge — und
+**widersprüchliche Systemtyp-Angaben** (Gruppenbatterie S. 19 vs. Zentralbatterie
+S. 42), die nicht still aufgelöst werden dürfen.
+
+**Betroffen:** `tests/fixtures/lb/fischa_lb.txt` (synthetischer Text mit dem Titel
+„Projekt Fischa 46", der die mo-Elektro-Skalare trägt) und die darauf gestützten
+Tests `test_fischa_skalare_felder`, `test_fischa_sonderlux_und_normbezug`,
+`test_fischa_inklusion_garage`. **Enis hat die Fixture NICHT verändert** — sie liegt
+in der 3-Owner-CODEOWNERS-Lane. Auch `test_leere_lb_bleibt_norm_default` ist
+semantisch heikel: eine leere `LBVorgabe` ist von „die LB macht keine Vorgaben"
+nicht unterscheidbar und lässt die Engine still norm-getrieben weiterlaufen.
+
+**Vorschlag (Owner-GO steht aus):** Enis' fail-closed Implementierung ersetzt die
+Extraktionslogik, die öffentliche API (`LbTextProvider`, `parse_lb`) und die
+Registry-Verdrahtung von #40 bleiben **unverändert** erhalten. Fixture und
+Test-Korrektur macht Leonis in seiner Lane.
+
+### ✔ ERLEDIGT (2026-08-31) — Befund an @polatselman: `GARAGE` war kein erzeugbarer `raum_typ`
+
+> **Geschlossen durch PR #49** (GARAGE/TECHNIK/LAGER/MUELLRAUM) **und PR #57**
+> (KELLER). Die LB-Stützliste ist nachgezogen, das Label heißt `TECHNIK` (nicht
+> `TECHNIKRAUM`), `LAGER` und `MUELLRAUM` sind getrennt. Beide realen Elektro-LBs
+> parsen dadurch durch. Der Rest des Eintrags bleibt als Beleg stehen.
+
+`raumerkennung/raumtyp.py` (`_TYP_MAP`) erzeugt 13 Werte — `GARAGE` ist keiner
+davon, `classify_room` liefert für einen Stempel „Garage" `UNKNOWN` und der Raum
+behält `raum_typ == ""`. Eine `BereichsRegel(raum_typ="GARAGE")` ist damit im
+Platzierer ein **stiller No-op**: `lb_override` findet kein Polygon, gibt die
+Liste unverändert zurück, kein Fehler, kein Log.
+
+Das trifft den kanonischen LB-Fall direkt — **beide** realen Elektro-LBs fordern
+Sicherheitsbeleuchtung in der Garage. Der LB-Parser behandelt das deshalb als
+**blockierenden Review** statt es still zu verschlucken. Dasselbe gilt für
+`TECHNIKRAUM` und `LAGER` (mo-Elektro §5.1.23).
+
+Zum Schließen wären `GERMAN_ROOM_TYPE_MAP` + `_TYP_MAP` (+ ein `RoomType`-Member)
+zu erweitern — deine Lane, deshalb hier nur der Befund.
 
 **Bitte an Leonis (blockiert den LB-Parser fachlich, nicht technisch):**
 `BereichsRegel.raum_typ` muss exakt Selmans `RaumModell.raum_typ`-Vokabular
@@ -144,9 +281,20 @@ treffen (`STIEGENHAUS`/`GANG`/`GARAGE`, …). Wo ist die Liste kanonisch? Solang
 das offen ist, parst Enis die LB-Bereiche auf genau diese drei Strings und
 markiert alles andere als „nicht zuordenbar" statt zu raten.
 
-**Naht ohne Abnehmer:** `pipeline.run()` nimmt weder `ProjektKontext` noch LB;
-`ProviderBundle` hat weder `oib`- noch `lb`-Feld. PR #23 schließt die LB-Hälfte
-(`ports.py` + `pipeline.py`, 3-Owner) — die OIB-Hälfte bleibt danach offen.
+**Naht verdrahtet:** `registry.build_default_bundle()` setzt `ProviderBundle.lb`
+seit PR #40 — der Parser ist aktiv. Offen bleibt die OIB-Hälfte (`ProjektKontext`
+→ `pipeline.run`, `ProviderBundle.oib`).
+
+**Fail-closed-Verhalten, das die Verdrahtung kennen muss:** `parse_lb()` wirft
+`LbNichtLesbar` bzw. `LbReviewRequired` statt eine leere `LBVorgabe`
+zurückzugeben — eine leere wäre von „die LB macht keine Vorgaben" nicht
+unterscheidbar und ließe die Engine still norm-getrieben weiterlaufen. Seit dem
+angeglichenen Raumtyp-Vokabular parsen die beiden Elektro-LBs durch; GU-Rahmen und
+Bau-/Ausstattungsbeschreibung brechen weiterhin ab — zu Recht, sie enthalten keine
+Notbeleuchtungs-Vorgaben.
+`LbTextProvider.parse_bericht()` liefert dazu den vollen Audit-Trail. Wer verdrahtet,
+sollte diese Exceptions in eine sichtbare Rückmeldung übersetzen (API: 422 mit
+Bericht), nicht verschlucken.
 
 **Norm-Ausgabe-Bezeichnung:** `ÖNORM EN 1838:2013` bleibt vorerst stehen, obwohl
 im Repo 2019-11-15 liegt (inhaltlich deckungsgleich). Grund: der String ist
@@ -155,6 +303,7 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 (Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
 
 ## Log (append-only, neueste oben)
+- 2026-08-31 Enis: **LB-Naht geschlossen** (Branch `enis/lb-parser`, rebased auf `9d3c080`). API zurück auf die main-Namen (`LbTextProvider` + Modul-`parse_lb`/`parse_bericht`), `registry.py` unangetastet. Raumtyp-Vokabular an #49/#57 angeglichen (+GARAGE/TECHNIK/LAGER/MUELLRAUM/KELLER, `TECHNIKRAUM`→`TECHNIK`, LAGER≠MUELLRAUM) — beide realen Elektro-LBs parsen jetzt durch. Fünf Feld-Lücken gegen main geschlossen (`projekt`, `batterie_standort`, Sonder-Lux-Split feuerloescher/hydrant, Norm-Schreibweise `OVE E 8101`, Inhaltsverzeichnis-Filter im Audit-Trail). Drei echte Fehler beim Test-Merge gefunden und behoben: `OverflowError` bei langer Ziffernfolge, verlorener Fluchtweg-Lux-Wert ohne Quantor, verlorene Bereichsregel wenn die Aussage in der ÜBERSCHRIFT steht ("2.11 In der Garage ist eine LED-Sicherheitsbeleuchtung herzustellen."). Alle 16 main-Tests übernommen + 1440-Regression + Drift-Gate `tests/contract/test_lb_raumtyp_naht.py`. 422 passed/5 skip, ruff clean, Schema in sync. Kein Contract-Touch.
 - 2026-08-31 F2: Raumtyp **Bleed-Fix + LB-Vokabular** (stacked auf ↓, Branch `leonis/raumtyp-bleed-vokabular`). (a) Port `classify_room` von rohem Substring auf **Token/Wortgrenze** umgestellt — „gang" in „Ein/Zu/Aus-gang" und „terrasse" in „Terrassentür" typten fälschlich CORRIDOR/TERRACE (CORRIDOR=Fluchtweg → falsches Notlicht; real: „Zugang Müllraum"→GANG). Komposita-Köpfe (…küche/…zimmer) + Abstell-Prefix erhalten. (b) `raumtyp._EXTRA_DIRECT`: GARAGE/TECHNIK/LAGER/MUELLRAUM (token-exakt) — die `lb_override`-Inklusion/Exklusion für diese LB-Typen war **tote Regel** (der kanonische „Garage→SL"-Fall). A/B über 4 Projekte: 0 Regressionen (GANG-Counts unverändert), +5 korrekte MUELLRAUM (Herrenholz/Baufeld). Kein Contract-Touch. 340 passed/5 skip, ruff clean.
 - 2026-08-31 F2: Raumtyp-Coverage — `raumtyp.raumtyp_flags` um österr. Plan-Abkürzungen erweitert (`_EXTRA_LABELS`, **token-exakt**, kein Substring-Bleed: „ar" nicht in „Garten"). VR→VORRAUM, AR→ABSTELLRAUM, **TRH→STIEGENHAUS** (sicherheitskritisch!), Loggia→BALKON. Fischamender BT1 EG **40→50 getypt** (UNKNOWN 20→10; Rest=Garten/Rampe/Aufzug=korrekt außen). Port `classify_room` unangetastet. Grundanalyse: Mollgasse-Geometrie-Typ (7/25) ist von Wand-Schlitz-Fragmenten blockiert (Gap-Healing-Sache), NICHT Vokabular → dort kein ehrlicher Win. Kein Contract-Touch. 319 passed/5 skip, ruff clean. Branch `leonis/raumtyp-coverage`.
 - 2026-08-31 F2: LB-Parser **gehärtet** (`normwissen/lb/parser.py`, Handoff-Feinschliff #1/#2). Drei reale Fehlparses behoben, verifiziert gegen alle 4 realen LB-PDFs: (a) Fluchtweg-Lux jetzt **kontext-** statt erst-treffer-basiert → mo-Elektro **200→1 lx** (Aufzugsvorplatz-Distraktor ignoriert); (b) **„Lux"-Wortform** erkannt (`_LUX=(?:lx|lux)`) → Feuerlöscher+Hydrant 5 lx (vorher []); (c) Betriebsdauer nur im `betriebsdauer|auszulegen`-Fenster ohne `notruf` → GU-24h-Notrufakku (7380→) und Fischa-24h-Gewährleistung (1440→) **verworfen**, mo-Elektro bleibt 480; +Dezimal (8,5 Std→510) +Plausi-Caps (20 lx / 1440 min). Kein Contract-Touch. 314 passed/5 skip, ruff clean. Branch `leonis/lb-parser-haertung`.

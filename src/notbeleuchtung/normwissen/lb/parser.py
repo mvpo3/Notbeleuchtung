@@ -1,249 +1,362 @@
-"""parser — Leistungsbeschreibung (Freitext/PDF) → LBVorgabe.
+"""LbTextProvider — Leistungsbeschreibung (2. Input) → LBVorgabe.
 
-Heuristischer Feld-Extraktor (kein Full-NLP, s. LB_ANALYSE_beispiele.md #4): liest den
-LB-Text (PDF via pypdf, sonst Textdatei) und leitet die expliziten Vorgaben ab, die den
-Norm-Default übersteuern. Kernfall (Fischa §2.10/2.11, GK4): Stiegenhaus + anschließende
-Gänge OHNE Sicherheitsbeleuchtung, SL nur in der Garage — der kanonische „LB übersteuert
-Norm"-Fall.
+Erfüllt `hauptengine.contracts.ports.LBProvider` (`parse_lb(lb_path) -> LBVorgabe`).
+Deterministisch, regelbasiert, quellengebunden — **kein NLP**. Alle Fachwörter,
+Muster und Einheiten stehen in `data/lb_extraktion.yaml`.
 
-Bereichs-Vokabular mappt auf Selmans RaumModell-Labels (STIEGENHAUS/GANG/GARAGE …), sonst
-greift die Regel im Platzierer nicht. Nicht gefundene Felder bleiben `None`/leer →
-Norm-Default. `lb_quelle` trägt den Datei-Namen als Audit-Trail.
+**Fail closed.** Der Parser gibt lieber sichtbar auf, als eine erkannte
+projektspezifische Anforderung still zu verlieren:
+
+* `parse_lb()` liefert eine `LBVorgabe` **nur**, wenn kein blockierender Befund
+  vorliegt — sonst `LbReviewRequired` (mit vollständigem Bericht) bzw.
+  `LbNichtLesbar`.
+* `parse_bericht()` liefert immer den vollen Audit-Trail inkl. Kandidatenwerten,
+  auch für die blockierten Fälle.
+
+Blockierend sind: Dokument nicht lesbar · kein Notbeleuchtungs-Abschnitt · reiner
+Verweis auf ein fremdes Dokument · ein erkannter Raumtyp, den die Raumerkennung
+heute nicht erzeugt (die Regel wäre im Platzierer ein stiller No-op) · derselbe
+Raumtyp gleichzeitig ein- und ausgeschlossen.
+
+Was NICHT blockiert: ein Feld, das im Notbeleuchtungs-Abschnitt schlicht nicht
+vorkommt. Das ist `nicht_spezifiziert` → `None` → der Norm-Default greift, genau
+wie es die Hierarchie `LB-explizit → Norm` vorsieht.
 """
 from __future__ import annotations
 
-import re
+from functools import lru_cache
 from pathlib import Path
 
-from notbeleuchtung.hauptengine.contracts.lb_vorgabe import (
-    BereichsRegel,
-    LBVorgabe,
-    SonderLux,
-)
+import yaml
 
-# Deutsche Oberflächenform → kanonisches RaumModell-Label (Selman-Vokabular).
-_BEREICH_VOCAB: list[tuple[re.Pattern[str], str]] = [
-    (re.compile(r"stiegenh|treppenh|\bstiege", re.IGNORECASE), "STIEGENHAUS"),
-    (re.compile(r"g[aä]nge?\b|korridor|\bflur", re.IGNORECASE), "GANG"),
-    (re.compile(r"garage|tiefgarage|einstellr|stellpl", re.IGNORECASE), "GARAGE"),
-    (re.compile(r"technik", re.IGNORECASE), "TECHNIK"),          # Technik(raum)/Haustechnik
-    (re.compile(r"\blager", re.IGNORECASE), "LAGER"),            # Lager(raum); NICHT einlager…
-    (re.compile(r"abstellr|einlager", re.IGNORECASE), "ABSTELLRAUM"),
-    (re.compile(r"m[üu]ll", re.IGNORECASE), "MUELLRAUM"),        # Müll(raum)/Restmüll
-]
+from notbeleuchtung.hauptengine.contracts import BereichsRegel, LBVorgabe, SonderLux
 
-_SL = r"(?:sicherheitsbeleuchtung|sicherheitsleuchte|led-sicherheit|notbeleuchtung)"
+from . import felder, struktur, text
+from .bericht import LbBericht, LbReviewRequired
 
-# Lux-Einheit: Abkürzung „lx" ODER ausgeschriebenes „Lux" (reale LBs mischen beides).
-_LUX = r"(?:lx|lux)"
-# Plausibilitäts-Caps gegen Fremdzahl-Treffer (s. Docstrings unten).
-_LUX_FLUCHTWEG_CAP = 20.0        # EN 1838: Fluchtweg-Mittellinie 1 lx, Antipanik 0,5 lx
-_BETRIEBSDAUER_CAP_MIN = 1440    # 24 h — darüber kein Notlicht-Betriebsdauerwert
-
-
-def _lies_text(pfad: str | Path) -> str:
-    """LB-Text laden — PDF via pypdf, sonst Datei als Text."""
-    p = Path(pfad)
-    if p.suffix.lower() == ".pdf":
-        from pypdf import PdfReader
-
-        return "\n".join(page.extract_text() or "" for page in PdfReader(str(p)).pages)
-    return p.read_text(encoding="utf-8", errors="ignore")
-
-
-def _saetze(text: str) -> list[str]:
-    """Grobe Satz-Segmentierung: Zeilenumbrüche zu Space (LB-Sätze brechen um), dann `.;!`."""
-    flach = re.sub(r"\s+", " ", text)
-    return [s.strip() for s in re.split(r"[.;!]+", flach) if s.strip()]
-
-
-def _bereiche(text: str) -> tuple[list[BereichsRegel], list[BereichsRegel]]:
-    """(inklusion, exklusion): Sätze mit/ohne Sicherheitsbeleuchtung → BereichsRegel."""
-    gk = _gebaeudeklasse(text)
-    inkl: dict[str, BereichsRegel] = {}
-    exkl: dict[str, BereichsRegel] = {}
-    for satz in _saetze(text):
-        if not re.search(_SL, satz, re.IGNORECASE):
-            continue
-        treffer = [label for pat, label in _BEREICH_VOCAB if pat.search(satz)]
-        if not treffer:
-            continue
-        # „keine/kein/ohne … Sicherheitsbeleuchtung" = Exklusion, sonst Inklusion.
-        ist_exkl = bool(re.search(r"\bkeine?\b|\bohne\b|nicht\s+her", satz, re.IGNORECASE))
-        ziel, flag = (exkl, False) if ist_exkl else (inkl, True)
-        for label in treffer:
-            if label not in ziel:
-                ziel[label] = BereichsRegel(
-                    raum_typ=label,
-                    sicherheitsbeleuchtung=flag,
-                    begruendung=gk if (ist_exkl and gk) else None,
-                )
-    # Kollision (gleicher Typ inkl+exkl): Exklusion (Hard-Override) gewinnt.
-    for label in set(inkl) & set(exkl):
-        del inkl[label]
-    return list(inkl.values()), list(exkl.values())
-
-
-def _gebaeudeklasse(text: str) -> str | None:
-    m = re.search(r"\bGK\s?([1-5])\b|Geb[äa]udeklasse\s+([1-5])", text, re.IGNORECASE)
-    if not m:
-        return None
-    return f"GK{m.group(1) or m.group(2)}"
-
-
-def _betriebsdauer_min(text: str) -> int | None:
-    """Notlicht-Betriebsdauer (Minuten) — nur im Batterie-/Betriebsdauer-Kontext.
-
-    Härtet gegen Fremdzahlen ohne Notlicht-Bezug: „24 Stunden nach Verständigung"
-    (Gewährleistung), „123 H SCHLUSSER" (bare-`h` an Fremdwort) und „…Batterie des
-    Notrufsystems … 24 Stunden" (fremdes Batteriesystem) werden verworfen — im Fenster
-    muss `(nenn)betriebsdauer|auszulegen` stehen und **kein** `notruf`. Bare `h` nur
-    direkt an der Ziffer (`8h`), nie `\\s+h`. Dezimal erlaubt (8,5 Std → 510). Werte
-    über _BETRIEBSDAUER_CAP_MIN (24 h) sind implausibel.
-    """
-    # Ganzzahl auf 1–4 Stellen begrenzt: sonst macht eine sehr lange Ziffernfolge
-    # float()=inf → round(inf*60) crasht. Der Cap 1440 (24 h) fängt Reste ab.
-    muster = r"(\d{1,4}(?:[.,]\d{1,2})?)(?:\s*(?:Std\.?|Stunden)|h)\b"
-    for m in re.finditer(muster, text, re.IGNORECASE):
-        fenster = text[max(0, m.start() - 80): m.end() + 20]
-        if not re.search(r"betriebsdauer|auszulegen", fenster, re.IGNORECASE):
-            continue
-        # notruf nur lokal am Treffer prüfen (nicht über 80er-Fenster in Nachbarsatz bluten).
-        if re.search(r"notruf", text[max(0, m.start() - 40): m.end() + 10], re.IGNORECASE):
-            continue
-        minuten = round(float(m.group(1).replace(",", ".")) * 60)
-        if minuten > _BETRIEBSDAUER_CAP_MIN:
-            continue
-        return minuten
-    return None
-
-
-def _umschaltzeit_s(text: str) -> float | None:
-    m = re.search(r"[<≤]\s*([0-9]+(?:[.,][0-9]+)?)\s*s\b", text)
-    return float(m.group(1).replace(",", ".")) if m else None
-
-
-def _mindest_lux_fluchtweg(text: str) -> float | None:
-    """Fluchtweg-Mindestbeleuchtungsstärke (lx) — nur im Fluchtweg-Kontext.
-
-    `_mindest_lux` alt griff das erste `\\d+ lx` im Doc (mo-Elektro: „200 lx"
-    Aufzugsvorplatz). Neu: der Wert muss im Fenster `fluchtweg|rettungsweg|
-    orientierungsbeleuchtung` stehen und darf nicht bei `feuerl|hydrant` liegen
-    (das ist Sonder-Lux). Ein direkt links vorangestelltes `antipanik` disqualifiziert
-    den Wert (Antipanik 0,5 lx ist eine andere Größe als die Fluchtweg-Mittellinie
-    1 lx) — sonst zöge `min()` den Antipanik-Wert. Nimmt das Minimum der verbleibenden
-    Kandidaten (EN-1838-Mindestwert; reale LBs nennen „1 Lux" mehrfach) und verwirft
-    Werte über _LUX_FLUCHTWEG_CAP.
-    """
-    kandidaten: list[float] = []
-    for m in re.finditer(r"(\d+(?:[.,]\d+)?)\s*" + _LUX + r"\b", text, re.IGNORECASE):
-        fenster = text[max(0, m.start() - 70): m.end() + 15]
-        if not re.search(r"fluchtweg|rettungsweg|orientierungsbeleuchtung",
-                         fenster, re.IGNORECASE):
-            continue
-        if re.search(r"feuerl|hydrant", fenster, re.IGNORECASE):
-            continue
-        # Antipanik-Wert (0,5 lx) direkt links vom Zahlwert → nicht die Fluchtweg-Größe.
-        if re.search(r"antipanik", text[max(0, m.start() - 60): m.start()], re.IGNORECASE):
-            continue
-        wert = float(m.group(1).replace(",", "."))
-        if wert <= _LUX_FLUCHTWEG_CAP:
-            kandidaten.append(wert)
-    return min(kandidaten) if kandidaten else None
-
-
-def _system_typ(text: str) -> str | None:
-    for surface, canon in (("zentralbatterie", "zentralbatterie"),
-                           ("gruppenbatterie", "gruppenbatterie"),
-                           ("einzelbatterie", "einzelbatterie")):
-        if re.search(surface, text, re.IGNORECASE):
-            return canon
-    return None
-
-
-def _batterie_standort(text: str) -> str | None:
-    """Standort der (Gruppen-/Zentral-)Batterie — nur wenn nahe `batterie` ein `im/in <Raum>`
-    steht (Fischa: „Gruppenbatterie im Technikraum" → „Technikraum"). Nichts raten: ohne
-    belegtes Muster None. Whitespace flach (LB-Sätze brechen um)."""
-    flach = re.sub(r"\s+", " ", text)
-    # Standort muss raum-artig sein (…raum / Keller…) — sonst greift „Batterien in
-    # Einzelleuchten" → „Einzelleuchten". Kein Raum-Wort in Reichweite → None.
-    m = re.search(
-        r"batterie\w*\s+(?:im|in\s+(?:dem|der)?)\s*([A-ZÄÖÜ][\wäöüß-]*raum|Keller[\wäöüß-]*)",
-        flach,
-        re.IGNORECASE,
-    )
-    return m.group(1) if m else None
-
-
-def _ueberwachung(text: str) -> str | None:
-    if re.search(r"einzelleuchten?überwach|einzelleuchten?\b", text, re.IGNORECASE):
-        return "einzelleuchte"
-    if re.search(r"zentral.?überwach", text, re.IGNORECASE):
-        return "zentral"
-    return None
-
-
-def _pruefung(text: str) -> str | None:
-    if re.search(r"\bweb\b|web-?basiert|controller.*lan|lan.*controller", text, re.IGNORECASE):
-        return "web"
-    if re.search(r"automatische?\s+(?:pr[üu]f|test)", text, re.IGNORECASE):
-        return "automatisch"
-    return None
-
-
-def _sonder_lux(text: str) -> list[SonderLux]:
-    # Whitespace flach: reale LBs brechen „…situiert werden.\n(mindestens 5 Lux)" um.
-    flach = re.sub(r"\s+", " ", text)
-    out: list[SonderLux] = []
-    for surface, ort in ((r"feuerl(?:ö|oe|o)scher", "feuerloescher"), (r"hydrant", "hydrant")):
-        m = re.search(surface + r".{0,110}?(\d+(?:[.,]\d+)?)\s*" + _LUX + r"\b",
-                      flach, re.IGNORECASE)
-        if m:
-            out.append(SonderLux(ort=ort, min_lux=float(m.group(1).replace(",", "."))))
-    return out
-
-
-def _norm_bezug(text: str) -> list[str]:
-    muster = [
-        (r"EN\s?ISO\s?7010", "EN ISO 7010"),
-        (r"EN\s?1838", "EN 1838"),
-        (r"[ÖO]VE\s?E?\s?8101", "OVE E 8101"),
-        (r"R\s?12-?2", "OVE R 12-2"),
-        (r"[ÖO]NORM\s?Z\s?1000", "ÖNORM Z1000"),
-        (r"EN\s?IEC\s?62485", "EN IEC 62485-2"),
-    ]
-    return [canon for pat, canon in muster if re.search(pat, text, re.IGNORECASE)]
-
-
-def _piktogramm(text: str) -> str | None:
-    return "EN ISO 7010" if re.search(r"EN\s?ISO\s?7010", text, re.IGNORECASE) else None
-
-
-def parse_lb(lb_path: str) -> LBVorgabe:
-    """Leistungsbeschreibung (PDF/Text) → LBVorgabe (explizite, norm-übersteuernde Vorgaben)."""
-    text = _lies_text(lb_path)
-    inkl, exkl = _bereiche(text)
-    return LBVorgabe(
-        projekt=Path(lb_path).stem,
-        system_typ=_system_typ(text),
-        batterie_standort=_batterie_standort(text),
-        betriebsdauer_min=_betriebsdauer_min(text),
-        umschaltzeit_max_s=_umschaltzeit_s(text),
-        mindest_lux_fluchtweg=_mindest_lux_fluchtweg(text),
-        ueberwachung=_ueberwachung(text),
-        pruefung=_pruefung(text),
-        piktogramm_norm=_piktogramm(text),
-        bereiche_inklusion=inkl,
-        bereiche_exklusion=exkl,
-        sonder_lux=_sonder_lux(text),
-        norm_bezug=_norm_bezug(text),
-        lb_quelle=Path(lb_path).name,
-    )
+DATA_DIR = Path(__file__).parent.parent / "data"
+DATEI = "lb_extraktion.yaml"
 
 
 class LbTextProvider:
-    """Erfüllt das ``LBProvider``-Protocol (``parse_lb(lb_path) -> LBVorgabe``)."""
+    """LBProvider-Impl gegen data/lb_extraktion.yaml."""
 
+    def __init__(self, data_dir: Path | None = None) -> None:
+        self._dir = data_dir or DATA_DIR
+        with open(self._dir / DATEI, encoding="utf-8") as fh:
+            self._cfg = yaml.safe_load(fh)
+
+    # ── LBProvider-Protocol ─────────────────────────────────────────────────
     def parse_lb(self, lb_path: str) -> LBVorgabe:
-        return parse_lb(lb_path)
+        """LB-Datei → LBVorgabe. Wirft bei jedem blockierenden Zweifel."""
+        vorgabe, bericht = self._parse(lb_path)
+        if bericht.blockierende:
+            raise LbReviewRequired(bericht)
+        return vorgabe
+
+    # ── Audit ───────────────────────────────────────────────────────────────
+    def parse_bericht(self, lb_path: str) -> LbBericht:
+        """Vollständiger Befund inkl. Kandidatenwerten — auch wenn blockiert."""
+        return self._parse(lb_path)[1]
+
+    # ── Kern ────────────────────────────────────────────────────────────────
+    def _parse(self, lb_path: str) -> tuple[LBVorgabe, LbBericht]:
+        cfg = self._cfg
+        name = Path(lb_path).name
+        bericht = LbBericht(datei=name)
+
+        seiten = text.lade_seiten(lb_path)      # wirft LbNichtLesbar
+        abschnitte = struktur.baue_abschnitte(seiten, cfg["struktur"])
+        volltext = "\n".join(s.text for s in seiten)
+        bericht.dokument_art = struktur.klassifiziere(volltext, cfg["dokument_arten"])
+
+        relevante = struktur.sl_abschnitte(
+            abschnitte, cfg["sl_abschnitt_anker"], cfg["sl_abschnitt_ausschluss"]
+        )
+        # Inhaltsverzeichnis-Zeilen tragen dieselbe Überschrift wie der echte
+        # Abschnitt, aber keinen Inhalt. Ungefiltert landen sie mit ihrer
+        # Verzeichnis-Seite im `lb_quelle`-Audit-Trail und behaupten dort eine
+        # Fundstelle, an der nichts steht (real: Fischa §2.10/§2.11 auf S. 2).
+        mindest = cfg["struktur"].get("mindest_inhalt_zeichen", 0)
+        relevante = [a for a in relevante if len(a.block) - len(a.titel) >= mindest]
+
+        if not relevante:
+            self._verweise(abschnitte, bericht, hat_eigene_vorgaben=False)
+            bericht.add(
+                feld="notbeleuchtungs_abschnitt", status="review_blockierend",
+                begruendung=f"Kein Abschnitt zur Notbeleuchtung gefunden (Dokument erkannt "
+                            f"als '{bericht.dokument_art}'). Eine leere LBVorgabe wäre hier "
+                            "nicht von 'die LB macht keine Vorgaben' unterscheidbar.",
+            )
+            return LBVorgabe(projekt=Path(lb_path).stem, lb_quelle=name), bericht
+
+        vorgabe = LBVorgabe(
+            projekt=Path(lb_path).stem,
+            lb_quelle=self._quelle(name, relevante),
+            batterie_standort=self._batterie_standort(relevante, bericht),
+            **self._skalare(relevante, bericht),
+            **self._enums(relevante, bericht, alle=abschnitte),
+            **self._listen(relevante, bericht),
+            **self._bereiche(relevante, bericht),
+        )
+        self._funktionserhalt(relevante, bericht)
+        # Verweise erst JETZT bewerten: ob ein Auslagerungs-Verweis blockiert,
+        # hängt daran, ob dieses Dokument die Vorgaben selbst trägt.
+        self._verweise(relevante, bericht, hat_eigene_vorgaben=self._traegt_vorgaben(bericht))
+        return vorgabe, bericht
+
+    def _traegt_vorgaben(self, bericht: LbBericht) -> bool:
+        """Enthält dieses Dokument mindestens eine eigene, explizite LB-Vorgabe?
+
+        Norm-Nennungen und Funktionserhalt zählen bewusst nicht — sonst könnte
+        eine bloße Normreferenz eine echte Lücke kaschieren.
+        """
+        zaehlt = set(self._cfg["eigene_vorgabe_felder"])
+        return any(b.status == "wert" and b.feld in zaehlt for b in bericht.befunde)
+
+    def _verweise(self, abschnitte, bericht: LbBericht, *, hat_eigene_vorgaben: bool) -> None:
+        """Querverweise klassifizieren — blockierend nur bei echter Lücke.
+
+        Ein allgemeiner Verweis (Brandschutzkonzept, Behörde, Norm, Planunterlage)
+        ist Koordination, keine fehlende Vorgabe: er bleibt informativ. Ein
+        Auslagerungs-Verweis blockiert nur, wenn das Dokument die
+        Notbeleuchtungs-Vorgaben nicht selbst trägt — dann ist ohne das externe
+        Dokument nichts sicher bestimmbar.
+        """
+        klassen = self._cfg["verweise"]
+        for klasse, a, anker, seite in struktur.verweise(abschnitte, klassen):
+            blockiert = klasse == "ausgelagert" and not hat_eigene_vorgaben
+            zusatz = ("" if blockiert else
+                      " Dieses Dokument trägt die benötigten Vorgaben selbst — der Verweis "
+                      "ergänzt sie nur." if klasse == "ausgelagert" else "")
+            bericht.add(
+                feld="verweis",
+                status="review_blockierend" if blockiert else "review_informativ",
+                abschnitt=a.fundstelle, seite=seite, anker=anker,
+                kandidat=klasse,
+                begruendung=klassen[klasse]["begruendung"].strip() + zusatz,
+            )
+
+    # ── Feldgruppen ─────────────────────────────────────────────────────────
+    def _skalare(self, relevante, bericht: LbBericht) -> dict:
+        werte: dict = {}
+        for feld, cfg in self._cfg["felder"].items():
+            treffer = felder.zahl_feld(relevante, cfg)
+            if treffer is None:
+                werte[feld] = None
+                bericht.add(
+                    feld=feld, status="nicht_spezifiziert",
+                    begruendung=f"{cfg['bezeichnung']} steht nicht in der LB → Norm-Default "
+                                "greift. Ein bloßer Normverweis erzeugt bewusst KEINEN Wert.",
+                )
+                continue
+            wert = treffer.wert
+            werte[feld] = int(wert) if feld.endswith("_min") else float(wert)
+            bericht.add(
+                feld=feld, status="wert", kandidat=str(werte[feld]),
+                abschnitt=treffer.abschnitt.fundstelle, seite=treffer.seite,
+                anker=treffer.anker, begruendung=f"{cfg['bezeichnung']} explizit in der LB.",
+            )
+        return werte
+
+    def _enums(self, relevante, bericht: LbBericht, alle: list) -> dict:
+        werte: dict = {}
+        for feld, cfg in self._cfg["enums"].items():
+            quelle = alle if cfg.get("dokumentweit") else relevante
+            treffer = felder.enum_feld(quelle, cfg)
+            if len(treffer) > 1 and cfg.get("prioritaet"):
+                # Kein Widerspruch, sondern gestaffelte Aussagen: der erste Wert in
+                # Deklarationsreihenfolge ist der speziellere.
+                reihenfolge = list(cfg["werte"])
+                treffer = [min(treffer, key=lambda t: reihenfolge.index(t.wert))]
+
+            if not treffer:
+                werte[feld] = None
+                bericht.add(feld=feld, status="nicht_spezifiziert",
+                            begruendung=f"{cfg['bezeichnung']} nicht in der LB genannt.")
+            elif len(treffer) == 1:
+                werte[feld] = treffer[0].wert
+                bericht.add(
+                    feld=feld, status="wert", kandidat=str(treffer[0].wert),
+                    abschnitt=treffer[0].abschnitt.fundstelle,
+                    seite=treffer[0].seite, anker=treffer[0].anker,
+                    begruendung=f"{cfg['bezeichnung']} explizit in der LB.",
+                )
+            else:
+                # Widerspruch im selben Dokument — jede Auflösung wäre geraten.
+                werte[feld] = None
+                kandidaten = ", ".join(
+                    f"{t.wert} ({t.abschnitt.fundstelle}, S. {t.seite})"
+                    for t in treffer
+                )
+                bericht.add(
+                    feld=feld, status="review_informativ",
+                    kandidat=kandidaten, anker=treffer[0].anker,
+                    abschnitt=treffer[0].abschnitt.fundstelle, seite=treffer[0].seite,
+                    begruendung=f"Widerspruch in der LB: {cfg['bezeichnung']} ist mehrfach "
+                                "und unterschiedlich angegeben. Kein Wert gesetzt — jede "
+                                "Auflösung wäre geraten.",
+                )
+        return werte
+
+    def _listen(self, relevante, bericht: LbBericht) -> dict:
+        cfg = self._cfg
+        werte: dict = {}
+
+        rz = felder.stellen(relevante, cfg["rz_stellen"])
+        werte["rz_stellen"] = [t.wert for t in rz]
+        for t in rz:
+            bericht.add(feld="rz_stellen", status="wert", kandidat=str(t.wert),
+                        abschnitt=t.abschnitt.fundstelle, seite=t.seite,
+                        anker=t.anker, begruendung="Rettungszeichen-Stelle in der LB genannt.")
+        if not rz:
+            bericht.add(feld="rz_stellen", status="nicht_spezifiziert",
+                        begruendung="Keine Platzierungsregel für Rettungszeichen in der LB.")
+
+        lux = felder.sonder_lux(relevante, cfg["sonder_lux"])
+        werte["sonder_lux"] = [SonderLux(ort=t.wert[0], min_lux=t.wert[1]) for t in lux]
+        for t in lux:
+            bericht.add(feld="sonder_lux", status="wert", kandidat=f"{t.wert[0]}={t.wert[1]}",
+                        abschnitt=t.abschnitt.fundstelle, seite=t.seite,
+                        anker=t.anker, begruendung="Erhöhte Mindest-Lux an einem Ort.")
+        if not lux:
+            bericht.add(feld="sonder_lux", status="nicht_spezifiziert",
+                        begruendung="Keine erhöhte Mindest-Beleuchtungsstärke in der LB.")
+
+        pikto = felder.erstes_muster(relevante, cfg["piktogramm_muster"])
+        werte["piktogramm_norm"] = pikto.wert if pikto else None
+        bericht.add(
+            feld="piktogramm_norm",
+            status="wert" if pikto else "nicht_spezifiziert",
+            kandidat=str(pikto.wert) if pikto else None,
+            abschnitt=pikto.abschnitt.fundstelle if pikto else None,
+            seite=pikto.seite if pikto else None,
+            anker=pikto.anker if pikto else None,
+            begruendung="Piktogramm-Norm explizit genannt." if pikto
+            else "Keine Piktogramm-Norm in der LB genannt.",
+        )
+
+        normen = felder.norm_bezug(relevante, cfg["norm_bezug"])
+        werte["norm_bezug"] = [t.wert for t in normen]
+        for t in normen:
+            bericht.add(
+                feld="norm_bezug", status="wert", kandidat=str(t.wert),
+                abschnitt=t.abschnitt.fundstelle, seite=t.seite, anker=t.anker,
+                begruendung="Zitiertes Regelwerk — reine Nennung, daraus wird KEIN Wert "
+                            "abgeleitet (sonst würde ein Norm-Default als LB-Vorgabe gelten).",
+            )
+        return werte
+
+    def _bereiche(self, relevante, bericht: LbBericht) -> dict:
+        cfg = self._cfg
+        unterstuetzt = set(cfg["unterstuetzte_raum_typen"])
+        treffer = felder.bereiche(relevante, cfg)
+
+        inkl: list[BereichsRegel] = []
+        exkl: list[BereichsRegel] = []
+        gesehen: dict[str, bool] = {}
+
+        for t in treffer:
+            # Contract-Validator verbietet denselben Raumtyp in beiden Listen.
+            if t.raum_typ in gesehen and gesehen[t.raum_typ] != t.sicherheitsbeleuchtung:
+                bericht.add(
+                    feld="bereiche", status="review_blockierend", kandidat=t.raum_typ,
+                    abschnitt=t.abschnitt.fundstelle, seite=t.seite, anker=t.anker,
+                    begruendung=f"'{t.raum_typ}' ist in der LB gleichzeitig ein- und "
+                                "ausgeschlossen — Widerspruch, nicht auflösbar.",
+                )
+                continue
+            gesehen[t.raum_typ] = t.sicherheitsbeleuchtung
+
+            if t.raum_typ not in unterstuetzt:
+                # Erkannt, aber im Platzierer wirkungslos: die Raumerkennung
+                # erzeugt diesen raum_typ nicht → die Regel fände nie einen Raum.
+                bericht.add(
+                    feld="bereiche", status="review_blockierend", kandidat=(
+                        f"{'inklusion' if t.sicherheitsbeleuchtung else 'exklusion'}: "
+                        f"{t.raum_typ}"
+                    ),
+                    abschnitt=t.abschnitt.fundstelle, seite=t.seite, anker=t.anker,
+                    begruendung=f"LB verlangt eine Regel für '{t.raum_typ}', aber die "
+                                "Raumerkennung erzeugt diesen raum_typ nicht "
+                                "(raumerkennung/raumtyp.py) — im Platzierer wäre die Regel "
+                                "ein stiller No-op. Die Anforderung darf nicht verloren gehen.",
+                )
+                continue
+
+            regel = BereichsRegel(raum_typ=t.raum_typ,
+                                  sicherheitsbeleuchtung=t.sicherheitsbeleuchtung,
+                                  begruendung=t.begruendung)
+            (inkl if t.sicherheitsbeleuchtung else exkl).append(regel)
+            bericht.add(
+                feld="bereiche", status="wert",
+                kandidat=f"{'inklusion' if t.sicherheitsbeleuchtung else 'exklusion'}: "
+                         f"{t.raum_typ}",
+                abschnitt=t.abschnitt.fundstelle, seite=t.seite, anker=t.anker,
+                begruendung="Explizite LB-Vorgabe" + (f" ({t.begruendung})" if t.begruendung else ""),
+            )
+
+        if not treffer:
+            bericht.add(feld="bereiche", status="nicht_spezifiziert",
+                        begruendung="Keine bereichsbezogene LB-Vorgabe gefunden.")
+        return {"bereiche_inklusion": inkl, "bereiche_exklusion": exkl}
+
+    def _batterie_standort(self, relevante, bericht: LbBericht) -> str | None:
+        """In welchem Raum steht die Batterieanlage? Nur bei belegtem Muster.
+
+        `LBVorgabe.batterie_standort` ist eine reine Dokumentations-Angabe für den
+        Plankopf — sie steuert keine Platzierung. Trotzdem gilt dieselbe Regel:
+        ohne Beleg kein Wert.
+        """
+        cfg = self._cfg["batterie_standort"]
+        treffer = felder.erstes_muster(relevante, cfg["muster"])
+        if treffer is None:
+            bericht.add(
+                feld="batterie_standort", status="nicht_spezifiziert",
+                begruendung=f"{cfg['bezeichnung']} nicht in der LB genannt.",
+            )
+            return None
+        bericht.add(
+            feld="batterie_standort", status="wert", kandidat=str(treffer.wert),
+            abschnitt=treffer.abschnitt.fundstelle, seite=treffer.seite,
+            anker=treffer.anker, begruendung=f"{cfg['bezeichnung']} explizit in der LB.",
+        )
+        return str(treffer.wert)
+
+    def _funktionserhalt(self, relevante, bericht: LbBericht) -> None:
+        """Kein Contract-Feld — der Befund wird nur dokumentiert."""
+        t = felder.erstes_muster(relevante, self._cfg["funktionserhalt_muster"])
+        if t:
+            bericht.add(
+                feld="funktionserhalt", status="review_informativ", kandidat=str(t.wert),
+                abschnitt=t.abschnitt.fundstelle, seite=t.seite, anker=t.anker,
+                begruendung="Funktionserhalt in der LB gefordert. `LBVorgabe` hat dafür kein "
+                            "Feld — bewusst nicht erfunden, nur dokumentiert.",
+            )
+
+    @staticmethod
+    def _quelle(name: str, relevante: list[struktur.Abschnitt]) -> str:
+        """Audit-Trail: Datei + die tragenden Abschnitte + Seiten."""
+        teile = [f"§{a.nummer} (S. {a.seite})" for a in relevante]
+        return f"{name} {', '.join(teile)}" if teile else name
+
+
+@lru_cache(maxsize=1)
+def _default() -> LbTextProvider:
+    """Der Default-Provider — `lb_extraktion.yaml` wird genau einmal gelesen."""
+    return LbTextProvider()
+
+
+def parse_lb(lb_path: str) -> LBVorgabe:
+    """Leistungsbeschreibung (PDF/Text) → LBVorgabe.
+
+    Modul-Ebene Bequemlichkeits-API neben `LbTextProvider.parse_lb`. Fail closed:
+    wirft `LbNichtLesbar` bzw. `LbReviewRequired`, statt eine erkannte Vorgabe
+    still zu verlieren.
+    """
+    return _default().parse_lb(lb_path)
+
+
+def parse_bericht(lb_path: str) -> LbBericht:
+    """Vollständiger Audit-Trail inkl. Kandidatenwerten — auch für blockierte Fälle."""
+    return _default().parse_bericht(lb_path)

@@ -44,7 +44,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
 | **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
 | Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | TODO (Contract steht, PR #14; Tabelle 6 extrahiert) | 2026-08-30 |
-| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | TODO (Contract steht, PR #22; Abnehmer = PR #23) | 2026-08-30 |
+| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | **WIP** — fail-closed Implementierung + API-Naht (`LbTextProvider`/`parse_lb`) fertig auf `enis/lb-parser`, rebased auf `9d3c080`, PR offen. Follow-up: `pipeline.py` fängt `LbReviewRequired` nicht ab (s. `docs/COORDINATION.md`) | 2026-08-31 |
 
 **Legende:** TODO · WIP · BLOCKED · DONE.
 
