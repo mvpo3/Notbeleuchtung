@@ -1,0 +1,592 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# platzierung_regeln.yaml — Placement-Decision-Matrix Notbeleuchtung
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WANN welche Notleuchte WO hin muss — maschinenlesbar, quellengebunden.
+# Antwortet auf die Frage, die `raumtyp_regeln.yaml` NICHT beantwortet: dort steht
+# „welche Anforderung hat ein RAUMTYP", hier steht „welche Situation LÖST eine
+# Leuchte AUS und wohin gehört sie".
+#
+# Abgrenzung (keine zweite Regelwelt):
+#   raumtyp_regeln.yaml  → Raumtyp × Fluchtweg  → NormAnforderung (Lux, Anzahl, Keys)
+#   platzierung_regeln.yaml → Auslöser (Situation) → Platzierungs-Entscheidung
+#   en1838_grundwerte.yaml  → die ZAHLEN (Lux, Höhe, Dauer, z-Faktoren)
+# Diese Datei referenziert die Zahlen über `*_ref`, sie dupliziert keine.
+#
+# ── Entscheidungs-Hierarchie (CLAUDE.md, BINDEND) ──────────────────────────
+#   LB-explizit → Referenz-Praxis → EN-1838/ÖNorm-Default → OVE/EN-Verbote
+# `decision_source` je Regel sagt, auf welcher Stufe sie steht. Eine Regel auf
+# einer niedrigeren Stufe wird von einer höheren übersteuert — AUSSER `hard_stop`:
+# der ist unübersteuerbar und schlägt auch LB-explizit.
+#
+# ── BELEG-STATUS (Marker-Legende: en1838_grundwerte.yaml) ──────────────────
+#   [BELEGT]         wörtlich in der vorliegenden Norm-Extraktion nachgewiesen
+#   [AUSLEGUNG]      Norm-gestützt, aber die Zuordnung ist Engineering-Auslegung
+#   [PRAXIS]         Fachpraxis, steht so NICHT in der Norm
+#   [LB]             stammt aus einer realen Leistungsbeschreibung, nicht aus der Norm
+#   [MANUELL_PRUEFEN] Regel fachlich plausibel, Quelle fehlt oder ist zu grob
+#
+# NICHTS GERATEN: wo die Quelle fehlt, steht `review_erforderlich: true` und
+# `norm_ref: MANUELL_PRUEFEN` — die Regel liefert dann KEINEN stillen Default.
+#
+# ── engine_status: was die Engine HEUTE kann ───────────────────────────────
+#   unterstuetzt  Regel ist mit dem heutigen `RaumModell` umsetzbar und umgesetzt
+#   teilweise     Eingabe da, Regel nur partiell umgesetzt
+#   input_fehlt   `RaumModell` trägt das Merkmal nicht → Regel ist NICHT umsetzbar,
+#                 solange Contract-1 sie nicht führt (3-Owner-Slice, s. Handoff)
+# `engine_status` ist eine Zustandsbeschreibung für Track A, KEIN Fachurteil.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-08-31"
+  owner: "Enis (normwissen)"
+  quellen_basis:
+    - "ÖNORM EN 1838:2013 — _port_source/emergency_lighting_en1838.yaml (Extraktion 2026-04-23, S.10–16)"
+    - "_port_source/rz_coverage_oenorm.yaml (Coverage-Reihenfolge, Pfeil-Logik, Sichtachse)"
+    - "data/en1838_grundwerte.yaml (kuratierte Zahlen)"
+    - "data/oib_rl2_tabelle6.yaml (OIB-RL 2 Punkt 5.4 + Tabelle 6)"
+    - "reale Leistungsbeschreibungen über data/lb_extraktion.yaml (LBVorgabe)"
+  nicht_ausgewertet:
+    # Ehrlich benannt statt stillschweigend weggelassen.
+    - "knowledge/sonstiges Wissen Notbeleuchtung/vorschriftenkurzuebersicht-at.pdf — PDF ist AES-verschlüsselt, pypdf kann es ohne `cryptography` nicht öffnen. Nicht ausgewertet, keine Regel daraus abgeleitet."
+    - "OVE R 12-2, OVE E 8350, TRVB E 102 — im Repo nicht als Volltext vorhanden; in _port_source nur als Quellen-NENNUNG, nicht als Zitat."
+
+# Stufen der Entscheidungs-Hierarchie, aufsteigend nach Vorrang.
+decision_sources:
+  norm_default:   {rang: 2, beschreibung: "EN-1838-/ÖNorm-Default. Greift, wenn die LB schweigt."}
+  referenz_praxis: {rang: 3, beschreibung: "Referenzplan / österreichische Fachpraxis. Übersteuert den Norm-Default nur, wo die Norm einen Spielraum lässt."}
+  lb_explizit:    {rang: 4, beschreibung: "Explizite Auftraggeber-Vorgabe aus der LB (LBVorgabe). Übersteuert Norm-Default und Praxis."}
+  hard_stop:      {rang: 9, beschreibung: "Normatives Verbot / Mindestwert. UNÜBERSTEUERBAR — schlägt auch LB-explizit."}
+
+# ── Rettungszeichenleuchten ────────────────────────────────────────────────
+rettungszeichen:
+
+  - id: RZ-01-NOTAUSGANG
+    ausloeser: "Tür ist als Notausgang gekennzeichnet (`Tuer.ist_notausgang`)"
+    kontext: "alle Gebäudeklassen, in denen Sicherheitsbeleuchtung gefordert ist"
+    leuchtenart: rz
+    positionierungsziel: "über der Türöffnung, Unterkante über dem Türsturz"
+    orientierung: "Pfeil zeigt DURCH die Tür in Reiserichtung"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 1
+    ausnahmen: []
+    konfliktregel: "Fällt mit RZ-04 (Kreuzung) zusammen → EINE Leuchte, Ausgang gewinnt (höhere Priorität)."
+    quelle: "EN 1838 §4.1.2 (hervorzuhebende Stellen) + rz_coverage_oenorm::rz_coverage_reihenfolge Schritt 1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Tuer.ist_notausgang", "Ausgang.xy_mm"]
+    engine_status: unterstuetzt
+
+  - id: RZ-02-AUSGANG-INS-FREIE
+    ausloeser: "`Ausgang.typ == final_exit` — letzter Ausgang ins Freie / in den sicheren Bereich"
+    kontext: "Ende des Fluchtwegs"
+    leuchtenart: rz
+    positionierungsziel: "über der Ausgangstür"
+    orientierung: "Pfeil nach unten (Ziel erreicht), Katalog-Key `notlicht_ks_stiege_unten`"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 1
+    ausnahmen: []
+    konfliktregel: "Schlägt jede Richtungs-Variante — am letzten Ausgang wird nicht weitergewiesen."
+    quelle: "EN 1838 §4.1.2 („letzter Ausgang\") + rz_coverage_oenorm Schritt 1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Ausgang.typ"]
+    engine_status: unterstuetzt
+
+  - id: RZ-03-RICHTUNGSAENDERUNG
+    ausloeser: "`FluchtwegSegment.reason in {direction_change, corner}`"
+    kontext: "Fluchtweg biegt ab"
+    leuchtenart: rz
+    positionierungsziel: "am Knickpunkt, sichtbar aus der ankommenden Richtung"
+    orientierung: "Pfeil in die neue Laufrichtung (links/rechts aus der Geometrie)"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Liegt ein Ausgang < 2 m entfernt → RZ-01/RZ-02 gewinnt, keine zweite Leuchte."
+    quelle: "EN 1838 §4.1.2 („Richtungsänderungen\") + rz_coverage_oenorm Schritt 2"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["FluchtwegSegment.reason", "ZirkulationsGraph.edges"]
+    engine_status: unterstuetzt
+
+  - id: RZ-04-KREUZUNG
+    ausloeser: "Knoten im Zirkulationsgraph mit Grad >= 3 (Kreuzung/Abzweigung)"
+    kontext: "Gang trifft auf Gang"
+    leuchtenart: rz
+    positionierungsziel: "im Kreuzungsbereich, aus allen zulaufenden Ästen sichtbar"
+    orientierung: "Pfeil zum nächstgelegenen Ausgang (Gefälle der Dijkstra-Distanz)"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Mehrere Kreuzungen < Erkennungsweite voneinander → ausdünnen (siehe RZ-09)."
+    quelle: "EN 1838 §4.1.2 („jede Kreuzung von Gängen\") + rz_coverage_oenorm Schritt 2"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["ZirkulationsGraph.nodes", "ZirkulationsGraph.edges"]
+    engine_status: unterstuetzt
+
+  - id: RZ-05-TREPPE
+    ausloeser: "Fluchtweg führt über eine Treppe (`Node.typ == stair`)"
+    kontext: "Stiegenhaus / Treppenlauf"
+    leuchtenart: rz
+    positionierungsziel: "am Treppenantritt bzw. -austritt, aus dem Laufweg sichtbar"
+    orientierung: "Pfeil in Fluchtrichtung (abwärts zum Ausgang, sofern der Ausgang unten liegt)"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Ergänzt SL-02 (Stufenbeleuchtung) — RZ ersetzt die Sicherheitsleuchte an der Treppe NICHT."
+    quelle: "EN 1838 §4.1.2 („Treppen\") + rz_coverage_oenorm::norm_pflicht"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Node.typ == stair", "Ausgang.typ == stair_exit"]
+    # Gegengeprüft an Mollgasse (EG/1OG/1KG, 2026-08-31): die Raumerkennung
+    # erzeugt WEDER `Node.typ == stair` NOCH `Ausgang.typ == stair_exit` — im EG
+    # sind alle 154 Knoten `junction`, alle 4 Ausgänge `final_exit`. Der Code-Pfad
+    # im Platzierer existiert, die Regel greift auf echten Plänen aber nicht.
+    engine_status: teilweise
+
+  - id: RZ-06-NIVEAUAENDERUNG
+    ausloeser: "Niveausprung im Fluchtweg ohne Treppe (Stufe, Rampe, Podest)"
+    kontext: "Fluchtweg mit Höhenversprung"
+    leuchtenart: rz
+    positionierungsziel: "unmittelbar an der Niveauänderung"
+    orientierung: "Pfeil in Fluchtrichtung"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 3
+    ausnahmen: []
+    konfliktregel: "Von RZ-05 abgedeckt, wenn die Niveauänderung eine Treppe ist."
+    # Ehrlich: die Norm-Extraktion nennt „Treppen", NICHT „Niveauänderungen".
+    # Die reale Elektro-LB fordert „bei allen Niveauänderungen" (rz_stellen::niveauaenderung).
+    quelle: "reale Elektro-LB (LBVorgabe.rz_stellen = niveauaenderung); EN 1838 §4.1.2 nennt Treppen, nicht allgemeine Niveauänderungen"
+    norm_ref: MANUELL_PRUEFEN
+    beleg: LB
+    review_erforderlich: true
+    decision_source: lb_explizit
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: RZ-07-AUSGANG-STIEGENHAUS
+    ausloeser: "`Ausgang.typ == stair_exit` — Tür aus dem Geschoss ins Stiegenhaus"
+    kontext: "geschossweiser Übergang in den gesicherten Treppenraum"
+    leuchtenart: rz
+    positionierungsziel: "über der Stiegenhaustür"
+    orientierung: "Pfeil DURCH die Tür; auf dem Gang links/rechts je Lage der Tür"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 1
+    ausnahmen: []
+    konfliktregel: "wie RZ-01"
+    quelle: "rz_coverage_oenorm::rz_coverage_reihenfolge („jede Stiegenhaus-Tuer\"); EN 1838 §4.1.2 deckt den Notausgang allgemein"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: AUSLEGUNG
+    review_erforderlich: false
+    decision_source: referenz_praxis
+    engine_input: ["Ausgang.typ == stair_exit"]
+    # Wie RZ-05: an Mollgasse wird kein einziger `stair_exit` erzeugt, obwohl das
+    # EG zwei STIEGENHAUS-Räume hat. Offener F2-Befund, nicht Normwissen.
+    engine_status: teilweise
+
+  - id: RZ-08-TUER-AM-FLUCHTWEG
+    ausloeser: "Tür liegt am Fluchtweg, ist aber weder Notausgang noch Stiegenhaustür"
+    kontext: "Wohnungs-/Nebenraumtüren entlang des Gangs"
+    leuchtenart: keine
+    positionierungsziel: "— keine Leuchte allein wegen der Tür"
+    orientierung: "—"
+    abstand: {}
+    prioritaet: 9
+    ausnahmen:
+      - "Führt die Tür in den gesicherten Bereich, greift RZ-01/RZ-07."
+    konfliktregel: "Diese Regel erzeugt NICHTS. Sie existiert, damit die Engine nicht jede Tür bestückt."
+    # Die Coverage-Reihenfolge nennt ausdrücklich „Tuer ins Freie + Stiegenhaus-Tuer",
+    # nicht „jede Tuer". Eine RZ je Wohnungstür wäre eine Erfindung.
+    quelle: "rz_coverage_oenorm::rz_coverage_reihenfolge Schritt 1 (Abgrenzung)"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (nennt Notausgänge, nicht alle Türen)"
+    beleg: AUSLEGUNG
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Tuer.ist_notausgang", "Raum.ist_fluchtweg"]
+    engine_status: unterstuetzt
+
+  - id: RZ-09-SICHTACHSE-AUFFUELLEN
+    ausloeser: "Abstand zwischen zwei aufeinanderfolgenden RZ > Erkennungsweite l = z·h"
+    kontext: "lange gerade Fluchtwegstrecke"
+    leuchtenart: rz
+    positionierungsziel: "Zwischenposition, bis jede Strecke <= l abgedeckt ist"
+    orientierung: "Pfeil zum nächsten Ausgang"
+    abstand:
+      formel: "l = z * h"
+      z_ref: "en1838_grundwerte::erkennungsweite.z_hinterleuchtet | z_beleuchtet"
+      h_ref: "en1838_grundwerte::erkennungsweite.piktogramm_hoehe_default_m"
+      default_max_sichtachse_m: 30      # 200 * 0,15 m, hinterleuchtet
+    prioritaet: 4
+    ausnahmen:
+      - "Sichtverbindung unterbrochen (Knick, Tür) → die Strecke endet dort, RZ-03 greift."
+    konfliktregel: "Füllt NUR auf; ersetzt keine Anker-Regel."
+    quelle: "EN 1838 §5.5 (Formel) + rz_coverage_oenorm::rz_sichtachse_formel (30-m-Praxisdefault)"
+    norm_ref: "ÖNORM EN 1838:2013 §5.5, S.14"
+    beleg: BELEGT       # Formel belegt; die 150-mm-Piktogrammhöhe ist [PRAXIS]
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["FluchtwegSegment.polyline_mm", "FluchtwegSegment.laenge_mm"]
+    engine_status: unterstuetzt
+
+  - id: RZ-10-BEIDSEITIGE-RICHTUNG
+    ausloeser: "Position liegt zwischen zwei gleich weit entfernten Ausgängen (Wasserscheide)"
+    kontext: "durchgehender Gang mit Ausgang an beiden Enden"
+    leuchtenart: rz
+    positionierungsziel: "am Scheitelpunkt der Distanzfunktion"
+    orientierung: "beidseitig / `richtung = gerade` — kein einseitiger Pfeil"
+    abstand: {}
+    prioritaet: 4
+    ausnahmen: []
+    konfliktregel: "Ein einseitiger Pfeil an der Wasserscheide wäre eine Falschaussage — im Zweifel beidseitig."
+    quelle: "österreichische Fachpraxis; EN 1838 macht keine Aussage zur Pfeilwahl an der Wasserscheide"
+    norm_ref: MANUELL_PRUEFEN
+    beleg: PRAXIS
+    review_erforderlich: false
+    decision_source: referenz_praxis
+    engine_input: ["ZirkulationsGraph", "Ausgang.xy_mm"]
+    engine_status: unterstuetzt
+
+  - id: RZ-11-FLUCHTWEG-UNKLAR
+    ausloeser: "Fluchtwegführung nicht bestimmbar (kein Zirkulationsgraph, kein Ausgang, widersprüchliche Richtung)"
+    kontext: "unvollständige oder mehrdeutige Raumerkennung"
+    leuchtenart: keine
+    positionierungsziel: "— keine Platzierung"
+    orientierung: "—"
+    abstand: {}
+    prioritaet: 0
+    ausnahmen: []
+    konfliktregel: "Schlägt ALLE RZ-Regeln. Eine geratene Fluchtrichtung ist gefährlicher als eine fehlende Leuchte, weil sie im Ernstfall aktiv falsch weist."
+    quelle: "Fail-Closed-Prinzip (CLAUDE.md: nichts raten, blockierende Unsicherheit schlägt Rechnen)"
+    norm_ref: "—"
+    beleg: AUSLEGUNG
+    review_erforderlich: true
+    decision_source: hard_stop
+    engine_input: ["ZirkulationsGraph", "Ausgang"]
+    engine_status: teilweise   # Validierung meldet leere Pläne, aber nicht „Richtung unklar"
+
+# ── Sicherheitsleuchten (inkl. Antipanik) ──────────────────────────────────
+sicherheitsleuchten:
+
+  - id: SL-01-FLUCHTWEG-MITTELLINIE
+    ausloeser: "Fluchtweg-Segment vorhanden"
+    kontext: "Rettungsweg bis 2 m Breite"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "so verdichten, dass die Mittellinie durchgehend die Mindest-Lux erreicht"
+    orientierung: "—"
+    abstand: {min_lux_ref: "en1838_grundwerte::lux.rettungsweg"}   # 1,0 lx
+    prioritaet: 1
+    ausnahmen:
+      - "Breitere Wege / Randbereiche sind hier nicht modelliert (EN 1838 Anhang B, Länderabweichung) → MANUELL_PRUEFEN."
+    konfliktregel: "Photometrischer Nachweis schlägt jede Stückzahl-Heuristik."
+    quelle: "EN 1838 §4.2.1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.2.1, S.11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["FluchtwegSegment.polyline_mm"]
+    engine_status: unterstuetzt
+
+  - id: SL-02-TREPPE
+    ausloeser: "Treppe im Fluchtweg / Raumtyp STIEGENHAUS"
+    kontext: "Treppenlauf"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "nahe der Treppe, so dass JEDE Stufe direkt beleuchtet wird"
+    orientierung: "—"
+    abstand: {max_horizontal_zum_punkt_mm: 2000, min_lux_ref: "en1838_grundwerte::lux.rettungsweg"}
+    prioritaet: 1
+    ausnahmen: []
+    konfliktregel: "Wird NICHT durch ein Rettungszeichen an derselben Treppe ersetzt (RZ-05)."
+    quelle: "EN 1838 §4.1.2 b) — „nahe Treppen, um jede Treppenstufe direkt zu beleuchten\""
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Raum.raum_typ == STIEGENHAUS", "Node.typ == stair"]
+    engine_status: unterstuetzt
+
+  - id: SL-03-KREUZUNG
+    ausloeser: "Gang-Kreuzung (Graph-Grad >= 3)"
+    kontext: "Fluchtweg-Knoten"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Betonung des Knotens, Leuchte <= 2 m horizontal vom Kreuzungspunkt"
+    orientierung: "—"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Zusätzlich zum RZ an derselben Kreuzung (RZ-04) — das Zeichen weist, die Leuchte beleuchtet."
+    quelle: "EN 1838 §4.1.2 („jede Kreuzung von Gängen\") + §4.1.2 max. 2 m Horizontalabstand"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["ZirkulationsGraph"]
+    engine_status: teilweise   # RZ sitzt an Kreuzungen, die SL-Betonung ist nicht separat umgesetzt
+
+  - id: SL-04-NIVEAUAENDERUNG
+    ausloeser: "Niveausprung im Fluchtweg"
+    kontext: "Stufe, Rampe, Podest"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Leuchte <= 2 m horizontal von der Niveauänderung"
+    orientierung: "—"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 3
+    ausnahmen: []
+    konfliktregel: "Von SL-02 abgedeckt, wenn die Niveauänderung eine Treppe ist."
+    quelle: "analog RZ-06; die Norm-Extraktion nennt Treppen, die reale LB nennt Niveauänderungen"
+    norm_ref: MANUELL_PRUEFEN
+    beleg: LB
+    review_erforderlich: true
+    decision_source: lb_explizit
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-05-ERSTE-HILFE-STELLE
+    ausloeser: "Erste-Hilfe-Stelle im Gebäude"
+    kontext: "Sanitätsraum, Erste-Hilfe-Kasten, AED"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Leuchte <= 2 m horizontal von der Stelle"
+    orientierung: "—"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Eigenständige Pflichtstelle — nicht durch Fluchtweg-Beleuchtung ersetzbar."
+    # Norm fordert die Betonung. Ein konkreter Lux-Wert für Erste-Hilfe-Stellen
+    # steht NICHT in der vorliegenden Extraktion → nicht erfinden.
+    quelle: "EN 1838 §4.1.2 („Erste-Hilfe-Stellen\")"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: true      # Lux-Niveau unbelegt
+    decision_source: norm_default
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-06-FEUERLOESCHER
+    ausloeser: "Feuerlöscher-Standort"
+    kontext: "Brandbekämpfungseinrichtung"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Leuchte <= 2 m horizontal vom Gerät"
+    orientierung: "—"
+    abstand:
+      max_horizontal_zum_punkt_mm: 2000
+      # 5 lx sind KEIN EN-1838-Wert. Sie stehen in der realen Elektro-LB
+      # (§5.1.23) und kommen über LBVorgabe.sonder_lux[ort=feuerloescher].
+      min_lux_lb_typisch: 5.0
+      min_lux_quelle: "LBVorgabe.sonder_lux (projektspezifisch) — kein Norm-Default"
+    prioritaet: 2
+    ausnahmen:
+      - "Ohne LB-Angabe gibt es KEINEN Lux-Wert für diese Stelle — nur die Betonungspflicht aus §4.1.2."
+    konfliktregel: "LB-Wert übersteuert; ohne LB bleibt die Lux-Anforderung offen (Review), die Leuchte selbst aber Pflicht."
+    quelle: "EN 1838 §4.1.2 (Betonung Brandbekämpfungseinrichtungen); 5 lx aus realer Elektro-LB §5.1.23"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 — Lux-Wert: MANUELL_PRUEFEN"
+    beleg: BELEGT       # Betonungspflicht belegt, Lux-Wert [LB]
+    review_erforderlich: true
+    decision_source: norm_default   # Pflicht; der Lux-Wert kommt von lb_explizit
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-07-WANDHYDRANT
+    ausloeser: "Wandhydrant / Löschwasserentnahme"
+    kontext: "Brandbekämpfungseinrichtung"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Leuchte <= 2 m horizontal vom Gerät"
+    orientierung: "—"
+    abstand:
+      max_horizontal_zum_punkt_mm: 2000
+      min_lux_lb_typisch: 5.0
+      min_lux_quelle: "LBVorgabe.sonder_lux[ort=hydrant] — kein Norm-Default"
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "wie SL-06. Feuerlöscher und Hydrant sind GETRENNTE Stellen, auch wenn die LB sie in einem Satz nennt."
+    quelle: "EN 1838 §4.1.2 (Brandbekämpfungseinrichtungen); 5 lx aus realer Elektro-LB §5.1.23"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 — Lux-Wert: MANUELL_PRUEFEN"
+    beleg: AUSLEGUNG   # „Wandhydrant" ist Auslegung von „Brandbekämpfungseinrichtung"
+    review_erforderlich: true
+    decision_source: norm_default
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-08-BRANDMELDER
+    ausloeser: "Brandmelde-/Meldeeinrichtung (Druckknopfmelder, BMZ-Bedienstelle)"
+    kontext: "Sicherheitseinrichtung"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "Leuchte <= 2 m horizontal von der Einrichtung"
+    orientierung: "—"
+    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "wie SL-06"
+    quelle: "EN 1838 §4.1.2 („Brandbekämpfungs-/Meldeeinrichtungen\")"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    beleg: BELEGT
+    review_erforderlich: true      # Lux-Niveau unbelegt
+    decision_source: norm_default
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-09-ANTIPANIK-FLAECHE
+    ausloeser: "Raum mit Norm-Klassifikation `antipanik` (freie Bodenfläche, Sammelbereich)"
+    kontext: "Saal, Aufenthaltsraum, große offene Fläche"
+    leuchtenart: antipanik
+    positionierungsziel: "Raster über die freie Bodenfläche; Randstreifen 0,5 m bleiben unberücksichtigt"
+    orientierung: "—"
+    abstand: {min_lux_ref: "en1838_grundwerte::lux.antipanik"}   # 0,5 lx
+    prioritaet: 2
+    ausnahmen:
+      - "Randbereich 0,5 m ist ausgenommen (§4.3.1) — im Contract heute nicht modelliert."
+    konfliktregel: "Flächen-Anforderung: der photometrische Nachweis entscheidet, nicht die Stückzahl aus raumtyp_regeln."
+    quelle: "EN 1838 §4.3.1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.3.1, S.12"
+    beleg: BELEGT
+    review_erforderlich: false
+    decision_source: norm_default
+    engine_input: ["Raum.polygon_mm", "Raum.raum_typ"]
+    engine_status: unterstuetzt
+
+  - id: SL-10-BARRIEREFREIES-WC
+    ausloeser: "Toilette für Menschen mit Behinderung"
+    kontext: "barrierefreies WC"
+    leuchtenart: antipanik
+    positionierungsziel: "im Raum"
+    orientierung: "—"
+    abstand: {min_lux_ref: "en1838_grundwerte::lux.antipanik"}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Gilt unabhängig davon, ob der Raum am Fluchtweg liegt."
+    # Die Raumerkennung vergibt WC, kann aber „barrierefrei" nicht unterscheiden.
+    quelle: "EN 1838 §4.3.8 — „Antipanikbeleuchtung ist in Toiletten für Menschen mit Behinderung erforderlich\""
+    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.12"
+    beleg: BELEGT
+    review_erforderlich: true      # Merkmal „barrierefrei" nicht erkennbar
+    decision_source: norm_default
+    engine_input: ["Raum.raum_typ == WC (Barrierefreiheit fehlt)"]
+    engine_status: input_fehlt
+
+  - id: SL-11-BESONDERE-GEFAEHRDUNG
+    ausloeser: "Arbeitsplatz mit besonderer Gefährdung"
+    kontext: "Maschinen, gefährliche Prozesse"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "am Arbeitsplatz"
+    orientierung: "—"
+    abstand:
+      min_lux: 15.0
+      min_prozent_der_arbeitsplatz_beleuchtung: 10
+      hinweis: "10 % des Wartungswertes, aber nie unter 15 lx (§4.4.1)"
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Höchster Lux-Anspruch aller Regeln — schlägt SL-01/SL-09 im selben Bereich."
+    quelle: "EN 1838 §4.4.1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.13"
+    beleg: BELEGT
+    review_erforderlich: true      # Gefährdungsmerkmal nicht im Modell
+    decision_source: norm_default
+    engine_input: ["— kein Merkmal im RaumModell"]
+    engine_status: input_fehlt
+
+  - id: SL-12-GARAGE
+    ausloeser: "Raumtyp GARAGE"
+    kontext: "Tiefgarage / Sammelgarage"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "entlang der Fluchtwege aus der Garage"
+    orientierung: "—"
+    abstand: {min_lux_ref: "en1838_grundwerte::lux.rettungsweg"}
+    prioritaet: 2
+    ausnahmen: []
+    konfliktregel: "Reine LB-Regel — ohne LB-Aussage erzeugt sie NICHTS (kein Norm-Default für Garagen in dieser Extraktion)."
+    # Beide realen Elektro-LBs fordern Sicherheitsbeleuchtung in der Garage.
+    quelle: "reale Leistungsbeschreibungen (LBVorgabe.bereiche_inklusion = GARAGE)"
+    norm_ref: MANUELL_PRUEFEN
+    beleg: LB
+    review_erforderlich: false
+    decision_source: lb_explizit
+    engine_input: ["Raum.raum_typ == GARAGE", "LBVorgabe.bereiche_inklusion"]
+    engine_status: unterstuetzt
+
+  - id: SL-13-TECHNIK-LAGER-KELLER
+    ausloeser: "Raumtyp TECHNIK, LAGER, MUELLRAUM oder KELLER"
+    kontext: "Nebenräume"
+    leuchtenart: sicherheitsleuchte
+    positionierungsziel: "im Raum bzw. am Fluchtweg aus dem Raum"
+    orientierung: "—"
+    abstand: {min_lux_ref: "en1838_grundwerte::lux.rettungsweg"}
+    prioritaet: 3
+    ausnahmen: []
+    konfliktregel: "Wie SL-12 reine LB-Regel — ohne LB-Aussage keine Leuchte."
+    quelle: "reale Elektro-LB §5.1.23 (Technikräume, Lager- und Müllräume)"
+    norm_ref: MANUELL_PRUEFEN
+    beleg: LB
+    review_erforderlich: false
+    decision_source: lb_explizit
+    engine_input: ["Raum.raum_typ", "LBVorgabe.bereiche_inklusion"]
+    engine_status: unterstuetzt
+
+  - id: SL-14-WIDERSPRUCH
+    ausloeser: "Zwei Regeln fordern für dieselbe Stelle Unvereinbares, oder die Eingabe ist mehrdeutig"
+    kontext: "beliebig"
+    leuchtenart: keine
+    positionierungsziel: "— keine stille Entscheidung"
+    orientierung: "—"
+    abstand: {}
+    prioritaet: 0
+    ausnahmen: []
+    konfliktregel: "Auflösung nur über die Hierarchie (hard_stop > lb_explizit > referenz_praxis > norm_default). Bleibt es danach mehrdeutig: REVIEW, kein Default."
+    quelle: "CLAUDE.md Entscheidungs-Hierarchie + Fail-Closed-Prinzip"
+    norm_ref: "—"
+    beleg: AUSLEGUNG
+    review_erforderlich: true
+    decision_source: hard_stop
+    engine_input: []
+    engine_status: teilweise
+
+# ── Hard Stops: unübersteuerbar, schlagen auch LB-explizit ─────────────────
+hard_stops:
+
+  - id: HS-01-MONTAGEHOEHE
+    regel: "Notleuchten und Rettungszeichen mindestens 2000 mm über dem Boden."
+    wert_ref: "en1838_grundwerte::montagehoehe_min_mm"
+    quelle: "EN 1838 §4.1.1"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.1, S.10"
+    beleg: BELEGT
+    verletzung: "Platzierung unterhalb 2000 mm ist unzulässig — Fehler, kein Warnhinweis."
+
+  - id: HS-02-BETRIEBSDAUER
+    regel: "Notbetriebsdauer mindestens 60 Minuten."
+    wert_ref: "en1838_grundwerte::dauer_min"
+    quelle: "EN 1838 §4.2.5 / §4.3.5 / §5.4.5"
+    norm_ref: "ÖNORM EN 1838:2013 §4.2.5, S.12"
+    beleg: BELEGT
+    verletzung: "Eine LB-Vorgabe unter 60 min unterschreitet die Norm — REVIEW, nicht übernehmen."
+
+  - id: HS-03-LB-EXKLUSION-GEGEN-PFLICHT
+    regel: >
+      Eine LB-Exklusion darf eine normativ geforderte Sicherheitsbeleuchtung nicht
+      abschalten. Schließt die LB einen Bereich aus, für den der OIB-Befund
+      Sicherheitsbeleuchtung als erforderlich ausweist, ist das ein KONFLIKT.
+    aufloesung: "REVIEW — weder still der LB folgen noch still platzieren. Beide Aussagen mit Fundstelle im Bericht zeigen."
+    quelle: "CLAUDE.md („OVE/EN-Verbote sind Hard Stops\") + OIB-Resolver (normwissen/oib)"
+    norm_ref: "OIB-RL 2 Punkt 5.4 + Tabelle 6"
+    beleg: AUSLEGUNG
+    verletzung: "Stiller Verzicht auf eine normativ geforderte Leuchte."
+    hinweis: >
+      Der OIB-Resolver gibt `nicht_erforderlich` NIE aus (fail closed). Ein fehlender
+      OIB-Befund ist deshalb KEIN Freibrief für die LB-Exklusion — er ist ein
+      Review-Fall.
+
+  - id: HS-04-KEINE-GERATENE-RICHTUNG
+    regel: "Ein Rettungszeichen ohne bestimmbare Fluchtrichtung wird nicht gesetzt."
+    aufloesung: "REVIEW. Ein falsch weisender Pfeil ist schlechter als kein Pfeil."
+    quelle: "Fail-Closed-Prinzip (CLAUDE.md)"
+    norm_ref: "—"
+    beleg: AUSLEGUNG
+    verletzung: "Pfeilrichtung geraten, statt Review zu melden."
