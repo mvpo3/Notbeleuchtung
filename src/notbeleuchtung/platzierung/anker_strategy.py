@@ -50,7 +50,11 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         return []
     pos = _node_positions(raum)
     dist = distanz_zu_ausgang(raum, G)
-    exits = {a.id for a in raum.ausgaenge if a.id in G}
+    # Jeder Ausgang bekommt ein RZ (EN 1838 §4.1.2 g) — auch wenn er KEIN Knoten des
+    # Zirkulationsgraphs ist (reale Pläne: Ausgänge liegen oft neben, nicht auf dem
+    # Wegenetz). Position kommt aus `pos` (enthält alle ausgaenge), Richtung fällt für
+    # graphlose Ausgänge auf „unten" (raus) zurück.
+    exits = {a.id for a in raum.ausgaenge}
     anker = sorted(set(kreuzungs_anker(G)) | exits)
     assign_building = _building_assigner([pos[n][0] for n in anker if n in pos])
 
@@ -61,7 +65,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         nx_, ny = pos[nid]
         # Am Ausgang: Pfeil „unten" (Ausgang erreicht). An Kreuzungen: Richtung zum
         # nächsten Ausgang = Nachbar mit kleinster Dijkstra-Distanz (Gefälle-Richtung).
-        nbrs = [m for m in G.neighbors(nid) if m in pos and m in dist]
+        nbrs = [m for m in G.neighbors(nid) if m in pos and m in dist] if nid in G else []
         if nid not in exits and nbrs and nid in dist:
             tgt = min(nbrs, key=lambda m: dist[m])
             richtung, fallback_rot = _richtung_und_rotation(pos[tgt][0] - nx_, pos[tgt][1] - ny)
