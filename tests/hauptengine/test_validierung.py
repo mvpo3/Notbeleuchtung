@@ -6,6 +6,7 @@ from notbeleuchtung.hauptengine.contracts import (
     FluchtwegSegment,
     Platzierung,
     PlatzierungsErgebnis,
+    Raum,
     RaumModell,
     ZirkulationsGraph,
 )
@@ -32,6 +33,38 @@ def _rz(height=2400.0, circuit="AGV-A-F13", covers=("s1",), xy=(0.0, 0.0), richt
 
 def _erg(*p: Platzierung) -> PlatzierungsErgebnis:
     return PlatzierungsErgebnis(floor="EG", platzierungen=list(p))
+
+
+def _raum_mit_raeumen(n: int) -> RaumModell:
+    """Grundriss mit n Räumen, aber ohne Fluchtweg-Segmente (Raumerkennung unvollständig)."""
+    poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
+    return RaumModell(
+        floor="OG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id=f"r{i}", raum_typ="UNKNOWN", polygon_mm=poly) for i in range(n)],
+    )
+
+
+def test_leerer_plan_bei_vielen_raeumen_ist_fehler():
+    # 20 Räume, 0 Symbole, keine Segmente → Fluchtweg-Regeln schweigen, Plausibilität greift.
+    befunde = pruefe(_raum_mit_raeumen(20), _erg())
+    plaus = next(b for b in befunde if "Plausibilität" in b.regel)
+    assert plaus.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
+
+
+def test_viele_raeume_ohne_rz_ist_warnung():
+    # 20 Räume, nur SL (kein RZ), keine Segmente → warnung statt falschem "ok".
+    sl = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="sicherheitsleuchte",
+                     height_mm=2400.0, circuit_hint="AGV-A-F13")
+    befunde = pruefe(_raum_mit_raeumen(20), _erg(sl))
+    plaus = next(b for b in befunde if "Plausibilität" in b.regel)
+    assert plaus.status == "warnung"
+
+
+def test_wenige_raeume_ohne_symbole_kein_plausibilitaets_fehler():
+    # Unter der Schwelle (kleine Technik-Etage): Regel greift nicht.
+    befunde = pruefe(_raum_mit_raeumen(3), _erg())
+    assert not any("Plausibilität" in b.regel for b in befunde)
 
 
 def test_konformer_plan_ist_ok():
