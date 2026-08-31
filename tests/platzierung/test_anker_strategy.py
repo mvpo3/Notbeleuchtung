@@ -57,6 +57,37 @@ def test_richtung_zeigt_zum_ausgang():
     assert bei_exit.richtung == "unten"  # Ausgang erreicht
 
 
+def _kreuz_mit_isoliertem_ausgang() -> RaumModell:
+    # Kreuzung J (degree 3) + Ausgang, der in KEINER Kante vorkommt (nicht im Graph).
+    nodes = [
+        Node(id="J", typ="junction", xy_mm=(0.0, 0.0)),
+        Node(id="N", typ="room", xy_mm=(0.0, 8000.0)),
+        Node(id="E", typ="room", xy_mm=(9000.0, 0.0)),
+        Node(id="W", typ="room", xy_mm=(-9000.0, 0.0)),
+    ]
+    edges = [
+        Edge(**{"from": "J", "to": "N", "len_mm": 8000.0}),
+        Edge(**{"from": "J", "to": "E", "len_mm": 9000.0}),
+        Edge(**{"from": "J", "to": "W", "len_mm": 9000.0}),
+    ]
+    return RaumModell(
+        floor="DEMO",
+        bounds_mm=BBox(min_xy=(-9000.0, -6000.0), max_xy=(9000.0, 8000.0)),
+        ausgaenge=[Ausgang(id="EXIT_ISO", xy_mm=(0.0, -6000.0), typ="final_exit")],
+        zirkulation=ZirkulationsGraph(nodes=nodes, edges=edges),
+    )
+
+
+def test_ausgang_ausserhalb_graph_bekommt_rz():
+    # Realer Mollgasse-Fall: Ausgänge liegen neben, nicht auf dem Wegenetz (nicht im
+    # Graph). §4.1.2 g verlangt trotzdem ein RZ an jedem Ausgang.
+    out = plan_rettungszeichen_anker(_kreuz_mit_isoliertem_ausgang(), FakeNormProvider())
+    xy = {p.xy_mm for p in out}
+    assert (0.0, -6000.0) in xy      # isolierter Ausgang trotzdem mit RZ
+    bei_exit = next(p for p in out if p.xy_mm == (0.0, -6000.0))
+    assert bei_exit.richtung == "unten"  # graphlos → raus
+
+
 def test_duenner_graph_nur_ausgaenge():
     # 4OG-Fixture: 2 Stich-Kanten, keine Kreuzung → nur die 2 Ausgänge als Anker.
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))

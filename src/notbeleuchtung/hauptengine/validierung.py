@@ -20,10 +20,27 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 4000.0  # RZ gilt als „am Ausgang", wenn ≤ 4 m entfernt
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
+_MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
+_AUFHELLER_ARTEN = {"sicherheitsleuchte", "antipanik"}  # flächige LB-relevante Leuchten
 
 
 def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
     return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+
+
+def _point_in_polygon(pt: tuple[float, float], poly: list[tuple[float, float]]) -> bool:
+    """Ray-Casting (ungerade Kreuzungszahl = innen). Lokal gehalten, damit die QA-
+    Schicht dependency-leicht bleibt (kein `platzierung`-Import in der Hauptengine)."""
+    x, y = pt
+    drin = False
+    j = len(poly) - 1
+    for i in range(len(poly)):
+        xi, yi = poly[i]
+        xj, yj = poly[j]
+        if ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi) + xi):
+            drin = not drin
+        j = i
+    return drin
 
 
 @dataclass
@@ -118,6 +135,83 @@ def pruefe(
             "warnung" if kollisionen else "ok",
             f"{kollisionen} Symbol-Paar(e) unter {_KOLLISION_MM:g} mm" if kollisionen
             else "keine Doppelplatzierungen",
+        ))
+
+    # 8. Plan-Plausibilität (Vollständigkeit): ein Grundriss mit vielen Räumen, aber
+    #    (fast) ohne Notbeleuchtung ist kein valider Plan. Fängt den Fall, den die
+    #    Fluchtweg-Regeln (3/4) NICHT sehen — nämlich wenn gar keine Segmente erkannt
+    #    wurden (Raumerkennung liefert keine Fluchtwege/Typen): sonst bestünde ein
+    #    quasi-leeres Ergebnis (0-2 Symbole bei >100 Räumen) die Prüfung als „ok".
+    #    Nur wenn KEINE Segmente erkannt wurden — sonst decken Regel 3/4 den Fall schon
+    #    ab und Regel 8 wäre eine redundante Doppelmeldung.
+    n_raeume = len(raum.raeume)
+    if n_raeume >= _MIN_RAEUME_PLAUSIBEL and not segmente:
+        if not plzg:
+            befunde.append(Befund(
+                "Plan-Plausibilität (Vollständigkeit)",
+                "fehler",
+                f"{n_raeume} Räume, aber kein Notbeleuchtungs-Symbol platziert "
+                "(Raumerkennung liefert evtl. keine Fluchtwege/Raumtypen)",
+            ))
+        elif not rz:
+            befunde.append(Befund(
+                "Plan-Plausibilität (Vollständigkeit)",
+                "warnung",
+                f"{n_raeume} Räume, aber kein Rettungszeichen platziert "
+                "(kein erkannter Fluchtweg/Ausgang?)",
+            ))
+
+    # 9./10. LB-Konformität — die oberste Hierarchie-Ebene (LB-explizit übersteuert
+    # Norm). Prüft, dass der Plan die expliziten Auftraggeber-Vorgaben einhält; würde
+    # z.B. eine nicht-feuernde lb_override-Regel (Label-Naht) als Fehler sichtbar machen.
+    if lb is not None:
+        befunde.extend(_lb_konformitaet(raum, plzg, lb))
+
+    return befunde
+
+
+def _lb_konformitaet(
+    raum: RaumModell, plzg: list, lb: LBVorgabe
+) -> list[Befund]:
+    """LB-Exklusion (kein Aufheller in ausgeschlossenem Raumtyp) + LB-Inklusion
+    (geforderter Raumtyp trägt ≥ 1 Aufheller). Nur Räume mit gültigem Polygon."""
+    befunde: list[Befund] = []
+    aufheller = [p for p in plzg if p.kind in _AUFHELLER_ARTEN]
+
+    # 9. LB-Exklusion: „KEINE Sicherheitsbeleuchtung in Raumtyp X" ist ein Hard-Override.
+    excl_typen = {b.raum_typ.upper() for b in lb.bereiche_exklusion if not b.sicherheitsbeleuchtung}
+    excl_raeume = [
+        r for r in raum.raeume if r.raum_typ.upper() in excl_typen and len(r.polygon_mm) >= 3
+    ]
+    if excl_raeume:
+        verletzt = [
+            p for p in aufheller
+            if any(_point_in_polygon(p.xy_mm, r.polygon_mm) for r in excl_raeume)
+        ]
+        befunde.append(Befund(
+            "LB-Exklusion respektiert (LB übersteuert Norm)",
+            "fehler" if verletzt else "ok",
+            f"{len(verletzt)} Aufheller-Leuchte(n) in LB-ausgeschlossenem Raumtyp "
+            f"{sorted(excl_typen)}" if verletzt
+            else f"keine Aufheller in {len(excl_raeume)} ausgeschlossenen Raum/Räumen",
+        ))
+
+    # 10. LB-Inklusion: LB verlangt SL in Raumtyp Y, obwohl die Norm dort keine vorsieht.
+    incl_typen = {b.raum_typ.upper() for b in lb.bereiche_inklusion if b.sicherheitsbeleuchtung}
+    incl_raeume = [
+        r for r in raum.raeume if r.raum_typ.upper() in incl_typen and len(r.polygon_mm) >= 3
+    ]
+    if incl_raeume:
+        ohne = [
+            r for r in incl_raeume
+            if not any(_point_in_polygon(p.xy_mm, r.polygon_mm) for p in aufheller)
+        ]
+        befunde.append(Befund(
+            "LB-Inklusion erfüllt (geforderte Sicherheitsleuchte vorhanden)",
+            "fehler" if ohne else "ok",
+            f"{len(ohne)}/{len(incl_raeume)} LB-geforderte(r) Raum/Räume ohne "
+            "Sicherheitsleuchte" if ohne
+            else f"alle {len(incl_raeume)} LB-geforderten Räume mit Sicherheitsleuchte",
         ))
 
     return befunde

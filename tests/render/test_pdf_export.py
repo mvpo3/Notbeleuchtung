@@ -38,3 +38,24 @@ def test_dxf_zu_pdf_hell_und_dunkel(tmp_path):
     hell = dxf_zu_pdf(dxf, tmp_path / "hell.pdf", dunkel=False, dpi=100)
     dunkel = dxf_zu_pdf(dxf, tmp_path / "dunkel.pdf", dunkel=True, dpi=100)
     assert hell.is_file() and dunkel.is_file()
+
+
+def test_hell_export_invertiert_layerfarbe7(tmp_path):
+    """Farbe-7-Text (Legende/Plankopf) muss auf weißem Grund schwarz gerendert werden.
+
+    Regression: ohne Farb-Inversion wäre er weiß-auf-weiß = unsichtbar (Legende/
+    Stückliste/Plankopf/Prüfbericht fehlten im Liefer-PDF)."""
+    import ezdxf
+    import matplotlib.image as mpimg
+
+    doc = ezdxf.new("R2018", units=4)
+    doc.layers.add("TXT7", color=7)  # weiß/schwarz — muss auf hell invertieren
+    doc.modelspace().add_mtext(
+        "LEGENDE", dxfattribs={"layer": "TXT7", "char_height": 100.0}
+    ).set_location((0.0, 0.0))
+    dxf = tmp_path / "farbe7.dxf"
+    doc.saveas(str(dxf))
+    png = dxf_zu_pdf(dxf, tmp_path / "farbe7.png", dunkel=False, dpi=80)
+    arr = mpimg.imread(str(png))[..., :3]
+    # Nur Text auf weißem Grund: bei korrekter Inversion existieren dunkle Text-Pixel.
+    assert float(arr.min()) < 0.3

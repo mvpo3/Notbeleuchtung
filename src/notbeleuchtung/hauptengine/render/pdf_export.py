@@ -32,6 +32,7 @@ def dxf_zu_pdf(
     import matplotlib.pyplot as plt
     from ezdxf.addons.drawing import Frontend, RenderContext
     from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
+    from ezdxf.addons.drawing.properties import LayoutProperties
 
     doc = ezdxf.readfile(str(dxf_path))
     # Der DXF-Standard-Textstil nutzt die SHX-Schrift „txt" — deren Glyph-Abdeckung im
@@ -45,8 +46,16 @@ def dxf_zu_pdf(
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_axis_off()
     try:
+        # Hintergrund über explizite LayoutProperties an draw_layout übergeben, damit
+        # ACI-Farbe 7 (weiß/schwarz) korrekt invertiert: auf weißem Druckgrund sonst
+        # weiß-auf-weiß → Legende/Plankopf/Stückliste/Prüfbericht (alle Layer-Farbe 7)
+        # unsichtbar. set_colors(bg) leitet die Vordergrundfarbe aus der bg-Helligkeit
+        # ab (schwarz auf hell / weiß auf dunkel). Ohne explizites layout_properties
+        # re-derived draw_layout die Farben aus dem Layout und überschrieb die Inversion.
+        lp = LayoutProperties.from_layout(doc.modelspace())
+        lp.set_colors("#000000" if dunkel else "#FFFFFF")
         Frontend(RenderContext(doc), MatplotlibBackend(ax)).draw_layout(
-            doc.modelspace(), finalize=True
+            doc.modelspace(), finalize=True, layout_properties=lp
         )
         pdf_path = Path(pdf_path)
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
