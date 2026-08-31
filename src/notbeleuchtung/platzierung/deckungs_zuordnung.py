@@ -34,8 +34,14 @@ from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, Raum
 # Deckungs-Radius, wenn die Norm keine Erkennungsweite liefert (defensiver Default,
 # entspricht dem RZ-Abstands-Default der Gang-Strategie).
 _DEFAULT_RADIUS_MM = 15000.0
-# Piktogramm-Annahme für die Erkennungsweite l = z·h (hinterleuchtet, 0,15 m Pikto).
+# Piktogramm-Annahme für die Erkennungsweite l = z·h (0,15 m Pikto).
 _PIKTO_HOEHE_M = 0.15
+# Beleuchtungsart-Annahme für l = z·h (EN 1838): z=200 hinterleuchtet (Rettungszeichen-
+# leuchte, l=30 m bei h=0,15) vs. z=100 beleuchtet/angestrahlt (l=15 m). SINGLE SOURCE für
+# alle Platzierungs-/Deckungs-Strategien: die gesetzten RZ sind hinterleuchtete
+# notlicht_ks-Leuchten → True. Per-Symbol-Ableitung (aus Produkt/Technology) folgt mit
+# dem erweiterten Symbol-Datenmodell (Digest-Empfehlung #6).
+HINTERLEUCHTET_DEFAULT = True
 
 
 def _dist_punkt_strecke(px: float, py: float, ax: float, ay: float, bx: float, by: float) -> float:
@@ -69,7 +75,7 @@ def _radius_mm(norm: NormProvider, hinterleuchtet: bool) -> float:
 
 def zuordnen(
     placements: list[Platzierung], raum: RaumModell, norm: NormProvider,
-    *, hinterleuchtet: bool = True,
+    *, hinterleuchtet: bool = HINTERLEUCHTET_DEFAULT,
 ) -> list[Platzierung]:
     """Füllt `covers_segment` der RZ geometrisch: jedes Segment → nächstes RZ in Reichweite.
 

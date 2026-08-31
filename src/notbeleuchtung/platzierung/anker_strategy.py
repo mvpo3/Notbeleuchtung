@@ -34,6 +34,7 @@ from .communal_stgh_strategy import (
     _richtung_und_rotation,
     _select_key,
 )
+from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
 
 
@@ -143,7 +144,7 @@ def plan_rettungszeichen_sichtlinie(
     *,
     max_abstand_mm: float | None = None,
     piktogramm_hoehe_m: float = 0.15,
-    hinterleuchtet: bool = True,
+    hinterleuchtet: bool = HINTERLEUCHTET_DEFAULT,
 ) -> list[Platzierung]:
     """RZ nach der Sichtlinien-Regel — **so wenige wie nötig, so sichtbar wie möglich**.
 
