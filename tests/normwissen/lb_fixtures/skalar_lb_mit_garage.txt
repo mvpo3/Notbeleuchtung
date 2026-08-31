@@ -1,0 +1,15 @@
+SYNTHETISCHES TEST-FIXTURE — kein Kundendokument.
+Wie skalar_lb.txt, aber mit Bereichen, die die Raumerkennung heute NICHT
+erzeugt (Garage, Technikräume, Lagerräume). Damit muss parse_lb() fail
+closed abbrechen, statt die Anforderung still zu verlieren.
+
+5.1.23 Fluchtwegorientierungsbeleuchtung
+Die Sicherheitsbeleuchtung wird in der Garage und in den Stiegenhäusern ausgeführt.
+Die Akkus sind auf 8 Std. auszulegen:
+In folgenden Bereichen werden Fluchtweg- und Sicherheitsleuchten installiert:
+-in der Garage auf den Fluchtgängen
+-in den Technikräumen
+-in Lager- und Müllräumen
+-in allen Fluchtgängen und im Fluchtstiegenhaus
+
+Musterbüro Seite 37 von 48

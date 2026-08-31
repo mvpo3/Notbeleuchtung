@@ -1,0 +1,30 @@
+SYNTHETISCHES TEST-FIXTURE — kein Kundendokument.
+Nachgebildet ist eine LB MIT Inhaltsverzeichnis: dieselbe Abschnitts-Ueberschrift
+steht zweimal im Dokument — einmal als Verzeichnis-Zeile ohne Inhalt (Seite 2),
+einmal als echter Abschnitt (Seite 37). Der Audit-Trail darf nur die echte
+Fundstelle nennen. Namen und Objekt sind erfunden.
+Inhaltsverzeichnis
+
+2.9 Beleuchtung-Konzept
+2.10 LED- Sicherheitsbeleuchtung (Stiegen, Gängen)
+2.11 LED- Sicherheitsbeleuchtung (Garage)
+2.12 Rauchabzugsanlage
+
+Musterbüro Seite 2 von 59
+1 Allgemeines
+Musterprojekt Beispielweg 1, Bauteil A, Wohnhausanlage. Die Ausfuehrung erfolgt
+nach den anerkannten Regeln der Technik und den Vorgaben des Bauherrn.
+
+Musterbüro Seite 3 von 59
+2.10 LED- Sicherheitsbeleuchtung (Stiegen, Gängen)
+Für die Stiegenhäuser und die an die Stiegenhäuser anschließenden Gänge ist KEINE
+LED- Sicherheitsbeleuchtung herzustellen (GK4).
+
+2.11 LED- Sicherheitsbeleuchtung (Garage)
+Das Gebäude wird mit einer batteriegestützten Sicherheitsstromversorgungsanlage für die
+Sicherheitsbeleuchtung entsprechend den Vorschriften (ÖVE8101, R12-2, 1838) ausgerüstet.
+Für das Wohnhaus wird eine Gruppenbatterieanlage errichtet, situiert im Technikraum.
+Die Gruppenbatterieanlage versorgt die Sicherheitsbeleuchtung in der Garage.
+Eine web-basierte Prüfung und Wartung ist über den Controller vorzusehen.
+
+Musterbüro Seite 37 von 59
