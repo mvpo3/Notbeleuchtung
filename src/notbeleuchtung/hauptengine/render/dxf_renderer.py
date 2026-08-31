@@ -56,8 +56,9 @@ CIRCUIT_LABEL_MIN_GAP_MM = 150.0
 CIRCUIT_LABEL_MAX_NUDGE = 8
 
 # Montagehöhen-Kote — sitzt entgegen der Stromkreis-Label-Seite (−Normale),
-# damit Kote und Kreis-Label nicht überlappen.
-HOEHENKOTE_HEIGHT_MM = 80.0
+# damit Kote und Kreis-Label nicht überlappen. 150 mm (≈1,5 mm auf 1:100) statt 80 mm
+# (0,8 mm — am Plan-Maßstab unleserlich), auf Höhe der Stromkreis-Label-Skala.
+HOEHENKOTE_HEIGHT_MM = 150.0
 HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 
 
