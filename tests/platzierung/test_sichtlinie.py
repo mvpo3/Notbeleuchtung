@@ -41,6 +41,27 @@ def _eg() -> RaumModell:
     )
 
 
+def _eg_isolierter_ausgang() -> RaumModell:
+    # Final-Ausgang M liegt NEBEN dem Wegenetz (nicht im Graph) — realer Mollgasse-Fall.
+    return RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0, 3000), max_xy=(20000, 11000)),
+        ausgaenge=[Ausgang(id="M", xy_mm=(10000, 6000), typ="final_exit")],
+        zirkulation=ZirkulationsGraph(
+            nodes=[Node(id="A", typ="stair", xy_mm=(2000, 6000)),
+                   Node(id="B", typ="stair", xy_mm=(18000, 6000))],
+            edges=[Edge(**{"from": "A", "to": "B", "len_mm": 16000})]),
+    )
+
+
+def test_ausgang_ausserhalb_graph_bekommt_rz_sichtlinie():
+    # Ohne Fix (a.id in G) wäre M gefiltert → ex leer → 0 RZ. §4.1.2 g verlangt RZ am Ausgang.
+    rz = plan_rettungszeichen_sichtlinie(_eg_isolierter_ausgang(), FakeNormProvider(),
+                                         max_abstand_mm=12000.0)
+    m = [p for p in rz if p.xy_mm == (10000.0, 6000.0)]
+    assert m, "isolierter (graphloser) Ausgang muss ein RZ bekommen"
+    assert m[0].richtung == "unten"      # final_exit → raus
+
+
 def test_og_stiegenhaus_rotiert_plus_mitte_beidseitig():
     rz = plan_rettungszeichen_sichtlinie(_og(), FakeNormProvider(), max_abstand_mm=12000.0)
     assert len(rz) == 3                                   # 2 Stiegenhaus + 1 Mitte, keine Überproduktion
