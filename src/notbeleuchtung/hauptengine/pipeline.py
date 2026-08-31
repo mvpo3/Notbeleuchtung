@@ -39,6 +39,9 @@ def _summary(raum: RaumModell, platzierung: PlatzierungsErgebnis) -> dict:
     }
 
 
+_AUTO_PRUEF_SCHWELLE = 20  # OVE E 8101 560.9.001.AT: EN-62034-Prüfeinrichtung Pflicht ab > 20 Leuchten
+
+
 def _coverage(
     raum: RaumModell, platzierung: PlatzierungsErgebnis, lb: LBVorgabe | None = None
 ) -> dict:
@@ -77,6 +80,15 @@ def _coverage(
     hinweise: list[str] = []
     if lb_schliesst_sl_aus and arten <= {"rz"}:
         hinweise.append("Sicherheitsbeleuchtung per LB ausgeschlossen (bereiche_exklusion) — RZ-only ist gewollt.")
+    # OVE E 8101 Pkt 560.9.001.AT: ab > 20 Sicherheitsleuchten in einem zusammenhängenden
+    # Gebäudeteil ist eine automatische Prüfeinrichtung mit zentraler Erfassung (EN 62034)
+    # Pflicht. Nicht-blockierender Hinweis (Anlagen-, keine Platzierungs-Anforderung).
+    n_leuchten = len(platzierung.platzierungen)
+    if n_leuchten > _AUTO_PRUEF_SCHWELLE:
+        hinweise.append(
+            f"{n_leuchten} Sicherheitsleuchten (> {_AUTO_PRUEF_SCHWELLE}) → automatische "
+            "Prüfeinrichtung mit zentraler Erfassung erforderlich (OVE E 8101 560.9.001.AT / EN 62034)."
+        )
     return {
         "n_raeume": len(raum.raeume),
         "n_raeume_untypisiert": n_untyped,
