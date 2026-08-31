@@ -113,3 +113,30 @@ def build_fake_bundle_mit_lb() -> ProviderBundle:
     bundle = build_fake_bundle()
     bundle.lb = FakeLBProvider()
     return bundle
+
+
+class FakeLBReviewProvider:
+    """Enis-Double für den FAIL-CLOSED-Fall: der Parser bricht mit `LbFehler` ab.
+
+    So verhält sich `LbTextProvider`, wenn die LB einen blockierenden Befund trägt
+    (kein Notbeleuchtungs-Abschnitt, ausgelagerter Verweis, unbekannter Raumtyp …).
+    `meldung` ist frei setzbar, damit die Header-Kürzung prüfbar bleibt.
+    """
+
+    def __init__(self, meldung: str | None = None) -> None:
+        self._meldung = meldung or (
+            "LB erfordert manuelle Prüfung (test.pdf) — notbeleuchtungs_abschnitt: "
+            "Kein Abschnitt zur Notbeleuchtung gefunden."
+        )
+
+    def parse_lb(self, lb_path: str) -> LBVorgabe:
+        from notbeleuchtung.normwissen.lb import LbFehler
+
+        raise LbFehler(self._meldung)
+
+
+def build_fake_bundle_mit_lb_review(meldung: str | None = None) -> ProviderBundle:
+    """Wie `build_fake_bundle_mit_lb`, aber der LB-Provider verlangt Review."""
+    bundle = build_fake_bundle()
+    bundle.lb = FakeLBReviewProvider(meldung)
+    return bundle

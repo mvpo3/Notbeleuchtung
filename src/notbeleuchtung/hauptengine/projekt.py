@@ -70,6 +70,14 @@ def run_projekt(
         ],
         "combined_pdf": combined_pdf,
     }
+    # Die LB gilt für das ganze Projekt (ein `lb_path` für alle Geschosse), der
+    # Review-Bedarf ist also nicht geschoss-spezifisch — er gehört auf die oberste
+    # Ebene. Ohne ihn wäre ein rein norm-getriebener Plan-Satz von einem
+    # LB-konformen nicht unterscheidbar (dieselbe Lücke wie in `POST /plan`).
+    review = next((o.render_summary["lb_review"] for o in outputs
+                   if "lb_review" in o.render_summary), None)
+    if review is not None:
+        summary["lb_review"] = review
     return ProjektErgebnis(outputs=outputs, combined_pdf=combined_pdf, summary=summary)
 
 
