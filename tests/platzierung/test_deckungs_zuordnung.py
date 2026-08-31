@@ -43,6 +43,15 @@ def test_nicht_rz_bleibt_unberuehrt_und_ohne_segmente_noop():
     assert deckungs_zuordnung.zuordnen([rz], leer, FakeNormProvider())[0] is rz
 
 
+def test_z_fallunterscheidung_hinterleuchtet_doppelter_radius():
+    # EN 1838 l=z·h: z=200 hinterleuchtet vs z=100 beleuchtet → doppelte Erkennungsweite.
+    norm = FakeNormProvider()
+    r_hinter = deckungs_zuordnung._radius_mm(norm, True)
+    r_bel = deckungs_zuordnung._radius_mm(norm, False)
+    assert r_hinter == 2 * r_bel                     # 30 m vs 15 m
+    assert deckungs_zuordnung.HINTERLEUCHTET_DEFAULT is True
+
+
 def test_mehrere_segmente_ein_rz_deckt_alle_in_reichweite():
     segs = [FluchtwegSegment(segment_id=f"s{i}", polyline_mm=[(i * 1000.0, 0.0)], reason="corner") for i in range(5)]
     out = deckungs_zuordnung.zuordnen([_rz(2000.0, 0.0)], _raum(*segs), FakeNormProvider())
