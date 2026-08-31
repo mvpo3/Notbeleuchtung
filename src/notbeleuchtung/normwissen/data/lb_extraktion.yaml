@@ -228,17 +228,31 @@ raum_typ_vokabular:
   GANG: ["fluchtgängen", "fluchtgänge", "fluchtgang", "wohnungsgänge", "wohnungsgang",
          "gängen", "gänge", "gang", "flur", "korridor"]
   GARAGE: ["tiefgarage", "garage"]
-  TECHNIKRAUM: ["technikräume", "technikräumen", "technikraum"]
-  LAGER: ["lager- und müllräume", "lagerräume", "lagerraum", "müllräume", "müllraum"]
+  # Label TECHNIK (nicht TECHNIKRAUM) — so heisst der Typ, den raumtyp.py vergibt.
+  TECHNIK: ["technikräume", "technikräumen", "technikraum", "haustechnik"]
+  # LAGER und MUELLRAUM sind in raumtyp.py getrennte Typen. „Lager- und Müllräumen"
+  # muss deshalb BEIDE erzeugen. „lager-" statt „lager", damit „Lagerung"/
+  # „Lagerfläche" den Wortanfang-Treffer nicht bekommen.
+  LAGER: ["lagerräumen", "lagerräume", "lagerraum", "lager-"]
+  MUELLRAUM: ["müllräumen", "müllräume", "müllraum", "restmüll"]
+  KELLER: ["kellerabteil", "kellerräume", "kellerräumen", "keller"]
 # Der Aussenbereich ist bewusst KEIN raum_typ: das RaumModell kennt nur Raeume
 # innerhalb des Geschosses. „Im Aussenbereich bei jedem Notausgang" ist als
 # RZ-Stelle `notausgang_aussen` erfasst, nicht als Bereichsregel.
 
-# Was die Raumerkennung heute tatsaechlich erzeugt (raumerkennung/raumtyp.py:25-39).
-# Alles andere ist im Platzierer ein stiller No-op -> blockierender Review.
+# Was die Raumerkennung heute tatsaechlich erzeugt: die Labels aus
+# `raumerkennung/raumtyp.py` (`_TYP_MAP` + `_EXTRA_DIRECT`). Alles andere waere im
+# Platzierer ein stiller No-op -> blockierender Review.
+#
+# Stand 2026-08-31: GARAGE/TECHNIK/LAGER/MUELLRAUM (PR #49) und KELLER (PR #57) sind
+# neu dazugekommen. Vorher blockierte der kanonische LB-Fall („In der Garage ist
+# Sicherheitsbeleuchtung herzustellen") zu Recht — jetzt setzt der Platzierer ihn um.
+# Diese Liste muss der Vergabe in raumtyp.py folgen; driftet sie, blockiert der
+# Parser entweder zu viel oder laesst eine tote Regel durch.
 unterstuetzte_raum_typen:
   [STIEGENHAUS, GANG, VORRAUM, WOHNZIMMER, SCHLAFZIMMER, KINDERZIMMER, ZIMMER,
-   KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE]
+   KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE,
+   GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER]
 
 # Negation: „ist KEINE LED-Sicherheitsbeleuchtung herzustellen"
 negation_muster:

@@ -19,10 +19,12 @@ from pathlib import Path
 
 import jsonschema
 import pytest
+import yaml
 
 from notbeleuchtung.hauptengine.contracts import LBProvider, LBVorgabe
 from notbeleuchtung.normwissen import LbTextProvider
 from notbeleuchtung.normwissen.lb import LbNichtLesbar, LbReviewRequired
+from notbeleuchtung.normwissen.lb.parser import DATA_DIR, DATEI
 
 FIXTURES = Path(__file__).parent / "lb_fixtures"
 SCHEMA = Path("src/notbeleuchtung/hauptengine/contracts/schema/lb_vorgabe.schema.json")
@@ -41,6 +43,21 @@ def _bericht(name: str):
 def _kandidat(bericht, feld: str) -> str | None:
     treffer = [b for b in bericht.fuer_feld(feld) if b.kandidat]
     return treffer[0].kandidat if treffer else None
+
+
+def _provider_ohne_typ(tmp_path, typ: str) -> LbTextProvider:
+    """Provider, dessen Stützliste `typ` NICHT kennt.
+
+    So bleibt die Fail-Closed-Mechanik prüfbar, ohne einen Raumtyp zu erfinden, den
+    es nicht gibt: seit PR #49/#57 vergibt `raumerkennung/raumtyp.py` alle Typen, die
+    das LB-Vokabular kennt — der blockierende Zweig wäre sonst unerreichbar.
+    """
+    daten = tmp_path / "data"
+    daten.mkdir()
+    cfg = yaml.safe_load((DATA_DIR / DATEI).read_text(encoding="utf-8"))
+    cfg["unterstuetzte_raum_typen"] = [t for t in cfg["unterstuetzte_raum_typen"] if t != typ]
+    (daten / DATEI).write_text(yaml.safe_dump(cfg, allow_unicode=True), encoding="utf-8")
+    return LbTextProvider(data_dir=daten)
 
 
 # ── Protocol + Grundverhalten ───────────────────────────────────────────────
@@ -132,32 +149,42 @@ def test_exklusion_landet_als_bereichsregel_mit_begruendung():
     assert {"STIEGENHAUS", "GANG"} <= typen
 
 
-def test_garage_ist_blockierender_review_kein_stiller_noop():
-    """Die Raumerkennung erzeugt `GARAGE` nicht — die Regel wäre im Platzierer
-    wirkungslos. Sie darf weder still verschwinden noch still 'angewendet' werden."""
-    with pytest.raises(LbReviewRequired) as exc:
-        PARSER.parse_lb(_pfad("bereichs_lb.txt"))
+def test_garage_ist_eine_echte_bereichsregel():
+    """Seit PR #49 vergibt `raumerkennung/raumtyp.py` das Label GARAGE — die Regel ist
+    im Platzierer kein stiller No-op mehr. Also wird sie zum Wert, nicht zum Review.
+    Vorher blockierte genau dieser Fall, und das war damals richtig."""
+    lb = PARSER.parse_lb(_pfad("bereichs_lb.txt"))
+    garage = [b for b in lb.bereiche_inklusion if b.raum_typ == "GARAGE"]
+    assert garage and garage[0].sicherheitsbeleuchtung is True
 
-    bericht = exc.value.bericht
-    garage = [b for b in bericht.blockierende if b.kandidat and "GARAGE" in b.kandidat]
+
+def test_unbekannter_raumtyp_bleibt_blockierender_review(tmp_path):
+    """Die Fail-Closed-Mechanik selbst: kennt die Raumerkennung einen Typ nicht, wäre
+    die Regel im Platzierer wirkungslos — sie darf weder still verschwinden noch still
+    'angewendet' werden."""
+    parser = _provider_ohne_typ(tmp_path, "GARAGE")
+    with pytest.raises(LbReviewRequired) as exc:
+        parser.parse_lb(_pfad("bereichs_lb.txt"))
+
+    garage = [b for b in exc.value.bericht.blockierende if b.kandidat and "GARAGE" in b.kandidat]
     assert garage, "GARAGE-Anforderung muss als blockierender Befund erhalten bleiben"
     assert "inklusion" in garage[0].kandidat
     assert "raum_typ nicht" in garage[0].begruendung or "No-op" in garage[0].begruendung
     assert garage[0].abschnitt and garage[0].seite
 
 
-def test_nicht_unterstuetzte_typen_blockieren_auch_in_bullet_listen():
-    with pytest.raises(LbReviewRequired) as exc:
-        PARSER.parse_lb(_pfad("skalar_lb_mit_garage.txt"))
-    kandidaten = {b.kandidat for b in exc.value.bericht.blockierende if b.kandidat}
-    assert any("GARAGE" in k for k in kandidaten)
-    assert any("TECHNIKRAUM" in k for k in kandidaten)
-    assert any("LAGER" in k for k in kandidaten)
+def test_nebenraum_typen_aus_bullet_listen_werden_regeln():
+    """Garage/Technik/Lager/Müllraum in einer Aufzählungsliste — seit PR #49/#57 alles
+    Typen, die die Raumerkennung vergibt. „Lager- und Müllräumen" muss BEIDE erzeugen."""
+    lb = PARSER.parse_lb(_pfad("skalar_lb_mit_garage.txt"))
+    typen = {b.raum_typ for b in lb.bereiche_inklusion}
+    assert {"GARAGE", "TECHNIK", "LAGER", "MUELLRAUM"} <= typen
 
 
-def test_kandidatenwerte_bleiben_trotz_blockade_im_bericht():
+def test_kandidatenwerte_bleiben_trotz_blockade_im_bericht(tmp_path):
     """parse_bericht() liefert den vollen Befund — auch für blockierte Dateien."""
-    bericht = _bericht("skalar_lb_mit_garage.txt")
+    bericht = _provider_ohne_typ(tmp_path, "GARAGE").parse_bericht(
+        _pfad("skalar_lb_mit_garage.txt"))
     assert _kandidat(bericht, "betriebsdauer_min") == "480"
     assert bericht.blockierende
 
@@ -231,12 +258,13 @@ def test_allgemeiner_verweis_blockiert_nicht():
     assert "verweis" not in {b.feld for b in bericht.blockierende}
 
 
-def test_bereichs_lb_blockiert_ausschliesslich_wegen_garage():
-    with pytest.raises(LbReviewRequired) as exc:
-        PARSER.parse_lb(_pfad("bereichs_lb.txt"))
-    blockierend = exc.value.bericht.blockierende
-    assert {b.feld for b in blockierend} == {"bereiche"}
-    assert all("GARAGE" in (b.kandidat or "") for b in blockierend)
+def test_bereichs_lb_parst_ohne_blockierenden_befund():
+    """Der GU-Bereichsfall geht mit dem erweiterten Vokabular durch: Exklusion
+    Stiegenhaus+Gang (GK4), Inklusion Garage — und weiterhin keine Skalare."""
+    assert _bericht("bereichs_lb.txt").blockierende == []
+    lb = PARSER.parse_lb(_pfad("bereichs_lb.txt"))
+    assert {b.raum_typ for b in lb.bereiche_exklusion} == {"STIEGENHAUS", "GANG"}
+    assert {b.raum_typ for b in lb.bereiche_inklusion} == {"GARAGE"}
 
 
 # ── Nicht lesbar ────────────────────────────────────────────────────────────
@@ -333,8 +361,9 @@ def test_funktionserhalt_nur_informativ():
 def test_bericht_als_text_ist_lesbar():
     text = _bericht("bereichs_lb.txt").als_text()
     assert "LB-Bericht" in text
-    assert "BLOCKIEREND" in text
     assert "GARAGE" in text
+    # Ein blockierender Fall muss als solcher lesbar sein.
+    assert "BLOCKIEREND" in _bericht("rahmen_verweis.txt").als_text()
 
 
 def test_dokument_art_erkannt():
