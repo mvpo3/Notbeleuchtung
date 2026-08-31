@@ -30,7 +30,7 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from . import lb_override
+from . import deckungs_zuordnung, lb_override
 from .anker_strategy import plan_rettungszeichen_anker
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
@@ -73,4 +73,7 @@ class NotlichtPlatzierer:
         ]
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
+        # Fluchtweg-Deckung nachträglich geometrisch zuordnen (füllt covers_segment,
+        # das die RZ-Strategien selbst nicht setzen) → Deckungs-Prüfung wird aussagekräftig.
+        platzierungen = deckungs_zuordnung.zuordnen(platzierungen, raum, norm)
         return PlatzierungsErgebnis(floor=raum.floor, platzierungen=platzierungen)
