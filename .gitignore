@@ -35,3 +35,7 @@ Thumbs.db
 # Spike-generierte IFC-Artefakte
 spikes/_demo.ifc
 spikes/*.ifc
+
+# AutoCAD-Lock-Dateien (transient, nicht versionieren)
+*.dwl
+*.dwl2
