@@ -91,11 +91,10 @@ def test_mindest_lux_fluchtweg():
     assert PARSER.parse_lb(_pfad("skalar_lb.txt")).mindest_lux_fluchtweg == 1.0
 
 
-def test_sonder_lux_feuerloescher():
-    lux = PARSER.parse_lb(_pfad("skalar_lb.txt")).sonder_lux
-    assert len(lux) == 1
-    assert lux[0].ort == "feuerloescher_wandhydrant"
-    assert lux[0].min_lux == 5.0
+def test_sonder_lux_feuerloescher_und_hydrant_getrennt():
+    """Ein Satz, zwei Orte: der Platzierer verankert an jedem Gerät einzeln."""
+    lux = {s.ort: s.min_lux for s in PARSER.parse_lb(_pfad("skalar_lb.txt")).sonder_lux}
+    assert lux == {"feuerloescher": 5.0, "hydrant": 5.0}
 
 
 def test_piktogramm_norm():
@@ -265,6 +264,52 @@ def test_bereichs_lb_parst_ohne_blockierenden_befund():
     lb = PARSER.parse_lb(_pfad("bereichs_lb.txt"))
     assert {b.raum_typ for b in lb.bereiche_exklusion} == {"STIEGENHAUS", "GANG"}
     assert {b.raum_typ for b in lb.bereiche_inklusion} == {"GARAGE"}
+
+
+# ── Plankopf-/Dokumentations-Felder ─────────────────────────────────────────
+def test_projekt_aus_dateiname():
+    """`LBVorgabe.projekt` speist den Plankopf (`render/dxf_renderer.py`). Ohne LB-
+    Metadaten ist der Dateiname die einzige belegte Bezeichnung."""
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).projekt == "skalar_lb"
+
+
+def test_batterie_standort_aus_der_lb():
+    """„… wird im UG im Zählerraum situiert" bzw. „… situiert im Technikraum"."""
+    assert PARSER.parse_lb(_pfad("skalar_lb.txt")).batterie_standort == "Zählerraum"
+    assert PARSER.parse_lb(_pfad("bereichs_lb.txt")).batterie_standort == "Technikraum"
+
+
+def test_batterie_standort_ohne_muster_bleibt_none(tmp_path):
+    """Kein raumartiger Standort in Reichweite → kein Wert. „Batterien in
+    Einzelleuchten" darf nicht „Einzelleuchten" als Standort erzeugen."""
+    p = tmp_path / "lb.txt"
+    p.write_text(
+        "5.1.23 Fluchtwegorientierungsbeleuchtung\n"
+        "Die Sicherheitsbeleuchtung wird in den Stiegenhäusern ausgeführt.\n"
+        "Die Batterien sind in den Einzelleuchten untergebracht.\n"
+        "Musterbüro Seite 12 von 40\n", encoding="utf-8")
+    lb = PARSER.parse_lb(str(p))
+    assert lb.batterie_standort is None
+    befunde = PARSER.parse_bericht(str(p)).fuer_feld("batterie_standort")
+    assert befunde and befunde[0].status == "nicht_spezifiziert"
+
+
+def test_inhaltsverzeichnis_zeile_ist_keine_fundstelle():
+    """Dieselbe Überschrift steht im Verzeichnis (S. 2) und im echten Abschnitt
+    (S. 37). Der Audit-Trail darf nur die echte Fundstelle nennen — sonst behauptet
+    er eine Seite, auf der nichts steht (real an Fischa §2.10/§2.11 beobachtet)."""
+    lb = PARSER.parse_lb(_pfad("mit_inhaltsverzeichnis.txt"))
+    assert "S. 2)" not in lb.lb_quelle
+    assert "S. 37" in lb.lb_quelle
+    assert {b.raum_typ for b in lb.bereiche_exklusion} == {"STIEGENHAUS", "GANG"}
+
+
+def test_norm_schreibweise_folgt_dem_eigenen_normwissen():
+    """OVE ohne Umlaut, ÖNORM mit — wie in `data/oib_rl2_tabelle6.yaml` aus den
+    OIB-Originalen. Der String ist eine Naht-Invariante."""
+    normen = PARSER.parse_lb(_pfad("bereichs_lb.txt")).norm_bezug
+    assert "OVE E 8101" in normen
+    assert not [n for n in normen if n.startswith("ÖVE")]
 
 
 # ── Nicht lesbar ────────────────────────────────────────────────────────────

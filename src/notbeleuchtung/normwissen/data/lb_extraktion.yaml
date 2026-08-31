@@ -44,6 +44,12 @@ struktur:
   seite_muster: 'Seite\s+(\d+)\s*(?:von|/)\s*\d+'
   # Aufzaehlungszeile: "-in der Garage auf den Fluchtgängen" / "• …" / "– …"
   bullet_muster: '^\s*[-–—•]\s*(\S.*)$'
+  # Mindest-Inhalt eines Abschnitts (Zeichen ohne die Ueberschrift), damit er als
+  # Fundstelle zaehlt. Eine Inhaltsverzeichnis-Zeile traegt dieselbe Ueberschrift
+  # wie der echte Abschnitt, aber keinen Text — sie wuerde sonst mit ihrer
+  # Verzeichnis-Seite im Audit-Trail stehen (real: Fischa §2.10/§2.11 auf S. 2
+  # statt S. 37). Bewusst niedrig: ein kurzer echter Abschnitt darf nicht fallen.
+  mindest_inhalt_zeichen: 60
 
 # ── Dokument-Klassifikation ────────────────────────────────────────────────
 # Die Notbeleuchtungs-Vorgaben stehen IMMER im Elektro-Dokument. Rahmen- und
@@ -203,18 +209,38 @@ sonder_lux:
   # Naehe-Regel statt Satzgrenze: der Lux-Wert steht real in einer Klammer NACH
   # dem Satzende („… situiert werden. (mindestens 5 Lux)"), ein Muster ohne
   # Punkt wuerde ihn verfehlen. 160 Zeichen begrenzen die Reichweite.
-  - ort: "feuerloescher_wandhydrant"
-    regex: '(?:Feuerlösch\w*|Wandhydrant\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+  #
+  # Feuerloescher und Wandhydrant sind GETRENNTE Orte, auch wenn die LB sie in
+  # einem Satz nennt („im Bereich von Feuerloeschern und Wandhydranten …
+  # (mindestens 5 Lux)"). Der Platzierer verankert an jedem Geraet einzeln — ein
+  # zusammengezogener Ort waere dort nicht aufloesbar.
+  - ort: "feuerloescher"
+    regex: '(?:Feuerlösch\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+  - ort: "hydrant"
+    regex: '(?:Wandhydrant\w*|Hydrant\w*).{0,160}?(?:mindestens|min\.?)\s*(\d+(?:[.,]\d+)?)\s*(?:Lux|lx)'
+
+# ── Standort der Batterieanlage ────────────────────────────────────────────
+# „Gruppenbatterieanlage … situiert im Technikraum" / „wird im UG im Zaehlerraum
+# situiert". Der Standort muss RAUM-ARTIG sein (…raum / Keller…), sonst zieht
+# „Batterien in Einzelleuchten" ein Nicht-Raum als Standort herein. Ohne belegtes
+# Muster: kein Wert (nichts raten).
+batterie_standort:
+  bezeichnung: "Standort der Batterieanlage"
+  muster:
+    - '[Bb]atterie\w*[^.\n]{0,60}?\b(?:im|in\s+(?:dem|der)\s*)\s*([A-ZÄÖÜ][\wäöüß-]*raum|Keller[\wäöüß-]*)'
+    - '[Bb]atterie\w*[^.\n]{0,80}?\b(?:im|in)\s+(?:dem\s+|der\s+)?([A-ZÄÖÜ][\wäöüß-]*raum|Keller[\wäöüß-]*)[^.\n]{0,30}situiert'
 
 # ── Piktogramm-Norm + Normbezug ────────────────────────────────────────────
 piktogramm_muster: '((?:[ÖO]NORM\s+)?EN\s*ISO\s*7010)'
 norm_bezug:
-  "ÖVE E 8101": ['[ÖO]VE\s*-?\s*E?\s*8101']
+  # Schreibweise wie in `data/oib_rl2_tabelle6.yaml` (aus den OIB-Originalen):
+  # OVE ohne Ö-Umlaut, ÖNORM mit. Der String ist eine Naht-Invariante.
+  "OVE E 8101": ['[ÖO]VE\s*-?\s*E?\s*8101']
   "OVE R 12-2": ['(?:OVE|[ÖO]VE)?\s*R\s*12-2']
   "EN 1838": ['(?:[ÖO]NORM\s+)?EN\s*1838', '(?<![\d-])1838(?![\d-])']
   "ÖNORM Z 1000": ['[ÖO]NORM\s*Z\s*1000']
   "ÖNORM EN ISO 7010": ['(?:[ÖO]NORM\s+)?EN\s*ISO\s*7010']
-  "ÖVE/EN IEC 62485-2": ['62485-2']
+  "OVE EN IEC 62485-2": ['62485-2']
   "ÖNORM DIN 4102-12": ['4102-12']
 
 # Funktionserhalt: extrahierbar, aber es gibt KEIN Contract-Feld dafuer.

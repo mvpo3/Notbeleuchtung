@@ -109,13 +109,19 @@ def sonder_lux(abschnitte: list[Abschnitt], regeln: list[dict]) -> list[Treffer]
     return ergebnis
 
 
-def erstes_muster(abschnitte: list[Abschnitt], muster: str) -> Treffer | None:
-    """Generischer Einzeltreffer (Piktogramm-Norm, Funktionserhalt)."""
+def erstes_muster(abschnitte: list[Abschnitt], muster: str | list[str]) -> Treffer | None:
+    """Generischer Einzeltreffer (Piktogramm-Norm, Funktionserhalt, Batterie-Standort).
+
+    Mehrere Muster werden in Deklarationsreihenfolge probiert — das erste, das
+    greift, gewinnt. Greift keines, gibt es keinen Wert (nichts raten).
+    """
+    liste = [muster] if isinstance(muster, str) else muster
     for a in abschnitte:
-        treffer = re.search(muster, a.block, re.IGNORECASE)
-        if treffer:
-            return Treffer(wert=treffer.group(1).strip(), anker=treffer.group(0).strip(),
-                           abschnitt=a, seite=a.seite_fuer(treffer.start()))
+        for m in liste:
+            treffer = re.search(m, a.block, re.IGNORECASE)
+            if treffer:
+                return Treffer(wert=treffer.group(1).strip(), anker=treffer.group(0).strip(),
+                               abschnitt=a, seite=a.seite_fuer(treffer.start()))
     return None
 
 
