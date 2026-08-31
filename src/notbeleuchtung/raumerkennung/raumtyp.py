@@ -67,6 +67,13 @@ _EXTRA_LABELS: dict[str, RoomType] = {
     "ar": RoomType.STORAGE,          # Abstellraum
     "trh": RoomType.STAIRCASE,       # Treppenhaus / Stiegenhaus (sicherheitskritisch)
     "loggia": RoomType.BALCONY,      # überdachter Freisitz ~ Balkon
+    # Fahrrad-/Kinderwagenraum = Abstellraum. Token-exakt inkl. Kompositum-Token
+    # „fahrradraum" (echter Stempel, ein Token) — so bleiben „Fahrradrampe",
+    # „Fahrradabstellplätze" und „Fahrräder" (≠„fahrrad") UNKNOWN.
+    "fahrrad": RoomType.STORAGE,
+    "fahrradraum": RoomType.STORAGE,
+    "kinderwagen": RoomType.STORAGE,
+    "kinderwagenraum": RoomType.STORAGE,
 }
 _WORT = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 
@@ -83,6 +90,8 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     "müll": ("MUELLRAUM", False, True),
     "müllraum": ("MUELLRAUM", False, True),
     "restmüll": ("MUELLRAUM", False, True),
+    "keller": ("KELLER", False, True),
+    "kellerabteil": ("KELLER", False, True),
 }
 
 
