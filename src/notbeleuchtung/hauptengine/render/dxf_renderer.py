@@ -3,9 +3,9 @@
 Generative Adaption von elektro-planer backend/engine/dxf_writer.py (siehe
 docs/PORT_LOG.md): konsumiert Contract-Objekte statt Placement-/Architektur-
 JSON. Gezeichnet werden Raum-Konturen + raum_typ-Labels, Fluchtweg-Segmente,
-die Schrack-Symbole (via symbols/inserter) und Stromkreis-Labels mit
-Anti-Kollision. Wände/Pass-Through-Architektur, Höhenkoten und das
-Paperspace-Layout-Template folgen in späteren Slices.
+die Schrack-Symbole (via symbols/inserter), Stromkreis-Labels mit
+Anti-Kollision und Montagehöhen-Koten (h=2,40 je Symbol). Wände/Pass-Through-
+Architektur und das Paperspace-Layout-Template folgen in späteren Slices.
 
 Layer-Entscheid (statt Port der elektro-planer layer_convention): die Symbole
 liegen auf dem Library-Layer `E_Sicherheitsbeleuchtung` (DoD + Block-Geometrie
@@ -30,6 +30,7 @@ LAYER_LEGENDE = "E_Notbeleuchtung_Legende"
 LAYER_STUECKLISTE = "E_Notbeleuchtung_Stueckliste"
 LAYER_PLANKOPF = "E_Notbeleuchtung_Plankopf"
 LAYER_PRUEFBERICHT = "E_Notbeleuchtung_Pruefbericht"
+LAYER_HOEHENKOTE = "E_Notbeleuchtung_Hoehenkote"
 
 _PRUEF_STATUS_LABEL = {"ok": "OK", "warnung": "WARNUNG", "fehler": "FEHLER"}
 
@@ -54,6 +55,11 @@ CIRCUIT_LABEL_BAND_X_MM = 300.0
 CIRCUIT_LABEL_MIN_GAP_MM = 150.0
 CIRCUIT_LABEL_MAX_NUDGE = 8
 
+# Montagehöhen-Kote — sitzt entgegen der Stromkreis-Label-Seite (−Normale),
+# damit Kote und Kreis-Label nicht überlappen.
+HOEHENKOTE_HEIGHT_MM = 80.0
+HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
+
 
 def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
@@ -63,6 +69,7 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
     doc.layers.add(LAYER_PLANKOPF, color=7)     # weiß/schwarz
     doc.layers.add(LAYER_PRUEFBERICHT, color=7)  # weiß/schwarz
+    doc.layers.add(LAYER_HOEHENKOTE, color=3)    # grün
 
 
 def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
@@ -287,6 +294,31 @@ def _draw_circuit_label(
     return True
 
 
+def _hoehenkote_text(height_mm: float) -> str:
+    """Montagehöhe als Kote in Metern, österreichische Komma-Notation (h=2,40)."""
+    return f"h={height_mm / 1000.0:.2f}".replace(".", ",")
+
+
+def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
+    """Montagehöhen-Kote (h=2,40) je Symbol. Sitzt entgegen der Stromkreis-Label-
+    Seite (−Normale), damit Kote und Kreis-Label nicht überlappen. EN 1838 §4.1:
+    height_mm liegt im Contract, war bisher nur unsichtbar."""
+    drawn = 0
+    for p in platzierung.platzierungen:
+        angle = math.radians(p.rotation_deg or 0.0)
+        nx = -math.sin(angle)
+        ny = math.cos(angle)
+        tx = p.xy_mm[0] - nx * HOEHENKOTE_OFFSET_NORMAL_MM
+        ty = p.xy_mm[1] - ny * HOEHENKOTE_OFFSET_NORMAL_MM
+        mt = msp.add_mtext(_hoehenkote_text(p.height_mm), dxfattribs={
+            "layer": LAYER_HOEHENKOTE,
+            "char_height": HOEHENKOTE_HEIGHT_MM,
+        })
+        mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
+        drawn += 1
+    return drawn
+
+
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
     """Initial-Ansicht = Grundriss: Modelspace-VPORT auf Bounds ∪ Symbolpunkte,
     sonst öffnet AutoCAD bei (0,0) und der Plan muss per Zoom-Extents gesucht
@@ -338,6 +370,8 @@ def render_dxf(
         ):
             circuit_labels += 1
 
+    hoehenkoten_drawn = _draw_hoehenkoten(msp, platzierung)
+
     _set_vport(doc, raum, platzierung)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -352,6 +386,7 @@ def render_dxf(
         "output_path": str(out_path),
         "schrack_inserted": len(platzierung.platzierungen),
         "circuit_labels_drawn": circuit_labels,
+        "hoehenkoten_drawn": hoehenkoten_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
