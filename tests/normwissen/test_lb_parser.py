@@ -4,7 +4,10 @@ from pathlib import Path
 from notbeleuchtung.hauptengine.contracts.lb_vorgabe import LBVorgabe
 from notbeleuchtung.normwissen.lb import LbTextProvider, parse_lb
 
-FISCHA = Path(__file__).parent.parent / "fixtures" / "lb" / "fischa_lb.txt"
+_FIX = Path(__file__).parent.parent / "fixtures" / "lb"
+FISCHA = _FIX / "fischa_lb.txt"
+MO_ELEKTRO = _FIX / "mo_elektro_ausschnitt.txt"
+BETRIEBSDAUER_DISTRAKTOREN = _FIX / "betriebsdauer_distraktoren.txt"
 
 
 def _fischa() -> LBVorgabe:
@@ -51,6 +54,47 @@ def test_fischa_sonderlux_und_normbezug():
     orte = {s.ort: s.min_lux for s in lb.sonder_lux}
     assert orte.get("feuerloescher") == 5.0
     assert "EN 1838" in lb.norm_bezug and "OVE E 8101" in lb.norm_bezug
+
+
+def test_mo_elektro_lux_kontext_und_betriebsdauer():
+    # Härtung gegen reale Fehlparses (mo-Elektro): Fluchtweg-Lux als „1 Lux" (Wort),
+    # nicht der 200-lx-Aufzugsvorplatz; Feuerlöscher/Hydrant „5 Lux" über Umbruch;
+    # Betriebsdauer aus „8 Std."/„Nennbetriebsdauer … 8 Stunden".
+    lb = parse_lb(str(MO_ELEKTRO))
+    assert lb.mindest_lux_fluchtweg == 1.0       # NICHT 200.0 (Aufzugsvorplatz)
+    assert lb.betriebsdauer_min == 480
+    orte = {s.ort: s.min_lux for s in lb.sonder_lux}
+    assert orte.get("feuerloescher") == 5.0 and orte.get("hydrant") == 5.0
+
+
+def test_betriebsdauer_distraktoren_keine_fehltreffer():
+    # Stunden-/„h"-Angaben ohne Notlicht-Kontext (Gewährleistung, Position „123 H",
+    # Austrocknung, Notrufsystem-Batterie) dürfen NICHT als Betriebsdauer gelten.
+    lb = parse_lb(str(BETRIEBSDAUER_DISTRAKTOREN))
+    assert lb.betriebsdauer_min is None
+
+
+def test_betriebsdauer_dezimal(tmp_path):
+    p = tmp_path / "dez.txt"
+    p.write_text("Die Akkus sind auf 8,5 Std auszulegen.\n", encoding="utf-8")
+    assert parse_lb(str(p)).betriebsdauer_min == 510
+
+
+def test_lux_wortform_und_plausibilitaetscap(tmp_path):
+    # „Lux" (Wort) wird erkannt; ein unplausibler Fluchtweg-Wert (> Cap) verworfen.
+    p = tmp_path / "lux.txt"
+    p.write_text("Im Fluchtweg ist mindestens 1 Lux sicherzustellen. "
+                 "Arbeitsplatzbeleuchtung 500 lx im Fluchtwegbereich.\n", encoding="utf-8")
+    assert parse_lb(str(p)).mindest_lux_fluchtweg == 1.0
+
+
+def test_fluchtweg_lux_nicht_von_antipanik_unterboten(tmp_path):
+    # Fluchtweg-Mittellinie 1 lx und Antipanik 0,5 lx im selben Satz: der Fluchtweg-
+    # Wert (1.0) gilt, NICHT der kleinere Antipanik-Wert (0.5).
+    p = tmp_path / "ap.txt"
+    p.write_text("Auf dem Fluchtweg 1 lx, in der Antipanikflaeche 0,5 lx.\n",
+                 encoding="utf-8")
+    assert parse_lb(str(p)).mindest_lux_fluchtweg == 1.0
 
 
 def test_leere_lb_bleibt_norm_default(tmp_path):
