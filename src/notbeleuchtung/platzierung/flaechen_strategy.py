@@ -21,7 +21,7 @@ from notbeleuchtung.hauptengine.contracts import (
 
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
-from .lux import lux_raster
+from .lux import lux_raster, ud_min_aus_norm
 
 # Sicherung gegen Überproduktion, falls der Lux-Nachweis nie hält (defekte Geometrie).
 _ANTIPANIK_MAX_LEUCHTEN = 25
@@ -39,9 +39,10 @@ def _antipanik_punkte(polygon: list, anf) -> list:
     n = max(1, anf.mindest_anzahl)
     bounds = _bbox(polygon)
     h_m = anf.montagehoehe_mm / 1000.0
+    ud_min = ud_min_aus_norm(anf.gleichmaessigkeit_max)
     pts = grid_points(polygon, n)
     for _ in range(_ANTIPANIK_MAX_RUNDEN):
-        res = lux_raster(pts, bounds, montagehoehe_m=h_m, ziel_lux=anf.min_lux)
+        res = lux_raster(pts, bounds, montagehoehe_m=h_m, ziel_lux=anf.min_lux, ud_min=ud_min)
         if res.max_lux == 0.0:                       # kein Nachweisfenster (Fläche < Rand)
             return grid_points(polygon, max(1, anf.mindest_anzahl))
         if res.erfuellt_min and res.erfuellt_ud:

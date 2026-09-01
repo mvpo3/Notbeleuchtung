@@ -1,5 +1,5 @@
 """lux — Punktmethode-Beleuchtungsstärke + EN-1838-Bewertung (Mindest-Lux, Ud)."""
-from notbeleuchtung.platzierung.lux import lux_raster
+from notbeleuchtung.platzierung.lux import lux_raster, ud_min_aus_norm
 
 BOUNDS = (0.0, 0.0, 10000.0, 10000.0)  # 10 × 10 m Raum
 
@@ -45,6 +45,23 @@ def test_i_cd_fn_ueberschreibt_i_cd():
     r = lux_raster(grid, BOUNDS, i_cd=9999.0, i_cd_fn=lambda _g: 1500.0, raster_mm=500.0)
     ref = lux_raster(grid, BOUNDS, i_cd=1500.0, raster_mm=500.0)
     assert r.max_lux == ref.max_lux
+
+
+def test_ud_min_aus_norm_kehrwert_und_fallback():
+    # Norm gibt max:min; der Nachweis rechnet min:max → Kehrwert. None → EN-Default 1:40.
+    assert ud_min_aus_norm(None) == 1.0 / 40.0
+    assert ud_min_aus_norm(40) == 1.0 / 40.0
+    assert ud_min_aus_norm(10) == 1.0 / 10.0   # Antipanik-Gleichmäßigkeit (EN 1838)
+
+
+def test_ud_min_param_lockert_kriterium():
+    # Dieselbe Szene: eine strengere (1:40) vs. lockerere (1:10) Ud-Grenze. Eine einzelne
+    # Leuchte ist ungleichmäßig → der lockere Grenzwert kann erfüllt sein, wo der strenge fällt.
+    grid = [(5000.0, 5000.0)]  # eine Leuchte → ud ≈ 0.027, klammert die Schwellen ein
+    streng = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0, ud_min=1.0 / 25.0)
+    locker = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0, ud_min=1.0 / 50.0)
+    assert streng.ud == locker.ud                       # Geometrie identisch
+    assert locker.erfuellt_ud and not streng.erfuellt_ud  # nur die Schwelle unterscheidet
 
 
 def test_naht_echte_ldt_photometrie():

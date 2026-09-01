@@ -22,6 +22,19 @@ import numpy as np
 
 Point = tuple[float, float]
 
+_UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen Wert liefert
+
+
+def ud_min_aus_norm(gleichmaessigkeit_max: float | None) -> float:
+    """Ud-Grenze (min:max) aus der Norm-Gleichmäßigkeit (max:min).
+
+    Die Norm gibt die Gleichmäßigkeit als Verhältnis max:min an (EN 1838: 40 Fluchtweg,
+    10 Antipanik). Der Lux-Nachweis rechnet Ud als min:max → Kehrwert. `None` (Norm liefert
+    (noch) keinen Wert) fällt auf den bisherigen Default 1:40 zurück, damit sich ohne
+    Enis-Daten nichts am Plan ändert.
+    """
+    return 1.0 / gleichmaessigkeit_max if gleichmaessigkeit_max else _UD_DEFAULT
+
 
 @dataclass
 class LuxErgebnis:
@@ -42,13 +55,16 @@ def lux_raster(
     i_cd: float = 200.0,
     i_cd_fn: Callable[[float], float] | None = None,
     ziel_lux: float = 1.0,
+    ud_min: float = _UD_DEFAULT,
     rand_mm: float = 500.0,
     raster_mm: float = 250.0,
 ) -> LuxErgebnis:
     """Beleuchtungsstärke-Raster über `bounds_mm` und EN-1838-Bewertung.
 
     `rand_mm` = umlaufender Randstreifen, der laut EN 1838 §4.2.1 vom Nachweis
-    ausgenommen ist. `ziel_lux` = 1.0 Fluchtweg / 0.5 Antipanik. Ud-Grenze = 1/40.
+    ausgenommen ist. `ziel_lux` = 1.0 Fluchtweg / 0.5 Antipanik. `ud_min` = geforderte
+    Gleichmäßigkeit (min:max), Default 1:40; produktive Aufrufer leiten sie über
+    `ud_min_aus_norm(anf.gleichmaessigkeit_max)` aus der Norm ab.
 
     Ist `i_cd_fn` gesetzt, überschreibt es `i_cd`: die Lichtstärke wird je Rasterpunkt
     aus dem Ausstrahlwinkel γ [Grad] = atan(horizontale Distanz / h) bestimmt
@@ -78,5 +94,5 @@ def lux_raster(
     return LuxErgebnis(
         min_lux=mn, max_lux=mx, mittel_lux=mean, ud=ud,
         erfuellt_min=mn >= ziel_lux,
-        erfuellt_ud=ud >= 1.0 / 40.0,
+        erfuellt_ud=ud >= ud_min,
     )
