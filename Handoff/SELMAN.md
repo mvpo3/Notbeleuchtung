@@ -61,6 +61,56 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+## ═══ 2026-08-31 — Ausgänge + Zirkulation über ALLE Familien (B1+B2 erledigt) ═══
+
+**Branch:** `selman/ausgaenge-zirkulation` (von main, NICHT vom Tangle-Branch).
+**Setup-Hinweis:** Repo braucht Python **≥3.11** — auf dieser Maschine war nur 3.10;
+3.12 nachinstalliert, `.venv` neu gebaut. `pytest -q` → **310 passed, 5 skipped**.
+Die 5 Skips sind dauerhaft: `Projekte/Mollgasse Notbeleuchtung/WHA_MOL_*.dxf`
+(fertiger Plan) existiert nirgends und war nie getrackt.
+
+**Gebaut:**
+- `dxf_load.py`: `FLUCHTWEG_PATTERN` (`09-WEG|A_Fluchtweg|Fluchtweg|Fluchtlinie`) +
+  `STIEGE_PATTERN` (`S-STRS|Treppe|Stiege`) + `DxfPlan.entities_matching(pattern)`.
+  Vorher hatten `zirkulation` und `geometrie_typ` **zwei verschiedene** Fluchtweg-
+  Definitionen — das war die Wurzel von B2. Tote `WALL_PREFIXES` entfernt.
+- **`ausgaenge.py` (neu)** — `ausgaenge_ermitteln(plan, tueren, bounds)`: Kaskade,
+  erste Stufe die trifft gewinnt. 1) Doppeltür am Rand → `final_exit` 2) Außentür-Block
+  am Rand → `final_exit` 3) Stiegenhaus-Anker → `stair_exit` 4) Tür am Rand → `door`.
+  `provider.parse` ruft das statt `footprint.hauptausgaenge`.
+- `geometrie_typ.stiege_rechtecke` = Blöcke **oder** Treppen-Layer (greedy Cluster der
+  Stufen-Linien, 4 m). Nur Mollgasse zeichnet die Stiege als Block `STIEGE`.
+- `tueren._dedup` (300-mm-Gitter, B1) + Ausweichpfad auf ARCs, wenn Block-Türen keine
+  Position tragen.
+- `zirkulation`: Layer-Muster + degenerierte Polylinien (<100 mm) raus.
+
+**Zahlen je Familie (EG) — Räume/typisiert/Türen/Ausgänge/Segmente:**
+Mollgasse 192/7/44/**4 final_exit**/86 · Fischamender 69/47/74/**1 stair_exit**/7 ·
+Barawitzka 7/7/107/**6 stair_exit**/0 · Herrenholz 474/349/23/**10 stair_exit**/66.
+Vorher: Barawitzka + Herrenholz **0 Ausgänge, 0 Zirkulation**. Mollgasse unverändert
+(Regression sauber). Belege: `output/beleg_{fischamender,mollgasse}_EG.png`.
+
+**Wichtige Erkenntnisse aus der Layer-Probe (alle 4 Familien):**
+- Barawitzka hat **keinen** Fluchtweg-Layer → 0 Segmente ist dort korrekt, kein Bug.
+- Herrenholz-Fluchtweg heißt `681 Fluchtlinien`, nicht „Fluchtweg".
+- Herrenholz-`Öffnung_N`-INSERTs (140×) sitzen **alle auf (0,0)** — die früher
+  gemeldeten „140 Türen" waren positionslos. Echte Türen kommen dort aus den ARCs (23).
+- Fischamender: Türen liegen als `A_Tueren`-INSERTs an echten Positionen ✓ (Bild).
+
+**OFFEN (Priorität) — Rest der alten Liste:**
+1. **Fischamender nur 1 stair_exit** — BT1 hat vermutlich mehr als ein Stiegenhaus.
+   Cluster-Schwelle in `_layer_stiegen` (`_STIEGE_CLUSTER_MM = 4000`) prüfen.
+2. **Mollgasse-Räume** (kein Raum-Layer) → Gap-Healing / Face-Clustering (Union-Find,
+   NICHT DBSCAN). Weiterhin 192 Fragmente statt echter Räume — ADR-0001-Punkt 2.
+3. **Barawitzka Raum-Polygone** (nur 7, davon 6 aus Treppen-Ankern) — Polygone liegen
+   auf `Icon`-Layern / als LINE-Loops.
+4. **Baufeld Wände sind INSERT-Blöcke** (`Wand_*`) → Wand-Block-Descent offen.
+5. **Fake-Swap E2E** offen (4OG-Golden ≠ echter DXF; neue Golden mit F1 abstimmen).
+6. ⚠️ **GIT-TANGLE** unverändert: F1-Commit `e87a745` liegt auf
+   `selman/raumerkennung-dxf`. Dieser Branch hier ist sauber von main gezogen.
+
+
+---
 ## ═══ SELMAN: HIER MORGEN WEITER (Zusammenfassung 2026-08-29) ═══
 
 **Branch:** `selman/raumerkennung-dxf` (gepusht). Setup: siehe oben §0. Test: `pytest -q`

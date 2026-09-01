@@ -40,7 +40,7 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Enis echt: Norm-YAMLs portieren + `En1838NormProvider` | 1 | Enis | **MERGED** (PR #6 → `4c40050`) | 2026-08-30 |
 | Leonis echt: `communal_stgh_strategy` + `geometry` + `NotlichtPlatzierer` (Fake-Raum, echte Norm ab PR #6) | 2 | Leonis | **MERGED** (PR #4, 24✓) | 2026-08-28 |
 | Render echt: `dxf_renderer` + Schrack-Infra (`symbols/{library,inserter}.py`) + `CAD_Symbole/E-Symbole.dxf` | 3 | Leonis/Render | **MERGED** (PR #5, 40✓; GU-PDF-Sichtprüfung offen) | 2026-08-28 |
-| Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
+| Selman echt: `ArchitekturRaumProvider` (Neubau statt `_port`-Reanimation) | 4 | Selman | **IN ARBEIT** — Türen/Ausgänge/Zirkulation auf allen 4 CAD-Familien echt; Raum-Polygone auf Mollgasse noch fragmentiert (Gap-Healing offen) | 2026-08-31 |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
 | **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
 | Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | **MERGED** (PR #32 → `564b7e9`). Offen: `ProviderBundle.oib` ist noch nicht verdrahtet (Hauptengine) | 2026-08-30 |
