@@ -30,7 +30,7 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from . import deckungs_zuordnung, lb_override
+from . import circuit_zuordnung, deckungs_zuordnung, lb_override
 from .anker_strategy import plan_rettungszeichen_anker
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
@@ -76,4 +76,7 @@ class NotlichtPlatzierer:
         # Fluchtweg-Deckung nachträglich geometrisch zuordnen (füllt covers_segment,
         # das die RZ-Strategien selbst nicht setzen) → Deckungs-Prüfung wird aussagekräftig.
         platzierungen = deckungs_zuordnung.zuordnen(platzierungen, raum, norm)
+        # Stromkreise final vergeben: Dauer-/Bereitschaftslicht trennen + je Kreis deckeln
+        # (statt alles grob auf AGV-{Gebäude}-F13 zu mischen). Läuft zuletzt, nach lb_override.
+        platzierungen = circuit_zuordnung.zuordnen(platzierungen)
         return PlatzierungsErgebnis(floor=raum.floor, platzierungen=platzierungen)
