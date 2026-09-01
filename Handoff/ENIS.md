@@ -12,9 +12,10 @@
 2. **`NormRegelwerk` steht auf Contract v1.1.0** (PR #72) — vier neue optionale
    Felder in Enis' Wissens-Naht; PR #80 konsumiert sie bereits. **Enis' Approval
    fehlte** (nur @polatselman hat approved, gemerged von @mvpo3).
-3. **Track B ist gefüllt**, Branch `enis/norm-trackB-werte`, drei Commits,
-   **kein Contract berührt**. Suite **517 passed / 5 skipped**, Schema in sync,
-   ruff sauber. Mollgasse-EG-Durchstich unverändert: 15 RZ + 21 SL, Status `ok`.
+3. **Zwei Slices fertig** auf Branch `enis/norm-trackB-werte`, **kein Contract
+   berührt**: (a) Track-B-Werte gefüllt, (b) die 5-lx-Korrektur an §4.1.2.
+   Suite **519 passed / 5 skipped**, Schema in sync, ruff sauber.
+   Mollgasse-EG-Durchstich unverändert: 15 RZ + 21 SL, Status `ok`.
 4. **Zwei Blocker, beide nicht technisch:** das 3-Owner-GO für den
    Sonderstellen-Contract (seit 31.08., **null Reaktion**) und die Entscheidung
    über ein Scope-Gate für die Flächen-Schwellen.
@@ -45,22 +46,22 @@
      `input_fehlt` auf `unterstuetzt` ziehen — schrittweise, je Regel mit Test.
 
 **7. Ohne GO nicht warten — Track-B-eigene Domain-Lücken, nach Wert sortiert:**
-   1. **Lux-Niveau an hervorgehobenen Stellen** — §4.1.2 belegt die
-      Hervorhebungspflicht (Leuchte ≤ 2 m), nennt aber keinen Wert. Der
-      EN-1838-Volltext liegt jetzt greifbar in
-      `knowledge/_extracted_text/normen/` → gegen §4.1.2 **und** die AT-Quellen
-      (OVE E 8101, ÖVE/ÖNORM E 8002-1, Fachinfo E-08) prüfen. Findet sich nichts,
-      ist `MANUELL_PRUEFEN` in `sonderstellen.yaml` **belegt-negativ** statt nur
-      ungeprüft — das ist selbst ein Ergebnis.
-   2. **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1, §4.3.1, Anhang B)
+   1. **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1, §4.3.1, Anhang B)
       fachlich strukturieren. `lux_raster` hat schon `rand_mm=500` — der
       Randstreifen ist auf Leonis' Seite implementiert, aber ohne Norm-Ref.
-   3. **Niveauänderung** gegen den §4.1.2-Originalwortlaut verifizieren
-      (unsere Extraktion nennt Treppen, die reale LB nennt Niveauänderungen).
-   4. **Quellenlage OVE R 12-2 / OVE E 8350 / TRVB E 102** verbessern.
-   5. **`MANUELL_PRUEFEN`-Fälle reduzieren** (10 Review-Regeln in der Matrix).
-   6. **Ground-Truth-Quellen aufbauen** — ein bestückter realer
+      Jetzt der wichtigste offene fachliche Punkt.
+   2. **Restliche §4.1.2-Punkte** am Volltext durchgehen — d), e), f), j), k)
+      sind in der Matrix noch nicht vollständig abgebildet. Nach dem 01.09.-Befund
+      lohnt sich das: die Extraktion war an mehreren Stellen verkürzt.
+   3. **Quellenlage OVE R 12-2 / OVE E 8350 / TRVB E 102** verbessern.
+   4. **`MANUELL_PRUEFEN`-Fälle reduzieren** — durch die 5-lx-Korrektur sind es
+      schon vier weniger.
+   5. **Ground-Truth-Quellen aufbauen** — ein bestückter realer
       Notbeleuchtungsplan fehlt im Repo weiterhin komplett.
+
+   ✔ **Erledigt am 01.09.:** „Lux-Niveau an hervorgehobenen Stellen" und
+   „Niveauänderung am Originalwortlaut" — beide geprüft, beide korrigiert
+   (`docs/NORMQUELLEN_AT.md` 2c).
 
 ## ERLEDIGT am 01.09.2026 — Track-B-Norm-Werte (Branch `enis/norm-trackB-werte`)
 
@@ -113,8 +114,36 @@ Fundstellen (§4.2.2/§4.3.2/§4.2.6) sind Naht-Invariante mit 3-Owner-Blast-Rad
 Das ist gewollt.
 
 **Belege im Repo:** `docs/NORMQUELLEN_AT.md` Abschnitt **2b** (volle Prüftabelle
-+ Scope-Tabelle der AT-Quellen), COORDINATION-Log 01.09. (drei Einträge:
-Werte + Korrekturen · Sonderstellen-Nachfassen · Approval-Prozess).
++ Scope-Tabelle der AT-Quellen), COORDINATION-Log 01.09.
+
+## ERLEDIGT am 01.09.2026 — Korrektur: §4.1.2 nennt 5 lx (vertikal)
+
+Der bis dahin wichtigste offene fachliche Punkt, geprüft — mit umgekehrtem
+Ergebnis. **§4.1.2 h)** fordert „so dass 5 lx vertikale Beleuchtungsstärke am
+Erste-Hilfe-Kasten erreicht werden", **§4.1.2 i)** dasselbe an Melde- und
+Brandbekämpfungseinrichtungen und den Anzeigen der Brandmeldeanlage. Damit ist der
+Wert für **feuerloescher · hydrant · erste_hilfe · brandmelder** normativ; die
+Elektro-LB §5.1.23 wiederholt ihn nur.
+
+**Was bleibt und was der eigentliche Punkt ist:** der Wert ist **vertikal am
+Gerät**, `lux_raster` rechnet **horizontal am Boden**. Deshalb trägt die Query-API
+die Achse im Namen — `norm_lux_vertikal()` = 5.0, `norm_lux_horizontal()` = `None`,
+`norm_lux_bezugsflaeche()` = `"vertikal"`; die alte achslose `norm_lux()` ist
+**entfernt**, nicht umgewidmet. In der Matrix heißt der Schlüssel
+`min_lux_vertikal_norm`, damit er nicht in den Bodenraster laufen kann.
+
+**Nebenbefund, ebenfalls erledigt:** §4.1.2 führt b) Treppen und c) „jede andere
+Niveauänderung" getrennt auf → `RZ-06` und `SL-04` von `beleg: LB` /
+`lb_explizit` auf `BELEGT` / `norm_default` gezogen, Lux dort weiter offen.
+
+**Warum es am 31.08. übersehen wurde:** die Prüfung stützte sich auf
+`_port_source/emergency_lighting_en1838.yaml` statt auf den Volltext; die
+Extraktion führt §4.1.2 verkürzt und ohne die Buchstaben h)/i).
+**Regel ab jetzt: die Extraktion ist ein Index, kein Beleg.**
+
+Geändert: `sonderstellen.yaml` · `sonderstellen.py` · `platzierung_regeln.yaml`
+(SL-04…SL-08, RZ-06) · 3 Tests umgedreht + 3 neue · `NORMQUELLEN_AT.md` **2c** ·
+`SPEC_SONDERSTELLEN_CONTRACT.md` §3.
 
 ## 🚧 Blocker 1 — 3-Owner-GO für den Sonderstellen-Contract
 
@@ -204,11 +233,16 @@ Gleichheit fest. Rein additiv, alle Felder mit Default.
 
 ## Fachliche Entscheidungen vom 31.08. — weiterhin bindend
 
-- **Die 5 lx an Feuerlöscher/Wandhydrant sind KEIN pauschaler EN-1838-Normwert.**
-  Normativ belegt ist die **Hervorhebungspflicht** (§4.1.2, Leuchte ≤ 2 m). Der
-  konkrete Wert stammt aus der Projekt-LB (§5.1.23) und kommt über
-  `LBVorgabe.sonder_lux`. `SonderstellenKatalog.norm_lux()` gibt für **jeden** Typ
-  `None`; zwei Tests nageln das fest. **Nicht aufweichen.**
+- ~~**Die 5 lx an Feuerlöscher/Wandhydrant sind KEIN pauschaler EN-1838-Normwert.**~~
+  **Am 01.09. am Volltext widerlegt und korrigiert.** §4.1.2 **h)** und **i)**
+  fordern ausdrücklich „so dass **5 lx vertikale Beleuchtungsstärke** … erreicht
+  werden" — am Erste-Hilfe-Kasten bzw. an Melde- und Brandbekämpfungseinrichtungen.
+  Der Wert ist für vier der fünf Typen **normativ**, die LB §5.1.23 wiederholt ihn
+  nur. Die alte Entscheidung beruhte auf einer unvollständigen Extraktion.
+  **Was bleibt:** der Wert ist **vertikal am Gerät**, der Lux-Nachweis der Engine
+  rechnet **horizontal am Boden** — deshalb `norm_lux_vertikal()` = 5.0 und
+  `norm_lux_horizontal()` = `None`, festgenagelt. Ohne Lux-Wert bleibt nur
+  `niveauaenderung` (§4.1.2 c) nennt keinen). Details: `docs/NORMQUELLEN_AT.md` 2c.
 - **Feuerlöscher und Wandhydrant bleiben getrennt** — zwei Geräte, zwei Orte, zwei
   2-m-Umgebungen, auch wenn die LB sie in einem Satz nennt.
 - **Unsichere oder widersprüchliche Normfälle bleiben `MANUELL_PRUEFEN` / Review.**
@@ -335,9 +369,10 @@ des Rebase gemacht, um Folgekonflikte zu vermeiden.
 - **`umschaltzeit_max_s` bildet nur eine Stufe ab** — die Norm ist zweistufig
   (50 % in 5 s, 100 % in 60 s). Die 5-s-Stufe hat kein Contract-Feld; ob sie eins
   bekommt, ist eine 3-Owner-Frage. Bis dahin steht sie nur in der YAML.
-- **Lux-Niveau an hervorgehobenen Stellen** (§4.1.2 nennt keines) — Normquelle
-  beschaffen. Wichtigster fachlicher Punkt.
-- **Niveauänderung** gegen den §4.1.2-Originalwortlaut verifizieren.
+- ✔ **Lux-Niveau an hervorgehobenen Stellen** — am 01.09. erledigt: §4.1.2 h)/i)
+  nennen 5 lx **vertikal**. Siehe `docs/NORMQUELLEN_AT.md` 2c.
+- ✔ **Niveauänderung** — am 01.09. erledigt: §4.1.2 c) nennt sie ausdrücklich.
+- **Restliche §4.1.2-Punkte** (d, e, f, j, k) am Volltext gegen die Matrix prüfen.
 - **`stair_exit` fehlt** in der Raumerkennung → blockiert `RZ-05`/`RZ-07`
   (@polatselman).
 - **Quellenlage** OVE R 12-2 / OVE E 8350 / TRVB E 102 (nur Nennung, kein Volltext)

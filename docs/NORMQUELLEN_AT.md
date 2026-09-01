@@ -163,6 +163,69 @@ Anhang B (A-Abweichungen) führt Frankreich, Italien, Deutschland und die Nieder
 Relevant, weil Deutschland für §4.2.6/§4.3.6 abweichend 15 s festlegt; das gilt für
 Österreich ausdrücklich nicht.
 
+## 2c. Korrektur — §4.1.2 nennt sehr wohl ein Lux-Niveau (2026-09-01)
+
+Der bis dahin **wichtigste offene fachliche Punkt** („Lux-Niveau an hervorgehobenen
+Stellen — §4.1.2 belegt die Pflicht, nicht den Wert") ist geprüft. **Ergebnis: die
+Annahme war falsch.** §4.1.2 nennt den Wert, in zwei seiner elf Punkte:
+
+> **h)** nahe (siehe ANMERKUNG 1) jeder Erste-Hilfe-Stelle, **so dass 5 lx vertikale
+> Beleuchtungsstärke am Erste-Hilfe-Kasten erreicht werden**;
+>
+> **i)** nahe (siehe ANMERKUNG 1) jeder Brandbekämpfungs- und Meldeeinrichtung, **so
+> dass 5 lx vertikale Beleuchtungsstärke an den Melde-, den
+> Brandbekämpfungseinrichtungen und der Anzeigen der Brandmeldeanlage erreicht
+> werden**;
+
+Fundstelle: `knowledge/_extracted_text/normen/EN 1838 - Notbeleuchtung 2019.txt`,
+Norm-S.9 (PDF-Seite 11). ANMERKUNG 1 definiert „nahe" als „üblicherweise ein Abstand
+von nicht mehr als 2 m in der Horizontalen".
+
+### Was das ändert
+
+| Typ | vorher | jetzt |
+|---|---|---|
+| `feuerloescher` | `norm_wert: null`, `MANUELL_PRUEFEN`, 5 lx nur als LB-Wert | **5 lx belegt** (§4.1.2 i), vertikal |
+| `hydrant` | dito | **5 lx belegt** (§4.1.2 i), vertikal; nur die Zuordnung „Wandhydrant = Brandbekämpfungseinrichtung" bleibt AUSLEGUNG |
+| `erste_hilfe` | `norm_wert: null`, `MANUELL_PRUEFEN` | **5 lx belegt** (§4.1.2 h), vertikal |
+| `brandmelder` | dito | **5 lx belegt** (§4.1.2 i), vertikal |
+| `niveauaenderung` | `norm_ref: MANUELL_PRUEFEN`, `beleg: LB` | **Auslöser belegt** (§4.1.2 c), **Lux weiterhin offen** |
+
+Die reale Elektro-LB §5.1.23 nennt denselben Wert — sie **wiederholt** die Norm, sie
+begründet sie nicht. Die Hierarchie bleibt unberührt: weicht eine LB ab, übersteuert
+sie den Norm-Default.
+
+### Was sich NICHT ändert — die Bezugsfläche
+
+Der Wert ist **vertikal am Gerät**, nicht horizontal am Boden. Der Lux-Nachweis der
+Engine (`platzierung/lux.py::lux_raster`) rechnet ausschließlich **horizontal**.
+Ein vertikaler Norm-Wert dort als `min_lux` einzusetzen wäre derselbe Kategorienfehler
+wie Ud gegen Uo (Abschnitt 2b). Deshalb:
+
+- `SonderstellenKatalog.norm_lux_vertikal(typ)` → `5.0` für die vier Typen
+- `SonderstellenKatalog.norm_lux_horizontal(typ)` → **immer** `None`
+- `SonderstellenKatalog.norm_lux_bezugsflaeche(typ)` → `"vertikal"`
+- in `platzierung_regeln.yaml` heißt der Schlüssel `min_lux_vertikal_norm`, nicht
+  `min_lux` — er kann also nicht versehentlich in den Bodenraster laufen
+
+Die alte Methode `norm_lux()` wurde **entfernt**, nicht umgewidmet: ein Name ohne
+Achse war genau die Einladung zum Fehler.
+
+### Warum es zuerst übersehen wurde
+
+Die Prüfung am 31.08. stützte sich auf `_port_source/emergency_lighting_en1838.yaml`
+(`en1838_antipanic_disabled_toilets` u.a.) statt auf den Volltext; die Extraktion
+führt §4.1.2 verkürzt und ohne die Buchstaben h)/i). Lehre für die Quellenarbeit:
+**die Extraktion ist ein Index, kein Beleg** — belegt wird am Volltext.
+
+### Nebenbefund — §4.1.2 c)
+
+§4.1.2 listet **b) Treppen** und **c) „jede andere Niveauänderung"** als getrennte
+Punkte. Die frühere Notiz („unsere Extraktion nennt Treppen, die reale LB nennt
+Niveauänderungen") ist damit ebenfalls erledigt: beide stehen in der Norm, die LB
+deckt sich mit ihr. `RZ-06` und `SL-04` sind von `beleg: LB` / `decision_source:
+lb_explizit` auf `BELEGT` / `norm_default` gezogen; ihr Lux-Wert bleibt offen.
+
 ## 3. Fehlt — kostenlos beschaffbar
 1. **AStV, ASchG, KennV inkl. Anhang 1** als amtliche RIS-Ausdrucke (Gesetzesnummern s.o.).
 2. Kommentierte AStV der Arbeitsinspektion (nur verlinkt).

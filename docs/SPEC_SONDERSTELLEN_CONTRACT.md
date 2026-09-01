@@ -92,18 +92,31 @@ bleiben gültig.
 | `hydrant` | `SL-07` | sicherheitsleuchte | ≤ 2000 mm | **keiner** → `MANUELL_PRUEFEN` | 5,0 lx | AUSLEGUNG (§4.1.2) |
 | `erste_hilfe` | `SL-05` | sicherheitsleuchte | ≤ 2000 mm | **keiner** → `MANUELL_PRUEFEN` | — | BELEGT (§4.1.2) |
 | `brandmelder` | `SL-08` | sicherheitsleuchte | ≤ 2000 mm | **keiner** → `MANUELL_PRUEFEN` | — | BELEGT (§4.1.2) |
-| `niveauaenderung` | `RZ-06` + `SL-04` | rz + sicherheitsleuchte | ≤ 2000 mm | — | — | LB |
+| `niveauaenderung` | `RZ-06` + `SL-04` | rz + sicherheitsleuchte | ≤ 2000 mm | — | — | BELEGT (§4.1.2 c); Lux offen |
 
 ### Der Punkt, an dem nicht geschummelt wird
 
-**§4.1.2 begründet die Leuchte. Es beziffert sie nicht.** Die Norm-Extraktion nennt
-für diese Stellen **kein Beleuchtungsniveau**. Die 5 lx an Feuerlöscher und
-Wandhydrant stammen aus einer realen Elektro-LB (§5.1.23) und kommen über
-`LBVorgabe.sonder_lux` — sie sind **projektspezifisch, kein EN-1838-Wert**.
+> **Korrigiert am 01.09.2026.** Dieser Abschnitt behauptete bis dahin, §4.1.2 nenne
+> für diese Stellen kein Beleuchtungsniveau. Das ist am Volltext widerlegt: §4.1.2
+> **h)** und **i)** fordern „so dass **5 lx vertikale Beleuchtungsstärke** … erreicht
+> werden" — am Erste-Hilfe-Kasten bzw. an Melde- und Brandbekämpfungseinrichtungen
+> und den Anzeigen der Brandmeldeanlage. Belege: `docs/NORMQUELLEN_AT.md` 2c.
 
-`SonderstellenKatalog.norm_lux(typ)` gibt für **jeden** Typ `None` zurück; ein Test
-nagelt das fest. Die *Hervorhebungspflicht* gilt trotzdem — sie hängt nicht am
-Lux-Wert.
+**§4.1.2 begründet die Leuchte — und beziffert vier der fünf Stellen.** Für
+Feuerlöscher, Wandhydrant, Erste-Hilfe-Stelle und Meldeeinrichtung ist der Wert
+normativ; die reale Elektro-LB (§5.1.23) wiederholt ihn nur. Weicht eine LB ab,
+übersteuert sie ihn (LB-explizit > Norm-Default).
+
+**Der Wert ist vertikal am Gerät, nicht horizontal am Boden.** Der Lux-Nachweis der
+Engine (`lux_raster`) rechnet horizontal — ein vertikaler Norm-Wert darf dort nicht
+als `min_lux` eingesetzt werden. Die Query-API trägt die Bezugsfläche deshalb im
+Namen: `norm_lux_vertikal(typ)` liefert 5.0, `norm_lux_horizontal(typ)` bewusst
+`None`. Zwei Tests nageln beides fest.
+
+**Ohne eigenen Lux-Wert bleibt `niveauaenderung`** (§4.1.2 c) nennt nur „nahe",
+ANMERKUNG 1: ≤ 2 m horizontal). Dort gilt weiter `MANUELL_PRUEFEN`. Der *Auslöser*
+ist aber auch dort belegt — §4.1.2 führt b) Treppen und c) jede andere
+Niveauänderung als getrennte Punkte.
 
 **Feuerlöscher und Wandhydrant bleiben fachlich getrennt**, auch wenn die LB beide in
 einem Satz nennt: zwei Geräte, zwei Orte, zwei 2-m-Umgebungen. Der Katalog trägt
