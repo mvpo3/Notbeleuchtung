@@ -61,6 +61,56 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+## ═══ 2026-09-01 — SYNC auf main `b416a31` + Naht-Analyse ═══
+
+**Branch:** `selman/ausgaenge-zirkulation` = origin/main + 3 Commits (Code `504e8ff`,
+Docs `cac2f75`, Sync-Docs). `pytest -q` → **511 passed / 5 skipped / 1 deselected**
+(neuer Marker `visual`, default aus). Contracts unverändert. **NICHT gepusht** (User-GO).
+
+**Hereingekommen (~70 Commits):** Leonis Render/Platzierung/Validierung (#46–#64, #71,
+#73, #74), Enis LB-Parser/OIB/Decision-Matrix/Sonderstellen (#60, #67–#70), SYNC-Protokoll
+(#75, `Handoff/SYNC.md` — Auslöser „Sync"). Neu: `pypdf`-Dependency, CI Visual-Smoke.
+
+**Fremde Edits in meinem Package** (Leonis, 4 Commits): `raumtyp.py` `_EXTRA_LABELS`
+(VR/AR/TRH/Loggia/Fahrrad) + `_EXTRA_DIRECT` (GARAGE/TECHNIK/LAGER/MUELLRAUM/KELLER),
+`_port/models/room.py` `classify_room` token-exakt statt Substring. Inhaltlich korrekt.
+Folge: Label-Werte sind CI-Invariante zum LB-Parser (`tests/contract/test_lb_raumtyp_naht.py`
+↔ `normwissen/data/lb_extraktion.yaml:308-311`) — jedes neue Label braucht YAML-Nachzug bei Enis.
+
+**Korrektur zum 31.08.:** Mollgasse 1.–4.OG liefern je 1 **final_exit** (nicht stair_exit):
+Stufe 2 greift auf `SCHIEBETÜR-80` am Gebäuderand = Balkontür. DG 3 final_exit (Fenstertür),
+1.KG 1 stair_exit, 2.KG 0. `pipeline.run` gemessen: **7/8 Geschosse Prüfstatus „fehler"**
+(Regel 8: >100 Räume & ≤2 Symbole), EG „ok" (13 RZ + 21 SL).
+
+**Nähte (verifiziert):** `Ausgang.typ` wird in `platzierung/` produktiv nicht gelesen;
+Ausgänge sind keine Graphknoten → alle Anker-RZ zeigen „unten" (14/14 Geschosse). Details
+Board-Log 2026-09-01.
+
+**ENTSCHEIDUNGEN (Owner):**
+1. **3-Owner-GO Sonderstellen Option A** (Enis, `docs/SPEC_SONDERSTELLEN_CONTRACT.md`,
+   `Handoff/ENIS.md:132-157`). Selman-Anteil nach GO zunächst keiner; gegen Leonis' Track C
+   (`Handoff/LEONIS.md:28-29`) fehlt nur „Aufzug".
+2. **Kaskade** (`ausgaenge.py:82-93`): first-hit beibehalten oder Stufen 1–3 vereinigen
+   (Dedup über Stufen)? Vereinigung liefert im EG zusätzlich die 2 Stiegen-Ausgänge (Enis'
+   RZ-05/RZ-07) — EG-Vereinigung mit Dedup = 10 Ausgänge.
+3. **`_AUSSENTUER`** (`tueren.py:26`): SCHIEBET/FENSTERT streichen + `WDB_KLIMA-AUSSEN`-Fix.
+   Bricht Enis' GT-Test (≥6 ist_notausgang, Ist = 6) → vorher Zählweise abstimmen.
+4. **Ausgänge in den Zirkulationsgraph** (Kante nächster Weg-Knoten → `exit_i`, kein
+   Contract): einziger Weg zu Fluchtrichtungen in F1s Anker-Strategie. Abnahme Leonis.
+5. **Leonis-Commits in `raumerkennung/` abnehmen** oder zurückweisen; Owner-Grenze für
+   Fremd-Commits klären (CODEOWNERS gilt, Leonis hat selbst gemergt).
+6. **Priorität:** Gap-Healing OG/DG (Wurzel der Regel-8-„fehler" auf 7/8 Geschossen, des
+   1147-m²-Fragments im 2.KG, des KG-TECHNIK/GARAGE-Bleeds) vs. 2–4. Achtung: ohne
+   Fluchtweg-Layer bleibt 0 RZ auch nach Healing (F1-Gate `platzierer.py:50-55`) — OGs
+   brauchen zusätzlich geometrischen GANG-Klassifikator.
+
+**OFFEN weiter:** Fischamender nur 1 stair_exit (`_STIEGE_CLUSTER_MM`) · KG-Stempel-Bleed
+(`raumtyp.py:44-59`, Lüftungs-/Kotenkontext) · Herrenholz raum_46 „AR" über Treppe · Treppen-
+Vokabular (treppenhaus/stiege/stg) · Barawitzka-Raumpolygone (Daten haben sie nicht: 10
+Polylinien vs. 189 Stempel) · Baufeld Wand-Blöcke · Fake-Swap E2E · Git-Tangle `e87a745`.
+
+
+---
 ## ═══ 2026-08-31 — Ausgänge + Zirkulation über ALLE Familien (B1+B2 erledigt) ═══
 
 **Branch:** `selman/ausgaenge-zirkulation` (von main, NICHT vom Tangle-Branch).
