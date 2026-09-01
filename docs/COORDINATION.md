@@ -40,6 +40,7 @@ Schrack-LDT (Owner besorgt Datei) — bis dahin synthetische Fixture `tests/fixt
   (Dependency-Injection, KEIN `normwissen`-Import → Import-Grenze gewahrt); Hauptengine
   baut es aus `Photometrie.intensitaet`. Fallback bleibt konstant `i_cd`. (Branch `leonis/lux-photometrie`)
 - [ ] offen: PR für anker-platzierer-Branch; Hauptengine/pipeline: `i_cd_fn` real verdrahten
+- [ ] offen (Ask von RIVOPLAN-App, 2026-08-31): Coverage-Audit härten — 0 Fluchtweg-Segmente + 0 Korridore = Fehler statt Hinweis (Details im Log)
 
 ### F2 (Photometrie / LDT)
 - [x] `normwissen/photometrie/ldt.py` — LDT/EULUMDAT-Parser (Kopf + Lampensatz + Isym-Expansion)
@@ -114,17 +115,18 @@ Heuristik (Tür-Öffnungs-Virtualwände selektiv portieren).
 F1 hat den echten End-to-End (Provider → Platzierung → DXF) auf **Fischamender BT1
 1.OG** gefahren. Zwei reproduzierbare Provider-Bugs auf dieser CAD-Familie:
 
-- **B1 — Tür-Doppelzählung.** `tueren_aus_dxf` liefert **102** INSERTs, davon **~42
-  Quasi-Duplikate <20 cm** (jede Tür als 2 ARC-Schwenkbögen gezählt) → echte ~60.
-  Fix: Dedup-Cluster (<300 mm) je Tür-Position, ODER nur einen ARC/INSERT je Türblatt.
-- **B2 — A_Fluchtweg + Ausgänge werden nicht gelesen (Fischamender-Familie).**
-  `zirkulation_aus_dxf` sucht Mollgasse `09-WEG`; Fischamender-Fluchtweg liegt auf
-  **`A_Fluchtweg`** (23 Ent., HATCH-Pfeile + degenerierte Linien, Rohkoords Meter).
-  `hauptausgaenge` (footprint) ist nur Mollgasse-kalibriert. Folge: **0 Ausgänge,
-  0 Zirkulation** → RZ-Routing unmöglich, F1 musste das Stiegenhaus aus dem
-  **`S-STRS`**-Layer (×`plan.factor`) improvisieren. Fix: Layer-Muster + Ausgangs-
-  Erkennung pro Familie (wie Wand-Muster `WALL_PATTERN`). Ein Stiegenhaus-Cluster
-  für BT1 bei mm (20928, 85023).
+- ~~**B1 — Tür-Doppelzählung.**~~ **ERLEDIGT 2026-08-31** (`tueren._dedup`, 300-mm-Gitter).
+  Fischamender BT1 EG: 102 → **74** Türen. Nebenbefund dabei: Herrenholz trägt 140
+  `Öffnung_N`-INSERTs, die **alle auf (0,0)** sitzen (Block ohne Transform) — die waren
+  nie echte Positionen. `tueren_aus_dxf` weicht bei solchen Blöcken jetzt auf die
+  Schwenkbögen aus (Herrenholz: 23 Türen an echten Positionen).
+- ~~**B2 — A_Fluchtweg + Ausgänge werden nicht gelesen (Fischamender-Familie).**~~
+  **ERLEDIGT 2026-08-31.** `dxf_load.FLUCHTWEG_PATTERN` (`09-WEG|A_Fluchtweg|Fluchtweg|
+  Fluchtlinie`) ist jetzt die eine Fluchtweg-Definition fürs ganze Package; die
+  Ausgangs-Erkennung ist eine Kaskade (`ausgaenge.py`): Doppeltür am Rand → Außentür
+  am Rand → **Stiegenhaus-Anker** → Tür am Rand. Der Stiegenhaus-Anker ist genau die
+  Improvisation, die F1 hier von Hand machen musste — er kommt jetzt aus den
+  Treppen-Layern (`STIEGE_PATTERN`: `S-STRS`, `410 Treppe`, `Stiege`).
 - Nebenbefund: **20 von 59 Raum-Polygonen** sind Fragmente/untypisiert (Median 6,6 m²,
   9 unter 2 m²) — bekannte Gap-Healing-Grenze, hier bestätigt.
 
@@ -327,6 +329,35 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 - 2026-08-31 F2: Raumtyp-Coverage — `raumtyp.raumtyp_flags` um österr. Plan-Abkürzungen erweitert (`_EXTRA_LABELS`, **token-exakt**, kein Substring-Bleed: „ar" nicht in „Garten"). VR→VORRAUM, AR→ABSTELLRAUM, **TRH→STIEGENHAUS** (sicherheitskritisch!), Loggia→BALKON. Fischamender BT1 EG **40→50 getypt** (UNKNOWN 20→10; Rest=Garten/Rampe/Aufzug=korrekt außen). Port `classify_room` unangetastet. Grundanalyse: Mollgasse-Geometrie-Typ (7/25) ist von Wand-Schlitz-Fragmenten blockiert (Gap-Healing-Sache), NICHT Vokabular → dort kein ehrlicher Win. Kein Contract-Touch. 319 passed/5 skip, ruff clean. Branch `leonis/raumtyp-coverage`.
 - 2026-08-31 F2: LB-Parser **gehärtet** (`normwissen/lb/parser.py`, Handoff-Feinschliff #1/#2). Drei reale Fehlparses behoben, verifiziert gegen alle 4 realen LB-PDFs: (a) Fluchtweg-Lux jetzt **kontext-** statt erst-treffer-basiert → mo-Elektro **200→1 lx** (Aufzugsvorplatz-Distraktor ignoriert); (b) **„Lux"-Wortform** erkannt (`_LUX=(?:lx|lux)`) → Feuerlöscher+Hydrant 5 lx (vorher []); (c) Betriebsdauer nur im `betriebsdauer|auszulegen`-Fenster ohne `notruf` → GU-24h-Notrufakku (7380→) und Fischa-24h-Gewährleistung (1440→) **verworfen**, mo-Elektro bleibt 480; +Dezimal (8,5 Std→510) +Plausi-Caps (20 lx / 1440 min). Kein Contract-Touch. 314 passed/5 skip, ruff clean. Branch `leonis/lb-parser-haertung`.
 - 2026-08-31 F2: `validierung.py` **LB-Konformität** (Befund 9/10, Branch `leonis/validierung-lb-konformitaet`, off aktuellem main). `pruefe(…, lb)` referenzierte `lb` bisher NIE — der QA-Layer, der die LB-übersteuert-Norm-Hierarchie absichern soll, prüfte die LB-Seite gar nicht. Neu: (9) **LB-Exklusion** — keine Aufheller-Leuchte (SL/Antipanik) in einem LB-ausgeschlossenen Raumtyp (Hard-Override, Fehler bei Verletzung); (10) **LB-Inklusion** — jeder LB-geforderte Raumtyp trägt ≥1 SL (Fehler wenn fehlt) → macht eine nicht-feuernde `lb_override`-Regel sichtbar (fängt genau den Dead-Rule-Bug aus PR #50). Lokaler Ray-Cast `_point_in_polygon` (kein platzierung-Import). Kein Contract-Touch. 325 passed/5 skip, ruff clean.
+- 2026-08-31 RIVOPLAN-App-Session → **an F1/Leonis (platzierung/)**: Vorschlag
+  Coverage-Härtung. Messbefund (von Selmans Raumerkennungs-Session über alle 8
+  Mollgasse-Geschosse bestätigt): nur das EG trägt einen Fluchtweg-Layer; 7 von 8
+  Geschossen laufen mit 0 Zirkulations-Segmenten und 0 GANG durch die Pipeline und
+  liefern 1–2 Symbole statt Fluchtwegbeleuchtung (OIB RL2-Erl. 5.4 verlangt sie für
+  den Gang Wohnungstür→Stiegenhaus, siehe OIB_RL2_TABELLE6.md:102/121).
+  **Ask:** `_coverage` in der Platzierung soll „0 Fluchtweg-Segmente UND 0
+  Korridor-Räume" als Abbruchgrund/harten Fehler behandeln, nicht als Hinweis —
+  ein Geschoss ohne jeden erkannten Fluchtweg ist kein plausibles Planungsergebnis.
+  (Die Wurzelursache — Raumpolygone/Gap-Healing — liegt bei Selman, ADR-0001 Punkt 2,
+  Entscheidung beim Owner. Dieser Eintrag betrifft nur das Sicherheitsnetz in F1.)
+  Kontext: Die RIVOPLAN-App konsumiert die Engine als Dienst (POST /plan, Port 5190)
+  und übernimmt neue Stände nur bei grünem pytest.
+- 2026-08-31 F2 (B1+B2 erledigt): Ausgänge + Zirkulation über ALLE CAD-Familien.
+  `dxf_load`: `FLUCHTWEG_PATTERN` + `STIEGE_PATTERN` + `DxfPlan.entities_matching`
+  (eine Layer-Definition statt drei divergierender). Neu `raumerkennung/ausgaenge.py`
+  = Kaskade final_exit(Doppeltür) → final_exit(Außentür) → stair_exit(Stiegenhaus)
+  → door; `provider.parse` ruft sie statt `footprint.hauptausgaenge` direkt.
+  `geometrie_typ.stiege_rechtecke` kennt jetzt auch Treppen-**Layer** (Cluster), nicht
+  nur `STIEGE`-Blöcke. `tueren._dedup` (300 mm) + ARC-Ausweichpfad für positionslose
+  Block-Türen. Kein Contract-Touch.
+  Provider je Familie (EG) — Räume/typisiert/Türen/Ausgänge/Fluchtweg-Segmente:
+  Mollgasse 192/7/44/**4 final_exit**/86 · Fischamender 69/47/74/**1 stair_exit**/7 ·
+  Barawitzka 7/7/107/**6 stair_exit**/0 · Herrenholz 474/349/23/**10 stair_exit**/66.
+  Vorher: Barawitzka + Herrenholz je 0 Ausgänge / 0 Zirkulation. Barawitzka bleibt bei
+  0 Segmenten — der Plan trägt nachweislich **keinen** Fluchtweg-Layer (geprüft).
+  Suite 310 passed / 5 skipped (Skips = fehlende `WHA_MOL_*.dxf`), ruff sauber.
+  Belege: `output/beleg_fischamender_EG.png`, `output/beleg_mollgasse_EG.png`.
+  Branch `selman/ausgaenge-zirkulation`.
 - 2026-08-30 F2 ②: LB-Parser `normwissen/lb/` (`LbTextProvider.parse_lb`) — Freitext/PDF → LBVorgabe. Fischa GK4: Stiegenhaus+Gänge exkl (kein SL), Garage inkl; +Skalare (8 Std→480, Umschaltzeit, Lux, System, Prüfung, Sonder-Lux, Norm-Bezug). Registry `bundle.lb`. Kein Contract-Touch. 290 grün. Branch `leonis/lb-parser`.
 - 2026-08-30 F2 ①(B3): `raumerkennung/geometrie_typ.py` — STIEGENHAUS (STIEGE-Blöcke) + GANG (09-WEG/A_Fluchtweg) geometrisch, ohne Text-Label. Grund: Mollgasse-EG trägt 0 Raum-Namen (566 Texte geprüft). provider.parse Mollgasse: 0→7 typisiert (2 STIEGENHAUS, 5 GANG). 286 grün, kein Contract-Touch. Branch `leonis/raumtyp-geometrie`.
 - 2026-08-30 F2: IES/LM-63-Import `photometrie/ies.py` (`lade_ies`) + Fixture `mini.ies` + `tests/normwissen/test_ies.py` (7). Gleicher `Photometrie`-Typ → F1-Naht unverändert. 170 Tests grün, ruff clean, schema in sync.
