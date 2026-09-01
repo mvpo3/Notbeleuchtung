@@ -363,8 +363,7 @@ def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
 def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
     """NODEID je Platzierung in Reihenfolge (RZ-001/SL-002/AP-003, je Art gezählt).
 
-    Einzige Quelle der Leuchten-IDs — sowohl die Symbol-Annotation als auch die
-    Stromkreis-Belegungsliste ziehen daraus, damit die IDs deckungsgleich sind.
+    Quelle der Leuchten-IDs für die Symbol-Annotation (`_draw_nodeid_labels`).
     """
     counters: dict[str, int] = {}
     ids: list[str] = []
@@ -394,29 +393,32 @@ def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
 
 
 def _stromkreis_belegung_text(platzierung: PlatzierungsErgebnis) -> str | None:
-    """Stromkreis-Belegungsliste (Profi-Vorlage 1.xlsx §3b): je Endstromkreis die
-    zugeordneten Leuchten-IDs, ihre Schaltungsart (DL/BL) und Anzahl. Gruppiert nach
-    `circuit_hint`; Platzierungen ohne Kreis unter „(ohne Kreis)". None wenn leer.
+    """Stromkreis-Belegungsübersicht (Profi-Vorlage 1.xlsx §3b): je Endstromkreis die
+    Anzahl je Leuchtenart mit Schaltungsart (DL/BL) und Gesamtzahl. Kompakt — die genaue
+    ID↔Kreis-Zuordnung trägt der Plan selbst (NODEID-Annotation + Kreis-Label je Symbol),
+    darum hier eine Zeile je Kreis statt einer Voll-ID-Liste (die auf realen Plänen mit
+    Dutzenden Leuchten die Info-Box sprengt). Gruppiert nach `circuit_hint`; Platzierungen
+    ohne Kreis unter „(ohne Kreis)". None wenn leer.
     """
     if not platzierung.platzierungen:
         return None
-    ids = _nodeids(platzierung)
-    # circuit_hint → geordnete Leuchtenliste (NODEID, Schaltungsart).
-    kreise: dict[str, list[tuple[str, str]]] = {}
+    # circuit_hint → geordnete {kind: Anzahl} (Einfüge-Reihenfolge der Arten je Kreis).
+    kreise: dict[str, dict[str, int]] = {}
     reihenfolge: list[str] = []
-    for p, nodeid in zip(platzierung.platzierungen, ids):
+    for p in platzierung.platzierungen:
         kreis = (p.circuit_hint or "").strip() or "(ohne Kreis)"
         if kreis not in kreise:
-            kreise[kreis] = []
+            kreise[kreis] = {}
             reihenfolge.append(kreis)
-        kreise[kreis].append((nodeid, _SCHALTUNGSART.get(p.kind, "—")))
+        kreise[kreis][p.kind] = kreise[kreis].get(p.kind, 0) + 1
     zeilen = ["STROMKREIS-BELEGUNG"]
     for kreis in reihenfolge:
-        leuchten = kreise[kreis]
-        arten = {art for _, art in leuchten}
-        art = arten.pop() if len(arten) == 1 else "gemischt"
-        ns = ", ".join(nodeid for nodeid, _ in leuchten)
-        zeilen.append(f"{kreis} [{art}]: {ns} ({len(leuchten)})")
+        arten = kreise[kreis]
+        teile = [
+            f"{n}× {_KIND_CODE.get(k, 'XX')} ({_SCHALTUNGSART.get(k, '—')})"
+            for k, n in arten.items()
+        ]
+        zeilen.append(f"{kreis}: {' · '.join(teile)} — Σ{sum(arten.values())}")
     return "\\P".join(zeilen)
 
 

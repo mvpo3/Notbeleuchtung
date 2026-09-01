@@ -76,10 +76,33 @@ def test_stromkreis_belegung_je_kreis(rendered):
     assert len(box) == 1
     txt = box[0].text
     assert "STROMKREIS-BELEGUNG" in txt
-    assert "AGV-A-F13 [DL]:" in txt and "(2)" in txt
-    assert "AGV-B-F13 [DL]:" in txt and "(3)" in txt
-    # Leuchten-IDs deckungsgleich mit den NODEID-Annotationen (RZ-001..RZ-005).
-    assert "RZ-001" in txt
+    # Kompakte Übersicht: je Kreis Anzahl je Art + Schaltungsart + Gesamt (Σ).
+    assert "AGV-A-F13: 2× RZ (DL) — Σ2" in txt
+    assert "AGV-B-F13: 3× RZ (DL) — Σ3" in txt
+
+
+def test_belegung_bleibt_kompakt_bei_vielen_leuchten():
+    # Regression: die Belegungsliste listete früher JEDE Leuchten-ID pro Kreis → auf
+    # realen Plänen 200+-Zeichen-Zeilen, die die feste Info-Box überliefen. Jetzt eine
+    # kompakte Zeile je Kreis (Anzahl je Art), unabhängig von der Leuchtenzahl.
+    from notbeleuchtung.hauptengine.contracts import Platzierung, PlatzierungsErgebnis
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _stromkreis_belegung_text
+
+    plz = [
+        Platzierung(xy_mm=(float(i), 0.0), catalog_key="notlicht_ks_stiege", kind="rz",
+                    circuit_hint="AGV-A-F13")
+        for i in range(15)
+    ] + [
+        Platzierung(xy_mm=(float(i), 10.0), catalog_key="sicherheitsleuchte_aufheller",
+                    kind="sicherheitsleuchte", circuit_hint="AGV-A-F13")
+        for i in range(20)
+    ]
+    txt = _stromkreis_belegung_text(PlatzierungsErgebnis(floor="EG", platzierungen=plz))
+    zeilen = txt.split("\\P")
+    # 1 Kopfzeile + 1 Zeile für den einen Kreis (nicht 35 IDs), jede Zeile kurz.
+    assert len(zeilen) == 2
+    assert "AGV-A-F13: 15× RZ (DL) · 20× SL (BL) — Σ35" in zeilen[1]
+    assert all(len(z) < 80 for z in zeilen)
 
 
 def test_schaltungsart_rz_ist_dauerlicht():
