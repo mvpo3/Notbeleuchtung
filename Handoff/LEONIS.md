@@ -4,7 +4,37 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-01, Abend) — HIER WEITER
+## STAND (2026-09-01, Nacht) — HIER WEITER
+
+**Alles Leonis-seitige ist auf `main` (`6bf7c6a`), keine offenen Leonis-PRs.** Seit dem
+Abend-Stand dazugekommen und gemergt:
+- **#82** — Integrations-Artefakte für Host-/Demo-Apps: `examples/demo_run.py` (ein Aufruf
+  `build_default_bundle()` + `pipeline.run()` → RaumModell + Platzierung → DXF/PDF; verifiziert
+  Mollgasse EG 192 Räume / 15 RZ + 21 SL / ok) + `docs/INTEGRATION.md` (Install, Einstiegspunkt,
+  Output-Shape, PDF, Wissens-Inventar, HTTP-Alternative). Kein Produktivcode.
+- **#81** — dieser Handoff (vorheriger STAND).
+
+**Selman-Übergabe:** ZIP `Notbeleuchtung_Hauptengine.zip` (komplette Engine + `normwissen/data`
++ `knowledge/extracted` + `CAD_Symbole/E-Symbole.dxf` + Beispielplan + `PROMPT_SELMAN.md`) liegt
+auf User-Desktop/Documents. **Wichtiger Bau-Lernpunkt:** der Render-Schritt braucht
+`CAD_Symbole/E-Symbole.dxf` (Schrack-Library) im Baum — sonst `_resolve_library_path`-Fehler.
+Verifiziert durch Frisch-Entpacken + Lauf. Für Updates zieht Selman einfach `main`.
+
+**In-flight (Enis): PR #83 offen** — „Track-B-Norm-Werte gefüllt (Ud + Umschaltzeit) + vier
+Quellen-Korrekturen". Füllt `normwissen/data` (en1838_grundwerte etc.) + provider.py = **die
+Aktivierung meiner Track-B-Konsumption** (kein Contract/Schema berührt). **Leonis-Action nach
+#83-Merge:** Regress-Check erneut fahren (`scratchpad/verify_mollgasse.py`) — der Mollgasse-Plan
+ist dann NICHT mehr garantiert bit-identisch (Antipanik-Ud 1:40→1:10, evtl. Flächen-Trigger),
+das ist gewollt; prüfen, dass er weiterhin plausibel/ok ist. Enis' PR selbst = sein Merge.
+
+**Raumerkennung-Generalität (unverändert der zentrale Blocker, Selmans Package):** die Engine
+läuft auf fast jedem DXF durch, ERKENNT aber primär Mollgasse-nahe CAD-Konventionen (Layer per
+Regex hardcoded: `09-WEG`/`A_Fluchtweg`, `810 Raum`/`A_Raeume`, `0N-TXT`, Wandmuster). Fremde
+Familien → degradiert (typlos → RZ-only/leer) oder Crash (0 Wand-Layer). Reifegrad: Mollgasse EG
+~gut, OG/DG fast leer, Fischamender Räume gut aber Fluchtweg-Bug B2 (0 Ausgänge), Herrenholz/
+Baufeld 100% getypt. = Selman-Arbeit, nicht F1.
+
+## STAND (2026-09-01, Abend)
 
 **Track B (Konsumption) ist auf `main`** (`f92010f`, PR #80 gemergt; PR #72 = `NormRegelwerk`
 v1.1.0 davor gemergt `8d6fe23`). **513 grün**, ruff clean, Schema kein Drift = **kein Contract**.
