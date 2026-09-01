@@ -85,6 +85,16 @@ def test_hoehenkoten_label_gezeichnet(rendered):
     assert all(k.text == "h=2,40" for k in koten)
 
 
+def test_nodeid_annotation_je_leuchte(rendered):
+    _, summary, doc = rendered
+    # 4OG-Fixture = 5 RZ → NODEID RZ-001..RZ-005, je Symbol genau ein MTEXT.
+    assert summary["nodeids_drawn"] == 5
+    ids = doc.modelspace().query("MTEXT[layer=='din_SIBEL_63_luminaire_ID']")
+    assert len(ids) == 5
+    texte = sorted(m.text for m in ids)
+    assert texte == ["RZ-001", "RZ-002", "RZ-003", "RZ-004", "RZ-005"]
+
+
 def test_info_blocks_sind_gerahmte_boxen(rendered):
     # Schriftfeld-Leiste: Stückliste ist jetzt eine gerahmte Box (Rahmen + Text auf
     # demselben Layer), nicht mehr freier Text neben dem Grundriss.
