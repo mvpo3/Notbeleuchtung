@@ -102,9 +102,26 @@ def test_plausibilitaet_schweigt_wenn_segmente_erkannt():
 
 
 def test_konformer_plan_ist_ok():
-    befunde = pruefe(_raum("s1"), _erg(_rz()))
+    # Zwei RZ am Abschnitt → gedeckt UND redundant (EN 50172) → alles ok.
+    befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0)), _rz(xy=(5000.0, 0.0))))
     assert gesamtstatus(befunde) == "ok"
     assert all(b.status == "ok" for b in befunde)
+
+
+def test_redundanz_einzelne_leuchte_ist_warnung():
+    # Nur 1 Leuchte am Abschnitt → kein Ausfallschutz (EN 50172) → Warnung, kein Fehler.
+    befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0))))
+    b = next(b for b in befunde if "Redundanz" in b.regel)
+    assert b.status == "warnung"
+    assert "1/1" in b.detail
+    assert gesamtstatus(befunde) != "fehler"
+
+
+def test_redundanz_zwei_leuchten_ist_ok():
+    # RZ + SL beide in Reichweite des Abschnitts → redundant.
+    befunde = pruefe(_raum("s1"), _erg(_rz(xy=(0.0, 0.0)), _sl((5000.0, 0.0))))
+    b = next(b for b in befunde if "Redundanz" in b.regel)
+    assert b.status == "ok"
 
 
 def test_zu_niedrige_montagehoehe_ist_fehler():

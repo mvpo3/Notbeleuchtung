@@ -56,7 +56,8 @@ def verdichte_fluchtweg(
         kandidaten = leuchten_auf_linie(r.polygon_mm, abstand)
         for _ in range(_MAX_HALBIERUNGEN):
             res = lux_raster(
-                kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn, ziel_lux=1.0
+                kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
+                ziel_lux=anf.min_lux,
             )
             if res.erfuellt_min and res.erfuellt_ud:
                 break
