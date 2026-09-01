@@ -20,16 +20,46 @@ from notbeleuchtung.hauptengine.contracts import (
 )
 
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
-from .geometry import find_center_visual, grid_points
+from .geometry import _bbox, find_center_visual, grid_points
+from .lux import lux_raster
+
+# Sicherung gegen Überproduktion, falls der Lux-Nachweis nie hält (defekte Geometrie).
+_ANTIPANIK_MAX_LEUCHTEN = 25
+_ANTIPANIK_MAX_RUNDEN = 6
+
+
+def _antipanik_punkte(polygon: list, anf) -> list:
+    """Antipanik-Raster, verdichtet bis der EN-1838-Nachweis (`anf.min_lux`, i.d.R.
+    0,5 lx / Ud≥1:40) erfüllt ist — nicht nur `mindest_anzahl` blind gesetzt.
+
+    Startet beim Norm-Raster (`mindest_anzahl`) und erhöht die Punktzahl, solange der
+    Nachweis fehlt. Ist die Fläche kleiner als das EN-Nachweisfenster (Randstreifen),
+    gibt es kein Raster → dann bleibt es beim Norm-Raster (nicht beweisbar, nicht raten).
+    """
+    n = max(1, anf.mindest_anzahl)
+    bounds = _bbox(polygon)
+    h_m = anf.montagehoehe_mm / 1000.0
+    pts = grid_points(polygon, n)
+    for _ in range(_ANTIPANIK_MAX_RUNDEN):
+        res = lux_raster(pts, bounds, montagehoehe_m=h_m, ziel_lux=anf.min_lux)
+        if res.max_lux == 0.0:                       # kein Nachweisfenster (Fläche < Rand)
+            return grid_points(polygon, max(1, anf.mindest_anzahl))
+        if res.erfuellt_min and res.erfuellt_ud:
+            break
+        if len(pts) >= _ANTIPANIK_MAX_LEUCHTEN:
+            break
+        n = max(n + 1, int(n * 1.6))
+        pts = grid_points(polygon, n)
+    return pts
 
 
 def _plan_raumleuchten(
     raum: RaumModell, norm: NormProvider, klassifikation: str
 ) -> list[Platzierung]:
-    """Je Raum mit passender Norm-Klassifikation `norm.mindest_anzahl` Leuchten,
-    geometrisch über die Fläche verteilt (`grid_points`): 1 → visuelles Zentrum,
-    >1 → Raster (Antipanik-Fläche, EN 1838 §4.3). `kind` == `klassifikation`
-    (Kind- und Klassifikation-Literale deckungsgleich: rz/sicherheitsleuchte/antipanik).
+    """Je Raum mit passender Norm-Klassifikation Leuchten, geometrisch über die Fläche
+    verteilt (`grid_points`): Sicherheitsleuchte → `mindest_anzahl` (Aufheller-Betonung);
+    Antipanik → verdichtet bis zum EN-1838-Lux-Nachweis (`_antipanik_punkte`, §4.3).
+    `kind` == `klassifikation` (Literale deckungsgleich: rz/sicherheitsleuchte/antipanik).
     Alle Leuchten eines Raums teilen dessen Stromkreis-Bauteil (A|B aus Zentroid-x)."""
     centroids = {
         r.id: find_center_visual(r.polygon_mm) for r in raum.raeume if r.polygon_mm
@@ -44,7 +74,12 @@ def _plan_raumleuchten(
         if anf.klassifikation != klassifikation:
             continue
         building = assign_building(centroids[r.id][0])
-        for px, py in grid_points(r.polygon_mm, max(1, anf.mindest_anzahl)):
+        punkte = (
+            _antipanik_punkte(r.polygon_mm, anf)
+            if klassifikation == "antipanik"
+            else grid_points(r.polygon_mm, max(1, anf.mindest_anzahl))
+        )
+        for px, py in punkte:
             out.append(
                 Platzierung(
                     xy_mm=(px, py),
