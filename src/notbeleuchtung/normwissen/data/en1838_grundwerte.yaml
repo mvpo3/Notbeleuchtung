@@ -4,8 +4,13 @@
 #
 # Kuratiert aus _port_source/emergency_lighting_en1838.yaml — NUR die Werte, die
 # die Notbeleuchtungs-Engine braucht (nicht 1:1 die Norm-Extraktion). Glare-cd-
-# Tabelle, Ra/Farbwiedergabe, Einschaltzeiten, Uniformity etc. bewusst NICHT
-# portiert (für die Platzierungs-Engine irrelevant).
+# Tabelle und Ra/Farbwiedergabe bleiben bewusst draußen (die Platzierung fragt
+# sie nicht). Gleichmäßigkeit und Umschaltzeit sind seit Contract v1.1.0
+# abfragbar und deshalb nachgezogen.
+#
+# Anhang B (A-Abweichungen) führt Frankreich, Italien, Deutschland und die
+# Niederlande — für Österreich gibt es KEINE Abweichung. Die EN-Werte unten
+# gelten hier also unverändert.
 #
 # Single Source für den En1838NormProvider — er hardcodet nichts, er liest hier.
 # Jede quelle_* ist eine echte Norm-Fundstelle (Audit-Trail → NormAnforderung.quelle).
@@ -51,6 +56,49 @@ lux:
   # [BELEGT] §4.3.1, Norm-S.11 — freie Bodenfläche im Kernbereich
   # (Randstreifen 0,5 m ausgenommen; Randbereich hier nicht modelliert).
   antipanik: 0.5
+
+# Ungleichmäßigkeit Ud = kleinste : größte Beleuchtungsstärke (EN 12665).
+# Das Contract-Feld `NormAnforderung.gleichmaessigkeit_max` führt sie umgekehrt
+# als max:min → hier stehen die Kehrwerte (1:40 → 40).
+gleichmaessigkeit:
+  # [BELEGT] §4.2.2, Norm-S.10 — „darf 1 : 40 entlang der Mittellinie des
+  # Rettungsweges nicht unterschreiten".
+  rettungsweg: 40.0
+  # [BELEGT] §4.3.2, Norm-S.11 — „darf 1 : 40 nicht unterschreiten".
+  # ACHTUNG: Antipanik hat DENSELBEN Wert wie der Rettungsweg. Die kursierende
+  # Angabe „10 für Antipanik" ist falsch — die 10 stammt aus §4.4.2 (s.u.).
+  antipanik: 40.0
+  # [MANUELL_PRUEFEN] §4.4.2 fordert für Arbeitsplätze mit besonderer Gefährdung
+  # Uo ≥ 0,1. Uo (kleinste : mittlere) ist NICHT Ud (kleinste : größte) — ein
+  # anderes Maß, das nicht in dieses Feld gehört. Bewusst kein Eintrag; erst
+  # modellieren, wenn der Raumtyp dafür existiert (Track C, @polatselman).
+
+# Umschaltzeit auf die Sicherheitsstromversorgung. Die Norm ist ZWEISTUFIG; das
+# Contract-Feld `NormAnforderung.umschaltzeit_max_s` ist ein Skalar und trägt
+# deshalb nur den Vollwert-Zeitpunkt. Die 5-s-Halbwertstufe bleibt hier sichtbar,
+# damit sie nicht verloren geht (an die 3 Owner gemeldet).
+umschaltzeit:
+  # [BELEGT] §4.2.6 / §4.3.6 / §5.4.6 — „50 % der geforderten Beleuchtungsstärke
+  # innerhalb von 5 s und 100 % der geforderten Beleuchtungsstärke innerhalb von
+  # 60 s". Gilt wortgleich für Rettungsweg, Antipanik und Sicherheitszeichen.
+  vollwert_s: 60.0
+  halbwert_s: 5.0     # nur Dokumentation — kein Contract-Feld
+  # [BELEGT] §4.4.6 — Arbeitsplätze mit besonderer Gefährdung: dauernd vorhanden
+  # oder innerhalb 0,5 s. Kein passender Raumtyp im RaumModell → Track C,
+  # deshalb kein Eintrag.
+
+# NICHT hier modelliert — Flächen-Schwellen (Contract v1.1.0
+# `NormRegelwerk.flaechen_schwellen`): die kursierenden 60 m² / 8 m² stehen
+# NICHT in EN 1838. Die vorliegende Ausgabe kennt überhaupt keine
+# flächenbezogene Auslöse-Schwelle (die einzigen m²-Bezüge sind 2 cd/m²
+# Leuchtdichte in §5.4.1 und eine französische A-Abweichung in Anhang B);
+# §4.3.8 nennt Toiletten für Menschen mit Behinderung OHNE Flächenmaß.
+# Belegt sind die Werte in
+# OVE E 8101:2019 718.560.9.001.AT und ÖVE/ÖNORM E 8002-1 — dort aber
+# SCOPE-GEBUNDEN (nur bei erhöhten Anforderungen nach der Art der Nutzung bzw.
+# nur für Flughäfen/Bahnhöfe). Das Contract-Feld wirkt dagegen global.
+# Bis zur 3-Owner-Entscheidung über ein Scope-Gate bleiben beide Felder leer
+# (= None = inert). Details: docs/NORMQUELLEN_AT.md Abschnitt 2b.
 
 # Norm-Fundstellen (kommen als NormAnforderung.quelle in den Audit-Trail).
 quellen:
