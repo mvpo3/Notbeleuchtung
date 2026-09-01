@@ -37,6 +37,7 @@ LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
 LAYER_PRUEFBERICHT = "din_SIBEL_99_inspection"
 LAYER_HOEHENKOTE = "din_SIBEL_52_info"
 LAYER_NODEID = "din_SIBEL_63_luminaire_ID"
+LAYER_BELEGUNG = "din_SIBEL_11_system"
 
 _PRUEF_STATUS_LABEL = {"ok": "OK", "warnung": "WARNUNG", "fehler": "FEHLER"}
 
@@ -56,11 +57,13 @@ _BOX_H_PLANKOPF_MM = 5600.0
 _BOX_H_PRUEF_MM = 8200.0
 _BOX_H_STUECK_MM = 3400.0
 _BOX_H_LEGENDE_MM = 4400.0
+_BOX_H_BELEGUNG_MM = 5000.0
 # y-Unterkanten relativ zu min_y (bottom-up):
 _BOX_Y_PLANKOPF = 0.0
 _BOX_Y_PRUEF = _BOX_H_PLANKOPF_MM + _PANEL_GAP_MM
 _BOX_Y_STUECK = _BOX_Y_PRUEF + _BOX_H_PRUEF_MM + _PANEL_GAP_MM
 _BOX_Y_LEGENDE = _BOX_Y_STUECK + _BOX_H_STUECK_MM + _PANEL_GAP_MM
+_BOX_Y_BELEGUNG = _BOX_Y_LEGENDE + _BOX_H_LEGENDE_MM + _PANEL_GAP_MM
 
 
 def _draw_info_box(msp, raum: RaumModell, y_unten_rel: float, hoehe: float,
@@ -107,6 +110,12 @@ NODEID_HEIGHT_MM = 90.0
 NODEID_OFFSET_TANGENT_MM = 260.0
 _KIND_CODE = {"rz": "RZ", "sicherheitsleuchte": "SL", "antipanik": "AP"}
 
+# Schaltungsart je Leuchtenart (Profi-Belegungsplan 1.xlsx §3b): Rettungszeichen =
+# Dauerlicht (DL, maintained, muss immer leuchten), Sicherheits-/Antipanik-Leuchten =
+# Bereitschaftslicht (BL, non-maintained, nur im Notfall). Speist die Stromkreis-
+# Belegungsliste; im Symbol-Datenmodell (Contract-Empf. #6) später ein echtes Feld.
+_SCHALTUNGSART = {"rz": "DL", "sicherheitsleuchte": "BL", "antipanik": "BL"}
+
 
 def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
@@ -118,6 +127,7 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_PRUEFBERICHT, color=7)  # weiß/schwarz
     doc.layers.add(LAYER_HOEHENKOTE, color=3)    # grün
     doc.layers.add(LAYER_NODEID, color=6)        # magenta
+    doc.layers.add(LAYER_BELEGUNG, color=7)      # weiß/schwarz
 
 
 def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
@@ -350,26 +360,74 @@ def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
     return drawn
 
 
-def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
-    """Fortlaufende NODEID je Leuchte (RZ-001/SL-002/AP-003) als kleiner Text neben
-    das Symbol — Wartung/Adressierung (Profi-Plan din_SIBEL_63_luminaire_ID). Rein
-    Render-seitig synthetisiert (Reihenfolge in `platzierung.platzierungen`), kein
-    Contract-Feld. Zählt je Leuchtenart separat."""
+def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
+    """NODEID je Platzierung in Reihenfolge (RZ-001/SL-002/AP-003, je Art gezählt).
+
+    Einzige Quelle der Leuchten-IDs — sowohl die Symbol-Annotation als auch die
+    Stromkreis-Belegungsliste ziehen daraus, damit die IDs deckungsgleich sind.
+    """
     counters: dict[str, int] = {}
-    drawn = 0
+    ids: list[str] = []
     for p in platzierung.platzierungen:
         code = _KIND_CODE.get(p.kind, "XX")
         counters[code] = counters.get(code, 0) + 1
+        ids.append(f"{code}-{counters[code]:03d}")
+    return ids
+
+
+def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
+    """Fortlaufende NODEID je Leuchte als kleiner Text neben das Symbol — Wartung/
+    Adressierung (Profi-Plan din_SIBEL_63_luminaire_ID). Rein Render-seitig
+    synthetisiert, kein Contract-Feld."""
+    drawn = 0
+    for p, nodeid in zip(platzierung.platzierungen, _nodeids(platzierung)):
         angle = math.radians(p.rotation_deg or 0.0)
         tx = p.xy_mm[0] + math.cos(angle) * NODEID_OFFSET_TANGENT_MM
         ty = p.xy_mm[1] + math.sin(angle) * NODEID_OFFSET_TANGENT_MM
-        mt = msp.add_mtext(f"{code}-{counters[code]:03d}", dxfattribs={
+        mt = msp.add_mtext(nodeid, dxfattribs={
             "layer": LAYER_NODEID,
             "char_height": NODEID_HEIGHT_MM,
         })
         mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
         drawn += 1
     return drawn
+
+
+def _stromkreis_belegung_text(platzierung: PlatzierungsErgebnis) -> str | None:
+    """Stromkreis-Belegungsliste (Profi-Vorlage 1.xlsx §3b): je Endstromkreis die
+    zugeordneten Leuchten-IDs, ihre Schaltungsart (DL/BL) und Anzahl. Gruppiert nach
+    `circuit_hint`; Platzierungen ohne Kreis unter „(ohne Kreis)". None wenn leer.
+    """
+    if not platzierung.platzierungen:
+        return None
+    ids = _nodeids(platzierung)
+    # circuit_hint → geordnete Leuchtenliste (NODEID, Schaltungsart).
+    kreise: dict[str, list[tuple[str, str]]] = {}
+    reihenfolge: list[str] = []
+    for p, nodeid in zip(platzierung.platzierungen, ids):
+        kreis = (p.circuit_hint or "").strip() or "(ohne Kreis)"
+        if kreis not in kreise:
+            kreise[kreis] = []
+            reihenfolge.append(kreis)
+        kreise[kreis].append((nodeid, _SCHALTUNGSART.get(p.kind, "—")))
+    zeilen = ["STROMKREIS-BELEGUNG"]
+    for kreis in reihenfolge:
+        leuchten = kreise[kreis]
+        arten = {art for _, art in leuchten}
+        art = arten.pop() if len(arten) == 1 else "gemischt"
+        ns = ", ".join(nodeid for nodeid, _ in leuchten)
+        zeilen.append(f"{kreis} [{art}]: {ns} ({len(leuchten)})")
+    return "\\P".join(zeilen)
+
+
+def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
+    """Stromkreis-Belegungs-Box oben in der rechten Schriftfeld-Leiste."""
+    text = _stromkreis_belegung_text(platzierung)
+    if text is None:
+        return False
+    _draw_info_box(msp, raum, _BOX_Y_BELEGUNG, _BOX_H_BELEGUNG_MM, LAYER_BELEGUNG,
+                   text, char_h=LEGENDE_HEIGHT_MM * 0.85)
+    return True
 
 
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
@@ -411,6 +469,7 @@ def render_dxf(
     stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
     plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
     pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
+    belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
 
     by_kind: dict[str, int] = {}
     placed_labels: list[tuple[float, float]] = []
@@ -448,5 +507,6 @@ def render_dxf(
         "stueckliste_drawn": stueckliste_drawn,
         "plankopf_drawn": plankopf_drawn,
         "pruefbericht_drawn": pruefbericht_drawn,
+        "stromkreis_belegung_drawn": belegung_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
