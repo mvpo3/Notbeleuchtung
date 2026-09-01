@@ -36,6 +36,7 @@ LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
 LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
 LAYER_PRUEFBERICHT = "din_SIBEL_99_inspection"
 LAYER_HOEHENKOTE = "din_SIBEL_52_info"
+LAYER_NODEID = "din_SIBEL_63_luminaire_ID"
 
 _PRUEF_STATUS_LABEL = {"ok": "OK", "warnung": "WARNUNG", "fehler": "FEHLER"}
 
@@ -99,6 +100,13 @@ CIRCUIT_LABEL_MAX_NUDGE = 8
 HOEHENKOTE_HEIGHT_MM = 150.0
 HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 
+# NODEID-Annotation (fortlaufende Leuchten-ID je Symbol, Wartung/Adressierung, Profi-
+# Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
+# sie weder mit dem Stromkreis-Label (+Normale) noch der Höhenkote (−Normale) kollidiert.
+NODEID_HEIGHT_MM = 90.0
+NODEID_OFFSET_TANGENT_MM = 260.0
+_KIND_CODE = {"rz": "RZ", "sicherheitsleuchte": "SL", "antipanik": "AP"}
+
 
 def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
@@ -109,6 +117,7 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_PLANKOPF, color=7)     # weiß/schwarz
     doc.layers.add(LAYER_PRUEFBERICHT, color=7)  # weiß/schwarz
     doc.layers.add(LAYER_HOEHENKOTE, color=3)    # grün
+    doc.layers.add(LAYER_NODEID, color=6)        # magenta
 
 
 def _lb_legende_text(lb: LBVorgabe | None) -> str | None:
@@ -341,6 +350,28 @@ def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
     return drawn
 
 
+def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
+    """Fortlaufende NODEID je Leuchte (RZ-001/SL-002/AP-003) als kleiner Text neben
+    das Symbol — Wartung/Adressierung (Profi-Plan din_SIBEL_63_luminaire_ID). Rein
+    Render-seitig synthetisiert (Reihenfolge in `platzierung.platzierungen`), kein
+    Contract-Feld. Zählt je Leuchtenart separat."""
+    counters: dict[str, int] = {}
+    drawn = 0
+    for p in platzierung.platzierungen:
+        code = _KIND_CODE.get(p.kind, "XX")
+        counters[code] = counters.get(code, 0) + 1
+        angle = math.radians(p.rotation_deg or 0.0)
+        tx = p.xy_mm[0] + math.cos(angle) * NODEID_OFFSET_TANGENT_MM
+        ty = p.xy_mm[1] + math.sin(angle) * NODEID_OFFSET_TANGENT_MM
+        mt = msp.add_mtext(f"{code}-{counters[code]:03d}", dxfattribs={
+            "layer": LAYER_NODEID,
+            "char_height": NODEID_HEIGHT_MM,
+        })
+        mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
+        drawn += 1
+    return drawn
+
+
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
     """Initial-Ansicht = Grundriss: Modelspace-VPORT auf Bounds ∪ Symbolpunkte,
     sonst öffnet AutoCAD bei (0,0) und der Plan muss per Zoom-Extents gesucht
@@ -393,6 +424,7 @@ def render_dxf(
             circuit_labels += 1
 
     hoehenkoten_drawn = _draw_hoehenkoten(msp, platzierung)
+    nodeids_drawn = _draw_nodeid_labels(msp, platzierung)
 
     _set_vport(doc, raum, platzierung)
 
@@ -409,6 +441,7 @@ def render_dxf(
         "schrack_inserted": len(platzierung.platzierungen),
         "circuit_labels_drawn": circuit_labels,
         "hoehenkoten_drawn": hoehenkoten_drawn,
+        "nodeids_drawn": nodeids_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
