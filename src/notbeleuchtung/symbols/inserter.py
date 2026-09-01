@@ -84,10 +84,12 @@ def insert_platzierung(
     """Eine Platzierung als Schrack-INSERT in die Modelspace setzen.
 
     Output ist mm-Welt; `p.xy_mm` wird 1:1 geschrieben. Rotationen kommen
-    unverändert aus dem Contract (359.7° etc. werden NICHT normalisiert). Bei
-    `richtung="gerade"` wird statt eines Einzelpfeils ein **beidseitiger
-    Doppelpfeil** (links+rechts, Wasserscheide) gezeichnet; zurückgegeben wird der
-    primäre (linke) Insert, der auch den Stromkreis-XDATA-Tag trägt.
+    unverändert aus dem Contract (359.7° etc. werden NICHT normalisiert). Bei einem
+    **Rettungszeichen** mit `richtung="gerade"` wird statt eines Einzelpfeils ein
+    **beidseitiger Doppelpfeil** (links+rechts, Wasserscheide) gezeichnet;
+    zurückgegeben wird der primäre (linke) Insert, der auch den Stromkreis-XDATA-Tag
+    trägt. Andere Leuchtenarten mit `richtung="gerade"` (Sicherheitsleuchte,
+    Antipanik = „keine Richtung") behalten ihr eigenes Katalog-Symbol.
 
     Raises
     ------
@@ -99,7 +101,10 @@ def insert_platzierung(
     if p.catalog_key not in mapping:
         raise KeyError(f"No Schrack mapping for catalog_key {p.catalog_key!r}")
 
-    if p.richtung == "gerade":
+    # Doppelpfeil NUR für Rettungszeichen-Wasserscheiden. Sicherheitsleuchten und
+    # Antipanik tragen ebenfalls richtung="gerade" (= keine Richtung), sind aber keine
+    # Pfeil-Zeichen → sie behalten ihr eigenes Katalog-Symbol.
+    if p.richtung == "gerade" and p.kind == "rz":
         insert = _insert_doppelpfeil(output_doc, p, mapping, layer)
     else:
         entry = mapping[p.catalog_key]
