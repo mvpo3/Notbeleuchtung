@@ -1,10 +1,18 @@
 {
   "contract": "NormRegelwerk",
-  "contract_version": "1.0.0",
+  "contract_version": "1.1.0",
   "norm": "ÖNORM EN 1838:2013",
   "erkennungsweite": {
     "z_hinterleuchtet": 200.0,
     "z_beleuchtet": 100.0
+  },
+  "flaechen_schwellen": {
+    "antipanik_min_m2": null,
+    "wc_sanitaer_min_m2": null
+  },
+  "arbeitsplatz_lux": {
+    "min_lux": null,
+    "min_lux_absolut": null
   },
   "regeln": [
     {
@@ -20,6 +28,8 @@
         ],
         "mindest_anzahl": 1,
         "dauer_min": 60,
+        "gleichmaessigkeit_max": null,
+        "umschaltzeit_max_s": null,
         "quelle": "ÖNORM EN 1838:2013 §4.1"
       }
     },
@@ -39,6 +49,8 @@
         ],
         "mindest_anzahl": 1,
         "dauer_min": 60,
+        "gleichmaessigkeit_max": null,
+        "umschaltzeit_max_s": null,
         "quelle": "ÖNORM EN 1838:2013 §4.2.1"
       }
     },
@@ -55,6 +67,8 @@
         ],
         "mindest_anzahl": 4,
         "dauer_min": 60,
+        "gleichmaessigkeit_max": null,
+        "umschaltzeit_max_s": null,
         "quelle": "ÖNORM EN 1838:2013 §4.3.1"
       }
     },
@@ -71,6 +85,8 @@
         ],
         "mindest_anzahl": 1,
         "dauer_min": 60,
+        "gleichmaessigkeit_max": null,
+        "umschaltzeit_max_s": null,
         "quelle": "ÖNORM EN 1838:2013 §4.3.1"
       }
     }
