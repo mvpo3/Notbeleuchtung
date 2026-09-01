@@ -1,0 +1,222 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# sonderstellen.yaml — Typ-Katalog der hervorzuhebenden Stellen (EN 1838 §4.1.2)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# EN 1838 §4.1.2 verlangt, dass bestimmte STELLEN hervorgehoben werden — nicht
+# bestimmte Räume. Diese Stellen sind punktförmig, liegen irgendwo im Grundriss und
+# haben im heutigen `RaumModell` **kein Merkmal**. Acht Regeln der
+# Placement-Decision-Matrix hängen deshalb in der Luft
+# (`PlatzierungsRegelwerk.blockiert_durch_contract()`).
+#
+# Diese Datei ist die fachliche Grundlage für einen **Contract-Vorschlag**
+# (`docs/SPEC_SONDERSTELLEN_CONTRACT.md`). Sie ändert keinen Contract und schaltet
+# nichts frei — sie sagt nur, WELCHE Typen es fachlich gibt, WOHER sie kommen
+# könnten und WELCHE Regel jeder Typ aktivieren würde.
+#
+# AUFNAHME-REGEL: ein Typ steht hier nur, wenn ihn eine Regel der Matrix braucht.
+# Keine hypothetischen Zukunfts-Typen. Beobachtete, aber unbenötigte Symbole stehen
+# unter `beobachtet_ohne_regel`.
+#
+# BELEG-STATUS (Legende: en1838_grundwerte.yaml):
+#   [BELEGT] wörtlich in der Norm-Extraktion · [AUSLEGUNG] norm-gestützte Zuordnung
+#   [LB] aus einer realen Leistungsbeschreibung · [MANUELL_PRUEFEN] Quelle fehlt
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-08-31"
+  owner: "Enis (normwissen)"
+  status: "Contract-VORSCHLAG — nicht verdrahtet, kein contract_version-Bump"
+  norm_basis: "ÖNORM EN 1838:2013 §4.1.2 (S.10–11) — hervorzuhebende Stellen, max. 2 m horizontaler Abstand"
+  cad_beleg: >
+    Die Typ-Nomenklatur folgt den Symbolen, die ein professioneller Plan
+    tatsächlich führt: `DIN-Notbeleuchtungspläne(Beispiele)/
+    din_support_ReMi_Barawitzkagasse_28.04.2026.dxf` enthält die Block-Definitionen
+    `din_Feuerloescher_F001`, `din_Hydrant_F002`, `din_ErsteHilfe_E003` und
+    `din_Notrufstelle_E004` (Registriernummern nach ISO 7010). Die Typen sind also
+    nicht erfunden, sondern in der Fachpraxis bereits benannt.
+  cad_einschraenkung: >
+    Dieselbe Datei ist eine SYMBOL-BIBLIOTHEK, kein bestückter Plan: 0 platzierte
+    INSERTs im Modelspace. Ein bestückter Beispielplan liegt im Repo NICHT vor —
+    es gibt daher keinen erprobten Parser und keinen Beleg, dass sich Positionen
+    heute automatisch auslesen lassen.
+
+# ── Warum ein Punkt-Modell und keine Raum-Flags ────────────────────────────
+# Feuerlöscher, Hydrant, Erste-Hilfe-Stelle und Melder hängen an einer POSITION,
+# nicht an einem Raum: die 2-m-Regel aus §4.1.2 ist ein Abstand zum Gerät. Ein
+# Raum-Flag könnte sie nicht ausdrücken. Umgekehrt sind Barrierefreiheit (§4.3.8)
+# und besondere Gefährdung (§4.4.1) Eigenschaften eines RAUMS bzw. einer Fläche —
+# die gehören nicht in dieses Modell (siehe `raum_attribute` unten).
+
+sonderstellen_typen:
+
+  - typ: feuerloescher
+    bezeichnung: "Feuerlöscher"
+    aktiviert_regeln: [SL-06-FEUERLOESCHER]
+    leuchtenart: sicherheitsleuchte
+    max_horizontal_zum_punkt_mm: 2000
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Brandbekämpfungseinrichtungen)"
+    beleg: BELEGT
+    lux_anforderung:
+      # NICHT als Normwert ausgeben: §4.1.2 fordert die Hervorhebung, nennt aber
+      # keinen Lux-Wert für diese Stelle.
+      norm_wert: null
+      norm_status: MANUELL_PRUEFEN
+      lb_typisch: 5.0
+      lb_quelle: "LBVorgabe.sonder_lux[ort=feuerloescher] — reale Elektro-LB §5.1.23"
+    cad_symbol_beleg: "din_Feuerloescher_F001, FEUERLOESCHER_RZ, Feuerloescher_RZ_SYM"
+    datenquellen: [elektro_lb_ohne_position, manuell, elektroplan_kuenftig]
+    review_erforderlich: true      # solange der Lux-Wert unbelegt ist
+
+  - typ: hydrant
+    bezeichnung: "Wandhydrant / Löschwasserentnahme"
+    aktiviert_regeln: [SL-07-WANDHYDRANT]
+    leuchtenart: sicherheitsleuchte
+    max_horizontal_zum_punkt_mm: 2000
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Brandbekämpfungseinrichtungen)"
+    # „Wandhydrant" ist die Auslegung des Norm-Oberbegriffs auf ein konkretes Gerät.
+    beleg: AUSLEGUNG
+    lux_anforderung:
+      norm_wert: null
+      norm_status: MANUELL_PRUEFEN
+      lb_typisch: 5.0
+      lb_quelle: "LBVorgabe.sonder_lux[ort=hydrant] — reale Elektro-LB §5.1.23"
+    cad_symbol_beleg: "din_Hydrant_F002, HYDRANT_RZ, ISO7010_RZ_Wandhydrant"
+    datenquellen: [elektro_lb_ohne_position, manuell, elektroplan_kuenftig]
+    review_erforderlich: true
+    # Fachlich GETRENNT von feuerloescher, auch wenn die LB beide in einem Satz
+    # nennt: es sind zwei Geräte an zwei Orten, jedes mit eigener 2-m-Umgebung.
+    nicht_zusammenfassen_mit: feuerloescher
+
+  - typ: erste_hilfe
+    bezeichnung: "Erste-Hilfe-Stelle"
+    aktiviert_regeln: [SL-05-ERSTE-HILFE-STELLE]
+    leuchtenart: sicherheitsleuchte
+    max_horizontal_zum_punkt_mm: 2000
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Erste-Hilfe-Stellen)"
+    beleg: BELEGT
+    lux_anforderung:
+      norm_wert: null
+      norm_status: MANUELL_PRUEFEN
+      lb_typisch: null
+      lb_quelle: null
+    cad_symbol_beleg: "din_ErsteHilfe_E003, ERSTEHILFESTELLE_RZ, ISO7010_RZ_ErsteHilfe"
+    datenquellen: [manuell, elektroplan_kuenftig]
+    review_erforderlich: true
+
+  - typ: brandmelder
+    bezeichnung: "Brandmelde-/Meldeeinrichtung (Druckknopfmelder, BMZ-Bedienstelle)"
+    aktiviert_regeln: [SL-08-BRANDMELDER]
+    leuchtenart: sicherheitsleuchte
+    max_horizontal_zum_punkt_mm: 2000
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Meldeeinrichtungen)"
+    beleg: BELEGT
+    lux_anforderung:
+      norm_wert: null
+      norm_status: MANUELL_PRUEFEN
+      lb_typisch: null
+      lb_quelle: null
+    # Anders als bei den drei oberen: im Repo liegt KEIN CAD-Symbol dafür vor.
+    cad_symbol_beleg: null
+    datenquellen: [manuell]
+    review_erforderlich: true
+
+  - typ: niveauaenderung
+    bezeichnung: "Niveausprung im Fluchtweg ohne Treppe (Stufe, Rampe, Podest)"
+    aktiviert_regeln: [RZ-06-NIVEAUAENDERUNG, SL-04-NIVEAUAENDERUNG]
+    leuchtenart: sicherheitsleuchte    # zusätzlich RZ-06 (Rettungszeichen)
+    max_horizontal_zum_punkt_mm: 2000
+    # Die vorliegende §4.1.2-Extraktion nennt TREPPEN, nicht allgemeine
+    # Niveauänderungen. Der Auslöser stammt aus der realen LB.
+    norm_ref: MANUELL_PRUEFEN
+    beleg: LB
+    lux_anforderung:
+      norm_wert: null
+      norm_status: MANUELL_PRUEFEN
+      lb_typisch: null
+      lb_quelle: "LBVorgabe.rz_stellen enthält 'niveauaenderung'"
+    cad_symbol_beleg: null
+    datenquellen: [architektur_dxf_kuenftig, manuell]
+    review_erforderlich: true
+
+# ── Raum-Eigenschaften: gehören NICHT in das Punkt-Modell ──────────────────
+raum_attribute:
+
+  - attribut: ist_barrierefrei
+    typ: bool
+    default: false
+    aktiviert_regeln: [SL-10-BARRIEREFREIES-WC]
+    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.12"
+    beleg: BELEGT
+    begruendung: >
+      Eigenschaft des RAUMS, nicht einer Stelle: die Antipanikbeleuchtung gilt für
+      die Toilette als Ganzes. Die Raumerkennung vergibt heute WC, kann aber
+      barrierefrei nicht unterscheiden.
+    datenquellen: [architektur_dxf_kuenftig, manuell]
+
+  - attribut: besondere_gefaehrdung
+    typ: bool
+    default: false
+    aktiviert_regeln: [SL-11-BESONDERE-GEFAEHRDUNG]
+    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.13"
+    beleg: BELEGT
+    begruendung: >
+      §4.4.1 knüpft an den ARBEITSPLATZ/die Aufgabe an, nicht an einen Punkt: der
+      geforderte Wert (10 % des Wartungswertes, mind. 15 lx) gilt für die
+      Aufgabenfläche. Ein Punkt-Modell könnte das nicht ausdrücken.
+    offen: >
+      Gefährdungszonen, die nur einen TEIL eines Raumes betreffen, sind mit einem
+      Raum-Flag nicht abbildbar → bleibt MANUELL_PRUEFEN.
+    datenquellen: [manuell]
+
+# ── Woher eine Sonderstelle kommen kann ────────────────────────────────────
+# Ehrlichkeits-Regel: `erkannt_heute: false` überall dort, wo es keinen erprobten
+# Parser gibt. Nichts wird als automatisch erkennbar markiert, nur weil es
+# plausibel klingt.
+datenquellen:
+
+  architektur_dxf_heute:
+    beschreibung: "Leerer Architekturplan, wie er heute geparst wird"
+    erkannt_heute: false
+    befund: >
+      Gegengeprüft an Mollgasse EG und 1KG (2026-08-31): keine Feuerlöscher-,
+      Hydranten-, Erste-Hilfe- oder Melder-Symbole. Die wenigen Treffer sind
+      Fließtext-Anmerkungen ohne Position. Der Architekturplan ist KEINE Quelle.
+
+  architektur_dxf_kuenftig:
+    beschreibung: "Architekturplan, falls die Erkennung erweitert wird"
+    erkannt_heute: false
+    befund: "Für Niveauänderungen denkbar (Stufen/Rampen sind Geometrie), heute nicht umgesetzt."
+
+  elektro_lb_ohne_position:
+    beschreibung: "Leistungsbeschreibung (2. Input)"
+    erkannt_heute: true
+    einschraenkung: >
+      Die LB liefert die ANFORDERUNG, nicht den ORT. `SonderLux` trägt `ort` (ein
+      Typ-Label wie 'feuerloescher') und `min_lux` — keine Koordinate. Sie kann
+      damit den Lux-Wert einer Sonderstelle setzen, aber keine Sonderstelle
+      erzeugen.
+
+  elektroplan_kuenftig:
+    beschreibung: "Bestückter Elektro-/Notbeleuchtungsplan als zusätzlicher Input"
+    erkannt_heute: false
+    befund: >
+      Fachlich die naheliegendste Quelle: professionelle Pläne führen die Symbole
+      (F001/F002/E003). Im Repo liegt aber nur die Symbol-BIBLIOTHEK, kein
+      bestückter Plan — kein Parser, kein Beleg, dass es funktioniert.
+
+  manuell:
+    beschreibung: "Angabe durch den Planer (Projektkontext / API-Eingabe)"
+    erkannt_heute: true
+    befund: >
+      Die einzige Quelle, die HEUTE tragfähig ist. Deshalb ist der Contract-
+      Vorschlag so geschnitten, dass er ohne Parser nutzbar ist.
+
+# ── Beobachtet, aber ohne Regel — bewusst NICHT aufgenommen ────────────────
+beobachtet_ohne_regel:
+  - symbol: "din_Notrufstelle_E004 / ISO7010_RZ_Notrufsprechstelle"
+    fundort: "din_support_ReMi_Barawitzkagasse_28.04.2026.dxf"
+    warum_nicht: >
+      Eine Notrufsprechstelle ist plausibel eine „Meldeeinrichtung" im Sinne von
+      §4.1.2, aber keine Regel der Matrix braucht sie heute. Aufnahme erst, wenn
+      eine Regel sie fordert — sonst wäre es ein erfundener Typ.

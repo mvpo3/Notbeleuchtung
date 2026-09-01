@@ -43,8 +43,12 @@ committen, Zeile hier updaten, 3-Owner-Approval (CODEOWNERS auf `contracts/**`).
 | Selman echt: Parser-Port → `raumerkennung/_port/` + `ArchitekturRaumProvider` | 4 | Selman | TODO | — |
 | Grüner E2E (echte 4OG-DXF) + dünne FastAPI `POST /plan` | 5 | alle | TODO | — |
 | **Chat-Interface** (Plan-Upload → Notbeleuchtungsplan zurück) — Nordstern | 6 | Frontend-Owner offen | TODO | — |
-| Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | TODO (Contract steht, PR #14; Tabelle 6 extrahiert) | 2026-08-30 |
-| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | **WIP** — fail-closed Implementierung + API-Naht (`LbTextProvider`/`parse_lb`) fertig auf `enis/lb-parser`, rebased auf `9d3c080`, PR offen. Follow-up: `pipeline.py` fängt `LbReviewRequired` nicht ab (s. `docs/COORDINATION.md`) | 2026-08-31 |
+| Enis: OIB-Resolver — `data/oib_rl2_tabelle6.yaml` + `normwissen/oib/` erfüllt `OibProvider` | — | **Enis** | **MERGED** (PR #32 → `564b7e9`). Offen: `ProviderBundle.oib` ist noch nicht verdrahtet (Hauptengine) | 2026-08-30 |
+| Enis: LB-Parser — `normwissen/lb/` erfüllt `LBProvider.parse_lb` | — | **Enis** | **MERGED** (PR #60 → `758b9f9`) — fail closed, API-Naht `LbTextProvider`/`parse_lb`, Raumtyp-Vokabular synchronisiert, an 4 realen LB-PDFs gegengeprüft. Follow-up `lb_review` an der API-Grenze: **MERGED** (PR #67) | 2026-08-31 |
+
+| Enis: Placement-Decision-Matrix — `data/platzierung_regeln.yaml` + `PlatzierungsRegelwerk` | — | **Enis** | **DONE** — 25 Regeln + 4 Hard Stops, 27 Domain-Tests, 7 Ground-Truth-Fälle. Track-A-Vorrat + Contract-Vorschlag in `docs/PLACEMENT_DECISION_MATRIX.md` | 2026-08-31 |
+
+| Enis: Sonderstellen-Contract — Spec + Katalog + Tests | — | **Enis** (Entscheidung: 3 Owner) | **BLOCKED** — Vorschlag fertig (`docs/SPEC_SONDERSTELLEN_CONTRACT.md`), wartet auf 3-Owner-GO; schaltet 8 Placement-Regeln frei | 2026-08-31 |
 
 **Legende:** TODO · WIP · BLOCKED · DONE.
 
