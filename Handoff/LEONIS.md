@@ -4,7 +4,34 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-08-31 Session-Ende) — HIER WEITER
+## STAND (2026-09-01) — HIER WEITER
+
+**Norm-Integration Platzierung, Track A** auf Branch `leonis/norm-integration-platzierung`
+(off main `282626d`, **437 grün**, ruff clean, Schema unverändert = **kein Contract**). PR
+noch **offen** (User-GO nötig). Ziel des Auftrags: der Platzierungscode soll beim Setzen
+tatsächlich auf die Normen achten — die schon in `normwissen/data` kodierten Werte fließen
+lassen statt hardcoden:
+- **A1** `deckung.py` — Fluchtweg-`ziel_lux` aus `anf.min_lux` (norm-belegt) statt Konstante 1,0.
+- **A2** `flaechen_strategy.py` — **Antipanik verdichtet bis 0,5-lx-Nachweis** (`_antipanik_punkte`),
+  der 0,5-lx-Norm-Wert war vorher tot. Kleine Räume unverändert, große Halle verdichtet (Cap).
+- **A3** `hauptengine/validierung.py` — **2-Leuchten-Redundanz je Fluchtweg-Abschnitt** (EN 50172),
+  Warnung (kein Hard-Fail). Mollgasse EG erfüllt sie (alle 103 Abschnitte ≥ 2).
+- **A4** `lux.py` — Fallback-Höhe 2,5→2,0 m (EN-Mindesthöhe), produktive Aufrufer geben Norm-Höhe.
+
+**Durchstich Mollgasse EG unverändert:** 15 RZ + 21 SL, Prüfstatus **ok**. Kein Regress.
+
+**Nächste Schritte (Roadmap Track B/C, brauchen andere Owner/Contract):**
+- **Track B** (Enis-Daten + `NormRegelwerk`-Contract, 3-Owner): Gleichmäßigkeit Ud als Feld
+  (statt Hardcode `1/40`), Flächen-Trigger (Antipanik ≥ 60 m², WC > 8 m²), Arbeitsplatz-Lux
+  15/5 lx + neuer Raumtyp, Umschaltzeit als Norm-Default. Reihenfolge: Contract-Feld-Prep
+  (Leonis) → Approval → Enis-Werte → Leonis-Konsum.
+- **Track C** (Selman-RaumModell + Contract): Pflicht-Platzierungspunkte (Aufzug/Erste-Hilfe/
+  Löschgerät/BMZ) als POIs → `anker_strategy` setzt Pflicht-RZ; reicheres Symbol-Datenmodell #6.
+
+**Nebenbefund (an Enis gemeldet, s. COORDINATION):** PR #60 war schon gemergt (`8eaa1f8`),
+`LbReviewRequired→HTTP 500` längst erledigt (pipeline fängt `LbFehler`, api mappt 422).
+
+## STAND (2026-08-31 Session-Ende)
 
 **Alles auf `main` (166c234), 434 Tests grün, ruff clean, Drift-Gate sauber, kein
 Contract berührt.** Mollgasse EG ist ein **voll-konformer Plan** (Prüfbericht **ok**:
