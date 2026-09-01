@@ -24,7 +24,11 @@ pytest.importorskip("matplotlib")
 import matplotlib.image as mpimg
 import numpy as np
 
-from notbeleuchtung.hauptengine.contracts import PlatzierungsErgebnis, RaumModell
+from notbeleuchtung.hauptengine.contracts import (
+    Platzierung,
+    PlatzierungsErgebnis,
+    RaumModell,
+)
 from notbeleuchtung.hauptengine.render import dxf_zu_pdf, render_dxf
 from notbeleuchtung.symbols import library
 
@@ -66,10 +70,8 @@ def _rgb(pfad: Path) -> np.ndarray:
     return arr * 255.0 if arr.max() <= 1.0 else arr
 
 
-def test_visual_golden_4og(tmp_path):
-    png = _render_png(tmp_path)
-    golden = GOLDEN / "4og_notbeleuchtung.png"
-
+def _assert_matches_golden(png: Path, golden: Path, name: str) -> None:
+    """Pixel-Diff gegen die Baseline (oder schreibt sie bei NOTBEL_UPDATE_GOLDEN neu)."""
     if os.environ.get("NOTBEL_UPDATE_GOLDEN") or not golden.exists():
         golden.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(png, golden)
@@ -79,7 +81,7 @@ def test_visual_golden_4og(tmp_path):
 
     def _overlay(diff: np.ndarray) -> Path:
         FAILURES.mkdir(parents=True, exist_ok=True)
-        pfad = FAILURES / "4og_notbeleuchtung_diff.png"
+        pfad = FAILURES / f"{name}_diff.png"
         mx = float(diff.max()) or 1.0
         mpimg.imsave(str(pfad), (diff / mx).clip(0, 1))
         return pfad
@@ -102,3 +104,64 @@ def test_visual_golden_4og(tmp_path):
             f"Sicht-Abweichung: {anteil * 100:.3f}% Pixel > {PIXEL_SCHWELLE:g} "
             f"(erlaubt {ANTEIL_MAX * 100:g}%). Diff: {pfad}"
         )
+
+
+def test_visual_golden_4og(tmp_path):
+    png = _render_png(tmp_path)
+    _assert_matches_golden(png, GOLDEN / "4og_notbeleuchtung.png", "4og_notbeleuchtung")
+
+
+def _platzierung_mix() -> PlatzierungsErgebnis:
+    """Realistische Misch-Szene für die Sicht-Golden — deckt die Render-Pfade ab, die der
+    faithful-5-RZ-4og-Golden NICHT trägt und hinter denen C2 (Doppelpfeil) + der
+    Belegungs-Overflow versteckt waren: RZ mit `richtung="gerade"` (beidseitiger
+    Doppelpfeil), Sicherheitsleuchte + Antipanik als eigene Symbole, und eine
+    Belegungsliste mit BL-Schaltungsart über zwei Kreise."""
+    q = "ÖNORM EN 1838:2013 §4.2.1"
+
+    def rz(xy, richtung, key, kreis):
+        return Platzierung(xy_mm=xy, catalog_key=key, kind="rz", richtung=richtung,
+                           rotation_deg=0.0, height_mm=2400.0, circuit_hint=kreis, norm_quelle=q)
+
+    def sl(xy, kreis):
+        return Platzierung(xy_mm=xy, catalog_key="sicherheitsleuchte_aufheller",
+                           kind="sicherheitsleuchte", richtung="gerade", height_mm=2400.0,
+                           circuit_hint=kreis, norm_quelle=q)
+
+    def ap(xy, kreis):
+        return Platzierung(xy_mm=xy, catalog_key="antipanik_leuchte", kind="antipanik",
+                           richtung="gerade", height_mm=2400.0, circuit_hint=kreis, norm_quelle=q)
+
+    plz = [
+        rz((-60000.0, 20000.0), "gerade", "notlicht_ks_stiege", "AGV-A-F13"),  # Doppelpfeil
+        rz((-45000.0, 20000.0), "rechts", "notlicht_ks_stiege_rechts", "AGV-A-F13"),
+        sl((-70000.0, 33000.0), "AGV-A-F13"),
+        sl((-52000.0, 33000.0), "AGV-B-F13"),
+        sl((-40000.0, 6000.0), "AGV-B-F13"),
+        ap((-73000.0, 34000.0), "AGV-B-F13"),
+        ap((-37000.0, 7000.0), "AGV-B-F13"),
+    ]
+    return PlatzierungsErgebnis(floor="4OG", platzierungen=plz)
+
+
+def test_visual_golden_mix(tmp_path):
+    import ezdxf
+
+    raum = RaumModell.model_validate(
+        json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    )
+    dxf = tmp_path / "mix.dxf"
+    render_dxf(_platzierung_mix(), raum, dxf)
+
+    # Selbst-validierend (kein blindes Golden): die Misch-Szene MUSS die Pfade wirklich
+    # ausüben, sonst wacht der Pixel-Golden über nichts. 7 Platzierungen → 8 INSERTs
+    # (die eine „gerade"-RZ = Doppelpfeil = 2 Blocks, alle übrigen je 1).
+    doc = ezdxf.readfile(str(dxf))
+    assert len(doc.modelspace().query("INSERT")) == 8
+    belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
+    assert len(belegung) == 1
+    assert "(DL)" in belegung[0].text and "(BL)" in belegung[0].text  # RZ=DL, SL/AP=BL
+
+    png = tmp_path / "mix.png"
+    dxf_zu_pdf(dxf, png, dpi=100)
+    _assert_matches_golden(png, GOLDEN / "mix_notbeleuchtung.png", "mix_notbeleuchtung")
