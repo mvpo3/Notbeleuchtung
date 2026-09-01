@@ -240,3 +240,44 @@ def test_run_haengt_pruefung_an(tmp_path):
     p = out.render_summary["pruefung"]
     assert p["status"] in ("ok", "warnung", "fehler")
     assert isinstance(p["befunde"], list) and p["befunde"]
+
+
+# ── Track B: Umschaltzeit-Befund (Norm-Höchstwert vs. LB-Systemvorgabe) ──────────
+def _norm_mit_umschaltzeit(sekunden: float):
+    from fakes import FakeNormProvider
+    fake = FakeNormProvider()
+    fake._snapshot.regeln[0].anforderung.umschaltzeit_max_s = sekunden
+    return fake
+
+
+def _umschalt_befund(befunde):
+    return [b for b in befunde if "Umschaltzeit" in b.regel]
+
+
+def test_umschaltzeit_lb_ueber_norm_ist_warnung():
+    lb = LBVorgabe(umschaltzeit_max_s=15.0)
+    befunde = pruefe(_raum("s1"), _erg(_rz()), lb, norm=_norm_mit_umschaltzeit(5.0))
+    b = _umschalt_befund(befunde)
+    assert len(b) == 1 and b[0].status == "warnung"
+
+
+def test_umschaltzeit_lb_unter_norm_ist_ok():
+    lb = LBVorgabe(umschaltzeit_max_s=1.0)
+    befunde = pruefe(_raum("s1"), _erg(_rz()), lb, norm=_norm_mit_umschaltzeit(5.0))
+    b = _umschalt_befund(befunde)
+    assert len(b) == 1 and b[0].status == "ok"
+
+
+def test_umschaltzeit_ohne_norm_wert_uebersprungen():
+    from fakes import FakeNormProvider
+    lb = LBVorgabe(umschaltzeit_max_s=15.0)
+    # Norm ohne umschaltzeit_max_s (Enis-Werte noch offen) → Regel schweigt (kein Fehlalarm).
+    befunde = pruefe(_raum("s1"), _erg(_rz()), lb, norm=FakeNormProvider())
+    assert _umschalt_befund(befunde) == []
+
+
+def test_umschaltzeit_ohne_norm_arg_uebersprungen():
+    # Bestehende Aufrufer ohne norm-Argument bleiben unberührt (keine Umschaltzeit-Regel).
+    lb = LBVorgabe(umschaltzeit_max_s=15.0)
+    befunde = pruefe(_raum("s1"), _erg(_rz()), lb)
+    assert _umschalt_befund(befunde) == []
