@@ -1,10 +1,10 @@
-"""zirkulation — 09-WEG-Geometrie → Fluchtweg-Segmente + Knoten/Kanten-Graph.
+"""zirkulation — Fluchtweg-Geometrie → Fluchtweg-Segmente + Knoten/Kanten-Graph.
 
-Die geplante Fluchtweg-Zirkulation liegt als LINE/LWPOLYLINE auf den ``09-WEG*``-
-Layern. Daraus entstehen:
+Die geplante Fluchtweg-Zirkulation liegt als LINE/LWPOLYLINE auf den Fluchtweg-
+Layern der jeweiligen CAD-Familie (``FLUCHTWEG_PATTERN``). Daraus entstehen:
 - ``FluchtwegSegment`` je Polylinie (mit Länge + grobem ``reason``),
 - ein ``ZirkulationsGraph`` (Knoten = gesnappte Endpunkte, Kanten = Segmentstücke),
-- ``Ausgang``-Objekte an Weg-Enden nahe der Außenkante (grad-1-Knoten).
+Ausgänge entstehen NICHT hier, sondern in ``ausgaenge.py``.
 
 Rein topologisch; Norm-Urteile (Notausgang-Pflicht) folgen später.
 """
@@ -22,9 +22,8 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import (
     ZirkulationsGraph,
 )
 
-from .dxf_load import DxfPlan
+from .dxf_load import FLUCHTWEG_PATTERN, DxfPlan
 
-WEG_PREFIX = ("09-WEG",)
 _SNAP_MM = 100.0        # Endpunkte in diesem Raster fallen zusammen
 _LONG_RUN_MM = 5000.0
 
@@ -36,12 +35,18 @@ def _snap(p: XY) -> XY:
 
 
 def _weg_polylinien(plan: DxfPlan) -> list[list[XY]]:
-    """LINE/LWPOLYLINE der 09-WEG-Layer als Punktlisten (mm)."""
+    """LINE/LWPOLYLINE der Fluchtweg-Layer als Punktlisten (mm).
+
+    Layer-Muster statt fixem Prefix — Mollgasse ``09-WEG``, Fischamender
+    ``A_Fluchtweg`` (``FLUCHTWEG_PATTERN``, geteilt mit ``geometrie_typ``).
+    Degenerierte Polylinien (kürzer als das Snap-Raster) fallen raus: sie
+    erzeugen sonst Knoten ohne Kante.
+    """
     out: list[list[XY]] = []
-    for e in plan.entities(WEG_PREFIX):
+    for e in plan.entities_matching(FLUCHTWEG_PATTERN):
         if e.dxftype() in ("LINE", "LWPOLYLINE", "POLYLINE"):
             pts = plan.entity_points(e)
-            if len(pts) >= 2:
+            if len(pts) >= 2 and _laenge(pts) >= _SNAP_MM:
                 out.append(pts)
     return out
 
@@ -59,10 +64,10 @@ def _reason(pts: list[XY]) -> str:
 
 
 def zirkulation_aus_dxf(plan: DxfPlan) -> ZirkulationsGraph:
-    """Fluchtweg-Segmente + Knoten/Kanten-Graph aus den 09-WEG-Layern.
+    """Fluchtweg-Segmente + Knoten/Kanten-Graph aus den Fluchtweg-Layern.
 
-    Ausgänge werden NICHT hier bestimmt (die 09-WEG-Annotation endet am
-    Planrahmen, nicht am Ausgang) — sie kommen aus den Außentüren (``tueren``).
+    Ausgänge werden NICHT hier bestimmt (die Weg-Annotation endet am Planrahmen,
+    nicht am Ausgang) — dafür ist ``ausgaenge.ausgaenge_ermitteln`` zuständig.
     """
     polylinien = _weg_polylinien(plan)
 

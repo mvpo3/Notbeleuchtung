@@ -27,8 +27,21 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import BBox
 WALL_PATTERN = re.compile(r"02-(?:TWA|ZWA|WDA)|A_Wa?ende|A_Wand|(?<!\d)1[123]0 Wand",
                           re.IGNORECASE)
 
-# Rückwärts-kompatibel (Mollgasse-Tests/Direktnutzung).
-WALL_PREFIXES: tuple[str, ...] = ("02-TWA", "02-ZWA", "02-WDA")
+# Fluchtweg-Layer über Projekt-Familien erkennen (eine Definition fürs ganze
+# Package — vorher divergierten zirkulation.py und geometrie_typ.py):
+#   Mollgasse:    09-WEG-G00-Leg-M0 …
+#   Fischamender: A_Fluchtweg
+#   ArchiCAD-num: „681 Fluchtlinien…" (Herrenholz; auch mit ``Neu_``-Präfix)
+# Barawitzka trägt gar keinen Fluchtweg-Layer — dort bleibt die Zirkulation leer.
+FLUCHTWEG_PATTERN = re.compile(r"09-WEG|A_Fluchtweg|Fluchtweg|Fluchtlinie",
+                               re.IGNORECASE)
+
+# Treppen-/Stiegenhaus-Layer je Familie. Nur Mollgasse zeichnet die Stiege als
+# benannten Block (``STIEGE``); die anderen Familien legen sie auf einem eigenen
+# Layer ab, ohne Blocknamen-Hinweis:
+#   Fischamender: S-STRS (+ -ANNO_/-MBND)
+#   ArchiCAD-num: „410 Treppe" / „0._EG PP_2_410 Treppe" (Barawitzka/Herrenholz)
+STIEGE_PATTERN = re.compile(r"S-STRS|Treppe|Stiege", re.IGNORECASE)
 
 # $INSUNITS-Code → Faktor auf mm. 4=mm, 5=cm, 6=m; Rest → 1.0 (mm-Annahme).
 _INSUNITS_TO_MM: dict[int, float] = {4: 1.0, 5: 10.0, 6: 1000.0}
@@ -140,6 +153,12 @@ class DxfPlan:
         """Entities auf den erkannten Wand-Layern (familien-agnostisch)."""
         for e in self.space:
             if e.dxf.layer in self.wall_layers:
+                yield e
+
+    def entities_matching(self, pattern: re.Pattern[str]):
+        """Entities, deren Layername das Muster trifft (familien-agnostisch)."""
+        for e in self.space:
+            if pattern.search(e.dxf.layer):
                 yield e
 
     def _scale(self, p) -> XY:

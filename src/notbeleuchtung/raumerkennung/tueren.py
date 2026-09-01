@@ -28,6 +28,10 @@ _OEFFNUNG = re.compile(r"ÖFFNUNG|OEFFNUNG", re.IGNORECASE)
 _INT = re.compile(r"\d+")
 
 _ARC_MIN_MM, _ARC_MAX_MM = 600.0, 1300.0  # Türblatt-Schwenkbogen-Radius
+# Gitterweite fürs Zusammenfassen doppelt gezeichneter Türen. Kleiner als ein
+# Türblatt (600 mm), damit zwei echte Türen nie verschmelzen; groß genug für die
+# Quasi-Duplikate (<20 cm) aus dem F1-Durchstich.
+_DEDUP_MM = 300.0
 
 
 def _ist_tuer_block(name: str) -> bool:
@@ -81,11 +85,44 @@ def _arc_tueren(plan: DxfPlan) -> list[Tuer]:
     return out
 
 
+def _dedup(tueren: list[Tuer], radius_mm: float = _DEDUP_MM) -> list[Tuer]:
+    """Türen zusammenfassen, die dieselbe Öffnung meinen (Board-Ticket B1).
+
+    Eine Tür wird oft zweimal gezeichnet — Doppeltür = zwei Schwenkbögen,
+    Fischamender setzt zusätzlich zwei INSERTs je Türblatt (102 statt ~60).
+    Positionen werden auf ein ``radius_mm``-Gitter gehasht; je belegter Zelle
+    (inkl. der 8 Nachbarzellen) überlebt der Eintrag mit der größten Nennbreite,
+    weil die schmale Dublette meist die Breite 0 trägt.
+    """
+    belegt: dict[tuple[int, int], Tuer] = {}
+    for t in sorted(tueren, key=lambda t: -t.breite_mm):
+        zx, zy = int(t.xy_mm[0] // radius_mm), int(t.xy_mm[1] // radius_mm)
+        nachbar = any(
+            (zx + dx, zy + dy) in belegt
+            for dx in (-1, 0, 1)
+            for dy in (-1, 0, 1)
+        )
+        if not nachbar:
+            belegt[(zx, zy)] = t
+    return [
+        t.model_copy(update={"id": f"tuer_{i}"})
+        for i, t in enumerate(belegt.values(), start=1)
+    ]
+
+
 def tueren_aus_dxf(plan: DxfPlan) -> list[Tuer]:
-    """Türen aller Familien → ``Tuer``. Benannte Blöcke zuerst; sonst Schwenkbögen."""
-    out = _block_tueren(plan)
-    if not out:
-        out = _arc_tueren(plan)
+    """Türen aller Familien → ``Tuer``. Benannte Blöcke zuerst; sonst Schwenkbögen.
+
+    Manche Pläne setzen die Tür-Blöcke ohne Transform ab: Herrenholz trägt 140
+    ``Öffnung_N``-INSERTs, die **alle auf (0,0)** sitzen — die Geometrie steckt in
+    der Block-Definition. Solche Blöcke tragen keine Positionsinformation, und
+    F1 braucht die Position. Fallen viele Block-Türen auf einen einzigen Punkt
+    zusammen, sind die Schwenkbögen die bessere Quelle.
+    """
+    roh = _block_tueren(plan)
+    out = _dedup(roh)
+    if not out or len(out) < 2 < len(roh):
+        out = _dedup(_arc_tueren(plan)) or out
     return out
 
 

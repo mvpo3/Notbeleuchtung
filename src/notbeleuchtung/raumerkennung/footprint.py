@@ -120,9 +120,16 @@ def _doppeltuer_mittelpunkte(plan: DxfPlan) -> list[XY]:
     return mitten
 
 
-def hauptausgaenge(plan: DxfPlan, bounds: BBox) -> list[Ausgang]:
-    """Hauptausgänge = Doppeltüren an der Gebäude-Außenkante (``final_exit``)."""
-    umriss = gebaeude_umriss(plan, bounds)
+def hauptausgaenge(
+    plan: DxfPlan, bounds: BBox, umriss: Umriss | None = None
+) -> list[Ausgang]:
+    """Hauptausgänge = Doppeltüren an der Gebäude-Außenkante (``final_exit``).
+
+    ``umriss`` kann vorberechnet übergeben werden (``ausgaenge`` braucht ihn für
+    die weiteren Kaskaden-Stufen ohnehin) — spart das teure Raster ein zweites Mal.
+    """
+    if umriss is None:
+        umriss = gebaeude_umriss(plan, bounds)
     if umriss is None:
         return []
     out: list[Ausgang] = []
