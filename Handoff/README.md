@@ -9,6 +9,11 @@ Damit dein Claude sofort weiß, wer du bist und was zu tun ist:
 - Leonis → [`Handoff/LEONIS.md`](LEONIS.md)  (Platzierung)
 - Enis   → [`Handoff/ENIS.md`](ENIS.md)      (Normwissen + LB)
 
+**Wenn jemand gepusht hat:** sag deinem Claude **„Sync"** →
+[`Handoff/SYNC.md`](SYNC.md). Sichert zuerst deine unversionierte Arbeit, zeigt dir
+was hereinkommt, integriert, fährt die Tests und pflegt Board und Handoff nach.
+Nichts geht verloren, alles bleibt nachvollziehbar.
+
 ## Für alle gleich (dein Claude soll das kennen)
 - **Was wir bauen:** Engine — leerer Architekturplan (DXF) **+ Leistungsbeschreibung
   (LB)** → fertiger ÖNorm-Notbeleuchtungsplan (EN 1838). Nordstern: Chat-Interface
