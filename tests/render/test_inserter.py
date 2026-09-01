@@ -122,3 +122,21 @@ def test_gerade_xdata_nur_auf_primaerem_pfeil():
     assert getaggt[0] is primary
     xdata = primary.get_xdata("NOTBELEUCHTUNG")
     assert (1000, "stromkreis=AGV-A-F13") in [(c, v) for c, v in xdata]
+
+
+@pytest.mark.parametrize(
+    "catalog_key,kind",
+    [("sicherheitsleuchte_aufheller", "sicherheitsleuchte"), ("antipanik_leuchte", "antipanik")],
+)
+def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
+    # Sicherheitsleuchte + Antipanik tragen ebenfalls richtung="gerade" (= keine
+    # Richtung), sind aber KEINE Pfeil-Zeichen → EIN eigenes Katalog-Symbol, nicht
+    # zwei RZ-Richtungspfeile (Regression: Doppelpfeil-Gate darf nur für kind=="rz").
+    doc = ezdxf.new("R2018")
+    mapping = library.load_mapping()
+    p = Platzierung(xy_mm=(0.0, 0.0), catalog_key=catalog_key, kind=kind, richtung="gerade")
+    ins = inserter.insert_platzierung(doc, p)
+
+    inserts = doc.modelspace().query("INSERT")
+    assert len(inserts) == 1
+    assert ins.dxf.name == mapping[catalog_key]["block_name"]
