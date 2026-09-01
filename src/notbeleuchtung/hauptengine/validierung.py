@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 
-from .contracts import LBVorgabe, PlatzierungsErgebnis, RaumModell
+from .contracts import LBVorgabe, NormProvider, PlatzierungsErgebnis, RaumModell
 
 _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
@@ -76,8 +76,26 @@ class Befund:
     detail: str
 
 
+def _norm_umschaltzeit_max_s(norm: NormProvider) -> float | None:
+    """Strengste in der Norm hinterlegte max. Umschaltzeit (per Anforderung, Track B).
+
+    `None`, wenn die Norm (noch) keinen Wert liefert (Enis-Daten offen) → die Regel wird
+    übersprungen. `min`, weil der schärfste Norm-Wert die Obergrenze setzt.
+    """
+    werte = [
+        r.anforderung.umschaltzeit_max_s
+        for r in norm.regelwerk_snapshot().regeln
+        if r.anforderung.umschaltzeit_max_s is not None
+    ]
+    return min(werte) if werte else None
+
+
 def pruefe(
-    raum: RaumModell, platzierung: PlatzierungsErgebnis, lb: LBVorgabe | None = None
+    raum: RaumModell,
+    platzierung: PlatzierungsErgebnis,
+    lb: LBVorgabe | None = None,
+    *,
+    norm: NormProvider | None = None,
 ) -> list[Befund]:
     """Prüft die Platzierung gegen die aus den Contracts ableitbaren Norm-Regeln."""
     plzg = platzierung.platzierungen
@@ -221,6 +239,21 @@ def pruefe(
     if lb is not None:
         befunde.extend(_lb_konformitaet(raum, plzg, lb))
 
+    # 11. Umschaltzeit auf die Sicherheitsstromversorgung: die LB-Systemvorgabe darf den
+    #     Norm-Höchstwert nicht überschreiten (EN 1838 / EN 50172). Braucht Norm UND LB —
+    #     fehlt ein Wert (Enis-Daten noch offen / keine LB), wird die Regel übersprungen.
+    if norm is not None and lb is not None and lb.umschaltzeit_max_s is not None:
+        norm_max = _norm_umschaltzeit_max_s(norm)
+        if norm_max is not None:
+            verletzt = lb.umschaltzeit_max_s > norm_max
+            befunde.append(Befund(
+                "Umschaltzeit ≤ Norm-Höchstwert (EN 1838)",
+                "warnung" if verletzt else "ok",
+                f"LB fordert {lb.umschaltzeit_max_s:g} s, Norm erlaubt max {norm_max:g} s"
+                if verletzt
+                else f"LB-Umschaltzeit {lb.umschaltzeit_max_s:g} s ≤ Norm-Max {norm_max:g} s",
+            ))
+
     return befunde
 
 
@@ -282,10 +315,14 @@ def gesamtstatus(befunde: list[Befund]) -> str:
 
 
 def pruefbericht(
-    raum: RaumModell, platzierung: PlatzierungsErgebnis, lb: LBVorgabe | None = None
+    raum: RaumModell,
+    platzierung: PlatzierungsErgebnis,
+    lb: LBVorgabe | None = None,
+    *,
+    norm: NormProvider | None = None,
 ) -> dict:
     """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary."""
-    befunde = pruefe(raum, platzierung, lb)
+    befunde = pruefe(raum, platzierung, lb, norm=norm)
     return {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],

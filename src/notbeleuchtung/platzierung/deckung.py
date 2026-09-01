@@ -18,7 +18,7 @@ from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, Raum
 
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .geometry import _bbox
-from .lux import LuxErgebnis, lux_raster
+from .lux import LuxErgebnis, lux_raster, ud_min_aus_norm
 from .mittellinie import leuchten_auf_linie
 
 _KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
@@ -52,12 +52,13 @@ def verdichte_fluchtweg(
         anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
         bounds = _bbox(r.polygon_mm)
         h_m = anf.montagehoehe_mm / 1000.0
+        ud_min = ud_min_aus_norm(anf.gleichmaessigkeit_max)
         abstand = _START_ABSTAND_MM
         kandidaten = leuchten_auf_linie(r.polygon_mm, abstand)
         for _ in range(_MAX_HALBIERUNGEN):
             res = lux_raster(
                 kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                ziel_lux=anf.min_lux,
+                ziel_lux=anf.min_lux, ud_min=ud_min,
             )
             if res.erfuellt_min and res.erfuellt_ud:
                 break

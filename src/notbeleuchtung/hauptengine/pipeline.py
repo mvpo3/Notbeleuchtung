@@ -121,7 +121,7 @@ def run(
         except LbFehler as e:
             lb_review = {"status": "review_erforderlich", "meldung": str(e)}
     platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
-    pruef = pruefbericht(raum, platzierung, lb)
+    pruef = pruefbericht(raum, platzierung, lb, norm=bundle.norm)
     if out_path is not None:
         render_summary = render_dxf(platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf)
     else:
