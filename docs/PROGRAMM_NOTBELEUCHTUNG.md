@@ -23,7 +23,7 @@ Backend (Raumerkennung/Platzierung/Normwissen). Entscheiden, wenn Engine steht.
 | Contract | Owner-Produzent | Konsumenten | Version | Schema | Eingefroren |
 |----------|-----------------|-------------|---------|--------|-------------|
 | **RaumModell** | Selman | Leonis, Render | 1.0.0 | `contracts/schema/raum_modell.schema.json` | 2026-08-27 (Slice 0) |
-| **NormRegelwerk** | Enis | Leonis | 1.0.0 | `contracts/schema/norm_regelwerk.schema.json` | 2026-08-27 (Slice 0) |
+| **NormRegelwerk** | Enis | Leonis | 1.1.0 | `contracts/schema/norm_regelwerk.schema.json` | 2026-09-01 (+Track-B-Felder, PR-prep) |
 | **PlatzierungsErgebnis** | Leonis | Render | 1.1.0 | `contracts/schema/platzierung_ergebnis.schema.json` | 2026-08-30 (+lb_quelle) |
 | **ProjektKontext** | Enis (Input) | OibProvider | 1.0.0 | `contracts/schema/projekt_kontext.schema.json` | 2026-08-30 (OIB-Grundlage) |
 | **OibBefund** | OibProvider | Hauptengine | 1.0.0 | `contracts/schema/oib_ergebnis.schema.json` | 2026-08-30 (OIB-Grundlage) |

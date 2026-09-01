@@ -1,5 +1,36 @@
 {
   "$defs": {
+    "ArbeitsplatzLux": {
+      "description": "Arbeitsplätze mit besonderer Gefährdung (EN 1838 §4.4) — erhöhte Lux-Anforderung.\n\nv1.1.0 (Track B). Werte aus `normwissen/data` (Enis); None = kein Norm-Wert.",
+      "properties": {
+        "min_lux": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Lux"
+        },
+        "min_lux_absolut": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Lux Absolut"
+        }
+      },
+      "title": "ArbeitsplatzLux",
+      "type": "object"
+    },
     "ErkennungsweiteParameter": {
       "properties": {
         "z_hinterleuchtet": {
@@ -14,6 +45,37 @@
         }
       },
       "title": "ErkennungsweiteParameter",
+      "type": "object"
+    },
+    "FlaechenSchwellen": {
+      "description": "Flächenbasierte Trigger (EN 1838 §4.3 / OIB) — welche Fläche welche Pflicht auslöst.\n\nv1.1.0 (Track B). Werte kommen aus `normwissen/data` (Enis); None = Norm liefert\n(noch) keine Schwelle. Konsument (`flaechen_strategy`) fragt sie statt sie zu raten.",
+      "properties": {
+        "antipanik_min_m2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Antipanik Min M2"
+        },
+        "wc_sanitaer_min_m2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wc Sanitaer Min M2"
+        }
+      },
+      "title": "FlaechenSchwellen",
       "type": "object"
     },
     "NormAnforderung": {
@@ -66,6 +128,30 @@
           "title": "Dauer Min",
           "type": "integer"
         },
+        "gleichmaessigkeit_max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gleichmaessigkeit Max"
+        },
+        "umschaltzeit_max_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Umschaltzeit Max S"
+        },
         "quelle": {
           "default": "",
           "title": "Quelle",
@@ -112,7 +198,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.0.0",
+      "default": "1.1.0",
       "title": "Contract Version",
       "type": "string"
     },
@@ -123,6 +209,12 @@
     },
     "erkennungsweite": {
       "$ref": "#/$defs/ErkennungsweiteParameter"
+    },
+    "flaechen_schwellen": {
+      "$ref": "#/$defs/FlaechenSchwellen"
+    },
+    "arbeitsplatz_lux": {
+      "$ref": "#/$defs/ArbeitsplatzLux"
     },
     "regeln": {
       "items": {
