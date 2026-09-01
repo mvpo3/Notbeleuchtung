@@ -4,32 +4,44 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-01) — HIER WEITER
+## STAND (2026-09-01, Abend) — HIER WEITER
 
-**Norm-Integration Platzierung, Track A** auf Branch `leonis/norm-integration-platzierung`
-(off main `282626d`, **437 grün**, ruff clean, Schema unverändert = **kein Contract**). PR
-noch **offen** (User-GO nötig). Ziel des Auftrags: der Platzierungscode soll beim Setzen
-tatsächlich auf die Normen achten — die schon in `normwissen/data` kodierten Werte fließen
-lassen statt hardcoden:
+**Track B (Konsumption) ist auf `main`** (`f92010f`, PR #80 gemergt; PR #72 = `NormRegelwerk`
+v1.1.0 davor gemergt `8d6fe23`). **513 grün**, ruff clean, Schema kein Drift = **kein Contract**.
+Leonis liest jetzt die neuen abfragbaren Norm-Felder — **defensiv**: solange Enis' Werte `None`
+sind, ist der Plan bit-identisch (Mollgasse EG unverändert **15 RZ + 21 SL, Prüfstatus ok**):
+- **A** `lux.py` — `lux_raster` bekommt `ud_min`; `deckung.py` + `flaechen_strategy.py` leiten ihn
+  über `ud_min_aus_norm(anf.gleichmaessigkeit_max)` ab (Hardcode `1/40` weg). Aktiv → Antipanik 1:10.
+- **B** `flaechen_strategy.py` — liest `regelwerk_snapshot().flaechen_schwellen`: Fläche ≥
+  `antipanik_min_m2` / WC ≥ `wc_sanitaer_min_m2` → antipanik-pflichtig (EN 1838 §4.3). Reiner
+  **Zusatz**-Trigger; Antipanik-Parameter aus Enis' eigener Antipanik-Regel (`_antipanik_referenz`).
+- **D** `hauptengine/validierung.py` — `pruefe(…, norm=…)` (keyword-only): Regel **Umschaltzeit ≤
+  Norm-Höchstwert** (LB `umschaltzeit_max_s` vs. strengster Norm-Wert). Pipeline reicht `bundle.norm`.
+
+### → Damit Enis & Selman weiterbauen können (NÄCHSTE Schritte)
+- **@EnisAMG — Track B aktivieren:** die Konsum-Logik steht, sie ist nur inert weil die Werte fehlen.
+  In `normwissen/data` füllen → aktiviert sich automatisch: `NormAnforderung.gleichmaessigkeit_max`
+  (**40** Fluchtweg / **10** Antipanik), `NormRegelwerk.flaechen_schwellen` (`antipanik_min_m2 ≈ 60`,
+  `wc_sanitaer_min_m2 ≈ 8`), `NormAnforderung.umschaltzeit_max_s`. Kein Contract nötig (Felder da).
+- **@polatselman — Track C (braucht Contract):** (1) neuer Raumtyp „Arbeitsplatz mit besonderer
+  Gefährdung" (EN 1838 §4.4) → schaltet die schon im Contract liegende `arbeitsplatz_lux` (15/5 lx)
+  frei; heute bewusst NICHT verdrahtet (wäre toter Code ohne den Raumtyp). (2) Pflicht-POIs
+  (Aufzug/Erste-Hilfe/Löschgerät/BMZ) → `anker_strategy` setzt Pflicht-RZ. Beides = 3-Owner.
+
+**Doku/Naht:** COORDINATION.md trägt den vollen Befund (Log-Eintrag 2026-09-01, Hinweis an Enis +
+Track-C-Blocker). Verifikations-Skript für den Regress-Check: `scratchpad/verify_mollgasse.py`
+(build_default_bundle → Mollgasse EG → RZ/SL-Zähler + Prüfstatus).
+
+## STAND (2026-09-01, früher) — Historie: Track A
+
+**Norm-Integration Platzierung, Track A** (PR #71 **gemergt**). Der Platzierungscode achtet beim
+Setzen auf die schon in `normwissen/data` kodierten Werte statt zu hardcoden:
 - **A1** `deckung.py` — Fluchtweg-`ziel_lux` aus `anf.min_lux` (norm-belegt) statt Konstante 1,0.
 - **A2** `flaechen_strategy.py` — **Antipanik verdichtet bis 0,5-lx-Nachweis** (`_antipanik_punkte`),
   der 0,5-lx-Norm-Wert war vorher tot. Kleine Räume unverändert, große Halle verdichtet (Cap).
 - **A3** `hauptengine/validierung.py` — **2-Leuchten-Redundanz je Fluchtweg-Abschnitt** (EN 50172),
   Warnung (kein Hard-Fail). Mollgasse EG erfüllt sie (alle 103 Abschnitte ≥ 2).
 - **A4** `lux.py` — Fallback-Höhe 2,5→2,0 m (EN-Mindesthöhe), produktive Aufrufer geben Norm-Höhe.
-
-**Durchstich Mollgasse EG unverändert:** 15 RZ + 21 SL, Prüfstatus **ok**. Kein Regress.
-
-**Nächste Schritte (Roadmap Track B/C, brauchen andere Owner/Contract):**
-- **Track B** (Enis-Daten + `NormRegelwerk`-Contract, 3-Owner): Gleichmäßigkeit Ud als Feld
-  (statt Hardcode `1/40`), Flächen-Trigger (Antipanik ≥ 60 m², WC > 8 m²), Arbeitsplatz-Lux
-  15/5 lx + neuer Raumtyp, Umschaltzeit als Norm-Default. Reihenfolge: Contract-Feld-Prep
-  (Leonis) → Approval → Enis-Werte → Leonis-Konsum.
-- **Track C** (Selman-RaumModell + Contract): Pflicht-Platzierungspunkte (Aufzug/Erste-Hilfe/
-  Löschgerät/BMZ) als POIs → `anker_strategy` setzt Pflicht-RZ; reicheres Symbol-Datenmodell #6.
-
-**Nebenbefund (an Enis gemeldet, s. COORDINATION):** PR #60 war schon gemergt (`8eaa1f8`),
-`LbReviewRequired→HTTP 500` längst erledigt (pipeline fängt `LbFehler`, api mappt 422).
 
 ## STAND (2026-08-31 Session-Ende)
 
