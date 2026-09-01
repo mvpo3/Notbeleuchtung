@@ -4,7 +4,31 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-01, Abend) — HIER WEITER
+## STAND (2026-09-01, spät) — HIER WEITER
+
+**PR #84 offen (`leonis/abstand-nachpass`, off `main` nach #81/#82 rebased, kein Contract).**
+**519 grün**, ruff clean, Schema kein Drift. Wartet auf Merge (User-GO).
+
+Neuer letzter Geometrie-Pass `platzierung/abstand_nachpass.py` (`entzerre`, in `place` nach
+`lb_override`, vor `deckungs_zuordnung`): löst Symbol-Kollisionen an der **Strategie-Naht**
+auf — gleich-artige Dubletten mergen, verschieden-artige nudgen (Prio `rz>sl>antipanik`, im
+Raumpolygon, **nie eine Leuchte löschen**). Jede Strategie deduplizierte bisher nur intern.
+
+**Ehrlich einordnen (nicht überverkaufen):** DOD-Befund #5 (1 Paar < 250 mm) **reproduziert
+auf aktuellem `main` nicht mehr** (mit LB verifiziert: 36 Symbole, 0 Kollisionen mit UND
+ohne den Pass). Der Nachpass ist daher **Defense-in-depth** (Kollisionsfreiheit invariant
+statt zufällig), auf Mollgasse EG aktuell ein **No-op**. Der eigentliche Wert liegt im
+**neuen Real-Data-Regressionstest** `tests/e2e/test_mollgasse_eg_durchstich.py` (skip-if-
+Asset) — schließt die Fixture-Lücke, an der bisher jeder Real-Plan-Bug durchrutschte (nur
+das dünne 4OG-Fake wurde getestet). +11 Tests. **Housekeeping:** PR #78 (überholt von #79)
+geschlossen.
+
+**Nächste unblockierte Platzierungs-Kandidaten** (aus 2 Explore-Sweeps, kein Contract, keine
+Fremd-Owner-Daten): LB-Vokabular-Mismatch-Warnung (deckt tote `lb_override`-Regeln auf),
+disconnected-graph-Anker (`graph.py`/`anker_strategy`), Validierungs-Randfälle. Weglänge-
+statt-Luftlinie-Deckung bleibt vertagt (braucht Selmans reicheren Graph im Contract).
+
+## STAND (2026-09-01, Abend)
 
 **Track B (Konsumption) ist auf `main`** (`f92010f`, PR #80 gemergt; PR #72 = `NormRegelwerk`
 v1.1.0 davor gemergt `8d6fe23`). **513 grün**, ruff clean, Schema kein Drift = **kein Contract**.
