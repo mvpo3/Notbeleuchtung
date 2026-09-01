@@ -22,6 +22,11 @@ Schreibt ein Owner **„Handoff <Name>"** (z.B. „Handoff Enis", „Handoff Sel
 Contract, sein Slice, das Port-Material im Repo, die Schritte + DoD. Index +
 Gemeinsames: `Handoff/README.md`.
 
+Schreibt ein Owner **„Sync"** (oder „GitHub wurde aktualisiert", „zieh den Stand
+nach") → **lies sofort `Handoff/SYNC.md`** und arbeite exakt danach. Grundregel dort:
+**erst die eigene unversionierte Arbeit sichern, dann holen.** Nie `git reset --hard`,
+`git checkout -- .`, `git clean -fd` oder `git stash drop` ohne Ansage des Owners.
+
 ## Die zwei Inputs
 
 1. **Leerer Architekturplan** (DXF/DWG) → Selman erkennt Räume/Türen/Ausgänge/
