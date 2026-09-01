@@ -58,10 +58,17 @@ sonderstellen_typen:
     norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Brandbekämpfungseinrichtungen)"
     beleg: BELEGT
     lux_anforderung:
-      # NICHT als Normwert ausgeben: §4.1.2 fordert die Hervorhebung, nennt aber
-      # keinen Lux-Wert für diese Stelle.
-      norm_wert: null
-      norm_status: MANUELL_PRUEFEN
+      # [BELEGT] §4.1.2 i), Norm-S.9 — „nahe jeder Brandbekämpfungs- und Melde-
+      # einrichtung, so dass 5 lx vertikale Beleuchtungsstärke an den Melde-, den
+      # Brandbekämpfungseinrichtungen und der Anzeigen der Brandmeldeanlage
+      # erreicht werden". Korrektur vom 01.09.: bis dahin war der Wert hier als
+      # reiner LB-Wert geführt (docs/NORMQUELLEN_AT.md 2c).
+      norm_wert: 5.0
+      norm_bezugsflaeche: vertikal   # AM GERÄT, nicht horizontal am Boden
+      norm_status: BELEGT
+      norm_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
+      # Die reale Elektro-LB nennt denselben Wert — sie wiederholt die Norm,
+      # sie begründet sie nicht.
       lb_typisch: 5.0
       lb_quelle: "LBVorgabe.sonder_lux[ort=feuerloescher] — reale Elektro-LB §5.1.23"
     cad_symbol_beleg: "din_Feuerloescher_F001, FEUERLOESCHER_RZ, Feuerloescher_RZ_SYM"
@@ -77,8 +84,13 @@ sonderstellen_typen:
     # „Wandhydrant" ist die Auslegung des Norm-Oberbegriffs auf ein konkretes Gerät.
     beleg: AUSLEGUNG
     lux_anforderung:
-      norm_wert: null
-      norm_status: MANUELL_PRUEFEN
+      # [BELEGT] §4.1.2 i), Norm-S.9 — 5 lx vertikal an der Brandbekämpfungs-
+      # einrichtung. Der Wert selbst ist normativ; nur die Zuordnung
+      # „Wandhydrant = Brandbekämpfungseinrichtung" bleibt AUSLEGUNG (s. beleg).
+      norm_wert: 5.0
+      norm_bezugsflaeche: vertikal
+      norm_status: BELEGT
+      norm_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
       lb_typisch: 5.0
       lb_quelle: "LBVorgabe.sonder_lux[ort=hydrant] — reale Elektro-LB §5.1.23"
     cad_symbol_beleg: "din_Hydrant_F002, HYDRANT_RZ, ISO7010_RZ_Wandhydrant"
@@ -93,11 +105,15 @@ sonderstellen_typen:
     aktiviert_regeln: [SL-05-ERSTE-HILFE-STELLE]
     leuchtenart: sicherheitsleuchte
     max_horizontal_zum_punkt_mm: 2000
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Erste-Hilfe-Stellen)"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 h), S.9 (Erste-Hilfe-Stellen)"
     beleg: BELEGT
     lux_anforderung:
-      norm_wert: null
-      norm_status: MANUELL_PRUEFEN
+      # [BELEGT] §4.1.2 h), Norm-S.9 — „nahe jeder Erste-Hilfe-Stelle, so dass
+      # 5 lx vertikale Beleuchtungsstärke am Erste-Hilfe-Kasten erreicht werden".
+      norm_wert: 5.0
+      norm_bezugsflaeche: vertikal
+      norm_status: BELEGT
+      norm_quelle: "ÖNORM EN 1838:2013 §4.1.2 h), S.9"
       lb_typisch: null
       lb_quelle: null
     cad_symbol_beleg: "din_ErsteHilfe_E003, ERSTEHILFESTELLE_RZ, ISO7010_RZ_ErsteHilfe"
@@ -109,11 +125,15 @@ sonderstellen_typen:
     aktiviert_regeln: [SL-08-BRANDMELDER]
     leuchtenart: sicherheitsleuchte
     max_horizontal_zum_punkt_mm: 2000
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Meldeeinrichtungen)"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9 (Meldeeinrichtungen)"
     beleg: BELEGT
     lux_anforderung:
-      norm_wert: null
-      norm_status: MANUELL_PRUEFEN
+      # [BELEGT] §4.1.2 i), Norm-S.9 — 5 lx vertikal an der Meldeeinrichtung und
+      # an den Anzeigen der Brandmeldeanlage.
+      norm_wert: 5.0
+      norm_bezugsflaeche: vertikal
+      norm_status: BELEGT
+      norm_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
       lb_typisch: null
       lb_quelle: null
     # Anders als bei den drei oberen: im Repo liegt KEIN CAD-Symbol dafür vor.
@@ -126,11 +146,15 @@ sonderstellen_typen:
     aktiviert_regeln: [RZ-06-NIVEAUAENDERUNG, SL-04-NIVEAUAENDERUNG]
     leuchtenart: sicherheitsleuchte    # zusätzlich RZ-06 (Rettungszeichen)
     max_horizontal_zum_punkt_mm: 2000
-    # Die vorliegende §4.1.2-Extraktion nennt TREPPEN, nicht allgemeine
-    # Niveauänderungen. Der Auslöser stammt aus der realen LB.
-    norm_ref: MANUELL_PRUEFEN
-    beleg: LB
+    # Korrektur vom 01.09. (am Volltext geprüft): §4.1.2 führt b) Treppen und
+    # c) „jede andere Niveauänderung" als ZWEI getrennte Punkte auf. Der Auslöser
+    # ist damit normativ belegt — die frühere Annahme, er stamme nur aus der LB,
+    # beruhte auf einer unvollständigen Extraktion (docs/NORMQUELLEN_AT.md 2c).
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8"
+    beleg: BELEGT
     lux_anforderung:
+      # Anders als h) und i) nennt c) KEIN Beleuchtungsniveau — nur „nahe"
+      # (ANMERKUNG 1: ≤ 2 m horizontal). Hier bleibt der Lux-Wert offen.
       norm_wert: null
       norm_status: MANUELL_PRUEFEN
       lb_typisch: null
