@@ -166,13 +166,15 @@ rettungszeichen:
     prioritaet: 3
     ausnahmen: []
     konfliktregel: "Von RZ-05 abgedeckt, wenn die Niveauänderung eine Treppe ist."
-    # Ehrlich: die Norm-Extraktion nennt „Treppen", NICHT „Niveauänderungen".
-    # Die reale Elektro-LB fordert „bei allen Niveauänderungen" (rz_stellen::niveauaenderung).
-    quelle: "reale Elektro-LB (LBVorgabe.rz_stellen = niveauaenderung); EN 1838 §4.1.2 nennt Treppen, nicht allgemeine Niveauänderungen"
-    norm_ref: MANUELL_PRUEFEN
-    beleg: LB
-    review_erforderlich: true
-    decision_source: lb_explizit
+    # Korrektur 01.09. (am Volltext geprüft): §4.1.2 führt b) Treppen UND
+    # c) „jede andere Niveauänderung" als getrennte Punkte. Der Auslöser ist
+    # normativ belegt; die frühere LB-Zuschreibung beruhte auf einer
+    # unvollständigen Extraktion. Ein Lux-Wert steht in c) NICHT.
+    quelle: "EN 1838 §4.1.2 c) („nahe jeder anderen Niveauänderung“); die reale Elektro-LB fordert dasselbe (LBVorgabe.rz_stellen = niveauaenderung)"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8 — Lux-Wert: MANUELL_PRUEFEN"
+    beleg: BELEGT
+    review_erforderlich: true      # Lux-Niveau unbelegt, Pflicht selbst belegt
+    decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
 
@@ -344,11 +346,11 @@ sicherheitsleuchten:
     prioritaet: 3
     ausnahmen: []
     konfliktregel: "Von SL-02 abgedeckt, wenn die Niveauänderung eine Treppe ist."
-    quelle: "analog RZ-06; die Norm-Extraktion nennt Treppen, die reale LB nennt Niveauänderungen"
-    norm_ref: MANUELL_PRUEFEN
-    beleg: LB
-    review_erforderlich: true
-    decision_source: lb_explizit
+    quelle: "analog RZ-06 — EN 1838 §4.1.2 c) nennt Niveauänderungen ausdrücklich"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8 — Lux-Wert: MANUELL_PRUEFEN"
+    beleg: BELEGT
+    review_erforderlich: true      # Lux-Niveau unbelegt, Pflicht selbst belegt
+    decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
 
@@ -358,16 +360,20 @@ sicherheitsleuchten:
     leuchtenart: sicherheitsleuchte
     positionierungsziel: "Leuchte <= 2 m horizontal von der Stelle"
     orientierung: "—"
-    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    abstand:
+      max_horizontal_zum_punkt_mm: 2000
+      # Korrektur 01.09.: §4.1.2 h) nennt den Wert ausdrücklich — er ist
+      # VERTIKAL am Erste-Hilfe-Kasten, nicht horizontal am Boden. Deshalb ein
+      # eigener Schlüssel: er darf nicht als min_lux in den Bodenraster laufen.
+      min_lux_vertikal_norm: 5.0
+      min_lux_vertikal_quelle: "ÖNORM EN 1838:2013 §4.1.2 h), S.9"
     prioritaet: 2
     ausnahmen: []
     konfliktregel: "Eigenständige Pflichtstelle — nicht durch Fluchtweg-Beleuchtung ersetzbar."
-    # Norm fordert die Betonung. Ein konkreter Lux-Wert für Erste-Hilfe-Stellen
-    # steht NICHT in der vorliegenden Extraktion → nicht erfinden.
-    quelle: "EN 1838 §4.1.2 („Erste-Hilfe-Stellen\")"
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    quelle: "EN 1838 §4.1.2 h) — „nahe jeder Erste-Hilfe-Stelle, so dass 5 lx vertikale Beleuchtungsstärke am Erste-Hilfe-Kasten erreicht werden\""
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 h), S.9"
     beleg: BELEGT
-    review_erforderlich: true      # Lux-Niveau unbelegt
+    review_erforderlich: true      # fehlender RaumModell-Input, nicht der Lux-Wert
     decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
@@ -380,19 +386,21 @@ sicherheitsleuchten:
     orientierung: "—"
     abstand:
       max_horizontal_zum_punkt_mm: 2000
-      # 5 lx sind KEIN EN-1838-Wert. Sie stehen in der realen Elektro-LB
-      # (§5.1.23) und kommen über LBVorgabe.sonder_lux[ort=feuerloescher].
+      # Korrektur 01.09.: die 5 lx SIND ein EN-1838-Wert (§4.1.2 i)) — vertikal
+      # am Gerät. Die reale Elektro-LB (§5.1.23) wiederholt ihn nur.
+      min_lux_vertikal_norm: 5.0
+      min_lux_vertikal_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
       min_lux_lb_typisch: 5.0
-      min_lux_quelle: "LBVorgabe.sonder_lux (projektspezifisch) — kein Norm-Default"
+      min_lux_lb_quelle: "LBVorgabe.sonder_lux[ort=feuerloescher] — deckungsgleich mit der Norm"
     prioritaet: 2
     ausnahmen:
-      - "Ohne LB-Angabe gibt es KEINEN Lux-Wert für diese Stelle — nur die Betonungspflicht aus §4.1.2."
-    konfliktregel: "LB-Wert übersteuert; ohne LB bleibt die Lux-Anforderung offen (Review), die Leuchte selbst aber Pflicht."
-    quelle: "EN 1838 §4.1.2 (Betonung Brandbekämpfungseinrichtungen); 5 lx aus realer Elektro-LB §5.1.23"
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 — Lux-Wert: MANUELL_PRUEFEN"
-    beleg: BELEGT       # Betonungspflicht belegt, Lux-Wert [LB]
-    review_erforderlich: true
-    decision_source: norm_default   # Pflicht; der Lux-Wert kommt von lb_explizit
+      - "Der Wert ist VERTIKAL am Gerät. Für den horizontalen Bodenraster gibt es keinen Norm-Wert — nicht umdeuten."
+    konfliktregel: "Weicht die LB vom Norm-Wert ab, übersteuert sie (LB-explizit > Norm-Default). Ohne LB gilt der Norm-Wert."
+    quelle: "EN 1838 §4.1.2 i) — 5 lx vertikale Beleuchtungsstärke an Brandbekämpfungs- und Meldeeinrichtungen"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
+    beleg: BELEGT
+    review_erforderlich: true      # fehlender RaumModell-Input, nicht der Lux-Wert
+    decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
 
@@ -404,15 +412,18 @@ sicherheitsleuchten:
     orientierung: "—"
     abstand:
       max_horizontal_zum_punkt_mm: 2000
+      min_lux_vertikal_norm: 5.0
+      min_lux_vertikal_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
       min_lux_lb_typisch: 5.0
-      min_lux_quelle: "LBVorgabe.sonder_lux[ort=hydrant] — kein Norm-Default"
+      min_lux_lb_quelle: "LBVorgabe.sonder_lux[ort=hydrant] — deckungsgleich mit der Norm"
     prioritaet: 2
-    ausnahmen: []
+    ausnahmen:
+      - "Der Wert ist VERTIKAL am Gerät — nicht in den horizontalen Bodenraster umdeuten."
     konfliktregel: "wie SL-06. Feuerlöscher und Hydrant sind GETRENNTE Stellen, auch wenn die LB sie in einem Satz nennt."
-    quelle: "EN 1838 §4.1.2 (Brandbekämpfungseinrichtungen); 5 lx aus realer Elektro-LB §5.1.23"
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 — Lux-Wert: MANUELL_PRUEFEN"
-    beleg: AUSLEGUNG   # „Wandhydrant" ist Auslegung von „Brandbekämpfungseinrichtung"
-    review_erforderlich: true
+    quelle: "EN 1838 §4.1.2 i) — 5 lx vertikal an Brandbekämpfungseinrichtungen; die reale Elektro-LB §5.1.23 nennt denselben Wert"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
+    beleg: AUSLEGUNG   # der WERT ist belegt; „Wandhydrant" als Brandbekämpfungseinrichtung ist die Auslegung
+    review_erforderlich: true      # fehlender RaumModell-Input, nicht der Lux-Wert
     decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
@@ -423,14 +434,18 @@ sicherheitsleuchten:
     leuchtenart: sicherheitsleuchte
     positionierungsziel: "Leuchte <= 2 m horizontal von der Einrichtung"
     orientierung: "—"
-    abstand: {max_horizontal_zum_punkt_mm: 2000}
+    abstand:
+      max_horizontal_zum_punkt_mm: 2000
+      min_lux_vertikal_norm: 5.0
+      min_lux_vertikal_quelle: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
     prioritaet: 2
-    ausnahmen: []
+    ausnahmen:
+      - "Der Wert ist VERTIKAL an der Meldeeinrichtung bzw. an den Anzeigen der Brandmeldeanlage."
     konfliktregel: "wie SL-06"
-    quelle: "EN 1838 §4.1.2 („Brandbekämpfungs-/Meldeeinrichtungen\")"
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11"
+    quelle: "EN 1838 §4.1.2 i) — 5 lx vertikal an Melde-, Brandbekämpfungseinrichtungen und den Anzeigen der Brandmeldeanlage"
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9"
     beleg: BELEGT
-    review_erforderlich: true      # Lux-Niveau unbelegt
+    review_erforderlich: true      # fehlender RaumModell-Input, nicht der Lux-Wert
     decision_source: norm_default
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt

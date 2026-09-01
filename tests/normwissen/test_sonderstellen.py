@@ -62,11 +62,11 @@ def test_fehlende_position_geht_in_den_review():
     assert any("ohne Position" in r for r in befund.review)
 
 
-def test_projekt_lb_liefert_den_lux_wert_die_norm_die_pflicht():
-    """Arbeitsteilung: §4.1.2 begründet die Leuchte, die LB beziffert sie.
+def test_lb_wiederholt_den_normwert_und_erzeugt_trotzdem_keine_stelle():
+    """Die LB nennt dieselben 5 lx wie §4.1.2 i) — sie begründet sie nicht.
 
-    Die LB kann eine Sonderstelle NICHT erzeugen — `SonderLux` trägt `ort` und
-    `min_lux`, aber keine Koordinate."""
+    Unabhängig davon kann die LB eine Sonderstelle NICHT erzeugen: `SonderLux`
+    trägt `ort` und `min_lux`, aber keine Koordinate."""
     assert K.lb_lux("feuerloescher") == 5.0
     assert K.lb_lux("hydrant") == 5.0
     assert "sonder_lux" in K.eintrag("feuerloescher")["lux_anforderung"]["lb_quelle"]
@@ -84,25 +84,46 @@ def test_hard_stops_bleiben_uebergeordnet():
         assert M.rang(regel.decision_source) < M.rang("hard_stop")
 
 
-# ── Die Zahl, die kein Normwert ist ─────────────────────────────────────────
-def test_5lx_wird_nie_als_normwert_ausgegeben():
-    """Der Kernfehler, den dieser Katalog verhindern soll: §4.1.2 belegt die
-    Hervorhebungspflicht, nennt aber kein Beleuchtungsniveau. Die 5 lx stammen aus
-    einer Projekt-LB."""
-    for typ in ("feuerloescher", "hydrant"):
-        assert K.norm_lux(typ) is None, f"{typ}: es gibt keinen belegten Norm-Lux-Wert"
-        assert K.lux_ist_ungeklaert(typ)
-        # Der Wert existiert — aber ausschliesslich mit LB-Herkunft.
-        assert K.lb_lux(typ) == 5.0
-        assert "LB" in K.eintrag(typ)["lux_anforderung"]["lb_quelle"]
-    # Die Pflicht bleibt trotzdem bestehen — sie hängt nicht am Lux-Wert.
-    befund = K.bewerte([_stelle("feuerloescher")])
-    assert "SL-06-FEUERLOESCHER" in befund.aktivierte_regeln
+# ── Die 5 lx: belegt, aber vertikal ─────────────────────────────────────────
+def test_5lx_sind_ein_normwert_aber_vertikal():
+    """Korrektur vom 01.09.2026. §4.1.2 h) und i) nennen den Wert ausdrücklich:
+    „so dass 5 lx vertikale Beleuchtungsstärke … erreicht werden".
+
+    Die frühere Annahme (§4.1.2 fordere nur die Betonung, die 5 lx stammten aus
+    der Projekt-LB) beruhte auf einer unvollständigen Extraktion. Entscheidend
+    bleibt die Bezugsfläche: der Wert ist **vertikal am Gerät** und darf nicht
+    als horizontales `min_lux` in den Bodenraster laufen.
+    """
+    for typ in ("feuerloescher", "hydrant", "erste_hilfe", "brandmelder"):
+        assert K.norm_lux_vertikal(typ) == 5.0
+        assert K.norm_lux_bezugsflaeche(typ) == "vertikal"
+        assert not K.lux_ist_ungeklaert(typ)
+        assert "§4.1.2" in K.eintrag(typ)["lux_anforderung"]["norm_quelle"]
+
+
+def test_horizontaler_normwert_bleibt_fuer_jeden_typ_leer():
+    """Die Engine rechnet den Lux-Nachweis horizontal am Boden. Fuer diese
+    Stellen gibt EN 1838 dort **nichts** her — lieber `None` als eine stille
+    Umdeutung des Vertikalwerts (derselbe Kategorienfehler wie Ud gegen Uo)."""
+    assert all(K.norm_lux_horizontal(t) is None for t in K.typen())
+
+
+def test_niveauaenderung_bleibt_ohne_lux_wert():
+    """§4.1.2 c) („nahe jeder anderen Niveauänderung") belegt die Pflicht, nennt
+    aber — anders als h) und i) — kein Beleuchtungsniveau."""
+    assert K.norm_lux_vertikal("niveauaenderung") is None
+    assert K.lux_ist_ungeklaert("niveauaenderung")
+    befund = K.bewerte([_stelle("niveauaenderung")])
+    assert "SL-04-NIVEAUAENDERUNG" in befund.aktivierte_regeln
     assert any(MANUELL_PRUEFEN in r for r in befund.review)
 
 
-def test_kein_typ_hat_heute_einen_belegten_norm_lux_wert():
-    assert all(K.norm_lux(t) is None for t in K.typen())
+def test_belegte_stelle_erzeugt_keinen_lux_review_mehr():
+    """Gegenprobe: wo der Norm-Wert jetzt belegt ist, darf kein Lux-Review mehr
+    entstehen — die Pflicht selbst bleibt davon unberührt."""
+    befund = K.bewerte([_stelle("feuerloescher")])
+    assert "SL-06-FEUERLOESCHER" in befund.aktivierte_regeln
+    assert not any("Lux-Niveau" in r for r in befund.review)
 
 
 # ── Zuschnitt des Vorschlags ────────────────────────────────────────────────

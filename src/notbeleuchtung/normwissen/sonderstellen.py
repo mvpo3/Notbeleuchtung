@@ -12,6 +12,14 @@ den Vorschlag ausführbar und testbar, bevor über ihn entschieden wird. Nach ei
 
 Fail closed, wie überall im Normwissen: ein unbekannter Typ und eine fehlende
 Position erzeugen **keinen** Default, sondern einen Review-Befund.
+
+**Korrektur 01.09.2026:** §4.1.2 h) und i) nennen sehr wohl einen Lux-Wert —
+**5 lx vertikal** am Erste-Hilfe-Kasten bzw. an Brandbekämpfungs- und Melde-
+einrichtungen. Die frühere Annahme („§4.1.2 fordert nur die Betonung, die 5 lx
+stammen aus der LB") beruhte auf einer unvollständigen Extraktion. Der Wert ist
+**vertikal** und darf deshalb nicht als horizontales `min_lux` durchgereicht
+werden — dafür trägt die Query-API die Bezugsfläche im Namen. Ohne eigenen Wert
+bleibt weiterhin §4.1.2 c) (Niveauänderung).
 """
 from __future__ import annotations
 
@@ -104,20 +112,47 @@ class SonderstellenKatalog:
         return self.eintrag(typ)["beleg"]
 
     # ── Lux ─────────────────────────────────────────────────────────────────
-    def norm_lux(self, typ: str) -> float | None:
-        """Normativer Lux-Wert der Stelle — heute für **keinen** Typ belegt.
+    def norm_lux_vertikal(self, typ: str) -> float | None:
+        """Normativer Lux-Wert der Stelle — **vertikal am Gerät**, nicht am Boden.
 
-        §4.1.2 fordert die Hervorhebung, nennt aber kein Beleuchtungsniveau. Die
-        5 lx an Feuerlöscher/Hydrant stammen aus einer Projekt-LB und dürfen nicht
-        als Normwert ausgegeben werden.
+        §4.1.2 h) und i) nennen 5 lx vertikale Beleuchtungsstärke am
+        Erste-Hilfe-Kasten bzw. an Brandbekämpfungs- und Meldeeinrichtungen. Für
+        Stellen ohne eigenen Wert (§4.1.2 c) Niveauänderung) ist das Ergebnis
+        `None` — dort gilt nur die Betonungspflicht.
+
+        Der Methodenname trägt die Bezugsfläche bewusst mit: der Lux-Nachweis der
+        Engine (`lux_raster`) rechnet **horizontal am Boden**. Ein vertikaler
+        Norm-Wert darf dort nicht als `min_lux` eingesetzt werden — das wäre
+        derselbe Kategorienfehler wie Ud gegen Uo.
         """
         return self.eintrag(typ)["lux_anforderung"]["norm_wert"]
 
+    def norm_lux_bezugsflaeche(self, typ: str) -> str | None:
+        """Auf welche Fläche sich `norm_lux_vertikal` bezieht (`"vertikal"`).
+
+        `None`, wenn es keinen Norm-Wert gibt — dann gibt es auch keine Fläche.
+        """
+        return self.eintrag(typ)["lux_anforderung"].get("norm_bezugsflaeche")
+
+    def norm_lux_horizontal(self, typ: str) -> float | None:
+        """Horizontaler Norm-Lux-Wert — für **keinen** Typ belegt.
+
+        EN 1838 §4.1.2 macht ausschließlich vertikale Vorgaben an diesen Stellen.
+        Wer einen Bodenwert braucht, bekommt hier bewusst `None` statt einer
+        stillen Umdeutung des Vertikalwerts.
+        """
+        return None
+
     def lb_lux(self, typ: str) -> float | None:
-        """Projekttypischer Lux-Wert aus einer realen LB — **kein** Norm-Default."""
+        """Projekttypischer Lux-Wert aus einer realen LB.
+
+        Bei Feuerlöscher/Hydrant wiederholt die LB den Normwert aus §4.1.2 i) —
+        sie begründet ihn nicht. Weicht eine LB ab, übersteuert sie (CLAUDE.md).
+        """
         return self.eintrag(typ)["lux_anforderung"]["lb_typisch"]
 
     def lux_ist_ungeklaert(self, typ: str) -> bool:
+        """Fehlt der Norm-Lux-Wert für diese Stelle? (Heute nur Niveauänderung.)"""
         return self.eintrag(typ)["lux_anforderung"]["norm_status"] == MANUELL_PRUEFEN
 
     # ── Datenquellen ────────────────────────────────────────────────────────

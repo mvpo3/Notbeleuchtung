@@ -66,6 +66,9 @@ Geprüft am 2026-08-29 gegen `knowledge/EN 1838 - Notbeleuchtung 2019 (1).pdf`
 | `montagehoehe_min_mm: 2000` | §4.1.1, Norm-S.8 | bestätigt als Wert; Wortlaut ist ein **Erfüllungs-Kriterium**, kein absolutes Minimum — YAML-Kommentar „Hard Floor" ist strenger als die Norm |
 | `norm: "ÖNORM EN 1838:2013"` | — | **nicht belegt** — diese Ausgabe liegt nicht vor; vorhanden ist 2019-11-15 |
 | `piktogramm_hoehe_default_m: 0.15` | — | **nicht in EN 1838**; Praxiswert aus `_port_source/rz_coverage_oenorm.yaml` |
+| `gleichmaessigkeit.rettungsweg: 40` | §4.2.2, Norm-S.10 | **bestätigt**, wörtlich („darf 1 : 40 entlang der Mittellinie des Rettungsweges nicht unterschreiten"). YAML führt max:min, die Norm min:max → Kehrwert |
+| `gleichmaessigkeit.antipanik: 40` | §4.3.2, Norm-S.11 | **bestätigt**, wörtlich („darf 1 : 40 nicht unterschreiten") — **derselbe Wert wie der Rettungsweg**, nicht 1:10 (Abschnitt 2b) |
+| `umschaltzeit.vollwert_s: 60` / `halbwert_s: 5` | §4.2.6, §4.3.6, §5.4.6 | **bestätigt** („50 % … innerhalb von 5 s und 100 % … innerhalb von 60 s"); die Norm ist zweistufig, das Contract-Feld ein Skalar → nur der Vollwert |
 | `montagehoehe_mm: 2400` (raumtyp_regeln) | — | **unbelegt** — kein Notlicht-Eintrag in `heights_fachpraxis.yaml`; stammt aus der Slice-0-Fake-Fixture |
 | `mindest_anzahl: 1` / `4` | — | **Engineering-/Fixture-Annahmen**, keine Normwerte |
 | Zuordnung `STIEGENHAUS → sicherheitsleuchte`, Quelle „§4.1" | §4.1.2 b), Norm-S.8 | Art teilweise gestützt („nahe Treppen, um jede Treppenstufe direkt zu beleuchten"); die Regelform „eine Leuchte je Stiegenhaus-Raum" ist Auslegung, Quellenstring zu grob |
@@ -91,6 +94,137 @@ echten Provider + Leonis-Abstimmung), kein Housekeeping. Bis dahin ist der
 Beleg-Status direkt in `normwissen/data/*.yaml` als Kommentar markiert, damit kein
 Leser den String für belegt hält. Inhaltlich ist die Deckungsgleichheit gegeben
 (2019-11-15 ist IDT mit EN 1838:2013-07) — es geht rein um die **Bezeichnung**.
+
+## 2b. Track-B-Werte (Contract `NormRegelwerk` v1.1.0) — Quellenprüfung 2026-09-01
+
+PR #72 hat vier abfragbare Felder eingeführt, PR #80 konsumiert sie bereits. Geprüft
+wurde jeder Wert am Volltext der im Repo liegenden Ausgabe
+(`knowledge/_extracted_text/normen/EN 1838 - Notbeleuchtung 2019.txt`). Ergebnis: zwei
+Felder sind belegt und gefüllt, zwei bleiben leer.
+
+### Vier Korrekturen an den Annahmen aus PR #72
+
+| Annahme (PR #72 · `platzierung/lux.py` · COORDINATION 01.09.) | Normtext | Konsequenz |
+|---|---|---|
+| Ud „40 Rettungsweg / **10 Antipanik**" | §4.2.2 **1:40** · §4.3.2 **1:40** (wortgleich) | Antipanik ist **40**, nicht 10 |
+| die „10" gehöre zu Antipanik | §4.4.2: **Uo ≥ 0,1** für *Arbeitsplätze mit besonderer Gefährdung* | Uo (kleinste:mittlere, EN 12665) ist **nicht** Ud (kleinste:größte) — anderes Maß, falsches Feld |
+| `flaechen_schwellen` = „EN 1838 §4.3 / OIB" (Contract-Docstring) | **60 m² und 8 m² kommen in EN 1838 nicht vor.** §4.3.8 nennt Toiletten für Menschen mit Behinderung **ohne** Flächenmaß | Fundstelle im Contract ist falsch zugeschrieben |
+| `umschaltzeit_max_s` als ein Skalar | §4.2.6/§4.3.6/§5.4.6: **50 % in 5 s, 100 % in 60 s** | zweistufig; ein Skalar bildet nur den Vollwert ab |
+
+Die Docstrings in `hauptengine/contracts/norm_regelwerk.py` und `platzierung/lux.py`
+tragen die 40/10-Fehlangabe weiter. Beide liegen **nicht** in Enis' Lane (3-Owner-
+Contract bzw. Leonis' Package) — der Befund ist gemeldet, nicht selbst korrigiert.
+
+### Was gefüllt wurde
+
+- `NormAnforderung.gleichmaessigkeit_max` = **40** für Rettungsweg (§4.2.2) und
+  Antipanik (§4.3.2), über `gleichmaessigkeit_ref` in `raumtyp_regeln.yaml`.
+- `NormAnforderung.umschaltzeit_max_s` = **60 s** (§4.2.6/§4.3.6/§5.4.6). Die
+  5-s-Halbwertstufe steht als `umschaltzeit.halbwert_s` in der YAML, hat aber kein
+  Contract-Feld → **offene Lücke**, an die 3 Owner gemeldet.
+- Aufheller/Betonungsleuchten (§4.1): **kein** Ud-Wert — die Norm nennt für sie keine.
+
+Beide Werte sind **inert**: 40 ergibt über `ud_min_aus_norm` exakt den bisherigen
+Default 1/40, und `umschaltzeit_max_s` wirkt in `validierung.pruefe` nur gegen einen
+LB-Wert. Mollgasse-EG-Durchstich vorher/nachher identisch (15 RZ + 21 SL, Status `ok`,
+7 Befunde).
+
+### Was bewusst leer bleibt — und warum
+
+**`flaechen_schwellen` (60 m² / 8 m²).** Die Werte sind belegt, aber **nicht in
+EN 1838** und **scope-gebunden**:
+
+| Wert | Fundstelle | Scope im Original |
+|---|---|---|
+| 8 m² Sanitärbereiche | OVE E 8101:2019 `718.560.9.001.AT` 1) („in Sanitärbereichen ab 8 m2 Größe und in barrierefreien WC-Anlagen"); wortgleich ÖVE/ÖNORM E 8002-1 Punkt 1); OVE E 8101:2025 gleichlautend | nur „für Räume, Anlagen oder Gebäude, an die **erhöhte Anforderungen nach der Art der Nutzung** (OVE-Richtlinie R 12-2 bzw. OIB-Richtlinie 2) gestellt werden" |
+| 60 m² | OVE E 8101:2019 / E 8002-1 Punkt 3): „Wartezonen, Abfertigungshallen, Geschäftsflächen über 60 m2 …" | nur **Flughäfen und Bahnhöfe** |
+| 60 m² (allgemeiner) | ÖVE/ÖNORM E 8002-1 §3.2.2.1.2 | nur eine **ANMERKUNG** in einer Begriffsbestimmung (informativ), zusätzlich relativiert durch „oder bei kleineren Flächen, sofern … ein erhöhtes Risiko besteht" |
+
+Das Contract-Feld ist dagegen **global**: `platzierung/flaechen_strategy.py`
+`_ist_flaechen_antipanik` macht jeden Raum ≥ Schwelle antipanik-pflichtig, unabhängig
+von der Gebäudenutzung. Ein Füllen würde die Schwelle über ihren Geltungsbereich hinaus
+anwenden und im Audit-Trail unter `norm_quelle = "ÖNORM EN 1838:2013 §4.3.1"` führen,
+obwohl der Auslöser aus OVE stammt.
+
+**Vorschlag an die 3 Owner:** den Flächen-Trigger an den bereits vorhandenen
+`OibRl2Provider` gaten — der bewertet genau die „erhöhten Anforderungen nach der Art
+der Nutzung", auf die OVE E 8101 verweist. Bis zur Entscheidung bleiben beide Felder
+`None` (inert, kein Fehlalarm).
+
+**`arbeitsplatz_lux` (§4.4.1: 10 % der Nennbeleuchtungsstärke, mind. 15 lx).** Der Wert
+ist belegt, aber das `RaumModell` kennt keinen Raumtyp „Arbeitsplatz mit besonderer
+Gefährdung" — ohne Auslöser wäre der Wert toter Code. Track C (@polatselman); dieselbe
+Lücke hält `sonderstellen.yaml` als `besondere_gefaehrdung` fest.
+
+### Nebenbefund — Anhang B
+
+Anhang B (A-Abweichungen) führt Frankreich, Italien, Deutschland und die Niederlande.
+**Für Österreich gibt es keine Abweichung** — die EN-Werte oben gelten hier unverändert.
+Relevant, weil Deutschland für §4.2.6/§4.3.6 abweichend 15 s festlegt; das gilt für
+Österreich ausdrücklich nicht.
+
+## 2c. Korrektur — §4.1.2 nennt sehr wohl ein Lux-Niveau (2026-09-01)
+
+Der bis dahin **wichtigste offene fachliche Punkt** („Lux-Niveau an hervorgehobenen
+Stellen — §4.1.2 belegt die Pflicht, nicht den Wert") ist geprüft. **Ergebnis: die
+Annahme war falsch.** §4.1.2 nennt den Wert, in zwei seiner elf Punkte:
+
+> **h)** nahe (siehe ANMERKUNG 1) jeder Erste-Hilfe-Stelle, **so dass 5 lx vertikale
+> Beleuchtungsstärke am Erste-Hilfe-Kasten erreicht werden**;
+>
+> **i)** nahe (siehe ANMERKUNG 1) jeder Brandbekämpfungs- und Meldeeinrichtung, **so
+> dass 5 lx vertikale Beleuchtungsstärke an den Melde-, den
+> Brandbekämpfungseinrichtungen und der Anzeigen der Brandmeldeanlage erreicht
+> werden**;
+
+Fundstelle: `knowledge/_extracted_text/normen/EN 1838 - Notbeleuchtung 2019.txt`,
+Norm-S.9 (PDF-Seite 11). ANMERKUNG 1 definiert „nahe" als „üblicherweise ein Abstand
+von nicht mehr als 2 m in der Horizontalen".
+
+### Was das ändert
+
+| Typ | vorher | jetzt |
+|---|---|---|
+| `feuerloescher` | `norm_wert: null`, `MANUELL_PRUEFEN`, 5 lx nur als LB-Wert | **5 lx belegt** (§4.1.2 i), vertikal |
+| `hydrant` | dito | **5 lx belegt** (§4.1.2 i), vertikal; nur die Zuordnung „Wandhydrant = Brandbekämpfungseinrichtung" bleibt AUSLEGUNG |
+| `erste_hilfe` | `norm_wert: null`, `MANUELL_PRUEFEN` | **5 lx belegt** (§4.1.2 h), vertikal |
+| `brandmelder` | dito | **5 lx belegt** (§4.1.2 i), vertikal |
+| `niveauaenderung` | `norm_ref: MANUELL_PRUEFEN`, `beleg: LB` | **Auslöser belegt** (§4.1.2 c), **Lux weiterhin offen** |
+
+Die reale Elektro-LB §5.1.23 nennt denselben Wert — sie **wiederholt** die Norm, sie
+begründet sie nicht. Die Hierarchie bleibt unberührt: weicht eine LB ab, übersteuert
+sie den Norm-Default.
+
+### Was sich NICHT ändert — die Bezugsfläche
+
+Der Wert ist **vertikal am Gerät**, nicht horizontal am Boden. Der Lux-Nachweis der
+Engine (`platzierung/lux.py::lux_raster`) rechnet ausschließlich **horizontal**.
+Ein vertikaler Norm-Wert dort als `min_lux` einzusetzen wäre derselbe Kategorienfehler
+wie Ud gegen Uo (Abschnitt 2b). Deshalb:
+
+- `SonderstellenKatalog.norm_lux_vertikal(typ)` → `5.0` für die vier Typen
+- `SonderstellenKatalog.norm_lux_horizontal(typ)` → **immer** `None`
+- `SonderstellenKatalog.norm_lux_bezugsflaeche(typ)` → `"vertikal"`
+- in `platzierung_regeln.yaml` heißt der Schlüssel `min_lux_vertikal_norm`, nicht
+  `min_lux` — er kann also nicht versehentlich in den Bodenraster laufen
+
+Die alte Methode `norm_lux()` wurde **entfernt**, nicht umgewidmet: ein Name ohne
+Achse war genau die Einladung zum Fehler.
+
+### Warum es zuerst übersehen wurde
+
+Die Prüfung am 31.08. stützte sich auf `_port_source/emergency_lighting_en1838.yaml`
+(`en1838_antipanic_disabled_toilets` u.a.) statt auf den Volltext; die Extraktion
+führt §4.1.2 verkürzt und ohne die Buchstaben h)/i). Lehre für die Quellenarbeit:
+**die Extraktion ist ein Index, kein Beleg** — belegt wird am Volltext.
+
+### Nebenbefund — §4.1.2 c)
+
+§4.1.2 listet **b) Treppen** und **c) „jede andere Niveauänderung"** als getrennte
+Punkte. Die frühere Notiz („unsere Extraktion nennt Treppen, die reale LB nennt
+Niveauänderungen") ist damit ebenfalls erledigt: beide stehen in der Norm, die LB
+deckt sich mit ihr. `RZ-06` und `SL-04` sind von `beleg: LB` / `decision_source:
+lb_explizit` auf `BELEGT` / `norm_default` gezogen; ihr Lux-Wert bleibt offen.
 
 ## 3. Fehlt — kostenlos beschaffbar
 1. **AStV, ASchG, KennV inkl. Anhang 1** als amtliche RIS-Ausdrucke (Gesetzesnummern s.o.).
