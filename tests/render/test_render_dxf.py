@@ -68,6 +68,27 @@ def test_stueckliste_zaehlt_symbol_arten(rendered):
     assert "Summe: 5" in txt
 
 
+def test_stromkreis_belegung_je_kreis(rendered):
+    _, summary, doc = rendered
+    # 4OG-Fixture = 5 RZ auf 2 Kreisen (AGV-A-F13 ×2, AGV-B-F13 ×3), alle DL.
+    assert summary["stromkreis_belegung_drawn"] is True
+    box = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
+    assert len(box) == 1
+    txt = box[0].text
+    assert "STROMKREIS-BELEGUNG" in txt
+    assert "AGV-A-F13 [DL]:" in txt and "(2)" in txt
+    assert "AGV-B-F13 [DL]:" in txt and "(3)" in txt
+    # Leuchten-IDs deckungsgleich mit den NODEID-Annotationen (RZ-001..RZ-005).
+    assert "RZ-001" in txt
+
+
+def test_schaltungsart_rz_ist_dauerlicht():
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _SCHALTUNGSART
+    assert _SCHALTUNGSART["rz"] == "DL"                # Dauerlicht (maintained)
+    assert _SCHALTUNGSART["sicherheitsleuchte"] == "BL"  # Bereitschaftslicht
+    assert _SCHALTUNGSART["antipanik"] == "BL"
+
+
 def test_hoehenkote_text_komma_notation():
     from notbeleuchtung.hauptengine.render.dxf_renderer import _hoehenkote_text
     assert _hoehenkote_text(2400.0) == "h=2,40"
