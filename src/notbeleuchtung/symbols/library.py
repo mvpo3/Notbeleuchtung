@@ -28,10 +28,15 @@ from notbeleuchtung.symbols import load_symbol_mapping
 
 log = logging.getLogger(__name__)
 
-# Kräftiges Schrack-Grün für E_Sicherheitsbeleuchtung. Die Library führt
-# ACI=100, das auf weißem Hintergrund zu dunkel rendert.
+# Kräftiges Schrack-Grün für die Leuchten-Geometrie-Ebene. Die Library führt
+# ACI=100, das auf weißem Hintergrund zu dunkel rendert. Ausgabe-Layer folgt dem
+# DIN_SIBEL-Schema (din_SIBEL_10_emergency_lighting, siehe dxf_renderer); der
+# physische Lib-Layer heißt weiter `E_Sicherheitsbeleuchtung` und wird beim Sync
+# auf den DIN_SIBEL-Namen umbenannt (Block-Geometrie liegt auf Layer '0', erbt
+# also den INSERT-Layer — kein Umschreiben der Block-Definitionen nötig).
 _SAFETY_GREEN_RGB = (30, 180, 80)
-SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
+_LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
+SAFETY_LAYER = "din_SIBEL_10_emergency_lighting"
 
 _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
 _LIB_RELPATH = Path("CAD_Symbole") / "E-Symbole.dxf"
@@ -123,8 +128,10 @@ def load_mapping() -> dict[str, dict[str, Any]]:
 def sync_layers(output_doc: Drawing) -> int:
     """Schrack-Layer (mit Original-RGB) ins output_doc kopieren.
 
-    Idempotent. Übersteuert E_Sicherheitsbeleuchtung auf kräftiges
-    Schrack-Grün (30, 180, 80), damit Notlicht-Symbole sichtbar rendern.
+    Idempotent. Der physische Lib-Layer `E_Sicherheitsbeleuchtung` wird auf den
+    DIN_SIBEL-Ausgabenamen (`din_SIBEL_10_emergency_lighting`) umbenannt und auf
+    kräftiges Schrack-Grün (30, 180, 80) übersteuert, damit Notlicht-Symbole
+    sichtbar rendern.
 
     Returns
     -------
@@ -135,9 +142,10 @@ def sync_layers(output_doc: Drawing) -> int:
     added = 0
     for layer in lib.layers:
         name = layer.dxf.name
-        if name in output_doc.layers:
+        out_name = SAFETY_LAYER if name == _LIB_SAFETY_LAYER else name
+        if out_name in output_doc.layers:
             continue
-        new = output_doc.layers.add(name)
+        new = output_doc.layers.add(out_name)
         try:
             new.dxf.color = layer.dxf.color
         except AttributeError:
@@ -145,7 +153,7 @@ def sync_layers(output_doc: Drawing) -> int:
         src_tc = getattr(layer.dxf, "true_color", None)
         if src_tc is not None:
             new.dxf.true_color = src_tc
-        if name == SAFETY_LAYER:
+        if out_name == SAFETY_LAYER:
             r, g, b = _SAFETY_GREEN_RGB
             new.dxf.true_color = (r << 16) | (g << 8) | b
         added += 1

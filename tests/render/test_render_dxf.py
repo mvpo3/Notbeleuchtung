@@ -47,20 +47,20 @@ def test_summary_superset_und_rendered_true(rendered):
     assert summary["n_symbols"] == 5
     assert summary["by_kind"] == {"rz": 5}
     assert summary["n_raeume"] == 2
-    assert summary["layer"] == "E_Sicherheitsbeleuchtung"
+    assert summary["layer"] == "din_SIBEL_10_emergency_lighting"
     assert Path(summary["output_path"]).is_file()
 
 
 def test_ohne_lb_keine_legende(rendered):
     _, summary, doc = rendered
     assert summary["lb_legende_drawn"] is False
-    assert not doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Legende']")
+    assert not doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_white']")
 
 
 def test_stueckliste_zaehlt_symbol_arten(rendered):
     _, summary, doc = rendered
     assert summary["stueckliste_drawn"] is True
-    sl = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Stueckliste']")
+    sl = doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_green']")
     assert len(sl) == 1
     txt = sl[0].text
     assert "STÜCKLISTE" in txt
@@ -80,7 +80,7 @@ def test_hoehenkoten_label_gezeichnet(rendered):
     _, summary, doc = rendered
     # 4OG-Fixture = 5 Symbole, alle mit Default-Montagehöhe 2400 mm.
     assert summary["hoehenkoten_drawn"] == 5
-    koten = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Hoehenkote']")
+    koten = doc.modelspace().query("MTEXT[layer=='din_SIBEL_52_info']")
     assert len(koten) == 5
     assert all(k.text == "h=2,40" for k in koten)
 
@@ -90,8 +90,8 @@ def test_info_blocks_sind_gerahmte_boxen(rendered):
     # demselben Layer), nicht mehr freier Text neben dem Grundriss.
     _, _, doc = rendered
     msp = doc.modelspace()
-    assert msp.query("LWPOLYLINE[layer=='E_Notbeleuchtung_Stueckliste']")
-    assert msp.query("MTEXT[layer=='E_Notbeleuchtung_Stueckliste']")
+    assert msp.query("LWPOLYLINE[layer=='din_SIBEL_70_legend_green']")
+    assert msp.query("MTEXT[layer=='din_SIBEL_70_legend_green']")
 
 
 def test_plankopf_rahmen_und_felder(rendered):
@@ -99,8 +99,8 @@ def test_plankopf_rahmen_und_felder(rendered):
     assert summary["plankopf_drawn"] is True
     msp = doc.modelspace()
     # Rahmen (geschlossene LWPOLYLINE) + Text auf dem Plankopf-Layer.
-    assert msp.query("LWPOLYLINE[layer=='E_Notbeleuchtung_Plankopf']")
-    kopf = msp.query("MTEXT[layer=='E_Notbeleuchtung_Plankopf']")
+    assert msp.query("LWPOLYLINE[layer=='din_SIBEL_99_titleblock']")
+    kopf = msp.query("MTEXT[layer=='din_SIBEL_99_titleblock']")
     assert len(kopf) == 1
     txt = kopf[0].text
     assert "NOTBELEUCHTUNGSPLAN" in txt
@@ -114,7 +114,7 @@ def test_plankopf_metadaten_ueberschreiben(contracts, tmp_path):
     render_dxf(platzierung, raum, out,
                plankopf={"projekt": "Wohnbau X", "datum": "2026-08-30", "ersteller": "Leonis"})
     doc = ezdxf.readfile(str(out))
-    txt = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Plankopf']")[0].text
+    txt = doc.modelspace().query("MTEXT[layer=='din_SIBEL_99_titleblock']")[0].text
     assert "Projekt: Wohnbau X" in txt
     assert "Datum: 2026-08-30" in txt
     assert "Erstellt: Leonis" in txt
@@ -130,7 +130,7 @@ def test_pruefbericht_legende(contracts, tmp_path):
     summary = render_dxf(platzierung, raum, out, pruefung=pruef)
     assert summary["pruefbericht_drawn"] is True
     doc = ezdxf.readfile(str(out))
-    pb = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Pruefbericht']")
+    pb = doc.modelspace().query("MTEXT[layer=='din_SIBEL_99_inspection']")
     assert len(pb) == 1
     txt = pb[0].text
     assert "PRÜFBERICHT (EN 1838): WARNUNG" in txt
@@ -140,7 +140,7 @@ def test_pruefbericht_legende(contracts, tmp_path):
 def test_ohne_pruefung_keine_pruefbericht_legende(rendered):
     _, summary, doc = rendered
     assert summary["pruefbericht_drawn"] is False
-    assert not doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Pruefbericht']")
+    assert not doc.modelspace().query("MTEXT[layer=='din_SIBEL_99_inspection']")
 
 
 def test_lb_legende_traegt_system_spec(contracts, tmp_path):
@@ -155,7 +155,7 @@ def test_lb_legende_traegt_system_spec(contracts, tmp_path):
     summary = render_dxf(platzierung, raum, out, lb)
     assert summary["lb_legende_drawn"] is True
     doc = ezdxf.readfile(str(out))
-    legenden = doc.modelspace().query("MTEXT[layer=='E_Notbeleuchtung_Legende']")
+    legenden = doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_white']")
     assert len(legenden) == 1
     txt = legenden[0].text
     assert "Gruppenbatterie" in txt
@@ -170,7 +170,7 @@ def test_fuenf_inserts_auf_sicherheitslayer(rendered):
     mapping = library.load_mapping()
     expected_blocks = {mapping[p.catalog_key]["block_name"] for p in platzierung.platzierungen}
     for ins in inserts:
-        assert ins.dxf.layer == "E_Sicherheitsbeleuchtung"
+        assert ins.dxf.layer == "din_SIBEL_10_emergency_lighting"
         assert ins.dxf.name in expected_blocks
 
 
