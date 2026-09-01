@@ -7,9 +7,10 @@ die Schrack-Symbole (via symbols/inserter), Stromkreis-Labels mit
 Anti-Kollision und Montagehöhen-Koten (h=2,40 je Symbol). Wände/Pass-Through-
 Architektur und das Paperspace-Layout-Template folgen in späteren Slices.
 
-Layer-Entscheid (statt Port der elektro-planer layer_convention): die Symbole
-liegen auf dem Library-Layer `E_Sicherheitsbeleuchtung` (DoD + Block-Geometrie
-nutzen ihn); dazu zwei eigene Layer für Labels und Architektur-Kontur.
+Layer-Schema folgt der DIN_SIBEL-Profi-Konvention (siehe knowledge/extracted/
+PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md §1.3): die Symbole liegen auf
+`din_SIBEL_10_emergency_lighting` (aus dem Library-Layer umbenannt); dazu je ein
+DIN_SIBEL-Layer für Beschriftung/Info/Legende/Plankopf und die Architektur-Kontur.
 """
 from __future__ import annotations
 
@@ -22,15 +23,19 @@ from ezdxf.enums import MTextEntityAlignment
 from notbeleuchtung.hauptengine.contracts import LBVorgabe, PlatzierungsErgebnis, RaumModell
 from notbeleuchtung.symbols import inserter, library
 
-LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER
-LAYER_STROMKREIS = "E_Stromkreis_Label"
+# DIN_SIBEL-Layer-Schema (Profi-Konvention, siehe knowledge/extracted/
+# PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md §1.3). Lean-Rename: 1 Layer je Plan-Element,
+# semantische DIN_SIBEL-Namen statt Ad-hoc-`E_*`. Architektur-Hintergrund (`ARCH_*`)
+# bleibt — das ist kein SIBEL-Element.
+LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER  # din_SIBEL_10_emergency_lighting
+LAYER_STROMKREIS = "din_SIBEL_61_labeling"
 LAYER_ARCH_RAUM = "ARCH_Raum"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
-LAYER_LEGENDE = "E_Notbeleuchtung_Legende"
-LAYER_STUECKLISTE = "E_Notbeleuchtung_Stueckliste"
-LAYER_PLANKOPF = "E_Notbeleuchtung_Plankopf"
-LAYER_PRUEFBERICHT = "E_Notbeleuchtung_Pruefbericht"
-LAYER_HOEHENKOTE = "E_Notbeleuchtung_Hoehenkote"
+LAYER_LEGENDE = "din_SIBEL_70_legend_white"
+LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
+LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
+LAYER_PRUEFBERICHT = "din_SIBEL_99_inspection"
+LAYER_HOEHENKOTE = "din_SIBEL_52_info"
 
 _PRUEF_STATUS_LABEL = {"ok": "OK", "warnung": "WARNUNG", "fehler": "FEHLER"}
 
