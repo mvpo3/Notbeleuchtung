@@ -61,3 +61,33 @@ def test_keine_antipanik_ohne_qualifizierten_raum():
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
     out = plan_antipanik(RaumModell.model_validate(data), FakeNormProvider())
     assert out == []
+
+
+def test_antipanik_verdichtet_grosse_halle_bis_lux():
+    # 40×40-m-Halle: das Norm-Grundraster (mindest_anzahl) erreicht 0,5 lx NICHT →
+    # der EN-1838-Lux-Nachweis verdichtet über das Grundraster hinaus (A2).
+    data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    poly = [[0.0, 0.0], [40000.0, 0.0], [40000.0, 40000.0], [0.0, 40000.0]]
+    data["raeume"].append(
+        {
+            "id": "halle_1",
+            "raum_typ": "SAAL",
+            "polygon_mm": poly,
+            "flaeche_m2": 1600.0,
+            "ist_fluchtweg": False,
+            "ist_communal": True,
+        }
+    )
+    out = plan_antipanik(RaumModell.model_validate(data), FakeNormProvider())
+    assert len(out) > 4  # über das mindest_anzahl-Raster hinaus verdichtet
+
+    # Der 0,5-lx-Nachweis hält mit den verdichteten Positionen (mit der Norm-Montagehöhe).
+    from notbeleuchtung.platzierung.geometry import _bbox
+    from notbeleuchtung.platzierung.lux import lux_raster
+
+    anf = FakeNormProvider().fuer_raum("SAAL", False)
+    res = lux_raster(
+        [p.xy_mm for p in out], _bbox(poly),
+        montagehoehe_m=anf.montagehoehe_mm / 1000.0, ziel_lux=anf.min_lux,
+    )
+    assert res.erfuellt_min

@@ -37,7 +37,8 @@ def lux_raster(
     leuchten: list[Point],
     bounds_mm: tuple[float, float, float, float],
     *,
-    montagehoehe_m: float = 2.5,
+    montagehoehe_m: float = 2.0,   # EN-1838-§4.1-Mindesthöhe als Fallback; produktive
+    #                                Aufrufer übergeben die echte Norm-Höhe (anf.montagehoehe_mm)
     i_cd: float = 200.0,
     i_cd_fn: Callable[[float], float] | None = None,
     ziel_lux: float = 1.0,

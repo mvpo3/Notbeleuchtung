@@ -20,6 +20,8 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
+_REDUNDANZ_REICHWEITE_MM = 30000.0  # EN-1838-Erkennungsweite hinterleuchtet (z=200·h=0,15=30 m)
+_REDUNDANZ_MIN = 2              # EN 50172: je Fluchtweg-Abschnitt ≥ 2 Leuchten (1 Ausfall ≠ dunkel)
 _MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
 _QUASI_LEER_SYMBOLE = 2         # DoD: bis so wenige Symbole …
 _QUASI_LEER_RAEUME = 100        # … bei so vielen Räumen = quasi-leer → Fehler (nicht nur Warnung)
@@ -28,6 +30,28 @@ _AUFHELLER_ARTEN = {"sicherheitsleuchte", "antipanik"}  # flächige LB-relevante
 
 def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
     return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+
+
+def _dist_punkt_strecke(p, a, b) -> float:
+    """Abstand Punkt p zur Strecke a–b (geklemmte Projektion)."""
+    ax, ay = a[0], a[1]
+    dx, dy = b[0] - ax, b[1] - ay
+    laenge_q = dx * dx + dy * dy
+    if laenge_q == 0.0:
+        return _dist(p, (ax, ay))
+    t = ((p[0] - ax) * dx + (p[1] - ay) * dy) / laenge_q
+    t = max(0.0, min(t, 1.0))
+    return _dist(p, (ax + t * dx, ay + t * dy))
+
+
+def _dist_punkt_polyline(p, poly) -> float:
+    """Minimaler Abstand von p zur Polylinie. Lokal gehalten (kein `platzierung`-Import),
+    wie `_point_in_polygon` — die QA-Schicht bleibt dependency-leicht."""
+    if not poly:
+        return float("inf")
+    if len(poly) == 1:
+        return _dist(p, poly[0])
+    return min(_dist_punkt_strecke(p, poly[i], poly[i + 1]) for i in range(len(poly) - 1))
 
 
 def _point_in_polygon(pt: tuple[float, float], poly: list[tuple[float, float]]) -> bool:
@@ -97,6 +121,26 @@ def pruefe(
                 "fehler",
                 "Fluchtwege vorhanden, aber kein Rettungszeichen platziert",
             ))
+
+        # 4b. 2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172 / §5.1.8): fällt eine
+        #     Leuchte aus, muss der Abschnitt minimal beleuchtet bleiben → ≥ 2 Leuchten
+        #     (RZ/SL) in Erkennungsweite. WARNUNG, kein Hard-Fail — Bestandspläne erfüllen
+        #     das oft nicht flächendeckend; erst sichtbar machen, Hard-Fail folgt später.
+        leuchten = [p for p in plzg if p.kind in ("rz", "sicherheitsleuchte")]
+        unterversorgt = [
+            s.segment_id for s in raum.zirkulation.segmente
+            if sum(
+                1 for p in leuchten
+                if _dist_punkt_polyline(p.xy_mm, s.polyline_mm) <= _REDUNDANZ_REICHWEITE_MM
+            ) < _REDUNDANZ_MIN
+        ]
+        befunde.append(Befund(
+            "2-Leuchten-Redundanz je Fluchtweg-Abschnitt (EN 50172)",
+            "warnung" if unterversorgt else "ok",
+            f"{len(unterversorgt)}/{len(segmente)} Abschnitt(e) mit < {_REDUNDANZ_MIN} "
+            "Leuchten in Reichweite" if unterversorgt
+            else f"alle {len(segmente)} Abschnitte mit ≥ {_REDUNDANZ_MIN} Leuchten",
+        ))
 
     rz = [p for p in plzg if p.kind == "rz"]
 
