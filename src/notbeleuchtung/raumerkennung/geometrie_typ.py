@@ -23,13 +23,15 @@ from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 
-from .dxf_load import DxfPlan
+from .dxf_load import FLUCHTWEG_PATTERN, STIEGE_PATTERN, DxfPlan
 
 XY = tuple[float, float]
 
 _STAIR_BLOCK = re.compile(r"stiege|stieg|trepp|stair", re.IGNORECASE)
-# Fluchtweg-Layer je CAD-Familie (Mollgasse 09-WEG, Fischamender A_Fluchtweg).
-_FLUCHTWEG_LAYER = re.compile(r"09-WEG|A_Fluchtweg|Fluchtweg", re.IGNORECASE)
+# Beschriftungs-/Bemaßungs-Layer der Treppe tragen keine Treppen-Geometrie.
+_STIEGE_LAYER_EXCLUDE = re.compile(r"ANNO|IDEN|MBND|Beschriftung|Text", re.IGNORECASE)
+_STIEGE_CLUSTER_MM = 4000.0     # Stufen-Linien dichter als das sind dieselbe Treppe
+_STIEGE_MIN_M2, _STIEGE_MAX_M2 = 3.0, 80.0   # plausible Treppenlauf-Grundfläche
 _GANG_PUFFER_MM = 750.0         # Halbbreite → ~1.5 m Korridor um die Fluchtweg-Achse
 _MIN_REALRAUM_M2 = 2.0          # kleiner = Fragment, kein „echter" Raum zum Typisieren
 
@@ -44,8 +46,8 @@ def _flaeche_m2(poly: list[XY]) -> float:
     return abs(s) / 2.0 / 1_000_000.0
 
 
-def stiege_rechtecke(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
-    """Bounding-Rechtecke (mm) der Treppen-Blockreferenzen: (polygon, center, area_m2)."""
+def _block_stiegen(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
+    """Treppen als benannte Blockreferenz (Mollgasse ``STIEGE``)."""
     out: list[tuple[list[XY], XY, float]] = []
     f = plan.factor
     for e in plan.space:
@@ -58,9 +60,59 @@ def stiege_rechtecke(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
         x1, y1 = b.extmax[0] * f, b.extmax[1] * f
         if x1 <= x0 or y1 <= y0:
             continue
-        rect = [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
-        out.append((rect, ((x0 + x1) / 2, (y0 + y1) / 2), _flaeche_m2(rect)))
+        out.append(_als_rechteck(x0, y0, x1, y1))
     return out
+
+
+def _als_rechteck(x0: float, y0: float, x1: float, y1: float) -> tuple[list[XY], XY, float]:
+    rect = [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+    return rect, ((x0 + x1) / 2, (y0 + y1) / 2), _flaeche_m2(rect)
+
+
+def _layer_stiegen(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
+    """Treppen aus dedizierten Treppen-Layern (Fischamender ``S-STRS``, ArchiCAD
+    ``410 Treppe``) — dort gibt es keinen Blocknamen-Hinweis, nur Layer-Geometrie.
+
+    Die Layer tragen die einzelnen Stufen-Linien, nicht eine Treppe als Ganzes.
+    Deshalb werden die Stützpunkte greedy zu Clustern zusammengezogen (Treppen
+    liegen räumlich weit auseinander) und jedes Cluster zum Rechteck geschlossen.
+    """
+    boxen: list[list[float]] = []       # [x0, y0, x1, y1] je Cluster
+    for e in plan.entities_matching(STIEGE_PATTERN):
+        if _STIEGE_LAYER_EXCLUDE.search(e.dxf.layer):
+            continue
+        for x, y in plan.entity_points(e):
+            passend = next(
+                (b for b in boxen
+                 if b[0] - _STIEGE_CLUSTER_MM <= x <= b[2] + _STIEGE_CLUSTER_MM
+                 and b[1] - _STIEGE_CLUSTER_MM <= y <= b[3] + _STIEGE_CLUSTER_MM),
+                None,
+            )
+            if passend is None:
+                boxen.append([x, y, x, y])
+            else:
+                passend[0] = min(passend[0], x)
+                passend[1] = min(passend[1], y)
+                passend[2] = max(passend[2], x)
+                passend[3] = max(passend[3], y)
+
+    out: list[tuple[list[XY], XY, float]] = []
+    for x0, y0, x1, y1 in boxen:
+        if x1 <= x0 or y1 <= y0:
+            continue
+        eintrag = _als_rechteck(x0, y0, x1, y1)
+        if _STIEGE_MIN_M2 <= eintrag[2] <= _STIEGE_MAX_M2:
+            out.append(eintrag)
+    return out
+
+
+def stiege_rechtecke(plan: DxfPlan) -> list[tuple[list[XY], XY, float]]:
+    """Bounding-Rechtecke (mm) der Treppen: (polygon, center, area_m2).
+
+    Benannte Blöcke zuerst (präzise), sonst die Treppen-Layer der übrigen
+    CAD-Familien.
+    """
+    return _block_stiegen(plan) or _layer_stiegen(plan)
 
 
 def typisiere_stiegenhaus(raeume: list[Raum], stiegen: list[tuple[list[XY], XY, float]]) -> list[Raum]:
@@ -100,9 +152,7 @@ def typisiere_stiegenhaus(raeume: list[Raum], stiegen: list[tuple[list[XY], XY, 
 def gang_polygone(plan: DxfPlan, puffer_mm: float = _GANG_PUFFER_MM) -> list[list[XY]]:
     """Korridor-Polygone (mm) aus der Fluchtweg-Achse (09-WEG / A_Fluchtweg) gepuffert."""
     linien: list[LineString] = []
-    for e in plan.space:
-        if not _FLUCHTWEG_LAYER.search(e.dxf.layer):
-            continue
+    for e in plan.entities_matching(FLUCHTWEG_PATTERN):
         if e.dxftype() in ("LINE", "LWPOLYLINE", "POLYLINE"):
             pts = plan.entity_points(e)
             if len(pts) >= 2:

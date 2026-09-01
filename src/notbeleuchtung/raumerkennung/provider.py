@@ -12,8 +12,8 @@ from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import RaumModell
 
+from .ausgaenge import ausgaenge_ermitteln
 from .dxf_load import bounds_mm, lade_dxf
-from .footprint import hauptausgaenge
 from .geometrie_typ import typisiere_geometrisch
 from .raumlayer import raeume_aus_layer
 from .raumtyp import beschrifte_raeume
@@ -44,7 +44,9 @@ class ArchitekturRaumProvider:
         # auf Plänen ohne Text-Labels (z.B. Mollgasse), ergänzt Text/Layer-Typisierung.
         raeume = typisiere_geometrisch(plan, raeume)
         tueren = tueren_aus_dxf(plan)
-        ausgaenge = hauptausgaenge(plan, bounds)
+        # Ausgänge über die Familien-Kaskade (Doppeltür → Außentür → Stiegenhaus
+        # → Tür am Rand); braucht die Türen, daher nach ihnen.
+        ausgaenge = ausgaenge_ermitteln(plan, tueren, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
         return RaumModell(
             floor=floor,
