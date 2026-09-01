@@ -76,3 +76,49 @@ def test_unbekannter_catalog_key_raises():
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="gibt_es_nicht", kind="rz")
     with pytest.raises(KeyError):
         inserter.insert_platzierung(doc, p)
+
+
+def test_gerade_zeichnet_beidseitigen_doppelpfeil():
+    # richtung="gerade" (beidseitiger RZ, Wasserscheide) → zwei horizontale Pfeile
+    # (links + rechts) am selben Punkt, gemeinsam rotiert. Zurück kommt der linke.
+    doc = ezdxf.new("R2018")
+    mapping = library.load_mapping()
+    p = Platzierung(
+        xy_mm=(1000.0, 2000.0), catalog_key="notlicht_ks_stiege", kind="rz",
+        richtung="gerade", rotation_deg=90.0,
+    )
+    primary = inserter.insert_platzierung(doc, p)
+
+    inserts = doc.modelspace().query("INSERT")
+    assert len(inserts) == 2
+    namen = {ins.dxf.name for ins in inserts}
+    assert namen == {
+        mapping["notlicht_ks_stiege_links"]["block_name"],
+        mapping["notlicht_ks_stiege_rechts"]["block_name"],
+    }
+    # beide teilen Punkt + Rotation (Fluchtweg-Achse)
+    for ins in inserts:
+        assert ins.dxf.insert.x == pytest.approx(1000.0)
+        assert ins.dxf.insert.y == pytest.approx(2000.0)
+        assert ins.dxf.rotation == pytest.approx(90.0)
+        assert ins.dxf.layer == library.SAFETY_LAYER
+    # primärer (zurückgegebener) Insert = linker Pfeil
+    assert primary.dxf.name == mapping["notlicht_ks_stiege_links"]["block_name"]
+
+
+def test_gerade_xdata_nur_auf_primaerem_pfeil():
+    doc = ezdxf.new("R2018")
+    p = Platzierung(
+        xy_mm=(0.0, 0.0), catalog_key="notlicht_ks_stiege", kind="rz",
+        richtung="gerade", circuit_hint="AGV-A-F13",
+    )
+    primary = inserter.insert_platzierung(doc, p)
+    # genau ein Insert trägt den Stromkreis-XDATA-Tag
+    getaggt = [
+        ins for ins in doc.modelspace().query("INSERT")
+        if ins.has_xdata("NOTBELEUCHTUNG")
+    ]
+    assert len(getaggt) == 1
+    assert getaggt[0] is primary
+    xdata = primary.get_xdata("NOTBELEUCHTUNG")
+    assert (1000, "stromkreis=AGV-A-F13") in [(c, v) for c, v in xdata]
