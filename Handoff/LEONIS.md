@@ -4,7 +4,42 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-02) — HIER WEITER
+## STAND (2026-09-03, F2-Abschluss) — HIER WEITER
+
+**F2-Session komplett gemergt (main `c915a55`, 551 grün, ruff clean, kein Contract):**
+- **#84** — Abstands-Nachpass + Mollgasse-Real-Data-E2E (Handoff-Auftrag, Union-Merge mit #85).
+- **#90** — Prüfregel **10b**: LB-Bereichsregel ohne matchenden Raum = Warnung (vorher dreifach
+  stiller No-op). Real bewiesen: Fischa-LB auf Mollgasse → `GARAGE`-Warnung.
+- **#91** — disconnected-graph-Anker: Kreuzung ohne erreichbaren Ausgang zeigt Luftlinie zum
+  nächsten Ausgang statt fabriziertem „unten" (relevant für B2-Klasse).
+- **#94** — Prüfregel **8b**: ≥15 Räume + Symbole, aber 0 Ausgänge/0 Segmente erkannt →
+  „UNGEPRÜFT ≠ erfüllt"-Warnung (Fischamender lief vorher als „ok" durch!). + E2E-Netz
+  Fischamender EG + Herrenholz EG (`tests/e2e/test_familien_durchstich.py`).
+- **#97** — Prüfregel **8c**: ≥30 Türen bei <15 Räumen = Erkennung widersprüchlich →
+  Warnung (Barawitzka: 116 Türen/2 Räume/0 Symbole war „ok"). + Barawitzka im E2E-Netz.
+
+**E2E-Regressionsnetz deckt jetzt alle 4 Familien** (Mollgasse · Fischamender · Herrenholz ·
+Barawitzka) mit ehrlichen Ist-Stand-Bändern + Kipp-Anleitungen für Selmans Fixes.
+Sondierungs-Fakten: Fischa EG 69 Räume(69 typed)/120 Türen/0 Ausgänge/0 Segmente/8RZ+14SL ·
+Herrenholz EG 473/140/0/0/0 Symbole · Barawitzka EG 2/116/0/0/0.
+
+**Unblockierter F2-Backlog = LEER.** Es warten nur noch die drei F1-3-Owner-Stacks
+(#87→#88→#92 OIB · #93→#95 Sonderstellen · #96→#98 Symbol-Datenmodell) auf
+**Approvals von Enis + Selman** — Owner-Entscheidung „nicht ohne Approvals mergen"
+ist protokolliert (2026-09-03). N2 Weglänge-Deckung bleibt vertagt (2× protokolliert).
+
+**Tool-Recherche (2026-09-03), Integrations-Kandidaten priorisiert:**
+1. **ODA File Converter** via `ezdxf.addons.odafc` → DWG-Input (kleinster Slice, Hauptengine;
+   Backlog-Punkt `Stromkreisnummer.dwg` löst sich mit). Konverter = externes Gratis-Programm.
+2. **Docling** (IBM, open source) → echtes PDF-LB-Parsing als Vorstufe vor Enis' Regel-Parser
+   (Tabellen/Struktur statt Rohtext). Empfehlung an @EnisAMG.
+3. **ifcopenshell** → BIM-Pfad, Spike liegt in `spikes/ifc_raum_spike.py` (IfcSpace/IfcDoor →
+   RaumModell-Contract). Fertigste Vorlage, Owner @polatselman.
+4. **Radiance/honeybee** → nur als Golden-Referenz im Test zur Validierung von `lux_raster`
+   (nicht Laufzeit). **luxpy = GPLv3** (nur Dev-Tool). **CubiCasa5k-ML = non-commercial-Lizenz
+   + Raster→Vektor-Problem** (nur als Selman-Fallback-Spike denkbar).
+
+## STAND (2026-09-02) — F1: Quellen-Korrekturen + OIB-Gate
 
 **F1-Session: Quellen-Korrekturen + OIB-Gate.** main war `b96ea50` (#84 gemergt, 535 grün,
 Mollgasse-Real-Data-E2E an Bord). Der im Nacht-STAND geforderte **Regress-Check nach #83 ist
