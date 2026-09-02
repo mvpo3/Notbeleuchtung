@@ -37,6 +37,7 @@ from .deckung import verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
 from .gang_strategy import plan_rettungszeichen_gang
 from .graph import build_circulation_graph, kreuzungs_anker
+from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
 
 
 def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
@@ -68,7 +69,9 @@ class NotlichtPlatzierer:
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
-            *plan_antipanik(raum, norm),                 # Fläche
+            *plan_antipanik(raum, norm),                 # Fläche (OIB-Gate kommt mit #88-Ersatz)
+            *plan_sonderstellen(raum, norm),             # Pflichtstellen §4.1.2 (SL+RZ)
+            *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
             *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)
         ]
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.

@@ -1,0 +1,123 @@
+"""sonderstellen_strategy — Pflicht-Leuchten an Sonderstellen (EN 1838 §4.1.2).
+
+Konsumiert `RaumModell.sonderstellen` (Contract v1.1.0, Option A nach
+docs/SPEC_SONDERSTELLEN_CONTRACT.md) + die Raum-Flags `ist_barrierefrei` (§4.3.8)
+und `besondere_gefaehrdung` (§4.4.1). Eine generische Abstandslogik für alle
+Typen: die Leuchte sitzt DIREKT an der Stelle (`xy_mm`) — damit ist die
+Norm-Anforderung „nahe" (ANMERKUNG: ≤ 2 m horizontal) konstruktiv erfüllt,
+ohne einen Abstands-Parameter zu raten. `niveauaenderung` löst zusätzlich ein
+Rettungszeichen aus (RZ-06; `richtung="gerade"` = beidseitig, weil die
+Reiserichtung an einem Niveausprung nicht aus der Stelle selbst folgt).
+
+Norm-Parameter (Symbol, Höhe, Quelle) kommen wie beim Flächen-Trigger aus Enis'
+Referenz-Regeln im Regelwerk-Snapshot — Leonis fabriziert keine Norm-Werte.
+Fehlt eine Referenz-Regel, wird der Typ übersprungen (nicht geraten).
+
+Bewusst NICHT hier: der 5-lx-vertikal-Nachweis (§4.1.2 h/i). Der Wert ist
+vertikal am Gerät, `lux_raster` rechnet horizontal am Boden — ein Einsetzen wäre
+der Kategorienfehler aus Enis' Befund. Die Stellen bleiben MANUELL_PRUEFEN
+(Spec §3), die Leuchte wird trotzdem gesetzt (Pflichtstelle).
+
+Ohne Sonderstellen und ohne gesetzte Flags ist dieses Modul ein No-op —
+bestehende Pläne bleiben bit-identisch.
+"""
+from __future__ import annotations
+
+from notbeleuchtung.hauptengine.contracts import (
+    NormProvider,
+    Platzierung,
+    RaumModell,
+)
+
+from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .geometry import find_center_visual
+
+
+def _referenz(norm: NormProvider, klassifikation: str):
+    """Erste Regelwerk-Anforderung der Klassifikation mit Symbol — oder None."""
+    for regel in norm.regelwerk_snapshot().regeln:
+        anf = regel.anforderung
+        if anf.klassifikation == klassifikation and anf.symbol_katalog_keys:
+            return anf
+    return None
+
+
+def _assigner(raum: RaumModell, extra_xs: list[float]):
+    """Stromkreis-Bauteil A|B — dieselbe x-Cluster-Regel wie RZ/Flächen-Leuchten."""
+    xs = [
+        find_center_visual(r.polygon_mm)[0] for r in raum.raeume if r.polygon_mm
+    ] + extra_xs
+    return _building_assigner(xs)
+
+
+def _leuchte(xy, anf, kind: str, building: str) -> Platzierung:
+    return Platzierung(
+        xy_mm=(xy[0], xy[1]),
+        catalog_key=anf.symbol_katalog_keys[0],
+        rotation_deg=0.0,
+        height_mm=float(anf.montagehoehe_mm),
+        kind=kind,
+        richtung="gerade",
+        circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
+        covers_segment=[],
+        norm_quelle=anf.quelle,
+    )
+
+
+def plan_sonderstellen(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
+    """Je Sonderstelle eine Sicherheitsleuchte an der Stelle selbst (§4.1.2);
+    `niveauaenderung` zusätzlich ein RZ (RZ-06 + SL-04, dieselbe Stelle)."""
+    if not raum.sonderstellen:
+        return []
+    sl_ref = _referenz(norm, "sicherheitsleuchte")
+    rz_ref = _referenz(norm, "rz")
+    assign_building = _assigner(raum, [s.xy_mm[0] for s in raum.sonderstellen])
+
+    out: list[Platzierung] = []
+    for stelle in raum.sonderstellen:
+        building = assign_building(stelle.xy_mm[0])
+        if sl_ref is not None:
+            out.append(_leuchte(stelle.xy_mm, sl_ref, "sicherheitsleuchte", building))
+        if stelle.typ == "niveauaenderung" and rz_ref is not None:
+            out.append(_leuchte(stelle.xy_mm, rz_ref, "rz", building))
+    return out
+
+
+def plan_flag_raeume(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
+    """Raum-Flags mit Norm-Folge, je eine Leuchte am visuellen Zentrum:
+
+    * `ist_barrierefrei` (§4.3.8) → Antipanik-Pflicht unabhängig vom Raumtyp.
+      Ist der Raum ohnehin antipanik-klassifiziert, macht `flaechen_strategy`
+      die Arbeit → hier übersprungen (keine Doppelung by design).
+    * `besondere_gefaehrdung` (§4.4.1) → Sicherheitsleuchte; der erhöhte
+      Lux-Anspruch (`arbeitsplatz_lux`, 10 %/min. 15 lx) ist im Regelwerk noch
+      ungefüllt → Stelle bleibt MANUELL_PRUEFEN, die Leuchte steht trotzdem.
+    """
+    flagged = [
+        r for r in raum.raeume
+        if r.polygon_mm and (r.ist_barrierefrei or r.besondere_gefaehrdung)
+    ]
+    if not flagged:
+        return []
+    ap_ref = _referenz(norm, "antipanik")
+    sl_ref = _referenz(norm, "sicherheitsleuchte")
+    assign_building = _assigner(raum, [])
+
+    out: list[Platzierung] = []
+    for r in flagged:
+        center = find_center_visual(r.polygon_mm)
+        building = assign_building(center[0])
+        anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
+        if (
+            r.ist_barrierefrei
+            and ap_ref is not None
+            and anf.klassifikation != "antipanik"
+        ):
+            out.append(_leuchte(center, ap_ref, "antipanik", building))
+        if (
+            r.besondere_gefaehrdung
+            and sl_ref is not None
+            and anf.klassifikation != "sicherheitsleuchte"
+        ):
+            out.append(_leuchte(center, sl_ref, "sicherheitsleuchte", building))
+    return out
