@@ -79,16 +79,25 @@ def test_treppen_rz_ersetzt_die_sicherheitsleuchte_nicht():
     assert "ersetzt" in W.regel("RZ-05-TREPPE").konfliktregel
 
 
-def test_feuerloescher_5lx_ist_ein_lb_wert_kein_normwert():
-    """Der kritische Fall: 5 lx am Feuerlöscher stehen in der realen Elektro-LB,
-    NICHT in EN 1838. Die Betonungspflicht ist belegt, der Lux-Wert nicht — also
-    wird er als LB-Wert geführt und der fehlende Norm-Beleg bleibt sichtbar."""
+def test_feuerloescher_5lx_sind_normwert_aber_vertikal():
+    """Korrektur vom 01.09.2026: §4.1.2 i) nennt die 5 lx ausdrücklich — als
+    **vertikale** Beleuchtungsstärke am Gerät. Die reale Elektro-LB §5.1.23
+    wiederholt den Wert nur.
+
+    Der Test hält beides fest: dass der Wert normativ ist UND dass er unter einem
+    eigenen, achsen-benannten Schlüssel steht, damit er nicht als horizontales
+    `min_lux` in den Bodenraster läuft.
+    """
     r = W.regel("SL-06-FEUERLOESCHER")
+    assert r.abstand["min_lux_vertikal_norm"] == 5.0
+    assert "§4.1.2 i)" in r.abstand["min_lux_vertikal_quelle"]
+    assert "min_lux" not in {k for k in r.abstand if k == "min_lux"}
     assert r.abstand["min_lux_lb_typisch"] == 5.0
-    assert "kein Norm-Default" in r.abstand["min_lux_quelle"]
-    assert MANUELL_PRUEFEN in r.norm_ref
+    assert MANUELL_PRUEFEN not in r.norm_ref
+    # Review bleibt — jetzt wegen des fehlenden RaumModell-Inputs, nicht wegen des Werts.
     assert r.review_erforderlich is True
-    # Die Leuchte selbst bleibt trotzdem Pflicht (§4.1.2), nur ihr Lux-Niveau ist offen.
+    assert r.engine_status == "input_fehlt"
+    # Die Leuchte selbst ist Pflicht (§4.1.2), unabhängig vom Lux-Wert.
     assert r.leuchtenart == "sicherheitsleuchte"
     assert r.abstand["max_horizontal_zum_punkt_mm"] == 2000
 

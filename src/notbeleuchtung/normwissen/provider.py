@@ -6,6 +6,12 @@ diesen Provider (`fuer_raum`, `fuer_fluchtweg_abschnitt`, `erkennungsweite_m`,
 `data/en1838_grundwerte.yaml` (Norm-Grundwerte) + `data/raumtyp_regeln.yaml`
 (Raumtyp → Anforderung); dieses Modul hardcodet nichts.
 
+Seit Contract v1.1.0 liefert der Provider zusaetzlich `gleichmaessigkeit_max`
+(Ud, §4.2.2/§4.3.2) und `umschaltzeit_max_s` (§4.2.6/§4.3.6/§5.4.6). Die beiden
+uebrigen v1.1.0-Felder — `NormRegelwerk.flaechen_schwellen` und
+`arbeitsplatz_lux` — bleiben bewusst leer: fuer sie liegt kein EN-1838-Beleg vor
+(Begruendung in `data/en1838_grundwerte.yaml` + `docs/NORMQUELLEN_AT.md` 2b).
+
 Jede NormAnforderung.quelle ist eine echte Norm-Fundstelle (Audit-Trail). Die
 Naht-Invariante (tests/contract) prüft, dass jede Platzierung.norm_quelle in
 `regelwerk_snapshot().quellen` liegt.
@@ -57,6 +63,26 @@ class En1838NormProvider:
     def _quelle(self, ref: str) -> str:
         return str(self._grund["quellen"][ref])
 
+    def _gleichmaessigkeit(self, regel: dict) -> float | None:
+        """Ud als max:min (§4.2.2 Rettungsweg / §4.3.2 Antipanik — beide 1:40).
+
+        Kein `gleichmaessigkeit_ref` = die Norm gibt fuer diese Anforderung nichts
+        her (z.B. Aufheller nach §4.1) -> `None`. Der Konsument faellt dann auf
+        seinen eigenen Default zurueck; es entsteht kein stiller Norm-Default.
+        """
+        ref = regel.get("gleichmaessigkeit_ref")
+        return float(self._grund["gleichmaessigkeit"][ref]) if ref else None
+
+    def _umschaltzeit(self) -> float | None:
+        """Umschaltzeit bis zum VOLLwert (§4.2.6/§4.3.6/§5.4.6: 100 % in 60 s).
+
+        Global wie `dauer_min` — die Norm nennt fuer Rettungsweg, Antipanik und
+        Sicherheitszeichen denselben Wortlaut. Die zweite Stufe (50 % in 5 s)
+        steht in der YAML als `halbwert_s`, hat aber kein Contract-Feld.
+        """
+        wert = (self._grund.get("umschaltzeit") or {}).get("vollwert_s")
+        return float(wert) if wert is not None else None
+
     def _anforderung_aus_regel(self, regel: dict) -> NormAnforderung:
         """Ein Roh-Regel-Dict (aus raumtyp_regeln.yaml) → typisierte NormAnforderung."""
         klass = regel["klassifikation"]
@@ -70,6 +96,8 @@ class En1838NormProvider:
             symbol_katalog_keys=list(regel.get("symbol_katalog_keys", [])),
             mindest_anzahl=int(regel.get("mindest_anzahl", 1)),
             dauer_min=int(self._grund["dauer_min"]),
+            gleichmaessigkeit_max=self._gleichmaessigkeit(regel),
+            umschaltzeit_max_s=self._umschaltzeit(),
             quelle=self._quelle(regel["quelle_ref"]),
         )
 
