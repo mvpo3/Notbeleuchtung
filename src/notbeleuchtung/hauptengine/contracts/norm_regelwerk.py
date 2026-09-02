@@ -13,7 +13,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-CONTRACT_VERSION = "1.1.0"
+CONTRACT_VERSION = "1.2.0"
 
 Klassifikation = Literal["rz", "antipanik", "sicherheitsleuchte"]
 
@@ -30,8 +30,12 @@ class NormAnforderung(BaseModel):
     dauer_min: int = 60                  # Notbetriebsdauer
     # v1.1.0 (Track B) — abfragbare Norm-Werte, Zahlen kommen aus normwissen/data (Enis);
     # None = die Norm liefert (noch) keinen Wert, Konsument fällt auf seinen Default zurück.
-    gleichmaessigkeit_max: float | None = None   # Ud als max:min (EN 1838: 40 Rettungsweg / 10 Antipanik)
-    umschaltzeit_max_s: float | None = None      # Umschaltzeit auf Sicherheitsstromversorgung
+    gleichmaessigkeit_max: float | None = None   # Ud als max:min (EN 1838 §4.2.2/§4.3.2: je 40;
+    #   §4.4.2 nennt Uo >= 0,1 für Arbeitsplätze — Uo (kleinste:mittlere, EN 12665) ist ein
+    #   anderes Maß als Ud (kleinste:größte) und gehört NICHT in dieses Feld.
+    umschaltzeit_max_s: float | None = None      # Umschaltzeit auf SV, Vollwert (100 % in 60 s);
+    #   die Norm ist zweistufig (§4.2.6/§4.3.6: 50 % in 5 s) — der 5-s-Halbwert liegt als
+    #   `umschaltzeit.halbwert_s` in normwissen/data, nicht in diesem Skalar.
     quelle: str = ""                     # "ÖNORM EN 1838:2013 §4.2.1" — rückverfolgbar
 
 
@@ -49,14 +53,23 @@ class ErkennungsweiteParameter(BaseModel):
 
 
 class FlaechenSchwellen(BaseModel):
-    """Flächenbasierte Trigger (EN 1838 §4.3 / OIB) — welche Fläche welche Pflicht auslöst.
+    """Flächenbasierte Antipanik-Trigger — welche Fläche welche Pflicht auslöst.
 
-    v1.1.0 (Track B). Werte kommen aus `normwissen/data` (Enis); None = Norm liefert
-    (noch) keine Schwelle. Konsument (`flaechen_strategy`) fragt sie statt sie zu raten.
+    Quelle ist NICHT EN 1838 (dort kommt keine flächenbezogene Auslöse-Schwelle vor),
+    sondern OVE E 8101:2019 718.560.9.001.AT bzw. ÖVE/ÖNORM E 8002-1 — dort
+    scope-gebunden an „erhöhte Anforderungen nach der Art der Nutzung" (OVE R 12-2 /
+    OIB-RL 2). Der Konsument (`flaechen_strategy`) darf sie deshalb nur anwenden, wenn
+    der OIB-Pfad diesen Scope bestätigt (OibBefund-Gate), nie global.
+
+    v1.2.0. Werte + `quelle` kommen aus `normwissen/data` (Enis); None = Norm liefert
+    (noch) keine Schwelle. Konsument fragt sie statt sie zu raten.
     """
 
-    antipanik_min_m2: float | None = None     # ab dieser freien Fläche Antipanik-Pflicht (≈ 60 m²)
-    wc_sanitaer_min_m2: float | None = None   # WC/Sanitär ab dieser Fläche antipanik-relevant (≈ 8 m²)
+    antipanik_min_m2: float | None = None     # ab dieser freien Fläche Antipanik-Pflicht (OVE, ≈ 60 m²)
+    wc_sanitaer_min_m2: float | None = None   # WC/Sanitär ab dieser Fläche antipanik-relevant (OVE, ≈ 8 m²)
+    quelle: str | None = None                 # Quellen-String der Schwellen (z.B. OVE E 8101:2019
+    #   718.560.9.001.AT) — Audit-Trail des Flächen-Triggers; muss in NormRegelwerk.quellen liegen
+    #   (Naht-Invariante), sonst fällt der Trigger auf die Antipanik-Regel-Quelle zurück.
 
 
 class ArbeitsplatzLux(BaseModel):
