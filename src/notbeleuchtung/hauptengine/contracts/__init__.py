@@ -24,6 +24,7 @@ from .platzierung_ergebnis import (
     Platzierung,
     PlatzierungsErgebnis,
     Richtung,
+    Schaltungsart,
 )
 from .ports import (
     LBProvider,
@@ -102,6 +103,7 @@ __all__ = [
     "RaumRegel",
     "Richtung",
     "RzStelle",
+    "Schaltungsart",
     "SonderLux",
     "SystemTyp",
     "Tuer",
