@@ -54,15 +54,28 @@ class NormProvider(Protocol):
 
 @runtime_checkable
 class Platzierer(Protocol):
-    """Leonis — Platzierer(Raum, Norm[, LB]) -> PlatzierungsErgebnis.
+    """Leonis — Platzierer(Raum, Norm[, LB][, OIB]) -> PlatzierungsErgebnis.
 
     `lb` ist der optionale 2. Input: die explizite Leistungsbeschreibung, die
     Norm-Defaults übersteuert (z.B. `bereiche_exklusion` → keine Sicherheitsleuchte
     trotz Norm-Default). `lb=None` = kein 2. Input → reines Norm-Verhalten.
+
+    `oib` (keyword-only) ist der optionale Erforderlichkeits-Befund aus dem OIB-Pfad
+    (OibProvider über einen ProjektKontext). Er gated scope-gebundene Trigger — konkret
+    den Antipanik-Flächen-Trigger: dessen Schwellen (60/8 m²) stammen aus OVE E 8101:2019
+    718.560.9.001.AT bzw. ÖVE/ÖNORM E 8002-1 und gelten dort nur für Bauvorhaben mit
+    „erhöhten Anforderungen nach der Art der Nutzung" (OVE R 12-2 / OIB-RL 2) — nicht
+    global aus EN 1838. `oib=None` = kein Befund → das Gate bleibt zu (fail-closed,
+    Verhalten wie vor diesem Feld).
     """
 
     def place(
-        self, raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+        self,
+        raum: RaumModell,
+        norm: NormProvider,
+        lb: LBVorgabe | None = None,
+        *,
+        oib: OibBefund | None = None,
     ) -> PlatzierungsErgebnis: ...
 
 
@@ -80,13 +93,18 @@ class OibProvider(Protocol):
 
 @dataclass
 class ProviderBundle:
-    """Das von registry.py verdrahtete Trio (echt oder Fake) + optionaler LB-Parser.
+    """Das von registry.py verdrahtete Trio (echt oder Fake) + optionale Zusatz-Provider.
 
     `lb` ist optional: der 2. Input (Leistungsbeschreibung) ist projektspezifisch und
     kann fehlen. Ohne LB-Provider läuft die Engine rein norm-getrieben (wie bisher).
+
+    `oib` ist optional: der OIB-Pfad (Erforderlichkeit nach OIB-RL 2 Tabelle 6) braucht
+    einen ProjektKontext als eigenen Input. Ohne OIB-Provider oder ohne ProjektKontext
+    bleiben OIB-gegatete Trigger zu (fail-closed) — das Ergebnis ist identisch zu vorher.
     """
 
     raum: RaumProvider
     norm: NormProvider
     platzierer: Platzierer
     lb: LBProvider | None = None
+    oib: OibProvider | None = None
