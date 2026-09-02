@@ -238,6 +238,16 @@
           "default": false,
           "title": "Ist Communal",
           "type": "boolean"
+        },
+        "ist_barrierefrei": {
+          "default": false,
+          "title": "Ist Barrierefrei",
+          "type": "boolean"
+        },
+        "besondere_gefaehrdung": {
+          "default": false,
+          "title": "Besondere Gefaehrdung",
+          "type": "boolean"
         }
       },
       "required": [
@@ -245,6 +255,64 @@
         "raum_typ"
       ],
       "title": "Raum",
+      "type": "object"
+    },
+    "Sonderstelle": {
+      "description": "Hervorzuhebende Stelle nach EN 1838 §4.1.2 — punktförmig.\n\nDie Norm-Anforderung ist ein Abstand zum Gerät (Leuchte „nahe\", ANMERKUNG:\n≤ 2 m horizontal) — deshalb ein Punkt-Modell, kein Raum-Flag. Heute ist kein\nTyp automatisch aus dem Architekturplan erkennbar (Spec §4) — die Quelle ist\ni.d.R. eine manuelle Angabe; `quelle` trägt die Herkunft als Audit-Trail.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "typ": {
+          "enum": [
+            "feuerloescher",
+            "hydrant",
+            "erste_hilfe",
+            "brandmelder",
+            "niveauaenderung"
+          ],
+          "title": "Typ",
+          "type": "string"
+        },
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "raum_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raum Id"
+        },
+        "quelle": {
+          "default": "",
+          "title": "Quelle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "typ",
+        "xy_mm"
+      ],
+      "title": "Sonderstelle",
       "type": "object"
     },
     "Tuer": {
@@ -356,7 +424,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.0.0",
+      "default": "1.1.0",
       "title": "Contract Version",
       "type": "string"
     },
@@ -396,6 +464,13 @@
     },
     "zirkulation": {
       "$ref": "#/$defs/ZirkulationsGraph"
+    },
+    "sonderstellen": {
+      "items": {
+        "$ref": "#/$defs/Sonderstelle"
+      },
+      "title": "Sonderstellen",
+      "type": "array"
     }
   },
   "required": [
