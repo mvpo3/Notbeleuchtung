@@ -79,6 +79,41 @@ def test_wenige_raeume_ohne_symbole_kein_plausibilitaets_fehler():
     assert not any("Plausibilität" in b.regel for b in befunde)
 
 
+# ---- Regel 8b: Prüfbasis (0 Ausgänge / 0 Segmente erkannt = ungeprüft ≠ ok) ----
+
+def test_symbole_ohne_ausgaenge_und_segmente_ist_pruefbasis_warnung():
+    # Realer Fischamender-Fall: viele Räume, Symbole platziert, aber die Erkennung
+    # liefert 0 Ausgänge + 0 Segmente → Regel 3/4/4b/5 liefen NIE. Der Bericht darf
+    # nicht „ok" sagen — zwei Prüfbasis-Warnungen.
+    sl = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz", richtung="unten",
+                     height_mm=2400.0, circuit_hint="AGV-A-F13")
+    befunde = pruefe(_raum_mit_raeumen(20), _erg(sl))
+    basis = [b for b in befunde if "Prüfbasis" in b.regel]
+    assert {b.regel for b in basis} == {
+        "Prüfbasis Notausgänge (Erkennung)", "Prüfbasis Fluchtwege (Erkennung)"}
+    assert all(b.status == "warnung" for b in basis)
+    assert gesamtstatus(befunde) != "ok"
+
+
+def test_pruefbasis_schweigt_ohne_symbole():
+    # 0 Symbole → Regel 8 erzählt die Geschichte (fehler); 8b wäre Doppelrauschen.
+    befunde = pruefe(_raum_mit_raeumen(20), _erg())
+    assert not any("Prüfbasis" in b.regel for b in befunde)
+
+
+def test_pruefbasis_schweigt_mit_erkannten_ausgaengen_und_segmenten():
+    raum = _raum("s1", ausgaenge=[Ausgang(id="E", xy_mm=(0.0, 0.0), typ="final_exit")])
+    raum = raum.model_copy(update={"raeume": _raum_mit_raeumen(20).raeume})
+    befunde = pruefe(raum, _erg(_rz()))
+    assert not any("Prüfbasis" in b.regel for b in befunde)
+
+
+def test_pruefbasis_schweigt_bei_wenigen_raeumen():
+    # Synthetische Mini-Modelle (Unit-Fixtures) sollen keine Warnung kassieren.
+    befunde = pruefe(_raum_mit_raeumen(3), _erg(_rz()))
+    assert not any("Prüfbasis" in b.regel for b in befunde)
+
+
 def _raum_raeume_und_segmente(n: int, *segment_ids: str) -> RaumModell:
     """Viele Räume UND erkannte Fluchtweg-Segmente (Regel 3/4 greifen)."""
     poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
