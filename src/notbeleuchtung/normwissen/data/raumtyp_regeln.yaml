@@ -6,8 +6,9 @@
 # Lux, Stückzahl, Symbol-Keys). Kuratiert aus _port_source/rz_coverage_oenorm.yaml
 # (RZ-Pflicht-Zonen, Coverage) + emergency_lighting_en1838.yaml (§4.2/§4.3).
 #
-# `min_lux_ref` / `quelle_ref` verweisen auf en1838_grundwerte.yaml — keine
-# doppelten Zahlen, eine Wahrheit. montagehoehe_mm ist Fachpraxis-Montagehöhe
+# `min_lux_ref` / `quelle_ref` / `gleichmaessigkeit_ref` verweisen auf
+# en1838_grundwerte.yaml — keine doppelten Zahlen, eine Wahrheit. Fehlt ein
+# Ref, liefert der Provider `None` (= die Norm gibt hier nichts her). montagehoehe_mm ist Fachpraxis-Montagehöhe
 # (RZ über Türsturz, ≥ Norm-Floor 2000); erkennungsweite wird aus der Formel
 # l = z·h berechnet, nicht hier hartkodiert.
 #
@@ -29,6 +30,8 @@ default:
   klassifikation: rz
   min_lux_ref: rettungsweg
   quelle_ref: rettungsweg
+  gleichmaessigkeit_ref: rettungsweg   # [BELEGT] §4.2.2 — dieselbe
+  # Anforderungs-Gruppe, auf die min_lux_ref/quelle_ref schon zeigen.
   # [ANNAHME] 2400 mm ist NICHT belegt — kein Notlicht-Eintrag in
   # _port_source/heights_fachpraxis.yaml; der Wert stammt aus der
   # Slice-0-Fake-Fixture. Belegt ist nur der Floor 2000 (§4.1.1).
@@ -55,6 +58,9 @@ regeln:
     klassifikation: sicherheitsleuchte
     min_lux_ref: rettungsweg      # 1,0 lx wie Rettungsweg (§4.2.1-Niveau)
     quelle_ref: sicherheitsleuchte
+    # KEIN gleichmaessigkeit_ref: EN 1838 kennt für Aufheller/Betonungs-
+    # leuchten (§4.1) keine eigene Ud-Anforderung. Ohne Beleg kein Wert →
+    # der Konsument bleibt bei seinem Default. Kein stiller Norm-Default.
     montagehoehe_mm: 2400         # [ANNAHME] wie default
     mindest_anzahl: 1             # [ANNAHME] Auslegung, kein Normwert
     symbol_katalog_keys: [sicherheitsleuchte_aufheller]
@@ -64,6 +70,7 @@ regeln:
     klassifikation: rz
     min_lux_ref: rettungsweg
     quelle_ref: rettungsweg
+    gleichmaessigkeit_ref: rettungsweg   # [BELEGT] §4.2.2 — Ud ≥ 1:40
     montagehoehe_mm: 2400         # [ANNAHME] wie default
     mindest_anzahl: 1             # [ANNAHME] Abstand regelt l = z·h, nicht diese Zahl
     symbol_katalog_keys:
@@ -76,6 +83,7 @@ regeln:
     klassifikation: antipanik
     min_lux_ref: antipanik
     quelle_ref: antipanik
+    gleichmaessigkeit_ref: antipanik     # [BELEGT] §4.3.2 — Ud ≥ 1:40 (NICHT 1:10)
     montagehoehe_mm: 2400         # [ANNAHME] wie default
     # Antipanik ist eine FLAECHEN-Anforderung (0,5 lx auf der freien Bodenflaeche,
     # Randstreifen 0,5 m ausgenommen) — eine Einzelleuchte schafft das im Saal
@@ -91,6 +99,7 @@ regeln:
     klassifikation: antipanik
     min_lux_ref: antipanik
     quelle_ref: antipanik
+    gleichmaessigkeit_ref: antipanik     # [BELEGT] §4.3.2 — Ud ≥ 1:40 (NICHT 1:10)
     montagehoehe_mm: 2400        # [ANNAHME] wie default
     # [ANNAHME] kleinere Flaeche als SAAL -> eine Leuchte reicht (Auslegung)
     mindest_anzahl: 1
