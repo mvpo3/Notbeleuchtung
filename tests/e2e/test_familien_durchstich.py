@@ -24,6 +24,7 @@ from notbeleuchtung.hauptengine.registry import build_default_bundle
 
 FISCHA_EG = Path("Projekte/BVH Fischamenderstraße/BT1/260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf")
 HERRENHOLZ_EG = Path("Projekte/DXF_Herrenholzgasse/20230228_po_eg_V.dxf")
+BARAWITZKA_EG = Path("Projekte/Barawitzkagasse/415_260415_PP_VA_1_3 0 EG.dxf")
 
 
 def _run(plan: Path, floor: str):
@@ -91,3 +92,30 @@ def test_herrenholz_leeres_ergebnis_ist_fehler(herrenholz):
         pytest.skip("Herrenholz platziert inzwischen Symbole — Erwartung aktualisieren")
     assert pruef["status"] == "fehler", "leerer Plan bestand die Prüfung als nicht-fehler"
     assert any("Plausibilität" in b["regel"] for b in pruef["befunde"])
+
+
+# ---- Barawitzkagasse EG ----
+
+@pytest.fixture(scope="module")
+def barawitzka():
+    return _run(BARAWITZKA_EG, "EG")
+
+
+def test_barawitzka_tueren_erkannt_raeume_luecke(barawitzka):
+    """Ist-Stand: Tür-Erkennung trägt (≥ 60), Raum-Layer ist Nacharbeit (nur ~2 Räume).
+
+    Erschließt die Raumerkennung Barawitzka später richtig, kippt der Raum-Assert —
+    dann Bänder anheben (wie Fischamender bei B2-Fix)."""
+    r = barawitzka.raum
+    assert len(r.tueren) >= 60, f"nur {len(r.tueren)} Türen — Tür-Erkennungs-Regress"
+    assert len(r.raeume) < 15, "Raum-Layer erschlossen? → Test-Erwartungen aktualisieren"
+
+
+def test_barawitzka_leeres_ergebnis_nicht_ok(barawitzka):
+    """116 Türen + 2 Räume + 0 Symbole darf NICHT als „ok" durchgehen (Regel 8c).
+
+    Genau dieser Plan bestand die Prüfung vor Regel 8c als „ok", weil alle
+    Plausibilitäts-Regeln auf n_raeume ≥ 15 gaten."""
+    pruef = barawitzka.render_summary["pruefung"]
+    assert pruef["status"] != "ok", "leeres Barawitzka-Ergebnis bestand als ok"
+    assert any("widersprüchlich" in b["regel"] for b in pruef["befunde"])
