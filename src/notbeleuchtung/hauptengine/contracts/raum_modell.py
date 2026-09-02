@@ -15,12 +15,35 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.0.0"
+CONTRACT_VERSION = "1.1.0"
+
+# v1.1.0 (Sonderstellen, Option A nach docs/SPEC_SONDERSTELLEN_CONTRACT.md) —
+# hervorzuhebende Stellen nach EN 1838 §4.1.2. Typ-Vokabular deckt sich mit der
+# ISO-7010-Symbolik des Profi-Plans (din_Feuerloescher_F001, din_Hydrant_F002, …).
+SonderstellenTyp = Literal[
+    "feuerloescher", "hydrant", "erste_hilfe", "brandmelder", "niveauaenderung",
+]
 
 
 class BBox(BaseModel):
     min_xy: XY
     max_xy: XY
+
+
+class Sonderstelle(BaseModel):
+    """Hervorzuhebende Stelle nach EN 1838 §4.1.2 — punktförmig.
+
+    Die Norm-Anforderung ist ein Abstand zum Gerät (Leuchte „nahe", ANMERKUNG:
+    ≤ 2 m horizontal) — deshalb ein Punkt-Modell, kein Raum-Flag. Heute ist kein
+    Typ automatisch aus dem Architekturplan erkennbar (Spec §4) — die Quelle ist
+    i.d.R. eine manuelle Angabe; `quelle` trägt die Herkunft als Audit-Trail.
+    """
+
+    id: str
+    typ: SonderstellenTyp
+    xy_mm: XY
+    raum_id: str | None = None
+    quelle: str = ""              # Audit-Trail: woher die Angabe stammt
 
 
 class Raum(BaseModel):
@@ -30,6 +53,10 @@ class Raum(BaseModel):
     flaeche_m2: float = 0.0
     ist_fluchtweg: bool = False
     ist_communal: bool = False
+    # v1.1.0 — Raum-Eigenschaften mit Norm-Folge (Anforderung gilt dem Raum bzw.
+    # der Aufgabenfläche, nicht einem Punkt → Flags statt Sonderstelle):
+    ist_barrierefrei: bool = False        # EN 1838 §4.3.8 (Antipanik-Pflicht barrierefreies WC)
+    besondere_gefaehrdung: bool = False   # EN 1838 §4.4.1 (Arbeitsplätze, erhöhter Lux-Anspruch)
 
 
 class Tuer(BaseModel):
@@ -88,3 +115,5 @@ class RaumModell(BaseModel):
     tueren: list[Tuer] = Field(default_factory=list)
     ausgaenge: list[Ausgang] = Field(default_factory=list)
     zirkulation: ZirkulationsGraph = Field(default_factory=ZirkulationsGraph)
+    # v1.1.0 — punktförmige Pflichtstellen (EN 1838 §4.1.2); leer = keine bekannt.
+    sonderstellen: list[Sonderstelle] = Field(default_factory=list)
