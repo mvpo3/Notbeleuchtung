@@ -1,6 +1,6 @@
 {
   "contract": "PlatzierungsErgebnis",
-  "contract_version": "1.0.0",
+  "contract_version": "1.2.0",
   "floor": "4OG",
   "coordinate_system": "mm",
   "_source": "Die 5 4OG-Rettungszeichen, generativ vom echten NotlichtPlatzierer (Slice 2) erzeugt. Richtungs-spezifische Pfeil-Bloecke (links/rechts), rotation 0, kein mirror. Aufheller/Antipanik nicht Teil dieser RZ-Golden (siehe test_flaechen_strategy).",
