@@ -114,6 +114,38 @@ def test_pruefbasis_schweigt_bei_wenigen_raeumen():
     assert not any("Prüfbasis" in b.regel for b in befunde)
 
 
+# ---- Regel 8c: widersprüchliche Erkennungsbasis (Türen ≫ Räume) ----
+
+def _raum_mit_tueren(n_tueren: int, n_raeume: int) -> RaumModell:
+    from notbeleuchtung.hauptengine.contracts import Tuer
+    basis = _raum_mit_raeumen(n_raeume)
+    return basis.model_copy(update={"tueren": [
+        Tuer(id=f"t{i}", xy_mm=(float(i), 0.0)) for i in range(n_tueren)
+    ]})
+
+
+def test_viele_tueren_fast_keine_raeume_ist_warnung():
+    # Realer Barawitzka-Fall: 116 Türen beweisen ein Gebäude, aber nur 2 Räume
+    # erschlossen + 0 Symbole → bisher rutschte das als „ok" durch (Regel 8/8b
+    # gaten auf n_raeume >= 15).
+    befunde = pruefe(_raum_mit_tueren(116, 2), _erg())
+    b = next(b for b in befunde if "Räume (Erkennung widersprüchlich)" in b.regel)
+    assert b.status == "warnung"
+    assert gesamtstatus(befunde) != "ok"
+
+
+def test_tueren_raeume_konsistent_schweigt():
+    # Genug Räume erschlossen → kein Widerspruch, Regel 8c schweigt.
+    befunde = pruefe(_raum_mit_tueren(116, 20), _erg(_rz()))
+    assert not any("widersprüchlich" in b.regel for b in befunde)
+
+
+def test_wenige_tueren_wenige_raeume_schweigt():
+    # Kleines Fragment/Mini-Fixture (wenige Türen) → kein Gebäude-Beweis, kein Alarm.
+    befunde = pruefe(_raum_mit_tueren(5, 2), _erg())
+    assert not any("widersprüchlich" in b.regel for b in befunde)
+
+
 def _raum_raeume_und_segmente(n: int, *segment_ids: str) -> RaumModell:
     """Viele Räume UND erkannte Fluchtweg-Segmente (Regel 3/4 greifen)."""
     poly = [(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)]
