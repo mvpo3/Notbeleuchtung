@@ -13,7 +13,13 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .contracts import LBVorgabe, PlatzierungsErgebnis, ProviderBundle, RaumModell
+from .contracts import (
+    LBVorgabe,
+    PlatzierungsErgebnis,
+    ProjektKontext,
+    ProviderBundle,
+    RaumModell,
+)
 from .render import render_dxf
 from .validierung import pruefbericht
 
@@ -106,6 +112,7 @@ def run(
     out_path: str | Path | None = None,
     lb_path: str | None = None,
     plankopf: dict | None = None,
+    projekt_kontext: ProjektKontext | None = None,
 ) -> Output:
     raum = bundle.raum.parse(dxf_path, floor)
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
@@ -120,7 +127,16 @@ def run(
             lb = bundle.lb.parse_lb(lb_path)
         except LbFehler as e:
             lb_review = {"status": "review_erforderlich", "meldung": str(e)}
-    platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
+    # OIB-Pfad (optional 3. Input): gebäudeweiter ProjektKontext → Erforderlichkeits-
+    # Befund je Gebäudeteil. Gated OVE-scope-gebundene Trigger (Antipanik-Fläche).
+    # Ohne Provider oder Kontext wird `place` exakt wie bisher gerufen (bit-identisch).
+    oib_befund = None
+    if bundle.oib is not None and projekt_kontext is not None:
+        oib_befund = bundle.oib.bewerte_oib(projekt_kontext)
+    if oib_befund is not None:
+        platzierung = bundle.platzierer.place(raum, bundle.norm, lb, oib=oib_befund)
+    else:
+        platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     pruef = pruefbericht(raum, platzierung, lb, norm=bundle.norm)
     if out_path is not None:
         render_summary = render_dxf(platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf)
@@ -131,6 +147,10 @@ def run(
     render_summary["pruefung"] = pruef
     if lb_review is not None:
         render_summary["lb_review"] = lb_review
+    if oib_befund is not None:
+        # Gate-Logik lebt beim Konsumenten (platzierung/oib_gate); lazy wie LbFehler.
+        from notbeleuchtung.platzierung.oib_gate import gate_summary
+        render_summary["oib"] = gate_summary(oib_befund)
     return Output(
         raum=raum,
         platzierung=platzierung,
