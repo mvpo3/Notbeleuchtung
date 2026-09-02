@@ -12,6 +12,7 @@ from pathlib import Path
 from notbeleuchtung.hauptengine.contracts import (
     BereichsRegel,
     FluchtwegSegment,
+    Gebaeudeteil,
     LBVorgabe,
     NormAnforderung,
     NormRegelwerk,
@@ -156,16 +157,20 @@ class FakeOibProvider:
         self._stufe = stufe
 
     def bewerte_oib(self, projekt: ProjektKontext) -> OibBefund:
-        teile = [t.id for t in projekt.gebaeudeteile] or ["teil_1"]
+        teile = projekt.gebaeudeteile or [
+            Gebaeudeteil(id="teil_1", nutzungsart="SONSTIGES_GEBAEUDE")
+        ]
         return OibBefund(
             ergebnisse=[
                 OibErgebnis(
-                    gebaeudeteil_id=teil_id,
+                    gebaeudeteil_id=t.id,
                     stufe=self._stufe,
                     quelle="OIB-RL 2 Tabelle 6 (Fake)",
                     norm_ausgabe="Mai 2023 (Fake)",
+                    # Echo wie der echte OibRl2Provider (raum-genaues Gate v2 testbar).
+                    raum_referenzen=list(t.raum_referenzen),
                 )
-                for teil_id in teile
+                for t in teile
             ]
         )
 
