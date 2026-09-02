@@ -27,9 +27,10 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse
+from pydantic import ValidationError
 from starlette.background import BackgroundTask
 
-from notbeleuchtung.hauptengine.contracts import ProviderBundle
+from notbeleuchtung.hauptengine.contracts import ProjektKontext, ProviderBundle
 from notbeleuchtung.hauptengine.dwg_input import OdaKonverterFehlt, stelle_dxf_bereit
 from notbeleuchtung.hauptengine.pipeline import run
 from notbeleuchtung.hauptengine.projekt import ProjektPlan, run_projekt
@@ -45,7 +46,11 @@ BundleFactory = Callable[[], ProviderBundle]
 # die expliziten LB-Vorgaben sind NICHT angewendet. Fällt das Feld hier aus der Antwort,
 # bekommt der Client (und damit das Chat-Interface) einen normal aussehenden Plan und
 # erfährt nichts davon; das Fail-Closed endet dann an der API-Grenze.
-_SUMMARY_HEADER_KEYS = ("floor", "n_symbols", "by_kind", "n_raeume", "rendered", "lb_review")
+#
+# `oib` gehört aus demselben Grund dazu: trägt der Request einen ProjektKontext, sagt
+# nur dieser Block, ob das Flächen-Trigger-Gate offen/zu war (fail-closed ist sonst
+# von „kein OIB-Pfad" nicht unterscheidbar).
+_SUMMARY_HEADER_KEYS = ("floor", "n_symbols", "by_kind", "n_raeume", "rendered", "lb_review", "oib")
 
 # HTTP-Header sind längenbegrenzt (uvicorn: ~8 KB je Zeile) und `ensure_ascii` bläht
 # Umlaute auf 6 Zeichen. Die Review-Meldung trägt alle blockierenden Befunde und kann
@@ -77,6 +82,24 @@ def _als_dxf(plan_pfad: Path, workdir: Path) -> Path:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
 
 
+def _parse_projekt_kontext(raw: str | None) -> ProjektKontext | None:
+    """Optionales Form-Feld (JSON) → ProjektKontext; ungültig = 422 mit Ursache.
+
+    Der 3. Input (gebäudeweite Projektfakten für den OIB-Pfad) kommt als JSON-String,
+    weil er — anders als Plan/LB — keine Datei ist, sondern strukturierte Angaben des
+    Auftraggebers (Nutzungsart, Gebäudeklasse, Fluchtniveau …).
+    """
+    if raw is None or not raw.strip():
+        return None
+    try:
+        return ProjektKontext.model_validate_json(raw)
+    except ValidationError as exc:
+        raise HTTPException(
+            status_code=422, detail=f"projekt_kontext ungültig: {exc}"
+        ) from exc
+>>>>>>> 4831b08 (api/platzierung — ProjektKontext ueber HTTP (3. Input) + OIB-Gate v2 raum-genau)
+
+
 def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
     """Baut die App. `bundle_factory` bindet die Provider (echt via Registry oder Fake)."""
     app = FastAPI(
@@ -106,12 +129,16 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
         projekt: str | None = Form(None, description="Plankopf: Projektbezeichnung"),
         datum: str | None = Form(None, description="Plankopf: Datum"),
         ersteller: str | None = Form(None, description="Plankopf: Ersteller"),
+        projekt_kontext: str | None = Form(
+            None, description="ProjektKontext als JSON (3. Input, optional): "
+                              "gebäudeweite Fakten für den OIB-Pfad (OIB-RL 2 Tabelle 6)"),
         bundle: ProviderBundle = Depends(get_bundle),
     ) -> FileResponse:
         """DXF (+ optional LB) hoch → Notbeleuchtungsplan zurück (DXF oder PDF). Summary
         im `X-Notbeleuchtung`-Header."""
         if format not in ("dxf", "pdf"):
             raise HTTPException(status_code=422, detail="format muss 'dxf' oder 'pdf' sein")
+        kontext = _parse_projekt_kontext(projekt_kontext)
         workdir = Path(tempfile.mkdtemp(prefix="notbel_"))
         cleanup = BackgroundTask(shutil.rmtree, workdir, ignore_errors=True)
         try:
@@ -129,7 +156,8 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                         if v}
             try:
                 ergebnis = run(bundle, dxf_path=str(dxf_in), floor=floor, out_path=out_path,
-                               lb_path=lb_path, plankopf=plankopf or None)
+                               lb_path=lb_path, plankopf=plankopf or None,
+                               projekt_kontext=kontext)
             except Exception as exc:  # Provider-/Render-Fehler → 422, Ursache mitgeben.
                 raise HTTPException(status_code=422, detail=f"Plan-Erzeugung fehlgeschlagen: {exc}") from exc
             summary = _header_summary(ergebnis.render_summary)
@@ -159,9 +187,13 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
         floors: str = Form(..., description="Geschoss-Kennungen, komma-getrennt in Datei-Reihenfolge"),
         lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
         projekt_name: str | None = Form(None, description="Plankopf: Projektbezeichnung"),
+        projekt_kontext: str | None = Form(
+            None, description="ProjektKontext als JSON (3. Input, optional): "
+                              "gebäudeweite Fakten für den OIB-Pfad (OIB-RL 2 Tabelle 6)"),
         bundle: ProviderBundle = Depends(get_bundle),
     ) -> FileResponse:
         """Mehrere Geschoss-DXF (+ optional LB) → ein Sammel-PDF (ein Blatt je Geschoss)."""
+        kontext = _parse_projekt_kontext(projekt_kontext)
         floor_list = [f.strip() for f in floors.split(",") if f.strip()]
         if len(floor_list) != len(dateien):
             raise HTTPException(status_code=422,
@@ -183,7 +215,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
             plankopf = {"projekt": projekt_name} if projekt_name else None
             try:
                 erg = run_projekt(bundle, plaene, out_dir=workdir, lb_path=lb_path,
-                                  plankopf=plankopf, pdf=True)
+                                  plankopf=plankopf, pdf=True, projekt_kontext=kontext)
             except Exception as exc:
                 raise HTTPException(status_code=422, detail=f"Projekt-Erzeugung fehlgeschlagen: {exc}") from exc
             return FileResponse(
