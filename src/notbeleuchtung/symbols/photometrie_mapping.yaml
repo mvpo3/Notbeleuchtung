@@ -1,0 +1,22 @@
+# Photometrie-Mapping — catalog_key → Hersteller-LDT in CAD_Symbole/photometrie/
+#
+# Naht zum Lux-Nachweis (platzierung/lux.py via i_cd_fn): statt der isotropen
+# 200-cd-Annahme die echte Lichtverteilung der eingesetzten Schrack-Leuchte.
+# Herkunft/Audit-Trail der Dateien: CAD_Symbole/photometrie/QUELLEN.md.
+#
+# Naht-Invariante (tests/render/test_photometrie_katalog.py): jeder Key hier
+# existiert auch im schrack_symbol_mapping.yaml, jede Datei existiert + parst.
+#
+# `fluchtweg_default` ist die Leuchte, mit der die Fluchtweg-Deckung
+# (platzierung/deckung.py) verdichtet — Corridor-Optik, Notbetrieb 3h.
+
+fluchtweg_default: sl_nlkbu433_3h_corridor.ldt
+
+keys:
+  notlicht_ks_stiege: rz_nlpxw433_1h3h_picto.ldt
+  notlicht_ks_stiege_unten: rz_nlpxw433_1h3h_picto.ldt
+  notlicht_ks_stiege_links: rz_nlpxw433_1h3h_picto.ldt
+  notlicht_ks_stiege_rechts: rz_nlpxw433_1h3h_picto.ldt
+  notlicht_kw_garage: sl_nlkbu433_3h_round.ldt
+  sicherheitsleuchte_aufheller: sl_nlkbu433_3h_round.ldt
+  antipanik_leuchte: antipanik_nlildl423_round.ldt
