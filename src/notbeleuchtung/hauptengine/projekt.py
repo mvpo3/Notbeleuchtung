@@ -83,6 +83,12 @@ def run_projekt(
                    if "lb_review" in o.render_summary), None)
     if review is not None:
         summary["lb_review"] = review
+    # Der OIB-Befund ist wie die LB projekt-weit (ein Kontext für alle Geschosse) —
+    # der Gate-/Stufen-Block gehört daher auf die oberste Ebene, nicht je Geschoss.
+    oib = next((o.render_summary["oib"] for o in outputs
+                if "oib" in o.render_summary), None)
+    if oib is not None:
+        summary["oib"] = oib
     return ProjektErgebnis(outputs=outputs, combined_pdf=combined_pdf, summary=summary)
 
 
