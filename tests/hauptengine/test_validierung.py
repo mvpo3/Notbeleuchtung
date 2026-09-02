@@ -229,6 +229,58 @@ def test_lb_inklusion_erfuellt_ist_ok():
     assert b.status == "ok"
 
 
+# ---- Regel 10b: tote LB-Bereichsregeln (Vokabular-Naht LB ↔ RaumModell) ----
+
+def _bereichs_befund(befunde):
+    return [b for b in befunde if "Bereichsregeln wirksam" in b.regel]
+
+
+def test_lb_exklusion_ohne_matchenden_raum_ist_warnung():
+    # LB schließt KELLER aus, der Plan kennt nur STIEGENHAUS → Regel ist ein
+    # stiller No-op (Regel 9 schweigt) und muss als Warnung sichtbar werden.
+    lb = LBVorgabe(bereiche_exklusion=[BereichsRegel(raum_typ="KELLER", sicherheitsbeleuchtung=False)])
+    befunde = pruefe(_raum_typ("STIEGENHAUS"), _erg(_sl((50.0, 50.0))), lb)
+    assert not any("LB-Exklusion" in b.regel for b in befunde)  # Regel 9 schweigt …
+    b = _bereichs_befund(befunde)
+    assert len(b) == 1 and b[0].status == "warnung"             # … 10b meldet es.
+    assert "KELLER" in b[0].detail
+
+
+def test_lb_inklusion_ohne_matchenden_raum_ist_warnung():
+    lb = LBVorgabe(bereiche_inklusion=[BereichsRegel(raum_typ="GARAGE", sicherheitsbeleuchtung=True)])
+    befunde = pruefe(_raum_typ("WOHNUNG"), _erg(), lb)
+    b = _bereichs_befund(befunde)
+    assert len(b) == 1 and b[0].status == "warnung"
+    assert "GARAGE" in b[0].detail
+
+
+def test_lb_bereichsregeln_alle_wirksam_ist_ok():
+    lb = LBVorgabe(bereiche_exklusion=[BereichsRegel(raum_typ="STIEGENHAUS", sicherheitsbeleuchtung=False)])
+    befunde = pruefe(_raum_typ("STIEGENHAUS"), _erg(), lb)
+    b = _bereichs_befund(befunde)
+    assert len(b) == 1 and b[0].status == "ok"
+
+
+def test_lb_bereichsregel_matcht_nur_polygonlose_raeume():
+    # Raumtyp existiert, aber kein Raum trägt ein gültiges Polygon → Regel kann
+    # geometrisch nicht wirken; das Detail nennt die Ursache.
+    raum = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)),
+        raeume=[Raum(id="r1", raum_typ="GARAGE", polygon_mm=[])],
+    )
+    lb = LBVorgabe(bereiche_inklusion=[BereichsRegel(raum_typ="GARAGE", sicherheitsbeleuchtung=True)])
+    befunde = pruefe(raum, _erg(), lb)
+    b = _bereichs_befund(befunde)
+    assert len(b) == 1 and b[0].status == "warnung"
+    assert "ohne gültiges Polygon" in b[0].detail
+
+
+def test_lb_ohne_bereichsregeln_kein_bereichs_befund():
+    # Keine Bereichsregeln in der LB → Regel 10b schweigt (kein Rausch-Befund).
+    befunde = pruefe(_raum_typ("STIEGENHAUS"), _erg(), LBVorgabe())
+    assert _bereichs_befund(befunde) == []
+
+
 def test_ohne_lb_keine_lb_befunde():
     befunde = pruefe(_raum("s1"), _erg(_rz()))
     assert not any(b.regel.startswith("LB-") for b in befunde)

@@ -79,6 +79,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
     exits = {a.id for a in raum.ausgaenge}
     anker = _dedupe_anker(set(kreuzungs_anker(G)) | exits, pos, exits, G)
     assign_building = _building_assigner([pos[n][0] for n in anker if n in pos])
+    exit_pos = [pos[e] for e in exits if e in pos]
 
     out: list[Platzierung] = []
     for nid in anker:
@@ -91,6 +92,14 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         if nid not in exits and nbrs and nid in dist:
             tgt = min(nbrs, key=lambda m: dist[m])
             richtung, fallback_rot = _richtung_und_rotation(pos[tgt][0] - nx_, pos[tgt][1] - ny)
+        elif nid not in exits and exit_pos:
+            # Kreuzung in einer Graph-Komponente OHNE erreichbaren Ausgang (Provider-
+            # Lücke, disconnected graph): das Dijkstra-Gefälle existiert nicht. Statt
+            # „unten" zu fabrizieren (= Pfeil behauptet „Ausgang erreicht"), zeigt der
+            # Pfeil per Luftlinie zum geometrisch nächsten Ausgang — die beste
+            # verfügbare Richtungs-Information.
+            ex_x, ex_y = min(exit_pos, key=lambda p: math.hypot(p[0] - nx_, p[1] - ny))
+            richtung, fallback_rot = _richtung_und_rotation(ex_x - nx_, ex_y - ny)
         else:
             richtung, fallback_rot = "unten", 270.0
         seg = FluchtwegSegment(segment_id=f"anker_{nid}", polyline_mm=[(nx_, ny)], reason="corner")
