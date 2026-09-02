@@ -261,7 +261,8 @@ def _lb_konformitaet(
     raum: RaumModell, plzg: list, lb: LBVorgabe
 ) -> list[Befund]:
     """LB-Exklusion (kein Aufheller in ausgeschlossenem Raumtyp) + LB-Inklusion
-    (geforderter Raumtyp trägt ≥ 1 Aufheller). Nur Räume mit gültigem Polygon."""
+    (geforderter Raumtyp trägt ≥ 1 Aufheller) + tote Bereichsregeln (Regel ohne
+    matchenden Raum). Nur Räume mit gültigem Polygon."""
     befunde: list[Befund] = []
     aufheller = [p for p in plzg if p.kind in _AUFHELLER_ARTEN]
 
@@ -299,6 +300,34 @@ def _lb_konformitaet(
             f"{len(ohne)}/{len(incl_raeume)} LB-geforderte(r) Raum/Räume ohne "
             "Sicherheitsleuchte" if ohne
             else f"alle {len(incl_raeume)} LB-geforderten Räume mit Sicherheitsleuchte",
+        ))
+
+    # 10b. Tote LB-Bereichsregeln sichtbar machen (Vokabular-Naht LB ↔ RaumModell):
+    #      eine Regel, deren Raumtyp keinen Raum mit gültigem Polygon matcht, kann
+    #      weder in `lb_override` wirken noch von Regel 9/10 geprüft werden — sie ist
+    #      ein stiller No-op. Ursache ist entweder harmlos (Raumtyp kommt in diesem
+    #      Plan nicht vor) oder die reale Bug-Klasse „Raumerkennung vergibt das Label
+    #      auf dieser CAD-Familie nicht" (Vokabular-Mismatch, wie einst ABSTELLRAUM/
+    #      LAGER/TECHNIK). Beides muss der Prüfbericht zeigen — sonst sieht ein Plan
+    #      „ok" aus, obwohl eine explizite Auftraggeber-Vorgabe nie angewendet wurde.
+    regel_typen = excl_typen | incl_typen
+    if regel_typen:
+        wirksame_typen = {
+            r.raum_typ.upper() for r in raum.raeume if len(r.polygon_mm) >= 3
+        }
+        alle_typen = {r.raum_typ.upper() for r in raum.raeume}
+        tote = sorted(regel_typen - wirksame_typen)
+        detail_tote = [
+            t + (" (nur Räume ohne gültiges Polygon)" if t in alle_typen else "")
+            for t in tote
+        ]
+        befunde.append(Befund(
+            "LB-Bereichsregeln wirksam (Raumtyp matcht Räume)",
+            "warnung" if tote else "ok",
+            f"{len(tote)} Bereichsregel(n) ohne matchenden Raum — Regel wirkungslos "
+            f"(Raumtyp fehlt im Plan oder Vokabular-Mismatch Raumerkennung↔LB): "
+            f"{detail_tote}" if tote
+            else f"alle {len(regel_typen)} Bereichsregel(n) matchen ≥ 1 Raum",
         ))
 
     return befunde
