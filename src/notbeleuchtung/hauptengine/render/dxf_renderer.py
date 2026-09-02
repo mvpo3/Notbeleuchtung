@@ -165,12 +165,35 @@ def _draw_lb_legende(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
 
 
 def _stueckliste_text(platzierung: PlatzierungsErgebnis) -> str | None:
-    """Stückliste der platzierten Symbol-Arten (Art + Anzahl). None wenn leer."""
+    """Stückliste. None wenn leer.
+
+    Tragen ALLE Platzierungen einen `typ_letter` (Symbol-Datenmodell v1.2.0), wird
+    die Profi-Form gerendert: **Typ-Letter-Legende** (Digest #7, Gruppierung nach
+    Legenden-Letter wie in der Barawitzkagasse-Stückliste), Produkt = `typ_name`
+    oder ersatzweise der `catalog_key`. Sonst — Fremd-Platzierer, alte Fixtures —
+    das bisherige Art+Anzahl-Format (Fallback, keine Golden-Änderung).
+    """
+    if not platzierung.platzierungen:
+        return None
+    if all(p.typ_letter for p in platzierung.platzierungen):
+        gruppen: dict[str, dict] = {}
+        for p in platzierung.platzierungen:
+            g = gruppen.setdefault(
+                p.typ_letter,
+                {"kind": p.kind, "produkt": p.typ_name or p.catalog_key, "n": 0},
+            )
+            g["n"] += 1
+        zeilen = ["STÜCKLISTE"]
+        for letter in sorted(gruppen):
+            g = gruppen[letter]
+            label = _KIND_LABEL.get(g["kind"], g["kind"])
+            zeilen.append(f"Typ {letter}: {g['n']}× {label} — {g['produkt']}")
+        zeilen.append(f"Summe: {len(platzierung.platzierungen)}")
+        return "\\P".join(zeilen)
+
     counts: dict[str, int] = {}
     for p in platzierung.platzierungen:
         counts[p.kind] = counts.get(p.kind, 0) + 1
-    if not counts:
-        return None
     zeilen = ["STÜCKLISTE"]
     for kind in ("rz", "sicherheitsleuchte", "antipanik"):
         if counts.get(kind):
@@ -361,7 +384,9 @@ def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
 
 
 def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
-    """NODEID je Platzierung in Reihenfolge (RZ-001/SL-002/AP-003, je Art gezählt).
+    """NODEID je Platzierung in Reihenfolge — bevorzugt das Contract-Feld
+    `luminaire_id` (Symbol-Datenmodell v1.2.0, vom Platzierer vergeben); fehlt es,
+    wird wie bisher synthetisiert (RZ-001/SL-002/AP-003, je Art gezählt).
 
     Quelle der Leuchten-IDs für die Symbol-Annotation (`_draw_nodeid_labels`).
     """
@@ -370,14 +395,14 @@ def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
     for p in platzierung.platzierungen:
         code = _KIND_CODE.get(p.kind, "XX")
         counters[code] = counters.get(code, 0) + 1
-        ids.append(f"{code}-{counters[code]:03d}")
+        ids.append(p.luminaire_id or f"{code}-{counters[code]:03d}")
     return ids
 
 
 def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
-    """Fortlaufende NODEID je Leuchte als kleiner Text neben das Symbol — Wartung/
-    Adressierung (Profi-Plan din_SIBEL_63_luminaire_ID). Rein Render-seitig
-    synthetisiert, kein Contract-Feld."""
+    """Leuchten-ID (NODEID) als kleiner Text neben das Symbol — Wartung/Adressierung
+    (Profi-Plan din_SIBEL_63_luminaire_ID). ID aus `_nodeids` (Contract-Feld mit
+    Render-Synthese als Fallback)."""
     drawn = 0
     for p, nodeid in zip(platzierung.platzierungen, _nodeids(platzierung)):
         angle = math.radians(p.rotation_deg or 0.0)
@@ -402,22 +427,21 @@ def _stromkreis_belegung_text(platzierung: PlatzierungsErgebnis) -> str | None:
     """
     if not platzierung.platzierungen:
         return None
-    # circuit_hint → geordnete {kind: Anzahl} (Einfüge-Reihenfolge der Arten je Kreis).
-    kreise: dict[str, dict[str, int]] = {}
+    # circuit_hint → geordnete {(Art-Code, DL/BL): Anzahl}. Schaltungsart bevorzugt aus
+    # dem Contract-Feld (v1.2.0); fehlt es, greift die bisherige kind-Heuristik.
+    kreise: dict[str, dict[tuple[str, str], int]] = {}
     reihenfolge: list[str] = []
     for p in platzierung.platzierungen:
         kreis = (p.circuit_hint or "").strip() or "(ohne Kreis)"
         if kreis not in kreise:
             kreise[kreis] = {}
             reihenfolge.append(kreis)
-        kreise[kreis][p.kind] = kreise[kreis].get(p.kind, 0) + 1
+        eintrag = (_KIND_CODE.get(p.kind, "XX"), p.schaltungsart or _SCHALTUNGSART.get(p.kind, "—"))
+        kreise[kreis][eintrag] = kreise[kreis].get(eintrag, 0) + 1
     zeilen = ["STROMKREIS-BELEGUNG"]
     for kreis in reihenfolge:
         arten = kreise[kreis]
-        teile = [
-            f"{n}× {_KIND_CODE.get(k, 'XX')} ({_SCHALTUNGSART.get(k, '—')})"
-            for k, n in arten.items()
-        ]
+        teile = [f"{n}× {code} ({art})" for (code, art), n in arten.items()]
         zeilen.append(f"{kreis}: {' · '.join(teile)} — Σ{sum(arten.values())}")
     return "\\P".join(zeilen)
 
