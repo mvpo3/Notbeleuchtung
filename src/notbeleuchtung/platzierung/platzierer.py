@@ -26,6 +26,7 @@ from collections.abc import Callable
 from notbeleuchtung.hauptengine.contracts import (
     LBVorgabe,
     NormProvider,
+    OibBefund,
     PlatzierungsErgebnis,
     RaumModell,
 )
@@ -64,12 +65,17 @@ class NotlichtPlatzierer:
         self._i_cd_fn = i_cd_fn
 
     def place(
-        self, raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+        self,
+        raum: RaumModell,
+        norm: NormProvider,
+        lb: LBVorgabe | None = None,
+        *,
+        oib: OibBefund | None = None,
     ) -> PlatzierungsErgebnis:
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
-            *plan_antipanik(raum, norm),                 # Fläche (OIB-Gate kommt mit #88-Ersatz)
+            *plan_antipanik(raum, norm, oib=oib),        # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm),             # Pflichtstellen §4.1.2 (SL+RZ)
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
             *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)

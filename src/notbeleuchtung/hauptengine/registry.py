@@ -47,7 +47,11 @@ def build_default_bundle(
     `photometrie_katalog=False` erzwingt das alte isotrope Verhalten; fehlt der
     Katalog im Baum (schlankes Deployment), fällt die Engine still darauf zurück.
     """
-    from notbeleuchtung.normwissen import En1838NormProvider, LbTextProvider
+    from notbeleuchtung.normwissen import (
+        En1838NormProvider,
+        LbTextProvider,
+        OibRl2Provider,
+    )
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
@@ -61,4 +65,5 @@ def build_default_bundle(
         norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(i_cd_fn=i_cd_fn),
         lb=LbTextProvider(),
+        oib=OibRl2Provider(),
     )
