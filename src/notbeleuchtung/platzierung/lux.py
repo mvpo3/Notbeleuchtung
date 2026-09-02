@@ -28,10 +28,13 @@ _UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen 
 def ud_min_aus_norm(gleichmaessigkeit_max: float | None) -> float:
     """Ud-Grenze (min:max) aus der Norm-Gleichmäßigkeit (max:min).
 
-    Die Norm gibt die Gleichmäßigkeit als Verhältnis max:min an (EN 1838: 40 Fluchtweg,
-    10 Antipanik). Der Lux-Nachweis rechnet Ud als min:max → Kehrwert. `None` (Norm liefert
-    (noch) keinen Wert) fällt auf den bisherigen Default 1:40 zurück, damit sich ohne
-    Enis-Daten nichts am Plan ändert.
+    Die Norm gibt die Gleichmäßigkeit als Verhältnis max:min an — EN 1838 §4.2.2
+    (Rettungsweg) und §4.3.2 (Antipanik) fordern wortgleich je 40 (Ud 1:40). Die
+    früher hier behauptete „10 Antipanik" war Uo >= 0,1 aus §4.4.2 (Arbeitsplätze) —
+    Uo (kleinste:mittlere, EN 12665) ist ein anderes Maß als Ud (kleinste:größte),
+    Enis' Quellen-Korrektur (COORDINATION 2026-09-01). Der Lux-Nachweis rechnet Ud
+    als min:max → Kehrwert. `None` (Norm liefert (noch) keinen Wert) fällt auf den
+    Default 1:40 zurück, damit sich ohne Enis-Daten nichts am Plan ändert.
     """
     return 1.0 / gleichmaessigkeit_max if gleichmaessigkeit_max else _UD_DEFAULT
 
