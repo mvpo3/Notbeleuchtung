@@ -23,6 +23,7 @@ _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppel
 _REDUNDANZ_REICHWEITE_MM = 30000.0  # EN-1838-Erkennungsweite hinterleuchtet (z=200·h=0,15=30 m)
 _REDUNDANZ_MIN = 2              # EN 50172: je Fluchtweg-Abschnitt ≥ 2 Leuchten (1 Ausfall ≠ dunkel)
 _MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
+_MIN_TUEREN_GEBAEUDE = 30       # so viele Türen = ganzes Gebäude → Räume MÜSSEN erschlossen sein
 _QUASI_LEER_SYMBOLE = 2         # DoD: bis so wenige Symbole …
 _QUASI_LEER_RAEUME = 100        # … bei so vielen Räumen = quasi-leer → Fehler (nicht nur Warnung)
 _AUFHELLER_ARTEN = {"sicherheitsleuchte", "antipanik"}  # flächige LB-relevante Leuchten
@@ -255,6 +256,20 @@ def pruefe(
                 f"{n_raeume} Räume, aber 0 Fluchtweg-Segmente — Deckungs-, Pflicht-RZ- "
                 "und Redundanz-Regeln sind UNGEPRÜFT, nicht erfüllt",
             ))
+
+    # 8c. Widersprüchliche Erkennungsbasis: viele Türen, aber (fast) keine Räume —
+    #     die Tür-Erkennung beweist, dass es sich um ein ganzes Gebäude handelt, die
+    #     Raum-Erkennung hat es aber nicht erschlossen. OHNE diese Regel rutscht so
+    #     ein Plan an ALLEN Prüfungen vorbei (Regel 8/8b gaten auf n_raeume ≥ 15) und
+    #     der Bericht sagt „ok" zu einem leeren Ergebnis (realer Fall: Barawitzka EG —
+    #     116 Türen, 2 Räume, 0 Symbole, Raum-Layer-Nacharbeit).
+    if len(raum.tueren) >= _MIN_TUEREN_GEBAEUDE and n_raeume < _MIN_RAEUME_PLAUSIBEL:
+        befunde.append(Befund(
+            "Prüfbasis Räume (Erkennung widersprüchlich)",
+            "warnung",
+            f"{len(raum.tueren)} Türen erkannt, aber nur {n_raeume} Raum/Räume — "
+            "Raumerkennung unvollständig, alle Raum-basierten Prüfungen UNGEPRÜFT",
+        ))
 
     # 9./10. LB-Konformität — die oberste Hierarchie-Ebene (LB-explizit übersteuert
     # Norm). Prüft, dass der Plan die expliziten Auftraggeber-Vorgaben einhält; würde
