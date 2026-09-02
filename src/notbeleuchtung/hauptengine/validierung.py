@@ -233,6 +233,29 @@ def pruefe(
                 "(kein erkannter Fluchtweg/Ausgang?)",
             ))
 
+    # 8b. Prüfbasis: ein Plan mit vielen Räumen und platzierten Symbolen, aber OHNE
+    #     erkannte Ausgänge bzw. Fluchtweg-Segmente sähe „ok" aus, obwohl die Kern-
+    #     Regeln (5: RZ an Notausgängen; 3/4/4b: Deckung/Pflicht-RZ/Redundanz) mangels
+    #     Basis gar nicht gelaufen sind — „ungeprüft" ist kein „erfüllt" (realer Fall:
+    #     Fischamender liefert Räume+Türen, aber 0 Ausgänge/0 Segmente, Bug B2).
+    #     Nur wenn Symbole platziert wurden — sonst erzählt Regel 8 die Geschichte
+    #     schon (quasi-leerer Plan), und 8b wäre redundantes Rauschen.
+    if n_raeume >= _MIN_RAEUME_PLAUSIBEL and plzg:
+        if not raum.ausgaenge:
+            befunde.append(Befund(
+                "Prüfbasis Notausgänge (Erkennung)",
+                "warnung",
+                f"{n_raeume} Räume, aber 0 erkannte Ausgänge — Regel 5 (RZ an "
+                "Notausgängen, EN 1838 §4.1.2 g) ist UNGEPRÜFT, nicht erfüllt",
+            ))
+        if not segmente:
+            befunde.append(Befund(
+                "Prüfbasis Fluchtwege (Erkennung)",
+                "warnung",
+                f"{n_raeume} Räume, aber 0 Fluchtweg-Segmente — Deckungs-, Pflicht-RZ- "
+                "und Redundanz-Regeln sind UNGEPRÜFT, nicht erfüllt",
+            ))
+
     # 9./10. LB-Konformität — die oberste Hierarchie-Ebene (LB-explizit übersteuert
     # Norm). Prüft, dass der Plan die expliziten Auftraggeber-Vorgaben einhält; würde
     # z.B. eine nicht-feuernde lb_override-Regel (Label-Naht) als Fehler sichtbar machen.
