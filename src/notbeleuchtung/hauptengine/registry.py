@@ -33,18 +33,28 @@ def photometrie_i_cd_fn(ldt_path: str | Path) -> Callable[[float], float]:
     return lambda gamma_grad: photometrie.intensitaet(gamma_grad)
 
 
-def build_default_bundle(ldt_path: str | Path | None = None) -> ProviderBundle:
+def build_default_bundle(
+    ldt_path: str | Path | None = None, *, photometrie_katalog: bool = True
+) -> ProviderBundle:
     """Das echte Owner-Trio: ArchitekturRaumProvider (Selman) + En1838NormProvider
     (Enis) + NotlichtPlatzierer (Leonis) + LbTextProvider (Enis, 2. Input). Lazy-Import
     — s. Modul-Docstring.
 
-    `ldt_path` (optional) verdrahtet die richtungsabhängige Hersteller-Photometrie in
-    den Platzierer (Lux-Deckung). Ohne LDT rechnet die Deckung konstant-isotrop.
+    Photometrie (Lux-Deckung): `ldt_path` übersteuert; ohne `ldt_path` greift per
+    Default der Schrack-Katalog (`CAD_Symbole/photometrie/`, Fluchtweg-Leuchte =
+    KB-Corridor-Optik im 3h-Notbetrieb, s. QUELLEN.md) — die reale Verteilung ist
+    strenger als die alte isotrope 200-cd-Annahme (Mollgasse EG: 21 → 28 SL).
+    `photometrie_katalog=False` erzwingt das alte isotrope Verhalten; fehlt der
+    Katalog im Baum (schlankes Deployment), fällt die Engine still darauf zurück.
     """
     from notbeleuchtung.normwissen import En1838NormProvider, LbTextProvider
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
+    if ldt_path is None and photometrie_katalog:
+        from notbeleuchtung.symbols.photometrie_katalog import fluchtweg_default_ldt
+
+        ldt_path = fluchtweg_default_ldt()   # None wenn Katalog nicht im Baum
     i_cd_fn = photometrie_i_cd_fn(ldt_path) if ldt_path is not None else None
     return ProviderBundle(
         raum=ArchitekturRaumProvider(),
