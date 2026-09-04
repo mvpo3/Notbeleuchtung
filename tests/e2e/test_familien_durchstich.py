@@ -12,6 +12,9 @@ nicht — sondern das ehrliche Festhalten des Ist-Stands als Regressionsschranke
 * **Herrenholz EG** (ArchiCAD-Konvention, 473 typisierte Räume): die Engine läuft
   durch, platziert aber 0 Symbole → die Plausibilitäts-Regel MUSS „fehler" sagen
   (fail-closed). Verstummt sie je, bricht dieser Test.
+* **Muthgasse 109B E2** (5. Familie, via ODA aus DWG konvertiert): die Wand-Layer-
+  Muster greifen gar nicht → `lade_dxf`/`bounds_mm` bricht ab. Ist-Stand = Crash-
+  Klasse; erschließt Selman die Familie, kippt der raises-Assert sichtbar.
 
 Toleranz-Bänder statt starrer Goldens; Skip, wenn das CAD-Asset fehlt (CI ohne
 Projekte/).
@@ -25,6 +28,8 @@ from notbeleuchtung.hauptengine.registry import build_default_bundle
 FISCHA_EG = Path("Projekte/BVH Fischamenderstraße/BT1/260320_938-AR-PP-11000-A_ERDGESCHOSS BT1.dxf")
 HERRENHOLZ_EG = Path("Projekte/DXF_Herrenholzgasse/20230228_po_eg_V.dxf")
 BARAWITZKA_EG = Path("Projekte/Barawitzkagasse/415_260415_PP_VA_1_3 0 EG.dxf")
+MUTHGASSE_E2 = Path("Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/"
+                    "Architekt/Ausführungsplan/M109B_-Plan - AR-AF-A-GR-E2 100 - GRUNDRISS E2.dxf")
 
 
 def _run(plan: Path, floor: str):
@@ -109,6 +114,20 @@ def test_barawitzka_tueren_erkannt_raeume_luecke(barawitzka):
     r = barawitzka.raum
     assert len(r.tueren) >= 60, f"nur {len(r.tueren)} Türen — Tür-Erkennungs-Regress"
     assert len(r.raeume) < 15, "Raum-Layer erschlossen? → Test-Erwartungen aktualisieren"
+
+
+# ---- Muthgasse 109B E2 ----
+
+def test_muthgasse_ist_stand_wand_layer_unerschlossen():
+    """Ist-Stand der 5. Familie: kein Wand-Layer-Muster greift → definierter Abbruch
+    (kein stilles Leer-Ergebnis). Erschließt die Raumerkennung Muthgasse später,
+    bricht der raises-Assert — dann wie bei den anderen Familien Bänder aufbauen."""
+    if not MUTHGASSE_E2.exists():                  # pragma: no cover — CAD-Asset fehlt
+        pytest.skip(f"Architekturplan nicht vorhanden: {MUTHGASSE_E2}")
+    from notbeleuchtung.hauptengine.pipeline import run
+
+    with pytest.raises(ValueError, match="Wand-Entities"):
+        run(build_default_bundle(), str(MUTHGASSE_E2), "E2")
 
 
 def test_barawitzka_leeres_ergebnis_nicht_ok(barawitzka):
