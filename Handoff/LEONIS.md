@@ -4,7 +4,32 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-03, F2-Abschluss) — HIER WEITER
+## STAND (2026-09-04) — DWG-Input-Slice (ODA) — HIER WEITER
+
+**Branch `leonis/dwg-input-odafc` (kein Contract, 568 grün, ruff clean), PR offen.**
+Tool-Recherche-Kandidat #1 umgesetzt:
+- **`hauptengine/dwg_input.py`** — ODA-File-Converter-Wrapper: Discovery der
+  versionierten Installations-Ordner (`C:\Program Files\ODA\*\ODAFileConverter.exe`;
+  odafc-Default kennt nur den unversionierten Pfad → `is_installed()` war False),
+  `stelle_dxf_bereit` (DXF passthrough = bit-identisch, DWG konvertiert R2018),
+  `OdaKonverterFehlt` mit Download-Hinweis. Lokal installiert: ODA 27.1.0.
+- **Pipeline + API:** `run()` nimmt `.dwg` (Konvertat im TemporaryDirectory);
+  `/plan` + `/projekt` nehmen DWG-Uploads, fehlender Konverter → **503**.
+- **Tests:** erstes **skip-if-Tool**-Pattern (`tests/hauptengine/test_dwg_input.py`,
+  8 neue inkl. Mini-DWG-Pipeline-Roundtrip gegen 4OG-Golden + API-503).
+- **Muthgasse 109B = 5. CAD-Familie:** `Projekte/Pläne 19., Muthgasse 109B - …/`
+  (9 Etagen E2–E9+DD, DWG→DXF ersetzt wie vom Owner gewünscht, PDFs als Soll;
+  Original-ZIP lokal untracked). Sondiert: **Crash-Klasse — kein Wand-Layer-Muster
+  greift, `bounds_mm` bricht ab**; im E2E-Netz als raises-Assert gepinnt
+  (Kipp-Anleitung für Selman). `.gitignore`-Ausnahmen für den Ordner + knowledge-DXF.
+- **Wissens-Gap zu:** `STROMKREISNUMMER_DWG.md` — Nummern-Schema
+  **Anlage/Stromkreis/Adresse** (`LABELING1`), 2× Gruppenbatterie SU 6P NET E30 à
+  6 Kreise, **Cap ≈20 Leuchten/Kreis**, `IsBLString`=DL/BL (bestätigt #96),
+  Typ-Letter A–P, DIN-`#v1`-Obfuskierung = XOR 0xFF auf Base64. Engine-Follow-up
+  darin: Stromkreis-Zuweisungs-Pass im Format Anlage/Kreis/Adresse (NODEID-Naht).
+- Housekeeping: `WETTBEWERB_ENDRA_AI.md` + Referenzfoto Hotel-Fluchtwegplan committet.
+
+## STAND (2026-09-03, F2-Abschluss)
 
 **F2-Session komplett gemergt (main `c915a55`, 551 grün, ruff clean, kein Contract):**
 - **#84** — Abstands-Nachpass + Mollgasse-Real-Data-E2E (Handoff-Auftrag, Union-Merge mit #85).
