@@ -4,9 +4,16 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-04) — DWG-Input-Slice (ODA) — HIER WEITER
+## STAND (2026-09-04, Session-Ende) — DWG-Input-Slice (ODA) — HIER WEITER
 
-**Branch `leonis/dwg-input-odafc` (kein Contract, 568 grün, ruff clean), PR offen.**
+**PR #101 offen** (`leonis/dwg-input-odafc`, gepusht mit User-GO, kein Contract,
+**568 grün lokal**, ruff clean; CI beim Session-Ende: contracts ✅, test lief noch —
+**morgen zuerst `gh pr checks 101` prüfen, dann Merge nur mit User-GO**).
+Danach nächste Kandidaten: Tool-Recherche #2 Docling (Enis-Empfehlung) / warten
+auf Approvals der 3-Owner-Stacks — unblockierter Leonis-Backlog ist sonst leer;
+neue Idee aus dem Digest: Stromkreis-Zuweisungs-Pass (Anlage/Kreis/Adresse,
+Cap ≈20, siehe `STROMKREISNUMMER_DWG.md`-Empfehlung #1).
+
 Tool-Recherche-Kandidat #1 umgesetzt:
 - **`hauptengine/dwg_input.py`** — ODA-File-Converter-Wrapper: Discovery der
   versionierten Installations-Ordner (`C:\Program Files\ODA\*\ODAFileConverter.exe`;
