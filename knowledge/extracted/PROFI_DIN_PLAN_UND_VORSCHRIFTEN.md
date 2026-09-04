@@ -180,7 +180,8 @@ Sicherheitskreis. → **Empfehlung #14 erweitern:** Ergebnis soll eine Stromkrei
 (je Kreis: Leuchten-IDs + Schaltungsart + Summenstrom) exportieren, kompatibel zu dieser Vorlage.
 
 ## 4. Nicht extrahiert / Gaps
-- `sonstiges Wissen/din Planungsunterstützung_Stromkreisnummer.dwg` — DWG, ezdxf liest kein DWG
-  nativ → ODA-Konverter nötig. Vermutlich das Stromkreis-Nummerierungs-Schema (ergänzt 1.xlsx).
+- ~~`sonstiges Wissen/din Planungsunterstützung_Stromkreisnummer.dwg` — ODA-Konverter nötig~~
+  **ERLEDIGT 2026-09-04** (dwg_input-Slice): extrahiert nach `STROMKREISNUMMER_DWG.md` —
+  Schema `Anlage/Stromkreis/Adresse`, Cap ≈20 Leuchten/Kreis, `IsBLString`=DL/BL.
 - `sonstiges Wissen/DIN4708_Bedarfskennzahl Eichholzgasse.pdf` — **OFF-TOPIC** (Trinkwarmwasser-Bedarfsnorm), NICHT ins NormRegelwerk.
 - `.dwl/.dwl2` = AutoCAD-Lock (jemand hat die DWG offen) — nur der `.dxf`-Export wurde gelesen.
