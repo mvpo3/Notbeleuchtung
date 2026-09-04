@@ -24,6 +24,8 @@ tests/failures/
 # DXF — nur die kanonische Schrack-Library ist getrackt
 *.dxf
 !assets/E-Symbole.dxf
+# Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt
+!knowledge/**/*.dxf
 # Muthgasse 109B: DXF (via ODA aus DWG konvertiert) + Plan-PDFs = Projekt-Assets fürs Team
 !Projekte/Pläne 19., Muthgasse 109B - 2026-05-07_13-12/**
 
