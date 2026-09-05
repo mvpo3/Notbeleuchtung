@@ -17,6 +17,10 @@ from dataclasses import asdict, dataclass
 from .contracts import LBVorgabe, NormProvider, PlatzierungsErgebnis, RaumModell
 
 _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
+
+# Sonderstellen-Typen mit eigenem Beleuchtungsniveau: §4.1.2 h) Erste-Hilfe-Stelle,
+# §4.1.2 i) Brandbekämpfungs-/Meldeeinrichtungen — je 5 lx VERTIKAL (Enis-Review #95).
+_SONDERSTELLEN_MIT_LUX = {"erste_hilfe", "feuerloescher", "hydrant", "brandmelder"}
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
@@ -291,6 +295,36 @@ def pruefe(
                 if verletzt
                 else f"LB-Umschaltzeit {lb.umschaltzeit_max_s:g} s ≤ Norm-Max {norm_max:g} s",
             ))
+
+    # 12. Sonderstellen mit Lux-Anforderung (EN 1838 §4.1.2 h/i — Erste-Hilfe-Stelle
+    #     bzw. Brandbekämpfungs-/Meldeeinrichtung, je 5 lx VERTIKAL am Gerät): die
+    #     Engine rechnet horizontal am Boden (`lux_raster`), der vertikale Nachweis
+    #     wird bewusst NICHT geführt (Kategorienfehler-Schutz, Modul-Docstring der
+    #     sonderstellen_strategy). „Ungeprüft ≠ erfüllt" (Muster Regel 8b): die
+    #     Leuchte steht, der Nachweis fehlt — das MUSS der Bericht sagen (Enis-Review
+    #     #95, Befund 2). `niveauaenderung` (§4.1.2 c) fordert KEIN Beleuchtungs-
+    #     niveau → löst hier bewusst nichts aus.
+    lux_pflicht = [s for s in raum.sonderstellen if s.typ in _SONDERSTELLEN_MIT_LUX]
+    if lux_pflicht:
+        typen = sorted({s.typ for s in lux_pflicht})
+        befunde.append(Befund(
+            "Sonderstellen 5-lx-vertikal-Nachweis (EN 1838 §4.1.2 h/i) — manuell prüfen",
+            "warnung",
+            f"{len(lux_pflicht)} Stelle(n) ({', '.join(typen)}): Leuchte gesetzt, "
+            "vertikaler Lux-Nachweis nicht geführt (Engine rechnet horizontal am Boden)",
+        ))
+
+    # 12b. Arbeitsplätze mit besonderer Gefährdung (§4.4.1): solange `arbeitsplatz_lux`
+    #      im Regelwerk ungefüllt ist, ist der 10-%-/min.-15-lx-Nachweis nicht führbar
+    #      → gleiche Sichtbarkeits-Pflicht.
+    gefaehrdung = [r for r in raum.raeume if r.besondere_gefaehrdung]
+    if gefaehrdung:
+        befunde.append(Befund(
+            "Arbeitsplatz-Lux bei besonderer Gefährdung (EN 1838 §4.4) — manuell prüfen",
+            "warnung",
+            f"{len(gefaehrdung)} Raum/Räume mit besondere_gefaehrdung: Leuchte gesetzt, "
+            "arbeitsplatz_lux-Nachweis (10 % / min. 15 lx) im Regelwerk noch ungefüllt",
+        ))
 
     return befunde
 
