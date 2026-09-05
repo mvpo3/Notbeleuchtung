@@ -6,6 +6,8 @@ ist bit-identisch zum Stand vor dem OIB-Anschluss.
 """
 from __future__ import annotations
 
+import pytest
+
 from fakes import build_fake_bundle, build_fake_bundle_mit_oib
 from notbeleuchtung.hauptengine.contracts import Gebaeudeteil, ProjektKontext
 from notbeleuchtung.hauptengine.pipeline import run
@@ -33,20 +35,65 @@ def test_kontext_ohne_provider_laeuft_wie_bisher():
     assert "oib" not in out.render_summary
 
 
-def test_oib_summary_gate_offen():
+def test_oib_summary_zaehlt_scope_je_raum():
+    """Seit 05.09.: kein projekt-globales Gate mehr, sondern Scope je Raum. Der
+    Fake-Gebäudeteil trägt keine raum_referenzen → alle Räume UNGEKLÄRT."""
     out = run(build_fake_bundle_mit_oib("eingeschraenkt"), dxf_path="<fake>",
               floor="4OG", projekt_kontext=_KONTEXT)
     oib = out.render_summary["oib"]
-    assert oib["flaechen_trigger_gate"] == "offen"
     assert oib["stufen"] == {"teil_1": "eingeschraenkt"}
-    assert any("projekt-global" in h for h in oib["hinweise"])
+    assert oib["sanitaer_scope"]["anwendbar"] == 0
+    assert oib["sanitaer_scope"]["ungeklaert"] > 0
+    assert any("UNGEKLÄRT" in h for h in oib["hinweise"])
 
 
-def test_oib_summary_gate_zu_bei_review_required():
+def test_oib_summary_bei_review_required():
     out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
               floor="4OG", projekt_kontext=_KONTEXT)
     oib = out.render_summary["oib"]
-    assert oib["flaechen_trigger_gate"] == "zu"
     assert any("review_required" in h for h in oib["hinweise"])
+    assert oib["sanitaer_scope"]["anwendbar"] == 0
     # Fail-closed heißt: der Plan selbst entsteht trotzdem (nur ohne Flächen-Trigger).
     assert out.platzierung.platzierungen
+
+
+def test_ungeklaerter_scope_erscheint_im_pruefbericht():
+    """Regel 13: der ungeklärte Geltungsbereich darf nicht lautlos verschwinden."""
+    out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
+              floor="4OG", projekt_kontext=_KONTEXT)
+    treffer = [
+        b for b in out.render_summary["pruefung"]["befunde"]
+        if "Geltungsbereich ungeklärt" in b["regel"]
+    ]
+    assert len(treffer) == 1 and treffer[0]["status"] == "warnung"
+
+
+def test_ohne_oib_pfad_kein_scope_befund():
+    """Bestehende Pläne ohne ProjektKontext bekommen keine neue Warnung."""
+    out = run(build_fake_bundle(), dxf_path="<fake>", floor="4OG")
+    assert not [
+        b for b in out.render_summary["pruefung"]["befunde"]
+        if "Geltungsbereich ungeklärt" in b["regel"]
+    ]
+
+
+def test_regel13_erreicht_den_gezeichneten_pruefbericht(tmp_path):
+    """Sichtbarkeit bis zur Ausgabe: der Befund darf nicht nur im Summary-Dict
+    stehen. Er muss im gezeichneten Prüfbericht des Plans landen — und den
+    Gesamtstatus mitnehmen. Ein interner Eintrag allein genügt nicht."""
+    ezdxf = pytest.importorskip("ezdxf")
+    out_dxf = tmp_path / "plan.dxf"
+    out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
+              floor="4OG", out_path=str(out_dxf), projekt_kontext=_KONTEXT)
+
+    assert out.render_summary["pruefung"]["status"] == "warnung"
+    assert out.render_summary["pruefbericht_drawn"] is True
+
+    doc = ezdxf.readfile(str(out_dxf))
+    bloecke = [
+        e.text for e in doc.modelspace()
+        if e.dxftype() == "MTEXT" and "PRÜFBERICHT" in e.text
+    ]
+    assert len(bloecke) == 1
+    assert "Geltungsbereich ungeklärt" in bloecke[0]
+    assert bloecke[0].startswith("PRÜFBERICHT (EN 1838): WARNUNG")

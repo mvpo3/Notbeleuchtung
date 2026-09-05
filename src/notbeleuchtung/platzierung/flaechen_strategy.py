@@ -23,7 +23,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
 from .lux import lux_raster, ud_min_aus_norm
-from .oib_gate import flaechen_trigger_offen, freigegebene_raeume
+from .oib_gate import sanitaer_scope, verkehr_scope
 
 # Sicherung gegen Überproduktion, falls der Lux-Nachweis nie hält (defekte Geometrie).
 _ANTIPANIK_MAX_LEUCHTEN = 25
@@ -47,13 +47,48 @@ def _antipanik_referenz(norm: NormProvider):
     return None
 
 
-def _ist_flaechen_antipanik(raum_typ: str, flaeche_m2: float, schwellen) -> bool:
-    """Löst die Fläche eine Antipanik-Pflicht aus? Beide Schwellen `None` → nie (inert)."""
-    ap = schwellen.antipanik_min_m2
+def _ist_sanitaer_schwelle(raum_typ: str, flaeche_m2: float, schwellen) -> bool:
+    """OVE 718.560.9.001.AT **Punkt 1**: Sanitärbereich ab der 8-m²-Schwelle.
+
+    (Der zweite Halbsatz von Punkt 1 — barrierefreie WC-Anlagen **ohne**
+    Flächenmaß — ist keine Schwelle und gehört nicht hierher; er wird über
+    `sonderstellen_strategy.plan_flag_raeume` / EN 1838 §4.3.8 bedient.)
+    """
     wc = schwellen.wc_sanitaer_min_m2
-    if ap is not None and flaeche_m2 >= ap:
-        return True
     return wc is not None and raum_typ.upper() in _WC_TYPEN and flaeche_m2 >= wc
+
+
+def _ist_verkehr_schwelle(flaeche_m2: float, schwellen) -> bool:
+    """OVE 718.560.9.001.AT **Punkt 3**: 60-m²-Schwelle in Verkehrseinrichtungen.
+
+    Die Flächenzahl allein reicht nicht — Punkt 3 nennt zusätzlich Raumkategorien
+    (Wartezone, Abfertigungshalle, Geschäftsfläche, betriebsnotwendiger
+    Arbeitsraum), die das RaumModell nicht führt. Solange `verkehr_scope` nie
+    `anwendbar` liefert, ist das ohne Wirkung — die Prüfung steht hier, damit die
+    beiden Schwellen sichtbar getrennt sind.
+    """
+    ap = schwellen.antipanik_min_m2
+    return ap is not None and flaeche_m2 >= ap
+
+
+def _flaechen_trigger_greift(
+    raum_typ: str, flaeche_m2: float, schwellen, oib, floor: str, raum_id: str
+) -> bool:
+    """Löst einer der beiden OVE-Flächen-Trigger für DIESEN Raum aus?
+
+    Jede Schwelle wird mit **ihrem eigenen** Geltungsbereich geprüft. `ungeklaert`
+    platziert nicht — der Fall wird im Prüfbericht sichtbar gemacht (Regel 13),
+    nicht still als erfüllt oder als nicht erforderlich behandelt.
+    """
+    if (
+        sanitaer_scope(oib, floor, raum_id) == "anwendbar"
+        and _ist_sanitaer_schwelle(raum_typ, flaeche_m2, schwellen)
+    ):
+        return True
+    return (
+        verkehr_scope(oib, floor, raum_id) == "anwendbar"
+        and _ist_verkehr_schwelle(flaeche_m2, schwellen)
+    )
 
 
 def _antipanik_punkte(polygon: list, anf) -> list:
@@ -98,19 +133,14 @@ def _plan_raumleuchten(
     }
     assign_building = _building_assigner([cx for cx, _ in centroids.values()])
 
-    # Flächen-Trigger nur im Antipanik-Durchlauf: große offene Flächen / WC über der
-    # Schwelle werden antipanik-pflichtig, auch ohne Typ-Klassifikation. Die Schwellen
-    # sind OVE-scope-gebunden (OVE E 8101 / E 8002-1: nur bei „erhöhten Anforderungen"
-    # nach OIB-RL 2) → sie greifen NUR, wenn das OIB-Gate offen ist (fail-closed).
+    # Flächen-Trigger nur im Antipanik-Durchlauf. Die Schwellen sind
+    # OVE-scope-gebunden (OVE E 8101:2019/2025 718.560.9.001.AT) und werden
+    # **je Raum und je Schwelle getrennt** ausgewertet — Punkt 1 (8 m² Sanitär)
+    # gilt für jede Nutzung mit erhöhten Anforderungen, Punkt 3 (60 m²) nur für
+    # verkehrstechnische Einrichtungen. Ein bestätigter Verkaufsteil gibt Punkt 3
+    # deshalb NICHT frei. Nur `anwendbar` platziert (fail closed).
     schwellen = norm.regelwerk_snapshot().flaechen_schwellen
-    ap_referenz = (
-        _antipanik_referenz(norm)
-        if klassifikation == "antipanik" and flaechen_trigger_offen(oib)
-        else None
-    )
-    # Raum-Scope des offenen Gates: None = alle Räume (projekt-global); Menge =
-    # nur die referenzierten Räume dieses Geschosses (raum-genau, ggf. leer).
-    gate_scope = freigegebene_raeume(oib, raum.floor) if ap_referenz is not None else None
+    ap_referenz = _antipanik_referenz(norm) if klassifikation == "antipanik" else None
 
     out: list[Platzierung] = []
     for r in raum.raeume:
@@ -121,10 +151,8 @@ def _plan_raumleuchten(
         getriggert = False
         if anf.klassifikation != klassifikation:
             # Zusatz-Trigger: darf nur ADDIEREN (Antipanik über Fläche), nie überschreiben.
-            if (
-                ap_referenz is not None
-                and (gate_scope is None or r.id in gate_scope)
-                and _ist_flaechen_antipanik(r.raum_typ, r.flaeche_m2, schwellen)
+            if ap_referenz is not None and _flaechen_trigger_greift(
+                r.raum_typ, r.flaeche_m2, schwellen, oib, raum.floor, r.id
             ):
                 eff = ap_referenz
                 getriggert = True

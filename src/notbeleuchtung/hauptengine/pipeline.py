@@ -159,7 +159,7 @@ def run(
         platzierung = bundle.platzierer.place(raum, bundle.norm, lb, oib=oib_befund)
     else:
         platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
-    pruef = pruefbericht(raum, platzierung, lb, norm=bundle.norm)
+    pruef = pruefbericht(raum, platzierung, lb, norm=bundle.norm, oib=oib_befund)
     if out_path is not None:
         render_summary = render_dxf(platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf)
     else:
@@ -172,7 +172,9 @@ def run(
     if oib_befund is not None:
         # Gate-Logik lebt beim Konsumenten (platzierung/oib_gate); lazy wie LbFehler.
         from notbeleuchtung.platzierung.oib_gate import gate_summary
-        render_summary["oib"] = gate_summary(oib_befund)
+        render_summary["oib"] = gate_summary(
+            oib_befund, raum.floor, [r.id for r in raum.raeume]
+        )
     return Output(
         raum=raum,
         platzierung=platzierung,

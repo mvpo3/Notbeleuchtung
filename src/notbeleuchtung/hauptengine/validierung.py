@@ -101,6 +101,7 @@ def pruefe(
     lb: LBVorgabe | None = None,
     *,
     norm: NormProvider | None = None,
+    oib: object | None = None,
 ) -> list[Befund]:
     """Prüft die Platzierung gegen die aus den Contracts ableitbaren Norm-Regeln."""
     plzg = platzierung.platzierungen
@@ -326,6 +327,57 @@ def pruefe(
             "arbeitsplatz_lux-Nachweis (10 % / min. 15 lx) im Regelwerk noch ungefüllt",
         ))
 
+    # 13. OVE-Flächen-Trigger: Räume mit UNGEKLÄRTEM Geltungsbereich
+    #     (OVE E 8101:2019/2025 718.560.9.001.AT). Der Einleitungssatz bindet die
+    #     Schwellen an „Räume, Anlagen oder Gebäude, an die erhöhte Anforderungen
+    #     nach der Art der Nutzung gestellt werden". Ist für einen Raum nicht
+    #     entscheidbar, ob er dazugehört (Gebäudeteil `review_required`, oder ein
+    #     bestätigender Teil ohne `raum_referenzen`), ist das WEDER eine erfüllte
+    #     Anforderung NOCH eine festgestellte Nicht-Erforderlichkeit. Vorher
+    #     verschwand der Fall lautlos, sobald irgendein anderer Gebäudeteil
+    #     bestätigt war. Muster wie 8b/12: „ungeprüft ≠ erfüllt".
+    if oib is not None:
+        from notbeleuchtung.platzierung.oib_gate import (
+            raeume_ohne_geklaerten_scope,
+            raum_zuordnung,
+        )
+
+        raum_ids = [r.id for r in raum.raeume]
+        unklarer_scope = raeume_ohne_geklaerten_scope(oib, raum.floor, raum_ids)
+        if unklarer_scope:
+            # Zwei verschiedene Ursachen, getrennt benannt: (a) die räumliche
+            # Zuordnung steht, aber die Nutzungs-Art ist nicht belegt (Tabelle 6
+            # sagt „Sicherheitsbeleuchtung erforderlich", nicht „erhöhte
+            # Anforderungen nach der Art der Nutzung" — R 12-2 liegt nicht vor);
+            # (b) schon die Zuordnung selbst ist offen.
+            zugeordnet = [
+                r for r in unklarer_scope
+                if raum_zuordnung(oib, raum.floor, r) == "bestaetigt"
+            ]
+            offen = [r for r in unklarer_scope if r not in zugeordnet]
+            teile = []
+            if zugeordnet:
+                teile.append(
+                    f"{len(zugeordnet)} mit bestätigter Zuordnung, aber ohne Beleg "
+                    "für den Nutzungs-Scope der OVE-Regel (R 12-2 fehlt)"
+                )
+            if offen:
+                teile.append(
+                    f"{len(offen)} ohne geklärte Zuordnung (Gebäudeteil "
+                    "review_required, widersprüchlich oder ohne raum_referenzen)"
+                )
+            gezeigt = ", ".join(sorted(unklarer_scope)[:5])
+            mehr = " …" if len(unklarer_scope) > 5 else ""
+            befunde.append(Befund(
+                "OVE-Flächen-Trigger: Geltungsbereich ungeklärt "
+                "(OVE E 8101 718.560.9.001.AT) — manuell prüfen",
+                "warnung",
+                f"{len(unklarer_scope)} Raum/Räume ({gezeigt}{mehr}) — "
+                + "; ".join(teile)
+                + ". Weder freigegeben noch ausgeschlossen: die scope-gebundenen "
+                "Zusatz-Trigger wurden dort NICHT angewendet",
+            ))
+
     return befunde
 
 
@@ -421,9 +473,14 @@ def pruefbericht(
     lb: LBVorgabe | None = None,
     *,
     norm: NormProvider | None = None,
+    oib: object | None = None,
 ) -> dict:
-    """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary."""
-    befunde = pruefe(raum, platzierung, lb, norm=norm)
+    """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary.
+
+    `oib` (optional) ist der Erforderlichkeits-Befund aus dem OIB-Pfad. Er wird
+    nur gelesen, um ungeklärte Geltungsbereiche sichtbar zu machen (Regel 13).
+    """
+    befunde = pruefe(raum, platzierung, lb, norm=norm, oib=oib)
     return {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],
