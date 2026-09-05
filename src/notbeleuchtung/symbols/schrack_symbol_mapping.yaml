@@ -82,3 +82,11 @@ gruppenbatterie_anlage:
   block_name: "gruppenbatterie"
   label: "SV-Anlage (Gruppenbatterie)"
   category: anlage
+
+# Plan-Vorlage (Owner 2026-09-05): kompletter Legenden-Rahmen (Beleuchtung /
+# Notbeleuchtung / Erdung / Verteiler / BMA / Kommunikation / Abkürzungen).
+# Kein Punktsymbol — wird vom Render als Ganzes rechts an den Plan gesetzt.
+vorlage_legende:
+  block_name: "vorlage_legende"
+  label: "Plan-Vorlage (Legenden-Rahmen)"
+  category: vorlage

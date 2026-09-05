@@ -598,6 +598,39 @@ def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsEr
     return True
 
 
+
+def _draw_vorlage(msp, raum: RaumModell) -> bool:
+    """Owner-Plan-Vorlage (Block `Vorlage_Legende` aus der Symbol-Library):
+    der komplette Legenden-Rahmen (Beleuchtung/Notbeleuchtung/Erdung/Verteiler/
+    BMA/Kommunikation/Abkürzungen) wird JEDEM generierten Plan rechts angefügt
+    (Owner-Vorgabe 2026-09-05). Skaliert auf die Grundriss-Höhe, sitzt rechts
+    neben der Schriftfeld-Leiste."""
+    from ezdxf import bbox as _ezbbox
+
+    eintrag = library.load_mapping().get("vorlage_legende")
+    if eintrag is None:
+        return False
+    try:
+        library.import_block(msp.doc, eintrag["block_name"])
+    except KeyError:
+        return False
+    blk = msp.doc.blocks[eintrag["block_name"]]
+    bb = _ezbbox.extents((e for e in blk if e.dxftype() != "ATTDEF"), fast=True)
+    if not bb.has_data or bb.size.y < 1e-6:
+        return False
+    (_min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    ziel_h = max(max_y - min_y, 10000.0)
+    s = ziel_h / bb.size.y
+    # Block ist re-origin'd (Zentrum = Einfügepunkt) → Zentrum der Zielfläche.
+    x0 = max_x + _PANEL_ABSTAND_MM + _PANEL_B_MM + _PANEL_ABSTAND_MM
+    cx = x0 + (bb.size.x * s) / 2.0
+    cy = min_y + ziel_h / 2.0
+    msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
+        "xscale": s, "yscale": s, "layer": LAYER_LEGENDE,
+    })
+    return True
+
+
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
     """Initial-Ansicht = Grundriss: Modelspace-VPORT auf Bounds ∪ Symbolpunkte,
     sonst öffnet AutoCAD bei (0,0) und der Plan muss per Zoom-Extents gesucht
@@ -640,6 +673,7 @@ def render_dxf(
     pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
     belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
+    vorlage_drawn = _draw_vorlage(msp, raum)
 
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
@@ -672,5 +706,6 @@ def render_dxf(
         "pruefbericht_drawn": pruefbericht_drawn,
         "stromkreis_belegung_drawn": belegung_drawn,
         "anlage_drawn": anlage_drawn,
+        "vorlage_drawn": vorlage_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
