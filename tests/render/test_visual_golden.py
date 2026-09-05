@@ -157,7 +157,9 @@ def test_visual_golden_mix(tmp_path):
     # ausüben, sonst wacht der Pixel-Golden über nichts. 7 Platzierungen → 8 INSERTs
     # (die eine „gerade"-RZ = Doppelpfeil = 2 Blocks, alle übrigen je 1).
     doc = ezdxf.readfile(str(dxf))
-    assert len(doc.modelspace().query("INSERT")) == 8
+    inserts = [e for e in doc.modelspace().query("INSERT")
+               if e.dxf.name != "vorlage_legende"]   # Plan-Vorlage zählt nicht als Symbol
+    assert len(inserts) == 8
     belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
     assert len(belegung) == 1
     assert "(DL)" in belegung[0].text and "(BL)" in belegung[0].text  # RZ=DL, SL/AP=BL

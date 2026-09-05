@@ -76,6 +76,8 @@ def test_every_mapping_block_is_in_band():
     # zeigen. Fängt versehentliches Mappen fehlskalierter Blocks.
     doc = library.load_library()
     for key, entry in library.load_mapping().items():
+        if entry.get("category") == "vorlage":
+            continue   # Plan-Vorlage ist bewusst großformatig (kein Punktsymbol)
         block = doc.blocks[entry["block_name"]]
         extents = ezbbox.extents(block, fast=True)
         assert extents.has_data, f"{key}: {entry['block_name']!r} ohne Geometrie"

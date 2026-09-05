@@ -247,7 +247,8 @@ def test_lb_legende_traegt_system_spec(contracts, tmp_path):
 
 def test_fuenf_inserts_auf_sicherheitslayer(rendered):
     platzierung, _, doc = rendered
-    inserts = doc.modelspace().query("INSERT")
+    inserts = [e for e in doc.modelspace().query("INSERT")
+               if e.dxf.name != "vorlage_legende"]   # Plan-Vorlage zählt nicht als Symbol
     assert len(inserts) == 5
     mapping = library.load_mapping()
     expected_blocks = {mapping[p.catalog_key]["block_name"] for p in platzierung.platzierungen}
@@ -339,7 +340,8 @@ def test_stueckliste_mit_symbol_spalte():
     max_x = raum.bounds_mm.max_xy[0]
     # Symbol-INSERTs rechts vom Grundriss (in der Schriftfeld-Leiste) = Legenden-Symbole
     legenden_syms = [e for e in doc.modelspace().query("INSERT")
-                     if e.dxf.insert.x > max_x + 1500]   # Schriftfeld-Leiste beginnt +2000
+                     if e.dxf.insert.x > max_x + 1500   # Schriftfeld-Leiste beginnt +2000
+                     and e.dxf.name != "vorlage_legende"]
     assert len(legenden_syms) == 2
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
