@@ -280,58 +280,96 @@ norm_anforderung:
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      lux_bezugsflaeche: vertikal_am_geraet
 
     hydrant:
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      lux_bezugsflaeche: vertikal_am_geraet
 
     erste_hilfe:
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.1.2 h)"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      lux_bezugsflaeche: vertikal_am_geraet
 
     brandmelder:
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      lux_bezugsflaeche: vertikal_am_geraet
 
     niveauaenderung:
+      # §4.1.2 c) belegt eine SICHERHEITSLEUCHTE — nicht mehr. Die Einleitung von
+      # §4.1.2 (Norm-S.8) sagt: „Sicherheitsleuchten … müssen … zur Hervorhebung
+      # nahe jeder Ausgangstür und an potentiellen Gefahrenstellen … angebracht
+      # werden. Die hervorzuhebenden Stellen umfassen die folgenden Punkte." Die
+      # Aufzählung a)–k) sagt also, WO eine Sicherheitsleuchte hin muss.
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.1.2 c)"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
-      # c) nennt die Niveauänderung ausdrücklich als eigenen Punkt neben b)
-      # Treppen. Die Matrix führt dafür ZWEI Regeln (SL-04 + RZ-06) — deshalb
-      # zusätzlich ein Rettungszeichen, mit derselben Fundstelle.
-      zusaetzlich:
-        klassifikation: rz
-        quelle: "ÖNORM EN 1838:2013 §4.1.2 c)"
-        symbol_wie: {raum_typ: GANG, ist_fluchtweg: true}
+      lux_bezugsflaeche: null      # c) nennt kein Beleuchtungsniveau
+
+      # Ein zusätzliches RETTUNGSZEICHEN an der Niveauänderung ist damit NICHT
+      # belegt — c) fordert kein Zeichen, und §4.1.2 d) verlangt nur, dass
+      # VORHANDENE Sicherheitszeichen beleuchtet sind; es begründet keine neue
+      # Zeichenpflicht. Deshalb kein Norm-Default, sondern ein Kandidat, der eine
+      # eigene Entscheidungs-Quelle braucht (Korrektur 05.09.2026).
+      zur_pruefung:
+        - klassifikation: rz
+          quelle: null                     # bewusst KEINE Norm-Fundstelle
+          symbol_wie: {raum_typ: GANG, ist_fluchtweg: true}
+          decision_source: lb_explizit
+          begruendung: >
+            Die reale Elektro-LB fordert an Niveauänderungen ein Rettungszeichen
+            (LBVorgabe.rz_stellen enthält 'niveauaenderung') — das ist eine
+            explizite Auftraggeber-Vorgabe (Rang 4), kein EN-1838-Default.
+            Liegt keine solche LB vor, entsteht KEINE RZ-Pflicht: die Norm nennt
+            an dieser Stelle nur die Sicherheitsleuchte. Wer das RZ dennoch
+            setzt, muss es als lb_explizit bzw. Referenz-Praxis ausweisen und
+            nicht unter §4.1.2 c) führen.
 
   raum_attribute:
     ist_barrierefrei:
       klassifikation: antipanik
       quelle: "ÖNORM EN 1838:2013 §4.3.8"
       symbol_wie: {raum_typ: SAAL, ist_fluchtweg: false}
-      # §4.3.8 wörtlich (Norm-S.11): „Antipanikbeleuchtung ist in Toiletten für
-      # Menschen mit Behinderung erforderlich." Ein Auslöser ohne eigenen Wert —
-      # das Niveau ist das der Antipanikbeleuchtung (§4.3.1, 0,5 lx HORIZONTAL,
-      # Randbereiche 0,5 m ausgenommen). Deshalb `lux_horizontal_wie: antipanik`:
-      # der Wert wird nicht neu erfunden, sondern von §4.3.1 geliehen.
-      lux_horizontal_wie: antipanik
+      # §4.3.8 wörtlich (Norm-S.11, am Original geprüft): „Antipanikbeleuchtung
+      # ist in Toiletten für Menschen mit Behinderung erforderlich."
+      # Der Auslöser ist also NICHT „barrierefrei", sondern „barrierefreie
+      # TOILETTE" — das Flag allein genügt nicht, der Raumtyp gehört dazu
+      # (Korrektur 05.09.2026). Ein barrierefreies Zimmer löst §4.3.8 nicht aus.
+      gilt_nur_fuer_raumtypen: [WC, SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM, TOILETTE]
+      raumtyp_pflicht: true     # ohne Raumtyp keine Entscheidung (fail closed)
+      # §4.3.8 nennt keinen eigenen Zahlenwert; es gilt das Niveau der
+      # Antipanikbeleuchtung (§4.3.1: 0,5 lx horizontal auf der freien
+      # Bodenfläche im Kernbereich, Randbereiche 0,5 m ausgenommen).
+      lux_wie: antipanik
+      lux_bezugsflaeche: horizontal_boden
 
     besondere_gefaehrdung:
       klassifikation: sicherheitsleuchte
       quelle: "ÖNORM EN 1838:2013 §4.4.1"
       symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
-      # §4.4.1 nennt einen HORIZONTALEN Wert auf der Arbeitsfläche (10 % des für
-      # die Aufgabe erforderlichen Wartungswertes, mind. 15 lx). Er wird hier
-      # NICHT geführt: der Prozentsatz braucht die Nennbeleuchtungsstärke der
-      # Allgemeinbeleuchtung, die im RaumModell nicht existiert — und das
-      # Contract-Feld `arbeitsplatz_lux` bleibt aus demselben Grund leer
-      # (Track C). Bis dahin ist der lichttechnische Nachweis hier OFFEN.
-      lux_horizontal_wie: null
+      # §4.4.1 wörtlich (Norm-S.12, am Original geprüft): „In Bereichen von
+      # Arbeitsplätzen mit besonderer Gefährdung muss der Wartungswert der
+      # Beleuchtungsstärke AUF DER ARBEITSFLÄCHE mindestens 10 % des für die
+      # Aufgabe erforderlichen Wartungswertes der Beleuchtungsstärke betragen
+      # und darf nicht unter 15 lx fallen."
+      # Bezugsfläche ist die ARBEITSFLÄCHE — nicht pauschal der Boden und nicht
+      # pauschal horizontal (die Aufgabenfläche kann geneigt oder vertikal sein).
+      lux_bezugsflaeche: arbeitsflaeche
+      lux_mindestwert: 15.0            # absolute Untergrenze, §4.4.1
+      lux_anteil_nennbeleuchtung: 0.10 # 10 % des Aufgaben-Wartungswertes
+      # Beide Werte sind belegt, der Nachweis ist trotzdem nicht vollständig
+      # führbar: der 10-%-Anteil braucht den Wartungswert der AUFGABEN-
+      # beleuchtung, und die Arbeitsfläche selbst (Lage, Neigung, Ausdehnung)
+      # ist im RaumModell nicht beschrieben. Deshalb bleibt der vollständige
+      # Nachweis offen — das Contract-Feld `arbeitsplatz_lux` bleibt leer.
       nachweis_offen_grund: >
-        §4.4.1 fordert 10 % der Nenn-Beleuchtungsstärke, mindestens 15 lx, auf
-        der Arbeitsfläche. Die Bezugsgröße (Nennbeleuchtungsstärke) liegt nicht
-        vor → der Wert ist nicht berechenbar, die Anforderung bleibt zu prüfen.
+        §4.4.1 fordert auf der Arbeitsfläche 10 % des für die Aufgabe
+        erforderlichen Wartungswertes, mindestens 15 lx. Die Aufgaben-
+        beleuchtungsstärke ist kein Eingang der Engine und die Arbeitsfläche ist
+        im RaumModell nicht beschrieben → der 15-lx-Mindestwert ist prüfbar, der
+        10-%-Anteil und die Bezugsfläche sind es nicht. Nachweis bleibt offen.
