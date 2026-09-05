@@ -1,8 +1,10 @@
 # Wissens-Digest — Fluchtwegplan-Zimmeraushang (Hotel-Referenzfoto)
 
-Quelle: `knowledge/sonstiges Wissen Notbeleuchtung/photo_2026-09-04_21-54-12.jpg`
-(Elitoria Hotel, Zimmer-Aushang 1514, „Yangın Kaçış Planı / Fire Escape Plan",
-fotografiert 2026-09-04). Extrahiert 2026-09-05.
+Quelle: Referenzfoto Hotel-Zimmeraushang (Elitoria Hotel, Zimmer 1514, „Yangın
+Kaçış Planı / Fire Escape Plan", türkisches Hotel, fotografiert 2026-09-04).
+Extrahiert 2026-09-05; das Foto selbst wurde danach aus dem Repo entfernt
+(Owner-Entscheidung — Wissen ist vollständig in diesem Digest) und existierte
+als `photo_2026-09-04_21-54-12.jpg` (Commit `6986d71`, via Git-Historie abrufbar).
 
 **Einordnung:** Das ist KEIN Normwissen für die Platzierung, sondern die Referenz
 für ein **zweites Render-Ziel** derselben Pipeline: der aushangfertige
