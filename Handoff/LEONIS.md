@@ -4,13 +4,31 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-05) — #101 gemergt + Stromkreisnummer-Labels — HIER WEITER
+## STAND (2026-09-05, Session-Ende) — #101 + #102 GEMERGT — HIER WEITER
 
-**PR #101 GEMERGT** (User-GO, main `a809764`, 568 grün + ruff clean lokal
-verifiziert). DWG-Input via ODA ist damit auf main.
+**Beide PRs auf main** (`ee562e6`, **572 grün**, ruff clean, kein Contract):
+- **#101 GEMERGT** (User-GO, DWG-Input via ODA + Muthgasse 5. Familie).
+- **#102 GEMERGT** (User-GO): Stromkreisnummer-Labels **+ drei Owner-Feedback-
+  Nachfixes in-Session**:
+  1. Label-Position: NODEID-Offset **je Symbolart** (gemessene Halbbreite RZ 290/
+     SL 435 + 280 Clearance) — erst mittig im Symbol, dann zu weit, jetzt knapp
+     daneben; Höhenkote 150→90 (= Label-Größe).
+  2. **SL rendert grün statt blau**: Library-Blöcke tragen explizite Blau-Farben
+     (HATCH ACI 150), die den Layer-Grün-Override übergehen → `library.py` stellt
+     blaue ACIs beim Import auf BYLAYER (+Regressionstest).
+  3. **Kanonische Symbol-Library = `CAD_Symbole/Notbeleuchtungssymbole.dxf`**
+     (Owner-Entscheidung: NUR noch diese Symbole; kuratierter 5-Block-Extrakt +
+     Legende, gleiche Geometrie wie E-Symbole-Teilmenge). `_LIB_RELPATH`
+     umgestellt, `sync_layers` legt den Grün-Layer immer an (neue Lib hat keinen
+     Safety-Layer), Mapping: „unten"-Pfeil heißt neu `notbeleuchtung- richtungspfeil
+     nach unten` (mit Bindestrich; `block_names()` normalisiert lowercase!).
+     E-Symbole.dxf = nur noch Herkunfts-Referenz. `.gitignore`-Ausnahme.
+- Lokaler Merge-Pull war von AutoCAD-File-Lock blockiert (User musste DXF
+  schließen) + Stash-Roundtrip wegen identischer Working-Tree-Files.
+- **Uncommitted lokal:** `E-Symbole.dxf`/`.bak` von AutoCAD modifiziert (Engine
+  liest sie nicht mehr — Owner entscheidet committen/verwerfen); Muthgasse-ZIP.
 
-**Neuer Slice: PR offen** (`leonis/stromkreisnummer-labels`, kein Contract,
-**571 grün**, ruff clean, Visual-Goldens unverändert):
+Slice-Inhalt #102 (Kern):
 - Digest-Empfehlung #1 (`STROMKREISNUMMER_DWG.md`): **Zuweisungs-Pass existierte
   schon** (`platzierung/circuit_zuordnung.py`, Cap 20 + DL/BL) — gefehlt hat nur
   das Profi-Format **Anlage/Kreis/Adresse** (LABELING1) am Symbol.
