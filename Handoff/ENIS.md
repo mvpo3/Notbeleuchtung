@@ -4,66 +4,390 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (2026-09-01)
+## Stand (2026-09-05, Abend)
 
 ### Wiedereinstieg in 60 Sekunden
-1. **`main` ist am 01.09. weit gelaufen** — 25 Commits, PRs #71–#80, von `026f7c4`
-   auf `f92010f`. Fast-Forward war konfliktfrei, es ging nichts verloren.
-2. **`NormRegelwerk` steht auf Contract v1.1.0** (PR #72) — vier neue optionale
-   Felder in Enis' Wissens-Naht; PR #80 konsumiert sie bereits. **Enis' Approval
-   fehlte** (nur @polatselman hat approved, gemerged von @mvpo3).
-3. **Zwei Slices fertig** auf Branch `enis/norm-trackB-werte`, **kein Contract
-   berührt**: (a) Track-B-Werte gefüllt, (b) die 5-lx-Korrektur an §4.1.2.
-   Suite **519 passed / 5 skipped**, Schema in sync, ruff sauber.
-   Mollgasse-EG-Durchstich unverändert: 15 RZ + 21 SL, Status `ok`.
-4. **Zwei Blocker, beide nicht technisch:** das 3-Owner-GO für den
-   Sonderstellen-Contract (seit 31.08., **null Reaktion**) und die Entscheidung
-   über ein Scope-Gate für die Flächen-Schwellen.
+1. **PR #103 ist offen** — https://github.com/mvpo3/Notbeleuchtung/pull/103,
+   Branch `enis/review-3owner-0905`. **Nicht gemerged.** Nach dem Push wurde
+   `origin/main` per **Merge-Commit** in den Branch integriert (kein Rebase, kein
+   Force-Push — die veröffentlichte Historie bleibt gültig). Der Merge steht
+   **lokal**; Push und PR-Text-Aktualisierung warten auf GO.
+2. **Drei Contract-PRs sind gemerged** (05.09., 11:00–11:02 UTC): **#93**
+   (RaumModell v1.1.0, Sonderstellen Option A) · **#87** (NormRegelwerk v1.2.0 +
+   OIB-Naht) · **#96** (PlatzierungsErgebnis v1.2.0). `origin/main` = `26742ed`.
+3. **Blocker 1 erledigt** (#93 auf main) · **Blocker 3 erledigt** (#87 bringt die
+   Docstring-Korrektur; `lux.py` war schon vorher korrekt) · **Blocker 2 offen**.
+4. **Offen bleiben:** das Scope-Gate der Flächen-Schwellen, die vier
+   Konsumptions-PRs (#88, #92, #95, #98 — alle gegen `main` **nicht mergefähig**)
+   und die lichttechnischen Nachweise. `flaechen_schwellen` und `engine_status`
+   sind unverändert.
+5. **CI-Lage:** `origin/main` ist **rot** — `ruff check .` bricht an
+   `scripts/render_architektur.py:86` (`C408`, aus `674b8bc`). Der Lint-Schritt
+   läuft vor der Testsuite, deshalb liefert CI aktuell **kein** Testergebnis, auch
+   nicht für #103. Fremde Lane, nicht angefasst.
 
-## 🔴 MORGEN ZUERST
+### 🔴 MORGEN ZUERST
 
 ```
 1. git fetch origin
-2. git log --oneline -1 origin/main        # heute: f92010f — hat sich main bewegt?
-3. gh pr list --state all --limit 10       # ist enis/norm-trackB-werte gemerged?
-4. git show origin/main:docs/COORDINATION.md | head -40
+2. git log --oneline -1 origin/main        # zuletzt: 26742ed
+3. gh pr view 103 --json state,mergeable   # offen? konfliktfrei?
+4. gh pr checks 103                        # Lint noch rot? (C408 aus main)
+5. .venv/bin/python -m pytest -q           # gegen das Testprotokoll unten
 ```
 
-**5. Ist der Track-B-PR noch offen?** Er wartet auf User-GO für Push + PR
-(`enis/norm-trackB-werte`, drei Commits). Inhalt siehe „Erledigt am 01.09."
+1. **#103 pushen + PR-Beschreibung aktualisieren** (Text liegt vorbereitet) —
+   nur mit Owner-GO.
+2. **Rebase-Fassungen der vier Konsumptions-PRs prüfen** (#88, #92, #95, #98),
+   sobald Leonis sie gedreht hat. Erst danach Freigabe-Votum.
+3. **3-Owner-Vorschlag aus `SPEC_SONDERSTELLEN_CONTRACT.md` §8 einbringen** —
+   `SonderstellenAnforderung` + `LuxAnforderung` als Contract-Typen, drei
+   Ports-Methoden, Bump **1.2.0 → 1.3.0**. Ohne das bleibt die API ein Prototyp.
+4. Ohne GO: **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1) und die
+   restlichen §4.1.2-Punkte d), e), f), g), j), k).
 
-**6. Haben @mvpo3 / @polatselman auf die drei Punkte im COORDINATION-Log
-   vom 01.09. reagiert?**
-   - **40/10-Korrektur** — akzeptiert? Dann korrigiert Leonis die Docstrings in
-     `hauptengine/contracts/norm_regelwerk.py` und `platzierung/lux.py`.
-     **Nicht selbst anfassen** (3-Owner-Lane bzw. fremdes Package).
-   - **Scope-Gate für `flaechen_schwellen`** — wenn GO für das Gating über
-     `OibRl2Provider`: die 8 m² (OVE E 8101 `718.560.9.001.AT`) und 60 m²
-     (nur Flughäfen/Bahnhöfe) füllen, **erst dann**. Ohne Gate bleiben sie `None`.
-   - **Sonderstellen-GO (Option A)** — bei GO: Contract **nicht selbst ändern**,
-     Umsetzung mit Leonis koordinieren (`docs/SPEC_SONDERSTELLEN_CONTRACT.md` §7),
-     danach in Track B die 8 Regeln in `platzierung_regeln.yaml` von
-     `input_fehlt` auf `unterstuetzt` ziehen — schrittweise, je Regel mit Test.
+## Gemerged am 05.09.2026 — was sich dadurch ändert
 
-**7. Ohne GO nicht warten — Track-B-eigene Domain-Lücken, nach Wert sortiert:**
-   1. **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1, §4.3.1, Anhang B)
-      fachlich strukturieren. `lux_raster` hat schon `rand_mm=500` — der
-      Randstreifen ist auf Leonis' Seite implementiert, aber ohne Norm-Ref.
-      Jetzt der wichtigste offene fachliche Punkt.
-   2. **Restliche §4.1.2-Punkte** am Volltext durchgehen — d), e), f), j), k)
-      sind in der Matrix noch nicht vollständig abgebildet. Nach dem 01.09.-Befund
-      lohnt sich das: die Extraktion war an mehreren Stellen verkürzt.
-   3. **Quellenlage OVE R 12-2 / OVE E 8350 / TRVB E 102** verbessern.
-   4. **`MANUELL_PRUEFEN`-Fälle reduzieren** — durch die 5-lx-Korrektur sind es
-      schon vier weniger.
-   5. **Ground-Truth-Quellen aufbauen** — ein bestückter realer
-      Notbeleuchtungsplan fehlt im Repo weiterhin komplett.
+| PR | Inhalt | Folge für meine Lane |
+|---|---|---|
+| **#93** | `RaumModell` v1.1.0, Sonderstellen Option A | Blocker 1 zu. `engine_status` bleibt trotzdem `input_fehlt` — er wird erst **je Regel** gezogen, wenn auch die Konsumption (#95) drin ist und der Nachweis vorliegt |
+| **#87** | `NormRegelwerk` v1.2.0, `FlaechenSchwellen.quelle`, `ProviderBundle.oib`, `place(oib=)` | Blocker 3 zu (Docstring-Korrektur im Contract). Das Feld `quelle` steht bereit — **gefüllt wird nichts**, solange das Scope-Gate offen ist |
+| **#96** | `PlatzierungsErgebnis` v1.2.0, Symbol-Datenmodell | keine Berührung mit `normwissen` |
 
-   ✔ **Erledigt am 01.09.:** „Lux-Niveau an hervorgehobenen Stellen" und
-   „Niveauänderung am Originalwortlaut" — beide geprüft, beide korrigiert
-   (`docs/NORMQUELLEN_AT.md` 2c).
+**Contract-Versionen auf `main` jetzt:** `norm_regelwerk` **1.2.0** ·
+`raum_modell` **1.1.0** · `platzierung_ergebnis` **1.2.0** · `oib_ergebnis`
+**1.1.0**. Die frühere Angabe „NormRegelwerk steht auf 1.1.0" ist damit überholt;
+SPEC §8 ist entsprechend nachgezogen.
 
-## ERLEDIGT am 01.09.2026 — Track-B-Norm-Werte (Branch `enis/norm-trackB-werte`)
+## Veröffentlicht am 05.09.2026 — sieben Reviews
+
+Alle auf dem jeweils geprüften Head-SHA, Head unmittelbar vor dem Posten
+verglichen (keine Abweichung, nichts zurückgestellt).
+
+| PR | Votum | Head-SHA | Kern |
+|---|---|---|---|
+| #93 | **APPROVED** → **gemerged** | `55b767f3` | Sonderstellen Option A, 1:1 nach Spec, additiv |
+| #96 | **APPROVED** → **gemerged** | `ad96bd44` | Symbol-Datenmodell, formal sauber, fremde Lane |
+| #95 | **CHANGES_REQUESTED** | `909a424f` | falsche Quellenzuordnung + unsichtbarer Nachweis |
+| #87 | COMMENT (keine Freigabe) → **von @mvpo3 gemerged** | `72ee052c` | Contract-Text korrekt, aber Gate-Scope offen |
+| #88 | COMMENT | `a6bc97fc` | nicht mergefähig; #88 nie ohne #92 mergen |
+| #92 | COMMENT | `4f504e07` | nicht mergefähig; projektweite Gate-Öffnung offen |
+| #98 | COMMENT | `c2a30a29` | nicht mergefähig (Renderer-Konflikt aus #102) |
+
+**Warum #87 nur ein Kommentar war:** ein Approve gilt auf GitHub als Freigabe.
+Der Contract-Text ist fachlich richtig, aber das Gate trifft den Geltungsbereich
+der Schwellen nicht (s. Blocker 2). **#87 wurde trotzdem gemerged** — das ändert
+nichts an der Sachlage: das Feld `FlaechenSchwellen.quelle` steht jetzt bereit,
+gefüllt wird es erst, wenn das Scope-Gate stimmt.
+
+## PR #103 — der Normwissen-Slice (veröffentlicht)
+
+**https://github.com/mvpo3/Notbeleuchtung/pull/103**, Branch
+`enis/review-3owner-0905`, veröffentlicht auf Head **`a296e77`**:
+
+| Commit | Inhalt |
+|---|---|
+| `0504030` | Sonderstellen tragen ihre eigene Norm-Fundstelle (Befund an #95) |
+| `93ce6f5` | Korrektur-Slice: Geltungsbereich, Bezugsfläche, Belegtiefe |
+| `a296e77` | Handoff-Zwischenstand + SPEC §8 |
+| `9809079` | **lokal:** Merge von `origin/main` (`26742ed`) in den Branch — kein Rebase, kein Force-Push |
+
+**Kein Contract berührt:** kein Feld, kein Schema, keine `CONTRACT_VERSION`.
+Auf `main` steht `NormRegelwerk` seit dem Merge von #87 auf **1.2.0**; unser
+Slice lässt sie unverändert. `scripts/gen_schema.py` erzeugt keine Änderung.
+
+### Was der Slice liefert
+
+- `data/sonderstellen.yaml`, Abschnitt `norm_anforderung`: je Auslöser
+  Klassifikation, **echte** Fundstelle, Bezugsfläche und ein `symbol_wie`, das
+  Katalog-Keys und Montagehöhe aus einer bestehenden Raumregel **leiht** —
+  EN 1838 schreibt für eine hervorzuhebende Stelle weder Symbol noch Höhe vor.
+- `SonderstellenAnforderung` + `LuxAnforderung` (normwissen-eigene Typen) und die
+  Query-Methoden `fuer_sonderstelle`, `zur_pruefung`, `fuer_raum_attribut`.
+- `NormRegelwerk.quellen` zusätzlich §4.1.2 c)/h)/i), §4.3.8, §4.4.1 — rein
+  additiv, `quellen` ist ein `list[str]`: mehr Einträge sind **Daten**.
+
+## 📌 GESICHERTES NORMWISSEN — geprüft, NICHT neu recherchieren
+
+> Übernommen aus dem Tagesabschluss vom 02.09. (Commit `6b43ab2`, dort
+> erarbeitet). Am 05.09. gegen das **Original-PDF** gegengeprüft — die
+> Aussagen unten haben Bestand; die Seitenangaben und die h)/i)-Zuordnung
+> stehen korrigiert im nächsten Abschnitt.
+
+Volltext im Repo: `knowledge/_extracted_text/normen/EN 1838 - Notbeleuchtung 2019.txt`.
+Volle Prüftabellen: `docs/NORMQUELLEN_AT.md` Abschnitte **2b** und **2c**.
+
+### Gleichmäßigkeit
+
+| Größe | Wert | Fundstelle | Status |
+|---|---|---|---|
+| **Ud Rettungsweg** | **1:40** („darf 1 : 40 entlang der Mittellinie des Rettungsweges nicht unterschreiten") | **§4.2.2**, Norm-S.10 | auf `main`, gefüllt als `gleichmaessigkeit_max = 40` (max:min) |
+| **Ud Antipanik** | **1:40** („darf 1 : 40 nicht unterschreiten") — **derselbe Wert**, wortgleicher Satz | **§4.3.2**, Norm-S.11 | auf `main`, `gleichmaessigkeit_max = 40` |
+| **Uo Arbeitsplätze mit besonderer Gefährdung** | **≥ 0,1** | **§4.4.2** | **bewusst NICHT gefüllt** |
+
+> **Uo ist nicht Ud.** Ud = kleinste : größte, Uo = kleinste : mittlere (beide
+> EN 12665). Die kursierende Angabe „40 Rettungsweg / **10** Antipanik" verwechselt
+> beides: die 10 ist der Kehrwert von Uo ≥ 0,1 aus §4.4.2 und gehört zu einem
+> **anderen Anwendungsfall** und einer **anderen Größe**. Sie darf nie als Ud = 10
+> in `gleichmaessigkeit_max` landen. Zwei Tests nageln das fest
+> (`test_antipanik_ud_ist_40_nicht_10`,
+> `test_uo_aus_4_4_2_landet_nicht_in_gleichmaessigkeit_max`).
+
+Für Aufheller/Betonungsleuchten (§4.1) nennt EN 1838 **keine** eigene Ud → kein
+Wert, `None`, der Konsument bleibt bei seinem Default.
+
+### Umschaltzeit — zweistufig
+
+| Stufe | Wert | Fundstelle |
+|---|---|---|
+| **Halbwert** | 50 % der geforderten Beleuchtungsstärke **innerhalb 5 s** | §4.2.6 / §4.3.6 / §5.4.6 |
+| **Vollwert** | 100 % **innerhalb 60 s** | §4.2.6 / §4.3.6 / §5.4.6 |
+| Arbeitsplätze mit besonderer Gefährdung | dauernd vorhanden **oder innerhalb 0,5 s** | §4.4.6 |
+
+Das Contract-Feld `NormAnforderung.umschaltzeit_max_s` ist ein **Skalar** und kann
+deshalb nur den **60-s-Vollwert** abbilden — der steht auf `main`. Die 5-s-Stufe
+lebt als `umschaltzeit.halbwert_s` in `en1838_grundwerte.yaml`, damit die
+Norm-Aussage nicht verloren geht. **Ob die Halbwertstufe ein eigenes Contract-Feld
+bekommt, ist eine 3-Owner-Frage — offen.**
+
+### Flächen-Schwellen — bleiben `None`
+
+`NormRegelwerk.flaechen_schwellen.antipanik_min_m2` und `.wc_sanitaer_min_m2` sind
+**bewusst leer** (= inert). Die Werte existieren, stehen aber **nicht in EN 1838**
+— die vorliegende Ausgabe kennt überhaupt keine flächenbezogene Auslöse-Schwelle
+(§4.3.8 nennt Toiletten für Menschen mit Behinderung **ohne** Flächenmaß).
+
+| Wert | Fundstelle | Geltungsbereich im Original |
+|---|---|---|
+| **8 m²** Sanitärbereiche | **OVE E 8101:2019 `718.560.9.001.AT` 1)** („in Sanitärbereichen ab 8 m2 Größe und in barrierefreien WC-Anlagen"); wortgleich ÖVE/ÖNORM E 8002-1 Punkt 1); OVE E 8101:2025 gleichlautend | nur „für Räume, Anlagen oder Gebäude, an die **erhöhte Anforderungen nach der Art der Nutzung** (OVE-Richtlinie R 12-2 bzw. **OIB-Richtlinie 2**) gestellt werden" |
+| **60 m²** | OVE E 8101:2019 / ÖVE/ÖNORM E 8002-1 **Punkt 3)** | **nur Flughäfen und Bahnhöfe** (Wartezonen, Abfertigungshallen, Geschäftsflächen, Arbeitsräume) |
+| **60 m²** (allgemeiner Satz) | ÖVE/ÖNORM E 8002-1 **§3.2.2.1.2** | nur eine **ANMERKUNG** in einer Begriffsbestimmung (informativ), zusätzlich relativiert durch „oder bei kleineren Flächen, sofern … ein erhöhtes Risiko besteht" |
+
+> **Die 60 m² dürfen nicht global angewendet werden.** Normativ sind sie an den
+> Nutzungsscope Flughafen/Bahnhof gebunden; der allgemeine Satz ist bloß eine
+> ANMERKUNG. `platzierung/flaechen_strategy.py::_ist_flaechen_antipanik` wirkt
+> dagegen **auf jeden Raum**. Ein Füllen würde die Norm über ihren
+> Geltungsbereich hinaus anwenden und den Auslöser im Audit-Trail unter
+> `norm_quelle = "ÖNORM EN 1838:2013 §4.3.1"` führen, obwohl er aus OVE stammt.
+
+**Vorschlag (offen, s. Blocker 2):** den Trigger über den bereits vorhandenen
+**`OibRl2Provider`** gaten — der bewertet genau die „erhöhten Anforderungen nach
+der Art der Nutzung". Damit wären die **8 m² sauber freischaltbar**; die 60 m²
+brauchen zusätzlich ein Nutzungsmerkmal (Verkehrsbauwerk) oder bleiben Auslegung.
+Festgehalten in `test_flaechen_schwellen_bleiben_ohne_en_1838_beleg_leer`.
+
+`arbeitsplatz_lux` (§4.4.1: 10 % der Nennbeleuchtungsstärke, mind. 15 lx) bleibt
+ebenfalls leer — ohne Raumtyp „Arbeitsplatz mit besonderer Gefährdung" im
+`RaumModell` wäre der Wert toter Code (Track C, @polatselman).
+
+### §4.1.2 — die hervorzuhebenden Stellen
+
+**5 lx sind ein EN-1838-Wert** — und zwar als **vertikale** Beleuchtungsstärke:
+
+> **h)** nahe jeder Erste-Hilfe-Stelle, **so dass 5 lx vertikale
+> Beleuchtungsstärke am Erste-Hilfe-Kasten erreicht werden**;
+> **i)** nahe jeder Brandbekämpfungs- und Meldeeinrichtung, **so dass 5 lx
+> vertikale Beleuchtungsstärke an den Melde-, den Brandbekämpfungseinrichtungen
+> und der Anzeigen der Brandmeldeanlage erreicht werden**;
+
+Belegt für `feuerloescher`, `hydrant`, `erste_hilfe`, `brandmelder`. Die reale
+Elektro-LB §5.1.23 **wiederholt** den Wert nur; weicht eine LB ab, übersteuert sie
+(LB-explizit > Norm-Default).
+
+> **Vertikal und horizontal müssen getrennt bleiben.** Die 5 lx gelten **am
+> Gerät** (vertikal); der Lux-Nachweis der Engine (`platzierung/lux.py::lux_raster`)
+> rechnet **horizontal am Boden**. Ein Einsetzen als `min_lux` wäre derselbe
+> Kategorienfehler wie Ud gegen Uo. Deshalb trägt die Query-API die Achse im
+> Namen: `norm_lux_vertikal()` → 5.0 · `norm_lux_horizontal()` → **immer `None`**
+> · `norm_lux_bezugsflaeche()` → `"vertikal"`. Die alte achslose `norm_lux()` ist
+> **entfernt**, nicht umgewidmet. In `platzierung_regeln.yaml` heißt der Schlüssel
+> `min_lux_vertikal_norm`.
+
+**Niveauänderungen sind in §4.1.2 ausdrücklich genannt** — b) „nahe Treppen" und
+c) „nahe jeder anderen Niveauänderung" sind **zwei getrennte Punkte**. Die frühere
+Annahme („die Norm nennt nur Treppen, die Niveauänderung kommt aus der LB") ist
+widerlegt. `RZ-06-NIVEAUAENDERUNG` und `SL-04-NIVEAUAENDERUNG` stehen jetzt auf
+`beleg: BELEGT` / `decision_source: norm_default`; ihr **Lux-Wert bleibt offen**,
+weil c) — anders als h)/i) — **kein** Beleuchtungsniveau nennt.
+
+„nahe" = ANMERKUNG 1: „üblicherweise ein Abstand von nicht mehr als **2 m** in der
+Horizontalen".
+
+### Anhang B — keine österreichische Abweichung
+
+Anhang B (A-Abweichungen) führt **Frankreich, Italien, Deutschland, Niederlande**.
+**Für Österreich gibt es keine Abweichung** — alle EN-Werte oben gelten hier
+unverändert. Relevant, weil Deutschland für §4.2.6/§4.3.6 abweichend **15 s**
+festlegt; das gilt für Österreich **ausdrücklich nicht**.
+
+### Arbeitsregel, die aus dem 01.09. folgt
+
+**Die Extraktion ist ein Index, kein Beleg.** Der 5-lx-Irrtum entstand, weil die
+Prüfung am 31.08. gegen `_port_source/emergency_lighting_en1838.yaml` lief statt
+gegen den Volltext; die Extraktion führt §4.1.2 verkürzt und ohne die Buchstaben
+h)/i). Ab jetzt: **immer am Volltext belegen.** Und: **Zahl und Größe zusammen
+prüfen** — zwei Fehler desselben Typs an einem Tag (Ud gegen Uo, vertikal gegen
+horizontal). Die richtige Zahl in der falschen Größe ist ein Fehler.
+
+## 📌 Fachliche Korrekturen vom 05.09. — am ORIGINAL-PDF geprüft
+
+Original: `knowledge/EN 1838 - Notbeleuchtung 2019 (1).pdf`, Kopfzeile
+**„EN 1838:2013 (D)"**. Die Textextraktion ist **Suchhilfe, kein Beleg** — auch
+die EN-1838-Datei nicht.
+
+| Punkt | Befund | Norm-Seite |
+|---|---|---|
+| **h) vs. i)** | **h) = Erste-Hilfe-Stelle**, **i) = Brandbekämpfungs- UND Meldeeinrichtung**. Feuerlöscher, Wandhydrant und Brandmelder gehören zu **i)** | S. 9 |
+| **§4.3.8** | „Antipanikbeleuchtung ist in **Toiletten** für Menschen mit Behinderung erforderlich" — raumtyp-gebunden, das Flag `ist_barrierefrei` allein genügt nicht | S. **11** (nicht 12) |
+| **§4.4.1** | Wartungswert **auf der Arbeitsfläche**, 10 % der Aufgaben-Beleuchtungsstärke, mind. 15 lx — **nicht** pauschal horizontal, **nicht** der Boden | S. **12** (nicht 13) |
+| **§4.1.2 c)** | belegt die **Sicherheitsleuchte**, nicht das Rettungszeichen. Die Einleitung von §4.1.2 verlangt an den aufgezählten Stellen Sicherheitsleuchten; d) verlangt nur, dass **vorhandene** Zeichen beleuchtet werden | S. 8 |
+| **§4.2.1** | „Breitere Rettungswege können als mehrere 2 m breite Streifen betrachtet werden oder mit Antipanikbeleuchtung ausgerüstet werden" — Grundlage für den offenen Wegbreiten-Punkt | S. 9 |
+
+Folgen in der Matrix (`platzierung_regeln.yaml`): **RZ-06** von
+`norm_default`/`BELEGT` auf **`lb_explizit`/`LB`** korrigiert (ohne LB keine
+RZ-Pflicht an einer Niveauänderung), **SL-04** bleibt Norm-Default; SL-10/SL-11
+mit korrigierten Seitenangaben. **`engine_status` überall unverändert
+`input_fehlt`.**
+
+## 🔌 Offene Schnittstelle — die neue API ist ein PROTOTYP
+
+`fuer_sonderstelle`, `zur_pruefung` und `fuer_raum_attribut` stehen **nicht** im
+`ports.NormProvider`-Protocol. Sie sind lokal vorbereitet und nur intern + in
+Tests zu verwenden.
+
+**Keine Lösung sind:** ein `getattr(norm, "fuer_sonderstelle", …)` aus
+`platzierung` (stille Kopplung an eine ungeprüfte Signatur — ein Methodenzugriff
+ersetzt keine vereinbarte Schnittstelle) und ein Import von `normwissen` in ein
+fremdes Paket (Owner-Grenze, CLAUDE.md).
+
+Der ausformulierte 3-Owner-Vorschlag steht in
+`docs/SPEC_SONDERSTELLEN_CONTRACT.md` **§8**: Contract-Typen
+(`SonderstellenAnforderung`, `LuxAnforderung`), drei Methodensignaturen und die
+vollständige Auswirkungsliste — Version-Bump (**1.2.0 → 1.3.0 nur, wenn #87
+vorher gemerged ist**, sonst 1.1.0 → 1.2.0), Schema-Regen,
+`tests/fakes.py::FakeNormProvider` um drei Methoden, und der Nachzug von
+`tests/fixtures/norm_regelwerk_snapshot.json` (3-Owner-Lane, führt weiter nur die
+drei alten `quellen`-Strings).
+
+## 📋 Anschlussauftrag für Leonis (@mvpo3)
+
+1. **Nicht** duck-typed anbinden — erst der 3-Owner-PR nach SPEC §8, dann
+   konsumieren.
+2. Für eine Sonderstelle die Anforderung **des Auslösers** verwenden, nie die
+   erste Raumregel der Leuchtenart (das war der Befund an #95).
+3. `fuer_raum_attribut` immer **mit `raum_typ`** rufen. Eine leere Liste heißt
+   „§4.3.8 greift hier nicht" — **nicht** „kein Licht": Raumtyp-Regel,
+   Fluchtweg und Flächen-Trigger gelten unabhängig weiter.
+4. Lux nur über die achs-gebundenen Zugriffe; **nur** `lux_horizontal_boden` darf
+   in `lux_raster`.
+5. `zur_pruefung()`-Kandidaten nur setzen, wenn eine LB sie deckt — dann mit
+   `lb_quelle`, nie mit `norm_quelle`.
+6. **Prüfregel für `nachweis_offen`** ergänzen (vier Gerätetypen, Niveauänderung,
+   `besondere_gefaehrdung`). Der Text steht in `nachweis_offen_grund`.
+
+**Die Quellen sind jetzt korrekt zugeordnet — der lichttechnische Nachweis ist
+damit nicht erbracht.** Ohne Punkt 6 meldet ein unvollständiger Plan weiterhin
+`ok`. Und: **die Quellen schalten nichts automatisch frei** — `engine_status`
+bleibt `input_fehlt`. #93 ist seit dem 05.09. auf `main`; es fehlt weiterhin die
+Konsumption (**#95**, von mir mit Changes Requested) und der Nachweis **je Regel**
+(Platzierung und Lichttechnik getrennt bewertet).
+
+## 🧪 Testprotokoll 05.09.2026
+
+| Lauf | Commit | passed | skipped | deselected |
+|---|---|---|---|---|
+| Baseline `origin/main` | `b954b60` | 565 | 7 | 2 |
+| nach Slice 1 | `c0ca778` (vor Rebase) | 591 | 7 | 2 |
+| nach Korrektur-Slice | `d77ac30` (vor Rebase) | 599 | 7 | 2 |
+| gezielte Regression `tests/normwissen/ tests/contract/ tests/platzierung/test_platzierer.py` | `d77ac30` | 321 | 0 | 0 |
+| gezielte Regression, PR-Stand | `93ce6f5` | 321 | 0 | 0 |
+| volle Suite, PR-Stand (rebased auf `674b8bc`) | `93ce6f5` | 599 | 7 | 2 |
+| Contract + Normwissen nach Merge von `26742ed` | `9809079` | 314 | 0 | 0 |
+| **volle Suite nach Merge von `26742ed`** | **`9809079`** | **599** | **7** | **2** |
+
+`scripts/gen_schema.py` erzeugt in allen Läufen keine Änderung (Schema in sync).
+
+**`ruff check .` — ein Befund, nicht aus dieser Lane:** `scripts/render_architektur.py:86`
+meldet `C408 Unnecessary dict() call`. Die Datei kam mit `674b8bc` (Leonis'
+Architektur-Diagramm) auf `main`; `origin/main` ist damit aktuell **nicht**
+ruff-clean. Unsere Dateien sind es:
+`ruff check src/notbeleuchtung/normwissen/ tests/normwissen/` → All checks passed.
+An @mvpo3 gemeldet gehört das noch.
+
+**CI-Folge (05.09.):** Im Workflow läuft `Lint` **vor** `Full test suite`. Der
+C408-Befund lässt den Job `test` scheitern, bevor ein einziger Test läuft — auf
+`main` (Run `33962252577`) genauso wie auf #103 (Run `33962392314`). Für #103
+heißt das: `contracts` **pass**, `test` **fail am Lint**, **kein CI-Testergebnis**
+— nicht „Tests rot". Der Job-Verlauf zeigt `Full test suite` als nicht
+ausgeführt. Lokal auf demselben Stand: 599 passed.
+
+**Die 7 Skips einzeln** (Umgebung, nicht Code): 2 × `tests/hauptengine/
+test_dwg_input.py` (ODA File Converter auf diesem Mac nicht installiert) · 5 ×
+`tests/raumerkennung/*` (`Projekte/Mollgasse Notbeleuchtung/WHA_MOL_EG.dxf` liegt
+lokal nicht vor — der Ordner enthält nur einen PNG-Screenshot; die Mollgasse-E2E
+laufen, sie nutzen `Projekte/Mollgasse/*.dxf`).
+**Die 2 deselected:** `addopts = "-m 'not visual'"` aus `pyproject.toml`.
+
+### PR-Prüfstände der sieben Reviews
+
+| PR | Head-SHA | eigene Basis | Merge-Probe gegen `main` |
+|---|---|---|---|
+| #87 | `72ee052c` | 530 / 5 / 2 | **konfliktfrei** → 565 / 7 / 2 |
+| #88 | `a6bc97fc` | 545 / 5 / 2 | Konflikt (via Stack) |
+| #92 | `4f504e07` | 557 / 5 / 2 | **Konflikt**: `pipeline.py`, `api/main.py`, `COORDINATION.md` |
+| #93 | `55b767f3` | 537 / 5 / 2 | **konfliktfrei** → 565 / 7 / 2 |
+| #95 | `909a424f` | 574 / 5 / 2 | **Konflikt** (dieselben drei Dateien) |
+| #96 | `ad96bd44` | 546 / 5 / 2 | **konfliktfrei** → 565 / 7 / 2 |
+| #98 | `c2a30a29` | 591 / 5 / 2 | **Konflikt** + `render/dxf_renderer.py` |
+
+(Format: passed / skipped / deselected. Auf den älteren PR-Basen sind es 5 Skips,
+weil die beiden ODA-Tests dort noch nicht existieren.)
+
+## ✔ Blocker 1 — Sonderstellen-Contract: ERLEDIGT
+
+**#93 ist am 05.09. gemerged** (`4c66c20`). `RaumModell` v1.1.0 mit
+`sonderstellen[]`, `ist_barrierefrei` und `besondere_gefaehrdung` liegt auf
+`main`. Mein Approval stand auf `55b767f3`.
+
+Nach dem Merge **nicht** automatisch freischalten: `engine_status` der acht
+Regeln wird erst gezogen, wenn auch die Konsumption (#95) drin ist und der
+Nachweis **je Regel einzeln** vorliegt — Platzierung und lichttechnischer
+Nachweis getrennt bewertet.
+
+## 🚧 Blocker 2 — Scope-Gate: OFFEN (einziger verbleibender Blocker)
+
+Seit dem Merge von #87 existiert `FlaechenSchwellen.quelle` im Contract — das
+ändert an der Sachlage nichts: **beide Flächen-Schwellen bleiben leer**, auch die
+8 m². `flaechen_schwellen` und `engine_status` sind unverändert.
+
+| Schwelle | Geltungsbereich im Original | vom Gate abgedeckt? |
+|---|---|---|
+| 8 m² Sanitär | „erhöhte Anforderungen nach der Art der Nutzung" (OVE R 12-2 / OIB-RL 2) | inhaltlich ja, **aber** die Raum-Ebene stimmt nicht (s.u.) |
+| 60 m² | **nur Flughäfen/Bahnhöfe** (OVE E 8101:2019 Punkt 3); der allgemeine Satz in E 8002-1 §3.2.2.1.2 ist eine **ANMERKUNG** | **nein** |
+
+Zwei getrennte Gründe, **nicht gekoppelt**:
+
+1. **Raum-Ebene / gemischte Nutzung.** `oib_gate.freigegebene_raeume` (#92) gibt
+   „alle Räume" zurück, sobald **einem** bestätigenden Gebäudeteil die
+   `raum_referenzen` fehlen. OIB-RL 2 Punkt 5.4 wörtlich: „Bei Gebäuden bzw.
+   Bauwerken mit jeweils gemischter Nutzung gelten die für die jeweilige Nutzung
+   anzuwendenden Anforderungen." Also je Nutzung, nicht projektweit. **Sobald das
+   sitzt, sind die 8 m² freischaltbar — unabhängig von der 60-m²-Frage.**
+2. **Nutzungsmerkmal für die 60 m².** `ProjektKontext.Nutzungsart` kennt
+   `VERKEHRSEINRICHTUNG`, `oib_rl2_tabelle6.yaml` führt sie unter
+   `review_nutzungsarten` (Tabelle 6 hat keine Zeile dafür, Bundeszuständigkeit)
+   → Stufe `review_required` → Gate **zu**. Das Gate ist für die 60 m² also nicht
+   nur zu grob, sondern für den einzigen belegten Fall gesperrt. Vorschlag: ein
+   zweites, nutzungsart-basiertes Signal (die Nutzungsart steht bereits in
+   `OibErgebnis.eingangswerte["nutzungsart"]`, dort aber nur als Audit-Dict).
+
+## ✔ Blocker 3 — 40/10-Docstrings: ERLEDIGT
+
+`platzierung/lux.py` war bereits korrigiert; `hauptengine/contracts/
+norm_regelwerk.py` ist es mit dem **Merge von #87** (`9fff6e1`). Die Angabe
+„40 Rettungsweg / 10 Antipanik" steht damit an keiner Stelle mehr im Code.
+
+## ERLEDIGT am 01.09.2026 — Track-B-Norm-Werte (PR #83, **gemerged** `cfcbbde`)
 
 **Auftrag** (PR #81, COORDINATION 01.09.): die v1.1.0-Felder in `normwissen/data`
 füllen, damit Leonis' bereits gemergte Konsumption scharf wird. **Ergebnis: zwei
@@ -145,37 +469,78 @@ Geändert: `sonderstellen.yaml` · `sonderstellen.py` · `platzierung_regeln.yam
 (SL-04…SL-08, RZ-06) · 3 Tests umgedreht + 3 neue · `NORMQUELLEN_AT.md` **2c** ·
 `SPEC_SONDERSTELLEN_CONTRACT.md` §3.
 
-## 🚧 Blocker 1 — 3-Owner-GO für den Sonderstellen-Contract
+## Historie 02.09. — Blocker 1 (3-Owner-GO Sonderstellen)
 
-Unverändert seit 31.08. PR #69 hat **0 Reviews, 0 Kommentare**, keine Reaktion im
-Log. Zweite Entscheidungsbitte steht im COORDINATION-Log vom 01.09.
+> **Überholt:** #93 liegt vor und hat mein Approval, es fehlt @polatselman.
+> Aktueller Stand oben. Der Text bleibt als Begründungs-Historie stehen.
 
-**Empfohlen: Option A** — generisches `sonderstellen[]` (Feuerlöscher ·
+Unverändert seit 31.08. PR #69 hat **0 Reviews, 0 Kommentare**; zweite
+Entscheidungsbitte steht im COORDINATION-Log vom 01.09. — ebenfalls ohne Reaktion.
+
+**Empfohlen: Option A** — generisches `RaumModell.sonderstellen[]` (Feuerlöscher ·
 Wandhydrant · Erste-Hilfe-Stelle · Brandmelder · Niveauänderung) plus
-`ist_barrierefrei` (§4.3.8) und `besondere_gefaehrdung` (§4.4.1) auf `Raum`.
-Rein additiv, schaltet **exakt** die 8 blockierten Placement-Regeln frei, vier
-davon belegte Pflichtstellen aus §4.1.2. Ohne sie bleibt jeder erzeugte Plan in
-diesem Punkt unvollständig, **ohne dass man es der Ausgabe ansieht**.
+`ist_barrierefrei` (§4.3.8) und `besondere_gefaehrdung` (§4.4.1) auf `Raum`. Rein
+additiv, alle Felder mit Default, schaltet **exakt** die 8 blockierten
+Placement-Regeln frei. Ohne sie bleibt jeder erzeugte Plan in diesem Punkt
+unvollständig, **ohne dass man es der Ausgabe ansieht**.
 
-**Neu dazugekommen:** `besondere_gefaehrdung` ist zugleich die Voraussetzung
-dafür, dass das seit v1.1.0 existierende Contract-Feld `arbeitsplatz_lux`
-überhaupt einen Auslöser bekommt. Die beiden Themen hängen zusammen.
+**Durch die 5-lx-Korrektur ist der Vorschlag stärker geworden:** vier der fünf
+Typen tragen jetzt einen **belegten Norm-Wert** (5 lx vertikal, §4.1.2 h/i) statt
+eines Review-Flags. `besondere_gefaehrdung` ist zugleich die Voraussetzung dafür,
+dass das seit v1.1.0 existierende Contract-Feld `arbeitsplatz_lux` überhaupt einen
+Auslöser bekommt — die beiden Themen hängen zusammen.
 
-## 🚧 Blocker 2 — Scope-Gate für die Flächen-Schwellen
+Bis zum GO wird `hauptengine/contracts/**` von Track B nicht angefasst.
 
-Neu am 01.09. `flaechen_schwellen` ist im Contract global, die belegten Werte
-sind es nicht. Solange kein Gate entschieden ist, bleiben beide Felder `None` —
-Leonis' `_ist_flaechen_antipanik` ist damit inert. Details oben + Abschnitt 2b.
+## Historie 02.09. — Blocker 2 (Scope-Gate Flächen-Schwellen)
+
+> **Verschärft:** auch die 8 m² bleiben leer, und die beiden Schwellen sind
+> nicht gekoppelt. Aktueller Stand oben.
+
+Offen seit 01.09. `flaechen_schwellen` wirkt im Contract **global**, die belegten
+Werte sind es nicht (Tabelle oben). Solange kein Gate entschieden ist, bleiben
+beide Felder `None` und `_ist_flaechen_antipanik` ist inert — kein Fehlalarm, aber
+auch kein Nutzen.
+
+**Vorschlag liegt vor:** Gating über den vorhandenen `OibRl2Provider`. Erste
+Ausbaustufe wären die **8 m²** (Scope deckt sich exakt), die **60 m²** erst mit
+einem Nutzungsmerkmal „Verkehrsbauwerk".
+
+## Historie 02.09. — Blocker 3 (40/10-Docstrings)
+
+> **Halb erledigt:** `platzierung/lux.py` ist auf `main` korrigiert; der
+> Contract-Docstring kommt mit #87. Aktueller Stand oben.
+
+Die Angabe „EN 1838: 40 Rettungsweg / 10 Antipanik" steht weiterhin in:
+
+| Fundstelle | Eigentümer |
+|---|---|
+| `hauptengine/contracts/norm_regelwerk.py`, Docstring `NormAnforderung.gleichmaessigkeit_max` | 3-Owner (CODEOWNERS) |
+| `platzierung/lux.py`, Docstring `ud_min_aus_norm` + Modul-Docstring | Leonis |
+| COORDINATION-Eintrag 01.09. (Leonis) und PR-Text #72/#81 | Leonis |
+
+Beides **nicht** in Enis' Lane → gemeldet, nicht angefasst. Meldung liegt als
+Kommentar an PR #81 (`#issuecomment-5500891064`) und im COORDINATION-Log.
+**Folgepunkt: nachhalten, dass @mvpo3 es korrigiert.** Der Code ist korrekt — nur
+die Doku lügt, und sie ist die Stelle, an der der nächste Leser den Fehler wieder
+aufnimmt.
 
 ## ⚠️ Prozess — Approvals in der `normwissen`-Lane
 
-`normwissen/` ist per CODEOWNERS Enis' Lane. **#14, #22, #23, #40** gingen ohne
-Enis-Approval durch; **#72** war zusätzlich im eigenen PR-Text als „braucht
-3-Owner-Approval" deklariert und trägt trotzdem nur **ein** Approval
-(@polatselman), gemerged von @mvpo3. Genau dieser PR hat die vier Quellen-Fehler
-transportiert — ein Review aus der Normwissen-Lane hätte sie vor dem Merge
-gefunden. Als sachlicher Team-Punkt im COORDINATION-Log vom 01.09. festgehalten.
-Der Contract selbst ist inhaltlich in Ordnung und wird nicht zurückgedreht.
+`src/notbeleuchtung/normwissen/` ist per CODEOWNERS Enis' Lane. Ohne
+Enis-Approval durchgegangen: **#14, #22, #23, #40**. Dazu:
+
+- **#72** hob `hauptengine/contracts/norm_regelwerk.py` auf v1.1.0, war im eigenen
+  PR-Text als „braucht 3-Owner-Approval" deklariert und trägt **ein** Approval
+  (@polatselman), gemerged von @mvpo3. Genau dieser PR transportierte die vier
+  Quellen-Fehler.
+- **#83** (Enis' eigener PR) wurde **12 Minuten** nach Erstellung von @mvpo3
+  gemerged — **0 Reviews, 0 Kommentare**. Inhaltlich in Ordnung (CI grün, Leonis
+  hat den Regress separat verifiziert), aber die erbetene Durchsicht aus fremder
+  Lane hat nicht stattgefunden.
+
+Sachlicher Team-Punkt, keine technische Frage; im COORDINATION-Log vom 01.09.
+festgehalten. **Bleibt offen.** Nichts davon wird zurückgedreht.
 
 ## Erledigt am 31.08.2026
 
@@ -362,10 +727,21 @@ des Rebase gemacht, um Folgekonflikte zu vermeiden.
 - **Kein Umkehrschluss**, **nichts raten**, **blockierende Unsicherheit schlägt
   Rechnen** — gilt für OIB **und** LB.
 
-## Offene Punkte
+## Offene Punkte (Stand 02.09., ergänzt 05.09.)
+
+> Die Punkte zu Sonderstellen-Quellen, §4.1.2 c)/h)/i) und den
+> Flächen-Schwellen sind oben aktualisiert; hier steht der ältere Stand.
 - 🚧 **3-Owner-GO für den Sonderstellen-Contract** — siehe Blocker 1.
 - 🚧 **Scope-Gate für `flaechen_schwellen`** — siehe Blocker 2.
-- 🚧 **Track-B-PR** `enis/norm-trackB-werte` wartet auf User-GO für Push + PR.
+- 🚧 **40/10-Docstrings** in `contracts/norm_regelwerk.py` und `platzierung/lux.py`
+  — siehe Blocker 3. Gemeldet an @mvpo3, Korrektur nachhalten.
+- **PR #84** (Leonis, `abstand-nachpass`) ist der nächste Integrationspunkt: er
+  läuft als Nachpass in `platzierer.place` und ändert
+  `tests/e2e/test_mollgasse_eg_durchstich.py`. **Wenn er die Referenz
+  15 RZ + 21 SL / Prüfstatus `ok` / 7 Befunde verschiebt, hier nachziehen** — sie
+  ist die Vergleichsbasis für die Inertheit der Track-B-Werte.
+- ✔ **Track-B-PR #83** — am 01.09. gemerged (`cfcbbde`, Squash, @mvpo3),
+  Track B ist auf `main` **aktiv**.
 - **`umschaltzeit_max_s` bildet nur eine Stufe ab** — die Norm ist zweistufig
   (50 % in 5 s, 100 % in 60 s). Die 5-s-Stufe hat kein Contract-Feld; ob sie eins
   bekommt, ist eine 3-Owner-Frage. Bis dahin steht sie nur in der YAML.
@@ -377,15 +753,20 @@ des Rebase gemacht, um Folgekonflikte zu vermeiden.
   (@polatselman).
 - **Quellenlage** OVE R 12-2 / OVE E 8350 / TRVB E 102 (nur Nennung, kein Volltext)
   · `vorschriftenkurzuebersicht-at.pdf` ist AES-verschlüsselt, nicht auswertbar.
-- **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1, Anhang B) nicht modelliert.
+- **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1, Anhang B) nicht
+  modelliert — **wichtigster offener fachlicher Punkt**. `lux_raster` hat bereits
+  `rand_mm=500`, aber ohne Norm-Ref.
 - **`tests/fixtures/lb/fischa_lb.txt`** trägt weiterhin die falsche Quellenzuordnung
   (3-Owner-Lane, bewusst nicht angefasst) — mit Leonis zu klären.
 - **ÖNORM B 1800:2013-08-01** beschaffen → schaltet Tabelle-6-Zeilen 2 und 10 frei.
 - Weiter offen: AStV/ASchG/KennV als RIS-Volltext, EN 1838:2025-03,
   EN 50172:2024-11; 4 Norm-Werte für Wohnungs-Fluchtweg ratifizieren.
-- **Prozess:** `normwissen/` ist per CODEOWNERS Enis' Lane; #14, #22, #23, #40 und
-  **#72** gingen ohne Enis-Approval durch — siehe Abschnitt „Prozess" oben.
-- **Aufräumbar:** alle `enis/*`-Branches sind vollständig in `main`; der lokale Ref
+- **Prozess:** `normwissen/` ist per CODEOWNERS Enis' Lane; #14, #22, #23, #40,
+  **#72** und **#83** gingen ohne fremdes Review durch — siehe Abschnitt
+  „Prozess" oben. Bleibt offen.
+- **Aufräumbar:** alle `enis/*`-Branches sind inhaltlich in `main`
+  (`enis/norm-trackB-werte` per Squash, deshalb kein Ancestor — Inhalt am
+  02.09. gegen `origin/main` verifiziert: Diff leer). Der lokale Ref
   `backup/lb-parser-vor-rebase-0831` hat seinen Zweck erfüllt.
 
 ## 0. Setup — Claude, führe das ZUERST für den Nutzer aus
