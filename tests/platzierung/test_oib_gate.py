@@ -1,13 +1,21 @@
-"""oib_gate — Gate-Matrix (fail-closed) + Raum-Scope (v2) + Audit-Summary."""
+"""oib_gate — Geltungsbereich je Raum und je Schwelle (OVE 718.560.9.001.AT).
+
+Umgestellt am 05.09.2026 (Enis, Blocker 2, Schritt 6a): statt eines
+projekt-globalen Booleans entscheidet der Scope **je Raum**, und die beiden
+Schwellen werden **getrennt** ausgewertet. Drei Zustände: `anwendbar`,
+`nicht_anwendbar`, `ungeklaert` — „ungeklärt" ist ausdrücklich nicht
+„nicht erforderlich".
+"""
 from __future__ import annotations
 
 import pytest
 
 from notbeleuchtung.hauptengine.contracts import OibBefund, OibErgebnis, RaumReferenz
 from notbeleuchtung.platzierung.oib_gate import (
-    flaechen_trigger_offen,
-    freigegebene_raeume,
     gate_summary,
+    raeume_ohne_geklaerten_scope,
+    sanitaer_scope,
+    verkehr_scope,
 )
 
 
@@ -19,89 +27,101 @@ def _erg(stufe: str, i: int = 1, refs: tuple = ()) -> OibErgebnis:
     )
 
 
-def _befund(*stufen: str) -> OibBefund:
-    return OibBefund(ergebnisse=[_erg(s, i) for i, s in enumerate(stufen, start=1)])
+def _befund(*eintraege: OibErgebnis) -> OibBefund:
+    return OibBefund(ergebnisse=list(eintraege))
 
 
-@pytest.mark.parametrize(
-    ("stufen", "offen"),
-    [
-        (("eingeschraenkt",), True),
-        (("uneingeschraenkt",), True),
-        (("review_required",), False),          # fail-closed
-        (("nicht_erforderlich",), False),
-        ((), False),                             # leerer Befund
-        (("review_required", "eingeschraenkt"), True),  # EIN bestätigter Teil genügt
-    ],
-)
-def test_gate_matrix(stufen, offen):
-    assert flaechen_trigger_offen(_befund(*stufen)) is offen
+# ── 8-m²-Trigger (OVE Punkt 1): raumbezogen ─────────────────────────────────
+def test_ohne_oib_pfad_nicht_anwendbar():
+    """Ohne OIB-Bewertung stehen die scope-gebundenen Zusatz-Trigger nicht in
+    Frage — bestehende Pläne ändern sich dadurch nicht."""
+    assert sanitaer_scope(None, "EG", "r1") == "nicht_anwendbar"
+    assert verkehr_scope(None, "EG", "r1") == "nicht_anwendbar"
 
 
-def test_gate_zu_ohne_befund():
-    assert flaechen_trigger_offen(None) is False
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt"])
+def test_bestaetigter_teil_gibt_seine_raeume_frei(stufe):
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "anwendbar"
 
 
-def test_gate_summary_offen():
-    s = gate_summary(_befund("eingeschraenkt", "review_required"))
-    assert s["flaechen_trigger_gate"] == "offen"
-    assert s["stufen"] == {"teil_1": "eingeschraenkt", "teil_2": "review_required"}
-    # v1-Hinweis (projekt-global) immer dabei.
-    assert any("projekt-global" in h for h in s["hinweise"])
+def test_bestaetigter_teil_gibt_fremde_raeume_nicht_frei():
+    """Der Kern der Korrektur: ein bestätigter Gebäudeteil öffnet keine Räume,
+    die er nicht referenziert."""
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r2") == "nicht_anwendbar"
+    assert sanitaer_scope(b, "1OG", "r1") == "nicht_anwendbar"
 
 
-def test_gate_summary_zu_bei_review_nennt_grund():
-    s = gate_summary(_befund("review_required"))
-    assert s["flaechen_trigger_gate"] == "zu"
-    assert any("review_required" in h for h in s["hinweise"])
+def test_review_required_ist_ungeklaert_nicht_nicht_erforderlich():
+    b = _befund(_erg("review_required", refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-# ── Raum-Scope (v2) ────────────────────────────────────────────────────────────
+def test_nicht_erforderlich_ist_nicht_anwendbar():
+    b = _befund(_erg("nicht_erforderlich", refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "nicht_anwendbar"
 
 
-def test_scope_ohne_befund_ist_global():
-    assert freigegebene_raeume(None, "EG") is None
+def test_bestaetigter_teil_ohne_zuordnung_macht_ungeklaert_statt_alles_frei():
+    """Früher: Rückfall auf „alle Räume". Jetzt: der Raum ist ungeklärt — weder
+    freigegeben noch stillschweigend ausgeschlossen."""
+    b = _befund(_erg("eingeschraenkt"))
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_bestaetigend_ohne_referenzen_ist_global():
-    b = OibBefund(ergebnisse=[_erg("eingeschraenkt")])
-    assert freigegebene_raeume(b, "EG") is None
+def test_gemischte_nutzung_trennt_die_teile():
+    """Verkaufsteil bestätigt (mit Zuordnung), Wohnteil review_required (mit
+    Zuordnung): jeder Raum bekommt die Aussage SEINES Teils."""
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "wc_verkauf"),)),
+        _erg("review_required", 2, refs=(("EG", "wc_wohnen"),)),
+    )
+    assert sanitaer_scope(b, "EG", "wc_verkauf") == "anwendbar"
+    assert sanitaer_scope(b, "EG", "wc_wohnen") == "ungeklaert"
+    assert sanitaer_scope(b, "EG", "halle") == "nicht_anwendbar"
 
 
-def test_scope_raum_genau_filtert_nach_geschoss():
-    b = OibBefund(ergebnisse=[
-        _erg("eingeschraenkt", 1, refs=(("EG", "r1"), ("EG", "r2"), ("1OG", "r9"))),
-    ])
-    assert freigegebene_raeume(b, "EG") == {"r1", "r2"}
-    assert freigegebene_raeume(b, "1OG") == {"r9"}
-    assert freigegebene_raeume(b, "2OG") == set()   # Geschoss ohne Referenz → nichts frei
+# ── 60-m²-Trigger (OVE Punkt 3): heute nie anwendbar ────────────────────────
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt", "review_required"])
+def test_verkehr_scope_wird_nie_aus_anderen_nutzungen_abgeleitet(stufe):
+    """Punkt 3 gilt nur für verkehrstechnische Einrichtungen. Die Nutzungsart ist
+    im OibBefund nicht zugesichert (nur Audit-Dict) und die Raumkategorie fehlt
+    im RaumModell → nie `anwendbar`, aber auch nicht still „nicht erforderlich"."""
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert verkehr_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_gemischt_ein_teil_ohne_referenzen_ist_global():
-    # Ein bestätigender Teil OHNE Zuordnung darf nicht still enger ausgelegt werden.
-    b = OibBefund(ergebnisse=[
+# ── Sichtbarkeit ────────────────────────────────────────────────────────────
+def test_ungeklaerte_raeume_werden_aufgelistet():
+    b = _befund(
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
-        _erg("uneingeschraenkt", 2),
-    ])
-    assert freigegebene_raeume(b, "EG") is None
+        _erg("review_required", 2, refs=(("EG", "r2"),)),
+    )
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1", "r2", "r3"]) == ["r2"]
 
 
-def test_scope_ignoriert_nicht_bestaetigende_teile():
-    # review_required-Referenzen zählen nicht — nur bestätigende Teile scopen.
-    b = OibBefund(ergebnisse=[
+def test_ungeklaert_bleibt_sichtbar_obwohl_ein_anderer_teil_bestaetigt_ist():
+    """Genau der Fall, der vorher lautlos verschwand."""
+    b = _befund(_erg("eingeschraenkt", 1), _erg("review_required", 2))
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1"]) == ["r1"]
+    hinweise = " ".join(gate_summary(b, "EG", ["r1"])["hinweise"])
+    assert "UNGEKLÄRT" in hinweise and "review_required" in hinweise
+
+
+def test_summary_zaehlt_die_scope_zustaende():
+    b = _befund(
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
-        _erg("review_required", 2, refs=(("EG", "r7"),)),
-    ])
-    assert freigegebene_raeume(b, "EG") == {"r1"}
+        _erg("review_required", 2, refs=(("EG", "r2"),)),
+    )
+    block = gate_summary(b, "EG", ["r1", "r2", "r3"])
+    assert block["sanitaer_scope"] == {
+        "anwendbar": 1, "nicht_anwendbar": 1, "ungeklaert": 1
+    }
+    assert block["verkehr_scope"]["anwendbar"] == 0
+    assert block["stufen"] == {"teil_1": "eingeschraenkt", "teil_2": "review_required"}
 
 
-def test_gate_summary_raum_genau_flag_und_hinweis():
-    b = OibBefund(ergebnisse=[_erg("eingeschraenkt", 1, refs=(("EG", "r1"),))])
-    s = gate_summary(b)
-    assert s["flaechen_trigger_gate"] == "offen"
-    assert s["raum_genau"] is True
-    assert any("raum-genau" in h for h in s["hinweise"])
-
-    s_global = gate_summary(_befund("eingeschraenkt"))
-    assert s_global["raum_genau"] is False
-    assert any("projekt-global" in h for h in s_global["hinweise"])
+def test_summary_nennt_den_verkehrs_vorbehalt_immer():
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "r1"),)))
+    assert any("60-m²" in h for h in gate_summary(b, "EG", ["r1"])["hinweise"])

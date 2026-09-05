@@ -31,8 +31,9 @@ def test_plan_mit_projekt_kontext_traegt_oib_block():
     r = _post_plan(client, projekt_kontext=_KONTEXT_JSON)
     assert r.status_code == 200
     summary = json.loads(r.headers["X-Notbeleuchtung"])
-    assert summary["oib"]["flaechen_trigger_gate"] == "offen"
     assert summary["oib"]["stufen"] == {"teil_1": "eingeschraenkt"}
+    # Scope je Raum statt Gate-Flag (Enis 05.09.): ohne raum_referenzen ungeklärt.
+    assert summary["oib"]["sanitaer_scope"]["anwendbar"] == 0
     # Der Plan selbst ist unverändert (4OG-Fixture hat keine Flächen-Schwellen).
     assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
 
@@ -72,4 +73,4 @@ def test_projekt_mit_kontext_traegt_oib_block_topleve():
         pytest.skip("Render-Extra (matplotlib/pypdf) nicht installiert")
     assert r.status_code == 200
     summary = json.loads(r.headers["X-Notbeleuchtung"])
-    assert summary["oib"]["flaechen_trigger_gate"] == "offen"
+    assert summary["oib"]["stufen"] == {"teil_1": "eingeschraenkt"}

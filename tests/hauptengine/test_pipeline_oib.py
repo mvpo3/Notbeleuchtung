@@ -33,20 +33,43 @@ def test_kontext_ohne_provider_laeuft_wie_bisher():
     assert "oib" not in out.render_summary
 
 
-def test_oib_summary_gate_offen():
+def test_oib_summary_zaehlt_scope_je_raum():
+    """Seit 05.09.: kein projekt-globales Gate mehr, sondern Scope je Raum. Der
+    Fake-Gebäudeteil trägt keine raum_referenzen → alle Räume UNGEKLÄRT."""
     out = run(build_fake_bundle_mit_oib("eingeschraenkt"), dxf_path="<fake>",
               floor="4OG", projekt_kontext=_KONTEXT)
     oib = out.render_summary["oib"]
-    assert oib["flaechen_trigger_gate"] == "offen"
     assert oib["stufen"] == {"teil_1": "eingeschraenkt"}
-    assert any("projekt-global" in h for h in oib["hinweise"])
+    assert oib["sanitaer_scope"]["anwendbar"] == 0
+    assert oib["sanitaer_scope"]["ungeklaert"] > 0
+    assert any("UNGEKLÄRT" in h for h in oib["hinweise"])
 
 
-def test_oib_summary_gate_zu_bei_review_required():
+def test_oib_summary_bei_review_required():
     out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
               floor="4OG", projekt_kontext=_KONTEXT)
     oib = out.render_summary["oib"]
-    assert oib["flaechen_trigger_gate"] == "zu"
     assert any("review_required" in h for h in oib["hinweise"])
+    assert oib["sanitaer_scope"]["anwendbar"] == 0
     # Fail-closed heißt: der Plan selbst entsteht trotzdem (nur ohne Flächen-Trigger).
     assert out.platzierung.platzierungen
+
+
+def test_ungeklaerter_scope_erscheint_im_pruefbericht():
+    """Regel 13: der ungeklärte Geltungsbereich darf nicht lautlos verschwinden."""
+    out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
+              floor="4OG", projekt_kontext=_KONTEXT)
+    treffer = [
+        b for b in out.render_summary["pruefung"]["befunde"]
+        if "Geltungsbereich ungeklärt" in b["regel"]
+    ]
+    assert len(treffer) == 1 and treffer[0]["status"] == "warnung"
+
+
+def test_ohne_oib_pfad_kein_scope_befund():
+    """Bestehende Pläne ohne ProjektKontext bekommen keine neue Warnung."""
+    out = run(build_fake_bundle(), dxf_path="<fake>", floor="4OG")
+    assert not [
+        b for b in out.render_summary["pruefung"]["befunde"]
+        if "Geltungsbereich ungeklärt" in b["regel"]
+    ]
