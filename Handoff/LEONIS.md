@@ -4,7 +4,33 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-05, Nachmittag) — Contract-Merges + Lost-Merge-Rettung — HIER WEITER
+## STAND (2026-09-05, Abend) — Owner-Feedback-Session + #111 GEMERGT — HIER WEITER
+
+**Alles auf main** (`97b8a1d`, **679 grün** inkl. Selmans neuem
+`test_stempel_anker.py` — AIA-Kipp-Anleitung wird schon konsumiert!). Nach den
+Rettungs-Merges #105/#106/#107/#108 kam die große **Owner-Feedback-Session am
+H-Testgebäude** (synthetisches RaumModell, `scratchpad/demo_h_v*.py`) — der Owner
+korrigierte DXF-Outputs in AutoCAD, wir lasen die Deltas aus und machten
+Engine-Regeln daraus. **PR #111 GEMERGT** mit:
+- **Tür-Rendering** (`_draw_tueren`: Schwelle+Blatt+Schwenkbogen, Notausgang
+  doppelt; Wandrichtung = nächste Polygon-Kante).
+- **Außenleuchte §4.1.2 b** (`aussen_strategy`: SL 1 m außerhalb jedes final_exit).
+- **Pfeil-zur-Tür-Regel** (Owner-DXF-Korrektur): Ausgangs-RZ = unten-Block,
+  rotiert zur Tür (Anlauf-Richtung wenn RZ auf Türposition).
+- **Höhenkoten KOMPLETT raus** (Owner: projektabhängig) + **AGV-Stromkreis-Label
+  je Symbol raus** (Owner: unnötig — Info lebt in Anlage/Kreis/Adresse-Zeile +
+  Belegungsliste + XDATA).
+- **Fluchtweg-Segmente in Notlicht-Grün** (true_color 30/180/80).
+- **SL-Dubletten < 2 m mergen** (Owner-„falsch"-Marker: Sonderstellen-SL neben
+  Verdichtungs-SL) — `abstand_nachpass._DUBLETTEN_ABSTAND_MM`.
+- **Beschriftungs-Anti-Kollision gegen SYMBOLE** (Owner-Referenzbilder
+  richtig/falsch-beschriftung-platziert.png): NODEID-Label Seitenwechsel +
+  Stromkreis-Label-Kandidaten (war: Label lief durch Nachbar-Aufheller).
+Offene Wissens-Gaps (Enis-Lane, in #111 protokolliert): produktabhängige
+Erkennungsweite (z=100/200), Blendungs-I_max-Tabellen. Audit-Fehlalarm
+dokumentiert: Kreuzungs-Pfeile waren korrekt (Dijkstra-Gefälle existiert).
+
+## STAND (2026-09-05, Nachmittag) — Contract-Merges + Lost-Merge-Rettung
 
 **Gemergt heute:** #101 · #102 · #104 (kleiner Aufheller) + durch Enis/Selman die
 drei Contract-PRs **#93/#87/#96** (RaumModell v1.1.0 · NormRegelwerk v1.2.0 ·
