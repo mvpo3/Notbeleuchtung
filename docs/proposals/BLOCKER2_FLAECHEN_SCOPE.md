@@ -68,8 +68,29 @@ PDF fehlt im Repo.
 | Lichtart | „Sicherheitsbeleuchtung" (Art nicht spezifiziert) | ausdrücklich **Antipanikbeleuchtung** |
 
 **Folge 1:** `wc_sanitaer_min_m2` bildet Punkt 1) nur zur Hälfte ab — die
-barrierefreie WC-Anlage **ohne** Flächenmaß fehlt. Ein 4 m² großes
-barrierefreies WC fällt heute durch jedes Schwellenraster.
+barrierefreie WC-Anlage **ohne** Flächenmaß fehlt im Schwellen-Pfad.
+
+> **Korrektur 05.09. (am laufenden Code geprüft).** Die frühere Formulierung „ein
+> 4 m² großes barrierefreies WC fällt durch jedes Schwellenraster" war
+> missverständlich. Mit echtem Provider und vollem Platzierungspfad:
+>
+> | Fall | Ergebnis |
+> |---|---|
+> | barrierefreies WC, 4 m² | **1 Antipanik-Leuchte**, `norm_quelle = ÖNORM EN 1838:2013 §4.3.1` |
+> | gewöhnliches WC, 4 m² | keine Leuchte |
+>
+> Es sind **zwei verschiedene Auslöser**, und nur einer fehlt:
+>
+> * **greift bereits:** EN 1838 **§4.3.8** über `Raum.ist_barrierefrei` →
+>   `sonderstellen_strategy.plan_flag_raeume` — flächenunabhängig, auf `main`.
+>   Ein barrierefreies WC bekommt also Licht, unabhängig von jeder Schwelle und
+>   vom OVE-Scope.
+> * **fehlt:** der OVE-Auslöser aus Punkt 1) zweiter Halbsatz im
+>   **Schwellen-Pfad** (`_ist_sanitaer_schwelle`). Er ist keine Schwelle und
+>   gehört nicht in `wc_sanitaer_min_m2`.
+>
+> Die Lücke betrifft damit die **Vollständigkeit des Audit-Trails**, nicht eine
+> fehlende Leuchte.
 **Folge 2:** `antipanik_min_m2` als reine Flächenzahl bildet Punkt 3) **nicht**
 ab: dort hängt die Pflicht an der Raumkategorie, nicht an der Fläche allein.
 
