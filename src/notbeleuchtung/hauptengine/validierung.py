@@ -21,6 +21,13 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 # Sonderstellen-Typen mit eigenem Beleuchtungsniveau: §4.1.2 h) Erste-Hilfe-Stelle,
 # §4.1.2 i) Brandbekämpfungs-/Meldeeinrichtungen — je 5 lx VERTIKAL (Enis-Review #95).
 _SONDERSTELLEN_MIT_LUX = {"erste_hilfe", "feuerloescher", "hydrant", "brandmelder"}
+
+# §4.3.8 nennt „Toiletten für Menschen mit Behinderung". Eindeutig sind WC und
+# TOILETTE; die übrigen Sanitär-Raumtypen belegen eine Toilettennutzung NICHT —
+# ein barrierefreies Bad ist keine barrierefreie Toilette. Für sie wird die
+# Norm-Pflicht weder behauptet noch verneint (Regel 12c).
+_TOILETTE_EINDEUTIG = {"WC", "TOILETTE"}
+_TOILETTE_MEHRDEUTIG = {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
@@ -101,6 +108,7 @@ def pruefe(
     lb: LBVorgabe | None = None,
     *,
     norm: NormProvider | None = None,
+    oib: object | None = None,
 ) -> list[Befund]:
     """Prüft die Platzierung gegen die aus den Contracts ableitbaren Norm-Regeln."""
     plzg = platzierung.platzierungen
@@ -314,17 +322,103 @@ def pruefe(
             "vertikaler Lux-Nachweis nicht geführt (Engine rechnet horizontal am Boden)",
         ))
 
-    # 12b. Arbeitsplätze mit besonderer Gefährdung (§4.4.1): solange `arbeitsplatz_lux`
-    #      im Regelwerk ungefüllt ist, ist der 10-%-/min.-15-lx-Nachweis nicht führbar
-    #      → gleiche Sichtbarkeits-Pflicht.
+    # 12b. Arbeitsplätze mit besonderer Gefährdung (§4.4.1): der geforderte Wert gilt
+    #      auf der ARBEITSFLÄCHE — „muss der Wartungswert der Beleuchtungsstärke auf der
+    #      Arbeitsfläche mindestens 10 % des für die Aufgabe erforderlichen
+    #      Wartungswertes der Beleuchtungsstärke betragen und darf nicht unter 15 lx
+    #      fallen" (Norm-S.12, am Original geprüft). Das ist WEDER der Bodenwert, den
+    #      `lux_raster` rechnet, NOCH der vertikale Wert aus §4.1.2 h/i — drei
+    #      verschiedene Bezugsflächen, nicht ineinander umrechenbar. Zwei Größen fehlen
+    #      zusätzlich: der Wartungswert der Aufgabenbeleuchtung (kein Engine-Eingang)
+    #      und die Arbeitsfläche selbst (im RaumModell nicht beschrieben). Damit ist der
+    #      Nachweis nicht führbar → gleiche Sichtbarkeits-Pflicht wie Regel 12.
     gefaehrdung = [r for r in raum.raeume if r.besondere_gefaehrdung]
     if gefaehrdung:
         befunde.append(Befund(
-            "Arbeitsplatz-Lux bei besonderer Gefährdung (EN 1838 §4.4) — manuell prüfen",
+            "Arbeitsplatz-Lux bei besonderer Gefährdung (EN 1838 §4.4.1, Bezugsfläche "
+            "ARBEITSFLÄCHE) — manuell prüfen",
             "warnung",
             f"{len(gefaehrdung)} Raum/Räume mit besondere_gefaehrdung: Leuchte gesetzt, "
-            "arbeitsplatz_lux-Nachweis (10 % / min. 15 lx) im Regelwerk noch ungefüllt",
+            "Nachweis auf der ARBEITSFLÄCHE (10 % des Aufgaben-Wartungswertes, mind. "
+            "15 lx) nicht geführt — arbeitsplatz_lux im Regelwerk ungefüllt, "
+            "Aufgabenbeleuchtung und Arbeitsfläche sind keine Engine-Eingänge; der "
+            "Bodenwert aus lux_raster ersetzt ihn nicht",
         ))
+
+    # 12c. Barrierefreier Sanitärraum ohne belegte Toilettennutzung (§4.3.8): die
+    #      Norm nennt „Toiletten für Menschen mit Behinderung". WC/TOILETTE sind
+    #      eindeutig; BAD, DUSCHE, NASSRAUM und SANITÄR sind es nicht — dort wird
+    #      die Pflicht bewusst NICHT automatisch angewendet („nichts behaupten, was
+    #      die Quelle nicht hergibt"). Der Fall darf aber auch nicht verschwinden:
+    #      enthält der Raum eine barrierefreie Toilette, fehlt sonst eine
+    #      Pflicht-Leuchte, ohne dass man es dem Plan ansieht.
+    unklar = [
+        r for r in raum.raeume
+        if r.ist_barrierefrei and r.raum_typ.upper() in _TOILETTE_MEHRDEUTIG
+    ]
+    if unklar:
+        typen = sorted({r.raum_typ for r in unklar})
+        befunde.append(Befund(
+            "Barrierefreier Sanitärraum — Toilettennutzung nicht bestimmbar "
+            "(EN 1838 §4.3.8) — manuell prüfen",
+            "warnung",
+            f"{len(unklar)} Raum/Räume ({', '.join(typen)}) mit ist_barrierefrei: "
+            "§4.3.8 gilt für Toiletten; der Raumtyp belegt keine Toilettennutzung → "
+            "Antipanik-Pflicht NICHT automatisch angewendet. Enthält der Raum eine "
+            "barrierefreie Toilette, ist sie nachzutragen. Andere Anforderungen an "
+            "den Raum bleiben davon unberührt",
+        ))
+
+    # 13. OVE-Flächen-Trigger: Räume mit UNGEKLÄRTEM Geltungsbereich
+    #     (OVE E 8101:2019/2025 718.560.9.001.AT). Der Einleitungssatz bindet die
+    #     Schwellen an „Räume, Anlagen oder Gebäude, an die erhöhte Anforderungen
+    #     nach der Art der Nutzung gestellt werden". Ist für einen Raum nicht
+    #     entscheidbar, ob er dazugehört (Gebäudeteil `review_required`, oder ein
+    #     bestätigender Teil ohne `raum_referenzen`), ist das WEDER eine erfüllte
+    #     Anforderung NOCH eine festgestellte Nicht-Erforderlichkeit. Vorher
+    #     verschwand der Fall lautlos, sobald irgendein anderer Gebäudeteil
+    #     bestätigt war. Muster wie 8b/12: „ungeprüft ≠ erfüllt".
+    if oib is not None:
+        from notbeleuchtung.platzierung.oib_gate import (
+            raeume_ohne_geklaerten_scope,
+            raum_zuordnung,
+        )
+
+        raum_ids = [r.id for r in raum.raeume]
+        unklarer_scope = raeume_ohne_geklaerten_scope(oib, raum.floor, raum_ids)
+        if unklarer_scope:
+            # Zwei verschiedene Ursachen, getrennt benannt: (a) die räumliche
+            # Zuordnung steht, aber die Nutzungs-Art ist nicht belegt (Tabelle 6
+            # sagt „Sicherheitsbeleuchtung erforderlich", nicht „erhöhte
+            # Anforderungen nach der Art der Nutzung" — R 12-2 liegt nicht vor);
+            # (b) schon die Zuordnung selbst ist offen.
+            zugeordnet = [
+                r for r in unklarer_scope
+                if raum_zuordnung(oib, raum.floor, r) == "bestaetigt"
+            ]
+            offen = [r for r in unklarer_scope if r not in zugeordnet]
+            teile = []
+            if zugeordnet:
+                teile.append(
+                    f"{len(zugeordnet)} mit bestätigter Zuordnung, aber ohne Beleg "
+                    "für den Nutzungs-Scope der OVE-Regel (R 12-2 fehlt)"
+                )
+            if offen:
+                teile.append(
+                    f"{len(offen)} ohne geklärte Zuordnung (Gebäudeteil "
+                    "review_required, widersprüchlich oder ohne raum_referenzen)"
+                )
+            gezeigt = ", ".join(sorted(unklarer_scope)[:5])
+            mehr = " …" if len(unklarer_scope) > 5 else ""
+            befunde.append(Befund(
+                "OVE-Flächen-Trigger: Geltungsbereich ungeklärt "
+                "(OVE E 8101 718.560.9.001.AT) — manuell prüfen",
+                "warnung",
+                f"{len(unklarer_scope)} Raum/Räume ({gezeigt}{mehr}) — "
+                + "; ".join(teile)
+                + ". Weder freigegeben noch ausgeschlossen: die scope-gebundenen "
+                "Zusatz-Trigger wurden dort NICHT angewendet",
+            ))
 
     return befunde
 
@@ -421,9 +515,14 @@ def pruefbericht(
     lb: LBVorgabe | None = None,
     *,
     norm: NormProvider | None = None,
+    oib: object | None = None,
 ) -> dict:
-    """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary."""
-    befunde = pruefe(raum, platzierung, lb, norm=norm)
+    """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary.
+
+    `oib` (optional) ist der Erforderlichkeits-Befund aus dem OIB-Pfad. Er wird
+    nur gelesen, um ungeklärte Geltungsbereiche sichtbar zu machen (Regel 13).
+    """
+    befunde = pruefe(raum, platzierung, lb, norm=norm, oib=oib)
     return {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],

@@ -434,3 +434,54 @@ def test_regel11b_besondere_gefaehrdung_warnt():
     treffer = [b for b in befunde if "besonderer Gefährdung" in b.regel]
     assert len(treffer) == 1 and treffer[0].status == "warnung"
     assert "arbeitsplatz_lux" in treffer[0].detail
+
+
+def test_regel12c_meldet_mehrdeutigen_barrierefreien_sanitaerraum():
+    """§4.3.8 gilt für Toiletten. BAD/DUSCHE/NASSRAUM/SANITÄR belegen keine
+    Toilettennutzung → keine automatische Pflicht, aber ein sichtbarer Hinweis:
+    steckt dort doch eine barrierefreie Toilette, fehlt sonst eine Leuchte, ohne
+    dass man es dem Plan ansieht (Enis-Präzisierung 05.09.)."""
+    raum = _raum("s1")
+    raum.raeume.append(Raum(
+        id="bad_bf", raum_typ="BAD", ist_barrierefrei=True,
+        polygon_mm=[(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)],
+    ))
+    treffer = [b for b in pruefe(raum, _erg(_rz())) if "Toilettennutzung" in b.regel]
+    assert len(treffer) == 1
+    assert treffer[0].status == "warnung"
+    assert "BAD" in treffer[0].detail
+    assert "NICHT automatisch angewendet" in treffer[0].detail
+
+
+def test_regel12c_schweigt_bei_eindeutiger_toilette_und_bei_zimmer():
+    """Eindeutiges WC → die Pflicht greift (kein Hinweis nötig); ZIMMER liegt
+    außerhalb der Regel → ebenfalls kein Hinweis."""
+    for raum_typ in ("WC", "ZIMMER"):
+        raum = _raum("s1")
+        raum.raeume.append(Raum(
+            id=f"r_{raum_typ.lower()}", raum_typ=raum_typ, ist_barrierefrei=True,
+            polygon_mm=[(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)],
+        ))
+        treffer = [b for b in pruefe(raum, _erg(_rz())) if "Toilettennutzung" in b.regel]
+        assert treffer == [], f"{raum_typ} darf Regel 12c nicht auslösen"
+
+
+def test_regel12b_nennt_die_arbeitsflaeche_als_bezugsflaeche():
+    """§4.4.1 (Norm-S.12) fordert den Wert AUF DER ARBEITSFLÄCHE — weder der
+    Bodenwert aus `lux_raster` noch der vertikale Wert aus §4.1.2 h/i. Die drei
+    Bezugsflächen sind nicht ineinander umrechenbar; der Bericht muss sagen,
+    welche gemeint ist (Enis-Nachzug 05.09.)."""
+    raum = _raum("s1")
+    raum.raeume.append(Raum(
+        id="r_gef2", raum_typ="WERKSTATT", besondere_gefaehrdung=True,
+        polygon_mm=[(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)],
+    ))
+    treffer = [
+        b for b in pruefe(raum, _erg(_rz())) if "besonderer Gefährdung" in b.regel
+    ]
+    assert len(treffer) == 1
+    befund = treffer[0]
+    assert "ARBEITSFLÄCHE" in befund.regel.upper() or "ARBEITSFLÄCHE" in befund.detail.upper()
+    assert "15 lx" in befund.detail and "10 %" in befund.detail
+    # Der Bodenwert darf nicht als Ersatz durchgehen.
+    assert "lux_raster" in befund.detail

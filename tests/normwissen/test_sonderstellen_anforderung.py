@@ -71,6 +71,36 @@ def test_gewoehnliches_wc_loest_ohne_flag_nichts_aus():
     assert regel.quelle != "ÖNORM EN 1838:2013 §4.3.8"
 
 
+@pytest.mark.parametrize("raum_typ", ["BAD", "DUSCHE", "NASSRAUM", "SANITAER", "SANITÄR"])
+def test_mehrdeutiger_sanitaerraum_ist_keine_belegte_toilette(raum_typ):
+    """Präzisierung 05.09.: die Sanitär-Raumtypen belegen keine Toilettennutzung.
+    Der Prototyp im Normwissen und die Platzierung müssen denselben
+    Geltungsbereich abbilden — sonst driften Datenlage und Plan auseinander."""
+    from notbeleuchtung.normwissen import SonderstellenKatalog
+
+    assert PROV.fuer_raum_attribut("ist_barrierefrei", raum_typ) == []
+    kat = SonderstellenKatalog()
+    assert kat.raumtyp_scope("ist_barrierefrei", raum_typ) == "mehrdeutig"
+    assert kat.mehrdeutig_grund("ist_barrierefrei")
+
+
+@pytest.mark.parametrize("raum_typ", ["WC", "TOILETTE"])
+def test_eindeutige_toilette_ist_belegt(raum_typ):
+    from notbeleuchtung.normwissen import SonderstellenKatalog
+
+    (anf,) = PROV.fuer_raum_attribut("ist_barrierefrei", raum_typ)
+    assert anf.quelle == "ÖNORM EN 1838:2013 §4.3.8"
+    assert SonderstellenKatalog().raumtyp_scope("ist_barrierefrei", raum_typ) == "eindeutig"
+
+
+def test_ausserhalb_ist_nicht_mehrdeutig():
+    """ZIMMER ist kein unklarer Fall, sondern schlicht außerhalb der Regel —
+    der Unterschied entscheidet, ob ein Prüfhinweis nötig ist."""
+    from notbeleuchtung.normwissen import SonderstellenKatalog
+
+    assert SonderstellenKatalog().raumtyp_scope("ist_barrierefrei", "ZIMMER") == "ausserhalb"
+
+
 def test_barrierefreies_zimmer_loest_4_3_8_nicht_aus():
     """§4.3.8 nennt Toiletten. Ein barrierefreies Zimmer fällt nicht darunter."""
     assert PROV.fuer_raum_attribut("ist_barrierefrei", "ZIMMER") == []

@@ -6,8 +6,10 @@ Sonderstellen und Flags ist die Strategie ein No-op (bit-identische Pläne).
 import json
 from pathlib import Path
 
+import pytest
+
 from fakes import FakeNormProvider
-from notbeleuchtung.hauptengine.contracts import RaumModell
+from notbeleuchtung.hauptengine.contracts import LBVorgabe, RaumModell
 from notbeleuchtung.platzierung.sonderstellen_strategy import (
     plan_flag_raeume,
     plan_sonderstellen,
@@ -57,16 +59,53 @@ def test_jeder_punkt_typ_bekommt_eine_leuchte():
     assert len({p.xy_mm for p in out}) == 4
 
 
-def test_niveauaenderung_loest_sl_und_rz_aus():
-    out = plan_sonderstellen(
-        _raum(sonderstellen=[_stelle("niveauaenderung", (500.0, 500.0))]),
-        FakeNormProvider(),
-    )
+# ── Niveauänderung: §4.1.2 c) belegt die Leuchte, nicht das Zeichen ────────
+# Korrektur 05.09.2026 (Enis). Die Einleitung von §4.1.2 (Norm-S.8) verlangt an den
+# aufgezählten Stellen Sicherheitsleuchten; d) verlangt nur, dass VORHANDENE
+# Sicherheitszeichen beleuchtet werden. Ein RZ entsteht daher nur aus einer
+# expliziten LB-Vorgabe — und trägt dann lb_quelle statt norm_quelle.
+
+def _niveau_raum():
+    return _raum(sonderstellen=[_stelle("niveauaenderung", (500.0, 500.0))])
+
+
+def test_niveauaenderung_ohne_lb_nur_sicherheitsleuchte():
+    out = plan_sonderstellen(_niveau_raum(), FakeNormProvider())
+    assert [p.kind for p in out] == ["sicherheitsleuchte"]
+    assert out[0].xy_mm == (500.0, 500.0)
+    assert out[0].norm_quelle in set(FakeNormProvider().regelwerk_snapshot().quellen)
+
+
+def test_niveauaenderung_mit_unpassender_lb_kein_rz():
+    """Eine LB, die RZ nur an Kreuzungen fordert, begründet hier nichts."""
+    lb = LBVorgabe(rz_stellen=["kreuzung"], lb_quelle="LB-Test §1")
+    out = plan_sonderstellen(_niveau_raum(), FakeNormProvider(), lb)
+    assert [p.kind for p in out] == ["sicherheitsleuchte"]
+
+
+def test_niveauaenderung_mit_expliziter_lb_erzeugt_rz_mit_lb_quelle():
+    lb = LBVorgabe(rz_stellen=["niveauaenderung"], lb_quelle="Elektro-LB §5.1.23")
+    out = plan_sonderstellen(_niveau_raum(), FakeNormProvider(), lb)
     kinds = sorted(p.kind for p in out)
-    assert kinds == ["rz", "sicherheitsleuchte"]     # RZ-06 + SL-04, dieselbe Stelle
+    assert kinds == ["rz", "sicherheitsleuchte"]
     assert {p.xy_mm for p in out} == {(500.0, 500.0)}
     rz = next(p for p in out if p.kind == "rz")
     assert rz.richtung == "gerade"                    # beidseitig — Richtung unbestimmt
+    # Provenienz: die LB begründet es, nicht die Norm.
+    assert rz.lb_quelle == "Elektro-LB §5.1.23"
+    assert rz.norm_quelle == ""
+    # Die Sicherheitsleuchte bleibt norm-begründet.
+    sl = next(p for p in out if p.kind == "sicherheitsleuchte")
+    assert sl.norm_quelle and sl.lb_quelle == ""
+
+
+def test_lb_ohne_eigene_quelle_bekommt_sprechenden_fallback():
+    lb = LBVorgabe(rz_stellen=["niveauaenderung"])
+    rz = next(
+        p for p in plan_sonderstellen(_niveau_raum(), FakeNormProvider(), lb)
+        if p.kind == "rz"
+    )
+    assert "rz_stellen" in rz.lb_quelle
 
 
 def test_barrierefreies_wc_bekommt_antipanik():
@@ -80,6 +119,45 @@ def test_barrierefreies_wc_bekommt_antipanik():
     p = out[0]
     assert p.kind == "antipanik"
     assert 0.0 <= p.xy_mm[0] <= 3000.0 and 0.0 <= p.xy_mm[1] <= 2000.0
+
+
+def test_barrierefreies_zimmer_loest_4_3_8_nicht_aus():
+    """§4.3.8 nennt „Toiletten für Menschen mit Behinderung" (Norm-S.11) — das Flag
+    allein genügt nicht. Andere Anforderungen an den Raum bleiben unberührt; sie
+    kommen aus den übrigen Strategien, nicht aus diesem Auslöser."""
+    zimmer = {
+        "id": "zimmer_bf", "raum_typ": "ZIMMER", "flaeche_m2": 24.0,
+        "polygon_mm": [[0.0, 0.0], [6000.0, 0.0], [6000.0, 4000.0], [0.0, 4000.0]],
+        "ist_fluchtweg": False, "ist_communal": False, "ist_barrierefrei": True,
+    }
+    assert plan_flag_raeume(_raum(extra_raeume=[zimmer]), FakeNormProvider()) == []
+
+
+def _sanitaer(raum_typ: str, rid: str) -> dict:
+    return {
+        "id": rid, "raum_typ": raum_typ, "flaeche_m2": 6.0,
+        "polygon_mm": [[0.0, 0.0], [3000.0, 0.0], [3000.0, 2000.0], [0.0, 2000.0]],
+        "ist_fluchtweg": False, "ist_communal": True, "ist_barrierefrei": True,
+    }
+
+
+@pytest.mark.parametrize("raum_typ", ["BAD", "DUSCHE", "NASSRAUM", "SANITAER", "SANITÄR"])
+def test_mehrdeutiger_sanitaerraum_loest_4_3_8_nicht_automatisch_aus(raum_typ):
+    """Präzisierung 05.09.: ein barrierefreies Bad ist keine barrierefreie
+    Toilette. §4.3.8 nennt Toiletten — für Sanitärräume ist die Nutzung aus dem
+    Raumtyp nicht bestimmbar, also wird keine Norm-Pflicht behauptet. Der Fall
+    verschwindet nicht: Prüfregel 12c meldet ihn (siehe test_validierung)."""
+    raum = _raum(extra_raeume=[_sanitaer(raum_typ, f"san_{raum_typ.lower()}")])
+    assert plan_flag_raeume(raum, FakeNormProvider()) == []
+
+
+@pytest.mark.parametrize("raum_typ", ["WC", "TOILETTE"])
+def test_eindeutige_toilette_loest_4_3_8_aus(raum_typ):
+    out = plan_flag_raeume(
+        _raum(extra_raeume=[_sanitaer(raum_typ, f"t_{raum_typ.lower()}")]),
+        FakeNormProvider(),
+    )
+    assert [p.kind for p in out] == ["antipanik"]
 
 
 def test_barrierefrei_ohne_flag_keine_leuchte():
@@ -136,10 +214,15 @@ def test_place_integriert_sonderstellen():
     assert len(neu) == 1 and neu[0].kind == "sicherheitsleuchte"
 
 
-def test_nachpass_haelt_sonderstellen_leuchte_unter_2m():
-    # Enis-Review #95 (Anmerkung): der Abstands-Nachpass darf die Pflicht-Leuchte
-    # nudgen — aber die Norm-ANMERKUNG "nahe ≤ 2 m" muss NACH dem Nachpass halten.
-    # Zwei Stellen 100 mm auseinander provozieren Merge/Nudge an der Naht.
+def test_nachpass_haelt_zugeordnete_sicherheitsleuchte_unter_2m():
+    """Der Abstands-Nachpass darf die Pflicht-Leuchte nudgen — die Norm-ANMERKUNG
+    „nahe ≤ 2 m" (§4.1.2) muss NACH dem Nachpass halten.
+
+    Geschärft am 05.09. (Enis): geprüft wird die **der Anforderung zugeordnete
+    Leuchtenart** — eine Sicherheitsleuchte. Ein zufällig benachbartes
+    Rettungszeichen erfüllt §4.1.2 nicht und darf den Test nicht bestehen lassen.
+    Zwei Stellen 100 mm auseinander provozieren Merge/Nudge an der Naht.
+    """
     from notbeleuchtung.platzierung import NotlichtPlatzierer
 
     stellen = [
@@ -149,8 +232,34 @@ def test_nachpass_haelt_sonderstellen_leuchte_unter_2m():
     raum = _raum(sonderstellen=stellen)
     ergebnis = NotlichtPlatzierer().place(raum, FakeNormProvider())
     for s in raum.sonderstellen:
-        dists = [
-            ((p.xy_mm[0] - s.xy_mm[0]) ** 2 + (p.xy_mm[1] - s.xy_mm[1]) ** 2) ** 0.5
-            for p in ergebnis.platzierungen
+        kandidaten = [
+            p for p in ergebnis.platzierungen if p.kind == "sicherheitsleuchte"
         ]
-        assert min(dists) <= 2000.0, f"Stelle {s.id}: nächste Leuchte {min(dists):.0f} mm"
+        assert kandidaten, f"Stelle {s.id}: gar keine Sicherheitsleuchte im Plan"
+        dist = min(_abstand(p.xy_mm, s.xy_mm) for p in kandidaten)
+        assert dist <= 2000.0, (
+            f"Stelle {s.id}: nächste SICHERHEITSLEUCHTE {dist:.0f} mm entfernt"
+        )
+
+
+def test_benachbartes_rz_erfuellt_die_2m_regel_nicht():
+    """Gegenprobe zur Testschärfung: ein RZ in der Nähe zählt nicht als Erfüllung.
+
+    Ohne LB entsteht an einer Niveauänderung nur eine Sicherheitsleuchte; wäre die
+    Zuordnung art-blind, würde ein beliebiges RZ aus einer anderen Strategie den
+    Nachweis vortäuschen.
+    """
+    from notbeleuchtung.platzierung import NotlichtPlatzierer
+
+    stelle = _stelle("niveauaenderung", (99999.0, 99999.0), sid="s_niveau")
+    raum = _raum(sonderstellen=[stelle])
+    plz = NotlichtPlatzierer().place(raum, FakeNormProvider()).platzierungen
+    nah = [p for p in plz if _abstand(p.xy_mm, (99999.0, 99999.0)) <= 2000.0]
+    assert nah, "keine Leuchte an der Stelle"
+    assert any(p.kind == "sicherheitsleuchte" for p in nah)
+    # Ohne LB darf dort kein Rettungszeichen stehen (§4.1.2 c) belegt keines).
+    assert not any(p.kind == "rz" for p in nah)
+
+
+def _abstand(a, b) -> float:
+    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
