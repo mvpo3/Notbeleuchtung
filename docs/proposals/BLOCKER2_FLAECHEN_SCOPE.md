@@ -292,20 +292,41 @@ Art der Nutzung (siehe OVE-Richtlinie **R 12-2** bzw. OIB-Richtlinie 2)"**.
 | Funktion | Frage | Werte |
 |---|---|---|
 | `raum_zuordnung` | *räumlich:* erfasst ein Gebäudeteil mit positivem OIB-Befund diesen Raum? | `bestaetigt` · `nicht_bestaetigt` · `ungeklaert` |
-| `sanitaer_scope` | *fachlich:* ist die OVE-Sanitärregel hier anwendbar? | `nicht_anwendbar` · `ungeklaert` — **`anwendbar` kommt heute nicht vor** |
+| `sanitaer_scope` | *fachlich:* ist die OVE-Sanitärregel hier anwendbar? | `ungeklaert` (bewertet) · `nicht_bewertet` (kein OIB-Pfad) — **weder `anwendbar` noch `nicht_anwendbar`** |
 
-Eine **bestätigte Zuordnung führt zu `ungeklaert`**, nicht zu `anwendbar`: sie
-belegt nur die Erforderlichkeit nach Tabelle 6, nicht den Nutzungs-Scope der
-OVE-Klausel. Damit löst auch eine im Test gesetzte 8-m²-Schwelle **keine**
-Platzierung aus — der Fall landet stattdessen als `ungeklaert` im Prüfbericht,
-mit dem Grund. Der Satz „der Scope stimmt jetzt" wäre falsch; richtig ist: *die
-Über-Anwendung über Gebäudeteile hinweg ist behoben, und die verbleibende
-Unsicherheit ist benannt statt stillschweigend zugunsten einer Platzierung
-aufgelöst*.
+**Beide Richtungen sind begründungspflichtig.**
 
-Damit daraus `anwendbar` werden kann, braucht es **R 12-2** oder eine
-ausdrückliche 3-Owner-Entscheidung, die Gleichsetzung als Auslegung zu
-akzeptieren. Erst dann ist das Füllen der 8-m²-Schwelle begründbar.
+* `anwendbar` bräuchte den Beleg, dass der Raum zu „Räumen … mit erhöhten
+  Anforderungen **nach der Art der Nutzung**" gehört. Tabelle 6 belegt das nicht.
+* `nicht_anwendbar` bräuchte den Beleg, dass die OVE-Regel hier **nachweislich
+  nicht** gilt. Weder ein fehlender noch ein negativer OIB-Befund leistet das: die
+  Klausel nennt **R 12-2 bzw. OIB-RL 2**, und „nach Tabelle 6 nicht erforderlich"
+  schließt den R-12-2-Zweig nicht aus.
+* `nicht_bewertet` (kein ProjektKontext) ist eine Aussage über den **Vorgang**,
+  nicht über die Sache — sie darf in der Ausgabe nicht als Nicht-Erforderlichkeit
+  erscheinen.
+
+Auch eine im Test gesetzte 8-m²-Schwelle löst damit **keine** Platzierung aus.
+Der Satz „der Scope stimmt jetzt" wäre falsch; richtig ist: *die Über-Anwendung
+über Gebäudeteile hinweg ist behoben, und die verbleibende Unsicherheit wird
+benannt statt in eine der beiden Richtungen aufgelöst.*
+
+### Was nötig wäre, damit daraus `anwendbar` wird
+
+Zwei **verschiedene** Dinge, die nicht gegeneinander eingetauscht werden können:
+
+1. **Fachlich:** ein Quellenbeleg **mit Ausgabestand**, der die Gleichsetzung
+   trägt — **OVE-Richtlinie R 12-2** in der zutreffenden Ausgabe, oder eine
+   andere belegte Fundstelle, die „Tabelle-6-Erforderlichkeit" und „erhöhte
+   Anforderungen nach der Art der Nutzung" verbindet. Das ist die eigentliche
+   Voraussetzung.
+2. **Organisatorisch:** eine 3-Owner-Freigabe für **Schnittstelle und Umsetzung**
+   (Contract-Felder, Ports, Konsumption).
+
+Punkt 2 ersetzt Punkt 1 nicht. Eine Freigabe entscheidet, *wie* etwas gebaut
+wird — nicht, *ob* die Norm es hergibt. Und **„es gäbe weniger Warnungen" ist
+keine Begründung**: die Warnungen sind die Folge der fehlenden Quelle, nicht ihre
+Ursache.
 
 ### 8b. Widersprüche und ungültige Zuordnungen
 
