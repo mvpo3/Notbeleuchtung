@@ -799,7 +799,7 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None) -> bool:
             kopie.dxf.layer = LAYER_PLANKOPF
             kopie.transform(m)
             msp.add_foreign_entity(kopie)
-        except Exception:  # noqa: S112 — Vorlagen-Sonderentities bewusst übersprungen
+        except Exception:  # noqa: S112, BLE001 — Vorlagen-Sonderentities bewusst übersprungen
             continue
 
     # Symbol-Spalte der Blatt-Legende (Spalte 1188..1214, Mitte ≈ 1201) bestücken.
