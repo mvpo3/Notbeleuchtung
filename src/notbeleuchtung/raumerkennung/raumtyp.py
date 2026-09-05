@@ -65,7 +65,18 @@ def _stempel(plan: DxfPlan) -> list[tuple[str, tuple[float, float]]]:
 _EXTRA_LABELS: dict[str, RoomType] = {
     "vr": RoomType.ENTRANCE_HALL,    # Vorraum
     "ar": RoomType.STORAGE,          # Abstellraum
+    "asr": RoomType.STORAGE,         # Abstellraum (Barawitzka-Kürzel)
+    "sz": RoomType.BEDROOM,          # Schlafzimmer
+    "kz": RoomType.CHILDREN_ROOM,    # Kinderzimmer
+    "wz": RoomType.LIVING_ROOM,      # Wohnzimmer
+    "kü": RoomType.KITCHEN,          # Küche
+    "stg": RoomType.STAIRCASE,       # Stiege(nhaus)
+    "hobbyraum": RoomType.GENERIC_ROOM,
     "trh": RoomType.STAIRCASE,       # Treppenhaus / Stiegenhaus (sicherheitskritisch)
+    "treppenhaus": RoomType.STAIRCASE,   # ausgeschriebener Barawitzka-Stempel
+                                     # („Treppenhaus 1/2") — sicherheitskritisch
+    "gard": RoomType.ENTRANCE_HALL,  # „Gard." = Garderobe, Wohnungs-Vorraum
+    "garderobe": RoomType.ENTRANCE_HALL,
     "loggia": RoomType.BALCONY,      # überdachter Freisitz ~ Balkon
     # Fahrrad-/Kinderwagenraum = Abstellraum. Token-exakt inkl. Kompositum-Token
     # „fahrradraum" (echter Stempel, ein Token) — so bleiben „Fahrradrampe",
@@ -96,9 +107,22 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     "kellerabteil": ("KELLER", False, True),
 }
 
+# Labels, die der Port FALSCH typen würde (Kompositum-Kopf „…küche" → KITCHEN):
+# token-exakt VOR classify_room geprüft. Waschküche/-raum = communale Nasszelle,
+# keine Wohnungsküche.
+_EXTRA_OVERRIDE: dict[str, tuple[str, bool, bool]] = {
+    "waschküche": ("WASCHKÜCHE", False, True),
+    "waschkueche": ("WASCHKÜCHE", False, True),
+    "waschraum": ("WASCHKÜCHE", False, True),
+}
+
 
 def raumtyp_flags(text: str) -> tuple[str, bool, bool] | None:
     """Freitext-Label → (raum_typ, ist_fluchtweg, ist_communal); None bei UNKNOWN."""
+    tokens0 = {t.lower() for t in _WORT.findall(text)}
+    override = next((v for k, v in _EXTRA_OVERRIDE.items() if k in tokens0), None)
+    if override is not None:
+        return override
     rt = classify_room(text)
     if rt is not RoomType.UNKNOWN:
         return _TYP_MAP.get(rt, (text.upper(), False, False))

@@ -25,7 +25,9 @@ from .dxf_load import DxfPlan
 from .raumtyp import raumtyp_flags
 
 # Layer mit Raum-Polygonen (Icon-Duplikate + reine Text-Layer werden ignoriert).
-_ROOM_LAYER = re.compile(r"81\d\s*Raum|Raumbegrenzung|A_Raeume", re.IGNORECASE)
+# `8\d{1,2}` deckt „810/811 Raum" (Barawitzka/Herrenholz) UND „080 Raumdefinitionen"
+# (Rennweg/ArchiCAD — Match startet bei der 8) ab.
+_ROOM_LAYER = re.compile(r"8\d{1,2}\s*Raum|Raumbegrenzung|A_Raeume", re.IGNORECASE)
 _ROOM_LAYER_EXCLUDE = re.compile(r"Icon", re.IGNORECASE)
 
 _MIN_FLAECHE_M2 = 1.0
