@@ -83,8 +83,8 @@ for nid, d in G.nodes(data=True):
     x, y = d["pos"]
     ax.text(x, y, d["label"], ha="center", va="center", fontsize=9.6,
             fontweight="bold", color="white", zorder=5, linespacing=1.35,
-            bbox=dict(boxstyle="round,pad=0.55", fc=C[d["owner"]],
-                      ec="white", lw=1.2, alpha=0.97))
+            bbox={"boxstyle": "round,pad=0.55", "fc": C[d["owner"]],
+                  "ec": "white", "lw": 1.2, "alpha": 0.97})
 
 ax.legend(handles=[
     Patch(color=C["input"], label="Inputs — die 2 Säulen der Mission"),

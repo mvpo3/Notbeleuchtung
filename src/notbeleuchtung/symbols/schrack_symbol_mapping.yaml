@@ -58,10 +58,11 @@ notlicht_kw_garage:
   category: notlicht
 
 # ── Sicherheitsleuchte ────────────────────────────────
-# Aufheller-Sicherheitsleuchte, zweckgebautes Notbeleuchtungs-Symbol (CIRCLE+HATCH),
-# Extents 4.7×4.7 units = in-band.
+# Aufheller-Sicherheitsleuchte — KLEINE Variante (Owner-Feedback 2026-09-05: Aufheller
+# sind in der Praxis klein). Verschachtelter Block (alter 4.7er-Kreis @ Scale 0.394),
+# Extents 1.85×1.85 units = in-band.
 sicherheitsleuchte_aufheller:
-  block_name: "sicherheitsleuchte aufheller"
+  block_name: "aufheller notbeleuchtung"
   label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
 
