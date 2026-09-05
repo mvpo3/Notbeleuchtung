@@ -80,13 +80,19 @@ class OveZusatzKatalog:
 
     # ── Ausgabestand: was prüfbar ist und was nicht ─────────────────────────
     def oib_ausgabe(self) -> str:
-        """Die OIB-Ausgabe, gegen die die Spalten-Entsprechung geprüft wurde —
-        im selben Wortlaut, den der Provider in `OibErgebnis.norm_ausgabe` setzt.
+        """Der für **diese Zusatzregel** akzeptierte OIB-Ausgabestand.
 
-        Gelesen aus `oib_rl2_tabelle6.yaml` `meta.norm_ausgabe`, damit es keine
-        zweite Wahrheit gibt: derselbe String, aus dem der Befund entsteht.
+        Er steht in `ove_e8101_zusatz.yaml` bei der Quelle selbst und wird
+        **nicht** aus `oib_rl2_tabelle6.yaml` gelesen: jene Datei trägt die
+        Metadaten der allgemeinen OIB-Auswertung. Würde der Vergleichswert von
+        dort kommen, würde ein späterer Ausgabenwechsel der Provider-Daten den
+        akzeptierten Stand stillschweigend mit erweitern — obwohl die
+        Spalten-Entsprechung nur gegen **Mai 2023** geprüft ist.
+
+        Nach einem Ausgabenwechsel muss der Abgleich neu geführt und dieser Wert
+        bewusst nachgezogen werden; bis dahin entsteht kein Befund.
         """
-        return str(_oib_meta(self._dir)["norm_ausgabe"])
+        return str(self._cfg["quellen"]["oib_rl2"]["norm_ausgabe_string"])
 
     def passt_zur_geprueften_oib_ausgabe(self, norm_ausgabe: str | None) -> bool:
         """Stammt dieser Befund aus **der** OIB-Ausgabe, die geprüft wurde?
@@ -158,13 +164,6 @@ class OveZusatzKatalog:
             f"nach der Art der Nutzung; Raum ist {b['bezeichnung']} "
             f"({b['schwellentext']})"
         )
-
-
-@lru_cache(maxsize=4)
-def _oib_meta(data_dir: Path) -> dict:
-    """`meta` der OIB-Tabelle-6-Daten — Quelle des `norm_ausgabe`-Strings."""
-    with open(data_dir / "oib_rl2_tabelle6.yaml", encoding="utf-8") as fh:
-        return yaml.safe_load(fh)["meta"]
 
 
 @lru_cache(maxsize=4)

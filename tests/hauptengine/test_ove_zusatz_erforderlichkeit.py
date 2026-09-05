@@ -71,6 +71,8 @@ def test_verkaufsstaette_4000_mit_zugeordnetem_wc_9m2():
     # Die Art ist nicht festgelegt — und daraus folgt keine automatische Antipanik.
     assert "legt die Beleuchtungsart" in treffer.detail
     assert "automatische Zuordnung zu Antipanik ist damit nicht belegt" in treffer.detail
+    # Keine Fussnoten-Begruendung im Befundtext — die sachliche Aussage genuegt.
+    assert "Fussnote a" not in treffer.detail
     # Quellenkette mit Ausgabestand, alle drei Glieder.
     for quelle in ("OVE E 8101:2019-01-01", "R 12-2/AC:2019-07-01", "Ausgabe Mai 2023"):
         assert quelle in treffer.detail
@@ -263,9 +265,8 @@ def test_fremde_oib_ausgabe_erzeugt_keinen_befund():
     assert _regel(befunde, REGEL_13)
 
 
-def test_geprueft_wird_gegen_denselben_string_den_der_provider_setzt():
-    """Eine Wahrheit: die geprüfte Ausgabe kommt aus `oib_rl2_tabelle6.yaml`,
-    also aus derselben Datei, aus der der Provider den Befund baut."""
+def test_akzeptierter_stand_stimmt_heute_mit_dem_provider_ueberein():
+    """Heute passen Pin und Provider zusammen — deshalb entsteht der Befund."""
     from notbeleuchtung.normwissen import OveZusatzKatalog
 
     katalog = OveZusatzKatalog()
@@ -277,3 +278,48 @@ def test_geprueft_wird_gegen_denselben_string_den_der_provider_setzt():
         "ove_e8101": "nicht_pruefbar",
         "r12_2": "nicht_pruefbar",
     }
+
+
+def test_akzeptierter_stand_haengt_am_quellenbeleg_nicht_an_den_provider_metadaten(tmp_path):
+    """Der entscheidende Regressionsfall: die **Provider-Metadaten** wandern auf
+    eine neue OIB-Ausgabe — Metadaten und `OibErgebnis.norm_ausgabe` wechseln
+    also gemeinsam —, während der **Quellenbeleg der Zusatzregel** unverändert
+    Mai 2023 nennt.
+
+    Erwartung: **keine** positive OVE-Vorprüfung. Die Spalten-Entsprechung ist nur
+    gegen Mai 2023 geprüft; ein Ausgabenwechsel der allgemeinen Auswertung darf
+    den akzeptierten Stand nicht stillschweigend erweitern. Der offene Prüfbedarf
+    bleibt sichtbar (Regel 13).
+    """
+    import shutil
+
+    from notbeleuchtung.normwissen import OveZusatzKatalog
+    from notbeleuchtung.normwissen.oib import OibRl2Provider as Provider
+    from notbeleuchtung.normwissen.provider import DATA_DIR
+
+    # Provider-Datenstand kopieren und auf eine ANDERE Ausgabe heben.
+    for name in ("oib_rl2_tabelle6.yaml", "ove_e8101_zusatz.yaml"):
+        shutil.copy(DATA_DIR / name, tmp_path / name)
+    oib_yaml = tmp_path / "oib_rl2_tabelle6.yaml"
+    alt_stand = "Ausgabe Mai 2023 (OIB-330.2-029/23)"
+    neuer_stand = "Ausgabe Maerz 2027 (OIB-330.2-999/27)"
+    oib_yaml.write_text(
+        oib_yaml.read_text(encoding="utf-8").replace(alt_stand, neuer_stand),
+        encoding="utf-8",
+    )
+
+    raum = _raum(_wc())
+    teil = _verkauf()
+    pk = ProjektKontext(jurisdiction="AT", gebaeudeteile=[teil])
+    befund = Provider(tmp_path).bewerte_oib(pk)
+
+    # Metadaten UND Ergebnis tragen jetzt die neue Ausgabe …
+    assert befund.ergebnisse[0].norm_ausgabe == neuer_stand
+    assert befund.ergebnisse[0].stufe == "uneingeschraenkt"
+    # … der Quellenbeleg der Zusatzregel dagegen unverändert Mai 2023.
+    assert OveZusatzKatalog(tmp_path).oib_ausgabe() == alt_stand
+
+    erg = NotlichtPlatzierer().place(raum, En1838NormProvider(), oib=befund)
+    befunde = pruefe(raum, erg, norm=En1838NormProvider(), oib=befund, projekt_kontext=pk)
+    assert not _regel(befunde, REGEL_14)          # keine positive Vorprüfung
+    assert _regel(befunde, REGEL_13)              # Prüfbedarf bleibt sichtbar
