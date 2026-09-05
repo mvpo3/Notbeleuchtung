@@ -4,6 +4,25 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-05, Spätabend) — #112 GEMERGT: Vorlage + Legende + Anlage — HIER WEITER
+
+**PR #112 GEMERGT** (main `6b1d49c`, **681 grün**), das Abend-Paket:
+- **Stückliste = Profi-Legende mit Symbol-Spalte** (din-ACAD_TABLE-Vorbild; je
+  Typ-Zeile das Katalog-Symbol klein voran; Fallback ohne typ_letter unverändert).
+- **Gruppenbatterie-/SV-Anlagen-Symbol** (neuer Owner-Block): LB-explizit gezeichnet
+  (`lb.system_typ` gesetzt) im Technik-/Batterieraum, Label + `batterie_standort`.
+- **Owner-Plan-VORLAGE** (`Vorlage_Legende`, 415×550 units): JEDER generierte Plan
+  bekommt den Legenden-Rahmen rechts (auto-skaliert auf Grundriss-Höhe). In-Band-
+  Guard nimmt `category: vorlage` aus; Visual-Goldens bewusst regeneriert.
+- Library-Update committet (inkl. mitgekommener Elektro-Blöcke aus E-Symbole).
+- Wissens-Nachträge im `STROMKREISNUMMER_DWG.md`: Voll-Analyse (SIBEL-Farb-Layer,
+  Symbol-Größen ~1 m, 18 Attribute dekodiert, Legende MIT Zubehör-Artikeln,
+  System-GUID→Anlage) + **Symbol→Produkt-Zuordnung web-verifiziert: din nutzt die
+  ANTIPANIKLEUCHTE AP3 als Universal-Leuchte** (Rolle ≠ Produkt; SPOT = SL-Rolle).
+- `Vorlagen-Legende/Baulegende.*` auf main für Selman (EI-Klassen-Vokabular).
+Offen: SPOT-Grafik (nice-to-have) · AP3-LDT in Photometrie-Katalog falls DIN-
+Produktwahl · Enis-Follow-ups (EW produktabhängig, Blendungs-I_max, Quellen-Naht).
+
 ## STAND (2026-09-05, Abend) — Owner-Feedback-Session + #111 GEMERGT — HIER WEITER
 
 **Alles auf main** (`97b8a1d`, **679 grün** inkl. Selmans neuem
