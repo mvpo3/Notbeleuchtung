@@ -151,7 +151,16 @@ def test_sl_aufheller_kein_hardcode_blau():
     p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="sicherheitsleuchte_aufheller",
                     kind="sicherheitsleuchte")
     ins = inserter.insert_platzierung(doc, p)
-    block = doc.blocks[ins.dxf.name]
-    farben = {e.dxftype(): e.dxf.color for e in block}
+
+    # Rekursiv über den Block-Baum (der kleine Aufheller verschachtelt den alten
+    # Kreis-Block @ Scale 0.394): nirgends darf eine blaue Hardcode-Farbe bleiben.
+    def entities(name):
+        for e in doc.blocks[name]:
+            yield e
+            if e.dxftype() == "INSERT":
+                yield from entities(e.dxf.name)
+
+    alle = list(entities(ins.dxf.name))
+    farben = {e.dxftype(): e.dxf.color for e in alle}
     assert farben["HATCH"] == 256  # BYLAYER statt ACI 150
-    assert not any(c in library._BLAUE_ACI for c in farben.values())
+    assert not any(getattr(e.dxf, "color", None) in library._BLAUE_ACI for e in alle)
