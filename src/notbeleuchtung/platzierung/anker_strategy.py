@@ -107,6 +107,27 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
         rotation = 0.0 if is_directional else fallback_rot
         mirror_x = False if is_directional else (richtung == "rechts")
+        # Owner-Korrektur (2026-09-05, korrigierte H-Gebäude-DXF): am AUSGANG hängt
+        # immer das „Pfeil nach unten"-Zeichen, aber ROTIERT, sodass der Pfeil physisch
+        # ZUR TÜR zeigt (Referenz: SH-Tür oben → Block 180° gedreht = Pfeil nach oben).
+        # Unrotiert zeigt der unten-Block auf −y → rotation = Winkel(RZ→Tür) + 90°.
+        if nid in exits and richtung == "unten" and raum.tueren:
+            tuer = min(raum.tueren,
+                       key=lambda t: math.hypot(t.xy_mm[0] - nx_, t.xy_mm[1] - ny))
+            d_tuer = math.hypot(tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny)
+            if d_tuer <= 2000.0:
+                if d_tuer > 50.0:
+                    dx, dy = tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny
+                elif nbrs or (nid in G and any(True for _ in G.neighbors(nid))):
+                    # RZ sitzt AUF der Tür → Anlauf-Richtung aus dem Gang-Nachbarn
+                    # (Pfeil zeigt weiter DURCH die Tür).
+                    nb = min((m for m in G.neighbors(nid) if m in pos),
+                             key=lambda m: math.hypot(pos[m][0] - nx_, pos[m][1] - ny),
+                             default=None)
+                    dx, dy = ((nx_ - pos[nb][0], ny - pos[nb][1]) if nb else (0.0, -1.0))
+                else:
+                    dx, dy = 0.0, -1.0
+                rotation = (math.degrees(math.atan2(dy, dx)) + 90.0) % 360.0
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
