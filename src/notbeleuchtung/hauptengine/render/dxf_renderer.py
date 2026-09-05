@@ -567,15 +567,41 @@ def _draw_anlage(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
     if not kandidaten:
         return False
     r = kandidaten[0]
-    cx = sum(p[0] for p in r.polygon_mm) / len(r.polygon_mm)
-    cy = sum(p[1] for p in r.polygon_mm) / len(r.polygon_mm)
+    # Owner-Korrektur: die Anlage steht AN DER WAND (Schrank!), nicht in der
+    # Raummitte — längste Polygon-Kante, Symbol parallel zur Wand, nach innen
+    # versetzt.
+    poly = r.polygon_mm
+    laengste, best_l = None, -1.0
+    for i in range(len(poly)):
+        a, b = poly[i], poly[(i + 1) % len(poly)]
+        l = math.hypot(b[0] - a[0], b[1] - a[1])
+        if l > best_l:
+            best_l, laengste = l, (a, b)
+    (ax, ay), (bx, by) = laengste
+    wx, wy = (bx - ax) / best_l, (by - ay) / best_l
+    mx, my = (ax + bx) / 2.0, (ay + by) / 2.0
+    zx = sum(p[0] for p in poly) / len(poly)
+    zy = sum(p[1] for p in poly) / len(poly)
+    nx_, ny_ = -wy, wx
+    if (zx - mx) * nx_ + (zy - my) * ny_ < 0:      # Normale zeigt in den Raum
+        nx_, ny_ = -nx_, -ny_
+    tiefe = 4.46 / 2.0 * inserter.DE_GLOBAL_SCALE  # halbe Block-Tiefe (825/2 mm)
+    cx, cy = mx + nx_ * (tiefe + 60.0), my + ny_ * (tiefe + 60.0)
+    rotation = math.degrees(math.atan2(wy, wx)) % 180.0
     eintrag = library.load_mapping().get("gruppenbatterie_anlage")
     if eintrag is None:
         return False
     library.import_block(msp.doc, eintrag["block_name"])
+    # Owner-Korrektur Farbe: die grüne Schraffur-Hälfte des Blocks geht beim
+    # Skalieren optisch verloren → auf SOLID + BYLAYER stellen, Insert auf das
+    # Notlicht-Layer (erbt das Schrack-Grün) — passt zu unseren Symbolen.
+    for e in msp.doc.blocks[eintrag["block_name"]]:
+        if e.dxftype() == "HATCH" and e.dxf.color == 3:
+            e.set_solid_fill(color=256)
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
         "xscale": inserter.DE_GLOBAL_SCALE, "yscale": inserter.DE_GLOBAL_SCALE,
-        "layer": LAYER_BELEGUNG,
+        "rotation": rotation,
+        "layer": LAYER_NOTBELEUCHTUNG,
     })
     _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
             "zentralbatterie": "Zentralbatterie"}
