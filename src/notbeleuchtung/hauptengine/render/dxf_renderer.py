@@ -108,7 +108,11 @@ HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 # Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
 # sie weder mit dem Stromkreis-Label (+Normale) noch der Höhenkote (−Normale) kollidiert.
 NODEID_HEIGHT_MM = 90.0
-NODEID_OFFSET_TANGENT_MM = 800.0  # > größte Symbol-Halbbreite (SL 434) + halbe Textbreite → neben dem Symbol, nicht drin
+# Offset je Art = Symbol-Halbbreite (gemessen: RZ-Block 580×290, SL-Aufheller 869×869)
+# + Clearance für die halbe Textbreite → Label sitzt knapp NEBEN dem Symbol, nicht drin
+# und nicht abgesetzt.
+_NODEID_HALBBREITE_MM = {"rz": 290.0, "sicherheitsleuchte": 435.0, "antipanik": 435.0}
+NODEID_CLEARANCE_MM = 280.0
 _KIND_CODE = {"rz": "RZ", "sicherheitsleuchte": "SL", "antipanik": "AP"}
 
 # Schaltungsart je Leuchtenart (Profi-Belegungsplan 1.xlsx §3b): Rettungszeichen =
@@ -417,8 +421,9 @@ def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> tuple[int, in
     sknrn = _stromkreisnummern(platzierung)
     for p, nodeid, sknr in zip(platzierung.platzierungen, _nodeids(platzierung), sknrn):
         angle = math.radians(p.rotation_deg or 0.0)
-        tx = p.xy_mm[0] + math.cos(angle) * NODEID_OFFSET_TANGENT_MM
-        ty = p.xy_mm[1] + math.sin(angle) * NODEID_OFFSET_TANGENT_MM
+        offset = _NODEID_HALBBREITE_MM.get(p.kind, 435.0) + NODEID_CLEARANCE_MM
+        tx = p.xy_mm[0] + math.cos(angle) * offset
+        ty = p.xy_mm[1] + math.sin(angle) * offset
         text = f"{nodeid}\\P{sknr}" if sknr else nodeid
         if sknr:
             mit_kreis += 1
