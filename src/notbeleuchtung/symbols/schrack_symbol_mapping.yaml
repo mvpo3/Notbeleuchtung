@@ -72,3 +72,13 @@ antipanik_leuchte:
   block_name: "notbeleuchtung- antipanikleuchte"
   label: "Antipanik-Leuchte"
   category: antipanik
+
+# ── Anlage / Versorgung ───────────────────────────────
+# Gruppenbatterie-Anlage (din SU-Klasse, Profi-Plan STANDARD_SYSTEM). Halb grün
+# schraffiertes Rechteck, 8.19x4.46 units = in-band. Wird NICHT als Leuchten-
+# Platzierung gesetzt (kind-Literal bleibt unberührt) — der Render zeichnet sie,
+# wenn die LB einen system_typ deklariert (LB-explizit).
+gruppenbatterie_anlage:
+  block_name: "gruppenbatterie"
+  label: "SV-Anlage (Gruppenbatterie)"
+  category: anlage

@@ -343,3 +343,34 @@ def test_stueckliste_mit_symbol_spalte():
     assert len(legenden_syms) == 2
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
+
+
+def test_anlagen_symbol_nur_bei_lb_system_typ():
+    # LB-explizit: Gruppenbatterie-Symbol erscheint NUR wenn die LB einen system_typ
+    # deklariert UND ein Technik-/Batterieraum erkannt ist (kein geratener Standort).
+    from notbeleuchtung.hauptengine.contracts import (
+        LBVorgabe, Platzierung, PlatzierungsErgebnis, Raum, RaumModell,
+    )
+    import tempfile
+
+    raum = RaumModell.model_validate(
+        json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8")))
+    raum.raeume.append(Raum(
+        id="technik", raum_typ="TECHNIK",
+        polygon_mm=[(-50000.0, 5000.0), (-45000.0, 5000.0),
+                    (-45000.0, 10000.0), (-50000.0, 10000.0)],
+    ))
+    plz = PlatzierungsErgebnis(floor="4OG", platzierungen=[
+        Platzierung(xy_mm=(-70000.0, 20000.0), catalog_key="notlicht_ks_stiege", kind="rz")])
+    lb = LBVorgabe(system_typ="gruppenbatterie", batterie_standort="UG Zählerraum",
+                   lb_quelle="Test")
+    with tempfile.TemporaryDirectory() as tmp:
+        out = Path(tmp) / "a.dxf"
+        mit = render_dxf(plz, raum, out, lb)
+        doc = ezdxf.readfile(str(out))
+        ohne = render_dxf(plz, raum, Path(tmp) / "b.dxf", None)
+    assert mit["anlage_drawn"] is True and ohne["anlage_drawn"] is False
+    syms = [e for e in doc.modelspace().query("INSERT") if e.dxf.name == "gruppenbatterie"]
+    assert len(syms) == 1
+    texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
+    assert "SV-Anlage 1" in texte and "UG Zählerraum" in texte
