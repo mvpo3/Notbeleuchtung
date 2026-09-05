@@ -22,6 +22,15 @@ def _fresh_cache():
 
 
 @pytest.fixture()
+def ohne_blatt(monkeypatch):
+    """Blatt-Vorlage deaktivieren → Fallback-Pfad (Schriftfeld-Boxen) testbar."""
+    from notbeleuchtung.hauptengine.render import dxf_renderer as dr
+    monkeypatch.setitem(dr._blatt_vorlage_cache, "doc", None)
+    yield
+    dr._blatt_vorlage_cache.clear()
+
+
+@pytest.fixture()
 def contracts() -> tuple[PlatzierungsErgebnis, RaumModell]:
     platzierung = PlatzierungsErgebnis.model_validate(
         json.loads((FIXTURES / "platzierung_4og.json").read_text(encoding="utf-8"))
@@ -33,7 +42,9 @@ def contracts() -> tuple[PlatzierungsErgebnis, RaumModell]:
 
 
 @pytest.fixture()
-def rendered(contracts, tmp_path):
+def rendered(contracts, tmp_path, ohne_blatt):
+    # Box-/Legacy-Pfad (Blatt-Vorlage aus): die meisten Struktur-Tests prüfen die
+    # Schriftfeld-Boxen; der Blatt-Modus hat eigene Tests (test_blatt_modus_*).
     platzierung, raum = contracts
     out = tmp_path / "4og_notbeleuchtung.dxf"
     summary = render_dxf(platzierung, raum, out)
@@ -191,7 +202,7 @@ def test_plankopf_rahmen_und_felder(rendered):
     assert "Maßstab: 1:100" in txt
 
 
-def test_plankopf_metadaten_ueberschreiben(contracts, tmp_path):
+def test_plankopf_metadaten_ueberschreiben(contracts, tmp_path, ohne_blatt):
     platzierung, raum = contracts
     out = tmp_path / "meta.dxf"
     render_dxf(platzierung, raum, out,
@@ -203,7 +214,7 @@ def test_plankopf_metadaten_ueberschreiben(contracts, tmp_path):
     assert "Erstellt: Leonis" in txt
 
 
-def test_pruefbericht_legende(contracts, tmp_path):
+def test_pruefbericht_legende(contracts, tmp_path, ohne_blatt):
     platzierung, raum = contracts
     pruef = {"status": "warnung", "befunde": [
         {"regel": "Montagehöhe ≥ 2000 mm (EN 1838 §4.1)", "status": "ok", "detail": "alle Symbole ≥ 2000 mm"},
@@ -226,7 +237,7 @@ def test_ohne_pruefung_keine_pruefbericht_legende(rendered):
     assert not doc.modelspace().query("MTEXT[layer=='din_SIBEL_99_inspection']")
 
 
-def test_lb_legende_traegt_system_spec(contracts, tmp_path):
+def test_lb_legende_traegt_system_spec(contracts, tmp_path, ohne_blatt):
     from notbeleuchtung.hauptengine.contracts import LBVorgabe
     platzierung, raum = contracts
     lb = LBVorgabe(
@@ -320,7 +331,7 @@ def test_tueren_werden_gezeichnet(rendered):
     assert len(linien) >= 2 * n_tueren      # Schwelle + Blatt (+ Notausgang-Doppel)
 
 
-def test_stueckliste_mit_symbol_spalte():
+def test_stueckliste_mit_symbol_spalte(ohne_blatt):
     # Profi-Legende (din ACAD_TABLE): je Typ-Zeile das echte Katalog-Symbol klein
     # in der Stücklisten-Box (nur im Typ-Letter-Pfad, Symbol-Datenmodell v1.2.0).
     from notbeleuchtung.hauptengine.contracts import Platzierung, PlatzierungsErgebnis, RaumModell
@@ -351,7 +362,7 @@ def test_stueckliste_mit_symbol_spalte():
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
 
 
-def test_anlagen_symbol_nur_bei_lb_system_typ():
+def test_anlagen_symbol_nur_bei_lb_system_typ(ohne_blatt):
     # LB-explizit: Gruppenbatterie-Symbol erscheint NUR wenn die LB einen system_typ
     # deklariert UND ein Technik-/Batterieraum erkannt ist (kein geratener Standort).
     import tempfile
@@ -387,3 +398,25 @@ def test_anlagen_symbol_nur_bei_lb_system_typ():
     assert len(syms) == 1
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "SV-Anlage 1" in texte and "UG Zählerraum" in texte
+
+
+
+def test_blatt_modus_ersetzt_alle_boxen(contracts, tmp_path):
+    # Owner-Fixierung (wohnbau_v7_dg_verbessert.dxf): mit Blatt-Vorlage trägt das
+    # Blatt ALLES — keine Schriftfeld-Boxen, kein Legenden-Anhang daneben.
+    platzierung, raum = contracts
+    out = tmp_path / "blatt.dxf"
+    summary = render_dxf(platzierung, raum, out, pruefung={"status": "ok", "befunde": []})
+    doc = ezdxf.readfile(str(out))
+    assert summary["blatt_layout_drawn"] is True
+    assert summary["pruefbericht_drawn"] is False
+    assert summary["stromkreis_belegung_drawn"] is False
+    assert summary["stueckliste_drawn"] is False
+    msp = doc.modelspace()
+    assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_99_inspection']")
+    assert not msp.query("LWPOLYLINE[layer=='din_SIBEL_11_system']")
+    assert not [e for e in msp.query("INSERT") if e.dxf.name == "vorlage_legende"]
+    # Blatt-Rahmen + gefüllte Blatt-Legende existieren
+    assert msp.query("LWPOLYLINE[layer=='din_SIBEL_99_titleblock']")
+    blatt_syms = [e for e in msp.query("INSERT") if not e.has_xdata("NOTBELEUCHTUNG")]
+    assert len(blatt_syms) >= 5   # Legenden-Symbole der Blatt-Spalte
