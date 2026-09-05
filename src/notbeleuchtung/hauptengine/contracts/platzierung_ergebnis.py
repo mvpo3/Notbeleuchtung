@@ -16,10 +16,14 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.1.0"   # 1.1.0: +Platzierung.lb_quelle (LB-Provenienz, 2. Input)
+CONTRACT_VERSION = "1.2.0"   # 1.1.0: +lb_quelle · 1.2.0: Symbol-Datenmodell (Digest #6)
 
 Kind = Literal["rz", "sicherheitsleuchte", "antipanik"]
 Richtung = Literal["links", "rechts", "gerade", "oben", "unten"]
+
+# Schaltungsart je Leuchte (Profi-Belegungsplan §3b): DL = Dauerlicht (maintained,
+# Rettungszeichen müssen immer leuchten), BL = Bereitschaftslicht (non-maintained).
+Schaltungsart = Literal["DL", "BL"]
 
 
 class Platzierung(BaseModel):
@@ -35,6 +39,17 @@ class Platzierung(BaseModel):
     norm_quelle: str = ""                # welche NormAnforderung diese Platzierung begründet
     lb_quelle: str = ""                  # LB-Provenienz (2. Input): welche LBVorgabe sie
     #                                      erzwang/übersteuerte (leer = rein norm-getrieben)
+    # v1.2.0 — Symbol-Datenmodell (Profi-Plan Digest #6, Block-Attribute je Leuchte).
+    # Alle optional/None: der Platzierer füllt, was er weiß; Render fällt sonst auf
+    # seine bisherige Synthese zurück (NODEID) bzw. lässt das Attribut weg.
+    schaltungsart: Schaltungsart | None = None  # DL (RZ) / BL (SL/AP) — Belegungsliste + Prüfung
+    luminaire_id: str | None = None      # Leuchten-ID/NODEID (Wartung/Adressierung, z.B. "RZ-001")
+    typ_letter: str | None = None        # TYPENUMBER: Legenden-Letter (Typ A/B/…) — Stückliste #7
+    typ_name: str | None = None          # TYPENAME: Produktbezeichnung (aus LB/Produktdaten)
+    montage_art: str | None = None       # MountingMethod: AP/WA/DA/EB …
+    technologie: str | None = None       # Technology (z.B. "LED")
+    stromaufnahme_ma: float | None = None  # Produkt-Nennstrom (mA) — strombasierter
+    #                                        Stromkreis-Deckel (#14) statt Stückzahl-Platzhalter
 
 
 class PlatzierungsErgebnis(BaseModel):
