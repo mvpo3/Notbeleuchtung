@@ -49,9 +49,13 @@ Anforderungen nach der Art der Nutzung", ist eine **Auslegung ohne Beleg**:
 R 12-2 liegt nicht im Repo, und die OIB-Erläuterungen verweisen darauf nur
 „je nach Zutreffen".
 
-⚠️ **Folge:** eine bestätigte Raumzuordnung allein macht die OVE-Regel **nicht**
-anwendbar. `sanitaer_scope` liefert deshalb **heute nie** `anwendbar` — auch
-nicht bei perfekter Zuordnung. Die Fälle sind nicht verloren: sie stehen als
+⚠️ **Folge in beide Richtungen.** Eine bestätigte Raumzuordnung allein macht die
+OVE-Regel **nicht** anwendbar — und eine fehlende oder negative Zuordnung macht
+sie ebenso wenig **un**anwendbar. „Nach Tabelle 6 nicht erforderlich" schließt
+den in der Klausel zuerst genannten **R-12-2-Zweig** nicht aus, und ein gar nicht
+gefahrener OIB-Pfad sagt über die Sache nichts. `sanitaer_scope` vergibt deshalb
+**weder `anwendbar` noch `nicht_anwendbar`**: bewertet → `ungeklaert`, nicht
+bewertet → `nicht_bewertet`. Die Fälle sind nicht verloren: sie stehen als
 `ungeklaert` im Prüfbericht und im Audit-Block, mit dem Grund. Erst wenn R 12-2
 vorliegt oder die drei Owner die Gleichsetzung ausdrücklich als Auslegung
 beschließen, kann daraus `anwendbar` werden.
@@ -66,7 +70,12 @@ from typing import Literal
 from notbeleuchtung.hauptengine.contracts import OibBefund
 
 #: Fachliche Anwendbarkeit eines Triggers auf einen Raum.
-Scope = Literal["anwendbar", "nicht_anwendbar", "ungeklaert"]
+#:
+#: `nicht_bewertet` = es lief gar keine Auswertung (kein ProjektKontext/OIB-Pfad)
+#: — daraus wird KEINE fachliche Aussage abgeleitet, weder positiv noch negativ.
+#: `nicht_anwendbar` wäre eine positive Ausschluss-Aussage und braucht einen
+#: eigenen Beleg; heute wird sie nirgends vergeben (siehe `sanitaer_scope`).
+Scope = Literal["anwendbar", "nicht_anwendbar", "ungeklaert", "nicht_bewertet"]
 
 #: Räumliche Zuordnung eines Raums zu einem Gebäudeteil mit OIB-Befund.
 Zuordnung = Literal["bestaetigt", "nicht_bestaetigt", "ungeklaert"]
@@ -118,7 +127,9 @@ def raum_zuordnung(oib: OibBefund | None, floor: str, raum_id: str) -> Zuordnung
 
     Reihenfolge — die erste zutreffende Aussage gewinnt:
 
-    1. kein OIB-Pfad → `nicht_bestaetigt`;
+    1. kein OIB-Pfad → `nicht_bestaetigt` — eine Tatsachen-, keine Wertungsaussage:
+       es liegt schlicht keine Zuordnung vor (die fachliche Frage beantwortet
+       `sanitaer_scope` mit `nicht_bewertet`);
     2. der Raum ist referenziert und die referenzierenden Teile sind sich
        **uneinig** → `ungeklaert` (ein bestätigender Teil überstimmt einen
        ungeklärten oder gegenteiligen **nicht**);
@@ -153,22 +164,28 @@ def raum_zuordnung(oib: OibBefund | None, floor: str, raum_id: str) -> Zuordnung
 def sanitaer_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
     """**Frage 2 — fachlich:** Ist der 8-m²-Trigger (OVE Punkt 1) hier anwendbar?
 
-    Setzt auf `raum_zuordnung` auf, ist aber **nicht dasselbe**: eine bestätigte
-    Zuordnung belegt nur, dass Tabelle 6 für diesen Gebäudeteil eine
-    Sicherheitsbeleuchtung verlangt. Die OVE-Klausel verlangt „erhöhte
-    Anforderungen **nach der Art der Nutzung**" — dafür fehlt der Beleg
-    (R 12-2 liegt nicht vor). Deshalb:
+    Getrennt von `raum_zuordnung`, und beide Richtungen brauchen einen Beleg:
 
-    * `bestaetigt` → **`ungeklaert`** (räumlich geklärt, fachlich nicht);
-    * `ungeklaert` → `ungeklaert`;
-    * `nicht_bestaetigt` → `nicht_anwendbar`.
+    * **`anwendbar`** setzt voraus, dass der Raum zu „Räumen, Anlagen oder
+      Gebäuden mit erhöhten Anforderungen **nach der Art der Nutzung**" gehört.
+      Der `OibBefund` belegt das nicht — er sagt nur, ob Tabelle 6 eine
+      Sicherheitsbeleuchtung verlangt. → wird heute **nie** vergeben.
+    * **`nicht_anwendbar`** ist die Gegenrichtung und genauso begründungspflichtig:
+      es hieße „diese OVE-Regel gilt hier nachweislich nicht". Weder ein fehlender
+      noch ein negativer OIB-Befund belegt das — die Klausel nennt
+      **R 12-2 bzw. OIB-RL 2**, und ein „nach Tabelle 6 nicht erforderlich"
+      schließt den R-12-2-Zweig nicht aus. → wird heute ebenfalls **nie** vergeben.
+    * **`nicht_bewertet`** heißt: es lief keine Auswertung (kein OIB-Pfad). Das ist
+      eine Aussage über den Vorgang, nicht über die Sache — und darf in der
+      Ausgabe nicht als Nicht-Erforderlichkeit erscheinen.
+    * **`ungeklaert`** ist damit der Regelfall, sobald überhaupt bewertet wurde.
 
-    `anwendbar` kommt heute **nicht** vor. Das ist kein Versehen, sondern der
-    ehrliche Zustand: sonst würde eine ungeprüfte Gleichsetzung Leuchten setzen.
+    Die Unterscheidung, die trotzdem Wert hat, steckt in `raum_zuordnung`: sie
+    sagt, ob die **räumliche** Frage beantwortet ist. Nur sie steuert, was der
+    Prüfbericht als offenen Punkt meldet.
     """
-    zuordnung = raum_zuordnung(oib, floor, raum_id)
-    if zuordnung == "nicht_bestaetigt":
-        return "nicht_anwendbar"
+    if oib is None:
+        return "nicht_bewertet"
     return "ungeklaert"
 
 
@@ -190,8 +207,8 @@ def verkehr_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
     bleibt der Fall `ungeklaert` (sichtbar im Prüfbericht), sonst
     `nicht_anwendbar`.
     """
-    if raum_zuordnung(oib, floor, raum_id) == "nicht_bestaetigt":
-        return "nicht_anwendbar"
+    if oib is None:
+        return "nicht_bewertet"
     return "ungeklaert"
 
 
@@ -274,8 +291,14 @@ def gate_summary(oib: OibBefund, floor: str = "", raum_ids: list[str] | None = N
         zustaende = [sanitaer_scope(oib, floor, r) for r in raum_ids]
         block["sanitaer_scope"] = {
             z: zustaende.count(z)
-            for z in ("anwendbar", "nicht_anwendbar", "ungeklaert")
+            for z in ("anwendbar", "nicht_anwendbar", "ungeklaert", "nicht_bewertet")
         }
+        hinweise.append(
+            "Fachliche Anwendbarkeit der OVE-Flächen-Trigger: weder bejaht noch "
+            "verneint. Ein fehlender oder negativer OIB-Befund belegt keinen "
+            "Ausschluss — die Klausel nennt R 12-2 bzw. OIB-RL 2, und Tabelle 6 "
+            "deckt nur den zweiten Zweig ab."
+        )
         if zuordnungen.count("bestaetigt"):
             hinweise.append(
                 f"{zuordnungen.count('bestaetigt')} Raum/Räume sind einem "
