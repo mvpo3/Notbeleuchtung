@@ -57,6 +57,52 @@ lux:
   # (Randstreifen 0,5 m ausgenommen; Randbereich hier nicht modelliert).
   antipanik: 0.5
 
+# ── Geometrie des Nachweises (§4.2.1 / §4.3.1) ─────────────────────────────
+# Ergänzt 05.09.2026, am Original geprüft (ÖNORM EN 1838:2013 (D), Norm-S.9/S.11).
+# Hier stehen NUR die Geometrie-Größen; die Beleuchtungsstärken selbst bleiben
+# oben unter `lux` — keine doppelte Zahlenpflege. `*_anteil` sind Faktoren AUF
+# diese Werte, keine zweiten Absolutwerte.
+geometrie:
+
+  rettungsweg:
+    # [BELEGT] §4.2.1, Norm-S.9, Satz 1: „Bei Rettungswegen mit einer Breite bis
+    # zu 2 m müssen die horizontalen Beleuchtungsstärken auf dem Boden entlang
+    # der Mittellinie des Rettungsweges mindestens 1 lx betragen."
+    # Das ist ein GELTUNGSBEREICH, kein Planungsmaß: oberhalb davon greift Satz 3.
+    max_breite_mm: 2000
+    # [BELEGT] §4.2.1, Satz 2: „Der Mittelbereich, der nicht weniger als der
+    # Hälfte der Breite des Weges entspricht, muss mindestens mit 50 % dieses
+    # Wertes beleuchtet sein." Zwei getrennte Hälften: Breite und Lux.
+    mittelbereich_breite_anteil: 0.5   # Mittelbereich = halbe Wegbreite
+    mittelbereich_lux_anteil: 0.5      # 50 % von lux.rettungsweg
+    # [BELEGT] §4.2.1, Satz 3: „Breitere Rettungswege können als mehrere 2 m
+    # breite Streifen betrachtet werden oder mit Antipanikbeleuchtung
+    # ausgerüstet werden." KANN-Aussage mit zwei Wegen → Planer-Entscheidung,
+    # kein Automatismus. Die Engine darf keinen der beiden Wege selbst wählen.
+    breiter_weg_optionen:
+      - streifen_2m: "Weg in mehrere höchstens 2 m breite Streifen zerlegen, je Streifen der §4.2.1-Nachweis"
+      - antipanik: "Weg mit Antipanikbeleuchtung ausrüsten (§4.3.1: 0,5 lx im Kernbereich)"
+    breiter_weg_entscheidung: planer
+    # KEIN Default-Wert für die Wegbreite. Sie ist ein Eingangswert des Plans;
+    # sie zu raten hieße, den Geltungsbereich der Norm zu erfinden.
+
+  antipanik:
+    # [BELEGT] §4.3.1, Norm-S.11: „Die horizontale Beleuchtungsstärke darf 0,5 lx
+    # auf der freien Bodenfläche im Kernbereich nicht unterschreiten, wobei
+    # Randbereiche mit einer Breite von 0,5 m nicht berücksichtigt werden."
+    # ACHTUNG Zuordnung: der 0,5-m-Randstreifen gehört zu §4.3.1 (Antipanik) —
+    # NICHT zu §4.2.1. Der Rettungsweg-Nachweis kennt keinen Randstreifen,
+    # sondern Mittellinie + Mittelbereich.
+    randstreifen_mm: 500
+    randstreifen_gilt_fuer: kernbereich_freie_bodenflaeche
+
+# [BELEGT] Anhang B (informativ), Norm-S.16–17: A-Abweichungen führen Frankreich,
+# Italien, Deutschland und die Niederlande. Für ÖSTERREICH gibt es KEINE
+# Abweichung — die Werte oben gelten hier unverändert. Für die Wegbreite relevant:
+# keine der Abweichungen ändert die 2-m-Grenze oder den Mittelbereich; die
+# französischen Sonderregeln (15 m Leuchtenabstand, 5 lm/m²) gelten nur dort.
+anhang_b_at_abweichung: false
+
 # Ungleichmäßigkeit Ud = kleinste : größte Beleuchtungsstärke (EN 12665).
 # Das Contract-Feld `NormAnforderung.gleichmaessigkeit_max` führt sie umgekehrt
 # als max:min → hier stehen die Kehrwerte (1:40 → 40).
