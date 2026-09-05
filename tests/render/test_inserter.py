@@ -49,7 +49,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "notbeleuchtung richtungspfeil nach unten",
+        "block_name": "notbeleuchtung- richtungspfeil nach unten",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,
@@ -140,3 +140,18 @@ def test_gerade_nur_bei_rz_doppelpfeil(catalog_key, kind):
     inserts = doc.modelspace().query("INSERT")
     assert len(inserts) == 1
     assert ins.dxf.name == mapping[catalog_key]["block_name"]
+
+
+def test_sl_aufheller_kein_hardcode_blau():
+    # Der Lib-Block trägt einen SOLID-HATCH mit expliziter Farbe ACI 150 (blau),
+    # die den Layer-Grün-Override übergeht — Notlicht muss grün rendern. Import
+    # stellt blaue Hardcode-Farben auf BYLAYER (erbt Schrack-Grün des INSERT-Layers).
+    doc = ezdxf.new("R2018")
+    library.sync_layers(doc)
+    p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="sicherheitsleuchte_aufheller",
+                    kind="sicherheitsleuchte")
+    ins = inserter.insert_platzierung(doc, p)
+    block = doc.blocks[ins.dxf.name]
+    farben = {e.dxftype(): e.dxf.color for e in block}
+    assert farben["HATCH"] == 256  # BYLAYER statt ACI 150
+    assert not any(c in library._BLAUE_ACI for c in farben.values())

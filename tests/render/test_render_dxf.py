@@ -132,11 +132,54 @@ def test_hoehenkoten_label_gezeichnet(rendered):
 def test_nodeid_annotation_je_leuchte(rendered):
     _, summary, doc = rendered
     # 4OG-Fixture = 5 RZ → NODEID RZ-001..RZ-005, je Symbol genau ein MTEXT.
+    # Zweite Zeile = Stromkreisnummer Anlage/Kreis/Adresse (Profi-Plan LABELING1).
     assert summary["nodeids_drawn"] == 5
     ids = doc.modelspace().query("MTEXT[layer=='din_SIBEL_63_luminaire_ID']")
     assert len(ids) == 5
-    texte = sorted(m.text for m in ids)
-    assert texte == ["RZ-001", "RZ-002", "RZ-003", "RZ-004", "RZ-005"]
+    zeilen = [m.text.split("\\P") for m in ids]
+    assert sorted(z[0] for z in zeilen) == ["RZ-001", "RZ-002", "RZ-003", "RZ-004", "RZ-005"]
+    # 2 Kreise (AGV-A-F13 ×2 → Anlage 1, AGV-B-F13 ×3 → Anlage 2), je Kreis 1.
+    assert summary["stromkreisnummern_drawn"] == 5
+    assert sorted(z[1] for z in zeilen) == ["1/1/1", "1/1/2", "2/1/1", "2/1/2", "2/1/3"]
+
+
+def _p_sk(kind: str, hint: str):
+    from notbeleuchtung.hauptengine.contracts import Platzierung
+    key = "notlicht_ks_stiege" if kind == "rz" else "sicherheitsleuchte_aufheller"
+    return Platzierung(xy_mm=(0.0, 0.0), catalog_key=key, kind=kind, circuit_hint=hint)
+
+
+def test_stromkreisnummern_dl_bl_getrennte_kreise():
+    # circuit_zuordnung-Hints: DL und BL sind getrennte Kreise derselben Anlage.
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _stromkreisnummern
+    plz = PlatzierungsErgebnis(floor="EG", platzierungen=[
+        _p_sk("rz", "AGV-A-F13-DL-1"),
+        _p_sk("sicherheitsleuchte", "AGV-A-F13-BL-1"),
+        _p_sk("rz", "AGV-A-F13-DL-1"),
+    ])
+    assert _stromkreisnummern(plz) == ["1/1/1", "1/2/1", "1/1/2"]
+
+
+def test_stromkreisnummern_cap_rollover_wird_neuer_kreis():
+    # Deckel in circuit_zuordnung (20/Kreis) → -DL-2-Hint = eigener Kreis.
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _stromkreisnummern
+    plz = PlatzierungsErgebnis(floor="EG", platzierungen=[
+        _p_sk("rz", "AGV-A-F13-DL-1"),
+        _p_sk("rz", "AGV-A-F13-DL-2"),
+        _p_sk("rz", "AGV-A-F13-DL-2"),
+    ])
+    assert _stromkreisnummern(plz) == ["1/1/1", "1/2/1", "1/2/2"]
+
+
+def test_stromkreisnummern_gebaeude_b_ist_anlage_2_und_ohne_hint_leer():
+    from notbeleuchtung.hauptengine.render.dxf_renderer import _stromkreisnummern
+    plz = PlatzierungsErgebnis(floor="EG", platzierungen=[
+        _p_sk("rz", "AGV-B-F13-DL-1"),
+        _p_sk("rz", ""),
+        _p_sk("rz", "kein-agv-format"),
+    ])
+    # Gebäude B → Anlage 2; unparsbarer Hint → Anlage 1; leerer Hint → kein Label.
+    assert _stromkreisnummern(plz) == ["2/1/1", "", "1/1/1"]
 
 
 def test_info_blocks_sind_gerahmte_boxen(rendered):

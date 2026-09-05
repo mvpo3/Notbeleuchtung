@@ -1,4 +1,7 @@
-# Schrack-Symbol-Mapping — catalog_key → Block in CAD_Symbole/E-Symbole.dxf
+# Symbol-Mapping — catalog_key → Block in CAD_Symbole/Notbeleuchtungssymbole.dxf
+#
+# Owner-Entscheidung 2026-09-05: kanonische Library = der kuratierte Notbeleuchtungs-
+# Extrakt (5 Blöcke + Legende) — NUR diese Symbole. E-Symbole.dxf = Herkunfts-Referenz.
 #
 # Kuratierte Notbeleuchtungs-Teilmenge (portiert aus elektro-planer
 # backend/symbols/schrack_symbol_mapping.yaml, siehe docs/PORT_LOG.md). NUR die
@@ -23,7 +26,7 @@
 # anderen Pfeil-Blöcke der Lib sind intern inkonsistent skaliert. Richtungswahl
 # = Rotation/mirror_x setzt der Platzierer je Fluchtweg-Geometrie.
 notlicht_ks_stiege:
-  block_name: "notbeleuchtung richtungspfeil nach unten"
+  block_name: "notbeleuchtung- richtungspfeil nach unten"
   label: "Notlicht KS (Stiege/Gänge)"
   category: notlicht
 
@@ -32,7 +35,7 @@ notlicht_ks_stiege:
 # über GT-Subtype 'RZ UNTEN' auf notlicht_ks_stiege gemappt); hier explizit, weil
 # der generative Platzierer die Variante am Ausgangs-Segment selbst wählt.
 notlicht_ks_stiege_unten:
-  block_name: "notbeleuchtung richtungspfeil nach unten"
+  block_name: "notbeleuchtung- richtungspfeil nach unten"
   label: "Notlicht KS Rettungszeichen unten (Ausgang)"
   category: notlicht
 
@@ -50,7 +53,7 @@ notlicht_ks_stiege_rechts:
 
 # Notlicht Garage/Nebenräume (Antipanik-nahe Sonderfälle).
 notlicht_kw_garage:
-  block_name: "notbeleuchtung richtungspfeil nach unten"
+  block_name: "notbeleuchtung- richtungspfeil nach unten"
   label: "Notlicht KW (Garage/Nebenräume)"
   category: notlicht
 

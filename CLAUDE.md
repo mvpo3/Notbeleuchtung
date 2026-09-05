@@ -100,7 +100,7 @@ Enis:   NormProvider ─► NormRegelwerk┘     └─► Leonis: Platzierer(Ra
 - Jeder Owner liefert seine „ich-produziere"-Fixture in `tests/fixtures/` und testet
   gegen die „ich-brauche"-Fixtures der Upstreams.
 - **CAD-Assets:** leere Architekturpläne in `Projekte/`, Schrack-Library in
-  `CAD_Symbole/E-Symbole.dxf` (im Repo, `.gitattributes` = binary).
+  `CAD_Symbole/Notbeleuchtungssymbole.dxf` (im Repo, `.gitattributes` = binary).
 - Board: `docs/PROGRAMM_NOTBELEUCHTUNG.md` · Port-Herkunft: `docs/PORT_LOG.md`.
 - Atomare Slices, ein Concern pro Commit, em-dash in der Message.
 - Irreversibel (Merge/Push/GitHub-Repo) = explizites User-GO.
