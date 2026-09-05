@@ -167,14 +167,25 @@ rettungszeichen:
     ausnahmen: []
     konfliktregel: "Von RZ-05 abgedeckt, wenn die Niveauänderung eine Treppe ist."
     # Korrektur 01.09. (am Volltext geprüft): §4.1.2 führt b) Treppen UND
-    # c) „jede andere Niveauänderung" als getrennte Punkte. Der Auslöser ist
-    # normativ belegt; die frühere LB-Zuschreibung beruhte auf einer
-    # unvollständigen Extraktion. Ein Lux-Wert steht in c) NICHT.
-    quelle: "EN 1838 §4.1.2 c) („nahe jeder anderen Niveauänderung“); die reale Elektro-LB fordert dasselbe (LBVorgabe.rz_stellen = niveauaenderung)"
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8 — Lux-Wert: MANUELL_PRUEFEN"
-    beleg: BELEGT
-    review_erforderlich: true      # Lux-Niveau unbelegt, Pflicht selbst belegt
-    decision_source: norm_default
+    # c) „jede andere Niveauänderung" als getrennte Punkte — der AUSLÖSER ist
+    # normativ, die frühere LB-Zuschreibung beruhte auf einer unvollständigen
+    # Extraktion. Ein Lux-Wert steht in c) NICHT.
+    #
+    # Korrektur 05.09. (am Original-PDF geprüft): c) belegt eine SICHERHEITS-
+    # LEUCHTE, kein Rettungszeichen. Die Einleitung von §4.1.2 (Norm-S.8) lautet
+    # „Sicherheitsleuchten … müssen … zur Hervorhebung … angebracht werden. Die
+    # hervorzuhebenden Stellen umfassen die folgenden Punkte" — die Aufzählung
+    # a)–k) sagt, wo eine LEUCHTE hin muss. §4.1.2 d) verlangt nur, dass
+    # VORHANDENE Sicherheitszeichen beleuchtet werden; eine neue Zeichenpflicht
+    # begründet es nicht. Das RZ an der Niveauänderung ist deshalb KEIN
+    # Norm-Default. Belegt bleibt es über die reale Elektro-LB
+    # (LBVorgabe.rz_stellen = niveauaenderung) → decision_source lb_explizit.
+    # Die Sicherheitsleuchte selbst bleibt norm_default: siehe SL-04.
+    quelle: "Reale Elektro-LB (LBVorgabe.rz_stellen = niveauaenderung). EN 1838 §4.1.2 c) belegt an dieser Stelle nur die Sicherheitsleuchte (SL-04), kein Rettungszeichen."
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8 — belegt die Sicherheitsleuchte; RZ-Pflicht: MANUELL_PRUEFEN"
+    beleg: LB
+    review_erforderlich: true      # ohne LB kein RZ — nie still als Norm setzen
+    decision_source: lb_explizit
     engine_input: ["— kein Merkmal im RaumModell"]
     engine_status: input_fehlt
 
@@ -346,7 +357,7 @@ sicherheitsleuchten:
     prioritaet: 3
     ausnahmen: []
     konfliktregel: "Von SL-02 abgedeckt, wenn die Niveauänderung eine Treppe ist."
-    quelle: "analog RZ-06 — EN 1838 §4.1.2 c) nennt Niveauänderungen ausdrücklich"
+    quelle: "EN 1838 §4.1.2 c) nennt die Niveauänderung ausdrücklich; die Einleitung von §4.1.2 verlangt an den aufgezählten Stellen eine Sicherheitsleuchte"
     norm_ref: "ÖNORM EN 1838:2013 §4.1.2 c), S.8 — Lux-Wert: MANUELL_PRUEFEN"
     beleg: BELEGT
     review_erforderlich: true      # Lux-Niveau unbelegt, Pflicht selbst belegt
@@ -480,8 +491,8 @@ sicherheitsleuchten:
     ausnahmen: []
     konfliktregel: "Gilt unabhängig davon, ob der Raum am Fluchtweg liegt."
     # Die Raumerkennung vergibt WC, kann aber „barrierefrei" nicht unterscheiden.
-    quelle: "EN 1838 §4.3.8 — „Antipanikbeleuchtung ist in Toiletten für Menschen mit Behinderung erforderlich\""
-    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.12"
+    quelle: "EN 1838 §4.3.8 — Antipanikbeleuchtung ist in Toiletten für Menschen mit Behinderung erforderlich. Auslöser ist die barrierefreie TOILETTE; das Raum-Flag allein genügt nicht (Korrektur 05.09.)"
+    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.11"
     beleg: BELEGT
     review_erforderlich: true      # Merkmal „barrierefrei" nicht erkennbar
     decision_source: norm_default
@@ -502,7 +513,7 @@ sicherheitsleuchten:
     ausnahmen: []
     konfliktregel: "Höchster Lux-Anspruch aller Regeln — schlägt SL-01/SL-09 im selben Bereich."
     quelle: "EN 1838 §4.4.1"
-    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.13"
+    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.12"
     beleg: BELEGT
     review_erforderlich: true      # Gefährdungsmerkmal nicht im Modell
     decision_source: norm_default
