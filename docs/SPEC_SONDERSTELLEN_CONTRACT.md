@@ -227,11 +227,183 @@ funktioniert mit manueller Eingabe. Später relevant:
 
 ### Bleibt `MANUELL_PRUEFEN`
 
-1. **Lux-Niveau an Betonungsstellen** — §4.1.2 nennt keines; die 5 lx sind LB.
-2. **Niveauänderung normativ** — steht in der LB, nicht in der §4.1.2-Extraktion.
+1. ~~**Lux-Niveau an Betonungsstellen** — §4.1.2 nennt keines; die 5 lx sind LB.~~
+   **Am 01.09. widerlegt, am 05.09. am Original-PDF bestätigt:** §4.1.2 **h)**
+   (Erste-Hilfe-Stelle) und **i)** (Brandbekämpfungs- und Meldeeinrichtungen)
+   nennen 5 lx — **vertikal am Gerät**. Was offen bleibt, ist nicht der *Wert*,
+   sondern der *Nachweis*: `lux_raster` rechnet horizontal am Boden.
+2. ~~**Niveauänderung normativ** — steht in der LB, nicht in der §4.1.2-Extraktion.~~
+   **Widerlegt:** §4.1.2 **c)** „nahe jeder anderen Niveauänderung" ist ein
+   eigener Punkt neben b) Treppen (Norm-S. 8). Ohne Beleuchtungsniveau — c)
+   nennt keines.
 3. **Teilflächen-Gefährdung** — ein Raum-Flag kann eine gefährdete *Teilfläche*
    nicht abbilden.
 4. **`brandmelder` ohne CAD-Beleg** — im Repo liegt kein Symbol dafür.
 5. **Notrufsprechstelle** (`din_Notrufstelle_E004`) — im Profi-Plan vorhanden,
    plausibel eine „Meldeeinrichtung", aber **keine Regel braucht sie**. Bewusst
    nicht aufgenommen; Aufnahme erst, wenn eine Regel sie fordert.
+
+
+---
+
+## 8. Nachtrag 2026-09-05 — Anforderungs-Quelle je Typ (Befund an PR #95)
+
+### Das Problem
+
+Die Konsumption in PR #95 nimmt für eine Sonderstelle die **erste Regel der
+passenden Leuchtenart** aus dem Regelwerk-Snapshot und schreibt deren `quelle` in
+die Platzierung:
+
+| Auslöser | richtige Fundstelle | in der Platzierung ausgewiesen |
+|---|---|---|
+| Feuerlöscher | §4.1.2 **i)** | §4.1 (STIEGENHAUS-Regel) |
+| Niveauänderung | §4.1.2 **c)** | §4.2.1 (GANG-Regel) |
+| barrierefreies WC | §4.3.8 | §4.3.1 (SAAL-Regel) |
+
+Der Audit-Trail benennt einen Normsatz, der die Platzierung nicht begründet. Die
+Ursache lag im Normwissen: `NormRegelwerk.quellen` führte nur die drei
+Raumregel-Strings, und die Naht-Invariante `norm_quelle ∈ quellen` ließ nichts
+anderes zu.
+
+### Was in Enis' Lane erledigt ist (kein Contract berührt)
+
+- `data/sonderstellen.yaml` — Abschnitt `norm_anforderung`: je Auslöser
+  Klassifikation, **echte** Fundstelle, Bezugsfläche und ein `symbol_wie`, das
+  Katalog-Keys und Montagehöhe aus einer bestehenden Raumregel **leiht** (EN 1838
+  schreibt für eine hervorzuhebende Stelle weder Symbol noch Höhe vor; es gilt der
+  Floor §4.1.1). Vier Seitenangaben am Original korrigiert.
+- `SonderstellenAnforderung` + `LuxAnforderung` (normwissen-eigene Typen),
+  Zusammenbau im `En1838NormProvider`.
+- `NormRegelwerk.quellen` enthält zusätzlich §4.1.2 c)/h)/i), §4.3.8 und §4.4.1 —
+  **rein additiv**. `quellen` ist ein `list[str]`-Feld: mehr Einträge sind Daten,
+  keine Schema-Änderung. **Kein `contract_version`-Bump** — die Version bleibt die,
+  die auf `main` steht (seit dem Merge von #87: **1.2.0**), kein
+  Drift-Gate-Ausschlag.
+
+### Drei Präzisierungen aus dem Korrektur-Slice (05.09., am Original geprüft)
+
+1. **§4.3.8 ist raumtyp-gebunden.** Wortlaut (Norm-S.11): „Antipanikbeleuchtung
+   ist in **Toiletten** für Menschen mit Behinderung erforderlich." Auslöser ist
+   die barrierefreie **Toilette**, nicht das Flag `ist_barrierefrei` allein. Ein
+   barrierefreies ZIMMER löst §4.3.8 nicht aus; `fuer_raum_attribut` liefert dort
+   eine leere Liste. **Leere Liste heißt nicht „kein Licht"** — Raumtyp-Regel,
+   Fluchtweg und Flächen-Trigger gelten unabhängig weiter. Ohne `raum_typ` gibt es
+   keine Entscheidung, sondern einen Fehler (fail closed). Die Matrix-Regel SL-10
+   trägt denselben Hinweis.
+2. **§4.4.1 bezieht sich auf die Arbeitsfläche.** Wortlaut (Norm-S.12): „muss der
+   Wartungswert der Beleuchtungsstärke **auf der Arbeitsfläche** mindestens 10 %
+   des für die Aufgabe erforderlichen Wartungswertes … betragen und darf nicht
+   unter 15 lx fallen." Beide Größen sind dokumentiert
+   (`lux.mindestwert = 15.0`, `lux.anteil_nennbeleuchtung = 0.10`), die
+   Bezugsfläche ist `arbeitsflaeche` — **nicht** „horizontal" und **nicht** der
+   Boden (die Aufgabenfläche kann geneigt oder vertikal liegen). Ohne den
+   Wartungswert der Aufgabenbeleuchtung und ohne Flächenbeschreibung im RaumModell
+   ist der 10-%-Anteil nicht auswertbar → `lux.wert = None`,
+   `vollstaendig_bestimmbar = False`, Nachweis offen.
+3. **§4.1.2 c) belegt die Sicherheitsleuchte, nicht das Rettungszeichen.** Die
+   Einleitung von §4.1.2 (Norm-S.8) sagt, dass **Sicherheitsleuchten** an den
+   aufgezählten Stellen anzubringen sind; §4.1.2 d) verlangt nur, dass
+   **vorhandene** Sicherheitszeichen beleuchtet werden — eine neue Zeichenpflicht
+   begründet es nicht. Das zusätzliche RZ an einer Niveauänderung ist deshalb
+   **kein Norm-Default**: es kommt über `zur_pruefung()` mit `quelle = None`,
+   `ist_norm_default = False` und `decision_source = lb_explizit` (die reale
+   Elektro-LB fordert es über `LBVorgabe.rz_stellen`). Matrix-Regel RZ-06 ist
+   entsprechend von `norm_default`/`BELEGT` auf `lb_explizit`/`LB` korrigiert;
+   SL-04 bleibt Norm-Default. `engine_status` bleibt bei allen Regeln unverändert
+   `input_fehlt`.
+
+### Status der Provider-API: PROTOTYP, keine Schnittstelle
+
+`fuer_sonderstelle`, `zur_pruefung` und `fuer_raum_attribut` sind **lokal
+vorbereitet** und stehen bewusst **nicht** im `ports.NormProvider`-Protocol. Sie
+sind heute nur intern und in Tests zu verwenden.
+
+**Was ausdrücklich KEINE Lösung ist:** ein `getattr(norm, "fuer_sonderstelle", …)`
+aus `platzierung`. Das wäre eine stille Kopplung an eine ungeprüfte Signatur, die
+kein Drift-Gate und kein Review absichert — ein Methodenzugriff ersetzt keine
+vereinbarte Schnittstelle. Ebenso wenig darf `platzierung` `normwissen`
+importieren, um an `SonderstellenAnforderung` zu kommen: die Owner-Grenze aus
+CLAUDE.md gilt ohne Ausnahme.
+
+### Konkreter 3-Owner-Vorschlag
+
+**Neuer Contract-Typ** in `hauptengine/contracts/norm_regelwerk.py` (Pydantic, wie
+`NormAnforderung`):
+
+```python
+Bezugsflaeche = Literal["vertikal_am_geraet", "horizontal_boden", "arbeitsflaeche"]
+
+
+class LuxAnforderung(BaseModel):
+    wert: float | None = None            # None = nicht bestimmbar (s. offen_grund)
+    bezugsflaeche: Bezugsflaeche         # gehört untrennbar zum Wert
+    quelle: str
+    mindestwert: float | None = None            # §4.4.1: 15 lx
+    anteil_nennbeleuchtung: float | None = None # §4.4.1: 0.10
+    vollstaendig_bestimmbar: bool = True
+    offen_grund: str = ""
+
+
+class SonderstellenAnforderung(BaseModel):
+    ausloeser: str                       # Sonderstellen-Typ oder Raum-Attribut
+    klassifikation: Klassifikation
+    quelle: str | None                   # ∈ NormRegelwerk.quellen, None = kein Norm-Beleg
+    norm_ref: str
+    symbol_katalog_keys: list[str] = Field(default_factory=list)
+    montagehoehe_mm: int = 2000
+    max_abstand_mm: int | None = None    # §4.1.2 ANMERKUNG 1: 2000
+    lux: LuxAnforderung | None = None
+    ist_norm_default: bool = True
+    decision_source: str = "norm_default"
+    begruendung: str = ""
+    gilt_nur_fuer_raumtypen: list[str] = Field(default_factory=list)
+    nachweis_offen: bool = False
+    nachweis_offen_grund: str = ""
+```
+
+**Versions-Ausgangslage (Stand 2026-09-05, nach dem Merge von #87):**
+`NormRegelwerk.CONTRACT_VERSION` steht auf `origin/main` **auf 1.2.0** — PR #87
+(OIB-Naht) ist gemerged. Die frühere Fallunterscheidung „ohne #87 lautet der Bump
+1.1.0 → 1.2.0" **entfällt**: der Ausbau unten ist eindeutig **1.2.0 → 1.3.0**.
+
+Der Bump ist in **keinem Fall** Teil des vorliegenden Normwissen-PRs (#103):
+**dieser Slice ändert kein Contract-Feld, kein Schema und keine
+`CONTRACT_VERSION`** — er fügt nur Daten, normwissen-eigene Typen und
+Query-Methoden hinzu. Das Drift-Gate bleibt unberührt (`scripts/gen_schema.py`
+erzeugt keine Änderung).
+
+**Ports-Erweiterung** (`contracts/ports.py`, kein Pydantic → kein Schema-Drift,
+CODEOWNERS = alle drei):
+
+```python
+class NormProvider(Protocol):
+    ...
+    def fuer_sonderstelle(self, typ: str) -> list[SonderstellenAnforderung]: ...
+    def zur_pruefung(self, typ: str) -> list[SonderstellenAnforderung]: ...
+    def fuer_raum_attribut(
+        self, attribut: str, raum_typ: str | None = None
+    ) -> list[SonderstellenAnforderung]: ...
+```
+
+**Auswirkungen, vollständig:**
+
+| Was | Warum |
+|---|---|
+| `norm_regelwerk`-`CONTRACT_VERSION` **1.2.0 → 1.3.0** (Stand auf `main` seit dem Merge von #87) | zwei neue Modelle im Modul |
+| `scripts/gen_schema.py` neu laufen lassen + committen | sonst bricht das Drift-Gate |
+| `tests/fakes.py::FakeNormProvider` um die drei Methoden ergänzen | `NormProvider` ist `runtime_checkable`; ohne sie erfüllt der Fake das Protocol nicht mehr |
+| `tests/fixtures/norm_regelwerk_snapshot.json` (CODEOWNERS: alle drei) um die fünf neuen `quellen`-Strings ergänzen | `tests/platzierung/test_platzierer.py` prüft `norm_quelle` gegen die **Fixture**, nicht gegen den Provider — sonst bricht der erste reale Sonderstellen-Plan |
+| keine Signatur-Änderung an bestehenden Methoden, keine Fixture wird ungültig | rein additiv |
+
+### Offen und ausdrücklich NICHT miterledigt
+
+- **Der lichttechnische Nachweis.** Eine gelieferte Quelle ist kein Nachweis.
+  `nachweis_offen` ist `True` für die vier §4.1.2-h/i-Typen (5 lx vertikal, von
+  der Engine nicht gerechnet), für `niveauaenderung` (c) nennt kein Niveau) und
+  für `besondere_gefaehrdung` (§4.4.1 ohne Bezugsgröße). Wer die Anforderung
+  konsumiert, muss das sichtbar machen, sonst meldet ein unvollständiger Plan
+  weiterhin `ok`.
+- **`engine_status` der 8 Regeln** bleibt `input_fehlt` — je Regel einzeln zu
+  ziehen, wenn #93 **und** #95 auf `main` sind und der Nachweis je Regel vorliegt
+  (Platzierung und Lichttechnik getrennt bewertet).
+- **`flaechen_schwellen`** unverändert leer (eigener Strang, siehe #87).

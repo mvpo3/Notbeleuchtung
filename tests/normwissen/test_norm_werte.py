@@ -95,12 +95,37 @@ def test_arbeitsplatz_lux_bleibt_leer_solange_der_raumtyp_fehlt():
 
 
 # ── Naht ────────────────────────────────────────────────────────────────────
-def test_neue_werte_aendern_die_quellen_naht_nicht():
-    """Die neuen Fundstellen (§4.2.2/§4.3.2/§4.2.6) stehen bewusst NICHT in
-    `quellen` — der String ist Naht-Invariante mit 3-Owner-Blast-Radius
-    (docs/NORMQUELLEN_AT.md 2a). Sie sind in der YAML dokumentiert."""
+def test_track_b_werte_stehen_nicht_in_den_quellen():
+    """Die Track-B-Fundstellen (§4.2.2/§4.3.2/§4.2.6) stehen bewusst NICHT in
+    `quellen`: sie begründen keine eigene Platzierung, sondern präzisieren Werte
+    bestehender Anforderungen. `quellen` führt nur Strings, die als
+    `Platzierung.norm_quelle` auftreten können."""
+    for nicht_drin in ("§4.2.2", "§4.3.2", "§4.2.6"):
+        assert not any(nicht_drin in q for q in SNAP.quellen)
+
+
+def test_quellen_sind_die_drei_raumregeln_plus_die_sonderstellen():
+    """`quellen` ist rein additiv gewachsen: die drei Raumregel-Fundstellen sind
+    unverändert da, dazu kommen die Auslöser der Sonderstellen (§4.1.2 c/h/i) und
+    der beiden Raum-Attribute (§4.3.8, §4.4.1).
+
+    Erst dadurch kann eine Sonderstellen-Platzierung ihre ECHTE Fundstelle
+    tragen, ohne die Naht-Invariante `norm_quelle ∈ quellen` zu verletzen. Die
+    Menge wird nur größer — bestehende Platzierungen bleiben gültig.
+
+    `tests/fixtures/norm_regelwerk_snapshot.json` (3-Owner-Lane) bleibt bei den
+    drei alten Strings und wird hier bewusst NICHT nachgezogen; siehe
+    docs/SPEC_SONDERSTELLEN_CONTRACT.md §7.
+    """
     assert SNAP.quellen == [
         "ÖNORM EN 1838:2013 §4.1",
+        "ÖNORM EN 1838:2013 §4.1.2 c)",
+        "ÖNORM EN 1838:2013 §4.1.2 h)",
+        "ÖNORM EN 1838:2013 §4.1.2 i)",
         "ÖNORM EN 1838:2013 §4.2.1",
         "ÖNORM EN 1838:2013 §4.3.1",
+        "ÖNORM EN 1838:2013 §4.3.8",
+        "ÖNORM EN 1838:2013 §4.4.1",
     ]
+    for alt in ("§4.1", "§4.2.1", "§4.3.1"):
+        assert f"ÖNORM EN 1838:2013 {alt}" in SNAP.quellen
