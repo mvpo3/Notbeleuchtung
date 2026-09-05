@@ -41,7 +41,11 @@ def build_default_bundle(ldt_path: str | Path | None = None) -> ProviderBundle:
     `ldt_path` (optional) verdrahtet die richtungsabhängige Hersteller-Photometrie in
     den Platzierer (Lux-Deckung). Ohne LDT rechnet die Deckung konstant-isotrop.
     """
-    from notbeleuchtung.normwissen import En1838NormProvider, LbTextProvider
+    from notbeleuchtung.normwissen import (
+        En1838NormProvider,
+        LbTextProvider,
+        OibRl2Provider,
+    )
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
@@ -51,4 +55,5 @@ def build_default_bundle(ldt_path: str | Path | None = None) -> ProviderBundle:
         norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(i_cd_fn=i_cd_fn),
         lb=LbTextProvider(),
+        oib=OibRl2Provider(),
     )
