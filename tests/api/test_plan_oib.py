@@ -31,8 +31,9 @@ def test_plan_mit_projekt_kontext_traegt_oib_block():
     r = _post_plan(client, projekt_kontext=_KONTEXT_JSON)
     assert r.status_code == 200
     summary = json.loads(r.headers["X-Notbeleuchtung"])
-    assert summary["oib"]["flaechen_trigger_gate"] == "offen"
     assert summary["oib"]["stufen"] == {"teil_1": "eingeschraenkt"}
+    # Scope je Raum statt Gate-Flag (Enis 05.09.): ohne raum_referenzen ungeklärt.
+    assert summary["oib"]["sanitaer_scope"]["anwendbar"] == 0
     # Der Plan selbst ist unverändert (4OG-Fixture hat keine Flächen-Schwellen).
     assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
 
@@ -72,4 +73,24 @@ def test_projekt_mit_kontext_traegt_oib_block_topleve():
         pytest.skip("Render-Extra (matplotlib/pypdf) nicht installiert")
     assert r.status_code == 200
     summary = json.loads(r.headers["X-Notbeleuchtung"])
-    assert summary["oib"]["flaechen_trigger_gate"] == "offen"
+    assert summary["oib"]["stufen"] == {"teil_1": "eingeschraenkt"}
+
+
+def test_api_header_traegt_die_scope_zaehlung():
+    """Der ausgegebene `oib`-Block ist der Weg, auf dem die Scope-Lage den Client
+    erreicht. Er ersetzt das frühere `flaechen_trigger_gate`-Flag.
+
+    Grenze, bewusst festgehalten: der Prüfbericht selbst steht NICHT im
+    `X-Notbeleuchtung`-Header (`_SUMMARY_HEADER_KEYS` führt ihn nicht) — Regel 13
+    erreicht den Client über den gezeichneten Plan, nicht über den Header.
+    """
+    client = TestClient(create_app(bundle_factory=build_fake_bundle_mit_oib))
+    r = _post_plan(client, projekt_kontext=_KONTEXT_JSON)
+    assert r.status_code == 200
+    summary = json.loads(r.headers["X-Notbeleuchtung"])
+    oib = summary["oib"]
+    assert "flaechen_trigger_gate" not in oib          # altes Flag ist weg
+    assert oib["sanitaer_scope"]["anwendbar"] == 0
+    assert oib["verkehr_scope"]["anwendbar"] == 0
+    assert any("UNGEKLÄRT" in h for h in oib["hinweise"])
+    assert "pruefung" not in summary                   # dokumentierte Grenze

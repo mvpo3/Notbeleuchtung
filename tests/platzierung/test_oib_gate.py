@@ -1,13 +1,23 @@
-"""oib_gate — Gate-Matrix (fail-closed) + Raum-Scope (v2) + Audit-Summary."""
+"""oib_gate — Geltungsbereich je Raum und je Schwelle (OVE 718.560.9.001.AT).
+
+Umgestellt am 05.09.2026 (Enis, Blocker 2, Schritt 6a): statt eines
+projekt-globalen Booleans entscheidet der Scope **je Raum**, und die beiden
+Schwellen werden **getrennt** ausgewertet. Drei Zustände: `anwendbar`,
+`nicht_anwendbar`, `ungeklaert` — „ungeklärt" ist ausdrücklich nicht
+„nicht erforderlich".
+"""
 from __future__ import annotations
 
 import pytest
 
 from notbeleuchtung.hauptengine.contracts import OibBefund, OibErgebnis, RaumReferenz
 from notbeleuchtung.platzierung.oib_gate import (
-    flaechen_trigger_offen,
-    freigegebene_raeume,
     gate_summary,
+    raeume_ohne_geklaerten_scope,
+    raum_zuordnung,
+    sanitaer_scope,
+    unbekannte_raum_referenzen,
+    verkehr_scope,
 )
 
 
@@ -19,89 +29,203 @@ def _erg(stufe: str, i: int = 1, refs: tuple = ()) -> OibErgebnis:
     )
 
 
-def _befund(*stufen: str) -> OibBefund:
-    return OibBefund(ergebnisse=[_erg(s, i) for i, s in enumerate(stufen, start=1)])
+def _befund(*eintraege: OibErgebnis) -> OibBefund:
+    return OibBefund(ergebnisse=list(eintraege))
 
 
-@pytest.mark.parametrize(
-    ("stufen", "offen"),
-    [
-        (("eingeschraenkt",), True),
-        (("uneingeschraenkt",), True),
-        (("review_required",), False),          # fail-closed
-        (("nicht_erforderlich",), False),
-        ((), False),                             # leerer Befund
-        (("review_required", "eingeschraenkt"), True),  # EIN bestätigter Teil genügt
-    ],
-)
-def test_gate_matrix(stufen, offen):
-    assert flaechen_trigger_offen(_befund(*stufen)) is offen
+# ── 8-m²-Trigger (OVE Punkt 1): raumbezogen ─────────────────────────────────
+def test_ohne_oib_pfad_wird_nicht_bewertet_statt_verneint():
+    """Fand gar keine Auswertung statt, ist das eine Aussage über den Vorgang —
+    keine fachliche Negativentscheidung. Platziert wird trotzdem nichts;
+    bestehende Pläne ändern sich dadurch nicht."""
+    assert sanitaer_scope(None, "EG", "r1") == "nicht_bewertet"
+    assert verkehr_scope(None, "EG", "r1") == "nicht_bewertet"
+    assert raum_zuordnung(None, "EG", "r1") == "nicht_bestaetigt"
 
 
-def test_gate_zu_ohne_befund():
-    assert flaechen_trigger_offen(None) is False
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt"])
+def test_bestaetigter_teil_ordnet_seine_raeume_zu(stufe):
+    """Frage 1 (räumlich) ist damit beantwortet…"""
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "bestaetigt"
 
 
-def test_gate_summary_offen():
-    s = gate_summary(_befund("eingeschraenkt", "review_required"))
-    assert s["flaechen_trigger_gate"] == "offen"
-    assert s["stufen"] == {"teil_1": "eingeschraenkt", "teil_2": "review_required"}
-    # v1-Hinweis (projekt-global) immer dabei.
-    assert any("projekt-global" in h for h in s["hinweise"])
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt"])
+def test_bestaetigte_zuordnung_macht_die_ove_regel_nicht_anwendbar(stufe):
+    """…Frage 2 (fachlich) aber nicht: Tabelle 6 belegt die Erforderlichkeit
+    einer Sicherheitsbeleuchtung, nicht die „erhöhten Anforderungen nach der Art
+    der Nutzung" der OVE-Klausel. R 12-2 liegt nicht vor → ungeklärt, nicht
+    anwendbar."""
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_gate_summary_zu_bei_review_nennt_grund():
-    s = gate_summary(_befund("review_required"))
-    assert s["flaechen_trigger_gate"] == "zu"
-    assert any("review_required" in h for h in s["hinweise"])
+def test_bestaetigter_teil_gibt_fremde_raeume_nicht_frei():
+    """Der Kern der Korrektur: ein bestätigter Gebäudeteil öffnet keine Räume,
+    die er nicht referenziert."""
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r2") == "nicht_bestaetigt"
+    assert raum_zuordnung(b, "1OG", "r1") == "nicht_bestaetigt"
+    # …aber daraus wird KEIN fachlicher Ausschluss abgeleitet:
+    assert sanitaer_scope(b, "EG", "r2") == "ungeklaert"
 
 
-# ── Raum-Scope (v2) ────────────────────────────────────────────────────────────
+def test_review_required_ist_ungeklaert_nicht_nicht_erforderlich():
+    b = _befund(_erg("review_required", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "ungeklaert"
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_ohne_befund_ist_global():
-    assert freigegebene_raeume(None, "EG") is None
+def test_negativer_oib_befund_belegt_keinen_ove_ausschluss():
+    """„Nach OIB-RL 2 Tabelle 6 nicht erforderlich" ist kein Beleg dafür, dass die
+    OVE-Regel hier nicht gilt: die Klausel nennt **R 12-2 bzw.** OIB-RL 2, und der
+    R-12-2-Zweig ist damit nicht ausgeschlossen."""
+    b = _befund(_erg("nicht_erforderlich", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "nicht_bestaetigt"
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_bestaetigend_ohne_referenzen_ist_global():
-    b = OibBefund(ergebnisse=[_erg("eingeschraenkt")])
-    assert freigegebene_raeume(b, "EG") is None
+def test_bestaetigter_teil_ohne_zuordnung_macht_ungeklaert_statt_alles_frei():
+    """Früher: Rückfall auf „alle Räume". Jetzt: der Raum ist ungeklärt — weder
+    freigegeben noch stillschweigend ausgeschlossen."""
+    b = _befund(_erg("eingeschraenkt"))
+    assert raum_zuordnung(b, "EG", "r1") == "ungeklaert"
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_raum_genau_filtert_nach_geschoss():
-    b = OibBefund(ergebnisse=[
-        _erg("eingeschraenkt", 1, refs=(("EG", "r1"), ("EG", "r2"), ("1OG", "r9"))),
-    ])
-    assert freigegebene_raeume(b, "EG") == {"r1", "r2"}
-    assert freigegebene_raeume(b, "1OG") == {"r9"}
-    assert freigegebene_raeume(b, "2OG") == set()   # Geschoss ohne Referenz → nichts frei
+def test_gemischte_nutzung_trennt_die_teile():
+    """Verkaufsteil bestätigt (mit Zuordnung), Wohnteil review_required (mit
+    Zuordnung): jeder Raum bekommt die Aussage SEINES Teils."""
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "wc_verkauf"),)),
+        _erg("review_required", 2, refs=(("EG", "wc_wohnen"),)),
+    )
+    assert raum_zuordnung(b, "EG", "wc_verkauf") == "bestaetigt"
+    assert raum_zuordnung(b, "EG", "wc_wohnen") == "ungeklaert"
+    assert raum_zuordnung(b, "EG", "halle") == "nicht_bestaetigt"
+    # Fachlich bleibt JEDER dieser Räume ungeklärt — in beide Richtungen.
+    for r in ("wc_verkauf", "wc_wohnen", "halle"):
+        assert sanitaer_scope(b, "EG", r) == "ungeklaert"
 
 
-def test_scope_gemischt_ein_teil_ohne_referenzen_ist_global():
-    # Ein bestätigender Teil OHNE Zuordnung darf nicht still enger ausgelegt werden.
-    b = OibBefund(ergebnisse=[
+# ── Widersprüchliche Zuordnung ──────────────────────────────────────────────
+def test_bestaetigter_teil_ueberstimmt_einen_ungeklaerten_nicht():
+    """Derselbe Raum hängt an zwei Gebäudeteilen mit verschiedenen Ergebnissen.
+    Das ist zu klären, nicht stillschweigend zugunsten der Freigabe zu lösen."""
+    b = _befund(
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
-        _erg("uneingeschraenkt", 2),
-    ])
-    assert freigegebene_raeume(b, "EG") is None
+        _erg("review_required", 2, refs=(("EG", "r1"),)),
+    )
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_scope_ignoriert_nicht_bestaetigende_teile():
-    # review_required-Referenzen zählen nicht — nur bestätigende Teile scopen.
-    b = OibBefund(ergebnisse=[
+def test_bestaetigt_und_verneint_ist_ebenfalls_ungeklaert():
+    b = _befund(
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
-        _erg("review_required", 2, refs=(("EG", "r7"),)),
-    ])
-    assert freigegebene_raeume(b, "EG") == {"r1"}
+        _erg("nicht_erforderlich", 2, refs=(("EG", "r1"),)),
+    )
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
-def test_gate_summary_raum_genau_flag_und_hinweis():
-    b = OibBefund(ergebnisse=[_erg("eingeschraenkt", 1, refs=(("EG", "r1"),))])
-    s = gate_summary(b)
-    assert s["flaechen_trigger_gate"] == "offen"
-    assert s["raum_genau"] is True
-    assert any("raum-genau" in h for h in s["hinweise"])
+def test_zwei_bestaetigende_teile_sind_kein_widerspruch():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("uneingeschraenkt", 2, refs=(("EG", "r1"),)),
+    )
+    assert raum_zuordnung(b, "EG", "r1") == "bestaetigt"
 
-    s_global = gate_summary(_befund("eingeschraenkt"))
-    assert s_global["raum_genau"] is False
-    assert any("projekt-global" in h for h in s_global["hinweise"])
+
+def test_widerspruch_taucht_als_ungeklaert_im_bericht_auf():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("review_required", 2, refs=(("EG", "r1"),)),
+    )
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1"]) == ["r1"]
+
+
+# ── Ungültige Raumreferenzen ────────────────────────────────────────────────
+def test_referenz_auf_unbekannten_raum_gibt_nichts_frei():
+    """Eine ins Leere zeigende Zuordnung darf keine Freigabe erzeugen — und der
+    real vorhandene Raum bleibt ohne Zuordnung, also ungeklärt."""
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "gibt_es_nicht"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "nicht_bestaetigt"
+    assert raum_zuordnung(b, "EG", "gibt_es_nicht") == "bestaetigt"  # Raum existiert nicht
+    assert unbekannte_raum_referenzen(b, "EG", ["r1"]) == ["gibt_es_nicht"]
+    hinweise = " ".join(gate_summary(b, "EG", ["r1"])["hinweise"])
+    assert "unbekannte Räume" in hinweise
+
+
+def test_unbekannte_referenzen_stehen_im_summary():
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "x1"), ("EG", "r1"))))
+    block = gate_summary(b, "EG", ["r1"])
+    assert block["unbekannte_raum_referenzen"] == ["x1"]
+    assert block["raum_zuordnung"]["bestaetigt"] == 1    # r1 bleibt korrekt zugeordnet
+    assert block["sanitaer_scope"]["anwendbar"] == 0     # fachlich trotzdem ungeklärt
+
+
+# ── 60-m²-Trigger (OVE Punkt 3): heute nie anwendbar ────────────────────────
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt", "review_required"])
+def test_verkehr_scope_wird_nie_aus_anderen_nutzungen_abgeleitet(stufe):
+    """Punkt 3 gilt nur für verkehrstechnische Einrichtungen. Die Nutzungsart ist
+    im OibBefund nicht zugesichert (nur Audit-Dict) und die Raumkategorie fehlt
+    im RaumModell → nie `anwendbar`, aber auch nicht still „nicht erforderlich"."""
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert verkehr_scope(b, "EG", "r1") == "ungeklaert"
+
+
+# ── Sichtbarkeit ────────────────────────────────────────────────────────────
+def test_ungeklaerte_raeume_werden_aufgelistet():
+    """r1 ist räumlich zugeordnet, fachlich aber ebenfalls ungeklärt; r2 ist schon
+    räumlich offen; r3 ist gar nicht erfasst."""
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("review_required", 2, refs=(("EG", "r2"),)),
+    )
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1", "r2", "r3"]) == ["r1", "r2", "r3"]
+
+
+def test_ungeklaert_bleibt_sichtbar_obwohl_ein_anderer_teil_bestaetigt_ist():
+    """Genau der Fall, der vorher lautlos verschwand."""
+    b = _befund(_erg("eingeschraenkt", 1), _erg("review_required", 2))
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1"]) == ["r1"]
+    hinweise = " ".join(gate_summary(b, "EG", ["r1"])["hinweise"])
+    assert "UNGEKLÄRT" in hinweise and "review_required" in hinweise
+
+
+def test_summary_zaehlt_die_scope_zustaende():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("review_required", 2, refs=(("EG", "r2"),)),
+    )
+    block = gate_summary(b, "EG", ["r1", "r2", "r3"])
+    assert block["raum_zuordnung"] == {
+        "bestaetigt": 1, "nicht_bestaetigt": 1, "ungeklaert": 1
+    }
+    # Fachlich: nie „anwendbar", solange der Nutzungs-Scope nicht belegt ist.
+    assert block["sanitaer_scope"] == {
+        "anwendbar": 0, "nicht_anwendbar": 0, "ungeklaert": 3, "nicht_bewertet": 0
+    }
+    assert any("Anwendbarkeit" in h for h in block["hinweise"])
+    # Weder bejaht noch verneint — beide Richtungen brauchen einen Beleg.
+    assert any("weder bejaht noch verneint" in h for h in block["hinweise"])
+    assert block["verkehr_scope"]["anwendbar"] == 0
+    assert block["stufen"] == {"teil_1": "eingeschraenkt", "teil_2": "review_required"}
+
+
+def test_summary_nennt_den_verkehrs_vorbehalt_immer():
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "r1"),)))
+    assert any("60-m²" in h for h in gate_summary(b, "EG", ["r1"])["hinweise"])
+
+
+# ── Keine negative Ableitung (Korrektur 05.09.) ─────────────────────────────
+@pytest.mark.parametrize("befund_bauer", [
+    lambda: None,                                                   # kein OIB-Pfad
+    lambda: _befund(_erg("nicht_erforderlich", refs=(("EG", "r1"),))),  # negativ
+    lambda: _befund(_erg("eingeschraenkt", refs=(("EG", "rX"),))),      # nicht zugeordnet
+])
+def test_keine_evidenz_erzeugt_keine_behauptete_nichtanwendbarkeit(befund_bauer):
+    """Fehlende oder allein negative OIB-Evidenz belegt keinen Ausschluss der
+    konkreten OVE-Regel. `nicht_anwendbar` wird deshalb nirgends vergeben."""
+    b = befund_bauer()
+    assert sanitaer_scope(b, "EG", "r1") != "nicht_anwendbar"
+    assert verkehr_scope(b, "EG", "r1") != "nicht_anwendbar"
