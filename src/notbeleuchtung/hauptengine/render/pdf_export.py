@@ -68,10 +68,15 @@ def dxf_zu_pdf(
         # Pixel→Daten) — savefig(bbox_inches="tight") crasht dann in
         # get_window_extent ("cannot unpack non-iterable NoneType"). Extent =
         # Pixelmaße nachrüsten; der Transform macht daraus die richtige Screen-Box.
+        # Zusätzlich spiegelt der Backend IMAGEs vertikal (empirisch geprüft an der
+        # Blatt-Vorlage: AutoCAD richtig, matplotlib kopfüber — doppelter Flip aus
+        # np.flip(axis=0) + Pixel-Transform) → Daten einmal zurückspiegeln.
+        import numpy as np
         for im in ax.images:
+            arr = im.get_array()
             if getattr(im, "_extent", None) is None:
-                arr = im.get_array()
                 im._extent = (0.0, float(arr.shape[1]), 0.0, float(arr.shape[0]))
+            im.set_data(np.flip(arr, axis=0))
         if ausschnitt is not None:
             # finalize=True setzt aspect=equal mit adjustable='datalim' — dabei
             # überstimmt matplotlib feste xlim/ylim („Ignoring fixed x limits").
