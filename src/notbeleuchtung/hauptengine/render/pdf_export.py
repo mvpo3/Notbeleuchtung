@@ -64,6 +64,14 @@ def dxf_zu_pdf(
         Frontend(RenderContext(doc), MatplotlibBackend(ax)).draw_layout(
             ziel_layout, finalize=True, layout_properties=lp
         )
+        # ezdxf's draw_image erzeugt AxesImage ohne extent (Transform mappt
+        # Pixel→Daten) — savefig(bbox_inches="tight") crasht dann in
+        # get_window_extent ("cannot unpack non-iterable NoneType"). Extent =
+        # Pixelmaße nachrüsten; der Transform macht daraus die richtige Screen-Box.
+        for im in ax.images:
+            if getattr(im, "_extent", None) is None:
+                arr = im.get_array()
+                im._extent = (0.0, float(arr.shape[1]), 0.0, float(arr.shape[0]))
         if ausschnitt is not None:
             # finalize=True setzt aspect=equal mit adjustable='datalim' — dabei
             # überstimmt matplotlib feste xlim/ylim („Ignoring fixed x limits").
