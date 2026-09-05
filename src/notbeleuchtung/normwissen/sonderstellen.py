@@ -269,19 +269,45 @@ class SonderstellenKatalog:
         return ausloeser in self._cfg["norm_anforderung"]["raum_attribute"]
 
     def gilt_nur_fuer_raumtypen(self, ausloeser: str) -> list[str]:
-        """Raumtyp-Bindung der Anforderung (leer = keine).
+        """Raumtypen, für die die Anforderung EINDEUTIG gilt (leer = keine Bindung).
 
         §4.3.8 gilt für „Toiletten für Menschen mit Behinderung" — das Flag
-        `ist_barrierefrei` allein ist nicht der Auslöser.
+        `ist_barrierefrei` allein ist nicht der Auslöser, und ein Sanitärraum ist
+        nicht automatisch eine Toilette (siehe `mehrdeutige_raumtypen`).
         """
-        return [t.upper() for t in self._block(ausloeser).get("gilt_nur_fuer_raumtypen") or []]
+        return [t.upper() for t in self._block(ausloeser).get("raumtypen_eindeutig") or []]
+
+    def mehrdeutige_raumtypen(self, ausloeser: str) -> list[str]:
+        """Raumtypen, die die Nutzung WEDER belegen NOCH ausschließen.
+
+        Für sie darf keine Norm-Pflicht behauptet werden — sie gehören sichtbar in
+        den Prüfbericht (`mehrdeutig_grund`).
+        """
+        return [t.upper() for t in self._block(ausloeser).get("raumtypen_mehrdeutig") or []]
+
+    def mehrdeutig_grund(self, ausloeser: str) -> str:
+        return (self._block(ausloeser).get("mehrdeutig_grund") or "").strip()
+
+    def raumtyp_scope(self, ausloeser: str, raum_typ: str) -> str:
+        """`"eindeutig"` · `"mehrdeutig"` · `"ausserhalb"`.
+
+        `ausserhalb` = ein anderer Raumtyp (z.B. ZIMMER) — die Regel greift nicht;
+        `mehrdeutig` = nicht entscheidbar, Prüfhinweis statt Automatik.
+        """
+        typ = raum_typ.upper()
+        if typ in self.gilt_nur_fuer_raumtypen(ausloeser):
+            return "eindeutig"
+        if typ in self.mehrdeutige_raumtypen(ausloeser):
+            return "mehrdeutig"
+        return "ausserhalb"
 
     def braucht_raumtyp(self, ausloeser: str) -> bool:
         return bool(self._block(ausloeser).get("raumtyp_pflicht"))
 
     def gilt_fuer_raum(self, ausloeser: str, raum_typ: str) -> bool:
+        """Nur `eindeutig` löst die Anforderung aus — `mehrdeutig` bewusst nicht."""
         erlaubt = self.gilt_nur_fuer_raumtypen(ausloeser)
-        return not erlaubt or raum_typ.upper() in erlaubt
+        return not erlaubt or self.raumtyp_scope(ausloeser, raum_typ) == "eindeutig"
 
     def norm_ref(self, ausloeser: str) -> str:
         """Fundstelle mit Seitenangabe — für Doku und Prüfbericht."""

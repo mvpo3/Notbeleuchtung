@@ -340,7 +340,19 @@ norm_anforderung:
       # Der Auslöser ist also NICHT „barrierefrei", sondern „barrierefreie
       # TOILETTE" — das Flag allein genügt nicht, der Raumtyp gehört dazu
       # (Korrektur 05.09.2026). Ein barrierefreies Zimmer löst §4.3.8 nicht aus.
-      gilt_nur_fuer_raumtypen: [WC, SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM, TOILETTE]
+      # Präzisierung 05.09.2026: „Toilette" ist der Auslöser, nicht „Sanitärraum".
+      # EINDEUTIG toilettengenutzt sind nur WC und TOILETTE. BAD, DUSCHE,
+      # NASSRAUM und SANITAER belegen für sich genommen KEINE Toilettennutzung —
+      # ein barrierefreies Bad ist keine barrierefreie Toilette. Für sie wird die
+      # Pflicht deshalb weder behauptet noch verneint: sie sind `mehrdeutig` und
+      # gehören in den Prüfbericht, nicht in eine automatische Norm-Anwendung.
+      raumtypen_eindeutig: [WC, TOILETTE]
+      raumtypen_mehrdeutig: [SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM]
+      mehrdeutig_grund: >
+        Raumtyp belegt keine Toilettennutzung. §4.3.8 nennt ausdrücklich
+        Toiletten; ob der Raum eine (barrierefreie) Toilette enthält, ist aus dem
+        Raumtyp allein nicht bestimmbar — manuell prüfen. Andere
+        Beleuchtungsanforderungen an den Raum bleiben davon unberührt.
       raumtyp_pflicht: true     # ohne Raumtyp keine Entscheidung (fail closed)
       # §4.3.8 nennt keinen eigenen Zahlenwert; es gilt das Niveau der
       # Antipanikbeleuchtung (§4.3.1: 0,5 lx horizontal auf der freien
