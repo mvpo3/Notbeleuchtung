@@ -348,10 +348,15 @@ def test_stueckliste_mit_symbol_spalte():
 def test_anlagen_symbol_nur_bei_lb_system_typ():
     # LB-explizit: Gruppenbatterie-Symbol erscheint NUR wenn die LB einen system_typ
     # deklariert UND ein Technik-/Batterieraum erkannt ist (kein geratener Standort).
-    from notbeleuchtung.hauptengine.contracts import (
-        LBVorgabe, Platzierung, PlatzierungsErgebnis, Raum, RaumModell,
-    )
     import tempfile
+
+    from notbeleuchtung.hauptengine.contracts import (
+        LBVorgabe,
+        Platzierung,
+        PlatzierungsErgebnis,
+        Raum,
+        RaumModell,
+    )
 
     raum = RaumModell.model_validate(
         json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8")))
