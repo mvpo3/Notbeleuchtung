@@ -60,9 +60,15 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     Fluchtweg-Default-Leuchte (Corridor-Optik) ist C0 die stärkste Richtung
     (γ=60°: 149,93 cd gegen 19,53 cd in C90) — die Deckung war dadurch zu
     optimistisch. Ohne zugesicherte Optik-Ausrichtung wird jetzt konservativ mit
-    der kleinsten Lichtstärke über alle C-Ebenen gerechnet; Mollgasse EG braucht
-    damit **36 statt 28 SL**. Kommt die Ausrichtung als zugesicherte Eingabe,
-    ist die Zahl neu zu bewerten.
+    der kleinsten Lichtstärke über alle C-Ebenen gerechnet.
+
+    Das Verfahren ermittelt unter diesen konservativen Annahmen **36 SL** (vorher
+    28). Eine minimale Leuchtenzahl oder eine optimierte Anordnung ist damit
+    **nicht** nachgewiesen — und das erweiterte Anzahl-Band ist für sich genommen
+    **kein Beleg für ausreichende Beleuchtung**: es prüft eine Größenordnung, nicht
+    die Norm-Erfüllung. Der lichttechnische Nachweis bleibt offen, solange die
+    physische Optik-Ausrichtung kein zugesicherter Input ist (Regel „Lichttechnischer
+    Nachweis: Photometrie-Grundlage" im Prüfbericht).
     """
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")

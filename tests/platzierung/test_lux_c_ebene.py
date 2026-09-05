@@ -135,3 +135,36 @@ def test_altes_einparametriges_callable_bleibt_nutzbar():
     e = _e(lambda gamma: 200.0, (D_MM, 0.0))
     cos3 = math.cos(math.radians(GAMMA)) ** 3
     assert e == pytest.approx(200.0 * cos3 / H_M**2, rel=1e-9)
+
+
+# ── Weitere Verbraucher des Callables ───────────────────────────────────────
+def test_max_leuchtenabstand_fragt_ohne_richtung_konservativ():
+    """`max_leuchtenabstand_mm` rechnet über eine abstrakte Reihe — es gibt dort
+    keine C-Ebene. Es darf deshalb nicht still C0 unterstellen (das war der
+    zweite Weg in denselben Fehler), sondern muss das Minimum über C bekommen."""
+    from notbeleuchtung.platzierung.lux import max_leuchtenabstand_mm
+
+    photo = lade_ldt(str(_corridor()))
+    fn = photometrie_i_cd_fn(_corridor(), c0_azimut_grad=0.0)   # zugesicherte Ausrichtung
+    kwargs = {"montagehoehe_m": H_M, "ziel_lux": 1.0, "min_mm": 1000.0, "max_mm": 30000.0}
+
+    konservativ = max_leuchtenabstand_mm(i_cd_fn=fn, **kwargs)
+    nur_c0 = max_leuchtenabstand_mm(i_cd_fn=lambda g: photo.intensitaet(g, 0.0), **kwargs)
+    nur_min = max_leuchtenabstand_mm(i_cd_fn=photo.min_intensitaet, **kwargs)
+
+    assert konservativ == pytest.approx(nur_min, rel=1e-9)
+    assert konservativ < nur_c0, "C0-Annahme würde weiter auseinanderliegende Leuchten erlauben"
+
+
+def test_produktives_callable_nimmt_immer_die_c_ebene():
+    """Die Alt-Kompatibilität für einparametrige Callables darf bei echter
+    anisotroper Photometrie nicht greifen: was die Registry liefert, nimmt
+    immer (γ, C) — sonst gäbe es wieder einen stillen Richtungsverlust."""
+    import inspect
+
+    from notbeleuchtung.platzierung.lux import _nimmt_c_ebene
+
+    for kwargs in ({}, {"c0_azimut_grad": 0.0}):
+        fn = photometrie_i_cd_fn(_corridor(), **kwargs)
+        assert _nimmt_c_ebene(fn), inspect.signature(fn)
+    assert not _nimmt_c_ebene(lambda gamma: 200.0)   # Fakes bleiben nutzbar
