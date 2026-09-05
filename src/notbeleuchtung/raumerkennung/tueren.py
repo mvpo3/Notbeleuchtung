@@ -19,7 +19,7 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 from .dxf_load import DxfPlan
 
 # Kandidat: Blockname nennt eine Tür/Öffnung …
-_DOOR_HINT = re.compile(r"T(?:Ü|UE)R|ÖFFNUNG|OEFFNUNG", re.IGNORECASE)
+_DOOR_HINT = re.compile(r"T(?:Ü|UE)R|ÖFFNUNG|OEFFNUNG|\bBST\b|F\+H", re.IGNORECASE)
 # … aber diese sind Marker/Beschläge, keine Tür-Blätter:
 _DOOR_EXCLUDE = re.compile(r"ACHSE|ÖFFNER|OEFFNER|QUALIT", re.IGNORECASE)
 # Außen-/Eingangstür-Blöcke → Ausgang. WET = Wohnungseingangstür.
