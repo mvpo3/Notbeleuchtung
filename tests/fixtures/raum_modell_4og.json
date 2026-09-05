@@ -1,9 +1,9 @@
 {
   "contract": "RaumModell",
-  "contract_version": "1.0.0",
+  "contract_version": "1.1.0",
   "floor": "4OG",
   "coordinate_system": "mm",
-  "_source": "Handgesetztes 4OG-Beispiel (2 Stiegenhäuser A/B), Kandidaten an den 5 echten RZ-Stellen aus elektro-planer reference_symbols_mol_4og.json. Selmans echter Parser ersetzt dies in Slice 4.",
+  "_source": "Handgesetztes 4OG-Beispiel (2 StiegenhÃ¤user A/B), Kandidaten an den 5 echten RZ-Stellen aus elektro-planer reference_symbols_mol_4og.json. Selmans echter Parser ersetzt dies in Slice 4.",
   "bounds_mm": {"min_xy": [-78000.0, 3000.0], "max_xy": [-33000.0, 36000.0]},
   "raeume": [
     {"id": "stgh_b", "raum_typ": "STIEGENHAUS", "polygon_mm": [[-40000.0, 4000.0], [-35000.0, 4000.0], [-35000.0, 9000.0], [-40000.0, 9000.0]], "flaeche_m2": 25.0, "ist_fluchtweg": true, "ist_communal": true},

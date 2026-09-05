@@ -24,6 +24,7 @@ from .platzierung_ergebnis import (
     Platzierung,
     PlatzierungsErgebnis,
     Richtung,
+    Schaltungsart,
 )
 from .ports import (
     LBProvider,
@@ -50,6 +51,8 @@ from .raum_modell import (
     Node,
     Raum,
     RaumModell,
+    Sonderstelle,
+    SonderstellenTyp,
     Tuer,
     ZirkulationsGraph,
 )
@@ -102,7 +105,10 @@ __all__ = [
     "RaumRegel",
     "Richtung",
     "RzStelle",
+    "Schaltungsart",
     "SonderLux",
+    "Sonderstelle",
+    "SonderstellenTyp",
     "SystemTyp",
     "Tuer",
     "Ueberwachung",
