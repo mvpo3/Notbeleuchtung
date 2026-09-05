@@ -76,7 +76,7 @@ class NotlichtPlatzierer:
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm, oib=oib),        # Fläche (Trigger OIB-gegated)
-            *plan_sonderstellen(raum, norm),             # Pflichtstellen §4.1.2 (SL+RZ)
+            *plan_sonderstellen(raum, norm, lb),         # Pflichtstellen §4.1.2 (RZ nur mit LB)
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
             *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)
         ]
