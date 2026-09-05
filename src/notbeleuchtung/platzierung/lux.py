@@ -99,3 +99,81 @@ def lux_raster(
         erfuellt_min=mn >= ziel_lux,
         erfuellt_ud=ud >= ud_min,
     )
+
+
+def lux_punkte(
+    leuchten: list[Point],
+    punkte: list[Point],
+    *,
+    montagehoehe_m: float = 2.0,
+    i_cd: float = 200.0,
+    i_cd_fn: Callable[[float], float] | None = None,
+    ziel_lux: float = 1.0,
+    ud_min: float = _UD_DEFAULT,
+) -> LuxErgebnis:
+    """Beleuchtungsstärke an EXPLIZITEN Nachweis-Punkten (statt Flächen-Raster).
+
+    EN 1838 §4.2.1 fordert die 1 lx auf der MITTELLINIE des Rettungswegs (und
+    ≥ 0,5 lx im halben Mittenband) — nicht flächig bis in jede Raum-Ecke. Der
+    bisherige bbox-Raster-Nachweis war strenger als die Norm und trieb die
+    Verdichtung auf ~5-m-Abstände, obwohl die Hersteller-Photometrie (Corridor-
+    Optik) >13 m hergibt. Physik identisch zu `lux_raster`.
+    """
+    if not punkte or not leuchten:
+        return LuxErgebnis(0.0, 0.0, 0.0, 0.0, False, False)
+    px = np.array([p[0] for p in punkte], dtype=float)
+    py = np.array([p[1] for p in punkte], dtype=float)
+    h_mm = montagehoehe_m * 1000.0
+    i_fn_v = np.vectorize(i_cd_fn) if i_cd_fn is not None else None
+    e = np.zeros_like(px, dtype=float)
+    for lx, ly in leuchten:
+        d_h = np.sqrt((px - lx) ** 2 + (py - ly) ** 2)
+        d = np.sqrt(d_h * d_h + h_mm * h_mm)
+        cos_theta = h_mm / d
+        i = i_fn_v(np.degrees(np.arctan2(d_h, h_mm))) if i_fn_v is not None else i_cd
+        e += i * cos_theta**3 / (montagehoehe_m**2)
+    mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
+    ud = (mn / mx) if mx > 0 else 0.0
+    return LuxErgebnis(
+        min_lux=mn, max_lux=mx, mittel_lux=mean, ud=ud,
+        erfuellt_min=mn >= ziel_lux,
+        erfuellt_ud=ud >= ud_min,
+    )
+
+
+def max_leuchtenabstand_mm(
+    *,
+    montagehoehe_m: float = 2.0,
+    i_cd: float = 200.0,
+    i_cd_fn: Callable[[float], float] | None = None,
+    ziel_lux: float = 1.0,
+    min_mm: float = 4000.0,
+    max_mm: float = 30000.0,
+) -> float:
+    """Photometrisch maximaler Leuchtenabstand einer Reihe für `ziel_lux` am
+    ungünstigsten Punkt (Mitte zwischen zwei Leuchten, 4 Nachbarn berücksichtigt).
+
+    Bisektion über [min_mm, max_mm]; Startwert der Fluchtweg-Verdichtung — der
+    Feinnachweis (`lux_punkte` auf der Mittellinie inkl. Ud) läuft danach immer.
+    """
+    def e_mitte(d_mm: float) -> float:
+        h_mm = montagehoehe_m * 1000.0
+        e = 0.0
+        for k in (-1.5, -0.5, 0.5, 1.5):
+            d_h = abs(k * d_mm)
+            gamma = float(np.degrees(np.arctan2(d_h, h_mm)))
+            dist = (d_h**2 + h_mm**2) ** 0.5
+            i = i_cd_fn(gamma) if i_cd_fn is not None else i_cd
+            e += i * (h_mm / dist) ** 3 / (montagehoehe_m**2)
+        return e
+
+    if e_mitte(min_mm) < ziel_lux:
+        return min_mm
+    lo, hi = min_mm, max_mm
+    for _ in range(24):
+        mid = (lo + hi) / 2.0
+        if e_mitte(mid) >= ziel_lux:
+            lo = mid
+        else:
+            hi = mid
+    return lo
