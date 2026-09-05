@@ -1,394 +1,4286 @@
-[
-  {
-    "id": "raum_1",
-    "typ": "KÜCHE",
-    "name": "Wohnküche",
-    "polygon_mm": [
-      [
-        12557235.91330248,
-        356207132.9387373
+{
+  "raeume": [
+    {
+      "id": "raum_1",
+      "typ": "KÜCHE",
+      "name": "Wohnküche",
+      "polygon_mm": [
+        [
+          12557235.91330248,
+          356207132.9387373
+        ],
+        [
+          12556454.87117792,
+          356212159.1977113
+        ],
+        [
+          12553260.45400436,
+          356213544.85671
+        ],
+        [
+          12552160.75735789,
+          356214019.9073915
+        ],
+        [
+          12551973.79068277,
+          356213587.0975174
+        ],
+        [
+          12550276.21249778,
+          356214319.005864
+        ],
+        [
+          12549016.30177956,
+          356214863.2663628
+        ],
+        [
+          12547494.72784506,
+          356211340.96902
+        ]
       ],
-      [
-        12556454.87117792,
-        356212159.1977113
+      "flaeche_stempel": 38.35,
+      "flaeche_berechnet": 38.35284075,
+      "abweichung_prozent": 0.01,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_2",
+      "typ": "ZIMMER",
+      "name": "Hobbyraum/Fitness",
+      "polygon_mm": [
+        [
+          12547265.22605809,
+          356211440.1099791
+        ],
+        [
+          12548885.94095175,
+          356215191.9091089
+        ],
+        [
+          12550145.69009556,
+          356214647.7184076
+        ],
+        [
+          12550623.22976554,
+          356215755.3173713
+        ],
+        [
+          12541739.00882109,
+          356219625.4881028
+        ],
+        [
+          12539792.40570229,
+          356214668.2442233
+        ]
       ],
-      [
-        12553260.45400436,
-        356213544.85671
+      "flaeche_stempel": 45.36,
+      "flaeche_berechnet": 45.35606375,
+      "abweichung_prozent": -0.01,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_3",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          12543638.83711327,
+          356224394.3176237
+        ],
+        [
+          12546699.6322867,
+          356223063.3662653
+        ],
+        [
+          12545914.84675157,
+          356221255.5396566
+        ],
+        [
+          12547019.69643155,
+          356220778.2703155
+        ],
+        [
+          12547800.09389204,
+          356222584.8432719
+        ],
+        [
+          12548640.39404602,
+          356222221.8475657
+        ],
+        [
+          12549931.98102191,
+          356225211.7472151
+        ],
+        [
+          12544842.60192403,
+          356227410.2744331
+        ]
       ],
-      [
-        12552160.75735789,
-        356214019.9073915
+      "flaeche_stempel": 20.25,
+      "flaeche_berechnet": 20.24968075,
+      "abweichung_prozent": -0.0,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_4",
+      "typ": "ZIMMER",
+      "name": "Zimmer",
+      "polygon_mm": [
+        [
+          12548869.89583298,
+          356222122.7066066
+        ],
+        [
+          12552895.03536776,
+          356220383.9131991
+        ],
+        [
+          12552358.70913089,
+          356219142.2563034
+        ],
+        [
+          12553417.10361834,
+          356218684.4834185
+        ],
+        [
+          12555095.4026574,
+          356217958.5917005
+        ],
+        [
+          12555542.88455109,
+          356218028.1269574
+        ],
+        [
+          12555377.41783321,
+          356219092.9588653
+        ],
+        [
+          12554676.58571767,
+          356219395.9563793
+        ],
+        [
+          12555157.80968643,
+          356220506.2083992
+        ],
+        [
+          12554750.02543919,
+          356223130.4320713
+        ],
+        [
+          12550161.48280888,
+          356225112.606256
+        ]
       ],
-      [
-        12551973.79068277,
-        356213587.0975174
+      "flaeche_stempel": 23.27,
+      "flaeche_berechnet": 23.27478675,
+      "abweichung_prozent": 0.02,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_5",
+      "typ": "BAD",
+      "name": "Bad",
+      "polygon_mm": [
+        [
+          12543582.83874188,
+          356224309.6227181
+        ],
+        [
+          12542964.00649407,
+          356222748.0942621
+        ],
+        [
+          12544880.96691811,
+          356221919.9992063
+        ],
+        [
+          12544801.65415079,
+          356221736.3977768
+        ],
+        [
+          12545821.92039873,
+          356221295.6597078
+        ],
+        [
+          12546568.05023681,
+          356223011.5380476
+        ]
       ],
-      [
-        12550276.21249778,
-        356214319.005864
+      "flaeche_stempel": 5.63,
+      "flaeche_berechnet": 5.628485,
+      "abweichung_prozent": -0.03,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_6",
+      "typ": "BAD",
+      "name": "Bad",
+      "polygon_mm": [
+        [
+          12554650.43411653,
+          356216500.00621
+        ],
+        [
+          12553391.85130423,
+          356213596.8625869
+        ],
+        [
+          12555462.2112338,
+          356212698.7917858
+        ],
+        [
+          12556130.76349291,
+          356214244.9356508
+        ],
+        [
+          12555970.51883687,
+          356215276.1618599
+        ],
+        [
+          12555144.66699406,
+          356215632.9161357
+        ],
+        [
+          12555301.66931523,
+          356215996.3614118
+        ],
+        [
+          12555265.59827025,
+          356216227.5073091
+        ]
       ],
-      [
-        12549016.30177956,
-        356214863.2663628
+      "flaeche_stempel": 6.01,
+      "flaeche_berechnet": 6.0054155,
+      "abweichung_prozent": -0.08,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_7",
+      "typ": "ABSTELLRAUM",
+      "name": "AR",
+      "polygon_mm": [
+        [
+          12551111.28014343,
+          356216254.5973685
+        ],
+        [
+          12550315.80426461,
+          356214410.8344652
+        ],
+        [
+          12551921.6184523,
+          356213718.4900316
+        ],
+        [
+          12552288.95049742,
+          356214568.8283932
+        ],
+        [
+          12552716.56391095,
+          356215561.0940403
+        ]
       ],
-      [
-        12547494.72784506,
-        356211340.96902
-      ]
-    ],
-    "flaeche_stempel": 38.35,
-    "flaeche_berechnet": 38.35284075,
-    "abweichung_prozent": 0.01,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_2",
-    "typ": "ZIMMER",
-    "name": "Hobbyraum/Fitness",
-    "polygon_mm": [
-      [
-        12547265.22605809,
-        356211440.1099791
+      "flaeche_stempel": 3.51,
+      "flaeche_berechnet": 3.51077925,
+      "abweichung_prozent": 0.02,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_8",
+      "typ": "WC",
+      "name": "WC",
+      "polygon_mm": [
+        [
+          12543625.33607575,
+          356220004.868008
+        ],
+        [
+          12543225.0623105,
+          356219084.3565249
+        ],
+        [
+          12544604.62615906,
+          356218488.4527166
+        ],
+        [
+          12545004.79528508,
+          356219405.2822884
+        ]
       ],
-      [
-        12548885.94095175,
-        356215191.9091089
+      "flaeche_stempel": 1.51,
+      "flaeche_berechnet": 1.5065465,
+      "abweichung_prozent": -0.23,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_9",
+      "typ": "BALKON",
+      "name": "Balkon",
+      "polygon_mm": [
+        [
+          12547424.70300653,
+          356226730.5766626
+        ],
+        [
+          12551805.10557768,
+          356224838.3149809
+        ],
+        [
+          12551355.94336568,
+          356227698.689705
+        ],
+        [
+          12548396.24792604,
+          356228979.6715067
+        ],
+        [
+          12547424.68031739,
+          356226730.5859192
+        ]
       ],
-      [
-        12550145.69009556,
-        356214647.7184076
+      "flaeche_stempel": 9.79,
+      "flaeche_berechnet": 9.79044375,
+      "abweichung_prozent": 0.0,
+      "flag": "ok",
+      "quelle": "Attribut"
+    },
+    {
+      "id": "raum_10",
+      "typ": "GANG",
+      "name": "Gang",
+      "polygon_mm": [
+        [
+          12552319.01152972,
+          356219050.4734049
+        ],
+        [
+          12551507.85830527,
+          356217172.7316913
+        ],
+        [
+          12553207.31219309,
+          356216438.5958456
+        ],
+        [
+          12552160.75735789,
+          356214019.9073915
+        ],
+        [
+          12553260.45400436,
+          356213544.85671
+        ],
+        [
+          12555040.71449617,
+          356217665.9885576
+        ],
+        [
+          12555006.45602159,
+          356217888.109813
+        ]
       ],
-      [
-        12550623.22976554,
-        356215755.3173713
+      "flaeche_stempel": 9.38,
+      "flaeche_berechnet": 9.37513475,
+      "abweichung_prozent": -0.05,
+      "flag": "ok",
+      "quelle": "Attribut"
+    }
+  ],
+  "wandkoerper": [
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 360000.0,
+      "zentrum": [
+        12545586.6,
+        356221658.7
       ],
-      [
-        12541739.00882109,
-        356219625.4881028
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 332888.2,
+      "zentrum": [
+        12548152.9,
+        356212259.3
       ],
-      [
-        12539792.40570229,
-        356214668.2442233
-      ]
-    ],
-    "flaeche_stempel": 45.36,
-    "flaeche_berechnet": 45.35606375,
-    "abweichung_prozent": -0.01,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_3",
-    "typ": "ZIMMER",
-    "name": "Zimmer",
-    "polygon_mm": [
-      [
-        12543638.83711327,
-        356224394.3176237
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 359999.8,
+      "zentrum": [
+        12548618.0,
+        356213336.0
       ],
-      [
-        12546699.6322867,
-        356223063.3662653
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "GIPSKARTON_EI0",
+      "score": 0.475,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "HORIZONTAL_2MM",
+      "flaeche_mm2": 9790413.8,
+      "zentrum": [
+        12549281.3,
+        356226995.6
       ],
-      [
-        12545914.84675157,
-        356221255.5396566
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe neutral"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__35",
+      "pattern": "SOLID",
+      "flaeche_mm2": 19188554.8,
+      "zentrum": [
+        12548375.4,
+        356209949.3
       ],
-      [
-        12547019.69643155,
-        356220778.2703155
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 332888.2,
+      "zentrum": [
+        12547932.8,
+        356211750.0
       ],
-      [
-        12547800.09389204,
-        356222584.8432719
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 196361.0,
+      "zentrum": [
+        12547767.0,
+        356211366.0
       ],
-      [
-        12548640.39404602,
-        356222221.8475657
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 1800000.0,
+      "zentrum": [
+        12550346.3,
+        356212545.8
       ],
-      [
-        12549931.98102191,
-        356225211.7472151
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 360000.0,
+      "zentrum": [
+        12554728.0,
+        356216074.3
       ],
-      [
-        12544842.60192403,
-        356227410.2744331
-      ]
-    ],
-    "flaeche_stempel": 20.25,
-    "flaeche_berechnet": 20.24968075,
-    "abweichung_prozent": -0.0,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_4",
-    "typ": "ZIMMER",
-    "name": "Zimmer",
-    "polygon_mm": [
-      [
-        12548869.89583298,
-        356222122.7066066
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 360000.0,
+      "zentrum": [
+        12548776.6,
+        356223445.1
       ],
-      [
-        12552895.03536776,
-        356220383.9131991
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 360000.0,
+      "zentrum": [
+        12549014.6,
+        356223995.9
       ],
-      [
-        12552358.70913089,
-        356219142.2563034
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_060 Möbel Einbau_Pen_No__18",
+      "pattern": "SOLID",
+      "flaeche_mm2": 1633357.5,
+      "zentrum": [
+        12554484.2,
+        356212716.5
       ],
-      [
-        12553417.10361834,
-        356218684.4834185
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 38706.8,
+      "zentrum": [
+        12542674.4,
+        356221467.4
       ],
-      [
-        12555095.4026574,
-        356217958.5917005
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 45600.5,
+      "zentrum": [
+        12545001.0,
+        356227132.2
       ],
-      [
-        12555542.88455109,
-        356218028.1269574
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 40817.2,
+      "zentrum": [
+        12555423.8,
+        356217002.4
       ],
-      [
-        12555377.41783321,
-        356219092.9588653
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 12304.0,
+      "zentrum": [
+        12555341.3,
+        356217754.7
       ],
-      [
-        12554676.58571767,
-        356219395.9563793
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 56874.2,
+      "zentrum": [
+        12555122.9,
+        356219538.4
       ],
-      [
-        12555157.80968643,
-        356220506.2083992
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 44739.8,
+      "zentrum": [
+        12555993.4,
+        356213465.5
       ],
-      [
-        12554750.02543919,
-        356223130.4320713
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 14468.0,
+      "zentrum": [
+        12556151.7,
+        356212671.6
       ],
-      [
-        12550161.48280888,
-        356225112.606256
-      ]
-    ],
-    "flaeche_stempel": 23.27,
-    "flaeche_berechnet": 23.27478675,
-    "abweichung_prozent": 0.02,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_5",
-    "typ": "BAD",
-    "name": "Bad",
-    "polygon_mm": [
-      [
-        12543582.83874188,
-        356224309.6227181
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 7758.0,
+      "zentrum": [
+        12540093.4,
+        356214652.9
       ],
-      [
-        12542964.00649407,
-        356222748.0942621
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 4997.8,
+      "zentrum": [
+        12547569.6,
+        356211400.2
       ],
-      [
-        12544880.96691811,
-        356221919.9992063
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 37889.5,
+      "zentrum": [
+        12541897.4,
+        356219324.5
       ],
-      [
-        12544801.65415079,
-        356221736.3977768
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 37889.5,
+      "zentrum": [
+        12541777.2,
+        356219048.0
       ],
-      [
-        12545821.92039873,
-        356221295.6597078
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 28793.0,
+      "zentrum": [
+        12545981.6,
+        356217640.2
       ],
-      [
-        12546568.05023681,
-        356223011.5380476
-      ]
-    ],
-    "flaeche_stempel": 5.63,
-    "flaeche_berechnet": 5.628485,
-    "abweichung_prozent": -0.03,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_6",
-    "typ": "BAD",
-    "name": "Bad",
-    "polygon_mm": [
-      [
-        12554650.43411653,
-        356216500.00621
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 14424.0,
+      "zentrum": [
+        12546809.0,
+        356217285.5
       ],
-      [
-        12553391.85130423,
-        356213596.8625869
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 48576.5,
+      "zentrum": [
+        12555475.1,
+        356216132.2
       ],
-      [
-        12555462.2112338,
-        356212698.7917858
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_055 Treppen _ Lift_Pen_No__71",
+      "pattern": "SOLID",
+      "flaeche_mm2": 4306.0,
+      "zentrum": [
+        12550681.1,
+        356220304.5
       ],
-      [
-        12556130.76349291,
-        356214244.9356508
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Stair_1",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_055 Treppen _ Lift_Pen_No__71",
+      "pattern": "SOLID",
+      "flaeche_mm2": 4306.0,
+      "zentrum": [
+        12550681.1,
+        356220304.5
       ],
-      [
-        12555970.51883687,
-        356215276.1618599
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Stair_2",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 20015.5,
+      "zentrum": [
+        12539380.7,
+        356214573.8
       ],
-      [
-        12555144.66699406,
-        356215632.9161357
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 20015.2,
+      "zentrum": [
+        12539636.6,
+        356214681.1
       ],
-      [
-        12555301.66931523,
-        356215996.3614118
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 23634.8,
+      "zentrum": [
+        12557606.7,
+        356206700.4
       ],
-      [
-        12555265.59827025,
-        356216227.5073091
-      ]
-    ],
-    "flaeche_stempel": 6.01,
-    "flaeche_berechnet": 6.0054155,
-    "abweichung_prozent": -0.08,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_7",
-    "typ": "ABSTELLRAUM",
-    "name": "AR",
-    "polygon_mm": [
-      [
-        12551111.28014343,
-        356216254.5973685
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 23634.5,
+      "zentrum": [
+        12557353.5,
+        356207027.7
       ],
-      [
-        12550315.80426461,
-        356214410.8344652
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 20015.2,
+      "zentrum": [
+        12539454.6,
+        356214487.4
       ],
-      [
-        12551921.6184523,
-        356213718.4900316
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 274096.2,
+      "zentrum": [
+        12540121.0,
+        356214199.5
       ],
-      [
-        12552288.95049742,
-        356214568.8283932
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 277897.5,
+      "zentrum": [
+        12542534.1,
+        356213203.8
       ],
-      [
-        12552716.56391095,
-        356215561.0940403
-      ]
-    ],
-    "flaeche_stempel": 3.51,
-    "flaeche_berechnet": 3.51077925,
-    "abweichung_prozent": 0.02,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_8",
-    "typ": "WC",
-    "name": "WC",
-    "polygon_mm": [
-      [
-        12543625.33607575,
-        356220004.868008
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 254004.8,
+      "zentrum": [
+        12544963.1,
+        356212123.4
       ],
-      [
-        12543225.0623105,
-        356219084.3565249
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 249728.0,
+      "zentrum": [
+        12547332.3,
+        356211099.9
       ],
-      [
-        12544604.62615906,
-        356218488.4527166
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 249267.2,
+      "zentrum": [
+        12549689.4,
+        356210081.7
       ],
-      [
-        12545004.79528508,
-        356219405.2822884
-      ]
-    ],
-    "flaeche_stempel": 1.51,
-    "flaeche_berechnet": 1.5065465,
-    "abweichung_prozent": -0.23,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_9",
-    "typ": "BALKON",
-    "name": "Balkon",
-    "polygon_mm": [
-      [
-        12547424.70300653,
-        356226730.5766626
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 269999.5,
+      "zentrum": [
+        12552086.1,
+        356209046.3
       ],
-      [
-        12551805.10557768,
-        356224838.3149809
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 263999.8,
+      "zentrum": [
+        12554525.4,
+        356207992.6
       ],
-      [
-        12551355.94336568,
-        356227698.689705
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 236026.0,
+      "zentrum": [
+        12556794.2,
+        356206996.9
       ],
-      [
-        12548396.24792604,
-        356228979.6715067
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 23634.2,
+      "zentrum": [
+        12557561.6,
+        356206665.5
       ],
-      [
-        12547424.68031739,
-        356226730.5859192
-      ]
-    ],
-    "flaeche_stempel": 9.79,
-    "flaeche_berechnet": 9.79044375,
-    "abweichung_prozent": 0.0,
-    "flag": "ok",
-    "quelle": "Attribut"
-  },
-  {
-    "id": "raum_10",
-    "typ": "GANG",
-    "name": "Gang",
-    "polygon_mm": [
-      [
-        12552319.01152972,
-        356219050.4734049
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 20015.5,
+      "zentrum": [
+        12539646.5,
+        356214567.9
       ],
-      [
-        12551507.85830527,
-        356217172.7316913
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 223636.5,
+      "zentrum": [
+        12540273.6,
+        356214364.1
       ],
-      [
-        12553207.31219309,
-        356216438.5958456
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 253897.8,
+      "zentrum": [
+        12542595.2,
+        356213323.7
       ],
-      [
-        12552160.75735789,
-        356214019.9073915
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 230004.5,
+      "zentrum": [
+        12545035.5,
+        356212269.5
       ],
-      [
-        12553260.45400436,
-        356213544.85671
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 225728.0,
+      "zentrum": [
+        12547404.8,
+        356211246.0
       ],
-      [
-        12555040.71449617,
-        356217665.9885576
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 225267.5,
+      "zentrum": [
+        12549761.9,
+        356210227.8
       ],
-      [
-        12555006.45602159,
-        356217888.109813
-      ]
-    ],
-    "flaeche_stempel": 9.38,
-    "flaeche_berechnet": 9.37513475,
-    "abweichung_prozent": -0.05,
-    "flag": "ok",
-    "quelle": "Attribut"
-  }
-]
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 246000.0,
+      "zentrum": [
+        12552158.6,
+        356209192.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 240000.0,
+      "zentrum": [
+        12554597.9,
+        356208138.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 151572.0,
+      "zentrum": [
+        12556781.7,
+        356207196.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 23634.2,
+      "zentrum": [
+        12557308.3,
+        356206992.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_1",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 484901.5,
+      "zentrum": [
+        12539950.1,
+        356215964.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_2",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 446226.5,
+      "zentrum": [
+        12540164.1,
+        356215964.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_2",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 547321.0,
+      "zentrum": [
+        12542758.1,
+        356223098.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_3",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 547026.8,
+      "zentrum": [
+        12542944.0,
+        356223024.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_3",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 20004.8,
+      "zentrum": [
+        12544744.8,
+        356227833.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 20005.0,
+      "zentrum": [
+        12544853.2,
+        356227569.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 20004.8,
+      "zentrum": [
+        12544615.3,
+        356227780.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 778225.5,
+      "zentrum": [
+        12543745.1,
+        356225559.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 20005.0,
+      "zentrum": [
+        12544742.5,
+        356227562.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 737126.8,
+      "zentrum": [
+        12544177.5,
+        356226092.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_4",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 23634.0,
+      "zentrum": [
+        12555030.1,
+        356223281.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 23634.2,
+      "zentrum": [
+        12554849.4,
+        356223142.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 23634.2,
+      "zentrum": [
+        12554957.7,
+        356223422.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 172902.5,
+      "zentrum": [
+        12545148.2,
+        356227568.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 395206.8,
+      "zentrum": [
+        12547734.4,
+        356226451.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 89999.8,
+      "zentrum": [
+        12550132.3,
+        356225473.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 133305.2,
+      "zentrum": [
+        12551665.6,
+        356224753.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 153859.2,
+      "zentrum": [
+        12554437.7,
+        356223555.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 23634.2,
+      "zentrum": [
+        12554831.3,
+        356223258.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 122018.8,
+      "zentrum": [
+        12545168.5,
+        356227402.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 385207.2,
+      "zentrum": [
+        12547686.7,
+        356226277.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 89999.8,
+      "zentrum": [
+        12550053.0,
+        356225290.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 121305.0,
+      "zentrum": [
+        12551576.5,
+        356224597.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 119776.8,
+      "zentrum": [
+        12554369.3,
+        356223414.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_5",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 3332434.2,
+      "zentrum": [
+        12556040.9,
+        356216646.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_6",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 3237897.0,
+      "zentrum": [
+        12555831.2,
+        356216693.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_6",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12552819.4,
+        356220334.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.2,
+      "zentrum": [
+        12552574.5,
+        356220209.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12547793.3,
+        356222506.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31249.8,
+      "zentrum": [
+        12547860.0,
+        356222313.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12552816.3,
+        356220390.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 535000.5,
+      "zentrum": [
+        12549832.6,
+        356221641.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12547859.0,
+        356222532.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31249.8,
+      "zentrum": [
+        12552541.9,
+        356220291.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 1212500.2,
+      "zentrum": [
+        12549803.2,
+        356221447.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.0,
+      "zentrum": [
+        12547999.6,
+        356222321.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_7",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12545846.5,
+        356217873.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.0,
+      "zentrum": [
+        12546111.0,
+        356217949.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 494999.8,
+      "zentrum": [
+        12547012.0,
+        356220659.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12545810.5,
+        356217916.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 1112500.0,
+      "zentrum": [
+        12546832.0,
+        356219713.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.2,
+      "zentrum": [
+        12546021.0,
+        356218056.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_8",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12550859.5,
+        356215734.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.0,
+      "zentrum": [
+        12550817.6,
+        356215984.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 391541.0,
+      "zentrum": [
+        12547303.2,
+        356217233.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 916352.5,
+      "zentrum": [
+        12547504.4,
+        356217320.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 45456.0,
+      "zentrum": [
+        12550617.8,
+        356215823.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.675,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12550793.8,
+        356215708.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 0.80, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 51141.0,
+      "zentrum": [
+        12550555.5,
+        356216056.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 31250.0,
+      "zentrum": [
+        12550653.2,
+        356215919.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_9",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 15056.5,
+      "zentrum": [
+        12551416.9,
+        356217114.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 140201.0,
+      "zentrum": [
+        12551059.7,
+        356216286.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 288002.0,
+      "zentrum": [
+        12550944.8,
+        356216499.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 65720.8,
+      "zentrum": [
+        12551575.4,
+        356217429.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 164301.0,
+      "zentrum": [
+        12551428.5,
+        356217493.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 176078.8,
+      "zentrum": [
+        12552521.0,
+        356219669.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 377696.8,
+      "zentrum": [
+        12552287.1,
+        356219607.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_10",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 130506.0,
+      "zentrum": [
+        12555826.9,
+        356213538.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_11",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 625260.5,
+      "zentrum": [
+        12540994.0,
+        356218612.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_12",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 625206.0,
+      "zentrum": [
+        12541180.1,
+        356218538.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_12",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.625,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "DÄMMSTOFF__POLYSTYROL_EPS",
+      "flaeche_mm2": 385654.0,
+      "zentrum": [
+        12541876.6,
+        356220851.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_13",
+      "begruendung": "Geometrie 0.70, Farbe neutral, Alias 'DÄMM*'"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 385736.0,
+      "zentrum": [
+        12542062.8,
+        356220778.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_13",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12548624.2,
+        356220363.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_14",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12548688.4,
+        356220417.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_14",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 320803.8,
+      "zentrum": [
+        12549521.8,
+        356220000.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_14",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 49692.8,
+      "zentrum": [
+        12551721.1,
+        356219050.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_14",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12547994.1,
+        356218715.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_15",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12547925.3,
+        356218745.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_15",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 247500.0,
+      "zentrum": [
+        12548368.3,
+        356219714.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_15",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.2,
+      "zentrum": [
+        12549551.4,
+        356218002.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_16",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11249.8,
+      "zentrum": [
+        12549531.8,
+        356218051.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_16",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 240000.2,
+      "zentrum": [
+        12548610.1,
+        356218433.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_16",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 12500.0,
+      "zentrum": [
+        12550767.7,
+        356215774.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_17",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 31250.0,
+      "zentrum": [
+        12550153.6,
+        356214508.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_17",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 12500.2,
+      "zentrum": [
+        12550700.4,
+        356215776.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_17",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 301539.5,
+      "zentrum": [
+        12550474.4,
+        356215031.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_17",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 31249.8,
+      "zentrum": [
+        12550235.7,
+        356214540.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_17",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 31250.2,
+      "zentrum": [
+        12548869.0,
+        356214995.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_18",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 280588.0,
+      "zentrum": [
+        12549468.1,
+        356214777.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_18",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 31250.2,
+      "zentrum": [
+        12549033.3,
+        356215060.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_18",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 959224.0,
+      "zentrum": [
+        12547965.7,
+        356212809.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_19",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 814236.8,
+      "zentrum": [
+        12549507.1,
+        356223976.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_20",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12546623.9,
+        356223014.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_21",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 325647.5,
+      "zentrum": [
+        12545397.5,
+        356223586.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_21",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12546636.6,
+        356223068.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_21",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 0.5,
+      "zentrum": [
+        12546699.6,
+        356223063.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_21",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12544607.6,
+        356218432.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 21486.0,
+      "zentrum": [
+        12546570.6,
+        356222916.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 77607.8,
+      "zentrum": [
+        12546045.2,
+        356221706.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 86364.5,
+      "zentrum": [
+        12545682.4,
+        356220870.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 28440.5,
+      "zentrum": [
+        12545080.3,
+        356219483.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5186.2,
+      "zentrum": [
+        12544667.9,
+        356218483.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12544640.5,
+        356218445.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_22",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 307981.5,
+      "zentrum": [
+        12543459.0,
+        356218943.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_23",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12542793.5,
+        356221159.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_24",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12542737.7,
+        356221156.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_24",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 34729.2,
+      "zentrum": [
+        12542591.2,
+        356221230.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_24",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 17000.0,
+      "zentrum": [
+        12544687.9,
+        356221720.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 1500.2,
+      "zentrum": [
+        12544758.6,
+        356221689.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 1500.0,
+      "zentrum": [
+        12544772.4,
+        356221683.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 15629.5,
+      "zentrum": [
+        12546938.5,
+        356220748.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 137984.2,
+      "zentrum": [
+        12545537.9,
+        356221353.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 188001.8,
+      "zentrum": [
+        12543903.9,
+        356222058.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_25",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12555607.4,
+        356213118.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_26",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.5,
+      "zentrum": [
+        12555640.3,
+        356213131.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_26",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 74033.8,
+      "zentrum": [
+        12555944.2,
+        356212962.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_26",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 9377.5,
+      "zentrum": [
+        12555131.8,
+        356217888.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_27",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 22315.0,
+      "zentrum": [
+        12552416.8,
+        356219051.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_27",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 179922.5,
+      "zentrum": [
+        12554360.7,
+        356218232.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_27",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 9377.5,
+      "zentrum": [
+        12554999.4,
+        356217918.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_27",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 120114.0,
+      "zentrum": [
+        12542961.8,
+        356221637.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_34",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12554732.4,
+        356219399.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_35",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12554719.4,
+        356219431.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_35",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 103153.5,
+      "zentrum": [
+        12554935.3,
+        356219842.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_35",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 29817.5,
+      "zentrum": [
+        12549086.1,
+        356216887.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_36",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 10682.2,
+      "zentrum": [
+        12549511.4,
+        356217947.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_36",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12543393.0,
+        356220160.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_37",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 170214.2,
+      "zentrum": [
+        12544082.2,
+        356219849.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_37",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12543448.9,
+        356220163.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_37",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 100000.2,
+      "zentrum": [
+        12543227.3,
+        356219741.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_39",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 39275.2,
+      "zentrum": [
+        12555538.7,
+        356212922.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_40",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12553303.2,
+        356213580.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_41",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12553316.2,
+        356213547.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_41",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 335049.0,
+      "zentrum": [
+        12554605.5,
+        356213026.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_41",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12542374.8,
+        356218586.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_42",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 64933.8,
+      "zentrum": [
+        12542530.4,
+        356218856.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_42",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12542430.7,
+        356218589.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_42",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 94764.2,
+      "zentrum": [
+        12542007.9,
+        356218755.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_43",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12544979.8,
+        356226342.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_44",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 47794.0,
+      "zentrum": [
+        12544664.7,
+        356226462.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_44",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12544946.9,
+        356226329.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_44",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 90071.2,
+      "zentrum": [
+        12545141.7,
+        356226692.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_45",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12547969.7,
+        356222851.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_46",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 33764.5,
+      "zentrum": [
+        12547877.2,
+        356222662.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_46",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12547926.9,
+        356222815.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_46",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 81533.5,
+      "zentrum": [
+        12548301.1,
+        356222670.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_47",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 63199.8,
+      "zentrum": [
+        12555024.3,
+        356219311.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_48",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 9374.2,
+      "zentrum": [
+        12555334.7,
+        356215946.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_49",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 183534.8,
+      "zentrum": [
+        12555233.1,
+        356216825.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_49",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 9374.5,
+      "zentrum": [
+        12555364.7,
+        356216079.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_49",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 40000.2,
+      "zentrum": [
+        12555317.5,
+        356217578.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_50",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 64064.5,
+      "zentrum": [
+        12554900.9,
+        356216432.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_51",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12540380.9,
+        356214767.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_52",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 24929.0,
+      "zentrum": [
+        12540325.4,
+        356214600.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_52",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12540384.1,
+        356214711.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_52",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 48776.8,
+      "zentrum": [
+        12540083.0,
+        356214879.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_53",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12547810.1,
+        356211503.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_54",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 19930.5,
+      "zentrum": [
+        12547762.5,
+        356211355.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_54",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12547813.2,
+        356211447.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_54",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 20000.2,
+      "zentrum": [
+        12547671.0,
+        356211547.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_55",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12545707.4,
+        356217551.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_56",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 24999.8,
+      "zentrum": [
+        12545754.6,
+        356217748.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_56",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12545671.5,
+        356217594.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_56",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.2,
+      "zentrum": [
+        12547071.4,
+        356216989.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_57",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 140000.0,
+      "zentrum": [
+        12546505.5,
+        356217217.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_57",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12547028.6,
+        356216953.3
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_57",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 25000.0,
+      "zentrum": [
+        12547130.2,
+        356217100.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_58",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 24999.8,
+      "zentrum": [
+        12546671.2,
+        356217298.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_59",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12552784.3,
+        356215654.4
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_60",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 269824.5,
+      "zentrum": [
+        12551715.7,
+        356216091.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_60",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.0,
+      "zentrum": [
+        12552735.0,
+        356215634.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_60",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11249.8,
+      "zentrum": [
+        12553088.2,
+        356216449.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_61",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 105018.2,
+      "zentrum": [
+        12552952.6,
+        356216080.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_61",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 11250.2,
+      "zentrum": [
+        12553092.8,
+        356216365.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_61",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 255017.0,
+      "zentrum": [
+        12552108.4,
+        356216848.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_62",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "STAHLBETON",
+      "score": 0.775,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "BETON_BEWEHRT_SN46",
+      "flaeche_mm2": 37641.0,
+      "zentrum": [
+        12551241.8,
+        356217189.6
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_62",
+      "begruendung": "Geometrie 1.00, Farbe neutral, Alias 'BETON_BEWEHRT_SN46' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 120435.2,
+      "zentrum": [
+        12553546.2,
+        356214055.0
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_63",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 222638.8,
+      "zentrum": [
+        12554534.9,
+        356216343.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_63",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12551979.2,
+        356213650.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_64",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 174865.2,
+      "zentrum": [
+        12551263.4,
+        356213958.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_64",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12551926.6,
+        356213629.2
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_64",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 0.0,
+      "zentrum": [
+        12551973.8,
+        356213587.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_64",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 42598.2,
+      "zentrum": [
+        12552685.8,
+        356215388.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_65",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 70077.8,
+      "zentrum": [
+        12552087.7,
+        356213952.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_65",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 0.0,
+      "zentrum": [
+        12551973.8,
+        356213587.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_65",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 5000.0,
+      "zentrum": [
+        12555187.4,
+        356215668.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_66",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 4999.8,
+      "zentrum": [
+        12555233.3,
+        356215649.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_66",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 76813.2,
+      "zentrum": [
+        12555534.4,
+        356215508.1
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_66",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 21661.2,
+      "zentrum": [
+        12555278.9,
+        356215842.7
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_67",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "WAERMEDAEMMUNG",
+      "score": 0.7,
+      "via_layer": false,
+      "layer": "New_015 Innenwände",
+      "pattern": "INSULATION",
+      "flaeche_mm2": 37352.2,
+      "zentrum": [
+        12555311.9,
+        356217951.8
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "block:Wall_68",
+      "begruendung": "Geometrie 0.28, Farbe neutral, Alias 'INSULATION' exakt"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.2,
+      "zentrum": [
+        12548277.4,
+        356209236.0
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Line_1",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.5,
+      "zentrum": [
+        12541013.7,
+        356210800.2
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Line_2",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.0,
+      "zentrum": [
+        12542844.7,
+        356210009.2
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Line_3",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.2,
+      "zentrum": [
+        12555515.0,
+        356225990.4
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Polyline_1",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.2,
+      "zentrum": [
+        12549255.3,
+        356229878.6
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Polyline_2",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken",
+      "pattern": "SOLID",
+      "flaeche_mm2": 27063.2,
+      "zentrum": [
+        12551086.2,
+        356229087.6
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Polyline_3",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_105 Bemassungen Projekt_Pen_No__1",
+      "pattern": "SOLID",
+      "flaeche_mm2": 1913.8,
+      "zentrum": [
+        12550486.6,
+        356218020.6
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Level Dimension_1",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_105 Bemassungen Projekt_Pen_No__1",
+      "pattern": "SOLID",
+      "flaeche_mm2": 1913.2,
+      "zentrum": [
+        12550430.2,
+        356217997.8
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "block:Level Dimension_1",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_255 Plangrafiken_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 24602.8,
+      "zentrum": [
+        12548073.8,
+        356222557.9
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    },
+    {
+      "material": "UNBEKANNT",
+      "score": 0.2,
+      "via_layer": false,
+      "layer": "New_HKLS1_Pen_No__19",
+      "pattern": "SOLID",
+      "flaeche_mm2": 1259478.2,
+      "zentrum": [
+        12552180.9,
+        356216261.0
+      ],
+      "bauteil": false,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+    },
+    {
+      "material": "SCHACHT",
+      "score": 0.72,
+      "via_layer": false,
+      "layer": "New_HKLS1_Pen_No__39",
+      "pattern": "FEUERFESTER_STEIN",
+      "flaeche_mm2": 95401.8,
+      "zentrum": [
+        12552117.6,
+        356216152.5
+      ],
+      "bauteil": true,
+      "duplikat_variante": false,
+      "quelle": "msp",
+      "begruendung": "Geometrie 0.70, Farbe fehlt, Alias 'FEUERFESTER_STEIN' exakt"
+    }
+  ]
+}

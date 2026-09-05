@@ -58,12 +58,12 @@ Raum-Polygon-Quelle: `waende` — Rotation: Wände vertikal-dominant, Beschriftu
 | BAD | BAD | 4.35 | 4.67 | +7.4 | ok |
 | SR | — | 3.19 | 2.90 | -9.1 | ok |
 | ZIMMER | ZIMMER | 11.40 | 10.53 | -7.6 | ok |
-| STGH | — | 34.25 | 1.82 | -94.7 | zu_klein |
+| STGH | STIEGENHAUS | 34.25 | 1.82 | -94.7 | zu_klein |
 | WC | WC | 2.34 | 2.34 | +0.1 | ok |
 | VR | VORRAUM | 2.27 | 2.34 | +3.2 | ok |
 | GESCHÄFTSLOKAL | — | 56.33 | 10.53 | -81.3 | zu_klein |
 | BRE ABLUFT GARAGE | GARAGE | 3.54 | 3.56 | +0.6 | ok |
-| STGH | — | 53.20 | 5.35 | -89.9 | zu_klein |
+| STGH | STIEGENHAUS | 53.20 | 5.35 | -89.9 | zu_klein |
 | PODEST | — | 11.02 | 10.53 | -4.4 | ok |
 | ERDGESCHOSS | — | — | 1.04 | — | ok |
 | KIWA | — | 7.23 | 7.05 | -2.5 | ok |
@@ -450,4 +450,26 @@ Raum-Polygon-Quelle: `waende` — Rotation: Wände vertikal-dominant, Beschriftu
 - Abweichung > 10 %: „VORRAUM“ (-91.3 %)
 - Abweichung > 10 %: „TERRASSE TOP 1“ (-95.6 %)
 
-Laufzeit: 100.4 s
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| STAHLBETON | 84 | 360.7 | 0.79 |
+| WAERMEDAEMMUNG | 76 | 35.6 | 0.70 |
+| GIPSKARTON_EI0 | 63 | 34.3 | 0.54 |
+| ZIEGELMAUERWERK | 39 | 21.3 | 0.70 |
+| YTONG | 22 | 10.7 | 0.47 |
+| GIPSKARTON_EI30 | 17 | 2.8 | 0.70 |
+| UNBEKANNT | 3 | 0.7 | 0.39 |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 2 | 0.1 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 99.9 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+Laufzeit: 170.3 s
