@@ -66,11 +66,15 @@ _BOX_Y_LEGENDE = _BOX_Y_STUECK + _BOX_H_STUECK_MM + _PANEL_GAP_MM
 _BOX_Y_BELEGUNG = _BOX_Y_LEGENDE + _BOX_H_LEGENDE_MM + _PANEL_GAP_MM
 
 
+_panel_x0_override: list = []   # Blatt-Modus: Panels beginnen hinter dem Blattrahmen
+
+
 def _draw_info_box(msp, raum: RaumModell, y_unten_rel: float, hoehe: float,
                    layer: str, text: str, *, char_h: float = LEGENDE_HEIGHT_MM) -> None:
     """Gerahmte Info-Box in der rechten Schriftfeld-Leiste (feste Größe, Text wrappt)."""
     (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-    x0 = max_x + _PANEL_ABSTAND_MM
+    x0 = (_panel_x0_override[0] if _panel_x0_override
+          else max_x + _PANEL_ABSTAND_MM)
     y0 = min_y + y_unten_rel
     x1, y1 = x0 + _PANEL_B_MM, y0 + hoehe
     msp.add_lwpolyline([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], close=True,
@@ -567,15 +571,41 @@ def _draw_anlage(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
     if not kandidaten:
         return False
     r = kandidaten[0]
-    cx = sum(p[0] for p in r.polygon_mm) / len(r.polygon_mm)
-    cy = sum(p[1] for p in r.polygon_mm) / len(r.polygon_mm)
+    # Owner-Korrektur: die Anlage steht AN DER WAND (Schrank!), nicht in der
+    # Raummitte — längste Polygon-Kante, Symbol parallel zur Wand, nach innen
+    # versetzt.
+    poly = r.polygon_mm
+    laengste, best_l = None, -1.0
+    for i in range(len(poly)):
+        a, b = poly[i], poly[(i + 1) % len(poly)]
+        l = math.hypot(b[0] - a[0], b[1] - a[1])
+        if l > best_l:
+            best_l, laengste = l, (a, b)
+    (ax, ay), (bx, by) = laengste
+    wx, wy = (bx - ax) / best_l, (by - ay) / best_l
+    mx, my = (ax + bx) / 2.0, (ay + by) / 2.0
+    zx = sum(p[0] for p in poly) / len(poly)
+    zy = sum(p[1] for p in poly) / len(poly)
+    nx_, ny_ = -wy, wx
+    if (zx - mx) * nx_ + (zy - my) * ny_ < 0:      # Normale zeigt in den Raum
+        nx_, ny_ = -nx_, -ny_
+    tiefe = 4.46 / 2.0 * inserter.DE_GLOBAL_SCALE  # halbe Block-Tiefe (825/2 mm)
+    cx, cy = mx + nx_ * (tiefe + 60.0), my + ny_ * (tiefe + 60.0)
+    rotation = math.degrees(math.atan2(wy, wx)) % 180.0
     eintrag = library.load_mapping().get("gruppenbatterie_anlage")
     if eintrag is None:
         return False
     library.import_block(msp.doc, eintrag["block_name"])
+    # Owner-Korrektur Farbe: die grüne Schraffur-Hälfte des Blocks geht beim
+    # Skalieren optisch verloren → auf SOLID + BYLAYER stellen, Insert auf das
+    # Notlicht-Layer (erbt das Schrack-Grün) — passt zu unseren Symbolen.
+    for e in msp.doc.blocks[eintrag["block_name"]]:
+        if e.dxftype() == "HATCH" and e.dxf.color == 3:
+            e.set_solid_fill(color=256)
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
         "xscale": inserter.DE_GLOBAL_SCALE, "yscale": inserter.DE_GLOBAL_SCALE,
-        "layer": LAYER_BELEGUNG,
+        "rotation": rotation,
+        "layer": LAYER_NOTBELEUCHTUNG,
     })
     _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
             "zentralbatterie": "Zentralbatterie"}
@@ -599,36 +629,248 @@ def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsEr
 
 
 
-def _draw_vorlage(msp, raum: RaumModell) -> bool:
-    """Owner-Plan-Vorlage (Block `Vorlage_Legende` aus der Symbol-Library):
-    der komplette Legenden-Rahmen (Beleuchtung/Notbeleuchtung/Erdung/Verteiler/
-    BMA/Kommunikation/Abkürzungen) wird JEDEM generierten Plan rechts angefügt
-    (Owner-Vorgabe 2026-09-05). Skaliert auf die Grundriss-Höhe, sitzt rechts
-    neben der Schriftfeld-Leiste."""
+def _draw_vorlage(msp, raum: RaumModell,
+                  platzierung: PlatzierungsErgebnis | None = None) -> tuple[bool, bool]:
+    """Owner-Plan-Vorlage (`Vorlage_Legende`) als DER Legenden-Rahmen des Plans.
+
+    Owner-Korrektur 2026-09-05: die Vorlage wird nicht nur angehängt, sondern
+    BENUTZT — die Engine schreibt die verwendeten Symbole in die Sektion
+    „Legende Notbeleuchtung" (Spalten Symbol | Bezeichnung). Liefert
+    (vorlage_platziert, legende_gefuellt); ist die Legende gefüllt, entfällt
+    die separate Stücklisten-Box."""
     from ezdxf import bbox as _ezbbox
 
     eintrag = library.load_mapping().get("vorlage_legende")
     if eintrag is None:
-        return False
+        return False, False
     try:
         library.import_block(msp.doc, eintrag["block_name"])
     except KeyError:
-        return False
+        return False, False
     blk = msp.doc.blocks[eintrag["block_name"]]
     bb = _ezbbox.extents((e for e in blk if e.dxftype() != "ATTDEF"), fast=True)
     if not bb.has_data or bb.size.y < 1e-6:
-        return False
+        return False, False
     (_min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
     ziel_h = max(max_y - min_y, 10000.0)
-    s = ziel_h / bb.size.y
-    # Block ist re-origin'd (Zentrum = Einfügepunkt) → Zentrum der Zielfläche.
-    x0 = max_x + _PANEL_ABSTAND_MM + _PANEL_B_MM + _PANEL_ABSTAND_MM
-    cx = x0 + (bb.size.x * s) / 2.0
+    sc = ziel_h / bb.size.y
+    basis = (_panel_x0_override[0] if _panel_x0_override
+             else max_x + _PANEL_ABSTAND_MM)
+    x0 = basis + _PANEL_B_MM + _PANEL_ABSTAND_MM
+    cx = x0 + (bb.size.x * sc) / 2.0
     cy = min_y + ziel_h / 2.0
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
-        "xscale": s, "yscale": s, "layer": LAYER_LEGENDE,
+        "xscale": sc, "yscale": sc, "layer": LAYER_LEGENDE,
     })
-    return True
+
+    # ── Sektion „Legende Notbeleuchtung" der Vorlage füllen ──
+    if platzierung is None or not platzierung.platzierungen:
+        return True, False
+    texte = [e for e in blk if e.dxftype() == "TEXT"]
+    kopf = next((t for t in texte
+                 if "legende notbeleuchtung" in t.dxf.text.strip().lower()), None)
+    if kopf is None:
+        return True, False
+    kx, ky = kopf.dxf.insert.x, kopf.dxf.insert.y
+    # Sektionsende = nächster „Legende …"-Kopf unterhalb (Block-lokal).
+    untere = [t.dxf.insert.y for t in texte
+              if t.dxf.text.strip().lower().startswith("legende")
+              and t.dxf.insert.y < ky - 1.0]
+    y_ende = max(untere) if untere else ky - 40.0
+    # Spalten aus den Kopfzeilen der Sektion (Symbol/Bezeichnung).
+    sym_x = kx + 4.0
+    bez_x = kx + 29.0
+    band = ky - 7.0 - y_ende - 2.0
+    def welt(px, py):
+        return (cx + px * sc, cy + py * sc)   # Block ist re-origin'd (Zentrum=0)
+
+    gruppen: dict[str, dict] = {}
+    for p in platzierung.platzierungen:
+        key = p.typ_letter or _KIND_CODE.get(p.kind, "?")
+        g = gruppen.setdefault(key, {"kind": p.kind, "produkt": p.typ_name or p.catalog_key,
+                                     "key": p.catalog_key, "n": 0})
+        g["n"] += 1
+    zeilen = sorted(gruppen)
+    rowh = max(min(band / max(len(zeilen), 1), 8.0), 4.5)
+    mapping = library.load_mapping()
+    y_local = ky - 9.0
+    for letter in zeilen:
+        if y_local - rowh < y_ende:
+            wx, wy = welt(sym_x, y_local - rowh / 2.0)
+            t = msp.add_mtext("… weitere siehe Stückliste", dxfattribs={
+                "layer": LAYER_STUECKLISTE, "char_height": 2.2 * sc})
+            t.set_location((wx, wy), attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+            return True, False
+        g = gruppen[letter]
+        e2 = mapping.get(g["key"])
+        if e2 is not None:
+            library.import_block(msp.doc, e2["block_name"])
+            sb = _ezbbox.extents(msp.doc.blocks[e2["block_name"]], fast=True)
+            s_sym = (rowh * 0.62 * sc) / max(sb.size.y, 1e-6)
+            wx, wy = welt(sym_x + 3.0, y_local - rowh / 2.0)
+            msp.add_blockref(e2["block_name"], (wx, wy), dxfattribs={
+                "xscale": s_sym, "yscale": s_sym, "layer": LAYER_NOTBELEUCHTUNG})
+        wx, wy = welt(bez_x, y_local - rowh / 2.0)
+        t = msp.add_mtext(
+            f"{g['n']}x Typ {letter} | {_KIND_LABEL.get(g['kind'], g['kind'])} | {g['produkt']}",
+            dxfattribs={"layer": LAYER_STUECKLISTE, "char_height": 2.0 * sc})
+        t.set_location((wx, wy), attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+        y_local -= rowh
+    return True, True
+
+
+
+# ── Blatt-Layout (Owner-Vorlage `Notbeleuchtungspläne-Vorlage.dxf`) ──
+# Paperspace-Vorlage im Rivoplan-Stil (Referenz: Selo-Design-Elektromontageplan):
+# Planrahmen + Legende + Plankopf, der Grundriss erscheint im Haupt-VIEWPORT.
+_BLATT_VORLAGE_RELPATH = Path("Vorlagen-Legende") / "Notbeleuchtungspläne-Vorlage.dxf"
+_blatt_vorlage_cache: dict = {}
+
+
+def _blatt_vorlage_doc():
+    if "doc" in _blatt_vorlage_cache:
+        return _blatt_vorlage_cache["doc"]
+    pfad = None
+    for parent in Path(__file__).resolve().parents:
+        kandidat = parent / _BLATT_VORLAGE_RELPATH
+        if kandidat.is_file():
+            pfad = kandidat
+            break
+    _blatt_vorlage_cache["doc"] = ezdxf.readfile(str(pfad)) if pfad else None
+    _blatt_vorlage_cache["pfad"] = pfad
+    return _blatt_vorlage_cache["doc"]
+
+
+def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
+    """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
+
+    Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
+    Rivoplan-Plankopf. Die Vorlage (Layout1, Kern 710..1392 × 275..804, Fenster
+    710..1188) wird so skaliert und verschoben, dass der generierte Grundriss im
+    Planfenster liegt. Modelspace statt Paperspace-Viewport, weil das ezdxf-
+    PDF-Rendering Viewport-Inhalte nicht maßstabstreu darstellt — so ist das
+    Blatt in AutoCAD und PDF identisch."""
+    from ezdxf.math import Matrix44
+
+    vorlage = _blatt_vorlage_doc()
+    if vorlage is None or "Layout1" not in vorlage.layout_names():
+        return None
+    quelle = vorlage.layout("Layout1")
+
+    # Vorlagen-Geometrie (vermessen): Fenster + Gesamtrahmen in Vorlagen-Einheiten.
+    FX0, FY0, FX1, FY1 = 710.0, 275.0, 1188.0, 804.0     # Planfenster
+    RX0, RY0, RX1, RY1 = 710.0, 275.0, 1392.0, 804.0     # Gesamtrahmen
+    fenster_w, fenster_h = FX1 - FX0, FY1 - FY0
+    # GESCHOSS-Extents (echte Räume) statt Gebäude-bounds — sonst sitzt ein kleines
+    # EG verloren im Fenster eines 50-m-Gebäude-Rahmens.
+    xs = [p[0] for r in raum.raeume for p in r.polygon_mm]
+    ys = [p[1] for r in raum.raeume for p in r.polygon_mm]
+    if not xs:
+        (bmin, bmax) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+        xs, ys = [bmin[0], bmax[0]], [bmin[1], bmax[1]]
+    min_x, max_x, min_y, max_y = min(xs), max(xs), min(ys), max(ys)
+    plan_w = max(max_x - min_x, 1.0)
+    plan_h = max(max_y - min_y, 1.0)
+    S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.06
+    # Fenster-Mitte → Plan-Mitte.
+    dx = (min_x + max_x) / 2.0 - (FX0 + FX1) / 2.0 * S
+    dy = (min_y + max_y) / 2.0 - (FY0 + FY1) / 2.0 * S
+    m = Matrix44.scale(S, S, 1.0) @ Matrix44.translate(dx, dy, 0.0)
+
+    floor_label = {"EG": "Erdgeschoss", "1OG": "1.Obergeschoss", "2OG": "2.Obergeschoss",
+                   "3OG": "3.Obergeschoss", "4OG": "4.Obergeschoss",
+                   "DG": "Dachgeschoss"}.get(raum.floor, raum.floor)
+
+    def im_kern(x, y):
+        return 600.0 <= x <= 1500.0 and 200.0 <= y <= 900.0
+
+    legenden_texte = {}
+    for e in quelle:
+        typ = e.dxftype()
+        try:
+            if typ == "LINE":
+                if not im_kern(e.dxf.start.x, e.dxf.start.y):
+                    continue
+                kopie = e.copy()
+            elif typ == "LWPOLYLINE":
+                pts = list(e.get_points())
+                if not (pts and im_kern(pts[0][0], pts[0][1])):
+                    continue
+                kopie = e.copy()
+            elif typ == "IMAGE":
+                # Rivoplan-Logo: die Vorlage referenziert das PNG absolut in den
+                # Owner-Downloads — auf die Repo-Kopie umbiegen und skaliert neu
+                # aufbauen (add_foreign_entity trüge die ImageDef nicht mit).
+                if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
+                    continue
+                vorlage_pfad = _blatt_vorlage_cache.get("pfad")
+                logo = (vorlage_pfad.parent / "rivoplan_logo.png") if vorlage_pfad else None
+                if logo is None or not logo.is_file():
+                    continue
+                px_w, px_h = e.dxf.image_size.x, e.dxf.image_size.y
+                w_u = e.dxf.u_pixel.magnitude * px_w
+                h_u = e.dxf.v_pixel.magnitude * px_h
+                idef = msp.doc.add_image_def(str(logo), size_in_pixel=(px_w, px_h))
+                msp.add_image(
+                    idef,
+                    insert=(e.dxf.insert.x * S + dx, e.dxf.insert.y * S + dy),
+                    size_in_units=(w_u * S, h_u * S),
+                    dxfattribs={"layer": LAYER_PLANKOPF},
+                )
+                continue
+            elif typ == "TEXT":
+                if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
+                    continue
+                kopie = e.copy()
+                t = kopie.dxf.text.strip()
+                if t == "MVP-Projekt":
+                    # Owner-Fixierung (Screenshot 2026-09-05): Projektname läuft über
+                    # die Spalte hinaus — Feld bleibt leer, Owner trägt selbst ein.
+                    continue
+                if t == "Erdgeschoss":
+                    kopie.dxf.text = floor_label
+                if t.startswith("Notbeleuchtung-"):
+                    legenden_texte[t] = (e.dxf.insert.x, e.dxf.insert.y)
+            else:
+                continue
+            kopie.dxf.layer = LAYER_PLANKOPF
+            kopie.transform(m)
+            msp.add_foreign_entity(kopie)
+        except Exception:  # noqa: S112, BLE001 — Vorlagen-Sonderentities bewusst übersprungen
+            continue
+
+    # Symbol-Spalte der Blatt-Legende (Spalte 1188..1214, Mitte ≈ 1201) bestücken.
+    from ezdxf import bbox as _ezbbox
+    _LEGENDE_BLOCKS = {
+        "pfeil nach unten": ["notbeleuchtung- richtungspfeil nach unten"],
+        "pfeil nach links": ["notbeleuchtung-richtungspfeil nach links"],
+        "pfeil nach rechts": ["notbeleuchtung-richtungspfeil nach rechts"],
+        "aufheller": ["aufheller notbeleuchtung"],
+        "antipanikleuchte": ["notbeleuchtung- antipanikleuchte"],
+        "beidseitig": ["notbeleuchtung-richtungspfeil nach links",
+                        "notbeleuchtung-richtungspfeil nach rechts"],
+        "gruppenbatterie": ["gruppenbatterie"],
+    }
+    for text, (tx, ty) in legenden_texte.items():
+        low = text.lower()
+        bloecke = next((b for k, b in _LEGENDE_BLOCKS.items() if k in low), None)
+        if not bloecke:
+            continue
+        for i, bname in enumerate(bloecke):
+            try:
+                library.import_block(msp.doc, bname)
+            except KeyError:
+                continue
+            bb = _ezbbox.extents(msp.doc.blocks[bname], fast=True)
+            hoehe_lokal = 5.5 if len(bloecke) == 1 else 3.0
+            sc = hoehe_lokal * S / max(bb.size.y, 1e-6)
+            off_y = 0.0 if len(bloecke) == 1 else (1.7 - 3.4 * i)
+            wx = 1201.0 * S + dx
+            wy = (ty + 2.6 + off_y) * S + dy
+            msp.add_blockref(bname, (wx, wy), dxfattribs={
+                "xscale": sc, "yscale": sc, "layer": LAYER_NOTBELEUCHTUNG,
+            })
+    return (RX0 * S + dx, RY0 * S + dy, RX1 * S + dx, RY1 * S + dy)
 
 
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
@@ -667,13 +909,31 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
-    lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
-    stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
-    plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
-    pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
-    belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
+    blatt_bbox = _baue_blatt_layout(msp, raum, plankopf)
+    _panel_x0_override.clear()
+    if blatt_bbox is not None:
+        # Owner-Fixierung (wohnbau_v7_dg_verbessert.dxf, 2026-09-05): im Blatt-Modus
+        # trägt das Blatt ALLES — keine Schriftfeld-Leiste, kein Legenden-Anhang,
+        # keine Info-Boxen daneben. Prüfbericht/Belegung bleiben im Summary/API.
+        lb_legende_drawn = False
+        vorlage_drawn, vorlage_legende_gefuellt = True, True
+        stueckliste_drawn = False
+    else:
+        lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
+        vorlage_drawn, vorlage_legende_gefuellt = _draw_vorlage(msp, raum, platzierung)
+        stueckliste_drawn = (
+            False if vorlage_legende_gefuellt
+            else _draw_stueckliste(msp, raum, platzierung)
+        )
+    if blatt_bbox is not None:
+        plankopf_drawn = True          # das Blatt IST der Plankopf (Rivoplan-Vorlage)
+        pruefbericht_drawn = False     # Owner: keine Zusatz-Boxen am Blatt
+        belegung_drawn = False
+    else:
+        plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
+        pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
+        belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
-    vorlage_drawn = _draw_vorlage(msp, raum)
 
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
@@ -682,6 +942,8 @@ def render_dxf(
 
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
+    blatt_drawn = blatt_bbox is not None
+    _panel_x0_override.clear()
     _set_vport(doc, raum, platzierung)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -707,5 +969,8 @@ def render_dxf(
         "stromkreis_belegung_drawn": belegung_drawn,
         "anlage_drawn": anlage_drawn,
         "vorlage_drawn": vorlage_drawn,
+        "vorlage_legende_gefuellt": vorlage_legende_gefuellt,
+        "blatt_layout_drawn": blatt_drawn,
+        "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
