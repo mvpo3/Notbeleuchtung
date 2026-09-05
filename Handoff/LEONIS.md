@@ -4,7 +4,30 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-04, Session-Ende) — DWG-Input-Slice (ODA) — HIER WEITER
+## STAND (2026-09-05) — #101 gemergt + Stromkreisnummer-Labels — HIER WEITER
+
+**PR #101 GEMERGT** (User-GO, main `a809764`, 568 grün + ruff clean lokal
+verifiziert). DWG-Input via ODA ist damit auf main.
+
+**Neuer Slice: PR offen** (`leonis/stromkreisnummer-labels`, kein Contract,
+**571 grün**, ruff clean, Visual-Goldens unverändert):
+- Digest-Empfehlung #1 (`STROMKREISNUMMER_DWG.md`): **Zuweisungs-Pass existierte
+  schon** (`platzierung/circuit_zuordnung.py`, Cap 20 + DL/BL) — gefehlt hat nur
+  das Profi-Format **Anlage/Kreis/Adresse** (LABELING1) am Symbol.
+- Neu `dxf_renderer.py::_stromkreisnummern` (render-seitig deterministisch aus
+  `circuit_hint`, robust für alte + neue Hint-Form) + zweizeiliges NODEID-Label
+  `RZ-001` / `1/1/1` (User-Entscheidung: NODEID bleibt) +
+  `stromkreisnummern_drawn`-Summary.
+- Mollgasse-EG-Realdaten-Check: 43/43 Labels zweizeilig, Kreis-Summen 1:1 gleich
+  Belegungsliste, Cap-Rollover sichtbar (BL-Kreis exakt 20 → Kreis 3).
+- Wenn #96 (v1.2.0 `luminaire_id`) mal gemergt ist: Ableitung kann vom Render in
+  den Platzierungs-Pass wandern (Follow-up, kein Blocker).
+
+Danach: 3-Owner-Stacks warten weiter auf Enis+Selman (#87/#88/#92 · #93/#95 ·
+#96/#98); unblockierter Leonis-Backlog sonst leer — Kandidat Tool-Recherche #2
+Docling ist Enis' Lane.
+
+## STAND (2026-09-04, Session-Ende) — DWG-Input-Slice (ODA)
 
 **PR #101 offen** (`leonis/dwg-input-odafc`, gepusht mit User-GO, kein Contract,
 **568 grün lokal**, ruff clean; CI beim Session-Ende: contracts ✅, test lief noch —
