@@ -4,7 +4,37 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-01, Nacht) — HIER WEITER
+## STAND (2026-09-02) — HIER WEITER
+
+**F1-Session: Quellen-Korrekturen + OIB-Gate.** main war `b96ea50` (#84 gemergt, 535 grün,
+Mollgasse-Real-Data-E2E an Bord). Der im Nacht-STAND geforderte **Regress-Check nach #83 ist
+erledigt** (COORDINATION-Eintrag: Mollgasse EG unverändert 15 RZ + 21 SL, ok) — Track B ist
+aktiv, aber mit Ud=40 (s.u.) bit-identisch zum alten Default.
+
+**Drei PRs dieser Session:**
+- **PR #87** (`leonis/oib-gate-contract`, **3-Owner, WARTET auf Enis + Selman**):
+  `NormRegelwerk` v1.2.0 — `FlaechenSchwellen.quelle` (additiv), Quellen-Doku-Korrektur
+  (60/8 m² = OVE E 8101/E 8002-1, scope-gebunden, NICHT EN 1838), `ProviderBundle.oib`,
+  `Platzierer.place(…, *, oib: OibBefund | None = None)`.
+- **PR #88** (`leonis/oib-gate-konsum`, stacked auf #87): neues `platzierung/oib_gate.py`
+  (v1 projekt-global, **fail-closed**: nur `eingeschraenkt`/`uneingeschraenkt` öffnet),
+  Flächen-Trigger nur bei offenem Gate, `pipeline.run(…, projekt_kontext=…)` +
+  `OibRl2Provider` in der Registry + `render_summary["oib"]`-Audit. Ohne ProjektKontext
+  bit-identisch (Mollgasse-E2E unverändert grün). 550 passed.
+- **Dieser PR** (`leonis/quellen-korrekturen`, Leonis-Lane): Ud-Doku-Fix in `lux.py`,
+  Handoff-Korrekturen, COORDINATION-Antwort an Enis + **Sonderstellen-GO**.
+
+**WICHTIGE fachliche Korrektur (Enis, von mir übernommen): Antipanik-Ud ist 40, nicht 10**
+(§4.2.2/§4.3.2 wortgleich „1:40"; die „10" war Uo≥0,1 aus §4.4.2 = anderes Maß). Ältere
+STAND-Blöcke unten, die „Antipanik 1:10" versprechen, sind in diesem Punkt überholt.
+
+**Owner-Entscheidung protokolliert: Sonderstellen-Contract Option A hat das Leonis-GO**
+(2 von 3 Stimmen mit Enis; wartet auf @polatselman). **Follow-up @EnisAMG:**
+`flaechen_schwellen` (Werte + `quelle`) füllen + `provider._snapshot` so erweitern, dass
+die Schwellen-Quelle in `quellen` landet — dann aktiviert sich der Flächen-Trigger, sobald
+ein ProjektKontext mit bestätigter OIB-Erforderlichkeit mitgegeben wird.
+
+## STAND (2026-09-01, Nacht)
 
 **Alles Leonis-seitige ist auf `main` (`6bf7c6a`), keine offenen Leonis-PRs.** Seit dem
 Abend-Stand dazugekommen und gemergt:
@@ -65,7 +95,8 @@ v1.1.0 davor gemergt `8d6fe23`). **513 grün**, ruff clean, Schema kein Drift = 
 Leonis liest jetzt die neuen abfragbaren Norm-Felder — **defensiv**: solange Enis' Werte `None`
 sind, ist der Plan bit-identisch (Mollgasse EG unverändert **15 RZ + 21 SL, Prüfstatus ok**):
 - **A** `lux.py` — `lux_raster` bekommt `ud_min`; `deckung.py` + `flaechen_strategy.py` leiten ihn
-  über `ud_min_aus_norm(anf.gleichmaessigkeit_max)` ab (Hardcode `1/40` weg). Aktiv → Antipanik 1:10.
+  über `ud_min_aus_norm(anf.gleichmaessigkeit_max)` ab (Hardcode `1/40` weg). ~~Aktiv → Antipanik
+  1:10~~ **KORRIGIERT 2026-09-02: Antipanik-Ud ist ebenfalls 40 (§4.3.2), nicht 10.**
 - **B** `flaechen_strategy.py` — liest `regelwerk_snapshot().flaechen_schwellen`: Fläche ≥
   `antipanik_min_m2` / WC ≥ `wc_sanitaer_min_m2` → antipanik-pflichtig (EN 1838 §4.3). Reiner
   **Zusatz**-Trigger; Antipanik-Parameter aus Enis' eigener Antipanik-Regel (`_antipanik_referenz`).
@@ -74,9 +105,11 @@ sind, ist der Plan bit-identisch (Mollgasse EG unverändert **15 RZ + 21 SL, Pr�
 
 ### → Damit Enis & Selman weiterbauen können (NÄCHSTE Schritte)
 - **@EnisAMG — Track B aktivieren:** die Konsum-Logik steht, sie ist nur inert weil die Werte fehlen.
-  In `normwissen/data` füllen → aktiviert sich automatisch: `NormAnforderung.gleichmaessigkeit_max`
-  (**40** Fluchtweg / **10** Antipanik), `NormRegelwerk.flaechen_schwellen` (`antipanik_min_m2 ≈ 60`,
-  `wc_sanitaer_min_m2 ≈ 8`), `NormAnforderung.umschaltzeit_max_s`. Kein Contract nötig (Felder da).
+  In `normwissen/data` füllen → aktiviert sich automatisch. **KORRIGIERT 2026-09-02 (Enis' Befund
+  übernommen):** `gleichmaessigkeit_max` = **40 für Rettungsweg UND Antipanik** (§4.2.2/§4.3.2; die
+  „10" war Uo aus §4.4.2 — von Enis in #83 bereits so gefüllt); `flaechen_schwellen` (≈60/8 m²)
+  stammen aus **OVE E 8101/E 8002-1** (scope-gebunden, nicht EN 1838) → werden erst mit dem
+  OIB-Gate (#87/#88) gefahrlos füllbar; `umschaltzeit_max_s` = 60-s-Vollwert (in #83 gefüllt).
 - **@polatselman — Track C (braucht Contract):** (1) neuer Raumtyp „Arbeitsplatz mit besonderer
   Gefährdung" (EN 1838 §4.4) → schaltet die schon im Contract liegende `arbeitsplatz_lux` (15/5 lx)
   frei; heute bewusst NICHT verdrahtet (wäre toter Code ohne den Raumtyp). (2) Pflicht-POIs

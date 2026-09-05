@@ -50,6 +50,8 @@ from .raum_modell import (
     Node,
     Raum,
     RaumModell,
+    Sonderstelle,
+    SonderstellenTyp,
     Tuer,
     ZirkulationsGraph,
 )
@@ -103,6 +105,8 @@ __all__ = [
     "Richtung",
     "RzStelle",
     "SonderLux",
+    "Sonderstelle",
+    "SonderstellenTyp",
     "SystemTyp",
     "Tuer",
     "Ueberwachung",
