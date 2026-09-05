@@ -196,8 +196,65 @@ def _stueckliste_text(platzierung: PlatzierungsErgebnis) -> str | None:
     return "\\P".join(zeilen)
 
 
+_LEGENDE_SYMBOL_H_MM = 300.0     # Ziel-Höhe des Mini-Symbols in der Stücklisten-Zeile
+_LEGENDE_ZEILE_MM = 420.0        # Zeilenabstand der Symbol-Stückliste
+
+
 def _draw_stueckliste(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
-    """Stückliste-Box in der rechten Schriftfeld-Leiste (über dem Prüfbericht)."""
+    """Stückliste-Box in der rechten Schriftfeld-Leiste (über dem Prüfbericht).
+
+    Mit Typ-Lettern (Symbol-Datenmodell v1.2.0) in der Profi-Form der din-Legende
+    (ACAD_TABLE „Legende Not-/Sicherheitsbeleuchtung": Stk. | SYMBOL | Typ |
+    Beschreibung): je Typ-Zeile das echte Katalog-Symbol klein vorangestellt."""
+    if platzierung.platzierungen and all(p.typ_letter for p in platzierung.platzierungen):
+        from ezdxf import bbox as _ezbbox
+
+        gruppen: dict[str, dict] = {}
+        for p in platzierung.platzierungen:
+            g = gruppen.setdefault(
+                p.typ_letter,
+                {"kind": p.kind, "produkt": p.typ_name or p.catalog_key,
+                 "key": p.catalog_key, "n": 0},
+            )
+            g["n"] += 1
+        (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+        x0 = max_x + _PANEL_ABSTAND_MM
+        y0 = min_y + _BOX_Y_STUECK
+        x1, y1 = x0 + _PANEL_B_MM, y0 + _BOX_H_STUECK_MM
+        msp.add_lwpolyline([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], close=True,
+                           dxfattribs={"layer": LAYER_STUECKLISTE})
+        kopf = msp.add_mtext("STÜCKLISTE / LEGENDE", dxfattribs={
+            "layer": LAYER_STUECKLISTE, "char_height": LEGENDE_HEIGHT_MM})
+        kopf.set_location((x0 + _PANEL_PAD_MM, y1 - _PANEL_PAD_MM),
+                          attachment_point=MTextEntityAlignment.TOP_LEFT)
+        mapping = library.load_mapping()
+        y = y1 - _PANEL_PAD_MM - _LEGENDE_ZEILE_MM * 1.2
+        for letter in sorted(gruppen):
+            g = gruppen[letter]
+            eintrag = mapping.get(g["key"])
+            sym_x = x0 + _PANEL_PAD_MM + 500.0
+            if eintrag is not None:
+                block_name = eintrag["block_name"]
+                library.import_block(msp.doc, block_name)
+                bb = _ezbbox.extents(msp.doc.blocks[block_name], fast=True)
+                h_units = max(bb.size.y, 1e-6)
+                s = _LEGENDE_SYMBOL_H_MM / h_units
+                msp.add_blockref(block_name, (sym_x, y - _LEGENDE_ZEILE_MM / 2 + 60.0),
+                                 dxfattribs={"xscale": s, "yscale": s,
+                                             "layer": LAYER_NOTBELEUCHTUNG})
+            zeile = msp.add_mtext(
+                f"{g['n']}x | Typ {letter} | {_KIND_LABEL.get(g['kind'], g['kind'])} | {g['produkt']}",
+                dxfattribs={"layer": LAYER_STUECKLISTE,
+                            "char_height": LEGENDE_HEIGHT_MM * 0.8})
+            zeile.set_location((sym_x + 800.0, y - _LEGENDE_ZEILE_MM / 2 + 60.0),
+                               attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+            y -= _LEGENDE_ZEILE_MM
+        summe = msp.add_mtext(f"Summe: {len(platzierung.platzierungen)}", dxfattribs={
+            "layer": LAYER_STUECKLISTE, "char_height": LEGENDE_HEIGHT_MM * 0.8})
+        summe.set_location((x0 + _PANEL_PAD_MM, y - 60.0),
+                           attachment_point=MTextEntityAlignment.TOP_LEFT)
+        return True
+
     text = _stueckliste_text(platzierung)
     if text is None:
         return False
@@ -490,6 +547,47 @@ def _stromkreis_belegung_text(platzierung: PlatzierungsErgebnis) -> str | None:
     return "\\P".join(zeilen)
 
 
+_ANLAGEN_RAUM_TYPEN = {"TECHNIK", "TECHNIKRAUM", "HAUSTECHNIK", "ELEKTRO", "BATTERIERAUM"}
+
+
+def _draw_anlage(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
+    """SV-Anlagen-Symbol (Gruppenbatterie, din STANDARD_SYSTEM-Pendant).
+
+    LB-explizit (CLAUDE.md-Hierarchie): gezeichnet NUR, wenn die LB einen
+    `system_typ` deklariert (z.B. mo-Elektro-LB §2.3 „Gruppenbatterie").
+    Standort: Zentrum des Technik-/Batterieraums, falls die Raumerkennung einen
+    liefert; sonst kein Symbol (kein geratener Standort). Kein Contract — die
+    Anlage ist keine Leuchten-Platzierung, sie wird render-seitig gesetzt."""
+    if lb is None or not lb.system_typ:
+        return False
+    kandidaten = [
+        r for r in raum.raeume
+        if r.raum_typ.upper() in _ANLAGEN_RAUM_TYPEN and len(r.polygon_mm) >= 3
+    ]
+    if not kandidaten:
+        return False
+    r = kandidaten[0]
+    cx = sum(p[0] for p in r.polygon_mm) / len(r.polygon_mm)
+    cy = sum(p[1] for p in r.polygon_mm) / len(r.polygon_mm)
+    eintrag = library.load_mapping().get("gruppenbatterie_anlage")
+    if eintrag is None:
+        return False
+    library.import_block(msp.doc, eintrag["block_name"])
+    msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
+        "xscale": inserter.DE_GLOBAL_SCALE, "yscale": inserter.DE_GLOBAL_SCALE,
+        "layer": LAYER_BELEGUNG,
+    })
+    _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
+            "zentralbatterie": "Zentralbatterie"}
+    text = f"SV-Anlage 1 - {_SYS.get(lb.system_typ, lb.system_typ)}"
+    if lb.batterie_standort:
+        text += f"\\P{lb.batterie_standort}"
+    mt = msp.add_mtext(text, dxfattribs={"layer": LAYER_BELEGUNG,
+                                         "char_height": ROOM_LABEL_HEIGHT_MM})
+    mt.set_location((cx, cy - 700.0), attachment_point=MTextEntityAlignment.TOP_CENTER)
+    return True
+
+
 def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
     """Stromkreis-Belegungs-Box oben in der rechten Schriftfeld-Leiste."""
     text = _stromkreis_belegung_text(platzierung)
@@ -497,6 +595,39 @@ def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsEr
         return False
     _draw_info_box(msp, raum, _BOX_Y_BELEGUNG, _BOX_H_BELEGUNG_MM, LAYER_BELEGUNG,
                    text, char_h=LEGENDE_HEIGHT_MM * 0.85)
+    return True
+
+
+
+def _draw_vorlage(msp, raum: RaumModell) -> bool:
+    """Owner-Plan-Vorlage (Block `Vorlage_Legende` aus der Symbol-Library):
+    der komplette Legenden-Rahmen (Beleuchtung/Notbeleuchtung/Erdung/Verteiler/
+    BMA/Kommunikation/Abkürzungen) wird JEDEM generierten Plan rechts angefügt
+    (Owner-Vorgabe 2026-09-05). Skaliert auf die Grundriss-Höhe, sitzt rechts
+    neben der Schriftfeld-Leiste."""
+    from ezdxf import bbox as _ezbbox
+
+    eintrag = library.load_mapping().get("vorlage_legende")
+    if eintrag is None:
+        return False
+    try:
+        library.import_block(msp.doc, eintrag["block_name"])
+    except KeyError:
+        return False
+    blk = msp.doc.blocks[eintrag["block_name"]]
+    bb = _ezbbox.extents((e for e in blk if e.dxftype() != "ATTDEF"), fast=True)
+    if not bb.has_data or bb.size.y < 1e-6:
+        return False
+    (_min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    ziel_h = max(max_y - min_y, 10000.0)
+    s = ziel_h / bb.size.y
+    # Block ist re-origin'd (Zentrum = Einfügepunkt) → Zentrum der Zielfläche.
+    x0 = max_x + _PANEL_ABSTAND_MM + _PANEL_B_MM + _PANEL_ABSTAND_MM
+    cx = x0 + (bb.size.x * s) / 2.0
+    cy = min_y + ziel_h / 2.0
+    msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
+        "xscale": s, "yscale": s, "layer": LAYER_LEGENDE,
+    })
     return True
 
 
@@ -541,6 +672,8 @@ def render_dxf(
     plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
     pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
     belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
+    anlage_drawn = _draw_anlage(msp, raum, lb)
+    vorlage_drawn = _draw_vorlage(msp, raum)
 
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
@@ -572,5 +705,7 @@ def render_dxf(
         "plankopf_drawn": plankopf_drawn,
         "pruefbericht_drawn": pruefbericht_drawn,
         "stromkreis_belegung_drawn": belegung_drawn,
+        "anlage_drawn": anlage_drawn,
+        "vorlage_drawn": vorlage_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
