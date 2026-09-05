@@ -97,7 +97,6 @@ def _parse_projekt_kontext(raw: str | None) -> ProjektKontext | None:
         raise HTTPException(
             status_code=422, detail=f"projekt_kontext ungültig: {exc}"
         ) from exc
->>>>>>> 4831b08 (api/platzierung — ProjektKontext ueber HTTP (3. Input) + OIB-Gate v2 raum-genau)
 
 
 def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
