@@ -4,60 +4,142 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (2026-09-05, Abend)
+## Stand (2026-09-05, Tagesende)
 
 ### Wiedereinstieg in 60 Sekunden
-1. **PR #103 ist offen** — https://github.com/mvpo3/Notbeleuchtung/pull/103,
-   Branch `enis/review-3owner-0905`. **Nicht gemerged.** Nach dem Push wurde
-   `origin/main` per **Merge-Commit** in den Branch integriert (kein Rebase, kein
-   Force-Push — die veröffentlichte Historie bleibt gültig). Der Merge steht
-   **lokal**; Push und PR-Text-Aktualisierung warten auf GO.
-2. **Drei Contract-PRs sind gemerged** (05.09., 11:00–11:02 UTC): **#93**
-   (RaumModell v1.1.0, Sonderstellen Option A) · **#87** (NormRegelwerk v1.2.0 +
-   OIB-Naht) · **#96** (PlatzierungsErgebnis v1.2.0). `origin/main` = `26742ed`.
-3. **Blocker 1 erledigt** (#93 auf main) · **Blocker 3 erledigt** (#87 bringt die
-   Docstring-Korrektur; `lux.py` war schon vorher korrekt) · **Blocker 2 offen**.
-4. **Offen bleiben:** das Scope-Gate der Flächen-Schwellen, die vier
-   Konsumptions-PRs (#88, #92, #95, #98 — alle gegen `main` **nicht mergefähig**)
-   und die lichttechnischen Nachweise. `flaechen_schwellen` und `engine_status`
-   sind unverändert.
-5. **CI-Lage:** `origin/main` ist **rot** — `ruff check .` bricht an
-   `scripts/render_architektur.py:86` (`C408`, aus `674b8bc`). Der Lint-Schritt
-   läuft vor der Testsuite, deshalb liefert CI aktuell **kein** Testergebnis, auch
-   nicht für #103. Fremde Lane, nicht angefasst.
+1. **`origin/main` = `5e4a46e`.** Alles von heute ist entweder drauf oder liegt
+   als offener PR.
+2. **Ein eigener PR ist gemergt:** **#103** (Sonderstellen-Quellen + Korrekturen)
+   als `680676f` — ohne fremdes Review, 22 Minuten nach dem Öffnen.
+3. **Zwei eigene PRs sind offen, beide mit @mvpo3 als Reviewer:**
+   - **#109** `enis/sonderstellen-nachzug-0905` (`f4ffd84`) — §4.3.8 nur belegte
+     Toiletten, RZ an Niveauänderung nur mit LB, Prüfregeln 12b/12c.
+     **Enthält Änderungen in Leonis' Lane.**
+   - **#110** `enis/wegbreite-randstreifen-0905` (`c964ca2`) — §4.2.1 Wegbreite/
+     Mittelbereich + §4.3.1 Randstreifen quellengebunden. Reine eigene Lane.
+   Beide CI grün, `mergeStateStatus: CLEAN`.
+4. **Nur noch ein Blocker:** das Scope-Gate der Flächen-Schwellen (Blocker 2).
+   Blocker 1 (Sonderstellen-Contract, #93) und Blocker 3 (40/10-Docstrings, #87)
+   sind mit den Merges erledigt.
+5. **Der wichtigste offene fachliche Befund** ist der Audit-Trail: die
+   Sonderstellen-Leuchten tragen weiter die Fallback-Quelle (§4.1/§4.2.1/§4.3.1)
+   statt der echten Fundstelle. Behebbar nur über die 3-Owner-Naht — ausgearbeitet
+   in `docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md` (liegt auf dem #109-Branch).
 
 ### 🔴 MORGEN ZUERST
 
 ```
 1. git fetch origin
-2. git log --oneline -1 origin/main        # zuletzt: 26742ed
-3. gh pr view 103 --json state,mergeable   # offen? konfliktfrei?
-4. gh pr checks 103                        # Lint noch rot? (C408 aus main)
-5. .venv/bin/python -m pytest -q           # gegen das Testprotokoll unten
+2. git log --oneline -1 origin/main        # zuletzt: 5e4a46e
+3. gh pr view 109 --json state,reviewDecision
+4. gh pr view 110 --json state,reviewDecision
+5. gh pr list --state open --limit 10
 ```
 
-1. **#103 pushen + PR-Beschreibung aktualisieren** (Text liegt vorbereitet) —
-   nur mit Owner-GO.
-2. **Rebase-Fassungen der vier Konsumptions-PRs prüfen** (#88, #92, #95, #98),
-   sobald Leonis sie gedreht hat. Erst danach Freigabe-Votum.
-3. **3-Owner-Vorschlag aus `SPEC_SONDERSTELLEN_CONTRACT.md` §8 einbringen** —
-   `SonderstellenAnforderung` + `LuxAnforderung` als Contract-Typen, drei
-   Ports-Methoden, Bump **1.2.0 → 1.3.0**. Ohne das bleibt die API ein Prototyp.
-4. Ohne GO: **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1) und die
-   restlichen §4.1.2-Punkte d), e), f), g), j), k).
+1. **Reviews zu #109 und #110 nachhalten.** Bei #109 ist die Auslegungsfrage
+   BAD/DUSCHE/NASSRAUM/SANITÄR offen — bewusst nicht still entschieden.
+2. **3-Owner-Vorschläge einbringen**, sobald #109/#110 durch sind:
+   - `SONDERSTELLEN_QUELLEN_NAHT.md` (Bump **1.2.0 → 1.3.0**, Ports + zwei
+     Contract-Typen) — löst den Audit-Trail-Befund.
+   - `WEGBREITE_RANDSTREIFEN.md` (`FluchtwegSegment.breite_mm`, `raum_modell`
+     **1.1.0 → 1.2.0**) — löst den fehlenden Eingabewert für §4.2.1.
+3. **Blocker 2** weiterverfolgen: Gate je Schwelle (8 m² Nutzungsart-Scope auf
+   Raum-Ebene, 60 m² Verkehrsbauwerk-Merkmal).
+4. Ohne GO: restliche **§4.1.2-Punkte d), e), f), g), j), k)** am Volltext gegen
+   die Decision-Matrix prüfen.
 
-## Gemerged am 05.09.2026 — was sich dadurch ändert
+## Was heute auf `main` gelandet ist
 
-| PR | Inhalt | Folge für meine Lane |
+**Eigen (#103, `680676f`):** Sonderstellen-Anforderungen mit echter Fundstelle,
+`SonderstellenAnforderung` + `LuxAnforderung` (normwissen-eigene Typen),
+`NormRegelwerk.quellen` um §4.1.2 c)/h)/i), §4.3.8, §4.4.1 erweitert (rein
+additiv), vier Seitenangaben korrigiert, RZ-06 in der Matrix auf `lb_explizit`.
+
+**Fremd, für meine Lane relevant:**
+
+| PR | Inhalt | Folge |
 |---|---|---|
-| **#93** | `RaumModell` v1.1.0, Sonderstellen Option A | Blocker 1 zu. `engine_status` bleibt trotzdem `input_fehlt` — er wird erst **je Regel** gezogen, wenn auch die Konsumption (#95) drin ist und der Nachweis vorliegt |
-| **#87** | `NormRegelwerk` v1.2.0, `FlaechenSchwellen.quelle`, `ProviderBundle.oib`, `place(oib=)` | Blocker 3 zu (Docstring-Korrektur im Contract). Das Feld `quelle` steht bereit — **gefüllt wird nichts**, solange das Scope-Gate offen ist |
-| **#96** | `PlatzierungsErgebnis` v1.2.0, Symbol-Datenmodell | keine Berührung mit `normwissen` |
+| **#93** | `RaumModell` v1.1.0 — Sonderstellen Option A | Blocker 1 zu |
+| **#87** | `NormRegelwerk` v1.2.0 + OIB-Naht, `FlaechenSchwellen.quelle` | Blocker 3 zu; Feld bereit, **bleibt leer** bis das Scope-Gate stimmt |
+| **#96** | `PlatzierungsErgebnis` v1.2.0 — Symbol-Datenmodell | keine Berührung |
+| **#105–#108** | Neuschnitte der gestrandeten Konsumptions-PRs (Symbol-Datenmodell, Sonderstellen, OIB-Gate, Verdichtung/Photometrie) | siehe Prüfung unten |
 
-**Contract-Versionen auf `main` jetzt:** `norm_regelwerk` **1.2.0** ·
-`raum_modell` **1.1.0** · `platzierung_ergebnis` **1.2.0** · `oib_ergebnis`
-**1.1.0**. Die frühere Angabe „NormRegelwerk steht auf 1.1.0" ist damit überholt;
-SPEC §8 ist entsprechend nachgezogen.
+**Contract-Versionen auf `main`:** `norm_regelwerk` **1.2.0** · `raum_modell`
+**1.1.0** · `platzierung_ergebnis` **1.2.0** · `oib_ergebnis` **1.1.0**.
+
+## Prüfung von #106 gegen die eigenen Befunde (05.09., nachmittags)
+
+Geprüfte Stände: #106 Head `2a216ee` / Merge `62ac276` · #107 `a368b41`/`bf42852`
+· #108 `4c57667`/`5e4a46e`.
+
+| Befund | Stand nach #106–#108 | wodurch |
+|---|---|---|
+| 5-lx-Nachweis unsichtbar | **behoben** — Prüfregel 12 kippt den Status auf `warnung` | #106 (`77214b3`) |
+| §4.4.1-Nachweis unsichtbar | **behoben** — Prüfregel 12b | #106 |
+| Audit-Trail falsche Fundstelle | **offen**, nur als Fallback gekennzeichnet (Docstring + `hinweise`) | — |
+| §4.3.8 galt für jeden barrierefreien Raum | war offen → **in #109 behoben** | eigener Nachzug |
+| RZ an Niveauänderung als Norm-Default | war offen → **in #109 behoben** | eigener Nachzug |
+| 12b ohne Bezugsfläche · 2-m-Test art-blind | war offen → **in #109 behoben** | eigener Nachzug |
+
+**#107** berührt keinen dieser Punkte; `flaechen_schwellen` bleiben `None`.
+**#108** stellt den Fluchtweg-Nachweis auf die **Mittellinie (§4.2.1, horizontal
+am Boden)** um — es ermöglicht **keinen** vertikalen Nachweis. Die geprüfte
+Bezugsfläche bleibt ausschließlich der Boden.
+
+**#106 nutzt die Prototyp-API nicht** (kein `fuer_sonderstelle`, kein `getattr`,
+kein paketübergreifender Import) — die Quellen-Naht ist damit weiter der offene
+Schritt.
+
+## Die zwei offenen eigenen PRs
+
+### #109 — Nachzug zu #103 (`f4ffd84`, CI grün)
+
+Drei Platzierungs-/Berichtsfehler, unabhängig von der Quellen-Naht behoben:
+
+* **§4.3.8 dreiwertig:** `eindeutig` (WC, TOILETTE) → Antipanik ·
+  `mehrdeutig` (SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM) → **keine** Automatik,
+  dafür **Prüfregel 12c** · `ausserhalb` (z.B. ZIMMER) → Regel greift nicht.
+  Beide Auswertungen (normwissen + platzierung) bilden denselben Scope ab.
+* **Kein automatisches Norm-RZ** an einer Niveauänderung: nur bei
+  `LBVorgabe.rz_stellen` mit `niveauaenderung`, dann mit `lb_quelle` und leerer
+  `norm_quelle` (Muster `lb_override`).
+* **Regel 12b** nennt die Bezugsfläche **Arbeitsfläche**; **2-m-Test** prüft die
+  zugeordnete Leuchtenart statt einer beliebigen Nachbarleuchte.
+
+⚠️ **Enthält Dateien aus Leonis' Lane** (`platzierung/sonderstellen_strategy.py`,
+`platzierer.py`) — im Modul-Docstring und im PR-Text als Review-Bitte markiert.
+Offene Auslegungsfrage im Review: ob BAD/DUSCHE/NASSRAUM/SANITÄR künftig anders
+behandelt werden sollen.
+
+### #110 — Wegbreite und Randstreifen (`c964ca2`, CI grün)
+
+Reine eigene Lane. `geometrie`-Abschnitt in `en1838_grundwerte.yaml` +
+`weg_nachweis(breite_mm)` → `regime = mittellinie | breiter_weg | unbestimmbar`,
+`antipanik_randstreifen_mm()`, `hat_at_abweichung()`. Kein geratener Default für
+die Wegbreite, keine Vorwegnahme der Planer-Entscheidung bei > 2 m, keine doppelte
+Zahlenpflege (Anteile rechnen auf `lux.rettungsweg`).
+
+## 📐 §4.2.1 / §4.3.1 / Anhang B — am Original geprüft (05.09.)
+
+| Größe | Wortlaut | Fundstelle |
+|---|---|---|
+| **Mittellinie** | „Bei Rettungswegen mit einer Breite **bis zu 2 m** … mindestens 1 lx" | §4.2.1 S. 1, Norm-S. 9 |
+| **Mittelbereich** | „nicht weniger als der **Hälfte der Breite** … mindestens **50 % dieses Wertes**" | §4.2.1 S. 2, Norm-S. 9 |
+| **Breitere Wege** | „**können** als mehrere 2 m breite Streifen … **oder** mit Antipanikbeleuchtung" | §4.2.1 S. 3, Norm-S. 9 |
+| **Randstreifen** | „0,5 lx … im **Kernbereich** … Randbereiche mit einer Breite von **0,5 m** nicht berücksichtigt" | **§4.3.1**, Norm-S. 11 |
+
+Drei Merksätze: die **2 m sind ein Geltungsbereich**, kein Planungsmaß · Satz 3
+ist eine **KANN-Aussage mit zwei Wegen** (Planer-Entscheidung) · der
+**Randstreifen gehört zu §4.3.1**, nicht zu §4.2.1.
+
+**Anhang B** (Norm-S. 16–17): FR, IT, DE, NL — **für Österreich keine
+A-Abweichung**; keine Abweichung berührt die 2-m-Grenze. Die französischen
+Sonderregeln (≤ 15 m Leuchtenabstand, 5 lm/m²) gelten nur dort.
+
+**Offen dazu** (in `WEGBREITE_RANDSTREIFEN.md`): die Engine prüft den
+2-m-Geltungsbereich nicht, leitet die Breite aus der Bounding-Box ab und
+schreibt `rand_mm` im Docstring §4.2.1 statt §4.3.1 zu. Der fehlende Eingabewert
+ist eine **belegte Wegbreite je Fluchtweg-Abschnitt**.
 
 ## Veröffentlicht am 05.09.2026 — sieben Reviews
 
@@ -80,7 +162,7 @@ der Schwellen nicht (s. Blocker 2). **#87 wurde trotzdem gemerged** — das änd
 nichts an der Sachlage: das Feld `FlaechenSchwellen.quelle` steht jetzt bereit,
 gefüllt wird es erst, wenn das Scope-Gate stimmt.
 
-## PR #103 — der Normwissen-Slice (veröffentlicht)
+## PR #103 — der Normwissen-Slice (**gemergt** als `680676f`)
 
 **https://github.com/mvpo3/Notbeleuchtung/pull/103**, Branch
 `enis/review-3owner-0905`, veröffentlicht auf Head **`a296e77`**:
@@ -249,7 +331,16 @@ RZ-Pflicht an einer Niveauänderung), **SL-04** bleibt Norm-Default; SL-10/SL-11
 mit korrigierten Seitenangaben. **`engine_status` überall unverändert
 `input_fehlt`.**
 
-## 🔌 Offene Schnittstelle — die neue API ist ein PROTOTYP
+## 🔌 Offene Schnittstelle — die neuen APIs sind PROTOTYPEN
+
+> Gilt seit dem 05.09. für **zwei** Bereiche: die Sonderstellen-Methoden
+> (`fuer_sonderstelle`, `zur_pruefung`, `fuer_raum_attribut`) und die
+> Geometrie-Methoden aus #110 (`weg_nachweis`, `antipanik_randstreifen_mm`,
+> `hat_at_abweichung`) samt `WegNachweis`. Beide stehen **nicht** im
+> `ports.NormProvider`-Protocol. Anschlussvorschläge:
+> `docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md` und
+> `docs/proposals/WEGBREITE_RANDSTREIFEN.md` (beide auf den jeweiligen
+> PR-Branches, noch nicht auf `main`).
 
 `fuer_sonderstelle`, `zur_pruefung` und `fuer_raum_attribut` stehen **nicht** im
 `ports.NormProvider`-Protocol. Sie sind lokal vorbereitet und nur intern + in
@@ -271,6 +362,10 @@ drei alten `quellen`-Strings).
 
 ## 📋 Anschlussauftrag für Leonis (@mvpo3)
 
+> **Stand Tagesende:** Punkte 2–4 und 6 sind in **PR #109** bereits umgesetzt
+> (dort teils in seiner Lane — deshalb die Review-Bitte). Offen bleibt vor allem
+> Punkt 1: die Umstellung auf die vereinbarte Schnittstelle.
+
 1. **Nicht** duck-typed anbinden — erst der 3-Owner-PR nach SPEC §8, dann
    konsumieren.
 2. Für eine Sonderstelle die Anforderung **des Auslösers** verwenden, nie die
@@ -288,9 +383,11 @@ drei alten `quellen`-Strings).
 **Die Quellen sind jetzt korrekt zugeordnet — der lichttechnische Nachweis ist
 damit nicht erbracht.** Ohne Punkt 6 meldet ein unvollständiger Plan weiterhin
 `ok`. Und: **die Quellen schalten nichts automatisch frei** — `engine_status`
-bleibt `input_fehlt`. #93 ist seit dem 05.09. auf `main`; es fehlt weiterhin die
-Konsumption (**#95**, von mir mit Changes Requested) und der Nachweis **je Regel**
-(Platzierung und Lichttechnik getrennt bewertet).
+bleibt `input_fehlt`. #93 **und** die Konsumption sind seit dem 05.09. auf `main`
+(#95 wurde nicht gemergt, sondern als **#106** neu geschnitten — mit meinen
+Review-Punkten teilweise eingearbeitet). Was noch fehlt, ist der Nachweis **je
+Regel**, getrennt nach Platzierung und Lichttechnik. Erst dann wird
+`engine_status` regelweise gezogen — nicht pauschal.
 
 ## 🧪 Testprotokoll 05.09.2026
 
@@ -303,7 +400,11 @@ Konsumption (**#95**, von mir mit Changes Requested) und der Nachweis **je Regel
 | gezielte Regression, PR-Stand | `93ce6f5` | 321 | 0 | 0 |
 | volle Suite, PR-Stand (rebased auf `674b8bc`) | `93ce6f5` | 599 | 7 | 2 |
 | Contract + Normwissen nach Merge von `26742ed` | `9809079` | 314 | 0 | 0 |
-| **volle Suite nach Merge von `26742ed`** | **`9809079`** | **599** | **7** | **2** |
+| volle Suite nach Merge von `26742ed` | `9809079` | 599 | 7 | 2 |
+| volle Suite, PR #103 final | `ebdda73` | 599 | 7 | 2 |
+| Baseline `origin/main` nach #104–#108 | `5e4a46e` | 648 | 7 | 2 |
+| **PR #109** (Nachzug) | **`f4ffd84`** | **671** | **7** | **2** |
+| **PR #110** (Wegbreite/Randstreifen) | **`c964ca2`** | **663** | **7** | **2** |
 
 `scripts/gen_schema.py` erzeugt in allen Läufen keine Änderung (Schema in sync).
 
@@ -314,12 +415,18 @@ ruff-clean. Unsere Dateien sind es:
 `ruff check src/notbeleuchtung/normwissen/ tests/normwissen/` → All checks passed.
 An @mvpo3 gemeldet gehört das noch.
 
-**CI-Folge (05.09.):** Im Workflow läuft `Lint` **vor** `Full test suite`. Der
-C408-Befund lässt den Job `test` scheitern, bevor ein einziger Test läuft — auf
-`main` (Run `33962252577`) genauso wie auf #103 (Run `33962392314`). Für #103
-heißt das: `contracts` **pass**, `test` **fail am Lint**, **kein CI-Testergebnis**
-— nicht „Tests rot". Der Job-Verlauf zeigt `Full test suite` als nicht
-ausgeführt. Lokal auf demselben Stand: 599 passed.
+**CI-Historie zum C408 (erledigt):** `Lint` läuft im Workflow **vor** der
+Testsuite. Solange der C408-Befund auf `main` lag, brach der Job `test` ab, bevor
+ein Test lief — auf `main` (Run `33962252577`) wie auf #103 (Run `33962392314`).
+Das war **kein** rotes Testergebnis, sondern gar keines. Mit `87db889`
+(`bbox=dict(...)` → Dict-Literal) ist es behoben; seither sind alle Läufe grün.
+
+**CI-Stand am Tagesende — beide PRs grün, deckungsgleich mit lokal:**
+
+| PR | Commit | contracts | test | CI-Zahl |
+|---|---|---|---|---|
+| #109 | `f4ffd84` | pass (57 s) | pass (2 m 32 s) | 671 / 7 / 2 |
+| #110 | `c964ca2` | pass (1 m 2 s) | pass (2 m 43 s) | 663 / 7 / 2 |
 
 **Die 7 Skips einzeln** (Umgebung, nicht Code): 2 × `tests/hauptengine/
 test_dwg_input.py` (ODA File Converter auf diesem Mac nicht installiert) · 5 ×
