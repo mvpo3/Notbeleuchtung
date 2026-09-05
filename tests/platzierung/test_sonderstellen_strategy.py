@@ -6,6 +6,8 @@ Sonderstellen und Flags ist die Strategie ein No-op (bit-identische Pläne).
 import json
 from pathlib import Path
 
+import pytest
+
 from fakes import FakeNormProvider
 from notbeleuchtung.hauptengine.contracts import LBVorgabe, RaumModell
 from notbeleuchtung.platzierung.sonderstellen_strategy import (
@@ -129,6 +131,33 @@ def test_barrierefreies_zimmer_loest_4_3_8_nicht_aus():
         "ist_fluchtweg": False, "ist_communal": False, "ist_barrierefrei": True,
     }
     assert plan_flag_raeume(_raum(extra_raeume=[zimmer]), FakeNormProvider()) == []
+
+
+def _sanitaer(raum_typ: str, rid: str) -> dict:
+    return {
+        "id": rid, "raum_typ": raum_typ, "flaeche_m2": 6.0,
+        "polygon_mm": [[0.0, 0.0], [3000.0, 0.0], [3000.0, 2000.0], [0.0, 2000.0]],
+        "ist_fluchtweg": False, "ist_communal": True, "ist_barrierefrei": True,
+    }
+
+
+@pytest.mark.parametrize("raum_typ", ["BAD", "DUSCHE", "NASSRAUM", "SANITAER", "SANITÄR"])
+def test_mehrdeutiger_sanitaerraum_loest_4_3_8_nicht_automatisch_aus(raum_typ):
+    """Präzisierung 05.09.: ein barrierefreies Bad ist keine barrierefreie
+    Toilette. §4.3.8 nennt Toiletten — für Sanitärräume ist die Nutzung aus dem
+    Raumtyp nicht bestimmbar, also wird keine Norm-Pflicht behauptet. Der Fall
+    verschwindet nicht: Prüfregel 12c meldet ihn (siehe test_validierung)."""
+    raum = _raum(extra_raeume=[_sanitaer(raum_typ, f"san_{raum_typ.lower()}")])
+    assert plan_flag_raeume(raum, FakeNormProvider()) == []
+
+
+@pytest.mark.parametrize("raum_typ", ["WC", "TOILETTE"])
+def test_eindeutige_toilette_loest_4_3_8_aus(raum_typ):
+    out = plan_flag_raeume(
+        _raum(extra_raeume=[_sanitaer(raum_typ, f"t_{raum_typ.lower()}")]),
+        FakeNormProvider(),
+    )
+    assert [p.kind for p in out] == ["antipanik"]
 
 
 def test_barrierefrei_ohne_flag_keine_leuchte():

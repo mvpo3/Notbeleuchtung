@@ -19,7 +19,9 @@ Fehlt eine Referenz-Regel, wird der Typ übersprungen (nicht geraten).
 * **§4.3.8 gilt nur für Toiletten.** Wortlaut (Norm-S.11, am Original geprüft):
   „Antipanikbeleuchtung ist in **Toiletten** für Menschen mit Behinderung
   erforderlich." Auslöser ist die barrierefreie **Toilette**, nicht das Flag
-  `ist_barrierefrei` allein — ein barrierefreies Zimmer löst §4.3.8 nicht aus.
+  `ist_barrierefrei` allein — ein barrierefreies Zimmer löst §4.3.8 nicht aus,
+  und ein barrierefreies Bad belegt keine Toilettennutzung (mehrdeutig → Prüfhinweis
+  statt Automatik).
 * **Kein automatisches Rettungszeichen an einer Niveauänderung.** Die Einleitung
   von §4.1.2 (Norm-S.8) verlangt an den aufgezählten Stellen
   **Sicherheitsleuchten**; d) verlangt nur, dass **vorhandene** Sicherheitszeichen
@@ -48,12 +50,16 @@ from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .flaechen_strategy import _WC_TYPEN
 from .geometry import find_center_visual
 
-#: Raumtypen, die als „Toilette" im Sinne von §4.3.8 gelten. Bewusst dieselbe
-#: WC/Sanitär-Liste wie beim Flächen-Trigger (`flaechen_strategy._WC_TYPEN`) plus
-#: die ausgeschriebene Form — keine zweite Vokabular-Wahrheit. Eine engere Lesart
-#: (nur WC/TOILETTE, ohne BAD/DUSCHE/NASSRAUM) ist vertretbar; sie zu wählen ist
-#: eine Auslegungsentscheidung und gehört ins Review, nicht in einen stillen Fix.
-_TOILETTEN_TYPEN = _WC_TYPEN | {"TOILETTE"}
+#: Raumtypen, die EINDEUTIG eine Toilette im Sinne von §4.3.8 sind.
+_TOILETTEN_TYPEN = {"WC", "TOILETTE"}
+
+#: Sanitär-Raumtypen, die eine Toilettennutzung WEDER belegen NOCH ausschließen.
+#: Ein barrierefreies Bad ist keine barrierefreie Toilette — hier wird die
+#: Norm-Pflicht deshalb nicht behauptet. Die Fälle sind nicht verloren: Prüfregel
+#: 12c im Prüfbericht macht sie sichtbar. Abgeleitet aus der WC/Sanitär-Liste des
+#: Flächen-Triggers (`flaechen_strategy._WC_TYPEN`) — dieselbe Vokabular-Quelle,
+#: aber fachlich getrennt ausgewertet.
+_SANITAER_MEHRDEUTIG = (_WC_TYPEN | {"TOILETTE"}) - _TOILETTEN_TYPEN
 
 #: LB-Schlüssel, der ein Rettungszeichen an Niveauänderungen anfordert
 #: (`LBVorgabe.rz_stellen`, Literal `RzStelle`).
@@ -149,12 +155,17 @@ def plan_sonderstellen(
 def plan_flag_raeume(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
     """Raum-Flags mit Norm-Folge, je eine Leuchte am visuellen Zentrum:
 
-    * `ist_barrierefrei` (§4.3.8) → Antipanik-Pflicht **nur in Toiletten**
-      (`_TOILETTEN_TYPEN`): die Norm nennt „Toiletten für Menschen mit
-      Behinderung", nicht „barrierefreie Räume". Ein barrierefreies Zimmer löst
-      §4.3.8 nicht aus — was es an anderen Anforderungen braucht (Raumtyp-Regel,
-      Fluchtweg, Flächen-Trigger), bleibt davon unberührt und kommt aus den
-      anderen Strategien. Ist der Raum ohnehin antipanik-klassifiziert, macht
+    * `ist_barrierefrei` (§4.3.8) → Antipanik-Pflicht **nur in eindeutigen
+      Toiletten** (`_TOILETTEN_TYPEN` = WC/TOILETTE): die Norm nennt „Toiletten
+      für Menschen mit Behinderung", nicht „barrierefreie Räume" und nicht
+      „Sanitärräume". Drei Fälle:
+      – **eindeutig** (WC, TOILETTE) → Antipanik-Leuchte;
+      – **mehrdeutig** (`_SANITAER_MEHRDEUTIG`: BAD, DUSCHE, NASSRAUM, SANITÄR) →
+        **keine** automatische Norm-Pflicht; Prüfregel 12c meldet den Fall;
+      – **außerhalb** (z.B. ZIMMER) → die Regel greift nicht.
+      Andere Anforderungen an den Raum (Raumtyp-Regel, Fluchtweg, Flächen-Trigger)
+      bleiben in allen drei Fällen unberührt — sie kommen aus den übrigen
+      Strategien. Ist der Raum ohnehin antipanik-klassifiziert, macht
       `flaechen_strategy` die Arbeit → hier übersprungen (keine Doppelung).
     * `besondere_gefaehrdung` (§4.4.1) → Sicherheitsleuchte; der erhöhte
       Lux-Anspruch (`arbeitsplatz_lux`, 10 %/min. 15 lx) ist im Regelwerk noch

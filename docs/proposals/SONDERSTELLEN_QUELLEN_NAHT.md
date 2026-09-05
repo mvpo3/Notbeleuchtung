@@ -160,9 +160,13 @@ und die Höhe/Symbole aus `anf` — die Signatur bleibt sonst gleich. Der
 `hinweise`-Eintrag „norm_quelle = Fallback-Referenzregel" in `pipeline.py`
 entfällt mit dieser Umstellung.
 
-Für `plan_flag_raeume` analog mit `raum_typ`; der lokal bereits umgesetzte
-WC-Kontext-Filter wird dann **von der Anforderung selbst** getragen
-(`gilt_nur_fuer_raumtypen`) statt von einer Konstante in `platzierung`.
+Für `plan_flag_raeume` analog mit `raum_typ`. Der lokal bereits umgesetzte
+Toiletten-Filter wird dann **von der Anforderung selbst** getragen: die
+eindeutigen Typen stehen in `gilt_nur_fuer_raumtypen`, die mehrdeutigen liefert
+der Provider über `raumtyp_scope()` — heute doppelt geführt (Konstanten in
+`platzierung/sonderstellen_strategy.py` und `hauptengine/validierung.py`, Daten in
+`normwissen/data/sonderstellen.yaml`). Mit der Naht entfällt die Doppelung; bis
+dahin halten Tests auf beiden Seiten denselben Geltungsbereich fest.
 
 ## Teil 4 — Prüfbericht
 
