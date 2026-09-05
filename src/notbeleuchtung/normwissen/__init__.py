@@ -7,6 +7,7 @@ noch nicht im Ports-Protocol.
 """
 from .lb import LbTextProvider
 from .oib import OibRl2Provider
+from .ove_zusatz import OveZusatzKatalog, ZusatzBefund
 from .platzierungsregeln import HardStop, PlatzierungsRegel, PlatzierungsRegelwerk
 from .provider import En1838NormProvider, WegNachweis
 from .sonderstellen import (
@@ -22,10 +23,12 @@ __all__ = [
     "LbTextProvider",
     "LuxAnforderung",
     "OibRl2Provider",
+    "OveZusatzKatalog",
     "PlatzierungsRegel",
     "PlatzierungsRegelwerk",
     "Sonderstelle",
     "SonderstellenAnforderung",
     "SonderstellenKatalog",
     "WegNachweis",
+    "ZusatzBefund",
 ]

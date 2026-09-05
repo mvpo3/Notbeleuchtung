@@ -109,6 +109,7 @@ def pruefe(
     *,
     norm: NormProvider | None = None,
     oib: object | None = None,
+    projekt_kontext: object | None = None,
 ) -> list[Befund]:
     """Prüft die Platzierung gegen die aus den Contracts ableitbaren Norm-Regeln."""
     plzg = platzierung.platzierungen
@@ -378,6 +379,64 @@ def pruefe(
     #     Anforderung NOCH eine festgestellte Nicht-Erforderlichkeit. Vorher
     #     verschwand der Fall lautlos, sobald irgendein anderer Gebäudeteil
     #     bestätigt war. Muster wie 8b/12: „ungeprüft ≠ erfüllt".
+    # 14. BELEGTE Erforderlichkeit nach OVE E 8101:2019 718.560.9.001.AT Punkt 1.
+    #     Nur für den Fall, dessen Quellenkette geprüft ist (normwissen/data/
+    #     ove_e8101_zusatz.yaml → docs/NORMQUELLEN_AT.md 2d): Verkaufs-/
+    #     Ausstellungsstätte über 3 000 m² Verkaufsfläche, Sanitärbereich ab 8 m²,
+    #     Raum eindeutig genau diesem Gebäudeteil zugeordnet.
+    #     Alle vier Bedingungen kommen aus TYPISIERTEN Contract-Feldern
+    #     (`ProjektKontext.gebaeudeteile[].nutzungsart` / `.verkaufsflaeche_m2` /
+    #     `.raum_referenzen`, `OibErgebnis.stufe`, `Raum.raum_typ`/`.flaeche_m2`) —
+    #     kein `eingangswerte`-Audit-Dict, kein getattr auf Prototypen.
+    #     Erforderlichkeit ≠ Erfüllung: gesetzte Leuchten belegen keinen Nachweis,
+    #     deshalb `warnung` mit offener Art und offenem Nachweis.
+    belegte_raeume: set[str] = set()
+    if oib is not None and projekt_kontext is not None:
+        from notbeleuchtung.normwissen import OveZusatzKatalog
+        from notbeleuchtung.platzierung.oib_gate import raum_zuordnung
+
+        katalog = OveZusatzKatalog()
+        stufe_je_teil = {e.gebaeudeteil_id: e.stufe for e in oib.ergebnisse}
+        raum_je_id = {r.id: r for r in raum.raeume}
+        treffer: list[tuple[str, str, str]] = []   # (raum_id, begruendung, fall_id)
+        offene: list[str] = []
+        for teil in projekt_kontext.gebaeudeteile:
+            fall = katalog.ist_belegte_nutzung(
+                teil.nutzungsart, stufe_je_teil.get(teil.id)
+            )
+            if fall is None:
+                continue
+            kennzahl = getattr(teil, fall["kennzahl"]["feld"])
+            if not katalog.kennzahl_erfuellt(fall, kennzahl):
+                continue
+            for ref in teil.raum_referenzen:
+                if ref.floor != raum.floor:
+                    continue
+                r = raum_je_id.get(ref.raum_id)
+                if r is None:
+                    continue
+                # Eindeutig: der Raum darf nicht zugleich an einem Gebäudeteil
+                # mit gegenläufiger Aussage hängen.
+                if raum_zuordnung(oib, raum.floor, r.id) != "bestaetigt":
+                    continue
+                if not katalog.bereich_erfuellt(fall, r.raum_typ, r.flaeche_m2):
+                    continue
+                treffer.append(
+                    (r.id, katalog.begruendung(fall, teil.id, float(kennzahl)), fall["id"])
+                )
+                offene = katalog.offene_punkte(fall)
+        if treffer:
+            belegte_raeume = {t[0] for t in treffer}
+            quellen = " · ".join(katalog.quellen_mit_ausgabe())
+            befunde.append(Befund(
+                "Sicherheitsbeleuchtung erforderlich (OVE E 8101 718.560.9.001.AT "
+                "Punkt 1) — Beleuchtungsart und lichttechnischer Nachweis noch offen",
+                "warnung",
+                f"{len(treffer)} Raum/Räume ({', '.join(sorted(belegte_raeume))}): "
+                + "; ".join(b for _, b, _ in treffer)
+                + f". Quellenkette: {quellen}. OFFEN: " + " | ".join(offene),
+            ))
+
     if oib is not None:
         from notbeleuchtung.platzierung.oib_gate import (
             raeume_ohne_geklaerten_scope,
@@ -385,7 +444,12 @@ def pruefe(
         )
 
         raum_ids = [r.id for r in raum.raeume]
-        unklarer_scope = raeume_ohne_geklaerten_scope(oib, raum.floor, raum_ids)
+        unklarer_scope = [
+            r for r in raeume_ohne_geklaerten_scope(oib, raum.floor, raum_ids)
+            # Für die belegten Räume ist der Geltungsbereich geklärt (Regel 14) —
+            # dort darf nicht weiter „R 12-2 fehlt" stehen.
+            if r not in belegte_raeume
+        ]
         if unklarer_scope:
             # Zwei verschiedene Ursachen, getrennt benannt: (a) die räumliche
             # Zuordnung steht, aber die Nutzungs-Art ist nicht belegt (Tabelle 6
@@ -516,13 +580,14 @@ def pruefbericht(
     *,
     norm: NormProvider | None = None,
     oib: object | None = None,
+    projekt_kontext: object | None = None,
 ) -> dict:
     """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary.
 
     `oib` (optional) ist der Erforderlichkeits-Befund aus dem OIB-Pfad. Er wird
     nur gelesen, um ungeklärte Geltungsbereiche sichtbar zu machen (Regel 13).
     """
-    befunde = pruefe(raum, platzierung, lb, norm=norm, oib=oib)
+    befunde = pruefe(raum, platzierung, lb, norm=norm, oib=oib, projekt_kontext=projekt_kontext)
     return {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],
