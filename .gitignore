@@ -25,6 +25,8 @@ tests/failures/
 *.dxf
 !assets/E-Symbole.dxf
 !CAD_Symbole/Notbeleuchtungssymbole.dxf
+# Vorlagen (Legende etc.) fürs ganze Team
+!Vorlagen-Legende/**
 # Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt
 !knowledge/**/*.dxf
 # Muthgasse 109B: DXF (via ODA aus DWG konvertiert) + Plan-PDFs = Projekt-Assets fürs Team
