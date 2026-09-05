@@ -29,14 +29,13 @@ from notbeleuchtung.symbols import inserter, library
 # semantische DIN_SIBEL-Namen statt Ad-hoc-`E_*`. Architektur-Hintergrund (`ARCH_*`)
 # bleibt — das ist kein SIBEL-Element.
 LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER  # din_SIBEL_10_emergency_lighting
-LAYER_STROMKREIS = "din_SIBEL_61_labeling"
 LAYER_ARCH_RAUM = "ARCH_Raum"
+LAYER_ARCH_TUER = "ARCH_Tuer"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
 LAYER_LEGENDE = "din_SIBEL_70_legend_white"
 LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
 LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
 LAYER_PRUEFBERICHT = "din_SIBEL_99_inspection"
-LAYER_HOEHENKOTE = "din_SIBEL_52_info"
 LAYER_NODEID = "din_SIBEL_63_luminaire_ID"
 LAYER_BELEGUNG = "din_SIBEL_11_system"
 
@@ -88,21 +87,7 @@ _KIND_LABEL = {
     "antipanik": "Antipanik-Leuchte",
 }
 
-# Stromkreis-Label — Konstanten verbatim aus elektro-planer dxf_writer.py:
-# Offset folgt der Symbol-Normale (freie Raumseite), Text bleibt horizontal;
-# Anti-Kollision: x-Band + Mindest-Vertikalabstand, bei Kollision weiter
-# entlang der Normale hinausschieben (Korrektur-DXF TOP 24: median 235 mm).
-CIRCUIT_LABEL_HEIGHT_MM = 90.0
-CIRCUIT_LABEL_OFFSET_NORMAL_MM = 240.0
-CIRCUIT_LABEL_BAND_X_MM = 300.0
-CIRCUIT_LABEL_MIN_GAP_MM = 150.0
-CIRCUIT_LABEL_MAX_NUDGE = 8
 
-# Montagehöhen-Kote — sitzt entgegen der Stromkreis-Label-Seite (−Normale),
-# damit Kote und Kreis-Label nicht überlappen. 150 mm (≈1,5 mm auf 1:100) statt 80 mm
-# (0,8 mm — am Plan-Maßstab unleserlich), auf Höhe der Stromkreis-Label-Skala.
-HOEHENKOTE_HEIGHT_MM = 90.0  # = Circuit-/NODEID-Label-Größe (einheitliche Annotation)
-HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 
 # NODEID-Annotation (fortlaufende Leuchten-ID je Symbol, Wartung/Adressierung, Profi-
 # Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
@@ -123,14 +108,14 @@ _SCHALTUNGSART = {"rz": "DL", "sicherheitsleuchte": "BL", "antipanik": "BL"}
 
 
 def _add_own_layers(doc) -> None:
-    doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
-    doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
+    doc.layers.add(LAYER_ARCH_TUER, color=8)    # dunkelgrau (Architektur-Bestand)
+    fw = doc.layers.add(LAYER_FLUCHTWEG)        # Fluchtweg in Notbeleuchtungs-Grün
+    fw.dxf.true_color = (30 << 16) | (180 << 8) | 80
     doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
     doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
     doc.layers.add(LAYER_PLANKOPF, color=7)     # weiß/schwarz
     doc.layers.add(LAYER_PRUEFBERICHT, color=7)  # weiß/schwarz
-    doc.layers.add(LAYER_HOEHENKOTE, color=3)    # grün
     doc.layers.add(LAYER_NODEID, color=6)        # magenta
     doc.layers.add(LAYER_BELEGUNG, color=7)      # weiß/schwarz
 
@@ -307,6 +292,62 @@ def _draw_raeume(msp, raum: RaumModell) -> int:
     return drawn
 
 
+def _wand_richtung(raum: RaumModell, tuer) -> tuple[float, float]:
+    """Einheits-Richtung der Wand, in der die Tür sitzt: nächstliegende Polygon-Kante
+    des Anschluss-Raums (von_raum/nach_raum) durch den Türpunkt. Fallback horizontal."""
+    tx, ty = tuer.xy_mm
+    best, best_d = (1.0, 0.0), float("inf")
+    kandidaten = [r for r in raum.raeume if r.id in (tuer.von_raum, tuer.nach_raum)]
+    for r in kandidaten or raum.raeume:
+        poly = r.polygon_mm
+        for i in range(len(poly)):
+            (x1, y1), (x2, y2) = poly[i], poly[(i + 1) % len(poly)]
+            ex, ey = x2 - x1, y2 - y1
+            ln = (ex * ex + ey * ey) ** 0.5
+            if ln < 1e-9:
+                continue
+            # Abstand Türpunkt → Kante (Projektion, geklemmt)
+            t = max(0.0, min(1.0, ((tx - x1) * ex + (ty - y1) * ey) / (ln * ln)))
+            px, py = x1 + t * ex, y1 + t * ey
+            d = ((tx - px) ** 2 + (ty - py) ** 2) ** 0.5
+            if d < best_d:
+                best_d, best = d, (ex / ln, ey / ln)
+    return best
+
+
+def _draw_tueren(msp, raum: RaumModell) -> int:
+    """Türen aus dem Contract zeichnen (Gap-Audit H-Gebäude: `raum.tueren` wurde vom
+    Render ignoriert — der Plan wirkte türlos). Darstellung wie im Architektur-Bestand:
+    Öffnungs-Schwelle in der Wand + Türblatt + Schwenk-Viertelbogen (`schwenk_richtung`).
+    Notausgangs-Türen zusätzlich mit Doppel-Schwelle markiert."""
+    import math as _math
+
+    drawn = 0
+    for t in raum.tueren:
+        breite = t.breite_mm or 900.0
+        wx, wy = _wand_richtung(raum, t)
+        nx, ny = -wy, wx                       # Wand-Normale (Aufschlagseite)
+        if t.schwenk_richtung == "links":
+            nx, ny = -nx, -ny
+        x0, y0 = t.xy_mm[0] - wx * breite / 2, t.xy_mm[1] - wy * breite / 2
+        x1, y1 = t.xy_mm[0] + wx * breite / 2, t.xy_mm[1] + wy * breite / 2
+        # Schwelle (Öffnung in der Wand)
+        msp.add_line((x0, y0), (x1, y1), dxfattribs={"layer": LAYER_ARCH_TUER})
+        if t.ist_notausgang:                   # Doppel-Schwelle = Notausgang
+            off = 120.0
+            msp.add_line((x0 + nx * off, y0 + ny * off), (x1 + nx * off, y1 + ny * off),
+                         dxfattribs={"layer": LAYER_ARCH_TUER})
+        # Türblatt (senkrecht zur Wand am Angelpunkt) + Schwenkbogen
+        msp.add_line((x0, y0), (x0 + nx * breite, y0 + ny * breite),
+                     dxfattribs={"layer": LAYER_ARCH_TUER})
+        start = _math.degrees(_math.atan2(wy, wx))
+        ende = _math.degrees(_math.atan2(ny, nx))
+        msp.add_arc(center=(x0, y0), radius=breite, start_angle=min(start, ende),
+                    end_angle=max(start, ende), dxfattribs={"layer": LAYER_ARCH_TUER})
+        drawn += 1
+    return drawn
+
+
 def _draw_segmente(msp, raum: RaumModell) -> int:
     """Fluchtweg-Segmente als dünne Polylines (Review gegen die GU-PDF)."""
     drawn = 0
@@ -320,72 +361,6 @@ def _draw_segmente(msp, raum: RaumModell) -> int:
         drawn += 1
     return drawn
 
-
-def _draw_circuit_label(
-    msp,
-    x: float,
-    y: float,
-    circuit_hint: str,
-    rotation_deg: float,
-    placed: list[tuple[float, float]],
-) -> bool:
-    """Stromkreis-Label als MTEXT entlang der Symbol-Normale, anti-kollidierend."""
-    text = (circuit_hint or "").strip()
-    if not text:
-        return False
-    angle = math.radians(rotation_deg or 0.0)
-    nx = -math.sin(angle)
-    ny = math.cos(angle)
-    tx = x + nx * CIRCUIT_LABEL_OFFSET_NORMAL_MM
-    ty = y + ny * CIRCUIT_LABEL_OFFSET_NORMAL_MM
-    guard = 0
-    while guard < CIRCUIT_LABEL_MAX_NUDGE and any(
-        abs(tx - px) < CIRCUIT_LABEL_BAND_X_MM
-        and abs(ty - py) < CIRCUIT_LABEL_MIN_GAP_MM
-        for (px, py) in placed
-    ):
-        tx += nx * CIRCUIT_LABEL_MIN_GAP_MM
-        ty += ny * CIRCUIT_LABEL_MIN_GAP_MM
-        guard += 1
-    placed.append((tx, ty))
-    # Attachment so, dass der Text vom Symbol WEG wächst.
-    if abs(nx) >= abs(ny):
-        attach = (MTextEntityAlignment.MIDDLE_LEFT if nx > 0
-                  else MTextEntityAlignment.MIDDLE_RIGHT)
-    else:
-        attach = (MTextEntityAlignment.BOTTOM_CENTER if ny > 0
-                  else MTextEntityAlignment.TOP_CENTER)
-    mt = msp.add_mtext(text, dxfattribs={
-        "layer": LAYER_STROMKREIS,
-        "char_height": CIRCUIT_LABEL_HEIGHT_MM,
-    })
-    mt.set_location((tx, ty), attachment_point=attach)
-    return True
-
-
-def _hoehenkote_text(height_mm: float) -> str:
-    """Montagehöhe als Kote in Metern, österreichische Komma-Notation (h=2,40)."""
-    return f"h={height_mm / 1000.0:.2f}".replace(".", ",")
-
-
-def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
-    """Montagehöhen-Kote (h=2,40) je Symbol. Sitzt entgegen der Stromkreis-Label-
-    Seite (−Normale), damit Kote und Kreis-Label nicht überlappen. EN 1838 §4.1:
-    height_mm liegt im Contract, war bisher nur unsichtbar."""
-    drawn = 0
-    for p in platzierung.platzierungen:
-        angle = math.radians(p.rotation_deg or 0.0)
-        nx = -math.sin(angle)
-        ny = math.cos(angle)
-        tx = p.xy_mm[0] - nx * HOEHENKOTE_OFFSET_NORMAL_MM
-        ty = p.xy_mm[1] - ny * HOEHENKOTE_OFFSET_NORMAL_MM
-        mt = msp.add_mtext(_hoehenkote_text(p.height_mm), dxfattribs={
-            "layer": LAYER_HOEHENKOTE,
-            "char_height": HOEHENKOTE_HEIGHT_MM,
-        })
-        mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
-        drawn += 1
-    return drawn
 
 
 def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
@@ -444,11 +419,36 @@ def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> tuple[int, in
     drawn = 0
     mit_kreis = 0
     sknrn = _stromkreisnummern(platzierung)
+    alle_xy = [q.xy_mm for q in platzierung.platzierungen]
+
+    def _frei(x: float, y: float, selbst) -> bool:
+        # Label darf in KEIN anderes Symbol ragen (Owner-Feedback: Beschriftung war
+        # teils von Nachbar-Symbolen verdeckt). Sperrzone = Symbol-Halbbreite + halbe
+        # Textbreite.
+        for q, qxy in zip(platzierung.platzierungen, alle_xy):
+            if q is selbst:
+                continue
+            sperr = _NODEID_HALBBREITE_MM.get(q.kind, 435.0) + 380.0
+            if math.hypot(qxy[0] - x, qxy[1] - y) < sperr:
+                return False
+        return True
+
     for p, nodeid, sknr in zip(platzierung.platzierungen, _nodeids(platzierung), sknrn):
         angle = math.radians(p.rotation_deg or 0.0)
         offset = _NODEID_HALBBREITE_MM.get(p.kind, 435.0) + NODEID_CLEARANCE_MM
-        tx = p.xy_mm[0] + math.cos(angle) * offset
-        ty = p.xy_mm[1] + math.sin(angle) * offset
+        # Seiten-/Distanz-Ausweich: +Tangente → −Tangente → +Normale → weiter raus.
+        kandidaten = [
+            (math.cos(angle) * offset, math.sin(angle) * offset),
+            (-math.cos(angle) * offset, -math.sin(angle) * offset),
+            (-math.sin(angle) * offset, math.cos(angle) * offset),
+            (math.cos(angle) * offset * 2.2, math.sin(angle) * offset * 2.2),
+        ]
+        tx, ty = p.xy_mm[0] + kandidaten[0][0], p.xy_mm[1] + kandidaten[0][1]
+        for dx, dy in kandidaten:
+            kx, ky = p.xy_mm[0] + dx, p.xy_mm[1] + dy
+            if _frei(kx, ky, p):
+                tx, ty = kx, ky
+                break
         text = f"{nodeid}\\P{sknr}" if sknr else nodeid
         if sknr:
             mit_kreis += 1
@@ -534,6 +534,7 @@ def render_dxf(
     msp = doc.modelspace()
 
     n_raeume_drawn = _draw_raeume(msp, raum)
+    n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
     stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
@@ -542,17 +543,10 @@ def render_dxf(
     belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
 
     by_kind: dict[str, int] = {}
-    placed_labels: list[tuple[float, float]] = []
-    circuit_labels = 0
     for p in platzierung.platzierungen:
         inserter.insert_platzierung(doc, p)
         by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
-        if _draw_circuit_label(
-            msp, p.xy_mm[0], p.xy_mm[1], p.circuit_hint, p.rotation_deg, placed_labels
-        ):
-            circuit_labels += 1
 
-    hoehenkoten_drawn = _draw_hoehenkoten(msp, platzierung)
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
     _set_vport(doc, raum, platzierung)
@@ -568,11 +562,10 @@ def render_dxf(
         "rendered": True,
         "output_path": str(out_path),
         "schrack_inserted": len(platzierung.platzierungen),
-        "circuit_labels_drawn": circuit_labels,
-        "hoehenkoten_drawn": hoehenkoten_drawn,
         "nodeids_drawn": nodeids_drawn,
         "stromkreisnummern_drawn": stromkreisnummern_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
+        "tueren_drawn": n_tueren_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
         "stueckliste_drawn": stueckliste_drawn,

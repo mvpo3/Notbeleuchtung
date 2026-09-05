@@ -112,21 +112,6 @@ def test_schaltungsart_rz_ist_dauerlicht():
     assert _SCHALTUNGSART["antipanik"] == "BL"
 
 
-def test_hoehenkote_text_komma_notation():
-    from notbeleuchtung.hauptengine.render.dxf_renderer import _hoehenkote_text
-    assert _hoehenkote_text(2400.0) == "h=2,40"
-    assert _hoehenkote_text(2000.0) == "h=2,00"
-    assert _hoehenkote_text(3000.0) == "h=3,00"
-    assert _hoehenkote_text(2250.0) == "h=2,25"
-
-
-def test_hoehenkoten_label_gezeichnet(rendered):
-    _, summary, doc = rendered
-    # 4OG-Fixture = 5 Symbole, alle mit Default-Montagehöhe 2400 mm.
-    assert summary["hoehenkoten_drawn"] == 5
-    koten = doc.modelspace().query("MTEXT[layer=='din_SIBEL_52_info']")
-    assert len(koten) == 5
-    assert all(k.text == "h=2,40" for k in koten)
 
 
 def test_nodeid_annotation_je_leuchte(rendered):
@@ -287,12 +272,13 @@ def test_positionen_und_mirror_matchen_fixture(rendered):
     assert n_mirrored == 0
 
 
-def test_f13_stromkreis_labels_sichtbar(rendered):
-    _, summary, doc = rendered
-    texts = {mt.text for mt in doc.modelspace().query("MTEXT")}
-    assert any("AGV-A-F13" in t for t in texts)
-    assert any("AGV-B-F13" in t for t in texts)
-    assert summary["circuit_labels_drawn"] == 5
+def test_keine_agv_labels_am_symbol(rendered):
+    # Owner-Entscheidung 2026-09-05: AGV-Stromkreis-Label je Symbol ist unnötig —
+    # die Kreis-Info tragen Anlage/Kreis/Adresse (NODEID-Zweitzeile) + Belegungsliste.
+    _, _summary, doc = rendered
+    assert "din_SIBEL_61_labeling" not in doc.layers
+    belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
+    assert belegung and "AGV-A-F13" in belegung[0].text  # Info lebt in der Liste weiter
 
 
 def test_raum_konturen_und_segmente(rendered):
@@ -317,3 +303,15 @@ def test_xdata_stromkreis_am_insert(rendered):
         if any(str(v).startswith("stromkreis=") for _, v in xdata):
             tagged += 1
     assert tagged == 5
+
+
+def test_tueren_werden_gezeichnet(rendered):
+    # Gap-Audit H-Gebäude: raum.tueren wurde vom Render ignoriert — Türen (Schwelle +
+    # Blatt + Schwenkbogen) müssen auf ARCH_Tuer erscheinen; Notausgänge doppelt.
+    _, summary, doc = rendered
+    n_tueren = summary["tueren_drawn"]
+    assert n_tueren >= 1
+    linien = doc.modelspace().query("LINE[layer=='ARCH_Tuer']")
+    boegen = doc.modelspace().query("ARC[layer=='ARCH_Tuer']")
+    assert len(boegen) == n_tueren          # 1 Schwenkbogen je Tür
+    assert len(linien) >= 2 * n_tueren      # Schwelle + Blatt (+ Notausgang-Doppel)
