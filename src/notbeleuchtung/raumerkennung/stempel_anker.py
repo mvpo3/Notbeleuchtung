@@ -35,7 +35,7 @@ _FLAECHE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:m\s*[²2]|qm)(?!\w)", re.IGNORECA
 # Belag-Vokabular (kurze Materialzeile, keine Zahlen).
 _BELAG = re.compile(
     r"parkett|fliesen|estrich|estr\.|gu[ßs]s?asphalt|asphalt|platten|rasen|beton"
-    r"|teppich|laminat|linoleum|kies",
+    r"|teppich|laminat|linoleum|kies|feinsteinzeug|fstz",
     re.IGNORECASE,
 )
 _BLOCK_SUFFIX = re.compile(r"__\d+$")
@@ -94,6 +94,8 @@ def belag_hinweis(belag: str | None) -> str | None:
     b = belag.lower()
     if "fliese" in b:
         return "NASSRAUM/VORRAUM"
+    if "fstz" in b or "feinsteinzeug" in b:
+        return "NASSRAUM/GANG"      # Feinsteinzeug (Rennweg-Kürzel FSTZ.)
     if "parkett" in b:
         return "WOHNRAUM"
     if "estr" in b or "asphalt" in b or "beton" in b:

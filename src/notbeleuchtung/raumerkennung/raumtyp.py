@@ -71,6 +71,7 @@ _EXTRA_LABELS: dict[str, RoomType] = {
     "wz": RoomType.LIVING_ROOM,      # Wohnzimmer
     "kü": RoomType.KITCHEN,          # Küche
     "stg": RoomType.STAIRCASE,       # Stiege(nhaus)
+    "stgh": RoomType.STAIRCASE,      # Stiegenhaus (Rennweg-Legende „STGH.")
     "hobbyraum": RoomType.GENERIC_ROOM,
     "trh": RoomType.STAIRCASE,       # Treppenhaus / Stiegenhaus (sicherheitskritisch)
     "treppenhaus": RoomType.STAIRCASE,   # ausgeschriebener Barawitzka-Stempel
@@ -95,6 +96,7 @@ _WORT = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     "garage": ("GARAGE", False, True),
     "tiefgarage": ("GARAGE", False, True),
+    "ht": ("TECHNIK", False, True),            # Haustechnik(anlage), Rennweg-Kürzel
     "technik": ("TECHNIK", False, True),
     "haustechnik": ("TECHNIK", False, True),
     "technikraum": ("TECHNIK", False, True),   # Einzeltoken-Kompositum (LB matcht via Substring)
@@ -105,6 +107,10 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     "restmüll": ("MUELLRAUM", False, True),
     "keller": ("KELLER", False, True),
     "kellerabteil": ("KELLER", False, True),
+    # Feuerwehrlift: Teil des Sicherheitskonzepts → wie Stiegenhaus als Fluchtweg-
+    # relevant markiert (Notlicht-Pflichtbereich); kein Port-RoomType für Lifte.
+    "fw": ("LIFT", True, True),
+    "feuerwehrlift": ("LIFT", True, True),
 }
 
 # Labels, die der Port FALSCH typen würde (Kompositum-Kopf „…küche" → KITCHEN):
