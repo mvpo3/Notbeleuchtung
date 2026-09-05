@@ -15,12 +15,34 @@ die Hauptengine baut das Callable aus `normwissen.photometrie.Photometrie.intens
 """
 from __future__ import annotations
 
+import inspect
 from collections.abc import Callable
 from dataclasses import dataclass
 
 import numpy as np
 
 Point = tuple[float, float]
+
+def _i_cd_vektor(i_cd_fn, gamma_grad, c_grad):
+    """Lichtstärke je Punkt — **mit** C-Ebene, wenn das Callable sie annimmt.
+
+    Korrektur 05.09.2026 (Enis, Änderung in dieser Lane — bitte @mvpo3 reviewen):
+    bis dahin wurde nur γ übergeben, die C-Ebene ging verloren und jede Leuchte
+    wurde faktisch in ihrer C0-Ebene gerechnet. Bei anisotroper Optik überschätzt
+    das (Corridor-Linse: γ=60° → 149,93 cd in C0 gegen 19,53 cd in C90) und kann
+    einen Lux-Grenzwert fälschlich bestehen lassen.
+
+    Ältere Callables mit nur einem Parameter bleiben nutzbar (Fakes, Tests) —
+    dann wird wie bisher nur γ ausgewertet.
+    """
+    try:
+        n_params = len(inspect.signature(i_cd_fn).parameters)
+    except (TypeError, ValueError):        # z.B. C-Builtins ohne Signatur
+        n_params = 1
+    if n_params >= 2:
+        return np.vectorize(i_cd_fn)(gamma_grad, c_grad)
+    return np.vectorize(i_cd_fn)(gamma_grad)
+
 
 _UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen Wert liefert
 
@@ -80,7 +102,6 @@ def lux_raster(
         return LuxErgebnis(0.0, 0.0, 0.0, 0.0, False, False)
     gx, gy = np.meshgrid(xs, ys)
     h_mm = montagehoehe_m * 1000.0
-    i_fn_v = np.vectorize(i_cd_fn) if i_cd_fn is not None else None
     e = np.zeros_like(gx, dtype=float)
     for lx, ly in leuchten:
         dx = gx - lx
@@ -88,8 +109,12 @@ def lux_raster(
         d_h = np.sqrt(dx * dx + dy * dy)          # horizontale Distanz (mm)
         d = np.sqrt(d_h * d_h + h_mm * h_mm)       # Schrägdistanz zur Leuchte
         cos_theta = h_mm / d                       # cos zwischen Lot und Strahl
-        # I je Punkt: richtungsabhängig aus Photometrie (γ) oder konstant isotrop.
-        i = i_fn_v(np.degrees(np.arctan2(d_h, h_mm))) if i_fn_v is not None else i_cd
+        # I je Punkt: richtungsabhängig aus Photometrie (γ UND C-Ebene) oder
+        # konstant isotrop.
+        i = _i_cd_vektor(
+            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)),
+            np.degrees(np.arctan2(dy, dx)) % 360.0,
+        ) if i_cd_fn is not None else i_cd
         # E = I * cos^3(theta) / h^2 ; h in Metern (I in cd, Ergebnis in lx)
         e += i * cos_theta**3 / (montagehoehe_m**2)
     mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
@@ -124,13 +149,15 @@ def lux_punkte(
     px = np.array([p[0] for p in punkte], dtype=float)
     py = np.array([p[1] for p in punkte], dtype=float)
     h_mm = montagehoehe_m * 1000.0
-    i_fn_v = np.vectorize(i_cd_fn) if i_cd_fn is not None else None
     e = np.zeros_like(px, dtype=float)
     for lx, ly in leuchten:
         d_h = np.sqrt((px - lx) ** 2 + (py - ly) ** 2)
         d = np.sqrt(d_h * d_h + h_mm * h_mm)
         cos_theta = h_mm / d
-        i = i_fn_v(np.degrees(np.arctan2(d_h, h_mm))) if i_fn_v is not None else i_cd
+        i = _i_cd_vektor(
+            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)),
+            np.degrees(np.arctan2(py - ly, px - lx)) % 360.0,
+        ) if i_cd_fn is not None else i_cd
         e += i * cos_theta**3 / (montagehoehe_m**2)
     mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
     ud = (mn / mx) if mx > 0 else 0.0
