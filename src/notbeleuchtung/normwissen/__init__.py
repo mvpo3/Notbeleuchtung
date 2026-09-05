@@ -8,7 +8,7 @@ noch nicht im Ports-Protocol.
 from .lb import LbTextProvider
 from .oib import OibRl2Provider
 from .platzierungsregeln import HardStop, PlatzierungsRegel, PlatzierungsRegelwerk
-from .provider import En1838NormProvider
+from .provider import En1838NormProvider, WegNachweis
 from .sonderstellen import (
     LuxAnforderung,
     Sonderstelle,
@@ -27,4 +27,5 @@ __all__ = [
     "Sonderstelle",
     "SonderstellenAnforderung",
     "SonderstellenKatalog",
+    "WegNachweis",
 ]
