@@ -24,4 +24,23 @@ Raum-Polygon-Quelle: `raumlayer` — Rotation: keine dominante Kantenrichtung �
 
 - keine
 
-Laufzeit: 25.2 s
+## Material (Bauteil-Hatches)
+
+| Material | Anzahl | Fläche m² | mittl. Score |
+|---|--:|--:|--:|
+| WAERMEDAEMMUNG | 142 | 18.3 | 0.69 |
+| STAHLBETON | 62 | 14.8 | 0.78 |
+| GIPSKARTON_EI0 | 1 | 9.8 | 0.47 |
+| SCHACHT | 16 | 0.6 | 0.72 |
+| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | 22 | 26.7 | — |
+
+Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs (Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in die Legendenabdeckung ein.
+
+**Legendenabdeckung: 100.0 %** (bekannte Materialfläche / Bauteil-Schraffurfläche)
+
+## Markierungen
+
+- Brandabschnittslinien: 0
+- Fluchtweglinien: 0
+
+Laufzeit: 33.3 s

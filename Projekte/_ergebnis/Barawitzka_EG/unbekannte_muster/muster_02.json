@@ -1,0 +1,23 @@
+{
+  "signatur": {
+    "typ": "solid",
+    "pattern_name": "SOLID",
+    "farbe": 6,
+    "true_color": [
+      251,
+      2,
+      254
+    ]
+  },
+  "layer": [
+    "0._EG PP_2_130 Wand Innen"
+  ],
+  "anzahl_hatches": 115,
+  "flaeche_mm2_summe": 1136197.1,
+  "beispiel_zentrum_mm": [
+    9727.5,
+    -11888.9
+  ],
+  "ausschnitt_m": 5.04,
+  "bester_kandidat": "kein Material über Schwelle 0.45 (bester Kandidat: ALU_GLAS 0.20)"
+}
