@@ -18,6 +18,16 @@ oder Rechtsvorschrift.*
 | OVE E 8101 | 2019-01-01 | 758 | `knowledge/OVE E 8101_2019 (1).pdf` | ältere Ausgabe |
 | OVE E 8015 / E 8350 / E 8351 / OVE E 8014 | 2022 / 2017 / 2016 / 2019 | | `knowledge/…` | Randbezug |
 
+### C2 — OVE-Richtlinie R 12-2 (neu am 05.09.2026)
+
+| Datei | Ausgabe | Umfang |
+|---|---|---|
+| `knowledge/OVE-Richtlinie R 12-2 AC 2019-07-01.pdf` | **R 12-2/AC:2019-07-01** | 8 Seiten, **Berichtigung (Corrigendum)** — enthält u.a. „Abschnitt 5.1 lautet neu" mit der **vollständigen Tabelle 5.1** (S. 3–5) |
+
+Frei bezogen über den OVE-Webshop (`shop.ove.at/de/free/…`). **Die Basis-Richtlinie
+R 12-2 selbst liegt weiterhin nicht vor** — die AC ersetzt Abschnitt 5.1 jedoch
+vollständig, deshalb ist Tabelle 5.1 als Ganzes belegt.
+
 ### B — OIB-Richtlinien (Ausgabe Mai 2023, komplett RL 1–7 + Sonderrichtlinien)
 `knowledge/OIB-Richtlinien/` — notbeleuchtungsrelevant: **RL 2** (Punkt 5.4 +
 Tabelle 6), **RL 2-Erläuterungen** (S.48 zu Punkt 5.4), **RL 2.1** (3.6.5),
@@ -225,6 +235,64 @@ Punkte. Die frühere Notiz („unsere Extraktion nennt Treppen, die reale LB nen
 Niveauänderungen") ist damit ebenfalls erledigt: beide stehen in der Norm, die LB
 deckt sich mit ihr. `RZ-06` und `SL-04` sind von `beleg: LB` / `decision_source:
 lb_explizit` auf `BELEGT` / `norm_default` gezogen; ihr Lux-Wert bleibt offen.
+
+## 2d. R 12-2/AC:2019 — die Brücke zwischen OVE E 8101 und OIB-RL 2 (2026-09-05)
+
+**Begrenzter Abgleich: nur Zeile 4 (Verkaufs-/Ausstellungsstätten).** Alle anderen
+Nutzungen sind hier noch nicht geprüft.
+
+### Die Kette, jetzt lückenlos für diese eine Nutzung
+
+| Glied | Fundstelle | Aussage |
+|---|---|---|
+| **1. OVE E 8101:2019** | 718.560.9.001.AT, Teil 7-718 S. 4 | Zusatz-Anforderungen (u.a. Sanitärbereiche ab 8 m²) gelten „für Räume, Anlagen oder Gebäude, an die **erhöhte Anforderungen nach der Art der Nutzung** (siehe OVE-Richtlinie **R 12-2** bzw. **OIB-Richtlinie 2**) gestellt werden" |
+| **2. R 12-2/AC:2019-07-01** | Tabelle 5.1, S. 3–5 | führt genau diese Unterscheidung als **Spaltenüberschriften**: Spalte 2 „**Allgemeine Anforderungen**" ᵃᶜᵉᶠ · Spalte 3 „**Erhöhte Anforderungen**" ᵇᶜᵉ. Fußnote 1): „**Grundlage für diese Tabelle sind die Anforderungen aus der OIB-Richtlinie 2:2019**" |
+| **3. R 12-2 Zeile 4** | S. 3 | Verkaufsstätten, Ausstellungsstätten ᵈ: allgemein `> 200 m² und ≤ 3 000 m²` · erhöht `> 3 000 m²` |
+| **4. OIB-RL 2, Ausgabe Mai 2023** | Tabelle 6 Zeile 4, Norm-S. 32 | Spalte 2 „Sicherheitsbeleuchtung **eingeschränkt auf Fluchtwege und festverlegtes Rettungswegesystem**" `> 200 m² und ≤ 3.000 m²` ⁽²⁾ · Spalte 3 „Sicherheitsbeleuchtung, **uneingeschränkt**" `> 3.000 m²` ⁽²⁾; Fußnote (2) = **Verkaufsfläche** gemäß OIB-Begriffsbestimmungen |
+| **5. unsere Auswertung** | `oib_rl2_tabelle6.yaml`, Zeile 4 | Kriterium `verkaufsflaeche_m2`; `eingeschraenkt` = > 200 ≤ 3000, `uneingeschraenkt` = > 3000, darunter **keine Aussage** |
+
+### Was daraus belegt ist
+
+**Die Spalten entsprechen einander 1:1.** R 12-2 „allgemeine Anforderungen"
+(Fußnote a: „**eingeschränkt auf Fluchtwege und festverlegte Rettungswegsysteme**")
+= OIB-Spalte 2. R 12-2 „**erhöhte** Anforderungen" (Fußnote b: Sicherheits- und
+ggf. Ersatzbeleuchtung, **ohne** die Fluchtweg-Einschränkung) = OIB-Spalte 3
+„uneingeschränkt".
+
+Damit ist die bisher als **unbelegte Auslegung** geführte Gleichsetzung für diese
+Nutzung **belegt**:
+
+> **OIB-Stufe `uneingeschraenkt` ⇔ „erhöhte Anforderungen nach der Art der
+> Nutzung" im Sinne von OVE E 8101 718.560.9.001.AT.**
+
+Die Zahlen sind in beiden Ausgaben identisch (R 12-2 fußt auf OIB-RL 2:**2019**,
+unsere Auswertung auf **Mai 2023**) — für Zeile 4 gibt es also keinen
+Ausgaben-Bruch. **Für andere Zeilen ist das nicht geprüft.**
+
+### Was ausdrücklich NICHT daraus folgt
+
+* **Keine Antipanikbeleuchtung aus dem Wort „Sicherheitsbeleuchtung".** R 12-2
+  Fußnote a sagt es selbst: „Je nach Nutzung können für besondere Räume und
+  Anlagen **weitere Arten der Notbeleuchtung (zB Antipanikbeleuchtung)**
+  erforderlich sein." Erforderlichkeit, Beleuchtungsart und lichttechnischer
+  Nachweis sind **drei** Fragen.
+* **Aus „allgemeine Anforderungen" (200–3 000 m²) folgt kein OVE-Zusatz-Trigger**
+  — aber auch **kein Ausschluss**: die Zusatz-Anforderungen aus 718.560.9.001.AT
+  hängen an „erhöht"; andere Anforderungen (EN 1838, AStV) bleiben unberührt.
+* **Unter 200 m²** trifft die Tabelle **keine Aussage** — kein Umkehrschluss.
+* **Gemischte Nutzung:** R 12-2 Fußnote c — „Bei gemischter Nutzung gelten die für
+  die **jeweilige Nutzung** anzuwendenden Anforderungen dieser Tabelle." Deckt
+  sich wörtlich mit OIB-RL 2 Punkt 5.4 und bestätigt die raumbezogene Auswertung.
+* **Arbeitsstätten** (Fußnoten e/f) laufen über die **AStV**, nicht über diese
+  Tabelle — eigener Pfad, hier nicht bewertet.
+
+### Überholte eigene Aussagen
+
+| bisher | jetzt |
+|---|---|
+| „R 12-2 liegt nicht im Repo" (Abschnitt 2b, `BLOCKER2_FLAECHEN_SCOPE.md` 1c/8a) | **teilweise überholt**: die **Berichtigung** R 12-2/AC:2019-07-01 liegt vor und enthält Tabelle 5.1 vollständig; die Basis-Richtlinie fehlt weiter |
+| „die Gleichsetzung Tabelle-6-Erforderlichkeit = erhöhte Anforderungen ist eine unbelegte Auslegung" | **für Zeile 4 belegt** (Spalten-Entsprechung, s.o.); für alle anderen Zeilen unverändert offen |
+| „`sanitaer_scope` kann nie `anwendbar` werden" | **für Verkaufsstätten > 3 000 m² Verkaufsfläche wäre `anwendbar` jetzt begründbar** — die Umsetzung bleibt offen (Beleuchtungsart + Nachweis, s. `BLOCKER2_FLAECHEN_SCOPE.md` 9) |
 
 ## 3. Fehlt — kostenlos beschaffbar
 1. **AStV, ASchG, KennV inkl. Anhang 1** als amtliche RIS-Ausdrucke (Gesetzesnummern s.o.).
