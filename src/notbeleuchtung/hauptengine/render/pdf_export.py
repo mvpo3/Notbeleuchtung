@@ -24,6 +24,7 @@ def dxf_zu_pdf(
     breite_zoll: float = 16.5,
     hoehe_zoll: float = 11.7,   # A3 quer
     layout: str | None = None,  # z.B. "Notbeleuchtungsplan" = Owner-Blatt-Vorlage
+    ausschnitt: tuple | None = None,  # (x0, y0, x1, y1) — nur diesen Bereich rendern
 ) -> Path:
     """Rendert `dxf_path` in ein PDF (`pdf_path`) und gibt den Pfad zurück.
 
@@ -63,6 +64,11 @@ def dxf_zu_pdf(
         Frontend(RenderContext(doc), MatplotlibBackend(ax)).draw_layout(
             ziel_layout, finalize=True, layout_properties=lp
         )
+        if ausschnitt is not None:
+            x0, y0, x1, y1 = ausschnitt
+            pad_x, pad_y = (x1 - x0) * 0.01, (y1 - y0) * 0.01
+            ax.set_xlim(x0 - pad_x, x1 + pad_x)
+            ax.set_ylim(y0 - pad_y, y1 + pad_y)
         pdf_path = Path(pdf_path)
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(str(pdf_path), facecolor=bg, bbox_inches="tight", pad_inches=0.2)

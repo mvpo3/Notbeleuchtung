@@ -66,11 +66,15 @@ _BOX_Y_LEGENDE = _BOX_Y_STUECK + _BOX_H_STUECK_MM + _PANEL_GAP_MM
 _BOX_Y_BELEGUNG = _BOX_Y_LEGENDE + _BOX_H_LEGENDE_MM + _PANEL_GAP_MM
 
 
+_panel_x0_override: list = []   # Blatt-Modus: Panels beginnen hinter dem Blattrahmen
+
+
 def _draw_info_box(msp, raum: RaumModell, y_unten_rel: float, hoehe: float,
                    layer: str, text: str, *, char_h: float = LEGENDE_HEIGHT_MM) -> None:
     """Gerahmte Info-Box in der rechten Schriftfeld-Leiste (feste Größe, Text wrappt)."""
     (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-    x0 = max_x + _PANEL_ABSTAND_MM
+    x0 = (_panel_x0_override[0] if _panel_x0_override
+          else max_x + _PANEL_ABSTAND_MM)
     y0 = min_y + y_unten_rel
     x1, y1 = x0 + _PANEL_B_MM, y0 + hoehe
     msp.add_lwpolyline([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], close=True,
@@ -650,7 +654,9 @@ def _draw_vorlage(msp, raum: RaumModell,
     (_min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
     ziel_h = max(max_y - min_y, 10000.0)
     sc = ziel_h / bb.size.y
-    x0 = max_x + _PANEL_ABSTAND_MM + _PANEL_B_MM + _PANEL_ABSTAND_MM
+    basis = (_panel_x0_override[0] if _panel_x0_override
+             else max_x + _PANEL_ABSTAND_MM)
+    x0 = basis + _PANEL_B_MM + _PANEL_ABSTAND_MM
     cx = x0 + (bb.size.x * sc) / 2.0
     cy = min_y + ziel_h / 2.0
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
@@ -734,7 +740,7 @@ def _blatt_vorlage_doc():
     return _blatt_vorlage_cache["doc"]
 
 
-def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None) -> bool:
+def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
     """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
 
     Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
@@ -747,13 +753,21 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None) -> bool:
 
     vorlage = _blatt_vorlage_doc()
     if vorlage is None or "Layout1" not in vorlage.layout_names():
-        return False
+        return None
     quelle = vorlage.layout("Layout1")
 
     # Vorlagen-Geometrie (vermessen): Fenster + Gesamtrahmen in Vorlagen-Einheiten.
     FX0, FY0, FX1, FY1 = 710.0, 275.0, 1188.0, 804.0     # Planfenster
+    RX0, RY0, RX1, RY1 = 710.0, 275.0, 1392.0, 804.0     # Gesamtrahmen
     fenster_w, fenster_h = FX1 - FX0, FY1 - FY0
-    (min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    # GESCHOSS-Extents (echte Räume) statt Gebäude-bounds — sonst sitzt ein kleines
+    # EG verloren im Fenster eines 50-m-Gebäude-Rahmens.
+    xs = [p[0] for r in raum.raeume for p in r.polygon_mm]
+    ys = [p[1] for r in raum.raeume for p in r.polygon_mm]
+    if not xs:
+        (bmin, bmax) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+        xs, ys = [bmin[0], bmax[0]], [bmin[1], bmax[1]]
+    min_x, max_x, min_y, max_y = min(xs), max(xs), min(ys), max(ys)
     plan_w = max(max_x - min_x, 1.0)
     plan_h = max(max_y - min_y, 1.0)
     S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.06
@@ -833,7 +847,7 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None) -> bool:
             msp.add_blockref(bname, (wx, wy), dxfattribs={
                 "xscale": sc, "yscale": sc, "layer": LAYER_NOTBELEUCHTUNG,
             })
-    return True
+    return (RX0 * S + dx, RY0 * S + dy, RX1 * S + dx, RY1 * S + dy)
 
 
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
@@ -872,6 +886,10 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
+    blatt_bbox = _baue_blatt_layout(msp, raum, plankopf)
+    _panel_x0_override.clear()
+    if blatt_bbox is not None:
+        _panel_x0_override.append(blatt_bbox[2] + _PANEL_ABSTAND_MM)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
     vorlage_drawn, vorlage_legende_gefuellt = _draw_vorlage(msp, raum, platzierung)
     stueckliste_drawn = (
@@ -890,7 +908,8 @@ def render_dxf(
 
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
-    blatt_drawn = _baue_blatt_layout(msp, raum, plankopf)
+    blatt_drawn = blatt_bbox is not None
+    _panel_x0_override.clear()
     _set_vport(doc, raum, platzierung)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -918,5 +937,6 @@ def render_dxf(
         "vorlage_drawn": vorlage_drawn,
         "vorlage_legende_gefuellt": vorlage_legende_gefuellt,
         "blatt_layout_drawn": blatt_drawn,
+        "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
