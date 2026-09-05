@@ -134,3 +134,23 @@ def test_place_integriert_sonderstellen():
     assert len(mit.platzierungen) == len(ohne.platzierungen) + 1
     neu = [p for p in mit.platzierungen if p.xy_mm == (99999.0, 99999.0)]
     assert len(neu) == 1 and neu[0].kind == "sicherheitsleuchte"
+
+
+def test_nachpass_haelt_sonderstellen_leuchte_unter_2m():
+    # Enis-Review #95 (Anmerkung): der Abstands-Nachpass darf die Pflicht-Leuchte
+    # nudgen — aber die Norm-ANMERKUNG "nahe ≤ 2 m" muss NACH dem Nachpass halten.
+    # Zwei Stellen 100 mm auseinander provozieren Merge/Nudge an der Naht.
+    from notbeleuchtung.platzierung import NotlichtPlatzierer
+
+    stellen = [
+        _stelle("feuerloescher", (99999.0, 99999.0), sid="s1"),
+        _stelle("hydrant", (99999.0, 99899.0), sid="s2"),
+    ]
+    raum = _raum(sonderstellen=stellen)
+    ergebnis = NotlichtPlatzierer().place(raum, FakeNormProvider())
+    for s in raum.sonderstellen:
+        dists = [
+            ((p.xy_mm[0] - s.xy_mm[0]) ** 2 + (p.xy_mm[1] - s.xy_mm[1]) ** 2) ** 0.5
+            for p in ergebnis.platzierungen
+        ]
+        assert min(dists) <= 2000.0, f"Stelle {s.id}: nächste Leuchte {min(dists):.0f} mm"
