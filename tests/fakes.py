@@ -12,10 +12,14 @@ from pathlib import Path
 from notbeleuchtung.hauptengine.contracts import (
     BereichsRegel,
     FluchtwegSegment,
+    Gebaeudeteil,
     LBVorgabe,
     NormAnforderung,
     NormRegelwerk,
+    OibBefund,
+    OibErgebnis,
     PlatzierungsErgebnis,
+    ProjektKontext,
     ProviderBundle,
     RaumModell,
 )
@@ -139,4 +143,40 @@ def build_fake_bundle_mit_lb_review(meldung: str | None = None) -> ProviderBundl
     """Wie `build_fake_bundle_mit_lb`, aber der LB-Provider verlangt Review."""
     bundle = build_fake_bundle()
     bundle.lb = FakeLBReviewProvider(meldung)
+    return bundle
+
+
+class FakeOibProvider:
+    """OIB-Double — fester Erforderlichkeits-Befund (Stufe je Konstruktor).
+
+    Ignoriert die Projektfakten; je Gebäudeteil des ProjektKontext ein Ergebnis mit
+    der gesetzten Stufe. So üben die Tests das Flächen-Trigger-Gate (offen/zu/
+    fail-closed), ohne an Enis' echter Tabelle-6-Auswertung zu hängen."""
+
+    def __init__(self, stufe: str = "eingeschraenkt") -> None:
+        self._stufe = stufe
+
+    def bewerte_oib(self, projekt: ProjektKontext) -> OibBefund:
+        teile = projekt.gebaeudeteile or [
+            Gebaeudeteil(id="teil_1", nutzungsart="SONSTIGES_GEBAEUDE")
+        ]
+        return OibBefund(
+            ergebnisse=[
+                OibErgebnis(
+                    gebaeudeteil_id=t.id,
+                    stufe=self._stufe,
+                    quelle="OIB-RL 2 Tabelle 6 (Fake)",
+                    norm_ausgabe="Mai 2023 (Fake)",
+                    # Echo wie der echte OibRl2Provider (raum-genaues Gate v2 testbar).
+                    raum_referenzen=list(t.raum_referenzen),
+                )
+                for t in teile
+            ]
+        )
+
+
+def build_fake_bundle_mit_oib(stufe: str = "eingeschraenkt") -> ProviderBundle:
+    """Wie `build_fake_bundle`, aber mit verdrahtetem OIB-Provider (3. Input aktiv)."""
+    bundle = build_fake_bundle()
+    bundle.oib = FakeOibProvider(stufe)
     return bundle

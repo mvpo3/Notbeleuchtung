@@ -15,6 +15,7 @@ from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import (
     NormProvider,
+    OibBefund,
     Platzierung,
     RaumModell,
 )
@@ -22,6 +23,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
 from .lux import lux_raster, ud_min_aus_norm
+from .oib_gate import flaechen_trigger_offen, freigegebene_raeume
 
 # Sicherung gegen Überproduktion, falls der Lux-Nachweis nie hält (defekte Geometrie).
 _ANTIPANIK_MAX_LEUCHTEN = 25
@@ -81,7 +83,10 @@ def _antipanik_punkte(polygon: list, anf) -> list:
 
 
 def _plan_raumleuchten(
-    raum: RaumModell, norm: NormProvider, klassifikation: str
+    raum: RaumModell,
+    norm: NormProvider,
+    klassifikation: str,
+    oib: OibBefund | None = None,
 ) -> list[Platzierung]:
     """Je Raum mit passender Norm-Klassifikation Leuchten, geometrisch über die Fläche
     verteilt (`grid_points`): Sicherheitsleuchte → `mindest_anzahl` (Aufheller-Betonung);
@@ -93,10 +98,19 @@ def _plan_raumleuchten(
     }
     assign_building = _building_assigner([cx for cx, _ in centroids.values()])
 
-    # Flächen-Trigger (EN 1838 §4.3) nur im Antipanik-Durchlauf: große offene Flächen /
-    # WC über der Norm-Schwelle werden antipanik-pflichtig, auch ohne Typ-Klassifikation.
+    # Flächen-Trigger nur im Antipanik-Durchlauf: große offene Flächen / WC über der
+    # Schwelle werden antipanik-pflichtig, auch ohne Typ-Klassifikation. Die Schwellen
+    # sind OVE-scope-gebunden (OVE E 8101 / E 8002-1: nur bei „erhöhten Anforderungen"
+    # nach OIB-RL 2) → sie greifen NUR, wenn das OIB-Gate offen ist (fail-closed).
     schwellen = norm.regelwerk_snapshot().flaechen_schwellen
-    ap_referenz = _antipanik_referenz(norm) if klassifikation == "antipanik" else None
+    ap_referenz = (
+        _antipanik_referenz(norm)
+        if klassifikation == "antipanik" and flaechen_trigger_offen(oib)
+        else None
+    )
+    # Raum-Scope des offenen Gates: None = alle Räume (projekt-global); Menge =
+    # nur die referenzierten Räume dieses Geschosses (raum-genau, ggf. leer).
+    gate_scope = freigegebene_raeume(oib, raum.floor) if ap_referenz is not None else None
 
     out: list[Platzierung] = []
     for r in raum.raeume:
@@ -104,15 +118,22 @@ def _plan_raumleuchten(
             continue
         anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
         eff = anf
+        getriggert = False
         if anf.klassifikation != klassifikation:
             # Zusatz-Trigger: darf nur ADDIEREN (Antipanik über Fläche), nie überschreiben.
             if (
                 ap_referenz is not None
+                and (gate_scope is None or r.id in gate_scope)
                 and _ist_flaechen_antipanik(r.raum_typ, r.flaeche_m2, schwellen)
             ):
                 eff = ap_referenz
+                getriggert = True
             else:
                 continue
+        # Flächen-getriggerte Leuchten tragen die Schwellen-Quelle (OVE) im Audit-Trail,
+        # sobald Enis sie liefert; bis dahin Fallback auf die Antipanik-Regel-Quelle
+        # (hält die Naht-Invariante norm_quelle ∈ NormRegelwerk.quellen).
+        quelle = (schwellen.quelle or eff.quelle) if getriggert else eff.quelle
         building = assign_building(centroids[r.id][0])
         punkte = (
             _antipanik_punkte(r.polygon_mm, eff)
@@ -130,7 +151,7 @@ def _plan_raumleuchten(
                     richtung="gerade",
                     circuit_hint=f"AGV-{building}-F{_AGV_SV_F}",
                     covers_segment=[],
-                    norm_quelle=eff.quelle,
+                    norm_quelle=quelle,
                 )
             )
     return out
@@ -141,6 +162,12 @@ def plan_sicherheitsleuchten(raum: RaumModell, norm: NormProvider) -> list[Platz
     return _plan_raumleuchten(raum, norm, "sicherheitsleuchte")
 
 
-def plan_antipanik(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
-    """Antipanik-Leuchten je Raum mit Norm-Klassifikation 'antipanik' (offene Fläche)."""
-    return _plan_raumleuchten(raum, norm, "antipanik")
+def plan_antipanik(
+    raum: RaumModell, norm: NormProvider, oib: OibBefund | None = None
+) -> list[Platzierung]:
+    """Antipanik-Leuchten je Raum mit Norm-Klassifikation 'antipanik' (offene Fläche).
+
+    `oib` schaltet den zusätzlichen Flächen-Trigger frei (OVE-scope-gebunden, siehe
+    `oib_gate`); ohne Befund bleibt es bei der reinen Typ-Klassifikation.
+    """
+    return _plan_raumleuchten(raum, norm, "antipanik", oib=oib)
