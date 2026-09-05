@@ -48,7 +48,7 @@
       "type": "object"
     },
     "FlaechenSchwellen": {
-      "description": "Flächenbasierte Trigger (EN 1838 §4.3 / OIB) — welche Fläche welche Pflicht auslöst.\n\nv1.1.0 (Track B). Werte kommen aus `normwissen/data` (Enis); None = Norm liefert\n(noch) keine Schwelle. Konsument (`flaechen_strategy`) fragt sie statt sie zu raten.",
+      "description": "Flächenbasierte Antipanik-Trigger — welche Fläche welche Pflicht auslöst.\n\nQuelle ist NICHT EN 1838 (dort kommt keine flächenbezogene Auslöse-Schwelle vor),\nsondern OVE E 8101:2019 718.560.9.001.AT bzw. ÖVE/ÖNORM E 8002-1 — dort\nscope-gebunden an „erhöhte Anforderungen nach der Art der Nutzung\" (OVE R 12-2 /\nOIB-RL 2). Der Konsument (`flaechen_strategy`) darf sie deshalb nur anwenden, wenn\nder OIB-Pfad diesen Scope bestätigt (OibBefund-Gate), nie global.\n\nv1.2.0. Werte + `quelle` kommen aus `normwissen/data` (Enis); None = Norm liefert\n(noch) keine Schwelle. Konsument fragt sie statt sie zu raten.",
       "properties": {
         "antipanik_min_m2": {
           "anyOf": [
@@ -73,6 +73,18 @@
           ],
           "default": null,
           "title": "Wc Sanitaer Min M2"
+        },
+        "quelle": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quelle"
         }
       },
       "title": "FlaechenSchwellen",
@@ -198,7 +210,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.1.0",
+      "default": "1.2.0",
       "title": "Contract Version",
       "type": "string"
     },

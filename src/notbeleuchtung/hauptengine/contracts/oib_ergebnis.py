@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 
 from .projekt_kontext import RaumReferenz
 
-CONTRACT_VERSION = "1.0.0"
+CONTRACT_VERSION = "1.1.0"
 
 OibStufe = Literal[
     "nicht_erforderlich",
@@ -42,6 +42,10 @@ class OibErgebnis(BaseModel):
     fehlende_fakten: list[str] = Field(default_factory=list)
     hinweise: list[str] = Field(default_factory=list)
     ausfuehrungs_verweise: list[str] = Field(default_factory=list)
+    # v1.1.0 — Echo der Gebaeudeteil.raum_referenzen aus dem ProjektKontext (Audit +
+    # raum-genaues Gating beim Konsumenten): leer = der Befund gilt gebäudeteil-weit
+    # ohne Raum-Zuordnung → Konsumenten fallen auf projekt-globale Auswertung zurück.
+    raum_referenzen: list[RaumReferenz] = Field(default_factory=list)
 
 
 class OibBefund(BaseModel):
