@@ -314,16 +314,27 @@ def pruefe(
             "vertikaler Lux-Nachweis nicht geführt (Engine rechnet horizontal am Boden)",
         ))
 
-    # 12b. Arbeitsplätze mit besonderer Gefährdung (§4.4.1): solange `arbeitsplatz_lux`
-    #      im Regelwerk ungefüllt ist, ist der 10-%-/min.-15-lx-Nachweis nicht führbar
-    #      → gleiche Sichtbarkeits-Pflicht.
+    # 12b. Arbeitsplätze mit besonderer Gefährdung (§4.4.1): der geforderte Wert gilt
+    #      auf der ARBEITSFLÄCHE — „muss der Wartungswert der Beleuchtungsstärke auf der
+    #      Arbeitsfläche mindestens 10 % des für die Aufgabe erforderlichen
+    #      Wartungswertes der Beleuchtungsstärke betragen und darf nicht unter 15 lx
+    #      fallen" (Norm-S.12, am Original geprüft). Das ist WEDER der Bodenwert, den
+    #      `lux_raster` rechnet, NOCH der vertikale Wert aus §4.1.2 h/i — drei
+    #      verschiedene Bezugsflächen, nicht ineinander umrechenbar. Zwei Größen fehlen
+    #      zusätzlich: der Wartungswert der Aufgabenbeleuchtung (kein Engine-Eingang)
+    #      und die Arbeitsfläche selbst (im RaumModell nicht beschrieben). Damit ist der
+    #      Nachweis nicht führbar → gleiche Sichtbarkeits-Pflicht wie Regel 12.
     gefaehrdung = [r for r in raum.raeume if r.besondere_gefaehrdung]
     if gefaehrdung:
         befunde.append(Befund(
-            "Arbeitsplatz-Lux bei besonderer Gefährdung (EN 1838 §4.4) — manuell prüfen",
+            "Arbeitsplatz-Lux bei besonderer Gefährdung (EN 1838 §4.4.1, Bezugsfläche "
+            "ARBEITSFLÄCHE) — manuell prüfen",
             "warnung",
             f"{len(gefaehrdung)} Raum/Räume mit besondere_gefaehrdung: Leuchte gesetzt, "
-            "arbeitsplatz_lux-Nachweis (10 % / min. 15 lx) im Regelwerk noch ungefüllt",
+            "Nachweis auf der ARBEITSFLÄCHE (10 % des Aufgaben-Wartungswertes, mind. "
+            "15 lx) nicht geführt — arbeitsplatz_lux im Regelwerk ungefüllt, "
+            "Aufgabenbeleuchtung und Arbeitsfläche sind keine Engine-Eingänge; der "
+            "Bodenwert aus lux_raster ersetzt ihn nicht",
         ))
 
     return befunde
