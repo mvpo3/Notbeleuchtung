@@ -9,8 +9,8 @@ from notbeleuchtung.hauptengine.contracts import (
     Platzierung,
     PlatzierungsErgebnis,
     Raum,
-    Sonderstelle,
     RaumModell,
+    Sonderstelle,
     ZirkulationsGraph,
 )
 from notbeleuchtung.hauptengine.pipeline import run
