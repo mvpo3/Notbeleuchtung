@@ -579,7 +579,7 @@ def _draw_anlage(msp, raum: RaumModell, lb: LBVorgabe | None) -> bool:
     })
     _SYS = {"einzelbatterie": "Einzelbatterie", "gruppenbatterie": "Gruppenbatterie",
             "zentralbatterie": "Zentralbatterie"}
-    text = f"SV-Anlage 1 — {_SYS.get(lb.system_typ, lb.system_typ)}"
+    text = f"SV-Anlage 1 - {_SYS.get(lb.system_typ, lb.system_typ)}"
     if lb.batterie_standort:
         text += f"\\P{lb.batterie_standort}"
     mt = msp.add_mtext(text, dxfattribs={"layer": LAYER_BELEGUNG,
