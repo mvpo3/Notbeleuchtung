@@ -287,14 +287,25 @@ Art der Nutzung (siehe OVE-Richtlinie **R 12-2** bzw. OIB-Richtlinie 2)"**.
 * Tabelle 6 sagt „Sicherheitsbeleuchtung **erforderlich**", nicht „erhöhte
   Anforderungen **nach der Art der Nutzung**".
 
-**Was `anwendbar` deshalb genau heißt:** *ein Gebäudeteil, für den Tabelle 6 eine
-Sicherheitsbeleuchtung verlangt, erfasst diesen Raum.* Nicht mehr. Der
-**räumliche** Geltungsbereich ist damit sauber aufgelöst, der **Nutzungs**-Scope
-der OVE-Regel bleibt **angenähert, nicht nachgewiesen**. Der Satz „der Scope
-stimmt jetzt" wäre zu stark — richtig ist: *die Über-Anwendung über Gebäudeteile
-hinweg ist behoben*. Für das Füllen der 8-m²-Schwelle ist das eine notwendige,
-aber noch keine hinreichende Bedingung; es fehlt R 12-2 oder eine ausdrückliche
-Owner-Entscheidung, die Gleichsetzung als Auslegung zu akzeptieren.
+**Konsequenz im Code (umgesetzt):** die beiden Fragen sind getrennt.
+
+| Funktion | Frage | Werte |
+|---|---|---|
+| `raum_zuordnung` | *räumlich:* erfasst ein Gebäudeteil mit positivem OIB-Befund diesen Raum? | `bestaetigt` · `nicht_bestaetigt` · `ungeklaert` |
+| `sanitaer_scope` | *fachlich:* ist die OVE-Sanitärregel hier anwendbar? | `nicht_anwendbar` · `ungeklaert` — **`anwendbar` kommt heute nicht vor** |
+
+Eine **bestätigte Zuordnung führt zu `ungeklaert`**, nicht zu `anwendbar`: sie
+belegt nur die Erforderlichkeit nach Tabelle 6, nicht den Nutzungs-Scope der
+OVE-Klausel. Damit löst auch eine im Test gesetzte 8-m²-Schwelle **keine**
+Platzierung aus — der Fall landet stattdessen als `ungeklaert` im Prüfbericht,
+mit dem Grund. Der Satz „der Scope stimmt jetzt" wäre falsch; richtig ist: *die
+Über-Anwendung über Gebäudeteile hinweg ist behoben, und die verbleibende
+Unsicherheit ist benannt statt stillschweigend zugunsten einer Platzierung
+aufgelöst*.
+
+Damit daraus `anwendbar` werden kann, braucht es **R 12-2** oder eine
+ausdrückliche 3-Owner-Entscheidung, die Gleichsetzung als Auslegung zu
+akzeptieren. Erst dann ist das Füllen der 8-m²-Schwelle begründbar.
 
 ### 8b. Widersprüche und ungültige Zuordnungen
 

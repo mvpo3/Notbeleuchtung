@@ -337,23 +337,45 @@ def pruefe(
     #     verschwand der Fall lautlos, sobald irgendein anderer Gebäudeteil
     #     bestätigt war. Muster wie 8b/12: „ungeprüft ≠ erfüllt".
     if oib is not None:
-        from notbeleuchtung.platzierung.oib_gate import raeume_ohne_geklaerten_scope
-
-        unklarer_scope = raeume_ohne_geklaerten_scope(
-            oib, raum.floor, [r.id for r in raum.raeume]
+        from notbeleuchtung.platzierung.oib_gate import (
+            raeume_ohne_geklaerten_scope,
+            raum_zuordnung,
         )
+
+        raum_ids = [r.id for r in raum.raeume]
+        unklarer_scope = raeume_ohne_geklaerten_scope(oib, raum.floor, raum_ids)
         if unklarer_scope:
+            # Zwei verschiedene Ursachen, getrennt benannt: (a) die räumliche
+            # Zuordnung steht, aber die Nutzungs-Art ist nicht belegt (Tabelle 6
+            # sagt „Sicherheitsbeleuchtung erforderlich", nicht „erhöhte
+            # Anforderungen nach der Art der Nutzung" — R 12-2 liegt nicht vor);
+            # (b) schon die Zuordnung selbst ist offen.
+            zugeordnet = [
+                r for r in unklarer_scope
+                if raum_zuordnung(oib, raum.floor, r) == "bestaetigt"
+            ]
+            offen = [r for r in unklarer_scope if r not in zugeordnet]
+            teile = []
+            if zugeordnet:
+                teile.append(
+                    f"{len(zugeordnet)} mit bestätigter Zuordnung, aber ohne Beleg "
+                    "für den Nutzungs-Scope der OVE-Regel (R 12-2 fehlt)"
+                )
+            if offen:
+                teile.append(
+                    f"{len(offen)} ohne geklärte Zuordnung (Gebäudeteil "
+                    "review_required, widersprüchlich oder ohne raum_referenzen)"
+                )
             gezeigt = ", ".join(sorted(unklarer_scope)[:5])
             mehr = " …" if len(unklarer_scope) > 5 else ""
             befunde.append(Befund(
                 "OVE-Flächen-Trigger: Geltungsbereich ungeklärt "
                 "(OVE E 8101 718.560.9.001.AT) — manuell prüfen",
                 "warnung",
-                f"{len(unklarer_scope)} Raum/Räume ohne geklärten Geltungsbereich "
-                f"({gezeigt}{mehr}): weder freigegeben noch ausgeschlossen — die "
-                "scope-gebundenen Zusatz-Trigger wurden dort NICHT angewendet. "
-                "Ursache: Gebäudeteil review_required oder bestätigter Gebäudeteil "
-                "ohne raum_referenzen",
+                f"{len(unklarer_scope)} Raum/Räume ({gezeigt}{mehr}) — "
+                + "; ".join(teile)
+                + ". Weder freigegeben noch ausgeschlossen: die scope-gebundenen "
+                "Zusatz-Trigger wurden dort NICHT angewendet",
             ))
 
     return befunde
