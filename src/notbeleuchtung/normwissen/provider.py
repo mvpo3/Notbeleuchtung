@@ -20,8 +20,10 @@ from __future__ import annotations
 
 from functools import cached_property
 from pathlib import Path
+from typing import Literal
 
 import yaml
+from pydantic import BaseModel, Field
 
 from notbeleuchtung.hauptengine.contracts import (
     ErkennungsweiteParameter,
@@ -36,6 +38,32 @@ from .sonderstellen import (
     SonderstellenAnforderung,
     SonderstellenKatalog,
 )
+
+
+class WegNachweis(BaseModel):
+    """Welcher §4.2.1-Nachweis für einen Rettungsweg dieser Breite gilt.
+
+    EN 1838 §4.2.1 (Norm-S.9) ist zweigeteilt: Satz 1 bindet die 1-lx-Mittellinie
+    an eine Breite **bis zu 2 m**; Satz 3 sagt für breitere Wege „können als
+    mehrere 2 m breite Streifen betrachtet werden **oder** mit
+    Antipanikbeleuchtung ausgerüstet werden" — eine KANN-Aussage mit zwei Wegen.
+    Welchen man geht, entscheidet der Planer; die Engine darf ihn nicht wählen.
+
+    Ohne bekannte Breite gibt es keinen Default: `regime="unbestimmbar"`.
+    """
+
+    regime: Literal["mittellinie", "breiter_weg", "unbestimmbar"]
+    breite_mm: float | None = None
+    max_breite_mm: int
+    #: Nur bei `mittellinie` gefüllt — sonst gibt die Norm für diese Breite nichts her.
+    mittellinie_lux: float | None = None
+    mittelbereich_breite_mm: float | None = None
+    mittelbereich_lux: float | None = None
+    #: Bei `breiter_weg`: die beiden Wege aus Satz 3, unbewertet nebeneinander.
+    optionen: list[str] = Field(default_factory=list)
+    quelle: str = ""
+    review_erforderlich: bool = False
+    grund: str = ""
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -118,6 +146,67 @@ class En1838NormProvider:
     def _default_erkennungsweite_m(self) -> float:
         e = self._grund["erkennungsweite"]
         return round(e["z_hinterleuchtet"] * e["piktogramm_hoehe_default_m"], 3)
+
+    # ── PROTOTYP: Geometrie des Nachweises (§4.2.1 Wegbreite / §4.3.1 Rand) ──
+    # ⚠️ Wie die Sonderstellen-Methoden: **nicht** im `ports.NormProvider`-Protocol,
+    # `WegNachweis` ist ein normwissen-eigener Typ. Kein Konsum über `getattr` und
+    # kein Import aus einem fremden Paket — der Anschlussvorschlag steht in
+    # docs/proposals/WEGBREITE_RANDSTREIFEN.md.
+    def weg_nachweis(self, breite_mm: float | None) -> WegNachweis:
+        """Welcher §4.2.1-Nachweis gilt für einen Rettungsweg dieser Breite?
+
+        `None` = Breite unbekannt → **kein Default**, sondern `unbestimmbar` mit
+        Review-Flag. Eine geratene Wegbreite wäre ein erfundener Geltungsbereich.
+        """
+        g = self._grund["geometrie"]["rettungsweg"]
+        grenze = int(g["max_breite_mm"])
+        quelle = self._quelle("rettungsweg")
+        if breite_mm is None:
+            return WegNachweis(
+                regime="unbestimmbar", breite_mm=None, max_breite_mm=grenze,
+                quelle=quelle, review_erforderlich=True,
+                grund=(
+                    "Wegbreite unbekannt. §4.2.1 bindet den Mittellinien-Nachweis an "
+                    "eine Breite bis zu 2 m; ohne Breite ist nicht entscheidbar, ob "
+                    "er anwendbar ist."
+                ),
+            )
+        if breite_mm <= grenze:
+            lux = self._lux("rettungsweg")
+            return WegNachweis(
+                regime="mittellinie", breite_mm=float(breite_mm), max_breite_mm=grenze,
+                mittellinie_lux=lux,
+                mittelbereich_breite_mm=float(breite_mm) * float(g["mittelbereich_breite_anteil"]),
+                mittelbereich_lux=lux * float(g["mittelbereich_lux_anteil"]),
+                quelle=quelle,
+            )
+        return WegNachweis(
+            regime="breiter_weg", breite_mm=float(breite_mm), max_breite_mm=grenze,
+            optionen=[k for o in g["breiter_weg_optionen"] for k in o],
+            quelle=quelle, review_erforderlich=True,
+            grund=(
+                f"Weg breiter als {grenze} mm. §4.2.1 lässt zwei Wege zu — Zerlegung in "
+                "höchstens 2 m breite Streifen ODER Antipanikbeleuchtung. Die Wahl ist "
+                "eine Planer-Entscheidung, kein Norm-Default."
+            ),
+        )
+
+    def antipanik_randstreifen_mm(self) -> float:
+        """Randbereich, der beim Antipanik-Nachweis unberücksichtigt bleibt.
+
+        §4.3.1 (Norm-S.11): 0,5 lx „auf der freien Bodenfläche im Kernbereich,
+        wobei Randbereiche mit einer Breite von 0,5 m nicht berücksichtigt
+        werden". Gehört zu **§4.3.1**, nicht zu §4.2.1 — der Rettungsweg-Nachweis
+        kennt keinen Randstreifen, sondern Mittellinie + Mittelbereich.
+        """
+        return float(self._grund["geometrie"]["antipanik"]["randstreifen_mm"])
+
+    def antipanik_randstreifen_quelle(self) -> str:
+        return self._quelle("antipanik")
+
+    def hat_at_abweichung(self) -> bool:
+        """Anhang B: gibt es für Österreich eine A-Abweichung? (Nein.)"""
+        return bool(self._grund.get("anhang_b_at_abweichung", False))
 
     # ── PROTOTYP: Sonderstellen (§4.1.2) + Raum-Attribute (§4.3.8/§4.4.1) ───
     #
