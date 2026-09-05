@@ -101,14 +101,14 @@ CIRCUIT_LABEL_MAX_NUDGE = 8
 # Montagehöhen-Kote — sitzt entgegen der Stromkreis-Label-Seite (−Normale),
 # damit Kote und Kreis-Label nicht überlappen. 150 mm (≈1,5 mm auf 1:100) statt 80 mm
 # (0,8 mm — am Plan-Maßstab unleserlich), auf Höhe der Stromkreis-Label-Skala.
-HOEHENKOTE_HEIGHT_MM = 150.0
+HOEHENKOTE_HEIGHT_MM = 90.0  # = Circuit-/NODEID-Label-Größe (einheitliche Annotation)
 HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 
 # NODEID-Annotation (fortlaufende Leuchten-ID je Symbol, Wartung/Adressierung, Profi-
 # Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
 # sie weder mit dem Stromkreis-Label (+Normale) noch der Höhenkote (−Normale) kollidiert.
 NODEID_HEIGHT_MM = 90.0
-NODEID_OFFSET_TANGENT_MM = 260.0
+NODEID_OFFSET_TANGENT_MM = 800.0  # > größte Symbol-Halbbreite (SL 434) + halbe Textbreite → neben dem Symbol, nicht drin
 _KIND_CODE = {"rz": "RZ", "sicherheitsleuchte": "SL", "antipanik": "AP"}
 
 # Schaltungsart je Leuchtenart (Profi-Belegungsplan 1.xlsx §3b): Rettungszeichen =
