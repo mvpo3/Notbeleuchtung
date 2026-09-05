@@ -81,6 +81,10 @@ class OibRl2Provider:
         return OibErgebnis(
             gebaeudeteil_id=teil.id,
             stufe=stufe,
+            # Echo (v1.1.0): Raum-Zuordnung des Gebäudeteils in den Befund, damit
+            # Konsumenten (Flächen-Trigger-Gate) raum-genau statt projekt-global
+            # auswerten können. Keine Prüfung gegen ein RaumModell (s. bewerte_oib).
+            raum_referenzen=list(teil.raum_referenzen),
             zeile=zeile.get("zeile"),
             quelle=self._meta["quelle"],
             norm_ausgabe=self._meta["norm_ausgabe"],
