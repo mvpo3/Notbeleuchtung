@@ -68,7 +68,9 @@ def test_verkaufsstaette_4000_mit_zugeordnetem_wc_9m2():
     assert "wc_1" in treffer.detail
     # Erforderlichkeit belegt, Ausführung offen — beides im Text.
     assert "Beleuchtungsart und lichttechnischer Nachweis noch offen" in treffer.regel
-    assert "Antipanik ist nicht gefordert" in treffer.detail
+    # Die Art ist nicht festgelegt — und daraus folgt keine automatische Antipanik.
+    assert "legt die Beleuchtungsart" in treffer.detail
+    assert "automatische Zuordnung zu Antipanik ist damit nicht belegt" in treffer.detail
     # Quellenkette mit Ausgabestand, alle drei Glieder.
     for quelle in ("OVE E 8101:2019-01-01", "R 12-2/AC:2019-07-01", "Ausgabe Mai 2023"):
         assert quelle in treffer.detail
@@ -221,3 +223,57 @@ def test_befund_erreicht_den_gezeichneten_pruefbericht(tmp_path):
     assert "Sicherheitsbeleuchtung erforderlich" in bloecke[0]
     assert bloecke[0].startswith("PRÜFBERICHT (EN 1838): WARNUNG")
     assert run  # Pipeline reicht projekt_kontext durch (test_pipeline_oib deckt das)
+
+
+# ── Ausgabestand ────────────────────────────────────────────────────────────
+def test_befund_steht_unter_ausgewiesenem_vorbehalt():
+    """Für die OVE-Ausgaben gibt es im Projekt keine Auswahl — der Befund ist
+    eine Vorprüfung und sagt das auch."""
+    befunde, _ = _befunde(_raum(_wc()), _verkauf())
+    (treffer,) = _regel(befunde, REGEL_14)
+    assert "Vorprüfung" in treffer.regel
+    assert (
+        "Unter der geprueften Quellenkombination ist Sicherheitsbeleuchtung "
+        "erforderlich; die Anwendbarkeit dieser Ausgaben auf das Projekt ist noch "
+        "zu bestaetigen."
+    ) in treffer.detail
+    # Kein Ausschluss der Ausgabe 2025 behauptet.
+    assert "weder behauptet noch ausgeschlossen" in treffer.detail
+    assert "2025" not in treffer.detail
+
+
+def test_fremde_oib_ausgabe_erzeugt_keinen_befund():
+    """Ausführbare Absicherung: kommt der Befund aus einer anderen OIB-Ausgabe als
+    der geprüften, gilt die Kette nicht — der Fall bleibt ungeklärt."""
+    from notbeleuchtung.hauptengine.contracts import OibBefund, OibErgebnis
+    from notbeleuchtung.hauptengine.validierung import pruefe as _pruefe
+
+    raum = _raum(_wc())
+    teil = _verkauf()
+    pk = ProjektKontext(jurisdiction="AT", gebaeudeteile=[teil])
+    fremd = OibBefund(ergebnisse=[OibErgebnis(
+        gebaeudeteil_id=teil.id, stufe="uneingeschraenkt",
+        quelle="OIB-Richtlinie 2, Punkt 5.4 + Tabelle 6",
+        norm_ausgabe="Ausgabe April 2019",          # NICHT die geprüfte Ausgabe
+        raum_referenzen=list(teil.raum_referenzen),
+    )])
+    erg = NotlichtPlatzierer().place(raum, En1838NormProvider(), oib=fremd)
+    befunde = _pruefe(raum, erg, norm=En1838NormProvider(), oib=fremd, projekt_kontext=pk)
+    assert not _regel(befunde, REGEL_14)
+    assert _regel(befunde, REGEL_13)
+
+
+def test_geprueft_wird_gegen_denselben_string_den_der_provider_setzt():
+    """Eine Wahrheit: die geprüfte Ausgabe kommt aus `oib_rl2_tabelle6.yaml`,
+    also aus derselben Datei, aus der der Provider den Befund baut."""
+    from notbeleuchtung.normwissen import OveZusatzKatalog
+
+    katalog = OveZusatzKatalog()
+    pk = ProjektKontext(jurisdiction="AT", gebaeudeteile=[_verkauf()])
+    ergebnis = OibRl2Provider().bewerte_oib(pk).ergebnisse[0]
+    assert katalog.passt_zur_geprueften_oib_ausgabe(ergebnis.norm_ausgabe)
+    assert katalog.ausgaben_pruefstatus() == {
+        "oib_rl2": "ausfuehrbar_geprueft",
+        "ove_e8101": "nicht_pruefbar",
+        "r12_2": "nicht_pruefbar",
+    }
