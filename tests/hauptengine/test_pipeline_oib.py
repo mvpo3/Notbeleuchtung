@@ -77,11 +77,17 @@ def test_ohne_oib_pfad_kein_scope_befund():
     ]
 
 
-def test_regel13_erreicht_den_gezeichneten_pruefbericht(tmp_path):
+def test_regel13_erreicht_den_gezeichneten_pruefbericht(tmp_path, monkeypatch):
     """Sichtbarkeit bis zur Ausgabe: der Befund darf nicht nur im Summary-Dict
     stehen. Er muss im gezeichneten Prüfbericht des Plans landen — und den
-    Gesamtstatus mitnehmen. Ein interner Eintrag allein genügt nicht."""
+    Gesamtstatus mitnehmen. Ein interner Eintrag allein genügt nicht.
+
+    Blatt-Vorlage hier aus: Owner-Fixierung 2026-09-05 unterdrückt im Blatt-Modus
+    ALLE Zusatz-Boxen (auch den Prüfbericht — bleibt im Summary/API); die
+    Zeichnungs-Naht dieses Tests existiert nur im Fallback-Pfad ohne Vorlage."""
     ezdxf = pytest.importorskip("ezdxf")
+    from notbeleuchtung.hauptengine.render import dxf_renderer as _dr
+    monkeypatch.setitem(_dr._blatt_vorlage_cache, "doc", None)
     out_dxf = tmp_path / "plan.dxf"
     out = run(build_fake_bundle_mit_oib("review_required"), dxf_path="<fake>",
               floor="4OG", out_path=str(out_dxf), projekt_kontext=_KONTEXT)
