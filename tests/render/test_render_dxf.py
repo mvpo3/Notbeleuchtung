@@ -317,3 +317,15 @@ def test_xdata_stromkreis_am_insert(rendered):
         if any(str(v).startswith("stromkreis=") for _, v in xdata):
             tagged += 1
     assert tagged == 5
+
+
+def test_tueren_werden_gezeichnet(rendered):
+    # Gap-Audit H-Gebäude: raum.tueren wurde vom Render ignoriert — Türen (Schwelle +
+    # Blatt + Schwenkbogen) müssen auf ARCH_Tuer erscheinen; Notausgänge doppelt.
+    contracts_pl, summary, doc = rendered
+    n_tueren = summary["tueren_drawn"]
+    assert n_tueren >= 1
+    linien = doc.modelspace().query("LINE[layer=='ARCH_Tuer']")
+    boegen = doc.modelspace().query("ARC[layer=='ARCH_Tuer']")
+    assert len(boegen) == n_tueren          # 1 Schwenkbogen je Tür
+    assert len(linien) >= 2 * n_tueren      # Schwelle + Blatt (+ Notausgang-Doppel)

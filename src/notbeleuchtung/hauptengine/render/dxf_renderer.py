@@ -31,6 +31,7 @@ from notbeleuchtung.symbols import inserter, library
 LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER  # din_SIBEL_10_emergency_lighting
 LAYER_STROMKREIS = "din_SIBEL_61_labeling"
 LAYER_ARCH_RAUM = "ARCH_Raum"
+LAYER_ARCH_TUER = "ARCH_Tuer"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
 LAYER_LEGENDE = "din_SIBEL_70_legend_white"
 LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
@@ -125,6 +126,7 @@ _SCHALTUNGSART = {"rz": "DL", "sicherheitsleuchte": "BL", "antipanik": "BL"}
 def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
+    doc.layers.add(LAYER_ARCH_TUER, color=8)    # dunkelgrau (Architektur-Bestand)
     doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
     doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
     doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
@@ -303,6 +305,62 @@ def _draw_raeume(msp, raum: RaumModell) -> int:
             dxfattribs={"layer": LAYER_ARCH_RAUM, "char_height": ROOM_LABEL_HEIGHT_MM},
         )
         mt.set_location((cx, cy), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
+        drawn += 1
+    return drawn
+
+
+def _wand_richtung(raum: RaumModell, tuer) -> tuple[float, float]:
+    """Einheits-Richtung der Wand, in der die Tür sitzt: nächstliegende Polygon-Kante
+    des Anschluss-Raums (von_raum/nach_raum) durch den Türpunkt. Fallback horizontal."""
+    tx, ty = tuer.xy_mm
+    best, best_d = (1.0, 0.0), float("inf")
+    kandidaten = [r for r in raum.raeume if r.id in (tuer.von_raum, tuer.nach_raum)]
+    for r in kandidaten or raum.raeume:
+        poly = r.polygon_mm
+        for i in range(len(poly)):
+            (x1, y1), (x2, y2) = poly[i], poly[(i + 1) % len(poly)]
+            ex, ey = x2 - x1, y2 - y1
+            ln = (ex * ex + ey * ey) ** 0.5
+            if ln < 1e-9:
+                continue
+            # Abstand Türpunkt → Kante (Projektion, geklemmt)
+            t = max(0.0, min(1.0, ((tx - x1) * ex + (ty - y1) * ey) / (ln * ln)))
+            px, py = x1 + t * ex, y1 + t * ey
+            d = ((tx - px) ** 2 + (ty - py) ** 2) ** 0.5
+            if d < best_d:
+                best_d, best = d, (ex / ln, ey / ln)
+    return best
+
+
+def _draw_tueren(msp, raum: RaumModell) -> int:
+    """Türen aus dem Contract zeichnen (Gap-Audit H-Gebäude: `raum.tueren` wurde vom
+    Render ignoriert — der Plan wirkte türlos). Darstellung wie im Architektur-Bestand:
+    Öffnungs-Schwelle in der Wand + Türblatt + Schwenk-Viertelbogen (`schwenk_richtung`).
+    Notausgangs-Türen zusätzlich mit Doppel-Schwelle markiert."""
+    import math as _math
+
+    drawn = 0
+    for t in raum.tueren:
+        breite = t.breite_mm or 900.0
+        wx, wy = _wand_richtung(raum, t)
+        nx, ny = -wy, wx                       # Wand-Normale (Aufschlagseite)
+        if t.schwenk_richtung == "links":
+            nx, ny = -nx, -ny
+        x0, y0 = t.xy_mm[0] - wx * breite / 2, t.xy_mm[1] - wy * breite / 2
+        x1, y1 = t.xy_mm[0] + wx * breite / 2, t.xy_mm[1] + wy * breite / 2
+        # Schwelle (Öffnung in der Wand)
+        msp.add_line((x0, y0), (x1, y1), dxfattribs={"layer": LAYER_ARCH_TUER})
+        if t.ist_notausgang:                   # Doppel-Schwelle = Notausgang
+            off = 120.0
+            msp.add_line((x0 + nx * off, y0 + ny * off), (x1 + nx * off, y1 + ny * off),
+                         dxfattribs={"layer": LAYER_ARCH_TUER})
+        # Türblatt (senkrecht zur Wand am Angelpunkt) + Schwenkbogen
+        msp.add_line((x0, y0), (x0 + nx * breite, y0 + ny * breite),
+                     dxfattribs={"layer": LAYER_ARCH_TUER})
+        start = _math.degrees(_math.atan2(wy, wx))
+        ende = _math.degrees(_math.atan2(ny, nx))
+        msp.add_arc(center=(x0, y0), radius=breite, start_angle=min(start, ende),
+                    end_angle=max(start, ende), dxfattribs={"layer": LAYER_ARCH_TUER})
         drawn += 1
     return drawn
 
@@ -534,6 +592,7 @@ def render_dxf(
     msp = doc.modelspace()
 
     n_raeume_drawn = _draw_raeume(msp, raum)
+    n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
     stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
@@ -573,6 +632,7 @@ def render_dxf(
         "nodeids_drawn": nodeids_drawn,
         "stromkreisnummern_drawn": stromkreisnummern_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
+        "tueren_drawn": n_tueren_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
         "stueckliste_drawn": stueckliste_drawn,
