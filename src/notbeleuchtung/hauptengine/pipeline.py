@@ -91,6 +91,17 @@ def _coverage(
             f"{n_leuchten} Sicherheitsleuchten (> {_AUTO_PRUEF_SCHWELLE}) → automatische "
             "Prüfeinrichtung mit zentraler Erfassung erforderlich (OVE E 8101 560.9.001.AT / EN 62034)."
         )
+    # Audit-Trail-Näherung an Sonderstellen/Flag-Räumen (Enis-Review #95): die
+    # `norm_quelle` dieser Leuchten ist die Fallback-Referenzregel, nicht der echte
+    # Auslöser (§4.1.2 c/h/i, §4.3.8, §4.4.1) — bis Enis' Quellen-Naht nachkommt.
+    if raum.sonderstellen or any(
+        r.ist_barrierefrei or r.besondere_gefaehrdung for r in raum.raeume
+    ):
+        hinweise.append(
+            "Sonderstellen-/Flag-Leuchten: norm_quelle = Fallback-Referenzregel — echte "
+            "Auslöser-Fundstellen (EN 1838 §4.1.2 c/h/i, §4.3.8, §4.4.1) folgen mit der "
+            "Quellen-Naht im NormRegelwerk."
+        )
     return {
         "n_raeume": len(raum.raeume),
         "n_raeume_untypisiert": n_untyped,

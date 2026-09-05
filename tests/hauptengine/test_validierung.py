@@ -10,6 +10,7 @@ from notbeleuchtung.hauptengine.contracts import (
     PlatzierungsErgebnis,
     Raum,
     RaumModell,
+    Sonderstelle,
     ZirkulationsGraph,
 )
 from notbeleuchtung.hauptengine.pipeline import run
@@ -400,3 +401,36 @@ def test_umschaltzeit_ohne_norm_arg_uebersprungen():
     lb = LBVorgabe(umschaltzeit_max_s=15.0)
     befunde = pruefe(_raum("s1"), _erg(_rz()), lb)
     assert _umschalt_befund(befunde) == []
+
+
+def test_regel11_sonderstelle_mit_lux_anforderung_warnt():
+    # §4.1.2 h/i (5 lx VERTIKAL): Leuchte gesetzt ≠ Nachweis geführt — der Bericht
+    # muss "manuell prüfen" sagen (Enis-Review #95, Befund 2).
+    raum = _raum("s1")
+    raum.sonderstellen.append(Sonderstelle(
+        id="f1", typ="feuerloescher", xy_mm=(10.0, 10.0), quelle="Test"))
+    befunde = pruefe(raum, _erg(_rz()))
+    treffer = [b for b in befunde if "5-lx-vertikal" in b.regel]
+    assert len(treffer) == 1 and treffer[0].status == "warnung"
+    assert "feuerloescher" in treffer[0].detail
+
+
+def test_regel11_niveauaenderung_loest_keine_lux_warnung_aus():
+    # §4.1.2 c) nennt KEIN Beleuchtungsniveau → kein vertikaler Nachweis geschuldet.
+    raum = _raum("s1")
+    raum.sonderstellen.append(Sonderstelle(
+        id="n1", typ="niveauaenderung", xy_mm=(10.0, 10.0), quelle="Test"))
+    befunde = pruefe(raum, _erg(_rz()))
+    assert not [b for b in befunde if "5-lx-vertikal" in b.regel]
+
+
+def test_regel11b_besondere_gefaehrdung_warnt():
+    raum = _raum("s1")
+    raum.raeume.append(Raum(
+        id="r_gef", raum_typ="WERKSTATT", besondere_gefaehrdung=True,
+        polygon_mm=[(0.0, 0.0), (100.0, 0.0), (100.0, 100.0), (0.0, 100.0)],
+    ))
+    befunde = pruefe(raum, _erg(_rz()))
+    treffer = [b for b in befunde if "besonderer Gefährdung" in b.regel]
+    assert len(treffer) == 1 and treffer[0].status == "warnung"
+    assert "arbeitsplatz_lux" in treffer[0].detail
