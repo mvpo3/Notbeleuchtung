@@ -108,10 +108,10 @@ HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 # Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
 # sie weder mit dem Stromkreis-Label (+Normale) noch der Höhenkote (−Normale) kollidiert.
 NODEID_HEIGHT_MM = 90.0
-# Offset je Art = Symbol-Halbbreite (gemessen: RZ-Block 580×290, SL-Aufheller 869×869)
-# + Clearance für die halbe Textbreite → Label sitzt knapp NEBEN dem Symbol, nicht drin
-# und nicht abgesetzt.
-_NODEID_HALBBREITE_MM = {"rz": 290.0, "sicherheitsleuchte": 435.0, "antipanik": 435.0}
+# Offset je Art = Symbol-Halbbreite (gemessen: RZ-Block 580×290, kleiner SL-Aufheller
+# 342×342 = 1.85 units × 185, Antipanik 1043×294) + Clearance für die halbe Textbreite
+# → Label sitzt knapp NEBEN dem Symbol, nicht drin und nicht abgesetzt.
+_NODEID_HALBBREITE_MM = {"rz": 290.0, "sicherheitsleuchte": 171.0, "antipanik": 522.0}
 NODEID_CLEARANCE_MM = 280.0
 _KIND_CODE = {"rz": "RZ", "sicherheitsleuchte": "SL", "antipanik": "AP"}
 
