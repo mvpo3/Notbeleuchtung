@@ -10,10 +10,12 @@ Zähl-Summary (`rendered: False`).
 """
 from __future__ import annotations
 
+import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 
 from .contracts import LBVorgabe, PlatzierungsErgebnis, ProviderBundle, RaumModell
+from .dwg_input import stelle_dxf_bereit
 from .render import render_dxf
 from .validierung import pruefbericht
 
@@ -99,6 +101,15 @@ def _coverage(
     }
 
 
+def _parse_raum(bundle: ProviderBundle, dxf_path: str, floor: str) -> RaumModell:
+    """1. Input öffnen — DWG wird vorab konvertiert (nur `parse` braucht die Datei,
+    danach ist alles im RaumModell → das Konvertat darf sofort weg)."""
+    if Path(dxf_path).suffix.lower() == ".dwg":
+        with tempfile.TemporaryDirectory(prefix="notbel_dwg_") as tmp:
+            return bundle.raum.parse(str(stelle_dxf_bereit(dxf_path, tmp)), floor)
+    return bundle.raum.parse(dxf_path, floor)
+
+
 def run(
     bundle: ProviderBundle,
     dxf_path: str,
@@ -107,7 +118,7 @@ def run(
     lb_path: str | None = None,
     plankopf: dict | None = None,
 ) -> Output:
-    raum = bundle.raum.parse(dxf_path, floor)
+    raum = _parse_raum(bundle, dxf_path, floor)
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
     # Der Plan wird trotzdem erzeugt (Norm-Default greift), aber das `lb_review`-Flag macht

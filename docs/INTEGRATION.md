@@ -37,6 +37,12 @@ out = run(
 `build_default_bundle()` verdrahtet das echte Owner-Trio (Dependency-Inversion). Für Tests
 gegen Fakes: `create_app(bundle_factory=…)` bzw. eigenes `ProviderBundle`.
 
+**DWG-Input:** `dxf_path` darf auch eine `.dwg` sein — die Pipeline (und die API)
+konvertiert sie vorab via [ODA File Converter](https://www.opendesign.com/guestfiles/oda_file_converter)
+(kostenloses externes Programm; versionierte Installations-Ordner unter
+`C:\Program Files\ODA\…` werden automatisch gefunden). Ohne installierten Konverter:
+klarer `OdaKonverterFehlt`-Fehler bzw. HTTP 503 — DXF-Input braucht ihn nie.
+
 ## 3. Was zurückkommt — `Output`
 
 ```python
