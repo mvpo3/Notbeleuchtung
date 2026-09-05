@@ -4,45 +4,60 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (2026-09-05, Zwischenstand)
+## Stand (2026-09-05, Abend)
 
 ### Wiedereinstieg in 60 Sekunden
-1. **Arbeitsbranch `enis/review-3owner-0905`**, rebased auf `origin/main`
-   (`674b8bc`), zwei eigene Commits, Working Tree clean. **Noch nicht gepusht,
-   noch kein PR** — beides wartet auf Owner-GO.
-2. **Sieben Reviews sind veröffentlicht** (05.09., mit Owner-GO): #93 und #96
-   APPROVED, #95 CHANGES_REQUESTED, #87/#88/#92/#98 nur COMMENT ohne Freigabe.
-3. **Blocker 1 ist von meiner Seite erledigt** — #93 (Sonderstellen Option A)
-   hat mein Approval, es fehlt @polatselman.
-4. **Blocker 2 bleibt** und ist strenger geworden: auch die 8 m² bleiben leer,
-   bis das Scope-Gate stimmt (s.u.).
-5. **Blocker 3 ist halb erledigt:** `platzierung/lux.py` trägt die Korrektur
-   bereits auf `main`; `contracts/norm_regelwerk.py` erst mit #87.
-6. **Baseline `origin/main` selbst gemessen** (`674b8bc`): siehe „Testprotokoll".
-   Der aus fremden Handoffs berichtete Wert „572 grün" ist hier nicht
-   nachvollziehbar und wird nicht weiterbehauptet.
+1. **PR #103 ist offen** — https://github.com/mvpo3/Notbeleuchtung/pull/103,
+   Branch `enis/review-3owner-0905`. **Nicht gemerged.** Nach dem Push wurde
+   `origin/main` per **Merge-Commit** in den Branch integriert (kein Rebase, kein
+   Force-Push — die veröffentlichte Historie bleibt gültig). Der Merge steht
+   **lokal**; Push und PR-Text-Aktualisierung warten auf GO.
+2. **Drei Contract-PRs sind gemerged** (05.09., 11:00–11:02 UTC): **#93**
+   (RaumModell v1.1.0, Sonderstellen Option A) · **#87** (NormRegelwerk v1.2.0 +
+   OIB-Naht) · **#96** (PlatzierungsErgebnis v1.2.0). `origin/main` = `26742ed`.
+3. **Blocker 1 erledigt** (#93 auf main) · **Blocker 3 erledigt** (#87 bringt die
+   Docstring-Korrektur; `lux.py` war schon vorher korrekt) · **Blocker 2 offen**.
+4. **Offen bleiben:** das Scope-Gate der Flächen-Schwellen, die vier
+   Konsumptions-PRs (#88, #92, #95, #98 — alle gegen `main` **nicht mergefähig**)
+   und die lichttechnischen Nachweise. `flaechen_schwellen` und `engine_status`
+   sind unverändert.
+5. **CI-Lage:** `origin/main` ist **rot** — `ruff check .` bricht an
+   `scripts/render_architektur.py:86` (`C408`, aus `674b8bc`). Der Lint-Schritt
+   läuft vor der Testsuite, deshalb liefert CI aktuell **kein** Testergebnis, auch
+   nicht für #103. Fremde Lane, nicht angefasst.
 
 ### 🔴 MORGEN ZUERST
 
 ```
 1. git fetch origin
-2. git log --oneline -1 origin/main        # heute: 674b8bc
-3. git status                              # Branch enis/review-3owner-0905, clean?
-4. gh pr list --state open --limit 10      # sind #87/#93/#95/#96 noch offen?
-5. .venv/bin/python -m pytest -q           # Zahl gegen das Testprotokoll unten
+2. git log --oneline -1 origin/main        # zuletzt: 26742ed
+3. gh pr view 103 --json state,mergeable   # offen? konfliktfrei?
+4. gh pr checks 103                        # Lint noch rot? (C408 aus main)
+5. .venv/bin/python -m pytest -q           # gegen das Testprotokoll unten
 ```
 
-1. **PR für den Normwissen-Slice eröffnen** (Titel + Beschreibung liegen fertig
-   in `docs/` bzw. im Session-Protokoll) — **nur mit Owner-GO**.
-2. **Rebase-Fassungen der vier Konsumptions-PRs prüfen**, sobald Leonis sie
-   gedreht hat: #88, #92, #95, #98 sind gegen das aktuelle `main` **nicht
-   mergefähig** (`pipeline.py`, `api/main.py`, `docs/COORDINATION.md`, bei #98
-   zusätzlich `render/dxf_renderer.py`). Erst danach Freigabe-Votum.
+1. **#103 pushen + PR-Beschreibung aktualisieren** (Text liegt vorbereitet) —
+   nur mit Owner-GO.
+2. **Rebase-Fassungen der vier Konsumptions-PRs prüfen** (#88, #92, #95, #98),
+   sobald Leonis sie gedreht hat. Erst danach Freigabe-Votum.
 3. **3-Owner-Vorschlag aus `SPEC_SONDERSTELLEN_CONTRACT.md` §8 einbringen** —
    `SonderstellenAnforderung` + `LuxAnforderung` als Contract-Typen, drei
-   Ports-Methoden. Ohne diesen Schritt bleibt die neue API ein Prototyp.
-4. Ohne GO: eigene Domain-Arbeit — **Wegbreite > 2 m / Randstreifen 0,5 m**
-   (§4.2.1/§4.3.1) und die restlichen §4.1.2-Punkte d), e), f), g), j), k).
+   Ports-Methoden, Bump **1.2.0 → 1.3.0**. Ohne das bleibt die API ein Prototyp.
+4. Ohne GO: **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1) und die
+   restlichen §4.1.2-Punkte d), e), f), g), j), k).
+
+## Gemerged am 05.09.2026 — was sich dadurch ändert
+
+| PR | Inhalt | Folge für meine Lane |
+|---|---|---|
+| **#93** | `RaumModell` v1.1.0, Sonderstellen Option A | Blocker 1 zu. `engine_status` bleibt trotzdem `input_fehlt` — er wird erst **je Regel** gezogen, wenn auch die Konsumption (#95) drin ist und der Nachweis vorliegt |
+| **#87** | `NormRegelwerk` v1.2.0, `FlaechenSchwellen.quelle`, `ProviderBundle.oib`, `place(oib=)` | Blocker 3 zu (Docstring-Korrektur im Contract). Das Feld `quelle` steht bereit — **gefüllt wird nichts**, solange das Scope-Gate offen ist |
+| **#96** | `PlatzierungsErgebnis` v1.2.0, Symbol-Datenmodell | keine Berührung mit `normwissen` |
+
+**Contract-Versionen auf `main` jetzt:** `norm_regelwerk` **1.2.0** ·
+`raum_modell` **1.1.0** · `platzierung_ergebnis` **1.2.0** · `oib_ergebnis`
+**1.1.0**. Die frühere Angabe „NormRegelwerk steht auf 1.1.0" ist damit überholt;
+SPEC §8 ist entsprechend nachgezogen.
 
 ## Veröffentlicht am 05.09.2026 — sieben Reviews
 
@@ -51,30 +66,35 @@ verglichen (keine Abweichung, nichts zurückgestellt).
 
 | PR | Votum | Head-SHA | Kern |
 |---|---|---|---|
-| #93 | **APPROVED** | `55b767f3` | Sonderstellen Option A, 1:1 nach Spec, additiv |
-| #96 | **APPROVED** | `ad96bd44` | Symbol-Datenmodell, formal sauber, fremde Lane |
+| #93 | **APPROVED** → **gemerged** | `55b767f3` | Sonderstellen Option A, 1:1 nach Spec, additiv |
+| #96 | **APPROVED** → **gemerged** | `ad96bd44` | Symbol-Datenmodell, formal sauber, fremde Lane |
 | #95 | **CHANGES_REQUESTED** | `909a424f` | falsche Quellenzuordnung + unsichtbarer Nachweis |
-| #87 | COMMENT | `72ee052c` | Contract-Text korrekt, aber Gate-Scope offen |
+| #87 | COMMENT (keine Freigabe) → **von @mvpo3 gemerged** | `72ee052c` | Contract-Text korrekt, aber Gate-Scope offen |
 | #88 | COMMENT | `a6bc97fc` | nicht mergefähig; #88 nie ohne #92 mergen |
 | #92 | COMMENT | `4f504e07` | nicht mergefähig; projektweite Gate-Öffnung offen |
 | #98 | COMMENT | `c2a30a29` | nicht mergefähig (Renderer-Konflikt aus #102) |
 
-**Warum #87 nur ein Kommentar ist:** ein Approve gilt auf GitHub als Freigabe.
+**Warum #87 nur ein Kommentar war:** ein Approve gilt auf GitHub als Freigabe.
 Der Contract-Text ist fachlich richtig, aber das Gate trifft den Geltungsbereich
-der Schwellen nicht (s. Blocker 2). Kein Approve, bis das geklärt ist.
+der Schwellen nicht (s. Blocker 2). **#87 wurde trotzdem gemerged** — das ändert
+nichts an der Sachlage: das Feld `FlaechenSchwellen.quelle` steht jetzt bereit,
+gefüllt wird es erst, wenn das Scope-Gate stimmt.
 
-## Lokal erarbeitet am 05.09.2026 — zwei Commits, kein Push
+## PR #103 — der Normwissen-Slice (veröffentlicht)
 
-Branch `enis/review-3owner-0905` auf `674b8bc`:
+**https://github.com/mvpo3/Notbeleuchtung/pull/103**, Branch
+`enis/review-3owner-0905`, veröffentlicht auf Head **`a296e77`**:
 
 | Commit | Inhalt |
 |---|---|
 | `0504030` | Sonderstellen tragen ihre eigene Norm-Fundstelle (Befund an #95) |
 | `93ce6f5` | Korrektur-Slice: Geltungsbereich, Bezugsfläche, Belegtiefe |
+| `a296e77` | Handoff-Zwischenstand + SPEC §8 |
+| `9809079` | **lokal:** Merge von `origin/main` (`26742ed`) in den Branch — kein Rebase, kein Force-Push |
 
-**Kein Contract berührt:** kein Feld, kein Schema, keine `CONTRACT_VERSION`
-(`NormRegelwerk` steht auf `main` weiterhin auf **1.1.0**; die 1.2.0 kommt erst
-mit #87). `scripts/gen_schema.py` erzeugt keine Änderung.
+**Kein Contract berührt:** kein Feld, kein Schema, keine `CONTRACT_VERSION`.
+Auf `main` steht `NormRegelwerk` seit dem Merge von #87 auf **1.2.0**; unser
+Slice lässt sie unverändert. `scripts/gen_schema.py` erzeugt keine Änderung.
 
 ### Was der Slice liefert
 
@@ -268,8 +288,9 @@ drei alten `quellen`-Strings).
 **Die Quellen sind jetzt korrekt zugeordnet — der lichttechnische Nachweis ist
 damit nicht erbracht.** Ohne Punkt 6 meldet ein unvollständiger Plan weiterhin
 `ok`. Und: **die Quellen schalten nichts automatisch frei** — `engine_status`
-bleibt `input_fehlt`, bis #93 **und** #95 auf `main` sind und der Nachweis je
-Regel vorliegt (Platzierung und Lichttechnik getrennt bewertet).
+bleibt `input_fehlt`. #93 ist seit dem 05.09. auf `main`; es fehlt weiterhin die
+Konsumption (**#95**, von mir mit Changes Requested) und der Nachweis **je Regel**
+(Platzierung und Lichttechnik getrennt bewertet).
 
 ## 🧪 Testprotokoll 05.09.2026
 
@@ -280,7 +301,9 @@ Regel vorliegt (Platzierung und Lichttechnik getrennt bewertet).
 | nach Korrektur-Slice | `d77ac30` (vor Rebase) | 599 | 7 | 2 |
 | gezielte Regression `tests/normwissen/ tests/contract/ tests/platzierung/test_platzierer.py` | `d77ac30` | 321 | 0 | 0 |
 | gezielte Regression, PR-Stand | `93ce6f5` | 321 | 0 | 0 |
-| **volle Suite, PR-Stand (rebased auf `674b8bc`)** | **`93ce6f5`** | **599** | **7** | **2** |
+| volle Suite, PR-Stand (rebased auf `674b8bc`) | `93ce6f5` | 599 | 7 | 2 |
+| Contract + Normwissen nach Merge von `26742ed` | `9809079` | 314 | 0 | 0 |
+| **volle Suite nach Merge von `26742ed`** | **`9809079`** | **599** | **7** | **2** |
 
 `scripts/gen_schema.py` erzeugt in allen Läufen keine Änderung (Schema in sync).
 
@@ -290,6 +313,13 @@ Architektur-Diagramm) auf `main`; `origin/main` ist damit aktuell **nicht**
 ruff-clean. Unsere Dateien sind es:
 `ruff check src/notbeleuchtung/normwissen/ tests/normwissen/` → All checks passed.
 An @mvpo3 gemeldet gehört das noch.
+
+**CI-Folge (05.09.):** Im Workflow läuft `Lint` **vor** `Full test suite`. Der
+C408-Befund lässt den Job `test` scheitern, bevor ein einziger Test läuft — auf
+`main` (Run `33962252577`) genauso wie auf #103 (Run `33962392314`). Für #103
+heißt das: `contracts` **pass**, `test` **fail am Lint**, **kein CI-Testergebnis**
+— nicht „Tests rot". Der Job-Verlauf zeigt `Full test suite` als nicht
+ausgeführt. Lokal auf demselben Stand: 599 passed.
 
 **Die 7 Skips einzeln** (Umgebung, nicht Code): 2 × `tests/hauptengine/
 test_dwg_input.py` (ODA File Converter auf diesem Mac nicht installiert) · 5 ×
@@ -313,19 +343,22 @@ laufen, sie nutzen `Projekte/Mollgasse/*.dxf`).
 (Format: passed / skipped / deselected. Auf den älteren PR-Basen sind es 5 Skips,
 weil die beiden ODA-Tests dort noch nicht existieren.)
 
-## 🚧 Blocker 1 — Sonderstellen-Contract: von meiner Seite erledigt
+## ✔ Blocker 1 — Sonderstellen-Contract: ERLEDIGT
 
-**#93 hat mein Approval** (`55b767f3`). Es fehlt **@polatselman**. Leonis hat
-laut PR-Text bereits zugestimmt → GO-Stand 2 von 3.
+**#93 ist am 05.09. gemerged** (`4c66c20`). `RaumModell` v1.1.0 mit
+`sonderstellen[]`, `ist_barrierefrei` und `besondere_gefaehrdung` liegt auf
+`main`. Mein Approval stand auf `55b767f3`.
 
 Nach dem Merge **nicht** automatisch freischalten: `engine_status` der acht
 Regeln wird erst gezogen, wenn auch die Konsumption (#95) drin ist und der
 Nachweis **je Regel einzeln** vorliegt — Platzierung und lichttechnischer
 Nachweis getrennt bewertet.
 
-## 🚧 Blocker 2 — Scope-Gate: strenger als am 02.09.
+## 🚧 Blocker 2 — Scope-Gate: OFFEN (einziger verbleibender Blocker)
 
-**Beide Flächen-Schwellen bleiben leer** — auch die 8 m².
+Seit dem Merge von #87 existiert `FlaechenSchwellen.quelle` im Contract — das
+ändert an der Sachlage nichts: **beide Flächen-Schwellen bleiben leer**, auch die
+8 m². `flaechen_schwellen` und `engine_status` sind unverändert.
 
 | Schwelle | Geltungsbereich im Original | vom Gate abgedeckt? |
 |---|---|---|
@@ -348,11 +381,11 @@ Zwei getrennte Gründe, **nicht gekoppelt**:
    zweites, nutzungsart-basiertes Signal (die Nutzungsart steht bereits in
    `OibErgebnis.eingangswerte["nutzungsart"]`, dort aber nur als Audit-Dict).
 
-## 🚧 Blocker 3 — 40/10-Docstrings: halb erledigt
+## ✔ Blocker 3 — 40/10-Docstrings: ERLEDIGT
 
-`platzierung/lux.py` trägt die Korrektur **bereits auf `main`**.
-`hauptengine/contracts/norm_regelwerk.py` Zeile 33 trägt die falsche Angabe
-weiter — **#87 korrigiert genau das**, mit dem Merge ist der Blocker zu.
+`platzierung/lux.py` war bereits korrigiert; `hauptengine/contracts/
+norm_regelwerk.py` ist es mit dem **Merge von #87** (`9fff6e1`). Die Angabe
+„40 Rettungsweg / 10 Antipanik" steht damit an keiner Stelle mehr im Code.
 
 ## ERLEDIGT am 01.09.2026 — Track-B-Norm-Werte (PR #83, **gemerged** `cfcbbde`)
 

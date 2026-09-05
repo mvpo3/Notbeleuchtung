@@ -276,8 +276,9 @@ anderes zu.
   Zusammenbau im `En1838NormProvider`.
 - `NormRegelwerk.quellen` enthält zusätzlich §4.1.2 c)/h)/i), §4.3.8 und §4.4.1 —
   **rein additiv**. `quellen` ist ein `list[str]`-Feld: mehr Einträge sind Daten,
-  keine Schema-Änderung. Kein `contract_version`-Bump (weiterhin **1.1.0**, der
-  Stand auf `main`), kein Drift-Gate-Ausschlag.
+  keine Schema-Änderung. **Kein `contract_version`-Bump** — die Version bleibt die,
+  die auf `main` steht (seit dem Merge von #87: **1.2.0**), kein
+  Drift-Gate-Ausschlag.
 
 ### Drei Präzisierungen aus dem Korrektur-Slice (05.09., am Original geprüft)
 
@@ -360,13 +361,16 @@ class SonderstellenAnforderung(BaseModel):
     nachweis_offen_grund: str = ""
 ```
 
-**Versions-Ausgangslage (Stand 2026-09-05):** `NormRegelwerk.CONTRACT_VERSION`
-steht auf `origin/main` **auf 1.1.0**. Die 1.2.0 kommt erst mit PR #87 (OIB-Naht),
-der noch offen ist. Der Bump unten ist deshalb an #87 gekoppelt und in **keinem
-Fall** Teil des vorliegenden Normwissen-PRs: **dieser PR ändert kein Contract-Feld,
-kein Schema und keine `CONTRACT_VERSION`** — er fügt nur Daten, einen
-normwissen-eigenen Typ und Query-Methoden hinzu. Das Drift-Gate bleibt unberührt
-(`scripts/gen_schema.py` erzeugt keine Änderung).
+**Versions-Ausgangslage (Stand 2026-09-05, nach dem Merge von #87):**
+`NormRegelwerk.CONTRACT_VERSION` steht auf `origin/main` **auf 1.2.0** — PR #87
+(OIB-Naht) ist gemerged. Die frühere Fallunterscheidung „ohne #87 lautet der Bump
+1.1.0 → 1.2.0" **entfällt**: der Ausbau unten ist eindeutig **1.2.0 → 1.3.0**.
+
+Der Bump ist in **keinem Fall** Teil des vorliegenden Normwissen-PRs (#103):
+**dieser Slice ändert kein Contract-Feld, kein Schema und keine
+`CONTRACT_VERSION`** — er fügt nur Daten, normwissen-eigene Typen und
+Query-Methoden hinzu. Das Drift-Gate bleibt unberührt (`scripts/gen_schema.py`
+erzeugt keine Änderung).
 
 **Ports-Erweiterung** (`contracts/ports.py`, kein Pydantic → kein Schema-Drift,
 CODEOWNERS = alle drei):
@@ -385,7 +389,7 @@ class NormProvider(Protocol):
 
 | Was | Warum |
 |---|---|
-| `norm_regelwerk`-`CONTRACT_VERSION` bumpen — **1.2.0 → 1.3.0 nur, wenn #87 vorher gemerged ist**; ohne #87 ist der Stand auf `main` weiterhin **1.1.0** und der Bump lautet 1.1.0 → 1.2.0 | zwei neue Modelle im Modul |
+| `norm_regelwerk`-`CONTRACT_VERSION` **1.2.0 → 1.3.0** (Stand auf `main` seit dem Merge von #87) | zwei neue Modelle im Modul |
 | `scripts/gen_schema.py` neu laufen lassen + committen | sonst bricht das Drift-Gate |
 | `tests/fakes.py::FakeNormProvider` um die drei Methoden ergänzen | `NormProvider` ist `runtime_checkable`; ohne sie erfüllt der Fake das Protocol nicht mehr |
 | `tests/fixtures/norm_regelwerk_snapshot.json` (CODEOWNERS: alle drei) um die fünf neuen `quellen`-Strings ergänzen | `tests/platzierung/test_platzierer.py` prüft `norm_quelle` gegen die **Fixture**, nicht gegen den Provider — sonst bricht der erste reale Sonderstellen-Plan |
