@@ -49,7 +49,7 @@ def test_xor_mirror_mapping_entry(monkeypatch):
     # (die Pfeil-Blöcke sind seit dem Rechts-Fix alle unge­spiegelt gemappt).
     fake = dict(library.load_mapping())
     fake["_mirror_probe"] = {
-        "block_name": "notbeleuchtung richtungspfeil nach unten",
+        "block_name": "notbeleuchtung- richtungspfeil nach unten",
         "label": "probe",
         "category": "notlicht",
         "mirror_x": True,

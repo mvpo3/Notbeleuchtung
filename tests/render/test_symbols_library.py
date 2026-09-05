@@ -1,4 +1,4 @@
-"""Real-Asset-Naht: symbols/library.py gegen die echte CAD_Symbole/E-Symbole.dxf.
+"""Real-Asset-Naht: symbols/library.py gegen die echte CAD_Symbole/Notbeleuchtungssymbole.dxf.
 
 Sichert die Kette Mapping-YAML → Library-Block ab, BEVOR der Renderer sie
 konsumiert: jeder block_name muss in der Library existieren (Blocknamen mit
@@ -50,7 +50,7 @@ def test_sync_layers_adds_safety_layer_green():
 
 def test_import_block_idempotent_and_origin_normalized():
     doc = ezdxf.new("R2018")
-    block_name = "notbeleuchtung richtungspfeil nach unten"
+    block_name = "notbeleuchtung- richtungspfeil nach unten"
     library.import_block(doc, block_name)
     library.import_block(doc, block_name)  # zweiter Aufruf = No-op
     extents = ezbbox.extents(doc.blocks[block_name], fast=True)
