@@ -71,13 +71,17 @@ def _fake_mit_schwelle(*, antipanik_min_m2=None, wc_min_m2=None) -> FakeNormProv
     return fake
 
 
-def _oib(stufe: str = "eingeschraenkt") -> OibBefund:
-    """OIB-Befund, der das Flächen-Trigger-Gate öffnet (bzw. je Stufe zulässt)."""
+def _oib(stufe: str = "eingeschraenkt", refs: tuple = ()) -> OibBefund:
+    """OIB-Befund, der das Flächen-Trigger-Gate öffnet (bzw. je Stufe zulässt).
+
+    `refs` = (floor, raum_id)-Paare → raum-genaues Gate (v2) statt projekt-global."""
+    from notbeleuchtung.hauptengine.contracts import RaumReferenz
     return OibBefund(
         ergebnisse=[
             OibErgebnis(
                 gebaeudeteil_id="teil_1", stufe=stufe,
                 quelle="OIB-RL 2 Tabelle 6", norm_ausgabe="Mai 2023",
+                raum_referenzen=[RaumReferenz(floor=f, raum_id=r) for f, r in refs],
             )
         ]
     )
@@ -123,6 +127,21 @@ def test_flaechen_trigger_wc_ueber_schwelle():
     assert plan_antipanik(raum, _fake_mit_schwelle(wc_min_m2=8.0), oib=_oib())
     # Dieselbe Schwelle ohne OIB-Befund → Gate zu, kein Trigger.
     assert plan_antipanik(raum, _fake_mit_schwelle(wc_min_m2=8.0)) == []
+
+
+def test_flaechen_trigger_raum_genau_nur_referenzierte_raeume():
+    # v2: trägt der bestätigende Gebäudeteil raum_referenzen, feuert der Trigger nur
+    # für die referenzierten Räume — der gleiche Raum ohne Referenz bleibt leer.
+    poly = [[0.0, 0.0], [12000.0, 0.0], [12000.0, 10000.0], [0.0, 10000.0]]
+    raum = _raum_mit_zusatzraum("LAGER", 120.0, poly)  # id "zusatz_1", floor "4OG"
+    fake = _fake_mit_schwelle(antipanik_min_m2=60.0)
+
+    getroffen = plan_antipanik(raum, fake, oib=_oib(refs=(("4OG", "zusatz_1"),)))
+    assert getroffen and all(p.kind == "antipanik" for p in getroffen)
+
+    # Referenz zeigt auf anderen Raum bzw. anderes Geschoss → Gate raum-genau ZU.
+    assert plan_antipanik(raum, fake, oib=_oib(refs=(("4OG", "anderer_raum"),))) == []
+    assert plan_antipanik(raum, fake, oib=_oib(refs=(("EG", "zusatz_1"),))) == []
 
 
 def test_flaechen_trigger_gate_zu_bei_review_required():

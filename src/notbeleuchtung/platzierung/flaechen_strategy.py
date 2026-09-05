@@ -23,7 +23,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
 from .lux import lux_raster, ud_min_aus_norm
-from .oib_gate import flaechen_trigger_offen
+from .oib_gate import flaechen_trigger_offen, freigegebene_raeume
 
 # Sicherung gegen Überproduktion, falls der Lux-Nachweis nie hält (defekte Geometrie).
 _ANTIPANIK_MAX_LEUCHTEN = 25
@@ -108,6 +108,9 @@ def _plan_raumleuchten(
         if klassifikation == "antipanik" and flaechen_trigger_offen(oib)
         else None
     )
+    # Raum-Scope des offenen Gates: None = alle Räume (projekt-global); Menge =
+    # nur die referenzierten Räume dieses Geschosses (raum-genau, ggf. leer).
+    gate_scope = freigegebene_raeume(oib, raum.floor) if ap_referenz is not None else None
 
     out: list[Platzierung] = []
     for r in raum.raeume:
@@ -120,6 +123,7 @@ def _plan_raumleuchten(
             # Zusatz-Trigger: darf nur ADDIEREN (Antipanik über Fläche), nie überschreiben.
             if (
                 ap_referenz is not None
+                and (gate_scope is None or r.id in gate_scope)
                 and _ist_flaechen_antipanik(r.raum_typ, r.flaeche_m2, schwellen)
             ):
                 eff = ap_referenz
