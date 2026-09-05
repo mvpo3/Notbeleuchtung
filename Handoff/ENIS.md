@@ -77,9 +77,9 @@ Geprüfte Stände: #106 Head `2a216ee` / Merge `62ac276` · #107 `a368b41`/`bf42
 | 5-lx-Nachweis unsichtbar | **behoben** — Prüfregel 12 kippt den Status auf `warnung` | #106 (`77214b3`) |
 | §4.4.1-Nachweis unsichtbar | **behoben** — Prüfregel 12b | #106 |
 | Audit-Trail falsche Fundstelle | **offen**, nur als Fallback gekennzeichnet (Docstring + `hinweise`) | — |
-| §4.3.8 galt für jeden barrierefreien Raum | war offen → **in #109 behoben** | eigener Nachzug |
-| RZ an Niveauänderung als Norm-Default | war offen → **in #109 behoben** | eigener Nachzug |
-| 12b ohne Bezugsfläche · 2-m-Test art-blind | war offen → **in #109 behoben** | eigener Nachzug |
+| §4.3.8 galt für jeden barrierefreien Raum | **auf `main` weiter offen** — Fix liegt in PR #109 (nicht gemergt) | eigener Nachzug |
+| RZ an Niveauänderung als Norm-Default | **auf `main` weiter offen** — Fix liegt in PR #109 (nicht gemergt) | eigener Nachzug |
+| 12b ohne Bezugsfläche · 2-m-Test art-blind | **auf `main` weiter offen** — Fix liegt in PR #109 (nicht gemergt) | eigener Nachzug |
 
 **#107** berührt keinen dieser Punkte; `flaechen_schwellen` bleiben `None`.
 **#108** stellt den Fluchtweg-Nachweis auf die **Mittellinie (§4.2.1, horizontal
@@ -94,7 +94,9 @@ Schritt.
 
 ### #109 — Nachzug zu #103 (`f4ffd84`, CI grün)
 
-Drei Platzierungs-/Berichtsfehler, unabhängig von der Quellen-Naht behoben:
+Drei Platzierungs-/Berichtsfehler, unabhängig von der Quellen-Naht behebbar.
+**Solange der PR offen ist, gilt auf `main` weiterhin der alte Stand** — die
+Punkte unten beschreiben, was der PR ändert, nicht was schon wirkt:
 
 * **§4.3.8 dreiwertig:** `eindeutig` (WC, TOILETTE) → Antipanik ·
   `mehrdeutig` (SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM) → **keine** Automatik,
@@ -333,18 +335,21 @@ mit korrigierten Seitenangaben. **`engine_status` überall unverändert
 
 ## 🔌 Offene Schnittstelle — die neuen APIs sind PROTOTYPEN
 
-> Gilt seit dem 05.09. für **zwei** Bereiche: die Sonderstellen-Methoden
-> (`fuer_sonderstelle`, `zur_pruefung`, `fuer_raum_attribut`) und die
-> Geometrie-Methoden aus #110 (`weg_nachweis`, `antipanik_randstreifen_mm`,
-> `hat_at_abweichung`) samt `WegNachweis`. Beide stehen **nicht** im
-> `ports.NormProvider`-Protocol. Anschlussvorschläge:
-> `docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md` und
-> `docs/proposals/WEGBREITE_RANDSTREIFEN.md` (beide auf den jeweiligen
-> PR-Branches, noch nicht auf `main`).
+> Zwei Prototypen, an **verschiedenen Orten** — das ist beim Lesen wichtig:
+>
+> | Prototyp | Methoden | wo er liegt |
+> |---|---|---|
+> | **Sonderstellen** | `fuer_sonderstelle`, `zur_pruefung`, `fuer_raum_attribut` + `SonderstellenAnforderung`/`LuxAnforderung` | **auf `main`** (mit #103 gemergt, `680676f`) |
+> | **Geometrie** | `weg_nachweis`, `antipanik_randstreifen_mm`, `hat_at_abweichung` + `WegNachweis` | **nur in PR #110** (`c964ca2`), **nicht** auf `main` |
+>
+> **Beide sind trotzdem nicht angebunden:** keine der Methoden steht im
+> `ports.NormProvider`-Protocol. Dass der Sonderstellen-Prototyp auf `main`
+> liegt, heißt nur, dass er dort **existiert** — konsumiert wird er von niemandem
+> (`platzierung` ruft ihn nicht auf, siehe Prüfung von #106).
 
-`fuer_sonderstelle`, `zur_pruefung` und `fuer_raum_attribut` stehen **nicht** im
-`ports.NormProvider`-Protocol. Sie sind lokal vorbereitet und nur intern + in
-Tests zu verwenden.
+Der Sonderstellen-Prototyp ist seit #103 auf `main`, der Geometrie-Prototyp liegt
+in PR #110. Beide stehen **nicht** im `ports.NormProvider`-Protocol und sind nur
+intern + in Tests zu verwenden.
 
 **Keine Lösung sind:** ein `getattr(norm, "fuer_sonderstelle", …)` aus
 `platzierung` (stille Kopplung an eine ungeprüfte Signatur — ein Methodenzugriff
@@ -352,19 +357,26 @@ ersetzt keine vereinbarte Schnittstelle) und ein Import von `normwissen` in ein
 fremdes Paket (Owner-Grenze, CLAUDE.md).
 
 Der ausformulierte 3-Owner-Vorschlag steht in
-`docs/SPEC_SONDERSTELLEN_CONTRACT.md` **§8**: Contract-Typen
+`docs/SPEC_SONDERSTELLEN_CONTRACT.md` **§8** (auf `main`): Contract-Typen
 (`SonderstellenAnforderung`, `LuxAnforderung`), drei Methodensignaturen und die
-vollständige Auswirkungsliste — Version-Bump (**1.2.0 → 1.3.0 nur, wenn #87
-vorher gemerged ist**, sonst 1.1.0 → 1.2.0), Schema-Regen,
-`tests/fakes.py::FakeNormProvider` um drei Methoden, und der Nachzug von
-`tests/fixtures/norm_regelwerk_snapshot.json` (3-Owner-Lane, führt weiter nur die
-drei alten `quellen`-Strings).
+vollständige Auswirkungsliste — Version-Bump **1.2.0 → 1.3.0** (eindeutig, seit
+#87 gemergt ist), Schema-Regen, `tests/fakes.py::FakeNormProvider` um drei
+Methoden, und der Nachzug von `tests/fixtures/norm_regelwerk_snapshot.json`
+(3-Owner-Lane, führt weiter nur die drei alten `quellen`-Strings).
+
+**Keiner der beiden Vorschläge ist umgesetzt.** Die zwei Dokumente
+`docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md` (auf dem **#109**-Branch) und
+`docs/proposals/WEGBREITE_RANDSTREIFEN.md` (auf dem **#110**-Branch) liegen beide
+noch nicht auf `main`; die darin vorgeschlagenen Contract-Erweiterungen
+(`norm_regelwerk` 1.2.0 → 1.3.0 bzw. `raum_modell` 1.1.0 → 1.2.0) sind weder
+angewendet noch 3-Owner-freigegeben.
 
 ## 📋 Anschlussauftrag für Leonis (@mvpo3)
 
-> **Stand Tagesende:** Punkte 2–4 und 6 sind in **PR #109** bereits umgesetzt
-> (dort teils in seiner Lane — deshalb die Review-Bitte). Offen bleibt vor allem
-> Punkt 1: die Umstellung auf die vereinbarte Schnittstelle.
+> **Stand Tagesende:** Punkte 2–4 und 6 sind in **PR #109 umgesetzt — der PR ist
+> aber offen, auf `main` wirkt davon nichts** (teils in seiner Lane, deshalb die
+> Review-Bitte). Offen bleibt darüber hinaus Punkt 1: die Umstellung auf die
+> vereinbarte Schnittstelle.
 
 1. **Nicht** duck-typed anbinden — erst der 3-Owner-PR nach SPEC §8, dann
    konsumieren.
