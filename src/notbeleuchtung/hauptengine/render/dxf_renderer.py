@@ -737,6 +737,7 @@ def _blatt_vorlage_doc():
             pfad = kandidat
             break
     _blatt_vorlage_cache["doc"] = ezdxf.readfile(str(pfad)) if pfad else None
+    _blatt_vorlage_cache["pfad"] = pfad
     return _blatt_vorlage_cache["doc"]
 
 
@@ -796,6 +797,27 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
                 if not (pts and im_kern(pts[0][0], pts[0][1])):
                     continue
                 kopie = e.copy()
+            elif typ == "IMAGE":
+                # Rivoplan-Logo: die Vorlage referenziert das PNG absolut in den
+                # Owner-Downloads — auf die Repo-Kopie umbiegen und skaliert neu
+                # aufbauen (add_foreign_entity trüge die ImageDef nicht mit).
+                if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
+                    continue
+                vorlage_pfad = _blatt_vorlage_cache.get("pfad")
+                logo = (vorlage_pfad.parent / "rivoplan_logo.png") if vorlage_pfad else None
+                if logo is None or not logo.is_file():
+                    continue
+                px_w, px_h = e.dxf.image_size.x, e.dxf.image_size.y
+                w_u = e.dxf.u_pixel.magnitude * px_w
+                h_u = e.dxf.v_pixel.magnitude * px_h
+                idef = msp.doc.add_image_def(str(logo), size_in_pixel=(px_w, px_h))
+                msp.add_image(
+                    idef,
+                    insert=(e.dxf.insert.x * S + dx, e.dxf.insert.y * S + dy),
+                    size_in_units=(w_u * S, h_u * S),
+                    dxfattribs={"layer": LAYER_PLANKOPF},
+                )
+                continue
             elif typ == "TEXT":
                 if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
                     continue
