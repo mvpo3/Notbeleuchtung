@@ -84,6 +84,94 @@
           "default": "",
           "title": "Lb Quelle",
           "type": "string"
+        },
+        "schaltungsart": {
+          "anyOf": [
+            {
+              "enum": [
+                "DL",
+                "BL"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schaltungsart"
+        },
+        "luminaire_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Luminaire Id"
+        },
+        "typ_letter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Typ Letter"
+        },
+        "typ_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Typ Name"
+        },
+        "montage_art": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Montage Art"
+        },
+        "technologie": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Technologie"
+        },
+        "stromaufnahme_ma": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stromaufnahme Ma"
         }
       },
       "required": [
@@ -104,7 +192,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.1.0",
+      "default": "1.2.0",
       "title": "Contract Version",
       "type": "string"
     },

@@ -1,6 +1,6 @@
 {
   "contract": "NormRegelwerk",
-  "contract_version": "1.1.0",
+  "contract_version": "1.2.0",
   "norm": "ÖNORM EN 1838:2013",
   "erkennungsweite": {
     "z_hinterleuchtet": 200.0,
