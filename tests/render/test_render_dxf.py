@@ -315,3 +315,31 @@ def test_tueren_werden_gezeichnet(rendered):
     boegen = doc.modelspace().query("ARC[layer=='ARCH_Tuer']")
     assert len(boegen) == n_tueren          # 1 Schwenkbogen je Tür
     assert len(linien) >= 2 * n_tueren      # Schwelle + Blatt (+ Notausgang-Doppel)
+
+
+def test_stueckliste_mit_symbol_spalte():
+    # Profi-Legende (din ACAD_TABLE): je Typ-Zeile das echte Katalog-Symbol klein
+    # in der Stücklisten-Box (nur im Typ-Letter-Pfad, Symbol-Datenmodell v1.2.0).
+    from notbeleuchtung.hauptengine.contracts import Platzierung, PlatzierungsErgebnis, RaumModell
+
+    raum = RaumModell.model_validate(
+        json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8")))
+    plz = PlatzierungsErgebnis(floor="4OG", platzierungen=[
+        Platzierung(xy_mm=(-70000.0, 20000.0), catalog_key="notlicht_ks_stiege_unten",
+                    kind="rz", typ_letter="A", typ_name="Concept 2 RZ1"),
+        Platzierung(xy_mm=(-60000.0, 20000.0), catalog_key="sicherheitsleuchte_aufheller",
+                    kind="sicherheitsleuchte", typ_letter="D", typ_name="Concept 2 AP3"),
+    ])
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        out = Path(tmp) / "legende.dxf"
+        summary = render_dxf(plz, raum, out)
+        doc = ezdxf.readfile(str(out))
+    assert summary["stueckliste_drawn"] is True
+    max_x = raum.bounds_mm.max_xy[0]
+    # Symbol-INSERTs rechts vom Grundriss (in der Schriftfeld-Leiste) = Legenden-Symbole
+    legenden_syms = [e for e in doc.modelspace().query("INSERT")
+                     if e.dxf.insert.x > max_x + 1500]   # Schriftfeld-Leiste beginnt +2000
+    assert len(legenden_syms) == 2
+    texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
+    assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
