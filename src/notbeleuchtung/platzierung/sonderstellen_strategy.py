@@ -34,7 +34,15 @@ from .geometry import find_center_visual
 
 
 def _referenz(norm: NormProvider, klassifikation: str):
-    """Erste Regelwerk-Anforderung der Klassifikation mit Symbol — oder None."""
+    """Erste Regelwerk-Anforderung der Klassifikation mit Symbol — oder None.
+
+    ⚠️ FALLBACK (Enis-Review #95): die zurückgegebene `quelle` ist die der
+    Referenz-Regel (§4.1/§4.2.1/§4.3.1) — NICHT der echte Auslöser der
+    Pflichtstelle (§4.1.2 c/h/i bzw. §4.3.8/§4.4.1). Die Naht-Invariante
+    `norm_quelle ∈ NormRegelwerk.quellen` lässt die echten Fundstellen heute
+    nicht zu; Enis liefert Referenz-Anforderungen je Sonderstellen-Typ nach
+    (eigener 3-Owner-PR). Bis dahin: Audit-Trail als Näherung lesen — der
+    Pipeline-Summary trägt einen entsprechenden `hinweise`-Eintrag."""
     for regel in norm.regelwerk_snapshot().regeln:
         anf = regel.anforderung
         if anf.klassifikation == klassifikation and anf.symbol_katalog_keys:
