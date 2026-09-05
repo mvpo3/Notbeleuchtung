@@ -4,51 +4,139 @@
 > `src/notbeleuchtung/normwissen/`. GitHub `@EnisAMG`.
 > Lies zuerst `CLAUDE.md`, `docs/CONTRACTS.md`, `docs/ONBOARDING.md` (Abschnitt Enis).
 
-## Stand (2026-09-05, Tagesende)
+## Stand (2026-09-05, Tagesende — Nachtrag nach PR #113)
 
 ### Wiedereinstieg in 60 Sekunden
-1. **`origin/main` = `5e4a46e`.** Alles von heute ist entweder drauf oder liegt
-   als offener PR.
+1. **`origin/main` = `1092d77`.** (Der frühere Stand `5e4a46e` steht weiter unten
+   in der Historie; `main` ist seither um 16 Commits gewachsen — u.a. Leonis'
+   #111 Stempel-Anker/Prüfstrecke, Stromkreisnummer-Analyse, Baulegende-Vorlage.)
 2. **Ein eigener PR ist gemergt:** **#103** (Sonderstellen-Quellen + Korrekturen)
    als `680676f` — ohne fremdes Review, 22 Minuten nach dem Öffnen.
-3. **Zwei eigene PRs sind offen, beide mit @mvpo3 als Reviewer:**
-   - **#109** `enis/sonderstellen-nachzug-0905` (`f4ffd84`) — §4.3.8 nur belegte
-     Toiletten, RZ an Niveauänderung nur mit LB, Prüfregeln 12b/12c.
-     **Enthält Änderungen in Leonis' Lane.**
-   - **#110** `enis/wegbreite-randstreifen-0905` (`c964ca2`) — §4.2.1 Wegbreite/
-     Mittelbereich + §4.3.1 Randstreifen quellengebunden. Reine eigene Lane.
-   Beide CI grün, `mergeStateStatus: CLEAN`.
-4. **Nur noch ein Blocker:** das Scope-Gate der Flächen-Schwellen (Blocker 2).
-   Blocker 1 (Sonderstellen-Contract, #93) und Blocker 3 (40/10-Docstrings, #87)
-   sind mit den Merges erledigt.
-5. **Der wichtigste offene fachliche Befund** ist der Audit-Trail: die
-   Sonderstellen-Leuchten tragen weiter die Fallback-Quelle (§4.1/§4.2.1/§4.3.1)
-   statt der echten Fundstelle. Behebbar nur über die 3-Owner-Naht — ausgearbeitet
-   in `docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md` (liegt auf dem #109-Branch).
+3. **Drei eigene PRs sind offen**, alle mit @mvpo3 als Reviewer, **alle drei ohne
+   jedes Review** (0 Reviews, 0 Kommentare):
+
+   | PR | Branch | Head | Inhalt | CI |
+   |---|---|---|---|---|
+   | **#109** | `enis/sonderstellen-nachzug-0905` | `f4ffd84` | §4.3.8 nur belegte Toiletten · RZ an Niveauänderung nur mit LB · Prüfregeln 12b/12c | grün |
+   | **#110** | `enis/wegbreite-randstreifen-0905` | `c964ca2` | §4.2.1 Wegbreite/Mittelbereich + §4.3.1 Randstreifen quellengebunden | grün |
+   | **#113** | `enis/blocker2-scope-analyse-0905` | `632b14f` | OVE-Scope je Raum statt projektweit · Schwellen getrennt · Prüfregel 13 | grün |
+
+   **Die Inhalte sind getrennt zu lesen — nichts davon wirkt auf `main`:**
+   - **#109** ändert `platzierung/sonderstellen_strategy.py` + `platzierer.py`
+     (Leonis' Lane) und `hauptengine/validierung.py`.
+   - **#110** ist **reine Normwissen-Lane** (`en1838_grundwerte.yaml`,
+     `provider.py`) plus Proposal-Dokument — keine fremde Datei.
+   - **#113** ändert `platzierung/oib_gate.py` + `flaechen_strategy.py` (Leonis'
+     Lane), `hauptengine/{validierung,pipeline}.py` und die Ausgabe des
+     `oib`-Blocks im API-Header.
+
+   Alle drei sind `MERGEABLE/CLEAN`; **#109 und #113 berühren beide
+   `hauptengine/validierung.py`** — eine frühere Merge-Probe (Stand `28b7740` +
+   `f4ffd84`) lief konfliktfrei durch.
+4. **Blocker 2 bleibt fachlich offen** — auch mit #113. Siehe unten.
+5. **Der wichtigste offene fachliche Befund** ist weiter der Audit-Trail: die
+   Sonderstellen-Leuchten tragen auf `main` die Fallback-Quelle
+   (§4.1/§4.2.1/§4.3.1) statt der echten Fundstelle. Behebbar nur über die
+   3-Owner-Naht — ausgearbeitet in `docs/proposals/SONDERSTELLEN_QUELLEN_NAHT.md`
+   (liegt auf dem #109-Branch, nicht auf `main`).
 
 ### 🔴 MORGEN ZUERST
 
 ```
 1. git fetch origin
-2. git log --oneline -1 origin/main        # zuletzt: 5e4a46e
-3. gh pr view 109 --json state,reviewDecision
-4. gh pr view 110 --json state,reviewDecision
-5. gh pr list --state open --limit 10
+2. git log --oneline -1 origin/main        # zuletzt: 1092d77
+3. for n in 109 110 113; do gh pr view $n --json state,reviewDecision; done
+4. gh pr list --state open --limit 10
 ```
 
-1. **Reviews zu #109 und #110 nachhalten.** Bei #109 ist die Auslegungsfrage
-   BAD/DUSCHE/NASSRAUM/SANITÄR offen — bewusst nicht still entschieden.
-2. **3-Owner-Vorschläge einbringen**, sobald #109/#110 durch sind:
+1. **Reviews zu #109, #110 und #113 nachhalten.** Bei #109 ist die
+   Auslegungsfrage BAD/DUSCHE/NASSRAUM/SANITÄR offen; bei #113 die
+   Header-Ausgabe-Änderung (s.u.).
+2. **3-Owner-Vorschläge einbringen**, sobald die PRs durch sind:
    - `SONDERSTELLEN_QUELLEN_NAHT.md` (Bump **1.2.0 → 1.3.0**, Ports + zwei
      Contract-Typen) — löst den Audit-Trail-Befund.
    - `WEGBREITE_RANDSTREIFEN.md` (`FluchtwegSegment.breite_mm`, `raum_modell`
      **1.1.0 → 1.2.0**) — löst den fehlenden Eingabewert für §4.2.1.
-3. **Blocker 2** weiterverfolgen: Gate je Schwelle (8 m² Nutzungsart-Scope auf
-   Raum-Ebene, 60 m² Verkehrsbauwerk-Merkmal).
+   - `BLOCKER2_FLAECHEN_SCOPE.md` Abschnitt 6b — `OibErgebnis.nutzungsart` bzw.
+     `ist_verkehrstechnische_einrichtung` + `Raum.nutzungskategorie`.
+3. **Quellenbeleg für Blocker 2 beschaffen:** OVE-Richtlinie **R 12-2** mit
+   Ausgabestand. Ohne sie bleibt die Gleichsetzung „Tabelle-6-Erforderlichkeit =
+   erhöhte Anforderungen nach der Art der Nutzung" eine unbelegte Auslegung.
 4. Ohne GO: restliche **§4.1.2-Punkte d), e), f), g), j), k)** am Volltext gegen
    die Decision-Matrix prüfen.
 
-## Was heute auf `main` gelandet ist
+## PR #113 — Blocker-2-Scope-Slice (veröffentlicht 05.09., `632b14f`)
+
+`enis/blocker2-scope-analyse-0905`, OPEN, `MERGEABLE/CLEAN`, Reviewer @mvpo3
+angefragt, **keine Reviews**. Sieben Commits: Analyse-Dokument, zwei
+Doku-Korrekturen, drei Code-Slices.
+
+**Was der Slice tut** (nichts davon aktiviert eine Schwelle):
+
+* **Zwei Fragen statt einer.** `raum_zuordnung(oib, floor, raum_id)` beantwortet
+  die **räumliche** Frage (`bestaetigt` / `nicht_bestaetigt` / `ungeklaert`);
+  `sanitaer_scope` / `verkehr_scope` beantworten die **fachliche**
+  (`anwendbar` / `nicht_anwendbar` / `ungeklaert` / `nicht_bewertet`).
+* **Keine Ableitung in beide Richtungen.** Weder gibt eine bestätigte Zuordnung
+  die OVE-Regel frei, noch schließt eine fehlende oder negative sie aus. Vergeben
+  werden heute nur `ungeklaert` (bewertet) und `nicht_bewertet` (kein OIB-Pfad).
+* **Schwellen getrennt:** 8 m² (Punkt 1) und 60 m² (Punkt 3) haben eigene
+  Geltungsbereiche; ein bestätigter Verkaufsteil gibt Punkt 3 nicht frei.
+* **Prüfregel 13** macht ungeklärte Räume sichtbar — auch wenn ein anderer
+  Gebäudeteil bestätigt ist. Ende-zu-Ende im gezeichneten Prüfbericht des Plans.
+
+**⚠️ Ausgabe-Änderung (öffentlich, `X-Notbeleuchtung`, Feld `oib`):**
+`flaechen_trigger_gate` **entfällt**; neu sind `raum_zuordnung`,
+`sanitaer_scope`, `verkehr_scope` und `unbekannte_raum_referenzen`. Ein Client,
+der auf `flaechen_trigger_gate` liest, muss umgestellt werden.
+
+## 🚧 Blocker 2 — nach #113 weiterhin fachlich OFFEN
+
+Der Slice behebt die **Über-Anwendung über Gebäudeteile hinweg**. Er behebt
+**nicht** die fachliche Frage:
+
+* **Raumzuordnung und OVE-Anwendbarkeit sind jetzt getrennt.** Die räumliche
+  Frage ist beantwortbar, die fachliche nicht.
+* **Beide Schwellen bleiben `None`** (`antipanik_min_m2`, `wc_sanitaer_min_m2`,
+  `quelle`) — `engine_status` unverändert.
+* **Was fehlt, sind zwei verschiedene Dinge:**
+  1. **Quellenbeleg mit Ausgabestand** — OVE-Richtlinie **R 12-2** in der
+     zutreffenden Ausgabe (liegt nicht im Repo) oder eine andere Fundstelle, die
+     „Tabelle-6-Erforderlichkeit" mit „erhöhte Anforderungen **nach der Art der
+     Nutzung**" verbindet. Die OIB-Erläuterungen verweisen auf R 12-2 nur
+     „je nach Zutreffen".
+  2. **Schnittstellen-Erweiterungen (3-Owner)** — `OibErgebnis.nutzungsart` bzw.
+     ein zugesichertes `ist_verkehrstechnische_einrichtung` und
+     `Raum.nutzungskategorie` (Wartezone / Abfertigungshalle / Geschäftsfläche /
+     betriebsnotwendiger Arbeitsraum) für Punkt 3.
+
+  **Das eine ersetzt das andere nicht.** Eine 3-Owner-Freigabe entscheidet über
+  Schnittstelle und Umsetzung, nicht darüber, ob die Norm die Gleichsetzung
+  hergibt. Und „weniger Warnungen" ist keine Begründung — die Warnungen sind
+  Folge der fehlenden Quelle.
+
+Volle Analyse: `docs/proposals/BLOCKER2_FLAECHEN_SCOPE.md` (auf dem
+#113-Branch, nicht auf `main`).
+
+## 🧪 Testprotokoll-Nachtrag 05.09. (Abend)
+
+| Prüfstand | Was geprüft wurde | passed | skipped | deselected |
+|---|---|---|---|---|
+| **lokal, PR-Head #113** | `632b14f`, Basis `origin/main` = `5e4a46e` | **666** | 7 | 2 |
+| **CI #113** | Merge-Ref aus `632b14f` **+ aktuellem `main` (`1092d77`)** | **690** | 10 | 2 |
+| lokal, PR-Head #109 | `f4ffd84` | 671 | 7 | 2 |
+| lokal, PR-Head #110 | `c964ca2` | 663 | 7 | 2 |
+| Baseline `origin/main` (Nachmittag) | `5e4a46e` | 648 | 7 | 2 |
+
+**Die beiden Zahlen für #113 messen nicht dasselbe** und dürfen nicht
+gleichgesetzt werden: CI prüft bei `pull_request`-Events den **Merge-Ref** aus
+PR-Head und aktuellem `main`. Die zusätzlichen ~24 Tests und 3 Skips stammen aus
+den 16 `main`-Commits seit `5e4a46e` (u.a. #111), nicht aus dem Slice.
+
+**CI-Runs #113** (beide `pass`): `contracts` = Run **33985037802** (1 m 0 s) ·
+`test` = Run **33985037775** (2 m 37 s, `Lint: All checks passed!`).
+
+## Was heute auf `main` gelandet ist (Stand Nachmittag, `5e4a46e`)
 
 **Eigen (#103, `680676f`):** Sonderstellen-Anforderungen mit echter Fundstelle,
 `SonderstellenAnforderung` + `LuxAnforderung` (normwissen-eigene Typen),
@@ -90,7 +178,9 @@ Bezugsfläche bleibt ausschließlich der Boden.
 kein paketübergreifender Import) — die Quellen-Naht ist damit weiter der offene
 Schritt.
 
-## Die zwei offenen eigenen PRs
+## Die offenen eigenen PRs #109 und #110 — Detail
+
+> Stand oben zusammengefasst; hier die ausführliche Fassung vom Nachmittag.
 
 ### #109 — Nachzug zu #103 (`f4ffd84`, CI grün)
 
@@ -401,7 +491,7 @@ Review-Punkten teilweise eingearbeitet). Was noch fehlt, ist der Nachweis **je
 Regel**, getrennt nach Platzierung und Lichttechnik. Erst dann wird
 `engine_status` regelweise gezogen — nicht pauschal.
 
-## 🧪 Testprotokoll 05.09.2026
+## 🧪 Testprotokoll 05.09.2026 (Historie bis zum Nachmittag)
 
 | Lauf | Commit | passed | skipped | deselected |
 |---|---|---|---|---|
@@ -473,7 +563,10 @@ Regeln wird erst gezogen, wenn auch die Konsumption (#95) drin ist und der
 Nachweis **je Regel einzeln** vorliegt — Platzierung und lichttechnischer
 Nachweis getrennt bewertet.
 
-## 🚧 Blocker 2 — Scope-Gate: OFFEN (einziger verbleibender Blocker)
+## Historie Nachmittag — Blocker 2 vor dem Scope-Slice
+
+> Aktueller Stand oben („nach #113 weiterhin fachlich OFFEN"). Der Text hier
+> beschreibt die Lage vor dem Slice und bleibt als Begründungs-Historie stehen.
 
 Seit dem Merge von #87 existiert `FlaechenSchwellen.quelle` im Contract — das
 ändert an der Sachlage nichts: **beide Flächen-Schwellen bleiben leer**, auch die
