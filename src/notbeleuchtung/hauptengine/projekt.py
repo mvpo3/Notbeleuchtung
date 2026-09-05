@@ -13,7 +13,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .contracts import ProviderBundle
+from .contracts import ProjektKontext, ProviderBundle
 from .pipeline import Output, run
 
 
@@ -40,8 +40,12 @@ def run_projekt(
     lb_path: str | None = None,
     plankopf: dict | None = None,
     pdf: bool = False,
+    projekt_kontext: ProjektKontext | None = None,
 ) -> ProjektErgebnis:
-    """Fährt die Pipeline je Geschoss; optional Sammel-PDF (ein Blatt je Geschoss)."""
+    """Fährt die Pipeline je Geschoss; optional Sammel-PDF (ein Blatt je Geschoss).
+
+    `projekt_kontext` (optional) ist gebäudeweit — er gilt wie die LB für das ganze
+    Projekt und wird 1:1 an jede Geschoss-Pipeline gereicht (OIB-Pfad)."""
     out_dir = Path(out_dir) if out_dir is not None else None
     outputs: list[Output] = []
     dxf_paths: list[Path] = []
@@ -49,7 +53,8 @@ def run_projekt(
     for plan in plaene:
         op = out_dir / f"{plan.floor}_notbeleuchtung.dxf" if out_dir is not None else None
         out = run(bundle, dxf_path=plan.dxf_path, floor=plan.floor,
-                  out_path=op, lb_path=lb_path, plankopf=plankopf)
+                  out_path=op, lb_path=lb_path, plankopf=plankopf,
+                  projekt_kontext=projekt_kontext)
         outputs.append(out)
         if op is not None:
             dxf_paths.append(op)
@@ -78,6 +83,12 @@ def run_projekt(
                    if "lb_review" in o.render_summary), None)
     if review is not None:
         summary["lb_review"] = review
+    # Der OIB-Befund ist wie die LB projekt-weit (ein Kontext für alle Geschosse) —
+    # der Gate-/Stufen-Block gehört daher auf die oberste Ebene, nicht je Geschoss.
+    oib = next((o.render_summary["oib"] for o in outputs
+                if "oib" in o.render_summary), None)
+    if oib is not None:
+        summary["oib"] = oib
     return ProjektErgebnis(outputs=outputs, combined_pdf=combined_pdf, summary=summary)
 
 
