@@ -15,7 +15,10 @@ from notbeleuchtung.hauptengine.contracts import (
     LBVorgabe,
     NormAnforderung,
     NormRegelwerk,
+    OibBefund,
+    OibErgebnis,
     PlatzierungsErgebnis,
+    ProjektKontext,
     ProviderBundle,
     RaumModell,
 )
@@ -139,4 +142,36 @@ def build_fake_bundle_mit_lb_review(meldung: str | None = None) -> ProviderBundl
     """Wie `build_fake_bundle_mit_lb`, aber der LB-Provider verlangt Review."""
     bundle = build_fake_bundle()
     bundle.lb = FakeLBReviewProvider(meldung)
+    return bundle
+
+
+class FakeOibProvider:
+    """OIB-Double — fester Erforderlichkeits-Befund (Stufe je Konstruktor).
+
+    Ignoriert die Projektfakten; je Gebäudeteil des ProjektKontext ein Ergebnis mit
+    der gesetzten Stufe. So üben die Tests das Flächen-Trigger-Gate (offen/zu/
+    fail-closed), ohne an Enis' echter Tabelle-6-Auswertung zu hängen."""
+
+    def __init__(self, stufe: str = "eingeschraenkt") -> None:
+        self._stufe = stufe
+
+    def bewerte_oib(self, projekt: ProjektKontext) -> OibBefund:
+        teile = [t.id for t in projekt.gebaeudeteile] or ["teil_1"]
+        return OibBefund(
+            ergebnisse=[
+                OibErgebnis(
+                    gebaeudeteil_id=teil_id,
+                    stufe=self._stufe,
+                    quelle="OIB-RL 2 Tabelle 6 (Fake)",
+                    norm_ausgabe="Mai 2023 (Fake)",
+                )
+                for teil_id in teile
+            ]
+        )
+
+
+def build_fake_bundle_mit_oib(stufe: str = "eingeschraenkt") -> ProviderBundle:
+    """Wie `build_fake_bundle`, aber mit verdrahtetem OIB-Provider (3. Input aktiv)."""
+    bundle = build_fake_bundle()
+    bundle.oib = FakeOibProvider(stufe)
     return bundle
