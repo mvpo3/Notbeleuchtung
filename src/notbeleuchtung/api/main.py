@@ -30,6 +30,7 @@ from fastapi.responses import FileResponse
 from starlette.background import BackgroundTask
 
 from notbeleuchtung.hauptengine.contracts import ProviderBundle
+from notbeleuchtung.hauptengine.dwg_input import OdaKonverterFehlt, stelle_dxf_bereit
 from notbeleuchtung.hauptengine.pipeline import run
 from notbeleuchtung.hauptengine.projekt import ProjektPlan, run_projekt
 from notbeleuchtung.hauptengine.registry import build_default_bundle
@@ -66,6 +67,16 @@ def _header_summary(render_summary: dict) -> dict:
     return summary
 
 
+def _als_dxf(plan_pfad: Path, workdir: Path) -> Path:
+    """DWG-Upload direkt im Workdir konvertieren (der räumt sich per BackgroundTask
+    auf). Ohne installierten ODA-Konverter ist das eine Deployment-Lücke, kein
+    Client-Fehler → 503 statt 422."""
+    try:
+        return stelle_dxf_bereit(plan_pfad, workdir)
+    except OdaKonverterFehlt as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+
 def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
     """Baut die App. `bundle_factory` bindet die Provider (echt via Registry oder Fake)."""
     app = FastAPI(
@@ -88,7 +99,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
 
     @app.post("/plan")
     def plan(
-        datei: UploadFile = File(..., description="Leerer Architekturplan (DXF)"),
+        datei: UploadFile = File(..., description="Leerer Architekturplan (DXF oder DWG)"),
         floor: str = Form("EG", description="Geschoss-Kennung, z.B. '4OG'"),
         lb_datei: UploadFile | None = File(None, description="Leistungsbeschreibung (2. Input, optional)"),
         format: str = Form("dxf", description="Ausgabeformat: 'dxf' (CAD) oder 'pdf' (Dokument)"),
@@ -106,6 +117,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
         try:
             dxf_in = workdir / (Path(datei.filename or "plan.dxf").name)
             dxf_in.write_bytes(datei.file.read())
+            dxf_in = _als_dxf(dxf_in, workdir)
             lb_path: str | None = None
             if lb_datei is not None:
                 lb_in = workdir / (Path(lb_datei.filename or "lb").name)
@@ -161,6 +173,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
             for datei, floor in zip(dateien, floor_list):
                 dxf_in = workdir / f"{floor}_{Path(datei.filename or 'plan.dxf').name}"
                 dxf_in.write_bytes(datei.file.read())
+                dxf_in = _als_dxf(dxf_in, workdir)
                 plaene.append(ProjektPlan(dxf_path=str(dxf_in), floor=floor))
             lb_path = None
             if lb_datei is not None:
