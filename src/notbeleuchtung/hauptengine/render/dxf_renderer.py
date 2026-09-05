@@ -196,8 +196,65 @@ def _stueckliste_text(platzierung: PlatzierungsErgebnis) -> str | None:
     return "\\P".join(zeilen)
 
 
+_LEGENDE_SYMBOL_H_MM = 300.0     # Ziel-Höhe des Mini-Symbols in der Stücklisten-Zeile
+_LEGENDE_ZEILE_MM = 420.0        # Zeilenabstand der Symbol-Stückliste
+
+
 def _draw_stueckliste(msp, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> bool:
-    """Stückliste-Box in der rechten Schriftfeld-Leiste (über dem Prüfbericht)."""
+    """Stückliste-Box in der rechten Schriftfeld-Leiste (über dem Prüfbericht).
+
+    Mit Typ-Lettern (Symbol-Datenmodell v1.2.0) in der Profi-Form der din-Legende
+    (ACAD_TABLE „Legende Not-/Sicherheitsbeleuchtung": Stk. | SYMBOL | Typ |
+    Beschreibung): je Typ-Zeile das echte Katalog-Symbol klein vorangestellt."""
+    if platzierung.platzierungen and all(p.typ_letter for p in platzierung.platzierungen):
+        from ezdxf import bbox as _ezbbox
+
+        gruppen: dict[str, dict] = {}
+        for p in platzierung.platzierungen:
+            g = gruppen.setdefault(
+                p.typ_letter,
+                {"kind": p.kind, "produkt": p.typ_name or p.catalog_key,
+                 "key": p.catalog_key, "n": 0},
+            )
+            g["n"] += 1
+        (_min_x, min_y), (max_x, _max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+        x0 = max_x + _PANEL_ABSTAND_MM
+        y0 = min_y + _BOX_Y_STUECK
+        x1, y1 = x0 + _PANEL_B_MM, y0 + _BOX_H_STUECK_MM
+        msp.add_lwpolyline([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], close=True,
+                           dxfattribs={"layer": LAYER_STUECKLISTE})
+        kopf = msp.add_mtext("STÜCKLISTE / LEGENDE", dxfattribs={
+            "layer": LAYER_STUECKLISTE, "char_height": LEGENDE_HEIGHT_MM})
+        kopf.set_location((x0 + _PANEL_PAD_MM, y1 - _PANEL_PAD_MM),
+                          attachment_point=MTextEntityAlignment.TOP_LEFT)
+        mapping = library.load_mapping()
+        y = y1 - _PANEL_PAD_MM - _LEGENDE_ZEILE_MM * 1.2
+        for letter in sorted(gruppen):
+            g = gruppen[letter]
+            eintrag = mapping.get(g["key"])
+            sym_x = x0 + _PANEL_PAD_MM + 500.0
+            if eintrag is not None:
+                block_name = eintrag["block_name"]
+                library.import_block(msp.doc, block_name)
+                bb = _ezbbox.extents(msp.doc.blocks[block_name], fast=True)
+                h_units = max(bb.size.y, 1e-6)
+                s = _LEGENDE_SYMBOL_H_MM / h_units
+                msp.add_blockref(block_name, (sym_x, y - _LEGENDE_ZEILE_MM / 2 + 60.0),
+                                 dxfattribs={"xscale": s, "yscale": s,
+                                             "layer": LAYER_NOTBELEUCHTUNG})
+            zeile = msp.add_mtext(
+                f"{g['n']}x | Typ {letter} | {_KIND_LABEL.get(g['kind'], g['kind'])} | {g['produkt']}",
+                dxfattribs={"layer": LAYER_STUECKLISTE,
+                            "char_height": LEGENDE_HEIGHT_MM * 0.8})
+            zeile.set_location((sym_x + 800.0, y - _LEGENDE_ZEILE_MM / 2 + 60.0),
+                               attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+            y -= _LEGENDE_ZEILE_MM
+        summe = msp.add_mtext(f"Summe: {len(platzierung.platzierungen)}", dxfattribs={
+            "layer": LAYER_STUECKLISTE, "char_height": LEGENDE_HEIGHT_MM * 0.8})
+        summe.set_location((x0 + _PANEL_PAD_MM, y - 60.0),
+                           attachment_point=MTextEntityAlignment.TOP_LEFT)
+        return True
+
     text = _stueckliste_text(platzierung)
     if text is None:
         return False
