@@ -779,7 +779,6 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
     floor_label = {"EG": "Erdgeschoss", "1OG": "1.Obergeschoss", "2OG": "2.Obergeschoss",
                    "3OG": "3.Obergeschoss", "4OG": "4.Obergeschoss",
                    "DG": "Dachgeschoss"}.get(raum.floor, raum.floor)
-    projekt = (plankopf or {}).get("projekt")
 
     def im_kern(x, y):
         return 600.0 <= x <= 1500.0 and 200.0 <= y <= 900.0
@@ -802,10 +801,12 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
                     continue
                 kopie = e.copy()
                 t = kopie.dxf.text.strip()
+                if t == "MVP-Projekt":
+                    # Owner-Fixierung (Screenshot 2026-09-05): Projektname läuft über
+                    # die Spalte hinaus — Feld bleibt leer, Owner trägt selbst ein.
+                    continue
                 if t == "Erdgeschoss":
                     kopie.dxf.text = floor_label
-                elif t == "MVP-Projekt" and projekt:
-                    kopie.dxf.text = projekt
                 if t.startswith("Notbeleuchtung-"):
                     legenden_texte[t] = (e.dxf.insert.x, e.dxf.insert.y)
             else:
