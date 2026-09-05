@@ -192,7 +192,9 @@ ausgewiesen — er ist im Plan schlicht unsichtbar.
    Halbsatz) — er ist keine Schwelle und passt deshalb nicht in
    `wc_sanitaer_min_m2`.
 
-**Beides ist ohne Contract-Änderung erreichbar** (siehe 6).
+**Beides ist ohne Contract-Änderung erreichbar** (siehe 6). **Aber:** ein
+korrektes raumbezogenes Gate macht den *Nutzungs*-Scope noch nicht belegt —
+siehe den Vorbehalt in Abschnitt 8.
 
 ### 60 m² (Verkehrseinrichtungen) — weiter weg
 
@@ -238,8 +240,10 @@ Kopplung existiert nur in unserem Code.
 1. **Zuerst 6a**, Zeile 1–3: das behebt die Über-Anwendung (B/D) und macht den
    unklaren Fall sichtbar — ohne jede Contract-Änderung und ohne dass eine
    Schwelle gefüllt sein muss.
-2. **Dann die 8 m²** freischalten, sobald das raumbezogene Gate steht — plus den
-   flächenunabhängigen Barrierefrei-Trigger.
+2. **Dann die 8 m²** — aber erst, wenn zusätzlich zum raumbezogenen Gate der
+   Bedeutungs-Vorbehalt aus Abschnitt 8 ausgeräumt ist (die Gleichsetzung
+   „Tabelle-6-Erforderlichkeit = erhöhte Anforderungen nach der Art der Nutzung"
+   ist bislang Auslegung). Dazu der flächenunabhängige Barrierefrei-Trigger.
 3. **Die 60 m²** bleiben, bis 6b entschieden ist. Sie sind der kleinere Nutzen
    (nur Flughäfen/Bahnhöfe) und der größere Aufwand.
 
@@ -247,3 +251,93 @@ Kopplung existiert nur in unserem Code.
 
 Beide Felder bleiben **leer**, `engine_status` unverändert, kein Contract
 angefasst. Diese Datei ist Analyse und Vorschlag — nichts davon ist umgesetzt.
+
+
+---
+
+## 8. Nachtrag 05.09. — Umsetzung von 6a.1–3, und was sie NICHT leistet
+
+Umgesetzt (lokal, Branch `enis/blocker2-scope-analyse-0905`): Scope je Raum
+(`sanitaer_scope` / `verkehr_scope` mit `anwendbar | nicht_anwendbar |
+ungeklaert`), getrennte Schwellen-Auswertung, Prüfregel 13.
+
+### 8a. Bedeutungs-Vorbehalt — der Nutzungs-Scope bleibt angenähert
+
+Die entscheidende Frage: **welcher OIB-Befund begründet eigentlich
+`sanitaer_scope = anwendbar`?**
+
+`OibRl2Provider` beantwortet **OIB-RL 2 Punkt 5.4 / Tabelle 6**: „Für die in der
+Tabelle 6 angeführten Nutzungen ist eine entsprechende Sicherheitsbeleuchtung
+gemäß dieser Tabelle zu errichten." Die Stufen bedeuten laut den Erläuterungen
+(Erl.-S. 48, in `oib_rl2_tabelle6.yaml` hinterlegt):
+
+* `eingeschraenkt` — „Sicherheitsbeleuchtung für **Fluchtwege** gemäß ÖNORM
+  EN 1838 sowie ÖVE/ÖNORM EN 50172";
+* `uneingeschraenkt` — dasselbe, „**NICHT auf Fluchtwege eingeschränkt**".
+
+Die OVE-Klausel fragt nach etwas anderem: nach **„erhöhten Anforderungen nach der
+Art der Nutzung (siehe OVE-Richtlinie **R 12-2** bzw. OIB-Richtlinie 2)"**.
+
+**Das ist nicht dasselbe, und die Gleichsetzung ist nicht belegt:**
+
+* **R 12-2 liegt nicht im Repo.** Die Klausel nennt sie zuerst; wir können nur den
+  OIB-Zweig auswerten.
+* Die OIB-Erläuterungen verweisen ihrerseits auf „OVE-Richtlinie R 12-2 Punkte 3,
+  4 und 5.1 bis 5.3" nur **„je nach Zutreffen"** — also selbst bedingt.
+* Tabelle 6 sagt „Sicherheitsbeleuchtung **erforderlich**", nicht „erhöhte
+  Anforderungen **nach der Art der Nutzung**".
+
+**Was `anwendbar` deshalb genau heißt:** *ein Gebäudeteil, für den Tabelle 6 eine
+Sicherheitsbeleuchtung verlangt, erfasst diesen Raum.* Nicht mehr. Der
+**räumliche** Geltungsbereich ist damit sauber aufgelöst, der **Nutzungs**-Scope
+der OVE-Regel bleibt **angenähert, nicht nachgewiesen**. Der Satz „der Scope
+stimmt jetzt" wäre zu stark — richtig ist: *die Über-Anwendung über Gebäudeteile
+hinweg ist behoben*. Für das Füllen der 8-m²-Schwelle ist das eine notwendige,
+aber noch keine hinreichende Bedingung; es fehlt R 12-2 oder eine ausdrückliche
+Owner-Entscheidung, die Gleichsetzung als Auslegung zu akzeptieren.
+
+### 8b. Widersprüche und ungültige Zuordnungen
+
+* Ist derselbe Raum mehreren Gebäudeteilen mit **gegenläufigen** Aussagen
+  zugeordnet, ist das Ergebnis `ungeklaert` — ein bestätigender Teil überstimmt
+  einen ungeklärten oder verneinenden **nicht**. Gruppiert wird nach
+  Aussage-Richtung: `eingeschraenkt` + `uneingeschraenkt` sind kein Widerspruch.
+* Eine **Referenz auf einen nicht vorhandenen Raum** gibt nichts frei und wird als
+  Datenfehler ausgewiesen (`unbekannte_raum_referenzen`, Hinweis + Summary-Feld).
+  `OibBefund.nicht_zugeordnete_raum_referenzen` taugt dafür nicht: der Provider
+  bekommt kein `RaumModell` und lässt das Feld bewusst leer.
+
+### 8c. Sichtbarkeit bis zur Ausgabe — nachgewiesen
+
+Ende-zu-Ende über `pipeline.run(out_path=…)` geprüft: Regel 13 steht als
+`[WARNUNG] OVE-Flächen-Trigger: Geltungsbereich ungeklärt …` im **gezeichneten
+Prüfbericht** des DXF-Plans, und der Gesamtstatus des Berichts kippt auf
+`WARNUNG`.
+
+**Was der `gate_summary`-Umbau an der Ausgabe ändert:** das Feld
+`flaechen_trigger_gate` **entfällt** (es beschrieb ein Projekt-Gate, das es nicht
+mehr gibt); neu sind `sanitaer_scope`, `verkehr_scope` und
+`unbekannte_raum_referenzen`. Bekannte Verbraucher: der
+`X-Notbeleuchtung`-Header (`_SUMMARY_HEADER_KEYS` enthält `oib`) und die Tests —
+beide angepasst.
+
+**Dokumentierte Grenze:** der Prüfbericht selbst steht **nicht** im Header;
+Regel 13 erreicht den Client über den gezeichneten Plan.
+
+### 8d. Zusammenspiel mit PR #109
+
+Isolierte lokale Merge-Probe (`28b7740` + `f4ffd84`, Wegwerf-Branch, danach
+gelöscht, veröffentlichte Branches unberührt): **konfliktfreier Auto-Merge**,
+**684 passed**. Alle vier Prüfregeln stehen nebeneinander und feuern im selben
+Lauf:
+
+```
+[warnung] Sonderstellen 5-lx-vertikal-Nachweis (EN 1838 §4.1.2 h/i)
+[warnung] Arbeitsplatz-Lux bei besonderer Gefährdung (§4.4.1, Bezugsfläche ARBEITSFLÄCHE)
+[warnung] Barrierefreier Sanitärraum — Toilettennutzung nicht bestimmbar (§4.3.8)
+[warnung] OVE-Flächen-Trigger: Geltungsbereich ungeklärt (OVE E 8101 718.560.9.001.AT)
+```
+
+Die beiden Slices berühren dieselbe Datei (`hauptengine/validierung.py`) an
+verschiedenen Stellen — Git löst das automatisch. Reihenfolge der Merges ist
+damit egal.
