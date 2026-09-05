@@ -47,6 +47,13 @@ from .geometry import Point, Polygon, point_in_polygon
 # `validierung` verletzte die Owner-Grenze (platzierung importiert nur `contracts`).
 _MIN_ABSTAND_MM = 250.0
 
+# Owner-Korrektur (H-Gebäude-DXF, „falsch"-Marker 2026-09-05): zwei GLEICHARTIGE
+# Sicherheitsleuchten in nächster Distanz (real 1,1–1,3 m: Sonderstellen-Pflicht-SL
+# neben Verdichtungs-SL) sind eine zu viel — unter 2 m deckt EINE Leuchte beide
+# Zwecke (Sonderstellen-„nahe" = ≤ 2 m). Bewusst NUR gleichartig und NUR SL:
+# die 3,7-m-Nachbarschaften (Stiegenhaus-SL ↔ Gang-SL) hat der Owner stehen lassen.
+_DUBLETTEN_ABSTAND_MM = {"sicherheitsleuchte": 2000.0}
+
 # Prioritäts-Rang je Leuchten-Art: kleiner = wichtiger, bleibt bei Konflikt stehen.
 _RANG = {"rz": 0, "sicherheitsleuchte": 1, "antipanik": 2}
 
@@ -72,9 +79,17 @@ def _polygon_of(xy: Point, raum: RaumModell) -> Polygon | None:
 
 
 def _erster_konflikt(p: Platzierung, akzeptiert: list[Platzierung]) -> Platzierung | None:
-    """Erstes schon akzeptiertes Symbol unter dem Mindestabstand (oder None)."""
+    """Erstes schon akzeptiertes Symbol im Konfliktabstand (oder None).
+
+    Gleichartige Symbole nutzen ggf. eine größere Dubletten-Schwelle
+    (`_DUBLETTEN_ABSTAND_MM`), verschieden-artige den 250-mm-Mindestabstand."""
     for q in akzeptiert:
-        if _dist(p.xy_mm, q.xy_mm) < _MIN_ABSTAND_MM:
+        d = _dist(p.xy_mm, q.xy_mm)
+        schwelle = (
+            _DUBLETTEN_ABSTAND_MM.get(p.kind, _MIN_ABSTAND_MM)
+            if p.kind == q.kind else _MIN_ABSTAND_MM
+        )
+        if d < schwelle:
             return q
     return None
 

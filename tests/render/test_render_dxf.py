@@ -112,21 +112,6 @@ def test_schaltungsart_rz_ist_dauerlicht():
     assert _SCHALTUNGSART["antipanik"] == "BL"
 
 
-def test_hoehenkote_text_komma_notation():
-    from notbeleuchtung.hauptengine.render.dxf_renderer import _hoehenkote_text
-    assert _hoehenkote_text(2400.0) == "h=2,40"
-    assert _hoehenkote_text(2000.0) == "h=2,00"
-    assert _hoehenkote_text(3000.0) == "h=3,00"
-    assert _hoehenkote_text(2250.0) == "h=2,25"
-
-
-def test_hoehenkoten_label_gezeichnet(rendered):
-    _, summary, doc = rendered
-    # 4OG-Fixture = 5 Symbole, alle mit Default-Montagehöhe 2400 mm.
-    assert summary["hoehenkoten_drawn"] == 5
-    koten = doc.modelspace().query("MTEXT[layer=='din_SIBEL_52_info']")
-    assert len(koten) == 5
-    assert all(k.text == "h=2,40" for k in koten)
 
 
 def test_nodeid_annotation_je_leuchte(rendered):

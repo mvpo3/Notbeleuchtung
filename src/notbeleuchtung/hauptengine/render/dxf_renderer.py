@@ -37,7 +37,6 @@ LAYER_LEGENDE = "din_SIBEL_70_legend_white"
 LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
 LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
 LAYER_PRUEFBERICHT = "din_SIBEL_99_inspection"
-LAYER_HOEHENKOTE = "din_SIBEL_52_info"
 LAYER_NODEID = "din_SIBEL_63_luminaire_ID"
 LAYER_BELEGUNG = "din_SIBEL_11_system"
 
@@ -99,11 +98,6 @@ CIRCUIT_LABEL_BAND_X_MM = 300.0
 CIRCUIT_LABEL_MIN_GAP_MM = 150.0
 CIRCUIT_LABEL_MAX_NUDGE = 8
 
-# Montagehöhen-Kote — sitzt entgegen der Stromkreis-Label-Seite (−Normale),
-# damit Kote und Kreis-Label nicht überlappen. 150 mm (≈1,5 mm auf 1:100) statt 80 mm
-# (0,8 mm — am Plan-Maßstab unleserlich), auf Höhe der Stromkreis-Label-Skala.
-HOEHENKOTE_HEIGHT_MM = 90.0  # = Circuit-/NODEID-Label-Größe (einheitliche Annotation)
-HOEHENKOTE_OFFSET_NORMAL_MM = 240.0
 
 # NODEID-Annotation (fortlaufende Leuchten-ID je Symbol, Wartung/Adressierung, Profi-
 # Plan din_SIBEL_63_luminaire_ID). Sitzt tangential (entlang der Symbol-Achse), damit
@@ -127,12 +121,12 @@ def _add_own_layers(doc) -> None:
     doc.layers.add(LAYER_STROMKREIS, color=4)   # cyan
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
     doc.layers.add(LAYER_ARCH_TUER, color=8)    # dunkelgrau (Architektur-Bestand)
-    doc.layers.add(LAYER_FLUCHTWEG, color=9)    # hellgrau
+    fw = doc.layers.add(LAYER_FLUCHTWEG)        # Fluchtweg in Notbeleuchtungs-Grün
+    fw.dxf.true_color = (30 << 16) | (180 << 8) | 80
     doc.layers.add(LAYER_LEGENDE, color=7)      # weiß/schwarz
     doc.layers.add(LAYER_STUECKLISTE, color=7)  # weiß/schwarz
     doc.layers.add(LAYER_PLANKOPF, color=7)     # weiß/schwarz
     doc.layers.add(LAYER_PRUEFBERICHT, color=7)  # weiß/schwarz
-    doc.layers.add(LAYER_HOEHENKOTE, color=3)    # grün
     doc.layers.add(LAYER_NODEID, color=6)        # magenta
     doc.layers.add(LAYER_BELEGUNG, color=7)      # weiß/schwarz
 
@@ -421,30 +415,6 @@ def _draw_circuit_label(
     return True
 
 
-def _hoehenkote_text(height_mm: float) -> str:
-    """Montagehöhe als Kote in Metern, österreichische Komma-Notation (h=2,40)."""
-    return f"h={height_mm / 1000.0:.2f}".replace(".", ",")
-
-
-def _draw_hoehenkoten(msp, platzierung: PlatzierungsErgebnis) -> int:
-    """Montagehöhen-Kote (h=2,40) je Symbol. Sitzt entgegen der Stromkreis-Label-
-    Seite (−Normale), damit Kote und Kreis-Label nicht überlappen. EN 1838 §4.1:
-    height_mm liegt im Contract, war bisher nur unsichtbar."""
-    drawn = 0
-    for p in platzierung.platzierungen:
-        angle = math.radians(p.rotation_deg or 0.0)
-        nx = -math.sin(angle)
-        ny = math.cos(angle)
-        tx = p.xy_mm[0] - nx * HOEHENKOTE_OFFSET_NORMAL_MM
-        ty = p.xy_mm[1] - ny * HOEHENKOTE_OFFSET_NORMAL_MM
-        mt = msp.add_mtext(_hoehenkote_text(p.height_mm), dxfattribs={
-            "layer": LAYER_HOEHENKOTE,
-            "char_height": HOEHENKOTE_HEIGHT_MM,
-        })
-        mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
-        drawn += 1
-    return drawn
-
 
 def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
     """NODEID je Platzierung in Reihenfolge — bevorzugt das Contract-Feld
@@ -502,11 +472,36 @@ def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> tuple[int, in
     drawn = 0
     mit_kreis = 0
     sknrn = _stromkreisnummern(platzierung)
+    alle_xy = [q.xy_mm for q in platzierung.platzierungen]
+
+    def _frei(x: float, y: float, selbst) -> bool:
+        # Label darf in KEIN anderes Symbol ragen (Owner-Feedback: Beschriftung war
+        # teils von Nachbar-Symbolen verdeckt). Sperrzone = Symbol-Halbbreite + halbe
+        # Textbreite.
+        for q, qxy in zip(platzierung.platzierungen, alle_xy):
+            if q is selbst:
+                continue
+            sperr = _NODEID_HALBBREITE_MM.get(q.kind, 435.0) + 380.0
+            if math.hypot(qxy[0] - x, qxy[1] - y) < sperr:
+                return False
+        return True
+
     for p, nodeid, sknr in zip(platzierung.platzierungen, _nodeids(platzierung), sknrn):
         angle = math.radians(p.rotation_deg or 0.0)
         offset = _NODEID_HALBBREITE_MM.get(p.kind, 435.0) + NODEID_CLEARANCE_MM
-        tx = p.xy_mm[0] + math.cos(angle) * offset
-        ty = p.xy_mm[1] + math.sin(angle) * offset
+        # Seiten-/Distanz-Ausweich: +Tangente → −Tangente → +Normale → weiter raus.
+        kandidaten = [
+            (math.cos(angle) * offset, math.sin(angle) * offset),
+            (-math.cos(angle) * offset, -math.sin(angle) * offset),
+            (-math.sin(angle) * offset, math.cos(angle) * offset),
+            (math.cos(angle) * offset * 2.2, math.sin(angle) * offset * 2.2),
+        ]
+        tx, ty = p.xy_mm[0] + kandidaten[0][0], p.xy_mm[1] + kandidaten[0][1]
+        for dx, dy in kandidaten:
+            kx, ky = p.xy_mm[0] + dx, p.xy_mm[1] + dy
+            if _frei(kx, ky, p):
+                tx, ty = kx, ky
+                break
         text = f"{nodeid}\\P{sknr}" if sknr else nodeid
         if sknr:
             mit_kreis += 1
@@ -611,7 +606,6 @@ def render_dxf(
         ):
             circuit_labels += 1
 
-    hoehenkoten_drawn = _draw_hoehenkoten(msp, platzierung)
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
     _set_vport(doc, raum, platzierung)
@@ -628,7 +622,6 @@ def render_dxf(
         "output_path": str(out_path),
         "schrack_inserted": len(platzierung.platzierungen),
         "circuit_labels_drawn": circuit_labels,
-        "hoehenkoten_drawn": hoehenkoten_drawn,
         "nodeids_drawn": nodeids_drawn,
         "stromkreisnummern_drawn": stromkreisnummern_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
