@@ -10,7 +10,7 @@
           "type": "string"
         },
         "contract_version": {
-          "default": "1.0.0",
+          "default": "1.1.0",
           "title": "Contract Version",
           "type": "string"
         },
@@ -99,6 +99,13 @@
           },
           "title": "Ausfuehrungs Verweise",
           "type": "array"
+        },
+        "raum_referenzen": {
+          "items": {
+            "$ref": "#/$defs/RaumReferenz"
+          },
+          "title": "Raum Referenzen",
+          "type": "array"
         }
       },
       "required": [
@@ -139,7 +146,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.0.0",
+      "default": "1.1.0",
       "title": "Contract Version",
       "type": "string"
     },

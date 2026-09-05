@@ -24,7 +24,7 @@ def _load(p):
 def test_leerer_befund_baubar_und_schema_valide():
     befund = OibBefund()
     assert befund.contract == "OibBefund"
-    assert befund.contract_version == "1.0.0"
+    assert befund.contract_version == "1.1.0"
     assert befund.ergebnisse == []
     jsonschema.validate(instance=befund.model_dump(mode="json"), schema=_load(SCHEMA))
 
