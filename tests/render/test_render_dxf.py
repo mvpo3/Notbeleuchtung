@@ -272,12 +272,13 @@ def test_positionen_und_mirror_matchen_fixture(rendered):
     assert n_mirrored == 0
 
 
-def test_f13_stromkreis_labels_sichtbar(rendered):
+def test_keine_agv_labels_am_symbol(rendered):
+    # Owner-Entscheidung 2026-09-05: AGV-Stromkreis-Label je Symbol ist unnötig —
+    # die Kreis-Info tragen Anlage/Kreis/Adresse (NODEID-Zweitzeile) + Belegungsliste.
     _, summary, doc = rendered
-    texts = {mt.text for mt in doc.modelspace().query("MTEXT")}
-    assert any("AGV-A-F13" in t for t in texts)
-    assert any("AGV-B-F13" in t for t in texts)
-    assert summary["circuit_labels_drawn"] == 5
+    assert "din_SIBEL_61_labeling" not in doc.layers
+    belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
+    assert belegung and "AGV-A-F13" in belegung[0].text  # Info lebt in der Liste weiter
 
 
 def test_raum_konturen_und_segmente(rendered):
