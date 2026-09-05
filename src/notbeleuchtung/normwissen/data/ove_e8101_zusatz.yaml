@@ -58,6 +58,17 @@ quellen:
     ausgabe: "OIB-Richtlinie 2, Ausgabe Mai 2023 (OIB-330.2-029/23)"
     fundstelle: "Tabelle 6, Norm-S.32"
     spalte_uneingeschraenkt: "Sicherheitsbeleuchtung, uneingeschraenkt (Spalte 3)"
+    # Der AKZEPTIERTE Ausgabestand, gebunden an DIESEN Quellenbeleg — im Wortlaut,
+    # den der Provider in OibErgebnis.norm_ausgabe setzt.
+    #
+    # Bewusst hier festgehalten und NICHT aus oib_rl2_tabelle6.yaml gelesen:
+    # jene Datei traegt die Metadaten der allgemeinen OIB-Auswertung. Wird sie
+    # spaeter auf eine neue Ausgabe gehoben, darf sich der fuer diese Zusatzregel
+    # akzeptierte Stand NICHT automatisch mitbewegen — die Spalten-Entsprechung
+    # ist gegen Mai 2023 geprueft, gegen keine andere Ausgabe. Nach einem
+    # Ausgabenwechsel muss der Abgleich neu gefuehrt und dieser Wert bewusst
+    # nachgezogen werden; bis dahin entsteht kein Befund.
+    norm_ausgabe_string: "Ausgabe Mai 2023 (OIB-330.2-029/23)"
 
 # ── Was NICHT uebertragen wird ─────────────────────────────────────────────
 nicht_uebertragbar:
@@ -113,9 +124,8 @@ belegte_faelle:
       lichtart: >
         Die gepruefte OVE-Klausel legt die Beleuchtungsart fuer diesen
         Sanitaerfall nicht ausdruecklich fest. Eine automatische Zuordnung zu
-        Antipanik ist damit nicht belegt (R 12-2 Fussnote a fuehrt weitere Arten
-        der Notbeleuchtung nur als moeglich auf). Die Auswahl der Ausfuehrung ist
-        eine eigene Entscheidung und von der Erforderlichkeit zu trennen.
+        Antipanik ist damit nicht belegt. Die Auswahl der Ausfuehrung ist eine
+        eigene Entscheidung und von der Erforderlichkeit zu trennen.
       nachweis: >
         Weder OVE E 8101 noch R 12-2 nennen fuer einen Sanitaerbereich einen
         Lux-Wert. EN 1838 §4.3.1 (0,5 lx Antipanik) und §4.2.1 (1 lx Mittellinie
