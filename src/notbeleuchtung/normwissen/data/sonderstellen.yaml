@@ -55,7 +55,9 @@ sonderstellen_typen:
     aktiviert_regeln: [SL-06-FEUERLOESCHER]
     leuchtenart: sicherheitsleuchte
     max_horizontal_zum_punkt_mm: 2000
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Brandbekämpfungseinrichtungen)"
+    # Korrektur 05.09.: der String trug die PDF-Seiten 10–11 statt der
+    # NORM-Seite. §4.1.2 i) steht auf Norm-S.9 (= PDF-S.11), am Original geprueft.
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9 (Brandbekämpfungs- und Meldeeinrichtungen)"
     beleg: BELEGT
     lux_anforderung:
       # [BELEGT] §4.1.2 i), Norm-S.9 — „nahe jeder Brandbekämpfungs- und Melde-
@@ -80,7 +82,8 @@ sonderstellen_typen:
     aktiviert_regeln: [SL-07-WANDHYDRANT]
     leuchtenart: sicherheitsleuchte
     max_horizontal_zum_punkt_mm: 2000
-    norm_ref: "ÖNORM EN 1838:2013 §4.1.2, S.10–11 (Brandbekämpfungseinrichtungen)"
+    # Korrektur 05.09.: PDF-Seite → Norm-Seite, siehe feuerloescher.
+    norm_ref: "ÖNORM EN 1838:2013 §4.1.2 i), S.9 (Brandbekämpfungs- und Meldeeinrichtungen)"
     # „Wandhydrant" ist die Auslegung des Norm-Oberbegriffs auf ein konkretes Gerät.
     beleg: AUSLEGUNG
     lux_anforderung:
@@ -170,7 +173,8 @@ raum_attribute:
     typ: bool
     default: false
     aktiviert_regeln: [SL-10-BARRIEREFREIES-WC]
-    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.12"
+    # Korrektur 05.09. am Original: §4.3.8 steht auf Norm-S.11, nicht S.12.
+    norm_ref: "ÖNORM EN 1838:2013 §4.3.8, S.11"
     beleg: BELEGT
     begruendung: >
       Eigenschaft des RAUMS, nicht einer Stelle: die Antipanikbeleuchtung gilt für
@@ -182,7 +186,8 @@ raum_attribute:
     typ: bool
     default: false
     aktiviert_regeln: [SL-11-BESONDERE-GEFAEHRDUNG]
-    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.13"
+    # Korrektur 05.09. am Original: §4.4.1 steht auf Norm-S.12, nicht S.13.
+    norm_ref: "ÖNORM EN 1838:2013 §4.4.1, S.12"
     beleg: BELEGT
     begruendung: >
       §4.4.1 knüpft an den ARBEITSPLATZ/die Aufgabe an, nicht an einen Punkt: der
@@ -244,3 +249,89 @@ beobachtet_ohne_regel:
       Eine Notrufsprechstelle ist plausibel eine „Meldeeinrichtung" im Sinne von
       §4.1.2, aber keine Regel der Matrix braucht sie heute. Aufnahme erst, wenn
       eine Regel sie fordert — sonst wäre es ein erfundener Typ.
+
+# ═══════════════════════════════════════════════════════════════════════════
+# norm_anforderung — was der Platzierer je Typ bekommt (Query-API)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Zweck: der Platzierer soll für eine Sonderstelle die ANFORDERUNG DIESES TYPS
+# samt seiner ECHTEN Fundstelle bekommen — statt sich die erstbeste Raumregel der
+# passenden Leuchtenart zu greifen (Befund an PR #95: eine Feuerlöscher-Leuchte
+# trug `§4.1` aus der STIEGENHAUS-Regel, ein Niveauänderungs-RZ `§4.2.1` aus der
+# GANG-Regel).
+#
+# `quelle` ist der String, der als `Platzierung.norm_quelle` in den Audit-Trail
+# geht. Er muss in `NormRegelwerk.quellen` liegen (Naht-Invariante) — der
+# En1838NormProvider nimmt die Strings von hier in den Snapshot auf.
+#
+# `symbol_wie` verweist auf eine bestehende Regel in raumtyp_regeln.yaml, statt
+# Katalog-Keys und Montagehöhen ein zweites Mal zu führen. EN 1838 schreibt für
+# eine hervorzuhebende Stelle KEIN eigenes Symbol und KEINE eigene Höhe vor; es
+# gilt der allgemeine Floor §4.1.1 (2 m). Deshalb wird geliehen, nicht erfunden.
+#
+# KEIN horizontaler Lux-Wert: §4.1.2 macht an diesen Stellen ausschließlich
+# VERTIKALE Vorgaben (h/i: 5 lx am Gerät) oder gar keine (c). Ein horizontaler
+# Wert wird hier bewusst nicht geführt — er stünde sonst im Bodenraster.
+# ═══════════════════════════════════════════════════════════════════════════
+norm_anforderung:
+
+  typen:
+    feuerloescher:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+
+    hydrant:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+
+    erste_hilfe:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.1.2 h)"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+
+    brandmelder:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.1.2 i)"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+
+    niveauaenderung:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.1.2 c)"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      # c) nennt die Niveauänderung ausdrücklich als eigenen Punkt neben b)
+      # Treppen. Die Matrix führt dafür ZWEI Regeln (SL-04 + RZ-06) — deshalb
+      # zusätzlich ein Rettungszeichen, mit derselben Fundstelle.
+      zusaetzlich:
+        klassifikation: rz
+        quelle: "ÖNORM EN 1838:2013 §4.1.2 c)"
+        symbol_wie: {raum_typ: GANG, ist_fluchtweg: true}
+
+  raum_attribute:
+    ist_barrierefrei:
+      klassifikation: antipanik
+      quelle: "ÖNORM EN 1838:2013 §4.3.8"
+      symbol_wie: {raum_typ: SAAL, ist_fluchtweg: false}
+      # §4.3.8 wörtlich (Norm-S.11): „Antipanikbeleuchtung ist in Toiletten für
+      # Menschen mit Behinderung erforderlich." Ein Auslöser ohne eigenen Wert —
+      # das Niveau ist das der Antipanikbeleuchtung (§4.3.1, 0,5 lx HORIZONTAL,
+      # Randbereiche 0,5 m ausgenommen). Deshalb `lux_horizontal_wie: antipanik`:
+      # der Wert wird nicht neu erfunden, sondern von §4.3.1 geliehen.
+      lux_horizontal_wie: antipanik
+
+    besondere_gefaehrdung:
+      klassifikation: sicherheitsleuchte
+      quelle: "ÖNORM EN 1838:2013 §4.4.1"
+      symbol_wie: {raum_typ: STIEGENHAUS, ist_fluchtweg: true}
+      # §4.4.1 nennt einen HORIZONTALEN Wert auf der Arbeitsfläche (10 % des für
+      # die Aufgabe erforderlichen Wartungswertes, mind. 15 lx). Er wird hier
+      # NICHT geführt: der Prozentsatz braucht die Nennbeleuchtungsstärke der
+      # Allgemeinbeleuchtung, die im RaumModell nicht existiert — und das
+      # Contract-Feld `arbeitsplatz_lux` bleibt aus demselben Grund leer
+      # (Track C). Bis dahin ist der lichttechnische Nachweis hier OFFEN.
+      lux_horizontal_wie: null
+      nachweis_offen_grund: >
+        §4.4.1 fordert 10 % der Nenn-Beleuchtungsstärke, mindestens 15 lx, auf
+        der Arbeitsfläche. Die Bezugsgröße (Nennbeleuchtungsstärke) liegt nicht
+        vor → der Wert ist nicht berechenbar, die Anforderung bleibt zu prüfen.

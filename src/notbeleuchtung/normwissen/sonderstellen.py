@@ -76,6 +76,43 @@ class SonderstellenBefund(BaseModel):
         return bool(self.review)
 
 
+class SonderstellenAnforderung(BaseModel):
+    """Was an EINER Sonderstelle bzw. für EIN Raum-Attribut zu tun ist.
+
+    Bewusst **kein** `NormAnforderung`: dessen `min_lux` ist ein horizontaler
+    Bodenwert, und EN 1838 §4.1.2 nennt an diesen Stellen entweder einen
+    **vertikalen** Wert (h/i: 5 lx am Gerät) oder gar keinen (c). Ein Pflichtwert
+    `min_lux` wäre hier nur zu füllen, indem man eine Zahl erfindet oder eine
+    fremde Raumregel ausleiht — genau der Fehler, den dieser Typ abstellt.
+
+    `quelle` ist die **echte** Fundstelle des Auslösers und geht als
+    `Platzierung.norm_quelle` in den Audit-Trail.
+    """
+
+    ausloeser: str                       # Sonderstellen-Typ oder Raum-Attribut
+    klassifikation: Leuchtenart
+    quelle: str                          # Audit-Trail-String, ∈ NormRegelwerk.quellen
+    norm_ref: str                        # dieselbe Fundstelle mit Seite (Doku)
+    beleg: Beleg
+    symbol_katalog_keys: list[str] = Field(default_factory=list)
+    montagehoehe_mm: int = 2000
+    #: §4.1.2 ANMERKUNG 1 — „nicht mehr als 2 m in der Horizontalen". Nur für
+    #: punktförmige Stellen; ein Raum-Attribut hat keinen Bezugspunkt → None.
+    max_abstand_mm: int | None = None
+    #: 5 lx AM GERÄT (§4.1.2 h/i). Nie in den Bodenraster einsetzen.
+    lux_vertikal: float | None = None
+    lux_vertikal_quelle: str | None = None
+    #: Horizontal am Boden — nur, wo die Norm einen solchen Wert nennt (§4.3.1
+    #: über §4.3.8). Für §4.1.2 immer None.
+    lux_horizontal: float | None = None
+    lux_horizontal_quelle: str | None = None
+    #: True = es gibt eine lichttechnische Anforderung, die die Engine heute
+    #: NICHT nachweist. Die Leuchte ist trotzdem zu setzen (Pflichtstelle) —
+    #: der offene Nachweis gehört sichtbar in den Prüfbericht.
+    nachweis_offen: bool = False
+    nachweis_offen_grund: str = ""
+
+
 class SonderstellenKatalog:
     """Query-API über `data/sonderstellen.yaml`.
 
@@ -154,6 +191,55 @@ class SonderstellenKatalog:
     def lux_ist_ungeklaert(self, typ: str) -> bool:
         """Fehlt der Norm-Lux-Wert für diese Stelle? (Heute nur Niveauänderung.)"""
         return self.eintrag(typ)["lux_anforderung"]["norm_status"] == MANUELL_PRUEFEN
+
+    # ── Norm-Anforderung (Roh-Fakten; der Provider setzt sie zusammen) ──────
+    def norm_anforderung_roh(self, ausloeser: str) -> list[dict]:
+        """Die Anforderungs-Blöcke eines Typs bzw. Raum-Attributs, in Reihenfolge.
+
+        Ein Typ kann mehr als eine Leuchte auslösen: `niveauaenderung` trägt nach
+        §4.1.2 c) sowohl eine Sicherheitsleuchte (SL-04) als auch ein
+        Rettungszeichen (RZ-06) — beide mit derselben Fundstelle.
+        """
+        cfg = self._cfg["norm_anforderung"]
+        block = cfg["typen"].get(ausloeser) or cfg["raum_attribute"].get(ausloeser)
+        if block is None:
+            raise KeyError(f"Kein Auslöser mit Norm-Anforderung: {ausloeser!r}")
+        blocks = [block]
+        if block.get("zusaetzlich"):
+            blocks.append(block["zusaetzlich"])
+        return blocks
+
+    def ist_raum_attribut(self, ausloeser: str) -> bool:
+        return ausloeser in self._cfg["norm_anforderung"]["raum_attribute"]
+
+    def norm_ref(self, ausloeser: str) -> str:
+        """Fundstelle mit Seitenangabe — für Doku und Prüfbericht."""
+        eintrag = (self._typen.get(ausloeser) or self._attribute.get(ausloeser))
+        if eintrag is None:
+            raise KeyError(f"Unbekannter Auslöser: {ausloeser!r}")
+        return eintrag["norm_ref"]
+
+    def beleg_von(self, ausloeser: str) -> Beleg:
+        eintrag = (self._typen.get(ausloeser) or self._attribute.get(ausloeser))
+        if eintrag is None:
+            raise KeyError(f"Unbekannter Auslöser: {ausloeser!r}")
+        # Raum-Attribute führen `beleg` ebenso wie die Typen.
+        return eintrag["beleg"]
+
+    def quellen(self) -> list[str]:
+        """Alle Fundstellen-Strings, die dieser Katalog je vergibt.
+
+        Der `En1838NormProvider` nimmt sie in `NormRegelwerk.quellen` auf — sonst
+        verletzt jede Sonderstellen-Platzierung die Naht-Invariante
+        `Platzierung.norm_quelle ∈ NormRegelwerk.quellen`.
+        """
+        cfg = self._cfg["norm_anforderung"]
+        raus: set[str] = set()
+        for block in (*cfg["typen"].values(), *cfg["raum_attribute"].values()):
+            raus.add(block["quelle"])
+            if block.get("zusaetzlich"):
+                raus.add(block["zusaetzlich"]["quelle"])
+        return sorted(raus)
 
     # ── Datenquellen ────────────────────────────────────────────────────────
     def datenquellen(self, typ: str) -> list[str]:

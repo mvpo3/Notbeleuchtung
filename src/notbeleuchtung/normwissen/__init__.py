@@ -9,7 +9,11 @@ from .lb import LbTextProvider
 from .oib import OibRl2Provider
 from .platzierungsregeln import HardStop, PlatzierungsRegel, PlatzierungsRegelwerk
 from .provider import En1838NormProvider
-from .sonderstellen import Sonderstelle, SonderstellenKatalog
+from .sonderstellen import (
+    Sonderstelle,
+    SonderstellenAnforderung,
+    SonderstellenKatalog,
+)
 
 __all__ = [
     "En1838NormProvider",
@@ -19,5 +23,6 @@ __all__ = [
     "PlatzierungsRegel",
     "PlatzierungsRegelwerk",
     "Sonderstelle",
+    "SonderstellenAnforderung",
     "SonderstellenKatalog",
 ]

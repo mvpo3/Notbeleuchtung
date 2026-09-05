@@ -31,6 +31,8 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumRegel,
 )
 
+from .sonderstellen import SonderstellenAnforderung, SonderstellenKatalog
+
 DATA_DIR = Path(__file__).parent / "data"
 
 
@@ -51,6 +53,9 @@ class En1838NormProvider:
             (r["raum_typ"], bool(r["ist_fluchtweg"])): r
             for r in self._regeln_doc["regeln"]
         }
+        # §4.1.2-Stellen + die zwei Raum-Attribute (§4.3.8/§4.4.1). Eigener
+        # Katalog, weil diese Anforderungen nicht an einem Raumtyp haengen.
+        self._sonderstellen = SonderstellenKatalog(self._dir)
 
     def _read(self, name: str) -> dict:
         with open(self._dir / name, encoding="utf-8") as fh:
@@ -110,6 +115,85 @@ class En1838NormProvider:
         e = self._grund["erkennungsweite"]
         return round(e["z_hinterleuchtet"] * e["piktogramm_hoehe_default_m"], 3)
 
+    # ── Sonderstellen (EN 1838 §4.1.2) + Raum-Attribute (§4.3.8/§4.4.1) ─────
+    # NOCH NICHT im Ports-Protocol — Vorschlag liegt bei den 3 Ownern
+    # (docs/SPEC_SONDERSTELLEN_CONTRACT.md §8). Bis dahin duck-typed abfragbar.
+    def fuer_sonderstelle(self, typ: str) -> list[SonderstellenAnforderung]:
+        """Anforderung(en) für eine punktförmige Stelle nach §4.1.2.
+
+        Liste, weil `niveauaenderung` nach §4.1.2 c) zwei Leuchten auslöst
+        (Sicherheitsleuchte SL-04 + Rettungszeichen RZ-06). Jede Anforderung
+        trägt die **eigene** Fundstelle — nicht die einer fremden Raumregel.
+        """
+        if self._sonderstellen.ist_raum_attribut(typ):
+            raise KeyError(f"{typ!r} ist ein Raum-Attribut → fuer_raum_attribut()")
+        return self._baue(typ)
+
+    def fuer_raum_attribut(self, attribut: str) -> list[SonderstellenAnforderung]:
+        """Anforderung für `ist_barrierefrei` (§4.3.8) bzw. `besondere_gefaehrdung`
+        (§4.4.1) — Eigenschaften eines Raums, nicht eines Punktes."""
+        if not self._sonderstellen.ist_raum_attribut(attribut):
+            raise KeyError(f"{attribut!r} ist kein Raum-Attribut → fuer_sonderstelle()")
+        return self._baue(attribut)
+
+    def _baue(self, ausloeser: str) -> list[SonderstellenAnforderung]:
+        kat = self._sonderstellen
+        ist_attribut = kat.ist_raum_attribut(ausloeser)
+        raus: list[SonderstellenAnforderung] = []
+        for block in kat.norm_anforderung_roh(ausloeser):
+            regel = self._index[(
+                block["symbol_wie"]["raum_typ"],
+                bool(block["symbol_wie"]["ist_fluchtweg"]),
+            )]
+            lux_v = None if ist_attribut else kat.norm_lux_vertikal(ausloeser)
+            lux_h_ref = block.get("lux_horizontal_wie")
+            offen, grund = self._nachweis_status(ausloeser, ist_attribut, lux_v, block)
+            raus.append(SonderstellenAnforderung(
+                ausloeser=ausloeser,
+                klassifikation=block["klassifikation"],
+                quelle=block["quelle"],
+                norm_ref=kat.norm_ref(ausloeser),
+                beleg=kat.beleg_von(ausloeser),
+                symbol_katalog_keys=list(regel.get("symbol_katalog_keys", [])),
+                montagehoehe_mm=self._montagehoehe(regel),
+                max_abstand_mm=None if ist_attribut else kat.max_abstand_mm(ausloeser),
+                lux_vertikal=lux_v,
+                lux_vertikal_quelle=(
+                    kat.eintrag(ausloeser)["lux_anforderung"].get("norm_quelle")
+                    if lux_v is not None else None
+                ),
+                lux_horizontal=self._lux(lux_h_ref) if lux_h_ref else None,
+                lux_horizontal_quelle=self._quelle(lux_h_ref) if lux_h_ref else None,
+                nachweis_offen=offen,
+                nachweis_offen_grund=grund,
+            ))
+        return raus
+
+    def _nachweis_status(
+        self, ausloeser: str, ist_attribut: bool, lux_v: float | None, block: dict
+    ) -> tuple[bool, str]:
+        """Ist die lichttechnische Anforderung heute nachweisbar — und wenn nicht, warum?
+
+        Ehrlichkeits-Regel: eine gelieferte Quelle ersetzt keinen Nachweis. Wer
+        die Anforderung konsumiert, muss ein offenes `nachweis_offen` sichtbar
+        machen (Prüfbericht), sonst sieht ein unvollständiger Plan „ok" aus.
+        """
+        if ist_attribut:
+            grund = block.get("nachweis_offen_grund") or ""
+            return bool(grund), grund.strip()
+        if lux_v is not None:
+            return True, (
+                f"§4.1.2 fordert {lux_v:g} lx VERTIKAL am Gerät; der Lux-Nachweis "
+                "der Engine rechnet horizontal am Boden — der vertikale Nachweis "
+                "wird heute nicht erbracht."
+            )
+        if self._sonderstellen.lux_ist_ungeklaert(ausloeser):
+            return True, (
+                "§4.1.2 c) nennt für diese Stelle kein Beleuchtungsniveau — die "
+                "Hervorhebungspflicht gilt, das Niveau bleibt zu prüfen."
+            )
+        return False, ""
+
     # ── NormProvider-Protocol ───────────────────────────────────────────────
     def fuer_raum(self, raum_typ: str, ist_fluchtweg: bool) -> NormAnforderung:
         regel = self._index.get((raum_typ, bool(ist_fluchtweg)))
@@ -137,7 +221,13 @@ class En1838NormProvider:
             )
             for r in self._regeln_doc["regeln"]
         ]
-        quellen = sorted({r.anforderung.quelle for r in regeln})
+        # Die §4.1.2-/§4.3.8-/§4.4.1-Fundstellen kommen dazu, sobald der Provider
+        # sie vergeben kann — sonst bricht die Naht-Invariante
+        # `Platzierung.norm_quelle ∈ quellen` an der ersten Sonderstelle. Rein
+        # additiv: die Menge wird groesser, kein bestehender String faellt weg.
+        quellen = sorted(
+            {r.anforderung.quelle for r in regeln} | set(self._sonderstellen.quellen())
+        )
         return NormRegelwerk(
             norm=self._grund["norm"],
             erkennungsweite=ErkennungsweiteParameter(

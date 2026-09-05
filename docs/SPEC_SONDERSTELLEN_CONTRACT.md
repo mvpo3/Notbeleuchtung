@@ -227,11 +227,110 @@ funktioniert mit manueller Eingabe. Später relevant:
 
 ### Bleibt `MANUELL_PRUEFEN`
 
-1. **Lux-Niveau an Betonungsstellen** — §4.1.2 nennt keines; die 5 lx sind LB.
-2. **Niveauänderung normativ** — steht in der LB, nicht in der §4.1.2-Extraktion.
+1. ~~**Lux-Niveau an Betonungsstellen** — §4.1.2 nennt keines; die 5 lx sind LB.~~
+   **Am 01.09. widerlegt, am 05.09. am Original-PDF bestätigt:** §4.1.2 **h)**
+   (Erste-Hilfe-Stelle) und **i)** (Brandbekämpfungs- und Meldeeinrichtungen)
+   nennen 5 lx — **vertikal am Gerät**. Was offen bleibt, ist nicht der *Wert*,
+   sondern der *Nachweis*: `lux_raster` rechnet horizontal am Boden.
+2. ~~**Niveauänderung normativ** — steht in der LB, nicht in der §4.1.2-Extraktion.~~
+   **Widerlegt:** §4.1.2 **c)** „nahe jeder anderen Niveauänderung" ist ein
+   eigener Punkt neben b) Treppen (Norm-S. 8). Ohne Beleuchtungsniveau — c)
+   nennt keines.
 3. **Teilflächen-Gefährdung** — ein Raum-Flag kann eine gefährdete *Teilfläche*
    nicht abbilden.
 4. **`brandmelder` ohne CAD-Beleg** — im Repo liegt kein Symbol dafür.
 5. **Notrufsprechstelle** (`din_Notrufstelle_E004`) — im Profi-Plan vorhanden,
    plausibel eine „Meldeeinrichtung", aber **keine Regel braucht sie**. Bewusst
    nicht aufgenommen; Aufnahme erst, wenn eine Regel sie fordert.
+
+
+---
+
+## 8. Nachtrag 2026-09-05 — Anforderungs-Quelle je Typ (Befund an PR #95)
+
+### Das Problem
+
+Die Konsumption in PR #95 nimmt für eine Sonderstelle die **erste Regel der
+passenden Leuchtenart** aus dem Regelwerk-Snapshot und schreibt deren `quelle` in
+die Platzierung. Am laufenden Beispiel:
+
+| Auslöser | richtige Fundstelle | in der Platzierung ausgewiesen |
+|---|---|---|
+| Feuerlöscher | §4.1.2 **i)** | §4.1 (STIEGENHAUS-Regel) |
+| Niveauänderung | §4.1.2 **c)** | §4.2.1 (GANG-Regel) |
+| barrierefreier Raum | §4.3.8 | §4.3.1 (SAAL-Regel) |
+
+Der Audit-Trail benennt damit einen Normsatz, der die Platzierung nicht begründet.
+Die Ursache lag im Normwissen: `NormRegelwerk.quellen` führte nur die drei
+Raumregel-Strings, und die Naht-Invariante `norm_quelle ∈ quellen` ließ nichts
+anderes zu.
+
+### Was in Enis' Lane erledigt ist (kein Contract berührt)
+
+- `data/sonderstellen.yaml` — neuer Abschnitt `norm_anforderung`: je Typ und je
+  Raum-Attribut die Klassifikation, die **echte** Fundstelle und ein `symbol_wie`,
+  das Katalog-Keys und Montagehöhe aus einer bestehenden Raumregel **leiht**
+  (EN 1838 schreibt für eine hervorzuhebende Stelle weder Symbol noch Höhe vor —
+  es gilt der Floor §4.1.1). Vier Seitenangaben am Original korrigiert.
+- `SonderstellenAnforderung` (normwissen-eigener Typ) + `SonderstellenKatalog`
+  liefert die Roh-Fakten, `En1838NormProvider.fuer_sonderstelle(typ)` und
+  `.fuer_raum_attribut(attribut)` setzen sie zusammen. Rückgabe ist eine **Liste**,
+  weil `niveauaenderung` nach c) zwei Leuchten auslöst (SL-04 + RZ-06).
+- `NormRegelwerk.quellen` enthält jetzt zusätzlich §4.1.2 c)/h)/i), §4.3.8 und
+  §4.4.1. **Rein additiv** — die Menge wird größer, kein bestehender String fällt
+  weg, keine bestehende Platzierung wird ungültig. Kein Schema, kein
+  `contract_version`-Bump, kein Drift.
+
+**Warum kein `NormAnforderung`:** dessen `min_lux` ist ein horizontaler Bodenwert
+und Pflichtfeld. §4.1.2 nennt an diesen Stellen entweder einen **vertikalen** Wert
+(h/i: 5 lx am Gerät) oder gar keinen (c). Das Feld wäre nur zu füllen, indem man
+eine Zahl erfindet oder wieder eine fremde Raumregel ausleiht — also genau der
+Fehler, der hier abgestellt wird. `SonderstellenAnforderung` trennt deshalb
+`lux_vertikal` von `lux_horizontal` und führt `lux_horizontal` für §4.1.2
+grundsätzlich als `None`.
+
+### Vorschlag an die 3 Owner (nicht umgesetzt)
+
+**A — Ports-Erweiterung** (`hauptengine/contracts/ports.py`, kein Pydantic → kein
+Schema, kein Drift-Gate, aber CODEOWNERS = alle drei):
+
+```python
+class NormProvider(Protocol):
+    ...
+    def fuer_sonderstelle(self, typ: str) -> list[SonderstellenAnforderung]: ...
+    def fuer_raum_attribut(self, attribut: str) -> list[SonderstellenAnforderung]: ...
+```
+
+Dazu müsste `SonderstellenAnforderung` als Contract-Typ nach
+`hauptengine/contracts/` umziehen (analog `NormAnforderung`), damit `platzierung`
+ihn benutzen darf, ohne `normwissen` zu importieren.
+
+**Auswirkungen:** `contract_version` von `norm_regelwerk` bumpen (neuer Typ im
+selben Modul), Schema regenerieren, `tests/fakes.py::FakeNormProvider` um die zwei
+Methoden ergänzen (sonst erfüllt der Fake das Protocol nicht mehr —
+`runtime_checkable`). Keine bestehende Signatur ändert sich, keine Fixture wird
+ungültig.
+
+**B — Zwischenlösung ohne Contract-Änderung:** `platzierung` fragt duck-typed
+(`getattr(norm, "fuer_sonderstelle", None)`) und fällt ohne die Methode auf das
+heutige Verhalten zurück. Präzedenzfall ist `PlatzierungsRegelwerk`, das ebenfalls
+noch nicht im Ports-Protocol steht. Damit ist der Befund sofort behebbar, die
+saubere Naht kommt mit A nach.
+
+### Offen und ausdrücklich NICHT miterledigt
+
+- **`tests/fixtures/norm_regelwerk_snapshot.json`** (CODEOWNERS: alle drei) führt
+  weiter die drei alten Strings. Solange dort nichts nachgezogen ist, schlägt
+  `tests/platzierung/test_platzierer.py` fehl, sobald eine reale Platzierung eine
+  §4.1.2-Quelle trägt — der Test prüft gegen die **Fixture**, nicht gegen den
+  Provider. Das Nachziehen gehört in denselben 3-Owner-PR wie A.
+- **Der lichttechnische Nachweis.** Eine gelieferte Quelle ist kein Nachweis.
+  `SonderstellenAnforderung.nachweis_offen` ist für alle vier §4.1.2-h/i-Typen
+  `True` (5 lx vertikal, von der Engine nicht gerechnet) und für
+  `besondere_gefaehrdung` (§4.4.1: 10 % der Nennbeleuchtungsstärke, mind. 15 lx —
+  Bezugsgröße fehlt im RaumModell). Wer die Anforderung konsumiert, muss das
+  sichtbar machen, sonst meldet ein unvollständiger Plan weiterhin `ok`.
+- **`engine_status` der 8 Regeln** bleibt `input_fehlt` — er wird erst je Regel
+  einzeln gezogen, wenn #93 **und** #95 auf `main` sind und der Nachweis je Regel
+  vorliegt (Platzierung und Lichttechnik getrennt bewertet).
+- **`flaechen_schwellen`** unverändert leer (eigener Strang, siehe #87).
