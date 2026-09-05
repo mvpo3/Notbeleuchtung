@@ -21,6 +21,13 @@ _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 # Sonderstellen-Typen mit eigenem Beleuchtungsniveau: §4.1.2 h) Erste-Hilfe-Stelle,
 # §4.1.2 i) Brandbekämpfungs-/Meldeeinrichtungen — je 5 lx VERTIKAL (Enis-Review #95).
 _SONDERSTELLEN_MIT_LUX = {"erste_hilfe", "feuerloescher", "hydrant", "brandmelder"}
+
+# §4.3.8 nennt „Toiletten für Menschen mit Behinderung". Eindeutig sind WC und
+# TOILETTE; die übrigen Sanitär-Raumtypen belegen eine Toilettennutzung NICHT —
+# ein barrierefreies Bad ist keine barrierefreie Toilette. Für sie wird die
+# Norm-Pflicht weder behauptet noch verneint (Regel 12c).
+_TOILETTE_EINDEUTIG = {"WC", "TOILETTE"}
+_TOILETTE_MEHRDEUTIG = {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
@@ -335,6 +342,30 @@ def pruefe(
             "15 lx) nicht geführt — arbeitsplatz_lux im Regelwerk ungefüllt, "
             "Aufgabenbeleuchtung und Arbeitsfläche sind keine Engine-Eingänge; der "
             "Bodenwert aus lux_raster ersetzt ihn nicht",
+        ))
+
+    # 12c. Barrierefreier Sanitärraum ohne belegte Toilettennutzung (§4.3.8): die
+    #      Norm nennt „Toiletten für Menschen mit Behinderung". WC/TOILETTE sind
+    #      eindeutig; BAD, DUSCHE, NASSRAUM und SANITÄR sind es nicht — dort wird
+    #      die Pflicht bewusst NICHT automatisch angewendet („nichts behaupten, was
+    #      die Quelle nicht hergibt"). Der Fall darf aber auch nicht verschwinden:
+    #      enthält der Raum eine barrierefreie Toilette, fehlt sonst eine
+    #      Pflicht-Leuchte, ohne dass man es dem Plan ansieht.
+    unklar = [
+        r for r in raum.raeume
+        if r.ist_barrierefrei and r.raum_typ.upper() in _TOILETTE_MEHRDEUTIG
+    ]
+    if unklar:
+        typen = sorted({r.raum_typ for r in unklar})
+        befunde.append(Befund(
+            "Barrierefreier Sanitärraum — Toilettennutzung nicht bestimmbar "
+            "(EN 1838 §4.3.8) — manuell prüfen",
+            "warnung",
+            f"{len(unklar)} Raum/Räume ({', '.join(typen)}) mit ist_barrierefrei: "
+            "§4.3.8 gilt für Toiletten; der Raumtyp belegt keine Toilettennutzung → "
+            "Antipanik-Pflicht NICHT automatisch angewendet. Enthält der Raum eine "
+            "barrierefreie Toilette, ist sie nachzutragen. Andere Anforderungen an "
+            "den Raum bleiben davon unberührt",
         ))
 
     return befunde
