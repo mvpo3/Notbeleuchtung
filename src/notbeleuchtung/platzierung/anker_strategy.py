@@ -111,8 +111,14 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         # immer das „Pfeil nach unten"-Zeichen, aber ROTIERT, sodass der Pfeil physisch
         # ZUR TÜR zeigt (Referenz: SH-Tür oben → Block 180° gedreht = Pfeil nach oben).
         # Unrotiert zeigt der unten-Block auf −y → rotation = Winkel(RZ→Tür) + 90°.
-        if nid in exits and richtung == "unten" and raum.tueren:
-            tuer = min(raum.tueren,
+        typen = {r.id: (r.raum_typ or "").upper() for r in raum.raeume}
+        ausgangs_tueren = [
+            t for t in raum.tueren
+            if t.ist_notausgang
+            or "STIEGENHAUS" in (typen.get(t.von_raum or "", ""), typen.get(t.nach_raum or "", ""))
+        ]
+        if nid in exits and richtung == "unten" and ausgangs_tueren:
+            tuer = min(ausgangs_tueren,
                        key=lambda t: math.hypot(t.xy_mm[0] - nx_, t.xy_mm[1] - ny))
             d_tuer = math.hypot(tuer.xy_mm[0] - nx_, tuer.xy_mm[1] - ny)
             if d_tuer <= 2000.0:
@@ -127,7 +133,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                     dx, dy = ((nx_ - pos[nb][0], ny - pos[nb][1]) if nb else (0.0, -1.0))
                 else:
                     dx, dy = 0.0, -1.0
-                rotation = (math.degrees(math.atan2(dy, dx)) + 90.0) % 360.0
+                rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
