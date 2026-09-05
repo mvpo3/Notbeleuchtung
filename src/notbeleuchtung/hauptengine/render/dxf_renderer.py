@@ -625,36 +625,92 @@ def _draw_stromkreis_belegung(msp, raum: RaumModell, platzierung: PlatzierungsEr
 
 
 
-def _draw_vorlage(msp, raum: RaumModell) -> bool:
-    """Owner-Plan-Vorlage (Block `Vorlage_Legende` aus der Symbol-Library):
-    der komplette Legenden-Rahmen (Beleuchtung/Notbeleuchtung/Erdung/Verteiler/
-    BMA/Kommunikation/Abkürzungen) wird JEDEM generierten Plan rechts angefügt
-    (Owner-Vorgabe 2026-09-05). Skaliert auf die Grundriss-Höhe, sitzt rechts
-    neben der Schriftfeld-Leiste."""
+def _draw_vorlage(msp, raum: RaumModell,
+                  platzierung: PlatzierungsErgebnis | None = None) -> tuple[bool, bool]:
+    """Owner-Plan-Vorlage (`Vorlage_Legende`) als DER Legenden-Rahmen des Plans.
+
+    Owner-Korrektur 2026-09-05: die Vorlage wird nicht nur angehängt, sondern
+    BENUTZT — die Engine schreibt die verwendeten Symbole in die Sektion
+    „Legende Notbeleuchtung" (Spalten Symbol | Bezeichnung). Liefert
+    (vorlage_platziert, legende_gefuellt); ist die Legende gefüllt, entfällt
+    die separate Stücklisten-Box."""
     from ezdxf import bbox as _ezbbox
 
     eintrag = library.load_mapping().get("vorlage_legende")
     if eintrag is None:
-        return False
+        return False, False
     try:
         library.import_block(msp.doc, eintrag["block_name"])
     except KeyError:
-        return False
+        return False, False
     blk = msp.doc.blocks[eintrag["block_name"]]
     bb = _ezbbox.extents((e for e in blk if e.dxftype() != "ATTDEF"), fast=True)
     if not bb.has_data or bb.size.y < 1e-6:
-        return False
+        return False, False
     (_min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
     ziel_h = max(max_y - min_y, 10000.0)
-    s = ziel_h / bb.size.y
-    # Block ist re-origin'd (Zentrum = Einfügepunkt) → Zentrum der Zielfläche.
+    sc = ziel_h / bb.size.y
     x0 = max_x + _PANEL_ABSTAND_MM + _PANEL_B_MM + _PANEL_ABSTAND_MM
-    cx = x0 + (bb.size.x * s) / 2.0
+    cx = x0 + (bb.size.x * sc) / 2.0
     cy = min_y + ziel_h / 2.0
     msp.add_blockref(eintrag["block_name"], (cx, cy), dxfattribs={
-        "xscale": s, "yscale": s, "layer": LAYER_LEGENDE,
+        "xscale": sc, "yscale": sc, "layer": LAYER_LEGENDE,
     })
-    return True
+
+    # ── Sektion „Legende Notbeleuchtung" der Vorlage füllen ──
+    if platzierung is None or not platzierung.platzierungen:
+        return True, False
+    texte = [e for e in blk if e.dxftype() == "TEXT"]
+    kopf = next((t for t in texte
+                 if "legende notbeleuchtung" in t.dxf.text.strip().lower()), None)
+    if kopf is None:
+        return True, False
+    kx, ky = kopf.dxf.insert.x, kopf.dxf.insert.y
+    # Sektionsende = nächster „Legende …"-Kopf unterhalb (Block-lokal).
+    untere = [t.dxf.insert.y for t in texte
+              if t.dxf.text.strip().lower().startswith("legende")
+              and t.dxf.insert.y < ky - 1.0]
+    y_ende = max(untere) if untere else ky - 40.0
+    # Spalten aus den Kopfzeilen der Sektion (Symbol/Bezeichnung).
+    sym_x = kx + 4.0
+    bez_x = kx + 29.0
+    band = ky - 7.0 - y_ende - 2.0
+    def welt(px, py):
+        return (cx + px * sc, cy + py * sc)   # Block ist re-origin'd (Zentrum=0)
+
+    gruppen: dict[str, dict] = {}
+    for p in platzierung.platzierungen:
+        key = p.typ_letter or _KIND_CODE.get(p.kind, "?")
+        g = gruppen.setdefault(key, {"kind": p.kind, "produkt": p.typ_name or p.catalog_key,
+                                     "key": p.catalog_key, "n": 0})
+        g["n"] += 1
+    zeilen = sorted(gruppen)
+    rowh = max(min(band / max(len(zeilen), 1), 8.0), 4.5)
+    mapping = library.load_mapping()
+    y_local = ky - 9.0
+    for letter in zeilen:
+        if y_local - rowh < y_ende:
+            wx, wy = welt(sym_x, y_local - rowh / 2.0)
+            t = msp.add_mtext("… weitere siehe Stückliste", dxfattribs={
+                "layer": LAYER_STUECKLISTE, "char_height": 2.2 * sc})
+            t.set_location((wx, wy), attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+            return True, False
+        g = gruppen[letter]
+        e2 = mapping.get(g["key"])
+        if e2 is not None:
+            library.import_block(msp.doc, e2["block_name"])
+            sb = _ezbbox.extents(msp.doc.blocks[e2["block_name"]], fast=True)
+            s_sym = (rowh * 0.62 * sc) / max(sb.size.y, 1e-6)
+            wx, wy = welt(sym_x + 3.0, y_local - rowh / 2.0)
+            msp.add_blockref(e2["block_name"], (wx, wy), dxfattribs={
+                "xscale": s_sym, "yscale": s_sym, "layer": LAYER_NOTBELEUCHTUNG})
+        wx, wy = welt(bez_x, y_local - rowh / 2.0)
+        t = msp.add_mtext(
+            f"{g['n']}x Typ {letter} | {_KIND_LABEL.get(g['kind'], g['kind'])} | {g['produkt']}",
+            dxfattribs={"layer": LAYER_STUECKLISTE, "char_height": 2.0 * sc})
+        t.set_location((wx, wy), attachment_point=MTextEntityAlignment.MIDDLE_LEFT)
+        y_local -= rowh
+    return True, True
 
 
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
@@ -694,12 +750,15 @@ def render_dxf(
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
     lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
-    stueckliste_drawn = _draw_stueckliste(msp, raum, platzierung)
+    vorlage_drawn, vorlage_legende_gefuellt = _draw_vorlage(msp, raum, platzierung)
+    stueckliste_drawn = (
+        False if vorlage_legende_gefuellt
+        else _draw_stueckliste(msp, raum, platzierung)
+    )
     plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
     pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
     belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
-    vorlage_drawn = _draw_vorlage(msp, raum)
 
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
@@ -733,5 +792,6 @@ def render_dxf(
         "stromkreis_belegung_drawn": belegung_drawn,
         "anlage_drawn": anlage_drawn,
         "vorlage_drawn": vorlage_drawn,
+        "vorlage_legende_gefuellt": vorlage_legende_gefuellt,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
