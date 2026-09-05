@@ -889,16 +889,27 @@ def render_dxf(
     blatt_bbox = _baue_blatt_layout(msp, raum, plankopf)
     _panel_x0_override.clear()
     if blatt_bbox is not None:
-        _panel_x0_override.append(blatt_bbox[2] + _PANEL_ABSTAND_MM)
-    lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
-    vorlage_drawn, vorlage_legende_gefuellt = _draw_vorlage(msp, raum, platzierung)
-    stueckliste_drawn = (
-        False if vorlage_legende_gefuellt
-        else _draw_stueckliste(msp, raum, platzierung)
-    )
-    plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
-    pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
-    belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
+        # Owner-Fixierung (wohnbau_v7_dg_verbessert.dxf, 2026-09-05): im Blatt-Modus
+        # trägt das Blatt ALLES — keine Schriftfeld-Leiste, kein Legenden-Anhang,
+        # keine Info-Boxen daneben. Prüfbericht/Belegung bleiben im Summary/API.
+        lb_legende_drawn = False
+        vorlage_drawn, vorlage_legende_gefuellt = True, True
+        stueckliste_drawn = False
+    else:
+        lb_legende_drawn = _draw_lb_legende(msp, raum, lb)
+        vorlage_drawn, vorlage_legende_gefuellt = _draw_vorlage(msp, raum, platzierung)
+        stueckliste_drawn = (
+            False if vorlage_legende_gefuellt
+            else _draw_stueckliste(msp, raum, platzierung)
+        )
+    if blatt_bbox is not None:
+        plankopf_drawn = True          # das Blatt IST der Plankopf (Rivoplan-Vorlage)
+        pruefbericht_drawn = False     # Owner: keine Zusatz-Boxen am Blatt
+        belegung_drawn = False
+    else:
+        plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
+        pruefbericht_drawn = _draw_pruefbericht(msp, raum, pruefung)
+        belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
 
     by_kind: dict[str, int] = {}
