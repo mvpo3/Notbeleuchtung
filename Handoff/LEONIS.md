@@ -4,7 +4,35 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-05, Session-Ende) — #101 + #102 GEMERGT — HIER WEITER
+## STAND (2026-09-05, Nachmittag) — Contract-Merges + Lost-Merge-Rettung — HIER WEITER
+
+**Gemergt heute:** #101 · #102 · #104 (kleiner Aufheller) + durch Enis/Selman die
+drei Contract-PRs **#93/#87/#96** (RaumModell v1.1.0 · NormRegelwerk v1.2.0 ·
+PlatzierungsErgebnis v1.2.0). main `6a22b9a`+, 572 grün.
+
+**⚠️ Lost-Merge-Vorfall:** die vier Konsum-PRs #88/#92/#95/#98 wurden in ihre
+BASIS-Branches gemergt — Code erreichte main nie (COORDINATION-Log). Rettung als
+saubere Neuschnitte, **4 offene PRs, Merge-Reihenfolge #105 → #106 → #107, #108
+unabhängig**:
+- **#105** = #98-Ersatz: Symbol-Datenmodell-Konsum (luminaire_id/schaltungsart/
+  typ_letter + Typ-Letter-Stückliste), 580 grün.
+- **#106** = #95-Ersatz + **Enis' Review komplett eingearbeitet** (Fallback-
+  Kennzeichnung `_referenz` + hinweise; Prüfregeln 12/12b manuell-prüfen für
+  §4.1.2-h/i-Stellen + besondere_gefaehrdung; ≤2-m-Nachpass-Test), 586 grün.
+- **#107** = #88+#92-Ersatz: OIB-Gate (fail-closed + raum-genau) + ProjektKontext
+  über HTTP; enthält #106-Commits (Diff schrumpft nach deren Merge), 613 grün.
+- **#108** = Verdichtungs-Fix (Owner: „zu viele Aufheller"): Nachweis auf
+  Mittellinie §4.2.1 + photometrischer Start-Abstand (`lux_punkte`/
+  `max_leuchtenabstand_mm`) — **Mollgasse 28→18 SL**, alles ok, 572 grün.
+
+**Weitere Kanonisierung heute:** Symbol-Library = `Notbeleuchtungssymbole.dxf`
+(klein-Aufheller 342 mm; Blau-ACI→BYLAYER-Grün) · Produkt-Digest
+`PRODUKTE_SCHRACK_DIN.md` (Schrack 21 Familien + DIN komplett; Cap 20 bestätigt,
+EW 20m = S2-Scheibe, 8h≈halber Lichtstrom) · Muthgasse-Digest (AIA-Layer =
+Crash-Ursache, FLW-L parsebar, Kipp-Anleitung an Selman) · Aushang-Digest mit
+AT-Norm-Vergleich · Architektur-Diagramm `docs/architektur.png/svg` + Skript.
+
+## STAND (2026-09-05, Vormittag) — #101 + #102 GEMERGT
 
 **Beide PRs auf main** (`ee562e6`, **572 grün**, ruff clean, kein Contract):
 - **#101 GEMERGT** (User-GO, DWG-Input via ODA + Muthgasse 5. Familie).
