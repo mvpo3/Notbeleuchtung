@@ -58,14 +58,15 @@ def test_ohne_lb_keine_legende(rendered):
 
 
 def test_stueckliste_zaehlt_symbol_arten(rendered):
+    # Owner-Vorlage aktiv: die Symbol-Legende wird in `Vorlage_Legende` GEFÜLLT
+    # (Sektion „Legende Notbeleuchtung"), die separate Stücklisten-Box entfällt.
     _, summary, doc = rendered
-    assert summary["stueckliste_drawn"] is True
-    sl = doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_green']")
-    assert len(sl) == 1
-    txt = sl[0].text
-    assert "STÜCKLISTE" in txt
-    assert "Rettungszeichen: 5" in txt   # 4OG-Fixture = 5 RZ
-    assert "Summe: 5" in txt
+    assert summary["vorlage_drawn"] is True
+    assert summary["vorlage_legende_gefuellt"] is True
+    assert summary["stueckliste_drawn"] is False
+    texte = " ".join(m.text for m in
+                     doc.modelspace().query("MTEXT[layer=='din_SIBEL_70_legend_green']"))
+    assert "5x Typ RZ" in texte and "Rettungszeichen" in texte
 
 
 def test_stromkreis_belegung_je_kreis(rendered):
@@ -168,12 +169,12 @@ def test_stromkreisnummern_gebaeude_b_ist_anlage_2_und_ohne_hint_leer():
 
 
 def test_info_blocks_sind_gerahmte_boxen(rendered):
-    # Schriftfeld-Leiste: Stückliste ist jetzt eine gerahmte Box (Rahmen + Text auf
-    # demselben Layer), nicht mehr freier Text neben dem Grundriss.
+    # Schriftfeld-Leiste: Belegungs-Box bleibt gerahmt (Rahmen + Text auf demselben
+    # Layer); die Stückliste lebt jetzt in der Owner-Vorlage.
     _, _, doc = rendered
     msp = doc.modelspace()
-    assert msp.query("LWPOLYLINE[layer=='din_SIBEL_70_legend_green']")
-    assert msp.query("MTEXT[layer=='din_SIBEL_70_legend_green']")
+    assert msp.query("LWPOLYLINE[layer=='din_SIBEL_11_system']")
+    assert msp.query("MTEXT[layer=='din_SIBEL_11_system']")
 
 
 def test_plankopf_rahmen_und_felder(rendered):
@@ -248,7 +249,8 @@ def test_lb_legende_traegt_system_spec(contracts, tmp_path):
 def test_fuenf_inserts_auf_sicherheitslayer(rendered):
     platzierung, _, doc = rendered
     inserts = [e for e in doc.modelspace().query("INSERT")
-               if e.dxf.name != "vorlage_legende"]   # Plan-Vorlage zählt nicht als Symbol
+               if e.dxf.name != "vorlage_legende"
+               and e.dxf.insert.x < -30000]   # Plan-Symbole (Fixture-Koordinaten)
     assert len(inserts) == 5
     mapping = library.load_mapping()
     expected_blocks = {mapping[p.catalog_key]["block_name"] for p in platzierung.platzierungen}
@@ -336,11 +338,12 @@ def test_stueckliste_mit_symbol_spalte():
         out = Path(tmp) / "legende.dxf"
         summary = render_dxf(plz, raum, out)
         doc = ezdxf.readfile(str(out))
-    assert summary["stueckliste_drawn"] is True
+    # Symbol-Legende lebt jetzt IN der Owner-Vorlage (Stücklisten-Box entfällt).
+    assert summary["vorlage_legende_gefuellt"] is True
+    assert summary["stueckliste_drawn"] is False
     max_x = raum.bounds_mm.max_xy[0]
-    # Symbol-INSERTs rechts vom Grundriss (in der Schriftfeld-Leiste) = Legenden-Symbole
     legenden_syms = [e for e in doc.modelspace().query("INSERT")
-                     if e.dxf.insert.x > max_x + 1500   # Schriftfeld-Leiste beginnt +2000
+                     if e.dxf.insert.x > max_x + 1500
                      and e.dxf.name != "vorlage_legende"]
     assert len(legenden_syms) == 2
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
