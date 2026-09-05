@@ -121,16 +121,18 @@ def test_60m2_trigger_feuert_nicht_aus_einem_bestaetigten_anderen_teil():
     assert plan_antipanik(raum, fake, oib=_oib(refs=REF_ZUSATZ)) == []
 
 
-def test_8m2_trigger_feuert_nur_im_zugeordneten_raum():
-    """Punkt 1: 12 m² WC ≥ 8 m² — aber nur, wenn ein bestätigender Gebäudeteil
-    genau diesen Raum referenziert."""
+def test_8m2_trigger_feuert_auch_mit_zuordnung_nicht():
+    """Punkt 1 verlangt „erhöhte Anforderungen nach der Art der Nutzung". Eine
+    bestätigte Raumzuordnung belegt nur die Erforderlichkeit nach OIB-RL 2
+    Tabelle 6 — das ist nicht dasselbe (R 12-2 liegt nicht vor). Auch mit einer im
+    TEST gesetzten 8-m²-Schwelle und perfekter Zuordnung entsteht deshalb KEINE
+    OVE-Platzierung; der Fall bleibt ungeklärt und wird berichtet."""
     raum = _raum_mit_zusatzraum("WC", 12.0, WC_POLY)
     fake = _fake_mit_schwelle(wc_min_m2=8.0)
-    getroffen = plan_antipanik(raum, fake, oib=_oib(refs=REF_ZUSATZ))
-    assert getroffen and all(p.kind == "antipanik" for p in getroffen)
-    for p in getroffen:
-        assert p.catalog_key == "antipanik_leuchte"
-        assert p.norm_quelle == "ÖNORM EN 1838:2013 §4.3.1"   # Fallback, quelle=None
+    assert plan_antipanik(raum, fake, oib=_oib(refs=REF_ZUSATZ)) == []
+    # Auch die 60-m²-Schwelle bleibt wirkungslos.
+    assert plan_antipanik(raum, _fake_mit_schwelle(antipanik_min_m2=60.0),
+                          oib=_oib(refs=REF_ZUSATZ)) == []
 
 
 def test_8m2_trigger_bleibt_zu_ohne_oib_und_ohne_schwelle():
@@ -168,11 +170,19 @@ def test_andere_anforderungen_bleiben_unberuehrt():
     assert ohne_oib and all(p.kind == "antipanik" for p in ohne_oib)
     # Mit ungeklärtem Scope unverändert — der Raumtyp trägt die Anforderung.
     assert len(plan_antipanik(raum, FakeNormProvider(), oib=_oib())) == len(ohne_oib)
+    # Auch mit gesetzter Schwelle UND bestätigter Zuordnung: der SAAL bekommt
+    # weiterhin genau seine typ-begründete Antipanik, nichts wird unterdrückt.
+    mit_allem = plan_antipanik(
+        raum, _fake_mit_schwelle(wc_min_m2=8.0, antipanik_min_m2=60.0),
+        oib=_oib(refs=(("4OG", "zusatz_1"),)),
+    )
+    assert len(mit_allem) == len(ohne_oib)
 
 
-def test_flaechen_trigger_traegt_ove_quelle_wenn_geliefert():
-    # Liefert Enis flaechen_schwellen.quelle (+ Eintrag in quellen), trägt die
-    # getriggerte Leuchte die ehrliche OVE-Quelle im Audit-Trail.
+def test_ove_quelle_taucht_nicht_auf_solange_kein_trigger_feuert():
+    """Der `flaechen_schwellen.quelle`-Pfad ist vorbereitet, aber ohne Wirkung:
+    solange kein OVE-Trigger anwendbar ist, trägt keine Leuchte die OVE-Quelle.
+    (Der Audit-Trail behauptet damit nichts, was nicht angewendet wurde.)"""
     raum = _raum_mit_zusatzraum("WC", 12.0, WC_POLY)
     ove = "OVE E 8101:2019 718.560.9.001.AT"
     fake = _fake_mit_schwelle(wc_min_m2=8.0)
@@ -180,10 +190,7 @@ def test_flaechen_trigger_traegt_ove_quelle_wenn_geliefert():
     fake._snapshot.quellen.append(ove)
 
     out = plan_antipanik(raum, fake, oib=_oib(refs=REF_ZUSATZ))
-    getriggert = [p for p in out if p.norm_quelle == ove]
-    assert getriggert
-    for p in getriggert:   # Naht-Invariante: norm_quelle ∈ NormRegelwerk.quellen
-        assert p.norm_quelle in fake.regelwerk_snapshot().quellen
+    assert [p for p in out if p.norm_quelle == ove] == []
 
 
 def test_flaechen_trigger_gate_zu_bei_review_required():

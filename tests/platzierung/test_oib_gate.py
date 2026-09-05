@@ -14,6 +14,7 @@ from notbeleuchtung.hauptengine.contracts import OibBefund, OibErgebnis, RaumRef
 from notbeleuchtung.platzierung.oib_gate import (
     gate_summary,
     raeume_ohne_geklaerten_scope,
+    raum_zuordnung,
     sanitaer_scope,
     unbekannte_raum_referenzen,
     verkehr_scope,
@@ -41,26 +42,40 @@ def test_ohne_oib_pfad_nicht_anwendbar():
 
 
 @pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt"])
-def test_bestaetigter_teil_gibt_seine_raeume_frei(stufe):
+def test_bestaetigter_teil_ordnet_seine_raeume_zu(stufe):
+    """Frage 1 (räumlich) ist damit beantwortet…"""
     b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
-    assert sanitaer_scope(b, "EG", "r1") == "anwendbar"
+    assert raum_zuordnung(b, "EG", "r1") == "bestaetigt"
+
+
+@pytest.mark.parametrize("stufe", ["eingeschraenkt", "uneingeschraenkt"])
+def test_bestaetigte_zuordnung_macht_die_ove_regel_nicht_anwendbar(stufe):
+    """…Frage 2 (fachlich) aber nicht: Tabelle 6 belegt die Erforderlichkeit
+    einer Sicherheitsbeleuchtung, nicht die „erhöhten Anforderungen nach der Art
+    der Nutzung" der OVE-Klausel. R 12-2 liegt nicht vor → ungeklärt, nicht
+    anwendbar."""
+    b = _befund(_erg(stufe, refs=(("EG", "r1"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
 def test_bestaetigter_teil_gibt_fremde_raeume_nicht_frei():
     """Der Kern der Korrektur: ein bestätigter Gebäudeteil öffnet keine Räume,
     die er nicht referenziert."""
     b = _befund(_erg("eingeschraenkt", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r2") == "nicht_bestaetigt"
     assert sanitaer_scope(b, "EG", "r2") == "nicht_anwendbar"
     assert sanitaer_scope(b, "1OG", "r1") == "nicht_anwendbar"
 
 
 def test_review_required_ist_ungeklaert_nicht_nicht_erforderlich():
     b = _befund(_erg("review_required", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "ungeklaert"
     assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
 def test_nicht_erforderlich_ist_nicht_anwendbar():
     b = _befund(_erg("nicht_erforderlich", refs=(("EG", "r1"),)))
+    assert raum_zuordnung(b, "EG", "r1") == "nicht_bestaetigt"
     assert sanitaer_scope(b, "EG", "r1") == "nicht_anwendbar"
 
 
@@ -68,6 +83,7 @@ def test_bestaetigter_teil_ohne_zuordnung_macht_ungeklaert_statt_alles_frei():
     """Früher: Rückfall auf „alle Räume". Jetzt: der Raum ist ungeklärt — weder
     freigegeben noch stillschweigend ausgeschlossen."""
     b = _befund(_erg("eingeschraenkt"))
+    assert raum_zuordnung(b, "EG", "r1") == "ungeklaert"
     assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
 
 
@@ -78,8 +94,11 @@ def test_gemischte_nutzung_trennt_die_teile():
         _erg("eingeschraenkt", 1, refs=(("EG", "wc_verkauf"),)),
         _erg("review_required", 2, refs=(("EG", "wc_wohnen"),)),
     )
-    assert sanitaer_scope(b, "EG", "wc_verkauf") == "anwendbar"
-    assert sanitaer_scope(b, "EG", "wc_wohnen") == "ungeklaert"
+    assert raum_zuordnung(b, "EG", "wc_verkauf") == "bestaetigt"
+    assert raum_zuordnung(b, "EG", "wc_wohnen") == "ungeklaert"
+    assert raum_zuordnung(b, "EG", "halle") == "nicht_bestaetigt"
+    # Fachlich bleibt selbst der zugeordnete Raum ungeklärt (Nutzungs-Scope).
+    assert sanitaer_scope(b, "EG", "wc_verkauf") == "ungeklaert"
     assert sanitaer_scope(b, "EG", "halle") == "nicht_anwendbar"
 
 
@@ -107,7 +126,7 @@ def test_zwei_bestaetigende_teile_sind_kein_widerspruch():
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
         _erg("uneingeschraenkt", 2, refs=(("EG", "r1"),)),
     )
-    assert sanitaer_scope(b, "EG", "r1") == "anwendbar"
+    assert raum_zuordnung(b, "EG", "r1") == "bestaetigt"
 
 
 def test_widerspruch_taucht_als_ungeklaert_im_bericht_auf():
@@ -124,7 +143,7 @@ def test_referenz_auf_unbekannten_raum_gibt_nichts_frei():
     real vorhandene Raum bleibt ohne Zuordnung, also ungeklärt."""
     b = _befund(_erg("eingeschraenkt", refs=(("EG", "gibt_es_nicht"),)))
     assert sanitaer_scope(b, "EG", "r1") == "nicht_anwendbar"
-    assert sanitaer_scope(b, "EG", "gibt_es_nicht") == "anwendbar"   # Raum existiert nicht
+    assert raum_zuordnung(b, "EG", "gibt_es_nicht") == "bestaetigt"  # Raum existiert nicht
     assert unbekannte_raum_referenzen(b, "EG", ["r1"]) == ["gibt_es_nicht"]
     hinweise = " ".join(gate_summary(b, "EG", ["r1"])["hinweise"])
     assert "unbekannte Räume" in hinweise
@@ -134,7 +153,8 @@ def test_unbekannte_referenzen_stehen_im_summary():
     b = _befund(_erg("eingeschraenkt", refs=(("EG", "x1"), ("EG", "r1"))))
     block = gate_summary(b, "EG", ["r1"])
     assert block["unbekannte_raum_referenzen"] == ["x1"]
-    assert block["sanitaer_scope"]["anwendbar"] == 1     # r1 bleibt korrekt frei
+    assert block["raum_zuordnung"]["bestaetigt"] == 1    # r1 bleibt korrekt zugeordnet
+    assert block["sanitaer_scope"]["anwendbar"] == 0     # fachlich trotzdem ungeklärt
 
 
 # ── 60-m²-Trigger (OVE Punkt 3): heute nie anwendbar ────────────────────────
@@ -149,11 +169,13 @@ def test_verkehr_scope_wird_nie_aus_anderen_nutzungen_abgeleitet(stufe):
 
 # ── Sichtbarkeit ────────────────────────────────────────────────────────────
 def test_ungeklaerte_raeume_werden_aufgelistet():
+    """r1 ist räumlich zugeordnet, fachlich aber ebenfalls ungeklärt; r2 ist schon
+    räumlich offen; r3 ist gar nicht erfasst."""
     b = _befund(
         _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
         _erg("review_required", 2, refs=(("EG", "r2"),)),
     )
-    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1", "r2", "r3"]) == ["r2"]
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1", "r2", "r3"]) == ["r1", "r2"]
 
 
 def test_ungeklaert_bleibt_sichtbar_obwohl_ein_anderer_teil_bestaetigt_ist():
@@ -170,9 +192,14 @@ def test_summary_zaehlt_die_scope_zustaende():
         _erg("review_required", 2, refs=(("EG", "r2"),)),
     )
     block = gate_summary(b, "EG", ["r1", "r2", "r3"])
-    assert block["sanitaer_scope"] == {
-        "anwendbar": 1, "nicht_anwendbar": 1, "ungeklaert": 1
+    assert block["raum_zuordnung"] == {
+        "bestaetigt": 1, "nicht_bestaetigt": 1, "ungeklaert": 1
     }
+    # Fachlich: nie „anwendbar", solange der Nutzungs-Scope nicht belegt ist.
+    assert block["sanitaer_scope"] == {
+        "anwendbar": 0, "nicht_anwendbar": 1, "ungeklaert": 2
+    }
+    assert any("Anwendbarkeit" in h for h in block["hinweise"])
     assert block["verkehr_scope"]["anwendbar"] == 0
     assert block["stufen"] == {"teil_1": "eingeschraenkt", "teil_2": "review_required"}
 

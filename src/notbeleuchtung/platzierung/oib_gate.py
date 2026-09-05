@@ -32,17 +32,29 @@ Verkaufsteil öffnet den 60-m²-Trigger nicht.
 Fail closed: nur `anwendbar` platziert. Das frühere Verhalten „ein bestätigender
 Teil öffnet alle Räume aller Geschosse" ist damit weg.
 
-⚠️ **Was das Gate-Signal wirklich belegt.** `OibBefund` beantwortet die Frage
-„ist nach **OIB-RL 2 Tabelle 6** eine Sicherheitsbeleuchtung erforderlich?"
+## Zwei Fragen, die auseinandergehalten werden müssen
+
+**1. Räumliche Zuordnung** (`raum_zuordnung`): Erfasst ein Gebäudeteil mit
+positivem OIB-Befund genau diesen Raum? Das beantwortet der `OibBefund` samt
+`raum_referenzen` — `bestaetigt` / `nicht_bestaetigt` / `ungeklaert`.
+
+**2. Fachliche Anwendbarkeit der OVE-Regel** (`sanitaer_scope`): Gehört der Raum
+zu „Räumen, Anlagen oder Gebäuden, an die **erhöhte Anforderungen nach der Art
+der Nutzung** (siehe OVE-Richtlinie **R 12-2** bzw. OIB-Richtlinie 2) gestellt
+werden"? **Das beantwortet der OibBefund nicht.** Er sagt nur, ob nach
+**OIB-RL 2 Tabelle 6** eine Sicherheitsbeleuchtung erforderlich ist
 (`eingeschraenkt` = auf Fluchtwege beschränkt, `uneingeschraenkt` = darüber
-hinaus). Die OVE-Klausel fragt nach etwas anderem: nach **„erhöhten Anforderungen
-nach der Art der Nutzung (siehe OVE-Richtlinie R 12-2 **bzw.** OIB-Richtlinie
-2)"**. Dass beides dasselbe meint, ist eine **Auslegung** — sie ist nicht belegt:
-R 12-2 liegt nicht im Repo, und die OIB-Erläuterungen verweisen auf R 12-2 nur
-„je nach Zutreffen". `anwendbar` heißt hier deshalb genau: *ein Gebäudeteil, für
-den Tabelle 6 eine Sicherheitsbeleuchtung verlangt, erfasst diesen Raum* — nicht
-mehr. Der Nutzungs-Scope der OVE-Regel ist damit **angenähert, nicht
-nachgewiesen**; das ist einer der Gründe, warum beide Schwellen leer bleiben.
+hinaus). Dass „Tabelle-6-Erforderlichkeit" dasselbe meint wie „erhöhte
+Anforderungen nach der Art der Nutzung", ist eine **Auslegung ohne Beleg**:
+R 12-2 liegt nicht im Repo, und die OIB-Erläuterungen verweisen darauf nur
+„je nach Zutreffen".
+
+⚠️ **Folge:** eine bestätigte Raumzuordnung allein macht die OVE-Regel **nicht**
+anwendbar. `sanitaer_scope` liefert deshalb **heute nie** `anwendbar` — auch
+nicht bei perfekter Zuordnung. Die Fälle sind nicht verloren: sie stehen als
+`ungeklaert` im Prüfbericht und im Audit-Block, mit dem Grund. Erst wenn R 12-2
+vorliegt oder die drei Owner die Gleichsetzung ausdrücklich als Auslegung
+beschließen, kann daraus `anwendbar` werden.
 
 Korrektur-Slice Enis, 2026-09-05 — **Änderung in Leonis' Lane, bitte @mvpo3
 reviewen.** Analyse: `docs/proposals/BLOCKER2_FLAECHEN_SCOPE.md`.
@@ -53,8 +65,11 @@ from typing import Literal
 
 from notbeleuchtung.hauptengine.contracts import OibBefund
 
-#: Auswertung je Raum und je Trigger.
+#: Fachliche Anwendbarkeit eines Triggers auf einen Raum.
 Scope = Literal["anwendbar", "nicht_anwendbar", "ungeklaert"]
+
+#: Räumliche Zuordnung eines Raums zu einem Gebäudeteil mit OIB-Befund.
+Zuordnung = Literal["bestaetigt", "nicht_bestaetigt", "ungeklaert"]
 
 # Stufen, die die „erhöhten Anforderungen" des OVE-Scopes bestätigen.
 _OFFEN = {"eingeschraenkt", "uneingeschraenkt"}
@@ -84,57 +99,77 @@ def _ungeklaerte(oib: OibBefund):
     return [e for e in oib.ergebnisse if e.stufe == _UNGEKLAERT_STUFE]
 
 
-def _aussage(stufe: str) -> Scope:
-    """Stufe → Aussage-Richtung für den OVE-Scope (nicht die Stufe selbst)."""
+def _aussage(stufe: str) -> Zuordnung:
+    """Stufe → Aussage-Richtung der räumlichen Zuordnung (nicht die Stufe selbst)."""
     if stufe in _OFFEN:
-        return "anwendbar"
+        return "bestaetigt"
     if stufe == _UNGEKLAERT_STUFE:
         return "ungeklaert"
-    return "nicht_anwendbar"
+    return "nicht_bestaetigt"
 
 
 def _referenziert(eintrag, floor: str, raum_id: str) -> bool:
     return any(r.floor == floor and r.raum_id == raum_id for r in eintrag.raum_referenzen)
 
 
-def sanitaer_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
-    """Geltungsbereich des **8-m²-Triggers** (OVE Punkt 1) für genau diesen Raum.
+def raum_zuordnung(oib: OibBefund | None, floor: str, raum_id: str) -> Zuordnung:
+    """**Frage 1 — räumlich:** Erfasst ein Gebäudeteil mit positivem OIB-Befund
+    genau diesen Raum?
 
-    Reihenfolge der Prüfung — die erste zutreffende Aussage gewinnt:
+    Reihenfolge — die erste zutreffende Aussage gewinnt:
 
-    1. kein OIB-Pfad → `nicht_anwendbar` (die Zusatz-Trigger stehen nicht in Frage);
+    1. kein OIB-Pfad → `nicht_bestaetigt`;
     2. der Raum ist referenziert und die referenzierenden Teile sind sich
        **uneinig** → `ungeklaert` (ein bestätigender Teil überstimmt einen
        ungeklärten oder gegenteiligen **nicht**);
-    3. alle referenzierenden Teile bestätigen → `anwendbar`;
+    3. alle referenzierenden Teile bestätigen → `bestaetigt`;
     4. alle referenzierenden Teile sind `review_required` → `ungeklaert`;
-    5. alle referenzierenden Teile verneinen → `nicht_anwendbar`;
+    5. alle referenzierenden Teile verneinen → `nicht_bestaetigt`;
     6. der Raum ist nirgends referenziert, aber ein bestätigender oder
        ungeklärter Teil trägt **keine** Zuordnung → `ungeklaert`;
-    7. sonst → `nicht_anwendbar`.
+    7. sonst → `nicht_bestaetigt`.
 
-    Schritt 5 ersetzt den früheren Rückfall auf „alle Räume": ein Befund ohne
+    Schritt 6 ersetzt den früheren Rückfall auf „alle Räume": ein Befund ohne
     Raumzuordnung sagt nichts über diesen Raum — er darf ihn weder freigeben noch
     stillschweigend ausschließen.
     """
     if oib is None:
-        return "nicht_anwendbar"
+        return "nicht_bestaetigt"
     treffer = [e for e in oib.ergebnisse if _referenziert(e, floor, raum_id)]
     if treffer:
         # Nach Aussage-Richtung gruppieren, nicht nach Stufe: `eingeschraenkt` und
         # `uneingeschraenkt` sagen beide „erforderlich" und widersprechen einander
         # nicht.
         aussagen = {_aussage(e.stufe) for e in treffer}
-        # Widerspruch: derselbe Raum haengt an Gebaeudeteilen mit
-        # gegenlaeufigen Aussagen. Ein bestaetigender Teil darf einen ungeklaerten
-        # oder verneinenden nicht still ueberstimmen — der Fall ist zu klaeren.
         if len(aussagen) > 1:
             return "ungeklaert"
         return aussagen.pop()
     ohne_zuordnung = [
         e for e in (*_bestaetigende(oib), *_ungeklaerte(oib)) if not e.raum_referenzen
     ]
-    return "ungeklaert" if ohne_zuordnung else "nicht_anwendbar"
+    return "ungeklaert" if ohne_zuordnung else "nicht_bestaetigt"
+
+
+def sanitaer_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
+    """**Frage 2 — fachlich:** Ist der 8-m²-Trigger (OVE Punkt 1) hier anwendbar?
+
+    Setzt auf `raum_zuordnung` auf, ist aber **nicht dasselbe**: eine bestätigte
+    Zuordnung belegt nur, dass Tabelle 6 für diesen Gebäudeteil eine
+    Sicherheitsbeleuchtung verlangt. Die OVE-Klausel verlangt „erhöhte
+    Anforderungen **nach der Art der Nutzung**" — dafür fehlt der Beleg
+    (R 12-2 liegt nicht vor). Deshalb:
+
+    * `bestaetigt` → **`ungeklaert`** (räumlich geklärt, fachlich nicht);
+    * `ungeklaert` → `ungeklaert`;
+    * `nicht_bestaetigt` → `nicht_anwendbar`.
+
+    `anwendbar` kommt heute **nicht** vor. Das ist kein Versehen, sondern der
+    ehrliche Zustand: sonst würde eine ungeprüfte Gleichsetzung Leuchten setzen.
+    """
+    zuordnung = raum_zuordnung(oib, floor, raum_id)
+    if zuordnung == "nicht_bestaetigt":
+        return "nicht_anwendbar"
+    return "ungeklaert"
 
 
 def verkehr_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
@@ -155,7 +190,7 @@ def verkehr_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
     bleibt der Fall `ungeklaert` (sichtbar im Prüfbericht), sonst
     `nicht_anwendbar`.
     """
-    if oib is None:
+    if raum_zuordnung(oib, floor, raum_id) == "nicht_bestaetigt":
         return "nicht_anwendbar"
     return "ungeklaert"
 
@@ -231,11 +266,25 @@ def gate_summary(oib: OibBefund, floor: str = "", raum_ids: list[str] | None = N
                 f"({', '.join(unbekannt[:5])}) — sie geben nichts frei; der gemeinte "
                 "Raum steht damit ohne Zuordnung da."
             )
+        zuordnungen = [raum_zuordnung(oib, floor, r) for r in raum_ids]
+        block["raum_zuordnung"] = {
+            z: zuordnungen.count(z)
+            for z in ("bestaetigt", "nicht_bestaetigt", "ungeklaert")
+        }
         zustaende = [sanitaer_scope(oib, floor, r) for r in raum_ids]
         block["sanitaer_scope"] = {
             z: zustaende.count(z)
             for z in ("anwendbar", "nicht_anwendbar", "ungeklaert")
         }
+        if zuordnungen.count("bestaetigt"):
+            hinweise.append(
+                f"{zuordnungen.count('bestaetigt')} Raum/Räume sind einem "
+                "Gebäudeteil mit positivem OIB-Befund zugeordnet — die fachliche "
+                "Anwendbarkeit der OVE-Regel bleibt trotzdem UNGEKLÄRT: Tabelle 6 "
+                "belegt die Erforderlichkeit einer Sicherheitsbeleuchtung, nicht "
+                "die erhoehten Anforderungen nach der Art der Nutzung (R 12-2 "
+                "liegt nicht vor)."
+            )
         block["verkehr_scope"] = {"anwendbar": 0, "ungeklaert": len(raum_ids)}
         block["unbekannte_raum_referenzen"] = unbekannt
     return block
