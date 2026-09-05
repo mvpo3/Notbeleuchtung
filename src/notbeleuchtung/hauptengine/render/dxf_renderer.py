@@ -373,6 +373,15 @@ def _draw_segmente(msp, raum: RaumModell) -> int:
     return drawn
 
 
+def _text_mitte(tx: float, ty: float, attach, text_len: float) -> tuple[float, float]:
+    """Ungefährer Mittelpunkt der Textbox je Attachment (Text wächst vom Ankerpunkt)."""
+    if attach == MTextEntityAlignment.MIDDLE_LEFT:
+        return tx + text_len / 2, ty
+    if attach == MTextEntityAlignment.MIDDLE_RIGHT:
+        return tx - text_len / 2, ty
+    return tx, ty
+
+
 def _draw_circuit_label(
     msp,
     x: float,
@@ -380,33 +389,71 @@ def _draw_circuit_label(
     circuit_hint: str,
     rotation_deg: float,
     placed: list[tuple[float, float]],
+    symbole: list[tuple[float, float, str]] | None = None,
 ) -> bool:
-    """Stromkreis-Label als MTEXT entlang der Symbol-Normale, anti-kollidierend."""
+    """Stromkreis-Label als MTEXT, anti-kollidierend gegen Labels UND Symbole.
+
+    Owner-Referenz („richtig/falsch-beschriftung-platziert.png", 2026-09-05): das
+    Label lief entlang der Normale horizontal DURCH das Nachbar-Symbol (Aufheller)
+    und war nur teilweise lesbar. Kandidaten-Reihenfolge jetzt: Normale →
+    Gegen-Normale → UNTER dem Symbol gestapelt (Owner-Korrektur) → darüber; ein
+    Kandidat ist nur gültig, wenn die Textbox in keine Symbol-Sperrzone ragt."""
     text = (circuit_hint or "").strip()
     if not text:
         return False
     angle = math.radians(rotation_deg or 0.0)
     nx = -math.sin(angle)
     ny = math.cos(angle)
-    tx = x + nx * CIRCUIT_LABEL_OFFSET_NORMAL_MM
-    ty = y + ny * CIRCUIT_LABEL_OFFSET_NORMAL_MM
-    guard = 0
-    while guard < CIRCUIT_LABEL_MAX_NUDGE and any(
-        abs(tx - px) < CIRCUIT_LABEL_BAND_X_MM
-        and abs(ty - py) < CIRCUIT_LABEL_MIN_GAP_MM
-        for (px, py) in placed
-    ):
-        tx += nx * CIRCUIT_LABEL_MIN_GAP_MM
-        ty += ny * CIRCUIT_LABEL_MIN_GAP_MM
-        guard += 1
+    text_len = len(text) * CIRCUIT_LABEL_HEIGHT_MM * 0.72
+
+    def attach_fuer(dx: float, dy: float):
+        if abs(dx) >= abs(dy):
+            return (MTextEntityAlignment.MIDDLE_LEFT if dx > 0
+                    else MTextEntityAlignment.MIDDLE_RIGHT)
+        return (MTextEntityAlignment.BOTTOM_CENTER if dy > 0
+                else MTextEntityAlignment.TOP_CENTER)
+
+    def symbol_frei(tx: float, ty: float, attach) -> bool:
+        if not symbole:
+            return True
+        mx, my = _text_mitte(tx, ty, attach, text_len)
+        for sx, sy, kind in symbole:
+            if abs(sx - x) < 1.0 and abs(sy - y) < 1.0:
+                continue                      # eigenes Symbol
+            sperr = _NODEID_HALBBREITE_MM.get(kind, 435.0) + text_len / 2
+            if math.hypot(sx - mx, sy - my) < sperr:
+                return False
+        return True
+
+    kandidaten = [
+        (nx * CIRCUIT_LABEL_OFFSET_NORMAL_MM, ny * CIRCUIT_LABEL_OFFSET_NORMAL_MM),
+        (-nx * CIRCUIT_LABEL_OFFSET_NORMAL_MM, -ny * CIRCUIT_LABEL_OFFSET_NORMAL_MM),
+        (0.0, -700.0),   # unter dem Symbol gestapelt (Owner-Korrektur)
+        (0.0, 700.0),    # darüber
+    ]
+    tx = ty = None
+    attach = attach_fuer(nx, ny)
+    for dx, dy in kandidaten:
+        kx, ky = x + dx, y + dy
+        k_attach = attach_fuer(dx, dy)
+        if not symbol_frei(kx, ky, k_attach):
+            continue
+        guard = 0
+        while guard < CIRCUIT_LABEL_MAX_NUDGE and any(
+            abs(kx - px) < CIRCUIT_LABEL_BAND_X_MM
+            and abs(ky - py) < CIRCUIT_LABEL_MIN_GAP_MM
+            for (px, py) in placed
+        ):
+            kx += (dx and dx / abs(dx) or 0.0) * CIRCUIT_LABEL_MIN_GAP_MM
+            ky += (dy and dy / abs(dy) or 0.0) * CIRCUIT_LABEL_MIN_GAP_MM
+            guard += 1
+        tx, ty, attach = kx, ky, k_attach
+        break
+    if tx is None:                            # alle Kandidaten belegt → Original-Pfad
+        tx = x + nx * CIRCUIT_LABEL_OFFSET_NORMAL_MM
+        ty = y + ny * CIRCUIT_LABEL_OFFSET_NORMAL_MM
+        attach = attach_fuer(nx, ny)
     placed.append((tx, ty))
-    # Attachment so, dass der Text vom Symbol WEG wächst.
-    if abs(nx) >= abs(ny):
-        attach = (MTextEntityAlignment.MIDDLE_LEFT if nx > 0
-                  else MTextEntityAlignment.MIDDLE_RIGHT)
-    else:
-        attach = (MTextEntityAlignment.BOTTOM_CENTER if ny > 0
-                  else MTextEntityAlignment.TOP_CENTER)
     mt = msp.add_mtext(text, dxfattribs={
         "layer": LAYER_STROMKREIS,
         "char_height": CIRCUIT_LABEL_HEIGHT_MM,
@@ -597,12 +644,14 @@ def render_dxf(
 
     by_kind: dict[str, int] = {}
     placed_labels: list[tuple[float, float]] = []
+    symbole = [(p.xy_mm[0], p.xy_mm[1], p.kind) for p in platzierung.platzierungen]
     circuit_labels = 0
     for p in platzierung.platzierungen:
         inserter.insert_platzierung(doc, p)
         by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
         if _draw_circuit_label(
-            msp, p.xy_mm[0], p.xy_mm[1], p.circuit_hint, p.rotation_deg, placed_labels
+            msp, p.xy_mm[0], p.xy_mm[1], p.circuit_hint, p.rotation_deg,
+            placed_labels, symbole,
         ):
             circuit_labels += 1
 
