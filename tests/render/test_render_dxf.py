@@ -322,7 +322,7 @@ def test_xdata_stromkreis_am_insert(rendered):
 def test_tueren_werden_gezeichnet(rendered):
     # Gap-Audit H-Gebäude: raum.tueren wurde vom Render ignoriert — Türen (Schwelle +
     # Blatt + Schwenkbogen) müssen auf ARCH_Tuer erscheinen; Notausgänge doppelt.
-    contracts_pl, summary, doc = rendered
+    _, summary, doc = rendered
     n_tueren = summary["tueren_drawn"]
     assert n_tueren >= 1
     linien = doc.modelspace().query("LINE[layer=='ARCH_Tuer']")
