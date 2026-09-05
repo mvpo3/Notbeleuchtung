@@ -1,4 +1,4 @@
-"""library.py — Loader für CAD_Symbole/E-Symbole.dxf (Port aus elektro-planer).
+"""library.py — Loader für CAD_Symbole/Notbeleuchtungssymbole.dxf (Port aus elektro-planer).
 
 Portiert aus elektro-planer backend/symbols/schrack_library.py (siehe
 docs/PORT_LOG.md). Liest die Schrack-Symbol-Library einmal und cacht sie;
@@ -8,7 +8,7 @@ gecacht — nur die geladene Library und das validierte Mapping.
 
 Divergenz zum Original: Pfad-Resolution ohne elektro-planer config.py —
 explizites Argument → env `NOTBELEUCHTUNG_SYMBOL_LIB` → Aufwärts-Suche nach
-`CAD_Symbole/E-Symbole.dxf` ab dieser Datei (src-Layout: Repo-Root).
+`CAD_Symbole/Notbeleuchtungssymbole.dxf` ab dieser Datei (src-Layout: Repo-Root).
 """
 from __future__ import annotations
 
@@ -46,7 +46,10 @@ _BLAUE_ACI = {5} | set(range(130, 176))
 _BYLAYER = 256
 
 _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
-_LIB_RELPATH = Path("CAD_Symbole") / "E-Symbole.dxf"
+# Kanonische Library (Owner-Entscheidung 2026-09-05): der kuratierte Notbeleuchtungs-
+# Extrakt — NUR diese Symbole werden verwendet. E-Symbole.dxf (Voll-Katalog) ist
+# abgelöst und dient nur noch als Herkunfts-Referenz.
+_LIB_RELPATH = Path("CAD_Symbole") / "Notbeleuchtungssymbole.dxf"
 
 # Pflichtfelder je Mapping-Eintrag (Vokabular kommt aus symbols/__init__.py,
 # die Block-Existenz-Validierung gegen die echte Library passiert hier).
@@ -74,13 +77,13 @@ def _resolve_library_path(path: Path | str | None = None) -> Path:
         if cand.is_file():
             return cand
     raise FileNotFoundError(
-        "Schrack-Library E-Symbole.dxf nicht gefunden. Kandidaten:\n  - "
+        "Symbol-Library Notbeleuchtungssymbole.dxf nicht gefunden. Kandidaten:\n  - "
         + "\n  - ".join(str(c) for c in candidates)
     )
 
 
 def load_library(path: Path | str | None = None) -> Drawing:
-    """E-Symbole.dxf einmal lesen, cachen. Thread-safe.
+    """Notbeleuchtungssymbole.dxf einmal lesen, cachen. Thread-safe.
 
     `path` wird nur beim ERSTEN Laden berücksichtigt (danach Cache;
     für Tests `reset_cache()`)."""
@@ -147,6 +150,13 @@ def sync_layers(output_doc: Drawing) -> int:
     """
     lib = load_library()
     added = 0
+    # Ausgabe-Layer immer sicherstellen: die kuratierte Library führt keinen
+    # eigenen Safety-Layer mehr (Blöcke liegen auf '0', erben den INSERT-Layer).
+    if SAFETY_LAYER not in output_doc.layers:
+        new = output_doc.layers.add(SAFETY_LAYER)
+        r, g, b = _SAFETY_GREEN_RGB
+        new.dxf.true_color = (r << 16) | (g << 8) | b
+        added += 1
     for layer in lib.layers:
         name = layer.dxf.name
         out_name = SAFETY_LAYER if name == _LIB_SAFETY_LAYER else name

@@ -21,9 +21,10 @@ tests/failures/
 # Norm-PDFs für alle Owner (Repo ist privat — nicht public stellen!)
 !knowledge/**
 
-# DXF — nur die kanonische Schrack-Library ist getrackt
+# DXF — nur die kanonische Symbol-Library ist getrackt
 *.dxf
 !assets/E-Symbole.dxf
+!CAD_Symbole/Notbeleuchtungssymbole.dxf
 # Wissens-Konvertate (z.B. Stromkreisnummer via ODA aus DWG) bleiben getrackt
 !knowledge/**/*.dxf
 # Muthgasse 109B: DXF (via ODA aus DWG konvertiert) + Plan-PDFs = Projekt-Assets fürs Team
