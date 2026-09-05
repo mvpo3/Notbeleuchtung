@@ -275,7 +275,7 @@ def test_positionen_und_mirror_matchen_fixture(rendered):
 def test_keine_agv_labels_am_symbol(rendered):
     # Owner-Entscheidung 2026-09-05: AGV-Stromkreis-Label je Symbol ist unnötig —
     # die Kreis-Info tragen Anlage/Kreis/Adresse (NODEID-Zweitzeile) + Belegungsliste.
-    _, summary, doc = rendered
+    _, _summary, doc = rendered
     assert "din_SIBEL_61_labeling" not in doc.layers
     belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
     assert belegung and "AGV-A-F13" in belegung[0].text  # Info lebt in der Liste weiter
