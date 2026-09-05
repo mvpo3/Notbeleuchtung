@@ -248,9 +248,9 @@ def test_lb_legende_traegt_system_spec(contracts, tmp_path):
 
 def test_fuenf_inserts_auf_sicherheitslayer(rendered):
     platzierung, _, doc = rendered
+    # Plan-Symbole tragen Stromkreis-XDATA — Blatt-/Vorlagen-Deko nicht.
     inserts = [e for e in doc.modelspace().query("INSERT")
-               if e.dxf.name != "vorlage_legende"
-               and e.dxf.insert.x < -30000]   # Plan-Symbole (Fixture-Koordinaten)
+               if e.has_xdata("NOTBELEUCHTUNG")]
     assert len(inserts) == 5
     mapping = library.load_mapping()
     expected_blocks = {mapping[p.catalog_key]["block_name"] for p in platzierung.platzierungen}
@@ -344,8 +344,9 @@ def test_stueckliste_mit_symbol_spalte():
     max_x = raum.bounds_mm.max_xy[0]
     legenden_syms = [e for e in doc.modelspace().query("INSERT")
                      if e.dxf.insert.x > max_x + 1500
-                     and e.dxf.name != "vorlage_legende"]
-    assert len(legenden_syms) == 2
+                     and e.dxf.name != "vorlage_legende"
+                     and not e.has_xdata("NOTBELEUCHTUNG")]
+    assert len(legenden_syms) >= 2   # Vorlagen- + Blatt-Legende bestücken beide
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "Typ A" in texte and "Typ D" in texte and "Concept 2 AP3" in texte
 
@@ -380,7 +381,9 @@ def test_anlagen_symbol_nur_bei_lb_system_typ():
         doc = ezdxf.readfile(str(out))
         ohne = render_dxf(plz, raum, Path(tmp) / "b.dxf", None)
     assert mit["anlage_drawn"] is True and ohne["anlage_drawn"] is False
-    syms = [e for e in doc.modelspace().query("INSERT") if e.dxf.name == "gruppenbatterie"]
+    # Die ANLAGE steht im Technikraum (−50000..−45000) — Blatt-Legende liegt außerhalb.
+    syms = [e for e in doc.modelspace().query("INSERT")
+            if e.dxf.name == "gruppenbatterie" and -51000 < e.dxf.insert.x < -44000]
     assert len(syms) == 1
     texte = " ".join(m.text for m in doc.modelspace().query("MTEXT"))
     assert "SV-Anlage 1" in texte and "UG Zählerraum" in texte

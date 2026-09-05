@@ -713,6 +713,129 @@ def _draw_vorlage(msp, raum: RaumModell,
     return True, True
 
 
+
+# ── Blatt-Layout (Owner-Vorlage `Notbeleuchtungspläne-Vorlage.dxf`) ──
+# Paperspace-Vorlage im Rivoplan-Stil (Referenz: Selo-Design-Elektromontageplan):
+# Planrahmen + Legende + Plankopf, der Grundriss erscheint im Haupt-VIEWPORT.
+_BLATT_VORLAGE_RELPATH = Path("Vorlagen-Legende") / "Notbeleuchtungspläne-Vorlage.dxf"
+_blatt_vorlage_cache: dict = {}
+
+
+def _blatt_vorlage_doc():
+    if "doc" in _blatt_vorlage_cache:
+        return _blatt_vorlage_cache["doc"]
+    pfad = None
+    for parent in Path(__file__).resolve().parents:
+        kandidat = parent / _BLATT_VORLAGE_RELPATH
+        if kandidat.is_file():
+            pfad = kandidat
+            break
+    _blatt_vorlage_cache["doc"] = ezdxf.readfile(str(pfad)) if pfad else None
+    return _blatt_vorlage_cache["doc"]
+
+
+def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None) -> bool:
+    """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
+
+    Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
+    Rivoplan-Plankopf. Die Vorlage (Layout1, Kern 710..1392 × 275..804, Fenster
+    710..1188) wird so skaliert und verschoben, dass der generierte Grundriss im
+    Planfenster liegt. Modelspace statt Paperspace-Viewport, weil das ezdxf-
+    PDF-Rendering Viewport-Inhalte nicht maßstabstreu darstellt — so ist das
+    Blatt in AutoCAD und PDF identisch."""
+    from ezdxf.math import Matrix44
+
+    vorlage = _blatt_vorlage_doc()
+    if vorlage is None or "Layout1" not in vorlage.layout_names():
+        return False
+    quelle = vorlage.layout("Layout1")
+
+    # Vorlagen-Geometrie (vermessen): Fenster + Gesamtrahmen in Vorlagen-Einheiten.
+    FX0, FY0, FX1, FY1 = 710.0, 275.0, 1188.0, 804.0     # Planfenster
+    fenster_w, fenster_h = FX1 - FX0, FY1 - FY0
+    (min_x, min_y), (max_x, max_y) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+    plan_w = max(max_x - min_x, 1.0)
+    plan_h = max(max_y - min_y, 1.0)
+    S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.06
+    # Fenster-Mitte → Plan-Mitte.
+    dx = (min_x + max_x) / 2.0 - (FX0 + FX1) / 2.0 * S
+    dy = (min_y + max_y) / 2.0 - (FY0 + FY1) / 2.0 * S
+    m = Matrix44.scale(S, S, 1.0) @ Matrix44.translate(dx, dy, 0.0)
+
+    floor_label = {"EG": "Erdgeschoss", "1OG": "1.Obergeschoss", "2OG": "2.Obergeschoss",
+                   "3OG": "3.Obergeschoss", "4OG": "4.Obergeschoss",
+                   "DG": "Dachgeschoss"}.get(raum.floor, raum.floor)
+    projekt = (plankopf or {}).get("projekt")
+
+    def im_kern(x, y):
+        return 600.0 <= x <= 1500.0 and 200.0 <= y <= 900.0
+
+    legenden_texte = {}
+    for e in quelle:
+        typ = e.dxftype()
+        try:
+            if typ == "LINE":
+                if not im_kern(e.dxf.start.x, e.dxf.start.y):
+                    continue
+                kopie = e.copy()
+            elif typ == "LWPOLYLINE":
+                pts = list(e.get_points())
+                if not (pts and im_kern(pts[0][0], pts[0][1])):
+                    continue
+                kopie = e.copy()
+            elif typ == "TEXT":
+                if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
+                    continue
+                kopie = e.copy()
+                t = kopie.dxf.text.strip()
+                if t == "Erdgeschoss":
+                    kopie.dxf.text = floor_label
+                elif t == "MVP-Projekt" and projekt:
+                    kopie.dxf.text = projekt
+                if t.startswith("Notbeleuchtung-"):
+                    legenden_texte[t] = (e.dxf.insert.x, e.dxf.insert.y)
+            else:
+                continue
+            kopie.dxf.layer = LAYER_PLANKOPF
+            kopie.transform(m)
+            msp.add_foreign_entity(kopie)
+        except Exception:  # noqa: S112 — Vorlagen-Sonderentities bewusst übersprungen
+            continue
+
+    # Symbol-Spalte der Blatt-Legende (Spalte 1188..1214, Mitte ≈ 1201) bestücken.
+    from ezdxf import bbox as _ezbbox
+    _LEGENDE_BLOCKS = {
+        "pfeil nach unten": ["notbeleuchtung- richtungspfeil nach unten"],
+        "pfeil nach links": ["notbeleuchtung-richtungspfeil nach links"],
+        "pfeil nach rechts": ["notbeleuchtung-richtungspfeil nach rechts"],
+        "aufheller": ["aufheller notbeleuchtung"],
+        "antipanikleuchte": ["notbeleuchtung- antipanikleuchte"],
+        "beidseitig": ["notbeleuchtung-richtungspfeil nach links",
+                        "notbeleuchtung-richtungspfeil nach rechts"],
+        "gruppenbatterie": ["gruppenbatterie"],
+    }
+    for text, (tx, ty) in legenden_texte.items():
+        low = text.lower()
+        bloecke = next((b for k, b in _LEGENDE_BLOCKS.items() if k in low), None)
+        if not bloecke:
+            continue
+        for i, bname in enumerate(bloecke):
+            try:
+                library.import_block(msp.doc, bname)
+            except KeyError:
+                continue
+            bb = _ezbbox.extents(msp.doc.blocks[bname], fast=True)
+            hoehe_lokal = 5.5 if len(bloecke) == 1 else 3.0
+            sc = hoehe_lokal * S / max(bb.size.y, 1e-6)
+            off_y = 0.0 if len(bloecke) == 1 else (1.7 - 3.4 * i)
+            wx = 1201.0 * S + dx
+            wy = (ty + 2.6 + off_y) * S + dy
+            msp.add_blockref(bname, (wx, wy), dxfattribs={
+                "xscale": sc, "yscale": sc, "layer": LAYER_NOTBELEUCHTUNG,
+            })
+    return True
+
+
 def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None:
     """Initial-Ansicht = Grundriss: Modelspace-VPORT auf Bounds ∪ Symbolpunkte,
     sonst öffnet AutoCAD bei (0,0) und der Plan muss per Zoom-Extents gesucht
@@ -767,6 +890,7 @@ def render_dxf(
 
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
+    blatt_drawn = _baue_blatt_layout(msp, raum, plankopf)
     _set_vport(doc, raum, platzierung)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -793,5 +917,6 @@ def render_dxf(
         "anlage_drawn": anlage_drawn,
         "vorlage_drawn": vorlage_drawn,
         "vorlage_legende_gefuellt": vorlage_legende_gefuellt,
+        "blatt_layout_drawn": blatt_drawn,
         "layer": LAYER_NOTBELEUCHTUNG,
     }
