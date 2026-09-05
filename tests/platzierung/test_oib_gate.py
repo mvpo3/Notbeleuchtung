@@ -15,6 +15,7 @@ from notbeleuchtung.platzierung.oib_gate import (
     gate_summary,
     raeume_ohne_geklaerten_scope,
     sanitaer_scope,
+    unbekannte_raum_referenzen,
     verkehr_scope,
 )
 
@@ -80,6 +81,60 @@ def test_gemischte_nutzung_trennt_die_teile():
     assert sanitaer_scope(b, "EG", "wc_verkauf") == "anwendbar"
     assert sanitaer_scope(b, "EG", "wc_wohnen") == "ungeklaert"
     assert sanitaer_scope(b, "EG", "halle") == "nicht_anwendbar"
+
+
+# ── Widersprüchliche Zuordnung ──────────────────────────────────────────────
+def test_bestaetigter_teil_ueberstimmt_einen_ungeklaerten_nicht():
+    """Derselbe Raum hängt an zwei Gebäudeteilen mit verschiedenen Ergebnissen.
+    Das ist zu klären, nicht stillschweigend zugunsten der Freigabe zu lösen."""
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("review_required", 2, refs=(("EG", "r1"),)),
+    )
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
+
+
+def test_bestaetigt_und_verneint_ist_ebenfalls_ungeklaert():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("nicht_erforderlich", 2, refs=(("EG", "r1"),)),
+    )
+    assert sanitaer_scope(b, "EG", "r1") == "ungeklaert"
+
+
+def test_zwei_bestaetigende_teile_sind_kein_widerspruch():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("uneingeschraenkt", 2, refs=(("EG", "r1"),)),
+    )
+    assert sanitaer_scope(b, "EG", "r1") == "anwendbar"
+
+
+def test_widerspruch_taucht_als_ungeklaert_im_bericht_auf():
+    b = _befund(
+        _erg("eingeschraenkt", 1, refs=(("EG", "r1"),)),
+        _erg("review_required", 2, refs=(("EG", "r1"),)),
+    )
+    assert raeume_ohne_geklaerten_scope(b, "EG", ["r1"]) == ["r1"]
+
+
+# ── Ungültige Raumreferenzen ────────────────────────────────────────────────
+def test_referenz_auf_unbekannten_raum_gibt_nichts_frei():
+    """Eine ins Leere zeigende Zuordnung darf keine Freigabe erzeugen — und der
+    real vorhandene Raum bleibt ohne Zuordnung, also ungeklärt."""
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "gibt_es_nicht"),)))
+    assert sanitaer_scope(b, "EG", "r1") == "nicht_anwendbar"
+    assert sanitaer_scope(b, "EG", "gibt_es_nicht") == "anwendbar"   # Raum existiert nicht
+    assert unbekannte_raum_referenzen(b, "EG", ["r1"]) == ["gibt_es_nicht"]
+    hinweise = " ".join(gate_summary(b, "EG", ["r1"])["hinweise"])
+    assert "unbekannte Räume" in hinweise
+
+
+def test_unbekannte_referenzen_stehen_im_summary():
+    b = _befund(_erg("eingeschraenkt", refs=(("EG", "x1"), ("EG", "r1"))))
+    block = gate_summary(b, "EG", ["r1"])
+    assert block["unbekannte_raum_referenzen"] == ["x1"]
+    assert block["sanitaer_scope"]["anwendbar"] == 1     # r1 bleibt korrekt frei
 
 
 # ── 60-m²-Trigger (OVE Punkt 3): heute nie anwendbar ────────────────────────

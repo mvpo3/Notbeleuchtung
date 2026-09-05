@@ -32,6 +32,18 @@ Verkaufsteil öffnet den 60-m²-Trigger nicht.
 Fail closed: nur `anwendbar` platziert. Das frühere Verhalten „ein bestätigender
 Teil öffnet alle Räume aller Geschosse" ist damit weg.
 
+⚠️ **Was das Gate-Signal wirklich belegt.** `OibBefund` beantwortet die Frage
+„ist nach **OIB-RL 2 Tabelle 6** eine Sicherheitsbeleuchtung erforderlich?"
+(`eingeschraenkt` = auf Fluchtwege beschränkt, `uneingeschraenkt` = darüber
+hinaus). Die OVE-Klausel fragt nach etwas anderem: nach **„erhöhten Anforderungen
+nach der Art der Nutzung (siehe OVE-Richtlinie R 12-2 **bzw.** OIB-Richtlinie
+2)"**. Dass beides dasselbe meint, ist eine **Auslegung** — sie ist nicht belegt:
+R 12-2 liegt nicht im Repo, und die OIB-Erläuterungen verweisen auf R 12-2 nur
+„je nach Zutreffen". `anwendbar` heißt hier deshalb genau: *ein Gebäudeteil, für
+den Tabelle 6 eine Sicherheitsbeleuchtung verlangt, erfasst diesen Raum* — nicht
+mehr. Der Nutzungs-Scope der OVE-Regel ist damit **angenähert, nicht
+nachgewiesen**; das ist einer der Gründe, warum beide Schwellen leer bleiben.
+
 Korrektur-Slice Enis, 2026-09-05 — **Änderung in Leonis' Lane, bitte @mvpo3
 reviewen.** Analyse: `docs/proposals/BLOCKER2_FLAECHEN_SCOPE.md`.
 """
@@ -72,6 +84,15 @@ def _ungeklaerte(oib: OibBefund):
     return [e for e in oib.ergebnisse if e.stufe == _UNGEKLAERT_STUFE]
 
 
+def _aussage(stufe: str) -> Scope:
+    """Stufe → Aussage-Richtung für den OVE-Scope (nicht die Stufe selbst)."""
+    if stufe in _OFFEN:
+        return "anwendbar"
+    if stufe == _UNGEKLAERT_STUFE:
+        return "ungeklaert"
+    return "nicht_anwendbar"
+
+
 def _referenziert(eintrag, floor: str, raum_id: str) -> bool:
     return any(r.floor == floor and r.raum_id == raum_id for r in eintrag.raum_referenzen)
 
@@ -82,13 +103,15 @@ def sanitaer_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
     Reihenfolge der Prüfung — die erste zutreffende Aussage gewinnt:
 
     1. kein OIB-Pfad → `nicht_anwendbar` (die Zusatz-Trigger stehen nicht in Frage);
-    2. ein **bestätigender** Teil referenziert den Raum → `anwendbar`;
-    3. ein **review_required**-Teil referenziert ihn → `ungeklaert`;
-    4. der Raum ist von irgendeinem Teil referenziert (also bewertet und nicht
-       bestätigt) → `nicht_anwendbar`;
-    5. der Raum ist nirgends referenziert, aber ein bestätigender oder
+    2. der Raum ist referenziert und die referenzierenden Teile sind sich
+       **uneinig** → `ungeklaert` (ein bestätigender Teil überstimmt einen
+       ungeklärten oder gegenteiligen **nicht**);
+    3. alle referenzierenden Teile bestätigen → `anwendbar`;
+    4. alle referenzierenden Teile sind `review_required` → `ungeklaert`;
+    5. alle referenzierenden Teile verneinen → `nicht_anwendbar`;
+    6. der Raum ist nirgends referenziert, aber ein bestätigender oder
        ungeklärter Teil trägt **keine** Zuordnung → `ungeklaert`;
-    6. sonst → `nicht_anwendbar`.
+    7. sonst → `nicht_anwendbar`.
 
     Schritt 5 ersetzt den früheren Rückfall auf „alle Räume": ein Befund ohne
     Raumzuordnung sagt nichts über diesen Raum — er darf ihn weder freigeben noch
@@ -96,12 +119,18 @@ def sanitaer_scope(oib: OibBefund | None, floor: str, raum_id: str) -> Scope:
     """
     if oib is None:
         return "nicht_anwendbar"
-    if any(_referenziert(e, floor, raum_id) for e in _bestaetigende(oib)):
-        return "anwendbar"
-    if any(_referenziert(e, floor, raum_id) for e in _ungeklaerte(oib)):
-        return "ungeklaert"
-    if any(_referenziert(e, floor, raum_id) for e in oib.ergebnisse):
-        return "nicht_anwendbar"
+    treffer = [e for e in oib.ergebnisse if _referenziert(e, floor, raum_id)]
+    if treffer:
+        # Nach Aussage-Richtung gruppieren, nicht nach Stufe: `eingeschraenkt` und
+        # `uneingeschraenkt` sagen beide „erforderlich" und widersprechen einander
+        # nicht.
+        aussagen = {_aussage(e.stufe) for e in treffer}
+        # Widerspruch: derselbe Raum haengt an Gebaeudeteilen mit
+        # gegenlaeufigen Aussagen. Ein bestaetigender Teil darf einen ungeklaerten
+        # oder verneinenden nicht still ueberstimmen — der Fall ist zu klaeren.
+        if len(aussagen) > 1:
+            return "ungeklaert"
+        return aussagen.pop()
     ohne_zuordnung = [
         e for e in (*_bestaetigende(oib), *_ungeklaerte(oib)) if not e.raum_referenzen
     ]
@@ -145,6 +174,29 @@ def raeume_ohne_geklaerten_scope(
     return [r for r in raum_ids if sanitaer_scope(oib, floor, r) == "ungeklaert"]
 
 
+def unbekannte_raum_referenzen(
+    oib: OibBefund | None, floor: str, raum_ids: list[str]
+) -> list[str]:
+    """Referenzen dieses Geschosses, die auf einen **nicht vorhandenen** Raum zeigen.
+
+    Sie geben nichts frei — `sanitaer_scope` findet für sie keinen Raum, und der
+    betroffene (nicht existente) Raum wird nie bestückt. Sichtbar müssen sie
+    trotzdem sein: eine ins Leere zeigende Zuordnung ist ein Datenfehler im
+    ProjektKontext und bedeutet, dass der gemeinte Raum **ohne** Zuordnung
+    dasteht. `OibBefund.nicht_zugeordnete_raum_referenzen` hilft dabei nicht —
+    der Provider bekommt kein RaumModell und lässt das Feld bewusst leer.
+    """
+    if oib is None:
+        return []
+    bekannt = set(raum_ids)
+    return sorted({
+        ref.raum_id
+        for e in oib.ergebnisse
+        for ref in e.raum_referenzen
+        if ref.floor == floor and ref.raum_id not in bekannt
+    })
+
+
 def gate_summary(oib: OibBefund, floor: str = "", raum_ids: list[str] | None = None) -> dict:
     """Audit-Block für `render_summary["oib"]` — Stufen je Gebäudeteil + Scope-Lage.
 
@@ -172,10 +224,18 @@ def gate_summary(oib: OibBefund, floor: str = "", raum_ids: list[str] | None = N
         "hinweise": hinweise,
     }
     if raum_ids:
+        unbekannt = unbekannte_raum_referenzen(oib, floor, raum_ids)
+        if unbekannt:
+            hinweise.append(
+                "raum_referenzen zeigen auf unbekannte Räume dieses Geschosses "
+                f"({', '.join(unbekannt[:5])}) — sie geben nichts frei; der gemeinte "
+                "Raum steht damit ohne Zuordnung da."
+            )
         zustaende = [sanitaer_scope(oib, floor, r) for r in raum_ids]
         block["sanitaer_scope"] = {
             z: zustaende.count(z)
             for z in ("anwendbar", "nicht_anwendbar", "ungeklaert")
         }
         block["verkehr_scope"] = {"anwendbar": 0, "ungeklaert": len(raum_ids)}
+        block["unbekannte_raum_referenzen"] = unbekannt
     return block
