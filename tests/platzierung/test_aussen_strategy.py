@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 from fakes import FakeNormProvider
-from notbeleuchtung.hauptengine.contracts import Ausgang, RaumModell
+from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.platzierung.aussen_strategy import plan_aussenleuchten
 
 FIXTURES = Path(__file__).parents[1] / "fixtures"
@@ -21,7 +21,7 @@ def _bounds(raum):
 
 def test_final_exit_bekommt_aussenleuchte():
     basis = _raum([])
-    (min_x, min_y), (max_x, max_y) = _bounds(basis)
+    (min_x, min_y), (_max_x, max_y) = _bounds(basis)
     ex = (min_x, (min_y + max_y) / 2.0)   # Schlussausgang am linken Gebäuderand
     raum = _raum([{"id": "ex1", "xy_mm": list(ex), "typ": "final_exit"}])
     out = plan_aussenleuchten(raum, FakeNormProvider())
