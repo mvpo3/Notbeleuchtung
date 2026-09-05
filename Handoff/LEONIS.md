@@ -4,7 +4,40 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-05, Spätabend) — #112 GEMERGT: Vorlage + Legende + Anlage — HIER WEITER
+## STAND (2026-09-05, Session-Ende) — #115 GEMERGT: Blatt-Modus fixiert — HIER WEITER
+
+**PR #115 GEMERGT** (main `a584bc6`, **738 grün** — Enis' Abend-PRs #109/#110/#113/#114
+sind eingeflossen). Das Nacht-Paket, alles Owner-getrieben am 3-Geschoss-Wohnbau
+(`scratchpad/spec_builder_v8.py` + `wohnbau_spec.json`, Output `output/wohnbau_v8_*`):
+
+- **Blatt-Modus (Rivoplan-Vorlage) ist DER Ausgabeweg**: `Vorlagen-Legende/
+  Notbeleuchtungspläne-Vorlage.dxf` jetzt VERSIONIERT; liegt sie im Repo, baut
+  `_baue_blatt_layout` das Blatt im Modelspace (Paperspace-Viewports rendert ezdxf
+  nicht maßstabstreu) — Grundriss ins Planfenster skaliert (Geschoss-Extents),
+  Legenden-Symbolspalte bestückt, PLANINHALT=Geschoss.
+- **Owner-Fixierung (aus `wohnbau_v7_dg_verbessert.dxf`)**: im Blatt-Modus KEINE
+  Zusatz-Boxen — LB-Legende, Stückliste, Prüfbericht-Box, Belegungsliste, alter
+  Plankopf, Vorlage-Anhang alle unterdrückt; das Blatt trägt alles. Prüfbericht/
+  Belegung bleiben im Summary/API. Box-Pfad existiert nur noch als Fallback ohne
+  Vorlage (Tests: Fixture `ohne_blatt` patcht `_blatt_vorlage_cache["doc"]=None`).
+- **PROJEKT-Platzhaltertext raus** (lief über die Spalte; Owner trägt selbst ein).
+- **Rivoplan-Logo**: Vorlage referenzierte das PNG absolut in Owner-Downloads →
+  Repo-Kopie `Vorlagen-Legende/rivoplan_logo.png`, IMAGE wird beim Blatt-Bau
+  skaliert mitkopiert. Zwei PDF-Backend-Fixes in `pdf_export`: AxesImage ohne
+  extent (savefig-tight-Crash) + **ezdxf spiegelt IMAGEs vertikal** (Logo stand
+  kopfüber; empirisch an der Vorlage verifiziert, AutoCAD war immer korrekt).
+- **PDF-Ausschnitt hält jetzt wirklich** (`aspect adjustable='box'` statt datalim;
+  matplotlib ignorierte set_xlim) — `dxf_zu_pdf(..., ausschnitt=blatt_bbox)`.
+- **Naht-Notiz Enis**: sein neuer Regel-13-Sichtbarkeitstest (Prüfbericht muss
+  gezeichnet sein) kollidierte mit der Blatt-Fixierung → Test läuft jetzt auf dem
+  Fallback-Pfad; im Blatt-Modus lebt der Befund in Summary/API. Falls Enis
+  Sichtbarkeit AM BLATT will → Owner-Entscheidung nötig (Blatt-Feld dafür?).
+
+**Nächste Kandidaten:** Wohnbau-Demo als E2E-Fixture einfrieren? · Blatt-Feld für
+Prüf-/Statusvermerk (Enis-Naht) · SPOT-Grafik · AP3-LDT · Enis-Follow-ups (EW
+produktabhängig, Blendungs-I_max, Quellen-Naht).
+
+## STAND (2026-09-05, Spätabend) — #112 GEMERGT: Vorlage + Legende + Anlage
 
 **PR #112 GEMERGT** (main `6b1d49c`, **681 grün**), das Abend-Paket:
 - **Stückliste = Profi-Legende mit Symbol-Spalte** (din-ACAD_TABLE-Vorbild; je
