@@ -38,6 +38,13 @@ _SAFETY_GREEN_RGB = (30, 180, 80)
 _LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
 SAFETY_LAYER = "din_SIBEL_10_emergency_lighting"
 
+# Blaue Hardcode-Farben in Library-Blöcken (z.B. SL-Aufheller: SOLID-HATCH ACI 150).
+# Explizite Entity-Farben übergehen den Layer-Grün-Override → beim Import auf
+# BYLAYER stellen, damit Notlicht-Geometrie das Schrack-Grün erbt (Block liegt auf
+# Layer '0' und erbt den INSERT-Layer). Schwarz/Grün der RZ-Piktogramme bleibt.
+_BLAUE_ACI = {5} | set(range(130, 176))
+_BYLAYER = 256
+
 _ENV_VAR = "NOTBELEUCHTUNG_SYMBOL_LIB"
 _LIB_RELPATH = Path("CAD_Symbole") / "E-Symbole.dxf"
 
@@ -219,6 +226,13 @@ def _normalize_block_origin_recursive(
             matrix = Matrix44.translate(-center.x, -center.y, -center.z)
             for entity in list(block):
                 entity.transform(matrix)
+
+    # Blaue Hardcode-Farben → BYLAYER (läuft wie die Zentrierung genau einmal
+    # je Block/Output-Dokument, daher hier statt in import_block).
+    for entity in list(block):
+        if getattr(entity.dxf, "color", None) in _BLAUE_ACI:
+            entity.dxf.color = _BYLAYER
+            entity.dxf.discard("true_color")
 
     visiting.remove(block_name)
     normalized.add(block_name)
