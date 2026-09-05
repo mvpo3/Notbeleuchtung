@@ -142,3 +142,25 @@ getrennt** mit Stückzahlen.
    Varianten bekommen, wenn gleiches Produkt mit anderem Zubehör auftritt.
 7. **Stromaufnahme aus TYPENAME parsbar** (`(115mA)`) — Quelle für Enis'
    `stromaufnahme_ma`-Follow-up.
+
+## 6. Symbol→Produkt-Zuordnung (Legende ausgewertet + Web-verifiziert 2026-09-05)
+
+| Plan-Symbol | Typen | Produkt (Kategorie lt. din-Katalog/Web) |
+|---|---|---|
+| RZ_PU (60×) | B1/O/P/G | B1 = **Concept 2 AP3** + S2-PU-Scheibe + WA-Ausleger · O = Concept 2 **RZ1** · P = **BASIC 2 E-LED RZ1/SL** (Kombi, 115 mA) · G = **INDUSTRY Ex X32 RZ1** (Ex-Zone!) |
+| RZ_PLPR (24×) | C/D | Concept 2 AP3 + S2-**PL/PR**-Scheibe + DE/WE-Kit |
+| RZ_PL/PR (9×) | B2 | Concept 2 AP3 + S2-PL/PR + Ausleger |
+| SL (29×) | E/K/L/M/N | Concept 2 **AP3** (M = **AP5**, LK5) — ohne Scheibe |
+| SPOT (40×) | F/H/I/J | STRING 2 **eco/power spot AP** (F/H/J) bzw. **eco spot SL** (I), DE |
+| SYSTEM (4×) | A | SU 6P NET E30 (5188100) |
+
+**Kategorie-Verifikation (din-Web/Katalog):** CONCEPT 2 **AP** = *Antipanikleuchte,
+transparente Haube, Flächenausleuchtung*; **SL** = *lichtlenkende Haube* (Fluchtweg);
+Ziffer 3/5 = Leistungsklasse (deckt dekodiertes LK3/LK5). **Kernbefund: Der Profi
+nutzt die ANTIPANIKLEUCHTE AP3 als Universal-Leuchte** — 88 von 194 Leuchten sind
+AP3: mit Piktogramm-Scheibe wird sie zum Rettungszeichen, ohne Scheibe ist sie der
+„Aufheller" des Plans (Symbol SL/TYPE SL = funktionale Rolle, nicht Produktkategorie).
+Echte SL-Optik nur bei 9× eco spot SL. Engine-Konsequenz: RZ/SL/AP im PLAN =
+**Rollen**; das PRODUKT (Optik/Scheibe/Leistungsklasse) ist eine eigene Dimension —
+genau die Trennung, die unser Symbol-Datenmodell (kind vs. typ_name/typ_letter)
+schon trägt. Für Lux-Rechnung zählt die PRODUKT-Optik (AP3-LDT), nicht die Rolle.
