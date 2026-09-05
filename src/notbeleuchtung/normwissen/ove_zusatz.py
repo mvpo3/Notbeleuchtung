@@ -11,6 +11,13 @@ getrennte Fragen; dieses Modul liefert nur die erste.
 **Es aktiviert nichts.** `NormRegelwerk.flaechen_schwellen` bleibt leer, es wird
 keine Leuchte platziert. Die Werte begründen einen **Befund** im Prüfbericht.
 
+**Ausgabestände.** Die OIB-Ausgabe wird **ausführbar** geprüft
+(`OibErgebnis.norm_ausgabe` gegen die geprüfte Ausgabe). Für die OVE-Ausgaben
+(E 8101, R 12-2) gibt es im Projekt **keine Auswahl** — der Befund ist deshalb
+eine **Vorprüfung** unter der dokumentierten Quellenannahme
+(`vorpruefungs_satz`). Dass die Ausgabe 2025 anzuwenden wäre, ist damit weder
+behauptet noch ausgeschlossen.
+
 Belegt ist Stand 2026-09-05 genau **ein** Fall: Verkaufs-/Ausstellungsstätten
 über 3 000 m² Verkaufsfläche. Die Quellenkette dazu — OVE E 8101:2019 →
 R 12-2/AC:2019-07-01 Tabelle 5.1 → OIB-RL 2 Mai 2023 Tabelle 6 Zeile 4 — steht in
@@ -71,6 +78,41 @@ class OveZusatzKatalog:
     def hinweis_2025(self) -> str:
         return (self._cfg["nicht_uebertragbar"]["ove_e8101_2025"] or "").strip()
 
+    # ── Ausgabestand: was prüfbar ist und was nicht ─────────────────────────
+    def oib_ausgabe(self) -> str:
+        """Die OIB-Ausgabe, gegen die die Spalten-Entsprechung geprüft wurde —
+        im selben Wortlaut, den der Provider in `OibErgebnis.norm_ausgabe` setzt.
+
+        Gelesen aus `oib_rl2_tabelle6.yaml` `meta.norm_ausgabe`, damit es keine
+        zweite Wahrheit gibt: derselbe String, aus dem der Befund entsteht.
+        """
+        return str(_oib_meta(self._dir)["norm_ausgabe"])
+
+    def passt_zur_geprueften_oib_ausgabe(self, norm_ausgabe: str | None) -> bool:
+        """Stammt dieser Befund aus **der** OIB-Ausgabe, die geprüft wurde?
+
+        Ausführbare Absicherung — `OibErgebnis.norm_ausgabe` ist ein typisiertes
+        Contract-Feld. Weicht es ab, gilt die geprüfte Kette nicht und es wird
+        **kein** Befund erzeugt (der Fall bleibt dann ungeklärt wie zuvor).
+        """
+        return bool(norm_ausgabe) and norm_ausgabe.strip() == self.oib_ausgabe()
+
+    def vorpruefungs_satz(self) -> str:
+        """Der Vorbehalt, unter dem der Befund steht.
+
+        Für die **OVE**-Ausgaben (E 8101, R 12-2) gibt es im Projekt **keine**
+        Auswahl — weder im `ProjektKontext` noch anderswo. Sie sind deshalb nicht
+        ausführbar prüfbar; der Befund ist eine **Vorprüfung** unter der
+        dokumentierten Quellenannahme. Das ist ausdrücklich keine Aussage
+        darüber, dass eine Anwendung der Ausgabe 2025 ausgeschlossen wäre.
+        """
+        return (self._cfg["ausgaben_pruefung"]["vorpruefungs_satz"] or "").strip()
+
+    def ausgaben_pruefstatus(self) -> dict[str, str]:
+        cfg = dict(self._cfg["ausgaben_pruefung"])
+        cfg.pop("vorpruefungs_satz", None)
+        return {k: str(v) for k, v in cfg.items()}
+
     # ── Bewertung ───────────────────────────────────────────────────────────
     def faelle(self) -> list[dict]:
         return list(self._cfg["belegte_faelle"])
@@ -116,6 +158,13 @@ class OveZusatzKatalog:
             f"nach der Art der Nutzung; Raum ist {b['bezeichnung']} "
             f"({b['schwellentext']})"
         )
+
+
+@lru_cache(maxsize=4)
+def _oib_meta(data_dir: Path) -> dict:
+    """`meta` der OIB-Tabelle-6-Daten — Quelle des `norm_ausgabe`-Strings."""
+    with open(data_dir / "oib_rl2_tabelle6.yaml", encoding="utf-8") as fh:
+        return yaml.safe_load(fh)["meta"]
 
 
 @lru_cache(maxsize=4)

@@ -396,7 +396,16 @@ def pruefe(
         from notbeleuchtung.platzierung.oib_gate import raum_zuordnung
 
         katalog = OveZusatzKatalog()
-        stufe_je_teil = {e.gebaeudeteil_id: e.stufe for e in oib.ergebnisse}
+        # Ausgabestand ausführbar absichern, soweit möglich: die OIB-Ausgabe steht
+        # als typisiertes Feld im Befund. Weicht sie von der geprüften ab, gilt die
+        # Kette nicht → kein Befund (der Fall bleibt ungeklärt, Regel 13).
+        # Für die OVE-Ausgaben (E 8101, R 12-2) gibt es im Projekt KEINE Auswahl —
+        # deshalb steht der Befund unter einem ausgewiesenen Vorbehalt.
+        stufe_je_teil = {
+            e.gebaeudeteil_id: e.stufe
+            for e in oib.ergebnisse
+            if katalog.passt_zur_geprueften_oib_ausgabe(e.norm_ausgabe)
+        }
         raum_je_id = {r.id: r for r in raum.raeume}
         treffer: list[tuple[str, str, str]] = []   # (raum_id, begruendung, fall_id)
         offene: list[str] = []
@@ -430,11 +439,17 @@ def pruefe(
             quellen = " · ".join(katalog.quellen_mit_ausgabe())
             befunde.append(Befund(
                 "Sicherheitsbeleuchtung erforderlich (OVE E 8101 718.560.9.001.AT "
-                "Punkt 1) — Beleuchtungsart und lichttechnischer Nachweis noch offen",
+                "Punkt 1, Vorprüfung) — Beleuchtungsart und lichttechnischer "
+                "Nachweis noch offen",
                 "warnung",
                 f"{len(treffer)} Raum/Räume ({', '.join(sorted(belegte_raeume))}): "
                 + "; ".join(b for _, b, _ in treffer)
-                + f". Quellenkette: {quellen}. OFFEN: " + " | ".join(offene),
+                + f". Quellenkette: {quellen}. "
+                + katalog.vorpruefungs_satz()
+                + " (Die OIB-Ausgabe ist geprüft; für die OVE-Ausgaben gibt es im "
+                "Projekt keine Auswahl — eine Anwendung anderer Ausgaben ist damit "
+                "weder behauptet noch ausgeschlossen.) OFFEN: "
+                + " | ".join(offene),
             ))
 
     if oib is not None:
