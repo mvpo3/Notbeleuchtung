@@ -15,6 +15,7 @@ DIN_SIBEL-Layer für Beschriftung/Info/Legende/Plankopf und die Architektur-Kont
 from __future__ import annotations
 
 import math
+import re
 from pathlib import Path
 
 import ezdxf
@@ -374,22 +375,60 @@ def _nodeids(platzierung: PlatzierungsErgebnis) -> list[str]:
     return ids
 
 
-def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> int:
+_ANLAGE_RE = re.compile(r"AGV-([A-Z])-")
+
+
+def _stromkreisnummern(platzierung: PlatzierungsErgebnis) -> list[str]:
+    """Stromkreisnummer je Platzierung im Profi-Format Anlage/Kreis/Adresse
+    (LABELING1 im din-DWG, STROMKREISNUMMER_DWG.md Empfehlung #1).
+
+    Deterministisch aus `circuit_hint` abgeleitet, kein Contract-Feld:
+    Anlage = Gebäude-Letter des Hints (A=1, B=2, …; ohne Match 1), Kreis =
+    distinct Hints je Anlage in Erst-Auftretens-Reihenfolge (deckt alte
+    `AGV-A-F13`- und neue `AGV-A-F13-DL-1`-Hints ohne Suffix-Parsing ab),
+    Adresse = fortlaufend im Hint. Ohne Hint → "" (kein Label).
+    """
+    kreis_je_anlage: dict[int, dict[str, int]] = {}
+    adresse: dict[str, int] = {}
+    nummern: list[str] = []
+    for p in platzierung.platzierungen:
+        hint = (p.circuit_hint or "").strip()
+        if not hint:
+            nummern.append("")
+            continue
+        m = _ANLAGE_RE.match(hint)
+        anlage = (ord(m.group(1)) - ord("A") + 1) if m else 1
+        kreise = kreis_je_anlage.setdefault(anlage, {})
+        if hint not in kreise:
+            kreise[hint] = len(kreise) + 1
+        adresse[hint] = adresse.get(hint, 0) + 1
+        nummern.append(f"{anlage}/{kreise[hint]}/{adresse[hint]}")
+    return nummern
+
+
+def _draw_nodeid_labels(msp, platzierung: PlatzierungsErgebnis) -> tuple[int, int]:
     """Fortlaufende NODEID je Leuchte als kleiner Text neben das Symbol — Wartung/
     Adressierung (Profi-Plan din_SIBEL_63_luminaire_ID). Rein Render-seitig
-    synthetisiert, kein Contract-Feld."""
+    synthetisiert, kein Contract-Feld. Zweite Zeile = Stromkreisnummer
+    Anlage/Kreis/Adresse (Profi-Plan LABELING1), sofern ein Kreis zugeordnet ist.
+    Liefert (Labels gesamt, davon mit Stromkreisnummern-Zeile)."""
     drawn = 0
-    for p, nodeid in zip(platzierung.platzierungen, _nodeids(platzierung)):
+    mit_kreis = 0
+    sknrn = _stromkreisnummern(platzierung)
+    for p, nodeid, sknr in zip(platzierung.platzierungen, _nodeids(platzierung), sknrn):
         angle = math.radians(p.rotation_deg or 0.0)
         tx = p.xy_mm[0] + math.cos(angle) * NODEID_OFFSET_TANGENT_MM
         ty = p.xy_mm[1] + math.sin(angle) * NODEID_OFFSET_TANGENT_MM
-        mt = msp.add_mtext(nodeid, dxfattribs={
+        text = f"{nodeid}\\P{sknr}" if sknr else nodeid
+        if sknr:
+            mit_kreis += 1
+        mt = msp.add_mtext(text, dxfattribs={
             "layer": LAYER_NODEID,
             "char_height": NODEID_HEIGHT_MM,
         })
         mt.set_location((tx, ty), attachment_point=MTextEntityAlignment.MIDDLE_CENTER)
         drawn += 1
-    return drawn
+    return drawn, mit_kreis
 
 
 def _stromkreis_belegung_text(platzierung: PlatzierungsErgebnis) -> str | None:
@@ -485,7 +524,7 @@ def render_dxf(
             circuit_labels += 1
 
     hoehenkoten_drawn = _draw_hoehenkoten(msp, platzierung)
-    nodeids_drawn = _draw_nodeid_labels(msp, platzierung)
+    nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
 
     _set_vport(doc, raum, platzierung)
 
@@ -503,6 +542,7 @@ def render_dxf(
         "circuit_labels_drawn": circuit_labels,
         "hoehenkoten_drawn": hoehenkoten_drawn,
         "nodeids_drawn": nodeids_drawn,
+        "stromkreisnummern_drawn": stromkreisnummern_drawn,
         "raum_konturen_drawn": n_raeume_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
         "lb_legende_drawn": lb_legende_drawn,
