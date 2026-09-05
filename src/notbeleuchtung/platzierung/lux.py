@@ -35,13 +35,25 @@ def _i_cd_vektor(i_cd_fn, gamma_grad, c_grad):
     Ältere Callables mit nur einem Parameter bleiben nutzbar (Fakes, Tests) —
     dann wird wie bisher nur γ ausgewertet.
     """
-    try:
-        n_params = len(inspect.signature(i_cd_fn).parameters)
-    except (TypeError, ValueError):        # z.B. C-Builtins ohne Signatur
-        n_params = 1
-    if n_params >= 2:
+    if _nimmt_c_ebene(i_cd_fn):
         return np.vectorize(i_cd_fn)(gamma_grad, c_grad)
     return np.vectorize(i_cd_fn)(gamma_grad)
+
+
+def _nimmt_c_ebene(i_cd_fn) -> bool:
+    """Nimmt das Callable eine C-Ebene entgegen?
+
+    Einparametrige Callables (Fakes, konstante Annahmen, Alt-Aufrufer) bleiben
+    nutzbar — sie sind richtungsunabhängig, da geht nichts verloren. Die
+    produktive Photometrie kommt seit dem C-Ebenen-Fix ausschließlich aus
+    `hauptengine.registry.photometrie_i_cd_fn` und nimmt IMMER `(γ, C)`; ein
+    stiller Richtungsverlust bei echter anisotroper Verteilung ist damit
+    ausgeschlossen (Regressionstest `test_lux_c_ebene.py`).
+    """
+    try:
+        return len(inspect.signature(i_cd_fn).parameters) >= 2
+    except (TypeError, ValueError):        # z.B. C-Builtins ohne Signatur
+        return False
 
 
 _UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen Wert liefert
@@ -182,6 +194,11 @@ def max_leuchtenabstand_mm(
 
     Bisektion über [min_mm, max_mm]; Startwert der Fluchtweg-Verdichtung — der
     Feinnachweis (`lux_punkte` auf der Mittellinie inkl. Ud) läuft danach immer.
+
+    **C-Ebene:** hier existiert keine — gerechnet wird eine abstrakte Reihe ohne
+    Plan-Geometrie. Das Callable wird deshalb mit `c_grad=None` gefragt und
+    antwortet konservativ (Minimum über C). Ein fester C-Winkel wäre wieder die
+    C0-Annahme; der Feinnachweis danach rechnet ohnehin richtungsrichtig.
     """
     def e_mitte(d_mm: float) -> float:
         h_mm = montagehoehe_m * 1000.0
@@ -190,7 +207,16 @@ def max_leuchtenabstand_mm(
             d_h = abs(k * d_mm)
             gamma = float(np.degrees(np.arctan2(d_h, h_mm)))
             dist = (d_h**2 + h_mm**2) ** 0.5
-            i = i_cd_fn(gamma) if i_cd_fn is not None else i_cd
+            # Richtung UNBEKANNT: dieser Startwert rechnet über eine abstrakte
+            # Leuchtenreihe ohne Plan-Geometrie, es gibt hier keine C-Ebene.
+            # Deshalb ausdrücklich `c_grad=None` — das Callable antwortet dann
+            # konservativ (Minimum über alle C-Ebenen) statt still C0 anzunehmen.
+            if i_cd_fn is None:
+                i = i_cd
+            elif _nimmt_c_ebene(i_cd_fn):
+                i = i_cd_fn(gamma, None)
+            else:
+                i = i_cd_fn(gamma)
             e += i * (h_mm / dist) ** 3 / (montagehoehe_m**2)
         return e
 

@@ -17,7 +17,11 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
-from .contracts import ProviderBundle
+from .photometrie_befund import (
+    KONSERVATIV_SATZ,
+    BundleMitPhotometrie,
+    PhotometrieBefund,
+)
 
 
 def photometrie_i_cd_fn(
@@ -77,18 +81,82 @@ def photometrie_i_cd_fn(
         )
     else:
         def i_cd(gamma_grad: float, c_grad: float | None = None) -> float:
-            return photometrie.intensitaet(gamma_grad, (c_grad or 0.0) - c0_azimut_grad)
+            # `c_grad is None` heißt: der Aufrufer kennt die Richtung NICHT
+            # (z.B. `max_leuchtenabstand_mm`, das über eine abstrakte Reihe
+            # rechnet). Dann wird auch hier konservativ gerechnet — ein Default
+            # von 0° wäre wieder die C0-Annahme, also genau der behobene Fehler.
+            if c_grad is None:
+                return photometrie.min_intensitaet(gamma_grad)
+            return photometrie.intensitaet(gamma_grad, c_grad - c0_azimut_grad)
         i_cd.hinweis = (
             f"Photometrie anisotrop, C0-Azimut {c0_azimut_grad:g}° zugesichert — "
-            "gerechnet mit der tatsächlichen C-Ebene je Rasterpunkt."
+            "gerechnet mit der tatsächlichen C-Ebene je Rasterpunkt; wo ein "
+            "Aufrufer keine Richtung kennt, konservativ das Minimum über C."
         )
     i_cd.rotationssymmetrisch = rotationssymmetrisch
     return i_cd
 
 
+def default_photometrie(
+    ldt_path: str | Path | None = None,
+    *,
+    photometrie_katalog: bool = True,
+    c0_azimut_grad: float | None = None,
+) -> tuple[Callable[..., float] | None, PhotometrieBefund]:
+    """Lichtstärke-Callable **und** der dazugehörige Befund — immer im Paar.
+
+    Die einzige Stelle, die entscheidet, womit der Lux-Nachweis rechnet. Sie
+    liefert die Aussage über die Rechengrundlage gleich mit, damit ein
+    Rückfall auf die isotrope 200-cd-Annahme (fehlender/nicht auflösbarer
+    Katalog) nicht als Hersteller-Nachweis durchgehen kann.
+    """
+    if ldt_path is None and photometrie_katalog:
+        from notbeleuchtung.symbols.photometrie_katalog import fluchtweg_default_ldt
+
+        ldt_path = fluchtweg_default_ldt()   # None wenn Katalog nicht auflösbar
+    if ldt_path is None:
+        grund = (
+            "Photometrie-Katalog abgeschaltet (photometrie_katalog=False)"
+            if not photometrie_katalog
+            else "Photometrie-Katalog nicht auflösbar (CAD_Symbole/photometrie fehlt "
+                 "oder der Fluchtweg-Default ist nicht im Mapping)"
+        )
+        return None, PhotometrieBefund(
+            quelle="isotrope_annahme",
+            hinweis=(
+                f"{grund} — gerechnet mit der isotropen Annahme 200 cd. "
+                "Das ist KEIN Hersteller-Nachweis; vollständiger Nachweis offen."
+            ),
+            vollstaendiger_nachweis=False,
+            rotationssymmetrisch=None,
+            einschraenkungen=("keine Hersteller-Photometrie", "isotrope Annahme 200 cd"),
+        )
+    i_cd_fn = photometrie_i_cd_fn(ldt_path, c0_azimut_grad=c0_azimut_grad)
+    rotsym = bool(i_cd_fn.rotationssymmetrisch)
+    ausgerichtet = c0_azimut_grad is not None
+    vollstaendig = rotsym or ausgerichtet
+    hinweis = i_cd_fn.hinweis if vollstaendig else KONSERVATIV_SATZ
+    return i_cd_fn, PhotometrieBefund(
+        quelle="hersteller_ldt",
+        hinweis=hinweis,
+        vollstaendiger_nachweis=vollstaendig,
+        rotationssymmetrisch=rotsym,
+        ausrichtung_zugesichert=ausgerichtet,
+        ldt_name=Path(ldt_path).name,
+        einschraenkungen=() if vollstaendig else (
+            "anisotrope Lichtverteilung",
+            "physische Optik-Ausrichtung nicht zugesichert",
+            "gerechnet mit dem Minimum über alle C-Ebenen",
+        ),
+    )
+
+
 def build_default_bundle(
-    ldt_path: str | Path | None = None, *, photometrie_katalog: bool = True
-) -> ProviderBundle:
+    ldt_path: str | Path | None = None,
+    *,
+    photometrie_katalog: bool = True,
+    c0_azimut_grad: float | None = None,
+) -> BundleMitPhotometrie:
     """Das echte Owner-Trio: ArchitekturRaumProvider (Selman) + En1838NormProvider
     (Enis) + NotlichtPlatzierer (Leonis) + LbTextProvider (Enis, 2. Input). Lazy-Import
     — s. Modul-Docstring.
@@ -108,15 +176,14 @@ def build_default_bundle(
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    if ldt_path is None and photometrie_katalog:
-        from notbeleuchtung.symbols.photometrie_katalog import fluchtweg_default_ldt
-
-        ldt_path = fluchtweg_default_ldt()   # None wenn Katalog nicht im Baum
-    i_cd_fn = photometrie_i_cd_fn(ldt_path) if ldt_path is not None else None
-    return ProviderBundle(
+    i_cd_fn, befund = default_photometrie(
+        ldt_path, photometrie_katalog=photometrie_katalog, c0_azimut_grad=c0_azimut_grad
+    )
+    return BundleMitPhotometrie(
         raum=ArchitekturRaumProvider(),
         norm=En1838NormProvider(),
         platzierer=NotlichtPlatzierer(i_cd_fn=i_cd_fn),
         lb=LbTextProvider(),
         oib=OibRl2Provider(),
+        photometrie=befund,
     )
