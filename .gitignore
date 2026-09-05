@@ -44,3 +44,6 @@ spikes/*.ifc
 # AutoCAD-Lock-Dateien (transient, nicht versionieren)
 *.dwl
 *.dwl2
+
+# Rennweg OG3: Referenzplan der Stempel-Anker-Tests (ArchiCAD-Export)
+!Projekte/Rennweg/**
