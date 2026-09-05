@@ -1,0 +1,103 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# ove_e8101_zusatz.yaml — belegte Zusatz-Anforderungen aus OVE E 8101
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# OVE E 8101:2019-01-01, 718.560.9.001.AT (Teil 7-718 Seite 4, am Original
+# geprueft) verlangt ZUSAETZLICH eine Sicherheitsbeleuchtung — aber nur:
+#
+#   "Fuer Raeume, Anlagen oder Gebaeude, an die erhoehte Anforderungen nach der
+#    Art der Nutzung (siehe OVE-Richtlinie R 12-2 bzw. OIB-Richtlinie 2)
+#    gestellt werden"
+#
+# Diese Datei fuehrt ausschliesslich die Faelle, fuer die diese Voraussetzung
+# QUELLENMAESSIG BELEGT ist — Stand 2026-09-05 genau EINER (Verkaufs-/
+# Ausstellungsstaetten). Alles andere bleibt draussen; ein fehlender Eintrag ist
+# KEIN Ausschluss, sondern "nicht geprueft".
+#
+# Sie aktiviert NICHTS: `NormRegelwerk.flaechen_schwellen` bleibt leer, es wird
+# keine Leuchte platziert. Die Werte hier begruenden ausschliesslich einen
+# BEFUND im Pruefbericht ("erforderlich"), nicht dessen Erfuellung.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-09-05"
+  owner: "Enis (normwissen)"
+  status: >
+    Nur Befund-Grundlage. Keine Platzierung, kein Contract-Wert, keine
+    Schwellen-Aktivierung.
+
+# ── Die Quellenkette, je Glied mit Ausgabestand ────────────────────────────
+quellen:
+  ove_e8101:
+    ausgabe: "OVE E 8101:2019-01-01"
+    fundstelle: "718.560.9.001.AT, Teil 7-718 Seite 4"
+    wortlaut_ausloeser: >
+      Fuer Raeume, Anlagen oder Gebaeude, an die erhoehte Anforderungen nach der
+      Art der Nutzung (siehe OVE-Richtlinie R 12-2 bzw. OIB-Richtlinie 2)
+      gestellt werden, ist in folgenden Bereichen zusaetzlich eine
+      Sicherheitsbeleuchtung erforderlich: 1) bei Fahrtreppen, in
+      Sanitaerbereichen ab 8 m2 Groesse und in barrierefreien WC-Anlagen
+    # ACHTUNG: die Klausel nennt "eine Sicherheitsbeleuchtung" OHNE Art.
+    # Antipanik steht hier NICHT (nur Punkt 3 nennt sie ausdruecklich).
+    lichtart_genannt: false
+    lux_wert_genannt: false
+  r12_2:
+    ausgabe: "OVE-Richtlinie R 12-2/AC:2019-07-01 (Berichtigung)"
+    fundstelle: "Tabelle 5.1, Seiten 3-5"
+    spalte_erhoeht: "Erhoehte Anforderungen (Spalte 3)"
+    grundlage: "Fussnote 1): Grundlage fuer diese Tabelle sind die Anforderungen aus der OIB-Richtlinie 2:2019"
+    gemischte_nutzung: >
+      Fussnote c: Bei gemischter Nutzung gelten die fuer die jeweilige Nutzung
+      anzuwendenden Anforderungen dieser Tabelle.
+    hinweis_weitere_arten: >
+      Fussnote a: Je nach Nutzung koennen fuer besondere Raeume und Anlagen
+      weitere Arten der Notbeleuchtung (zB Antipanikbeleuchtung) erforderlich
+      sein. -> Die Art folgt NICHT aus dem Wort "Sicherheitsbeleuchtung".
+  oib_rl2:
+    ausgabe: "OIB-Richtlinie 2, Ausgabe Mai 2023 (OIB-330.2-029/23)"
+    fundstelle: "Tabelle 6, Norm-S.32"
+    spalte_uneingeschraenkt: "Sicherheitsbeleuchtung, uneingeschraenkt (Spalte 3)"
+
+# ── Was NICHT uebertragen wird ─────────────────────────────────────────────
+nicht_uebertragbar:
+  ove_e8101_2025: >
+    OVE E 8101:2025-10-01 fuehrt dieselbe Klausel und verweist ebenfalls auf
+    R 12-2. Welche R-12-2-Ausgabe dort gemeint ist, ist NICHT belegt — die
+    vorliegende Berichtigung ist von 2019. Keine automatische Uebertragung.
+  andere_tabellenzeilen: >
+    Geprueft wurde ausschliesslich Zeile 4. Fuer alle uebrigen Nutzungen ist die
+    Spalten-Entsprechung nicht nachgeprueft.
+
+# ── Belegte Faelle ─────────────────────────────────────────────────────────
+belegte_faelle:
+
+  - id: verkaufsstaette_sanitaer
+    # Bedingung 1: die Nutzung, fuer die die Spalten-Entsprechung geprueft ist.
+    nutzungsart: VERKAUFSSTAETTE_AUSSTELLUNGSSTAETTE
+    # Bedingung 2: die OIB-Stufe, die der Spalte "erhoehte Anforderungen"
+    # entspricht (R 12-2 Spalte 3 == OIB Spalte 3 "uneingeschraenkt").
+    erforderliche_oib_stufe: uneingeschraenkt
+    # Bedingung 3: die Schwelle derselben Tabellenzeile, in ihrer Bezugsgroesse.
+    kennzahl:
+      feld: verkaufsflaeche_m2
+      bezeichnung: "Verkaufsflaeche (OIB-Begriffsbestimmungen)"
+      ueber: 3000.0
+      schwellentext: "> 3.000 m2 Verkaufsflaeche"
+    # Bedingung 4: der Bereich aus 718.560.9.001.AT Punkt 1.
+    bereich:
+      bezeichnung: "Sanitaerbereich"
+      raumtypen: [WC, SANITAER, SANITÄR, BAD, DUSCHE, NASSRAUM, TOILETTE]
+      min_flaeche_m2: 8.0
+      schwellentext: "Sanitaerbereich ab 8 m2 Groesse"
+    folge: "Sicherheitsbeleuchtung erforderlich"
+    # Was ausdruecklich NICHT belegt ist:
+    offen:
+      lichtart: >
+        Die Klausel nennt "eine Sicherheitsbeleuchtung" ohne Art. Antipanik ist
+        nicht gefordert (R 12-2 Fussnote a fuehrt sie nur als moegliche weitere
+        Art). Die auszufuehrende Art ist damit offen.
+      nachweis: >
+        Weder OVE E 8101 noch R 12-2 nennen fuer einen Sanitaerbereich einen
+        Lux-Wert. EN 1838 §4.3.1 (0,5 lx Antipanik) und §4.2.1 (1 lx Mittellinie
+        Rettungsweg) gelten anderen Faellen und duerfen nicht unterstellt werden.
