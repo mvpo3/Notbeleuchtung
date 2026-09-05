@@ -114,6 +114,27 @@ def test_nahe_anker_werden_verschmolzen():
     assert len(out) == 1
 
 
+def test_kreuzung_ohne_erreichbaren_ausgang_zeigt_luftlinie():
+    # Disconnected graph: Kreuzung J hat KEINEN Weg zum Ausgang (Ausgang hängt an
+    # keiner Kante) → kein Dijkstra-Gefälle. Der Pfeil darf nicht „unten"
+    # (= „Ausgang erreicht") fabrizieren, sondern zeigt per Luftlinie zum
+    # geometrisch nächsten Ausgang — hier liegt er im OSTEN → „rechts".
+    raum = _kreuz_mit_isoliertem_ausgang()
+    raum = raum.model_copy(update={"ausgaenge": [
+        Ausgang(id="EXIT_ISO", xy_mm=(12000.0, 0.0), typ="final_exit"),
+    ]})
+    out = plan_rettungszeichen_anker(raum, FakeNormProvider())
+    bei_j = next(p for p in out if p.xy_mm == (0.0, 0.0))
+    assert bei_j.richtung == "rechts"
+
+
+def test_kreuzung_ganz_ohne_ausgaenge_faellt_auf_unten():
+    # Gar kein Ausgang im Modell → keinerlei Richtungs-Information; der dokumentierte
+    # Letzt-Fallback „unten" bleibt (Regression-Schranke für _zwei_nahe_kreuzungen).
+    out = plan_rettungszeichen_anker(_zwei_nahe_kreuzungen(), FakeNormProvider())
+    assert len(out) == 1 and out[0].richtung == "unten"
+
+
 def test_duenner_graph_nur_ausgaenge():
     # 4OG-Fixture: 2 Stich-Kanten, keine Kreuzung → nur die 2 Ausgänge als Anker.
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
