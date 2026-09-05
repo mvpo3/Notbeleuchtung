@@ -65,6 +65,10 @@ def dxf_zu_pdf(
             ziel_layout, finalize=True, layout_properties=lp
         )
         if ausschnitt is not None:
+            # finalize=True setzt aspect=equal mit adjustable='datalim' — dabei
+            # überstimmt matplotlib feste xlim/ylim („Ignoring fixed x limits").
+            # 'box' hält die Limits fest und passt stattdessen die Achsen-Box an.
+            ax.set_aspect("equal", adjustable="box")
             x0, y0, x1, y1 = ausschnitt
             pad_x, pad_y = (x1 - x0) * 0.01, (y1 - y0) * 0.01
             ax.set_xlim(x0 - pad_x, x1 + pad_x)
