@@ -33,6 +33,7 @@ from notbeleuchtung.hauptengine.contracts import (
 
 from . import abstand_nachpass, circuit_zuordnung, deckungs_zuordnung, lb_override
 from .anker_strategy import plan_rettungszeichen_anker
+from .aussen_strategy import plan_aussenleuchten
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
@@ -78,6 +79,7 @@ class NotlichtPlatzierer:
             *plan_antipanik(raum, norm, oib=oib),        # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm),             # Pflichtstellen §4.1.2 (SL+RZ)
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
+            *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)
             *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)
         ]
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
