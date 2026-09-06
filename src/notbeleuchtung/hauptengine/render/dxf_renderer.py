@@ -32,6 +32,7 @@ LAYER_NOTBELEUCHTUNG = library.SAFETY_LAYER  # din_SIBEL_10_emergency_lighting
 LAYER_ARCH_RAUM = "ARCH_Raum"
 LAYER_ARCH_TUER = "ARCH_Tuer"
 LAYER_FLUCHTWEG = "ARCH_Fluchtweg"
+LAYER_UNTERLAGE = "ARCH_Unterlage"
 LAYER_LEGENDE = "din_SIBEL_70_legend_white"
 LAYER_STUECKLISTE = "din_SIBEL_70_legend_green"
 LAYER_PLANKOPF = "din_SIBEL_99_titleblock"
@@ -112,6 +113,7 @@ _SCHALTUNGSART = {"rz": "DL", "sicherheitsleuchte": "BL", "antipanik": "BL"}
 
 
 def _add_own_layers(doc) -> None:
+    doc.layers.add(LAYER_UNTERLAGE, color=253)  # Architektur-Unterlage, hellgrau
     doc.layers.add(LAYER_ARCH_RAUM, color=8)    # dunkelgrau
     doc.layers.add(LAYER_ARCH_TUER, color=8)    # dunkelgrau (Architektur-Bestand)
     fw = doc.layers.add(LAYER_FLUCHTWEG)        # Fluchtweg in Notbeleuchtungs-Grün
@@ -329,6 +331,119 @@ def _draw_pruefbericht(msp, raum: RaumModell, pruefung: dict | None) -> bool:
     _draw_info_box(msp, raum, _BOX_Y_PRUEF, _BOX_H_PRUEF_MM, LAYER_PRUEFBERICHT,
                    "\\P".join(zeilen), char_h=LEGENDE_HEIGHT_MM * 0.85)
     return True
+
+
+def _geschoss_extents(raum: RaumModell) -> tuple[float, float, float, float]:
+    """Robuste Grundriss-Extents: Cluster um den flächengrößten Raum.
+
+    Reale Erkennungs-Läufe liefern gelegentlich Ausreißer-„Räume" am Plankopf
+    der QUELLE, hunderte Meter vom Grundriss entfernt (Rennweg: x-Spannweite
+    755 m statt 30 m). Blindes min/max über alle Räume macht Blatt-Fenster und
+    Unterlage-Filter unbrauchbar (Grundriss wird zum Punkt). Deshalb: der
+    flächengrößte Raum ist der Anker; es zählen nur Räume, deren Zentroid
+    innerhalb des 5-fach aufgeblasenen Anker-Rahmens liegt.
+    """
+    raeume = [r for r in raum.raeume if len(r.polygon_mm) >= 3]
+    if not raeume:
+        (x0, y0), (x1, y1) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
+        return x0, y0, x1, y1
+
+    def _ext(poly):
+        xs = [p[0] for p in poly]
+        ys = [p[1] for p in poly]
+        return min(xs), min(ys), max(xs), max(ys)
+
+    anker = max(raeume, key=lambda r: r.flaeche_m2 or 0.0)
+    ax0, ay0, ax1, ay1 = _ext(anker.polygon_mm)
+    aw, ah = max(ax1 - ax0, 1000.0), max(ay1 - ay0, 1000.0)
+    fx0, fy0, fx1, fy1 = ax0 - 5 * aw, ay0 - 5 * ah, ax1 + 5 * aw, ay1 + 5 * ah
+    xs, ys = [], []
+    for r in raeume:
+        rx0, ry0, rx1, ry1 = _ext(r.polygon_mm)
+        cx, cy = (rx0 + rx1) / 2, (ry0 + ry1) / 2
+        if fx0 <= cx <= fx1 and fy0 <= cy <= fy1:
+            xs += [rx0, rx1]
+            ys += [ry0, ry1]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+_UNTERLAGE_TYPEN = {
+    "LINE", "LWPOLYLINE", "POLYLINE", "ARC", "CIRCLE", "ELLIPSE", "SPLINE", "INSERT",
+}
+
+
+def _draw_unterlage(msp, quelle_pfad: str | None, raum: RaumModell) -> int:
+    """Original-Architektur als hellgraue Unterlage in den Output übernehmen.
+
+    Owner-Anforderung 2026-09-06 („wieso wird der Grundriss so schlecht
+    wiedergegeben"): der generierte Plan zeichnete nur das RaumModell — die
+    Abstraktion, nicht den Architekten-Grundriss. Profi-Referenz (din-Plan):
+    Architektur grau hinterlegt, Notlicht darüber.
+
+    Mechanik: `ezdxf.addons.importer.Importer` übernimmt das Linienwerk der
+    Quelle (inkl. Block-Definitionen für Fenster/Treppen); Texte, Bemaßung und
+    Schraffuren bleiben bewusst draußen (Rauschen). Skalierung Quelle→mm über
+    Bounds-Abgleich mit dem RaumModell (Kandidaten 1/10/25,4/1000 — der
+    Provider kennt den Faktor, exportiert ihn aber nicht). Entities weit
+    außerhalb der Geschoss-Bounds (Plankopf/Legende der Quelle) werden
+    verworfen. Fail-open: jede Import-Panne lässt den Plan ohne Unterlage
+    weiterlaufen statt den Render zu brechen.
+    """
+    if not quelle_pfad:
+        return 0
+    try:
+        from ezdxf import bbox as _ezbbox
+        from ezdxf.addons.importer import Importer
+        from ezdxf.math import Matrix44
+
+        quelle = ezdxf.readfile(str(quelle_pfad))
+        src_ext = _ezbbox.extents(quelle.modelspace(), fast=True)
+        if not src_ext.has_data:
+            return 0
+        bx0, by0, bx1, by1 = _geschoss_extents(raum)
+        raum_w = max(bx1 - bx0, 1.0)
+        src_w = max(src_ext.size.x, 1e-9)
+        faktor = min(
+            (1.0, 10.0, 25.4, 1000.0),
+            key=lambda f: abs(__import__("math").log(max(raum_w / (src_w * f), 1e-9))),
+        )
+        kandidaten = [
+            e for e in quelle.modelspace()
+            if e.dxftype() in _UNTERLAGE_TYPEN
+        ]
+        importer = Importer(quelle, msp.doc)
+        importer.import_entities(kandidaten, msp)
+        importer.finalize()
+        m = Matrix44.scale(faktor, faktor, 1.0)
+        # Bounds mit Rand: Quelle-Plankopf/Legende weit außerhalb fliegt raus.
+        rand_x, rand_y = raum_w * 0.10, max(by1 - by0, 1.0) * 0.10
+        importiert = [e for e in msp if e.dxftype() in _UNTERLAGE_TYPEN
+                      and e.dxf.layer not in (LAYER_ARCH_RAUM, LAYER_ARCH_TUER,
+                                              LAYER_FLUCHTWEG, LAYER_UNTERLAGE)
+                      and not e.dxf.layer.startswith("din_SIBEL")
+                      and not e.has_xdata("NOTBELEUCHTUNG")]
+        drawn = 0
+        for e in importiert:
+            try:
+                e.transform(m)
+                ext = _ezbbox.extents([e], fast=True)
+                if ext.has_data and not (
+                    bx0 - rand_x <= ext.center.x <= bx1 + rand_x
+                    and by0 - rand_y <= ext.center.y <= by1 + rand_y
+                ):
+                    msp.delete_entity(e)
+                    continue
+                e.dxf.layer = LAYER_UNTERLAGE
+                e.dxf.color = 253
+                drawn += 1
+            except Exception:  # noqa: BLE001 — Einzel-Entity darf scheitern
+                try:
+                    msp.delete_entity(e)
+                except Exception:  # noqa: BLE001, S110 — Aufräumen darf still scheitern
+                    pass
+        return drawn
+    except Exception:  # noqa: BLE001 — Unterlage ist Komfort, nie Render-Blocker
+        return 0
 
 
 def _draw_raeume(msp, raum: RaumModell) -> int:
@@ -817,14 +932,23 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
     FX0, FY0, FX1, FY1 = 1609.5, 308.4, 2086.6, 838.2    # Planfenster (Viewport)
     RX0, RY0, RX1, RY1 = 1609.5, 308.5, 2291.3, 838.2    # Gesamtrahmen
     fenster_w, fenster_h = FX1 - FX0, FY1 - FY0
-    # GESCHOSS-Extents (echte Räume) statt Gebäude-bounds — sonst sitzt ein kleines
-    # EG verloren im Fenster eines 50-m-Gebäude-Rahmens.
-    xs = [p[0] for r in raum.raeume for p in r.polygon_mm]
-    ys = [p[1] for r in raum.raeume for p in r.polygon_mm]
-    if not xs:
-        (bmin, bmax) = raum.bounds_mm.min_xy, raum.bounds_mm.max_xy
-        xs, ys = [bmin[0], bmax[0]], [bmin[1], bmax[1]]
-    min_x, max_x, min_y, max_y = min(xs), max(xs), min(ys), max(ys)
+    # GESCHOSS-Extents (echte Räume, Ausreißer-robust via _geschoss_extents) statt
+    # Gebäude-bounds — sonst sitzt ein kleines EG verloren im Riesen-Rahmen.
+    min_x, min_y, max_x, max_y = _geschoss_extents(raum)
+    # Architektur-Unterlage (bereits gezeichnet) ins Fenster einbeziehen — sie ist
+    # meist etwas größer als die Raum-Polygone (Außenwände/Gelände). Gedeckelt auf
+    # das 1,6-fache der Raum-Extents je Achse, damit Unterlage-Ausreißer das
+    # Fenster nicht wieder aufblasen.
+    unterlage = [e for e in msp if e.dxf.layer == LAYER_UNTERLAGE]
+    if unterlage:
+        from ezdxf import bbox as _ub
+        uext = _ub.extents(unterlage, fast=True)
+        if uext.has_data:
+            w, h = max_x - min_x, max_y - min_y
+            min_x = max(min(min_x, uext.extmin.x), min_x - 0.3 * w)
+            max_x = min(max(max_x, uext.extmax.x), max_x + 0.3 * w)
+            min_y = max(min(min_y, uext.extmin.y), min_y - 0.3 * h)
+            max_y = min(max(max_y, uext.extmax.y), max_y + 0.3 * h)
     plan_w = max(max_x - min_x, 1.0)
     plan_h = max(max_y - min_y, 1.0)
     S = max(plan_w / fenster_w, plan_h / fenster_h) * 1.06
@@ -1004,6 +1128,7 @@ def render_dxf(
     pruefung: dict | None = None,
     plankopf: dict | None = None,
     photometrie=None,
+    unterlage_dxf: str | None = None,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
@@ -1025,6 +1150,7 @@ def render_dxf(
 
     _setze_photometrie_eigenschaft(doc, photometrie)
 
+    n_unterlage = _draw_unterlage(msp, unterlage_dxf, raum)
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
@@ -1081,6 +1207,7 @@ def render_dxf(
         "schrack_inserted": len(platzierung.platzierungen),
         "nodeids_drawn": nodeids_drawn,
         "stromkreisnummern_drawn": stromkreisnummern_drawn,
+        "unterlage_entities": n_unterlage,
         "raum_konturen_drawn": n_raeume_drawn,
         "tueren_drawn": n_tueren_drawn,
         "fluchtweg_segmente_drawn": n_segmente,
