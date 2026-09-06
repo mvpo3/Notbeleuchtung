@@ -1,0 +1,645 @@
+{
+  "contract": "RaumModell",
+  "contract_version": "1.1.0",
+  "floor": "DG",
+  "coordinate_system": "mm",
+  "_source": "rekonstruiert aus output/wohnbau_v8_*.dxf (Owner-abgenommen 2026-09-05)",
+  "bounds_mm": {
+    "min_xy": [
+      0.0,
+      0.0
+    ],
+    "max_xy": [
+      50000.0,
+      26000.0
+    ]
+  },
+  "raeume": [
+    {
+      "id": "DG-GANG-H",
+      "raum_typ": "GANG",
+      "polygon_mm": [
+        [
+          8000.0,
+          8000.0
+        ],
+        [
+          50000.0,
+          8000.0
+        ],
+        [
+          50000.0,
+          9500.0
+        ],
+        [
+          8000.0,
+          9500.0
+        ]
+      ],
+      "flaeche_m2": 63.0,
+      "ist_fluchtweg": true,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-GANG-V",
+      "raum_typ": "GANG",
+      "polygon_mm": [
+        [
+          8000.0,
+          8000.0
+        ],
+        [
+          9500.0,
+          8000.0
+        ],
+        [
+          9500.0,
+          26000.0
+        ],
+        [
+          8000.0,
+          26000.0
+        ]
+      ],
+      "flaeche_m2": 27.0,
+      "ist_fluchtweg": true,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-STGH",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_mm": [
+        [
+          9500.0,
+          9500.0
+        ],
+        [
+          14500.0,
+          9500.0
+        ],
+        [
+          14500.0,
+          12200.0
+        ],
+        [
+          9500.0,
+          12200.0
+        ]
+      ],
+      "flaeche_m2": 13.5,
+      "ist_fluchtweg": true,
+      "ist_communal": true
+    },
+    {
+      "id": "DG-AUFZUG",
+      "raum_typ": "AUFZUG",
+      "polygon_mm": [
+        [
+          14500.0,
+          9500.0
+        ],
+        [
+          16300.0,
+          9500.0
+        ],
+        [
+          16300.0,
+          11500.0
+        ],
+        [
+          14500.0,
+          11500.0
+        ]
+      ],
+      "flaeche_m2": 3.6,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-SCHACHT-E",
+      "raum_typ": "SCHACHT",
+      "polygon_mm": [
+        [
+          16300.0,
+          9500.0
+        ],
+        [
+          17300.0,
+          9500.0
+        ],
+        [
+          17300.0,
+          10000.0
+        ],
+        [
+          16300.0,
+          10000.0
+        ]
+      ],
+      "flaeche_m2": 0.5,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-SCHACHT-H",
+      "raum_typ": "SCHACHT",
+      "polygon_mm": [
+        [
+          17300.0,
+          9500.0
+        ],
+        [
+          18300.0,
+          9500.0
+        ],
+        [
+          18300.0,
+          10000.0
+        ],
+        [
+          17300.0,
+          10000.0
+        ]
+      ],
+      "flaeche_m2": 0.5,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W01",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          8000.0,
+          0.0
+        ],
+        [
+          18500.0,
+          0.0
+        ],
+        [
+          18500.0,
+          8000.0
+        ],
+        [
+          8000.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 84.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W02",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          18500.0,
+          0.0
+        ],
+        [
+          29000.0,
+          0.0
+        ],
+        [
+          29000.0,
+          8000.0
+        ],
+        [
+          18500.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 84.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W03",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          29000.0,
+          0.0
+        ],
+        [
+          39500.0,
+          0.0
+        ],
+        [
+          39500.0,
+          8000.0
+        ],
+        [
+          29000.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 84.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W04",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          39500.0,
+          0.0
+        ],
+        [
+          50000.0,
+          0.0
+        ],
+        [
+          50000.0,
+          8000.0
+        ],
+        [
+          39500.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 84.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W05",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          18300.0,
+          9500.0
+        ],
+        [
+          28900.0,
+          9500.0
+        ],
+        [
+          28900.0,
+          18300.0
+        ],
+        [
+          18300.0,
+          18300.0
+        ]
+      ],
+      "flaeche_m2": 93.28,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W06",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          28900.0,
+          9500.0
+        ],
+        [
+          39500.0,
+          9500.0
+        ],
+        [
+          39500.0,
+          18300.0
+        ],
+        [
+          28900.0,
+          18300.0
+        ]
+      ],
+      "flaeche_m2": 93.28,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W07",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          39500.0,
+          9500.0
+        ],
+        [
+          50000.0,
+          9500.0
+        ],
+        [
+          50000.0,
+          18300.0
+        ],
+        [
+          39500.0,
+          18300.0
+        ]
+      ],
+      "flaeche_m2": 92.4,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W08",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          9500.0,
+          12200.0
+        ],
+        [
+          17500.0,
+          12200.0
+        ],
+        [
+          17500.0,
+          23400.0
+        ],
+        [
+          9500.0,
+          23400.0
+        ]
+      ],
+      "flaeche_m2": 89.6,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W09",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          0.0,
+          8000.0
+        ],
+        [
+          8000.0,
+          8000.0
+        ],
+        [
+          8000.0,
+          17000.0
+        ],
+        [
+          0.0,
+          17000.0
+        ]
+      ],
+      "flaeche_m2": 72.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "DG-W10",
+      "raum_typ": "WOHNUNG",
+      "polygon_mm": [
+        [
+          0.0,
+          17000.0
+        ],
+        [
+          8000.0,
+          17000.0
+        ],
+        [
+          8000.0,
+          26000.0
+        ],
+        [
+          0.0,
+          26000.0
+        ]
+      ],
+      "flaeche_m2": 72.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    }
+  ],
+  "tueren": [
+    {
+      "id": "tuer_dg_1",
+      "xy_mm": [
+        10500.0,
+        9500.0
+      ],
+      "breite_mm": 1000.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-STGH",
+      "ist_notausgang": true,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_2",
+      "xy_mm": [
+        15400.0,
+        9500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-AUFZUG",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_dg_3",
+      "xy_mm": [
+        13250.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W01",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_4",
+      "xy_mm": [
+        23750.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W02",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_dg_5",
+      "xy_mm": [
+        34250.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W03",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_6",
+      "xy_mm": [
+        44750.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W04",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_dg_7",
+      "xy_mm": [
+        23600.0,
+        9500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W05",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_8",
+      "xy_mm": [
+        34200.0,
+        9500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W06",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_dg_9",
+      "xy_mm": [
+        44750.0,
+        9500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-H",
+      "nach_raum": "DG-W07",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_10",
+      "xy_mm": [
+        9500.0,
+        17800.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-V",
+      "nach_raum": "DG-W08",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_dg_11",
+      "xy_mm": [
+        8000.0,
+        12500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-V",
+      "nach_raum": "DG-W09",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_dg_12",
+      "xy_mm": [
+        8000.0,
+        21500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "DG-GANG-V",
+      "nach_raum": "DG-W10",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    }
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_dg_1",
+      "xy_mm": [
+        10500.0,
+        9500.0
+      ],
+      "typ": "final_exit"
+    }
+  ],
+  "zirkulation": {
+    "nodes": [],
+    "edges": [],
+    "segmente": [
+      {
+        "segment_id": "seg_dg_1",
+        "polyline_mm": [
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            49250.0,
+            8750.0
+          ]
+        ],
+        "laenge_mm": 40500.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_dg_2",
+        "polyline_mm": [
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            8750.0,
+            25250.0
+          ]
+        ],
+        "laenge_mm": 16500.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_dg_3",
+        "polyline_mm": [
+          [
+            10500.0,
+            8750.0
+          ],
+          [
+            10500.0,
+            9500.0
+          ]
+        ],
+        "laenge_mm": 750.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_dg_4",
+        "polyline_mm": [
+          [
+            8750.0,
+            15500.0
+          ],
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            17500.0,
+            8750.0
+          ]
+        ],
+        "laenge_mm": 15500.0,
+        "reason": "long_run"
+      }
+    ]
+  }
+}
