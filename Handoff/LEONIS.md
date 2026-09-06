@@ -4,7 +4,32 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-06, Spätabend) — #120 GEMERGT: Wohnbau-E2E-Fixture — HIER WEITER
+## STAND (2026-09-06, Nacht) — #121 GEMERGT: Per-Familie-Photometrie — HIER WEITER
+
+**main = #121-Merge, 846 grün.** AP3-Session mit zwei Ergebnissen:
+- **AP3-LDT extern blockiert:** din (Dietmar Nocker) gibt die Concept-2-AP3-
+  Photometrie nicht öffentlich heraus — Produktdatenportal
+  (productdata.din-notlicht.com, Backend cigateway) nur Datenblätter, kein
+  Relux/DIALux-Eintrag. **Owner-Aktion: LDT beim Hersteller anfragen**
+  (Artikel 9020095009 Concept 2 AP3 PLC24) — dokumentiert in
+  `CAD_Symbole/photometrie/QUELLEN.md`. Kommt sie: Datei + 1 YAML-Zeile.
+- **Per-Familie-Naht verdrahtet** (#121): `ldt_pfad_fuer` war toter Code, der
+  Antipanik-0,5-lx-Nachweis rechnete isotrop trotz Rundlinsen-LDT im Katalog.
+  Neu: `registry.photometrie_je_key()` (dedupe je Datei) →
+  `NotlichtPlatzierer(i_cd_fn_je_key)` → `plan_antipanik` → `_antipanik_punkte`.
+  Ohne Zuordnung bit-identisch; Fluchtweg bleibt bewusst auf fluchtweg_default
+  (Corridor + Achsen-Azimut #119). Mollgasse unverändert RZ 15/SL 32/ok.
+
+**Tagesbilanz 2026-09-06: SECHS Merges** (#116 Verkaufsstätten · #117 C-Ebene ·
+#118 Blatt-Prüfvermerk · #119 Optik-aus-Achse · #120 Wohnbau-Fixture · #121
+Per-Familie-Photometrie), 738→846 grün.
+
+**Nächste Kandidaten:** SPOT-Grafik · Blatt-Feld-Feinschliff auf Enis-Zuruf ·
+AP3-LDT einpflegen sobald vom Hersteller da · der große Hebel bleibt Selmans
+Kaskade-Verdrahtung (Barawitzka 2→47, Mollgasse 62 echte Polygone warten im
+Prüfstrecken-Stand; E2E-Bänder kippen dann).
+
+## STAND (2026-09-06, Spätabend) — #120 GEMERGT: Wohnbau-E2E-Fixture
 
 **main = #120-Merge, 841 grün.** Handoff-Kandidat „Wohnbau einfrieren" erledigt:
 - **Befund vorweg:** `spec_builder_v8.py` + `wohnbau_spec.json` waren im
