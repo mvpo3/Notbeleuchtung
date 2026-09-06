@@ -4,7 +4,48 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-05, Session-Ende) — #115 GEMERGT: Blatt-Modus fixiert — HIER WEITER
+## STAND (2026-09-06) — Sync-Session: Enis' #116+#117 reviewt + GEMERGT — HIER WEITER
+
+**main `8248126`, 822 grün, ruff clean, kein Contract.** Owner-Ansage „mach mal
+Sync alles" + Volles GO. Ablauf:
+
+- **Selman-Pull:** 8 Raumerkennung-Commits (HATCH-Polygone, Stempel-Flutung,
+  Wandkörper/Türöffnungen, Prüfstrecken-Kaskade L/H/F/R) — 777 grün, nichts
+  Leonis-seitiges gekippt.
+- **#117 (C-Ebene im Lux-Nachweis) reviewt (APPROVE) + GEMERGT.** Wichtiger
+  Enis-Fix in MEINER Lane (`platzierung/lux.py`): bis dahin rechnete jeder
+  Rasterpunkt in der C0-Ebene der LDT (Corridor-Optik: γ=60° → 149,93 cd C0 vs.
+  19,53 cd C90, Faktor 7,7 zu optimistisch → falsch bestandene 1-lx-Nachweise).
+  Jetzt: `(γ, C)`-Callable; ohne zugesicherte Optik-Ausrichtung konservativ
+  **Minimum über alle C-Ebenen** (`rotation_deg` = CAD-Symbol-Rotation, NICHT
+  Optik!). `PhotometrieBefund`/`BundleMitPhotometrie` + Prüfbericht-**Regel 15**
+  + DXF-Zeichnungseigenschaft (DWGPROPS statt Box — respektiert Blatt-Fixierung).
+  **Konsequenz: Mollgasse EG jetzt RZ=15/SL=36 (28→36) und Status `warnung`** —
+  JEDER Plan mit Corridor-Default-LDT trägt WARNUNG, bis Ausrichtung Input wird.
+- **#116 (OVE R 12-2 Verkaufsstätten-Vorprüfung, Regel 14) reviewt (APPROVE),
+  Branch REPARIERT + GEMERGT:** Basis war pre-#115 → CI-grün stale; sein
+  Sichtbarkeitstest erwartete die Prüfbericht-Box, die der Blatt-Modus
+  unterdrückt (Regel-13-Naht, wieder!). Fix von mir auf seinen Branch gepusht:
+  main-Merge + Union-Konfliktauflösung (`pruefbericht(..., photometrie=…,
+  projekt_kontext=…)` — Enis hatte 14/15 vorausschauend disjunkt nummeriert) +
+  Test auf Fallback-Pfad (`_blatt_vorlage_cache["doc"]=None`-Pattern).
+- **Merke:** Enis-PRs künftig zuerst auf Basis prüfen (`git merge-base`) — das
+  war der zweite Blatt-Naht-Testbruch; die CI-Falle „vor Merge origin/main
+  reinmergen" gilt weiter.
+
+**Neuer Leonis-Kandidat (aus #117-Review, meine Lane):** der Platzierer KENNT
+die Fluchtweg-Achse beim SL-Verdichten — Corridor-Optik wird längs des Gangs
+montiert. `c0_azimut` aus der Verdichtungs-Richtung ableiten und als zugesicherte
+Ausrichtung an `build_default_bundle`/Registry geben → voller Nachweis statt
+konservativem Minimum, Pläne wieder `ok` statt `warnung` (und vermutlich SL
+36→~28 zurück). Braucht Naht-Absprache mit Enis (wie kommt die Richtung je
+Leuchte in die Photometrie — heute ist `c0_azimut_grad` global je Bundle!).
+
+**Nächste Kandidaten sonst (unverändert):** Wohnbau-Demo als E2E-Fixture
+einfrieren? · Blatt-Feld für Prüf-/Statusvermerk (Enis-Naht, jetzt auch
+Photometrie-Hinweis) · SPOT-Grafik · AP3-LDT.
+
+## STAND (2026-09-05, Session-Ende) — #115 GEMERGT: Blatt-Modus fixiert
 
 **PR #115 GEMERGT** (main `a584bc6`, **738 grün** — Enis' Abend-PRs #109/#110/#113/#114
 sind eingeflossen). Das Nacht-Paket, alles Owner-getrieben am 3-Geschoss-Wohnbau
