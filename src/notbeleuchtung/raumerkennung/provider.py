@@ -10,6 +10,8 @@ sauberen, self-contained Port-Helfer (``._port.parsers.room_faces``,
 """
 from __future__ import annotations
 
+from shapely.geometry import Point, Polygon
+
 from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
@@ -17,9 +19,12 @@ from .ausgaenge import leite_ausgaenge
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
+from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
+from .lift_erkennung import finde_lifte
 from .raumtyp import beschrifte_raeume
+from .stiegenhaus import baue_stiegenhaus_modell
 from .tuer_typisierung import (
     brandschutz_hinweise_aus_dxf,
     geschoss_aus,
@@ -108,6 +113,28 @@ class ArchitekturRaumProvider:
             explizite_linien(plan), len(zirkulation.segmente))
         zirkulation.segmente += fluchtwege(raeume, tueren, ausgaenge,
                                            zirkulation.segmente)
+
+        # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
+        # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
+        # nur Azimute (ADR-0006) — Platzierung bleibt Leonis.
+        lifte = finde_lifte(plan, raeume)
+        stiegenhaeuser = []
+        anker = []
+        for r in raeume:
+            if len(r.polygon_mm) < 3:
+                continue
+            if r.raum_typ == "STIEGENHAUS":
+                modell, a = baue_stiegenhaus_modell(plan, r, lifte, tueren)
+                stiegenhaeuser.append(modell)
+                anker += a
+            elif r.raum_typ == "GANG":
+                anker += anker_fuer_gang(r, tueren, zirkulation.segmente)
+        # Kein Anker im Liftschacht (Verbotszone — dort wird nichts montiert).
+        if lifte:
+            schaechte = [Polygon(lf.polygon_mm) for lf in lifte
+                         if len(lf.polygon_mm) >= 3]
+            anker = [a for a in anker
+                     if not any(s.contains(Point(a.xy_mm)) for s in schaechte)]
         return RaumModell(
             floor=floor,
             bounds_mm=bounds,
@@ -115,4 +142,6 @@ class ArchitekturRaumProvider:
             tueren=tueren,
             ausgaenge=ausgaenge,
             zirkulation=zirkulation,
+            stiegenhaeuser=stiegenhaeuser,
+            anker=anker,
         )
