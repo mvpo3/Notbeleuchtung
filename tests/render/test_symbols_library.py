@@ -88,7 +88,10 @@ def test_every_mapping_block_is_in_band():
         )
 
 
-@pytest.mark.parametrize("catalog_key", ["sicherheitsleuchte_aufheller", "antipanik_leuchte"])
+@pytest.mark.parametrize(
+    "catalog_key",
+    ["sicherheitsleuchte_aufheller", "antipanik_leuchte", "sicherheitsleuchte_spot"],
+)
 def test_new_categories_import(catalog_key):
     # Neue Kategorien (Kind sicherheitsleuchte/antipanik) laden echte Blocks +
     # werden beim Import origin-normalisiert (INSERT-fähig am Platzierungspunkt).
