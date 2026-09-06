@@ -1,0 +1,48 @@
+{
+  "signatur": {
+    "typ": "hatch",
+    "pattern_name": "CORK",
+    "linien": [
+      {
+        "winkel": 359.708,
+        "abstand": 0.032,
+        "dashes": []
+      },
+      {
+        "winkel": 134.708,
+        "abstand": 0.09,
+        "dashes": [
+          0.045,
+          -0.045
+        ]
+      },
+      {
+        "winkel": 134.708,
+        "abstand": 0.09,
+        "dashes": [
+          0.045,
+          -0.045
+        ]
+      },
+      {
+        "winkel": 134.708,
+        "abstand": 0.09,
+        "dashes": [
+          0.045,
+          -0.045
+        ]
+      }
+    ]
+  },
+  "layer": [
+    "02-FIL-G00-LEG-GK"
+  ],
+  "anzahl_hatches": 2,
+  "flaeche_mm2_summe": 654336.4,
+  "beispiel_zentrum_mm": [
+    2654994.5,
+    1535255.4
+  ],
+  "ausschnitt_m": 4.4,
+  "bester_kandidat": "kein Material über Schwelle 0.45 (bester Kandidat: YTONG 0.41)"
+}

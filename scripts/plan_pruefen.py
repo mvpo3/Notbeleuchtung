@@ -36,10 +36,19 @@ import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
-from shapely.geometry import Polygon
+from shapely.geometry import Point, Polygon
 
-from notbeleuchtung.raumerkennung.dxf_load import DxfPlan, lade_dxf
-from notbeleuchtung.raumerkennung.raumlayer import raeume_aus_layer
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
+from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
+from notbeleuchtung.raumerkennung.material_matching import (
+    _LAYER_HINWEISE,
+    bestimme_material,
+    signatur_aus_hatch,
+    signatur_zu_dict,
+)
+from notbeleuchtung.raumerkennung.raumlayer import raeume_aus_hatch, raeume_aus_layer
+from notbeleuchtung.raumerkennung.raumtyp import raumtyp_flags
+from notbeleuchtung.raumerkennung.rest_komponenten import komponenten_ohne_stempel
 from notbeleuchtung.raumerkennung.stempel_anker import (
     Zuordnung,
     finde_stempel,
@@ -47,6 +56,9 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     restflaechen,
     zentrum,
 )
+from notbeleuchtung.raumerkennung.stempel_flutung import flute_stempel
+from notbeleuchtung.raumerkennung.tueren import tuer_oeffnungen
+from notbeleuchtung.raumerkennung.wandkoerper import finde_wandkoerper
 
 EINGANG = REPO / "Projekte" / "_eingang"
 ERGEBNIS = REPO / "Projekte" / "_ergebnis"
@@ -148,23 +160,43 @@ def _figur(plan: DxfPlan, zoom=None) -> tuple[plt.Figure, plt.Axes]:
     return fig, ax
 
 
-def _varianten_bounds(plan: DxfPlan, stempel) -> tuple[float, float, float, float] | None:
-    """Bounds (Plan-Koordinaten) der Entities auf den Stempel-Layern.
+#: Layer-Schema einer Planvariante: '<Prefix>_<Nummer> <Bezeichnung>'.
+_VARIANTE_RX = re.compile(r"^(.*_)\d+ ")
 
-    Barawitzka trägt drei Planvarianten nebeneinander im Modelspace; nur die
-    Variante mit den Stempeln ('0._EG PP_2_*') soll gerendert werden."""
+
+def _varianten_prefix(stempel) -> str | None:
+    """Layer-Prefix der Variante mit den Stempeln, z.B. '0._EG PP_2_'.
+
+    Barawitzka trägt dieselbe Etage dreimal im Modelspace ('0._EG PP_2_*' =
+    echter Plan, '0._Erdgeschoß PP Icon_1_*'/'Icon_3_*' = Kopien daneben).
+    Stempel-Layer '0._EG PP_2_810 Raum' → Prefix vor der Layer-Nummer."""
     layers = [s.layer for s in stempel if s.layer]
     if not layers:
+        return None
+    m = _VARIANTE_RX.match(os.path.commonprefix(layers))
+    return m.group(1) if m and len(m.group(1)) >= 4 else None
+
+
+def _ist_duplikat_variante(layer: str, prefix: str | None) -> bool:
+    """True für Layer einer duplizierten Planvariante: gleiches Layer-Schema,
+    aber anderer Varianten-Prefix als die Stempel-Variante."""
+    if not prefix or layer.startswith(prefix):
+        return False
+    m = _VARIANTE_RX.match(layer)
+    return bool(m and len(m.group(1)) >= 4)
+
+
+def _varianten_bounds(plan: DxfPlan, prefix: str | None,
+                      stempel) -> tuple[float, float, float, float] | None:
+    """Bounds (Plan-Koordinaten) der Entities auf den Layern der Stempel-Variante."""
+    if not stempel:
         return None
     # Basis: die Stempel-Positionen selbst (TEXT/MTEXT liefern keine entity_points).
     xs = [s.position_mm[0] / plan.factor for s in stempel]
     ys = [s.position_mm[1] / plan.factor for s in stempel]
-    # Varianten-Prefix: Stempel-Layer '0._EG PP_2_810 Raum' → '0._EG PP_2_'
-    # (alle Layer der Variante teilen den Prefix vor der Layer-Nummer).
-    m = re.match(r"(.*_)\d+ ", os.path.commonprefix(layers))
-    if m and len(m.group(1)) >= 4:
+    if prefix:
         for e in plan.space:
-            if e.dxf.layer.startswith(m.group(1)):
+            if e.dxf.layer.startswith(prefix):
                 for x, y in plan.entity_points(e):
                     xs.append(x / plan.factor)
                     ys.append(y / plan.factor)
@@ -201,11 +233,11 @@ def _speichern(fig: plt.Figure, pfad: Path, rot90: int) -> None:
 
 
 def _poly_zeichnen(ax: plt.Axes, punkte_mm, farbe, label: str, plan: DxfPlan,
-                   ztop: float, labels_xy: list) -> None:
+                   ztop: float, labels_xy: list, ec=None) -> None:
     """Halbtransparente Füllung + optionales Label am Zentroid — über dem Render."""
     xs = [p[0] / plan.factor for p in punkte_mm]
     ys = [p[1] / plan.factor for p in punkte_mm]
-    ax.fill(xs, ys, color=farbe, alpha=0.4, ec=farbe, lw=1.5, zorder=ztop)
+    ax.fill(xs, ys, color=farbe, alpha=0.4, ec=ec or farbe, lw=1.5, zorder=ztop)
     if not label:
         return
     cx, cy = zentrum(list(punkte_mm))
@@ -258,20 +290,395 @@ def referenz_vergleich(referenz: list[dict], raeume) -> list[tuple[str, float]]:
     return out
 
 
+# ---------------------------------------------------------------- Material
+
+#: Legendenfarben (RGB 0–255) fürs 04-Bild — 1:1 aus der Baulegende.
+_MAT_FARBEN: dict[str, tuple[int, int, int]] = {
+    "STAHLBETON": (134, 206, 152),
+    "ZIEGELMAUERWERK": (255, 83, 83),
+    "GIPSKARTON_EI0": (255, 213, 170),
+    "GIPSKARTON": (255, 213, 170),      # Layer-Hinweis ohne EI-Klasse
+    "GIPSKARTON_EI30": (255, 170, 240),
+    "GIPSKARTON_EI90": (226, 199, 199),
+    "YTONG": (255, 128, 128),
+    "WAERMEDAEMMUNG": (255, 170, 205),
+    "ALU_GLAS": (0, 232, 232),
+}
+
+
+def _shoelace(pts: list[tuple[float, float]]) -> float:
+    return 0.5 * abs(sum(x1 * y2 - x2 * y1
+                         for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1])))
+
+
+def _hatch_punkte(hatch) -> list[tuple[float, float]]:
+    """Größter Boundary-Pfad des HATCH, flach (Quell-Einheiten).
+
+    ponytail: nur der größte Pfad — Löcher/Inseln zählen bei Wandkörpern nicht.
+    """
+    import ezdxf.path
+    best: list[tuple[float, float]] = []
+    best_a = -1.0
+    for p in ezdxf.path.from_hatch(hatch):
+        pts = [(float(v.x), float(v.y)) for v in p.flattening(10)]
+        a = _shoelace(pts) if len(pts) >= 3 else 0.0
+        if a > best_a:
+            best, best_a = pts, a
+    return best
+
+
+def _material_scan(plan: DxfPlan,
+                   prefix: str | None = None) -> tuple[list[dict], list[list], list[list]]:
+    """Alle HATCHes (MSP + Blockdefinitionen via INSERT-Transformation) matchen.
+
+    ``prefix``: Varianten-Prefix der echten Plan-Variante; HATCHes auf den Layern
+    duplizierter Varianten werden als 'Duplikat-Variante' nicht bewertet.
+
+    Rückgabe: (wandkoerper-Dicts, Brandabschnitt-Linien, Fluchtweg-Linien) —
+    Linienpunkte in Quell-Einheiten. '_pts' im Dict ist nur fürs Rendern.
+    """
+    koerper: list[dict] = []
+    brand: list[list] = []
+    flucht: list[list] = []
+
+    def _linie_pruefen(e, quelle: str) -> None:
+        if e.dxftype() not in ("LINE", "LWPOLYLINE", "POLYLINE"):
+            return
+        farbe = int(e.dxf.get("color", 256))
+        ltyp = str(e.dxf.get("linetype", ""))
+        pts = plan.entity_points(e)  # mm — für die Berichtsliste
+        raw = [(x / plan.factor, y / plan.factor) for x, y in pts]
+        if len(raw) < 2:
+            return
+        if farbe == 30 or ltyp.lower().startswith("brandabschnitt"):
+            brand.append(raw)
+        elif farbe == 96:
+            flucht.append(raw)
+
+    def _hatch_pruefen(h, quelle: str) -> None:
+        sig = signatur_aus_hatch(h)
+        layer = str(h.dxf.layer)
+        pts = _hatch_punkte(h)
+        if len(pts) < 3:
+            return
+        t = bestimme_material(sig, layer=layer)
+        material, via_layer = t.material, False
+        if material == "UNBEKANNT" and not sig.linien:
+            # SOLID ohne Muster: Material steckt ggf. im Layer-Namen (Barawitzka).
+            for rx, ziel in _LAYER_HINWEISE:
+                if rx.search(layer):
+                    material, via_layer = ziel, True
+                    break
+        # Bauteil-Abgrenzung: Muster-Hatches immer; SOLIDs nur mit Material-,
+        # Layer-Hinweis- oder Wand-Layer-Beleg. Rest = Möbel/Plangrafik.
+        bauteil = (bool(sig.linien) or material != "UNBEKANNT"
+                   or layer in plan.wall_layers or bool(WALL_PATTERN.search(layer)))
+        duplikat = _ist_duplikat_variante(layer, prefix)
+        if duplikat:
+            bauteil = False
+        cx = sum(p[0] for p in pts) / len(pts)
+        cy = sum(p[1] for p in pts) / len(pts)
+        koerper.append({
+            "material": material,
+            "score": t.score if not via_layer else None,
+            "via_layer": via_layer,
+            "layer": layer,
+            "pattern": sig.pattern_name,
+            "flaeche_mm2": round(_shoelace(pts) * plan.factor ** 2, 1),
+            "zentrum": [round(cx * plan.factor, 1), round(cy * plan.factor, 1)],
+            "bauteil": bauteil,
+            "duplikat_variante": duplikat,
+            "quelle": quelle,
+            "begruendung": t.begruendung,
+            "_pts": pts,
+            "_sig": sig,
+        })
+
+    def _walk(entities, quelle: str, tiefe: int = 0) -> None:
+        for e in entities:
+            t = e.dxftype()
+            if t == "HATCH":
+                _hatch_pruefen(e, quelle)
+            elif t == "INSERT" and tiefe < 3:
+                try:
+                    _walk(e.virtual_entities(), f"block:{e.dxf.name}", tiefe + 1)
+                except Exception:  # noqa: BLE001, S110 — kaputter Block killt den Scan nicht
+                    pass
+            else:
+                _linie_pruefen(e, quelle)
+
+    _walk(plan.space, "msp")
+    return koerper, brand, flucht
+
+
+def _bild_material(plan: DxfPlan, zoom, koerper: list[dict],
+                   brand: list[list], flucht: list[list],
+                   pfad: Path, rot: int) -> None:
+    """04_material.png: Bauteil-Hatches in Legendenfarben + Markierungslinien."""
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ztop = _ztop(ax)
+    labels_xy: list = []
+    x0, x1 = ax.get_xlim()
+    d2 = (0.02 * max(x1 - x0, 1e-9)) ** 2
+    for k in koerper:
+        if not k["bauteil"]:
+            continue
+        xs = [p[0] for p in k["_pts"]]
+        ys = [p[1] for p in k["_pts"]]
+        mat = k["material"]
+        if mat == "SCHACHT":
+            ax.fill(xs, ys, fc="none", ec=(1.0, 0.0, 0.0), lw=1.5, zorder=ztop)
+        elif mat == "UNBEKANNT":
+            ax.fill(xs, ys, color="#999999", alpha=0.55, ec="#777777",
+                    lw=0.5, zorder=ztop)
+            cx, cy = (k["zentrum"][0] / plan.factor, k["zentrum"][1] / plan.factor)
+            if not any((cx - lx) ** 2 + (cy - ly) ** 2 < d2 for lx, ly in labels_xy):
+                labels_xy.append((cx, cy))
+                ax.text(cx, cy, "?", ha="center", va="center", fontsize=8,
+                        color="black", zorder=ztop + 2)
+        else:
+            rgb = _MAT_FARBEN.get(mat, (150, 150, 150))
+            f = tuple(c / 255.0 for c in rgb)
+            ax.fill(xs, ys, color=f, alpha=0.55, ec=f, lw=0.5, zorder=ztop)
+    for pts in brand:
+        ax.plot([p[0] for p in pts], [p[1] for p in pts],
+                color=(1.0, 0.5, 0.0), lw=3.0, zorder=ztop + 1)
+    for pts in flucht:
+        ax.plot([p[0] for p in pts], [p[1] for p in pts],
+                color=(0.0, 0.5, 0.0), lw=2.0, zorder=ztop + 1)
+    _speichern(fig, pfad, rot)
+
+
+def _kachel_fenster(k: dict, plan: DxfPlan) -> tuple[float, float, float]:
+    """(cx, cy, Seitenlänge) des Weltausschnitts in Quell-Einheiten: 2 m um das
+    Hatch-Zentrum, bei größeren Hatches die Hatch-BBox + 20 %."""
+    xs = [p[0] for p in k["_pts"]]
+    ys = [p[1] for p in k["_pts"]]
+    seite = max(2000.0 / plan.factor,
+                1.2 * max(max(xs) - min(xs), max(ys) - min(ys)))
+    return k["zentrum"][0] / plan.factor, k["zentrum"][1] / plan.factor, seite
+
+
+def _ueberlappt(a: tuple[float, float, float], b: tuple[float, float, float]) -> bool:
+    """Überschneiden sich zwei quadratische Ausschnitte (cx, cy, Seite)?"""
+    return (abs(a[0] - b[0]) < 0.5 * (a[2] + b[2])
+            and abs(a[1] - b[1]) < 0.5 * (a[2] + b[2]))
+
+
+def _unbekannt_kacheln(plan: DxfPlan, koerper: list[dict], ziel: Path) -> int:
+    """Je unbekannter Signatur-Variante eine 200x200-px-Kachel + JSON.
+
+    Dedupliziert nach Signatur (ohne Skala); Kachel = eigener Render des
+    Weltausschnitts um das Hatch (2 m bzw. Hatch-BBox + 20 %), nicht ein
+    200-px-Crop aus dem Voll-Render.
+    """
+    unbekannt = [k for k in koerper if k["bauteil"] and k["material"] == "UNBEKANNT"]
+    gruppen: dict[str, list[dict]] = {}
+    for k in unbekannt:
+        key = json.dumps(signatur_zu_dict(k["_sig"]), sort_keys=True)
+        gruppen.setdefault(key, []).append(k)
+    ordner = ziel / "unbekannte_muster"
+    if ordner.exists():
+        for f in ordner.iterdir():
+            f.unlink()
+    if not gruppen:
+        return 0
+    ordner.mkdir(parents=True, exist_ok=True)
+    # Einmal zeichnen, dann je Kachel nur Ausschnitt setzen und speichern —
+    # das Aufbauen der Artists (ezdxf-Frontend) ist der teure Teil.
+    fig, ax = _figur(plan, None)
+    fig.set_size_inches(2, 2)
+    belegt: list[tuple[float, float, float]] = []
+    for n, (key, ks) in enumerate(sorted(gruppen.items()), start=1):
+        kandidaten = sorted(ks, key=lambda k: -k["flaeche_mm2"])[:50]
+        fenster = [_kachel_fenster(k, plan) for k in kandidaten]
+        # Repräsentant, dessen Ausschnitt keinen schon vergebenen überlappt —
+        # sonst wären zwei Kacheln bildgleich (gleiche Stelle, andere Signatur).
+        i = next((j for j, f in enumerate(fenster)
+                  if not any(_ueberlappt(f, b) for b in belegt)), 0)
+        rep, (cx, cy, seite) = kandidaten[i], fenster[i]
+        belegt.append(fenster[i])
+        ax.set_xlim(cx - seite / 2, cx + seite / 2)
+        ax.set_ylim(cy - seite / 2, cy + seite / 2)
+        fig.savefig(str(ordner / f"muster_{n:02d}.png"), dpi=100, facecolor="white")
+        (ordner / f"muster_{n:02d}.json").write_text(json.dumps({
+            "signatur": signatur_zu_dict(rep["_sig"]),
+            "layer": sorted({k["layer"] for k in ks}),
+            "anzahl_hatches": len(ks),
+            "flaeche_mm2_summe": round(sum(k["flaeche_mm2"] for k in ks), 1),
+            "beispiel_zentrum_mm": rep["zentrum"],
+            "ausschnitt_m": round(seite * plan.factor / 1000.0, 2),
+            "bester_kandidat": rep["begruendung"],
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+    plt.close(fig)
+    return len(gruppen)
+
+
+def _material_md(koerper: list[dict], brand: list[list], flucht: list[list],
+                 abdeckung: float | None, plan: DxfPlan) -> list[str]:
+    """Markdown-Block: Materialtabelle + Markierungen + Legendenabdeckung."""
+    bauteile = [k for k in koerper if k["bauteil"]]
+    dupl = [k for k in koerper if k.get("duplikat_variante")]
+    rest = [k for k in koerper if not k["bauteil"] and not k.get("duplikat_variante")]
+    agg: dict[str, list[dict]] = {}
+    for k in bauteile:
+        agg.setdefault(k["material"], []).append(k)
+    l = ["", "## Material (Bauteil-Hatches)", "",
+         "| Material | Anzahl | Fläche m² | mittl. Score |", "|---|--:|--:|--:|"]
+    for mat, ks in sorted(agg.items(), key=lambda x: -sum(k["flaeche_mm2"] for k in x[1])):
+        scores = [k["score"] for k in ks if k["score"] is not None]
+        s = f"{sum(scores) / len(scores):.2f}" if scores else "via Layer"
+        l.append(f"| {mat} | {len(ks)} | "
+                 f"{sum(k['flaeche_mm2'] for k in ks) / 1e6:.1f} | {s} |")
+    if rest:
+        l.append(f"| _nicht bewertet (Möbel/Plangrafik-SOLIDs)_ | {len(rest)} | "
+                 f"{sum(k['flaeche_mm2'] for k in rest) / 1e6:.1f} | — |")
+    if dupl:
+        l.append(f"| _Duplikat-Variante, nicht bewertet_ | {len(dupl)} | "
+                 f"{sum(k['flaeche_mm2'] for k in dupl) / 1e6:.1f} | — |")
+    l += ["",
+          ("Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit "
+           "Material-Treffer, Layer-Hinweis oder Wand-Layer — übrige SOLIDs "
+           "(Möbel/Treppen/Plangrafik) sind „nicht bewertet“ und gehen NICHT in "
+           "die Legendenabdeckung ein."), ""]
+    if dupl:
+        layer_pre = sorted({_VARIANTE_RX.match(k["layer"]).group(1) for k in dupl
+                            if _VARIANTE_RX.match(k["layer"])})
+        l += [("Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; "
+               "nur die Variante mit den Raumstempeln wird bewertet und gerendert. "
+               f"Hatches auf den Kopie-Layern ({', '.join(p + '*' for p in layer_pre)}) sind "
+               "„Duplikat-Variante, nicht bewertet“ und gehen NICHT in "
+               "Legendenabdeckung oder UNBEKANNT-Zahl ein."), ""]
+    if abdeckung is not None:
+        l.append(f"**Legendenabdeckung: {abdeckung * 100:.1f} %** "
+                 "(bekannte Materialfläche / Bauteil-Schraffurfläche)")
+    else:
+        l.append("**Legendenabdeckung: — (keine Bauteil-Hatches)**")
+    l += ["", "## Markierungen", "",
+          f"- Brandabschnittslinien: {len(brand)}",
+          f"- Fluchtweglinien: {len(flucht)}"]
+    for titel, linien in (("Brandabschnitt", brand), ("Fluchtweg", flucht)):
+        if linien:
+            l += ["", f"### {titel}-Linien", ""]
+            for pts in linien:
+                (ax_, ay_), (bx_, by_) = pts[0], pts[-1]
+                l.append(f"- ({ax_ * plan.factor / 1000:.2f}, {ay_ * plan.factor / 1000:.2f}) m "
+                         f"→ ({bx_ * plan.factor / 1000:.2f}, {by_ * plan.factor / 1000:.2f}) m")
+    return l
+
+
 # ---------------------------------------------------------------- Hauptlauf
 
-def _raeume(plan: DxfPlan) -> tuple[list, str]:
+def _ein_polygon_ein_stempel(zuord: list[Zuordnung]) -> None:
+    """Ein Polygon gehört genau EINEM Stempel — in-place.
+
+    ``ordne_zu`` heftet bei Plänen ohne Raum-Layer (Mollgasse: H-Polygone aus
+    Hatches) bis zu 11 Stempel ans selbe Polygon; die berechneten Flächen sind
+    dann für alle bis auf einen falsch. Es bleibt der beste Flächen-Match, die
+    übrigen gehen als ``kein_polygon`` zurück in die Flutung.
+    """
+    je_polygon: dict[int, list[int]] = {}
+    for k, z in enumerate(zuord):
+        if z.polygon_index is not None:
+            je_polygon.setdefault(z.polygon_index, []).append(k)
+    for kandidaten in je_polygon.values():
+        if len(kandidaten) < 2:
+            continue
+        best = min(kandidaten, key=lambda k: abs(zuord[k].abweichung_prozent)
+                   if zuord[k].abweichung_prozent is not None else math.inf)
+        for k in kandidaten:
+            if k != best:
+                zuord[k] = Zuordnung(zuord[k].stempel, None, None, None, "kein_polygon")
+
+
+def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
+    """Raum-Kaskade L→H→F→R (spiegelt provider.py-Kaskade; Integration hier).
+
+    L: ``raeume_aus_layer`` · H: ``raeume_aus_hatch`` additiv (IoU-Dedup gegen L)
+    · F: ``flute_stempel`` für Stempel ohne brauchbares Polygon (kein Polygon,
+    ODER Flächen-Flag UND Stempelpunkt außerhalb des zugeordneten Polygons)
+    · R: ``komponenten_ohne_stempel`` für den stempellosen Rest.
+
+    Rückgabe: (zuordnungen, raeume, rest_raeume, quelle_je_raum_id, kette).
+    """
     raeume = raeume_aus_layer(plan)
-    if raeume:
-        return raeume, "raumlayer"
+    quelle: dict[str, str] = {r.id: "L" for r in raeume}
+    for r in raeume_aus_hatch(plan, stempel):
+        if any(iou(r.polygon_mm, v.polygon_mm) > 0.5 for v in raeume):
+            continue
+        r.id = f"raum_{len(raeume) + 1}"
+        raeume.append(r)
+        quelle[r.id] = "H"
+    wk = finde_wandkoerper(plan)
+    oeff = tuer_oeffnungen(plan)
+    zuord = ordne_zu(stempel, raeume)
+    _ein_polygon_ein_stempel(zuord)
+    flut_i = [
+        k for k, z in enumerate(zuord)
+        if z.flag == "kein_polygon"
+        or (z.flag != "ok" and z.raum is not None
+            and not Polygon(z.raum.polygon_mm).buffer(0).covers(
+                Point(z.stempel.position_mm)))
+    ]
+    if flut_i and wk:
+        fluts = flute_stempel(plan, [zuord[k].stempel for k in flut_i], wk, oeff)
+        for k, fr in zip(flut_i, fluts):
+            # Degenerierte Flutungen (<1 m², z.B. Stempel in Wandtasche) blocken
+            # sonst die Rest-Stufe — dort typt sie der STIEGE-/LIFT-Marker besser.
+            if len(fr.polygon_mm) < 3 or Polygon(fr.polygon_mm).area < 1e6:
+                zuord[k] = Zuordnung(fr.stempel, None, None, None, "kein_polygon")
+                continue
+            st = fr.stempel
+            tf = raumtyp_flags(st.name or "")
+            typ, flucht, communal = tf if tf else (st.typ or "", False, False)
+            r = Raum(id=f"raum_{len(raeume) + 1}", raum_typ=typ,
+                     polygon_mm=[(float(x), float(y)) for x, y in fr.polygon_mm],
+                     flaeche_m2=Polygon(fr.polygon_mm).area / 1e6,
+                     ist_fluchtweg=flucht, ist_communal=communal)
+            raeume.append(r)
+            quelle[r.id] = "F"
+            zuord[k] = Zuordnung(st, len(raeume) - 1, r, fr.abweichung_prozent, fr.flag)
+    belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
     try:
-        from notbeleuchtung.raumerkennung.waende import raeume_aus_waenden
-        return raeume_aus_waenden(plan), "waende"
-    except Exception as exc:  # noqa: BLE001 — Fallback darf den Lauf nie killen
-        return [], f"waende-fallback fehlgeschlagen: {exc}"
+        rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)
+    except Exception as exc:  # noqa: BLE001 — Rest-Stufe darf den Lauf nie killen
+        print(f"   rest_komponenten fehlgeschlagen: {exc}")
+        rest_r = []
+    for r in rest_r:
+        quelle[r.id] = "R"
+    n = Counter(quelle.values())
+    kette = (f"kaskade L:{n.get('L', 0)} H:{n.get('H', 0)} "
+             f"F:{n.get('F', 0)} R:{n.get('R', 0)}")
+    return zuord, raeume, rest_r, quelle, kette
 
 
-def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
+#: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
+def _typ_stil(typ: str | None, name: str | None = None) -> tuple[str, str]:
+    # Namens-Fallback vor dem Typ-Mapping: 'Wohnküche' typt zu KÜCHE, 'Hobbyraum'
+    # zu ZIMMER — beides grün; der Stempelname ist hier die feinere Quelle.
+    n = (name or "").lower()
+    if "wohn" in n or "hobby" in n:
+        return "#7b68ee", "#7b68ee"                      # blau/lila
+    t = (typ or "").upper()
+    if "SCHACHT" in t:
+        return "#ffffff", "#dd0000"                      # weiß, rote Kontur
+    if "STIEG" in t or "TREPP" in t or "LIFT" in t:
+        return "#ff9500", "#ff9500"                      # orange
+    if "GANG" in t or "FLUR" in t or "VORRAUM" in t:
+        return "#ffd400", "#c8a800"                      # gelb
+    if t in ("BAD", "WC") or "NASS" in t or "WASCH" in t:
+        return "#e04040", "#e04040"                      # rot
+    if "HOBBY" in t or "WOHN" in t:
+        return "#7b68ee", "#7b68ee"                      # blau/lila
+    if t in ("ABSTELLRAUM", "LAGER", "KELLER", "TECHNIK", "MUELLRAUM", "GARAGE"):
+        return "#909090", "#707070"                      # grau (AR & Co.)
+    if t and t != "UNBEKANNT":
+        return "#3cb043", "#3cb043"                      # Zimmer-Familie grün
+    return "#d3d3d3", "#b0b0b0"                          # UNBEKANNT hellgrau
+
+
+def _json_eintraege(zuordnungen: list[Zuordnung], rest, quelle: dict) -> list[dict]:
     out = []
     for n, z in enumerate(zuordnungen, start=1):
         st = z.stempel
@@ -285,7 +692,8 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
             "abweichung_prozent": (round(z.abweichung_prozent, 2)
                                    if z.abweichung_prozent is not None else None),
             "flag": z.flag,
-            "quelle": st.quelle,
+            "quelle": quelle.get(z.raum.id) if z.raum else None,
+            "stempel_quelle": st.quelle,
         })
     for r in rest:
         out.append({
@@ -293,7 +701,8 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
             "polygon_mm": [list(p) for p in r.polygon_mm],
             "flaeche_stempel": None, "flaeche_berechnet": r.flaeche_m2,
             "abweichung_prozent": None, "flag": "kein_stempel",
-            "quelle": "restflaeche",
+            "quelle": quelle.get(r.id),
+            "stempel_quelle": None,
         })
     return out
 
@@ -306,34 +715,44 @@ def plan_pruefen(dxf: Path) -> dict:
 
     plan = lade_dxf(dxf)
     stempel = finde_stempel(plan)
-    raeume, raum_quelle = _raeume(plan)
-    zuordnungen = ordne_zu(stempel, raeume)
-    rest = restflaechen(raeume, zuordnungen)
+    zuordnungen, raeume, rest_r, quelle, raum_quelle = _raum_kaskade(plan, stempel)
+    rest = restflaechen(raeume, zuordnungen) + rest_r
     rot, rot_vermerk = _rotation(plan)
 
-    zoom = _varianten_bounds(plan, stempel)
+    prefix = _varianten_prefix(stempel)
+    zoom = _varianten_bounds(plan, prefix, stempel)
 
     # 01: Plan wie geplottet + Meterraster.
     fig, ax = _figur(plan, zoom)
     _meterraster(ax, plan)
     _speichern(fig, ziel / "01_render.png", rot)
 
-    # 02: erkannte Räume eingefärbt (Label nur ab 4 m², sonst Clutter).
+    # 02: ALLE Räume, Farbe nach TYP, Quelle-Kürzel (L/H/F/R) im Label.
+    stempel_je_raum = {}
+    for z in zuordnungen:
+        if z.raum is not None and z.raum.id not in stempel_je_raum:
+            stempel_je_raum[z.raum.id] = z
     fig, ax = _figur(plan, zoom)
     _meterraster(ax, plan)
     ztop, labels_xy = _ztop(ax), []
-    for n, z in enumerate(zuordnungen):
-        if z.raum is None or len(z.raum.polygon_mm) < 3:
+    for r in raeume + rest_r:
+        if len(r.polygon_mm) < 3:
             continue
-        st = z.stempel
-        if z.raum.flaeche_m2 >= 4.0:
-            lbl = (f"{st.name}\nStempel: {st.flaeche_m2:.1f} m²" if st.flaeche_m2
-                   else st.name)
-            lbl += f" / berechnet: {z.raum.flaeche_m2:.1f} m²"
-        else:
+        q = quelle.get(r.id, "?")
+        z = stempel_je_raum.get(r.id)
+        fc, ec = _typ_stil(r.raum_typ, z.stempel.name if z else None)
+        if r.flaeche_m2 < 4.0:
             lbl = ""
-        _poly_zeichnen(ax, z.raum.polygon_mm, _FARBEN[n % len(_FARBEN)], lbl, plan,
-                       ztop, labels_xy)
+        elif z is not None:
+            st = z.stempel
+            lbl = f"[{q}] " + " ".join(st.name.splitlines())
+            if st.flaeche_m2:
+                lbl += f"\n{st.flaeche_m2:.1f} / {r.flaeche_m2:.1f} m²"
+            else:
+                lbl += f"\n{r.flaeche_m2:.1f} m²"
+        else:
+            lbl = f"[{q}] {r.raum_typ or '?'}\n{r.flaeche_m2:.1f} m²"
+        _poly_zeichnen(ax, r.polygon_mm, fc, lbl, plan, ztop, labels_xy, ec=ec)
     _speichern(fig, ziel / "02_raeume.png", rot)
 
     # 03: Restflächen ohne Stempel.
@@ -348,9 +767,25 @@ def plan_pruefen(dxf: Path) -> dict:
                        ztop, labels_xy)
     _speichern(fig, ziel / "03_rest.png", rot)
 
-    eintraege = _json_eintraege(zuordnungen, rest)
+    # 04: Material-Analyse (MSP + Blockdefinitionen) + Markierungslinien.
+    koerper, brand, flucht = _material_scan(plan, prefix)
+    _bild_material(plan, zoom, koerper, brand, flucht, ziel / "04_material.png", rot)
+    n_muster = _unbekannt_kacheln(plan, koerper, ziel)
+    bauteile = [k for k in koerper if k["bauteil"]]
+    flaeche_bauteil = sum(k["flaeche_mm2"] for k in bauteile)
+    flaeche_bekannt = sum(k["flaeche_mm2"] for k in bauteile
+                          if k["material"] != "UNBEKANNT")
+    abdeckung = flaeche_bekannt / flaeche_bauteil if flaeche_bauteil > 0 else None
+
+    eintraege = _json_eintraege(zuordnungen, rest, quelle)
+    ids = [e["id"] for e in eintraege]
+    doppelt = [i for i, n in Counter(ids).items() if n > 1]
+    assert not doppelt, f"{name}: Mehrfach-Zuordnung auf {doppelt}"
+    daten = {"raeume": eintraege,
+             "wandkoerper": [{k: v for k, v in w.items() if not k.startswith("_")}
+                             for w in koerper]}
     (ziel / "raeume.json").write_text(
-        json.dumps(eintraege, ensure_ascii=False, indent=2), encoding="utf-8")
+        json.dumps(daten, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # Referenz-IoU (optional).
     iou_zeilen, iou_mittel = [], None
@@ -362,42 +797,61 @@ def plan_pruefen(dxf: Path) -> dict:
             iou_mittel = sum(v for _, v in iou_zeilen) / len(iou_zeilen)
 
     laufzeit = time.time() - t0
+    material_block = _material_md(koerper, brand, flucht, abdeckung, plan)
+    # Kennzahlen der Kaskade.
+    gesamt = len(raeume) + len(rest_r)
+    mit_stempel = len({z.raum.id for z in zuordnungen if z.raum is not None})
+    flag_ok = sum(1 for z in zuordnungen if z.flag == "ok")
+    rest_typ = sum(1 for r in rest_r if r.raum_typ != "UNBEKANNT")
+    rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
-             rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume))
+             rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
+             material_block, quelle)
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
-    rest_n = sum(1 for e in eintraege if e["quelle"] == "restflaeche")
+    rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
     return {"plan": name, "stempel": len(stempel),
             "raeume": len(eintraege) - rest_n,
             "rest": rest_n, "flags": flags, "iou_mittel": iou_mittel,
-            "laufzeit": laufzeit}
+            "laufzeit": laufzeit,
+            "abdeckung": abdeckung, "unbekannte_muster": n_muster,
+            "brand_linien": len(brand), "flucht_linien": len(flucht),
+            "material_md": material_block,
+            "raeume_gesamt": gesamt, "mit_stempel": mit_stempel,
+            "flag_ok": flag_ok, "rest_typisiert": rest_typ,
+            "rest_untypisiert": rest_untyp,
+            "quellen_mix": raum_quelle}
 
 
 def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              raum_quelle: str, rot_vermerk: str,
-             iou_zeilen, iou_mittel, laufzeit: float, n_raeume: int = 0) -> None:
+             iou_zeilen, iou_mittel, laufzeit: float, n_raeume: int = 0,
+             material_block: list[str] | None = None,
+             quelle: dict | None = None) -> None:
+    quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
-    if zuordnungen and n_raeume * 5 < len(zuordnungen):
-        l += [("**Bekannte Lücke:** Raumerkennung deckt den Plan nicht ab "
-               f"(nur {n_raeume} Polygone bei {len(zuordnungen)} Stempeln) — "
-               "HATCH-basierte Räume werden noch nicht erkannt."), ""]
     l += [
-         "## Stempel", "",
-         "| Name | Typ | m² Stempel | m² Polygon | Abw. % | Flag |",
-         "|---|---|--:|--:|--:|---|"]
+         "## Räume", "",
+         "| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |",
+         "|---|---|---|--:|--:|--:|---|"]
     for z in zuordnungen:
         st = z.stempel
-        l.append("| {} | {} | {} | {} | {} | {} |".format(
+        l.append("| {} | {} | {} | {} | {} | {} | {} |".format(
+            quelle.get(z.raum.id, "—") if z.raum else "—",
             " / ".join(st.name.replace("|", "/").splitlines()), st.typ or "—",
             f"{st.flaeche_m2:.2f}" if st.flaeche_m2 is not None else "—",
             f"{z.raum.flaeche_m2:.2f}" if z.raum else "—",
             f"{z.abweichung_prozent:+.1f}" if z.abweichung_prozent is not None else "—",
             z.flag))
+    for r in rest:
+        l.append("| {} | {} | {} | — | {:.2f} | — | kein_stempel |".format(
+            quelle.get(r.id, "—"), r.id, r.raum_typ or "—", r.flaeche_m2))
     l += ["", f"## Restflächen ohne Stempel ({len(rest)})", ""]
     for r in rest:
         cx, cy = zentrum(r)
-        l.append(f"- {r.id}: {r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
+        l.append(f"- {r.id} [{quelle.get(r.id, '?')}] {r.raum_typ or '—'}: "
+                 f"{r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
     warn = [f"Stempel ohne Polygon: „{z.stempel.name}“"
             for z in zuordnungen if z.polygon_index is None]
     warn += [f"Polygon ohne Stempel: {r.id} ({r.flaeche_m2:.2f} m²)" for r in rest]
@@ -406,10 +860,28 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              if z.abweichung_prozent is not None and abs(z.abweichung_prozent) > 10]
     l += ["", f"## Warnungen ({len(warn)})", ""]
     l += [f"- {w}" for w in warn] or ["- keine"]
+    ausbruch = [z for z in zuordnungen
+                if z.flag == "flutung_unsicher" and z.raum is not None
+                and z.abweichung_prozent is not None and z.abweichung_prozent > 200]
+    if ausbruch:
+        l += ["", "## Bekannte Grenze: ausgebrochene Flutungen", "",
+              ("Bei diesen Stempeln läuft die Flutung über eine offene Tür in "
+              "Vorplatz/Korridor. Zwei Gegenversuche brachten keine Verbesserung "
+              "ohne Regression und sind daher NICHT eingebaut: eine zusätzliche "
+              "niedrigere Start-Versiegelungsstufe (300 bzw. 400 mm) senkte "
+              "plan-weit die „ok“-Flutungen von 41 auf 38; eine Deckelung der "
+              "Flutfläche auf 3× Stempelfläche trifft zwar genau diese Fälle, "
+              "verletzt aber die Modul-Invariante „NIE verwerfen“ "
+              "(`test_stempel_flutung.py::test_riesenbereich_unsicher`). Die "
+               "Fälle bleiben darum als `flutung_unsicher` ehrlich geflaggt."), ""]
+        l += [f"- „{' / '.join(z.stempel.name.splitlines())}“: "
+              f"{z.stempel.flaeche_m2:.2f} m² Stempel → {z.raum.flaeche_m2:.2f} m² "
+              f"geflutet ({z.abweichung_prozent:+.0f} %)" for z in ausbruch]
     if iou_zeilen:
         l += ["", "## Referenz-Vergleich (IoU)", "", "| Raum | IoU |", "|---|--:|"]
         l += [f"| {n} | {v:.3f} |" for n, v in iou_zeilen]
         l += ["", f"**Mittelwert: {iou_mittel:.3f}**"]
+    l += material_block or []
     l += ["", f"Laufzeit: {laufzeit:.1f} s", ""]
     pfad.write_text("\n".join(l), encoding="utf-8")
 
@@ -428,8 +900,16 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
     zeilen.append(f"## Lauf {stamp} · {commit}")
     for r in ergebnisse:
         iou_txt = f"{r['iou_mittel']:.3f}" if r["iou_mittel"] is not None else "—"
-        zeilen.append(f"- {stamp[:10]} · {commit} · {r['plan']}: {r['stempel']} Stempel, "
-                      f"{r['raeume']} Räume, {r['rest']} Restflächen, IoU-Mittel {iou_txt}")
+        abd = r.get("abdeckung")
+        abd_txt = f", Legendenabdeckung {abd * 100:.1f} %" if abd is not None else ""
+        zeilen.append(
+            f"- {stamp[:10]} · {commit} · {r['plan']}: {r['stempel']} Stempel, "
+            f"{r['raeume']} Räume, {r['rest']} Restflächen, IoU-Mittel {iou_txt}"
+            f"{abd_txt} · Räume gesamt {r.get('raeume_gesamt', 0)}, "
+            f"mit Stempel {r.get('mit_stempel', 0)}, Flag ok {r.get('flag_ok', 0)}, "
+            f"Rest typisiert {r.get('rest_typisiert', 0)} / "
+            f"untypisiert {r.get('rest_untypisiert', 0)} "
+            f"({r.get('quellen_mix', '')})")
     out = ["# Verlauf plan_pruefen"]
     for i, z in enumerate(zeilen):
         if z.startswith("## Lauf") and (i + 1 >= len(zeilen)
@@ -441,6 +921,27 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
     verlauf.write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
+def _material_report(ergebnisse: list[dict]) -> None:
+    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt."""
+    pfad = REPO / "docs" / "MATERIAL_REPORT.md"
+    alt = pfad.read_text(encoding="utf-8") if pfad.exists() else ""
+    sektionen: dict[str, str] = {}
+    for block in re.split(r"^(?=# Plan )", alt, flags=re.MULTILINE):
+        m = re.match(r"# Plan (\S+)", block)
+        if m:
+            sektionen[m.group(1)] = block.rstrip()
+    for r in ergebnisse:
+        abd = r.get("abdeckung")
+        kopf = [f"# Plan {r['plan']}", "",
+                "Legendenabdeckung: "
+                + (f"{abd * 100:.1f} %" if abd is not None else "—")
+                + f" · unbekannte Muster: {r.get('unbekannte_muster', 0)}"]
+        sektionen[r["plan"]] = "\n".join(kopf + r.get("material_md", []))
+    out = ["<!-- generiert von scripts/plan_pruefen.py — nicht von Hand pflegen -->",
+           "", *(sektionen[k] + "\n" for k in sorted(sektionen))]
+    pfad.write_text("\n".join(out), encoding="utf-8")
+
+
 def main() -> int:
     dateien = ([Path(sys.argv[1])] if len(sys.argv) > 1
                else sorted(EINGANG.glob("*.dxf")))
@@ -450,11 +951,19 @@ def main() -> int:
     for dxf in dateien:
         print(f"== {dxf.name} ==")
         r = plan_pruefen(dxf)
+        abd = r.get("abdeckung")
         print(f"   {r['stempel']} Stempel, {r['raeume']} Räume, {r['rest']} Rest, "
-              f"{r['flags']} Flags, {r['laufzeit']:.1f} s")
+              f"{r['flags']} Flags, Abdeckung "
+              + (f"{abd * 100:.1f} %" if abd is not None else "—")
+              + f", {r['unbekannte_muster']} unbek. Muster, {r['laufzeit']:.1f} s")
+        print(f"   Kaskade: gesamt {r['raeume_gesamt']}, mit Stempel "
+              f"{r['mit_stempel']}, Flag ok {r['flag_ok']}, Rest typisiert "
+              f"{r['rest_typisiert']} / untypisiert {r['rest_untypisiert']} "
+              f"({r['quellen_mix']})")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)
+        _material_report(ergebnisse)
     return 0
 
 

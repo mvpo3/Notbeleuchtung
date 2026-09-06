@@ -154,15 +154,15 @@ def test_visual_golden_mix(tmp_path):
     render_dxf(_platzierung_mix(), raum, dxf)
 
     # Selbst-validierend (kein blindes Golden): die Misch-Szene MUSS die Pfade wirklich
-    # ausüben, sonst wacht der Pixel-Golden über nichts. 7 Platzierungen → 8 INSERTs
-    # (die eine „gerade"-RZ = Doppelpfeil = 2 Blocks, alle übrigen je 1).
+    # ausüben, sonst wacht der Pixel-Golden über nichts. 7 Platzierungen → 7 getaggte
+    # INSERTs (XDATA sitzt je Platzierung am Primär-Block; der Doppelpfeil-Zweitblock
+    # der „gerade"-RZ ist Deko derselben Platzierung, wie die Blatt-Legende ungetaggt).
     doc = ezdxf.readfile(str(dxf))
     inserts = [e for e in doc.modelspace().query("INSERT")
-               if e.dxf.name != "vorlage_legende"]   # Plan-Vorlage zählt nicht als Symbol
-    assert len(inserts) == 8
-    belegung = doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
-    assert len(belegung) == 1
-    assert "(DL)" in belegung[0].text and "(BL)" in belegung[0].text  # RZ=DL, SL/AP=BL
+               if e.has_xdata("NOTBELEUCHTUNG")]   # Plan-Symbole; Blatt-Deko trägt kein XDATA
+    assert len(inserts) == 7
+    # Owner-Fixierung: Blatt-Modus trägt ALLES — keine Belegungs-Box daneben.
+    assert not doc.modelspace().query("MTEXT[layer=='din_SIBEL_11_system']")
 
     png = tmp_path / "mix.png"
     dxf_zu_pdf(dxf, png, dpi=100)

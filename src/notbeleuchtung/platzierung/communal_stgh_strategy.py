@@ -24,6 +24,8 @@ Originals: liegen die RZ über >20 m gespreizt, teilt die x-Mitte in Bauteil A
 """
 from __future__ import annotations
 
+import math
+
 from notbeleuchtung.hauptengine.contracts import (
     NormProvider,
     Platzierung,
@@ -82,6 +84,14 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
     = Segment-Ausgangs-Endpunkt; Orientierung/Bauteil generativ (s. Modul-Docstring).
     """
     segmente = raum.zirkulation.segmente
+    exits = [a.xy_mm for a in raum.ausgaenge]
+
+    def _naechster_exit(p):
+        return min(exits, key=lambda e: math.hypot(e[0] - p[0], e[1] - p[1])) if exits else None
+
+    # Position bleibt der Segment-Endpunkt `polyline[-1]` (Provider-Vertrag: dort
+    # sitzt das RZ). Owner-Fix betrifft NUR die Pfeilrichtung (s.u.): nie ins
+    # blinde Gang-Ende, immer zur Tür bzw. zum nächsten Ausgang.
     endpoints: list[tuple[float, float]] = [
         (seg.polyline_mm[-1] if seg.polyline_mm else (0.0, 0.0)) for seg in segmente
     ]
@@ -92,14 +102,52 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
         if not seg.polyline_mm:
             continue
         anf = norm.fuer_fluchtweg_abschnitt(seg)
-        # Laufrichtung aus dem letzten Polyline-Schenkel (Vorgänger → Endpunkt).
-        px, py = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
-        richtung, fallback_rotation = _richtung_und_rotation(ex - px, ey - py)
-        catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
-        # Dedizierter Richtungs-Block zeigt schon richtig → keine Rotation/Spiegelung.
-        # Sonst (z.B. 'oben') generativ über Rotation, 'rechts' zusätzlich gespiegelt.
-        rotation = 0.0 if is_directional else fallback_rotation
-        mirror_x = False if is_directional else (richtung == "rechts")
+        anlauf = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
+        # Nur AUSGANGS-Türen qualifizieren (ist_notausgang oder Stiegenhaus-Anschluss) —
+        # sonst zeigte der Pfeil in Nebenräume (Technik/Wohnung) statt zum Ausgang.
+        typen = {r.id: (r.raum_typ or "").upper() for r in raum.raeume}
+        ausgangs_tueren = [
+            t for t in raum.tueren
+            if t.ist_notausgang
+            or "STIEGENHAUS" in (typen.get(t.von_raum or "", ""), typen.get(t.nach_raum or "", ""))
+        ]
+        tuer = min(
+            ausgangs_tueren,
+            key=lambda t: math.hypot(t.xy_mm[0] - ex, t.xy_mm[1] - ey),
+            default=None,
+        )
+        d_tuer = (
+            math.hypot(tuer.xy_mm[0] - ex, tuer.xy_mm[1] - ey) if tuer is not None else 1e12
+        )
+        naechster = _naechster_exit((ex, ey))
+        d_exit = math.hypot(naechster[0] - ex, naechster[1] - ey) if naechster else 1e12
+        if d_tuer <= 2000.0:
+            # Owner-Regel: an Türen IMMER das Pfeil-unten-Zeichen, rotiert sodass der
+            # Pfeil ZUR/DURCH die Tür zeigt (Anlauf-Richtung, wenn RZ auf der Tür sitzt).
+            if d_tuer > 50.0:
+                dx, dy = tuer.xy_mm[0] - ex, tuer.xy_mm[1] - ey
+            else:
+                dx, dy = ex - anlauf[0], ey - anlauf[1]
+            richtung = "unten"
+            catalog_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
+            rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+            mirror_x = False
+        elif naechster is not None and d_exit > 1000.0:
+            # Kein Tür-Anker → Pfeil zeigt ZUM nächsten Ausgang (nie ins blinde Ende).
+            richtung, fallback_rotation = _richtung_und_rotation(
+                naechster[0] - ex, naechster[1] - ey
+            )
+            catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
+            rotation = 0.0 if is_directional else fallback_rotation
+            mirror_x = False if is_directional else (richtung == "rechts")
+        else:
+            # Auf dem Ausgang selbst (oder keine Ausgänge): Laufrichtung des Segments
+            # (durch die Öffnung hinaus) — historisches 4OG-Verhalten.
+            px, py = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
+            richtung, fallback_rotation = _richtung_und_rotation(ex - px, ey - py)
+            catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
+            rotation = 0.0 if is_directional else fallback_rotation
+            mirror_x = False if is_directional else (richtung == "rechts")
         building = assign_building(ex)
         out.append(
             Platzierung(

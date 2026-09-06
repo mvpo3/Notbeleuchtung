@@ -22,6 +22,7 @@ from .contracts import (
     RaumModell,
 )
 from .dwg_input import stelle_dxf_bereit
+from .photometrie_befund import PhotometrieBefund, photometrie_des_bundles
 from .render import render_dxf
 from .validierung import pruefbericht
 
@@ -135,7 +136,12 @@ def run(
     lb_path: str | None = None,
     plankopf: dict | None = None,
     projekt_kontext: ProjektKontext | None = None,
+    photometrie: PhotometrieBefund | None = None,
 ) -> Output:
+    # Grundlage des Lux-Nachweises: reist mit dem Bundle, das die Registry gebaut
+    # hat (typisiert, kein Zugriff auf Platzierer-Interna). Ein explizit
+    # übergebener Befund gewinnt; ohne beides wird nichts behauptet.
+    photometrie = photometrie or photometrie_des_bundles(bundle)
     raum = _parse_raum(bundle, dxf_path, floor)
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
@@ -161,15 +167,28 @@ def run(
         platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     pruef = pruefbericht(
         raum, platzierung, lb, norm=bundle.norm, oib=oib_befund,
-        projekt_kontext=projekt_kontext,
+        photometrie=photometrie, projekt_kontext=projekt_kontext,
     )
     if out_path is not None:
-        render_summary = render_dxf(platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf)
+        render_summary = render_dxf(
+            platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
+            photometrie=photometrie,
+        )
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
     render_summary["coverage"] = _coverage(raum, platzierung, lb)
     render_summary["pruefung"] = pruef
+    if photometrie is not None:
+        render_summary["photometrie"] = {
+            "quelle": photometrie.quelle,
+            "ldt": photometrie.ldt_name,
+            "rotationssymmetrisch": photometrie.rotationssymmetrisch,
+            "ausrichtung_zugesichert": photometrie.ausrichtung_zugesichert,
+            "vollstaendiger_nachweis": photometrie.vollstaendiger_nachweis,
+            "hinweis": photometrie.hinweis,
+            "einschraenkungen": list(photometrie.einschraenkungen),
+        }
     if lb_review is not None:
         render_summary["lb_review"] = lb_review
     if oib_befund is not None:

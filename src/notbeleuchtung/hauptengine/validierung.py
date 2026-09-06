@@ -15,6 +15,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 
 from .contracts import LBVorgabe, NormProvider, PlatzierungsErgebnis, RaumModell
+from .photometrie_befund import PhotometrieBefund
 
 _MIN_MONTAGEHOEHE_MM = 2000.0   # EN 1838 §4.1 (Montagehöhe ≥ 2 m)
 
@@ -109,6 +110,7 @@ def pruefe(
     *,
     norm: NormProvider | None = None,
     oib: object | None = None,
+    photometrie: PhotometrieBefund | None = None,
     projekt_kontext: object | None = None,
 ) -> list[Befund]:
     """Prüft die Platzierung gegen die aus den Contracts ableitbaren Norm-Regeln."""
@@ -499,6 +501,22 @@ def pruefe(
                 "Zusatz-Trigger wurden dort NICHT angewendet",
             ))
 
+    # 15. Grundlage des lichttechnischen Nachweises (Photometrie).
+    #     Ein bestandener Lux-Grenzwert sagt nichts darüber, WOMIT gerechnet wurde.
+    #     Ist die Lichtverteilung anisotrop und die physische Ausrichtung der Optik
+    #     nicht zugesichert, rechnet die Engine konservativ (Minimum über alle
+    #     C-Ebenen) — das trägt keinen vollständigen Nachweis. Ebenso wenig der
+    #     Rückfall auf die isotrope 200-cd-Annahme bei fehlendem Katalog.
+    #     Diese Einschränkung ist unabhängig vom Prüfergebnis und wird von einem
+    #     bestandenen Grenzwert NICHT aufgehoben (Muster 8b/12: „ungeprüft ≠ erfüllt").
+    #     Ohne Befund (Fake-Bundle, fremde Verdrahtung) wird nichts behauptet.
+    if photometrie is not None:
+        befunde.append(Befund(
+            "Lichttechnischer Nachweis: Photometrie-Grundlage (EN 1838 §4.2.1/§4.3.1)",
+            photometrie.status,
+            photometrie.als_zeile(),
+        ))
+
     return befunde
 
 
@@ -595,14 +613,22 @@ def pruefbericht(
     *,
     norm: NormProvider | None = None,
     oib: object | None = None,
+    photometrie: PhotometrieBefund | None = None,
     projekt_kontext: object | None = None,
 ) -> dict:
     """Serialisierbarer Prüfbericht für den Pipeline-/API-Summary.
 
     `oib` (optional) ist der Erforderlichkeits-Befund aus dem OIB-Pfad. Er wird
     nur gelesen, um ungeklärte Geltungsbereiche sichtbar zu machen (Regel 13).
+
+    `photometrie` (optional) ist die Grundlage des Lux-Nachweises (Regel 15) — sie
+    macht eine konservative Abschätzung oder den isotropen Rückfall sichtbar. Ohne
+    Befund entfällt die Regel; es wird kein Nachweis unterstellt.
     """
-    befunde = pruefe(raum, platzierung, lb, norm=norm, oib=oib, projekt_kontext=projekt_kontext)
+    befunde = pruefe(
+        raum, platzierung, lb, norm=norm, oib=oib,
+        photometrie=photometrie, projekt_kontext=projekt_kontext,
+    )
     return {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],
