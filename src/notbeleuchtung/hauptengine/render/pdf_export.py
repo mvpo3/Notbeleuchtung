@@ -7,8 +7,8 @@ Sicht-/Druck-Dokument. Reine Ausgabe-Schicht; erzeugt kein neues Fach-Wissen.
 matplotlib + ezdxf.addons.drawing sind optionale Abhängigkeiten (Extra `render`); der
 Import passiert lazy, damit der Rest der Engine ohne sie läuft.
 
-CAD-Hintergrund: `dunkel=True` (Default) = schwarzer Plan-Hintergrund (Layer-Farbe 7
-weiß, Symbole poppen); `dunkel=False` = weißer Druckgrund.
+CAD-Hintergrund: `dunkel=False` (Default, Owner-Regel 2026-09-06: das Liefer-PDF
+ist WEISS) = weißer Druckgrund; `dunkel=True` = schwarzer CAD-Look auf Wunsch.
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ def dxf_zu_pdf(
     dxf_path: str | Path,
     pdf_path: str | Path,
     *,
-    dunkel: bool = True,
+    dunkel: bool = False,
     dpi: int = 300,
     breite_zoll: float = 16.5,
     hoehe_zoll: float = 11.7,   # A3 quer
