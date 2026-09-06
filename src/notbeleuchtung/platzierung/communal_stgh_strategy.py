@@ -34,47 +34,18 @@ from notbeleuchtung.hauptengine.contracts import (
 
 # Slice 2.46.3 (elektro-planer): Communal-STGH hängt am Allgemeinverteiler (AGV,
 # getrennt vom Wohnungszähler). SV = Sicherheitsbeleuchtung, dauergeschaltet → F13.
-_AGV_SV_F = 13
-# Zwei Bauteile annehmen, wenn die RZ-x-Spanne diese Lücke überschreitet.
-_BUILDING_SPREAD_MM = 20000.0
-
-
-def _richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:
-    """Segment-Laufrichtung → (richtung, rotation_deg), auf die dominante Achse
-    gerundet. Pfeil zeigt Richtung Ausgang (= Segment-Endpunkt)."""
-    if abs(dx) >= abs(dy):
-        return ("rechts", 0.0) if dx >= 0 else ("links", 180.0)
-    return ("oben", 90.0) if dy >= 0 else ("unten", 270.0)
-
-
-# Richtung → Key-Suffix des dediziert orientierten Pfeil-Blocks. 'oben' hat keinen
-# eigenen Block (kein „nach oben" in der Lib) → Fallback via Rotation.
-_RICHTUNG_SUFFIX = {"unten": "_unten", "links": "_links", "rechts": "_rechts"}
-
-
-def _select_key(symbol_katalog_keys: list[str], richtung: str) -> tuple[str, bool]:
-    """Richtungs-spezifischen Pfeil-Block wählen, falls die Norm ihn anbietet.
-
-    Rückgabe `(catalog_key, is_directional)`. `is_directional=True` heißt: der Block
-    zeigt bereits in die Laufrichtung (links/rechts/unten) → der Platzierer setzt
-    rotation/mirror auf 0/False. Sonst der erste Key + generative Rotation/Spiegelung.
-    """
-    keys = symbol_katalog_keys or ["notlicht_ks_stiege"]
-    suffix = _RICHTUNG_SUFFIX.get(richtung)
-    if suffix:
-        for k in keys:
-            if k.endswith(suffix):
-                return k, True
-    return keys[0], False
-
-
-def _building_assigner(x_coords: list[float]):
-    """Cluster-Regel A|B aus der x-Verteilung der RZ (Original 2.46.3).
-    A = westlich (kleineres x), B = östlich. Ein Cluster → alles A."""
-    if x_coords and (max(x_coords) - min(x_coords) > _BUILDING_SPREAD_MM):
-        mid = (max(x_coords) + min(x_coords)) / 2.0
-        return lambda x: "A" if x < mid else "B"
-    return lambda _x: "A"
+from .bausteine import (
+    AGV_SV_F as _AGV_SV_F,
+)
+from .bausteine import (
+    building_assigner as _building_assigner,
+)
+from .bausteine import (
+    richtung_und_rotation as _richtung_und_rotation,
+)
+from .bausteine import (
+    select_key as _select_key,
+)
 
 
 def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:

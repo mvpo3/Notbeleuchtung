@@ -20,8 +20,10 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import building_assigner as _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
+from .kontext import LEER, PlatzierungsKontext
 from .lux import lux_raster, ud_min_aus_norm
 from .oib_gate import sanitaer_scope, verkehr_scope
 
@@ -30,7 +32,7 @@ _ANTIPANIK_MAX_LEUCHTEN = 25
 _ANTIPANIK_MAX_RUNDEN = 6
 
 # WC/Sanitär-Raumtypen für den flächenbasierten Antipanik-Trigger (EN 1838 §4.3).
-_WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+from .bausteine import WC_TYPEN as _WC_TYPEN
 
 
 def _antipanik_referenz(norm: NormProvider):
@@ -203,6 +205,8 @@ def plan_antipanik(
     norm: NormProvider,
     oib: OibBefund | None = None,
     i_cd_fn_je_key: dict | None = None,
+    *,
+    kontext: PlatzierungsKontext | None = None,
 ) -> list[Platzierung]:
     """Antipanik-Leuchten je Raum mit Norm-Klassifikation 'antipanik' (offene Fläche).
 
@@ -211,4 +215,9 @@ def plan_antipanik(
     `i_cd_fn_je_key` (catalog_key → Lichtstärke-Callable) lässt den 0,5-lx-Nachweis
     mit der Photometrie der tatsächlichen Leuchtenfamilie rechnen.
     """
-    return _plan_raumleuchten(raum, norm, "antipanik", oib=oib, i_cd_fn_je_key=i_cd_fn_je_key)
+    k = kontext or LEER
+    return _plan_raumleuchten(
+        raum, norm, "antipanik",
+        oib=oib if oib is not None else k.oib,
+        i_cd_fn_je_key=i_cd_fn_je_key if i_cd_fn_je_key is not None else dict(k.i_cd_fn_je_key),
+    )

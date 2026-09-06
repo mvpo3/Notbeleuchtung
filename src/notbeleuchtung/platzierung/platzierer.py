@@ -39,6 +39,7 @@ from .deckung import verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
 from .gang_strategy import plan_rettungszeichen_gang
 from .graph import build_circulation_graph, kreuzungs_anker
+from .kontext import PlatzierungsKontext
 from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
 
 
@@ -80,16 +81,20 @@ class NotlichtPlatzierer:
         *,
         oib: OibBefund | None = None,
     ) -> PlatzierungsErgebnis:
+        # Querschneidende Eingaben EINMAL bündeln — künftige Nähte sind ein
+        # Kontext-Feld statt neuer Parameter-Fädelei durch alle Signaturen.
+        kontext = PlatzierungsKontext(
+            lb=lb, oib=oib,
+            i_cd_fn=self._i_cd_fn, i_cd_fn_je_key=self._i_cd_fn_je_key,
+        )
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
-            *plan_antipanik(                             # Fläche (Trigger OIB-gegated)
-                raum, norm, oib=oib, i_cd_fn_je_key=self._i_cd_fn_je_key
-            ),
-            *plan_sonderstellen(raum, norm, lb),         # Pflichtstellen §4.1.2 (RZ nur mit LB)
+            *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
+            *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
             *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)
-            *verdichte_fluchtweg(raum, norm, i_cd_fn=self._i_cd_fn),  # Linie + Deckung (Lux)
+            *verdichte_fluchtweg(raum, norm, kontext=kontext),  # Linie + Deckung (Lux)
         ]
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
