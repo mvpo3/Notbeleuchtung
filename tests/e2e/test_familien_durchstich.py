@@ -106,14 +106,16 @@ def barawitzka():
     return _run(BARAWITZKA_EG, "EG")
 
 
-def test_barawitzka_tueren_erkannt_raeume_luecke(barawitzka):
-    """Ist-Stand: Tür-Erkennung trägt (≥ 60), Raum-Layer ist Nacharbeit (nur ~2 Räume).
+def test_barawitzka_tueren_und_raeume_erkannt(barawitzka):
+    """Ist-Stand seit der Raum-Kaskade L→H→F→R im Provider: Türen (≥ 60) UND Räume.
 
-    Erschließt die Raumerkennung Barawitzka später richtig, kippt der Raum-Assert —
-    dann Bänder anheben (wie Fischamender bei B2-Fix)."""
+    Vorher war die Raum-Lücke der Ist-Stand (~2 Räume aus dem Raum-Layer); die
+    Kaskade holt die HATCH-Räume dazu (Prüfstrecke: 47 Räume, 40 typisiert)."""
     r = barawitzka.raum
     assert len(r.tueren) >= 60, f"nur {len(r.tueren)} Türen — Tür-Erkennungs-Regress"
-    assert len(r.raeume) < 15, "Raum-Layer erschlossen? → Test-Erwartungen aktualisieren"
+    assert len(r.raeume) >= 41, f"nur {len(r.raeume)} Räume — Kaskaden-Regress"
+    typed = sum(1 for x in r.raeume if x.raum_typ and x.raum_typ != "UNBEKANNT")
+    assert typed >= 30, f"nur {typed} typisiert — Stempel/Typ-Regress"
 
 
 # ---- Muthgasse 109B E2 ----
@@ -130,11 +132,14 @@ def test_muthgasse_ist_stand_wand_layer_unerschlossen():
         run(build_default_bundle(), str(MUTHGASSE_E2), "E2")
 
 
-def test_barawitzka_leeres_ergebnis_nicht_ok(barawitzka):
-    """116 Türen + 2 Räume + 0 Symbole darf NICHT als „ok" durchgehen (Regel 8c).
+def test_barawitzka_duennes_ergebnis_nicht_ok(barawitzka):
+    """47 Räume + 116 Türen, aber 0 Ausgänge/0 Segmente → NICHT „ok" (fail-closed).
 
-    Genau dieser Plan bestand die Prüfung vor Regel 8c als „ok", weil alle
-    Plausibilitäts-Regeln auf n_raeume ≥ 15 gaten."""
+    Vor der Raum-Kaskade war der Ist-Stand „2 Räume + 0 Symbole" und Regel 8c
+    (widersprüchliches Ergebnis) trug den Befund. Mit erschlossenen Räumen bleibt
+    die Prüfbasis-Lücke (keine Ausgänge/Fluchtwege erkannt) — die muss weiterhin
+    als Nicht-ok ausgewiesen werden."""
     pruef = barawitzka.render_summary["pruefung"]
-    assert pruef["status"] != "ok", "leeres Barawitzka-Ergebnis bestand als ok"
-    assert any("widersprüchlich" in b["regel"] for b in pruef["befunde"])
+    assert pruef["status"] != "ok", "dünnes Barawitzka-Ergebnis bestand als ok"
+    assert any("Prüfbasis" in b["regel"] for b in pruef["befunde"]), \
+        [b["regel"] for b in pruef["befunde"]]
