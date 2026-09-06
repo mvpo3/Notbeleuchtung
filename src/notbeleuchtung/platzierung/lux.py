@@ -106,6 +106,15 @@ def lux_raster(
     Ist `i_cd_fn` gesetzt, überschreibt es `i_cd`: die Lichtstärke wird je Rasterpunkt
     aus dem Ausstrahlwinkel γ [Grad] = atan(horizontale Distanz / h) bestimmt
     (Hersteller-Photometrie). Sonst wird konstant `i_cd` (isotrop) gerechnet.
+
+    **Leuchten-Items:** `(x, y)` ODER `(x, y, optik_azimut_grad)`. Trägt eine
+    Leuchte einen Azimut (C0-Keule der Optik zeigt in diese Plan-Richtung, z.B.
+    Korridor-Achse aus `leuchten_auf_linie_mit_richtung`), wird die C-Ebene
+    RELATIV zur Optik übergeben — das Callable darf dann direkt `I(γ, C)`
+    auswerten. Ohne Azimut bleibt es beim Welt-C (bisheriges Verhalten; ein
+    konservatives Callable ignoriert den Wert ohnehin). Nicht kombinieren mit
+    einem Callable, das selbst ein globales `c0_azimut` abzieht — sonst wird
+    doppelt gedreht.
     """
     minx, miny, maxx, maxy = bounds_mm
     xs = np.arange(minx + rand_mm, maxx - rand_mm + 1e-6, raster_mm)
@@ -115,17 +124,21 @@ def lux_raster(
     gx, gy = np.meshgrid(xs, ys)
     h_mm = montagehoehe_m * 1000.0
     e = np.zeros_like(gx, dtype=float)
-    for lx, ly in leuchten:
+    for leuchte in leuchten:
+        lx, ly = leuchte[0], leuchte[1]
+        az = leuchte[2] if len(leuchte) > 2 else None
         dx = gx - lx
         dy = gy - ly
         d_h = np.sqrt(dx * dx + dy * dy)          # horizontale Distanz (mm)
         d = np.sqrt(d_h * d_h + h_mm * h_mm)       # Schrägdistanz zur Leuchte
         cos_theta = h_mm / d                       # cos zwischen Lot und Strahl
         # I je Punkt: richtungsabhängig aus Photometrie (γ UND C-Ebene) oder
-        # konstant isotrop.
+        # konstant isotrop. Mit Leuchten-Azimut ist C relativ zur Optik-C0.
+        c = np.degrees(np.arctan2(dy, dx)) % 360.0
+        if az is not None:
+            c = (c - az) % 360.0
         i = _i_cd_vektor(
-            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)),
-            np.degrees(np.arctan2(dy, dx)) % 360.0,
+            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)), c,
         ) if i_cd_fn is not None else i_cd
         # E = I * cos^3(theta) / h^2 ; h in Metern (I in cd, Ergebnis in lx)
         e += i * cos_theta**3 / (montagehoehe_m**2)
@@ -162,13 +175,19 @@ def lux_punkte(
     py = np.array([p[1] for p in punkte], dtype=float)
     h_mm = montagehoehe_m * 1000.0
     e = np.zeros_like(px, dtype=float)
-    for lx, ly in leuchten:
+    for leuchte in leuchten:
+        lx, ly = leuchte[0], leuchte[1]
+        az = leuchte[2] if len(leuchte) > 2 else None
         d_h = np.sqrt((px - lx) ** 2 + (py - ly) ** 2)
         d = np.sqrt(d_h * d_h + h_mm * h_mm)
         cos_theta = h_mm / d
+        # Leuchten-Items wie in `lux_raster`: optionales drittes Element =
+        # Optik-Azimut → C relativ zur Optik-C0.
+        c = np.degrees(np.arctan2(py - ly, px - lx)) % 360.0
+        if az is not None:
+            c = (c - az) % 360.0
         i = _i_cd_vektor(
-            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)),
-            np.degrees(np.arctan2(py - ly, px - lx)) % 360.0,
+            i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)), c,
         ) if i_cd_fn is not None else i_cd
         e += i * cos_theta**3 / (montagehoehe_m**2)
     mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
@@ -188,6 +207,7 @@ def max_leuchtenabstand_mm(
     ziel_lux: float = 1.0,
     min_mm: float = 4000.0,
     max_mm: float = 30000.0,
+    optik_entlang_reihe: bool = False,
 ) -> float:
     """Photometrisch maximaler Leuchtenabstand einer Reihe für `ziel_lux` am
     ungünstigsten Punkt (Mitte zwischen zwei Leuchten, 4 Nachbarn berücksichtigt).
@@ -195,10 +215,12 @@ def max_leuchtenabstand_mm(
     Bisektion über [min_mm, max_mm]; Startwert der Fluchtweg-Verdichtung — der
     Feinnachweis (`lux_punkte` auf der Mittellinie inkl. Ud) läuft danach immer.
 
-    **C-Ebene:** hier existiert keine — gerechnet wird eine abstrakte Reihe ohne
-    Plan-Geometrie. Das Callable wird deshalb mit `c_grad=None` gefragt und
-    antwortet konservativ (Minimum über C). Ein fester C-Winkel wäre wieder die
-    C0-Annahme; der Feinnachweis danach rechnet ohnehin richtungsrichtig.
+    **C-Ebene:** hier existiert keine Plan-Geometrie — gerechnet wird eine
+    abstrakte Reihe. Default: `c_grad=None` → das Callable antwortet konservativ
+    (Minimum über C). Mit `optik_entlang_reihe=True` (Aufrufer sichert zu, dass
+    die Optik-C0 längs der Reihe montiert wird — Korridor-Fall mit Azimut aus
+    `leuchten_auf_linie_mit_richtung`) wird C=0 gefragt: der Mittenpunkt liegt
+    exakt in der C0/C180-Keule.
     """
     def e_mitte(d_mm: float) -> float:
         h_mm = montagehoehe_m * 1000.0
@@ -207,14 +229,10 @@ def max_leuchtenabstand_mm(
             d_h = abs(k * d_mm)
             gamma = float(np.degrees(np.arctan2(d_h, h_mm)))
             dist = (d_h**2 + h_mm**2) ** 0.5
-            # Richtung UNBEKANNT: dieser Startwert rechnet über eine abstrakte
-            # Leuchtenreihe ohne Plan-Geometrie, es gibt hier keine C-Ebene.
-            # Deshalb ausdrücklich `c_grad=None` — das Callable antwortet dann
-            # konservativ (Minimum über alle C-Ebenen) statt still C0 anzunehmen.
             if i_cd_fn is None:
                 i = i_cd
             elif _nimmt_c_ebene(i_cd_fn):
-                i = i_cd_fn(gamma, None)
+                i = i_cd_fn(gamma, 0.0 if optik_entlang_reihe else None)
             else:
                 i = i_cd_fn(gamma)
             e += i * (h_mm / dist) ** 3 / (montagehoehe_m**2)
