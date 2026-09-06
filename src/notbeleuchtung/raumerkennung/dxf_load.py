@@ -24,8 +24,12 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import BBox
 #   Fischamender: A_Waende / A_Wand…
 #   ArchiCAD-num: „110/120/130 Wand …" (auch mit Präfix ``PP_2_110 Wand``,
 #                 Suffix ``_Stift_Nr__N``)
-WALL_PATTERN = re.compile(r"02-(?:TWA|ZWA|WDA)|A_Wa?ende|A_Wand|(?<!\d)1[123]0 Wand",
-                          re.IGNORECASE)
+#   ArchiCAD-New: ``New_015 Innenwände`` (Rennweg; Umlaut ggf. cp-dekodiert
+#                 → tolerant ``w.nde``)
+WALL_PATTERN = re.compile(
+    r"02-(?:TWA|ZWA|WDA)|A_Wa?ende|A_Wand|(?<!\d)1[123]0 Wand"
+    r"|New_0?\d{2} (?:innen|au\S{0,2}en)?w.nde",
+    re.IGNORECASE)
 
 # Rückwärts-kompatibel (Mollgasse-Tests/Direktnutzung).
 WALL_PREFIXES: tuple[str, ...] = ("02-TWA", "02-ZWA", "02-WDA")
