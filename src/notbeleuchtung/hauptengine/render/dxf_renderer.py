@@ -886,6 +886,26 @@ def _set_vport(doc, raum: RaumModell, platzierung: PlatzierungsErgebnis) -> None
     doc.set_modelspace_vport(height, center=((x0 + x1) / 2.0, (y0 + y1) / 2.0))
 
 
+_PHOTOMETRIE_VAR = "NOTBELEUCHTUNG_PHOTOMETRIE"
+
+
+def _setze_photometrie_eigenschaft(doc, photometrie) -> bool:
+    """Grundlage des Lux-Nachweises als DXF-Zeichnungseigenschaft (DWGPROPS).
+
+    Der Prüfbericht-Kasten entfällt im Blatt-Modus (Owner-Fixierung 2026-09-05:
+    das Blatt trägt alles, keine Zusatz-Boxen). Damit die Einschränkung
+    „konservativ gerechnet, vollständiger Nachweis offen" trotzdem in JEDER
+    DXF-Ausgabe steht, wird sie zusätzlich in die Zeichnungseigenschaften
+    geschrieben — sichtbar in CAD unter Zeichnungseigenschaften/Benutzerdefiniert
+    und im DXF-Header, ohne das Blattlayout anzutasten.
+    """
+    if photometrie is None:
+        return False
+    marke = "OK" if photometrie.vollstaendiger_nachweis else "EINSCHRAENKUNG"
+    doc.header.custom_vars.append(_PHOTOMETRIE_VAR, f"[{marke}] {photometrie.als_zeile()}")
+    return True
+
+
 def render_dxf(
     platzierung: PlatzierungsErgebnis,
     raum: RaumModell,
@@ -893,18 +913,27 @@ def render_dxf(
     lb: LBVorgabe | None = None,
     pruefung: dict | None = None,
     plankopf: dict | None = None,
+    photometrie=None,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
     `lb` (2. Input) → SV-Anlagen-Legende. `pruefung` (Prüfbericht-Dict aus
     validierung.pruefbericht) → Prüfbericht-Legende. `plankopf` (dict: projekt/datum/
     ersteller/massstab) → füllt die Schriftfeld-Kopf-Felder.
+
+    `photometrie` (`PhotometrieBefund`, optional) → die Grundlage des Lux-Nachweises.
+    Sie steht als Befund im Prüfbericht (Fallback-Modus: eigene Box) UND zusätzlich
+    als **Zeichnungseigenschaft** in der DXF selbst — im Blatt-Modus trägt das Blatt
+    laut Owner-Fixierung keine Zusatz-Boxen, die Einschränkung darf dort aber nicht
+    aus der Ausgabe verschwinden.
     """
     out_path = Path(out_path)
     doc = ezdxf.new("R2018", units=4)  # 4 = mm
     library.sync_layers(doc)
     _add_own_layers(doc)
     msp = doc.modelspace()
+
+    _setze_photometrie_eigenschaft(doc, photometrie)
 
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
@@ -966,6 +995,7 @@ def render_dxf(
         "stueckliste_drawn": stueckliste_drawn,
         "plankopf_drawn": plankopf_drawn,
         "pruefbericht_drawn": pruefbericht_drawn,
+        "photometrie_hinweis_drawn": photometrie is not None,
         "stromkreis_belegung_drawn": belegung_drawn,
         "anlage_drawn": anlage_drawn,
         "vorlage_drawn": vorlage_drawn,
