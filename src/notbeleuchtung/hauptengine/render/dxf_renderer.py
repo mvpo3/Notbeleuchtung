@@ -745,11 +745,11 @@ def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> b
     """Prüf-/Statusvermerk als BLATT-FELD (Owner-GO 2026-09-06).
 
     Die Owner-Fixierung „keine Zusatz-Boxen" gilt weiter — dieses Feld sitzt IM
-    Blatt, in der freien Bande der rechten Spalte zwischen Legende und
-    PLANNUMMER-Block (Vorlagen-Einheiten y 566..602, Trennlinie bei 563.5 liegt
-    in der Vorlage). Es trägt den VERMERK (Gesamtstatus + Zählung + offene
-    Nachweis-Grundlage), nicht den Bericht — der volle Prüfbericht bleibt im
-    Summary/API (Enis-Naht Regel 13/15: Sichtbarkeit AM BLATT).
+    Blatt, in der freien Bande der rechten Spalte zwischen Legenden-Unterkante
+    (614,5) und PLANNUMMER-Kopf (~596; Vorlagen-Stand Owner-Update 2026-09-06).
+    Es trägt den VERMERK (Gesamtstatus + Zählung + offene Nachweis-Grundlage),
+    nicht den Bericht — der volle Prüfbericht bleibt im Summary/API (Enis-Naht
+    Regel 13/15: Sichtbarkeit AM BLATT).
     """
     if not pruefung:
         return False
@@ -767,25 +767,26 @@ def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> b
             attribs["color"] = color
         msp.add_text(t, dxfattribs=attribs).set_placement((x * S + dx, y * S + dy))
 
-    # Bande zwischen Legenden-Unterkante (595.9) und PLANNUMMER-Trennlinie (563.5).
-    text("PRÜFVERMERK (EN 1838)", 1189.0, 590.5, 2.9)
-    text(f"Status: {label}", 1189.0, 584.5, 2.4, color=farbe)
+    # Kompakt-Bande 596..614,5 (Owner-Update 2026-09-06): 4 Zeilen, Status und
+    # Zählung teilen sich eine Zeile.
+    text("PRÜFVERMERK (EN 1838)", 2087.3, 610.8, 2.0)
+    text(f"Status: {label}", 2087.3, 606.7, 1.8, color=farbe)
     # Nur ASCII-Trenner: der Standard-TEXT-Font der Vorlage hat keine Glyphen
     # für Mittelpunkt/Gedankenstrich (rendern als Kästchen).
     text(
-        f"{len(befunde)} Regeln geprüft: {n_ok} ok / {n_warn} Warnung(en) / "
+        f"{len(befunde)} Regeln: {n_ok} ok / {n_warn} Warnung(en) / "
         f"{n_fehler} Fehler",
-        1189.0, 580.0, 1.8,
+        2120.0, 606.7, 1.5,
     )
-    y = 576.0
+    y = 603.2
     if photometrie is not None and not photometrie.vollstaendiger_nachweis:
         text(
             "Lichttechn. Nachweis: konservative Abschätzung - vollständiger "
             "Nachweis offen",
-            1189.0, y, 1.8,
+            2087.3, y, 1.4,
         )
-        y -= 4.0
-    text("Details: Prüfbericht im Plan-Summary (API)", 1189.0, y, 1.8)
+        y -= 3.4
+    text("Details: Prüfbericht im Plan-Summary (API)", 2087.3, y, 1.4)
     return True
 
 
@@ -794,11 +795,16 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
     """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
 
     Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
-    Rivoplan-Plankopf. Die Vorlage (Layout1, Kern 710..1392 × 275..804, Fenster
-    710..1188) wird so skaliert und verschoben, dass der generierte Grundriss im
-    Planfenster liegt. Modelspace statt Paperspace-Viewport, weil das ezdxf-
-    PDF-Rendering Viewport-Inhalte nicht maßstabstreu darstellt — so ist das
-    Blatt in AutoCAD und PDF identisch."""
+    Rivoplan-Plankopf. Vorlagen-Stand OWNER-UPDATE 2026-09-06 (neu vermessen):
+    rechte Spalte x 2086,6..2291,3, Gesamt y 308,5..838,2; das Planfenster ist
+    jetzt ein VIEWPORT (id 4: x 1609,5..2086,6 × y 308,4..838,2) statt eines
+    Rahmen-Rechtecks — der Fenster-Rahmen wird deshalb von uns gezeichnet.
+    Blatt-Legende hat zwei neue Zeilen (Gruppenbatterie-Verteiler ·
+    Spot-Aufheller); Owner-platzierte Symbol-INSERTs im Kern werden mitkopiert,
+    Text-Bestückung überspringt Zeilen, die schon ein Symbol tragen. Modelspace
+    statt Paperspace-Viewport, weil das ezdxf-PDF-Rendering Viewport-Inhalte
+    nicht maßstabstreu darstellt — so ist das Blatt in AutoCAD und PDF
+    identisch."""
     from ezdxf.math import Matrix44
 
     vorlage = _blatt_vorlage_doc()
@@ -806,9 +812,10 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
         return None
     quelle = vorlage.layout("Layout1")
 
-    # Vorlagen-Geometrie (vermessen): Fenster + Gesamtrahmen in Vorlagen-Einheiten.
-    FX0, FY0, FX1, FY1 = 710.0, 275.0, 1188.0, 804.0     # Planfenster
-    RX0, RY0, RX1, RY1 = 710.0, 275.0, 1392.0, 804.0     # Gesamtrahmen
+    # Vorlagen-Geometrie (Owner-Update 2026-09-06, vermessen): Planfenster =
+    # aktiver VIEWPORT (id 4), Gesamtrahmen = Fenster + rechte Spalte.
+    FX0, FY0, FX1, FY1 = 1609.5, 308.4, 2086.6, 838.2    # Planfenster (Viewport)
+    RX0, RY0, RX1, RY1 = 1609.5, 308.5, 2291.3, 838.2    # Gesamtrahmen
     fenster_w, fenster_h = FX1 - FX0, FY1 - FY0
     # GESCHOSS-Extents (echte Räume) statt Gebäude-bounds — sonst sitzt ein kleines
     # EG verloren im Fenster eines 50-m-Gebäude-Rahmens.
@@ -831,12 +838,31 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
                    "DG": "Dachgeschoss"}.get(raum.floor, raum.floor)
 
     def im_kern(x, y):
-        return 600.0 <= x <= 1500.0 and 200.0 <= y <= 900.0
+        return 1500.0 <= x <= 2400.0 and 250.0 <= y <= 900.0
 
     legenden_texte = {}
+    kopierte_symbol_y: list[float] = []
     for e in quelle:
         typ = e.dxftype()
         try:
+            if typ == "INSERT":
+                # Owner-platzierte Legenden-Symbole (z.B. Spot, Owner-Update
+                # 2026-09-06) mitnehmen: Block aus der Library importieren +
+                # transformiert referenzieren (add_foreign_entity trüge die
+                # Block-Definition nicht mit). Verirrte INSERTs außerhalb des
+                # Kerns (Verschiebe-Reste) fallen durch den Filter.
+                if not im_kern(e.dxf.insert.x, e.dxf.insert.y):
+                    continue
+                try:
+                    library.import_block(msp.doc, e.dxf.name.lower())
+                except KeyError:
+                    continue
+                msp.add_blockref(e.dxf.name.lower(), (e.dxf.insert.x * S + dx, e.dxf.insert.y * S + dy), dxfattribs={
+                    "xscale": e.dxf.xscale * S, "yscale": e.dxf.yscale * S,
+                    "rotation": e.dxf.rotation, "layer": LAYER_NOTBELEUCHTUNG,
+                })
+                kopierte_symbol_y.append(e.dxf.insert.y)
+                continue
             if typ == "LINE":
                 if not im_kern(e.dxf.start.x, e.dxf.start.y):
                     continue
@@ -888,16 +914,21 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
         except Exception:  # noqa: S112, BLE001 — Vorlagen-Sonderentities bewusst übersprungen
             continue
 
-    # Symbol-Spalte der Blatt-Legende (Spalte 1188..1214, Mitte ≈ 1201) bestücken.
+    # Symbol-Spalte der Blatt-Legende (Spalte 2086,8..2113,1, Mitte ≈ 2100)
+    # bestücken. Reihenfolge zählt: „gruppenbatterie-verteiler" vor
+    # „gruppenbatterie" (Substring), „spot" vor „aufheller" (Zeilentext
+    # „Spot-Aufheller" enthält beides).
     from ezdxf import bbox as _ezbbox
     _LEGENDE_BLOCKS = {
         "pfeil nach unten": ["notbeleuchtung- richtungspfeil nach unten"],
         "pfeil nach links": ["notbeleuchtung-richtungspfeil nach links"],
         "pfeil nach rechts": ["notbeleuchtung-richtungspfeil nach rechts"],
+        "spot": ["spot notbeleuchtung"],
         "aufheller": ["aufheller notbeleuchtung"],
         "antipanikleuchte": ["notbeleuchtung- antipanikleuchte"],
         "beidseitig": ["notbeleuchtung-richtungspfeil nach links",
                         "notbeleuchtung-richtungspfeil nach rechts"],
+        "gruppenbatterie-verteiler": ["gruppenbatterie-verteiler"],
         "gruppenbatterie": ["gruppenbatterie"],
     }
     for text, (tx, ty) in legenden_texte.items():
@@ -905,6 +936,8 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
         bloecke = next((b for k, b in _LEGENDE_BLOCKS.items() if k in low), None)
         if not bloecke:
             continue
+        if any(abs(sy - ty) < 7.0 for sy in kopierte_symbol_y):
+            continue   # Owner hat das Zeilen-Symbol schon selbst platziert
         for i, bname in enumerate(bloecke):
             try:
                 library.import_block(msp.doc, bname)
@@ -914,11 +947,18 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
             hoehe_lokal = 5.5 if len(bloecke) == 1 else 3.0
             sc = hoehe_lokal * S / max(bb.size.y, 1e-6)
             off_y = 0.0 if len(bloecke) == 1 else (1.7 - 3.4 * i)
-            wx = 1201.0 * S + dx
+            wx = 2100.0 * S + dx
             wy = (ty + 2.6 + off_y) * S + dy
             msp.add_blockref(bname, (wx, wy), dxfattribs={
                 "xscale": sc, "yscale": sc, "layer": LAYER_NOTBELEUCHTUNG,
             })
+    # Planfenster-Rahmen: in der Vorlage nur noch ein VIEWPORT (nicht kopierbar)
+    # — das Rechteck wird deshalb hier gezeichnet, damit das Blatt geschlossen ist.
+    msp.add_lwpolyline(
+        [(FX0 * S + dx, FY0 * S + dy), (FX1 * S + dx, FY0 * S + dy),
+         (FX1 * S + dx, FY1 * S + dy), (FX0 * S + dx, FY1 * S + dy)],
+        close=True, dxfattribs={"layer": LAYER_PLANKOPF},
+    )
     _blatt_pruefvermerk(msp, S, dx, dy, pruefung, photometrie)
     return (RX0 * S + dx, RY0 * S + dy, RX1 * S + dx, RY1 * S + dy)
 
