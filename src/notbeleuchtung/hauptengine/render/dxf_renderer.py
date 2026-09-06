@@ -407,9 +407,16 @@ def _draw_unterlage(msp, quelle_pfad: str | None, raum: RaumModell) -> int:
             (1.0, 10.0, 25.4, 1000.0),
             key=lambda f: abs(__import__("math").log(max(raum_w / (src_w * f), 1e-9))),
         )
+        # Nur was der Architekt ZEIGT: gefrorene/ausgeschaltete Layer der Quelle
+        # bleiben draußen (Baufeld E2: 95 % der 82k Entities lagen versteckt —
+        # 20-facher Import-/PDF-Aufwand für Unsichtbares).
+        versteckt = {
+            layer.dxf.name for layer in quelle.layers
+            if layer.is_frozen() or layer.is_off()
+        }
         kandidaten = [
             e for e in quelle.modelspace()
-            if e.dxftype() in _UNTERLAGE_TYPEN
+            if e.dxftype() in _UNTERLAGE_TYPEN and e.dxf.layer not in versteckt
         ]
         importer = Importer(quelle, msp.doc)
         importer.import_entities(kandidaten, msp)
