@@ -197,13 +197,21 @@ def test_ohne_projekt_kontext_kein_befund():
 
 
 # ── Bis zur tatsächlichen Ausgabe ───────────────────────────────────────────
-def test_befund_erreicht_den_gezeichneten_pruefbericht(tmp_path):
+def test_befund_erreicht_den_gezeichneten_pruefbericht(tmp_path, monkeypatch):
     """Sichtbarkeit bis zum Plan: der Befund steht im gezeichneten Prüfbericht
-    des DXF und nimmt den Gesamtstatus mit."""
+    des DXF und nimmt den Gesamtstatus mit.
+
+    Läuft auf dem FALLBACK-Pfad (ohne Blatt-Vorlage): im Blatt-Modus sind alle
+    Zusatz-Boxen inkl. Prüfbericht unterdrückt (Owner-Fixierung 2026-09-05, #115)
+    — der Befund lebt dort in Summary/API. Gleiche Naht wie der Regel-13-Test.
+    """
     ezdxf = pytest.importorskip("ezdxf")
     from notbeleuchtung.hauptengine.pipeline import run
+    from notbeleuchtung.hauptengine.render import dxf_renderer as dr
     from notbeleuchtung.hauptengine.render import render_dxf
     from notbeleuchtung.hauptengine.validierung import pruefbericht
+
+    monkeypatch.setitem(dr._blatt_vorlage_cache, "doc", None)
 
     raum = _raum(_wc())
     pk = ProjektKontext(jurisdiction="AT", gebaeudeteile=[_verkauf()])
