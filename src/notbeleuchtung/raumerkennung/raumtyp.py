@@ -111,6 +111,13 @@ _EXTRA_DIRECT: dict[str, tuple[str, bool, bool]] = {
     # relevant markiert (Notlicht-Pflichtbereich); kein Port-RoomType für Lifte.
     "fw": ("LIFT", True, True),
     "feuerwehrlift": ("LIFT", True, True),
+    # SCHACHT vergibt heute schon rest_komponenten._typisiere (geometrisch);
+    # hier zusätzlich als Stempel-Label, damit der Kanon EINE Quelle bleibt.
+    "schacht": ("SCHACHT", False, False),
+    # Aufzugsvorplatz = Erschließungsfläche vor dem Lift (Pflicht-POI „Aufzugs-
+    # flur", VOKABULAR.md Track C) — wie GANG/VORRAUM Fluchtweg + communal.
+    "aufzugsvorplatz": ("AUFZUGSVORPLATZ", True, True),
+    "aufzugsvorraum": ("AUFZUGSVORPLATZ", True, True),
 }
 
 # Labels, die der Port FALSCH typen würde (Kompositum-Kopf „…küche" → KITCHEN):

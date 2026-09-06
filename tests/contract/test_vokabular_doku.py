@@ -25,9 +25,13 @@ def _doku_typen() -> set[str]:
 
 
 def _kanon() -> set[str]:
-    return {v[0] for v in raumtyp._TYP_MAP.values()} | {
-        v[0] for v in raumtyp._EXTRA_DIRECT.values()
-    }
+    # _EXTRA_OVERRIDE zählt mit: raumtyp_flags() vergibt auch diese Labels
+    # (WASCHKÜCHE) — vorher stand das Label außerhalb beider Guards.
+    return (
+        {v[0] for v in raumtyp._TYP_MAP.values()}
+        | {v[0] for v in raumtyp._EXTRA_DIRECT.values()}
+        | {v[0] for v in raumtyp._EXTRA_OVERRIDE.values()}
+    )
 
 
 def test_vokabular_doku_deckt_sich_mit_kanon():

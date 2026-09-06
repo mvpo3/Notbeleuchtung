@@ -712,7 +712,7 @@ def plan_pruefen(dxf: Path) -> dict:
     gesamt = len(raeume) + len(rest_r)
     mit_stempel = len({z.raum.id for z in zuordnungen if z.raum is not None})
     flag_ok = sum(1 for z in zuordnungen if z.flag == "ok")
-    rest_typ = sum(1 for r in rest_r if r.raum_typ != "UNBEKANNT")
+    rest_typ = sum(1 for r in rest_r if r.raum_typ and r.raum_typ != "UNBEKANNT")
     rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
