@@ -1,89 +1,93 @@
 # Prüfbericht Barawitzka_EG
 
-Raum-Polygon-Quelle: `raumlayer` — Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.
+Raum-Polygon-Quelle: `kaskade L:2 H:40 F:2 R:3` — Rotation: Wände vertikal-dominant, Beschriftung aber horizontal — Plan gilt als richtig orientiert, 0° belassen.
 
-**Bekannte Lücke:** Raumerkennung deckt den Plan nicht ab (nur 2 Polygone bei 38 Stempeln) — HATCH-basierte Räume werden noch nicht erkannt.
+## Räume
 
-## Stempel
+| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |
+|---|---|---|--:|--:|--:|---|
+| — | Terrasse | TERRASSE | 8.33 | — | — | kein_polygon |
+| F | Terrasse | TERRASSE | 8.79 | 56.64 | +544.4 | flutung_unsicher |
+| H | ASR | ABSTELLRAUM | 25.67 | 25.67 | -0.0 | ok |
+| H | Fahrrad+ KiWa | ABSTELLRAUM | 18.65 | 18.65 | -0.0 | ok |
+| H | Waschküche | WASCHKÜCHE | 4.46 | 4.46 | -0.1 | ok |
+| H | Treppenhaus 1 | STIEGENHAUS | 30.02 | 30.02 | +0.0 | ok |
+| H | Treppenhaus 2 | STIEGENHAUS | 12.88 | 12.88 | -0.0 | ok |
+| H | Wohnküche | KÜCHE | 28.10 | 28.10 | +0.0 | ok |
+| H | Zimmer | ZIMMER | 13.03 | 13.03 | -0.0 | ok |
+| H | VR | VORRAUM | 5.59 | 5.59 | +0.1 | ok |
+| H | Bad | BAD | 5.78 | 5.78 | +0.1 | ok |
+| H | Loggia | BALKON | 7.29 | 7.29 | +0.0 | ok |
+| H | Bad | BAD | 4.04 | 4.04 | +0.0 | ok |
+| H | WC | WC | 1.29 | 1.29 | -0.2 | ok |
+| H | VR | VORRAUM | 6.04 | 6.04 | +0.1 | ok |
+| H | Wohnküche | KÜCHE | 26.83 | 26.83 | +0.0 | ok |
+| F | Loggia | BALKON | 5.31 | 4.88 | -8.1 | ok |
+| H | WC | WC | 9.00 | 9.00 | +0.0 | ok |
+| H | WC | WC | 1.32 | 1.32 | -0.1 | ok |
+| H | Wohnküche | KÜCHE | 20.47 | 20.47 | -0.0 | ok |
+| H | Bad | BAD | 4.80 | 4.80 | -0.1 | ok |
+| H | VR | VORRAUM | 3.42 | 3.42 | +0.0 | ok |
+| H | Zimmer | ZIMMER | 11.70 | 11.70 | -0.0 | ok |
+| H | Zimmer | ZIMMER | 11.04 | 11.04 | +0.0 | ok |
+| H | Bad/WC | BAD | 4.51 | 4.51 | +0.0 | ok |
+| H | Zimmer | ZIMMER | 10.45 | 10.45 | -0.0 | ok |
+| H | Zimmer | ZIMMER | 12.38 | 12.38 | +0.0 | ok |
+| H | Wohnküche | KÜCHE | 24.00 | 24.00 | -0.0 | ok |
+| H | Zimmer | ZIMMER | 13.85 | 13.85 | +0.0 | ok |
+| H | AR | ABSTELLRAUM | 1.98 | 1.98 | -0.0 | ok |
+| H | tERRASSE | TERRASSE | 5.87 | 5.78 | -1.6 | ok |
+| H | WC | WC | 1.97 | 1.97 | -0.2 | ok |
+| H | Gard. | VORRAUM | 5.11 | 5.11 | -0.1 | ok |
+| H | AR | ABSTELLRAUM | 1.42 | 1.42 | +0.4 | ok |
+| H | VR | VORRAUM | 3.87 | 3.87 | +0.0 | ok |
+| H | Terrasse | TERRASSE | 11.47 | 11.47 | -0.0 | ok |
+| H | Terrasse | TERRASSE | 9.17 | 9.17 | -0.0 | ok |
+| L | Loggia | BALKON | 5.98 | 5.98 | +0.0 | ok |
+| L | raum_1 | — | — | 5.72 | — | kein_stempel |
+| H | raum_4 | — | — | 31.25 | — | kein_stempel |
+| H | raum_14 | TERRASSE | — | 17.08 | — | kein_stempel |
+| H | raum_15 | TERRASSE | — | 14.26 | — | kein_stempel |
+| H | raum_27 | — | — | 4.51 | — | kein_stempel |
+| H | raum_36 | — | — | 29.87 | — | kein_stempel |
+| H | raum_41 | — | — | 5.31 | — | kein_stempel |
+| R | rest_1 | SCHACHT | — | 2.30 | — | kein_stempel |
+| R | rest_2 | UNBEKANNT | — | 3.40 | — | kein_stempel |
+| R | rest_3 | SCHACHT | — | 2.53 | — | kein_stempel |
 
-| Name | Typ | m² Stempel | m² Polygon | Abw. % | Flag |
-|---|---|--:|--:|--:|---|
-| Terrasse | TERRASSE | 8.33 | 5.72 | -31.4 | zu_klein |
-| Terrasse | TERRASSE | 8.79 | 5.72 | -35.0 | zu_klein |
-| ASR | ABSTELLRAUM | 25.67 | 5.72 | -77.7 | zu_klein |
-| Fahrrad+ KiWa | ABSTELLRAUM | 18.65 | 5.72 | -69.4 | zu_klein |
-| Waschküche | WASCHKÜCHE | 4.46 | 5.72 | +28.1 | zu_gross |
-| Treppenhaus 1 | STIEGENHAUS | 30.02 | 5.72 | -81.0 | zu_klein |
-| Treppenhaus 2 | STIEGENHAUS | 12.88 | 5.98 | -53.6 | zu_klein |
-| Wohnküche | KÜCHE | 28.10 | 5.72 | -79.7 | zu_klein |
-| Zimmer | ZIMMER | 13.03 | 5.98 | -54.1 | zu_klein |
-| VR | VORRAUM | 5.59 | 5.98 | +7.0 | ok |
-| Bad | BAD | 5.78 | 5.98 | +3.5 | ok |
-| Loggia | BALKON | 7.29 | 5.98 | -17.9 | zu_klein |
-| Bad | BAD | 4.04 | 5.98 | +48.1 | zu_gross |
-| WC | WC | 1.29 | 5.98 | +363.7 | zu_gross |
-| VR | VORRAUM | 6.04 | 5.98 | -1.0 | ok |
-| Wohnküche | KÜCHE | 26.83 | 5.98 | -77.7 | zu_klein |
-| Loggia | BALKON | 5.31 | 5.72 | +7.6 | ok |
-| WC | WC | 9.00 | 5.98 | -33.5 | zu_klein |
-| WC | WC | 1.32 | 5.98 | +353.2 | zu_gross |
-| Wohnküche | KÜCHE | 20.47 | 5.72 | -72.1 | zu_klein |
-| Bad | BAD | 4.80 | 5.72 | +19.1 | zu_gross |
-| VR | VORRAUM | 3.42 | 5.72 | +67.1 | zu_gross |
-| Zimmer | ZIMMER | 11.70 | 5.72 | -51.2 | zu_klein |
-| Zimmer | ZIMMER | 11.04 | 5.72 | -48.2 | zu_klein |
-| Bad/WC | BAD | 4.51 | 5.72 | +26.7 | zu_gross |
-| Zimmer | ZIMMER | 10.45 | 5.98 | -42.8 | zu_klein |
-| Zimmer | ZIMMER | 12.38 | 5.98 | -51.7 | zu_klein |
-| Wohnküche | KÜCHE | 24.00 | 5.98 | -75.1 | zu_klein |
-| Zimmer | ZIMMER | 13.85 | 5.98 | -56.8 | zu_klein |
-| AR | ABSTELLRAUM | 1.98 | 5.98 | +202.1 | zu_gross |
-| tERRASSE | TERRASSE | 5.87 | 5.98 | +1.9 | ok |
-| WC | WC | 1.97 | 5.72 | +190.1 | zu_gross |
-| Gard. | VORRAUM | 5.11 | 5.72 | +11.8 | zu_gross |
-| AR | ABSTELLRAUM | 1.42 | 5.72 | +302.5 | zu_gross |
-| VR | VORRAUM | 3.87 | 5.72 | +47.7 | zu_gross |
-| Terrasse | TERRASSE | 11.47 | 5.72 | -50.2 | zu_klein |
-| Terrasse | TERRASSE | 9.17 | 5.72 | -37.7 | zu_klein |
-| Loggia | BALKON | 5.98 | 5.98 | +0.0 | ok |
+## Restflächen ohne Stempel (10)
 
-## Restflächen ohne Stempel (0)
+- raum_1 [L] —: 5.72 m², Zentrum (10.67, -8.10) m
+- raum_4 [H] —: 31.25 m², Zentrum (16.44, -18.21) m
+- raum_14 [H] TERRASSE: 17.08 m², Zentrum (3.58, -18.10) m
+- raum_15 [H] TERRASSE: 14.26 m², Zentrum (9.58, -18.15) m
+- raum_27 [H] —: 4.51 m², Zentrum (6.44, -25.04) m
+- raum_36 [H] —: 29.87 m², Zentrum (16.97, -7.89) m
+- raum_41 [H] —: 5.31 m², Zentrum (15.46, -30.63) m
+- rest_1 [R] SCHACHT: 2.30 m², Zentrum (12.93, -20.49) m
+- rest_2 [R] UNBEKANNT: 3.40 m², Zentrum (13.52, -15.81) m
+- rest_3 [R] SCHACHT: 2.53 m², Zentrum (9.91, -5.01) m
 
+## Warnungen (12)
 
-## Warnungen (32)
+- Stempel ohne Polygon: „Terrasse“
+- Polygon ohne Stempel: raum_1 (5.72 m²)
+- Polygon ohne Stempel: raum_4 (31.25 m²)
+- Polygon ohne Stempel: raum_14 (17.08 m²)
+- Polygon ohne Stempel: raum_15 (14.26 m²)
+- Polygon ohne Stempel: raum_27 (4.51 m²)
+- Polygon ohne Stempel: raum_36 (29.87 m²)
+- Polygon ohne Stempel: raum_41 (5.31 m²)
+- Polygon ohne Stempel: rest_1 (2.30 m²)
+- Polygon ohne Stempel: rest_2 (3.40 m²)
+- Polygon ohne Stempel: rest_3 (2.53 m²)
+- Abweichung > 10 %: „Terrasse“ (+544.4 %)
 
-- Abweichung > 10 %: „Terrasse“ (-31.4 %)
-- Abweichung > 10 %: „Terrasse“ (-35.0 %)
-- Abweichung > 10 %: „ASR“ (-77.7 %)
-- Abweichung > 10 %: „Fahrrad+ KiWa“ (-69.4 %)
-- Abweichung > 10 %: „Waschküche“ (+28.1 %)
-- Abweichung > 10 %: „Treppenhaus 1“ (-81.0 %)
-- Abweichung > 10 %: „Treppenhaus 2“ (-53.6 %)
-- Abweichung > 10 %: „Wohnküche“ (-79.7 %)
-- Abweichung > 10 %: „Zimmer“ (-54.1 %)
-- Abweichung > 10 %: „Loggia“ (-17.9 %)
-- Abweichung > 10 %: „Bad“ (+48.1 %)
-- Abweichung > 10 %: „WC“ (+363.7 %)
-- Abweichung > 10 %: „Wohnküche“ (-77.7 %)
-- Abweichung > 10 %: „WC“ (-33.5 %)
-- Abweichung > 10 %: „WC“ (+353.2 %)
-- Abweichung > 10 %: „Wohnküche“ (-72.1 %)
-- Abweichung > 10 %: „Bad“ (+19.1 %)
-- Abweichung > 10 %: „VR“ (+67.1 %)
-- Abweichung > 10 %: „Zimmer“ (-51.2 %)
-- Abweichung > 10 %: „Zimmer“ (-48.2 %)
-- Abweichung > 10 %: „Bad/WC“ (+26.7 %)
-- Abweichung > 10 %: „Zimmer“ (-42.8 %)
-- Abweichung > 10 %: „Zimmer“ (-51.7 %)
-- Abweichung > 10 %: „Wohnküche“ (-75.1 %)
-- Abweichung > 10 %: „Zimmer“ (-56.8 %)
-- Abweichung > 10 %: „AR“ (+202.1 %)
-- Abweichung > 10 %: „WC“ (+190.1 %)
-- Abweichung > 10 %: „Gard.“ (+11.8 %)
-- Abweichung > 10 %: „AR“ (+302.5 %)
-- Abweichung > 10 %: „VR“ (+47.7 %)
-- Abweichung > 10 %: „Terrasse“ (-50.2 %)
-- Abweichung > 10 %: „Terrasse“ (-37.7 %)
+## Bekannte Grenze: ausgebrochene Flutungen
+
+Bei diesen Stempeln läuft die Flutung über eine offene Tür in Vorplatz/Korridor. Zwei Gegenversuche brachten keine Verbesserung ohne Regression und sind daher NICHT eingebaut: eine zusätzliche niedrigere Start-Versiegelungsstufe (300 bzw. 400 mm) senkte plan-weit die „ok“-Flutungen von 41 auf 38; eine Deckelung der Flutfläche auf 3× Stempelfläche trifft zwar genau diese Fälle, verletzt aber die Modul-Invariante „NIE verwerfen“ (`test_stempel_flutung.py::test_riesenbereich_unsicher`). Die Fälle bleiben darum als `flutung_unsicher` ehrlich geflaggt.
+
+- „Terrasse“: 8.79 m² Stempel → 56.64 m² geflutet (+544 %)
 
 ## Material (Bauteil-Hatches)
 
@@ -202,4 +206,4 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 - (18.85, -31.23) m → (18.90, -19.67) m
 - (18.65, -31.36) m → (0.17, -34.01) m
 
-Laufzeit: 152.5 s
+Laufzeit: 152.3 s
