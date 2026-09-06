@@ -1,0 +1,405 @@
+materialien:
+- bezeichnung: ALU_GLAS
+  bauteilart: GLAS
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - ALU*GLAS*
+  signaturen:
+  - typ: solid
+    pattern_name: SOLID
+    farbe: 4
+    true_color:
+    - 0
+    - 232
+    - 232
+  quellen:
+  - Rennweg
+- bezeichnung: BRANDABSCHNITT
+  bauteilart: MARKIERUNG
+  brandschutz: null
+  semantik: BRANDABSCHNITT
+  aliasnamen:
+  - BRANDABSCHNITT*
+  signaturen:
+  - typ: linie
+    farbe: 30
+    true_color:
+    - 255
+    - 128
+    - 0
+    lineweight: 70
+    linetype: Brandabschnitt_Doppelgröße
+  quellen:
+  - Rennweg
+- bezeichnung: FLUCHTWEGLAENGE
+  bauteilart: MARKIERUNG
+  brandschutz: null
+  semantik: FLUCHTWEG
+  aliasnamen:
+  - FLUCHTWEG*
+  - FLW*
+  signaturen:
+  - typ: linie
+    farbe: 96
+    true_color:
+    - 0
+    - 128
+    - 0
+    lineweight: 13
+    labels:
+    - FLW-L
+  quellen:
+  - Rennweg
+- bezeichnung: GIPSKARTON_EI0
+  bauteilart: WAND_LEICHT
+  brandschutz: EI0
+  semantik: null
+  aliasnamen:
+  - FP_822
+  - GIPS*
+  - GIPSKARTON*EI0
+  - GK*
+  - GK*EI0
+  - SQUARE
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_822
+    bgcolor:
+    - 255
+    - 213
+    - 170
+    linien:
+    - winkel: 45.0
+      abstand: 0.15
+      dashes: []
+  quellen:
+  - Rennweg
+- bezeichnung: GIPSKARTON_EI30
+  bauteilart: WAND_LEICHT
+  brandschutz: EI30
+  semantik: null
+  aliasnamen:
+  - FP_822
+  - GIPSKARTON*EI30*
+  - GK*EI30*
+  - GRATE
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_822
+    bgcolor:
+    - 255
+    - 170
+    - 240
+    linien:
+    - winkel: 45.0
+      abstand: 0.15
+      dashes: []
+  quellen:
+  - Rennweg
+- bezeichnung: GIPSKARTON_EI90
+  bauteilart: WAND_LEICHT
+  brandschutz: EI90
+  semantik: null
+  aliasnamen:
+  - FP_823
+  - GIPSKARTON*EI90*
+  - GK*EI90*
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_823
+    bgcolor:
+    - 226
+    - 199
+    - 199
+    linien:
+    - winkel: 45.0
+      abstand: 0.075
+      dashes: []
+  quellen:
+  - Rennweg
+- bezeichnung: SCHACHT
+  bauteilart: SCHACHT
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - FEUERFESTER_STEIN
+  - SCHACHT*
+  - SCHAECHTE*
+  - SCHÄCHTE*
+  signaturen:
+  - typ: rahmen
+    farbe: 1
+    geschlossen: true
+    lineweight: 13
+  - typ: hatch
+    pattern_name: FEUERFESTER_STEIN
+    farbe: 8
+    linien:
+    - winkel: 125.668
+      abstand: 0.141
+      dashes: []
+  quellen:
+  - Rennweg
+- bezeichnung: STAHLBETON
+  bauteilart: WAND_TRAGEND
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - ANSI33
+  - AR-CONC
+  - BETON
+  - BETON*
+  - BETON_BEWEHRT_SN46
+  - FP_825
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_825
+    bgcolor:
+    - 134
+    - 206
+    - 152
+    linien:
+    - winkel: 45.0
+      abstand: 0.254
+      dashes: []
+    - winkel: 45.0
+      abstand: 0.254
+      dashes:
+      - 0.127
+      - -0.127
+  quellen:
+  - Rennweg
+- bezeichnung: TROCKENSTEIGLEITUNG
+  bauteilart: MARKIERUNG
+  brandschutz: null
+  semantik: TROCKENSTEIGLEITUNG
+  aliasnamen:
+  - '*TSL*'
+  - TROCKENSTEIG*
+  - TSL*
+  signaturen:
+  - typ: symbol
+    form: ring
+    radien:
+    - 0.38
+    - 0.61
+    anzahl_arcs: 4
+  - typ: linie
+    farbe: 5
+    true_color:
+    - 0
+    - 0
+    - 255
+    lineweight: 13
+    labels:
+    - C
+    - TSL
+  - typ: solid
+    pattern_name: SOLID
+    farbe: 5
+    true_color:
+    - 0
+    - 0
+    - 255
+  quellen:
+  - Rennweg
+- bezeichnung: WAERMEDAEMMUNG
+  bauteilart: DAEMMUNG
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - DAEMM*
+  - DÄMM*
+  - EPS*
+  - FP_824
+  - HONEY
+  - INSULATION
+  - POLYSTYROL*
+  - WAERMEDAEMM*
+  - WÄRMEDÄMM*
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_824
+    bgcolor:
+    - 255
+    - 170
+    - 205
+    linien:
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 1.292
+      - -11.632
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 1.939
+      - -10.986
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 0.646
+      - -12.278
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 1.939
+      - -10.986
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 1.292
+      - -11.632
+    - winkel: 68.199
+      abstand: 7.589
+      dashes:
+      - 0.646
+      - -12.278
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 1.292
+      - -11.632
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 2.585
+      - -10.34
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 1.939
+      - -10.986
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 0.646
+      - -12.278
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 1.939
+      - -10.986
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 1.292
+      - -11.632
+    - winkel: 111.801
+      abstand: 7.589
+      dashes:
+      - 0.646
+      - -12.278
+  quellen:
+  - Rennweg
+- bezeichnung: YTONG
+  bauteilart: WAND_LEICHT
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - FP_826
+  - YTONG*
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_826
+    bgcolor:
+    - 255
+    - 128
+    - 128
+    linien:
+    - winkel: 45.0
+      abstand: 0.3
+      dashes: []
+    - winkel: 135.0
+      abstand: 0.3
+      dashes: []
+  quellen:
+  - Rennweg
+- bezeichnung: ZIEGELMAUERWERK
+  bauteilart: WAND_TRAGEND
+  brandschutz: null
+  semantik: null
+  aliasnamen:
+  - ANSI31
+  - BRICK
+  - FP_822
+  - ZIEGEL*
+  signaturen:
+  - typ: hatch
+    pattern_name: FP_822
+    bgcolor:
+    - 255
+    - 83
+    - 83
+    linien:
+    - winkel: 45.0
+      abstand: 0.15
+      dashes: []
+  quellen:
+  - Rennweg

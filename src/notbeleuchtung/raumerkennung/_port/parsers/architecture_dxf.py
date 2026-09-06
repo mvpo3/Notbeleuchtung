@@ -2665,7 +2665,7 @@ _MARKER_KIND_ALIASES: tuple[tuple[re.Pattern, str], ...] = (
 
 _SERVICE_MARKER_KIND_ALIASES: tuple[tuple[re.Pattern, str], ...] = (
     (re.compile(
-        r"E[-_ ]?SCHACHT|SCHACHTTYP|SCHACHT|INSTALLATION|DDB|BDB|FBDB|HKLS|WDB|"
+        r"E[-_ ]?SCHACHT|SCHACHTTYP|SCHACHT|INSTALLATION|DDB|BDB|FBDB|HKLS|WDB|FDB|DBA|"
         r"\b(?:DD|BD|FBD|DDB|BDB|FBDB|WDD|WODD)\b"
         r"\s*(?:[-/]\s*)?(?:HT|ET)?\s*\d",
                 re.IGNORECASE), "SCHACHT"),

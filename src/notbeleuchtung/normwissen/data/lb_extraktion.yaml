@@ -308,7 +308,7 @@ raum_typ_vokabular:
 unterstuetzte_raum_typen:
   [STIEGENHAUS, GANG, VORRAUM, WOHNZIMMER, SCHLAFZIMMER, KINDERZIMMER, ZIMMER,
    KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE,
-   GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER]
+   GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER, LIFT]
 
 # Negation: „ist KEINE LED-Sicherheitsbeleuchtung herzustellen"
 negation_muster:

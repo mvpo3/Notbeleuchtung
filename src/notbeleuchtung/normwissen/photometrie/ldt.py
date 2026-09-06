@@ -36,6 +36,30 @@ class Photometrie:
     lampen_lumen: float         # Gesamt-Lichtstrom der Lampen (lm)
     name: str = ""
 
+    def ist_rotationssymmetrisch(self, toleranz_cd: float = 1e-9) -> bool:
+        """Streuen die C-Ebenen? **An den Daten geprüft**, nicht am Produktnamen.
+
+        „Rundoptik" im Namen belegt keine Rotationssymmetrie — und der
+        EULUMDAT-Header hilft auch nicht zuverlässig: die Schrack-Rundlinsen
+        tragen `Isym = 4` (Quadrant), sind nach der Symmetrie-Expansion aber
+        tatsächlich rotationssymmetrisch. Deshalb wird die expandierte Matrix
+        geprüft.
+        """
+        streuung = float(np.max(np.ptp(self.cd_pro_klm, axis=0)))
+        return streuung * self.lampen_lumen / 1000.0 < toleranz_cd
+
+    def min_intensitaet(self, gamma_grad: float) -> float:
+        """Kleinste Lichtstärke über **alle** C-Ebenen bei diesem γ, in cd.
+
+        Der belastbare Wert, wenn die physische Ausrichtung der Optik im Plan
+        nicht zugesichert ist: er unterschätzt nie. Bewusst **kein** Mittelwert
+        und **kein** fester C-Winkel — beides könnte einen Nachweis fälschlich
+        bestehen lassen.
+        """
+        g = float(np.clip(gamma_grad, self.gamma_grad[0], self.gamma_grad[-1]))
+        werte = [np.interp(g, self.gamma_grad, zeile) for zeile in self.cd_pro_klm]
+        return float(min(werte)) * self.lampen_lumen / 1000.0
+
     def intensitaet(self, gamma_grad: float, c_grad: float = 0.0) -> float:
         """Lichtstärke in **cd** für Ausstrahlwinkel γ und C-Ebene C (bilinear).
 

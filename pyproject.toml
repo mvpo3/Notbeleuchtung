@@ -36,6 +36,7 @@ exclude = ["notbeleuchtung.raumerkennung._port*", "notbeleuchtung.normwissen._po
 
 [tool.setuptools.package-data]
 "notbeleuchtung.symbols" = ["*.yaml"]
+"notbeleuchtung.wissen" = ["*.yaml"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]

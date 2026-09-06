@@ -102,6 +102,38 @@ def test_lb_vokabular_typen(label, erwartet, communal):
 
 
 @pytest.mark.parametrize(
+    "label, erwartet, flucht",
+    [
+        ("STGH.", "STIEGENHAUS", True),      # Rennweg-Legende: Stiegenhaus
+        ("STGH. BT2", "STIEGENHAUS", True),
+        ("HT", "TECHNIK", False),            # Haustechnik(anlage)
+        ("FW", "LIFT", True),                # Feuerwehrlift — Sicherheitskonzept
+        ("Feuerwehrlift", "LIFT", True),
+    ],
+)
+def test_rennweg_legenden_kuerzel(label, erwartet, flucht):
+    tf = raumtyp_flags(label)
+    assert tf is not None, f"{label!r} sollte typisieren"
+    assert tf[0] == erwartet
+    assert tf[1] is flucht
+
+
+def test_eingang_bleibt_kein_gang():
+    tf = raumtyp_flags("Eingang")
+    assert tf is None or tf[0] != "GANG"
+
+
+def test_fstz_ist_belag_hinweis_kein_raumtyp():
+    # FSTZ = Feinsteinzeug: Belag-Spur (Nassraum/Gang), NICHT Raumtyp.
+    from notbeleuchtung.raumerkennung.stempel_anker import belag_hinweis, ist_belag
+
+    assert raumtyp_flags("FSTZ.") is None
+    assert ist_belag("FSTZ. Bfl")
+    assert belag_hinweis("FSTZ.") == "NASSRAUM/GANG"
+    assert belag_hinweis("Feinsteinzeugbelag") == "NASSRAUM/GANG"
+
+
+@pytest.mark.parametrize(
     "label, erwartet",
     [("Wohnküche", "KÜCHE"), ("Gästezimmer", "ZIMMER"), ("Abstellkammer", "ABSTELLRAUM"),
      ("Gang", "GANG"), ("Wohnzimmer 01", "WOHNZIMMER")],
