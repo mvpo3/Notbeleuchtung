@@ -36,29 +36,21 @@ import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
-from shapely.geometry import Point, Polygon
 
-from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
+from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
 from notbeleuchtung.raumerkennung.material_matching import (
     _LAYER_HINWEISE,
     bestimme_material,
     signatur_aus_hatch,
     signatur_zu_dict,
 )
-from notbeleuchtung.raumerkennung.raumlayer import raeume_aus_hatch, raeume_aus_layer
-from notbeleuchtung.raumerkennung.raumtyp import raumtyp_flags
-from notbeleuchtung.raumerkennung.rest_komponenten import komponenten_ohne_stempel
 from notbeleuchtung.raumerkennung.stempel_anker import (
     Zuordnung,
     finde_stempel,
-    ordne_zu,
     restflaechen,
     zentrum,
 )
-from notbeleuchtung.raumerkennung.stempel_flutung import flute_stempel
-from notbeleuchtung.raumerkennung.tueren import tuer_oeffnungen
-from notbeleuchtung.raumerkennung.wandkoerper import finde_wandkoerper
 
 EINGANG = REPO / "Projekte" / "_eingang"
 ERGEBNIS = REPO / "Projekte" / "_ergebnis"
@@ -270,15 +262,6 @@ def _poly_zeichnen(ax: plt.Axes, punkte_mm, farbe, label: str, plan: DxfPlan,
 
 
 # ---------------------------------------------------------------- Referenz/IoU
-
-def iou(poly_a: list, poly_b: list) -> float:
-    """Intersection over Union zweier Punktlisten-Polygone (mm)."""
-    a, b = Polygon(poly_a).buffer(0), Polygon(poly_b).buffer(0)
-    if a.is_empty or b.is_empty:
-        return 0.0
-    u = a.union(b).area
-    return a.intersection(b).area / u if u > 0 else 0.0
-
 
 def referenz_vergleich(referenz: list[dict], raeume) -> list[tuple[str, float]]:
     """Je Referenz-Raum die beste IoU gegen die erkannten Polygone."""
@@ -570,87 +553,14 @@ def _material_md(koerper: list[dict], brand: list[list], flucht: list[list],
 
 # ---------------------------------------------------------------- Hauptlauf
 
-def _ein_polygon_ein_stempel(zuord: list[Zuordnung]) -> None:
-    """Ein Polygon gehört genau EINEM Stempel — in-place.
-
-    ``ordne_zu`` heftet bei Plänen ohne Raum-Layer (Mollgasse: H-Polygone aus
-    Hatches) bis zu 11 Stempel ans selbe Polygon; die berechneten Flächen sind
-    dann für alle bis auf einen falsch. Es bleibt der beste Flächen-Match, die
-    übrigen gehen als ``kein_polygon`` zurück in die Flutung.
-    """
-    je_polygon: dict[int, list[int]] = {}
-    for k, z in enumerate(zuord):
-        if z.polygon_index is not None:
-            je_polygon.setdefault(z.polygon_index, []).append(k)
-    for kandidaten in je_polygon.values():
-        if len(kandidaten) < 2:
-            continue
-        best = min(kandidaten, key=lambda k: abs(zuord[k].abweichung_prozent)
-                   if zuord[k].abweichung_prozent is not None else math.inf)
-        for k in kandidaten:
-            if k != best:
-                zuord[k] = Zuordnung(zuord[k].stempel, None, None, None, "kein_polygon")
-
-
 def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
-    """Raum-Kaskade L→H→F→R (spiegelt provider.py-Kaskade; Integration hier).
+    """Raum-Kaskade L→H→F→R — Orchestrierung liegt in ``raumerkennung.kaskade``.
 
-    L: ``raeume_aus_layer`` · H: ``raeume_aus_hatch`` additiv (IoU-Dedup gegen L)
-    · F: ``flute_stempel`` für Stempel ohne brauchbares Polygon (kein Polygon,
-    ODER Flächen-Flag UND Stempelpunkt außerhalb des zugeordneten Polygons)
-    · R: ``komponenten_ohne_stempel`` für den stempellosen Rest.
-
-    Rückgabe: (zuordnungen, raeume, rest_raeume, quelle_je_raum_id, kette).
+    Eine Quelle der Wahrheit: Prüfstrecke und ``ArchitekturRaumProvider.parse``
+    rufen dieselbe ``raeume_aus_kaskade``.
     """
-    raeume = raeume_aus_layer(plan)
-    quelle: dict[str, str] = {r.id: "L" for r in raeume}
-    for r in raeume_aus_hatch(plan, stempel):
-        if any(iou(r.polygon_mm, v.polygon_mm) > 0.5 for v in raeume):
-            continue
-        r.id = f"raum_{len(raeume) + 1}"
-        raeume.append(r)
-        quelle[r.id] = "H"
-    wk = finde_wandkoerper(plan)
-    oeff = tuer_oeffnungen(plan)
-    zuord = ordne_zu(stempel, raeume)
-    _ein_polygon_ein_stempel(zuord)
-    flut_i = [
-        k for k, z in enumerate(zuord)
-        if z.flag == "kein_polygon"
-        or (z.flag != "ok" and z.raum is not None
-            and not Polygon(z.raum.polygon_mm).buffer(0).covers(
-                Point(z.stempel.position_mm)))
-    ]
-    if flut_i and wk:
-        fluts = flute_stempel(plan, [zuord[k].stempel for k in flut_i], wk, oeff)
-        for k, fr in zip(flut_i, fluts):
-            # Degenerierte Flutungen (<1 m², z.B. Stempel in Wandtasche) blocken
-            # sonst die Rest-Stufe — dort typt sie der STIEGE-/LIFT-Marker besser.
-            if len(fr.polygon_mm) < 3 or Polygon(fr.polygon_mm).area < 1e6:
-                zuord[k] = Zuordnung(fr.stempel, None, None, None, "kein_polygon")
-                continue
-            st = fr.stempel
-            tf = raumtyp_flags(st.name or "")
-            typ, flucht, communal = tf if tf else (st.typ or "", False, False)
-            r = Raum(id=f"raum_{len(raeume) + 1}", raum_typ=typ,
-                     polygon_mm=[(float(x), float(y)) for x, y in fr.polygon_mm],
-                     flaeche_m2=Polygon(fr.polygon_mm).area / 1e6,
-                     ist_fluchtweg=flucht, ist_communal=communal)
-            raeume.append(r)
-            quelle[r.id] = "F"
-            zuord[k] = Zuordnung(st, len(raeume) - 1, r, fr.abweichung_prozent, fr.flag)
-    belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
-    try:
-        rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)
-    except Exception as exc:  # noqa: BLE001 — Rest-Stufe darf den Lauf nie killen
-        print(f"   rest_komponenten fehlgeschlagen: {exc}")
-        rest_r = []
-    for r in rest_r:
-        quelle[r.id] = "R"
-    n = Counter(quelle.values())
-    kette = (f"kaskade L:{n.get('L', 0)} H:{n.get('H', 0)} "
-             f"F:{n.get('F', 0)} R:{n.get('R', 0)}")
-    return zuord, raeume, rest_r, quelle, kette
+    e = raeume_aus_kaskade(plan, stempel)
+    return e.zuordnungen, e.raeume, e.rest_raeume, e.quelle, e.kette
 
 
 #: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
