@@ -444,7 +444,7 @@ def test_blatt_pruefvermerk_feld(contracts, tmp_path):
     texte = [e.dxf.text for e in ezdxf.readfile(str(out)).modelspace().query("TEXT")]
     assert any("PRÜFVERMERK" in t for t in texte)
     assert any(t == "Status: WARNUNG" for t in texte)
-    assert any("2 Regeln geprüft: 1 ok / 1 Warnung(en) / 0 Fehler" in t for t in texte)
+    assert any("2 Regeln: 1 ok / 1 Warnung(en) / 0 Fehler" in t for t in texte)
     assert any("vollständiger Nachweis offen" in t for t in texte)
 
 
