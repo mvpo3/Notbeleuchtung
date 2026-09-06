@@ -45,19 +45,45 @@ def _abstand_mm(erkennungsweite_m: float | None) -> float:
     return _DEFAULT_RZ_ABSTAND_MM
 
 
-def _order_zum_ausgang(pts: list[tuple[float, float]], raum: RaumModell):
-    """Achsenpunkte so ordnen, dass das letzte Element am Ausgang-Ende liegt.
+def _ziel_tuer(r, raum: RaumModell):
+    """Flucht-Ziel-Tür des Gangs: Notausgang > Tür zum STIEGENHAUS > sonst None.
 
-    Ohne Ausgang: unverändert (deterministisch, dominante x-Achse)."""
-    if len(pts) < 2 or not raum.ausgaenge:
+    Owner-Regel #111 verallgemeinert auf den Fallback: auch ohne erkannte
+    Ausgänge/Segmente hat ein Gang meist eine Tür, „durch die man flieht" —
+    sie gibt die Pfeilrichtung vor (Baufeld 5OG: alle RZ standen stur auf 0°,
+    weil die Regel nur im Anker-Pfad lebte).
+    """
+    typen = {x.id: (x.raum_typ or "").upper() for x in raum.raeume}
+    kandidaten = [
+        t for t in raum.tueren if r.id in (t.von_raum, t.nach_raum)
+    ]
+    if not kandidaten:
+        return None
+    for t in kandidaten:
+        if t.ist_notausgang:
+            return t
+    for t in kandidaten:
+        anderer = t.nach_raum if t.von_raum == r.id else t.von_raum
+        if typen.get(anderer or "") == "STIEGENHAUS":
+            return t
+    return None
+
+
+def _order_zum_ziel(pts: list[tuple[float, float]], raum: RaumModell, ziel_xy):
+    """Achsenpunkte so ordnen, dass das letzte Element am Flucht-Ziel liegt
+    (Ausgang oder Ziel-Tür). Ohne Ziel: unverändert (deterministisch)."""
+    ziele = [a.xy_mm for a in raum.ausgaenge]
+    if ziel_xy is not None:
+        ziele.append(ziel_xy)
+    if len(pts) < 2 or not ziele:
         return pts
 
     def d(a, b):
         return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
 
-    d_erst = min(d(pts[0], a.xy_mm) for a in raum.ausgaenge)
-    d_letzt = min(d(pts[-1], a.xy_mm) for a in raum.ausgaenge)
-    # Näher am Ausgang = Ziel-Ende → soll pts[-1] sein.
+    d_erst = min(d(pts[0], z) for z in ziele)
+    d_letzt = min(d(pts[-1], z) for z in ziele)
+    # Näher am Ziel = Ziel-Ende → soll pts[-1] sein.
     return list(reversed(pts)) if d_erst < d_letzt else pts
 
 
@@ -76,7 +102,12 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
     out: list[Platzierung] = []
     for r in korridore:
         anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
-        pts = _order_zum_ausgang(leuchten_auf_linie(r.polygon_mm, _abstand_mm(anf.erkennungsweite_m)), raum)
+        ziel = _ziel_tuer(r, raum)
+        ziel_xy = ziel.xy_mm if ziel is not None else None
+        pts = _order_zum_ziel(
+            leuchten_auf_linie(r.polygon_mm, _abstand_mm(anf.erkennungsweite_m)),
+            raum, ziel_xy,
+        )
         if not pts:
             continue
         cx = (_bbox(r.polygon_mm)[0] + _bbox(r.polygon_mm)[2]) / 2
@@ -99,6 +130,19 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
             catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
             rotation = 0.0 if is_directional else fallback_rot
             mirror_x = False if is_directional else (richtung == "rechts")
+            # Owner-Regel #111 (Pfeil-zur-Tür), Fallback-Ausprägung: das RZ am
+            # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür —
+            # unrotiert weist der Block auf −y → rotation = Winkel(RZ→Tür)+90°,
+            # auf 90° gerastert (wie im Anker-Pfad).
+            if ziel_xy is not None and i == len(pts) - 1:
+                import math as _math
+                dx, dy = ziel_xy[0] - px, ziel_xy[1] - py
+                if _math.hypot(dx, dy) > 50.0:
+                    unten_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
+                    catalog_key = unten_key
+                    rotation = (round((_math.degrees(_math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+                    mirror_x = False
+                    richtung = "unten"
             out.append(
                 Platzierung(
                     xy_mm=(px, py),
