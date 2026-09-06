@@ -49,9 +49,11 @@ PDF fehlt im Repo.
 
 ### 1c. Was davon Auslegung ist (meine, nicht die Norm)
 
-* Dass „erhöhte Anforderungen nach der Art der Nutzung" **durch den OIB-Pfad
+* ~~Dass „erhöhte Anforderungen nach der Art der Nutzung" **durch den OIB-Pfad
   beantwortbar** sind — die Norm verweist auf R 12-2 **bzw.** OIB-RL 2; wir werten
-  nur OIB-RL 2 aus. R 12-2 liegt nicht vor.
+  nur OIB-RL 2 aus. R 12-2 liegt nicht vor.~~ **Am 05.09. für Zeile 4
+  (Verkaufs-/Ausstellungsstätten) belegt** — siehe Abschnitt 9. Für alle anderen
+  Nutzungen bleibt die Aussage bestehen.
 * Dass eine OIB-Stufe `eingeschraenkt`/`uneingeschraenkt` gleichbedeutend mit
   „erhöhte Anforderungen" ist.
 * Die Zuordnung unserer Raumtypen (`WC`, `SANITAER`, …) zu „Sanitärbereich".
@@ -373,3 +375,82 @@ Lauf:
 Die beiden Slices berühren dieselbe Datei (`hauptengine/validierung.py`) an
 verschiedenen Stellen — Git löst das automatisch. Reihenfolge der Merges ist
 damit egal.
+
+
+---
+
+## 9. Nachtrag 05.09. — R 12-2/AC:2019 schließt die Kette für **eine** Nutzung
+
+**Neue Primärquelle im Repo:** `knowledge/OVE-Richtlinie R 12-2 AC 2019-07-01.pdf`
+(8 Seiten, frei über den OVE-Webshop). Es ist die **Berichtigung**; sie ersetzt
+Abschnitt 5.1 vollständig („Abschnitt 5.1 lautet neu") und enthält **Tabelle 5.1**
+auf S. 3–5. Die Basis-Richtlinie R 12-2 liegt weiterhin nicht vor.
+
+**Geprüft wurde ausschließlich Zeile 4 — Verkaufs-/Ausstellungsstätten.**
+Volle Kette und Wortlaute: `docs/NORMQUELLEN_AT.md` Abschnitt **2d**.
+
+### 9a. Was jetzt belegt ist
+
+R 12-2 Tabelle 5.1 führt die Unterscheidung als **Spaltenüberschriften**:
+„Allgemeine Anforderungen" (Fußnote a: **eingeschränkt auf Fluchtwege**) gegen
+„**Erhöhte** Anforderungen" (Fußnote b: ohne diese Einschränkung). Die
+OIB-Tabelle 6 benennt dieselben zwei Spalten als „eingeschränkt auf Fluchtwege
+und festverlegtes Rettungswegesystem" bzw. „**uneingeschränkt**". Die Werte für
+Zeile 4 sind in beiden identisch (`> 200 ≤ 3 000` / `> 3 000`), und R 12-2 nennt
+als Grundlage ausdrücklich OIB-RL 2:2019.
+
+> **Damit gilt für diese Nutzung: OIB-Stufe `uneingeschraenkt` ⇔ „erhöhte
+> Anforderungen nach der Art der Nutzung" (OVE E 8101 718.560.9.001.AT).**
+
+Die in Abschnitt 8a als **unbelegte Auslegung** geführte Gleichsetzung ist für
+Zeile 4 damit **belegt** — und nur für sie.
+
+### 9b. Antworten auf die vier Umsetzungsfragen
+
+| Frage | Antwort für Verkaufs-/Ausstellungsstätten |
+|---|---|
+| **Welche vorhandenen Eingaben belegen erhöhte Anforderungen?** | `Gebaeudeteil.nutzungsart = VERKAUFSSTAETTE_AUSSTELLUNGSSTAETTE` **und** `verkaufsflaeche_m2 > 3000` → unsere Auswertung liefert `uneingeschraenkt`. Beide Felder existieren im `ProjektKontext`; **keine Contract-Erweiterung nötig** |
+| **Welche Aussage ist bei allgemeinen Anforderungen zulässig?** | `> 200 ≤ 3 000 m²` → `eingeschraenkt` = **Sicherheitsbeleuchtung für Fluchtwege** (EN 1838 Begriff 3.4, Bemessungsbetriebsdauer 1 h). Daraus folgt **kein** OVE-Zusatz-Trigger — aber auch **kein Ausschluss** anderer Anforderungen. Fußnote a: „weitere Arten der Notbeleuchtung (zB Antipanikbeleuchtung)" können je nach Nutzung nötig sein → **Review, keine Automatik** |
+| **Wie bleibt die Anwendung auf den Sanitärbereich begrenzt?** | über die bereits gebaute Kette: `raum_zuordnung` (Gebäudeteil → Raum) **und** Raumtyp-Filter (`_WC_TYPEN`) **und** Flächenschwelle 8 m². R 12-2 Fußnote c („bei gemischter Nutzung gelten die für die **jeweilige Nutzung** anzuwendenden Anforderungen") bestätigt die raumbezogene Auswertung wörtlich |
+| **Welche Beleglücke bleibt?** | siehe 9c — sie liegt **nicht mehr** beim Geltungsbereich, sondern bei **Beleuchtungsart und Nachweis** |
+
+### 9c. Die verbleibende Lücke — drei Fragen, sauber getrennt
+
+1. **Erforderlichkeit** — *gelöst* für diese Nutzung: `uneingeschraenkt` belegt
+   die erhöhten Anforderungen, damit greift 718.560.9.001.AT Punkt 1 für
+   Sanitärbereiche ab 8 m².
+2. **Beleuchtungsart** — *offen*. OVE Punkt 1 verlangt „**eine
+   Sicherheitsbeleuchtung**", ohne Art. R 12-2 Fußnote b nennt „Sicherheits-
+   beleuchtung und ggfs. eine Ersatzbeleuchtung gemäß ÖNORM EN 1838". **Antipanik
+   steht nirgends** — sie wird in Fußnote a nur als *mögliche weitere Art*
+   erwähnt. Unsere `flaechen_strategy` erzeugt für den Schwellen-Trigger jedoch
+   `kind="antipanik"`. Das wäre eine **Über-Spezifikation** und ist vor einer
+   Aktivierung zu klären. (Nur **Punkt 3** der OVE-Klausel nennt Antipanik
+   ausdrücklich — und der gilt nur für Verkehrseinrichtungen.)
+3. **Lichttechnischer Nachweis** — *offen*. Für einen Sanitärraum nennt weder
+   OVE E 8101 noch R 12-2 einen Lux-Wert. EN 1838 §4.3.1 (0,5 lx Antipanik,
+   Randbereiche 0,5 m) darf **nicht** unterstellt werden, §4.2.1 (1 lx
+   Mittellinie) gilt dem Rettungsweg. Ohne belegten Wert gibt es keinen Nachweis,
+   nur eine gesetzte Leuchte.
+
+### 9d. Was das für die Umsetzung heißt
+
+**Belegtes Umsetzungskriterium** (für diese eine Nutzung):
+
+```
+nutzungsart == VERKAUFSSTAETTE_AUSSTELLUNGSSTAETTE
+  und verkaufsflaeche_m2 > 3000            → OIB-Stufe uneingeschraenkt
+  und raum_zuordnung(raum) == bestaetigt    → Raum gehört zu diesem Gebäudeteil
+  und raum_typ ∈ WC/Sanitär und flaeche_m2 >= 8
+  ⇒ „Sicherheitsbeleuchtung erforderlich" nach 718.560.9.001.AT Punkt 1
+```
+
+**Was den letzten Schritt weiterhin blockiert:** die Leuchtenart (2.) und der
+fehlende Lux-Wert (3.). Solange beides offen ist, bleibt `wc_sanitaer_min_m2`
+leer — der Grund hat sich aber **verschoben**: nicht mehr „Geltungsbereich
+unbelegt", sondern „**Art und Nachweis der geforderten Beleuchtung unbelegt**".
+
+**Ebenfalls weiter offen:** alle übrigen Zeilen der Tabelle (nur Zeile 4 geprüft) ·
+die 60-m²-Schwelle (Punkt 3, Verkehrseinrichtungen, Raumkategorie fehlt) · die
+Übertragung auf **OVE E 8101:2025**, die ebenfalls auf R 12-2 verweist — welche
+R-12-2-Ausgabe dort gemeint ist, ist **nicht belegt**.
