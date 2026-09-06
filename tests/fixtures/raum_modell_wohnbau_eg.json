@@ -1,0 +1,413 @@
+{
+  "contract": "RaumModell",
+  "contract_version": "1.1.0",
+  "floor": "EG",
+  "coordinate_system": "mm",
+  "_source": "rekonstruiert aus output/wohnbau_v8_*.dxf (Owner-abgenommen 2026-09-05)",
+  "bounds_mm": {
+    "min_xy": [
+      3500.0,
+      0.0
+    ],
+    "max_xy": [
+      20000.0,
+      12200.0
+    ]
+  },
+  "raeume": [
+    {
+      "id": "EG-GANG-V",
+      "raum_typ": "GANG",
+      "polygon_mm": [
+        [
+          8000.0,
+          0.0
+        ],
+        [
+          9500.0,
+          0.0
+        ],
+        [
+          9500.0,
+          9500.0
+        ],
+        [
+          8000.0,
+          9500.0
+        ]
+      ],
+      "flaeche_m2": 14.25,
+      "ist_fluchtweg": true,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-GANG-H",
+      "raum_typ": "GANG",
+      "polygon_mm": [
+        [
+          8000.0,
+          8000.0
+        ],
+        [
+          20000.0,
+          8000.0
+        ],
+        [
+          20000.0,
+          9500.0
+        ],
+        [
+          8000.0,
+          9500.0
+        ]
+      ],
+      "flaeche_m2": 18.0,
+      "ist_fluchtweg": true,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-STGH",
+      "raum_typ": "STIEGENHAUS",
+      "polygon_mm": [
+        [
+          9500.0,
+          9500.0
+        ],
+        [
+          14500.0,
+          9500.0
+        ],
+        [
+          14500.0,
+          12200.0
+        ],
+        [
+          9500.0,
+          12200.0
+        ]
+      ],
+      "flaeche_m2": 13.5,
+      "ist_fluchtweg": true,
+      "ist_communal": true
+    },
+    {
+      "id": "EG-AUFZUG",
+      "raum_typ": "AUFZUG",
+      "polygon_mm": [
+        [
+          14500.0,
+          9500.0
+        ],
+        [
+          16300.0,
+          9500.0
+        ],
+        [
+          16300.0,
+          11500.0
+        ],
+        [
+          14500.0,
+          11500.0
+        ]
+      ],
+      "flaeche_m2": 3.6,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-SCHACHT-E",
+      "raum_typ": "SCHACHT",
+      "polygon_mm": [
+        [
+          16300.0,
+          9500.0
+        ],
+        [
+          17300.0,
+          9500.0
+        ],
+        [
+          17300.0,
+          10000.0
+        ],
+        [
+          16300.0,
+          10000.0
+        ]
+      ],
+      "flaeche_m2": 0.5,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-SCHACHT-H",
+      "raum_typ": "SCHACHT",
+      "polygon_mm": [
+        [
+          17300.0,
+          9500.0
+        ],
+        [
+          18300.0,
+          9500.0
+        ],
+        [
+          18300.0,
+          10000.0
+        ],
+        [
+          17300.0,
+          10000.0
+        ]
+      ],
+      "flaeche_m2": 0.5,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-TECHNIK",
+      "raum_typ": "TECHNIK",
+      "polygon_mm": [
+        [
+          9500.0,
+          0.0
+        ],
+        [
+          15500.0,
+          0.0
+        ],
+        [
+          15500.0,
+          8000.0
+        ],
+        [
+          9500.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 48.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-MUELL",
+      "raum_typ": "MUELLRAUM",
+      "polygon_mm": [
+        [
+          15500.0,
+          0.0
+        ],
+        [
+          20000.0,
+          0.0
+        ],
+        [
+          20000.0,
+          8000.0
+        ],
+        [
+          15500.0,
+          8000.0
+        ]
+      ],
+      "flaeche_m2": 36.0,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    },
+    {
+      "id": "EG-KIWA",
+      "raum_typ": "KINDERWAGENRAUM",
+      "polygon_mm": [
+        [
+          3500.0,
+          0.0
+        ],
+        [
+          8000.0,
+          0.0
+        ],
+        [
+          8000.0,
+          9500.0
+        ],
+        [
+          3500.0,
+          9500.0
+        ]
+      ],
+      "flaeche_m2": 42.75,
+      "ist_fluchtweg": false,
+      "ist_communal": false
+    }
+  ],
+  "tueren": [
+    {
+      "id": "tuer_eg_1",
+      "xy_mm": [
+        8750.0,
+        0.0
+      ],
+      "breite_mm": 1400.0,
+      "von_raum": "EG-GANG-V",
+      "nach_raum": null,
+      "ist_notausgang": true,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_eg_2",
+      "xy_mm": [
+        10500.0,
+        9500.0
+      ],
+      "breite_mm": 1000.0,
+      "von_raum": "EG-GANG-H",
+      "nach_raum": "EG-STGH",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_eg_3",
+      "xy_mm": [
+        15400.0,
+        9500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "EG-GANG-H",
+      "nach_raum": "EG-AUFZUG",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_eg_4",
+      "xy_mm": [
+        12500.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "EG-GANG-H",
+      "nach_raum": "EG-TECHNIK",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    },
+    {
+      "id": "tuer_eg_5",
+      "xy_mm": [
+        17500.0,
+        8000.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "EG-GANG-H",
+      "nach_raum": "EG-MUELL",
+      "ist_notausgang": false,
+      "schwenk_richtung": "rechts"
+    },
+    {
+      "id": "tuer_eg_6",
+      "xy_mm": [
+        8000.0,
+        4500.0
+      ],
+      "breite_mm": 900.0,
+      "von_raum": "EG-GANG-V",
+      "nach_raum": "EG-KIWA",
+      "ist_notausgang": false,
+      "schwenk_richtung": "links"
+    }
+  ],
+  "ausgaenge": [
+    {
+      "id": "exit_eg_1",
+      "xy_mm": [
+        8750.0,
+        0.0
+      ],
+      "typ": "final_exit"
+    }
+  ],
+  "zirkulation": {
+    "nodes": [],
+    "edges": [],
+    "segmente": [
+      {
+        "segment_id": "seg_eg_1",
+        "polyline_mm": [
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            8750.0,
+            0.0
+          ]
+        ],
+        "laenge_mm": 8750.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_eg_2",
+        "polyline_mm": [
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            19250.0,
+            8750.0
+          ]
+        ],
+        "laenge_mm": 10500.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_eg_3",
+        "polyline_mm": [
+          [
+            8750.0,
+            750.0
+          ],
+          [
+            8750.0,
+            0.0
+          ]
+        ],
+        "laenge_mm": 750.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_eg_4",
+        "polyline_mm": [
+          [
+            10500.0,
+            8750.0
+          ],
+          [
+            10500.0,
+            9500.0
+          ]
+        ],
+        "laenge_mm": 750.0,
+        "reason": "long_run"
+      },
+      {
+        "segment_id": "seg_eg_5",
+        "polyline_mm": [
+          [
+            8750.0,
+            4500.0
+          ],
+          [
+            8750.0,
+            8750.0
+          ],
+          [
+            12000.0,
+            8750.0
+          ]
+        ],
+        "laenge_mm": 7500.0,
+        "reason": "long_run"
+      }
+    ]
+  }
+}
