@@ -119,13 +119,16 @@ def _coverage(
     }
 
 
-def _parse_raum(bundle: ProviderBundle, dxf_path: str, floor: str) -> RaumModell:
-    """1. Input öffnen — DWG wird vorab konvertiert (nur `parse` braucht die Datei,
-    danach ist alles im RaumModell → das Konvertat darf sofort weg)."""
+def _parse_raum(
+    bundle: ProviderBundle, dxf_path: str, floor: str, tmp: str
+) -> tuple[RaumModell, str]:
+    """1. Input öffnen — DWG wird vorab konvertiert. Liefert (RaumModell, DXF-Pfad):
+    der Pfad wird auch vom Render gebraucht (Architektur-Unterlage), deshalb lebt
+    das Konvertat im vom Aufrufer gestellten `tmp` bis nach dem Render."""
     if Path(dxf_path).suffix.lower() == ".dwg":
-        with tempfile.TemporaryDirectory(prefix="notbel_dwg_") as tmp:
-            return bundle.raum.parse(str(stelle_dxf_bereit(dxf_path, tmp)), floor)
-    return bundle.raum.parse(dxf_path, floor)
+        konvertat = str(stelle_dxf_bereit(dxf_path, tmp))
+        return bundle.raum.parse(konvertat, floor), konvertat
+    return bundle.raum.parse(dxf_path, floor), dxf_path
 
 
 def run(
@@ -142,7 +145,25 @@ def run(
     # hat (typisiert, kein Zugriff auf Platzierer-Interna). Ein explizit
     # übergebener Befund gewinnt; ohne beides wird nichts behauptet.
     photometrie = photometrie or photometrie_des_bundles(bundle)
-    raum = _parse_raum(bundle, dxf_path, floor)
+    with tempfile.TemporaryDirectory(prefix="notbel_dwg_") as _tmp:
+        raum, quelle_dxf = _parse_raum(bundle, dxf_path, floor, _tmp)
+        return _run_mit_quelle(
+            bundle, raum, quelle_dxf, out_path=out_path, lb_path=lb_path,
+            plankopf=plankopf, projekt_kontext=projekt_kontext, photometrie=photometrie,
+        )
+
+
+def _run_mit_quelle(
+    bundle: ProviderBundle,
+    raum: RaumModell,
+    quelle_dxf: str,
+    *,
+    out_path,
+    lb_path,
+    plankopf,
+    projekt_kontext,
+    photometrie,
+) -> Output:
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
     # Der Plan wird trotzdem erzeugt (Norm-Default greift), aber das `lb_review`-Flag macht
@@ -172,7 +193,7 @@ def run(
     if out_path is not None:
         render_summary = render_dxf(
             platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
-            photometrie=photometrie,
+            photometrie=photometrie, unterlage_dxf=quelle_dxf,
         )
     else:
         render_summary = _summary(raum, platzierung)
