@@ -91,7 +91,7 @@ def _flaechen_trigger_greift(
     )
 
 
-def _antipanik_punkte(polygon: list, anf) -> list:
+def _antipanik_punkte(polygon: list, anf, i_cd_fn=None) -> list:
     """Antipanik-Raster, verdichtet bis der EN-1838-Nachweis (`anf.min_lux`, i.d.R.
     0,5 lx / Ud≥1:40) erfüllt ist — nicht nur `mindest_anzahl` blind gesetzt.
 
@@ -105,7 +105,10 @@ def _antipanik_punkte(polygon: list, anf) -> list:
     ud_min = ud_min_aus_norm(anf.gleichmaessigkeit_max)
     pts = grid_points(polygon, n)
     for _ in range(_ANTIPANIK_MAX_RUNDEN):
-        res = lux_raster(pts, bounds, montagehoehe_m=h_m, ziel_lux=anf.min_lux, ud_min=ud_min)
+        res = lux_raster(
+            pts, bounds, montagehoehe_m=h_m, i_cd_fn=i_cd_fn,
+            ziel_lux=anf.min_lux, ud_min=ud_min,
+        )
         if res.max_lux == 0.0:                       # kein Nachweisfenster (Fläche < Rand)
             return grid_points(polygon, max(1, anf.mindest_anzahl))
         if res.erfuellt_min and res.erfuellt_ud:
@@ -122,6 +125,7 @@ def _plan_raumleuchten(
     norm: NormProvider,
     klassifikation: str,
     oib: OibBefund | None = None,
+    i_cd_fn_je_key: dict | None = None,
 ) -> list[Platzierung]:
     """Je Raum mit passender Norm-Klassifikation Leuchten, geometrisch über die Fläche
     verteilt (`grid_points`): Sicherheitsleuchte → `mindest_anzahl` (Aufheller-Betonung);
@@ -163,8 +167,12 @@ def _plan_raumleuchten(
         # (hält die Naht-Invariante norm_quelle ∈ NormRegelwerk.quellen).
         quelle = (schwellen.quelle or eff.quelle) if getriggert else eff.quelle
         building = assign_building(centroids[r.id][0])
+        # Nachweis mit der Photometrie der eingesetzten LEUCHTENFAMILIE (Katalog:
+        # antipanik_leuchte = Rundlinse) statt pauschal isotrop/Corridor. Ohne
+        # Zuordnung bleibt es bei der isotropen Annahme (wie bisher).
+        familie_fn = (i_cd_fn_je_key or {}).get(eff.symbol_katalog_keys[0])
         punkte = (
-            _antipanik_punkte(r.polygon_mm, eff)
+            _antipanik_punkte(r.polygon_mm, eff, i_cd_fn=familie_fn)
             if klassifikation == "antipanik"
             else grid_points(r.polygon_mm, max(1, eff.mindest_anzahl))
         )
@@ -191,11 +199,16 @@ def plan_sicherheitsleuchten(raum: RaumModell, norm: NormProvider) -> list[Platz
 
 
 def plan_antipanik(
-    raum: RaumModell, norm: NormProvider, oib: OibBefund | None = None
+    raum: RaumModell,
+    norm: NormProvider,
+    oib: OibBefund | None = None,
+    i_cd_fn_je_key: dict | None = None,
 ) -> list[Platzierung]:
     """Antipanik-Leuchten je Raum mit Norm-Klassifikation 'antipanik' (offene Fläche).
 
     `oib` schaltet den zusätzlichen Flächen-Trigger frei (OVE-scope-gebunden, siehe
     `oib_gate`); ohne Befund bleibt es bei der reinen Typ-Klassifikation.
+    `i_cd_fn_je_key` (catalog_key → Lichtstärke-Callable) lässt den 0,5-lx-Nachweis
+    mit der Photometrie der tatsächlichen Leuchtenfamilie rechnen.
     """
-    return _plan_raumleuchten(raum, norm, "antipanik", oib=oib)
+    return _plan_raumleuchten(raum, norm, "antipanik", oib=oib, i_cd_fn_je_key=i_cd_fn_je_key)

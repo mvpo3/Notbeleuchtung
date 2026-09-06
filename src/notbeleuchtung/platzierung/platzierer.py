@@ -61,9 +61,16 @@ def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
 class NotlichtPlatzierer:
     """Erfüllt `hauptengine.contracts.ports.Platzierer`."""
 
-    def __init__(self, i_cd_fn: Callable[[float], float] | None = None) -> None:
+    def __init__(
+        self,
+        i_cd_fn: Callable[[float], float] | None = None,
+        i_cd_fn_je_key: dict[str, Callable[[float], float]] | None = None,
+    ) -> None:
         # Richtungsabhängige Hersteller-Lichtstärke (aus F2-Photometrie); None = konstant.
+        # `i_cd_fn` = Fluchtweg-Deckungs-Leuchte (Corridor-Optik); `i_cd_fn_je_key` =
+        # catalog_key → Callable für Nachweise anderer Familien (Antipanik-Rundlinse).
         self._i_cd_fn = i_cd_fn
+        self._i_cd_fn_je_key = i_cd_fn_je_key or {}
 
     def place(
         self,
@@ -76,7 +83,9 @@ class NotlichtPlatzierer:
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
-            *plan_antipanik(raum, norm, oib=oib),        # Fläche (Trigger OIB-gegated)
+            *plan_antipanik(                             # Fläche (Trigger OIB-gegated)
+                raum, norm, oib=oib, i_cd_fn_je_key=self._i_cd_fn_je_key
+            ),
             *plan_sonderstellen(raum, norm, lb),         # Pflichtstellen §4.1.2 (RZ nur mit LB)
             *plan_flag_raeume(raum, norm),               # barrierefrei/Gefährdung (Flags)
             *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)

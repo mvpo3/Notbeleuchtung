@@ -18,6 +18,18 @@ Produktseiten:
 - KB: https://www.schrack.at/shop/notleuchte-kb-autotest-led-3h-230v-ac-universalmontage-nlkbu433sc.html
 - IL: https://www.schrack.at/shop/notleuchte-il-autotest-1x3w-ert-led-3h-230v-ac-nlildl423s.html
 
+## din (Dietmar Nocker) — AP3-LDT: nicht öffentlich (Stand 2026-09-06)
+
+Die din-Universal-Leuchte **Concept 2 AP3 PLC24** (Artikel 9020095009, s.
+`knowledge/extracted/PRODUKTE_SCHRACK_DIN.md`) hat KEINE öffentlich
+zugängliche Photometrie: das Produktdatenportal
+(https://productdata.din-notlicht.com, Backend `cigateway.din-notlicht.com`)
+liefert nur Eigenschaften + PDF-Datenblatt, und din ist weder in ReluxNet noch
+in DIALux-Katalogen vertreten. **Weg: LDT beim Hersteller anfragen** (Linz,
+Kontakt über din-notlicht.com). Sobald sie vorliegt: Datei hier ablegen +
+1 Zeile in `photometrie_mapping.yaml` — die Per-Familie-Naht
+(`registry.photometrie_je_key`) nimmt sie automatisch auf.
+
 Hinweise für Nach-Downloads:
 - Dateinamens-Muster der aktuellen Generation: `l_<artikel-wildcard>_<dauer>_<linse>.ldt`
   (die Punkte sind LITERALE Zeichen). Ältere Serien: `l_<artnr>-<1h|3h>.ldt`.
