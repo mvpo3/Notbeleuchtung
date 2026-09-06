@@ -166,7 +166,8 @@ def run(
     else:
         platzierung = bundle.platzierer.place(raum, bundle.norm, lb)
     pruef = pruefbericht(
-        raum, platzierung, lb, norm=bundle.norm, oib=oib_befund, photometrie=photometrie
+        raum, platzierung, lb, norm=bundle.norm, oib=oib_befund,
+        photometrie=photometrie, projekt_kontext=projekt_kontext,
     )
     if out_path is not None:
         render_summary = render_dxf(
