@@ -4,6 +4,24 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-06, Spätabend) — #120 GEMERGT: Wohnbau-E2E-Fixture — HIER WEITER
+
+**main = #120-Merge, 841 grün.** Handoff-Kandidat „Wohnbau einfrieren" erledigt:
+- **Befund vorweg:** `spec_builder_v8.py` + `wohnbau_spec.json` waren im
+  Session-Scratchpad und sind VERLOREN. Rekonstruiert aus den Owner-
+  abgenommenen `output/wohnbau_v8_*.dxf` (lokal untracked, existieren noch).
+- `tests/fixtures/raum_modell_wohnbau_{eg,1og,dg}.json` (EG 9 Räume/6 Türen ·
+  1OG 21/17 · DG 16/12, je 1 Notausgang→final_exit) + `scripts/
+  extract_wohnbau_fixture.py` (Extraktor = neue Quelle; Lernpunkt: Generatoren
+  NIE nur im Scratchpad). Treue bewiesen: v8-RZ-Muster exakt reproduziert.
+- `tests/e2e/test_wohnbau_durchstich.py` — 11 Tests: Bänder (heute EG 4RZ+4SL ·
+  1OG/DG 4+7), Blatt-Fixierung #115, Prüfvermerk #118, Regel-15-ok #119,
+  Außenleuchte, PDF-Smoke. Owner-Ausgabeweg bricht ab jetzt in CI, nicht in
+  AutoCAD.
+
+**Nächste Kandidaten:** AP3-LDT · Per-Familie-LDT-Mapping (catalog_key→LDT) ·
+SPOT-Grafik · Selman-Kaskade-Verdrahtung abwarten (E2E-Bänder kippen dann).
+
 ## STAND (2026-09-06, Abend) — #119 GEMERGT: Optik aus Achse, Pläne wieder ok
 
 **main = #119-Merge, 830 grün.** Der c0_azimut-Kandidat aus dem #117-Review ist
