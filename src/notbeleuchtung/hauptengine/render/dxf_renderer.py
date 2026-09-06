@@ -741,7 +741,56 @@ def _blatt_vorlage_doc():
     return _blatt_vorlage_cache["doc"]
 
 
-def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
+def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> bool:
+    """Prüf-/Statusvermerk als BLATT-FELD (Owner-GO 2026-09-06).
+
+    Die Owner-Fixierung „keine Zusatz-Boxen" gilt weiter — dieses Feld sitzt IM
+    Blatt, in der freien Bande der rechten Spalte zwischen Legende und
+    PLANNUMMER-Block (Vorlagen-Einheiten y 566..602, Trennlinie bei 563.5 liegt
+    in der Vorlage). Es trägt den VERMERK (Gesamtstatus + Zählung + offene
+    Nachweis-Grundlage), nicht den Bericht — der volle Prüfbericht bleibt im
+    Summary/API (Enis-Naht Regel 13/15: Sichtbarkeit AM BLATT).
+    """
+    if not pruefung:
+        return False
+    befunde = pruefung.get("befunde", [])
+    n_ok = sum(1 for b in befunde if b.get("status") == "ok")
+    n_warn = sum(1 for b in befunde if b.get("status") == "warnung")
+    n_fehler = sum(1 for b in befunde if b.get("status") == "fehler")
+    status = pruefung.get("status", "")
+    label = _PRUEF_STATUS_LABEL.get(status, "—")
+    farbe = {"ok": 3, "warnung": 30, "fehler": 1}.get(status, 7)
+
+    def text(t, x, y, h, color=None):
+        attribs = {"layer": LAYER_PLANKOPF, "height": h * S}
+        if color is not None:
+            attribs["color"] = color
+        msp.add_text(t, dxfattribs=attribs).set_placement((x * S + dx, y * S + dy))
+
+    # Bande zwischen Legenden-Unterkante (595.9) und PLANNUMMER-Trennlinie (563.5).
+    text("PRÜFVERMERK (EN 1838)", 1189.0, 590.5, 2.9)
+    text(f"Status: {label}", 1189.0, 584.5, 2.4, color=farbe)
+    # Nur ASCII-Trenner: der Standard-TEXT-Font der Vorlage hat keine Glyphen
+    # für Mittelpunkt/Gedankenstrich (rendern als Kästchen).
+    text(
+        f"{len(befunde)} Regeln geprüft: {n_ok} ok / {n_warn} Warnung(en) / "
+        f"{n_fehler} Fehler",
+        1189.0, 580.0, 1.8,
+    )
+    y = 576.0
+    if photometrie is not None and not photometrie.vollstaendiger_nachweis:
+        text(
+            "Lichttechn. Nachweis: konservative Abschätzung - vollständiger "
+            "Nachweis offen",
+            1189.0, y, 1.8,
+        )
+        y -= 4.0
+    text("Details: Prüfbericht im Plan-Summary (API)", 1189.0, y, 1.8)
+    return True
+
+
+def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None,
+                       pruefung: dict | None = None, photometrie=None):
     """Owner-Blatt-Vorlage um den Plan legen — im MODELSPACE (kein Viewport).
 
     Referenz Selo-Design-Montageplan: Planfenster links, rechte Spalte Legende +
@@ -870,6 +919,7 @@ def _baue_blatt_layout(msp, raum: RaumModell, plankopf: dict | None):
             msp.add_blockref(bname, (wx, wy), dxfattribs={
                 "xscale": sc, "yscale": sc, "layer": LAYER_NOTBELEUCHTUNG,
             })
+    _blatt_pruefvermerk(msp, S, dx, dy, pruefung, photometrie)
     return (RX0 * S + dx, RY0 * S + dy, RX1 * S + dx, RY1 * S + dy)
 
 
@@ -938,7 +988,7 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
-    blatt_bbox = _baue_blatt_layout(msp, raum, plankopf)
+    blatt_bbox = _baue_blatt_layout(msp, raum, plankopf, pruefung, photometrie)
     _panel_x0_override.clear()
     if blatt_bbox is not None:
         # Owner-Fixierung (wohnbau_v7_dg_verbessert.dxf, 2026-09-05): im Blatt-Modus
@@ -956,7 +1006,10 @@ def render_dxf(
         )
     if blatt_bbox is not None:
         plankopf_drawn = True          # das Blatt IST der Plankopf (Rivoplan-Vorlage)
-        pruefbericht_drawn = False     # Owner: keine Zusatz-Boxen am Blatt
+        # Owner: keine Zusatz-Boxen am Blatt — aber seit Owner-GO 2026-09-06 trägt
+        # das Blatt ein PRÜFVERMERK-Feld (Status + Zählung, _blatt_pruefvermerk);
+        # der volle Bericht bleibt im Summary/API.
+        pruefbericht_drawn = False
         belegung_drawn = False
     else:
         plankopf_drawn = _draw_plankopf(msp, raum, platzierung, lb, plankopf)
@@ -995,6 +1048,7 @@ def render_dxf(
         "stueckliste_drawn": stueckliste_drawn,
         "plankopf_drawn": plankopf_drawn,
         "pruefbericht_drawn": pruefbericht_drawn,
+        "pruefvermerk_am_blatt": blatt_drawn and bool(pruefung),
         "photometrie_hinweis_drawn": photometrie is not None,
         "stromkreis_belegung_drawn": belegung_drawn,
         "anlage_drawn": anlage_drawn,
