@@ -69,6 +69,13 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     die Norm-Erfüllung. Der lichttechnische Nachweis bleibt offen, solange die
     physische Optik-Ausrichtung kein zugesicherter Input ist (Regel „Lichttechnischer
     Nachweis: Photometrie-Grundlage" im Prüfbericht).
+
+    **Nachtrag 06.09.2026 (optik_aus_achse, Leonis):** die Ausrichtung IST jetzt
+    Input — der Verdichter leitet je Fluchtweg-SL den Korridor-Achsen-Azimut ab,
+    rechnet die C-Ebene relativ dazu und vermerkt den Azimut als Montage-Rotation
+    am Symbol. Ergebnis richtungsRICHTIG statt Minimum: **32 SL**, Prüfstatus
+    wieder `ok` (Regel 15 vollständig). Das Band 15..40 deckt alle drei Stände
+    (28 C0-optimistisch · 32 richtungsrichtig · 36 konservativ).
     """
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")

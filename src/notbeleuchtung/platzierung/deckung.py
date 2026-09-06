@@ -31,7 +31,7 @@ from .lux import (
     max_leuchtenabstand_mm,
     ud_min_aus_norm,
 )
-from .mittellinie import leuchten_auf_linie, mittellinie
+from .mittellinie import leuchten_auf_linie_mit_richtung, mittellinie
 
 _KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 _SL_KEY = "sicherheitsleuchte_aufheller"   # bis die Norm einen Fluchtweg-SL-Key liefert
@@ -96,12 +96,14 @@ def verdichte_fluchtweg(
             mittellinie(r.polygon_mm, raster_mm=_NACHWEIS_RASTER_MM), breite
         )
         # Start-Abstand photometrisch aus der Leuchte selbst (aufweiten UND verdichten
-        # möglich — der alte Fix-Start bei 8 m konnte nur verdichten).
+        # möglich — der alte Fix-Start bei 8 m konnte nur verdichten). Die Optik wird
+        # längs der Korridor-Achse montiert (Azimut je Kandidat, s.u.) — der Reihen-
+        # Startwert darf deshalb die C0-Keule ansetzen.
         abstand = max_leuchtenabstand_mm(
             montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn, ziel_lux=ziel,
-            min_mm=_MIN_ABSTAND_MM, max_mm=_MAX_ABSTAND_MM,
+            min_mm=_MIN_ABSTAND_MM, max_mm=_MAX_ABSTAND_MM, optik_entlang_reihe=True,
         )
-        kandidaten = leuchten_auf_linie(r.polygon_mm, abstand)
+        kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
         for _ in range(_MAX_VERDICHTUNGEN):
             if not linie:   # degeneriertes Polygon → alter Flächen-Nachweis als Fallback
                 res = lux_raster(
@@ -125,15 +127,18 @@ def verdichte_fluchtweg(
             if erfuellt or abstand <= _MIN_ABSTAND_MM:
                 break
             abstand = max(_MIN_ABSTAND_MM, abstand / _VERDICHTUNGS_FAKTOR)
-            kandidaten = leuchten_auf_linie(r.polygon_mm, abstand)
+            kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
         cx = (bounds[0] + bounds[2]) / 2
         building = assign_building(cx)
-        for px, py in kandidaten:
+        for px, py, az in kandidaten:
             out.append(
                 Platzierung(
                     xy_mm=(px, py),
                     catalog_key=_SL_KEY,
-                    rotation_deg=0.0,
+                    # Montage-Rotation = Korridor-Achse: die Optik-C0 zeigt längs
+                    # des Gangs — exakt der Azimut, mit dem der Lux-Nachweis oben
+                    # gerechnet hat (Azimut-Tripel). Symbol dreht mit.
+                    rotation_deg=az,
                     height_mm=float(anf.montagehoehe_mm),
                     kind="sicherheitsleuchte",
                     richtung="gerade",
