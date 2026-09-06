@@ -33,3 +33,27 @@ Folgen:
 
 LIFT-Block 1.65×1.90 m mit **Achsenkreuz** (Mittellinien) statt X-Diagonalen;
 Lift-Erkennung muss Achsenkreuz UND Diagonalen akzeptieren + Blockname »LIFT«.
+
+## Fachteil 1 — konservative Entscheidungen (2026-09, Selman)
+
+- **Fenstertür im EG:** Eine Fassadentür AUSSEN×WOHNUNG_PRIVAT ist immer
+  `balkontuer` (nie Ausgang) — auch im EG, wo eine Fenstertür faktisch ins
+  Freie führt. Ob EG-Fenstertüren als Notausgang zählen dürfen, ist eine
+  Norm-Frage (Owner Enis); bis dahin konservativ KEIN Ausgang.
+- **stair_exit nur aus `stiegenhaustuer`/`brandschutztuer`:** Wohnungseingänge
+  direkt ins Stiegenhaus (Rennweg-T7-Muster) erzeugen KEINEN Geschossausgang —
+  sonst produziert jede Wohnungstür einen Pfeil (Mollgasse: 10 statt 3).
+  Sie sind Startpunkte des Fluchtwegs (quelle GRAPH).
+- **`tuer_detail`-Kette (ein Feld im Contract):** STIEGENHAUS×PRIVAT →
+  `wohnungseingang` (die Startseite gewinnt); die Stiegenhaus-Seite
+  rekonstruiert `ausgaenge.py` aus den Raum-Seiten. `brandschutztuer` nur für
+  sonst untypisierte Türen — ein spezifischeres Detail bleibt stehen, der
+  Brandschutz-Hinweis geht dann nicht in den Contract (Feld fehlt; bei Bedarf
+  Contract-Vorschlag »brandschutz: bool« an alle 3 Owner).
+- **Brandabschnitts-LINIEN kreuzen:** kein Producer für Brandabschnittslinien
+  im Repo — Brandschutz-Typisierung nutzt heute nur BST/T30/T90/EI30/EI90-
+  Texte in 500 mm Umkreis.
+- **Durchgänge ohne Türblatt:** Kontaktzone zweier Raumpolygone minus
+  Wandkörper, > 800 mm, keine bekannte Tür in 600 mm — kann auf lückigen
+  Wandkörpern übererkennen (Mollgasse: +78 Durchgänge); Öffnungen tragen
+  `ohne_tuerblatt=True` und sind darüber filterbar.

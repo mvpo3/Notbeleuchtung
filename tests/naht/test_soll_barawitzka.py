@@ -1,4 +1,5 @@
-"""Soll-Tests Barawitzka EG — Zielbild, heute nicht erreicht (xfail strict).
+"""Soll-Tests Barawitzka EG — final_exit + brandschutztuer seit Fachteil 1
+SCHARF; Rest Zielbild (xfail strict).
 
 WICHTIGER PLAN-BEFUND (Analyse 2026-09, s. docs/OFFENE_FRAGEN.md): die 16
 Farbe-96-Linien sind KATASTERGRENZEN (Layer »Kataster Grenzen«), KEINE
@@ -27,8 +28,8 @@ def rm():
     return ArchitekturRaumProvider().parse(str(PLAN), "EG")
 
 
-@pytest.mark.xfail(strict=True, reason="Hauseingang wird auf Barawitzka noch nicht erkannt")
 def test_soll_final_exit(rm):
+    """Scharf seit Fachteil 1: hauseingang-Typisierung → final_exit im EG."""
     assert any(a.typ == "final_exit" for a in rm.ausgaenge), "kein final_exit"
 
 
@@ -41,8 +42,8 @@ def test_soll_segmente_aus_expliziten_linien(rm):
     assert len(linie) >= 16, f"nur {len(linie)} Segmente mit quelle LINIE"
 
 
-@pytest.mark.xfail(strict=True, reason="tuer_detail=brandschutztuer wird noch nicht vergeben")
 def test_soll_brandschutztuer(rm):
+    """Scharf seit Fachteil 1: EI30-Texte in 500 mm → brandschutztuer."""
     bst = [t for t in rm.tueren if t.tuer_detail == "brandschutztuer"]
     assert len(bst) >= 1, "keine Brandschutztür erkannt"
 

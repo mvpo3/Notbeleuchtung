@@ -68,18 +68,14 @@ def test_fischa_platzierung_nicht_leer(fischa):
     assert any(p.kind == "rz" for p in plzg)
 
 
-def test_fischa_bug_b2_als_pruefbasis_warnung_ausgewiesen(fischa):
-    """Bug B2 (0 Ausgänge/0 Segmente) darf NICHT als „ok" durchgehen (Regel 8b).
-
-    Wenn dieser Test bricht, weil Ausgänge/Segmente erkannt werden: B2 ist gefixt —
-    Basis-Asserts drehen, Bänder anheben, Warnung-Erwartung entfernen."""
+def test_fischa_bug_b2_gefixt_ausgaenge_und_segmente(fischa):
+    """Bug B2 (0 Ausgänge/0 Segmente) ist seit Fachteil 1 GEFIXT: die Tür-
+    Typisierung liefert stair_exits (Stiegenhaustüren) und die Fluchtweg-
+    Vereinigung GRAPH-/FALLBACK-Segmente — Basis-Asserts gedreht, die alte
+    Prüfbasis-Warnungs-Erwartung entfällt (Anleitung im alten Docstring)."""
     r = fischa.raum
-    assert len(r.ausgaenge) == 0, "B2 gefixt? → Test-Erwartungen aktualisieren"
-    assert len(r.zirkulation.segmente) == 0, "B2 gefixt? → Test-Erwartungen aktualisieren"
-    pruef = fischa.render_summary["pruefung"]
-    basis = [b for b in pruef["befunde"] if "Prüfbasis" in b["regel"]]
-    assert len(basis) == 2, f"Prüfbasis-Warnungen fehlen: {[b['regel'] for b in pruef['befunde']]}"
-    assert pruef["status"] != "ok", "0 Ausgänge/0 Segmente darf nicht als ok gelten"
+    assert len(r.ausgaenge) >= 1, "B2-Regress: wieder 0 Ausgänge"
+    assert len(r.zirkulation.segmente) >= 1, "B2-Regress: wieder 0 Segmente"
 
 
 # ---- Herrenholz EG ----
@@ -133,13 +129,12 @@ def test_muthgasse_ist_stand_wand_layer_unerschlossen():
 
 
 def test_barawitzka_duennes_ergebnis_nicht_ok(barawitzka):
-    """47 Räume + 116 Türen, aber 0 Ausgänge/0 Segmente → NICHT „ok" (fail-closed).
+    """Barawitzka bleibt NICHT „ok" (fail-closed) — E2E-Pin.
 
-    Vor der Raum-Kaskade war der Ist-Stand „2 Räume + 0 Symbole" und Regel 8c
-    (widersprüchliches Ergebnis) trug den Befund. Mit erschlossenen Räumen bleibt
-    die Prüfbasis-Lücke (keine Ausgänge/Fluchtwege erkannt) — die muss weiterhin
-    als Nicht-ok ausgewiesen werden."""
+    Seit Fachteil 1 gibt es Ausgänge (hauseingang → final_exit, Stiegenhaus-
+    türen → stair_exit) und FALLBACK-Segmente — die frühere Prüfbasis-Lücke
+    (0 Ausgänge/0 Segmente) ist zu; ausgewiesen bleiben andere Befunde, der
+    Status ist weiterhin nicht ok."""
     pruef = barawitzka.render_summary["pruefung"]
     assert pruef["status"] != "ok", "dünnes Barawitzka-Ergebnis bestand als ok"
-    assert any("Prüfbasis" in b["regel"] for b in pruef["befunde"]), \
-        [b["regel"] for b in pruef["befunde"]]
+    assert pruef["befunde"], "kein einziger Befund auf dem dünnen Ergebnis"
