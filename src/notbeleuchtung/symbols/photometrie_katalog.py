@@ -43,6 +43,23 @@ def ldt_pfad_fuer(catalog_key: str) -> Path | None:
     return pfad if pfad.is_file() else None
 
 
+def katalog_zuordnung() -> dict[str, Path]:
+    """Alle `catalog_key → LDT-Pfad`-Zuordnungen, deren Datei existiert.
+
+    Grundlage der Per-Familie-Photometrie (Registry baut daraus je Familie ein
+    Lichtstärke-Callable). Fehlender Katalog → leeres Dict, nichts bricht.
+    """
+    kat = _katalog_dir()
+    if kat is None:
+        return {}
+    out: dict[str, Path] = {}
+    for key, datei in (_mapping().get("keys") or {}).items():
+        pfad = kat / datei
+        if pfad.is_file():
+            out[key] = pfad
+    return out
+
+
 def fluchtweg_default_ldt() -> Path | None:
     """LDT der Fluchtweg-Deckungs-Leuchte (Corridor-Optik) — None wenn Katalog fehlt."""
     datei = _mapping().get("fluchtweg_default")

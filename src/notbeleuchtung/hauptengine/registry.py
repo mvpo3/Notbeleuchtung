@@ -97,6 +97,27 @@ def photometrie_i_cd_fn(
     return i_cd
 
 
+def photometrie_je_key() -> dict[str, Callable[..., float]]:
+    """`catalog_key → Lichtstärke-Callable` aus dem Photometrie-Katalog.
+
+    Jede Leuchtenfamilie rechnet ihren Lux-Nachweis mit IHRER LDT (Antipanik =
+    Rundlinse, nicht die Corridor-Optik des Fluchtweg-Defaults). Callables ohne
+    Ausrichtungs-Zusicherung: rotationssymmetrische Verteilungen sind exakt,
+    anisotrope konservativ (Minimum über C) — nie eine Überschätzung. Gleiche
+    LDT-Datei → dasselbe Callable (dedupe). Fehlender Katalog → leeres Dict.
+    """
+    from notbeleuchtung.symbols.photometrie_katalog import katalog_zuordnung
+
+    je_pfad: dict[str, Callable[..., float]] = {}
+    out: dict[str, Callable[..., float]] = {}
+    for key, pfad in katalog_zuordnung().items():
+        p = str(pfad.resolve())
+        if p not in je_pfad:
+            je_pfad[p] = photometrie_i_cd_fn(pfad)
+        out[key] = je_pfad[p]
+    return out
+
+
 def default_photometrie(
     ldt_path: str | Path | None = None,
     *,
@@ -211,7 +232,9 @@ def build_default_bundle(
     return BundleMitPhotometrie(
         raum=ArchitekturRaumProvider(),
         norm=En1838NormProvider(),
-        platzierer=NotlichtPlatzierer(i_cd_fn=i_cd_fn),
+        platzierer=NotlichtPlatzierer(
+            i_cd_fn=i_cd_fn, i_cd_fn_je_key=photometrie_je_key() or None
+        ),
         lb=LbTextProvider(),
         oib=OibRl2Provider(),
         photometrie=befund,
