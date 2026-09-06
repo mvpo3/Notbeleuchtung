@@ -13,14 +13,24 @@ from __future__ import annotations
 from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
+from .ausgaenge import leite_ausgaenge
 from .dxf_load import bounds_mm, lade_dxf
+from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
 from .geometrie_typ import typisiere_geometrisch
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
 from .raumtyp import beschrifte_raeume
+from .tuer_typisierung import (
+    brandschutz_hinweise_aus_dxf,
+    geschoss_aus,
+    ist_obergeschoss,
+    typisiere_tueren,
+)
+from .tuer_zuordnung import durchgaenge_ohne_tuerblatt, ordne_tueren
 from .tueren import tueren_aus_dxf
 from .waende import raeume_aus_waenden
-from .wandkoerper import bounds_aus_wandkoerpern
+from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
+from .wohnungen import bilde_wohnungen
 from .zirkulation import zirkulation_aus_dxf
 
 
@@ -65,6 +75,39 @@ class ArchitekturRaumProvider:
             ]
         ausgaenge = hauptausgaenge(plan, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
+
+        # ── Fachteil 1: Zuordnung → Typisierung → Wohnungen → Ausgänge →
+        # Fluchtwege — rein ERGÄNZEND zu hauptausgaenge/zirkulation.
+        geschoss = geschoss_aus(floor, dxf_path)
+        kontur = aussenkontur(k.wandkoerper) if k.wandkoerper else None
+        ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
+        if k.wandkoerper:
+            tueren = tueren + durchgaenge_ohne_tuerblatt(
+                raeume, tueren, wand_union(k.wandkoerper))
+        for s in zirkulation.segmente:      # 09-WEG = explizite Linien
+            s.quelle = "LINIE"
+        flw_enden = [p for s in zirkulation.segmente
+                     for p in (s.polyline_mm[0], s.polyline_mm[-1])
+                     if s.polyline_mm]
+        typisiere_tueren(tueren, raeume, geschoss,
+                         brandschutz_hinweise_aus_dxf(plan), flw_enden)
+        bilde_wohnungen(raeume, tueren)
+        neue, _warnungen = leite_ausgaenge(tueren, raeume, geschoss)
+        vorhandene = list(ausgaenge)
+        for a in neue:
+            if not any(a.typ == v.typ
+                       and abs(a.xy_mm[0] - v.xy_mm[0])
+                       + abs(a.xy_mm[1] - v.xy_mm[1]) < 1500.0
+                       for v in vorhandene):
+                vorhandene.append(a)
+        # Obergeschosse haben keine Ausgänge ins Freie (Fenster-/Balkontüren
+        # der Fassade sind keine hauseingang-Endausgänge).
+        ausgaenge = [a for a in vorhandene
+                     if not (a.typ == "final_exit" and ist_obergeschoss(geschoss))]
+        zirkulation.segmente += linien_segmente(
+            explizite_linien(plan), len(zirkulation.segmente))
+        zirkulation.segmente += fluchtwege(raeume, tueren, ausgaenge,
+                                           zirkulation.segmente)
         return RaumModell(
             floor=floor,
             bounds_mm=bounds,
