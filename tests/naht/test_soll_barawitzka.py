@@ -48,7 +48,8 @@ def test_soll_brandschutztuer(rm):
     assert len(bst) >= 1, "keine Brandschutztür erkannt"
 
 
-@pytest.mark.xfail(strict=True, reason="Stempel-Deckung heute typisiert ≥30 (E2E-Pin), Soll 41")
 def test_soll_41_raeume_mit_stempel(rm):
+    """Scharf seit Fachteil 2: LIFT-Erkennung + Gang-/Geometrie-Typisierung
+    heben die typisierten Räume über die Soll-Schwelle 41 (XPASS-Kipp)."""
     typisiert = [r for r in rm.raeume if r.raum_typ]
     assert len(typisiert) >= 41, f"nur {len(typisiert)} Räume mit Stempel typisiert"

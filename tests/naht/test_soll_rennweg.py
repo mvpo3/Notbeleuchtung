@@ -3,9 +3,9 @@ Wohnungen, Ausgänge, Fluchtwege) größtenteils SCHARF (2026-09-06: Ist =
 13 Türen mit Detail, 1 stiegenhaustuer → stair_exit, 0 final_exit im OG,
 3 GRAPH-Segmente, 2 Wohnungen).
 
-Verbleibendes xfail(strict=True): Lift-Erkennung (nur MTEXT »AUFZUG …«,
-kein X-Rechteck) — wird der Test XPASS, das xfail im selben Commit scharf
-schalten. Skip-Gate, wenn das CAD-Asset fehlt (CI ohne Projekte/).
+Seit Fachteil 2 auch die Lift-Erkennung scharf (textbasierter Pfad) sowie
+Anker-/Stiegenhaus-Zusicherungen. Skip-Gate, wenn das CAD-Asset fehlt
+(CI ohne Projekte/).
 
 Plan-Befunde (2026-09): 11 Zargentüren in Wall-Blöcken (T1..T11), zwei Stiegen
 (Stair_1 mit Laufnummern 1-20, Stair_2 mit 1-6), keine FLW-Linien.
@@ -46,11 +46,12 @@ def test_soll_tueren_mit_detail(rm):
     assert len(mit_detail) >= 11, f"nur {len(mit_detail)} Türen mit tuer_detail"
 
 
-@pytest.mark.xfail(strict=True, reason="Lift-Erkennung textbasiert (MTEXT AUFZUG) fehlt")
 def test_soll_lift_raum(rm):
-    """Lift existiert nur als MTEXT »AUFZUG …« + nächstes Rechteck 1.0-2.8 m."""
+    """Scharf seit Fachteil 2: textbasierter Pfad (MTEXT »AUFZUG …« →
+    rotierter Kabinenumriss als minimales umschreibendes Rechteck)."""
     lifte = [r for r in rm.raeume if r.raum_typ == "LIFT"]
     assert len(lifte) >= 1, "kein LIFT-Raum erkannt"
+    assert all(r.nutzungsklasse == "KEIN_RAUM" for r in lifte)
 
 
 def test_soll_wohnungs_gruppe(rm):
@@ -81,3 +82,27 @@ def test_soll_keine_leuchten_in_wohnung_privat():
         if any(poly.covers(Point(p.xy_mm)) for poly in privat)
     ]
     assert not drin, f"{len(drin)} Leuchte(n) in WOHNUNG_PRIVAT: {drin[:5]}"
+
+
+def test_stiegenhaus_modell_mit_laufrichtung(rm):
+    """Fachteil 2: Stiegenhaus-Modell mit Läufen; Laufnummern 1..20 geben
+    mindestens einem Lauf die Richtung »auf«."""
+    assert len(rm.stiegenhaeuser) >= 1
+    m = rm.stiegenhaeuser[0]
+    assert len(m.laeufe) >= 2, f"nur {len(m.laeufe)} Treppenläufe"
+    assert any(lf.richtung == "auf" for lf in m.laeufe), "keine Laufrichtung erkannt"
+    assert m.verbotszonen_mm
+
+
+def test_keine_anker_in_wohnung_privat(rm):
+    """Fachteil 2: Anker nur in Erschließung (Stiegenhaus/Gang), nie in
+    WOHNUNG_PRIVAT-Räumen."""
+    from shapely.geometry import Point, Polygon
+
+    assert rm.anker, "keine Anker geliefert"
+    privat = [Polygon(r.polygon_mm) for r in rm.raeume
+              if r.nutzungsklasse == "WOHNUNG_PRIVAT" and len(r.polygon_mm) >= 3]
+    assert privat
+    drin = [a.id for a in rm.anker
+            if any(p.contains(Point(a.xy_mm)) for p in privat)]
+    assert not drin, f"Anker in WOHNUNG_PRIVAT: {drin[:5]}"

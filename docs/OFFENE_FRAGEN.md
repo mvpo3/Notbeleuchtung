@@ -57,3 +57,26 @@ Lift-Erkennung muss Achsenkreuz UND Diagonalen akzeptieren + Blockname »LIFT«.
   Wandkörper, > 800 mm, keine bekannte Tür in 600 mm — kann auf lückigen
   Wandkörpern übererkennen (Mollgasse: +78 Durchgänge); Öffnungen tragen
   `ohne_tuerblatt=True` und sind darüber filterbar.
+
+## Fachteil 2 — Lift/Stiegenhaus/Anker (2026-09, Selman)
+
+- **AUFZUGSVORPLATZ wird nicht automatisch typisiert:** ein Vorplatz zählt nur
+  als eigener Raum, wenn der Plan ihn als solchen abgrenzt (eigener Raum vor
+  der Lifttür). Automatisch ist die Lifttür heute nicht erkennbar (kein
+  Türblock am Schacht in den Realplänen) — die Fläche bleibt Teil des
+  Stiegenhauses.
+- **Marker-Evidenz (X/Achsenkreuz) nur in der Erschließung:** Betten, Möbel
+  und Waschmaschinen tragen dieselben Diagonalen/Kreuze (Barawitzka-Befund:
+  9 Fehltreffer in Küche/Bad/Waschküche/Terrasse). `lift_erkennung` wertet
+  X/Achsenkreuz deshalb nur, wenn das Rechteck in STIEGENHAUS/GANG liegt;
+  Text- und Blockname-Evidenz gilt überall. Markierte Schächte im Liftmaß
+  typen dann als LIFT — gleichwertig `KEIN_RAUM`/Verbotszone; ein eigener
+  SCHACHT-Typ wäre ein Vokabular-Vorschlag an alle 3 Owner.
+- **Laufrichtung ohne Nummern/Gehlinie bleibt `unbekannt`:** kein Norm- oder
+  Geometrie-Kriterium erfunden; Rennweg liefert Nummern 1..20, Mollgasse die
+  Gehlinie — sonst trägt der Lauf `richtung='unbekannt'` und
+  `fluchtrichtung_grad=None`.
+- **Verbotszonen-Konsum in der Platzierung fehlt:** die Platzierung liest
+  `stiegenhaeuser[].verbotszonen_mm` noch nicht. Mollgasse EG ist nach dem
+  Liftschacht-Ausstanzen trotzdem sauber (0 Leuchten im Liftpolygon, scharfer
+  Test) — der generische Konsum (auch Laufflächen) bleibt Leonis, Fachteil 3.
