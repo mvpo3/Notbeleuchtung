@@ -18,13 +18,19 @@ from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
-from .communal_stgh_strategy import (
-    _AGV_SV_F,
-    _building_assigner,
-    _richtung_und_rotation,
-    _select_key,
+from .bausteine import (
+    AGV_SV_F as _AGV_SV_F,
 )
-from .deckung import _KORRIDOR_TYPEN
+from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import (
+    building_assigner as _building_assigner,
+)
+from .bausteine import (
+    richtung_und_rotation as _richtung_und_rotation,
+)
+from .bausteine import (
+    select_key as _select_key,
+)
 from .geometry import _bbox
 from .mittellinie import leuchten_auf_linie
 

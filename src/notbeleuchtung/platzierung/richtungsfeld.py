@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import networkx as nx
 
-from .communal_stgh_strategy import _richtung_und_rotation
+from .bausteine import richtung_und_rotation as _richtung_und_rotation
 
 Point = tuple[float, float]
 
