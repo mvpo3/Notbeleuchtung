@@ -36,8 +36,9 @@ import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
-from shapely.geometry import Polygon
+from shapely.geometry import Point, Polygon
 
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
 from notbeleuchtung.raumerkennung.material_matching import (
     _LAYER_HINWEISE,
@@ -45,7 +46,9 @@ from notbeleuchtung.raumerkennung.material_matching import (
     signatur_aus_hatch,
     signatur_zu_dict,
 )
-from notbeleuchtung.raumerkennung.raumlayer import raeume_aus_layer
+from notbeleuchtung.raumerkennung.raumlayer import raeume_aus_hatch, raeume_aus_layer
+from notbeleuchtung.raumerkennung.raumtyp import raumtyp_flags
+from notbeleuchtung.raumerkennung.rest_komponenten import komponenten_ohne_stempel
 from notbeleuchtung.raumerkennung.stempel_anker import (
     Zuordnung,
     finde_stempel,
@@ -53,6 +56,9 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     restflaechen,
     zentrum,
 )
+from notbeleuchtung.raumerkennung.stempel_flutung import flute_stempel
+from notbeleuchtung.raumerkennung.tueren import tuer_oeffnungen
+from notbeleuchtung.raumerkennung.wandkoerper import finde_wandkoerper
 
 EINGANG = REPO / "Projekte" / "_eingang"
 ERGEBNIS = REPO / "Projekte" / "_ergebnis"
@@ -227,11 +233,11 @@ def _speichern(fig: plt.Figure, pfad: Path, rot90: int) -> None:
 
 
 def _poly_zeichnen(ax: plt.Axes, punkte_mm, farbe, label: str, plan: DxfPlan,
-                   ztop: float, labels_xy: list) -> None:
+                   ztop: float, labels_xy: list, ec=None) -> None:
     """Halbtransparente Füllung + optionales Label am Zentroid — über dem Render."""
     xs = [p[0] / plan.factor for p in punkte_mm]
     ys = [p[1] / plan.factor for p in punkte_mm]
-    ax.fill(xs, ys, color=farbe, alpha=0.4, ec=farbe, lw=1.5, zorder=ztop)
+    ax.fill(xs, ys, color=farbe, alpha=0.4, ec=ec or farbe, lw=1.5, zorder=ztop)
     if not label:
         return
     cx, cy = zentrum(list(punkte_mm))
@@ -564,18 +570,115 @@ def _material_md(koerper: list[dict], brand: list[list], flucht: list[list],
 
 # ---------------------------------------------------------------- Hauptlauf
 
-def _raeume(plan: DxfPlan) -> tuple[list, str]:
+def _ein_polygon_ein_stempel(zuord: list[Zuordnung]) -> None:
+    """Ein Polygon gehört genau EINEM Stempel — in-place.
+
+    ``ordne_zu`` heftet bei Plänen ohne Raum-Layer (Mollgasse: H-Polygone aus
+    Hatches) bis zu 11 Stempel ans selbe Polygon; die berechneten Flächen sind
+    dann für alle bis auf einen falsch. Es bleibt der beste Flächen-Match, die
+    übrigen gehen als ``kein_polygon`` zurück in die Flutung.
+    """
+    je_polygon: dict[int, list[int]] = {}
+    for k, z in enumerate(zuord):
+        if z.polygon_index is not None:
+            je_polygon.setdefault(z.polygon_index, []).append(k)
+    for kandidaten in je_polygon.values():
+        if len(kandidaten) < 2:
+            continue
+        best = min(kandidaten, key=lambda k: abs(zuord[k].abweichung_prozent)
+                   if zuord[k].abweichung_prozent is not None else math.inf)
+        for k in kandidaten:
+            if k != best:
+                zuord[k] = Zuordnung(zuord[k].stempel, None, None, None, "kein_polygon")
+
+
+def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
+    """Raum-Kaskade L→H→F→R (spiegelt provider.py-Kaskade; Integration hier).
+
+    L: ``raeume_aus_layer`` · H: ``raeume_aus_hatch`` additiv (IoU-Dedup gegen L)
+    · F: ``flute_stempel`` für Stempel ohne brauchbares Polygon (kein Polygon,
+    ODER Flächen-Flag UND Stempelpunkt außerhalb des zugeordneten Polygons)
+    · R: ``komponenten_ohne_stempel`` für den stempellosen Rest.
+
+    Rückgabe: (zuordnungen, raeume, rest_raeume, quelle_je_raum_id, kette).
+    """
     raeume = raeume_aus_layer(plan)
-    if raeume:
-        return raeume, "raumlayer"
+    quelle: dict[str, str] = {r.id: "L" for r in raeume}
+    for r in raeume_aus_hatch(plan, stempel):
+        if any(iou(r.polygon_mm, v.polygon_mm) > 0.5 for v in raeume):
+            continue
+        r.id = f"raum_{len(raeume) + 1}"
+        raeume.append(r)
+        quelle[r.id] = "H"
+    wk = finde_wandkoerper(plan)
+    oeff = tuer_oeffnungen(plan)
+    zuord = ordne_zu(stempel, raeume)
+    _ein_polygon_ein_stempel(zuord)
+    flut_i = [
+        k for k, z in enumerate(zuord)
+        if z.flag == "kein_polygon"
+        or (z.flag != "ok" and z.raum is not None
+            and not Polygon(z.raum.polygon_mm).buffer(0).covers(
+                Point(z.stempel.position_mm)))
+    ]
+    if flut_i and wk:
+        fluts = flute_stempel(plan, [zuord[k].stempel for k in flut_i], wk, oeff)
+        for k, fr in zip(flut_i, fluts):
+            # Degenerierte Flutungen (<1 m², z.B. Stempel in Wandtasche) blocken
+            # sonst die Rest-Stufe — dort typt sie der STIEGE-/LIFT-Marker besser.
+            if len(fr.polygon_mm) < 3 or Polygon(fr.polygon_mm).area < 1e6:
+                zuord[k] = Zuordnung(fr.stempel, None, None, None, "kein_polygon")
+                continue
+            st = fr.stempel
+            tf = raumtyp_flags(st.name or "")
+            typ, flucht, communal = tf if tf else (st.typ or "", False, False)
+            r = Raum(id=f"raum_{len(raeume) + 1}", raum_typ=typ,
+                     polygon_mm=[(float(x), float(y)) for x, y in fr.polygon_mm],
+                     flaeche_m2=Polygon(fr.polygon_mm).area / 1e6,
+                     ist_fluchtweg=flucht, ist_communal=communal)
+            raeume.append(r)
+            quelle[r.id] = "F"
+            zuord[k] = Zuordnung(st, len(raeume) - 1, r, fr.abweichung_prozent, fr.flag)
+    belegte = [r.polygon_mm for r in raeume if len(r.polygon_mm) >= 3]
     try:
-        from notbeleuchtung.raumerkennung.waende import raeume_aus_waenden
-        return raeume_aus_waenden(plan), "waende"
-    except Exception as exc:  # noqa: BLE001 — Fallback darf den Lauf nie killen
-        return [], f"waende-fallback fehlgeschlagen: {exc}"
+        rest_r = komponenten_ohne_stempel(plan, wk, oeff, belegte)
+    except Exception as exc:  # noqa: BLE001 — Rest-Stufe darf den Lauf nie killen
+        print(f"   rest_komponenten fehlgeschlagen: {exc}")
+        rest_r = []
+    for r in rest_r:
+        quelle[r.id] = "R"
+    n = Counter(quelle.values())
+    kette = (f"kaskade L:{n.get('L', 0)} H:{n.get('H', 0)} "
+             f"F:{n.get('F', 0)} R:{n.get('R', 0)}")
+    return zuord, raeume, rest_r, quelle, kette
 
 
-def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
+#: Raumtyp → (Füllfarbe, Konturfarbe) fürs 02-Bild.
+def _typ_stil(typ: str | None, name: str | None = None) -> tuple[str, str]:
+    # Namens-Fallback vor dem Typ-Mapping: 'Wohnküche' typt zu KÜCHE, 'Hobbyraum'
+    # zu ZIMMER — beides grün; der Stempelname ist hier die feinere Quelle.
+    n = (name or "").lower()
+    if "wohn" in n or "hobby" in n:
+        return "#7b68ee", "#7b68ee"                      # blau/lila
+    t = (typ or "").upper()
+    if "SCHACHT" in t:
+        return "#ffffff", "#dd0000"                      # weiß, rote Kontur
+    if "STIEG" in t or "TREPP" in t or "LIFT" in t:
+        return "#ff9500", "#ff9500"                      # orange
+    if "GANG" in t or "FLUR" in t or "VORRAUM" in t:
+        return "#ffd400", "#c8a800"                      # gelb
+    if t in ("BAD", "WC") or "NASS" in t or "WASCH" in t:
+        return "#e04040", "#e04040"                      # rot
+    if "HOBBY" in t or "WOHN" in t:
+        return "#7b68ee", "#7b68ee"                      # blau/lila
+    if t in ("ABSTELLRAUM", "LAGER", "KELLER", "TECHNIK", "MUELLRAUM", "GARAGE"):
+        return "#909090", "#707070"                      # grau (AR & Co.)
+    if t and t != "UNBEKANNT":
+        return "#3cb043", "#3cb043"                      # Zimmer-Familie grün
+    return "#d3d3d3", "#b0b0b0"                          # UNBEKANNT hellgrau
+
+
+def _json_eintraege(zuordnungen: list[Zuordnung], rest, quelle: dict) -> list[dict]:
     out = []
     for n, z in enumerate(zuordnungen, start=1):
         st = z.stempel
@@ -589,7 +692,8 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
             "abweichung_prozent": (round(z.abweichung_prozent, 2)
                                    if z.abweichung_prozent is not None else None),
             "flag": z.flag,
-            "quelle": st.quelle,
+            "quelle": quelle.get(z.raum.id) if z.raum else None,
+            "stempel_quelle": st.quelle,
         })
     for r in rest:
         out.append({
@@ -597,7 +701,8 @@ def _json_eintraege(zuordnungen: list[Zuordnung], rest) -> list[dict]:
             "polygon_mm": [list(p) for p in r.polygon_mm],
             "flaeche_stempel": None, "flaeche_berechnet": r.flaeche_m2,
             "abweichung_prozent": None, "flag": "kein_stempel",
-            "quelle": "restflaeche",
+            "quelle": quelle.get(r.id),
+            "stempel_quelle": None,
         })
     return out
 
@@ -610,9 +715,8 @@ def plan_pruefen(dxf: Path) -> dict:
 
     plan = lade_dxf(dxf)
     stempel = finde_stempel(plan)
-    raeume, raum_quelle = _raeume(plan)
-    zuordnungen = ordne_zu(stempel, raeume)
-    rest = restflaechen(raeume, zuordnungen)
+    zuordnungen, raeume, rest_r, quelle, raum_quelle = _raum_kaskade(plan, stempel)
+    rest = restflaechen(raeume, zuordnungen) + rest_r
     rot, rot_vermerk = _rotation(plan)
 
     prefix = _varianten_prefix(stempel)
@@ -623,22 +727,32 @@ def plan_pruefen(dxf: Path) -> dict:
     _meterraster(ax, plan)
     _speichern(fig, ziel / "01_render.png", rot)
 
-    # 02: erkannte Räume eingefärbt (Label nur ab 4 m², sonst Clutter).
+    # 02: ALLE Räume, Farbe nach TYP, Quelle-Kürzel (L/H/F/R) im Label.
+    stempel_je_raum = {}
+    for z in zuordnungen:
+        if z.raum is not None and z.raum.id not in stempel_je_raum:
+            stempel_je_raum[z.raum.id] = z
     fig, ax = _figur(plan, zoom)
     _meterraster(ax, plan)
     ztop, labels_xy = _ztop(ax), []
-    for n, z in enumerate(zuordnungen):
-        if z.raum is None or len(z.raum.polygon_mm) < 3:
+    for r in raeume + rest_r:
+        if len(r.polygon_mm) < 3:
             continue
-        st = z.stempel
-        if z.raum.flaeche_m2 >= 4.0:
-            lbl = (f"{st.name}\nStempel: {st.flaeche_m2:.1f} m²" if st.flaeche_m2
-                   else st.name)
-            lbl += f" / berechnet: {z.raum.flaeche_m2:.1f} m²"
-        else:
+        q = quelle.get(r.id, "?")
+        z = stempel_je_raum.get(r.id)
+        fc, ec = _typ_stil(r.raum_typ, z.stempel.name if z else None)
+        if r.flaeche_m2 < 4.0:
             lbl = ""
-        _poly_zeichnen(ax, z.raum.polygon_mm, _FARBEN[n % len(_FARBEN)], lbl, plan,
-                       ztop, labels_xy)
+        elif z is not None:
+            st = z.stempel
+            lbl = f"[{q}] " + " ".join(st.name.splitlines())
+            if st.flaeche_m2:
+                lbl += f"\n{st.flaeche_m2:.1f} / {r.flaeche_m2:.1f} m²"
+            else:
+                lbl += f"\n{r.flaeche_m2:.1f} m²"
+        else:
+            lbl = f"[{q}] {r.raum_typ or '?'}\n{r.flaeche_m2:.1f} m²"
+        _poly_zeichnen(ax, r.polygon_mm, fc, lbl, plan, ztop, labels_xy, ec=ec)
     _speichern(fig, ziel / "02_raeume.png", rot)
 
     # 03: Restflächen ohne Stempel.
@@ -663,7 +777,10 @@ def plan_pruefen(dxf: Path) -> dict:
                           if k["material"] != "UNBEKANNT")
     abdeckung = flaeche_bekannt / flaeche_bauteil if flaeche_bauteil > 0 else None
 
-    eintraege = _json_eintraege(zuordnungen, rest)
+    eintraege = _json_eintraege(zuordnungen, rest, quelle)
+    ids = [e["id"] for e in eintraege]
+    doppelt = [i for i, n in Counter(ids).items() if n > 1]
+    assert not doppelt, f"{name}: Mehrfach-Zuordnung auf {doppelt}"
     daten = {"raeume": eintraege,
              "wandkoerper": [{k: v for k, v in w.items() if not k.startswith("_")}
                              for w in koerper]}
@@ -681,47 +798,60 @@ def plan_pruefen(dxf: Path) -> dict:
 
     laufzeit = time.time() - t0
     material_block = _material_md(koerper, brand, flucht, abdeckung, plan)
+    # Kennzahlen der Kaskade.
+    gesamt = len(raeume) + len(rest_r)
+    mit_stempel = len({z.raum.id for z in zuordnungen if z.raum is not None})
+    flag_ok = sum(1 for z in zuordnungen if z.flag == "ok")
+    rest_typ = sum(1 for r in rest_r if r.raum_typ != "UNBEKANNT")
+    rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
-             material_block)
+             material_block, quelle)
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
-    rest_n = sum(1 for e in eintraege if e["quelle"] == "restflaeche")
+    rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
     return {"plan": name, "stempel": len(stempel),
             "raeume": len(eintraege) - rest_n,
             "rest": rest_n, "flags": flags, "iou_mittel": iou_mittel,
             "laufzeit": laufzeit,
             "abdeckung": abdeckung, "unbekannte_muster": n_muster,
             "brand_linien": len(brand), "flucht_linien": len(flucht),
-            "material_md": material_block}
+            "material_md": material_block,
+            "raeume_gesamt": gesamt, "mit_stempel": mit_stempel,
+            "flag_ok": flag_ok, "rest_typisiert": rest_typ,
+            "rest_untypisiert": rest_untyp,
+            "quellen_mix": raum_quelle}
 
 
 def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              raum_quelle: str, rot_vermerk: str,
              iou_zeilen, iou_mittel, laufzeit: float, n_raeume: int = 0,
-             material_block: list[str] | None = None) -> None:
+             material_block: list[str] | None = None,
+             quelle: dict | None = None) -> None:
+    quelle = quelle or {}
     l = [f"# Prüfbericht {name}", "",
          f"Raum-Polygon-Quelle: `{raum_quelle}` — {rot_vermerk}", ""]
-    if zuordnungen and n_raeume * 5 < len(zuordnungen):
-        l += [("**Bekannte Lücke:** Raumerkennung deckt den Plan nicht ab "
-               f"(nur {n_raeume} Polygone bei {len(zuordnungen)} Stempeln) — "
-               "HATCH-basierte Räume werden noch nicht erkannt."), ""]
     l += [
-         "## Stempel", "",
-         "| Name | Typ | m² Stempel | m² Polygon | Abw. % | Flag |",
-         "|---|---|--:|--:|--:|---|"]
+         "## Räume", "",
+         "| Quelle | Name | Typ | m² Stempel | m² berechnet | Abw. % | Flag |",
+         "|---|---|---|--:|--:|--:|---|"]
     for z in zuordnungen:
         st = z.stempel
-        l.append("| {} | {} | {} | {} | {} | {} |".format(
+        l.append("| {} | {} | {} | {} | {} | {} | {} |".format(
+            quelle.get(z.raum.id, "—") if z.raum else "—",
             " / ".join(st.name.replace("|", "/").splitlines()), st.typ or "—",
             f"{st.flaeche_m2:.2f}" if st.flaeche_m2 is not None else "—",
             f"{z.raum.flaeche_m2:.2f}" if z.raum else "—",
             f"{z.abweichung_prozent:+.1f}" if z.abweichung_prozent is not None else "—",
             z.flag))
+    for r in rest:
+        l.append("| {} | {} | {} | — | {:.2f} | — | kein_stempel |".format(
+            quelle.get(r.id, "—"), r.id, r.raum_typ or "—", r.flaeche_m2))
     l += ["", f"## Restflächen ohne Stempel ({len(rest)})", ""]
     for r in rest:
         cx, cy = zentrum(r)
-        l.append(f"- {r.id}: {r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
+        l.append(f"- {r.id} [{quelle.get(r.id, '?')}] {r.raum_typ or '—'}: "
+                 f"{r.flaeche_m2:.2f} m², Zentrum ({cx / 1000:.2f}, {cy / 1000:.2f}) m")
     warn = [f"Stempel ohne Polygon: „{z.stempel.name}“"
             for z in zuordnungen if z.polygon_index is None]
     warn += [f"Polygon ohne Stempel: {r.id} ({r.flaeche_m2:.2f} m²)" for r in rest]
@@ -730,6 +860,23 @@ def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
              if z.abweichung_prozent is not None and abs(z.abweichung_prozent) > 10]
     l += ["", f"## Warnungen ({len(warn)})", ""]
     l += [f"- {w}" for w in warn] or ["- keine"]
+    ausbruch = [z for z in zuordnungen
+                if z.flag == "flutung_unsicher" and z.raum is not None
+                and z.abweichung_prozent is not None and z.abweichung_prozent > 200]
+    if ausbruch:
+        l += ["", "## Bekannte Grenze: ausgebrochene Flutungen", "",
+              ("Bei diesen Stempeln läuft die Flutung über eine offene Tür in "
+              "Vorplatz/Korridor. Zwei Gegenversuche brachten keine Verbesserung "
+              "ohne Regression und sind daher NICHT eingebaut: eine zusätzliche "
+              "niedrigere Start-Versiegelungsstufe (300 bzw. 400 mm) senkte "
+              "plan-weit die „ok“-Flutungen von 41 auf 38; eine Deckelung der "
+              "Flutfläche auf 3× Stempelfläche trifft zwar genau diese Fälle, "
+              "verletzt aber die Modul-Invariante „NIE verwerfen“ "
+              "(`test_stempel_flutung.py::test_riesenbereich_unsicher`). Die "
+               "Fälle bleiben darum als `flutung_unsicher` ehrlich geflaggt."), ""]
+        l += [f"- „{' / '.join(z.stempel.name.splitlines())}“: "
+              f"{z.stempel.flaeche_m2:.2f} m² Stempel → {z.raum.flaeche_m2:.2f} m² "
+              f"geflutet ({z.abweichung_prozent:+.0f} %)" for z in ausbruch]
     if iou_zeilen:
         l += ["", "## Referenz-Vergleich (IoU)", "", "| Raum | IoU |", "|---|--:|"]
         l += [f"| {n} | {v:.3f} |" for n, v in iou_zeilen]
@@ -755,9 +902,14 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
         iou_txt = f"{r['iou_mittel']:.3f}" if r["iou_mittel"] is not None else "—"
         abd = r.get("abdeckung")
         abd_txt = f", Legendenabdeckung {abd * 100:.1f} %" if abd is not None else ""
-        zeilen.append(f"- {stamp[:10]} · {commit} · {r['plan']}: {r['stempel']} Stempel, "
-                      f"{r['raeume']} Räume, {r['rest']} Restflächen, IoU-Mittel {iou_txt}"
-                      f"{abd_txt}")
+        zeilen.append(
+            f"- {stamp[:10]} · {commit} · {r['plan']}: {r['stempel']} Stempel, "
+            f"{r['raeume']} Räume, {r['rest']} Restflächen, IoU-Mittel {iou_txt}"
+            f"{abd_txt} · Räume gesamt {r.get('raeume_gesamt', 0)}, "
+            f"mit Stempel {r.get('mit_stempel', 0)}, Flag ok {r.get('flag_ok', 0)}, "
+            f"Rest typisiert {r.get('rest_typisiert', 0)} / "
+            f"untypisiert {r.get('rest_untypisiert', 0)} "
+            f"({r.get('quellen_mix', '')})")
     out = ["# Verlauf plan_pruefen"]
     for i, z in enumerate(zeilen):
         if z.startswith("## Lauf") and (i + 1 >= len(zeilen)
@@ -804,6 +956,10 @@ def main() -> int:
               f"{r['flags']} Flags, Abdeckung "
               + (f"{abd * 100:.1f} %" if abd is not None else "—")
               + f", {r['unbekannte_muster']} unbek. Muster, {r['laufzeit']:.1f} s")
+        print(f"   Kaskade: gesamt {r['raeume_gesamt']}, mit Stempel "
+              f"{r['mit_stempel']}, Flag ok {r['flag_ok']}, Rest typisiert "
+              f"{r['rest_typisiert']} / untypisiert {r['rest_untypisiert']} "
+              f"({r['quellen_mix']})")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)
