@@ -67,3 +67,32 @@ def leuchten_auf_linie(polygon: Polygon, abstand_mm: float, raster_mm: float = 2
                for gx, gy in gesetzt):
             gesetzt.append(p)
     return gesetzt
+
+
+def leuchten_auf_linie_mit_richtung(
+    polygon: Polygon, abstand_mm: float, raster_mm: float = 200.0
+) -> list[tuple[float, float, float]]:
+    """Wie `leuchten_auf_linie`, plus **Achsen-Azimut je Kandidat** (Grad, math.
+    positiv, 0° = +x).
+
+    Der Azimut ist die lokale Tangente der Mittelachse am Kandidaten — die
+    Richtung, in der eine Corridor-Optik (C0-Keule längs des Gangs) montiert
+    wird. Er speist den richtungsrichtigen Lux-Nachweis (`lux`-Leuchten-Tripel)
+    UND wird als Montage-Rotation an die Platzierung geschrieben; C0/C180-
+    Symmetrie der Optik macht die 180°-Ambiguität der Tangente unschädlich.
+    """
+    pts = mittellinie(polygon, raster_mm)
+    if not pts:
+        return []
+    pts = sorted(pts)
+    gesetzt = leuchten_auf_linie(polygon, abstand_mm, raster_mm)
+
+    def tangente(g: Point) -> float:
+        i = min(range(len(pts)), key=lambda k: (pts[k][0] - g[0]) ** 2 + (pts[k][1] - g[1]) ** 2)
+        a, b = pts[max(i - 1, 0)], pts[min(i + 1, len(pts) - 1)]
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        if abs(dx) < 1e-9 and abs(dy) < 1e-9:
+            return 0.0
+        return float(np.degrees(np.arctan2(dy, dx))) % 360.0
+
+    return [(gx, gy, tangente((gx, gy))) for gx, gy in gesetzt]
