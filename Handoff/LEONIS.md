@@ -4,7 +4,30 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-06) — Sync-Session: Enis' #116+#117 reviewt + GEMERGT — HIER WEITER
+## STAND (2026-09-06, Nachmittag) — #118 GEMERGT: Blatt-Feld PRÜFVERMERK
+
+**main = #118-Merge, 824 grün.** Owner-GO + visuelle Abnahme (Mollgasse-EG-DXF in
+`output/mollgasse_eg_pruefvermerk.dxf|pdf`, AutoCAD-geprüft, „passt"):
+- **`_blatt_pruefvermerk`** — Feld IM Blatt, freie Bande der rechten Vorlagen-
+  Spalte (y 566..596; Legenden-Unterkante 595,9 / PLANNUMMER-Linie 563,5
+  vermessen): Titel + Status farbcodiert (ok 3/warnung 30/fehler 1) + Zählung +
+  Photometrie-Vorbehalt (#117-Naht) + Summary-Verweis. Ohne `pruefung` entfällt
+  es. Summary-Key `pruefvermerk_am_blatt`.
+- Owner-Fixierung „keine Zusatz-Boxen" unberührt (`pruefbericht_drawn=False`).
+- **Enis-Naht Regel 13/15 damit GEKLÄRT: Sichtbarkeit AM BLATT existiert.**
+- Zwei Fallen dokumentiert: Vorlagen-TEXT-Font kann kein `·`/`—` (Kästchen →
+  ASCII-Trenner) · ezdxf-Matplotlib braucht `BackgroundPolicy.WHITE`, sonst ist
+  Farbe 7 weiß-auf-weiß (Projekt-`pdf_export` hat das schon).
+
+**Auch heute: Selmans Prüfstrecken-Sprung gesichtet** (Artifact + `Projekte/
+_ergebnis/`): Kaskade Layer→HATCH→Stempel-Flutung→Rest. **Barawitzka 2→47
+Räume, Mollgasse 62 ECHTE Polygone (51 Flutung) = Gap-Healing-Blocker faktisch
+geknackt**, Rennweg OG3 als 6. Familie (10/10). Noch Prüfstrecken-/Provider-
+Stand — sobald Selman das in `ArchitekturRaumProvider` verdrahtet, kippen die
+E2E-Bänder (Kipp-Anleitungen liegen bereit) und Mollgasse-Platzierung ändert
+sich deutlich (Flächen-Trigger!).
+
+## STAND (2026-09-06, Vormittag) — Sync-Session: Enis' #116+#117 reviewt + GEMERGT
 
 **main `8248126`, 822 grün, ruff clean, kein Contract.** Owner-Ansage „mach mal
 Sync alles" + Volles GO. Ablauf:
