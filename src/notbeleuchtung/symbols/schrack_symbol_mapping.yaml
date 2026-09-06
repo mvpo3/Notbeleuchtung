@@ -66,6 +66,17 @@ sicherheitsleuchte_aufheller:
   label: "Sicherheitsleuchte (Aufheller)"
   category: sicherheitsleuchte
 
+# Spot-Darstellung (din-Profi-Vorbild STANDARD_SPOT/Standardblock_Spot — 40× im
+# Referenzplan die HÄUFIGSTE SL-Darstellung; Produkte STRING 2 eco/power spot):
+# Kreis Ø330 mit Diagonal-X + zwei gefüllten Sektoren, din-geometrietreu in
+# Library-Skala nachgebaut (2026-09-06, 1.78 units = in-band). Rolle bleibt SL —
+# den Key vergibt erst die künftige Produktwahl-Logik (LB → Produkt → Symbol);
+# Render/Stückliste können ihn ab sofort.
+sicherheitsleuchte_spot:
+  block_name: "spot notbeleuchtung"
+  label: "Sicherheitsleuchte (Spot)"
+  category: sicherheitsleuchte
+
 # ── Antipanik ─────────────────────────────────────────
 # Zweckgebautes Antipanik-Piktogramm (44 LWPOLYLINE), Extents 5.64×1.59 units = in-band.
 antipanik_leuchte:
