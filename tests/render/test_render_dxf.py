@@ -420,3 +420,40 @@ def test_blatt_modus_ersetzt_alle_boxen(contracts, tmp_path):
     assert msp.query("LWPOLYLINE[layer=='din_SIBEL_99_titleblock']")
     blatt_syms = [e for e in msp.query("INSERT") if not e.has_xdata("NOTBELEUCHTUNG")]
     assert len(blatt_syms) >= 5   # Legenden-Symbole der Blatt-Spalte
+
+
+def test_blatt_pruefvermerk_feld(contracts, tmp_path):
+    """Owner-GO 2026-09-06: das Blatt trägt ein PRÜFVERMERK-Feld (Status + Zählung
+    + offene Photometrie-Grundlage) — der volle Prüfbericht bleibt im Summary/API.
+    Enis-Naht Regel 13/15: Sichtbarkeit AM BLATT."""
+    from notbeleuchtung.hauptengine.photometrie_befund import PhotometrieBefund
+
+    platzierung, raum = contracts
+    out = tmp_path / "blatt_vermerk.dxf"
+    pruefung = {"status": "warnung", "befunde": [
+        {"regel": "A", "status": "ok", "detail": ""},
+        {"regel": "B", "status": "warnung", "detail": ""},
+    ]}
+    befund = PhotometrieBefund(
+        quelle="hersteller_ldt", hinweis="konservativ", vollstaendiger_nachweis=False,
+    )
+    summary = render_dxf(platzierung, raum, out, pruefung=pruefung, photometrie=befund)
+    assert summary["blatt_layout_drawn"] is True
+    assert summary["pruefvermerk_am_blatt"] is True
+    assert summary["pruefbericht_drawn"] is False   # Box bleibt unterdrückt
+    texte = [e.dxf.text for e in ezdxf.readfile(str(out)).modelspace().query("TEXT")]
+    assert any("PRÜFVERMERK" in t for t in texte)
+    assert any(t == "Status: WARNUNG" for t in texte)
+    assert any("2 Regeln geprüft: 1 ok / 1 Warnung(en) / 0 Fehler" in t for t in texte)
+    assert any("vollständiger Nachweis offen" in t for t in texte)
+
+
+def test_blatt_pruefvermerk_ohne_pruefung_entfaellt(contracts, tmp_path):
+    """Ohne Prüfbericht wird nichts behauptet — kein leeres Vermerk-Feld."""
+    platzierung, raum = contracts
+    out = tmp_path / "blatt_ohne.dxf"
+    summary = render_dxf(platzierung, raum, out)
+    assert summary["blatt_layout_drawn"] is True
+    assert summary["pruefvermerk_am_blatt"] is False
+    texte = [e.dxf.text for e in ezdxf.readfile(str(out)).modelspace().query("TEXT")]
+    assert not any("PRÜFVERMERK" in t for t in texte)
