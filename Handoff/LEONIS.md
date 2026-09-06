@@ -4,7 +4,34 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-06, Nacht) — #121 GEMERGT: Per-Familie-Photometrie — HIER WEITER
+## STAND (2026-09-06, Spätnacht) — #122–#126 GEMERGT: Unterlage, Kontext, Vokabular — HIER WEITER
+
+**main = #126-Merge, 853 grün.** Nach #121 kamen FÜNF weitere Merges:
+- **#122** Spot-Symbol (din STANDARD_SPOT geometrietreu nachgebaut, Owner nahm
+  es sofort in seine Vorlage-v2 auf!) + Engine-Nachzug auf die Owner-Vorlage v2
+  (Spalte x 2086..2291, Planfenster=VIEWPORT → Engine zeichnet Rahmen selbst,
+  Owner-INSERTs in Legende werden mitkopiert, Prüfvermerk-Bande 596..614,5).
+  Wohnbau-Fixture fing den Vorlagen-Umbau sofort (4 rote Tests) — Zweck erfüllt.
+- **#123** Architektur-Slice platzierung/: `bausteine.py` (verkappte Common-Lib
+  entwirrt, wortgleich) + `PlatzierungsKontext` (Schluss mit Parameter-Fädelei;
+  Enis' nächste Nähte = 1 Feld). Mollgasse bit-identisch.
+- **#124** `docs/VOKABULAR.md` (kanonische 19 Raumtypen + Naht-Glossar, Doku-
+  Drift-Guard `test_vokabular_doku.py`) + `docs/adr/` (6 Bindend-Entscheidungen).
+  Idee aus mattpocock/skills domain-modeling adaptiert; Rest der Suite verworfen.
+- **#125** **PDF-Default WEISS** (Owner-Regel; dunkel bleibt Option, Goldens hell).
+- **#126** **Architektur-Unterlage**: Original-Linienwerk (ezdxf-Importer inkl.
+  Blöcke, ohne Text/Bemaßung/HATCH) als graue Layer unterm Grün; Skala-Erkennung
+  1/10/25,4/1000; fail-open; Pipeline hält DWG-Konvertat bis Render. PLUS
+  `_geschoss_extents` Ausreißer-robust: Rennweg-Erkennung liefert Phantom-Raum
+  am Quell-Plankopf (755 m Spannweite!) → Fenster clustert um größten Raum
+  (@polatselman gemeldet). Rennweg 8/8 verifiziert — sieht jetzt aus wie ein
+  echter Montageplan.
+- **Assets:** Rennweg 15 alle 8 Geschosse committet (`Projekte/Rennweg/`).
+  AP3-LDT-Anfrage an din bleibt Owner-Aktion (QUELLEN.md).
+- Enis' 5-Punkte-Photometrie-Paket: Leonis-Positionen mündlich an Owner
+  übergeben (Memory hat Details); Stiegenhaus-Nachweislücke verifiziert.
+
+## STAND (2026-09-06, Nacht) — #121 GEMERGT: Per-Familie-Photometrie
 
 **main = #121-Merge, 846 grün.** AP3-Session mit zwei Ergebnissen:
 - **AP3-LDT extern blockiert:** din (Dietmar Nocker) gibt die Concept-2-AP3-
