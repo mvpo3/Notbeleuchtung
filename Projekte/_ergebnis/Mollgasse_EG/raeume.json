@@ -23527,7 +23527,7 @@
     },
     {
       "id": "rest_1",
-      "typ": "UNBEKANNT",
+      "typ": null,
       "name": null,
       "polygon_mm": [
         [

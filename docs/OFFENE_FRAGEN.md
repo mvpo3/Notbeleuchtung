@@ -80,3 +80,31 @@ Lift-Erkennung muss Achsenkreuz UND Diagonalen akzeptieren + Blockname »LIFT«.
   `stiegenhaeuser[].verbotszonen_mm` noch nicht. Mollgasse EG ist nach dem
   Liftschacht-Ausstanzen trotzdem sauber (0 Leuchten im Liftpolygon, scharfer
   Test) — der generische Konsum (auch Laufflächen) bleibt Leonis, Fachteil 3.
+
+## Fachteil 3 — Prüfstrecken-Befunde 05/06 (2026-09, Selman)
+
+Quelle: `scripts/plan_pruefen.py` (05_fluchtweg.png / 06_platzierung.png +
+bericht.md-Fachteil-3-Block). Alles hier ist MESSUNG/BERICHT — die
+Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
+
+- **Leuchten auf Treppenlauf/Verbotszone:** Barawitzka 4, Mollgasse 7 — Folge
+  des offenen Verbotszonen-Konsums (s. Fachteil-2-Eintrag oben). Als BEFUND in
+  bericht.md ausgewiesen, Konsum bleibt Leonis.
+- **Leuchten in WOHNUNG_PRIVAT (Mollgasse: 4):** vier Leuchten liegen in
+  Räumen, die die Wohnungsbildung als privat markiert. Entweder
+  Erkennungs-Frage (Raum fälschlich privat, z.B. entlang der 09-WEG-Linien)
+  oder fehlender `nutzungsklasse`-Konsum der Platzierung — zur Klärung mit
+  Leonis; hier nur BEFUND.
+- **RZ-Rotation vs. Türwandwinkel:** gemessen ±2° gegen das nächste
+  Wandsegment. Mollgasse 4/8 abweichend (Δ≈90°: rotation_deg=0 an Türen in
+  vertikaler Wand), Barawitzka 1/1 abweichend. Nach ADR-0006 ist rotation_deg
+  der RZ heute reine CAD-Symbol-Rotation — die Messung dokumentiert die Lücke,
+  ändert aber nichts.
+- **Leuchten „kein Raum"** (Rennweg 1, Mollgasse 6, Barawitzka 1): Leuchten
+  außerhalb jedes erkannten Raumpolygons (Außenleuchten an final_exits und
+  Zonen ohne Raum-Polygon) — erwartbar, kein Fehler.
+- **Mollgasse Stiegenhaus-Verbotszonen übergroß (Sichtbefund 06):** einzelne
+  Treppenlauf-Hüllen im Südost-Teil (Garagen-/Rampenbereich) spannen
+  Riesen-Dreiecke auf — Stufen-Gruppierung fasst dort entfernte parallele
+  Linien zusammen. Erkennungs-Verbesserung (Distanz-Deckel je Lauf-Hülle)
+  als eigener Schritt, NICHT in Fachteil 3 gefixt.

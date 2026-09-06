@@ -3,7 +3,7 @@
 Aufruf: python scripts/plan_pruefen.py [einzelne.dxf]
 Ohne Argument: alle DXF in Projekte/_eingang/. Ausgabe je Plan nach
 Projekte/_ergebnis/<planname>/ (01_render.png, 02_raeume.png, 03_rest.png,
-raeume.json, bericht.md). Jeder Lauf wird an Projekte/_ergebnis/VERLAUF.md
+04_material.png, 05_fluchtweg.png, 06_platzierung.png, raeume.json, bericht.md). Jeder Lauf wird an Projekte/_ergebnis/VERLAUF.md
 angehängt. Liegt <planname>.referenz.json neben der DXF, wird IoU je Raum
 berechnet.
 
@@ -36,8 +36,11 @@ import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
 from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 from ezdxf.addons.drawing.properties import LayoutProperties
+from shapely.geometry import Point, Polygon
+from shapely.ops import unary_union
 
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
+from notbeleuchtung.raumerkennung.fluchtweg import _KEIN_FLW_LAYER
 from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
 from notbeleuchtung.raumerkennung.material_matching import (
     _LAYER_HINWEISE,
@@ -50,6 +53,10 @@ from notbeleuchtung.raumerkennung.stempel_anker import (
     finde_stempel,
     restflaechen,
     zentrum,
+)
+from notbeleuchtung.raumerkennung.tuer_typisierung import (
+    _BRANDSCHUTZ_RE,
+    geschoss_aus,
 )
 
 EINGANG = REPO / "Projekte" / "_eingang"
@@ -335,7 +342,9 @@ def _material_scan(plan: DxfPlan,
             return
         if farbe == 30 or ltyp.lower().startswith("brandabschnitt"):
             brand.append(raw)
-        elif farbe == 96:
+        elif farbe == 96 and not _KEIN_FLW_LAYER.search(str(e.dxf.layer)):
+            # Farbe 96 ist auf Barawitzka KATASTER (Layer 'Kataster Grenzen') —
+            # nur werten, wenn der Layer nicht nach Grenze/Vermessung klingt.
             flucht.append(raw)
 
     def _hatch_pruefen(h, quelle: str) -> None:
@@ -551,6 +560,367 @@ def _material_md(koerper: list[dict], brand: list[list], flucht: list[list],
     return l
 
 
+# ------------------------------------------- Fachteil 3: Fluchtweg + Platzierung
+
+_TUER_KUERZEL = {
+    "zimmertuer": "Z", "wohnungseingang": "WE", "stiegenhaustuer": "ST",
+    "hauseingang": "HE", "balkontuer": "BT", "garagentor": "GT",
+    "brandschutztuer": "BS",
+}
+_ANKER_KUERZEL = {
+    "PODEST": "P", "ANTRITT": "AN", "AUSTRITT": "AU", "TUER": "T",
+    "RICHTUNGSWECHSEL": "RW", "KREUZUNG": "K", "ENDE": "E", "STRECKE": "S",
+}
+_SEG_FARBE = {"LINIE": "#0055cc", "GRAPH": "#00a040", "FALLBACK": "#888888"}
+_AUSGANG_FARBE = {"final_exit": "#dd0000", "stair_exit": "#ff8800",
+                  "door": "#777777"}
+_KIND_MARKER = {"rz": ("s", "#00a040"), "sicherheitsleuchte": ("o", "#0055cc"),
+                "antipanik": ("^", "#cc00cc")}
+#: Symbol-lokale Pfeilrichtung (°) je RZ-Richtung; global = + rotation_deg.
+_RICHTUNG_GRAD = {"rechts": 0.0, "oben": 90.0, "gerade": 90.0,
+                  "links": 180.0, "unten": 270.0}
+_ROT_TOLERANZ_GRAD = 2.0
+_RZ_AN_TUER_MM = 1000.0
+
+
+def _tuer_kuerzel(t) -> str:
+    k = _TUER_KUERZEL.get(t.tuer_detail or "", "?")
+    if t.ist_notausgang:
+        k += "/NA"
+    if t.ohne_tuerblatt:
+        k += "*"
+    return k
+
+
+def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None:
+    """Winkel (° mod 180) des nächsten Wand-Segments am Punkt (mm) — Messbasis
+    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm."""
+    px, py = xy_mm
+    best, best_d = None, max_mm
+    for e in plan.wall_entities():
+        for (x1, y1), (x2, y2) in itertools.pairwise(plan.entity_points(e)):
+            dx, dy = x2 - x1, y2 - y1
+            l2 = dx * dx + dy * dy
+            if l2 < 1.0:
+                continue
+            t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / l2))
+            d = math.hypot(px - (x1 + t * dx), py - (y1 + t * dy))
+            if d < best_d:
+                best_d = d
+                best = math.degrees(math.atan2(dy, dx)) % 180.0
+    return best
+
+
+def _pfeil(ax: plt.Axes, p, q, farbe, ztop: float) -> None:
+    ax.annotate("", xy=q, xytext=p,
+                arrowprops={"arrowstyle": "-|>", "color": farbe, "lw": 1.2,
+                            "shrinkA": 0, "shrinkB": 0},
+                zorder=ztop, annotation_clip=False)
+
+
+def _wohnungs_umrisse(modell) -> dict[str, object]:
+    """Wohnungs-ID → Umriss-Geometrie (Raum-Union, über Innenwände fusioniert)."""
+    je_wohnung: dict[str, list[Polygon]] = {}
+    for r in modell.raeume:
+        if r.wohnung_id and len(r.polygon_mm) >= 3:
+            je_wohnung.setdefault(r.wohnung_id, []).append(
+                Polygon(r.polygon_mm).buffer(0))
+    return {wid: unary_union(ps).buffer(200).buffer(-200)
+            for wid, ps in je_wohnung.items()}
+
+
+def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
+                    pfad: Path, rot: int) -> None:
+    """05_fluchtweg.png: Türen (Bögen + Typkürzel), Ausgänge (Kreise),
+    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen."""
+    from matplotlib.patches import Arc
+    f = plan.factor
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ax.autoscale(False)   # gegen Autoscale durch Elemente des 2. Plan-Clusters
+    ztop = _ztop(ax)
+    for wid, geom in wpolys.items():
+        for g in getattr(geom, "geoms", [geom]):
+            xs, ys = zip(*[(x / f, y / f) for x, y in g.exterior.coords])
+            ax.plot(xs, ys, color="#7b68ee", lw=2.5, zorder=ztop)
+        rp = geom.representative_point()
+        ax.text(rp.x / f, rp.y / f, wid, ha="center", fontsize=10,
+                color="#7b68ee", fontweight="bold", zorder=ztop + 3,
+                bbox={"fc": "white", "alpha": 0.7, "ec": "none", "pad": 1})
+    for s in modell.zirkulation.segmente:
+        if len(s.polyline_mm) < 2:
+            continue
+        farbe = _SEG_FARBE.get(s.quelle or "", "#888888")
+        pts = [(x / f, y / f) for x, y in s.polyline_mm]
+        ax.plot([p[0] for p in pts], [p[1] for p in pts], color=farbe,
+                lw=1.4, ls="--" if s.richtung_unbekannt else "-",
+                alpha=0.9, zorder=ztop + 1)
+        if not s.richtung_unbekannt:
+            _pfeil(ax, pts[-2], pts[-1], farbe, ztop + 2)
+    for t in modell.tueren:
+        w = _wandwinkel_bei(plan, t.xy_mm) or 0.0
+        # Bogen-Durchmesser gedeckelt: breite Durchgänge (bis 3.8 m) würden
+        # sonst das Bild dominieren (Barawitzka-Sichtbefund).
+        d = min(max(t.breite_mm, 400.0), 1500.0) / f
+        ax.add_patch(Arc((t.xy_mm[0] / f, t.xy_mm[1] / f), d, d, angle=w,
+                         theta1=0.0, theta2=180.0, color="#994400", lw=1.5,
+                         zorder=ztop + 2))
+        ax.text(t.xy_mm[0] / f, t.xy_mm[1] / f, _tuer_kuerzel(t), ha="center",
+                va="bottom", fontsize=6, color="#994400", zorder=ztop + 3)
+    for a in modell.ausgaenge:
+        ax.plot(a.xy_mm[0] / f, a.xy_mm[1] / f, "o", ms=11, mfc="none",
+                mec=_AUSGANG_FARBE.get(a.typ, "#777777"), mew=2.5,
+                zorder=ztop + 3)
+    _speichern(fig, pfad, rot)
+
+
+def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
+                      pfad: Path, rot: int) -> None:
+    """06_platzierung.png: Räume nach Nutzungsklasse (privat grau, allgemein
+    weiß, Verbotszonen rot gestreift), Anker als Kreuze, Leuchten als Symbol
+    mit Achsen-Strich (rotation_deg) und RZ-Fluchtrichtungs-Pfeil."""
+    f = plan.factor
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ax.autoscale(False)
+    ztop = _ztop(ax)
+    for r in modell.raeume:
+        if len(r.polygon_mm) < 3:
+            continue
+        xs = [x / f for x, _ in r.polygon_mm]
+        ys = [y / f for _, y in r.polygon_mm]
+        if r.nutzungsklasse == "KEIN_RAUM":
+            ax.fill(xs, ys, fc="none", ec="#dd0000", hatch="////", lw=1.0,
+                    zorder=ztop)
+        elif r.nutzungsklasse == "WOHNUNG_PRIVAT":
+            ax.fill(xs, ys, fc="#c8c8c8", ec="#909090", alpha=0.5, lw=0.8,
+                    zorder=ztop)
+        else:
+            ax.fill(xs, ys, fc="white", ec="#909090", alpha=0.25, lw=0.8,
+                    zorder=ztop)
+    for sm in modell.stiegenhaeuser:
+        for z in sm.verbotszonen_mm:
+            if len(z) >= 3:
+                ax.fill([x / f for x, _ in z], [y / f for _, y in z],
+                        fc="none", ec="#dd0000", hatch="////", lw=0.8,
+                        zorder=ztop + 1)
+    for a in modell.anker:
+        ax.plot(a.xy_mm[0] / f, a.xy_mm[1] / f, "+", ms=7, mew=1.5,
+                color="#333333", zorder=ztop + 2)
+        ax.text(a.xy_mm[0] / f, a.xy_mm[1] / f, _ANKER_KUERZEL.get(a.typ, "?"),
+                fontsize=5, color="#333333", ha="left", va="bottom",
+                zorder=ztop + 2)
+    strich = 500.0 / f
+    for p in platz.platzierungen:
+        marker, farbe = _KIND_MARKER.get(p.kind, ("D", "#000000"))
+        x, y = p.xy_mm[0] / f, p.xy_mm[1] / f
+        ax.plot(x, y, marker, ms=7, mfc="none", mec=farbe, mew=1.8,
+                zorder=ztop + 3)
+        a = math.radians(p.rotation_deg)
+        ax.plot([x - strich * math.cos(a), x + strich * math.cos(a)],
+                [y - strich * math.sin(a), y + strich * math.sin(a)],
+                color=farbe, lw=1.0, zorder=ztop + 3)
+        if p.kind == "rz" and p.richtung:
+            g = math.radians(_RICHTUNG_GRAD.get(p.richtung, 90.0)
+                             + p.rotation_deg)
+            _pfeil(ax, (x, y), (x + 2.5 * strich * math.cos(g),
+                                y + 2.5 * strich * math.sin(g)), farbe, ztop + 4)
+    _speichern(fig, pfad, rot)
+
+
+def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
+    """(Zählung Nutzungsklasse→n mit LIFT/SCHACHT separat, n auf Treppenläufen)."""
+    polys = [(r, Polygon(r.polygon_mm).buffer(0)) for r in modell.raeume
+             if len(r.polygon_mm) >= 3]
+    laufzonen = [Polygon(z).buffer(0) for sm in modell.stiegenhaeuser
+                 for z in sm.verbotszonen_mm if len(z) >= 3]
+    zaehl: Counter = Counter()
+    lauf = 0
+    for p in platz.platzierungen:
+        pt = Point(p.xy_mm)
+        r = next((r for r, poly in polys if poly.covers(pt)), None)
+        klasse = "kein Raum" if r is None else (
+            r.raum_typ if r.raum_typ in ("LIFT", "SCHACHT")
+            else r.nutzungsklasse or "unbestimmt")
+        zaehl[klasse] += 1
+        if any(z.covers(pt) for z in laufzonen):
+            lauf += 1
+    return zaehl, lauf
+
+
+def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
+    """RZ über einer Tür: rotation_deg gegen den Türwandwinkel MESSEN
+    (nur berichten — Platzierung wird nicht geändert)."""
+    zeilen = []
+    for p in platz.platzierungen:
+        if p.kind != "rz" or not modell.tueren:
+            continue
+        t = min(modell.tueren, key=lambda t: math.dist(t.xy_mm, p.xy_mm))
+        if math.dist(t.xy_mm, p.xy_mm) > _RZ_AN_TUER_MM:
+            continue
+        w = _wandwinkel_bei(plan, t.xy_mm)
+        if w is None:
+            continue
+        delta = abs((p.rotation_deg - w + 90.0) % 180.0 - 90.0)
+        zeilen.append((t.id, p.xy_mm, p.rotation_deg, w, delta))
+    return zeilen
+
+
+def _brandschutz_texte(plan: DxfPlan) -> list[tuple[str, float, float]]:
+    """BST/T30/T90/EI30/EI90-Texte mit Wortlaut + Position (mm) — Befund-Basis
+    (Barawitzka: 'Glaswand EI30 + A2')."""
+    out = []
+    for e in plan.entities():
+        t = e.dxftype()
+        if t == "MTEXT":
+            text, ins = e.plain_text(), e.dxf.insert
+        elif t == "TEXT":
+            text, ins = e.dxf.text, e.dxf.insert
+        else:
+            continue
+        if text and _BRANDSCHUTZ_RE.search(text):
+            x, y = plan._scale(ins)
+            out.append((" ".join(str(text).split())[:70], x, y))
+    return out
+
+
+def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
+                  bst_texte) -> list[str]:
+    """Markdown-Block Fachteil 3 für bericht.md."""
+    seg_q = Counter((s.quelle or "?") for s in modell.zirkulation.segmente)
+    typisiert = sum(1 for t in modell.tueren if t.tuer_detail)
+    l = ["", "## Türen (Fachteil 3)", "",
+         f"{typisiert} / {len(modell.tueren)} Türen typisiert. Kürzel: "
+         + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
+         + "; /NA = Notausgang, * = ohne Türblatt.", "",
+         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |",
+         "|---|---|---|---|--:|---|"]
+    for t in modell.tueren:
+        l.append(f"| {t.id} | {t.von_raum or '—'} | {t.nach_raum or '—'} | "
+                 f"{t.tuer_detail or '—'} | {t.breite_mm:.0f} | "
+                 f"{'ja' if t.ist_notausgang else '—'} |")
+    l += ["", f"## Ausgänge ({len(modell.ausgaenge)})", "",
+          "| ID | Typ | x m | y m |", "|---|---|--:|--:|"]
+    for a in modell.ausgaenge:
+        l.append(f"| {a.id} | {a.typ} | {a.xy_mm[0] / 1000:.2f} | "
+                 f"{a.xy_mm[1] / 1000:.2f} |")
+    l += ["", f"## Fluchtweg-Segmente ({len(modell.zirkulation.segmente)})", "",
+          "Quellen: " + ", ".join(f"{q}: {n}" for q, n in sorted(seg_q.items())),
+          "", "| Segment | Quelle | Länge m | Grund | Ziel-Ausgang |",
+          "|---|---|--:|---|---|"]
+    for s in modell.zirkulation.segmente:
+        l.append(f"| {s.segment_id} | {s.quelle or '—'} | "
+                 f"{s.laenge_mm / 1000:.1f} | {s.reason} | "
+                 f"{s.ziel_ausgang or '—'} |")
+    l += ["", f"## Wohnungen ({len(wpolys)})", ""]
+    je_wohnung: dict[str, list[str]] = {}
+    for r in modell.raeume:
+        if r.wohnung_id:
+            je_wohnung.setdefault(r.wohnung_id, []).append(r.id)
+    for wid in sorted(je_wohnung):
+        l.append(f"- {wid}: {len(je_wohnung[wid])} Räume "
+                 f"({', '.join(sorted(je_wohnung[wid]))})")
+    l += ["", "## Weglänge je Wohnungseingang → nächster Ausgang", ""]
+    if wegl:
+        l += ["| Tür | Weglänge m | Quelle | Ausgang |", "|---|--:|---|---|"]
+        l += [f"| {tid} | "
+              + (f"{lg / 1000:.1f}" if lg is not None else "—")
+              + f" | {q} | {ziel} |" for tid, lg, q, ziel in wegl]
+    else:
+        l.append("- keine Wohnungseingänge")
+    l += ["", "## Leuchten je Nutzungsklasse", "",
+          "| Klasse | Leuchten |", "|---|--:|"]
+    l += [f"| {k} | {n} |" for k, n in sorted(zaehl.items())]
+    l.append(f"| _davon auf Treppenlauf/Verbotszone_ | {lauf} |")
+    befunde = [f"{k}: {zaehl[k]} Leuchten (muss 0 sein)"
+               for k in ("WOHNUNG_PRIVAT", "LIFT", "SCHACHT") if zaehl.get(k)]
+    if lauf:
+        befunde.append(f"Treppenlauf/Verbotszone: {lauf} Leuchten (muss 0 sein)")
+    if befunde:
+        l += ["", "**BEFUND (nur berichtet, Platzierung NICHT geändert):**", ""]
+        l += [f"- {b}" for b in befunde]
+    l += ["", ("## Rotationsprüfung RZ über Tür (Messung, ±"
+               f"{_ROT_TOLERANZ_GRAD:.0f}°)"), ""]
+    if rotz:
+        l += ["| Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |",
+              "|---|---|--:|--:|--:|---|"]
+        l += [f"| {tid} | ({xy[0] / 1000:.2f}, {xy[1] / 1000:.2f}) | {r:.1f} | "
+              f"{w:.1f} | {d:.1f} | "
+              f"{'ok' if d <= _ROT_TOLERANZ_GRAD else 'abweichend'} |"
+              for tid, xy, r, w, d in rotz]
+    else:
+        l.append("- kein RZ näher als 1 m an einer Tür")
+    l += ["", (f"## Anker je Stiegenhaus ({len(modell.stiegenhaeuser)} "
+               "Stiegenhäuser)"), ""]
+    for sm in modell.stiegenhaeuser:
+        eigene = [a for a in modell.anker if a.raum_id == sm.raum_id]
+        l.append(f"- **{sm.raum_id}**: {len(sm.laeufe)} Läufe, "
+                 f"{len(sm.podeste)} Podeste, {len(sm.verbotszonen_mm)} "
+                 f"Verbotszonen, {len(eigene)} Anker")
+        l += [f"  - {a.typ} ({a.xy_mm[0] / 1000:.2f}, {a.xy_mm[1] / 1000:.2f}) m"
+              + (f", Winkel {a.winkel_grad:.0f}°"
+                 if a.winkel_grad is not None else "")
+              + (f", Fluchtrichtung {a.fluchtrichtung_grad:.0f}°"
+                 if a.fluchtrichtung_grad is not None else "")
+              for a in eigene]
+    gang_anker = [a for a in modell.anker
+                  if a.raum_id not in {sm.raum_id for sm in modell.stiegenhaeuser}]
+    if gang_anker:
+        l.append(f"- Gang-Anker (außerhalb Stiegenhäuser): {len(gang_anker)}")
+    l += ["", f"## Brandschutz-Hinweise im Plan ({len(bst_texte)})", ""]
+    l += [f"- „{txt}“ bei ({x / 1000:.2f}, {y / 1000:.2f}) m"
+          for txt, x, y in bst_texte] or ["- keine"]
+    return l
+
+
+def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
+    """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
+    + bericht-Block + VERLAUF-Kennzahlen."""
+    from notbeleuchtung.hauptengine.registry import build_default_bundle
+    geschoss = geschoss_aus(None, str(dxf)) or "EG"
+    bundle = build_default_bundle()
+    modell = bundle.raum.parse(str(dxf), geschoss)
+    platz = bundle.platzierer.place(modell, bundle.norm, None)
+
+    wpolys = _wohnungs_umrisse(modell)
+    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot)
+    _bild_platzierung(plan, zoom, modell, platz, ziel / "06_platzierung.png", rot)
+
+    segs = {s.segment_id: s for s in modell.zirkulation.segmente}
+    wegl = []
+    for t in modell.tueren:
+        if t.tuer_detail != "wohnungseingang":
+            continue
+        s = segs.get(f"seg_graph_{t.id}")
+        if s is not None:
+            wegl.append((t.id, s.laenge_mm, "GRAPH", s.ziel_ausgang or "—"))
+        elif modell.ausgaenge:
+            a = min(modell.ausgaenge, key=lambda a: math.dist(a.xy_mm, t.xy_mm))
+            wegl.append((t.id, math.dist(a.xy_mm, t.xy_mm), "Luftlinie", a.id))
+        else:
+            wegl.append((t.id, None, "kein Ausgang", "—"))
+    zaehl, lauf = _leuchten_je_klasse(modell, platz)
+    rotz = _rotations_pruefung(plan, modell, platz)
+    bst_texte = _brandschutz_texte(plan)
+    md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    ausg_typ = Counter(a.typ for a in modell.ausgaenge)
+    seg_q = Counter((s.quelle or "?") for s in modell.zirkulation.segmente)
+    kind_n = Counter(p.kind for p in platz.platzierungen)
+    return {
+        "md": md,
+        "tueren_typisiert": sum(1 for t in modell.tueren if t.tuer_detail),
+        "tueren_gesamt": len(modell.tueren),
+        "ausgaenge_typ": dict(ausg_typ),
+        "segmente_quelle": dict(seg_q),
+        "wohnungen": len(wpolys),
+        "leuchten_kind": dict(kind_n),
+        "leuchten_klasse": dict(zaehl),
+        "leuchten_lauf": lauf,
+        "rot_abweichend": sum(1 for *_x, d in rotz if d > _ROT_TOLERANZ_GRAD),
+        "rot_gemessen": len(rotz),
+    }
+
+
 # ---------------------------------------------------------------- Hauptlauf
 
 def _raum_kaskade(plan: DxfPlan, stempel) -> tuple[list[Zuordnung], list, list, dict, str]:
@@ -706,6 +1076,10 @@ def plan_pruefen(dxf: Path) -> dict:
         if iou_zeilen:
             iou_mittel = sum(v for _, v in iou_zeilen) / len(iou_zeilen)
 
+    # 05/06: Fluchtweg-/Platzierungs-Sicht (Fachteil 3) — RaumModell aus dem
+    # Provider + Pipeline-Smoke mit Default-Bundle (nur src-Code).
+    f3 = _fachteil3(plan, dxf, ziel, zoom, rot)
+
     laufzeit = time.time() - t0
     material_block = _material_md(koerper, brand, flucht, abdeckung, plan)
     # Kennzahlen der Kaskade.
@@ -716,7 +1090,7 @@ def plan_pruefen(dxf: Path) -> dict:
     rest_untyp = len(rest_r) - rest_typ
     _bericht(ziel / "bericht.md", name, zuordnungen, rest, raum_quelle,
              rot_vermerk, iou_zeilen, iou_mittel, laufzeit, len(raeume),
-             material_block, quelle)
+             material_block + f3["md"], quelle)
     flags = sum(1 for z in zuordnungen if z.flag != "ok")
     # Zählung aus derselben Quelle wie raeume.json: Stempel-Einträge + Rest-Einträge.
     rest_n = sum(1 for e in eintraege if e["flag"] == "kein_stempel")
@@ -730,7 +1104,8 @@ def plan_pruefen(dxf: Path) -> dict:
             "raeume_gesamt": gesamt, "mit_stempel": mit_stempel,
             "flag_ok": flag_ok, "rest_typisiert": rest_typ,
             "rest_untypisiert": rest_untyp,
-            "quellen_mix": raum_quelle}
+            "quellen_mix": raum_quelle,
+            **{k: v for k, v in f3.items() if k != "md"}}
 
 
 def _bericht(pfad: Path, name: str, zuordnungen: list[Zuordnung], rest,
@@ -819,7 +1194,15 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
             f"mit Stempel {r.get('mit_stempel', 0)}, Flag ok {r.get('flag_ok', 0)}, "
             f"Rest typisiert {r.get('rest_typisiert', 0)} / "
             f"untypisiert {r.get('rest_untypisiert', 0)} "
-            f"({r.get('quellen_mix', '')})")
+            f"({r.get('quellen_mix', '')}) · Türen typisiert "
+            f"{r.get('tueren_typisiert', 0)}/{r.get('tueren_gesamt', 0)}, "
+            "Ausgänge " + (" ".join(f"{t}:{n}" for t, n in
+                                    sorted(r.get("ausgaenge_typ", {}).items()))
+                           or "0")
+            + ", Segmente " + (" ".join(f"{q}:{n}" for q, n in
+                                        sorted(r.get("segmente_quelle", {}).items()))
+                               or "0")
+            + f", Wohnungen {r.get('wohnungen', 0)}")
     out = ["# Verlauf plan_pruefen"]
     for i, z in enumerate(zeilen):
         if z.startswith("## Lauf") and (i + 1 >= len(zeilen)
@@ -870,6 +1253,12 @@ def main() -> int:
               f"{r['mit_stempel']}, Flag ok {r['flag_ok']}, Rest typisiert "
               f"{r['rest_typisiert']} / untypisiert {r['rest_untypisiert']} "
               f"({r['quellen_mix']})")
+        print(f"   F3: Türen {r['tueren_typisiert']}/{r['tueren_gesamt']} "
+              f"typisiert, Ausgänge {r['ausgaenge_typ']}, Segmente "
+              f"{r['segmente_quelle']}, Wohnungen {r['wohnungen']}, Leuchten "
+              f"{r['leuchten_kind']} je Klasse {r['leuchten_klasse']}, "
+              f"Lauf {r['leuchten_lauf']}, Rotation "
+              f"{r['rot_abweichend']}/{r['rot_gemessen']} abweichend")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)

@@ -19,14 +19,14 @@ Raum-Polygon-Quelle: `kaskade L:10 H:0 F:0 R:4` — Rotation: keine dominante Ka
 | R | rest_1 | SCHACHT | — | 1.06 | — | kein_stempel |
 | R | rest_2 | SCHACHT | — | 1.11 | — | kein_stempel |
 | R | rest_3 | STIEGENHAUS | — | 22.03 | — | kein_stempel |
-| R | rest_4 | UNBEKANNT | — | 10.33 | — | kein_stempel |
+| R | rest_4 | — | — | 10.33 | — | kein_stempel |
 
 ## Restflächen ohne Stempel (4)
 
 - rest_1 [R] SCHACHT: 1.06 m², Zentrum (12555.53, 356216.65) m
 - rest_2 [R] SCHACHT: 1.11 m², Zentrum (12552.06, 356216.41) m
 - rest_3 [R] STIEGENHAUS: 22.03 m², Zentrum (12549.36, 356219.08) m
-- rest_4 [R] UNBEKANNT: 10.33 m², Zentrum (12544.51, 356220.30) m
+- rest_4 [R] —: 10.33 m², Zentrum (12544.51, 356220.30) m
 
 ## Warnungen (4)
 
@@ -54,4 +54,110 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 - Brandabschnittslinien: 0
 - Fluchtweglinien: 0
 
-Laufzeit: 32.4 s
+## Türen (Fachteil 3)
+
+13 / 36 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; /NA = Notausgang, * = ohne Türblatt.
+
+| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |
+|---|---|---|---|--:|---|
+| tuer_1 | raum_4 | AUSSEN | balkontuer | 790 | — |
+| tuer_2 | raum_3 | raum_3 | zimmertuer | 980 | — |
+| tuer_3 | AUSSEN | AUSSEN | — | 980 | — |
+| tuer_4 | AUSSEN | AUSSEN | — | 940 | — |
+| tuer_5 | AUSSEN | AUSSEN | — | 940 | — |
+| tuer_6 | AUSSEN | AUSSEN | — | 940 | — |
+| tuer_7 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_8 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_9 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_10 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_11 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_12 | AUSSEN | AUSSEN | — | 940 | — |
+| tuer_13 | AUSSEN | AUSSEN | — | 840 | — |
+| tuer_14 | AUSSEN | AUSSEN | — | 840 | — |
+| durchgang_1 | raum_1 | raum_2 | zimmertuer | 3812 | — |
+| durchgang_2 | raum_1 | raum_2 | zimmertuer | 821 | — |
+| durchgang_3 | raum_1 | raum_6 | — | 2198 | — |
+| durchgang_4 | raum_1 | raum_7 | zimmertuer | 1749 | — |
+| durchgang_5 | raum_1 | raum_10 | wohnungseingang | 1448 | — |
+| durchgang_6 | raum_2 | raum_8 | zimmertuer | 1987 | — |
+| durchgang_7 | raum_2 | rest_3 | wohnungseingang | 1438 | — |
+| durchgang_8 | raum_2 | rest_4 | — | 1285 | — |
+| durchgang_9 | raum_2 | rest_4 | — | 1461 | — |
+| durchgang_10 | raum_3 | raum_4 | zimmertuer | 3207 | — |
+| durchgang_11 | raum_3 | raum_5 | zimmertuer | 3511 | — |
+| durchgang_12 | raum_3 | rest_4 | — | 1204 | — |
+| durchgang_13 | raum_4 | raum_10 | wohnungseingang | 3104 | — |
+| durchgang_14 | raum_5 | rest_4 | — | 1341 | — |
+| durchgang_15 | raum_5 | rest_4 | — | 2920 | — |
+| durchgang_16 | raum_6 | raum_10 | — | 3641 | — |
+| durchgang_17 | raum_6 | rest_1 | — | 1221 | — |
+| durchgang_18 | raum_7 | raum_10 | wohnungseingang | 2114 | — |
+| durchgang_19 | raum_7 | rest_2 | — | 1627 | — |
+| durchgang_20 | raum_8 | rest_4 | — | 1983 | — |
+| durchgang_21 | raum_10 | rest_2 | — | 1684 | — |
+| durchgang_22 | raum_10 | rest_3 | stiegenhaustuer | 1438 | — |
+
+## Ausgänge (1)
+
+| ID | Typ | x m | y m |
+|---|---|--:|--:|
+| exit_durchgang_22 | stair_exit | 12551.93 | 356218.24 |
+
+## Fluchtweg-Segmente (4)
+
+Quellen: GRAPH: 4
+
+| Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
+|---|---|--:|---|---|
+| seg_graph_durchgang_5 | GRAPH | 6.4 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_7 | GRAPH | 6.4 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_13 | GRAPH | 2.1 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_18 | GRAPH | 6.5 | exit | exit_durchgang_22 |
+
+## Wohnungen (2)
+
+- top_1: 4 Räume (raum_1, raum_2, raum_7, raum_8)
+- top_2: 3 Räume (raum_3, raum_4, raum_5)
+
+## Weglänge je Wohnungseingang → nächster Ausgang
+
+| Tür | Weglänge m | Quelle | Ausgang |
+|---|--:|---|---|
+| durchgang_5 | 6.4 | GRAPH | exit_durchgang_22 |
+| durchgang_7 | 6.4 | GRAPH | exit_durchgang_22 |
+| durchgang_13 | 2.1 | GRAPH | exit_durchgang_22 |
+| durchgang_18 | 6.5 | GRAPH | exit_durchgang_22 |
+
+## Leuchten je Nutzungsklasse
+
+| Klasse | Leuchten |
+|---|--:|
+| ALLGEMEIN_ERSCHLIESSUNG | 1 |
+| kein Raum | 1 |
+| _davon auf Treppenlauf/Verbotszone_ | 0 |
+
+## Rotationsprüfung RZ über Tür (Messung, ±2°)
+
+- kein RZ näher als 1 m an einer Tür
+
+## Anker je Stiegenhaus (1 Stiegenhäuser)
+
+- **rest_3**: 4 Läufe, 1 Podeste, 5 Verbotszonen, 11 Anker
+  - PODEST (12550.82, 356218.81) m, Winkel 156°, Fluchtrichtung 188°
+  - ANTRITT (12550.56, 356220.36) m, Fluchtrichtung 188°
+  - ANTRITT (12547.10, 356218.57) m, Fluchtrichtung 337°
+  - AUSTRITT (12548.80, 356217.58) m, Fluchtrichtung 337°
+  - ANTRITT (12548.56, 356217.03) m, Fluchtrichtung 337°
+  - AUSTRITT (12546.94, 356217.73) m, Fluchtrichtung 337°
+  - ANTRITT (12549.34, 356220.88) m, Fluchtrichtung 106°
+  - AUSTRITT (12549.45, 356220.51) m, Fluchtrichtung 106°
+  - TUER (12549.91, 356216.10) m, Winkel 150°, Fluchtrichtung 337°
+  - TUER (12551.93, 356218.24) m, Winkel 59°, Fluchtrichtung 188°
+  - RICHTUNGSWECHSEL (12550.00, 356220.43) m, Fluchtrichtung 188°
+- Gang-Anker (außerhalb Stiegenhäuser): 8
+
+## Brandschutz-Hinweise im Plan (0)
+
+- keine
+
+Laufzeit: 50.4 s
