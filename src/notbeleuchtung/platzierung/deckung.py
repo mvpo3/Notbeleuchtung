@@ -22,7 +22,9 @@ from collections.abc import Callable
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import building_assigner as _building_assigner
 from .geometry import _bbox
 from .lux import (
     LuxErgebnis,
@@ -33,7 +35,6 @@ from .lux import (
 )
 from .mittellinie import leuchten_auf_linie_mit_richtung, mittellinie
 
-_KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 _SL_KEY = "sicherheitsleuchte_aufheller"   # bis die Norm einen Fluchtweg-SL-Key liefert
 _MAX_VERDICHTUNGEN = 6
 _VERDICHTUNGS_FAKTOR = 1.3

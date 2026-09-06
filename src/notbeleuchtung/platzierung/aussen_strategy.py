@@ -16,8 +16,9 @@ from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
-from .sonderstellen_strategy import _referenz
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import building_assigner as _building_assigner
+from .bausteine import referenz_anforderung as _referenz
 
 _ABSTAND_AUSSEN_MM = 1000.0   # „nahe" (≤ 2 m); 1 m vor der Tür = Praxis-Mitte
 

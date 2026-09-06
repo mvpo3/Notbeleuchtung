@@ -20,7 +20,8 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import building_assigner as _building_assigner
 from .geometry import _bbox, find_center_visual, grid_points
 from .lux import lux_raster, ud_min_aus_norm
 from .oib_gate import sanitaer_scope, verkehr_scope
@@ -30,7 +31,7 @@ _ANTIPANIK_MAX_LEUCHTEN = 25
 _ANTIPANIK_MAX_RUNDEN = 6
 
 # WC/Sanitär-Raumtypen für den flächenbasierten Antipanik-Trigger (EN 1838 §4.3).
-_WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+from .bausteine import WC_TYPEN as _WC_TYPEN
 
 
 def _antipanik_referenz(norm: NormProvider):

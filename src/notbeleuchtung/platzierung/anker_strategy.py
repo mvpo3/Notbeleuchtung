@@ -28,11 +28,17 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from .communal_stgh_strategy import (
-    _AGV_SV_F,
-    _building_assigner,
-    _richtung_und_rotation,
-    _select_key,
+from .bausteine import (
+    AGV_SV_F as _AGV_SV_F,
+)
+from .bausteine import (
+    building_assigner as _building_assigner,
+)
+from .bausteine import (
+    richtung_und_rotation as _richtung_und_rotation,
+)
+from .bausteine import (
+    select_key as _select_key,
 )
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
