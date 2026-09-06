@@ -51,6 +51,7 @@ from .bausteine import building_assigner as _building_assigner
 from .bausteine import referenz_anforderung as _referenz
 from .flaechen_strategy import _WC_TYPEN
 from .geometry import find_center_visual
+from .kontext import PlatzierungsKontext
 
 #: Raumtypen, die EINDEUTIG eine Toilette im Sinne von §4.3.8 sind.
 _TOILETTEN_TYPEN = {"WC", "TOILETTE"}
@@ -109,7 +110,8 @@ def _lb_fordert_rz_an_niveauaenderung(lb: LBVorgabe | None) -> str:
 
 
 def plan_sonderstellen(
-    raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+    raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None, *,
+    kontext: PlatzierungsKontext | None = None
 ) -> list[Platzierung]:
     """Je Sonderstelle eine Sicherheitsleuchte an der Stelle selbst (§4.1.2).
 
@@ -118,6 +120,8 @@ def plan_sonderstellen(
     belegt an dieser Stelle die Leuchte, nicht das Zeichen. Das RZ trägt dann
     `lb_quelle` und keine Norm-Quelle.
     """
+    if lb is None and kontext is not None:
+        lb = kontext.lb
     if not raum.sonderstellen:
         return []
     sl_ref = _referenz(norm, "sicherheitsleuchte")
