@@ -4,6 +4,27 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-06, Abend) — #119 GEMERGT: Optik aus Achse, Pläne wieder ok
+
+**main = #119-Merge, 830 grün.** Der c0_azimut-Kandidat aus dem #117-Review ist
+umgesetzt — die #117-Dauerwarnung ist Geschichte:
+- **`leuchten_auf_linie_mit_richtung`** (mittellinie): Kandidaten tragen den
+  lokalen Achsen-Azimut (Skelett-Tangente).
+- **`lux`**: Leuchten-Items `(x,y)` ODER `(x,y,optik_azimut)` → C-Ebene RELATIV
+  zur Optik-C0; `max_leuchtenabstand_mm(optik_entlang_reihe=True)` nutzt die
+  C0-Keule für den Reihen-Startwert. NICHT mit globalem c0-Callable kombinieren
+  (Doppel-Drehung, im Docstring gewarnt).
+- **`deckung.verdichte_fluchtweg`**: rechnet mit Azimut-Tripeln, schreibt den
+  Azimut als `rotation_deg` (Symbol=Kreis → visuell unverändert; Plan = die
+  Montage-/Ausrichtungs-Zusicherung).
+- **`registry.optik_aus_achse`** (Default an im default_bundle): Callable
+  `I(γ,C-relativ)`, Befund vollständig mit ehrlichem Hinweis; ohne Azimut
+  weiter konservativ Minimum über C (Flächen-SL, lux_bericht = Untergrenze).
+- **Mollgasse EG: 36→32 SL, Prüfstatus warnung→ok** (32 = richtungsrichtig,
+  zwischen C0-Bug 28 und Minimum 36; E2E-Docstring erklärt alle drei Stände).
+- Enis im PR getaggt (sein rotation_deg-Vorbehalt adressiert: abgeleitet →
+  gerechnet → vermerkt). Offen aus seiner Lane ggf. Befund-Text-Feinschliff.
+
 ## STAND (2026-09-06, Nachmittag) — #118 GEMERGT: Blatt-Feld PRÜFVERMERK
 
 **main = #118-Merge, 824 grün.** Owner-GO + visuelle Abnahme (Mollgasse-EG-DXF in
