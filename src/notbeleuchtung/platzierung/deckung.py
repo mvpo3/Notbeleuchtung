@@ -22,8 +22,11 @@ from collections.abc import Callable
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import building_assigner as _building_assigner
 from .geometry import _bbox
+from .kontext import PlatzierungsKontext
 from .lux import (
     LuxErgebnis,
     lux_punkte,
@@ -33,7 +36,6 @@ from .lux import (
 )
 from .mittellinie import leuchten_auf_linie_mit_richtung, mittellinie
 
-_KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 _SL_KEY = "sicherheitsleuchte_aufheller"   # bis die Norm einen Fluchtweg-SL-Key liefert
 _MAX_VERDICHTUNGEN = 6
 _VERDICHTUNGS_FAKTOR = 1.3
@@ -69,12 +71,16 @@ def verdichte_fluchtweg(
     raum: RaumModell, norm: NormProvider, *,
     i_cd: float = 200.0,
     i_cd_fn: Callable[[float], float] | None = None,
+    kontext: PlatzierungsKontext | None = None,
 ) -> list[Platzierung]:
     """Sicherheitsleuchten entlang jeder Korridor-Mittellinie, verdichtet bis 1 lx / Ud≥1:40.
 
     `i_cd` = konstante Lichtstärke-Annahme; `i_cd_fn(γ)` = richtungsabhängige Hersteller-
     Photometrie (EULUMDAT/LDT, überschreibt `i_cd`), von der Hauptengine injiziert.
+    `kontext` bündelt die querschneidenden Eingaben; ein explizites `i_cd_fn` gewinnt.
     """
+    if i_cd_fn is None and kontext is not None:
+        i_cd_fn = kontext.i_cd_fn
     korridore = [
         r for r in raum.raeume if r.raum_typ.upper() in _KORRIDOR_TYPEN and len(r.polygon_mm) >= 3
     ]

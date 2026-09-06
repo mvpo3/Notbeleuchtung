@@ -46,9 +46,12 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from .communal_stgh_strategy import _AGV_SV_F, _building_assigner
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import building_assigner as _building_assigner
+from .bausteine import referenz_anforderung as _referenz
 from .flaechen_strategy import _WC_TYPEN
 from .geometry import find_center_visual
+from .kontext import PlatzierungsKontext
 
 #: Raumtypen, die EINDEUTIG eine Toilette im Sinne von §4.3.8 sind.
 _TOILETTEN_TYPEN = {"WC", "TOILETTE"}
@@ -64,23 +67,6 @@ _SANITAER_MEHRDEUTIG = (_WC_TYPEN | {"TOILETTE"}) - _TOILETTEN_TYPEN
 #: LB-Schlüssel, der ein Rettungszeichen an Niveauänderungen anfordert
 #: (`LBVorgabe.rz_stellen`, Literal `RzStelle`).
 _LB_RZ_NIVEAUAENDERUNG = "niveauaenderung"
-
-
-def _referenz(norm: NormProvider, klassifikation: str):
-    """Erste Regelwerk-Anforderung der Klassifikation mit Symbol — oder None.
-
-    ⚠️ FALLBACK (Enis-Review #95): die zurückgegebene `quelle` ist die der
-    Referenz-Regel (§4.1/§4.2.1/§4.3.1) — NICHT der echte Auslöser der
-    Pflichtstelle (§4.1.2 c/h/i bzw. §4.3.8/§4.4.1). Die Naht-Invariante
-    `norm_quelle ∈ NormRegelwerk.quellen` lässt die echten Fundstellen heute
-    nicht zu; Enis liefert Referenz-Anforderungen je Sonderstellen-Typ nach
-    (eigener 3-Owner-PR). Bis dahin: Audit-Trail als Näherung lesen — der
-    Pipeline-Summary trägt einen entsprechenden `hinweise`-Eintrag."""
-    for regel in norm.regelwerk_snapshot().regeln:
-        anf = regel.anforderung
-        if anf.klassifikation == klassifikation and anf.symbol_katalog_keys:
-            return anf
-    return None
 
 
 def _assigner(raum: RaumModell, extra_xs: list[float]):
@@ -124,7 +110,8 @@ def _lb_fordert_rz_an_niveauaenderung(lb: LBVorgabe | None) -> str:
 
 
 def plan_sonderstellen(
-    raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None
+    raum: RaumModell, norm: NormProvider, lb: LBVorgabe | None = None, *,
+    kontext: PlatzierungsKontext | None = None
 ) -> list[Platzierung]:
     """Je Sonderstelle eine Sicherheitsleuchte an der Stelle selbst (§4.1.2).
 
@@ -133,6 +120,8 @@ def plan_sonderstellen(
     belegt an dieser Stelle die Leuchte, nicht das Zeichen. Das RZ trägt dann
     `lb_quelle` und keine Norm-Quelle.
     """
+    if lb is None and kontext is not None:
+        lb = kontext.lb
     if not raum.sonderstellen:
         return []
     sl_ref = _referenz(norm, "sicherheitsleuchte")
