@@ -102,6 +102,7 @@ def default_photometrie(
     *,
     photometrie_katalog: bool = True,
     c0_azimut_grad: float | None = None,
+    optik_aus_achse: bool = False,
 ) -> tuple[Callable[..., float] | None, PhotometrieBefund]:
     """Lichtstärke-Callable **und** der dazugehörige Befund — immer im Paar.
 
@@ -109,7 +110,19 @@ def default_photometrie(
     liefert die Aussage über die Rechengrundlage gleich mit, damit ein
     Rückfall auf die isotrope 200-cd-Annahme (fehlender/nicht auflösbarer
     Katalog) nicht als Hersteller-Nachweis durchgehen kann.
+
+    **`optik_aus_achse` (Ausrichtungs-Naht zum Platzierer):** der Fluchtweg-
+    Verdichter (`platzierung/deckung.py`) leitet je Sicherheitsleuchte den
+    Korridor-Achsen-Azimut ab (`leuchten_auf_linie_mit_richtung`), rechnet den
+    Lux-Nachweis mit der C-Ebene RELATIV zu dieser Optik-Ausrichtung und
+    schreibt denselben Azimut als Montage-Rotation an die Platzierung — der
+    Plan selbst IST damit die Ausrichtungs-Zusicherung. Das Callable wird auf
+    `I(γ, C-relativ)` gestellt (identisch zu `c0_azimut_grad=0.0`); Aufrufer
+    ohne Azimut fragen `C=None` und bekommen weiterhin konservativ das Minimum
+    über alle C-Ebenen. Nicht mit `c0_azimut_grad` kombinieren.
     """
+    if optik_aus_achse and c0_azimut_grad is not None:
+        raise ValueError("optik_aus_achse und c0_azimut_grad schließen sich aus")
     if ldt_path is None and photometrie_katalog:
         from notbeleuchtung.symbols.photometrie_katalog import fluchtweg_default_ldt
 
@@ -131,11 +144,20 @@ def default_photometrie(
             rotationssymmetrisch=None,
             einschraenkungen=("keine Hersteller-Photometrie", "isotrope Annahme 200 cd"),
         )
-    i_cd_fn = photometrie_i_cd_fn(ldt_path, c0_azimut_grad=c0_azimut_grad)
+    effektiv_c0 = 0.0 if optik_aus_achse else c0_azimut_grad
+    i_cd_fn = photometrie_i_cd_fn(ldt_path, c0_azimut_grad=effektiv_c0)
     rotsym = bool(i_cd_fn.rotationssymmetrisch)
-    ausgerichtet = c0_azimut_grad is not None
+    ausgerichtet = effektiv_c0 is not None
     vollstaendig = rotsym or ausgerichtet
     hinweis = i_cd_fn.hinweis if vollstaendig else KONSERVATIV_SATZ
+    if optik_aus_achse and not rotsym:
+        hinweis = (
+            "Photometrie anisotrop; Optik-Ausrichtung je Fluchtweg-Leuchte aus "
+            "der Korridor-Achse abgeleitet und als Montage-Rotation am Symbol "
+            "vermerkt — der Lux-Nachweis rechnet die tatsächliche C-Ebene. "
+            "Leuchten ohne Achsen-Azimut werden konservativ mit dem Minimum "
+            "über alle C-Ebenen gerechnet."
+        )
     return i_cd_fn, PhotometrieBefund(
         quelle="hersteller_ldt",
         hinweis=hinweis,
@@ -156,6 +178,7 @@ def build_default_bundle(
     *,
     photometrie_katalog: bool = True,
     c0_azimut_grad: float | None = None,
+    optik_aus_achse: bool = True,
 ) -> BundleMitPhotometrie:
     """Das echte Owner-Trio: ArchitekturRaumProvider (Selman) + En1838NormProvider
     (Enis) + NotlichtPlatzierer (Leonis) + LbTextProvider (Enis, 2. Input). Lazy-Import
@@ -176,8 +199,14 @@ def build_default_bundle(
     from notbeleuchtung.platzierung import NotlichtPlatzierer
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
+    # Default-Bundle nutzt IMMER den NotlichtPlatzierer — der liefert die Achsen-
+    # Azimute je Fluchtweg-SL (Selbst-Konsistenz der optik_aus_achse-Naht). Ein
+    # explizites c0_azimut_grad (globale Ausrichtung) übersteuert den Modus.
+    if c0_azimut_grad is not None:
+        optik_aus_achse = False
     i_cd_fn, befund = default_photometrie(
-        ldt_path, photometrie_katalog=photometrie_katalog, c0_azimut_grad=c0_azimut_grad
+        ldt_path, photometrie_katalog=photometrie_katalog,
+        c0_azimut_grad=c0_azimut_grad, optik_aus_achse=optik_aus_achse,
     )
     return BundleMitPhotometrie(
         raum=ArchitekturRaumProvider(),
