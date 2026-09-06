@@ -1,5 +1,85 @@
 {
   "$defs": {
+    "Anker": {
+      "description": "v1.2.0 — benannter Punkt der Fluchtweg-Topologie (Platzierungs-Anker).\n\nReine Geometrie-/Topologie-Aussage der Erkennung; ob/was dort platziert\nwird, entscheidet Leonis. `fluchtrichtung_grad` = Richtung ZUM Ausgang.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "typ": {
+          "enum": [
+            "PODEST",
+            "ANTRITT",
+            "AUSTRITT",
+            "TUER",
+            "RICHTUNGSWECHSEL",
+            "KREUZUNG",
+            "ENDE",
+            "STRECKE"
+          ],
+          "title": "Typ",
+          "type": "string"
+        },
+        "xy_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xy Mm",
+          "type": "array"
+        },
+        "winkel_grad": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Winkel Grad"
+        },
+        "fluchtrichtung_grad": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fluchtrichtung Grad"
+        },
+        "raum_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raum Id"
+        }
+      },
+      "required": [
+        "id",
+        "typ",
+        "xy_mm"
+      ],
+      "title": "Anker",
+      "type": "object"
+    },
     "Ausgang": {
       "properties": {
         "id": {
@@ -136,6 +216,64 @@
           ],
           "title": "Reason",
           "type": "string"
+        },
+        "quelle": {
+          "anyOf": [
+            {
+              "enum": [
+                "LINIE",
+                "GRAPH",
+                "FALLBACK"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quelle"
+        },
+        "start_raum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Raum"
+        },
+        "ziel_raum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ziel Raum"
+        },
+        "ziel_ausgang": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ziel Ausgang"
+        },
+        "richtung_unbekannt": {
+          "default": false,
+          "title": "Richtung Unbekannt",
+          "type": "boolean"
         }
       },
       "required": [
@@ -197,6 +335,34 @@
       "title": "Node",
       "type": "object"
     },
+    "Podest": {
+      "properties": {
+        "polygon_mm": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Polygon Mm",
+          "type": "array"
+        },
+        "ist_hauptpodest": {
+          "default": false,
+          "title": "Ist Hauptpodest",
+          "type": "boolean"
+        }
+      },
+      "title": "Podest",
+      "type": "object"
+    },
     "Raum": {
       "properties": {
         "id": {
@@ -248,6 +414,37 @@
           "default": false,
           "title": "Besondere Gefaehrdung",
           "type": "boolean"
+        },
+        "nutzungsklasse": {
+          "anyOf": [
+            {
+              "enum": [
+                "WOHNUNG_PRIVAT",
+                "ALLGEMEIN_ERSCHLIESSUNG",
+                "ALLGEMEIN_NEBENRAUM",
+                "AUSSEN",
+                "KEIN_RAUM"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nutzungsklasse"
+        },
+        "wohnung_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wohnung Id"
         }
       },
       "required": [
@@ -315,6 +512,127 @@
       "title": "Sonderstelle",
       "type": "object"
     },
+    "StiegenhausModell": {
+      "description": "v1.2.0 — Stiegenhaus-Innenleben: Läufe, Podeste, Türen, Verbotszonen.\n\n`verbotszonen_mm` = Flächen, auf denen nichts montiert/projiziert werden\ndarf (Laufflächen, Öffnungen) — Anker/Richtungen liefert die Erkennung,\ndie Platzierungslogik bleibt bei Leonis.",
+      "properties": {
+        "raum_id": {
+          "title": "Raum Id",
+          "type": "string"
+        },
+        "laeufe": {
+          "items": {
+            "$ref": "#/$defs/Treppenlauf"
+          },
+          "title": "Laeufe",
+          "type": "array"
+        },
+        "podeste": {
+          "items": {
+            "$ref": "#/$defs/Podest"
+          },
+          "title": "Podeste",
+          "type": "array"
+        },
+        "tuer_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tuer Ids",
+          "type": "array"
+        },
+        "verbotszonen_mm": {
+          "items": {
+            "items": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "title": "Verbotszonen Mm",
+          "type": "array"
+        }
+      },
+      "required": [
+        "raum_id"
+      ],
+      "title": "StiegenhausModell",
+      "type": "object"
+    },
+    "Treppenlauf": {
+      "description": "v1.2.0 — ein Treppenlauf; `richtung` = Gehrichtung von Antritt zu Austritt.",
+      "properties": {
+        "polygon_mm": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Polygon Mm",
+          "type": "array"
+        },
+        "antritt_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Antritt Mm",
+          "type": "array"
+        },
+        "austritt_mm": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Austritt Mm",
+          "type": "array"
+        },
+        "richtung": {
+          "default": "unbekannt",
+          "enum": [
+            "auf",
+            "ab",
+            "unbekannt"
+          ],
+          "title": "Richtung",
+          "type": "string"
+        }
+      },
+      "required": [
+        "antritt_mm",
+        "austritt_mm"
+      ],
+      "title": "Treppenlauf",
+      "type": "object"
+    },
     "Tuer": {
       "properties": {
         "id": {
@@ -378,6 +696,32 @@
           ],
           "title": "Schwenk Richtung",
           "type": "string"
+        },
+        "tuer_detail": {
+          "anyOf": [
+            {
+              "enum": [
+                "zimmertuer",
+                "wohnungseingang",
+                "stiegenhaustuer",
+                "hauseingang",
+                "balkontuer",
+                "garagentor",
+                "brandschutztuer"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tuer Detail"
+        },
+        "ohne_tuerblatt": {
+          "default": false,
+          "title": "Ohne Tuerblatt",
+          "type": "boolean"
         }
       },
       "required": [
@@ -424,7 +768,7 @@
       "type": "string"
     },
     "contract_version": {
-      "default": "1.1.0",
+      "default": "1.2.0",
       "title": "Contract Version",
       "type": "string"
     },
@@ -470,6 +814,20 @@
         "$ref": "#/$defs/Sonderstelle"
       },
       "title": "Sonderstellen",
+      "type": "array"
+    },
+    "stiegenhaeuser": {
+      "items": {
+        "$ref": "#/$defs/StiegenhausModell"
+      },
+      "title": "Stiegenhaeuser",
+      "type": "array"
+    },
+    "anker": {
+      "items": {
+        "$ref": "#/$defs/Anker"
+      },
+      "title": "Anker",
       "type": "array"
     }
   },

@@ -30,10 +30,12 @@ def _lb_typen() -> set[str]:
 
 
 def _raumerkennung_typen() -> set[str]:
-    """Alle Labels, die `raumtyp_flags()` vergeben kann."""
-    return {v[0] for v in raumtyp._TYP_MAP.values()} | {
-        v[0] for v in raumtyp._EXTRA_DIRECT.values()
-    }
+    """Alle Labels, die `raumtyp_flags()` vergeben kann (inkl. Overrides)."""
+    return (
+        {v[0] for v in raumtyp._TYP_MAP.values()}
+        | {v[0] for v in raumtyp._EXTRA_DIRECT.values()}
+        | {v[0] for v in raumtyp._EXTRA_OVERRIDE.values()}
+    )
 
 
 def test_lb_stuetzliste_deckt_sich_mit_raumerkennung():
