@@ -40,6 +40,7 @@ from ezdxf.addons.drawing.properties import LayoutProperties
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
 
+from notbeleuchtung.raumerkennung.aussenbereich import ueberdachungen
 from notbeleuchtung.raumerkennung.dxf_load import WALL_PATTERN, DxfPlan, lade_dxf
 from notbeleuchtung.raumerkennung.fluchtweg import _KEIN_FLW_LAYER
 from notbeleuchtung.raumerkennung.kaskade import iou, raeume_aus_kaskade
@@ -1109,8 +1110,12 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     return l
 
 
-def _aussen_md(ab) -> list[str]:
-    """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``."""
+def _aussen_md(ab, ueber=(), exits=()) -> list[str]:
+    """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``.
+
+    ``ueber`` = erkannte Überdachungen (Prüfstrecken-Output, kein Contract),
+    ``exits`` = final_exit-Ausgänge für den Abstands-Hinweis.
+    """
     if ab is None:
         return ["", "## Außenbereich", "", "- keine Außen-Analyse "
                 "(keine Wandkörper im Plan)"]
@@ -1125,7 +1130,21 @@ def _aussen_md(ab) -> list[str]:
             f"- offene AUSSEN-Flächen: {len(ab.offen)} "
             f"({_fl(ab.offen):.1f} m²)",
             f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
-            f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)"]
+            f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)",
+            (f"- Überdachungen über offener Außenfläche: {len(ueber)} "
+             f"({_fl(ueber):.1f} m²)")] + [
+        f"  - {a.area / 1e6:.1f} m² — {d / 1000:.2f} m zu {eid}"
+        for a, d, eid in _ueberdachung_exit_abstand(ueber, exits) if d <= 5000]
+
+
+def _ueberdachung_exit_abstand(ueber, exits):
+    """Je Überdachung der Abstand (mm) zum nächsten final_exit + dessen ID."""
+    ziele = [a for a in exits if a.typ == "final_exit"]
+    for u in ueber:
+        if not ziele:
+            continue
+        e = min(ziele, key=lambda a: u.distance(Point(a.xy_mm)))
+        yield u, u.distance(Point(e.xy_mm)), e.id
 
 
 def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
@@ -1161,7 +1180,13 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
-    md = md + _aussen_md(getattr(bundle.raum, "letzte_aussenbereiche", None))
+    ab = getattr(bundle.raum, "letzte_aussenbereiche", None)
+    # Vordach-Signal: Prüfstrecken-Output, als Attribut am Provider abgelegt
+    # (wie letzte_aussenbereiche) — KEIN Contract-Feld am Ausgang.
+    ueber = (ueberdachungen(plan, unary_union(ab.komponenten), ab.offen)
+             if ab is not None and ab.komponenten else [])
+    bundle.raum.letzte_ueberdachungen = ueber
+    md = md + _aussen_md(ab, ueber, modell.ausgaenge)
     md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
                              _restweg_im_eg(dxf, geschoss))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
