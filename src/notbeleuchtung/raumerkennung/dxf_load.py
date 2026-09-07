@@ -26,9 +26,12 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import BBox
 #                 Suffix ``_Stift_Nr__N``)
 #   ArchiCAD-New: ``New_015 Innenwände`` (Rennweg; Umlaut ggf. cp-dekodiert
 #                 → tolerant ``w.nde``)
+#   AIA/US-Stil:  ``A-WALL`` / ``I-WALL`` (+ ``A-WALL-PATT`` etc., Muthgasse);
+#                 Lookbehind hält z.B. ``EA-WALL``-Fremdpräfixe draußen.
 WALL_PATTERN = re.compile(
     r"02-(?:TWA|ZWA|WDA)|A_Wa?ende|A_Wand|(?<!\d)1[123]0 Wand"
-    r"|New_0?\d{2} (?:innen|au\S{0,2}en)?w.nde",
+    r"|New_0?\d{2} (?:innen|au\S{0,2}en)?w.nde"
+    r"|(?<![A-Z])[AI]-WALL",
     re.IGNORECASE)
 
 # Rückwärts-kompatibel (Mollgasse-Tests/Direktnutzung).
@@ -83,7 +86,27 @@ def _door_arc_factor(space) -> float | None:
     Robuster als die Geschoss-Ausdehnung (die ist zwischen 8 m und 80 m
     mehrdeutig); eine Tür ist immer ~0.9 m breit.
     """
-    radii = [e.dxf.radius for e in space if e.dxftype() == "ARC" and e.dxf.radius > 0]
+    # Tür-Bögen stecken oft NUR in Tür-Blöcken (Muthgasse: A-DOOR-INSERTs;
+    # die Modelspace-ARCs dort sind Kurvenwände mit 600–1300 Quell-Einheiten —
+    # als Türen gelesen kalibrierten sie den Faktor eine Dekade zu klein).
+    # Block-Bögen sind definitiv Türen → wenn vorhanden, zählen NUR sie.
+    door_block_radii: list[float] = []
+    for ins in space:
+        if ins.dxftype() != "INSERT":
+            continue
+        kennung = f"{ins.dxf.name or ''} {ins.dxf.layer or ''}".upper()
+        if "DOOR" not in kennung and "TUER" not in kennung and "TÜR" not in kennung:
+            continue
+        try:
+            door_block_radii += [
+                v.dxf.radius for v in ins.virtual_entities()
+                if v.dxftype() == "ARC" and v.dxf.radius > 0
+            ]
+        except Exception:  # noqa: BLE001, S112 — korrupte Block-Referenzen überspringen
+            continue
+    radii = door_block_radii or [
+        e.dxf.radius for e in space if e.dxftype() == "ARC" and e.dxf.radius > 0
+    ]
     if not radii:
         return None
     best, best_count = None, 0

@@ -35,7 +35,7 @@ _FLAECHE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:m\s*[²2]|qm)(?!\w)", re.IGNORECA
 # Belag-Vokabular (kurze Materialzeile, keine Zahlen).
 _BELAG = re.compile(
     r"parkett|fliesen|estrich|estr\.|gu[ßs]s?asphalt|asphalt|platten|rasen|beton"
-    r"|teppich|laminat|linoleum|kies|feinsteinzeug|fstz",
+    r"|teppich|laminat|linoleum|kies|feinsteinzeug|fstz|ker\.?\s*bel",
     re.IGNORECASE,
 )
 _BLOCK_SUFFIX = re.compile(r"__\d+$")
