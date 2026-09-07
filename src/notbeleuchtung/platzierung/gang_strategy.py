@@ -16,6 +16,8 @@ Fluchtweg-Layer vorliegt (siehe `platzierer._plan_rettungszeichen`).
 """
 from __future__ import annotations
 
+import math
+
 from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
 from .bausteine import (
@@ -135,12 +137,11 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
             # unrotiert weist der Block auf −y → rotation = Winkel(RZ→Tür)+90°,
             # auf 90° gerastert (wie im Anker-Pfad).
             if ziel_xy is not None and i == len(pts) - 1:
-                import math as _math
                 dx, dy = ziel_xy[0] - px, ziel_xy[1] - py
-                if _math.hypot(dx, dy) > 50.0:
+                if math.hypot(dx, dy) > 50.0:
                     unten_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
                     catalog_key = unten_key
-                    rotation = (round((_math.degrees(_math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+                    rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
                     mirror_x = False
                     richtung = "unten"
             out.append(
