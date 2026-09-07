@@ -189,126 +189,43 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 
 ## Türen (Fachteil 3)
 
-57 / 182 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; /NA = Notausgang, * = ohne Türblatt.
+58 / 100 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang |
 |---|---|---|---|--:|---|
-| tuer_1 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_2 | raum_26 | AUSSEN | balkontuer | 880 | — |
-| tuer_3 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_4 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_5 | AUSSEN | AUSSEN | — | 980 | — |
-| tuer_6 | raum_14 | raum_15 | — | 800 | — |
-| tuer_7 | raum_15 | AUSSEN | — | 800 | — |
-| tuer_8 | raum_18 | KEIN_RAUM | — | 935 | — |
-| tuer_9 | raum_21 | KEIN_RAUM | — | 940 | — |
-| tuer_10 | KEIN_RAUM | KEIN_RAUM | — | 868 | — |
-| tuer_11 | raum_20 | KEIN_RAUM | — | 940 | — |
-| tuer_12 | AUSSEN | AUSSEN | — | 1003 | — |
-| tuer_13 | raum_16 | raum_16 | zimmertuer | 800 | — |
-| tuer_14 | raum_33 | raum_33 | zimmertuer | 960 | — |
-| tuer_15 | raum_32 | KEIN_RAUM | — | 903 | — |
-| tuer_16 | raum_32 | KEIN_RAUM | — | 605 | — |
-| tuer_17 | raum_12 | raum_12 | zimmertuer | 830 | — |
-| tuer_18 | raum_12 | raum_3 | wohnungseingang | 830 | — |
-| tuer_19 | raum_9 | raum_17 | zimmertuer | 830 | — |
-| tuer_20 | raum_12 | raum_11 | wohnungseingang | 830 | — |
-| tuer_21 | raum_24 | raum_12 | wohnungseingang | 830 | — |
-| tuer_22 | raum_23 | raum_24 | zimmertuer | 830 | — |
-| tuer_23 | raum_31 | KEIN_RAUM | — | 830 | — |
-| tuer_24 | raum_20 | raum_7 | zimmertuer | 830 | — |
-| tuer_25 | raum_31 | KEIN_RAUM | — | 960 | — |
-| tuer_26 | raum_21 | raum_31 | zimmertuer | 830 | — |
-| tuer_27 | raum_30 | raum_30 | zimmertuer | 830 | — |
-| tuer_28 | raum_33 | raum_35 | wohnungseingang | 960 | — |
-| tuer_29 | raum_10 | raum_9 | zimmertuer | 830 | — |
-| tuer_30 | raum_4 | AUSSEN | — | 900 | — |
-| tuer_31 | AUSSEN | AUSSEN | — | 950 | — |
-| tuer_32 | raum_19 | raum_35 | wohnungseingang | 960 | — |
-| tuer_33 | raum_43 | AUSSEN | — | 980 | — |
-| tuer_34 | raum_35 | KEIN_RAUM | — | 960 | — |
-| tuer_35 | raum_26 | raum_8 | zimmertuer | 830 | — |
-| tuer_36 | raum_8 | raum_27 | — | 830 | — |
-| tuer_37 | raum_23 | AUSSEN | balkontuer | 880 | — |
-| tuer_38 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_39 | raum_5 | raum_30 | wohnungseingang | 830 | — |
-| tuer_40 | raum_19 | raum_40 | wohnungseingang | 830 | — |
-| tuer_41 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_42 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_43 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_44 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_45 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_46 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_47 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_48 | AUSSEN | AUSSEN | — | 935 | — |
-| tuer_49 | AUSSEN | AUSSEN | — | 940 | — |
-| tuer_50 | AUSSEN | AUSSEN | — | 868 | — |
-| tuer_51 | AUSSEN | AUSSEN | — | 940 | — |
-| tuer_52 | AUSSEN | AUSSEN | — | 950 | — |
-| tuer_53 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_54 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_55 | AUSSEN | AUSSEN | — | 850 | — |
-| tuer_56 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_57 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_58 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_59 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_60 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_61 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_62 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_63 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_64 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_65 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_66 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_67 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_68 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_69 | AUSSEN | AUSSEN | — | 950 | — |
-| tuer_70 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_71 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_72 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_73 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_74 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_75 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_76 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_77 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_78 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_79 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_80 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_81 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_82 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_83 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_84 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_85 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_86 | AUSSEN | AUSSEN | — | 935 | — |
-| tuer_87 | AUSSEN | AUSSEN | — | 940 | — |
-| tuer_88 | AUSSEN | AUSSEN | — | 868 | — |
-| tuer_89 | AUSSEN | AUSSEN | — | 940 | — |
-| tuer_90 | AUSSEN | AUSSEN | — | 950 | — |
-| tuer_91 | AUSSEN | AUSSEN | — | 800 | — |
-| tuer_92 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_93 | AUSSEN | AUSSEN | — | 850 | — |
-| tuer_94 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_95 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_96 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_97 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_98 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_99 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_100 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_101 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_102 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_103 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_104 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_105 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_106 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_107 | AUSSEN | AUSSEN | — | 950 | — |
-| tuer_108 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_109 | AUSSEN | AUSSEN | — | 900 | — |
-| tuer_110 | AUSSEN | AUSSEN | — | 960 | — |
-| tuer_111 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_112 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_113 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_114 | AUSSEN | AUSSEN | — | 880 | — |
-| tuer_115 | AUSSEN | AUSSEN | — | 830 | — |
-| tuer_116 | AUSSEN | AUSSEN | — | 830 | — |
+| tuer_1 | raum_26 | AUSSEN | balkontuer | 880 | — |
+| tuer_2 | raum_14 | raum_15 | — | 800 | — |
+| tuer_3 | raum_15 | AUSSEN | — | 800 | — |
+| tuer_4 | raum_18 | KEIN_RAUM | — | 935 | — |
+| tuer_5 | raum_21 | KEIN_RAUM | — | 940 | — |
+| tuer_6 | KEIN_RAUM | KEIN_RAUM | — | 868 | — |
+| tuer_7 | raum_20 | KEIN_RAUM | — | 940 | — |
+| tuer_8 | raum_16 | raum_16 | zimmertuer | 800 | — |
+| tuer_9 | raum_33 | raum_33 | zimmertuer | 960 | — |
+| tuer_10 | raum_32 | KEIN_RAUM | — | 903 | — |
+| tuer_11 | raum_32 | KEIN_RAUM | — | 605 | — |
+| tuer_12 | raum_12 | raum_12 | zimmertuer | 830 | — |
+| tuer_13 | raum_12 | raum_3 | wohnungseingang | 830 | — |
+| tuer_14 | raum_9 | raum_17 | wohnungseingang | 830 | — |
+| tuer_15 | raum_12 | raum_11 | wohnungseingang | 830 | — |
+| tuer_16 | raum_24 | raum_12 | wohnungseingang | 830 | — |
+| tuer_17 | raum_23 | raum_24 | zimmertuer | 830 | — |
+| tuer_18 | raum_31 | KEIN_RAUM | — | 830 | — |
+| tuer_19 | raum_20 | raum_7 | zimmertuer | 830 | — |
+| tuer_20 | raum_31 | KEIN_RAUM | — | 960 | — |
+| tuer_21 | raum_21 | raum_31 | zimmertuer | 830 | — |
+| tuer_22 | raum_30 | raum_30 | zimmertuer | 830 | — |
+| tuer_23 | raum_33 | raum_35 | wohnungseingang | 960 | — |
+| tuer_24 | raum_10 | raum_9 | wohnungseingang | 830 | — |
+| tuer_25 | raum_4 | AUSSEN | — | 900 | — |
+| tuer_26 | raum_19 | raum_35 | wohnungseingang | 960 | — |
+| tuer_27 | raum_43 | AUSSEN | — | 980 | — |
+| tuer_28 | raum_35 | KEIN_RAUM | — | 960 | — |
+| tuer_29 | raum_26 | raum_8 | zimmertuer | 830 | — |
+| tuer_30 | raum_8 | raum_27 | — | 830 | — |
+| tuer_31 | raum_23 | AUSSEN | balkontuer | 880 | — |
+| tuer_32 | raum_5 | raum_30 | wohnungseingang | 830 | — |
+| tuer_33 | raum_19 | raum_40 | wohnungseingang | 830 | — |
 | durchgang_1 | raum_1 | raum_18 | — | 3095 | — |
 | durchgang_2 | raum_1 | raum_31 | — | 940 | — |
 | durchgang_3 | raum_1 | raum_35 | — | 4765 | — |
@@ -328,123 +245,131 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_17 | raum_7 | raum_20 | zimmertuer | 4121 | — |
 | durchgang_18 | raum_7 | raum_22 | zimmertuer | 1620 | — |
 | durchgang_19 | raum_7 | raum_38 | balkontuer | 2510 | — |
-| durchgang_20 | raum_8 | raum_9 | zimmertuer | 1669 | — |
+| durchgang_20 | raum_8 | raum_9 | wohnungseingang | 1669 | — |
 | durchgang_21 | raum_8 | raum_25 | zimmertuer | 5150 | — |
 | durchgang_22 | raum_8 | raum_26 | zimmertuer | 5150 | — |
 | durchgang_23 | raum_8 | raum_27 | — | 1819 | — |
 | durchgang_24 | raum_8 | raum_42 | — | 1610 | — |
-| durchgang_25 | raum_9 | raum_25 | zimmertuer | 2387 | — |
+| durchgang_25 | raum_9 | raum_25 | wohnungseingang | 2387 | — |
 | durchgang_26 | raum_9 | raum_27 | — | 2069 | — |
-| durchgang_27 | raum_10 | raum_25 | zimmertuer | 3027 | — |
-| durchgang_28 | raum_12 | raum_13 | wohnungseingang | 1630 | — |
-| durchgang_29 | raum_12 | raum_23 | wohnungseingang | 2580 | — |
-| durchgang_30 | raum_12 | raum_43 | balkontuer | 2100 | — |
-| durchgang_31 | raum_13 | raum_23 | zimmertuer | 4050 | — |
-| durchgang_32 | raum_13 | raum_41 | — | 2150 | — |
-| durchgang_33 | raum_14 | raum_15 | — | 3187 | — |
-| durchgang_34 | raum_14 | raum_16 | balkontuer | 1926 | — |
-| durchgang_35 | raum_14 | raum_16 | balkontuer | 2794 | — |
-| durchgang_36 | raum_14 | raum_38 | — | 7130 | — |
-| durchgang_37 | raum_15 | raum_39 | — | 5550 | — |
-| durchgang_38 | raum_15 | raum_43 | — | 5796 | — |
-| durchgang_39 | raum_16 | raum_43 | balkontuer | 1880 | — |
-| durchgang_40 | raum_18 | raum_21 | zimmertuer | 4196 | — |
-| durchgang_41 | raum_18 | raum_31 | zimmertuer | 1548 | — |
-| durchgang_42 | raum_18 | raum_35 | wohnungseingang | 1116 | — |
-| durchgang_43 | raum_18 | raum_35 | wohnungseingang | 3980 | — |
-| durchgang_44 | raum_18 | raum_39 | balkontuer | 2110 | — |
-| durchgang_45 | raum_19 | raum_30 | zimmertuer | 1560 | — |
-| durchgang_46 | raum_20 | raum_21 | zimmertuer | 3940 | — |
-| durchgang_47 | raum_20 | raum_22 | zimmertuer | 2775 | — |
-| durchgang_48 | raum_21 | raum_31 | zimmertuer | 2922 | — |
-| durchgang_49 | raum_23 | raum_24 | zimmertuer | 4050 | — |
-| durchgang_50 | raum_23 | raum_41 | — | 1610 | — |
-| durchgang_51 | raum_24 | raum_26 | zimmertuer | 4580 | — |
-| durchgang_52 | raum_25 | raum_42 | — | 2110 | — |
-| durchgang_53 | raum_26 | raum_42 | — | 1610 | — |
-| durchgang_54 | raum_30 | raum_40 | wohnungseingang | 1478 | — |
-| durchgang_55 | raum_32 | raum_33 | zimmertuer | 3498 | — |
-| durchgang_56 | raum_33 | raum_35 | wohnungseingang | 2466 | — |
-| durchgang_57 | raum_35 | raum_36 | — | 850 | — |
-| durchgang_58 | raum_35 | raum_36 | — | 2700 | — |
-| durchgang_59 | raum_35 | raum_40 | wohnungseingang | 879 | — |
-| durchgang_60 | raum_35 | rest_3 | — | 1938 | — |
-| durchgang_61 | raum_37 | raum_43 | hauseingang | 7230 | ja |
-| durchgang_62 | raum_37 | rest_1 | — | 1637 | — |
-| durchgang_63 | raum_38 | raum_39 | — | 1984 | — |
-| durchgang_64 | raum_39 | raum_43 | — | 1969 | — |
-| durchgang_65 | raum_39 | raum_43 | — | 5550 | — |
-| durchgang_66 | raum_41 | raum_44 | — | 3535 | — |
+| durchgang_27 | raum_9 | raum_37 | wohnungseingang | 1144 | — |
+| durchgang_28 | raum_10 | raum_25 | zimmertuer | 3027 | — |
+| durchgang_29 | raum_12 | raum_13 | wohnungseingang | 1630 | — |
+| durchgang_30 | raum_12 | raum_23 | wohnungseingang | 2580 | — |
+| durchgang_31 | raum_12 | raum_43 | balkontuer | 2100 | — |
+| durchgang_32 | raum_13 | raum_23 | zimmertuer | 4050 | — |
+| durchgang_33 | raum_13 | raum_41 | — | 2150 | — |
+| durchgang_34 | raum_14 | raum_15 | — | 3187 | — |
+| durchgang_35 | raum_14 | raum_16 | balkontuer | 1926 | — |
+| durchgang_36 | raum_14 | raum_16 | balkontuer | 2794 | — |
+| durchgang_37 | raum_14 | raum_38 | — | 7130 | — |
+| durchgang_38 | raum_15 | raum_39 | — | 5550 | — |
+| durchgang_39 | raum_15 | raum_43 | — | 5796 | — |
+| durchgang_40 | raum_16 | raum_43 | balkontuer | 1880 | — |
+| durchgang_41 | raum_18 | raum_21 | zimmertuer | 4196 | — |
+| durchgang_42 | raum_18 | raum_31 | zimmertuer | 1548 | — |
+| durchgang_43 | raum_18 | raum_35 | wohnungseingang | 1116 | — |
+| durchgang_44 | raum_18 | raum_35 | wohnungseingang | 3980 | — |
+| durchgang_45 | raum_18 | raum_39 | balkontuer | 2110 | — |
+| durchgang_46 | raum_19 | raum_30 | zimmertuer | 1560 | — |
+| durchgang_47 | raum_20 | raum_21 | zimmertuer | 3940 | — |
+| durchgang_48 | raum_20 | raum_22 | zimmertuer | 2775 | — |
+| durchgang_49 | raum_21 | raum_31 | zimmertuer | 2922 | — |
+| durchgang_50 | raum_23 | raum_24 | zimmertuer | 4050 | — |
+| durchgang_51 | raum_23 | raum_41 | — | 1610 | — |
+| durchgang_52 | raum_24 | raum_26 | zimmertuer | 4580 | — |
+| durchgang_53 | raum_25 | raum_42 | — | 2110 | — |
+| durchgang_54 | raum_26 | raum_42 | — | 1610 | — |
+| durchgang_55 | raum_30 | raum_40 | wohnungseingang | 1478 | — |
+| durchgang_56 | raum_32 | raum_33 | zimmertuer | 3498 | — |
+| durchgang_57 | raum_33 | raum_35 | wohnungseingang | 2466 | — |
+| durchgang_58 | raum_35 | raum_36 | — | 850 | — |
+| durchgang_59 | raum_35 | raum_36 | — | 2700 | — |
+| durchgang_60 | raum_35 | raum_40 | wohnungseingang | 879 | — |
+| durchgang_61 | raum_35 | rest_3 | — | 1938 | — |
+| durchgang_62 | raum_37 | raum_43 | hauseingang | 7230 | ja |
+| durchgang_63 | raum_37 | rest_1 | — | 1637 | — |
+| durchgang_64 | raum_38 | raum_39 | — | 1984 | — |
+| durchgang_65 | raum_39 | raum_43 | — | 1969 | — |
+| durchgang_66 | raum_39 | raum_43 | — | 5550 | — |
+| durchgang_67 | raum_41 | raum_44 | — | 3535 | — |
 
 ## Ausgänge (1)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
-| exit_durchgang_61 | final_exit | 8.78 | -22.66 |
+| exit_durchgang_62 | final_exit | 8.78 | -22.66 |
 
-## Fluchtweg-Segmente (2)
+## Fluchtweg-Segmente (6)
 
-Quellen: FALLBACK: 2
+Quellen: FALLBACK: 1, GRAPH: 5
 
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
+| seg_graph_tuer_14 | GRAPH | 5.9 | exit | exit_durchgang_62 |
+| seg_graph_tuer_24 | GRAPH | 6.2 | exit | exit_durchgang_62 |
+| seg_graph_durchgang_20 | GRAPH | 7.5 | exit | exit_durchgang_62 |
+| seg_graph_durchgang_25 | GRAPH | 7.6 | exit | exit_durchgang_62 |
+| seg_graph_durchgang_27 | GRAPH | 3.9 | exit | exit_durchgang_62 |
 | seg_fallback_raum_35 | FALLBACK | 1.2 | direction_change | — |
-| seg_fallback_raum_37 | FALLBACK | 6.9 | long_run | — |
 
-## Wohnungen (7)
+## Wohnungen (8)
 
-- top_1: 11 Räume (raum_10, raum_13, raum_17, raum_23, raum_24, raum_25, raum_26, raum_28, raum_3, raum_8, raum_9)
+- top_1: 9 Räume (raum_10, raum_13, raum_23, raum_24, raum_25, raum_26, raum_28, raum_3, raum_8)
 - top_2: 1 Räume (raum_11)
 - top_3: 1 Räume (raum_16)
-- top_4: 7 Räume (raum_18, raum_20, raum_21, raum_22, raum_31, raum_5, raum_7)
-- top_5: 1 Räume (raum_29)
-- top_6: 2 Räume (raum_32, raum_33)
-- top_7: 1 Räume (raum_40)
+- top_4: 1 Räume (raum_17)
+- top_5: 7 Räume (raum_18, raum_20, raum_21, raum_22, raum_31, raum_5, raum_7)
+- top_6: 1 Räume (raum_29)
+- top_7: 2 Räume (raum_32, raum_33)
+- top_8: 1 Räume (raum_40)
 
 ## Weglänge je Wohnungseingang → nächster Ausgang
 
 | Tür | Weglänge m | Quelle | Ausgang |
 |---|--:|---|---|
-| tuer_18 | 6.1 | Luftlinie | exit_durchgang_61 |
-| tuer_20 | 2.9 | Luftlinie | exit_durchgang_61 |
-| tuer_21 | 4.5 | Luftlinie | exit_durchgang_61 |
-| tuer_28 | 18.3 | Luftlinie | exit_durchgang_61 |
-| tuer_32 | 14.4 | Luftlinie | exit_durchgang_61 |
-| tuer_39 | 18.0 | Luftlinie | exit_durchgang_61 |
-| tuer_40 | 15.6 | Luftlinie | exit_durchgang_61 |
-| durchgang_11 | 18.6 | Luftlinie | exit_durchgang_61 |
-| durchgang_16 | 15.6 | Luftlinie | exit_durchgang_61 |
-| durchgang_28 | 6.7 | Luftlinie | exit_durchgang_61 |
-| durchgang_29 | 5.8 | Luftlinie | exit_durchgang_61 |
-| durchgang_42 | 13.1 | Luftlinie | exit_durchgang_61 |
-| durchgang_43 | 11.1 | Luftlinie | exit_durchgang_61 |
-| durchgang_54 | 16.3 | Luftlinie | exit_durchgang_61 |
-| durchgang_56 | 16.7 | Luftlinie | exit_durchgang_61 |
-| durchgang_59 | 16.1 | Luftlinie | exit_durchgang_61 |
+| tuer_13 | 6.1 | Luftlinie | exit_durchgang_62 |
+| tuer_14 | 5.9 | GRAPH | exit_durchgang_62 |
+| tuer_15 | 2.9 | Luftlinie | exit_durchgang_62 |
+| tuer_16 | 4.5 | Luftlinie | exit_durchgang_62 |
+| tuer_23 | 18.3 | Luftlinie | exit_durchgang_62 |
+| tuer_24 | 6.2 | GRAPH | exit_durchgang_62 |
+| tuer_26 | 14.4 | Luftlinie | exit_durchgang_62 |
+| tuer_32 | 18.0 | Luftlinie | exit_durchgang_62 |
+| tuer_33 | 15.6 | Luftlinie | exit_durchgang_62 |
+| durchgang_11 | 18.6 | Luftlinie | exit_durchgang_62 |
+| durchgang_16 | 15.6 | Luftlinie | exit_durchgang_62 |
+| durchgang_20 | 7.5 | GRAPH | exit_durchgang_62 |
+| durchgang_25 | 7.6 | GRAPH | exit_durchgang_62 |
+| durchgang_27 | 3.9 | GRAPH | exit_durchgang_62 |
+| durchgang_29 | 6.7 | Luftlinie | exit_durchgang_62 |
+| durchgang_30 | 5.8 | Luftlinie | exit_durchgang_62 |
+| durchgang_43 | 13.1 | Luftlinie | exit_durchgang_62 |
+| durchgang_44 | 11.1 | Luftlinie | exit_durchgang_62 |
+| durchgang_55 | 16.3 | Luftlinie | exit_durchgang_62 |
+| durchgang_57 | 16.7 | Luftlinie | exit_durchgang_62 |
+| durchgang_60 | 16.1 | Luftlinie | exit_durchgang_62 |
 
 ## Leuchten je Nutzungsklasse
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 3 |
-| kein Raum | 1 |
+| ALLGEMEIN_ERSCHLIESSUNG | 4 |
 | unbestimmt | 1 |
-| _davon auf Treppenlauf/Verbotszone_ | 4 |
+| _davon auf Treppenlauf/Verbotszone_ | 3 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- Treppenlauf/Verbotszone: 4 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 3 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
-| Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
-|---|---|--:|--:|--:|---|
-| durchgang_62 | (12.34, -22.50) | 180.0 | 90.0 | 90.0 | abweichend |
+- kein RZ näher als 1 m an einer Tür
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
-- **raum_35**: 9 Läufe, 1 Podeste, 10 Verbotszonen, 12 Anker
-  - PODEST (9.90, -6.60) m, Winkel 0°, Fluchtrichtung 222°
+- **raum_35**: 9 Läufe, 1 Podeste, 10 Verbotszonen (größte 20.3 m², Summe 31.6 m²), 16 Anker
+  - PODEST (9.90, -6.63) m, Winkel 0°, Fluchtrichtung 222°
   - ANTRITT (10.83, -7.14) m, Fluchtrichtung 222°
   - AUSTRITT (7.96, -6.08) m, Fluchtrichtung 2°
   - ANTRITT (7.51, -8.97) m, Fluchtrichtung 298°
@@ -452,17 +377,24 @@ Quellen: FALLBACK: 2
   - AUSTRITT (15.33, -13.77) m, Fluchtrichtung 124°
   - ANTRITT (14.48, -10.69) m, Fluchtrichtung 216°
   - AUSTRITT (15.28, -10.10) m, Fluchtrichtung 216°
-  - ANTRITT (13.81, -14.58) m, Fluchtrichtung 124°
   - AUSTRITT (13.88, -14.68) m, Fluchtrichtung 124°
+  - TUER (13.19, -4.87) m, Winkel 90°, Fluchtrichtung 269°
+  - TUER (13.56, -10.51) m, Winkel 90°, Fluchtrichtung 216°
+  - TUER (13.56, -12.70) m, Winkel 90°, Fluchtrichtung 124°
   - TUER (12.15, -6.26) m, Winkel 0°, Fluchtrichtung 222°
+  - TUER (15.28, -6.91) m, Winkel 90°, Fluchtrichtung 269°
+  - TUER (15.28, -9.10) m, Winkel 90°, Fluchtrichtung 216°
   - RICHTUNGSWECHSEL (9.88, -6.59) m, Fluchtrichtung 2°
-- **raum_37**: 6 Läufe, 0 Podeste, 7 Verbotszonen, 8 Anker
+- **raum_37**: 6 Läufe, 0 Podeste, 7 Verbotszonen (größte 4.0 m², Summe 14.5 m²), 11 Anker
   - AUSTRITT (11.20, -23.08) m, Fluchtrichtung 235°
   - ANTRITT (6.35, -21.72) m, Fluchtrichtung 135°
   - ANTRITT (5.93, -23.31) m, Fluchtrichtung 272°
   - AUSTRITT (5.87, -21.74) m, Fluchtrichtung 135°
   - ANTRITT (7.60, -22.25) m, Fluchtrichtung 8°
+  - TUER (11.35, -23.99) m, Winkel 0°, Fluchtrichtung 235°
+  - TUER (5.28, -23.30) m, Winkel 90°, Fluchtrichtung 168°
   - TUER (8.78, -22.66) m, Winkel 0°, Fluchtrichtung 8°
+  - TUER (12.21, -21.58) m, Winkel 90°, Fluchtrichtung 235°
   - RICHTUNGSWECHSEL (6.11, -21.73) m, Fluchtrichtung 135°
   - RICHTUNGSWECHSEL (5.45, -22.97) m, Fluchtrichtung 168°
 
@@ -478,4 +410,4 @@ Quellen: FALLBACK: 2
 - „a.D. EI90“ bei (4.29, -10.22) m
 - „a.D. EI90“ bei (7.63, -4.63) m
 
-Laufzeit: 238.4 s
+Laufzeit: 231.6 s
