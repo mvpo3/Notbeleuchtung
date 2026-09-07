@@ -108,3 +108,30 @@ Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
   Riesen-Dreiecke auf — Stufen-Gruppierung fasst dort entfernte parallele
   Linien zusammen. Erkennungs-Verbesserung (Distanz-Deckel je Lauf-Hülle)
   als eigener Schritt, NICHT in Fachteil 3 gefixt.
+
+## Rotationsfix + neue Familien (2026-09-07)
+
+- **RZ-Rotation vs. Türwandwinkel — GEFIXT (Wurzel-Bug):**
+  `bausteine.richtung_und_rotation` schrieb den Lauf-Azimut PUR als
+  `rotation_deg`; der unten-Pfeilblock zeigt bei rot=0 aber nach −Y →
+  jeder is_directional=False-Pfad drehte 90° falsch. Jetzt einheitlich
+  rotation = (Azimut+90) % 360 (oben→180, rechts→90, links→270, unten→0;
+  Guard `tests/platzierung/test_rotation_konvention.py`). Mollgasse-Messung
+  4/8 → 1/8 abweichend. Restfall **durchgang_74**: Kreuzungs-RZ in
+  graph-getrennter Komponente an der Nordgrenze — Pfeil zeigt längs der
+  Wand zum nächsten Ausgang statt durch den Durchgang. Owner-Frage
+  (Leonis): sollen auch Nicht-Ausgangs-Anker ≤1 m an einer Tür die
+  Tür-Regel (Pfeil durch die Öffnung) bekommen?
+- **Mollgasse Nord-Durchgänge ohne Ausgang:** die Durchgänge zur nördl.
+  Grundstücksgrenze (durchgang_74/15, y≈1549) sind laut Außen-Analyse ein
+  Weg ins Freie, der Provider liefert dort aber keinen final_exit — die
+  RZ-Richtungen in der Nordzone routen deshalb südwärts. Selman-Frage.
+- **Muthgasse E2 erschlossen, Stempel↔Raum-Lücke:** 98/98 Stempel mit
+  Fläche+Typ, aber nur 34/114 Räume typisiert — die A-AREA-BNDY-Polygone
+  matchen die Stempel noch nicht flächendeckend
+  (xfail `tests/naht/test_soll_muthgasse.py`). 0 final_exit auf E2
+  (unterstes Geschoss im Ordner — Klärung, wo der Endausgang liegt).
+- **Referenzvergleich Barawitzka (07_referenzvergleich.png):** Treffer-
+  Definition ≤1 m + Rotations-Δ ≤10° (Panel-Achse mod 180); Zielbild ≥80 %
+  als strict-xfail in `tests/naht/test_soll_referenzvergleich.py` —
+  Ist-Quote siehe bericht.md/VERLAUF.

@@ -410,4 +410,23 @@ Quellen: FALLBACK: 1, GRAPH: 5
 - „a.D. EI90“ bei (4.29, -10.22) m
 - „a.D. EI90“ bei (7.63, -4.63) m
 
-Laufzeit: 231.6 s
+## Referenzvergleich Fachplaner (11 Referenz-Leuchten im Frame)
+
+- Treffer (≤1 m, Rotation ≤10°): **0/11 = 0 %**
+- überzählig (eigene ohne Referenz-Gegenstück): 5
+
+| fehlende Referenz | xy m | rot° |
+|---|---|--:|
+| STANDARDMASK_RZ_PR Typ A | (8.14, -6.24) | 0 |
+| STANDARDMASK_RZ_PU Typ A | (14.33, -3.13) | 0 |
+| STANDARDMASK_RZ_PL Typ A | (15.22, -7.91) | 270 |
+| STANDARDMASK_RZ_PR Typ A | (8.45, -8.79) | 180 |
+| STANDARDMASK_SL Typ I | (14.33, -2.78) | 180 |
+| STANDARDMASK_RZ_PL Typ A | (15.19, -13.52) | 270 |
+| STANDARDMASK_RZ_PR Typ B | (5.50, -22.10) | 90 |
+| STANDARDMASK_RZ_PR Typ B | (7.60, -19.56) | 0 |
+| STANDARDMASK_RZ_PU Typ B | (14.38, -15.09) | 0 |
+| STANDARDMASK_SL Typ H | (10.59, -8.78) | 180 |
+| STANDARD_RZ_PLPR Typ F | (13.07, -20.98) | 270 |
+
+Laufzeit: 274.1 s
