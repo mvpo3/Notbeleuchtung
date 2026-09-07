@@ -512,14 +512,14 @@ Quellen: FALLBACK: 2, GRAPH: 20, LINIE: 103
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| durchgang_65 | (2665.83, 1537.22) | 0.0 | 90.1 | 89.9 | abweichend |
-| tuer_16 | (2681.03, 1515.24) | 0.0 | 180.0 | 0.0 | ok |
-| tuer_30 | (2662.31, 1533.96) | 0.0 | 179.7 | 0.3 | ok |
+| durchgang_65 | (2665.83, 1537.22) | 180.0 | 0.1 | 0.1 | ok |
+| tuer_16 | (2681.03, 1515.24) | 180.0 | 0.0 | 0.0 | ok |
+| tuer_30 | (2662.31, 1533.96) | 180.0 | 179.7 | 0.3 | ok |
 | tuer_35 | (2699.65, 1520.76) | 0.0 | 180.0 | 0.0 | ok |
-| tuer_37 | (2690.10, 1516.87) | 0.0 | 90.0 | 90.0 | abweichend |
-| tuer_40 | (2659.11, 1541.88) | 0.0 | 179.7 | 0.3 | ok |
+| tuer_37 | (2690.10, 1516.87) | 90.0 | 90.0 | 0.0 | ok |
+| tuer_40 | (2659.11, 1541.88) | 180.0 | 179.7 | 0.3 | ok |
 | durchgang_74 | (2666.30, 1549.30) | 0.0 | 89.7 | 89.7 | abweichend |
-| durchgang_15 | (2667.20, 1549.30) | 0.0 | 90.1 | 89.9 | abweichend |
+| durchgang_15 | (2667.20, 1549.30) | 270.0 | 90.1 | 0.1 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -587,4 +587,4 @@ Quellen: FALLBACK: 2, GRAPH: 20, LINIE: 103
 - „EI30, FIXVERGLASUNG“ bei (2651.89, 1547.82) m
 - „GLASWAND, h=2,0m, EI90 + A2, FREIE DURCHSICHT“ bei (2665.26, 1550.87) m
 
-Laufzeit: 286.9 s
+Laufzeit: 279.4 s

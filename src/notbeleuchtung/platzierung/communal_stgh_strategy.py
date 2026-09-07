@@ -110,7 +110,7 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             )
             catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
             rotation = 0.0 if is_directional else fallback_rotation
-            mirror_x = False if is_directional else (richtung == "rechts")
+            mirror_x = False  # Spiegelung stellt keine Richtung her (Rotationsfix)
         else:
             # Auf dem Ausgang selbst (oder keine Ausgänge): Laufrichtung des Segments
             # (durch die Öffnung hinaus) — historisches 4OG-Verhalten.
@@ -118,7 +118,7 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             richtung, fallback_rotation = _richtung_und_rotation(ex - px, ey - py)
             catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
             rotation = 0.0 if is_directional else fallback_rotation
-            mirror_x = False if is_directional else (richtung == "rechts")
+            mirror_x = False  # Spiegelung stellt keine Richtung her (Rotationsfix)
         building = assign_building(ex)
         out.append(
             Platzierung(
