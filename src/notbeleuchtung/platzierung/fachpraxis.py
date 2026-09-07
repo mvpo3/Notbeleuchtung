@@ -74,7 +74,10 @@ def aufheller_je_rz(
     Rauminneres — der Flüchtende kommt von dort und braucht das Licht VOR dem
     Zeichen). RZ ohne definierte Richtung (Doppelpfeil `gerade`, rotations-
     neutrale Symbole) bekommen keinen Aufheller. Liegt die Zielposition in
-    keinem Raumpolygon, wird der Aufheller NICHT gesetzt (nie still außerhalb).
+    keinem Raumpolygon, wird der Aufheller NICHT gesetzt (nie still außerhalb) —
+    **fail-closed**: fehlen dem RaumModell die Polygone ganz (fragmentierte
+    CAD-Familien liefern real leere `raeume`), ist die Kontur unbekannt und es
+    wird KEIN Aufheller gesetzt, statt ihn ungeprüft ins Nichts zu platzieren.
     """
     regeln = regeln or FachpraxisRegeln()
     out: list[Platzierung] = []
@@ -89,7 +92,9 @@ def aufheller_je_rz(
             p.xy_mm[0] + regeln.aufheller_abstand_mm * math.cos(winkel),
             p.xy_mm[1] + regeln.aufheller_abstand_mm * math.sin(winkel),
         )
-        if raum.raeume and not _in_einem_raum(raum, xy):
+        # Fail-closed: ohne belegte Kontur (leere raeume ODER Position außerhalb
+        # aller Polygone) kein Aufheller — Review-Befund 2026-09-07.
+        if not _in_einem_raum(raum, xy):
             continue
         out.append(
             Platzierung(
