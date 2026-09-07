@@ -81,7 +81,10 @@ def kreuzcheck(modell: RaumModell, kontur, kante=None) -> KreuzcheckErgebnis:
         for p in (s.polyline_mm[0], s.polyline_mm[-1]):
             if grad.get(_snap(p), 0) != 1:
                 continue
-            if kante.distance(Point(p)) > _KANTE_NAH_MM:
+            # „an/außerhalb der Außenkante": der Endpunkt liegt im AUSSEN-
+            # Bereich (nicht gedeckt) UND ≤ 1.5 m an der Gebäudekante —
+            # Gang-Enden im Gebäudeinneren nahe der Fassade zählen nicht.
+            if kontur.covers(Point(p)) or kante.distance(Point(p)) > _KANTE_NAH_MM:
                 continue
             erg.endpunkte_aussenkante.append(p)
             if any(math.dist(p, a.xy_mm) <= _EXIT_NAH_MM for a in finals):
