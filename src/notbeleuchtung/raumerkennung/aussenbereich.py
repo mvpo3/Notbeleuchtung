@@ -92,6 +92,18 @@ def aussen_indizien(plan: DxfPlan) -> list[XY]:
     return out
 
 
+def _wand_geschlossen(koerper: list[Wandkoerper], d_mm: float):
+    """Wand-Union, morphologisch geschlossen (Löcher bleiben Löcher).
+
+    Vor dem Puffern vereinfacht + eckige Puffer (join_style mitre, quad_segs 2)
+    — auf Muthgasse (836 Körper mit Kurven-Hatches) war der runde
+    Doppel-Puffer sonst der Zeitfresser.
+    """
+    u = unary_union([Polygon(k.polygon_mm).buffer(0)
+                     for k in koerper]).simplify(20.0)
+    return u.buffer(d_mm, quad_segs=2).buffer(-d_mm, quad_segs=2)
+
+
 def aussenkontur_komponenten(koerper: list[Wandkoerper],
                              d_mm: float = _SCHLIESS_MM) -> list[Polygon]:
     """Außenkontur JE zusammenhängender Gebäude-Komponente (Löcher gefüllt).
@@ -101,9 +113,12 @@ def aussenkontur_komponenten(koerper: list[Wandkoerper],
     """
     if not koerper:
         return []
-    u = unary_union([Polygon(k.polygon_mm).buffer(0) for k in koerper])
-    u = u.buffer(d_mm).buffer(-d_mm)
-    geoms = list(u.geoms) if isinstance(u, MultiPolygon) else [u]
+    return _komponenten_aus(_wand_geschlossen(koerper, d_mm))
+
+
+def _komponenten_aus(wand_zu) -> list[Polygon]:
+    geoms = (list(wand_zu.geoms) if isinstance(wand_zu, MultiPolygon)
+             else [wand_zu])
     return [Polygon(g.exterior) for g in geoms
             if g.geom_type == "Polygon" and g.area >= 1e6]  # ≥1 m²
 
@@ -111,13 +126,14 @@ def aussenkontur_komponenten(koerper: list[Wandkoerper],
 def erkenne_aussenbereiche(plan: DxfPlan,
                            koerper: list[Wandkoerper]) -> AussenBereiche:
     """Außen-Analyse: Komponenten-Konturen + offene/geschlossene Außenflächen."""
-    komponenten = aussenkontur_komponenten(koerper)
+    if not koerper:
+        return AussenBereiche()
+    # Geschlossene Wand-Union MIT Löchern — Höfe/Innenräume bleiben Löcher;
+    # die Komponenten-Konturen sind ihre gefüllten Exterior-Ringe.
+    wand_zu = _wand_geschlossen(koerper, _SCHLIESS_MM)
+    komponenten = _komponenten_aus(wand_zu)
     if not komponenten:
         return AussenBereiche()
-    # Geschlossene Wand-Union MIT Löchern — Höfe/Innenräume bleiben Löcher.
-    wand_zu = unary_union(
-        [Polygon(k.polygon_mm).buffer(0) for k in koerper]
-    ).buffer(_SCHLIESS_MM).buffer(-_SCHLIESS_MM)
     huelle = unary_union(komponenten).convex_hull
     # Freie Fläche = Hülle minus Wand-Geometrie (MIT Löchern): enthält den
     # Raum zwischen den Trakten, Höfe (Löcher) UND Innenräume — letztere
