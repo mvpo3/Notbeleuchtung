@@ -82,10 +82,12 @@ def test_naht_norm_quelle_und_catalog_key():
     quellen = set(NormRegelwerk.model_validate(_load("norm_regelwerk_snapshot.json")).quellen)
     keys = catalog_keys()
     for p in out.platzierungen:
-        # fachpraxis-Platzierungen (Slice 2.3) tragen ihre Praxis-Quelle im
-        # Audit-Trail — bis ein decision_source-Feld existiert (3-Owner-Contract,
-        # handoff(contracts)), ist der Präfix die dokumentierte Ausnahme.
-        assert p.norm_quelle in quellen or p.norm_quelle.startswith("fachpraxis:"), (
+        # Praxis-Platzierungen tragen ihre Quelle im Audit-Trail — bis ein
+        # decision_source-Feld existiert (3-Owner-Contract, handoff(contracts)),
+        # sind die Präfixe die dokumentierte Ausnahme: "fachpraxis:" (Owner-Wort,
+        # Slice 2.3) und "Referenz-Praxis:" (belegte Praxis, z.B. Technik-/Müll-SL).
+        _PRAXIS = ("fachpraxis:", "Referenz-Praxis:")
+        assert p.norm_quelle in quellen or p.norm_quelle.startswith(_PRAXIS), (
             f"norm_quelle {p.norm_quelle!r} nicht im Regelwerk"
         )
         assert p.catalog_key in keys, f"catalog_key {p.catalog_key!r} fehlt im Mapping"
