@@ -28,10 +28,18 @@ WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
 
 def richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:
     """Segment-Laufrichtung → (richtung, rotation_deg), auf die dominante Achse
-    gerundet. Pfeil zeigt Richtung Ausgang (= Segment-Endpunkt)."""
+    gerundet. Pfeil zeigt Richtung Ausgang (= Segment-Endpunkt).
+
+    `rotation_deg` ist die Rotation des **unten-Pfeilblocks** (Block-Konvention,
+    verifiziert in docs/REFERENZ_PLATZIERUNG.md §4: der Block zeigt bei rot=0
+    nach −Y, Azimut 270°). Soll der Pfeil in Azimut A zeigen, gilt
+    rotation = (A + 90) % 360 — dieselbe Formel wie die Tür-Regel (atan2 + 90°)
+    und die `_ROT`-Tabelle der Sichtlinien-Strategie. Rotationsfix 2026-09-07:
+    vorher wurde der Azimut PUR geschrieben (Pfeil zeigte A−90).
+    Guard: tests/platzierung/test_rotation_konvention.py."""
     if abs(dx) >= abs(dy):
-        return ("rechts", 0.0) if dx >= 0 else ("links", 180.0)
-    return ("oben", 90.0) if dy >= 0 else ("unten", 270.0)
+        return ("rechts", 90.0) if dx >= 0 else ("links", 270.0)
+    return ("oben", 180.0) if dy >= 0 else ("unten", 0.0)
 
 
 # Richtung → Key-Suffix des dediziert orientierten Pfeil-Blocks. 'oben' hat keinen

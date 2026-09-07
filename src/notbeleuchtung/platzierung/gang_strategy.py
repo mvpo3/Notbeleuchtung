@@ -91,14 +91,14 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                 if naechster is not None:
                     richtung, fallback_rot = _richtung_und_rotation(naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
                 else:
-                    richtung, fallback_rot = "unten", 270.0
+                    richtung, fallback_rot = "unten", 0.0
             elif i + 1 < len(pts):
                 richtung, fallback_rot = _richtung_und_rotation(pts[i + 1][0] - px, pts[i + 1][1] - py)
             else:
                 richtung, fallback_rot = _richtung_und_rotation(px - pts[i - 1][0], py - pts[i - 1][1])
             catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
             rotation = 0.0 if is_directional else fallback_rot
-            mirror_x = False if is_directional else (richtung == "rechts")
+            mirror_x = False  # Spiegelung stellt keine Richtung her (Rotationsfix)
             out.append(
                 Platzierung(
                     xy_mm=(px, py),

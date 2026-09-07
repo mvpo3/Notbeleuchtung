@@ -24,3 +24,6 @@
 - 2026-09-07 · a369896 · Barawitzka_EG: 38 Stempel, 38 Räume, 10 Restflächen, IoU-Mittel —, Legendenabdeckung 90.3 % · Räume gesamt 47, mit Stempel 37, Flag ok 36, Rest typisiert 2 / untypisiert 1 (kaskade L:2 H:40 F:2 R:3) · Türen typisiert 58/100, Ausgänge final_exit:1, Segmente FALLBACK:1 GRAPH:5, Wohnungen 8
 - 2026-09-07 · a369896 · Mollgasse_EG: 83 Stempel, 83 Räume, 2 Restflächen, IoU-Mittel —, Legendenabdeckung 99.9 % · Räume gesamt 62, mit Stempel 60, Flag ok 46, Rest typisiert 0 / untypisiert 0 (kaskade L:0 H:10 F:52 R:0) · Türen typisiert 68/119, Ausgänge final_exit:8 stair_exit:3, Segmente FALLBACK:2 GRAPH:20 LINIE:103, Wohnungen 11
 - 2026-09-07 · a369896 · Rennweg_OG3: 10 Stempel, 10 Räume, 4 Restflächen, IoU-Mittel —, Legendenabdeckung 100.0 % · Räume gesamt 14, mit Stempel 10, Flag ok 10, Rest typisiert 3 / untypisiert 1 (kaskade L:10 H:0 F:0 R:4) · Türen typisiert 14/25, Ausgänge stair_exit:1, Segmente GRAPH:4, Wohnungen 2
+
+## Lauf 2026-09-07 13:11 · 9556ca9
+- 2026-09-07 · 9556ca9 · Mollgasse_EG: 83 Stempel, 83 Räume, 2 Restflächen, IoU-Mittel —, Legendenabdeckung 99.9 % · Räume gesamt 62, mit Stempel 60, Flag ok 46, Rest typisiert 0 / untypisiert 0 (kaskade L:0 H:10 F:52 R:0) · Türen typisiert 68/119, Ausgänge final_exit:8 stair_exit:3, Segmente FALLBACK:2 GRAPH:20 LINIE:103, Wohnungen 11

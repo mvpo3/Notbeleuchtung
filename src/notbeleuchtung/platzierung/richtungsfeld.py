@@ -46,7 +46,9 @@ def richtungsfeld(
             continue
         ausgang, dist = best[n]
         if dist == 0.0:
-            feld[n] = {"richtung": "unten", "rotation_deg": 270.0, "nach_ausgang": ausgang, "dist_mm": 0.0}
+            # rotation 0 = unten-Block unrotiert (Pfeil −Y, „Ausgang erreicht");
+            # Block-Konvention siehe bausteine.richtung_und_rotation.
+            feld[n] = {"richtung": "unten", "rotation_deg": 0.0, "nach_ausgang": ausgang, "dist_mm": 0.0}
             continue
         kandidaten = [(m, best[m][1]) for m in G.neighbors(n) if m in best and m in pos]
         if not kandidaten:

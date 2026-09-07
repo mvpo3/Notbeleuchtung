@@ -592,9 +592,17 @@ def _tuer_kuerzel(t) -> str:
     return k
 
 
+#: Wand-Segmente kürzer als das sind Tür-Laibungen/Jambs, keine Türwand.
+_MIN_WAND_SEGMENT_MM = 300.0
+
+
 def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None:
     """Winkel (° mod 180) des nächsten Wand-Segments am Punkt (mm) — Messbasis
-    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm."""
+    der Rotationsprüfung (Türwandwinkel). None, wenn keine Wand in max_mm.
+    Kurze Segmente (< 300 mm, Tür-Laibungen quer zur Wand) zählen nur, wenn die
+    Tür praktisch AUF ihnen liegt (≤ 200 mm = Wandstärken-Band) — sonst maßen
+    sie die Laibung statt der Türwand (Mollgasse durchgang_65), während echte
+    kurze Wand-Stummel an der Tür (Mollgasse tuer_30) weiter zählen."""
     px, py = xy_mm
     best, best_d = None, max_mm
     for e in plan.wall_entities():
@@ -603,8 +611,11 @@ def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None
             l2 = dx * dx + dy * dy
             if l2 < 1.0:
                 continue
+            kurz = l2 < _MIN_WAND_SEGMENT_MM * _MIN_WAND_SEGMENT_MM
             t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / l2))
             d = math.hypot(px - (x1 + t * dx), py - (y1 + t * dy))
+            if kurz and d > 200.0:
+                continue
             if d < best_d:
                 best_d = d
                 best = math.degrees(math.atan2(dy, dx)) % 180.0
@@ -752,7 +763,14 @@ def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
 
 def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
     """RZ über einer Tür: rotation_deg gegen den Türwandwinkel MESSEN
-    (nur berichten — Platzierung wird nicht geändert)."""
+    (nur berichten — Platzierung wird nicht geändert).
+
+    Messbasis-Fix (Rotationsfix 2026-09-07): (1) Vergleichbar ist die
+    **unten-Block-äquivalente** Rotation — direktionale links/rechts-Blöcke
+    tragen ihre Pfeilrichtung im Block, nicht in rotation_deg; roh verglichen
+    war jede links/rechts-Platzierung an einer vertikalen Wand fälschlich
+    „abweichend". Äquivalenz: rot_eq = Pfeil-Azimut − 270° (Block-Nullrichtung,
+    docs/REFERENZ_PLATZIERUNG.md §4)."""
     zeilen = []
     for p in platz.platzierungen:
         if p.kind != "rz" or not modell.tueren:
@@ -763,8 +781,13 @@ def _rotations_pruefung(plan: DxfPlan, modell, platz) -> list[tuple]:
         w = _wandwinkel_bei(plan, t.xy_mm)
         if w is None:
             continue
-        delta = abs((p.rotation_deg - w + 90.0) % 180.0 - 90.0)
-        zeilen.append((t.id, p.xy_mm, p.rotation_deg, w, delta))
+        # Block-lokale Pfeilrichtung aus dem KEY (nicht aus `richtung` — der
+        # unten-Block kann jede richtung tragen, dann steckt sie in rotation_deg).
+        lokal = (180.0 if p.catalog_key.endswith("_links")
+                 else 0.0 if p.catalog_key.endswith("_rechts") else 270.0)
+        rot_eq = (p.rotation_deg + lokal - 270.0) % 360.0
+        delta = abs((rot_eq - w + 90.0) % 180.0 - 90.0)
+        zeilen.append((t.id, p.xy_mm, rot_eq, w, delta))
     return zeilen
 
 
