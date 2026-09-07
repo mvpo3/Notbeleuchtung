@@ -644,9 +644,10 @@ def _wohnungs_umrisse(modell) -> dict[str, object]:
 
 
 def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
-                    pfad: Path, rot: int) -> None:
+                    pfad: Path, rot: int, kandidaten=()) -> None:
     """05_fluchtweg.png: Türen (Bögen + Typkürzel), Ausgänge (Kreise),
-    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen."""
+    Fluchtweg-Segmente (Farbe je Quelle, Pfeil Richtung Ausgang), Wohnungen,
+    Kreuzcheck-Kandidaten (gestrichelt rot — Prüf-Output, keine Ausgänge)."""
     from matplotlib.patches import Arc
     f = plan.factor
     fig, ax = _figur(plan, zoom)
@@ -685,6 +686,13 @@ def _bild_fluchtweg(plan: DxfPlan, zoom, modell, wpolys: dict,
         ax.plot(a.xy_mm[0] / f, a.xy_mm[1] / f, "o", ms=11, mfc="none",
                 mec=_AUSGANG_FARBE.get(a.typ, "#777777"), mew=2.5,
                 zorder=ztop + 3)
+    # Kreuzcheck: notausgang_kandidat = gestrichelt roter Kreis (kein Ausgang).
+    for k in kandidaten:
+        ax.plot(k.xy_mm[0] / f, k.xy_mm[1] / f, "o", ms=14, mfc="none",
+                mec="#dd0000", mew=2.0, ls="none", zorder=ztop + 3)
+        ax.add_patch(plt.Circle((k.xy_mm[0] / f, k.xy_mm[1] / f), 900.0 / f,
+                                fill=False, ec="#dd0000", ls="--", lw=1.6,
+                                zorder=ztop + 3))
     _speichern(fig, pfad, rot)
 
 
@@ -1029,6 +1037,68 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     return l
 
 
+def _restweg_im_eg(dxf: Path, geschoss: str) -> str | None:
+    """Für OG-Pläne: Restweg im EG (Stiegenhaustür → final_exit) aus dem
+    EG-Plan derselben Projektfamilie in Projekte/_eingang; sonst 'unbekannt'.
+    """
+    from notbeleuchtung.raumerkennung.tuer_typisierung import ist_obergeschoss
+    if not ist_obergeschoss(geschoss):
+        return None
+    familie = dxf.stem.split("_")[0].split(" ")[0]
+    kandidaten = sorted(Path("Projekte/_eingang").glob(f"{familie}*EG*.dxf"))
+    if not kandidaten:
+        return "Restweg im EG: unbekannt (kein EG-Plan in Projekte/_eingang)"
+    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+    eg = ArchitekturRaumProvider().parse(str(kandidaten[0]), "EG")
+    stg = {f"seg_graph_{t.id}" for t in eg.tueren
+           if t.tuer_detail == "stiegenhaustuer"}
+    laengen = [s.laenge_mm for s in eg.zirkulation.segmente
+               if s.segment_id in stg]
+    if not laengen:
+        return (f"Restweg im EG: unbekannt ({kandidaten[0].name}: kein Segment "
+                "Stiegenhaustür→final_exit)")
+    return (f"Restweg im EG ({kandidaten[0].name}): "
+            f"{min(laengen) / 1000:.1f}–{max(laengen) / 1000:.1f} m "
+            "(Stiegenhaustür → nächster final_exit)")
+
+
+def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
+                   restweg: str | None) -> list[str]:
+    """Markdown-Block: Kreuzcheck + Fluchtweg-Warnungen + untypisierte Türen."""
+    l = ["", "## Kreuzcheck Fluchtweglinien ↔ Endausgänge", ""]
+    if restweg:
+        l += [restweg, ""]
+    if kc is None:
+        l += ["keine Außenkontur — Kreuzcheck nicht möglich."]
+    else:
+        l += [(f"{len(kc.endpunkte_aussenkante)} Linien-Endpunkte an der "
+               f"Außenkante, davon {len(kc.gedeckte_endpunkte)} mit final_exit "
+               f"≤ 1.5 m gedeckt.")]
+        for w in kc.warnungen:
+            l.append(f"- ⚠ {w}")
+        if kc.kandidaten:
+            l += ["", ("Kandidaten (typ notausgang_kandidat — Prüf-Output, "
+                       "KEINE Ausgänge; gestrichelt rot in 05_fluchtweg.png):"),
+                  ""]
+            for k in kc.kandidaten:
+                l.append(f"- ({k.xy_mm[0] / 1000:.2f}, {k.xy_mm[1] / 1000:.2f}) "
+                         f"Tür {k.tuer_id or '—'} — {k.grund}")
+        if kc.unbenutzte_exits:
+            l += ["", "final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): "
+                  + ", ".join(kc.unbenutzte_exits)]
+    if flw_warnungen:
+        l += ["", "### Fluchtweg-Warnungen", ""]
+        l += [f"- ⚠ {w}" for w in flw_warnungen]
+    # Gründe-Tabelle untypisierte Türen (Fachteil „untypisierte Türen").
+    gruende = Counter(t.untypisiert_grund for t in modell.tueren
+                      if t.tuer_detail is None and t.untypisiert_grund)
+    if gruende:
+        l += ["", "### Untypisierte Türen — Gründe", "",
+              "| Grund | Anzahl |", "|---|--:|"]
+        l += [f"| {g} | {n} |" for g, n in gruende.most_common()]
+    return l
+
+
 def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
     + bericht-Block + VERLAUF-Kennzahlen."""
@@ -1037,9 +1107,12 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     bundle = build_default_bundle()
     modell = bundle.raum.parse(str(dxf), geschoss)
     platz = bundle.platzierer.place(modell, bundle.norm, None)
+    kc = getattr(bundle.raum, "letzter_kreuzcheck", None)
+    flw_warnungen = list(getattr(bundle.raum, "fluchtweg_warnungen", []))
 
     wpolys = _wohnungs_umrisse(modell)
-    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot)
+    _bild_fluchtweg(plan, zoom, modell, wpolys, ziel / "05_fluchtweg.png", rot,
+                    kandidaten=kc.kandidaten if kc else ())
     _bild_platzierung(plan, zoom, modell, platz, ziel / "06_platzierung.png", rot)
 
     segs = {s.segment_id: s for s in modell.zirkulation.segmente}
@@ -1059,6 +1132,8 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
+                             _restweg_im_eg(dxf, geschoss))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
     if refz is not None:
         md = md + refz["md"]
@@ -1077,6 +1152,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         "leuchten_lauf": lauf,
         "rot_abweichend": sum(1 for *_x, d in rotz if d > _ROT_TOLERANZ_GRAD),
         "rot_gemessen": len(rotz),
+        "kreuzcheck_warnungen": len(kc.warnungen) if kc else 0,
+        "notausgang_kandidaten": len(kc.kandidaten) if kc else 0,
+        "unbenutzte_exits": len(kc.unbenutzte_exits) if kc else 0,
         **({"referenz_treffer": refz["treffer"], "referenz_fehlend": refz["fehlend"],
             "referenz_ueberzaehlig": refz["ueberzaehlig"],
             "referenz_quote": refz["quote"]} if refz is not None else {}),
