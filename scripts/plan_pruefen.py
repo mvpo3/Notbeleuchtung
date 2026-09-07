@@ -31,6 +31,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 import matplotlib
 
 matplotlib.use("Agg")
+import ezdxf
 import matplotlib.pyplot as plt
 import numpy as np
 from ezdxf.addons.drawing import Frontend, RenderContext
@@ -741,6 +742,131 @@ def _bild_platzierung(plan: DxfPlan, zoom, modell, platz,
     _speichern(fig, pfad, rot)
 
 
+# ------------------------------------------------- Referenzvergleich (Fachplaner)
+
+#: Fachplaner-Referenzplan (46 Leuchten + Controller; docs/REFERENZ_PLATZIERUNG.md).
+_REFERENZ_DXF = (REPO / "DIN-Notbeleuchtungspläne(Beispiele)"
+                 / "din_support_ReMi_Barawitzkagasse_28.04.2026.dxf")
+#: Plan-Name → (Frame-Offset m, Frame-Fenster in REF-mm). our_mm = ref_mm +
+#: offset·1000 (EG-Frame, Ø 0.19 m). Das Fenster wählt das Geschoss-Frame im
+#: Referenz-Modelspace (mehrere Frames nebeneinander — Bounds-Filter reichte
+#: nicht: UG/OG-Leuchten fielen mit EG-Offset in die Plan-Bounds).
+_REFERENZ_FRAME = {
+    "Barawitzka_EG": ((-48.44, -39.04), (45_000.0, 5_000.0, 70_000.0, 45_000.0)),
+}
+_REF_LAYER_KIND = {
+    "din_SIBEL_10_emergency_lighting": "rz",
+    "din_SIBEL_10_emergency_lighting_yellow": "sicherheitsleuchte",
+    "din_SIBEL_11_emergency_lighting_system": "system",
+}
+_REF_TREFFER_MM = 1000.0
+_REF_ROT_TOL_GRAD = 10.0
+
+
+def _referenz_leuchten(name: str, bounds_mm) -> list[dict]:
+    """Fachplaner-Leuchten des passenden Geschoss-Frames (Fenster in REF-mm),
+    in unser mm-System verschoben."""
+    off_fenster = _REFERENZ_FRAME.get(name)
+    if off_fenster is None or not _REFERENZ_DXF.exists():
+        return []
+    off, (fx1, fy1, fx2, fy2) = off_fenster
+    doc = ezdxf.readfile(str(_REFERENZ_DXF))
+    out = []
+    for e in doc.modelspace().query("INSERT"):
+        kind = _REF_LAYER_KIND.get(e.dxf.layer)
+        if kind is None:
+            continue
+        rx, ry = e.dxf.insert.x, e.dxf.insert.y
+        if not (fx1 <= rx <= fx2 and fy1 <= ry <= fy2):
+            continue
+        x, y = rx + off[0] * 1000.0, ry + off[1] * 1000.0
+        att = {a.dxf.tag: a.dxf.text for a in e.attribs}
+        out.append({"x": x, "y": y, "rot": float(e.dxf.rotation) % 360.0,
+                    "block": e.dxf.name, "typ": att.get("TYPENUMBER", ""),
+                    "kind": kind})
+    return out
+
+
+def _referenz_match(refs: list[dict], platz):
+    """Greedy-Match Referenz→eigene Leuchte: ≤1 m UND Rotations-Δ ≤10° (mod 180,
+    Panel-Achse — Referenz wie wir im 90°-Raster). Controller zählt nicht."""
+    unsere = list(platz.platzierungen)
+    frei = set(range(len(unsere)))
+    treffer, fehlend = [], []
+    for r in (x for x in refs if x["kind"] != "system"):
+        best, best_d = None, _REF_TREFFER_MM
+        for i in frei:
+            p = unsere[i]
+            d = math.hypot(p.xy_mm[0] - r["x"], p.xy_mm[1] - r["y"])
+            if d > best_d:
+                continue
+            if abs((p.rotation_deg - r["rot"] + 90.0) % 180.0 - 90.0) > _REF_ROT_TOL_GRAD:
+                continue
+            best, best_d = i, d
+        if best is None:
+            fehlend.append(r)
+        else:
+            treffer.append((r, unsere[best], best_d))
+            frei.discard(best)
+    return treffer, fehlend, [unsere[i] for i in frei]
+
+
+def _bild_referenzvergleich(plan: DxfPlan, zoom, modell, platz, refs,
+                            treffer, fehlend, pfad: Path, rot: int) -> None:
+    """07_referenzvergleich.png: eigene Platzierung (Symbole wie 06) ÜBER den
+    Fachplaner-Leuchten (Kreise mit Typ; grün = getroffen, rot = ohne Gegenstück)."""
+    f = plan.factor
+    fig, ax = _figur(plan, zoom)
+    _meterraster(ax, plan)
+    ax.autoscale(False)
+    ztop = _ztop(ax)
+    for r in modell.raeume:
+        if len(r.polygon_mm) >= 3:
+            ax.fill([x / f for x, _ in r.polygon_mm],
+                    [y / f for _, y in r.polygon_mm],
+                    fc="white", ec="#909090", alpha=0.25, lw=0.8, zorder=ztop)
+    getroffen = {id(r) for r, _p, _d in treffer}
+    radius = 450.0 / f
+    for r in refs:
+        farbe = ("#777777" if r["kind"] == "system"
+                 else "#00a040" if id(r) in getroffen else "#dd0000")
+        ax.add_patch(plt.Circle((r["x"] / f, r["y"] / f), radius, fill=False,
+                                ec=farbe, lw=1.8, zorder=ztop + 2))
+        ax.text(r["x"] / f, (r["y"] + 550.0) / f, r["typ"] or r["block"],
+                ha="center", va="bottom", fontsize=5, color=farbe, zorder=ztop + 2)
+    for p in platz.platzierungen:
+        marker, farbe = _KIND_MARKER.get(p.kind, ("D", "#000000"))
+        ax.plot(p.xy_mm[0] / f, p.xy_mm[1] / f, marker, ms=6, mfc="none",
+                mec=farbe, mew=1.5, zorder=ztop + 3)
+    ax.set_title(f"Referenzvergleich: {len(treffer)} Treffer / "
+                 f"{len(fehlend)} fehlend (Fachplaner-Kreise, eigene Symbole)",
+                 fontsize=8)
+    _speichern(fig, pfad, rot)
+
+
+def _referenzvergleich(name: str, plan: DxfPlan, zoom, modell, platz,
+                       ziel: Path, rot: int) -> dict | None:
+    """Nur für Pläne mit Referenz (Barawitzka_EG): Bild + Kennzahlen + md-Block."""
+    refs = _referenz_leuchten(name, modell.bounds_mm)
+    if not refs:
+        return None
+    treffer, fehlend, ueber = _referenz_match(refs, platz)
+    _bild_referenzvergleich(plan, zoom, modell, platz, refs, treffer, fehlend,
+                            ziel / "07_referenzvergleich.png", rot)
+    basis = len(treffer) + len(fehlend)
+    quote = len(treffer) / basis if basis else 0.0
+    l = ["", f"## Referenzvergleich Fachplaner ({basis} Referenz-Leuchten im Frame)", "",
+         (f"- Treffer (≤{_REF_TREFFER_MM / 1000:.0f} m, Rotation ≤{_REF_ROT_TOL_GRAD:.0f}°): "
+          f"**{len(treffer)}/{basis} = {quote * 100:.0f} %**"),
+         f"- überzählig (eigene ohne Referenz-Gegenstück): {len(ueber)}"]
+    if fehlend:
+        l += ["", "| fehlende Referenz | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {r['block']} {r['typ']} | ({r['x'] / 1000:.2f}, {r['y'] / 1000:.2f}) "
+              f"| {r['rot']:.0f} |" for r in fehlend]
+    return {"md": l, "treffer": len(treffer), "fehlend": len(fehlend),
+            "ueberzaehlig": len(ueber), "quote": quote}
+
+
 def _leuchten_je_klasse(modell, platz) -> tuple[Counter, int]:
     """(Zählung Nutzungsklasse→n mit LIFT/SCHACHT separat, n auf Treppenläufen)."""
     polys = [(r, Polygon(r.polygon_mm).buffer(0)) for r in modell.raeume
@@ -933,6 +1059,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)
+    if refz is not None:
+        md = md + refz["md"]
     ausg_typ = Counter(a.typ for a in modell.ausgaenge)
     seg_q = Counter((s.quelle or "?") for s in modell.zirkulation.segmente)
     kind_n = Counter(p.kind for p in platz.platzierungen)
@@ -948,6 +1077,9 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
         "leuchten_lauf": lauf,
         "rot_abweichend": sum(1 for *_x, d in rotz if d > _ROT_TOLERANZ_GRAD),
         "rot_gemessen": len(rotz),
+        **({"referenz_treffer": refz["treffer"], "referenz_fehlend": refz["fehlend"],
+            "referenz_ueberzaehlig": refz["ueberzaehlig"],
+            "referenz_quote": refz["quote"]} if refz is not None else {}),
     }
 
 
@@ -1289,6 +1421,10 @@ def main() -> int:
               f"{r['leuchten_kind']} je Klasse {r['leuchten_klasse']}, "
               f"Lauf {r['leuchten_lauf']}, Rotation "
               f"{r['rot_abweichend']}/{r['rot_gemessen']} abweichend")
+        if "referenz_quote" in r:
+            print(f"   Referenzvergleich: {r['referenz_treffer']} Treffer / "
+                  f"{r['referenz_fehlend']} fehlend / {r['referenz_ueberzaehlig']} "
+                  f"überzählig ({r['referenz_quote'] * 100:.0f} %)")
         ergebnisse.append(r)
     if ergebnisse:
         _verlauf_schreiben(ergebnisse, commit)
