@@ -12,7 +12,7 @@ Wandmaske rekonstruiert:
     - enthält STIEGE-/Treppen-/LIFT-Block-Insert          → STIEGENHAUS
     - schmal (Breite <2.5 m) mit ≥3 Türöffnungen am Rand  → GANG
     - klein (<3 m²) ohne Tür oder mit STO-Kästchen drin   → SCHACHT
-    - sonst                                               → UNBEKANNT
+    - sonst                                               → "" (untypisiert)
 
 Grenze: rein 2D, Rasterauflösung ``raster_mm``; nur das größte zusammenhängende
 Bauteil (Außenkontur = größte Union-Komponente).
@@ -98,7 +98,8 @@ def _typisiere(shp: Polygon, tueren: list[TuerOeffnung],
     if shp.area < _SCHACHT_MAX_M2 * 1e6 and (
             tuer_n == 0 or any(shp.covers(Point(p)) for p in sto)):
         return "SCHACHT", False, False
-    return "UNBEKANNT", False, False
+    # Leerer raum_typ = untypisiert — „UNBEKANNT" ist KEIN Typ (VOKABULAR.md §1).
+    return "", False, False
 
 
 def komponenten_ohne_stempel(

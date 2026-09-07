@@ -305,10 +305,14 @@ raum_typ_vokabular:
 # Sicherheitsbeleuchtung herzustellen") zu Recht — jetzt setzt der Platzierer ihn um.
 # Diese Liste muss der Vergabe in raumtyp.py folgen; driftet sie, blockiert der
 # Parser entweder zu viel oder laesst eine tote Regel durch.
+# Stand 2026-09-06: SCHACHT (rest_komponenten + Stempel), AUFZUGSVORPLATZ
+# (Stempel, Pflicht-POI "Aufzugsflur") und WASCHKÜCHE (_EXTRA_OVERRIDE, vorher
+# ausserhalb des Guards) sind neu — s. docs/VOKABULAR.md.
 unterstuetzte_raum_typen:
   [STIEGENHAUS, GANG, VORRAUM, WOHNZIMMER, SCHLAFZIMMER, KINDERZIMMER, ZIMMER,
    KÜCHE, BAD, WC, ABSTELLRAUM, BALKON, TERRASSE,
-   GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER, LIFT]
+   GARAGE, TECHNIK, LAGER, MUELLRAUM, KELLER, LIFT,
+   SCHACHT, AUFZUGSVORPLATZ, WASCHKÜCHE]
 
 # Negation: „ist KEINE LED-Sicherheitsbeleuchtung herzustellen"
 negation_muster:
