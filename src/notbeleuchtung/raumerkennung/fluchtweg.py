@@ -166,7 +166,16 @@ def _final_exit_fehlt_grund(tueren: list[Tuer]) -> str:
     if mit_aussen:
         return ("Tür(en) nach außen ohne Ausgangs-Rolle "
                 f"(z.B. {mit_aussen[0].id}) — Typisierung prüfen")
-    if any(KEIN_RAUM in (t.von_raum, t.nach_raum) for t in tueren):
+    # Einseitig ohne Nachbarraum (Raum auf der einen, nichts auf der anderen
+    # Seite) = Spec-Grund „Tür ohne Nachbarraum". Beidseits ohne Raum heißt
+    # dagegen, dass gar kein Außenbereich erkannt wurde. Gleiche Unterscheidung
+    # wie `_untypisiert_grund` (kein_nachbarraum vs. tuer_ins_nichts).
+    def _ohne_raum(seite: str | None) -> bool:
+        return seite is None or seite == KEIN_RAUM
+
+    if any(_ohne_raum(t.von_raum) != _ohne_raum(t.nach_raum) for t in tueren):
+        return "Tür ohne Nachbarraum (eine Türseite keinem Raum zugeordnet)"
+    if any(_ohne_raum(t.von_raum) for t in tueren):
         return "Außenbereich nicht erkannt (Türseiten KEIN_RAUM statt AUSSEN)"
     return "keine Tür nach außen erkannt"
 
@@ -289,12 +298,14 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             if laenge < best_len:
                 best, best_len = pfad, laenge
         if best is None or len(best) < 2:
-            if warnungen is not None and not og and not kein_finales_ziel:
+            if warnungen is not None and not og:
                 endraum = next((s for s in (start.von_raum, start.nach_raum)
                                 if s not in erschliessung), start.von_raum)
+                grund = (_final_exit_fehlt_grund(tueren) if kein_finales_ziel
+                         else "Türgraph endet vor dem Ausgang")
                 warnungen.append(
                     f"EG/UG: kein final_exit erreichbar von Tür {start.id} "
-                    f"(Endraum {endraum}) — Türgraph endet vor dem Ausgang")
+                    f"(Endraum {endraum}) — {grund}")
             continue
         punkte: list[XY] = [tuer_by_id[best[0]].xy_mm]
         for a_id, b_id in pairwise(best):

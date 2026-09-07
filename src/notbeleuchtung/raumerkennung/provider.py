@@ -106,6 +106,7 @@ class ArchitekturRaumProvider:
         # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
         # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
         aussen = erkenne_aussenbereiche(plan, k.wandkoerper) if k.wandkoerper else None
+        self.letzte_aussenbereiche = aussen   # Prüfstrecken-Output (Bericht)
         if aussen is not None and aussen.komponenten:
             kontur = aussen.gedeckt()
         else:
@@ -113,8 +114,11 @@ class ArchitekturRaumProvider:
         # Zusätzliche Türquellen (additiv, je Tür mit `quelle`-Audit-Trail):
         # Doppelflügel verschmelzen, Türbögen an der AUSSEN-Grenze ohne
         # Block (Mollgasse-Hoftüren), türimplizierende Texte (Rennweg EG).
-        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
         tueren += aussentor_tueren(k.tueroeffnungen, tueren, kontur)
+        # Verschmelzen NACH aussentor_tueren: nur so sieht es auch die
+        # 'arc_aussen'-Türen (Hoftüren), deren Doppelflügel-Paare sonst nie
+        # zusammenfinden — verschmelze_doppelfluegel akzeptiert sie ausdrücklich.
+        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
         tueren += text_tueren(plan, tueren)
         ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
         # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
