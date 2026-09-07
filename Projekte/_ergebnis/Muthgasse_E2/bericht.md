@@ -1162,6 +1162,7 @@ Quellen: FALLBACK: 1, GRAPH: 10, LINIE: 139
 - Gebäude-Komponenten: 13 (Flächen m²: 7.1, 5.4, 64.3, 10.1, 2.1, 4500.4, 712.9, 1.4, 1.1, 1.4, 1.1, 1.3, 13.5; Summe 5322.0)
 - offene AUSSEN-Flächen: 4 (25358.0 m²)
 - geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
+- Überdachungen über offener Außenfläche: 0 (0.0 m²)
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -1178,4 +1179,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_14, exit_tuer_16,
 | kein_nachbarraum | 18 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 1852.4 s
+Laufzeit: 1832.0 s
