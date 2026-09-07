@@ -128,13 +128,21 @@ def test_muthgasse_ist_stand_wand_layer_unerschlossen():
         run(build_default_bundle(), str(MUTHGASSE_E2), "E2")
 
 
-def test_barawitzka_duennes_ergebnis_nicht_ok(barawitzka):
-    """Barawitzka bleibt NICHT „ok" (fail-closed) — E2E-Pin.
+def test_barawitzka_pruefung_ohne_befund(barawitzka):
+    """GEKIPPT 2026-09-07 (Sichtprüfungs-Fix „Phantom-Türen"): Barawitzka ist
+    NICHT mehr „dünn" — die Prüfung meldet 0 Befunde.
 
-    Seit Fachteil 1 gibt es Ausgänge (hauseingang → final_exit, Stiegenhaus-
-    türen → stair_exit) und FALLBACK-Segmente — die frühere Prüfbasis-Lücke
-    (0 Ausgänge/0 Segmente) ist zu; ausgewiesen bleiben andere Befunde, der
-    Status ist weiterhin nicht ok."""
+    Vorher hielt dieser Test fest, dass das Ergebnis nicht „ok" werden darf
+    (2 FALLBACK-Segmente, keine gedeckte Fluchtweg-Kette). Ist-Beleg nach dem
+    Fix (``pipeline.run`` auf diesem Plan): 100 Türen statt 182 — die 83
+    beidseits-AUSSEN-Phantome der zwei Duplikat-Etagen-Varianten sind weg —,
+    50 Räume, 1 final_exit, 6 Segmente (5 GRAPH + 1 FALLBACK), alle 6
+    Abschnitte mit ≥2 Leuchten gedeckt → jede Prüfregel „ok".
+
+    Der Test bleibt als Regressionsschranke: kippt eine Regel zurück auf
+    Befund, bricht er sichtbar."""
     pruef = barawitzka.render_summary["pruefung"]
-    assert pruef["status"] != "ok", "dünnes Barawitzka-Ergebnis bestand als ok"
-    assert pruef["befunde"], "kein einziger Befund auf dem dünnen Ergebnis"
+    assert pruef["befunde"], "keine einzige Prüfregel ausgewertet"
+    nicht_ok = [b for b in pruef["befunde"] if b["status"] != "ok"]
+    assert pruef["status"] == "ok", f"Befunde zurück: {nicht_ok}"
+    assert not nicht_ok, f"Regel nicht ok: {nicht_ok}"

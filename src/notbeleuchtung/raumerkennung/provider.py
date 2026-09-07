@@ -31,8 +31,8 @@ from .tuer_typisierung import (
     ist_obergeschoss,
     typisiere_tueren,
 )
-from .tuer_zuordnung import durchgaenge_ohne_tuerblatt, ordne_tueren
-from .tueren import tueren_aus_dxf
+from .tuer_zuordnung import AUSSEN, durchgaenge_ohne_tuerblatt, ordne_tueren
+from .tueren import im_planbereich, tueren_aus_dxf
 from .waende import raeume_aus_waenden
 from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
 from .wohnungen import bilde_wohnungen
@@ -78,6 +78,9 @@ class ArchitekturRaumProvider:
                      ist_notausgang=False)
                 for i, o in enumerate(k.tueroeffnungen, start=1)
             ]
+        if k.wandkoerper:
+            # Türen anderer Plan-Cluster/Etagen-Varianten raus (s. tueren.im_planbereich).
+            tueren = im_planbereich(tueren, bounds_aus_wandkoerpern(k.wandkoerper))
         ausgaenge = hauptausgaenge(plan, bounds)
         zirkulation = zirkulation_aus_dxf(plan)
 
@@ -86,6 +89,11 @@ class ArchitekturRaumProvider:
         geschoss = geschoss_aus(floor, dxf_path)
         kontur = aussenkontur(k.wandkoerper) if k.wandkoerper else None
         ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
+        # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
+        # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
+        tueren = [t for t in tueren if not (t.von_raum == t.nach_raum == AUSSEN)]
+        for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
+            t.id = f"tuer_{i}"
         if k.wandkoerper:
             tueren = tueren + durchgaenge_ohne_tuerblatt(
                 raeume, tueren, wand_union(k.wandkoerper))

@@ -613,8 +613,10 @@ def _wandwinkel_bei(plan: DxfPlan, xy_mm, max_mm: float = 600.0) -> float | None
 
 def _pfeil(ax: plt.Axes, p, q, farbe, ztop: float) -> None:
     ax.annotate("", xy=q, xytext=p,
-                arrowprops={"arrowstyle": "-|>", "color": farbe, "lw": 1.2,
-                            "shrinkA": 0, "shrinkB": 0},
+                arrowprops={"arrowstyle": "-|>", "color": farbe, "lw": 1.6,
+                            # 15 statt Default 10: die Spitze war auf dem
+                            # kleinmaßstäblichen Rennweg-Bild nicht erkennbar.
+                            "mutation_scale": 15, "shrinkA": 0, "shrinkB": 0},
                 zorder=ztop, annotation_clip=False)
 
 
@@ -792,7 +794,8 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
     l = ["", "## Türen (Fachteil 3)", "",
          f"{typisiert} / {len(modell.tueren)} Türen typisiert. Kürzel: "
          + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
-         + "; /NA = Notausgang, * = ohne Türblatt.", "",
+         + "; ? = untypisiert (keine Regel greift), /NA = Notausgang, "
+         "* = ohne Türblatt.", "",
          "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |",
          "|---|---|---|---|--:|---|"]
     for t in modell.tueren:
@@ -854,9 +857,13 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
                "Stiegenhäuser)"), ""]
     for sm in modell.stiegenhaeuser:
         eigene = [a for a in modell.anker if a.raum_id == sm.raum_id]
+        zonen = sorted((Polygon(v).area / 1e6 for v in sm.verbotszonen_mm
+                        if len(v) >= 3), reverse=True)
+        flaechen = (f" (größte {zonen[0]:.1f} m², Summe {sum(zonen):.1f} m²)"
+                    if zonen else "")
         l.append(f"- **{sm.raum_id}**: {len(sm.laeufe)} Läufe, "
                  f"{len(sm.podeste)} Podeste, {len(sm.verbotszonen_mm)} "
-                 f"Verbotszonen, {len(eigene)} Anker")
+                 f"Verbotszonen{flaechen}, {len(eigene)} Anker")
         l += [f"  - {a.typ} ({a.xy_mm[0] / 1000:.2f}, {a.xy_mm[1] / 1000:.2f}) m"
               + (f", Winkel {a.winkel_grad:.0f}°"
                  if a.winkel_grad is not None else "")

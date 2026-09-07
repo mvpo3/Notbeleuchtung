@@ -15,7 +15,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
+from notbeleuchtung.hauptengine.contracts.raum_modell import BBox, Tuer
 
 from .dxf_load import XY, DxfPlan
 
@@ -157,3 +157,21 @@ def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
     return out
 
 
+# ── Plan-Bereich: Phantom-Türen anderer Plan-Cluster verwerfen ───────────────
+_RAND_MM = 2000.0
+
+
+def im_planbereich(elemente: list, bounds: BBox, rand_mm: float = _RAND_MM) -> list:
+    """Nur Elemente mit ``xy_mm`` innerhalb ``bounds`` + Rand.
+
+    ``bounds`` = Bounding-Box der Wandkörper (die filtern Duplikat-Etagen-
+    Varianten schon über ``wandkoerper._varianten_prefix``). Damit fallen die
+    Phantom-Türen weg, die sonst beidseits AUSSEN landen: Barawitzka trägt
+    dieselbe Etage 3× nebeneinander (Icon-Varianten, +32 m / +61 m versetzt),
+    Rennweg hat 11 Zargen-Inserts eines zweiten Plan-Clusters 300 m neben dem
+    Haus.
+    """
+    (x0, y0), (x1, y1) = bounds.min_xy, bounds.max_xy
+    return [e for e in elemente
+            if x0 - rand_mm <= e.xy_mm[0] <= x1 + rand_mm
+            and y0 - rand_mm <= e.xy_mm[1] <= y1 + rand_mm]
