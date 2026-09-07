@@ -128,7 +128,7 @@ def _raum_mit_tuer(raum_typ: str, tuer_xy=(5000.0, 0.0), nach="gang") -> RaumMod
     )
 
 
-@pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM"])
+@pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"])
 def test_tuerleuchte_je_pflichtraum_an_der_tuer(typ):
     out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ))
     assert len(out) == 1
@@ -145,6 +145,9 @@ def test_tuerleuchte_je_pflichtraum_an_der_tuer(typ):
 
 def test_andere_raumtypen_bekommen_keine_tuerleuchte():
     assert tuerleuchte_pflichtraeume(_raum_mit_tuer("BUERO")) == []
+    # ABSTELLRAUM bewusst NICHT: die Regel gilt für den GEMEINSAMEN Kinderwagen-
+    # raum, nicht den privaten Wohnungs-Abstellraum (Owner-Entscheid 2026-09-07).
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("ABSTELLRAUM")) == []
     assert tuerleuchte_pflichtraeume(_raum_mit_tuer("LAGER")) == []
 
 
