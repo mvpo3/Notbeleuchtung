@@ -231,3 +231,97 @@ benennt — sie ist auch der dominante Grund für die niedrige Türquote
 `Projekte/_eingang/Mollgasse_EG.dxf` und `…/Barawitzka_EG.dxf`, Flächen der
 `komponenten`/`offen`/`geschlossen` vergleichen; Räume gegen die größte
 `offen`-Fläche schneiden.
+
+## Owner-Entscheidung: „ins Freie" heißt über die Grundstücksgrenze (2026-09-07, Selman)
+
+**Entscheidung (gesetzt, ersetzt die frühere offene Frage an Enis):**
+Jedes Projekt hat einen **Flächengrundriss bis zur Grundstücksgrenze**; der
+umfasst nicht nur die bebaute Fläche, sondern auch Garten, Innenhof und
+Vorplatz. „Ins Freie" heißt: aus diesem Flächengrundriss **heraus** auf
+öffentlichen Grund. Ein Innenhof, der zwei Stiegenhäuser verbindet, damit man
+zwischen den Stiegen pendeln kann, aber ringsum von Mauern geschlossen ist und
+keinen Weg auf die Straße hat, ist **kein final_exit** — der Fluchtweg muss von
+dort weitergehen.
+
+**Was daran vorher falsch war (gemessen).** `erkenne_aussenbereiche` nahm die
+**konvexe Hülle der Gebäudekomponenten** als äußere Grenze und stufte jede
+freie Fläche, die deren Rand berührt, als offen (= AUSSEN) ein. Zwei belegte
+Folgefehler:
+
+- **Barawitzka EG:** die Freiflächen 89.7 m² und 76.1 m² hängen über eine
+  0.05-m-Engstelle zusammen und bilden **einen Hof von 190.2 m², der beide
+  Stiegenhäuser verbindet** (raum_35 und raum_37, je Abstand 0.00 m). Seine
+  Randlänge an der Straßenkante ist **0.0 m** — er ist der von Selman
+  beschriebene Fall. Trotzdem galt er als offen, und
+  `exit_durchgang_62` (8.78, −22.66) wurde als final_exit ausgegeben.
+- **Mollgasse EG:** die konvexe Hülle (1804.5 m²) ist **größer** als das
+  Grundstück (1510.2 m²) und ragt mit 405.3 m² auf öffentlichen Grund.
+
+**Neue Regel.** Bezugspolygon ist die Grundstücksgrenze, nicht die Hülle; und
+eine freie Fläche ist nur dann offen, wenn sie die **Straßenkante** der Grenze
+erreicht (Engstellen-Test gegen Zeichnungs-Splitter: `buffer(-400).buffer(420)`).
+
+| Plan | Grundstücksgrenze | offen (m²) alt → neu | geschlossen (m²) alt → neu |
+|---|--:|---|---|
+| Barawitzka_EG | 616.8 | [9.3, 9.7, 12.5, 76.1, 89.7] → **[12.5]** | [23.5] → **[23.5, 190.2]** |
+| Mollgasse_EG | 1510.2 | [13.2 … 960.3] → **[910.1]** | [] → **[73.0]** |
+| Rennweg_EG | — | [] → [] (Fallback) | [] → [] |
+| Rennweg_OG3 | — | unverändert (Fallback) | unverändert |
+| Muthgasse_E2 | — | unverändert (Fallback) | unverändert |
+
+Barawitzka liefert danach **1 final_exit** (`exit_tuer_27`, an der Straße)
+statt 2; Mollgasse **9** statt 10, beide Hofausgangs-Cluster erhalten.
+
+**Zweiter, unabhängiger Codepfad — wichtig für Nachfolger.** Der
+Außenbereichs-Fix allein reichte NICHT. `tuer_typisierung` Regel 1
+(`AUSSEN × ALLGEMEIN_ERSCHLIESSUNG → hauseingang`) bezieht ihr AUSSEN aus
+`nutzungsklasse.py` (`TERRASSE → AUSSEN`), nicht aus `aussenbereich`. Die Tür
+STIEGENHAUS raum_37 → TERRASSE raum_43 (im ummauerten Hof) wurde dadurch
+`hauseingang` und über `ausgaenge.py` zum final_exit, an der Außen-Analyse
+vorbei. Deshalb der Guard `kein_weg_ins_freie` in `typisiere_tueren`.
+
+### Offene Schwächen dieser Regel (bewusst benannt)
+
+- **Nur 2 von 5 Plänen tragen eine Grundstücksgrenze** (Barawitzka als 16
+  Linien mit Lücken an 7 Grenzpunkt-Markern, Brückung < 400 mm nötig;
+  Mollgasse als geschlossene Polylinie). Rennweg EG hat keine, Rennweg OG3 nur
+  Bemaßung auf dem gleichnamigen Layer (deshalb ist der **Entity-Typ-Filter
+  Pflicht**, sonst Falschpositiv), Muthgasse nur INSERTs. Dort greift weiter
+  der Hüllen-Fallback samt seinem bekannten Fehler.
+- **Die Straßenkante hängt an Layer-Namen** (GEHSTEIG|GEHWEG|RANDSTEIN|
+  BORDSTEIN). `STRA.ENVERKEHR` darf **nicht** hinein: der Layer
+  »Straßenverkehr_Situationslinie.verm« läuft bei Barawitzka auch an der
+  Südgrenze und würde den Hof wieder öffnen. Ein Plan mit Hof, aber ohne
+  Gehsteig-Layer, ist im Repo nicht vorhanden und damit ungetestet.
+- `_STRASSE_NAH_MM = 3000` und die Brückung `400 mm` sind an genau zwei
+  Plänen kalibriert.
+
+## Überdachung vor dem Haupteingang — Erkennung steht auf einem einzigen Beleg
+
+Selman (2026-09-07): vor Haupteingang und Hauptausgang ist zu wissen, ob eine
+Überdachung vorliegt, weil dort Notbeleuchtung bzw. Aufheller platziert werden.
+
+**Datenlage, gemessen: dünn.** Kein Plan trägt Layer, Block oder Text
+VORDACH|ÜBERDACHUNG|AUSKRAGUNG|LAUBENGANG|ARKADE|PERGOLA|CANOPY — geprüft über
+129/90/67/66/55 Layer, alle Blockdefinitionen und alle Texte. Namensbasierte
+Erkennung ist tot. Einziges Signal ist ein **nicht flächendeckender**
+Decken-Layer, geschnitten mit den offenen Außenflächen.
+
+Ist-Ergebnis: **Barawitzka 1 Überdachung, 0.707 m², 2.22 m vor
+`exit_tuer_27`.** Mollgasse, Muthgasse, Rennweg: keine.
+
+Zwei Schwächen, beide Owner-Entscheidungen wert:
+1. Der Flächendeckungs-Filter (`_DECKE_MAX_ANTEIL = 0.9`) greift bei
+   Barawitzka mit **0.865** nur knapp — die Regel steht auf 3.5
+   Prozentpunkten. Ein engerer Decken-Regex (nur »210 Decke« statt auch
+   »Deckendurchbruchsymbol«/»Dachaufbau«) verschiebt den Anteil deutlich.
+2. `_MIN_UEBERDACHUNG_M2` steht auf **0.5**, weil das einzige real gemessene
+   Vordach 0.707 m² misst; bei 1.0 m² fiele genau der Fall weg, für den die
+   Erkennung gebaut ist. Kalibriert an EINEM Plan.
+
+**Bewusst kein Contract-Feld.** Ein `Ausgang.ueberdacht: bool` wäre die
+natürliche Naht zu Leonis' Aufheller-Platzierung, bräuchte aber
+3-Owner-Approval. Auf Basis eines einzigen Plans und eines 0.7-m²-Stücks ist
+das zu früh. Die Erkennung liegt deshalb als reiner Prüfstrecken-Output im
+Bericht (Abschnitt „Außenbereich"). Der Antrag geht raus, sobald Leonis den
+Aufheller wirklich abhängig davon setzen will.
