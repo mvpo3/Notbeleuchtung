@@ -146,3 +146,19 @@ def test_soll_keine_leuchten_in_liftpolygonen():
     drin = [p.kind for p in ergebnis.platzierung.platzierungen
             if any(lp.covers(Point(p.xy_mm)) for lp in lifte)]
     assert not drin, f"{len(drin)} Leuchte(n) im Liftschacht: {drin[:5]}"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll (Spec 6): final_exit = Anzahl der 09-WEG-Endpunkte an der "
+    "Außenkante — Ist 2026-09-07 (selbst gemessen): 10 final_exit gegen 43 "
+    "Endpunkte an der Außenkante (103 LINIE-Segmente; der 09-WEG-Layer "
+    "zeichnet Doppellinien-Stummel, Dedup/Clustering der Endpunkte offen).",
+)
+def test_soll_final_exit_anzahl_gleich_endpunkte_an_der_kante(provider, rm):
+    kc = provider.letzter_kreuzcheck
+    assert kc.endpunkte_aussenkante, "keine Endpunkte an der Außenkante"
+    final = [a for a in rm.ausgaenge if a.typ == "final_exit"]
+    assert len(final) == len(kc.endpunkte_aussenkante), (
+        f"{len(final)} final_exit gegen {len(kc.endpunkte_aussenkante)} "
+        "Endpunkte an der Außenkante")

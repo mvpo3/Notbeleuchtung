@@ -871,6 +871,11 @@ def _referenzvergleich(name: str, plan: DxfPlan, zoom, modell, platz,
         l += ["", "| fehlende Referenz | xy m | rot° |", "|---|---|--:|"]
         l += [f"| {r['block']} {r['typ']} | ({r['x'] / 1000:.2f}, {r['y'] / 1000:.2f}) "
               f"| {r['rot']:.0f} |" for r in fehlend]
+    if ueber:
+        # Spec V1 verlangt fehlende UND ueberzaehlige einzeln, nicht nur die Zahl.
+        l += ["", "| überzählige eigene | xy m | rot° |", "|---|---|--:|"]
+        l += [f"| {p.kind} | ({p.xy_mm[0] / 1000:.2f}, {p.xy_mm[1] / 1000:.2f}) "
+              f"| {p.rotation_deg:.0f} |" for p in ueber]
     return {"md": l, "treffer": len(treffer), "fehlend": len(fehlend),
             "ueberzaehlig": len(ueber), "quote": quote}
 
@@ -953,12 +958,17 @@ def _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz,
          + ", ".join(f"{v}={k}" for k, v in _TUER_KUERZEL.items())
          + "; ? = untypisiert (keine Regel greift), /NA = Notausgang, "
          "* = ohne Türblatt.", "",
-         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |",
-         "|---|---|---|---|--:|---|"]
+         "| ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | "
+         "Grund |",
+         "|---|---|---|---|--:|---|---|---|"]
     for t in modell.tueren:
+        # Grund nur bei untypisierten Türen (Spec 5: für JEDE einzeln).
+        grund = t.untypisiert_grund if t.tuer_detail is None else None
+        quelle = (t.quelle or "")[:40]
         l.append(f"| {t.id} | {t.von_raum or '—'} | {t.nach_raum or '—'} | "
                  f"{t.tuer_detail or '—'} | {t.breite_mm:.0f} | "
-                 f"{'ja' if t.ist_notausgang else '—'} |")
+                 f"{'ja' if t.ist_notausgang else '—'} | {quelle or '—'} | "
+                 f"{grund or ''} |")
     l += ["", f"## Ausgänge ({len(modell.ausgaenge)})", "",
           "| ID | Typ | x m | y m |", "|---|---|--:|--:|"]
     for a in modell.ausgaenge:
@@ -1099,6 +1109,25 @@ def _kreuzcheck_md(modell, kc, flw_warnungen: list[str],
     return l
 
 
+def _aussen_md(ab) -> list[str]:
+    """Markdown-Abschnitt „Außenbereich" (Spec 2) aus ``AussenBereiche``."""
+    if ab is None:
+        return ["", "## Außenbereich", "", "- keine Außen-Analyse "
+                "(keine Wandkörper im Plan)"]
+
+    def _fl(polys):
+        return sum(p.area for p in polys) / 1e6      # mm² → m²
+
+    komp = ", ".join(f"{p.area / 1e6:.1f}" for p in ab.komponenten) or "—"
+    return ["", "## Außenbereich", "",
+            f"- Gebäude-Komponenten: {len(ab.komponenten)} "
+            f"(Flächen m²: {komp}; Summe {_fl(ab.komponenten):.1f})",
+            f"- offene AUSSEN-Flächen: {len(ab.offen)} "
+            f"({_fl(ab.offen):.1f} m²)",
+            f"- geschlossene Höfe (AUSSEN_GESCHLOSSEN): "
+            f"{len(ab.geschlossen)} ({_fl(ab.geschlossen):.1f} m²)"]
+
+
 def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     """RaumModell + Platzierung (Pipeline-Smoke, Default-Bundle) → 05/06-PNGs
     + bericht-Block + VERLAUF-Kennzahlen."""
@@ -1132,6 +1161,7 @@ def _fachteil3(plan: DxfPlan, dxf: Path, ziel: Path, zoom, rot: int) -> dict:
     rotz = _rotations_pruefung(plan, modell, platz)
     bst_texte = _brandschutz_texte(plan)
     md = _fachteil3_md(modell, platz, wpolys, wegl, zaehl, lauf, rotz, bst_texte)
+    md = md + _aussen_md(getattr(bundle.raum, "letzte_aussenbereiche", None))
     md = md + _kreuzcheck_md(modell, kc, flw_warnungen,
                              _restweg_im_eg(dxf, geschoss))
     refz = _referenzvergleich(dxf.stem, plan, zoom, modell, platz, ziel, rot)

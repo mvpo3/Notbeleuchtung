@@ -20,12 +20,17 @@ PLAN = Path("Projekte/_eingang/Barawitzka_EG.dxf")
 
 
 @pytest.fixture(scope="module")
-def rm():
+def provider():
     if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
         pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    return ArchitekturRaumProvider().parse(str(PLAN), "EG")
+    return ArchitekturRaumProvider()
+
+
+@pytest.fixture(scope="module")
+def rm(provider):
+    return provider.parse(str(PLAN), "EG")
 
 
 def test_soll_final_exit(rm):
@@ -79,3 +84,22 @@ def test_soll_41_raeume_mit_stempel(rm):
     heben die typisierten Räume über die Soll-Schwelle 41 (XPASS-Kipp)."""
     typisiert = [r for r in rm.raeume if r.raum_typ]
     assert len(typisiert) >= 41, f"nur {len(typisiert)} Räume mit Stempel typisiert"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll (Spec 6): alle 16 FLW-Endpunkte an der Außenkante sind mit "
+    "final_exit gedeckt — Ist 2026-09-07 (selbst gemessen): 0 Segmente quelle "
+    "LINIE, damit 0 Endpunkte an der Außenkante und 0 gedeckte (2 final_exit "
+    "existieren, decken aber keinen Linien-Endpunkt). Ursache: die 16 "
+    "Farbe-96-Linien sind Katastergrenzen, echte FLW-Linien fehlen im Plan "
+    "(s. test_soll_explizite_linien_vorhanden).",
+)
+def test_soll_16_endpunkte_an_der_aussenkante_gedeckt(provider, rm):
+    kc = provider.letzter_kreuzcheck
+    assert len(kc.endpunkte_aussenkante) == 16, (
+        f"{len(kc.endpunkte_aussenkante)} statt 16 FLW-Endpunkte an der "
+        "Außenkante")
+    assert len(kc.gedeckte_endpunkte) == len(kc.endpunkte_aussenkante), (
+        f"nur {len(kc.gedeckte_endpunkte)}/{len(kc.endpunkte_aussenkante)} "
+        "Endpunkte mit final_exit gedeckt")
