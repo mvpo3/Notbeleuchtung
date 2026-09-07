@@ -15,6 +15,7 @@ NIEMALS eine der Listen allein ändern.
 | Raumtyp | Notlicht-Konsum (Leonis) |
 |---|---|
 | ABSTELLRAUM | LB-adressierbar |
+| AUFZUGSVORPLATZ | Erschließungsfläche vor dem Lift (Pflicht-POI „Aufzugsflur", Track C); Fluchtweg + communal — *neu 2026-09: Stempel-Label, Vorschlag zur Abnahme* |
 | BAD | Sanitär-Flächen-Trigger (OVE, OIB-gegated) |
 | BALKON | — |
 | GANG | **Fluchtweg-Korridor**: Mittellinien-Verdichtung + RZ-GANG-Fallback |
@@ -25,11 +26,13 @@ NIEMALS eine der Listen allein ändern.
 | LAGER | LB-adressierbar |
 | LIFT | — (Pflicht-POI „Aufzugsflur" = offener Track C) |
 | MUELLRAUM | LB-adressierbar |
+| SCHACHT | — (kein begehbarer Raum) — *neu 2026-09: `rest_komponenten` vergab das Label schon geometrisch (türlose Kleinfläche/STO-Kästchen); jetzt im Kanon statt außerhalb* |
 | SCHLAFZIMMER | — |
 | STIEGENHAUS | Fluchtweg + communal; Ausgangs-Anker; **Nachweis-Lücke offen** (Enis-Punkt 5) |
 | TECHNIK | LB-adressierbar; Anlagen-Symbol-Standort |
 | TERRASSE | — |
 | VORRAUM | — |
+| WASCHKÜCHE | communale Nasszelle — *neu 2026-09: `raumtyp._EXTRA_OVERRIDE` vergab das Label schon (Waschküche ≠ Wohnungsküche), stand aber außerhalb beider Guards; jetzt im Kanon* |
 | WC | Sanitär-Flächen-Trigger |
 | WOHNZIMMER | — |
 | ZIMMER | — |

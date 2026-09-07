@@ -44,16 +44,22 @@ from .projekt_kontext import (
     RaumReferenz,
 )
 from .raum_modell import (
+    Anker,
     Ausgang,
     BBox,
     Edge,
     FluchtwegSegment,
     Node,
+    Nutzungsklasse,
+    Podest,
     Raum,
     RaumModell,
     Sonderstelle,
     SonderstellenTyp,
+    StiegenhausModell,
+    Treppenlauf,
     Tuer,
+    TuerDetail,
     ZirkulationsGraph,
 )
 
@@ -69,6 +75,7 @@ SCHEMA_MODELS = {
 
 __all__ = [
     "SCHEMA_MODELS",
+    "Anker",
     "Ausgang",
     "BBox",
     "BereichsRegel",
@@ -88,6 +95,7 @@ __all__ = [
     "NormProvider",
     "NormRegelwerk",
     "Nutzungsart",
+    "Nutzungsklasse",
     "OibBefund",
     "OibErgebnis",
     "OibProvider",
@@ -95,6 +103,7 @@ __all__ = [
     "Platzierer",
     "Platzierung",
     "PlatzierungsErgebnis",
+    "Podest",
     "ProjektKontext",
     "ProviderBundle",
     "Pruefung",
@@ -109,8 +118,11 @@ __all__ = [
     "SonderLux",
     "Sonderstelle",
     "SonderstellenTyp",
+    "StiegenhausModell",
     "SystemTyp",
+    "Treppenlauf",
     "Tuer",
+    "TuerDetail",
     "Ueberwachung",
     "ZirkulationsGraph",
 ]

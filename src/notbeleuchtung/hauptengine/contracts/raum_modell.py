@@ -15,7 +15,24 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.1.0"
+CONTRACT_VERSION = "1.2.0"
+
+# v1.2.0 — rein additive, optionale Felder/Modelle (kein Erzeuger bricht):
+# Nutzungsklassen + Tür-Details + Stiegenhaus-/Anker-Modelle + Segment-Herkunft.
+Nutzungsklasse = Literal[
+    "WOHNUNG_PRIVAT", "ALLGEMEIN_ERSCHLIESSUNG", "ALLGEMEIN_NEBENRAUM",
+    "AUSSEN", "KEIN_RAUM",
+]
+
+TuerDetail = Literal[
+    "zimmertuer", "wohnungseingang", "stiegenhaustuer", "hauseingang",
+    "balkontuer", "garagentor", "brandschutztuer",
+]
+
+AnkerTyp = Literal[
+    "PODEST", "ANTRITT", "AUSTRITT", "TUER", "RICHTUNGSWECHSEL",
+    "KREUZUNG", "ENDE", "STRECKE",
+]
 
 # v1.1.0 (Sonderstellen, Option A nach docs/SPEC_SONDERSTELLEN_CONTRACT.md) —
 # hervorzuhebende Stellen nach EN 1838 §4.1.2. Typ-Vokabular deckt sich mit der
@@ -57,6 +74,10 @@ class Raum(BaseModel):
     # der Aufgabenfläche, nicht einem Punkt → Flags statt Sonderstelle):
     ist_barrierefrei: bool = False        # EN 1838 §4.3.8 (Antipanik-Pflicht barrierefreies WC)
     besondere_gefaehrdung: bool = False   # EN 1838 §4.4.1 (Arbeitsplätze, erhöhter Lux-Anspruch)
+    # v1.2.0 — Nutzungsklasse (aus raum_typ abgeleitet, s. raumerkennung/
+    # nutzungsklasse.py) + Wohnungszugehörigkeit; None/leer = unbestimmt.
+    nutzungsklasse: Nutzungsklasse | None = None
+    wohnung_id: str | None = None
 
 
 class Tuer(BaseModel):
@@ -67,6 +88,9 @@ class Tuer(BaseModel):
     nach_raum: str | None = None
     ist_notausgang: bool = False
     schwenk_richtung: Literal["links", "rechts", "unbekannt"] = "unbekannt"
+    # v1.2.0 — Tür-Rolle (None = unbestimmt) + „Öffnung ohne Türblatt".
+    tuer_detail: TuerDetail | None = None
+    ohne_tuerblatt: bool = False
 
 
 class Ausgang(BaseModel):
@@ -95,6 +119,58 @@ class FluchtwegSegment(BaseModel):
     polyline_mm: list[XY] = Field(default_factory=list)
     laenge_mm: float = 0.0
     reason: Literal["exit", "corner", "long_run", "direction_change"]
+    # v1.2.0 — Herkunft/Topologie des Segments (alles optional, None = unbekannt):
+    # LINIE = explizite Fluchtweg-Linie im Plan, GRAPH = aus dem Zirkulations-
+    # graphen abgeleitet, FALLBACK = Geometrie-Heuristik (z.B. GANG-Mittelachse).
+    quelle: Literal["LINIE", "GRAPH", "FALLBACK"] | None = None
+    start_raum: str | None = None
+    ziel_raum: str | None = None
+    ziel_ausgang: str | None = None
+    richtung_unbekannt: bool = False
+
+
+class Anker(BaseModel):
+    """v1.2.0 — benannter Punkt der Fluchtweg-Topologie (Platzierungs-Anker).
+
+    Reine Geometrie-/Topologie-Aussage der Erkennung; ob/was dort platziert
+    wird, entscheidet Leonis. `fluchtrichtung_grad` = Richtung ZUM Ausgang.
+    """
+
+    id: str
+    typ: AnkerTyp
+    xy_mm: XY
+    winkel_grad: float | None = None
+    fluchtrichtung_grad: float | None = None
+    raum_id: str | None = None
+
+
+class Treppenlauf(BaseModel):
+    """v1.2.0 — ein Treppenlauf; `richtung` = Gehrichtung von Antritt zu Austritt."""
+
+    polygon_mm: list[XY] = Field(default_factory=list)
+    antritt_mm: XY
+    austritt_mm: XY
+    richtung: Literal["auf", "ab", "unbekannt"] = "unbekannt"
+
+
+class Podest(BaseModel):
+    polygon_mm: list[XY] = Field(default_factory=list)
+    ist_hauptpodest: bool = False
+
+
+class StiegenhausModell(BaseModel):
+    """v1.2.0 — Stiegenhaus-Innenleben: Läufe, Podeste, Türen, Verbotszonen.
+
+    `verbotszonen_mm` = Flächen, auf denen nichts montiert/projiziert werden
+    darf (Laufflächen, Öffnungen) — Anker/Richtungen liefert die Erkennung,
+    die Platzierungslogik bleibt bei Leonis.
+    """
+
+    raum_id: str
+    laeufe: list[Treppenlauf] = Field(default_factory=list)
+    podeste: list[Podest] = Field(default_factory=list)
+    tuer_ids: list[str] = Field(default_factory=list)
+    verbotszonen_mm: list[list[XY]] = Field(default_factory=list)
 
 
 class ZirkulationsGraph(BaseModel):
@@ -117,3 +193,6 @@ class RaumModell(BaseModel):
     zirkulation: ZirkulationsGraph = Field(default_factory=ZirkulationsGraph)
     # v1.1.0 — punktförmige Pflichtstellen (EN 1838 §4.1.2); leer = keine bekannt.
     sonderstellen: list[Sonderstelle] = Field(default_factory=list)
+    # v1.2.0 — Stiegenhaus-Innenleben + Platzierungs-Anker; leer = nicht erkannt.
+    stiegenhaeuser: list[StiegenhausModell] = Field(default_factory=list)
+    anker: list[Anker] = Field(default_factory=list)

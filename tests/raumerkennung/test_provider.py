@@ -31,7 +31,11 @@ def test_mollgasse_leer_parse_ausgaenge(mollgasse_blank_eg):
     rm = ArchitekturRaumProvider().parse(str(mollgasse_blank_eg), "EG")
     assert isinstance(rm, RaumModell)
     assert len(rm.ausgaenge) >= 1
-    assert all(a.typ == "final_exit" for a in rm.ausgaenge)
+    # Seit Fachteil 1 (tuer_typisierung/ausgaenge) liefert das EG zusätzlich
+    # stair_exits (Stiegenhaustüren) — der Pin »alle final_exit« galt nur,
+    # solange stair_exit keinen Producer hatte (GT-MOLL-EG-05).
+    final = [a for a in rm.ausgaenge if a.typ == "final_exit"]
+    assert len(final) >= 1
     # deutlich weniger als die alte Müll-Heuristik (11 Weg-Endpunkte).
-    assert len(rm.ausgaenge) <= 8
+    assert len(final) <= 8
     RaumModell.model_validate(rm.model_dump(by_alias=True))

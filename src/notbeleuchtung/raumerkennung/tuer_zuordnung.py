@@ -1,0 +1,158 @@
+"""tuer_zuordnung — Türen an Räume anschließen (füllt ``Tuer.von_raum/nach_raum``).
+
+Je Tür wird 300 mm senkrecht zur Türsehne beidseits getestet, welcher Raum
+den Probepunkt deckt. Die Sehne kommt aus dem ``winkel_grad`` der nächsten
+Türöffnung (INSERT-Rotation bzw. ARC-Startwinkel), sonst aus der nächsten
+Raumkante. Seiten ohne Raum: ``AUSSEN`` (außerhalb der Gebäude-Außenkontur)
+oder ``KEIN_RAUM``.
+
+Zusätzlich: Wandöffnungen > 800 mm zwischen zwei Räumen ohne Bogen/Block
+(``durchgaenge_ohne_tuerblatt``) werden als ``Tuer(ohne_tuerblatt=True)``
+ergänzt — die Kontaktzone zweier Raumpolygone minus Wandflächen ist die
+Öffnung.
+"""
+from __future__ import annotations
+
+import math
+from itertools import pairwise
+
+from shapely.geometry import Point, Polygon
+from shapely.prepared import prep
+
+from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
+
+from .tueren import TuerOeffnung
+
+XY = tuple[float, float]
+
+AUSSEN = "AUSSEN"
+KEIN_RAUM = "KEIN_RAUM"
+
+_PROBE_MM = 300.0          # Abstand des Probepunkts senkrecht zur Türsehne
+_OEFFNUNG_SUCH_MM = 1500.0  # Türöffnung muss so nah an der Tür liegen
+_DURCHGANG_MIN_MM = 800.0
+_KONTAKT_MM = 250.0        # halbe Wanddicke für die Kontaktzone zweier Räume
+_TUER_NAH_MM = 600.0       # bestehende Tür „deckt" eine Öffnung in diesem Radius
+
+
+def _raum_polys(raeume: list[Raum]) -> list[tuple[Raum, Polygon, object]]:
+    out = []
+    for r in raeume:
+        if len(r.polygon_mm) >= 3:
+            p = Polygon(r.polygon_mm).buffer(0)
+            if not p.is_empty:
+                out.append((r, p, prep(p)))
+    return out
+
+
+def _kanten_richtung(xy: XY, polys) -> float:
+    """Richtung (rad) der nächsten Raumkante — Sehnen-Fallback ohne Öffnung."""
+    best_d, best_w = math.inf, 0.0
+    pt = Point(xy)
+    for _, p, _pp in polys:
+        ring = list(p.exterior.coords)
+        for a, b in pairwise(ring):
+            seg_len = math.dist(a, b)
+            if seg_len < 1.0:
+                continue
+            # Punkt-Segment-Abstand
+            t = max(0.0, min(1.0, ((xy[0] - a[0]) * (b[0] - a[0])
+                                   + (xy[1] - a[1]) * (b[1] - a[1])) / seg_len**2))
+            proj = (a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]))
+            d = pt.distance(Point(proj))
+            if d < best_d:
+                best_d = d
+                best_w = math.atan2(b[1] - a[1], b[0] - a[0])
+    return best_w
+
+
+def _sehnen_richtung(tuer: Tuer, oeffnungen: list[TuerOeffnung], polys) -> float:
+    best, best_d = None, _OEFFNUNG_SUCH_MM
+    for o in oeffnungen:
+        if o.winkel_grad is None:
+            continue
+        d = math.dist(o.xy_mm, tuer.xy_mm)
+        if d < best_d:
+            best, best_d = o, d
+    if best is not None:
+        return math.radians(best.winkel_grad)
+    return _kanten_richtung(tuer.xy_mm, polys)
+
+
+def _raum_an(xy: XY, polys) -> Raum | None:
+    for r, _p, pp in polys:
+        if pp.covers(Point(xy)):
+            return r
+    return None
+
+
+def ordne_tueren(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
+                 raeume: list[Raum], aussenkontur: Polygon | None) -> list[Tuer]:
+    """Füllt ``von_raum``/``nach_raum`` jeder Tür in-place (Rückgabe = Eingabe).
+
+    Bereits gesetzte Zuordnungen werden nicht überschrieben.
+    """
+    polys = _raum_polys(raeume)
+    kontur = (prep(aussenkontur)
+              if aussenkontur is not None and not aussenkontur.is_empty else None)
+    for t in tueren:
+        if t.von_raum is not None and t.nach_raum is not None:
+            continue
+        w = _sehnen_richtung(t, oeffnungen, polys)
+        nx_, ny = -math.sin(w), math.cos(w)   # Normale zur Sehne
+        seiten: list[str] = []
+        for sgn in (1.0, -1.0):
+            p = (t.xy_mm[0] + sgn * _PROBE_MM * nx_,
+                 t.xy_mm[1] + sgn * _PROBE_MM * ny)
+            r = _raum_an(p, polys)
+            if r is not None:
+                seiten.append(r.id)
+            elif kontur is not None and not kontur.covers(Point(p)):
+                seiten.append(AUSSEN)
+            else:
+                seiten.append(KEIN_RAUM)
+        t.von_raum, t.nach_raum = seiten[0], seiten[1]
+    return tueren
+
+
+def durchgaenge_ohne_tuerblatt(raeume: list[Raum], tueren: list[Tuer],
+                               wand_union_geom) -> list[Tuer]:
+    """Öffnungen > 800 mm zwischen zwei Räumen ohne Bogen/Block.
+
+    Kontaktzone = Schnitt der um die halbe Wanddicke gepufferten Raumpolygone;
+    was davon NICHT von Wandkörpern gedeckt ist, ist eine Öffnung. Liegt dort
+    keine bekannte Tür, entsteht eine ``Tuer`` mit ``ohne_tuerblatt=True``.
+    """
+    if wand_union_geom is None or wand_union_geom.is_empty:
+        return []
+    polys = _raum_polys(raeume)
+    tuer_punkte = [t.xy_mm for t in tueren]
+    out: list[Tuer] = []
+    for i, (ra, pa, _) in enumerate(polys):
+        for rb, pb, _ in polys[i + 1:]:
+            if pa.distance(pb) > 2 * _KONTAKT_MM:
+                continue
+            zone = pa.buffer(_KONTAKT_MM).intersection(pb.buffer(_KONTAKT_MM))
+            frei = zone.difference(wand_union_geom)
+            if frei.is_empty:
+                continue
+            teile = list(frei.geoms) if hasattr(frei, "geoms") else [frei]
+            for g in teile:
+                mrr = g.minimum_rotated_rectangle
+                coords = list(getattr(mrr, "exterior", g).coords)[:4]
+                if len(coords) < 3:
+                    continue
+                breite = max(math.dist(coords[0], coords[1]),
+                             math.dist(coords[1], coords[2]))
+                if breite < _DURCHGANG_MIN_MM:
+                    continue
+                c = g.centroid
+                xy = (float(c.x), float(c.y))
+                if any(math.dist(xy, p) < _TUER_NAH_MM for p in tuer_punkte):
+                    continue
+                out.append(Tuer(
+                    id=f"durchgang_{len(out) + 1}", xy_mm=xy,
+                    breite_mm=float(round(breite)), von_raum=ra.id,
+                    nach_raum=rb.id, ohne_tuerblatt=True))
+                tuer_punkte.append(xy)
+    return out
