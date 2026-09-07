@@ -24,8 +24,8 @@ from .raumtyp import raumtyp_flags
 from .rest_komponenten import komponenten_ohne_stempel
 from .stempel_anker import Stempel, Zuordnung, finde_stempel, ordne_zu
 from .stempel_flutung import flute_stempel
-from .tueren import TuerOeffnung, tuer_oeffnungen
-from .wandkoerper import Wandkoerper, finde_wandkoerper
+from .tueren import TuerOeffnung, im_planbereich, tuer_oeffnungen
+from .wandkoerper import Wandkoerper, bounds_aus_wandkoerpern, finde_wandkoerper
 
 
 def iou(poly_a: list, poly_b: list) -> float:
@@ -94,6 +94,10 @@ def raeume_aus_kaskade(plan: DxfPlan,
         quelle[r.id] = "H"
     wk = finde_wandkoerper(plan)
     oeff = tuer_oeffnungen(plan)
+    if wk:
+        # Nur Öffnungen im Plan-Bereich der Wandkörper — Duplikat-Etagen-
+        # Varianten/zweiter Plan-Cluster liefern sonst Phantom-Türen.
+        oeff = im_planbereich(oeff, bounds_aus_wandkoerpern(wk))
     zuord = ordne_zu(stempel, raeume)
     _ein_polygon_ein_stempel(zuord)
     flut_i = [

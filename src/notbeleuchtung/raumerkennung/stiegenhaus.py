@@ -47,6 +47,7 @@ _ABSTAND_MIN_MM, _ABSTAND_MAX_MM = 150.0, 350.0  # Senkrecht-Abstand der Stufen
 _WINKEL_TOL_GRAD = 5.0
 _MIN_STUFEN = 3
 _PODEST_MIN_M2 = 1.0
+_LAUF_MAX_M2 = 60.0      # größer = degenerierter Keil, kein Treppenlauf
 _TUER_AN_RAUM_MM = 600.0
 _KNICK_GRAD = 30.0
 
@@ -213,6 +214,26 @@ def _lauf_aus_gruppe(gruppe: list[tuple[XY, XY]],
                        austritt_mm=austritt, richtung=richtung)
 
 
+def _clip_lauf(lauf: Treppenlauf, raum: Polygon) -> Treppenlauf | None:
+    """Lauf-Polygon auf das Stiegenhaus-Polygon clippen; None, wenn nichts
+    übrig bleibt oder die Fläche kein Treppenlauf mehr sein kann.
+
+    Die Lauf-Polygone sind konvexe Hüllen über Stufenlinien-Gruppen. Streuen
+    die Linien (ausgebrochene Flutungs-Polygone, Barawitzka/Mollgasse), wird
+    die Hülle zum Riesen-Keil weit über den Raum hinaus — als Verbotszone
+    unbrauchbar. Clip + Flächendeckel machen daraus wieder eine Raumfläche.
+    """
+    p = Polygon(lauf.polygon_mm).buffer(0).intersection(raum)
+    if p.is_empty:
+        return None
+    if p.geom_type != "Polygon":
+        p = max(p.geoms, key=lambda g: g.area)
+    if p.geom_type != "Polygon" or p.area <= 0 or p.area / 1e6 > _LAUF_MAX_M2:
+        return None
+    lauf.polygon_mm = [(float(x), float(y)) for x, y in p.exterior.coords[:-1]]
+    return lauf
+
+
 def _wandwinkel(poly: Polygon, xy: XY) -> float:
     """Winkel (Grad, mod 180) der Raumpolygon-Kante, die dem Punkt am nächsten
     liegt — der Türwandwinkel für TUER-Anker (Rotationsquelle nach ADR-0006:
@@ -256,6 +277,8 @@ def baue_stiegenhaus_modell(plan: DxfPlan, raum: Raum, lifte: list[Raum],
     gruppen = [g for g in gruppen if poly.covers(
         MultiPoint([p for s in g for p in s]).convex_hull.centroid)]
     laeufe = [_lauf_aus_gruppe(g, nums, alle_segs) for g in gruppen]
+    # Lauf-/Verbotszonen-Polygone bleiben im Raum (s. _clip_lauf).
+    laeufe = [lf for lf in (_clip_lauf(x, poly) for x in laeufe) if lf is not None]
 
     lift_polys = [Polygon(lf.polygon_mm).buffer(0) for lf in lifte
                   if len(lf.polygon_mm) >= 3
@@ -368,4 +391,21 @@ def baue_stiegenhaus_modell(plan: DxfPlan, raum: Raum, lifte: list[Raum],
              if innen.covers(Point(a.xy_mm))       # kein Anker außerhalb des Raums
              and (a.typ in ("ANTRITT", "AUSTRITT")  # Lauf-Enden liegen am Rand
                   or not any(s.contains(Point(a.xy_mm)) for s in sperren))]
-    return modell, anker
+    return modell, _entklumpe(anker)
+
+
+_ANKER_MIN_ABSTAND_MM = 1000.0
+
+
+def _entklumpe(anker: list[Anker]) -> list[Anker]:
+    """Mindestabstand 1 m je Ankertyp — näher beieinander sind es Dubletten
+    desselben Montagepunkts (Mollgasse: RICHTUNGSWECHSEL-Klumpen aus jedem
+    Laufpaar am selben Knick). Der erste Anker gewinnt."""
+    out: list[Anker] = []
+    for a in anker:
+        if any(b.typ == a.typ
+               and math.dist(a.xy_mm, b.xy_mm) < _ANKER_MIN_ABSTAND_MM
+               for b in out):
+            continue
+        out.append(a)
+    return out
