@@ -170,7 +170,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-72 / 150 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+71 / 147 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -220,33 +220,31 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_44 | KEIN_RAUM | KEIN_RAUM | — | 800 | — | block | tuer_ins_nichts |
 | tuer_45 | raum_13 | raum_13 | stiegenhaustuer | 1000 | — | arc_aussen |  |
 | tuer_46 | raum_56 | KEIN_RAUM | — | 900 | — | arc_aussen | kein_nachbarraum |
-| tuer_47 | KEIN_RAUM | raum_51 | — | 1000 | — | arc_aussen | kein_nachbarraum |
-| tuer_48 | raum_51 | raum_51 | stiegenhaustuer | 1000 | — | arc_aussen |  |
-| tuer_49 | raum_28 | KEIN_RAUM | — | 928 | — | arc_aussen | kein_nachbarraum |
-| tuer_50 | raum_20 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
-| tuer_51 | raum_20 | raum_41 | wohnungseingang | 601 | — | arc_aussen |  |
-| tuer_52 | raum_38 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
-| tuer_53 | raum_38 | raum_41 | wohnungseingang | 601 | — | arc_aussen |  |
-| tuer_54 | raum_51 | KEIN_RAUM | — | 928 | — | arc_aussen | kein_nachbarraum |
-| tuer_55 | raum_51 | KEIN_RAUM | — | 1000 | — | arc_aussen | kein_nachbarraum |
-| tuer_56 | raum_51 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
-| tuer_57 | raum_33 | raum_51 | wohnungseingang | 601 | — | arc_aussen |  |
-| tuer_58 | raum_52 | raum_41 | — | 900 | — | arc_aussen | unbekannte_kombination |
-| tuer_59 | raum_44 | KEIN_RAUM | — | 900 | — | arc_aussen | kein_nachbarraum |
-| tuer_60 | raum_27 | raum_27 | zimmertuer | 882 | — | arc_aussen |  |
-| tuer_61 | raum_25 | raum_25 | zimmertuer | 882 | — | arc_aussen |  |
-| tuer_62 | raum_19 | raum_25 | zimmertuer | 882 | — | arc_aussen |  |
-| tuer_63 | raum_9 | raum_25 | zimmertuer | 800 | — | arc_aussen |  |
-| tuer_64 | raum_42 | raum_41 | — | 1065 | — | arc_aussen | unbekannte_kombination |
-| tuer_65 | raum_42 | KEIN_RAUM | — | 982 | — | arc_aussen | kein_nachbarraum |
-| tuer_66 | raum_18 | raum_56 | zimmertuer | 800 | — | arc_aussen |  |
-| tuer_67 | raum_41 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
-| tuer_68 | raum_41 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
-| tuer_69 | raum_55 | KEIN_RAUM | — | 1000 | — | arc_aussen | kein_nachbarraum |
-| tuer_70 | AUSSEN | raum_61 | — | 800 | ja | arc_aussen | unbekannte_kombination |
-| tuer_71 | raum_51 | raum_51 | stiegenhaustuer | 800 | — | arc_aussen |  |
-| tuer_72 | raum_12 | KEIN_RAUM | — | 800 | — | arc_aussen | kein_nachbarraum |
-| tuer_73 | raum_2 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
+| tuer_47 | raum_28 | KEIN_RAUM | — | 928 | — | arc_aussen | kein_nachbarraum |
+| tuer_48 | raum_20 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
+| tuer_49 | raum_20 | raum_41 | wohnungseingang | 601 | — | arc_aussen |  |
+| tuer_50 | raum_38 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
+| tuer_51 | raum_38 | raum_41 | wohnungseingang | 601 | — | arc_aussen |  |
+| tuer_52 | raum_51 | KEIN_RAUM | — | 928 | — | arc_aussen | kein_nachbarraum |
+| tuer_53 | raum_51 | KEIN_RAUM | — | 1000 | — | arc_aussen | kein_nachbarraum |
+| tuer_54 | raum_51 | KEIN_RAUM | — | 882 | — | arc_aussen | kein_nachbarraum |
+| tuer_55 | raum_33 | raum_51 | wohnungseingang | 601 | — | arc_aussen |  |
+| tuer_56 | raum_52 | raum_41 | — | 900 | — | arc_aussen | unbekannte_kombination |
+| tuer_57 | raum_44 | KEIN_RAUM | — | 900 | — | arc_aussen | kein_nachbarraum |
+| tuer_58 | raum_27 | raum_27 | zimmertuer | 882 | — | arc_aussen |  |
+| tuer_59 | raum_25 | raum_25 | zimmertuer | 882 | — | arc_aussen |  |
+| tuer_60 | raum_19 | raum_25 | zimmertuer | 882 | — | arc_aussen |  |
+| tuer_61 | raum_9 | raum_25 | zimmertuer | 800 | — | arc_aussen |  |
+| tuer_62 | raum_42 | raum_41 | — | 1065 | — | arc_aussen | unbekannte_kombination |
+| tuer_63 | raum_42 | KEIN_RAUM | — | 982 | — | arc_aussen | kein_nachbarraum |
+| tuer_64 | raum_18 | raum_56 | zimmertuer | 800 | — | arc_aussen |  |
+| tuer_65 | raum_41 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
+| tuer_66 | raum_41 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
+| tuer_67 | raum_55 | KEIN_RAUM | — | 1000 | — | arc_aussen | kein_nachbarraum |
+| tuer_68 | AUSSEN | raum_61 | — | 800 | ja | arc_aussen | unbekannte_kombination |
+| tuer_69 | raum_51 | raum_51 | stiegenhaustuer | 800 | — | arc_aussen |  |
+| tuer_70 | raum_12 | KEIN_RAUM | — | 800 | — | arc_aussen | kein_nachbarraum |
+| tuer_71 | raum_2 | raum_41 | — | 1002 | — | arc_aussen | unbekannte_kombination |
 | durchgang_1 | raum_1 | raum_3 | — | 6225 | — | durchgang | unbekannte_kombination |
 | durchgang_2 | raum_2 | raum_41 | — | 3987 | — | durchgang | unbekannte_kombination |
 | durchgang_3 | raum_2 | raum_41 | — | 1985 | — | durchgang | unbekannte_kombination |
@@ -319,13 +317,12 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_70 | raum_55 | raum_62 | — | 2330 | — | durchgang | unbekannte_kombination |
 | aussenoeffnung_1 | raum_30 | AUSSEN | — | 1227 | — | oeffnung_aussenwand | unbekannte_kombination |
 | aussenoeffnung_2 | raum_30 | AUSSEN | — | 1319 | — | oeffnung_aussenwand | unbekannte_kombination |
-| aussenoeffnung_3 | raum_30 | AUSSEN | — | 2017 | ja | oeffnung_aussenwand | unbekannte_kombination |
-| aussenoeffnung_4 | raum_30 | AUSSEN | — | 1948 | ja | oeffnung_aussenwand | unbekannte_kombination |
+| aussenoeffnung_3 | raum_30 | AUSSEN | — | 1948 | ja | oeffnung_aussenwand | unbekannte_kombination |
+| aussenoeffnung_4 | raum_41 | AUSSEN | hauseingang | 1453 | ja | oeffnung_aussenwand |  |
 | aussenoeffnung_5 | raum_44 | AUSSEN | — | 2292 | ja | oeffnung_aussenwand | unbekannte_kombination |
 | aussenoeffnung_6 | raum_44 | AUSSEN | — | 2511 | ja | oeffnung_aussenwand | unbekannte_kombination |
-| aussenoeffnung_7 | raum_51 | AUSSEN | hauseingang | 1281 | — | oeffnung_aussenwand |  |
 
-## Ausgänge (16)
+## Ausgänge (14)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
@@ -335,16 +332,14 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_4 | final_exit | 2665.83 | 1537.22 |
 | exit_tuer_35 | stair_exit | 2699.65 | 1520.76 |
 | exit_tuer_45 | stair_exit | 2654.51 | 1543.14 |
-| exit_tuer_48 | stair_exit | 2703.28 | 1520.77 |
-| exit_tuer_70 | final_exit | 2688.62 | 1511.09 |
-| exit_tuer_71 | stair_exit | 2689.36 | 1524.98 |
+| exit_tuer_68 | final_exit | 2688.62 | 1511.09 |
+| exit_tuer_69 | stair_exit | 2689.36 | 1524.98 |
 | exit_durchgang_4 | stair_exit | 2689.34 | 1526.61 |
 | exit_durchgang_9 | stair_exit | 2686.24 | 1524.22 |
-| exit_aussenoeffnung_3 | final_exit | 2702.03 | 1523.34 |
-| exit_aussenoeffnung_4 | final_exit | 2694.04 | 1522.94 |
+| exit_aussenoeffnung_3 | final_exit | 2694.04 | 1522.94 |
+| exit_aussenoeffnung_4 | final_exit | 2655.93 | 1538.46 |
 | exit_aussenoeffnung_5 | final_exit | 2652.19 | 1535.04 |
 | exit_aussenoeffnung_6 | final_exit | 2653.32 | 1533.16 |
-| exit_aussenoeffnung_7 | final_exit | 2695.82 | 1518.84 |
 
 ## Fluchtweg-Segmente (122)
 
@@ -459,15 +454,15 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 | seg_graph_tuer_9 | GRAPH | 18.7 | exit | exit_4 |
 | seg_graph_tuer_11 | GRAPH | 18.1 | exit | exit_4 |
 | seg_graph_tuer_20 | GRAPH | 14.6 | exit | exit_4 |
-| seg_graph_tuer_21 | GRAPH | 11.8 | exit | exit_4 |
-| seg_graph_tuer_24 | GRAPH | 10.9 | exit | exit_4 |
-| seg_graph_tuer_25 | GRAPH | 11.7 | exit | exit_4 |
-| seg_graph_tuer_26 | GRAPH | 13.2 | exit | exit_4 |
-| seg_graph_tuer_35 | GRAPH | 6.1 | exit | exit_aussenoeffnung_3 |
-| seg_graph_tuer_53 | GRAPH | 13.2 | exit | exit_4 |
-| seg_graph_durchgang_16 | GRAPH | 7.9 | exit | exit_aussenoeffnung_7 |
-| seg_graph_durchgang_17 | GRAPH | 11.8 | exit | exit_1 |
-| seg_graph_durchgang_22 | GRAPH | 9.2 | exit | exit_4 |
+| seg_graph_tuer_21 | GRAPH | 5.7 | exit | exit_aussenoeffnung_4 |
+| seg_graph_tuer_24 | GRAPH | 5.0 | exit | exit_aussenoeffnung_4 |
+| seg_graph_tuer_25 | GRAPH | 5.1 | exit | exit_aussenoeffnung_4 |
+| seg_graph_tuer_26 | GRAPH | 3.4 | exit | exit_aussenoeffnung_4 |
+| seg_graph_tuer_35 | GRAPH | 16.2 | exit | exit_aussenoeffnung_3 |
+| seg_graph_tuer_51 | GRAPH | 13.2 | exit | exit_4 |
+| seg_graph_durchgang_16 | GRAPH | 14.4 | exit | exit_aussenoeffnung_3 |
+| seg_graph_durchgang_17 | GRAPH | 26.8 | exit | exit_aussenoeffnung_3 |
+| seg_graph_durchgang_22 | GRAPH | 9.9 | exit | exit_aussenoeffnung_4 |
 | seg_graph_durchgang_45 | GRAPH | 11.9 | exit | exit_3 |
 | seg_graph_durchgang_55 | GRAPH | 12.3 | exit | exit_4 |
 | seg_fallback_raum_13 | FALLBACK | 12.4 | long_run | — |
@@ -498,17 +493,17 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 | tuer_11 | 18.1 | GRAPH | exit_4 |
 | tuer_19 | 2.2 | Luftlinie | exit_4 |
 | tuer_20 | 14.6 | GRAPH | exit_4 |
-| tuer_21 | 11.8 | GRAPH | exit_4 |
-| tuer_24 | 10.9 | GRAPH | exit_4 |
-| tuer_25 | 11.7 | GRAPH | exit_4 |
-| tuer_26 | 13.2 | GRAPH | exit_4 |
+| tuer_21 | 5.7 | GRAPH | exit_aussenoeffnung_4 |
+| tuer_24 | 5.0 | GRAPH | exit_aussenoeffnung_4 |
+| tuer_25 | 5.1 | GRAPH | exit_aussenoeffnung_4 |
+| tuer_26 | 3.4 | GRAPH | exit_aussenoeffnung_4 |
 | tuer_39 | 5.9 | Luftlinie | exit_tuer_45 |
-| tuer_51 | 8.8 | Luftlinie | exit_4 |
-| tuer_53 | 13.2 | GRAPH | exit_4 |
-| tuer_57 | 1.4 | Luftlinie | exit_durchgang_9 |
-| durchgang_16 | 7.9 | GRAPH | exit_aussenoeffnung_7 |
-| durchgang_17 | 11.8 | GRAPH | exit_1 |
-| durchgang_22 | 9.2 | GRAPH | exit_4 |
+| tuer_49 | 8.8 | Luftlinie | exit_4 |
+| tuer_51 | 13.2 | GRAPH | exit_4 |
+| tuer_55 | 1.4 | Luftlinie | exit_durchgang_9 |
+| durchgang_16 | 14.4 | GRAPH | exit_aussenoeffnung_3 |
+| durchgang_17 | 26.8 | GRAPH | exit_aussenoeffnung_3 |
+| durchgang_22 | 9.9 | GRAPH | exit_aussenoeffnung_4 |
 | durchgang_32 | 9.4 | Luftlinie | exit_4 |
 | durchgang_45 | 11.9 | GRAPH | exit_3 |
 | durchgang_47 | 1.2 | Luftlinie | exit_3 |
@@ -522,30 +517,29 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 34 |
-| ALLGEMEIN_NEBENRAUM | 4 |
+| ALLGEMEIN_ERSCHLIESSUNG | 32 |
+| ALLGEMEIN_NEBENRAUM | 5 |
 | WOHNUNG_PRIVAT | 10 |
 | kein Raum | 7 |
 | unbestimmt | 2 |
-| _davon auf Treppenlauf/Verbotszone_ | 9 |
+| _davon auf Treppenlauf/Verbotszone_ | 7 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
 - WOHNUNG_PRIVAT: 10 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 9 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 7 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| aussenoeffnung_3 | (2702.03, 1523.34) | 0.0 | 0.0 | 0.0 | ok |
-| aussenoeffnung_4 | (2694.04, 1522.94) | 0.0 | 0.0 | 0.0 | ok |
+| aussenoeffnung_3 | (2694.04, 1522.94) | 0.0 | 0.0 | 0.0 | ok |
+| aussenoeffnung_4 | (2655.93, 1538.46) | 90.0 | 89.7 | 0.3 | ok |
 | aussenoeffnung_5 | (2652.19, 1535.04) | 270.0 | 89.7 | 0.3 | ok |
 | aussenoeffnung_6 | (2653.32, 1533.16) | 0.0 | 0.0 | 0.0 | ok |
-| aussenoeffnung_7 | (2695.82, 1518.84) | 0.0 | 0.0 | 0.0 | ok |
 | tuer_35 | (2699.65, 1520.76) | 0.0 | 180.0 | 0.0 | ok |
 | tuer_45 | (2654.51, 1543.14) | 0.0 | 179.7 | 0.3 | ok |
-| tuer_70 | (2688.62, 1511.09) | 270.0 | 0.0 | 90.0 | abweichend |
+| tuer_68 | (2688.62, 1511.09) | 270.0 | 0.0 | 90.0 | abweichend |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -562,7 +556,7 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
   - TUER (2663.87, 1545.06) m, Winkel 45°, Fluchtrichtung 23°
   - RICHTUNGSWECHSEL (2653.92, 1541.10) m, Fluchtrichtung 67°
   - RICHTUNGSWECHSEL (2658.97, 1544.43) m, Fluchtrichtung 185°
-- **raum_51**: 17 Läufe, 8 Podeste, 18 Verbotszonen (größte 57.4 m², Summe 136.3 m²), 44 Anker
+- **raum_51**: 17 Läufe, 8 Podeste, 18 Verbotszonen (größte 57.4 m², Summe 136.3 m²), 43 Anker
   - PODEST (2691.10, 1524.81) m, Winkel 0°, Fluchtrichtung 180°
   - PODEST (2691.42, 1520.97) m, Winkel 90°, Fluchtrichtung 189°
   - PODEST (2688.76, 1525.40) m, Winkel 89°, Fluchtrichtung 289°
@@ -591,7 +585,6 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
   - AUSTRITT (2689.26, 1525.89) m, Fluchtrichtung 289°
   - ANTRITT (2691.79, 1524.32) m, Fluchtrichtung 0°
   - AUSTRITT (2695.28, 1518.81) m, Fluchtrichtung 70°
-  - TUER (2703.28, 1522.77) m, Winkel 135°, Fluchtrichtung 8°
   - TUER (2689.36, 1524.98) m, Winkel 135°, Fluchtrichtung 289°
   - TUER (2689.34, 1526.61) m, Winkel 45°, Fluchtrichtung 289°
   - TUER (2682.15, 1524.37) m, Winkel 45°, Fluchtrichtung 360°
@@ -607,7 +600,7 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
   - RICHTUNGSWECHSEL (2690.17, 1524.24) m, Fluchtrichtung 180°
   - RICHTUNGSWECHSEL (2687.76, 1523.84) m, Fluchtrichtung 163°
   - RICHTUNGSWECHSEL (2686.73, 1523.86) m, Fluchtrichtung 254°
-- Gang-Anker (außerhalb Stiegenhäuser): 118
+- Gang-Anker (außerhalb Stiegenhäuser): 119
 
 ## Brandschutz-Hinweise im Plan (3)
 
@@ -618,8 +611,9 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 ## Außenbereich
 
 - Gebäude-Komponenten: 5 (Flächen m²: 364.6, 1.2, 168.8, 43.1, 22.4; Summe 600.1)
-- offene AUSSEN-Flächen: 8 (1306.8 m²)
-- geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
+- offene AUSSEN-Flächen: 1 (910.1 m²)
+- geschlossene Höfe (AUSSEN_GESCHLOSSEN): 1 (73.0 m²)
+- Überdachungen über offener Außenfläche: 0 (0.0 m²)
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -708,7 +702,7 @@ Kandidaten (typ notausgang_kandidat — Prüf-Output, KEINE Ausgänge; gestriche
 - (2676.80, 1537.45) Tür — — keine Öffnung in der Außenwand ≤ 3 m gefunden
 - (2687.75, 1537.48) Tür — — keine Öffnung in der Außenwand ≤ 3 m gefunden
 
-final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_2, exit_aussenoeffnung_4, exit_aussenoeffnung_5, exit_aussenoeffnung_6
+final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussenoeffnung_5, exit_aussenoeffnung_6
 
 ### Fluchtweg-Warnungen
 
@@ -722,9 +716,9 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_2, exit_aussenoeffnung
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 57 |
-| kein_nachbarraum | 19 |
+| unbekannte_kombination | 56 |
+| kein_nachbarraum | 18 |
 | tuer_ins_nichts | 1 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 301.4 s
+Laufzeit: 292.6 s

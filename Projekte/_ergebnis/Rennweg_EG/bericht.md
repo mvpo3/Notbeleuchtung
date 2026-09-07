@@ -217,6 +217,7 @@ Quellen: FALLBACK: 1, GRAPH: 8
 - Gebäude-Komponenten: 1 (Flächen m²: 295.7; Summe 295.7)
 - offene AUSSEN-Flächen: 0 (0.0 m²)
 - geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
+- Überdachungen über offener Außenfläche: 0 (0.0 m²)
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -240,4 +241,4 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 3 |
 
-Laufzeit: 58.4 s
+Laufzeit: 58.0 s

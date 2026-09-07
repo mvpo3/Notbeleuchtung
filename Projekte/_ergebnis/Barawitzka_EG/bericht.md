@@ -189,7 +189,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 
 ## Türen (Fachteil 3)
 
-58 / 106 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+56 / 105 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -218,7 +218,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | tuer_23 | raum_30 | raum_30 | zimmertuer | 830 | — | arc |  |
 | tuer_24 | raum_33 | raum_35 | wohnungseingang | 960 | — | arc |  |
 | tuer_25 | raum_10 | raum_9 | zimmertuer | 830 | — | arc |  |
-| tuer_26 | raum_4 | AUSSEN | — | 900 | — | arc | beide_seiten_untypisiert |
+| tuer_26 | raum_4 | KEIN_RAUM | — | 900 | — | arc | kein_nachbarraum |
 | tuer_27 | AUSSEN | KEIN_RAUM | hauseingang | 950 | — | arc+text:Eingang |  |
 | tuer_28 | raum_19 | raum_35 | wohnungseingang | 960 | — | arc |  |
 | tuer_29 | raum_43 | KEIN_RAUM | — | 980 | — | arc | kein_nachbarraum |
@@ -292,21 +292,18 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_59 | raum_35 | raum_36 | — | 2700 | — | durchgang | unbekannte_kombination |
 | durchgang_60 | raum_35 | raum_40 | wohnungseingang | 879 | — | durchgang |  |
 | durchgang_61 | raum_35 | rest_3 | — | 1938 | — | durchgang | tuer_in_schacht |
-| durchgang_62 | raum_37 | raum_43 | hauseingang | 7230 | ja | durchgang |  |
+| durchgang_62 | raum_37 | raum_43 | — | 7230 | ja | durchgang | unbekannte_kombination |
 | durchgang_63 | raum_37 | rest_1 | — | 1637 | — | durchgang | tuer_in_schacht |
 | durchgang_64 | raum_38 | raum_39 | — | 1984 | ja | durchgang | unbekannte_kombination |
 | durchgang_65 | raum_39 | raum_43 | — | 1969 | ja | durchgang | unbekannte_kombination |
 | durchgang_66 | raum_39 | raum_43 | — | 5550 | ja | durchgang | unbekannte_kombination |
 | durchgang_67 | raum_41 | raum_44 | — | 3535 | ja | durchgang | unbekannte_kombination |
-| aussenoeffnung_1 | raum_35 | AUSSEN | hauseingang | 817 | — | oeffnung_aussenwand |  |
 
-## Ausgänge (3)
+## Ausgänge (1)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
 | exit_tuer_27 | final_exit | 14.90 | -2.93 |
-| exit_durchgang_62 | final_exit | 8.78 | -22.66 |
-| exit_aussenoeffnung_1 | final_exit | 12.95 | -9.10 |
 
 ## Fluchtweg-Segmente (12)
 
@@ -315,16 +312,16 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
 | seg_graph_tuer_24 | GRAPH | 2.9 | exit | exit_tuer_27 |
-| seg_graph_tuer_28 | GRAPH | 12.1 | exit | exit_aussenoeffnung_1 |
-| seg_graph_tuer_35 | GRAPH | 18.8 | exit | exit_aussenoeffnung_1 |
-| seg_graph_tuer_36 | GRAPH | 13.4 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_11 | GRAPH | 18.8 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_16 | GRAPH | 15.1 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_43 | GRAPH | 3.9 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_44 | GRAPH | 5.9 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_55 | GRAPH | 16.3 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_57 | GRAPH | 6.1 | exit | exit_aussenoeffnung_1 |
-| seg_graph_durchgang_60 | GRAPH | 11.2 | exit | exit_aussenoeffnung_1 |
+| seg_graph_tuer_28 | GRAPH | 13.5 | exit | exit_tuer_27 |
+| seg_graph_tuer_35 | GRAPH | 20.2 | exit | exit_tuer_27 |
+| seg_graph_tuer_36 | GRAPH | 14.9 | exit | exit_tuer_27 |
+| seg_graph_durchgang_11 | GRAPH | 20.2 | exit | exit_tuer_27 |
+| seg_graph_durchgang_16 | GRAPH | 16.5 | exit | exit_tuer_27 |
+| seg_graph_durchgang_43 | GRAPH | 9.2 | exit | exit_tuer_27 |
+| seg_graph_durchgang_44 | GRAPH | 11.3 | exit | exit_tuer_27 |
+| seg_graph_durchgang_55 | GRAPH | 17.8 | exit | exit_tuer_27 |
+| seg_graph_durchgang_57 | GRAPH | 7.5 | exit | exit_tuer_27 |
+| seg_graph_durchgang_60 | GRAPH | 12.7 | exit | exit_tuer_27 |
 | seg_fallback_raum_37 | FALLBACK | 6.9 | long_run | — |
 
 ## Wohnungen (7)
@@ -341,44 +338,41 @@ Quellen: FALLBACK: 1, GRAPH: 11
 
 | Tür | Weglänge m | Quelle | Ausgang |
 |---|--:|---|---|
-| tuer_15 | 6.1 | Luftlinie | exit_durchgang_62 |
-| tuer_17 | 2.9 | Luftlinie | exit_durchgang_62 |
-| tuer_18 | 4.5 | Luftlinie | exit_durchgang_62 |
+| tuer_15 | 21.2 | Luftlinie | exit_tuer_27 |
+| tuer_17 | 21.8 | Luftlinie | exit_tuer_27 |
+| tuer_18 | 23.0 | Luftlinie | exit_tuer_27 |
 | tuer_24 | 2.9 | GRAPH | exit_tuer_27 |
-| tuer_28 | 12.1 | GRAPH | exit_aussenoeffnung_1 |
-| tuer_35 | 18.8 | GRAPH | exit_aussenoeffnung_1 |
-| tuer_36 | 13.4 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_11 | 18.8 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_16 | 15.1 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_28 | 6.7 | Luftlinie | exit_durchgang_62 |
-| durchgang_29 | 5.8 | Luftlinie | exit_durchgang_62 |
-| durchgang_30 | 4.6 | Luftlinie | exit_durchgang_62 |
-| durchgang_43 | 3.9 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_44 | 5.9 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_55 | 16.3 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_57 | 6.1 | GRAPH | exit_aussenoeffnung_1 |
-| durchgang_60 | 11.2 | GRAPH | exit_aussenoeffnung_1 |
+| tuer_28 | 13.5 | GRAPH | exit_tuer_27 |
+| tuer_35 | 20.2 | GRAPH | exit_tuer_27 |
+| tuer_36 | 14.9 | GRAPH | exit_tuer_27 |
+| durchgang_11 | 20.2 | GRAPH | exit_tuer_27 |
+| durchgang_16 | 16.5 | GRAPH | exit_tuer_27 |
+| durchgang_28 | 21.9 | Luftlinie | exit_tuer_27 |
+| durchgang_29 | 22.9 | Luftlinie | exit_tuer_27 |
+| durchgang_30 | 21.1 | Luftlinie | exit_tuer_27 |
+| durchgang_43 | 9.2 | GRAPH | exit_tuer_27 |
+| durchgang_44 | 11.3 | GRAPH | exit_tuer_27 |
+| durchgang_55 | 17.8 | GRAPH | exit_tuer_27 |
+| durchgang_57 | 7.5 | GRAPH | exit_tuer_27 |
+| durchgang_60 | 12.7 | GRAPH | exit_tuer_27 |
 
 ## Leuchten je Nutzungsklasse
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 3 |
-| WOHNUNG_PRIVAT | 1 |
-| kein Raum | 4 |
-| _davon auf Treppenlauf/Verbotszone_ | 2 |
+| ALLGEMEIN_ERSCHLIESSUNG | 2 |
+| kein Raum | 3 |
+| _davon auf Treppenlauf/Verbotszone_ | 1 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 1 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 2 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 1 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
 | tuer_27 | (14.90, -2.93) | 180.0 | 90.0 | 90.0 | abweichend |
-| aussenoeffnung_1 | (12.95, -9.10) | 270.0 | 0.0 | 90.0 | abweichend |
 | durchgang_63 | (12.34, -22.50) | 180.0 | 90.0 | 90.0 | abweichend |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
@@ -429,14 +423,14 @@ Quellen: FALLBACK: 1, GRAPH: 11
 ## Außenbereich
 
 - Gebäude-Komponenten: 1 (Flächen m²: 426.0; Summe 426.0)
-- offene AUSSEN-Flächen: 5 (197.4 m²)
-- geschlossene Höfe (AUSSEN_GESCHLOSSEN): 1 (23.5 m²)
+- offene AUSSEN-Flächen: 1 (12.5 m²)
+- geschlossene Höfe (AUSSEN_GESCHLOSSEN): 2 (213.7 m²)
+- Überdachungen über offener Außenfläche: 1 (0.7 m²)
+  - 0.7 m² — 2.22 m zu exit_tuer_27
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
 0 Linien-Endpunkte an der Außenkante, davon 0 mit final_exit ≤ 1.5 m gedeckt.
-
-final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_durchgang_62
 
 ### Fluchtweg-Warnungen
 
@@ -451,16 +445,15 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_durchgang_62
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 27 |
-| kein_nachbarraum | 10 |
+| unbekannte_kombination | 28 |
+| kein_nachbarraum | 11 |
 | tuer_ins_nichts | 7 |
 | tuer_in_schacht | 3 |
-| beide_seiten_untypisiert | 1 |
 
 ## Referenzvergleich Fachplaner (11 Referenz-Leuchten im Frame)
 
 - Treffer (≤1 m, Rotation ≤10°): **2/11 = 18 %**
-- überzählig (eigene ohne Referenz-Gegenstück): 6
+- überzählig (eigene ohne Referenz-Gegenstück): 3
 
 | fehlende Referenz | xy m | rot° |
 |---|---|--:|
@@ -476,11 +469,8 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_durchgang_62
 
 | überzählige eigene | xy m | rot° |
 |---|---|--:|
-| rz | (12.95, -9.10) | 270 |
 | rz | (12.34, -22.50) | 180 |
 | sicherheitsleuchte | (13.97, -7.54) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
-| sicherheitsleuchte | (7.79, -22.81) | 0 |
-| sicherheitsleuchte | (11.99, -8.79) | 0 |
 
-Laufzeit: 266.4 s
+Laufzeit: 261.1 s

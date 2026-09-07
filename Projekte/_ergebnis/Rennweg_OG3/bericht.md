@@ -156,6 +156,7 @@ Quellen: GRAPH: 4
 - Gebäude-Komponenten: 1 (Flächen m²: 191.4; Summe 191.4)
 - offene AUSSEN-Flächen: 4 (114.0 m²)
 - geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
+- Überdachungen über offener Außenfläche: 0 (0.0 m²)
 
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
@@ -171,4 +172,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.6 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 51.6 s
+Laufzeit: 57.1 s
