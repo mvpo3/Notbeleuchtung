@@ -56,23 +56,66 @@ def _wall_layers(space) -> frozenset[str]:
     )
 
 
-def _raw_wall_span(space, wall_layers: frozenset[str]) -> float:
-    """Größte Wand-Ausdehnung (dx/dy) in Quell-Einheiten (ohne Skalierung)."""
+# Perzentil-Fenster für die Wandspannweite: Plankopf-, Rahmen- und
+# Phantom-Geometrie liegt oft hunderte Meter neben dem Grundriss (Rennweg-
+# Phantomraum #126, Baufeld-4OG bei y≈3.5e11). Blindes min/max nimmt sie mit
+# und verdirbt die Dekaden-Wahl in `_calibrate_factor`.
+_SPAN_PERZENTIL = 0.02
+
+
+def _wand_punkte(space, wall_layers: frozenset[str],
+                 tiefe: int = 0) -> tuple[list[float], list[float]]:
+    """Stützpunkte der Wand-Layer, AUCH innerhalb von Blöcken.
+
+    Ohne den Block-Abstieg sieht die Kalibrierung bei Plänen, deren Wände nur
+    in Blockdefinitionen stecken, gar nichts (Baufeld 1OG/2OG/4OG: 0 Punkte)
+    und fällt auf ``$INSUNITS`` zurück — das dort 6 (Meter) meldet, obwohl die
+    Zeichnung in mm vorliegt. Ergebnis war Faktor 1000 statt 1.
+    """
     xs: list[float] = []
     ys: list[float] = []
     for e in space:
+        t = e.dxftype()
+        if t == "INSERT" and tiefe < 3:
+            try:
+                bx, by = _wand_punkte(e.virtual_entities(), wall_layers, tiefe + 1)
+            except Exception:  # noqa: BLE001, S112 — kaputte Block-Referenz überspringen
+                continue
+            xs += bx
+            ys += by
+            continue
         if e.dxf.layer not in wall_layers:
             continue
-        t = e.dxftype()
         if t == "LINE":
             xs += [e.dxf.start[0], e.dxf.end[0]]
             ys += [e.dxf.start[1], e.dxf.end[1]]
         elif t == "LWPOLYLINE":
             for p in e.get_points("xy"):
                 xs.append(p[0]); ys.append(p[1])
+        elif t == "POLYLINE":
+            for v in e.vertices:
+                xs.append(v.dxf.location[0]); ys.append(v.dxf.location[1])
+    return xs, ys
+
+
+def _perzentil(werte: list[float], q: float) -> float:
+    s = sorted(werte)
+    i = min(len(s) - 1, max(0, round(q * (len(s) - 1))))
+    return s[i]
+
+
+def _raw_wall_span(space, wall_layers: frozenset[str]) -> float:
+    """Wand-Ausdehnung (dx/dy) in Quell-Einheiten, ausreißer-robust.
+
+    Statt min/max das 2–98-%-Fenster: eine Handvoll Plankopf-/Phantom-Punkte
+    kippt die Dekaden-Wahl sonst um Faktor 10–1000 (Baufeld, s. `_wand_punkte`).
+    """
+    xs, ys = _wand_punkte(space, wall_layers)
     if not xs:
         return 0.0
-    return max(max(xs) - min(xs), max(ys) - min(ys))
+    lo, hi = _SPAN_PERZENTIL, 1.0 - _SPAN_PERZENTIL
+    return max(_perzentil(xs, hi) - _perzentil(xs, lo),
+               _perzentil(ys, hi) - _perzentil(ys, lo))
 
 
 _DOOR_MM = 900.0         # Tür-Blattbreite ≈ Schwenkbogen-Radius (Kalibrier-Anker)

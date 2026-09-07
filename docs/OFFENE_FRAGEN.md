@@ -325,3 +325,62 @@ natürliche Naht zu Leonis' Aufheller-Platzierung, bräuchte aber
 das zu früh. Die Erkennung liegt deshalb als reiner Prüfstrecken-Output im
 Bericht (Abschnitt „Außenbereich"). Der Antrag geht raus, sobald Leonis den
 Aufheller wirklich abhängig davon setzen will.
+
+## Baufeld-Crash: nicht Ausreißer-Extents, sondern falsche mm-Kalibrierung (2026-09-08, Selman)
+
+Leonis meldete am 2026-09-07 (COORDINATION.md): Baufeld-4OG crasht die
+Stempel-Flutung mit einem 2,56-TiB-Raster; Hauptinhalt bei y ≈ 3,475e11 mm,
+Vermutung „zwei Cluster → ausreißer-robuste Extents nötig".
+
+**Nachgemessen: die Cluster-Hypothese trägt nicht.** Die Wandkörper des 4OG
+liegen NICHT in zwei kompakten Haufen, sondern durchgehend über 72–85 km
+verteilt. Jede Lückenteilung lässt beide Seiten riesig (größte Lücke in x:
+1065 m, teilt 1950/185 Körper — die 1950 spannen dann immer noch 72 460 m).
+Ein Cluster-Filter hätte hier nichts gerettet.
+
+**Die Ursache liegt eine Stufe früher, in `dxf_load._calibrate_factor`.**
+Der mm-Faktor wird aus `_raw_wall_span` abgeleitet. Diese Funktion sah nur
+Modelspace-Entities auf Wand-Layern. Bei Baufeld 1OG/2OG/4OG liegen dort aber
+nur INSERTs (die Wand-Linien stecken in der Blockdefinition) → 0 Punkte →
+`raw_span = 0` → keine Dekade plausibel → Fallback auf `$INSUNITS`. Das meldet
+6 (Meter), obwohl die Zeichnung in mm vorliegt → **Faktor 1000**. Der
+Terabyte-Raster ist die Folge, nicht die Ursache.
+
+Messwerte je Geschoss (Faktor vorher → nachher, Wandkörper-Spannweite):
+
+| Geschoss | Faktor alt | Spannweite alt | Faktor neu | Status vorher |
+|---|--:|--:|--:|---|
+| 1OG | 1000 | 83 310 m | 1 | Absturz (2.60 TiB) |
+| 2OG | 1000 | 82 910 m | 1 | Absturz (2.58 TiB) |
+| 3OG | 10 | 819 m | 1 | still 10× falsch |
+| 4OG | 1000 | 81 911 m | 1 | Absturz (2.56 TiB) |
+| 5OG | 1 | 82 m | 1 | ok |
+| 6OG | 10 | 819 m | 1 | still 10× falsch |
+| EG | 1 | 87 m | 1 | ok |
+| UG | 1 | 87 m | 1 | ok |
+
+**Fünf von acht Geschossen waren betroffen, nicht eines** — und die beiden
+10×-Fälle sind die unangenehmeren: sie rechneten ohne Absturz mit falschem
+Maßstab weiter.
+
+**Fix (zwei Teile):**
+1. `_raw_wall_span` steigt jetzt in Blöcke ab (`_wand_punkte`, Tiefe ≤ 3) und
+   misst die Spannweite über ein 2–98-%-Perzentil-Fenster statt min/max.
+   Damit fallen Plankopf-/Phantom-Punkte heraus (dieselbe Fehlerklasse wie der
+   Rennweg-Phantomraum #126). Alle acht Baufeld-Geschosse landen auf Faktor 1
+   bei einheitlich 82–91 m Spannweite.
+2. `flute_stempel` hat eine Reißleine (`_MAX_RASTER_ZELLEN = 5e8`, ~477 MiB
+   bool): unplausible Extents → `RuntimeWarning` + keine gefluteten Räume,
+   statt den ganzen Parse zu verlieren. Zum Vergleich: Muthgasse E2, der
+   größte Plan im Repo, braucht 4.6e7 Zellen.
+
+**Nachweis, dass die Bestandspläne unberührt bleiben** (die entscheidende
+Bedingung, vor der Umsetzung gemessen): Barawitzka 1000, Mollgasse 1000,
+Muthgasse 10, Rennweg EG/OG3 je 1 — alle fünf Faktoren identisch zu vorher.
+Volle Suite unverändert grün.
+
+**Offen:** Die Baufeld-Pläne liegen nur als `Projekte/Baufeld_E2.zip` im Repo;
+`tests/naht/test_soll_baufeld.py` skippt deshalb. Die Messungen oben stammen
+aus einer temporären Entpackung außerhalb des Repos. Wer die Familie dauerhaft
+in die Prüfstrecke nehmen will, muss die Geschosse nach `Projekte/_eingang/`
+legen — dann greifen die Soll-Nahttests wie bei den anderen vier Familien.
