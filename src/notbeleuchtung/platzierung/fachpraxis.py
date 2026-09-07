@@ -25,10 +25,23 @@ from dataclasses import dataclass
 
 from notbeleuchtung.hauptengine.contracts import Platzierung, RaumModell
 
-from .geometry import point_in_polygon
+from .bausteine import AGV_SV_F as _AGV_SV_F
+from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
+from .bausteine import building_assigner as _building_assigner
+from .geometry import find_center_visual, point_in_polygon
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
+
+#: Owner-Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte
+#: an der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
+#: auffindbar bleiben. Kanonische Vokabular-Typen (docs/VOKABULAR.md).
+_TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM"}
+QUELLE_TUERLEUCHTE = "fachpraxis: tuerleuchte-technik-muell"
+#: Montagehöhe der Tür-Sicherheitsleuchte (über der Tür; ≥ EN-1838-Mindesthöhe 2 m).
+TUERLEUCHTE_HOEHE_MM = 2400.0
+#: Erschließungs-Raumtypen — eine Tür DORTHIN ist die „Ausgangs"-Tür des Raums.
+_ERSCHLIESSUNG = _KORRIDOR_TYPEN | {"STIEGENHAUS"}
 
 
 @dataclass(frozen=True)
@@ -108,6 +121,72 @@ def aufheller_je_rz(
                 circuit_hint=p.circuit_hint,
                 covers_segment=[],
                 norm_quelle=QUELLE_AUFHELLER,
+            )
+        )
+    return out
+
+
+def _tuer_des_raums(raum: RaumModell, r):
+    """Die (Haupt-)Tür eines Raums oder None.
+
+    Reihenfolge: bevorzugt eine Tür, die in einen Erschließungsraum (GANG/Flur/
+    Stiegenhaus) führt — das ist die „Ausgangs"-Tür; sonst die erste referenzierte
+    Tür; sonst geometrisch die dem Raum-Zentrum nächste Tür, die im Raumpolygon
+    liegt. Fehlt jede Tür-Information, None (der Aufrufer platziert dann nichts —
+    fail-closed, keine Leuchte an geratener Stelle).
+    """
+    typen = {x.id: (x.raum_typ or "").upper() for x in raum.raeume}
+    referenziert = [t for t in raum.tueren if r.id in (t.von_raum, t.nach_raum)]
+    if referenziert:
+        def _zielraum(t):
+            return t.nach_raum if t.von_raum == r.id else t.von_raum
+        erschliessung = [
+            t for t in referenziert
+            if typen.get(_zielraum(t) or "", "") in _ERSCHLIESSUNG
+        ]
+        return (erschliessung or referenziert)[0]
+    if len(r.polygon_mm) >= 3:
+        drin = [t for t in raum.tueren if point_in_polygon(t.xy_mm, r.polygon_mm)]
+        if drin:
+            cx, cy = find_center_visual(r.polygon_mm)
+            return min(drin, key=lambda t: (t.xy_mm[0] - cx) ** 2 + (t.xy_mm[1] - cy) ** 2)
+    return None
+
+
+def tuerleuchte_pflichtraeume(raum: RaumModell) -> list[Platzierung]:
+    """Owner-Regel 2026-09-07: TECHNIK/MUELLRAUM bekommen IMMER eine Sicherheits-
+    leuchte an der Tür.
+
+    Eine Leuchte je Pflichtraum, gesetzt an der (Haupt-)Tür des Raums (`bei der
+    Tür`). Diese Räume sind fensterlose Innen-/Nebenräume und liegen meist NICHT
+    auf dem erkannten Fluchtweg — deshalb greift keine der norm-getriebenen
+    Strategien, und die Praxisregel setzt die Leuchte explizit. Trägt der Raum
+    keine bestimmbare Tür, wird nichts gesetzt (fail-closed — keine Leuchte an
+    geratener Stelle).
+    """
+    pflicht = [r for r in raum.raeume if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN]
+    if not pflicht:
+        return []
+    assign_building = _building_assigner(
+        [find_center_visual(r.polygon_mm)[0] for r in raum.raeume if len(r.polygon_mm) >= 3]
+    )
+    out: list[Platzierung] = []
+    for r in pflicht:
+        tuer = _tuer_des_raums(raum, r)
+        if tuer is None:
+            continue
+        out.append(
+            Platzierung(
+                xy_mm=(tuer.xy_mm[0], tuer.xy_mm[1]),
+                catalog_key=AUFHELLER_KEY,
+                rotation_deg=0.0,
+                mirror_x=False,
+                height_mm=TUERLEUCHTE_HOEHE_MM,
+                kind="sicherheitsleuchte",
+                richtung="gerade",
+                circuit_hint=f"AGV-{assign_building(tuer.xy_mm[0])}-F{_AGV_SV_F}",
+                covers_segment=[],
+                norm_quelle=QUELLE_TUERLEUCHTE,
             )
         )
     return out
