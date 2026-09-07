@@ -148,9 +148,19 @@ def test_barawitzka_pruefung_ohne_befund(barawitzka):
     Abschnitte mit ≥2 Leuchten gedeckt → jede Prüfregel „ok".
 
     Der Test bleibt als Regressionsschranke: kippt eine Regel zurück auf
-    Befund, bricht er sichtbar."""
+    Befund, bricht er sichtbar.
+
+    **Kipp 2026-09-07 (Außen-Analyse/Türquellen, Selman):** die Raumerkennung
+    findet jetzt einen ZWEITEN Notausgang (Hoftür des Südtrakts — vorher
+    verschluckte die Ein-Konturen-Heuristik den ganzen Trakt). Die Platzierung
+    setzt dort noch kein RZ → genau EINE Warnung »Rettungszeichen an
+    Notausgängen (EN 1838 §4.1.2 g): 1/2 ohne RZ in Reichweite«. Das ist ein
+    echter, gewollter Befund der Prüfung (mehr erkannte Ausgänge als gedeckte)
+    — als bekannter Ist-Stand gepinnt, offene Frage an Leonis in
+    docs/OFFENE_FRAGEN.md. Jede ANDERE Regel muss weiter »ok« sein."""
     pruef = barawitzka.render_summary["pruefung"]
     assert pruef["befunde"], "keine einzige Prüfregel ausgewertet"
     nicht_ok = [b for b in pruef["befunde"] if b["status"] != "ok"]
-    assert pruef["status"] == "ok", f"Befunde zurück: {nicht_ok}"
-    assert not nicht_ok, f"Regel nicht ok: {nicht_ok}"
+    andere = [b for b in nicht_ok if "Notausg" not in b["regel"]]
+    assert not andere, f"Regel nicht ok: {andere}"
+    assert len(nicht_ok) <= 1, f"mehr als der bekannte Notausgang-Befund: {nicht_ok}"

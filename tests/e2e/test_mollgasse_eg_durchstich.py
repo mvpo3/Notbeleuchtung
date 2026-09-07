@@ -80,7 +80,12 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")
     sl = sum(1 for p in plzg if p.kind == "sicherheitsleuchte")
-    assert 10 <= rz <= 22, f"RZ={rz} außerhalb des erwarteten Bandes"
+    # RZ-Obergrenze 22 → 30 am 07.09.2026 (Selman, Außen-Analyse/Türquellen):
+    # das EG hat jetzt 10 begründete final_exits (Hof-/Gartentüren Cluster A+B,
+    # Durchfahrten — jede Tür trägt `quelle`) statt 5 → mehr Ausgangs- und
+    # Richtungs-RZ (Ist 26). Kein Regress: die Untergrenze hält quasi-leere
+    # Ergebnisse weiter draußen.
+    assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
     assert 15 <= sl <= 40, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"
 

@@ -96,3 +96,15 @@ def test_soll_raeume_tueren_ausgaenge(rm):
 def test_soll_raeume_flaechendeckend_typisiert(rm):
     typisiert = sum(1 for r in rm.raeume if r.raum_typ)
     assert typisiert >= 90, f"nur {typisiert} Räume typisiert"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Muthgasse E2 "
+    "2026-09-07: 8 % (Folge der Stempel↔Raum-Lücke oben: 161× "
+    "beide_seiten_untypisiert; Gründe-Tabelle in bericht.md)",
+)
+def test_soll_90_prozent_tueren_typisiert(rm):
+    typ = sum(1 for t in rm.tueren if t.tuer_detail)
+    assert rm.tueren and typ / len(rm.tueren) >= 0.9, (
+        f"nur {typ}/{len(rm.tueren)} Türen typisiert")
