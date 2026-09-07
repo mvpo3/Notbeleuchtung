@@ -56,12 +56,13 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-14 / 25 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+13 / 27 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang |
 |---|---|---|---|--:|---|
 | tuer_1 | raum_4 | AUSSEN | balkontuer | 790 | — |
 | tuer_2 | raum_3 | raum_3 | zimmertuer | 980 | — |
+| tuer_3 | KEIN_RAUM | KEIN_RAUM | — | 980 | — |
 | durchgang_1 | raum_1 | raum_2 | zimmertuer | 3812 | — |
 | durchgang_2 | raum_1 | raum_2 | zimmertuer | 821 | — |
 | durchgang_3 | raum_1 | raum_6 | — | 2198 | — |
@@ -74,23 +75,24 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_10 | raum_3 | raum_4 | zimmertuer | 3207 | — |
 | durchgang_11 | raum_3 | raum_5 | zimmertuer | 3511 | — |
 | durchgang_12 | raum_3 | rest_4 | — | 1204 | — |
-| durchgang_13 | raum_4 | raum_9 | balkontuer | 1100 | — |
-| durchgang_14 | raum_4 | raum_10 | wohnungseingang | 3104 | — |
-| durchgang_15 | raum_5 | rest_4 | — | 1341 | — |
-| durchgang_16 | raum_5 | rest_4 | — | 2920 | — |
-| durchgang_17 | raum_6 | raum_10 | — | 3641 | — |
-| durchgang_18 | raum_6 | rest_1 | — | 1221 | — |
-| durchgang_19 | raum_7 | raum_10 | wohnungseingang | 2114 | — |
-| durchgang_20 | raum_7 | rest_2 | — | 1627 | — |
-| durchgang_21 | raum_8 | rest_4 | — | 1983 | — |
-| durchgang_22 | raum_10 | rest_2 | — | 1684 | — |
-| durchgang_23 | raum_10 | rest_3 | stiegenhaustuer | 1438 | — |
+| durchgang_13 | raum_4 | raum_10 | wohnungseingang | 3104 | — |
+| durchgang_14 | raum_5 | rest_4 | — | 1341 | — |
+| durchgang_15 | raum_5 | rest_4 | — | 2920 | — |
+| durchgang_16 | raum_6 | raum_10 | — | 3641 | — |
+| durchgang_17 | raum_6 | rest_1 | — | 1221 | — |
+| durchgang_18 | raum_7 | raum_10 | wohnungseingang | 2114 | — |
+| durchgang_19 | raum_7 | rest_2 | — | 1627 | — |
+| durchgang_20 | raum_8 | rest_4 | — | 1983 | — |
+| durchgang_21 | raum_10 | rest_2 | — | 1684 | — |
+| durchgang_22 | raum_10 | rest_3 | stiegenhaustuer | 1438 | — |
+| aussenoeffnung_1 | rest_3 | AUSSEN | — | 822 | — |
+| aussenoeffnung_2 | rest_3 | AUSSEN | — | 2473 | ja |
 
 ## Ausgänge (1)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
-| exit_durchgang_23 | stair_exit | 12551.93 | 356218.24 |
+| exit_durchgang_22 | stair_exit | 12551.93 | 356218.24 |
 
 ## Fluchtweg-Segmente (4)
 
@@ -98,10 +100,10 @@ Quellen: GRAPH: 4
 
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
-| seg_graph_durchgang_5 | GRAPH | 6.4 | exit | exit_durchgang_23 |
-| seg_graph_durchgang_7 | GRAPH | 6.4 | exit | exit_durchgang_23 |
-| seg_graph_durchgang_14 | GRAPH | 2.1 | exit | exit_durchgang_23 |
-| seg_graph_durchgang_19 | GRAPH | 6.5 | exit | exit_durchgang_23 |
+| seg_graph_durchgang_5 | GRAPH | 6.4 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_7 | GRAPH | 6.4 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_13 | GRAPH | 2.1 | exit | exit_durchgang_22 |
+| seg_graph_durchgang_18 | GRAPH | 6.5 | exit | exit_durchgang_22 |
 
 ## Wohnungen (2)
 
@@ -112,10 +114,10 @@ Quellen: GRAPH: 4
 
 | Tür | Weglänge m | Quelle | Ausgang |
 |---|--:|---|---|
-| durchgang_5 | 6.4 | GRAPH | exit_durchgang_23 |
-| durchgang_7 | 6.4 | GRAPH | exit_durchgang_23 |
-| durchgang_14 | 2.1 | GRAPH | exit_durchgang_23 |
-| durchgang_19 | 6.5 | GRAPH | exit_durchgang_23 |
+| durchgang_5 | 6.4 | GRAPH | exit_durchgang_22 |
+| durchgang_7 | 6.4 | GRAPH | exit_durchgang_22 |
+| durchgang_13 | 2.1 | GRAPH | exit_durchgang_22 |
+| durchgang_18 | 6.5 | GRAPH | exit_durchgang_22 |
 
 ## Leuchten je Nutzungsklasse
 
@@ -149,4 +151,18 @@ Quellen: GRAPH: 4
 
 - keine
 
-Laufzeit: 50.2 s
+## Kreuzcheck Fluchtweglinien ↔ Endausgänge
+
+Restweg im EG (Rennweg_EG.dxf): 4.6–13.6 m (Stiegenhaustür → nächster final_exit)
+
+0 Linien-Endpunkte an der Außenkante, davon 0 mit final_exit ≤ 1.5 m gedeckt.
+
+### Untypisierte Türen — Gründe
+
+| Grund | Anzahl |
+|---|--:|
+| unbekannte_kombination | 10 |
+| tuer_in_schacht | 3 |
+| tuer_ins_nichts | 1 |
+
+Laufzeit: 58.4 s
