@@ -11,6 +11,7 @@ sauberen, self-contained Port-Helfer (``._port.parsers.room_faces``,
 from __future__ import annotations
 
 from shapely.geometry import Point, Polygon
+from shapely.ops import unary_union
 
 from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
@@ -189,5 +190,10 @@ class ArchitekturRaumProvider:
         )
         # Kreuzcheck Fluchtweglinien ↔ final_exit — Prüfstrecken-Output
         # (Warnungen/Kandidaten/unbenutzte Exits), bewusst NICHT im Contract.
-        self.letzter_kreuzcheck = kreuzcheck(modell, kontur)
+        # Kante = echte GEBÄUDE-Außenkante (Komponenten-Konturen), damit
+        # Außenweg-Endpunkte im Gelände nicht zählen (Mollgasse: ~95 Stück).
+        kante = None
+        if aussen is not None and aussen.komponenten:
+            kante = unary_union([p.exterior for p in aussen.komponenten])
+        self.letzter_kreuzcheck = kreuzcheck(modell, kontur, kante)
         return modell

@@ -25,6 +25,7 @@ from .tuer_zuordnung import AUSSEN
 XY = tuple[float, float]
 
 _KANTE_NAH_MM = 1500.0     # Linien-Endpunkt „an der Außenkante"
+_SNAP_MM = 100.0           # Netz-Snapping für die Grad-1-Endpunktbestimmung
 _EXIT_NAH_MM = 1500.0      # final_exit „deckt" einen Endpunkt
 _KANDIDAT_SUCH_MM = 3000.0  # Suchradius für die nächste Öffnung in der Außenwand
 
@@ -48,19 +49,38 @@ class KreuzcheckErgebnis:
     unbenutzte_exits: list[str] = field(default_factory=list)
 
 
-def kreuzcheck(modell: RaumModell, kontur) -> KreuzcheckErgebnis:
-    """Fluchtweglinien ↔ final_exit-Kreuzprüfung (s. Modul-Docstring)."""
+def _snap(p: XY) -> tuple[int, int]:
+    return (round(p[0] / _SNAP_MM), round(p[1] / _SNAP_MM))
+
+
+def kreuzcheck(modell: RaumModell, kontur, kante=None) -> KreuzcheckErgebnis:
+    """Fluchtweglinien ↔ final_exit-Kreuzprüfung (s. Modul-Docstring).
+
+    ``kante`` = GEBÄUDE-Außenkante (Linien-Geometrie). Ohne sie fällt die
+    Prüfung auf ``kontur.boundary`` zurück — die enthält aber auch die
+    Ränder der ausgeschnittenen AUSSEN-Flächen (Hof-Wege!), wodurch
+    Außenweg-Endpunkte mitten im Gelände fälschlich zählen würden.
+    """
     erg = KreuzcheckErgebnis()
     if kontur is None or kontur.is_empty:
         return erg
-    kante = kontur.boundary
+    if kante is None:
+        kante = kontur.boundary
     finals = [a for a in modell.ausgaenge if a.typ == "final_exit"]
 
     # ── 1. Linien-Endpunkte an der Außenkante brauchen einen final_exit ──
-    for s in modell.zirkulation.segmente:
-        if s.quelle != "LINIE" or len(s.polyline_mm) < 2:
-            continue
+    # Nur ECHTE Weg-Enden (Grad 1 im gesnappten Linien-Netz): wo Segmente
+    # aneinanderstoßen oder eine Linie weiterläuft, endet kein Fluchtweg.
+    grad: dict[XY, int] = {}
+    linien = [s for s in modell.zirkulation.segmente
+              if s.quelle == "LINIE" and len(s.polyline_mm) >= 2]
+    for s in linien:
+        for p in s.polyline_mm:
+            grad[_snap(p)] = grad.get(_snap(p), 0) + 1
+    for s in linien:
         for p in (s.polyline_mm[0], s.polyline_mm[-1]):
+            if grad.get(_snap(p), 0) != 1:
+                continue
             if kante.distance(Point(p)) > _KANTE_NAH_MM:
                 continue
             erg.endpunkte_aussenkante.append(p)
