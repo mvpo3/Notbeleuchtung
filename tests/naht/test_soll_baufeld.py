@@ -23,11 +23,11 @@ def rm():
     return ArchitekturRaumProvider().parse(str(dxfs[0]), "EG")
 
 
-@pytest.mark.xfail(strict=True, reason="Baufeld nie gegen die Erkennung gelaufen — Soll ungeprüft")
 def test_soll_mindestens_ein_ausgang(rm):
+    # 2026-09-07: xfail(strict) entfernt — Fachteile 1–3 liefern am Baufeld
+    # Ausgänge + Segmente (5OG: 7 Ausgänge/262 Segmente), Solls bestehen echt.
     assert len(rm.ausgaenge) >= 1, "kein Ausgang erkannt"
 
 
-@pytest.mark.xfail(strict=True, reason="Baufeld nie gegen die Erkennung gelaufen — Soll ungeprüft")
 def test_soll_mindestens_ein_segment(rm):
     assert len(rm.zirkulation.segmente) >= 1, "kein Fluchtweg-Segment erkannt"
