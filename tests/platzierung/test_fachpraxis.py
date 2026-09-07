@@ -14,6 +14,7 @@ from notbeleuchtung.platzierung.fachpraxis import (
     AUFHELLER_KEY,
     QUELLE_AUFHELLER,
     QUELLE_TUERLEUCHTE,
+    TUERLEUCHTE_KEY,
     FachpraxisRegeln,
     aufheller_je_rz,
     tuerleuchte_pflichtraeume,
@@ -132,9 +133,11 @@ def test_tuerleuchte_je_pflichtraum_an_der_tuer(typ):
     out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ))
     assert len(out) == 1
     p = out[0]
-    assert p.kind == "sicherheitsleuchte"
-    assert p.catalog_key == AUFHELLER_KEY
+    assert p.kind == "sicherheitsleuchte"    # Rolle: Raum-SL (keine Antipanik-Zone)
+    assert p.catalog_key == TUERLEUCHTE_KEY  # Symbol: Antipanik-AP3 (Universal-Leuchte)
+    assert p.catalog_key == "antipanik_leuchte"
     assert p.norm_quelle == QUELLE_TUERLEUCHTE
+    assert p.norm_quelle.startswith("Referenz-Praxis:")
     assert p.xy_mm == (5000.0, 0.0)          # exakt an der Tür
     assert "F13" in p.circuit_hint           # getrennter Sicherheitskreis
     assert p.height_mm >= 2000.0             # EN-1838-Mindesthöhe

@@ -33,11 +33,21 @@ from .geometry import find_center_visual, point_in_polygon
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
 
-#: Owner-Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte
-#: an der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
+#: Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte an
+#: der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
 #: auffindbar bleiben. Kanonische Vokabular-Typen (docs/VOKABULAR.md).
 _TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM"}
-QUELLE_TUERLEUCHTE = "fachpraxis: tuerleuchte-technik-muell"
+#: Symbol = din-AP3-Antipanikleuchte, die in der SICHERHEITSLEUCHTEN-Rolle als
+#: Universal-Leuchte verwendet wird (Rolle ≠ Produkt) — die knowledge-gestützte
+#: Darstellung der Raum-Sicherheitsbeleuchtung. KEIN Aufheller (Zusatz-/Fülllicht).
+TUERLEUCHTE_KEY = "antipanik_leuchte"
+#: Referenz-Praxis (Owner-Wahl „immer"): dokumentierte Regel SL-13 in
+#: normwissen/data/platzierung_regeln.yaml (leuchtenart sicherheitsleuchte) +
+#: INOTEC HB2026 (Technikräume 5 lx) + EN 1838:2025 §5.4 + reale Elektro-LB §5.1.23.
+QUELLE_TUERLEUCHTE = (
+    "Referenz-Praxis: Technik-/Nebenraum-SL an der Tür "
+    "(INOTEC HB2026 · EN 1838:2025 §5.4 · Elektro-LB §5.1.23)"
+)
 #: Montagehöhe der Tür-Sicherheitsleuchte (über der Tür; ≥ EN-1838-Mindesthöhe 2 m).
 TUERLEUCHTE_HOEHE_MM = 2400.0
 #: Erschließungs-Raumtypen — eine Tür DORTHIN ist die „Ausgangs"-Tür des Raums.
@@ -154,15 +164,17 @@ def _tuer_des_raums(raum: RaumModell, r):
 
 
 def tuerleuchte_pflichtraeume(raum: RaumModell) -> list[Platzierung]:
-    """Owner-Regel 2026-09-07: TECHNIK/MUELLRAUM bekommen IMMER eine Sicherheits-
-    leuchte an der Tür.
+    """Referenz-Praxis 2026-09-07: TECHNIK/MUELLRAUM bekommen IMMER eine
+    Sicherheitsleuchte an der Tür.
 
     Eine Leuchte je Pflichtraum, gesetzt an der (Haupt-)Tür des Raums (`bei der
-    Tür`). Diese Räume sind fensterlose Innen-/Nebenräume und liegen meist NICHT
-    auf dem erkannten Fluchtweg — deshalb greift keine der norm-getriebenen
-    Strategien, und die Praxisregel setzt die Leuchte explizit. Trägt der Raum
-    keine bestimmbare Tür, wird nichts gesetzt (fail-closed — keine Leuchte an
-    geratener Stelle).
+    Tür`). Symbol = Antipanik-AP3 (Universal-Sicherheitsleuchte, Rolle ≠ Produkt),
+    `kind="sicherheitsleuchte"` (Rolle: Raum-Sicherheitsbeleuchtung, KEINE
+    Antipanik-Zone). Diese Räume sind fensterlose Innen-/Nebenräume und liegen
+    meist NICHT auf dem erkannten Fluchtweg — deshalb greift keine norm-getriebene
+    Strategie, und die Regel setzt die Leuchte explizit. Trägt der Raum keine
+    bestimmbare Tür, wird nichts gesetzt (fail-closed — keine Leuchte an geratener
+    Stelle). Quelle: `QUELLE_TUERLEUCHTE` (Referenz-Praxis, s. o.).
     """
     pflicht = [r for r in raum.raeume if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN]
     if not pflicht:
@@ -178,7 +190,7 @@ def tuerleuchte_pflichtraeume(raum: RaumModell) -> list[Platzierung]:
         out.append(
             Platzierung(
                 xy_mm=(tuer.xy_mm[0], tuer.xy_mm[1]),
-                catalog_key=AUFHELLER_KEY,
+                catalog_key=TUERLEUCHTE_KEY,
                 rotation_deg=0.0,
                 mirror_x=False,
                 height_mm=TUERLEUCHTE_HOEHE_MM,
