@@ -268,6 +268,16 @@ def gate_summary(oib: OibBefund, floor: str = "", raum_ids: list[str] | None = N
             "UNGEKLÄRT (weder erforderlich noch nicht erforderlich), auch wenn ein "
             "anderer Gebäudeteil bestätigt ist."
         )
+    # Provider-Hinweise ÜBERNEHMEN (Ausgabelücken-Befund 2026-09-07): der
+    # NormProvider hängt seinen Audit-Trail an jedes OibErgebnis (u.a. den
+    # AStV-Parallelpfad, „ergänzt nur, senkt nie") — bisher fielen diese
+    # Hinweise hier weg und erreichten die Ausgabe nie. Mit Gebäudeteil-Präfix,
+    # dedupliziert, Reihenfolge der Ergebnisse bleibt erhalten.
+    for e in oib.ergebnisse:
+        for h in e.hinweise:
+            eintrag = f"[{e.gebaeudeteil_id}] {h}"
+            if eintrag not in hinweise:
+                hinweise.append(eintrag)
     hinweise.append(_HINWEIS_VERKEHR)
 
     block: dict = {
