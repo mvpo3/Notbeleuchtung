@@ -58,35 +58,35 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 13 / 27 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
-| ID | raum_a | raum_b | Typ | Breite mm | Notausgang |
-|---|---|---|---|--:|---|
-| tuer_1 | raum_4 | AUSSEN | balkontuer | 790 | — |
-| tuer_2 | raum_3 | raum_3 | zimmertuer | 980 | — |
-| tuer_3 | KEIN_RAUM | KEIN_RAUM | — | 980 | — |
-| durchgang_1 | raum_1 | raum_2 | zimmertuer | 3812 | — |
-| durchgang_2 | raum_1 | raum_2 | zimmertuer | 821 | — |
-| durchgang_3 | raum_1 | raum_6 | — | 2198 | — |
-| durchgang_4 | raum_1 | raum_7 | zimmertuer | 1749 | — |
-| durchgang_5 | raum_1 | raum_10 | wohnungseingang | 1448 | — |
-| durchgang_6 | raum_2 | raum_8 | zimmertuer | 1987 | — |
-| durchgang_7 | raum_2 | rest_3 | wohnungseingang | 1438 | — |
-| durchgang_8 | raum_2 | rest_4 | — | 1285 | — |
-| durchgang_9 | raum_2 | rest_4 | — | 1461 | — |
-| durchgang_10 | raum_3 | raum_4 | zimmertuer | 3207 | — |
-| durchgang_11 | raum_3 | raum_5 | zimmertuer | 3511 | — |
-| durchgang_12 | raum_3 | rest_4 | — | 1204 | — |
-| durchgang_13 | raum_4 | raum_10 | wohnungseingang | 3104 | — |
-| durchgang_14 | raum_5 | rest_4 | — | 1341 | — |
-| durchgang_15 | raum_5 | rest_4 | — | 2920 | — |
-| durchgang_16 | raum_6 | raum_10 | — | 3641 | — |
-| durchgang_17 | raum_6 | rest_1 | — | 1221 | — |
-| durchgang_18 | raum_7 | raum_10 | wohnungseingang | 2114 | — |
-| durchgang_19 | raum_7 | rest_2 | — | 1627 | — |
-| durchgang_20 | raum_8 | rest_4 | — | 1983 | — |
-| durchgang_21 | raum_10 | rest_2 | — | 1684 | — |
-| durchgang_22 | raum_10 | rest_3 | stiegenhaustuer | 1438 | — |
-| aussenoeffnung_1 | rest_3 | AUSSEN | — | 822 | — |
-| aussenoeffnung_2 | rest_3 | AUSSEN | — | 2473 | ja |
+| ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
+|---|---|---|---|--:|---|---|---|
+| tuer_1 | raum_4 | AUSSEN | balkontuer | 790 | — | arc |  |
+| tuer_2 | raum_3 | raum_3 | zimmertuer | 980 | — | arc |  |
+| tuer_3 | KEIN_RAUM | KEIN_RAUM | — | 980 | — | arc | tuer_ins_nichts |
+| durchgang_1 | raum_1 | raum_2 | zimmertuer | 3812 | — | durchgang |  |
+| durchgang_2 | raum_1 | raum_2 | zimmertuer | 821 | — | durchgang |  |
+| durchgang_3 | raum_1 | raum_6 | — | 2198 | — | durchgang | unbekannte_kombination |
+| durchgang_4 | raum_1 | raum_7 | zimmertuer | 1749 | — | durchgang |  |
+| durchgang_5 | raum_1 | raum_10 | wohnungseingang | 1448 | — | durchgang |  |
+| durchgang_6 | raum_2 | raum_8 | zimmertuer | 1987 | — | durchgang |  |
+| durchgang_7 | raum_2 | rest_3 | wohnungseingang | 1438 | — | durchgang |  |
+| durchgang_8 | raum_2 | rest_4 | — | 1285 | — | durchgang | unbekannte_kombination |
+| durchgang_9 | raum_2 | rest_4 | — | 1461 | — | durchgang | unbekannte_kombination |
+| durchgang_10 | raum_3 | raum_4 | zimmertuer | 3207 | — | durchgang |  |
+| durchgang_11 | raum_3 | raum_5 | zimmertuer | 3511 | — | durchgang |  |
+| durchgang_12 | raum_3 | rest_4 | — | 1204 | — | durchgang | unbekannte_kombination |
+| durchgang_13 | raum_4 | raum_10 | wohnungseingang | 3104 | — | durchgang |  |
+| durchgang_14 | raum_5 | rest_4 | — | 1341 | — | durchgang | unbekannte_kombination |
+| durchgang_15 | raum_5 | rest_4 | — | 2920 | — | durchgang | unbekannte_kombination |
+| durchgang_16 | raum_6 | raum_10 | — | 3641 | — | durchgang | unbekannte_kombination |
+| durchgang_17 | raum_6 | rest_1 | — | 1221 | — | durchgang | tuer_in_schacht |
+| durchgang_18 | raum_7 | raum_10 | wohnungseingang | 2114 | — | durchgang |  |
+| durchgang_19 | raum_7 | rest_2 | — | 1627 | — | durchgang | tuer_in_schacht |
+| durchgang_20 | raum_8 | rest_4 | — | 1983 | — | durchgang | unbekannte_kombination |
+| durchgang_21 | raum_10 | rest_2 | — | 1684 | — | durchgang | tuer_in_schacht |
+| durchgang_22 | raum_10 | rest_3 | stiegenhaustuer | 1438 | — | durchgang |  |
+| aussenoeffnung_1 | rest_3 | AUSSEN | — | 822 | — | oeffnung_aussenwand | unbekannte_kombination |
+| aussenoeffnung_2 | rest_3 | AUSSEN | — | 2473 | ja | oeffnung_aussenwand | unbekannte_kombination |
 
 ## Ausgänge (1)
 
@@ -151,6 +151,12 @@ Quellen: GRAPH: 4
 
 - keine
 
+## Außenbereich
+
+- Gebäude-Komponenten: 1 (Flächen m²: 191.4; Summe 191.4)
+- offene AUSSEN-Flächen: 4 (114.0 m²)
+- geschlossene Höfe (AUSSEN_GESCHLOSSEN): 0 (0.0 m²)
+
 ## Kreuzcheck Fluchtweglinien ↔ Endausgänge
 
 Restweg im EG (Rennweg_EG.dxf): 4.6–13.6 m (Stiegenhaustür → nächster final_exit)
@@ -165,4 +171,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.6 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 58.4 s
+Laufzeit: 51.6 s
