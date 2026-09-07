@@ -15,12 +15,17 @@ PLAN = Path("Projekte/_eingang/Mollgasse_EG.dxf")
 
 
 @pytest.fixture(scope="module")
-def rm():
+def provider():
     if not PLAN.exists():                        # pragma: no cover — CAD-Asset fehlt
         pytest.skip(f"Architekturplan nicht vorhanden: {PLAN}")
     from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
 
-    return ArchitekturRaumProvider().parse(str(PLAN), "EG")
+    return ArchitekturRaumProvider()
+
+
+@pytest.fixture(scope="module")
+def rm(provider):
+    return provider.parse(str(PLAN), "EG")
 
 
 def test_zwei_stiegenhaus_raeume(rm):
@@ -56,6 +61,70 @@ def test_keine_anker_in_liftpolygonen(rm):
     drin = [a.id for a in rm.anker
             if any(p.contains(Point(a.xy_mm)) for p in lifte)]
     assert not drin, f"Anker in Liftpolygonen: {drin[:5]}"
+
+
+def test_soll_hofausgaenge_cluster_a_und_b(rm):
+    """Scharf seit Außen-Analyse + Türquellen: der Hof ist AUSSEN (Wege ins
+    Freie über die nördl. Grundstücksgrenze + Garagentor-Ostkante), die echten
+    Türbögen der Hoftüren (Cluster A Innenhof-Osttrakt, Cluster B Südgarten)
+    werden final_exit (Ist 2026-09-07: 10 final_exit gesamt)."""
+    import math
+
+    final = [a.xy_mm for a in rm.ausgaenge if a.typ == "final_exit"]
+    cluster_a = (2689400.0, 1524600.0)   # Türbogen Innenhof-Osttrakt
+    cluster_b = (2688620.0, 1511090.0)   # Südgarten-Tür b800
+    for name, z in (("Cluster A", cluster_a), ("Cluster B", cluster_b)):
+        assert any(math.dist(z, p) < 1500.0 for p in final), (
+            f"kein final_exit an {name} {z}")
+
+
+def test_soll_alle_graph_wege_enden_am_final_exit(rm):
+    """Geschoss-Zielregel EG: jeder GRAPH-Weg endet an einem final_exit —
+    stair_exit ist nur Zwischenknoten (Ist 2026-09-07: 15/15)."""
+    exits = {a.id: a.typ for a in rm.ausgaenge}
+    graph = [s for s in rm.zirkulation.segmente if s.quelle == "GRAPH"]
+    assert graph, "keine GRAPH-Segmente"
+    falsch = [s.segment_id for s in graph
+              if exits.get(s.ziel_ausgang or "") != "final_exit"]
+    assert not falsch, f"GRAPH-Wege ohne final_exit-Ziel: {falsch[:5]}"
+
+
+def test_kreuzcheck_findet_endpunkte_an_der_aussenkante(provider, rm):
+    """Scharf: der Kreuzcheck findet die Grad-1-WEG-Enden an der Gebäude-
+    kante (Ist 2026-09-07: 43, davon Cluster A+B) und liefert je ungedecktem
+    Endpunkt einen notausgang_kandidat (Prüf-Output, kein Ausgang)."""
+    kc = provider.letzter_kreuzcheck
+    assert len(kc.endpunkte_aussenkante) >= 10
+    assert len(kc.kandidaten) == len(kc.warnungen)
+    # Kandidaten sind KEINE Ausgänge: keine Contract-Ausgangs-ID nötig.
+    assert all(k.typ == "notausgang_kandidat" for k in kc.kandidaten)
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll: final_exit-Menge deckt JEDEN Grad-1-Linien-Endpunkt an der "
+    "Außenkante (final_exit == Endpunktzahl) — Ist 2026-09-07: 3/43 gedeckt, "
+    "40 Kandidaten (der 09-WEG-Layer zeichnet viele Doppellinien-Stummel; "
+    "Dedup/Clustering der Endpunkte ist als offene Frage notiert)",
+)
+def test_soll_jeder_endpunkt_an_der_kante_hat_final_exit(provider, rm):
+    kc = provider.letzter_kreuzcheck
+    assert kc.endpunkte_aussenkante, "keine Endpunkte an der Außenkante"
+    assert not kc.warnungen, (
+        f"{len(kc.warnungen)}/{len(kc.endpunkte_aussenkante)} Endpunkte "
+        "ohne final_exit")
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Mollgasse EG "
+    "2026-09-07: 48 % (Haupt-Grund unbekannte_kombination: Nachbarräume ohne "
+    "Kanon-Typ; Gründe-Tabelle in bericht.md)",
+)
+def test_soll_90_prozent_tueren_typisiert(rm):
+    typ = sum(1 for t in rm.tueren if t.tuer_detail)
+    assert rm.tueren and typ / len(rm.tueren) >= 0.9, (
+        f"nur {typ}/{len(rm.tueren)} Türen typisiert")
 
 
 def test_soll_keine_leuchten_in_liftpolygonen():

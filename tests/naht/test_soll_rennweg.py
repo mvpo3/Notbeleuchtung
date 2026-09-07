@@ -94,6 +94,53 @@ def test_stiegenhaus_modell_mit_laufrichtung(rm):
     assert m.verbotszonen_mm
 
 
+PLAN_EG = Path("Projekte/_eingang/Rennweg_EG.dxf")
+
+
+@pytest.fixture(scope="module")
+def rm_eg():
+    if not PLAN_EG.exists():                     # pragma: no cover — CAD-Asset fehlt
+        pytest.skip(f"Architekturplan nicht vorhanden: {PLAN_EG}")
+    from notbeleuchtung.raumerkennung import ArchitekturRaumProvider
+
+    return ArchitekturRaumProvider().parse(str(PLAN_EG), "EG")
+
+
+def test_soll_eg_final_exit_via_text(rm_eg):
+    """Rennweg EG (Plan-Befund 2026-09: 'TÜRSCHLIESSER'-Text an einer
+    1340-mm-Lücke der Außenwand, KEIN Schwenkbogen, KEIN Block): die
+    Text-Türquelle (b) liefert die Tür, die Typisierung macht sie zum
+    hauseingang → ≥ 1 final_exit (Ist 2026-09-07: 3)."""
+    final = [a for a in rm_eg.ausgaenge if a.typ == "final_exit"]
+    assert final, "kein final_exit im EG"
+    quellen = {t.id: (t.quelle or "") for t in rm_eg.tueren}
+    begruendet = [a for a in final
+                  if "text:" in quellen.get(a.id.removeprefix("exit_"), "")
+                  or "windfang" in quellen.get(a.id.removeprefix("exit_"), "")]
+    assert begruendet, "kein final_exit mit Text-/Windfang-Begründung"
+
+
+def test_soll_eg_wege_enden_am_final_exit(rm_eg):
+    """Geschoss-Zielregel: im EG endet jeder GRAPH-Weg an einem final_exit."""
+    exits = {a.id: a.typ for a in rm_eg.ausgaenge}
+    graph = [s for s in rm_eg.zirkulation.segmente if s.quelle == "GRAPH"]
+    assert graph, "keine GRAPH-Segmente im EG"
+    falsch = [s.segment_id for s in graph
+              if exits.get(s.ziel_ausgang or "") != "final_exit"]
+    assert not falsch, f"GRAPH-Wege ohne final_exit-Ziel: {falsch[:5]}"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Rennweg EG "
+    "2026-09-07: 54 % (Gründe-Tabelle in bericht.md)",
+)
+def test_soll_eg_90_prozent_tueren_typisiert(rm_eg):
+    typ = sum(1 for t in rm_eg.tueren if t.tuer_detail)
+    assert rm_eg.tueren and typ / len(rm_eg.tueren) >= 0.9, (
+        f"nur {typ}/{len(rm_eg.tueren)} Türen typisiert")
+
+
 def test_keine_anker_in_wohnung_privat(rm):
     """Fachteil 2: Anker nur in Erschließung (Stiegenhaus/Gang), nie in
     WOHNUNG_PRIVAT-Räumen."""

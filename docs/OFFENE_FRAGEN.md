@@ -135,3 +135,37 @@ Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
   Definition ≤1 m + Rotations-Δ ≤10° (Panel-Achse mod 180); Zielbild ≥80 %
   als strict-xfail in `tests/naht/test_soll_referenzvergleich.py` —
   Ist-Quote siehe bericht.md/VERLAUF.
+
+## Fachliche Umsetzung Außen/Türquellen/Kreuzcheck (2026-09-07)
+
+- **AUSSEN_GESCHLOSSEN (Frage an Enis):** ein Hof MIT Außenanlagen-Indiz,
+  aber OHNE Weg ins Freie (alle Lücken ≤ 2.4 m, vom morphologischen
+  Schließen versiegelt) wird als `AUSSEN_GESCHLOSSEN` klassifiziert
+  (`raumerkennung/aussenbereich.py`): Türen dorthin werden NICHT AUSSEN,
+  es entsteht kein final_exit. Ist das normseitig richtig — oder braucht
+  ein geschlossener Hof eine eigene Behandlung (Sammelfläche, Antipanik)?
+- **Mollgasse Nord-Durchgänge — teilbeantwortet:** der Hof samt Wegen ist
+  jetzt AUSSEN; die Hoftüren Cluster A (Innenhof-Osttrakt) und Cluster B
+  (Südgarten) liefern final_exits (Ist EG: 10 final_exit, alle mit
+  `Tuer.quelle`-Begründung). Die Durchgänge an der nördl. Grundstücks-
+  grenze selbst tragen weiter keinen final_exit — der Kreuzcheck listet
+  sie als notausgang_kandidat (Prüf-Output).
+- **Kreuzcheck-Endpunkt-Dedup (offen):** der 09-WEG-Layer zeichnet viele
+  Doppellinien-Stummel; von 43 Grad-1-Endpunkten an der Gebäudekante sind
+  nur 3 durch final_exits gedeckt → 40 Kandidaten (viele davon Paare
+  ≤ 0.2 m). Ein Clustering der Endpunkte (z.B. 500 mm) würde die Liste
+  ehrlicher machen — bewusst nicht mehr in diesem Schnitt.
+- **Türen-Typisierungsquote:** Soll ≥ 90 % je Familie als strict-xfail in
+  tests/naht/ verankert. Ist 2026-09-07: Mollgasse 48 %, Barawitzka 53 %,
+  Rennweg EG 54 % — Hauptgrund `unbekannte_kombination` (Nachbarräume ohne
+  Kanon-Typ); Gründe-Tabelle je Plan in bericht.md
+  (`Tuer.untypisiert_grund`, Contract v1.3.0).
+- **Restweg im EG:** bericht.md nennt für OG-Pläne den Restweg
+  Stiegenhaustür→final_exit aus dem EG-Plan derselben Familie in
+  Projekte/_eingang (Rennweg_EG.dxf neu aufgenommen), sonst „unbekannt".
+- **RZ an neu erkannten Notausgängen (Frage an Leonis):** Barawitzka EG hat
+  seit der Außen-Analyse 2 Notausgänge; die Platzierung deckt nur einen →
+  Prüfregel »Rettungszeichen an Notausgängen (EN 1838 §4.1.2 g)« steht auf
+  Warnung (1/2 ohne RZ in Reichweite; gepinnt in
+  tests/e2e/test_familien_durchstich.py). Soll die Ausgangs-Priorität auch
+  Ausgänge in graph-getrennten Komponenten mit einem RZ versorgen?

@@ -33,13 +33,39 @@ def test_soll_final_exit(rm):
     assert any(a.typ == "final_exit" for a in rm.ausgaenge), "kein final_exit"
 
 
+def test_soll_zwei_final_exit(rm):
+    """Scharf seit der Außen-Analyse je Gebäude-Komponente (2 Trakte + Hof):
+    Hof-/Gartentüren des Südtrakts werden AUSSEN-seitig erkannt → ≥ 2
+    Endausgänge (Ist 2026-09-07: 2)."""
+    final = [a for a in rm.ausgaenge if a.typ == "final_exit"]
+    assert len(final) >= 2, f"nur {len(final)} final_exit"
+
+
 @pytest.mark.xfail(
     strict=True,
-    reason="Plan hat KEINE FLW-Linien (Farbe 96 = Katastergrenzen) — s. Modul-Docstring",
+    reason="Plan hat KEINE expliziten Fluchtweg-Linien: die 16 Farbe-96-Linien "
+    "sind KATASTERGRENZEN (Layer »Kataster Grenzen«, Analyse 2026-09, "
+    "docs/OFFENE_FRAGEN.md) — die alte »≥16 Segmente LINIE«-Erwartung ist "
+    "damit widerlegt und auf »explizite Linien vorhanden« umformuliert. Der "
+    "xfail bleibt als Zielbild für einen Plan-Nachtrag des Fachplaners stehen; "
+    "die LINIE-Quelle selbst ist generisch gebaut und greift auf anderen "
+    "Plänen (Mollgasse 103, Muthgasse 139).",
 )
-def test_soll_segmente_aus_expliziten_linien(rm):
+def test_soll_explizite_linien_vorhanden(rm):
     linie = [s for s in rm.zirkulation.segmente if s.quelle == "LINIE"]
-    assert len(linie) >= 16, f"nur {len(linie)} Segmente mit quelle LINIE"
+    assert linie, "keine Segmente mit quelle LINIE (explizite Fluchtweg-Linien)"
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Barawitzka 2026-09-07: "
+    "53 % (Haupt-Lücke: unbekannte_kombination/kein_nachbarraum, s. "
+    "untypisiert_grund-Tabelle in bericht.md)",
+)
+def test_soll_90_prozent_tueren_typisiert(rm):
+    typ = sum(1 for t in rm.tueren if t.tuer_detail)
+    assert rm.tueren and typ / len(rm.tueren) >= 0.9, (
+        f"nur {typ}/{len(rm.tueren)} Türen typisiert")
 
 
 def test_soll_brandschutztuer(rm):
