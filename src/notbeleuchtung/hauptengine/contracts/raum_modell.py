@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 XY = tuple[float, float]
 
-CONTRACT_VERSION = "1.2.0"
+CONTRACT_VERSION = "1.3.0"
 
 # v1.2.0 — rein additive, optionale Felder/Modelle (kein Erzeuger bricht):
 # Nutzungsklassen + Tür-Details + Stiegenhaus-/Anker-Modelle + Segment-Herkunft.
@@ -91,6 +91,12 @@ class Tuer(BaseModel):
     # v1.2.0 — Tür-Rolle (None = unbestimmt) + „Öffnung ohne Türblatt".
     tuer_detail: TuerDetail | None = None
     ohne_tuerblatt: bool = False
+    # v1.3.0 — Audit-Trail: Erkennungs-Quelle der Tür ('block' | 'arc' |
+    # 'arc_aussen' | 'durchgang' | 'oeffnung_aussenwand' | 'text:<Wort>' |
+    # 'doppelfluegel' | 'windfang' | …) und, falls keine Rolle bestimmbar,
+    # der Grund dafür (für die Gründe-Tabelle im Prüfbericht).
+    quelle: str | None = None
+    untypisiert_grund: str | None = None
 
 
 class Ausgang(BaseModel):
