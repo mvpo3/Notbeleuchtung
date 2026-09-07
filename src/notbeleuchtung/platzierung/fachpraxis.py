@@ -35,8 +35,15 @@ QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
 
 #: Regel 2026-09-07: diese Raumtypen bekommen IMMER eine Sicherheitsleuchte an
 #: der Tür — fensterlose Innen-/Nebenräume, bei Netzausfall muss die Tür
-#: auffindbar bleiben. Kanonische Vokabular-Typen (docs/VOKABULAR.md).
-_TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM"}
+#: auffindbar bleiben. TECHNIK/MUELLRAUM sind kanonische Vokabular-Typen
+#: (docs/VOKABULAR.md); KINDERWAGENRAUM ist der GEMEINSAME Kinderwagenraum im
+#: Wohnbau (Owner-Wahl, Referenz-Praxis), NICHT der private Wohnungs-Abstellraum.
+#: ⚠️ Naht Selman: raumerkennung/raumtyp.py ebnet `kinderwagen`→ABSTELLRAUM ein
+#: (STORAGE), d.h. auf ECHTEN Plänen trägt ein Kinderwagenraum heute
+#: `ABSTELLRAUM`, nicht `KINDERWAGENRAUM` — bis die Erkennung den Typ erhält,
+#: greift diese Regel nur, wo der Plan den Literal `KINDERWAGENRAUM` führt
+#: (docs/COORDINATION.md 2026-09-07).
+_TUERLEUCHTE_RAUMTYPEN = {"TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"}
 #: Symbol = din-AP3-Antipanikleuchte, die in der SICHERHEITSLEUCHTEN-Rolle als
 #: Universal-Leuchte verwendet wird (Rolle ≠ Produkt) — die knowledge-gestützte
 #: Darstellung der Raum-Sicherheitsbeleuchtung. KEIN Aufheller (Zusatz-/Fülllicht).
