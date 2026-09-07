@@ -4,6 +4,50 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-07, Session-Ende) — Sync + #127 + MEGA-Run (4 Slices auf Branches)
+
+**main lokal = origin + cbad667 (COORDINATION, UNGEPUSHT — Owner-GO zum Push holen).**
+
+**Erledigt heute:**
+1. **Sync:** Selman pushte 7 Commits direkt auf main — Fachteile 1–3 (Tür-Zuordnung/
+   Typisierung, Lift/Stiegenhaus/Anker/Verbotszonen, Prüfstrecke 05/06) inkl.
+   **RaumModell v1.2.0** (additiv: `tuer_detail`, Segment-`quelle/ziel_ausgang`,
+   `Anker.fluchtrichtung_grad`, `StiegenhausModell.verbotszonen_mm`). Suite 896 grün
+   (+2 XPASS s.u.).
+2. **#127 GEMERGT** (Owner-GO; vorher Ruff-Fix am Batch-Worker — CI-Lint war rot).
+3. **PR #128 offen, CI grün, Owner sagte WARTEN** (Pfeil-zur-Tür im GANG-Fallback +
+   Baufeld-Soll-xfails entstrickt — die kippen lokal als XPASS(strict), weil Selmans
+   Erkennung am Baufeld jetzt Ausgänge+Segmente liefert).
+4. **5OG-Reklamation FAKTISCH GELÖST durch Selmans Naht:** 5OG läuft im Anker-Pfad
+   (689/689 Türen mit von/nach_raum, 262 Segmente) → 12 RZ rotationsrichtig, ok.
+5. **Baufeld-Batch:** 5OG geliefert (DXF+PDF, %%EOF ok; UG/EG von gestern).
+   **1OG/3OG/4OG/6OG BLOCKIERT:** Quell-Pläne tragen Hauptinhalt bei y≈347.535 km
+   (Basispunkt-Versatz!) → `stempel_flutung.py:227` will 2,56-TiB-Raster (4OG fatal),
+   `rest_komponenten` fängt es (1OG), aber **`place` mahlt am 1OG >50 min** (Phantom-
+   Extents im Lux/Raster-Pfad = auch Leonis-Robustheits-Kandidat!). Befund an
+   @polatselman in docs/COORDINATION.md (Log 2026-09-07). Ops: Baufeld NIE parallel
+   rendern (RAM); >10-min-Renders via Monitor-Tool als Langläufer.
+6. **MEGA-Prompt (Owner: „wörtlich alle 4"), alle 4 Slices fertig, gestapelt,
+   UNGEPUSHT** (Vorgabe: kein Push/Merge/PR — Owner reviewt je Slice):
+   `slice-4.1-mollgasse-ug-referenz` (2e24832: GU-Plan-Referenz 1KG 11 RZ / 2KG
+   30 RZ+2 SL, Fixtures + docs/analyse/, kein Aufheller-Typ im GU-Plan!) →
+   `slice-3.1-pfeilrichtung` (1ab3b63: symbols/orientation.py = EIN Rotations-
+   rahmen; Befund „oben rendert rechts" gefixt; rechts-Block ist echter X-Spiegel
+   — PORT_LOG stimmt) → `slice-2.3-fachpraxis…` (754145a: **G3 = Tür-RZ-links-Regel
+   nach Messung VERWORFEN** (Owner in-Session), **G4 = Aufheller B1 auf Owner-Wort
+   GEBAUT**: je RZ ein Aufheller 500 mm Richtung Rauminneres, `fachpraxis.py`,
+   norm_quelle-Präfix `fachpraxis:`) → `slice-3.4-layout-vorlage-1-50` (995f5c7:
+   opt-in `template_path`, Layout1-Viewport exakt 1:50, G5/G6 als Fehlerklassen;
+   Vorlage hat KEINE ATTRIBs). Report: `reports/mega_run_2026-09-07.md` (gitignored).
+   Suite auf 3.4-Spitze: **952 grün**, ruff clean.
+
+**OFFEN für morgen:** ① Owner-Review der 4 Slice-Branches (Reihenfolge!) + #128 ·
+② cbad667 + Handoff-Commit pushen (GO) · ③ Baufeld-Rest nach Selmans Extents-Fix ·
+④ A1 weiter offen · ⑤ Leonis-Kandidaten: Verbotszonen-Konsum (`stiegenhaeuser[].
+verbotszonen_mm`, Selman-Zuruf in docs/OFFENE_FRAGEN.md — Leuchten auf Treppenläufen!)
++ `nutzungsklasse`-Konsum (4 Leuchten in WOHNUNG_PRIVAT) + place-Robustheit gegen
+Phantom-Extents · ⑥ handoff(contracts): `decision_source`-Feld (3-Owner).
+
 ## STAND (2026-09-06, Session-Ende ~22:30) — MORGEN HIER WEITER
 
 **Tagesbilanz: 11 Merges (#116–#126), 738→853 grün.** Abend-Session drehte sich
