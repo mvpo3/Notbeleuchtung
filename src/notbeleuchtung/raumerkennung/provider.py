@@ -16,12 +16,14 @@ from notbeleuchtung.hauptengine.contracts import RaumModell
 from notbeleuchtung.hauptengine.contracts.raum_modell import Tuer
 
 from .ausgaenge import leite_ausgaenge
+from .aussenbereich import erkenne_aussenbereiche
 from .dxf_load import bounds_mm, lade_dxf
 from .fluchtweg import explizite_linien, fluchtwege, linien_segmente
 from .footprint import hauptausgaenge
 from .gang_anker import anker_fuer_gang
 from .geometrie_typ import typisiere_geometrisch
 from .kaskade import KaskadeErgebnis, raeume_aus_kaskade
+from .kreuzcheck import kreuzcheck
 from .lift_erkennung import finde_lifte
 from .raumtyp import beschrifte_raeume
 from .stiegenhaus import baue_stiegenhaus_modell
@@ -31,9 +33,21 @@ from .tuer_typisierung import (
     ist_obergeschoss,
     typisiere_tueren,
 )
-from .tuer_zuordnung import AUSSEN, durchgaenge_ohne_tuerblatt, ordne_tueren
-from .tueren import im_planbereich, tueren_aus_dxf
-from .waende import raeume_aus_waenden
+from .tuer_zuordnung import (
+    AUSSEN,
+    aussen_durchgaenge,
+    durchgaenge_ohne_tuerblatt,
+    ordne_tueren,
+)
+from .tueren import (
+    aussentor_tueren,
+    im_planbereich,
+    text_tueren,
+    tuer_texte,
+    tueren_aus_dxf,
+    verschmelze_doppelfluegel,
+)
+from .waende import raeume_aus_waenden, wand_segmente
 from .wandkoerper import aussenkontur, bounds_aus_wandkoerpern, wand_union
 from .wohnungen import bilde_wohnungen
 from .zirkulation import zirkulation_aus_dxf
@@ -75,7 +89,7 @@ class ArchitekturRaumProvider:
             # in den Blockdefinitionen — die Kaskade hat sie bereits gesucht.
             tueren = [
                 Tuer(id=f"tuer_{i}", xy_mm=o.xy_mm, breite_mm=o.breite_mm,
-                     ist_notausgang=False)
+                     ist_notausgang=False, quelle=o.quelle)
                 for i, o in enumerate(k.tueroeffnungen, start=1)
             ]
         if k.wandkoerper:
@@ -87,7 +101,20 @@ class ArchitekturRaumProvider:
         # ── Fachteil 1: Zuordnung → Typisierung → Wohnungen → Ausgänge →
         # Fluchtwege — rein ERGÄNZEND zu hauptausgaenge/zirkulation.
         geschoss = geschoss_aus(floor, dxf_path)
-        kontur = aussenkontur(k.wandkoerper) if k.wandkoerper else None
+        # Außen-Analyse je Gebäude-Komponente (Barawitzka: 2 Trakte) + Hof-
+        # Erkennung (Mollgasse: Hof mit Weg ins Freie = AUSSEN → Hoftüren
+        # werden Endausgänge). Fallback = alte Ein-Konturen-Heuristik.
+        aussen = erkenne_aussenbereiche(plan, k.wandkoerper) if k.wandkoerper else None
+        if aussen is not None and aussen.komponenten:
+            kontur = aussen.gedeckt()
+        else:
+            kontur = aussenkontur(k.wandkoerper) if k.wandkoerper else None
+        # Zusätzliche Türquellen (additiv, je Tür mit `quelle`-Audit-Trail):
+        # Doppelflügel verschmelzen, Türbögen an der AUSSEN-Grenze ohne
+        # Block (Mollgasse-Hoftüren), türimplizierende Texte (Rennweg EG).
+        tueren = verschmelze_doppelfluegel(tueren, wand_segmente(plan))
+        tueren += aussentor_tueren(k.tueroeffnungen, tueren, kontur)
+        tueren += text_tueren(plan, tueren)
         ordne_tueren(tueren, k.tueroeffnungen, raeume, kontur)
         # Eine Tür braucht mindestens einen Innenraum: beidseits AUSSEN ist
         # keine Tür des Gebäudes (Fassaden-Bögen, Rest-Phantome).
@@ -95,17 +122,19 @@ class ArchitekturRaumProvider:
         for i, t in enumerate(tueren, start=1):   # lückenlose IDs nach dem Filtern
             t.id = f"tuer_{i}"
         if k.wandkoerper:
-            tueren = tueren + durchgaenge_ohne_tuerblatt(
-                raeume, tueren, wand_union(k.wandkoerper))
+            wu = wand_union(k.wandkoerper)
+            tueren = tueren + durchgaenge_ohne_tuerblatt(raeume, tueren, wu)
+            tueren = tueren + aussen_durchgaenge(raeume, tueren, wu, kontur)
         for s in zirkulation.segmente:      # 09-WEG = explizite Linien
             s.quelle = "LINIE"
         flw_enden = [p for s in zirkulation.segmente
                      for p in (s.polyline_mm[0], s.polyline_mm[-1])
                      if s.polyline_mm]
         typisiere_tueren(tueren, raeume, geschoss,
-                         brandschutz_hinweise_aus_dxf(plan), flw_enden)
+                         brandschutz_hinweise_aus_dxf(plan), flw_enden,
+                         tuer_texte(plan))
         bilde_wohnungen(raeume, tueren)
-        neue, _warnungen = leite_ausgaenge(tueren, raeume, geschoss)
+        neue, _warnungen = leite_ausgaenge(tueren, raeume, geschoss, flw_enden)
         vorhandene = list(ausgaenge)
         for a in neue:
             if not any(a.typ == v.typ
@@ -119,8 +148,13 @@ class ArchitekturRaumProvider:
                      if not (a.typ == "final_exit" and ist_obergeschoss(geschoss))]
         zirkulation.segmente += linien_segmente(
             explizite_linien(plan), len(zirkulation.segmente))
+        # Geschoss-Zielregel (EG/UG → final_exit, OG → stair_exit); Warnungen
+        # (kein erreichbarer final_exit im EG) landen als Attribut für die
+        # Prüfstrecke/bericht.md — der Contract führt sie nicht.
+        self.fluchtweg_warnungen = []
         zirkulation.segmente += fluchtwege(raeume, tueren, ausgaenge,
-                                           zirkulation.segmente)
+                                           zirkulation.segmente, geschoss,
+                                           self.fluchtweg_warnungen)
 
         # ── Fachteil 2: Lifte (LIFT/KEIN_RAUM, aus STIEGENHAUS ausgestanzt)
         # + Stiegenhaus-Modelle + Anker (Stiegenhaus + Gang). Anker liefern
@@ -143,7 +177,7 @@ class ArchitekturRaumProvider:
                          if len(lf.polygon_mm) >= 3]
             anker = [a for a in anker
                      if not any(s.contains(Point(a.xy_mm)) for s in schaechte)]
-        return RaumModell(
+        modell = RaumModell(
             floor=floor,
             bounds_mm=bounds,
             raeume=raeume,
@@ -153,3 +187,7 @@ class ArchitekturRaumProvider:
             stiegenhaeuser=stiegenhaeuser,
             anker=anker,
         )
+        # Kreuzcheck Fluchtweglinien ↔ final_exit — Prüfstrecken-Output
+        # (Warnungen/Kandidaten/unbenutzte Exits), bewusst NICHT im Contract.
+        self.letzter_kreuzcheck = kreuzcheck(modell, kontur)
+        return modell
