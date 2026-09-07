@@ -61,3 +61,11 @@ def test_final_exit_ohne_endende_linie_ist_unbenutzt():
     m = _modell([], [Ausgang(id="e1", xy_mm=(0.0, 10000.0), typ="final_exit")])
     erg = kreuzcheck(m, KONTUR)
     assert erg.unbenutzte_exits == ["e1"]
+
+
+def test_endpunkt_exakt_auf_der_kontur_kante_zaehlt():
+    # Spec: „endet AN oder AUSSERHALB der Außenkante" — shapely covers()
+    # schließt Randpunkte ein, der Punkt AUF der Kante darf nicht rausfallen.
+    m = _modell([_linie("s1", [(5000.0, 10000.0), (20000.0, 10000.0)])], [])
+    erg = kreuzcheck(m, KONTUR)
+    assert erg.endpunkte_aussenkante == [(20000.0, 10000.0)]

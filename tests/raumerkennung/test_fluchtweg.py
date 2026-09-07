@@ -138,3 +138,29 @@ def test_fallback_mittelachse_fuer_gang_ohne_weg():
     assert s.start_raum == "gang"
     assert s.laenge_mm == pytest.approx(12000.0)
     assert all(y == pytest.approx(1000.0) for _, y in s.polyline_mm)
+
+
+def test_kein_final_exit_warnung_nennt_raum_und_grund():
+    """Gar kein final_exit im Plan → Warnung mit Endraum UND Grund."""
+    raeume, tueren, _ = _stiegen_szene()
+    warnungen: list[str] = []
+    fluchtwege(raeume, tueren, [], [], geschoss="EG", warnungen=warnungen)
+    pro_start = [w for w in warnungen if "von Tür wet" in w]
+    assert pro_start, "Pro-Start-Warnung fehlt im Fall ohne final_exit"
+    assert "Endraum zi" in pro_start[0]          # Raumbezug
+    # Grundtext selbst, nicht die Tür-ID (die auch „haus" enthält).
+    assert "ohne Ausgangs-Rolle" in pro_start[0]
+
+
+def test_grund_tuer_ohne_nachbarraum_vs_aussenbereich_nicht_erkannt():
+    """Spec-Gründe unterscheiden: EINE Seite ohne Raum → „Tür ohne
+    Nachbarraum"; BEIDE Seiten ohne Raum → „Außenbereich nicht erkannt"."""
+    from notbeleuchtung.raumerkennung.fluchtweg import _final_exit_fehlt_grund
+    from notbeleuchtung.raumerkennung.tuer_zuordnung import KEIN_RAUM
+
+    einseitig = Tuer(id="t1", xy_mm=(0.0, 0.0), von_raum="zi",
+                     nach_raum=KEIN_RAUM, breite_mm=900.0)
+    beidseitig = Tuer(id="t2", xy_mm=(0.0, 0.0), von_raum=KEIN_RAUM,
+                      nach_raum=KEIN_RAUM, breite_mm=900.0)
+    assert "ohne Nachbarraum" in _final_exit_fehlt_grund([einseitig])
+    assert "Außenbereich nicht erkannt" in _final_exit_fehlt_grund([beidseitig])

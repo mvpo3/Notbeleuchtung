@@ -28,6 +28,7 @@ _KANTE_NAH_MM = 1500.0     # Linien-Endpunkt „an der Außenkante"
 _SNAP_MM = 100.0           # Netz-Snapping für die Grad-1-Endpunktbestimmung
 _EXIT_NAH_MM = 1500.0      # final_exit „deckt" einen Endpunkt
 _KANDIDAT_SUCH_MM = 3000.0  # Suchradius für die nächste Öffnung in der Außenwand
+_KONTUR_INNEN_TOL_MM = 1.0  # bis hierhin gilt ein Punkt noch als AUF der Kontur-Grenze
 
 
 @dataclass
@@ -84,7 +85,14 @@ def kreuzcheck(modell: RaumModell, kontur, kante=None) -> KreuzcheckErgebnis:
             # „an/außerhalb der Außenkante": der Endpunkt liegt im AUSSEN-
             # Bereich (nicht gedeckt) UND ≤ 1.5 m an der Gebäudekante —
             # Gang-Enden im Gebäudeinneren nahe der Fassade zählen nicht.
-            if kontur.covers(Point(p)) or kante.distance(Point(p)) > _KANTE_NAH_MM:
+            # covers() schließt Randpunkte EIN — ein Endpunkt exakt AUF der
+            # Außenkante würde damit verworfen, obwohl die Spec ihn zählt
+            # („endet AN oder AUSSERHALB der Außenkante"). Deshalb nur ECHT
+            # innenliegende Punkte verwerfen (> Toleranz von der Grenze weg).
+            punkt = Point(p)
+            innen = (kontur.covers(punkt)
+                     and kontur.boundary.distance(punkt) > _KONTUR_INNEN_TOL_MM)
+            if innen or kante.distance(punkt) > _KANTE_NAH_MM:
                 continue
             erg.endpunkte_aussenkante.append(p)
             if any(math.dist(p, a.xy_mm) <= _EXIT_NAH_MM for a in finals):

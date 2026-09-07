@@ -53,7 +53,7 @@ _WINDFANG_M2 = 8.0
 _EINGANG_TEXT = re.compile(
     r"T(?:Ü|UE|.)RSCHLIE|AUTOMATIKT|SCHIEBET|EINGANG|WINDFANG", re.IGNORECASE)
 _NOTAUSGANG_TEXT = re.compile(
-    r"NOTAUSGANG|FLUCHTT|PANIK", re.IGNORECASE)
+    r"NOTAUSGANG|FLUCHTT|PANIK|\bE[12]\b", re.IGNORECASE)
 
 
 def geschoss_aus(floor: str | None, dxf_pfad: str | None = None) -> str:
@@ -182,7 +182,7 @@ def _naechster_text(xy: XY, texte: list[tuple[str, XY]]) -> str | None:
 
 def markiere_windfang(tueren: list[Tuer], raeume: list[Raum],
                       geschoss: str) -> None:
-    """(c) Windfang: ALLGEMEIN-Raum < 8 m² mit genau 2 Türen, eine davon nach
+    """(c) Windfang: ALLGEMEIN-Raum < 8 m² mit mind. 2 Türen, genau eine nach
     AUSSEN → die äußere Tür ist der Endausgang (hauseingang im EG)."""
     eg = ist_erdgeschoss(geschoss)
     by_id = {r.id: r for r in raeume}
@@ -193,7 +193,9 @@ def markiere_windfang(tueren: list[Tuer], raeume: list[Raum],
                 an_raum.setdefault(s, []).append(t)
     for rid, ts in an_raum.items():
         r = by_id.get(rid)
-        if r is None or len(ts) != 2:
+        # mind. 2 Türen (durchgaenge_ohne_tuerblatt/aussen_durchgaenge hängen
+        # zusätzliche Tür-Objekte an denselben Raum) — genau eine davon nach AUSSEN.
+        if r is None or len(ts) < 2:
             continue
         klasse = r.nutzungsklasse or nutzungsklasse_fuer(r.raum_typ)
         flaeche = r.flaeche_m2 or _flaeche_m2(r)

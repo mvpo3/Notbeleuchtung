@@ -269,8 +269,11 @@ def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
 # gezeichnetes Türblatt eine Tür anzulegen (Rennweg EG: 'TÜRSCHLIESSER'
 # an einer 1340-mm-Wandlücke, kein Schwenkbogen, kein Block).
 _TEXT_TUER = re.compile(
-    r"T(?:Ü|UE|.)RSCHLIE|AUTOMATIKT|SCHIEBET(?:Ü|UE|.)R|HAUPTEINGANG"
-    r"|HAUSEINGANG|WINDFANG|NOTAUSGANG|FLUCHTT(?:Ü|UE|.)R|PANIKBESCHLAG",
+    r"T(?:Ü|UE|.)RSCHLIE|AUTOMATIKT|SCHIEBET(?:Ü|UE|.)R|EINGANG"
+    r"|WINDFANG|NOTAUSGANG|FLUCHTT(?:Ü|UE|.)R|PANIKBESCHLAG"
+    # Ausgangs-Kennungen/Anlagen-Kürzel nur als eigenständiges Token
+    # (sonst matcht E1 in "BE12", BST in "ABSTAND").
+    r"|\bE[12]\b|\bBST\b|\bRWA\b",
     re.IGNORECASE)
 
 

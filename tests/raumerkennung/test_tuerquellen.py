@@ -100,6 +100,18 @@ def test_text_tuer_entsteht_nur_ohne_gezeichnete_tuer():
     assert text_tueren(plan, schon) == []
 
 
+def test_spec_textwoerter_eingang_e1_bst_rwa():
+    doc = ezdxf.new()
+    doc.header["$INSUNITS"] = 4
+    msp = doc.modelspace()
+    for i, txt in enumerate(("Eingang", "Eingangsbereich", "E1", "E2", "BST",
+                             "RWA", "ABSTAND", "BE12")):
+        msp.add_text(txt, dxfattribs={"insert": (i * 5000, 0)})
+    plan = DxfPlan(doc=doc, space=msp, factor=1.0)
+    assert [t for t, _ in tuer_texte(plan)] == [
+        "Eingang", "Eingangsbereich", "E1", "E2", "BST", "RWA"]
+
+
 def test_tuerschliesser_text_macht_hauseingang_im_eg():
     t = Tuer(id="t1", xy_mm=(0.0, 0.0), breite_mm=1100.0,
              von_raum="KEIN_RAUM", nach_raum="AUSSEN", quelle="text:TÜRSCHLIESSER")
@@ -178,3 +190,16 @@ def test_untypisiert_gruende():
     assert t2.untypisiert_grund == "tuer_ins_nichts"
     assert t3.untypisiert_grund == "kein_nachbarraum"
     assert t4.untypisiert_grund == "beide_seiten_untypisiert"
+
+
+def test_windfang_mit_drei_tueren():
+    # durchgaenge_ohne_tuerblatt hängt eine dritte Tür an den Windfang —
+    # die Regel greift trotzdem (genau eine Tür nach AUSSEN).
+    wf = Raum(id="wf", raum_typ="GANG", flaeche_m2=5.0,
+              polygon_mm=[(0, 0), (2500, 0), (2500, 2000), (0, 2000)])
+    innen = Tuer(id="ti", xy_mm=(0.0, 1000.0), von_raum="gang", nach_raum="wf")
+    innen2 = Tuer(id="ti2", xy_mm=(1200.0, 0.0), von_raum="wf", nach_raum="gang2")
+    aussen = Tuer(id="ta", xy_mm=(2500.0, 1000.0), von_raum="wf", nach_raum="AUSSEN")
+    typisiere_tueren([innen, innen2, aussen], [wf], "EG")
+    assert aussen.tuer_detail == "hauseingang" and aussen.ist_notausgang
+    assert "windfang" in (aussen.quelle or "")
