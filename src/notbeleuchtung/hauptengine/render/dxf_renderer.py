@@ -407,13 +407,31 @@ def _draw_unterlage(msp, quelle_pfad: str | None, raum: RaumModell) -> int:
             (1.0, 10.0, 25.4, 1000.0),
             key=lambda f: abs(__import__("math").log(max(raum_w / (src_w * f), 1e-9))),
         )
+        # Nur was der Architekt ZEIGT: gefrorene/ausgeschaltete Layer der Quelle
+        # bleiben draußen (Baufeld E2: 95 % der 82k Entities lagen versteckt —
+        # 20-facher Import-/PDF-Aufwand für Unsichtbares).
+        versteckt = {
+            layer.dxf.name for layer in quelle.layers
+            if layer.is_frozen() or layer.is_off()
+        }
         kandidaten = [
             e for e in quelle.modelspace()
-            if e.dxftype() in _UNTERLAGE_TYPEN
+            if e.dxftype() in _UNTERLAGE_TYPEN and e.dxf.layer not in versteckt
         ]
+        bloecke_vorher = {b.name for b in msp.doc.blocks}
         importer = Importer(quelle, msp.doc)
         importer.import_entities(kandidaten, msp)
         importer.finalize()
+        # Strichlinien-Falle: matplotlib zerlegt Dash-Muster über Millionen-mm-
+        # Koordinaten in Abermillionen Segmente (Baufeld-UG: draw >10 min; mit
+        # Continuous 37 s). Die Unterlage ist graue Referenz — alles durchgezogen,
+        # auch in den frisch importierten Block-Definitionen.
+        def _continuous(e):
+            if e.dxf.hasattr("linetype"):
+                e.dxf.linetype = "Continuous"
+        for bname in {b.name for b in msp.doc.blocks} - bloecke_vorher:
+            for be in msp.doc.blocks.get(bname):
+                _continuous(be)
         m = Matrix44.scale(faktor, faktor, 1.0)
         # Bounds mit Rand: Quelle-Plankopf/Legende weit außerhalb fliegt raus.
         rand_x, rand_y = raum_w * 0.10, max(by1 - by0, 1.0) * 0.10
@@ -435,6 +453,7 @@ def _draw_unterlage(msp, quelle_pfad: str | None, raum: RaumModell) -> int:
                     continue
                 e.dxf.layer = LAYER_UNTERLAGE
                 e.dxf.color = 253
+                _continuous(e)
                 drawn += 1
             except Exception:  # noqa: BLE001 — Einzel-Entity darf scheitern
                 try:

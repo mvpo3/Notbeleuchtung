@@ -1,12 +1,15 @@
 import sys
 import time
-import matplotlib
-matplotlib.use("Agg")
+
 import ezdxf
+import matplotlib
 from ezdxf import bbox as _bb
-from notbeleuchtung.hauptengine.registry import build_default_bundle
+
 from notbeleuchtung.hauptengine.pipeline import run
+from notbeleuchtung.hauptengine.registry import build_default_bundle
 from notbeleuchtung.hauptengine.render.pdf_export import dxf_zu_pdf
+
+matplotlib.use("Agg")
 
 for fl in sys.argv[1:]:
     t0 = time.time()
@@ -25,5 +28,5 @@ for fl in sys.argv[1:]:
         print(f"{fl:4s}: Räume {len(o.raum.raeume):3d} · {by} · "
               f"Unterlage {o.render_summary['unterlage_entities']:5d} · "
               f"{o.render_summary['pruefung']['status']} · {int(time.time()-t0)}s", flush=True)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — Batch läuft trotz Geschoss-Fehler weiter
         print(f"{fl:4s}: FEHLER {type(e).__name__}: {str(e)[:70]}", flush=True)
