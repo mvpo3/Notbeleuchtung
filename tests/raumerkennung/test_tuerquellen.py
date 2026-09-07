@@ -203,3 +203,25 @@ def test_windfang_mit_drei_tueren():
     typisiere_tueren([innen, innen2, aussen], [wf], "EG")
     assert aussen.tuer_detail == "hauseingang" and aussen.ist_notausgang
     assert "windfang" in (aussen.quelle or "")
+
+
+# ── Guard: TERRASSE im geschlossenen Hof ist kein Weg ins Freie ──────────────
+def test_terrassentuer_im_geschlossenen_hof_kein_hauseingang():
+    """Barawitzka EG: STIEGENHAUS ↔ TERRASSE (im ummauerten Hof). Ohne die
+    Hof-Geometrie bleibt es beim Bestandsverhalten (hauseingang), mit ihr
+    entfällt der Endausgang."""
+    sh = Raum(id="sh", raum_typ="STIEGENHAUS",
+              polygon_mm=[(0, 0), (5000, 0), (5000, 5000), (0, 5000)])
+    hof = Raum(id="hof", raum_typ="TERRASSE",
+               polygon_mm=[(5000, 0), (12000, 0), (12000, 5000), (5000, 5000)])
+    def _tuer():
+        return Tuer(id="t", xy_mm=(5000.0, 2500.0), breite_mm=1000.0,
+                    von_raum="sh", nach_raum="hof")
+    ohne = _tuer()
+    typisiere_tueren([ohne], [sh, hof], "EG")
+    assert ohne.tuer_detail == "hauseingang"
+
+    mit = _tuer()
+    typisiere_tueren([mit], [sh, hof], "EG",
+                     kein_weg_ins_freie=box(5000, 0, 12000, 5000))
+    assert mit.tuer_detail != "hauseingang"

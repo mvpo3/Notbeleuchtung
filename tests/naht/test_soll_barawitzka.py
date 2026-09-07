@@ -38,12 +38,18 @@ def test_soll_final_exit(rm):
     assert any(a.typ == "final_exit" for a in rm.ausgaenge), "kein final_exit"
 
 
-def test_soll_zwei_final_exit(rm):
-    """Scharf seit der Außen-Analyse je Gebäude-Komponente (2 Trakte + Hof):
-    Hof-/Gartentüren des Südtrakts werden AUSSEN-seitig erkannt → ≥ 2
-    Endausgänge (Ist 2026-09-07: 2)."""
+def test_soll_genau_ein_final_exit(rm):
+    """Owner-Entscheidung Selman 2026-09-07: »ins Freie« heißt aus dem
+    Flächengrundriss (bis Grundstücksgrenze, inkl. Hof/Garten) HERAUS auf
+    öffentlichen Grund — ein ringsum ummauerter Innenhof ist kein Endausgang.
+
+    Damit fällt der frühere zweite Endausgang exit_durchgang_62 (durchgang_62
+    bei x=8775.0 / y=-22663.0 mm) weg: er führt in den Innenhof, der die beiden
+    Stiegenhäuser raum_35 und raum_37 verbindet und 0.0 m Randlänge an der
+    Straßenkante hat. Übrig bleibt exit_tuer_27 (x=14895.0 / y=-2930.0 mm) am
+    Hof mit echtem Straßenzugang. Ist 2026-09-07 nach den Fixes: 1."""
     final = [a for a in rm.ausgaenge if a.typ == "final_exit"]
-    assert len(final) >= 2, f"nur {len(final)} final_exit"
+    assert len(final) == 1, f"{len(final)} final_exit statt 1: {[a.id for a in final]}"
 
 
 @pytest.mark.xfail(
@@ -90,8 +96,8 @@ def test_soll_41_raeume_mit_stempel(rm):
     strict=True,
     reason="Soll (Spec 6): alle 16 FLW-Endpunkte an der Außenkante sind mit "
     "final_exit gedeckt — Ist 2026-09-07 (selbst gemessen): 0 Segmente quelle "
-    "LINIE, damit 0 Endpunkte an der Außenkante und 0 gedeckte (2 final_exit "
-    "existieren, decken aber keinen Linien-Endpunkt). Ursache: die 16 "
+    "LINIE, damit 0 Endpunkte an der Außenkante und 0 gedeckte (1 final_exit "
+    "existiert, deckt aber keinen Linien-Endpunkt). Ursache: die 16 "
     "Farbe-96-Linien sind Katastergrenzen, echte FLW-Linien fehlen im Plan "
     "(s. test_soll_explizite_linien_vorhanden).",
 )

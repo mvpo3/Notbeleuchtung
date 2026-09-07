@@ -1,16 +1,26 @@
 """aussenbereich — AUSSEN-Flächen erkennen (Hof, Garten, Wege ins Freie).
 
-AUSSEN = freie Fläche innerhalb der konvexen Hülle des Gebäudes, die
+Bezug ist der FLÄCHENGRUNDRISS bis zur Grundstücksgrenze (``grundstuecksgrenze``)
+— der umfasst auch Garten, Innenhof und Vorplatz. Fehlt ein Grenz-Layer, bleibt
+die konvexe Hülle der Fallback (gemessen: Mollgasse-Hülle 1804.5 m² ist größer
+als das Grundstück 1510.2 m² und ragt auf öffentlichen Grund).
+
+AUSSEN = freie Fläche im Bezugspolygon, die
 (a) Außenanlagen enthält (GRÜN-/Platten-/Kies-Schraffuren, Baum-Blöcke,
     Grundstücksgrenze-Layer — Layer-Hinweise, keine Normwerte) ODER
-(b) über eine Lücke in der Außenkante mit dem freien Außenraum verbunden ist.
+(b) den Bezugsrand berührt.
+Sie ist ``offen`` nur, wenn sie die STRASSENKANTE erreicht: „ins Freie" heißt
+aus dem Flächengrundriss HERAUS auf öffentlichen Grund.
 
 Ein Hof OHNE Weg ins Freie ist ``AUSSEN_GESCHLOSSEN``: dort entsteht kein
 final_exit (offene Frage an Enis, docs/OFFENE_FRAGEN.md) — seine Fläche zählt
 für die Türzuordnung weiter als "gedeckt" (Türen dorthin werden nicht AUSSEN).
 
 Die Außenkontur wird JE GEBÄUDE-KOMPONENTE gerechnet (Barawitzka = 2 Trakte
-mit offenem Hof dazwischen — eine einzige Kontur verschluckt den Südtrakt).
+mit einem Hof dazwischen — eine einzige Kontur verschluckt den Südtrakt).
+Barawitzka gemessen: dieser Hof (190.2 m²) verbindet zwar beide Stiegenhäuser,
+liegt aber 2.55 m von der 20.6 m langen Straßenkante entfernt → geschlossen;
+offen ist nur die Vorplatz-Fläche (12.5 m², Abstand 0.10 m).
 
 Decken-Heuristik (Slab-Polygone) ist hier bewusst KEIN Ausschluss: auf Rennweg
 EG enthält die Slab-Union den Türschließer-Eingang (Beleg docs/OFFENE_FRAGEN.md)
@@ -20,12 +30,14 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from itertools import combinations
 
-from shapely.geometry import MultiPolygon, Point, Polygon
-from shapely.ops import unary_union
+from shapely.geometry import LineString, MultiPolygon, Point, Polygon
+from shapely.ops import polygonize, unary_union
 
 from .dxf_load import DxfPlan
-from .wandkoerper import Wandkoerper
+from .raumlayer import _hatch_pfad_mm
+from .wandkoerper import Wandkoerper, finde_wandkoerper
 
 XY = tuple[float, float]
 
@@ -43,7 +55,29 @@ _BAUM_BLOCK = re.compile(r"BAUM|TREE|STRAUCH", re.IGNORECASE)
 # Hof-Durchfahrten) bleiben offen — gewollt: dort ist ein Weg ins Freie.
 _SCHLIESS_MM = 1200.0
 _MIN_HOF_M2 = 5.0        # kleinere freie Flächen sind Nischen, keine Höfe
-_RAND_EPS_MM = 250.0     # "berührt die konvexe Hülle" -Toleranz
+_RAND_EPS_MM = 250.0     # "berührt den Bezugsrand" -Toleranz
+# Halbe Mindest-Durchgangsbreite: eine Fläche, die nach Erosion um diesen
+# Wert verschwindet, ist ein Zeichnungs-Splitter (Haarriss zwischen Grenz-
+# und Wandgeometrie), kein begehbarer Weg. Barawitzka gemessen: der
+# 0.13-m-Splitter entlang der Nordfassade fällt weg, der 190.2-m²-Hof bleibt.
+_HALS_MM = 400.0
+
+# Grundstücksgrenze: Layer-Muster (tolerant gegen cp-dekodierte Umlaute).
+_GRENZ_LAYER = re.compile(
+    r"GRUNDST.CKSGRENZE|GRUNDSTUECKSGRENZE|KATASTER|PROP-?LINE", re.IGNORECASE)
+# Typ-Filter PFLICHT: Rennweg_OG3 trägt auf 'New_GRUNDSTÜCKSGRENZE' 103
+# DIMENSION und KEINE Liniengeometrie — ohne Filter ein Falschpositiv.
+_GRENZ_TYPEN = ("LINE", "LWPOLYLINE", "POLYLINE")
+# Barawitzka: die 16 Grenzlinien sind an 7 Grenzpunkt-Kreisen (r=100 mm)
+# zurückgeschnitten — ohne Brückung liefert polygonize 0 Ringe, mit 1 Ring.
+_BRUECKE_MM = 400.0
+
+# Straßen-Indiz für die Straßenkante. 'STRA.ENVERKEHR' bewusst NICHT: der
+# Layer 'Straßenverkehr_Situationslinie.verm' läuft bei Barawitzka auch an der
+# SÜDgrenze (Kontakt bis y = -34.01 m) und würde den Hof wieder öffnen.
+_STRASSE_LAYER = re.compile(
+    r"GEHSTEIG|GEHWEG|RANDSTEIN|BORDSTEIN", re.IGNORECASE)
+_STRASSE_MM = 3000.0
 
 
 @dataclass
@@ -123,6 +157,73 @@ def _komponenten_aus(wand_zu) -> list[Polygon]:
             if g.geom_type == "Polygon" and g.area >= 1e6]  # ≥1 m²
 
 
+def grundstuecksgrenze(plan: DxfPlan, wand_zu=None) -> Polygon | None:
+    """Grundstücksgrenze als Ring (mm) — der FLÄCHENGRUNDRISS des Projekts.
+
+    Umfasst auch Garten, Innenhof und Vorplatz, nicht nur die bebaute Fläche.
+    Layer-Muster UND Liniengeometrie sind beide Pflicht; offene Grenzzüge
+    werden über Endpunkt-Paare < 400 mm gebrückt und polygonisiert.
+    Plausibel nur, wenn der Ring ≥ 90 % der Wandfläche deckt — sonst None.
+
+    Gemessen: Barawitzka 616.8 m², Mollgasse 1510.2 m²; Rennweg EG/OG3 und
+    Muthgasse E2 → None.
+    """
+    ringe: list[Polygon] = []
+    segmente: list[LineString] = []
+    for e in plan.entities():
+        if e.dxftype() not in _GRENZ_TYPEN:
+            continue
+        if not _GRENZ_LAYER.search(str(e.dxf.layer)):
+            continue
+        pts = plan.entity_points(e)
+        if len(pts) < 2:
+            continue
+        zu = bool(getattr(e, "closed", False) or getattr(e, "is_closed", False))
+        if zu and len(pts) >= 3:
+            p = Polygon(pts).buffer(0)
+            if not p.is_empty:
+                ringe.append(p)
+        else:
+            segmente += [LineString(pts[i:i + 2]) for i in range(len(pts) - 1)]
+    if segmente:
+        enden = [p for s in segmente for p in (s.coords[0], s.coords[-1])]
+        # ponytail: O(n²) über die Endpunkte — Grenzzüge haben Dutzende, nicht Tausende.
+        bruecken = [LineString([a, b]) for a, b in combinations(enden, 2)
+                    if 0 < Point(a).distance(Point(b)) < _BRUECKE_MM]
+        ringe += list(polygonize(unary_union(segmente + bruecken)))
+    if not ringe:
+        return None
+    ring = max(ringe, key=lambda p: p.area)
+    if wand_zu is None:
+        koerper = finde_wandkoerper(plan)
+        if not koerper:
+            return None
+        wand_zu = _wand_geschlossen(koerper, _SCHLIESS_MM)
+    if wand_zu.is_empty or ring.intersection(wand_zu).area < 0.9 * wand_zu.area:
+        return None      # Ring deckt das Gebäude nicht → kein Grundstücksring
+    return ring
+
+
+def _strassenkante(plan: DxfPlan, rand):
+    """Teile des Grenz-Randes ≤ 3 m von Geometrie auf einem Straßen-Layer.
+
+    ``None`` = kein Straßen-Indiz im Plan (dann gilt der ganze Rand als
+    Straßenkante); eine leere Geometrie = Indiz vorhanden, aber kein Kontakt.
+    """
+    geo = []
+    for e in plan.entities():
+        if not _STRASSE_LAYER.search(str(e.dxf.layer)):
+            continue
+        pts = plan.entity_points(e)
+        if len(pts) >= 2:
+            geo.append(LineString(pts))
+        elif pts:
+            geo.append(Point(pts[0]))
+    if not geo:
+        return None
+    return rand.intersection(unary_union(geo).buffer(_STRASSE_MM))
+
+
 def erkenne_aussenbereiche(plan: DxfPlan,
                            koerper: list[Wandkoerper]) -> AussenBereiche:
     """Außen-Analyse: Komponenten-Konturen + offene/geschlossene Außenflächen."""
@@ -134,16 +235,22 @@ def erkenne_aussenbereiche(plan: DxfPlan,
     komponenten = _komponenten_aus(wand_zu)
     if not komponenten:
         return AussenBereiche()
-    huelle = unary_union(komponenten).convex_hull
-    # Freie Fläche = Hülle minus Wand-Geometrie (MIT Löchern): enthält den
+    # Bezug ist der Flächengrundriss bis zur Grundstücksgrenze; ohne Grenz-
+    # Layer bleibt die konvexe Hülle der Fallback (Verhalten unverändert).
+    grund = grundstuecksgrenze(plan, wand_zu)
+    bezug = grund if grund is not None else unary_union(komponenten).convex_hull
+    # Freie Fläche = Bezug minus Wand-Geometrie (MIT Löchern): enthält den
     # Raum zwischen den Trakten, Höfe (Löcher) UND Innenräume — letztere
     # filtert die Indiz-/Rand-Pflicht unten heraus.
-    frei = huelle.difference(wand_zu)
+    frei = bezug.difference(wand_zu)
     teile = (list(frei.geoms) if hasattr(frei, "geoms")
              else ([frei] if not frei.is_empty else []))
 
     indizien = aussen_indizien(plan)
-    rand = huelle.exterior
+    rand = bezug.exterior
+    kante = _strassenkante(plan, rand)
+    if kante is None:
+        kante = rand           # kein Straßen-Indiz → ganzer Rand zählt
     offen: list[Polygon] = []
     geschlossen: list[Polygon] = []
     for t in teile:
@@ -153,9 +260,73 @@ def erkenne_aussenbereiche(plan: DxfPlan,
         beruehrt_rand = t.distance(rand) < _RAND_EPS_MM
         if not (hat_indiz or beruehrt_rand):
             continue                      # Innenraum-Loch ohne Außen-Indiz
-        # Weg ins Freie ⇔ die Fläche reicht bis an die konvexe Hülle; ein
-        # eingeschlossenes Loch (nur ≤2.4-m-Lücken, vom Schließen versiegelt)
-        # hat keinen Weg ins Freie → AUSSEN_GESCHLOSSEN.
-        (offen if beruehrt_rand else geschlossen).append(t)
+        # Weg ins Freie ⇔ die Fläche reicht bis an die STRASSENKANTE, also aus
+        # dem Flächengrundriss heraus auf öffentlichen Grund. Ein ringsum
+        # ummauerter Innenhof erreicht sie nicht → AUSSEN_GESCHLOSSEN.
+        # Der Engstellen-Test filtert Zeichnungs-Splitter (Haarrisse zwischen
+        # Grenz- und Wandgeometrie), die den Rand sonst zufällig berühren.
+        hals = t.buffer(-_HALS_MM).buffer(_HALS_MM + 20.0)
+        weg_ins_freie = (not hals.is_empty and not kante.is_empty
+                         and hals.distance(kante) < _RAND_EPS_MM)
+        (offen if weg_ins_freie else geschlossen).append(t)
     return AussenBereiche(komponenten=komponenten, offen=offen,
                           geschlossen=geschlossen)
+
+
+# ------------------------------------------------------------ Überdachungen
+
+# Namensbasierte Vordach-Erkennung ist TOT: kein Plan trägt einen Layer/Block/
+# Text VORDACH|ÜBERDACHUNG|AUSKRAGUNG|LAUBENGANG|ARKADE|PERGOLA|CANOPY.
+# Einziges Signal ist ein NICHT flächendeckender Decken-Layer. Barawitzka
+# nachgemessen: Decken-Union über diesem Regex 601.1 m² gegen 426.0 m²
+# Gebäudefläche (Anteil 0.865); vom Layer '210 Decke' liegen 320.5 m²
+# ausserhalb der Wand-Union. Der Schnitt mit den OFFENEN Außenflächen — das
+# eigentliche Vordach-Signal — ist dort 0.752 m², größtes Stück 0.707 m² in
+# 2.22 m Abstand zu final_exit exit_tuer_27.
+_DECKE_LAYER = re.compile(r"DECKE|SLAB|CLNG|DACH", re.IGNORECASE)
+# Ein flächendeckender Decken-Layer beschreibt die Geschossdecke, kein Vordach.
+# Barawitzka liegt mit 0.865 knapp unter der Schwelle — die Regel steht dort auf
+# 3.5 Prozentpunkten, das ist bewusst als Schwäche vermerkt (OFFENE_FRAGEN.md).
+_DECKE_MAX_ANTEIL = 0.9
+# 0.5 statt 1.0 m²: das einzige real gemessene Vordach (Barawitzka, über dem
+# Eingangsvorbereich) misst 0.707 m² — bei 1.0 m² fiele genau der Fall weg,
+# für den die Erkennung gebaut ist. ponytail: an EINEM Plan kalibriert.
+_MIN_UEBERDACHUNG_M2 = 0.5
+
+
+def ueberdachungen(plan: DxfPlan, gebaeude, aussen_offen) -> list[Polygon]:
+    """Überdachte Teile der OFFENEN Außenflächen (Vordach vor dem Eingang).
+
+    Reiner Prüfstrecken-Output (Bericht), KEIN Contract-Feld: Deckenflächen
+    (Layer DECKE|SLAB|CLNG|DACH, geschlossene LW/POLYLINE + HATCH) geschnitten
+    mit ``aussen_offen``, Teilflächen ≥ 0.5 m². Deckt der Layer ≥ 90 % der
+    Gebäudefläche, ist er flächendeckend und trägt kein Vordach-Signal → [].
+    """
+    if gebaeude is None or gebaeude.is_empty or not aussen_offen:
+        return []
+    flaechen: list[Polygon] = []
+    for e in plan.entities():
+        t = e.dxftype()
+        if not _DECKE_LAYER.search(str(e.dxf.layer)):
+            continue
+        if t == "HATCH":
+            pts = _hatch_pfad_mm(plan, e)
+        elif t in ("LWPOLYLINE", "POLYLINE") and (
+                getattr(e, "closed", False) or getattr(e, "is_closed", False)):
+            pts = plan.entity_points(e)
+        else:
+            continue
+        if len(pts) >= 3:
+            p = Polygon(pts).buffer(0)
+            if not p.is_empty:
+                flaechen.append(p)
+    if not flaechen:
+        return []
+    decke = unary_union(flaechen)
+    if decke.intersection(gebaeude).area >= _DECKE_MAX_ANTEIL * gebaeude.area:
+        return []
+    treffer = decke.intersection(unary_union(aussen_offen))
+    teile = (list(treffer.geoms) if hasattr(treffer, "geoms")
+             else ([treffer] if not treffer.is_empty else []))
+    return [p for p in teile if p.geom_type == "Polygon"
+            and p.area >= _MIN_UEBERDACHUNG_M2 * 1e6]

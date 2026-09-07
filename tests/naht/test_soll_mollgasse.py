@@ -67,7 +67,8 @@ def test_soll_hofausgaenge_cluster_a_und_b(rm):
     """Scharf seit Außen-Analyse + Türquellen: der Hof ist AUSSEN (Wege ins
     Freie über die nördl. Grundstücksgrenze + Garagentor-Ostkante), die echten
     Türbögen der Hoftüren (Cluster A Innenhof-Osttrakt, Cluster B Südgarten)
-    werden final_exit (Ist 2026-09-07: 10 final_exit gesamt)."""
+    werden final_exit (Ist 2026-09-07 nach der Grundstücksgrenzen-Regel:
+    9 final_exit gesamt)."""
     import math
 
     final = [a.xy_mm for a in rm.ausgaenge if a.typ == "final_exit"]
@@ -151,7 +152,7 @@ def test_soll_keine_leuchten_in_liftpolygonen():
 @pytest.mark.xfail(
     strict=True,
     reason="Soll (Spec 6): final_exit = Anzahl der 09-WEG-Endpunkte an der "
-    "Außenkante — Ist 2026-09-07 (selbst gemessen): 10 final_exit gegen 43 "
+    "Außenkante — Ist 2026-09-07 (selbst gemessen): 9 final_exit gegen 43 "
     "Endpunkte an der Außenkante (103 LINIE-Segmente; der 09-WEG-Layer "
     "zeichnet Doppellinien-Stummel, Dedup/Clustering der Endpunkte offen).",
 )

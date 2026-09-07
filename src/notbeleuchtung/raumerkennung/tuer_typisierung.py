@@ -2,9 +2,10 @@
 
 Regelkette (die ERSTE greifende Regel setzt das Detail):
 
-1. AUSSEN × ALLGEMEIN_ERSCHLIESSUNG → ``hauseingang`` (nur EG); Notausgang-
-   Zusatz (``ist_notausgang=True``), wenn eine Fluchtweglinie dort endet ODER
-   Doppelflügel (> 1.4 m).
+1. AUSSEN × ALLGEMEIN_ERSCHLIESSUNG → ``hauseingang`` (nur EG, und nicht in
+   eine Fläche ohne Weg ins Freie — Argument ``kein_weg_ins_freie``);
+   Notausgang-Zusatz (``ist_notausgang=True``), wenn eine Fluchtweglinie dort
+   endet ODER Doppelflügel (> 1.4 m).
 2. AUSSEN × WOHNUNG_PRIVAT → ``balkontuer`` (nie Ausgang).
 3. STIEGENHAUS × WOHNUNG_PRIVAT → ``wohnungseingang`` · STIEGENHAUS ×
    ALLGEMEIN_ERSCHLIESSUNG → ``stiegenhaustuer``. (Der Contract hat EIN
@@ -29,6 +30,9 @@ import math
 import re
 from pathlib import Path
 
+from shapely.geometry import Point
+from shapely.geometry.base import BaseGeometry
+
 from notbeleuchtung.hauptengine.contracts.raum_modell import Raum, Tuer
 
 from .nutzungsklasse import nutzungsklasse_fuer
@@ -47,6 +51,8 @@ _DOPPELFLUEGEL_MM = 1400.0
 _GARAGENTOR_MM = 2200.0
 _TEXT_NAH_MM = 1500.0
 _WINDFANG_M2 = 8.0
+# Tür „liegt an" der Fläche ohne Weg ins Freie (Türsehne vs. Hofrand).
+_KEIN_WEG_NAH_MM = 600.0
 
 # Text → Tür-Rolle (Fachteil „Türquellen" (b)): Eingangs-Wörter machen im EG
 # einen hauseingang, Notausgangs-Wörter einen Notausgang.
@@ -109,9 +115,17 @@ def _typ(seite: str | None, raum_by_id: dict[str, Raum]) -> str:
 def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
                      brandschutz_hinweise: list[XY] = (),
                      fluchtweg_enden: list[XY] = (),
-                     tuer_texte: list[tuple[str, XY]] = ()) -> list[Tuer]:
+                     tuer_texte: list[tuple[str, XY]] = (),
+                     kein_weg_ins_freie: BaseGeometry | None = None) -> list[Tuer]:
     """Setzt ``tuer_detail``/``ist_notausgang``/``untypisiert_grund`` in-place
-    (Rückgabe = Eingabe). ``tuer_texte`` = türimplizierende Texte (b)."""
+    (Rückgabe = Eingabe). ``tuer_texte`` = türimplizierende Texte (b).
+
+    ``kein_weg_ins_freie`` = Fläche ohne Weg ins Freie (geschlossene Höfe aus
+    ``aussenbereich``). Türen dorthin werden KEIN ``hauseingang``: die AUSSEN-
+    Klasse kommt bei Regel 1 auch aus ``nutzungsklasse`` (``TERRASSE`` →
+    ``AUSSEN``) und würde sonst am Hof-Fix vorbei einen Endausgang erzeugen
+    (Barawitzka EG: STIEGENHAUS raum_37 ↔ TERRASSE raum_43 im ummauerten Hof).
+    ``None`` = Bestandsverhalten."""
     by_id = {r.id: r for r in raeume}
     eg = ist_erdgeschoss(geschoss)
     for t in tueren:
@@ -128,7 +142,9 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
             if endet_flw or t.breite_mm > _DOPPELFLUEGEL_MM:
                 t.ist_notausgang = True
         if AUSSEN in klassen and "ALLGEMEIN_ERSCHLIESSUNG" in klassen:
-            if eg:
+            if eg and not (kein_weg_ins_freie is not None
+                           and kein_weg_ins_freie.distance(Point(t.xy_mm))
+                           < _KEIN_WEG_NAH_MM):
                 detail = "hauseingang"
         elif AUSSEN in klassen and "WOHNUNG_PRIVAT" in klassen:
             detail = "balkontuer"
