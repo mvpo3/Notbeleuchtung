@@ -37,7 +37,10 @@ def test_rennweg_raeume_und_tueren():
 
 def test_barawitzka_raeume():
     rm = _parse("Barawitzka_EG")
-    assert 41 <= len(rm.raeume) <= 47
+    # Obergrenze 47 → 53 (Fachteil 2): lift_erkennung ergänzt ADDITIV echte
+    # LIFT-Räume (Plan-Texte »Aufzug 1/2«, »Lifttüre 90/200«), die die
+    # Prüfstrecken-Referenz (47) nicht kannte. Ist 2026-09-07: 50 (davon 3 LIFT).
+    assert 41 <= len(rm.raeume) <= 53
     assert _typisiert(rm) >= 30
 
 

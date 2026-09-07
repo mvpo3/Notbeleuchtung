@@ -4,7 +4,48 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
-## STAND (2026-09-06, Spätnacht) — #122–#126 GEMERGT: Unterlage, Kontext, Vokabular — HIER WEITER
+## STAND (2026-09-06, Session-Ende ~22:30) — MORGEN HIER WEITER
+
+**Tagesbilanz: 11 Merges (#116–#126), 738→853 grün.** Abend-Session drehte sich
+um Output-Qualität auf schweren Fremdplänen (Rennweg committet, Baufeld E2).
+
+**OFFENE FÄDEN für morgen (Reihenfolge):**
+1. **PR #127 mergen** (2 Commits: Unterlage nur sichtbare Layer — Baufeld hatte
+   95 % Entities auf frozen/off! · Continuous-Linetype-Zwang — Strichlinien ×
+   Millionen-mm-Koordinaten ließen matplotlib >10 min hängen, mit Fix 37 s).
+   CI von Commit 2 noch prüfen (`gh pr checks 127`), dann Owner-GO.
+2. **WIP-Branch `leonis/gang-pfeil-zur-tuer-wip`** (auf #127 gestackt):
+   Owner-Reklamation Baufeld-5OG — alle 18 RZ rotation=0, Pfeil-zur-Tür-Regel
+   (#111) lebte nur im Anker-Pfad, Fremdfamilien laufen im GANG-Fallback.
+   Fix gebaut (Ziel-Tür je Gang: Notausgang>Stiegenhaus; Punkte zum Ziel
+   geordnet; letztes RZ unten-Block rotiert zur Tür), 177 Tests grün — ABER am
+   5OG wirkungslos (weiter 0°). **Diagnose offen:** tragen Baufeld-Türen
+   von_raum/nach_raum? (Skript stand, Owner brach für Feierabend ab.) Falls
+   Referenzen fehlen → Geometrie-Fallback (Tür am Gang-Polygon-Rand) oder
+   Selman-Naht.
+3. **Baufeld-E2-Batch fortsetzen:** fertig+verifiziert nur UG+EG (DXF+PDF in
+   output/, Integritäts-Check!). Werkzeug jetzt versioniert:
+   `scripts/projekt_batch_worker.py <FLOOR...>` (Scratchpad-Lektion). Rest:
+   1OG–6OG. **Vor Versand IMMER PDF-Integrität prüfen (%%EOF)** — heute ging
+   eine Abbruch-Leiche an den Owner raus.
+4. **A1-Format:** Owner-Antwort offen (A1-Probe von EG geschickt; wenn GO →
+   alle Groß-Projekte A1 + evtl. Default je Plangröße).
+5. **Selman baut die Nahttests** (Owner-Ansage!): Regel-Deckungs-Guard +
+   Soll-Tests je Familie — NICHT Leonis-Aufgabe, aber Reviews erwartbar.
+   Kontext: main..origin nach seinen Pushes checken.
+
+**Neue Erkenntnisse/Fallen heute Abend (Merke!):**
+- Sandbox killt parallele Hintergrund-Prozessgruppen (`&`+`wait`) — Einzel-
+  prozesse via run_in_background überleben; Parallelität nur über getrennte
+  Task-Aufrufe.
+- matplotlib-PDF-Killer war NICHT Entity-Menge (26k rekursiv = harmlos),
+  sondern **Strichlinien-Linetypes** bei Millionen-Koordinaten (Bisection-
+  bewiesen). ADR-würdig, steckt im #127-Commit-Text.
+- din-Produkte: AP3-LDT NICHT öffentlich → Owner-Anfrage (QUELLEN.md).
+- Enis' 5-Punkte-Photometrie-Paket: Leonis-Positionen beim Owner (Memory),
+  wartet auf Enis' nächsten Schritt.
+
+## STAND (2026-09-06, Spätnacht) — #122–#126 GEMERGT: Unterlage, Kontext, Vokabular
 
 **main = #126-Merge, 853 grün.** Nach #121 kamen FÜNF weitere Merges:
 - **#122** Spot-Symbol (din STANDARD_SPOT geometrietreu nachgebaut, Owner nahm

@@ -1,0 +1,81 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# regel_deckung.yaml — Deckungs-Matrix Kanon-Raumtyp → Regelwerk (Owner: Enis)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Antwort auf die Frage „ist jeder Raumtyp, den die Erkennung vergibt, im
+# Regelwerk BEWUSST behandelt?" — je Kanon-Typ (docs/VOKABULAR.md §1) GENAU
+# eine der drei Aussagen:
+#
+#   platzierungsregel: <ID>   → Regel existiert (id aus platzierung_regeln.yaml
+#                               oder raum_typ-Schlüssel aus raumtyp_regeln.yaml)
+#   bewusst_keine: <Grund>    → bewusste Entscheidung „kein Notlicht-Trigger"
+#   offen: {frage, owner}     → ungeklärt, mit benanntem Owner (fail closed:
+#                               offen ≠ bewusst_keine)
+#
+# Guard: tests/naht/test_regel_deckung.py — jeder Kanon-Typ genau ein Eintrag,
+# jede referenzierte Regel-ID existiert. Neuer Kanon-Typ ohne Eintrag hier
+# bricht den Guard → keine stillen Lücken mehr.
+#
+# STARTBEFÜLLUNG durch Selman-Lane (2026-09) — Zur Abnahme durch Enis.
+# ═══════════════════════════════════════════════════════════════════════════
+
+deckung:
+  # ── Fluchtweg-/Erschließungsflächen: Regeln existieren ─────────────────────
+  STIEGENHAUS:
+    platzierungsregel: STIEGENHAUS      # raumtyp_regeln.yaml (sicherheitsleuchte)
+  GANG:
+    platzierungsregel: GANG             # raumtyp_regeln.yaml (rz)
+
+  # ── LB-adressierbare Nebenräume: SL-12/SL-13 (reine LB-Regeln) ─────────────
+  GARAGE:
+    platzierungsregel: SL-12-GARAGE
+  TECHNIK:
+    platzierungsregel: SL-13-TECHNIK-LAGER-KELLER
+  LAGER:
+    platzierungsregel: SL-13-TECHNIK-LAGER-KELLER
+  KELLER:
+    platzierungsregel: SL-13-TECHNIK-LAGER-KELLER
+  MUELLRAUM:
+    platzierungsregel: SL-13-TECHNIK-LAGER-KELLER   # ausloeser nennt MUELLRAUM
+
+  # ── Privaträume / Außenbereiche: bewusst kein Norm-Trigger ─────────────────
+  ZIMMER:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  SCHLAFZIMMER:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  KINDERZIMMER:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  WOHNZIMMER:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  KÜCHE:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  BAD:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe (Sanitär-Trigger nur OVE/OIB-gegated, kein raumtyp_regeln-Eintrag)"
+  WC:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe (Sanitär-Trigger nur OVE/OIB-gegated, kein raumtyp_regeln-Eintrag)"
+  ABSTELLRAUM:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  VORRAUM:
+    bewusst_keine: "Privatraum, kein Notlicht ohne LB-Vorgabe"
+  BALKON:
+    bewusst_keine: "Außenbereich, kein Notlicht ohne LB-Vorgabe"
+  TERRASSE:
+    bewusst_keine: "Außenbereich, kein Notlicht ohne LB-Vorgabe"
+
+  # ── Offen: Regel-Lücke mit Owner ───────────────────────────────────────────
+  LIFT:
+    offen:
+      frage: "Pflicht-POI »Aufzugsflur« (Track C): braucht der LIFT-Raum selbst eine Regel oder nur der AUFZUGSVORPLATZ davor?"
+      owner: Enis
+  SCHACHT:
+    offen:
+      frage: "Nicht begehbar (KEIN_RAUM) — reicht bewusst_keine, oder Nachweis-Vermerk im Prüfbericht nötig?"
+      owner: Enis
+  AUFZUGSVORPLATZ:
+    offen:
+      frage: "Erschließungsfläche vor dem Lift: eigener raumtyp_regeln-Eintrag (wie GANG) oder via default(rz)?"
+      owner: Enis
+  WASCHKÜCHE:
+    offen:
+      frage: "Communale Nasszelle — Sanitär-Flächen-Trigger wie WC/BAD anwendbar oder LB-adressierbar wie Nebenräume?"
+      owner: Enis
