@@ -7,11 +7,13 @@ Package-Module quer importiert — eine verkappte Common-Lib unter falschem
 Namen. Hier heißen sie öffentlich, die Strategien bleiben Strategien.
 Implementierungen wortgleich umgezogen (kein Verhalten geändert).
 
-Import-Regel: bausteine importiert NUR contracts (+stdlib) — nie eine Strategie.
+Import-Regel: bausteine importiert NUR contracts + die ezdxf-freien
+symbols-Mapping-/Orientierungs-Funktionen (+stdlib) — nie eine Strategie.
 """
 from __future__ import annotations
 
 from notbeleuchtung.hauptengine.contracts import NormProvider
+from notbeleuchtung.symbols.orientation import transformation as _transformation
 
 #: Stromkreis-Feeder der Sicherheitsversorgung (AGV-<Gebäude>-F<n>).
 AGV_SV_F = 13
@@ -53,6 +55,25 @@ def select_key(symbol_katalog_keys: list[str], richtung: str) -> tuple[str, bool
             if k.endswith(suffix):
                 return k, True
     return keys[0], False
+
+
+def key_und_rotation(
+    symbol_katalog_keys: list[str], richtung: str
+) -> tuple[str, float, bool]:
+    """`(catalog_key, rotation_deg, mirror_x)` aus EINEM Rotationsrahmen.
+
+    Slice 3.1 (Befund 3): der alte Fallback-Pfad drehte den „nach unten"-Block
+    mit Achsen-Rotationen einer impliziten rechts-Basis („oben" renderte als
+    „rechts") und spiegelte für „rechts" (Relikt der links-Basis-Ära). Jetzt:
+    dedizierter Richtungs-Block → (key, 0, False); sonst rechnet
+    `symbols.orientation.transformation` die Rotation aus der GEMESSENEN
+    Block-Basis. Spiegelung ist nie nötig (alle drei Basen sind eigene Blöcke).
+    """
+    key, is_directional = select_key(symbol_katalog_keys, richtung)
+    if is_directional:
+        return key, 0.0, False
+    rotation, mirror_x = _transformation(key, richtung)
+    return key, rotation, mirror_x
 
 
 def building_assigner(x_coords: list[float]):

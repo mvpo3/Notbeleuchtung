@@ -41,6 +41,9 @@ from .bausteine import (
     building_assigner as _building_assigner,
 )
 from .bausteine import (
+    key_und_rotation as _key_und_rotation,
+)
+from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
 from .bausteine import (
@@ -105,20 +108,16 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
             mirror_x = False
         elif naechster is not None and d_exit > 1000.0:
             # Kein Tür-Anker → Pfeil zeigt ZUM nächsten Ausgang (nie ins blinde Ende).
-            richtung, fallback_rotation = _richtung_und_rotation(
+            richtung, _ = _richtung_und_rotation(
                 naechster[0] - ex, naechster[1] - ey
             )
-            catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
-            rotation = 0.0 if is_directional else fallback_rotation
-            mirror_x = False if is_directional else (richtung == "rechts")
+            catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
         else:
             # Auf dem Ausgang selbst (oder keine Ausgänge): Laufrichtung des Segments
             # (durch die Öffnung hinaus) — historisches 4OG-Verhalten.
             px, py = seg.polyline_mm[-2] if len(seg.polyline_mm) >= 2 else (ex, ey)
-            richtung, fallback_rotation = _richtung_und_rotation(ex - px, ey - py)
-            catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
-            rotation = 0.0 if is_directional else fallback_rotation
-            mirror_x = False if is_directional else (richtung == "rechts")
+            richtung, _ = _richtung_und_rotation(ex - px, ey - py)
+            catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
         building = assign_building(ex)
         out.append(
             Platzierung(

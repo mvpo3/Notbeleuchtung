@@ -35,10 +35,10 @@ from .bausteine import (
     building_assigner as _building_assigner,
 )
 from .bausteine import (
-    richtung_und_rotation as _richtung_und_rotation,
+    key_und_rotation as _key_und_rotation,
 )
 from .bausteine import (
-    select_key as _select_key,
+    richtung_und_rotation as _richtung_und_rotation,
 )
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
@@ -97,7 +97,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
         nbrs = [m for m in G.neighbors(nid) if m in pos and m in dist] if nid in G else []
         if nid not in exits and nbrs and nid in dist:
             tgt = min(nbrs, key=lambda m: dist[m])
-            richtung, fallback_rot = _richtung_und_rotation(pos[tgt][0] - nx_, pos[tgt][1] - ny)
+            richtung, _ = _richtung_und_rotation(pos[tgt][0] - nx_, pos[tgt][1] - ny)
         elif nid not in exits and exit_pos:
             # Kreuzung in einer Graph-Komponente OHNE erreichbaren Ausgang (Provider-
             # Lücke, disconnected graph): das Dijkstra-Gefälle existiert nicht. Statt
@@ -105,14 +105,12 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
             # Pfeil per Luftlinie zum geometrisch nächsten Ausgang — die beste
             # verfügbare Richtungs-Information.
             ex_x, ex_y = min(exit_pos, key=lambda p: math.hypot(p[0] - nx_, p[1] - ny))
-            richtung, fallback_rot = _richtung_und_rotation(ex_x - nx_, ex_y - ny)
+            richtung, _ = _richtung_und_rotation(ex_x - nx_, ex_y - ny)
         else:
-            richtung, fallback_rot = "unten", 270.0
+            richtung = "unten"
         seg = FluchtwegSegment(segment_id=f"anker_{nid}", polyline_mm=[(nx_, ny)], reason="corner")
         anf = norm.fuer_fluchtweg_abschnitt(seg)
-        catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
-        rotation = 0.0 if is_directional else fallback_rot
-        mirror_x = False if is_directional else (richtung == "rechts")
+        catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
         # Owner-Korrektur (2026-09-05, korrigierte H-Gebäude-DXF): am AUSGANG hängt
         # immer das „Pfeil nach unten"-Zeichen, aber ROTIERT, sodass der Pfeil physisch
         # ZUR TÜR zeigt (Referenz: SH-Tür oben → Block 180° gedreht = Pfeil nach oben).
