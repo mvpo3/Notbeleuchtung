@@ -137,7 +137,9 @@ class ArchitekturRaumProvider:
                      if s.polyline_mm]
         typisiere_tueren(tueren, raeume, geschoss,
                          brandschutz_hinweise_aus_dxf(plan), flw_enden,
-                         tuer_texte(plan))
+                         tuer_texte(plan),
+                         unary_union(aussen.geschlossen)
+                         if aussen is not None and aussen.geschlossen else None)
         bilde_wohnungen(raeume, tueren)
         neue, _warnungen = leite_ausgaenge(tueren, raeume, geschoss, flw_enden)
         vorhandene = list(ausgaenge)
