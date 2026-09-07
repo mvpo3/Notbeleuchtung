@@ -30,3 +30,6 @@
 
 ## Lauf 2026-09-07 13:54 · 884d096
 - 2026-09-07 · 884d096 · Barawitzka_EG: 38 Stempel, 38 Räume, 10 Restflächen, IoU-Mittel —, Legendenabdeckung 90.3 % · Räume gesamt 47, mit Stempel 37, Flag ok 36, Rest typisiert 2 / untypisiert 1 (kaskade L:2 H:40 F:2 R:3) · Türen typisiert 58/100, Ausgänge final_exit:1, Segmente FALLBACK:1 GRAPH:5, Wohnungen 8
+
+## Lauf 2026-09-07 15:21 · 5ada6b4
+- 2026-09-07 · 5ada6b4 · Rennweg_OG3: 10 Stempel, 10 Räume, 4 Restflächen, IoU-Mittel —, Legendenabdeckung 100.0 % · Räume gesamt 14, mit Stempel 10, Flag ok 10, Rest typisiert 3 / untypisiert 1 (kaskade L:10 H:0 F:0 R:4) · Türen typisiert 13/27, Ausgänge stair_exit:1, Segmente GRAPH:4, Wohnungen 2
