@@ -24,7 +24,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 ## Markierungen
 
 - Brandabschnittslinien: 73
-- Fluchtweglinien: 16
+- Fluchtweglinien: 0
 
 ### Brandabschnitt-Linien
 
@@ -101,25 +101,6 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 - (9.06, -0.96) m → (8.99, -0.96) m
 - (9.03, -0.92) m → (9.03, -1.00) m
 - (9.13, -0.96) m → (9.23, -0.96) m
-
-### Fluchtweg-Linien
-
-- (19.09, -0.00) m → (22.85, -0.00) m
-- (0.10, -0.00) m → (18.89, -0.00) m
-- (-0.10, 0.00) m → (-3.93, 0.02) m
-- (0.07, -34.13) m → (0.06, -37.84) m
-- (0.07, -33.93) m → (0.05, -14.14) m
-- (0.05, -13.94) m → (0.06, -12.30) m
-- (0.06, -12.10) m → (0.01, -2.08) m
-- (0.01, -2.08) m → (0.00, -0.10) m
-- (18.95, -31.31) m → (22.85, -30.60) m
-- (-0.03, -34.04) m → (-1.23, -34.22) m
-- (-1.23, -34.22) m → (-3.93, -34.63) m
-- (18.90, -19.47) m → (18.92, -17.79) m
-- (18.92, -17.79) m → (18.96, -11.55) m
-- (18.96, -11.35) m → (18.99, -0.10) m
-- (18.85, -31.23) m → (18.90, -19.67) m
-- (18.65, -31.36) m → (0.17, -34.01) m
 
 # Plan Mollgasse_EG
 

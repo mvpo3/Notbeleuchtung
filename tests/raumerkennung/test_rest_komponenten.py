@@ -33,7 +33,7 @@ def test_rest_findet_rechten_raum_und_schacht():
     typen = sorted(r.raum_typ for r in raeume)
     assert "SCHACHT" in typen                      # türlose Kleinfläche
     gross = max(raeume, key=lambda r: r.flaeche_m2)
-    assert gross.raum_typ == "UNBEKANNT"
+    assert gross.raum_typ == ""                    # untypisiert, kein "UNBEKANNT"
     assert 8.0 <= gross.flaeche_m2 <= 14.0         # rechter Raum minus Schacht-Box
     # Belegter linker Raum liefert KEINE Rest-Komponente.
     links = Polygon(_LINKS)
