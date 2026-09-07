@@ -152,6 +152,7 @@ def analysiere(floor: str) -> dict:
                      if any(ch.isalpha() for ch in w["text"]) and len(w["text"]) >= 3), None)
         eintraege.append({
             "zentrum_pt": (cx, cy),
+            "bbox_pt": (x0, y0, x1, y1),  # intern für crops(), NICHT in die Fixture
             "xy_mm": [round(cx * PT_ZU_MM_MODELL, 1),
                       round((SEITE_H_PT - cy) * PT_ZU_MM_MODELL, 1)],
             "naechste_tuer_mm": (
@@ -164,9 +165,11 @@ def analysiere(floor: str) -> dict:
     eintraege.sort(key=lambda e: (e["zentrum_pt"][1], e["zentrum_pt"][0]))
 
     symbole = []
+    crop_boxes: list[tuple[str, tuple]] = []
     unklassifiziert = 0
     for i, e in enumerate(eintraege):
         cid = f"{floor.lower()}_c{i:02d}"
+        crop_boxes.append((cid, e["bbox_pt"]))
         kind, richtung, montage, n, konf = SICHT.get(
             cid, ("unbekannt", None, None, 1, "niedrig"))
         if cid not in SICHT:
@@ -183,7 +186,7 @@ def analysiere(floor: str) -> dict:
                 "konfidenz": konf,
                 "crop": f"reports/mollgasse_ug/{floor}/{cid}.png",
             })
-    return {
+    ref = {
         "_source": (
             f"GU-Plan {DATEIEN[floor]}, Seite 1, Maßstab 1:{MASSSTAB}, "
             f"kalibriert {PT_ZU_MM_MODELL:.4f} mm/pt "
@@ -194,6 +197,7 @@ def analysiere(floor: str) -> dict:
         "symbole": symbole,
         "_unklassifiziert": unklassifiziert,
     }
+    return ref, crop_boxes
 
 
 def crops(floor: str, eintraege_pt: list[tuple], out: Path) -> None:
@@ -214,14 +218,20 @@ def crops(floor: str, eintraege_pt: list[tuple], out: Path) -> None:
 def main() -> None:
     floors = sys.argv[1:] or list(DATEIEN)
     for floor in floors:
-        ref = analysiere(floor)
+        ref, crop_boxes = analysiere(floor)
         ziel = Path(f"tests/fixtures/mollgasse_ug_referenz_{floor.lower()}.json")
         ziel.write_text(json.dumps(ref, indent=1, ensure_ascii=False), encoding="utf-8")
+        # Sicht-Crops regenerieren (reports/ gitignored) — macht die
+        # Sicht-Klassifikation reproduzierbar (Review-Befund 2026-09-07: crops()
+        # war vorher unaufgerufen). Nach dem Fixture-Write, damit ein Crop-Fehler
+        # die Fixture nicht verliert.
+        crops(floor, crop_boxes, Path(f"reports/mollgasse_ug/{floor}"))
         arten: dict[str, int] = {}
         for s in ref["symbole"]:
             arten[s["kind"]] = arten.get(s["kind"], 0) + 1
         print(f"{floor}: {len(ref['symbole'])} Leuchten {arten} "
-              f"(unklassifiziert: {ref['_unklassifiziert']}) -> {ziel}")
+              f"(unklassifiziert: {ref['_unklassifiziert']}) -> {ziel} "
+              f"(+{len(crop_boxes)} Crops)")
 
 
 if __name__ == "__main__":
