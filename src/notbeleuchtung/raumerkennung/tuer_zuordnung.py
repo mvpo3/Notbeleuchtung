@@ -179,7 +179,10 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
             or kontur is None or kontur.is_empty):
         return []
     from .nutzungsklasse import nutzungsklasse_fuer
-    aussen_ring = kontur.buffer(2000.0).difference(kontur)
+    # Ring + Kontakt-Puffer EINMAL rechnen (die Kontur ist auf großen Plänen
+    # komplex — je Raum gepuffert war das der Zeitfresser auf Muthgasse).
+    aussen_ring = (kontur.buffer(2000.0).difference(kontur)
+                   .buffer(_AUSSEN_KONTAKT_MM))
     tuer_punkte = [t.xy_mm for t in tueren]
     out: list[Tuer] = []
     for r in raeume:
@@ -189,8 +192,7 @@ def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
         poly = Polygon(r.polygon_mm).buffer(0)
         if poly.is_empty:
             continue
-        zone = poly.buffer(_AUSSEN_KONTAKT_MM).intersection(
-            aussen_ring.buffer(_AUSSEN_KONTAKT_MM))
+        zone = poly.buffer(_AUSSEN_KONTAKT_MM).intersection(aussen_ring)
         frei = zone.difference(wand_union_geom)
         teile = list(frei.geoms) if hasattr(frei, "geoms") else [frei]
         for g in teile:
