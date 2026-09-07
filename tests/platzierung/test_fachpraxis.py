@@ -69,6 +69,23 @@ def test_position_ausserhalb_wird_nicht_gesetzt():
     assert out == []
 
 
+def test_ohne_raumpolygone_fail_closed():
+    """Review-Befund 2026-09-07: fehlen dem RaumModell die Polygone ganz
+    (fragmentierte CAD-Familien liefern real leere raeume), wird KEIN Aufheller
+    gesetzt (fail-closed) — statt ihn ungeprüft ins Nichts zu platzieren."""
+    leer = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(20000.0, 20000.0)),
+        raeume=[], ausgaenge=[Ausgang(id="E", xy_mm=(20000.0, 10000.0), typ="final_exit")],
+    )
+    assert aufheller_je_rz([_rz()], leer) == []
+    # Auch ein Raum ohne verwertbares Polygon (< 3 Punkte) zählt nicht als Kontur.
+    duenn = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(20000.0, 20000.0)),
+        raeume=[Raum(id="r1", raum_typ="GANG", polygon_mm=[(0.0, 0.0), (1.0, 0.0)])],
+    )
+    assert aufheller_je_rz([_rz()], duenn) == []
+
+
 @pytest.mark.parametrize("winkel_deg", range(0, 360, 10))
 def test_winkel_sweep_500mm_und_im_polygon(winkel_deg):
     """Deterministischer Sweep statt hypothesis: für jede Pfeilrichtung bleibt
