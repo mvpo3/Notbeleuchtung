@@ -96,10 +96,12 @@ Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
   oder fehlender `nutzungsklasse`-Konsum der Platzierung — zur Klärung mit
   Leonis; hier nur BEFUND.
 - **RZ-Rotation vs. Türwandwinkel:** gemessen ±2° gegen das nächste
-  Wandsegment. Mollgasse 4/8 abweichend (Δ≈90°: rotation_deg=0 an Türen in
-  vertikaler Wand), Barawitzka 1/1 abweichend. Nach ADR-0006 ist rotation_deg
-  der RZ heute reine CAD-Symbol-Rotation — die Messung dokumentiert die Lücke,
-  ändert aber nichts.
+  Wandsegment. Stand der aktuellen Berichte („Rotationsprüfung RZ über Tür"):
+  Mollgasse **1/8** abweichend (`tuer_70`, Δ=90°), Barawitzka **2/2** abweichend
+  (`aussenoeffnung_1`, `durchgang_63`, je Δ=90°), Rennweg OG3 kein RZ näher als
+  1 m an einer Tür. Die Mollgasse-Zahl ist der Stand nach dem Rotationsfix
+  (s.u.). Nach ADR-0006 ist rotation_deg der RZ heute reine CAD-Symbol-
+  Rotation — die Messung dokumentiert die Lücke, ändert aber nichts.
 - **Leuchten „kein Raum"** (Rennweg 1, Mollgasse 6, Barawitzka 1): Leuchten
   außerhalb jedes erkannten Raumpolygons (Außenleuchten an final_exits und
   Zonen ohne Raum-Polygon) — erwartbar, kein Fehler.
@@ -156,8 +158,8 @@ Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
   ≤ 0.2 m). Ein Clustering der Endpunkte (z.B. 500 mm) würde die Liste
   ehrlicher machen — bewusst nicht mehr in diesem Schnitt.
 - **Türen-Typisierungsquote:** Soll ≥ 90 % je Familie als strict-xfail in
-  tests/naht/ verankert. Ist 2026-09-07: Mollgasse 48 %, Barawitzka 53 %,
-  Rennweg EG 54 % — Hauptgrund `unbekannte_kombination` (Nachbarräume ohne
+  tests/naht/ verankert. Ist 2026-09-07: Mollgasse 48 % (72/150),
+  Barawitzka 55 % (59/108), Rennweg EG 54 % — Hauptgrund `unbekannte_kombination` (Nachbarräume ohne
   Kanon-Typ); Gründe-Tabelle je Plan in bericht.md
   (`Tuer.untypisiert_grund`, Contract v1.3.0).
 - **Restweg im EG:** bericht.md nennt für OG-Pläne den Restweg
@@ -169,3 +171,63 @@ Platzierungslogik wurde nicht geändert (Owner-Grenze, ADR-0006).
   Warnung (1/2 ohne RZ in Reichweite; gepinnt in
   tests/e2e/test_familien_durchstich.py). Soll die Ausgangs-Priorität auch
   Ausgänge in graph-getrennten Komponenten mit einem RZ versorgen?
+
+## Mollgasse — Gebäude schließt nicht: 960 m² Inneres gelten als AUSSEN (2026-09-07, Selman)
+
+**Befund (gemessen, nicht geschätzt).** Die Erklärung „Doppellinien-Stummel +
+fehlende Endpunkt-Dedup" für die 40 notausgang_kandidaten oben greift zu kurz.
+Ursache ist eine Stufe früher, in der Wandkörper-Erkennung:
+
+| Messgröße | Mollgasse EG | Barawitzka EG |
+|---|--:|--:|
+| Wandkörper (`finde_wandkoerper`) | 171 | 1243 |
+| Segmente auf den Wand-Layern | 989 | — |
+| Gebäude-Komponenten | 5 | 1 |
+| größte Komponente (m²) | 364.6 | 426.0 |
+| als AUSSEN „offen" erkannt (m²) | **960.3** + 7 weitere | 76.1 + 4 weitere |
+| `gedeckt()` gesamt (m²) | 497.4 | 413.5 |
+
+**Ursachenkette.** `finde_wandkoerper` (wandkoerper.py) baut Wandkörper aus
+HATCH-Flächen. Bei Mollgasse liegen die Wand-*Umrisse* aber als LINE/LWPOLYLINE
+auf `02-TWA-`/`02-WDA-`/`02-ZWA-…` (989 Segmente); nur die Material-Schraffuren
+(`02-FIL-…-GK`/`-STB`/`-ORANGE`) werden zu Körpern. Der vorhandene
+Doppellinien-Fallback `_doppellinien` steht hinter der Bedingung
+`if len(out) < 5:` — Mollgasse liefert 171 Hatch-Körper, also läuft er **nie**,
+und die 989 Wandsegmente bleiben ungenutzt. Folge: die Wand-Union schließt sich
+nicht zu einem Trakt, `erkenne_aussenbereiche` findet 5 Mini-Komponenten, und
+die verbleibende freie Fläche (960 m²) berührt den Rand der konvexen Hülle →
+sie wird als offener AUSSEN-Bereich klassifiziert.
+
+**Beleg für die Fehlklassifikation.** 20 der 64 erkannten Mollgasse-Räume liegen
+mehrheitlich in dieser 960-m²-Fläche, darunter `raum_2`/`raum_3`/`raum_4`/
+`raum_7`/`raum_41`/`raum_56` (Typ GANG) und neun Räume vom Typ ZIMMER, sieben
+davon zu 100 %. Gänge und Zimmer sind nie Außenbereich.
+
+**Warum das die 40 Kandidaten erklärt.** Weil das Gebäudeinnere als AUSSEN gilt,
+liegen viele Grad-1-Endpunkte des 09-WEG-Layers „außerhalb der Kontur, nahe
+einer Komponentenkante" und zählen als Außenkanten-Endpunkte. Gleichzeitig gibt
+es dort keine Tür mit AUSSEN-Seite → **alle 40 Kandidaten** melden „keine Öffnung
+in der Außenwand ≤ 3 m gefunden". Leonis' Einschätzung (real fehlen 1–2
+Endausgänge) ist plausibel; der Kreuzcheck überzeichnet um Faktor ~20.
+
+**Warum hier kein Fix steht.** Drei Varianten gemessen, jede verschlechtert
+Barawitzka:
+
+1. `_doppellinien` zusätzlich laufen lassen (+883 Körper, 0.2 s): Mollgasse
+   `gedeckt()` 497 → 585 m², AUSSEN bleibt bei 936 m². Löst es nicht.
+2. Alle Innenraum-Polygone (Nutzungsklasse ≠ AUSSEN) aus der freien Fläche
+   schneiden: Mollgasse 960 → 522 m², aber Barawitzka verliert seinen
+   AUSSEN_GESCHLOSSEN-Hof (23.5 m² → 0) und `test_aussenbereich.py` bricht.
+3. Wie 2, aber nur positiv typisierte Räume: Mollgasse 960 → 622 m², Barawitzka
+   Hof weiterhin verloren (23.5 → 0, wird fälschlich „offen").
+
+Ein tragfähiger Fix muss an der Wandkörper-Erkennung ansetzen (Umriss-Linien der
+Wand-Layer gleichrangig zu Schraffuren auswerten), nicht an der Außen-Analyse.
+Das ist genau die „nächste Baustelle der Raumerkennung", die Leonis' Punkt 5
+benennt — sie ist auch der dominante Grund für die niedrige Türquote
+(`unbekannte_kombination`: Mollgasse 57/78 der untypisierten Türen).
+
+**Reproduktion.** `finde_wandkoerper` + `erkenne_aussenbereiche` auf
+`Projekte/_eingang/Mollgasse_EG.dxf` und `…/Barawitzka_EG.dxf`, Flächen der
+`komponenten`/`offen`/`geschlossen` vergleichen; Räume gegen die größte
+`offen`-Fläche schneiden.

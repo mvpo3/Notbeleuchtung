@@ -145,18 +145,55 @@ Quelle selbst nachschlagen und mit Fundstelle zitieren.
 | `knowledge/extracted/PLATZIERUNGS_KONZEPTE.md` | Das Planer-Denkmodell hinter den Strategien (Schicht-1-Anker, Tür-Regel) | „Schicht-1-Anker" |
 | `knowledge/extracted/PROFI_DIN_PLAN_UND_VORSCHRIFTEN.md` | Erst-Digest des Barawitzka-Referenzplans + Vorschriften-Scans | §1 (Plan-Analyse) |
 | `knowledge/extracted/PRODUKTE_SCHRACK_DIN.md` | Produktfamilien (BASICsc/CONCEPTsc, CMR) hinter den Typen A–I | BASIC-2/CONCEPT-2-Abschnitte |
-| `knowledge/extracted/Handbuch_NotSicherheitsbeleuchtung_2026.md` | INOTEC-Planungs-Blaupause inkl. dynamischer Fluchtweglenkung | Kopf „Einordnung" |
-| `knowledge/extracted/GSYSTEMS_Planungshandbuch.md` | Hersteller-Planungshandbuch (Referenz-Praxis) | Kopf „Einordnung" |
-| `knowledge/extracted/Kaufel_Planungshandbuch.md` | DE-Planungshandbuch — nur EN-identische Teile für AT nutzen | Kopf „Einordnung" (DE-only-Hinweis) |
-| `knowledge/extracted/LichtWissen_10_Notbeleuchtung.md` | DE-Branchenpublikation, Bildvorlagen (mobile_*-Bilder oben) | Kopf „Einordnung" |
-| `knowledge/extracted/ONL_Normen_AT.md` | Zumtobel-Zusammenfassung der AT-Norm-Lage (Sekundärquelle) | Kopf „Einordnung" |
-| `knowledge/extracted/ANALYSE_Baufeld_E2_Notbeleuchtung.md` | Referenz-Praxis eines realen Planers vs. EN 1838 (Baufeld E2) | Kopf „Ziel" |
-| `knowledge/extracted/FLUCHTWEG_AUSHANG_REFERENZ.md` | Zimmeraushang-Referenz (Darstellungs-Konventionen) | Gesamtdigest |
-| `knowledge/extracted/MUTHGASSE_POLIERPLAN_BRANDSCHUTZ.md` | Muthgasse-Polierpläne: Brandschutz-Gerüst, 6. CAD-Familie | Gesamtdigest |
-| `knowledge/extracted/LB_ANALYSE_beispiele.md` | Was reale LBs vorschreiben (Input 2, übersteuert Norm-Defaults) | Gesamtdigest |
-| `knowledge/extracted/STROMKREISNUMMER_DWG.md` | Stromkreis-Nummernschema des din-Planungstools | Gesamtdigest |
+| `knowledge/extracted/Handbuch_NotSicherheitsbeleuchtung_2026.md` | INOTEC-Planungs-Blaupause inkl. dynamischer Fluchtweglenkung | „Planungsregeln-Tabelle", „Zitierte Norm-Werte (Quelle-der-Quelle)" |
+| `knowledge/extracted/GSYSTEMS_Planungshandbuch.md` | Hersteller-Planungshandbuch (Referenz-Praxis) | „Planungsregeln-Tabelle", „Zitierte Norm-Werte (Quelle-der-Quelle)" |
+| `knowledge/extracted/Kaufel_Planungshandbuch.md` | DE-Planungshandbuch — nur EN-identische Teile für AT nutzen | „Relevanz für die Engine" (DE-only-Hinweis), „Planungsregeln-Tabelle" |
+| `knowledge/extracted/LichtWissen_10_Notbeleuchtung.md` | DE-Branchenpublikation, Bildvorlagen (mobile_*-Bilder oben) | „Planungsregeln-Tabelle", „Zitierte Norm-Werte (Quelle-der-Quelle)" |
+| `knowledge/extracted/ONL_Normen_AT.md` | Zumtobel-Zusammenfassung der AT-Norm-Lage (Sekundärquelle) | „Regel-Tabelle", „Zitierte Norm-Werte (Quelle-der-Quelle)" |
+| `knowledge/extracted/ANALYSE_Baufeld_E2_Notbeleuchtung.md` | Referenz-Praxis eines realen Planers vs. EN 1838 (Baufeld E2) | §1 „Befund (extrahierte Platzierung)", §2 „Warum so platziert — Abgleich mit EN 1838" |
+| `knowledge/extracted/FLUCHTWEG_AUSHANG_REFERENZ.md` | Zimmeraushang-Referenz (Darstellungs-Konventionen) | §1 „Aufbau des Aushangs", §3 „AT-Norm-Vergleich" |
+| `knowledge/extracted/MUTHGASSE_POLIERPLAN_BRANDSCHUTZ.md` | Muthgasse-Polierpläne: Brandschutz-Gerüst, 6. CAD-Familie | §1 (vorgerechnete Fluchtweglängen FLW-L), §2 „Brandschutz-Inventar", §3 (AIA-Layer-Standard) |
+| `knowledge/extracted/LB_ANALYSE_beispiele.md` | Was reale LBs vorschreiben (Input 2, übersteuert Norm-Defaults) | „Kernbefund — LB übersteuert Norm", „Extrahierte LB-explizite Felder" |
+| `knowledge/extracted/STROMKREISNUMMER_DWG.md` | Stromkreis-Nummernschema des din-Planungstools | „Kernbefund: das Nummern-Schema", Voll-Analyse §3 „Attribut-Schema" |
 | `knowledge/extracted/ESV_2012.md`, `ETG_1992.md`, `ETV_2002_2010_2020.md`, `Nullungsverordnung.md`, `RIS_Standesregeln_Elektrotechnik.md`, `Sicherheitsvorschriften_Elektro.md`, `OENORM_E_8014.md`, `OVE_E_8015.md`, `OVE_E_8350.md`, `OVE_E_8351.md` | Rechts-/Elektro-Rahmen (kein Platzierungs-Wissen) | jeweils Kopf „Relevanz für die Engine" |
-| `knowledge/extracted/WETTBEWERB_ENDRA_AI.md` | Wettbewerber-Einordnung (kein Platzierungs-Wissen) | Kopf |
+| `knowledge/extracted/WETTBEWERB_ENDRA_AI.md` | Wettbewerber-Einordnung (kein Platzierungs-Wissen) | §4 „Vergleich mit unserer Engine" |
+| `knowledge/extracted/README.md` | Wegweiser durch die Digests (Einstiegs-Reihenfolge, Bild-Lehren-Hinweis) | Kopf + Einstiegs-Kasten |
+
+### 3a. Bild-Lehren (`knowledge/extracted/bildlehren/`) — 7 Digests + 3 JPG
+
+Visuelle Sichtung derselben PDFs Seite für Seite; erfasst genau das, was im
+Text-Digest nicht steht (Anordnungs-Schemata, Beispiel-Grundrisse, Tabellenbilder).
+Die 3 Gold-Bilder `beispiel_krankenhaus_luxzonen.jpg`, `beispiel_schule_luxzonen.jpg`,
+`beispiel_OVE_R12-2_Bild8-9.jpg` liegen im selben Ordner.
+
+| Pfad | Kurzaussage | Fundstelle |
+|---|---|---|
+| `bildlehren/Bildlehren_EN1838_E08.md` | Die 4 Bilder + 1 Tabelle der EN 1838:2019 und die E-08-Bilder/Tabellen, bildweise beschrieben (Blendungs-Zonen, Erkennungsweiten-Geometrie) | „EN 1838 — Bild für Bild" (Bild 4 = Erkennungsweite), „E-08 — visuelle Konzepte" |
+| `bildlehren/Bildlehren_ONL_Zumtobel.md` | AT-Broschüre bildweise: Normen-Rangordnung, Sichtbarkeits-Isometrie, Rettungsweg-Geometrie | „S.31 — Isometrie ‚Sichtbarkeit für Evakuierungsmaßnahmen'", „S.32 — Rettungsweg-Geometrie" |
+| `bildlehren/Bildlehren_INOTEC.md` | Hersteller-Handbuch bildweise: RZ an/über der Tür, Treppenraum-Regel, hervorzuhebende Stellen der 2025er-Fassung | „S.44 — Notausgangstür", „S.46 — Treppen + Außenbereich", „S.48 — Treppenraum-Regel" |
+| `bildlehren/Bildlehren_GSYSTEMS.md` | Hersteller-Handbuch bildweise: Fluchtweg als Flächen-Layer im Grundriss, Erkennungsweite + Blickwinkel, Montagehöhen-Bänder (DE-only-Teile markiert) | „S.89 — Grundriss ‚Flucht- und Rettungswege'", „S.165", „S.166" |
+| `bildlehren/Bildlehren_Kaufel.md` | DE-Planungsgrundlagen bildweise: Anordnung an Ausgang/Notausgang/Treppe, Kreuzung, Blendungs-Geometrie | „S. 43 — Abb. 11/12/13", „S. 44 — Abb. 14/15/16", „S. 45 — Abb. 17/18" |
+| `bildlehren/Bildlehren_LichtWissen10.md` | DE-Branchenheft bildweise: Piktogramm-Matrix der hervorzuhebenden Stellen, Flur-Kreuzung/Richtungsänderung, Erkennungsweiten-Diagramm | „S.10 — Hervorzuhebende Stellen nach DIN EN 1838 (Abb. 07)", „S.23 — Erkennungsweiten-Formel" |
+| `bildlehren/Bildlehren_Beispielplaene_Web.md` | Auswertung der 3 Gold-Bilder: Lux-Zonierung je Raumtyp, Antipanik als Raster im Großraum, OVE-R-12-2-Topologie | „Schlüssel-Abbildungen" (je Bild ein Unterabschnitt) |
+
+### 3b. Aus dem elektro-planer-Bestand (`knowledge/extracted/aus_elektroplaner/`)
+
+| Pfad | Kurzaussage | Fundstelle |
+|---|---|---|
+| `aus_elektroplaner/README.md` | Was gefiltert übernommen wurde + Hierarchie-Einordnung der 5 Digests | „Die 5 gefilterten Digests" |
+| `aus_elektroplaner/OENORM_E_8002_Menschenansammlungen.md` | AT-Antwort auf das „WANN" (Erforderlichkeit nach Nutzung/Schwelle); historisch, 2019 in OVE E 8101 überführt | „Regel-Tabelle (Notbeleuchtungs-relevant)", Detail-Digest T1 §4.3.1 |
+| `aus_elektroplaner/OENORM_E_8007_medizinisch.md` | Medizinische Räume: Anwendungsgruppe AG 0/1/2 → Umschaltzeit + Betriebsdauer | „Regel-Tabelle (Sicherheitsbeleuchtung/-stromversorgung medizinisch)", „Raumtyp → Anforderung (medizinisch)" |
+| `aus_elektroplaner/OVE_E_8101_2025_Deltas.md` | Deltas der Ausgabe 2025 gegen 2019 (u.a. Verbot 560.7.13, Versammlungs-Schwelle, Anhang 56.A jetzt normativ) | „Delta-Tabelle", „Betriebsdauern Anhang 56.A (2025)" |
+| `aus_elektroplaner/OVE_Fachinfos_E05_E06_E07.md` | AT-Fachinfos: Funktionserhalt der Leitungsanlagen (E-07), Bussysteme (E-06), Garagen (E-05) | „E-07 — Funktionserhalt Leitungsanlagen", „Regel-Tabelle" |
+| `aus_elektroplaner/Schrack_Katalog_NotSicherheitsbeleuchtung.md` | Produktrealität der gerenderten Marke: Erkennungsweiten je Familie, Leuchtenabstände, Konvention Wand=RZ / Decke=SI | „Platzierungs-/Auslegungs-relevante Kennwerte", „Verknüpfung mit unserem Symbol-Mapping" |
+
+### 3c. Original-PDF-Bestände (nicht als Digest erfasst)
+
+| Pfad | Kurzaussage | Fundstelle |
+|---|---|---|
+| `knowledge/OIB-Richtlinien/` (Ausgabe Mai 2023, RL 1–7 + Sonderrichtlinien, PDF) | Bau-rechtliche Erforderlichkeit der Sicherheitsbeleuchtung je Nutzung | `OIB-Richtlinie 2 Brandschutz/oib-rl_2_ausgabe_mai_2023.pdf` Punkt 5.4 + Tabelle 6; ausgewertet in `docs/OIB_RL2_TABELLE6.md` |
+| `knowledge/Österreichische Rechtsquelle/RIVOPLAN_Oesterreichische_Rechtsquellen_Notbeleuchtung_AT.pdf` | Eigene Arbeitskopie (**nicht amtlich**) zu AStV § 9 / § 13, ASchG §§ 20/21, KennV Anhang 1 Pkt. 1.4 | Gesamtdokument (10 S.); Einordnung in `docs/NORMQUELLEN_AT.md`, Abschnitt „Sonderfall" |
+| `knowledge/OVE-Fachinformation/` (E-01…E-13, H02, PDF) | AT-Auslegungshilfen zu OVE E 8101 / ÖVE E 8002; notbeleuchtungsrelevant E-06/E-07/E-08 | `Fachinfo_E-06_Bussystem_2020-12.pdf`, `Fachinfo_E-07_Sicherheitsbeleuchtung_2020-12.pdf`, `Fachinfo_E-08_Sicherheitsbeleuchtung_Arbeitsstaetten_2021-04.pdf` |
 
 ---
 
