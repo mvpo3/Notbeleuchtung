@@ -11,9 +11,12 @@ def test_durchstich_fake_providers(tmp_path):
     out = run(build_fake_bundle(), dxf_path="<fake>", floor="4OG",
               out_path=tmp_path / "4og_notbeleuchtung.dxf")
     assert isinstance(out, Output)
-    # 5 RZ (Fluchtweg-Segmente) + 1 Aufheller je STIEGENHAUS (Sicherheitsleuchte).
-    assert out.render_summary["n_symbols"] == 7
-    assert out.render_summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
+    # 5 RZ (Fluchtweg-Segmente) + 1 Aufheller je STIEGENHAUS + 4 fachpraxis-
+    # Aufheller (Regel B1, Slice 2.3: je RZ einer 500 mm dahinter; der fünfte
+    # RZ steht so, dass die Position außerhalb jedes Raumpolygons läge → regel-
+    # konform NICHT gesetzt).
+    assert out.render_summary["n_symbols"] == 11
+    assert out.render_summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 6}
     assert out.render_summary["floor"] == "4OG"
     assert out.render_summary["rendered"] is True    # echtes DXF seit Slice 3
     assert (tmp_path / "4og_notbeleuchtung.dxf").is_file()

@@ -37,8 +37,8 @@ def test_plan_liefert_dxf_zurueck():
     # Summary im Header: 7 Symbole (5 RZ + 2 SL), gerendert.
     summary = json.loads(r.headers["X-Notbeleuchtung"])
     assert summary["floor"] == "4OG"
-    assert summary["n_symbols"] == 7
-    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
+    assert summary["n_symbols"] == 11  # +4 fachpraxis-Aufheller (B1, Slice 2.3)
+    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 6}
     assert summary["rendered"] is True
 
 
@@ -71,7 +71,7 @@ def test_plan_ohne_lb_provider_ignoriert_lb_upload():
         data={"floor": "4OG"},
     )
     assert r.status_code == 200
-    assert json.loads(r.headers["X-Notbeleuchtung"])["n_symbols"] == 7
+    assert json.loads(r.headers["X-Notbeleuchtung"])["n_symbols"] == 11  # inkl. fachpraxis-Aufheller
 
 
 def test_plan_format_pdf_liefert_pdf():
@@ -170,7 +170,7 @@ def test_plan_lb_review_kommt_im_header_an():
     assert r.status_code == 200
     assert len(r.content) > 0
     summary = json.loads(r.headers["X-Notbeleuchtung"])
-    assert summary["n_symbols"] == 7          # 5 RZ + 2 SL = reine Norm, keine LB-Exklusion
+    assert summary["n_symbols"] == 11         # 5 RZ + 2 SL + 4 fachpraxis-Aufheller, keine LB-Exklusion
     # … und der Review-Bedarf ist in der Antwort sichtbar.
     review = summary["lb_review"]
     assert review["status"] == "review_erforderlich"
