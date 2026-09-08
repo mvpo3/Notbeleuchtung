@@ -19,6 +19,7 @@ import re
 from pathlib import Path
 
 import ezdxf
+import ezdxf.bbox as ezbbox
 from ezdxf.enums import MTextEntityAlignment
 
 from notbeleuchtung.hauptengine.contracts import LBVorgabe, PlatzierungsErgebnis, RaumModell
@@ -920,6 +921,14 @@ def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> b
             2087.3, y, 1.4,
         )
         y -= 3.4
+    # OIB-Stufe AM BLATT (Ausgabelücken-Befund 2026-09-07): die Erforderlich-
+    # keits-Stufe stand bisher nur im API-Summary, nie im gezeichneten Vermerk.
+    # ASCII-Trenner (Vorlagen-Font-Falle), bei mehreren Teilen kompakt je Teil.
+    stufen = (pruefung or {}).get("oib_stufen") or {}
+    if stufen:
+        kurz = ", ".join(f"{t}: {s}" for t, s in sorted(stufen.items()))
+        text(f"OIB-RL2-Stufe: {kurz}", 2087.3, y, 1.4)
+        y -= 3.4
     text("Details: Prüfbericht im Plan-Summary (API)", 2087.3, y, 1.4)
     return True
 
@@ -1139,6 +1148,68 @@ def _setze_photometrie_eigenschaft(doc, photometrie) -> bool:
     return True
 
 
+class VorlageEinheitenFehler(ValueError):
+    """G5 (Slice 3.4): die Layout-Vorlage führt andere Einheiten als mm."""
+
+
+class MassstabPasstNichtFehler(ValueError):
+    """G6 (Slice 3.4): das Modell passt in 1:50 nicht in den Vorlagen-Viewport.
+
+    Der Maßstab ist bindend — es wird NICHT still auf 1:100 gewechselt."""
+
+
+_LAYOUT_MASSSTAB = 50  # 1:50, bindend (Slice 3.4)
+
+
+def _fuege_layout_viewport(doc, msp, raum: RaumModell, plankopf: dict | None) -> dict:
+    """Layout1-Planfenster der Vorlage auf das Modell richten — exakt 1:50.
+
+    Nutzt den GRÖSSTEN vorhandenen VIEWPORT der Vorlage (Planfenster; die
+    kleineren sind Legenden-/Detailfenster). Befüllt ATTRIB-Tags, die im Layout
+    existieren (die Rivoplan-Vorlage führt KEINE — ihr Plankopf ist reiner TEXT;
+    die Tag-Liste landet im Summary, es wird nichts angelegt).
+    """
+    layout = doc.layouts.get("Layout1")
+    vps = sorted(layout.query("VIEWPORT"),
+                 key=lambda v: float(v.dxf.width) * float(v.dxf.height), reverse=True)
+    if not vps:
+        raise MassstabPasstNichtFehler("Vorlage hat keinen VIEWPORT in Layout1")
+    vp = vps[0]
+    ext = ezbbox.extents(msp, fast=True)
+    if not ext.has_data:
+        raise MassstabPasstNichtFehler("Modelspace ist leer — nichts einzupassen")
+    w_mm = ext.extmax.x - ext.extmin.x
+    h_mm = ext.extmax.y - ext.extmin.y
+    pw, ph = float(vp.dxf.width), float(vp.dxf.height)
+    if w_mm / _LAYOUT_MASSSTAB > pw or h_mm / _LAYOUT_MASSSTAB > ph:
+        raise MassstabPasstNichtFehler(
+            f"Modell {w_mm:.0f}x{h_mm:.0f} mm braucht in 1:{_LAYOUT_MASSSTAB} "
+            f"{w_mm / _LAYOUT_MASSSTAB:.0f}x{h_mm / _LAYOUT_MASSSTAB:.0f} mm Papier, "
+            f"Planfenster bietet {pw:.0f}x{ph:.0f} mm (G6 — Maßstab ist bindend)"
+        )
+    vp.dxf.view_center_point = (
+        (ext.extmin.x + ext.extmax.x) / 2, (ext.extmin.y + ext.extmax.y) / 2, 0.0,
+    )
+    vp.dxf.view_height = ph * _LAYOUT_MASSSTAB
+    werte = {
+        "MASSSTAB": f"1:{_LAYOUT_MASSSTAB}",
+        "GESCHOSS": raum.floor,
+        **{k.upper(): str(v) for k, v in (plankopf or {}).items()},
+    }
+    tags: list[str] = []
+    for e in layout.query("INSERT"):
+        for a in e.attribs:
+            tags.append(a.dxf.tag)
+            if a.dxf.tag in werte:
+                a.dxf.text = werte[a.dxf.tag]
+    return {
+        "layout": layout.name,
+        "viewport_scale": f"1:{_LAYOUT_MASSSTAB}",
+        "fit": True,
+        "plankopf_tags": tags,
+    }
+
+
 def render_dxf(
     platzierung: PlatzierungsErgebnis,
     raum: RaumModell,
@@ -1148,6 +1219,7 @@ def render_dxf(
     plankopf: dict | None = None,
     photometrie=None,
     unterlage_dxf: str | None = None,
+    template_path: Path | str | None = None,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
@@ -1162,7 +1234,17 @@ def render_dxf(
     aus der Ausgabe verschwinden.
     """
     out_path = Path(out_path)
-    doc = ezdxf.new("R2018", units=4)  # 4 = mm
+    if template_path is not None:
+        # Slice 3.4: in die Layout-Vorlage rendern statt in ein leeres Doc.
+        # Der Vorlagen-Modelspace ist leer (gemessen); das Blatt lebt in Layout1
+        # (Paperspace) und zeigt das Modell über einen Viewport in 1:50.
+        doc = ezdxf.readfile(str(template_path))
+        if doc.units != 4:
+            raise VorlageEinheitenFehler(
+                f"Vorlage {template_path} hat units={doc.units}, erwartet 4 (mm) — G5"
+            )
+    else:
+        doc = ezdxf.new("R2018", units=4)  # 4 = mm
     library.sync_layers(doc)
     _add_own_layers(doc)
     msp = doc.modelspace()
@@ -1173,12 +1255,17 @@ def render_dxf(
     n_raeume_drawn = _draw_raeume(msp, raum)
     n_tueren_drawn = _draw_tueren(msp, raum)
     n_segmente = _draw_segmente(msp, raum)
-    blatt_bbox = _baue_blatt_layout(msp, raum, plankopf, pruefung, photometrie)
+    # Template-Modus: KEIN Modelspace-Blatt (#115-Pfad) — Layout1 IST das Blatt.
+    blatt_bbox = (
+        None if template_path is not None
+        else _baue_blatt_layout(msp, raum, plankopf, pruefung, photometrie)
+    )
     _panel_x0_override.clear()
-    if blatt_bbox is not None:
+    if blatt_bbox is not None or template_path is not None:
         # Owner-Fixierung (wohnbau_v7_dg_verbessert.dxf, 2026-09-05): im Blatt-Modus
         # trägt das Blatt ALLES — keine Schriftfeld-Leiste, kein Legenden-Anhang,
         # keine Info-Boxen daneben. Prüfbericht/Belegung bleiben im Summary/API.
+        # Gilt genauso im Template-Modus (Slice 3.4): Layout1 trägt das Blatt.
         lb_legende_drawn = False
         vorlage_drawn, vorlage_legende_gefuellt = True, True
         stueckliste_drawn = False
@@ -1189,7 +1276,7 @@ def render_dxf(
             False if vorlage_legende_gefuellt
             else _draw_stueckliste(msp, raum, platzierung)
         )
-    if blatt_bbox is not None:
+    if blatt_bbox is not None or template_path is not None:
         plankopf_drawn = True          # das Blatt IST der Plankopf (Rivoplan-Vorlage)
         # Owner: keine Zusatz-Boxen am Blatt — aber seit Owner-GO 2026-09-06 trägt
         # das Blatt ein PRÜFVERMERK-Feld (Status + Zählung, _blatt_pruefvermerk);
@@ -1212,6 +1299,11 @@ def render_dxf(
     blatt_drawn = blatt_bbox is not None
     _panel_x0_override.clear()
     _set_vport(doc, raum, platzierung)
+
+    layout_summary = (
+        _fuege_layout_viewport(doc, msp, raum, plankopf)
+        if template_path is not None else None
+    )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc.saveas(str(out_path))
@@ -1243,4 +1335,6 @@ def render_dxf(
         "blatt_layout_drawn": blatt_drawn,
         "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
         "layer": LAYER_NOTBELEUCHTUNG,
+        # Slice 3.4 (Template-Modus): dict-Erweiterung, kein Contract.
+        **(layout_summary or {}),
     }

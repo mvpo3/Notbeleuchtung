@@ -38,3 +38,49 @@ def test_keine_korridore_keine_verdichtung():
     # 4OG-Fixture: nur STIEGENHAUS, kein GANG/FLUR → nichts hinzufügen.
     data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
     assert verdichte_fluchtweg(RaumModell.model_validate(data), FakeNormProvider()) == []
+
+
+class _MfNormProvider(FakeNormProvider):
+    """Enis-Double, dessen NormAnforderung zusätzlich einen Wartungsfaktor trägt.
+
+    Modelliert die künftige Norm-Naht (`NormAnforderung.wartungsfaktor`, Enis/3-Owner)
+    per Duck-Typing — die reale NormAnforderung kennt das Feld heute noch nicht, der
+    Konsum in `deckung` liest es defensiv via getattr.
+    """
+
+    def __init__(self, wartungsfaktor: float) -> None:
+        super().__init__()
+        self._wf = wartungsfaktor
+
+    def fuer_raum(self, raum_typ: str, ist_fluchtweg: bool):
+        return _mit_wf(super().fuer_raum(raum_typ, ist_fluchtweg), self._wf)
+
+
+class _AnfMitWf:
+    """Leichter Proxy: reicht alle Attribute an die echte Anforderung durch, plus wf."""
+
+    def __init__(self, anf, wf: float) -> None:
+        self._anf = anf
+        self.wartungsfaktor = wf
+
+    def __getattr__(self, name):
+        return getattr(self._anf, name)
+
+
+def _mit_wf(anf, wf: float):
+    return _AnfMitWf(anf, wf)
+
+
+def test_wartungsfaktor_verdichtet_staerker():
+    # Aktivierter MF (< 1) senkt die nutzbare Beleuchtungsstärke → dichtere Platzierung.
+    ohne_mf = verdichte_fluchtweg(_gang_raum(), FakeNormProvider(), i_cd=300.0)
+    mit_mf = verdichte_fluchtweg(_gang_raum(), _MfNormProvider(0.5), i_cd=300.0)
+    assert len(mit_mf) >= len(ohne_mf)
+
+
+def test_wartungsfaktor_getattr_default_inert():
+    # Ohne wartungsfaktor-Feld (heutige NormAnforderung) bleibt die Platzierung
+    # unverändert gegenüber explizit 1,0 — der defensive getattr-Pfad ist ein No-op.
+    basis = verdichte_fluchtweg(_gang_raum(), FakeNormProvider(), i_cd=300.0)
+    eins = verdichte_fluchtweg(_gang_raum(), _MfNormProvider(1.0), i_cd=300.0)
+    assert len(basis) == len(eins)

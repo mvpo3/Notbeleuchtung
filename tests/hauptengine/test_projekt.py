@@ -18,7 +18,7 @@ def test_run_projekt_pro_geschoss(tmp_path):
     # Je Geschoss ein DXF + eine Prüfung.
     assert (tmp_path / "EG_notbeleuchtung.dxf").is_file()
     assert (tmp_path / "1OG_notbeleuchtung.dxf").is_file()
-    assert all(g["n_symbols"] == 7 for g in erg.summary["geschosse"])
+    assert all(g["n_symbols"] == 11 for g in erg.summary["geschosse"])  # inkl. fachpraxis-Aufheller
     assert all(g["pruefung"] in ("ok", "warnung", "fehler") for g in erg.summary["geschosse"])
     assert erg.combined_pdf is None   # ohne pdf=True kein Sammel-PDF
 

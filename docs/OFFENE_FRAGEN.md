@@ -4,6 +4,26 @@ Sammelstelle für Befunde, die eine Owner-Entscheidung brauchen. Regel-Lücken
 je Raumtyp stehen maschinenlesbar in `normwissen/data/regel_deckung.yaml`
 (`offen:`-Einträge, Guard `tests/naht/test_regel_deckung.py`).
 
+## Lichtberechnungs-Analyse — zwei Nähte (2026-09-08)
+
+Aus den echten Profi-Notberechnungen (Doku:
+`knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md`):
+
+- **@polatselman — Aichholzgasse = Architektur-Testfamilie, kein Notplan.** Die
+  PDFs in `DIN-Notbeleuchtungspläne(Beispiele)/Aichholzgasse/` + `Projekte/
+  Aichholzgasse/` sind **Architektur-Polierpläne** (HOT ARCHITEKTUR ZT, „POLIERPLAN
+  GRUNDRISS", rein bauliche Legende, null RZ-Symbolik) — Wien Wohnbau **GK5**,
+  Geschosse **2UG..2DG**. Der Ordnername ist irreführend. Kandidat als neue
+  Architektur-Input-Testfamilie (RaumModell). Die zugehörige Notbeleuchtung liegt in
+  `Lichtberechnung/Lichtberechnung.pdf` (Relux, Schrack).
+- **@EnisAMG — Wartungsfaktor als Norm-Wert.** Beide Büros rechnen den Nachweis mit
+  **MF 0,80 innen / 0,57 außen** (INOTEC-Handbuch-Digest nennt 0,8 → 1,25 lx bereits
+  als Referenz-Praxis). Leonis baut den **Anwendungs-Mechanismus** in `platzierung/
+  lux.py`+`deckung.py` (inert, Default 1,0), konsumiert defensiv `NormAnforderung.
+  wartungsfaktor`. **Bitte Feld `wartungsfaktor` auf `NormAnforderung` + Werte in
+  `en1838_grundwerte.yaml`** (3-Owner, Contract-Version-Bump). Aktivierung kippt die
+  E2E-Bänder (dichtere Platzierung) → erst mit Owner-GO.
+
 ## Barawitzka EG — keine expliziten Fluchtweg-Linien (2026-09)
 
 Korrektur einer früheren Annahme: die 16 Farbe-96-Linien im Plan sind

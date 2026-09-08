@@ -44,10 +44,15 @@ def test_reproduziert_fuenf_rettungszeichen():
 
 def test_platziert_aufheller_je_stiegenhaus():
     # Beide STIEGENHÄUSER sind norm-seitig 'sicherheitsleuchte' → je 1 Aufheller
-    # am Raum-Zentrum, mit Kein-Segment-Bindung.
+    # am Raum-Zentrum, mit Kein-Segment-Bindung. Dazu kommen seit Slice 2.3 die
+    # fachpraxis-B1-Aufheller (je RZ einer, eigene norm_quelle) — hier getrennt
+    # gezählt, damit der Stiegenhaus-Teil scharf bleibt.
     out = _place()
     sl = [p for p in out.platzierungen if p.kind == "sicherheitsleuchte"]
-    assert len(sl) == 2
+    norm_sl = [p for p in sl if not p.norm_quelle.startswith("fachpraxis:")]
+    fach_sl = [p for p in sl if p.norm_quelle.startswith("fachpraxis:")]
+    assert len(norm_sl) == 2
+    assert len(fach_sl) == 4  # 5 RZ, 1 Position läge außerhalb → nicht gesetzt
     assert all(p.catalog_key == "sicherheitsleuchte_aufheller" for p in sl)
     assert all(p.covers_segment == [] for p in sl)
 
@@ -77,7 +82,14 @@ def test_naht_norm_quelle_und_catalog_key():
     quellen = set(NormRegelwerk.model_validate(_load("norm_regelwerk_snapshot.json")).quellen)
     keys = catalog_keys()
     for p in out.platzierungen:
-        assert p.norm_quelle in quellen, f"norm_quelle {p.norm_quelle!r} nicht im Regelwerk"
+        # Praxis-Platzierungen tragen ihre Quelle im Audit-Trail — bis ein
+        # decision_source-Feld existiert (3-Owner-Contract, handoff(contracts)),
+        # sind die Präfixe die dokumentierte Ausnahme: "fachpraxis:" (Owner-Wort,
+        # Slice 2.3) und "Referenz-Praxis:" (belegte Praxis, z.B. Technik-/Müll-SL).
+        _PRAXIS = ("fachpraxis:", "Referenz-Praxis:")
+        assert p.norm_quelle in quellen or p.norm_quelle.startswith(_PRAXIS), (
+            f"norm_quelle {p.norm_quelle!r} nicht im Regelwerk"
+        )
         assert p.catalog_key in keys, f"catalog_key {p.catalog_key!r} fehlt im Mapping"
         if p.kind == "rz":
             assert set(p.covers_segment)  # jedes RZ deckt genau sein Segment

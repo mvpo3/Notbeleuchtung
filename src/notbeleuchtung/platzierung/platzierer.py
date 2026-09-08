@@ -31,7 +31,14 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from . import abstand_nachpass, circuit_zuordnung, deckungs_zuordnung, lb_override
+from . import (
+    abstand_nachpass,
+    circuit_zuordnung,
+    deckungs_zuordnung,
+    fachpraxis,
+    lb_override,
+    verbotszonen_nachpass,
+)
 from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
 from .communal_stgh_strategy import plan_rettungszeichen
@@ -89,6 +96,13 @@ class NotlichtPlatzierer:
         )
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
+            # Owner-Praxisregel (fachpraxis, 2026-09-07): TECHNIK/MUELLRAUM tragen
+            # IMMER eine Sicherheitsleuchte an der Tür (fensterlose Nebenräume, oft
+            # nicht auf dem Fluchtweg → keine Norm-Strategie greift dort). BEWUSST
+            # zuerst unter den Sicherheitsleuchten: der abstand_nachpass-Dubletten-
+            # Merge behält bei Gleichstand die früher gelistete → die Pflicht-Leuchte
+            # bleibt AN der Tür, eine zufällig <2 m benachbarte SL weicht (netto-neutral).
+            *fachpraxis.tuerleuchte_pflichtraeume(raum, norm),
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2
@@ -96,8 +110,19 @@ class NotlichtPlatzierer:
             *plan_aussenleuchten(raum, norm),            # außerhalb Schlussausgang (§4.1.2 b)
             *verdichte_fluchtweg(raum, norm, kontext=kontext),  # Linie + Deckung (Lux)
         ]
+        # Owner-Praxisregel B1 (fachpraxis, G4-Entscheid 2026-09-07): je RZ ein
+        # Aufheller 500 mm hinter dem Zeichen (Rauminneres). Vor lb_override
+        # (LB-Exklusionen greifen auch auf Fachpraxis-SL) und vor dem
+        # abstand_nachpass (der Naht-Kollisionen entzerrt/merged).
+        platzierungen += fachpraxis.aufheller_je_rz(
+            platzierungen, raum, norm, i_cd_fn=kontext.i_cd_fn
+        )
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
+        # Symbole aus Stiegenhaus-Verbotszonen (Laufflächen/Öffnungen) an den nächsten
+        # montierbaren Punkt holen (Selman-BEFUND) — vor dem abstand_nachpass, damit
+        # dieser eventuelle Verschiebungs-Kollisionen entzerrt.
+        platzierungen = verbotszonen_nachpass.entferne_aus_verbotszonen(platzierungen, raum)
         # Kollisionen an der Strategie-Naht auflösen (Dubletten mergen, verschieden-artige
         # entzerren) — nach lb_override (das SL hinzufügt), vor der Deckungs-Zuordnung,
         # damit diese die finalen Positionen sieht.
