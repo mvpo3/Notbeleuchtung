@@ -25,18 +25,18 @@ Raum-Polygon-Quelle: `kaskade L:19 H:0 F:0 R:2` — Rotation: keine dominante Ka
 | L | HOF/Terrasse | TERRASSE | 29.57 | 29.57 | +0.0 | ok |
 | L | Zugangsweg | — | — | 5.50 | — | ok |
 | L | Garageneinfahrt | — | — | 14.06 | — | ok |
-| R | rest_1 | STIEGENHAUS | — | 10.16 | — | kein_stempel |
-| R | rest_2 | STIEGENHAUS | — | 2.81 | — | kein_stempel |
+| R | rest_1 | STIEGENHAUS | — | 9.90 | — | kein_stempel |
+| R | rest_2 | STIEGENHAUS | — | 2.70 | — | kein_stempel |
 
 ## Restflächen ohne Stempel (2)
 
-- rest_1 [R] STIEGENHAUS: 10.16 m², Zentrum (12548.30, 356219.55) m
-- rest_2 [R] STIEGENHAUS: 2.81 m², Zentrum (12549.16, 356219.20) m
+- rest_1 [R] STIEGENHAUS: 9.90 m², Zentrum (12548.30, 356219.55) m
+- rest_2 [R] STIEGENHAUS: 2.70 m², Zentrum (12549.15, 356219.20) m
 
 ## Warnungen (2)
 
-- Polygon ohne Stempel: rest_1 (10.16 m²)
-- Polygon ohne Stempel: rest_2 (2.81 m²)
+- Polygon ohne Stempel: rest_1 (9.90 m²)
+- Polygon ohne Stempel: rest_2 (2.70 m²)
 
 ## Material (Bauteil-Hatches)
 
@@ -59,7 +59,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-22 / 41 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+25 / 41 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -83,10 +83,10 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_7 | raum_3 | raum_6 | wohnungseingang | 2298 | — | durchgang |  |
 | durchgang_8 | raum_4 | raum_6 | wohnungseingang | 4189 | — | durchgang |  |
 | durchgang_9 | raum_4 | raum_7 | wohnungseingang | 3479 | — | durchgang |  |
-| durchgang_10 | raum_5 | raum_6 | — | 2631 | — | durchgang | unbekannte_kombination |
-| durchgang_11 | raum_5 | raum_7 | — | 3635 | — | durchgang | unbekannte_kombination |
-| durchgang_12 | raum_5 | raum_9 | — | 1223 | — | durchgang | beide_seiten_untypisiert |
-| durchgang_13 | raum_5 | raum_19 | — | 4799 | — | durchgang | beide_seiten_untypisiert |
+| durchgang_10 | raum_5 | raum_6 | garagentor | 2631 | — | durchgang |  |
+| durchgang_11 | raum_5 | raum_7 | garagentor | 3635 | — | durchgang |  |
+| durchgang_12 | raum_5 | raum_9 | — | 1223 | — | durchgang | unbekannte_kombination |
+| durchgang_13 | raum_5 | raum_19 | garagentor | 4799 | — | durchgang |  |
 | durchgang_14 | raum_6 | raum_7 | wohnungseingang | 2600 | — | durchgang |  |
 | durchgang_15 | raum_9 | raum_19 | — | 3426 | — | durchgang | beide_seiten_untypisiert |
 | durchgang_16 | raum_10 | raum_11 | brandschutztuer | 860 | — | durchgang |  |
@@ -98,14 +98,14 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_22 | raum_13 | raum_16 | — | 2137 | — | durchgang | unbekannte_kombination |
 | durchgang_23 | raum_14 | raum_15 | stiegenhaustuer | 2080 | — | durchgang |  |
 | durchgang_24 | raum_15 | raum_16 | stiegenhaustuer | 2100 | — | durchgang |  |
-| durchgang_25 | raum_15 | rest_1 | stiegenhaustuer | 1493 | — | durchgang |  |
+| durchgang_25 | raum_15 | rest_1 | stiegenhaustuer | 1507 | — | durchgang |  |
 | durchgang_26 | raum_15 | rest_1 | stiegenhaustuer | 1496 | — | durchgang |  |
-| durchgang_27 | raum_15 | rest_2 | stiegenhaustuer | 2143 | — | durchgang |  |
-| durchgang_28 | rest_1 | rest_2 | stiegenhaustuer | 2211 | — | durchgang |  |
+| durchgang_27 | raum_15 | rest_2 | stiegenhaustuer | 2133 | — | durchgang |  |
+| durchgang_28 | rest_1 | rest_2 | stiegenhaustuer | 2187 | — | durchgang |  |
 | aussenoeffnung_1 | raum_13 | AUSSEN | — | 1235 | — | oeffnung_aussenwand | unbekannte_kombination |
 | aussenoeffnung_2 | raum_16 | AUSSEN | hauseingang | 1019 | ja | oeffnung_aussenwand+windfang |  |
 
-## Ausgänge (9)
+## Ausgänge (8)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
@@ -113,10 +113,9 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_tuer_11 | final_exit | 12549.02 | 356210.06 |
 | exit_durchgang_23 | stair_exit | 12550.47 | 356215.65 |
 | exit_durchgang_24 | stair_exit | 12552.34 | 356220.24 |
-| exit_durchgang_25 | stair_exit | 12549.38 | 356217.42 |
-| exit_durchgang_26 | stair_exit | 12550.60 | 356220.24 |
-| exit_durchgang_27 | stair_exit | 12549.99 | 356218.82 |
-| exit_durchgang_28 | stair_exit | 12548.93 | 356219.28 |
+| exit_durchgang_25 | stair_exit | 12549.38 | 356217.43 |
+| exit_durchgang_26 | stair_exit | 12550.58 | 356220.24 |
+| exit_durchgang_27 | stair_exit | 12549.97 | 356218.82 |
 | exit_aussenoeffnung_2 | final_exit | 12555.26 | 356222.92 |
 
 ## Fluchtweg-Segmente (9)
@@ -132,7 +131,7 @@ Quellen: FALLBACK: 1, GRAPH: 8
 | seg_graph_durchgang_25 | GRAPH | 10.1 | exit | exit_tuer_11 |
 | seg_graph_durchgang_26 | GRAPH | 8.0 | exit | exit_tuer_10 |
 | seg_graph_durchgang_27 | GRAPH | 8.4 | exit | exit_tuer_10 |
-| seg_graph_durchgang_28 | GRAPH | 13.6 | exit | exit_tuer_10 |
+| seg_graph_durchgang_28 | GRAPH | 13.5 | exit | exit_tuer_10 |
 | seg_fallback_raum_7 | FALLBACK | 3.2 | direction_change | — |
 
 ## Wohnungen (2)
@@ -184,27 +183,25 @@ Quellen: FALLBACK: 1, GRAPH: 8
   - AUSTRITT (12550.51, 356215.64) m, Fluchtrichtung 143°
   - TUER (12550.47, 356215.65) m, Winkel 157°, Fluchtrichtung 143°
   - TUER (12552.34, 356220.24) m, Winkel 157°, Fluchtrichtung 143°
-  - TUER (12549.38, 356217.42) m, Winkel 67°, Fluchtrichtung 143°
-  - TUER (12550.60, 356220.24) m, Winkel 67°, Fluchtrichtung 143°
-  - TUER (12549.99, 356218.82) m, Winkel 67°, Fluchtrichtung 143°
+  - TUER (12549.38, 356217.43) m, Winkel 67°, Fluchtrichtung 143°
+  - TUER (12550.58, 356220.24) m, Winkel 67°, Fluchtrichtung 143°
+  - TUER (12549.97, 356218.82) m, Winkel 67°, Fluchtrichtung 143°
 - **rest_1**: 4 Läufe, 4 Podeste, 4 Verbotszonen (größte 0.5 m², Summe 0.6 m²), 13 Anker
-  - PODEST (12549.66, 356221.11) m, Winkel 157°, Fluchtrichtung 67°
-  - PODEST (12547.91, 356218.36) m, Winkel 68°, Fluchtrichtung 67°
-  - PODEST (12547.05, 356219.23) m, Winkel 68°, Fluchtrichtung 67°
+  - PODEST (12546.95, 356219.06) m, Winkel 68°, Fluchtrichtung 67°
+  - PODEST (12549.52, 356221.16) m, Winkel 157°, Fluchtrichtung 67°
+  - PODEST (12547.81, 356218.46) m, Winkel 68°, Fluchtrichtung 67°
   - ANTRITT (12549.04, 356221.01) m, Fluchtrichtung 67°
   - AUSTRITT (12548.62, 356221.19) m, Fluchtrichtung 67°
   - ANTRITT (12547.73, 356221.54) m, Fluchtrichtung 67°
   - AUSTRITT (12546.47, 356218.63) m, Fluchtrichtung 67°
   - ANTRITT (12547.81, 356220.22) m, Fluchtrichtung 67°
   - AUSTRITT (12547.77, 356220.12) m, Fluchtrichtung 67°
-  - TUER (12549.38, 356217.42) m, Winkel 90°, Fluchtrichtung 67°
-  - TUER (12550.60, 356220.24) m, Winkel 90°, Fluchtrichtung 67°
+  - TUER (12549.38, 356217.43) m, Winkel 90°, Fluchtrichtung 67°
+  - TUER (12550.58, 356220.24) m, Winkel 59°, Fluchtrichtung 67°
   - RICHTUNGSWECHSEL (12548.62, 356221.77) m, Fluchtrichtung 67°
   - RICHTUNGSWECHSEL (12548.22, 356220.71) m, Fluchtrichtung 67°
-- **rest_2**: 2 Läufe, 0 Podeste, 3 Verbotszonen (größte 1.7 m², Summe 2.4 m²), 3 Anker
-  - ANTRITT (12550.02, 356219.43) m, Fluchtrichtung 164°
-  - AUSTRITT (12550.27, 356219.36) m, Fluchtrichtung 164°
-  - TUER (12549.99, 356218.82) m, Winkel 90°, Fluchtrichtung 164°
+- **rest_2**: 1 Läufe, 0 Podeste, 2 Verbotszonen (größte 1.7 m², Summe 2.2 m²), 1 Anker
+  - TUER (12549.97, 356218.82) m, Winkel 90°, Fluchtrichtung 174°
 - Gang-Anker (außerhalb Stiegenhäuser): 9
 
 ## Brandschutz-Hinweise im Plan (2)
@@ -230,15 +227,17 @@ Quellen: FALLBACK: 1, GRAPH: 8
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_7 (Endraum raum_3) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_8 (Endraum raum_4) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_9 (Endraum raum_4) — Türgraph endet vor dem Ausgang
+- ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_10 (Endraum raum_5) — Türgraph endet vor dem Ausgang
+- ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_11 (Endraum raum_5) — Türgraph endet vor dem Ausgang
 - ⚠ EG/UG: kein final_exit erreichbar von Tür durchgang_14 (Endraum raum_6) — Türgraph endet vor dem Ausgang
 
 ### Untypisierte Türen — Gründe
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 8 |
+| unbekannte_kombination | 7 |
 | kein_nachbarraum | 4 |
 | tuer_ins_nichts | 4 |
-| beide_seiten_untypisiert | 3 |
+| beide_seiten_untypisiert | 1 |
 
-Laufzeit: 57.6 s
+Laufzeit: 53.9 s
