@@ -404,3 +404,45 @@ Volle Suite unverändert grün.
 aus einer temporären Entpackung außerhalb des Repos. Wer die Familie dauerhaft
 in die Prüfstrecke nehmen will, muss die Geschosse nach `Projekte/_eingang/`
 legen — dann greifen die Soll-Nahttests wie bei den anderen vier Familien.
+
+## Stempel-Vokabular — Sweep über alle Plan-Familien (2026-09-08, Selman)
+
+Anlass: `KINDERWAGENRAUM` war als Kanon-Typ tot, weil reale Pläne **`KIWA`**
+schreiben, nicht „Kinderwagen" (Mollgasse „KIWA" / „FAHRRADRAUM / KIWA",
+Barawitzka „Fahrrad+ KiWa"). Behoben. Danach systematischer Sweep: 892 Stempel
+aus 11 Plänen plus roher Textdump über alle 60 Projekt-DXF (29 593 Texte).
+
+**Trefferquote `raumtyp_flags`: 217/249 = 87 %** auf den fünf Prüfstrecken-Plänen
+(Barawitzka_EG 38/38, Muthgasse_E2 99/99, Rennweg_OG3 10/10, Rennweg_EG 14/19,
+Mollgasse_EG 56/83). Alle Fehlschläge liegen in den beiden EG-Plänen; 18 der 32
+sind **korrekt** untypisiert (Außenanlagen, Wohnungs-IDs „TOP n", Plankopf).
+
+**Bewusst NICHT aufgenommene Alias-Kandidaten** — jeder erzeugt einen belegten
+Fehltreffer, deshalb ist der Status quo besser als die Ergänzung:
+
+- `vp`/`vorplatz` → VORRAUM: die 34 `VP` bei Herrenholzgasse liegen auf demselben
+  Layer wie „Vorgarten"/„Vorplatz" (Außenflächen, bis 28 m²), und Herrenholz hat
+  pro Reihenhaus schon einen eigenen Stempel „Vorraum". VORRAUM trägt
+  `ist_fluchtweg` + `ist_communal` → 40 Außen-Vorplätze würden Fluchtweg-Innenräume.
+- `tr` → STIEGENHAUS: die 37 `TR` sind die private Reihenhaus-Innentreppe, kein
+  communales Stiegenhaus. STIEGENHAUS wird von `ausgaenge.py` (stair_exit),
+  `fluchtweg.py`, `gang_strategy` und `communal_stgh_strategy` konsumiert → 37
+  Phantom-Fluchtweg-Anker in einem Plan.
+- `er` → KELLER: 2 der 24 Belege sind „ER-GESAMT" (54/108 m²) — Summenzeilen, keine
+  Räume; zudem kippt ein bestehender TECHNIK-Stempel auf KELLER, und ausgeschrieben
+  liefert „Einlagerungsraum" schon ABSTELLRAUM (zwei Typen für dieselbe Sache).
+- `podest` → STIEGENHAUS: die beiden Mollgasse-PODEST sind nicht dasselbe — das
+  11,02-m²-Exemplar liegt laut Raster-Umriss AUSSEN am Gebäuderand (Nachbarn WC,
+  SR, VORRAUM; nächster STGH-Stempel 9,9 m weg).
+- `aufzug` → LIFT: redundant, `lift_erkennung._LIFT_TEXT` greift den Stempel schon —
+  und dort ohne das Fluchtweg-Flag, das bei LIFT (Nutzungsklasse KEIN_RAUM) ein
+  Widerspruch wäre.
+- `wr`, `sr`, `dusche`: mehrdeutig bzw. n=1 ohne zweiten Beleg (`WR` steht im Repo
+  für Waschraum, Wechselrichter UND „Wiener Null").
+
+**Offen, echte Kanon-Lücke (3-Owner):** `GESCHÄFTSLOKAL` (4 Vorkommen auf 2 Plänen,
+inkl. Tippfehler „GESCHÄFTLOKAL") ist keine Schreibweisen-, sondern eine
+Typ-Lücke — eine Verkaufsstätte (OIB RL2 Tab. 6) passt in keine der fünf
+`Nutzungsklasse`-Literale. Aufnahme wäre VOKABULAR.md + `raumtyp.py` +
+LB-Stützliste + Nutzungsklasse in einem Zug. **Frage an Enis/Leonis:
+brauchen wir den Typ, und welche Nutzungsklasse trägt er?**
