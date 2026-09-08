@@ -1,5 +1,12 @@
 """lux — Punktmethode-Beleuchtungsstärke + EN-1838-Bewertung (Mindest-Lux, Ud)."""
-from notbeleuchtung.platzierung.lux import lux_raster, ud_min_aus_norm
+import pytest
+
+from notbeleuchtung.platzierung.lux import (
+    lux_punkte,
+    lux_raster,
+    max_leuchtenabstand_mm,
+    ud_min_aus_norm,
+)
 
 BOUNDS = (0.0, 0.0, 10000.0, 10000.0)  # 10 × 10 m Raum
 
@@ -78,3 +85,52 @@ def test_naht_echte_ldt_photometrie():
     iso = lux_raster(grid, BOUNDS, montagehoehe_m=2.5, i_cd=200.0, raster_mm=500.0)
     assert r.max_lux > 0.0
     assert r.min_lux < iso.min_lux
+
+
+def test_wartungsfaktor_default_ist_noop():
+    # Default 1,0 muss bit-identisch zur MF-freien Rechnung sein (Bestandsschutz).
+    grid = [(x, y) for x in (2500.0, 5000.0, 7500.0) for y in (2500.0, 5000.0, 7500.0)]
+    ohne = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0)
+    mit1 = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0, wartungsfaktor=1.0)
+    assert (mit1.min_lux, mit1.max_lux, mit1.mittel_lux) == (
+        ohne.min_lux, ohne.max_lux, ohne.mittel_lux
+    )
+
+
+def test_wartungsfaktor_senkt_lux_proportional_ud_invariant():
+    # MF skaliert alle Lux-Werte linear; Ud (min:max) bleibt unverändert.
+    grid = [(x, y) for x in (2500.0, 5000.0, 7500.0) for y in (2500.0, 5000.0, 7500.0)]
+    voll = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0)
+    mf = lux_raster(grid, BOUNDS, i_cd=2000.0, raster_mm=500.0, wartungsfaktor=0.8)
+    assert mf.min_lux == pytest.approx(voll.min_lux * 0.8)
+    assert mf.max_lux == pytest.approx(voll.max_lux * 0.8)
+    assert mf.ud == pytest.approx(voll.ud)                 # Verhältnis invariant
+
+
+def test_wartungsfaktor_lux_punkte_proportional():
+    leuchten = [(5000.0, 5000.0)]
+    punkte = [(3000.0, 5000.0), (5000.0, 5000.0), (7000.0, 5000.0)]
+    voll = lux_punkte(leuchten, punkte, i_cd=2000.0)
+    mf = lux_punkte(leuchten, punkte, i_cd=2000.0, wartungsfaktor=0.57)
+    assert mf.mittel_lux == pytest.approx(voll.mittel_lux * 0.57)
+
+
+def test_wartungsfaktor_verkleinert_max_leuchtenabstand():
+    # Weniger nutzbare Lux → kleinerer zulässiger Reihenabstand (dichtere Platzierung).
+    # i_cd mittelstark wählen, damit die Bisektion nicht am 30-m-Cap sättigt.
+    ohne = max_leuchtenabstand_mm(montagehoehe_m=2.5, i_cd=80.0, ziel_lux=1.0)
+    mit = max_leuchtenabstand_mm(
+        montagehoehe_m=2.5, i_cd=80.0, ziel_lux=1.0, wartungsfaktor=0.8
+    )
+    assert mit < ohne
+
+
+def test_extents_ausreisser_kein_oom():
+    # Phantom-Extents (Baufeld-4OG: Hauptinhalt bei y≈347 km) spannen absurde Bounds.
+    # Ohne Guard wollte das 250-mm-Raster ~1,9 Mrd. Punkte allozieren (MemoryError).
+    # Der Aufweitungs-Guard liefert ein endliches Ergebnis in Sekunden.
+    riesig = (0.0, 0.0, 347_535_000.0, 347_535_000.0)
+    r = lux_raster([(1000.0, 1000.0)], riesig, i_cd=2000.0)
+    assert isinstance(r.min_lux, float)           # kein OOM/Crash
+    assert r.min_lux < 1e-6                         # Leuchte fern vom Gros der Fläche (~0)
+    assert r.erfuellt_min is False                 # Nachweis schlägt konservativ fehl
