@@ -1,0 +1,456 @@
+{
+ "_source": "GU-Plan MOL_GR-2KG_00-1-50_Index_5.pdf, Seite 1, Maßstab 1:50, kalibriert 17.6389 mm/pt (CropBox-Gegenprobe 1730x743-Rahmen < 0.1 %), erfasst 2026-09-07",
+ "_koordinaten": "mm Modell, Ursprung = linke untere MediaBox-Ecke, y nach oben",
+ "floor": "2KG",
+ "symbole": [
+  {
+   "id": "2kg_c00",
+   "kind": "rz",
+   "xy_mm": [
+    50191.1,
+    32650.3
+   ],
+   "richtung": "oben",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "VERDUNSTUNGSRINNE",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c00.png"
+  },
+  {
+   "id": "2kg_c01",
+   "kind": "rz",
+   "xy_mm": [
+    58910.7,
+    30008.7
+   ],
+   "richtung": "rechts",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "RDUK",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c01.png"
+  },
+  {
+   "id": "2kg_c02",
+   "kind": "rz",
+   "xy_mm": [
+    15627.0,
+    28632.9
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": 891,
+   "raum_text": "FTS",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c02.png"
+  },
+  {
+   "id": "2kg_c03",
+   "kind": "rz",
+   "xy_mm": [
+    14100.9,
+    27525.8
+   ],
+   "richtung": "rechts",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "FTS",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c03.png"
+  },
+  {
+   "id": "2kg_c04",
+   "kind": "rz",
+   "xy_mm": [
+    21137.7,
+    26868.6
+   ],
+   "richtung": "unten",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "PODEST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c04.png"
+  },
+  {
+   "id": "2kg_c05_0",
+   "kind": "rz",
+   "xy_mm": [
+    33326.6,
+    25286.4
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c05.png"
+  },
+  {
+   "id": "2kg_c05_1",
+   "kind": "rz",
+   "xy_mm": [
+    33326.6,
+    25286.4
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c05.png"
+  },
+  {
+   "id": "2kg_c06",
+   "kind": "rz",
+   "xy_mm": [
+    14100.9,
+    25228.2
+   ],
+   "richtung": "oben",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "Gef.",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c06.png"
+  },
+  {
+   "id": "2kg_c07_0",
+   "kind": "rz",
+   "xy_mm": [
+    10424.2,
+    24772.1
+   ],
+   "richtung": "rechts",
+   "montage": "horizontal",
+   "naechste_tuer_mm": 627,
+   "raum_text": "PST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c07.png"
+  },
+  {
+   "id": "2kg_c07_1",
+   "kind": "rz",
+   "xy_mm": [
+    10424.2,
+    24772.1
+   ],
+   "richtung": "rechts",
+   "montage": "horizontal",
+   "naechste_tuer_mm": 627,
+   "raum_text": "PST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c07.png"
+  },
+  {
+   "id": "2kg_c08",
+   "kind": "rz",
+   "xy_mm": [
+    63335.6,
+    24041.8
+   ],
+   "richtung": "links",
+   "montage": "vertikal",
+   "naechste_tuer_mm": 319,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c08.png"
+  },
+  {
+   "id": "2kg_c09_0",
+   "kind": "rz",
+   "xy_mm": [
+    66941.3,
+    23583.5
+   ],
+   "richtung": "links",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c09.png"
+  },
+  {
+   "id": "2kg_c09_1",
+   "kind": "rz",
+   "xy_mm": [
+    66941.3,
+    23583.5
+   ],
+   "richtung": "links",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c09.png"
+  },
+  {
+   "id": "2kg_c10",
+   "kind": "rz",
+   "xy_mm": [
+    59996.6,
+    23395.2
+   ],
+   "richtung": "rechts",
+   "montage": "vertikal",
+   "naechste_tuer_mm": 240,
+   "raum_text": "5.02m2",
+   "konfidenz": "mittel",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c10.png"
+  },
+  {
+   "id": "2kg_c11",
+   "kind": "rz",
+   "xy_mm": [
+    15514.8,
+    23271.3
+   ],
+   "richtung": "oben",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "30-C",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c11.png"
+  },
+  {
+   "id": "2kg_c12",
+   "kind": "rz",
+   "xy_mm": [
+    18454.9,
+    23256.5
+   ],
+   "richtung": "oben",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "SCHLEUSE",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c12.png"
+  },
+  {
+   "id": "2kg_c13",
+   "kind": "rz",
+   "xy_mm": [
+    60959.6,
+    22875.5
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": 834,
+   "raum_text": "5.02m2",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c13.png"
+  },
+  {
+   "id": "2kg_c14",
+   "kind": "sl",
+   "xy_mm": [
+    50190.0,
+    22198.2
+   ],
+   "richtung": null,
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "DECKENSPRUNG",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c14.png"
+  },
+  {
+   "id": "2kg_c15",
+   "kind": "rz",
+   "xy_mm": [
+    57203.6,
+    21881.7
+   ],
+   "richtung": "rechts",
+   "montage": "vertikal",
+   "naechste_tuer_mm": 296,
+   "raum_text": "FTS",
+   "konfidenz": "mittel",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c15.png"
+  },
+  {
+   "id": "2kg_c16",
+   "kind": "rz",
+   "xy_mm": [
+    18454.9,
+    21256.3
+   ],
+   "richtung": "oben",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "PST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c16.png"
+  },
+  {
+   "id": "2kg_c17_0",
+   "kind": "rz",
+   "xy_mm": [
+    60851.7,
+    21225.6
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c17.png"
+  },
+  {
+   "id": "2kg_c17_1",
+   "kind": "rz",
+   "xy_mm": [
+    60851.7,
+    21225.6
+   ],
+   "richtung": "unten",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c17.png"
+  },
+  {
+   "id": "2kg_c18_0",
+   "kind": "rz",
+   "xy_mm": [
+    33366.8,
+    20662.5
+   ],
+   "richtung": "links",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "PST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c18.png"
+  },
+  {
+   "id": "2kg_c18_1",
+   "kind": "rz",
+   "xy_mm": [
+    33366.8,
+    20662.5
+   ],
+   "richtung": "links",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "PST",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c18.png"
+  },
+  {
+   "id": "2kg_c19_0",
+   "kind": "rz",
+   "xy_mm": [
+    18448.5,
+    18001.9
+   ],
+   "richtung": "oben",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c19.png"
+  },
+  {
+   "id": "2kg_c19_1",
+   "kind": "rz",
+   "xy_mm": [
+    18448.5,
+    18001.9
+   ],
+   "richtung": "oben",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": null,
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c19.png"
+  },
+  {
+   "id": "2kg_c20",
+   "kind": "rz",
+   "xy_mm": [
+    62343.9,
+    17646.3
+   ],
+   "richtung": "oben",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "30-C",
+   "konfidenz": "mittel",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c20.png"
+  },
+  {
+   "id": "2kg_c21",
+   "kind": "rz",
+   "xy_mm": [
+    66941.3,
+    15005.8
+   ],
+   "richtung": "oben",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "KT200",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c21.png"
+  },
+  {
+   "id": "2kg_c22",
+   "kind": "rz",
+   "xy_mm": [
+    35224.2,
+    14875.6
+   ],
+   "richtung": "oben",
+   "montage": "vertikal",
+   "naechste_tuer_mm": null,
+   "raum_text": "VERDUNSTUNGSRINNE",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c22.png"
+  },
+  {
+   "id": "2kg_c23",
+   "kind": "rz",
+   "xy_mm": [
+    43943.8,
+    12234.0
+   ],
+   "richtung": "rechts",
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "RDUK",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c23.png"
+  },
+  {
+   "id": "2kg_c24",
+   "kind": "sl",
+   "xy_mm": [
+    35224.2,
+    4422.4
+   ],
+   "richtung": null,
+   "montage": "horizontal",
+   "naechste_tuer_mm": null,
+   "raum_text": "DECKENSPRUNG",
+   "konfidenz": "hoch",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c24.png"
+  },
+  {
+   "id": "2kg_c25",
+   "kind": "rz",
+   "xy_mm": [
+    42237.7,
+    4107.0
+   ],
+   "richtung": "rechts",
+   "montage": "vertikal",
+   "naechste_tuer_mm": 297,
+   "raum_text": "FTS",
+   "konfidenz": "mittel",
+   "crop": "reports/mollgasse_ug/2KG/2kg_c25.png"
+  }
+ ],
+ "_unklassifiziert": 0
+}
