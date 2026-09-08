@@ -133,6 +133,31 @@ API token-gated — kein anonymer Massen-Scrape, Einzeldownload je Artikel mögl
    RZ 24 m mit integrierter SL, Deckenaufbau; „SU 6P NET E30" = Art. 5188300,
    6×20 Adressen, 36 Ah, Funktionserhalt-Gehäuse.
 
+## Notbetriebs-Lichtströme aus echten Lichtberechnungen (2026-09-08)
+
+Aus zwei realen Profi-Notberechnungen (Details + Quellen:
+[`LICHTBERECHNUNG_REFERENZ.md`](LICHTBERECHNUNG_REFERENZ.md)) — erstmals echte
+Notbetriebs-Φ statt generischer cd. **Aichholzgasse = Schrack (Relux), Barawitzka =
+din (DIALux).**
+
+Schrack (WHA Aichholzgasse 35, Relux):
+- `NLIL.L423.` corridor lens = **211 lm** · round lens = **208 lm** (Fluchtweg/AP;
+  Rund-LDT `antipanik_nlildl423_round.ldt` liegt schon im Katalog).
+- `NLKSC003WL` Akku LiFePO4 3h, 4×HP-LED = **146 lm / 4 W** (Einzelbatterie-SL).
+- Garage-Hochleistung: `NLKWIC433 +4 corridor lenses cross` = **387 lm** ·
+  `NLKWID433W opal high` = **320 lm** (je 520 lm Lampen, zentralversorgt).
+
+din (Barawitzkagasse 24, DIALux):
+- `BASIC 2 E-LED_AP3_Klar` = **147 lm** (Antipanik) · `_RZ1_LK3` = **69 lm** ·
+  `_RZ2_LK3` = **86 lm** (je 1,3 W).
+- `BASICsc 2 E-SIGN_RZ-plus_1-3h` = **79 lm / 2,5 W** · `_SL_1-3h` = **53 lm / 1,4 W**;
+  alle NBF 100 %, Betriebsdauer 1–3 h im Artikelnamen.
+
+Merke: Notbetriebs-Φ liegt real bei **40–400 lm** (RZ 53–86, Fluchtweg-SL 146–211,
+Garage-Optik 320–390). Bestätigt „Rolle ≠ Produkt" (E-LED/AP3 Universalkopf mit
+Linsenwahl). **Beide Büros rechnen Wartungsfaktor 0,80** (din zusätzlich 0,57 außen)
+und ohne Reflexion.
+
 ## Quellen (Auswahl)
 
 Schrack: [Notleuchten Know-how](https://www.schrack-technik.de/know-how-cip/notlicht-usv-co-blindstromkompensation/notleuchten) ·
