@@ -4,6 +4,39 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-07, GANZ SPÄT/Session-Ende 3) — Enis-L1/L3-Review + Selman-Antwort
+
+**Enis' gemeinsame L1/L3-Fassung reviewt** (Commit `8801aa6`, Branch
+`enis/l1-l3-gemeinsam-0907`, Basis meine `bf1f965`). Bundle kam als
+`Documents/enis-l1-l3-8801aa6.bundle`. **Verdikt: „Vor Übernahme 1 Fix nötig".**
+- **Bestätigt (alles gut):** L1/AStV (`oib_gate.py` byte-identisch), Datenweg
+  validierung→pruefung→Renderer (erweitert um `oib_lage`: unterscheidet kein-
+  ProjektKontext / kein-OIB / Befund-ohne-Gebäudeteile), `review_required`→
+  UNGEKLÄRT, Vorbehalt „Erforderlichkeit, keine Konformitätsaussage", Kürzung hält
+  UNGEKLÄRT+Anzahl+„Zusammenfassung", kein Berichts-Verweis, **Platzierungen
+  UNVERÄNDERT** (`platzierung/` komplett unangetastet). 168 passed.
+- **BLOCKER (bei Enis):** `dxf_renderer.py` `_VERMERK_EINHEIT_JE_ZEICHEN=0.96`
+  **unterschätzt** die echte Breite (ezdxf `text_size` misst hier ~1,29/Zeichen)
+  → sein Guard `test_zeichenbreite_stimmt_mit_der_gemessenen_breite` ist ROT
+  (77-Zeichen-Zeile: 73,92 geschätzt vs 99,13 gemessen). Fix-Empfehlung: Breite im
+  Render direkt mit `text_size` MESSEN statt fester Faktor (umgebungsunabhängig).
+  **Prompt an Enis raus.** Bei Nachlieferung (Push/Bundle) = 2-Minuten-Recheck (nur
+  der eine Test), dann „zur Übernahme empfohlen".
+- **Review-Technik gelernt:** geteilter venv-Editable-Install überschattet einen
+  Worktree (Import kam aus main-src trotz PYTHONPATH — PEP-660-Meta-Finder). Lösung:
+  `pip install -e <worktree> --no-deps` temporär, testen, `pip install -e <main>`
+  restaurieren. Worktree via `git worktree add <dir> <sha>` (detached), danach
+  `git worktree remove --force`. Alles restauriert, meine Branches unversehrt;
+  `enis/l1-l3-gemeinsam-0907` liegt lokal als Referenz (nicht von mir gepusht).
+
+**Selman-Frage (Foto): Überdachung vor Haupt-Ein/Ausgang für Außen-Aufheller.**
+Meine Antwort: **Feld `Ausgang.ueberdacht` NICHT bauen.** `aussen_strategy.
+plan_aussenleuchten` setzt die SL 1 m vor JEDEN final_exit **bedingungslos** — sie
+liest keine Überdachungs-Info, der Contract hat kein solches Feld. Ein Fund
+(Barawitzka 0,707 m²) ist zu dünn für 3-Owner. Als Prüfstrecken-Befund stehen
+lassen; bei echter Norm-/Praxis-Regel später wieder aufgreifen. (Owner: keine
+COORDINATION-Notiz nötig.)
+
 ## STAND (2026-09-07, SPÄT/Session-Ende 2) — ALLES GEPUSHT + neue Owner-Regeln + Baufeld-Assets
 
 **main = origin (synchron). ALLE Leonis-Branches sind auf GitHub gepusht** (Owner-GO
