@@ -27,10 +27,10 @@ import warnings
 from dataclasses import dataclass, field
 
 import numpy as np
+from PIL import Image, ImageDraw
 from scipy import ndimage
 from shapely.geometry import Polygon
 from shapely.ops import snap
-from skimage.draw import polygon as _fill_polygon
 from skimage.measure import find_contours, label
 from skimage.morphology import closing, disk
 from skimage.segmentation import watershed
@@ -81,17 +81,34 @@ class _Raster:
 
 
 def _fuelle(mask: np.ndarray, geom, raster: _Raster) -> None:
-    """Polygon(e) in die Maske rastern (Exterior=True, Löcher wieder frei)."""
+    """Polygon(e) in die Maske rastern (Exterior=True, Löcher wieder frei).
+
+    Gefüllt wird per Scanline (Pillow) statt ``skimage.draw.polygon``: dessen
+    Kosten sind O(BBox-Pixel × Stützpunkte), und die Wand-Union großer Pläne
+    hat Ringe mit >20 000 Stützpunkten über das ganze Geschoss (Baufeld E2:
+    ein Aufruf = 166 s, mit Scanline 0,05 s). Ein Bild je Aufruf, Werte
+    1=setzen / 2=löschen, damit die Ring-Reihenfolge und die unberührten
+    Zellen der Maske erhalten bleiben.
+    """
     polys = geom.geoms if geom.geom_type in ("MultiPolygon", "GeometryCollection") \
         else [geom]
+    bild = Image.new("L", (mask.shape[1], mask.shape[0]), 0)
+    stift = ImageDraw.Draw(bild)
+    leer = True
     for p in polys:
         if p.geom_type != "Polygon" or p.is_empty:
             continue
-        for ring, wert in [(p.exterior, True)] + [(i, False) for i in p.interiors]:
-            rc = [raster.px(xy) for xy in ring.coords]
-            rr, cc = _fill_polygon([r for r, _ in rc], [c for _, c in rc],
-                                   shape=mask.shape)
-            mask[rr, cc] = wert
+        for ring, wert in [(p.exterior, 1)] + [(i, 2) for i in p.interiors]:
+            xy = [(c, r) for r, c in (raster.px(pt) for pt in ring.coords)]
+            if len(xy) < 3:
+                continue
+            stift.polygon(xy, fill=wert)
+            leer = False
+    if leer:
+        return
+    gemalt = np.asarray(bild)
+    mask[gemalt == 1] = True
+    mask[gemalt == 2] = False
 
 
 @dataclass
