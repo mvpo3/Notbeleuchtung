@@ -89,6 +89,13 @@ class NotlichtPlatzierer:
         )
         platzierungen = [
             *_plan_rettungszeichen(raum, norm),          # Anker
+            # Owner-Praxisregel (fachpraxis, 2026-09-07): TECHNIK/MUELLRAUM tragen
+            # IMMER eine Sicherheitsleuchte an der Tür (fensterlose Nebenräume, oft
+            # nicht auf dem Fluchtweg → keine Norm-Strategie greift dort). BEWUSST
+            # zuerst unter den Sicherheitsleuchten: der abstand_nachpass-Dubletten-
+            # Merge behält bei Gleichstand die früher gelistete → die Pflicht-Leuchte
+            # bleibt AN der Tür, eine zufällig <2 m benachbarte SL weicht (netto-neutral).
+            *fachpraxis.tuerleuchte_pflichtraeume(raum),
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2
