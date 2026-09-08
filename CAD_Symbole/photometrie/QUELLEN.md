@@ -30,6 +30,18 @@ Kontakt über din-notlicht.com). Sobald sie vorliegt: Datei hier ablegen +
 1 Zeile in `photometrie_mapping.yaml` — die Per-Familie-Naht
 (`registry.photometrie_je_key`) nimmt sie automatisch auf.
 
+## In echten Lichtberechnungen verwendet (2026-09-08)
+
+Die Profi-Notberechnung WHA Aichholzgasse 35 (Relux, s.
+`knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md`) nutzt Schrack-Leuchten, deren
+LDT im selben CDN-Muster beschaffbar sind:
+- `NLIL.L423.` **corridor lens** (211 lm, Fluchtweg) — Gegenstück zur bereits
+  vorliegenden `antipanik_nlildl423_round.ldt` (round, 208 lm). Corridor-Variante
+  über `l_nlil.l423._corridor*.ldt` nachladbar (Muster wie NLKBU corridor).
+- `NLKSC003WL` (146 lm, Einzelbatterie), `NLKWIC433`/`NLKWID433W` (Garage,
+  387/320 lm) — LDT beim nächsten Katalog-Ausbau nachladen.
+Die din-Leuchten (BASIC 2 / BASICsc 2) bleiben wie AP3 ohne öffentliche LDT.
+
 Hinweise für Nach-Downloads:
 - Dateinamens-Muster der aktuellen Generation: `l_<artikel-wildcard>_<dauer>_<linse>.ldt`
   (die Punkte sind LITERALE Zeichen). Ältere Serien: `l_<artnr>-<1h|3h>.ldt`.
