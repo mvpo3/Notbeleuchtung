@@ -152,6 +152,19 @@ def _plan_raumleuchten(
     for r in raum.raeume:
         if r.id not in centroids:
             continue
+        # S2 — Notbeleuchtung gilt nicht dem Wohnungsinneren: EN 1838/ÖNorm fordern sie
+        # für Fluchtwege + Allgemein-/Sonderbereiche, nicht für private Aufenthaltsräume.
+        # Räume der Nutzungsklasse WOHNUNG_PRIVAT bekommen daher keine Flächen-Leuchte —
+        # AUSSER ein Fluchtweg oder Allgemeinbereich führt hindurch (dort bleibt die
+        # Pflicht; RZ/Deckung laufen ohnehin über die Fluchtweg-Strategien). Behebt den
+        # Selman-BEFUND (Mollgasse: 4 SL in WOHNUNG_PRIVAT). Ohne nutzungsklasse (None)
+        # unverändert → bestehende Pläne bit-identisch.
+        if (
+            r.nutzungsklasse == "WOHNUNG_PRIVAT"
+            and not r.ist_fluchtweg
+            and not r.ist_communal
+        ):
+            continue
         anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
         eff = anf
         getriggert = False
