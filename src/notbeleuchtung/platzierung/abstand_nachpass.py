@@ -101,7 +101,9 @@ def _erster_konflikt(
         d = _dist(p.xy_mm, q.xy_mm)
         if p.kind == q.kind:
             schwelle = _DUBLETTEN_ABSTAND_MM.get(p.kind, _MIN_ABSTAND_MM)
-            if schwelle > _MIN_ABSTAND_MM and not _selber_raum(p.xy_mm, q.xy_mm, raum):
+            # `_selber_raum` (O(Räume)) nur prüfen, wenn das Paar überhaupt in die große
+            # Dubletten-Schwelle fällt — verhindert O(n²·Räume) auf großen Plänen.
+            if d < schwelle and schwelle > _MIN_ABSTAND_MM and not _selber_raum(p.xy_mm, q.xy_mm, raum):
                 schwelle = _MIN_ABSTAND_MM
         else:
             schwelle = _MIN_ABSTAND_MM
