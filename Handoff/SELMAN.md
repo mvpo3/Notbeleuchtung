@@ -61,6 +61,42 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-08 abends) ═══
+
+**Branch:** `selman/extents-ausreisser` — **35 Commits vor `origin/main`, 0 dahinter**
+(Merge `956e827` gemacht). Suite nach dem Merge **1089 passed, 0 failed**.
+**NICHT gepusht** — Push/PR braucht Owner-GO.
+
+**Was diese Session gemacht hat (alles gemessen, nicht geschätzt):**
+1. `stempel_flutung._fuelle` auf Pillow-Scanline — `skimage.draw.polygon` kostete
+   O(BBox-Pixel × Stützpunkte), ein Ring der Baufeld-Wand-Union 166 s. **Baufeld E2
+   entsperrt: Kaskade 41 s statt >13 min, 0,47 GB, 237 Räume.**
+2. `kaskade`: Stempel-Typ auf L-/H-Räume zurückschreiben, **nach** der Flutung
+   (davor bleibt der Typ an verworfenen Polygonen hängen). Muthgasse Türen
+   27/311 → 219/307; xfail-Zielbild erreicht.
+3. `tuer_typisierung`: Türtext-Fallback darf `ist_notausgang=False` von
+   Balkontür/Garagentor nicht zurückdrehen (Geschosskürzel „E2" matchte das
+   Notausgang-Muster).
+4. `plan_pruefen._material_report` folgt dem Ausgabeziel — der Sammellauf hatte
+   `docs/MATERIAL_REPORT.md` überschrieben (zurückgeholt aus 45d60c7).
+5. **KINDERWAGENRAUM** als eigener Kanon-Typ + Token `kiwa` in `_EXTRA_OVERRIDE`
+   (reale Stempel schreiben „KIWA", nie „Kinderwagen"; als OVERRIDE, weil sonst
+   das generische `fahrrad`-Token den Mischraum „FAHRRADRAUM / KIWA" gewinnt).
+   Wirkung: Mollgasse RZ 26 → 28, Barawitzka RZ 2 → 3.
+
+**Offen / als Nächstes:**
+- **Push + PR** (Owner-GO nötig). Danach Board-Antworten abwarten.
+- **`GESCHÄFTSLOKAL`** — echte Kanon-Lücke, 3-Owner-Frage steht im Board.
+- **Render-Speicherfresser** `plan_pruefen._figur` (8× `draw_layout` je Plan,
+  ~13 GB) — Leonis' Lane, im Board gemeldet.
+- **Sammellauf wiederholen**, sobald der Render entlastet ist: der letzte lief nur
+  über 62 der 72 Ordner, und die Zwillinge (Barawitzka_EG/415_1_3,
+  Muthgasse_E2/M109B E2, Rennweg_EG/OG3) müssen vor jeder Statistik dedupliziert
+  werden.
+- **Vokabular:** Trefferquote 87 %; sechs Alias-Kandidaten sind mit Beleg
+  VERWORFEN (`docs/OFFENE_FRAGEN.md`) — nicht erneut vorschlagen ohne neuen Beleg.
+
+---
 ## ═══ SELMAN: HIER MORGEN WEITER (Zusammenfassung 2026-08-29) ═══
 
 **Branch:** `selman/raumerkennung-dxf` (gepusht). Setup: siehe oben §0. Test: `pytest -q`
