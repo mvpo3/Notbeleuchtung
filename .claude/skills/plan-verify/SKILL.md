@@ -6,13 +6,12 @@ description: >
   einem Architektur-DXF/DWG (+ optional LB) und fährt danach eine Prüf-Batterie:
   Eingabe-DXF-Gesundheit (Koordinaten-Versatz/Extents), PDF-Integrität (%%EOF),
   Raumerkennungs-Plausibilität, Symbol-Zahlen im erwarteten Band, Norm-Prüfstatus.
-  Gibt ein GO/NO-GO mit konkreten Befunden aus. Trigger: "render + prüf",
-  "plan verifizieren", "ist der Plan brauchbar/vollständig", "sind die Pläne besser",
-  "check die DXF/PDF", "batch prüfen", "%%EOF prüfen", nach jedem `pipeline.run`
-  oder `projekt_batch_worker.py`.
-metadata:
-  type: skill
-  project: Notbeleuchtung
+  Gibt ein GO/NO-GO mit konkreten Befunden aus.
+when_to_use: >
+  Bei "render + prüf", "plan verifizieren", "ist der Plan brauchbar/vollständig",
+  "sind die Pläne besser", "check die DXF/PDF", "batch prüfen", "%%EOF prüfen", oder
+  automatisch nach jedem `pipeline.run` / `scripts/projekt_batch_worker.py`. NICHT für
+  reine Code-Änderungen ohne Render (dafür pytest/ruff).
 ---
 
 # plan-verify — generieren + verifizieren in einem Schritt
