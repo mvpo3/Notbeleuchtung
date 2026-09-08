@@ -89,12 +89,12 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     #     Sicherheitsleuchte — Mollgasse EG hat 6 solche Räume; die B1-Regel
     #     (#135, `aufheller_je_rz`) setzt hinter JEDES RZ einen Aufheller, also
     #     wächst SL mit.
-    # Am gemergten Stand nachgemessen (2026-09-08): RZ 26, SL 34 — die beiden
-    # Ursachen addieren sich NICHT, weil (2) auf Mollgasse noch nicht greift:
-    # `KINDERWAGENRAUM` fällt in `raumerkennung/raumtyp.py` auf `ABSTELLRAUM`
-    # zusammen (Board-Befund Leonis → Selman, offen). Bänder bleiben deshalb die
-    # weiteren der beiden Seiten; greift die Türleuchten-Regel später wirklich,
-    # wandert RZ nach oben und SL mit (`aufheller_je_rz`).
+    # Nachgemessen 2026-09-08: RZ 28, SL 35. Beide Ursachen wirken, seit
+    # `KINDERWAGENRAUM` ein eigener Kanon-Typ ist (vorher nach ABSTELLRAUM
+    # eingeebnet, Board-Befund Leonis → Selman): Mollgasse EG hat 2 KIWA-Räume
+    # (Stempel „KIWA" und „FAHRRADRAUM / KIWA"), die jetzt je ein Tür-RZ tragen
+    # → RZ 26 → 28, SL 34 → 35 (ein Aufheller je neuem RZ, der zweite Raum
+    # hatte schon eine Leuchte).
     assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
     assert 15 <= sl <= 44, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"
