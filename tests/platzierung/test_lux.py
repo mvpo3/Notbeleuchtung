@@ -78,3 +78,14 @@ def test_naht_echte_ldt_photometrie():
     iso = lux_raster(grid, BOUNDS, montagehoehe_m=2.5, i_cd=200.0, raster_mm=500.0)
     assert r.max_lux > 0.0
     assert r.min_lux < iso.min_lux
+
+
+def test_extents_ausreisser_kein_oom():
+    # Phantom-Extents (Baufeld-4OG: Hauptinhalt bei y≈347 km) spannen absurde Bounds.
+    # Ohne Guard wollte das 250-mm-Raster ~1,9 Mrd. Punkte allozieren (MemoryError).
+    # Der Aufweitungs-Guard liefert ein endliches Ergebnis in Sekunden.
+    riesig = (0.0, 0.0, 347_535_000.0, 347_535_000.0)
+    r = lux_raster([(1000.0, 1000.0)], riesig, i_cd=2000.0)
+    assert isinstance(r.min_lux, float)           # kein OOM/Crash
+    assert r.min_lux < 1e-6                         # Leuchte fern vom Gros der Fläche (~0)
+    assert r.erfuellt_min is False                 # Nachweis schlägt konservativ fehl
