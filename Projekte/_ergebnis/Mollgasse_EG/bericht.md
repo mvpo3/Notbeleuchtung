@@ -721,4 +721,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | tuer_ins_nichts | 1 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 292.6 s
+Laufzeit: 280.7 s

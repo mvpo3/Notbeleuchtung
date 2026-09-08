@@ -1179,4 +1179,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_tuer_14, exit_tuer_16,
 | kein_nachbarraum | 18 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 1832.0 s
+Laufzeit: 1778.5 s
