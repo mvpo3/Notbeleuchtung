@@ -114,7 +114,9 @@ class NotlichtPlatzierer:
         # Aufheller 500 mm hinter dem Zeichen (Rauminneres). Vor lb_override
         # (LB-Exklusionen greifen auch auf Fachpraxis-SL) und vor dem
         # abstand_nachpass (der Naht-Kollisionen entzerrt/merged).
-        platzierungen += fachpraxis.aufheller_je_rz(platzierungen, raum)
+        platzierungen += fachpraxis.aufheller_je_rz(
+            platzierungen, raum, norm, i_cd_fn=kontext.i_cd_fn
+        )
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
         # Symbole aus Stiegenhaus-Verbotszonen (Laufflächen/Öffnungen) an den nächsten

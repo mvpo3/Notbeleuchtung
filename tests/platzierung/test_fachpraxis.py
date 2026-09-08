@@ -9,6 +9,7 @@ import math
 
 import pytest
 
+from fakes import FakeNormProvider
 from notbeleuchtung.hauptengine.contracts import Ausgang, BBox, Platzierung, Raum, RaumModell, Tuer
 from notbeleuchtung.platzierung.fachpraxis import (
     AUFHELLER_KEY,
@@ -110,6 +111,49 @@ def test_aufheller_liegt_gegen_pfeilrichtung_auf_der_achse():
     assert len(out) == 1
     assert out[0].xy_mm[0] == pytest.approx(10000.0, abs=1.0)
     assert out[0].xy_mm[1] == pytest.approx(10500.0, abs=1.0)
+
+
+# ── Lux-Gate: Aufheller nur wo unterversorgt (Owner 2026-09-08) ──────────────
+def _sl(xy):
+    return Platzierung(
+        xy_mm=xy, catalog_key=AUFHELLER_KEY, rotation_deg=0.0, height_mm=2400.0,
+        kind="sicherheitsleuchte", richtung="gerade", circuit_hint="AGV-A-F13",
+        covers_segment=[], norm_quelle="EN 1838",
+    )
+
+
+def _strong(gamma, c=0.0):
+    return 3000.0
+
+
+def _weak(gamma, c=0.0):
+    return 2.0
+
+
+def test_aufheller_lux_gate_ueberspringt_bei_deckung():
+    # Starke SL direkt am Aufheller-Kandidaten (9500,10000) + echte Photometrie →
+    # Punkt weit über 1 lx → kein Aufheller (keine Überproduktion).
+    out = aufheller_je_rz([_rz(), _sl((9500.0, 10000.0))], _raum(), FakeNormProvider(), i_cd_fn=_strong)
+    assert out == []
+
+
+def test_aufheller_lux_gate_setzt_bei_defizit_ohne_licht():
+    # Keine Sicherheitsleuchte am Punkt → unterversorgt → Aufheller gesetzt.
+    out = aufheller_je_rz([_rz()], _raum(), FakeNormProvider(), i_cd_fn=_strong)
+    assert len(out) == 1
+    assert out[0].catalog_key == AUFHELLER_KEY
+
+
+def test_aufheller_lux_gate_setzt_bei_schwachem_licht():
+    # SL vorhanden, aber schwache Photometrie → Punkt < 1 lx → Aufheller nötig.
+    out = aufheller_je_rz([_rz(), _sl((9500.0, 10000.0))], _raum(), FakeNormProvider(), i_cd_fn=_weak)
+    assert len(out) == 1
+
+
+def test_aufheller_ohne_photometrie_bleibt_bedingungslos():
+    # Ohne i_cd_fn (keine LDT) kein Gate — auch mit SL am Punkt wird gesetzt.
+    out = aufheller_je_rz([_rz(), _sl((9500.0, 10000.0))], _raum(), FakeNormProvider())
+    assert len(out) == 1
 
 
 # ── Tür-Leuchte TECHNIK/MUELLRAUM (Owner-Regel 2026-09-07) ───────────────────
