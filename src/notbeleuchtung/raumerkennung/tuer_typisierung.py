@@ -171,7 +171,12 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
             if text is not None:
                 if _EINGANG_TEXT.search(text) and eg and detail is None:
                     detail = "hauseingang"
-                if _NOTAUSGANG_TEXT.search(text):
+                # Balkontür/Garagentor haben ihr `ist_notausgang=False` aus einer
+                # fachlichen Regel (Owner-Entscheidung, docs/OFFENE_FRAGEN.md) —
+                # ein Türtext darf das nicht zurückdrehen (Muthgasse: das
+                # Geschosskürzel „E2" im Türtext machte Balkontüren zu Ausgängen).
+                if _NOTAUSGANG_TEXT.search(text) and detail not in (
+                        "balkontuer", "garagentor"):
                     t.ist_notausgang = True
                 if not (t.quelle or "").startswith("text:"):
                     t.quelle = f"{t.quelle or 'unbekannt'}+text:{text[:40]}"
