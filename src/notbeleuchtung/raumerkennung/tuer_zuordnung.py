@@ -87,10 +87,12 @@ def _raum_an(xy: XY, polys) -> Raum | None:
 
 
 def ordne_tueren(tueren: list[Tuer], oeffnungen: list[TuerOeffnung],
-                 raeume: list[Raum], aussenkontur: Polygon | None) -> list[Tuer]:
+                 raeume: list[Raum], aussenkontur) -> list[Tuer]:
     """Füllt ``von_raum``/``nach_raum`` jeder Tür in-place (Rückgabe = Eingabe).
 
-    Bereits gesetzte Zuordnungen werden nicht überschrieben.
+    ``aussenkontur`` = „gedeckte" Fläche (Polygon/MultiPolygon): was sie NICHT
+    deckt, ist AUSSEN — seit der Außen-Analyse auch offene Höfe zwischen den
+    Gebäude-Komponenten. Bereits gesetzte Zuordnungen bleiben unverändert.
     """
     polys = _raum_polys(raeume)
     kontur = (prep(aussenkontur)
@@ -153,6 +155,68 @@ def durchgaenge_ohne_tuerblatt(raeume: list[Raum], tueren: list[Tuer],
                 out.append(Tuer(
                     id=f"durchgang_{len(out) + 1}", xy_mm=xy,
                     breite_mm=float(round(breite)), von_raum=ra.id,
-                    nach_raum=rb.id, ohne_tuerblatt=True))
+                    nach_raum=rb.id, ohne_tuerblatt=True, quelle="durchgang"))
                 tuer_punkte.append(xy)
+    return out
+
+
+# ── Öffnungen in der AUSSENWAND (ohne Türblatt) ──────────────────────────────
+_AUSSEN_KONTAKT_MM = 400.0   # Außenwände sind dicker als Innenwände (≤ 800)
+_AUSSEN_DURCHGANG_MAX_MM = 2600.0  # breiter = Fassaden-Artefakt, keine Tür
+
+
+def aussen_durchgaenge(raeume: list[Raum], tueren: list[Tuer],
+                       wand_union_geom, kontur) -> list[Tuer]:
+    """Öffnungen > 800 mm in der Außenwand eines ALLGEMEIN-Raums ohne
+    Bogen/Block → ``Tuer(ohne_tuerblatt=True, nach_raum=AUSSEN)``.
+
+    Analog zu ``durchgaenge_ohne_tuerblatt``, aber gegen die AUSSEN-Fläche:
+    Kontaktzone = Raum-Puffer ∩ Außenring (2 m um die gedeckte Kontur),
+    minus Wandkörper. Nur ALLGEMEIN-Räume (Rennweg-EG-Muster: Rampenkorridor
+    mit 1340-mm-Lücke) — Wohnungs-Fensteröffnungen bleiben draußen.
+    """
+    if (wand_union_geom is None or wand_union_geom.is_empty
+            or kontur is None or kontur.is_empty):
+        return []
+    from .nutzungsklasse import nutzungsklasse_fuer
+    # Ring + Kontakt-Puffer EINMAL rechnen (die Kontur ist auf großen Plänen
+    # komplex — je Raum gepuffert war das der Zeitfresser auf Muthgasse).
+    aussen_ring = (kontur.buffer(2000.0).difference(kontur)
+                   .buffer(_AUSSEN_KONTAKT_MM))
+    tuer_punkte = [t.xy_mm for t in tueren]
+    out: list[Tuer] = []
+    for r in raeume:
+        klasse = r.nutzungsklasse or nutzungsklasse_fuer(r.raum_typ)
+        if not (klasse or "").startswith("ALLGEMEIN") or len(r.polygon_mm) < 3:
+            continue
+        poly = Polygon(r.polygon_mm).buffer(0)
+        if poly.is_empty:
+            continue
+        zone = poly.buffer(_AUSSEN_KONTAKT_MM).intersection(aussen_ring)
+        frei = zone.difference(wand_union_geom)
+        teile = list(frei.geoms) if hasattr(frei, "geoms") else [frei]
+        for g in teile:
+            if g.is_empty:
+                continue
+            mrr = g.minimum_rotated_rectangle
+            coords = list(getattr(mrr, "exterior", g).coords)[:4]
+            if len(coords) < 3:
+                continue
+            # Langseite ≈ Öffnungsbreite (die Wand klippt die Zone seitlich).
+            # Der Deckel filtert Fassaden-Artefakte (fehlende Wandkörper an
+            # einer ganzen Raumkante ergäben raumlange Pseudo-Öffnungen).
+            breite = max(math.dist(coords[0], coords[1]),
+                         math.dist(coords[1], coords[2]))
+            if not (_DURCHGANG_MIN_MM < breite <= _AUSSEN_DURCHGANG_MAX_MM):
+                continue
+            c = g.centroid
+            xy = (float(c.x), float(c.y))
+            if any(math.dist(xy, p) < 2 * _TUER_NAH_MM for p in tuer_punkte):
+                continue
+            out.append(Tuer(
+                id=f"aussenoeffnung_{len(out) + 1}", xy_mm=xy,
+                breite_mm=float(round(breite)), von_raum=r.id,
+                nach_raum=AUSSEN, ohne_tuerblatt=True,
+                quelle="oeffnung_aussenwand"))
+            tuer_punkte.append(xy)
     return out

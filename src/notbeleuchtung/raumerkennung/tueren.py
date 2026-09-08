@@ -12,6 +12,7 @@ F1 (`richtung_durch_tuer`) konsumiert `RaumModell.tueren` an den ECHTEN Öffnung
 """
 from __future__ import annotations
 
+import math
 import re
 from dataclasses import dataclass
 
@@ -65,7 +66,8 @@ def _block_tueren(plan: DxfPlan) -> list[Tuer]:
         (xy,) = plan.entity_points(e) or [(0.0, 0.0)]
         out.append(Tuer(id=f"tuer_{len(out) + 1}", xy_mm=xy,
                         breite_mm=_breite_mm(e.dxf.name),
-                        ist_notausgang=_ist_aussentuer(e.dxf.name)))
+                        ist_notausgang=_ist_aussentuer(e.dxf.name),
+                        quelle="block"))
     return out
 
 
@@ -78,7 +80,8 @@ def _arc_tueren(plan: DxfPlan) -> list[Tuer]:
         r = float(e.dxf.radius) * plan.factor
         if _ARC_MIN_MM < r < _ARC_MAX_MM:
             out.append(Tuer(id=f"tuer_{len(out) + 1}",
-                            xy_mm=plan._scale(e.dxf.center), breite_mm=round(r)))
+                            xy_mm=plan._scale(e.dxf.center), breite_mm=round(r),
+                            quelle="arc"))
     return out
 
 
@@ -154,6 +157,157 @@ def tuer_oeffnungen(plan: DxfPlan) -> list[TuerOeffnung]:
                         winkel_grad=float(e.dxf.start_angle), quelle="arc"))
 
     _walk(plan.space)
+    return out
+
+
+# ── Zusätzliche Türquellen (Fachteil „Türquellen", additiv) ──────────────────
+_TUER_NAH_MM = 600.0        # bestehende Tür „deckt" eine Öffnung in dem Radius
+_AUSSEN_PROBE_MM = 500.0    # Probekreis um den Öffnungs-Drehpunkt
+_DOPPEL_TOL_MM = 300.0      # |Zentrenabstand − (b1+b2)| einer Doppelflügel-Tür
+_WAND_NAH_MM = 250.0        # Drehpunkt liegt an einer Wand
+_PARALLEL_TOL_GRAD = 15.0
+_TEXT_TUER_NAH_MM = 1500.0
+
+
+def aussentor_tueren(oeffnungen: list[TuerOeffnung], tueren: list[Tuer],
+                     kontur) -> list[Tuer]:
+    """Tür-Schwenkbögen an der AUSSEN-Grenze, die kein Tür-Block deckt.
+
+    Auf Block-Familien (Mollgasse) liefert ``tueren_aus_dxf`` nur die
+    benannten Blöcke — Hof-/Gartentüren sind dort aber reine ARCs. Eine
+    Öffnung zählt, wenn ein Probepunkt (Kreis r=500 mm um den Drehpunkt)
+    außerhalb der gedeckten Fläche liegt (= AUSSEN, s. aussenbereich).
+    """
+    if kontur is None or kontur.is_empty:
+        return []
+    from shapely.geometry import Point
+    from shapely.prepared import prep
+    deck = prep(kontur)
+    grenze = kontur.boundary
+    punkte = [t.xy_mm for t in tueren]
+    out: list[Tuer] = []
+    for o in oeffnungen:
+        if o.quelle != "arc" or not o.breite_mm:
+            continue
+        if any(math.dist(o.xy_mm, p) < _TUER_NAH_MM for p in punkte):
+            continue
+        proben = [(o.xy_mm[0] + _AUSSEN_PROBE_MM * math.cos(w),
+                   o.xy_mm[1] + _AUSSEN_PROBE_MM * math.sin(w))
+                  for w in (k * math.pi / 4 for k in range(8))]
+        # AUSSEN-grenznah: ein Probepunkt liegt draußen ODER der Drehpunkt
+        # sitzt direkt an der AUSSEN-Grenze (Türblatt schlägt nach innen auf,
+        # der Bogen bleibt dann komplett im gedeckten Bereich).
+        if (not any(not deck.covers(Point(p)) for p in proben)
+                and grenze.distance(Point(o.xy_mm)) > _AUSSEN_PROBE_MM):
+            continue
+        out.append(Tuer(id=f"aussentor_{len(out) + 1}", xy_mm=o.xy_mm,
+                        breite_mm=o.breite_mm, quelle="arc_aussen"))
+        punkte.append(o.xy_mm)
+    return out
+
+
+def _wandwinkel_bei(segs, xy: XY, max_mm: float = _WAND_NAH_MM) -> float | None:
+    """Winkel (Grad, mod 180) des nächsten Wandsegments ≤ max_mm, sonst None."""
+    best_d, best_w = max_mm, None
+    for a, b in segs:
+        seg_len = math.dist(a, b)
+        if seg_len < 1.0:
+            continue
+        t = max(0.0, min(1.0, ((xy[0] - a[0]) * (b[0] - a[0])
+                               + (xy[1] - a[1]) * (b[1] - a[1])) / seg_len**2))
+        proj = (a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]))
+        d = math.dist(xy, proj)
+        if d < best_d:
+            best_d = d
+            best_w = math.degrees(math.atan2(b[1] - a[1], b[0] - a[0])) % 180.0
+    return best_w
+
+
+def verschmelze_doppelfluegel(tueren: list[Tuer], wand_segs) -> list[Tuer]:
+    """Doppelflügel-Türen: zwei Schwenkbögen an der GEMEINSAMEN Wand, deren
+    Drehpunkt-Abstand ≈ Summe der Blattbreiten ist → EINE Tür mit Gesamtbreite.
+
+    Die Wand-Kollinearität (Verbindungslinie ∥ Wand an beiden Drehpunkten)
+    schließt gegenüberliegende Gangtüren aus (deren Verbindung steht senkrecht
+    auf den Wänden). Nur ARC-Quellen — Block-Türen tragen ihre Breite selbst.
+    """
+    arcs = [t for t in tueren if t.quelle in ("arc", "arc_aussen")
+            and _ARC_MIN_MM < t.breite_mm < _ARC_MAX_MM]
+    verbraucht: set[str] = set()
+    neu: list[Tuer] = []
+    for i, t1 in enumerate(arcs):
+        if t1.id in verbraucht:
+            continue
+        for t2 in arcs[i + 1:]:
+            if t2.id in verbraucht:
+                continue
+            d = math.dist(t1.xy_mm, t2.xy_mm)
+            if abs(d - (t1.breite_mm + t2.breite_mm)) > _DOPPEL_TOL_MM:
+                continue
+            w_verb = math.degrees(math.atan2(
+                t2.xy_mm[1] - t1.xy_mm[1], t2.xy_mm[0] - t1.xy_mm[0])) % 180.0
+            w1 = _wandwinkel_bei(wand_segs, t1.xy_mm)
+            w2 = _wandwinkel_bei(wand_segs, t2.xy_mm)
+            if w1 is None or w2 is None:
+                continue
+            if any(min(abs(w_verb - w), 180.0 - abs(w_verb - w))
+                   > _PARALLEL_TOL_GRAD for w in (w1, w2)):
+                continue
+            mitte = ((t1.xy_mm[0] + t2.xy_mm[0]) / 2,
+                     (t1.xy_mm[1] + t2.xy_mm[1]) / 2)
+            neu.append(Tuer(id=f"doppel_{len(neu) + 1}", xy_mm=mitte,
+                            breite_mm=t1.breite_mm + t2.breite_mm,
+                            quelle="doppelfluegel"))
+            verbraucht |= {t1.id, t2.id}
+            break
+    if not neu:
+        return tueren
+    return [t for t in tueren if t.id not in verbraucht] + neu
+
+
+# Texte, die eine Tür/einen Eingang implizieren — stark genug, um OHNE
+# gezeichnetes Türblatt eine Tür anzulegen (Rennweg EG: 'TÜRSCHLIESSER'
+# an einer 1340-mm-Wandlücke, kein Schwenkbogen, kein Block).
+_TEXT_TUER = re.compile(
+    r"T(?:Ü|UE|.)RSCHLIE|AUTOMATIKT|SCHIEBET(?:Ü|UE|.)R|EINGANG"
+    r"|WINDFANG|NOTAUSGANG|FLUCHTT(?:Ü|UE|.)R|PANIKBESCHLAG"
+    # Ausgangs-Kennungen/Anlagen-Kürzel nur als eigenständiges Token
+    # (sonst matcht E1 in "BE12", BST in "ABSTAND").
+    r"|\bE[12]\b|\bBST\b|\bRWA\b",
+    re.IGNORECASE)
+
+
+def tuer_texte(plan: DxfPlan) -> list[tuple[str, XY]]:
+    """(Text, Position mm) aller türimplizierenden Texte im Plan."""
+    out: list[tuple[str, XY]] = []
+    for e in plan.entities():
+        t = e.dxftype()
+        if t == "MTEXT":
+            text, ins = e.plain_text(), e.dxf.insert
+        elif t == "TEXT":
+            text, ins = e.dxf.text, e.dxf.insert
+        else:
+            continue
+        if _TEXT_TUER.search(text or ""):
+            out.append((text.strip(), plan._scale(ins)))
+    return out
+
+
+def text_tueren(plan: DxfPlan, tueren: list[Tuer]) -> list[Tuer]:
+    """Türen aus türimplizierenden Texten OHNE gezeichnete Tür ≤ 1.5 m.
+
+    Position = Textposition (die Öffnung liegt daneben — gut genug für
+    Zuordnung + Ausgangs-Ableitung); Breite unbekannt (0, nichts erfinden);
+    ``quelle`` trägt den Text als Begründung.
+    """
+    punkte = [t.xy_mm for t in tueren]
+    out: list[Tuer] = []
+    for text, xy in tuer_texte(plan):
+        if any(math.dist(xy, p) < _TEXT_TUER_NAH_MM for p in punkte):
+            continue
+        out.append(Tuer(id=f"texttuer_{len(out) + 1}", xy_mm=xy,
+                        breite_mm=0.0, quelle=f"text:{text[:40]}"))
+        punkte.append(xy)
     return out
 
 
