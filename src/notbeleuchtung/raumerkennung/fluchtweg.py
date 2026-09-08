@@ -37,6 +37,8 @@ from notbeleuchtung.hauptengine.contracts.raum_modell import (
 
 from .dxf_load import DxfPlan
 from .nutzungsklasse import nutzungsklasse_fuer
+from .tuer_typisierung import ist_obergeschoss
+from .tuer_zuordnung import AUSSEN, KEIN_RAUM
 from .zirkulation import WEG_PREFIX, _laenge, _reason
 
 XY = tuple[float, float]
@@ -158,6 +160,26 @@ def _klasse(r: Raum) -> str | None:
     return r.nutzungsklasse or nutzungsklasse_fuer(r.raum_typ)
 
 
+def _final_exit_fehlt_grund(tueren: list[Tuer]) -> str:
+    """Warum gibt es keinen final_exit? (Berichts-Text, beste Heuristik)."""
+    mit_aussen = [t for t in tueren if AUSSEN in (t.von_raum, t.nach_raum)]
+    if mit_aussen:
+        return ("Tür(en) nach außen ohne Ausgangs-Rolle "
+                f"(z.B. {mit_aussen[0].id}) — Typisierung prüfen")
+    # Einseitig ohne Nachbarraum (Raum auf der einen, nichts auf der anderen
+    # Seite) = Spec-Grund „Tür ohne Nachbarraum". Beidseits ohne Raum heißt
+    # dagegen, dass gar kein Außenbereich erkannt wurde. Gleiche Unterscheidung
+    # wie `_untypisiert_grund` (kein_nachbarraum vs. tuer_ins_nichts).
+    def _ohne_raum(seite: str | None) -> bool:
+        return seite is None or seite == KEIN_RAUM
+
+    if any(_ohne_raum(t.von_raum) != _ohne_raum(t.nach_raum) for t in tueren):
+        return "Tür ohne Nachbarraum (eine Türseite keinem Raum zugeordnet)"
+    if any(_ohne_raum(t.von_raum) for t in tueren):
+        return "Außenbereich nicht erkannt (Türseiten KEIN_RAUM statt AUSSEN)"
+    return "keine Tür nach außen erkannt"
+
+
 def _raum_der_tuer(t: Tuer, erschliessung: dict[str, Raum]) -> Raum | None:
     for s in (t.von_raum, t.nach_raum):
         if s in erschliessung:
@@ -166,12 +188,21 @@ def _raum_der_tuer(t: Tuer, erschliessung: dict[str, Raum]) -> Raum | None:
 
 
 def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
-               segmente_bisher: list[FluchtwegSegment]) -> list[FluchtwegSegment]:
+               segmente_bisher: list[FluchtwegSegment], geschoss: str = "",
+               warnungen: list[str] | None = None) -> list[FluchtwegSegment]:
     """GRAPH- und FALLBACK-Segmente ERGÄNZEND zu den bestehenden Segmenten.
 
+    Zielwahl nach Geschoss: **EG/UG** → jeder Weg endet an einem
+    ``final_exit`` (stair_exit sind nur Zwischenknoten; je Stiegenhaustür
+    entsteht zusätzlich das Segment Stiegenhaustür→nächster final_exit);
+    **OG** → Ziel ist der ``stair_exit``. Leeres ``geschoss`` zählt als
+    EG-artig (konservativ: der Weg soll ins Freie führen).
+
     Startpunkte, in deren Nähe schon eine explizite LINIE verläuft, werden
-    übersprungen — der Plan hat dort selbst geplant.
+    übersprungen — der Plan hat dort selbst geplant. ``warnungen`` (optional,
+    in-place): Starts im EG/UG ohne erreichbaren final_exit mit Endraum+Grund.
     """
+    og = ist_obergeschoss(geschoss)
     erschliessung = {r.id: r for r in raeume
                      if _klasse(r) == "ALLGEMEIN_ERSCHLIESSUNG"
                      and len(r.polygon_mm) >= 3}
@@ -184,9 +215,15 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
         return any(math.dist(xy, p) < _START_GEDECKT_MM for p in linie_punkte)
 
     # Zieltüren = Türen, auf die ein Ausgang zeigt (exit_<tuer_id>).
+    # Geschoss-Regel: OG → stair_exit; EG/UG → final_exit (stair_exit ist
+    # dort nur Zwischenknoten). Fallback auf alle, wenn der Zieltyp fehlt
+    # (lieber ein Weg zum falschen Ausgangstyp als gar keiner — die Lücke
+    # meldet `warnungen`).
+    ziel_typ = "stair_exit" if og else "final_exit"
+    ziel_ausgaenge = [a for a in ausgaenge if a.typ == ziel_typ] or ausgaenge
     tuer_by_id = {t.id: t for t in tueren}
     ziele: dict[str, Ausgang] = {}
-    for a in ausgaenge:
+    for a in ziel_ausgaenge:
         tid = a.id.removeprefix("exit_")
         if tid in tuer_by_id:
             ziele[tid] = a
@@ -222,11 +259,13 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
                     g.add_edge(t1.id, t2.id, w=d, raum=rid)
 
     # Starts: wohnungseingang-Türen + Türen von ALLGEMEIN-Räumen in die
-    # Erschließung.
+    # Erschließung; im EG/UG zusätzlich jede Stiegenhaustür (Segment
+    # Stiegenhaustür → nächster final_exit, der Geschoss-Restweg).
     starts: list[Tuer] = []
     by_id = {r.id: r for r in raeume}
     for t in tueren:
-        if t.tuer_detail == "wohnungseingang":
+        if t.tuer_detail == "wohnungseingang" or (
+                not og and t.tuer_detail == "stiegenhaustuer"):
             starts.append(t)
             continue
         seiten_klassen = {(_klasse(by_id[s]) if s in by_id else None)
@@ -236,6 +275,12 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             starts.append(t)
 
     out: list[FluchtwegSegment] = []
+    kein_finales_ziel = (not og
+                         and not any(a.typ == "final_exit" for a in ausgaenge))
+    if warnungen is not None and kein_finales_ziel and starts:
+        warnungen.append(
+            "EG/UG ohne final_exit: Wege enden ersatzweise am stair_exit — "
+            + _final_exit_fehlt_grund(tueren))
     for start in starts:
         if start.id in ziele or _gedeckt(start.xy_mm):
             continue
@@ -253,6 +298,14 @@ def fluchtwege(raeume: list[Raum], tueren: list[Tuer], ausgaenge: list[Ausgang],
             if laenge < best_len:
                 best, best_len = pfad, laenge
         if best is None or len(best) < 2:
+            if warnungen is not None and not og:
+                endraum = next((s for s in (start.von_raum, start.nach_raum)
+                                if s not in erschliessung), start.von_raum)
+                grund = (_final_exit_fehlt_grund(tueren) if kein_finales_ziel
+                         else "Türgraph endet vor dem Ausgang")
+                warnungen.append(
+                    f"EG/UG: kein final_exit erreichbar von Tür {start.id} "
+                    f"(Endraum {endraum}) — {grund}")
             continue
         punkte: list[XY] = [tuer_by_id[best[0]].xy_mm]
         for a_id, b_id in pairwise(best):
