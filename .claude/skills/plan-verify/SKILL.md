@@ -61,7 +61,12 @@ Alles automatisch, keine manuelle Sicht nötig:
     (Referenz `plan_verify_baender.yaml`, s. Tools) — außerhalb = WARNUNG mit Delta.
 5. **Norm-Prüfstatus:** `render_summary["pruefung"]["status"]` (ok/warnung/fehler)
     + offene Regeln zitieren; `fehler` = NO-GO.
-6. **Vermerk am Blatt:** Prüfvermerk/OIB-Stufe sichtbar (nicht abgeschnitten;
+6. **Wissens-Konsum (Owner-Auftrag):** `scripts/norm_coverage.py` — jede Platzierung
+    ist **norm**-gesourct (`norm_quelle ∈ regelwerk.quellen` = Enis' YAML erreichte die
+    Engine), **praxis** (Owner-Referenz) oder **unbegründet**. `unbegruendet > 0` = NO-GO
+    (Leuchte fußt auf keinem Wissen → fehlender Norm-Wert / stiller Default-Fallback).
+    Zeigt sichtbar, dass die Pläne aus dem Wissen entstehen (Mollgasse EG: 90 % norm).
+7. **Vermerk am Blatt:** Prüfvermerk/OIB-Stufe sichtbar (nicht abgeschnitten;
     Breiten-Budget) — reuse der L1/L3-Messmethode (`_vermerk_messer`).
 
 ### Schritt 3 — Report (statt "hier ist die Datei")
