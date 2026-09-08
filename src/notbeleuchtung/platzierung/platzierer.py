@@ -102,7 +102,7 @@ class NotlichtPlatzierer:
             # zuerst unter den Sicherheitsleuchten: der abstand_nachpass-Dubletten-
             # Merge behält bei Gleichstand die früher gelistete → die Pflicht-Leuchte
             # bleibt AN der Tür, eine zufällig <2 m benachbarte SL weicht (netto-neutral).
-            *fachpraxis.tuerleuchte_pflichtraeume(raum),
+            *fachpraxis.tuerleuchte_pflichtraeume(raum, norm),
             *plan_sicherheitsleuchten(raum, norm),       # Betonungspunkte (Aufheller)
             *plan_antipanik(raum, norm, kontext=kontext),  # Fläche (Trigger OIB-gegated)
             *plan_sonderstellen(raum, norm, kontext=kontext),  # Pflichtstellen §4.1.2

@@ -173,26 +173,29 @@ def _raum_mit_tuer(raum_typ: str, tuer_xy=(5000.0, 0.0), nach="gang") -> RaumMod
 
 
 @pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"])
-def test_tuerleuchte_je_pflichtraum_an_der_tuer(typ):
-    out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ))
+def test_tuerleuchte_ist_rz_an_der_tuer(typ):
+    # Owner-Korrektur 2026-09-08: an der Tür ein RETTUNGSZEICHEN (Pfeil-unten, zur Tür
+    # rotiert) — NICHT mehr eine Antipanik-SL. Kleiner konvexer Raum → nur das RZ.
+    out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ), FakeNormProvider())
     assert len(out) == 1
     p = out[0]
-    assert p.kind == "sicherheitsleuchte"    # Rolle: Raum-SL (keine Antipanik-Zone)
-    assert p.catalog_key == TUERLEUCHTE_KEY  # Symbol: Antipanik-AP3 (Universal-Leuchte)
-    assert p.catalog_key == "antipanik_leuchte"
-    assert p.norm_quelle == QUELLE_TUERLEUCHTE
-    assert p.norm_quelle.startswith("Referenz-Praxis:")
+    assert p.kind == "rz"                    # Rettungszeichen, nicht Sicherheitsleuchte
+    assert p.richtung == "unten"
     assert p.xy_mm == (5000.0, 0.0)          # exakt an der Tür
+    # Tür (5000,0) liegt unter dem Raum-Zentrum (5000,4000) → Pfeil zeigt nach unten (rot 0°).
+    assert p.rotation_deg == 0.0
+    assert p.norm_quelle == QUELLE_TUERLEUCHTE
     assert "F13" in p.circuit_hint           # getrennter Sicherheitskreis
     assert p.height_mm >= 2000.0             # EN-1838-Mindesthöhe
 
 
 def test_andere_raumtypen_bekommen_keine_tuerleuchte():
-    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("BUERO")) == []
+    fake = FakeNormProvider()
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("BUERO"), fake) == []
     # ABSTELLRAUM bewusst NICHT: die Regel gilt für den GEMEINSAMEN Kinderwagen-
     # raum, nicht den privaten Wohnungs-Abstellraum (Owner-Entscheid 2026-09-07).
-    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("ABSTELLRAUM")) == []
-    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("LAGER")) == []
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("ABSTELLRAUM"), fake) == []
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("LAGER"), fake) == []
 
 
 def test_tuerleuchte_fail_closed_ohne_tuer():
@@ -201,7 +204,7 @@ def test_tuerleuchte_fail_closed_ohne_tuer():
         floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
         raeume=[Raum(id="t1", raum_typ="TECHNIK", polygon_mm=_RAUM_POLY)],
     )
-    assert tuerleuchte_pflichtraeume(ohne) == []
+    assert tuerleuchte_pflichtraeume(ohne, FakeNormProvider()) == []
 
 
 def test_tuerleuchte_bevorzugt_erschliessungs_tuer():
@@ -218,6 +221,47 @@ def test_tuerleuchte_bevorzugt_erschliessungs_tuer():
             Tuer(id="d_gang", xy_mm=(9000.0, 0.0), von_raum="t1", nach_raum="gang"),
         ],
     )
-    out = tuerleuchte_pflichtraeume(rm)
-    assert len(out) == 1
-    assert out[0].xy_mm == (9000.0, 0.0)     # die Tür zum GANG
+    out = tuerleuchte_pflichtraeume(rm, FakeNormProvider())
+    assert out[0].xy_mm == (9000.0, 0.0)     # RZ an der Tür zum GANG
+
+
+def test_grosser_tiefer_raum_bekommt_mittige_antipanik():
+    # Tiefer Raum (weitester Punkt > RZ-Erkennungsweite 30 m) + ≥ 60 m² → Tür-RZ PLUS
+    # mittige Antipanikleuchte gegen Panik im hinteren Bereich.
+    tief = [(0.0, 0.0), (40000.0, 0.0), (40000.0, 40000.0), (0.0, 40000.0)]  # 1600 m²
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(40000.0, 41000.0)),
+        raeume=[
+            Raum(id="t1", raum_typ="TECHNIK", polygon_mm=tief, flaeche_m2=1600.0),
+            Raum(id="gang", raum_typ="GANG",
+                 polygon_mm=[(0.0, 40000.0), (40000.0, 40000.0), (40000.0, 41000.0), (0.0, 41000.0)]),
+        ],
+        tueren=[Tuer(id="d1", xy_mm=(0.0, 0.0), von_raum="t1", nach_raum="gang")],
+    )
+    out = tuerleuchte_pflichtraeume(rm, FakeNormProvider())
+    assert len(out) == 2
+    assert out[0].kind == "rz"
+    zusatz = out[1]
+    assert zusatz.kind == "antipanik"
+    assert zusatz.catalog_key == TUERLEUCHTE_KEY   # antipanik_leuchte
+    assert point_in_polygon(zusatz.xy_mm, tief)     # mittig im Raum
+
+
+def test_verwinkelter_kleiner_raum_bekommt_mittigen_aufheller():
+    # L-Form (verdeckte Ecke) + < 60 m² → Tür-RZ PLUS mittiger Aufheller.
+    L = [(0.0, 0.0), (8000.0, 0.0), (8000.0, 8000.0), (4000.0, 8000.0),
+         (4000.0, 4000.0), (0.0, 4000.0)]  # 48 m², Fläche/Bbox = 0.75 < 0.85
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(8000.0, 9000.0)),
+        raeume=[
+            Raum(id="t1", raum_typ="MUELLRAUM", polygon_mm=L, flaeche_m2=48.0),
+            Raum(id="gang", raum_typ="GANG",
+                 polygon_mm=[(0.0, 8000.0), (4000.0, 8000.0), (4000.0, 9000.0), (0.0, 9000.0)]),
+        ],
+        tueren=[Tuer(id="d1", xy_mm=(2000.0, 8000.0), von_raum="t1", nach_raum="gang")],
+    )
+    out = tuerleuchte_pflichtraeume(rm, FakeNormProvider())
+    assert len(out) == 2
+    assert out[0].kind == "rz"
+    assert out[1].kind == "sicherheitsleuchte"
+    assert out[1].catalog_key == AUFHELLER_KEY
