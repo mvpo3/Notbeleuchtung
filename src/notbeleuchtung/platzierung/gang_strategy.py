@@ -28,10 +28,10 @@ from .bausteine import (
     building_assigner as _building_assigner,
 )
 from .bausteine import (
-    richtung_und_rotation as _richtung_und_rotation,
+    key_und_rotation as _key_und_rotation,
 )
 from .bausteine import (
-    select_key as _select_key,
+    richtung_und_rotation as _richtung_und_rotation,
 )
 from .geometry import _bbox
 from .mittellinie import leuchten_auf_linie
@@ -122,24 +122,23 @@ def plan_rettungszeichen_gang(raum: RaumModell, norm: NormProvider) -> list[Plat
                 naechster = min(raum.ausgaenge, key=lambda a: (a.xy_mm[0] - px) ** 2 + (a.xy_mm[1] - py) ** 2,
                                 default=None) if raum.ausgaenge else None
                 if naechster is not None:
-                    richtung, fallback_rot = _richtung_und_rotation(naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
+                    richtung, _ = _richtung_und_rotation(naechster.xy_mm[0] - px, naechster.xy_mm[1] - py)
                 else:
-                    richtung, fallback_rot = "unten", 270.0
+                    richtung = "unten"
             elif i + 1 < len(pts):
-                richtung, fallback_rot = _richtung_und_rotation(pts[i + 1][0] - px, pts[i + 1][1] - py)
+                richtung, _ = _richtung_und_rotation(pts[i + 1][0] - px, pts[i + 1][1] - py)
             else:
-                richtung, fallback_rot = _richtung_und_rotation(px - pts[i - 1][0], py - pts[i - 1][1])
-            catalog_key, is_directional = _select_key(anf.symbol_katalog_keys, richtung)
-            rotation = 0.0 if is_directional else fallback_rot
-            mirror_x = False if is_directional else (richtung == "rechts")
+                richtung, _ = _richtung_und_rotation(px - pts[i - 1][0], py - pts[i - 1][1])
+            # Normalfall: EIN Rotationsrahmen (Slice 3.1) — Block + Rotation + Spiegel.
+            catalog_key, rotation, mirror_x = _key_und_rotation(anf.symbol_katalog_keys, richtung)
             # Owner-Regel #111 (Pfeil-zur-Tür), Fallback-Ausprägung: das RZ am
-            # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür —
-            # unrotiert weist der Block auf −y → rotation = Winkel(RZ→Tür)+90°,
-            # auf 90° gerastert (wie im Anker-Pfad).
+            # Ziel-Ende zeigt mit dem UNTEN-Block physisch ZUR Ziel-Tür. rotation =
+            # Winkel(RZ→Tür)+90° — identisch zum orientation-Rahmen (unten-Block-Basis
+            # 270° → ziel−basis = A−270 ≡ A+90), auf 90° gerastert (wie im Anker-Pfad).
             if ziel_xy is not None and i == len(pts) - 1:
                 dx, dy = ziel_xy[0] - px, ziel_xy[1] - py
                 if math.hypot(dx, dy) > 50.0:
-                    unten_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
+                    unten_key, _, _ = _key_und_rotation(anf.symbol_katalog_keys, "unten")
                     catalog_key = unten_key
                     rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
                     mirror_x = False
