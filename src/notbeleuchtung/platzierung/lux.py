@@ -58,6 +58,13 @@ def _nimmt_c_ebene(i_cd_fn) -> bool:
 
 _UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen Wert liefert
 
+#: Obergrenze der Rasterpunkte (Extents-Robustheit). Ein Phantom-Extents-Ausreißer
+#: (z.B. Baufeld-4OG mit Hauptinhalt bei y≈347 km, COORDINATION 2026-09-07) spannt
+#: absurde Bounds → ein 250-mm-Raster wollte Milliarden Punkte allozieren (OOM/>50 min).
+#: 8 Mio deckt >700 m × 700 m bei 250 mm ab — jenseits jeder echten Geschossfläche —
+#: und deckelt den Ausreißer, statt die Engine zu blockieren.
+_MAX_RASTER_PUNKTE = 8_000_000
+
 
 def ud_min_aus_norm(gleichmaessigkeit_max: float | None) -> float:
     """Ud-Grenze (min:max) aus der Norm-Gleichmäßigkeit (max:min).
@@ -117,8 +124,18 @@ def lux_raster(
     doppelt gedreht.
     """
     minx, miny, maxx, maxy = bounds_mm
-    xs = np.arange(minx + rand_mm, maxx - rand_mm + 1e-6, raster_mm)
-    ys = np.arange(miny + rand_mm, maxy - rand_mm + 1e-6, raster_mm)
+    # Extents-Robustheit: degenerierte Bounds (Phantom-Ausreißer, s. _MAX_RASTER_PUNKTE)
+    # würden Milliarden Rasterpunkte allozieren. Das Raster defensiv aufweiten, bis es
+    # unter die Obergrenze passt — ein Ausreißer liefert dann ein grobes, aber endliches
+    # Ergebnis (der Nachweis schlägt konservativ fehl) statt die Engine zu blockieren.
+    # Legitime Geschossflächen bleiben weit unter dem Cap → raster_mm unverändert.
+    raster_eff = float(raster_mm)
+    spanx = max(0.0, (maxx - rand_mm) - (minx + rand_mm))
+    spany = max(0.0, (maxy - rand_mm) - (miny + rand_mm))
+    while (spanx / raster_eff + 1.0) * (spany / raster_eff + 1.0) > _MAX_RASTER_PUNKTE:
+        raster_eff *= 2.0
+    xs = np.arange(minx + rand_mm, maxx - rand_mm + 1e-6, raster_eff)
+    ys = np.arange(miny + rand_mm, maxy - rand_mm + 1e-6, raster_eff)
     if len(xs) == 0 or len(ys) == 0 or not leuchten:
         return LuxErgebnis(0.0, 0.0, 0.0, 0.0, False, False)
     gx, gy = np.meshgrid(xs, ys)
