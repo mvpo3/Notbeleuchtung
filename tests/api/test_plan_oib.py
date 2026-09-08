@@ -35,7 +35,7 @@ def test_plan_mit_projekt_kontext_traegt_oib_block():
     # Scope je Raum statt Gate-Flag (Enis 05.09.): ohne raum_referenzen ungeklärt.
     assert summary["oib"]["sanitaer_scope"]["anwendbar"] == 0
     # Der Plan selbst ist unverändert (4OG-Fixture hat keine Flächen-Schwellen).
-    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
+    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 6}  # +4 fachpraxis-Aufheller
 
 
 def test_plan_ohne_kontext_kein_oib_block():
