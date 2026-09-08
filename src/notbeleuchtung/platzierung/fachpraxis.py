@@ -23,12 +23,18 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-from notbeleuchtung.hauptengine.contracts import Platzierung, RaumModell
+from notbeleuchtung.hauptengine.contracts import (
+    FluchtwegSegment,
+    NormProvider,
+    Platzierung,
+    RaumModell,
+)
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import building_assigner as _building_assigner
-from .geometry import find_center_visual, point_in_polygon
+from .bausteine import select_key as _select_key
+from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
@@ -55,10 +61,26 @@ QUELLE_TUERLEUCHTE = (
     "Referenz-Praxis: Technik-/Nebenraum-SL an der Tür "
     "(INOTEC HB2026 · EN 1838:2025 §5.4 · Elektro-LB §5.1.23)"
 )
-#: Montagehöhe der Tür-Sicherheitsleuchte (über der Tür; ≥ EN-1838-Mindesthöhe 2 m).
+#: Montagehöhe der mittigen Zusatzleuchte (über Boden; ≥ EN-1838-Mindesthöhe 2 m).
 TUERLEUCHTE_HOEHE_MM = 2400.0
 #: Erschließungs-Raumtypen — eine Tür DORTHIN ist die „Ausgangs"-Tür des Raums.
 _ERSCHLIESSUNG = _KORRIDOR_TYPEN | {"STIEGENHAUS"}
+#: Ab dieser Raumfläche ist die mittige Zusatzleuchte eine Antipanikleuchte (0,5 lx,
+#: EN 1838 §4.3 Flächenbezug) statt eines Aufhellers (Füll-/Zusatzlicht). Owner 2026-09-08.
+_ANTIPANIK_AB_M2 = 60.0
+#: Fallback-Reichweite eines Tür-RZ, wenn die Norm keine Erkennungsweite (l=z·h) liefert.
+_RZ_REICHWEITE_FALLBACK_MM = 15000.0
+#: Konvexitäts-Schwelle (Polygon-Fläche / Bbox-Fläche). Darunter = L-Form mit potenziell
+#: von der Tür aus VERDECKTER Ecke → mittige Zusatzleuchte auch unterhalb der Reichweite.
+_KONVEX_MIN = 0.85
+
+
+def _polygon_flaeche_m2(polygon: list[tuple[float, float]]) -> float:
+    """Polygon-Fläche (Gauß/Shoelace) in m² — Fallback, wenn `Raum.flaeche_m2` fehlt."""
+    if len(polygon) < 3:
+        return 0.0
+    s = sum(x1 * y2 - x2 * y1 for (x1, y1), (x2, y2) in zip(polygon, polygon[1:] + polygon[:1]))
+    return abs(s) / 2.0 / 1_000_000.0
 
 
 @dataclass(frozen=True)
@@ -170,18 +192,25 @@ def _tuer_des_raums(raum: RaumModell, r):
     return None
 
 
-def tuerleuchte_pflichtraeume(raum: RaumModell) -> list[Platzierung]:
-    """Referenz-Praxis 2026-09-07: TECHNIK/MUELLRAUM bekommen IMMER eine
-    Sicherheitsleuchte an der Tür.
+def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Platzierung]:
+    """Referenz-Praxis (Owner 2026-09-08): TECHNIK/MUELLRAUM/KINDERWAGENRAUM bekommen
+    IMMER ein **Rettungszeichen an der Tür** — der „Pfeil nach unten"-Block, rotiert
+    sodass der Pfeil physisch ZUR Tür zeigt (bei Netzausfall muss die Tür auffindbar
+    bleiben; diese fensterlosen Neben-/Innenräume liegen meist nicht auf dem erkannten
+    Fluchtweg, deshalb setzt die Regel das RZ explizit).
 
-    Eine Leuchte je Pflichtraum, gesetzt an der (Haupt-)Tür des Raums (`bei der
-    Tür`). Symbol = Antipanik-AP3 (Universal-Sicherheitsleuchte, Rolle ≠ Produkt),
-    `kind="sicherheitsleuchte"` (Rolle: Raum-Sicherheitsbeleuchtung, KEINE
-    Antipanik-Zone). Diese Räume sind fensterlose Innen-/Nebenräume und liegen
-    meist NICHT auf dem erkannten Fluchtweg — deshalb greift keine norm-getriebene
-    Strategie, und die Regel setzt die Leuchte explizit. Trägt der Raum keine
-    bestimmbare Tür, wird nichts gesetzt (fail-closed — keine Leuchte an geratener
-    Stelle). Quelle: `QUELLE_TUERLEUCHTE` (Referenz-Praxis, s. o.).
+    Reicht ein Tür-RZ nicht — geht jemand tief in den Raum oder in eine von der Tür
+    aus verdeckte Ecke, ist bei Netzausfall dort kein Notlicht sichtbar (Panikgefahr) —
+    kommt zusätzlich MITTIG eine Zusatzleuchte. „Reicht nicht" =: der weiteste Raumpunkt
+    liegt weiter als die RZ-Erkennungsweite (l=z·h) von der Tür, ODER der Raum ist
+    nicht-konvex (L-Form, Fläche/Bbox < `_KONVEX_MIN` → mögliche verdeckte Ecke). Die
+    Zusatzleuchte ist ein Aufheller (< `_ANTIPANIK_AB_M2`) bzw. eine Antipanikleuchte
+    (≥ `_ANTIPANIK_AB_M2`, 0,5-lx-Fläche EN 1838 §4.3) — je nach Raumgröße.
+
+    Trägt der Raum keine bestimmbare Tür, wird nichts gesetzt (fail-closed — keine
+    Leuchte an geratener Stelle). RZ-Symbol/-Höhe kommen aus der Norm
+    (`fuer_fluchtweg_abschnitt`); die Provenienz `QUELLE_TUERLEUCHTE` markiert, dass die
+    PLATZIERUNG Referenz-Praxis ist (die Norm mandatiert sie in diesen Räumen nicht).
     """
     pflicht = [r for r in raum.raeume if (r.raum_typ or "").upper() in _TUERLEUCHTE_RAUMTYPEN]
     if not pflicht:
@@ -194,16 +223,57 @@ def tuerleuchte_pflichtraeume(raum: RaumModell) -> list[Platzierung]:
         tuer = _tuer_des_raums(raum, r)
         if tuer is None:
             continue
+        tx, ty = tuer.xy_mm
+        kreis = f"AGV-{assign_building(tx)}-F{_AGV_SV_F}"
+        hat_polygon = len(r.polygon_mm) >= 3
+        zentrum = find_center_visual(r.polygon_mm) if hat_polygon else (tx, ty - 1.0)
+
+        # 1) RZ an der Tür — Pfeil-unten-Block, rotiert ZUR Tür (Muster wie communal_stgh/
+        #    anker: Richtung Raum-Inneres → Tür, rotation = atan2+90 auf 90° gerastert).
+        anf = norm.fuer_fluchtweg_abschnitt(
+            FluchtwegSegment(segment_id=f"tuerleuchte_{r.id}", polyline_mm=[(tx, ty)], reason="exit")
+        )
+        rz_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
+        dx, dy = tx - zentrum[0], ty - zentrum[1]
+        if math.hypot(dx, dy) < 50.0:
+            dx, dy = 0.0, -1.0
+        rot = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
         out.append(
             Platzierung(
-                xy_mm=(tuer.xy_mm[0], tuer.xy_mm[1]),
-                catalog_key=TUERLEUCHTE_KEY,
+                xy_mm=(tx, ty),
+                catalog_key=rz_key,
+                rotation_deg=rot,
+                mirror_x=False,
+                height_mm=float(anf.montagehoehe_mm),
+                kind="rz",
+                richtung="unten",
+                circuit_hint=kreis,
+                covers_segment=[],
+                norm_quelle=QUELLE_TUERLEUCHTE,
+            )
+        )
+
+        # 2) Mittige Zusatzleuchte, wenn 1 Tür-RZ den Raum nicht abdeckt.
+        if not hat_polygon:
+            continue
+        reichweite = (anf.erkennungsweite_m or 0.0) * 1000.0 or _RZ_REICHWEITE_FALLBACK_MM
+        weitester = max(math.hypot(px - tx, py - ty) for (px, py) in r.polygon_mm)
+        flaeche = r.flaeche_m2 or _polygon_flaeche_m2(r.polygon_mm)
+        bbox_m2 = _bbox_area(_bbox(r.polygon_mm)) / 1_000_000.0
+        nicht_konvex = bbox_m2 > 0 and (flaeche / bbox_m2) < _KONVEX_MIN
+        if weitester <= reichweite and not nicht_konvex:
+            continue
+        antipanik = flaeche >= _ANTIPANIK_AB_M2
+        out.append(
+            Platzierung(
+                xy_mm=zentrum,
+                catalog_key=TUERLEUCHTE_KEY if antipanik else AUFHELLER_KEY,
                 rotation_deg=0.0,
                 mirror_x=False,
                 height_mm=TUERLEUCHTE_HOEHE_MM,
-                kind="sicherheitsleuchte",
+                kind="antipanik" if antipanik else "sicherheitsleuchte",
                 richtung="gerade",
-                circuit_hint=f"AGV-{assign_building(tuer.xy_mm[0])}-F{_AGV_SV_F}",
+                circuit_hint=kreis,
                 covers_segment=[],
                 norm_quelle=QUELLE_TUERLEUCHTE,
             )
