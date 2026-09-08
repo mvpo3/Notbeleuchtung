@@ -21,14 +21,16 @@ wäre ein 3-Owner-Contract-Slice → handoff(contracts) im Report).
 from __future__ import annotations
 
 import math
+from collections.abc import Callable
 from dataclasses import dataclass
 
-from notbeleuchtung.hauptengine.contracts import Platzierung, RaumModell
+from notbeleuchtung.hauptengine.contracts import NormProvider, Platzierung, RaumModell
 
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import building_assigner as _building_assigner
 from .geometry import find_center_visual, point_in_polygon
+from .lux import lux_punkte
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
@@ -93,12 +95,43 @@ def _in_einem_raum(raum: RaumModell, xy: tuple[float, float]) -> bool:
     )
 
 
+def _punkt_unterversorgt(xy, quellen, raum, norm, i_cd_fn) -> bool:
+    """Liegt die Beleuchtungsstärke am Punkt `xy` UNTER der Norm-Schwelle?
+
+    Rechnet die Beleuchtungsstärke aus den bereits platzierten Sicherheits-/
+    Antipanikleuchten (Corridor-/Rundoptik über `i_cd_fn`) am Kandidatenpunkt —
+    physik-identisch zu `deckung`/`lux`, inkl. Wartungsfaktor. Fehlt jede
+    Lichtquelle, gilt der Punkt als unterversorgt (Aufheller nötig). Ohne
+    passenden Raum-Kontext konservativ True (setzen).
+    """
+    r = next(
+        (rr for rr in raum.raeume if len(rr.polygon_mm) >= 3 and point_in_polygon(xy, rr.polygon_mm)),
+        None,
+    )
+    if r is None:
+        return True
+    if not quellen:
+        return True
+    anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
+    wf = getattr(anf, "wartungsfaktor", None) or 1.0
+    res = lux_punkte(
+        quellen, [xy], montagehoehe_m=anf.montagehoehe_mm / 1000.0, i_cd_fn=i_cd_fn,
+        ziel_lux=anf.min_lux or 1.0, wartungsfaktor=wf,
+    )
+    return not res.erfuellt_min
+
+
 def aufheller_je_rz(
     platzierungen: list[Platzierung],
     raum: RaumModell,
+    norm: NormProvider | None = None,
+    *,
+    i_cd_fn: Callable[..., float] | None = None,
     regeln: FachpraxisRegeln | None = None,
 ) -> list[Platzierung]:
-    """Regel B1: je RZ EIN Aufheller, `aufheller_abstand_mm` hinter dem RZ.
+    """Regel B1 (lux-bedingt): je RZ ein Aufheller `aufheller_abstand_mm` hinter dem RZ —
+    ABER nur, wenn die Stelle nicht schon von vorhandenen Sicherheitsleuchten
+    ausgeleuchtet ist.
 
     „Hinter" = entgegen der effektiven Pfeilrichtung (weg vom Ausgang, Richtung
     Rauminneres — der Flüchtende kommt von dort und braucht das Licht VOR dem
@@ -108,8 +141,20 @@ def aufheller_je_rz(
     **fail-closed**: fehlen dem RaumModell die Polygone ganz (fragmentierte
     CAD-Familien liefern real leere `raeume`), ist die Kontur unbekannt und es
     wird KEIN Aufheller gesetzt, statt ihn ungeprüft ins Nichts zu platzieren.
+
+    **Lux-Gate (Owner 2026-09-08):** mit `norm` UND echter Hersteller-Photometrie
+    (`i_cd_fn`) wird der Kandidatenpunkt gegen die Norm-Beleuchtungsstärke
+    (`anf.min_lux`) aus den schon platzierten Sicherheits-/Antipanikleuchten geprüft —
+    deckt das vorhandene Licht ihn ab, entfällt der Aufheller (keine Überproduktion).
+    Ohne `i_cd_fn` (keine LDT) bleibt es beim bedingungslosen Setzen — die konstante
+    Lichtstärke-Annahme überschätzt die Deckung, ein stilles Weglassen wäre unsicher.
     """
     regeln = regeln or FachpraxisRegeln()
+    quellen = [
+        (q.xy_mm[0], q.xy_mm[1], q.rotation_deg)
+        for q in platzierungen
+        if q.kind in ("sicherheitsleuchte", "antipanik")
+    ]
     out: list[Platzierung] = []
     for p in platzierungen:
         if p.kind != "rz":
@@ -125,6 +170,14 @@ def aufheller_je_rz(
         # Fail-closed: ohne belegte Kontur (leere raeume ODER Position außerhalb
         # aller Polygone) kein Aufheller — Review-Befund 2026-09-07.
         if not _in_einem_raum(raum, xy):
+            continue
+        # Lux-Gate — NUR mit echter Hersteller-Photometrie (i_cd_fn): deckt das
+        # vorhandene Licht den Punkt schon ab, entfällt der Aufheller. Ohne LDT
+        # ist die konstante Lichtstärke-Annahme zu optimistisch (überschätzt die
+        # Deckung) → dann konservativ bedingungslos setzen (kein stilles Weglassen).
+        if norm is not None and i_cd_fn is not None and not _punkt_unterversorgt(
+            xy, quellen, raum, norm, i_cd_fn
+        ):
             continue
         out.append(
             Platzierung(
