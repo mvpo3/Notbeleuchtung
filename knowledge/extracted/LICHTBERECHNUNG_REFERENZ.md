@@ -12,6 +12,14 @@ Quellen (im Repo):
 - **`Lichtberechnung/Barawitzka/Lichtberechnung/LiBer_Bawarawitzkagasse 24_{Garage,
   Stiege A,Stiege B}.pdf`** (DIALux, „xuLAID"=DIALux) — *Barawitzkagasse 24*,
   17.–20.04.2026, Bearb. Michaela Reip, **din-Sicherheitstechnik**-Leuchten.
+- **`DIN-Notbeleuchtungspläne(Beispiele)/Linke Wienzeile/20250408 - DIN {Plan,Bericht,
+  Imagebilder} - geprüft.pdf`** (DIALux, **GEPRÜFT**) — *WHA Linke Wienzeile, 1100 Wien*,
+  02.04.2025, Planer **AnlagenPlan** GmbH, din-Produkte. Komplett-Paket: Plan (Symbolik) +
+  Bericht (Photometrie) + Imagebilder (Datenblatt je Typ-Buchstabe). **3. Report — bestätigt
+  alle Parameter** (MF 0,80 · ohne Reflexion · 0,02 m/0,5 m · Mittellinie ≥1 lx + Mittelfläche
+  ≥0,5 lx · Ud ≥0,025). Produkte: `BASIC 2 SIGN-plus` (RZ 80/242 lm), `STRING 2 eco spot SL`
+  (127 lm), `CONCEPT 2 AP3 Wandausleger EW 32 m` (Typ B, 1,3 W). Emin durchweg **>1,0 lx**
+  (Planer-Sicherheitsmarge), Treppen-Nachweis auf Podest-Höhen 0,18/2,2/2,4 m.
 
 Extraktion: `pypdfium2` (Render) + `pdfplumber` (Text) über den Repo-venv —
 `pdftoppm`/Read-Visual fehlt auf der Maschine. Werte gegen die PDF-Seiten geprüft
@@ -135,3 +143,20 @@ in lx. Leuchten = NLIL (corridor/round, 208–211 lm) + NLKSC Akku (146 lm).
 4. Randzone 0,5 m / Nutzebene 0,02 m = Engine-konform.
 5. Möblierungs-Verschattung = offener Backlog (braucht RaumModell-Möbel, nachrangig).
 6. Notbetriebs-Lichtströme 40–400 lm real → künftig Katalog-Φ statt generischer cd.
+
+## 7. Engine-Baustein: `platzierung/lux_nachweis.py` (2026-09-08, F2)
+
+Alle drei Profi-Reports liefern **denselben Nachweis** je Rettungsweg — die Engine
+platzierte danach (`deckung`), gab ihn aber nie als Bericht aus. Neues, **isoliertes**
+Modul `platzierung/lux_nachweis.py` (F1-kollisionsfrei — reine Konsumption des fertigen
+`PlatzierungsErgebnis`, ändert keine Platzierung) erzeugt genau die Profi-Struktur:
+
+- `nachweis_fluchtweg(raum, norm, ergebnis, …) → list[FluchtwegNachweis]` — je Korridor:
+  **Emin Mittellinie** (Soll ≥ 1 lx), **Emin Mittelfläche** (Soll ≥ 0,5 lx), **Ud=Emin/Emax**
+  (Soll ≥ 1:40), Wartungsfaktor (aus `anf.wartungsfaktor`, defensiv), `erfuellt`, `norm_quelle`.
+- `nachweis_summary(…) → dict` (JSON-fähig) für `render_summary["lux_nachweis"]`.
+
+**Hauptengine-Naht (offen, additiv):** `pipeline.run` ruft `nachweis_fluchtweg` + hängt
+`nachweis_summary` unter `render_summary["lux_nachweis"]` (wie `["pruefung"]`/`["oib"]`);
+Render kann daraus eine EN-1838-Nachweistabelle ins Blatt setzen. Wird koordiniert mit F1
+gemacht (COORDINATION 2026-09-08), da `pipeline.py`/Render F1-Lane sind.
