@@ -448,6 +448,40 @@ def test_blatt_pruefvermerk_feld(contracts, tmp_path):
     assert any("vollständiger Nachweis offen" in t for t in texte)
 
 
+def test_blatt_pruefvermerk_worst_case_oib_und_photometrie(contracts, tmp_path):
+    """Review-Befund 2026-09-07: mit BEIDEN Zusatzzeilen (offene Photometrie-
+    Grundlage UND OIB-Stufe) rückt die Details-Zeile am weitesten nach unten
+    (~0,4 Einheiten Rest-Reserve in der Bande). Vorher ungetestet, weil der
+    OIB-Test keinen Photometrie-Provider setzte. Dieser Test pinnt den
+    vollen 5-Zeilen-Vermerk: alle Zeilen vorhanden, streng absteigend geordnet,
+    kein Verlust/Überlappung — ein künftiger Push aus der Bande bricht ihn."""
+    from notbeleuchtung.hauptengine.photometrie_befund import PhotometrieBefund
+
+    platzierung, raum = contracts
+    out = tmp_path / "vermerk_worst.dxf"
+    pruefung = {
+        "status": "warnung",
+        "befunde": [{"regel": "A", "status": "ok", "detail": ""}],
+        "oib_stufen": {"teil_1": "eingeschraenkt"},
+    }
+    befund = PhotometrieBefund(
+        quelle="hersteller_ldt", hinweis="konservativ", vollstaendiger_nachweis=False,
+    )
+    render_dxf(platzierung, raum, out, pruefung=pruefung, photometrie=befund)
+    texte = [e for e in ezdxf.readfile(str(out)).modelspace().query("TEXT")]
+    def zeile(praefix):
+        treffer = [e for e in texte if e.dxf.text.startswith(praefix)]
+        assert len(treffer) == 1, f"{praefix!r}: {len(treffer)} Zeilen (erwartet 1)"
+        return treffer[0].get_placement()[1].y
+    y_kopf = zeile("PRÜFVERMERK")
+    y_status = zeile("Status:")
+    y_photo = zeile("Lichttechn. Nachweis:")
+    y_oib = zeile("OIB-RL2-Stufe:")
+    y_details = zeile("Details:")
+    # Streng absteigend — die neue OIB-Zeile schiebt Details nicht aus der Ordnung.
+    assert y_kopf > y_status > y_photo > y_oib > y_details
+
+
 def test_blatt_pruefvermerk_ohne_pruefung_entfaellt(contracts, tmp_path):
     """Ohne Prüfbericht wird nichts behauptet — kein leeres Vermerk-Feld."""
     platzierung, raum = contracts

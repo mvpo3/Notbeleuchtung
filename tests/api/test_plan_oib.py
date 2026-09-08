@@ -94,3 +94,15 @@ def test_api_header_traegt_die_scope_zaehlung():
     assert oib["verkehr_scope"]["anwendbar"] == 0
     assert any("UNGEKLÄRT" in h for h in oib["hinweise"])
     assert "pruefung" not in summary                   # dokumentierte Grenze
+
+
+def test_plan_provider_hinweise_erreichen_die_ausgabe():
+    """Ausgabelücken-Befund 2026-09-07: Provider-Hinweise (AStV) fielen in
+    gate_summary weg — jetzt müssen sie bis in den API-Header durchkommen."""
+    hinweis = "AStV-Parallelpfad: Arbeitsstätte nach ASchG — ergänzt nur, senkt nie."
+    client = TestClient(create_app(
+        bundle_factory=lambda: build_fake_bundle_mit_oib(hinweise=[hinweis])))
+    r = _post_plan(client, projekt_kontext=_KONTEXT_JSON)
+    assert r.status_code == 200
+    summary = json.loads(r.headers["X-Notbeleuchtung"])
+    assert f"[teil_1] {hinweis}" in summary["oib"]["hinweise"]

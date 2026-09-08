@@ -629,7 +629,13 @@ def pruefbericht(
         raum, platzierung, lb, norm=norm, oib=oib,
         photometrie=photometrie, projekt_kontext=projekt_kontext,
     )
-    return {
+    bericht = {
         "status": gesamtstatus(befunde),
         "befunde": [asdict(b) for b in befunde],
     }
+    # Ausgabelücken-Befund 2026-09-07: die ermittelte OIB-Stufe erreichte den
+    # gezeichneten Prüfvermerk nie (render_summary["oib"] entsteht erst NACH dem
+    # Render). Additiver Block, rein deklarativ — keine Bewertungs-Logik.
+    if oib is not None and getattr(oib, "ergebnisse", None):
+        bericht["oib_stufen"] = {e.gebaeudeteil_id: e.stufe for e in oib.ergebnisse}
+    return bericht
