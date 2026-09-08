@@ -49,3 +49,6 @@ spikes/*.ifc
 
 # Rennweg OG3: Referenzplan der Stempel-Anker-Tests (ArchiCAD-Export)
 !Projekte/Rennweg/**
+
+# Sammellauf über alle Repo-Grundrisse (generiert, ~250 MB)
+Projekte/_ergebnis_alle/

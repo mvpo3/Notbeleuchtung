@@ -15,6 +15,7 @@ from __future__ import annotations
 import itertools
 import json
 import math
+import os
 import os.path
 import re
 import subprocess
@@ -62,7 +63,10 @@ from notbeleuchtung.raumerkennung.tuer_typisierung import (
 )
 
 EINGANG = REPO / "Projekte" / "_eingang"
-ERGEBNIS = REPO / "Projekte" / "_ergebnis"
+# Ausgabeordner überschreibbar (Sammelläufe über alle Repo-Grundrisse
+# schreiben nach _ergebnis_alle, damit _ergebnis die gepflegten fünf bleibt).
+ERGEBNIS = Path(os.environ.get("PLAN_PRUEFEN_ERGEBNIS",
+                               REPO / "Projekte" / "_ergebnis"))
 
 _FARBEN = plt.cm.tab20.colors  # type: ignore[attr-defined]
 
