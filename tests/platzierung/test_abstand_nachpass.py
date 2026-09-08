@@ -55,6 +55,25 @@ def test_rz_und_sl_koinzident_beide_bleiben_entzerrt():
     assert _dist(rz_out.xy_mm, sl_out.xy_mm) >= _MIN_ABSTAND_MM
 
 
+def test_zwei_sl_im_selben_raum_werden_gemergt():
+    # Zwei SL 1 m auseinander im GLEICHEN Korridor → Dublette (< 2 m) → eine bleibt.
+    poly = [(0.0, 0.0), (10000.0, 0.0), (10000.0, 10000.0), (0.0, 10000.0)]
+    a, b = _p(2000.0, 5000.0, "sicherheitsleuchte"), _p(3000.0, 5000.0, "sicherheitsleuchte")
+    out = abstand_nachpass.entzerre([a, b], _raum(poly))
+    assert len(out) == 1
+
+
+def test_zwei_sl_verschiedene_raeume_bleiben_beide():
+    # Zwei Nachbar-Korridore, je eine SL, nur 1 m über die Wand auseinander → NICHT
+    # mergen (verschiedene Fluchtwege) — sonst verlöre ein Korridor seine SL (raum_34).
+    links = [(0.0, 0.0), (4000.0, 0.0), (4000.0, 10000.0), (0.0, 10000.0)]
+    rechts = [(4000.0, 0.0), (8000.0, 0.0), (8000.0, 10000.0), (4000.0, 10000.0)]
+    a = _p(3500.0, 5000.0, "sicherheitsleuchte")   # in 'links'
+    b = _p(4500.0, 5000.0, "sicherheitsleuchte")   # in 'rechts', 1 m von a
+    out = abstand_nachpass.entzerre([a, b], _raum(links, rechts))
+    assert len(out) == 2                            # beide bleiben, kein Raum bleibt dunkel
+
+
 def test_nudge_bleibt_im_raumpolygon():
     # Quadratischer Raum; das Paar sitzt an der rechten Wand → der Nudge nach außen
     # verließe den Raum, muss also nach innen ausweichen.

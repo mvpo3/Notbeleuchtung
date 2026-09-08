@@ -78,17 +78,33 @@ def _polygon_of(xy: Point, raum: RaumModell) -> Polygon | None:
     return None
 
 
-def _erster_konflikt(p: Platzierung, akzeptiert: list[Platzierung]) -> Platzierung | None:
+def _selber_raum(a: Point, b: Point, raum: RaumModell) -> bool:
+    """Liegen ``a`` und ``b`` GEMEINSAM in einem Raumpolygon?"""
+    return any(
+        len(r.polygon_mm) >= 3 and point_in_polygon(a, r.polygon_mm) and point_in_polygon(b, r.polygon_mm)
+        for r in raum.raeume
+    )
+
+
+def _erster_konflikt(
+    p: Platzierung, akzeptiert: list[Platzierung], raum: RaumModell
+) -> Platzierung | None:
     """Erstes schon akzeptiertes Symbol im Konfliktabstand (oder None).
 
     Gleichartige Symbole nutzen ggf. eine größere Dubletten-Schwelle
-    (`_DUBLETTEN_ABSTAND_MM`), verschieden-artige den 250-mm-Mindestabstand."""
+    (`_DUBLETTEN_ABSTAND_MM`), verschieden-artige den 250-mm-Mindestabstand. Die
+    große SL-Dubletten-Schwelle greift aber NUR, wenn beide im GLEICHEN Raum liegen —
+    zwei SL in verschiedenen (Nachbar-)Korridoren decken verschiedene Fluchtwege, ein
+    Merge über die Raumgrenze ließe einen Korridor dunkel (Owner-Befund 2026-09-08,
+    Mollgasse EG: raum_34 verlor so seine einzige Fluchtweg-SL)."""
     for q in akzeptiert:
         d = _dist(p.xy_mm, q.xy_mm)
-        schwelle = (
-            _DUBLETTEN_ABSTAND_MM.get(p.kind, _MIN_ABSTAND_MM)
-            if p.kind == q.kind else _MIN_ABSTAND_MM
-        )
+        if p.kind == q.kind:
+            schwelle = _DUBLETTEN_ABSTAND_MM.get(p.kind, _MIN_ABSTAND_MM)
+            if schwelle > _MIN_ABSTAND_MM and not _selber_raum(p.xy_mm, q.xy_mm, raum):
+                schwelle = _MIN_ABSTAND_MM
+        else:
+            schwelle = _MIN_ABSTAND_MM
         if d < schwelle:
             return q
     return None
@@ -145,7 +161,7 @@ def entzerre(placements: list[Platzierung], raum: RaumModell) -> list[Platzierun
     gehalten: dict[int, Platzierung] = {}
     for i in order:
         p = placements[i]
-        konflikt = _erster_konflikt(p, akzeptiert)
+        konflikt = _erster_konflikt(p, akzeptiert, raum)
         if konflikt is None:
             akzeptiert.append(p)
             gehalten[i] = p
