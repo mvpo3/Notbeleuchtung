@@ -189,7 +189,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 
 ## Türen (Fachteil 3)
 
-56 / 105 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+59 / 105 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -254,7 +254,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_21 | raum_8 | raum_25 | zimmertuer | 5150 | — | durchgang |  |
 | durchgang_22 | raum_8 | raum_26 | zimmertuer | 5150 | — | durchgang |  |
 | durchgang_23 | raum_8 | raum_27 | — | 1819 | — | durchgang | unbekannte_kombination |
-| durchgang_24 | raum_8 | raum_42 | — | 1610 | — | durchgang | unbekannte_kombination |
+| durchgang_24 | raum_8 | raum_42 | balkontuer | 1610 | — | durchgang |  |
 | durchgang_25 | raum_9 | raum_25 | zimmertuer | 2387 | — | durchgang |  |
 | durchgang_26 | raum_9 | raum_27 | — | 2069 | — | durchgang | unbekannte_kombination |
 | durchgang_27 | raum_10 | raum_25 | zimmertuer | 3027 | — | durchgang |  |
@@ -283,8 +283,8 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_50 | raum_23 | raum_24 | zimmertuer | 4050 | — | durchgang |  |
 | durchgang_51 | raum_23 | raum_41 | — | 1610 | — | durchgang | unbekannte_kombination |
 | durchgang_52 | raum_24 | raum_26 | zimmertuer | 4580 | — | durchgang |  |
-| durchgang_53 | raum_25 | raum_42 | — | 2110 | — | durchgang | unbekannte_kombination |
-| durchgang_54 | raum_26 | raum_42 | — | 1610 | — | durchgang | unbekannte_kombination |
+| durchgang_53 | raum_25 | raum_42 | balkontuer | 2110 | — | durchgang |  |
+| durchgang_54 | raum_26 | raum_42 | balkontuer | 1610 | — | durchgang |  |
 | durchgang_55 | raum_30 | raum_40 | wohnungseingang | 1478 | — | durchgang |  |
 | durchgang_56 | raum_32 | raum_33 | zimmertuer | 3498 | — | durchgang |  |
 | durchgang_57 | raum_33 | raum_35 | wohnungseingang | 2466 | — | durchgang |  |
@@ -445,7 +445,7 @@ Quellen: FALLBACK: 1, GRAPH: 11
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 28 |
+| unbekannte_kombination | 25 |
 | kein_nachbarraum | 11 |
 | tuer_ins_nichts | 7 |
 | tuer_in_schacht | 3 |
@@ -473,4 +473,4 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | sicherheitsleuchte | (13.97, -7.54) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 
-Laufzeit: 253.0 s
+Laufzeit: 253.3 s

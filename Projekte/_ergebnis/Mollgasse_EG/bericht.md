@@ -9,7 +9,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | F | WC | WC | 1.84 | 1.98 | +7.6 | ok |
 | F | BAD | BAD | 6.43 | 6.84 | +6.4 | ok |
 | F | AUFZUG 8 PERS. | — | — | 31.39 | +0.0 | ok |
-| F | VR | VORRAUM | 5.38 | 5.70 | +6.0 | ok |
+| F | VR | VORRAUM | 5.38 | 5.62 | +4.5 | ok |
 | H | KLEINKINDERSPIELPLATZ | — | 60.38 | 63.07 | +4.5 | ok |
 | F | WC | WC | 2.47 | 2.49 | +0.7 | ok |
 | F | BAD | BAD | 4.53 | 4.85 | +7.1 | ok |
@@ -17,7 +17,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | F | ZIMMER | ZIMMER | 12.20 | 17.27 | +41.6 | flutung_unsicher |
 | — | WOHNKÜCHE | KÜCHE | 36.84 | — | — | kein_polygon |
 | F | ZIMMER | ZIMMER | 11.31 | 12.32 | +8.9 | ok |
-| F | ZIMMER | ZIMMER | 12.31 | 12.52 | +1.7 | ok |
+| F | ZIMMER | ZIMMER | 12.31 | 12.43 | +1.0 | ok |
 | F | BAD | BAD | 4.30 | 4.37 | +1.7 | ok |
 | F | GANG | GANG | 3.27 | 3.51 | +7.2 | ok |
 | F | VR | VORRAUM | 7.59 | 7.92 | +4.4 | ok |
@@ -27,7 +27,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | — | WOHNKÜCHE | KÜCHE | 35.90 | — | — | kein_polygon |
 | F | ZIMMER | ZIMMER | 10.67 | 14.33 | +34.3 | flutung_unsicher |
 | F | ZIMMER | ZIMMER | 12.85 | 12.76 | -0.7 | ok |
-| F | GANG | GANG | 4.40 | 4.54 | +3.1 | ok |
+| F | GANG | GANG | 4.40 | 4.53 | +3.0 | ok |
 | — | BAD | BAD | 7.08 | — | — | kein_polygon |
 | F | MÜLL | MUELLRAUM | 34.47 | 35.08 | +1.8 | ok |
 | F | WC | WC | 1.84 | 1.86 | +1.2 | ok |
@@ -38,7 +38,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | — | ZIMMER | ZIMMER | 12.69 | — | — | kein_polygon |
 | F | ZIMMER | ZIMMER | 14.25 | 13.95 | -2.1 | ok |
 | F | BAD | BAD | 6.96 | 13.20 | +89.7 | flutung_unsicher |
-| F | AR | ABSTELLRAUM | 2.67 | 2.65 | -0.9 | ok |
+| F | AR | ABSTELLRAUM | 2.67 | 2.58 | -3.3 | ok |
 | F | ZIMMER | ZIMMER | 11.26 | 11.45 | +1.7 | ok |
 | — | WOHNKÜCHE | KÜCHE | 30.77 | — | — | kein_polygon |
 | F | GANG | GANG | 1.50 | 1.36 | -9.5 | ok |
@@ -51,11 +51,11 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | F | FAHRRADRAUM | ABSTELLRAUM | 73.03 | 18.31 | -74.9 | flutung_unsicher |
 | — | AUFZUG 8 PERS. | — | — | — | — | kein_polygon |
 | — | TOP 1 (SONDERWUNSCH) | — | 124.80 | — | — | kein_polygon |
-| F | TOP 1 | — | 57.30 | 85.61 | +49.4 | flutung_unsicher |
-| F | TOP 2 - Sonderwunsch | — | 94.88 | 28.73 | -69.7 | flutung_unsicher |
-| F | TOP 3 | — | 100.95 | 22.48 | -77.7 | flutung_unsicher |
-| F | MÜLLRAUM | MUELLRAUM | 27.61 | 28.73 | +4.0 | ok |
-| F | BAD | BAD | 4.35 | 4.36 | +0.3 | ok |
+| F | TOP 1 | — | 57.30 | 85.60 | +49.4 | flutung_unsicher |
+| F | TOP 2 - Sonderwunsch | — | 94.88 | 28.72 | -69.7 | flutung_unsicher |
+| F | TOP 3 | — | 100.95 | 22.34 | -77.9 | flutung_unsicher |
+| F | MÜLLRAUM | MUELLRAUM | 27.61 | 28.57 | +3.5 | ok |
+| F | BAD | BAD | 4.35 | 4.28 | -1.6 | ok |
 | F | SR | — | 3.19 | 3.25 | +2.0 | ok |
 | F | ZIMMER | ZIMMER | 11.40 | 11.55 | +1.4 | ok |
 | — | STGH | STIEGENHAUS | 34.25 | — | — | kein_polygon |
@@ -65,19 +65,19 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | F | BRE ABLUFT GARAGE | GARAGE | 3.54 | 1.10 | -68.9 | flutung_unsicher |
 | — | STGH | STIEGENHAUS | 53.20 | — | — | kein_polygon |
 | F | PODEST | — | 11.02 | 137.50 | +1147.8 | flutung_unsicher |
-| F | ERDGESCHOSS | — | — | 24.17 | +0.0 | ok |
+| F | ERDGESCHOSS | — | — | 24.06 | +0.0 | ok |
 | F | KIWA | — | 7.23 | 7.24 | +0.1 | ok |
 | H | STAUDENBEET | — | 11.43 | 11.43 | -0.0 | ok |
 | — | GEHWEG | — | — | — | — | kein_polygon |
-| F | TECHNIK (DBA) | TECHNIK | 8.31 | 9.61 | +15.6 | flutung_unsicher |
+| F | TECHNIK (DBA) | TECHNIK | 8.31 | 9.60 | +15.5 | flutung_unsicher |
 | H | VORPLATZ | — | 29.48 | 28.75 | -2.5 | ok |
 | H | VORPLATZ | — | 8.55 | 8.92 | +4.3 | ok |
 | F | GEHWEG | — | 10.14 | 9.17 | -9.6 | ok |
 | F | GEHWEG | — | 3.65 | 6.83 | +87.0 | flutung_unsicher |
-| F | GARDEROBE | VORRAUM | — | 7.82 | +0.0 | ok |
+| F | GARDEROBE | VORRAUM | — | 7.78 | +0.0 | ok |
 | — | GARDEROBE | VORRAUM | — | — | — | kein_polygon |
 | F | KÜCHE | KÜCHE | 10.02 | 4.37 | -56.4 | flutung_unsicher |
-| F | FAHRRADRAUM / KIWA | ABSTELLRAUM | 50.05 | 53.16 | +6.2 | ok |
+| F | FAHRRADRAUM / KIWA | ABSTELLRAUM | 50.05 | 52.91 | +5.7 | ok |
 | H | EIGENGARTEN TOP 3 | — | 19.46 | 19.46 | +0.0 | ok |
 | H | EIGENGARTEN TOP 2 | — | 21.17 | 21.17 | -0.0 | ok |
 | — | TERRASSE TOP 2 | TERRASSE | 15.53 | — | — | kein_polygon |
@@ -131,10 +131,10 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 - Abweichung > 10 %: „FAHRRADRAUM“ (-74.9 %)
 - Abweichung > 10 %: „TOP 1“ (+49.4 %)
 - Abweichung > 10 %: „TOP 2 - Sonderwunsch“ (-69.7 %)
-- Abweichung > 10 %: „TOP 3“ (-77.7 %)
+- Abweichung > 10 %: „TOP 3“ (-77.9 %)
 - Abweichung > 10 %: „BRE ABLUFT GARAGE“ (-68.9 %)
 - Abweichung > 10 %: „PODEST“ (+1147.8 %)
-- Abweichung > 10 %: „TECHNIK (DBA)“ (+15.6 %)
+- Abweichung > 10 %: „TECHNIK (DBA)“ (+15.5 %)
 - Abweichung > 10 %: „GEHWEG“ (+87.0 %)
 - Abweichung > 10 %: „KÜCHE“ (-56.4 %)
 - Abweichung > 10 %: „PODEST“ (+316.7 %)
@@ -253,7 +253,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_6 | raum_5 | raum_6 | — | 4809 | — | durchgang | beide_seiten_untypisiert |
 | durchgang_7 | raum_5 | raum_7 | — | 4496 | — | durchgang | unbekannte_kombination |
 | durchgang_8 | raum_6 | raum_7 | — | 1949 | — | durchgang | unbekannte_kombination |
-| durchgang_9 | raum_7 | raum_51 | stiegenhaustuer | 7690 | — | durchgang |  |
+| durchgang_9 | raum_7 | raum_51 | wohnungseingang | 7690 | — | durchgang |  |
 | durchgang_10 | raum_8 | raum_55 | — | 1899 | — | durchgang | unbekannte_kombination |
 | durchgang_11 | raum_9 | raum_18 | zimmertuer | 2611 | — | durchgang |  |
 | durchgang_12 | raum_9 | raum_19 | zimmertuer | 2012 | — | durchgang |  |
@@ -281,7 +281,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_34 | raum_24 | raum_45 | zimmertuer | 1315 | — | durchgang |  |
 | durchgang_35 | raum_25 | raum_43 | — | 3697 | — | durchgang | unbekannte_kombination |
 | durchgang_36 | raum_26 | raum_45 | zimmertuer | 1805 | — | durchgang |  |
-| durchgang_37 | raum_27 | raum_43 | — | 3579 | — | durchgang | unbekannte_kombination |
+| durchgang_37 | raum_27 | raum_43 | — | 3578 | — | durchgang | unbekannte_kombination |
 | durchgang_38 | raum_27 | raum_57 | zimmertuer | 2319 | — | durchgang |  |
 | durchgang_39 | raum_27 | raum_57 | zimmertuer | 1047 | — | durchgang |  |
 | durchgang_40 | raum_28 | raum_43 | — | 2196 | — | durchgang | unbekannte_kombination |
@@ -322,7 +322,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | aussenoeffnung_5 | raum_44 | AUSSEN | — | 2292 | ja | oeffnung_aussenwand | unbekannte_kombination |
 | aussenoeffnung_6 | raum_44 | AUSSEN | — | 2511 | ja | oeffnung_aussenwand | unbekannte_kombination |
 
-## Ausgänge (14)
+## Ausgänge (13)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
@@ -335,7 +335,6 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_tuer_68 | final_exit | 2688.62 | 1511.09 |
 | exit_tuer_69 | stair_exit | 2689.36 | 1524.98 |
 | exit_durchgang_4 | stair_exit | 2689.34 | 1526.61 |
-| exit_durchgang_9 | stair_exit | 2686.24 | 1524.22 |
 | exit_aussenoeffnung_3 | final_exit | 2694.04 | 1522.94 |
 | exit_aussenoeffnung_4 | final_exit | 2655.93 | 1538.46 |
 | exit_aussenoeffnung_5 | final_exit | 2652.19 | 1535.04 |
@@ -500,16 +499,17 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 | tuer_39 | 5.9 | Luftlinie | exit_tuer_45 |
 | tuer_49 | 8.8 | Luftlinie | exit_4 |
 | tuer_51 | 13.2 | GRAPH | exit_4 |
-| tuer_55 | 1.4 | Luftlinie | exit_durchgang_9 |
+| tuer_55 | 3.2 | Luftlinie | exit_tuer_69 |
+| durchgang_9 | 3.2 | Luftlinie | exit_tuer_69 |
 | durchgang_16 | 14.4 | GRAPH | exit_aussenoeffnung_3 |
 | durchgang_17 | 26.8 | GRAPH | exit_aussenoeffnung_3 |
 | durchgang_22 | 9.9 | GRAPH | exit_aussenoeffnung_4 |
 | durchgang_32 | 9.4 | Luftlinie | exit_4 |
 | durchgang_45 | 11.9 | GRAPH | exit_3 |
 | durchgang_47 | 1.2 | Luftlinie | exit_3 |
-| durchgang_49 | 1.3 | Luftlinie | exit_durchgang_9 |
-| durchgang_52 | 5.2 | Luftlinie | exit_durchgang_9 |
-| durchgang_53 | 4.5 | Luftlinie | exit_durchgang_9 |
+| durchgang_49 | 3.8 | Luftlinie | exit_tuer_69 |
+| durchgang_52 | 8.4 | Luftlinie | exit_tuer_69 |
+| durchgang_53 | 7.7 | Luftlinie | exit_tuer_69 |
 | durchgang_54 | 2.5 | Luftlinie | exit_4 |
 | durchgang_55 | 12.3 | GRAPH | exit_4 |
 
@@ -517,17 +517,17 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 32 |
+| ALLGEMEIN_ERSCHLIESSUNG | 30 |
 | ALLGEMEIN_NEBENRAUM | 5 |
 | WOHNUNG_PRIVAT | 10 |
 | kein Raum | 7 |
 | unbestimmt | 2 |
-| _davon auf Treppenlauf/Verbotszone_ | 7 |
+| _davon auf Treppenlauf/Verbotszone_ | 6 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
 - WOHNUNG_PRIVAT: 10 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 7 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 6 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
@@ -600,7 +600,7 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
   - RICHTUNGSWECHSEL (2690.17, 1524.24) m, Fluchtrichtung 180°
   - RICHTUNGSWECHSEL (2687.76, 1523.84) m, Fluchtrichtung 163°
   - RICHTUNGSWECHSEL (2686.73, 1523.86) m, Fluchtrichtung 254°
-- Gang-Anker (außerhalb Stiegenhäuser): 119
+- Gang-Anker (außerhalb Stiegenhäuser): 112
 
 ## Brandschutz-Hinweise im Plan (3)
 
@@ -721,4 +721,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | tuer_ins_nichts | 1 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 280.7 s
+Laufzeit: 281.5 s
