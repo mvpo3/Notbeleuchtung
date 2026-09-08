@@ -80,13 +80,23 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")
     sl = sum(1 for p in plzg if p.kind == "sicherheitsleuchte")
-    # RZ-Obergrenze 22 → 30 am 07.09.2026 (Selman, Außen-Analyse/Türquellen):
-    # das EG hat jetzt 10 begründete final_exits (Hof-/Gartentüren Cluster A+B,
-    # Durchfahrten — jede Tür trägt `quelle`) statt 5 → mehr Ausgangs- und
-    # Richtungs-RZ (Ist 26). Kein Regress: die Untergrenze hält quasi-leere
-    # Ergebnisse weiter draußen.
+    # Zwei additive Ursachen, beide Seiten des Merges 2026-09-08:
+    # (1) Selman, Außen-Analyse/Türquellen: das EG hat begründete final_exits
+    #     (Hof-/Gartentüren, Durchfahrten — jede Tür trägt `quelle`) statt 5
+    #     → mehr Ausgangs- und Richtungs-RZ.
+    # (2) Owner-Korrektur der Türleuchten-Regel: TECHNIK/MUELLRAUM/KINDERWAGENRAUM
+    #     tragen an der Tür ein RETTUNGSZEICHEN (Pfeil zur Tür) statt einer
+    #     Sicherheitsleuchte — Mollgasse EG hat 6 solche Räume; die B1-Regel
+    #     (#135, `aufheller_je_rz`) setzt hinter JEDES RZ einen Aufheller, also
+    #     wächst SL mit.
+    # Am gemergten Stand nachgemessen (2026-09-08): RZ 26, SL 34 — die beiden
+    # Ursachen addieren sich NICHT, weil (2) auf Mollgasse noch nicht greift:
+    # `KINDERWAGENRAUM` fällt in `raumerkennung/raumtyp.py` auf `ABSTELLRAUM`
+    # zusammen (Board-Befund Leonis → Selman, offen). Bänder bleiben deshalb die
+    # weiteren der beiden Seiten; greift die Türleuchten-Regel später wirklich,
+    # wandert RZ nach oben und SL mit (`aufheller_je_rz`).
     assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
-    assert 15 <= sl <= 40, f"SL={sl} außerhalb des erwarteten Bandes"
+    assert 15 <= sl <= 44, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"
 
 

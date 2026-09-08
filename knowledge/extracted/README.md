@@ -54,6 +54,12 @@ PDF-Original prüfen).
 Alle Konzept-Lehren sind in [`PLATZIERUNGS_KONZEPTE.md`](PLATZIERUNGS_KONZEPTE.md)
 zusammengeführt (mit **[KONVERGENT]**-Markierung, wo mehrere Quellen dasselbe zeigen).
 
+## Echte Profi-Lichtberechnungen (Kalibrier-Referenz für den Lux-Nachweis)
+
+| Digest | Quelle | Warum wichtig |
+|--------|--------|---------------|
+| [LICHTBERECHNUNG_REFERENZ.md](LICHTBERECHNUNG_REFERENZ.md) | WHA Aichholzgasse 35 (Relux, Schrack) + Barawitzkagasse 24 (DIALux, din) | **Erste echte Notberechnungen mit Zahlen.** Verifizierte Parameter: **Wartungsfaktor 0,80/0,57**, Reflexion=0, Nutzebene 0,02 m, Randzone 0,5 m, Emin-1,0-lx-Auslegung, Corridor-Optik längs Gangachse. Per-Raum Ē/Emin/Emax als Golden-Kandidaten für `platzierung/lux.py`. Notbetriebs-Φ 40–400 lm real. |
+
 ## Referenz-Praxis (2. Hierarchie-Ebene — Planungs-Blaupausen, nie alleinige norm_quelle)
 
 | Digest | Quelle | Regeln | Warum wichtig |

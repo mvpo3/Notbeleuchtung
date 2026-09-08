@@ -58,6 +58,13 @@ def _nimmt_c_ebene(i_cd_fn) -> bool:
 
 _UD_DEFAULT = 1.0 / 40.0   # EN-1838-Default (Fluchtweg), falls die Norm keinen Wert liefert
 
+#: Obergrenze der Rasterpunkte (Extents-Robustheit). Ein Phantom-Extents-Ausreißer
+#: (z.B. Baufeld-4OG mit Hauptinhalt bei y≈347 km, COORDINATION 2026-09-07) spannt
+#: absurde Bounds → ein 250-mm-Raster wollte Milliarden Punkte allozieren (OOM/>50 min).
+#: 8 Mio deckt >700 m × 700 m bei 250 mm ab — jenseits jeder echten Geschossfläche —
+#: und deckelt den Ausreißer, statt die Engine zu blockieren.
+_MAX_RASTER_PUNKTE = 8_000_000
+
 
 def ud_min_aus_norm(gleichmaessigkeit_max: float | None) -> float:
     """Ud-Grenze (min:max) aus der Norm-Gleichmäßigkeit (max:min).
@@ -95,6 +102,7 @@ def lux_raster(
     ud_min: float = _UD_DEFAULT,
     rand_mm: float = 500.0,
     raster_mm: float = 250.0,
+    wartungsfaktor: float = 1.0,
 ) -> LuxErgebnis:
     """Beleuchtungsstärke-Raster über `bounds_mm` und EN-1838-Bewertung.
 
@@ -102,6 +110,14 @@ def lux_raster(
     ausgenommen ist. `ziel_lux` = 1.0 Fluchtweg / 0.5 Antipanik. `ud_min` = geforderte
     Gleichmäßigkeit (min:max), Default 1:40; produktive Aufrufer leiten sie über
     `ud_min_aus_norm(anf.gleichmaessigkeit_max)` aus der Norm ab.
+
+    `wartungsfaktor` (MF, ≤ 1) = pauschaler Minderungsfaktor auf die berechnete
+    Beleuchtungsstärke, mit dem Profi-Berechnungen (Relux/DIALux, s.
+    knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md) die Alterung/Verschmutzung
+    abbilden — real 0,80 innen / 0,57 außen. Default 1,0 = kein MF (die reine
+    Neuwert-Rechnung; alle Bestands-Tests bleiben bit-identisch). Produktive
+    Aufrufer reichen `anf.wartungsfaktor` durch (Enis-Norm-Naht). Ud (min:max) ist
+    invariant gegen den Faktor, nur die absoluten Lux-Werte skalieren.
 
     Ist `i_cd_fn` gesetzt, überschreibt es `i_cd`: die Lichtstärke wird je Rasterpunkt
     aus dem Ausstrahlwinkel γ [Grad] = atan(horizontale Distanz / h) bestimmt
@@ -117,8 +133,18 @@ def lux_raster(
     doppelt gedreht.
     """
     minx, miny, maxx, maxy = bounds_mm
-    xs = np.arange(minx + rand_mm, maxx - rand_mm + 1e-6, raster_mm)
-    ys = np.arange(miny + rand_mm, maxy - rand_mm + 1e-6, raster_mm)
+    # Extents-Robustheit: degenerierte Bounds (Phantom-Ausreißer, s. _MAX_RASTER_PUNKTE)
+    # würden Milliarden Rasterpunkte allozieren. Das Raster defensiv aufweiten, bis es
+    # unter die Obergrenze passt — ein Ausreißer liefert dann ein grobes, aber endliches
+    # Ergebnis (der Nachweis schlägt konservativ fehl) statt die Engine zu blockieren.
+    # Legitime Geschossflächen bleiben weit unter dem Cap → raster_mm unverändert.
+    raster_eff = float(raster_mm)
+    spanx = max(0.0, (maxx - rand_mm) - (minx + rand_mm))
+    spany = max(0.0, (maxy - rand_mm) - (miny + rand_mm))
+    while (spanx / raster_eff + 1.0) * (spany / raster_eff + 1.0) > _MAX_RASTER_PUNKTE:
+        raster_eff *= 2.0
+    xs = np.arange(minx + rand_mm, maxx - rand_mm + 1e-6, raster_eff)
+    ys = np.arange(miny + rand_mm, maxy - rand_mm + 1e-6, raster_eff)
     if len(xs) == 0 or len(ys) == 0 or not leuchten:
         return LuxErgebnis(0.0, 0.0, 0.0, 0.0, False, False)
     gx, gy = np.meshgrid(xs, ys)
@@ -142,6 +168,7 @@ def lux_raster(
         ) if i_cd_fn is not None else i_cd
         # E = I * cos^3(theta) / h^2 ; h in Metern (I in cd, Ergebnis in lx)
         e += i * cos_theta**3 / (montagehoehe_m**2)
+    e *= wartungsfaktor      # MF: Neuwert → Wartungswert (Default 1,0 = no-op)
     mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
     ud = (mn / mx) if mx > 0 else 0.0
     return LuxErgebnis(
@@ -160,6 +187,7 @@ def lux_punkte(
     i_cd_fn: Callable[[float], float] | None = None,
     ziel_lux: float = 1.0,
     ud_min: float = _UD_DEFAULT,
+    wartungsfaktor: float = 1.0,
 ) -> LuxErgebnis:
     """Beleuchtungsstärke an EXPLIZITEN Nachweis-Punkten (statt Flächen-Raster).
 
@@ -167,7 +195,7 @@ def lux_punkte(
     ≥ 0,5 lx im halben Mittenband) — nicht flächig bis in jede Raum-Ecke. Der
     bisherige bbox-Raster-Nachweis war strenger als die Norm und trieb die
     Verdichtung auf ~5-m-Abstände, obwohl die Hersteller-Photometrie (Corridor-
-    Optik) >13 m hergibt. Physik identisch zu `lux_raster`.
+    Optik) >13 m hergibt. Physik identisch zu `lux_raster` (inkl. `wartungsfaktor`).
     """
     if not punkte or not leuchten:
         return LuxErgebnis(0.0, 0.0, 0.0, 0.0, False, False)
@@ -190,6 +218,7 @@ def lux_punkte(
             i_cd_fn, np.degrees(np.arctan2(d_h, h_mm)), c,
         ) if i_cd_fn is not None else i_cd
         e += i * cos_theta**3 / (montagehoehe_m**2)
+    e *= wartungsfaktor      # MF: Neuwert → Wartungswert (Default 1,0 = no-op)
     mn, mx, mean = float(e.min()), float(e.max()), float(e.mean())
     ud = (mn / mx) if mx > 0 else 0.0
     return LuxErgebnis(
@@ -208,12 +237,15 @@ def max_leuchtenabstand_mm(
     min_mm: float = 4000.0,
     max_mm: float = 30000.0,
     optik_entlang_reihe: bool = False,
+    wartungsfaktor: float = 1.0,
 ) -> float:
     """Photometrisch maximaler Leuchtenabstand einer Reihe für `ziel_lux` am
     ungünstigsten Punkt (Mitte zwischen zwei Leuchten, 4 Nachbarn berücksichtigt).
 
     Bisektion über [min_mm, max_mm]; Startwert der Fluchtweg-Verdichtung — der
     Feinnachweis (`lux_punkte` auf der Mittellinie inkl. Ud) läuft danach immer.
+    `wartungsfaktor` (≤ 1) mindert die berechnete Beleuchtungsstärke wie in
+    `lux_raster` → kleinerer zulässiger Abstand (dichtere Reihe). Default 1,0 = no-op.
 
     **C-Ebene:** hier existiert keine Plan-Geometrie — gerechnet wird eine
     abstrakte Reihe. Default: `c_grad=None` → das Callable antwortet konservativ
@@ -236,7 +268,7 @@ def max_leuchtenabstand_mm(
             else:
                 i = i_cd_fn(gamma)
             e += i * (h_mm / dist) ** 3 / (montagehoehe_m**2)
-        return e
+        return e * wartungsfaktor      # MF: Neuwert → Wartungswert (Default 1,0 = no-op)
 
     if e_mitte(min_mm) < ziel_lux:
         return min_mm

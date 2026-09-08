@@ -229,3 +229,23 @@ def test_keine_evidenz_erzeugt_keine_behauptete_nichtanwendbarkeit(befund_bauer)
     b = befund_bauer()
     assert sanitaer_scope(b, "EG", "r1") != "nicht_anwendbar"
     assert verkehr_scope(b, "EG", "r1") != "nicht_anwendbar"
+
+
+# ── Provider-Hinweise (Ausgabelücken-Befund 2026-09-07) ─────────────────────
+def test_gate_summary_uebernimmt_provider_hinweise():
+    """Der NormProvider hängt Audit-Hinweise (u.a. AStV-Parallelpfad) an jedes
+    OibErgebnis — gate_summary muss sie in die Ausgabe übernehmen, mit
+    Gebäudeteil-Präfix und dedupliziert."""
+    e = _erg("eingeschraenkt")
+    e.hinweise = ["AStV §9: Arbeitsstätten-Parallelpfad — ergänzt nur, senkt nie."]
+    block = gate_summary(_befund(e))
+    assert "[teil_1] AStV §9: Arbeitsstätten-Parallelpfad — ergänzt nur, senkt nie." in block["hinweise"]
+
+
+def test_gate_summary_dedupliziert_gleiche_hinweise_je_teil():
+    e1 = _erg("eingeschraenkt", i=1)
+    e2 = _erg("eingeschraenkt", i=1)  # gleicher Teil doppelt (defensiv)
+    e1.hinweise = ["AStV-Hinweis"]
+    e2.hinweise = ["AStV-Hinweis"]
+    block = gate_summary(OibBefund(ergebnisse=[e1, e2]))
+    assert block["hinweise"].count("[teil_1] AStV-Hinweis") == 1

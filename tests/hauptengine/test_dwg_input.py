@@ -106,6 +106,6 @@ def test_pipeline_nimmt_dwg_wie_dxf(tmp_path):
     odafc.export_dwg(doc, dwg)
 
     ergebnis = run(build_fake_bundle(), str(dwg), "4OG")
-    assert ergebnis.render_summary["n_symbols"] == 7  # 4OG-Golden: 5 RZ + 2 SL
+    assert ergebnis.render_summary["n_symbols"] == 11  # 4OG: 5 RZ + 2 SL + 4 fachpraxis-Aufheller
     # Konvertat lag im TemporaryDirectory der Pipeline — nichts bleibt zurück.
     assert list(tmp_path.glob("*.dxf")) == []

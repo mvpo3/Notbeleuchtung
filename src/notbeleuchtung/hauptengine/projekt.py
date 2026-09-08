@@ -103,6 +103,17 @@ def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
         seite = dxf.with_suffix(".pdf")
         dxf_zu_pdf(dxf, seite)
         writer.append(str(seite))
+        # Lux-Nachweis-Seite je Geschoss direkt hinter dem Plan (falls die Pipeline
+        # sie erzeugt hat) — als PDF-Seite aus der PNG.
+        nachweis_png = dxf.with_suffix(".nachweis.png")
+        if nachweis_png.exists():
+            try:
+                from PIL import Image
+                nachweis_pdf = dxf.with_suffix(".nachweis.pdf")
+                Image.open(nachweis_png).convert("RGB").save(str(nachweis_pdf))
+                writer.append(str(nachweis_pdf))
+            except Exception:  # noqa: BLE001, S110 — Nachweis-Seite ist rein additiv
+                pass
     ziel.parent.mkdir(parents=True, exist_ok=True)
     with open(ziel, "wb") as fh:
         writer.write(fh)

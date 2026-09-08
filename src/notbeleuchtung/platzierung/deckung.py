@@ -97,6 +97,11 @@ def verdichte_fluchtweg(
         h_m = anf.montagehoehe_mm / 1000.0
         ud_min = ud_min_aus_norm(anf.gleichmaessigkeit_max)
         ziel = anf.min_lux or 1.0
+        # Wartungsfaktor aus der Norm (Alterung/Verschmutzung; Profi-Praxis 0,80 innen /
+        # 0,57 außen — s. knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md). Defensiv
+        # gelesen: liefert die (noch) MF-freie NormAnforderung kein Feld, bleibt es bei
+        # 1,0 → Platzierung bit-identisch (Track-B-Muster). Enis füllt das Feld später.
+        wf = getattr(anf, "wartungsfaktor", None) or 1.0
         breite = min(bounds[2] - bounds[0], bounds[3] - bounds[1])
         linie, band = _nachweis_punkte(
             mittellinie(r.polygon_mm, raster_mm=_NACHWEIS_RASTER_MM), breite
@@ -108,23 +113,24 @@ def verdichte_fluchtweg(
         abstand = max_leuchtenabstand_mm(
             montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn, ziel_lux=ziel,
             min_mm=_MIN_ABSTAND_MM, max_mm=_MAX_ABSTAND_MM, optik_entlang_reihe=True,
+            wartungsfaktor=wf,
         )
         kandidaten = leuchten_auf_linie_mit_richtung(r.polygon_mm, abstand)
         for _ in range(_MAX_VERDICHTUNGEN):
             if not linie:   # degeneriertes Polygon → alter Flächen-Nachweis als Fallback
                 res = lux_raster(
                     kandidaten, bounds, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel, ud_min=ud_min,
+                    ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
                 )
                 erfuellt = res.erfuellt_min and res.erfuellt_ud
             else:
                 mitte = lux_punkte(
                     kandidaten, linie, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel, ud_min=ud_min,
+                    ziel_lux=ziel, ud_min=ud_min, wartungsfaktor=wf,
                 )
                 halbband = lux_punkte(
                     kandidaten, band, montagehoehe_m=h_m, i_cd=i_cd, i_cd_fn=i_cd_fn,
-                    ziel_lux=ziel / 2.0, ud_min=0.0,
+                    ziel_lux=ziel / 2.0, ud_min=0.0, wartungsfaktor=wf,
                 ) if band else None
                 erfuellt = (
                     mitte.erfuellt_min and mitte.erfuellt_ud

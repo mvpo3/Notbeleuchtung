@@ -140,6 +140,7 @@ def run(
     plankopf: dict | None = None,
     projekt_kontext: ProjektKontext | None = None,
     photometrie: PhotometrieBefund | None = None,
+    template_path: str | None = None,
 ) -> Output:
     # Grundlage des Lux-Nachweises: reist mit dem Bundle, das die Registry gebaut
     # hat (typisiert, kein Zugriff auf Platzierer-Interna). Ein explizit
@@ -150,6 +151,7 @@ def run(
         return _run_mit_quelle(
             bundle, raum, quelle_dxf, out_path=out_path, lb_path=lb_path,
             plankopf=plankopf, projekt_kontext=projekt_kontext, photometrie=photometrie,
+            template_path=template_path,
         )
 
 
@@ -163,6 +165,7 @@ def _run_mit_quelle(
     plankopf,
     projekt_kontext,
     photometrie,
+    template_path=None,
 ) -> Output:
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
@@ -194,7 +197,22 @@ def _run_mit_quelle(
         render_summary = render_dxf(
             platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
             photometrie=photometrie, unterlage_dxf=quelle_dxf,
+            template_path=template_path,
         )
+        # Lux-Nachweis-Bericht je Plan (Owner 2026-09-08): eigene DIALux-artige
+        # Seite neben dem DXF. Additiv — ein Fehler bricht den Plan-Lauf NIE.
+        try:
+            from .render.lux_nachweis_bericht import schreibe_bericht  # lazy: matplotlib
+            _bericht = schreibe_bericht(
+                raum, platzierung, bundle.norm,
+                Path(out_path).with_suffix(".nachweis.png"),
+                i_cd_fn=getattr(bundle.platzierer, "_i_cd_fn", None),
+                projekt=(plankopf or {}).get("projekt"),
+            )
+            if _bericht is not None:
+                render_summary["lux_nachweis"] = str(_bericht)
+        except Exception as e:  # noqa: BLE001 — Bericht additiv, nie plan-brechend
+            render_summary["lux_nachweis_fehler"] = str(e)
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.

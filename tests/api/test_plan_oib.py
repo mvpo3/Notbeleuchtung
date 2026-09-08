@@ -35,7 +35,7 @@ def test_plan_mit_projekt_kontext_traegt_oib_block():
     # Scope je Raum statt Gate-Flag (Enis 05.09.): ohne raum_referenzen ungeklärt.
     assert summary["oib"]["sanitaer_scope"]["anwendbar"] == 0
     # Der Plan selbst ist unverändert (4OG-Fixture hat keine Flächen-Schwellen).
-    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 2}
+    assert summary["by_kind"] == {"rz": 5, "sicherheitsleuchte": 6}  # +4 fachpraxis-Aufheller
 
 
 def test_plan_ohne_kontext_kein_oib_block():
@@ -94,3 +94,15 @@ def test_api_header_traegt_die_scope_zaehlung():
     assert oib["verkehr_scope"]["anwendbar"] == 0
     assert any("UNGEKLÄRT" in h for h in oib["hinweise"])
     assert "pruefung" not in summary                   # dokumentierte Grenze
+
+
+def test_plan_provider_hinweise_erreichen_die_ausgabe():
+    """Ausgabelücken-Befund 2026-09-07: Provider-Hinweise (AStV) fielen in
+    gate_summary weg — jetzt müssen sie bis in den API-Header durchkommen."""
+    hinweis = "AStV-Parallelpfad: Arbeitsstätte nach ASchG — ergänzt nur, senkt nie."
+    client = TestClient(create_app(
+        bundle_factory=lambda: build_fake_bundle_mit_oib(hinweise=[hinweis])))
+    r = _post_plan(client, projekt_kontext=_KONTEXT_JSON)
+    assert r.status_code == 200
+    summary = json.loads(r.headers["X-Notbeleuchtung"])
+    assert f"[teil_1] {hinweis}" in summary["oib"]["hinweise"]
