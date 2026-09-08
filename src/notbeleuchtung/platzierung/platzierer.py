@@ -31,7 +31,14 @@ from notbeleuchtung.hauptengine.contracts import (
     RaumModell,
 )
 
-from . import abstand_nachpass, circuit_zuordnung, deckungs_zuordnung, fachpraxis, lb_override
+from . import (
+    abstand_nachpass,
+    circuit_zuordnung,
+    deckungs_zuordnung,
+    fachpraxis,
+    lb_override,
+    verbotszonen_nachpass,
+)
 from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
 from .communal_stgh_strategy import plan_rettungszeichen
@@ -110,6 +117,10 @@ class NotlichtPlatzierer:
         platzierungen += fachpraxis.aufheller_je_rz(platzierungen, raum)
         # 2. Input: explizite LB-Vorgaben übersteuern die norm-getriebene Platzierung.
         platzierungen = lb_override.anwenden(platzierungen, raum, lb)
+        # Symbole aus Stiegenhaus-Verbotszonen (Laufflächen/Öffnungen) an den nächsten
+        # montierbaren Punkt holen (Selman-BEFUND) — vor dem abstand_nachpass, damit
+        # dieser eventuelle Verschiebungs-Kollisionen entzerrt.
+        platzierungen = verbotszonen_nachpass.entferne_aus_verbotszonen(platzierungen, raum)
         # Kollisionen an der Strategie-Naht auflösen (Dubletten mergen, verschieden-artige
         # entzerren) — nach lb_override (das SL hinzufügt), vor der Deckungs-Zuordnung,
         # damit diese die finalen Positionen sieht.
