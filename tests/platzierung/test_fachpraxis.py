@@ -9,12 +9,15 @@ import math
 
 import pytest
 
-from notbeleuchtung.hauptengine.contracts import Ausgang, BBox, Platzierung, Raum, RaumModell
+from notbeleuchtung.hauptengine.contracts import Ausgang, BBox, Platzierung, Raum, RaumModell, Tuer
 from notbeleuchtung.platzierung.fachpraxis import (
     AUFHELLER_KEY,
     QUELLE_AUFHELLER,
+    QUELLE_TUERLEUCHTE,
+    TUERLEUCHTE_KEY,
     FachpraxisRegeln,
     aufheller_je_rz,
+    tuerleuchte_pflichtraeume,
 )
 from notbeleuchtung.platzierung.geometry import point_in_polygon
 
@@ -107,3 +110,70 @@ def test_aufheller_liegt_gegen_pfeilrichtung_auf_der_achse():
     assert len(out) == 1
     assert out[0].xy_mm[0] == pytest.approx(10000.0, abs=1.0)
     assert out[0].xy_mm[1] == pytest.approx(10500.0, abs=1.0)
+
+
+# ── Tür-Leuchte TECHNIK/MUELLRAUM (Owner-Regel 2026-09-07) ───────────────────
+_RAUM_POLY = [(0.0, 0.0), (10000.0, 0.0), (10000.0, 8000.0), (0.0, 8000.0)]
+
+
+def _raum_mit_tuer(raum_typ: str, tuer_xy=(5000.0, 0.0), nach="gang") -> RaumModell:
+    return RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[
+            Raum(id="t1", raum_typ=raum_typ, polygon_mm=_RAUM_POLY),
+            Raum(id="gang", raum_typ="GANG",
+                 polygon_mm=[(0.0, 8000.0), (10000.0, 8000.0), (10000.0, 9000.0), (0.0, 9000.0)]),
+        ],
+        tueren=[Tuer(id="d1", xy_mm=tuer_xy, von_raum="t1", nach_raum=nach)],
+    )
+
+
+@pytest.mark.parametrize("typ", ["TECHNIK", "MUELLRAUM", "KINDERWAGENRAUM"])
+def test_tuerleuchte_je_pflichtraum_an_der_tuer(typ):
+    out = tuerleuchte_pflichtraeume(_raum_mit_tuer(typ))
+    assert len(out) == 1
+    p = out[0]
+    assert p.kind == "sicherheitsleuchte"    # Rolle: Raum-SL (keine Antipanik-Zone)
+    assert p.catalog_key == TUERLEUCHTE_KEY  # Symbol: Antipanik-AP3 (Universal-Leuchte)
+    assert p.catalog_key == "antipanik_leuchte"
+    assert p.norm_quelle == QUELLE_TUERLEUCHTE
+    assert p.norm_quelle.startswith("Referenz-Praxis:")
+    assert p.xy_mm == (5000.0, 0.0)          # exakt an der Tür
+    assert "F13" in p.circuit_hint           # getrennter Sicherheitskreis
+    assert p.height_mm >= 2000.0             # EN-1838-Mindesthöhe
+
+
+def test_andere_raumtypen_bekommen_keine_tuerleuchte():
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("BUERO")) == []
+    # ABSTELLRAUM bewusst NICHT: die Regel gilt für den GEMEINSAMEN Kinderwagen-
+    # raum, nicht den privaten Wohnungs-Abstellraum (Owner-Entscheid 2026-09-07).
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("ABSTELLRAUM")) == []
+    assert tuerleuchte_pflichtraeume(_raum_mit_tuer("LAGER")) == []
+
+
+def test_tuerleuchte_fail_closed_ohne_tuer():
+    """Kein Tür-Bezug und keine Tür im Polygon → keine Leuchte an geratener Stelle."""
+    ohne = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[Raum(id="t1", raum_typ="TECHNIK", polygon_mm=_RAUM_POLY)],
+    )
+    assert tuerleuchte_pflichtraeume(ohne) == []
+
+
+def test_tuerleuchte_bevorzugt_erschliessungs_tuer():
+    """Bei mehreren Türen gewinnt die zum GANG/Stiegenhaus (die Ausgangstür)."""
+    rm = RaumModell(
+        floor="EG", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(10000.0, 8000.0)),
+        raeume=[
+            Raum(id="t1", raum_typ="TECHNIK", polygon_mm=_RAUM_POLY),
+            Raum(id="gang", raum_typ="GANG", polygon_mm=_RAUM_POLY),
+            Raum(id="lager", raum_typ="LAGER", polygon_mm=_RAUM_POLY),
+        ],
+        tueren=[
+            Tuer(id="d_lager", xy_mm=(1000.0, 0.0), von_raum="t1", nach_raum="lager"),
+            Tuer(id="d_gang", xy_mm=(9000.0, 0.0), von_raum="t1", nach_raum="gang"),
+        ],
+    )
+    out = tuerleuchte_pflichtraeume(rm)
+    assert len(out) == 1
+    assert out[0].xy_mm == (9000.0, 0.0)     # die Tür zum GANG
