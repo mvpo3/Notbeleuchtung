@@ -153,8 +153,12 @@ class FakeOibProvider:
     der gesetzten Stufe. So üben die Tests das Flächen-Trigger-Gate (offen/zu/
     fail-closed), ohne an Enis' echter Tabelle-6-Auswertung zu hängen."""
 
-    def __init__(self, stufe: str = "eingeschraenkt") -> None:
+    def __init__(self, stufe: str = "eingeschraenkt",
+                 hinweise: list[str] | None = None) -> None:
         self._stufe = stufe
+        # Opt-in (Default leer wie bisher): Provider-Hinweise je Ergebnis — wie
+        # der echte OibRl2Provider sie anhängt (u.a. AStV-Parallelpfad).
+        self._hinweise = list(hinweise or [])
 
     def bewerte_oib(self, projekt: ProjektKontext) -> OibBefund:
         teile = projekt.gebaeudeteile or [
@@ -167,6 +171,7 @@ class FakeOibProvider:
                     stufe=self._stufe,
                     quelle="OIB-RL 2 Tabelle 6 (Fake)",
                     norm_ausgabe="Mai 2023 (Fake)",
+                    hinweise=list(self._hinweise),
                     # Echo wie der echte OibRl2Provider (raum-genaues Gate v2 testbar).
                     raum_referenzen=list(t.raum_referenzen),
                 )
@@ -175,8 +180,10 @@ class FakeOibProvider:
         )
 
 
-def build_fake_bundle_mit_oib(stufe: str = "eingeschraenkt") -> ProviderBundle:
+def build_fake_bundle_mit_oib(
+    stufe: str = "eingeschraenkt", hinweise: list[str] | None = None
+) -> ProviderBundle:
     """Wie `build_fake_bundle`, aber mit verdrahtetem OIB-Provider (3. Input aktiv)."""
     bundle = build_fake_bundle()
-    bundle.oib = FakeOibProvider(stufe)
+    bundle.oib = FakeOibProvider(stufe, hinweise=hinweise)
     return bundle

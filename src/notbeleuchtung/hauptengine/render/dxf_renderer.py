@@ -920,6 +920,14 @@ def _blatt_pruefvermerk(msp, S, dx, dy, pruefung: dict | None, photometrie) -> b
             2087.3, y, 1.4,
         )
         y -= 3.4
+    # OIB-Stufe AM BLATT (Ausgabelücken-Befund 2026-09-07): die Erforderlich-
+    # keits-Stufe stand bisher nur im API-Summary, nie im gezeichneten Vermerk.
+    # ASCII-Trenner (Vorlagen-Font-Falle), bei mehreren Teilen kompakt je Teil.
+    stufen = (pruefung or {}).get("oib_stufen") or {}
+    if stufen:
+        kurz = ", ".join(f"{t}: {s}" for t, s in sorted(stufen.items()))
+        text(f"OIB-RL2-Stufe: {kurz}", 2087.3, y, 1.4)
+        y -= 3.4
     text("Details: Prüfbericht im Plan-Summary (API)", 2087.3, y, 1.4)
     return True
 
