@@ -199,6 +199,20 @@ def _run_mit_quelle(
             photometrie=photometrie, unterlage_dxf=quelle_dxf,
             template_path=template_path,
         )
+        # Lux-Nachweis-Bericht je Plan (Owner 2026-09-08): eigene DIALux-artige
+        # Seite neben dem DXF. Additiv — ein Fehler bricht den Plan-Lauf NIE.
+        try:
+            from .render.lux_nachweis_bericht import schreibe_bericht  # lazy: matplotlib
+            _bericht = schreibe_bericht(
+                raum, platzierung, bundle.norm,
+                Path(out_path).with_suffix(".nachweis.png"),
+                i_cd_fn=getattr(bundle.platzierer, "_i_cd_fn", None),
+                projekt=(plankopf or {}).get("projekt"),
+            )
+            if _bericht is not None:
+                render_summary["lux_nachweis"] = str(_bericht)
+        except Exception as e:  # noqa: BLE001 — Bericht additiv, nie plan-brechend
+            render_summary["lux_nachweis_fehler"] = str(e)
     else:
         render_summary = _summary(raum, platzierung)
     # Coverage-Audit + Norm-Prüfbericht an beide Pfade anhängen.
