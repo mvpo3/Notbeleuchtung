@@ -80,8 +80,14 @@ def test_symbolzahl_in_erwarteter_groessenordnung(durchstich):
     plzg = durchstich.platzierung.platzierungen
     rz = sum(1 for p in plzg if p.kind == "rz")
     sl = sum(1 for p in plzg if p.kind == "sicherheitsleuchte")
-    assert 10 <= rz <= 22, f"RZ={rz} außerhalb des erwarteten Bandes"
-    assert 15 <= sl <= 40, f"SL={sl} außerhalb des erwarteten Bandes"
+    # Bänder am 08.09.2026 angehoben (Owner-Korrektur der Türleuchten-Regel):
+    # TECHNIK/MUELLRAUM/KINDERWAGENRAUM tragen an der Tür jetzt ein RETTUNGSZEICHEN
+    # (Pfeil zur Tür) statt einer Sicherheitsleuchte. Mollgasse EG hat 6 solche Räume:
+    # rz 19→25 (RZ-hi 22→30). SL bleibt bei ~41 statt −6, weil die B1-Regel (#135,
+    # `aufheller_je_rz`) hinter jedes RZ — auch die neuen Tür-RZ — einen Aufheller 500 mm
+    # ins Rauminnere setzt (SL-hi 40→44).
+    assert 10 <= rz <= 30, f"RZ={rz} außerhalb des erwarteten Bandes"
+    assert 15 <= sl <= 44, f"SL={sl} außerhalb des erwarteten Bandes"
     assert len(plzg) >= 30, f"nur {len(plzg)} Symbole — quasi-leer, Real-Plan-Regress"
 
 

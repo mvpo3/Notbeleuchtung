@@ -232,3 +232,45 @@ def test_antipanik_verdichtet_grosse_halle_bis_lux():
         montagehoehe_m=anf.montagehoehe_mm / 1000.0, ziel_lux=anf.min_lux,
     )
     assert res.erfuellt_min
+
+
+# ── S2: Notbeleuchtung nicht im Wohnungsinneren (nutzungsklasse-Konsum) ─────
+
+def _raum_privat_saal(*, communal: bool = False, fluchtweg: bool = False) -> RaumModell:
+    """4OG + ein SAAL (antipanik-klassifiziert) der Nutzungsklasse WOHNUNG_PRIVAT."""
+    data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    data["raeume"].append(
+        {
+            "id": "privat_1", "raum_typ": "SAAL",
+            "polygon_mm": [[0.0, 0.0], [10000.0, 0.0], [10000.0, 8000.0], [0.0, 8000.0]],
+            "flaeche_m2": 80.0, "ist_fluchtweg": fluchtweg, "ist_communal": communal,
+            "nutzungsklasse": "WOHNUNG_PRIVAT",
+        }
+    )
+    return RaumModell.model_validate(data)
+
+
+def test_wohnung_privat_bekommt_keine_flaechen_leuchte():
+    # SAAL wäre antipanik — aber WOHNUNG_PRIVAT + nicht fluchtweg/communal → unterdrückt.
+    assert plan_antipanik(_raum_privat_saal(), FakeNormProvider()) == []
+
+
+def test_wohnung_privat_mit_fluchtweg_nicht_unterdrueckt():
+    # Führt ein Fluchtweg hindurch, greift die Unterdrückung NICHT: gleiches Ergebnis
+    # wie derselbe Raum ohne Privat-Klasse (die Norm-Klassifikation ist identisch).
+    privat = plan_antipanik(_raum_privat_saal(fluchtweg=True), FakeNormProvider())
+    data = json.loads((FIXTURES / "raum_modell_4og.json").read_text(encoding="utf-8"))
+    data["raeume"].append(
+        {
+            "id": "privat_1", "raum_typ": "SAAL",
+            "polygon_mm": [[0.0, 0.0], [10000.0, 0.0], [10000.0, 8000.0], [0.0, 8000.0]],
+            "flaeche_m2": 80.0, "ist_fluchtweg": True, "ist_communal": False,
+        }
+    )
+    ref = plan_antipanik(RaumModell.model_validate(data), FakeNormProvider())
+    assert len(privat) == len(ref)
+
+
+def test_wohnung_privat_communal_behaelt_leuchte():
+    # Allgemeinbereich (communal) trotz Privat-Klasse → Leuchte bleibt.
+    assert len(plan_antipanik(_raum_privat_saal(communal=True), FakeNormProvider())) == 4
