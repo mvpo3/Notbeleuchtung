@@ -8,7 +8,7 @@ Negativliste.
 
 Ist-Stand (selbst gemessen, Provider-Parse E2): factor 10.0 · 4 Wand-Layer ·
 98/98 Stempel mit Fläche+Typ (85 mit Belag) · 737 Wandkörper · 114 Räume
-(davon nur 34 typisiert — Stempel↔Raum-Zuordnung ist die offene Lücke) ·
+(seit der Typ-Rückschreibung in der Kaskade ≥ 90 typisiert, vorher 34) ·
 272 Türen · 12 stair_exit / 0 final_exit (E2 = unterstes Geschoss im Ordner)
 · 143 Segmente (139 LINIE) · 9 Stiegenhäuser. Bänder knapp unter Ist —
 dürfen nur wachsen.
@@ -85,15 +85,12 @@ def test_soll_raeume_tueren_ausgaenge(rm):
     )
 
 
-# ── Zielbild (xfail strict) ─────────────────────────────────────────────────
+# ── Zielbilder ──────────────────────────────────────────────────────────────
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="Stempel↔Raum-Zuordnung: 98 Stempel tragen Typ, aber nur 34 der 114 "
-    "Räume sind typisiert — die A-AREA-BNDY-Polygone matchen die Stempel noch "
-    "nicht flächendeckend (Soll: ≥ 90 typisierte Räume)",
-)
 def test_soll_raeume_flaechendeckend_typisiert(rm):
+    """Erreicht 2026-09-08: die Kaskade schreibt den Stempel-Typ auf L-/H-Räume
+    zurück (``kaskade.raeume_aus_kaskade``) — vorher blieb der Typ im Stempel
+    stecken und nur 34 der Räume waren typisiert (xfail-Zielbild)."""
     typisiert = sum(1 for r in rm.raeume if r.raum_typ)
     assert typisiert >= 90, f"nur {typisiert} Räume typisiert"
 
@@ -101,8 +98,8 @@ def test_soll_raeume_flaechendeckend_typisiert(rm):
 @pytest.mark.xfail(
     strict=True,
     reason="Soll ≥ 90 % typisierte Türen je Familie — Ist Muthgasse E2 "
-    "2026-09-07: 8 % (Folge der Stempel↔Raum-Lücke oben: 161× "
-    "beide_seiten_untypisiert; Gründe-Tabelle in bericht.md)",
+    "2026-09-08: 71 % (219/307; vor der Typ-Rückschreibung 8 %). Rest sind "
+    "Türen ohne typisierte Gegenseite; Gründe-Tabelle in bericht.md",
 )
 def test_soll_90_prozent_tueren_typisiert(rm):
     typ = sum(1 for t in rm.tueren if t.tuer_detail)
