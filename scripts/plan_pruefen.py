@@ -1514,8 +1514,15 @@ def _verlauf_schreiben(ergebnisse: list[dict], commit: str) -> None:
 
 
 def _material_report(ergebnisse: list[dict]) -> None:
-    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt."""
-    pfad = REPO / "docs" / "MATERIAL_REPORT.md"
+    """docs/MATERIAL_REPORT.md — je Plan eine Sektion, idempotent ersetzt.
+
+    Nur der Standard-Lauf (Projekte/_eingang → Projekte/_ergebnis) pflegt das
+    Repo-Dokument; ein umgelenkter Sammellauf schreibt neben seine Ergebnisse,
+    sonst überschreibt er den gepflegten Bericht der Prüfstrecken-Pläne.
+    """
+    pfad = (REPO / "docs" / "MATERIAL_REPORT.md"
+            if ERGEBNIS == REPO / "Projekte" / "_ergebnis"
+            else ERGEBNIS / "MATERIAL_REPORT.md")
     alt = pfad.read_text(encoding="utf-8") if pfad.exists() else ""
     sektionen: dict[str, str] = {}
     for block in re.split(r"^(?=# Plan )", alt, flags=re.MULTILINE):
