@@ -32,6 +32,7 @@ _MAP: dict[str, Nutzungsklasse] = {
     "LAGER": "ALLGEMEIN_NEBENRAUM",
     "MUELLRAUM": "ALLGEMEIN_NEBENRAUM",
     "WASCHKÜCHE": "ALLGEMEIN_NEBENRAUM",
+    "KINDERWAGENRAUM": "ALLGEMEIN_NEBENRAUM",
     # AUSSEN — Freibereiche (LOGGIA typt in raumtyp.py als BALKON).
     "BALKON": "AUSSEN",
     "TERRASSE": "AUSSEN",

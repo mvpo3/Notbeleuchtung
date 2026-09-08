@@ -169,7 +169,16 @@ def typisiere_tueren(tueren: list[Tuer], raeume: list[Raum], geschoss: str,
         if detail is None or t.quelle and t.quelle.startswith("text:"):
             text = _naechster_text(t.xy_mm, tuer_texte)
             if text is not None:
-                if _EINGANG_TEXT.search(text) and eg and detail is None:
+                # Ein Endausgang braucht ein Türblatt: eine synthetische
+                # Wandöffnung (`oeffnung_aussenwand`, Kontaktzone Raum↔Außen) darf
+                # nicht allein wegen eines benachbarten „Eingang"-Textes zum
+                # Hauseingang werden — der Text gehört meist zur echten Haustür
+                # daneben (Barawitzka: Öffnung am Kinderwagenraum, 2,5 m neben
+                # tuer_27, erbte deren Beschriftung). Die Regel-Erkennung
+                # AUSSEN × ALLGEMEIN_ERSCHLIESSUNG bleibt unberührt, echte
+                # Durchfahrten ohne Türblatt gehen also nicht verloren.
+                if (_EINGANG_TEXT.search(text) and eg and detail is None
+                        and not t.ohne_tuerblatt):
                     detail = "hauseingang"
                 # Balkontür/Garagentor haben ihr `ist_notausgang=False` aus einer
                 # fachlichen Regel (Owner-Entscheidung, docs/OFFENE_FRAGEN.md) —
