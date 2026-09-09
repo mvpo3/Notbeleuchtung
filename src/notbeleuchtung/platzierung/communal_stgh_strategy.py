@@ -46,6 +46,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
+from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import (
     select_key as _select_key,
 )
@@ -104,7 +105,7 @@ def plan_rettungszeichen(raum: RaumModell, norm: NormProvider) -> list[Platzieru
                 dx, dy = ex - anlauf[0], ey - anlauf[1]
             richtung = "unten"
             catalog_key, _ = _select_key(anf.symbol_katalog_keys, "unten")
-            rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+            rotation = _rotation_zur_tuer(dx, dy)
             mirror_x = False
         elif naechster is not None and d_exit > 1000.0:
             # Kein Tür-Anker → Pfeil zeigt ZUM nächsten Ausgang (nie ins blinde Ende).

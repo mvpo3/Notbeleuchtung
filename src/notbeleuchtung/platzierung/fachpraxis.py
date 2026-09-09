@@ -37,6 +37,7 @@ from notbeleuchtung.hauptengine.contracts import (
 from .bausteine import AGV_SV_F as _AGV_SV_F
 from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .bausteine import building_assigner as _building_assigner
+from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
 from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
 from .lux import lux_punkte
@@ -300,7 +301,7 @@ def tuerleuchte_pflichtraeume(raum: RaumModell, norm: NormProvider) -> list[Plat
         dx, dy = tx - zentrum[0], ty - zentrum[1]
         if math.hypot(dx, dy) < 50.0:
             dx, dy = 0.0, -1.0
-        rot = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+        rot = _rotation_zur_tuer(dx, dy)
         out.append(
             Platzierung(
                 xy_mm=(tx, ty),
