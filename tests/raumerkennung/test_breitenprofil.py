@@ -107,4 +107,30 @@ def test_skelett_zickzack_gilt_nicht_als_richtungswechsel() -> None:
     p = miss_breitenprofil("seg_z", zickzack, flaeche)
     assert p.messbar
     assert not any(m.an_richtungswechsel for m in p.profil)
-    assert [a.breite_mm for a in p.abschnitte] == [1200.0]
+    # Die Sehnen-Normale nimmt dem Zickzack die Schräge: ohne sie wären es
+    # 1223.8 mm (1200 / cos 11.3 Grad), mit ihr bleiben 0.8 mm Restfehler.
+    assert len(p.abschnitte) == 1
+    assert abs(p.abschnitte[0].breite_mm - 1200.0) <= 1.0
+
+
+def test_abschnitt_traegt_quelle_gemessen() -> None:
+    p = miss_breitenprofil("seg_q", [(0, 600), (6000, 600)], _gerader_gang(1200, 6000))
+    assert [a.quelle for a in p.abschnitte] == ["gemessen"]
+
+
+def test_ecke_in_einen_saal_loescht_nicht_das_ganze_profil() -> None:
+    """Eckfenster ist auf die halbe typische Segmentbreite gedeckelt.
+
+    Ohne Deckel skaliert es mit der AN DER ECKE gemessenen (dort aufgeblähten)
+    Breite — auf Rennweg_EG blieben so 7 von 68 Punkten übrig.
+    """
+    # 1,20-m-Gang (x 0..8000) mündet in einen 6-m-Saal (x 8000..14000).
+    flaeche = Polygon([(0, 0), (14000, 0), (14000, 6000), (8000, 6000),
+                       (8000, 1200), (0, 1200)])
+    p = miss_breitenprofil("seg_saal", [(0, 600), (11000, 600), (11000, 5000)],
+                           flaeche)
+    assert p.messbar
+    gang = [m for m in p.profil
+            if m.laufmeter_mm < 7000 and not m.an_richtungswechsel]
+    assert len(gang) > 50, f"Eckfilter frisst den Gang: {len(gang)} Punkte"
+    assert p.abschnitte[0].breite_mm == 1200.0
