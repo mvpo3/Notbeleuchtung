@@ -312,6 +312,41 @@ Naht-Invariante und steckt auch in `tests/fakes.py` und
 (Fixture-Regen aus dem echten Provider) — Details `docs/NORMQUELLEN_AT.md` 2a.
 
 ## Log (append-only, neueste oben)
+- 2026-09-09 Leonis (Auslieferung Layout+1:50, Owner-Auftrag): **das gelieferte
+  Geschoss-DXF ist ab jetzt das Layout-Blatt** (Vorlage in Layout1 + Viewport exakt
+  1:50, in AutoCAD plot-fertig) statt des Modelspace-Blatts (#115). Pipeline defaultet
+  `template_path` auf die Repo-Vorlage; passt der Plan in 1:50 nicht in den Viewport
+  (G6), Fallback auf Modelspace-Blatt (`layout_fallback` im Summary). **Naht-Folge für
+  @EnisAMG:** ezdxf rastert Paperspace-Viewports nicht → die A0-PDF wird aus einer
+  internen Modelspace-Quelle (`<floor>.modelspace.dxf`, `pdf_quelle=True`, danach
+  entfernt) gerendert. Der dynamische **Prüfvermerk/OIB-Stufe (Regel 13)** wird damit
+  auf dieser PDF-Quelle + im `render_summary["pruefung"]` geführt, NICHT mehr im
+  Modelspace-TEXT des gelieferten (Layout-)DXF; `pruefvermerk_am_blatt` beschreibt jetzt
+  das gelieferte Layout-Blatt (statische Vorlage → False). `pruefung`-Dict inkl.
+  `oib_stufen` unverändert im Summary/API. Tests `test_pruefvermerk_oib` lesen die
+  PDF-Quelle. Falls die On-Blatt-Sichtbarkeit am Layout gewünscht ist → Owner-Entscheid
+  (Prüfvermerk in Layout1-Paperspace zeichnen).
+- 2026-09-09 Leonis (Wissens-Kreuzungen, Owner-Auftrag): zwei rote Kreuzungen aus dem
+  Wissens-Inventar sind **norm-blockiert, nicht code-blockiert** — bewusst NICHT
+  „force-gebaut" (fabrizieren = OVE/EN-Hard-Stop, CLAUDE.md):
+  - **Flächen-Trigger (60 m² / 8 m²).** `platzierung/oib_gate.py` `sanitaer_scope`/
+    `verkehr_scope` geben per Design nie `anwendbar` → `flaechen_schwellen` zu füllen
+    bewirkt NICHTS (Gate bleibt fail-closed zu). `anwendbar` braucht **(a) 3-Owner-
+    Beschluss** „Tabelle-6-Erforderlichkeit = erhöhte Anforderungen nach Art der
+    Nutzung" (R-12-2-Beleg vorhanden, aber die Gleichsetzung ist Auslegung) **+ (b) Selman:
+    `nutzungskategorie` im RaumModell** (für Punkt 3, verkehrstechnische Einrichtungen).
+    Der Code ist bereits korrekt (ungeklaert → sichtbar Regel 13). @EnisAMG @polatselman.
+  - **Blendungs-Imax je Montagehöhe (EN 1838 §4.4, 500…5000 cd).** Glare-Tabelle liegt in
+    `normwissen/_port_source/emergency_lighting_en1838.yaml:58-73`, bewusst nicht in
+    `en1838_grundwerte.yaml`. Ein echter Gate braucht **Enis' autoritative Glare-Kurve** +
+    **Photometrie je Platzierung in `validierung`** (heute nur aggregierter
+    `PhotometrieBefund`, kein `i_cd_fn` je Leuchte) + Entscheidung, ob als
+    `NormRegelwerk`-Feld (Contract-Freeze) oder Provider-Methode. @EnisAMG.
+  - **Gebaut wurde** dagegen der sauber Leonis/hauptengine-lokale Teil: die 20-Leuchten-
+    Regel (`pipeline._coverage`) trägt jetzt zusätzlich die Kreis-Redundanz (EN 50172,
+    aus vorhandener `circuit_hint`-Zuordnung) + Bemessungsstrom ≤60 %/Kreis als offenen
+    Punkt (nicht-blockierender Hinweis, kein fabrizierter Beleg).
+- 2026-09-09 Leonis (Doku-Hygiene): **R-12-2-Beleg liegt vor und ist aktiv.** R 12-2/AC:2019-07-01 wurde am 2026-09-05 beschafft, #116 (Verkaufsstätten-Vorprüfung, Regel 14) ist gemergt, autoritativ aktiv in `normwissen/data/ove_e8101_zusatz.yaml` (`r12_2`). Frühere Notiz „R 12-2 verworfen" war eine Verwechslung mit der verworfenen Tür-RZ-links-Regel (G3), NICHT mit R 12-2. Statuszeile in `docs/NORMQUELLEN_AT.md` §2d ergänzt. (Kein Code/YAML/Test berührt.)
 - 2026-09-08 Leonis/**F2** (`leonis/f2-work`): **Deckungslücken-Fix** (vom Auto-Bericht aufgedeckt: Mollgasse EG-Korridore mit 0,00 lx). Root-Cause: `abstand_nachpass.entzerre` mergte die **SL-Dublette (< 2 m) über Raumgrenzen** — die einzige Fluchtweg-SL eines Korridors verschwand mit einer SL im NACHBAR-Korridor, Überlebende lag außerhalb → Korridor dunkel. Fix: die große SL-Dubletten-Schwelle (2 m) greift jetzt **nur im GLEICHEN Raum** (`_selber_raum`); über Raumgrenzen gilt der 250-mm-Mindestabstand → beide bleiben. Ergebnis Mollgasse EG: **kein Korridor mehr ohne SL** (raum_34/56 lit), Nachweis 9/12→10/12, SL 31→34. Owner-Regel „2 SL < 2 m = eine zu viel" bleibt für den GLEICHEN Raum erhalten (Sonderstellen+Verdichtung). 2 neue Unit-Tests, 253 platzierung + 24 e2e grün (Bänder halten), ruff clean. Kein Contract-Touch. Die 2 Rest-Fails auf Mollgasse = 494-Punkt-Spikey-Polygone (Selman-Erkennung, separate Sache).
 - 2026-09-08 Leonis/**F2** (`leonis/f2-work`): **Auto-Nachweis-Bericht je Plan** (Owner-Wunsch „Hauptengine soll das immer erstellen"). Neu `hauptengine/render/lux_nachweis_bericht.py::schreibe_bericht` — konsumiert das FERTIGE `PlatzierungsErgebnis` (platziert nichts neu), rechnet das Falschfarben-Lux-Feld + EN-1838-Nachweis aus den gesetzten Leuchten, DIALux-artige A4-Seite (Rivoplan-gebrandet, polare LVK, robust bei vielen Fluchtwegen: „N/M erfüllt" + offene zuerst + Rest-Summe). **F1-Naht (additiv, minimal):** `pipeline._run_mit_quelle` schreibt nach `render_dxf` eine `<out>.nachweis.png` und legt den Pfad in `render_summary["lux_nachweis"]` (try/except → nie plan-brechend, lazy matplotlib); `projekt._merge_pdf` hängt die Seite je Geschoss ins Sammel-PDF (PIL PNG→PDF). Keine Signatur-/Contract-Änderung. Getestet end-to-end (Mollgasse EG: 9/12 Rettungswege erfüllt, deckt reale Deckungslücken auf); 405 contract/hauptengine/platzierung + 24 e2e grün. Bitte, F1: die 2 additiven Stellen in pipeline/projekt beim Rebase mitnehmen (reine Zusatz-Zeilen am Ende der jeweiligen Blöcke).
 - 2026-09-08 Leonis/**F2** (`leonis/f2-work`): **Aufheller jetzt lux-bedingt** (Owner-Wunsch „Lichtberechnung entscheidet, ob Aufheller nötig"). `fachpraxis.aufheller_je_rz` bekommt `norm` + `i_cd_fn` und setzt den RZ-Aufheller nur noch, wenn der Kandidatenpunkt aus den schon platzierten Sicherheits-/Antipanikleuchten UNTER `anf.min_lux` liegt (via `lux_punkte`) — **nur mit echter Hersteller-Photometrie** (ohne LDT bleibt es bedingungslos, da die konstante Lichtstärke-Annahme die Deckung überschätzt). Aufrufstelle `platzierer.py` gibt `norm`+`kontext.i_cd_fn` mit. Antipanik/Fluchtweg waren schon lux-getrieben. **Gate im Default-Bundle aktiv, aber alle Tests grün** (Wohnbau EG 4→3 Aufheller, E2E-Bänder halten — reale Corridor-LVK gated nur echte Deckung). Kein Contract-Touch, kein neues Norm-Feld (`min_lux` existiert). 5 neue Unit-Tests. Als Nächstes Teil 2 (Auto-Nachweis-Bericht je Plan, Pipeline-/Render-Naht — F1 bitte kurz halten).

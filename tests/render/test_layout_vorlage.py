@@ -94,3 +94,23 @@ def test_ohne_template_path_unveraendert(tmp_path):
     summary = render_dxf(plzg, raum, tmp_path / "default.dxf")
     assert "viewport_scale" not in summary
     assert summary["rendered"] is True
+
+
+def test_pdf_quelle_schreibt_modelspace_blatt(tmp_path):
+    """Auslieferung: das gelieferte DXF ist das Layout-Blatt (Paperspace, kein Blatt-
+    Rahmen im Modelspace); ezdxf rastert das nicht. `pdf_quelle_path` schreibt daneben
+    zusätzlich ein Modelspace-Blatt (Modus 1) mit Blatt-Rahmen im Modelspace, das der
+    PDF-Weg als Quelle nimmt."""
+    raum, plzg = _lade_4og()
+    out = tmp_path / "liefer.dxf"
+    quelle = tmp_path / "liefer.modelspace.dxf"
+    summary = render_dxf(plzg, raum, out, template_path=VORLAGE, pdf_quelle_path=quelle)
+    assert summary["viewport_scale"] == "1:50"
+    assert summary["pdf_quelle"] == str(quelle)
+    assert quelle.is_file()
+    tb = "din_SIBEL_99_titleblock"
+    liefer = ezdxf.readfile(out)
+    q = ezdxf.readfile(quelle)
+    # Layout-Blatt: kein Blatt-Rahmen im Modelspace; PDF-Quelle: Rahmen im Modelspace.
+    assert not [e for e in liefer.modelspace() if e.dxf.layer == tb]
+    assert [e for e in q.modelspace() if e.dxf.layer == tb]
