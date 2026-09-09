@@ -199,10 +199,12 @@ def test_zu_niedrige_montagehoehe_ist_fehler():
     assert gesamtstatus(befunde) == "fehler"
 
 
-def test_fehlender_sicherheitskreis_ist_warnung():
+def test_fehlender_sicherheitskreis_ist_fehler():
+    # F06/W13: getrennter SV-Kreis ist Kernmission -> Hard-Stop, nicht mehr Warnung.
     befunde = pruefe(_raum("s1"), _erg(_rz(circuit="AGV-A-F5")))
     kreis = next(b for b in befunde if "Sicherheitskreis" in b.regel)
-    assert kreis.status == "warnung"
+    assert kreis.status == "fehler"
+    assert gesamtstatus(befunde) == "fehler"
 
 
 def test_ungedecktes_segment_ist_warnung():

@@ -134,11 +134,16 @@ def pruefe(
     ))
 
     # 2. Getrennter Sicherheitskreis (jedes Symbol trägt eine F13-Kreis-Kennung).
+    #    HARD-STOP (F06/W13, Kernmission): der eigene SV-Kreis ist nicht optional —
+    #    fällt der Allgemeinstromkreis, muss die Sicherheitsbeleuchtung weiterlaufen
+    #    (EN 1838 / OVE E 8101). Ein Symbol ohne F13-Kennung ist ein Norm-Verstoß, keine
+    #    Anmerkung → "fehler" (gesamtstatus fehler). Alle Strategien setzen den F13-Hint,
+    #    daher normal leer/„ok"; greift nur bei echtem Fehler.
     if plzg:
         ohne_kreis = [p for p in plzg if _SV_KENNUNG not in (p.circuit_hint or "")]
         befunde.append(Befund(
             "Getrennter Sicherheitskreis (EN 1838)",
-            "warnung" if ohne_kreis else "ok",
+            "fehler" if ohne_kreis else "ok",
             f"{len(ohne_kreis)} Symbol(e) ohne F13-Kreis" if ohne_kreis
             else "alle Symbole auf getrenntem SV-Kreis",
         ))
