@@ -31,7 +31,7 @@ stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owne
   mit Klammern+Umlauten in der Shell QUOTEN). P2 = `knowledge/`. P3 = Repo (main-Stand).
 - **Am STOP liefern:** Commit-Liste + Sichtprüfungs-Abweichungen (`docs/audit/07_sichtpruefung.md`).
 
-**Audit liegt in `docs/audit/`** (untracked, auf Platte): `REPORT.md`, `FIX_PLAN.md`,
+**Audit liegt in `docs/audit/`** (versioniert, Commit `1a358d3`): `REPORT.md`, `FIX_PLAN.md`,
 `01_plan_forensik/02_wissens_coverage/03_engine_ist/05_widersprueche/06_naht_owner_matrix.md`.
 `FIX_PLAN.md` = die Fix-Liste F01–F18 + mein Vote. **Zugesagt: Block 1+2+3 (F01–F14). Block 4
 (F15–F18) = Handoff, NICHT bauen.**
@@ -78,8 +78,9 @@ stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owne
 - **Voller `pytest` ~8 min** — nur an Verhaltens-Fixes (F07/F09) + einmal in Phase 4 nötig, sonst
   targeted. Läuft via `run_in_background`, Notification abwarten (nicht pollen).
 - **`git commit` Heredoc scheiterte in PS** → Message in scratchpad-Datei + `git commit -F`.
-- **NIE `git add -A`** (zieht scratchpad/.bak/Zips rein). Nur die Fix-Dateien einzeln stagen.
-  `docs/audit/` ist noch untracked (bewusst; am Ende committen oder Owner fragen).
+- **NIE `git add -A`** (zieht scratchpad/.bak/Zips rein). Nur die Fix-Dateien einzeln stagen
+  (Working-Tree hat viele untracked Zips/.bak/scratchpad — die bleiben draußen). `docs/audit/`
+  ist jetzt versioniert (`1a358d3`).
 - **W-LIB-Lektion:** Wenn ein Render-/Symbol-Test ordnungsabhängig kippt, Verdacht `id()`-gekeyter
   Cache in `symbols/library.py` (jetzt gefixt). platzierung+render-Kombo war der schnelle Repro.
 - **Naht-Grenzen (aus Audit):** `sonderstellen.raumtyp_scope`/YAML-Vokabular liegt am konkreten
