@@ -72,15 +72,32 @@ _LB_REVIEW_MELDUNG_MAX = 600
 # Betriebsumgebung mehr erlaubt. 0 oder negativ schaltet die Kappung ab.
 _HEADER_MAX_BYTES = int(os.environ.get("NOTBELEUCHTUNG_HEADER_MAX_BYTES", "4096"))
 
-#: Wohin der vollständige Inhalt zeigt, wenn im Header gekürzt wurde.
+#: Was mit dem zurückgehaltenen Inhalt ist — ⚠️ ehrlich, nicht beschönigend:
+#: die vollständige Fassung liegt **serverseitig** im Pipeline-Ergebnis
+#: (`render_summary["oib"]["hinweise"]` bzw. `render_summary["pruefung"]`). Über
+#: die API ist sie **heute nicht abrufbar**: `POST /plan` liefert die Plandatei
+#: plus diesen Header, es gibt **keinen** Endpunkt für den Prüfbericht. Genau das
+#: ist die offene Lücke **L2** — sie wird hier NICHT gebaut, nur benannt.
 _KUERZUNG_QUELLE = (
-    "vollstaendig im internen Pruefbericht (render_summary['oib'] bzw. "
-    "render_summary['pruefung']) — im Header aus Groessengruenden gekuerzt"
+    "gekuerzt aus Groessengruenden. Vollstaendig nur serverseitig im "
+    "Pipeline-Ergebnis (render_summary['oib']['hinweise'] / "
+    "render_summary['pruefung']) — NICHT ueber die API abrufbar, es gibt keinen "
+    "Endpunkt dafuer (offene Luecke L2). Ein erneuter Aufruf mit hoeherem "
+    "NOTBELEUCHTUNG_HEADER_MAX_BYTES uebertraegt mehr."
 )
 
 
 def _als_header(summary: dict) -> str:
-    """Serialisierung exakt so, wie sie in den Header geht (ASCII, kompakt)."""
+    """Serialisierung exakt so, wie sie in den Header geht (ASCII, kompakt).
+
+    ⚠️ Das Budget misst **genau diesen Wert** — den JSON-Text des Headers
+    `X-Notbeleuchtung`. **Nicht** gemessen sind der Headername samt `: ` und CRLF
+    (20 B) und **nicht** der gesamte HTTP-Headerblock (Statuszeile,
+    `content-type`, `content-length`, `content-disposition`, `date`, `server` …),
+    der je nach Server und Datei noch einige hundert Byte dazulegt. Wer eine
+    harte Gesamtgrenze einhalten muss, setzt `NOTBELEUCHTUNG_HEADER_MAX_BYTES`
+    entsprechend niedriger.
+    """
     return json.dumps(summary, ensure_ascii=True)
 
 
@@ -100,9 +117,9 @@ def _kuerze_auf_budget(summary: dict) -> dict:
     gekuerzt = copy.deepcopy(summary)
     oib = gekuerzt.get("oib")
     if not isinstance(oib, dict) or not isinstance(oib.get("hinweise"), list):
-        gekuerzt["header_gekuerzt"] = True
-        gekuerzt["header_kuerzung"] = _KUERZUNG_QUELLE
-        return gekuerzt
+        # Nichts Kürzbares vorhanden: dann wurde auch nichts gekürzt — sagen, dass
+        # der Header über dem Budget liegt, statt eine Kürzung zu behaupten.
+        return _ueber_budget(gekuerzt, gekuerzt_wurde=False)
 
     alle: list[str] = list(oib["hinweise"])
     # Von hinten wegnehmen, bis es passt: die Reihenfolge der übertragenen
@@ -114,14 +131,40 @@ def _kuerze_auf_budget(summary: dict) -> dict:
         oib["hinweise_zurueckgehalten"] = len(alle) - k
         oib["hinweise_gekuerzt"] = k < len(alle)
         oib["hinweise_kuerzung"] = _KUERZUNG_QUELLE
-        gekuerzt["header_gekuerzt"] = True
+        gekuerzt["header_gekuerzt"] = k < len(alle)
         gekuerzt["header_kuerzung"] = _KUERZUNG_QUELLE
         if len(_als_header(gekuerzt).encode()) <= _HEADER_MAX_BYTES:
+            if not gekuerzt["header_gekuerzt"]:  # nichts entfernt → keine Marke
+                del gekuerzt["header_gekuerzt"], gekuerzt["header_kuerzung"]
             return gekuerzt
-    # Auch ohne Hinweise noch zu groß: der Rest (Stufen je Gebäudeteil, lb_review)
-    # ist der Zustand selbst und wird NICHT geopfert — lieber ein großer Header als
-    # ein stiller Verlust. Die Marke sagt, dass gekürzt wurde.
-    return gekuerzt
+    # Auch ohne einen einzigen Hinweis noch zu groß: der Rest (Stufen je
+    # Gebäudeteil, lb_review, Zählfelder) IST der Zustand und wird NICHT geopfert —
+    # lieber ein übergroßer Header als ein stiller Verlust. Definiertes Verhalten:
+    # ausliefern und **als über dem Budget markieren**, damit ein Verbraucher den
+    # Fall vom normalen Kürzen unterscheiden kann.
+    return _ueber_budget(gekuerzt, gekuerzt_wurde=bool(alle))
+
+
+def _ueber_budget(summary: dict, *, gekuerzt_wurde: bool) -> dict:
+    """Markiert einen Header, der auch nach der Kürzung über dem Budget liegt.
+
+    Der Fall ist selten (sehr viele Gebäudeteile in `stufen`), aber definiert: die
+    nicht kürzbaren Felder tragen den Zustand und bleiben vollständig. Damit das
+    nicht als „passt schon" durchgeht, sagen es die Marken ausdrücklich — samt
+    gemessener Größe und geltendem Budget.
+    """
+    summary["header_ueber_budget"] = True
+    summary["header_bytes"] = len(_als_header(summary).encode())
+    summary["header_budget_bytes"] = _HEADER_MAX_BYTES
+    summary["header_kuerzung"] = _KUERZUNG_QUELLE
+    if gekuerzt_wurde:
+        summary["header_gekuerzt"] = True
+    else:
+        summary.pop("header_gekuerzt", None)
+    # `header_bytes` selbst vergrößert den Header — einmal nachziehen, damit der
+    # Wert zur ausgelieferten Länge passt.
+    summary["header_bytes"] = len(_als_header(summary).encode())
+    return summary
 
 
 def _header_summary(render_summary: dict) -> dict:
