@@ -57,6 +57,27 @@ def test_lux_nachweis_wf_eine_quelle():
     assert _wf(_Raum(), _Norm(None)) == 1.0        # Fallback ohne Feld
 
 
+def test_deckung_wf_aus_norm():
+    """F02 / W09: Der Wartungsfaktor kommt aus EINER Funktion (`wartungsfaktor_aus_norm`)
+    statt je eigenem inline-getattr in Deckung/Fachpraxis/Nachweis/Bericht. Exakte Werte,
+    Fallback 1,0 (fehlend ODER falsy)."""
+    from notbeleuchtung.platzierung.lux import wartungsfaktor_aus_norm
+
+    class _Anf:
+        wartungsfaktor = 0.57
+
+    class _AnfNull:
+        wartungsfaktor = 0.0
+
+    class _AnfOhne:
+        pass
+
+    assert wartungsfaktor_aus_norm(_Anf()) == 0.57
+    assert wartungsfaktor_aus_norm(_AnfOhne()) == 1.0   # Feld fehlt → kein MF
+    assert wartungsfaktor_aus_norm(_AnfNull()) == 1.0   # 0 falsy → Fallback
+    assert isinstance(wartungsfaktor_aus_norm(_Anf()), float)
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""

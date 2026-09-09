@@ -29,7 +29,7 @@ from matplotlib.path import Path as MPath
 
 from notbeleuchtung.hauptengine.contracts import NormProvider, PlatzierungsErgebnis, RaumModell
 from notbeleuchtung.platzierung.geometry import _bbox, point_in_polygon
-from notbeleuchtung.platzierung.lux import lux_punkte
+from notbeleuchtung.platzierung.lux import lux_punkte, wartungsfaktor_aus_norm
 from notbeleuchtung.platzierung.mittellinie import mittellinie
 
 _ROOT = Path(__file__).resolve().parents[4]
@@ -66,8 +66,7 @@ def _wf(r, norm) -> float:
 
     Identisch zu `_rw_stats`: `anf.wartungsfaktor` defensiv via getattr, Fallback 1,0.
     """
-    anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
-    return float(getattr(anf, "wartungsfaktor", None) or 1.0)
+    return wartungsfaktor_aus_norm(norm.fuer_raum(r.raum_typ, r.ist_fluchtweg))
 
 
 def _lux_feld(gx, gy, sl, i_cd_fn, wf):
@@ -102,7 +101,7 @@ def _band(linie, breite_mm):
 
 def _rw_stats(r, norm, sl, i_cd_fn):
     anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
-    h, wf = anf.montagehoehe_mm / 1000.0, (getattr(anf, "wartungsfaktor", None) or 1.0)
+    h, wf = anf.montagehoehe_mm / 1000.0, wartungsfaktor_aus_norm(anf)
     drin = [(x, y, az) for (x, y, az) in sl if point_in_polygon((x, y), r.polygon_mm)]
     bb = _bbox(r.polygon_mm)
     breite = min(bb[2] - bb[0], bb[3] - bb[1])
