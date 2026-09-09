@@ -19,7 +19,10 @@ from __future__ import annotations
 import json
 
 import pytest
+from fastapi import HTTPException
+from fastapi.testclient import TestClient
 
+from fakes import build_fake_bundle_mit_oib
 from notbeleuchtung.api import main as api_main
 
 
@@ -75,8 +78,9 @@ def test_kuerzung_ist_sichtbar_und_gezaehlt() -> None:
     assert oib["hinweise_uebertragen"] == len(oib["hinweise"])
     assert oib["hinweise_zurueckgehalten"] == 40 - oib["hinweise_uebertragen"]
     assert oib["hinweise_zurueckgehalten"] > 0
-    # Der Zeiger auf die vollständige Fassung fehlt nie.
-    assert "Pruefbericht" in oib["hinweise_kuerzung"] or "pruefung" in oib["hinweise_kuerzung"]
+    # Die Marke sagt in Nutzersprache, dass gekürzt wurde und was gilt.
+    assert "gekuerzt" in oib["hinweise_kuerzung"]
+    assert "derzeit nicht" in oib["hinweise_kuerzung"]
 
 
 def test_uebertragene_hinweise_behalten_ihre_reihenfolge() -> None:
@@ -205,17 +209,106 @@ def test_normale_kuerzung_meldet_kein_ueber_budget() -> None:
 
 
 # ── Wohin der Verweis zeigt ─────────────────────────────────────────────────
-def test_verweis_sagt_dass_die_vollfassung_nicht_ueber_die_api_erreichbar_ist() -> None:
-    """Der Zeiger darf keine Erreichbarkeit vortäuschen, die es nicht gibt.
+def test_verweis_ist_fuer_nutzer_verstaendlich_und_ohne_interna() -> None:
+    """Der Nutzertext sagt schlicht, was fehlt und was gilt — ohne Interna.
 
-    `POST /plan` liefert die Plandatei plus diesen Header — einen Endpunkt für den
-    Prüfbericht gibt es nicht (offene Lücke L2). Der Text muss das sagen, sonst
-    sucht ein Client nach etwas, das die API nicht hergibt.
+    Er darf keine Erreichbarkeit vortäuschen (einen Endpunkt für den Prüfbericht
+    gibt es nicht), aber auch keine internen Begriffe oder Servervariablen nennen —
+    die stehen in der Entwicklerdokumentation.
     """
     kopf = api_main._header_summary(_summary(n_hinweise=40))
     text = kopf["oib"]["hinweise_kuerzung"]
 
-    assert "NICHT ueber die API abrufbar" in text
-    assert "L2" in text
-    assert "NOTBELEUCHTUNG_HEADER_MAX_BYTES" in text   # der eine Weg, mehr zu bekommen
+    assert "derzeit nicht" in text and "abrufbar" in text
+    assert "L2" not in text
+    assert "NOTBELEUCHTUNG_HEADER_MAX_BYTES" not in text
+    assert "render_summary" not in text
     assert kopf["header_kuerzung"] == text
+
+
+# ── Durchsetzung: lieber ein sauberer Fehler als ein übergroßer Header ───────
+def test_ueber_budget_liefert_503_statt_uebergrossem_header() -> None:
+    """Kein übergroßer Header als erfolgreiche Auslieferung.
+
+    503 wie beim fehlenden ODA-Konverter und beim nicht verdrahteten Provider: die
+    Anfrage war in Ordnung, die Betriebsumgebung kann sie so nicht ausliefern.
+    """
+    kopf = api_main._header_summary(_summary_mit_vielen_stufen())
+
+    with pytest.raises(HTTPException) as fehler:
+        api_main._header_wert(kopf)
+
+    assert fehler.value.status_code == 503
+    text = fehler.value.detail
+    assert "nicht auslieferbar" in text
+    assert str(api_main._HEADER_MAX_BYTES) in text          # das geltende Budget
+    assert "derzeit nicht" in text and "abrufbar" in text    # ehrlich zur Vollfassung
+    assert "L2" not in text and "NOTBELEUCHTUNG_HEADER_MAX_BYTES" not in text
+
+
+def test_ohne_kuerzbare_hinweise_ebenfalls_503() -> None:
+    """Auch wenn es gar nichts zu kürzen gab, wird nichts Übergroßes gesendet."""
+    kopf = api_main._header_summary(_summary_mit_vielen_stufen(n_hinweise=0))
+
+    with pytest.raises(HTTPException) as fehler:
+        api_main._header_wert(kopf)
+
+    assert fehler.value.status_code == 503
+
+
+def test_normalfall_liefert_den_header_ohne_fehler() -> None:
+    kopf = api_main._header_summary(_summary(n_hinweise=40))
+    wert = api_main._header_wert(kopf)
+
+    assert json.loads(wert)["oib"]["stufen"]
+    assert len(wert.encode()) <= api_main._HEADER_MAX_BYTES
+
+
+def test_budget_null_schaltet_die_durchsetzung_ab(monkeypatch: pytest.MonkeyPatch) -> None:
+    """`0` ist eine bewusste Betriebsentscheidung: weder kürzen noch abbrechen."""
+    monkeypatch.setattr(api_main, "_HEADER_MAX_BYTES", 0)
+    kopf = api_main._header_summary(_summary_mit_vielen_stufen())
+    wert = api_main._header_wert(kopf)          # kein Fehler
+
+    wieder = json.loads(wert)
+    assert len(wieder["oib"]["stufen"]) == 120
+    assert wieder["oib"]["hinweise"] == _summary_mit_vielen_stufen()["oib"]["hinweise"]
+    assert len(wert.encode()) > 4096            # bewusst ungekappt
+
+
+def test_endpunkt_antwortet_503_und_sendet_keinen_header(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """End-to-end durch `POST /plan`: Fehlerantwort statt Plan mit Riesen-Header."""
+    monkeypatch.setattr(api_main, "_HEADER_MAX_BYTES", 200)  # jeder Header ist zu groß
+    client = TestClient(api_main.create_app(bundle_factory=build_fake_bundle_mit_oib))
+
+    r = client.post(
+        "/plan",
+        files={"datei": ("leer.dxf", b"<architekturplan>", "image/vnd.dxf")},
+        data={"floor": "4OG", "projekt_kontext": json.dumps(
+            {"jurisdiction": "AT",
+             "gebaeudeteile": [{"id": "teil_1", "nutzungsart": "SONSTIGES_GEBAEUDE"}]})},
+    )
+
+    assert r.status_code == 503
+    assert "X-Notbeleuchtung" not in r.headers
+    assert "nicht auslieferbar" in r.json()["detail"]
+
+
+def test_endpunkt_bleibt_im_normalfall_erfolgreich() -> None:
+    """Gegenprobe: mit dem echten Budget liefert derselbe Aufruf einen Plan."""
+    client = TestClient(api_main.create_app(bundle_factory=build_fake_bundle_mit_oib))
+
+    r = client.post(
+        "/plan",
+        files={"datei": ("leer.dxf", b"<architekturplan>", "image/vnd.dxf")},
+        data={"floor": "4OG", "projekt_kontext": json.dumps(
+            {"jurisdiction": "AT",
+             "gebaeudeteile": [{"id": "teil_1", "nutzungsart": "SONSTIGES_GEBAEUDE"}]})},
+    )
+
+    assert r.status_code == 200
+    kopf = json.loads(r.headers["X-Notbeleuchtung"])
+    assert kopf["oib"]["stufen"] == {"teil_1": "eingeschraenkt"}
+    assert len(r.headers["X-Notbeleuchtung"].encode()) <= api_main._HEADER_MAX_BYTES
