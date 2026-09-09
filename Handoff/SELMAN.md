@@ -61,6 +61,37 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-09) ═══
+
+**Branch:** `selman/extents-ausreisser`, **gepusht**, PR offen. `origin/main` gemergt
+(Leonis: 1:50-Vektor-PDF auf ISO-A-Blatt, DIN-Farbtrennung, Richtungspfeile,
+Sichtlinien-Garantie, `mittellinie._raster`-Kappung). Contracts unverändert.
+**Suite nach dem Merge: 1096 passed, 10 skipped, 9 xfailed, 0 failed (19:55 min).**
+
+**Prüfstreckenlauf über alle fünf Pläne abgeschlossen** (Commit `cef2210`), gemessen:
+Barawitzka 38 Stempel/47 Räume, Türen 55/106, **Referenzvergleich 18 %** (2 Treffer /
+9 fehlend / 5 überzählig), 263 s · Mollgasse 83/62, Türen 70/147, RZ 30 SL 35, 292 s ·
+Muthgasse E2 99/102, **Türen 219/308**, RZ 64 SL 28, 1838 s · Rennweg EG 19/21,
+Türen 24/41, 56 s · Rennweg OG3 10/14, Türen 15/27, 52 s.
+
+**Bestandsaufnahme (10 Themen, belegt) — die zwei echten Baustellen:**
+1. **`RaumModell.anker` hat NULL Konsumenten** in `platzierung/` und `hauptengine/`
+   (`grep '\.anker'` dort leer). Stiegenhaus-/Ganganker inkl. `winkel_grad` und
+   `fluchtrichtung_grad` werden erzeugt, geprüft — und nie gelesen. Das ist die
+   plausibelste Einzelursache für die 18 % Referenz-Trefferquote.
+2. **WOHNUNG_PRIVAT-Filter greift nur in `flaechen_strategy.py:155-167`** — sechs
+   weitere Platzierungspfade laufen ungefiltert. Realbefund: Mollgasse 11,
+   Muthgasse 29 Leuchten in Wohnungen. Leonis' Lane, im Board gemeldet.
+
+**Weiter offen:** GESCHÄFTSLOKAL (3-Owner-Frage, blockiert) · Render-Speicher
+`_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55 (**meine Lane**,
+von Leonis übergeben) · Referenz-Frames UG/OG1 nicht verdrahtet (`_REFERENZ_FRAME`
+kennt nur Barawitzka_EG → 35 der 46 Referenzleuchten ungenutzt) · 4 Tür-Quoten-xfails
+(Ist 48–71 %, Ziel 90 %) · Baufeld E2 ohne Zielbild (nur ZIP) · unausgewertetes
+Referenzmaterial, größter Posten: `Projekte/BVH Fischamenderstrasse/fertige
+Elektromontagepläne/` (10+ fertige Elektropläne, in keiner Datei je erwähnt).
+
+---
 ## ═══ SELMAN: HIER WEITER (Stand 2026-09-08 abends) ═══
 
 **Branch:** `selman/extents-ausreisser` — **35 Commits vor `origin/main`, 0 dahinter**
