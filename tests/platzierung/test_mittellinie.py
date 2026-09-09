@@ -1,7 +1,11 @@
 """mittellinie — mediale Achse (skeletonize) + Leuchten-Sampling entlang der Linie."""
 from itertools import pairwise
 
-from notbeleuchtung.platzierung.mittellinie import leuchten_auf_linie, mittellinie
+from notbeleuchtung.platzierung.mittellinie import (
+    _MAX_RASTER_PX,
+    leuchten_auf_linie,
+    mittellinie,
+)
 
 # Breiter Gang 10 m × 2 m.
 GANG = [(0.0, 0.0), (10000.0, 0.0), (10000.0, 2000.0), (0.0, 2000.0)]
@@ -48,3 +52,18 @@ def test_breite_flaeche_keine_ueberproduktion():
 
 def test_leeres_polygon():
     assert mittellinie([(0.0, 0.0), (1.0, 1.0)]) == []
+
+
+def test_extents_ausreisser_kein_oom():
+    # Phantom-Extents (Baufeld-4OG: Basispunkt-Korruption, Hauptinhalt bei y≈347 km) spannen
+    # ein absurdes Polygon auf. Ohne Cap allokierte _raster eine ~3-TiB-np.zeros-Maske (OOM).
+    # Der Aufweitungs-Guard vergröbert das Raster → endliche Punktliste in Sekunden.
+    riesig = [(0.0, 0.0), (347_535_000.0, 0.0),
+              (347_535_000.0, 347_535_000.0), (0.0, 347_535_000.0)]
+    pts = mittellinie(riesig, raster_mm=200.0)
+    assert isinstance(pts, list)                   # kein OOM/Crash
+    assert len(pts) < _MAX_RASTER_PX               # endlich + gekappt
+    # Punkte liegen im aufgespannten Bereich (koordinatentreu trotz Vergröberung).
+    for x, y in pts:
+        assert -1e6 <= x <= 347_535_000.0 + 1e6
+        assert -1e6 <= y <= 347_535_000.0 + 1e6
