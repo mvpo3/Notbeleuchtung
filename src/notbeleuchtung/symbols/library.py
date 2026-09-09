@@ -38,6 +38,13 @@ _SAFETY_GREEN_RGB = (30, 180, 80)
 _LIB_SAFETY_LAYER = "E_Sicherheitsbeleuchtung"
 SAFETY_LAYER = "din_SIBEL_10_emergency_lighting"
 
+# din-Konvention (Referenzplan din Planungsunterstützung V25, analysiert 2026-09-09):
+# Rettungszeichen liegen auf dem GRÜNEN Layer (SAFETY_LAYER), reine Sicherheits-/
+# Antipanikleuchten auf einem GELBEN Zwilling — grün = Zeichen, gelb = Ausleuchtung.
+# Optional (render_dxf: rz_sl_farbtrennung); Default ist weiter „alles grün" (Owner #102).
+_SAFETY_YELLOW_RGB = (230, 170, 0)
+SAFETY_LAYER_SL = "din_SIBEL_10_emergency_lighting_yellow"
+
 # Blaue Hardcode-Farben in Library-Blöcken (z.B. SL-Aufheller: SOLID-HATCH ACI 150).
 # Explizite Entity-Farben übergehen den Layer-Grün-Override → beim Import auf
 # BYLAYER stellen, damit Notlicht-Geometrie das Schrack-Grün erbt (Block liegt auf
@@ -155,6 +162,14 @@ def sync_layers(output_doc: Drawing) -> int:
     if SAFETY_LAYER not in output_doc.layers:
         new = output_doc.layers.add(SAFETY_LAYER)
         r, g, b = _SAFETY_GREEN_RGB
+        new.dxf.true_color = (r << 16) | (g << 8) | b
+        added += 1
+    # Gelber SL-Zwilling (din-Konvention grün=Zeichen / gelb=Leuchte) — immer
+    # angelegt, damit render_dxf ihn ohne weiteres Setup nutzen kann; leer, wenn
+    # die Farbtrennung aus ist.
+    if SAFETY_LAYER_SL not in output_doc.layers:
+        new = output_doc.layers.add(SAFETY_LAYER_SL)
+        r, g, b = _SAFETY_YELLOW_RGB
         new.dxf.true_color = (r << 16) | (g << 8) | b
         added += 1
     for layer in lib.layers:

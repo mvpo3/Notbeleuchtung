@@ -12,6 +12,8 @@ Abstandstabelle / dem Lux-Nachweis, hier Parameter).
 """
 from __future__ import annotations
 
+import math
+
 import numpy as np
 from skimage.draw import polygon as _sk_polygon
 from skimage.morphology import skeletonize as _skeletonize
@@ -19,19 +21,30 @@ from skimage.morphology import skeletonize as _skeletonize
 Point = tuple[float, float]
 Polygon = list[Point]
 
+# Phantom-Extents-Guard: ein defektes Polygon mit Millionen-mm-Spannweite (Baufeld-4OG,
+# Basispunkt-Korruption y≈347 km — docs/COORDINATION.md 2026-09-07) würde sonst eine
+# ~3-TiB-`np.zeros`-Maske allozieren (OOM). Wie `raumerkennung.fluchtweg._skelett_pfad`
+# und `lux._MAX_RASTER_PUNKTE`: ab dieser Punktzahl das Raster vergröbern statt crashen.
+_MAX_RASTER_PX = 8_000_000
+
 
 def _raster(polygon: Polygon, raster_mm: float):
     xs = [p[0] for p in polygon]
     ys = [p[1] for p in polygon]
     minx, miny = min(xs), min(ys)
-    w = int((max(xs) - minx) / raster_mm) + 3
-    h = int((max(ys) - miny) / raster_mm) + 3
-    cc = np.array([(x - minx) / raster_mm + 1 for x in xs])
-    rr = np.array([(y - miny) / raster_mm + 1 for y in ys])
+    raster_eff = float(raster_mm)
+    w = int((max(xs) - minx) / raster_eff) + 3
+    h = int((max(ys) - miny) / raster_eff) + 3
+    if w * h > _MAX_RASTER_PX:
+        raster_eff *= math.ceil(math.sqrt(w * h / _MAX_RASTER_PX))
+        w = int((max(xs) - minx) / raster_eff) + 3
+        h = int((max(ys) - miny) / raster_eff) + 3
+    cc = np.array([(x - minx) / raster_eff + 1 for x in xs])
+    rr = np.array([(y - miny) / raster_eff + 1 for y in ys])
     mask = np.zeros((h, w), dtype=bool)
     fr, fc = _sk_polygon(rr, cc, shape=(h, w))
     mask[fr, fc] = True
-    return mask, minx, miny
+    return mask, minx, miny, raster_eff
 
 
 def mittellinie(polygon: Polygon, raster_mm: float = 200.0) -> list[Point]:
@@ -42,10 +55,10 @@ def mittellinie(polygon: Polygon, raster_mm: float = 200.0) -> list[Point]:
     """
     if len(polygon) < 3:
         return []
-    mask, minx, miny = _raster(polygon, raster_mm)
+    mask, minx, miny, raster_eff = _raster(polygon, raster_mm)
     skel = _skeletonize(mask)
     rows, cols = np.nonzero(skel)
-    return [(minx + (c - 1) * raster_mm, miny + (r - 1) * raster_mm) for r, c in zip(rows, cols)]
+    return [(minx + (c - 1) * raster_eff, miny + (r - 1) * raster_eff) for r, c in zip(rows, cols)]
 
 
 def leuchten_auf_linie(polygon: Polygon, abstand_mm: float, raster_mm: float = 200.0) -> list[Point]:

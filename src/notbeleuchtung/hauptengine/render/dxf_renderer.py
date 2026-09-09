@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import math
 import re
+from itertools import pairwise
 from pathlib import Path
 
 import ezdxf
@@ -544,16 +545,64 @@ def _draw_tueren(msp, raum: RaumModell) -> int:
     return drawn
 
 
+# Fluchtweg-Richtungspfeile (Owner-Regel 2026-09-09): die grüne Linie trägt Chevrons
+# in Reiserichtung (zum ziel_ausgang), damit auf einen Blick klar ist, wohin der
+# Fluchtweg führt (OG → Stiegenhaus, EG → Ausgänge).
+_FLUCHTWEG_PFEIL_ABSTAND_MM = 3500.0
+_FLUCHTWEG_PFEIL_GROESSE_MM = 350.0
+
+
+def _exit_xy(raum: RaumModell, ausgang_id: str | None):
+    if not ausgang_id:
+        return None
+    for a in raum.ausgaenge:
+        if a.id == ausgang_id:
+            return (float(a.xy_mm[0]), float(a.xy_mm[1]))
+    return None
+
+
+def _seg_reiserichtung(seg, raum: RaumModell) -> list[tuple[float, float]]:
+    """Segment-Punkte in Reiserichtung (pts[0] → pts[-1] zeigt zum Fluchtziel).
+
+    Die polyline-Reihenfolge gibt die Richtung vor; ist ein `ziel_ausgang` bekannt
+    und liegt der ERSTE Punkt näher am Ausgang als der letzte, wird umgedreht, damit
+    die Pfeile verlässlich zum Ziel zeigen (unabhängig von der Erzeuger-Reihenfolge)."""
+    pts = [(float(x), float(y)) for x, y in seg.polyline_mm]
+    ziel = _exit_xy(raum, getattr(seg, "ziel_ausgang", None))
+    if ziel is not None and len(pts) >= 2:
+        d0 = math.hypot(pts[0][0] - ziel[0], pts[0][1] - ziel[1])
+        dn = math.hypot(pts[-1][0] - ziel[0], pts[-1][1] - ziel[1])
+        if d0 < dn:
+            pts = list(reversed(pts))
+    return pts
+
+
+def _draw_fluchtweg_pfeile(msp, pts: list[tuple[float, float]]) -> None:
+    """Chevrons (>) entlang der Polylinie in Reiserichtung, im Fluchtweg-Grün."""
+    for (x0, y0), (x1, y1) in pairwise(pts):
+        laenge = math.hypot(x1 - x0, y1 - y0)
+        if laenge < 1.0:
+            continue
+        ang = math.atan2(y1 - y0, x1 - x0)
+        n = max(1, int(laenge // _FLUCHTWEG_PFEIL_ABSTAND_MM))
+        for k in range(1, n + 1):
+            t = laenge * k / (n + 1)
+            cx, cy = x0 + math.cos(ang) * t, y0 + math.sin(ang) * t
+            for da in (math.radians(148.0), math.radians(-148.0)):
+                bx = cx + _FLUCHTWEG_PFEIL_GROESSE_MM * math.cos(ang + da)
+                by = cy + _FLUCHTWEG_PFEIL_GROESSE_MM * math.sin(ang + da)
+                msp.add_line((bx, by), (cx, cy), dxfattribs={"layer": LAYER_FLUCHTWEG})
+
+
 def _draw_segmente(msp, raum: RaumModell) -> int:
-    """Fluchtweg-Segmente als dünne Polylines (Review gegen die GU-PDF)."""
+    """Fluchtweg-Segmente als dünne Polylines + Richtungspfeile (Review gegen die GU-PDF)."""
     drawn = 0
     for seg in raum.zirkulation.segmente:
         if len(seg.polyline_mm) < 2:
             continue
-        msp.add_lwpolyline(
-            list(seg.polyline_mm),
-            dxfattribs={"layer": LAYER_FLUCHTWEG},
-        )
+        pts = _seg_reiserichtung(seg, raum)
+        msp.add_lwpolyline(pts, dxfattribs={"layer": LAYER_FLUCHTWEG})
+        _draw_fluchtweg_pfeile(msp, pts)
         drawn += 1
     return drawn
 
@@ -1220,6 +1269,7 @@ def render_dxf(
     photometrie=None,
     unterlage_dxf: str | None = None,
     template_path: Path | str | None = None,
+    rz_sl_farbtrennung: bool = True,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
@@ -1289,9 +1339,18 @@ def render_dxf(
         belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
 
+    # din-Farbtrennung (Referenzplan V25): Rettungszeichen grün (SAFETY_LAYER),
+    # reine Sicherheits-/Antipanikleuchten auf den gelben Zwilling. Aus → alles grün
+    # (Owner-Fixierung #102). RZ und alles Übrige bleiben immer grün.
+    _SL_KINDS = ("sicherheitsleuchte", "antipanik")
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
-        inserter.insert_platzierung(doc, p)
+        lyr = (
+            library.SAFETY_LAYER_SL
+            if rz_sl_farbtrennung and p.kind in _SL_KINDS
+            else library.SAFETY_LAYER
+        )
+        inserter.insert_platzierung(doc, p, layer=lyr)
         by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
 
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
@@ -1335,6 +1394,8 @@ def render_dxf(
         "blatt_layout_drawn": blatt_drawn,
         "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
         "layer": LAYER_NOTBELEUCHTUNG,
+        "layer_sl": library.SAFETY_LAYER_SL if rz_sl_farbtrennung else LAYER_NOTBELEUCHTUNG,
+        "rz_sl_farbtrennung": rz_sl_farbtrennung,
         # Slice 3.4 (Template-Modus): dict-Erweiterung, kein Contract.
         **(layout_summary or {}),
     }

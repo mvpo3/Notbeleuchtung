@@ -4,6 +4,40 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-08, Session-Ende F2) — Lichtberechnung IN der Hauptengine + Platzierungs-Fixes
+
+**origin/main = `f6a753b`.** Alles gepusht/gemergt, `leonis/f2-work` == main. F2-Worktree
+war Arbeitsort; **F1 zieht `git pull` und hat das volle Paket.** Kein Contract-Touch,
+ganze Suite grün (contract 53 · platzierung 253 · normwissen/naht/hauptengine 395 · e2e 24),
+ruff clean, kein Schema-Drift.
+
+**Was neu auf main ist (diese Session):**
+1. **Lichtberechnung IN der Hauptengine** (Owner-Wunsch „immer je Plan"): neues
+   `hauptengine/render/lux_nachweis_bericht.py::schreibe_bericht` — DIALux-artige Rivoplan-
+   Nachweis-Seite aus dem FERTIGEN `PlatzierungsErgebnis` (Falschfarben-Feld + EN-1838-
+   Nachweis + polare LVK + Logo, robust bei vielen Fluchtwegen). Verdrahtet: `pipeline.
+   _run_mit_quelle` schreibt `<out>.nachweis.png` + `render_summary["lux_nachweis"]`
+   (try/except, nie plan-brechend); `projekt._merge_pdf` hängt die Seite je Geschoss ins
+   Sammel-PDF. **Test:** `run_projekt(..., pdf=True)` → PDF = Plan-Seite + Nachweis-Seite je
+   Geschoss (end-to-end auf Mollgasse EG verifiziert). `scripts/lux_nachweis_bericht.py` = CLI.
+2. **Aufheller lux-bedingt** (`fachpraxis.aufheller_je_rz` +norm/+i_cd_fn): setzt Aufheller
+   nur wo E < min_lux — nur mit echter Photometrie (ohne LDT bedingungslos). Antipanik+
+   Fluchtweg waren schon lux-getrieben.
+3. **Deckungs-Fix** (`abstand_nachpass`): SL-Dublette (<2 m) wird nur noch im GLEICHEN Raum
+   gemergt — vorher verlor ein Korridor seine einzige Fluchtweg-SL an den Nachbarn → dunkel
+   (Mollgasse raum_34). Jetzt kein Korridor mehr ohne SL (9/12→10/12). + Perf-Guard.
+4. **Wissen:** `knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md` (3 echte Profi-Reports:
+   MF 0,80/0,57, ohne Reflexion, Mittellinie≥1+Mittelfläche≥0,5, Ud≥1:40). Wartungsfaktor-
+   Mechanismus liegt **inert** in `lux.py`/`deckung.py` (Default 1,0).
+
+**Offene Nähte (keine Bugs — „loose ends"):** ① **Enis:** Feld `NormAnforderung.wartungsfaktor`
++ Werte 0,80/0,57 füllen → dann rechnet die Engine wie die Profis (bis dahin Bericht zeigt MF,
+Rechnung ignoriert ihn). ② **Selman:** 2 Mollgasse-Korridore (raum_41/55) = 494-Punkt-Spikey-
+Polygone → Mittellinie in Zacken → Nachweis scheitert (Erkennungs-Sache). ③ **Testschuld
+(Leonis):** Bericht hat nur Smoke-Test, kein Inhalts-Test; reimplementiert `_rw_stats` statt
+`lux_nachweis.nachweis_fluchtweg`; Asset-Pfade repo-relativ (pip-Paket fände Logo/LDT nicht).
+④ Alte Backlog-Branches sind stale/Fork-blockiert (`git cherry` geprüft) — **nichts zu mergen.**
+
 ## STAND (2026-09-07, GANZ SPÄT/Session-Ende 3) — Enis-L1/L3-Review + Selman-Antwort
 
 **Enis' gemeinsame L1/L3-Fassung reviewt** (Commit `8801aa6`, Branch
