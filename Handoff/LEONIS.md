@@ -4,6 +4,118 @@
 > `src/notbeleuchtung/platzierung/`. GitHub `@mvpo3`. Task: **Issue #2**.
 > Du hast als Einziger elektro-planer-Zugriff → du stagst Port-Material für andere.
 
+## STAND (2026-09-10) — MULTI-SLICE Wissens-/Normabgleich, Phase 3 LÄUFT (Branch `leonis/wissensabgleich-engine`)
+
+**AKTIVE AUFGABE. Hier weitermachen.** Owner-Task: Wissens-/Normabgleich + Verbesserung
+Platzierungslogik & Lichtberechnung. Multi-Phasen mit STOP-Gates. Branch
+`leonis/wissensabgleich-engine`, basiert auf main `fd65839`. **Noch NICHTS gepusht.**
+
+**Bindende Regeln (Owner):** Scope FIX_SRC/FIX_YAML/FIX_CONTRACTS/FIX_FIXTURES = JA.
+Contract-Touch → `contract_version`-Bump + `scripts/gen_schema.py` + Protokoll in
+`docs/audit/HANDOFF_B_ENIS.md` (Protokoll, KEINE Freigabe-Anfrage). Je Fix: 3–8 Z. Pseudocode +
+Dateiliste VOR Code · ein Fix = ein Commit (em-dash, Fix-ID im Betreff) · ein Test mit EXAKTER
+Assertion (keine Toleranz) · neue Regeln über NormProvider-Lookup, nicht als Konstante · nach
+jedem Fix `pytest -q` + `ruff check .` grün, sonst Fix zurücknehmen statt Test anpassen.
+**STOP-Gates nur drei:** nach Phase 0 · nach Phase 2 (beide passiert) · **vor Push/Merge** (da
+stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owner-GO.**
+
+**Audit liegt in `docs/audit/`** (untracked, auf Platte): `REPORT.md`, `FIX_PLAN.md`,
+`01_plan_forensik/02_wissens_coverage/03_engine_ist/05_widersprueche/06_naht_owner_matrix.md`.
+`FIX_PLAN.md` = die Fix-Liste F01–F18 + mein Vote. **Zugesagt: Block 1+2+3 (F01–F14). Block 4
+(F15–F18) = Handoff, NICHT bauen.**
+
+**COMMITS auf dem Branch (git log):**
+- `238d0d1` F04 — Redundanz-Reichweite aus `norm.erkennungsweite_m` statt Konstante (W08)
+- `9c277a3` F03 — Pfeil-Rotation `bausteine.rotation_zur_tuer` (4× Dup → 1) (W16)
+- `0c37b90` F01 — Wartungsfaktor im Lux-Nachweis-Bericht aus EINER Quelle, 0,80 nicht hart (W09)
+- `cec7d05` F02 — Wartungsfaktor `lux.wartungsfaktor_aus_norm` (5× getattr → 1 Helper) (W09)
+- `72662f5` **W-LIB** (Extra-Fund) — `symbols/library.py` Normalisierungs-Cache per Doc-Objekt
+  (`WeakKeyDictionary`) statt `id(doc)`. **Root Cause eines Ordering-Flakes** (render/test_pfeilrichtung
+  kippte je nach Suite-Ordering) **+ echter Batch-Render-Bug** (id()-Reuse nach GC → un-zentrierte
+  Blöcke). Ohne den Fix ist der Vollauf ordnungsabhängig rot. Regression: `tests/render/test_library_cache.py`.
+- `23e3918` F05 — Toiletten-Scope §4.3.8 aus EINER Quelle `bausteine.TOILETTE_EINDEUTIG/_MEHRDEUTIG`
+  (vorher 3× hart in sonderstellen_strategy + validierung) (W10)
+- **F06 — FERTIG EDITIERT, COMMIT AUSSTEHEND**: `validierung.py` getrennter-Kreis Warnung→**fehler**
+  (Hard-Stop, W13). Test `test_getrennter_kreis_hardstop` + `test_validierung.py::test_fehlender_
+  sicherheitskreis_ist_fehler` angepasst. **Committen sobald der laufende Vollauf grün ist**
+  (Commit-Msg liegt in scratchpad `msg_f06.txt`; Muster: `git commit -F`). Danach Block 1 komplett.
+
+**NÄCHSTE SCHRITTE (in Reihenfolge):**
+1. **F06 committen** (nach grünem Vollauf) → Block 1 fertig (F01–F06 + W-LIB).
+2. **Block 2:** **F08** (erkennungsweite_m im `place()`-Pfad verdrahten ODER sichtlinie-Pfad
+   `plan_rettungszeichen_sichtlinie` als deaktiviert dokumentieren — er ist test-only, nicht im
+   place-Pfad; W17, Dep F03) → **F07** (≥2-Leuchten-Redundanz-Garantie je Abschnitt + Prüf-Hard-Fail;
+   W19, Dep F04, **Verhaltensänderung = dichter → E2E-Sichtprüfung nötig**). Dateien: platzierer.py/
+   anker_strategy.py bzw. deckung.py/validierung.py.
+3. **Block 3 (🟨, berührt `normwissen/data` → HANDOFF_B_ENIS.md protokollieren):** **F09** Wartungsfaktor
+   innen 0,80 [AT-verbindlich] / außen 0,57 [AT-Referenzpraxis] — **Contract-Feld
+   `NormAnforderung.wartungsfaktor` ergänzen (norm_regelwerk.py, CONTRACT_VERSION 1.2.0→bump) +
+   `gen_schema.py` + YAML füllen + provider.py liest es**. F02 hat den Konsum-Hook schon gelegt
+   (`lux.wartungsfaktor_aus_norm`) → F09 füllt nur die Quelle, dann greift 0,80 überall gleichzeitig.
+   **ACHTUNG Golden-Shift:** 0,80 < 1,0 → dichtere SL-Platzierung → E2E-Symbolzahlen ändern sich →
+   Golden bewusst nachziehen (inhaltlich nötig, norm-korrekt) + voller pytest. Dann **F11** (Antipanik-
+   Trigger 60/8 m² als Referenz-Praxis in `ove_e8101_zusatz.yaml`, OVE-scope-gated), **F12**
+   (seitenselektiver Randbereich), **F13** (Stiege podest-gestaffelte Höhe), **F14** (grün=RZ/gelb=SL
+   Layer). **F10 (Blendungsgrenzen f(h)) HÄNGT an Enis' cd-Werten → wird Handoff, nicht Fix.**
+4. **Phase 4 Verify:** `.venv/Scripts/python.exe -m pytest -q` (voll, ~8 min) · `gen_schema.py` (falls
+   Contract) · `ruff check .` · E2E: neues DXF rendern vs. 4OG-GU-PDF → **`docs/audit/07_sichtpruefung.md`**
+   (Abweichungen dokumentieren).
+5. **STOP vor Push.** Commit-Liste + Sichtprüfungs-Abweichungen an Owner. **Push/PR/Merge nur auf GO.**
+
+**FALLEN / gelernt in dieser Session:**
+- **Voller `pytest` ~8 min** — nur an Verhaltens-Fixes (F07/F09) + einmal in Phase 4 nötig, sonst
+  targeted. Läuft via `run_in_background`, Notification abwarten (nicht pollen).
+- **`git commit` Heredoc scheiterte in PS** → Message in scratchpad-Datei + `git commit -F`.
+- **NIE `git add -A`** (zieht scratchpad/.bak/Zips rein). Nur die Fix-Dateien einzeln stagen.
+  `docs/audit/` ist noch untracked (bewusst; am Ende committen oder Owner fragen).
+- **W-LIB-Lektion:** Wenn ein Render-/Symbol-Test ordnungsabhängig kippt, Verdacht `id()`-gekeyter
+  Cache in `symbols/library.py` (jetzt gefixt). platzierung+render-Kombo war der schnelle Repro.
+- **Naht-Grenzen (aus Audit):** `sonderstellen.raumtyp_scope`/YAML-Vokabular liegt am konkreten
+  `OveZusatzKatalog`, NICHT am 4-Methoden-Port `NormProvider` (ports.py:43). Consumer an die YAML zu
+  hängen braucht neue Port-Methode = contracts/** = 3-Owner → F15/F16-Handoff. `norm_quelle`-Praxis-
+  Präfixe brechen die Naht-Invariante → decision_source-Contract = F15.
+
+## STAND (2026-09-08, Session-Ende F1 SPÄT) — Master-Plan durch, Skills/Tools, #129-Salvage, Demo
+
+**origin/main ≈ `97a5f3a`.** Kompletter Master-Plan (plan-Datei `.claude/plans/deep-strolling-naur.md`)
+abgearbeitet + Tooling. Alles gemergt außer den Vorschlägen unten. Suite grün, ruff clean.
+
+**Heute auf main gebracht:**
+- **6-Branch-Stack + Rotations-Fork** gemergt (#132 ausgabeluecken · #133 slice-4.1 · **#134
+  slice-3.1 = Fork-Sieger, orientation.py Ein-Rahmen kanonisch** · #135 slice-2.3 fachpraxis ·
+  #136 slice-3.4 layout · #137 tuerleuchte). „ZIP-Landmine" war Phantom (Rebase zog main's ZIP).
+- **3 Konsum-Slices:** #138 `lux.py` Extents-Cap (8 Mio) · #139 `verbotszonen_nachpass` (S1) ·
+  #140 `flaechen_strategy` WOHNUNG_PRIVAT-Skip (S2).
+- **Türleuchten-KORREKTUR #141** (Owner): TECHNIK/MUELL/KINDERWAGEN → **RZ an der Tür** (Pfeil
+  zur Tür) statt SL; mittige Zusatzleuchte NUR wenn groß/L-Form (Aufheller <60 m² / Antipanik ≥60).
+- **Skills (Projekt, `.claude/skills/`, via Sync bei allen 3):** `plan-verify` (generieren+prüfen),
+  `sync-review` (Fremd-PR-Review), `wissen` (Second-Brain, Norm nur zitieren nie umschreiben).
+  **Tools:** `scripts/dxf_healthcheck.py` (Eingabe-DXF-Gesundheit, kapselt 4OG-Diagnose),
+  `scripts/wissen_index.py` (+`knowledge/INDEX.md`), `scripts/norm_coverage.py` (Wissens-Konsum
+  je Plan: norm/praxis/unbegruendet). Alle mit Tests, ruff clean.
+- **Enis L1/L3** 2× Windows-gegengeprüft (`19c987d`→Issue #131; **`0b66485` rebased → „zur
+  Übernahme empfohlen"**, 101 passed, T1/L2 separat).
+
+**OFFEN für nächste Session (nichts blockierter Leonis-Code):**
+1. **#146 = Salvage von Selmans #129** (`selman/grundstuecksgrenze-hof-neu`): aktuelles main +
+   Contract v1.3.0 (`Tuer.quelle`/`untypisiert_grund`) + Selmans raumerkennung, **Rotations-Teil
+   gedroppt** (durch 3.1 ersetzt), Ruff gefixt. 1044+7 grün, schema in sync. **Contract=3-Owner →
+   Enis+Selman-Approval, nicht einseitig mergen.** Kommentar auf #129 zeigt auf #146; Selman muss
+   raumerkennung fachlich abnehmen + ggf. #129 schließen.
+2. **Baufeld 4OG** = Koordinaten-Versatz (61 % Entities bei y≈347.535 km, `dxf_healthcheck`
+   flaggt NO-GO). Fix = User-AutoCAD-`MOVE`/`PURGE` ODER Selman `rest_komponenten` ausreißer-robust
+   (`_geschoss_extents`-Muster). 7/8 Geschosse sauber + renderbar (`scripts/projekt_batch_worker.py`
+   im OWNER-Terminal via `!` — Hintergrund-Renders werden hier gekillt).
+3. **Demo-/Grundriss-Lektion** (Owner-Feedback, Memory `demo-grundriss-grenze.md`): synthetische
+   Grundrisse selbst zeichnen ist schwach (Stiegenhaus MUSS an den Gang = Fluchtziel!). Für echte
+   Pläne realen Architektur-DXF nutzen. **Lichtberechnung = `render/lux_nachweis_bericht.
+   schreibe_bericht`** (NICHT `render_dxf`; `pipeline.run` ruft es auto — bei place()+render_dxf
+   selbst aufrufen). Demo-Skripte `scratchpad/demo_l/gen3.py`+`render3.py`.
+4. **Türleuchte-Detail offen:** B1-Aufheller hinter dem Tür-RZ behalten oder ausnehmen (Owner).
+5. **Phase 6:** `decision_source`-Contract (3-Owner), A1-Format.
+
+---
+
 ## STAND (2026-09-08, Session-Ende F2) — Lichtberechnung IN der Hauptengine + Platzierungs-Fixes
 
 **origin/main = `f6a753b`.** Alles gepusht/gemergt, `leonis/f2-work` == main. F2-Worktree
