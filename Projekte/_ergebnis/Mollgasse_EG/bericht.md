@@ -519,7 +519,7 @@ Quellen: FALLBACK: 4, GRAPH: 19, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 31 |
+| ALLGEMEIN_ERSCHLIESSUNG | 33 |
 | ALLGEMEIN_NEBENRAUM | 11 |
 | WOHNUNG_PRIVAT | 11 |
 | kein Raum | 8 |
@@ -722,4 +722,4 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 | tuer_ins_nichts | 1 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 276.9 s
+Laufzeit: 292.5 s

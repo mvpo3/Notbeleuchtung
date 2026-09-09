@@ -59,7 +59,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-25 / 41 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+24 / 41 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -94,7 +94,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_18 | raum_11 | raum_14 | wohnungseingang | 880 | — | durchgang |  |
 | durchgang_19 | raum_12 | raum_14 | — | 5493 | — | durchgang | unbekannte_kombination |
 | durchgang_20 | raum_12 | raum_14 | — | 1786 | — | durchgang | unbekannte_kombination |
-| durchgang_21 | raum_12 | raum_16 | hauseingang | 980 | — | durchgang+text:TÜRSCHLIESSER |  |
+| durchgang_21 | raum_12 | raum_16 | — | 980 | — | durchgang+text:TÜRSCHLIESSER | unbekannte_kombination |
 | durchgang_22 | raum_13 | raum_16 | — | 2137 | — | durchgang | unbekannte_kombination |
 | durchgang_23 | raum_14 | raum_15 | stiegenhaustuer | 2080 | — | durchgang |  |
 | durchgang_24 | raum_15 | raum_16 | stiegenhaustuer | 2100 | — | durchgang |  |
@@ -155,9 +155,10 @@ Quellen: FALLBACK: 1, GRAPH: 8
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 6 |
+| ALLGEMEIN_ERSCHLIESSUNG | 7 |
+| ALLGEMEIN_NEBENRAUM | 1 |
 | AUSSEN | 1 |
-| kein Raum | 5 |
+| kein Raum | 6 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
@@ -235,9 +236,9 @@ Quellen: FALLBACK: 1, GRAPH: 8
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 7 |
+| unbekannte_kombination | 8 |
 | kein_nachbarraum | 4 |
 | tuer_ins_nichts | 4 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 53.9 s
+Laufzeit: 56.0 s

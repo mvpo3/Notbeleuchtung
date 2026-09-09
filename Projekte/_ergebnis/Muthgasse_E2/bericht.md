@@ -23,6 +23,7 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:21 R:0` — Rotation: Wände vertikal-d
 | L | AR | ABSTELLRAUM | 3.49 | 3.49 | +0.1 | ok |
 | L | Bad | BAD | 6.35 | 6.35 | -0.0 | ok |
 | L | Gang | GANG | 28.52 | 28.52 | -0.0 | ok |
+| L | KIWA | KINDERWAGENRAUM | 15.77 | 15.77 | +0.0 | ok |
 | L | Loggia | BALKON | 5.72 | 5.72 | -0.0 | ok |
 | L | Loggia | BALKON | 5.14 | 5.14 | +0.0 | ok |
 | L | Wohnküche | KÜCHE | 17.57 | 17.57 | +0.0 | ok |
@@ -109,7 +110,6 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:21 R:0` — Rotation: Wände vertikal-d
 | L | raum_59 | — | — | 10.92 | — | kein_stempel |
 | L | raum_61 | — | — | 4.87 | — | kein_stempel |
 | L | raum_65 | — | — | 13.04 | — | kein_stempel |
-| L | raum_66 | — | — | 15.77 | — | kein_stempel |
 | L | raum_67 | — | — | 3.73 | — | kein_stempel |
 | L | raum_70 | — | — | 3.60 | — | kein_stempel |
 | L | raum_71 | — | — | 2.93 | — | kein_stempel |
@@ -117,14 +117,13 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:21 R:0` — Rotation: Wände vertikal-d
 | L | raum_78 | — | — | 2.97 | — | kein_stempel |
 | H | raum_81 | ZIMMER | — | 1.17 | — | kein_stempel |
 
-## Restflächen ohne Stempel (12)
+## Restflächen ohne Stempel (11)
 
 - raum_48 [L] —: 11.91 m², Zentrum (317.64, 110.76) m
 - raum_52 [L] —: 5.19 m², Zentrum (333.29, 111.82) m
 - raum_59 [L] —: 10.92 m², Zentrum (317.82, 108.33) m
 - raum_61 [L] —: 4.87 m², Zentrum (313.78, 108.12) m
 - raum_65 [L] —: 13.04 m², Zentrum (335.15, 108.93) m
-- raum_66 [L] —: 15.77 m², Zentrum (327.31, 106.61) m
 - raum_67 [L] —: 3.73 m², Zentrum (333.11, 97.75) m
 - raum_70 [L] —: 3.60 m², Zentrum (321.23, 90.09) m
 - raum_71 [L] —: 2.93 m², Zentrum (325.11, 97.22) m
@@ -132,7 +131,7 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:21 R:0` — Rotation: Wände vertikal-d
 - raum_78 [L] —: 2.97 m², Zentrum (331.67, 102.15) m
 - raum_81 [H] ZIMMER: 1.17 m², Zentrum (677.02, -137.03) m
 
-## Warnungen (38)
+## Warnungen (37)
 
 - Stempel ohne Polygon: „Wohnküche“
 - Stempel ohne Polygon: „Wohnküche“
@@ -147,7 +146,6 @@ Raum-Polygon-Quelle: `kaskade L:80 H:1 F:21 R:0` — Rotation: Wände vertikal-d
 - Polygon ohne Stempel: raum_59 (10.92 m²)
 - Polygon ohne Stempel: raum_61 (4.87 m²)
 - Polygon ohne Stempel: raum_65 (13.04 m²)
-- Polygon ohne Stempel: raum_66 (15.77 m²)
 - Polygon ohne Stempel: raum_67 (3.73 m²)
 - Polygon ohne Stempel: raum_70 (3.60 m²)
 - Polygon ohne Stempel: raum_71 (2.93 m²)
@@ -484,7 +482,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-219 / 307 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+219 / 308 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -604,7 +602,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_114 | raum_59 | raum_59 | — | 0 | ja | text:E2-10-07 | beide_seiten_untypisiert |
 | tuer_115 | raum_61 | raum_61 | — | 0 | ja | text:E2-10-06 | beide_seiten_untypisiert |
 | tuer_116 | raum_46 | raum_46 | — | 0 | ja | text:E2-VF-13a | unbekannte_kombination |
-| tuer_117 | raum_66 | raum_66 | — | 0 | ja | text:E2-NF-16 | beide_seiten_untypisiert |
+| tuer_117 | raum_66 | raum_66 | — | 0 | ja | text:E2-NF-16 | unbekannte_kombination |
 | tuer_118 | raum_64 | raum_64 | — | 0 | ja | text:E2-10-08 | unbekannte_kombination |
 | tuer_119 | raum_15 | raum_15 | — | 0 | ja | text:E2-12-08 | unbekannte_kombination |
 | tuer_120 | raum_16 | raum_16 | zimmertuer | 0 | ja | text:E2-13-01 |  |
@@ -795,8 +793,9 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | durchgang_159 | stiegenhaus_1 | stiegenhaus_5 | stiegenhaustuer | 4762 | — | durchgang |  |
 | durchgang_160 | stiegenhaus_1 | stiegenhaus_8 | stiegenhaustuer | 968 | — | durchgang |  |
 | durchgang_161 | stiegenhaus_6 | stiegenhaus_7 | stiegenhaustuer | 2082 | — | durchgang |  |
+| aussenoeffnung_1 | raum_66 | AUSSEN | — | 1704 | ja | oeffnung_aussenwand+text:E2-NF-16 | unbekannte_kombination |
 
-## Ausgänge (13)
+## Ausgänge (14)
 
 | ID | Typ | x m | y m |
 |---|---|--:|--:|
@@ -813,6 +812,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_durchgang_154 | stair_exit | 337.04 | 105.35 |
 | exit_durchgang_160 | stair_exit | 336.19 | 103.69 |
 | exit_durchgang_161 | stair_exit | 291.60 | 108.60 |
+| exit_aussenoeffnung_1 | final_exit | 325.94 | 105.25 |
 
 ## Fluchtweg-Segmente (155)
 
@@ -1000,13 +1000,13 @@ Quellen: FALLBACK: 1, GRAPH: 15, LINIE: 139
 | tuer_54 | 24.2 | GRAPH | exit_tuer_133 |
 | tuer_55 | 7.3 | Luftlinie | exit_durchgang_152 |
 | durchgang_5 | 5.7 | Luftlinie | exit_durchgang_103 |
-| durchgang_9 | 9.1 | Luftlinie | exit_durchgang_103 |
+| durchgang_9 | 6.6 | Luftlinie | exit_aussenoeffnung_1 |
 | durchgang_55 | 3.7 | Luftlinie | exit_tuer_99 |
 | durchgang_59 | 16.8 | GRAPH | exit_tuer_133 |
 | durchgang_62 | 1.2 | Luftlinie | exit_tuer_99 |
 | durchgang_68 | 9.3 | Luftlinie | exit_tuer_99 |
 | durchgang_97 | 23.4 | GRAPH | exit_tuer_133 |
-| durchgang_101 | 6.2 | Luftlinie | exit_durchgang_103 |
+| durchgang_101 | 4.1 | Luftlinie | exit_aussenoeffnung_1 |
 | durchgang_111 | 29.0 | GRAPH | exit_tuer_133 |
 | durchgang_146 | 7.0 | Luftlinie | exit_tuer_99 |
 | durchgang_147 | 8.6 | Luftlinie | exit_tuer_99 |
@@ -1017,15 +1017,16 @@ Quellen: FALLBACK: 1, GRAPH: 15, LINIE: 139
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 18 |
-| WOHNUNG_PRIVAT | 25 |
-| kein Raum | 36 |
-| _davon auf Treppenlauf/Verbotszone_ | 7 |
+| ALLGEMEIN_ERSCHLIESSUNG | 19 |
+| ALLGEMEIN_NEBENRAUM | 4 |
+| WOHNUNG_PRIVAT | 29 |
+| kein Raum | 40 |
+| _davon auf Treppenlauf/Verbotszone_ | 6 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 25 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 7 Leuchten (muss 0 sein)
+- WOHNUNG_PRIVAT: 29 Leuchten (muss 0 sein)
+- Treppenlauf/Verbotszone: 6 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
@@ -1059,6 +1060,8 @@ Quellen: FALLBACK: 1, GRAPH: 15, LINIE: 139
 | tuer_44 | (317.39, 111.18) | 270.0 | 0.0 | 90.0 | abweichend |
 | durchgang_123 | (324.02, 107.91) | 90.0 | 90.0 | 0.0 | ok |
 | durchgang_123 | (323.56, 108.05) | 90.0 | 90.0 | 0.0 | ok |
+| tuer_13 | (320.12, 110.36) | 90.0 | 90.0 | 0.0 | ok |
+| tuer_97 | (326.46, 109.28) | 180.0 | 180.0 | 0.0 | ok |
 
 ## Anker je Stiegenhaus (9 Stiegenhäuser)
 
@@ -1168,10 +1171,10 @@ Quellen: FALLBACK: 1, GRAPH: 15, LINIE: 139
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 50 |
+| unbekannte_kombination | 52 |
 | kein_nachbarraum | 21 |
-| beide_seiten_untypisiert | 13 |
+| beide_seiten_untypisiert | 12 |
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 1807.7 s
+Laufzeit: 1838.0 s
