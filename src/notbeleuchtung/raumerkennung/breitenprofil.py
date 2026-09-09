@@ -38,6 +38,7 @@ TOLERANZ_MM = 100.0       # Breitenband eines Abschnitts konstanter Breite
 MIN_ABSCHNITT_MM = 500.0  # kürzer = keine eigene Abschnittsbreite
 TUER_RADIUS_MM = 400.0    # Abtastpunkt gilt als Türdurchgang
 ECKE_MIN_GRAD = 20.0      # darunter Stützpunkt-Rauschen, keine echte Ecke
+ECKE_FENSTER_MM = 500.0   # Fenster, über das der Knick gemessen wird
 
 
 @dataclass(frozen=True)
@@ -60,6 +61,7 @@ class Abschnitt:
     von_mm: float
     bis_mm: float
     breite_mm: float
+    quelle: str = "gemessen"   # Audit-Trail; NIE ein Normwert
 
     @property
     def laenge_mm(self) -> float:
@@ -92,6 +94,12 @@ class Breitenprofil:
 
 
 # ── Messung ──────────────────────────────────────────────────────────────────
+def _median(werte: list[float]) -> float:
+    s = sorted(werte)
+    m = len(s) // 2
+    return s[m] if len(s) % 2 else (s[m - 1] + s[m]) / 2
+
+
 def _achse(polyline_mm: list[XY]) -> LineString | None:
     pts = [(float(x), float(y)) for x, y in polyline_mm]
     entdoppelt = [p for i, p in enumerate(pts) if i == 0 or p != pts[i - 1]]
@@ -102,15 +110,17 @@ def _achse(polyline_mm: list[XY]) -> LineString | None:
 
 
 def _richtung(linie: LineString, s: float) -> XY:
-    """Einheits-Tangente des Achsenstücks, in dem der Laufmeter s liegt."""
-    rest = s
-    coords = list(linie.coords)
-    for a, b in pairwise(coords):
-        laenge = math.dist(a, b)
-        if rest <= laenge or (a, b) == (coords[-2], coords[-1]):
-            return ((b[0] - a[0]) / laenge, (b[1] - a[1]) / laenge)
-        rest -= laenge
-    return (1.0, 0.0)
+    """Einheits-Tangente bei Laufmeter s, als SEHNE über ein Fenster gemessen.
+
+    Die lokale Tangente eines Skelett-Stützpunkts kippt um bis zu 15 Grad
+    (Zickzack von wenigen Millimetern); die Normale steht dann schief und misst
+    systematisch zu breit (1200 mm → 1224 mm). Die Sehne mittelt das weg.
+    """
+    a = linie.interpolate(max(0.0, s - ECKE_FENSTER_MM / 2))
+    b = linie.interpolate(min(linie.length, s + ECKE_FENSTER_MM / 2))
+    dx, dy = b.x - a.x, b.y - a.y
+    n = math.hypot(dx, dy)
+    return (dx / n, dy / n) if n else (1.0, 0.0)
 
 
 def _innere_vertex_laufmeter(linie: LineString) -> list[float]:
@@ -123,11 +133,14 @@ def _innere_vertex_laufmeter(linie: LineString) -> list[float]:
     coords = list(linie.coords)
     out: list[float] = []
     s = 0.0
-    for i, (a, b) in enumerate(pairwise(coords[:-1])):
+    for a, b in pairwise(coords[:-1]):
         s += math.dist(a, b)
-        c = coords[i + 2]
-        v1 = (b[0] - a[0], b[1] - a[1])
-        v2 = (c[0] - b[0], c[1] - b[1])
+        # Knick über ein FENSTER messen, nicht zwischen Nachbar-Stützpunkten:
+        # ein Zickzack von 20 mm auf 200 mm ergibt sonst 22 Grad je Stützpunkt.
+        vor = linie.interpolate(max(0.0, s - ECKE_FENSTER_MM))
+        nach = linie.interpolate(min(linie.length, s + ECKE_FENSTER_MM))
+        v1 = (b[0] - vor.x, b[1] - vor.y)
+        v2 = (nach.x - b[0], nach.y - b[1])
         n1, n2 = math.hypot(*v1), math.hypot(*v2)
         if not n1 or not n2:
             continue
@@ -281,13 +294,21 @@ def _markiere(roh: list[Messpunkt], achse: LineString,
         tuer_idx.update(i for i in nah if roh[i].breite_mm <= eng + toleranz)
 
     ecken = _innere_vertex_laufmeter(achse)
+    gemessen = [m.breite_mm for i, m in enumerate(roh)
+                if m.breite_mm is not None and i not in tuer_idx]
+    # Fenster = lokale Breite, aber GEDECKELT auf die halbe typische Breite des
+    # Segments. Ohne Deckel löscht eine Ecke in einen 5,8-m-Raum ±5,8 m Profil
+    # (Rennweg_EG: 61 von 68 Punkten), ohne die lokale Breite verliert man
+    # umgekehrt die schmalen Punkte in weiten Segmenten.
+    deckel = _median(gemessen) / 2 if gemessen else 0.0
     return [
         Messpunkt(
             m.laufmeter_mm, m.xy_mm, m.breite_mm,
             ist_tuerdurchgang=i in tuer_idx,
             an_richtungswechsel=(
                 m.breite_mm is not None and i not in tuer_idx
-                and any(abs(m.laufmeter_mm - e) < m.breite_mm for e in ecken)
+                and any(abs(m.laufmeter_mm - e) < min(m.breite_mm, deckel)
+                        for e in ecken)
             ),
             grund=m.grund,
         )
@@ -296,12 +317,6 @@ def _markiere(roh: list[Messpunkt], achse: LineString,
 
 
 # ── Abschnitte konstanter Breite ─────────────────────────────────────────────
-def _median(werte: list[float]) -> float:
-    s = sorted(werte)
-    m = len(s) // 2
-    return s[m] if len(s) % 2 else (s[m - 1] + s[m]) / 2
-
-
 def _abschnitte(gang: list[Messpunkt], toleranz: float,
                 min_laenge: float) -> list[Abschnitt]:
     """Greedy: Lauf erweitern, solange die Spanne im Toleranzband bleibt. Zu
