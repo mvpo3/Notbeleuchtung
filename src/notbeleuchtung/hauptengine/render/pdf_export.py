@@ -14,6 +14,45 @@ from __future__ import annotations
 
 from pathlib import Path
 
+#: Fester Liefer-Maßstab (Owner 2026-09-09, Referenz MOL_GR-…_1-50): das PDF ist ein
+#: ECHTES Vektor-Blatt, dessen Seite = Zeichnungs-Ausschnitt / Maßstab misst — so lässt es
+#: sich wie ein CAD-Plan stufenlos zoomen (statt eines kleinen tight-gecroppten Rasters).
+#: 1 Zeichnungs-mm → 1/50 Seiten-mm. Nur wirksam mit `ausschnitt`; None = altes A3-Verhalten.
+_LIEFER_MASSSTAB = 50
+#: Kanten-Deckel gegen Phantom-Extents (korrupte DXF) — nie größer als 5 m Blatt.
+_MAX_BLATT_MM = 5000.0
+#: Layer des Blatt-Rahmens (Rivoplan-Vorlage) — sein Extent ist der Liefer-Ausschnitt.
+_TITLEBLOCK_LAYER = "din_SIBEL_99_titleblock"
+#: ISO-216 A-Reihe (Hochformat, mm) — das Liefer-PDF wird auf ein Norm-Blatt eingepasst
+#: (Owner 2026-09-09: „auf A1/A0 runden"). Default A0; A1 auf Wunsch.
+_ISO_A = {"A4": (210, 297), "A3": (297, 420), "A2": (420, 594),
+          "A1": (594, 841), "A0": (841, 1189)}
+#: Bedruckbarer Anteil (Rand rundum) — professioneller Blattrand.
+_DRUCK_ANTEIL = 0.96
+
+
+def _papier_mm(format_: str, quer: bool) -> tuple[float, float]:
+    """(Breite, Höhe) des A-Blatts in mm; `quer`=True → Querformat."""
+    s, l = _ISO_A[format_]
+    return (l, s) if quer else (s, l)
+
+
+def _auto_ausschnitt(doc):
+    """Extent des Blatt-Rahmens im Modelspace → Liefer-Ausschnitt (1:50-Blatt).
+
+    Damit JEDER PDF-Weg der Hauptengine (API, Batch, _merge_pdf, CLI) automatisch das
+    große Vektor-Blatt bekommt, ohne dass der Aufrufer den Ausschnitt kennen muss.
+    Kein Rahmen (kein Blatt-/Template-Modus) → None (A3-Fallback)."""
+    import ezdxf.bbox as _ezbbox
+
+    tb = [e for e in doc.modelspace() if e.dxf.layer == _TITLEBLOCK_LAYER]
+    if not tb:
+        return None
+    ext = _ezbbox.extents(tb, fast=True)
+    if not ext.has_data:
+        return None
+    return (ext.extmin.x, ext.extmin.y, ext.extmax.x, ext.extmax.y)
+
 
 def dxf_zu_pdf(
     dxf_path: str | Path,
@@ -22,14 +61,22 @@ def dxf_zu_pdf(
     dunkel: bool = False,
     dpi: int = 300,
     breite_zoll: float = 16.5,
-    hoehe_zoll: float = 11.7,   # A3 quer
+    hoehe_zoll: float = 11.7,   # A3 quer (Fallback ohne Ausschnitt)
     layout: str | None = None,  # z.B. "Notbeleuchtungsplan" = Owner-Blatt-Vorlage
     ausschnitt: tuple | None = None,  # (x0, y0, x1, y1) — nur diesen Bereich rendern
+    massstab: int | None = _LIEFER_MASSSTAB,  # Fallback-Seite = Ausschnitt/Maßstab, wenn kein Papierformat
+    papierformat: str | None = "A0",  # ISO-A-Norm-Blatt (A0/A1/…); None = Ausschnitt/Maßstab
 ) -> Path:
     """Rendert `dxf_path` in ein PDF (`pdf_path`) und gibt den Pfad zurück.
 
     `layout=None` rendert den Modelspace (bisheriges Verhalten); ein Layout-Name
-    rendert das Paperspace-Blatt (Planrahmen + Viewport, Owner-Vorlage)."""
+    rendert das Paperspace-Blatt (Planrahmen + Viewport, Owner-Vorlage).
+
+    `papierformat` (mit `ausschnitt`, Default „A0"): das Blatt wird auf ein ISO-A-Norm-
+    Format eingepasst (zentriert, aspektwahrend, Vektor, mit Rand) — Owner 2026-09-09
+    „auf A1/A0 runden". Querformat, wenn der Ausschnitt breiter als hoch ist. `None` fällt
+    auf `massstab` (Seite = Ausschnitt/Maßstab) zurück; ohne `ausschnitt` → altes A3-tight.
+    Das Linienwerk bleibt Vektor → in jedem Format stufenlos zoombar."""
     import ezdxf
     import matplotlib
 
@@ -46,6 +93,11 @@ def dxf_zu_pdf(
     # unangetastet — CAD rendert weiter mit seiner Standard-Schrift).
     if "Standard" in doc.styles:
         doc.styles.get("Standard").dxf.font = "DejaVuSans.ttf"
+    # „Immer so" (Owner 2026-09-09): ohne expliziten Ausschnitt automatisch den
+    # Blatt-Rahmen als 1:50-Liefer-Ausschnitt nehmen — gilt für JEDES PDF der Engine
+    # (API/Batch/CLI), nicht nur die Skripte. Nur bei PDF-Ausgabe (PNG bleibt wie bisher).
+    if ausschnitt is None and massstab and str(pdf_path).lower().endswith(".pdf"):
+        ausschnitt = _auto_ausschnitt(doc)
     bg = "black" if dunkel else "white"
     fig = plt.figure(figsize=(breite_zoll, hoehe_zoll), dpi=dpi)
     ax = fig.add_axes([0, 0, 1, 1])
@@ -77,6 +129,7 @@ def dxf_zu_pdf(
             if getattr(im, "_extent", None) is None:
                 im._extent = (0.0, float(arr.shape[1]), 0.0, float(arr.shape[0]))
             im.set_data(np.flip(arr, axis=0))
+        skaliertes_blatt = False
         if ausschnitt is not None:
             # finalize=True setzt aspect=equal mit adjustable='datalim' — dabei
             # überstimmt matplotlib feste xlim/ylim („Ignoring fixed x limits").
@@ -86,9 +139,32 @@ def dxf_zu_pdf(
             pad_x, pad_y = (x1 - x0) * 0.01, (y1 - y0) * 0.01
             ax.set_xlim(x0 - pad_x, x1 + pad_x)
             ax.set_ylim(y0 - pad_y, y1 + pad_y)
+            ext_w, ext_h = (x1 - x0 + 2 * pad_x), (y1 - y0 + 2 * pad_y)
+            if papierformat and papierformat in _ISO_A and ext_w > 0 and ext_h > 0:
+                # Auf ein ISO-A-Norm-Blatt einpassen: Seite = Norm-Format, Zeichnung
+                # zentriert + aspektwahrend in den bedruckbaren Bereich (Rand rundum).
+                # Achse als zentrierte Teil-Box → außen bleibt weißer Blattrand.
+                pw, ph = _papier_mm(papierformat, quer=ext_w >= ext_h)
+                fit = min(pw * _DRUCK_ANTEIL / ext_w, ph * _DRUCK_ANTEIL / ext_h)
+                bw, bh = ext_w * fit / pw, ext_h * fit / ph
+                fig.set_size_inches(pw / 25.4, ph / 25.4)
+                ax.set_position([(1 - bw) / 2, (1 - bh) / 2, bw, bh])
+                skaliertes_blatt = True
+            elif massstab:
+                # Fallback ohne Papierformat: Seite = Ausschnitt/Maßstab (Achse füllt sie).
+                page_w, page_h = ext_w / massstab, ext_h / massstab
+                k = max(page_w, page_h)
+                if k > _MAX_BLATT_MM:                      # Phantom-Extents deckeln
+                    page_w *= _MAX_BLATT_MM / k
+                    page_h *= _MAX_BLATT_MM / k
+                fig.set_size_inches(page_w / 25.4, page_h / 25.4)
+                skaliertes_blatt = True
         pdf_path = Path(pdf_path)
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
-        fig.savefig(str(pdf_path), facecolor=bg, bbox_inches="tight", pad_inches=0.2)
+        if skaliertes_blatt:
+            fig.savefig(str(pdf_path), facecolor=bg)          # Seite == figsize, Vektor
+        else:
+            fig.savefig(str(pdf_path), facecolor=bg, bbox_inches="tight", pad_inches=0.2)
     finally:
         plt.close(fig)
     return pdf_path

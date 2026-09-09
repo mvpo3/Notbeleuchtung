@@ -33,6 +33,29 @@ def test_dxf_zu_pdf_erzeugt_pdf(tmp_path):
     assert pdf.stat().st_size > 1000
 
 
+def _mm(pdf):
+    from pypdf import PdfReader
+    mb = PdfReader(str(pdf)).pages[0].mediabox
+    return float(mb.width) * 25.4 / 72, float(mb.height) * 25.4 / 72
+
+
+def test_liefer_pdf_norm_papierformat(tmp_path):
+    """Owner 2026-09-09: das Liefer-PDF ist ein ISO-A-Norm-Blatt (Default A0), auf das die
+    Zeichnung eingepasst wird — Vektor, zoombar. Querformat, da Ausschnitt breiter als hoch."""
+    aus = (0.0, 0.0, 50000.0, 40000.0)     # landscape
+    # Default A0 quer = 1189×841 mm
+    w, h = _mm(dxf_zu_pdf(_dxf(tmp_path), tmp_path / "a0.pdf", ausschnitt=aus, dpi=80))
+    assert abs(w - 1189.0) < 3.0 and abs(h - 841.0) < 3.0, (w, h)
+    # A1 quer = 841×594 mm
+    w1, h1 = _mm(dxf_zu_pdf(_dxf(tmp_path), tmp_path / "a1.pdf", ausschnitt=aus,
+                            papierformat="A1", dpi=80))
+    assert abs(w1 - 841.0) < 3.0 and abs(h1 - 594.0) < 3.0, (w1, h1)
+    # papierformat=None + massstab=None → altes A3-tight (kein Norm-Format)
+    wk, _ = _mm(dxf_zu_pdf(_dxf(tmp_path), tmp_path / "a3.pdf", ausschnitt=aus,
+                           papierformat=None, massstab=None, dpi=80))
+    assert wk < 600.0
+
+
 def test_dxf_zu_pdf_hell_und_dunkel(tmp_path):
     dxf = _dxf(tmp_path)
     hell = dxf_zu_pdf(dxf, tmp_path / "hell.pdf", dunkel=False, dpi=100)

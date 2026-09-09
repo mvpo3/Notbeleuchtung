@@ -103,3 +103,68 @@ def test_richtung_ist_gueltiger_kardinal():
     for p in out.platzierungen:
         assert p.richtung in {"links", "rechts", "oben", "unten", "gerade"}
         assert p.rotation_deg in {0.0, 90.0, 180.0, 270.0}
+
+
+def _rect(x0, y0, x1, y1):
+    return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+
+
+def _og_mit_arm(kurz_fragment: bool = False):
+    """OG mit langem Gang-Arm + oberem Riegel (Stiegenhaus als Fluchtziel).
+
+    Ein Fluchtweg-Segment endet am Stiegenhaus → Segment-Pfad setzt dort 1 RZ; der
+    lange Arm bekommt seinen RZ erst durch die Sichtlinien-Garantie."""
+    from notbeleuchtung.hauptengine.contracts import (
+        Ausgang,
+        BBox,
+        FluchtwegSegment,
+        Raum,
+        RaumModell,
+        Tuer,
+    )
+    arm = _rect(8000.0, 1000.0, 9800.0, 23000.0)          # 22 m langer vertikaler Arm
+    top = _rect(8000.0, 22000.0, 36000.0, 23800.0)
+    stgh = _rect(20000.0, 16000.0, 23000.0, 22000.0)
+    raeume = [
+        Raum(id="GANG-ARM", raum_typ="GANG", polygon_mm=arm, ist_fluchtweg=True, ist_communal=True),
+        Raum(id="GANG-TOP", raum_typ="GANG", polygon_mm=top, ist_fluchtweg=True, ist_communal=True),
+        Raum(id="STGH", raum_typ="STIEGENHAUS", polygon_mm=stgh, ist_communal=True),
+    ]
+    if kurz_fragment:
+        raeume.append(Raum(id="GANG-FRAG", raum_typ="GANG",   # 3 m Fragment < 6 m
+                           polygon_mm=_rect(30000.0, 1000.0, 33000.0, 2800.0),
+                           ist_fluchtweg=True, ist_communal=True))
+    tueren = [Tuer(id="STGH-T", xy_mm=(21500.0, 22000.0), von_raum="STGH", nach_raum="GANG-TOP",
+                   ist_notausgang=True, tuer_detail="stiegenhaustuer")]
+    ausg = [Ausgang(id="STAIR", xy_mm=(21500.0, 22000.0), typ="stair_exit")]
+    seg = [FluchtwegSegment(segment_id="s1", polyline_mm=[(8900.0, 1000.0), (8900.0, 22900.0),
+                                                          (21500.0, 22900.0)],
+                            reason="exit", ziel_ausgang="STAIR")]
+    return RaumModell(
+        floor="1OG", bounds_mm=BBox(min_xy=(8000.0, 1000.0), max_xy=(36000.0, 23800.0)),
+        raeume=raeume, tueren=tueren, ausgaenge=ausg,
+        zirkulation={"nodes": [], "edges": [], "segmente": seg},
+    )
+
+
+def test_sichtlinien_garantie_fuellt_langen_arm():
+    """Owner-Regel 2026-09-09: der lange Gang-Arm bekommt trotz Segment-Pfad (1 RZ am
+    Stiegenhaus) ein eigenes RZ IN seinem Polygon — sonst sieht ein Bewohner beim
+    Verlassen der Wohnung im Arm kein Rettungszeichen."""
+    from notbeleuchtung.platzierung.geometry import point_in_polygon
+    raum = _og_mit_arm()
+    out = NotlichtPlatzierer().place(raum, FakeNormProvider())
+    arm_poly = raum.raeume[0].polygon_mm
+    im_arm = [p for p in out.platzierungen if p.kind == "rz" and point_in_polygon(p.xy_mm, arm_poly)]
+    assert im_arm, "langer Gang-Arm ohne RZ — Sichtlinien-Garantie griff nicht"
+
+
+def test_kurzes_fragment_wird_nicht_gefuellt():
+    """Klein-Fragmente (fragmentierte Erkennung, Längsseite < 6 m) werden NICHT
+    aufgefüllt — sonst Überproduktion auf realen Plänen (Mollgasse)."""
+    from notbeleuchtung.platzierung.geometry import point_in_polygon
+    raum = _og_mit_arm(kurz_fragment=True)
+    out = NotlichtPlatzierer().place(raum, FakeNormProvider())
+    frag_poly = raum.raeume[-1].polygon_mm
+    im_frag = [p for p in out.platzierungen if p.kind == "rz" and point_in_polygon(p.xy_mm, frag_poly)]
+    assert not im_frag, "Klein-Fragment sollte kein eigenes RZ bekommen"

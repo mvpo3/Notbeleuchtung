@@ -41,13 +41,55 @@ from . import (
 )
 from .anker_strategy import plan_rettungszeichen_anker
 from .aussen_strategy import plan_aussenleuchten
+from .bausteine import KORRIDOR_TYPEN as _KORRIDOR_TYPEN
 from .communal_stgh_strategy import plan_rettungszeichen
 from .deckung import verdichte_fluchtweg
 from .flaechen_strategy import plan_antipanik, plan_sicherheitsleuchten
 from .gang_strategy import plan_rettungszeichen_gang
+from .geometry import point_in_polygon
 from .graph import build_circulation_graph, kreuzungs_anker
 from .kontext import PlatzierungsKontext
 from .sonderstellen_strategy import plan_flag_raeume, plan_sonderstellen
+
+# Ein Gang-Raum gilt erst ab dieser Länge (Bounding-Box-Längsseite) als eigener
+# begehbarer Arm, der ein eigenes RZ braucht. Fragmentierte Erkennung (Mollgasse: 62
+# spikey Teil-Polygone eines Gangs) erzeugt viele Klein-Fragmente — die würden sonst
+# je einzeln aufgefüllt (Überproduktion). Ein echter Flur-Arm ist deutlich länger.
+_MIN_KORRIDOR_ARM_MM = 6000.0
+
+
+def _sichtlinien_garantie(rz: list, raum: RaumModell, norm: NormProvider) -> list:
+    """Owner-Regel 2026-09-09: aus jeder Wohnungstür muss beim Blick in den Gang ein
+    Rettungszeichen sichtbar sein. Anker- und Segment-Pfad setzen RZ nur an Ausgängen/
+    Kreuzungen — ein langer Gang-Arm ohne eigenen Entscheidungspunkt bleibt sonst
+    RZ-los (nur Aufheller). Jeder **substanzielle** GANG-Raum (Längsseite ≥
+    `_MIN_KORRIDOR_ARM_MM`), der KEIN RZ in seinem Polygon trägt, wird per
+    GANG-Mittellinie aufgefüllt (Pfeil zum Fluchtziel, `plan_rettungszeichen_gang`).
+    Gänge mit RZ und Klein-Fragmente (fragmentierte Erkennung) bleiben unberührt —
+    keine Überproduktion."""
+    def _arm_lang_genug(r) -> bool:
+        xs = [p[0] for p in r.polygon_mm]
+        ys = [p[1] for p in r.polygon_mm]
+        return max(max(xs) - min(xs), max(ys) - min(ys)) >= _MIN_KORRIDOR_ARM_MM
+
+    korridore = [
+        r for r in raum.raeume
+        if (r.raum_typ or "").upper() in _KORRIDOR_TYPEN
+        and len(r.polygon_mm) >= 3 and _arm_lang_genug(r)
+    ]
+    unbedeckt = [
+        r for r in korridore
+        if not any(p.kind == "rz" and point_in_polygon(p.xy_mm, r.polygon_mm) for p in rz)
+    ]
+    if not unbedeckt:
+        return rz
+    unbedeckt_ids = {r.id for r in unbedeckt}
+    zusatz = [
+        p for p in plan_rettungszeichen_gang(raum, norm)
+        if any(r.id in unbedeckt_ids and point_in_polygon(p.xy_mm, r.polygon_mm)
+               for r in unbedeckt)
+    ]
+    return list(rz) + zusatz
 
 
 def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
@@ -57,13 +99,16 @@ def _plan_rettungszeichen(raum: RaumModell, norm: NormProvider):
     2. **Segment** — 1 RZ je Fluchtweg-Segment (dünnes 4OG-Fixture, faithful 5 RZ).
     3. **GANG-Fallback** — weder Kreuzung noch Segment (fremde CAD-Familie ohne
        erkannten Fluchtweg-Layer): RZ entlang der GANG-Mittelachsen, damit die
-       Engine auch ohne Fluchtweg-Layer RZ setzt (fischamender-Bug B2)."""
+       Engine auch ohne Fluchtweg-Layer RZ setzt (fischamender-Bug B2).
+
+    Danach die **Sichtlinien-Garantie**: RZ-lose Gang-Räume auffüllen (Owner-Regel,
+    aus jeder Wohnungstür ein RZ sichtbar)."""
     if kreuzungs_anker(build_circulation_graph(raum)):
-        return plan_rettungszeichen_anker(raum, norm)
-    segment_rz = plan_rettungszeichen(raum, norm)
-    if segment_rz:
-        return segment_rz
-    return plan_rettungszeichen_gang(raum, norm)
+        primaer = plan_rettungszeichen_anker(raum, norm)
+    else:
+        segment_rz = plan_rettungszeichen(raum, norm)
+        primaer = segment_rz if segment_rz else plan_rettungszeichen_gang(raum, norm)
+    return _sichtlinien_garantie(primaer, raum, norm)
 
 
 class NotlichtPlatzierer:
