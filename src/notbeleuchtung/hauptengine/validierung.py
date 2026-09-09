@@ -517,6 +517,46 @@ def pruefe(
             photometrie.als_zeile(),
         ))
 
+    # 16. AStV/ASchG-Parallelpfad (Ebene A) — offene § 9-Prüfpunkte JE Gebäudeteil
+    #     sichtbar machen. Konsument von `normwissen.astv.ArbeitsstaettenWissen`
+    #     (Integrationsschritt 2026-09-09, Enis-Paket v2). Diese Regel ENTSCHEIDET
+    #     NICHT über die Erforderlichkeit einer Sicherheitsbeleuchtung und ändert
+    #     keine Platzierung — sie stellt die Fragen des § 9 und die je Antwort
+    #     fehlende Projektangabe dar. Eingabe: `ProjektKontext.gebaeudeteile[*].
+    #     arbeitsstaette_nach_aschg`. Ohne ProjektKontext: kein Befund (kein Absturz,
+    #     keine erfundene Bewertung). Status bewusst `warnung` (sichtbar, nie „ok/
+    #     erfüllt", nie „fehler/verboten") — Muster wie der OIB-„ungeklärt"-Befund.
+    if projekt_kontext is not None and getattr(projekt_kontext, "gebaeudeteile", None):
+        from notbeleuchtung.normwissen.astv import ArbeitsstaettenWissen
+
+        astv = ArbeitsstaettenWissen()
+        for teil in projekt_kontext.gebaeudeteile:
+            tag = f"[Gebäudeteil {teil.id}]"
+            # § 9 Abs. 1 Tatbestände: True/None → Z1/Z2/Z3; False → leer (§ 1 Abs. 2
+            # bleibt über den Reichweite-Vorbehalt unten sichtbar). Fundstelle,
+            # ungeprüfter Zustand und benötigte Angabe je Punkt erhalten.
+            for p in astv.pruefpunkte(teil.arbeitsstaette_nach_aschg):
+                detail = f"[{p.status}] {p.wortlaut} — benötigte Angabe: " + " | ".join(
+                    p.benoetigte_angabe
+                )
+                if p.abgrenzung:
+                    detail += f" — Abgrenzung: {p.abgrenzung}"
+                befunde.append(Befund(
+                    f"AStV § 9 offener Prüfpunkt {tag}: {p.fundstelle} ({p.kennung})",
+                    "warnung",
+                    detail,
+                ))
+            # Reichweite/Anwendungsbereich (§ 1): der Auswerter liefert bei None den
+            # Vorbehalt zum unbekannten Status, bei False die § 1 Abs. 2/3-Vorbehalte
+            # (mehr Text, kein Freibrief) — je Gebäudeteil erhalten.
+            vorbehalte = astv.reichweite_vorbehalt(teil.arbeitsstaette_nach_aschg)
+            if vorbehalte:
+                befunde.append(Befund(
+                    f"AStV Reichweite/Anwendungsbereich {tag} (AStV § 1) — offen",
+                    "warnung",
+                    " || ".join(vorbehalte),
+                ))
+
     return befunde
 
 

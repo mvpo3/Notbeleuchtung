@@ -1,0 +1,309 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# ove_e07_funktionserhalt.yaml — Funktionserhalt der Leitungsanlagen
+# OVE-Fachinformation E07 (Ebene D) + Gegenprobe an OVE E 8101 (Ebene C)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WOFUER: E07 klaert, wo Leitungsanlagen der Sicherheitsbeleuchtung
+# Funktionserhalt brauchen und wo darauf verzichtet werden kann. Der Digest
+# `knowledge/extracted/aus_elektroplaner/OVE_Fachinfos_E05_E06_E07.md` hatte drei
+# Extraktionsluecken ausgewiesen (Bilder 1-6, Text zu 2.2, ">1600 m2"). Sie sind
+# hier am Original einschliesslich Grafiken und Fussnote geschlossen.
+#
+# WAS SIE NICHT TUT: Sie aktiviert nichts. Die Engine hat KEIN Leitungs-,
+# Stromkreis-, Brandabschnitts- oder Verteilermodell — keine dieser Regeln ist
+# heute pruefbar. Der Block endet bewusst bei "fachlich geprueft".
+#
+# ⚠️ AUSGABEN UND EBENEN AUSEINANDERHALTEN:
+#   * E07 traegt "Ausgabe: 2021-01-01" und "Aktualitaetspruefung: 2020-12",
+#     ist inhaltlich aber die "Fachinformation vom April 2006" (Kopfzeile S. 1).
+#   * Ihre Bezugsnorm ist OEVE/OENORM E 8002-1:2002 — diese Ausgabe liegt NICHT
+#     im Repo (Blockadeliste `NORMQUELLEN_AT.md` 4). Der Schlusssatz der
+#     Fachinformation lautet: "Der Inhalt dieser Fachinformation ist nur
+#     gemeinsam mit OEVE/OENORM E 8002-1 anwendbar."
+#   * Die 30-Minuten-Zahl stammt aus dieser Bezugsnorm, NICHT aus E07 selbst und
+#     NICHT aus der heute geltenden OVE E 8101. Sie darf deshalb nicht als
+#     allgemeine aktuelle Anforderung ausgegeben werden.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-09-08"
+  owner: "Enis (normwissen)"
+  status: >
+    Quellenarbeit abgeschlossen, keine Umsetzung. Kein Contract, kein Provider,
+    keine Platzierung — der Engine fehlen die tragenden Modelle.
+
+quellen:
+  e07:
+    ausgabe: "OVE-Fachinformation E07:2021-01-01 (inhaltlich: Fachinformation vom April 2006), Aktualitaetspruefung 2020-12"
+    ebene: "D"
+    umfang: "5 Seiten, Bilder 1-6 + Symbollegende"
+    ausdruck: "knowledge/OVE-Fachinformation/Fachinfo_E-07_Sicherheitsbeleuchtung_2020-12.pdf"
+    bezugsnorm: "OEVE/OENORM E 8002-1:2002 — NICHT im Repo"
+    anwendungsvorbehalt: "Nur gemeinsam mit OEVE/OENORM E 8002-1 anwendbar (Schlusssatz S. 5)."
+  e8101_2019:
+    ausgabe: "OVE E 8101:2019-01-01"
+    ebene: "C"
+    ausdruck: "knowledge/OVE E 8101_2019 (1).pdf"
+  e8101_2025:
+    ausgabe: "OVE E 8101:2025-10-01"
+    ebene: "C"
+    ausdruck: "knowledge/OVE E8101_2025 (1).pdf"
+
+# ── Regeln aus E07 (Ebene D) ──────────────────────────────────────────────
+regeln:
+  - kennung: e07_grundsatz_30min
+    fundstelle: "E07 Einleitung, S. 1 — zitiert OEVE/OENORM E 8002-1:2002 Abschnitt 5.4 (1)"
+    aussage: >
+      Elektrische Leitungsanlagen von Sicherheitsbeleuchtungen muessen ueber
+      einen Funktionserhalt von mindestens 30 Minuten verfuegen; ausgenommen
+      sind Teile der Endstromkreise, deren Ausfall zu keiner Beeintraechtigung
+      anderer (nachgelagerter) Bereiche fuehrt.
+    ebene: "D (zitiert Ebene C einer Ausgabe von 2002)"
+    ausgabenvorbehalt: >
+      ⚠️ Die 30 Minuten stehen in E 8002-1:2002. Die heute geltende OVE E 8101
+      nennt an der entsprechenden Stelle KEINE Minutenzahl, sondern "eine
+      angemessene Dauer" und verweist auf die OVE-Richtlinie R 12-2 bzw. die
+      Behoerdenvorschreibung. Nicht als aktuelle allgemeine Anforderung
+      ausgeben.
+    benoetigte_angaben: ["Leitungsanlage", "Endstromkreis-Topologie"]
+    funktionsbereich: "Elektro-Ausfuehrungsplanung (Leitungsanlage) — NICHT Symbolplatzierung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_schutzziel
+    fundstelle: "E07 Abschnitt 1, S. 1"
+    aussage: >
+      Bei einem lokalen Brand darf es zu keiner Beeintraechtigung der Funktion
+      der Sicherheitsbeleuchtung in Rettungswegen (Fluchtwegen) anderer
+      Brandabschnitte kommen.
+    ebene: "D"
+    benoetigte_angaben: ["Brandabschnitte", "Zuordnung Leuchte -> Brandabschnitt"]
+    funktionsbereich: "Schutzziel — Grundlage der uebrigen Regeln"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_unterbrandabschnitt_verzicht
+    fundstelle: "E07 Abschnitt 1, S. 1"
+    aussage: >
+      Auf den Funktionserhalt in Unterbrandabschnitten (im Sinne der TRVB B 108,
+      ausgenommen Fluchtstiegenhaeuser) des betrachteten Brandabschnitts kann
+      verzichtet werden, wenn je Unterbrandabschnitt nicht mehr als ZWEI
+      Sicherheitsleuchten (mit oder ohne Piktogramm) vorhanden sind UND keine
+      Sicherheitsleuchten der Rettungswege unzulaessig beeintraechtigt werden.
+    bedingungen_kumulativ: true
+    werte: {max_leuchten_je_unterbrandabschnitt: 2}
+    ausnahme: "Fluchtstiegenhaeuser sind ausgenommen — fuer sie gilt der Verzicht nicht."
+    ebene: "D"
+    benoetigte_angaben: ["Unterbrandabschnitte nach TRVB B 108", "Leuchtenzahl je Unterbrandabschnitt"]
+    fehlende_quelle: "TRVB B 108 liegt NICHT im Repo — der Begriff Unterbrandabschnitt ist damit nicht definierbar."
+    funktionsbereich: "Elektro-Ausfuehrungsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_restfunktion_50_prozent
+    fundstelle: "E07 Abschnitt 1, S. 1"
+    aussage: >
+      "Keine unzulaessige Beeintraechtigung" gilt als erfuellt, wenn ca. 50 %
+      der Sicherheitsbeleuchtung in den Rettungswegen funktionsfaehig bleibt
+      (z. B. durch eine alternierende Stromkreisaufteilung der
+      Sicherheitsleuchten).
+    werte: {restfunktion_rettungsweg: "ca. 50 %"}
+    ebene: "D"
+    ⚠_grenze: >
+      "ca. 50 %" ist eine Auslegungsangabe der Fachinformation, kein Normwert
+      und keine Rechengroesse. Sie setzt eine Stromkreiszuordnung je Leuchte
+      voraus.
+    benoetigte_angaben: ["Stromkreiszuordnung je Leuchte", "Rettungsweg-Zugehoerigkeit je Leuchte"]
+    funktionsbereich: "Elektro-Ausfuehrungsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_queren_von_brandabschnitten
+    fundstelle: "E07 Abschnitt 2.1, S. 1-2"
+    aussage: >
+      Leitungsanlagen, die Brandabschnitte QUEREN, brauchen jedenfalls
+      Funktionserhalt; INNERHALB eines Brandabschnitts kann fuer die
+      entsprechenden Teile der Endstromkreise darauf verzichtet werden.
+    ebene: "D"
+    gegenprobe_e8101:
+      ergebnis: "bestaetigt"
+      fundstelle_2025: "OVE E 8101:2025-10-01, Teil 5-56, 560.9.2"
+      wortlaut_2025: >
+        Bei Kabel- und Leitungsanlagen fuer Sicherheitsbeleuchtungsanlagen muss
+        die Versorgung von der Sicherheitsstromquelle bis zu den
+        Sicherheitsleuchten im Brandfall fuer eine angemessene Dauer erhalten
+        bleiben ... um den Strom durch Brandabschnitte zu leiten. Innerhalb des
+        Brandabschnitts, in dem die Sicherheitsleuchten installiert sind, muessen
+        die Kabel- und Leitungsanlagen zwischen den Sicherheitsleuchten keine
+        Anforderungen an den Funktionserhalt im Brandfall erfuellen.
+      fundstelle_2019: "OVE E 8101:2019-01-01, Teil 5-56, 560.9.1 (innerhalb des Brandabschnitts: Anforderungen gemaess 527.1)"
+      ⚠_unterschied: >
+        Die STRUKTUR (queren = Funktionserhalt, innerhalb = nicht) ist in beiden
+        E-8101-Ausgaben belegt. Die DAUER ist es nicht: E 8101 sagt "angemessene
+        Dauer" und verweist auf R 12-2 bzw. die Behoerde — die 30 Minuten aus
+        E07 sind dort nicht wiederholt.
+    benoetigte_angaben: ["Brandabschnittsgrenzen", "Leitungsverlauf"]
+    funktionsbereich: "Elektro-Ausfuehrungsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_e30_dosen
+    fundstelle: "E07 Abschnitt 2.1, S. 2-3, Bild 1"
+    aussage: >
+      Alternative zur alternierenden Stromkreisaufteilung: E-30-Dosen mit
+      Abzweigsicherungen. Dabei gilt: der Endstromkreis beginnt im Haupt- bzw.
+      Unterverteiler und nicht in den Dosen; die Abzweigsicherungen dienen nur
+      dem Kurzschlussschutz im Brandfall, nicht dem Leitungsschutz, und muessen
+      zeitselektiv zur Stromkreissicherung sein; Ausfuehrung einpolig in der
+      Phase (AC; + im DC) oder zweipolig; Einbauort und Dosen dauerhaft und
+      sichtbar kennzeichnen, dokumentieren, leicht zugaenglich halten.
+    ebene: "D"
+    festhaltung_fua_e04: >
+      Unter "Schalter oder Schaltelement" nach E 8002-1:2002 Abschnitt 7.7.14
+      sind nur MANUELL schaltbare Einrichtungen zu verstehen; Ueberstrom- oder
+      Kurzschlussschutzeinrichtungen sind keine Schalteinrichtungen im Sinne
+      dieser Bestimmung.
+    benoetigte_angaben: ["Verteiler", "Dosen", "Stromkreise"]
+    funktionsbereich: "Elektro-Ausfuehrungsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+  - kennung: e07_steigschacht_f30
+    fundstelle: "E07 Abschnitt 2.3, Fussnote zu Bild 5, S. 4"
+    aussage: >
+      Bei Verlegung in einem eigenen Steigschacht (F 30) kann die Leitungsanlage
+      der Sicherheitsbeleuchtung ohne Funktionserhalt ("E 0") ausgefuehrt werden,
+      wenn sichergestellt wird, dass es durch allfaellige Einbauten zu keiner
+      Beeintraechtigung der Sicherheitsbeleuchtung kommen kann.
+    ebene: "D"
+    ⚠_grenze: "Ausnahme mit Bedingung — der Nachweis 'keine Beeintraechtigung durch Einbauten' ist zu fuehren."
+    benoetigte_angaben: ["Schachtausbildung", "Leitungsverlauf"]
+    funktionsbereich: "Elektro-Ausfuehrungsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+# ── Die vormals fehlenden Bildinformationen (am Original geprueft) ─────────
+bilder:
+  symbollegende:
+    fundstelle: "E07 S. 2, unter Bild 1"
+    eintraege:
+      - "Brandabschnitt (maximal 1.600 m²)"           # ⚠️ die Legende selbst nennt die Obergrenze
+      - "Unterbrandabschnitt (im Sinne der TRVB B 108, ausgenommen Stiegenhaeuser)"
+      - "Geschaefte baulich getrennt"
+      - "'E0'-Leitungsanlage / E30-Leitungsanlage"
+      - "'E0'-Dose / E30-Dose / E30-Dose mit Abzweigsicherung (Symbol 'f')"
+      - "Endstromkreis-Sicherung"
+      - "Sicherheitsleuchte mit Piktogramm / ohne Piktogramm"
+      - "Rettungsweg/Fluchtweg (Pfeil)"
+      - "CPS = Zentralbatterieanlage"
+      - "HVS = Haupt- oder Unterverteiler der Sicherheitsbeleuchtung"
+    befund: >
+      Die Legende bindet die Beispiele ausdruecklich an Brandabschnitte bis
+      1.600 m². Damit ist die Schwelle nicht nur Text (Einleitung), sondern
+      Bestandteil der Bildlegende.
+  bild_1:
+    titel: "Ausfuehrungsvariante fuer die Verwendung von E 30-Dosen mit Abzweigsicherungen"
+    inhalt: >
+      HVS mit mehreren Endstromkreis-Sicherungen; von dort E30-Leitungen
+      (orange) in mehrere nebeneinanderliegende Brandabschnitte; je Brandabschnitt
+      eine E30-Dose mit Abzweigsicherung, dahinter E0-Leitung (schwarz) zu den
+      Leuchten des Abschnitts.
+  bild_2:
+    titel: "Grundriss mit mehreren Unterbrandabschnitten - Ausfuehrungsvariante 1"
+    inhalt: >
+      Grundriss mit Unterbrandabschnitten (rot gestrichelt): Abstellraum 1,
+      Abstellraum 2, Sanitaerraum, Technikraum; Gang als Fluchtweg (gruener Pfeil)
+      zum Stiegenhaus; E0-Leitungen innerhalb, E0-Dosen als Anschlusspunkte.
+  bild_3:
+    titel: "Grundriss mit mehreren Unterbrandabschnitten - Ausfuehrungsvariante 2"
+    inhalt: >
+      Gleicher Grundriss, aber die Leuchtengruppen sind einzeln ueber
+      E30-Steigleitungen (orange) angebunden.
+  bild_4:
+    titel: "Grundriss mit mehreren Unterbrandabschnitten und baulichen Trennungen"
+    inhalt: >
+      Raster baulich getrennter Einheiten ("Geschaefte baulich getrennt",
+      gepunktet) mit alternierender Aufteilung: je Einheit zwei Leuchten aus
+      unterschiedlichen Stromkreisen, CPS im Technikraum, Fluchtweg mittig.
+  bild_5:
+    titel: "Bauliche Vorkehrungen - Ausfuehrungsvariante 1"
+    inhalt: >
+      Gebaeudeschnitt Keller bis 3. Stock mit Stiegenhaus als eigenem
+      Brandabschnitt; CPS im Keller-Technikraum; E30-Steigleitungen (orange) je
+      Geschoss, innerhalb der Geschosse E0; die Fussnote (*) am Steigschacht
+      erlaubt E 0 bei eigenem Steigschacht F 30.
+  bild_6:
+    titel: "Bauliche Vorkehrungen - Ausfuehrungsvariante 2"
+    inhalt: >
+      Wie Bild 5, jedoch mit E30-Dosen mit Abzweigsicherung (Symbol 'f') je
+      Geschoss statt durchgehender E30-Fuehrung bis zur Leuchtengruppe.
+  ⚠_keine_platzierungsableitung: >
+    Die Bilder 2-6 zeigen Leuchten auch in Abstellraeumen, Sanitaerraeumen und
+    Technikraeumen. Das sind ILLUSTRATIONEN der Leitungsfuehrung, KEINE
+    Platzierungsvorgabe: E07 regelt den Funktionserhalt, nicht die
+    Erforderlichkeit einer Leuchte. Aus diesen Bildern darf kein Norm-Trigger
+    fuer einen Raumtyp abgeleitet werden.
+
+# ── Was in E07 ausdruecklich offen bleibt ─────────────────────────────────
+offen_in_der_quelle:
+  - punkt: "Brandabschnitte ueber 1.600 m²"
+    wortlaut: "fuer Brandabschnitte ueber 1600 m² sind weiter gehende Ueberlegungen anzustellen"
+    befund: >
+      E07 sagt NICHT, was zu tun ist. Auch die Bilder helfen nicht: die Legende
+      begrenzt sie auf maximal 1.600 m². Die Luecke bleibt offen — sie ist keine
+      Erlaubnis und kein Verbot.
+  - punkt: "Definition Unterbrandabschnitt"
+    befund: "verweist auf TRVB B 108 — nicht im Repo."
+  - punkt: "Bezugsnorm E 8002-1:2002"
+    befund: "nicht im Repo; ohne sie ist E07 laut eigenem Schlusssatz nicht anwendbar."
+
+# ── Was die Engine braeuchte (Uebergabe) ──────────────────────────────────
+fehlende_modelle:
+  - modell: "Brandabschnitte und Unterbrandabschnitte je Geschoss"
+    heute: "nicht im RaumModell"
+    braucht: "@polatselman (Erkennung) bzw. Projektangabe; TRVB B 108 als Quelle fehlt"
+  - modell: "Stromkreise und Zuordnung Leuchte -> Endstromkreis"
+    heute: "PlatzierungsErgebnis kennt keine Stromkreise"
+    braucht: "@mvpo3 (Platzierung/Contract) — Voraussetzung fuer die 50-%-Restfunktion und die 20-Leuchten-Grenze"
+  - modell: "Verteiler (HVS/CPS) und Leitungsverlauf"
+    heute: "nicht modelliert"
+    braucht: "3 Owner — eigener Planungsgegenstand (Elektro-Ausfuehrungsplanung)"
+
+# ── Gegenprobe: was die geltende Norm selbst regelt (Ebene C) ─────────────
+# Nur belegte Fundstellen, am Volltext geprueft. Diese Werte sind NICHT aus E07
+# abgeleitet, sondern aus OVE E 8101 selbst — sie stehen hier, weil sie dieselbe
+# Frage betreffen und die E07-Aussagen einordnen.
+e8101_gegenprobe:
+  - fundstelle: "OVE E 8101:2019-01-01, Teil 5-56, 560.9.2"
+    aussage: >
+      Werden Leuchten abwechselnd auf verschiedene Stromkreise aufgeteilt, muss
+      durch Ueberstrom-Schutzeinrichtungen sichergestellt sein, dass ein
+      Kurzschluss in einem Stromkreis die Versorgung der benachbarten Leuchten im
+      Brandabschnitt oder der Leuchten in anderen Brandabschnitten nicht
+      unterbrechen kann. Von einem Endstromkreis duerfen NICHT MEHR ALS 20
+      LEUCHTEN mit einer Gesamtbelastung von nicht mehr als 60 % des Nennstromes
+      der Ueberstrom-Schutzeinrichtung gespeist werden.
+    ebene: "C"
+    werte: {max_leuchten_je_endstromkreis: 20, max_belastung_prozent: 60}
+    ⚠_nicht_verwechseln_mit_e08: >
+      ⚠️ ZWEI VERSCHIEDENE AUSSAGEN, die beide die Zahl 20 tragen:
+      (1) HIER: hoechstens 20 Leuchten JE ENDSTROMKREIS (OVE E 8101 560.9.2,
+          Ebene C) — eine Stromkreis-Bemessungsgrenze, zusammen mit der
+          60-%-Belastungsgrenze.
+      (2) OVE E 8101 Teil 5-56 **560.9.001.AT** (Ebene C, 2019 und 2025;
+          wiederholt in OVE-Fachinformation E08 Abschnitt 5.2): bei MEHR ALS 20
+          Sicherheitsleuchten IN EINEM ZUSAMMENHAENGENDEN GEBAEUDETEIL ist eine
+          automatische Pruefeinrichtung mit zentraler Erfassung nach
+          OEVE/OENORM EN 62034 vorzusehen — eine Anforderung an die
+          Anlagenueberwachung, nicht an den Stromkreis.
+      Bezugsgroesse (Endstromkreis gegen Gebaeudeteil), Rechtsfolge
+      (Bemessung gegen Pruefeinrichtung) und Ebene (C gegen D) sind
+      verschieden. Diese Fundstelle belegt AUSSCHLIESSLICH (1) und darf NICHT
+      als Beleg fuer (2) verwendet werden.
+    status: nicht_abgebildet
+    begruendung: "Die Engine fuehrt keine Stromkreise; die Grenze ist ohne Stromkreismodell nicht pruefbar."
+  - fundstelle: "OVE E 8101:2025-10-01, Teil 5-56, 560.9.2 (gleiche 20-Leuchten-Grenze im Folgeabsatz)"
+    aussage: "Die 20-Leuchten-Grenze ist in der Ausgabe 2025 unveraendert enthalten."
+    ebene: "C"
+    status: nicht_abgebildet
