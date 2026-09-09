@@ -12,6 +12,8 @@ symbols-Mapping-/Orientierungs-Funktionen (+stdlib) — nie eine Strategie.
 """
 from __future__ import annotations
 
+import math
+
 from notbeleuchtung.hauptengine.contracts import NormProvider
 from notbeleuchtung.symbols.orientation import transformation as _transformation
 
@@ -26,6 +28,14 @@ KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 
 #: Sanitär-Raumtypen für den WC-Flächen-Trigger (OVE 718.560.9.001.AT Punkt 1).
 WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+
+
+def rotation_zur_tuer(dx: float, dy: float) -> float:
+    """Rotation des „Pfeil-unten"-Blocks, sodass der Pfeil in Richtung (dx, dy) zeigt —
+    auf 90° gerastert, Ergebnis in [0, 360). Unten-Block-Basis 270° → ziel−basis ≡
+    atan2(dy,dx)+90. Einzige Quelle der Owner-Regel #111 (F03/W16): vorher 4× wortgleich
+    in anker/gang/fachpraxis/communal_stgh dupliziert."""
+    return (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
 
 
 def richtung_und_rotation(dx: float, dy: float) -> tuple[str, float]:

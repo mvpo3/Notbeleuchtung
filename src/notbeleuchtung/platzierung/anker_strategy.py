@@ -40,6 +40,7 @@ from .bausteine import (
 from .bausteine import (
     richtung_und_rotation as _richtung_und_rotation,
 )
+from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .deckungs_zuordnung import HINTERLEUCHTET_DEFAULT
 from .graph import build_circulation_graph, distanz_zu_ausgang, kreuzungs_anker
 
@@ -137,7 +138,7 @@ def plan_rettungszeichen_anker(raum: RaumModell, norm: NormProvider) -> list[Pla
                     dx, dy = ((nx_ - pos[nb][0], ny - pos[nb][1]) if nb else (0.0, -1.0))
                 else:
                     dx, dy = 0.0, -1.0
-                rotation = (round((math.degrees(math.atan2(dy, dx)) + 90.0) / 90.0) * 90.0) % 360.0
+                rotation = _rotation_zur_tuer(dx, dy)
         out.append(
             Platzierung(
                 xy_mm=(nx_, ny),
