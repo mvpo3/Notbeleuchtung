@@ -16,7 +16,7 @@ und **keine Norm-Primärquelle**. Es rangiert unterhalb von „Referenz-Praxis" 
 **Norm-Landkarte** (welche ÖVE-Norm regelt was, welches Regelwerk hat welche ablöste) und als
 Plausibilisierung, aber **kein Wert aus diesem Skript darf als `norm_quelle` für eine
 Platzierungsentscheidung dienen**. Für zitierfähige Werte immer die Primärnorm (EN 1838,
-ÖVE E8101, ÖVE E 8002, TRVB E 102) heranziehen.
+ÖVE E8101, ÖVE E 8002, TRVB E 102 [zurückgezogen 2021]) heranziehen.
 
 ## Relevanz für die Engine
 
@@ -131,7 +131,7 @@ Jede Anlage ist vor Inbetriebnahme zu prüfen (Elektrofachkraft mit Erfahrung, P
 ## Offene Punkte / Extraktionslücken
 
 - **Kein Notbeleuchtungs-Fachinhalt vorhanden:** Die Begriffe Notbeleuchtung, Sicherheitsbeleuchtung, Fluchtweg, Rettungsweg, Notausgang, Antipanik, Funktionserhalt, EN 1838, Erkennungsweite, Lux/Beleuchtungsstärke, Zentral-/Einzelbatterie kommen im gesamten Volltext nicht vor (Grep über den 273k-Zeichen-Volltext). Das Dokument liefert der Engine **keine Platzierungs- oder Lichttechnik-Regeln** — nur die Norm-Landkarte (SVE-R1…R6).
-- Die Inhalte von ÖVE E 8002 / E8101 Kap. 35, 56, 559 / E8001 §53, §57 werden im Skript nur als Überschriften genannt. [Extraktionslücke: die eigentlichen Anforderungen — Umschaltzeiten, Betriebsdauer, Leitungs-Funktionserhalt, Stromkreis-Trennung — müssen aus den Primärnormen (ÖVE E8101, EN 1838, ÖVE/ÖNORM EN 50172, TRVB E 102) gezogen werden; sie sind hier nicht enthalten.]
+- Die Inhalte von ÖVE E 8002 / E8101 Kap. 35, 56, 559 / E8001 §53, §57 werden im Skript nur als Überschriften genannt. [Extraktionslücke: die eigentlichen Anforderungen — Umschaltzeiten, Betriebsdauer, Leitungs-Funktionserhalt, Stromkreis-Trennung — müssen aus den Primärnormen (ÖVE E8101, EN 1838, ÖVE/ÖNORM EN 50172, TRVB E 102 [zurückgezogen 2021]) gezogen werden; sie sind hier nicht enthalten.]
 - Skript-Stand ist Juli 2019; Aussagen zur E8101 beziehen sich auf deren Erstausgabe 2019. [Extraktionslücke: spätere E8101-Ausgaben/Änderungen sind nicht abgedeckt.]
 - Die PDF-Textextraktion enthält OCR-/Layout-Artefakte (getrennte Wörter, Tabellenumbrüche); Seitenzahlen der Fußzeile (Druckseiten) weichen von PDF-Seiten ab. Kapitel-/Seitenangaben oben folgen der Druckseiten-Fußzeile bzw. dem Inhaltsverzeichnis.
 - Detail-Zahlenwerte außerhalb der NB-relevanten Teile (Körperstrom-Schwellen, Nullungsbedingungen, Querschnitte) wurden bewusst nicht extrahiert (nicht Engine-relevant).
