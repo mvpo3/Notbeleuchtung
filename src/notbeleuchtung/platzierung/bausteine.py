@@ -29,6 +29,16 @@ KORRIDOR_TYPEN = {"GANG", "FLUR", "KORRIDOR"}
 #: Sanitär-Raumtypen für den WC-Flächen-Trigger (OVE 718.560.9.001.AT Punkt 1).
 WC_TYPEN = {"WC", "SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
 
+#: Toiletten-Scope §4.3.8 („Antipanik in Toiletten für Menschen mit Behinderung") —
+#: EINE Quelle (W10/F05) für sonderstellen_strategy (Antipanik-Pflicht) UND validierung
+#: (Prüfregel 12c). Vorher dreifach hartkodiert (sonderstellen + validierung, wertgleich
+#: aber unabhängig → Drift-Risiko). Normativ pflegt Enis das Vokabular in
+#: `normwissen/data/sonderstellen.yaml` (raumtypen_eindeutig/-mehrdeutig); bis eine
+#: NormProvider-Query es exponiert (Handoff F15/F16, 3-Owner-Port), spiegelt diese
+#: Konstante es consumer-seitig.
+TOILETTE_EINDEUTIG = {"WC", "TOILETTE"}                  # belegt eine Toilettennutzung
+TOILETTE_MEHRDEUTIG = WC_TYPEN - TOILETTE_EINDEUTIG      # Sanitär: weder Beleg noch Ausschluss
+
 
 def rotation_zur_tuer(dx: float, dy: float) -> float:
     """Rotation des „Pfeil-unten"-Blocks, sodass der Pfeil in Richtung (dx, dy) zeigt —
