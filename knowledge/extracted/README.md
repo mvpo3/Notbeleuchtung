@@ -108,7 +108,8 @@ SV-Klassen), **Fachinfo E-05/06/07** (AT-Funktionserhalt 30 min). Details:
 - **OVE R 12-2, OIB-RL 2, EN 50172** — Originale fehlen, aber substanziell
   sekundär abgedeckt (ONL/Zumtobel-Digest + Fachinfo E-08).
 - **TRVB E 102 / TRVB 123 S** — weiterhin nur namentlich referenziert, keine
-  Werte in keiner Quelle. **AStV-Volltext** — nur §9-Auszüge via Fachinfo E-08.
+  Werte in keiner Quelle. (TRVB E 102 zurückgezogen 08.07.2021 — nicht mehr
+  gültig; maßgeblich OIB-RL 2 + OVE E 8101 + OVE R 12-2.) **AStV-Volltext** — nur §9-Auszüge via Fachinfo E-08.
   Bei Bedarf nachlegen → gleiche Extraktion.
 
 ## Nutzung
