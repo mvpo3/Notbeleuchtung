@@ -89,14 +89,26 @@ def _coverage(
     hinweise: list[str] = []
     if lb_schliesst_sl_aus and arten <= {"rz"}:
         hinweise.append("Sicherheitsbeleuchtung per LB ausgeschlossen (bereiche_exklusion) — RZ-only ist gewollt.")
-    # OVE E 8101 Pkt 560.9.001.AT: ab > 20 Sicherheitsleuchten in einem zusammenhängenden
-    # Gebäudeteil ist eine automatische Prüfeinrichtung mit zentraler Erfassung (EN 62034)
-    # Pflicht. Nicht-blockierender Hinweis (Anlagen-, keine Platzierungs-Anforderung).
-    n_leuchten = len(platzierung.platzierungen)
-    if n_leuchten > _AUTO_PRUEF_SCHWELLE:
+    # OVE E 8101 Pkt 560.9.001.AT / EN 62034: ab > 20 SICHERHEITSLEUCHTEN in einem
+    # ZUSAMMENHÄNGENDEN GEBÄUDETEIL ist eine automatische Prüfeinrichtung Pflicht.
+    # ⚠️ Gezählt wird hier `len(platzierung.platzierungen)` = alle Notlicht-Symbole EINES
+    # GESCHOSSES (inkl. Rettungszeichen) — das ist NICHT die Bezugseinheit der Norm
+    # (zusammenhängender Gebäudeteil). Der Hinweis bleibt deshalb VORLÄUFIG: er nennt die
+    # gezählte Einheit + die fehlende Zuordnung, leitet WEDER Pflicht NOCH Entwarnung ab
+    # und behauptet NICHT, eine Prüfeinrichtung fehle (Anlagen-Tatsache außerhalb des Plans).
+    # Keine zweite Regel neben normwissen/astv (Enis-Abstimmung 2026-09-09).
+    n_symbole = len(platzierung.platzierungen)
+    if n_symbole > _AUTO_PRUEF_SCHWELLE:
         hinweise.append(
-            f"{n_leuchten} Sicherheitsleuchten (> {_AUTO_PRUEF_SCHWELLE}) → automatische "
-            "Prüfeinrichtung mit zentraler Erfassung erforderlich (OVE E 8101 560.9.001.AT / EN 62034)."
+            f"VORLÄUFIG: {n_symbole} Notlicht-Platzierungen in diesem Geschoss (inkl. "
+            f"Rettungszeichen) über der Schwelle {_AUTO_PRUEF_SCHWELLE}. OVE E 8101 "
+            "560.9.001.AT / EN 62034 zählt jedoch Sicherheitsleuchten je zusammenhängendem "
+            "Gebäudeteil (nicht je Geschoss) — diese Bezugseinheit ist hier nicht ermittelt; "
+            "daraus folgt weder eine Pflicht noch eine Entwarnung, und es wird nicht behauptet, "
+            "eine Prüfeinrichtung fehle. Für einen belastbaren Befund fehlen: (1) die fachliche "
+            "Abgrenzung der zusammenhängenden Gebäudeteile (Brandschutzkonzept/Planer) und "
+            "(2) die Zuordnung Leuchte→Gebäudeteil (Platzierung trägt heute weder raum_id noch "
+            "gebaeudeteil_id)."
         )
     # Audit-Trail-Näherung an Sonderstellen/Flag-Räumen (Enis-Review #95): die
     # `norm_quelle` dieser Leuchten ist die Fallback-Referenzregel, nicht der echte
