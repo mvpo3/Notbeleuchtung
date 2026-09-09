@@ -305,6 +305,32 @@ def test_raum_konturen_und_segmente(rendered):
     assert len(segmente) == summary["fluchtweg_segmente_drawn"] >= 1
 
 
+def test_fluchtweg_pfeile_zeigen_zum_ziel():
+    """Owner-Regel 2026-09-09: die grüne Fluchtweg-Linie trägt Richtungspfeile (Chevrons)
+    in Reiserichtung zum ziel_ausgang. `_seg_reiserichtung` dreht eine ziel-ferne
+    Polyline um; `_draw_fluchtweg_pfeile` zeichnet Pfeil-Linien im Fluchtweg-Layer."""
+    from notbeleuchtung.hauptengine.contracts import Ausgang, BBox, FluchtwegSegment, Raum
+    from notbeleuchtung.hauptengine.render import dxf_renderer as dr
+
+    # Ausgang bei y=0; Polyline läuft von unten (am Ziel) nach oben (weg) → muss drehen.
+    raum = RaumModell(
+        floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(2000.0, 20000.0)),
+        raeume=[Raum(id="g", raum_typ="GANG",
+                     polygon_mm=[(0.0, 0.0), (2000.0, 0.0), (2000.0, 20000.0), (0.0, 20000.0)],
+                     ist_fluchtweg=True)],
+        ausgaenge=[Ausgang(id="E", xy_mm=(1000.0, 0.0), typ="final_exit")],
+        zirkulation={"nodes": [], "edges": [], "segmente": [
+            FluchtwegSegment(segment_id="s", polyline_mm=[(1000.0, 0.0), (1000.0, 20000.0)],
+                             reason="exit", ziel_ausgang="E")]},
+    )
+    pts = dr._seg_reiserichtung(raum.zirkulation.segmente[0], raum)
+    assert pts[-1][1] < pts[0][1]          # Reiserichtung endet am Ziel (y=0)
+    doc = ezdxf.new()
+    dr._draw_fluchtweg_pfeile(doc.modelspace(), pts)
+    lines = [e for e in doc.modelspace().query("LINE") if e.dxf.layer == dr.LAYER_FLUCHTWEG]
+    assert lines, "keine Fluchtweg-Pfeil-Linien gezeichnet"
+
+
 def test_xdata_stromkreis_am_insert(rendered):
     _, _, doc = rendered
     inserts = doc.modelspace().query("INSERT")
