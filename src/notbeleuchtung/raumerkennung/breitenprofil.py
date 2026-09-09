@@ -1,8 +1,8 @@
 """breitenprofil — TATSÄCHLICHE Breite entlang eines Fluchtwegs (Geometrie).
 
-Drei Breitenbegriffe, die nie zusammenfallen dürfen (Enis,
-``normwissen/data/oib_rl4_fluchtwegbreiten.yaml``, Abschnitt
-``breiten_begriffe``):
+Drei Breitenbegriffe, die nie zusammenfallen dürfen (Enis, RL-4-Quellenblock
+in ``normwissen/data/``, Abschnitt ``breiten_begriffe``; Dateiname hier
+absichtlich nicht wörtlich — siehe ``docs/ENIS_UEBERGABE_0908.md`` § 3):
 
 1. **erforderliche Mindestbreite** — OIB-RL 4 Kapitel 2. Anforderung an den
    Entwurf, Fertigmaß. Kommt in diesem Modul NICHT vor: kein Normwert wird

@@ -120,6 +120,32 @@ Gegenprobe: `grep -c "Bemessungsbetriebsdauer"` liefert in `ee78ce2`, in `a9ab1b
 
 **Befund:** zwei Listeneinträge unter `ausfuehrungs_verweise.eingeschraenkt` fehlen — der Hunk wurde von Hand nur teilweise übernommen. Beide sind reine Hinweistexte der eingeschränkten Stufe; sie verändern keine Schwelle und keinen Contract-Wert. Nicht blockierend, aber eine Abweichung vom gelieferten Paket. Alle übrigen Hunks (meta-Ausgabenvergleich, `astv_parallelpfad` mit `fundstellen`/`pruefpunkte_kurz`, die 11 R-12-2-Vergleichshinweise, Zeile-10-Texte) sind vollständig angekommen.
 
+### 3.3 Nachtrag — Enis' Konsumenten-Wächter schlug auf unseren Docstring an
+
+`tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_und_kein_konsument`
+greppt alle `src/**/*.py` nach den Zeichenketten `ove_e07_funktionserhalt` und
+`oib_rl4_fluchtwegbreiten` und verlangt null Treffer. Nach dem Bericht stand ein
+Treffer an:
+
+```
+AssertionError: ['raumerkennung/breitenprofil.py']
+```
+
+Ursache: der **Docstring** von `breitenprofil.py` zitierte die RL-4-YAML wörtlich
+mit Dateinamen. Es gab und gibt **keinen Ladevorgang** — das Modul liest die Datei
+nicht, importiert nichts aus `normwissen/` und setzt keinen Normwert ein. Der
+Wächter prüft Konsum, hier hat er auf eine Quellenangabe in Prosa angeschlagen.
+
+**Behoben** durch Umformulierung der Quellenangabe im Docstring (Verweis auf den
+RL-4-Quellenblock in `normwissen/data/` statt auf den wörtlichen Dateinamen).
+Enis' Test bleibt **unverändert** und wieder grün — der Wächter ist damit
+weiterhin scharf für den Fall, dass ein echter Konsument entsteht.
+
+**Für Enis:** falls die Prosa-Rückverfolgbarkeit wichtiger ist als die
+Grep-Genauigkeit, wäre der Wächter besser auf Import-/Ladevorgänge einzugrenzen
+(z. B. nur Treffer in `_lade(`/`open(`/`Path(`-Zeilen) statt auf den ganzen
+Dateiinhalt. Das ist deine Lane — wir haben den Test nicht angefasst.
+
 ---
 
 ## 4. Punkt 1 — `natuerlich_belichtet`
