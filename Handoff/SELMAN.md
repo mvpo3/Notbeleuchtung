@@ -61,7 +61,50 @@ intern untereinander importieren). Contract ändern = version bump + gen_schema 
 ## STAND (append-only, neueste oben) — für nahtloses Weitermachen
 
 ---
-## ═══ SELMAN: HIER WEITER (Stand 2026-09-09) ═══
+## ═══ SELMAN: HIER WEITER (Stand 2026-09-10) ═══
+
+**Branch:** `selman/extents-ausreisser`, **nicht gepusht**. Contracts unberührt.
+**Suite: 1177 passed, 10 skipped, 9 xfailed, 0 failed (19:31 min).**
+
+**Enis' Normwissen-Übergabe 0908-v2 verarbeitet** — Bericht
+`docs/ENIS_UEBERGABE_0908.md` (655 Z.), Board-Antwort an @EnisAMG/@mvpo3 vom
+2026-09-10 in `docs/COORDINATION.md`. Commits `a9ab1b6` (WIP-Sicherung) →
+`1a78966` (Bericht + Breitenprofil) → `3d3215d` (Wächter-Fix) → `288efc8` /
+`38a4387` (Bericht nachgezogen). Archiv-SHA nicht prüfbar (Paket lag entpackt),
+`SHA256SUMS.txt` alle 12 OK.
+
+**Umgesetzt (Punkt 2 von dreien):** `raumerkennung/breitenprofil.py` misst den
+tatsächlichen Breitenverlauf — Mittelachse, 100-mm-Abtastung, Abschnitte
+konstanter Breite (Tol. 100 mm, min. 500 mm), Engstellen getrennt, Türpunkte
+eigen, fehlende Messung `None` **mit Grund**, **nie ein Normwert als Fallback**.
+Drei Messfehler behoben (u. a. schiefe Normale: 1200 mm wurden als 1223,8 mm
+gemessen, jetzt 1200,8 mm). Ist: **209 von 307 Segmenten messbar (68,1 %)**.
+
+**Punkt 1 (natürliche Belichtung) und Punkt 3 (`Tuer.breite_mm`): nur Vorschlag,
+kein Code** — beide brauchen Contract-Felder (1.3.0 → 1.4.0, additiv, Default
+`None`) und damit die 3-Owner-Runde.
+
+**Die drei nächsten Sachen in meiner Lane, alle belegt:**
+1. **61 Fluchtwegsegmente ohne schneidendes Raumpolygon** (`flaeche_fehlt`) —
+   Erkennungslücke, größter Einzelposten der 98 nicht messbaren Segmente.
+2. **83 Muthgasse-Beschriftungsfahnen zählen als Türen** → `RaumModell.tueren`
+   308 statt ~225 (+27 %). Eigenständiger Erkennungs-Bug.
+3. **`dxf_renderer.py:524` erfindet still 900 mm Türbreite** (`breite_mm or 900.0`).
+
+**Fensterlage vorab gemessen** (für Punkt 1, falls er GO bekommt): Muthgasse
+Layer `A-GLAZ*` 579 Punkte (`A-GLAZ-IDEN` = Beschriftung, ausschließen) · Mollgasse
+nur Blockname, 17 INSERTs · Rennweg EG/OG3 in den `Wall_*`-Blöcken, **Einfügepunkt
+ist ein Dummy**, echte Lage nur über Blockgeometrie · **Barawitzka: null
+Fensterobjekte**. Oberlichter: 0 im ganzen Repo.
+
+**Weiter offen wie gehabt:** GESCHÄFTSLOKAL (blockiert, seit 2026-09-08) ·
+Render-Speicher `_figur` 8×/Plan (Leonis) · Spikey-Polygone Mollgasse raum_41/55
+(meine Lane) · Referenz-Frames UG/OG1 nicht verdrahtet · 4 Tür-Quoten-xfails ·
+Baufeld E2 ohne Zielbild · `Projekte/BVH Fischamenderstrasse/fertige
+Elektromontagepläne/` unausgewertet.
+
+---
+## ═══ SELMAN: Stand 2026-09-09 ═══
 
 **Branch:** `selman/extents-ausreisser`, **gepusht**, PR offen. `origin/main` gemergt
 (Leonis: 1:50-Vektor-PDF auf ISO-A-Blatt, DIN-Farbtrennung, Richtungspfeile,
