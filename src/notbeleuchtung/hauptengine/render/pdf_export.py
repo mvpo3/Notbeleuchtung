@@ -21,6 +21,25 @@ from pathlib import Path
 _LIEFER_MASSSTAB = 50
 #: Kanten-Deckel gegen Phantom-Extents (korrupte DXF) — nie größer als 5 m Blatt.
 _MAX_BLATT_MM = 5000.0
+#: Layer des Blatt-Rahmens (Rivoplan-Vorlage) — sein Extent ist der Liefer-Ausschnitt.
+_TITLEBLOCK_LAYER = "din_SIBEL_99_titleblock"
+
+
+def _auto_ausschnitt(doc):
+    """Extent des Blatt-Rahmens im Modelspace → Liefer-Ausschnitt (1:50-Blatt).
+
+    Damit JEDER PDF-Weg der Hauptengine (API, Batch, _merge_pdf, CLI) automatisch das
+    große Vektor-Blatt bekommt, ohne dass der Aufrufer den Ausschnitt kennen muss.
+    Kein Rahmen (kein Blatt-/Template-Modus) → None (A3-Fallback)."""
+    import ezdxf.bbox as _ezbbox
+
+    tb = [e for e in doc.modelspace() if e.dxf.layer == _TITLEBLOCK_LAYER]
+    if not tb:
+        return None
+    ext = _ezbbox.extents(tb, fast=True)
+    if not ext.has_data:
+        return None
+    return (ext.extmin.x, ext.extmin.y, ext.extmax.x, ext.extmax.y)
 
 
 def dxf_zu_pdf(
@@ -59,6 +78,11 @@ def dxf_zu_pdf(
     # unangetastet — CAD rendert weiter mit seiner Standard-Schrift).
     if "Standard" in doc.styles:
         doc.styles.get("Standard").dxf.font = "DejaVuSans.ttf"
+    # „Immer so" (Owner 2026-09-09): ohne expliziten Ausschnitt automatisch den
+    # Blatt-Rahmen als 1:50-Liefer-Ausschnitt nehmen — gilt für JEDES PDF der Engine
+    # (API/Batch/CLI), nicht nur die Skripte. Nur bei PDF-Ausgabe (PNG bleibt wie bisher).
+    if ausschnitt is None and massstab and str(pdf_path).lower().endswith(".pdf"):
+        ausschnitt = _auto_ausschnitt(doc)
     bg = "black" if dunkel else "white"
     fig = plt.figure(figsize=(breite_zoll, hoehe_zoll), dpi=dpi)
     ax = fig.add_axes([0, 0, 1, 1])
