@@ -90,6 +90,16 @@ def test_ohne_raumpolygone_fail_closed():
     assert aufheller_je_rz([_rz()], duenn) == []
 
 
+def test_tuer_rz_ist_vom_aufheller_ausgenommen():
+    """Owner-Entscheid 2026-09-09: das Tür-RZ der Pflichträume (norm_quelle =
+    QUELLE_TUERLEUCHTE) bekommt KEINEN Aufheller — es sitzt an der Tür, das
+    Rauminnere trägt die mittige Zusatzleuchte. Ein gewöhnliches Fluchtweg-RZ
+    (andere Quelle) bekommt ihn weiterhin."""
+    tuer_rz = _rz().model_copy(update={"norm_quelle": QUELLE_TUERLEUCHTE})
+    assert aufheller_je_rz([tuer_rz], _raum()) == []
+    assert len(aufheller_je_rz([_rz()], _raum())) == 1
+
+
 @pytest.mark.parametrize("winkel_deg", range(0, 360, 10))
 def test_winkel_sweep_500mm_und_im_polygon(winkel_deg):
     """Deterministischer Sweep statt hypothesis: für jede Pfeilrichtung bleibt

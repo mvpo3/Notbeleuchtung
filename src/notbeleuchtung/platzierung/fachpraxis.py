@@ -13,6 +13,9 @@ Mess-Protokoll (docs/analyse/mollgasse_ug_notbeleuchtung.md, Abschlussreport):
   in-Session auf Owner-Wort): die GU-Pläne kennen keinen Aufheller-Typ, die
   Messung konnte B1/B2 nicht entscheiden — Quelle ist die Owner-Ansage
   („Aufheller 500 mm neben dem RZ"), nicht die Empirie.
+  Owner-Nachtrag 2026-09-09: das **Tür-RZ** der Pflichträume (TECHNIK/MUELL/
+  KINDERWAGEN) ist vom Aufheller **ausgenommen** — es sitzt an der Tür, das
+  Rauminnere trägt die mittige Zusatzleuchte; ein Aufheller dahinter wäre doppelt.
 
 Audit-Trail: `norm_quelle = "fachpraxis: aufheller-500mm"` (die Naht-Invariante
 prüft Quellen nur auf der Golden-Fixture; ein eigenes `decision_source`-Feld
@@ -180,6 +183,13 @@ def aufheller_je_rz(
     out: list[Platzierung] = []
     for p in platzierungen:
         if p.kind != "rz":
+            continue
+        # Owner-Entscheid 2026-09-09: das Tür-RZ der TECHNIK/MUELL/KINDERWAGEN-Regel
+        # (`tuerleuchte_pflichtraeume`) bekommt KEINEN Aufheller — es sitzt direkt an der
+        # Tür, und das Rauminnere deckt die mittige Zusatzleuchte (Regel-Teil 2) ab. Ein
+        # 500-mm-Aufheller dicht dahinter wäre redundant (sonst vom abstand_nachpass
+        # ohnehin weggeräumt). Fluchtweg-RZ bleiben unberührt.
+        if p.norm_quelle == QUELLE_TUERLEUCHTE:
             continue
         eff = _effektive_richtung_deg(p)
         if eff is None:
