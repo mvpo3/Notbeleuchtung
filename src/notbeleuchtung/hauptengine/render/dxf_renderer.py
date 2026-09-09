@@ -1269,6 +1269,7 @@ def render_dxf(
     photometrie=None,
     unterlage_dxf: str | None = None,
     template_path: Path | str | None = None,
+    rz_sl_farbtrennung: bool = True,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
 
@@ -1338,9 +1339,18 @@ def render_dxf(
         belegung_drawn = _draw_stromkreis_belegung(msp, raum, platzierung)
     anlage_drawn = _draw_anlage(msp, raum, lb)
 
+    # din-Farbtrennung (Referenzplan V25): Rettungszeichen grün (SAFETY_LAYER),
+    # reine Sicherheits-/Antipanikleuchten auf den gelben Zwilling. Aus → alles grün
+    # (Owner-Fixierung #102). RZ und alles Übrige bleiben immer grün.
+    _SL_KINDS = ("sicherheitsleuchte", "antipanik")
     by_kind: dict[str, int] = {}
     for p in platzierung.platzierungen:
-        inserter.insert_platzierung(doc, p)
+        lyr = (
+            library.SAFETY_LAYER_SL
+            if rz_sl_farbtrennung and p.kind in _SL_KINDS
+            else library.SAFETY_LAYER
+        )
+        inserter.insert_platzierung(doc, p, layer=lyr)
         by_kind[p.kind] = by_kind.get(p.kind, 0) + 1
 
     nodeids_drawn, stromkreisnummern_drawn = _draw_nodeid_labels(msp, platzierung)
@@ -1384,6 +1394,8 @@ def render_dxf(
         "blatt_layout_drawn": blatt_drawn,
         "blatt_bbox": list(blatt_bbox) if blatt_bbox else None,
         "layer": LAYER_NOTBELEUCHTUNG,
+        "layer_sl": library.SAFETY_LAYER_SL if rz_sl_farbtrennung else LAYER_NOTBELEUCHTUNG,
+        "rz_sl_farbtrennung": rz_sl_farbtrennung,
         # Slice 3.4 (Template-Modus): dict-Erweiterung, kein Contract.
         **(layout_summary or {}),
     }

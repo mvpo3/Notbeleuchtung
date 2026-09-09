@@ -305,6 +305,53 @@ def test_raum_konturen_und_segmente(rendered):
     assert len(segmente) == summary["fluchtweg_segmente_drawn"] >= 1
 
 
+def _erg_rz_und_sl():
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        Raum,
+        RaumModell,
+    )
+    rz = Platzierung(xy_mm=(1000.0, 1000.0), catalog_key="notlicht_ks_stiege_rechts",
+                     rotation_deg=0.0, mirror_x=False, height_mm=2400.0, kind="rz",
+                     richtung="rechts", circuit_hint="AGV-A-F13", covers_segment=[],
+                     norm_quelle="EN 1838")
+    sl = Platzierung(xy_mm=(2000.0, 1000.0), catalog_key="sicherheitsleuchte_aufheller",
+                     rotation_deg=0.0, mirror_x=False, height_mm=2400.0,
+                     kind="sicherheitsleuchte", richtung="gerade", circuit_hint="AGV-A-F13",
+                     covers_segment=[], norm_quelle="EN 1838")
+    raum = RaumModell(floor="T", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(3000.0, 3000.0)),
+                      raeume=[Raum(id="r", raum_typ="GANG",
+                                   polygon_mm=[(0.0, 0.0), (3000.0, 0.0), (3000.0, 3000.0), (0.0, 3000.0)],
+                                   ist_fluchtweg=True)])
+    return PlatzierungsErgebnis(floor="T", platzierungen=[rz, sl]), raum
+
+
+def test_rz_sl_farbtrennung_gruen_gelb(tmp_path):
+    """din-Konvention (Referenzplan V25): RZ grün, Sicherheits-/Antipanikleuchte gelb.
+    Aus → alles grün (Owner-Fixierung #102). Der gelbe Layer trägt eine Gelb-Farbe."""
+    mapping = library.load_mapping()
+    rz_block = mapping["notlicht_ks_stiege_rechts"]["block_name"]
+    sl_block = mapping["sicherheitsleuchte_aufheller"]["block_name"]
+    erg, raum = _erg_rz_und_sl()
+
+    render_dxf(erg, raum, tmp_path / "an.dxf", rz_sl_farbtrennung=True)
+    doc = ezdxf.readfile(str(tmp_path / "an.dxf"))
+    lay = {e.dxf.name: e.dxf.layer for e in doc.modelspace().query("INSERT")
+           if e.has_xdata("NOTBELEUCHTUNG")}
+    assert lay[rz_block] == library.SAFETY_LAYER
+    assert lay[sl_block] == library.SAFETY_LAYER_SL
+    gelb = doc.layers.get(library.SAFETY_LAYER_SL)
+    assert gelb.dxf.hasattr("true_color")
+
+    render_dxf(erg, raum, tmp_path / "aus.dxf", rz_sl_farbtrennung=False)
+    doc2 = ezdxf.readfile(str(tmp_path / "aus.dxf"))
+    lay2 = {e.dxf.layer for e in doc2.modelspace().query("INSERT")
+            if e.has_xdata("NOTBELEUCHTUNG")}
+    assert lay2 == {library.SAFETY_LAYER}
+
+
 def test_fluchtweg_pfeile_zeigen_zum_ziel():
     """Owner-Regel 2026-09-09: die grüne Fluchtweg-Linie trägt Richtungspfeile (Chevrons)
     in Reiserichtung zum ziel_ausgang. `_seg_reiserichtung` dreht eine ziel-ferne
