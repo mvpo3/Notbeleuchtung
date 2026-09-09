@@ -963,7 +963,7 @@ des Rebase gemacht, um Folgekonflikte zu vermeiden.
 - **Restliche §4.1.2-Punkte** (d, e, f, j, k) am Volltext gegen die Matrix prüfen.
 - **`stair_exit` fehlt** in der Raumerkennung → blockiert `RZ-05`/`RZ-07`
   (@polatselman).
-- **Quellenlage** OVE R 12-2 / OVE E 8350 / TRVB E 102 (nur Nennung, kein Volltext)
+- **Quellenlage** OVE R 12-2 / OVE E 8350 / TRVB E 102 [zurückgezogen 2021] (nur Nennung, kein Volltext)
   · `vorschriftenkurzuebersicht-at.pdf` ist AES-verschlüsselt, nicht auswertbar.
 - **Wegbreite > 2 m / Randstreifen 0,5 m** (§4.2.1/§4.3.1, Anhang B) nicht
   modelliert — **wichtigster offener fachlicher Punkt**. `lux_raster` hat bereits

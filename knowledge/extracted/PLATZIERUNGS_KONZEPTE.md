@@ -269,8 +269,8 @@ am Ausgangs-Segment — die übrigen Schichten sind die Ausbaustufen.
    nötig für die photometriefreie Linien-Verdichtung. Beschaffung: Produktkataloge/Planungstools.
 3. **OVE R 12-2 / OIB-RL 2 Originale** — OFFEN (AT-spezifisch; HB2026 ist DE-only). EN 50172
    dagegen via HB2026-R55–R58 (DIN EN 50172:2024-10) belegt.
-4. ~~TRVB E 102 / 123 S~~ — GESTRICHEN: TRVB E 102 seit 2019-02-14 zurückgezogen, ersetzt
-   durch ÖNORM E 8101 + OVE R 12-2 + EN 1838 + EN 50172 + OIB-RL 2 (→ deckt sich mit Lücke #3).
+4. ~~TRVB E 102 / 123 S~~ — GESTRICHEN: TRVB E 102 zurückgezogen 08.07.2021 — nicht mehr gültig;
+   maßgeblich OIB-RL 2 + OVE E 8101 + OVE R 12-2 (ergänzend EN 1838 + EN 50172) (→ deckt sich mit Lücke #3).
 
 ---
 

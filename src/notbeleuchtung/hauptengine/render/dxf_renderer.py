@@ -911,6 +911,26 @@ _BLATT_VORLAGE_RELPATH = Path("Vorlagen-Legende") / "Notbeleuchtungspläne-Vorla
 _blatt_vorlage_cache: dict = {}
 
 
+def blatt_vorlage_pfad():
+    """Pfad der versionierten Rivoplan-Blatt-Vorlage (oder None, wenn nicht im Repo).
+
+    Für die Auslieferung: die Pipeline richtet damit den Template-Modus (Vorlage in
+    Layout1 + Viewport 1:50) als Standard-Weg ein, ohne dass der Aufrufer den Pfad
+    kennen muss. Ist die Vorlage nicht ladbar (fehlt im Repo / per Cache deaktiviert),
+    gibt es keinen Pfad → die Pipeline fällt aufs Modelspace-Blatt (#115) zurück.
+
+    Der Pfad wird UNABHÄNGIG vom (mutablen) doc-Cache aufgelöst — nur ein explizites
+    `doc=None` (Test/Deaktivierung) unterdrückt ihn. So bleibt der Standard-Weg robust,
+    auch wenn ein Fixture-Teardown den Cache halb zurücklässt (doc ohne pfad)."""
+    if _blatt_vorlage_cache.get("doc", "unset") is None:
+        return None
+    for parent in Path(__file__).resolve().parents:
+        kandidat = parent / _BLATT_VORLAGE_RELPATH
+        if kandidat.exists():
+            return kandidat
+    return None
+
+
 def _blatt_vorlage_doc():
     if "doc" in _blatt_vorlage_cache:
         return _blatt_vorlage_cache["doc"]
@@ -1269,6 +1289,7 @@ def render_dxf(
     photometrie=None,
     unterlage_dxf: str | None = None,
     template_path: Path | str | None = None,
+    pdf_quelle_path: Path | str | None = None,
     rz_sl_farbtrennung: bool = True,
 ) -> dict:
     """Notbeleuchtungs-DXF schreiben; Summary-Superset des Pipeline-Stubs.
@@ -1282,6 +1303,14 @@ def render_dxf(
     als **Zeichnungseigenschaft** in der DXF selbst — im Blatt-Modus trägt das Blatt
     laut Owner-Fixierung keine Zusatz-Boxen, die Einschränkung darf dort aber nicht
     aus der Ausgabe verschwinden.
+
+    `template_path` (Modus 2, Auslieferung) → das Blatt lebt in Layout1 (Paperspace),
+    der Grundriss im Modelspace, der Viewport steht auf exakt 1:50 (AutoCAD-plot-fertig).
+    Passt der Plan in 1:50 nicht in den Vorlagen-Viewport (G6), fällt der Lauf still auf
+    das Modelspace-Blatt (Modus 1) zurück (`layout_fallback` im Summary).
+    `pdf_quelle_path` (nur mit `template_path`) → zusätzlich ein Modelspace-Blatt (Modus 1)
+    dorthin schreiben, weil ezdxf Paperspace-Viewports nicht rastert; der PDF-Weg nutzt
+    diese Quelle, das gelieferte DXF bleibt das Layout-Blatt.
     """
     out_path = Path(out_path)
     if template_path is not None:
@@ -1359,6 +1388,9 @@ def render_dxf(
     _panel_x0_override.clear()
     _set_vport(doc, raum, platzierung)
 
+    # Modus 2 ist bindend: passt der Plan in 1:50 nicht in den Vorlagen-Viewport, wirft
+    # `_fuege_layout_viewport` (G6) — es wird NICHT still auf 1:100 gewechselt. Die
+    # Liefer-Policy (Fallback auf Modelspace-Blatt) liegt in der Pipeline, nicht hier.
     layout_summary = (
         _fuege_layout_viewport(doc, msp, raum, plankopf)
         if template_path is not None else None
@@ -1367,7 +1399,21 @@ def render_dxf(
     out_path.parent.mkdir(parents=True, exist_ok=True)
     doc.saveas(str(out_path))
 
+    # PDF-Quelle (Modus 1): ezdxf rastert Paperspace-Viewports nicht (das PDF eines
+    # Layout-Blatts hätte ein leeres Planfenster). Für den PDF-Weg dasselbe Bild
+    # zusätzlich als Modelspace-Blatt schreiben; das GELIEFERTE DXF bleibt das
+    # Layout-Blatt (Modus 2, in AutoCAD plot-fertig 1:50).
+    pdf_quelle = None
+    if template_path is not None and pdf_quelle_path is not None:
+        render_dxf(
+            platzierung, raum, pdf_quelle_path, lb, pruefung=pruefung,
+            plankopf=plankopf, photometrie=photometrie, unterlage_dxf=unterlage_dxf,
+            template_path=None, rz_sl_farbtrennung=rz_sl_farbtrennung,
+        )
+        pdf_quelle = str(pdf_quelle_path)
+
     return {
+        "pdf_quelle": pdf_quelle,
         "floor": platzierung.floor,
         "n_symbols": len(platzierung.platzierungen),
         "by_kind": by_kind,
