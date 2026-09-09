@@ -1,0 +1,280 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# oib_rl4_fluchtwegbreiten.yaml — OIB-Richtlinie 4, Kapitel 2
+# ERFORDERLICHE Mindestbreiten von Fluchtwegen (Ebene B)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WOFUER: Das Quellenaudit (Korrektur K3) hat RL 4 von "nicht einschlaegig" auf
+# einschlaegig korrigiert: Kapitel 2 regelt die lichten Breiten von Gaengen,
+# Treppen, Rampen und Tueren im Verlauf von Fluchtwegen. Diese Datei erfasst
+# diese Werte quellengebunden.
+#
+# ⚠️ ZWEI GROESSEN, DIE NIE VERWECHSELT WERDEN DUERFEN:
+#
+#   (1) ERFORDERLICHE MINDESTBREITE  — was RL 4 verlangt (diese Datei).
+#       Eine bau- und personenzahlabhaengige ANFORDERUNG an den Entwurf.
+#   (2) TATSAECHLICHE GEOMETRISCHE BREITE — was der Plan hergibt.
+#       Die einzige Groesse, mit der EN 1838 § 4.2.1 arbeitet (2-m-Grenze,
+#       Mittelbereich, Randstreifen) und die in die Lichtberechnung eingeht.
+#
+# Eine Norm-Mindestbreite darf NIEMALS als gemessene Fluchtwegbreite in die
+# Lichtberechnung eingesetzt werden:
+#   * Sie ist eine Untergrenze, kein Messwert — der reale Gang ist meist breiter
+#     und waere dann zu schwach beleuchtet ausgelegt.
+#   * Sie ist eine Sollgroesse — ein Gang, der sie unterschreitet, wuerde
+#     rechnerisch als konform erscheinen.
+#   * RL 4 Punkt 2.5 laesst ausserdem definierte EINENGUNGEN zu; die lichte
+#     Breite an einer Stelle kann also zulaessig unter der Mindestbreite liegen.
+# Diese Datei enthaelt deshalb KEINEN Wert, der in `NormAnforderung` wandert.
+#
+# NUTZEN (heute): Pruefgrundlage und Uebergabe-Spezifikation. Sie sagt, WELCHE
+# Angaben eine gemessene Breite begleiten muessen, damit § 4.2.1 anwendbar ist.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-09-08"
+  owner: "Enis (normwissen)"
+  status: >
+    Quellenarbeit abgeschlossen. Kein Contract-Wert, keine Platzierung, kein
+    Eingang in die Lichtberechnung.
+
+quelle:
+  ausgabe: "OIB-Richtlinie 4 'Nutzungssicherheit und Barrierefreiheit', Ausgabe Mai 2023 (OIB-330.4-026/23)"
+  ebene: "B"
+  ausdruck: "knowledge/OIB-Richtlinien/OIB Richtlinie 4 Nutzungssicherheit und Barrierefreiheit/oib-rl_4_ausgabe_mai_2023.pdf"
+  kapitel: "2 Erschliessung und Fluchtwege"
+  verbindlichkeit: >
+    Wie bei allen OIB-Richtlinien entsteht Verbindlichkeit erst durch Uebernahme
+    ins Landesbaurecht — in den vorliegenden Dokumenten nicht belegt (offen,
+    siehe NORMQUELLEN_AT.md).
+
+# ── Vorbemerkungen der Richtlinie: Anwendungsbereich und Ausnahmen ────────
+# Am Original geprueft (RL 4, Abschnitt 0 "Vorbemerkungen", gedr. S. 2).
+anwendungsbereich:
+  gilt_fuer: "Gebaeude; fuer sonstige Bauwerke sind die Bestimmungen sinngemaess anzuwenden."
+  ausnahme_kleingebaeude: >
+    Fuer eingeschossige, nicht barrierefrei zu gestaltende Gebaeude OHNE Wohnung
+    (z. B. Gartenhuette, Geraetehuette, Kioske) mit hoechstens 15 m²
+    Brutto-Grundflaeche gelten die Anforderungen dieser Richtlinie NICHT.
+  barrierefreiheit_kommt_aus_landesrecht: >
+    Welche Gebaeude oder Gebaeudeteile barrierefrei zu gestalten sind, regeln die
+    jeweiligen landesrechtlichen Bestimmungen — NICHT die RL 4 selbst. Die
+    barrierefrei-abhaengigen Werte (z. B. 1,20 m bei Rampen) sind daher nur
+    anwendbar, wenn diese Eigenschaft aus dem Projekt bekannt ist.
+  gemischte_nutzung: >
+    Bei gemischter Nutzung gelten die Anforderungen je Nutzungsbereich als
+    erfuellt, wenn die fuer die jeweilige Nutzung anzuwendenden Bestimmungen
+    eingehalten sind.
+  abweichungsklausel: >
+    Nach den landesrechtlichen Bestimmungen kann abgewichen werden, wenn der
+    Bauwerber nachweist, dass dasselbe Schutzniveau erreicht wird. ⚠️ Eine
+    Unterschreitung ist damit nicht automatisch ein Fehler — sie kann genehmigt
+    sein. Ein Befund darf nur "Anforderung nicht nachgewiesen" sagen.
+
+  ⚠_fertigmass: >
+    "Alle in dieser Richtlinie angefuehrten Masse verstehen sich als FERTIGMASSE
+    nach Vollendung der Bauführung. Koennen ... Toleranzen angewendet werden, so
+    ist deren Beruecksichtigung nur fuer die Ausfuehrung, nicht jedoch fuer die
+    Planung zulaessig." — Damit ist jeder Vergleich mit einem ROHBAU- oder
+    NENNMASS unzulaessig; die Groessen sind nicht ineinander umrechenbar.
+
+  personenzahl_definition: >
+    "Die Personenzahlen bei Gaengen, Treppen und Tueren beziehen sich auf die
+    hoechstmoeglich zu erwartende Anzahl gleichzeitig anwesender Personen, die im
+    Gefahrenfall auf den jeweiligen Gang, die jeweilige Treppe oder die jeweilige
+    Tuere angewiesen sind. Verbindet der Fluchtweg mehr als drei Geschosse,
+    bezieht sich diese Anzahl auf jeweils drei unmittelbar uebereinanderliegende
+    Geschosse." — Also eine ABSCHNITTSBEZOGENE Groesse, nicht die Personenzahl
+    des Gebaeudeteils.
+
+# ── Drei Breiten-Begriffe, die nie zusammenfallen duerfen ─────────────────
+breiten_begriffe:
+  - begriff: "erforderliche Mindestbreite"
+    herkunft: "OIB-RL 4 Kapitel 2 (diese Datei)"
+    art: "Anforderung an den Entwurf, Fertigmass"
+    verwendung: "Vergleichsmassstab fuer einen Nachweis — nie Eingang der Lichtrechnung"
+  - begriff: "oertliche Engstelle"
+    herkunft: "Geometrie: schmalste Stelle eines Abschnitts"
+    art: "ein einzelner Messwert"
+    verwendung: >
+      Pruefung gegen die Mindestbreite. ⚠️ NICHT als Breite des ganzen
+      Abschnitts verwenden: die Engstelle wuerde breitere Bereiche aus der
+      Bewertung entfernen — genau dort verlangt EN 1838 § 4.2.1 aber die
+      Streifenbetrachtung oder Antipanik (Satz 3).
+  - begriff: "tatsaechliche Breite entlang des Weges"
+    herkunft: "Geometrie: Breitenverlauf ueber die Achse"
+    art: "Profil bzw. abschnittsweise konstante Werte"
+    verwendung: >
+      Der einzige zulaessige Eingang in die Lichtrechnung. Wechselt die Breite,
+      ist der Fluchtweg entweder in Abschnitte konstanter Breite zu teilen ODER
+      es ist ein Breitenprofil je Abschnitt zu fuehren. Beide Wege muessen die
+      2-m-Grenze des § 4.2.1 dort erkennen, wo sie tatsaechlich ueberschritten
+      wird.
+
+breiten_begriffe_regel: >
+  Aus einer Engstelle folgt weder die Breite des Abschnitts noch die Erfuellung
+  der Mindestbreite; aus der Mindestbreite folgt keine Geometrie; aus einem
+  Profil folgt kein Nachweis. Drei Groessen, drei Aussagen.
+
+# ── Erforderliche Mindestbreiten ──────────────────────────────────────────
+mindestbreiten:
+  gaenge:
+    fundstelle: "RL 4, Punkt 2.4.1, gedr. S. 4"
+    hauptgang_m: 1.20
+    hauptgang_1_00_zulaessig_bei:
+      - "Gebaeude oder Gebaeudeteile mit nicht mehr als drei Wohnungen"
+      - "Reihenhaeuser"
+      - "Wohnungen in nicht barrierefrei zu gestaltenden Gebaeuden oder Gebaeudeteilen"
+      - "anpassbare Wohnungen nach Punkt 7.4.2, wenn 1,20 m bei Bedarf herstellbar ist"
+      - "anpassbare Wohnungen nach Punkt 7.4.2 ueber mehrere Ebenen, fuer den nach Punkt 2.4.3 nicht barrierefrei erreichbaren Teil"
+      - "Nebengaenge"
+    ⚠_hinweis: >
+      Die 1,00-m-Faelle sind eine Aufzaehlung mit Bedingungen, keine allgemeine
+      Alternative. Ohne die jeweilige Bedingung gilt 1,20 m.
+  treppen:
+    fundstelle: "RL 4, Punkt 2.4.3, Tabelle 1, gedr. S. 4"
+    haupttreppe_ausgenommen_wohnungstreppe_m: 1.20
+    wohnungstreppe_m: 0.90
+    nebentreppe_m: 0.60
+    gilt_sinngemaess_auch_fuer: "Podeste"
+    sonderfall_anpassbare_wohnung: >
+      Bei Wohnungstreppen in anpassbaren Wohnungen nach Punkt 7.4.2 ueber
+      mehrere Ebenen, wenn Wohnen/Schlafen/Kochen/Sanitaer nicht in der
+      barrierefrei zugaenglichen Ebene liegen: mindestens 1,10 m bei gerader
+      Fuehrungsschiene, mindestens 1,20 m bei gekruemmter Fuehrungsschiene eines
+      Treppenschraegaufzugs; Anfahr- und Bewegungsflaechen beruecksichtigen.
+  rampen:
+    fundstelle: "RL 4, Punkt 2.4.4, gedr. S. 4"
+    regel: "Mindestmasse der Tabelle 1 sinngemaess"
+    barrierefrei_m: 1.20
+  personenabhaengige_erhoehung:
+    fundstelle: "RL 4, Punkt 2.4.5, gedr. S. 4"
+    schwelle_personen: 120
+    erhoehung: "je weitere angefangene 10 Personen um jeweils 10 cm"
+    gilt_fuer: ["Gaenge", "Treppen", "Rampen"]
+    ⚠_benoetigt: "Personenzahl je Fluchtweg-Abschnitt — im RaumModell nicht vorhanden."
+  stadien_versammlungsstaetten_im_freien:
+    fundstelle: "RL 4, Punkt 2.4.6, gedr. S. 4"
+    bis_personen: 300
+    mindestbreite_m: 1.20
+    erhoehung: "ueber 300 Personen je weitere angefangene 50 Personen um jeweils 10 cm"
+  zwischenhandlaeufe:
+    fundstelle: "RL 4, Punkt 2.4.7, gedr. S. 4"
+    regel: >
+      Bei Treppen im Verlauf von Fluchtwegen, auf die mehr als 240 Personen
+      gleichzeitig angewiesen sind, sind Zwischenhandlaeufe erforderlich, wenn
+      die Treppenlaufbreite 2,40 m ueberschreitet.
+  durchgangshoehe:
+    fundstelle: "RL 4, Punkt 2.4.8, gedr. S. 5"
+    mindesthoehe_m: 2.10
+    gilt_fuer: ["Treppen (an der Stufenvorderkante)", "Rampen", "Gaenge"]
+
+tueren:
+  allgemein:
+    fundstelle: "RL 4, Punkt 2.7.1/2.7.2, gedr. S. 5"
+    nutzbare_breite_min_m: 0.80
+    nutzbare_hoehe_min_m: 2.00
+    ⚠_bezugsmass: >
+      "Nutzbare Breite der DURCHGANGSLICHTE" — das lichte Fertigmass der
+      geoeffneten Tuer, nicht die Nennbreite des Tuerblatts und nicht das
+      Rohbaumass der Oeffnung. Ein Vergleich mit `RaumModell.Tuer.breite_mm` ist
+      erst zulaessig, wenn dessen Herkunft geklaert ist (siehe
+      `tuerbreite_herkunft` unten).
+    ausnahme_2_7_3: "Tueren von Toiletten mit einer Raumgroesse unter 1,80 m² duerfen nicht nach innen oeffnend ausgefuehrt sein (RL 4 Punkt 2.7.3) — eine Ausfuehrungs-, keine Breitenanforderung."
+  im_verlauf_von_fluchtwegen:
+    fundstelle: "RL 4, Punkt 2.8.1, gedr. S. 5"
+    baender:
+      - {bis_personen: 40, nutzbare_breite_m: 0.80}
+      - {bis_personen: 80, nutzbare_breite_m: 0.90}
+      - {bis_personen: 120, nutzbare_breite_m: 1.00}
+    ueber_120_personen: "je weitere angefangene 10 Personen um jeweils 10 cm erhoehen"
+    zwei_tueren_regel: "Liegen zwei Tueren im Abstand von maximal 20 cm nebeneinander, koennen sie als eine Tuer gerechnet werden."
+  stadien_im_freien:
+    fundstelle: "RL 4, Punkt 2.8.2, gedr. S. 5"
+    bis_personen: 300
+    mindestbreite_m: 1.20
+    erhoehung: "ueber 300 Personen je weitere angefangene 50 Personen um jeweils 10 cm"
+
+# ── Herkunft des vorhandenen Feldes `Tuer.breite_mm` (geprueft am Code) ───
+tuerbreite_herkunft:
+  geprueft_gegen: "origin/main 4c5df91, src/notbeleuchtung/raumerkennung/tueren.py und tuer_zuordnung.py"
+  befunde:
+    - pfad: "tueren.py::_breite_mm"
+      was: >
+        NENNBREITE aus dem Blocknamen: die erste Zahl im cm-Tuerbereich 60-130
+        wird mal 10 genommen ("TUER-80" -> 800 mm), alternativ ein mm-Mass
+        600-1300. Das ist ein Bestell-/Nennmass des Tuerblatts.
+    - pfad: "tueren.py::_breite_mm (Oeffnungs-Marker)"
+      was: >
+        Traegt der Block einen Oeffnungs-Marker, wird 0.0 zurueckgegeben —
+        ⚠️ 0.0 bedeutet KEINE MESSUNG, nicht "Breite null".
+    - pfad: "tuer_zuordnung.py:155"
+      was: >
+        Auf einem anderen Pfad wird die Breite aus der Geometrie gerundet
+        uebernommen — also eine dritte Herkunft im selben Feld.
+  folge: >
+    ⚠️ `Tuer.breite_mm` traegt heute mindestens drei verschiedene Bedeutungen
+    (Nennmass aus dem Namen, geometrisch abgeleitetes Mass, 0.0 = unbekannt) und
+    ist in keinem Fall die von RL 4 verlangte NUTZBARE DURCHGANGSLICHTE als
+    Fertigmass. Ein Vergleich mit den 80/90/100-cm-Werten ist deshalb HEUTE
+    UNZULAESSIG — er wuerde ein Nennmass gegen ein lichtes Fertigmass pruefen und
+    systematisch zu guenstig ausfallen (Zarge und Blatt fehlen).
+  vor_jeder_pruefung_zu_klaeren:
+    - "Welche der drei Herkuenfte liegt im konkreten Modell vor?"
+    - "Ist eine Umrechnung Nennmass -> Durchgangslichte belegt (Quelle, nicht Schaetzung)?"
+    - "Wie wird 0.0 = keine Messung von einer echten Messung unterschieden?"
+  status: blockiert_bis_semantik_geklaert
+
+# ── Zulaessige Einengungen — der Grund, warum Soll ≠ Ist ──────────────────
+einengungen:
+  fundstelle: "RL 4, Punkt 2.5.1 bis 2.5.4, gedr. S. 5"
+  grundsatz: "Die Mindestbreite von Gaengen und Treppen darf durch Einbauten oder vorstehende Bauteile nicht eingeengt werden."
+  zulaessige_ausnahmen:
+    - "Treppenschraegaufzuege in Parkstellung: hoechstens 30 cm"
+    - "stellenweise Einengungen in Gaengen: hoechstens 10 cm auf hoechstens 1,20 m Laenge (z. B. Pfeiler, Verzierungen, Tuerbeschlaege, geoeffnete Tueren)"
+    - "Handlaeufe bei Haupttreppen (ausgenommen Wohnungstreppen): hoechstens 10 cm je Seite"
+    - "Treppenwangen bei Haupttreppen: hoechstens 10 cm Breite und 15 cm Hoehe je Seite"
+    - "leicht entfern- oder oeffenbare Zugangssicherungen vor abwaertsfuehrenden Treppen in Alten-/Senioren-/Pflegeheimen und Krankenhaeusern"
+    - "Treppen im Kopfbereich: Schraege von hoechstens 25 cm Hoehe und 25 cm Breite je Seite, mindestens 50 cm duerfen nicht eingeengt werden (Punkt 2.5.2)"
+    - "Rampen ab 1,20 m lichter Breite: Handlaeufe hoechstens 10 cm je Seite (Punkt 2.5.4)"
+  folge_fuer_die_engine: >
+    Aus der Zulaessigkeit stellenweiser Einengungen folgt unmittelbar, dass die
+    tatsaechliche lichte Breite an einer Stelle des Fluchtwegs UNTER der
+    Mindestbreite liegen darf. Eine aus dieser Datei entnommene Zahl beschreibt
+    deshalb nie die Geometrie eines konkreten Abschnitts.
+
+# ── Abgrenzung zur Lichtberechnung ────────────────────────────────────────
+abgrenzung_en1838:
+  bezug: "OENORM EN 1838 § 4.2.1 (Rettungsweg) und § 4.3.1 (Antipanik)"
+  was_en1838_braucht:
+    - "die TATSAECHLICHE Breite des Fluchtweg-Abschnitts (Geometrie)"
+    - "daraus: Mittelbereich (bis 2 m Breite) und Randstreifen"
+  was_rl4_liefert:
+    - "die ERFORDERLICHE Mindestbreite (Anforderung an den Entwurf)"
+  verhaeltnis: >
+    Keine der beiden Groessen ersetzt die andere. RL 4 kann pruefen, ob ein
+    gemessener Abschnitt die Anforderung erfuellt; sie kann die Messung nicht
+    ersetzen.
+  verbot: >
+    ⚠️ Ein RL-4-Wert darf NICHT als `breite_mm` eines Fluchtweg-Abschnitts in
+    die Lux-/Deckungsrechnung eingesetzt werden — weder als Default noch als
+    Fallback. Details: docs/proposals/WEGBREITE_RANDSTREIFEN.md.
+
+# ── Was fehlt, damit RL 4 pruefbar wird ───────────────────────────────────
+benoetigte_angaben:
+  - angabe: "tatsaechliche lichte Breite je Fluchtweg-Abschnitt (mm)"
+    heute: "nicht im RaumModell"
+    braucht: "@polatselman — Erkennung aus der Geometrie; zugleich der fehlende § 4.2.1-Eingang"
+  - angabe: "Personenzahl je Fluchtweg-Abschnitt"
+    heute: "nicht vorhanden"
+    braucht: "Projektangabe/LB — Grundlage der Punkte 2.4.5, 2.4.6, 2.8.1"
+  - angabe: "Gangart (Hauptgang/Nebengang), Treppenart (Haupt-/Wohnungs-/Nebentreppe)"
+    heute: "nicht typisiert"
+    braucht: "@polatselman — bestimmt, welche Zeile der Tabelle 1 gilt"
+  - angabe: "barrierefrei zu gestalten ja/nein je Gebaeudeteil"
+    heute: "nur Raum.ist_barrierefrei (anderer Gegenstand: § 4.3.8 Toiletten)"
+    braucht: "ProjektKontext — 3 Owner"
+  - angabe: "nutzbare Breite je Tuer im Fluchtweg"
+    heute: "Tueren sind im RaumModell vorhanden, eine nutzbare Breite fuehrt es nicht"
+    braucht: "@polatselman"
+status: nicht_pruefbar
