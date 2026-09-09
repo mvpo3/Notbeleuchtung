@@ -92,6 +92,24 @@ def run_projekt(
     return ProjektErgebnis(outputs=outputs, combined_pdf=combined_pdf, summary=summary)
 
 
+def _titleblock_ausschnitt(dxf: Path):
+    """Extent des Blatt-Rahmens (din_SIBEL_99_titleblock) → Ausschnitt fürs 1:50-Blatt.
+
+    So bekommt auch der Batch-Weg das große Vektor-Blatt (zoombar wie ein CAD-Plan);
+    ohne Blatt-Rahmen (kein Template-/Blatt-Modus) → None = A3-Fallback."""
+    import ezdxf
+    from ezdxf import bbox as _bb
+
+    doc = ezdxf.readfile(str(dxf))
+    tb = [e for e in doc.modelspace() if e.dxf.layer == "din_SIBEL_99_titleblock"]
+    if not tb:
+        return None
+    ext = _bb.extents(tb, fast=True)
+    if not ext.has_data:
+        return None
+    return (ext.extmin.x, ext.extmin.y, ext.extmax.x, ext.extmax.y)
+
+
 def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
     """Jedes Geschoss-DXF → PDF-Seite; alle in ein PDF (Reihenfolge = Eingabe)."""
     from pypdf import PdfWriter
@@ -101,7 +119,7 @@ def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
     writer = PdfWriter()
     for dxf in dxf_paths:
         seite = dxf.with_suffix(".pdf")
-        dxf_zu_pdf(dxf, seite)
+        dxf_zu_pdf(dxf, seite, ausschnitt=_titleblock_ausschnitt(dxf))
         writer.append(str(seite))
         # Lux-Nachweis-Seite je Geschoss direkt hinter dem Plan (falls die Pipeline
         # sie erzeugt hat) — als PDF-Seite aus der PNG.

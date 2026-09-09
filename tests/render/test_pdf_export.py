@@ -33,6 +33,26 @@ def test_dxf_zu_pdf_erzeugt_pdf(tmp_path):
     assert pdf.stat().st_size > 1000
 
 
+def test_liefer_pdf_ist_1zu50_vektorblatt(tmp_path):
+    """Owner 2026-09-09: das Liefer-PDF ist ein echtes 1:50-Vektor-Blatt — Seite =
+    Ausschnitt/50 (mm), nicht tight-gecropt — damit man wie in einem CAD-Plan zoomen
+    kann. Fest verankert (Referenz MOL_GR-…_1-50, Seite 900×1800 mm)."""
+    from pypdf import PdfReader
+    pdf = dxf_zu_pdf(_dxf(tmp_path), tmp_path / "blatt.pdf",
+                     ausschnitt=(0.0, 0.0, 50000.0, 40000.0), dpi=80)
+    mb = PdfReader(str(pdf)).pages[0].mediabox
+    w_mm, h_mm = float(mb.width) * 25.4 / 72, float(mb.height) * 25.4 / 72
+    # 50000/50=1000, 40000/50=800 mm (+1 % Rand je Seite → ~1020×816)
+    assert 1000.0 < w_mm < 1045.0, w_mm
+    assert 800.0 < h_mm < 835.0, h_mm
+
+    # massstab=None → altes A3-tight-Verhalten (viel kleiner, NICHT ausschnitt/50)
+    klein = dxf_zu_pdf(_dxf(tmp_path), tmp_path / "a3.pdf",
+                       ausschnitt=(0.0, 0.0, 50000.0, 40000.0), massstab=None, dpi=80)
+    mb2 = PdfReader(str(klein)).pages[0].mediabox
+    assert float(mb2.width) * 25.4 / 72 < 600.0
+
+
 def test_dxf_zu_pdf_hell_und_dunkel(tmp_path):
     dxf = _dxf(tmp_path)
     hell = dxf_zu_pdf(dxf, tmp_path / "hell.pdf", dunkel=False, dpi=100)
