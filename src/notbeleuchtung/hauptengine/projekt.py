@@ -54,7 +54,7 @@ def run_projekt(
         op = out_dir / f"{plan.floor}_notbeleuchtung.dxf" if out_dir is not None else None
         out = run(bundle, dxf_path=plan.dxf_path, floor=plan.floor,
                   out_path=op, lb_path=lb_path, plankopf=plankopf,
-                  projekt_kontext=projekt_kontext)
+                  projekt_kontext=projekt_kontext, pdf_quelle=pdf)
         outputs.append(out)
         if op is not None:
             dxf_paths.append(op)
@@ -96,7 +96,12 @@ def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
     """Jedes Geschoss-DXF → PDF-Seite; alle in ein PDF (Reihenfolge = Eingabe).
 
     `dxf_zu_pdf` erkennt den Blatt-Rahmen selbst und liefert das große 1:50-Vektor-Blatt
-    (Owner 2026-09-09) — kein Ausschnitt nötig."""
+    (Owner 2026-09-09) — kein Ausschnitt nötig.
+
+    Das gelieferte Geschoss-DXF ist das Layout-Blatt (Paperspace, Viewport 1:50), das
+    ezdxf NICHT rastert. Für die PDF-Seite die daneben geschriebene Modelspace-Quelle
+    (`<floor>_notbeleuchtung.modelspace.dxf`, Modus 1) nehmen — sie trägt den Blatt-
+    Rahmen im Modelspace, den `_auto_ausschnitt` findet. Danach wird sie entfernt."""
     from pypdf import PdfWriter
 
     from .render import dxf_zu_pdf
@@ -104,7 +109,10 @@ def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
     writer = PdfWriter()
     for dxf in dxf_paths:
         seite = dxf.with_suffix(".pdf")
-        dxf_zu_pdf(dxf, seite)
+        quelle = dxf.with_name(dxf.stem + ".modelspace.dxf")
+        dxf_zu_pdf(quelle if quelle.exists() else dxf, seite)
+        if quelle.exists():
+            quelle.unlink()  # internes Modelspace-Blatt, nur für den PDF-Weg
         writer.append(str(seite))
         # Lux-Nachweis-Seite je Geschoss direkt hinter dem Plan (falls die Pipeline
         # sie erzeugt hat) — als PDF-Seite aus der PNG.
