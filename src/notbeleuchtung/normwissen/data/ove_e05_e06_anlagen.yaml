@@ -1,0 +1,215 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# ove_e05_e06_anlagen.yaml — OVE-Fachinformationen E05 (Garagen) und
+# E06 (kombinierte Bussysteme), beide Ebene D
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# WOFUER: Beide Fachinformationen standen im Bestand als "nur gespeichert" bzw.
+# als Digest-Eintrag ohne Originalpruefung. Hier sind sie am Original
+# ausgewertet — mit ihrem Anwendungsbereich, ihrer Bezugsnorm und ihrer
+# Aussagekraft.
+#
+# WAS SIE NICHT TUT: Sie aktiviert nichts. Beide betreffen die ANLAGENTECHNIK
+# (Installation, Steuerung, Pruefung), nicht die Erforderlichkeit und nicht die
+# Platzierung von Symbolen. Kein Contract-Wert, kein Provider, keine Regel.
+#
+# ⚠️ BEIDE SIND HISTORISCHE TEXTE MIT AKTUELLEM DECKBLATT:
+#   E05 traegt "Ausgabe: 2021-01-01", ist aber die Erstveroeffentlichung aus
+#   e&i 108. Jg. (1991) H.4 und laut Schlusssatz "nur gemeinsam mit
+#   OEVE-EN 1 Teil 4 § 90:1991 anwendbar" — einer laengst abgeloesten Norm.
+#   E06 traegt dieselbe Ausgabe, ist die "Fachinformation vom Jaenner 2009" und
+#   laut Text an OEVE/OENORM E 8002-1:2007 gebunden.
+#   Keine der beiden Bezugsnormen liegt im Repo.
+# ═══════════════════════════════════════════════════════════════════════════
+
+meta:
+  schema_version: "1.0.0"
+  curated_at: "2026-09-08"
+  owner: "Enis (normwissen)"
+  status: >
+    Quellenarbeit abgeschlossen, keine Umsetzung. Funktionsbereich
+    Anlagentechnik/Pruefung — ausserhalb der Plangenerierung.
+
+# ═══ E05 — Garagen ═════════════════════════════════════════════════════════
+e05:
+  quelle:
+    ausgabe: "OVE-Fachinformation E05:2021-01-01 (Erstveroeffentlichung e&i 108. Jg. (1991) H.4), Aktualitaetspruefung 2020-12"
+    ebene: "D"
+    umfang: "1 Seite, keine Bilder, keine Fussnoten"
+    ausdruck: "knowledge/OVE-Fachinformation/Fachinfo_E-05_Elektrische_Niederspannungsanlagen_in_Garagen_2020-12.pdf"
+    zustaendig: "OVE/TK E Elektrische Niederspannungsanlagen"
+    bezugsnorm: "OEVE-EN 1 Teil 4 § 90:1991 — NICHT im Repo, Ausgabe von 1991"
+    anwendungsvorbehalt: "Der Inhalt ist nur gemeinsam mit OEVE-EN 1 Teil 4 § 90:1991 anwendbar (Schlusssatz)."
+
+  kernaussage:
+    anlass: >
+      Vorwurf, die Aussage in § 90.1 "Garagen sind brandgefaehrdete Raeume" stehe
+      im Widerspruch zu den meisten Landesbauordnungen, die Garagen im
+      Allgemeinen nicht als brandgefaehrdete Raeume einstufen.
+    aussage: >
+      Der Widerspruch besteht nur scheinbar. Raum-, Bereichs- und andere
+      Klassifikationen elektrotechnischer Bestimmungen unterliegen IMMER der
+      Einschraenkung auf den eigenen Geltungsbereich — auch dann, wenn sie
+      wort- oder sinngleiche Begriffe anderer technischer oder Rechtsnormen
+      verwenden. Der Satz ist zu lesen als "Garagen sind brandgefaehrdete Raeume
+      IM SINNE DIESER BESTIMMUNGEN".
+    absicht: >
+      Es bestand nie die Absicht, mehr zu fordern, als Starkstromanlagen mit
+      Nennspannungen bis AC 1000 V und DC 1500 V in Garagen jenen
+      Installationsbestimmungen zu unterwerfen, die § 50 der OEVE-EN 1 Teil 4
+      fuer brandgefaehrdete Raeume ausfuehrt.
+    zitierte_installationsbestimmungen:
+      - "OEVE-EN 1 Teil 4 § 50 (Installationsbestimmungen fuer brandgefaehrdete Raeume) — NICHT im Repo"
+      - "OEVE-EN 1 Teil 4 § 90 (Garagen) — NICHT im Repo"
+    ⚠_inhalt_nicht_ergaenzt: >
+      Was § 50 konkret verlangt, steht NICHT in E05 und wird hier NICHT
+      ergaenzt oder geraten. Ohne die Bezugsnorm bleibt der Inhalt offen.
+
+  verhaeltnis_zu_oib_rl2_2:
+    befund: "verschiedene Fragen, keine Gleichsetzung"
+    e05_frage: "Nach welchen Installationsbestimmungen ist die elektrische Anlage in einer Garage zu errichten?"
+    oib_frage: "Ist in dieser Garage eine Sicherheitsbeleuchtung erforderlich?"
+    oib_fundstelle: "OIB-Richtlinie 2.2, Punkt 5.5.3 (Mai 2023): Garagen mit einer Nutzflaeche von mehr als 250 m² erfordern eine Sicherheitsbeleuchtung; Anforderungen nach Tabelle 6 der OIB-RL 2 (in der Engine als Zeile 11.1 abgebildet, Baender 250/1600 m²)."
+    ⚠_keine_uebertragung: >
+      Die elektrotechnische Einstufung "brandgefaehrdeter Raum" begruendet KEINE
+      Sicherheitsbeleuchtungs-Pflicht, und die OIB-Schwelle von 250 m²
+      begruendet KEINE elektrotechnische Einstufung. E05 sagt genau das selbst:
+      Klassifikationen gelten nur im eigenen Geltungsbereich. Die
+      Begriffsgleichheit ("brandgefaehrdet") darf nicht als Sachgleichheit
+      gelesen werden.
+
+  gegenprobe_e8101:
+    befund: >
+      Die geltende OVE E 8101 fuehrt Garagen in einem EIGENEN Teil, ohne sie
+      pauschal als brandgefaehrdet einzustufen.
+    fundstelle: "OVE E 8101:2025-10-01, Teil 7-7N90 'Garagen, ueberdachte Stellplaetze, Parkdecks sowie Arbeitsgruben oder Unterfluranlagen', Abschnitt 7N90.1.AT"
+    wortlaut_auszug: >
+      Dieser Teil gilt fuer elektrische Anlagen in Garagen, ueberdachten
+      Stellplaetzen, Parkdecks ... Dieser Teil gilt nicht fuer
+      explosionsgefaehrdete Bereiche. ANMERKUNG 1.AT: Fuer bautechnische
+      Anforderungen siehe OIB-Richtlinien. ANMERKUNG 2.AT: Fuer Grossgaragen
+      gelten zusaetzliche Bestimmungen wie z. B. Teil 7-718. ANMERKUNG 3.AT:
+      Fuer brandgefaehrdete Raeume und Bereiche gelten zusaetzliche Bestimmungen
+      wie z. B. Teil 4-42, OIB-Richtlinien, Technische Richtlinien vorbeugender
+      Brandschutz.
+    ⚠_folge: >
+      Die pauschale Gleichsetzung "Garage = brandgefaehrdeter Raum" ist in der
+      geltenden Norm NICHT wiederholt; sie steht dort als BEDINGTER Verweis
+      ("fuer brandgefaehrdete Raeume gelten zusaetzliche Bestimmungen"). Die
+      E05-Aussage ist damit an ihre Ausgabe von 1991 gebunden und darf nicht als
+      aktuelle allgemeine Einstufung gefuehrt werden. Fuer Grossgaragen verweist
+      die Norm ausserdem auf Teil 7-718 — jenen Teil, der auch
+      718.560.9.001.AT traegt.
+    beispielhafte_anforderung_2025: "7N90.55.001.AT: Betriebsmittel mindestens IP44; Schalter und Steckdosen mindestens 1 m ueber dem Boden. (Installationsanforderung, kein Notbeleuchtungs-Tatbestand.)"
+
+  relevanz_notbeleuchtung:
+    einstufung: "mittelbar"
+    begruendung: >
+      E05 regelt die Installationsart, nicht die Erforderlichkeit oder
+      Platzierung von Sicherheitsleuchten. Fuer die Symbolplanung folgt daraus
+      nichts. Mittelbar beruehrt sie die Leitungsfuehrung in Garagen (dort
+      trifft sie sich mit E07) — auch das ist Elektro-Ausfuehrungsplanung.
+    funktionsbereich: "Anlagen-/Installationsplanung"
+    verbraucher: null
+    status: nicht_pruefbar
+
+# ═══ E06 — Sicherheitsbeleuchtungsanlagen mit kombinierten Bussystemen ═════
+e06:
+  quelle:
+    ausgabe: "OVE-Fachinformation E06:2021-01-01 (inhaltlich: Fachinformation vom Jaenner 2009), Aktualitaetspruefung 2020-12"
+    ebene: "D"
+    umfang: "2 Seiten, keine Bilder, keine Fussnoten"
+    ausdruck: "knowledge/OVE-Fachinformation/Fachinfo_E-06_Bussystem_2020-12.pdf"
+    zustaendig: "OVE/TSK E04 Sonderanlagen"
+    bezugsnorm: "OEVE/OENORM E 8002-1:2007 (Abschnitte 7.8.3 und 4.1.1) — NICHT im Repo"
+    art_der_aussagen: >
+      Der Text bezeichnet seine Punkte ausdruecklich als EMPFEHLUNGEN
+      ("werden nachfolgende Empfehlungen gegeben"). Sie begruenden keine
+      Rechtspflicht und ersetzen keine Norm.
+
+  anwendungsbereich:
+    definition: >
+      Kombinierte Bussysteme gemaess OEVE/OENORM E 8002-1:2007 Abschnitt 7.8.3
+      sind Bussysteme, die NICHT ausschliesslich der Steuerung und Ueberwachung
+      von Sicherheitsbeleuchtungsanlagen dienen, sondern ueber denselben Bus
+      auch andere gebaeudetechnische Komponenten (z. B. die Allgemeinbeleuchtung)
+      steuern und/oder ueberwachen.
+    ⚠_grenze: >
+      Alle Punkte unten gelten NUR fuer diesen Fall. Eine Anlage mit getrenntem
+      Bussystem oder ohne Bus ist von E06 nicht erfasst — und aus E06 folgt fuer
+      sie nichts.
+    risiko: >
+      Beim ungepruefen Einsatz koennen Sicherheitsleuchten im Fehlerfall ihre
+      Funktionen nicht mehr richtig ausfuehren; das Schutzziel gemaess
+      E 8002-1:2007 Abschnitt 4.1.1 wird dann nicht erreicht.
+    grundsatz: "Fuer die Sicherheitsbeleuchtung ist aus sicherheitstechnischer Sicht ein getrenntes Bussystem zu bevorzugen."
+
+  planung_errichtung_dokumentation:
+    fundstelle: "E06 Abschnitt 2.1 (2.1.1 bis 2.1.6), S. 1-2"
+    punkte:
+      - "2.1.1 Vor der Ausfuehrung schriftliche Herstellerbestaetigung: Einhaltung der Umschaltzeit von maximal 0,5 s bei vorgesehener Bestueckung mit allen Buskomponenten (z. B. EVG) sowie Kompatibilitaet des Systems Bus-EVG-Leuchte."
+      - "2.1.2 Schriftliche Herstellerbestaetigung: bei Stoerungen (z. B. Kurzschluss, Brand an Leitungsanlage oder Buscontroller) keine Rueckwirkungen auf die Funktion der Sicherheitsbeleuchtung."
+      - "2.1.3 Bestueckung mit allen Buskomponenten und spaetere Aenderungen von Anlagenparametern dokumentieren."
+      - "2.1.4 Aenderungen an voreingestellten Betriebszustaenden nur willentlich (z. B. Passwort, befugte Personen) und dokumentiert."
+      - "2.1.5 Jede in die Allgemeinbeleuchtung integrierte Sicherheitsleuchte samt Betriebsgeraeten kennzeichnen, mit den massgeblichen Parametern (Art der Programmierung, Adresse, Dimmwerte)."
+      - "2.1.6 Alle Schalteinrichtungen, die fuer die Ueberpruefung zu betaetigen sind (Netzausfall-Simulation, Netzausfall der Unterverteiler, Abschaltung der Bussteuerung), kennzeichnen und dokumentieren."
+
+  pruefungen:
+    erstpruefung:
+      fundstelle: "E06 Abschnitt 2.2 (2.2.1 bis 2.2.5), S. 2"
+      punkte:
+        - "2.2.1 Funktion bei ausgeschalteter Bussteuerung (Netztrennung der Bussteuereinheit)."
+        - "2.2.2 Funktion bei Stoerung im Bussystem (Kurzschluss der Busleitungen, Unterbrechung, Ausfall der Steuerung); zusaetzlich Pruefung der Kennzeichnung von Buskomponenten und Leuchten."
+        - "2.2.3 Sicherstellen, dass bei aktivierter Sicherheitsbeleuchtung die Buskomponenten weder im AC- noch im DC-Betrieb geschaltet oder gedimmt werden koennen."
+        - "2.2.4 Vollstaendigkeit der Anlagendokumentation pruefen (Bestueckung, Betriebszustaende, Programmierung, Adresse, Dimmwerte)."
+        - "2.2.5 Fuehrt der Errichter die Erstpruefung nicht selbst durch, ist eine befugte Fachkraft heranzuziehen (z. B. akkreditierte Pruefstelle, Ziviltechniker fuer Elektrotechnik)."
+    wiederholungspruefung:
+      fundstelle: "E06 Abschnitt 2.3 (2.3.1 bis 2.3.4), S. 2"
+      punkte:
+        - "2.3.1 Funktion bei ausgeschalteter Bussteuerung."
+        - "2.3.2 Funktion bei simulierter Bus-Stoerung."
+        - "2.3.3 Sicherstellen, dass Betriebsgeraete bei aktivierter Sicherheitsbeleuchtung nicht geschaltet oder gedimmt werden koennen."
+        - "2.3.4 Vollstaendigkeit UND Aktualitaet der Anlagendokumentation pruefen."
+      ⚠_unterschied_zur_erstpruefung: >
+        Die Wiederholungspruefung fordert zusaetzlich die AKTUALITAET der
+        Dokumentation und nennt keine Pflicht zur befugten Fachkraft. E06 gibt
+        kein Intervall an — Intervalle stehen anderswo (fuer Arbeitsstaetten
+        z. B. AStV § 13 und OVE-Fachinformation E08 Abschnitt 6).
+
+  umschaltzeit_abgrenzung:
+    e06_wert: "maximal 0,5 s (E06 2.1.1, gebunden an E 8002-1:2007 und an kombinierte Bussysteme)"
+    en1838_werte: "50 % in 5 s und 100 % in 60 s (EN 1838 § 4.2.6/§ 4.3.6/§ 5.4.6); 0,5 s nur fuer Arbeitsplaetze mit besonderer Gefaehrdung (§ 4.4.6)"
+    ⚠_nicht_gleichsetzen: >
+      Die 0,5 s aus E06 sind KEINE allgemeine Verschaerfung der
+      EN-1838-Umschaltzeit und NICHT dasselbe wie die 0,5 s des § 4.4.6. E06
+      bindet den Wert an eine Herstellerbestaetigung fuer kombinierte
+      Bussysteme; er beschreibt das Verhalten der Bussteuerung, nicht die
+      lichttechnische Umschaltzeit einer beliebigen Anlage. Der Contract-Wert
+      `umschaltzeit_max_s` bleibt unveraendert bei 60 s (EN 1838).
+
+  relevanz_notbeleuchtung:
+    einstufung: "mittelbar"
+    begruendung: >
+      E06 regelt Steuerung, Pruefung und Dokumentation einer bereits geplanten
+      Anlage. Fuer Erforderlichkeit, Beleuchtungsart oder Platzierung folgt
+      daraus nichts. Beruehrungspunkt zur Planung: die Kennzeichnungspflicht
+      2.1.5 fuer Sicherheitsleuchten, die in die Allgemeinbeleuchtung integriert
+      sind — sie betrifft die Ausfuehrungs- und Bestandsdokumentation, nicht das
+      Symbol im Plan.
+    funktionsbereich: "Anlagensteuerung, Pruefung und Dokumentation"
+    verbraucher: null
+    status: nicht_pruefbar
+
+# ── Fehlende Primaerquellen (konkret vorgemerkt, Inhalte nicht ergaenzt) ───
+fehlende_primaerquellen:
+  - quelle: "OEVE-EN 1 Teil 4 § 50 und § 90 (Ausgabe 1991)"
+    braucht_fuer: "E05 — Inhalt der Installationsbestimmungen fuer brandgefaehrdete Raeume"
+    ersatz_vorhanden: "teilweise: OVE E 8101:2025 Teil 7-7N90 regelt Garagen heute eigenstaendig"
+    beschaffung: "historische Ausgabe, vermutlich nur ueber OVE-Archiv"
+  - quelle: "OEVE/OENORM E 8002-1:2007, Abschnitte 7.8.3 und 4.1.1"
+    braucht_fuer: "E06 — Definition kombinierter Bussysteme und das Schutzziel"
+    ersatz_vorhanden: "nein"
+    beschaffung: "kostenpflichtig; steht bereits auf der Blockadeliste (NORMQUELLEN_AT.md 4)"
+  - quelle: "OEVE/OENORM E 8002-1:2002, Abschnitte 5.4 (1) und 7.7.14"
+    braucht_fuer: "E07 — Funktionserhalt-Dauer und Schalterbegriff"
+    ersatz_vorhanden: "nein"
+    beschaffung: "kostenpflichtig, historische Ausgabe"
