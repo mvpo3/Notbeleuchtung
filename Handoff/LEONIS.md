@@ -35,14 +35,14 @@ stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owne
   Blöcke). Ohne den Fix ist der Vollauf ordnungsabhängig rot. Regression: `tests/render/test_library_cache.py`.
 - `23e3918` F05 — Toiletten-Scope §4.3.8 aus EINER Quelle `bausteine.TOILETTE_EINDEUTIG/_MEHRDEUTIG`
   (vorher 3× hart in sonderstellen_strategy + validierung) (W10)
-- **F06 — FERTIG EDITIERT, COMMIT AUSSTEHEND**: `validierung.py` getrennter-Kreis Warnung→**fehler**
-  (Hard-Stop, W13). Test `test_getrennter_kreis_hardstop` + `test_validierung.py::test_fehlender_
-  sicherheitskreis_ist_fehler` angepasst. **Committen sobald der laufende Vollauf grün ist**
-  (Commit-Msg liegt in scratchpad `msg_f06.txt`; Muster: `git commit -F`). Danach Block 1 komplett.
+- `db8cac3` docs — dieser Handoff-STAND
+- `859bfdc` F06 — getrennter Kreis Warnung→**fehler** (Hard-Stop, W13). **BLOCK 1 KOMPLETT.**
+
+**Voller `pytest` zuletzt GRÜN: 1026 passed, 36 skipped** (nach Lib-Fix deterministisch). ruff clean.
 
 **NÄCHSTE SCHRITTE (in Reihenfolge):**
-1. **F06 committen** (nach grünem Vollauf) → Block 1 fertig (F01–F06 + W-LIB).
-2. **Block 2:** **F08** (erkennungsweite_m im `place()`-Pfad verdrahten ODER sichtlinie-Pfad
+1. ~~F06 committen~~ ✅ erledigt (`859bfdc`). **Block 1 = F01–F06 + W-LIB fertig.**
+2. **Block 2 (HIER WEITER):** **F08** (erkennungsweite_m im `place()`-Pfad verdrahten ODER sichtlinie-Pfad
    `plan_rettungszeichen_sichtlinie` als deaktiviert dokumentieren — er ist test-only, nicht im
    place-Pfad; W17, Dep F03) → **F07** (≥2-Leuchten-Redundanz-Garantie je Abschnitt + Prüf-Hard-Fail;
    W19, Dep F04, **Verhaltensänderung = dichter → E2E-Sichtprüfung nötig**). Dateien: platzierer.py/
