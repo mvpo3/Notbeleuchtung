@@ -72,18 +72,29 @@ _LB_REVIEW_MELDUNG_MAX = 600
 # Betriebsumgebung mehr erlaubt. 0 oder negativ schaltet die Kappung ab.
 _HEADER_MAX_BYTES = int(os.environ.get("NOTBELEUCHTUNG_HEADER_MAX_BYTES", "4096"))
 
-#: Was mit dem zurückgehaltenen Inhalt ist — ⚠️ ehrlich, nicht beschönigend:
-#: die vollständige Fassung liegt **serverseitig** im Pipeline-Ergebnis
-#: (`render_summary["oib"]["hinweise"]` bzw. `render_summary["pruefung"]`). Über
-#: die API ist sie **heute nicht abrufbar**: `POST /plan` liefert die Plandatei
-#: plus diesen Header, es gibt **keinen** Endpunkt für den Prüfbericht. Genau das
-#: ist die offene Lücke **L2** — sie wird hier NICHT gebaut, nur benannt.
+#: Nutzertext zur Kürzung — bewusst ohne interne Begriffe.
+#:
+#: ENTWICKLERINFO (gehört nicht in die Antwort): die vollständige Fassung liegt
+#: serverseitig im Pipeline-Ergebnis (`render_summary["oib"]["hinweise"]` bzw.
+#: `render_summary["pruefung"]`). Ein Endpunkt dafür existiert nicht — das ist die
+#: offene Lücke **L2**, sie wird hier NICHT gebaut. Wieviel übertragen wird,
+#: steuert `NOTBELEUCHTUNG_HEADER_MAX_BYTES` (siehe `docs/INTEGRATION.md`).
 _KUERZUNG_QUELLE = (
-    "gekuerzt aus Groessengruenden. Vollstaendig nur serverseitig im "
-    "Pipeline-Ergebnis (render_summary['oib']['hinweise'] / "
-    "render_summary['pruefung']) — NICHT ueber die API abrufbar, es gibt keinen "
-    "Endpunkt dafuer (offene Luecke L2). Ein erneuter Aufruf mit hoeherem "
-    "NOTBELEUCHTUNG_HEADER_MAX_BYTES uebertraegt mehr."
+    "Aus Groessengruenden gekuerzt: nicht alle Hinweise stehen in dieser Antwort. "
+    "Die vollstaendigen Hinweise sind ueber diese Schnittstelle derzeit nicht "
+    "abrufbar; die uebertragenen Hinweise und alle Stufen je Gebaeudeteil sind "
+    "vollstaendig und unveraendert."
+)
+
+#: Fehlertext, wenn selbst die geschützten Felder das Budget sprengen.
+_BUDGET_FEHLER = (
+    "Plan erzeugt, aber nicht auslieferbar: die Zusammenfassung im Antwort-Header "
+    "ist mit {ist} Byte groesser als die hier zulaessigen {budget} Byte, und sie "
+    "laesst sich nicht weiter kuerzen, ohne den Zustand je Gebaeudeteil zu "
+    "verlieren. Das passiert bei sehr vielen Gebaeudeteilen in einem Projekt. "
+    "Bitte den Betrieb informieren (zulaessige Groesse anheben) oder das Projekt "
+    "in kleinere Anfragen teilen. Die vollstaendigen Hinweise sind ueber diese "
+    "Schnittstelle derzeit nicht abrufbar."
 )
 
 
@@ -165,6 +176,37 @@ def _ueber_budget(summary: dict, *, gekuerzt_wurde: bool) -> dict:
     # Wert zur ausgelieferten Länge passt.
     summary["header_bytes"] = len(_als_header(summary).encode())
     return summary
+
+
+def _header_wert(summary: dict) -> str:
+    """Der fertige Headerwert — **oder** ein sauberer Fehler statt Überschreitung.
+
+    Das Budget wird **durchgesetzt**: bleibt der Header auch nach der zulässigen
+    Kürzung (nur `oib["hinweise"]`) zu groß, wird **kein** übergroßer Header als
+    erfolgreiche Planauslieferung gesendet. Stattdessen **503** — dieselbe
+    Semantik wie beim fehlenden ODA-Konverter und beim nicht verdrahteten Provider:
+    die Anfrage war in Ordnung, die **Betriebsumgebung** kann sie so nicht
+    ausliefern; ein Betreiber behebt es durch Anheben der zulässigen Größe. Ein
+    422 wäre falsch — der Client hat nichts falsch gemacht und kann die Anfrage
+    unverändert wiederholen, sobald der Betrieb nachgezogen hat.
+
+    ⚠️ `_HEADER_MAX_BYTES <= 0` schaltet die Prüfung **ausdrücklich ab**: dann wird
+    weder gekürzt noch abgebrochen (bewusste Betriebsentscheidung, z. B. hinter
+    einem Gateway, das große Header sicher transportiert).
+
+    Das Pipeline-Ergebnis bleibt in **beiden** Fällen unangetastet — gekürzt wird
+    eine Kopie, und der Fehlerfall ändert an den erzeugten Daten nichts.
+    """
+    wert = _als_header(summary)
+    if _HEADER_MAX_BYTES <= 0:
+        return wert
+    ist = len(wert.encode())
+    if ist > _HEADER_MAX_BYTES:
+        raise HTTPException(
+            status_code=503,
+            detail=_BUDGET_FEHLER.format(ist=ist, budget=_HEADER_MAX_BYTES),
+        )
+    return wert
 
 
 def _header_summary(render_summary: dict) -> dict:
@@ -286,7 +328,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                 resp_path,
                 media_type=media,
                 filename=resp_path.name,
-                headers={"X-Notbeleuchtung": _als_header(summary)},
+                headers={"X-Notbeleuchtung": _header_wert(summary)},
                 background=cleanup,
             )
         except HTTPException:
@@ -336,7 +378,7 @@ def create_app(bundle_factory: BundleFactory = build_default_bundle) -> FastAPI:
                 filename="projekt_notbeleuchtung.pdf",
                 # Gleiches Budget wie bei /plan: der Projekt-Summary traegt denselben
                 # `oib`-Block und wuerde sonst mit jedem Gebaeudeteil weiterwachsen.
-                headers={"X-Notbeleuchtung": _als_header(_kuerze_auf_budget(erg.summary))},
+                headers={"X-Notbeleuchtung": _header_wert(_kuerze_auf_budget(erg.summary))},
                 background=cleanup,
             )
         except HTTPException:
