@@ -125,7 +125,7 @@ Quellen: GRAPH: 5
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 1 |
+| ALLGEMEIN_ERSCHLIESSUNG | 2 |
 | kein Raum | 1 |
 | _davon auf Treppenlauf/Verbotszone_ | 0 |
 
@@ -172,4 +172,4 @@ Restweg im EG (Rennweg_EG.dxf): 4.6–13.5 m (Stiegenhaustür → nächster fina
 | tuer_in_schacht | 3 |
 | tuer_ins_nichts | 1 |
 
-Laufzeit: 49.5 s
+Laufzeit: 51.8 s
