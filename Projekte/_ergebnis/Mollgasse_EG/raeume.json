@@ -19822,7 +19822,7 @@
     },
     {
       "id": "raum_53",
-      "typ": null,
+      "typ": "KINDERWAGENRAUM",
       "name": "KIWA",
       "polygon_mm": [
         [
@@ -22299,7 +22299,7 @@
     },
     {
       "id": "raum_59",
-      "typ": "ABSTELLRAUM",
+      "typ": "KINDERWAGENRAUM",
       "name": "FAHRRADRAUM / KIWA",
       "polygon_mm": [
         [
