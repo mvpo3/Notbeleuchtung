@@ -22,6 +22,41 @@ def test_f04_redundanz_radius_kommt_aus_der_norm():
     assert _redundanz_radius_mm(None) == _REDUNDANZ_REICHWEITE_MM
 
 
+def test_lux_nachweis_wf_eine_quelle():
+    """F01 / W09: Heatmap-Feld und Nachweis ziehen den Wartungsfaktor aus EINER Quelle
+    (`anf.wartungsfaktor`), 0,80 nicht mehr hart. `_lux_feld` skaliert exakt linear mit wf;
+    `_wf` liest genau das Norm-Feld (Fallback 1,0)."""
+    import numpy as np
+
+    from notbeleuchtung.hauptengine.render.lux_nachweis_bericht import _lux_feld, _wf
+
+    gx, gy = np.meshgrid(np.linspace(0.0, 3000.0, 5), np.linspace(0.0, 3000.0, 5))
+    sl = [(1500.0, 1500.0, 0.0)]
+    def icd(gamma, c):
+        return 45.0  # generische cd im Test
+    feld_10 = _lux_feld(gx, gy, sl, icd, 1.0)
+    feld_08 = _lux_feld(gx, gy, sl, icd, 0.8)
+    assert np.array_equal(feld_08, feld_10 * 0.8)   # WF = einziger linearer Skalar
+
+    class _Anf:
+        def __init__(self, wf):
+            if wf is not None:
+                self.wartungsfaktor = wf
+
+    class _Raum:
+        raum_typ, ist_fluchtweg = "GANG", True
+
+    class _Norm:
+        def __init__(self, wf):
+            self._wf = wf
+
+        def fuer_raum(self, raum_typ, ist_fluchtweg):
+            return _Anf(self._wf)
+
+    assert _wf(_Raum(), _Norm(0.57)) == 0.57       # genau das Norm-Feld
+    assert _wf(_Raum(), _Norm(None)) == 1.0        # Fallback ohne Feld
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
