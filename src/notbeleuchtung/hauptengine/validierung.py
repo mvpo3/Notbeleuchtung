@@ -541,8 +541,13 @@ def pruefe(
                 )
                 if p.abgrenzung:
                     detail += f" — Abgrenzung: {p.abgrenzung}"
+                # Die Ebene reist mit (Review-Auflage Enis, 2026-09-09): ohne sie ist im
+                # Befund nicht erkennbar, ob eine Rechtsquelle (A), eine Norm (C) oder
+                # eine Fachinformation (D) dahintersteht. Der Wert kommt aus
+                # `AstvPruefpunkt.ebene`, wird NICHT hier gesetzt oder abgeleitet.
                 befunde.append(Befund(
-                    f"AStV § 9 offener Prüfpunkt {tag}: {p.fundstelle} ({p.kennung})",
+                    f"AStV § 9 offener Prüfpunkt {tag}: {p.fundstelle} "
+                    f"[Ebene {p.ebene}] ({p.kennung})",
                     "warnung",
                     detail,
                 ))
