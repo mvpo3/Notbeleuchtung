@@ -9,7 +9,7 @@ Raum-Polygon-Quelle: `kaskade L:2 H:40 F:2 R:3` — Rotation: Wände vertikal-do
 | — | Terrasse | TERRASSE | 8.33 | — | — | kein_polygon |
 | F | Terrasse | TERRASSE | 8.79 | 56.64 | +544.4 | flutung_unsicher |
 | H | ASR | ABSTELLRAUM | 25.67 | 25.67 | -0.0 | ok |
-| H | Fahrrad+ KiWa | ABSTELLRAUM | 18.65 | 18.65 | -0.0 | ok |
+| H | Fahrrad+ KiWa | KINDERWAGENRAUM | 18.65 | 18.65 | -0.0 | ok |
 | H | Waschküche | WASCHKÜCHE | 4.46 | 4.46 | -0.1 | ok |
 | H | Treppenhaus 1 | STIEGENHAUS | 30.02 | 30.02 | +0.0 | ok |
 | H | Treppenhaus 2 | STIEGENHAUS | 12.88 | 12.88 | -0.0 | ok |
@@ -189,7 +189,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 
 ## Türen (Fachteil 3)
 
-59 / 105 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+55 / 106 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -216,7 +216,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | tuer_21 | raum_31 | KEIN_RAUM | — | 960 | — | arc | kein_nachbarraum |
 | tuer_22 | raum_21 | raum_31 | zimmertuer | 830 | — | arc |  |
 | tuer_23 | raum_30 | raum_30 | zimmertuer | 830 | — | arc |  |
-| tuer_24 | raum_33 | raum_35 | wohnungseingang | 960 | — | arc |  |
+| tuer_24 | raum_33 | raum_35 | — | 960 | — | arc | unbekannte_kombination |
 | tuer_25 | raum_10 | raum_9 | zimmertuer | 830 | — | arc |  |
 | tuer_26 | raum_4 | KEIN_RAUM | — | 900 | — | arc | kein_nachbarraum |
 | tuer_27 | AUSSEN | KEIN_RAUM | hauseingang | 950 | — | arc+text:Eingang |  |
@@ -229,7 +229,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | tuer_34 | KEIN_RAUM | KEIN_RAUM | — | 880 | — | arc | tuer_ins_nichts |
 | tuer_35 | raum_5 | raum_30 | wohnungseingang | 830 | — | arc |  |
 | tuer_36 | raum_19 | raum_40 | wohnungseingang | 830 | — | arc |  |
-| tuer_37 | raum_33 | raum_33 | zimmertuer | 1863 | — | doppelfluegel |  |
+| tuer_37 | raum_33 | raum_33 | — | 1863 | — | doppelfluegel | unbekannte_kombination |
 | tuer_38 | raum_12 | raum_12 | zimmertuer | 1660 | — | doppelfluegel |  |
 | durchgang_1 | raum_1 | raum_18 | — | 3095 | — | durchgang | unbekannte_kombination |
 | durchgang_2 | raum_1 | raum_31 | — | 940 | — | durchgang | unbekannte_kombination |
@@ -286,8 +286,8 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_53 | raum_25 | raum_42 | balkontuer | 2110 | — | durchgang |  |
 | durchgang_54 | raum_26 | raum_42 | balkontuer | 1610 | — | durchgang |  |
 | durchgang_55 | raum_30 | raum_40 | wohnungseingang | 1478 | — | durchgang |  |
-| durchgang_56 | raum_32 | raum_33 | zimmertuer | 3498 | — | durchgang |  |
-| durchgang_57 | raum_33 | raum_35 | wohnungseingang | 2466 | — | durchgang |  |
+| durchgang_56 | raum_32 | raum_33 | — | 3498 | — | durchgang | unbekannte_kombination |
+| durchgang_57 | raum_33 | raum_35 | — | 2466 | — | durchgang | unbekannte_kombination |
 | durchgang_58 | raum_35 | raum_36 | — | 850 | — | durchgang | unbekannte_kombination |
 | durchgang_59 | raum_35 | raum_36 | — | 2700 | — | durchgang | unbekannte_kombination |
 | durchgang_60 | raum_35 | raum_40 | wohnungseingang | 879 | — | durchgang |  |
@@ -298,6 +298,7 @@ Duplikat-Varianten: Der Modelspace trägt dieselbe Etage mehrfach; nur die Varia
 | durchgang_65 | raum_39 | raum_43 | — | 1969 | ja | durchgang | unbekannte_kombination |
 | durchgang_66 | raum_39 | raum_43 | — | 5550 | ja | durchgang | unbekannte_kombination |
 | durchgang_67 | raum_41 | raum_44 | — | 3535 | ja | durchgang | unbekannte_kombination |
+| aussenoeffnung_1 | raum_33 | AUSSEN | — | 1106 | — | oeffnung_aussenwand+text:Eingang | unbekannte_kombination |
 
 ## Ausgänge (1)
 
@@ -331,7 +332,7 @@ Quellen: FALLBACK: 1, GRAPH: 11
 - top_3: 1 Räume (raum_16)
 - top_4: 7 Räume (raum_18, raum_20, raum_21, raum_22, raum_31, raum_5, raum_7)
 - top_5: 1 Räume (raum_29)
-- top_6: 2 Räume (raum_32, raum_33)
+- top_6: 1 Räume (raum_32)
 - top_7: 1 Räume (raum_40)
 
 ## Weglänge je Wohnungseingang → nächster Ausgang
@@ -341,7 +342,6 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | tuer_15 | 21.2 | Luftlinie | exit_tuer_27 |
 | tuer_17 | 21.8 | Luftlinie | exit_tuer_27 |
 | tuer_18 | 23.0 | Luftlinie | exit_tuer_27 |
-| tuer_24 | 2.9 | GRAPH | exit_tuer_27 |
 | tuer_28 | 13.5 | GRAPH | exit_tuer_27 |
 | tuer_35 | 20.2 | GRAPH | exit_tuer_27 |
 | tuer_36 | 14.9 | GRAPH | exit_tuer_27 |
@@ -353,7 +353,6 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | durchgang_43 | 9.2 | GRAPH | exit_tuer_27 |
 | durchgang_44 | 11.3 | GRAPH | exit_tuer_27 |
 | durchgang_55 | 17.8 | GRAPH | exit_tuer_27 |
-| durchgang_57 | 7.5 | GRAPH | exit_tuer_27 |
 | durchgang_60 | 12.7 | GRAPH | exit_tuer_27 |
 
 ## Leuchten je Nutzungsklasse
@@ -361,12 +360,9 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | Klasse | Leuchten |
 |---|--:|
 | ALLGEMEIN_ERSCHLIESSUNG | 2 |
+| ALLGEMEIN_NEBENRAUM | 2 |
 | kein Raum | 3 |
-| _davon auf Treppenlauf/Verbotszone_ | 1 |
-
-**BEFUND (nur berichtet, Platzierung NICHT geändert):**
-
-- Treppenlauf/Verbotszone: 1 Leuchten (muss 0 sein)
+| _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
@@ -374,6 +370,7 @@ Quellen: FALLBACK: 1, GRAPH: 11
 |---|---|--:|--:|--:|---|
 | tuer_27 | (14.90, -2.93) | 180.0 | 90.0 | 90.0 | abweichend |
 | durchgang_63 | (12.34, -22.50) | 180.0 | 90.0 | 90.0 | abweichend |
+| tuer_24 | (13.19, -4.87) | 0.0 | 0.0 | 0.0 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -445,7 +442,7 @@ Quellen: FALLBACK: 1, GRAPH: 11
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 25 |
+| unbekannte_kombination | 30 |
 | kein_nachbarraum | 11 |
 | tuer_ins_nichts | 7 |
 | tuer_in_schacht | 3 |
@@ -453,7 +450,7 @@ Quellen: FALLBACK: 1, GRAPH: 11
 ## Referenzvergleich Fachplaner (11 Referenz-Leuchten im Frame)
 
 - Treffer (≤1 m, Rotation ≤10°): **2/11 = 18 %**
-- überzählig (eigene ohne Referenz-Gegenstück): 3
+- überzählig (eigene ohne Referenz-Gegenstück): 5
 
 | fehlende Referenz | xy m | rot° |
 |---|---|--:|
@@ -470,7 +467,9 @@ Quellen: FALLBACK: 1, GRAPH: 11
 | überzählige eigene | xy m | rot° |
 |---|---|--:|
 | rz | (12.34, -22.50) | 180 |
-| sicherheitsleuchte | (13.97, -7.54) | 0 |
+| rz | (13.19, -4.87) | 0 |
+| sicherheitsleuchte | (10.80, -2.09) | 0 |
+| sicherheitsleuchte | (12.23, -7.16) | 0 |
 | sicherheitsleuchte | (11.44, -23.01) | 0 |
 
-Laufzeit: 253.3 s
+Laufzeit: 250.4 s

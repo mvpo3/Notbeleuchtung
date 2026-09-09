@@ -66,7 +66,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | — | STGH | STIEGENHAUS | 53.20 | — | — | kein_polygon |
 | F | PODEST | — | 11.02 | 137.50 | +1147.8 | flutung_unsicher |
 | F | ERDGESCHOSS | — | — | 24.06 | +0.0 | ok |
-| F | KIWA | — | 7.23 | 7.24 | +0.1 | ok |
+| F | KIWA | KINDERWAGENRAUM | 7.23 | 7.24 | +0.1 | ok |
 | H | STAUDENBEET | — | 11.43 | 11.43 | -0.0 | ok |
 | — | GEHWEG | — | — | — | — | kein_polygon |
 | F | TECHNIK (DBA) | TECHNIK | 8.31 | 9.60 | +15.5 | flutung_unsicher |
@@ -77,7 +77,7 @@ Raum-Polygon-Quelle: `kaskade L:0 H:10 F:52 R:0` — Rotation: Wände vertikal-d
 | F | GARDEROBE | VORRAUM | — | 7.78 | +0.0 | ok |
 | — | GARDEROBE | VORRAUM | — | — | — | kein_polygon |
 | F | KÜCHE | KÜCHE | 10.02 | 4.37 | -56.4 | flutung_unsicher |
-| F | FAHRRADRAUM / KIWA | ABSTELLRAUM | 50.05 | 52.91 | +5.7 | ok |
+| F | FAHRRADRAUM / KIWA | KINDERWAGENRAUM | 50.05 | 52.91 | +5.7 | ok |
 | H | EIGENGARTEN TOP 3 | — | 19.46 | 19.46 | +0.0 | ok |
 | H | EIGENGARTEN TOP 2 | — | 21.17 | 21.17 | -0.0 | ok |
 | — | TERRASSE TOP 2 | TERRASSE | 15.53 | — | — | kein_polygon |
@@ -170,7 +170,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 
 ## Türen (Fachteil 3)
 
-71 / 147 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
+70 / 147 Türen typisiert. Kürzel: Z=zimmertuer, WE=wohnungseingang, ST=stiegenhaustuer, HE=hauseingang, BT=balkontuer, GT=garagentor, BS=brandschutztuer; ? = untypisiert (keine Regel greift), /NA = Notausgang, * = ohne Türblatt.
 
 | ID | raum_a | raum_b | Typ | Breite mm | Notausgang | Quelle | Grund |
 |---|---|---|---|--:|---|---|---|
@@ -212,7 +212,7 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | tuer_36 | KEIN_RAUM | raum_31 | — | 800 | — | block | kein_nachbarraum |
 | tuer_37 | raum_51 | KEIN_RAUM | — | 0 | ja | block | kein_nachbarraum |
 | tuer_38 | raum_59 | raum_54 | — | 900 | — | block | unbekannte_kombination |
-| tuer_39 | raum_13 | raum_59 | wohnungseingang | 1000 | — | block |  |
+| tuer_39 | raum_13 | raum_59 | — | 1000 | — | block | unbekannte_kombination |
 | tuer_40 | KEIN_RAUM | raum_13 | — | 1250 | — | block | kein_nachbarraum |
 | tuer_41 | raum_58 | raum_34 | zimmertuer | 800 | — | block |  |
 | tuer_42 | raum_61 | KEIN_RAUM | — | 800 | — | block | kein_nachbarraum |
@@ -340,9 +340,9 @@ Abgrenzung: Muster-Hatches zählen immer als Bauteil; SOLIDs nur mit Material-Tr
 | exit_aussenoeffnung_5 | final_exit | 2652.19 | 1535.04 |
 | exit_aussenoeffnung_6 | final_exit | 2653.32 | 1533.16 |
 
-## Fluchtweg-Segmente (122)
+## Fluchtweg-Segmente (126)
 
-Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
+Quellen: FALLBACK: 4, GRAPH: 19, LINIE: 103
 
 | Segment | Quelle | Länge m | Grund | Ziel-Ausgang |
 |---|---|--:|---|---|
@@ -464,12 +464,16 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 | seg_graph_durchgang_22 | GRAPH | 9.9 | exit | exit_aussenoeffnung_4 |
 | seg_graph_durchgang_45 | GRAPH | 11.9 | exit | exit_3 |
 | seg_graph_durchgang_55 | GRAPH | 12.3 | exit | exit_4 |
+| seg_graph_durchgang_63 | GRAPH | 14.0 | exit | exit_aussenoeffnung_3 |
+| seg_graph_durchgang_64 | GRAPH | 16.5 | exit | exit_aussenoeffnung_3 |
+| seg_graph_durchgang_65 | GRAPH | 16.6 | exit | exit_aussenoeffnung_3 |
+| seg_graph_durchgang_66 | GRAPH | 13.2 | exit | exit_aussenoeffnung_3 |
 | seg_fallback_raum_13 | FALLBACK | 12.4 | long_run | — |
 | seg_fallback_raum_22 | FALLBACK | 3.0 | direction_change | — |
 | seg_fallback_raum_29 | FALLBACK | 3.7 | direction_change | — |
 | seg_fallback_raum_34 | FALLBACK | 4.9 | direction_change | — |
 
-## Wohnungen (9)
+## Wohnungen (8)
 
 - top_1: 3 Räume (raum_10, raum_40, raum_55)
 - top_2: 2 Räume (raum_11, raum_12)
@@ -479,7 +483,6 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 - top_6: 1 Räume (raum_37)
 - top_7: 1 Räume (raum_38)
 - top_8: 2 Räume (raum_48, raum_49)
-- top_9: 1 Räume (raum_59)
 
 ## Weglänge je Wohnungseingang → nächster Ausgang
 
@@ -496,7 +499,6 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 | tuer_24 | 5.0 | GRAPH | exit_aussenoeffnung_4 |
 | tuer_25 | 5.1 | GRAPH | exit_aussenoeffnung_4 |
 | tuer_26 | 3.4 | GRAPH | exit_aussenoeffnung_4 |
-| tuer_39 | 5.9 | Luftlinie | exit_tuer_45 |
 | tuer_49 | 8.8 | Luftlinie | exit_4 |
 | tuer_51 | 13.2 | GRAPH | exit_4 |
 | tuer_55 | 3.2 | Luftlinie | exit_tuer_69 |
@@ -517,29 +519,28 @@ Quellen: FALLBACK: 4, GRAPH: 15, LINIE: 103
 
 | Klasse | Leuchten |
 |---|--:|
-| ALLGEMEIN_ERSCHLIESSUNG | 30 |
-| ALLGEMEIN_NEBENRAUM | 5 |
-| WOHNUNG_PRIVAT | 10 |
-| kein Raum | 7 |
+| ALLGEMEIN_ERSCHLIESSUNG | 31 |
+| ALLGEMEIN_NEBENRAUM | 11 |
+| WOHNUNG_PRIVAT | 11 |
+| kein Raum | 8 |
 | unbestimmt | 2 |
-| _davon auf Treppenlauf/Verbotszone_ | 6 |
+| _davon auf Treppenlauf/Verbotszone_ | 0 |
 
 **BEFUND (nur berichtet, Platzierung NICHT geändert):**
 
-- WOHNUNG_PRIVAT: 10 Leuchten (muss 0 sein)
-- Treppenlauf/Verbotszone: 6 Leuchten (muss 0 sein)
+- WOHNUNG_PRIVAT: 11 Leuchten (muss 0 sein)
 
 ## Rotationsprüfung RZ über Tür (Messung, ±2°)
 
 | Tür | RZ xy m | rotation° | Türwandwinkel° | Δ° | Befund |
 |---|---|--:|--:|--:|---|
-| aussenoeffnung_3 | (2694.04, 1522.94) | 0.0 | 0.0 | 0.0 | ok |
 | aussenoeffnung_4 | (2655.93, 1538.46) | 90.0 | 89.7 | 0.3 | ok |
 | aussenoeffnung_5 | (2652.19, 1535.04) | 270.0 | 89.7 | 0.3 | ok |
 | aussenoeffnung_6 | (2653.32, 1533.16) | 0.0 | 0.0 | 0.0 | ok |
-| tuer_35 | (2699.65, 1520.76) | 0.0 | 180.0 | 0.0 | ok |
-| tuer_45 | (2654.51, 1543.14) | 0.0 | 179.7 | 0.3 | ok |
 | tuer_68 | (2688.62, 1511.09) | 270.0 | 0.0 | 90.0 | abweichend |
+| durchgang_42 | (2692.88, 1524.89) | 270.0 | 90.0 | 0.0 | ok |
+| durchgang_64 | (2700.78, 1520.09) | 270.0 | 90.0 | 0.0 | ok |
+| tuer_38 | (2652.50, 1546.13) | 180.0 | 179.7 | 0.3 | ok |
 
 ## Anker je Stiegenhaus (2 Stiegenhäuser)
 
@@ -716,9 +717,9 @@ final_exit ohne endende Linie/GRAPH-Weg (unbenutzt): exit_1, exit_2, exit_aussen
 
 | Grund | Anzahl |
 |---|--:|
-| unbekannte_kombination | 56 |
+| unbekannte_kombination | 57 |
 | kein_nachbarraum | 18 |
 | tuer_ins_nichts | 1 |
 | beide_seiten_untypisiert | 1 |
 
-Laufzeit: 281.5 s
+Laufzeit: 276.9 s
