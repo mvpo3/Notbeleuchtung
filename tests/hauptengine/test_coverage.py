@@ -56,6 +56,25 @@ def test_ueber_20_leuchten_hinweis_auto_pruefeinrichtung():
     assert not any("Prüfeinrichtung" in h for h in cov20["hinweise"])   # genau 20 = noch nicht
 
 
+def test_ueber_20_leuchten_kreis_redundanz_hinweis():
+    # Erweiterung derselben Fundstelle (EN 50172/EN 62034): Kreis-Redundanz aus der
+    # vorhandenen circuit_hint-Zuordnung + Bemessungsstrom als offener Punkt. Alles
+    # HINWEIS (nicht-blockierend) — kein fabrizierter Beleg.
+    def _erg_kreise(*hints):
+        return PlatzierungsErgebnis(floor="EG", platzierungen=[
+            Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="sicherheitsleuchte",
+                        circuit_hint=h)
+            for h in hints])
+
+    # 21 Leuchten auf 2 Kreisen → Redundanz erkennbar, Bemessungsstrom offen.
+    cov2 = _coverage(_raum("GANG"), _erg_kreise(*(["A", "B"] * 10 + ["A"])))
+    assert any("2 Stromkreise verteilt" in h and "Bemessungsstrom" in h for h in cov2["hinweise"])
+    assert cov2["warnungen"] == []  # nicht-blockierend
+    # 21 Leuchten auf nur 1 Kreis → Redundanz nicht erkennbar (weiter nur Hinweis).
+    cov1 = _coverage(_raum("GANG"), _erg_kreise(*(["A"] * 21)))
+    assert any("nur 1 Stromkreis" in h and "EN 50172" in h for h in cov1["hinweise"])
+
+
 def test_voll_typisiert_mit_arten_keine_warnung():
     cov = _coverage(_raum("STIEGENHAUS", "SAAL"), _erg("rz", "sicherheitsleuchte", "antipanik"))
     assert cov["n_raeume_untypisiert"] == 0

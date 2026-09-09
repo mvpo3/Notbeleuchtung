@@ -23,7 +23,8 @@ from .contracts import (
 )
 from .dwg_input import stelle_dxf_bereit
 from .photometrie_befund import PhotometrieBefund, photometrie_des_bundles
-from .render import render_dxf
+from .render import blatt_vorlage_pfad, render_dxf
+from .render.dxf_renderer import MassstabPasstNichtFehler
 from .validierung import pruefbericht
 
 
@@ -98,6 +99,23 @@ def _coverage(
             f"{n_leuchten} Sicherheitsleuchten (> {_AUTO_PRUEF_SCHWELLE}) → automatische "
             "Prüfeinrichtung mit zentraler Erfassung erforderlich (OVE E 8101 560.9.001.AT / EN 62034)."
         )
+        # Dieselbe Fundstelle nennt zwei weitere Aspekte (EN 62034 / EN 50172): Kreis-
+        # Redundanz und Bemessungsstrom. Die Kreis-Verteilung ist aus der bereits
+        # vorhandenen Zuordnung (circuit_hint) ablesbar; die Bemessungsstrom-Grenze
+        # (≤ 60 % je Kreis) braucht Produkt-Stromdaten und bleibt OFFEN — kein
+        # fabrizierter Beleg, rein additiver Hinweis (nicht-blockierend).
+        kreise = {(p.circuit_hint or "").strip() for p in platzierung.platzierungen}
+        kreise.discard("")
+        if kreise:
+            redundanz = (
+                f"auf {len(kreise)} Stromkreise verteilt (≥ 2 = Kreis-Redundanz erkennbar)"
+                if len(kreise) >= 2
+                else "auf nur 1 Stromkreis — ≥ 2 alternierende Kreise (EN 50172) prüfen"
+            )
+            hinweise.append(
+                f"Prüfeinrichtungs-Anlage: {redundanz}; Bemessungsstrom ≤ 60 % je Kreis "
+                "nicht geprüft (Produkt-Stromdaten fehlen)."
+            )
     # Audit-Trail-Näherung an Sonderstellen/Flag-Räumen (Enis-Review #95): die
     # `norm_quelle` dieser Leuchten ist die Fallback-Referenzregel, nicht der echte
     # Auslöser (§4.1.2 c/h/i, §4.3.8, §4.4.1) — bis Enis' Quellen-Naht nachkommt.
@@ -141,6 +159,7 @@ def run(
     projekt_kontext: ProjektKontext | None = None,
     photometrie: PhotometrieBefund | None = None,
     template_path: str | None = None,
+    pdf_quelle: bool = False,
 ) -> Output:
     # Grundlage des Lux-Nachweises: reist mit dem Bundle, das die Registry gebaut
     # hat (typisiert, kein Zugriff auf Platzierer-Interna). Ein explizit
@@ -151,7 +170,7 @@ def run(
         return _run_mit_quelle(
             bundle, raum, quelle_dxf, out_path=out_path, lb_path=lb_path,
             plankopf=plankopf, projekt_kontext=projekt_kontext, photometrie=photometrie,
-            template_path=template_path,
+            template_path=template_path, pdf_quelle=pdf_quelle,
         )
 
 
@@ -166,6 +185,7 @@ def _run_mit_quelle(
     projekt_kontext,
     photometrie,
     template_path=None,
+    pdf_quelle=False,
 ) -> Output:
     # 2. Input (optional): LB parsen, falls ein LB-Provider verdrahtet + ein LB-Pfad da ist.
     # Fail-Closed (Enis' LB-Parser): bei blockierendem Zweifel wirft parse_lb `LbFehler`.
@@ -194,11 +214,31 @@ def _run_mit_quelle(
         photometrie=photometrie, projekt_kontext=projekt_kontext,
     )
     if out_path is not None:
-        render_summary = render_dxf(
-            platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
-            photometrie=photometrie, unterlage_dxf=quelle_dxf,
-            template_path=template_path,
-        )
+        # Auslieferung: das gelieferte DXF ist das Layout-Blatt (Vorlage in Layout1,
+        # Viewport 1:50, in AutoCAD plot-fertig). Ohne expliziten Pfad die versionierte
+        # Rivoplan-Vorlage nehmen; fehlt sie im Repo → Modelspace-Blatt (#115).
+        aus_template = template_path if template_path is not None else blatt_vorlage_pfad()
+        # PDF-Weg braucht eine Modelspace-Quelle (ezdxf rastert Paperspace nicht) —
+        # nur erzeugen, wenn ein PDF ansteht (kein Doppel-Render für reine DXF-Lieferung).
+        pdf_quelle_path = None
+        if pdf_quelle and aus_template is not None:
+            _op = Path(out_path)
+            pdf_quelle_path = _op.with_name(_op.stem + ".modelspace.dxf")
+        try:
+            render_summary = render_dxf(
+                platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
+                photometrie=photometrie, unterlage_dxf=quelle_dxf,
+                template_path=aus_template, pdf_quelle_path=pdf_quelle_path,
+            )
+        except MassstabPasstNichtFehler as e:
+            # Liefer-Policy: passt der Plan in 1:50 nicht in den Vorlagen-Viewport (G6),
+            # NICHT abbrechen — auf das Modelspace-Blatt (#115) zurückfallen (Grundriss
+            # maßstabfrei ins Planfenster). Der Maßstab-Verlust wird sichtbar gemacht.
+            render_summary = render_dxf(
+                platzierung, raum, out_path, lb, pruefung=pruef, plankopf=plankopf,
+                photometrie=photometrie, unterlage_dxf=quelle_dxf, template_path=None,
+            )
+            render_summary["layout_fallback"] = str(e)
         # Lux-Nachweis-Bericht je Plan (Owner 2026-09-08): eigene DIALux-artige
         # Seite neben dem DXF. Additiv — ein Fehler bricht den Plan-Lauf NIE.
         try:
