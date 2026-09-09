@@ -72,7 +72,14 @@ FAILED tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_un
 | `pytest tests/raumerkennung tests/contract -q` | 283 passed, 5 skipped (188,04 s) |
 | `ruff check src tests` | All checks passed! |
 
-Der einzige Fehlschlag ist der aus § 2.3 und ist inzwischen behoben (§ 3.3); Nachlauf `pytest tests/raumerkennung/test_breitenprofil.py tests/normwissen -q` → **353 passed**. Weitere vorbestehende rote Tests: keine.
+Der einzige Fehlschlag war der aus § 2.3 und ist behoben (§ 3.3). Nachläufe nach der Korrektur:
+
+| Lauf | Ergebnis |
+|---|---|
+| `pytest tests/raumerkennung/test_breitenprofil.py tests/normwissen -q` | **353 passed** (34,9 s) |
+| `pytest -q` (volle Suite, Repo-Root) | **1177 passed, 10 skipped, 2 deselected, 9 xfailed**, 0 failed (1171,63 s) |
+
+Weitere vorbestehende rote Tests: keine.
 
 ---
 
