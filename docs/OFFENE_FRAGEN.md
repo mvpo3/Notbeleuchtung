@@ -446,3 +446,95 @@ Typ-Lücke — eine Verkaufsstätte (OIB RL2 Tab. 6) passt in keine der fünf
 `Nutzungsklasse`-Literale. Aufnahme wäre VOKABULAR.md + `raumtyp.py` +
 LB-Stützliste + Nutzungsklasse in einem Zug. **Frage an Enis/Leonis:
 brauchen wir den Typ, und welche Nutzungsklasse trägt er?**
+
+## Symbol-Library & Photometrie — Nachmessung (2026-09-09)
+
+Aus der ezdxf-Nachmessung der kanonischen Library, der E-Symbole-Nebenvarianten und
+der 4 LDT (Doku: `docs/REFERENZ_PLATZIERUNG.md` Abschnitt 4a/4b und 5). Alles
+READ-ONLY erhoben, nichts geändert. **Keine Norm-Ableitung von mir.**
+
+- **Lichtstrom-Differenz `antipanik_nlildl423_round.ldt` — welcher Wert gilt für den
+  Nachweis?** Beleg: die LDT gibt in Zeile 29 **240 lm**;
+  `CAD_Symbole/photometrie/QUELLEN.md` (Abschnitt „In echten Lichtberechnungen
+  verwendet") nennt für dieselbe Leuchte **208 lm** (round) bzw. 211 lm (corridor),
+  laut QUELLEN.md aus der Relux-Berechnung WHA Aichholzgasse
+  (`knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md`), nicht aus der LDT.
+  **Owner: Enis (Norm/Nachweis)** — LDT-Wert oder Relux-Wert?
+- **`notlicht_kw_garage` — RZ-Symbol mit SL-Optik, Absicht oder Altlast?** Beleg:
+  `schrack_symbol_mapping.yaml` mappt den Key auf den Rettungszeichen-Block
+  `notbeleuchtung- richtungspfeil nach unten`, `symbols/photometrie_mapping.yaml`
+  aber auf `sl_nlkbu433_3h_round.ldt` (Sicherheitsleuchte, Rundlinse).
+  **Owner: Symbol-/Produkt-Owner (Leonis, Gegenzeichnung Enis).**
+- **`sicherheitsleuchte_spot` ohne LDT — soll er erben?** Beleg: kein Eintrag in
+  `photometrie_mapping.yaml` → `photometrie_katalog.ldt_pfad_fuer` liefert `None`,
+  der Lux-Nachweis fällt für diesen Key auf die isotrope Annahme zurück; laut
+  Mapping-Kommentar ist es zugleich die häufigste SL-Darstellung des
+  din-Referenzplans (40× im Barawitzka-Plan). Vorschlag zur Entscheidung:
+  `sl_nlkbu433_3h_round.ldt` erben, bis eine STRING-2-LDT beschafft ist.
+  **Owner: Enis (Nachweis) + Produkt-Owner (LDT-Beschaffung).**
+- **OCS-Extrusion im `nach rechts`-Block — Dauerzustand oder Umbau?** Beleg: die
+  HATCH-Entity des Blocks in `CAD_Symbole/Notbeleuchtungssymbole.dxf` trägt
+  `extrusion = (0,0,−1)`, die vier Rahmen-LINEs derselben Block-Definition **nicht**.
+  Roh (ohne OCS→WCS) gelesen liegt die Pfeilspitze bei x = −5209.7994 relativ zum
+  Blockzentrum → Fehlalarm „Block korrupt / zeigt nach links". Über ezdxf/AutoCAD
+  funktioniert alles. **Owner: Symbol-Owner (zeichnen/freigeben, ADR-0002).**
+- **Verbleib der E-Symbole-Nebenvarianten.** Beleg (gemessen,
+  `docs/REFERENZ_PLATZIERUNG.md` 5.1): `E-Symbole-clean.dxf` enthält den Block
+  `notbeleuchtung-richtungspfeil nach rechts` in der **korrupten Alt-Fassung**
+  (2606.183 × 2300.291 statt 3.134 × 1.567) und es fehlen 5 der 8 gemappten Blöcke;
+  `E-Symbole.dxf` fehlen 3; `E-Symbole_recover.dwg` ist mit 1 760 B ein leerer
+  Stummel. Keine der Dateien ist als `NOTBELEUCHTUNG_SYMBOL_LIB` brauchbar
+  (`load_mapping()` bricht fail-loud). Löschen ist ausgeschlossen (Repo-Regel „nie
+  löschen, immer versionieren") — **Vorschlag:** nach `CAD_Symbole/_herkunft/`
+  verschieben und in ADR-0002 vermerken. Nicht ausgeführt (READ-ONLY).
+  **Owner: Repo-/Symbol-Owner.**
+- **Guard für die stillschweigende Kopplung „Tür-Formel (A+90) ⇒ unten-Block"?**
+  Beleg: `communal_stgh_strategy.py:106` und `fachpraxis.py:302` rufen
+  `_select_key(anf.symbol_katalog_keys, "unten")` und rechnen danach hart mit der
+  unten-Block-Formel; `bausteine.select_key` (`bausteine.py:56-64`) fällt auf
+  `keys[0]` zurück, wenn kein Key auf `_unten` endet. Heute ist `keys[0]` in
+  `normwissen/data/raumtyp_regeln.yaml:44` und `:77` = `notlicht_ks_stiege` (Block
+  „nach unten", basis 270), also korrekt — steht dort jemals ein links/rechts-Key
+  zuerst, ist der Pfeil 90 bzw. 270 Grad falsch, ohne Test, der das fängt.
+  Vorschlag: Assertion `basis_deg(block_name(key)) == 270` an den vier Fundstellen
+  **oder** ein Test über `raumtyp_regeln.yaml`. **Owner: `platzierung/` + `tests/`
+  (Leonis).**
+
+Zwei weitere Befunde derselben Messung sind gemeldet, aber keine Entscheidung:
+die Contract-Semantik `richtung="unten"` bei `rotation_deg != 0` (verlässlich ist nur
+`fachpraxis._effektive_richtung_deg`) und das Bankers-Rounding in
+`round((deg+90)/90)*90` bei exakt diagonalen Türrichtungen — beides in
+`docs/REFERENZ_PLATZIERUNG.md` Abschnitt 4b festgehalten.
+
+## Referenzplan Barawitzka — zweite Sichtung (2026-09-09)
+
+Aus der Nachsichtung des Fachplaner-Plans (Doku: `docs/REFERENZ_PLATZIERUNG.md`
+Abschnitt 1a–1d). Messungen mit ezdxf, Engine-Lauf über `build_default_bundle()`.
+
+- **Blatt 2 (Frames F4–F7) hat keine gemessenen Offsets — kalibrieren?** Beleg: die
+  4 Frames sind lokalisiert (Fenster-Tabelle in 1a, 14 Leuchten), Kandidaten-DXF sind
+  `Projekte/Barawitzkagasse/…_1_5 2 St`, `…_1_6 3 St`, `…_1_7 1 DG`, `…_1_8 2 DG`,
+  `…_1_9 DD STG1` — **5 Dateien für 4 Frames**, die Frame-zu-Geschoss-Zuordnung ist
+  unbestimmt. **Owner: Auftraggeber der Sichtung** (Aufwand: je Geschoss ~100–200 s
+  Parse plus Kalibrierung).
+- **Warum liefert `raum.parse` für das KG 0 Anker / 0 Ausgänge / 0 Stiegenhäuser?**
+  Beleg: `415_260415_PP_VA_1_2 -1 KG.dxf`, Parse 197 s, 14/17 Referenzpunkte fallen
+  trotzdem sauber in erkannte Räume — die Räume stehen also, die Anker fehlen (EG
+  liefert 28). Raumerkennungs-Befund, außerhalb des Sichtungs-Auftrags.
+  **Owner: `raumerkennung/` (Selman) — soll dem nachgegangen werden?**
+- **OG1: zwei Referenzleuchten landen 4.7 / 5.8 m im Nichts.** Beleg: mit Offset
+  (−18.34, −38.66) liegen RZ_PL Typ B (4.10, −21.30) und RZ_PLPR Typ E
+  (10.28, −21.06) außerhalb jedes erkannten Raums, während die 3 Kit-Leuchten auf
+  0.17–0.50 m sitzen; das „1 St"-DXF ist 186 m breit (EG 80 m). **Hypothese, nicht
+  verifiziert:** der Frame deckt nur den Stiegen-1-Bereich, oder der OG1-Offset ist
+  nur lokal am Stiegenhaus kalibriert. **Owner: Auftraggeber der Sichtung.**
+- **Zieltest `tests/naht/test_soll_referenzvergleich.py`: Quote je Geschoss oder
+  Gesamtquote?** Beleg: bei zusätzlicher UG/OG1-Verdrahtung fällt die Gesamtquote von
+  18 % (2/11) auf ~13 % (4/32); Parse-Zeit für 3 Geschosse ~350 s, der Test bräuchte
+  eine session-weite bzw. gecachte RaumModell-Fixture. **Owner: `tests/` + Leonis.**
+- **Nachvollziehbarkeit der Restfehler-Angaben in `REFERENZ_PLATZIERUNG.md`
+  Abschnitt 1.** Die EG-Bestückung (11 Leuchten: 5× A, 3× B, 1× F, 1× H, 1× I) ist
+  durch die Nachmessung bestätigt; die Restfehler Ø 0.33 / 0.19 / 0.04 m ließen sich
+  **mangels dokumentierter Kalibrier-Punkte nicht nachrechnen**. Vorschlag: die
+  verwendeten Punktpaare je Geschoss mitdokumentieren. **Owner: Autor der
+  Erstkalibrierung (2026-09-07).**
