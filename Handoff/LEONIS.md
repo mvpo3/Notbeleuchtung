@@ -19,6 +19,18 @@ jedem Fix `pytest -q` + `ruff check .` grün, sonst Fix zurücknehmen statt Test
 **STOP-Gates nur drei:** nach Phase 0 · nach Phase 2 (beide passiert) · **vor Push/Merge** (da
 stehe ich bald). Dazwischen durchziehen. **Push/PR/Merge nur auf explizites Owner-GO.**
 
+**Noch bindende Prompt-Regeln (v.a. Block 3):**
+- **Entscheidungs-Hierarchie:** LB-explizit → Referenz-Praxis → EN-1838/ÖNorm-Default → OVE-Verbote
+  (Hard Stop). LB übersteuert Norm-Default. Audit-Trail: `norm_quelle`/`lb_quelle`.
+- **Geltungs-Regel (je Befund GENAU EIN Tag):** `[AT-verbindlich]` (OVE E 8101:2025 · ÖNORM EN 1838) /
+  `[AT-Referenzpraxis]` / `[DE-only]`. **Ohne Tag ist der Befund ungültig.** DE-only wird NIE Default,
+  nur Referenz-Praxis-Fallback (z.B. F11 60/8 m², F13, F14).
+- **Beleg-Regel:** jeder Befund/Fix braucht `datei.py:zeile`, `Plan X, S.n` oder Regel-ID; sonst in
+  Abschnitt „Unbelegt". Bei Fremdmaterial P1 zitieren, NICHT ins Repo kopieren.
+- **Inputs:** P1 = `"DIN-Notbeleuchtungspläne(Beispiele)"` (Fremd, DIN/DE — nur lesen/zitieren; Pfade
+  mit Klammern+Umlauten in der Shell QUOTEN). P2 = `knowledge/`. P3 = Repo (main-Stand).
+- **Am STOP liefern:** Commit-Liste + Sichtprüfungs-Abweichungen (`docs/audit/07_sichtpruefung.md`).
+
 **Audit liegt in `docs/audit/`** (untracked, auf Platte): `REPORT.md`, `FIX_PLAN.md`,
 `01_plan_forensik/02_wissens_coverage/03_engine_ist/05_widersprueche/06_naht_owner_matrix.md`.
 `FIX_PLAN.md` = die Fix-Liste F01–F18 + mein Vote. **Zugesagt: Block 1+2+3 (F01–F14). Block 4
