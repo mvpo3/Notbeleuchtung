@@ -32,7 +32,7 @@ _TOILETTE_MEHRDEUTIG = {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
 _SV_KENNUNG = "F13"             # getrennter Sicherheitskreis (SV, dauergeschaltet)
 _AUSGANG_RZ_RADIUS_MM = 2000.0  # EN 1838: „nahe" = < 2 m → RZ gilt als „am Ausgang"
 _KOLLISION_MM = 250.0           # zwei Symbole näher als das = Kollision/Doppelung
-_REDUNDANZ_REICHWEITE_MM = 30000.0  # EN-1838-Erkennungsweite hinterleuchtet (z=200·h=0,15=30 m)
+_REDUNDANZ_REICHWEITE_MM = 30000.0  # Fallback ohne NormProvider (z=200·h=0,15=30 m); sonst norm.erkennungsweite_m
 _REDUNDANZ_MIN = 2              # EN 50172: je Fluchtweg-Abschnitt ≥ 2 Leuchten (1 Ausfall ≠ dunkel)
 _MIN_RAEUME_PLAUSIBEL = 15      # ab so vielen Räumen ist ein (fast) leerer Plan unplausibel
 _MIN_TUEREN_GEBAEUDE = 30       # so viele Türen = ganzes Gebäude → Räume MÜSSEN erschlossen sein
@@ -103,6 +103,15 @@ def _norm_umschaltzeit_max_s(norm: NormProvider) -> float | None:
     return min(werte) if werte else None
 
 
+def _redundanz_radius_mm(norm: NormProvider | None) -> float:
+    """Redundanz-Reichweite = Erkennungsweite l=z·h aus der Norm (hinterleuchtet,
+    Standard-Piktogramm 0,15 m), NICHT als Code-Konstante (F04, W08). Ohne Provider
+    Fallback auf `_REDUNDANZ_REICHWEITE_MM` — Single Source bleibt `erkennungsweite_m`."""
+    if norm is None:
+        return _REDUNDANZ_REICHWEITE_MM
+    return norm.erkennungsweite_m(0.15, hinterleuchtet=True) * 1000.0
+
+
 def pruefe(
     raum: RaumModell,
     platzierung: PlatzierungsErgebnis,
@@ -161,11 +170,12 @@ def pruefe(
         #     (RZ/SL) in Erkennungsweite. WARNUNG, kein Hard-Fail — Bestandspläne erfüllen
         #     das oft nicht flächendeckend; erst sichtbar machen, Hard-Fail folgt später.
         leuchten = [p for p in plzg if p.kind in ("rz", "sicherheitsleuchte")]
+        redundanz_radius = _redundanz_radius_mm(norm)
         unterversorgt = [
             s.segment_id for s in raum.zirkulation.segmente
             if sum(
                 1 for p in leuchten
-                if _dist_punkt_polyline(p.xy_mm, s.polyline_mm) <= _REDUNDANZ_REICHWEITE_MM
+                if _dist_punkt_polyline(p.xy_mm, s.polyline_mm) <= redundanz_radius
             ) < _REDUNDANZ_MIN
         ]
         befunde.append(Befund(
