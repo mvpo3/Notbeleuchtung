@@ -16,7 +16,7 @@ Paket: `C:/Users/selma/Desktop/enis-normwissen-uebergabe-0908-v2` (entpackt vorg
 **Was fehlt.**
 - Die Archiv-Prüfsumme des Pakets ist nicht prüfbar (kein `.tar.gz` vorhanden) — Ersatzprüfung siehe § 2.
 - Zwei Listeneinträge aus Enis' Diff auf `oib_rl2_tabelle6.yaml` sind bei uns nicht angekommen (§ 3).
-- Enis' Test `test_kein_contract_wert_und_kein_konsument` ist rot, weil unser `breitenprofil.py` die RL-4-YAML im Docstring **zitiert**. Nicht einseitig geändert — es ist Enis' Test.
+- Enis' Test `test_kein_contract_wert_und_kein_konsument` schlug an, weil unser `breitenprofil.py` die RL-4-YAML im Docstring **zitierte** (kein Ladevorgang). Behoben durch Umformulierung der Quellenangabe; Enis' Test selbst unverändert und wieder grün (§ 3.3).
 - `breitenprofil.py` hat keinen Produktions-Konsumenten, solange kein Contract-Feld es trägt.
 - Die offenen Sachfragen an Enis (Belichtungssemantik, Breitenform im Contract, Türmaß-Zielsemantik) und an Leonis (Verbraucher der Wegbreite, Zusage Platzierung unverändert).
 
@@ -61,7 +61,7 @@ FAILED tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_un
 1 failed, 57 passed in 0.92s
 ```
 
-**Einordnung.** Kein Sachfehler. Der Test ist ein Wächter „diese YAML hat noch keinen Konsumenten" und prüft per **Textsuche über den Dateiinhalt**, nicht über den Import-/Ladepfad. Getroffen wird `src/notbeleuchtung/raumerkennung/breitenprofil.py`, deren Modul-Docstring (Zeilen 4–7) `normwissen/data/oib_rl4_fluchtwegbreiten.yaml`, Abschnitt `breiten_begriffe`, als Quelle **zitiert**. Ein echter Konsument existiert nicht. Vorschlag zur Entscheidung mit Enis: Prüfung auf Import statt auf Substring, oder Docstring-Referenz umformulieren. Nicht einseitig geändert.
+**Einordnung.** Kein Sachfehler. Der Test ist ein Wächter „diese YAML hat noch keinen Konsumenten" und prüft per **Textsuche über den Dateiinhalt**, nicht über den Import-/Ladepfad. Getroffen wird `src/notbeleuchtung/raumerkennung/breitenprofil.py`, deren Modul-Docstring (Zeilen 4–7) `normwissen/data/oib_rl4_fluchtwegbreiten.yaml`, Abschnitt `breiten_begriffe`, als Quelle **zitiert**. Ein echter Konsument existiert nicht. **Inzwischen behoben** — siehe § 3.3: Docstring-Quellenangabe umformuliert, Enis' Test unverändert und wieder grün.
 
 ### 2.4 Volle Suite
 
@@ -72,7 +72,7 @@ FAILED tests/normwissen/test_quellenblock_e07_rl4.py::test_kein_contract_wert_un
 | `pytest tests/raumerkennung tests/contract -q` | 283 passed, 5 skipped (188,04 s) |
 | `ruff check src tests` | All checks passed! |
 
-Der einzige Fehlschlag ist der aus § 2.3. Weitere vorbestehende rote Tests: keine.
+Der einzige Fehlschlag ist der aus § 2.3 und ist inzwischen behoben (§ 3.3); Nachlauf `pytest tests/raumerkennung/test_breitenprofil.py tests/normwissen -q` → **353 passed**. Weitere vorbestehende rote Tests: keine.
 
 ---
 
@@ -574,7 +574,7 @@ Der vierte Fehler ist der vorbestehende aus § 2.3. Kein Test assertiert `breite
 | **1 — natürliche Belichtung** | Ist-Stand vollständig erhoben, alle 5 Pläne gemessen, Fensterherkunft je Familie belegt, Regeln True/False/None und drei Feldvorschläge formuliert | **Kein Code.** Contract-Felder `natuerlich_belichtet`, `belichtung_quelle`, `belichtung_vollstaendigkeit` sind Vorschlag. GLASWAND als eigenständige Quelle ungemessen, 500-mm-Toleranz unkalibriert, Arbeitsraum-Eigenschaft (AStV § 1 Abs. 4) fehlt vollständig |
 | **2 — Breitenverlauf** | `breitenprofil.py` repariert (3 Ursachen), +62/−21 in 2 Dateien, 9 Tests grün, 283 passed / 5 skipped in der Regression, ruff grün, alle 5 Pläne gemessen, 2 Belegprofile | **Keine Anbindung**: kein Provider-Aufruf, kein Contract-Feld. `FluchtwegSegment`-Ergänzung ist Vorschlag. 61 Segmente ohne schneidendes Raumpolygon (unsere Lane). Eckfenster verwirft auf GRAPH-Segmenten weiter den Großteil des Profils |
 | **3 — `Tuer.breite_mm`** | 9 Schreibpfade belegt, Herkunft je Plan über 629 Türen ausgezählt, Ursache der 132 Nullen belegt, DL-Beschriftungsfund Muthgasse, Migrationsreihenfolge + gemessene Bruchstellen | **Kein Code.** `breite_quelle`, `lichte_mm`, `lichte_quelle`, `breite_mm: float \| None` sind Vorschlag. Schritt 0 (None-Festigkeit der Konsumenten) nicht ausgeführt. Testauswirkung nur auf 27 % der Suite erhoben. ATTRIB-Befund für Barawitzka/Rennweg nicht messbar. Muthgasse-Aufteilung BLOCKNAME/SCHWENKRADIUS auf ±1 unsicher |
-| **Querschnitt** | — | Enis' Test `test_kein_contract_wert_und_kein_konsument` rot (§ 2.3), nicht einseitig geändert |
+| **Querschnitt** | Enis' Test `test_kein_contract_wert_und_kein_konsument` wieder grün — Docstring-Quellenangabe in `breitenprofil.py` umformuliert, Test selbst unverändert (§ 3.3) | Entscheidung offen, ob der Wächter dauerhaft per Substring über Dateiinhalte prüfen soll (Enis' Lane) |
 
 ---
 
@@ -595,7 +595,7 @@ Alle Datenmodellangaben unten sind **VORSCHLAG**. `hauptengine/contracts/**` ist
 9. **Tür, DL-Notation:** gilt die Lesart, dass `…_1DF_90x200` und `… - DL - 800 x 2490` die Durchgangslichte nennen? Davon hängt ab, ob § 6.2 für 18 Muthgasse-Türen anders lautet (dort als strittig gekennzeichnet).
 10. **Tür, YAML-Nachtrag:** `tuerbreite_herkunft` nennt **drei** Herkünfte; gemessen sind es **vier** plus „keine Messung" — die Doppelflügel-Summe (`tueren.py:259`) fehlt. **Achtung:** `tests/normwissen/test_quellenblock_e07_rl4.py:301` pinnt `assert len(herkunft["befunde"]) == 3` — die Ergänzung macht diesen Test rot.
 11. **Tür, Zwei-Türen-Regel:** RL 4 Punkt 2.8.1 („Abstand ≤ 20 cm = eine Tür") kollidiert konzeptionell mit `verschmelze_doppelfluegel` (`_DOPPEL_TOL_MM = 300`). Wer besitzt die Zusammenfassung — Erkennung oder Prüfung?
-12. **Dein Test:** `test_kein_contract_wert_und_kein_konsument` prüft per Substring über Dateiinhalte und trifft eine bloße Docstring-Quellenangabe. Import-/Ladepfad-Prüfung statt Substring, oder sollen wir die Referenz aus dem Docstring nehmen? Nicht einseitig geändert.
+12. **Dein Test:** `test_kein_contract_wert_und_kein_konsument` prüft per Substring über Dateiinhalte und traf damit eine bloße Docstring-Quellenangabe in `breitenprofil.py` (kein Ladevorgang). Wir haben die **Quellenangabe umformuliert**, deinen Test **nicht angefasst** — er ist wieder grün und weiter scharf. Frage an dich: soll der Wächter dauerhaft auf Import-/Ladepfad prüfen statt auf Substring? Dann wäre die wörtliche Dateiangabe im Docstring wieder möglich.
 
 ### 8.2 Von @mvpo3 (Leonis, platzierung/)
 
