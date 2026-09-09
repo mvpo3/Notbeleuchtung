@@ -23,6 +23,18 @@ _LIEFER_MASSSTAB = 50
 _MAX_BLATT_MM = 5000.0
 #: Layer des Blatt-Rahmens (Rivoplan-Vorlage) — sein Extent ist der Liefer-Ausschnitt.
 _TITLEBLOCK_LAYER = "din_SIBEL_99_titleblock"
+#: ISO-216 A-Reihe (Hochformat, mm) — das Liefer-PDF wird auf ein Norm-Blatt eingepasst
+#: (Owner 2026-09-09: „auf A1/A0 runden"). Default A0; A1 auf Wunsch.
+_ISO_A = {"A4": (210, 297), "A3": (297, 420), "A2": (420, 594),
+          "A1": (594, 841), "A0": (841, 1189)}
+#: Bedruckbarer Anteil (Rand rundum) — professioneller Blattrand.
+_DRUCK_ANTEIL = 0.96
+
+
+def _papier_mm(format_: str, quer: bool) -> tuple[float, float]:
+    """(Breite, Höhe) des A-Blatts in mm; `quer`=True → Querformat."""
+    s, l = _ISO_A[format_]
+    return (l, s) if quer else (s, l)
 
 
 def _auto_ausschnitt(doc):
@@ -52,16 +64,19 @@ def dxf_zu_pdf(
     hoehe_zoll: float = 11.7,   # A3 quer (Fallback ohne Ausschnitt)
     layout: str | None = None,  # z.B. "Notbeleuchtungsplan" = Owner-Blatt-Vorlage
     ausschnitt: tuple | None = None,  # (x0, y0, x1, y1) — nur diesen Bereich rendern
-    massstab: int | None = _LIEFER_MASSSTAB,  # Seite = Ausschnitt/Maßstab (Vektor, zoombar)
+    massstab: int | None = _LIEFER_MASSSTAB,  # Fallback-Seite = Ausschnitt/Maßstab, wenn kein Papierformat
+    papierformat: str | None = "A0",  # ISO-A-Norm-Blatt (A0/A1/…); None = Ausschnitt/Maßstab
 ) -> Path:
     """Rendert `dxf_path` in ein PDF (`pdf_path`) und gibt den Pfad zurück.
 
     `layout=None` rendert den Modelspace (bisheriges Verhalten); ein Layout-Name
     rendert das Paperspace-Blatt (Planrahmen + Viewport, Owner-Vorlage).
 
-    `massstab` (mit `ausschnitt`): die Seite wird auf `Ausschnitt/Maßstab` mm dimensioniert
-    (1:50-Vektor-Blatt) und OHNE tight-Crop geschrieben — man kann wie in einem CAD-Plan
-    beliebig hineinzoomen. `massstab=None` fällt auf das alte A3-tight-Verhalten zurück."""
+    `papierformat` (mit `ausschnitt`, Default „A0"): das Blatt wird auf ein ISO-A-Norm-
+    Format eingepasst (zentriert, aspektwahrend, Vektor, mit Rand) — Owner 2026-09-09
+    „auf A1/A0 runden". Querformat, wenn der Ausschnitt breiter als hoch ist. `None` fällt
+    auf `massstab` (Seite = Ausschnitt/Maßstab) zurück; ohne `ausschnitt` → altes A3-tight.
+    Das Linienwerk bleibt Vektor → in jedem Format stufenlos zoombar."""
     import ezdxf
     import matplotlib
 
@@ -124,12 +139,20 @@ def dxf_zu_pdf(
             pad_x, pad_y = (x1 - x0) * 0.01, (y1 - y0) * 0.01
             ax.set_xlim(x0 - pad_x, x1 + pad_x)
             ax.set_ylim(y0 - pad_y, y1 + pad_y)
-            if massstab and x1 > x0 and y1 > y0:
-                # Echtes Vektor-Blatt: Seite = Ausschnitt/Maßstab (in mm), Achse [0,0,1,1]
-                # füllt sie (Seiten-Aspekt == Daten-Aspekt → kein Letterbox). Kein
-                # tight-Crop → die Seite bleibt physisch groß und stufenlos zoombar.
-                page_w = (x1 - x0 + 2 * pad_x) / massstab
-                page_h = (y1 - y0 + 2 * pad_y) / massstab
+            ext_w, ext_h = (x1 - x0 + 2 * pad_x), (y1 - y0 + 2 * pad_y)
+            if papierformat and papierformat in _ISO_A and ext_w > 0 and ext_h > 0:
+                # Auf ein ISO-A-Norm-Blatt einpassen: Seite = Norm-Format, Zeichnung
+                # zentriert + aspektwahrend in den bedruckbaren Bereich (Rand rundum).
+                # Achse als zentrierte Teil-Box → außen bleibt weißer Blattrand.
+                pw, ph = _papier_mm(papierformat, quer=ext_w >= ext_h)
+                fit = min(pw * _DRUCK_ANTEIL / ext_w, ph * _DRUCK_ANTEIL / ext_h)
+                bw, bh = ext_w * fit / pw, ext_h * fit / ph
+                fig.set_size_inches(pw / 25.4, ph / 25.4)
+                ax.set_position([(1 - bw) / 2, (1 - bh) / 2, bw, bh])
+                skaliertes_blatt = True
+            elif massstab:
+                # Fallback ohne Papierformat: Seite = Ausschnitt/Maßstab (Achse füllt sie).
+                page_w, page_h = ext_w / massstab, ext_h / massstab
                 k = max(page_w, page_h)
                 if k > _MAX_BLATT_MM:                      # Phantom-Extents deckeln
                     page_w *= _MAX_BLATT_MM / k
