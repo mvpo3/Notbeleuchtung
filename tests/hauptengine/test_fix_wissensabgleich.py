@@ -92,6 +92,34 @@ def test_toiletten_scope_single_source():
     assert ss._TOILETTEN_TYPEN is bausteine.TOILETTE_EINDEUTIG
 
 
+def test_getrennter_kreis_hardstop():
+    """F06 / W13: Ein Symbol ohne F13-SV-Kreis ist ein Hard-Stop (fehler), kein Warnhinweis;
+    mit F13 bleibt die Regel 'ok'. Exakte Status-Assertion + gesamtstatus."""
+    from notbeleuchtung.hauptengine.contracts import (
+        BBox,
+        Platzierung,
+        PlatzierungsErgebnis,
+        RaumModell,
+    )
+    from notbeleuchtung.hauptengine.validierung import gesamtstatus, pruefe
+
+    raum = RaumModell(floor="X", bounds_mm=BBox(min_xy=(0.0, 0.0), max_xy=(1000.0, 1000.0)))
+
+    def _pruefe(circuit):
+        p = Platzierung(xy_mm=(0.0, 0.0), catalog_key="k", kind="rz",
+                        height_mm=2400.0, circuit_hint=circuit)
+        return pruefe(raum, PlatzierungsErgebnis(floor="X", platzierungen=[p]))
+
+    ohne = _pruefe("AGV-A-F5")
+    kreis_ohne = next(b for b in ohne if "Sicherheitskreis" in b.regel)
+    assert kreis_ohne.status == "fehler"
+    assert gesamtstatus(ohne) == "fehler"
+
+    mit = _pruefe("AGV-A-F13")
+    kreis_mit = next(b for b in mit if "Sicherheitskreis" in b.regel)
+    assert kreis_mit.status == "ok"
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
