@@ -93,7 +93,10 @@ def run_projekt(
 
 
 def _merge_pdf(dxf_paths: list[Path], ziel: Path) -> Path:
-    """Jedes Geschoss-DXF → PDF-Seite; alle in ein PDF (Reihenfolge = Eingabe)."""
+    """Jedes Geschoss-DXF → PDF-Seite; alle in ein PDF (Reihenfolge = Eingabe).
+
+    `dxf_zu_pdf` erkennt den Blatt-Rahmen selbst und liefert das große 1:50-Vektor-Blatt
+    (Owner 2026-09-09) — kein Ausschnitt nötig."""
     from pypdf import PdfWriter
 
     from .render import dxf_zu_pdf
