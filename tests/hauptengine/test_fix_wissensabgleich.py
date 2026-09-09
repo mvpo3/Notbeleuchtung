@@ -78,6 +78,20 @@ def test_deckung_wf_aus_norm():
     assert isinstance(wartungsfaktor_aus_norm(_Anf()), float)
 
 
+def test_toiletten_scope_single_source():
+    """F05 / W10: Toiletten-Scope §4.3.8 kommt aus EINER Quelle (`bausteine`); die
+    vorher dreifach hartkodierten Sets sind weg. Exakte Werte, disjunkt, gleiche Identität
+    in beiden Konsumenten (kein kopiertes Set)."""
+    from notbeleuchtung.platzierung import bausteine
+    from notbeleuchtung.platzierung import sonderstellen_strategy as ss
+
+    assert bausteine.TOILETTE_EINDEUTIG == {"WC", "TOILETTE"}
+    assert bausteine.TOILETTE_MEHRDEUTIG == {"SANITAER", "SANITÄR", "BAD", "DUSCHE", "NASSRAUM"}
+    assert bausteine.TOILETTE_EINDEUTIG.isdisjoint(bausteine.TOILETTE_MEHRDEUTIG)
+    # sonderstellen_strategy konsumiert dasselbe Objekt (Alias, keine Kopie).
+    assert ss._TOILETTEN_TYPEN is bausteine.TOILETTE_EINDEUTIG
+
+
 def test_f03_rotation_zur_tuer_ein_helper():
     """F03 / W16: die 4× duplizierte Pfeil-Rotationsformel lebt jetzt in einem Helper.
     Exakte Kardinal-Werte (unten-Block-Basis, atan2+90 auf 90° gerastert)."""
