@@ -40,7 +40,7 @@ from .bausteine import building_assigner as _building_assigner
 from .bausteine import rotation_zur_tuer as _rotation_zur_tuer
 from .bausteine import select_key as _select_key
 from .geometry import _bbox, _bbox_area, find_center_visual, point_in_polygon
-from .lux import lux_punkte
+from .lux import lux_punkte, wartungsfaktor_aus_norm
 
 AUFHELLER_KEY = "sicherheitsleuchte_aufheller"
 QUELLE_AUFHELLER = "fachpraxis: aufheller-500mm"
@@ -139,7 +139,7 @@ def _punkt_unterversorgt(xy, quellen, raum, norm, i_cd_fn) -> bool:
     if not quellen:
         return True
     anf = norm.fuer_raum(r.raum_typ, r.ist_fluchtweg)
-    wf = getattr(anf, "wartungsfaktor", None) or 1.0
+    wf = wartungsfaktor_aus_norm(anf)
     res = lux_punkte(
         quellen, [xy], montagehoehe_m=anf.montagehoehe_mm / 1000.0, i_cd_fn=i_cd_fn,
         ziel_lux=anf.min_lux or 1.0, wartungsfaktor=wf,

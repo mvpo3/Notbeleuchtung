@@ -33,6 +33,7 @@ from .lux import (
     lux_raster,
     max_leuchtenabstand_mm,
     ud_min_aus_norm,
+    wartungsfaktor_aus_norm,
 )
 from .mittellinie import leuchten_auf_linie_mit_richtung, mittellinie
 
@@ -101,7 +102,7 @@ def verdichte_fluchtweg(
         # 0,57 außen — s. knowledge/extracted/LICHTBERECHNUNG_REFERENZ.md). Defensiv
         # gelesen: liefert die (noch) MF-freie NormAnforderung kein Feld, bleibt es bei
         # 1,0 → Platzierung bit-identisch (Track-B-Muster). Enis füllt das Feld später.
-        wf = getattr(anf, "wartungsfaktor", None) or 1.0
+        wf = wartungsfaktor_aus_norm(anf)
         breite = min(bounds[2] - bounds[0], bounds[3] - bounds[1])
         linie, band = _nachweis_punkte(
             mittellinie(r.polygon_mm, raster_mm=_NACHWEIS_RASTER_MM), breite
